@@ -1,0 +1,3 @@
+@cwd /usr/X11R6
+bin/xsysstats
+man/man1/xsysstats.1.gz

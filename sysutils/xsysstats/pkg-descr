@@ -1,0 +1,14 @@
+XSysStats is a system information display tool similar to perfmeter.  It
+displays its information in the form of a strip chart.  It can also display
+information about remote hosts, as perfmeter can do.
+
+XSysStats can display any number of graphs at one time in the same window.
+Information being displayed in the window need not be all of the same host.
+For example, you could have it display the percentage of cpu being utilized
+of half a dozen (or more) different hosts.  Also, splitting the window
+into smaller windows is now supported (similar to what the perfmeter
+in OW 3 allows)
+
+(above taken from the original README)
+- Satoshi
+asami@cs.berkeley.edu
