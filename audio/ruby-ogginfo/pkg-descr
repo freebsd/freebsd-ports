@@ -1,0 +1,5 @@
+Ruby-ogginfo is a pure ruby library that gives information on ogg
+files.
+
+Author:	Guillaume Pierronnet <moumar_AT__rubyforge_DOT_org>
+WWW:	http://ruby-ogginfo.rubyforge.org/
