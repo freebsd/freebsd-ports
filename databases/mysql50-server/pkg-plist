@@ -63,8 +63,8 @@ share/mysql/norwegian-ny/errmsg.txt
 share/mysql/portuguese/errmsg.sys
 share/mysql/portuguese/errmsg.txt
 share/mysql/dutch/errmsg.sys
-share/mysql/dutch/errmsg.sys
-share/mysql/russian/errmsg.txt
+share/mysql/dutch/errmsg.txt
+share/mysql/russian/errmsg.sys
 share/mysql/russian/errmsg.txt
 @dirrm include/mysql
 @dirrm lib/mysql
