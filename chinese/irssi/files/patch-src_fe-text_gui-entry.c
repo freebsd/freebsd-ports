@@ -1,5 +1,5 @@
---- gui-entry.c.orig	Sun Mar  4 02:04:10 2001
-+++ gui-entry.c	Thu Nov  1 23:38:28 2001
+--- src/fe-text/gui-entry.c.orig	Sun Mar  4 02:04:10 2001
++++ src/fe-text/gui-entry.c	Thu Nov  1 23:38:28 2001
 @@ -148,10 +148,35 @@
  	entry_update();
  }
