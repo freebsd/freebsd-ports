@@ -75,7 +75,7 @@ LIB_DEPENDS+=	wx_gtk2u-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2-unicode
 
 .if ${WXGTK_FLAVOR:M*-unicode*} != ""
 .if ${OSVERSION} < 500000
-BROKEN=		Systems prior to FreeBSD 5.0 currently out of support
+IGNORE=		Systems prior to FreeBSD 5.0 currently out of support
 .else
 CONFIGURE_ARGS+=--enable-unicode
 .endif
