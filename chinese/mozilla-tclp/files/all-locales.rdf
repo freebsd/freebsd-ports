@@ -1,25 +1,14 @@
 <?xml version="1.0"?>
 <RDF:RDF
+     xmlns:NS1414="http://www.mozilla.org/rdf/chrome#"
      xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <RDF:Description about="urn:mozilla:locale:en-US:navigator">
-    <NS942:baseURL xmlns:NS942="http://www.mozilla.org/rdf/chrome#">resource:/chrome/en-US/locale/en-US/navigator/</NS942:baseURL>
-    <NS943:package xmlns:NS943="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:package:navigator"/>
-  </RDF:Description>
-  <RDF:Description about="urn:mozilla:locale:zh-TW:global">
-    <NS944:baseURL xmlns:NS944="http://www.mozilla.org/rdf/chrome#">jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/global/</NS944:baseURL>
-    <NS945:package xmlns:NS945="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:package:global"/>
-  </RDF:Description>
-  <RDF:Description about="urn:mozilla:locale:en-US">
-    <NS946:displayName xmlns:NS946="http://www.mozilla.org/rdf/chrome#">English(US)</NS946:displayName>
-    <NS947:author xmlns:NS947="http://www.mozilla.org/rdf/chrome#">mozilla.org</NS947:author>
-    <NS948:name xmlns:NS948="http://www.mozilla.org/rdf/chrome#">en-US</NS948:name>
-    <NS949:previewURL xmlns:NS949="http://www.mozilla.org/rdf/chrome#">http://www.mozilla.org/locales/en-US.gif</NS949:previewURL>
-    <NS950:locType xmlns:NS950="http://www.mozilla.org/rdf/chrome#">install</NS950:locType>
-    <NS951:packages xmlns:NS951="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:locale:en-US:packages"/>
-  </RDF:Description>
-  <RDF:Description about="urn:mozilla:locale:en-US:embed">
-    <NS952:baseURL xmlns:NS952="http://www.mozilla.org/rdf/chrome#">resource:/chrome/embed/locale/en-US/embed/</NS952:baseURL>
-    <NS953:package xmlns:NS953="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:package:embed"/>
+  <RDF:Description about="urn:mozilla:locale:US">
+    <NS1414:displayName>US Region</NS1414:displayName>
+    <NS1414:author>mozilla.org</NS1414:author>
+    <NS1414:name>US</NS1414:name>
+    <NS1414:previewURL>http://www.mozilla.org/locales/US.gif</NS1414:previewURL>
+    <NS1414:locType>install</NS1414:locType>
+    <NS1414:packages resource="urn:mozilla:locale:US:packages"/>
   </RDF:Description>
   <RDF:Seq about="urn:mozilla:locale:zh-TW:packages">
     <RDF:li resource="urn:mozilla:locale:zh-TW:global"/>
@@ -27,62 +16,165 @@
     <RDF:li resource="urn:mozilla:locale:zh-TW:messenger"/>
     <RDF:li resource="urn:mozilla:locale:zh-TW:editor"/>
     <RDF:li resource="urn:mozilla:locale:zh-TW:navigator"/>
+    <RDF:li resource="urn:mozilla:locale:zh-TW:necko"/>
+    <RDF:li resource="urn:mozilla:locale:zh-TW:cookie"/>
+    <RDF:li resource="urn:mozilla:locale:zh-TW:wallet"/>
+    <RDF:li resource="urn:mozilla:locale:zh-TW:global-platform"/>
+    <RDF:li resource="urn:mozilla:locale:zh-TW:communicator-platform"/>
+    <RDF:li resource="urn:mozilla:locale:zh-TW:navigator-platform"/>
   </RDF:Seq>
-  <RDF:Seq about="urn:mozilla:locale:root">
-    <RDF:li resource="urn:mozilla:locale:en-US"/>
-    <RDF:li resource="urn:mozilla:locale:zh-TW"/>
-  </RDF:Seq>
-  <RDF:Description about="urn:mozilla:locale:zh-TW:editor">
-    <NS954:baseURL xmlns:NS954="http://www.mozilla.org/rdf/chrome#">jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/editor/</NS954:baseURL>
-    <NS955:package xmlns:NS955="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:package:editor"/>
+  <RDF:Description about="urn:mozilla:locale:en-US:editor">
+    <NS1414:baseURL>resource:/chrome/en-US/locale/en-US/editor/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:editor"/>
   </RDF:Description>
-  <RDF:Description about="urn:mozilla:locale:zh-TW:messenger">
-    <NS956:baseURL xmlns:NS956="http://www.mozilla.org/rdf/chrome#">jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/messenger/</NS956:baseURL>
-    <NS957:package xmlns:NS957="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:package:messenger"/>
+  <RDF:Description about="urn:mozilla:locale:en-US:navigator-platform">
+    <NS1414:baseURL>resource:/chrome/en-unix/locale/en-US/navigator-platform/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:navigator-platform"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:zh-TW:global-platform">
+    <NS1414:baseURL>jar:resource:/chrome/zh-unix.jar!/locale/zh-TW/global-platform/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:global-platform"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:en-US:cookie">
+    <NS1414:baseURL>resource:/chrome/en-US/locale/en-US/cookie/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:cookie"/>
   </RDF:Description>
   <RDF:Seq about="urn:mozilla:locale:en-US:packages">
     <RDF:li resource="urn:mozilla:locale:en-US:necko"/>
     <RDF:li resource="urn:mozilla:locale:en-US:embed"/>
     <RDF:li resource="urn:mozilla:locale:en-US:editor"/>
     <RDF:li resource="urn:mozilla:locale:en-US:navigator"/>
+    <RDF:li resource="urn:mozilla:locale:en-US:navigator-platform"/>
     <RDF:li resource="urn:mozilla:locale:en-US:communicator"/>
+    <RDF:li resource="urn:mozilla:locale:en-US:communicator-platform"/>
     <RDF:li resource="urn:mozilla:locale:en-US:global"/>
+    <RDF:li resource="urn:mozilla:locale:en-US:global-platform"/>
+    <RDF:li resource="urn:mozilla:locale:en-US:cookie"/>
+    <RDF:li resource="urn:mozilla:locale:en-US:wallet"/>
     <RDF:li resource="urn:mozilla:locale:en-US:messenger"/>
   </RDF:Seq>
+  <RDF:Description about="urn:mozilla:locale:zh-TW:editor">
+    <NS1414:baseURL>jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/editor/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:editor"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:US:navigator-region">
+    <NS1414:baseURL>resource:/chrome/US/locale/US/navigator-region/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:navigator-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:en-US">
+    <NS1414:previewURL>http://www.mozilla.org/locales/en-US.gif</NS1414:previewURL>
+    <NS1414:displayName>English (US)</NS1414:displayName>
+    <NS1414:author>mozilla.org</NS1414:author>
+    <NS1414:name>en-US</NS1414:name>
+    <NS1414:locType>install</NS1414:locType>
+    <NS1414:packages resource="urn:mozilla:locale:en-US:packages"/>
+  </RDF:Description>
   <RDF:Description about="urn:mozilla:locale:en-US:global">
-    <NS958:baseURL xmlns:NS958="http://www.mozilla.org/rdf/chrome#">resource:/chrome/en-US/locale/en-US/global/</NS958:baseURL>
-    <NS959:package xmlns:NS959="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:package:global"/>
+    <NS1414:baseURL>resource:/chrome/en-US/locale/en-US/global/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:global"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:zh-TW:cookie">
+    <NS1414:baseURL>jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/cookie/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:cookie"/>
   </RDF:Description>
   <RDF:Description about="urn:mozilla:locale:zh-TW:communicator">
-    <NS960:baseURL xmlns:NS960="http://www.mozilla.org/rdf/chrome#">jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/communicator/</NS960:baseURL>
-    <NS961:package xmlns:NS961="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:package:communicator"/>
+    <NS1414:baseURL>jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/communicator/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:communicator"/>
   </RDF:Description>
-  <RDF:Description about="urn:mozilla:locale:en-US:editor">
-    <NS962:baseURL xmlns:NS962="http://www.mozilla.org/rdf/chrome#">resource:/chrome/en-US/locale/en-US/editor/</NS962:baseURL>
-    <NS963:package xmlns:NS963="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:package:editor"/>
+  <RDF:Description about="urn:mozilla:locale:en-US:embed">
+    <NS1414:baseURL>resource:/chrome/embed/locale/en-US/embed/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:embed"/>
   </RDF:Description>
-  <RDF:Description about="urn:mozilla:locale:zh-TW:navigator">
-    <NS964:baseURL xmlns:NS964="http://www.mozilla.org/rdf/chrome#">jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/navigator/</NS964:baseURL>
-    <NS965:package xmlns:NS965="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:package:navigator"/>
+  <RDF:Description about="urn:mozilla:locale:en-US:wallet">
+    <NS1414:baseURL>resource:/chrome/en-US/locale/en-US/wallet/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:wallet"/>
   </RDF:Description>
   <RDF:Description about="urn:mozilla:locale:en-US:necko">
-    <NS966:baseURL xmlns:NS966="http://www.mozilla.org/rdf/chrome#">resource:/chrome/en-US/locale/en-US/necko/</NS966:baseURL>
-    <NS967:package xmlns:NS967="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:package:necko"/>
+    <NS1414:baseURL>resource:/chrome/en-US/locale/en-US/necko/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:necko"/>
   </RDF:Description>
-  <RDF:Description about="urn:mozilla:locale:en-US:messenger">
-    <NS968:baseURL xmlns:NS968="http://www.mozilla.org/rdf/chrome#">resource:/chrome/en-US/locale/en-US/messenger/</NS968:baseURL>
-    <NS969:package xmlns:NS969="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:package:messenger"/>
+  <RDF:Description about="urn:mozilla:locale:US:messenger-region">
+    <NS1414:baseURL>resource:/chrome/US/locale/US/messenger-region/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:messenger-region"/>
   </RDF:Description>
-  <RDF:Description about="urn:mozilla:locale:en-US:communicator">
-    <NS970:baseURL xmlns:NS970="http://www.mozilla.org/rdf/chrome#">resource:/chrome/en-US/locale/en-US/communicator/</NS970:baseURL>
-    <NS971:package xmlns:NS971="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:package:communicator"/>
+  <RDF:Description about="urn:mozilla:locale:zh-TW:communicator-platform">
+    <NS1414:baseURL>jar:resource:/chrome/zh-unix.jar!/locale/zh-TW/communicator-platform/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:communicator-platform"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:zh-TW:navigator">
+    <NS1414:baseURL>jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/navigator/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:navigator"/>
   </RDF:Description>
   <RDF:Description about="urn:mozilla:locale:zh-TW">
-    <NS972:displayName xmlns:NS972="http://www.mozilla.org/rdf/chrome#">Japanese(Japan)</NS972:displayName>
-    <NS973:author xmlns:NS973="http://www.mozilla.org/rdf/chrome#">Kazu Yamamoto + Ryoichi Furukawa</NS973:author>
-    <NS974:name xmlns:NS974="http://www.mozilla.org/rdf/chrome#">zh-TW</NS974:name>
-    <NS975:previewURL xmlns:NS975="http://www.mozilla.org/rdf/chrome#">http://www.mozilla.gr.jp/jlp/jlpicon.png</NS975:previewURL>
-    <NS976:locType xmlns:NS976="http://www.mozilla.org/rdf/chrome#">install</NS976:locType>
-    <NS977:packages xmlns:NS977="http://www.mozilla.org/rdf/chrome#" resource="urn:mozilla:locale:zh-TW:packages"/>
+    <NS1414:displayName>0.8.1 Traditional Chinese (zh-TW)</NS1414:displayName>
+    <NS1414:author>Francis S.Lin, piaip@csie.ntu.edu.tw</NS1414:author>
+    <NS1414:name>zh-TW</NS1414:name>
+    <NS1414:previewURL>http://www.csie.ntu.edu.tw/~b7506051/mt4/</NS1414:previewURL>
+    <NS1414:locType>install</NS1414:locType>
+    <NS1414:packages resource="urn:mozilla:locale:zh-TW:packages"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:US:communicator-region">
+    <NS1414:baseURL>resource:/chrome/US/locale/US/communicator-region/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:communicator-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:en-US:communicator-platform">
+    <NS1414:baseURL>resource:/chrome/en-unix/locale/en-US/communicator-platform/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:communicator-platform"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:zh-TW:global">
+    <NS1414:baseURL>jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/global/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:global"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:en-US:global-platform">
+    <NS1414:baseURL>resource:/chrome/en-unix/locale/en-US/global-platform/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:global-platform"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:US:editor-region">
+    <NS1414:baseURL>resource:/chrome/US/locale/US/editor-region/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:editor-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:zh-TW:wallet">
+    <NS1414:baseURL>jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/wallet/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:wallet"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:zh-TW:messenger">
+    <NS1414:baseURL>jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/messenger/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:messenger"/>
+  </RDF:Description>
+  <RDF:Seq about="urn:mozilla:locale:US:packages">
+    <RDF:li resource="urn:mozilla:locale:US:editor-region"/>
+    <RDF:li resource="urn:mozilla:locale:US:navigator-region"/>
+    <RDF:li resource="urn:mozilla:locale:US:communicator-region"/>
+    <RDF:li resource="urn:mozilla:locale:US:global-region"/>
+    <RDF:li resource="urn:mozilla:locale:US:messenger-region"/>
+  </RDF:Seq>
+  <RDF:Description about="urn:mozilla:locale:US:global-region">
+    <NS1414:baseURL>resource:/chrome/US/locale/US/global-region/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:global-region"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:en-US:messenger">
+    <NS1414:baseURL>resource:/chrome/en-US/locale/en-US/messenger/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:messenger"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:en-US:communicator">
+    <NS1414:baseURL>resource:/chrome/en-US/locale/en-US/communicator/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:communicator"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:zh-TW:navigator-platform">
+    <NS1414:baseURL>jar:resource:/chrome/zh-unix.jar!/locale/zh-TW/navigator-platform/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:navigator-platform"/>
+  </RDF:Description>
+  <RDF:Description about="urn:mozilla:locale:en-US:navigator">
+    <NS1414:baseURL>resource:/chrome/en-US/locale/en-US/navigator/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:navigator"/>
+  </RDF:Description>
+  <RDF:Seq about="urn:mozilla:locale:root">
+    <RDF:li resource="urn:mozilla:locale:en-US"/>
+    <RDF:li resource="urn:mozilla:locale:US"/>
+    <RDF:li resource="urn:mozilla:locale:zh-TW"/>
+  </RDF:Seq>
+  <RDF:Description about="urn:mozilla:locale:zh-TW:necko">
+    <NS1414:baseURL>jar:resource:/chrome/zh-TW.jar!/locale/zh-TW/necko/</NS1414:baseURL>
+    <NS1414:package resource="urn:mozilla:package:necko"/>
   </RDF:Description>
 </RDF:RDF>
