@@ -1,0 +1,8 @@
+GiNaC is an iterated and recursive acronym for GiNaC is Not a CAS,
+where CAS stands for Computer Algebra System. It is designed to allow
+the creation of integrated systems that embed symbolic manipulations
+together with more established areas of computer science (like
+computation-intense numeric applications, graphical interfaces, etc.)
+under one roof.
+
+WWW: http://www.ginac.de/
