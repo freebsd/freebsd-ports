@@ -1,5 +1,5 @@
-tacacs+ s program that allow authorization and authentication via net on
-remote access servers. Authnticate users, authorize commands and log 
+TACACS+ program that allow authorization and authentication via net on
+remote access servers. Authnticate users, authorize commands and log
 accounting information.
 
 This new version 4 has improved features and bugfixes over the older 2.x

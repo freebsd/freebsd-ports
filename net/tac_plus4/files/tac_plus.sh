@@ -1,20 +1,26 @@
 #!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: tac_plus
+# REQUIRE: DAEMON
+# KEYWORD: FreeBSD
+#
+# Add the following line to /etc/rc.conf to enable the TACACS+ daemon:
+#
+# tac_plus_enable="YES"
+#
 
-if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
-    echo "$0: Cannot determine the PREFIX" >&2
-    exit 1
-fi
+tac_plus_enable=${tac_plus_enable-"NO"}
+tac_plus_flags=${tac_plus_flags-"-C %%PREFIX%%/etc/tac_plus.conf"}
 
-case "$1" in
-start)
-	[ -x ${PREFIX}/sbin/tac_plus -a -f ${PREFIX}/etc/tac_plus.conf ] && ${PREFIX}/sbin/tac_plus -C ${PREFIX}/etc/tac_plus.conf && echo -n ' tac_plus'
-	;;
-stop)
-	killall tac_plus && echo -n ' tac_plus'
-	;;
-*)
-	echo "Usage: `basename $0` {start|stop}" >&2
-	;;
-esac
+. %%RC_SUBR%%
 
-exit 0
+name=tac_plus
+rcvar=`set_rcvar`
+
+command="%%PREFIX%%/bin/tac_plus"
+pidfile="/var/run/${name}.pid"
+
+load_rc_config ${name}
+run_rc_command "$1"
