@@ -51,8 +51,13 @@ sbin/saslpasswd2
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/draft-burdis-cat-srp-sasl-06.txt
 %%PORTDOCS%%%%DOCSDIR%%/draft-ietf-cat-sasl-gssapi-05.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-melnikov-rfc2831bis-02.txt
 %%PORTDOCS%%%%DOCSDIR%%/draft-myers-saslrev-02.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-nerenberg-sasl-crammd5-03.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-newman-sasl-c-api-00.txt
 %%PORTDOCS%%%%DOCSDIR%%/draft-sasl-login.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-zeilenga-sasl-anon-01.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-zeilenga-sasl-plain-01.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc1321.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc1939.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc2104.txt
@@ -74,6 +79,7 @@ sbin/saslpasswd2
 %%PORTDOCS%%%%DOCSDIR%%/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/install.html
 %%PORTDOCS%%%%DOCSDIR%%/html/macosx.html
+%%PORTDOCS%%%%DOCSDIR%%/html/mechanisms.html
 %%PORTDOCS%%%%DOCSDIR%%/html/options.html
 %%PORTDOCS%%%%DOCSDIR%%/html/plugprog.html
 %%PORTDOCS%%%%DOCSDIR%%/html/programming.html
