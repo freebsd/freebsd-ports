@@ -1,0 +1,9 @@
+To use open it must be installed setuid root
+(type "chmod u+s %%PREFIX%%/bin/open")
+
+or
+
+all the VT devices that are not allocated
+to getty should be read/write by all, e.g.
+
+chmod a=rw /dev/ttyv[9abc]
