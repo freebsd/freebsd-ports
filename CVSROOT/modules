@@ -2082,6 +2082,7 @@ gnome2-fifth-toe	ports/x11/gnome2-fifth-toe
 gnome2wmaker	ports/x11-wm/gnome2wmaker
 gnomeapplets	ports/x11/gnomeapplets
 gnomeapplets2	ports/x11/gnomeapplets2
+gnomeattacks	ports/games/gnomeattacks
 gnomeaudio	ports/audio/gnomeaudio
 gnomebasic	ports/lang/gnomebasic
 gnomebreakout	ports/games/gnomebreakout
