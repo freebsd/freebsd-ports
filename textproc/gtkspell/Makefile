@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtkspell2
-PORTVERSION=	2.0.9
+PORTVERSION=	2.0.10
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://gtkspell.sourceforge.net/download/
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
