@@ -6666,6 +6666,7 @@ poster		ports/print/poster
 postfix		ports/mail/postfix
 postfix-current	ports/mail/postfix-current
 postfix1	ports/mail/postfix1
+postgresql-client	ports/databases/postgresql-client
 postgresql-contrib	ports/databases/postgresql-contrib
 postgresql-devel	ports/databases/postgresql-devel
 postgresql-docs	ports/databases/postgresql-docs
