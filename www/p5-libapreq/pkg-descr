@@ -8,7 +8,7 @@ the Apache API with Perl and C.  Functionality includes:
  - parsing of HTTP Cookies
 
 WWW: http://httpd.apache.org/apreq/
-WWW: http://search.cpan.org/search?dist=libapreq
+WWW: http://search.cpan.org/dist/libapreq/
 
 -- Sergey Skvortsov
 skv@FreeBSD.org
