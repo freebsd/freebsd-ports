@@ -1,0 +1,15 @@
+This is ApacheBench version 0.62, the Perl API for Apache benchmarking
+and regression testing.
+
+This project is meant to be the foundation of a complete benchmarking
+and regression testing suite for a transaction- processing mod_perl
+site. We needed to be able to stress our server to its limit while also
+having a way to verify the HTTP responses for correctness. We also
+extended the single-URL ab model to a multiple-URL sequence model.
+
+ApacheBench is based on the Apache 1.3.12 ab code (src/support/ab.c).
+Since the initial release, I have made efforts to merge in all the
+newest features of ab. Currently (v0.62) it has almost all the features
+of Apache 1.3.22 ab.
+
+WWW: http://search.cpan.org/search?dist=ApacheBench

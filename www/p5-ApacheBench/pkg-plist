@@ -1,0 +1,12 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/HTTPD/Bench/ApacheBench.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/HTTPD/Bench/ApacheBench/Regression.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/HTTPD/Bench/ApacheBench/Run.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTPD/Bench/ApacheBench/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTPD/Bench/ApacheBench/ApacheBench.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTPD/Bench/ApacheBench/ApacheBench.so
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/HTTPD/Bench/ApacheBench
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/HTTPD/Bench 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/HTTPD 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTPD/Bench/ApacheBench
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTPD/Bench 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTPD 2>/dev/null || true
