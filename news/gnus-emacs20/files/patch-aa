@@ -13,7 +13,7 @@
 +@dircategory The Emacs editor and associated tools
  @direntry
 -* Emacs MIME: (emacs-mime).   The MIME de/composition library.
-+* Emacs MIME: (emacs-mime).	The MIME de/composition library.
++* Emacs MIME: (emacs-mime.info).	The MIME de/composition library.
  @end direntry
  @iftex
  @finalout

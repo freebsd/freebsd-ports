@@ -13,7 +13,7 @@
 +@dircategory The Emacs editor and associated tools
  @direntry
 -* Message: (message).   Mail and news composition mode that goes with Gnus.
-+* Message: (message).		Mail and news composition mode that goes with Gnus.
++* Message: (message.info).		Mail and news composition mode that goes with Gnus.
  @end direntry
  @iftex
  @finalout
