@@ -1,5 +1,5 @@
---- configure.orig	Thu Apr 27 22:32:55 2000
-+++ configure	Tue Jul 18 10:58:01 2000
+--- configure.orig	Wed Aug 30 19:43:10 2000
++++ configure	Fri Sep  1 05:05:16 2000
 @@ -1760,7 +1760,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
@@ -18,15 +18,11 @@
  		cat >> confdefs.h <<\EOF
  #define HAVE_DLFCN_H 1
  EOF
-@@ -1866,11 +1866,19 @@
-     fi
-     ;;
-   * )
--    echo "Note: ELF compiler for host_os=$host_os may be wrong"
--    ELF_CC="\$(CC)"
--    ELF_CFLAGS="\$(CFLAGS) -fPIC"
--    ELF_LINK="\$(CC) -shared"
--    ELF_LINK_CMD="\$(ELF_LINK)"
+@@ -1887,6 +1887,21 @@
+        ELF_DEP_LIBS=
+      fi
+      ;;
++  *freebsd* )
 +    if [ "$PORTOBJFORMAT" = elf ]; then
 +      DYNAMIC_LINK_FLAGS="-Wl,-export-dynamic"
 +      ELF_CC="\$(CC)"
@@ -40,11 +36,12 @@
 +      ELF_LINK="ld -Bshareable -x"
 +      ELF_LINK_CMD="\$(ELF_LINK)"
 +    fi
- esac
- 
- 
-@@ -2201,14 +2209,8 @@
- echo "configure:2202: checking SLANG_VERSION" >&5
++    ;;
+   * )
+     echo "Note: ELF compiler for host_os=$host_os may be wrong"
+     ELF_CC="\$(CC)"
+@@ -2233,14 +2248,8 @@
+ echo "configure:2234: checking SLANG_VERSION" >&5
  slang_version=`grep "^#define  *SLANG_VERSION " $srcdir/src/slang.h |
                 awk '{ print $3 }'`
 -slang_major_version=`echo $slang_version |
@@ -56,11 +53,11 @@
 -
 -slang_minor_version="$slang_minor_version.$slang_mminor_version"
 +slang_major_version=2
-+slang_minor_version=3
++slang_minor_version=4
  slang_version="$slang_major_version.$slang_minor_version"
  echo "$ac_t""$slang_version" 1>&6
  
-@@ -2730,18 +2732,5 @@
+@@ -2765,18 +2774,5 @@
  
  
  echo ""
