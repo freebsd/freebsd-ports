@@ -389,8 +389,6 @@
     SUBDIR += view3ds
     SUBDIR += visionegg
     SUBDIR += vp
-    SUBDIR += vterrain-apps
-    SUBDIR += vterrain-sdk
     SUBDIR += whirlgif
     SUBDIR += white_dune
     SUBDIR += wings
