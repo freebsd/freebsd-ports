@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	abcm2ps
-PORTVERSION=	3.7.20
+PORTVERSION=	3.7.21
 CATEGORIES=	print audio
 MASTER_SITES=	http://moinejf.free.fr/
 
