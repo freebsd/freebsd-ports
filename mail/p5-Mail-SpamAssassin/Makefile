@@ -23,9 +23,13 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		razor-client:${PORTSDIR}/mail/razor-agents
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
 PODPARSER=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
 RUN_DEPENDS+=	${PODPARSER}
 BUILD_DEPENDS+=	${PODPARSER}
+.endif
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	SYSCONFDIR="${PREFIX}/etc" \
@@ -56,4 +60,4 @@ post-install:
 
 	@${SED} -e 's#PREFIX#/usr/local#' pkg-message
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
