@@ -1,0 +1,136 @@
+*** Makefile.orig	Thu Feb 22 20:14:50 1996
+--- Makefile	Thu Jul  4 22:24:34 1996
+***************
+*** 49,59 ****
+  # Where the configuration files live.
+  RADDB		= ./raddb
+  # Some installation stuff.
+! DAEMON_INSDIR	= /usr/private/etc
+! BIN_INSDIR	= /usr/private/etc
+! MAN_INSDIR	= /usr/local/man
+! RADDB_INSDIR	= /usr/private/etc/raddb
+! RADACCT_INSDIR	= /usr/private/etc/radacct
+  # The server does not need to be owned by root, unless some shadow password
+  # scheme needs it.  You might create a user id "radius" for just this purpose.
+  # The O macro is for OSF/1 and HP-UX, see below.
+--- 49,59 ----
+  # Where the configuration files live.
+  RADDB		= ./raddb
+  # Some installation stuff.
+! DAEMON_INSDIR	= ${PREFIX}/sbin
+! BIN_INSDIR	= ${PREFIX}/bin
+! MAN_INSDIR	= ${PREFIX}/man
+! RADDB_INSDIR	= ${PREFIX}/lib/radius/db
+! RADACCT_INSDIR	= ${PREFIX}/lib/radius/acct
+  # The server does not need to be owned by root, unless some shadow password
+  # scheme needs it.  You might create a user id "radius" for just this purpose.
+  # The O macro is for OSF/1 and HP-UX, see below.
+***************
+*** 62,68 ****
+  RADGRP		= bin
+  
+  # Define COMPRESS to hold the name of your favourite compress program:
+! #COMPRESS	= -DRADIUS_COMPRESS=\"/usr/local/bin/gzip\"
+  
+  # Define SRV to hold any combination of server names you'd like to override:
+  #SRV3	  = -DDEFAULT_TACACS_SERVER=\"vms.dns.name\"
+--- 62,68 ----
+  RADGRP		= bin
+  
+  # Define COMPRESS to hold the name of your favourite compress program:
+! COMPRESS	= -DRADIUS_COMPRESS=\"/usr/bin/gzip\"
+  
+  # Define SRV to hold any combination of server names you'd like to override:
+  #SRV3	  = -DDEFAULT_TACACS_SERVER=\"vms.dns.name\"
+***************
+*** 211,222 ****
+  #
+  #--------------------------------------------------------------------------
+  
+! CC	  = cc
+! CFLAGS	  = -g
+! LDFLAGS	  =
+! LIBS	  =
+! RANLIB	  = ranlib
+! INSTALL	  = /bin/install
+  
+  #
+  # Solaris 2.x
+--- 211,222 ----
+  #
+  #--------------------------------------------------------------------------
+  
+! #CC	  = cc
+! #CFLAGS	  = -g
+! #LDFLAGS	  =
+! #LIBS	  =
+! #RANLIB	  = ranlib
+! #INSTALL	  = /bin/install
+  
+  #
+  # Solaris 2.x
+***************
+*** 298,308 ****
+  
+  #CC	  = cc
+  #CFLAGS	  = -O
+! #LDFLAGS	  =
+! #LIBS	  = -lcrypt -lcompat
+! #MOSTUTIL  = $(RADCHECK) $(RADPWTST) $(RADPASS)
+! #RANLIB	  = ranlib
+! #INSTALL	  = /usr/bin/install
+  
+  #
+  # AIX 3.2.5 (if using xlc(1) add -D_ALL_SOURCE to CFLAGS below)
+--- 298,311 ----
+  
+  #CC	  = cc
+  #CFLAGS	  = -O
+! CFLAGS += -DRADIUS_DIR=\"${PREFIX}/lib/radius/db\" \
+! 	-DRADACCT_DIR=\"${PREFIX}/lib/radius/acct\" \
+! 	-DRADIUS_COMPRESS=\"/usr/bin/gzip\"
+! LDFLAGS	  =
+! LIBS	  = -lcrypt -lcompat
+! MOSTUTIL  = $(RADCHECK) $(RADPWTST) $(RADPASS)
+! RANLIB	  = ranlib
+! INSTALL	  = /usr/bin/install -c
+  
+  #
+  # AIX 3.2.5 (if using xlc(1) add -D_ALL_SOURCE to CFLAGS below)
+***************
+*** 607,623 ****
+  		/bin/mkdir $(RADDB_INSDIR) ;\
+  	fi
+  	$(INSTALL) -m 660 $(O) $(RADOWN) -g $(RADGRP) $(RADDB)/authfile \
+! 						$(RADDB_INSDIR)/authfile
+  	$(INSTALL) -m 660 $(O) $(RADOWN) -g $(RADGRP) $(RADDB)/clients \
+! 						$(RADDB_INSDIR)/clients
+  	$(INSTALL) -m 644 $(O) $(RADOWN) -g $(RADGRP) $(RADDB)/dictionary \
+! 						$(RADDB_INSDIR)/dictionary
+  	$(INSTALL) -m 644 $(O) $(RADOWN) -g $(RADGRP) $(RADDB)/rlmadmin.help \
+! 						$(RADDB_INSDIR)/rlmadmin.help
+  	$(INSTALL) -m 660 $(O) $(RADOWN) -g $(RADGRP) $(RADDB)/users \
+! 						$(RADDB_INSDIR)/users
+  	$(INSTALL) -m 4755 $(O) root -g $(RADGRP) $(SPECIAL) \
+! 						$(RADDB_INSDIR)/rlmadmin
+  	-if [ ! -d $(RADACCT_INSDIR) ] ;\
+  	then \
+  		/bin/mkdir $(RADACCT_INSDIR) ;\
+--- 610,626 ----
+  		/bin/mkdir $(RADDB_INSDIR) ;\
+  	fi
+  	$(INSTALL) -m 660 $(O) $(RADOWN) -g $(RADGRP) $(RADDB)/authfile \
+! 					$(RADDB_INSDIR)/authfile.sample
+  	$(INSTALL) -m 660 $(O) $(RADOWN) -g $(RADGRP) $(RADDB)/clients \
+! 					$(RADDB_INSDIR)/clients.sample
+  	$(INSTALL) -m 644 $(O) $(RADOWN) -g $(RADGRP) $(RADDB)/dictionary \
+! 					$(RADDB_INSDIR)/dictionary.sample
+  	$(INSTALL) -m 644 $(O) $(RADOWN) -g $(RADGRP) $(RADDB)/rlmadmin.help \
+! 					$(RADDB_INSDIR)/rlmadmin.help.sample
+  	$(INSTALL) -m 660 $(O) $(RADOWN) -g $(RADGRP) $(RADDB)/users \
+! 					$(RADDB_INSDIR)/users.sample
+  	$(INSTALL) -m 4755 $(O) root -g $(RADGRP) $(SPECIAL) \
+! 					$(RADDB_INSDIR)/rlmadmin.sample
+  	-if [ ! -d $(RADACCT_INSDIR) ] ;\
+  	then \
+  		/bin/mkdir $(RADACCT_INSDIR) ;\
