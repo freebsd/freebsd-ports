@@ -1,0 +1,184 @@
+--- ftp-gw/ftp-gw.c.orig	Fri Nov  4 23:30:16 1994
++++ ftp-gw/ftp-gw.c	Wed May 15 21:28:27 1996
+@@ -18,8 +18,10 @@
+ #include	<sys/signal.h>
+ #include	<sys/ioctl.h>
+ #include	<sys/errno.h>
++#if (defined(BSD)) && ((BSD)<199306)
+ extern	int	errno;
+ extern	char	*sys_errlist[];
++#endif
+ #include	<arpa/ftp.h>
+ #include	<arpa/telnet.h>
+ #include	<sys/time.h>
+--- tn-gw/tn-gw.c.orig	Fri Nov  4 23:30:18 1994
++++ tn-gw/tn-gw.c	Wed May 15 21:28:27 1996
+@@ -20,8 +20,10 @@
+ #include	<fcntl.h>
+ #include	<sys/ioctl.h>
+ #include	<sys/errno.h>
++#if (defined(BSD)) && ((BSD)<199306)
+ extern	int	errno;
+ extern	char	*sys_errlist[];
++#endif
+ #include	<sys/signal.h>
+ #include	<arpa/telnet.h>
+ #include	<sys/time.h>
+--- x-gw/ulib.h.orig	Fri Nov  4 23:31:25 1994
++++ x-gw/ulib.h	Wed May 15 21:28:27 1996
+@@ -45,9 +45,10 @@
+ #endif  
+ 
+ extern  int     uselog;
++#if (defined(BSD)) && ((BSD)<199306)
+ extern	int	errno;
+ extern	char   *sys_errlist[];
+-
++#endif
+ 
+ #define min(a,b) ((a) < (b) ? (a) : (b))
+ #define max(a,b) ((a) > (b) ? (a) : (b))
+--- http-gw/gauthd.c.orig	Fri Nov  4 23:31:27 1994
++++ http-gw/gauthd.c	Wed May 15 21:28:27 1996
+@@ -20,8 +20,10 @@
+ #include	<sys/signal.h>
+ #include	<sys/ioctl.h>
+ #include	<sys/errno.h>
++#if (defined(BSD)) && ((BSD)<199306)
+ extern	int	errno;
+ extern	char	*sys_errlist[];
++#endif
+ #include	<arpa/ftp.h>
+ #include	<arpa/telnet.h>
+ #include	<sys/time.h>
+--- http-gw/http-gw.c.orig	Fri Nov  4 23:31:28 1994
++++ http-gw/http-gw.c	Wed May 15 21:28:28 1996
+@@ -23,8 +23,10 @@
+ #include	<sys/errno.h>
+ #include	<sys/param.h>
+ #include	<limits.h>
++#if (defined(BSD)) && ((BSD)<199306)
+ extern	int	errno;
+ extern	char	*sys_errlist[];
++#endif
+ #include	<arpa/ftp.h>
+ #include	<arpa/telnet.h>
+ #include	<sys/time.h>
+--- firewall.h.orig	Fri Nov  4 23:31:26 1994
++++ firewall.h	Wed May 15 21:28:28 1996
+@@ -59,7 +59,7 @@
+ 
+ /* Choose a system logging facility for the firewall toolkit.  */
+ #ifndef	LFAC
+-#define	LFAC	LOG_DAEMON
++#define	LFAC	LOG_LOCAL2
+ #endif
+ 
+ 
+@@ -77,8 +77,7 @@
+ makes no difference. make sure that whichever your machine uses
+ is defined below.
+ */
+-#define DIRECT_STRUCT   struct direct
+-/* #define DIRECT_STRUCT   struct dirent */
++#define DIRECT_STRUCT   struct dirent
+ 
+ 
+ /*
+--- x-gw/Makefile.orig	Fri Nov  4 23:31:25 1994
++++ x-gw/Makefile	Wed May 15 21:28:28 1996
+@@ -11,14 +11,14 @@
+ #
+ # RcsId: "$Header: Makefile,v 1.2 94/11/01 12:04:53 mjr Exp $"
+ 
+ include ../Makefile.config
+ 
+ CFLAGS= -I.. $(COPT) -I$(XINCLUDE)
+ TISLIB = ../libfwall.a ulib.a
+ XLIBS =  -L$(XLIBDIR) -lXaw -lXmu -lXt -lXext -lX11 
+ 
+ ULIB_OBJS = child.o fwd.o pmsg.o sig.o socket.o string.o sws.o \
+-	token.o dialog.o shell.o list.o setenv.o getenv.o
++	token.o dialog.o shell.o list.o
+ ULIB = ulib.a
+ 
+ all:	$(ULIB) x-gw
+--- config/Makefile.orig	Fri Nov  4 23:30:45 1994
++++ config/Makefile	Wed May 15 21:28:28 1996
+@@ -11,7 +11,7 @@
+ #
+ # RcsId: "$Header: Makefile,v 1.2 94/05/27 14:10:39 mjr Exp $"
+ 
+ include	../Makefile.config
+ 
+ 
+ # these are no-ops
+@@ -19,7 +19,7 @@
+ clean:
+ 
+ install:
+-	if [ ! -f $(DEST)/netperm-table ]; then \
+-		$(CP) netperm-table $(DEST); \
+-		chmod 644 $(DEST)/netperm-table; \
++	if [ ! -f $(DEST)/../etc/netperm-table ]; then \
++		$(CP) netperm-table $(DEST)/../etc/; \
++		chmod 644 $(DEST)/../etc/netperm-table; \
+ 	fi
+--- Makefile.config.orig	Fri Nov  4 23:31:31 1994
++++ Makefile.config	Wed May 15 21:29:36 1996
+@@ -25,8 +25,7 @@
+ # Options for your compiler (eg, "-g" for debugging, "-O" for
+ # optimizing, or "-g -O" for both under GCC)
+ #COPT=	-g -traditional
+-COPT=	-g
+-#COPT=	-O
++COPT=
+ 
+ 
+ # Version of "make" you want to use
+@@ -40,17 +39,18 @@
+ 
+ 
+ # Destination directory for installation of binaries
+-DEST=	/usr/local/etc
++DEST=	/usr/local/libexec
+ 
+ 
+ # Destination directory for installation of man pages
+-#DESTMAN=	$(DEST)/../man
++DESTMAN=	$(DEST)/../man
+ 
+ 
+ # Names of any auxiliary libraries your system may require (e.g., -lsocket)
+ # If you want to link against a resolver library, specify it here.
+-AUXLIB= -lresolv
++#AUXLIB= -lresolv
+ #AUXLIB= -lsocket
++AUXLIB= -lcrypt
+ 
+ 
+ # DBM library should be specified if it is an external library or
+@@ -63,19 +63,19 @@
+ # or -Bstatic for static binaries under SunOS 4.1.x)
+ #LDFL=	-Bstatic
+ #LDFL=
+-LDFL= -g
++LDFL=
+ 
+ 
+ # Location of the fwtk sources [For #include by any external tools needing it]
+-FWTKSRCDIR=/u/b/mjr/firewall/fwtk
++FWTKSRCDIR=/usr/ports/security/fwtk/work/fwtk
+ #FWTKSRCDIR=/usr/local/src/fwtk
+ 
+ 
+ # Location of X libraries for X-gw
+ #XLIBDIR=/usr/X11/lib
+-XLIBDIR=/usr/local/X11R5/lib
++XLIBDIR=${X11BASE}/lib
+ 
+ 
+ # Location of X include files
+ #XINCLUDE=/usr/X11/include
+-XINCLUDE=/usr/local/X11R5/include
++XINCLUDE=${X11BASE}/include
