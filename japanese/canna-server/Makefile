@@ -4,7 +4,7 @@
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #			NIIMI Satoshi <sa2c@and.or.jp>
 #
-# $Id: Makefile,v 1.5 1995/06/22 00:32:02 asami Exp $
+# $Id: Makefile,v 1.6 1995/06/24 11:38:36 asami Exp $
 #
 
 DISTNAME=	Canna32p2
@@ -19,7 +19,7 @@ PATCH_STRIP=	-p1
 ALL_TARGET=	canna
 
 pre-configure:
-	@(cd ${WRKSRC}; ${XMKMF})
+	@(cd ${WRKSRC}; xmkmf)
 
 post-install:
 	ldconfig -m ${PREFIX}/lib
