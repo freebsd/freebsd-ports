@@ -7,7 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.65
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	clamav
@@ -54,7 +54,7 @@ SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
 SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?(LogFile) .*$$|\1 /var/log/clamav/clamd.log|' \
 		-e 's|^\#?(PidFile) .*$$|\1 /var/run/clamav/clamd.pid|' \
-		-e 's|^\#?(LocalSocket) .*$$|\1 /var/run/clamav/clamd|' \
+		-e 's|^\#?(LocalSocket) .*$$|\1 ${CLAMAV_CLAMD_SOCKET}|' \
 		-e 's|^\#?(User) .*$$|\1 clamav|' \
 		-e 's|^\#?(AllowSupplementaryGroups)$$|\1|' \
 		-e 's|^\#?(ScanMail)$$|\1|'
