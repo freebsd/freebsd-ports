@@ -1,0 +1,28 @@
+$FreeBSD$
+
+--- man/powermand.1.orig	Mon Dec 23 11:26:15 2002
++++ man/powermand.1	Thu Jun 10 08:38:20 2004
+@@ -25,7 +25,7 @@
+ \."  59 Temple Place, Suite 330, Boston, MA  02111-1307  USA.
+ \."#################################################################
+ .\"
+-.TH PowerMan 1 "Release 1.0" "LLNL" "PowerMan"
++.TH PowerMan 8 "Release 1.0" "LLNL" "PowerMan"
+ .SH NAME
+ powermand \- power control and monitoring daemon
+ .SH SYNOPSIS
+@@ -56,11 +56,11 @@
+ .B PowerMan
+ and exit.
+ .SH "FILES"
+-/usr/sbin/powermand
++%%PREFIX%%/sbin/powermand
+ .br
+-/usr/bin/powerman
++%%PREFIX%%/bin/powerman
+ .br
+-/etc/powerman/powerman.conf
++%%PREFIX%%/etc/powerman/powerman.conf
+ .SH "ORIGIN"
+ Developed by Andrew  Uselton <useton2@llnl.gov> on LLNL's Linux 
+ clusters.  This software is open source and distributed under

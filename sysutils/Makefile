@@ -301,6 +301,7 @@
     SUBDIR += portdowngrade
     SUBDIR += portsman
     SUBDIR += portupgrade
+    SUBDIR += powerman
     SUBDIR += prips
     SUBDIR += procmap
     SUBDIR += progsreiserfs

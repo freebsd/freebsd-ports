@@ -1,0 +1,47 @@
+$FreeBSD$
+
+--- src/Makefile.orig	Mon Dec  8 20:30:51 2003
++++ src/Makefile	Mon Mar 29 22:04:15 2004
+@@ -3,11 +3,11 @@
+ ####################################################################
+ 
+ PROJECT=	powerman
+-SHELL=		/bin/sh
+-CC=		gcc
+-MAKE=		/usr/bin/make
+-LEX=		/usr/bin/flex
+-YACC=		/usr/bin/bison
++SHELL?=		/bin/sh
++CC?=		gcc
++MAKE?=		/usr/bin/make
++LEX?=		/usr/bin/flex
++YACC?=		/usr/bin/bison
+ 
+ VERSTR=		$(shell if test -n "$(VERSION)"; then \
+ 		  if test -n "$(RELEASE)"; then \
+@@ -18,10 +18,10 @@
+ 
+ DEFS=		-DHAVE_CONFIG_H -DPOWERMAN_VERSION=\"$(VERSTR)\"
+ #DEFS+=		-DNDEBUG
+-CFLAGS= 	-g -Wall $(DEFS) 
++CFLAGS+= 	$(DEFS) 
+ #CFLAGS+=	-pg
+ 
+-LIBS=		-lfl -lwrap -lnsl -lutil
++LIBS=		-lfl -lwrap -lutil
+ 
+ COMMON_OBJS = wrappers.o error.o hostlist.o debug.o
+ 
+@@ -37,10 +37,10 @@
+ all:  powerman powermand
+ 
+ powermand: $(SERVER_OBJS)
+-	$(CC) $(CFLAGS) -o $@ $(SERVER_OBJS) $(LIBS)
++	$(CC) $(CFLAGS) -o $@ $(SERVER_OBJS) $(LDFLAGS) $(LIBS)
+ 
+ powerman: $(CLIENT_OBJS)
+-	$(CC) -o $@ $(CLIENT_OBJS) $(LIBS)
++	$(CC) -o $@ $(CLIENT_OBJS) $(LDFLAGS) $(LIBS)
+ 
+ parse_lex.c: parse.lex
+ 	$(LEX) -oparse_lex.c parse.lex

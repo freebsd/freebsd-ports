@@ -1,0 +1,35 @@
+$FreeBSD$
+
+--- man/powerman.1.orig	Fri Oct 17 12:42:58 2003
++++ man/powerman.1	Thu Jun 10 08:38:06 2004
+@@ -152,22 +152,22 @@
+     powerman --on "foo[0,4-5]"
+ .fi
+ .SH "FILES"
+-/usr/sbin/powermand
++%%PREFIX%%/sbin/powermand
+ .br
+-/usr/bin/powerman
++%%PREFIX%%/bin/powerman
+ .br
+-/usr/bin/pm
++%%PREFIX%%/bin/pm
+ .br
+-/usr/bin/on
++%%PREFIX%%/bin/on
+ .br
+-/usr/bin/off
++%%PREFIX%%/bin/off
+ .br
+-/etc/powerman/powerman.conf
++%%PREFIX%%/etc/powerman.conf
+ .br
+-/etc/powerman/*.dev
++%%PREFIX%%/etc/powerman/*.dev
+ .SH "ORIGIN"
+ Developed by Andrew  Uselton <useton2@llnl.gov> on LLNL's Linux 
+ clusters.  This software is open source and distributed under
+ the terms of the Gnu GPL.  
+ .SH "SEE ALSO"
+-powermand(1) powerman.conf(5)
++powermand(8) powerman.conf(5)
