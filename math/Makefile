@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.30 1997/06/18 12:16:03 tg Exp $
+# $Id: Makefile,v 1.31 1997/06/21 20:51:44 max Exp $
 #
 
     SUBDIR += Scilab
@@ -7,6 +7,7 @@
     SUBDIR += calc
     SUBDIR += calctool
     SUBDIR += eispack
+    SUBDIR += femlab
     SUBDIR += fftpack
     SUBDIR += freefem
     SUBDIR += fudgit
