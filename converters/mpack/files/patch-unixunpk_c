@@ -1,0 +1,12 @@
+$OpenBSD: patch-unixunpk_c,v 1.1 2002/08/09 01:15:19 naddy Exp $
+--- unixunpk.c.orig	Fri Aug  9 02:44:18 2002
++++ unixunpk.c	Fri Aug  9 02:44:38 2002
+@@ -100,7 +100,7 @@ char **argv;
+ 
+ usage() {
+     fprintf(stderr, "munpack version %s\n", MPACK_VERSION);
+-    fprintf(stderr, "usage: munpack [-f] [-q] [-C directory] [files...]\n");
++    fprintf(stderr, "usage: munpack [-f] [-q] [-t] [-C directory] [files...]\n");
+     exit(1);
+ }
+ 
