@@ -4879,6 +4879,7 @@ openmcu		ports/net/openmcu
 opennap		ports/audio/opennap
 openoffice	ports/editors/openoffice
 openquicktime	ports/graphics/openquicktime
+opera		ports/www/opera
 opensched	ports/textproc/opensched
 openslp		ports/net/openslp
 openssh		src/crypto/openssh
