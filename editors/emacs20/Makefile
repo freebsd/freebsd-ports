@@ -21,6 +21,8 @@ MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	GNU editing macros
 
 ONLY_FOR_ARCHS=	i386 alpha
+DEPRECATED=	"editors/emacs is recommended instead for new installations"
+
 USE_AUTOCONF_VER=213
 USE_GMAKE=	yes
 EMACS_VER=	20.7
