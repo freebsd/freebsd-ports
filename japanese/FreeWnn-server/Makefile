@@ -3,7 +3,7 @@
 # Date created:		22 November 1994
 # Whom:			asami
 #
-# $id: Makefile,v 1.0 1994/10/21 00:00:00 asami Exp $
+# $Id:$
 #
 
 DISTNAME=	Wnn4.2
