@@ -28,6 +28,7 @@ CONFIGURE_ENV=	SDLCONF=${SDL_CONFIG}
 PLIST_FILES=	include/gai/gai.h lib/libgai.so.0.5.2 lib/libgai.so.0 \
 		lib/libgai.so libdata/pkgconfig/gai.pc
 PLIST_DIRS=	include/gai
+INSTALLS_SHLIB=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|sdl-config --|${SDL_CONFIG} --|g" ${WRKSRC}/configure
