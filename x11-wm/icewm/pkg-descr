@@ -1,3 +1,6 @@
 cool window manager developped in a very hot day in a winter
 
+When you want titlebars to be bottom,
+ % make -DTITLE_BOTTOM install
+
 'bsd-daemon.xpm' is from Steve Farrell.
