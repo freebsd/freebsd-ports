@@ -1,0 +1,27 @@
+--- gnat/Makefile.in.orig	Mon Dec  4 18:56:39 2000
++++ gnat/Makefile.in	Mon Dec  4 18:57:03 2000
+@@ -4,19 +4,19 @@
+ all: g-expect.o gexpect.o g-regpat.o gexpect_tty.o g-exptty.o
+ 
+ g-expect.o: g-expect.adb g-expect.ads
+-	gcc -c -gnatg $(CFLAGS) $<
++	$(CC) -c -gnatg $(CFLAGS) $<
+ 
+ gexpect.o: gexpect.c Makefile
+-	gcc -c $(ALL_CFLAGS) $<
++	$(CC) -c $(ALL_CFLAGS) $<
+ 
+ g-regpat.o: g-regpat.adb g-regpat.ads
+-	gcc -c -gnatg $(CFLAGS) $<
++	$(CC) -c -gnatg $(CFLAGS) $<
+ 
+ g-exptty.o: g-exptty.adb g-exptty.ads g-expect.ads
+-	gcc -c -gnatg $(CFLAGS) g-exptty.adb
++	$(CC) -c -gnatg $(CFLAGS) g-exptty.adb
+ 
+ gexpect_tty.o: gexpect_tty.c Makefile
+-	gcc -c $(ALL_CFLAGS) $<
++	$(CC) -c $(ALL_CFLAGS) $<
+ 
+ clean:
+ 	rm -f *.o *.ali *~ b~*
