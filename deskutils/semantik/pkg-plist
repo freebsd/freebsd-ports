@@ -60,12 +60,16 @@ share/mimelnk/application/x-kdissert.desktop
 @unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/128x128/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/128x128 2>/dev/null || true
+@dirrm share/icons/crystalsvg/64x64/actions/kdissert
 @unexec rmdir %D/share/icons/crystalsvg/64x64/actions 2>/dev/null || true
 @unexec rmdir %D/share/icons/crystalsvg/64x64 2>/dev/null || true
+@dirrm share/icons/crystalsvg/32x32/actions/kdissert
 @unexec rmdir %D/share/icons/crystalsvg/32x32/actions 2>/dev/null || true
 @unexec rmdir %D/share/icons/crystalsvg/32x32 2>/dev/null || true
+@dirrm share/icons/crystalsvg/22x22/actions/kdissert
 @unexec rmdir %D/share/icons/crystalsvg/22x22/actions 2>/dev/null || true
 @unexec rmdir %D/share/icons/crystalsvg/22x22 2>/dev/null || true
+@dirrm share/icons/crystalsvg/128x128/actions/kdissert
 @unexec rmdir %D/share/icons/crystalsvg/128x128/actions 2>/dev/null || true
 @unexec rmdir %D/share/icons/crystalsvg/128x128 2>/dev/null || true
 @unexec rmdir %D/share/icons/crystalsvg 2>/dev/null || true
