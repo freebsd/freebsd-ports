@@ -1,24 +1,24 @@
 # New ports collection Makefile for: rxvt
-# Version required:     2.4.11
+# Version required:     2.6.PRE2
 # Date created:         Nov 16 1997
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
-# $Id: Makefile,v 1.8 1998/12/09 05:05:32 vanilla Exp $
+# $Id: Makefile,v 1.9 1999/01/17 07:34:26 vanilla Exp $
 #
 
-DISTNAME=	rxvt-2.4.11
-PKGNAME=	zh-rxvt-2.4.11
+DISTNAME=	rxvt-2.6.PRE2
+PKGNAME=	zh-rxvt-2.6.PRE2
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://mason.primenet.com.au/pub/rxvt/ \
 		ftp://ftp.math.fu-berlin.de/pub/rxvt/
 
 MAINTAINER=	frankch@waru.life.nthu.edu.tw
 
-RUN_DEPENDS=	${X11BASE}/bin/xcin:${PORTSDIR}/chinese/xcin
+BUILD_DEPENDS=	yodl2man:${PORTSDIR}/textproc/yodl
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-big5=yes --enable-xcin=yes
+CONFIGURE_ARGS=	--enable-big5=yes --enable-xim=yes
 MAN1=		crxvt.1
 
 .include <bsd.port.mk>
