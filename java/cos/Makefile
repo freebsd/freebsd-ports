@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cos
-PORTVERSION=	21May2001
+PORTVERSION=	19Jun2001
 CATEGORIES=	java
 MASTER_SITES=	http://www.servlets.com/cos/
 
@@ -27,6 +27,7 @@ do-install:
 	@cd ${WRKSRC}; \
 	  ${CP} readme.html ${PREFIX}/share/java/cos; \
 	  ${CP} license.html ${PREFIX}/share/java/cos; \
-	  ${CP} -R doc ${PREFIX}/share/java/cos
+	  ${CP} -R doc ${PREFIX}/share/java/cos; \
+	  ${CP} upload.war ${PREFIX}/share/java/cos/doc
 
 .include <bsd.port.mk>
