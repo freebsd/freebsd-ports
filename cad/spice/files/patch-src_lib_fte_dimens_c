@@ -1,5 +1,5 @@
---- src/lib/fte//dimens.c.orig	Sun Apr 25 18:03:19 1993
-+++ src/lib/fte//dimens.c	Thu Sep 30 10:02:10 1999
+--- src/lib/fte/dimens.c.orig	Sun Apr 25 18:03:19 1993
++++ src/lib/fte/dimens.c	Thu Sep 30 10:02:10 1999
 @@ -21,9 +21,21 @@
  {
      int i;

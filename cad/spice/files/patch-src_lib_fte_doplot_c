@@ -1,5 +1,14 @@
---- src/lib/fte/doplot.c.orig	Fri Mar 22 21:02:55 2002
-+++ src/lib/fte/doplot.c	Fri Mar 22 22:14:07 2002
+--- src/lib/fte/doplot.c.orig	Sun Apr 25 23:48:45 1993
++++ src/lib/fte/doplot.c	Mon Feb 26 18:03:20 2001
+@@ -117,7 +117,7 @@
+     }
+ 
+     if (!cp_getvar("hcopydevtype", VT_STRING, buf)) {
+-        devtype = "plot5";
++        devtype = "postscript";
+     } else {
+         devtype = buf;
+     }
 @@ -147,10 +147,23 @@
  	      DevSwitch(NULL);
  	      return;

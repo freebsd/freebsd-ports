@@ -1,0 +1,23 @@
+#  spice3f4/3f5 patch level 1
+#  June 22, 1994
+#  Anthony Parker (tonyp@mpce.mq.edu.au)
+#  Macquarie University, Sydney Australia 2109 
+#
+--- src/lib/dev/mos6/mos6itf.h.orig	Mon Sep 28 03:25:22 1992
++++ src/lib/dev/mos6/mos6itf.h	Thu Jul 17 00:21:33 2003
+@@ -46,13 +46,8 @@
+     NULL, /* MOS6acLoad, XXX */
+     NULL,
+     MOS6destroy,
+-#ifdef DELETES
+-    MOS6mDelete,
+-    MOS6delete,
+-#else /* DELETES */
+-    NULL,
+-    NULL,
+-#endif /* DELETES */
++    NULL, /* DELETES */
++    NULL,/* DELETES */
+     MOS6getic,
+     MOS6ask,
+     MOS6mAsk,

@@ -1,0 +1,67 @@
+--- src/lib/fte/x11.c.orig	Thu Jul 17 10:55:00 2003
++++ src/lib/fte/x11.c	Thu Jul 17 11:39:05 2003
+@@ -120,7 +120,10 @@
+ 	/* "invert" works better than "xor" for B&W */
+ 
+ 	/* xor gc should be a function of the pixels that are written on */
+-	gcvalues.function = GXxor;
++	/* gcvalues.function = GXxor; */
++	/* this patch makes lines visible on true color displays
++           Guenther Roehrich 22-Jan-99 */
++	gcvalues.function = GXinvert;
+ 	gcvalues.line_width = 1;
+ 	gcvalues.foreground = 1;
+ 	gcvalues.background = 0;
+@@ -302,7 +305,7 @@
+ 	return (0);
+ }
+ 
+-static
++/* PN static */
+ initlinestyles()
+ {
+ 
+@@ -318,7 +321,7 @@
+ 	return;
+ }
+ 
+-static
++/* PN static */
+ initcolors(graph)
+     GRAPH *graph;
+ {
+@@ -805,11 +808,13 @@
+ {
+ 
+ 	GRAPH *graph = (GRAPH *) client_data;
++	Widget w;
+ 
+ 	/* Iplots are done asynchronously */
+ 	DEVDEP(graph).isopen = 0;
++	w = DEVDEP(graph).shell;
+ 	DestroyGraph(graph->graphid);
+-	XtDestroyWidget(DEVDEP(graph).shell);
++	XtDestroyWidget(w);
+ 
+ }
+ 
+@@ -945,7 +950,8 @@
+ 	            1 << ConnectionNumber(display);
+ 
+ 	      /* block on ConnectionNumber and request->fp */
+-	      select(nfds + 1, &readfds, (int *) NULL, (int *) NULL, NULL);
++	      /* PN added fd_set * casting */
++	      select(nfds + 1, (fd_set *) &readfds, (fd_set *) NULL, (fd_set *) NULL, NULL);
+ 
+ 	      /* handle X events first */
+ 	      if (readfds & (1 << ConnectionNumber(display))) {
+@@ -998,7 +1004,8 @@
+ 
+ }
+ 
+-static X_ScreentoData(graph, x, y, fx, fy)
++/* PN static */ 
++X_ScreentoData(graph, x, y, fx, fy)
+ GRAPH *graph;
+ int x,y;
+ double *fx, *fy;

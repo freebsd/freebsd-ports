@@ -1,0 +1,31 @@
+*** src/include/misc.h.orig	Thu Dec  1 09:17:02 1994
+--- src/include/misc.h	Sun Mar 31 12:32:58 1996
+***************
+*** 86,92 ****
+--- 86,94 ----
+  extern char *realloc();
+  extern char *getenv();
+  extern int errno;
++ #ifndef __FreeBSD__
+  extern char *sys_errlist[];
++ #endif
+  extern char *getenv();
+  extern char *getwd();
+  extern int rand();
+***************
+*** 111,122 ****
+--- 111,124 ----
+  #    endif /* clearerr */
+  #  endif /* HAS_CLEARERR */
+  
++ #ifndef __FreeBSD__
+  #  ifndef bzero
+  extern int bzero();
+  #  endif
+  #  ifndef bcopy
+  extern void bcopy();
+  #  endif
++ #endif /* __FreeBSD__ */
+  
+  #  ifndef index
+  #    ifdef HAS_INDEX

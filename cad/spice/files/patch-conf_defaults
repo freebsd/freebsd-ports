@@ -1,0 +1,45 @@
+--- conf/defaults.orig	Thu Jul 17 16:40:51 2003
++++ conf/defaults	Thu Jul 17 16:51:19 2003
+@@ -65,7 +65,7 @@
+ #	the following definition:
+ #		SYS_DIR		= $(DIST_DIR)
+ 
+-SYS_DIR		= $(TOP1)/$(SYSTEM)
++SYS_DIR		= $(TOP0)/$(SYSTEM)
+ 
+ #	OBJ_TOP is the directory in which intermidiate files reside
+ #	These are ".o" files, synthesized ".c" files, ".a" files,
+@@ -105,12 +105,12 @@
+ #	identified as and SYSTEM is the name of the per-system definitions
+ #	file listed on the "build" command line.
+ 
+-SPICE_DIR	= $(TOP1)/$(SYSTEM)
+-SPICE_LIB_DIR	= $(SPICE_DIR)/lib
++SPICE_DIR	= ${PREFIX}
++SPICE_LIB_DIR	= $(SPICE_DIR)/share/spice
+ SPICE_EXEC_DIR	= $(SPICE_DIR)/bin
+ 
+ S_SPICE_DIR	= $(SPICE_DIR)
+-S_SPICE_LIB_DIR	= $(S_SPICE_DIR)/lib
++S_SPICE_LIB_DIR	= $(S_SPICE_DIR)/share/spice
+ S_SPICE_EXEC_DIR= $(S_SPICE_DIR)/bin
+ 
+ #	INSTALL_DIRS lists the directories that need to be created before
+@@ -133,7 +133,7 @@
+ 
+ #	CC_OPT: Default compile options (optimization/debug level, other)
+ 
+-CC_OPT		= -O
++CC_OPT		=
+ 
+ #	CC_OPT_SAFE: Special compile options to override CC_OPT for code
+ #	which typically causes problems for most compilers (bsim1 and bsim2).
+@@ -203,7 +203,7 @@
+ #	X_DIR indicates the top of the X11 lib/include hierarchy; it is only
+ #	a convenience that is used in the following definitions.
+ 
+-X_DIR		= /usr
++X_DIR		= ${X11BASE}
+ 
+ #	INCX lists the X include directories.  This may be different between
+ #	MIT X11r5, X11r4, and your vendor's version of X11, though listing

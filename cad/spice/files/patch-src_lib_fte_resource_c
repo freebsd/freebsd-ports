@@ -1,0 +1,12 @@
+--- src/lib/fte/resource.c.orig	Wed Apr 28 17:39:03 1993
++++ src/lib/fte/resource.c	Thu Jul 17 00:47:50 2003
+@@ -369,7 +369,9 @@
+ 	long x;
+ 	SIGNAL_TYPE	(*orig_signal)( );
+ 
++#ifndef __FreeBSD__
+ 	if (getenv("SPICE_NO_DATASEG_CHECK"))
++#endif
+ 		return 0;
+ 
+ 	low = 0;

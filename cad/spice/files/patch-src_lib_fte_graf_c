@@ -1,0 +1,30 @@
+--- src/lib/fte/graf.c.orig	Tue Jan  5 16:43:44 1993
++++ src/lib/fte/graf.c	Thu Jul 17 12:16:42 2003
+@@ -289,9 +289,11 @@
+ 		if (*tics == (double) np) {
+ 		    Text("x", (int) (tox - currentgraph->fontwidth / 2),
+ 			(int) (toy - currentgraph->fontheight / 2));
+-		    SaveText(currentgraph, "x",
++	       /* gr_redraw will redraw this w/o our having to save it
++                  Guenther Roehrich 22-Jan-99 */ 
++	       /*   SaveText(currentgraph, "x",
+ 			(int) (tox - currentgraph->fontwidth / 2),
+-			(int) (toy - currentgraph->fontheight / 2));
++			(int) (toy - currentgraph->fontheight / 2)); */
+ 		    break;
+ 		}
+ 	    }
+@@ -301,9 +303,11 @@
+ 	    /* Draw an 'x' */
+ 	    Text("x", (int) (tox - currentgraph->fontwidth / 2),
+ 		(int) (toy - currentgraph->fontheight / 2));
+-	    SaveText(currentgraph, "x",
++          /* gr_redraw will redraw this w/o our having to save it
++                  Guenther Roehrich 22-Jan-99 */ 
++	  /* SaveText(currentgraph, "x",
+ 		(int) (tox - currentgraph->fontwidth / 2),
+-		(int) (toy - currentgraph->fontheight / 2));
++		(int) (toy - currentgraph->fontheight / 2)); */
+ 	}
+         break;
+       case PLOT_COMB:

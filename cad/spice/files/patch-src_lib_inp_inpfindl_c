@@ -1,0 +1,107 @@
+--- src/lib/inp/inpfindl.c.orig	Mon Apr  8 23:41:39 1991
++++ src/lib/inp/inpfindl.c	Thu Jul 17 02:45:08 2003
+@@ -1,11 +1,13 @@
+ /**********
+ Copyright 1990 Regents of the University of California.  All rights reserved.
+ Author: 1985 Thomas L. Quarles
++Modified: 1999 Paolo Nenzi - Now we can use a two digits level code -
+ **********/
+ 
+-    /* INPfindLev(line)
++    /* INPfindLev(line,level)
+      *      find the 'level' parameter on the given line and return its
+-     *      value (1,2,or 3 for now, 1 default)
++     *      value (1,2,..,99 for now, 1 default)
++     *  NOTE: now limited to 9 for compatibility
+      */
+ 
+ #include "spice.h"
+@@ -24,58 +26,41 @@
+     char *where;
+ 
+     where = line;
+-
+-    while(1) {
+-        where = index(where,'l');
+-        if(where == 0) {    /* no 'l' in the line => no 'level' => default */
+-            *level = 1;
+-            return((char *)NULL);
+-        }
+-        if(strncmp(where,"level",5)!=0) {   /* this l isn't in the word 
+-                                             * 'level', so lets try again */
+-            where++;    /* make sure we don't match same char again */
+-            continue;
+-        }
+-        /* found the word level, lets look at the rest of the line */
+-        where += 5;
++    
++    where=strstr(line, "level");
++    
++    if (where!=NULL) {        /* found a level keyword on the line */
++        
++        where += 5;  /* skip the level keyword */
+         while( (*where == ' ') || (*where == '\t') || (*where == '=') ||
+                 (*where == ',') || (*where == '(') || (*where == ')') ||
+                 (*where == '+') ) { /* legal white space - ignore */
+-            where++;
++              where++;
+         }
++    
+         /* now the magic number */
+-        switch(*where) {
+-        case '1':
++        sscanf(where,"%2d",level);     /* We get the level number */
++        if (*level<0) {
++          *level=1;
++          return(INPmkTemp(" illegal (negative) argument to level parameter - level=1 assumed"));
++           } 
++        
++        if (*level>9) { /* Limit to change in the future */ 
+             *level=1;
++            return(INPmkTemp(" illegal (too high) argument to level parameter - level=1 assumed"));
++            }
++            
+             return((char *)NULL);
+-        case '2':
+-            *level=2;
+-            return((char *)NULL);
+-        case '3':
+-            *level=3;
+-            return((char *)NULL);
+-        case '4':
+-            *level=4;
+-            return((char *)NULL);
+-        case '5':
+-            *level=5;
+-            return((char *)NULL);
+-        case '6':
+-            *level=6;
+-            return((char *)NULL);
+-        case '7':
+-            *level=7;
+-            return((char *)NULL);
+-        case '8':
+-            *level=8;
+-            return((char *)NULL);
+-        case '9':
+-            *level=9;
+-            return((char *)NULL);
+-        default:
+-            *level=1;
+-            return(INPmkTemp(
+-                    " illegal argument to level parameter - level=1 assumed"));
+-        }
+-    }
++          }     
++    
++
++    
++    else {                  /* no level on the line => default */
++      *level = 1;
++      return((char *)NULL);
++      }
++      
++  
++        
++        
+ }

@@ -1,0 +1,26 @@
+--- src/bin/sconvert.c.orig	Mon Sep 14 21:30:41 1992
++++ src/bin/sconvert.c	Thu Jul 17 00:47:50 2003
+@@ -80,19 +80,19 @@
+ 
+         case 1: printf("Input file: ");
+             (void) fflush(stdout);
+-            (void) gets(buf);
++            (void) fgets(buf,BSIZE_SP,stdin);
+             sf = copy(buf);
+             printf("Input type: ");
+             (void) fflush(stdout);
+-            (void) gets(buf);
++            (void) fgets(buf,BSIZE_SP,stdin);
+             f = buf[0];
+             printf("Output file: ");
+             (void) fflush(stdout);
+-            (void) gets(buf);
++            (void) fgets(buf,BSIZE_SP,stdin);
+             af = copy(buf);
+             printf("Output type: ");
+             (void) fflush(stdout);
+-            (void) gets(buf);
++            (void) fgets(buf,BSIZE_SP,stdin);
+             t = buf[0];
+             break;
+         default:

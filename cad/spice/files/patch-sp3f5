@@ -1,4 +1,4 @@
-NOTE: This are Berkeley patches for 3F4
+These are official Berkeley fixes for sp3f4
 *** src/lib/fte/grid.c.orig	Sun Apr 25 14:53:11 1993
 --- src/lib/fte/grid.c	Sat Jan 29 10:47:59 1994
 ***************

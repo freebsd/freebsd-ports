@@ -1,0 +1,11 @@
+--- util/build.orig	Thu Jul 29 03:46:39 1993
++++ util/build	Thu Jul 17 00:47:50 2003
+@@ -96,7 +96,7 @@
+ 
+ TMP_LEADER="${TMP_DIR}/buildl$$"
+ TMP_TRAILER="${TMP_DIR}/buildt$$"
+-trap 'rm -f ${TMP_LEADER} ${TMP_TRAILER}; exit 1' 1 2 3 4 6 7 8 9 10 12 13 14 15
++trap 'rm -f ${TMP_LEADER} ${TMP_TRAILER}; exit 1' 1 2 3 4 6 7 8 10 12 13 14 15
+ echo > "${TMP_TRAILER}"
+ BAD=false
+ DEBUG=
