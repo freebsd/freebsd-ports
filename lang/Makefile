@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.45 1996/03/07 01:54:35 asami Exp $
+# $Id: Makefile,v 1.46 1996/03/20 22:31:15 jdp Exp $
 #
 
     SUBDIR += Gofer
@@ -11,7 +11,7 @@
     SUBDIR += forth
     SUBDIR += g77
     SUBDIR += gcl
-    BROKEN += gnat   # not really broken, just requires existing gnat compiler
+    SUBDIR += gnat
     SUBDIR += guile-iii
     SUBDIR += icon
     SUBDIR += itcl
