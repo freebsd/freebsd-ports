@@ -1,5 +1,8 @@
---- libnautilus-private/nautilus-volume-monitor.c.orig	Wed Aug 28 09:37:20 2002
-+++ libnautilus-private/nautilus-volume-monitor.c	Wed Sep 11 02:04:23 2002
+
+$FreeBSD$
+
+--- libnautilus-private/nautilus-volume-monitor.c.orig	Wed Aug 28 16:37:20 2002
++++ libnautilus-private/nautilus-volume-monitor.c	Wed Sep 11 16:39:15 2002
 @@ -59,6 +59,18 @@
  #include <sys/types.h>
  #include <unistd.h>
@@ -135,6 +138,15 @@
  
  static gboolean
  volume_is_removable (const NautilusVolume *volume)
+@@ -885,7 +924,7 @@
+ 	char *command;	
+ 	
+ 	if (path != NULL) {
+-		command = g_strdup_printf ("eject %s", path);	
++		command = g_strdup_printf ("/usr/sbin/cdcontrol -f %s eject", path);	
+ 		eel_gnome_shell_execute (command);
+ 		g_free (command);
+ 	}
 @@ -963,23 +1002,34 @@
  
  
