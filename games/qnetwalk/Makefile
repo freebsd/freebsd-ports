@@ -12,6 +12,8 @@ MASTER_SITES=	http://qt.osdn.org.ua/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt-version of the NetWalk game
 
+BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
+
 USE_QT_VER=	3
 QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 QMAKE?=		qmake
