@@ -6,28 +6,28 @@
 #
 
 PORTNAME=	AcePerl
-PORTVERSION=	1.67
+PORTVERSION=	1.70
 CATEGORIES=	biology databases perl5
-MASTER_SITES=	http://stein.cshl.org/AcePerl/archive/ \
-		${MASTER_SITE_PERL_CPAN}
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=Ace
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bio@freebsd.net
 
-PERL_CONFIGURE=	YES
+PERL_CONFIGURE=	yes
 
-MAN3=		Ace::Sequence::Feature.3 \
-		Ace::Sequence.3 \
-		Ace.3 \
-		Ace::Sequence::FeatureList.3 \
-		Ace::Sequence::Multi.3 \
-		Ace::Sequence::Homol.3 \
-		Ace::Object.3 \
-		Ace::Local.3 \
-		Ace::Iterator.3 \
-		Ace::Model.3
-
+MAN3=		Ace.3 Ace::Browser::AceSubs.3 Ace::Graphics::Fk.3 \
+		Ace::Graphics::Glyph.3 Ace::Graphics::Glyph::anchored_arrow.3 \
+		Ace::Graphics::Glyph::arrow.3 Ace::Graphics::Glyph::group.3 \
+		Ace::Graphics::Glyph::line.3 Ace::Graphics::Glyph::primers.3 \
+		Ace::Graphics::Glyph::segments.3 \
+		Ace::Graphics::Glyph::transcript.3 \
+		Ace::Graphics::GlyphFactory.3 Ace::Graphics::Panel.3 \
+		Ace::Graphics::Track.3 Ace::Iterator.3 Ace::Local.3 \
+		Ace::Model.3 Ace::Object.3 Ace::Sequence.3 \
+		Ace::Sequence::Feature.3 Ace::Sequence::FeatureList.3 \
+		Ace::Sequence::GappedAlignment.3 Ace::Sequence::Homol.3 \
+		Ace::Sequence::Multi.3 Ace::Sequence::Transcript.3
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 post-patch:
