@@ -3,7 +3,7 @@
 # Date created:         Tue Dec 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.5 1997/11/03 17:39:57 obrien Exp $
+# $Id: Makefile,v 1.6 1998/10/16 00:35:00 jseger Exp $
 #
 
 DISTNAME=	vnelvis
@@ -15,10 +15,12 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=     obrien@FreeBSD.org
 
-BROKEN_ELF=	yes
-
 CFLAGS+=	-I../../include
 MAN1=		vnelvis.1 vnvi.1
+
+post-extract:
+	@ cd ${WRKSRC} ; make clean
+	@ cd ${WRKSRC}/../lib ; make clean
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/vnelvis.1V ${PREFIX}/man/man1/vnelvis.1
