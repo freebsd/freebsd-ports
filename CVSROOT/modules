@@ -7258,6 +7258,7 @@ pear-Net_URL	ports/net/pear-Net_URL
 pear-OLE	ports/devel/pear-OLE
 pear-PEAR	ports/devel/pear-PEAR
 pear-PHPUnit	ports/devel/pear-PHPUnit
+pear-SOAP	ports/net/pear-SOAP
 pear-Spreadsheet_Excel_Writer ports/textproc/pear-Spreadsheet_Excel_Writer
 pear-Text_Password	ports/security/pear-Text_Password
 pear-VFS	ports/devel/pear-VFS
