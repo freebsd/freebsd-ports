@@ -6,28 +6,20 @@
 #
 
 PORTNAME=	kallery
-PORTVERSION=	1.0.2
-PORTREVISION=	4
-CATEGORIES=	graphics kde
-MASTER_SITES=	http://www.virtualartisans.com/kde/andras/kallery/
-MASTER_SITE_SUBDIR=	${PORTNAME}
+PORTVERSION=	1.0.7a
+CATEGORIES=	graphics www kde
+MASTER_SITES=	http://kallery.kdewebdev.org/releases/
 
 MAINTAINER=		metrol@metrol.net
 COMMENT=	An image gallery generator for KDE
 
 LIB_DEPENDS=	Magick.7:${PORTSDIR}/graphics/ImageMagick
 
-BROKEN=		Checksum mismatch
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
-
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-CONFIGURE_TARGET=
-CONFIGURE_ARGS+=	--prefix=${LOCALBASE}
 
 .include <bsd.port.pre.mk>
 
