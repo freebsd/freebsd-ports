@@ -19,25 +19,20 @@ DISTFILES+=	easton.tar.gz mhc.tar.gz
 
 MAINTAINER=	patseal@hyperhost.net
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
-
 USE_X_PREFIX=	yes
-MAKE_ENV=	GTK_CONFIG=${GTK_CONFIG}
-PLIST=      ${WRKDIR}/PLIST
+USE_GTK=	yes
+PLIST=		${WRKDIR}/PLIST
 
-DATAFILES= ${WRKDIR}/kjv/kjv
+DATAFILES=	${WRKDIR}/kjv/kjv
+PLISTS=		${PKGDIR}/PLIST
 .if defined(WITH_TRANSLATIONS)
-DATAFILES+= ${WRKDIR}/asv/asv ${WRKDIR}/darby/darby
-PLISTS+= ${PKGDIR}/PLIST.translations
+DATAFILES+= 	${WRKDIR}/asv/asv ${WRKDIR}/darby/darby
+PLISTS+= 	${PKGDIR}/PLIST.translations
 .endif
 .if defined(WITH_SUPPLEMENTS)
-DATAFILES+= ${WRKDIR}/easton/easton.dict ${WRKDIR}/mhc/mhc
-PLISTS+= ${PKGDIR}/PLIST.supplements
+DATAFILES+= 	${WRKDIR}/easton/easton.dict ${WRKDIR}/mhc/mhc
+PLISTS+= 	${PKGDIR}/PLIST.supplements
 .endif
-
-PLISTS+=    ${PKGDIR}/PLIST
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 .if !defined(WITH_TRANSLATIONS)
 pre-fetch:
@@ -54,12 +49,11 @@ pre-fetch:
 .endif
 
 do-install:
-	@echo ${DATAFILES}
 	${INSTALL_PROGRAM} ${WRKSRC}/biblereader ${PREFIX}/bin/biblereader
 	${MKDIR} ${PREFIX}/share/biblereader
 	@for file in ${DATAFILES}; do \
 		${INSTALL_DATA} $${file} ${PREFIX}/share/biblereader; \
 	done
-	@cat ${PLISTS} > ${PLIST}
+	@${CAT} ${PLISTS} > ${PLIST}
 
 .include <bsd.port.mk>

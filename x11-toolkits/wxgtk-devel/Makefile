@@ -13,30 +13,32 @@ DISTNAME=	wxGTK-${PORTVERSION}
 
 MAINTAINER=	nectar@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		png.4:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 WRKSRC=		${WRKDIR}/wxGTK
 
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
 USE_X_PREFIX=	yes
 USE_NEWGCC=	yes
 USE_GMAKE=	yes
+USE_GTK=	yes
 USE_AUTOCONF=	yes
+INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-libpng=sys \
 		--with-libjpeg=sys \
 		--with-libtiff=sys \
 		--with-zlib=sys
-CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
-		CPPFLAGS="-D_THREAD_SAFE -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-D_THREAD_SAFE -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-INSTALLS_SHLIB=	yes
+
 AUTOCONF=	autoconf && \
 			${PERL} -pi -e 's|-l\$$THREADS_LIB|-pthread|g ; \
 					s|-l\$$THREADS_LINK|-pthread|g' \
 						${WRKSRC}/configure
+
+post-install:
+	@${RM} -rf ${PREFIX}/include/wx/motif
+	@${RM} -rf ${PREFIX}/include/wx/msw
 
 .include <bsd.port.mk>

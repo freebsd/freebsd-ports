@@ -1,0 +1,20 @@
+--- configure.orig	Wed Mar 31 08:00:59 1999
++++ configure	Fri Feb 11 00:28:01 2000
+@@ -860,7 +860,7 @@
+ 
+ 
+ 
+-CFLAGS=""
++#CFLAGS=""
+ if test x${CXXFLAGS+set} = xset ; then
+   :
+ else
+@@ -2835,7 +2835,7 @@
+ s%@host_os@%$host_os%g
+ s%@LN_S@%$LN_S%g
+ s%@GTK_CONFIG@%$GTK_CONFIG%g
+-s%@GTK_CFLAGS@%$GTK_CFLAGS%g
++s%@GTK_CFLAGS@%$CFLAGS $GTK_CFLAGS%g
+ s%@GTK_LIBS@%$GTK_LIBS%g
+ s%@CPP@%$CPP%g
+ s%@NEED_LIBIMPORT_TRUE@%$NEED_LIBIMPORT_TRUE%g

@@ -186,16 +186,16 @@ lib/gtkmm/proc/gtkconvert.m4
 lib/gtkmm/proc/gtkmmproc
 lib/gtkmm/proc/list.m4
 lib/gtkmm/proc/stage1.m4
-lib/libgdkmm.so
-lib/libgdkmm-1.2.so.1
 lib/libgdkmm.a
-lib/libgtkmm.so
-lib/libgtkmm-1.2.so.1
+lib/libgdkmm.so
+lib/libgdkmm.so.1
 lib/libgtkmm.a
+lib/libgtkmm.so
+lib/libgtkmm.so.1
 share/aclocal/gtk--.m4
-@dirrm include/gdk--
+@dirrm lib/gtkmm/proc
+@dirrm lib/gtkmm/include
+@dirrm lib/gtkmm
 @dirrm include/gtk--/private
 @dirrm include/gtk--
-@dirrm lib/gtkmm/include
-@dirrm lib/gtkmm/proc
-@dirrm lib/gtkmm
+@dirrm include/gdk--

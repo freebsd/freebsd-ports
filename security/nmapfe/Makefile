@@ -15,14 +15,13 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	obrien@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
 
 .include <bsd.port.pre.mk>
 
 USE_XLIB=	yes
+USE_GTK=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config"
 WRKSRC:=	${WRKDIR}/nmapfe
 
 do-install:

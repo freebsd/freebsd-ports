@@ -16,16 +16,10 @@ MASTER_SITES=	http://alpha1.linuxberg.com/files/x11/network/ \
 
 MAINTAINER=	billf@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		glib12.3:${PORTSDIR}/devel/glib12
-
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 USE_X_PREFIX=	yes
+USE_GTK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-snmp=no
-CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
-		GLIB_CONFIG="${GLIB_CONFIG}"
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 MAN1=		ethereal.1 tethereal.1 editcap.1

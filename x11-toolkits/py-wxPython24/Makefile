@@ -18,9 +18,10 @@ LIB_DEPENDS=	wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-USE_PYTHON=	YES
-USE_GMAKE=	YES
-USE_NEWGCC=	YES
+USE_GMAKE=	yes
+USE_NEWGCC=	yes
+USE_PYTHON=	yes
+USE_GTK=	yes
 MAKE_ENV=	"LN_S=${LN} -s" "INSTALL_DATA=${INSTALL_DATA}"
 ALL_TARGET=	default
 INSTALL_TARGET=	install-freebsd
@@ -30,8 +31,8 @@ TARGETDIR=	${PYTHON_SITELIBDIR}/wxPython
 HELPERLIBDIR=	${PREFIX}/lib
 
 do-configure:
-	${SED} 	-e "s:%CFLAGS%:${CFLAGS} `gtk12-config --cflags`:"   \
-		-e "s:%LFLAGS%:`gtk12-config --libs` -L${WRKSRC}:"   \
+	${SED} 	-e "s:%CFLAGS%:${CFLAGS} `${GTK_CONFIG} --cflags`:"   \
+		-e "s:%LFLAGS%:`${GTK_CONFIG} --libs` -L${WRKSRC}:"   \
 		-e "s:%TARGETDIR%:${TARGETDIR}:"		     \
 		-e "s:%HELPERLIBDIR%:${HELPERLIBDIR}:"		     \
 		-e "s:%CXX%:${CXX}:" -e "s:%WRKSRC%:${WRKSRC}:"      \

@@ -12,23 +12,27 @@ MASTER_SITES=	http://www.abo.fi/~jmunsin/gcombust/
 
 MAINTAINER=	bsdx@looksharp.net
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrecord \
 		mkisofs:${PORTSDIR}/sysutils/mkisofs \
 		cdlabelgen:${PORTSDIR}/print/cdlabelgen
 
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 USE_X_PREFIX=	yes
+USE_GTK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--without-included-gettext --datadir=${PREFIX}/share
-CONFIGURE_ENV+=	GTK_CONFIG=${GTK_CONFIG} CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+
+pre-patch:
+	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
 post-configure:
 	cd ${WRKSRC}/po && ${MAKE} update-po
 
 post-install:
-	${MKDIR} ${PREFIX}/share/doc/gcombust
+	@${MKDIR} ${PREFIX}/share/doc/gcombust
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/gcombust
 	${INSTALL_DATA} ${WRKSRC}/NEWS ${PREFIX}/share/doc/gcombust
 

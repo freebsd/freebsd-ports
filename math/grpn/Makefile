@@ -12,15 +12,12 @@ MASTER_SITES=	http://wilkins.ne.mediaone.net/grpn/
 
 MAINTAINER=	jedgar@fxp.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+USE_X_PREFIX=	yes
+USE_GTK=	yes
 
 ALL_TARGET=
-USE_X_PREFIX=	yes
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-MAKE_ENV+=	GTK_CONFIG=${GTK_CONFIG} \
-		X11BASE=${X11BASE}
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/grpn ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/grpn ${PREFIX}/bin
 
 .include <bsd.port.mk>

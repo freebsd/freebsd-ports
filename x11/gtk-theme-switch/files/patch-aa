@@ -7,8 +7,8 @@
 -LIBS = -L/usr/lib -L/usr/X11R6/lib -lgtk -lgdk -rdynamic -lgmodule -lglib -ldl -lXi -lXext -lX11 -lm
 +GCC = ${CC}
 +PREFIX?=/usr/local
-+CFLAGS += `${X11BASE}/bin/gtk12-config --cflags`
-+LIBS = `${X11BASE}/bin/gtk12-config --libs`
++CFLAGS += `${GTK_CONFIG} --cflags`
++LIBS = `${GTK_CONFIG} --libs`
  VERSION = 0.4
  all : gthemeswitch
  

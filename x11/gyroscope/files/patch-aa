@@ -28,4 +28,4 @@
  
  install:
 -	cp ./$(BINARYNAME) $(BIN_DIR)$(BINARYNAME)
-+	@/usr/bin/install -c -o 0 -g 0 -s -m 1755 ${BINARYNAME} ${BIN_DIR}/${BINARYNAME}
++	${BSD_INSTALL_PROGRAM} ${BINARYNAME} ${BIN_DIR}/${BINARYNAME}

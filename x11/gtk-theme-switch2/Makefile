@@ -12,10 +12,10 @@ MASTER_SITES=	http://www.muhri.net/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 
 USE_X_PREFIX=	yes
+USE_GTK=	yes
 
 .if !defined(NOPORTDOCS)
 post-install:
