@@ -1,0 +1,182 @@
+$NetBSD: patch-aa,v 1.2 1998/08/07 11:11:07 agc Exp $
+
+*** h/zephyr/zephyr.h.in.orig	1996/06/12 04:42:56
+--- h/zephyr/zephyr.h.in	1996/11/22 22:04:51
+***************
+*** 73,78 ****
+  /* Unique ID format */
+  typedef struct _ZUnique_Id_t {
+!     struct	in_addr zuid_addr;
+!     struct	timeval	tv;
+  } ZUnique_Id_t;
+  
+--- 73,78 ----
+  /* Unique ID format */
+  typedef struct _ZUnique_Id_t {
+!     struct		in_addr zuid_addr;
+!     ZEPHYR_INT32	zuid_sec, zuid_usec;
+  } ZUnique_Id_t;
+  
+*** lib/zephyr/ZParseNot.c.orig	1995/07/18 20:28:07
+--- lib/zephyr/ZParseNot.c	1996/11/22 22:04:52
+***************
+*** 154,161 ****
+      if (numfields) {
+  	if (ZReadAscii(ptr, end-ptr, (unsigned char *)&notice->z_uid,
+! 		       sizeof(ZUnique_Id_t)) == ZERR_BADFIELD)
+  	    BAD_PACKET;
+! 	notice->z_time.tv_sec = ntohl((u_long) notice->z_uid.tv.tv_sec);
+! 	notice->z_time.tv_usec = ntohl((u_long) notice->z_uid.tv.tv_usec);
+  	numfields--;
+  	next_field (ptr);
+--- 154,161 ----
+      if (numfields) {
+  	if (ZReadAscii(ptr, end-ptr, (unsigned char *)&notice->z_uid,
+! 		       sizeof(notice->z_uid)) == ZERR_BADFIELD)
+  	    BAD_PACKET;
+! 	notice->z_time.tv_sec = ntohl((u_long) notice->z_uid.zuid_sec);
+! 	notice->z_time.tv_usec = ntohl((u_long) notice->z_uid.zuid_usec);
+  	numfields--;
+  	next_field (ptr);
+***************
+*** 268,275 ****
+      if (numfields) {
+  	if (ZReadAscii(ptr, end-ptr, (unsigned char *)&notice->z_multiuid,
+! 		       sizeof(ZUnique_Id_t)) == ZERR_BADFIELD)
+  	    BAD_PACKET;
+! 	notice->z_time.tv_sec = ntohl((u_long) notice->z_multiuid.tv.tv_sec);
+! 	notice->z_time.tv_usec = ntohl((u_long) notice->z_multiuid.tv.tv_usec);
+  	numfields--;
+  	next_field (ptr);
+--- 268,275 ----
+      if (numfields) {
+  	if (ZReadAscii(ptr, end-ptr, (unsigned char *)&notice->z_multiuid,
+! 		       sizeof(notice->z_multiuid)) == ZERR_BADFIELD)
+  	    BAD_PACKET;
+! 	notice->z_time.tv_sec = ntohl((u_long) notice->z_multiuid.zuid_sec);
+! 	notice->z_time.tv_usec = ntohl((u_long) notice->z_multiuid.zuid_usec);
+  	numfields--;
+  	next_field (ptr);
+*** lib/zephyr/Zinternal.c.orig	1995/07/18 20:28:17
+--- lib/zephyr/Zinternal.c	1996/11/22 22:04:52
+***************
+*** 609,612 ****
+--- 609,613 ----
+      static char version[BUFSIZ]; /* default init should be all \0 */
+      struct sockaddr_in name;
++     struct timeval tv;
+      int namelen = sizeof(name);
+  
+***************
+*** 628,634 ****
+      notice->z_multinotice = "";
+      
+!     (void) gettimeofday(&notice->z_uid.tv, (struct timezone *)0);
+!     notice->z_uid.tv.tv_sec = htonl((u_long) notice->z_uid.tv.tv_sec);
+!     notice->z_uid.tv.tv_usec = htonl((u_long) notice->z_uid.tv.tv_usec);
+      
+      if ((retval = Z_GetMyAddr()) != ZERR_NONE)
+--- 629,635 ----
+      notice->z_multinotice = "";
+      
+!     (void) gettimeofday(&tv, (struct timezone *)0);
+!     notice->z_uid.zuid_sec = htonl((u_long) tv.tv_sec);
+!     notice->z_uid.zuid_usec = htonl((u_long) tv.tv_usec);
+      
+      if ((retval = Z_GetMyAddr()) != ZERR_NONE)
+***************
+*** 710,715 ****
+      ptr += strlen(ptr)+1;
+  
+!     if (ZMakeAscii(ptr, end-ptr, (unsigned char *)&notice->z_uid, 
+! 		   sizeof(ZUnique_Id_t)) == ZERR_FIELDLEN)
+  	return (ZERR_HEADERLEN);
+      ptr += strlen(ptr)+1;
+--- 711,716 ----
+      ptr += strlen(ptr)+1;
+  
+!     if (ZMakeAscii(ptr, end-ptr, (unsigned char *)&notice->z_uid,
+! 		   sizeof(notice->z_uid)) == ZERR_FIELDLEN)
+  	return (ZERR_HEADERLEN);
+      ptr += strlen(ptr)+1;
+***************
+*** 761,766 ****
+  	return (ZERR_HEADERLEN);
+  
+!     if (ZMakeAscii(ptr, end-ptr, (unsigned char *)&notice->z_multiuid, 
+! 		   sizeof(ZUnique_Id_t)) == ZERR_FIELDLEN)
+  	return (ZERR_HEADERLEN);
+      ptr += strlen(ptr)+1;
+--- 762,767 ----
+  	return (ZERR_HEADERLEN);
+  
+!     if (ZMakeAscii(ptr, end-ptr, (unsigned char *)&notice->z_multiuid,
+! 		   sizeof(notice->z_multiuid)) == ZERR_FIELDLEN)
+  	return (ZERR_HEADERLEN);
+      ptr += strlen(ptr)+1;
+***************
+*** 882,885 ****
+--- 883,887 ----
+      int offset, hdrsize, fragsize, ret_len, message_len, waitforack;
+      Code_t retval;
++     struct timeval tv;
+      
+      hdrsize = len-notice->z_message_len;
+***************
+*** 897,906 ****
+  	partnotice.z_multinotice = multi;
+  	if (offset > 0) {
+! 	    (void) gettimeofday(&partnotice.z_uid.tv,
+! 				(struct timezone *)0);
+! 	    partnotice.z_uid.tv.tv_sec =
+! 		htonl((u_long) partnotice.z_uid.tv.tv_sec);
+! 	    partnotice.z_uid.tv.tv_usec =
+! 		htonl((u_long) partnotice.z_uid.tv.tv_usec);
+  	    if ((retval = Z_GetMyAddr()) != ZERR_NONE)
+  		return (retval);
+--- 899,905 ----
+  	partnotice.z_multinotice = multi;
+  	if (offset > 0) {
+! 	    (void) gettimeofday(&tv, (struct timezone *)0);
+! 	    partnotice.z_uid.zuid_sec = htonl((u_long) tv.tv_sec);
+! 	    partnotice.z_uid.zuid_usec = htonl((u_long) tv.tv_usec);
+  	    if ((retval = Z_GetMyAddr()) != ZERR_NONE)
+  		return (retval);
+*** server/dispatch.c.orig	1996/06/06 05:56:58
+--- server/dispatch.c	1996/11/22 22:04:52
+***************
+*** 828,834 ****
+      /* search the not-yet-acked table for this packet, and flush it. */
+  #if 0
+!     zdbug((LOG_DEBUG, "nack_cancel: %s:%08X,%08X",
+  	   inet_ntoa(notice->z_uid.zuid_addr),
+! 	   notice->z_uid.tv.tv_sec, notice->z_uid.tv.tv_usec));
+  #endif
+      hashval = NACKTAB_HASHVAL(*who, notice->z_uid);
+--- 828,835 ----
+      /* search the not-yet-acked table for this packet, and flush it. */
+  #if 0
+!     zdbug((LOG_DEBUG, "nack_cancel: %s:%08lX,%08lX",
+  	   inet_ntoa(notice->z_uid.zuid_addr),
+! 	   (u_long) notice->z_uid.zuid_sec,
+! 	   (u_long) notice->z_uid.zuid_usec));
+  #endif
+      hashval = NACKTAB_HASHVAL(*who, notice->z_uid);
+***************
+*** 846,852 ****
+  
+  #if 1
+!     zdbug((LOG_DEBUG,"nack_cancel: nack not found %s:%08X,%08X",
+  	   inet_ntoa (notice->z_uid.zuid_addr),
+! 	   notice->z_uid.tv.tv_sec, notice->z_uid.tv.tv_usec));
+  #endif
+  }
+--- 847,854 ----
+  
+  #if 1
+!     zdbug((LOG_DEBUG,"nack_cancel: nack not found %s:%08lX,%08lX",
+  	   inet_ntoa (notice->z_uid.zuid_addr),
+! 	   (u_long) notice->z_uid.zuid_sec,
+! 	   (u_long) notice->z_uid.zuid_usec));
+  #endif
+  }
