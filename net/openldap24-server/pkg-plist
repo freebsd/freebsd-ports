@@ -93,3 +93,5 @@
 %%NO_SLAPD%%@unexec /bin/rmdir %D/etc/openldap 2>/dev/null || true
 %%NO_SLAPD%%@exec [ -d /var/db/openldap-data ] || /bin/mkdir /var/db/openldap-data
 %%NO_SLAPD%%@unexec /bin/rmdir /var/db/openldap-data 2>/dev/null || true
+%%NO_SLAPD%%@exec [ -d /var/run/ldap ] || /bin/mkdir /var/run/ldap
+%%NO_SLAPD%%@unexec /bin/rmdir /var/run/ldap 2>/dev/null || true

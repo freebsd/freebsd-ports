@@ -7,18 +7,18 @@ slapd_program=@@PREFIX@@/libexec/slapd
 # Uncomment one of the following:
 #
 # IPv4 Only
-#slapd_args='-h ldap://0.0.0.0'
+#slapd_args='-u ldap -g ldap -h ldap://0.0.0.0'
 #
 # IPv6 and IPv4
-#slapd_ags='-h "ldap://[::] ldap://0.0.0.0"'
+#slapd_ags='-u ldap -g ldap -h "ldap://[::] ldap://0.0.0.0"'
 #
 # IPv6 Only
-#slapd_args='-h ldap://[::]'
+#slapd_args='-u ldap -g ldap -h ldap://[::]'
 #
 #
-slapd_args=
+slapd_args="-u ldap -g ldap"
 
-pidfile=/var/run/slapd.pid
+pidfile=/var/run/ldap/slapd.pid
 
 case "$1" in
 start)
@@ -31,7 +31,6 @@ start)
 stop)
     if [ -f $pidfile ]; then
 	kill `cat $pidfile`
-	telnet localhost ldap </dev/null >/dev/null 2>&1
 	echo -n ' slapd'
 	rm $pidfile
     else

@@ -10,16 +10,20 @@
 # SLAPD_ONLY 	builds openldap21-slapd-PORTVERSION  (slapd and slapd tools)
 # SLURPD_ONLY 	builds openldap21-slurpd-PORTVERSION (slurpd only)
 # SERVERS_ONLY 	builds openldap21-servers-PORTVERSION (slapd and slurpd)
+# WITHOUT_SASL	do not build against sasl2
+#
+# OPENLDAP_STABLE an attempt to track the openldap stable branch
+#		It remains to be seen if this stays practical.
 #
 # $FreeBSD$
 #
 
 PORTNAME=	openldap21
-PORTVERSION=	2.1.17
-PORTREVISION=	0
+PORTVERSION=	2.1.20
+PORTREVISION=	1
 CATEGORIES=	net databases
 MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/		\
-		http://www.PlanetMirror.com/pub/openldap/%SUBDIR%/	\
+		http://public.planetmirror.com/pub/openldap/%SUBDIR%/	\
 		ftp://gd.tuwien.ac.at/infosys/network/OpenLDAP/%SUBDIR%/\
 		ftp://ftp.matrix.com.br/pub/openldap/%SUBDIR%/		\
 		ftp://ftp.ucr.ac.cr/pub/Unix/openldap/%SUBDIR%/		\
@@ -47,27 +51,42 @@ COMMENT=	Open source LDAP client and server software
 
 LIB_DEPENDS+=	db41:${PORTSDIR}/databases/db41
 
-CXXFLAGS+=	-D_REENTRANT ${PTHREAD_CFLAGS} -I${LOCALBASE}/include/db41
-CPPFLAGS+=	-D_REENTRANT ${PTHREAD_CFLAGS} -I${LOCALBASE}/include/db41
+CXXFLAGS+=	-D_REENTRANT ${PTHREAD_CFLAGS}	\
+		-I${LOCALBASE}/include		\
+		-I${LOCALBASE}/include/db41
+
+CPPFLAGS+=	-D_REENTRANT ${PTHREAD_CFLAGS} 	\
+		-I${LOCALBASE}/include		\
+		-I${LOCALBASE}/include/db41
+
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 USE_OPENSSL=	yes
 HAS_CONFIGURE=	yes
 
-CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS}" \
-		CPPFLAGS="${CPPFLAGS}" \
+CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS}"	\
+		CPPFLAGS="${CPPFLAGS}"	\
 		LDFLAGS="${LDFLAGS}"
 
 CONFIGURE_ARGS+=--prefix=${PREFIX} 	\
 		--enable-bdb		\
 		--enable-crypt
 
+.if defined(WITHOUT_SASL) 
+CONFIGURE_ARGS+=			\
+	--without-cyrus-sasl
+.else
+LIB_DEPENDS+=   sasl2:${PORTSDIR}/security/cyrus-sasl2
+CONFIGURE_ARGS+=			\
+	--with-cyrus-sasl		\
+	--enable-spasswd	
+.endif
+
 # ------------------------------------------------------------------------------
 # common configure
 #
 CONFIGURE_ARGS+=			\
 	--with-tls              	\
-	--without-cyrus-sasl		\
 	--localstatedir=/var/db
 
 # Include tcp-wrapper support
@@ -382,8 +401,8 @@ PLIST_SUB+=	NO_SLUPRD="@comment "
 post-patch:
 	@${CP} ${WRKSRC}/servers/slapd/slapd.conf \
 		${WRKSRC}/servers/slapd/slapd.conf.Dist
-	@${SED} -e '/^pidfile/s#%LOCALSTATEDIR%#/var/run#' \
-		-e '/^argsfile/s#%LOCALSTATEDIR%#/var/run#' \
+	@${SED} -e '/^pidfile/s#%LOCALSTATEDIR%#/var/run/ldap#' \
+		-e '/^argsfile/s#%LOCALSTATEDIR%#/var/run/ldap#' \
 		${WRKSRC}/servers/slapd/slapd.conf.Dist > \
 		${WRKSRC}/servers/slapd/slapd.conf
 
