@@ -15,7 +15,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	yoichi@eken.phys.nagoya-u.ac.jp
 
-RUN_DEPENDS=	tamago:${PORTSDIR}/editors/tamago
+RUN_DEPENDS=	${ELISPDIR}/egg/egg.el:${PORTSDIR}/editors/tamago
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
