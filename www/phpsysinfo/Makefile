@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	phpsysinfo
 MAINTAINER=	so14k@so14k.com
 COMMENT=	A php script that displays info about the host being accessed
 
-RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
+WANT_PHP_WEB=	yes
 
 PREFIX=		${LOCALBASE}
 WEBOWN?=	www
@@ -24,6 +24,9 @@ NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist
 
 PLIST_SUB+=	INSTALLDIR=${INSTALLDIR:S,^${PREFIX}/,,}
+
+.include <bsd.port.pre.mk>
+.include "${.CURDIR}/../../lang/php4/bsd.php.mk"
 
 post-patch:
 	rm -f ${PLIST}
@@ -40,4 +43,4 @@ do-install:
 	${CHMOD} -R ${BINMODE} ${INSTALLDIR}
 	${FIND} ${INSTALLDIR} ! -type d | ${XARGS} ${CHMOD} ${NOBINMODE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
