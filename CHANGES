@@ -10,6 +10,21 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20040316:
+	The print/freetype2 port has been updated to 2.1.7.  This update
+	changes some of the internal FreeType API.  Applications may need
+	to be patched to support this new API.  If a source files includes
+	freetype/freetype.h, make sure ft2build.h is included before
+	freetype/freetype.h.  The proper way to do this is:
+
+#include <ft2build.h>
+#include FT_FREETYPE_H
+
+	However, the following will work as well, but is deprecated:
+
+#include <ft2build.h>
+#include <freetype/freetype.h>
+
 20040314:
 	USE_LIBTOOL, USE_AUTOCONF, and USE_AUTOMAKE are now considered
 	deprecated, and will be removed on or around June 1st 2004.
