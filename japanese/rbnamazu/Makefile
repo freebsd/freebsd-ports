@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rbnamazu
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	japanese textproc ruby
 MASTER_SITES=	ftp://ftp.namazu.org/pub/namazu/ruby/
 DIST_SUBDIR=	ruby
