@@ -8573,6 +8573,7 @@ ruby-html-template	ports/textproc/ruby-html-template
 ruby-htmlcompact	ports/textproc/ruby-htmlcompact
 ruby-htmlrepair	ports/textproc/ruby-htmlrepair
 ruby-htmlsplit	ports/textproc/ruby-htmlsplit
+ruby-htree	ports/textproc/ruby-htree
 ruby-http-access	ports/www/ruby-http-access
 ruby-icmp	ports/net/ruby-icmp
 ruby-iconv	ports/converters/ruby-iconv
