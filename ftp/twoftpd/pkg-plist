@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/twoftpd-anon
 bin/twoftpd-anon-conf
 bin/twoftpd-auth
