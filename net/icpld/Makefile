@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icpld
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.ibiblio.org/icpld/download/
 
