@@ -3,7 +3,7 @@
 # Date created:		1 Aug 1997
 # Whom:			Pedro Giffuni (orig)
 #
-# $Id: Makefile,v 1.2 1997/09/17 03:23:35 asami Exp $
+# $Id: Makefile,v 1.3 1997/09/17 04:46:56 chuckr Exp $
 #
 
 DISTNAME=	Thot
@@ -30,5 +30,8 @@ ALL_TARGET=	all schemas
 
 post-extract:
 	($(EXTRACT_CMD) $(EXTRACT_BEFORE_ARGS) $(DISTDIR)/thoteditor-src-2.1b.tar.gz -C $(WRKSRC))
+
+post-install:
+	${MKDIR} ${PREFIX}/share/thot/doc
 
 .include <bsd.port.mk>
