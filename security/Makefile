@@ -138,6 +138,7 @@
     SUBDIR += sslproxy
     SUBDIR += sslwrap
     SUBDIR += sst
+    SUBDIR += steghide
     SUBDIR += strobe
     SUBDIR += stunnel
     SUBDIR += sudo
