@@ -3,7 +3,7 @@
 # Date created:		25 December 1994
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.4 1995/04/16 05:19:27 asami Exp $
+# $Id: Makefile,v 1.5 1995/04/17 07:54:44 joerg Exp $
 #
 
 DISTNAME=	cpm-1.1
@@ -15,8 +15,7 @@ WRKSRC=		${WRKDIR}/cpm
 #
 # need our own build target to pass PREFIX down to the make command
 #
-build: configure
-	@echo "===>  Building for ${DISTNAME}"
+do-build:
 	@(cd ${WRKSRC}; ${MAKE} PREFIX=${PREFIX} ${MAKE_FLAGS} ${MAKEFILE} all)
 
 

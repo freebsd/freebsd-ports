@@ -16,7 +16,4 @@ MAINTAINER=	jmb@FreeBSD.org
 
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 -f
 
-pre-install:
-	@mkdir -p ${PREFIX}/bin ${PREFIX}/man/man1
-
 .include <bsd.port.mk>

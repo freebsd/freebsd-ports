@@ -3,7 +3,7 @@
 # Date created:		2 Feb 1995
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.4 1995/04/11 02:34:03 asami Exp $
+# $Id: Makefile,v 1.5 1995/04/16 05:22:22 asami Exp $
 #
 
 
@@ -17,11 +17,11 @@ MAINTAINER=	me@FreeBSD.org
 
 DISTDIR=${PORTSDIR}/distfiles/${DISTNAME}
 SITE_DISTFILES= volume21/mmv/part01.Z volume21/mmv/part02.Z volume22/mmv.pch.Z
-NO_WRKSUBDIR=true
+NO_WRKSUBDIR=	yes
 
 # targets shamelessly hacked from the bsd.ports.mk file
 
-fetch: pre-fetch
+do-fetch:
 	@if [ ! -d ${DISTDIR} ]; then mkdir -p ${DISTDIR}; fi
 	@(cd ${DISTDIR}; \
 	 for file in ${SITE_DISTFILES}; do \
@@ -42,11 +42,10 @@ fetch: pre-fetch
 	    fi \
 	 done)
 
-extract: fetch work/.extract_done
+pre-extract:
+	chmod +x scripts/unshar scripts/makeitapatch
 
-work/.extract_done:
-	@${MAKE} ${.MAKEFLAGS} checksum pre-extract
-	@echo "===>  Extracting for ${DISTNAME}"
+do-extract:
 	@rm -rf ${WRKDIR}
 	@mkdir -p ${WRKDIR}/tmp
 	@(cd ${DISTDIR} ; for file in ${DISTFILES}; do \
@@ -61,17 +60,10 @@ work/.extract_done:
 	 ${SCRIPTDIR}/makeitapatch tmp/mmv.pch ; \
 	 mv tmp/mmv.pch ${PATCHDIR}/patch-0a ; \
 	 cat mmv.c.? >mmv.c ; rm mmv.c.? )
-	${TOUCH} ${TOUCH_FLAGS} ${EXTRACT_COOKIE}
 
-pre-extract:
-	chmod +x scripts/unshar scripts/makeitapatch
 
-install: build work/.install_done
-
-work/.install_done:
-	echo "===>  Installing for ${DISTNAME}"
-	(if [ ! -d ${PREFIX}/bin ] ; then mkdir -p ${PREFIX}/bin ; fi ; \
-	 cd ${PREFIX}/bin ; rm -f mmv mad mcp mln ; \
+do-install:
+	(cd ${PREFIX}/bin ; rm -f mmv mad mcp mln ; \
 	 cd ${WRKSRC}; \
 	 install ${COPY} ${STRIP} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE} \
 	  mmv ${PREFIX}/bin ; \
@@ -82,6 +74,5 @@ work/.install_done:
 	 if [ ! -d ${PREFIX}/man/man1 ]; then mkdir -p ${PREFIX}/man/man1; fi; \
 	 install ${COPY} -o ${BINOWN} -g ${BINGRP} \
 	  mmv.1.gz ${PREFIX}/man/man1 ; )
-	@${TOUCH} ${TOUCH_FLAGS} ${INSTALL_COOKIE}
 
 .include <bsd.port.mk>
