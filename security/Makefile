@@ -21,6 +21,7 @@
     SUBDIR += borzoi
     SUBDIR += botan
     SUBDIR += bro
+    SUBDIR += bubblegum
     SUBDIR += bugs
     SUBDIR += ca-roots
     SUBDIR += calife
