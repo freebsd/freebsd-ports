@@ -9,6 +9,8 @@ PORTNAME=	wrapper
 PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	x11
+DISTNAME=	# intentially left blank
+EXTRACT_SUFX=	# intentially left blank
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Wrapper for XFree86-4 server
