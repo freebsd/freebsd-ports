@@ -1,15 +1,1 @@
 bin/avinfo
-%%PORTDOCS%%%%DOCSDIR%%/faq
-%%PORTDOCS%%%%DOCSDIR%%/index
-%%PORTDOCS%%%%DOCSDIR%%/info_chunk
-%%PORTDOCS%%%%DOCSDIR%%/install
-%%PORTDOCS%%%%DOCSDIR%%/meta
-%%PORTDOCS%%%%DOCSDIR%%/readme
-%%PORTDOCS%%%%DOCSDIR%%/readme.ru
-%%PORTDOCS%%%%DOCSDIR%%/reklama.ru
-%%PORTDOCS%%%%DOCSDIR%%/reklama.txt
-%%PORTDOCS%%%%DOCSDIR%%/tech_note
-%%PORTDOCS%%%%DOCSDIR%%/todo
-%%PORTDOCS%%%%DOCSDIR%%/whatsnew
-%%PORTDOCS%%%%DOCSDIR%%/whatsnew.ru
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
