@@ -1,0 +1,29 @@
+include/sigcx-0.6/sigcx/bind3.h
+include/sigcx-0.6/sigcx/convert.h
+include/sigcx-0.6/sigcx/dispatch.h
+include/sigcx-0.6/sigcx/gtk_dispatch.h
+include/sigcx-0.6/sigcx/macros/bind3.h.m4
+include/sigcx-0.6/sigcx/macros/convert.h.m4
+include/sigcx-0.6/sigcx/macros/corba_base.h.m4
+include/sigcx-0.6/sigcx/macros/corba_convert.h.m4
+include/sigcx-0.6/sigcx/macros/corba_signal.h.m4
+include/sigcx-0.6/sigcx/macros/corba_slot.h.m4
+include/sigcx-0.6/sigcx/macros/corba_tunnel.h.m4
+include/sigcx-0.6/sigcx/macros/ref_slot.h.m4
+include/sigcx-0.6/sigcx/macros/template.macros.m4
+include/sigcx-0.6/sigcx/macros/tunnel.h.m4
+include/sigcx-0.6/sigcx/ref_slot.h
+include/sigcx-0.6/sigcx/thread.h
+include/sigcx-0.6/sigcx/thread_tunnel.h
+include/sigcx-0.6/sigcx/timeval.h
+include/sigcx-0.6/sigcx/tunnel.h
+include/sigcx-0.6/sigcx/util.h
+@dirrm include/sigcx-0.6/sigcx/macros
+@dirrm include/sigcx-0.6/sigcx
+@dirrm include/sigcx-0.6
+lib/libsigcx-0.6.so
+lib/libsigcx-0.6.so.0
+lib/libsigcx-gtk-0.6.so
+lib/libsigcx-gtk-0.6.so.0
+lib/pkgconfig/sigcx-0.6-gtk+.pc
+lib/pkgconfig/sigcx-0.6.pc

@@ -327,6 +327,7 @@
     SUBDIR += libshhopt
     SUBDIR += libsigc++
     SUBDIR += libsigc++12
+    SUBDIR += libsigcx
     SUBDIR += libslang
     SUBDIR += libstocks
     SUBDIR += libstrfunc
