@@ -1,5 +1,5 @@
---- ../Xspin4.0/xspin402.tcl.orig	Mon Apr  7 20:37:27 2003
-+++ ../Xspin4.0/xspin402.tcl	Mon Apr  7 20:40:10 2003
+--- ../Xspin4.0/xspin407.tcl.orig	Mon Apr  7 20:37:27 2003
++++ ../Xspin4.0/xspin407.tcl	Mon Apr  7 20:40:10 2003
 @@ -1,20 +1,4 @@
 -#!/bin/sh
 -# the next line restarts using wish \
