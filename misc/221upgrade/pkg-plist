@@ -1,0 +1,10 @@
+etc/mtree/BSD.x11.dist
+sbin/ldconfig
+usr/bin/info
+usr/bin/install-info
+usr/bin/makeinfo
+usr/bin/patch
+usr/share/mk/bsd.port.mk
+usr/share/mk/bsd.port.pre.mk
+usr/share/mk/bsd.port.post.mk
+usr/share/mk/bsd.port.subdir.mk
