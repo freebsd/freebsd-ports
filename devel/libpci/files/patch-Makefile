@@ -1,0 +1,13 @@
+--- Makefile.orig	Sat Jan  4 15:53:01 2003
++++ Makefile	Fri Jun 13 21:20:28 2003
+@@ -2,9 +2,7 @@
+ # Makefile for Linux PCI Utilities
+ # (c) 1998--2003 Martin Mares <mj@ucw.cz>
+ 
+-OPT=-O2 -fomit-frame-pointer
+-#OPT=-O2 -g
+-CFLAGS=$(OPT) -Wall -W -Wno-parentheses -Wstrict-prototypes
++CFLAGS += -Wall -W -Wno-parentheses -Wstrict-prototypes
+ 
+ VERSION=2.1.11
+ #SUFFIX=-pre2
