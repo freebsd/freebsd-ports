@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cal.rb
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	japanese deskutils
 MASTER_SITES=	http://aglaia.c.u-tokyo.ac.jp/~yamamoto/Script/Calendar/
 DISTFILES=	cal.rb Calendar.rb era_name
@@ -15,21 +15,18 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	fuyuki@hadaly.org
 COMMENT=	Displays a Japanese calendar
 
+EXTRACT_CMD=	${CP}
+EXTRACT_BEFORE_ARGS=
+EXTRACT_AFTER_ARGS=	${WRKSRC}
+
 USE_RUBY=	yes
 RUBY_SHEBANG_FILES=	${WRKSRC}/cal.rb
+NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-
-do-extract:
-	${MKDIR} ${WRKSRC}
-.for i in ${DISTFILES}
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/${i} ${WRKSRC}
-.endfor
 
 post-patch:
 	${RUBY} -i -pe 'sub "./era_name", "${DATADIR}/era_name"' \
 		${WRKSRC}/Calendar.rb
-	${RUBY} -i -pe '/Dir::chdir/ and print "#"' \
-		${WRKSRC}/cal.rb
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/cal.rb ${PREFIX}/bin
