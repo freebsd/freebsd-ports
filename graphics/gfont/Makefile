@@ -7,6 +7,7 @@
 
 PORTNAME=	gfont
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	graphics print www
 MASTER_SITES=	http://www.engelschall.com/sw/gfont/distrib/ \
 		ftp://ftp.engelschall.com/sw/gfont/
@@ -17,6 +18,7 @@ COMMENT=	Graphics Font - Create GIF image rendered with TeX-available Font
 BUILD_DEPENDS=	gsftopk:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	gsftopk:${PORTSDIR}/print/teTeX
 
+USE_GHOSTSCRIPT_BUILD=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 
