@@ -645,6 +645,7 @@ boxes		ports/misc/boxes
 boxtools	ports/x11-wm/boxtools
 bozohttpd	ports/www/bozohttpd
 bpatch		ports/editors/bpatch
+bpft		ports/net/bpft
 bpl+		ports/comms/bpl+
 br-aspell	ports/textproc/br-aspell
 braincurses	ports/games/braincurses
