@@ -5,10 +5,7 @@
 # * Checks if the JBoss PID file exists. If it does, it kills the
 #   JBoss process and removes the PID file.
 #
-# * Checks if the 'www' user exists. If it does, then it displays
-#   a message.
-#
-# $FreeBSD: /tmp/pcvs/ports/java/jboss5/Attic/pkg-deinstall,v 1.1 2002-04-26 21:54:15 znerd Exp $
+# $FreeBSD: /tmp/pcvs/ports/java/jboss5/Attic/pkg-deinstall,v 1.2 2003-07-14 10:03:13 des Exp $
 #
 
 # Make sure we're in the right stage of the process
@@ -32,13 +29,6 @@ if [ "$2" = "DEINSTALL" ]; then
 		else
 			echo " [ FAILED ]"
 		fi
-	fi
-fi
-
-if [ "$2" = "POST-DEINSTALL" ]; then
-	# If the user exists, then display a message
-	if pw usershow "www" 2>/dev/null 1>&2; then
-		echo "To delete the www user permanently, use 'pw userdel www'"
 	fi
 fi
 
