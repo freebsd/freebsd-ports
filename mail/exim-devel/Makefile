@@ -7,6 +7,7 @@
 
 PORTNAME=	exim
 PORTVERSION=	3.31
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/ \
 		http://www.exim.org/ftp/ \
@@ -15,17 +16,15 @@ DISTFILES=	exim-3.31.tar.gz exim-texinfo-3.30.tar.gz
 
 MAINTAINER=	sheldonh@FreeBSD.org
 
+USE_PERL5=	yes
+
+MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
+
 # If WITHOUT_X11 is not defined, the eximon monitor, which requires X,
 # will be built.  If you do not have XFree86 installed and you do not
 # want to install it, define WITHOUT_X11 during the build.  This will
 # disable eximon, the Exim monitor.
-.if !defined(WITHOUT_X11)
-USE_XLIB=	yes
-.endif
-
-USE_PERL5=	yes
-
-MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
+#WITHOUT_X11=	yes
 
 # Define WITH_TCP_WRAPPERS, WITH_LDAP, WITH_MYSQL, and WITH_PGSQL to
 # link against libwrap, an LDAP library (see below), liblibmysqlclient
@@ -35,9 +34,11 @@ MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
 #WITH_MYSQL=		yes
 #WITH_PGSQL=		yes
 
-# Only define WITH_IPV6 on systems with IPv6 support compiled into the
-# kernel.  Exim's IPv6 support is still experimental.
-#WITH_IPV6=		yes
+# Define WITHOUT_IPV6 to exclude IPv6 support from the compiled exim
+# binary.  Exim compiled with IPv6 support will still operate on
+# systems that do not have IPv6 kernel support, so this should not
+# be necessary.
+#WITHOUT_IPV6=		yes
 
 # If WITH_LDAP is defined, LDAP_LIB_TYPE must be either OPENLDAP1 or
 # OPENLDAP2.  UMICHIGAN is an alias for OPENLDAP1.  Exim also supports
@@ -70,6 +71,16 @@ LDAP_LIB_TYPE?=OPENLDAP1
 #WITHOUT_CDB=		yes
 
 # You should not need to fiddle with anything below this point.
+
+.if !defined(WITHOUT_X11)
+USE_XLIB=	yes
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 400014
+WITHOUT_IPV6=	yes
+.endif
 
 SEDLIST=	-e 's,XX_PREFIX_XX,${PREFIX},' \
 		-e 's,XX_BINOWN_XX,${BINOWN},'
@@ -144,7 +155,7 @@ SEDLIST+=	-e 's,XX_PGSQL_LIBS_XX,-L${PREFIX}/lib -lpq,' \
 SEDLIST+=	-e 's,XX_PGSQL_[^ ]*_XX,,'
 .endif
 
-.if defined(WITH_IPV6)
+.if !defined(WITHOUT_IPV6)
 SEDLIST+=	-e 's,^\# HAVE_IPV6=,HAVE_IPV6=,'
 .endif
 
@@ -189,4 +200,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
