@@ -14,5 +14,6 @@ MASTER_SITES=	http://www.unixodbc.org/
 MAINTAINER=	nsayer@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+USE_XLIB=	yes
 
 .include <bsd.port.mk>
