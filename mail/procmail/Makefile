@@ -3,7 +3,7 @@
 # Date created:		24 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.16 1995/04/22 12:35:37 asami Exp $
+# $Id: Makefile,v 1.17 1995/06/13 22:39:40 ache Exp $
 #
 
 DISTNAME=       procmail-3.11pre3
@@ -13,9 +13,11 @@ MASTER_SITES=	ftp://ftp.informatik.rwth-aachen.de/pub/packages/procmail/
 
 MAINTAINER=     ache@FreeBSD.ORG
 
+# It asks for list af directories to do test for file locking
+# (defaults to /tmp and ".", so return should suffice in most cases).
 IS_INTERACTIVE=	yes
 
 do-install:
-	@cd ${WRKSRC}; ${MAKE} install-suid install.man
+	@cd ${WRKSRC}; ${MAKE} PREFIX=${PREFIX} install-suid install.man
 
 .include <bsd.port.mk>
