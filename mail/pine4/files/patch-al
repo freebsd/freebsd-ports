@@ -1,5 +1,5 @@
---- build.orig	Fri Feb 19 18:30:54 1999
-+++ build	Wed Oct 13 17:53:42 1999
+--- build.orig	Mon Nov 15 14:16:25 1999
++++ build	Wed Jul  5 21:22:26 2000
 @@ -80,8 +80,9 @@
   pine   The Pine mailer. Once compiled this should work just fine on
          your system with no other files than this binary, and no
@@ -12,22 +12,36 @@
   
   pico   The standalone editor similar to the Pine message composer.
          This is a very simple straight forward text editor.
-@@ -278,10 +279,10 @@
+@@ -277,17 +278,17 @@
+ 	  esac
+ 	fi
  
-         if [ -s c-client ] ; then rm -f c-client ; fi
-         ln -s imap/c-client c-client
+-        if [ -s c-client ] ; then rm -f c-client ; fi
+-        ln -s imap/c-client c-client
 -        if [ -s mtest    ] ; then rm -f mtest    ; fi
 -        ln -s imap/mtest mtest
 -        if [ -s imapd    ] ; then rm -f imapd    ; fi
 -        ln -s imap/imapd imapd
+-        echo "Making c-client library, mtest and imapd"
+-        eval echo make "$makeargs" "$K1" "$K2" $ccltarg
+-        cd $PHOME/imap
+-        eval make "$makeargs" "$K1" "$K2" $ccltarg
+-        echo ''
++#        if [ -s c-client ] ; then rm -f c-client ; fi
++#        ln -s imap/c-client c-client
 +#        if [ -s mtest    ] ; then rm -f mtest    ; fi
 +#        ln -s imap/mtest mtest
 +#        if [ -s imapd    ] ; then rm -f imapd    ; fi
 +#        ln -s imap/imapd imapd
-         echo "Making c-client library, mtest and imapd"
-         eval echo make "$makeargs" "$K1" "$K2" $ccltarg
-         cd $PHOME/imap
-@@ -303,14 +304,14 @@
++#        echo "Making c-client library, mtest and imapd"
++#        eval echo make "$makeargs" "$K1" "$K2" $ccltarg
++#        cd $PHOME/imap
++#        eval make "$makeargs" "$K1" "$K2" $ccltarg
++#        echo ''
+ 
+         echo "Making Pico and Pilot"
+         cd $PHOME/pico
+@@ -304,14 +305,14 @@
          cd $PHOME/bin
          rm -f pine mtest imapd pico pilot
          if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
@@ -45,8 +59,16 @@
  	case $maketarg in
  	    mnt)    echo "Fixing stacksizes ..."
  		    fixstk 64K bin/pine bin/pico bin/imapd bin/mtest bin/pilot
-@@ -325,10 +326,10 @@
- 	make clean
+@@ -321,15 +322,15 @@
+ 
+ 
+     clean) # This only sort of works 
+-        echo "Cleaning c-client and imapd"
+-	cd $PHOME/imap
+-	make clean
++#        echo "Cleaning c-client and imapd"
++#	cd $PHOME/imap
++#	make clean
          echo "Cleaning Pine"
          cd $PHOME/pine
 -        make -f makefile.ult clean

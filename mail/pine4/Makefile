@@ -20,6 +20,8 @@ Y2K=		http://www.washington.edu/pine/QandA/sysadmins.html#Millenium
 
 MAN1=		pine.1 pico.1 pilot.1
 
+LIB_DEPENDS=	c-client4.7:${PORTSDIR}/mail/cclient
+
 # Define "WITH_LDAP" to include ldap support.
 # If the ldap port is installed somewhere other than /usr/local, define
 # LDAP_PREFIX as well.
