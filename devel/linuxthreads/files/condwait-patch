@@ -1,0 +1,306 @@
+diff -ru ../../work.orig/linuxthreads-2.2.3_1/condvar.c ./condvar.c
+--- ../../work.orig/linuxthreads-2.2.3_1/condvar.c	Thu Apr 12 21:02:02 2001
++++ ./condvar.c	Wed Jul 18 13:30:47 2001
+@@ -55,6 +55,8 @@
+   return did_remove;
+ }
+ 
++extern int __pthread_mutex_condwait_completelock(pthread_mutex_t *mutex);
++
+ int pthread_cond_wait(pthread_cond_t *cond, pthread_mutex_t *mutex)
+ {
+   volatile pthread_descr self = thread_self();
+@@ -74,6 +76,7 @@
+ 
+   /* Register extrication interface */
+   THREAD_SETMEM(self, p_condvar_avail, 0);
++  THREAD_SETMEM(self, p_condwait_mutex, mutex);
+   __pthread_set_own_extricate_if(self, &extr);
+ 
+   /* Atomically enqueue thread for waiting, but only if it is not
+@@ -121,15 +124,35 @@
+   if (THREAD_GETMEM(self, p_woken_by_cancel)
+       && THREAD_GETMEM(self, p_cancelstate) == PTHREAD_CANCEL_ENABLE) {
+     THREAD_SETMEM(self, p_woken_by_cancel, 0);
+-    pthread_mutex_lock(mutex);
++    if (THREAD_GETMEM(self, p_condwait_mutex) == NULL) {
++      if (THREAD_GETMEM(self, p_condwait_extra_restart) != 0) {
++	if (spurious_wakeup_count > 0)
++	  spurious_wakeup_count--;
++	else
++	  suspend(self);
++      }
++      __pthread_mutex_condwait_completelock(mutex);
++    } else
++      pthread_mutex_lock(mutex);
+     __pthread_do_exit(PTHREAD_CANCELED, CURRENT_STACK_FRAME);
+   }
+ 
++  if (THREAD_GETMEM(self, p_condwait_mutex) == NULL &&
++      THREAD_GETMEM(self, p_condwait_extra_restart) != 0) {
++    if (spurious_wakeup_count > 0)
++      spurious_wakeup_count--;
++    else
++      suspend(self);
++  }
++
+   /* Put back any resumes we caught that don't belong to us. */
+   while (spurious_wakeup_count--)
+     restart(self);
+ 
+-  pthread_mutex_lock(mutex);
++  if (THREAD_GETMEM(self, p_condwait_mutex) == NULL)
++    __pthread_mutex_condwait_completelock(mutex);
++  else
++    pthread_mutex_lock(mutex);
+   return 0;
+ }
+ 
+@@ -155,6 +178,7 @@
+ 
+   /* Register extrication interface */
+   THREAD_SETMEM(self, p_condvar_avail, 0);
++  THREAD_SETMEM(self, p_condwait_mutex, mutex);
+   __pthread_set_own_extricate_if(self, &extr);
+ 
+   /* Enqueue to wait on the condition and check for cancellation. */
+@@ -215,15 +239,35 @@
+   if (THREAD_GETMEM(self, p_woken_by_cancel)
+       && THREAD_GETMEM(self, p_cancelstate) == PTHREAD_CANCEL_ENABLE) {
+     THREAD_SETMEM(self, p_woken_by_cancel, 0);
+-    pthread_mutex_lock(mutex);
++    if (THREAD_GETMEM(self, p_condwait_mutex) == NULL) {
++      if (THREAD_GETMEM(self, p_condwait_extra_restart) != 0) {
++	if (spurious_wakeup_count > 0)
++	  spurious_wakeup_count--;
++	else
++	  suspend(self);
++      }
++      __pthread_mutex_condwait_completelock(mutex);
++    } else
++      pthread_mutex_lock(mutex);
+     __pthread_do_exit(PTHREAD_CANCELED, CURRENT_STACK_FRAME);
+   }
+ 
++  if (THREAD_GETMEM(self, p_condwait_mutex) == NULL &&
++      THREAD_GETMEM(self, p_condwait_extra_restart) != 0) {
++    if (spurious_wakeup_count > 0)
++      spurious_wakeup_count--;
++    else
++      suspend(self);
++  }
++
+   /* Put back any resumes we caught that don't belong to us. */
+   while (spurious_wakeup_count--)
+     restart(self);
+ 
+-  pthread_mutex_lock(mutex);
++  if (THREAD_GETMEM(self, p_condwait_mutex) == NULL)
++    __pthread_mutex_condwait_completelock(mutex);
++  else
++    pthread_mutex_lock(mutex);
+   return 0;
+ }
+ 
+@@ -242,9 +286,27 @@
+   th = dequeue(&cond->__c_waiting);
+   __pthread_unlock(&cond->__c_lock);
+   if (th != NULL) {
+-    th->p_condvar_avail = 1;
+-    WRITE_MEMORY_BARRIER();
+-    restart(th);
++    pthread_mutex_t *mutex = th->p_condwait_mutex;
++    if (th->p_condvar_avail == 0 &&
++	mutex != NULL &&
++	(mutex->__m_kind == PTHREAD_MUTEX_ERRORCHECK_NP ||
++	 mutex->__m_kind == PTHREAD_MUTEX_TIMED_NP) &&
++	__pthread_alt_condwait_queuelock(&mutex->__m_lock, th) == 0) {
++      th->p_condwait_mutex = NULL;
++      th->p_condwait_extra_restart = 0;
++      WRITE_MEMORY_BARRIER();
++      th->p_condvar_avail = 1;
++      WRITE_MEMORY_BARRIER();
++      if (th->p_condwait_waitnode.abandoned) {
++	th->p_condwait_extra_restart = 1;
++	WRITE_MEMORY_BARRIER();
++	restart(th);
++      }
++    } else {
++      th->p_condvar_avail = 1;
++      WRITE_MEMORY_BARRIER();
++      restart(th);
++    }
+   }
+   return 0;
+ }
+@@ -260,9 +322,27 @@
+   __pthread_unlock(&cond->__c_lock);
+   /* Now signal each process in the queue */
+   while ((th = dequeue(&tosignal)) != NULL) {
+-    th->p_condvar_avail = 1;
+-    WRITE_MEMORY_BARRIER();
+-    restart(th);
++    pthread_mutex_t *mutex = th->p_condwait_mutex;
++    if (th->p_condvar_avail == 0 &&
++	mutex != NULL &&
++	(mutex->__m_kind == PTHREAD_MUTEX_ERRORCHECK_NP ||
++	 mutex->__m_kind == PTHREAD_MUTEX_TIMED_NP) &&
++	__pthread_alt_condwait_queuelock(&mutex->__m_lock, th) == 0) {
++      th->p_condwait_mutex = NULL;
++      th->p_condwait_extra_restart = 0;
++      WRITE_MEMORY_BARRIER();
++      th->p_condvar_avail = 1;
++      WRITE_MEMORY_BARRIER();
++      if (th->p_condwait_waitnode.abandoned) {
++	th->p_condwait_extra_restart = 1;
++	WRITE_MEMORY_BARRIER();
++	restart(th);
++      }
++    } else {
++      th->p_condvar_avail = 1;
++      WRITE_MEMORY_BARRIER();
++      restart(th);
++    }
+   }
+   return 0;
+ }
+diff -ru ../../work.orig/linuxthreads-2.2.3_1/internals.h ./internals.h
+--- ../../work.orig/linuxthreads-2.2.3_1/internals.h	Wed Jul 18 07:25:04 2001
++++ ./internals.h	Wed Jul 18 10:55:57 2001
+@@ -125,6 +125,13 @@
+   int pr_lock_count;
+ } pthread_readlock_info;
+ 
++
++struct wait_node {
++  struct wait_node *next;	/* Next node in null terminated linked list */
++  pthread_descr thr;		/* The thread waiting with this node */
++  int abandoned;		/* Atomic flag */
++};
++
+ struct _pthread_descr_struct {
+   union {
+     struct {
+@@ -189,6 +196,9 @@
+   hp_timing_t p_cpuclock_offset; /* Initial CPU clock for thread.  */
+ #endif
+   /* New elements must be added at the end.  */
++  pthread_mutex_t *p_condwait_mutex;
++  struct wait_node p_condwait_waitnode;
++  char p_condwait_extra_restart;
+ } __attribute__ ((aligned(32))); /* We need to align the structure so that
+ 				    doubles are aligned properly.  This is 8
+ 				    bytes on MIPS and 16 bytes on MIPS64.
+diff -ru ../../work.orig/linuxthreads-2.2.3_1/mutex.c ./mutex.c
+--- ../../work.orig/linuxthreads-2.2.3_1/mutex.c	Sun Jan  7 04:35:20 2001
++++ ./mutex.c	Wed Jul 18 09:09:13 2001
+@@ -92,6 +92,24 @@
+ }
+ strong_alias (__pthread_mutex_trylock, pthread_mutex_trylock)
+ 
++int __pthread_mutex_condwait_completelock(pthread_mutex_t *mutex)
++{
++  pthread_descr self;
++
++  switch(mutex->__m_kind) {
++  case PTHREAD_MUTEX_ERRORCHECK_NP:
++    self = thread_self();
++    if (mutex->__m_owner == self) return EDEADLK;
++    mutex->__m_owner = self;
++    return 0;
++  case PTHREAD_MUTEX_TIMED_NP:
++    return 0;
++  default:
++    return EINVAL;
++  }
++}
++
++
+ int __pthread_mutex_lock(pthread_mutex_t * mutex)
+ {
+   pthread_descr self;
+diff -ru ../../work.orig/linuxthreads-2.2.3_1/spinlock.c ./spinlock.c
+--- ../../work.orig/linuxthreads-2.2.3_1/spinlock.c	Wed Jul 18 07:25:04 2001
++++ ./spinlock.c	Wed Jul 18 10:56:34 2001
+@@ -232,12 +232,6 @@
+  */
+ 
+ 
+-struct wait_node {
+-  struct wait_node *next;	/* Next node in null terminated linked list */
+-  pthread_descr thr;		/* The thread waiting with this node */
+-  int abandoned;		/* Atomic flag */
+-};
+-
+ static long wait_node_free_list;
+ #if !defined HAS_COMPARE_AND_SWAP || defined TEST_FOR_COMPARE_AND_SWAP
+ static int wait_node_free_list_spinlock;
+@@ -360,6 +354,55 @@
+ }
+ 
+ #endif
++
++int __pthread_alt_condwait_queuelock(struct _pthread_fastlock * lock,
++				     pthread_descr th)
++{
++#if defined HAS_COMPARE_AND_SWAP
++  long oldstatus, newstatus;
++#endif
++
++#if defined TEST_FOR_COMPARE_AND_SWAP
++  if (!__pthread_has_cas)
++#endif
++#if !defined HAS_COMPARE_AND_SWAP || defined TEST_FOR_COMPARE_AND_SWAP
++  {
++    __pthread_acquire(&lock->__spinlock);
++
++    if (lock->__status == 0) {
++	    WRITE_MEMORY_BARRIER();
++	    lock->__spinlock = __LT_SPINLOCK_INIT;
++	    return 1;
++    }
++    th->p_condwait_waitnode.abandoned = 0;
++    th->p_condwait_waitnode.next = (struct wait_node *) lock->__status;
++    th->p_condwait_waitnode.thr = th;
++    lock->__status = (long) &th->p_condwait_waitnode;
++
++    WRITE_MEMORY_BARRIER();
++    lock->__spinlock = __LT_SPINLOCK_INIT;
++    return 0;
++  }
++#endif
++
++#if defined HAS_COMPARE_AND_SWAP
++  do {
++    oldstatus = lock->__status;
++    if (oldstatus == 0) {
++      return 1;
++    }
++    th->p_condwait_waitnode.thr = th;
++    newstatus = (long) &th->p_condwait_waitnode;
++    th->p_condwait_waitnode.abandoned = 0;
++    th->p_condwait_waitnode.next = (struct wait_node *) oldstatus;
++    /* Make sure the store in wait_node.next completes before performing
++       the compare-and-swap */
++    MEMORY_BARRIER();
++  } while(! __compare_and_swap(&lock->__status, oldstatus, newstatus));
++  return 0;
++#endif
++}
++
+ 
+ void __pthread_alt_lock(struct _pthread_fastlock * lock,
+ 		        pthread_descr self)
+diff -ru ../../work.orig/linuxthreads-2.2.3_1/spinlock.h ./spinlock.h
+--- ../../work.orig/linuxthreads-2.2.3_1/spinlock.h	Wed Jul 18 07:25:04 2001
++++ ./spinlock.h	Wed Jul 18 09:14:58 2001
+@@ -130,6 +130,9 @@
+    timed-out waits.  Warning: do not mix these operations with the above ones
+    over the same lock object! */
+ 
++extern int __pthread_alt_condwait_queuelock(struct _pthread_fastlock * lock,
++					    pthread_descr th);
++
+ extern void __pthread_alt_lock(struct _pthread_fastlock * lock,
+ 			       pthread_descr self);
+ 

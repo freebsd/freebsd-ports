@@ -7,7 +7,7 @@
 
 PORTNAME=	linuxthreads
 PORTVERSION=	2.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glibc
@@ -33,6 +33,14 @@ WRKSRC=		${WRKDIR}/${PKGNAME}
 SRC_BASE=	/usr/src
 LIBSRC_BASE=	${SRC_BASE}/lib
 
+.if !defined(WITH_CONDWAIT_PATCH)
+pre-fetch:
+	@${ECHO}
+	@${ECHO} You can use an experimental patch to reduce the number of
+	@${ECHO} condition variable triggered context switches by defining
+	@${ECHO} WITH_CONDWAIT_PATCH
+.endif
+
 post-extract:
 	@mv ${WRKDIR}/linuxthreads ${WRKSRC}
 	@mv ${WRKDIR}/linuxthreads_db ${WRKSRC}
@@ -45,6 +53,17 @@ post-extract:
 	@${MKDIR} -p ${WRKSRC}/libgcc_r
 	@test -f ${WRKSRC}/libgcc_r/Makefile || \
 	${LN} -s ${FILESDIR}/Makefile.libgcc_r ${WRKSRC}/libgcc_r/Makefile
+
+.if defined(WITH_CONDWAIT_PATCH)
+post-patch:
+	@${ECHO_MSG} "===>  Applying experimental patch condwait-patch"
+	@if ${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/condwait-patch; then \
+	  ${ECHO_MSG} "===>  Patch condwait-patch applied successfully"; \
+	else \
+	  ${ECHO_MSG} ">>Patch condwait-patch failed to apply cleanly"; \
+	  false ; \
+	fi
+.endif
 
 pre-build:
 	@cd ${WRKSRC}/libgcc_r ; \
