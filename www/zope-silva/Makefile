@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	silva
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 PORTEPOCH=	1
 CATEGORIES=	www zope
 MASTER_SITES=	http://www.infrae.com/download/%SUBDIR%/:silva,document,metadata,sprout
 MASTER_SITE_SUBDIR=	Silva/${PORTVERSION}/:silva \
-			SilvaDocument/1.1/:document \
+			SilvaDocument/1.2/:document \
 			SilvaMetadata/0.8/:metadata \
-			Sprout/0.5/:sprout
+			Sprout/0.6.1/:sprout
 PKGNAMEPREFIX=	zope-
 DISTFILES=	Silva-${PORTVERSION}.tgz:silva \
-		SilvaDocument-1.1.tgz:document \
+		SilvaDocument-1.2.tgz:document \
 		SilvaMetadata-0.8.tgz:metadata \
-		Sprout-0.5.tgz:sprout
+		Sprout-0.6.1.tgz:sprout
 
 MAINTAINER=	x@Vex.Net
 COMMENT=	Web application (CMS) to manage/edit structured documents
@@ -37,6 +37,8 @@ DIST_SUBDIR=	zope
 ZOPEPRODUCTNAME=Silva
 
 do-build:
+	@${RM} ${WRKDIR}/SilvaDocument/tests/.cvsignore
+	@${RM} -rf ${WRKDIR}/SilvaMetadata/Extensions/.svn
 	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKDIR}
 
 do-install:
