@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lynx
-PORTVERSION=    2.8.5d3
+PORTVERSION=    2.8.5.d3
 CATEGORIES=     www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
 DISTNAME=       ${PORTNAME}2.8.5dev.3
