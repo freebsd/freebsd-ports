@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gsl
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,13 +21,18 @@ COMMENT=	The GNU Scientific Library - mathematical libs
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+CONFIGURE_ENV+=	MAKEINFO='makeinfo --no-split'
 
 MAN1=		gsl-config.1 gsl-randist.1 gsl-histogram.1
 MAN3=		gsl.3
+INFO=		gsl-ref
 
 GSLREF=		gsl-ref.ps.gz
 GSLREFHTML=	gsl-ref-html.tar.gz
 IGNOREFILES=	${GSLREF} ${GSLREFHTML}
+
+post-extract:
+	${RM} -f ${WRKSRC}/doc/gsl-ref.info*
 
 post-install:
 .if !defined(NOPORTDOCS)
