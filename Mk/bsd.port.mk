@@ -1,7 +1,7 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
 #
-#	$Id: bsd.port.mk,v 1.308 1999/03/29 07:07:59 asami Exp $
+#	$Id: bsd.port.mk,v 1.309 1999/04/08 07:13:38 asami Exp $
 #	$NetBSD: $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
@@ -100,9 +100,9 @@ OpenBSD_MAINTAINER=	imp@OpenBSD.ORG
 # This variable is a boolean, so you don't need to set it to the reason.
 #
 # IS_INTERACTIVE - Set this if your port needs to interact with the user
-#				  during a build.  User can then decide to skip this port by
-#				  setting ${BATCH}, or compiling only the interactive ports
-#				  by setting ${INTERACTIVE}.
+#				  during any step in a package build.  User can then decide
+#				  to skip this port by setting ${BATCH}, or compiling only
+#				  the interactive ports by setting ${INTERACTIVE}.
 #
 # Set these if your port only makes sense to certain archetictures.
 # They are lists containing names for them (e.g., "alpha i386").
