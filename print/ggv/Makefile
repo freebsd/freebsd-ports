@@ -7,7 +7,7 @@
 
 PORTNAME=	ggv
 PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/ggv/1.0
@@ -15,8 +15,6 @@ MASTER_SITE_SUBDIR=	sources/ggv/1.0
 MAINTAINER=	gnome@FreeBSD.org
 
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
-
-FORBIDDEN=	"Security vulnerability, see bugtraq id 5808"
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
