@@ -23,6 +23,7 @@ RUN_DEPENDS=	uvscan:${PORTSDIR}/security/vscan
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GETOPT_LONG=yes
+MAKE_ENV=	_LDFLAGS="${LDFLAGS}"
 
 pre-fetch:
 .if !defined(WITHOUT_UVSCAN)

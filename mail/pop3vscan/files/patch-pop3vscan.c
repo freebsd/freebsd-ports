@@ -1,11 +1,14 @@
 --- pop3vscan.c.orig	Wed Jun 12 08:19:05 2002
 +++ pop3vscan.c	Tue Jun  3 03:23:38 2003
-@@ -29,9 +29,10 @@
+@@ -27,11 +27,12 @@
+ #include <stdio.h>
+ #include <stdlib.h>
  #include <string.h>
- #include <arpa/inet.h>
- #include <netinet/in.h>
+-#include <arpa/inet.h>
 +#include <sys/types.h>
+ #include <netinet/in.h>
 +#include <netinet/in_systm.h>
++#include <arpa/inet.h>
  #include <netinet/ip.h>
  #include <sys/socket.h>
 -#include <sys/types.h>
