@@ -1,0 +1,11 @@
+--- gfont.c.orig	Fri Sep 25 17:49:17 1998
++++ gfont.c	Fri Sep 25 17:49:30 1998
+@@ -5,7 +5,7 @@
+ /*	   9-09-87  starting					  */
+ /******************************************************************/
+ 
+-/*	Modified on 5/13/92 to work on NeXt's
++/*	Modified on 5/13/92 to work on NeXt's */
+ 
+ 
+ #include <string.h>								  

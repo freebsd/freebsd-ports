@@ -1,0 +1,10 @@
+--- ../examples/loglog/TFopt-lrLog.c.orig	Fri Sep 25 18:05:29 1998
++++ ../examples/loglog/TFopt-lrLog.c	Fri Sep 25 18:05:38 1998
+@@ -14,7 +14,6 @@
+ #include <stdio.h>
+ #include <math.h>
+ #include <string.h>
+-#include <streams/streams.h>
+ #include <cgraph.h>
+ 
+ #define PI	3.141592654
