@@ -13,7 +13,6 @@ MASTER_SITES=	http://www.gulu.net/xskat/
 MAINTAINER=	tg@FreeBSD.org
 
 USE_IMAKE=	yes
-MANN=		xskat.n xskat-de.n
-MANCOMPRESSED=	no
+MAN1=		xskat.1 xskat-de.1
 
 .include <bsd.port.mk>
