@@ -88,6 +88,7 @@
     SUBDIR += frontline
     SUBDIR += ftgl
     SUBDIR += fujiplay
+    SUBDIR += fyre
     SUBDIR += g2
     SUBDIR += g3dviewer
     SUBDIR += gauche-gl
