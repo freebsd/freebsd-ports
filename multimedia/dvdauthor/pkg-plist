@@ -1,8 +1,8 @@
 bin/dvdauthor
 bin/dvddirgen
 bin/mpeg2desc
-bin/submux
-bin/vob_dump
+bin/spumux
+man/man1/spumux.1
 %%PORTDOCS%%share/doc/dvdauthor/README
 %%PORTDOCS%%share/doc/dvdauthor/README.FreeBSD
 %%PORTDOCS%%share/doc/dvdauthor/iso639.txt
