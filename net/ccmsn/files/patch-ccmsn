@@ -1,0 +1,25 @@
+--- ccmsn.orig	Wed Sep 26 19:33:01 2001
++++ ccmsn	Wed Nov 20 23:24:05 2002
+@@ -24,11 +24,11 @@
+ ### Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ ###
+ 
+-source migmd5.tcl
++source %%PREFIX%%/share/ccmsn/migmd5.tcl
+ 
+ set version "0.3p3"
+ #=======================================================================
+-set images_folder "i"
++set images_folder "%%PREFIX%%/share/ccmsn/i"
+ 
+ set emotions {{":-)" smile} {":)" smile} {":-D" smiled} {":D" smiled}
+ 	{":->" smiled} {":>" smiled} {":-O" smileo} {":O" smileo} {":-P" smilep}
+@@ -168,7 +168,7 @@
+    scrollbar .about.ys -command ".about.info yview" -background #C0C0C0
+    pack .about.ys -side right -fill y
+    pack .about.info -expand true -fill both
+-   set id [open "README" r]
++   set id [open "%%PREFIX%%/share/ccmsn/README" r]
+    .about.info insert 1.0 [read $id]
+    close $id
+    .about.info configure -state disabled

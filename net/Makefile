@@ -41,6 +41,7 @@
     SUBDIR += bsd-airtools
     SUBDIR += bsdproxy
     SUBDIR += cap
+    SUBDIR += ccmsn
     SUBDIR += cdpd
     SUBDIR += cdpr
     SUBDIR += centericq
