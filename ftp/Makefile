@@ -62,6 +62,7 @@
     SUBDIR += pftpd
     SUBDIR += proftpd
     SUBDIR += profxp
+    SUBDIR += proma
     SUBDIR += prozilla
     SUBDIR += puf
     SUBDIR += pure-ftpd

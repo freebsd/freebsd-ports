@@ -1,0 +1,4 @@
+ProMA is a PHP4 based system for administrating a ProFTPd server 
+storing users in a MySQL database.
+
+WWW: http://www.jodal.no/projects/proma/
