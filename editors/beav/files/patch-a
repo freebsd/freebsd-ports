@@ -23,7 +23,7 @@ diff -c beav-140.orig/Makefile beav-140/Makefile
   	$(CC) $(CFLAGS) $(OFILES) -s -ltermcap -lc -o beav
   
 ! (OFILES):  $(HFILES)
---- 14,25 ----
+--- 14,26 ----
   
   HFILES=     def.h
   
@@ -32,6 +32,7 @@ diff -c beav-140.orig/Makefile beav-140/Makefile
   
 ! install: beav
 ! 	install -c -s -m 755 -g bin -o bin beav $(PREFIX)/bin
+! 	install -c -m 644 -g bin -o bin beav140.txt $(PREFIX)/share/doc/beav.txt
 ! 	install -c -m 644 -g bin -o bin beav.1 $(PREFIX)/man/man1
 ! 	gzip -9nf $(PREFIX)/man/man1/beav.1
 ! 
@@ -71,3 +72,19 @@ diff -c beav-140.orig/tcap.c beav-140/tcap.c
   #endif /* BSD */
   #ifdef ULTRIX
   struct winsize ttysize;
+diff -c beav-140.orig/beav.1 beav-140/beav.1
+*** beav-140.orig/beav.1	Sun Mar  3 03:13:16 1996
+--- beav-140/beav.1	Sun Mar  3 03:14:31 1996
+***************
+*** 59,63 ****
+  If there is any data that has not been saved you will be warned.
+  .PP
+  .SH FILES
+! /usr/doc/beav/beav.txt
+  
+--- 59,63 ----
+  If there is any data that has not been saved you will be warned.
+  .PP
+  .SH FILES
+! /usr/local/share/doc/beav.txt
+  
