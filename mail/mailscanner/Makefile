@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.27.7
+PORTVERSION=	4.28.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 DISTNAME=	MailScanner-${PORTVERSION}-${PATCHLEVEL}
@@ -23,7 +23,9 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 	${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
-	${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net-mgmt/p5-Net-CIDR 
+	${SITE_PERL}/Net/CIDR.pm:${PORTSDIR}/net-mgmt/p5-Net-CIDR \
+	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
+	${SITE_PERL}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash2 \
 		${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef \
@@ -34,7 +36,7 @@ CONFLICTS=	MailScanner-devel-*
 
 USE_PERL5=	yes
 
-PATCHLEVEL=	1
+PATCHLEVEL=	2
 WRKSRC=		${WRKDIR}/MailScanner-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -105,7 +107,7 @@ do-build:
 .endfor
 
 do-install:
-	# 
+	#
 	# Step 1: Install libexec files
 	#
 	${MKDIR} ${PREFIX}/libexec/MailScanner

@@ -534,7 +534,6 @@ libexec/MailScanner/update_virus_scanners
 @dirrm %%DATADIR%%/reports/de
 @dirrm %%DATADIR%%/reports/cz
 @dirrm %%DATADIR%%/reports/cy+en
-@dirrm %%DATADIR%%/reports/cat
 @dirrm %%DATADIR%%/reports/ca
 @dirrm %%DATADIR%%/reports
 @dirrm %%DATADIR%%
