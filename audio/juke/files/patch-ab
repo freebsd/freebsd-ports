@@ -9,7 +9,7 @@
    if (cfg->file_len != ERROR) {
      evaluate (cfg);
      if (! cfg->formats) {
--      fprintf (stderr, "error: No formats in /etc/juke.config\n");
+-      fprintf (stderr, "error: No formats in /etc/juke.conf\n");
 +      fprintf (stderr, "error: No formats in " CFG_RCFILE "\n");
        exit (ERROR);
      }
