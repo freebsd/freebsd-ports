@@ -104,7 +104,7 @@ MASTER_SITE_MOZILLA+= \
 	ftp://ftp.sunsite.kth.se/archive/www/ftp.mozilla.org/%SUBDIR%/ \
 	ftp://ftp2.sinica.edu.tw/pub3/www/mozilla/%SUBDIR%/ \
 	ftp://ftp.is.co.za/networking/info-service/www/clients/netscape/mozilla/%SUBDIR%/ \
-	ftp://ftp.chg.ru/pub/WWW/mozilla/ \
+	ftp://ftp.chg.ru/pub/WWW/mozilla/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/mozilla/&,}
 
 MASTER_SITE_NETBSD+=	\
