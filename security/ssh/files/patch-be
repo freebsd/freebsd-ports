@@ -198,7 +198,7 @@
   AC_CHECK_LIB(seq, get_process_stats)
 ***************
 *** 436,441 ****
---- 578,682 ----
+--- 578,684 ----
   
   AC_REPLACE_FUNCS(strerror memmove remove random putenv crypt socketpair snprintf)
   
@@ -271,7 +271,9 @@
 +     }
 +   }
 + 
-+   if (inet6 != 2 || inet4 != 2)
++   if (!(inet4 == 0 || inet4 == 2))
++     goto bad;
++   if (!(inet6 == 0 || inet6 == 2))
 +     goto bad;
 + 
 +   if (aitop)
@@ -313,7 +315,7 @@
     AC_CHECK_LIB(ndbm, dbm_open, KERBEROS_LIBS="$KERBEROS_LIBS -lndbm")
     KERBEROS_OBJS="auth-kerberos.o"
     ;;
---- 1173,1183 ----
+--- 1175,1185 ----
     AC_DEFINE(KRB5)
     KERBEROS_ROOT="$with_kerberos5"
     KERBEROS_INCS="-I${KERBEROS_ROOT}/include"
@@ -327,7 +329,7 @@
     ;;
 ***************
 *** 1252,1257 ****
---- 1497,1534 ----
+--- 1499,1536 ----
     AC_DEFINE(ENABLE_TCP_NODELAY)
   )
   
@@ -368,7 +370,7 @@
   [  --enable-so-linger      Enable setting SO_LINGER socket option],
 ***************
 *** 1311,1316 ****
---- 1588,1595 ----
+--- 1590,1597 ----
     AC_DEFINE(SCP_ALL_STATISTICS_ENABLED)
   )
   
@@ -386,7 +388,7 @@
   
   AC_ARG_PROGRAM
   
---- 1603,1609 ----
+--- 1605,1611 ----
   fi
   AC_MSG_RESULT($PIDDIR)
   
@@ -400,7 +402,7 @@
   AC_SUBST(SSHINSTALLMODE)
   
 ! AC_OUTPUT(Makefile sshd.8 ssh.1 make-ssh-known-hosts.1 zlib-1.0.4/Makefile)
---- 1615,1618 ----
+--- 1617,1620 ----
   AC_SUBST(SSHDCONFOBJS)
   AC_SUBST(SSHINSTALLMODE)
   

@@ -10,7 +10,7 @@
 #
 
 DISTNAME=       ssh-1.2.27
-CATEGORIES=     security net # ipv6 (see below)
+CATEGORIES=	security net ipv6
 MASTER_SITES=	ftp://ftp.cs.hut.fi/pub/ssh/
 
 MAINTAINER=	torstenb@FreeBSD.org
@@ -141,15 +141,7 @@ LIB_DEPENDS+=   wrap.7:${PORTSDIR}/security/tcp_wrapper
 # We still use USE_INET6 here and try to support pre 4.0 machines with kame
 # IPv6 stack
 .if ${OSVERSION} >= 400014 || ( ${OSVERSION} < 400014 && defined(USE_INET6) )
-##
-## Disable ipv6 until it will be fixed.
-## Configure fails with latest -current:
-## checking getaddrinfo bug... buggy
-## Fatal: You must get working getaddrinfo() function.
-##     or you can specify "--disable-ipv6".
-##
-## CONFIGURE_ARGS+=        --enable-ipv6
-CONFIGURE_ARGS+=	--disable-ipv6
+CONFIGURE_ARGS+=	--enable-ipv6
 .else
 CONFIGURE_ARGS+=	--disable-ipv6
 .endif
