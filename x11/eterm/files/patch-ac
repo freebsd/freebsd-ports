@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Wed Jan 28 14:36:42 1998
-+++ src/Makefile.in	Sun Oct  4 15:55:01 1998
-@@ -19,6 +19,10 @@
+--- src/Makefile.in.orig	Tue Sep 15 01:05:43 1998
++++ src/Makefile.in	Sat Oct 10 01:06:41 1998
+@@ -25,6 +25,10 @@
  	main.h menubar.h misc.h rxvtgrx.h screen.h scrollbar.h options.h \
          system.h
  
@@ -11,16 +11,3 @@
  #
  # Distribution variables
  #
-@@ -32,10 +36,10 @@
- all: Eterm
- 
- Eterm: VERSION.h feature.h $(OBJS) ../libmej/libmej.a
--	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) $(XLIB) -lmej -lIm -lXext -lpng -ljpeg -lz -lm
-+	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) $(XLIB) -lmej -lImlib -lXext -lpng -ljpeg -lz -lutil -lm
- 
- FreeBSD: VERSION.h $(OBJS) ../libmej/libmej.a
--	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) -lutil $(XLIB) -lmej -lIm -lXext -lpng -ljpeg -lz -lm
-+	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS) -lutil $(XLIB) -lmej -lImlib -ltiff34 -lgif -lXext -lpng -ljpeg -lz -lutil -lm
- 	mv FreeBSD Eterm
- 
- VERSION.h:
