@@ -7622,6 +7622,8 @@ py-rxp		ports/textproc/py-rxp
 py-scgi		ports/www/py-scgi
 py-scientific	ports/math/py-scientific
 py-serial	ports/comms/py-serial
+py-sgflib	ports/games/py-sgflib
+py-sgfsummary	ports/games/py-sgfsummary
 py-sgrep	ports/textproc/py-sgrep
 py-simpleparse	ports/devel/py-simpleparse
 py-sip		ports/devel/py-sip
