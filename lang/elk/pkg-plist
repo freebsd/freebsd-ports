@@ -27,10 +27,8 @@ lib/elk/gdbm.la
 lib/elk/gdbm.so
 lib/elk/hack.la
 lib/elk/hack.so
-lib/elk/motif-widgets.la
-lib/elk/motif-widgets.so
-lib/elk/motif-xt.la
-lib/elk/motif-xt.so
+lib/elk/motif.la
+lib/elk/motif.so
 lib/elk/newhandler.la
 lib/elk/newhandler.so
 lib/elk/record.la
@@ -41,12 +39,18 @@ lib/elk/struct.la
 lib/elk/struct.so
 lib/elk/unix.la
 lib/elk/unix.so
-lib/elk/xaw-widgets.la
-lib/elk/xaw-widgets.so
-lib/elk/xaw-xt.la
-lib/elk/xaw-xt.so
+lib/elk/xaw.la
+lib/elk/xaw.so
 lib/elk/xlib.la
 lib/elk/xlib.so
+lib/libelk-xlib.a
+lib/libelk-xlib.la
+lib/libelk-xlib.so
+lib/libelk-xlib.so.0
+lib/libelk-xt.a
+lib/libelk-xt.la
+lib/libelk-xt.so
+lib/libelk-xt.so.0
 lib/libelk.a
 lib/libelk.la
 lib/libelk.so
@@ -115,6 +119,8 @@ share/elk/xwidgets.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/scheme/sqrt.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/scheme/unify.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/scheme/work.scm
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/tests/r4rstest.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/unix/calc.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/unix/copy.scm
 %%PORTDOCS%%%%EXAMPLESDIR%%/unix/lock.scm
@@ -149,6 +155,7 @@ share/elk/xwidgets.scm
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/xlib
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/xaw
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/unix
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/tests
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/scheme
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/regexp
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/motif
