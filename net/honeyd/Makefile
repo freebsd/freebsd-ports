@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	honeyd
-PORTVERSION=	0.7a
+PORTVERSION=	0.8
 CATEGORIES=	net
 MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/ \
 		http://niels.xtdnet.nl/honeyd/
@@ -17,6 +17,7 @@ COMMENT=	Simulate virtual network hosts (honeypots)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet \
 		${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 
+#OPTIONS=	PYTHON "Enable Python support" off
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
