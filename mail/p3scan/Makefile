@@ -31,7 +31,7 @@ MANCOMPRESSED=	yes
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_UVSCAN) && ${WITH_UVSCAN:L} == "true"
+.if !defined(WITHOUT_UVSCAN)
 RUN_DEPENDS+=	uvscan:${PORTSDIR}/security/vscan
 .endif
 
