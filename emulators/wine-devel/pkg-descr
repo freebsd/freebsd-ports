@@ -2,15 +2,7 @@ Wine is a Microsoft Windows 3.1/95/98/NT/2000 emulator running under Unix
 on i386 (and compatible) CPUs.
 
 It is still alpha quality, but is definitely making progress. Most
-applications already work, more or less, including even a couple of games.
-
-To use Wine, your kernel must be rebuilt with the following lines added
-to the kernel config file (/sys/i386/conf/<YourMachine>):
-
-options		USER_LDT
-options		SYSVSHM
-options		SYSVSEM
-options		SYSVMSG
+applications already work, more or less, including several games.
 
 WWW: http://www.winehq.com/
 
