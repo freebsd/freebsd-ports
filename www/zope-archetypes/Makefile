@@ -6,38 +6,47 @@
 #
 
 PORTNAME=	archetypes
-PORTVERSION=	1.2.4
+PORTVERSION=	1.3.0
 CATEGORIES=	www zope
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	archetypes
 PKGNAMEPREFIX=	zope-
-DISTNAME=	archetypes-${PORTVERSION}
+DISTNAME=	Archetypes-${PORTVERSION}-final
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	zope
 
 MAINTAINER=	filippo@widestore.net
 COMMENT=	Framework for the development of new Content Types in Zope/CMF/Plone
 
-RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFPlone/__init__.py:${PORTSDIR}/www/plone \
-	${LOCALBASE}/${SZOPEBASEDIR}/${ZOPEPRODUCTDIR}/PortalTransforms/__init__.py:${PORTSDIR}/www/zope-cmftransforms
+RUN_DEPENDS=	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/CMFPlone/__init__.py:${PORTSDIR}/www/plone \
+	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/PortalTransforms/__init__.py:${PORTSDIR}/www/zope-portaltransforms \
+	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/validation/__init__.py:${PORTSDIR}/www/zope-validation \
+	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/generator/__init__.py:${PORTSDIR}/www/zope-generator \
+	${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/MimetypesRegistry/__init__.py:${PORTSDIR}/www/zope-mimetypesregistry
 
-WRKSRC=${WRKDIR}/${DISTNAME}
+ZOPEPRODUCTNAME=	Archetypes
+WRKSRC=${WRKDIR}/${ZOPEPRODUCTNAME}
 USE_ZOPE=	yes
 USE_PYTHON=	yes
-MODULES=	ArchExample ArchGenXML Archetypes
-PYTHON_MODULES=	validation generator
+PLIST=	${WRKDIR}/pkg-plist
 
 do-build:
-	-@for m in ${MODULES}; do \
-		${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/$$m; \
-	done
+	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+
+pre-install:
+	@${RM} -f ${PLIST}
+	@${TOUCH} ${PLIST}
+	@cd ${WRKDIR} && \
+	for f in `${FIND} ${ZOPEPRODUCTNAME} -type f`; do \
+			${ECHO_CMD} %%ZOPEPRODUCTDIR%%/$${f} >> ${PLIST}; \
+	done; \
+	for d in `${FIND} -d ${ZOPEPRODUCTNAME} -type d`; do \
+		${ECHO_CMD} @dirrm %%ZOPEPRODUCTDIR%%/$${d} >> ${PLIST}; \
+	done; \
 
 do-install:
-	@for pym in ${PYTHON_MODULES}; do \
-		cd ${WRKSRC}/$$pym && ${PYTHON_CMD} setup.py install; \
-	done
-	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}
-	@(cd ${WRKSRC} && ${CP} -R ${MODULES} \
-		${ZOPEBASEDIR}/${ZOPEPRODUCTDIR})
+	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
+	@${CHMOD} -R og+rX ${WRKSRC}/
+	@${CP} -R ${WRKSRC} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
 
 .include <bsd.port.mk>
