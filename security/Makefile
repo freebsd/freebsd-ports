@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.48 1999/03/31 14:22:19 dirk Exp $
+# $Id: Makefile,v 1.49 1999/04/02 19:09:53 nsayer Exp $
 #
 
     SUBDIR += bjorb
@@ -24,6 +24,7 @@
     SUBDIR += p5-Authen-Radius
     SUBDIR += p5-Crypt-DES
     SUBDIR += p5-Crypt-IDEA
+    SUBDIR += p5-Digest-MD5
     SUBDIR += p5-MD5
     SUBDIR += p5-PGP
     SUBDIR += p5-PGP-Sign
