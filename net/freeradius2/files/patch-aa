@@ -1,36 +1,11 @@
---- Makefile.orig	Tue Apr  8 11:51:28 2003
-+++ Makefile	Tue Apr  8 11:51:38 2003
-@@ -34,33 +34,6 @@
- 			$(INSTALL) -m 644 $$p $(R)$(mandir)/man$$i; \
- 		done \
- 	done
--	@echo "Creating/updating files in $(R)$(raddbdir)"; \
--	cd raddb; \
--	for i in [a-c]* [e-z]*; do \
--		[ $$i != radiusd.conf.in -a ! -f $(R)$(raddbdir)/$$i ] && \
--                $(INSTALL) -m 644 $$i $(R)$(raddbdir); \
--	done; \
--	chmod 600 $(R)$(raddbdir)/naspasswd $(R)$(raddbdir)/clients $(R)$(raddbdir)/clients.conf; \
--	for i in dictionary*; do \
--		[ ! -f $(R)$(raddbdir)/$$i ] && $(INSTALL) -m 644 $$i $(R)$(raddbdir); \
--		if [ "`find $$i -newer $(R)$(raddbdir)/$$i`" ]; then \
--			echo "** $(R)$(raddbdir)/$$i"; \
--			nt=1; \
--		fi; \
--	done; \
--	if [ "$$nt" ]; then \
--		echo "**";\
--		echo "** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING **";\
--		echo "** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING **";\
--		echo "**";\
--		echo "** The sample configuration files in `pwd`";\
--		echo "** are newer than those in $(R)$(raddbdir)";\
--		echo "**";\
--		echo "** Please investigate and manually copy (if appropriate) the files listed above.";\
--		echo "**";\
--		echo "** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING **";\
--		echo "** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING ** WARNING **";\
--	fi
+--- src/modules/rlm_ippool/Makefile.in.orig	Sat Oct  4 00:44:51 2003
++++ src/modules/rlm_ippool/Makefile.in	Tue Oct 28 23:16:01 2003
+@@ -12,7 +12,7 @@
+ 	$(LIBTOOL) --mode=link $(CC) $^ $(LIBS) $(RLM_LIBS) -o $@
  
- common:
- 	@for dir in $(SUBDIRS); do \
+ rlm_ippool_tool.8: rlm_ippool_tool.pod
+-	pod2man --release=" " --date="October 2nd, 2003" --center="FreeRADIUS Daemon" --section=8 rlm_ippool_tool.pod rlm_ippool_tool.8
++	pod2man --release=" " --date="October 2nd, 2003" --center="FreeRADIUS Daemon" --section=8 rlm_ippool_tool.pod >rlm_ippool_tool.8
+ 
+ $(STATIC_OBJS): $(HEADERS)
+ 
