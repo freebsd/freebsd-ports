@@ -9,7 +9,7 @@ PORTNAME=	chimera
 PORTVERSION=	1.70p0
 PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	http://www.rocklinux.org/people/ripclaw/projects/software/chimera/devel/
+MASTER_SITES=	http://www.rocklinux.net/people/ripclaw/projects/software/chimera/devel/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X/Athena World-Wide Web client
