@@ -66,6 +66,9 @@ share/gauche/%%VERSION%%/lib/gauche/logger.scm
 share/gauche/%%VERSION%%/lib/gauche/logical.scm
 share/gauche/%%VERSION%%/lib/gauche/macroutil.scm
 share/gauche/%%VERSION%%/lib/gauche/mop/instance-pool.scm
+share/gauche/%%VERSION%%/lib/gauche/mop/propagate.scm
+share/gauche/%%VERSION%%/lib/gauche/mop/singleton.scm
+share/gauche/%%VERSION%%/lib/gauche/mop/validator.scm
 share/gauche/%%VERSION%%/lib/gauche/net.scm
 share/gauche/%%VERSION%%/lib/gauche/numerical.scm
 share/gauche/%%VERSION%%/lib/gauche/object.scm
@@ -84,6 +87,7 @@ share/gauche/%%VERSION%%/lib/gauche/singleton.scm
 share/gauche/%%VERSION%%/lib/gauche/syslog.scm
 share/gauche/%%VERSION%%/lib/gauche/termios.scm
 share/gauche/%%VERSION%%/lib/gauche/test.scm
+share/gauche/%%VERSION%%/lib/gauche/time.scm
 share/gauche/%%VERSION%%/lib/gauche/threads.scm
 share/gauche/%%VERSION%%/lib/gauche/uvector.scm
 share/gauche/%%VERSION%%/lib/gauche/validator.scm
@@ -180,9 +184,9 @@ share/gauche/site/lib/example.scm
 @dirrm share/gauche/%%VERSION%%
 @dirrm share/gauche
 @exec %D/bin/gosh -u slib -e "(require 'logical)" -e "(exit 0)" > /dev/null 2>&1 || true
-%%PORTDOCS%%@unexec install-info --delete --section="%%INFOSECTION%%" %D/info/info/gauche-refe.info %D/info/dir
-%%PORTDOCS%%@unexec install-info --delete --section="%%INFOSECTION%%" %D/info/info/gauche-refj.info %D/info/dir
+%%PORTDOCS%%@unexec install-info --delete --section="%%INFOSECTION%%" %D/info/gauche-refe.info %D/info/dir
+%%PORTDOCS%%@unexec install-info --delete --section="%%INFOSECTION%%" %D/info/gauche-refj.info %D/info/dir
 %%PORTDOCS%%info/gauche-refe.info
 %%PORTDOCS%%info/gauche-refj.info
-%%PORTDOCS%%@exec install-info --section="%%INFOSECTION%%" %D/info/info/gauche-refe.info %D/info/dir
-%%PORTDOCS%%@exec install-info --section="%%INFOSECTION%%" %D/info/info/gauche-refj.info %D/info/dir
+%%PORTDOCS%%@exec install-info --section="%%INFOSECTION%%" %D/info/gauche-refe.info %D/info/dir
+%%PORTDOCS%%@exec install-info --section="%%INFOSECTION%%" %D/info/gauche-refj.info %D/info/dir
