@@ -26,4 +26,7 @@ MAN3=		Pod::Checker.3 Pod::Find.3 Pod::InputObjects.3 \
 MAN1PREFIX=	${PREFIX}
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
+post-patch:
+	${FIND} ${WRKSRC} -name \*.orig -exec ${RM} {} \;
+
 .include <bsd.port.mk>
