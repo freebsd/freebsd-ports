@@ -1,5 +1,5 @@
---- configure.orig	Thu Feb 17 13:17:58 2000
-+++ configure	Thu Feb 17 13:18:28 2000
+--- configure.orig	Sun Feb 28 06:56:14 1999
++++ configure	Tue Aug 22 12:29:47 2000
 @@ -2505,7 +2505,7 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
@@ -9,3 +9,12 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
+@@ -3620,7 +3620,7 @@
+ if test "x$have_libgtkgl" = "x" ; then
+ 	{ echo "configure: error: Missing gtkgl library" 1>&2; exit 1; }
+ else
+-	LIBS="$LIBS -lgtkgl"
++	LIBS="-lgtkgl $LIBS"
+ fi
+ 
+ echo $ac_n "checking for TIFFOpen in -ltiff""... $ac_c" 1>&6
