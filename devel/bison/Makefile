@@ -15,18 +15,20 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A parser generator from FSF, (mostly) compatible with Yacc
 
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 CONFLICTS=	bison-[0-9]+
 
-BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 .if !defined(WITHOUT_NLS)
 PLIST_SUB=	NLS=""
 .else
 PLIST_SUB=	NLS="@comment "
 .endif
-RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_BZIP2=	yes
+.if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
+.endif
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 .if defined(WITHOUT_NLS)
