@@ -88,6 +88,7 @@
     SUBDIR += fpp
     SUBDIR += freelibiberty
     SUBDIR += ftnchek
+    SUBDIR += funnelweb
     SUBDIR += g-wrap
     SUBDIR += gaa
     SUBDIR += gcc-6811
