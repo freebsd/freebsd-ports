@@ -1,0 +1,5 @@
+RapidSVN is a cross-platform GUI front-end for the Subversion revision
+system written in C++ using the wxWidgets framework. This project also
+includes a Subversion client C++ API.
+
+WWW: http://rapidsvn.tigris.org/

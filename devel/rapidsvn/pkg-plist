@@ -1,0 +1,4 @@
+bin/rapidsvn
+lib/libsvncpp.a
+lib/libsvncpp.so
+lib/libsvncpp.so.0
