@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsddb3
-PORTVERSION=	3.3.0
+PORTVERSION=	3.4.0
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pybsddb
@@ -14,12 +14,22 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	perky@FreeBSD.org
 
+.if defined(WITH_DB3)
 LIB_DEPENDS=	db3.2:${PORTSDIR}/databases/db3
+DBVERSION=	db3
+.else
+LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
+DBVERSION=	db4
+.endif
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_BUILDARGS=	--libs="-ldb3" --berkeley-db=${LOCALBASE}
+USE_REINPLACE=	yes
+PYDISTUTILS_BUILDARGS=	--libs="-l${DBVERSION}" --berkeley-db=${LOCALBASE}
+PYDISTUTILS_INSTALLARGS=-c -O1 --prefix=${PREFIX} --berkeley-db=${LOCALBASE}
 
-PLIST_SUB+=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||}
+post-patch:
+	${REINPLACE_CMD} 's,%%DBVERSION%%,${DBVERSION},g' ${WRKSRC}/setup.py
+	${REINPLACE_CMD} 's,<db\.h>,<${DBVERSION}/db.h>,' ${WRKSRC}/src/_db.c
 
 .include <bsd.port.mk>
