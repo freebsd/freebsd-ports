@@ -7746,6 +7746,7 @@ wwwstat		ports/www/wwwstat
 wxbasic		ports/lang/wxbasic
 wxgtk		ports/x11-toolkits/wxgtk
 wxgtk-devel	ports/x11-toolkits/wxgtk-devel
+wy60		ports/comms/wy60
 wyvern		ports/www/wyvern
 x-files		ports/x11-fm/x-files
 x11amp		ports/audio/x11amp
