@@ -7,7 +7,7 @@
 
 PORTNAME=	faad2
 PORTVERSION=	2.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	faac
@@ -38,18 +38,11 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-.if exists(${LOCALBASE}/lib/libmp4v2.a)
-HAS_MP4V2=	yes
-.endif
-
-.if defined(WITHOUT_MPEG4IP) && !defined(HAS_MP4V2)
-PLIST_FILES+=	include/mp4.h include/mpeg4ip.h include/systems.h \
-		lib/libmp4v2.so lib/libmp4v2.so.0 lib/libmp4v2.a
+.if defined(WITHOUT_MPEG4IP)
+PLIST_SUB+=	WITHOUT_MPEG4IP="" PLUGIN="@comment "
 .else
 LIB_DEPENDS+=	mp4.0:${PORTSDIR}/multimedia/mpeg4ip
-PLIST_FILES+=	lib/mp4player_plugin/faad2_plugin.a \
-		lib/mp4player_plugin/faad2_plugin.so \
-		lib/mp4player_plugin/faad2_plugin.so.0
+PLIST_SUB+=	WITHOUT_MPEG4IP="@comment " PLUGIN=""
 .endif
 
 pre-everything::
@@ -79,9 +72,6 @@ post-patch:
 	@${ECHO_CMD} "SUBDIRS = libfaad common frontend plugins" > \
 		${WRKSRC}/Makefile.am
 .if ${OSVERSION} < 500000
-	@${REINPLACE_CMD} -e 's|uint8_t|unsigned char|; \
-		s|uint16_t|unsigned short|; s|uint32_t|unsigned long|; \
-		s|int8_t|char|;' ${WRKSRC}/libfaad/structs.h
 	@${REINPLACE_CMD} -e 's|stdint.h|sys/inttypes.h|' \
 		${WRKSRC}/common/mp4ff/mp4ff_int_types.h
 .endif
@@ -91,7 +81,7 @@ post-patch:
 			${REINPLACE_CMD} -e \
 				's|-O2|${CFLAGS}|'
 post-install:
-.if defined(WITHOUT_MPEG4IP) && !defined(HAS_MP4V2)
+.if defined(WITHOUT_MPEG4IP)
 	@${INSTALL_DATA} ${WRKSRC}/common/mp4v2/systems.h ${PREFIX}/include
 .endif
 
