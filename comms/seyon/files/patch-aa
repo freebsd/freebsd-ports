@@ -1,7 +1,22 @@
-Only in seyon: Makefile
-diff -c SePort.c seyon.new/SePort.c
-*** SePort.c	Wed Apr 21 15:38:31 1993
---- seyon.new/SePort.c	Sun Oct  2 23:05:25 1994
+diff -c ./Imakefile ../seyon.new/Imakefile
+*** ./Imakefile	Sat Mar 27 22:20:12 1993
+--- ../seyon.new/Imakefile	Fri Feb  3 07:51:12 1995
+***************
+*** 11,16 ****
+--- 11,19 ----
+  DEPLIBS = 
+  LOCAL_LIBRARIES = XawClientLibs
+  
++ /* We need seyon to be sgid dialer */
++ INSTPGMFLAGS = -s -m 2755 -o bin -g dialer
++ 
+  /* SYS_LIBRARIES = -lm */
+  
+  SRCS  = Seyon.c SeActions.c SeScan.c SeDial.c SeErr.c SeGeneric.c \
+Only in .: Makefile
+diff -c ./SePort.c ../seyon.new/SePort.c
+*** ./SePort.c	Wed Apr 21 15:38:31 1993
+--- ../seyon.new/SePort.c	Fri Feb  3 07:37:50 1995
 ***************
 *** 627,645 ****
   #endif
@@ -66,9 +81,24 @@ diff -c SePort.c seyon.new/SePort.c
     }
   
     SeError("Consistency error in baud rate");
-diff -c config.h seyon.new/config.h
-*** config.h	Wed Apr 21 14:47:48 1993
---- seyon.new/config.h	Sun Oct  2 23:03:53 1994
+Only in ../seyon.new: SePort.c.orig
+diff -c ./SeSubs.c ../seyon.new/SeSubs.c
+*** ./SeSubs.c	Fri Apr 23 12:24:17 1993
+--- ../seyon.new/SeSubs.c	Fri Feb  3 07:47:37 1995
+***************
+*** 249,254 ****
+--- 249,256 ----
+  
+      if (setuid(getuid()) < 0)
+        SePError("Failed to set effective uid");
++     if (setgid(getgid()) < 0)
++       SePError("Failed to set effective gid");
+  
+      if (*scmd == '\0') {
+        SeNotice(FmtString1("Executing the shell ``%s''", shell));
+diff -c ./config.h ../seyon.new/config.h
+*** ./config.h	Wed Apr 21 14:47:48 1993
+--- ../seyon.new/config.h	Fri Feb  3 07:37:50 1995
 ***************
 *** 81,86 ****
 --- 81,92 ----
@@ -84,4 +114,3 @@ diff -c config.h seyon.new/config.h
   #ifdef SVR4
   #define HAVE_TERMIOS        YES
   #define HAVE_MODEM_CONTROL  YES
-  
