@@ -4750,6 +4750,7 @@ offix-execute	ports/x11/offix-execute
 offix-files	ports/x11-fm/offix-files
 offix-printer	ports/print/offix-printer
 offix-trash	ports/deskutils/offix-trash
+offlineimap	ports/mail/offlineimap
 oftpd		ports/ftp/oftpd
 ogle		ports/graphics/ogle
 ogle-gui	ports/graphics/ogle-gui
