@@ -1,0 +1,58 @@
+--- makefile.orig	Wed Sep 22 02:57:28 2004
++++ makefile	Sun Oct  3 00:26:00 2004
+@@ -6,6 +6,7 @@
+ ALL: all
+ LOCDIR = . 
+ DIRS   = src include 
++DOCS_DIR = ${INSTALL_DIR}/../share/doc/petsc
+ 
+ include ${PETSC_DIR}/bmake/common/base
+ include ${PETSC_DIR}/bmake/common/test
+@@ -224,7 +225,7 @@
+ 	  echo "BOPT=$$BOPT" > ${PETSC_DIR}/bmake/common/bopt_ ;\
+ 	fi
+ install:
+-	-@if [ "${INSTALL_DIR}" == "${PETSC_DIR}" ]; then \
++	-@if [ "${INSTALL_DIR}" = "${PETSC_DIR}" ]; then \
+ 	  echo "Install directory is current directory; nothing needs to be done";\
+         else \
+ 	  echo Installing PETSc at ${INSTALL_DIR};\
+@@ -258,11 +259,11 @@
+           done;\
+           echo "sh/bash: PETSC_DIR="${INSTALL_DIR}"; export PETSC_DIR";\
+           echo "csh/tcsh: setenv PETSC_DIR "${INSTALL_DIR} ;\
+-          echo "The do make test to verify correct install";\
++          echo "Then do make test to verify correct install";\
+         fi;
+ 
+ install_src:
+-	-@if [ "${INSTALL_DIR}" == "${PETSC_DIR}" ]; then \
++	-@if [ "${INSTALL_DIR}" = "${PETSC_DIR}" ]; then \
+ 	  echo "You did not set a directory to install to";\
+         else \
+ 	  echo Installing PETSc source at ${INSTALL_DIR};\
+@@ -276,17 +277,17 @@
+         fi;
+ 
+ install_docs:
+-	-@if [ "${INSTALL_DIR}" == "${PETSC_DIR}" ]; then \
++	-@if [ "${INSTALL_DIR}" = "${PETSC_DIR}" ]; then \
+ 	  echo "You did not set a directory to install to";\
+         else \
+-	  echo Installing PETSc documentation at ${INSTALL_DIR};\
+-          if [ ! -d `dirname ${INSTALL_DIR}` ]; then \
+-	    ${MKDIR} `dirname ${INSTALL_DIR}` ; \
++	  echo Installing PETSc documentation at ${DOCS_DIR};\
++          if [ ! -d `dirname ${DOCS_DIR}` ]; then \
++	    ${MKDIR} `dirname ${DOCS_DIR}` ; \
+           fi;\
+-          if [ ! -d ${INSTALL_DIR} ]; then \
+-	    ${MKDIR} ${INSTALL_DIR} ; \
++          if [ ! -d ${DOCS_DIR} ]; then \
++	    ${MKDIR} ${DOCS_DIR} ; \
+           fi;\
+-          cp -fr docs ${INSTALL_DIR};\
++          cp -fr docs/* ${DOCS_DIR};\
+           ${RM} -fr docs/tex;\
+         fi;
+ # ------------------------------------------------------------------

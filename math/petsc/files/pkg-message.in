@@ -1,0 +1,5 @@
+===================================================
+Before using PETSc, you'll have to set PETSC_DIR to
+%%PETSC_DIR%%
+and eventually PETSC_ARCH to %%PETSC_ARCH%%.
+===================================================
