@@ -7575,6 +7575,7 @@ roadrunner	ports/net/roadrunner
 roap		ports/textproc/roap
 robocode	ports/games/robocode
 robodoc		ports/devel/robodoc
+robot		ports/graphics/robot
 robotfindskitten	ports/games/robotfindskitten
 rockdodger	ports/games/rockdodger
 rocksndiamonds	ports/games/rocksndiamonds
