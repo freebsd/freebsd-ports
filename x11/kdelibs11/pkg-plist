@@ -399,7 +399,7 @@ share/toolbar/viewzoom.xpm
 @unexec rmdir %D/share/icons/large 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
 @unexec rmdir %D/share/doc/HTML/zh_CN.GB2312 2>/dev/null || true
-@unexec rmdir %Dshare/doc/HTML/sv 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/sv 2>/dev/null || true
 @unexec rmdir %D/share/doc/HTML/ru 2>/dev/null || true
 @unexec rmdir %D/share/doc/HTML/pt 2>/dev/null || true
 @unexec rmdir %D/share/doc/HTML/pl 2>/dev/null || true
