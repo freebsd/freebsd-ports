@@ -1,0 +1,7 @@
+This module provides some drop-in replacements for the string comparison
+functions of Test::More, but which are more suitable when you test against
+long strings. If you've ever had to search for text in a multi-line string
+like an HTML document, or find specific items in binary data,
+this is the module for you.
+
+WWW: http://search.cpan.org/dist/Test-Cmd/
