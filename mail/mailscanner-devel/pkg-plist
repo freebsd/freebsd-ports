@@ -80,6 +80,7 @@ libexec/MailScanner/nod32-wrapper.sample
 libexec/MailScanner/norman-autoupdate.sample
 libexec/MailScanner/norman-wrapper.sample
 libexec/MailScanner/panda-wrapper.sample
+libexec/MailScanner/panda-autoupdate.sample
 libexec/MailScanner/rav-autoupdate.sample
 libexec/MailScanner/rav-wrapper.sample
 libexec/MailScanner/sophos-autoupdate.sample
@@ -451,6 +452,7 @@ libexec/MailScanner/vexira-wrapper.sample
 %%PORTDOCS%%%%DOCSDIR%%/Sophos.install.freebsd
 %%PORTDOCS%%%%DOCSDIR%%/book.cover.gif
 %%PORTDOCS%%%%DOCSDIR%%/building.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs.html
 %%PORTDOCS%%%%DOCSDIR%%/donations.shtml
 %%PORTDOCS%%%%DOCSDIR%%/downloadgraphs.shtml
 %%PORTDOCS%%%%DOCSDIR%%/downloads.shtml
@@ -522,9 +524,12 @@ libexec/MailScanner/vexira-wrapper.sample
 %%PORTDOCS%%%%DOCSDIR%%/poetry.shtml
 %%PORTDOCS%%%%DOCSDIR%%/poweredby.google.gif
 %%PORTDOCS%%%%DOCSDIR%%/poweredby.transtec.gif
+%%PORTDOCS%%%%DOCSDIR%%/phishing.html
+%%PORTDOCS%%%%DOCSDIR%%/phishing.jpg
+%%PORTDOCS%%%%DOCSDIR%%/phishing2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/pressreleases.html
 %%PORTDOCS%%%%DOCSDIR%%/presentations.html
 %%PORTDOCS%%%%DOCSDIR%%/press.html
-%%PORTDOCS%%%%DOCSDIR%%/pressreleases.html
 %%PORTDOCS%%%%DOCSDIR%%/qmail/qmail-queue.zip
 %%PORTDOCS%%%%DOCSDIR%%/readme.shtml
 %%PORTDOCS%%%%DOCSDIR%%/reject.html

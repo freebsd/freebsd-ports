@@ -1,8 +1,8 @@
---- ../MailScanner-install-4.35.5.orig/docs/man/MailScanner.conf.5	Fri Oct 22 08:13:43 2004
-+++ docs/man/MailScanner.conf.5	Fri Oct 22 08:14:01 2004
+--- ../MailScanner-install-4.37.3.orig/docs/man/MailScanner.conf.5	Wed Dec 15 21:17:17 2004
++++ docs/man/MailScanner.conf.5	Wed Dec 15 21:30:00 2004
 @@ -1,4 +1,4 @@
 -.TH "MailScanner.conf" "5" "4.34.8" "Julian Field" "Mail"
-+.TH "MailScanner.conf" "5" "4.35.5" "Julian Field" "Mail"
++.TH "MailScanner.conf" "5" "4.37.3" "Julian Field" "Mail"
  .SH "NAME"
  .LP 
  MailScanner.conf \- Main configuration for MailScanner
@@ -15,7 +15,23 @@
  .br 
  
  .br 
-@@ -1266,12 +1266,11 @@
+@@ -781,6 +781,15 @@
+ When an entire message is saved in the quarantine for any reason, do you want to save it as the raw data files out of the mail queue (which can be processed with the df2mbox script, and which is easier to send to its original recipients), or do you want a conventional message file consisting of the header followed by the body of the message. If the previous option is switched off, then this will only affect archived mail and quarantined spam. If the previous option is on, then this also affects quarantined infections. 
+ 
+ .TP 
++\fBKeep Spam And MCP Archive Clean\fR
++Default: no
++.br 
++
++.br 
++Do you want to stop any virus\-infected spam getting into the spam or MCP archives? If you have a system where users can release messages from the spam or MCP archives, then you probably want to stop them being able to release any infected messages, so set this to yes. It is set to no by default as it causes a small hit in performance, and many people don't allow users to access the spam quarantine, so don't need it. This can also be the filename of a ruleset.
++
++
++.TP 
+ \fBLanguage Strings\fR
+ Default: %reports\-dir%/languages.conf
+ .br 
+@@ -1266,12 +1275,11 @@
  
  .TP 
  \fBAttachment Encoding Charset\fR
@@ -30,7 +46,7 @@
  .SH "Mail archiving and monitoring"
  .TP 
  \fBArchive Mail\fR
-@@ -1725,8 +1724,16 @@
+@@ -1725,8 +1733,16 @@
  
  .br 
  Log all the filenames that are allowed by the Filetype Rules, or just the filetypes that are denied? This can also be the filename of a ruleset.
@@ -48,7 +64,7 @@
  
  .TP 
  \fBSpamAssassin User State Dir\fR
-@@ -1734,7 +1741,7 @@
+@@ -1734,7 +1750,7 @@
  .br 
  
  .br 
