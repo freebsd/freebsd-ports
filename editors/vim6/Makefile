@@ -4,7 +4,7 @@
 # Date created:         Sat June 29, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.19 1998/02/09 10:35:06 obrien Exp $
+# $Id: Makefile,v 1.20 1998/02/16 11:23:05 obrien Exp $
 #
 
 DISTNAME=	vim-5.0x
@@ -32,7 +32,7 @@ MAKE_FLAGS:=	CONF_OPT_GUI="--enable-gui=yes" ${MAKE_FLAGS}
 .endif
 
 pre-build:
-	@(cd ${WRKSRC}; ${GMAKE} distclean)
+	@(cd ${WRKSRC}; ${MAKE} distclean)
 
 post-install:
 	[ -e ${PREFIX}/bin/gvim ] || /bin/ln -s ${PREFIX}/bin/vim ${PREFIX}/bin/gvim
