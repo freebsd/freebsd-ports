@@ -8,7 +8,6 @@ include/spar/sl_constant.h
 include/spar/sl_errno.h
 include/spar/sl_error.h
 include/spar/sl_formula.h
-include/spar/sl_function.h
 include/spar/sl_init.h
 include/spar/sl_io.h
 include/spar/sl_math.h
@@ -19,11 +18,11 @@ include/spar/sl_module_loader.h
 include/spar/sl_module_manager.h
 include/spar/sl_parser.h
 include/spar/sl_poly.h
+include/spar/sl_random.h
 include/spar/sl_sort.h
 include/spar/sl_table.h
 include/spar/sl_test.h
 include/spar/sl_util.h
-include/spar/sl_variable.h
 include/spar/sl_vector.h
 include/spar/sl_version.h
 lib/libspar.a
