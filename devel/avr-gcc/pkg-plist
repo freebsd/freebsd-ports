@@ -12,62 +12,9 @@ bin/avr-gccbug
 @unexec install-info --delete %D/info/gccint.info %D/info/dir
 @unexec install-info --delete %D/info/cppinternals.info %D/info/dir
 info/cpp.info
-info/cpp.info-1
-info/cpp.info-2
-info/cpp.info-3
-info/cpp.info-4
-info/cpp.info-5
 info/cppinternals.info
 info/gcc.info
-info/gcc.info-1
-info/gcc.info-2
-info/gcc.info-3
-info/gcc.info-4
-info/gcc.info-5
-info/gcc.info-6
-info/gcc.info-7
-info/gcc.info-8
-info/gcc.info-9
-info/gcc.info-10
-info/gcc.info-11
-info/gcc.info-12
-info/gcc.info-13
-info/gcc.info-14
-info/gcc.info-15
-info/gcc.info-16
-info/gcc.info-17
-info/gcc.info-18
-info/gcc.info-19
-info/gcc.info-20
-info/gcc.info-21
-info/gcc.info-22
-info/gcc.info-23
-info/gcc.info-24
 info/gccint.info
-info/gccint.info-1
-info/gccint.info-2
-info/gccint.info-3
-info/gccint.info-4
-info/gccint.info-5
-info/gccint.info-6
-info/gccint.info-7
-info/gccint.info-8
-info/gccint.info-9
-info/gccint.info-10
-info/gccint.info-11
-info/gccint.info-12
-info/gccint.info-13
-info/gccint.info-14
-info/gccint.info-15
-info/gccint.info-16
-info/gccint.info-17
-info/gccint.info-18
-info/gccint.info-19
-info/gccint.info-20
-info/gccint.info-21
-info/gccint.info-22
-info/gccint.info-23
-info/gccint.info-24
 @exec install-info %D/info/cpp.info %D/info/dir
 @exec install-info %D/info/gcc.info %D/info/dir
 @exec install-info %D/info/gccint.info %D/info/dir
@@ -88,6 +35,7 @@ lib/gcc-lib/avr/3.3/include/stdarg.h
 lib/gcc-lib/avr/3.3/include/stdbool.h
 lib/gcc-lib/avr/3.3/include/stddef.h
 lib/gcc-lib/avr/3.3/include/syslimits.h
+lib/gcc-lib/avr/3.3/include/unwind.h
 lib/gcc-lib/avr/3.3/include/varargs.h
 lib/gcc-lib/avr/3.3/install-tools/fix-header
 lib/gcc-lib/avr/3.3/install-tools/fixinc.sh
@@ -101,13 +49,16 @@ lib/gcc-lib/avr/3.3/install-tools/include/limits.h
 lib/gcc-lib/avr/3.3/install-tools/include/stdarg.h
 lib/gcc-lib/avr/3.3/install-tools/include/stdbool.h
 lib/gcc-lib/avr/3.3/install-tools/include/stddef.h
+lib/gcc-lib/avr/3.3/install-tools/include/unwind.h
 lib/gcc-lib/avr/3.3/install-tools/include/varargs.h
 lib/gcc-lib/avr/3.3/install-tools/mkheaders
 lib/gcc-lib/avr/3.3/install-tools/mkheaders.conf
 lib/gcc-lib/avr/3.3/install-tools/mkinstalldirs
 lib/gcc-lib/avr/3.3/libgcc.a
 lib/gcc-lib/avr/3.3/specs
+share/locale/be/LC_MESSAGES/gcc.mo
 share/locale/da/LC_MESSAGES/gcc.mo
+share/locale/de/LC_MESSAGES/gcc.mo
 share/locale/el/LC_MESSAGES/gcc.mo
 share/locale/es/LC_MESSAGES/gcc.mo
 share/locale/fr/LC_MESSAGES/gcc.mo

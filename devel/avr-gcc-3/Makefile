@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	3.3.2003.01.08
-PORTREVISION=	1
+PORTVERSION=	3.3.2003.05.11
+PORTREVISION=	0
 CATEGORIES=	devel
 #MASTER_SITES=	${MASTER_SITE_GNU}
 #MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}-${PORTVERSION}
@@ -40,7 +40,7 @@ GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--target=avr
 
-MAN_AUX=	gcc-man.2003.01.08.gz
+MAN_AUX=	gcc-man.2003.05.11.gz
 
 MAKE_FLAGS=	LANGUAGES="c c++"
 # get rid of that silly -mcpu=pentiumpro -current is so fond of. :-(
