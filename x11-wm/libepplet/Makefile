@@ -8,24 +8,24 @@
 PORTNAME=	libepplet
 PORTVERSION= 	0.5
 CATEGORIES=	x11-wm devel
-MASTER_SITES=	ftp://ftp.enlightenment.org/e/epplets/
+MASTER_SITES=	ftp://ftp.enlightenment.org/e/epplets/ \
+		ftp://ftp.dti.ad.jp/pub/X/enlightenment/epplets/
+
 DISTNAME=	epplet-base-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
-
-WRKSRC=		${WRKDIR}/Epplets-0.5
+WRKSRC=		${WRKDIR}/Epplets-${PORTVERSION}
 
 USE_X_PREFIX=	yes
-INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-fsstd
+USE_IMLIB=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ENV=	EROOT=${X11BASE}/share/enlightenment \
-		EBIN=${X11BASE}/bin \
-		LIBS="-L${LOCALBASE}/lib -lintl" \
-		X_LIBS="-lxpg4"
+		EBIN=${X11BASE}/bin
+CONFIGURE_ARGS=	--enable-fsstd
+INSTALLS_SHLIB=	yes
 
-MAKE_ENV=	${ECHO} -n; cd ${WRKSRC}/api;
+pre-patch:
+	@${PERL} -pi -e 's|api epplets|api|g' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
