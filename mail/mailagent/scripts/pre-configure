@@ -6,11 +6,11 @@
 #   input.
 
 while [ X$addr = X ]; do
-    echo -n "Enter your complete E-mail address> " ; read addr
+    read -p "Enter your complete E-mail address> " addr
 done
 
 while [ X$host = X ]; do
-    echo -n "Enter fully qualified name of this host (`hostname`)> " ; read host
+    read -p "Enter fully qualified name of this host (`hostname`)> " host
     if [ X$host = X ]; then
         host=`hostname`
     fi
@@ -25,7 +25,7 @@ else
     hiddennet=$maildomain
 fi
 
-echo -n "Enter the name of your organization> "; read orgname
+read -p "Enter the name of your organization> " orgname
 
 cat >${WRKSRC}/config.sh <<EOM
 #!/bin/sh
