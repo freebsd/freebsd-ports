@@ -13,14 +13,12 @@ MASTER_SITES=	http://www.alphaworks.ibm.com/tech/xml4j/
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
-RUN_DEPENDS=	${PREFIX}/${JFCSUBDIR}/swing.jar:${PORTSDIR}/java/jfc
+RUN_DEPENDS=	${PREFIX}/share/java/classes/jfc-1.1.1/swing.jar:${PORTSDIR}/java/jfc
 
 RESTRICTED=	"License prohibites distribute."
 NO_BUILD=	YES
-PLIST_SUB=	JAVASUBDIR=${JAVASUBDIR}
 
 JAVASUBDIR=	jdk1.1.8
-JFCSUBDIR=	swing-1.1
 DIR=		${PREFIX}/share/java
 
 do-install:
