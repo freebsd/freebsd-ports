@@ -2,10 +2,10 @@ Local/Applications/GNUMail.app/GNUMail
 %%GNUSTEP_DEVEL%%Local/Applications/GNUMail.app/Resources/CVS/Entries
 %%GNUSTEP_DEVEL%%Local/Applications/GNUMail.app/Resources/CVS/Repository
 %%GNUSTEP_DEVEL%%Local/Applications/GNUMail.app/Resources/CVS/Root
-Local/Applications/GNUMail.app/Resources/Address_add.tiff
 Local/Applications/GNUMail.app/Resources/Address_bcc.tiff
 Local/Applications/GNUMail.app/Resources/Address_cc.tiff
-Local/Applications/GNUMail.app/Resources/Address_delete.tiff
+Local/Applications/GNUMail.app/Resources/AddressBook_32.tiff
+Local/Applications/GNUMail.app/Resources/AddressManager_32.tiff
 Local/Applications/GNUMail.app/Resources/Address_to.tiff
 Local/Applications/GNUMail.app/Resources/Czech.lproj/Localizable.strings
 Local/Applications/GNUMail.app/Resources/English.lproj/Localizable.strings
@@ -87,6 +87,7 @@ Local/Applications/GNUMail.app/Resources/send_48.tiff
 Local/Applications/GNUMail.app/Resources/show_all_headers_32.tiff
 Local/Applications/GNUMail.app/Resources/show_all_headers_48.tiff
 Local/Applications/GNUMail.app/Resources/sort_down.tiff
+Local/Applications/GNUMail.app/Resources/sort_left.tiff
 Local/Applications/GNUMail.app/Resources/sort_right.tiff
 Local/Applications/GNUMail.app/Resources/sort_up.tiff
 Local/Applications/GNUMail.app/Resources/stop_32.tiff
@@ -122,6 +123,9 @@ Local/Library/GNUMail/Fonts.prefs/Fonts
 Local/Library/GNUMail/Fonts.prefs/Resources/Info-gnustep.plist
 Local/Library/GNUMail/Fonts.prefs/Resources/fonts.tiff
 Local/Library/GNUMail/Fonts.prefs/stamp.make
+Local/Library/GNUMail/Import.bundle/Import
+Local/Library/GNUMail/Import.bundle/Resources/Info-gnustep.plist
+Local/Library/GNUMail/Import.bundle/stamp.make
 Local/Library/GNUMail/MIME.prefs/MIME
 Local/Library/GNUMail/MIME.prefs/Resources/Info-gnustep.plist
 Local/Library/GNUMail/MIME.prefs/Resources/mime.tiff
@@ -146,6 +150,8 @@ Local/Library/GNUMail/Viewing.prefs/stamp.make
 @dirrm Local/Library/GNUMail/Receiving.prefs
 @dirrm Local/Library/GNUMail/MIME.prefs/Resources
 @dirrm Local/Library/GNUMail/MIME.prefs
+@dirrm Local/Library/GNUMail/Import.bundle/Resources
+@dirrm Local/Library/GNUMail/Import.bundle
 @dirrm Local/Library/GNUMail/Fonts.prefs/Resources
 @dirrm Local/Library/GNUMail/Fonts.prefs
 @dirrm Local/Library/GNUMail/Filtering.prefs/Resources
