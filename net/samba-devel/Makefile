@@ -7,7 +7,7 @@
 
 PORTNAME=	samba
 PORTVERSION=	2.2.1a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://samba.anu.edu.au/pub/samba/%SUBDIR%/ \
@@ -32,6 +32,8 @@ SAMBA_CONFDIR=	${PREFIX}/etc
 # sample files
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/samba.sh.sample
 SAMPLE_CONFIG=	${SAMBA_CONFDIR}/smb.conf.default
+DOCSDIR=	${PREFIX}/share/doc/samba
+
 
 NO_LATEST_LINK=	yes
 USE_AUTOCONF=	yes
