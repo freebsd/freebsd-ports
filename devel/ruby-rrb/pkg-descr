@@ -1,0 +1,7 @@
+Ruby Refactoring Browser is a refactoring browser for ruby script.
+Refactoring is a technique of restructuring an existing code, 
+modifying its internal structure, without changing its external behavior.
+This software make you free from lapsible routine work like renaming 
+methods,renaming variables and extracting methods.
+
+WWW: http://www.kmc.gr.jp/proj/rrb/index-en.html

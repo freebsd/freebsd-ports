@@ -1367,6 +1367,7 @@
     SUBDIR += ruby-rbtree
     SUBDIR += ruby-rjudy
     SUBDIR += ruby-robjectteam
+    SUBDIR += ruby-rrb
     SUBDIR += ruby-rreadline
     SUBDIR += ruby-rudl
     SUBDIR += ruby-sdl
