@@ -1,0 +1,13 @@
+@cwd /usr/local
+@mode 755
+@owner bin
+@group bin
+bin/pfe
+lib/pfe/help/showhelp
+lib/pfe/help/helpidx
+@mode 644
+man/man1/pfe.1
+lib/pfe/help/floating.hlp
+lib/pfe/help/forth-83.hlp
+lib/pfe/help/index
+lib/pfe/help/misc.hlp
