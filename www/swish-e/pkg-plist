@@ -2,7 +2,6 @@ bin/swish-e
 bin/swish-filter-test
 include/swish-e.h
 lib/libswish-e.a
-lib/libswish-e.la
 lib/libswish-e.so
 lib/libswish-e.so.2
 lib/swish-e/perl/SWISH/Filters/Doc2txt.pm
@@ -32,74 +31,6 @@ lib/swish-e/spider.pl
 lib/swish-e/swish.cgi
 lib/swish-e/swishspider
 @dirrm lib/swish-e
-share/doc/swish-e/examples/conf/stopwords/dutch.txt
-share/doc/swish-e/examples/conf/stopwords/english.txt
-share/doc/swish-e/examples/conf/stopwords/german.txt
-share/doc/swish-e/examples/conf/stopwords/spanish.txt
-@dirrm share/doc/swish-e/examples/conf/stopwords
-share/doc/swish-e/examples/conf/README
-share/doc/swish-e/examples/conf/example1.config
-share/doc/swish-e/examples/conf/example2.config
-share/doc/swish-e/examples/conf/example3.config
-share/doc/swish-e/examples/conf/example4.config
-share/doc/swish-e/examples/conf/example5.config
-share/doc/swish-e/examples/conf/example6.config
-share/doc/swish-e/examples/conf/example7.config
-share/doc/swish-e/examples/conf/example8.config
-share/doc/swish-e/examples/conf/example9.config
-share/doc/swish-e/examples/conf/example9.pl
-@dirrm share/doc/swish-e/examples/conf
-share/doc/swish-e/examples/filter-bin/README
-share/doc/swish-e/examples/filter-bin/_binfilter.sh
-share/doc/swish-e/examples/filter-bin/_pdf2html.pl
-share/doc/swish-e/examples/filter-bin/swish_filter.pl
-@dirrm share/doc/swish-e/examples/filter-bin
-share/doc/swish-e/examples/filters/README
-@dirrm share/doc/swish-e/examples/filters
-share/doc/swish-e/examples/prog-bin/MySQL.pl
-share/doc/swish-e/examples/prog-bin/README
-share/doc/swish-e/examples/prog-bin/SwishSpiderConfig.pl
-share/doc/swish-e/examples/prog-bin/doc2txt.pm
-share/doc/swish-e/examples/prog-bin/file.pl
-share/doc/swish-e/examples/prog-bin/index_hypermail.pl
-share/doc/swish-e/examples/prog-bin/pdf2html.pm
-share/doc/swish-e/examples/prog-bin/pdf2xml.pm
-@dirrm share/doc/swish-e/examples/prog-bin
-@dirrm share/doc/swish-e/examples
-share/doc/swish-e/html/images/dotrule1.gif
-share/doc/swish-e/html/images/swish.gif
-share/doc/swish-e/html/images/swish2.gif
-share/doc/swish-e/html/images/swish2b.gif
-share/doc/swish-e/html/images/swishbanner1.gif
-@dirrm share/doc/swish-e/html/images
-share/doc/swish-e/html/.htaccess
-share/doc/swish-e/html/.swishcgi.conf
-share/doc/swish-e/html/API.html
-share/doc/swish-e/html/CHANGES.html
-share/doc/swish-e/html/Filter.html
-share/doc/swish-e/html/INSTALL.html
-share/doc/swish-e/html/README.html
-share/doc/swish-e/html/SWISH-3.0.html
-share/doc/swish-e/html/SWISH-BUGS.html
-share/doc/swish-e/html/SWISH-CONFIG.html
-share/doc/swish-e/html/SWISH-FAQ.html
-share/doc/swish-e/html/SWISH-LIBRARY.html
-share/doc/swish-e/html/SWISH-RUN.html
-share/doc/swish-e/html/SWISH-SEARCH.html
-share/doc/swish-e/html/index.html
-share/doc/swish-e/html/index_long.html
-share/doc/swish-e/html/search.html
-share/doc/swish-e/html/searchdoc.html
-share/doc/swish-e/html/spider.html
-share/doc/swish-e/html/split.pl
-share/doc/swish-e/html/style.css
-share/doc/swish-e/html/swish.conf
-share/doc/swish-e/html/swish.html
-@dirrm share/doc/swish-e/html
-share/doc/swish-e/INSTALL
-share/doc/swish-e/README
-share/doc/swish-e/README.cvs
-@dirrm share/doc/swish-e
 share/swish-e/search.tt
 share/swish-e/swish.tmpl
 @dirrm share/swish-e
