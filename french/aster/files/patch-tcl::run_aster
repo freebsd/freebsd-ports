@@ -1,18 +1,20 @@
---- tcl/run_aster.orig	Thu Jun 26 17:57:43 2003
-+++ tcl/run_aster	Fri Jul 18 23:01:40 2003
-@@ -5,6 +5,7 @@
+--- tcl/run_aster.orig	Wed Nov 19 11:48:05 2003
++++ tcl/run_aster	Mon Dec  1 22:56:03 2003
+@@ -5,6 +5,8 @@
  TCLSH=HOME_TCL_TK/bin/TCL_BIN
  REPTCL=HOME_CODE_ASTER/tcl
  PYTHONHOME=HOME_PYTHON
 +PYTHONPATH=%%PYTHONPATH%%
++HDF5_DISABLE_VERSION_CHECK=1
  
  # lancement de run_aster
  # usage : run_aster [-p ncpu] fichier_parametre
-@@ -32,6 +33,7 @@
+@@ -32,6 +34,8 @@
  fi
  
  export PYTHONHOME
 +export PYTHONPATH
++export HDF5_DISABLE_VERSION_CHECK
  
  OMP_NUM_THREADS=$ncpu
  export OMP_NUM_THREADS

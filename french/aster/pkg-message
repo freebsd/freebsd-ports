@@ -3,9 +3,15 @@ run_aster a été installé dans le répertoire %%inst_dir%%/tcl.
 Pour lancer Code_Aster via ASTK, entrez :
 %%inst_dir%%/outils/astk
 
+Sur plate-forme i386, nous vous suggérons d'installer les ports french/gibi
+et french/homard, deux outils de maillage additionnels.
+
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 run_aster has been installed in the directory %%inst_dir%%/tcl.
+
+On i386 platform, we suggest you install the ports french/gibi and
+french/homard, two additional meshing tools.
 
 To run Code_Aster through ASTK, type:
 %%inst_dir%%/outils/astk

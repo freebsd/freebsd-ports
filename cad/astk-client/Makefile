@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	astk
-PORTREVISION=	2
+PORTREVISION=	0
 
 COMMENT=	Graphical interface for Code_Aster (client side)
 

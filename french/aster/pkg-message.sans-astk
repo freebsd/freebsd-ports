@@ -4,9 +4,15 @@ Après avoir installé Code_Aster, vous devriez installer ASTK
 [cad/astk-serveur et cad/astk-client].
 ASTK est une interface graphique qui lance Code_Aster à partir de run_aster.
 
+Sur plate-forme i386, nous vous suggérons d'installer les ports french/gibi
+et french/homard, deux outils de maillage additionnels.
+
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 run_aster has been installed in the directory %%inst_dir%%/tcl.
+
+On i386 platform, we suggest you install the ports french/gibi and
+french/homard, two additional meshing tools.
 
 After Code_Aster installation you could install ASTK
 [cad/astk-serveur and cad/astk-client].
