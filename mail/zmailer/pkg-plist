@@ -1,3 +1,4 @@
+@unexec /bin/rm -f bin/vacation
 etc/rc.d/zmailer.sh.sample
 etc/zmailer/db/proto/aliases
 etc/zmailer/db/proto/fqdnaliases
@@ -86,7 +87,7 @@ sbin/router
 sbin/scheduler
 sbin/sendmail
 sbin/smtpserver
-sbin/vacation
+@unexec /bin/rm -f sbin/vacation
 sbin/vacation.exe
 sbin/vacation.sh
 sbin/zmailer
@@ -173,6 +174,7 @@ include/zmailer.h
 @dirrm etc/zmailer/cf/fc
 @dirrm etc/zmailer/cf
 @dirrm etc/zmailer
+@dirrm sbin/bak
 @dirrm sbin/ta
 @cwd /var/spool
 @dirrm postoffice/transport/Z
