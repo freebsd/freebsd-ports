@@ -197,6 +197,7 @@
     SUBDIR += scogdb
     SUBDIR += sdcc
     SUBDIR += sdl
+    SUBDIR += sdl-devel
     SUBDIR += sfio
     SUBDIR += shtool
     SUBDIR += sip
