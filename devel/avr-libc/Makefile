@@ -6,9 +6,12 @@
 #
 
 PORTNAME=	avr-libc
-PORTVERSION=	20010717
+PORTVERSION=	20010821
 CATEGORIES=	devel
 MASTER_SITES=	http://www.amelek.gda.pl/avr/libc/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		avr-libc-reference.html
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	joerg@freebsd.org
 
@@ -39,6 +42,6 @@ post-install:
 				${PREFIX}/share/doc/avr-libc/examples; \
 		done
 		${INSTALL_DATA} ${FILESDIR}/avr-lib.pdf ${PREFIX}/share/doc/avr-libc
-		${INSTALL_DATA} ${FILESDIR}/avr-libc-reference.html ${PREFIX}/share/doc/avr-libc
+		${INSTALL_DATA} ${DISTDIR}/avr-libc-reference.html ${PREFIX}/share/doc/avr-libc
 
 .include <bsd.port.mk>
