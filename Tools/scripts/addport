@@ -419,8 +419,8 @@ OPTIONS
 			where things are placed.  This is required in
 			order to change things like module names etc.
 	-l PR#		Attempts to autogenerate a commit message by
-			reading the Makefile/pkg-comment files.  The
-			PR number must be passed to -l.  If there is
+			reading the Makefile file.
+			The PR number must be passed to -l.  If there is
 			no PR (i.e., self-created or submitted in
 			private email), use PR# -1.
 	-m		Do not checkout ports/Mk (needed for support
