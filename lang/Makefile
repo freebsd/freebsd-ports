@@ -9,6 +9,7 @@
     SUBDIR += aleph
     SUBDIR += atlast
     SUBDIR += awka
+    SUBDIR += bf2c
     SUBDIR += bigloo
     SUBDIR += bwbasic
     SUBDIR += caml-light

@@ -1,0 +1,11 @@
+BrainF*ck is a minimalistic, yet Turing-complete programming language with
+only 8 instructions.  bf2c compiles a BF file into a corresponding C file,
+optimizing as much as possible for speed, size and readability.
+
+It is written for fun, self-educating purposes and to beat existing
+BF compilers.
+
+WWW: http://bf2c.sourceforge.net/
+
+- Rene
+r.c.ladan@student.tue.nl
