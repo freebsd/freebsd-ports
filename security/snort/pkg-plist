@@ -2,8 +2,14 @@
 bin/snort
 @unexec if [ -f %D/etc/snort.conf ] && cmp -s %D/etc/snort.conf %D/etc/snort.conf-sample; then rm -f %D/etc/snort.conf; fi
 etc/snort.conf-sample
-etc/rc.d/snort.sh.sample
 @exec [ -f %B/snort.conf ] || cp %B/%f %B/snort.conf
+@unexec if [ -f %D/etc/unicode.map ] && cmp -s %D/etc/unicode.map %D/etc/unicode.map-sample; then rm -f %D/etc/unicode.map; fi
+etc/unicode.map-sample
+@exec [ -f %B/unicode.map ] || cp %B/%f %B/unicode.map
+@unexec if [ -f %D/etc/threshold.conf ] && cmp -s %D/etc/threshold.conf %D/etc/threshold.conf-sample; then rm -f %D/etc/threshold.conf; fi
+etc/threshold.conf-sample
+@exec [ -f %B/threshold.conf ] || cp %B/%f %B/threshold.conf
+etc/rc.d/snort.sh.sample
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS

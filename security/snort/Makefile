@@ -7,7 +7,7 @@
 
 PORTNAME=	snort
 PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/dl/
 
@@ -16,6 +16,8 @@ COMMENT=	Lightweight network intrusion detection system
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
+#USE_GPG=	yes
+#SIG_SUFFIX=	.asc
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
@@ -68,31 +70,26 @@ pre-configure:
 	@${ECHO} ""
 
 post-install:
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/rules/*.rules ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/etc/classification.config \
+		${DATADIR}/classification.config-sample
+	[ -f ${DATADIR}/classification.config ] || \
+	    ${CP} ${DATADIR}/classification.config-sample \
+	    	${DATADIR}/classification.config
+	${INSTALL_DATA} ${WRKSRC}/etc/reference.config \
+		${DATADIR}/reference.config-sample
+	[ -f ${DATADIR}/reference.config ] ||  \
+	    ${CP} ${DATADIR}/reference.config-sample ${DATADIR}/reference.config
+	${INSTALL_DATA} ${FILESDIR}/snort.sh.sample ${PREFIX}/etc/rc.d
+.for f in snort.conf unicode.map threshold.conf
+	${INSTALL_DATA} ${WRKSRC}/etc/${f} ${PREFIX}/etc/${f}-sample
+	[ -f ${PREFIX}/etc/${f} ] || \
+	    ${INSTALL_DATA} ${WRKSRC}/etc/${f} ${PREFIX}/etc/${f}
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/rules/*.rules ${DATADIR}; \
-	${INSTALL_DATA} ${WRKSRC}/etc/classification.config \
-		${DATADIR}/classification.config-sample; \
-	if [ ! -f ${DATADIR}/classification.config ]; then \
-	    ${CP} ${DATADIR}/classification.config-sample \
-		${DATADIR}/classification.config; \
-	fi; \
-	${INSTALL_DATA} ${WRKSRC}/etc/reference.config \
-		${DATADIR}/reference.config-sample; \
-	if [ ! -f ${DATADIR}/reference.config ]; then \
-	    ${CP} ${DATADIR}/reference.config-sample \
-		${DATADIR}/reference.config; \
-	fi; \
-	${INSTALL_DATA} ${FILESDIR}/snort.sh.sample \
-		${PREFIX}/etc/rc.d/snort.sh.sample; \
-	${INSTALL_DATA} ${WRKSRC}/etc/snort.conf \
-		${PREFIX}/etc/snort.conf-sample; \
-	if [ ! -f ${PREFIX}/etc/snort.conf ]; then \
-	    ${CP} ${PREFIX}/etc/snort.conf-sample \
-		${PREFIX}/etc/snort.conf; \
-	fi
 
 .include <bsd.port.mk>
