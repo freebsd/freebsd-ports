@@ -1,0 +1,10 @@
+Text::Balanced - Extract delimited text sequences from strings.
+
+The various extract_... subroutines may be used to extract a delimited
+string (possibly after skipping a specified prefix string).  The search
+for the string always begins at the current pos location of the string's
+variable (or at index zero, if no pos position is defined).
+
+WWW: http://search.cpan.org/search?dist=Text-Balanced
+
+-Anton
