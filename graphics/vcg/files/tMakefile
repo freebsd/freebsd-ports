@@ -38,12 +38,12 @@ SHELL = /bin/sh
 # where the binaries go
 # BINDIR = /usr/local/bin/
 # BINDIR = /RW/esprit/users/sander/PUBLIC/CMD/
-BINDIR = /usr/X11R6/bin
+BINDIR = %%PREFIX%%/bin
 
 # where the manual pages go
 # MANDIR = /usr/local/man/manl/
 # MANDIR = /RW/esprit/users/sander/PUBLIC/MAN/
-MANDIR = /usr/X11R6/man/manl
+MANDIR = %%PREFIX%%/man/manl
 
 # what the manual extension is
 MANEXT = l
@@ -78,7 +78,7 @@ VCGCALL   = $(BINDIR)/$(VCGTOOL)
 #
 # Do not use  -O -finline-functions for FreeBSD, or you really have a lot
 # of swap for compiling drawstr.c.
-CFLAGS = -c -O2 -pipe
+CFLAGS = -c %%CFLAGS%%
 
 # Flags for debugging
 DFLAGS =
@@ -104,7 +104,7 @@ CLINKFLAGS = -o
 # then please use
 # INCLUDES = -I/usr/local/X11/include/
 # INCLUDES = -I/RW/esprit/X11R5/include/
-INCLUDES = -I/usr/X11R6/include/
+INCLUDES = -I%%X11BASE%%/include/
 
 # Library directories
 # For Sunview, this should be enough, because on Suns, Sunview
@@ -117,7 +117,7 @@ INCLUDES = -I/usr/X11R6/include/
 # then please use
 # LIBPATH = -L/usr/local/X11/lib/
 # LIBPATH = -L/RW/esprit/X11R5/lib/
-LIBPATH = -L/usr/X11R6/lib/
+LIBPATH = -L%%X11BASE%%/lib/
 
 # Libraries
 # Libraries for SunView
@@ -131,11 +131,11 @@ LIBRARIES = -lXext -lX11 -lm
 
 # C compiler
 # CC = gcc -pipe
-CC = cc
+CC = %%CC%%
 
 # C linker
 # CCLINK  = gcc -static
-CCLINK = cc
+CCLINK = %%CC%%
 
 # If you use gcc and the sun driver, you need the normal sun
 # preprocessor because of incompatibilities of the system libraries
@@ -154,12 +154,12 @@ INSTALLDIR = /bin/mkdir -p
 # For binary files:
 # Assume that you want to install s file called dummy.
 # INSTALL = /bin/install -s -m 755 dummy $(BINDIR)/dummy
-INSTALL = /usr/bin/install -c -s -m 755 dummy $(BINDIR)/dummy
+INSTALL = %%INSTALL_PROGRAM%% dummy $(BINDIR)/dummy
 
 # For manual pages:
 # Assume that you want to install s file called dummy.
 # INSTALLMAN = /bin/install -m 644 dummy $(MANDIR)/dummy
-INSTALLMAN = /usr/bin/install -c -m 644 dummy $(MANDIR)/dummy
+INSTALLMAN = %%INSTALL_MAN%% dummy $(MANDIR)/dummy
 
 # To make the documentation
 LATEX = latex
@@ -203,7 +203,7 @@ YACC     = not_needed
 
 # Make
 # MAKE     = make
-MAKE = make
+MAKE = %%MAKE%%
 
 # MakeDepend (should understand the -f option)
 # DEPEND   = makedepend
