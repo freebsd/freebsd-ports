@@ -40,6 +40,7 @@ share/icons/gnome/48x48/emblems/emblem-mail.png
 share/icons/gnome/48x48/emblems/emblem-multimedia.icon
 share/icons/gnome/48x48/emblems/emblem-multimedia.png
 share/icons/gnome/48x48/emblems/emblem-noread.png
+share/icons/gnome/48x48/emblems/emblem-note.png
 share/icons/gnome/48x48/emblems/emblem-package.icon
 share/icons/gnome/48x48/emblems/emblem-package.png
 share/icons/gnome/48x48/emblems/emblem-pictures.icon
@@ -139,7 +140,7 @@ share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-python-bytecode.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-qw.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-reject.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-rpm.png
-share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-scheme.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-shockwave-flash.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-smil.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-sms-rom.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-sql.png
@@ -206,6 +207,7 @@ share/icons/gnome/48x48/mimetypes/gnome-mime-text-x-patch.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-text-x-perl.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-text-x-python.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-text-x-readme.png
+share/icons/gnome/48x48/mimetypes/gnome-mime-text-x-scheme.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-text-x-sh.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-text-x-sql.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-text-x-tex.png
