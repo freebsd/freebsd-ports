@@ -3,7 +3,7 @@
 # Date created:		18 Apr 1997
 # Whom:			asami
 #
-# $Id: Makefile,v 1.3 1999/03/09 20:57:22 asami Exp $
+# $Id: Makefile,v 1.4 1999/03/10 22:10:49 asami Exp $
 #
 
 DISTNAME=	222upgrade-1998.03.08
@@ -17,11 +17,15 @@ MAINTAINER=	asami@Freebsd.ORG
 .if !defined(PACKAGE_BUILDING)
 BROKEN=		this \"port\" is for building packages for distribution only, please get the package from http://www.freebsd.org/ports/ if you need an upgrade
 .elif ${OSVERSION} >= 300000
-IGNORE=		this needs to be built on a 2.2-stable system
+FORBIDDEN=	this needs to be built on a 2.2-stable system
 .endif
 NO_MTREE=	yes
 PREFIX=		/
 NO_BUILD=	yes
-NO_INSTALL=	yes
+PKGINSTALL=	${WRKDIR}/INSTALL
+
+do-install:
+	${SED} -e "s/%%VERSION%%/${BSDPORTMKVERSION}/" ${PKGDIR}/INSTALL \
+		> ${PKGINSTALL}
 
 .include <bsd.port.post.mk>

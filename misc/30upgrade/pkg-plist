@@ -2,6 +2,7 @@ usr/bin/fetch
 usr/bin/install-info
 usr/bin/makeinfo
 usr/libexec/elf/ld
+usr/libexec/ld-elf.so.1
 usr/share/mk/bsd.port.mk
 usr/share/mk/bsd.port.pre.mk
 usr/share/mk/bsd.port.post.mk
