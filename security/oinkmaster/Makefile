@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	oinkmaster
-PORTVERSION=	0.7
-PORTREVISION=	1
+PORTVERSION=	1.0
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.it.su.se/pub/users/andreas/oinkmaster/
 
@@ -21,9 +20,14 @@ USE_REINPLACE=	yes
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=		needs at least perl 5.6.1
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL},g;\
-		s,\./oinkmaster.conf,${PREFIX}/etc/oinkmaster.conf,g' \
+	@${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL},g' \
 		${WRKSRC}/oinkmaster.pl
 
 do-install:
@@ -34,4 +38,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
