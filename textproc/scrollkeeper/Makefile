@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	scrollkeeper
-PORTVERSION=	0.3.9
+PORTVERSION=	0.3.11
 PORTEPOCH=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	2.0.0/releases/gnome-2.0-desktop-final
+MASTER_SITE_SUBDIR=	2.0.0/sources/${PORTNAME}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -56,9 +56,9 @@ post-patch:
 		's|[(]LN_S[)] -f -n|(LN_S) -f|g'
 	@${REINPLACE_CMD} -e 's|/usr/share/locale|${PREFIX}/share/locale|g' \
 		${WRKSRC}/libs/scrollkeeper.h.in
-	@${REINPLACE_CMD} -e 's|[%][%]PREFIX[%][%]|${PREFIX}|g' \
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/cl/src/update.c
-	@${REINPLACE_CMD} -e 's|[%][%]LOCALBASE[%][%]|${LOCALBASE}|g' \
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/extract/dtds/Makefile.in
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
