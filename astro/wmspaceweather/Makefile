@@ -6,6 +6,7 @@
 
 PORTNAME=	wmspaceweather
 PORTVERSION=	1.04
+PORTREVISION=	1
 CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
 DISTNAME=	wmSpaceWeather-${PORTVERSION}
