@@ -3,16 +3,17 @@
 # Date created:		23 October 1998
 # Whom:			issei@jp.FreeBSD.ORG
 #
-# $Id: Makefile,v 1.4 1999/01/10 14:54:28 simokawa Exp $
+# $Id: Makefile,v 1.5 1999/01/18 06:38:08 asami Exp $
 #
 
 DISTNAME=	AfterStep-1.0
 PKGNAME=	afterstep-i18n-1.0
 CATEGORIES=	x11-wm afterstep
-MASTER_SITES=	ftp://ftp.afterstep.org/archives/ \
+MASTER_SITES=	${MASTER_SITE_AFTERSTEP} \
 		http://www.freebsd.org/~kuriyama/distfiles/ \
 		http://www.itlb.te.noda.sut.ac.jp/~manome/afterstep/archive/ \
 		http://www.itlb.te.noda.sut.ac.jp/~manome/afterstep/archive/icons/
+MASTER_SITE_SUBDIR=	stable/archives
 DISTFILES=      ${DISTNAME}.tar.gz \
 		unofficial-I18N.98Feb27.tar.gz \
 		kterm.xpm kterm2.xpm KTerm-AS.xpm netscape4.xpm
