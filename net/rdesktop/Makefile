@@ -20,6 +20,8 @@ USE_OPENSSL=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
+ALL_TARGET=	rdesktop
+
 MAN1=		rdesktop.1
 
 do-install:
