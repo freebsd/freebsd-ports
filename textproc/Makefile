@@ -93,6 +93,7 @@
     SUBDIR += openjade
     SUBDIR += opensched
     SUBDIR += p5-DelimMatch
+    SUBDIR += p5-FreeBSD-Ports
     SUBDIR += p5-HTML-Format
     SUBDIR += p5-LJ-SpellCheck
     SUBDIR += p5-Lingua-Ispell
