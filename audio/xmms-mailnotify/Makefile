@@ -7,8 +7,7 @@
 PORTNAME=	xmms-mailnotify
 PORTVERSION=	0.2.0
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://iso.kapsobor.de/xmms/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	arved
 
 MAINTAINER=	arved@FreeBSD.org
