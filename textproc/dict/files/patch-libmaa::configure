@@ -1,0 +1,13 @@
+--- libmaa/configure~	Mon Jan 29 01:00:16 2001
++++ libmaa/configure	Mon Jan 29 01:00:29 2001
+@@ -875,11 +875,8 @@
+ # Check whether --with-cflags or --without-cflags was given.
+ if test "${with_cflags+set}" = set; then
+   withval="$with_cflags"
+-  
+-if test "x${withval}" = xyes; then
+     CFLAGS="$withval"
+-fi
+-
++  
+ fi
