@@ -1,14 +1,5 @@
---- configure.orig	Mon Feb 23 08:32:33 2004
-+++ configure	Mon Mar  8 16:17:17 2004
-@@ -19138,7 +19138,7 @@
- 
- 
- # This can be used to rebuild libtool when needed
--LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+LIBTOOL_DEPS="--disable-ltlibs /usr/local/share/libtool13/ltmain.sh"
- 
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+--- configure.orig	Mon Feb 23 06:32:33 2004
++++ configure	Wed Mar 17 19:23:24 2004
 @@ -21171,7 +21171,7 @@
  
  
@@ -29,7 +20,14 @@
              ;;
          *-*-netbsd*)
              pthread_cflags="-I/usr/pkg/include -D_REENTRANT"
-@@ -28401,7 +28401,9 @@
+@@ -28394,14 +28394,13 @@
+ fi
+ 
+ 
+-        if test x$have_usb_h = xyes; then
+-            CFLAGS="$CFLAGS -DHAVE_USB_H"
+-        fi
+         if test x$have_usbhid_h = xyes; then
              CFLAGS="$CFLAGS -DHAVE_USBHID_H"
          fi
          if test x$have_libusb_h = xyes; then
