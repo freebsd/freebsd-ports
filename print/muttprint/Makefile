@@ -21,7 +21,7 @@ post-patch:
 	-${RM} -f ${WRKSRC}/pics/*.orig
 
 .if !defined(NOPORTDOCS)
-	INSTALL_TARGET=install-with-doc
+INSTALL_TARGET=install-with-doc
 .endif
 
 .include <bsd.port.mk>
