@@ -1,4 +1,4 @@
-Bin/a52dec
+bin/a52dec
 bin/extract_a52
 include/a52dec/a52.h
 include/a52dec/audio_out.h
