@@ -1,0 +1,13 @@
+Log4J, a fast and flexible logging library for Java.
+
+Log4J is an open source library based on the work of many authors.
+It allows the developer to control which log statements are output
+with arbitrary granularity. It is fully configurable at runtime
+using external configuration files. Best of all, Log4J has a gentle
+learning curve. Beware: judging from user feedback, it is also quite
+addictive.
+
+WWW: http://jakarta.apache.org/log4j/
+
+- Herve Quiroz
+herve.quiroz@esil.univ-mrs.fr
