@@ -65,6 +65,7 @@ bin/zabbix_trapperd
 %%DATADIR%%/php/images/sysmaps/Server.png
 %%DATADIR%%/php/images/sysmaps/Workstation.png
 %%DATADIR%%/php/include/.htaccess
+%%DATADIR%%/php/include/classes.inc.php
 %%DATADIR%%/php/include/config.inc.php
 %%DATADIR%%/php/include/db.inc.php
 %%DATADIR%%/php/include/defines.inc.php

@@ -1,14 +1,14 @@
 #!/bin/sh
 
-case "${1}" in
-	start)
-		echo -n "zabbix-agent "
-		zabbix_agentd
-		;;
-	stop)
-		killall zabbix_agentd
-		;;
-	*)
-		echo Usage: `basename ${0}` "{start|stop}"
-		;;
-esac
+prefix=%PREFIX%
+
+zabbix_agentd_enable="YES"
+
+. %LOCALBASE%/etc/rc.subr
+
+name="zabbix_agentd"
+rcvar=`set_rcvar`
+command="${prefix}/bin/${name}"
+required_files="/etc/zabbix/${name}.conf"
+
+run_rc_command "$1"

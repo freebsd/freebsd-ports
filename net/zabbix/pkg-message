@@ -1,10 +1,8 @@
 ====================================================
 ACHTUNG!!!
 
-1) Run dbsetup.sh from ${PREFIX}/share/zabbix/create
-to setup database tables
-
-2) Install apache with mod_php (it should be
-GD-enabled for graphs to work) and point it
-to serve from ${PREFIX}/share/zabbix/php
+Run dbsetup.sh from %PREFIX%/share/zabbix/create
+to setup database tables. Arguments, given to
+it will be passed to mysql client, allowing
+connection do non-local MySQL server
 ====================================================
