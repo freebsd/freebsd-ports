@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	mips64emul
-PORTVERSION=	0.2
+PORTVERSION=	0.2.4
 PORTEPOCH=	1
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.mdstud.chalmers.se/~md1gavan/mips64emul/src/
+MASTER_SITES=	http://gavare.se/mips64emul/src/
 
 MAINTAINER=	jmallett@FreeBSD.org
 COMMENT=	A 64-bit MIPS emulator which emulates a variety of machines
