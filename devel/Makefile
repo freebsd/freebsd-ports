@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.95 1998/03/16 03:47:48 steve Exp $
+# $Id: Makefile,v 1.96 1998/03/21 13:54:07 asami Exp $
 #
 
     SUBDIR += ElectricFence
@@ -76,6 +76,8 @@
     SUBDIR += p5-Penguin
     SUBDIR += p5-Penguin-Easy
     SUBDIR += p5-Proc-Simple
+    SUBDIR += p5-ReadLine-Gnu
+    SUBDIR += p5-ReadLine-Perl
     SUBDIR += p5-Religion
     SUBDIR += p5-Resources
     SUBDIR += p5-Sort-Versions
