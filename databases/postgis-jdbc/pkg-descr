@@ -1,0 +1,4 @@
+PostGIS-JDBC provides the spatial data structures needed to use
+PostgreSQL-JDBC with spatial tables.
+
+WWW: http://postgis.refractions.net

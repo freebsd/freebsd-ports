@@ -208,6 +208,7 @@
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
     SUBDIR += postgis
+    SUBDIR += postgis-jdbc
     SUBDIR += postgresql-contrib
     SUBDIR += postgresql-devel
     SUBDIR += postgresql-docs
