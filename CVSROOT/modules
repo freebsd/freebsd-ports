@@ -7955,7 +7955,7 @@ qt-pgsql-plugin	ports/databases/qt-pgsql-plugin
 qt145		ports/x11-toolkits/qt145
 qt2-static	ports/x11-toolkits/qt2-static
 qt23		ports/x11-toolkits/qt23
-qt32		ports/x11-toolkits/qt32
+qt33		ports/x11-toolkits/qt33
 qtella		ports/net/qtella
 qtez		ports/devel/qtez
 qtfw		ports/security/qtfw
