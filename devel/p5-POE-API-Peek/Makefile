@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-API-Peek
-PORTVERSION=	0.01
+PORTVERSION=	1.23
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	POE
@@ -22,4 +22,14 @@ PERL_MODBUILD=	yes
 
 MAN3=		POE::API::Peek.3
 
-.include <bsd.port.mk>
+post-patch:
+	${RM} ${WRKSRC}/inc/Module/Install/AutoInstall.pm
+	${PERL} -pi -e 's/^auto_install.*//;' ${WRKSRC}/Makefile.PL
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=	"Perl 5.6.1 or newer required. Install lang/perl5 or lang/perl5.8 and try again."
+.endif
+
+.include <bsd.port.post.mk>
