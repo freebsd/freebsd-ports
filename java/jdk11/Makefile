@@ -3,10 +3,10 @@
 # Date created:		Feb, 8, 1998
 # Whom:			Nate Williams <nate@FReeBSD.org>
 #
-# $Id: Makefile,v 1.15 1998/11/14 17:35:33 nate Exp $
+# $Id: Makefile,v 1.16 1998/11/16 06:28:41 asami Exp $
 #
 
-DISTNAME=	jdk1.1.7.V98-11-5
+DISTNAME=	jdk1.1.7.V98-12-21
 PKGNAME=	jdk-1.1.7
 CATEGORIES=	lang devel
 MASTER_SITES=	ftp://ftp.nuxi.com/pub/FreeBSD/JDK/ \
