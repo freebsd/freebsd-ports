@@ -225,6 +225,7 @@
     SUBDIR += nttcp
     SUBDIR += nylon
     SUBDIR += obnc
+    SUBDIR += odsclient
     SUBDIR += ohphone
     SUBDIR += openam
     SUBDIR += opengatekeeper
