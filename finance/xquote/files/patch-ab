@@ -1,0 +1,14 @@
+--- util.c.orig	Tue Sep 23 01:50:42 1997
++++ util.c	Mon Nov 17 11:06:50 1997
+@@ -239,9 +239,9 @@
+ #endif
+ 
+ 
+-#if defined(__FreeBSD__) || defined (NEED_STRPTIME)
++#if defined (NEED_STRPTIME)
+ 
+-/* Weird, FreeBSD and IRIX 5 don't have this, but do have strftime. 
++/* Weird, IRIX 5 doesn't have this, but do have strftime. 
+ ** This is a crippled implementation, only supporting the formats
+ ** actually used in the rest of Xinvest.  Note that the return _value_
+ ** does not conform to the man page either.
