@@ -91,6 +91,7 @@
     SUBDIR += heroes
     SUBDIR += hex
     SUBDIR += icbm3d
+    SUBDIR += icebreaker
     SUBDIR += ifm
     SUBDIR += imaze
     SUBDIR += inform

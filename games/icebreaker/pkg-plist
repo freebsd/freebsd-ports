@@ -1,0 +1,8 @@
+bin/icebreaker
+share/icebreaker/crash.wav
+share/icebreaker/icebreaker_48.bmp
+share/icebreaker/ouch.wav
+share/icebreaker/penguin.bmp
+share/icebreaker/scores/icebreaker.scores
+@dirrm share/icebreaker/scores
+@dirrm share/icebreaker
