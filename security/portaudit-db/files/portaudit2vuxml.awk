@@ -49,12 +49,12 @@
             OP=substr(VERS, RSTART, RLENGTH)
             LEN=length(VERS)
             VERS=substr(VERS, RSTART+RLENGTH, LEN+1-RSTART-RLENGTH)
-            XXX=match(VERS, /(<|>)=?|=/)
-            if (XXX > 0)
+            NEXTRANGE=match(VERS, /(<|>)=?|=/)
+            if (NEXTRANGE > 0)
                printf "<%s>%s</%s>", OPN[OP], substr(VERS, 1, RSTART-1), OPN[OP]
             else
                printf "<%s>%s</%s>", OPN[OP], VERS, OPN[OP]
-          } while (XXX > 0)
+          } while (NEXTRANGE > 0)
           printf "</range>\n"
         }
         else {
@@ -71,7 +71,14 @@
       print "      </body>"
       print "    </description>"
       print "    <references>"
-      print "      <url>" URL[UUID] "</url>"
+
+      split(URL[UUID], URLS, / /)
+      for (U in URLS) {
+        if (!URLS[U])
+          continue
+        print "      <url>" URLS[U] "</url>"
+      }
+
       print "    </references>"
       print "    <dates>"
       print "      <discovery>2000-00-00</discovery>"
