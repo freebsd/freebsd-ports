@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	unzip-5.40
-PORTVERSION=	unzip-5.40
+PORTNAME=	unzip
+PORTVERSION=	5.40
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.cdrom.com/pub/infozip/src/
 DISTNAME=	unzip540
