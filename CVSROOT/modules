@@ -3896,6 +3896,7 @@ mp3blaster	ports/audio/mp3blaster
 mp3butler	ports/audio/mp3butler
 mp3check	ports/audio/mp3check
 mp3chew		ports/audio/mp3chew
+mp3ck		ports/audio/mp3ck
 mp3encode	ports/audio/mp3encode
 mp3info		ports/audio/mp3info
 mp3mover	ports/audio/mp3mover
