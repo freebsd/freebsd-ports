@@ -7,7 +7,7 @@
 
 PORTNAME=	sodipodi
 PORTVERSION=	0.34
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gnomeprefix gnomehack libglade2 libartlgpl2
+USE_GNOME=	gnomeprefix gnomehack libglade2 libartlgpl2 desktopfileutils
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
 CONFIGURE_ARGS=	--without-gnome-print \
