@@ -1,0 +1,11 @@
+
+---  NOTICE ---
+Original xjumpx is setgid games to protect scorefiles.
+However, due to security concerns, xjumpx is not installed setgid games,
+so everybody can change scorefiles.
+In order to protect scorefiles, you will need to run these commands:
+
+	chgrp games /usr/X11R6/bin/xjumpx /usr/X11R6/lib/X11/xjumpx
+	chmod g+s /usr/X11R6/bin/xjumpx
+	chmod 770 /usr/X11R6/lib/X11/xjumpx
+

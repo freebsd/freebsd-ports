@@ -323,6 +323,7 @@
     SUBDIR += xjig
     SUBDIR += xjump
     SUBDIR += xjumpjump
+    SUBDIR += xjumpx
     SUBDIR += xkobo
     SUBDIR += xkoules
     SUBDIR += xlaby
