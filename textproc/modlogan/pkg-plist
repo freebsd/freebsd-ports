@@ -66,6 +66,7 @@ lib/libmla_processor_web.so
 %%PORTDOCS%%share/doc/modlogan/plugin-options.txt
 %%PORTDOCS%%share/doc/modlogan/using-plugins.txt
 %%PORTDOCS%%share/doc/modlogan/writing-plugins.txt
+share/examples/modlogan/convert_history_to_07x.pl
 share/examples/modlogan/convert_to_055.pl
 share/examples/modlogan/convert_to_060.pl
 share/examples/modlogan/footer.ihtml
@@ -73,6 +74,7 @@ share/examples/modlogan/header.ihtml
 share/locale/cs/LC_MESSAGES/modlogan.mo
 share/locale/de/LC_MESSAGES/modlogan.mo
 share/locale/es/LC_MESSAGES/modlogan.mo
+share/locale/fr/LC_MESSAGES/modlogan.mo
 share/locale/it/LC_MESSAGES/modlogan.mo
 @dirrm share/doc/modlogan
 @dirrm share/examples/modlogan
@@ -80,6 +82,8 @@ share/locale/it/LC_MESSAGES/modlogan.mo
 @unexec rmdir %D/share/locale/cs 2>/dev/null || true
 @unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
 @unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/es 2>/dev/null || true
 @unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
