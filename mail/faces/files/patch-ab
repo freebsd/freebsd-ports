@@ -1,8 +1,12 @@
-diff -c -N ../faces/compface/Makefile ./compface/Makefile
-*** ../faces/compface/Makefile	Thu Oct 24 03:28:06 1991
---- ./compface/Makefile	Tue Dec 10 20:23:40 1996
+*** compface/Makefile.orig	Thu Oct 24 11:28:06 1991
+--- compface/Makefile	Sat May 17 23:23:52 1997
 ***************
-*** 24,80 ****
+*** 19,80 ****
+  #
+  #SYSV           = -DSYSV32
+  #--------------------------------------------------------------------------
+! # BINDIR, LIBDIR, and MANDIR are expected to be overridden by the
+  # calling Makefile
   
   BINDIR		= /usr/local/bin
   LIBDIR		= /usr/local/lib
@@ -22,7 +26,7 @@ diff -c -N ../faces/compface/Makefile ./compface/Makefile
   HDRS		= compface.h data.h
   OTHERS		= README $(NAME).1 $(NAME).3 Makefile
   
-! CC		= cc
+  CC		= cc
   CDEFS		= $(SYSV)
 ! CCOMP		= -g
   CFLAGS		= $(CDEFS) $(CCOMP)
@@ -60,10 +64,16 @@ diff -c -N ../faces/compface/Makefile ./compface/Makefile
   
   shar :
   		shar.script $(OTHERS) $(HDRS) $(SOURCES) > $(NAME).sh
---- 24,82 ----
+--- 19,82 ----
+  #
+  #SYSV           = -DSYSV32
+  #--------------------------------------------------------------------------
+! # BINDIR, LIBDIR, INCDIR and MANDIR are expected to be overridden by the
+  # calling Makefile
   
   BINDIR		= /usr/local/bin
   LIBDIR		= /usr/local/lib
+! INCDIR		= /usr/local/include
 ! MANDIR		= /usr/local/man
   
   NAME		= compface
@@ -85,7 +95,7 @@ diff -c -N ../faces/compface/Makefile ./compface/Makefile
   HDRS		= compface.h data.h
   OTHERS		= README $(NAME).1 $(NAME).3 Makefile
   
-! CC		= cc
+  CC		= cc
   CDEFS		= $(SYSV)
 ! CCOMP		= -pipe -O2
   CFLAGS		= $(CDEFS) $(CCOMP)
@@ -108,15 +118,14 @@ diff -c -N ../faces/compface/Makefile ./compface/Makefile
 ! 		install -c -s -o bin -m 755 $(NAME) $(EXECUTABLE)
 ! 		install -c -s -o bin -m 755 $(UNNAME) $(UNEXECUTABLE)
 ! 		install -c -g bin -o bin -m 444 $(NAME).1 $(MAN1DIR)
-! 		-gzip -f $(MAN1DIR)/$(NAME).1
 ! 		-rm -f $(MAN1DIR)/$(UNNAME).1*
-! 		-ln $(MAN1DIR)/$(NAME).1.gz $(MAN1DIR)/$(UNNAME).1.gz
+! 		ln -fs $(MAN1DIR)/$(NAME).1 $(MAN1DIR)/$(UNNAME).1
 ! 		install -c -o bin -m 444 $(LIBNAME) $(LIBRARY)
 ! 		install -c -o bin -m 444 lib$(NAME).so.$(SHLIB_MAJOR).$(SHLIB_MINOR) $(LIBRARY)
 ! 		install -c -g bin -o bin -m 444 $(NAME).3 $(MAN3DIR)
-! 		-gzip -f $(MAN3DIR)/$(NAME).3
 ! 		rm -f $(MAN3DIR)/$(UNNAME).3*
-! 		-ln $(MAN3DIR)/$(NAME).3.gz $(MAN3DIR)/$(UNNAME).3.gz
+! 		ln -fs $(MAN3DIR)/$(NAME).3 $(MAN3DIR)/$(UNNAME).3
+! 		install -m 444 -o bin -g bin -c compface.h $(INCDIR)
   
   shar :
   		shar.script $(OTHERS) $(HDRS) $(SOURCES) > $(NAME).sh
