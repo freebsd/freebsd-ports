@@ -3,7 +3,7 @@
 # Date created:         1 October 1994
 # Whom:                 jmz
 #
-# $Id$
+# $Id: Makefile,v 1.8 1995/04/15 04:34:11 asami Exp $
 #
 
 DISTNAME=	xdvi
@@ -15,6 +15,7 @@ DISTFILES=	xdvi.tar.Z
 MAINTAINER=	jmz@FreeBSD.org
 
 USE_IMAKE=	yes
+USE_GMAKE=	yes
 IS_INTERACTIVE=	yes
 
 .if !defined(BATCH)
