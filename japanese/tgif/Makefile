@@ -9,7 +9,7 @@
 DISTNAME=	tgif-2.16-p12
 PKGNAME=	jp-tgif-216-p12
 CATEGORIES+=	japanese
-MASTER_SITES=	ftp://theta.iis.u-tokyo.ac.jp/pub1/X/contrib/applications/tgif/
+MASTER_SITES=	ftp://ftp.iis.u-tokyo.ac.jp/pub1/X/contrib/applications/tgif/
 
 PATCH_SITES=	ftp://ftp.eos.hokudai.ac.jp/pub/X/contrib/misc/tgif/
 PATCHFILES=	tgif-2.16-p12.jp.gz \
@@ -17,6 +17,13 @@ PATCHFILES=	tgif-2.16-p12.jp.gz \
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	mita@jp.FreeBSD.org
+
+RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm \
+		pnmtotiff:${PORTSDIR}/graphics/netpbm \
+		ppmtoxpm:${PORTSDIR}/graphics/netpbm \
+		ppmtogif:${PORTSDIR}/graphics/netpbm \
+		xbmtopbm:${PORTSDIR}/graphics/netpbm \
+		xpmtoppm:${PORTSDIR}/graphics/netpbm
 
 USE_IMAKE=	yes
 
