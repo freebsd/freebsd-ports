@@ -1,4 +1,4 @@
-A mail reader for gnome. It supports local mail, pop3, and IMAP. It can
+A mail reader for GNOME 2. It supports local mail, pop3, and IMAP. It can
 view mail files in mbox, maildir, and mh format.
 
 The pop3 support is not complete. All mail retrieved will be left on the
@@ -9,4 +9,4 @@ Balsa is probably not fully usable as one's primary mail client at this
 time.  However, it is under active development and fits with other gnome
 applications.
 
-WWW: http://www.balsa.net/
+WWW: http://balsa.gnome.org/

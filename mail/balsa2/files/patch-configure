@@ -1,20 +1,56 @@
---- configure	Fri Dec 14 06:13:21 2001
-+++ configure.new	Sun Dec 16 12:52:33 2001
-@@ -8869,7 +8869,7 @@
-   echo $ac_n "(cached) $ac_c" 1>&6
+--- configure.orig	Mon Jun 10 04:35:15 2002
++++ configure	Thu Jun 20 00:06:10 2002
+@@ -9345,7 +9345,7 @@
+   echo "$as_me: failed program was:" >&5
+ cat conftest.$ac_ext >&5
+ CATOBJEXT=.mo
+-	         DATADIRNAME=lib
++	         DATADIRNAME=share
+ fi
+ rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+ 	      INSTOBJEXT=.mo
+@@ -9643,7 +9643,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
  else
-   ac_save_LIBS="$LIBS"
+   ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lldap -llber -lresolv $LIBS"
 +LIBS="-lldap -llber $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 8875 "configure"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 9648 "configure"
  #include "confdefs.h"
-@@ -8900,7 +8900,7 @@
-   cat >> confdefs.h <<\EOF
+@@ -9690,7 +9690,7 @@
+   cat >>confdefs.h <<\EOF
  #define ENABLE_LDAP 1
  EOF
 - LIBS="-lldap -llber -lresolv $LIBS"
 + LIBS="-lldap -llber $LIBS"
  else
-   echo "$ac_t""no" 1>&6
- { echo "configure: error: *** You enabled LDAP but ldap library is not found." 1>&2; exit 1; }
+   { { echo "$as_me:9695: error: *** You enabled LDAP but ldap library is not found." >&5
+ echo "$as_me: error: *** You enabled LDAP but ldap library is not found." >&2;}
+@@ -9726,7 +9726,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lesmtp -lpthread $LIBS"
++LIBS="-lesmtp "-pthread" $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 9731 "configure"
+ #include "confdefs.h"
+@@ -9770,7 +9770,7 @@
+ echo "$as_me:9770: result: $ac_cv_lib_esmtp_smtp_start_session" >&5
+ echo "${ECHO_T}$ac_cv_lib_esmtp_smtp_start_session" >&6
+ if test $ac_cv_lib_esmtp_smtp_start_session = yes; then
+-  LIBS="$LIBS -lesmtp -lpthread"
++  LIBS="$LIBS -lesmtp "-pthread""
+ else
+   { { echo "$as_me:9775: error: *** You enabled ESMTP but esmtp library is not found." >&5
+ echo "$as_me: error: *** You enabled ESMTP but esmtp library is not found." >&2;}
+@@ -11508,7 +11508,7 @@
+       { echo "$as_me:11508: running $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_sub_srcdir" >&5
+ echo "$as_me: running $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_sub_srcdir" >&6;}
+       # The eval makes quoting arguments work.
+-      eval $ac_sub_configure $ac_sub_configure_args \
++      eval $ac_sub_configure \
+            --cache-file=$ac_sub_cache_file --srcdir=$ac_sub_srcdir ||
+         { { echo "$as_me:11513: error: $ac_sub_configure failed for $ac_subdir" >&5
+ echo "$as_me: error: $ac_sub_configure failed for $ac_subdir" >&2;}
