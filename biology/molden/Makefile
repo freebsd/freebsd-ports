@@ -9,12 +9,12 @@ PORTNAME=	molden
 PORTVERSION=	3.6
 PORTREVISION=	1
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.caos.kun.nl/pub/molgraph/molden/
+MASTER_SITES=	ftp://ftp.cmbi.kun.nl/pub/molgraph/molden/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.tar.Z
 
-PATCH_SITES=	ftp://ftp.caos.kun.nl/pub/molgraph/molden/bin/
+PATCH_SITES=	ftp://ftp.cmbi.kun.nl/pub/molgraph/molden/bin/
 PATCHFILES=	${PORTNAME}${PORTVERSION}-freebsd
 
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
