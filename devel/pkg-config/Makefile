@@ -8,7 +8,8 @@
 PORTNAME=	pkgconfig
 PORTVERSION=	0.10.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.freedesktop.org/software/pkgconfig/releases/ \
+MASTER_SITES=	http://www.marcuscom.com/downloads/ \
+		http://www.freedesktop.org/software/pkgconfig/releases/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
