@@ -18,6 +18,7 @@ lib/vile/vile-fdl-filt
 lib/vile/vile-diff-filt
 lib/vile/vile-ecl-filt
 lib/vile/vile-esql-filt
+lib/vile/vile-est-filt
 lib/vile/vile-html-filt
 lib/vile/vile-imake-filt
 lib/vile/vile-latex-filt
@@ -31,9 +32,11 @@ lib/vile/vile-nr-filt
 lib/vile/vile-perl-filt
 lib/vile/vile-pl-filt
 lib/vile/vile-py-filt
+lib/vile/vile-ps-filt
 lib/vile/vile-rc-filt
 lib/vile/vile-rcs-filt
 lib/vile/vile-rexx-filt
+lib/vile/vile-rpm-filt
 lib/vile/vile-sccs-filt
 lib/vile/vile-sed-filt
 lib/vile/vile-sh-filt
@@ -120,6 +123,7 @@ share/vile/def.keywords
 share/vile/diff.keywords
 share/vile/ecl.keywords
 share/vile/esql.keywords
+share/vile/est.keywords
 share/vile/fdl.keywords
 share/vile/html.keywords
 share/vile/imake.keywords
@@ -132,11 +136,13 @@ share/vile/mail.keywords
 share/vile/make.keywords
 share/vile/nr.keywords
 share/vile/perl.keywords
+share/vile/ps.keywords
 share/vile/py.keywords
 share/vile/pot.keywords
 share/vile/rc.keywords
 share/vile/rcs.keywords
 share/vile/rexx.keywords
+share/vile/rpm.keywords
 share/vile/sccs.keywords
 share/vile/sh.keywords
 share/vile/sml.keywords
