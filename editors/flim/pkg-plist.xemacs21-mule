@@ -24,8 +24,6 @@
 %%EMACS_PACKAGESDIR%%/lisp/flim/luna.elc
 %%EMACS_PACKAGESDIR%%/lisp/flim/lunit.el
 %%EMACS_PACKAGESDIR%%/lisp/flim/lunit.elc
-%%EMACS_PACKAGESDIR%%/lisp/flim/mailcap.el
-%%EMACS_PACKAGESDIR%%/lisp/flim/mailcap.elc
 %%EMACS_PACKAGESDIR%%/lisp/flim/md4.el
 %%EMACS_PACKAGESDIR%%/lisp/flim/md4.elc
 %%EMACS_PACKAGESDIR%%/lisp/flim/md5.el

@@ -3,36 +3,11 @@
 @@ -2,6 +2,10 @@
  @c Generated automatically from mime-ja.sgml by sinfo 3.7.
  @setfilename mime-ja.info
- @settitle{FLIM 1.12 MIME 機能説明書}
+ @settitle{FLIM 1.14 MIME 機能説明書}
 +@dircategory The Emacs editor and associated tools 
 +@direntry 
 +* mime-ja: (mime-ja).		MIME features for GNU Emacs. (Japanese)
 +@end direntry 
  @titlepage
- @title FLIM 1.12 MIME 機能説明書
+ @title FLIM 1.14 MIME 機能説明書
  @author 守岡 知彦 <morioka@@jaist.ac.jp>
-@@ -1541,13 +1545,13 @@
- @example
- (0) cvs login
- 
--    % cvs -d :pserver:anonymous@cvs.m17n.org:/cvs/root login
-+    % cvs -d :pserver:anonymous@@cvs.m17n.org:/cvs/root login
- 
-     CVS password: [CR] # NULL string
- 
- (1) checkout
- 
--    % cvs -d :pserver:anonymous@cvs.m17n.org:/cvs/root checkout
-+    % cvs -d :pserver:anonymous@@cvs.m17n.org:/cvs/root checkout
- 	checkout [-r TAG] flim
- @end example
- 
-@@ -1556,7 +1560,7 @@
- 
- @itemize @bullet
- @item
-- <cvs@cvs.m17n.org>
-+ <cvs@@cvs.m17n.org>
- @end itemize
- 
- @noindent

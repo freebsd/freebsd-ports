@@ -14,8 +14,6 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/luna.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/lunit.el
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/lunit.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/flim/mailcap.el
-%%EMACS_VERSION_SITE_LISPDIR%%/flim/mailcap.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/md4.el
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/md4.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/flim/md5-el.el
