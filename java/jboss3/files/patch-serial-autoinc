@@ -1,0 +1,86 @@
+$FreeBSD$
+
+This patch allows JBoss to correctly create tables when
+using the auto-increment feature with Postgresql.
+
+diff -ruN /tmp/jboss-3.2.6-src/server/src/etc/conf/default/standardjbosscmp-jdbc.xml ./server/src/etc/conf/default/standardjbosscmp-jdbc.xml
+--- /tmp/jboss-3.2.6-src/server/src/etc/conf/default/standardjbosscmp-jdbc.xml	Wed Sep 22 21:03:37 2004
++++ ./server/src/etc/conf/default/standardjbosscmp-jdbc.xml	Wed Jan 12 09:47:01 2005
+@@ -1170,7 +1170,7 @@
+          <row-locking-template>SELECT ?1 FROM ?2 WHERE ?3 ORDER BY ?4 FOR UPDATE</row-locking-template>
+          <pk-constraint-template>CONSTRAINT ?1 PRIMARY KEY (?2)</pk-constraint-template>
+          <fk-constraint-template>ALTER TABLE ?1 ADD CONSTRAINT ?2 FOREIGN KEY (?3) REFERENCES ?4 (?5)</fk-constraint-template>
+-         <auto-increment-template>?1</auto-increment-template>
++         <auto-increment-template>?1 serial</auto-increment-template>
+          <alias-header-prefix>t</alias-header-prefix>
+          <alias-header-suffix>_</alias-header-suffix>
+          <alias-max-length>32</alias-max-length>
+@@ -1297,7 +1297,7 @@
+          <row-locking-template>SELECT ?1 FROM ?2 WHERE ?3 ORDER BY ?4 FOR UPDATE</row-locking-template>
+          <pk-constraint-template>CONSTRAINT ?1 PRIMARY KEY (?2)</pk-constraint-template>
+          <fk-constraint-template>ALTER TABLE ?1 ADD CONSTRAINT ?2 FOREIGN KEY (?3) REFERENCES ?4 (?5)</fk-constraint-template>
+-         <auto-increment-template>?1</auto-increment-template>
++         <auto-increment-template>?1 serial</auto-increment-template>
+          <alias-header-prefix>t</alias-header-prefix>
+          <alias-header-suffix>_</alias-header-suffix>
+          <alias-max-length>32</alias-max-length>
+@@ -1424,7 +1424,7 @@
+          <row-locking-template/>
+          <pk-constraint-template>CONSTRAINT ?1 PRIMARY KEY (?2)</pk-constraint-template>
+          <fk-constraint-template>ALTER TABLE ?1 ADD CONSTRAINT ?2 FOREIGN KEY (?3) REFERENCES ?4 (?5)</fk-constraint-template>
+-         <auto-increment-template>?1 IDENTITY</auto-increment-template>
++         <auto-increment-template>?1 ?2 ?3 IDENTITY</auto-increment-template>
+          <add-column-template>ALTER TABLE ?1 ADD COLUMN ?2 ?3</add-column-template>
+          <drop-column-template>ALTER TABLE ?1 DROP COLUMN ?2</drop-column-template>
+          <alias-header-prefix>t</alias-header-prefix>
+@@ -1724,7 +1724,7 @@
+          -->
+          <fk-constraint-template>ALTER TABLE ?1 ADD INDEX (?3), ADD CONSTRAINT ?2 FOREIGN KEY (?3) REFERENCES ?4 (?5)</fk-constraint-template>
+ 
+-         <auto-increment-template>?1 auto_increment</auto-increment-template>
++         <auto-increment-template>?1 ?2 ?3 auto_increment</auto-increment-template>
+          <alter-column-template>ALTER TABLE ?1 MODIFY ?2 ?3</alter-column-template>
+          <alias-header-prefix>t</alias-header-prefix>
+          <alias-header-suffix>_</alias-header-suffix>
+@@ -1864,7 +1864,7 @@
+          <row-locking-template>SELECT ?1 FROM ?2 with (updlock) WHERE ?3 ORDER BY ?4</row-locking-template>
+          <pk-constraint-template>CONSTRAINT ?1 PRIMARY KEY (?2)</pk-constraint-template>
+          <fk-constraint-template>ALTER TABLE ?1 ADD CONSTRAINT ?2 FOREIGN KEY (?3) REFERENCES ?4 (?5)</fk-constraint-template>
+-         <auto-increment-template>?1 IDENTITY</auto-increment-template>
++         <auto-increment-template>?1 ?2 ?3 IDENTITY</auto-increment-template>
+          <alter-column-template>ALTER TABLE ?1 ALTER COLUMN ?2 ?3</alter-column-template>
+          <alias-header-prefix>t</alias-header-prefix>
+          <alias-header-suffix>_</alias-header-suffix>
+@@ -1996,7 +1996,7 @@
+          <row-locking-template>SELECT ?1 FROM ?2 with (xlock) WHERE ?3 ORDER BY ?4</row-locking-template>
+          <pk-constraint-template>CONSTRAINT ?1 PRIMARY KEY (?2)</pk-constraint-template>
+          <fk-constraint-template>ALTER TABLE ?1 ADD CONSTRAINT ?2 FOREIGN KEY (?3) REFERENCES ?4 (?5)</fk-constraint-template>
+-         <auto-increment-template>?1 IDENTITY</auto-increment-template>
++         <auto-increment-template>?1 ?2 ?3 IDENTITY</auto-increment-template>
+          <alias-header-prefix>t</alias-header-prefix>
+          <alias-header-suffix>_</alias-header-suffix>
+          <alias-max-length>32</alias-max-length>
+diff -ruN /tmp/jboss-3.2.6-src/server/src/main/org/jboss/ejb/plugins/cmp/jdbc/JDBCStartCommand.java ./server/src/main/org/jboss/ejb/plugins/cmp/jdbc/JDBCStartCommand.java
+--- /tmp/jboss-3.2.6-src/server/src/main/org/jboss/ejb/plugins/cmp/jdbc/JDBCStartCommand.java	Mon Sep 13 11:17:35 2004
++++ ./server/src/main/org/jboss/ejb/plugins/cmp/jdbc/JDBCStartCommand.java	Wed Jan 12 09:45:02 2005
+@@ -916,14 +916,18 @@
+       // apply auto-increment template
+       if(type.getAutoIncrement()[0])
+       {
+-         String columnClause = SQLUtil.getCreateTableColumnsClause(type);
+          JDBCFunctionMappingMetaData autoIncrement =
+             manager.getMetaData().getTypeMapping().getAutoIncrementTemplate();
+          if(autoIncrement == null)
+          {
+             throw new IllegalStateException("auto-increment template not found");
+          }
+-         String[] args = new String[]{columnClause};
++         String[] args = new String[]
++							{
++								type.getColumnNames () [0],
++								type.getSQLTypes () [0],
++								type.getNotNull () [0] ? " not null " : ""
++							};
+          autoIncrement.getFunctionSql(args, sqlBuffer);
+       }
+       else

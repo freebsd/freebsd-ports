@@ -7,7 +7,7 @@
  *	Original by Ernst de Haan <znerd@freebsd.org>
  *	www/jakarta-tomcat4/files/daemonctl.c
  *
- * $FreeBSD: /tmp/pcvs/ports/java/jboss3/files/Attic/daemonctl.c,v 1.1 2004-06-21 16:42:59 vanilla Exp $
+ * $FreeBSD: /tmp/pcvs/ports/java/jboss3/files/Attic/daemonctl.c,v 1.2 2005-01-13 01:55:13 hq Exp $
  */
 
 #include <assert.h>
@@ -24,8 +24,8 @@
 #include <sys/types.h>
 #include <sys/uio.h>
 
-/* The maximum size of the PID file, in bytes */
-#define MAX_FILE_SIZE			32
+#define	TRUE	1
+#define	FALSE	0
 
 /* The interval in seconds between the checks to make sure the process
    died after a kill */
@@ -33,8 +33,6 @@
 
 #define ERR_ILLEGAL_ARGUMENT				1
 #define ERR_PID_FILE_NOT_FOUND				2
-#define ERR_PID_FILE_TOO_LARGE				3
-#define ERR_PID_FILE_CONTAINS_ILLEGAL_CHAR	4
 #define ERR_KILL_FAILED						5
 #define ERR_ALREADY_RUNNING					6
 #define ERR_NOT_RUNNING						7
@@ -53,12 +51,20 @@
 	Function declarations.
  */
 static void printUsage (void);
-static int openPIDFile (void);
-static int readPID (int);
-static void writePID (int file, int pid);
-static void start (int optcount, char * opts []);
+static int readPID (void);
+static void writePID (int pid);
+static void clearPID (void);
+static void start (int javaOpt, char * javaArgs [], int jbossOpt, char * jbossArgs []);
 static void stop (void);
-static void restart (int optcount, char * opts []);
+static void restart (int javaOpt, char * javaArgs [], int jbossOpt, char * jbossArgs []);
+static void logOutput (char *);
+
+/*
+	Globals
+ */
+static int isQuiet = FALSE;
+static char * optQuiet = "-q",			/* quiet option */
+			* optConfig = "-config";	/* jboss configuration option */
 
 /**
  * Main function. This function is called when this program is executed.
@@ -75,10 +81,9 @@ main (
  int argc,
  char *argv [])
 {
-
 	/* Declare variables, like all other good ANSI C programs do :) */
-	int i, jopt;
-	char *argument, **jargs;
+	int i, javaOpt, jbossOpt;
+	char *argument, **javaArgs, **jbossArgs;
 
 	/* Parse the arguments */
 	if (argc < 2)
@@ -92,24 +97,58 @@ main (
 	setgid (getegid ());
 
 	/*
-		Build up java-option block.
+		Build up java and jboss option blocks.
 	 */
-	jopt = 0;
+	javaOpt = jbossOpt = 0;
 	for (i = 1; i < argc; i++)
 	{
-		if (*argv [i] == '-')
-			jopt++;
+		if (strcmp (argv [i], optQuiet) == 0)
+		{
+			isQuiet = TRUE;
+
+		} else if (strcmp (argv [i], optConfig) == 0)
+		{
+			jbossOpt += 2;
+			if (++i >= argc)
+			{
+				printUsage ();
+				return ERR_ILLEGAL_ARGUMENT;
+			}
+
+		} else if (*argv [i] == '-')
+		{
+			javaOpt++;
+		}
 	}
-	if (jopt == 0)
-		jargs = NULL;
+	if (javaOpt == 0)
+		javaArgs = NULL;
 	else
 	{
 		int j = 0;
-		jargs = malloc (sizeof (char *) * jopt);
+		javaArgs = malloc (sizeof (char *) * javaOpt);
 		for (i = 0; i < argc; i++)
 		{
-			if (*argv [i] == '-')
-				jargs [j++] = argv [i];
+			if (strcmp (argv [i], optQuiet) &&
+				strcmp (argv [i], optConfig) &&
+				*argv [i] == '-')
+			{
+				javaArgs [j++] = argv [i];
+			}
+		}
+	}
+	if (jbossOpt == 0)
+		jbossArgs = NULL;
+	else
+	{
+		int j = 0;
+		jbossArgs = malloc (sizeof (char *) * jbossOpt);
+		for (i = 0; i < argc; i++)
+		{
+			if (strcmp (argv [i], optConfig) == 0)
+			{
+				jbossArgs [j++] = "-c";
+				jbossArgs [j++] = argv [++i];
+			}
 		}
 	}
 
@@ -119,14 +158,15 @@ main (
 	argument = argv [argc - 1];
 	if (strcmp ("start", argument) == 0)
 	{
-		start (jopt, jargs);
+		start (javaOpt, javaArgs, jbossOpt, jbossArgs);
 
 	} else if (strcmp ("stop", argument) == 0)
 	{
 		stop ();
+
 	} else if (strcmp ("restart", argument) == 0)
 	{
-		restart (jopt, jargs);
+		restart (javaOpt, javaArgs, jbossOpt, jbossArgs);
 
 	} else {
 		fprintf (stderr, "%%CONTROL_SCRIPT_NAME%%: Illegal argument \"%s\".\n", argument);
@@ -134,9 +174,8 @@ main (
 		exit (ERR_ILLEGAL_ARGUMENT);
 	}
 
-	return 0;
+	return EXIT_SUCCESS;
 }
-
 
 /**
  * Prints usage information to stdout.
@@ -144,124 +183,76 @@ main (
 static void
 printUsage (void)
 {
-	printf ("Usage: %%CONTROL_SCRIPT_NAME%% [java-options] {start|stop|restart}\n");
+	printf ("Usage: %%CONTROL_SCRIPT_NAME%% [java-options] [-config jbossconfig] {start|stop|restart}\n");
 }
 
 /**
- * Attempts to open the PID file. If that file is successfully opened, then
- * the file handle (an int) will be returned.
- *
- * @return
- *    the file handle.
- */
-static int
-openPIDFile (void)
-{
-
- 	int file;
-
-	/* Attempt to open the PID file */
-	file = open ("%%PID_FILE%%", O_RDWR);
-	if (file < 0) {
-		printf (" [ FAILED ]\n");
-		fprintf (stderr, "%%CONTROL_SCRIPT_NAME%%: Unable to open %%PID_FILE%% for reading and writing: ");
-		perror (NULL);
-		exit (ERR_PID_FILE_NOT_FOUND);
-	}
-
-	return file;
-}
-
-
-/**
- * Reads a PID from the specified file. The file is identified by a file
- * handle.
- *
- * @param file
- *    the file handle.
+ * Reads a PID from the PID file.
  *
  * @return
  *    the PID, or -1 if the file was empty.
  */
 static int
-readPID (
- int file)
+readPID (void)
 {
-
-	char *buffer;
-	int hadNewline = 0;
-	unsigned int count;
-	unsigned int i;
+	FILE * file;
 	int pid;
 
-	/* Read the PID file contents */
-	buffer = (char *) malloc ((MAX_FILE_SIZE + 1) * sizeof (char));
-	count = read (file, buffer, MAX_FILE_SIZE + 1);
-	if (count > MAX_FILE_SIZE) {
-		printf (" [ FAILED ]\n");
-		fprintf (stderr, "%%CONTROL_SCRIPT_NAME%%: The file %%PID_FILE%% contains more than %d bytes.\n", MAX_FILE_SIZE);
-		exit (ERR_PID_FILE_TOO_LARGE);
+	logOutput (">> Reading PID file (%%PID_FILE%%)...");
+	file = fopen ("%%PID_FILE%%", "r");
+	if (!file)
+	{
+		logOutput (" [ FAILED ]\n");
+		perror ("%%CONTROL_SCRIPT_NAME%%: Unable to open %%PID_FILE%% for reading: ");
+		exit (ERR_PID_FILE_NOT_FOUND);
 	}
+	if (fscanf (file, "%d", &pid) < 1)
+		pid = -1;
+	fclose (file);
 
-	/* Convert the bytes to a number */
-	pid = 0;
-	for (i=0; i<count; i++) {
-		char c = buffer[i];
-		if (c >= '0' && c <= '9') {
-			char digit = c - '0';
-			pid *= 10;
-			pid += digit;
-		} else if (i == (count - 1) && c == '\n') {
-			/* XXX: Ignore a newline at the end of the file */
-			hadNewline = 1;
-		} else {
-			printf (" [ FAILED ]\n");
-			fprintf (stderr, "%%CONTROL_SCRIPT_NAME%%: The file %%PID_FILE%% contains an illegal character (%d) at position %d.\n", c, i);
-			exit (ERR_PID_FILE_CONTAINS_ILLEGAL_CHAR);
-		}
-	}
-	printf (" [ DONE ]\n");
-
-	if (count == 0 || (count == 1 && hadNewline == 1)) {
-		return -1;
-	}
-
+	logOutput (" [ DONE ]\n");
 	return pid;
 }
-
 
 /**
  * Writes a process ID to the specified file. The file is identified by a file
  * handle.
- *
- * @param file
- *    the file handle, always greater than 0.
  *
  * @param pid
  *    the PID to store, always greater than 0.
  */
 static void
 writePID (
- int file,
  int pid)
 {
+	FILE * file;
 
-	char *buffer;
-	int nbytes;
+	logOutput (">> Writing PID file...");
+	file = fopen ("%%PID_FILE%%", "w");
+	if (!file)
+	{
+		logOutput (" [ FAILED ]\n");
+		perror ("%%CONTROL_SCRIPT_NAME%%: Unable to open %%PID_FILE%% for writing: ");
+		exit (ERR_PID_FILE_NOT_FOUND);
+	}
+	fprintf (file, "%d\n", pid);
+	fclose (file);
 
-	/* Check preconditions */
-	assert (file > 0);
-	assert (pid > 0);
-
-	printf (">> Writing PID file...");
-
-	lseek (file, (off_t) 0, SEEK_SET);
-	ftruncate (file, (off_t) 0);
-	nbytes = asprintf (&buffer, "%d\n", pid);
-	write (file, buffer, nbytes);
-	printf (" [ DONE ]\n");
+	logOutput (" [ DONE ]\n");
 }
 
+/**
+	Truncate the PID file.
+ */
+static void
+clearPID (void)
+{
+	if (truncate ("%%PID_FILE%%", 0) != 0)
+	{
+		perror ("%%CONTROL_SCRIPT_NAME%%: Unable to clear %%PID_FILE%%: ");
+		exit (ERR_PID_FILE_NOT_FOUND);
+	}
+}
 
 /**
  * Checks if the specified process is running.
@@ -276,7 +267,6 @@ static int
 existsProcess (
  int pid)
 {
-
 	int result;
 
 	/* Check preconditions */
@@ -286,13 +276,8 @@ existsProcess (
    	result = kill (pid, 0);
 
 	/* If the result is 0, then the process exists */
-	if (result == 0) {
-		return 1;
-	} else {
-		return 0;
-	}
+	return result == 0;
 }
-
 
 /**
  * Kills the process identified by the specified ID.
@@ -304,7 +289,6 @@ static void
 killProcess (
  int pid)
 {
-
 	int result;
 	unsigned int waited;
 	unsigned int forced;
@@ -314,10 +298,11 @@ killProcess (
 	/* Check preconditions */
 	assert (pid > 0);
 
-	printf (">> Terminating process %d...", pid);
+	if (!isQuiet)
+		printf (">> Terminating process %d...", pid);
 	result = kill (pid, SIGTERM);
 	if (result < 0) {
-		printf (" [ FAILED ]\n");
+		logOutput (" [ FAILED ]\n");
 		fprintf (stderr, "%%CONTROL_SCRIPT_NAME%%: Unable to kill process %d: ", pid);
 		perror (NULL);
 		exit (ERR_KILL_FAILED);
@@ -327,24 +312,24 @@ killProcess (
     result = existsProcess (pid);
 	for (waited=0; result == 1 && waited < timeout; waited += interval)
 	{
-		printf (".");
-		fflush (NULL);
+		logOutput (".");
+		fflush (stdout);
 		sleep (interval);
     	result = existsProcess (pid);
 	}
 
 	/* If the process still exists, then have no mercy and kill it */
 	forced = 0;
-	if (result == 1) {
-
+	if (result == 1)
+	{
 		/* Force the process to die */
 		result = kill (pid, SIGKILL);
 		if (result == 0) {
 			forced = 1;
-			printf (" [ DONE ]\n");
+			logOutput (" [ KILLED ]\n");
 			fprintf (stderr, "%%CONTROL_SCRIPT_NAME%%: Process %d did not terminate within %%STOP_TIMEOUT%% sec. Killed.\n", pid);
 		} else if (result != ESRCH) {
-			printf (" [ FAILED ]\n");
+			logOutput (" [ FAILED ]\n");
 			fprintf (stderr, "%%CONTROL_SCRIPT_NAME%%: Unable to kill process %d: ", pid);
 			perror (NULL);
 			exit (ERR_KILL_FAILED);
@@ -352,7 +337,7 @@ killProcess (
 	}
 
 	if (forced == 0) {
-		printf (" [ DONE ]\n");
+		logOutput (" [ DONE ]\n");
 	}
 }
 
@@ -361,28 +346,29 @@ killProcess (
  */
 static void
 start (
- int optcount,
- char * opts [])
+ int javaOpt,
+ char * javaArgs [],
+ int jbossOpt,
+ char * jbossArgs [])
 {
-	int file;
+	int i, argc;
+	char ** argv;
 	int pid;
 	int result;
 	int stdoutLogFile;
 	int stderrLogFile;
 	struct stat sb;
 
-	/* Open and read the PID file */
-	printf (">> Reading PID file (%%PID_FILE%%)...");
-	file = openPIDFile ();
-	pid = readPID (file);
+	pid = readPID ();
 
-	printf (">> Starting %%APP_TITLE%% %%PORTVERSION%%...");
-	if (pid != -1) {
-
+	logOutput (">> Starting %%APP_TITLE%% %%PORTVERSION%%...");
+	if (pid != -1)
+	{
 		/* Check if the process actually exists */
 		result = existsProcess (pid);
-		if (result == 1) {
-			printf (" [ FAILED ]\n");
+		if (result == 1)
+		{
+			logOutput (" [ FAILED ]\n");
 			fprintf (stderr, "%%CONTROL_SCRIPT_NAME%%: %%APP_TITLE%% %%PORTVERSION%% is already running, PID is %d.\n", pid);
 			exit (ERR_ALREADY_RUNNING);
 		}
@@ -391,34 +377,34 @@ start (
 	/* Check if the JDK home directory is actually a directory */
 	result = stat ("%%JAVA_HOME%%", &sb);
 	if (result != 0) {
-		printf (" [ FAILED ]\n");
+		logOutput (" [ FAILED ]\n");
 		fprintf (stderr, "%%CONTROL_SCRIPT_NAME%%: Unable to stat %%JAVA_HOME%%: ");
 		perror (NULL);
 		exit (ERR_STAT_JAVA_HOME);
 	}
 	if (!S_ISDIR (sb.st_mode)) {
-		printf (" [ FAILED ]\n");
+		logOutput (" [ FAILED ]\n");
 		fprintf (stderr, "%%CONTROL_SCRIPT_NAME%%: Java home directory %%JAVA_HOME%% is not a directory.\n");
 		exit (ERR_JAVA_HOME_NOT_DIR);
 	}
 
 	/* Check if the Java command is actually an executable regular file */
-	result = stat ("%%JAVA_HOME%%/%%JAVA_CMD%%", &sb);
+	result = stat ("%%JAVA%%", &sb);
 	if (result != 0) {
-		printf (" [ FAILED ]\n");
-		fprintf (stderr, "%%CONTROL_SCRIPT_NAME%%: Unable to stat %%JAVA_HOME%%/%%JAVA_CMD%%: ");
+		logOutput (" [ FAILED ]\n");
+		fprintf (stderr, "%%CONTROL_SCRIPT_NAME%%: Unable to stat %%JAVA%%: ");
 		perror (NULL);
 		exit (ERR_STAT_JAVA_CMD);
 	}
 	if (!S_ISREG (sb.st_mode)) {
-		printf (" [ FAILED ]\n");
-		fprintf (stderr, "%%CONTROL_SCRIPT_NAME%%: Java command %%JAVA_HOME%%/%%JAVA_CMD%% is not a regular file.\n");
+		logOutput (" [ FAILED ]\n");
+		fprintf (stderr, "%%CONTROL_SCRIPT_NAME%%: Java command %%JAVA%% is not a regular file.\n");
 		exit (ERR_JAVA_CMD_NOT_FILE);
 	}
-	result = access ("%%JAVA_HOME%%/%%JAVA_CMD%%", X_OK);
+	result = access ("%%JAVA%%", X_OK);
 	if (result != 0) {
-		printf (" [ FAILED ]\n");
-		fprintf (stderr, "%%CONTROL_SCRIPT_NAME%%: Java command %%JAVA_HOME%%/%%JAVA_CMD%% is not executable: ");
+		logOutput (" [ FAILED ]\n");
+		fprintf (stderr, "%%CONTROL_SCRIPT_NAME%%: Java command %%JAVA%% is not executable: ");
 		perror (NULL);
 		exit (ERR_JAVA_CMD_NOT_EXECUTABLE);
 	}
@@ -426,7 +412,7 @@ start (
 	/* Change directory */
 	result = chdir ("%%APP_HOME%%");
 	if (result < 0) {
-		printf (" [ FAILED ]\n");
+		logOutput (" [ FAILED ]\n");
 		fprintf (stderr, "%%CONTROL_SCRIPT_NAME%%: Unable to access directory %%APP_HOME%%: ");
 		perror (NULL);
 		exit (ERR_CHDIR_TO_APP_HOME);
@@ -435,7 +421,7 @@ start (
 	/* See if the JAR file exists */
 	result = access ("%%APP_HOME%%/%%JAR_FILE%%", R_OK);
 	if (result < 0) {
-		printf (" [ FAILED ]\n");
+		logOutput (" [ FAILED ]\n");
 		fprintf (stderr, "%%CONTROL_SCRIPT_NAME%%: Unable to access JAR file %%APP_HOME%%/%%JAR_FILE%%: ");
 		perror (NULL);
 		exit (ERR_ACCESS_JAR_FILE);
@@ -444,7 +430,7 @@ start (
 	/* Open the stdout log file */
 	stdoutLogFile = open ("%%STDOUT_LOG%%", O_WRONLY);
 	if (stdoutLogFile < 0) {
-		printf (" [ FAILED ]\n");
+		logOutput (" [ FAILED ]\n");
 		fprintf (stderr, "%%CONTROL_SCRIPT_NAME%%: Unable to open %%STDOUT_LOG%% for writing: ");
 		perror (NULL);
 		exit (ERR_STDOUT_LOGFILE_OPEN);
@@ -454,7 +440,7 @@ start (
 	/* Open the stderr log file */
 	stderrLogFile = open ("%%STDERR_LOG%%", O_WRONLY);
 	if (stderrLogFile < 0) {
-		printf (" [ FAILED ]\n");
+		logOutput (" [ FAILED ]\n");
 		fprintf (stderr, "%%CONTROL_SCRIPT_NAME%%: Unable to open %%STDERR_LOG%% for writing: ");
 		perror (NULL);
 		exit (ERR_STDERR_LOGFILE_OPEN);
@@ -462,19 +448,16 @@ start (
 	lseek (stderrLogFile, (off_t) 0, SEEK_END);
 
 	/* Split this process in two */
-	pid = fork ();
-	if (pid == -1) {
-		printf (" [ FAILED ]\n");
+	switch (pid = fork ())
+	{
+	case -1:
+		logOutput (" [ FAILED ]\n");
 		fprintf (stderr, "%%CONTROL_SCRIPT_NAME%%: Unable to fork: ");
 		perror (NULL);
 		exit (ERR_FORK_FAILED);
-	}
+		break;
 
-	if (pid == 0)
-	{
-		int i, argc;
-		char **argv;
-
+	case 0:
 		/* Redirect stdout to log file */
 		dup2 (stdoutLogFile, STDOUT_FILENO);
 
@@ -482,29 +465,31 @@ start (
 		dup2 (stderrLogFile, STDERR_FILENO);
 
 		/* TODO: Support redirection of both stdout and stderr to the same
-		         file using pipe (2) */
+				 file using pipe (2) */
 
 		/*
-			Build the argument vector, with the java-options if any.
+			Build the argument vector, with the java/jboss options if any.
 		 */
-		argv = malloc (sizeof (char *) * (optcount + 5));
+		argv = malloc (sizeof (char *) * (javaOpt + jbossOpt + 5));
 		argc = 0;
-		argv [argc++] = "%%JAVA_HOME%%/%%JAVA_CMD%%";
-		for (i = 0; i < optcount; i++)
-			argv [argc++] = opts [i];
+		argv [argc++] = "%%JAVA%%";
+		for (i = 0; i < javaOpt; i++)
+			argv [argc++] = javaArgs [i];
 		argv [argc++] = "-cp";
 		argv [argc++] = "%%JAVA_CP%%";
 		argv [argc++] = "%%JAVA_MAIN%%";
+		for (i = 0; i < jbossOpt; i++)
+			argv [argc++] = jbossArgs [i];
 		argv [argc++] = NULL;
 
 		/* Execute the command */
 		execv (argv [0], argv);
-
 		perror (NULL);
-	} else
-	{
-		printf (" [ DONE ]\n");
-		writePID (file, pid);
+		break;
+
+	default:
+		logOutput (" [ DONE ]\n");
+		writePID (pid);
 	}
 }
 
@@ -514,39 +499,35 @@ start (
 static void
 stop (void)
 {
-
-	int file;
 	int pid;
 
-	/* Open and read the PID file */
-	printf (">> Reading PID file (%%PID_FILE%%)...");
-	file = openPIDFile ();
-	pid = readPID (file);
+	pid = readPID ();
 
-	printf (">> Checking if %%APP_TITLE%% %%PORTVERSION%% is running...");
+	logOutput (">> Checking if %%APP_TITLE%% %%PORTVERSION%% is running...");
 
 	/* If there is a PID, see if the process still exists */
-	if (pid != -1) {
+	if (pid != -1)
+	{
 		int result = kill (pid, 0);
-		if (result != 0 && errno == ESRCH) {
-			ftruncate (file, (off_t) 0);
+		if (result != 0 && errno == ESRCH)
+		{
+			clearPID ();
 			pid = -1;
 		}
 	}
 
 	/* If there is no running process, produce an error */
-	if (pid == -1) {
-		printf (" [ FAILED ]\n");
+	if (pid == -1)
+	{
+		logOutput (" [ FAILED ]\n");
 		fprintf (stderr, "%%CONTROL_SCRIPT_NAME%%: %%APP_TITLE%% %%PORTVERSION%% is currently not running.\n");
 		exit (ERR_NOT_RUNNING);
 	}
-	printf (" [ DONE ]\n");
+	logOutput (" [ DONE ]\n");
 
 	/* Terminate the process */
 	killProcess (pid);
-
-	/* Clear the PID file */
-	ftruncate (file, (off_t) 0);
+	clearPID ();
 }
 
 
@@ -555,9 +536,22 @@ stop (void)
  */
 static void
 restart (
- int optcount,
- char * opts [])
+ int javaOpt,
+ char * javaArgs [],
+ int jbossOpt,
+ char * jbossArgs [])
 {
 	stop ();
-	start (optcount, opts);
+	start (javaOpt, javaArgs, jbossOpt, jbossArgs);
+}
+
+/**
+	Output log to stdout.
+ */
+static void
+logOutput (
+ char * string)
+{
+	if (!isQuiet)
+		printf (string);
 }
