@@ -65,6 +65,7 @@ GNUstep/Apps/WPrefs.app/tiff/windowfocus.tiff
 GNUstep/Apps/WPrefs.app/tiff/workspace.tiff
 GNUstep/Apps/WPrefs.app/tiff/workspacename.tiff
 GNUstep/Apps/WPrefs.app/tiff/xis.tiff
+bin/convertfonts
 bin/get-wings-flags
 bin/get-wraster-flags
 bin/get-wutil-flags
@@ -72,7 +73,6 @@ bin/geticonset
 bin/getstyle
 bin/seticons
 bin/setstyle
-bin/wcopy
 bin/wdread
 bin/wdwrite
 bin/wkdemenu.pl
@@ -80,11 +80,8 @@ bin/wm-oldmenu2new
 bin/wmagnify
 bin/wmaker
 bin/wmaker.inst
-bin/wmchlocale
 bin/wmsetbg
 bin/wmsetup
-bin/wpaste
-bin/wsetfont
 bin/wxcopy
 bin/wxpaste
 etc/WindowMaker/WMGLOBAL
@@ -106,7 +103,10 @@ lib/libWMaker.a
 lib/libWUtil.a
 lib/libwraster.a
 lib/libwraster.so
-lib/libwraster.so.4
+lib/libwraster.so.3
+lib/pkgconfig/wrlib.pc
+lib/pkgconfig/WINGs.pc
+lib/pkgconfig/wmlib.pc
 share/WINGs/Images.tiff
 share/WINGs/Images.xpm
 share/WINGs/defaultIcon.tiff
@@ -178,6 +178,7 @@ share/WindowMaker/Icons/xdvi.tiff
 share/WindowMaker/Icons/xdvi.xpm
 share/WindowMaker/Icons/xv.tiff
 share/WindowMaker/Icons/xv.xpm
+share/WindowMaker/Pixmaps/swtile.png
 share/WindowMaker/Pixmaps/tile.tiff
 share/WindowMaker/Pixmaps/tile.xpm
 share/WindowMaker/README
@@ -251,7 +252,7 @@ share/WindowMaker/menu.sk
 share/WindowMaker/menu.sl
 share/WindowMaker/menu.tr
 share/WindowMaker/menu.zh_CN
-share/WindowMaker/menu.zh_TW.Big5
+share/WindowMaker/menu.zh_TW
 share/WindowMaker/plmenu
 share/WindowMaker/plmenu.bg
 share/WindowMaker/plmenu.da
@@ -267,11 +268,17 @@ share/WindowMaker/plmenu.pl
 share/WindowMaker/plmenu.ro
 share/WindowMaker/plmenu.sk
 share/WindowMaker/plmenu.zh_CN
-share/WindowMaker/plmenu.zh_TW.Big5
+share/WindowMaker/plmenu.zh_TW
 share/WindowMaker/wmmacros
 share/WindowMaker/xtree.dat
+share/locale/be/LC_MESSAGES/WindowMaker.mo
+share/locale/bg/LC_MESSAGES/WINGs.mo
 share/locale/bg/LC_MESSAGES/WPrefs.mo
 share/locale/bg/LC_MESSAGES/WindowMaker.mo
+share/locale/bs/LC_MESSAGES/WindowMaker.mo
+share/locale/ca/LC_MESSAGES/WINGs.mo
+share/locale/ca/LC_MESSAGES/WindowMaker.mo
+share/locale/ca/LC_MESSAGES/WPrefs.mo
 share/locale/cs/LC_MESSAGES/WINGs.mo
 share/locale/cs/LC_MESSAGES/WPrefs.mo
 share/locale/cs/LC_MESSAGES/WindowMaker.mo
@@ -286,6 +293,7 @@ share/locale/et/LC_MESSAGES/WPrefs.mo
 share/locale/et/LC_MESSAGES/WindowMaker.mo
 share/locale/fi/LC_MESSAGES/WPrefs.mo
 share/locale/fi/LC_MESSAGES/WindowMaker.mo
+share/locale/fr/LC_MESSAGES/WINGs.mo
 share/locale/fr/LC_MESSAGES/WPrefs.mo
 share/locale/fr/LC_MESSAGES/WindowMaker.mo
 share/locale/gl/LC_MESSAGES/WindowMaker.mo
@@ -315,8 +323,6 @@ share/locale/sv/LC_MESSAGES/WindowMaker.mo
 share/locale/tr/LC_MESSAGES/WindowMaker.mo
 share/locale/zh_CN/LC_MESSAGES/WPrefs.mo
 share/locale/zh_CN/LC_MESSAGES/WindowMaker.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/WPrefs.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/WindowMaker.mo
 @exec mkdir -p %D/GNUstep/Apps/WPrefs.app/xpm
 @exec mkdir -p %D/share/WindowMaker/Sounds
 @dirrm share/WindowMaker/Styles
