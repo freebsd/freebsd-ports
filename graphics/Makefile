@@ -170,6 +170,7 @@
     SUBDIR += ruby-opengl
     SUBDIR += sane
     SUBDIR += sced
+    SUBDIR += scrot
     SUBDIR += scwm-icons
     SUBDIR += sdl_image
     SUBDIR += sdl_ttf
