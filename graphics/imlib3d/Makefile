@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D Image Processing Framework
 
 LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
-		gsl.4:${PORTSDIR}/math/gsl \
+		gsl.5:${PORTSDIR}/math/gsl \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		gtkglmm.1:${PORTSDIR}/x11-toolkits/gtkglarea--
 

@@ -14,7 +14,7 @@ MASTER_SITES=	http://yacas.sourceforge.net/backups/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet Another Computer Algebra System
 
-LIB_DEPENDS=	gsl.4:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	gsl.5:${PORTSDIR}/math/gsl
 
 USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes

@@ -21,7 +21,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automatic 3D finite element mesh generator
 
-LIB_DEPENDS=	gsl.4:${PORTSDIR}/math/gsl \
+LIB_DEPENDS=	gsl.5:${PORTSDIR}/math/gsl \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
