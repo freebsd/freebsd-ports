@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	8.0.b2.2004.08.31
+PORTVERSION?=	8.0.b4.2004.11.01
 CATEGORIES?=	databases
 MASTER_SITES=	http://people.freebsd.org/~seanc/ports/pgsql/
 PATCH_SITES=	http://people.FreeBSD.org/~seanc/patches/pgsql/
@@ -90,7 +90,6 @@ PLIST_SUB+=	SERVER="@comment "
 PKGNAMESUFFIX=	-client
 .else
 PLIST_SUB+=	SERVER=""
-INSTALL_TARGET+=	install-all-headers
 MAKEFILE=	GNUmakefile
 .endif
 
