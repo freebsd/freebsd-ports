@@ -6,8 +6,8 @@
    exit_status=$1
 -  if [ -f /etc/dhclient-exit-hooks ]; then
 -    . /etc/dhclient-exit-hooks
-+  if [ -f !!PREFIX!!/etc/dhclient-exit-hooks ]; then
-+    . !!PREFIX!!/etc/dhclient-exit-hooks
++  if [ -f %%PREFIX%%/etc/dhclient-exit-hooks ]; then
++    . %%PREFIX%%/etc/dhclient-exit-hooks
    fi
  # probably should do something with exit status of the local script
    exit $exit_status
@@ -15,10 +15,10 @@
  
  # Invoke the local dhcp client enter hooks, if they exist.
 -if [ -f /etc/dhclient-enter-hooks ]; then
-+if [ -f !!PREFIX!!/etc/dhclient-enter-hooks ]; then
++if [ -f %%PREFIX%%/etc/dhclient-enter-hooks ]; then
    exit_status=0
 -  . /etc/dhclient-enter-hooks
-+  . !!PREFIX!!/etc/dhclient-enter-hooks
++  . %%PREFIX%%/etc/dhclient-enter-hooks
    # allow the local script to abort processing of this state
    # local script must set exit_status variable to nonzero.
    if [ $exit_status -ne 0 ]; then

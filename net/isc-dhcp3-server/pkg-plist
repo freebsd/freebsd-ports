@@ -1,36 +1,44 @@
 @comment $FreeBSD$
-%%SAMP_SUBDIR%%/dhclient.conf%%SAMP_SUFFIX%%
-%%SAMP_SUBDIR%%/dhcpd.conf%%SAMP_SUFFIX%%
-%%RCD_SUBDIR%%/isc-dhcpd.sh%%SAMP_SUFFIX%%
-%%INC_SUBDIR%%/dhcpctl.h
-%%INC_SUBDIR%%/isc-dhcp/boolean.h
-%%INC_SUBDIR%%/isc-dhcp/dst.h
-%%INC_SUBDIR%%/isc-dhcp/int.h
-%%INC_SUBDIR%%/isc-dhcp/lang.h
-%%INC_SUBDIR%%/isc-dhcp/list.h
-%%INC_SUBDIR%%/isc-dhcp/result.h
-%%INC_SUBDIR%%/isc-dhcp/types.h
-%%INC_SUBDIR%%/omapip/alloc.h
-%%INC_SUBDIR%%/omapip/buffer.h
-%%INC_SUBDIR%%/omapip/omapip.h
-%%LIB_SUBDIR%%/libdhcpctl.a
-%%LIB_SUBDIR%%/libomapi.a
-%%BIN_SUBDIR%%/omshell
-%%SBIN_SUBDIR%%/dhclient
-%%SBIN_SUBDIR%%/dhclient-script
-%%SBIN_SUBDIR%%/dhcpd
-%%SBIN_SUBDIR%%/dhcrelay
-%%PORTDOCS%%%%DOC_SUBDIR%%/CHANGES
-%%PORTDOCS%%%%DOC_SUBDIR%%/COPYRIGHT
-%%PORTDOCS%%%%DOC_SUBDIR%%/README
-%%PORTDOCS%%%%DOC_SUBDIR%%/RELNOTES
-@dirrm %%INC_SUBDIR%%/isc-dhcp
-@dirrm %%INC_SUBDIR%%/omapip
-%%PORTDOCS%%@dirrm %%DOC_SUBDIR%%
-@unexec rm -f %%RCD_SUBDIR%%/isc-dhcpd.sh
-@exec [ -f %%DATA_DIR%%/dhclient.leases ] || touch %%DATA_DIR%%/dhclient.leases
-@unexec [ -s %%DATA_DIR%%/dhclient.leases ] || rm -f %%DATA_DIR%%/dhclient.leases
-@exec [ -f %%DATA_DIR%%/dhcpd.leases ] || touch %%DATA_DIR%%/dhcpd.leases
-@unexec [ -s %%DATA_DIR%%/dhcpd.leases ] || rm -f %%DATA_DIR%%/dhcpd.leases
-@exec [ -f %D/%%CONF_SUBDIR%%/dhclient.conf ] || touch %D/%%CONF_SUBDIR%%/dhclient.conf
-@unexec [ -L %D/%%CONF_SUBDIR%%/dhclient.conf -o -s %D/%%CONF_SUBDIR%%/dhclient.conf ] || rm -f %D/%%CONF_SUBDIR%%/dhclient.conf
+bin/omshell
+etc/dhclient.conf.sample
+@exec [ -f %D/etc/dhclient.conf ] || touch %D/etc/dhclient.conf
+@unexec [ -L %D/etc/dhclient.conf -o -s %D/etc/dhclient.conf ] || rm -f %D/etc/dhclient.conf
+etc/dhcpd.conf.sample
+@unexec if cmp -s %D/etc/rc.isc-dhcpd.conf %D/etc/rc.isc-dhcpd.conf.sample; then rm -f %D/etc/rc.isc-dhcpd.conf; fi
+etc/rc.isc-dhcpd.conf.sample
+@exec [ -f %D/etc/rc.isc-dhcpd.conf ] || cp %D/etc/rc.isc-dhcpd.conf.sample %D/etc/rc.isc-dhcpd.conf
+@unexec if cmp -s %D/etc/rc.isc-dhcrelay.conf %D/etc/rc.isc-dhcrelay.conf.sample; then rm -f %D/etc/rc.isc-dhcrelay.conf; fi
+etc/rc.isc-dhcrelay.conf.sample
+@exec [ -f %D/etc/rc.isc-dhcrelay.conf ] || cp %D/etc/rc.isc-dhcrelay.conf.sample %D/etc/rc.isc-dhcrelay.conf
+etc/rc.d/isc-dhcpd.sh.sample
+@unexec rm -f etc/rc.d/isc-dhcpd.sh
+etc/rc.d/isc-dhcrelay.sh.sample
+@unexec rm -f etc/rc.d/isc-dhcrelay.sh
+include/dhcpctl.h
+include/isc-dhcp/boolean.h
+include/isc-dhcp/dst.h
+include/isc-dhcp/int.h
+include/isc-dhcp/lang.h
+include/isc-dhcp/list.h
+include/isc-dhcp/result.h
+include/isc-dhcp/types.h
+include/omapip/alloc.h
+include/omapip/buffer.h
+include/omapip/omapip.h
+lib/libdhcpctl.a
+lib/libomapi.a
+sbin/dhclient
+sbin/dhclient-script
+sbin/dhcpd
+sbin/dhcrelay
+%%PORTDOCS%%share/doc/isc-dhcp3/CHANGES
+%%PORTDOCS%%share/doc/isc-dhcp3/COPYRIGHT
+%%PORTDOCS%%share/doc/isc-dhcp3/README
+%%PORTDOCS%%share/doc/isc-dhcp3/RELNOTES
+%%PORTDOCS%%@dirrm share/doc/isc-dhcp3
+@dirrm include/omapip
+@dirrm include/isc-dhcp
+@exec [ -f /var/run/dhclient.leases ] || touch /var/run/dhclient.leases
+@unexec [ -s /var/run/dhclient.leases ] || rm -f /var/run/dhclient.leases
+@exec [ -f /var/run/dhcpd.leases ] || touch /var/run/dhcpd.leases
+@unexec [ -s /var/run/dhcpd.leases ] || rm -f /var/run/dhcpd.leases

@@ -1,0 +1,7 @@
+# $FreeBSD$
+#
+# isc-dhcpd startup configuration file.
+#
+
+dhcpd_options=				# command option(s)
+dhcpd_ifaces=				# ethernet interface(s)

@@ -2,15 +2,16 @@
 #
 # $FreeBSD$
 #
-# Start or stop isc-dhcpd.
+# Start or stop isc-dhcrelay.
 #
 
 rc_file=${0##*/}
 rc_arg=$1
 
-# override these variables in ${PREFIX}/etc/rc.isc-dhcpd.conf
-dhcpd_options=			# command option(s)
-dhcpd_ifaces=			# ethernet interface(s)
+# override these variables in ${PREFIX}/etc/rc.isc-dhcrelay.conf
+dhcrelay_options=			# command option(s)
+dhcrelay_ifaces=			# ethernet interface(s)
+dhcrelay_servers=			# dhcpd server(s)
 
 if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/${rc_file}\$"); then
 	echo "${rc_file}: Cannot determine PREFIX." >&2
@@ -27,12 +28,8 @@ if [ -f ${rcconf_path} ]; then
 fi
 
 program_dir=${PREFIX}/sbin
-program_file=dhcpd
+program_file=dhcrelay
 program_path=${program_dir}/${program_file}
-
-config_dir=${PREFIX}/etc
-config_file=${program_file}.conf
-config_path=${config_dir}/${config_file}
 
 pid_dir=/var/run
 pid_file=${program_file}.pid
@@ -47,12 +44,16 @@ start)
 			"unable to start: ${program_path} is missing."
 		exit 72
 	fi
-	if [ ! -f ${config_path} ]; then
+	if [ -z "${dhcrelay_servers}" ]; then
 		logger -sp ${syslog_facility} -t ${program_file} \
-			"unable to start: ${config_path} is missing."
-		exit 72
+			"unable to start: no dhcpd server(s) configured."
+		exit 64
 	fi
-	${program_path} ${dhcpd_options} ${dhcpd_ifaces} &&
+	ifaces=
+	for iface in ${dhcrelay_ifaces}; do
+		ifaces="$ifaces -i $iface"
+	done
+	${program_path} ${dhcrelay_options} ${ifaces} ${dhcrelay_servers} &&
 	echo -n " ${program_file}"
 	;;
 stop)
@@ -71,7 +72,6 @@ status)
 	;;
 *)
 	echo "usage: ${rc_file} {start|stop|restart|status}" >&2
-	exit 64
 	;;
 esac
 
