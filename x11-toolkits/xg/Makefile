@@ -14,25 +14,23 @@ DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_MOTIF=	yes
+WRKSRC=		${WRKDIR}/Xg-${PORTVERSION}
 USE_X_PREFIX=	yes
+USE_MOTIF=	yes
 MAKEFILE=	makefile
-WRKSRC=		${WRKDIR}/Xg-1.0
 
 do-install:
-	@ ${INSTALL_DATA} ${WRKSRC}/src/libxg.a ${PREFIX}/lib
-	@ ${MKDIR} ${PREFIX}/include/xg
-	@ ${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include/xg
-	@ ${MKDIR} ${PREFIX}/share/examples/xg
-	@ ${INSTALL_DATA} ${WRKSRC}/testsrc/* ${PREFIX}/share/examples/xg
-	@ ${MV} ${PREFIX}/share/examples/xg/makefile ${PREFIX}/share/examples/xg/Makefile
-	@ ${RM} ${PREFIX}/share/examples/xg/makefile.orig
-
-post-install:
+	${INSTALL_DATA} ${WRKSRC}/src/libxg.a ${PREFIX}/lib
+	@${MKDIR} ${PREFIX}/include/xg
+	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/include/xg
+	@${MKDIR} ${PREFIX}/share/examples/xg
+	${INSTALL_DATA} ${WRKSRC}/testsrc/*.c ${PREFIX}/share/examples/xg
+	${INSTALL_DATA} ${WRKSRC}/testsrc/*.xpm ${PREFIX}/share/examples/xg
+	${INSTALL_DATA} ${WRKSRC}/testsrc/makefile ${PREFIX}/share/examples/xg/Makefile
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/xg
-	@ ${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/xg
-	@ ${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xg
+	@${MKDIR} ${PREFIX}/share/doc/xg
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/xg
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/xg
 .endif
 
 .include <bsd.port.mk>
