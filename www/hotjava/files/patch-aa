@@ -1,0 +1,11 @@
+--- hjb3_0-linux.sfx.orig	Sun Jul  4 16:35:25 1999
++++ hjb3_0-linux.sfx	Sun Jul  4 16:35:33 1999
+@@ -24,7 +24,7 @@
+ 	destDir=${2}/HotJava
+ fi
+ 
+-mkdir $destDir
++mkdir -p $destDir
+ mv README license.html Browser.jar $destDir
+ cp -rf admin-docs $destDir
+ echo "${1}/bin/java -classpath ${1}/lib/classes.zip:${destDir}/Browser.jar sunw.hotjava.Main -Dhotjava.home=${destDir} &" > ${destDir}/hotjava
