@@ -2,18 +2,18 @@
 %%SITE_PERL%%/Apache/Session/DB_File.pm
 %%SITE_PERL%%/Apache/Session/File.pm
 %%SITE_PERL%%/Apache/Session/Flex.pm
-%%SITE_PERL%%/Apache/Session/MySQL.pm
-%%SITE_PERL%%/Apache/Session/Oracle.pm
-%%SITE_PERL%%/Apache/Session/Postgres.pm
-%%SITE_PERL%%/Apache/Session/Sybase.pm
 %%SITE_PERL%%/Apache/Session/Generate/MD5.pm
 %%SITE_PERL%%/Apache/Session/Generate/ModUniqueId.pm
 %%SITE_PERL%%/Apache/Session/Generate/ModUsertrack.pm
+%%SITE_PERL%%/Apache/Session/Informix.pm
 %%SITE_PERL%%/Apache/Session/Lock/File.pm
-%%SITE_PERL%%/Apache/Session/Lock/File.pm.orig
 %%SITE_PERL%%/Apache/Session/Lock/MySQL.pm
 %%SITE_PERL%%/Apache/Session/Lock/Null.pm
 %%SITE_PERL%%/Apache/Session/Lock/Semaphore.pm
+%%SITE_PERL%%/Apache/Session/Lock/Sybase.pm
+%%SITE_PERL%%/Apache/Session/MySQL.pm
+%%SITE_PERL%%/Apache/Session/Oracle.pm
+%%SITE_PERL%%/Apache/Session/Postgres.pm
 %%SITE_PERL%%/Apache/Session/Serialize/Base64.pm
 %%SITE_PERL%%/Apache/Session/Serialize/Storable.pm
 %%SITE_PERL%%/Apache/Session/Serialize/Sybase.pm
@@ -21,15 +21,18 @@
 %%SITE_PERL%%/Apache/Session/Store/DBI.pm
 %%SITE_PERL%%/Apache/Session/Store/DB_File.pm
 %%SITE_PERL%%/Apache/Session/Store/File.pm
-%%SITE_PERL%%/Apache/Session/Store/File.pm.orig
+%%SITE_PERL%%/Apache/Session/Store/Informix.pm
 %%SITE_PERL%%/Apache/Session/Store/MySQL.pm
 %%SITE_PERL%%/Apache/Session/Store/Oracle.pm
 %%SITE_PERL%%/Apache/Session/Store/Postgres.pm
 %%SITE_PERL%%/Apache/Session/Store/Sybase.pm
+%%SITE_PERL%%/Apache/Session/Sybase.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Session/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/Session
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache 2>/dev/null || true
 @dirrm %%SITE_PERL%%/Apache/Session/Store
 @dirrm %%SITE_PERL%%/Apache/Session/Serialize
 @dirrm %%SITE_PERL%%/Apache/Session/Lock
 @dirrm %%SITE_PERL%%/Apache/Session/Generate
 @dirrm %%SITE_PERL%%/Apache/Session
+@unexec rmdir %D/%%SITE_PERL%%/Apache 2>/dev/null || true
