@@ -1,11 +1,11 @@
---- src/manconf.c.bak	Thu Apr 22 09:07:10 1999
-+++ src/manconf.c	Wed Aug 16 05:05:37 2000
-@@ -136,7 +136,7 @@
-   ps("FW_content","\"|IFS=' '&&p=@BINDIR@/procmail&&test -f $p&&exec $p -Yf-||\
- exit 75 \2fB#\2fP\2fIYOUR_USERNAME\2fP\"");
+--- src/manconf.c.orig	Fri Aug 25 11:04:33 2000
++++ src/manconf.c	Sun Aug 27 13:12:55 2000
+@@ -140,7 +140,7 @@
+ sh before procmail ever sees it; it is however a necessary kludge against\1\
+ overoptimising sendmail programs:\1");
  #else
 -  ps("FW_content","\"|exec @BINDIR@/procmail\"");
 +  ps("FW_content","\"|exec @BINDIR@/procmail || exit 75\"");
+   ps("FW_comment","");
  #endif
  #else
-   ps("DOT_FORWARD",".maildelivery");
