@@ -17,6 +17,7 @@ DIST_SUBDIR=	vje30
 
 MAINTAINER=	knu@FreeBSD.org
 
+LIB_DEPENDS=	c.3:${PORTSDIR}/misc/compat3x
 #RUN_DEPENDS=	${LOCALBASE}/share/java/classes/jfc-1.1.1/swing.jar:${PORTSDIR}/java/jfc
 
 NO_BUILD=	yes
