@@ -3243,6 +3243,7 @@ jext		ports/editors/jext
 jfc		ports/java/jfc
 jfconv		ports/palm/jfconv
 jfk		ports/games/jfk
+jftp		ports/ftp/jftp
 jftpgw		ports/ftp/jftpgw
 jgnat		ports/lang/jgnat
 jgnat-doc-html	ports/lang/jgnat-doc-html
