@@ -15,11 +15,11 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@freebsd.org
 COMMENT=	Bitstream Vera collection of 10 TrueType fonts
 
-BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir \
-		fc-cache:${PORTSDIR}/x11-fonts/fontconfig
+BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+NO_BUILD=	yes
 
 NO_CDROM=	"Restrictive license - may not distribute"
 NO_PACKAGE=	"Restrictive license - may not distribute"
@@ -35,10 +35,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 FONTNAME=	${PORTNAME}
 FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
-TTFONTSDIR?=	${X11BASE}/lib/X11/fonts/TrueType
-
-TTMKFDIR_CMD?=	${X11BASE}/bin/ttmkfdir
-SORT?=	sort
 
 .SILENT:
 
@@ -50,20 +46,6 @@ post-patch:
 	${SED} 's|%%FONTSDIR%%|${FONTSDIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
 
 #
-# Build
-#
-
-do-build: make-fonts.scale make-fonts.dir
-
-make-fonts.scale:
-	${TTMKFDIR_CMD} -c -d ${WRKSRC} | ${CAT} -n | ${SED} -e ' \
-		s,^     1,100000,; \
-	' | ${SORT} -r | ${CUT} -c 8- > ${WRKSRC}/fonts.scale
-
-make-fonts.dir:
-	${CP} ${WRKSRC}/fonts.scale ${WRKSRC}/fonts.dir
-
-#
 # Install
 #
 
@@ -72,7 +54,7 @@ do-install: install-fonts install-conf install-docs
 install-fonts:
 	${MKDIR} ${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.ttf ${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/fonts.dir ${FONTSDIR}
+	${INSTALL_DATA} ${FILESDIR}/fonts.dir ${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT.TXT ${FONTSDIR}
 
 install-conf:
