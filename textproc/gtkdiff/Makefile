@@ -8,9 +8,9 @@
 PORTNAME=	gtkdiff
 PORTVERSION=	1.0.2
 CATEGORIES=	textproc gnome
-MASTER_SITES=	http://www.ainet.or.jp/~inoue/software/gtkdiff/
+MASTER_SITES=	http://home.catv.ne.jp/pp/ginoue/software/gtkdiff/
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes

@@ -8,9 +8,10 @@
 PORTNAME=	fsv
 PORTVERSION=	0.9
 CATEGORIES=	x11-fm
-MASTER_SITES=	http://fox.mit.edu/skunk/soft/src/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	fsv
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
