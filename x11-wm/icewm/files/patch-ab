@@ -1,8 +1,7 @@
---- install.inc.orig	Sat Feb 20 10:33:06 1999
-+++ install.inc	Wed Mar 17 00:11:05 1999
-@@ -1,10 +1,10 @@
+--- install.inc.orig	Sat Feb 20 08:33:06 1999
++++ install.inc	Mon May  3 15:44:56 1999
+@@ -1,10 +1,9 @@
 -PREFIX      = /usr/local
-+PREFIX      = $(X11BASE)
  BINDIR      = $(PREFIX)/bin
 -LIBDIR      = $(PREFIX)/lib/X11/icewm
 -ETCDIR      = /etc/X11/icewm
