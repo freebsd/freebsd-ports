@@ -1,0 +1,11 @@
+--- config/Makefile.config.in.orig	Tue Jan  5 19:27:25 1999
++++ config/Makefile.config.in	Tue Jan  5 19:29:08 1999
+@@ -19,7 +19,7 @@
+ #-----------------------------------------------------------------
+ 
+ # Optimized CXXFLAGS
+-CXXFLAGS      += $(CFLAGS) -Wall -O4 -pipe -I@x_includes@ \
++CXXFLAGS      += $(CFLAGS) -Wall -I@x_includes@ \
+                 -I$(TOP) -I$(TOP)/@host_dir@ @DEFS@
+ # DEBUG CXXFLAGS
+ #CXXFLAGS      += $(CFLAGS) -Wall -ggdb -pipe -I@x_includes@ \
