@@ -16,7 +16,6 @@ DISTNAME=	gtk+-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gimp Toolkit for X11 GUI (previous stable version)
 
-USE_GETTEXT=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GNOME=	glib12
@@ -28,6 +27,13 @@ CONFIGURE_ARGS=	--includedir=${PREFIX}/include/gtk12 --with-native-locale \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		X_CFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 MAN1=		gtk-config.1
 
