@@ -1,39 +1,65 @@
-bin/xmms
 bin/wmxmms
+bin/xmms
 bin/xmms-config
 include/xmms/configfile.h
-include/xmms/xmmsctrl.h
-include/xmms/dirbrowser.h
-include/xmms/util.h
-include/xmms/fullscreen.h
 include/xmms/dga.h
+include/xmms/dirbrowser.h
+include/xmms/fullscreen.h
 include/xmms/plugin.h
+include/xmms/util.h
+include/xmms/xmmsctrl.h
+lib/libxmms.a
+lib/libxmms.la
 lib/libxmms.so.1
 @exec ln -fs %D/%F %B/libxmms.so
 @unexec rm -f %B/libxmms.so
-lib/xmms/Output/libOSS.so
-lib/xmms/Output/libdisk_writer.so
+lib/xmms/Effect/libvoice.so
+lib/xmms/Effect/libecho.so
+lib/xmms/Effect/libstereo.so
+lib/xmms/General/libir.so
+lib/xmms/General/libsong_change.so
 lib/xmms/Input/libwav.so
 lib/xmms/Input/libmpg123.so
 lib/xmms/Input/libcdaudio.so
 lib/xmms/Input/libidcin.so
-lib/xmms/Effect/libvoice.so
-lib/xmms/Effect/libecho.so
-lib/xmms/Effect/libstereo.so
-lib/xmms/Effect/libsrndecho.so
-lib/xmms/General/libir.so
-lib/xmms/General/libsong_change.so
+lib/xmms/Input/libmikmod.so
+lib/xmms/Input/libtonegen.so
+lib/xmms/Output/libOSS.so
+lib/xmms/Output/libdisk_writer.so
+lib/xmms/Output/libesdout.so
 lib/xmms/Visualization/libbscope.so
 lib/xmms/Visualization/libsanalyzer.so
-lib/libxmms.la
-lib/libxmms.a
 share/aclocal/xmms.m4
+share/locale/af/LC_MESSAGES/xmms.mo
+share/locale/bg/LC_MESSAGES/xmms.mo
+share/locale/ca/LC_MESSAGES/xmms.mo
+share/locale/cs/LC_MESSAGES/xmms.mo
+share/locale/da/LC_MESSAGES/xmms.mo
+share/locale/de/LC_MESSAGES/xmms.mo
+share/locale/es/LC_MESSAGES/xmms.mo
+share/locale/fr/LC_MESSAGES/xmms.mo
+share/locale/hr/LC_MESSAGES/xmms.mo
+share/locale/hu/LC_MESSAGES/xmms.mo
+share/locale/ja/LC_MESSAGES/xmms.mo
+share/locale/ko/LC_MESSAGES/xmms.mo
+share/locale/lt/LC_MESSAGES/xmms.mo
+share/locale/nl/LC_MESSAGES/xmms.mo
+share/locale/no/LC_MESSAGES/xmms.mo
+share/locale/pt_BR/LC_MESSAGES/xmms.mo
+share/locale/ro/LC_MESSAGES/xmms.mo
+share/locale/ru/LC_MESSAGES/xmms.mo
+share/locale/sk/LC_MESSAGES/xmms.mo
+share/locale/sv/LC_MESSAGES/xmms.mo
+share/locale/uk/LC_MESSAGES/xmms.mo
+share/locale/wa/LC_MESSAGES/xmms.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/xmms.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/xmms.mo
 share/xmms/wmxmms.xpm
 @dirrm include/xmms
-@dirrm lib/xmms/Output
-@dirrm lib/xmms/Input
 @dirrm lib/xmms/Effect
 @dirrm lib/xmms/General
+@dirrm lib/xmms/Input
+@dirrm lib/xmms/Output
 @dirrm lib/xmms/Visualization
 @dirrm lib/xmms
 @dirrm share/xmms

@@ -1,0 +1,47 @@
+--- configure.orig	Mon Jun 12 17:06:00 2000
++++ configure	Fri Jun 16 07:01:32 2000
+@@ -3287,14 +3287,14 @@
+ 
+ fi
+ if test "x$PTHREAD_LIBS" = xerror; then
+-        echo $ac_n "checking for pthread_attr_init in -lc_r""... $ac_c" 1>&6
+-echo "configure:3292: checking for pthread_attr_init in -lc_r" >&5
++        echo $ac_n "checking for pthread_attr_init in -pthread""... $ac_c" 1>&6
++echo "configure:3292: checking for pthread_attr_init in -pthread" >&5
+ ac_lib_var=`echo c_r'_'pthread_attr_init | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lc_r  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 3300 "configure"
+ #include "confdefs.h"
+@@ -3322,7 +3322,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  PTHREAD_LIBS="-lc_r"
++  PTHREAD_LIBS="-pthread"
+ else
+   echo "$ac_t""no" 1>&6
+ fi
+@@ -5472,7 +5472,7 @@
+   cat conftest.$ac_ext >&5
+   rm -rf conftest*
+   CATOBJEXT=.mo
+-		   DATADIRNAME=lib
++		   DATADIRNAME=share
+ fi
+ rm -f conftest*
+ 		INSTOBJEXT=.mo
+@@ -7117,7 +7117,7 @@
+ ARCH_DEFINES=""
+ case "$host" in 
+ 	i386-*-* | i486-*-* | i586-*-* | i686-*-* | i86pc-*-*)
+-		CFLAGS="$CFLAGS -m486"
++		CFLAGS="$CFLAGS"
+ 		ARCH_DEFINES="-DI386_ASSEM"
+ 		arch_type=ix86
+ 	;;
