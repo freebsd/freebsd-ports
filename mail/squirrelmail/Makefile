@@ -7,6 +7,7 @@
 
 PORTNAME=	squirrelmail
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	squirrelmail
@@ -25,6 +26,7 @@ pre-install:
 do-install:
 	${MKDIR} ${PREFIX}/squirrelmail
 	${CP} -R ${WRKSRC}/* ${PREFIX}/squirrelmail
+	${INSTALL_DATA} ${FILESDIR}/data-htaccess ${PREFIX}/squirrelmail/data/.htaccess
 	${CHOWN} -R www:www ${PREFIX}/squirrelmail/data
 
 post-install:
