@@ -1,6 +1,15 @@
---- Makefile.orig	Sat Apr  3 08:03:48 1999
-+++ Makefile	Tue Nov  9 21:48:01 1999
-@@ -31,13 +31,13 @@
+--- Makefile.orig	Sun Jun 18 19:26:54 2000
++++ Makefile	Mon Jan 22 20:22:57 2001
+@@ -19,7 +19,7 @@
+ # LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+ # FOR A PARTICULAR PURPOSE. 
+ 
+-CC = gcc
++# CC = gcc
+ 
+ # For AIX
+ # See /usr/lpp/bos/bsdport on your system for details of how to define bsdcc
+@@ -33,13 +33,13 @@
  # OS=-DMIPS
  
  # For Solaris (SUNOS 5.3, 5.4, 5.5, 5.6) uncomment the following two lines
@@ -18,7 +27,7 @@
  # NOTE: If you want your password encryption to be compatible with
  # e.g. SunOS, you may need to instead use:
  # OSLIBS=-ldescrypt
-@@ -62,12 +62,12 @@
+@@ -64,12 +64,12 @@
  # FLAGS   = -DTAC_PLUS_USERID=$(USERID) -DTAC_PLUS_GROUPID=$(GROUPID)
  
  # Definitions for SKEY functionality
@@ -34,7 +43,7 @@
  
  # Enforce a limit on maximum sessions per user. See the user's guide
  # for more information.
-@@ -83,13 +83,13 @@
+@@ -85,13 +85,13 @@
  # possible), containing its process id. Uncomment and modify the
  # following line to change this filename
  
@@ -50,7 +59,7 @@
  
  HFILES = expire.h parse.h regmagic.h md5.h regexp.h tac_plus.h 
  
-@@ -128,8 +128,8 @@
+@@ -130,8 +130,8 @@
  	-rm -f *.o *~ *.BAK tac_plus generate_passwd
  
  install:
