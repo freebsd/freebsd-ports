@@ -1,41 +1,14 @@
 
 $FreeBSD$
 
---- po/Makefile.in.in.orig	Tue May  7 20:42:39 2002
-+++ po/Makefile.in.in	Wed May  8 09:10:45 2002
-@@ -16,6 +16,8 @@
- 
- srcdir = @srcdir@
- top_srcdir = @top_srcdir@
-+top_builddir = @top_builddir@
-+DOMAIN = evolution
- VPATH = @srcdir@
- 
- prefix = @prefix@
-@@ -33,7 +35,7 @@
- MSGFMT = @MSGFMT@
- XGETTEXT = @XGETTEXT@
- MSGMERGE = msgmerge
--MSGMERGE_UPDATE = @MSGMERGE@ --update
-+MSGMERGE_UPDATE = $(MSGMERGE) --update
- MSGINIT = msginit
- MSGCONV = msgconv
- MSGFILTER = msgfilter
-@@ -129,7 +131,7 @@
+--- po/Makefile.in.in.orig	Thu Feb  7 14:34:39 2002
++++ po/Makefile.in.in	Thu Feb  7 14:36:07 2002
+@@ -106,7 +106,7 @@
  	@catalogs='$(CATALOGS)'; \
  	for cat in $$catalogs; do \
  	  cat=`basename $$cat`; \
--	  lang=`echo $$cat | sed -e 's/\.gmo$$//'`; \
-+	  lang=`echo $$cat | sed -e 's/\.mo$$//'`; \
+-	  lang=`echo $$cat | sed 's/\.gmo$$//'`; \
++	  lang=`echo $$cat | sed 's/\.mo$$//'`; \
  	  dir=$(localedir)/$$lang/LC_MESSAGES; \
  	  $(mkinstalldirs) $(DESTDIR)$$dir; \
- 	  if test -r $$cat; then realcat=$$cat; else realcat=$(srcdir)/$$cat; fi; \
-@@ -181,7 +183,7 @@
- 	@catalogs='$(CATALOGS)'; \
- 	for cat in $$catalogs; do \
- 	  cat=`basename $$cat`; \
--	  lang=`echo $$cat | sed -e 's/\.gmo$$//'`; \
-+	  lang=`echo $$cat | sed -e 's/\.mo$$//'`; \
- 	  dir=$(localedir)/$$lang/LC_MESSAGES; \
- 	  $(mkinstalldirs) $(DESTDIR)$$dir; \
- 	  for lc in '' $(EXTRA_LOCALE_CATEGORIES); do \
+ 	  if test -r $$cat; then \

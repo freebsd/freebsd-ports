@@ -323,6 +323,7 @@ share/gnome/help/evolution/C/configure.html
 share/gnome/help/evolution/C/contact-automation-basic.html
 share/gnome/help/evolution/C/contact-search.html
 share/gnome/help/evolution/C/customizing-summary.html
+share/gnome/help/evolution/C/docbook.css
 share/gnome/help/evolution/C/encryption.html
 share/gnome/help/evolution/C/figures/calendar.png
 share/gnome/help/evolution/C/figures/config-cal.png
@@ -434,6 +435,7 @@ share/gnome/help/evolution/no/config.html
 share/gnome/help/evolution/no/contact-automation-basic.html
 share/gnome/help/evolution/no/contact-search.html
 share/gnome/help/evolution/no/customizing-summary.html
+share/gnome/help/evolution/no/docbook.css
 share/gnome/help/evolution/no/encryption.html
 share/gnome/help/evolution/no/figures/calendar.png
 share/gnome/help/evolution/no/figures/config-cal.png

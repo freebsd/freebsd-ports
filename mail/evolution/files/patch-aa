@@ -1,14 +1,52 @@
-
-$FreeBSD$
-
---- configure.orig	Tue May  7 13:42:10 2002
-+++ configure	Tue May  7 13:45:24 2002
-@@ -9225,7 +9225,7 @@
+--- configure.orig	Sat May 11 22:55:23 2002
++++ configure	Sat May 11 22:56:01 2002
+@@ -6036,6 +6036,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -9290,7 +9291,7 @@
+ 
+ CPPFLAGS_save="$CPPFLAGS"
  CPPFLAGS="$DB3_CFLAGS $CPPFLAGS"
- 
- 
--for ac_header in db.h db3/db.h
-+for ac_header in db3/db.h
+-for ac_hdr in db.h db3/db.h
++for ac_hdr in db3/db.h
  do
- as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
- if eval "test \"\${$as_ac_Header+set}\" = set"; then
+ ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
+ echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
+@@ -9364,7 +9365,7 @@
+   echo "configure: failed program was:" >&5
+   cat conftest.$ac_ext >&5
+   rm -rf conftest*
+-  { echo "configure: error: Found db.h is not version $evolution_db_version" 1>&2; exit 1; }
++#  { echo "configure: error: Found db.h is not version $evolution_db_version" 1>&2; exit 1; }
+ fi
+ rm -f conftest*
+ 
+@@ -9475,7 +9476,7 @@
+ 
+ echo "$ac_t""$ac_cv_db3_lib_version_match" 1>&6
+ if test "$ac_cv_db3_lib_version_match" = no; then
+-	{ echo "configure: error: db3 headers and library do not match... multiple copies installed?" 1>&2; exit 1; }
++#	{ echo "configure: error: db3 headers and library do not match... multiple copies installed?" 1>&2; exit 1; }
+ fi
+ 
+ CPPFLAGS="$CPPFLAGS_save"
+@@ -12799,10 +12800,10 @@
+       *) # Relative path.
+         ac_sub_cache_file="$ac_dots$cache_file" ;;
+       esac
+-  case "$ac_given_INSTALL" in
+-        [/$]*) INSTALL="$ac_given_INSTALL" ;;
+-        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
+-        esac
++#  case "$ac_given_INSTALL" in
++#        [/$]*) INSTALL="$ac_given_INSTALL" ;;
++#        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
++#        esac
+ 
+       echo "running ${CONFIG_SHELL-/bin/sh} $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_sub_srcdir"
+       # The eval makes quoting arguments work.
