@@ -8,11 +8,12 @@
 PORTNAME=	daemontools
 PORTVERSION=	0.53
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://koobera.math.uic.edu/www/software/
+MASTER_SITES=	http://cr.yp.to/daemontools/ \
+		ftp://cr.yp.to/daemontools/
 
 MAINTAINER=	dom@myrddin.demon.co.uk
 
-NO_PACKAGE=	Unsure of djb's license
+NO_PACKAGE=	Unsure of djb\'s license
 
 ALL_TARGET=	it man
 INSTALL_TARGET=	setup
