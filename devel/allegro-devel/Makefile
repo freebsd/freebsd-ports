@@ -7,49 +7,57 @@
 
 PORTNAME=	allegro
 PORTVERSION=	4.0.2
-PORTREVISION=	0
+PORTREVISION=	1
+PORTCOMMENT=	A cross-platform library for games and multimedia programming
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	alleg
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_AUTOCONF=	yes
+USE_XLIB=	yes
+USE_GNOMENG=	yes
+WANT_GNOME=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
+USE_AUTOCONF_VER=	213
+CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -DHAVE_LIBPTHREAD" \
+		LDFLAGS="${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--enable-vga=no
 MAKEFILE=	makefile
 INSTALLS_SHLIB=	yes
 
-.if !defined (WITHOUT_DEVEL)
-INSTALL_TARGET=	full-install
-PLIST_SUB+=	FULL=""
+SHLIB_VER=	4
+PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
+
+.include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mesound}!=""
+USE_GNOME+=	esound
+PKGNAMESUFFIX=	-esound
+PLIST_SUB+=	ESOUND=""
 .else
-INSTALL_TARGET=	mini-install
+CONFIGURE_ARGS+=	--enable-esddigi=no
+PLIST_SUB+=	ESOUND="@comment "
+.endif
+
+.if defined(WITHOUT_DEVEL)
+INSTALL_TARGET=	mini-install install-man install-info
 PLIST_SUB+=	FULL="@comment "
+.else
+INSTALL_TARGET=	full-install install-man install-info
+PLIST_SUB+=	FULL=""
 .endif
 
-CONFIGURE_ARGS+=	--enable-vga=no
-
-.if !defined (WITHOUT_MAN)
-INSTALL_TARGET+=	install-man
-.endif
-
-pre-build:
-	cd ${WRKSRC} && ${GMAKE} depend
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|${PORTVERSION}|${SHLIB_VER}|g' ${WRKSRC}/makefile.ver
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${CP} ${WRKSRC}/docs/html/* ${DOCSDIR}
-.endif
-	@${RM} -f ${LOCALBASE}/lib/liballeg.so.4.0
-	@${MV} ${LOCALBASE}/lib/liballeg-${PORTVERSION}.so \
-		${LOCALBASE}/lib/liballeg.so.4
-	@${LN} -fs ${LOCALBASE}/lib/liballeg.so.4 ${LOCALBASE}/lib/liballeg.so
-	@${MV} ${LOCALBASE}/lib/liballeg_unsharable.a \
-		${LOCALBASE}/lib/liballeg.a
-.if !defined (WITHOUT_MAN)
-	@(cd ${WRKSRC}/docs/man ; ${FIND} *.3 | ${SED} "s|^|man/man3/|" \
-		>> ${TMPPLIST})
+	${INSTALL_DATA} ${WRKSRC}/docs/html/*.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include "Makefile.man"
+.include <bsd.port.post.mk>

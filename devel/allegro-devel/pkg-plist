@@ -88,9 +88,15 @@ include/allegro/timer.h
 include/allegro/unicode.h
 include/linalleg.h
 include/xalleg.h
-lib/liballeg.a
+@unexec install-info --delete %D/info/allegro.info %D/info/dir
+info/allegro.info
+@exec install-info --delete %D/info/allegro.info %D/info/dir
+%%ESOUND%%lib/allegro/4.0/alleg-esddigi.so
+lib/allegro/4.0/alleg-dga2.so
+lib/allegro/4.0/modules.lst
+lib/liballeg_unsharable.a
 lib/liballeg.so
-lib/liballeg.so.4
+lib/liballeg.so.%%SHLIB_VER%%
 %%PORTDOCS%%share/doc/allegro/abi.html
 %%PORTDOCS%%share/doc/allegro/ahack.html
 %%PORTDOCS%%share/doc/allegro/alleg000.html
@@ -142,8 +148,9 @@ lib/liballeg.so.4
 %%PORTDOCS%%share/doc/allegro/faq.html
 %%PORTDOCS%%share/doc/allegro/help.html
 %%PORTDOCS%%share/doc/allegro/thanks.html
-%%PORTDOCS%%share/doc/allegro/tmpfile.txt
 %%PORTDOCS%%@dirrm share/doc/allegro
+@dirrm lib/allegro/4.0
+@dirrm lib/allegro
 @dirrm include/allegro/platform
 @dirrm include/allegro/internal
 @dirrm include/allegro/inline
