@@ -8,7 +8,8 @@
 PORTNAME=	icemc
 PORTVERSION=	0.2.4
 CATEGORIES=	misc
-MASTER_SITES=	http://www.algorithm.at/comp/icemc/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	adamw
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	QT-based menu editor for IceWM
