@@ -604,5 +604,5 @@ www/awstats/tools/webmin/awstats-1.5.wbm
 @dirrm www/awstats/cgi-bin/lang
 @dirrm www/awstats/cgi-bin
 @dirrm www/awstats
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/images  
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
