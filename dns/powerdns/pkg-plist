@@ -10,6 +10,7 @@ sbin/pdns_server
 %%RECURSOR%%sbin/pdns_recursor
 @unexec if cmp -s %D/etc/pdns.conf %D/etc/pdns.conf-dist; then rm -f %D/etc/pdns.conf; fi
 etc/pdns.conf-dist
+etc/rc.d/pdns.sh.sample
 @exec [ -f %B/pdns.conf ] || cp %B/%f %B/pdns.conf
 %%PORTDOCS%%share/examples/powerdns/pdns.conf
 %%PORTDOCS%%share/examples/powerdns/pdns_mysql.sql
