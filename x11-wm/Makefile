@@ -9,6 +9,7 @@
     SUBDIR += amaterus
     SUBDIR += amiwm
     SUBDIR += bbkeys
+    SUBDIR += bbpager
     SUBDIR += blackbox
     SUBDIR += ctwm
     SUBDIR += enlightenment
