@@ -1,0 +1,30 @@
+# New ports collection makefile for:	shlock
+# Date created:		8 July 2002
+# Whom:			dougb
+#
+# $FreeBSD$
+#
+
+PORTNAME=	shlock
+PORTVERSION=	2.3.3
+CATEGORIES=	sysutils
+MASTER_SITES=	ftp://ftp.isc.org/isc/inn/
+
+DISTFILES=	inn-${PORTVERSION}${EXTRACT_SUFX}
+
+MAINTAINER=	DougB@FreeBSD.org
+
+HAS_CONFIGURE=	yes
+
+MAN1=		shlock.1
+
+WRKSRC=		${WRKDIR}/inn-${PORTVERSION}
+
+do-build:
+	cd ${WRKSRC}/backends && ${MAKE} shlock
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/backends/shlock ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/doc/man/shlock.1 ${MANPREFIX}/man/man1
+
+.include <bsd.port.mk>
