@@ -1,0 +1,35 @@
+# New ports collection makefile for:	perforce
+# Date created:				3 Mai 2000
+# Whom:					sam@inf.enst.fr
+#
+# $FreeBSD$
+#
+
+PORTNAME= 	perforce
+PORTVERSION= 	99.2
+CATEGORIES=	devel
+MASTER_SITES=	ftp://ftp.perforce.com/pub/perforce/r${PORTVERSION}/bin.freebsd/ \
+		http://www.dsmit.com/p4/ \
+		ftp://ftp.perforce.com/pub/perforce/r${PORTVERSION}/doc/man/
+EXTRACT_SUFX=
+DISTFILES=	p4 p4d p4.1 p4d.1
+DIST_SUBDIR=	perforce
+
+MAINTAINER=	sam@inf.enst.fr
+
+NO_PACKAGE=	Restricted distribution
+NO_CDROM=	Restricted distribution
+NO_BUILD=	yes
+MAN1=		p4.1 p4d.1
+
+do-extract:
+	@${MKDIR} ${WRKSRC}
+
+do-install:
+	${INSTALL_PROGRAM} ${DISTDIR}/${DIST_SUBDIR}/p4 ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${DISTDIR}/${DIST_SUBDIR}/p4d ${PREFIX}/sbin
+.for PERFMAN in p4 p4d
+	${INSTALL_MAN} ${DISTDIR}/${DIST_SUBDIR}/${PERFMAN}.1 ${PREFIX}/man/man1
+.endfor
+
+.include <bsd.port.mk>
