@@ -1,0 +1,19 @@
+- Explicitly remove "doc" from the list of subdirs to make.  This allows us
+  to build and install the documentation optionally - depending on whether
+  NOPORTDOCS has been defined - in the port's post-install target.
+
+-- Johann Visagie <wjv@FreeBSD.org>
+
+
+
+--- Makefile.in.orig	Wed Dec 13 03:14:07 2000
++++ Makefile.in	Tue Oct  2 17:19:45 2001
+@@ -114,7 +114,7 @@
+ 
+ AUTOMAKE_OPTIONS = foreign
+ 
+-SUBDIRS =  include src @SUBDIR_QT@ @SUBDIR_TESTS@ @SUBDIR_QTSQLXX@ doc @SUBDIR_ISQLXX@ win32
++SUBDIRS =  include src @SUBDIR_QT@ @SUBDIR_TESTS@ @SUBDIR_QTSQLXX@ @SUBDIR_ISQLXX@ win32
+ 
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs

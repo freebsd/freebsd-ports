@@ -1,0 +1,14 @@
+--- configure.orig	Wed Dec 13 02:36:14 2000
++++ configure	Wed Oct  3 17:34:03 2001
+@@ -3752,9 +3752,9 @@
+ 	
+ 	if test "x$enable_threads" = "xyes"
+ 	then
+-		QT_LIBS="-lqt-mt"
++		QT_LIBS="-lqt2-mt"
+ 	else
+-		QT_LIBS="-lqt"
++		QT_LIBS="-lqt2"
+ 	fi
+ 
+ 	QT_MOC="$qt_moc"
