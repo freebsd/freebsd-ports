@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.inria.fr/lang/caml-light/ \
 DISTFILES=	${PKGNAME}.tar.gz ${DOCFILES}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}-refman.html${EXTRACT_SUFX}
 
-MAINTAINER=	ortmann@isl.net
+MAINTAINER=	patrick@watson.org
 
 .if defined(WITH_TK)
 PLIST_SUB+=     LABLTK:=""
