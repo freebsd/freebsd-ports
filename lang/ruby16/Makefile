@@ -7,7 +7,7 @@
 
 PORTNAME=	ruby
 PORTVERSION=	${RUBY_PORTVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=	${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	${RUBY_VER}
@@ -41,6 +41,8 @@ CONFIGURE_ARGS+=	--program-suffix="${RUBY_SUFFIX}"
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
+IRB=			${LOCALBASE}/bin/irb
+
 post-patch:
 	find ${WRKSRC} -name '*.orig' -delete
 .for d in Win32API
@@ -55,12 +57,23 @@ post-install:
 	strip ${RUBY}
 .endif
 .if empty(RUBY_SUFFIX)
-	${MV} -f ${RUBY} ${RUBY}${_RUBY_SUFFIX}
-	${LN} -fs ${RUBY}${_RUBY_SUFFIX} ${RUBY}
+	${MV} -f ${RUBY} ${RUBY_WITH_SUFFIX}
+	${LN} -fs ${RUBY_WITH_SUFFIX} ${RUBY}
 	${MV} ${PREFIX}/man/man1/ruby.1 ${PREFIX}/man/man1/ruby${_RUBY_SUFFIX}.1
 .else
 	${LN} -fs ${RUBY} ${PREFIX}/bin/ruby
 .endif
+	${RUBY} ${RUBY_FLAGS} -i -p \
+		-e 'if $$. == 1; ' \
+		-e ' if /^#!/; ' \
+		-e '  sub /^#!\s*\S*(\benv\s+)?\bruby/, "#!${RUBY_WITH_SUFFIX}";' \
+		-e ' else;' \
+		-e '  $$_ = "#!${RUBY_WITH_SUFFIX}\n" + $$_;' \
+		-e ' end;' \
+		-e 'end' \
+		${IRB}
+	${MV} -f ${IRB} ${IRB}${_RUBY_SUFFIX}
+	${LN} -fs ${IRB}${_RUBY_SUFFIX} ${IRB}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/sample/* ${RUBY_EXAMPLESDIR}
