@@ -1,50 +1,33 @@
-Index: configure.in
-@@ -209,8 +209,8 @@
+--- configure.in.orig	Thu Oct 21 21:58:10 1999
++++ configure.in	Wed Nov  3 16:51:22 1999
+@@ -236,7 +236,7 @@
    tcl_prefix=$with_tcl)
  
  for tcl_prefix in $tcl_prefix $exec_prefix /usr/local /usr NONE; do
 -  if test -r $tcl_prefix/lib/tclConfig.sh; then
--    AC_MSG_RESULT([use tclConfig.sh in $tcl_prefix/lib])
-+  if test -r $tcl_prefix/lib/tcl8.0/tclConfig.sh; then
-+    AC_MSG_RESULT([use tclConfig.sh in $tcl_prefix/lib/tcl8.0])
++  if test -r $tcl_prefix/lib/tcl8.2/tclConfig.sh; then
      break;
    fi
  done
-@@ -219,29 +219,31 @@
+@@ -245,18 +245,18 @@
    AC_MSG_ERROR([could't find tclConfig.sh])
  fi
  
 -file=${tcl_prefix}/lib/tclConfig.sh
-+file=${tcl_prefix}/lib/tcl8.0/tclConfig.sh
++file=${tcl_prefix}/lib/tcl8.2/tclConfig.sh
  if test ! -r ${file}; then
    AC_MSG_ERROR(tclConfig.sh doesn't exist)
  fi
 -AC_MSG_RESULT([use tclConfig.sh in $tcl_prefix/lib])
-+AC_MSG_RESULT([use tclConfig.sh in $tcl_prefix/lib/tcl8.0])
++AC_MSG_RESULT([use tclConfig.sh in $tcl_prefix/lib/tcl8.2])
  . $file
  
--TCL_CFLAGS="-I$tcl_prefix/include"
-+TCL_CFLAGS="-I$tcl_prefix/include/tcl8.0"
- TCL_LDFLAGS="$TCL_LIB_SPEC $TCL_LIBS"
+ if test $TCL_MAJOR_VERSION -lt 8; then
+   AC_MSG_ERROR([tcl version 8.0 or higher is required.])
+ fi
+ 
+-TCL_CFLAGS="-I$TCL_SRC_DIR"
++TCL_CFLAGS="-I$tcl_prefix/lib/tcl8.2"
+ TCL_LDFLAGS="$TCL_LIB_SPEC"
  AC_SUBST(TCL_CFLAGS)
  AC_SUBST(TCL_LDFLAGS)
- 
- ####################################################### Check Graphics library
- 
-+x_suffix="$X_LIBS $X_PRE_LIBS -lX11 -lXi -lXext -lXmu $X_EXTRA_LIBS -lm"
-+
- AC_SUBST(GIF_LIBS)
- AC_CHECK_HEADER(gif_lib.h,
-   AC_CHECK_LIB(ungif, DGifOpenFileHandle,
--    GIF_LIBS="-lungif"
-+    GIF_LIBS="-lungif",
-     AC_CHECK_LIB(gif, DGifOpenFileHandle,
-       GIF_LIBS="-lgif",
-       AC_MSG_ERROR([GIF library file not found]), 
--      $GX_LIBS),
--    $GX_LIBS),
-+      $x_suffix),
-+    $x_suffix),
-   AC_MSG_ERROR([GIF header not found]))
- 
- AC_SUBST(JPEG_LIBS)
