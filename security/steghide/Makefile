@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	steghide
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4.2
 CATEGORIES=	security
 MASTER_SITES=	http://steghide.sourceforge.net/download/
-DISTNAME=	steghide-0.3-1
 
 MAINTAINER=	rara.rasputin@virgin.net
 
+LIB_DEPENDS=	mcrypt.6:${PORTSDIR}/security/libmcrypt \
+		mhash.2:${PORTSDIR}/security/mhash
+
 HAS_CONFIGURE=	yes
+USE_GMAKE=	yes
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 
 MAN1=		steghide.1
-MANCOMPRESSED=	no
-USE_GMAKE=	yes
 
 .include <bsd.port.mk>

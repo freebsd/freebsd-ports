@@ -1,9 +1,8 @@
 bin/steghide
-share/doc/steghide-0.3/AUTHORS
-share/doc/steghide-0.3/BUGS
-share/doc/steghide-0.3/COPYING
-share/doc/steghide-0.3/HISTORY
-share/doc/steghide-0.3/INSTALL
-share/doc/steghide-0.3/README
-share/doc/steghide-0.3/TODO
-@dirrm share/doc/steghide-0.3
+share/doc/steghide/BUGS
+share/doc/steghide/CREDITS
+share/doc/steghide/HISTORY
+share/doc/steghide/INSTALL
+share/doc/steghide/README
+share/doc/steghide/TODO
+@dirrm share/doc/steghide
