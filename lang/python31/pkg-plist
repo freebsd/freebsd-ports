@@ -1293,7 +1293,7 @@ lib/%%PYTHON_VERSION%%/lib-dynload/md5.so
 lib/%%PYTHON_VERSION%%/lib-dynload/mmap.so
 lib/%%PYTHON_VERSION%%/lib-dynload/nis.so
 lib/%%PYTHON_VERSION%%/lib-dynload/operator.so
-%%X86_ONLY%%lib/%%PYTHON_VERSION%%/lib-dynload/ossaudiodev.so
+lib/%%PYTHON_VERSION%%/lib-dynload/ossaudiodev.so
 lib/%%PYTHON_VERSION%%/lib-dynload/parser.so
 lib/%%PYTHON_VERSION%%/lib-dynload/pwd.so
 lib/%%PYTHON_VERSION%%/lib-dynload/pyexpat.so
