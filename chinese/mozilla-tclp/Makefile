@@ -4,6 +4,7 @@
 #
 # $FreeBSD$
 #
+BROKEN=	"out of sync with mozilla."
 
 PORTNAME=	mozilla
 PORTVERSION=	0.9.1
