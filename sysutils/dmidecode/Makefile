@@ -19,18 +19,17 @@ ONLY_FOR_ARCHS=	i386 amd64 ia64
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
+USE_GETOPT_LONG=	yes
+MAKE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-DOCS=	AUTHORS CHANGELOG README
+PORTDOCS=	AUTHORS CHANGELOG README
 
 MAN8=		biosdecode.8 dmidecode.8 ownership.8 vpddecode.8
-
-post-patch:
-	${REINPLACE_CMD} -e "s@^(CC|PREFIX).*@@" ${WRKSRC}/Makefile
 
 .if !defined(NOPORTDOCS)
 post-install:
 	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
-.for f in ${DOCS}
+.for f in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
 .endif

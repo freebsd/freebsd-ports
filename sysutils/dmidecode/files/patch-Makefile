@@ -1,0 +1,31 @@
+--- Makefile.orig	Mon Feb 28 21:43:00 2005
++++ Makefile	Sun Mar 20 22:16:32 2005
+@@ -8,9 +8,9 @@
+ #	Licensed under the GNU Public License.
+ #
+ 
+-CC      = gcc
+-CFLAGS  = -W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual \
+-          -Wcast-align -Wwrite-strings -Wmissing-prototypes
++CFLAGS  += -W -Wall -Wshadow -Wstrict-prototypes -Wpointer-arith -Wcast-qual \
++          -Wcast-align -Wwrite-strings -Wmissing-prototypes ${CPPFLAGS} \
++          -DHAVE_DECL_GETOPT
+ #CFLAGS += -DBIGENDIAN
+ #CFLAGS += -DALIGNMENT_WORKAROUND
+ 
+@@ -19,12 +19,11 @@
+ #CFLAGS += -g
+ 
+ # Pass linker flags here
+-LDFLAGS =
++LDFLAGS +=
+ 
+ DESTDIR =
+-prefix  = /usr/local
+-sbindir = $(prefix)/sbin
+-mandir  = $(prefix)/man
++sbindir = $(PREFIX)/sbin
++mandir  = $(PREFIX)/man
+ man8dir = $(mandir)/man8
+ 
+ all : dmidecode biosdecode ownership vpddecode
