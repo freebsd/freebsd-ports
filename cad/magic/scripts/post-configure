@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $Id: post-configure,v 1.2 1995/03/04 21:46:18 swallace Exp $
+# $FreeBSD$
 #
 
 echo -DX11 -DPARANOID		>${WRKSRC}/misc/DFLAGS

@@ -1,4 +1,4 @@
-@comment $Id: PLIST,v 1.5 1998/08/17 08:23:05 hoek Exp $
+@comment $FreeBSD$
 bin/minicom
 bin/xminicom
 bin/runscript
