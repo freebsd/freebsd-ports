@@ -1,0 +1,374 @@
+*** Imakefile.orig	Fri Oct 21 23:45:49 1994
+--- Imakefile	Fri Oct 21 00:04:23 1994
+***************
+*** 48,55 ****
+  /**/#MORECCFLAGS=-DOW_I18N_L3 -DSHAPE -DIDENT
+  
+  /**/# For a generic Solaris 2.x system, I'd suggest
+! MORECCFLAGS=-DOW_I18N_L3 -DSHAPE -DSVR4 -DSYSV -DIDENT -x O4
+! 
+  /**/#
+  /**/# Set MORELDFLAGS to any link options you want.  Be sure to add -lxpm if you
+  /**/# want to include XPM support.  For a generic Solaris 1.x
+--- 48,55 ----
+  /**/#MORECCFLAGS=-DOW_I18N_L3 -DSHAPE -DIDENT
+  
+  /**/# For a generic Solaris 2.x system, I'd suggest
+! #MORECCFLAGS=-DOW_I18N_L3 -DSHAPE -DSVR4 -DSYSV -DIDENT -x O4
+! MORECCFLAGS= -DOW_I18N_L3 -DSHAPE -DREGEXP
+  /**/#
+  /**/# Set MORELDFLAGS to any link options you want.  Be sure to add -lxpm if you
+  /**/# want to include XPM support.  For a generic Solaris 1.x
+***************
+*** 57,64 ****
+  /**/#MORELDFLAGS=-L${OPENWINHOME}/lib
+  /**/#
+  /**/# For Solaris 2.x, I'd suggest
+! MORELDFLAGS=-L${OPENWINHOME}/lib -R ${OPENWINHOME}/lib -lintl
+! 
+  
+  /**/# No more changes needed
+  
+--- 57,64 ----
+  /**/#MORELDFLAGS=-L${OPENWINHOME}/lib
+  /**/#
+  /**/# For Solaris 2.x, I'd suggest
+! #MORELDFLAGS=-L${OPENWINHOME}/lib -R ${OPENWINHOME}/lib -lintl
+! MORELDFLAGS=-L${OPENWINHOME}/lib 
+  
+  /**/# No more changes needed
+  
+*** defaults.c.orig	Thu Jan 13 14:36:03 1994
+--- defaults.c	Thu Oct 20 21:17:55 1994
+***************
+*** 90,96 ****
+--- 90,100 ----
+  #ifdef SVR4
+  	    if (sysinfo(SI_HOSTNAME, hostname, sizeof(hostname)) != -1) {
+  #else
++ #ifndef __FreeBSD__
+  	    if (0 == gethostname(hostname, sizeof(hostname), &namelen)) {
++ #else
++ 	    if (0 == gethostname(hostname, sizeof(hostname))) {
++ #endif
+  #endif
+  		(void) strcat(filename, hostname);
+  		fileDB = XrmGetFileDatabase(filename);
+*** error.c.orig	Thu Jan 13 14:36:04 1994
+--- error.c	Sat Oct 22 00:59:24 1994
+***************
+*** 233,239 ****
+      FPRINTF(stderr, GetString("  serial number of failed request:  %d\n"),
+  	err->serial);
+      FPRINTF(stderr, GetString("  current request serial number:  %d\n"),
+! 	dpy->request);
+  }
+  
+  
+--- 234,240 ----
+      FPRINTF(stderr, GetString("  serial number of failed request:  %d\n"),
+  	err->serial);
+      FPRINTF(stderr, GetString("  current request serial number:  %d\n"),
+! 	((_XPrivDisplay)dpy)->request);
+  }
+  
+  
+*** gettext.h.orig	Thu Jan 13 14:40:00 1994
+--- gettext.h	Thu Oct 20 22:01:55 1994
+***************
+*** 14,19 ****
+--- 14,23 ----
+  #ifndef _OLWM_GETTEXT_H
+  #define _OLWM_GETTEXT_H
+  
++ #ifndef LC_MESSAGES
++ #define LC_MESSAGES 0
++ #endif
++ 
+  #define DEFAULT_DOMAIN	"default"
+  #define DEFAULT_BINDING "/usr/lib/locale\n"
+  #define COOKIE 0xFF
+*** gif.c.orig	Thu Jan 13 14:36:06 1994
+--- gif.c	Thu Oct 20 23:58:42 1994
+***************
+*** 56,61 ****
+--- 56,65 ----
+  	int     disposal;
+  } Gif89 = { -1, -1, -1, 0 };
+  
++ static	ReadColorMap();
++ static	DoExtension();
++ static	GetDataBlock();
++ 
+  extern XImage* ReadImage();
+  
+  XImage *ReadGIF(dpy, fd, pNcolors, pColors)
+***************
+*** 456,462 ****
+  	return code;
+  }
+  
+! static XImage*
+  ReadImage(dpy, fd, len, height, cmap, interlace, ignore)
+  Display *dpy;
+  FILE    *fd;
+--- 460,466 ----
+  	return code;
+  }
+  
+! extern XImage*
+  ReadImage(dpy, fd, len, height, cmap, interlace, ignore)
+  Display *dpy;
+  FILE    *fd;
+*** i18n.h.orig	Thu Jan 13 14:40:01 1994
+--- i18n.h	Thu Oct 20 22:00:16 1994
+***************
+*** 14,19 ****
+--- 14,23 ----
+  #ifndef _OLWM_I18N_H
+  #define _OLWM_I18N_H
+  
++ #ifndef LC_MESSAGES
++ #define LC_MESSAGES 0
++ #endif
++ 
+  #include <string.h>
+  #include <ctype.h>
+  
+*** mem.c.orig	Thu Jan 13 14:36:08 1994
+--- mem.c	Thu Oct 20 23:44:01 1994
+***************
+*** 18,24 ****
+  
+  
+  #include <sys/types.h>
+! #include <malloc.h>
+  #include <memory.h>
+  #include <stdio.h>
+  
+--- 18,24 ----
+  
+  
+  #include <sys/types.h>
+! /* #include <malloc.h> */
+  #include <memory.h>
+  #include <stdio.h>
+  
+***************
+*** 139,145 ****
+  {
+      void       *p;
+  
+!     if ((p = malloc(sz)) == NULL)
+        ErrorGeneral(gettext("Memory allocation failure."));
+  
+  #ifdef MEMDEBUG
+--- 139,145 ----
+  {
+      void       *p;
+  
+!     if ((p = (int *)malloc(sz)) == NULL)
+        ErrorGeneral(gettext("Memory allocation failure."));
+  
+  #ifdef MEMDEBUG
+***************
+*** 164,170 ****
+  {
+      void       *p;
+  
+!     if ((p = malloc(sz)) == NULL)
+  	ErrorGeneral(GetString("Memory allocation failure."));
+  
+      memset((char *) p, 0, (int) sz);
+--- 164,170 ----
+  {
+      void       *p;
+  
+!     if ((p = (int *)malloc(sz)) == NULL)
+  	ErrorGeneral(GetString("Memory allocation failure."));
+  
+      memset((char *) p, 0, (int) sz);
+***************
+*** 191,197 ****
+  {
+      void       *p;
+  
+!     if ((p = calloc(num, sz)) == NULL)
+  	ErrorGeneral(GetString("Memory array allocation failure."));
+  
+      memset((char *) p, 0, (int) sz * (int) num);
+--- 191,197 ----
+  {
+      void       *p;
+  
+!     if ((p = (int *)calloc(num, sz)) == NULL)
+  	ErrorGeneral(GetString("Memory array allocation failure."));
+  
+      memset((char *) p, 0, (int) sz * (int) num);
+***************
+*** 210,216 ****
+  {
+      void       *t;
+  
+!     if ((t = realloc(p, sz)) == NULL)
+  	ErrorGeneral(GetString("Memory array allocation failure."));
+  
+  #ifdef MEMDEBUG
+--- 210,216 ----
+  {
+      void       *t;
+  
+!     if ((t = (int *)realloc(p, sz)) == NULL)
+  	ErrorGeneral(GetString("Memory array allocation failure."));
+  
+  #ifdef MEMDEBUG
+*** olvwmrc.y.orig	Thu Jan 13 14:46:53 1994
+--- olvwmrc.y	Thu Oct 20 23:48:29 1994
+***************
+*** 526,532 ****
+--- 526,534 ----
+  	    }
+  %%
+  /* Programs */
++ #ifndef YYDEBUG
+  #define YYDEBUG 1
++ #endif
+  #include "parse.c"
+  
+  extern List	*ActiveClientList;
+***************
+*** 577,583 ****
+     return(True);
+  }
+  
+! static char *
+  strexpand(s)
+  char *s;
+  {
+--- 579,585 ----
+     return(True);
+  }
+  
+! extern char *
+  strexpand(s)
+  char *s;
+  {
+*** olwm.c.orig	Thu Jan 13 14:36:12 1994
+--- olwm.c	Thu Oct 20 23:49:57 1994
+***************
+*** 56,61 ****
+--- 56,64 ----
+  
+  typedef	void	(*VoidFunc)();
+  
++ #ifdef __FreeBSD__
++ #define MAXPID 30000
++ #endif
+  
+  /*
+   * Globals
+***************
+*** 679,685 ****
+--- 682,692 ----
+  #else
+  	int oldmask;
+  	int pid;
++ #ifndef __FreeBSD__
+  	union wait status;
++ #else
++ 	int status;
++ #endif
+  #endif
+  
+  	if (!deadChildren)
+*** screen.c.orig	Fri Oct 21 23:45:51 1994
+--- screen.c	Fri Oct 21 00:01:13 1994
+***************
+*** 66,71 ****
+--- 66,78 ----
+   *-------------------------------------------------------------------------*/
+  List	*ScreenInfoList;			/* List of managed screens */
+  extern	Bool BoolString();
++ static	updateScreenWorkspaceColor();
++ static	updateScreenWindowColor();
++ static	updateScreenForegroundColor();
++ static	updateScreenBackgroundColor();
++ static	updateScreenBorderColor();
++ static	updateScreenInputFocusColor();
++ static	updateScreenGlyphFont();
+  
+  /*-------------------------------------------------------------------------
+   *	Local Data
+*** st.c.orig	Thu Jan 13 14:36:18 1994
+--- st.c	Thu Oct 20 23:53:07 1994
+***************
+*** 208,214 ****
+      }
+  }
+  
+! static rehash(table)
+  register st_table *table;
+  {
+      register st_table_entry *ptr, *next, **old_bins = table->bins;
+--- 208,214 ----
+      }
+  }
+  
+! extern rehash(table)
+  register st_table *table;
+  {
+      register st_table_entry *ptr, *next, **old_bins = table->bins;
+*** virtual.c.orig	Thu Jan 13 14:36:22 1994
+--- virtual.c	Thu Oct 20 23:55:54 1994
+***************
+*** 48,53 ****
+--- 48,56 ----
+  #ident "@(#)virtual.c	1.6 olvwm version 07 Jan 1994"
+  #endif
+  
++ static rexMatch();
++ static rexInit();
++ 
+  /* Class Function Vector; a virtual pane is the VDM window in which all
+   * the little virtual windows appear (and to which said windows are
+   * parented)
+***************
+*** 2108,2114 ****
+--- 2111,2119 ----
+      }
+  }
+  
++ #ifndef __FreeBSD__
+  static char expbuf[256];
++ #endif
+  
+  static
+  rexMatch(string)
+*** winframe.c.orig	Thu Jan 13 14:36:25 1994
+--- winframe.c	Fri Oct 21 00:02:34 1994
+***************
+*** 52,57 ****
+--- 52,59 ----
+  
+  extern Time TimeFresh();
+  
++ static	headerHeight();
++ 
+  /***************************************************************************
+  * private data
+  ***************************************************************************/
+*** winicon.c.orig	Thu Jan 13 14:36:26 1994
+--- winicon.c	Fri Oct 21 00:03:55 1994
+***************
+*** 37,42 ****
+--- 37,46 ----
+  extern 	Bool	PropGetWMName();
+  extern 	Bool	PropGetWMIconName();
+  
++ static	heightTopIcon();
++ static	heightBottomIcon();
++ static	widthBothIcon();
++ 
+  /***************************************************************************
+  * private data
+  ***************************************************************************/
