@@ -13,7 +13,7 @@ MASTER_SITES=	http://master.debian.org/~davidw/mod_dtcl/
 
 MAINTAINER=	mi@aldan.algebra.com
 
-BUILD_DEPENDS=	${PREFIX}/sbin/apxs:${PORTSDIR}/www/apache13
+BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 LIB_DEPENDS=	tcl82:${PORTSDIR}/lang/tcl82
 
 WRKSRC=		${WRKDIR}/mod_dtcl
