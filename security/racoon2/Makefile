@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	racoon
-PORTVERSION=	20010418a
+PORTVERSION=	20010802a
 CATEGORIES=	security net
 MASTER_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 
@@ -25,6 +25,7 @@ CONFIGURE_ENV+=CPPFLAGS=-I${LOCALBASE}/include CFLAGS=-I${LOCALBASE}/include \
 CONFIGURE_ARGS+=--enable-debug
 CONFIGURE_ARGS+=--enable-ipv6
 CONFIGURE_ARGS+=--sysconfdir=${LOCALBASE}/etc
+CONFIGURE_ARGS+=--with-pkgversion=${PORTVERSION}
 
 MAN5=		racoon.conf.5
 MAN8=		racoon.8
