@@ -8,6 +8,7 @@
 
 PORTNAME=	qt
 PORTVERSION=	3.3.1
+PORTREVISION=	1
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/	\
 		ftp://ftp.silug.org/pub/qt/		\
@@ -26,7 +27,8 @@ LIB_DEPENDS+=	mng.1:${PORTSDIR}/graphics/libmng \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
-CONFLICTS=	linguist-0.* qt-2.* qt-designer-2.* xfmail-1.5.*
+CONFLICTS=	linguist-0.* qt-2.* qt-3.0.* \
+		qt-3.1.* qt-3.2.* qt-designer-2.* xfmail-1.5.*
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
