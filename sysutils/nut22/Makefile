@@ -1,12 +1,12 @@
 # New ports collection makefile for:    nut
-# Version required:     nut-0.42.1
+# Version required:     nut-0.42.2
 # Date created:         08 Jan 2000
 # Whom:                 Boris Popov <bp@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	nut-0.42.1
+DISTNAME=	nut-0.42.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.exploits.org/nut/release/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=    gd:${PORTSDIR}/graphics/gd
 .endif
 
 GNU_CONFIGURE=  yes
-CONFIGURE_ARGS= --enable-celsius --sysconfdir=${PREFIX}/etc/nut \
+CONFIGURE_ARGS= --sysconfdir=${PREFIX}/etc/nut \
 		--with-uid=65534 --with-gid=68
 ALL_TARGET=	all
 
@@ -45,7 +45,8 @@ pre-install:
 .endif
 
 post-install:
-	@${SED} -e "/%%PREFIX%%/s##${PREFIX}#g" ${FILESDIR}/upsd.sh.sample \
+	@${SED} -e "/%%PREFIX%%/s##${PREFIX}#g" \
+		${WRKSRC}/scripts/FreeBSD/upsd.sh.sample \
 		>${PREFIX}/etc/rc.d/upsd.sh.sample
 	@${CHMOD} 0755 ${PREFIX}/etc/rc.d/upsd.sh.sample
 .if !defined(NOPORTDOCS)
