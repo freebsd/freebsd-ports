@@ -1,5 +1,5 @@
-*** src/osdep/unix/Makefile.orig	Fri Sep  5 03:32:10 1997
---- src/osdep/unix/Makefile	Mon Sep 29 07:44:29 1997
+*** src/osdep/unix/Makefile.orig	Sat Nov 15 15:24:31 1997
+--- src/osdep/unix/Makefile	Sat Nov 15 15:32:23 1997
 ***************
 *** 32,37 ****
 --- 32,38 ----
@@ -13,20 +13,20 @@
 ***************
 *** 40,46 ****
   	rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
-  	unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
+  	bezerk.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
   CC=cc
 ! CFLAGS=$(EXTRACFLAGS)
   EXTRADRIVERS=mbox
-  DEFAULTDRIVERS=imap nntp pop3 mh mx mbx tenex mtx mmdf unix news phile dummy
+  DEFAULTDRIVERS=imap nntp pop3 mh mx mbx tenex mtx mmdf bezerk news phile dummy
   LN=ln -s
 --- 41,48 ----
   	rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
-  	unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
+  	bezerk.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
   CC=cc
 ! SOFILES=${BINARIES:.o=.so}
 ! CFLAGS+=$(EXTRACFLAGS)
   EXTRADRIVERS=mbox
-  DEFAULTDRIVERS=imap nntp pop3 mh mx mbx tenex mtx mmdf unix news phile dummy
+  DEFAULTDRIVERS=imap nntp pop3 mh mx mbx tenex mtx mmdf bezerk news phile dummy
   LN=ln -s
 ***************
 *** 52,57 ****
@@ -37,30 +37,30 @@
 + # Need this for the shared library rule to work correctly
 + .SUFFIXES: .o .so
 + 
-  missing: ../OSTYPE CCTYPE
-  	$(MAKE) `cat ../OSTYPE` CC=`cat CCTYPE`
-  
+  missing:
+  	@echo "You must specify what type of system"
+  	@false
 ***************
-*** 124,135 ****
+*** 117,128 ****
   		ACTIVEFILE=/usr/lib/news/active NEWSSPOOL=/usr/spool/news \
   		CFLAGS="-g -Dconst= -DNFSKLUDGE $(EXTRACFLAGS)"
   
 ! bsf:	sigpsx	# FreeBSD
 ! 	$(MAKE) $(ARCHIVE) OS=bsi EXTRADRIVERS="$(EXTRADRIVERS)" \
-  		STDPROTO=unixproto MAILSPOOL=/var/mail \
+  		STDPROTO=bezerkproto MAILSPOOL=/var/mail \
   		ACTIVEFILE=/usr/local/news/lib/active NEWSSPOOL=/var/news \
   		RSHPATH=/usr/bin/rsh \
 ! 		CFLAGS="-g -O -pipe -DNFSKLUDGE $(EXTRACFLAGS)" \
   		LDFLAGS="-lcrypt"
   
   bsi:	sigbsd	# BSD/i386
---- 129,140 ----
+--- 122,133 ----
   		ACTIVEFILE=/usr/lib/news/active NEWSSPOOL=/usr/spool/news \
   		CFLAGS="-g -Dconst= -DNFSKLUDGE $(EXTRACFLAGS)"
   
 ! bsf:	sigbsd	# FreeBSD
 ! 	$(MAKE) $(ARCHIVE) $(SHLIB) OS=bsi EXTRADRIVERS="$(EXTRADRIVERS)" \
-  		STDPROTO=unixproto MAILSPOOL=/var/mail \
+  		STDPROTO=bezerkproto MAILSPOOL=/var/mail \
   		ACTIVEFILE=/usr/local/news/lib/active NEWSSPOOL=/var/news \
   		RSHPATH=/usr/bin/rsh \
 ! 		CFLAGS="$(CFLAGS) -DNFSKLUDGE $(EXTRACFLAGS)" \
@@ -68,8 +68,8 @@
   
   bsi:	sigbsd	# BSD/i386
 ***************
-*** 502,513 ****
---- 507,525 ----
+*** 457,468 ****
+--- 462,480 ----
   
   clean:
   	$(RM) *.o linkage.[ch] auths.c $(ARCHIVE) osdep.* CCTYPE CFLAGS LDFLAGS
@@ -83,15 +83,15 @@
 + $(SHLIB): $(SOFILES)
 + 	ld -Bshareable -x -o $(SHLIB) $(SOFILES)
 + 
-+ .c.so:	osdep.h
++ .c.so: osdep.h
 + 	$(CC) -fpic -DPIC -c $(CFLAGS) ${@:.so=.c} -o $@
 + 
   # Dependencies
   
-  dummy.o: mail.h misc.h osdep.h dummy.h
+  bezerk.o: mail.h misc.h osdep.h bezerk.h pseudo.h dummy.h
 ***************
-*** 557,562 ****
---- 569,594 ----
+*** 511,516 ****
+--- 523,548 ----
   	-DRSH=\"$(RSH)\" -DRSHPATH=\"$(RSHPATH)\" \
   	$(EXTRAOSDEFS) -c os_$(OS).c
   	$(MV) os_$(OS).o osdep.o
