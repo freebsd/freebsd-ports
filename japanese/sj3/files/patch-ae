@@ -1,0 +1,26 @@
+--- include/Paths.h.in.orig	Thu Jan 23 20:20:57 1997
++++ include/Paths.h.in	Tue Aug 18 11:29:00 1998
+@@ -33,7 +33,22 @@
+  * $SonyDate: 1997/01/23 11:20:55 $
+  */
+ 
+-#define ErrorOutFile            "/dev/console"
++/*
++ * Change ErrotOutFile variable.
++ * Because suppress a error when sj3serv start up, change to "/dev/stderr".
++ * This error is "Cannot Open "/dev/console".". 
++ * Patched by Hidekazu Kuroki(hidekazu@cs.titech.ac.jp)		1996/8/10
++ *
++ * Change ErrotOutFile variable.
++ * This default value is "/dev/null" in document.
++ * Patched by Hidekazu Kuroki(hidekazu@cs.titech.ac.jp)		1996/8/11
++ */
++#if !defined(__FreeBSD__)
++#define	ErrorOutFile		"/dev/console"
++#else
++/* #define	ErrorOutFile		"/dev/stderr" */ 	/* for test */
++#define	ErrorOutFile		"/dev/null"
++#endif
+ 
+ #define SocketName              "/tmp/sj3sock"
+ #define LockFile                "/tmp/SJ3SERV.EXIST"

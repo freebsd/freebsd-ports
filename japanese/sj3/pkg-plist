@@ -3,6 +3,7 @@ bin/sj3dic
 bin/sj3mkdic
 bin/sj3serv
 bin/sj3stat
+include/sj3lib.h
 lib/libsj3lib.a
 lib/sj3/Nihongo.ps.Z
 lib/sj3/cvtkey.news
@@ -17,7 +18,7 @@ lib/sj3/sj3lib.ms
 lib/sj3/sj3serv.ms
 lib/sj3/sjrc
 lib/sj3/sjrk
-man/ja/man1/sj3.1.gz
-man/ja/man1/sj3dic.1.gz
-man/ja/man1/sj3mkdic.1.gz
-man/ja/man1/sj3serv.1.gz
+etc/rc.d/sj3.sh
+@dirrm lib/sj3/dict/user
+@dirrm lib/sj3/dict
+@dirrm lib/sj3
