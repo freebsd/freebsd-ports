@@ -326,6 +326,7 @@
     SUBDIR += penguin-command
     SUBDIR += pentix
     SUBDIR += phalanx
+    SUBDIR += phpua-bf
     SUBDIR += phpua-engine
     SUBDIR += pinball
     SUBDIR += pipenightdreams

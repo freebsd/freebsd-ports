@@ -1,0 +1,15 @@
+%%PHPUA%%/plugins/plugin_bf/plugin_bf.inc
+%%PHPUA%%/plugins/plugin_bf/plugin_bf_mode_info.inc
+%%PHPUA%%/plugins/plugin_bf/plugin_bf_mode_rules.inc
+%%PHPUA%%/plugins/plugin_bf/plugin_bf_mode_watch.inc
+%%PHPUA%%/templates/default/plugin_bf/info.tpl
+%%PHPUA%%/templates/default/plugin_bf/rules.tpl
+%%PHPUA%%/templates/default/plugin_bf/watch.js
+%%PHPUA%%/templates/default/plugin_bf/watch.tpl
+%%PHPUA%%/templates/default/plugin_bf/x.js
+%%PHPUA%%/templates/javascript/plugin_bf/info.tpl
+%%PHPUA%%/templates/wap/plugin_bf/info.tpl
+@dirrm %%PHPUA%%/templates/wap/plugin_bf
+@dirrm %%PHPUA%%/templates/javascript/plugin_bf
+@dirrm %%PHPUA%%/templates/default/plugin_bf
+@dirrm %%PHPUA%%/plugins/plugin_bf
