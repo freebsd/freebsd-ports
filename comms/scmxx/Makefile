@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	scmxx
-PORTVERSION=	0.6.3.1
+PORTVERSION=	0.6.3.5
 CATEGORIES=	comms
-MASTER_SITES=	http://ma2geo.mathematik.uni-karlsruhe.de/~hendrik/scmxx/download/
+MASTER_SITES=	http://ma2geo.mathematik.uni-karlsruhe.de/~hendrik/scmxx/download/ \
+		http://ma2geo.mathematik.uni-karlsruhe.de/~hendrik/scmxx/download/old/
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 
