@@ -5,9 +5,6 @@
 # $FreeBSD$
 #
 
-# NOTE: This port is tracking lynx-current until 2.8.3 is released.  Anything
-#       before 2.8.3pre.5 has unacceptable security holes.
-
 PORTNAME=	lynx
 PORTVERSION=    2.8.3.1
 CATEGORIES=	www
