@@ -29,7 +29,7 @@ PATCHFILES=	patch-${PORTVERSION}.rr.compressed.1.gz \
 		patch-${PORTVERSION}.vvv.initials.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER?=	obrien@FreeBSD.org
+MAINTAINER?=	udo.schweigert@siemens.com
 
 .if defined(PACKAGE_BUILDING)
 WITH_SLANG=	yes
