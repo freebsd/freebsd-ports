@@ -70,7 +70,7 @@ CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db42 --with-bdb=db-4.2
 .else
 BROKEN=		"WITH_BDB_VER must be 3, 4, 41 or 42"
 .endif
-CONFIGURE_ARGS+=--with-dblib=berkeley --with-bdb-libdir=${PREFIX}/lib
+CONFIGURE_ARGS+=--with-dblib=berkeley --with-bdb-libdir=${LOCALBASE}/lib
 SASLDB_NAME=	sasldb2
 .else
 CONFIGURE_ARGS+=--with-dblib=ndbm
@@ -85,7 +85,7 @@ WANT_MYSQL_VER=	323
 .endif
 .if defined(WITH_MYSQL)
 USE_MYSQL=	YES
-CONFIGURE_ARGS+=--with-mysql=${PREFIX}
+CONFIGURE_ARGS+=--with-mysql=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-mysql
 .endif
@@ -93,7 +93,7 @@ CONFIGURE_ARGS+=--without-mysql
 .if defined(WITH_PGSQL)
 POSTGRESQL_PORT?=	databases/postgresql-client
 LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
-CONFIGURE_ARGS+=--with-pgsql=${PREFIX}
+CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--without-pgsql
 .endif
