@@ -1,5 +1,5 @@
---- setup_trdir.sh.orig	Thu Sep 19 17:28:00 2002
-+++ setup_trdir.sh	Mon Sep  8 12:50:55 2003
+--- setup_trdir.sh.orig	Sat Dec 13 02:34:25 2003
++++ setup_trdir.sh	Sat Dec 13 02:36:42 2003
 @@ -6,9 +6,9 @@
  # edit the folowing line
  #
@@ -12,7 +12,7 @@
  ##################################################################"
  echo "*********************************"
  echo "*  Traindirector Installation   *"
-@@ -16,25 +16,29 @@
+@@ -16,25 +16,26 @@
  echo
  echo  "Making traindir samples directory....."
  echo 
@@ -26,11 +26,9 @@
  
 -cp $SAMPLE/traindir/* $TDHOMEDIR
 -cp $SAMPLE/traindir/tdicons/*.*  $ICONDIR
-+#little hack. It works anyway.
 +cp -R $SAMPLE/traindir/* $TDHOMEDIR
-+#cp $SAMPLE/traindir/tdicons/*.*  $ICONDIR
  echo
- echo   "Creating start-traindir script......"
+ echo   "Creating startup script......"
  echo
  echo   "#!/bin/sh" > start-traindir
  echo   "# Startup file for traindirector" >> start-traindir
@@ -43,9 +41,8 @@
  
  chmod 0775 start-traindir
  echo "Installation complete"
--echo "You can run ~/start-traindir in a X console"
+-echo "You can run ~/start-traindir from a X console"
 \ No newline at end of file
-+#echo "You can run ./start-traindir in a X console"
 +echo "a script file 'start-traindir' has been created in the current"
 +echo "directory. You can launch it to start the simulation, or move it"
 +echo "to your user's bin directory if you want."
