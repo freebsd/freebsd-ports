@@ -1,0 +1,11 @@
+--- configure.in.orig	Tue Mar 20 11:52:53 2001
++++ configure.in	Tue Mar 20 11:54:06 2001
+@@ -935,7 +935,7 @@
+     get.h gl.h gl/device.h gl/gl.h invent.h io.h iop/afb.h iop/mov.h \
+     iop/pfs.h iostream.h license.h limits.h malloc.h math.h memory.h \
+     mingw32/dir.h mon.h net/if.h net/if_arp.h net/route.h netcdf.h netdb.h \
+-    netinet/in.h os2.h process.h pwd.h regexp.h setjmp.h signal.h \
++    netinet/in.h os2.h process.h pwd.h regex.h regexp.h setjmp.h signal.h \
+     starbase.c.h stdarg.h stddef.h stdio.h stdlib.h stream.h string.h \
+     strings.h strstrea.h strstream.h synch.h sys/access.h sys/bsd_types.h \
+     sys/file.h sys/filio.h sys/ioctl.h sys/ipc.h sys/ldr.h sys/m88kbcs.h \
