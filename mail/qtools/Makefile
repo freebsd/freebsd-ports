@@ -7,29 +7,27 @@
 
 PORTNAME=	qtools
 PORTVERSION=	0.56
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.superscript.com/qtools/
 
-MAINTAINER=	petef@FreeBSD.org
-COMMENT=	Several utilities for use with qmail
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Tools to use in .qmail files
 
-RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
+RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \
+		${EZMLM_DIR}/bin/ezmlm-weed:${PORTSDIR}/mail/ezmlm
 
 ALL_TARGET=	it
 INSTALL_TARGET=	setup check
 
-.if exists(${PREFIX}/qmail/bin/qmail-send)
-QMAIL_DIR?=	${PREFIX}/qmail
-.else
 QMAIL_DIR?=	/var/qmail
-.endif
+EZMLM_DIR?=	${LOCALBASE}
 
-NO_PACKAGE=	A possibly inherited DJB-style license would prohibit \
-		distribution of modified binary packages
-
-post-patch:
+do-configure:
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
-	@${ECHO_CMD} "${CC} ${CFLAGS} ${STRIP}" > ${WRKSRC}/conf-ld
-	@${PERL} -pi -e 's!/usr/local!${PREFIX}!g' ${WRKSRC}/conf-home
+	@${ECHO_CMD} "${CC} ${STRIP}" > ${WRKSRC}/conf-ld
+	@${ECHO_CMD} "${PREFIX}" > ${WRKSRC}/conf-home
+	@${ECHO_CMD} "${QMAIL_DIR}" > ${WRKSRC}/conf-qmail
+	@${ECHO_CMD} "${EZMLM_DIR}/bin/ezmlm" > ${WRKSRC}/conf-ezmlm
 
 .include <bsd.port.mk>
