@@ -103,6 +103,8 @@
 %%SHIMBUN%%%%LISPDIR%%/sb-glimpse.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-gnome.el
 %%SHIMBUN%%%%LISPDIR%%/sb-gnome.elc
+%%SHIMBUN%%%%LISPDIR%%/sb-haiku-os.el
+%%SHIMBUN%%%%LISPDIR%%/sb-haiku-os.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-heise.el
 %%SHIMBUN%%%%LISPDIR%%/sb-heise.elc
 %%SHIMBUN%%%%LISPDIR%%/sb-hns.el
