@@ -192,6 +192,7 @@
     SUBDIR += ltrace
     SUBDIR += lxsplit
     SUBDIR += maint
+    SUBDIR += makefs
     SUBDIR += manck
     SUBDIR += mcron
     SUBDIR += memgrep
