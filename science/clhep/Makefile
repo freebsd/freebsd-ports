@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	clhep
-PORTVERSION=	1.6.0.0
+PORTVERSION=	1.8.0.0
 CATEGORIES=	science
-MASTER_SITES=	http://wwwinfo.cern.ch/asd/lhc++/export/share/CLHEP/${PORTVERSION}/
+MASTER_SITES=	http://wwwinfo.cern.ch/asd/lhc++/export/share/CLHEP/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/CLHEP
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 
-PLIST_SUB=	TARGET=${CONFIGURE_TARGET}
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+PLIST_SUB=	TARGET=${CONFIGURE_TARGET} VERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
