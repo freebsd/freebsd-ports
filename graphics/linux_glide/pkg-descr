@@ -1,0 +1,18 @@
+This port installs the Linux version of the glide API, which is used
+to program the 3dfx/voodoo cards. 
+
+Only Linux binaries can use this library. If you have a compiled Linux
+program that dynamically links against glide, everything is fine. If
+you want to compile programs yourself, you have to compile them as
+Linux binaries, using the compiler and tools from
+ports/devel/linux_devel.
+
+If your program uses other libraries, all libraries must be Linux
+libraries as well. In the case of Mesa, you can use
+ports/emulators/linux_mesa, which does everything for you. NOTE: The
+Mesa shared library from the Linux quake distributions does not work,
+use the FreeBSD port (although it installs a Linux lib).
+
+A simple test program is installed under /compat/linux/usr/bin/test-glide
+
+Please report problems to freebsd-multimedia@freebsd.org
