@@ -8,6 +8,7 @@
 
 PORTNAME=	PDFLib
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	print perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../by-authors/id/M/MS/MSERGEANT
@@ -16,7 +17,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	More OO interface to pdflib_pl.pm
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/pdflib_pl.pm:${PORTSDIR}/print/pdflib
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/pdflib_pl.pm:${PORTSDIR}/print/pdflib-perl
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PERL5=	yes
