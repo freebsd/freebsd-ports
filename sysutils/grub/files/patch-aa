@@ -1,0 +1,11 @@
+--- grub/asmstub.c.orig	Wed Jan 24 11:34:06 2001
++++ grub/asmstub.c	Wed Jan 24 11:34:15 2001
+@@ -983,7 +983,7 @@
+     close (serial_fd);
+   
+   /* Open the device file.  */
+-  serial_fd = open (serial_device, O_RDWR | O_NOCTTY | O_SYNC);
++  serial_fd = open (serial_device, O_RDWR | O_NOCTTY | O_FSYNC);
+   if (serial_fd < 0)
+     return 0;
+ 
