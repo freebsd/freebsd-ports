@@ -23,6 +23,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_MESA=	yes
 USE_GTK=	yes
+MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAKEFILE=	Makefile.Linux
 
 .include <bsd.port.mk>
