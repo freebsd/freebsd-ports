@@ -3892,6 +3892,7 @@ libtai		ports/devel/libtai
 libtar		ports/devel/libtar
 libtasn1	ports/security/libtasn1
 libtecla	ports/devel/libtecla
+libticables	ports/comms/libticables
 libtool13	ports/devel/libtool13
 libtool14	ports/devel/libtool14
 libtool15	ports/devel/libtool15
