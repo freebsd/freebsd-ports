@@ -26,6 +26,8 @@ WANT_GNOME=	yes
 
 .if ${ARCH} != "i386"
 BROKEN=		"Does not compile on !i386"
+.else
+BROKEN=		"Broken pkg-plist"
 .endif
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2			\
