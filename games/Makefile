@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.172 1998/12/07 02:21:59 asami Exp $
+# $Id: Makefile,v 1.173 1998/12/14 21:02:32 jseger Exp $
 #
 
     SUBDIR += 3dc
@@ -28,6 +28,7 @@
     SUBDIR += crossfire
     SUBDIR += dontspace
     SUBDIR += doom
+    SUBDIR += doomsrc
     SUBDIR += empire
     SUBDIR += fkiss
     SUBDIR += flying
