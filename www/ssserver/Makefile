@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.kryltech.com/download/FreeBSD.x86.3/
 
 MAINTAINER=	support@kryltech.com
 
+RUN_DEPENDS=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
+
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 
