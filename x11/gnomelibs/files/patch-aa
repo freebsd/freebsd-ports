@@ -1,5 +1,5 @@
---- configure.orig	Tue Apr 27 21:24:19 1999
-+++ configure	Sat May 22 21:16:46 1999
+--- configure.orig	Tue Apr 27 14:24:19 1999
++++ configure	Mon Jun  7 20:27:21 1999
 @@ -2521,7 +2521,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
@@ -27,7 +27,14 @@
  cat > conftest.$ac_ext <<EOF
  #line 7378 "configure"
  #include "confdefs.h"
-@@ -10859,7 +10859,7 @@
+@@ -10853,13 +10853,13 @@
+ SUPPORTINCS='-DNEED_GNOMESUPPORT_H -I$(top_builddir)/support -I$(top_srcdir)/support'
+ 
+ ART_LIBS="-lart_lgpl"
+-GNOME_LIBS="-lgnome -lgnomesupport $LIBGNOME_LIBS"
++GNOME_LIBS="-lgnome -lgnomesupport -lintl $LIBGNOME_LIBS"
+ GNOMEUI_LIBS="-lgnomeui $ART_LIBS $GDK_IMLIB_LIBS $GTK_LIBS $GNOME_LIBS"
+ GTKXMHTML_LIBS="-lgtkxmhtml $LIBGTKXMHTML_LIBS"
  ZVT_LIBS="-lzvt $UTIL_LIBS $GTK_LIBS"
  
  GNOME_LIBDIR='-L${libdir}'
