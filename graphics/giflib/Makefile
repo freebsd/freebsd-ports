@@ -17,7 +17,7 @@ INSTALLS_SHLIB=	yes
 
 USE_LIBTOOL=	yes
 
-.ifdef (NO_X)
+.ifdef (WITHOUT_X11)
 PLIST_SUB+=	X11='@comment '
 CONFIGURE_ARGS+=--with-x=no
 PKGNAMESUFFIX=	-nox11

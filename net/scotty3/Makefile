@@ -13,7 +13,7 @@ DISTNAME=	${PORTNAME}-00-02-21
 
 MAINTAINER=	ozz@FreeBSD.org.ru
 
-.ifdef (NO_X)
+.ifdef (WITHOUT_X11)
 PKGNAMESUFFIX=	-nox11
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
 .else
@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tcl=${PREFIX}/lib/tcl8.3 \
 		--enable-multicast
 
-.ifdef (NO_X)
+.ifdef (WITHOUT_X11)
 CONFIGURE_ARGS+=--with-tk=no
 .else
 CONFIGURE_ARGS+=--with-tk=${PREFIX}/lib/tk8.3
@@ -43,7 +43,7 @@ PLIST_SUB=	SCOTTY_VERSION=3.0.0 TKINED_VERSION=1.5.0
 MAKE_ARGS+=	-j2	# better than -j1 on all machines...
 INSTALL_TARGET=	tnm-install sinstall
 
-.if !defined(NO_X)
+.if !defined(WITHOUT_X11)
 MAN1+=		tkined.1
 MANN+=		ined.n
 PLIST_SUB+=	X11=''
@@ -59,7 +59,7 @@ post-patch:
 post-install:
 	${RM} -f ${PREFIX}/bin/scotty ${PREFIX}/bin/tkined
 	${LN} -s scotty3.0.0 ${PREFIX}/bin/scotty
-.ifndef NO_X
+.ifndef WITHOUT_X11
 	${LN} -s tkined1.5.0 ${PREFIX}/bin/tkined
 .endif
 

@@ -17,7 +17,7 @@ MAINTAINER=		trevor@FreeBSD.org
 
 LIB_DEPENDS=		intl.1:${PORTSDIR}/devel/gettext
 
-.if defined(WITHOUT_X)
+.if defined(WITHOUT_X11)
 WITHOUT_GTKEXTRA=	yes
 .endif
 .if !defined(WITHOUT_GTKEXTRA)
@@ -25,7 +25,7 @@ LIB_DEPENDS+=		gtkextra.14:${PORTSDIR}/x11-toolkits/gtkextra
 .endif
 .if !defined(WITHOUT_GUILE)
 LIB_DEPENDS+=		guile.9:${PORTSDIR}/lang/guile
-.if !defined(WITHOUT_X)
+.if !defined(WITHOUT_X11)
 LIB_DEPENDS+=		guilegtk-1.2:${PORTSDIR}/x11-toolkits/guile-gtk
 .endif
 .endif
@@ -33,7 +33,7 @@ LIB_DEPENDS+=		guilegtk-1.2:${PORTSDIR}/x11-toolkits/guile-gtk
 ALL_TARGET=		audinfo snd sndinfo sndplay sndrecord sndsine
 CONFIGURE_ARGS=		--with-float-samples \
 			--with-multifile
-.if !defined(WITHOUT_X)
+.if !defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--with-gtk \
 			--with-gtkrc-colors \
 			--with-float-samples
@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=	--without-guile
 .if !defined(WITHOUT_GTKEXTRA)
 CONFIGURE_ARGS+=	--with-gtk-extra
 .endif
-.if defined(WITHOUT_X)
+.if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--without-gui
 .endif
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -53,7 +53,7 @@ GNU_CONFIGURE=	yes
 MAKEFILE=	makefile
 PLIST=		${WRKDIR}/pkg-plist
 PREFIX=		/
-.if !defined(WITHOUT_X)
+.if !defined(WITHOUT_X11)
 USE_GLIB=	yes
 USE_GTK=	yes
 USE_XLIB=	yes
@@ -67,7 +67,7 @@ do-install:
 .for i in audinfo snd-info sndplay sndrecord sndsine
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${LOCALBASE}/bin
 .endfor
-.if !defined(WITHOUT_X)
+.if !defined(WITHOUT_X11)
 	${INSTALL_PROGRAM} ${WRKSRC}/snd ${X11BASE}/bin
 	${INSTALL_DATA} ${WRKSRC}/Snd.ad ${X11BASE}/lib/X11/app-defaults/
 .else
@@ -94,7 +94,7 @@ pre-build:
 .if !defined(WITHOUT_GUILE)
 	${CAT} ${PKGDIR}/pkg-plist-guile >> ${PLIST}
 .endif
-.if !defined(WITHOUT_X)
+.if !defined(WITHOUT_X11)
 	${ECHO} "%%X11BASE%%/bin/snd" >> ${PLIST}
 	${ECHO} "%%X11BASE%%/lib/X11/app-defaults/Snd.ad" >> ${PLIST}
 .else

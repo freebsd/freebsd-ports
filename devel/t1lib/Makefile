@@ -18,7 +18,7 @@ MAINTAINER=	ijliao@FreeBSD.org
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
 
-.if !defined(WITHOUT_X)
+.if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 CONFIGURE_ARGS+=	--with-x
 .else

@@ -18,10 +18,10 @@ MAINTAINER=	andreas@FreeBSD.org
 NO_X=		yes
 .endif
 
-.if defined(NO_X)
-# XXX Hack.  If you've done something like "-DNO_X" on the command line
-# (instead of NO_X=true, or similar) gmake won't pick it up.  So make sure
-# that NO_X is defined *and* has a value.
+.if defined(WITHOUT_X11)
+# XXX Hack.  If you've done something like "-DWITHOUT_X11" on the command line
+# (instead of WITHOUT_X11=true, or similar) gmake won't pick it up.  So make
+# sure that NO_X is defined *and* has a value.
 MAKE_ENV+=      NO_X=true
 .endif
 
@@ -30,7 +30,7 @@ MAKE_ENV+=      NO_X=true
 # - <default>		build and install most important filter utilities
 #			that don't require X
 # - APSFILTER_ALL	build and install all supported filter utilities
-# - NO_X		toggles not to build tools that need X11, even if
+# - WITHOUT_X11		toggles not to build tools that need X11, even if
 #			APSFILTER_ALL is set
 #
 .if defined(BATCH) && defined(APSFILTER_ALL)
@@ -38,7 +38,7 @@ MAKE_ENV+=      NO_X=true
 # Build and install all filter apsfilter knows about (rather expensive)
 #
 # ps emulator
-.if defined(NO_X)
+.if defined(WITHOUT_X11)
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript6-nox11
 .else
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript6
@@ -49,7 +49,7 @@ RUN_DEPENDS+=	melt:${PORTSDIR}/archivers/freeze
 # all needed "xxx to ps" filter utilities
 RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-letter
 RUN_DEPENDS+=	psnup:${PORTSDIR}/print/psutils-letter
-.if !defined(NO_X)
+.if !defined(WITHOUT_X11)
 # "xxx to ps" filter utilities that require X
 RUN_DEPENDS+=	acroread4:${PORTSDIR}/print/acroread4
 RUN_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
@@ -70,7 +70,7 @@ RUN_DEPENDS+=	smbclient:${PORTSDIR}/net/samba
 # since apsfilter should fit easily on installation CD 1...
 #
 # ps emulator
-.if defined(NO_X)
+.if defined(WITHOUT_X11)
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript6-nox11
 .else
 RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript6
