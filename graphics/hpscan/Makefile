@@ -15,6 +15,8 @@ DISTNAME=	scanner
 
 MAINTAINER=	jkh@FreeBSD.org
 
+BROKEN=		"SCSI low-level interface has changed and this needs re-porting"
+
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
 NO_WRKSUBDIR=		yes
