@@ -1,3 +1,171 @@
+%%T%%/outputsheets/base.xml
+%%T%%/outputsheets/d20/fantasy/htmlxml/csheet_fantasy_combined.htm
+%%T%%/outputsheets/d20/fantasy/htmlxml/csheet_fantasy_compact.htm
+%%T%%/outputsheets/d20/fantasy/htmlxml/csheet_fantasy_OpenRPG.xml
+%%T%%/outputsheets/d20/fantasy/htmlxml/csheet_fantasy_statblock1.htm
+%%T%%/outputsheets/d20/fantasy/htmlxml/csheet_fantasy_statblock2.htm
+%%T%%/outputsheets/d20/fantasy/htmlxml/csheet_fantasy_std.htm
+%%T%%/outputsheets/d20/fantasy/htmlxml/eqsheet_fantasy_consumables.htm
+%%T%%/outputsheets/d20/fantasy/htmlxml/eqsheet_fantasy_std.htm
+%%T%%/outputsheets/d20/fantasy/htmlxml/psheet_fantasy_std.htm
+%%T%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_descriptions.fo
+%%T%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_picture.fo
+%%T%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_spellbook.fo
+%%T%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_std.fo
+%%T%%/outputsheets/d20/fantasy/pdf/csheet_fantasy_std.xslt
+%%T%%/outputsheets/d20/fantasy/text/csheet_plain.TXT
+%%T%%/outputsheets/d20/fantasy/text/placeholder.txt
+%%T%%/outputsheets/d20/historical/htmlxml/eqsheet_dnd_std.htm
+%%T%%/outputsheets/d20/historical/htmlxml/psheet_dnd_std.htm
+%%T%%/outputsheets/d20/historical/pdf/placeholder.txt
+%%T%%/outputsheets/d20/historical/text/placeholder.txt
+%%T%%/outputsheets/d20/horror/htmlxml/eqsheet_dnd_std.htm
+%%T%%/outputsheets/d20/horror/htmlxml/psheet_dnd_std.htm
+%%T%%/outputsheets/d20/horror/text/placeholder.txt
+%%T%%/outputsheets/d20/modern/htmlxml/csheet_modern_std.htm
+%%T%%/outputsheets/d20/modern/htmlxml/eqsheet_dnd_std.htm
+%%T%%/outputsheets/d20/modern/htmlxml/psheet_dnd_std.htm
+%%T%%/outputsheets/d20/modern/pdf/csheet_modern_std.xslt
+%%T%%/outputsheets/d20/modern/pdf/placeholder.txt
+%%T%%/outputsheets/d20/modern/text/placeholder.txt
+%%T%%/outputsheets/d20/sciencefiction/htmlxml/eqsheet_dnd_std.htm
+%%T%%/outputsheets/d20/sciencefiction/htmlxml/psheet_dnd_std.htm
+%%T%%/outputsheets/d20/sciencefiction/pdf/placeholder.txt
+%%T%%/outputsheets/d20/sciencefiction/text/placeholder.txt
+%%T%%/outputsheets/d20/western/htmlxml/csheetDeadlands.htm
+%%T%%/outputsheets/d20/western/htmlxml/eqsheet_dnd_std.htm
+%%T%%/outputsheets/d20/western/htmlxml/psheet_dnd_std.htm
+%%T%%/outputsheets/d20/western/pdf/placeholder.txt
+%%T%%/outputsheets/d20/western/text/placeholder.txt
+%%T%%/plugins/Encounter/encounter_tables/4_1.xml
+%%T%%/plugins/Encounter/encounter_tables/4_13.xml
+%%T%%/plugins/Encounter/encounter_tables/4_14.xml
+%%T%%/plugins/Encounter/encounter_tables/4_15.xml
+%%T%%/plugins/Encounter/encounter_tables/environments.xml
+%%T%%/plugins/Encounter/encounter_tables/environments/dungeon1.xml
+%%T%%/plugins/Encounter/encounter_tables/environments/dungeon2.xml
+%%T%%/plugins/Encounter/encounter.dtd
+%%T%%/plugins/Experience/experience_tables/7_1.xml
+%%T%%/plugins/Experience/experience.dtd
+%%T%%/plugins/Overland Travel/rnbprice/rnbprice.xml
+%%T%%/plugins/Overland Travel/rnbprice/rnbprice.dtd
+%%T%%/plugins/Overland Travel/travel_methods/travel_methods.xml
+%%T%%/plugins/Overland Travel/travel_methods/travel_methods.dtd
+%%T%%/plugins/Random Names/anglosaxon.xml
+%%T%%/plugins/Random Names/arabic.xml
+%%T%%/plugins/Random Names/english.xml
+%%T%%/plugins/Random Names/fantasy-deverry.xml
+%%T%%/plugins/Random Names/fantasy-middleearth.xml
+%%T%%/plugins/Random Names/fantasy.xml
+%%T%%/plugins/Random Names/flemish.xml
+%%T%%/plugins/Random Names/frankish.xml
+%%T%%/plugins/Random Names/french.xml
+%%T%%/plugins/Random Names/gaelic.xml
+%%T%%/plugins/Random Names/german.xml
+%%T%%/plugins/Random Names/gothic.xml
+%%T%%/plugins/Random Names/italian.xml
+%%T%%/plugins/Random Names/persian.xml
+%%T%%/plugins/Random Names/pictish.xml
+%%T%%/plugins/Random Names/roman.xml
+%%T%%/plugins/Random Names/russian.xml
+%%T%%/plugins/Random Names/generator.dtd
+%%T%%/plugins/DiceBag.jar
+%%T%%/plugins/DoomsdayBook.jar
+%%T%%/plugins/Encounter.jar
+%%T%%/plugins/Experience.jar
+%%T%%/plugins/Initiative.jar
+%%T%%/plugins/Notes.jar
+%%T%%/plugins/Overland.jar
+%%T%%/plugins/PCGTracker.jar
+%%T%%/plugins/Notes/stock_new-16.png
+%%T%%/plugins/Notes/data.html
+%%T%%/plugins/Initiative/csheet_gmgen_statblock.htm
+%%T%%/system/D20System.htm
+%%T%%/system/opengaminglicense.10a.txt
+%%T%%/system/paperInfo.lst
+%%T%%/system/pointbuymethods_system.lst
+%%T%%/system/schools.lst
+%%T%%/system/sizeAdjustment.lst
+%%T%%/system/tips.lst
+%%T%%/system/unitSet.lst
+%%T%%/system/bio/biosettings.lst
+%%T%%/system/bio/locations.lst
+%%T%%/system/bio/traits.lst
+%%T%%/system/bio/names/Albion.nam
+%%T%%/system/bio/names/ALVER.NAM
+%%T%%/system/bio/names/Arabic.nam
+%%T%%/system/bio/names/cg_NAMES.nam
+%%T%%/system/bio/names/Deverry.nam
+%%T%%/system/bio/names/DVARGAR.NAM
+%%T%%/system/bio/names/Felana.nam
+%%T%%/system/bio/names/GALLER.NAM
+%%T%%/system/bio/names/Generic_NAMES.nam
+%%T%%/system/bio/names/gnome.nam
+%%T%%/system/bio/names/hispanic_NAMES.nam
+%%T%%/system/bio/names/HOBER.NAM
+%%T%%/system/bio/names/kerrel.nam
+%%T%%/system/bio/names/Mar_Draconic.nam
+%%T%%/system/bio/names/Mar_Knightly_NAMES.nam
+%%T%%/system/bio/names/Mar_NAMES.nam
+%%T%%/system/bio/names/Narn.nam
+%%T%%/system/bio/names/orc.nam
+%%T%%/system/bio/names/ReadMe.txt
+%%T%%/system/bio/names/rw_Anglo_Saxon_Female.nam
+%%T%%/system/bio/names/rw_Anglo_Saxon_Male.nam
+%%T%%/system/bio/names/rw_Anglo_Saxon_Latinized_Female.nam
+%%T%%/system/bio/names/rw_Anglo_Saxon_Latinized_Male.nam
+%%T%%/system/bio/names/rw_English_Late_Period_Female.nam
+%%T%%/system/bio/names/rw_English_Late_Period_Male.nam
+%%T%%/system/bio/names/rw_English_Middle_Period_Female.nam
+%%T%%/system/bio/names/rw_English_Middle_Period_Male.nam
+%%T%%/system/bio/names/rw_Flemish_NAMES.nam
+%%T%%/system/bio/names/rw_Frankish_Female.nam
+%%T%%/system/bio/names/rw_Frankish_Male.nam
+%%T%%/system/bio/names/rw_French_NAMES.nam
+%%T%%/system/bio/names/rw_German_Female.nam
+%%T%%/system/bio/names/rw_German_Male.nam
+%%T%%/system/bio/names/rw_Gothic_NAMES.nam
+%%T%%/system/bio/names/rw_Irish_Gaelic_Female.nam
+%%T%%/system/bio/names/rw_Irish_Gaelic_Male.nam
+%%T%%/system/bio/names/rw_Italian_Renaissance_Female.nam
+%%T%%/system/bio/names/rw_Italian_Renaissance_Male.nam
+%%T%%/system/bio/names/rw_Persian_NAMES.nam
+%%T%%/system/bio/names/rw_Pictish_Classical_NAMES.nam
+%%T%%/system/bio/names/rw_Pictish_Medieval_Male.nam
+%%T%%/system/bio/names/rw_Roman_Female.nam
+%%T%%/system/bio/names/rw_Roman_Male.nam
+%%T%%/system/bio/names/rw_Russian_Female.nam
+%%T%%/system/bio/names/rw_Russian_Male.nam
+%%T%%/system/bio/names/rw_Scottish_Gaelic_Female.nam
+%%T%%/system/bio/names/rw_Scottish_Gaelic_Male.nam
+%%T%%/system/bio/names/sparhawk.nam
+%%T%%/system/gameModes/35e/level.lst
+%%T%%/system/gameModes/35e/load.lst
+%%T%%/system/gameModes/35e/miscinfo.lst
+%%T%%/system/gameModes/35e/rules.lst
+%%T%%/system/gameModes/35e/statsandchecks.lst
+%%T%%/system/gameModes/3e/level.lst
+%%T%%/system/gameModes/3e/load.lst
+%%T%%/system/gameModes/3e/miscinfo.lst
+%%T%%/system/gameModes/3e/rules.lst
+%%T%%/system/gameModes/3e/statsandchecks.lst
+%%T%%/system/gameModes/Modern/level.lst
+%%T%%/system/gameModes/Modern/load.lst
+%%T%%/system/gameModes/Modern/miscinfo.lst
+%%T%%/system/gameModes/Modern/rules.lst
+%%T%%/system/gameModes/Modern/statsandchecks.lst
+%%T%%/system/Languages/LanguageBundle.properties
+%%T%%/system/Languages/LanguageBundle_en_US.properties
+%%T%%/system/outputFilters/fo.lst
+%%T%%/system/outputFilters/htm.lst
+%%T%%/system/outputFilters/xml.lst
+%%T%%/system/specials/bonusstacks.lst
+%%T%%/system/specials/equipmentslots.lst
+%%T%%/system/specials/specials.lst
+%%T%%/pcgen.jar
+%%T%%/pcgen.sh
+%%T%%/filepaths.ini
+bin/pcgen.sh
 %%T%%/characters/CodeMonkey.pcg
 %%T%%/data/customsources/readme-customsources.txt
 %%T%%/data/d20ogl/avalanchepress/blackflags/blackflagclasses.lst
@@ -7,11 +175,38 @@
 %%T%%/data/d20ogl/avalanchepress/blackflags/OGL.txt
 %%T%%/data/d20ogl/bastionpress/alchemyherbalists/alchemyherbalist.pcc
 %%T%%/data/d20ogl/bastionpress/alchemyherbalists/alchemyherbalistclasses.lst
+%%T%%/data/d20ogl/bastionpress/alchemyherbalists/alchemyherbalistequipherbs.lst
 %%T%%/data/d20ogl/bastionpress/alchemyherbalists/alchemyherbalistequipwondrousitems.lst
 %%T%%/data/d20ogl/bastionpress/alchemyherbalists/alchemyherbalistfeats.lst
 %%T%%/data/d20ogl/bastionpress/alchemyherbalists/alchemyherbalistskills.lst
 %%T%%/data/d20ogl/bastionpress/alchemyherbalists/alchemyherbalistspells.lst
 %%T%%/data/d20ogl/bastionpress/alchemyherbalists/OGL.txt
+%%T%%/data/d20ogl/bastionpress/oathbound/oathbound.pcc
+%%T%%/data/d20ogl/bastionpress/oathbound/oathboundbiosettings.lst
+%%T%%/data/d20ogl/bastionpress/oathbound/oathboundclasses.lst
+%%T%%/data/d20ogl/bastionpress/oathbound/oathboundclassfeats.lst
+%%T%%/data/d20ogl/bastionpress/oathbound/oathboundequip.lst
+%%T%%/data/d20ogl/bastionpress/oathbound/oathboundequiparmorshields.lst
+%%T%%/data/d20ogl/bastionpress/oathbound/oathboundequipgoods.lst
+%%T%%/data/d20ogl/bastionpress/oathbound/oathboundequipmagicitems.lst
+%%T%%/data/d20ogl/bastionpress/oathbound/oathboundequipmods.lst
+%%T%%/data/d20ogl/bastionpress/oathbound/oathboundequipweapammo.lst
+%%T%%/data/d20ogl/bastionpress/oathbound/oathboundequipweapmelee.lst
+%%T%%/data/d20ogl/bastionpress/oathbound/oathboundequipweapranged.lst
+%%T%%/data/d20ogl/bastionpress/oathbound/oathboundfeats.lst
+%%T%%/data/d20ogl/bastionpress/oathbound/oathboundfeats30.lst
+%%T%%/data/d20ogl/bastionpress/oathbound/OGL.txt
+%%T%%/data/d20ogl/bastionpress/oathbound/oathboundlanguages.lst
+%%T%%/data/d20ogl/bastionpress/oathbound/oathboundpermission.htm
+%%T%%/data/d20ogl/bastionpress/oathbound/oathboundraces.lst
+%%T%%/data/d20ogl/bastionpress/oathbound/oathboundskills.lst
+%%T%%/data/d20ogl/bastionpress/oathbound/oathboundspells.lst
+%%T%%/data/d20ogl/bastionpress/oathbound/oathboundtemplates.lst
+%%T%%/data/d20ogl/bastionpress/oathbound/oathboundweapprofs.lst
+%%T%%/data/d20ogl/bastionpress/oathbound/UPDATE.txt
+%%T%%/data/d20ogl/bastionpress/oathbound/UPDATE2003-11-09-ruemere.TXT
+%%T%%/data/d20ogl/bastionpress/oathbound/altpcc/oathbound35.pcc
+%%T%%/data/d20ogl/bastionpress/oathbound/altpcc/oathboundfeats35.lst
 %%T%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscape.pcc
 %%T%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapebiosettings.lst
 %%T%%/data/d20ogl/battlefieldpress/cityscape/cityscape/cityscapeclasses.lst
@@ -42,37 +237,50 @@
 %%T%%/data/d20ogl/creativemountaingames/lexus/trundlefolk/OGL.txt
 %%T%%/data/d20ogl/creativemountaingames/lexus/trundlefolk/trundlefolk.pcc
 %%T%%/data/d20ogl/creativemountaingames/openspellscollection/OGL.txt
+%%T%%/data/d20ogl/creativemountaingames/openspellscollection/primary/OGL.txt
 %%T%%/data/d20ogl/creativemountaingames/openspellscollection/primary/openspellsprime.pcc
 %%T%%/data/d20ogl/creativemountaingames/openspellscollection/primary/openspellsprimespells.lst
 %%T%%/data/d20ogl/creativemountaingames/openspellscollection/variation1/openspellsvar1.pcc
 %%T%%/data/d20ogl/creativemountaingames/openspellscollection/variation1/openspellsvar1spells.lst
 %%T%%/data/d20ogl/creativemountaingames/openspellscollection/variation2/openspellsvar2.pcc
 %%T%%/data/d20ogl/creativemountaingames/openspellscollection/variation2/openspellsvar2spells.lst
+%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/FanCC_NBoMT.txt
+%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/issues.txt
+%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/Magical_Items.pdf
+%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures.pcc
+%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equipmod_magic.lst
+%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_armorshieldsspecific.lst
+%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_artifacts.lst
+%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_potions.lst
+%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_rings.lst
+%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_rodstaffswands.lst
+%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_scrolls.lst
+%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_weapammospecific.lst
+%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_weapmeleespecific.lst
+%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_weaprangedspecific.lst
+%%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures/magical_treasures_equip_wondrousitems.lst
 %%T%%/data/d20ogl/fantasycommunitycouncil/netbookofspellsmagic/netbookofspells.pcc
 %%T%%/data/d20ogl/fantasycommunitycouncil/netbookofspellsmagic/netbookofspellsspells.lst
 %%T%%/data/d20ogl/fantasycommunitycouncil/netbookofspellsmagic/OGL.txt
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/cleanup_notes.txt
 %%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/OGL.txt
 %%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb.pcc
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershbbiosettings.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershbclasses.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershbdeities.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershbequip.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershbequiparmorshields.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershbequipmech.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershbequipmods.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershbequipmodsmech.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershbequipspellware.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershbequipweapammo.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershbequipweapmelee.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershbequipweapranged.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershbfeats.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershbfeatshidden.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershbraces.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershbskills.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershbspells.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershbtemplates.lst
-%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershbweapprofs.lst
+%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_biosettings.lst
+%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_classes.lst
+%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_deities.lst
+%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_equip.lst
+%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_equip_armorshields.lst
+%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_equip_mech.lst
+%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_equip_mods.lst
+%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_equip_weap_ammo.lst
+%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_equip_weap_melee.lst
+%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_equip_weap_ranged.lst
+%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_feats.lst
+%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_feats_hidden.lst
+%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_races.lst
+%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_skills.lst
+%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_spells.lst
+%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_templates.lst
+%%T%%/data/d20ogl/fantasyflightgames/dragonstar/starfarershandbook/starfarershb_weapprofs.lst
 %%T%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicraces.pcc
 %%T%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesbiosettings.lst
 %%T%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces/mythicracesclasses.lst
@@ -101,6 +309,21 @@
 %%T%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritchskills.lst
 %%T%%/data/d20ogl/malhavocpress/bookofeldritchmight/eldritchspells.lst
 %%T%%/data/d20ogl/malhavocpress/bookofeldritchmight/OGL.txt
+%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight.pcc
+%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_armorshields_specific.lst
+%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_classes.lst
+%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_domains.lst
+%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_equipmods.lst
+%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_equip_potions.lst
+%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_equip_rings.lst
+%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_equip_weap_specific.lst
+%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_equip_wondrousitems.lst
+%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_feats.lst
+%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_feats_hidden.lst
+%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_races.lst
+%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/OGL.txt
+%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_spells.lst
+%%T%%/data/d20ogl/malhavocpress/bookofhallowedmight/hallowedmight_templates.lst
 %%T%%/data/d20ogl/msrd/msrd.pcc
 %%T%%/data/d20ogl/msrd/msrdclassesadvanced.lst
 %%T%%/data/d20ogl/msrd/msrdclassesbase.lst
@@ -136,6 +359,19 @@
 %%T%%/data/d20ogl/msrd/msrdtemplates.lst
 %%T%%/data/d20ogl/msrd/msrdtemplatesfiends.lst
 %%T%%/data/d20ogl/msrd/msrdweapprofs.lst
+%%T%%/data/d20ogl/pandaheadproductions/xcrawl/OGL.txt
+%%T%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawl.pcc
+%%T%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlclasses.lst
+%%T%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawldeities.lst
+%%T%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawldomains.lst
+%%T%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlequip.lst
+%%T%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlequiparmorshields.lst
+%%T%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlequipweapmelee.lst
+%%T%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlequipweapranged.lst
+%%T%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlfeats.lst
+%%T%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlskills.lst
+%%T%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlspells.lst
+%%T%%/data/d20ogl/pandaheadproductions/xcrawl/xcrawlweapprofs.lst
 %%T%%/data/d20ogl/srd/OGL.txt
 %%T%%/data/d20ogl/srd/srd.pcc
 %%T%%/data/d20ogl/srd/srdclassesbase.lst
@@ -209,6 +445,62 @@
 %%T%%/data/d20ogl/srd/altpcc/srdpsionics.pcc
 %%T%%/data/d20ogl/srd/srdweapprofsnatural.lst
 %%T%%/data/d20ogl/srd/srdweapprofspsionic.lst
+%%T%%/data/d20ogl/srd35/OGL.txt
+%%T%%/data/d20ogl/srd35/rsrd.pcc
+%%T%%/data/d20ogl/srd35/rsrd_classes_base.lst
+%%T%%/data/d20ogl/srd35/rsrd_classes_monster.lst
+%%T%%/data/d20ogl/srd35/rsrd_classes_npc.lst
+%%T%%/data/d20ogl/srd35/rsrd_classes_prestige.lst
+%%T%%/data/d20ogl/srd35/rsrd_companionmods.lst
+%%T%%/data/d20ogl/srd35/rsrd_deities.lst
+%%T%%/data/d20ogl/srd35/rsrd_domains.lst
+%%T%%/data/d20ogl/srd35/rsrd_equip.lst
+%%T%%/data/d20ogl/srd35/rsrd_equipmod_base.lst
+%%T%%/data/d20ogl/srd35/rsrd_equipmod_enhancing.lst
+%%T%%/data/d20ogl/srd35/rsrd_equip_armorshields.lst
+%%T%%/data/d20ogl/srd35/rsrd_equip_armorshieldsspecific.lst
+%%T%%/data/d20ogl/srd35/rsrd_equip_basetypes.lst
+%%T%%/data/d20ogl/srd35/altpcc/dmg.pcc
+%%T%%/data/d20ogl/srd35/altpcc/dmgnorace.pcc
+%%T%%/data/d20ogl/srd35/altpcc/phb.pcc
+%%T%%/data/d20ogl/srd35/altpcc/psionicshandbook.pcc
+%%T%%/data/d20ogl/srd35/altpcc/rsrdmonsters.pcc
+%%T%%/data/d20ogl/srd35/rsrd_equip_coinsgems.lst
+%%T%%/data/d20ogl/srd35/rsrd_equip_poisons.lst
+%%T%%/data/d20ogl/srd35/rsrd_equip_potions.lst
+%%T%%/data/d20ogl/srd35/rsrd_equip_rings.lst
+%%T%%/data/d20ogl/srd35/rsrd_equip_rodstaffwands.lst
+%%T%%/data/d20ogl/srd35/rsrd_equip_scrolls.lst
+%%T%%/data/d20ogl/srd35/rsrd_equip_weap_ammo.lst
+%%T%%/data/d20ogl/srd35/rsrd_equip_weap_melee.lst
+%%T%%/data/d20ogl/srd35/rsrd_equip_weap_ranged.lst
+%%T%%/data/d20ogl/srd35/rsrd_equip_weap_specific.lst
+%%T%%/data/d20ogl/srd35/rsrd_equip_wondrousitems.lst
+%%T%%/data/d20ogl/srd35/rsrd_feats.lst
+%%T%%/data/d20ogl/srd35/rsrd_feats_hidden.lst
+%%T%%/data/d20ogl/srd35/rsrd_feats_hidden2.lst
+%%T%%/data/d20ogl/srd35/rsrd_languages.lst
+%%T%%/data/d20ogl/srd35/rsrd_races_a_b.lst
+%%T%%/data/d20ogl/srd35/rsrd_races_c_d.lst
+%%T%%/data/d20ogl/srd35/rsrd_races_e_f.lst
+%%T%%/data/d20ogl/srd35/rsrd_races_g_h.lst
+%%T%%/data/d20ogl/srd35/rsrd_races_i_j.lst
+%%T%%/data/d20ogl/srd35/rsrd_races_k_l.lst
+%%T%%/data/d20ogl/srd35/rsrd_races_m_n.lst
+%%T%%/data/d20ogl/srd35/rsrd_races_o_p.lst
+%%T%%/data/d20ogl/srd35/rsrd_races_q_r.lst
+%%T%%/data/d20ogl/srd35/rsrd_races_s_t.lst
+%%T%%/data/d20ogl/srd35/rsrd_races_u_v.lst
+%%T%%/data/d20ogl/srd35/rsrd_races_w_x.lst
+%%T%%/data/d20ogl/srd35/rsrd_races_y_z.lst
+%%T%%/data/d20ogl/srd35/rsrd_races__animals.lst
+%%T%%/data/d20ogl/srd35/rsrd_races__base.lst
+%%T%%/data/d20ogl/srd35/rsrd_races__dragons.lst
+%%T%%/data/d20ogl/srd35/rsrd_races__vermin.lst
+%%T%%/data/d20ogl/srd35/rsrd_skills.lst
+%%T%%/data/d20ogl/srd35/rsrd_spells.lst
+%%T%%/data/d20ogl/srd35/rsrd_templatestypes.lst
+%%T%%/data/d20ogl/srd35/rsrd_weaponprofs.lst
 %%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/OGL.txt
 %%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsrituals.pcc
 %%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsclasses.lst
@@ -231,157 +523,882 @@
 %%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsspells.lst
 %%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualstemplates.lst
 %%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/relicsritualsweapprofs.lst
+%%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals/UPDATE.TXT
+%%T%%/data/permissioned/alderacentgroup/dragons/dragons.pcc
+%%T%%/data/permissioned/alderacentgroup/dragons/dragonsclasses.lst
+%%T%%/data/permissioned/alderacentgroup/dragons/dragonsdeities.lst
+%%T%%/data/permissioned/alderacentgroup/dragons/dragonsequip.lst
+%%T%%/data/permissioned/alderacentgroup/dragons/dragonsequipmods.lst
+%%T%%/data/permissioned/alderacentgroup/dragons/dragonsequippotionspoisons.lst
+%%T%%/data/permissioned/alderacentgroup/dragons/dragonsequipweapammospecific.lst
+%%T%%/data/permissioned/alderacentgroup/dragons/dragonsequipweapmelee.lst
+%%T%%/data/permissioned/alderacentgroup/dragons/dragonsequipweapmeleespecific.lst
+%%T%%/data/permissioned/alderacentgroup/dragons/dragonsequipwondrousitems.lst
+%%T%%/data/permissioned/alderacentgroup/dragons/dragonsfeats.lst
+%%T%%/data/permissioned/alderacentgroup/dragons/dragonsskills.lst
+%%T%%/data/permissioned/alderacentgroup/dragons/dragonsspells.lst
+%%T%%/data/permissioned/alderacentgroup/dragons/dragonsweapprofs.lst
+%%T%%/data/permissioned/alderacentgroup/dragons/OGL.txt
+%%T%%/data/permissioned/alderacentgroup/dungeons/dungeons.pcc
+%%T%%/data/permissioned/alderacentgroup/dungeons/dungeonsclasses.lst
+%%T%%/data/permissioned/alderacentgroup/dungeons/dungeonsclassfeats.lst
+%%T%%/data/permissioned/alderacentgroup/dungeons/dungeonsequip.lst
+%%T%%/data/permissioned/alderacentgroup/dungeons/dungeonsequipwondrousitems.lst
+%%T%%/data/permissioned/alderacentgroup/dungeons/dungeonsfeats.lst
+%%T%%/data/permissioned/alderacentgroup/dungeons/dungeonsskills.lst
+%%T%%/data/permissioned/alderacentgroup/dungeons/dungeonsspells.lst
+%%T%%/data/permissioned/alderacentgroup/dungeons/OGL.txt
+%%T%%/data/permissioned/alderacentgroup/evil/evil.pcc
+%%T%%/data/permissioned/alderacentgroup/evil/evilclasses.lst
+%%T%%/data/permissioned/alderacentgroup/evil/evildeities.lst
+%%T%%/data/permissioned/alderacentgroup/evil/evildomains.lst
+%%T%%/data/permissioned/alderacentgroup/evil/evilequipartifacts.lst
+%%T%%/data/permissioned/alderacentgroup/evil/evilequipwondrousitems.lst
+%%T%%/data/permissioned/alderacentgroup/evil/evilfeats.lst
+%%T%%/data/permissioned/alderacentgroup/evil/evilraces.lst
+%%T%%/data/permissioned/alderacentgroup/evil/evilskills.lst
+%%T%%/data/permissioned/alderacentgroup/evil/evilspells.lst
+%%T%%/data/permissioned/alderacentgroup/evil/OGL.txt
+%%T%%/data/permissioned/alderacentgroup/undead/OGL.txt
+%%T%%/data/permissioned/alderacentgroup/undead/undead.pcc
+%%T%%/data/permissioned/alderacentgroup/undead/undeadclasses.lst
+%%T%%/data/permissioned/alderacentgroup/undead/undeaddeities.lst
+%%T%%/data/permissioned/alderacentgroup/undead/undeaddomains.lst
+%%T%%/data/permissioned/alderacentgroup/undead/undeadequip.lst
+%%T%%/data/permissioned/alderacentgroup/undead/undeadequipmods.lst
+%%T%%/data/permissioned/alderacentgroup/undead/undeadequippotionspoisons.lst
+%%T%%/data/permissioned/alderacentgroup/undead/undeadequiprings.lst
+%%T%%/data/permissioned/alderacentgroup/undead/undeadequiprodstaffwands.lst
+%%T%%/data/permissioned/alderacentgroup/undead/undeadequipwondrousitems.lst
+%%T%%/data/permissioned/alderacentgroup/undead/undeadfeats.lst
+%%T%%/data/permissioned/alderacentgroup/undead/undeadskills.lst
+%%T%%/data/permissioned/alderacentgroup/undead/undeadspells.lst
+%%T%%/data/permissioned/alderacentgroup/undead/undeadtemplates.lst
+%%T%%/data/permissioned/alderacentgroup/war/OGL.txt
+%%T%%/data/permissioned/alderacentgroup/war/war.pcc
+%%T%%/data/permissioned/alderacentgroup/war/warclasses.lst
+%%T%%/data/permissioned/alderacentgroup/war/wardeities.lst
+%%T%%/data/permissioned/alderacentgroup/war/wardomains.lst
+%%T%%/data/permissioned/alderacentgroup/war/warfeats.lst
+%%T%%/data/permissioned/alderacentgroup/war/warskills.lst
+%%T%%/data/permissioned/alderacentgroup/war/warspells.lst
+%%T%%/data/permissioned/atlasgames/penumbra/backdrops/backdrops.pcc
+%%T%%/data/permissioned/atlasgames/penumbra/backdrops/backdropsequip.lst
+%%T%%/data/permissioned/atlasgames/penumbra/backdrops/backdropsequipartifacts.lst
+%%T%%/data/permissioned/atlasgames/penumbra/backdrops/backdropsequippotionspoisons.lst
+%%T%%/data/permissioned/atlasgames/penumbra/backdrops/backdropsequipwondrousitems.lst
+%%T%%/data/permissioned/atlasgames/penumbra/backdrops/backdropsraces.lst
+%%T%%/data/permissioned/atlasgames/penumbra/backdrops/OGL.txt
+%%T%%/data/permissioned/atlasgames/penumbra/beyondtheveil/beyondtheveil.pcc
+%%T%%/data/permissioned/atlasgames/penumbra/beyondtheveil/beyondtheveilequipmods.lst
+%%T%%/data/permissioned/atlasgames/penumbra/beyondtheveil/beyondtheveilequippotionspoisons.lst
+%%T%%/data/permissioned/atlasgames/penumbra/beyondtheveil/beyondtheveilequipweapmeleespecific.lst
+%%T%%/data/permissioned/atlasgames/penumbra/beyondtheveil/beyondtheveilequipwondrousitems.lst
+%%T%%/data/permissioned/atlasgames/penumbra/beyondtheveil/beyondtheveilspells.lst
+%%T%%/data/permissioned/atlasgames/penumbra/beyondtheveil/beyondtheveiltemplates.lst
+%%T%%/data/permissioned/atlasgames/penumbra/beyondtheveil/OGL.txt
+%%T%%/data/permissioned/atlasgames/penumbra/thievesintheforest/OGL.txt
+%%T%%/data/permissioned/atlasgames/penumbra/thievesintheforest/thievesintheforest.pcc
+%%T%%/data/permissioned/atlasgames/penumbra/thievesintheforest/thievesintheforestequipwondrousitems.lst
+%%T%%/data/permissioned/atlasgames/penumbra/touchedbythegods/OGL.txt
+%%T%%/data/permissioned/atlasgames/penumbra/touchedbythegods/touchedgods.pcc
+%%T%%/data/permissioned/atlasgames/penumbra/touchedbythegods/touchedgodsdeities.lst
+%%T%%/data/permissioned/atlasgames/penumbra/touchedbythegods/touchedgodsdomains.lst
+%%T%%/data/permissioned/atlasgames/penumbra/touchedbythegods/touchedgodsequipwondrousitems.lst
+%%T%%/data/permissioned/atlasgames/penumbra/touchedbythegods/touchedgodsfeats.lst
+%%T%%/data/permissioned/atlasgames/penumbra/touchedbythegods/touchedgodsskills.lst
+%%T%%/data/permissioned/atlasgames/penumbra/touchedbythegods/touchedgodsspells.lst
+%%T%%/data/permissioned/aurand20/History.txt
+%%T%%/data/permissioned/aurand20/ReadMe-aurand20.txt
+%%T%%/data/permissioned/aurand20/apothecarynotes/apothecary.pcc
+%%T%%/data/permissioned/aurand20/apothecarynotes/apothecaryequip.lst
+%%T%%/data/permissioned/aurand20/apothecarynotes/apothecaryequippotionspoisons.lst
+%%T%%/data/permissioned/aurand20/apothecarynotes/OGL.txt
+%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardian.pcc
+%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardianbiosettings.lst
+%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardiandeities.lst
+%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardianequip.lst
+%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardianequipammo.lst
+%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardianequiparmorshields.lst
+%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardianequippotionspoisons.lst
+%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardianequiprings.lst
+%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardianequipspecific.lst
+%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardianequipweapmelee.lst
+%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardianequipwondrousitems.lst
+%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardianraces.lst
+%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardianskills.lst
+%%T%%/data/permissioned/aurand20/darkawakeningsguardian/guardianspells.lst
+%%T%%/data/permissioned/avalanchepress/jadeandsteel/jadesteel.pcc
+%%T%%/data/permissioned/avalanchepress/jadeandsteel/jadesteelclasses.lst
+%%T%%/data/permissioned/avalanchepress/jadeandsteel/jadesteelequipweapmelee.lst
+%%T%%/data/permissioned/avalanchepress/jadeandsteel/jadesteelfeats.lst
+%%T%%/data/permissioned/avalanchepress/jadeandsteel/OGL.txt
+%%T%%/data/permissioned/citizengames/sidewinder/sidewinder/OGL.txt
+%%T%%/data/permissioned/citizengames/sidewinder/sidewinder/PERMISSION
+%%T%%/data/permissioned/citizengames/sidewinder/sidewinder/sidewinder.pcc
+%%T%%/data/permissioned/citizengames/sidewinder/sidewinder/sidewinderclasses.lst
+%%T%%/data/permissioned/citizengames/sidewinder/sidewinder/sidewinderclassfeats.lst
+%%T%%/data/permissioned/citizengames/sidewinder/sidewinder/sidewinderequip.lst
+%%T%%/data/permissioned/citizengames/sidewinder/sidewinder/sidewinderequipcoins.lst
+%%T%%/data/permissioned/citizengames/sidewinder/sidewinder/sidewinderequipweapammo.lst
+%%T%%/data/permissioned/citizengames/sidewinder/sidewinder/sidewinderequipweapmelee.lst
+%%T%%/data/permissioned/citizengames/sidewinder/sidewinder/sidewinderequipweapranged.lst
+%%T%%/data/permissioned/citizengames/sidewinder/sidewinder/sidewinderfeats.lst
+%%T%%/data/permissioned/citizengames/sidewinder/sidewinder/sidewinderlanguages.lst
+%%T%%/data/permissioned/citizengames/sidewinder/sidewinder/sidewinderraces.lst
+%%T%%/data/permissioned/citizengames/sidewinder/sidewinder/sidewinderskills.lst
+%%T%%/data/permissioned/citizengames/sidewinder/sidewinder/sidewinderweapprofs.lst
+%%T%%/data/permissioned/citizengames/sidewinder/sidewinder/todo.txt
+%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/OGL.txt
+%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraft.pcc
+%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftequiparmorshield.lst
+%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftequipfamiliars.lst
+%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftequippotionspoisons.lst
+%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftequiprings.lst
+%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftequiprodstaffwand.lst
+%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftequipweapmelee.lst
+%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftequipwondrousitems.lst
+%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftfeats.lst
+%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/spellsandspellcraft/spellsspellcraftspells.lst
+%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/OGL.txt
+%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreach.pcc
+%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachclasses.lst
+%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachdomains.lst
+%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachequip.lst
+%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachequippotionspoisons.lst
+%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachequiprings.lst
+%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachequipweapmelee.lst
+%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachequipwondrousitems.lst
+%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachfeats.lst
+%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachskills.lst
+%%T%%/data/permissioned/fantasyflightgames/legendsandlairs/trapsandtreachery/traptreachspells.lst
+%%T%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcana.pcc
+%%T%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanaclasses.lst
+%%T%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanadeities.lst
+%%T%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanadomains.lst
+%%T%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanaequip.lst
+%%T%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanaequiprings.lst
+%%T%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanaequipwondrousitems.lst
+%%T%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanafeats.lst
+%%T%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanaspells.lst
+%%T%%/data/permissioned/greenronin/arcanasocietiesofmagic/arcanatemplates.lst
+%%T%%/data/permissioned/greenronin/arcanasocietiesofmagic/OGL.txt
+%%T%%/data/permissioned/greenronin/arcanasocietiesofmagic/readme.txt
+%%T%%/data/permissioned/greenronin/arcanasocietiesofmagicweb/arcanaweb.pcc
+%%T%%/data/permissioned/greenronin/arcanasocietiesofmagicweb/arcanawebequipartifacts.lst
+%%T%%/data/permissioned/greenronin/arcanasocietiesofmagicweb/arcanawebequipweapmeleespecific.lst
+%%T%%/data/permissioned/greenronin/arcanasocietiesofmagicweb/arcanawebfeats.lst
+%%T%%/data/permissioned/greenronin/arcanasocietiesofmagicweb/arcanawebmonsters.lst
+%%T%%/data/permissioned/greenronin/arcanasocietiesofmagicweb/OGL.txt
+%%T%%/data/permissioned/greenronin/jadedragonsandhungryghosts/jade.pcc
+%%T%%/data/permissioned/greenronin/jadedragonsandhungryghosts/jadebiosettings.lst
+%%T%%/data/permissioned/greenronin/jadedragonsandhungryghosts/jadeequipweapmelee.lst
+%%T%%/data/permissioned/greenronin/jadedragonsandhungryghosts/jaderace.lst
+%%T%%/data/permissioned/greenronin/jadedragonsandhungryghosts/jadetemplate.lst
+%%T%%/data/permissioned/greenronin/jadedragonsandhungryghosts/jadeweapprofs.lst
+%%T%%/data/permissioned/greenronin/jadedragonsandhungryghosts/OGL.txt
+%%T%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2.pcc
+%%T%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2classes.lst
+%%T%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2deities.lst
+%%T%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2domain.lst
+%%T%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2equipmods.lst
+%%T%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2equiprings.lst
+%%T%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2equiprodstaffwands.lst
+%%T%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2equipwondrousitems.lst
+%%T%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2feats.lst
+%%T%%/data/permissioned/malhavocpress/bookofeldritchmight2/eldritch2spells.lst
+%%T%%/data/permissioned/malhavocpress/bookofeldritchmight2/OGL.txt
+%%T%%/data/permissioned/malhavocpress/demongodsfane/demonfane.pcc
+%%T%%/data/permissioned/malhavocpress/demongodsfane/demonfanedeities.lst
+%%T%%/data/permissioned/malhavocpress/demongodsfane/demonfaneequipartifacts.lst
+%%T%%/data/permissioned/malhavocpress/demongodsfane/demonfaneequipwondrousitems.lst
+%%T%%/data/permissioned/malhavocpress/demongodsfane/demonfanepermission.htm
+%%T%%/data/permissioned/malhavocpress/demongodsfane/OGL.txt
+%%T%%/data/permissioned/malhavocpress/ifthoughtscouldkill/OGL.txt
+%%T%%/data/permissioned/malhavocpress/ifthoughtscouldkill/readme.txt
+%%T%%/data/permissioned/malhavocpress/ifthoughtscouldkill/thoughtskill.pcc
+%%T%%/data/permissioned/malhavocpress/ifthoughtscouldkill/thoughtskillbiosettings.lst
+%%T%%/data/permissioned/malhavocpress/ifthoughtscouldkill/thoughtskillclasses.lst
+%%T%%/data/permissioned/malhavocpress/ifthoughtscouldkill/thoughtskillequip.lst
+%%T%%/data/permissioned/malhavocpress/ifthoughtscouldkill/thoughtskillfeats.lst
+%%T%%/data/permissioned/malhavocpress/ifthoughtscouldkill/thoughtskillpowers.lst
+%%T%%/data/permissioned/malhavocpress/ifthoughtscouldkill/thoughtskillraces.lst
+%%T%%/data/permissioned/malhavocpress/ifthoughtscouldkill/thoughtskilltemplates.lst
+%%T%%/data/permissioned/malhavocpress/malhavocweb/montecookweb.pcc
+%%T%%/data/permissioned/malhavocpress/malhavocweb/montecookwebclasses.lst
+%%T%%/data/permissioned/malhavocpress/malhavocweb/montecookwebclassfeats.lst
+%%T%%/data/permissioned/malhavocpress/malhavocweb/montecookwebfeats.lst
+%%T%%/data/permissioned/malhavocpress/malhavocweb/montecookwebraces.lst
+%%T%%/data/permissioned/malhavocpress/malhavocweb/montecookwebspells.lst
+%%T%%/data/permissioned/malhavocpress/malhavocweb/OGL.txt
+%%T%%/data/permissioned/malhavocpress/malhavocweb/Permission.txt
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/OGL.txt
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighter.pcc
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterclasses.lst
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterequip.lst
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterequiparmorshields.lst
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterequipweapammo.lst
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterequipweapblackpowder.lst
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterequipweapmelee.lst
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterequipweapranged.lst
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterfeats.lst
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterskills.lst
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialfighter/quintfighterweapprofs.lst
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/OGL.txt
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogue.pcc
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueclasses.lst
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequip.lst
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequiparmorshields.lst
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequipmods.lst
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequippotionspoisons.lst
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequipweapammo.lst
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequipweapammospecific.lst
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequipweapmelee.lst
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequipweapmeleespecific.lst
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequipweapranged.lst
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueequipwondrousitems.lst
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintroguefeats.lst
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueskills.lst
+%%T%%/data/permissioned/mongoose/collectorsseries/quintessentialrogue/quintrogueweapprofs.lst
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/chaosmagic/chaosmagic.pcc
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/chaosmagic/chaosmagicclasses.lst
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/chaosmagic/chaosmagicfeats.lst
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/chaosmagic/chaosmagicskills.lst
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/chaosmagic/OGL.txt
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonology.pcc
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonologyclasses.lst
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonologyequipartifacts.lst
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonologyequiprings.lst
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonologyequiprods.lst
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonologyequipweapmelee.lst
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonologyequipwondrousitems.lst
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonologyfeats.lst
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/demonology/demonologyskills.lst
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/demonology/OGL.txt
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancy.pcc
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancyclasses.lst
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancycompanionmods.lst
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancyequipartifacts.lst
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancyequiprings.lst
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancyequipweapmelee.lst
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancyequipwondrousitems.lst
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancyfeats.lst
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancyskills.lst
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancyspells.lst
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/necromancytemplates.lst
+%%T%%/data/permissioned/mongoose/encyclopediaarcane/necromancy/OGL.txt
+%%T%%/data/permissioned/mongoose/gladiatorsandsofdeath/gladiator.pcc
+%%T%%/data/permissioned/mongoose/gladiatorsandsofdeath/gladiatorclasses.lst
+%%T%%/data/permissioned/mongoose/gladiatorsandsofdeath/gladiatorequip.lst
+%%T%%/data/permissioned/mongoose/gladiatorsandsofdeath/gladiatorequipweapmelee.lst
+%%T%%/data/permissioned/mongoose/gladiatorsandsofdeath/gladiatorequipweapranged.lst
+%%T%%/data/permissioned/mongoose/gladiatorsandsofdeath/gladiatorfeats.lst
+%%T%%/data/permissioned/mongoose/gladiatorsandsofdeath/gladiatortemplates.lst
+%%T%%/data/permissioned/mongoose/gladiatorsandsofdeath/gladiatorweapprofs.lst
+%%T%%/data/permissioned/mongoose/gladiatorsandsofdeath/OGL.txt
+%%T%%/data/permissioned/mongoose/powerclasses/assassin/assassin.pcc
+%%T%%/data/permissioned/mongoose/powerclasses/assassin/assassinclasses.lst
+%%T%%/data/permissioned/mongoose/powerclasses/assassin/assassinequip.lst
+%%T%%/data/permissioned/mongoose/powerclasses/assassin/assassinequipmods.lst
+%%T%%/data/permissioned/mongoose/powerclasses/assassin/assassinequipweapammo.lst
+%%T%%/data/permissioned/mongoose/powerclasses/assassin/assassinequipweapmelee.lst
+%%T%%/data/permissioned/mongoose/powerclasses/assassin/assassinequipweapranged.lst
+%%T%%/data/permissioned/mongoose/powerclasses/assassin/assassinpotionspoisons.lst
+%%T%%/data/permissioned/mongoose/powerclasses/assassin/assassinweapprofs.lst
+%%T%%/data/permissioned/mongoose/powerclasses/assassin/OGL.txt
+%%T%%/data/permissioned/mongoose/slayersguides/amazons/OGL.txt
+%%T%%/data/permissioned/mongoose/slayersguides/amazons/slayersamazons.pcc
+%%T%%/data/permissioned/mongoose/slayersguides/amazons/slayersamazonsclasses.lst
+%%T%%/data/permissioned/mongoose/slayersguides/amazons/slayersamazonsdeities.lst
+%%T%%/data/permissioned/mongoose/slayersguides/amazons/slayersamazonsdomains.lst
+%%T%%/data/permissioned/mongoose/slayersguides/amazons/slayersamazonsspells.lst
+%%T%%/data/permissioned/mongoose/slayersguides/centaurs/OGL.txt
+%%T%%/data/permissioned/mongoose/slayersguides/centaurs/slayerscent.pcc
+%%T%%/data/permissioned/mongoose/slayersguides/centaurs/slayerscentbiosettings.lst
+%%T%%/data/permissioned/mongoose/slayersguides/centaurs/slayerscentclasses.lst
+%%T%%/data/permissioned/mongoose/slayersguides/centaurs/slayerscentraces.lst
+%%T%%/data/permissioned/mongoose/slayersguides/gnolls/OGL.txt
+%%T%%/data/permissioned/mongoose/slayersguides/gnolls/slayersgnoll.pcc
+%%T%%/data/permissioned/mongoose/slayersguides/gnolls/slayersgnollbiosettings.lst
+%%T%%/data/permissioned/mongoose/slayersguides/gnolls/slayersgnolllanguages.lst
+%%T%%/data/permissioned/mongoose/slayersguides/gnolls/slayersgnollraces.lst
+%%T%%/data/permissioned/mongoose/slayersguides/hobgoblins/OGL.txt
+%%T%%/data/permissioned/mongoose/slayersguides/hobgoblins/slayershobgob.pcc
+%%T%%/data/permissioned/mongoose/slayersguides/hobgoblins/slayershobgobbiosettings.lst
+%%T%%/data/permissioned/mongoose/slayersguides/hobgoblins/slayershobgoblanguages.lst
+%%T%%/data/permissioned/mongoose/slayersguides/hobgoblins/slayershobgobraces.lst
+%%T%%/data/permissioned/mongoose/slayersguides/hobgoblins/slayershobgobspells.lst
+%%T%%/data/permissioned/mongoose/slayersguides/troglodytes/OGL.txt
+%%T%%/data/permissioned/mongoose/slayersguides/troglodytes/slayerstroglodytes.pcc
+%%T%%/data/permissioned/mongoose/slayersguides/troglodytes/slayerstroglodytesclasses.lst
+%%T%%/data/permissioned/mongoose/slayersguides/troglodytes/slayerstroglodytesdeities.lst
+%%T%%/data/permissioned/mongoose/slayersguides/troglodytes/slayerstroglodytesspells.lst
+%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/OGL.txt
+%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/seablood.pcc
+%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodclasses.lst
+%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodequip.lst
+%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodequiprodstaffwands.lst
+%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodequipweapammo.lst
+%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodequipweapmelee.lst
+%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodequipweapranged.lst
+%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodequipwondrousitems.lst
+%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodfeats.lst
+%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodskills.lst
+%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodspells.lst
+%%T%%/data/permissioned/mongoose/travellerstales/seasofblood/seabloodweapprofs.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/darwinworld.pcc
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/artifactsoa.pcc
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/artifactsoaequip.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/artifactsoaequiparmorshields.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/artifactsoaequipweapammo.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/artifactsoaequipweapmelee.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/artifactsoaequipweapranged.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/artifactsoafeats.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/artifactsoaweapprofs.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/artifacts/OGL.txt
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/denizens/denizenste.pcc
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/denizens/denizensteclasses.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/denizens/denizensteequip.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/denizens/denizensteequipweapmelee.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/denizens/OGL.txt
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/OGL.txt
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrules.pcc
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesbiosettings.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesclasses.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesequip.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesequiparmorshields.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesequipcoins.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesequipweapammo.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesequipweapmelee.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesequipweapranged.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesfeats.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldruleslanguage.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesraces.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesskills.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulestemplates.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulestemplatesdefects.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulestemplatesmutations.lst
+%%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld/worldrules/worldrulesweapprofs.lst
+%%T%%/data/permissioned/sovereignpress/sovereignstone/OGL.txt
+%%T%%/data/permissioned/sovereignpress/sovereignstone/sovereign.pcc
+%%T%%/data/permissioned/sovereignpress/sovereignstone/sovereignarmormasterwork.lst
+%%T%%/data/permissioned/sovereignpress/sovereignstone/sovereignbiosettings.lst
+%%T%%/data/permissioned/sovereignpress/sovereignstone/sovereignclasses.lst
+%%T%%/data/permissioned/sovereignpress/sovereignstone/sovereignequip.lst
+%%T%%/data/permissioned/sovereignpress/sovereignstone/sovereignequiparmorshields.lst
+%%T%%/data/permissioned/sovereignpress/sovereignstone/sovereignequipcoins.lst
+%%T%%/data/permissioned/sovereignpress/sovereignstone/sovereignequipmods.lst
+%%T%%/data/permissioned/sovereignpress/sovereignstone/sovereignequipweapammo.lst
+%%T%%/data/permissioned/sovereignpress/sovereignstone/sovereignequipweapmelee.lst
+%%T%%/data/permissioned/sovereignpress/sovereignstone/sovereignequipweapranged.lst
+%%T%%/data/permissioned/sovereignpress/sovereignstone/sovereignfeats.lst
+%%T%%/data/permissioned/sovereignpress/sovereignstone/sovereignfeatshidden.lst
+%%T%%/data/permissioned/sovereignpress/sovereignstone/sovereignlanguages.lst
+%%T%%/data/permissioned/sovereignpress/sovereignstone/sovereignmageclasses.lst
+%%T%%/data/permissioned/sovereignpress/sovereignstone/sovereignmagicfeats.lst
+%%T%%/data/permissioned/sovereignpress/sovereignstone/sovereignphbclasses.lst
+%%T%%/data/permissioned/sovereignpress/sovereignstone/sovereignphbequip.lst
+%%T%%/data/permissioned/sovereignpress/sovereignstone/sovereignraces.lst
+%%T%%/data/permissioned/sovereignpress/sovereignstone/sovereignskills.lst
+%%T%%/data/permissioned/sovereignpress/sovereignstone/sovereignspells.lst
+%%T%%/data/permissioned/sovereignpress/sovereignstone/sovereigntemplates.lst
+%%T%%/data/permissioned/sovereignpress/sovereignstone/sovereignweapmasterwork.lst
+%%T%%/data/permissioned/sovereignpress/sovereignstone/sovereignweapprofs.lst
+%%T%%/data/permissioned/sovereignpress/sovereignstone/altpcc/sovereignstonecampaignoptional.pcc
+%%PORTDOCS%%%%DOCSDIR%%/greetings.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/navlistindex.html
+%%PORTDOCS%%%%DOCSDIR%%/navtokenindex.html
+%%PORTDOCS%%%%DOCSDIR%%/navtree.html
+%%PORTDOCS%%%%DOCSDIR%%/pcgen.css
+%%PORTDOCS%%%%DOCSDIR%%/acknowledgments/acknowledgments.html
+%%PORTDOCS%%%%DOCSDIR%%/acknowledgments/bod.html
+%%PORTDOCS%%%%DOCSDIR%%/acknowledgments/contributors.html
+%%PORTDOCS%%%%DOCSDIR%%/acknowledgments/gnulicense.html
+%%PORTDOCS%%%%DOCSDIR%%/acknowledgments/licenses.html
+%%PORTDOCS%%%%DOCSDIR%%/acknowledgments/ogllicense.html
+%%PORTDOCS%%%%DOCSDIR%%/acknowledgments/publishers.html
+%%PORTDOCS%%%%DOCSDIR%%/acknowledgments/skinlflicense.html
+%%PORTDOCS%%%%DOCSDIR%%/acknowledgments/sources.html
+%%PORTDOCS%%%%DOCSDIR%%/acknowledgments/standards.html
+%%PORTDOCS%%%%DOCSDIR%%/faqpages/faqcharcreateissues.html
+%%PORTDOCS%%%%DOCSDIR%%/faqpages/faqdatasources.html
+%%PORTDOCS%%%%DOCSDIR%%/faqpages/faqotherissues.html
+%%PORTDOCS%%%%DOCSDIR%%/faqpages/faqprintingissues.html
+%%PORTDOCS%%%%DOCSDIR%%/faqpages/faqsectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/faqpages/faqskinningpcgen.html
+%%PORTDOCS%%%%DOCSDIR%%/faqpages/faqstartupinstallissues.html
+%%PORTDOCS%%%%DOCSDIR%%/faqpages/faqsubmittingabugreport.html
+%%PORTDOCS%%%%DOCSDIR%%/faqpages/faqsubmittingafeaturerequest.html
+%%PORTDOCS%%%%DOCSDIR%%/faqpages/faqyahooandhelping.html
+%%PORTDOCS%%%%DOCSDIR%%/gmgen/characters.html
+%%PORTDOCS%%%%DOCSDIR%%/gmgen/dicebag.html
+%%PORTDOCS%%%%DOCSDIR%%/gmgen/encounter.html
+%%PORTDOCS%%%%DOCSDIR%%/gmgen/experience.html
+%%PORTDOCS%%%%DOCSDIR%%/gmgen/gmgen.html
+%%PORTDOCS%%%%DOCSDIR%%/gmgen/index.html
+%%PORTDOCS%%%%DOCSDIR%%/gmgen/initiative.html
+%%PORTDOCS%%%%DOCSDIR%%/gmgen/notes.html
+%%PORTDOCS%%%%DOCSDIR%%/gmgen/overlandtravel.html
+%%PORTDOCS%%%%DOCSDIR%%/gmgen/randomnames.html
+%%PORTDOCS%%%%DOCSDIR%%/gmgen/tempmenu.html
+%%PORTDOCS%%%%DOCSDIR%%/gmgen/gmgenimages/activate.png
+%%PORTDOCS%%%%DOCSDIR%%/gmgen/gmgenimages/characters.png
+%%PORTDOCS%%%%DOCSDIR%%/gmgen/gmgenimages/dicebag.png
+%%PORTDOCS%%%%DOCSDIR%%/gmgen/gmgenimages/encounter.png
+%%PORTDOCS%%%%DOCSDIR%%/gmgen/gmgenimages/experience.png
+%%PORTDOCS%%%%DOCSDIR%%/gmgen/gmgenimages/initiative.png
+%%PORTDOCS%%%%DOCSDIR%%/gmgen/gmgenimages/notes.png
+%%PORTDOCS%%%%DOCSDIR%%/gmgen/gmgenimages/overland.png
+%%PORTDOCS%%%%DOCSDIR%%/gmgen/gmgenimages/randomnames.png
+%%PORTDOCS%%%%DOCSDIR%%/installationpages/installationjava.html
+%%PORTDOCS%%%%DOCSDIR%%/installationpages/installationpcgen.html
+%%PORTDOCS%%%%DOCSDIR%%/installationpages/installationsectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/installationpages/upgradepcgen.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/listfilegamemodefiles.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/listfileglobaldatafiles.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/listfileimportanttoknow.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/listfileLSTstandards.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/listfileLSTwalkthrough.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/listfilesectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/listfilesystemfiles.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/listfiletagsbydatafile.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/listindex.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilesclasses.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilescompanionmodifiers.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilesdeities.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilesdomains.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilesequipment.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilesequipmentmodifiers.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilesfeats.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafileslanguages.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilespcc.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilesraces.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilesskills.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilesspells.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilesstartingkits.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilestags.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilestemplates.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilesweaponproficiencies.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/globalfilestagpages/globalfilesadd.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/globalfilestagpages/globalfilesbonus.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/globalfilestagpages/globalfileschoose.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/globalfilestagpages/globalfilesdefine.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/globalfilestagpages/globalfilesother.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/globalfilestagpages/globalfilesprexxx.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/systemfilestagpages/gamemodelevel.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/systemfilestagpages/gamemodeloadlist.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/systemfilestagpages/gamemodemiscinfolist.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/systemfilestagpages/gamemoderules.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/systemfilestagpages/gamemodestatsandcheckslist.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/systemfilestagpages/systemfilesbiosettingslist.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/systemfilestagpages/systemfilesbonusstackslist.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/systemfilestagpages/systemfilessizeadjustment.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/systemfilestagpages/systemfilesspecialability.html
+%%PORTDOCS%%%%DOCSDIR%%/listfilepages/systemfilestagpages/systemfilestraitslist.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/menusectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/menusectionheading.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/debug/debugoption.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/debug/debugoption.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/debug/debugoption1.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/file/fileaddkitoptions.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/file/fileaddkitoptions.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/file/fileaddkitoptions1.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/file/fileaddkitoptions2.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/file/fileaddkitoptions3.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/file/fileexportoptions.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/file/fileexportoptions.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/file/fileexportpdf.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/file/fileexportpdf.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/file/fileexportstandard.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/file/fileexportstandard.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/file/filepartyoptions.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/file/filepartyoptions.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/file/filesectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/file/filesectionheading.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/help/helpaboutpcgen.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/help/helpaboutpcgen.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/help/helpsectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/help/helpsectionheading.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/settingscampaignoption.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/settingscampaignoption.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/settingspreferencesoption.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/settingspreferencesoption.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/settingssectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/settingssectionheading.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancecolors.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancecolors.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancecolors1.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancecolors2.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancecolors3.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancedisplay.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancedisplay.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancelevelup.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancelevelup.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancelookandfeel.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancelookandfeel.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancesectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancesectionheading.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancetabs.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancetabs.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/character/characterabilityscoreoption.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/character/characterabilityscoreoption.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/character/characterhitpointsoption.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/character/characterhitpointsoption.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/character/characterhouserulesoption.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/character/characterhouserulesoption.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/character/charactermonstersoption.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/character/charactermonstersoption.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/character/characterpurchasemethodoption.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/character/characterpurchasemethodoption.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/character/charactersectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/character/charactersectionheading.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/pcgen/pcgenequipoption.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/pcgen/pcgenequipoption.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/pcgen/pcgenlanguage.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/pcgen/pcgenlanguage.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/pcgen/pcgenlocation.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/pcgen/pcgenlocation.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/pcgen/pcgenoutput.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/pcgen/pcgenoutput.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/pcgen/pcgensectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/pcgen/pcgensectionheading.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/pcgen/pcgensources.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/pcgen/pcgensources.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/toolsfiltercustom.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/toolsfiltercustom.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/toolsfilteredit.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/toolsfilteredit.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/toolsfilteropen.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/toolsfilteropen.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/toolsfilteroption.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/toolsfilteroption.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/toolslisteditors.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/toolslisteditors.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/toolssectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/toolssectionheading.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorabilitiestab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorabilitiestab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditoradvancedtab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditoradvancedtab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorbasetab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorbasetab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorlanguagestab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorlanguagestab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorlevelstab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorlevelstab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorlevelstab1.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorsectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorsectionheading.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorskillstab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorskillstab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorweaponstab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorweaponstab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditoradvancedtab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditoradvancedtab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorbasetab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorbasetab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditordomainstab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditordomainstab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorfollowerstab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorfollowerstab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorlanguagestab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorlanguagestab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorracestab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorracestab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorsectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorsectionheading.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorskillstab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorskillstab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorweaponstab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorweaponstab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/domain/domaineditoradvancedtab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/domain/domaineditoradvancedtab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/domain/domaineditorbasetab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/domain/domaineditorbasetab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/domain/domaineditorlanguagestab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/domain/domaineditorlanguagestab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/domain/domaineditorsectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/domain/domaineditorsectionheading.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/domain/domaineditorskillstab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/domain/domaineditorskillstab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/domain/domaineditorweaponstab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/domain/domaineditorweaponstab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/feat/featseditoradvancedtab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/feat/featseditoradvancedtab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/feat/featseditorbasetab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/feat/featseditorbasetab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/feat/featseditorlanguagestab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/feat/featseditorlanguagestab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/feat/featseditorsectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/feat/featseditorsectionheading.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/feat/featseditorskillstab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/feat/featseditorskillstab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/feat/featseditorweaponstab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/feat/featseditorweaponstab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/language/languageeditoradvancedtab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/language/languageeditoradvancedtab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/language/languageeditorbasetab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/language/languageeditorbasetab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/language/languageeditorsectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/language/languageeditorsectionheading.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditoradvancedtab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditoradvancedtab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditoragetab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditoragetab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorappearancetab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorappearancetab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorbasetab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorbasetab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorbonuslangtab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorbonuslangtab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorclassestab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorclassestab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorfeatstab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorfeatstab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorlanguagestab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorlanguagestab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditormovementtab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditormovementtab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditornaturalweaponstab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditornaturalweaponstab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorsectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorsectionheading.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorskillstab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorskillstab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditortemplatestab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditortemplatestab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorvirtualfeatstab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorvirtualfeatstab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorvisiontab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorvisiontab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorweaponstab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorweaponstab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditoradvancedtab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditoradvancedtab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorbasetab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorbasetab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorclassestab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorclassestab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorlanguagestab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorlanguagestab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorsectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorsectionheading.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorskillstab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorskillstab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorsynergytab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorsynergytab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorweaponstab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorweapontab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/source/sourceeditoradvancedtab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/source/sourceeditoradvancedtab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/source/sourceeditorbasetab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/source/sourceeditorbasetab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/source/sourceeditorfiletypetab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/source/sourceeditorfiletypetab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/source/sourceeditorsectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/source/sourceeditorsectionheading.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/spell/spelleditoradvancedtab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/spell/spelleditoradvancedtab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/spell/spelleditorbase2tab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/spell/spelleditorbase2tab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/spell/spelleditorbasetab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/spell/spelleditorbasetab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/spell/spelleditorclassestab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/spell/spelleditorclassestab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/spell/spelleditordomainstab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/spell/spelleditordomainstab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/spell/spelleditorsectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/spell/spelleditorsectionheading.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorabilitiestab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorabilitiestab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditoradvancedtab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditoradvancedtab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorbasetab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorbasetab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorbonuslangtab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorbonuslangtab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorclassestab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorclassestab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorfeatstab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorfeatstab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorlanguagestab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorlanguagestab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditormovementtab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditormovementtab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorsectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorsectionheading.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorskillstab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorskillstab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditortemplatestab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditortemplatestab.png
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorweaponstab.html
+%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorweaponstab.png
+%%PORTDOCS%%%%DOCSDIR%%/navtree/bullet.png
+%%PORTDOCS%%%%DOCSDIR%%/navtree/minus.png
+%%PORTDOCS%%%%DOCSDIR%%/navtree/navtree.css
+%%PORTDOCS%%%%DOCSDIR%%/navtree/navtree.js
+%%PORTDOCS%%%%DOCSDIR%%/navtree/plus.png
+%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/csheetexamplehtml.html
+%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/csheetexampleoutput.html
+%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/outputsheetsectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/outputsheetshtml.html
+%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/outputsheetspartyequip.html
+%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/outputsheetspdf.html
+%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/outputsheetstokensused.html
+%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/outputsheetstutorial.html
+%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/outputsheetsxslt.html
+%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/faqpages/faqdatasources.html
+%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/faqpages/faqstartupinstallissues.html
+%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/tokens/outputsheettokensability.html
+%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/tokens/outputsheettokensattack.html
+%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/tokens/outputsheettokensequip.html
+%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/tokens/outputsheettokensfeat-skill.html
+%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/tokens/outputsheettokensgeneral.html
+%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/tokens/outputsheettokensmisc.html
+%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/tokens/outputsheettokenssaves-hp.html
+%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/tokens/outputsheettokensspecialability.html
+%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/tokens/outputsheettokensspell.html
+%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/tokens/outputsheettokensweapon.html
+%%PORTDOCS%%%%DOCSDIR%%/systemimages/splashpcgen.gif
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/tabsectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/tabsectionheading.png
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/buttonhp.html
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/buttonhp.png
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/buttonrandomname.html
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/buttonrandomname.png
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/playerssectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabability.html
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabability.png
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabclasses.html
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabclasses.png
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabdescription.html
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabdescription.png
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabdomains.html
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabdomains.png
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabfeats.html
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabfeats.png
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabraces.html
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabraces.png
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabskills.html
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/inventory/inventoryequipping.html
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/inventory/inventorygear.html
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/inventory/inventorygear1.png
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/inventory/inventorygear2.png
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/inventory/inventorygear3.png
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/inventory/inventoryresources.html
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/inventory/inventorysectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/inventory/inventorytempbonus.html
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/inventory/inventorytempbonus.png
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabskills.png
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabspells.html
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabspells.png
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabsummary.html
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabsummary.png
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/source/buttoncustomise.html
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/source/buttoncustomise.png
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/source/sourcesectionheading.html
+%%PORTDOCS%%%%DOCSDIR%%/tabpages/source/tabsourcematerial.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/toolbarquickicons.html
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/toolbarquickicons.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew.html
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew01.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew02.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew03.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew04.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew05.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew06.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew07.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew08.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew09.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew10.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew11.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew12.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew13.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew14.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew15.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew16.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew17.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew18.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew19.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew20.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew21.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew22.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew23.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew24.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew25.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew26.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew27.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew28.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughgamemode.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughheadingstartup.html
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughloadcampaign.html
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughloadcampaign.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughprintnew.html
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughprintnew1.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughprintnew2.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughprintnew3.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughprintnew4.png
+%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughsectionheading.html
+%%T%%/lib/avalon.LICENSE.txt
+%%T%%/lib/batik.LICENSE.txt
+%%T%%/lib/fop.LICENSE.txt
+%%T%%/lib/jdom.LICENSE.txt
+%%T%%/lib/jep.LICENSE.txt
+%%T%%/lib/kunststoff.LICENSE.txt
+%%T%%/lib/mrjstubs.LICENSE.txt
 %%T%%/lib/readme.txt
-%%T%%/lib/jep-2.24.jar
+%%T%%/lib/skinlf.LICENSE.txt
+%%T%%/lib/skinlf.nanoxml.LICENSE.txt
+%%T%%/lib/skinlf.sixlegs.LICENSE.txt
+%%T%%/lib/xalan.LICENSE.txt
+%%T%%/lib/xerces.LICENSE.txt
+%%T%%/lib/xml-apis.README.txt
+%%T%%/lib/avalon-framework-cvs-20020806.jar
 %%T%%/lib/batik.jar
+%%T%%/lib/djep-2.24.jar
 %%T%%/lib/fop.jar
-%%T%%/lib/jformatter.jar
-%%T%%/lib/junit.jar
-%%T%%/lib/xalan.jar
-%%T%%/lib/xerces.jar
-%%T%%/lib/skinlf.jar
+%%T%%/lib/jdom.jar
+%%T%%/lib/jep-2.24.jar
 %%T%%/lib/kunststoff.jar
-%%T%%/lib/themes/cellshadedthemepack.zip
-%%T%%/lib/themes/toxicthemepack.zip
+%%T%%/lib/MRJ141Stubs.jar
+%%T%%/lib/RngPack-1.1a.jar
+%%T%%/lib/skinlf.jar
+%%T%%/lib/xalan-2.5.2.jar
+%%T%%/lib/xercesImpl-2.5.0.jar
+%%T%%/lib/xml-apis.jar
 %%T%%/lib/themes/aquathemepack.zip
 %%T%%/lib/themes/bbjthemepack.zip
 %%T%%/lib/themes/beosthemepack.zip
+%%T%%/lib/themes/cellshadedthemepack.zip
 %%T%%/lib/themes/macosthemepack.zip
 %%T%%/lib/themes/modernthemepack.zip
 %%T%%/lib/themes/themepack.zip
+%%T%%/lib/themes/toxicthemepack.zip
 %%T%%/lib/themes/whistlerthemepack.zip
 %%T%%/lib/themes/xplunathemepack.zip
-%%T%%/outputsheets/base.xml
-%%T%%/outputsheets/d20/fantasy/htmlxml/csheet_dnd_combined.htm
-%%T%%/outputsheets/d20/fantasy/htmlxml/csheet_dnd_compact.htm
-%%T%%/outputsheets/d20/fantasy/htmlxml/csheet_dnd_mmstatblock.htm
-%%T%%/outputsheets/d20/fantasy/htmlxml/csheet_dnd_OpenRPG.xml
-%%T%%/outputsheets/d20/fantasy/htmlxml/csheet_dnd_std.htm
-%%T%%/outputsheets/d20/fantasy/htmlxml/csheet_dnd_WotC_Statblock.htm
-%%T%%/outputsheets/d20/fantasy/htmlxml/eqsheet_dnd_consumables.htm
-%%T%%/outputsheets/d20/fantasy/htmlxml/eqsheet_dnd_std.htm
-%%T%%/outputsheets/d20/fantasy/htmlxml/psheet_dnd_std.htm
-%%T%%/outputsheets/d20/fantasy/pdf/csheet_dnd_descriptions.fo
-%%T%%/outputsheets/d20/fantasy/pdf/csheet_dnd_picture.fo
-%%T%%/outputsheets/d20/fantasy/pdf/csheet_dnd_spellbook.fo
-%%T%%/outputsheets/d20/fantasy/pdf/csheet_dnd_std.fo
-%%T%%/outputsheets/d20/fantasy/pdf/csheet_dnd_std.xslt
-%%T%%/outputsheets/d20/fantasy/text/csheet_plain.TXT
-%%T%%/outputsheets/d20/fantasy/text/placeholder.txt
-%%T%%/outputsheets/d20/historical/htmlxml/eqsheet_dnd_std.htm
-%%T%%/outputsheets/d20/historical/htmlxml/psheet_dnd_std.htm
-%%T%%/outputsheets/d20/historical/pdf/placeholder.txt
-%%T%%/outputsheets/d20/historical/text/placeholder.txt
-%%T%%/outputsheets/d20/horror/htmlxml/eqsheet_dnd_std.htm
-%%T%%/outputsheets/d20/horror/htmlxml/psheet_dnd_std.htm
-%%T%%/outputsheets/d20/horror/text/placeholder.txt
-%%T%%/outputsheets/d20/modern/htmlxml/csheet_modern_std.htm
-%%T%%/outputsheets/d20/modern/htmlxml/eqsheet_dnd_std.htm
-%%T%%/outputsheets/d20/modern/htmlxml/psheet_dnd_std.htm
-%%T%%/outputsheets/d20/modern/pdf/csheet_modern_std.xslt
-%%T%%/outputsheets/d20/modern/pdf/placeholder.txt
-%%T%%/outputsheets/d20/modern/text/placeholder.txt
-%%T%%/outputsheets/d20/sciencefiction/htmlxml/eqsheet_dnd_std.htm
-%%T%%/outputsheets/d20/sciencefiction/htmlxml/psheet_dnd_std.htm
-%%T%%/outputsheets/d20/sciencefiction/pdf/placeholder.txt
-%%T%%/outputsheets/d20/sciencefiction/text/placeholder.txt
-%%T%%/outputsheets/d20/western/htmlxml/csheetDeadlands.htm
-%%T%%/outputsheets/d20/western/htmlxml/eqsheet_dnd_std.htm
-%%T%%/outputsheets/d20/western/htmlxml/psheet_dnd_std.htm
-%%T%%/outputsheets/d20/western/pdf/placeholder.txt
-%%T%%/outputsheets/d20/western/text/placeholder.txt
-%%T%%/system/D20System.htm
-%%T%%/system/opengaminglicense.10a.txt
-%%T%%/system/paperInfo.lst
-%%T%%/system/pointbuymethods_system.lst
-%%T%%/system/schools.lst
-%%T%%/system/sizeAdjustment.lst
-%%T%%/system/tips.lst
-%%T%%/system/bio/biosettings.lst
-%%T%%/system/bio/locations.lst
-%%T%%/system/bio/traits.lst
-%%T%%/system/bio/names/Albion.nam
-%%T%%/system/bio/names/ALVER.NAM
-%%T%%/system/bio/names/Arabic.nam
-%%T%%/system/bio/names/cg_NAMES.nam
-%%T%%/system/bio/names/Deverry.nam
-%%T%%/system/bio/names/DVARGAR.NAM
-%%T%%/system/bio/names/Felana.nam
-%%T%%/system/bio/names/GALLER.NAM
-%%T%%/system/bio/names/Generic_NAMES.nam
-%%T%%/system/bio/names/gnome.nam
-%%T%%/system/bio/names/hispanic_NAMES.nam
-%%T%%/system/bio/names/HOBER.NAM
-%%T%%/system/bio/names/kerrel.nam
-%%T%%/system/bio/names/Mar_Draconic.nam
-%%T%%/system/bio/names/Mar_Knightly_NAMES.nam
-%%T%%/system/bio/names/Mar_NAMES.nam
-%%T%%/system/bio/names/Narn.nam
-%%T%%/system/bio/names/orc.nam
-%%T%%/system/bio/names/ReadMe.txt
-%%T%%/system/bio/names/rw_Anglo_Saxon_Female.nam
-%%T%%/system/bio/names/rw_Anglo_Saxon_Male.nam
-%%T%%/system/bio/names/rw_Anglo_Saxon_Latinized_Female.nam
-%%T%%/system/bio/names/rw_Anglo_Saxon_Latinized_Male.nam
-%%T%%/system/bio/names/rw_English_Late_Period_Female.nam
-%%T%%/system/bio/names/rw_English_Late_Period_Male.nam
-%%T%%/system/bio/names/rw_English_Middle_Period_Female.nam
-%%T%%/system/bio/names/rw_English_Middle_Period_Male.nam
-%%T%%/system/bio/names/rw_Flemish_NAMES.nam
-%%T%%/system/bio/names/rw_Frankish_Female.nam
-%%T%%/system/bio/names/rw_Frankish_Male.nam
-%%T%%/system/bio/names/rw_French_NAMES.nam
-%%T%%/system/bio/names/rw_German_Female.nam
-%%T%%/system/bio/names/rw_German_Male.nam
-%%T%%/system/bio/names/rw_Gothic_NAMES.nam
-%%T%%/system/bio/names/rw_Irish_Gaelic_Female.nam
-%%T%%/system/bio/names/rw_Irish_Gaelic_Male.nam
-%%T%%/system/bio/names/rw_Italian_Renaissance_Female.nam
-%%T%%/system/bio/names/rw_Italian_Renaissance_Male.nam
-%%T%%/system/bio/names/rw_Persian_NAMES.nam
-%%T%%/system/bio/names/rw_Pictish_Classical_NAMES.nam
-%%T%%/system/bio/names/rw_Pictish_Medieval_Male.nam
-%%T%%/system/bio/names/rw_Roman_Female.nam
-%%T%%/system/bio/names/rw_Roman_Male.nam
-%%T%%/system/bio/names/rw_Russian_Female.nam
-%%T%%/system/bio/names/rw_Russian_Male.nam
-%%T%%/system/bio/names/rw_Scottish_Gaelic_Female.nam
-%%T%%/system/bio/names/rw_Scottish_Gaelic_Male.nam
-%%T%%/system/bio/names/sparhawk.nam
-%%T%%/system/gameModes/Deadlands.lst
-%%T%%/system/gameModes/Sidewinder.lst
-%%T%%/system/gameModes/SovereignStoneD20.lst
-%%T%%/system/gameModes/Spycraft.lst
-%%T%%/system/gameModes/WeirdWars.lst
-%%T%%/system/gameModes/3e/level.lst
-%%T%%/system/gameModes/3e/load.lst
-%%T%%/system/gameModes/3e/miscinfo.lst
-%%T%%/system/gameModes/3e/statsandchecks.lst
-%%T%%/system/gameModes/Modern/level.lst
-%%T%%/system/gameModes/Modern/load.lst
-%%T%%/system/gameModes/Modern/miscinfo.lst
-%%T%%/system/gameModes/Modern/statsandchecks.lst
-%%T%%/system/Languages/LanguageBundle.properties
-%%T%%/system/Languages/LanguageBundle_en_US.properties
-%%T%%/system/outputFilters/fo.lst
-%%T%%/system/outputFilters/htm.lst
-%%T%%/system/outputFilters/xml.lst
-%%T%%/system/specials/bonusstacks.lst
-%%T%%/system/specials/equipmentslots.lst
-%%T%%/system/specials/specials.lst
-%%T%%/pcgen.jar
-%%T%%/pcgen.sh
-%%T%%/filepaths.ini
-bin/pcgen.sh
 @dirrm %%T%%/system/specials
 @dirrm %%T%%/system/outputFilters
 @dirrm %%T%%/system/gameModes/Modern
 @dirrm %%T%%/system/gameModes/3e
+@dirrm %%T%%/system/gameModes/35e
 @dirrm %%T%%/system/gameModes
 @dirrm %%T%%/system/bio/names
 @dirrm %%T%%/system/bio
 @dirrm %%T%%/system/Languages
-@dirrm %%T%%/system/
+@dirrm %%T%%/system
+@dirrm %%T%%/plugins/Random Names
+@dirrm %%T%%/plugins/Overland Travel/travel_methods
+@dirrm %%T%%/plugins/Overland Travel/rnbprice
+@dirrm %%T%%/plugins/Overland Travel
+@dirrm %%T%%/plugins/Notes
+@dirrm %%T%%/plugins/Initiative
+@dirrm %%T%%/plugins/Experience/experience_tables
+@dirrm %%T%%/plugins/Experience
+@dirrm %%T%%/plugins/Encounter/encounter_tables/environments
+@dirrm %%T%%/plugins/Encounter/encounter_tables
+@dirrm %%T%%/plugins/Encounter
+@dirrm %%T%%/plugins
 @dirrm %%T%%/outputsheets/d20/western/text
 @dirrm %%T%%/outputsheets/d20/western/pdf
 @dirrm %%T%%/outputsheets/d20/western/htmlxml
@@ -406,9 +1423,49 @@ bin/pcgen.sh
 @dirrm %%T%%/outputsheets/d20/fantasy/htmlxml
 @dirrm %%T%%/outputsheets/d20/fantasy
 @dirrm %%T%%/outputsheets/d20
-@dirrm %%T%%/outputsheets/
+@dirrm %%T%%/outputsheets
 @dirrm %%T%%/lib/themes
-@dirrm %%T%%/lib/
+@dirrm %%T%%/lib/javancss
+@dirrm %%T%%/lib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/walkthroughpages
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tabpages/source
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tabpages/players/inventory
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tabpages/players
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/tabpages
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/systemimages
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/outputsheetpages/tokens
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/outputsheetpages/faqpages
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/outputsheetpages
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/navtree
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/tools/template
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/tools/spell
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/tools/source
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/tools/skill
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/tools/race
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/tools/language
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/tools/feat
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/tools/domain
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/tools/deity
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/tools/class
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/tools
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/settings/pcgen
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/settings/character
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/settings/appearance
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/settings
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/help
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/file
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/debug
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/listfilepages/systemfilestagpages
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/listfilepages/globalfilestagpages
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/listfilepages/datafilestagpages
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/listfilepages
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/installationpages
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/gmgen/gmgenimages
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/gmgen
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/faqpages
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/acknowledgments
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%T%%/data/permissioned/sovereignpress/sovereignstone/altpcc
 @dirrm %%T%%/data/permissioned/sovereignpress/sovereignstone
 @dirrm %%T%%/data/permissioned/sovereignpress
@@ -418,13 +1475,6 @@ bin/pcgen.sh
 @dirrm %%T%%/data/permissioned/rpgobjects/darwinsworld/darwinsworld
 @dirrm %%T%%/data/permissioned/rpgobjects/darwinsworld
 @dirrm %%T%%/data/permissioned/rpgobjects
-@dirrm %%T%%/data/permissioned/pinnacleentertainment/deadlands/thewayofthehuckster
-@dirrm %%T%%/data/permissioned/pinnacleentertainment/deadlands/thewayofthegun
-@dirrm %%T%%/data/permissioned/pinnacleentertainment/deadlands/horrorsotheweirdwest
-@dirrm %%T%%/data/permissioned/pinnacleentertainment/deadlands/deadlandsweb
-@dirrm %%T%%/data/permissioned/pinnacleentertainment/deadlands/deadlandsd20
-@dirrm %%T%%/data/permissioned/pinnacleentertainment/deadlands
-@dirrm %%T%%/data/permissioned/pinnacleentertainment
 @dirrm %%T%%/data/permissioned/mongoose/travellerstales/seasofblood
 @dirrm %%T%%/data/permissioned/mongoose/travellerstales
 @dirrm %%T%%/data/permissioned/mongoose/slayersguides/troglodytes
@@ -481,10 +1531,15 @@ bin/pcgen.sh
 @dirrm %%T%%/data/d20ogl/swordandsorcerystudios/scarredlands/relicsrituals
 @dirrm %%T%%/data/d20ogl/swordandsorcerystudios/scarredlands
 @dirrm %%T%%/data/d20ogl/swordandsorcerystudios
+@dirrm %%T%%/data/d20ogl/srd35/altpcc
+@dirrm %%T%%/data/d20ogl/srd35
 @dirrm %%T%%/data/d20ogl/srd/altpcc
 @dirrm %%T%%/data/d20ogl/srd
+@dirrm %%T%%/data/d20ogl/pandaheadproductions/xcrawl
+@dirrm %%T%%/data/d20ogl/pandaheadproductions
 @dirrm %%T%%/data/d20ogl/msrd/altpcc
 @dirrm %%T%%/data/d20ogl/msrd
+@dirrm %%T%%/data/d20ogl/malhavocpress/bookofhallowedmight
 @dirrm %%T%%/data/d20ogl/malhavocpress/bookofeldritchmight
 @dirrm %%T%%/data/d20ogl/malhavocpress
 @dirrm %%T%%/data/d20ogl/fantasyflightgames/legendsandlairs/mythicraces
@@ -493,6 +1548,8 @@ bin/pcgen.sh
 @dirrm %%T%%/data/d20ogl/fantasyflightgames/dragonstar
 @dirrm %%T%%/data/d20ogl/fantasyflightgames
 @dirrm %%T%%/data/d20ogl/fantasycommunitycouncil/netbookofspellsmagic
+@dirrm %%T%%/data/d20ogl/fantasycommunitycouncil/netbook/magical_treasures
+@dirrm %%T%%/data/d20ogl/fantasycommunitycouncil/netbook
 @dirrm %%T%%/data/d20ogl/fantasycommunitycouncil
 @dirrm %%T%%/data/d20ogl/creativemountaingames/openspellscollection/variation2
 @dirrm %%T%%/data/d20ogl/creativemountaingames/openspellscollection/variation1
@@ -506,442 +1563,14 @@ bin/pcgen.sh
 @dirrm %%T%%/data/d20ogl/battlefieldpress/cityscape/cityscape
 @dirrm %%T%%/data/d20ogl/battlefieldpress/cityscape
 @dirrm %%T%%/data/d20ogl/battlefieldpress
+@dirrm %%T%%/data/d20ogl/bastionpress/oathbound/altpcc
+@dirrm %%T%%/data/d20ogl/bastionpress/oathbound
 @dirrm %%T%%/data/d20ogl/bastionpress/alchemyherbalists
 @dirrm %%T%%/data/d20ogl/bastionpress
 @dirrm %%T%%/data/d20ogl/avalanchepress/blackflags
 @dirrm %%T%%/data/d20ogl/avalanchepress
 @dirrm %%T%%/data/d20ogl
 @dirrm %%T%%/data/customsources
-@dirrm %%T%%/data/
-@dirrm %%T%%/characters/
+@dirrm %%T%%/data
+@dirrm %%T%%/characters
 @dirrm %%T%%
-%%PORTDOCS%%%%DOCSDIR%%/greetings.htm
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/navtree.html
-%%PORTDOCS%%%%DOCSDIR%%/pcgen.css
-%%PORTDOCS%%%%DOCSDIR%%/faqpages/faqcharcreateissues.htm
-%%PORTDOCS%%%%DOCSDIR%%/faqpages/faqotherissues.htm
-%%PORTDOCS%%%%DOCSDIR%%/faqpages/faqprintingissues.htm
-%%PORTDOCS%%%%DOCSDIR%%/faqpages/faqskinningpcgen.htm
-%%PORTDOCS%%%%DOCSDIR%%/faqpages/faqstartupinstallissues.htm
-%%PORTDOCS%%%%DOCSDIR%%/faqpages/faqsubmittingabugreport.htm
-%%PORTDOCS%%%%DOCSDIR%%/faqpages/faqsubmittingafeaturerequest.htm
-%%PORTDOCS%%%%DOCSDIR%%/faqpages/faqyahooandhelping.htm
-%%PORTDOCS%%%%DOCSDIR%%/faqpages/faq_sectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/installationpages/installationjava.htm
-%%PORTDOCS%%%%DOCSDIR%%/installationpages/installationpcgen.htm
-%%PORTDOCS%%%%DOCSDIR%%/installationpages/installation_sectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/listfileglobaldatafiles.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/listfileimportanttoknow.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/listfileLSTstandards.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/listfileLSTwalkthrough.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/listfilesectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/listfilesystemfiles.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/listfiletagsbydatafile.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilesclasses.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilescompanionmodifiers.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilesdeities.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilesdomains.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilesequipment.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilesequipmentmodifiers.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilesfeats.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafileslanguages.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilespcc.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilesraces.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilesskills.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilesspells.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilesstartingkits.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilestags.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilestemplates.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/datafilestagpages/datafilesweaponproficiencies.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/globalfilestagpages/globalfilesadd.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/globalfilestagpages/globalfilesbonus.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/globalfilestagpages/globalfileschoose.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/globalfilestagpages/globalfilesdefine.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/globalfilestagpages/globalfilesother.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/globalfilestagpages/globalfilesprexxx.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/systemfilestagpages/gamemodeloadlist.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/systemfilestagpages/gamemodemiscinfolist.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/systemfilestagpages/gamemodestatsandcheckslist.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/systemfilestagpages/systemfilesbiosettingslist.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/systemfilestagpages/systemfilesbonusstackslist.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/systemfilestagpages/systemfilessizeadjustment.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/systemfilestagpages/systemfilesspecialability.htm
-%%PORTDOCS%%%%DOCSDIR%%/listfilepages/systemfilestagpages/systemfilestraitslist.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/menu_sectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/menu_sectionheading.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/debug/debugoption.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/debug/debugoption.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/debug/debugoption1.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/file/fileaddkitoptions.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/file/fileaddkitoptions.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/file/fileaddkitoptions1.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/file/fileaddkitoptions2.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/file/fileaddkitoptions3.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/file/fileexportoptions.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/file/fileexportoptions.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/file/fileexportpdf.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/file/fileexportpdf.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/file/fileexportstandard.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/file/fileexportstandard.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/file/filepartyoptions.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/file/filepartyoptions.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/file/file_sectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/file/file_sectionheading.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/help/helpaboutpcgen.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/help/helpaboutpcgen.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/help/help_sectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/help/help_sectionheading.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/settingscampaignoption.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/settingscampaignoption.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/settingspreferencesoption.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/settingspreferencesoption.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/settings_sectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/settings_sectionheading.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancecolors.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancecolors.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancecolors1.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancecolors2.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancecolors3.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancedisplay.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancedisplay.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancelevelup.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancelevelup.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancelookandfeel.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancelookandfeel.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancetabs.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearancetabs.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearance_sectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/appearance/appearance_sectionheading.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/character/characterabilityscoreoption.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/character/characterabilityscoreoption.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/character/characterhitpointsoption.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/character/characterhitpointsoption.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/character/characterhouserulesoption.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/character/characterhouserulesoption.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/character/charactermonstersoption.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/character/charactermonstersoption.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/character/characterpurchasemethodoption.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/character/characterpurchasemethodoption.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/character/character_sectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/character/character_sectionheading.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/pcgen/pcgenequipoption.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/pcgen/pcgenequipoption.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/pcgen/pcgenlanguage.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/pcgen/pcgenlanguage.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/pcgen/pcgenlocation.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/pcgen/pcgenlocation.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/pcgen/pcgenoutput.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/pcgen/pcgenoutput.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/pcgen/pcgensources.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/pcgen/pcgensources.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/pcgen/pcgen_sectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/settings/pcgen/pcgen_sectionheading.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/toolsfiltercustom.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/toolsfiltercustom.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/toolsfilteredit.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/toolsfilteredit.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/toolsfilteropen.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/toolsfilteropen.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/toolsfilteroption.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/toolsfilteroption.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/toolslisteditors.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/toolslisteditors.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/tools_sectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/tools_sectionheading.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorabilitiestab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorabilitiestab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditoradvancedtab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditoradvancedtab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorbasetab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorbasetab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorlanguagestab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorlanguagestab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorlevelstab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorlevelstab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorlevelstab1.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorskillstab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorskillstab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorweaponstab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditorweaponstab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditor_sectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/class/classeditor_sectionheading.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditoradvancedtab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditoradvancedtab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorbasetab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorbasetab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditordomainstab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditordomainstab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorfollowerstab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorfollowerstab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorlanguagestab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorlanguagestab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorracestab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorracestab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorskillstab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorskillstab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorweaponstab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditorweaponstab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditor_sectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/deity/deityeditor_sectionheading.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/domain/domaineditoradvancedtab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/domain/domaineditoradvancedtab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/domain/domaineditorbasetab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/domain/domaineditorbasetab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/domain/domaineditorlanguagestab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/domain/domaineditorlanguagestab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/domain/domaineditorskillstab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/domain/domaineditorskillstab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/domain/domaineditorweaponstab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/domain/domaineditorweaponstab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/domain/domaineditor_sectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/domain/domaineditor_sectionheading.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/feat/featseditoradvancedtab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/feat/featseditoradvancedtab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/feat/featseditorbasetab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/feat/featseditorbasetab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/feat/featseditorlanguagestab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/feat/featseditorlanguagestab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/feat/featseditorskillstab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/feat/featseditorskillstab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/feat/featseditorweaponstab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/feat/featseditorweaponstab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/feat/featseditor_sectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/feat/featseditor_sectionheading.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/language/languageeditoradvancedtab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/language/languageeditoradvancedtab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/language/languageeditorbasetab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/language/languageeditorbasetab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/language/languageeditor_sectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/language/languageeditor_sectionheading.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditoradvancedtab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditoradvancedtab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditoragetab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditoragetab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorappearancetab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorappearancetab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorbasetab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorbasetab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorbonuslangtab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorbonuslangtab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorclassestab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorclassestab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorfeatstab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorfeatstab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorlanguagestab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorlanguagestab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditormovementtab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditormovementtab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditornaturalweaponstab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditornaturalweaponstab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorskillstab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorskillstab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditortemplatestab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditortemplatestab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorvirtualfeatstab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorvirtualfeatstab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorvisiontab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorvisiontab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorweaponstab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditorweaponstab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditor_sectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/race/raceeditor_sectionheading.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditoradvancedtab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditoradvancedtab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorbasetab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorbasetab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorclassestab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorclassestab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorlanguagestab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorlanguagestab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorskillstab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorskillstab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorsynergytab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorsynergytab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorweaponstab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditorweapontab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditor_sectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/skill/skilleditor_sectionheading.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/source/sourceeditoradvancedtab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/source/sourceeditoradvancedtab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/source/sourceeditorbasetab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/source/sourceeditorbasetab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/source/sourceeditorfiletypetab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/source/sourceeditorfiletypetab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/source/sourceeditor_sectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/source/sourceeditor_sectionheading.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/spell/spelleditoradvancedtab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/spell/spelleditoradvancedtab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/spell/spelleditorbase2tab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/spell/spelleditorbase2tab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/spell/spelleditorbasetab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/spell/spelleditorbasetab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/spell/spelleditorclassestab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/spell/spelleditorclassestab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/spell/spelleditordomainstab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/spell/spelleditordomainstab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/spell/spelleditor_sectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/spell/spelleditor_sectionheading.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorabilitiestab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorabilitiestab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditoradvancedtab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditoradvancedtab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorbasetab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorbasetab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorbonuslangtab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorbonuslangtab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorclassestab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorclassestab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorfeatstab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorfeatstab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorlanguagestab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorlanguagestab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditormovementtab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditormovementtab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorskillstab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorskillstab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditortemplatestab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditortemplatestab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorweaponstab.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditorweaponstab.png
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditor_sectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/menupages/tools/template/templateeditor_sectionheading.png
-%%PORTDOCS%%%%DOCSDIR%%/navtree/bullet.png
-%%PORTDOCS%%%%DOCSDIR%%/navtree/minus.png
-%%PORTDOCS%%%%DOCSDIR%%/navtree/navtree.css
-%%PORTDOCS%%%%DOCSDIR%%/navtree/navtree.js
-%%PORTDOCS%%%%DOCSDIR%%/navtree/plus.png
-%%PORTDOCS%%%%DOCSDIR%%/navtree/splashpcgen.png
-%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/csheetexamplehtml.htm
-%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/csheetexampleoutput.htm
-%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/outputsheetsectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/outputsheetshtml.htm
-%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/outputsheetspartyequip.htm
-%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/outputsheetspdf.htm
-%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/outputsheetstokensused.htm
-%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/outputsheetstutorial.htm
-%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/tokens/outputsheettokensability.htm
-%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/tokens/outputsheettokenseqset.htm
-%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/tokens/outputsheettokensequip.htm
-%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/tokens/outputsheettokensfeat-skill.htm
-%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/tokens/outputsheettokensgeneral.htm
-%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/tokens/outputsheettokensmisc.htm
-%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/tokens/outputsheettokenssaves-hp.htm
-%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/tokens/outputsheettokensspecialability.htm
-%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/tokens/outputsheettokensspell.htm
-%%PORTDOCS%%%%DOCSDIR%%/outputsheetpages/tokens/outputsheettokensweapon-attack.htm
-%%PORTDOCS%%%%DOCSDIR%%/systemimages/splashpcgen.gif
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/tab_sectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/tab_sectionheading.png
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/buttonhp.htm
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/buttonhp.png
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/buttonrandomname.htm
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/buttonrandomname.png
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/players_sectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabability.htm
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabability.png
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabclasses.htm
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabclasses.png
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabdescription.htm
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabdescription.png
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabdomains.htm
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabdomains.png
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabfeats.htm
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabfeats.png
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabraces.htm
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabraces.png
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabskills.htm
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/inventory/inventoryequipping.htm
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/inventory/inventorygear.htm
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/inventory/inventorygear1.png
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/inventory/inventorygear2.png
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/inventory/inventorygear3.png
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/inventory/inventoryresources.htm
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/inventory/inventorytempbonus.htm
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/inventory/inventorytempbonus.png
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/inventory/inventory_sectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabskills.png
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabspells.htm
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabspells.png
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabsummary.htm
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/players/tabsummary.png
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/source/buttoncustomise.htm
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/source/buttoncustomise.png
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/source/source_sectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/tabpages/source/tabsourcematerial.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/toolbarquickicons.htm
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/toolbarquickicons.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew.htm
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew01.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew02.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew03.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew04.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew05.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew06.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew07.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew08.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew09.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew10.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew11.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew12.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew13.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew14.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew15.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew16.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew17.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew18.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew19.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew20.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew21.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew22.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew23.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew24.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew25.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew26.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew27.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughcreatenew28.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughheadingstartup.htm
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughloadcampaign.htm
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughloadcampaign.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughprintnew.htm
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughprintnew1.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughprintnew2.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughprintnew3.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughprintnew4.png
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthroughsectionheading.htm
-%%PORTDOCS%%%%DOCSDIR%%/walkthroughpages/walkthrough_sectionheading.htm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/walkthroughpages
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tabpages/source
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tabpages/players/inventory
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tabpages/players
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tabpages
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/systemimages
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/outputsheetpages/tokens
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/outputsheetpages
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/navtree
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/tools/template
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/tools/spell
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/tools/source
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/tools/skill
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/tools/race
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/tools/language
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/tools/feat
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/tools/domain
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/tools/deity
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/tools/class
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/tools
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/settings/pcgen
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/settings/character
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/settings/appearance
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/settings
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/help
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/file
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages/debug
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/menupages
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/listfilepages/systemfilestagpages
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/listfilepages/globalfilestagpages
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/listfilepages/datafilestagpages
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/listfilepages
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/installationpages
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/faqpages
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -5,14 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	pcgen
-PORTVERSION=	5.4.0
+PORTVERSION=	5.5.6
 CATEGORIES=	games java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pcgen
-DISTFILES=	pcgen${PORTVERSION:S/.//g:S/0$//}_part1of3.zip \
-		pcgen${PORTVERSION:S/.//g:S/0$//}_part2of3.zip \
-		pcgen${PORTVERSION:S/.//g:S/0$//}_part3of3.zip \
-		skin.zip pdf.zip
+DISTFILES=	pcgen${PORTVERSION:S/.//g:S/0$//}_full.zip \
+		skin.zip
 
 MAINTAINER=	herve.quiroz@esil.univ-mrs.fr
 COMMENT=	A Java-based RPG character generator and maintenance program
@@ -23,7 +21,7 @@ NO_BUILD=	YES
 
 WRKSRC=		${WRKDIR}
 PORTDESTDIR=	${JAVASHAREDIR}/${PORTNAME}
-WRKDIRS=	characters data lib outputsheets system
+WRKDIRS=	characters data lib outputsheets plugins system
 WRKDOCSDIR=	${WRKSRC}/docs
 WRKSCRIPT=	${WRKSRC}/pcgen.bsd.sh
 PLIST_SUB+=	T=${PORTDESTDIR:S/^${PREFIX}//}
