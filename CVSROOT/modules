@@ -1471,6 +1471,7 @@ downloader	ports/ftp/downloader
 doxygen		ports/devel/doxygen
 dparser		ports/devel/dparser
 dpkg		ports/archivers/dpkg
+dprog		ports/devel/dprog
 drac		ports/mail/drac
 dragstack	ports/deskutils/dragstack
 drbl		ports/mail/drbl
