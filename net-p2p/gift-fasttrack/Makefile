@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	giFT-FastTrack
-PORTVERSION=	0.8.7
+PORTVERSION=	0.8.9
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/gift-fasttrack/
 
@@ -23,14 +23,14 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
 
-DOC_FILES=	AUTHORS COPYING ChangeLog \
+PORTDOCS=	AUTHORS COPYING ChangeLog \
 		INSTALL NEWS README TODO
 
 post-install:
 .ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
 
