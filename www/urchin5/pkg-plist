@@ -1,6 +1,6 @@
 @unexec %D/urchin/bin/urchinctl stop > /dev/null 2>&1 || true
-@unexec rm -f %D/urchin/var/urchinwebd.conf.template.dist 2>/dev/null || true
 etc/rc.d/urchin5_daemons.sh
+etc/rc.d/urchin5_daemons.sh-dist
 urchin/bin/admin
 urchin/bin/auth
 urchin/bin/rollup.cgi
@@ -14,7 +14,7 @@ urchin/doc/ReleaseNotes
 urchin/doc/install.txt
 urchin/doc/license.txt
 urchin/etc/mime.types
-urchin/htdocs/.report.conf
+urchin/htdocs/.report.conf.sample
 urchin/htdocs/favicon.ico
 urchin/htdocs/report.cgi
 urchin/htdocs/robots.txt
@@ -336,6 +336,8 @@ urchin/lib/admin/languages/it.db
 urchin/lib/admin/languages/it.txt
 urchin/lib/admin/languages/ja.db
 urchin/lib/admin/languages/ja.txt
+urchin/lib/admin/languages/pt.db
+urchin/lib/admin/languages/pt.txt
 urchin/lib/admin/languages/sp.db
 urchin/lib/admin/languages/sp.txt
 urchin/lib/admin/languages/sw.db
@@ -496,6 +498,8 @@ urchin/lib/reporting/languages/it.db
 urchin/lib/reporting/languages/it.txt
 urchin/lib/reporting/languages/ja.db
 urchin/lib/reporting/languages/ja.txt
+urchin/lib/reporting/languages/pt.db
+urchin/lib/reporting/languages/pt.txt
 urchin/lib/reporting/languages/sp.db
 urchin/lib/reporting/languages/sp.txt
 urchin/lib/reporting/languages/sw.db
@@ -594,6 +598,9 @@ urchin/lib/session/languages/en.db
 urchin/lib/session/languages/en.txt
 urchin/lib/session/languages/ja.db
 urchin/lib/session/languages/ja.txt
+urchin/lib/session/languages/pt.txt
+urchin/lib/session/languages/sp.db
+urchin/lib/session/languages/sp.txt
 urchin/lib/session/templates/comps.tpl
 urchin/lib/session/templates/template.tpl
 urchin/util/curl
@@ -618,7 +625,7 @@ urchin/var/manifest.txt
 urchin/var/server.crt.sample
 urchin/var/server.key.sample
 urchin/var/urchinwebd.conf
-urchin/var/urchinwebd.conf.template
+@unexec rm -rf %D/urchin/var/urchinwebd.conf.template.dist 2>/dev/null || true
 @dirrm urchin/bin
 @unexec rmdir %D/urchin/data/admin 2>/dev/null || true
 @unexec rm -rf %D/urchin/data/cache 2>/dev/null

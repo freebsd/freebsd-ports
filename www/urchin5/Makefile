@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	urchin
-PORTVERSION=	5.600.r2
+PORTVERSION=	5.702
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.urchin.com/pub/urchin5/
-DISTNAME=	urchin5600r2_freebsd4x
+DISTNAME=	urchin5702_freebsd4x
 
 MAINTAINER=	freebsd@urchin.com
 COMMENT=	The most powerful web traffic analysis program available
@@ -49,6 +49,7 @@ do-install:
 	fi
 
 post-install:
+	${INSTALL_DATA} ${INSTALLDIR}/util/urchin_daemons ${PREFIX}/etc/rc.d/urchin5_daemons.sh-dist
 	@if [ ! -f ${PREFIX}/etc/rc.d/urchin5_daemons.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/urchin5_daemons.sh startup file."; \
 		${INSTALL_SCRIPT} ${INSTALLDIR}/util/urchin_daemons ${PREFIX}/etc/rc.d/urchin5_daemons.sh; \
