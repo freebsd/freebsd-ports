@@ -5,7 +5,7 @@
 # Date created:         Sat Mar 18 02:16:45 1995
 # Porter:               nils@guru.ims.uni-stuttgart.de
 #
-# $Id: Makefile,v 1.7 1996/04/12 08:33:25 asami Exp $
+# $Id: Makefile,v 1.8 1996/11/12 02:18:23 obrien Exp $
 
 DISTNAME=       gnat-2.03-src
 PKGNAME=        gnat-2.03
@@ -15,7 +15,7 @@ MASTER_SITES=   ftp://cs.nyu.edu/pub/gnat/
 MAINTAINER=	nils@guru.ims.uni-stuttgart.de
 
 .if !exists(/usr/local/bin/gnatf)
-BROKEN=		yes	# requires existing gnat compiler
+BROKEN=		"requires existing gnat compiler"
 .endif
 # You need a compiler who calls an existing gnat compiler:
 # if you have one, if you have one put it here, otherwise,

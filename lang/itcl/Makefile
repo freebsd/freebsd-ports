@@ -3,7 +3,7 @@
 # Date created:		Aug 17 1996
 # Whom:			chuckr
 #
-# $Id: Makefile,v 1.16 1996/11/13 02:00:44 chuckr Exp $
+# $Id: Makefile,v 1.17 1996/11/13 09:16:34 asami Exp $
 #
 
 DISTNAME=	itcl2.1
@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.neosoft.com/pub/tcl/NEW/
 
 MAINTAINER=	chuckr@freebsd.org
 
-BROKEN=		yes	# installation does not DTRT
+BROKEN=		"installation does not DTRT"
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --exec_prefix=${PREFIX}
 
