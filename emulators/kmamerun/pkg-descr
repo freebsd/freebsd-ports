@@ -1,0 +1,6 @@
+KMameRun is a KDE frontend for M.A.M.E. (Multiple Arcade Machine
+Emulator). Here you can comfortably set your default or per game
+configurations when calling xmame. The xmame binary has to be
+available somewhere on your system.
+
+WWW: http://kmamerun.sourceforge.net

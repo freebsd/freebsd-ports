@@ -1,0 +1,35 @@
+bin/kmamerun
+share/applnk/Applications/kmamerun.desktop
+share/apps/kmamerun/kmamerunui.rc
+share/apps/kmamerun/toolbar/game_exists.xpm
+share/apps/kmamerun/toolbar/game_noroms.xpm
+share/apps/kmamerun/toolbar/game_wrongroms.xpm
+share/apps/kmamerun/toolbar/preferences.xpm
+share/apps/kmamerun/toolbar/rungame.xpm
+share/doc/HTML/en/kmamerun/contents.png
+share/doc/HTML/en/kmamerun/logotp3.png
+share/doc/HTML/en/kmamerun/next.png
+share/doc/HTML/en/kmamerun/next_g.png
+share/doc/HTML/en/kmamerun/prev.png
+share/doc/HTML/en/kmamerun/prev_g.png
+share/doc/HTML/en/kmamerun/up.png
+share/doc/HTML/en/kmamerun/up_g.png
+share/doc/HTML/en/kmamerun/index.html
+share/doc/HTML/en/kmamerun/kmamerun.css
+share/doc/HTML/en/kmamerun/kmamerun.html
+share/doc/HTML/en/kmamerun/node1.html
+share/doc/HTML/en/kmamerun/node2.html
+share/doc/HTML/en/kmamerun/node3.html
+share/doc/HTML/en/kmamerun/node4.html
+share/doc/HTML/en/kmamerun/node5.html
+share/doc/HTML/en/kmamerun/node6.html
+share/doc/HTML/en/kmamerun/node7.html
+share/doc/HTML/en/kmamerun/node8.html
+share/doc/HTML/en/kmamerun/node9.html
+share/icons/hicolor/16x16/apps/kmamerun.xpm
+share/icons/hicolor/32x32/apps/kmamerun.xpm
+share/icons/locolor/16x16/apps/kmamerun.png
+share/icons/locolor/32x32/apps/kmamerun.png
+@dirrm share/apps/kmamerun/toolbar
+@dirrm share/apps/kmamerun
+@dirrm share/doc/HTML/en/kmamerun

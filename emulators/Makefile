@@ -29,6 +29,7 @@
     SUBDIR += hfsutils
     SUBDIR += ia64sim
     SUBDIR += ines
+    SUBDIR += kmamerun
     SUBDIR += libvm68k
     SUBDIR += linux-ePSXe
     SUBDIR += linux-peops-softgpu
