@@ -2,7 +2,7 @@ $FreeBSD$
 
 --- hints/freebsd.sh.orig	Sun Apr  8 06:09:16 2001
 +++ hints/freebsd.sh	Sat Jun  1 23:41:18 2002
-@@ -85,10 +85,16 @@
+@@ -85,10 +85,17 @@
  	d_setreuid='define'
  	d_setegid='undef'
  	d_seteuid='undef'
@@ -11,6 +11,7 @@ $FreeBSD$
  *)	usevfork='true'
  	usemymalloc='n'
  	libswanted=`echo $libswanted | sed 's/ malloc / /'`
++ 	libswanted=`echo $libswanted | sed 's/ bind / /'`
 +	d_setregid='define'
 +	d_setreuid='define'
 +	d_setegid='undef'
