@@ -1,19 +1,17 @@
 *** agent/maillist.SH.orig	Thu Aug 10 15:38:06 1995
 --- agent/maillist.SH	Thu Jul 25 19:54:00 1996
 ***************
-*** 17,23 ****
+*** 17,22 ****
   echo "Extracting agent/maillist (with variable substitutions)"
   $spitshell >maillist <<!GROK!THIS!
   $startperl
 ! 	eval "exec perl -S \$0 \$*"
   		if \$running_under_some_shell;
   
-  # $Id: maillist.SH,v 3.0.1.5 1995/08/07 16:12:48 ram Exp $
---- 17,23 ----
+--- 17,22 ----
   echo "Extracting agent/maillist (with variable substitutions)"
   $spitshell >maillist <<!GROK!THIS!
   $startperl
 ! 	eval "exec $perlpath -S \$0 \$*"
   		if \$running_under_some_shell;
   
-  # $Id: maillist.SH,v 3.0.1.5 1995/08/07 16:12:48 ram Exp $

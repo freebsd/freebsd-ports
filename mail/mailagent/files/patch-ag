@@ -1,19 +1,17 @@
 *** agent/edusers.SH.orig	Thu Aug 10 15:34:55 1995
 --- agent/edusers.SH	Thu Jul 25 19:55:26 1996
 ***************
-*** 17,23 ****
+*** 17,22 ****
   echo "Extracting agent/edusers (with variable substitutions)"
   $spitshell >edusers <<!GROK!THIS!
   $startperl
 ! 	eval "exec perl -S \$0 \$*"
   		if \$running_under_some_shell;
   
-  # $Id: edusers.SH,v 3.0.1.3 1995/08/07 16:06:24 ram Exp $
---- 17,23 ----
+--- 17,22 ----
   echo "Extracting agent/edusers (with variable substitutions)"
   $spitshell >edusers <<!GROK!THIS!
   $startperl
 ! 	eval "exec $perlpath -S \$0 \$*"
   		if \$running_under_some_shell;
   
-  # $Id: edusers.SH,v 3.0.1.3 1995/08/07 16:06:24 ram Exp $
