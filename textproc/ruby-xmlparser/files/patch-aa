@@ -1,27 +1,13 @@
---- extconf.rb.orig	Wed Aug 18 08:38:36 1999
-+++ extconf.rb	Wed Aug  9 20:24:40 2000
-@@ -4,19 +4,19 @@
- 
- ## Encoding maps may be stored in $perl_archlib/XML/Parser/Encodins/
- #perl_archlib = '/usr/lib/perl5/site_perl/5.005/i586-linux'
--perl_archlib = '/usr/local/lib'
-+perl_archlib = '%%PERL_ARCHLIB%%'
- xml_enc_path = perl_archlib + "/XML/Parser/Encodings"
- 
+--- extconf.rb.orig	Sun Oct 15 15:22:39 2000
++++ extconf.rb	Mon Oct 16 05:40:33 2000
+@@ -22,8 +22,8 @@
  ##$CFLAGS="-I#{cwd}/expat/xmlparse -I#{cwd}/expat/xmltok" +
  ##  ' -DXML_ENC_PATH=getenv\(\"XML_ENC_PATH\"\)' +
  ##  " -DNEW_EXPAT"
--$CFLAGS="-I#{cwd}/expat/xmlparse -I#{cwd}/expat/xmltok" +
-+$CFLAGS="-I#{CONFIG['prefix']}/include/xml" +
-   " -DXML_ENC_PATH=\\\"#{xml_enc_path}\\\""
--$LDFLAGS="-L#{cwd}/expat"
-+$LDFLAGS="-L#{CONFIG['prefix']}/lib"
- 
- if have_header("xmlparse.h")
--  if have_library("xmltok", "XML_ParserCreate")
--#  if have_library("expat", "XML_ParserCreate")
-+#  if have_library("xmltok", "XML_ParserCreate")
-+  if have_library("expat", "XML_ParserCreate")
-     if have_func("XML_SetNotStandaloneHandler")
-       $CFLAGS += " -DNEW_EXPAT"
-     end
+-$CFLAGS = "-I#{cwd}/expat/xmlparse -I#{cwd}/expat/xmltok"
+-$LDFLAGS = "-L#{cwd}/expat/xmlparse"
++#$CFLAGS = "-I#{cwd}/expat/xmlparse -I#{cwd}/expat/xmltok"
++#$LDFLAGS = "-L#{cwd}/expat/xmlparse"
+ dir_config("xmltok")
+ dir_config("xmlparse")
+ if xml_enc_path
