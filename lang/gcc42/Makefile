@@ -4,7 +4,7 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.33 1998/09/27 01:56:14 obrien Exp $
+# $Id: Makefile,v 1.35 1998/10/01 21:40:03 obrien Exp $
 #
 
 DISTNAME=	egcs-19980914
@@ -20,9 +20,9 @@ EGCS_REV=	egcs-2.92.07
 LIBSTDCPP_REV=	2.9.0
 ARE_WE_ELF!=	test -x /usr/bin/objformat && /usr/bin/objformat || echo aout
 .if ${ARE_WE_ELF} == "elf"
-GNUHOST=	i386-unknown-freebsdelf
+GNUHOST=	${ARCH}-unknown-freebsdelf
 .else
-GNUHOST=	i386-unknown-freebsd
+GNUHOST=	${ARCH}-unknown-freebsd
 .endif
 PLIST_SUB=	EGCS_REV=${EGCS_REV} GNU_HOST=${GNUHOST}
 GNU_CONFIGURE=	yes
@@ -33,7 +33,7 @@ ALL_TARGET=	bootstrap
 MAN1=		cccp.1 g++.1 g77.1 gcc.1
 
 pre-configure:
-	@(cd ${WRKSRC}/gcc/config/i386/ ; \
+	@(cd ${WRKSRC}/gcc/config/${ARCH}/ ; \
 	MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
 	${MV} freebsd.h freebsd.h.in ; \
 	${SED} -e "s:__FreeBSD__:__FreeBSD__=$${MAJ}:" freebsd.h.in >freebsd.h ; \

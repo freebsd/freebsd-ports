@@ -4,7 +4,7 @@
 # Date created:				17 Jan 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.17 1998/11/10 07:33:33 obrien Exp $
+# $Id: Makefile,v 1.18 1998/11/11 05:37:24 asami Exp $
 #
 
 DISTNAME=	gcc-2.8.1
@@ -16,9 +16,9 @@ MAINTAINER=	obrien@FreeBSD.org
 .include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "elf"
-GNUHOST=	i386-unknown-freebsdelf${OSREL}
+GNUHOST=	${ARCH}-unknown-freebsdelf${OSREL}
 .else
-GNUHOST=	i386-unknown-freebsd${OSREL}
+GNUHOST=	${ARCH}-unknown-freebsd${OSREL}
 .endif
 
 PLIST_SUB=	GNUHOST=${GNUHOST}
@@ -35,7 +35,7 @@ pre-fetch:
 	@${ECHO} "GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}"
 
 pre-configure:
-	@(cd ${WRKSRC}/config/i386/ ; \
+	@(cd ${WRKSRC}/config/${ARCH}/ ; \
 	MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
 	${MV} freebsd.h freebsd.h.in ; \
 	${SED} -e "s:__FreeBSD__=[0-9]*:__FreeBSD__=$${MAJ}:" freebsd.h.in \
