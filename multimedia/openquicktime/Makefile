@@ -27,7 +27,13 @@ USE_SIZE=	yes
 INSTALL_SHLIBS=	yes
 PKGDEINSTALL=	${PKGINSTALL}
 
+OPTIONS=	DEBUG "Turn on debugging" on
+
 .include <bsd.port.pre.mk>
+
+.ifndef(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug=no
+.endif
 
 .if ${ARCH} == "sparc64"
 BROKEN=		"Does not build on sparc64"
