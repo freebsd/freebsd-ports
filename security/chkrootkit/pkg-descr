@@ -3,16 +3,24 @@ contains:
  
  * chkrootkit: a shell script that checks system binaries for
    rootkit modification.
+ 
  * ifpromisc.c: checks if the network interface is in promiscuous
    mode.
+ 
  * chklastlog.c: checks for lastlog deletions.
+ 
  * chkwtmp.c: checks for wtmp deletions.
+ 
+ * check_wtmpx.c: checks for wtmpx deletions.  (Solaris only)
+ 
+ * chkproc.c: checks for signs of LKM trojans.
 
  The following rootkits, worms and LKMs are currently detected:
  Solaris rootkit, FreeBSD rootkit, lrk3, lrk4, lrk5, lrk6, t0rn (and
  t0rn v8), some lrk variants, Ambient's Rootkit for Linux (ARK), Ramen
  Worm, rh[67]-shaper, RSHA, Romanian rootkit, RK17, Lion Worm, Adore
- Worm, LPD Worm, kenny-rk and Adore LKM.
+ Worm, LPD Worm, kenny-rk, Adore LKM, ShitC Worm, Omega Worm, Wormkit
+ Worm, dsc-rootkit.
  
 Nelson Murilo <nelson@pangeia.com.br>
 
