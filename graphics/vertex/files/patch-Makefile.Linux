@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- Makefile.Linux	2001/06/01 17:04:37	1.1
-+++ Makefile.Linux	2001/06/01 17:20:49
+--- Makefile.Linux.orig	Thu May 17 11:28:46 2001
++++ Makefile.Linux	Mon Jun 11 15:44:54 2001
 @@ -18,7 +18,7 @@
  #   You may modify any value as needed. Change only the ones you are
  #   absolutly sure that requires modification.
@@ -23,7 +23,7 @@ $FreeBSD$
  
  CPPFLAGS = -D__cplusplus -Dc_plusplus
  
-@@ -86,9 +88,11 @@
+@@ -86,10 +88,12 @@
  #   to the LIB line depending on what you have set in the CFLAGS line
  #   farther above.
  #
@@ -32,11 +32,13 @@ $FreeBSD$
  LIB = -lm \
 -      -lImlib -lpng -ltiff -lgif -ljpeg \
 -      `gtk-config --libs` \
+-      -lGLU -lGL \
 +      $(IMLIB_LIBS) \
 +      $(GTK_LIBS) \
-       -lGLU -lGL \
++      -lGLU -lGL $(PTHREAD_LIBS) \
        -lgtkgl \
        -lz
+ 
 @@ -121,8 +125,8 @@
  #
  include Makefile.srclist
