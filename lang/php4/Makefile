@@ -20,7 +20,7 @@
 #
 
 PORTNAME=	php4
-PORTVERSION=	4.3.3.r2
+PORTVERSION=	4.3.3.r4
 PORTREVISION=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	http://www.php.net/distributions/:release \
@@ -136,8 +136,6 @@ BATCH=		yes
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes
 .endif
-
-PBDIR=		${PREFIX}/share/pear/boot
 
 .include <bsd.port.pre.mk>
 
@@ -435,11 +433,13 @@ CONFIGURE_ARGS+=--with-ncurses=${NCURSESBASE}
 .if defined(WITH_OPENLDAP)
 .if exists(${LOCALBASE}/lib/libldap.so.1)
 LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap12
-.elif exists(${LOCALBASE}/lib/libldap.la)
-.if exists(${LOCALBASE}/bin/ldapwhoami)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap21-client
-.else
+.elif exists(${LOCALBASE}/lib/libldap.so.2)
+.if exists(${LOCALBASE}/include/srchpref.h)
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20-client
+.elif exists(${LOCALBASE}/include/slapi-plugin.h)
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap22-client
+.else
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap21-client
 .endif
 .else
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap22-client

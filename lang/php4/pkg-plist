@@ -211,6 +211,7 @@ lib/php/build/shtool
 %%CLI%%share/pear/bootstrap/PEAR/Command/Common.php
 %%CLI%%share/pear/bootstrap/PEAR/Command/Config.php
 %%CLI%%share/pear/bootstrap/PEAR/Command/Install.php
+%%CLI%%share/pear/bootstrap/PEAR/Command/Mirror.php
 %%CLI%%share/pear/bootstrap/PEAR/Command/Package.php
 %%CLI%%share/pear/bootstrap/PEAR/Command/Registry.php
 %%CLI%%share/pear/bootstrap/PEAR/Command/Remote.php
