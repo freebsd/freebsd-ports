@@ -4659,6 +4659,7 @@ mac-robber	ports/security/mac-robber
 macopix		ports/games/macopix
 macutils	ports/archivers/macutils
 mad		ports/audio/mad
+mad_fcl		ports/net/mad_fcl
 madbomber	ports/games/madbomber
 madplay		ports/audio/madplay
 maelstrom	ports/games/maelstrom
