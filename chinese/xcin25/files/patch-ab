@@ -1,8 +1,10 @@
---- src/lib/Makefile.in.orig	Sun Aug 15 00:23:04 1999
-+++ src/lib/Makefile.in	Sun Aug 15 00:23:24 1999
-@@ -30,3 +30,5 @@
- 	rm -f Makefile
- 	for d in $(SUBSYS); do ( cd $$d; $(MAKE) distclean ); done
- 	( cd IMdkit; $(MAKE) clean )
+--- src/lib/Makefile.in.orig	Sun Nov 28 14:03:20 1999
++++ src/lib/Makefile.in	Sat Dec 18 16:55:02 1999
+@@ -19,6 +19,7 @@
+ 	$(LN_S) IMdkit/IMdkit/libXimd.a .
+ 
+ .PHONY: install clean distclean depend
 +
-+install:
+ install:
+ 
+ depend:
