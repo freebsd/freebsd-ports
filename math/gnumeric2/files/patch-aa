@@ -1,6 +1,6 @@
---- configure.orig	Fri Jul  9 22:12:23 1999
-+++ configure	Mon Jul 12 16:48:09 1999
-@@ -2786,7 +2786,7 @@
+--- configure.orig	Thu Sep 23 17:49:58 1999
++++ configure	Fri Sep 24 15:00:53 1999
+@@ -2788,7 +2788,7 @@
  fi
  if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
    echo "$ac_t""yes" 1>&6
@@ -9,25 +9,25 @@
  else
    echo "$ac_t""no" 1>&6
  echo $ac_n "checking for pthread_create""... $ac_c" 1>&6
-@@ -3356,7 +3356,7 @@
+@@ -3333,7 +3333,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
--LIBS="-lxml `gnome-config --libs xml` $LIBS"
+-LIBS="-lxml `$GNOME_CONFIG --libs xml` $LIBS"
 +LIBS="`xml-config --libs` $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 3362 "configure"
+ #line 3339 "configure"
  #include "confdefs.h"
-@@ -3387,7 +3387,7 @@
+@@ -3364,7 +3364,7 @@
    
  		
  		
--		GNOME_XML_LIB=`gnome-config --libs xml`
+-		GNOME_XML_LIB=`$GNOME_CONFIG --libs xml`
 +		GNOME_XML_LIB=`xml-config --libs`
  	
  else
    echo "$ac_t""no" 1>&6
-@@ -5616,15 +5616,15 @@
+@@ -5593,15 +5593,15 @@
  fi
  
          
@@ -42,15 +42,24 @@
  	LIBS=`echo $LIBS | sed -e 's/-lintl//'`
 -        nls_cv_header_intl=intl/libintl.h
 -        nls_cv_header_libgt=intl/libgettext.h
-+#       nls_cv_header_intl=intl/libintl.h
-+#       nls_cv_header_libgt=intl/libgettext.h
++#        nls_cv_header_intl=intl/libintl.h
++#        nls_cv_header_libgt=intl/libgettext.h
        fi
  
              if test "$XGETTEXT" != ":"; then
-@@ -6053,14 +6053,14 @@
+@@ -6037,7 +6037,7 @@
+ echo "configure:6038: checking for GnomePrint libraries" >&5
+ if gnome-config --libs print > /dev/null 2>&1; then 
+     echo "$ac_t""found" 1>&6
+-    . `gnome-config --libdir`/printConf.sh
++    . `gnome-config --sysconfdir`/printConf.sh
+     echo $ac_n "checking for GnomePrint >= 0.8""... $ac_c" 1>&6
+ echo "configure:6043: checking for GnomePrint >= 0.8" >&5
+     case x$MODULE_VERSION in
+@@ -6052,14 +6052,14 @@
  
- echo $ac_n "checking For Glade libraries""... $ac_c" 1>&6
- echo "configure:6056: checking For Glade libraries" >&5
+ echo $ac_n "checking for Glade libraries""... $ac_c" 1>&6
+ echo "configure:6055: checking for Glade libraries" >&5
 -if gnome-config --libs libglade > /dev/null 2>&1; then 
 +if libglade-config --libs > /dev/null 2>&1; then 
      echo "$ac_t""found" 1>&6
@@ -60,8 +69,8 @@
  
 -EXTRA_GNOME_LIBS=`gnome-config --libs gnomeui print libglade $bonobo`
 -EXTRA_GNOME_CFLAGS=`gnome-config --cflags gnomeui print libglade $bonobo`
-+EXTRA_GNOME_LIBS="`gnome-config --libs gnomeui print` `libglade-config --libs gnome` $bonobo"
-+EXTRA_GNOME_CFLAGS="`gnome-config --cflags gnomeui print` `libglade-config --cflags gnome` $bonobo"
++EXTRA_GNOME_LIBS="`gnome-config --libs gnomeui print $bonobo` `libglade-config --libs gnome`"
++EXTRA_GNOME_CFLAGS="`gnome-config --cflags gnomeui print $bonobo` `libglade-config --cflags gnome`"
  
  
  
