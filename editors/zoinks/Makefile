@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	mike@mikelockwood.com
 COMMENT=	An X11 programmer's editor and development environment
 
+LIB_DEPENDS=	intl.5:${PORTSDIR}/editors/zoinks
+
 .if defined(WITH_IMLIB)
 USE_GNOME=	imlib
 CONFIGURE_ARGS+=	--enable-imlib
