@@ -9,8 +9,7 @@ PORTVERSION=	2.0.12
 CATEGORIES=	german www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/pre-release/ \
 		ftp://ftp.lan-ks.de/pub/FreeBSD/distfiles/
-PKGNAMEPREFIX=	de-
-DISTNAME=	webalizer-2.00-12-src
+DISTNAME=	${PORTNAME}-2.00-12-src
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 
