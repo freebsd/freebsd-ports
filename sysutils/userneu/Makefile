@@ -8,8 +8,9 @@
 PORTNAME=	userneu
 PORTVERSION=	1.38
 CATEGORIES=	sysutils
-MASTER_SITES=	http://btmdxm.mat.uni-bayreuth.de/~johannes/files/userneu/ \
-		http://home.arcor.de/fehlner/inhalt/download/
+MASTER_SITES=	http://btw23.de/johannes/userneu/ \
+		http://home.arcor.de/fehlner/inhalt/download/ \
+		http://home.arcor.de/teambushido/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_1
 
 MAINTAINER=	fehlner@gmx.de
