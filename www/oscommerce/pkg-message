@@ -1,0 +1,24 @@
+-----------------------------------------------------------------------------
+
+Congratulations!  You have installed osCommerce.  You are one step closer to
+having a functional e-commerce website.  You should now open a browser and go
+to:
+
+        http://localhost/oscommerce/catalog/install/
+
+Once you've finished the rest of the installation, it is highly encouraged 
+that you 
+
+        chmod -R 000 %%OSCOMMERCE%%/catalog/install
+
+to disable the installation utilities.
+
+The administrative interface can be found at
+
+        http://localhost/oscommerce/catalog/admin/
+
+and should have its access appropriately restricted to prevent someone 
+from modifying parts of your catalog.
+
+
+-----------------------------------------------------------------------------
