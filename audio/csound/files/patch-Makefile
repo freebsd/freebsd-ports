@@ -67,7 +67,7 @@
  #						numbers are system-dependent)
  
 -LIBS =	$(FLTKLIB) -L /usr/X11R6/lib -lX11 -ltcl -ltk -lm -ldl
-+LIBS =	-L$(X11BASE)/lib -L$(LOCALBASE)/lib -lX11 -ltcl83 -ltk83 -lm
++LIBS =	-L$(X11BASE)/lib -L$(LOCALBASE)/lib -lX11 -ltcl84 -ltk84 -lm
  #	-lefence
  #	-lm		    		required
  #	-lX11				for X window calls
