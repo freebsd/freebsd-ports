@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nagios-plugins
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nagiosplug
@@ -35,6 +35,10 @@ pre-fetch:
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
+
+pre-configure:
+	@(cd ${CONFIGURE_WRKSRC} && ${SETENV} ${AUTOMAKE_ENV} ${ACLOCAL} \
+		--acdir=${ACLOCAL_DIR})
 
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc

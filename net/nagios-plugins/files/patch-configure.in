@@ -1,5 +1,5 @@
---- configure.in.orig	Sun Mar  2 05:58:12 2003
-+++ configure.in	Thu Mar  6 22:03:33 2003
+--- configure.in.orig	Fri Jul 11 08:12:23 2003
++++ configure.in	Sun Jul 13 13:13:37 2003
 @@ -12,7 +12,7 @@
  AM_INIT_AUTOMAKE(nagios-plugins,${PACKAGE_VERSION})
  AM_CONFIG_HEADER(plugins/config.h plugins/common.h plugins/version.h plugins/netutils.h plugins/utils.h plugins/popen.h)
@@ -70,7 +70,16 @@
  
  dnl Check for mysql libraries
  _SAVEDLIBS="$LIBS"
-@@ -818,6 +829,8 @@
+@@ -209,7 +220,7 @@
+   AC_MSG_WARN([Skipping mysql plugin])
+   AC_MSG_WARN([install mysql client libs to compile this plugin (see REQUIREMENTS).])
+ fi
+-CPPFLAGS="$_SAVEDCPPFLAGS"
++CPPFLAGS="$_SAVEDCPPFLAGS $MYSQLINCLUDE"
+ LIBS="$_SAVEDLIBS"
+ 
+ dnl Check for OpenSSL location
+@@ -841,6 +852,8 @@
  	AC_DEFINE_UNQUOTED(WHO_COMMAND,"$PATH_TO_WHO",[path and arguments for invoking 'who'])
  fi
  
@@ -79,7 +88,7 @@
  AC_PATH_PROG(PATH_TO_SNMPGET,snmpget)
  if test -x "$PATH_TO_SNMPGET"
  then
-@@ -840,7 +853,10 @@
+@@ -863,7 +876,10 @@
  	echo "** Tried $PERL - install Net::SNMP perl module if you want to"
  	echo "        use the perl snmp plugins"
  fi
@@ -90,7 +99,7 @@
  AC_PATH_PROG(PATH_TO_QUAKESTAT,quakestat)
  AC_PATH_PROG(PATH_TO_QSTAT,qstat)
  if test -x "$PATH_TO_QUAKESTAT"
-@@ -854,7 +870,10 @@
+@@ -877,7 +893,10 @@
  else
  	echo "** Get qstat from http://www.activesw.com/people/steve/qstat.html in order to make check_game plugin"
  fi
@@ -101,7 +110,7 @@
  AC_PATH_PROG(PATH_TO_FPING,fping)
  if test -x "$PATH_TO_FPING"
  then
-@@ -862,6 +881,7 @@
+@@ -885,6 +904,7 @@
  	EXTRAS="$EXTRAS check_fping"
  else
  	echo "** Get fping from http://www.fping.com in order to make check_fping plugin"
