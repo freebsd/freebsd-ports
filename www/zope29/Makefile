@@ -7,14 +7,16 @@
 
 PORTNAME=	zope
 PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www python
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/ \
-		http://www.zope.org/Products/Zope/Hotfix_2001-02-23/
+		http://www.zope.org/Products/Zope/Hotfix_2001-02-23/ \
+		http://www.zope.org/Products/Zope/Hotfix_2001-03-08/
 DISTNAME=	Zope-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		Hotfix_2001-02-23.tgz
+		Hotfix_2001-02-23.tgz \
+		Hotfix_2001-03-08.tgz
 
 MAINTAINER=	nbm@FreeBSD.org
 
