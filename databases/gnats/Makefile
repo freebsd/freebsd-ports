@@ -17,7 +17,7 @@ COMMENT=	Cygnus GNATS bug tracking system
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-BROKEN=		Compilation errors and security issues
+FORBIDDEN=	Compilation errors and security issues
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lispdir=${PREFIX}/share/emacs/site-lisp \
