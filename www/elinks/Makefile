@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	elinks
-PORTVERSION=	0.9.3
+PORTVERSION=	0.10.2
 CATEGORIES=	www
 MASTER_SITES=	http://keyserver.kjsl.com/~jharris/distfiles/ \
 		http://elinks.or.cz/download/
@@ -23,10 +23,13 @@ USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_BISON=	yes
 USE_OPENSSL=	yes
-USE_ICONV=	yes
-CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
+#USE_ICONV=	yes
+#CONFIGURE_ARGS+=	--with-libiconv-prefix=${LOCALBASE}
+CONFIGURE_ARGS+=	--disable-nls
 
 MAN1=		elinks.1
 MAN5=		elinkskeys.5 elinks.conf.5
+
+PLIST_FILES=	bin/elinks
 
 .include <bsd.port.mk>
