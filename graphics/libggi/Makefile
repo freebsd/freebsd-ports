@@ -91,7 +91,7 @@ MLINKS=		ggiDBGetBuffer.3 ggiDBGetNumBuffers.3 \
 		ggiSetGCClipping.3 ggiGetGCClipping.3 \
 		ggiSetGCForeground.3 ggiGetGCBackground.3 \
 		- ggiGetGCForeground.3 - ggiSetGCBackground.3 \
-		ggiSetGamma.3ggi ggiGetGamma.3 - ggiGetGammaMap.3 \
+		ggiSetGamma.3 ggiGetGamma.3 - ggiGetGammaMap.3 \
 		- ggiSetGammaMap.3 \
 		ggiSetGraphMode.3 ggiCheckGraphMode.3 \
 		- ggiCheckSimpleMode.3 - ggiCheckTextMode.3 \
