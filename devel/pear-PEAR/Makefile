@@ -7,7 +7,7 @@
 
 PORTNAME=	PEAR
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel www
 MASTER_SITES=	http://pear.php.net/get/
 PKGNAMEPREFIX=	pear-
@@ -26,7 +26,10 @@ NO_BUILD=	yes
 
 .if exists(${LOCALBASE}/bin/php-config)
 PHP_BASE!=	${LOCALBASE}/bin/php-config --prefix
+.else
+PHP_BASE!=	${LOCALBASE}
 .endif
+PEAR=		${LOCALBASE}/bin/pear
 LPHP_LIB=	lib/php
 PEARDIR=	${PHP_BASE}/${LPHP_LIB}
 PLIST_SUB=	PEARDIR=${LPHP_LIB}
@@ -41,5 +44,9 @@ do-install:
 .for FILE in ${MANIFEST}
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/${FILE}
 .endfor
+
+post-install:
+# Register an upgraded package
+	@${PEAR} upgrade -r -f ${WRKDIR}/package.xml
 
 .include <bsd.port.post.mk>
