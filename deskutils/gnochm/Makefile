@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnochm
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4
 CATEGORIES=	deskutils python gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -30,9 +30,11 @@ GCONF_SCHEMAS=	gnochm.schemas
 INSTALLS_OMF=	yes
 
 MAN1=		gnochm.1
+MANLANG=	"" it
 MANCOMPRESSED=	no
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@APPDATADIR@|@APPDATADIR@/gnome|' ${WRKSRC}/gnochm.py.in
+	@${REINPLACE_CMD} -e 's|$(prefix)/share/man|$(prefix)/man|' ${WRKSRC}/data/Makefile.in
 
 .include <bsd.port.mk>
