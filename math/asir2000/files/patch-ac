@@ -1,12 +1,13 @@
---- include/version.h.orig	Thu Aug  9 10:20:46 2001
-+++ include/version.h	Thu Aug 16 19:00:40 2001
-@@ -47,5 +47,7 @@
+--- include/version.h.orig	Thu Oct  4 02:04:12 2001
++++ include/version.h	Tue Oct 23 02:26:45 2001
+@@ -47,5 +47,8 @@
   *
-  * $OpenXM: OpenXM_contrib2/asir2000/include/version.h,v 1.45 2001/07/03 01:41:27 noro Exp $ 
+  * $OpenXM: OpenXM_contrib2/asir2000/include/version.h,v 1.51 2001/10/01 02:00:28 noro Exp $ 
  */
--#define ASIR_VERSION 20010703
+-#define ASIR_VERSION 20011001
 -#define ASIR_DISTRIBUTION "Kobe"
-+#define ASIR_VERSION 20010809
++#define ASIR_VERSION 20011005
 +#define ASIR_DISTRIBUTION "Plotting Group"
-+#define PARI_VERSION "PARI CALCULATOR Version 2.1.1 (released) Copyright (C) 2000 The PARI Group"
++#define PARI2_VERSION "PARI CALCULATOR Version 2.2.0 (alpha) Copyright (C) 2000 The PARI Group"
++#define PARI1_VERSION "PARI CALCULATOR Version 2.1.1 (released) Copyright (C) 2000 The PARI Group"
 +#define LAPACK_VERSION "LAPACK Project Version 3.0"

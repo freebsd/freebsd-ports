@@ -1,5 +1,5 @@
---- include/Risa.tmpl.orig	Wed Aug 29 11:35:21 2001
-+++ include/Risa.tmpl	Wed Aug 29 12:09:55 2001
+--- include/Risa.tmpl.orig	Sat Oct  6 01:24:22 2001
++++ include/Risa.tmpl	Tue Oct 23 02:44:17 2001
 @@ -11,7 +11,7 @@
  /* #define USE_FFT_FLOAT */
  /* #define USE_LAPACK */
@@ -34,7 +34,7 @@
 +#if defined(OpenXM_HOME)
  LAPACKLIB = -llapack -lblas -lI77 -lF77
 +#else
-+#if defined(FreeBSDArchitecture) && OSMajorVersion >= 4
++#ifdef FreeBSDArchitecture && OSMajorVersion >= 4
 +LAPACKLIB = -L/usr/local/lib -lg2c -llapack -lblas
 +#else
 +LAPACKLIB = -L/usr/local/lib -lf2c -llapack -lblas

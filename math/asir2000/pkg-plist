@@ -577,9 +577,7 @@ share/asir/help-jp/version
 share/asir/help-jp/vtol
 share/asir/help-jp/vtype
 share/asir/help-jp/which
-share/doc/asir/man-eg.pdf
 share/doc/asir/man-eg.ps
-share/doc/asir/man-jp.pdf
 share/doc/asir/man-jp.ps
 share/doc/asir/html-eg/man_1.html
 share/doc/asir/html-eg/man_10.html
@@ -1109,11 +1107,15 @@ share/doc/asir/html-jp/man_97.html
 share/doc/asir/html-jp/man_98.html
 share/doc/asir/html-jp/man_99.html
 share/doc/asir/html-jp/man_toc.html
+share/doc/asir/html-internal-ja/internal.html
+share/doc/asir/html-internal-ja/internal_toc.html
+share/doc/asir/internal.ps
 @dirrm share/asir/help-jp
 @dirrm share/asir/help-eg
 @dirrm share/asir
 @dirrm share/doc/asir/html-eg
 @dirrm share/doc/asir/html-jp
+@dirrm share/doc/asir/html-internal-ja
 @dirrm share/doc/asir
 @unexec rm -rf /usr/local/share/asir/ox_asir
 @unexec rm -rf /usr/local/share/asir/ox_plot

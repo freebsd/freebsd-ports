@@ -10,5 +10,4 @@
  #include <f2c.h>
 +#endif
  
- void Pflinsolve();
- 
+ void Pflinsolve(); 

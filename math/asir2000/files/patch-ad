@@ -1,5 +1,5 @@
---- configure.org	Thu Aug 16 18:36:16 2001
-+++ configure	Thu Aug 16 18:38:59 2001
+--- configure.orig	Sat Oct  6 01:24:21 2001
++++ configure	Tue Oct 23 02:16:02 2001
 @@ -4,6 +4,7 @@
  use_plot=0
  use_pari=0
@@ -8,8 +8,8 @@
  use_fep=0
  oxhome=/usr/local
  
-@@ -22,6 +23,8 @@
- 		use_pari=1 ;;
+@@ -24,6 +25,8 @@
+ 		use_pari=2 ;;
  	-interval)
  		use_interval=1 ;;
 +	-lapack)
@@ -17,16 +17,13 @@
  	-fep)
  		use_fep=1 ;;
  	esac
-@@ -48,8 +51,12 @@
- fi
- 
+@@ -59,6 +62,10 @@
  if [ $use_interval != 0 ]; then
--libname=$libname"_itv"
+ libname=$libname"_itv"
  echo "#define USE_INTERVAL" >> include/config.h
 +fi
 +
 +if [ $use_lapack != 0 ]; then
-+libname=$libname"_itv"
 +echo "#define USE_LAPACK" >> include/config.h
  fi
  
