@@ -1,49 +1,49 @@
 Index: configure
 diff -u configure.orig configure
---- configure.orig	Tue Apr 15 03:07:48 2003
-+++ configure	Tue May 27 17:29:16 2003
-@@ -2652,7 +2652,7 @@
+--- configure.orig	Sat Jun 28 06:21:13 2003
++++ configure	Tue Jul  1 01:09:52 2003
+@@ -2654,7 +2654,7 @@
  	    BDB_LIBADD=""
  	fi
  
--        for dbname in db-4.1 db4.1 db-4.0 db4.0 db-4 db4 db-3.3 db3.3 db-3.2 db3.2 db-3.1 db3.1 db-3 db3 db
-+        for dbname in ${with_bdb} db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db4 db-3.3 db3.3 db-3.2 db3.2 db-3.1 db3.1 db-3 db3 db
+-        for dbname in db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
++        for dbname in ${with_bdb} db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
            do
              echo $ac_n "checking for db_create in -l$dbname""... $ac_c" 1>&6
- echo "configure:2659: checking for db_create in -l$dbname" >&5
-@@ -3043,7 +3043,7 @@
+ echo "configure:2661: checking for db_create in -l$dbname" >&5
+@@ -3045,7 +3045,7 @@
  	    BDB_LIBADD=""
  	fi
  
--        for dbname in db-4.1 db4.1 db-4.0 db4.0 db-4 db4 db-3.3 db3.3 db-3.2 db3.2 db-3.1 db3.1 db-3 db3 db
-+        for dbname in ${with_bdb} db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db4 db-3.3 db3.3 db-3.2 db3.2 db-3.1 db3.1 db-3 db3 db
+-        for dbname in db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
++        for dbname in ${with_bdb} db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
            do
              echo $ac_n "checking for db_create in -l$dbname""... $ac_c" 1>&6
- echo "configure:3050: checking for db_create in -l$dbname" >&5
-@@ -3761,6 +3761,8 @@
+ echo "configure:3052: checking for db_create in -l$dbname" >&5
+@@ -3791,6 +3791,8 @@
    SASLAUTHD_TRUE='#'
    SASLAUTHD_FALSE=
  fi
 +SASLAUTHD_TRUE='#'
 +SASLAUTHD_FALSE=
  echo $ac_n "checking if I should include saslauthd""... $ac_c" 1>&6
- echo "configure:3766: checking if I should include saslauthd" >&5
+ echo "configure:3796: checking if I should include saslauthd" >&5
  echo "$ac_t""$with_saslauthd" 1>&6
-@@ -5456,7 +5458,7 @@
+@@ -5487,7 +5489,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} -lcom_err $LIBS"
 +LIBS="$GSSAPIBASE_LIBS `krb5-config --libs gssapi` $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 5462 "configure"
+ #line 5493 "configure"
  #include "confdefs.h"
-@@ -5494,7 +5496,7 @@
+@@ -5568,7 +5570,7 @@
       GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
       GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a"
    elif test "$gss_impl" = "heimdal"; then
 -     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} -lcom_err"
 +     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS `krb5-config --libs gssapi`"
       GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libroken.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
-   else
-      gssapi="no"
+   elif test "$gss_impl" = "seam"; then
+      GSSAPIBASE_LIBS=-lgss

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	saslauthd
-PORTVERSION=	2.1.13
+PORTVERSION=	2.1.14
 #PORTREVISION=	0
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \

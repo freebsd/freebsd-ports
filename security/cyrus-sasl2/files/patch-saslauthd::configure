@@ -1,38 +1,40 @@
---- saslauthd/configure.orig	Mon Apr 14 20:07:50 2003
-+++ saslauthd/configure	Tue Apr 15 01:39:33 2003
-@@ -2988,7 +2988,7 @@
+Index: saslauthd/configure
+diff -u saslauthd/configure.orig saslauthd/configure
+--- saslauthd/configure.orig	Sat Jun 28 06:21:15 2003
++++ saslauthd/configure	Tue Jul  1 01:26:30 2003
+@@ -2990,7 +2990,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lgssapi $GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} -lcom_err $LIBS"
 +LIBS="$GSSAPIBASE_LIBS `krb5-config --libs gssapi` $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 2994 "configure"
+ #line 2996 "configure"
  #include "confdefs.h"
-@@ -3026,7 +3026,7 @@
+@@ -3071,7 +3071,7 @@
       GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err"
       GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a"
    elif test "$gss_impl" = "heimdal"; then
 -     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS -lgssapi -lkrb5 -lasn1 -lroken ${LIB_CRYPT} -lcom_err"
 +     GSSAPIBASE_LIBS="$GSSAPIBASE_LIBS `krb5-config --libs gssapi`"
       GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_STATIC_LIBS $gssapi_dir/libgssapi.a $gssapi_dir/libkrb5.a $gssapi_dir/libasn1.a $gssapi_dir/libroken.a $gssapi_dir/libcom_err.a ${LIB_CRYPT}"
-   else
-      gssapi="no"
-@@ -3441,7 +3441,7 @@
+   elif test "$gss_impl" = "seam"; then
+      GSSAPIBASE_LIBS=-lgss
+@@ -3486,7 +3486,7 @@
  	    BDB_LIBADD=""
  	fi
  
--        for dbname in db-4.1 db4.1 db-4.0 db4.0 db-4 db4 db-3.3 db3.3 db-3.2 db3.2 db-3.1 db3.1 db-3 db3 db
-+        for dbname in ${with_bdb} db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db4 db-3.3 db3.3 db-3.2 db3.2 db-3.1 db3.1 db-3 db3 db
+-        for dbname in db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
++        for dbname in ${with_bdb} db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
            do
              echo $ac_n "checking for db_create in -l$dbname""... $ac_c" 1>&6
- echo "configure:3448: checking for db_create in -l$dbname" >&5
-@@ -3832,7 +3832,7 @@
+ echo "configure:3493: checking for db_create in -l$dbname" >&5
+@@ -3877,7 +3877,7 @@
  	    BDB_LIBADD=""
  	fi
  
--        for dbname in db-4.1 db4.1 db-4.0 db4.0 db-4 db4 db-3.3 db3.3 db-3.2 db3.2 db-3.1 db3.1 db-3 db3 db
-+        for dbname in ${with_bdb} db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db4 db-3.3 db3.3 db-3.2 db3.2 db-3.1 db3.1 db-3 db3 db
+-        for dbname in db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
++        for dbname in ${with_bdb} db-4.1 db4.1 db41 db-4.0 db4.0 db-4 db40 db4 db-3.3 db3.3 db33 db-3.2 db3.2 db32 db-3.1 db3.1 db31 db-3 db30 db3 db
            do
              echo $ac_n "checking for db_create in -l$dbname""... $ac_c" 1>&6
- echo "configure:3839: checking for db_create in -l$dbname" >&5
+ echo "configure:3884: checking for db_create in -l$dbname" >&5
