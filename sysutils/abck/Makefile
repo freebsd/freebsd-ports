@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abck
-PORTVERSION=	1.99
+PORTVERSION=	2.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tundraware.com/Software/abck/
 
