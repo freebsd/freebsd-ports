@@ -1,5 +1,5 @@
---- config.guess.orig	Tue Jun 18 11:40:04 2002
-+++ config.guess	Tue Jun 18 11:40:48 2002
+--- config.guess.orig	Sat Jan 31 01:56:33 2004
++++ config.guess	Sat Jan 31 02:03:04 2004
 @@ -79,7 +79,7 @@
  fi
  
