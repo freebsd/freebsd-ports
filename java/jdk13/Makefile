@@ -60,7 +60,8 @@ MAKE_ENV=	ALT_BOOTDIR="${JDK13DIR}" \
 .if !defined(WITHOUT_PLUGIN)
 MAKE_ENV +=	LIBG_HDRS="${LOCALBASE}/include/glib12" \
 		GTK_HDRS="${X11BASE}/include/gtk12" \
-		LIBIDL_HDRS=
+		LIBIDL_HDRS= \
+		INTL_DIR="${LOCALBASE}"
 .endif
 .if !defined(WITHOUT_PLUGIN)
 ALL_TARGET=	all plugin images
