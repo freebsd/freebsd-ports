@@ -1,0 +1,18 @@
+*
+* portmanager                                                         
+*
+* upgrade ports example:                                              
+*                                                                     
+* portmanager -u -ip editors/nedit editors/openoffice                 
+*                                                                     
+* upgrades everything except nedit,open office and their dependencies 
+*                                                                     
+* portmanager -sl will show you leaf ports, these are safe to remove  
+*                                                                     
+* portmanager -slid will let you safely remove leaf ports             
+*                                                                     
+* see man portmanager(1) or http://portmanager.sunsite.dk             
+*
+* all feedback is welcome, send to:                                   
+* Michael C. Shultz ringworm01@gmail.com                              
+*

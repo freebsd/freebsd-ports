@@ -8,6 +8,7 @@
 @unexec rm -f %D/share/portmanager/ports_cache.db 2>/dev/null || true
 @unexec rm -f %D/share/portmanager/ports_installed.db 2>/dev/null || true
 @unexec rm -f %D/share/portmanager/ports_old.db 2>/dev/null || true
+%%DATADIR%%/help.txt
 bin/portmanager
 etc/portmanager/pm-020.conf.SAMPLE
 include/libMG.h
