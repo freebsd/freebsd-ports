@@ -9,8 +9,7 @@ PORTNAME=	tridiavnc
 PORTVERSION=	1.4
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www.developvnc.org/logged-in/downloadnow/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=dwcjr
 DISTNAME=	DevVNC_unix
 EXTRACT_SUFX=	.tgz
