@@ -6,46 +6,58 @@
 # $FreeBSD$
 #
 
-DISTNAME=	2.4
-PKGNAME=	squeak-2.4
+DISTNAME=	Squeak2.7-src
+PKGNAME=	squeak-2.7
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/unix/ \
-		ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/unix/image/ \
-		http://www.nectar.com/distfiles/squeak/
+MASTER_SITES=	ftp://ftp.inria.fr/INRIA/Projects/SOR/users/piumarta/squeak/ \
+		ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/free/squeak/unix/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SQUEAK_SRC}
 
 MAINTAINER=	jesse@cs.uni-magdeburg.de
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-
+NO_WRKSUBDIR=	yes
 USE_XLIB=	yes
 USE_GMAKE=	yes
 DIST_SUBDIR=	squeak
-SQUEAK_SRC=	SqueakV2.sources
-MAKEFILE=	GNUmakefile
-VMBUILD=	freebsd
-MAKE_ARGS=	VMBUILD=${VMBUILD}
+SQUEAK_SRC=	SqueakV2.sources.gz Squeak2.7.image.gz Squeak2.7.changes.gz
+SQUEAK_LIB=	Profiler.so SoundCodecPrims.so Squeak3D.so System.so
+
+MAKEFILE=	Makefile
 .ifdef (CC)
 MAKE_ARGS+=	CC=${CC}
 .endif
 .ifdef (CFLAGS)
 MAKE_ARGS+=	CCFLAGS="${CFLAGS}"
 .endif
-PORTMAKE=	${SETENV} ${MAKE_ENV} ${GMAKE} -e ${MAKE_FLAGS} \
-		${MAKEFILE} ${MAKE_ARGS}
-
-do-build:
-	@(cd ${WRKSRC} && ${PORTMAKE} mkdir)
-	@(cd ${WRKSRC}/${VMBUILD} && ${PORTMAKE} interp)
 
 do-install:
-	@(cd ${WRKSRC}/${VMBUILD} && \
-	${INSTALL_PROGRAM} SqueakVM-2.4-${VMBUILD} ${PREFIX}/bin/SqueakVM)
+	@(cd ${WRKSRC}/freebsd && \
+	${INSTALL_PROGRAM} squeak ${PREFIX}/bin/squeak)
 	${MKDIR} ${PREFIX}/share/squeak
-.for f in Squeak2.4.changes Squeak2.4.image
-	(cd ${WRKSRC}/image && ${INSTALL_DATA} $f ${PREFIX}/share/squeak/$f)
+.for l in ${SQUEAK_LIB}
+	(cd ${WRKSRC}/freebsd && ${INSTALL_DATA} $l ${PREFIX}/lib/$l)
 .endfor
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${SQUEAK_SRC} \
-		${PREFIX}/share/squeak/${SQUEAK_SRC}
+.for f in ${SQUEAK_SRC}
+	(cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} $f ${PREFIX}/share/squeak/$f)
+	(cd ${PREFIX}/share/squeak && ${EXTRACT_CMD} -d $f)
+.endfor
+	(cd ${PREFIX}/share/squeak && ${CHMOD} 644 Squeak2.7.changes)
+
+post-install:
+	@${ECHO} "Make sure you have ${PREFIX}/bin in your PATH"
+	@${ECHO} "and ${PREFIX}/lib in your LD_LIBRARY_PATH."
+	@${ECHO} ""
+	@${ECHO} "In order to be able to make use of squeak you need"
+	@${ECHO} "to have an image and a changes file in your working"
+	@${ECHO} "directory as well as access to a source file."
+	@${ECHO} "Execute the following:"
+	@${ECHO} "cd <your_private_working_directory>"
+	@${ECHO} "cp ${PREFIX}/share/squeak/Squeak2.7.image ."
+	@${ECHO} "cp ${PREFIX}/share/squeak/Squeak2.7.changes ."
+	@${ECHO} "ln -s ${PREFIX}/share/squeak/SqueakV2.sources ."
+	@${ECHO} ""
+	@${ECHO} "To finally start up the system type:"
+	@${ECHO} "squeak Squeak2.7.image"
 
 .include <bsd.port.mk>

@@ -1,5 +1,9 @@
-bin/SqueakVM
-share/squeak/Squeak2.4.changes
-share/squeak/Squeak2.4.image
+bin/squeak
+lib/Profiler.so
+lib/SoundCodecPrims.so
+lib/Squeak3D.so
+lib/System.so
+share/squeak/Squeak2.7.changes
+share/squeak/Squeak2.7.image
 share/squeak/SqueakV2.sources
 @dirrm share/squeak
