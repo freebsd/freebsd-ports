@@ -527,18 +527,20 @@ diff -u programs/xfs/os/waitfor.c:1.1 X11/xc/programs/xfs/os/waitfor.c:1.2
  		client = clients[conn];
  		if (!client)
  		    continue;
---- programs/xauth/process.c.orig	Fri Jul 23 06:50:50 1999
-+++ programs/xauth/process.c	Sat Sep 23 15:31:27 2000
-@@ -769,7 +769,7 @@
+--- programs/xauth/process.c.orig	Fri Jul 23 15:50:50 1999
++++ programs/xauth/process.c	Mon Sep 25 20:48:02 2000
+@@ -769,21 +769,18 @@
  static int write_auth_file (tmp_nam)
      char *tmp_nam;
  {
 -    FILE *fp;
 +    FILE *fp = NULL;
      AuthList *list;
- 
+-
++    int fd;
      /*
-@@ -778,12 +778,9 @@
+      * xdm and auth spec assumes auth file is 12 or fewer characters
+      */
      strcpy (tmp_nam, xauth_filename);
      strcat (tmp_nam, "-n");		/* for new */
      (void) unlink (tmp_nam);
