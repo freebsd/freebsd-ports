@@ -42,6 +42,7 @@
     SUBDIR += femlab
     SUBDIR += fftpack
     SUBDIR += fftw
+    SUBDIR += fftw3
     SUBDIR += freefem
     SUBDIR += freefem++
     SUBDIR += fudgit

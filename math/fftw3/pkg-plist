@@ -1,13 +1,8 @@
-include/fftw.h
-include/rfftw.h
-@unexec install-info --delete %D/info/fftw.info %D/info/dir
-info/fftw.info
-@exec install-info %D/info/fftw.info %D/info/dir
-lib/libfftw.a
-lib/libfftw.so
-lib/libfftw.so.2
-lib/librfftw.a
-lib/librfftw.so
-lib/librfftw.so.2
-%%PORTDOCS%%%%DOCSDIR%%/fftw.ps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+bin/fftw-wisdom
+bin/fftw-wisdom-to-conf
+include/fftw3.f
+include/fftw3.h
+lib/libfftw3.a
+lib/libfftw3.so
+lib/libfftw3.so.3
+libdata/pkgconfig/fftw3.pc
