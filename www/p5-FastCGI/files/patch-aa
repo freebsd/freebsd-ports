@@ -1,0 +1,11 @@
+--- Makefile.PL.orig	Wed Oct 27 19:56:24 1999
++++ Makefile.PL	Wed Oct 27 20:01:08 1999
+@@ -25,7 +25,7 @@
+     # CPAN  
+     for $dir ("/usr", "/usr/local") {
+         if (-d "$dir/lib/" && -f "$dir/lib/libfcgi.a" 
+-        	&& -d "$dir/include" && !grep {!-f "$dir/include/$_"} (@h)) 
++        	&& -d "$dir/include/fastcgi/" && !grep {!-f "$dir/include/fastcgi/$_"} (@h)) 
+         {
+             print "Found fcgi library and include files in $dir\n";
+             print "Will be using that instead of included files\n";
