@@ -30,6 +30,10 @@ MAN1=		msgfmt.1 xgettext.1 xview.1
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Broken by changes to make(1) on FreeBSD >= 5.x"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's+/usr/X11R6+${PREFIX}+;' \
 	  ${WRKSRC}/config/XView.cf
