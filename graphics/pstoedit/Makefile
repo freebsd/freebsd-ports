@@ -7,6 +7,7 @@
 
 PORTNAME=	pstoedit
 PORTVERSION=	3.33
+PORTREVISION=	1
 CATEGORIES=	graphics print
 MASTER_SITES=	http://home.t-online.de/home/helga.glunz/wglunz/pstoedit/
 
@@ -20,7 +21,7 @@ GSPORT?=	print/ghostscript-gnu
 .endif
 
 BUILD_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
-LIB_DEPENDS=	Magick++.5:${PORTSDIR}/graphics/ImageMagick \
+LIB_DEPENDS=	Magick++.6:${PORTSDIR}/graphics/ImageMagick \
 		ming.3:${PORTSDIR}/graphics/ming \
 		plotter.4:${PORTSDIR}/graphics/plotutils
 RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
