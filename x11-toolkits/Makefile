@@ -198,6 +198,7 @@
     SUBDIR += xforms
     SUBDIR += xg
     SUBDIR += xmhtml
+    SUBDIR += xrender
     SUBDIR += xview
     SUBDIR += xview-clients
 
