@@ -26,10 +26,6 @@ STRIP=		# none
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502102
-FORBIDDEN=	"Does not respect PTHREAD_{CFLAGS,LIBS}"
-.endif
-
 PREFIX:=	${PREFIX}/${PORTNAME}
 
 post-patch:
