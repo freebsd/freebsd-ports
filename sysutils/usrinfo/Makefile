@@ -8,8 +8,8 @@
 PORTNAME=	usrinfo
 PORTVERSION=	.10
 CATEGORIES=	sysutils
-MASTER_SITES=	http://osdn.dl.sourceforge.net/sourceforge/${PORTNAME}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER?=	aaron@snaphat.com
 COMMENT=	Displays information about a user using either "<br>" or "\n" breaks
