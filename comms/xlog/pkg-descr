@@ -1,14 +1,20 @@
-Xlog is a basic Amateur Radio station log.  Xlog is able to do 
-DXCC lookups and will display country information, CQ and ITU zone, 
-location in latitude and longitude and distance and heading in 
-kilometers or miles, both for short and long path. Locator distance 
+Xlog is an Amateur Radio station logger.  Xlog is able to do
+DXCC lookups and will display country information, CQ and ITU zone,
+location in latitude and longitude and distance and heading in
+kilometers or miles, both for short and long path. Locator distance
 and heading calculation for VHF logging is also supported.
 
-If your rig supports data retrieval over the serial line, you 
-should have a look at the Hamradio Control Libraries (hamlib) 
-port, which will allow for automatic retrieval of information 
-from your radio.
+Major bugfixes and features of this release include improved printing
+using libgnomeprint and map files for future releases. See the INSTALL
+file in the work directory for more information
 
 Xlog supports cabrillo and ADIF and can import twlog and editest files.
+It also has the ability to customise log fields which makes it ideal for
+use in those countries that have odd logging rules such as the U.K.
+
+There is a new format for exporting the log called 'labels'. This will
+save some fields of the log in a TAB separated file. This file can be
+imported into glabels (deskutils/glabels) using the template
+called qsllabels.glabels in the xlog /usr/local/share/xlog directory.
 
 WWW: http://www.qsl.net/pg4i/linux/xlog.html

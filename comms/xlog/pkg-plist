@@ -1,5 +1,12 @@
 bin/xlog
-share/xlog
+share/xlog/AUTHORS
+share/xlog/FAQ
+share/xlog/MANUAL
+share/xlog/README
+share/xlog/THANKS
+share/xlog/TODO
+share/xlog/dxcc/cty.dat
+share/xlog/dxcc/xlog.dat
 share/xlog/pixmaps/book.xpm
 share/xlog/pixmaps/mini-clock.xpm
 share/xlog/pixmaps/mini-trx.xpm
@@ -19,20 +26,7 @@ share/xlog/pixmaps/s9.xpm
 share/xlog/pixmaps/xlog-logo.png
 share/xlog/pixmaps/xlog.png
 share/xlog/pixmaps/xlog.xpm
-share/xlog/dxcc/cty.dat
-share/xlog/dxcc/xlog.dat
-share/xlog/remote/Makefile
-share/xlog/remote/README
-share/xlog/remote/fromxlog.c
-share/xlog/remote/sendtoxlog.c
-share/xlog/FAQ
-share/xlog/README
-share/xlog/TODO
-share/xlog/AUTHORS
-share/xlog/THANKS
-share/xlog/MANUAL
 share/xlog/qsllabels.glabels
 @dirrm share/xlog/pixmaps
 @dirrm share/xlog/dxcc
-@dirrm share/xlog/remote
 @dirrm share/xlog
