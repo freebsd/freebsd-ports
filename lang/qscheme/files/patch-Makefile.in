@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sun Feb 10 12:52:32 2002
-+++ Makefile.in	Sun Feb 10 12:52:37 2002
+--- Makefile.in.orig	Thu Jun 22 19:10:21 2000
++++ Makefile.in	Fri Oct 29 10:07:48 2004
 @@ -111,7 +111,7 @@
  EXTRA_DIST = mkoptable mkwhatis $(modsrc) $(scmsrc) CHANGES LICENCE_EXCEPTION
  
@@ -8,3 +8,19 @@
 +SUBDIRS = . doc
  
  noinst_LIBRARIES = libqs.a
+ 
+@@ -580,10 +580,10 @@
+ %.x:%.i
+ 	mkoptable $< > $@
+ 
+-sproto.h: $(libqs_src)
+-	@cfunctions $(libqs_src) \
+-		| sed 's/^#include "c-extensions.h".*$$/#define PROTO(x) x/' > $@.new
+-	@if diff $@ $@.new >/dev/null ; then rm $@.new; else mv $@.new $@ ; fi
++#sproto.h: $(libqs_src)
++#	@cfunctions $(libqs_src) \
++#		| sed 's/^#include "c-extensions.h".*$$/#define PROTO(x) x/' > $@.new
++#	@if diff $@ $@.new >/dev/null ; then rm $@.new; else mv $@.new $@ ; fi
+ 
+ # force sproto.h to be up to date. Otherwise compilation of
+ # distribution may fail, because sproto.h can trigger the cfunction
