@@ -24,6 +24,7 @@ bin/sqlsh.rb
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/README.1st
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/ToDo
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/index.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/sf_logo.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/html/ChangeLog.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/html/DBD_SPEC.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/html/DBI_SPEC.html
