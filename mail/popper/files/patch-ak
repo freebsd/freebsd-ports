@@ -1,19 +1,19 @@
-*** popper.h.old	Sun Jun 28 12:58:15 1998
---- popper.h	Sun Jun 28 11:56:10 1998
-***************
-*** 59,65 ****
-  #define MAXMSGLINELEN   MAXLINELEN
-  #define MAXCMDLEN       4
-  #define MAXPARMCOUNT    5
-! #define MAXPARMLEN      10
-  #define ALLOC_MSGS  20
-  
-  #ifndef OSF1
---- 59,65 ----
-  #define MAXMSGLINELEN   MAXLINELEN
-  #define MAXCMDLEN       4
-  #define MAXPARMCOUNT    5
-! #define MAXPARMLEN      32      /*  Large enough for 32-byte APOP parm. */
-  #define ALLOC_MSGS  20
-  
-  #ifndef OSF1
+--- popper.h.orig	Mon Apr 17 22:33:43 2000
++++ popper.h	Mon Apr 17 22:50:27 2000
+@@ -55,11 +55,14 @@
+ 
+ #define MAXUSERNAMELEN  65
+ #define MAXDROPLEN      64
+-#define MAXLINELEN      1024
++/* This program always assume that fgets return whole line,
++   so the buffer must be at least one char bigger than sendmail
++   use, because of >From */
++#define MAXLINELEN      (2048+1)
+ #define MAXMSGLINELEN   MAXLINELEN
+ #define MAXCMDLEN       4
+ #define MAXPARMCOUNT    5
+-#define MAXPARMLEN      10
++#define MAXPARMLEN      32      /*  Large enough for 32-byte APOP parm. */
+ #define ALLOC_MSGS  20
+ 
+ #ifndef OSF1
