@@ -1,6 +1,11 @@
 bin/nmap
-share/nmap/nmap-os-fingerprints
-share/nmap/nmap-protocols
-share/nmap/nmap-services
-share/nmap/nmap-rpc
-@dirrm share/nmap
+%%DATADIR%%/nmap-os-fingerprints
+%%DATADIR%%/nmap-protocols
+%%DATADIR%%/nmap-rpc
+%%DATADIR%%/nmap-service-probes
+%%DATADIR%%/nmap-services
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/HACKING
+%%PORTDOCS%%%%DOCSDIR%%/nmap.dtd
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

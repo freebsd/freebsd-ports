@@ -1,4 +1,3 @@
-# ex:ts=8
 # Ports collection makefile for:  nmap
 # Date created:			  Tue Aug 04, 1998
 # Whom:				  David O'Brien (obrien@NUXI.com)
@@ -7,36 +6,73 @@
 #
 
 PORTNAME?=	nmap
-PORTVERSION=	3.30
+PORTVERSION=	3.46
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://download.insecure.org/nmap/dist/
-DISTNAME=	nmap-${PORTVERSION:S/.b/BETA/}
+DISTNAME=	nmap-${PORTVERSION}
 
 MAINTAINER=	eikemeier@fillmore-labs.com
 COMMENT?=	Port scanning utility for large networks
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-localdirs
 USE_BZIP2=	yes
 
-MAN1?=		nmap.1
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--without-localdirs
 
-.include <bsd.port.pre.mk>
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-.if ${OSVERSION} < 300004
-CFLAGS+=	-DDLT_RAW=12 # for obsoleted <net/bpf.h>
+.ifndef BUILD_NMAPFE
+
+MAN1=		nmap.1
+
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+
+CONFIGURE_ARGS+=	--with-libpcre=${LOCALBASE}
+
+.ifndef WITHOUT_SSL
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
+.else
+CONFIGURE_ARGS+=	--without-openssl
 .endif
 
-CONFIGURE_TARGET=	-build=${ARCH}-portbld-freebsd${OSREL}
-.if ${PORTNAME} == "nmap"
 CONFIGURE_ARGS+=	--without-nmapfe
-.endif
-ALL_TARGET?=		nmap
-INSTALL_TARGET?=	install-nmap
 
-.if !target(post-install) && (${PORTNAME} == "nmap")
+ALL_TARGET=	nmap
+INSTALL_TARGET=	install-nmap
+
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/nmap
+.ifndef NOPORTDOCS
+	@${MKDIR} ${DOCSDIR}
+	@for doc in CHANGELOG HACKING docs/nmap.dtd; do \
+		${INSTALL_DATA} ${WRKSRC}/$${doc} ${DOCSDIR}; \
+	done
 .endif
 
-.include <bsd.port.post.mk>
+.else
+
+RUN_DEPENDS=	nmap:${PORTSDIR}/security/nmap
+
+DESCR=		${PKGDIR}/pkg-descr.fe
+PLIST=		${PKGDIR}/pkg-plist.fe
+PLIST_SUB=	REALPREFIX=${PREFIX}
+
+MAN1=		nmapfe.1
+MLINKS=		nmapfe.1 xnmap.1
+
+USE_GNOME=	gtk12
+
+CONFIGURE_ARGS+=--without-openssl
+
+CONFIGURE_ARGS+=--with-nmapfe
+
+ALL_TARGET=	nbase/libnbase.a nmapfe/nmapfe
+INSTALL_TARGET=	install-nmapfe
+
+post-install:
+	@${STRIP_CMD} ${PREFIX}/bin/nmapfe
+
+.endif
+
+.include <bsd.port.mk>

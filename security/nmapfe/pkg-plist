@@ -1,5 +1,0 @@
-bin/nmapfe
-bin/xnmap
-@cwd %%X11BASE%%
-share/gnome/apps/Utilities/nmapfe.desktop
-@cwd %%LOCALBASE%%

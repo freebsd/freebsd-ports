@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri Mar  9 22:25:19 2001
-+++ Makefile.in	Sun May 27 17:49:17 2001
-@@ -9,14 +9,14 @@
+--- Makefile.in.orig	Sat Sep 20 11:00:04 2003
++++ Makefile.in	Wed Sep 24 23:59:42 2003
+@@ -9,7 +9,7 @@
  mandir = @mandir@
  srcdir = @srcdir@
  nmapdatadir = @datadir@/nmap
@@ -8,21 +8,12 @@
 +deskdir = $(X11BASE)/share/gnome/apps/Utilities
  
  NBASEDIR=@NBASEDIR@
- CC = @CC@
- CXX = @CXX@
- CCOPT = 
- LIBPCAPDIR = @libpcapdir@
--INCLS = -I$(LIBPCAPDIR) 
-+#INCLS = -I$(LIBPCAPDIR) 
- DEFS = @DEFS@ -DNMAP_VERSION=\"$(NMAP_VERSION)\" -DNMAP_NAME=\"$(NMAP_NAME)\" -DNMAP_URL=\"$(NMAP_URL)\" -DNMAP_PLATFORM=\"$(NMAP_PLATFORM)\" -DNMAPDATADIR=\"$(nmapdatadir)\"
+ NSOCKDIR=@NSOCKDIR@
+@@ -23,6 +23,7 @@
  # For mtrace debugging -- see MTRACE define in main.cc for instructions
  # Should only be enabled during debugging and not in any real release.
-@@ -200,7 +200,7 @@
- 	$(MAKEDEPEND) $(INCLS) -s "# DO NOT DELETE" -- $(DEFS) -- $(SRCS)
- 
- install-nmap: $(TARGET)
--	$(SHTOOL) mkdir -f -p -m 755 $(bindir) $(mandir)/man1 $(nmapdatadir) $(deskdir)
-+	$(SHTOOL) mkdir -f -p -m 755 $(bindir) $(mandir)/man1 $(nmapdatadir)
- 	$(INSTALL) -c -m 755 nmap $(bindir)/nmap
- 	$(INSTALL) -c -m 644 docs/$(TARGET).1 $(mandir)/man1/$(TARGET).1
- 	$(INSTALL) -c -m 644 nmap-os-fingerprints  $(nmapdatadir)/nmap-os-fingerprints
+ # DEFS += -DMTRACE=1
++CPPFLAGS = @CPPFLAGS@
+ CXXFLAGS = @CXXFLAGS@ $(CCOPT) $(DEFS) $(INCLS)
+ # CFLAGS = $(CXXFLAGS)
+ # CFLAGS = $(DEFS) $(INCLS)
