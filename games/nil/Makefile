@@ -8,9 +8,8 @@
 PORTNAME=	nil
 PORTVERSION=	000928
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	${PORTNAME} sobomax
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	sobomax
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multiplayer game that can be described as Quake in 2D or Worms done right
@@ -19,25 +18,19 @@ LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/${PORTNAME}
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
+USE_REINPLACE=	yes
+USE_SDL=	yes
 
 pre-patch:
 	@${FIND} ${WRKSRC} \( -name "*.[ch]" -or -name "*.cpp" \) | \
-		${XARGS} ${PERL} -pi -e 's|"SDL/|"|g ; s|<SDL/|<|g'
+		${XARGS} ${REINPLACE_CMD} -e 's|"SDL/|"|g ; s|<SDL/|<|g'
 	@${FIND} ${WRKSRC}/.. -type d -name CVS | ${XARGS} ${RM} -rf
+	@${REINPLACE_CMD} -e 's|iostream.h|iostream|' ${WRKSRC}/nil/systemheaders.h
 
 post-configure:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/nil/configuration.cpp
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/nil/configuration.cpp
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/nil
@@ -48,4 +41,4 @@ post-install:
 	@${ECHO_MSG} "See ${PREFIX}/share/nil/README for usage instructions."
 	@${ECHO_MSG} ""
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
