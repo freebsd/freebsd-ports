@@ -1,4 +1,3 @@
-# $FreeBSD$
 sendmail_path=/usr/sbin/sendmail
 newaliases_path=/usr/bin/newaliases
 mailq_path=/usr/bin/mailq
