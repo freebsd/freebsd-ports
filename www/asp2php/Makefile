@@ -21,8 +21,8 @@ WANT_GTK=	yes
 
 .if defined(HAVE_GTK)
 USE_GTK=	yes
-ALL_TARGET+=	gtkasp2php
-INSTALL_TARGET+=install-gtk
+ALL_TARGET=	all gtkasp2php
+INSTALL_TARGET=	install install-gtk
 PLIST_SUB+=	WANT_GTK=""
 .else
 PLIST_SUB+=	WANT_GTK="@comment "
