@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gss
-PORTVERSION=	0.0.10
-PORTREVISION=	1
+PORTVERSION=	0.0.11
 CATEGORIES=	security
 MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/ \
 		${MASTER_SITE_GNU_ALPHA}
@@ -19,7 +18,6 @@ COMMENT=	GNU Generic Security Service Library
 
 LIB_DEPENDS=	shishi.0:${PORTSDIR}/security/shishi
 
-USE_GETTEXT=		yes
 USE_PERL5_BUILD=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GETOPT_LONG=	yes
@@ -33,8 +31,13 @@ INFO=	gss
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-post-extract:
-	@${CP} -f ${FILESDIR}/gdoc ${WRKSRC}/doc
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=		yes
+PLIST_SUB+=	NLS=""
+.endif
 
 .include "Makefile.man"
 .include <bsd.port.mk>
