@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	preview-latex
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.2b
 CATEGORIES=	print elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= ${PORTNAME}
@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
 		--with-texmf=${PREFIX}/share/texmf
 CONFIGURE_ARGS+=	--disable-8bit-test
 
-DOCS=	ChangeLog INSTALL PROBLEMS README README-preview RELEASE TODO
+DOCS=	ChangeLog INSTALL PROBLEMS README latex/README-preview RELEASE TODO
 
 post-install:
 .if !defined(NOPORTDOCS)
