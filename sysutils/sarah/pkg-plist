@@ -1,2 +1,5 @@
 bin/sarah
 etc/sarah.conf.sample
+share/doc/sarah/README
+share/doc/sarah/CHANGES
+@dirrm share/doc/sarah
