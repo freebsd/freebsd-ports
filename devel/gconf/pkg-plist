@@ -1,0 +1,44 @@
+bin/gconf-config
+bin/gconfd
+bin/gconftool
+etc/gconf/gconf.xml.defaults/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/desktop/standard/%gconf.xml
+etc/gconf/path.example
+etc/gconf/schemas/desktop.schemas
+include/gconf/gconf-backend.h
+include/gconf/gconf-changeset.h
+include/gconf/gconf-client.h
+include/gconf/gconf-engine.h
+include/gconf/gconf-error.h
+include/gconf/gconf-listeners.h
+include/gconf/gconf-schema.h
+include/gconf/gconf-value.h
+include/gconf/gconf.h
+lib/gconf/libgconfbackend-xml.so
+lib/libgconf-gtk.a
+lib/libgconf-gtk.so
+lib/libgconf-gtk.so.1
+lib/libgconf.a
+lib/libgconf.so
+lib/libgconf.so.8
+share/gnome/aclocal/gconf.m4
+share/gnome/oaf/gconfd.oafinfo
+share/locale/cs/LC_MESSAGES/GConf.mo
+share/locale/da/LC_MESSAGES/GConf.mo
+share/locale/el/LC_MESSAGES/GConf.mo
+share/locale/fr/LC_MESSAGES/GConf.mo
+share/locale/no/LC_MESSAGES/GConf.mo
+share/locale/pt_BR/LC_MESSAGES/GConf.mo
+share/locale/sv/LC_MESSAGES/GConf.mo
+share/locale/uk/LC_MESSAGES/GConf.mo
+@dirrm share/gnome/gconf
+@dirrm lib/gconf
+@dirrm include/gconf
+@dirrm etc/gconf/schemas
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop/standard
+@dirrm etc/gconf/gconf.xml.defaults/schemas/desktop
+@dirrm etc/gconf/gconf.xml.defaults/schemas
+@dirrm etc/gconf/gconf.xml.defaults
+@dirrm etc/gconf
