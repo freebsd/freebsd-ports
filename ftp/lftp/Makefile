@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	lftp
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.4
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.yars.free.net/pub/software/unix/net/ftp/client/lftp/ \
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/network/file-transfer
 
-MAINTAINER=	carl_johan@gmx.net
+MAINTAINER=	fm@astral.ntu-kpi.kiev.ua
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
