@@ -1,0 +1,24 @@
+This collection of modules provides perl5 access methods related to MIME.
+It includes the following modules:
+
+MIME::IO
+MIME::Entity
+MIME::Decoder::QuotedPrint
+MIME::Field::ParamVal
+MIME::ParserBase
+MIME::Latin1
+MIME::Field::ContType
+MIME::Decoder::Gzip64
+MIME::Decoder::Base64
+MIME::Decoder::Binary
+MIME::Parser
+MIME::Body
+MIME::Decoder::UU
+MIME::Words
+MIME::ToolUtils
+MIME::Field::ConTraEnc
+MIME::Tools
+MIME::Decoder::NBit
+MIME::Head
+MIME::Decoder
+MIME::Field::ContDisp
