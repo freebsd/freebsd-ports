@@ -3,6 +3,8 @@ bin/qmake
 @cwd %%_PREFIX%%/share/qt/mkspecs
 aix-g++/qmake.conf
 aix-g++/qplatformdefs.h
+aix-g++-64/qmake.conf
+aix-g++-64/qplatformdefs.h
 aix-xlc-64/qmake.conf
 aix-xlc-64/qplatformdefs.h
 aix-xlc/qmake.conf
@@ -17,6 +19,8 @@ dgux-g++/qmake.conf
 dgux-g++/qplatformdefs.h
 freebsd-g++/qmake.conf
 freebsd-g++/qplatformdefs.h
+freebsd-icc/qmake.conf
+freebsd-icc/qplatformdefs.h
 hpux-acc-64/qmake.conf
 hpux-acc-64/qplatformdefs.h
 hpux-acc-o64/qmake.conf
@@ -45,8 +49,12 @@ irix-g++/qmake.conf
 irix-g++/qplatformdefs.h
 linux-cxx/qmake.conf
 linux-cxx/qplatformdefs.h
+linux-ecc-64/qmake.conf
+linux-ecc-64/qplatformdefs.h
 linux-g++/qmake.conf
 linux-g++/qplatformdefs.h
+linux-g++-64/qmake.conf
+linux-g++-64/qplatformdefs.h
 linux-icc/qmake.conf
 linux-icc/qplatformdefs.h
 linux-kcc/qmake.conf
@@ -100,6 +108,7 @@ win32-borland/qmake.conf
 win32-borland/qplatformdefs.h
 win32-g++/qmake.conf
 win32-g++/qplatformdefs.h
+win32-g++/qtcrtentrypoint.cpp
 win32-icc/qmake.conf
 win32-icc/qplatformdefs.h
 win32-icc/win32app.dsp
@@ -114,6 +123,7 @@ win32-msvc/win32dll.dsp
 win32-msvc/win32lib.dsp
 win32-watcom/qmake.conf
 @dirrm aix-g++
+@dirrm aix-g++-64
 @dirrm aix-xlc
 @dirrm aix-xlc-64
 @dirrm bsdi-g++
@@ -121,6 +131,7 @@ win32-watcom/qmake.conf
 @dirrm darwin-g++
 @dirrm dgux-g++
 @dirrm freebsd-g++
+@dirrm freebsd-icc
 @dirrm hpux-acc
 @dirrm hpux-acc-64
 @dirrm hpux-acc-o64
@@ -135,7 +146,9 @@ win32-watcom/qmake.conf
 @dirrm irix-cc-o32
 @dirrm irix-g++
 @dirrm linux-cxx
+@dirrm linux-ecc-64
 @dirrm linux-g++
+@dirrm linux-g++-64
 @dirrm linux-icc
 @dirrm linux-kcc
 @dirrm linux-kylix
@@ -177,4 +190,5 @@ win32-watcom/qmake.conf
 %%PORTDOCS%%html/qmake-manual-5.html
 %%PORTDOCS%%html/qmake-manual-6.html
 %%PORTDOCS%%html/qmake-manual-7.html
+%%PORTDOCS%%html/qmake-manual-8.html
 %%PORTDOCS%%@unexec (rmdir %%DOCSDIR%%/html && rmdir %%DOCSDIR%%) || echo %%DOCSDIR%% is still in use -- by other Qt docs?
