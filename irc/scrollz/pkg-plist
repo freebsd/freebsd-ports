@@ -191,6 +191,10 @@ share/scrollz/help/on/window
 share/scrollz/help/on/window_kill
 share/scrollz/help/on/window_swap
 share/scrollz/help/scrollz/copyright
+share/scrollz/help/fdline
+share/scrollz/help/switch
+share/scrollz/help/fec
+share/scrollz/help/set/hyper_dcc
 share/scrollz/help/set/always_split_biggest
 share/scrollz/help/set/auto_reconnect
 share/scrollz/help/set/auto_unmark_away
@@ -674,8 +678,40 @@ share/scrollz/help/wkill
 share/scrollz/help/ww
 share/scrollz/help/xecho
 share/scrollz/help/xtype
+share/scrollz/translation/ASCII
+share/scrollz/translation/CP437
+share/scrollz/translation/CP850
+share/scrollz/translation/DANISH
+share/scrollz/translation/DEC_MCS
+share/scrollz/translation/DG_MCS
+share/scrollz/translation/DUTCH
+share/scrollz/translation/FINNISH
+share/scrollz/translation/FRENCH
+share/scrollz/translation/FRENCH_CANADIAN
+share/scrollz/translation/GERMAN
+share/scrollz/translation/HP_MCS
+share/scrollz/translation/IRV
+share/scrollz/translation/ITALIAN
+share/scrollz/translation/JIS
+share/scrollz/translation/MACINTOSH
+share/scrollz/translation/NEXT
+share/scrollz/translation/NORWEGIAN_1
+share/scrollz/translation/NORWEGIAN_2
+share/scrollz/translation/POLISH
+share/scrollz/translation/POLISH_NOPL
+share/scrollz/translation/PORTUGUESE
+share/scrollz/translation/PORTUGUESE_COM
+share/scrollz/translation/RUSSIAN
+share/scrollz/translation/RUSSIAN_ALT
+share/scrollz/translation/RUSSIAN_WIN
+share/scrollz/translation/SPANISH
+share/scrollz/translation/SWEDISH
+share/scrollz/translation/SWEDISH_NAMES
+share/scrollz/translation/SWEDISH_NAMES_COM
+share/scrollz/translation/SWISS
+share/scrollz/translation/UNITED_KINGDOM
+share/scrollz/translation/UNITED_KINGDOM_COM
 @exec mkdir %D/share/scrollz/script
-@exec mkdir %D/share/scrollz/translation
 @unexec rmdir %D/share/scrollz/translation 2>/dev/null || true
 @unexec rmdir %D/share/scrollz/script 2>/dev/null || true
 @unexec rmdir %D/share/scrollz/help/bind 2>/dev/null || true
