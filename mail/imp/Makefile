@@ -8,6 +8,7 @@
 
 PORTNAME=	imp
 PORTVERSION=	2.2.6
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/imp/tarballs/
 
@@ -17,8 +18,17 @@ MAINTAINER=	thierry@thomas.as
 # You may define these options:
 #
 # - WITHOUT_LDAP	: if you do not need OpenLDAP;
+# - WITH_LDAP2		: if you prefer OpenLDAP2.
 #
 # - WITHOUT_SUPPORTED_DB: if you run a database not in the ports tree;
+#
+# - WITHOUT_WV		: if your users never receive MS-Word docs;
+#
+# - WITHOUT_XL		: if your users never receive MS-Excel sheets;
+#
+# - WITHOUT_ZIP		: if not interested by zipinfo;
+#
+# - WITHOUT_ISPELL	: for spelling bees...
 #
 # - WITHOUT_IMAPSERVER	: if your IMAP server runs on another machine;
 #
@@ -39,8 +49,13 @@ MAINTAINER=	thierry@thomas.as
 LIB_DEPENDS=	c-client4.8:${PORTSDIR}/mail/cclient
 
 .if !defined(WITHOUT_LDAP)
+.if defined(WITH_LDAP2)
+LIB_DEPENDS+=	ldap.2:\${PORTSDIR}/net/openldap2 \
+		lber.2:\${PORTSDIR}/net/openldap2
+.else
 LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap \
 		lber.1:${PORTSDIR}/net/openldap
+.endif
 .endif
 
 RUN_DEPENDS+=	${LOCALBASE}/www/horde/:${PORTSDIR}/www/horde
@@ -63,6 +78,19 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/courier-imap/:${PORTSDIR}/mail/courier-imap
 .else
 RUN_DEPENDS+=	${LOCALBASE}/lib/libacap.a:${PORTSDIR}/mail/cyrus-imapd
 .endif
+.endif
+
+.if !defined(WITHOUT_WV)
+RUN_DEPENDS+=	${LOCALBASE}/bin/wvHtml:${PORTSDIR}/textproc/wv
+.endif
+.if !defined(WITHOUT_XL)
+RUN_DEPENDS+=	${LOCALBASE}/bin/xlHtml:${PORTSDIR}/textproc/xlhtml
+.endif
+.if !defined(WITHOUT_ZIP)
+RUN_DEPENDS+=	${LOCALBASE}/bin/zipinfo:${PORTSDIR}/archivers/unzip
+.endif
+.if !defined(WITHOUT_ISPELL)
+RUN_DEPENDS+=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
 .endif
 
 NO_BUILD=	yes
@@ -95,12 +123,21 @@ pre-install:
 	    ${FALSE} ; \
 	fi
 .if !defined(WITHOUT_LDAP)
+.if defined(WITH_LDAP2)
+	@if ! ${LDCONFIG} -r | ${GREP} -q -e "ldap.2"; then \
+	    ${ECHO_MSG} "" ; \
+	    ${ECHO_MSG} "Please configure PHP with OpenLDAP2 support." ; \
+	    ${ECHO_MSG} "" ; \
+	    ${FALSE} ; \
+	fi
+.else
 	@if ! ${LDCONFIG} -r | ${GREP} -q -e "ldap.1"; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with OpenLDAP support." ; \
 	    ${ECHO_MSG} "" ; \
 	    ${FALSE} ; \
 	fi
+.endif
 .endif
 .if !defined(WITHOUT_SUPPORTED_DB)
 	@if ! ${LDCONFIG} -r | ${GREP} -q -e "mysqlclient.10" ; then \
@@ -127,6 +164,15 @@ do-install:
 	${CP} -Rp ${WRKSRC}/config ${WRKSRC}/graphics ${WRKSRC}/lib ${IMPDIR}
 	${CP} -Rp ${WRKSRC}/locale ${WRKSRC}/scripts ${WRKSRC}/templates ${IMPDIR}
 	${CP} -p  ${WRKSRC}/*.php3 ${WRKSRC}/*.css ${IMPDIR}
+	${PERL} -pi -e "s:/usr/bin/ispell:${LOCALBASE}/bin/ispell:g" \
+			${IMPDIR}/config/defaults.php3.dist
+	${PERL} -pi -e "s:/usr/bin/wvHtml:${LOCALBASE}/bin/wvHtml:g" \
+			${IMPDIR}/config/defaults.php3.dist
+	${PERL} -pi -e "s:/usr/bin/xlHtml:${LOCALBASE}/bin/xlHtml:g" \
+			${IMPDIR}/config/defaults.php3.dist
+	${PERL} -pi -e "s:/bin/tar:/usr/bin/tar:g" ${IMPDIR}/config/defaults.php3.dist
+	${PERL} -pi -e "s:/usr/bin/zipinfo:${LOCALBASE}/bin/zipinfo:g" \
+			${IMPDIR}/config/defaults.php3.dist
 	@if [ ! -f ${IMPDIR}/config/defaults.php3 ]; then \
 	    ${CP}     ${IMPDIR}/config/defaults.php3.dist ${IMPDIR}/config/defaults.php3; \
 	fi
