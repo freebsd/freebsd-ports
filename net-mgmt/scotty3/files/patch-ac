@@ -1,0 +1,15 @@
+--- ../tkined/apps/snmp_monitor.tcl	Mon Sep  2 18:30:19 1996
++++ ..//tkined/apps/snmp_monitor.tcl	Mon Mar  3 14:43:52 1997
+@@ -482,8 +482,11 @@
+ 
+ 	set args $ip
+ 	set i 0
++	set snmpconfig [ined attribute $id "SNMP:Config"]
+ 	foreach if $iflist {
+-	    lappend args [CreateChart $id [expr 30+$i] [expr 30+$i]]
++	    set nid [CreateChart $id [expr 30+$i] [expr 30+$i]]
++	    lappend args $nid
++	    ined -noupdate attribute $nid "SNMP:Config" $snmpconfig
+ 	    lappend args $if
+ 	    incr i
+ 	}
