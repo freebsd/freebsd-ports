@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	rt
-PORTVERSION?=	3.2.1
+PORTVERSION?=	3.2.2
 CATEGORIES=	www
 MASTER_SITES?=	http://download.bestpractical.com/pub/rt/release/ \
 		http://download.bestpractical.com/pub/rt/devel/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/devel/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.sig
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	autrijus@autrijus.org
 COMMENT?=	RT is an industrial-grade ticketing system written in Perl
@@ -90,13 +92,13 @@ BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl 
 DB_TYPE?=	mysql
 
 .if ${DB_TYPE} == "Oracle"
-BUILD_DEPENDS+= ${SITE_PERL}/${PERL_ARCH}/DBD/Oracle.pm:${PORTSDIR}/databases/p5-DBD-Oracle
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Oracle.pm:${PORTSDIR}/databases/p5-DBD-Oracle
 .else
 .if ${DB_TYPE} == "Pg"
-BUILD_DEPENDS+= ${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
 .else
 .if ${DB_TYPE} == "SQLite"
-BUILD_DEPENDS+= ${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite
 .else
 DB_TYPE=	mysql
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
