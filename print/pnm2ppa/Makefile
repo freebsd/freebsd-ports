@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55 \
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu \
 		enscript:${PORTSDIR}/print/enscript-letter
 
 MAN1=		pnm2ppa.1

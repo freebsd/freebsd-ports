@@ -18,7 +18,7 @@ NO_BUILD=	yes
 USE_X_PREFIX=	yes
 
 # XXX ghostscript, ghostscript3, ghostscript4 or ghostscript5 will all do.
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 
 .include <bsd.port.pre.mk>
 

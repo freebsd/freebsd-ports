@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS=	mogrify:${PORTSDIR}/graphics/ImageMagick \
 		djpeg:${PORTSDIR}/graphics/jpeg \
 		giftopnm:${PORTSDIR}/graphics/netpbm \
-		gs:${PORTSDIR}/print/ghostscript55 \
+		gs:${PORTSDIR}/print/ghostscript-gnu \
 		tex:${PORTSDIR}/print/teTeX \
 		${site_perl}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		weblint:${PORTSDIR}/www/weblint

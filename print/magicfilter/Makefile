@@ -14,9 +14,9 @@ MASTER_SITE_SUBDIR= system/printing
 MAINTAINER=	cjh@FreeBSD.org
 
 # at least, gs must exist in many case
-BUILD_DEPENDS=	${PREFIX}/bin/gs:${PORTSDIR}/print/ghostscript55
+BUILD_DEPENDS=	${PREFIX}/bin/gs:${PORTSDIR}/print/ghostscript-gnu
 # to give freedom to choose your favor gs..
-#RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript55
+#RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
