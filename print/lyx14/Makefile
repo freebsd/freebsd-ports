@@ -41,4 +41,7 @@ pre-fetch:
 	@${ECHO_MSG} "make WITH_ISPELL=yes"
 .endif
 
+post-patch:
+	(cd ${WRKSRC}; ${TOUCH} Makefile.in */Makefile.in src/config.h.in)
+
 .include <bsd.port.mk>
