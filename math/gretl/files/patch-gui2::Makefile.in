@@ -1,0 +1,54 @@
+--- gui2/Makefile.in.orig	Tue Nov 12 04:28:20 2002
++++ gui2/Makefile.in	Mon Nov 18 20:02:19 2002
+@@ -4,6 +4,7 @@
+ exec_prefix = @exec_prefix@
+ bindir = @bindir@
+ libdir = @libdir@
++datadir= @datadir@
+ CC = @CC@
+ CFLAGS = @CFLAGS@
+ MAKE = @MAKE@
+@@ -42,14 +43,13 @@
+   LIBS = $(GNOME_LIBS) $(GTK_EXTRA_LIB) ../lib/libgretl-1.0.la
+   GUI_CFLAGS = $(GNOME_CFLAGS) $(GTK_EXTRA_CFLAGS)
+   query_install_gnome = install-gnome
+-  GNOMEDEF = -DGNOME_DISABLE_DEPRECATED -DDATADIR=\"$(gnome_prefix)/share\"
++  GNOMEDEF = -DGNOME_DISABLE_DEPRECATED -DDATADIR=\"$(datadir)\"
+ else
+   LIBS = $(GTK_LIBS) $(GTK_EXTRA_LIB) ../lib/libgretl-1.0.la
+   GUI_CFLAGS = $(GTK_CFLAGS) $(GTK_EXTRA_CFLAGS)
+ endif
+ ifeq ($(USE_NLS),yes)
+-  datadir = @datadir@
+-  localedir = $(datadir)/locale
++  localedir = $(prefix)/share/locale
+   NLSDEF = -DLOCALEDIR=\"$(localedir)\"
+ endif
+ 
+@@ -60,7 +60,7 @@
+ 
+ # Directories
+ bindir	= $(prefix)/bin
+-gretldir = $(prefix)/share/gretl
++gretldir = $(datadir)/gretl
+ tooldir = $(topsrc)/tools
+ libsrc = $(topsrc)/lib/src
+ clisrc = $(topsrc)/cli
+@@ -92,7 +92,7 @@
+ 	$(CC) $(CFLAGS) $(GTK_CFLAGS) -c $<
+ 
+ $(GTKEXTRA_LITE): 
+-	make -C gtkextra-lite
++	$(MAKE) -C gtkextra-lite
+ 
+ .PHONY:
+ 
+@@ -103,7 +103,7 @@
+ 	$(LIBTOOL) $(INSTALL_PROGRAM) -s $(PROG) $(bindir)/$(PROG)
+ 
+ install-data: installdirs
+-	$(INSTALL_PROGRAM) $(topsrc)/gretl_sh $(bindir)/gretl
++	$(INSTALL_SCRIPT) $(topsrc)/gretl_sh $(bindir)/gretl
+ 	$(INSTALL_DATA) ../pixmaps/gretl-logo.xpm $(gretldir)
+ 	$(INSTALL_DATA) $(topsrc)/COPYING $(gretldir)
+ 

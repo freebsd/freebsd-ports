@@ -1,0 +1,23 @@
+--- gui2/omf-install/Makefile.in.orig	Sun Aug 25 03:09:19 2002
++++ gui2/omf-install/Makefile.in	Mon Oct 21 07:48:35 2002
+@@ -1,9 +1,9 @@
+ 
+ INSTALL = @INSTALL@
+-gnome_prefix = @gnome_prefix@
++datadir = @datadir@
+ 
+-docdir = $(gnome_prefix)/share/gnome/help/gretl/C
+-omfdir = $(gnome_prefix)/share/omf/gretl
++docdir = $(datadir)/help/gretl/C
++omfdir = $(datadir)/omf/gretl
+ 
+ gretl-C.omf: gretl-C.omf.in
+ 	  scrollkeeper-preinstall $(docdir)/`awk 'BEGIN {RS = ">" } \
+@@ -12,5 +12,5 @@
+ 
+ install: gretl-C.omf
+ 	../../tools/mkinstalldirs $(omfdir)
+-	$(INSTALL) -m 644 $< $(omfdir)
+-	scrollkeeper-update -p $(gnome_prefix)/var/scrollkeeper
++	$(INSTALL_DATA) $< $(omfdir)
++	scrollkeeper-update -p /var/log/scrollkeeper

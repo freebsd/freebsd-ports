@@ -1,0 +1,11 @@
+--- doc/manual.xml.orig	Fri Nov  8 01:30:56 2002
++++ doc/manual.xml	Mon Nov 18 20:26:15 2002
+@@ -1,6 +1,6 @@
+ <?xml version="1.0"?>
+-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+-"/usr/share/sgml/docbook-xml-4.2/docbookx.dtd" [
++<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
++    "http://www.oasis-open.org/docbook/xml/4.1.2/docbookx.dtd" [
+ 
+ <!ENTITY version "1.0">
+ <!ENTITY latex "LaTeX">
