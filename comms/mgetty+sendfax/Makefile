@@ -1,19 +1,19 @@
 # New ports collection makefile for:    mgetty+sendfax
-# Version required:     1.1.11
-# Date created:         21 September 1994
-# Whom:                 jmz
+# Version required:     1.1.14
+# Date created:         20 April 1998
+# Whom:                 rkw
 #
-# $Id: Makefile,v 1.22 1998/01/26 10:14:30 vanilla Exp $
+# $Id: Makefile,v 1.23 1998/03/07 23:26:11 jmz Exp $
 #
 
-DISTNAME=	mgetty1.1.11-Dec16
-PKGNAME=	mgetty-1.1.11
+DISTNAME=	mgetty1.1.14-Apr02
+PKGNAME=	mgetty-1.1.14
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.leo.org/pub/comp/os/unix/networking/mgetty/
 
 MAINTAINER=	jmz@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/mgetty-1.1.11
+WRKSRC=		${WRKDIR}/mgetty-1.1.14
 MAKE_FLAGS=	prefix=${PREFIX} -f
 MAN1=		coverpg.1 fax.1 faxq.1 faxrm.1 faxrunq.1 faxspool.1 \
 		g3cat.1 g32pbm.1 pbm2g3.1 pvf.1 zplay.1
