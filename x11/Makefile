@@ -22,6 +22,7 @@
     SUBDIR += decurs
     SUBDIR += deskmenu
     SUBDIR += dgs
+    SUBDIR += docker
     SUBDIR += dxpc
     SUBDIR += dynamag
     SUBDIR += ebuttons
