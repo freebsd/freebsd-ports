@@ -1,6 +1,6 @@
---- compat_mit.c.orig	Mon Nov  6 13:48:30 2000
-+++ compat_mit.c	Mon Nov  6 13:52:48 2000
-@@ -0,0 +1,147 @@
+--- compat_mit.c.orig	Mon Jun 11 13:20:39 2001
++++ compat_mit.c	Mon Jun 11 13:22:18 2001
+@@ -0,0 +1,140 @@
 +#include <errno.h>
 +#include <stdio.h>
 +#include <stdlib.h>
@@ -21,13 +21,6 @@
 +compat_free_data_contents(krb5_context context, krb5_data *data)
 +{
 +	krb5_free_data_contents(context, data);
-+}
-+
-+krb5_error_code
-+compat_cc_next_cred(krb5_context context, const krb5_ccache id, 
-+    krb5_cc_cursor *cursor, krb5_creds *creds)
-+{
-+	return krb5_cc_next_cred(context, id, cursor, creds);
 +}
 +
 +static krb5_error_code

@@ -1,5 +1,5 @@
 --- pam_krb5_auth.c.orig	Tue Jan  4 19:08:51 2000
-+++ pam_krb5_auth.c	Wed Jan 24 14:08:18 2001
++++ pam_krb5_auth.c	Mon Jun 11 13:22:45 2001
 @@ -7,18 +7,22 @@
  
  static const char rcsid[] = "$Id: pam_krb5_auth.c,v 1.18 2000/01/04 08:44:08 fcusack Exp $";
@@ -293,14 +293,12 @@
  	DLOG("krb5_cc_start_seq_get()", error_message(krbret));
  	(void) krb5_cc_destroy(pam_context, ccache_perm);
  	pamret = PAM_SERVICE_ERR;
-@@ -400,9 +416,10 @@
-     }
+@@ -401,8 +417,9 @@
  
      /* Copy the creds (should be two of them) */
--    while ((krbret = krb5_cc_next_cred(pam_context, ccache_temp,
+     while ((krbret = krb5_cc_next_cred(pam_context, ccache_temp,
 -				       &cursor, &creds) == 0)) {
 -	if (krbret = krb5_cc_store_cred(pam_context, ccache_perm, &creds)) {
-+    while ((krbret = compat_cc_next_cred(pam_context, ccache_temp,
 +	&cursor, &creds) == 0)) {
 +	    if ((krbret = krb5_cc_store_cred(pam_context, ccache_perm, 
 +		&creds)) != 0) {
