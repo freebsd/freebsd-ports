@@ -18,8 +18,9 @@ LIB_DEPENDS=	gmp.3:${PORTSDIR}/math/libgmp
 DOCFILES=	CONTRIBUTORS COPYRIGHT INSTALL MODULES README
 
 post-patch:
+	${CP} ${FILESDIR}/dhisd.sh ${WRKSRC}/dhisd.sh
 	cd ${WRKSRC} && ${PERL} -i -p -e "s^__PREFIX__^${PREFIX}^g" \
-		Makefile dhisd.h ${DOCFILES}
+		Makefile dhisd.h dhisd.sh ${DOCFILES}
 
 do-install:
 
@@ -41,7 +42,7 @@ post-install:
 	@${ECHO_CMD} "@dirrm etc/dhis" >> ${TMPPLIST}
 .if !exists(${PREFIX}/etc/rc.d/dhisd.sh)
 	@${ECHO_MSG} "===>   Installing ${PREFIX}/etc/rc.d/dhid.sh startup file."
-	@${INSTALL_SCRIPT} -m 751 ${FILESDIR}/dhisd.sh ${PREFIX}/etc/rc.d/dhisd.sh
+	@${INSTALL_SCRIPT} -m 751 ${WRKSRC}/dhisd.sh ${PREFIX}/etc/rc.d/dhisd.sh
 	@${ECHO_CMD} "etc/rc.d/dhisd.sh" >> ${TMPPLIST}
 .endif
 .if !defined(NOPORTDOCS)
