@@ -31,6 +31,7 @@ bin/vmh
 bin/whatnow
 bin/whom
 bin/mhparam
+lib/libmh.so.3.2
 lib/mh/mtstailor
 lib/mh/MailAliases
 lib/mh/components
