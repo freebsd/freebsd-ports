@@ -7904,6 +7904,7 @@ python22	ports/lang/python22
 pythoncad	ports/cad/pythoncad
 pythondirector	ports/net/pythondirector
 pythoong	ports/games/pythoong
+pyumlgraph	ports/devel/pyumlgraph
 pyweather	ports/astro/pyweather
 pyweblib	ports/www/pyweblib
 pyzor		ports/mail/pyzor
