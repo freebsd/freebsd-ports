@@ -53,6 +53,10 @@ clean:
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
+.else
+post-install:
+	@${MKDIR} ${PREFIX}/apsfilter/filter
+	@${TOUCH} ${PREFIX}/apsfilter/filter/.keep_me
 .endif
 
 .include <bsd.port.mk>
