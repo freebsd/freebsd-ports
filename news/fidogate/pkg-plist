@@ -1,3 +1,4 @@
+@comment $FreeBSD: /tmp/pcvs/ports/news/fidogate/pkg-plist,v 1.5 2000-11-30 14:19:27 kevlo Exp $
 libexec/fidogate/areafix.help
 libexec/fidogate/areasbbssync
 libexec/fidogate/charset.bin
@@ -32,6 +33,7 @@ libexec/fidogate/ftnseq
 libexec/fidogate/ftntick
 libexec/fidogate/ftntickpost
 libexec/fidogate/ftntoss
+libexec/fidogate/hosts2dns
 libexec/fidogate/latest
 libexec/fidogate/logcheck
 libexec/fidogate/logdaily
@@ -42,6 +44,7 @@ libexec/fidogate/nl-autoupd
 libexec/fidogate/nl-check
 libexec/fidogate/nl-del
 libexec/fidogate/nl-diff
+libexec/fidogate/out-ls
 libexec/fidogate/out-manip
 libexec/fidogate/out-rm0
 libexec/fidogate/out-rmbsy
@@ -56,6 +59,9 @@ libexec/fidogate/runin
 libexec/fidogate/runmail
 libexec/fidogate/runnews
 libexec/fidogate/runout
+libexec/fidogate/runpoll
+libexec/fidogate/runpoll-binkd
+libexec/fidogate/runpoll-orodruin
 libexec/fidogate/runtoss
 libexec/fidogate/rununpack
 libexec/fidogate/send-ffx
