@@ -2930,6 +2930,8 @@ ja-netscape4-communicator	ports/japanese/netscape4-communicator
 ja-netscape4-navigator		ports/japanese/netscape4-navigator
 ja-netscape47-communicator	ports/japanese/netscape47-communicator
 ja-netscape47-navigator		ports/japanese/netscape47-navigator
+ja-netscape48-communicator	ports/japanese/netscape48-communicator
+ja-netscape48-navigator		ports/japanese/netscape48-navigator
 ja-netype	ports/japanese/netype
 ja-netypesv	ports/japanese/netypesv
 ja-newosaka	ports/japanese/newosaka
