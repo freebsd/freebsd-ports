@@ -87,6 +87,11 @@ PLIST_SUB+=	PREFIX=${PREFIX:S=${PREFIX}/==}
 SENDMAIL=	${PREFIX}/sbin/sendmail
 
 do-configure:
+	@${MV} ${WRKSRC}/devtools/OS/FreeBSD ${WRKSRC}/devtools/OS/FreeBSD.sed
+	${SED} -e "s,\`-pthread\',\`${PTHREAD_LIBS}\'," \
+		-e "s,\`-O\',\`${CFLAGS}\'," \
+		${WRKSRC}/devtools/OS/FreeBSD.sed \
+		> ${WRKSRC}/devtools/OS/FreeBSD
 	${SED} -e "s=%%PREFIX%%=${PREFIX}=" -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
 		${SITE} > ${WCONF}/site.config.m4
 

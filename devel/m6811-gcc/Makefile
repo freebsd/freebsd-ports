@@ -30,6 +30,8 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} --target=m6811-elf   \
 MAN1=		m6811-elf-g++.1 m6811-elf-g77.1 m6811-elf-gcc.1 cccp.1
 
 post-patch:
-	@${PERL5} -pi -e "s/TARGET_CONFIGDIRS = libiberty/TARGET_CONFIGDIRS =/" ${WRKSRC}/Makefile.in
+	@${MV} ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in.sed
+	${SED} -e "s/TARGET_CONFIGDIRS = libiberty/TARGET_CONFIGDIRS =/" \
+		${WRKSRC}/Makefile.in.sed > ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

@@ -23,7 +23,9 @@ WRKSRC=		${WRKDIR}/Frodo/Src
 ROM=		1541 Basic Char Kernal
 
 post-patch:
-	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKDIR}/Frodo/TkGui.tcl
+	@${MV} ${WRKDIR}/Frodo/TkGui.tcl ${WRKDIR}/Frodo/TkGui.tcl.sed
+	${SED} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
+		${WRKDIR}/Frodo/TkGui.tcl.sed > ${WRKDIR}/Frodo/TkGui.tcl
 
 do-configure:
 	@(cd ${WRKSRC}; ${SH} ./configure)

@@ -24,6 +24,7 @@ MAN1=		scp.1 slogin.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh.1 \
 		ssh-keyscan.1 sftp.1
 MAN8=		sshd.8 sftp-server.8
 MANCOMPRESSED=	yes
+MODIFY=		ssh.h sshd_config sshd.sh pathnames.h
 FIXME=		lib/Makefile scp/Makefile sftp/Makefile sftp-server/Makefile \
 		ssh/Makefile ssh-add/Makefile ssh-agent/Makefile \
 		ssh-keygen/Makefile ssh-keyscan/Makefile sshd/Makefile
@@ -71,8 +72,14 @@ post-extract:
 .endif
 
 post-patch:
-	@${PERL5} -pi -e "s=/etc/ssh=${PREFIX}/etc/ssh=" ${WRKSRC}/sshd_config
-	@${PERL5} -pi -e "s=/usr/libex=${PREFIX}/libex=" ${WRKSRC}/sshd_config
+	@${MV} ${WRKSRC}/sshd_config ${WRKSRC}/sshd_config.sed
+	${SED} -e "s=/etc/ssh=${PREFIX}/etc/ssh=" \
+		-e "s=/usr/libex=${PREFIX}/libex=" \
+		${WRKSRC}/sshd_config.sed > ${WRKSRC}/sshd_config
+.for i in ${MODIFY}
+	@${MV} ${WRKSRC}/${i} ${WRKSRC}/${i}.sed
+	${SED} -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/${i}.sed >${WRKSRC}/${i}
+.endfor
 	@${PERL5} -pi -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/ssh.h	\
 		${WRKSRC}/sshd_config ${WRKSRC}/sshd.sh \
 		${WRKSRC}/pathnames.h
@@ -80,11 +87,13 @@ post-patch:
 .if ${OSVERSION} < 430000
 post-configure:
 .for i in ${FIXME}
-	@${PERL5} -pi -e "s=KERBEROS[:]L=KERBEROS=" ${WRKSRC}/${i}
-	@${PERL5} -pi -e "s=KERBEROS5[:]L=KERBEROS5=" ${WRKSRC}/${i}
-	@${PERL5} -pi -e "s=AFS[:]L=AFS=" ${WRKSRC}/${i}
-	@${PERL5} -pi -e "s=TCP_WRAPPERS[:]L=TCP_WRAPPERS=" ${WRKSRC}/${i}
-	@${PERL5} -pi -e "s=SKEY[:]L=SKEY=" ${WRKSRC}/${i}
+	@${MV} ${WRKSRC}/${i} ${WRKSRC}/${i}.sed
+	${SED} -e "s=KERBEROS[:]L=KERBEROS=" \
+		-e "s=KERBEROS5[:]L=KERBEROS5=" \
+		-e "s=AFS[:]L=AFS=" \
+		-e "s=TCP_WRAPPERS[:]L=TCP_WRAPPERS=" \
+		-e "s=SKEY[:]L=SKEY=" \
+		${WRKSRC}/${i}.sed >${WRKSRC}/${i}
 .endfor
 .endif
 

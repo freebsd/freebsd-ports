@@ -25,11 +25,10 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S=-src==}
 #include_dirs = /usr/local/openldap2/include
 #libs = lber ldap resolv
 do-configure:
-	@${PERL5} -pi -e "s=/usr/local/openldap2/lib=${LOCALBASE}/lib=" \
-		${WRKSRC}/setup.cfg
-	@${PERL5} -pi \
+	@${MV} ${WRKSRC}/setup.cfg ${WRKSRC}/setup.cfg.sed
+	${SED} -e "s=/usr/local/openldap2/lib=${LOCALBASE}/lib=" \
 		-e "s=/usr/local/openldap2/include=${LOCALBASE}/include=" \
-		${WRKSRC}/setup.cfg
-	@${PERL5} -pi -e "s=lber ldap resolv=lber ldap=" ${WRKSRC}/setup.cfg
+		-e "s=lber ldap resolv=lber ldap=" \
+		${WRKSRC}/setup.cfg.sed > ${WRKSRC}/setup.cfg
 
 .include <bsd.port.mk>

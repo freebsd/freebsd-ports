@@ -30,16 +30,17 @@ post-extract:
 
 do-configure:
 .for i in ${FIXME}
-	@${PERL} -pi -e "s=/usr/local/=${PREFIX}/=" ${WRKSRC}/${i}
+	@${MV} ${WRKSRC}/${i} ${WRKSRC}/${i}.sed
+	${SED} -e "s=/usr/local/=${PREFIX}/=" \
+		${WRKSRC}/${i}.sed > ${WRKSRC}/${i}
 .endfor
 .if defined(UUCP_WITH_VAR_LOG)
 .for i in ${VARLOG}
-	@${PERL} -pi -e "s=/var/spool/uucp/Log=/var/log/uucp/Log=" \
-		${WRKSRC}/${i}
-	@${PERL} -pi -e "s=/var/spool/uucp/Debug=/var/log/uucp/Debug=" \
-		${WRKSRC}/${i}
-	@${PERL} -pi -e "s=/var/spool/uucp/Stats=/var/log/uucp/Stats=" \
-		${WRKSRC}/${i}
+	@${MV} ${WRKSRC}/${i} ${WRKSRC}/${i}.sed
+	${SED} -e "s=/var/spool/uucp/Log=/var/log/uucp/Log=" \
+		-e "s=/var/spool/uucp/Debug=/var/log/uucp/Debug=" \
+		-e "s=/var/spool/uucp/Stats=/var/log/uucp/Stats=" \
+		${WRKSRC}/${i}.sed > ${WRKSRC}/${i}
 .endfor
 	@${ECHO_CMD} "   .." >> ${WRKSRC}/uucp.mtree
 	@${ECHO_CMD} "/set uname=root gname=wheel mode=0755" \
