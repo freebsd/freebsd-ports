@@ -10,6 +10,7 @@
 
 PORTNAME=	dillo
 PORTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.dillo.org/download/
 

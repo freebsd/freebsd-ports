@@ -45,7 +45,9 @@ OPTIONS=	KDE_MENUS "Integrated KDE menu picks" on
 .undef WITHOUT_CDPARANOIA
 .undef WITHOUT_SAMBA
 .undef WITHOUT_MDNS
+.if ${ARCH} != "alpha"
 WITH_MDNS=		yes
+.endif
 WITH_CDPARANOIA=	yes
 WITH_SAMBA=		yes
 .endif

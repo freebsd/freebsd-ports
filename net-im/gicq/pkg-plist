@@ -1,7 +1,0 @@
-bin/gicq
-%%GNOME:%%share/gnome/apps/Applications/gicq.desktop
-%%DATADIR%%/help/gicq/C/index.html
-%%DATADIR%%/help/gicq/C/topic.dat
-@dirrm %%DATADIR%%/help/gicq/C
-@dirrm %%DATADIR%%/help/gicq
-%%NOGNOME:%%@dirrm %%DATADIR%%/help

@@ -1,5 +1,0 @@
-include/theora/theora.h
-lib/libtheora.a
-lib/libtheora.so
-lib/libtheora.so.0
-@dirrm include/theora

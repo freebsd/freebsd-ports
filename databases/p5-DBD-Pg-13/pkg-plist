@@ -1,7 +1,0 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/DBD/Pg.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Pg/.packlist
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Pg/Pg.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Pg/Pg.so
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD/Pg
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBD 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/DBD 2>/dev/null || true

@@ -1,7 +1,0 @@
-sbin/haproxy
-etc/rc.d/haproxy.sh
-%%PORTDOCS%%%%DOCSDIR%%/haproxy-en.txt
-%%PORTDOCS%%%%DOCSDIR%%/haproxy-fr.txt
-%%PORTDOCS%%%%EXAMPLESDIR%%/haproxy.cfg
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

@@ -1,6 +1,0 @@
-libexec/apache/mod_extract_forwarded.so
-@exec %D/sbin/apxs -e -A -n extract_forwarded %D/%F
-@unexec %D/sbin/apxs -e -A -n extract_forwarded %D/%F
-%%PORTDOCS%%share/doc/mod_extract_forwarded/doc.html
-%%PORTDOCS%%share/doc/mod_extract_forwarded/README
-%%PORTDOCS%%@dirrm share/doc/mod_extract_forwarded

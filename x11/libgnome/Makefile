@@ -46,10 +46,16 @@ GCONF_SCHEMAS=	desktop_gnome_accessibility_keyboard.schemas \
 		desktop_gnome_sound.schemas desktop_gnome_thumbnailers.schemas \
 		desktop_gnome_typing_break.schemas
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha"
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libgnome_gnome-program.c
+.endif
+
 .if defined(NOPORTDOCS)
 post-patch:
 	@${REINPLACE_CMD} -e 's|gnome-data po doc|gnome-data po|g' \
 		${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
