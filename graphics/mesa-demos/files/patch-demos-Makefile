@@ -5,13 +5,13 @@
  LIBDIR = ../lib
  
 -GL_LIBS = -L$(LIBDIR) -lglut -lGLU -lGL $(APP_LIB_DEPS)
-+GL_LIBS = -L$(X11BASE)/lib -lglut -lGLU -lGL $(APP_LIB_DEPS)
++GL_LIBS = -L$(X11BASE)/lib -lglut -lGLU -lGL $(APP_LIB_DEPS) ${PTHREAD_LIBS}
  
 -OSMESA_LIBS = -L$(LIBDIR) -lglut -lOSMesa -lGLU -lGL $(APP_LIB_DEPS)
-+OSMESA_LIBS = -L$(X11BASE)/lib -lglut -lOSMesa -lGLU -lGL $(APP_LIB_DEPS)
++OSMESA_LIBS = -L$(X11BASE)/lib -lglut -lOSMesa -lGLU -lGL $(APP_LIB_DEPS) ${PTHREAD_LIBS}
  
  LIB_DEP = $(LIBDIR)/$(GL_LIB) $(LIBDIR)/$(GLU_LIB) $(LIBDIR)/$(GLUT_LIB)
-+CFLAGS += -DGL_ARB_point_parameters=0
++CFLAGS += -DGL_ARB_point_parameters=0 ${PTHREAD_CFLAGS}
  
  PROGS = bounce \
  	clearspd \
