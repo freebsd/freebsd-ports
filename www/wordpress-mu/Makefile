@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wordpress-mu
-PORTVERSION=	2005.01.12
+PORTVERSION=	2005.02.23
 CATEGORIES=	www
 MASTER_SITES=	http://mu.wordpress.org/download/
 DISTNAME=	wpmu-${PORTVERSION:S/./-/g}
@@ -22,6 +22,7 @@ NO_BUILD=	yes
 WANT_PHP_WEB=	yes
 WORDPRESSMU?=	www/data/wordpress-mu
 PLIST_SUB+=	WORDPRESSMU=${WORDPRESSMU}
+PLIST=		${WRKDIR}/pkg-plist
 
 PORTDOCS=	license.txt readme.html
 
@@ -37,13 +38,14 @@ do-install:
 .endfor
 .endif
 
+pre-install:
+	cd ${WRKSRC} && ${FIND} -s * -type f | \
+		${SED} -e 's|^|${WORDPRESSMU}/|' > ${PLIST} \
+		&& ${FIND} -d * -type d | \
+	${SED} -e 's|^|@dirrm ${WORDPRESSMU}/|' >> ${PLIST} \
+		&& ${ECHO_CMD} @dirrm ${WORDPRESSMU} >> ${PLIST}
+
 post-install:
-	@${ECHO_MSG}
-	@${ECHO_MSG} "          **** NOTE ****"
-	@${ECHO_MSG} "Before the first use of WordPress-MU, copy wp-inst/wp-config-sample.php to wp-inst/wp-config.php"
-	@${ECHO_MSG} "in ${PREFIX}/${WORDPRESSMU}/wp-inst/"
-	@${ECHO_MSG} "And Modify it to fit your MySQL."
-	@${ECHO_MSG} "Maybe you need 'mysqladmin create wordpress' first"
-	@${ECHO_MSG}
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

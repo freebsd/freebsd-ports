@@ -20,13 +20,11 @@ USE_PHP=	mysql pcre xml
 PHP4_PORT?=	www/mod_php4
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
-WORDPRESS?=	www/data-dist/wordpress
+WORDPRESS?=	www/data/wordpress
 PLIST_SUB+=	WORDPRESS=${WORDPRESS}
 PLIST=		${WRKDIR}/pkg-plist
 
-.if !defined(NOPORTDOCS)
 PORTDOCS=	license.txt readme.html
-.endif
 
 pre-install:
 	cd ${WRKSRC} && ${FIND} -s * -type f | \
@@ -36,14 +34,14 @@ pre-install:
 		&& ${ECHO_CMD} @dirrm ${WORDPRESS} >> ${PLIST}
 
 do-install:
-	-${MKDIR} ${PREFIX}/${WORDPRESS}
-	@${CHOWN} www:www ${PREFIX}/${WORDPRESS}
+	-@${MKDIR} ${PREFIX}/${WORDPRESS}
+	@${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${WORDPRESS}
 	@${CHMOD} 755 ${PREFIX}/${WORDPRESS}
-	@${CP} -R ${WRKSRC}/ ${PREFIX}/${WORDPRESS}
+	${CP} -R ${WRKSRC}/ ${PREFIX}/${WORDPRESS}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}/${i}
 .endfor
 .endif
 
