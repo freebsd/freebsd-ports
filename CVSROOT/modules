@@ -7413,6 +7413,7 @@ songprint	ports/audio/songprint
 sonice		ports/audio/sonice
 sonicmail	ports/mail/sonicmail
 sopwith		ports/games/sopwith
+soqt		ports/x11-toolkits/soqt
 soribada	ports/audio/soribada
 soundgrab	ports/audio/soundgrab
 soundtracker	ports/audio/soundtracker
