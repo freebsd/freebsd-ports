@@ -7,13 +7,14 @@
 
 PORTNAME=	xmms-sndfile
 PORTVERSION=	1.0.p6
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.zipworld.com.au/~erikd/XMMS/
 DISTNAME=	xmms_sndfile-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	dyeske@yahoo.com
 
-LIB_DEPENDS=	sndfile.0:${PORTSDIR}/audio/libsndfile \
+LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		xmms.3:${PORTSDIR}/audio/xmms
 
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
