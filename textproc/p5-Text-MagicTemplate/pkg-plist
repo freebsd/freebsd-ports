@@ -8,9 +8,11 @@
 %%SITE_PERL%%/auto/Text/MagicTemplate/INCLUDE_TEXT.al
 %%SITE_PERL%%/auto/Text/MagicTemplate/autosplit.ix
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/MagicTemplate/.packlist
-@dirrm %%SITE_PERL%%/Bundle/Text
 @dirrm %%SITE_PERL%%/Text/MagicTemplate
+@unexec rmdir %D/%%SITE_PERL%%/Text 2>/dev/null || true
 @dirrm %%SITE_PERL%%/auto/Text/MagicTemplate
+@dirrm %%SITE_PERL%%/mach/auto/Text/MagicTemplate
+@unexec rmdir %D/%%SITE_PERL%%/mach/auto/Text 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Bundle/Text 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/Text/MagicTemplate 2>/dev/null || true
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH/auto/Text/MagicTemplate 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Bundle 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/auto/Text 2>/dev/null || true
