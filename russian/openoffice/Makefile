@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-CATEGORIES=     russian
+CATEGORIES=     russian editors
 
 LANG_PKGNAME=	ru
 LANG_EXT=	07
 LANG_CONFIGURE_ARG=	RUSS
 MASTERDIR=	${.CURDIR}/../../editors/openoffice
 
-.include "${.CURDIR}/../../editors/openoffice/Makefile"
+.include "${MASTERDIR}/Makefile"
