@@ -7,7 +7,7 @@
 
 PORTNAME=	mprime
 PORTVERSION=	0.0.${SOURCE_VERSION}
-CATEGORIES=	math benchmarks
+CATEGORIES=	math benchmarks net
 MASTER_SITES=	ftp://mersenne.org/gimps/ \
 		${MASTER_SITE_LOCAL:S/$/:local/}
 MASTER_SITE_SUBDIR=	lioux/:local
