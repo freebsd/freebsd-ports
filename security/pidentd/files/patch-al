@@ -1,5 +1,5 @@
 --- /dev/null	Wed Jul 14 15:27:00 1999
-+++ src/freebsd4.c	Thu Jul  8 15:52:57 1999
++++ src/freebsd-sysctl.c	Thu Jul  8 15:52:57 1999
 @@ -0,0 +1,32 @@
 +#include <sys/param.h>
 +#include <sys/types.h>
