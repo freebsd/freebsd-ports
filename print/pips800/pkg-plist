@@ -31,7 +31,32 @@ etc/rc.d/ekpd.sh
 etc/ekpdrc
 %%PIPS%%etc/pipsrc
 %%PIPS%%@exec chmod 666 %D/etc/pipsrc
+%%EKPSTM_PIXMAP%%share/ekpstm/pixmaps/Makefile
+%%EKPSTM_PIXMAP%%share/ekpstm/pixmaps/Makefile.am
+%%EKPSTM_PIXMAP%%share/ekpstm/pixmaps/Makefile.in
+%%EKPSTM_PIXMAP%%share/ekpstm/pixmaps/c.xpm
+%%EKPSTM_PIXMAP%%share/ekpstm/pixmaps/dy.xpm
+%%EKPSTM_PIXMAP%%share/ekpstm/pixmaps/error.xpm
+%%EKPSTM_PIXMAP%%share/ekpstm/pixmaps/error_i3.xpm
+%%EKPSTM_PIXMAP%%share/ekpstm/pixmaps/error_i4.xpm
+%%EKPSTM_PIXMAP%%share/ekpstm/pixmaps/error_i6.xpm
+%%EKPSTM_PIXMAP%%share/ekpstm/pixmaps/error_i8.xpm
+%%EKPSTM_PIXMAP%%share/ekpstm/pixmaps/error_ia.xpm
+%%EKPSTM_PIXMAP%%share/ekpstm/pixmaps/k.xpm
+%%EKPSTM_PIXMAP%%share/ekpstm/pixmaps/lc.xpm
+%%EKPSTM_PIXMAP%%share/ekpstm/pixmaps/lm.xpm
+%%EKPSTM_PIXMAP%%share/ekpstm/pixmaps/m.xpm
+%%EKPSTM_PIXMAP%%share/ekpstm/pixmaps/printing1.xpm
+%%EKPSTM_PIXMAP%%share/ekpstm/pixmaps/printing2.xpm
+%%EKPSTM_PIXMAP%%share/ekpstm/pixmaps/printing3.xpm
+%%EKPSTM_PIXMAP%%share/ekpstm/pixmaps/ready.xpm
+%%EKPSTM_PIXMAP%%share/ekpstm/pixmaps/ready_i1.xpm
+%%EKPSTM_PIXMAP%%share/ekpstm/pixmaps/warning.xpm
+%%EKPSTM_PIXMAP%%share/ekpstm/pixmaps/y.xpm
+%%EKPSTM_PIXMAP%%@dirrm share/ekpstm/pixmaps
+%%EKPSTM_PIXMAP%%@dirrm share/ekpstm
 %%PIPS%%share/locale/de/LC_MESSAGES/pips%%PRTYPE%%.mo
+%%PIPS_EN%%share/locale/en/LC_MESSAGES/pips%%PRTYPE%%.mo
 %%PIPS%%share/locale/es/LC_MESSAGES/pips%%PRTYPE%%.mo
 %%PIPS%%share/locale/fr/LC_MESSAGES/pips%%PRTYPE%%.mo
 %%PIPS%%share/locale/it/LC_MESSAGES/pips%%PRTYPE%%.mo
