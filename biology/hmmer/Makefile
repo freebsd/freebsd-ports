@@ -3,7 +3,7 @@
 # Date created:		June 29 1998
 # Whom:			barnhart@genetics.wustl.edu
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/12 23:30:02 steve Exp $
+# $Id: Makefile,v 1.2 1998/12/09 22:35:04 billf Exp $
 #
 
 DISTNAME=	hmmer-2.0
@@ -13,8 +13,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	barnhart@genetics.wustl.edu
 
-BUILD_DEPENDS=	perl:${PORTSDIR}/lang/perl5
-
+USE_PERL5=	yes
 MAN1=		hmmalign.1 hmmbuild.1 hmmcalibrate.1 hmmconvert.1 hmmemit.1 hmmer.1 hmmpfam.1 hmmsearch.1
 
 WRKSRC=		${WRKDIR}/build/${DISTNAME}

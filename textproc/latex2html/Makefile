@@ -3,7 +3,7 @@
 # Date created:		3 May 1998
 # Whom:			brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.3 1998/05/05 05:14:03 mph Exp $
+# $Id: Makefile,v 1.4 1998/09/15 21:31:53 asami Exp $
 #
 
 DISTNAME=	latex2html-98.1p1
@@ -13,14 +13,14 @@ MASTER_SITES=	http://www-dsed.llnl.gov/files/programs/unix/latex2html/sources/ \
 
 MAINTAINER=	brett@peloton.physics.montana.edu
 
-RUN_DEPENDS=	${PERL5}:${PORTSDIR}/lang/perl5 \
-		${PREFIX}/bin/latex:${PORTSDIR}/print/latex \
+RUN_DEPENDS=	${PREFIX}/bin/latex:${PORTSDIR}/print/latex \
 		${PREFIX}/bin/dvips:${PORTSDIR}/print/dvips \
 		${PREFIX}/bin/gs:${PORTSDIR}/print/ghostscript5 \
 		${X11BASE}/bin/anytopnm:${PORTSDIR}/graphics/netpbm
 
 WRKSRC=	${WRKDIR}/latex2html
 
+USE_PERL5=	yes
 NO_BUILD=	yes
 IS_INTERACTIVE=	yes
 NO_PACKAGE=	An interrogation follows installation
