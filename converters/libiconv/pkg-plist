@@ -9,8 +9,8 @@ lib/libiconv.a
 lib/libiconv.so
 lib/libiconv.so.3
 libdata/charset.alias
-share/doc/libiconv/iconv.1.html
-share/doc/libiconv/iconv.3.html
-share/doc/libiconv/iconv_close.3.html
-share/doc/libiconv/iconv_open.3.html
-@dirrm share/doc/libiconv
+%%DOCSDIR%%/iconv.1.html
+%%DOCSDIR%%/iconv.3.html
+%%DOCSDIR%%/iconv_close.3.html
+%%DOCSDIR%%/iconv_open.3.html
+@dirrm %%DOCSDIR%%
