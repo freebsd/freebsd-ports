@@ -67,6 +67,7 @@
     SUBDIR += joe-devel
     SUBDIR += jove
     SUBDIR += koffice
+    SUBDIR += kxmleditor
     SUBDIR += le
     SUBDIR += led
     SUBDIR += leim20

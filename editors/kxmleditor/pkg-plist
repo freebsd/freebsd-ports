@@ -1,0 +1,85 @@
+bin/kxmleditor
+share/applnk/Applications/kxmleditor.desktop
+share/apps/kxmleditor/icons/hicolor/16x16/actions/bookmark_next.png
+share/apps/kxmleditor/icons/hicolor/16x16/actions/bookmark_prev.png
+share/apps/kxmleditor/icons/hicolor/16x16/actions/collapse_node.png
+share/apps/kxmleditor/icons/hicolor/16x16/actions/expand_node.png
+share/apps/kxmleditor/icons/hicolor/16x16/actions/xml_delete_attribute.png
+share/apps/kxmleditor/icons/hicolor/16x16/actions/xml_delete_contents.png
+share/apps/kxmleditor/icons/hicolor/16x16/actions/xml_delete_element.png
+share/apps/kxmleditor/icons/hicolor/16x16/actions/xml_delete_procins.png
+share/apps/kxmleditor/icons/hicolor/16x16/actions/xml_edit_attribute.png
+share/apps/kxmleditor/icons/hicolor/16x16/actions/xml_edit_contents.png
+share/apps/kxmleditor/icons/hicolor/16x16/actions/xml_edit_element.png
+share/apps/kxmleditor/icons/hicolor/16x16/actions/xml_edit_procins.png
+share/apps/kxmleditor/icons/hicolor/16x16/actions/xml_insert_attribute.png
+share/apps/kxmleditor/icons/hicolor/16x16/actions/xml_insert_contents.png
+share/apps/kxmleditor/icons/hicolor/16x16/actions/xml_insert_element.png
+share/apps/kxmleditor/icons/hicolor/16x16/actions/xml_insert_procins.png
+share/apps/kxmleditor/icons/hicolor/16x16/actions/xml_move_item_down.png
+share/apps/kxmleditor/icons/hicolor/16x16/actions/xml_move_item_up.png
+share/apps/kxmleditor/icons/hicolor/22x22/actions/bookmark_next.png
+share/apps/kxmleditor/icons/hicolor/22x22/actions/bookmark_prev.png
+share/apps/kxmleditor/icons/hicolor/22x22/actions/collapse_node.png
+share/apps/kxmleditor/icons/hicolor/22x22/actions/expand_node.png
+share/apps/kxmleditor/icons/hicolor/22x22/actions/xml_delete_attribute.png
+share/apps/kxmleditor/icons/hicolor/22x22/actions/xml_delete_contents.png
+share/apps/kxmleditor/icons/hicolor/22x22/actions/xml_delete_element.png
+share/apps/kxmleditor/icons/hicolor/22x22/actions/xml_delete_procins.png
+share/apps/kxmleditor/icons/hicolor/22x22/actions/xml_edit_attribute.png
+share/apps/kxmleditor/icons/hicolor/22x22/actions/xml_edit_contents.png
+share/apps/kxmleditor/icons/hicolor/22x22/actions/xml_edit_element.png
+share/apps/kxmleditor/icons/hicolor/22x22/actions/xml_edit_procins.png
+share/apps/kxmleditor/icons/hicolor/22x22/actions/xml_insert_attribute.png
+share/apps/kxmleditor/icons/hicolor/22x22/actions/xml_insert_contents.png
+share/apps/kxmleditor/icons/hicolor/22x22/actions/xml_insert_element.png
+share/apps/kxmleditor/icons/hicolor/22x22/actions/xml_insert_procins.png
+share/apps/kxmleditor/icons/hicolor/22x22/actions/xml_move_item_down.png
+share/apps/kxmleditor/icons/hicolor/22x22/actions/xml_move_item_up.png
+share/apps/kxmleditor/icons/hicolor/32x32/actions/bookmark_next.png
+share/apps/kxmleditor/icons/hicolor/32x32/actions/bookmark_prev.png
+share/apps/kxmleditor/icons/hicolor/32x32/actions/xml_move_item_down.png
+share/apps/kxmleditor/icons/hicolor/32x32/actions/xml_move_item_up.png
+share/apps/kxmleditor/icons/locolor/16x16/actions/bookmark_next.png
+share/apps/kxmleditor/icons/locolor/16x16/actions/bookmark_prev.png
+share/apps/kxmleditor/icons/locolor/16x16/actions/collapse_node.png
+share/apps/kxmleditor/icons/locolor/16x16/actions/expand_node.png
+share/apps/kxmleditor/icons/locolor/16x16/actions/xml_delete_attribute.png
+share/apps/kxmleditor/icons/locolor/16x16/actions/xml_delete_contents.png
+share/apps/kxmleditor/icons/locolor/16x16/actions/xml_delete_element.png
+share/apps/kxmleditor/icons/locolor/16x16/actions/xml_delete_procins.png
+share/apps/kxmleditor/icons/locolor/16x16/actions/xml_edit_attribute.png
+share/apps/kxmleditor/icons/locolor/16x16/actions/xml_edit_contents.png
+share/apps/kxmleditor/icons/locolor/16x16/actions/xml_edit_element.png
+share/apps/kxmleditor/icons/locolor/16x16/actions/xml_edit_procins.png
+share/apps/kxmleditor/icons/locolor/16x16/actions/xml_insert_attribute.png
+share/apps/kxmleditor/icons/locolor/16x16/actions/xml_insert_contents.png
+share/apps/kxmleditor/icons/locolor/16x16/actions/xml_insert_element.png
+share/apps/kxmleditor/icons/locolor/16x16/actions/xml_insert_procins.png
+share/apps/kxmleditor/icons/locolor/16x16/actions/xml_move_item_down.png
+share/apps/kxmleditor/icons/locolor/16x16/actions/xml_move_item_up.png
+share/apps/kxmleditor/kxmleditorui.rc
+share/apps/kxmleditor/pics/xml_attribute.png
+share/apps/kxmleditor/pics/xml_cdata.png
+share/apps/kxmleditor/pics/xml_comment.png
+share/apps/kxmleditor/pics/xml_contents.png
+share/apps/kxmleditor/pics/xml_element.png
+share/apps/kxmleditor/pics/xml_text.png
+share/doc/HTML/en/kxmleditor/common
+share/doc/HTML/en/kxmleditor/index.docbook
+share/doc/HTML/en/kxmleditor/screenshot.png
+share/doc/HTML/en/kxmleditor/xml.png
+@dirrm share/doc/HTML/en/kxmleditor
+@dirrm share/apps/kxmleditor/pics
+@dirrm share/apps/kxmleditor/icons/locolor/16x16/actions
+@dirrm share/apps/kxmleditor/icons/locolor/16x16
+@dirrm share/apps/kxmleditor/icons/locolor
+@dirrm share/apps/kxmleditor/icons/hicolor/32x32/actions
+@dirrm share/apps/kxmleditor/icons/hicolor/32x32
+@dirrm share/apps/kxmleditor/icons/hicolor/22x22/actions
+@dirrm share/apps/kxmleditor/icons/hicolor/22x22
+@dirrm share/apps/kxmleditor/icons/hicolor/16x16/actions
+@dirrm share/apps/kxmleditor/icons/hicolor/16x16
+@dirrm share/apps/kxmleditor/icons/hicolor
+@dirrm share/apps/kxmleditor/icons
+@dirrm share/apps/kxmleditor
