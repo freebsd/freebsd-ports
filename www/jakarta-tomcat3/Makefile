@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jakarta-tomcat
-PORTVERSION=	3.2.4
-PORTREVISION=	2
+PORTVERSION=	3.3.1
 CATEGORIES=	www java
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v${PORTVERSION}/bin/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -16,8 +15,7 @@ MASTER_SITE_SUBDIR=	znerd
 
 MAINTAINER=	znerd@FreeBSD.org
 
-RUN_DEPENDS=	${JAVA_HOME}/bin/javac:${JAVA_PORT}
-
+USE_JAVA=	1.2+
 NO_BUILD=	YES
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -29,16 +27,29 @@ APP_SHORTNAME=	tomcat
 CONTROL_SCRIPT_NAME=	${APP_SHORTNAME}ctl
 CONTROL_SCRIPT=	${PREFIX}/bin/${CONTROL_SCRIPT_NAME}
 STARTUP_ORDER?=	020
-STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/${STARTUP_ORDER}.${PORTNAME}.sh
-JAVA_HOME?=	${LOCALBASE}/jdk1.3.1
-JAVA_PORT?=	${PORTSDIR}/java/jdk13
-USER_NAME=	www
-GROUP_NAME=	www
+STARTUP_SCRIPT_NAME=	${PORTNAME}.sh
+STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/${STARTUP_ORDER}.${STARTUP_SCRIPT_NAME}
+USER=		www
+GROUP=		www
 PW?=		/usr/sbin/pw
-LISTEN_PORT?=	8080
+HTTP_PORT?=	8080
 STDOUT_LOG=	${LOG_DIR}/stdout.log
 STDERR_LOG=	${LOG_DIR}/stderr.log
 AUTO_START?=	NO
+PID_FILE=	/var/run/${APP_SHORTNAME}.pid
+MANIFEST=	MANIFEST.MF
+REPLACE_FILES=	${FILESDIR}/daemonctl.c \
+		${FILESDIR}/${CONTROL_SCRIPT_NAME}.1 \
+		${FILESDIR}/${STARTUP_SCRIPT_NAME} \
+		${WRKSRC}/conf/server.xml \
+		${FILESDIR}/${MANIFEST}
+#		${WRKSRC}/conf/workers.properties
+JAR_FILE=	lib/${APP_SHORTNAME}.jar
+JAVA_ARGS=	'"-Dtomcat.install=${APP_HOME}"'
+JAR_ARGS=	'"run"'
+WRKDIR?=	work
+
+.include <bsd.port.pre.mk>
 
 pre-install:
 	@${ECHO_CMD} "Installation settings:"
@@ -47,90 +58,99 @@ pre-install:
 	@${ECHO_CMD} "   Startup script location: ${STARTUP_SCRIPT}"
 	@${ECHO_CMD} "   Location of JDK:         ${JAVA_HOME}"
 	@${ECHO_CMD} "   Location of Java port:   ${JAVA_PORT}"
-	@${ECHO_CMD} "   Running as (user/group): ${USER_NAME}/${GROUP_NAME}"
-	@${ECHO_CMD} "   Port to listen at:       ${LISTEN_PORT}"
+	@${ECHO_CMD} "   Running as (user/group): ${USER}/${GROUP}"
+	@${ECHO_CMD} "   HTTP port:               ${HTTP_PORT}"
 	@${ECHO_CMD} "   Logfile stdout:          ${STDOUT_LOG}"
 	@${ECHO_CMD} "   Logfile stderr:          ${STDERR_LOG}"
 	@${ECHO_CMD} "   Starting after install:  ${AUTO_START}"
+	@PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 do-install:
-	@# Create the destination directory
-	${MKDIR} ${APP_HOME}
+	@${ECHO_CMD} -n ">> Removing all .bat and .orig files..."
+	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'`
+	@${ECHO_CMD} " [ DONE ]"
 
-	@# Copy all files except .bat and .orig files
-	${RM} -f `${FIND} ${WRKSRC} -name '*.bat'`
-	${RM} -f `${FIND} ${WRKSRC} -name '*.orig'`
-	${CP} -R ${WRKSRC}/* ${APP_HOME}
-	${CHMOD} 755 `find ${APP_HOME} -type d`
+.for f in ${REPLACE_FILES}
+	@${ECHO_CMD} -n ">> Customizing `basename $f`..."
+	@${SED} \
+	-e "/%%APP_HOME%%/s//${APP_HOME:S/\//\\\//g}/g" \
+	-e "/%%APP_SHORTNAME%%/s//${APP_SHORTNAME}/g" \
+	-e "/%%APP_TITLE%%/s//${APP_TITLE}/g" \
+	-e "/%%CONTROL_SCRIPT%%/s//${CONTROL_SCRIPT:S/\//\\\//g}/g" \
+	-e "/%%CONTROL_SCRIPT_NAME%%/s//${CONTROL_SCRIPT_NAME}/g" \
+	-e "/%%GROUP%%/s//${GROUP}/g" \
+	-e "/%%HTTP_PORT%%/s//${HTTP_PORT}/g" \
+	-e "/%%JAVA_CMD%%/s//bin\/java/g" \
+	-e "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/g" \
+	-e "/%%JAR_FILE%%/s//${JAR_FILE:S/\//\\\//g}/g" \
+	-e "/%%LOG_DIR%%/s//${LOG_DIR:S/\//\\\//g}/g" \
+	-e "/%%PID_FILE%%/s//${PID_FILE:S/\//\\\//g}/g" \
+	-e "/%%PORTNAME%%/s//${PORTNAME}/g" \
+	-e "/%%PORTVERSION%%/s//${PORTVERSION}/g" \
+	-e "/%%PREFIX%%/s//${PREFIX:S/\//\\\//g}/g" \
+	-e "/%%STARTUP_SCRIPT_NAME%%/s//${STARTUP_SCRIPT_NAME}/g" \
+	-e "/%%STDERR_LOG%%/s//${STDERR_LOG:S/\//\\\//g}/g" \
+	-e "/%%STDOUT_LOG%%/s//${STDOUT_LOG:S/\//\\\//g}/g" \
+	-e "/%%USER%%/s//${USER}/g" \
+	$f > ${WRKDIR}/`basename $f`
+	@${ECHO_CMD} " [ DONE ]"
+.endfor
 
-	@# Install the workers.properties file after processing it
-	${CAT} ${WRKSRC}/conf/workers.properties \
-	| ${SED} "/%%TOMCAT_HOME%%/s//${APP_HOME:S/\//\\\//g}/" \
-	| ${SED} "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/" \
-	> ${WRKDIR}/workers.properties
-	${MV} ${WRKDIR}/workers.properties ${APP_HOME}/conf/workers.properties
+	@${ECHO_CMD} -n ">> Creating destination directory..."
+	@${MKDIR} ${APP_HOME}
+	@${MKDIR} ${LOG_DIR}
+	@${ECHO_CMD} " [ DONE ]"
 
-	@# Install the startup script
-	${CAT} ${FILESDIR}/${PORTNAME}.sh \
-	| ${SED} "/%%USER_NAME%%/s//${USER_NAME}/" \
-	| ${SED} "/%%APP_SHORTNAME%%/s//${APP_SHORTNAME}/" \
-	| ${SED} "/%%CONTROL_SCRIPT%%/s//${CONTROL_SCRIPT:S/\//\\\//g}/" \
-	> ${STARTUP_SCRIPT}
-	${CHMOD} 0554 ${STARTUP_SCRIPT}
+	@${ECHO_CMD} -n ">> Copying files to destination directory..."
+	@${CP} -R ${WRKSRC}/* ${APP_HOME}
+	@${CP} ${WRKDIR}/workers.properties ${APP_HOME}/conf
+	@${ECHO_CMD} " [ DONE ]"
 
-	@# Install the control script
-	${CAT} ${FILESDIR}/${CONTROL_SCRIPT_NAME} \
-	| ${SED} "/%%PORTNAME%%/s//${PORTNAME}/" \
-	| ${SED} "/%%APP_TITLE%%/s//${APP_TITLE}/" \
-	| ${SED} "/%%APP_SHORTNAME%%/s//${APP_SHORTNAME}/" \
-	| ${SED} "/%%APP_HOME%%/s//${APP_HOME:S/\//\\\//g}/" \
-	| ${SED} "/%%LOG_DIR%%/s//${LOG_DIR:S/\//\\\//g}/" \
-	| ${SED} "/%%STARTUP_SCRIPT_NAME%%/s//${PORTNAME}.sh/" \
-	| ${SED} "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/" \
-	| ${SED} "/%%USER_NAME%%/s//${USER_NAME}/" \
-	| ${SED} "/%%STDOUT_LOG%%/s//${STDOUT_LOG:S/\//\\\//g}/" \
-	| ${SED} "/%%STDERR_LOG%%/s//${STDERR_LOG:S/\//\\\//g}/" \
-	> ${CONTROL_SCRIPT}
-	${CHOWN} ${USER_NAME}:${GROUP_NAME} ${CONTROL_SCRIPT}
-	${CHMOD} 6554 ${CONTROL_SCRIPT}
+	@${ECHO_CMD} -n ">> Compiling and installing control script..."
+	@cd ${WRKDIR} && ${CC} -DJAR_ARGS=${JAR_ARGS} -DJAVA_ARGS=${JAVA_ARGS} -ansi -o ${CONTROL_SCRIPT_NAME} daemonctl.c
+	@${CP} ${WRKDIR}/${CONTROL_SCRIPT_NAME} ${CONTROL_SCRIPT}
+	@${CHOWN} ${USER}:${GROUP} ${CONTROL_SCRIPT}
+	@${CHMOD} 6754 ${CONTROL_SCRIPT}
+	@${ECHO_CMD} " [ DONE ]"
 
-	@# Create the directories that the application will create at the
-	@# first run
-	${MKDIR} ${LOG_DIR}
-	${CHMOD} 6775 ${LOG_DIR}
+	@${ECHO_CMD} -n ">> Installing startup script..."
+	@${CP} ${WRKDIR}/${STARTUP_SCRIPT_NAME} ${STARTUP_SCRIPT}
+	@${CHMOD} 0544 ${STARTUP_SCRIPT}
+	@${ECHO_CMD} " [ DONE ]"
 
-	@# Install the server.xml file after processing it
-	${CAT} ${WRKSRC}/conf/server.xml \
-	| ${SED} "/%%LISTEN_PORT%%/s//${LISTEN_PORT}/" \
-	> ${WRKDIR}/server.xml
-	${MV} ${WRKDIR}/server.xml ${APP_HOME}/conf/server.xml
-
-	@# Change ownership for the files
-	${CHOWN} -R ${USER_NAME}:${GROUP_NAME} ${APP_HOME}
-
-	@# Change the execute permissions for all shell scripts
-	${CHMOD} 0554 ${APP_HOME}/bin/*
-
-	@# Install the man page
 .if !defined(NOPORTDOCS)
-	${CAT} ${FILESDIR}/${CONTROL_SCRIPT_NAME}.1 \
-	| ${SED} "/%%APP_TITLE%%/s//${APP_TITLE}/" \
-	| ${SED} "/%%PREFIX%%/s//${PREFIX:S/\//\\\//g}/" \
-	| ${SED} "/%%CONTROL_SCRIPT_NAME%%/s//${CONTROL_SCRIPT_NAME}/" \
-	| ${SED} "/%%STARTUP_ORDER%%/s//${STARTUP_ORDER}.sh/" \
-	> ${WRKDIR}/${CONTROL_SCRIPT_NAME}.1
-	${INSTALL_MAN} ${WRKDIR}/${CONTROL_SCRIPT_NAME}.1 ${MANPREFIX}/man/man1
+	@${ECHO_CMD} -n ">> Installing man pages..."
+	@${INSTALL_MAN} ${WRKDIR}/${CONTROL_SCRIPT_NAME}.1 ${MANPREFIX}/man/man1
+	@${ECHO_CMD} " [ DONE ]"
 .endif
+
+	@${ECHO_CMD} -n ">> Creating log files..."
+	@${INSTALL} /dev/null ${STDOUT_LOG}
+	@${INSTALL} /dev/null ${STDERR_LOG}
+	@${ECHO_CMD} " [ DONE ]"
+
+	@${ECHO_CMD} -n ">> Fixing ownership settings..."
+	@${CHOWN} -R ${USER}:${GROUP} ${APP_HOME}
+	@${ECHO_CMD} " [ DONE ]"
+
+	@${ECHO_CMD} -n ">> Fixing permissions..."
+	@${CHMOD} 755 `find ${APP_HOME} -type d`
+	@${ECHO_CMD} " [ DONE ]"
+
+	@${ECHO_CMD} -n ">> Creating PID file..."
+	@${TOUCH} ${PID_FILE}
+	@${CHOWN} ${USER}:${GROUP} ${PID_FILE}
+	@${CHMOD} 0600 ${PID_FILE}
+	@${ECHO_CMD} " [ DONE ]"
 
 post-install:
 	@${ECHO_CMD} "${APP_TITLE} ${PORTVERSION} has been installed in ${APP_HOME}."
-	@${ECHO_CMD} "If you would like a user to be able to use ${CONTROL_SCRIPT_NAME}, then put this user in the group ${GROUP_NAME}."
+	@${ECHO_CMD} "If a user should be able to use ${CONTROL_SCRIPT_NAME}, put it in the group ${GROUP}."
 .if !defined(NOPORTDOCS)
 	@${ECHO_CMD} "Use 'man ${CONTROL_SCRIPT_NAME}' for information about starting and stopping ${APP_TITLE}."
 .endif
 .if ${AUTO_START} == "YES"
-	@${ECHO_CMD} "Starting ${APP_TITLE}..."
 	@${CONTROL_SCRIPT} start || true
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
