@@ -3,7 +3,7 @@
 # Date created:		4 Mar 1998
 # Whom:			handy@physics.montana.edu
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/03/28 15:06:32 steve Exp $
 #
 
 DISTNAME=	mgv-2.3.1
@@ -21,7 +21,7 @@ MAKEFILE=	GNUmakefile
 MAN1=		mgv.1
 
 pre-build:
-		@ ${CP} -f ${WRKSRC}/make/sys.freebsd3.mk ${WRKSRC}/make/sys.mk
+		@ ${CP} -f ${WRKSRC}/make/sys.freebsd.mk ${WRKSRC}/make/sys.mk
 
 post-install:
 		@ ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
