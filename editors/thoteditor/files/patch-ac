@@ -1,6 +1,14 @@
 --- ../thot/Makefile.in.orig	Wed Nov 19 05:41:49 1997
-+++ ../thot/Makefile.in	Sat Sep 25 11:53:28 1999
-@@ -54,30 +54,32 @@
++++ ../thot/Makefile.in	Sun Sep 26 23:08:12 1999
+@@ -27,6 +27,7 @@
+ CONFIGFILES= \
+     XKeysymDB  thot.ini  thot.color  thot.pattern  thot.keyboard \
+     fr-thotdialogue  en-appdialogue  en-compildialogue  en-corrdialogue \
++    en-cssmessage \
+     en-drawdialogue  en-grmdialogue  en-inddialogue  en-itfdialogue \
+     en-libdialogue  en-printdialogue  en-prsdialogue  en-strdialogue \
+     en-thotdialogue  en-thotmessage  en-thotversion  en-transdialogue \
+@@ -54,30 +55,32 @@
  	$(RM) *.o EDITORAPP.c EDITOR.A
  
  install : all

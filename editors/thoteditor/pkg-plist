@@ -7,6 +7,7 @@ bin/cextract
 bin/print
 bin/prs
 bin/thot
+bin/thoteditor
 share/thot/batch/APP.GRM
 share/thot/batch/PRESEN.GRM
 share/thot/batch/STRUCT.GRM
@@ -36,6 +37,7 @@ share/thot/config/fr-thotdialogue
 share/thot/config/en-appdialogue
 share/thot/config/en-compildialogue
 share/thot/config/en-corrdialogue
+share/thot/config/en-cssmessage
 share/thot/config/en-drawdialogue
 share/thot/config/en-grmdialogue
 share/thot/config/en-inddialogue

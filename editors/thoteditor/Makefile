@@ -22,9 +22,6 @@ MAINTAINER=	chuckr@FreeBSD.org
 THOT_SUBDIR=	Target
 REQUIRES_MOTIF=	yes
 WRKSRC=		$(WRKDIR)/Thot/$(THOT_SUBDIR)
-
-BROKEN=		initialization issues not finished yet
-
 REQUIRES_MOTIF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-thot --enable-plugin --without-insure --without-amaya --disable-java --disable-intr --disable-jit --disable-math --disable-ilu
@@ -34,10 +31,16 @@ ALL_TARGET=	all schemas
 do-configure:
 	(cd $(WRKSRC);../configure $(CONFIGURE_ARGS))
 
+post-configure:
+	$(CP) $(WRKSRC)/../thotlib/base/registry.c $(WRKSRC)/../thotlib/base/registry.c.orig
+	$(SED) -e "s&%%PREFIX%%&$(PREFIX)&" <$(WRKSRC)/../thotlib/base/registry.c.orig >$(WRKSRC)/../thotlib/base/registry.c
+
 post-extract:
 	(cd $(WRKDIR)/Thot;$(MKDIR) $(THOT_SUBDIR))
 
 post-install:
 	${MKDIR} ${PREFIX}/share/thot/doc
+	$(SED) -e "s&%%PREFIX%%&$(PREFIX)&" < $(FILESDIR)/thoteditor > $(WRKDIR)/thoteditor
+	$(INSTALL_SCRIPT) $(WRKDIR)/thoteditor $(PREFIX)/bin
 
 .include <bsd.port.mk>
