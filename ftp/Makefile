@@ -66,6 +66,7 @@
     SUBDIR += pavuk
     SUBDIR += pftpd
     SUBDIR += proftpd
+    SUBDIR += proftpd-mysql
     SUBDIR += profxp
     SUBDIR += proma
     SUBDIR += prozilla
