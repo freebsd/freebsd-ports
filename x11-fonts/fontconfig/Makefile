@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fontconfig
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 PORTEPOCH=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://pdx.freedesktop.org/~fontconfig/release/
