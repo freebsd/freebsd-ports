@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Config-IniFiles
-PORTVERSION=	2.27
+PORTVERSION=	2.38
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Config
@@ -17,7 +17,6 @@ COMMENT=	Perl5 module for reading .ini-style configuration files
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Config::IniFiles.3
 
 .include <bsd.port.mk>
