@@ -18,6 +18,14 @@ bin/tblastn
 bin/tblastx
 bin/setdb
 bin/pressdb
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/FAQ-Indexing.html
+%%PORTDOCS%%%%DOCSDIR%%/HISTORY
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/Memory.html
+%%PORTDOCS%%%%DOCSDIR%%/README.html
+%%PORTDOCS%%%%DOCSDIR%%/parameters.html
+%%PORTDOCS%%%%DOCSDIR%%/parameters.pdf
 %%DATADIR%%/matrix/aa/nuc.4.4
 %%DATADIR%%/matrix/aa/BLOSUM30
 %%DATADIR%%/matrix/aa/BLOSUM35
@@ -202,6 +210,7 @@ bin/pressdb
 %%DATADIR%%/filter/pseg
 %%DATADIR%%/filter/README
 %%DATADIR%%/sysblast.sample
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/matrix/aa
 @dirrm %%DATADIR%%/matrix/nt
 @dirrm %%DATADIR%%/matrix
