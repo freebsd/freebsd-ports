@@ -1,16 +1,12 @@
-Bzip compresses files using the Burrows-Wheeler-Fenwick
-block-sorting text compression algorithm.
+Please use bzip2, which is the successor of this older bzip version.
+This port stays for compatibility reasons. For a discussion of the
+advantages of bzip2 over bzip 0.21 see
 
-Compression is generally considerably better than that achieved by
-more conventional LZ77/LZ78-based compressors, and competitive with
-all but the best of the PPM family of statistical compressors.
+	http://www.muraroa.demon.co.uk/
 
-BZIP is distributed under the GNU General Public License version
-2; for details, see the file LICENSE. Pointers to the algorithms
-used are in ALGORITHMS.
+In short: bzip2 ist faster, more reliable and *patent free*
 
-COMMERCIAL USE
-==============
+COMMERCIAL USE of bzip
 
 This program may or may not infringe certain US patents pertaining
 to arithmetic coding and to the block-sorting transformation itself.
