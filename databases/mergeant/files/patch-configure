@@ -1,0 +1,19 @@
+--- configure.orig	Mon Sep  9 17:46:33 2002
++++ configure	Sat Sep 14 19:12:39 2002
+@@ -7596,6 +7596,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -10071,7 +10072,7 @@
+ 
+ MERGEANT_Plugdir=${datadir}/${PACKAGE}/plugins
+ 
+-MERGEANT_Helpdir=${datadir}/doc/${PACKAGE}
++MERGEANT_Helpdir=${prefix}/share/doc/${PACKAGE}
+ 
+ 
+ 

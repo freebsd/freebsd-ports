@@ -1,0 +1,11 @@
+--- lib/Makefile.in.orig	Sat Sep 14 18:40:05 2002
++++ lib/Makefile.in	Sat Sep 14 18:40:22 2002
+@@ -120,7 +120,7 @@
+ 
+ noinst_LTLIBRARIES = libgdbshared.la
+ 
+-INCLUDES =  	$(MERGEANT_CFLAGS) 	-DGNOMEDB_PIXMAPDIR=\""$(datadir)/pixmaps/libgnomedb"\" 	-DGNOMEDB_DATADIR=\""$(datadir)"\" 	-DGNOMEDB_LOCALEDIR=\""$(prefix)/share/locale"\"
++INCLUDES =  	$(MERGEANT_CFLAGS) 	-DGNOMEDB_PIXMAPDIR=\""$(datadir)/pixmaps/libgnomedb"\" 	-DGNOMEDB_DATADIR=\""$(datadir)"\" 	-DGNOMEDB_LOCALEDIR=\""$(datadir)/locale"\"
+ 
+ 
+ libgdbshared_headers =  	gnome-db-shortcut.h

@@ -1,0 +1,11 @@
+--- src/plugins/picts/Makefile.in.orig	Sat Sep 14 18:57:58 2002
++++ src/plugins/picts/Makefile.in	Sat Sep 14 18:58:15 2002
+@@ -127,7 +127,7 @@
+ libPpicts_la_SOURCES = picts_plugin.c baseplugin.h
+ libPpicts_la_LIBADD = 
+ 
+-libPpicts_la_LDFLAGS = -module -export-dynamic -version-info 0:0:0
++libPpicts_la_LDFLAGS = -module -export-dynamic -avoid-version
+ 
+ # Build a libtool library, libggnomedb.la for installation in libdir.
+ lib_LTLIBRARIES = $(lib_LTLIBRARIES_PLUGIN) 
