@@ -1,14 +1,14 @@
 --- include/atalk/paths.h.orig	Fri Aug 15 07:25:58 1997
-+++ include/atalk/paths.h	Tue Nov 24 13:14:14 1998
-@@ -17,7 +17,7 @@
++++ include/atalk/paths.h	Tue Dec 29 01:26:34 1998
+@@ -12,7 +12,7 @@
+ /* lock file path. this should be re-organized a bit. */
+ #ifndef _PATH_LOCKDIR
+ #ifdef BSD4_4
+-#define _PATH_LOCKDIR           "/var/spool/lock/"
++#define _PATH_LOCKDIR           "/var/run/"
+ #else
  #ifdef linux
  #define _PATH_LOCKDIR           "/var/lock/"
- #else
--#define _PATH_LOCKDIR           "/var/spool/locks/"
-+#define _PATH_LOCKDIR           "/var/run/"
- #endif /* linux */
- #endif /* BSD4_4 */
- #endif
 @@ -42,18 +42,18 @@
   */
  #define _PATH_ATALKDEBUG	"/tmp/atalkd.debug"
