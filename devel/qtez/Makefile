@@ -18,6 +18,8 @@ USE_QT=		yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/qtez_src
 
+BROKEN=		"Compiler error"
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKDIR}/qtez_src/bin/qtez ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/share/examples/qtez
