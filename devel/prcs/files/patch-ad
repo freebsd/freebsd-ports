@@ -1,0 +1,11 @@
+--- src/hash.cc.orig	Sun Feb 27 12:51:56 2000
++++ src/hash.cc	Sun Feb 27 12:53:24 2000
+@@ -95,7 +95,7 @@
+     return attrs_hash (x, M);
+ }
+ 
+-int hash(const char*& s, int M)
++int hash(const char* const& s, int M)
+     /* a char* hash function from Aho, Sethi, and Ullman */
+ {
+     const char *p;

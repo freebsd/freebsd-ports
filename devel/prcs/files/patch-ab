@@ -1,0 +1,11 @@
+--- src/include/projdesc.h.orig	Sun Feb 27 12:46:06 2000
++++ src/include/projdesc.h	Sun Feb 27 12:46:30 2000
+@@ -347,7 +347,7 @@
+ 
+     /* Illegal. */
+     ProjectDescriptor(const ProjectDescriptor&);
+-    operator=(const ProjectDescriptor&);
++    void operator=(const ProjectDescriptor&);
+ 
+     /* Parsing. */
+     int prj_lookup_hash (const char *str, int len);

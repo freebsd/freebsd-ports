@@ -1,0 +1,11 @@
+--- src/projdesc.cc.orig	Sun Feb 27 12:58:40 2000
++++ src/projdesc.cc	Sun Feb 27 12:58:13 2000
+@@ -1600,7 +1600,7 @@
+     return true;
+ }
+ 
+-extern int hash(const char*& s, int M);
++extern int hash(const char* const& s, int M);
+ 
+ int attrs_hash(const PrcsAttrs*const & s, int M)
+ {
