@@ -1,13 +1,16 @@
---- Makefile.in.orig	Fri Apr 18 02:33:57 1997
-+++ Makefile.in	Fri Apr  3 20:50:47 1998
-@@ -11,9 +11,9 @@
+--- Makefile.in.orig	Fri Apr 18 17:33:57 1997
++++ Makefile.in	Wed Jul  1 20:17:08 1998
+@@ -10,10 +10,10 @@
+ LIBS       = @LIBS@
  DEFS	   = @DEFS@
  OS_OPT     = @OS_OPT@
- OBJ_FLAG   = -w -O2 -c
+-OBJ_FLAG   = -w -O2 -c
 -OBJ_OPT    = -I./libpcap-0.3 -L./libpcap-0.3
-+#OBJ_OPT    = -I./libpcap-0.3 -L./libpcap-0.3
- EXE_FLAG   = -w -O2 -o sniffit
+-EXE_FLAG   = -w -O2 -o sniffit
 -EXE_OPT    = -I./libpcap-0.3 -L./libpcap-0.3 -lpcap
++OBJ_FLAG   = ${CFLAGS} -w -c
++#OBJ_OPT    = -I./libpcap-0.3 -L./libpcap-0.3
++EXE_FLAG   = ${CFLAGS} -w -o sniffit
 +EXE_OPT    = -lpcap
  EXE_OBJ    = sn_packets.o sn_generation.o sn_interface.o sn_cfgfile.o \
               sn_logfile.o
