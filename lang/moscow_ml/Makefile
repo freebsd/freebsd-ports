@@ -3,7 +3,7 @@
 # Date created:         26 July 1996
 # Whom:                 chuckr
 #
-# $Id: Makefile,v 1.3 1996/07/29 22:33:14 asami Exp $
+# $Id: Makefile,v 1.4 1996/07/30 01:24:55 chuckr Exp $
 #
 
 DISTNAME=       mos14src
@@ -22,14 +22,14 @@ post-install:
 .if !defined(NOPORTDOCS)
 	mkdir -p ${PREFIX}/moscow_ml/doc
 	mkdir -p ${PREFIX}/moscow_ml/examples
-	for file in ${WRKDIR}/mosml/doc/*;do; \
-	install -c -m 0444 -g bin -o bin $${file} ${PREFIX}/moscow_ml/doc;done
+	for file in ${WRKDIR}/mosml/doc/*;do \
+	${INSTALL_DATA} $${file} ${PREFIX}/moscow_ml/doc;done
 	(cd ${WRKDIR}/mosml/examples; \
-	install -c -m 0444 -g bin -o bin README ${PREFIX}/moscow_ml/examples; \
-	for sdirs in manual mls helpsigs calc pretty lexyacc;do; \
+	${INSTALL_DATA} README ${PREFIX}/moscow_ml/examples; \
+	for sdirs in manual mls helpsigs calc pretty lexyacc;do \
 	mkdir -p ${PREFIX}/moscow_ml/examples/$${sdirs}; \
-	for file in $${sdirs}/*;do; \
-	install -c -m 0444 -g bin -o bin $${file} ${PREFIX}/moscow_ml/examples/$${sdirs}; \
+	for file in $${sdirs}/*;do \
+	${INSTALL_DATA} $${file} ${PREFIX}/moscow_ml/examples/$${sdirs}; \
 	done; done;)
 .endif
 
