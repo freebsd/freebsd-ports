@@ -1,4 +1,4 @@
 bin/HVSC-Update
-%%PORTDOCS%%share/doc/HVSC-Update-Tool/HVSC_Update.txt
-%%PORTDOCS%%share/doc/HVSC-Update-Tool/PSID_v2NG.txt
-%%PORTDOCS%%@dirrm share/doc/HVSC-Update-Tool
+%%PORTDOCS%%share/doc/HVSC-Update/HVSC_Update.txt
+%%PORTDOCS%%share/doc/HVSC-Update/PSID_v2NG.txt
+%%PORTDOCS%%@dirrm share/doc/HVSC-Update
