@@ -7,7 +7,6 @@
 
 PORTNAME=	fox
 PORTVERSION=	${MAJORVER}.${SHVER}
-PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
@@ -18,14 +17,15 @@ COMMENT=	Fast and extensive C++ GUI toolkit
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 CONFLICTS=	fox-1.0.*
 
 LATEST_LINK=	fox-devel
 
 MAJORVER=	1.2
-SHVER=		9
+SHVER=		11
 PLIST_SUB+=	MAJORVER=${MAJORVER} SHVER=${SHVER}
 
 USE_GNOME=	lthack
