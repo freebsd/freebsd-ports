@@ -54,7 +54,7 @@ share/locale/sv/LC_MESSAGES/gnubiff.mo
 %%SHAREDIR%%/pixmaps/gnubiff_icon.png
 %%SHAREDIR%%/sounds/gnubiff/mail.wav
 %%SHAREDIR%%/sounds/gnubiff/coin.wav
-%%WITH_GNUBIFF_GNOME%%libdata/bonobo/servers/GNOME_gnubiffApplet.server
-%%WITH_GNUBIFF_GNOME%%%%SHAREDIR%%/gnome-2.0/ui/GNOME_gnubiffApplet.xml
+%%WITH_GNOME%%libdata/bonobo/servers/GNOME_gnubiffApplet.server
+%%WITH_GNOME%%%%SHAREDIR%%/gnome-2.0/ui/GNOME_gnubiffApplet.xml
 @dirrm %%SHAREDIR%%/gnubiff
 @dirrm %%SHAREDIR%%/sounds/gnubiff
