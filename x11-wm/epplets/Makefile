@@ -6,36 +6,45 @@
 #
 
 PORTNAME=	epplets
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://kde.planetmirror.com/pub/enlightenment/epplets/ \
-		ftp://ftp.dti.ad.jp/pub/X/enlightenment/epplets/
-DISTNAME=	epplet-base-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	enlightenment
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A collection of Enlightenment dock applications
 
-LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop \
-		epplet.1:${PORTSDIR}/x11-wm/libepplet
 BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
-RUN_DEPENDS=	import:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio \
+		gtop.1:${PORTSDIR}/devel/libgtop \
+		epplet.1:${PORTSDIR}/x11-wm/libepplet
+RUN_DEPENDS=	import:${PORTSDIR}/graphics/ImageMagick \
+		enlightenment:${PORTSDIR}/x11-wm/enlightenment
 
-WRKSRC=		${WRKDIR}/Epplets-0.5
-
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_GNOME=	esound
+USE_GL=		yes
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	EROOT="${X11BASE}/share/enlightenment" \
+		EBIN="${X11BASE}/bin" \
+		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib -lintl ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-fsstd
-CONFIGURE_ENV=	EROOT=${X11BASE}/share/enlightenment \
-		EBIN=${X11BASE}/bin \
-		LIBS="-L${LOCALBASE}/lib -lintl" \
-		X_LIBS="-lxpg4"
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+APM_PROGS=	E-Power.epplet
+PLIST_SUB+=	APM_PROGS=""
+.else
+APM_PROGS=	# none
+PLIST_SUB+=	APM_PROGS="@comment "
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|malloc.h|stdlib.h|" ${WRKSRC}/epplets/mbox.c
-	@${REINPLACE_CMD} -e "s|machine/soundcard.h|sys/soundcard.h|" \
-		${WRKSRC}/epplets/Emix.c
+	@${REINPLACE_CMD} -e \
+		's|@APM_PROGS@|${APM_PROGS}|g' ${WRKSRC}/epplets/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
