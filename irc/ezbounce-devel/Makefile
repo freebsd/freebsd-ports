@@ -1,12 +1,12 @@
 # New ports collection makefile for:	ezbounce
-# Version required: 	0.85
+# Version required: 	0.85.2
 # Date created:	 	19 February 1999
 # Whom:			Chris Piazza <cpiazza@home.net>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/16 19:25:57 mharo Exp $
+# $Id: Makefile,v 1.2 1999/05/03 02:27:09 steve Exp $
 #
 
-DISTNAME=	ezbounce-0.85
+DISTNAME=	ezbounce-0.85.2
 CATEGORIES=	net
 MASTER_SITES=  	http://druglord.freelsd.org/ezbounce/ \
 		http://irc.themes.org/downloads/misc/
@@ -22,15 +22,15 @@ do-install:
 	@ ${ECHO} to set up this program.
 	@ ${ECHO} Also, edit ${PREFIX}/etc/ezbounce.conf to your liking.
 	@ ${ECHO} ------------------------------------------------------------------
-	@ ${INSTALL_PROGRAM} -C ${WRKSRC}/ezbounce ${PREFIX}/sbin
-	@ ${INSTALL_PROGRAM} -C ${WRKSRC}/mdidentd/mdidentd ${PREFIX}/sbin
+	${INSTALL_PROGRAM} -C ${WRKSRC}/ezbounce ${PREFIX}/sbin
+	${INSTALL_PROGRAM} -C ${WRKSRC}/mdidentd/mdidentd ${PREFIX}/sbin
 	@ ${SED} -e s:/path/to:${PREFIX}/sbin: ${WRKSRC}/sample.conf > \
 		${WRKSRC}/sample.conf.new
-	@ if [ ! -f ${PREFIX}/etc/ezbounce.conf ]; then \
+	if [ ! -f ${PREFIX}/etc/ezbounce.conf ]; then \
 			${INSTALL_SCRIPT} -C ${WRKSRC}/sample.conf.new \
 			${PREFIX}/etc/ezbounce.conf; \
 		fi
-	@ ${INSTALL_SCRIPT} -C ${WRKSRC}/sample.conf.new \
+	${INSTALL_SCRIPT} -C ${WRKSRC}/sample.conf.new \
 		${PREFIX}/etc/ezbounce.conf.default
 
 .include <bsd.port.mk>
