@@ -1,0 +1,20 @@
+--- Makefile.orig	Sun Jul 18 17:55:35 1999
++++ Makefile	Sun Jul 18 17:57:42 1999
+@@ -1,6 +1,6 @@
+ CC = gcc
+-CFLAGS = `gtk-config --cflags`
+-LDLIBS = `gtk-config --libs`
++CFLAGS = `gtk12-config --cflags`
++LDLIBS = `gtk12-config --libs`
+ 
+ all:	gmessage
+ 
+@@ -8,7 +8,7 @@
+ 	$(CC) $(CFLAGS) gmessage.c -o gmessage $(OBJS) $(LDLIBS)
+ 
+ install: gmessage
+-	cp ./gmessage /usr/local/bin
++	install -m 0555 -o root -g wheel -s gmessage /usr/X11R6/bin
+ 
+ clean:
+ 	$(RM) *.o core gmessage

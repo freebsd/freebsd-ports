@@ -1,0 +1,4 @@
+gmessage is a gtk+ clone of xmessage. It displays a given text in a X11 GTK
+window. you can optionally give a timeout.
+
+WWW: http://www.math.uni-goettingen.de/dadler/gmessage/
