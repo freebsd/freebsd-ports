@@ -1,6 +1,6 @@
 @comment stop service at deinstall time
 @unexec [ -n "$BATCH" ] || ([ ! -d %D/etc/webmin ] || [ ! -x %D/etc/rc.d/webmin.sh ] || %D/etc/rc.d/webmin.sh stop >/dev/null )
-etc/rc.d/webmin.sh
+etc/rc.d/webmin.sh-dist
 @comment Insert PLIST.lib-webmin here
 @comment -=[ begin PLIST.lib-webmin ]=-
 @comment -=[ end PLIST.lib-webmin ]=-
@@ -8,5 +8,3 @@ etc/rc.d/webmin.sh
 @exec [ ! -d %D/etc/webmin ] || echo | nostart=Y %D/lib/webmin/setup.sh
 @comment run interactive setup if not in BATCH mode and no configuration exists
 @exec [ -n "$BATCH" ] || ([ -d %D/etc/webmin ] || nostart=Y %D/lib/webmin/setup.sh)
-@comment restart service if package is being upgraded (the upgrade procedure stopped it)
-@exec [ -n "$BATCH" ] || ([ ! -d %D/etc/webmin ] || [ ! -x %D/etc/rc.d/webmin.sh ] || %D/etc/rc.d/webmin.sh start >/dev/null )

@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.030
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -73,8 +73,8 @@ do-install:
 		| ${XARGS} ${RMDIR}
 	@cd ${PREFIX}/lib/webmin && find . -type d -empty -print \
 		| ${XARGS} ${RMDIR}
-	@${CP} ${WRKDIR}/webmin.sh ${PREFIX}/etc/rc.d/webmin.sh
-	@${CHMOD} 554 ${PREFIX}/etc/rc.d/webmin.sh
+	@${CP} ${WRKDIR}/webmin.sh ${PREFIX}/etc/rc.d/webmin.sh-dist
+	@${CHMOD} 554 ${PREFIX}/etc/rc.d/webmin.sh-dist
 
 post-install:
 	@cd ${PREFIX} ; find lib/webmin -type f -o -type l | sort \
@@ -96,8 +96,6 @@ post-install:
 	@[ ! -d ${PREFIX}/etc/webmin ] || echo | nostart=Y ${PREFIX}/lib/webmin/setup.sh
 # run interactive setup if not in BATCH mode and no configuration exists
 	@[ -n "${BATCH}" ] || ([ -d ${PREFIX}/etc/webmin ] || nostart=Y ${PREFIX}/lib/webmin/setup.sh)
-# start webmin again
-	@[ -n "${BATCH}" ] || ([ ! -d ${PREFIX}/etc/webmin ] || [ ! -x ${PREFIX}/etc/rc.d/webmin.sh ] || ${PREFIX}/etc/rc.d/webmin.sh start > /dev/null)
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
