@@ -1,104 +1,10 @@
---- ./src/cdecl/cdecl.c.org	Thu Nov 14 07:27:45 1996
-+++ ./src/cdecl/cdecl.c	Tue Mar 25 03:11:57 1997
-@@ -31,6 +31,10 @@
- 
+--- ./src/cinfo/cinfo/cinfo.c.org	Wed Mar 26 05:58:10 1997
++++ ./src/cinfo/cinfo/cinfo.c	Sun Jun 15 01:46:08 1997
+@@ -31,6 +31,7 @@
  #include <stdio.h>
  #include <stdlib.h>
-+/* needed for getopt() declarations */
-+#if defined(__FreeBSD__) && __FreeBSD__ >= 3
-+#include <unistd.h>
-+#endif
  #include <string.h>
- #include <err.h>
- 
---- ./src/cinfo/cinfo/cinfo.c.org	Thu Nov 14 07:27:49 1996
-+++ ./src/cinfo/cinfo/cinfo.c	Tue Mar 25 03:16:33 1997
-@@ -32,6 +32,10 @@
- #include <ctype.h>
- #include <stdio.h>
- #include <stdlib.h>
-+/* needed for getopt() declarations */ 
-+#if defined(__FreeBSD__) && __FreeBSD__ >= 3 
-+#include <unistd.h> 
-+#endif 
- #include <string.h>
- #include <err.h>
++#include <sys/types.h>
  #include <dirent.h>
---- ./src/cinfo/cinfoc/cinfoc.c.org	Tue Nov 26 06:55:25 1996
-+++ ./src/cinfo/cinfoc/cinfoc.c	Tue Mar 25 03:11:57 1997
-@@ -31,6 +31,10 @@
- 
- #include <stdio.h>
- #include <stdlib.h>
-+/* needed for getopt() declarations */
-+#if defined(__FreeBSD__) && __FreeBSD__ >= 3
-+#include <unistd.h>
-+#endif
- #include <string.h>
+ #include <unistd.h>
  #include <err.h>
- 
---- ./src/cinfo/cinfodc/cinfodc.c.org	Tue Nov 26 06:55:26 1996
-+++ ./src/cinfo/cinfodc/cinfodc.c	Tue Mar 25 03:11:57 1997
-@@ -31,6 +31,10 @@
- 
- #include <stdio.h>
- #include <stdlib.h>
-+/* needed for getopt() declarations */
-+#if defined(__FreeBSD__) && __FreeBSD__ >= 3
-+#include <unistd.h>
-+#endif
- #include <err.h>
- 
- #include "version.h"
---- ./src/chilight/chilight.c.org	Sun Dec  8 06:07:28 1996
-+++ ./src/chilight/chilight.c	Tue Mar 25 03:11:57 1997
-@@ -31,6 +31,10 @@
- 
- #include <stdio.h>
- #include <stdlib.h>
-+/* needed for getopt() declarations */
-+#if defined(__FreeBSD__) && __FreeBSD__ >= 3
-+#include <unistd.h>
-+#endif
- #include <string.h>
- #include <err.h>
- 
---- ./src/cundecl/cundecl.c.org	Thu Nov 14 07:27:54 1996
-+++ ./src/cundecl/cundecl.c	Tue Mar 25 03:11:57 1997
-@@ -31,6 +31,10 @@
- 
- #include <stdio.h>
- #include <stdlib.h>
-+/* needed for getopt() declarations */
-+#if defined(__FreeBSD__) && __FreeBSD__ >= 3
-+#include <unistd.h>
-+#endif
- #include <string.h>
- #include <err.h>
- 
---- ./src/yyextract/yyextract.c.org	Thu Nov 14 07:27:57 1996
-+++ ./src/yyextract/yyextract.c	Tue Mar 25 03:11:58 1997
-@@ -31,6 +31,10 @@
- 
- #include <stdio.h>
- #include <stdlib.h>
-+/* needed for getopt() declarations */
-+#if defined(__FreeBSD__) && __FreeBSD__ >= 3
-+#include <unistd.h>
-+#endif
- #include <string.h>
- #include <err.h>
- 
---- ./src/yyref/yyref.c.org	Thu Nov 14 07:27:58 1996
-+++ ./src/yyref/yyref.c	Tue Mar 25 03:11:58 1997
-@@ -31,6 +31,10 @@
- 
- #include <stdio.h>
- #include <stdlib.h>
-+/* needed for getopt() declarations */
-+#if defined(__FreeBSD__) && __FreeBSD__ >= 3
-+#include <unistd.h>
-+#endif
- #include <string.h>
- #include <err.h>
- 

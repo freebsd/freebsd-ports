@@ -5,6 +5,7 @@ bin/cinfo
 bin/cinfoc
 bin/cinfodc
 bin/cobfusc
+bin/cunloop
 bin/yyextract
 bin/yyref
 man/man1/cdecl.1.gz
@@ -14,9 +15,10 @@ man/man1/cinfo.1.gz
 man/man1/cinfoc.1.gz
 man/man1/cinfodc.1.gz
 man/man1/cobfusc.1.gz
+man/man1/cunloop.1.gz
 man/man1/yyextract.1.gz
 man/man1/yyref.1.gz
 man/man5/cinfodb.5.gz
-lib/cinfo/stdc.cinfo.db
-lib/cinfo/stdclib.cinfo.db
-lib/cinfo/unix.cinfo.db
+share/cutils/cinfo/stdc.cinfo.db
+share/cutils/cinfo/stdclib.cinfo.db
+share/cutils/cinfo/unix.cinfo.db
