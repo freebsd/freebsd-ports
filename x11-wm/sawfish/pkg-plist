@@ -72,6 +72,7 @@ share/gnome/pixmaps/sawfish-logo.png
 share/gnome/wm-properties/Sawfish.desktop
 share/locale/az/LC_MESSAGES/sawfish.mo
 share/locale/bg/LC_MESSAGES/sawfish.mo
+share/locale/bs/LC_MESSAGES/sawfish.mo
 share/locale/ca/LC_MESSAGES/sawfish.mo
 share/locale/cs/LC_MESSAGES/sawfish.mo
 share/locale/da/LC_MESSAGES/sawfish.mo
@@ -301,6 +302,8 @@ share/sawfish/%%VERSION%%/lisp/sawfish/wm/ext/tooltips.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/ext/tooltips.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/ext/window-history.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/ext/window-history.jlc
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/ext/workspace-grid.jl
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/ext/workspace-grid.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/focus.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/focus.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/frames.jl
@@ -377,6 +380,8 @@ share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/display-wininfo.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/display-wininfo.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/edges.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/edges.jlc
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/font.jl
+share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/font.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/groups.jl
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/groups.jlc
 share/sawfish/%%VERSION%%/lisp/sawfish/wm/util/gtkrc.jl
