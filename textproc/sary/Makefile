@@ -13,8 +13,6 @@ MASTER_SITES=	http://prime.sourceforge.jp/freebsd/
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A suffix array library and tools, which provide fast full-text search
 
-BROKEN=		"Broken pkg-plist; will be removed after Feb 2"
-
 USE_GNOME=	glib20 gnomehack
 USE_REINPLACE=	yes
 
