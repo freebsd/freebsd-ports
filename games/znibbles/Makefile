@@ -8,7 +8,7 @@
 PORTNAME=	znibbles
 PORTVERSION=	0.0.7
 CATEGORIES=	games
-MASTER_SITES=	ftp://koala.inria.fr/pub/games/znibbles/
+MASTER_SITES=	http://koala.ilog.fr/ftp/pub/games/znibbles/
 
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 
