@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project default="build_motif_freebsd_lib" basedir="../../..">
+
+<target name="init_linux">
+	<tstamp/>
+    <property name="fragment_dir" value="${basedir}/../org.eclipse.swt.motif" />
+    <property name="jar_destdir" value="${fragment_dir}/ws/linux" />
+    <property name="lib_destdir" value="${fragment_dir}/os/linux/x86" />
+	<property name="lib_extension" value=".so"/>
+	
+    <mkdir dir="${lib_destdir}" />
+</target>
+
+<target name="init_freebsd">
+	<tstamp/>
+    <property name="fragment_dir" value="${basedir}/../org.eclipse.swt.motif" />
+    <property name="jar_destdir" value="${fragment_dir}/ws/freebsd" />
+    <property name="lib_destdir" value="${fragment_dir}/os/freebsd/x86" />
+	<property name="lib_extension" value=".so"/>
+	
+    <mkdir dir="${lib_destdir}" />
+</target>
+
+<target name="init_aix">
+	<tstamp/>
+    <property name="fragment_dir" value="${basedir}/../org.eclipse.swt.motif" />
+    <property name="jar_destdir" value="${fragment_dir}/ws/aix" />
+    <property name="lib_destdir" value="${fragment_dir}/os/aix/ppc" />
+	<property name="lib_extension" value=".a"/>
+	
+    <mkdir dir="${lib_destdir}" />
+</target>
+
+<target name="init_hpux_PA_RISC">
+	<tstamp/>
+    <property name="fragment_dir" value="${basedir}/../org.eclipse.swt.motif" />
+    <property name="jar_destdir" value="${fragment_dir}/ws/hpux" />
+    <property name="lib_destdir" value="${fragment_dir}/os/hpux/PA_RISC" />
+	<property name="lib_extension" value=".sl"/>
+	
+    <mkdir dir="${lib_destdir}" />
+</target>
+
+<target name="init_hpux_ia64">
+	<tstamp/>
+    <property name="fragment_dir" value="${basedir}/../org.eclipse.swt.motif" />
+    <property name="jar_destdir" value="${fragment_dir}/ws/hpux" />
+    <property name="lib_destdir" value="${fragment_dir}/os/hpux/ia64" />
+	<property name="lib_extension" value=".so"/>
+	
+    <mkdir dir="${lib_destdir}" />
+</target>
+
+<target name="init_solaris">
+	<tstamp/>
+    <property name="fragment_dir" value="${basedir}/../org.eclipse.swt.motif" />
+    <property name="jar_destdir" value="${fragment_dir}/ws/solaris" />
+    <property name="lib_destdir" value="${fragment_dir}/os/solaris/sparc" />
+	<property name="lib_extension" value=".so"/>
+	
+    <mkdir dir="${lib_destdir}" />
+</target>
+
+<target name="build_file_lib">
+	<exec dir="./bin/library" executable="sh">
+		<arg line="${basedir}/bin/library/build.sh"/>
+	</exec>
+	<copy todir="${lib_destdir}">
+		<fileset dir="${basedir}/bin/library/" includes="*${lib_extension}"/>
+	</copy>
+	<eclipse.refreshLocal resource="org.eclipse.swt.motif" depth="infinite" />		
+</target>
+
+<!-- Build swt.so for motif linux -->
+<!-- Output .so for this platform into the org.eclipse.swt.motif/os directory -->
+<target name="build_motif_linux_lib" depends="init_linux,build_file_lib">
+</target>
+
+<!-- Build swt.so for motif freebsd -->
+<!-- Output .so for this platform into the org.eclipse.swt.motif/os directory -->
+<target name="build_motif_freebsd_lib" depends="init_freebsd,build_file_lib">
+</target>
+
+<!-- Build swt.so for aix ppc -->
+<!-- Output .so for this platform into the org.eclipse.swt.motif/os directory -->
+<target name="build_motif_aix_lib" depends="init_aix,build_file_lib">
+</target>
+
+<!-- Build swt.so for hpux PA_RISC -->
+<!-- Output .sl for this platform into the org.eclipse.swt.motif/os directory -->
+<target name="build_motif_hpux_PA_RISC_lib" depends="init_hpux_PA_RISC,build_file_lib">
+</target>
+
+<!-- Build swt.so for hpux ia64 -->
+<!-- Output .so for this platform into the org.eclipse.swt.motif/os directory -->
+<target name="build_motif_hpux_ia64_lib" depends="init_hpux_ia64,build_file_lib">
+</target>
+
+<!-- Build swt.so for solaris sparc -->
+<!-- Output .so for this platform into the org.eclipse.swt.motif/os directory -->
+<target name="build_motif_solaris_lib" depends="init_solaris,build_file_lib">
+</target>
+
+<target name="clean">
+	<tstamp/>
+	<exec dir="./bin/library" executable="sh">
+		<arg line="${basedir}/bin/library/build.sh"/>
+		<arg line="clean"/>
+	</exec>
+</target>
+
+</project>

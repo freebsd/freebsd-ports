@@ -1,0 +1,11 @@
+--- build.orig	Sat Jun 12 01:27:29 2004
++++ build	Mon Jun 14 10:27:59 2004
+@@ -51,7 +51,7 @@
+ 	exit 1
+ fi
+ 
+-if [ "$os-$ws-$arch" = "linux-motif-x86" ] || [ "$os-$ws-$arch" = "linux-gtk-x86" ] || [ "$os-$ws-$arch" = "linux-gtk-amd64" ] || [ "$os-$ws-$arch" = "solaris-motif-sparc" ] || [ "$os-$ws-$arch" = "aix-motif-ppc" ] || [ "$os-$ws-$arch" = "hpux-motif-PA_RISC" ] || [ "$os-$ws-$arch" = "qnx-photon-x86" ] || [ "$os-$ws-$arch" = "win32-win32-x86" ] || [ "$os-$ws-$arch" = "linux-gtk-ppc" ] || [ "$os-$ws-$arch" = "macosx-carbon-ppc" ]
++if [ "$os-$ws-$arch" = "linux-motif-x86" ] || [ "$os-$ws-$arch" = "linux-gtk-x86" ] || [ "$os-$ws-$arch" = "linux-gtk-amd64" ] || [ "$os-$ws-$arch" = "solaris-motif-sparc" ] || [ "$os-$ws-$arch" = "aix-motif-ppc" ] || [ "$os-$ws-$arch" = "hpux-motif-PA_RISC" ] || [ "$os-$ws-$arch" = "qnx-photon-x86" ] || [ "$os-$ws-$arch" = "win32-win32-x86" ] || [ "$os-$ws-$arch" = "linux-gtk-ppc" ] || [ "$os-$ws-$arch" = "macosx-carbon-ppc" ] || [ "$os-$ws-$arch" = "freebsd-gtk-x86" ] || [ "$os-$ws-$arch" = "freebsd-motif-x86" ]
+ then
+ 	ant -buildfile build.xml $target -DinstallOs=$os -DinstallWs=$ws -DinstallArch=$arch -Dbootclasspath=$bootclasspath -DjavacTarget=1.2
+ else

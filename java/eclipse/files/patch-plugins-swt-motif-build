@@ -1,0 +1,18 @@
+--- plugins/org.eclipse.swt.motif/build.xml.orig	Sun Jun 20 12:55:20 2004
++++ plugins/org.eclipse.swt.motif/build.xml	Sun Jun 20 12:56:39 2004
+@@ -10,7 +10,7 @@
+ 		<property name="build.result.folder" value="${basedir}"/>
+ 		<property name="plugindir" value="../org.eclipse.swt"/>
+ 		<property name="destination" value="${basedir}"/>
+-		<property name="os" value="linux"/>
++		<property name="os" value="${os}"/>
+ 		<property name="ws" value="motif"/>
+ 		<property name="arch" value="x86"/>
+ 		<property name="bootclasspath" value=""/>
+@@ -315,4 +315,4 @@
+ 		<delete dir="${temp.folder}"/>
+ 	</target>
+ 
+-</project>
+\ No newline at end of file
++</project>

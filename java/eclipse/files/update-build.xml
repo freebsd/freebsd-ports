@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="buildlibrary" default="run" basedir="."> 
+  
+  <!-- The properties ${eclipse-home} ${jdk-path} should be passed into this script -->
+  <!-- Set a meaningful default value for when it is not. -->
+  <property name="eclipse-home" value="${basedir}/../.."/>
+  <property name="jdk-path" value="${java.home}"/>  
+  <property name="destination" value="${eclipse-home}/org.eclipse.update.core.freebsd/os/freebsd/x86/"/>
+  <property name="obj-path" value="${eclipse-home}/org.eclipse.update.core/src/"/>
+  <property name="src-path" value="${eclipse-home}/org.eclipse.update.core.freebsd/src/"/>  
+  
+  <!-- sets the properties -->
+  <property name="library-name" value="libupdate"/>  
+  <property name="library-platform" value="so"/>    
+  <property name="library-file" value="${library-name}.${library-platform}"/>
+  
+  <!-- This target holds all initialization code that needs to be done for -->
+  <!-- all tests that are to be run. Initialization for individual tests -->
+  <!-- should be done within the body of the suite target. -->
+  <target name="init">
+    <tstamp/>
+    <delete>
+      <fileset dir="${obj-path}" includes="${library-file}"/>
+      <fileset dir="${obj-path}" includes="${library-name}.o"/>
+    </delete>
+  </target>
+  
+  <!-- This target holds code to cleanup the testing environment after -->
+  <!-- after all of the tests have been run. You can use this target to -->
+  <!-- delete temporary files that have been created. -->
+  <target name="cleanup">
+      <delete>
+      <fileset dir="${obj-path}" includes="${library-file}"/>
+      <fileset dir="${obj-path}" includes="${library-name}.o"/>
+    </delete>
+  </target>
+  
+  
+  <!-- This target runs the build. -->
+  <target name="run" depends="init,build,cleanup">
+  </target>
+  
+  <!-- This target build the library -->
+  <target name="build">
+    <echo message="Building ${library-file}"/>
+
+    <property name="header-path" value="${jdk-path}/include"/>
+    <property name="header-freebsd-path" value="${header-path}/freebsd" />
+
+	<echo message="gcc33 -o  ${library-file} -shared -I${src-path} -I${header-path} -I${header-freebsd-path} ${library-file} -static -lc"/>
+
+    <apply executable="gcc" dest="${eclipse-home}/" parallel="false">
+      <arg value="-o"/>
+      <arg value="${library-file}"/>
+      <arg value="-shared"/>
+      <arg value="-I${src-path}"/>
+      <arg value="-I${header-path}"/>      
+      <arg value="-I${header-freebsd-path}"/>  
+	  <srcfile/>
+	  <arg value="-static"/>           
+      <arg value="-lc"/>	  
+      <fileset dir="${src-path}" includes="*.c"/>
+      <mapper type="glob" from="*.c" to="*.o"/>
+    </apply>
+    
+	<move file="${library-file}" todir="${destination}"/>
+  </target>
+  
+  
+</project>

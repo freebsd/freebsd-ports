@@ -1,0 +1,46 @@
+--- features/org.eclipse.platform.source/build.xml.orig	Sat Jun 12 01:24:16 2004
++++ features/org.eclipse.platform.source/build.xml	Sun Jun 20 12:32:23 2004
+@@ -17,6 +17,11 @@
+ 			<property name="os" value="hpux"/>
+ 			<property name="ws" value="motif"/>
+ 		</ant>
++		<ant antfile="build.xml" dir="../../plugins/org.eclipse.platform.source.freebsd.motif.x86" target="${target}">
++			<property name="arch" value="x86"/>
++			<property name="os" value="freebsd"/>
++			<property name="ws" value="motif"/>
++		</ant>
+ 		<ant antfile="build.xml" dir="../../plugins/org.eclipse.platform.source.linux.motif.x86" target="${target}">
+ 			<property name="arch" value="x86"/>
+ 			<property name="os" value="linux"/>
+@@ -62,6 +67,11 @@
+ 			<property name="os" value="linux"/>
+ 			<property name="ws" value="gtk"/>
+ 		</ant>
++		<ant antfile="build.xml" dir="../../plugins/org.eclipse.platform.source.freebsd.gtk.x86" target="${target}">
++			<property name="arch" value="x86"/>
++			<property name="os" value="freebsd"/>
++			<property name="ws" value="gtk"/>
++		</ant>
+ 		<ant antfile="build.xml" dir="../../plugins/org.eclipse.platform.doc.isv" target="${target}">
+ 			<property name="arch" value="x86"/>
+ 			<property name="os" value="win32"/>
+@@ -124,7 +134,7 @@
+ 		<copy todir="${feature.base}/features/org.eclipse.platform.source_3.0.0" failonerror="true">
+ 			<fileset dir="${basedir}" includes="cpl-v10.html,eclipse_update_120.jpg,feature.xml,feature.properties,license.html"			/>
+ 		</copy>
+-		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.platform.source_3.0.0/feature.xml"  selfVersion="3.0.0" featureIds="" pluginIds="org.eclipse.platform.doc.isv,3.0.0,org.eclipse.platform.source,3.0.0,org.eclipse.platform.source.macosx.carbon.ppc,3.0.0,org.eclipse.platform.source.qnx.photon.x86,3.0.0,org.eclipse.platform.source.linux.gtk.ppc,3.0.0,org.eclipse.platform.source.hpux.motif.PA_RISC,3.0.0,org.eclipse.platform.source.linux.gtk.x86,3.0.0,org.eclipse.platform.source.aix.motif.ppc,3.0.0,org.eclipse.platform.source.win32.win32.x86,3.0.0,org.eclipse.platform.source.solaris.motif.sparc,3.0.0,org.eclipse.platform.source.linux.gtk.amd64,3.0.0,org.eclipse.platform.source.linux.motif.x86,3.0.0,"/>
++		<eclipse.idReplacer featureFilePath="${feature.base}/features/org.eclipse.platform.source_3.0.0/feature.xml"  selfVersion="3.0.0" featureIds="" pluginIds="org.eclipse.platform.doc.isv,3.0.0,org.eclipse.platform.source,3.0.0,org.eclipse.platform.source.macosx.carbon.ppc,3.0.0,org.eclipse.platform.source.qnx.photon.x86,3.0.0,org.eclipse.platform.source.linux.gtk.ppc,3.0.0,org.eclipse.platform.source.hpux.motif.PA_RISC,3.0.0,org.eclipse.platform.source.linux.gtk.x86,3.0.0,org.eclipse.platform.source.freebsd.gtk.x86,3.0.0,org.eclipse.platform.source.freebsd.motif.x86,3.0.0,org.eclipse.platform.source.aix.motif.ppc,3.0.0,org.eclipse.platform.source.win32.win32.x86,3.0.0,org.eclipse.platform.source.solaris.motif.sparc,3.0.0,org.eclipse.platform.source.linux.gtk.amd64,3.0.0,org.eclipse.platform.source.linux.motif.x86,3.0.0,"/>
+ 		<antcall target="rootFiles${os}_${ws}_${arch}"/>
+ 	</target>
+ 	<target name="rootFileswin32_win32_x86">
+@@ -132,6 +142,10 @@
+ 	<target name="rootFileslinux_motif_x86">
+ 	</target>
+ 	<target name="rootFileslinux_gtk_x86">
++	</target>
++	<target name="rootFilesfreebsd_gtk_x86">
++	</target>
++	<target name="rootFilesfreebsd_motif_x86">
+ 	</target>
+ 	<target name="rootFileslinux_gtk_ppc">
+ 	</target>

@@ -1,0 +1,29 @@
+--- features/org.eclipse.sdk/build.xml.orig	Sat Jun 12 01:24:16 2004
++++ features/org.eclipse.sdk/build.xml	Sun Jun 20 12:36:26 2004
+@@ -84,6 +84,13 @@
+ 			<fileset dir="${basedir}/../org.eclipse.platform/configuration.files" includes="**"			/>
+ 		</copy>
+ 	</target>
++	<target name="rootFilesfreebsd_motif_x86">
++		<mkdir dir="${feature.base}/freebsd.motif.x86/${collectingFolder}"/>
++		<copy todir="${feature.base}/freebsd.motif.x86/${collectingFolder}" failonerror="true">
++			<fileset dir="${basedir}/../org.eclipse.platform/rootfiles" includes="**"			/>
++			<fileset dir="${basedir}/../org.eclipse.platform/configuration.files" includes="**"			/>
++		</copy>
++	</target>
+ 	<target name="rootFileslinux_motif_x86">
+ 		<mkdir dir="${feature.base}/linux.motif.x86/${collectingFolder}"/>
+ 		<copy todir="${feature.base}/linux.motif.x86/${collectingFolder}" failonerror="true">
+@@ -103,6 +110,12 @@
+ 		<copy todir="${feature.base}/linux.gtk.ppc/${collectingFolder}" failonerror="true">
+ 			<fileset dir="${basedir}/../org.eclipse.platform/rootfiles" includes="**"			/>
+ 			<fileset dir="${basedir}/../org.eclipse.platform/configuration.files" includes="**"			/>
++		</copy>
++	</target>
++	<target name="rootFilesfreebsd_gtk_x86">
++		<mkdir dir="${feature.base}/freebsd.gtk.x86/${collectingFolder}"/>
++		<copy todir="${feature.base}/freebsd.gtk.x86/${collectingFolder}" failonerror="true">
++			<fileset dir="${basedir}/../org.eclipse.platform/rootfiles" includes="**"			/>
+ 		</copy>
+ 	</target>
+ 	<target name="rootFileslinux_gtk_amd64">

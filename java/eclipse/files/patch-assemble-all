@@ -1,0 +1,15 @@
+--- assemble.org.eclipse.sdk.all.xml.orig	Tue Jun 15 21:51:32 2004
++++ assemble.org.eclipse.sdk.all.xml	Tue Jun 15 21:52:22 2004
+@@ -10,6 +10,12 @@
+ 		<ant antfile="${customTargets}" target="assemble.org.eclipse.sdk.linux.gtk.x86">
+ 			<property name="assembleScriptName" value="assemble.org.eclipse.sdk.linux.gtk.x86.xml"/>
+ 		</ant>
++		<ant antfile="${customTargets}" target="assemble.org.eclipse.sdk.freebsd.gtk.x86">
++			<property name="assembleScriptName" value="assemble.org.eclipse.sdk.freebsd.gtk.x86.xml"/>
++		</ant>
++		<ant antfile="${customTargets}" target="assemble.org.eclipse.sdk.freebsd.motif.x86">
++			<property name="assembleScriptName" value="assemble.org.eclipse.sdk.freebsd.motif.x86.xml"/>
++		</ant>
+ 		<ant antfile="${customTargets}" target="assemble.org.eclipse.sdk.linux.gtk.ppc">
+ 			<property name="assembleScriptName" value="assemble.org.eclipse.sdk.linux.gtk.ppc.xml"/>
+ 		</ant>

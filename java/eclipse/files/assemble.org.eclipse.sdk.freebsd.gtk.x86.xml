@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Assemble org.eclipse.sdk" default="main">
+	<property name="archiveName" value="org.eclipse.sdk-${buildId}-freebsd.gtk.x86.zip"/>
+	<property name="os" value="freebsd"/>
+	<property name="ws" value="gtk"/>
+	<property name="arch" value="x86"/>
+	<property name="assemblyTempDir" value="${buildDirectory}/tmp"/>
+	<property name="eclipse.base" value="${assemblyTempDir}/${collectingFolder}"/>
+	<property name="eclipse.plugins" value="${eclipse.base}/plugins"/>
+	<property name="eclipse.features" value="${eclipse.base}/features"/>
+	<property name="archiveFullPath" value="${basedir}/${buildLabel}/${archiveName}"/>
+	<!-- Beginning of the jarUp task -->
+	<target name="jarUp" description="Create a jar from the given location.">
+		<available property="${source}/${elementName}_exists" file="${source}/${elementName}"/>
+		<antcall target="jarIng">
+			<param name="source" value="${source}"/>
+			<param name="elementName" value="${elementName}"/>
+		</antcall>
+	</target>
+	<target name="jarIng" if="${source}/${elementName}_exists">
+		<zip zipfile="${source}/${elementName}.jar" basedir="${source}/${elementName}" filesonly="false" whenempty="skip" update="false"/>
+		<delete dir="${source}/${elementName}"/>
+	</target>
+	<!-- End of the jarUp task -->
+	<target name="main">
+		<condition property="pluginArchivePrefix" value="plugins">
+			<equals arg1="${archivePrefix}"  arg2="" trim="true"/>
+		</condition>
+		<property name="pluginArchivePrefix" value="${archivePrefix}/plugins"/>
+
+		<condition property="featureArchivePrefix" value="features">
+			<equals arg1="${archivePrefix}"  arg2="" trim="true"/>
+		</condition>
+		<property name="featureArchivePrefix" value="${archivePrefix}/features"/>
+
+		<delete dir="${assemblyTempDir}"/>
+		<dirname property="archiveParentFolder" file="${archiveFullPath}"/>
+		<mkdir dir="${archiveParentFolder}"/>
+		<mkdir dir="${assemblyTempDir}"/>
+		<mkdir dir="${buildLabel}"/>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.platform.doc.isv" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.update.scheduler" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.ltk.ui.refactoring" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.pde.ui" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.pde.doc.user" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.osgi" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.debug.ui" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.core.runtime" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.ui.intro" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.platform.source" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.jdt.core" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.jdt.junit" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.help.base" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.osgi.services" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.core.boot" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.sdk" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.swt.gtk" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.core.filebuffers" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.apache.lucene" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.ui.workbench" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.core.runtime.compatibility" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.ant.core" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.ant.ui" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.ui.views" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.pde.source" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.platform.doc.user" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.jdt.junit.runtime" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.core.expressions" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.jdt.source" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.ui.ide" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.ui.externaltools" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.ltk.core.refactoring" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.help.ide" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.team.cvs.ssh" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.help" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.jface.text" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.compare" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.jdt.doc.user" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.jface" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.junit" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.core.resources.freebsd" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.debug.core" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.core.resources" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.jdt.doc.isv" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.update.ui" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.help.webapp" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.jdt.ui" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.help.appserver" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.team.cvs.ssh2" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.pde" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.pde.junit.runtime" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.help.ui" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.core.variables" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.search" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.jdt.debug" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.ui.console" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.update.core.freebsd" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.ui" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.team.cvs.ui" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.ui.presentations.r21" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.text" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.platform" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.tomcat" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.jdt.launching" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.update.core" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.team.cvs.core" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.jdt" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.swt" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.team.ui" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.pde.build" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.ui.editors" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.jdt.debug.ui" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.osgi.util" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.apache.ant" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.pde.runtime" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.platform.source.freebsd.gtk.x86" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.team.core" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.ui.workbench.texteditor" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.ui.cheatsheets" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.pde.core" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.ui.workbench.compatibility" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.update.configurator" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="plugins/org.eclipse.ui.forms" target="gather.bin.parts">
+			<property name="destination.temp.folder" value="${eclipse.plugins}"/>
+		</ant>
+		<ant antfile="build.xml" dir="features/org.eclipse.jdt.source/" target="gather.bin.parts">
+			<property name="feature.base" value="${eclipse.base}"/>
+		</ant>
+		<ant antfile="build.xml" dir="features/org.eclipse.platform.source/" target="gather.bin.parts">
+			<property name="feature.base" value="${eclipse.base}"/>
+		</ant>
+		<ant antfile="build.xml" dir="features/org.eclipse.sdk/" target="gather.bin.parts">
+			<property name="feature.base" value="${eclipse.base}"/>
+		</ant>
+		<ant antfile="build.xml" dir="features/org.eclipse.jdt/" target="gather.bin.parts">
+			<property name="feature.base" value="${eclipse.base}"/>
+		</ant>
+		<ant antfile="build.xml" dir="features/org.eclipse.pde/" target="gather.bin.parts">
+			<property name="feature.base" value="${eclipse.base}"/>
+		</ant>
+		<ant antfile="build.xml" dir="features/org.eclipse.platform/" target="gather.bin.parts">
+			<property name="feature.base" value="${eclipse.base}"/>
+		</ant>
+		<exec executable="zip" dir="${assemblyTempDir}">
+			<arg line="-r -q ${zipargs} ${archiveFullPath}"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.platform.doc.isv_3.0.0"/>
+		</exec>
+		<exec executable="zip" dir="${assemblyTempDir}">
+			<arg line="-r -q ${zipargs} ${archiveFullPath}"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.update.scheduler_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.ltk.ui.refactoring_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.pde.ui_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.pde.doc.user_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.osgi_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.debug.ui_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.core.runtime_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.ui.intro_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.platform.source_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.jdt.core_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.jdt.junit_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.help.base_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.osgi.services_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.core.boot_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.sdk_3.0.0"/>
+		</exec>
+		<exec executable="zip" dir="${assemblyTempDir}">
+			<arg line="-r -q ${zipargs} ${archiveFullPath}"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.swt.gtk_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.core.filebuffers_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.apache.lucene_1.3.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.ui.workbench_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.core.runtime.compatibility_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.ant.core_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.ant.ui_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.ui.views_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.pde.source_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.platform.doc.user_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.jdt.junit.runtime_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.core.expressions_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.jdt.source_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.ui.ide_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.ui.externaltools_3.0.0"/>
+		</exec>
+		<exec executable="zip" dir="${assemblyTempDir}">
+			<arg line="-r -q ${zipargs} ${archiveFullPath}"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.ltk.core.refactoring_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.help.ide_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.team.cvs.ssh_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.help_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.jface.text_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.compare_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.jdt.doc.user_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.jface_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.junit_3.8.1"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.core.resources.freebsd_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.debug.core_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.core.resources_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.jdt.doc.isv_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.update.ui_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.help.webapp_3.0.0"/>
+		</exec>
+		<exec executable="zip" dir="${assemblyTempDir}">
+			<arg line="-r -q ${zipargs} ${archiveFullPath}"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.jdt.ui_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.help.appserver_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.team.cvs.ssh2_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.pde_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.pde.junit.runtime_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.help.ui_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.core.variables_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.search_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.jdt.debug_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.ui.console_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.update.core.freebsd_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.ui_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.team.cvs.ui_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.ui.presentations.r21_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.text_3.0.0"/>
+		</exec>
+		<exec executable="zip" dir="${assemblyTempDir}">
+			<arg line="-r -q ${zipargs} ${archiveFullPath}"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.platform_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.tomcat_4.1.30"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.jdt.launching_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.update.core_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.team.cvs.core_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.jdt_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.swt_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.team.ui_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.pde.build_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.ui.editors_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.jdt.debug.ui_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.osgi.util_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.apache.ant_1.6.1"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.pde.runtime_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.platform.source.freebsd.gtk.x86_3.0.0"/>
+		</exec>
+		<exec executable="zip" dir="${assemblyTempDir}">
+			<arg line="-r -q ${zipargs} ${archiveFullPath}"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.team.core_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.ui.workbench.texteditor_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.ui.cheatsheets_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.pde.core_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.ui.workbench.compatibility_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.update.configurator_3.0.0"/>
+			<arg line="${pluginArchivePrefix}/org.eclipse.ui.forms_3.0.0"/>
+		</exec>
+		<exec executable="zip" dir="${assemblyTempDir}">
+			<arg line="-r -q ${zipargs} ${archiveFullPath}"/>
+			<arg line="${featureArchivePrefix}/org.eclipse.jdt.source_3.0.0"/>
+		</exec>
+		<exec executable="zip" dir="${assemblyTempDir}">
+			<arg line="-r -q ${zipargs} ${archiveFullPath}"/>
+			<arg line="${featureArchivePrefix}/org.eclipse.platform.source_3.0.0"/>
+			<arg line="${featureArchivePrefix}/org.eclipse.sdk_3.0.0"/>
+			<arg line="${featureArchivePrefix}/org.eclipse.jdt_3.0.0"/>
+			<arg line="${featureArchivePrefix}/org.eclipse.pde_3.0.0"/>
+			<arg line="${featureArchivePrefix}/org.eclipse.platform_3.0.0"/>
+		</exec>
+		<exec executable="zip" dir="${eclipse.base}/freebsd.gtk.x86">
+			<arg line="-r -q ${zipargs} ${archiveFullPath} . "/>
+		</exec>
+	</target>
+</project>
