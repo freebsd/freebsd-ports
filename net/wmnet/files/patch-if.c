@@ -1,5 +1,5 @@
 --- if.c.orig	Sun Oct 11 19:13:16 1998
-+++ if.c	Fri Nov 22 16:24:50 2002
++++ if.c	Fri May 21 01:11:19 2004
 @@ -88,8 +88,13 @@
  
  			if (!newData) {
@@ -55,7 +55,11 @@
  #ifndef NDEBUG
  
  			/* These are other pointer fields that we shouldn't need
-@@ -190,8 +202,10 @@
+@@ -186,12 +198,13 @@
+ #endif
+ 			d.if_bpf = 0;
+ 			d.if_linkmib = 0;
+-			d.if_poll_slowq = 0;
  #endif
  			c = a;
  			return &d;
@@ -66,7 +70,7 @@
  	} else
  		return 0;
  }
-@@ -306,12 +320,16 @@
+@@ -306,12 +319,16 @@
  	if (idx < total) {
  		struct ifnet const* const ptr = dereference(ifData[idx].ifNetAddr);
  
