@@ -6,34 +6,32 @@
 #
 
 PORTNAME=	martel
-PORTVERSION=	0.5
-PORTREVISION=	4
+PORTVERSION=	0.6
 PORTEPOCH=	1
 CATEGORIES=	textproc biology python
-MASTER_SITES=	http://www.biopython.org/~dalke/Martel/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	wjv
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Martel-${PORTVERSION}
 
 MAINTAINER=	wjv@FreeBSD.org
 
+BUILD_DEPENDS=	${PYDISTUTILS}
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/TextTools/__init__.py:${PORTSDIR}/lang/py-mx-base
 
 USE_PYTHON=	yes
-
-MARTEL_DIR=	${PREFIX}/lib/${PYTHON_VERSION}/site-packages/Martel
-EXAMPLESDIR=	${PREFIX}/share/examples/martel
+USE_BZIP2=	yes
+PYTHON_SETUP=	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
+EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 
 do-build:
-	@ ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
-	@ ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	@ cd ${WRKSRC} && ${PYTHON_SETUP} build
 
 pre-install:
 	@ ${SH} ${PKGREQ} INSTALL
 
 do-install:
-	@ ${MKDIR} ${MARTEL_DIR}
-	@ (cd ${WRKSRC} && find *.py *.pyc *.pyo formats test \
-	  | cpio --quiet -pdum -R ${BINOWN}:${BINGRP} ${MARTEL_DIR})
+	@ cd ${WRKSRC} && ${PYTHON_SETUP} install -c -O1 --prefix=${PREFIX}
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -41,9 +39,8 @@ post-install:
 .for docfile in README HISTORY doc/*
 	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
-	@ ${MKDIR} ${EXAMPLESDIR}/builders
+	@ ${MKDIR} ${EXAMPLESDIR}
 	@ ${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
-	@ ${INSTALL_DATA} ${WRKSRC}/builders/* ${EXAMPLESDIR}/builders
 .endif
 
 .include <bsd.port.mk>

@@ -10,10 +10,8 @@ Biopython - http://www.biopython.org/) where there is often a need to parse
 flat and semi-structured legacy file formats.  However, it is generally
 applicable to the parsing of such files in all fields of endeavour.
 
-More information on Martel may be found in this conference poster:
-http://www.biopython.org/~dalke/Martel/BOSC2000.poster/
-
-Author: Andrew Dalke <dalke@acm.org>
-WWW:    http://www.biopython.org/~dalke/Martel/
+Author:   Andrew Dalke <dalke@dalkescientific.com>
+WWW:	  http://www.dalkescientific.com/Martel/
+See also: http://www.biopython.org/~dalke/Martel/
 
 -- Johann Visagie <wjv@FreeBSD.org>
