@@ -1,0 +1,12 @@
+--- xsis/Makefile.orig	Thu Oct  1 01:05:09 1998
++++ xsis/Makefile	Thu Oct  1 01:05:48 1998
+@@ -40,6 +40,9 @@
+ 
+ LIBS	= $(SIS)/lib/libsis.a
+ LIBS2	= -L$(X11)/lib -lXaw -lXmu -lXt -lXext -lX11 -lm
++.if $(PORTOBJFORMAT) == "elf"
++LIBS2	+=-Wl,-rpath,$(X11)/lib
++.endif
+ 
+ # ---------------------------------------------------------------------------
+ 
