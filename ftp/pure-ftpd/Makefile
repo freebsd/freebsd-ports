@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.13a
-PORTREVISION=	1
+PORTVERSION=	1.0.14
+PORTREVISION=	0
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.pureftpd.org/pub/pure-ftpd/releases/ \
 		ftp://ftp2.fr.pureftpd.org/pub/mirrors/ftp.fr.pureftpd.org/pub/pure-ftpd/releases/ \
@@ -45,19 +45,24 @@ CONFIGURE_ARGS+=	--with-everything \
 CONFIGURE_ARGS+=	--with-language="${WITH_LANG}"
 .endif
 
-# ldap support requested ?
+# ldap support requested?
 .if defined(WITH_LDAP)
 CONFIGURE_ARGS+=	--with-ldap
 .endif
 
-# mysql support requested ?
+# mysql support requested?
 .if defined(WITH_MYSQL)
 CONFIGURE_ARGS+=	--with-mysql
 .endif
 
-# mysql support requested ?
+# mysql support requested?
 .if defined(WITH_PGSQL)
 CONFIGURE_ARGS+=	--with-pgsql
+.endif
+
+# privilege separation requested?
+.if defined(WITH_PRIVSEP)
+CONFIGURE_ARGS+=	--with-privsep
 .endif
 
 # if mysql or ldap are disabled, enable pam
@@ -96,6 +101,7 @@ pre-fetch:
 	@${ECHO_CMD} "WITH_LDAP=1           - Support for users in LDAP directories"
 	@${ECHO_CMD} "WITH_MYSQL=1          - Support for users in MySQL databases"
 	@${ECHO_CMD} "WITH_PGSQL=1          - Support for users in PostgreSQL databases"
+	@${ECHO_CMD} "WITH_PRIVSEP=1        - Enable privilege separation"
 	@${ECHO_CMD} "WITH_LANG=lang        - Enable compilation of language support, lang is one of"
 	@${ECHO_CMD} "  english, german, romanian, french, french-funny, polish, spanish,"
 	@${ECHO_CMD} "  dutch, italian, brazilian-portuguese, danish, slovak, korean,"
