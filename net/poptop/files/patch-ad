@@ -1,0 +1,35 @@
+--- pptpd.c.orig	Wed Sep 22 17:01:28 1999
++++ pptpd.c	Tue Oct  5 19:32:07 1999
+@@ -77,20 +77,19 @@
+ static void showusage(char *prog)
+ {
+ 	printf("\nPoPToP v%s\n", VERSION);
+-	printf("The PPTP Server for Linux\n");
++	printf("The PPTP Server for FreeBSD\n");
+ 	printf("Usage: pptpd [options], where options are:\n\n");
+ 	printf(" [-c] [--conf file]        Specifies the config file to read default\n");
+-	printf("                           settings from (default is /etc/pptpd.conf).\n");
++	printf("                           settings from (default is " PPTPD_CONFIG_FILE_DEFAULT ").\n");
+ 	printf(" [-d] [--debug]            Turns on debugging (to syslog).\n");
+ 	printf(" [-f] [--fg]               Run in foreground.\n");
+ 	printf(" [-h] [--help]             Displays this help message.\n");
+ 	printf(" [-l] [--listen x.x.x.x]   Specifies IP of local interface to listen to.\n");
+ #if !defined(BSDUSER_PPP)
+ 	printf(" [-o] [--option file]      Specifies the PPP options file to use\n");
+-	printf("                           (default is /etc/ppp/options).\n");
+ #endif
+ 	printf(" [-p] [--pidfile file]     Specifies the file to write the process ID to\n");
+-	printf("                           (default is /var/run/pptpd.pid).\n");
++	printf("                           (default is "PIDFILE_DEFAULT").\n");
+ #if !defined(BSDUSER_PPP)
+ 	printf(" [-s] [--speed baud]       Specifies the baud speed for the PPP daemon\n");
+ 	printf("                           (default is 115200).\n");
+@@ -100,7 +99,7 @@
+ 	printf("\n\nLogs and debugging go to syslog as DAEMON.");
+ 
+ 	printf("\n\nCommand line options will override any default settings and any settings\n");
+-	printf("specified in the config file (default config file: /etc/pptpd.conf).\n\n");
++	printf("specified in the config file.\n\n");
+ }
+ 
+ 
