@@ -7,9 +7,9 @@
 
 PORTNAME=	wmcpuload
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	sysutils windowmaker
-MASTER_SITES=	http://www.sh.rim.or.jp/~ssato/src/ \
-		http://ports.tolkien.dk/
+MASTER_SITES=	http://www.sh.rim.or.jp/~ssato/src/
 DISTNAME=	WMCPULoad-${PORTVERSION}
 
 MAINTAINER=	pat@databits.net
@@ -17,11 +17,9 @@ MAINTAINER=	pat@databits.net
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 ONLY_FOR_ARCHS=	i386
-
+USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-
-NO_INSTALL_MANPAGES=	yes
 
 .ifndef(NOPORTDOCS)
 post-install:
