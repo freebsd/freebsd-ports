@@ -1,0 +1,91 @@
+sbin/htshd
+etc/rc.d/htshd.sh
+etc/wapsh/htsh_profile
+etc/wapsh/htshd.conf
+etc/wapsh/loginhosts
+share/wapsh/htdocs/command.php
+share/wapsh/htdocs/command_html.inc
+share/wapsh/htdocs/command_wml.inc
+share/wapsh/htdocs/common.inc
+share/wapsh/htdocs/common_html.inc
+share/wapsh/htdocs/common_wml.inc
+share/wapsh/htdocs/controls_wml.php
+share/wapsh/htdocs/displayfuncs.inc
+share/wapsh/htdocs/getloginhosts.inc
+share/wapsh/htdocs/history_edit_wml.php
+share/wapsh/htdocs/history_html.php
+share/wapsh/htdocs/history_wml.php
+share/wapsh/htdocs/login_html.php
+share/wapsh/htdocs/login_wml.php
+share/wapsh/htdocs/scroll_wml.php
+share/wapsh/htdocs/shortcuts_wml.php
+share/doc/wapsh/Image1.jpg
+share/doc/wapsh/Image2.jpg
+share/doc/wapsh/Image3.jpg
+share/doc/wapsh/admin_guide/index.html
+share/doc/wapsh/implementation_notes/image57.gif
+share/doc/wapsh/implementation_notes/index.html
+share/doc/wapsh/index.html
+share/doc/wapsh/qpl.html
+share/doc/wapsh/user_guide/Image10.jpg
+share/doc/wapsh/user_guide/Image11.jpg
+share/doc/wapsh/user_guide/Image12.jpg
+share/doc/wapsh/user_guide/Image13.jpg
+share/doc/wapsh/user_guide/Image14.jpg
+share/doc/wapsh/user_guide/Image15.jpg
+share/doc/wapsh/user_guide/Image16.jpg
+share/doc/wapsh/user_guide/Image17.jpg
+share/doc/wapsh/user_guide/Image18.jpg
+share/doc/wapsh/user_guide/Image19.jpg
+share/doc/wapsh/user_guide/Image20.jpg
+share/doc/wapsh/user_guide/Image21.jpg
+share/doc/wapsh/user_guide/Image22.jpg
+share/doc/wapsh/user_guide/Image23.jpg
+share/doc/wapsh/user_guide/Image24.jpg
+share/doc/wapsh/user_guide/Image25.gif
+share/doc/wapsh/user_guide/Image26.jpg
+share/doc/wapsh/user_guide/Image27.jpg
+share/doc/wapsh/user_guide/Image28.jpg
+share/doc/wapsh/user_guide/Image29.jpg
+share/doc/wapsh/user_guide/Image30.jpg
+share/doc/wapsh/user_guide/Image31.jpg
+share/doc/wapsh/user_guide/Image32.jpg
+share/doc/wapsh/user_guide/Image33.jpg
+share/doc/wapsh/user_guide/Image34.jpg
+share/doc/wapsh/user_guide/Image35.jpg
+share/doc/wapsh/user_guide/Image36.jpg
+share/doc/wapsh/user_guide/Image37.jpg
+share/doc/wapsh/user_guide/Image38.jpg
+share/doc/wapsh/user_guide/Image39.jpg
+share/doc/wapsh/user_guide/Image4.gif
+share/doc/wapsh/user_guide/Image40.jpg
+share/doc/wapsh/user_guide/Image41.jpg
+share/doc/wapsh/user_guide/Image42.jpg
+share/doc/wapsh/user_guide/Image43.jpg
+share/doc/wapsh/user_guide/Image44.jpg
+share/doc/wapsh/user_guide/Image45.jpg
+share/doc/wapsh/user_guide/Image46.jpg
+share/doc/wapsh/user_guide/Image47.jpg
+share/doc/wapsh/user_guide/Image48.jpg
+share/doc/wapsh/user_guide/Image49.jpg
+share/doc/wapsh/user_guide/Image5.gif
+share/doc/wapsh/user_guide/Image50.gif
+share/doc/wapsh/user_guide/Image51.jpg
+share/doc/wapsh/user_guide/Image52.jpg
+share/doc/wapsh/user_guide/Image53.gif
+share/doc/wapsh/user_guide/Image54.jpg
+share/doc/wapsh/user_guide/Image55.jpg
+share/doc/wapsh/user_guide/Image56.jpg
+share/doc/wapsh/user_guide/Image6.jpg
+share/doc/wapsh/user_guide/Image7.jpg
+share/doc/wapsh/user_guide/Image8.jpg
+share/doc/wapsh/user_guide/Image9.jpg
+share/doc/wapsh/user_guide/index.html
+@exec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^htsh /etc/services.bak ; echo "htsh		3001/tcp    # htsh/wapsh server") > /etc/services
+@unexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^htsh /etc/services.bak ) > /etc/services
+@dirrm etc/wapsh
+@dirrm share/doc/wapsh/admin_guide
+@dirrm share/doc/wapsh/implementation_notes
+@dirrm share/doc/wapsh/user_guide
+@dirrm share/doc/wapsh
+@dirrm share/wapsh/htdocs
