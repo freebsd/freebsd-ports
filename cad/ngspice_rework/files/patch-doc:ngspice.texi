@@ -1,0 +1,14 @@
+--- doc/ngspice.texi.orig	Mon Dec 10 20:21:11 2001
++++ doc/ngspice.texi	Mon Jan  7 17:15:34 2002
+@@ -5,6 +5,11 @@
+ @setchapternewpage odd
+ @c %**end of header
+ 
++@dircategory Utilities
++@direntry
++* NGSPICE: (ngspice).              NGSPICE User Manual
++@end direntry
++
+ @ifinfo
+ This file documents NGSPICE.
+ 

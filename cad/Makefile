@@ -18,6 +18,7 @@
     SUBDIR += linux-eagle
     SUBDIR += magic
     SUBDIR += mars
+    SUBDIR += ngspice_rework
     SUBDIR += oregano
     SUBDIR += pcb
     SUBDIR += pdnmesh

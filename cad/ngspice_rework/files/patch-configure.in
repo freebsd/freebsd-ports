@@ -1,0 +1,11 @@
+--- configure.in.orig	Mon Dec 10 20:21:11 2001
++++ configure.in	Wed Jan  2 13:36:55 2002
+@@ -155,7 +155,7 @@
+ 
+ dnl Look for termios first (posix)
+ AC_CHECK_HEADERS(termios.h termio.h sgtty.h , break)
+-AC_CHECK_FUNCS(isatty)
++AC_CHECK_FUNCS(isatty tcgetattr tcsetattr)
+ 
+ dnl Check for a few functions:
+ AC_FUNC_VFORK
