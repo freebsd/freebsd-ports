@@ -27,4 +27,8 @@ PERL_CONFIGURE=	YES
 MAN3=		Mail::Folder.3 Mail::Folder::Emaul.3 Mail::Folder::Mbox.3 \
 		Mail::Folder::NNTP.3 Mail::Folder::Maildir.3
 
+post-configure:
+	@${PERL} -pi -e 's/^FULLEXT.*/FULLEXT=Mail\/Folder/' \
+		${WRKSRC}/Makefile
+
 .include <bsd.port.mk>
