@@ -8,8 +8,8 @@
 PORTNAME=	ve
 PORTVERSION=	1.0
 CATEGORIES=	chinese
-MASTER_SITES=	ftp://freebsd.ntu.edu.tw/freebsd/woju/source/ \
-		ftp://bsd.sinica.edu.tw/pub/FreeBSD/taiwan/users/woju/source/
+MASTER_SITES=	ftp://freebsd.ntu.edu.tw/FreeBSD/woju/source/ \
+		ftp://freebsd.csie.nctu.edu.tw/pub/taiwan/NTU/woju/source/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	woju@freebsd.ntu.edu.tw
