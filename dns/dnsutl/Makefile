@@ -10,8 +10,7 @@ PORTVERSION=	1.6
 CATEGORIES=	dns
 MASTER_SITES=	http://www.canb.auug.org.au/~millerp/dnsutl/ \
 		http://www.tip.net.au/~millerp/dnsutl/  \
-		http://gd.tuwien.ac.at/softeng/Aegis/dnsutl/ \
-		ftp://ftp.agso.gov.au/pub/Aegis/dnsutl/
+		http://gd.tuwien.ac.at/softeng/Aegis/dnsutl/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programs to make using DNS easier
