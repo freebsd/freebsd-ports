@@ -1,0 +1,7 @@
+Imager is a perl module for manipulating gray, color and rgba format images.
+It can read various file formats and has a builtin interpretered language for
+blends, fade and multiimage effects. It also has a plugin interface to write
+plugins in C. It also has drawing primitives and supports antialiased truetype
+and postscript fonts.
+
+WWW: http://www.eecs.umich.edu/~addi/perl/Imager/

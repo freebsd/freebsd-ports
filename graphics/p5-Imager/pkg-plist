@@ -1,0 +1,14 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Color.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Expr.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Font.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Regops.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Transform.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/regmach.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Expr/Assem.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Imager/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Imager/Imager.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Imager/Imager.so
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Imager
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager/Expr
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Imager
