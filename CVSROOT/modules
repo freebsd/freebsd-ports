@@ -3047,6 +3047,7 @@ iiimf-x		ports/textproc/iiimf-x
 iip		ports/irc/iip
 ija		ports/news/ija
 ike-scan	ports/security/ike-scan
+ilohamail	ports/mail/ilohamail
 im		ports/mail/im
 im-ja		ports/japanese/im-ja
 imageindex	ports/graphics/imageindex
