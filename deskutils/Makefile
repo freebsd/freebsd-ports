@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.9 1999/01/26 03:58:08 steve Exp $
+# $Id: Makefile,v 1.10 1999/04/08 17:53:12 steve Exp $
 #
 
     SUBDIR += abacus
     SUBDIR += cal
     SUBDIR += cbb
+    SUBDIR += genius
     SUBDIR += gnomepim
     SUBDIR += gnucash
     SUBDIR += gtimer
