@@ -1,0 +1,11 @@
+--- Makefile.in~	Sun Sep 20 20:41:40 1998
++++ Makefile.in	Sat Feb 13 12:53:36 1999
+@@ -194,7 +194,7 @@
+ 	find $(SCRIPT_INSTALL_DIR) -type f -exec chmod a+r {} \;
+ 	find $(SCRIPT_INSTALL_DIR) -type d -exec chmod a+rx {} \;
+ 	@echo "=== Creating index..."
+-	cd $(SCRIPT_INSTALL_DIR); $(BIN_INSTALL_DIR)/tkdesksh mkindex
++	cd $(SCRIPT_INSTALL_DIR); tclsh7.6 mkindex
+ 	@echo "=== Installing the manual pages..."
+ 	@for f in tkdesk.1 cd-tkdesk.1 ed-tkdesk.1 od-tkdesk.1; do \
+ 	    echo "installing $$f" ;\
