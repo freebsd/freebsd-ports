@@ -1,0 +1,85 @@
+$NetBSD$
+
+--- src/frontends/controllers/ControlDialog.tmpl.orig	2004-05-29 04:23:23.000000000 -0600
++++ src/frontends/controllers/ControlDialog.tmpl
+@@ -4,7 +4,7 @@
+  * This file is part of LyX, the document processor.
+  * Licence details can be found in the file COPYING.
+  *
+- * \author Angus Leeming 
++ * \author Angus Leeming
+  *
+  * Full author contact details are available in file CREDITS
+  *
+@@ -27,54 +27,56 @@ ControlDialog<Base>::ControlDialog(LyXVi
+ template <class Base>
+ void ControlDialog<Base>::show()
+ {
+-	if (isBufferDependent() && !bufferIsAvailable())
++	if (this->isBufferDependent() && !this->bufferIsAvailable())
+ 		return;
+ 
+-	connect();
++	this->connect();
+ 
+ 	if (!dialog_built_) {
+-		view().build();
++		this->view().build();
+ 		dialog_built_ = true;
+ 	}
+ 
+ 	setParams();
+-	if (emergency_exit_) {
++	if (this->emergency_exit_) {
+ 		hide();
+ 		return;
+ 	}
+ 
+-	bc().readOnly(bufferIsReadonly());
+-	view().show();
++	this->bc().readOnly(this->bufferIsReadonly());
++	this->view().show();
+ 
+ 	// The widgets may not be valid, so refresh the button controller
+-	bc().refresh();
++	this->bc().refresh();
+ }
+ 
++
+ template <class Base>
+ void ControlDialog<Base>::update()
+ {
+-	if (isBufferDependent() && !bufferIsAvailable())
++	if (this->isBufferDependent() && !this->bufferIsAvailable())
+ 		return;
+ 
+ 	setParams();
+-	if (emergency_exit_) {
++	if (this->emergency_exit_) {
+ 		hide();
+ 		return;
+ 	}
+ 
+-	bc().readOnly(bufferIsReadonly());
+-	view().update();
++	this->bc().readOnly(this->bufferIsReadonly());
++	this->view().update();
+ 
+ 	// The widgets may not be valid, so refresh the button controller
+-	bc().refresh();
++	this->bc().refresh();
+ }
+ 
++
+ template <class Base>
+ void ControlDialog<Base>::hide()
+ {
+-	emergency_exit_ = false;
++	this->emergency_exit_ = false;
+ 	clearParams();
+ 
+-	disconnect();
+-	view().hide();
++	this->disconnect();
++	this->view().hide();
+ }
