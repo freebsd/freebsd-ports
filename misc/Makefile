@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.207 1999/05/10 16:45:54 flathill Exp $
+# $Id: Makefile,v 1.208 1999/05/11 02:02:26 taoka Exp $
 #
 
     SUBDIR += 221upgrade
@@ -66,6 +66,7 @@
     SUBDIR += p5-Locale-Codes
     SUBDIR += peq
     SUBDIR += pdmenu
+    SUBDIR += pinfo
     SUBDIR += qclock
     SUBDIR += quotes
     SUBDIR += rc5des
