@@ -5,8 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	libfwbuilder
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.0.4
+PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fwbuilder
@@ -16,7 +16,7 @@ COMMENT=	Firewall Builder API
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt \
-		netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
+		netsnmp.7:${PORTSDIR}/net-mgmt/net-snmp
 
 USE_QT_VER=	3
 
@@ -35,7 +35,7 @@ INSTALLS_SHLIB=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 post-install:
-	${RM} ${PREFIX}/lib/libfwbuilder.so.6.1
-	${RM} ${PREFIX}/lib/libfwcompiler.so.6.1
+	${RM} ${PREFIX}/lib/libfwbuilder.so.6.2
+	${RM} ${PREFIX}/lib/libfwcompiler.so.6.2
 
 .include <bsd.port.mk>
