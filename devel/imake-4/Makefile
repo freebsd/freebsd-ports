@@ -18,6 +18,7 @@ COMMENT=	Imake and other utilities from XFree86
 
 PREFIX?=	${X11BASE}
 USE_PERL5=	YES
+USE_REINPLACE=	yes
 
 .ifdef USE_IMAKE
 .error You have `USE_IMAKE' variable defined either in environment or in make(1) arguments. Please undefine and try again.
@@ -65,6 +66,11 @@ DebuggableLibraries?=	NO
 InstallXdmConfig?=	YES
 InstallXinitConfig?=	YES
 InstallAppDefFiles?=	YES
+
+pre-configure:
+	@${REINPLACE_CMD} -e 's|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|g ; \
+		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|g' \
+		${WRKSRC}/cf/FreeBSD.cf
 
 post-install:
 	@${MKHTMLINDEX} ${PREFIX}/lib/X11/doc/html
