@@ -1,0 +1,17 @@
+bin/ldapclient
+bin/ldapclient_str
+bin/md5password
+libexec/tinyldap
+sbin/addindex
+sbin/dumpidx
+sbin/idx2ldif
+sbin/parse
+sbin/tinyldap_debug
+sbin/tinyldap_standalone
+%%PORTDOCS%%%%DOCSDIR%%/FORMAT
+%%PORTDOCS%%%%DOCSDIR%%/GETTING.STARTED
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RFCs
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

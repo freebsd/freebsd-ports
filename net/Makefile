@@ -623,6 +623,7 @@
     SUBDIR += tintin++
     SUBDIR += tintin++-devel
     SUBDIR += tinyfugue
+    SUBDIR += tinyldap
     SUBDIR += tkabber
     SUBDIR += tn3270
     SUBDIR += tn5250

@@ -1,0 +1,46 @@
+--- Makefile.orig	Sat Feb 14 01:31:42 2004
++++ Makefile	Thu Feb 26 16:06:04 2004
+@@ -32,13 +32,16 @@
+ 
+ auth.a: auth.o
+ 
+-DIET=/opt/diet/bin/diet -Os
+-CC=gcc
+-CFLAGS=-pipe -I. -Wall -W
++DIET=
++CC?=gcc
++CFLAGS?=-pipe -I. -Wall -W
+ ifneq ($(DEBUG),)
+-DIET=/opt/diet/bin/diet
+-CFLAGS=-pipe -I. -Wall -W -g
++DIET=
++CFLAGS+=-g
+ endif
++CFLAGS+=-I. -I/usr/local/include/libowfat
++LDFLAGS+=-L/usr/local/lib
++LIBS+=-lmd
+ 
+ %.o: %.c
+ 	$(DIET) $(CC) $(CFLAGS) -c $<
+@@ -47,7 +50,7 @@
+ 	ar cru $@ $^
+ 
+ %: %.c
+-	$(DIET) $(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS) -lowfat
++	$(DIET) $(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS) -lowfat ${LIBS}
+ 
+ t1 parse: ldif.a storage.a
+ t2: ldap.a asn1.a
+@@ -58,10 +61,10 @@
+ idx2ldif: ldap.a
+ 
+ tinyldap_standalone: tinyldap.c
+-	$(DIET) $(CC) $(CFLAGS) -DSTANDALONE -o $@ $^ $(LDFLAGS) -lowfat
++	$(DIET) $(CC) $(CFLAGS) -DSTANDALONE -o $@ $^ $(LDFLAGS) -lowfat ${LIBS}
+ 
+ tinyldap_debug: tinyldap.c
+-	$(DIET) $(CC) $(CFLAGS) -DSTANDALONE -DDEBUG -o $@ $^ $(LDFLAGS) -lowfat
++	$(DIET) $(CC) $(CFLAGS) -DSTANDALONE -DDEBUG -o $@ $^ $(LDFLAGS) -lowfat ${LIBS}
+ 
+ .PHONY: clean tar
+ clean:
