@@ -1,20 +1,3 @@
---- lib/mc.ext.in.orig	Sat Mar  3 16:33:22 2001
-+++ lib/mc.ext.in	Wed Mar 28 19:08:24 2001
-@@ -283,3 +283,3 @@
- include/image-options
--	Open=if [ "$DISPLAY" = "" ]; then zgv %f; else (ee %f &); fi
-+	Open=if [ "$DISPLAY" = "" ]; then zgv %f; else (ElectricEyes %f &); fi
- 	View=%view{ascii} identify %f
-@@ -287,3 +287,3 @@
- 	Set root window to this image=background-properties --setwallpaper %f &
--	Display this file=ee %f &
-+	Display this file=ElectricEyes %f &
- 
-@@ -329,3 +329,3 @@
- type/PostScript
--	Open=gv %f&
-+	Open=ggv %f&
- 	View=%view{ascii} ps2ascii %f
 --- gnome/mc.keys.in.in.orig	Tue Feb 16 01:29:18 1999
 +++ gnome/mc.keys.in.in	Fri Feb 19 01:47:31 1999
 @@ -96,7 +96,7 @@
