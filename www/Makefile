@@ -40,6 +40,7 @@
     SUBDIR += cgiparse
     SUBDIR += cgiwrap
     SUBDIR += checkbot
+    SUBDIR += cheetah
     SUBDIR += chimera
     SUBDIR += chimera2
     SUBDIR += comclear
