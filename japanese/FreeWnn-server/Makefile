@@ -18,6 +18,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	taoka@FreeBSD.org
 
+BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
+
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
 PATCHDIR=	${.CURDIR}/../../japanese/Wnn/patches
