@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pilrc
-PORTVERSION=	2.7a
+PORTVERSION=	2.7b
 CATEGORIES=	palm
 MASTER_SITES=	http://www.ardiri.com/download/palm/pilrc/
 DISTNAME=	pilrc_src
