@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.27 2003/11/17 20:00:17 marcus Exp $
+# $Id: portlint.pl,v 1.28 2003/11/21 02:52:52 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 5;
-my $micro = 0;
+my $micro = 1;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -281,7 +281,7 @@ foreach my $i (<$makevar{PATCHDIR}/patch-*>) {
 	$checker{$i} = 'checkpatch';
 }
 foreach my $i (@checker) {
-	print "OK: checking $i.\n";
+	print "OK: checking $i.\n" if ($verbose);
 	if (! -f "$i") {
 		&perror("FATAL: no $i in \"$portdir\".") unless $i eq $makevar{MD5_FILE} && $makevar{DISTFILES} eq "";
 	} else {
@@ -342,6 +342,138 @@ if ($committer) {
 	}
 
 	find(\&find_proc, '.');
+
+	sub checksubdir {
+		my $dir = shift;
+
+		print "OK: checking CVS status of \"$dir\".\n" if ($verbose);
+		opendir DIR, $dir;
+		my @filenames = readdir DIR;
+		closedir DIR;
+
+		my %entries;
+		if (-f "$dir/CVS/Entries") {
+			open ENTRIES, "<$dir/CVS/Entries";
+			while (<ENTRIES>) {
+				chomp;
+				my @entry = split /\//;
+				if ($entry[0] eq 'D') {
+					$entries{ $entry[1] } = $entry[0]
+						if $entry[1];
+				}
+				elsif ($entry[0] eq '') {
+					if ($entry[2] =~ /^-/) {
+						$entries{ $entry[1] } = 'x';
+					}
+					elsif ($entry[2] eq '0') {
+						$entries{ $entry[1] } = 'n';
+					}
+					else {
+						$entries{ $entry[1] } = 'f';
+					}
+				}
+				else {
+					&perror("WARN: can not parse CVS line $_");
+				}
+			}
+			close ENTRIES;
+		} else {
+			&perror("WARN: no CVS directories. Use -n to check a new port.");
+			return;
+		}
+
+		if (-f "$dir/CVS/Entries.Log") {
+			open ENTRIES, "<$dir/CVS/Entries.Log";
+			while (<ENTRIES>) {
+				chomp;
+				my $cmd;
+				my @entry = split /\//;
+				if (/^(.) (.*)$/) {
+					$cmd = $1;
+					@entry = split /\//, $2;
+				}
+				else {
+					$cmd = 'A';
+					@entry = split /\//;
+				}
+					if ($cmd eq 'A') {
+						if ($entry[0] eq 'D') {
+							$entries{ $entry[1] } = $entry[0]
+								if $entry[1];
+						}
+					elsif ($entry[0] eq '') {
+						if ($entry[2] =~ /^-/) {
+							$entries{ $entry[1] } = 'x';
+						}
+						elsif ($entry[2] eq '0') {
+							$entries{ $entry[1] } = 'n';
+						}
+						else {
+							$entries{ $entry[1] } = 'f';
+						}
+					}
+					else {
+						&perror("WARN: can not parse CVS line $_");
+					}
+				}
+				elsif ($cmd eq 'R') {
+					delete $entries{ $entry[1] }
+						if $entry[1];
+				}
+				# ignore unknown commands
+			}
+			close ENTRIES;
+		}
+
+		foreach (@filenames) {
+			next
+				if /^(?:\.\.?|CVS)$/;
+			my $filename = $dir eq '.' ? $_ : "$dir/$_";
+			if (-d $filename) {
+				if (!$entries{$_} || $entries{$_} ne 'D') {
+					&perror("FATAL: directory $filename not in CVS.");
+				}
+				else {
+					delete $entries{$_};
+					checksubdir($filename);
+				}
+			}
+			else {
+				if (!$entries{$_}) {
+					&perror("FATAL: file $filename not in CVS.");
+				}
+				elsif ($entries{$_} eq 'D') {
+					&perror("FATAL: file $filename is a directory in CVS.");
+				}
+				elsif ($entries{$_} eq 'x') {
+					&perror("FATAL: file $filename is deleted in CVS.");
+				}
+				elsif ($entries{$_} eq 'n') {
+					if (!system("egrep", "-q", "\\\$$rcsidstr\[^\$\]+\\\$", $filename)) {
+						&perror("WARN: RCS tag \"\$$rcsidstr\$\" ".
+							"should be empty in new file $filename.");
+					}
+					delete $entries{$_};
+				}
+				else {
+					delete $entries{$_};
+				}
+			}
+		}
+
+		while (my ($file, $type) = each %entries) {
+			next if $type eq 'x';
+			if ($type eq 'D') {
+				&perror("FATAL: CVS directory $dir/$file missing");
+			}
+			else {
+				&perror("FATAL: CVS file $dir/$file missing");
+			}
+		}
+	}
+
+	checksubdir('.')
+		unless $newport;
 
 	# Check for ports that may break INDEX
 	my $indexerr = `env LOCALBASE=/nonexistentlocal X11BASE=/nonexistentx make $makeenv describe 2>&1 >/dev/null`;
@@ -1234,6 +1366,20 @@ DISTFILES DIST_SUBDIR EXTRACT_ONLY
 	} elsif ($1 ne '') {
 		&perror("WARN: unless this is a master port, PORTVERSION has to be set by \"=\", ".
 			"not by \"$1=\".") unless ($masterport);
+	}
+	if ($newport) {
+		print "OK: checking for existence of PORTREVISION in new port.\n" 
+			if ($verbose);
+		if ($tmp =~ /^PORTREVISION(.)?=/m) {
+			&perror("WARN: new ports should not set PORTREVISION.");	
+		}
+	}
+	if ($newport) {
+		print "OK: checking for existence of PORTEPOCH in new port.\n" 
+			if ($verbose);
+		if ($tmp =~ /^PORTEPOCH(.)?=/m) {
+			&perror("WARN: new ports should not set PORTEPOCH.");	
+		}
 	}
 	print "OK: checking CATEGORIES.\n" if ($verbose);
 	if ($tmp !~ /\nCATEGORIES(.)?=/) {
