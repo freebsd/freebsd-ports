@@ -7,12 +7,13 @@
 
 PORTNAME=	jove
 PORTVERSION=	4.16
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/moraes/jove/
 
 MAINTAINER=	ports@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/jove
-MAN1=		jove.1 teachjove.1 xjove.1 jovetool.1
+WRKSRC=		${WRKDIR}/${PORTNAME}
+MAN1=		jove.1 teachjove.1
 
 .include <bsd.port.mk>

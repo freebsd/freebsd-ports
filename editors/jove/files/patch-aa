@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Mar 18 22:44:33 1996
-+++ Makefile	Sun Sep 22 10:30:41 1996
+--- Makefile.orig	Tue Mar 19 13:44:33 1996
++++ Makefile	Wed Dec 20 05:39:12 2000
 @@ -27,16 +27,16 @@
  # LIBDIR and SHAREDIR.  All others must already exist.
  
@@ -22,21 +22,33 @@
  
  # The install commands of BSD and System V differ in unpleasant ways:
  # -c: copy (BSD); -c dir: destination directory (SysV)
-@@ -51,11 +51,11 @@
+@@ -50,12 +50,12 @@
+ INSTALLFLAGS = # -g bin -o root
  
  # to install executable files
- XINSTALL=cp
+-XINSTALL=cp
 -#XINSTALL=/usr/ucb/install $(INSTALLFLAGS) -c -m 755 # -s
-+XINSTALL=install $(INSTALLFLAGS) -c -m 755 # -s
++#XINSTALL=cp
++XINSTALL=${BSD_INSTALL_PROGRAM}
  
  # to install text files
- TINSTALL=cp
+-TINSTALL=cp
 -#TINSTALL=/usr/ucb/install $(INSTALLFLAGS) -c -m 644
-+#TINSTALL=install $(INSTALLFLAGS) -c -m 644
++#TINSTALL=cp
++TINSTALL=${BSD_INSTALL_DATA}
  
  # These should all just be right if the above ones are.
  # You will confuse JOVE if you move anything from LIBDIR or SHAREDIR.
-@@ -163,7 +163,7 @@
+@@ -79,7 +79,7 @@
+ # compiler, adding -Xa -v will increase compiler checking.
+ # On DEC OSF/1, -std1 -O
+ 
+-OPTFLAGS = -O
++#OPTFLAGS = -O
+ 
+ # For making dependencies under BSD systems
+ DEPENDFLAG = -M
+@@ -163,13 +163,13 @@
  #
  # You can just say 'make SYSDEFS=-Dwhatever' on these systems.
  
@@ -45,3 +57,19 @@
  
  # for SCO Xenix, set
  #	MEMFLAGS = -Mle
+ #	CFLAGS = -LARGE -O -F 3000 -K -Mle  (say -Mle2 for an 80286)
+ 
+-CFLAGS = $(OPTFLAGS) $(SYSDEFS)
++CFLAGS += $(OPTFLAGS) $(SYSDEFS)
+ 
+ # For SYSVR4 (/usr/ucb/cc will NOT work because of setjmp.h):
+ # CC = /usr/bin/cc
+@@ -213,7 +213,7 @@
+ TROFF = troff -Tpost
+ TROFFPOST = | /usr/lib/lp/postscript/dpost - >troff.out.ps
+ 
+-MANUALS = $(JOVEM) $(TEACHJOVEM) $(XJOVEM) $(JOVETOOLM)
++MANUALS = $(JOVEM) $(TEACHJOVEM) # $(XJOVEM) $(JOVETOOLM)
+ 
+ C_SRC = commands.c commands.tab abbrev.c argcount.c ask.c buf.c c.c case.c jctype.c \
+ 	delete.c disp.c extend.c fp.c fmt.c insert.c io.c iproc.c \
