@@ -17,7 +17,8 @@ RUN_DEPENDS=	mpack:${PORTSDIR}/converters/mpack
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_IMLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	imlib
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
