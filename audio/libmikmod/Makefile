@@ -6,20 +6,18 @@
 #
 
 PORTNAME=	libmikmod
-PORTVERSION=	3.1.10
-PORTREVISION=	2
+PORTVERSION=	3.1.11
 CATEGORIES=	audio
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://mikmod.raphnet.net/files/
-MASTER_SITE_SUBDIR=	apps/sound/libs
+MASTER_SITES=	http://mikmod.raphnet.net/files/
 
 MAINTAINER=	david@dyn-ns.net
 COMMENT=	MikMod Sound Library
 
-USE_REINPLACE=	yes
 WANT_GNOME=	yes
-USE_LIBTOOL_VER=	13
+USE_GNOME=	gnometarget lthack
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
+USE_LIBTOOL_VER=	13
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 MAKE_ENV=	SHELL=/bin/sh
 INSTALLS_SHLIB=	yes
@@ -30,7 +28,7 @@ INFO=		mikmod
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mesound}!=""
-USE_GNOME=	esound
+USE_GNOME+=	esound
 CONFIGURE_ARGS+=	--enable-esd
 PKGNAMESUFFIX=	-esound
 .else
