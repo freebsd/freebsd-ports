@@ -1,109 +1,108 @@
-lib/perl5/site_perl/%%PERL_VER%%/Bio/DB/GenBank.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/DB/SeqI.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/DB/Ace.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/DB/RandomAccessI.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/DB/GenPept.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Root/Err.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Root/RootI.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Root/Global.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Root/Xref.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Root/Object.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Root/Vector.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Root/Utilities.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Root/IOManager.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/RangeI.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Annotation.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqI.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/UnivAln.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqFeatureI.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/genbank.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/FTHelper.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/raw.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/embl.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/scf.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/gcg.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/swiss.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/fasta.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/pir.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/MultiFile.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Sim4/Results.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Sim4/Exon.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/IUPAC.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/CodonTable.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/AlignFactory.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Blast/Run/Makefile.PL
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Blast/Run/postclient.pl
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Blast/Run/LocalBlast.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Blast/Run/Webblast.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Blast/CHANGES
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Blast/HSP.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Blast/Sbjct.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Blast/README
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Blast/HTML.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/pSW.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Blast.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/SeqPattern.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Fasta.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/WWW.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/HMMER/Results.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/HMMER/Set.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/HMMER/Domain.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Sigcleave.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/SeqWords.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/SeqStats.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/SeqAnal.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/RestrictionEnzyme.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/SearchDist.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Search/Hit/HitI.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Search/Hit/Fasta.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Search/Processor/Fasta.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Search/Processor/ProcessorI.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Search/Processor.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Search/Result/ResultI.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Search/Result/Fasta.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Seq.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/PrimarySeqI.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Range.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/SimpleAlign.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Index/EMBL.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Index/AbstractSeq.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Index/Fasta.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Index/Abstract.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Index/SwissPfam.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Species.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/PrimarySeq.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/LocatableSeq.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Annotation/Comment.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Annotation/Reference.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/Annotation/DBLink.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqFeature/FeaturePair.pm
-lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqFeature/Generic.pm
-lib/perl5/site_perl/%%PERL_VER%%/bioperl.pod
-lib/perl5/site_perl/%%PERL_VER%%/bioback.pod
-lib/perl5/site_perl/%%PERL_VER%%/biodesign.pod
-lib/perl5/site_perl/%%PERL_VER%%/biostart.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bio/Ext/Align.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bio/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bio/Ext/Align/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bio/Ext/Align/Align.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bio/Ext/Align/Align.so
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bio/Ext/Align.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bio/Ext/Align/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/DB
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/Root
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Sim4
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Annotation.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Annotation/Comment.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Annotation/DBLink.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Annotation/Reference.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/DB/Ace.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/DB/GenBank.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/DB/GenPept.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/DB/RandomAccessI.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/DB/SeqI.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Index/Abstract.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Index/AbstractSeq.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Index/EMBL.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Index/Fasta.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Index/SwissPfam.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/LocatableSeq.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/PrimarySeq.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/PrimarySeqI.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Range.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/RangeI.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Root/Err.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Root/Global.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Root/IOManager.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Root/Object.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Root/RootI.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Root/Utilities.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Root/Vector.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Root/Xref.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Search/Hit/Fasta.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Search/Hit/HitI.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Search/Processor.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Search/Processor/Fasta.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Search/Processor/ProcessorI.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Search/Result/Fasta.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Search/Result/ResultI.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/SearchDist.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Seq.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqFeature/FeaturePair.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqFeature/Generic.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqFeatureI.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqI.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/FTHelper.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/MultiFile.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/embl.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/fasta.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/gcg.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/genbank.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/pir.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/raw.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/scf.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO/swiss.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/SimpleAlign.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Species.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/AlignFactory.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Blast.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Blast/CHANGES
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Blast/HSP.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Blast/HTML.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Blast/README
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Blast/Run/LocalBlast.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Blast/Run/Makefile.PL
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Blast/Run/Webblast.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Blast/Run/postclient.pl
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Blast/Sbjct.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/CodonTable.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Fasta.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/HMMER/Domain.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/HMMER/Results.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/HMMER/Set.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/IUPAC.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/RestrictionEnzyme.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/SeqAnal.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/SeqPattern.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/SeqStats.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/SeqWords.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Sigcleave.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/WWW.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/pSW.pm
+lib/perl5/site_perl/%%PERL_VER%%/Bio/UnivAln.pm
+lib/perl5/site_perl/%%PERL_VER%%/bioback.pod
+lib/perl5/site_perl/%%PERL_VER%%/biodesign.pod
+lib/perl5/site_perl/%%PERL_VER%%/bioperl.pod
+lib/perl5/site_perl/%%PERL_VER%%/biostart.pod
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/HMMER
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Blast/Run
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/Blast
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools/HMMER
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/Tools
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/Search/Hit
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/Search/Processor
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/Search/Result
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/Search
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/Index
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/Annotation
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqIO
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/SeqFeature
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/Search/Result
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/Search/Processor
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/Search/Hit
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/Search
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/Root
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/Index
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/DB
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio/Annotation
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Bio
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bio/Ext/Align/
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bio/Ext/Align
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bio/Ext
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bio
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bio/Ext
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bio
