@@ -1,6 +1,2 @@
 bin/pancho
-%%PORTDOCS%%share/doc/pancho/README
-%%PORTDOCS%%share/doc/pancho/LOGGING
-%%PORTDOCS%%share/doc/pancho/CREDITS
-%%PORTDOCS%%share/doc/pancho/COPYRIGHT
-%%PORTDOCS%%@dirrm share/doc/pancho
+etc/pancho.conf.sample

@@ -6,43 +6,31 @@
 #
 
 PORTNAME=	pancho
-PORTVERSION=	5.4
+PORTVERSION=	6.0.0
 CATEGORIES=	net
-MASTER_SITES=	ftp://pancho.lunarmedia.net/pancho/ \
-		http://pancho.lunarmedia.net/
+MASTER_SITES=	http://www.panchoproject.org/archives/pancho/
 DISTNAME=	pancho-v${PORTVERSION}
 
 MAINTAINER=	Nicolas.Jombart@hsc-labs.com
 
-RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/SNMP.pm:${PORTSDIR}/net/p5-Net-SNMP
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/SNMP.pm:${PORTSDIR}/net/p5-Net-SNMP \
+		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles
 
 USE_PERL5=	YES
 NO_BUILD=	YES
-
-pre-everything::
-.if !defined(WITH_PANCHO_LOGGING)
-	@${ECHO_MSG} "Type \"make WITH_PANCHO_LOGGING=yes\" if you want to enable logging."
-	@${ECHO_MSG} "Read LOGGING to know how to customize logging."
-.endif
 
 pre-patch:
 	@${MV} ${WRKSRC}/pancho ${WRKSRC}/pancho.old
 	@${SED} -e '1,1s:/usr/bin/perl:${PERL5}:' \
 		< ${WRKSRC}/pancho.old > ${WRKSRC}/pancho
-.if defined(WITH_PANCHO_LOGGING)
+	@${RM} ${WRKSRC}/pancho.old
 	@${MV} ${WRKSRC}/pancho ${WRKSRC}/pancho.old
-	@${SED} -e '35,1s:logging = "":logging = "1":' \
+	@${SED} -e '28,1s:pancho.conf:${PREFIX}/etc/pancho.conf:' \
 		< ${WRKSRC}/pancho.old > ${WRKSRC}/pancho
-.endif
 	@${RM} ${WRKSRC}/pancho.old
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/pancho ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/pancho
-.for i in README LOGGING CREDITS COPYRIGHT
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/pancho
-.endfor
-.endif
+	@${INSTALL_DATA} ${WRKSRC}/samples/sample.conf ${PREFIX}/etc/pancho.conf.sample
 
 .include <bsd.port.mk>
