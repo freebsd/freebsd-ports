@@ -25,3 +25,4 @@ linux-aspell<=0.50.4.1|http://nettwerked.mg2.org/advisories/wlc http://marc.thea
 bnbt<7.5b3|http://www.osvdb.org/6336|BNBT Authorization Header DoS|0f9b3542-c35f-11d8-8898-000d6111a684
 scorched3d<0.37.2|http://marc.theaimsgroup.com/?l=bugtraq&m=108152473130133&w=2 http://www.osvdb.org/5086 http://www.freebsd.org/cgi/query-pr.cgi?pr=67541|Scorched 3D server chat box format string vulnerability|36808860-c363-11d8-8898-000d6111a684
 super<3.23.0|http://www.secunia.com/advisories/11899 http://www.debian.org/security/2004/dsa-522 http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0579|super format string vulnerability|fae06c04-c38c-11d8-8898-000d6111a684
+mailman<2.1.5|http://mail.python.org/pipermail/mailman-announce/2004-May/000072.html http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0412 http://www.osvdb.org/6422|mailman allows 3rd parties to retrieve member passwords|2a405a43-c396-11d8-8898-000d6111a684
