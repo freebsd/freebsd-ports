@@ -1,12 +1,22 @@
---- doc/doxygen_manual.tex.orig	Tue Sep 11 12:56:42 2001
-+++ doc/doxygen_manual.tex	Sun Sep 30 17:32:23 2001
+--- doc/doxygen_manual.tex.orig	Mon May 20 05:58:08 2002
++++ doc/doxygen_manual.tex	Sat May 25 09:28:15 2002
 @@ -12,8 +12,7 @@
  % Documents produced by Doxygen are derivative works derived from the
  % input used in their production; they are not affected by this license.
  
--\documentclass[a4paper,ps2pdf]{article}
+-\documentclass[a4paper]{article}
 -\usepackage{a4wide}
 +\documentclass{article}
  \usepackage{makeidx}
  \usepackage{fancyhdr}
  \usepackage{float}
+@@ -23,8 +22,7 @@
+ \usepackage{multicol}
+ \usepackage{times}
+ \usepackage{alltt}
+-\usepackage[pdftex,
+-            pagebackref=true,
++\usepackage[pagebackref=true,
+             colorlinks=true,
+             linkcolor=blue
+            ]{hyperref}

@@ -1,16 +1,30 @@
---- doc/Makefile.latex.orig	Mon Mar 19 14:27:39 2001
-+++ doc/Makefile.latex	Sun Sep 30 17:25:54 2001
-@@ -12,10 +12,10 @@
+--- doc/Makefile.latex.orig	Mon May 20 05:58:08 2002
++++ doc/Makefile.latex	Sat May 25 09:12:31 2002
+@@ -12,20 +12,20 @@
  # Documents produced by Doxygen are derivative works derived from the
  # input used in their production; they are not affected by this license.
  
 -all: doxygen_manual.pdf
 +all: doxygen_manual.ps doxygen_manual.pdf
  
--doxygen_manual.pdf: doxygen_manual.ps
--	ps2pdf doxygen_manual.ps doxygen_manual.pdf
-+doxygen_manual.pdf: doxygen_manual.dvi
+-#doxygen_manual.pdf: doxygen_manual.ps
+-#	ps2pdf doxygen_manual.ps doxygen_manual.pdf
++doxygen_manual.pdf: doxygen_manual.ps
 +	dvipdfm -o doxygen_manual.pdf doxygen_manual.dvi
  
- doxygen_manual.ps: doxygen_manual.dvi
- 	dvips -o doxygen_manual.ps doxygen_manual.dvi
+-#doxygen_manual.ps: doxygen_manual.dvi
+-#	dvips -o doxygen_manual.ps doxygen_manual.dvi
++doxygen_manual.ps: doxygen_manual.dvi
++	dvips -o doxygen_manual.ps doxygen_manual.dvi
+ 
+-doxygen_manual.pdf: doxygen_manual.tex doxygen.sty
++doxygen_manual.dvi: doxygen_manual.tex doxygen.sty
+ 	echo "Running latex..."
+ 	pdflatex doxygen_manual.tex 
+ 	echo "Running makeindex..."
+ 	makeindex doxygen_manual.idx
+ 	echo "Rerunning latex...."
+-	pdflatex doxygen_manual.tex
++	latex doxygen_manual.tex
+ clean:
+ 	rm -f *.ps *.dvi *.aux *.toc *.idx *.ind *.ilg *.log *.pdf
