@@ -1,0 +1,10 @@
+Software that controls the ICOM PCR-1000 Receiver.
+
+Features
+	- GUI Controls
+	- Bandscope
+	- Hierachy Channels Database
+	- Graphical Scan
+	- Monitor and run script files
+
+WWW: http://www.physics.purdue.edu/~teepanis/qtpcr/
