@@ -33,6 +33,7 @@
     SUBDIR += ted
     SUBDIR += telnet
     SUBDIR += tin
+    SUBDIR += ve
     SUBDIR += xcin
 
 .include <bsd.port.subdir.mk>
