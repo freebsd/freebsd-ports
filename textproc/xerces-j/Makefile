@@ -6,25 +6,44 @@
 #
 
 PORTNAME=	xerces-j
-PORTVERSION=	2.1.0
+PORTVERSION=	2.2.0
 CATEGORIES=	textproc java
 MASTER_SITES=	http://xml.apache.org/dist/xerces-j/
-DISTNAME=	xerces-${PORTVERSION:S/./_/g}
-DISTFILES=	Xerces-J-bin.${PORTVERSION}${EXTRACT_SUFX}
+DISTNAME=	Xerces-J-src.${PORTVERSION}
 
 MAINTAINER=	kevlo@FreeBSD.org
+
+BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant
 
 USE_JAVA=	1.3+
 
 WRKSRC=		${WRKDIR}/xerces-${PORTVERSION:S/./_/g}
-NO_BUILD=	yes
+ANT?=		${LOCALBASE}/bin/ant
+.if defined(NOPORTDOCS)
+ANT_TARGETS=	jar apijar
+.else
+ANT_TARGETS=	jar apijar javadocs
+# We should install other documentation too, but
+# we have no stylebook port yet
+#
+# ANT_TARGETS=	jar apijar docs javadocs
+.endif
+JAVASHAREDIR=	${PREFIX}/share/java
+JARDIR=		${JAVASHAREDIR}/classes
+JARFILES=	xercesImpl.jar xmlParserAPIs.jar
+
+do-build:
+	@cd ${WRKSRC} && ${ANT} ${ANT_TARGETS}
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_DATA} xercesImpl.jar xmlParserAPIs.jar \
-		${PREFIX}/share/java/classes)
+	@${ECHO} -n ">> Installing JAR files in ${JARDIR}..."
+	@cd ${WRKSRC}/build && ${CP} ${JARFILES} ${JARDIR}/
+	@${ECHO} " [ DONE ]"
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC}/docs && ${TAR} -cf - . | ${TAR} -xf - -C ${DOCSDIR})
+	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
+	@${MKDIR} ${DOCSDIR}
+	@${CP} -r ${WRKSRC}/build/docs/javadocs/* ${DOCSDIR}
+	@${ECHO} " [ DONE ]"
 .endif
 
 .include <bsd.port.mk>
