@@ -16,4 +16,5 @@ sbin/sockd
 %%PORTDOCS%%share/doc/dante/SOCKS4.protocol
 %%PORTDOCS%%share/doc/dante/rfc1928.txt
 %%PORTDOCS%%share/doc/dante/rfc1929.txt
+%%PORTDOCS%%share/doc/dante/faq.tex
 %%PORTDOCS%%@dirrm share/doc/dante

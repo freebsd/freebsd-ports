@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	dante
-PORTVERSION=	1.1.9
+PORTVERSION=	1.1.10
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.inet.no/pub/socks/ \
-		http://www.freenix.no/~anders/ \
-		ftp://totem.fix.no/pub/mirrors/misc/
+		ftp://ftp.nuug.no/pub/anders/distfiles/ \
+		http://www.freenix.no/~anders/
 
 MAINTAINER=	anders@fix.no
 
@@ -31,6 +31,7 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/doc/README* ${PREFIX}/share/doc/dante
 	@${INSTALL_DATA} ${WRKSRC}/doc/rfc* ${PREFIX}/share/doc/dante
 	@${INSTALL_DATA} ${WRKSRC}/doc/SOCKS4.protocol ${PREFIX}/share/doc/dante
+	@${INSTALL_DATA} ${WRKSRC}/doc/faq.tex ${PREFIX}/share/doc/dante
 .endif
 
 .include <bsd.port.mk>
