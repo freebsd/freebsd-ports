@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	tcptraceroute
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	net
 MASTER_SITES=	http://michael.toren.net/code/tcptraceroute/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	corecode@corecode.ath.cx
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
 MAN8=	tcptraceroute.8
+
+post-install:
+	@${CHMOD} u+s ${PREFIX}/bin/tcptraceroute
 
 .include <bsd.port.mk>
