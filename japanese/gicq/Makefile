@@ -3,7 +3,7 @@
 # Date Created:			31 Oct 1998
 # Whom:				Seiichirou Hiraoka
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/11/19 07:39:16 flathill Exp $
 #
 
 DISTNAME=	gicq-0.22
@@ -17,13 +17,13 @@ PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	flathill@FreeBSD.ORG
 
+BUILD_DEPENDS=	${LOCALBASE}/lib/libicq.a:${PORTSDIR}/japanese/libicq \
+		${X11BASE}/lib/libgtk.a:${PORTSDIR}/japanese/gtk
+
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-gnome --disable-nls
 CONFIGURE_ENV=	LIBS=-lxpg4
-
-BUILD_DEPENDS=	${LOCALBASE}/lib/libicq.a:${PORTSDIR}/japanese/libicq \
-		${X11BASE}/lib/libgtk.a:${PORTSDIR}/japanese/gtk
 
 post-configure:
 	@${SED} -e "s;@PREFIX@;${PREFIX};g" ${FILESDIR}/wrapper \
