@@ -3,7 +3,7 @@
 # Date created:		29 July 1995
 # Whom:			janek@gaja.ipan.lublin.pl
 #
-# $Id: Makefile,v 1.3 1996/03/10 09:09:51 asami Exp $
+# $Id: Makefile,v 1.4 1996/11/15 23:30:53 obrien Exp $
 #
 
 DISTNAME=	chipmunk-5.10
@@ -21,6 +21,6 @@ USE_GMAKE=	yes
 NO_WRKSUBDIR=	yes
 
 post-extract:
-	${CP} ${DISTDIR}/Makefile ${WRKSRC}/Makefile
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/Makefile ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

@@ -164,9 +164,9 @@ if [ $answ = YES ]; then
 
     if [ -f $WH ] ; then
 	echo "==> $WH found in source distribution."
-    elif [ -f $DISTDIR/Wraphelp.c ] ; then
+    elif [ -f $DISTDIR/xc/Wraphelp.c ] ; then
 	echo "==> Wraphelp.c found in DISTDIR directory, copying to source tree."
-	cpwh=$DISTDIR/Wraphelp.c
+	cpwh=$DISTDIR/xc/Wraphelp.c
     elif [ -f $FILESDIR/Wraphelp.c ] ; then
 	echo "==> Wraphelp.c found in files directory, copying to source tree."
 	cpwh=$FILESDIR/Wraphelp.c

@@ -7,7 +7,7 @@
 # Date created:         31 July 1995
 # Whom:                 faulkner@cactus.org
 #
-# $Id: Makefile,v 1.4 1996/07/14 07:28:54 ache Exp $
+# $Id: Makefile,v 1.5 1996/11/11 05:49:12 obrien Exp $
 #
 
 DISTNAME=       astrolog-5.20
@@ -27,7 +27,7 @@ EPHEM=          lrz5_24 chi_24 cpjv_24
 post-extract:
 	cd ${WRKSRC}/..; \
 		for i in ${EPHEM}; do \
-			zcat ${DISTDIR}/$$i.gz > \
+			zcat ${DISTDIR}/${DIST_SUBDIR}/$$i.gz > \
 				`echo $$i | tr '[:lower:]' '[:upper:]'`; \
 		done
 

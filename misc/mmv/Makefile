@@ -3,7 +3,7 @@
 # Date created:		2 Feb 1995
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.11 1996/06/26 22:33:17 gpalmer Exp $
+# $Id: Makefile,v 1.12 1996/11/11 05:49:49 obrien Exp $
 #
 
 DISTNAME=	mmv
@@ -22,8 +22,8 @@ NO_WRKSUBDIR=	yes
 # targets shamelessly hacked from the bsd.ports.mk file
 
 do-fetch:
-	@if [ ! -d ${DISTDIR} ]; then mkdir -p ${DISTDIR}; fi
-	@(cd ${DISTDIR}; \
+	@${MKDIR} ${DISTDIR}/${DIST_SUBDIR}
+	@(cd ${DISTDIR}/${DIST_SUBDIR}; \
 	 for file in ${SITE_DISTFILES}; do \
 		if [ ! -f `basename $$file` ]; then \
 			echo ">> `basename $$file` doesn't seem to exist on this system."; \
@@ -36,7 +36,7 @@ do-fetch:
 			done; \
 			if [ ! -f `basename $$file` ]; then \
 				echo ">> Couldn't fetch it - please try to retreive this";\
-				echo ">> port manually into ${DISTDIR} and try again."; \
+				echo ">> port manually into ${DISTDIR}/${DIST_SUBDIR} and try again."; \
 				exit 1; \
 			fi; \
 	    fi \
@@ -48,7 +48,7 @@ pre-extract:
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}/tmp
-	@(cd ${DISTDIR} ; for file in ${DISTFILES}; do \
+	@(cd ${DISTDIR}/${DIST_SUBDIR} ; for file in ${DISTFILES}; do \
 		${CP} $$file ${WRKDIR}/tmp; \
 	 done ; \
 	 cd ${WRKDIR}/tmp; \
