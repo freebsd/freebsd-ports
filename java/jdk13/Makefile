@@ -19,8 +19,10 @@ MAINTAINER=	glewis@FreeBSD.org
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		zip:${PORTSDIR}/archivers/zip \
 		gtar:${PORTSDIR}/archivers/gtar \
-		${JDK13DIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk13 \
 		${X11BASE}/lib/libMrm.a:${PORTSDIR}/x11-toolkits/open-motif
+.if !defined(NATIVE_BOOTSTRAP)
+BUILD_DEPENDS+=	${JDK13DIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk13
+.endif
 .if !defined(WITHOUT_PLUGIN)
 BUILD_DEPENDS+=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	glib12.3:$(PORTSDIR)/devel/glib12 \
