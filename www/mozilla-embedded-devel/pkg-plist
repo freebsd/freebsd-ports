@@ -28,6 +28,7 @@ lib/mozilla-embedded/components/editor.xpt
 lib/mozilla-embedded/components/gfx.xpt
 lib/mozilla-embedded/components/gfx2.xpt
 lib/mozilla-embedded/components/imglib2.xpt
+lib/mozilla-embedded/components/intl.xpt
 lib/mozilla-embedded/components/jar.xpt
 lib/mozilla-embedded/components/jsurl.xpt
 lib/mozilla-embedded/components/layout_base.xpt
@@ -82,6 +83,7 @@ lib/mozilla-embedded/components/libwallet.so
 lib/mozilla-embedded/components/libwebbrwsr.so
 lib/mozilla-embedded/components/libwidget_gtk.so
 lib/mozilla-embedded/components/libxpconnect.so
+lib/mozilla-embedded/components/locale.xpt
 lib/mozilla-embedded/components/mozbrwsr.xpt
 lib/mozilla-embedded/components/necko.xpt
 lib/mozilla-embedded/components/necko_about.xpt
@@ -125,6 +127,7 @@ lib/mozilla-embedded/libgtkembedmoz.so
 lib/mozilla-embedded/libgtksuperwin.so
 lib/mozilla-embedded/libmoz_art_lgpl.so
 lib/mozilla-embedded/libmozjs.so
+lib/mozilla-embedded/libmozz.so
 lib/mozilla-embedded/libnspr4.so
 lib/mozilla-embedded/libnss3.so
 lib/mozilla-embedded/libplc4.so
@@ -135,6 +138,7 @@ lib/mozilla-embedded/libssl3.so
 lib/mozilla-embedded/libxpcom.so
 lib/mozilla-embedded/readme.html
 lib/mozilla-embedded/res/arrow.gif
+lib/mozilla-embedded/res/arrowd.gif
 lib/mozilla-embedded/res/broken-image.gif
 lib/mozilla-embedded/res/builtin/htmlBindings.xml
 lib/mozilla-embedded/res/builtin/platformHTMLBindings.xml

@@ -68,7 +68,9 @@ lib/mozilla/components/dom_svg.xpt
 lib/mozilla/components/dom_traversal.xpt
 lib/mozilla/components/dom_views.xpt
 lib/mozilla/components/dom_xbl.xpt
+lib/mozilla/components/dom_xpath.xpt
 lib/mozilla/components/dom_xul.xpt
+lib/mozilla/components/downloadmanager.xpt
 lib/mozilla/components/editor.xpt
 lib/mozilla/components/embed_base.xpt
 lib/mozilla/components/exthandler.xpt
@@ -80,6 +82,7 @@ lib/mozilla/components/helperAppDlg.xpt
 lib/mozilla/components/history.xpt
 lib/mozilla/components/htmlparser.xpt
 lib/mozilla/components/imglib2.xpt
+lib/mozilla/components/impComm4xMail.xpt
 lib/mozilla/components/import.xpt
 lib/mozilla/components/inspector.xpt
 lib/mozilla/components/intl.xpt
@@ -90,7 +93,7 @@ lib/mozilla/components/jsdservice.xpt
 lib/mozilla/components/jsurl.xpt
 lib/mozilla/components/layout_base.xpt
 lib/mozilla/components/layout_xul.xpt
-lib/mozilla/components/layout_xul_outliner.xpt
+lib/mozilla/components/layout_xul_tree.xpt
 lib/mozilla/components/libabsyncsvc.so
 lib/mozilla/components/libaccessibility.so
 lib/mozilla/components/libaddrbook.so
@@ -121,6 +124,7 @@ lib/mozilla/components/libimglib2.so
 lib/mozilla/components/libimgmng.so
 lib/mozilla/components/libimgpng.so
 lib/mozilla/components/libimgppm.so
+lib/mozilla/components/libimpComm4xMail.so
 lib/mozilla/components/libimpText.so
 lib/mozilla/components/libimport.so
 lib/mozilla/components/libinspector.so
@@ -142,6 +146,7 @@ lib/mozilla/components/libmozxfer.so
 lib/mozilla/components/libmsgcompose.so
 lib/mozilla/components/libmsgdb.so
 lib/mozilla/components/libmsgimap.so
+lib/mozilla/components/libmsgmdn.so
 lib/mozilla/components/libmsgnews.so
 lib/mozilla/components/libmsgsmime.so
 lib/mozilla/components/libnecko.so
@@ -187,6 +192,7 @@ lib/mozilla/components/libxremote_client.so
 lib/mozilla/components/libxremoteservice.so
 lib/mozilla/components/locale.xpt
 lib/mozilla/components/mailnews.xpt
+lib/mozilla/components/mdn-service.js
 lib/mozilla/components/mime.xpt
 lib/mozilla/components/mimetype.xpt
 lib/mozilla/components/mozbrwsr.xpt
@@ -216,11 +222,13 @@ lib/mozilla/components/necko_socket.xpt
 lib/mozilla/components/necko_strconv.xpt
 lib/mozilla/components/necko_viewsource.xpt
 lib/mozilla/components/nsDictionary.js
+lib/mozilla/components/nsDownloadProgressListener.js
 lib/mozilla/components/nsFilePicker.js
 lib/mozilla/components/nsHelperAppDlg.js
 lib/mozilla/components/nsLDAPPrefsService.js
 lib/mozilla/components/nsProgressDialog.js
 lib/mozilla/components/nsProxyAutoConfig.js
+lib/mozilla/components/nsResetPref.js
 lib/mozilla/components/nsSidebar.js
 lib/mozilla/components/nsUpdateNotifier.js
 lib/mozilla/components/nsXmlRpcClient.js
@@ -285,6 +293,7 @@ lib/mozilla/defaults/pref/editor.js
 lib/mozilla/defaults/pref/initpref.js
 lib/mozilla/defaults/pref/inspector.js
 lib/mozilla/defaults/pref/mailnews.js
+lib/mozilla/defaults/pref/mdn.js
 lib/mozilla/defaults/pref/security-prefs.js
 lib/mozilla/defaults/pref/smime.js
 lib/mozilla/defaults/pref/unix.js
@@ -319,10 +328,10 @@ lib/mozilla/libgtkembedmoz.so
 lib/mozilla/libgtksuperwin.so
 lib/mozilla/libgtkxtbin.so
 lib/mozilla/libjsj.so
-lib/mozilla/liblber40.so
-lib/mozilla/libldap40.so
+lib/mozilla/libldap50.so
 lib/mozilla/libmoz_art_lgpl.so
 lib/mozilla/libmozjs.so
+lib/mozilla/libmozz.so
 lib/mozilla/libmsgbaseutil.so
 lib/mozilla/libnspr4.so
 lib/mozilla/libnss3.so
@@ -330,6 +339,7 @@ lib/mozilla/libnssckbi.so
 lib/mozilla/libnullplugin.so
 lib/mozilla/libplc4.so
 lib/mozilla/libplds4.so
+lib/mozilla/libprldap50.so
 lib/mozilla/libsmime3.so
 lib/mozilla/libsoftokn3.so
 lib/mozilla/libssl3.so
@@ -347,6 +357,7 @@ lib/mozilla/regExport
 lib/mozilla/regchrome
 lib/mozilla/regxpcom
 lib/mozilla/res/arrow.gif
+lib/mozilla/res/arrowd.gif
 lib/mozilla/res/broken-image.gif
 lib/mozilla/res/builtin/htmlBindings.xml
 lib/mozilla/res/builtin/platformHTMLBindings.xml
