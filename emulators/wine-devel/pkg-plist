@@ -1,9 +1,14 @@
+bin/dosmod
+bin/fnt2bdf
 bin/wine
 bin/winebuild
 bin/wineclipsrv
 bin/winedbg
 bin/wineserver
+bin/wmc
+bin/wrc
 bin/regSet.sh
+@unexec if cmp -s %D/etc/wine.conf %D/etc/wine.conf.sample; then rm -f %D/etc/wine.conf; fi
 etc/wine.conf.sample
 include/wine/basetsd.h
 include/wine/cderr.h
