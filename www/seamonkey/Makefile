@@ -14,6 +14,10 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	reg@FreeBSD.org
 
+# This port has not been update to M18, because of the requirement of moving
+# to world riteable directories.  Until you can fix that, please don't send
+# me patches.
+
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		IDL.2:${PORTSDIR}/devel/ORBit
 
