@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gretl
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -44,10 +44,9 @@ BROKEN=		"math/lapack appears to be broken on alpha"
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 PKGNAMESUFFIX=	-gnome
 USE_GNOME+=	gnomeprefix gtksourceview libgnomeui
-PLIST_SUB+=	GRETLDATADIR="share/gnome/gretl"
+DATADIR=	${PREFIX}/share/gnome/${PORTNAME}
 .else
 CONFIGURE_ARGS+=	--without-gnome --without-gtksourceview
-PLIST_SUB+=	GRETLDATADIR="share/gretl"
 .endif
 
 post-patch:
