@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomespell
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gnome-spell
@@ -15,7 +16,7 @@ DIST_SUBDIR=	gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	aspell.11:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	aspell.15:${PORTSDIR}/textproc/aspell
 
 USE_X_PREFIX=	yes
 USE_PERL5=	yes

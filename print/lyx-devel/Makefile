@@ -7,6 +7,7 @@
 
 PORTNAME=	lyx
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.sdsc.edu/pub/other/lyx/stable/ \
@@ -21,7 +22,7 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .if defined(WITH_ASPELL)
-LIB_DEPENDS+= aspell.11:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS+= aspell.15:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=--with-pspell
 .endif
 

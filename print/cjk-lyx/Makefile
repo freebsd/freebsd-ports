@@ -7,6 +7,7 @@
 
 PORTNAME=	lyx
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://stone.phys.pusan.ac.kr/pub/CJK-LyX/
 PKGNAMEPREFIX=	cjk-
@@ -37,7 +38,7 @@ CONFIGURE_ARGS=	--with-extra-lib="${X11BASE}/lib ${LOCALBASE}/lib" \
 MAN1=		lyx.1 reLyX.1
 
 .if defined(WITH_ASPELL)
-LIB_DEPENDS+=	aspell.11:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS+=	aspell.15:${PORTSDIR}/textproc/aspell
 CONFIGURE_ARGS+=	--with-pspell
 .endif
 
