@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	passlogd
-PORTVERSION=	0.1d
+PORTVERSION=	0.1e
 CATEGORIES=	net
 MASTER_SITES=	http://www.morphine.com/src/
 
