@@ -1,0 +1,24 @@
+bin/kaffeine
+share/applnk/Multimedia/kaffeine.desktop
+share/apps/kaffeine/kmp-playlist.png
+share/apps/kaffeine/logo.avi
+share/doc/HTML/en/kaffeine/playerwin.png
+share/doc/HTML/en/kaffeine/playlistwin.png
+share/doc/HTML/en/kaffeine/index.docbook
+share/doc/HTML/en/kaffeine/index.cache.bz2
+share/doc/HTML/en/kaffeine/common
+share/doc/HTML/de/kaffeine/playerwin.png
+share/doc/HTML/de/kaffeine/playlistwin.png
+share/doc/HTML/de/kaffeine/index.docbook
+share/doc/HTML/de/kaffeine/index.cache.bz2
+share/doc/HTML/de/kaffeine/common
+share/icons/hicolor/128x128/apps/kaffeine.png
+share/icons/hicolor/16x16/apps/kaffeine.png
+share/icons/hicolor/22x22/apps/kaffeine.png
+share/icons/hicolor/32x32/apps/kaffeine.png
+share/icons/hicolor/48x48/apps/kaffeine.png
+share/icons/hicolor/64x64/apps/kaffeine.png
+share/locale/de/LC_MESSAGES/kaffeine.mo
+@dirrm share/apps/kaffeine
+@dirrm share/doc/HTML/en/kaffeine
+@dirrm share/doc/HTML/de/kaffeine
