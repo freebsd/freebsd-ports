@@ -25,6 +25,7 @@
     SUBDIR += afternoonstalker
     SUBDIR += alephone
     SUBDIR += alephone-data
+    SUBDIR += alphabet_sounds_fr
     SUBDIR += amphetamine
     SUBDIR += amy
     SUBDIR += an
