@@ -1,0 +1,11 @@
+--- ircd/s_user.c~	Sat Jul 17 20:47:49 1999
++++ ircd/s_user.c	Thu Jan 13 03:01:14 2000
+@@ -2379,7 +2379,7 @@
+ 		       parv[0], sptr->user->username, sptr->user->host,
+ 		       sptr->auth, IsUnixSocket(sptr) ? sptr->sockhost :
+ #ifdef INET6
+-                       inet_ntop(AF_INET6, (char *)&sptr->ip), mydummy, MYDUMMY_SIZE);
++                       inet_ntop(AF_INET6, (char *)&sptr->ip, mydummy, MYDUMMY_SIZE));
+ #else
+                        inetntoa((char *)&sptr->ip));
+ #endif

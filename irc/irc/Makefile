@@ -1,14 +1,14 @@
 # New ports collection makefile for:	Irc Server
-# Version required:	2.10.1
+# Version required:	2.10.3
 # Date created:		23 August 1994
 # Whom:			torstenb
 #
 # $FreeBSD$
 #
 
-DISTNAME=	irc2.10.1
-PKGNAME=	irc-2.10.1
-CATEGORIES=	irc
+DISTNAME=	irc2.10.3
+PKGNAME=	irc-2.10.3
+CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.funet.fi/pub/networking/services/irc/server/ \
 		ftp://ftp.irc.org/irc/server/ \
 		ftp://tau.ac.il/pub/unix/irc/server/ \
@@ -32,17 +32,28 @@ MAN5=		iauth.conf.5
 MAN8=		ircd.8 iauth.8 ircdwatch.8
 
 GNU_CONFIGURE=	YES
-CONFIGURE_ARGS=	--without-ncurses
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/ircd
+STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/ircd.sh
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400014
+CONFIGURE_ARGS+= --enable-ip6
+.endif
 
 do-build:
-	@(cd ${WRKSRC}/`${WRKSRC}/support/config.guess` && make all)
+	@(cd ${WRKSRC}/${MACHINE_ARCH}-unknown-freebsd${OSREL}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
 do-install:
-	@(cd ${WRKSRC}/`${WRKSRC}/support/config.guess` && make install)
+	@(cd ${WRKSRC}/${MACHINE_ARCH}-unknown-freebsd${OSREL} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 
-pre-install:
-	@${MKDIR} ${PREFIX}/lib/ircd
-	@${TOUCH} ${PREFIX}/lib/ircd/users ${PREFIX}/lib/ircd/opers \
-		${PREFIX}/lib/ircd/rejects
+post-install:
+	@if [ ! -f ${STARTUP_SCRIPT} ]; then				\
+		echo "Installing ${STARTUP_SCRIPT} startup file.";	\
+		echo '#!/bin/sh' > ${STARTUP_SCRIPT};			\
+		echo "[ -f ${PREFIX}/etc/ircd/ircd.conf ] && ${PREFIX}/sbin/ircd && echo -n ' ircd'" >> ${STARTUP_SCRIPT} ;	\
+		chmod 755 ${STARTUP_SCRIPT} ;				\
+		chown bin.bin ${STARTUP_SCRIPT};			\
+	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

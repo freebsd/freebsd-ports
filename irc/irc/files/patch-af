@@ -1,0 +1,12 @@
+--- ircd/s_bsd.c	Sat Jul 24 02:15:14 1999
++++ ircd/s_bsd.c	Fri Jan 21 21:03:36 2000
+@@ -760,8 +760,7 @@
+ 
+ #ifdef INET6
+ 	if (IN6_IS_ADDR_LOOPBACK(&cptr->ip) || IsUnixSocket(cptr) ||
+-		(cptr->ip.s6_laddr[0]==mysk.sin6_addr.s6_laddr[0] &&
+-		 cptr->ip.s6_laddr[1]==mysk.sin6_addr.s6_laddr[1])
++		memcmp(&cptr->ip, &mysk.sin6_addr, 8) == 0
+ /* ||
+ 	    IN6_ARE_ADDR_SAMEPREFIX(&cptr->ip, &mysk.SIN_ADDR))
+  about the same, I think              NOT */
