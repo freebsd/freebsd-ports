@@ -1,5 +1,5 @@
---- src/osdep/unix/Makefile.orig	Fri Oct 24 00:24:19 1997
-+++ src/osdep/unix/Makefile	Mon Nov 17 13:29:00 1997
+--- src/osdep/unix/Makefile.orig	Thu Dec  4 17:54:13 1997
++++ src/osdep/unix/Makefile	Sat Dec  6 16:30:32 1997
 @@ -32,6 +32,7 @@
  
  
@@ -15,10 +15,10 @@
 -CFLAGS=$(EXTRACFLAGS)
 +SOFILES=${BINARIES:.o=.so}
 +CFLAGS+=$(EXTRACFLAGS)
+ CHECKPW=std
  EXTRADRIVERS=mbox
  DEFAULTDRIVERS=imap nntp pop3 mh mx mbx tenex mtx mmdf unix news phile dummy
- LN=ln -s
-@@ -52,6 +54,9 @@
+@@ -54,6 +56,9 @@
  RSHPATH=/usr/ucb/rsh
  SHELL=/bin/sh
  
@@ -28,32 +28,27 @@
  missing: ../OSTYPE CCTYPE
  	$(MAKE) `cat ../OSTYPE` CC=`cat CCTYPE`
  
-@@ -124,13 +129,13 @@
- 		ACTIVEFILE=/usr/lib/news/active NEWSSPOOL=/usr/spool/news \
+@@ -128,11 +133,11 @@
  		CFLAGS="-g -Dconst= -DNFSKLUDGE $(EXTRACFLAGS)"
  
--bsf:	sigpsx	# FreeBSD
--	$(MAKE) $(ARCHIVE) OS=bsi EXTRADRIVERS="$(EXTRADRIVERS)" \
--		STDPROTO=unixproto MAILSPOOL=/var/mail \
-+bsf:	sigbsd	# FreeBSD
-+		$(MAKE) $(ARCHIVE) $(SHLIB) OS=bsi EXTRADRIVERS="$(EXTRADRIVERS)" \
-+		STDPROTO=unixproto MAILSPOOL=/var/mail \
+ bsf:	# FreeBSD
+-	$(MAKE) $(ARCHIVE) OS=bsi EXTRADRIVERS="$(EXTRADRIVERS)" SIGTYPE=psx \
++	$(MAKE) $(ARCHIVE) $(SHLIB) OS=bsi EXTRADRIVERS="$(EXTRADRIVERS)" SIGTYPE=psx \
+ 		STDPROTO=unixproto MAILSPOOL=/var/mail \
  		ACTIVEFILE=/usr/local/news/lib/active NEWSSPOOL=/var/news \
  		RSHPATH=/usr/bin/rsh \
 -		CFLAGS="-g -O -pipe -DNFSKLUDGE $(EXTRACFLAGS)" \
--		LDFLAGS="-lcrypt"
-+		CFLAGS="$(CFLAGS) -DNFSKLUDGE $(EXTRACFLAGS)" \
-+		LDFLAGS="-lcrypt"                                 
++		CFLAGS="$(CFLAGS) -DNFSKLUDGE -DIGNORE_LOCK_EACCES_ERRORS $(EXTRACFLAGS)" \
+ 		LDFLAGS="-lcrypt"
  
- bsi:	sigbsd	# BSD/i386
- 	$(MAKE) $(ARCHIVE) OS=$@ EXTRADRIVERS="$(EXTRADRIVERS)" \
-@@ -517,12 +522,19 @@
+ bsi:	# BSD/i386
+@@ -538,12 +544,19 @@
  
  clean:
  	$(RM) *.o linkage.[ch] auths.c $(ARCHIVE) osdep.* CCTYPE CFLAGS LDFLAGS
 +	$(RM) *.so
  
- $(ARCHIVE): $(BINARIES)
+ $(ARCHIVE): $(BINARIES) linkage.c
  	$(RM) $(ARCHIVE)
  	$(ARRC) $(ARCHIVE) $(BINARIES)
  	$(RANLIB) $(ARCHIVE)
@@ -61,36 +56,35 @@
 +$(SHLIB): $(SOFILES)
 +	ld -Bshareable -x -o $(SHLIB) $(SOFILES)
 +
-+.c.so: osdep.h
++.c.so:	osdep.h
 +	$(CC) -fpic -DPIC -c $(CFLAGS) ${@:.so=.c} -o $@
 +
  # Dependencies
  
  dummy.o: mail.h misc.h osdep.h dummy.h
-@@ -572,6 +584,26 @@
- 	-DRSH=\"$(RSH)\" -DRSHPATH=\"$(RSHPATH)\" \
- 	$(EXTRAOSDEFS) -c os_$(OS).c
- 	$(MV) os_$(OS).o osdep.o
+@@ -588,6 +601,25 @@
+ 	write.c \
+ 	strerror.c strpbrk.c strstr.c strtok.c strtoul.c
+ 	$(CC) $(CFLAGS) -DSTDPROTO=$(STDPROTO) -DMAILSPOOL=\"$(MAILSPOOL)\" \
++	-DANONYMOUSHOME=\"$(MAILSPOOL)/anonymous\" \
++	-DACTIVEFILE=\"$(ACTIVEFILE)\" -DNEWSSPOOL=\"$(NEWSSPOOL)\" \
++	-DRSH=\"$(RSH)\" -DRSHPATH=\"$(RSHPATH)\" \
++	$(EXTRAOSDEFS) -c osdep.c
 +
-+osdep.so: mail.h misc.h env.h fs.h ftl.h nl.h tcp.h \
++osdep.so:mail.h misc.h env.h fs.h ftl.h nl.h tcp.h \
 +	osdep.h env_unix.h tcp_unix.h \
-+	os_$(OS).c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c \
-+	flock.c fsync.c gethstid.c \
++	osdep.c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c \
++	auths.c flock.c fsync.c gethstid.c \
 +	gr_wait.c gr_wait4.c gr_waitp.c \
 +	auth_krb.c auth_log.c \
-+	log_std.c log_sv4.c \
-+	log_a41.c log_sco.c log_sec.c log_sha.c log_ssn.c log_ult.c \
++	ckp_a41.c ckp_dce.c ckp_krb.c ckp_os4.c ckp_sec.c ckp_ssn.c ckp_std.c \
++	ckp_sv4.c ckp_ult.c log_os4.c log_sec.c log_std.c log_sv4.c \
 +	scandir.c setpgrp.c strerror.c truncate.c write.c \
 +	memmove.c memmove2.c memset.c \
 +	tz_bsd.c tz_nul.c tz_sv4.c \
 +	write.c \
 +	strerror.c strpbrk.c strstr.c strtok.c strtoul.c
-+	$(CC) -fpic -DPIC $(CFLAGS) -DSTDPROTO=$(STDPROTO) -DMAILSPOOL=\"$(MAILSPOOL)\" \
-+	-DANONYMOUSHOME=\"$(MAILSPOOL)/anonymous\" \
-+	-DACTIVEFILE=\"$(ACTIVEFILE)\" -DNEWSSPOOL=\"$(NEWSSPOOL)\" \
-+	-DRSH=\"$(RSH)\" -DRSHPATH=\"$(RSHPATH)\" \
-+	$(EXTRAOSDEFS) -c os_$(OS).c
-+	$(MV) os_$(OS).o osdep.so
- 
- osdep.h: os_$(OS).h linkage
- 	$(RM) CCTYPE CFLAGS LDFLAGS osdep.h
++	$(CC) -o $@ -fPIC -DPIC $(CFLAGS) -DSTDPROTO=$(STDPROTO) -DMAILSPOOL=\"$(MAILSPOOL)\" \
+ 	-DANONYMOUSHOME=\"$(MAILSPOOL)/anonymous\" \
+ 	-DACTIVEFILE=\"$(ACTIVEFILE)\" -DNEWSSPOOL=\"$(NEWSSPOOL)\" \
+ 	-DRSH=\"$(RSH)\" -DRSHPATH=\"$(RSHPATH)\" \
