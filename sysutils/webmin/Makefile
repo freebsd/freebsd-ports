@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	0.84
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://webadmin.sourceforge.net/webmin/updates/ \
 		http://webadmin.sourceforge.net/webmin/download/
@@ -24,7 +24,8 @@ USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
 .if defined(WITH_UPDATES)
-WEBMIN_MODULES=	apache.wbm.gz mysql.wbm.gz status.wbm.gz file.wbm.gz
+WEBMIN_MODULES=	apache.wbm.gz mysql.wbm.gz status.wbm.gz \
+		file.wbm.gz dfsadmin-file.wbm.gz
 .endif
 
 post-extract:
