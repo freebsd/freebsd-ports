@@ -32,10 +32,10 @@ PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
 NO_BUILD=	yes
 USE_LINUX=	yes
 JDK_VERSION=	1.3.1
-JDK_REVISION=	04
+JDK_REVISION=	05
 ONLY_FOR_ARCHS=	i386
 TARGET_DIR?=	${PREFIX}/${PKGBASE}${JDK_VERSION}
-DOWNLOAD_URL?=	http://java.sun.com/Download5?config-file=j2sdk-${JDK_VERSION:S/./_/g}_${JDK_REVISION}.config&platform=linux-i586&Download=download
+DOWNLOAD_URL?=	http://java.sun.com/webapps/download/Display?BundleId=7086
 
 .include <bsd.port.pre.mk>
 
