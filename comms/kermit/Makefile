@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	kermit
-PORTVERSION=	8.0.208
+PORTVERSION=	8.0.209
 CATEGORIES=	comms
 MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
 		ftp://ftp.icm.edu.pl/pub/kermit/archives/
-DISTNAME=	cku208
+DISTNAME=	cku209
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Serial and network communications package
