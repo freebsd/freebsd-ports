@@ -17,6 +17,8 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-rsh=ssh
 
+CONFLICTS=	lam-7.*
+
 .include "files/manpages"
 
 .include <bsd.port.mk>
