@@ -3,7 +3,7 @@
 # Date created:        31 January 1999
 # Whom:                Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
-# $Id: Makefile,v 1.5 1999/08/09 06:27:12 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rv50_linux20

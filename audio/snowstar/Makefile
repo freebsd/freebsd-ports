@@ -3,7 +3,7 @@
 # Date created:				21 April 1999
 # Whom:					fenner
 #
-# $Id: $
+# $FreeBSD$
 
 DISTNAME=	snowstar-0.75.5
 CATEGORIES=	audio

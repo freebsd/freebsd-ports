@@ -3,7 +3,7 @@
 # Date created:         13 Jul 1998
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1998/11/14 09:43:04 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	x11amp-freebsd-0.8

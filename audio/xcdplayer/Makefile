@@ -3,7 +3,7 @@
 # Date created:         30 Sep 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.8 1997/04/01 23:08:24 swallace Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       xcdplayer-2.2

@@ -3,7 +3,7 @@
 # Date created:				22 Dec 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1999/04/15 15:43:37 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	audiofile-0.1.6

@@ -3,7 +3,7 @@
 # Date created:        Sun Apr 11 13:06:01 PDT 1999
 # Whom:                Michael Haro <mharo@area51.fremont.ca.us>
 #
-# $Id: Makefile,v 1.4 1999/06/23 01:26:30 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	libmikmod-3.1.7

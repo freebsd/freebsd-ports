@@ -3,7 +3,7 @@
 # Date created:		5th August, 1998
 # Whom:			Joel Sutton <jsutton@webnet.com.au>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	dist10

@@ -3,7 +3,7 @@
 # Date created:		9 December 1998
 # Whom:			gljohns@bellsouth.net
 #
-# $Id: Makefile,v 1.4 1999/04/11 21:39:23 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wmsound-0.9.5

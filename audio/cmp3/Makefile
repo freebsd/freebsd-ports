@@ -3,7 +3,7 @@
 # Date created:        10 April 1999
 # Whom:                Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.4 1999/05/16 23:24:36 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cmp3-2.0pre3

@@ -3,7 +3,7 @@
 # Date created:         7 April 1999
 # Whom:                 futatuki
 #
-# $Id: Makefile,v 1.5 1999/08/12 18:54:46 cpiazza Exp $
+# $FreeBSD$
 #
 # If You don't want to use Joerg Schilling's SCSI library,
 # set DONT_USE_SCGLIB = yes

@@ -3,7 +3,7 @@
 # Date created:         23 Jan 1999
 # Whom:                 ysonoda@dontaku.csce.kyushu-u.ac.jp
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=		waveplay-19990123

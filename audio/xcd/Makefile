@@ -3,7 +3,7 @@
 # Date created:         22 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.21 1998/08/07 23:56:10 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xcd-1.7

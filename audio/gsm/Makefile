@@ -3,7 +3,7 @@
 # Date created:		5 January 1995
 # Whom:			pst
 #
-# $Id: Makefile,v 1.12 1998/09/19 00:37:28 hoek Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       gsm-1.0.10

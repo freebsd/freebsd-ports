@@ -3,7 +3,7 @@
 # Date created:				1 Jun 1997
 # Whom:					jmg
 #
-#	$Id: Makefile,v 1.1.1.1 1997/06/03 08:33:06 jmg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nspmod-0.1

@@ -3,7 +3,7 @@
 # Date created:         9 March 1995
 # Whom:                 ugen
 #
-# $Id: Makefile,v 1.5 1996/11/18 10:34:43 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	s3mod-v1.09

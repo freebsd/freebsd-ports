@@ -3,7 +3,7 @@
 # Date created:			Oct 27 1998
 # Whom:				Vanilla Pooh Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.10 1999/05/29 03:56:02 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	replay-source-dgtk_0.61

@@ -3,7 +3,7 @@
 # Date created:		01 Jan 1999
 # Whom:			Oliver Fromme <oliver.fromme@heim3.tu-clausthal.de>
 #
-# $Id: Makefile.port,v 1.2 1999/01/01 23:31:47 olli Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tosha-0.6

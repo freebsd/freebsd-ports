@@ -3,7 +3,7 @@
 # Date created:		19 December 96
 # Whom:			Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
 #
-# $Id: Makefile,v 1.7 1999/01/07 08:19:22 simokawa Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Xtuner-2.1

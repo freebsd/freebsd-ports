@@ -3,7 +3,7 @@
 # Date created:        8 July 1997
 # Whom:                Antti Kaipila <anttik@iki.fi>
 #
-# $Id: Makefile,v 1.3 1998/06/27 05:34:55 hoek Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cdplay-0.92

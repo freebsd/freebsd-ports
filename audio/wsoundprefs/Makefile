@@ -3,7 +3,7 @@
 # Date created:        12 December 1998
 # Whom:                gljohns@bellsouth.net
 #
-# $Id: Makefile,v 1.3 1999/04/02 03:36:26 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	WSoundPrefs-1.0.2

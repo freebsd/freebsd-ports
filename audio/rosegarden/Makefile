@@ -3,7 +3,7 @@
 # Date created:		04 Aug 1996
 # Whom:			shanee@augusta.de
 #
-# $Id: Makefile,v 1.9 1999/07/11 20:53:13 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rosegarden-2.1

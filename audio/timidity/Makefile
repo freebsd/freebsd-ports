@@ -4,7 +4,7 @@
 # Date created:         17 Nov 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.10 1999/01/04 15:04:31 ache Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       timidity-0.2i

@@ -3,7 +3,7 @@
 # Date created:		17 March 1997
 # Whom:			davidn@blaze.net.au
 #
-# $Id: Makefile,v 1.6 1998/09/28 01:51:38 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mxv-v1.10-source

@@ -3,7 +3,7 @@
 # Date created:		7 July 1997
 # Whom:			doconnor@ist.flinders.edu.au
 #
-# $Id: Makefile,v 1.9 1998/08/07 23:56:11 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmp3_1.0.0

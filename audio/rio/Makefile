@@ -3,7 +3,7 @@
 # Date created:        29 April 1999
 # Whom:                Nick Sayer <nsayer@freebsd.org>
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/02 00:07:02 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rio006

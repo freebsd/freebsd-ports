@@ -3,7 +3,7 @@
 # Date created:		16 April 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.6 1999/06/12 05:46:11 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	Mixer.app-1.4.1

@@ -3,7 +3,7 @@
 # Date created:		2 Feb 1999
 # Whom:			runge@rostock.zgdv.de
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/03 01:32:22 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmradio-0.6

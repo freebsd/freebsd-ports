@@ -3,7 +3,7 @@
 # Date created:				23 August 1998
 # Whom:					yoshiaki Uchikawa
 #
-# $Id: Makefile,v 1.6 1999/05/01 03:25:02 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	DAPSource

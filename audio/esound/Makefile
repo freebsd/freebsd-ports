@@ -3,7 +3,7 @@
 # Date created:		19 July 1998
 # Whom:			Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.10 1999/04/07 18:12:58 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	esound-0.2.8

@@ -3,7 +3,7 @@
 # Date created:			8 August 1999
 # Whom:				Jim Mock <jim@FreeBSD.org>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	libworkman-1999-06-20

@@ -3,7 +3,7 @@
 # Date created:		5 July 1995
 # Whom:			janek@gaja.ipan.lublin.pl
 #
-# $Id: Makefile,v 1.5 1996/11/15 23:14:01 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	radio2.0.4

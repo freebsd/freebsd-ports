@@ -3,7 +3,7 @@
 # Date created:         2 May 1999
 # Whom:                 oyvindmo@initio.no
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=		juke-0.5
