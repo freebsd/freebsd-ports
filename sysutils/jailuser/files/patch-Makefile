@@ -1,0 +1,32 @@
+--- Makefile.orig	Mon Oct 29 17:40:48 2001
++++ Makefile	Sun Jul 18 11:39:46 2004
+@@ -19,16 +19,16 @@
+ #
+ ##############################################################################
+ 
+-ARCH=__LINUX__
+-#ARCH=__FREEBSD__
++#ARCH=__LINUX__
++ARCH=__FREEBSD__
+ #ARCH=__IRIX__
+ #ARCH=__SOLARIS__
+ 
+ DEBUG = 0
+-INSTALL_DIR = /usr/local
++INSTALL_DIR = ${LOCALBASE}
+ PERL = /usr/bin/perl
+ ROOTUSER = root
+-ROOTGROUP = root
++ROOTGROUP = wheel
+ 
+ # ----------------------------------------------------------------------
+ #
+@@ -61,7 +61,7 @@
+ 
+ jail:	jail.c $(OBJ)
+ 	$(CC) $(CFLAGS) $(INCLUDE) jail.c -o jail $(OBJ) $(LIBS) && \
+-	cp jail ../bin
++	cp jail ../bin/jailuser
+ 
+ clean:
+ 	@(rm -f jail $(OBJ))

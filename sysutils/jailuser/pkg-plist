@@ -1,0 +1,33 @@
+bin/jailuser
+bin/mkjailenv
+bin/addjailsw
+bin/addjailuser
+etc/jail.conf.sample
+lib/libjail.pm
+lib/arch/generic/definitions
+lib/arch/generic/functions
+lib/arch/linux/definitions
+lib/arch/linux/functions
+lib/arch/freebsd/definitions
+lib/arch/freebsd/functions
+lib/arch/irix/definitions
+lib/arch/irix/functions
+lib/arch/solaris/definitions
+lib/arch/solaris/functions
+
+@dirrm lib/arch/generic
+@dirrm lib/arch/linux
+@dirrm lib/arch/freebsd
+@dirrm lib/arch/irix
+@dirrm lib/arch/solaris
+@dirrm lib/arch
+
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/SECURITY
+%%PORTDOCS%%%%DOCSDIR%%/VERSION
+%%PORTDOCS%%%%DOCSDIR%%/download
+%%PORTDOCS%%%%DOCSDIR%%/features
+%%PORTDOCS%%%%DOCSDIR%%/intro
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
