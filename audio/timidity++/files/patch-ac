@@ -1,9 +1,6 @@
-
-	This patch-ac should be replaced with this patch:
-
---- timidity/timidity.h.orig	Fri Dec 22 17:55:40 2000
-+++ timidity/timidity.h	Fri Dec 22 17:57:41 2000
-@@ -447,8 +447,14 @@
+--- timidity/timidity.h.orig	Fri Jan 11 23:36:13 2002
++++ timidity/timidity.h	Fri Apr  5 15:37:51 2002
+@@ -450,8 +450,19 @@
  #define LE_SHORT(x) (x)
  #define LE_LONG(x) (x)
  #ifdef __FreeBSD__
@@ -14,13 +11,18 @@
 +#    define BE_SHORT(x) __byte_swap_word(x)
 +#    define BE_LONG(x) __byte_swap_long(x)
 +#  else
-+#    define BE_SHORT(x) __uint8_swap_uint16(x)
-+#    define BE_LONG(x) __uint8_swap_uint32(x)
++#    if __FreeBSD_version <= 500028
++#      define BE_SHORT(x) __uint8_swap_uint16(x)
++#      define BE_LONG(x) __uint8_swap_uint32(x)
++#    else
++#      define BE_SHORT(x) __bswap16(x)
++#      define BE_LONG(x) __bswap32(x)
++#    endif
 +#  endif
  #else
  #define BE_SHORT(x) XCHG_SHORT(x)
  #define BE_LONG(x) XCHG_LONG(x)
-@@ -457,8 +463,14 @@
+@@ -460,8 +471,19 @@
  #define BE_SHORT(x) (x)
  #define BE_LONG(x) (x)
  #ifdef __FreeBSD__
@@ -31,10 +33,14 @@
 +#    define LE_SHORT(x) __byte_swap_word(x)
 +#    define LE_LONG(x) __byte_swap_long(x)
 +#  else
-+#    define LE_SHORT(x) __uint8_swap_uint16(x)
-+#    define LE_LONG(x) __uint8_swap_uint32(x)
++#    if __FreeBSD_version <= 500028
++#      define LE_SHORT(x) __uint8_swap_uint16(x)
++#      define LE_LONG(x) __uint8_swap_uint32(x)
++#    else
++#      define LE_SHORT(x) __bswap16(x)
++#      define LE_LONG(x) __bswap32(x)
++#    endif
 +#  endif
  #else
  #define LE_SHORT(x) XCHG_SHORT(x)
  #define LE_LONG(x) XCHG_LONG(x)
-
