@@ -1,4 +1,5 @@
 bin/lynx
+@unexec if [ -f %D/etc/lynx.cfg ] && cmp -s %D/etc/lynx.cfg %D/etc/lynx.cfg.default; then rm -f %D/etc/lynx.cfg; fi
 etc/lynx.cfg.default
 @exec if [ ! -f %D/etc/lynx.cfg ] ; then cp -p %D/%F %B/lynx.cfg; fi
 @exec mkdir -p %D/share/lynx_help
@@ -78,3 +79,32 @@ share/lynx_help/lynx_url_support.html
 @dirrm share/doc/lynx
 @dirrm share/lynx_help/keystrokes
 @dirrm share/lynx_help
+@dirrm share/locale/cs/LC_MESSAGES
+@dirrm share/locale/cs
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/es
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/it
+@dirrm share/locale/ko/LC_MESSAGES
+@dirrm share/locale/ko
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/nl
+@dirrm share/locale/no/LC_MESSAGES
+@dirrm share/locale/no
+@dirrm share/locale/pl/LC_MESSAGES
+@dirrm share/locale/pl
+@dirrm share/locale/pt/LC_MESSAGES
+@dirrm share/locale/pt
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/pt_BR
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ru
+@dirrm share/locale/sl/LC_MESSAGES
+@dirrm share/locale/sl
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/sv
+@dirrm share/locale

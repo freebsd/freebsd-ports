@@ -1,0 +1,11 @@
+--- userdefs.h.bak	Fri Jun 23 19:15:08 2000
++++ userdefs.h	Mon Jan 15 22:30:35 2001
+@@ -361,7 +361,7 @@
+  * not necessarily try a different filename when they are called, making it
+  * impossible to rename the file.  Others make world-writable files.
+  */
+-/*#define USE_MKSTEMP */
++#define USE_MKSTEMP
+ 
+ /********************************
+  * Comment this line out to let the user enter his/her email address
