@@ -1,3 +1,4 @@
+@cwd /usr/local
 share/faces/machine.tab
 share/faces/people.tab
 bin/compface
