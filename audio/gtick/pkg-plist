@@ -1,4 +1,5 @@
 bin/gtick
+share/locale/eu/LC_MESSAGES/gtick.mo
 share/locale/de/LC_MESSAGES/gtick.mo
 share/locale/af/LC_MESSAGES/gtick.mo
 share/locale/en@boldquot/LC_MESSAGES/gtick.mo
