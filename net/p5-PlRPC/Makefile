@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PlRPC
-PORTVERSION=	0.2016
+PORTVERSION=	0.2017
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	RPC
@@ -23,7 +23,6 @@ PERL_CONFIGURE=	yes
 MAN3=		Bundle::PlRPC.3 \
 		RPC::PlClient.3 \
 		RPC::PlServer.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.pre.mk>
 
