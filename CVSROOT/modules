@@ -4848,6 +4848,7 @@ p5-Text-FixedLength	ports/textproc/p5-Text-FixedLength
 p5-Text-FixedLength-Extra	ports/textproc/p5-Text-FixedLength-Extra
 p5-Text-Flowchart	ports/textproc/p5-Text-Flowchart
 p5-Text-Format	ports/textproc/p5-Text-Format
+p5-Text-FormatTable	ports/textproc/p5-Text-FormatTable
 p5-Text-Graphics	ports/textproc/p5-Text-Graphics
 p5-Text-Iconv	ports/converters/p5-Text-Iconv
 p5-Text-Metaphone	ports/textproc/p5-Text-Metaphone
