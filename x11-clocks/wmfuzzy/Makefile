@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmfuzzy
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	http://www.manicai.net/comp/wmfuzzy/
 EXTRACT_SUFX=	.tgz
@@ -16,11 +16,15 @@ COMMENT=	A fuzzy clock WindowMaker dockapp
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
-WRKSRC=		${WRKDIR}/${PORTNAME}/src
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/wmfuzzy ${PREFIX}/bin
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/../README ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

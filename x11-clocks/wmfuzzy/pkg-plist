@@ -1,1 +1,3 @@
 bin/wmfuzzy
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
