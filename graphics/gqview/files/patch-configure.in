@@ -1,0 +1,17 @@
+--- configure.in.orig	Fri Dec 13 11:27:07 2002
++++ configure.in	Fri Dec 13 23:17:43 2002
+@@ -59,7 +59,14 @@
+ AC_DEFINE_UNQUOTED(GQVIEW_HELPDIR, "$prefix/share/gqview")
+ 
+ dnl CHECK_GNOME
++AC_ARG_ENABLE(gnome,
++[  --disable-gnome         disable use of gnome],
++    gnome=$enableval, gnome=yes)
++if test "$gnome" = yes; then
+   AC_PATH_PROG(GNOME_CONFIG,gnome-config,no)
++else
++  GNOME_CONFIG=no
++fi
+   AM_CONDITIONAL(HAVE_GNOME, test $GNOME_CONFIG != no)
+   if test "$GNOME_CONFIG" = no; then
+     AC_MSG_RESULT(GNOME icon and menu entry will NOT be installed)
