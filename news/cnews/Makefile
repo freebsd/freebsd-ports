@@ -3,16 +3,18 @@
 # Date created:		28 September 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.2 1995/01/24 16:43:07 pst Exp $
+# $Id: Makefile,v 1.3 1995/04/01 12:49:06 jkh Exp $
 #
 
 DISTNAME=	cnews
-EXTRACT_SUFFIX=	.tar.Z
-DISTFILES=	${DISTNAME}${EXTRACT_SUFFIX}
-MASTER_SITES=	ftp://ftp.zoo.toronto.edu/pub/
+PKGNAME=	cnews-cr.e
 CATEGORIES+=	news
+MASTER_SITES=	ftp://ftp.zoo.toronto.edu/pub/
+EXTRACT_SUFX=	.tar.Z
+
 WRKSRC=		${WRKDIR}
 MAKEFILE=	makefile
+
 NEWSSPOOL=	/usr/local/newsspool
 NEWSBIN=	/usr/local/libexec/news
 NEWSLIB=	/usr/local/lib/news

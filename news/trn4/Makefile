@@ -7,10 +7,8 @@
 #
 
 DISTNAME=	trn-3.6
-MASTER_SITES=	ftp://ftp.uu.net/networking/news/readers/trn/
 CATEGORIES+=	news
-EXTRACT_SUFX=	.tar.gz
-DISTFILES=	trn-3.6.tar.gz
+MASTER_SITES=	ftp://ftp.uu.net/networking/news/readers/trn/
 
 IS_INTERACTIVE=	yes
 

@@ -3,14 +3,16 @@
 # Date created:		20 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.1.1.1 1994/10/23 01:42:20 torstenb Exp $
+# $Id: Makefile,v 1.2 1995/04/01 12:49:08 jkh Exp $
 #
 
 DISTNAME=	inn1.4sec
-NO_WRKSUBDIR=	YES
-MASTER_SITES=	ftp://ftp.uu.net/networking/news/nntp/inn/
+PKGNAME=	inn-1.4
 CATEGORIES+=	news
+MASTER_SITES=	ftp://ftp.uu.net/networking/news/nntp/inn/
 EXTRACT_SUFX=	.tar.Z
+
+NO_WRKSUBDIR=	YES
 
 pre-install:
 	mkdir -p ${PREFIX}/etc
