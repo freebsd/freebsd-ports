@@ -299,6 +299,7 @@ saint/html/tutorials/vulnerability/finger_vulnerabilities.html
 saint/html/tutorials/vulnerability/JRun_vulnerabilities.html
 saint/html/tutorials/vulnerability/http_put.html
 saint/html/tutorials/vulnerability/http_server_read_access.html
+saint/include/ASM-i386/asm
 saint/include/netinet/if_ether.h
 saint/include/netinet/igmp.h
 saint/include/netinet/in.h
@@ -406,6 +407,7 @@ saint/reconfig
 @dirrm saint/include/glibc21/arpa
 @dirrm saint/include/glibc21/rpc
 @dirrm saint/include/glibc21
+@dirrm saint/include/ASM-i386
 @dirrm saint/include
 @dirrm saint/perl
 @dirrm saint/perllib/Net
