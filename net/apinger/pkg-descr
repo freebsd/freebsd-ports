@@ -1,0 +1,12 @@
+Alarm Pinger (apinger) is a little tool which monitors various IP 
+devices by simple ICMP echo requests. Unlike most Perl or shell 
+script tools, it does not spawn processes or use much CPU time, 
+and is ideal for when one wants continuous monitoring and fast 
+response upon target failure. It is written in C and supports both 
+IPv4 and IPv6.
+
+AUTHOR:		Jacek Konieczny <jajcus@pld.org.pl>
+WWW:			http://www.bnet.pl/~jajcus/apinger/	
+
+	- Michael L. Hostbaek
+	mich@freebsdcluster.org
