@@ -8,6 +8,7 @@ bin/ozl
 bin/ozplatform
 bin/oztool
 bin/ozwrapper.bin
+bin/ozwrapperw.bin
 bin/pickle2text
 bin/text2pickle
 @comment Insert PLIST.lib-oz here

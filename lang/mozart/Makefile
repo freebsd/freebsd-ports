@@ -6,12 +6,9 @@
 #
 
 PORTNAME=	mozart
-PORTVERSION=	1.2.5.20030212
-PORTREVISION=	1
+PORTVERSION=	1.3.0.20040413
 CATEGORIES=	lang tk83 parallel
-MASTER_SITES=	http://www.mozart-oz.org/download/mozart-ftp/store/1.2.5-2003-02-12/ \
-		ftp://ftp.mozart-oz.org/pub/mozart/${PORTVERSION}/tar/ \
-		ftp://ftp.sics.se/pub/mozart/${PORTVERSION}/tar/
+MASTER_SITES=	http://www.mozart-oz.org/download/mozart-ftp/store/1.3.0-2004-04-15/
 DISTFILES=	${DISTNAME}-src.tar.gz
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${MOZART_DOCS}
