@@ -3,7 +3,7 @@
 # Date created:				18 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/21 22:36:14 mph Exp $
+# $Id: Makefile,v 1.2 1998/07/04 19:09:21 steve Exp $
 #
 
 DISTNAME=	glbiff-0.2
@@ -17,7 +17,6 @@ LIB_DEPENDS=	MesaGL\\.13\\.:${PORTSDIR}/graphics/Mesa \
 		MesaGLU\\.13\\.:${PORTSDIR}/graphics/Mesa \
 		Mesatk\\.13\\.:${PORTSDIR}/graphics/Mesa \
 		glut\\.3\\.:${PORTSDIR}/graphics/Mesa
-RUN_DEPENDS=	elm:${PORTSDIR}/mail/elm
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/glbiff
