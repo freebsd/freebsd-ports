@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	jakarta-tomcat
-PORTVERSION=	4.1.24
+PORTVERSION=	4.1.27
 CATEGORIES=	www java
-MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat-4.0/release/v${PORTVERSION}/bin/ \
+MASTER_SITES=	http://www.apache.org/dist/jakarta/tomcat-4/binaries/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	znerd
 
@@ -17,6 +17,8 @@ COMMENT=	Open-source Java web server by Apache, stable 4.1.x branch
 
 USE_JAVA=	1.2+
 NO_BUILD=	YES
+
+MAN1=	tomcat41ctl.1
 
 MAJOR_VER=	${PORTVERSION:R}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
