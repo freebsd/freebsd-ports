@@ -1,12 +1,51 @@
+bin/katalogdcop
 bin/katalogservice
+include/katalogdcopinterface.h
+lib/kde3/kfile_katalog.la
+lib/kde3/kfile_katalog.so
 lib/kde3/kio_katalogslave.la
 lib/kde3/kio_katalogslave.so
 lib/libkatalog.la
 lib/libkatalog.so
 lib/libkatalog.so.0
 share/apps/konqueror/servicemenus/katalog.desktop
+share/icons/crystalsvg/16x16/mimetypes/katalog.png
+share/icons/crystalsvg/16x16/mimetypes/katalogfolder.png
+share/icons/crystalsvg/16x16/mimetypes/katalogitem.png
+share/icons/crystalsvg/22x22/mimetypes/katalog.png
+share/icons/crystalsvg/22x22/mimetypes/katalogfolder.png
+share/icons/crystalsvg/22x22/mimetypes/katalogitem.png
+share/icons/crystalsvg/32x32/mimetypes/katalog.png
+share/icons/crystalsvg/32x32/mimetypes/katalogfolder.png
+share/icons/crystalsvg/32x32/mimetypes/katalogitem.png
+share/icons/crystalsvg/48x48/mimetypes/katalog.png
+share/icons/crystalsvg/48x48/mimetypes/katalogfolder.png
+share/icons/crystalsvg/48x48/mimetypes/katalogitem.png
+share/icons/crystalsvg/64x64/mimetypes/katalog.png
+share/icons/crystalsvg/64x64/mimetypes/katalogfolder.png
+share/icons/crystalsvg/64x64/mimetypes/katalogitem.png
+share/mimelnk/application/x-katalog.desktop
+share/mimelnk/application/x-katalogitem.desktop
+share/mimelnk/inode/katalog-directory.desktop
+share/services/katalogdcop.desktop
 share/services/katalogslave.protocol
+share/services/kfile_katalog.desktop
 @unexec rmdir %D/share/services 2>/dev/null || true
+@unexec rmdir %D/share/mimelnk/inode 2>/dev/null || true
+@unexec rmdir %D/share/mimelnk/application 2>/dev/null || true
+@unexec rmdir %D/share/mimelnk 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/64x64/mimetypes 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/64x64 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/48x48/mimetypes 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/32x32/mimetypes 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/22x22/mimetypes 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/22x22 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/16x16/mimetypes 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/crystalsvg 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
 @unexec rmdir %D/share/apps/konqueror/servicemenus 2>/dev/null || true
 @unexec rmdir %D/share/apps/konqueror 2>/dev/null || true
 @unexec rmdir %D/share/apps 2>/dev/null || true
