@@ -4,6 +4,9 @@ bin/esvn-diff-wrapper
 %%PORTDOCS%%%%DOCSDIR%%/html-docs/apb.html
 %%PORTDOCS%%%%DOCSDIR%%/html-docs/apbs02.html
 %%PORTDOCS%%%%DOCSDIR%%/html-docs/apbs03.html
+%%PORTDOCS%%%%DOCSDIR%%/html-docs/apbs04.html
+%%PORTDOCS%%%%DOCSDIR%%/html-docs/apbs05.html
+%%PORTDOCS%%%%DOCSDIR%%/html-docs/apbs06.html
 %%PORTDOCS%%%%DOCSDIR%%/html-docs/apc.html
 %%PORTDOCS%%%%DOCSDIR%%/html-docs/ch01.html
 %%PORTDOCS%%%%DOCSDIR%%/html-docs/ch02.html
