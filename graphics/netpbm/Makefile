@@ -3,7 +3,7 @@
 # Date created:		?
 # Whom:			jmz (original)
 #
-# $Id: Makefile,v 1.15 1999/01/02 15:58:19 smace Exp $
+# $Id: Makefile,v 1.16 1999/01/07 11:12:28 simokawa Exp $
 #
 
 DISTNAME=	netpbm
@@ -43,7 +43,7 @@ MAN1=	anytopnm.1 asciitopgm.1 atktopbm.1 bioradtopgm.1 bmptoppm.1 \
 	ppmtoacad.1 ppmtobmp.1 ppmtogif.1 ppmtoicr.1 ppmtoilbm.1 ppmtomap.1 \
 	ppmtomitsu.1 ppmtopcx.1 ppmtopgm.1 ppmtopi1.1 ppmtopict.1 ppmtopj.1 \
 	ppmtopjxl.1 ppmtopuzz.1 ppmtorgb3.1 ppmtosixel.1 ppmtotga.1 \
-	ppmtouil.1 ppmtoxpm.1 ppmtoyuv.1 ppmtoyuvsplit.1 psidtopgm.1 \
+	ppmtouil.1 ppmtoxpm.1 ppmtoyuv.1 ppmtoyuvsplit.1 psidtopgm.1 pstopnm.1 \
 	qrttoppm.1 rasttopnm.1 rawtopgm.1 rawtoppm.1 rgb3toppm.1 sgitopnm.1 \
 	sirtopnm.1 sldtoppm.1 spctoppm.1 spottopgm.1 sputoppm.1 tgatoppm.1 \
 	tifftopnm.1 xbmtopbm.1 ximtoppm.1 xpmtoppm.1 xvminitoppm.1 \
