@@ -1,7 +1,11 @@
 sbin/pdumpfs
-%%PORTDOCS%%share/doc/pdumpfs/ChangeLog
-%%PORTDOCS%%share/doc/pdumpfs/README
-%%PORTDOCS%%share/doc/pdumpfs/pdumpfs.html
-%%PORTDOCS%%share/doc/pdumpfs/ja/pdumpfs-ja.html
-%%PORTDOCS%%@dirrm share/doc/pdumpfs/ja
-%%PORTDOCS%%@dirrm share/doc/pdumpfs
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/images/pdumpfs-ja-mini.png
+%%PORTDOCS%%%%DOCSDIR%%/images/pdumpfs-ja.png
+%%PORTDOCS%%%%DOCSDIR%%/images/pdumpfs-mini.png
+%%PORTDOCS%%%%DOCSDIR%%/images/pdumpfs.png
+%%PORTDOCS%%%%DOCSDIR%%/pdumpfs-ja.html
+%%PORTDOCS%%%%DOCSDIR%%/pdumpfs.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

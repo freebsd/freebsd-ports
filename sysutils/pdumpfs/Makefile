@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pdumpfs
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://namazu.org/~satoru/pdumpfs/
 
@@ -17,8 +17,7 @@ USE_RUBY=	yes
 
 RUBY_SHEBANG_FILES=	${WRKSRC}/pdumpfs.in
 ALL_TARGET=	pdumpfs
-DOCS_EN=	ChangeLog README pdumpfs.html
-DOCS_JA=	pdumpfs-ja.html
+DOCS=		ChangeLog README doc/*
 
 MANLANG=	"" ja
 MAN8=		pdumpfs.8
@@ -28,12 +27,9 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/man8/pdumpfs.8 ${PREFIX}/man/man8/
 	${INSTALL_MAN} ${WRKSRC}/man/ja/man8/pdumpfs.8 ${PREFIX}/man/ja/man8/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}/ja
-.for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/${PORTNAME}/
-.endfor
-.for f in ${DOCS_JA}
-	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/share/doc/${PORTNAME}/ja/
+	${MKDIR} ${DOCSDIR}
+.for f in ${DOCS}
+	${CP} -R ${WRKSRC}/${f} ${DOCSDIR}/
 .endfor
 .endif
 
