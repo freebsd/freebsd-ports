@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	fspclient
-PORTVERSION=	0.0.9
+PORTVERSION=	0.0.10
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A ftp-like client for the fsp service
+COMMENT=	A ftp-like client for the FSP service
 
 GNU_CONFIGURE=	yes
-USE_BZIP2=	yes
 USE_GETOPT_LONG=	yes
 
 CFLAGS+=	-I${LOCALBASE}/include
