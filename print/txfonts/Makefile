@@ -22,13 +22,15 @@ DISTFILES=	\
 DISTFILES+=	tx_patch1.zip
 EXTRACT_ONLY=	tx_patch1.zip
 
-MAINTAINER=	mori@tri.asanuma.co.jp
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Fontsets includes Adobe Times Roman for TeX users
 
 DIST_SUBDIR=	txfonts
 USE_ZIP=	yes
 EXTRACT_AFTER_ARGS=	-d ${TXPATCHDIR}
 NO_BUILD=	yes
+
+BROKEN=		"txfonts already included in the teTeX distribution"
 
 TEXFONTSDIR=	${PREFIX}/share/texmf/fonts
 LATEXMACRODIR=	${PREFIX}/share/texmf/tex/latex
