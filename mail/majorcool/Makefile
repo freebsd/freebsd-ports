@@ -3,7 +3,7 @@
 # Date created:			Wed Aug 13 18:34:14 CEST 1997
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.5 1998/02/20 05:31:47 steve Exp $
+# $Id: Makefile,v 1.6 1998/08/31 21:33:29 andreas Exp $
 #
 
 DISTNAME=	majorcool-1.30
@@ -15,6 +15,7 @@ MAINTAINER=	andreas@FreeBSD.ORG
 
 NO_BUILD=	yes
 NO_PACKAGE=	"Too many questions"
+IS_INTERACTIVE=	yes
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}
 
