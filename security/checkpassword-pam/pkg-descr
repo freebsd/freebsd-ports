@@ -1,0 +1,5 @@
+checkpassword-pam was written from scratch. There are several older
+packages called checkpassword-pam, derived from DJB's checkpassword
+code. This checkpassword-pam is more modern and administrator-friendly.
+
+WWW: http://checkpasswd-pam.sourceforge.net/

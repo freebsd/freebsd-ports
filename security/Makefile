@@ -35,6 +35,7 @@
     SUBDIR += cfs
     SUBDIR += cfv
     SUBDIR += checkpassword
+    SUBDIR += checkpassword-pam
     SUBDIR += chkrootkit
     SUBDIR += chrootuid
     SUBDIR += cksfv
