@@ -22,7 +22,7 @@ RUN_DEPENDS?=	firefox:${PORTSDIR}/www/firefox
 USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Plugin
-PLUGIN_DIR?=	lib/firefox/lib/firefox-0.9.1/plugins
+PLUGIN_DIR?=	lib/firefox/lib/firefox-0.9.3/plugins
 PLIST_SUB+=	PLUGIN_DIR=${PLUGIN_DIR}
 
 do-install:
