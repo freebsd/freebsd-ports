@@ -19,8 +19,9 @@ NO_BUILD=	YES
 SCRIPT=		${PORTNAME}.pl
 
 BUILD_DEPENDS+=	irssi:${PORTSDIR}/irc/irssi+perl
-RUN_DEPENDS+=	figlet:${PORTSDIR}/misc/figlet
 BUILD_DEPENDS+=	cowsay:${PORTSDIR}/games/cowsay
+RUN_DEPENDS+=	figlet:${PORTSDIR}/misc/figlet
+RUN_DEPENDS+=	p5-Term-ANSIColor:${PORTSDIR}/devel/p5-Term-ANSIColor
 
 .include <bsd.port.pre.mk>
 
