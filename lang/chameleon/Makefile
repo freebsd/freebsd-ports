@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	chameleon
-PORTVERSION=	03.04
+PORTVERSION=	03.05
 CATEGORIES=	lang
 MASTER_SITES=	http://www.comp.nus.edu.sg/~sulzmann/chameleon/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/}
