@@ -104,10 +104,11 @@ sub check_version {
 	my $hastag = shift;
 	my $lastversion = shift;
 
-	my $bareid;
-	my $id;
-	my $rname;
-	my $version;
+	my $found_rcsid;	# True if our rcsid was found in the file.
+	my $rcsid;		# The rcsid that was in the file.
+	my $rcsid_info;		# The expanded values of the rcsid.
+	my $rname;		# The file pathname, parsed from the rcsid.
+	my $version;		# The file version, parsed from the rcsid.
 
 	# not present - either removed or let cvs deal with it.
 	return 0 unless -f $filename;
@@ -129,40 +130,48 @@ sub check_version {
 	}
 	close(EX);
 
-	# Search the file for a $$HEADER$.
-	my $pos;
-	my $line;
+	# Search the file for our rcsid.
+	# NOTE: We stop after finding the first potential match.
 	open FILE, $filename or die "Cannot open $filename, stopped\n";
-	while ($line = <FILE>) {
-		$pos = -1;
-		$pos = index($line, "\$$HEADER");  # XXX \$$HEADER(:[^\$]*)?\$ ?
-		last if ($pos >= 0);
+	$found_rcsid = 0;
+	while (<FILE>) {
+		next unless /^.*(\$$HEADER.*)/;
+		$rcsid = $1;
+		$found_rcsid = 1;
+		last;
 	}
 	close FILE;
 
-	if ($pos == -1) {
+	# The file should have had an rcsid in it!
+	unless ($found_rcsid) {
 		printf($NoId, $filename);
 		return(1);
 	}
-	$bareid = (index($line, "\$$HEADER: \$") >= 0 ||
-	   index($line, "\$$HEADER\$") >= 0);
-	if (!$bareid && $line !~ /\$$HEADER: .* \$/) {
+
+	# Is the rcsid corrupt?
+	unless ($rcsid =~ /\$$HEADER(: ([^\$]* )?)?\$/) {
 		printf($BadId, $filename);
 		return(1);
 	}
+	$rcsid_info = $2 || "";
+	($rname, $version) = split /\s/, $rcsid_info;
+
 	# Ignore version mismatches (MFC spamming etc) on branches.
 	if ($hastag) {
 		return (0);
 	}
-	($id, $rname, $version) = split(' ', substr($line, $pos));
+
+	# A new file should have an unexpanded rcsid.
 	if ($lastversion eq '0') {
-		if (!$bareid) {
+		unless ($rcsid_info eq "") {
 			printf($NoName, $filename);
 			return(1);
 		}
 		return(0);
 	}
-	if ($bareid) {
+
+	# It's ok for the rcsid to be not expanded.
+	if ($rcsid_info eq "") {
 		return (0);
 #		if ($directory =~ /^ports\//) {
 #			return (0);	# ok for ports
@@ -173,6 +182,8 @@ sub check_version {
 #		printf($DelPath, $filename);
 #		return(1);
 	}
+
+	# Check that the file name in the rcsid matches reality.
 	if ($rname ne "$directory/$filename,v") {
 		# If ports and the pathname is just the basename
 		# (eg: somebody sent in a port with $Id$ and the
@@ -183,6 +194,8 @@ sub check_version {
 			return(1);
 		}
 	}
+
+	# Check that the version in the rcsid matches reality.
 	if ($lastversion ne $version) {
 		printf($BadVersion, $filename, $lastversion,
 		    $version, $filename);
