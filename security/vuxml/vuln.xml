@@ -177,7 +177,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <package>
         <name>mysql-client</name>
 	<range><ge>4.0</ge><lt>4.0.20</lt></range>
-	<range><ge>4.1</ge><lt>4.1.0_2</lt></range>
+	<range><ge>4.1</ge><lt>4.1.1_2</lt></range>
 	<range><ge>5.0</ge><lt>5.0.0_2</lt></range>
       </package>
     </affects>
