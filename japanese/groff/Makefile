@@ -3,12 +3,12 @@
 # Date created:		14 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.3 1995/05/02 10:36:11 asami Exp $
+# $Id: Makefile,v 1.4 1995/05/29 08:39:34 asami Exp $
 #
 
 DISTNAME=	groff-1.09
 PKGNAME=	jp-groff-0.98
-CATEGORIES=	japanese printing
+CATEGORIES=	japanese print
 MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
 
 MAINTAINER=	asami@FreeBSD.ORG

@@ -3,12 +3,12 @@
 # Date created:		5 Nov 1995
 # Whom:			Hideaki Ohmon <ohmon@sfc.keio.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1995/11/15 10:27:38 asami Exp $
 #
 
 DISTNAME=	platex2e
 PKGNAME=	jp-platex2e-95.09
-CATEGORIES+=	japanese printing
+CATEGORIES+=	japanese print
 MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/TeX/ASCII-pTeX/2.1.1/ \
 	ftp://ftp.iij.ad.jp/pub/TeX/CTAN/systems/knuth/lib/ \
 	ftp://ftp.iij.ad.jp/pub/TeX/ASCII-pTeX/2.1.1/corresponding-sources/ \
