@@ -1,0 +1,12 @@
+--- Makefile.in.orig	Fri Nov  9 04:14:03 2001
++++ Makefile.in	Fri Nov  9 04:16:52 2001
+@@ -528,7 +528,8 @@
+ doc-install:
+ 	$(INSTALL_DATA) $(srcdir)/doc/CodingStyle $(docdir)/
+ 	$(INSTALL_DATA) $(srcdir)/doc/FAQ $(docdir)/
+-	$(INSTALL_DATA) $(srcdir)/doc/example* $(docdir)/
++	$(INSTALL_DATA) $(srcdir)/doc/examples/* $(docdir)/
++	$(INSTALL_DATA) $(srcdir)/doc/example*.conf $(docdir)/
+ 	$(INSTALL_DATA) $(srcdir)/doc/*.txt $(docdir)/
+ 	$(INSTALL_DATA) $(srcdir)/COPYING $(docdir)/
+ 	$(INSTALL_DATA) $(srcdir)/CHANGES $(docdir)/

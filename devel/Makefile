@@ -551,6 +551,7 @@
     SUBDIR += sh-rtems-objc
     SUBDIR += shapelib
     SUBDIR += shtool
+    SUBDIR += silc-toolkit
     SUBDIR += sip
     SUBDIR += soup
     SUBDIR += sparc-rtems-binutils

@@ -1,0 +1,40 @@
+--- Makefile.in.orig	Fri Nov  9 04:24:09 2001
++++ Makefile.in	Fri Nov  9 04:24:45 2001
+@@ -145,9 +145,9 @@
+ 
+ AUTOMAKE_OPTIONS = 1.0 no-dependencies foreign
+ 
+-COMMONDIRS = lib irssi silc silcd doc includes
+-SUBDIRS = lib irssi silc silcd doc includes win32
+-DIST_SUBDIRS = lib irssi silc silcd doc includes win32
++COMMONDIRS = lib irssi silc silcd includes
++SUBDIRS = lib irssi silc silcd includes win32
++DIST_SUBDIRS = lib irssi silc silcd includes win32
+ 
+ #
+ # INCLUDE defines
+@@ -166,7 +166,6 @@
+ 	-I$(silc_top_srcdir)/lib/silcclient \
+ 	-I$(silc_top_srcdir)/lib/contrib \
+         -I$(silc_top_srcdir)/includes \
+-        -I$(silc_top_srcdir)/doc \
+ 	-I$(silc_top_srcdir)/lib/trq
+ 
+ 
+@@ -514,7 +513,6 @@
+ 	-mkdir -p $(etcdir)
+ 	-mkdir -p $(modulesdir)
+ 	-mkdir -p $(helpdir)
+-	-mkdir -p $(docdir)
+ 	-mkdir -p $(logsdir)
+ 
+ generate-server-key:
+@@ -549,7 +547,7 @@
+ 	  $(etcdir)/silc.conf; \
+ 	fi
+ 
+-install-data-hook: install-dirs generate-server-key sim-install doc-install etc-install
++install-data-hook: install-dirs generate-server-key sim-install etc-install
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:
