@@ -31,6 +31,12 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		ecawave.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
+BROKEN=		"Configure fails on alpha 5.x"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s,lqt,lqt-mt," ${WRKSRC}/src/Makefile.in
 
@@ -40,4 +46,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/Documentation/*.html ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
