@@ -1,27 +1,25 @@
 # New ports collection makefile for:	mgv
-# Version required:	mgv-2.4.3
+# Version required:	mgv-3.1.0
 # Date created:		4 Mar 1998
 # Whom:			handy@physics.montana.edu
 #
-# $Id: Makefile,v 1.3 1998/05/29 07:19:01 tg Exp $
+# $Id: Makefile,v 1.4 1998/08/05 09:31:37 asami Exp $
 #
 
-DISTNAME=	mgv-2.4.3
+DISTNAME=	mgv-3.1.0
 CATEGORIES=	print
 MASTER_SITES=	http://www.trends.net/~mu/srcs/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	handy@physics.montana.edu
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
-USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 REQUIRES_MOTIF=	yes
-MAKEFILE=	GNUmakefile
-MAN1=		mgv.1
-
-pre-build:
-		@ ${CP} -f ${WRKSRC}/make/sys.freebsd.mk ${WRKSRC}/make/sys.mk
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	X11BASE=${X11BASE}
+CONFIGURE_ARGS=	--enable-optimize \
+		--disable-debug
 
 post-install:
 		@ ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
