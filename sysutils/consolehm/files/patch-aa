@@ -1,8 +1,10 @@
---- Makefile.in.orig	Sun Aug  6 13:54:24 2000
-+++ Makefile.in	Sun Aug  6 13:55:05 2000
-@@ -1,5 +1,8 @@
+--- Makefile.in.orig	Thu May 18 02:17:05 2000
++++ Makefile.in	Wed Aug  9 14:35:46 2000
+@@ -1,5 +1,9 @@
  DEFINES+=	-DHAVE_CONFIG_H
- CFLAGS+=	-O2 -g -Wall $(DEFINES)
+-CFLAGS+=	-O2 -g -Wall $(DEFINES)
++CFLAGS?=	-O2
++CFLAGS+=	-g -Wall $(DEFINES)
 +.if ${ARCH} == "alpha"
 +LDFLAGS+=	-lio
 +.endif

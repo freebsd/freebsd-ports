@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Thu May 18 02:11:57 2000
++++ Makefile.in	Wed Aug  9 14:34:22 2000
+@@ -1,5 +1,6 @@
+ DEFINES+=       -DHAVE_CONFIG_H
+-CFLAGS+=        -O2 -Wall -I/usr/X11R6/include $(DEFINES)
++CFLAGS?=	-O2
++CFLAGS+=        -Wall -I/usr/X11R6/include $(DEFINES)
+ LDFLAGS+=       -lXpm -lXext -lX11 -L/usr/X11R6/lib -lXpm -lm
+ 
+ HEADERS=        wmhm.h wmgeneral.h operations.h display.h
