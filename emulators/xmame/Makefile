@@ -161,7 +161,7 @@ CFLAGS+=	-O3 -Wall -Wno-unused -funroll-loops \
 SDLSOUNDCOMMENT=	\#
 
 # Option DISPLAY_TARGET
-.if defined(WITH_SDL)
+.if defined(WITH_SDL) || !defined(WITHOUT_SDL)
 USE_SDL=	sdl
 DISPLAY_TARGET=	sdl
 DISPLAY_METHOD=	SDL
@@ -233,7 +233,7 @@ do-configure:
 		-e "s@^SDL_CONFIG.*@SDL_CONFIG = ${SDL_CONFIG}@g" \
 		-e "s@^GLLIBS += .*@GLLIBS += ${PTHREAD_LIBS}@g" \
 			${WRKSRC}/makefile.unix
-.if defined(WITH_SDL)
+.if defined(WITH_SDL) || !defined(WITHOUT_SDL)
 		${REINPLACE_CMD} -e "s@# JOY_SDL = 1@JOY_SDL = 1@g" ${WRKSRC}/makefile.unix
 .endif
 
