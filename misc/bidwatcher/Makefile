@@ -8,11 +8,10 @@
 
 PORTNAME=		bidwatcher
 PORTVERSION=		1.3.11
-PORTREVISION?=		0
+PORTREVISION?=		1
 CATEGORIES=		misc
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=		${PORTNAME}-${PORTVERSION}-rc1
 
 PATCH_SITES=		http://sourceforge.net/tracker/download.php?group_id=2973&amp;atid=302973&amp;file_id=63934&amp;aid=820963/
 PATCHFILES=		add_auction_by_url_also.patch
