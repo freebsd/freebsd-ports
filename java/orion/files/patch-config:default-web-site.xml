@@ -1,0 +1,11 @@
+--- config/default-web-site.xml.orig	Mon Dec 22 16:38:56 2003
++++ config/default-web-site.xml	Mon Dec 22 16:39:04 2003
+@@ -1,7 +1,7 @@
+ <?xml version="1.0"?>
+ <!DOCTYPE web-site PUBLIC "Orion Web-site" "http://www.orionserver.com/dtds/web-site.dtd">
+ 
+-<web-site host="[ALL]" port="80" display-name="Default Orion WebSite">
++<web-site host="[ALL]" port="8080" display-name="Default Orion WebSite">
+ 	<!-- The default web-app for this site, bound to the root -->
+ 	<default-web-app application="default" name="defaultWebApp" />
+ 
