@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	f-prot-sig
-PORTVERSION=	20040318
+PORTVERSION=	20040505
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.f-prot.com/pub/
 DISTFILES=	fp-def.zip macrdef2.zip
@@ -17,9 +17,6 @@ COMMENT=	F-Prot Antivirus Signatures
 
 # F-Prot does not version their .DEF files so the port always pulls the latest.
 IGNOREFILES=	${DISTFILES}
-
-# XXX 20040320 eik: ugly hack to work around PR 64485. Remove when fixed
-_CKSUMFILES=
 
 NO_PACKAGE=	Free for personal use only
 NO_CDROM=	Free for personal use only
