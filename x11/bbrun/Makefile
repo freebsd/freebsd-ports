@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://www.dwave.net/~jking/bbrun/
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Run box for Blackbox
 
 USE_GETOPT_LONG=yes

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	http://charybda.icm.edu.pl/~jarwyp/download/
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pager for the WindowMaker dock
 
 USE_X_PREFIX=	yes

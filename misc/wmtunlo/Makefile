@@ -10,7 +10,7 @@ PORTVERSION=	0.1.3
 CATEGORIES=	misc windowmaker
 MASTER_SITES=	http://clay.ll.pl/download/
 
-MAINTAINER=	adamw@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A falling-down-a-tunnel dockapp
 
 USE_X_PREFIX=	yes
