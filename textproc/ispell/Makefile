@@ -144,11 +144,11 @@ post-extract:
 .endif
 .if defined(ISPELL_FR)
 	@${MKDIR} ${WRKDIR}/francais-IREQ
-	@${TAR} -C ${WRKDIR}/francais-IREQ -zxf ${PORTSDIR}/distfiles/${FRDISTFILE}
+	@${TAR} -C ${WRKDIR}/francais-IREQ -zxf ${DISTDIR}/${FRDISTFILE}
 .endif
 .if defined(ISPELL_DEALT)
 	@${MKDIR} ${WRKDIR}/hk-deutsch
-	@${TAR} -C ${WRKDIR}/hk-deutsch/ -zxf ${PORTSDIR}/distfiles/${DEALTDISTFILE}
+	@${TAR} -C ${WRKDIR}/hk-deutsch/ -zxf ${DISTDIR}/${DEALTDISTFILE}
 .endif
 .if defined(ISPELL_DENEU)
 	@${TAR} -C ${WRKDIR}/ -yxf ${DISTDIR}/${DENEUDISTFILE}
