@@ -22,11 +22,11 @@ share/doc/diveintopython/dialect_re.html
 share/doc/diveintopython/dialect_sgmllib.html
 share/doc/diveintopython/dialect_summary.html
 share/doc/diveintopython/diveintopython.css
-share/doc/diveintopython/download/diveintopython-examples-3.6-4.zip
-share/doc/diveintopython/download/diveintopython-html-3.6-4.zip
-share/doc/diveintopython/download/diveintopython-html-flat-3.6-4.zip
-share/doc/diveintopython/download/diveintopython-pdf-3.6-4.zip
-share/doc/diveintopython/download/diveintopython-text-3.6-4.zip
+share/doc/diveintopython/download/diveintopython-examples-3.7-1.zip
+share/doc/diveintopython/download/diveintopython-html-3.7-1.zip
+share/doc/diveintopython/download/diveintopython-html-flat-3.7-1.zip
+share/doc/diveintopython/download/diveintopython-pdf-3.7-1.zip
+share/doc/diveintopython/download/diveintopython-text-3.7-1.zip
 share/doc/diveintopython/examples.html
 share/doc/diveintopython/fdl.html
 share/doc/diveintopython/fdl_aggregation.html
@@ -77,7 +77,9 @@ share/doc/diveintopython/images/tip.png
 share/doc/diveintopython/images/warning.png
 share/doc/diveintopython/index.html
 share/doc/diveintopython/kgp_divein.html
-share/doc/diveintopython/kgp_dtd.html
+share/doc/diveintopython/kgp_packages.html
+share/doc/diveintopython/kgp_parse.html
+share/doc/diveintopython/kgp_unicode.html
 share/doc/diveintopython/license.html
 share/doc/diveintopython/license_terms.html
 share/doc/diveintopython/odbchelper_dict.html
