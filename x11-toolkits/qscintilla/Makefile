@@ -21,8 +21,8 @@ USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 
 do-configure:
-	cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${X11BASE}/bin/qmake \
-		-spec ${X11BASE}/share/qt/mkspecs/freebsd-g++ qscintilla.pro
+	cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/qmake \
+		-spec ${LOCALBASE}/share/qt/mkspecs/freebsd-g++ qscintilla.pro
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/qextscintilla*.h ${PREFIX}/include;
