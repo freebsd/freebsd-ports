@@ -23,6 +23,7 @@ lib/X11/xgalaga/levels/level12.xgl
 lib/X11/xgalaga/levels/level13.xgl
 lib/X11/xgalaga/levels/level14.xgl
 lib/X11/xgalaga/levels/level15.xgl
+lib/X11/xgalaga/scores
 @dirrm lib/X11/xgalaga/levels
 @dirrm lib/X11/xgalaga/sounds
 @dirrm lib/X11/xgalaga
