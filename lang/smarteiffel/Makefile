@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	smalleiffel
-PORTVERSION=	0.77
+PORTVERSION=	0.76
+PORTEPOCH=	1	# Version numbering is negative
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.loria.fr/pub/loria/genielog/SmallEiffel/
-DISTNAME=	se
+MASTER_SITES=	ftp://ftp.loria.fr/pub/loria/genielog/SmallEiffel/Oldies/
+DISTNAME=	se-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	berend@pobox.com
@@ -17,7 +18,7 @@ MAINTAINER=	berend@pobox.com
 WRKSRC=		${WRKDIR}/SmallEiffel
 
 # We install in this directory
-SEDIR=		${PREFIX}/${PKGNAME}
+SEDIR=		${PREFIX}/${PORTNAME}-${PORTVERSION}
 
 # We alias a directory to the installation directory
 # so it is possible to easily switch between different builds
