@@ -1271,6 +1271,7 @@
     SUBDIR += vtcl
     SUBDIR += websvn
     SUBDIR += whups
+    SUBDIR += wininfo
     SUBDIR += wizard
     SUBDIR += wxGlade
     SUBDIR += xmake
