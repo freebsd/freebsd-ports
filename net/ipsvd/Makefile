@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipsvd
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.6
 CATEGORIES=	net
 MASTER_SITES=	http://smarden.org/ipsvd/
 
@@ -28,7 +28,7 @@ do-configure:
 	@${ECHO_CMD} "${LOCALBASE}/lib" > ${WRKSRC}/src/conf-djbdnslib
 
 do-build:
-	cd ${WRKSRC} && package/compile
+	cd ${WRKSRC} && package/compile && package/check
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/command/* ${PREFIX}/sbin
