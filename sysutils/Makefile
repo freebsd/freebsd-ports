@@ -153,6 +153,7 @@
     SUBDIR += gnomecontrolcenter2
     SUBDIR += gnomefind
     SUBDIR += gnomesystemmonitor
+    SUBDIR += gnomesystemtools
     SUBDIR += gpart
     SUBDIR += gpkgdep
     SUBDIR += growspd
