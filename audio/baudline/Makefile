@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	baudline
-PORTVERSION=	0.96
+PORTVERSION=	0.97
 CATEGORIES=	audio linux
 MASTER_SITES=	http://www.baudline.com/
 PKGNAMEPREFIX=	linux-
@@ -15,13 +15,13 @@ DISTNAME=	baudline_${PORTVERSION:S/.p/pre/}_i686
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A real-time signal analysis tool and an offline time-frequency browser
 
+RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
+
 USE_X_PREFIX=	yes
 ONLY_FOR_ARCHS=	i386
 USE_LINUX=	yes
 NO_BUILD=	yes
 STRIP=
-
-BROKEN=		"Unfetchable"
 
 BRANDELF?=	/usr/bin/brandelf
 
