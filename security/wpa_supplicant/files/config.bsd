@@ -1,0 +1,3 @@
+CONFIG_DRIVER_BSD=y
+CFLAGS += -I/usr/local/include
+LIBS += -L/usr/local/lib

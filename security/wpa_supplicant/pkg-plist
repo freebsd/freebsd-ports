@@ -1,0 +1,3 @@
+bin/wpa_supplicant
+bin/wpa_passphrase
+bin/wpa_cli
