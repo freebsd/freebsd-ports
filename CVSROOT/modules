@@ -6122,6 +6122,7 @@ pear-APC	ports/www/pear-APC
 pear-Archive_Tar	ports/archivers/pear-Archive_Tar
 pear-Auth	ports/security/pear-Auth
 pear-Auth_SASL	ports/security/pear-Auth_SASL
+pear-Config	ports/devel/pear-Config
 pear-Console_Getopt	ports/devel/pear-Console_Getopt
 pear-Console_Table	ports/devel/pear-Console_Table
 pear-Crypt_CBC	ports/security/pear-Crypt_CBC
