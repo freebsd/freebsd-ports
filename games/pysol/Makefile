@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	pysol
-PORTVERSION=	4.80
+PORTVERSION=	4.81
 CATEGORIES=	games
-MASTER_SITES=	http://pysol2.sourceforge.net/download/
+MASTER_SITES=	http://pysol2.sourceforge.net/download/ \
+		http://www.oberhumer.com/opensource/pysol/download/
 
 MAINTAINER=	tg@FreeBSD.org
 
