@@ -76,6 +76,7 @@
     SUBDIR += vrflash
     SUBDIR += wy60
     SUBDIR += xcept
+    SUBDIR += xdx
     SUBDIR += xlog
     SUBDIR += xtt516
     SUBDIR += yaps

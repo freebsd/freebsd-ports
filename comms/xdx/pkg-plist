@@ -1,0 +1,13 @@
+bin/xdx
+share/xdx/MANUAL
+share/xdx/MANUAL.es
+share/xdx/pixmaps/bigsmile.png
+share/xdx/pixmaps/cry.png
+share/xdx/pixmaps/sad.png
+share/xdx/pixmaps/smile.png
+share/xdx/pixmaps/wink.png
+share/xdx/pixmaps/xdx.png
+share/xdx/pixmaps/xdx.xcf
+share/xdx/pixmaps/xdx.xpm
+@dirrm share/xdx/pixmaps
+@dirrm share/xdx
