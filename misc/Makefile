@@ -92,6 +92,7 @@
     SUBDIR += gkrellscore
     SUBDIR += gkrellshoot
     SUBDIR += gkrellweather
+    SUBDIR += gkrellweather2
     SUBDIR += gkx86info
     SUBDIR += gman
     SUBDIR += gnome-icon-theme

@@ -1,0 +1,33 @@
+--- Makefile.orig	Sun Nov 24 04:00:54 2002
++++ Makefile	Sun Nov 24 04:07:15 2002
+@@ -8,24 +8,20 @@
+ 
+ OBJS = gkrellweather.o
+ 
++all: gkrellweather.so
++
+ gkrellweather.so: $(OBJS)
+-	$(CC) $(OBJS) -DVERSION=\"$(VERSION)\" -o gkrellweather.so $(LFLAGS) $(LIBS)  -lpthread
++	${CC} ${OBJS} ${PTHREAD_LIBS} -DVERSION=\"${VERSION}\" -o gkrellweather.so ${LFLAGS} ${LIBS}
+ 
+ clean:
+ 	rm -f *.o core *.so* *.bak *~
+ 
+ gkrellweather.o: gkrellweather.c
+-	$(CC) $(CFLAGS) -DVERSION=\"$(VERSION)\" -c gkrellweather.c
++	${CC} ${CFLAGS} ${PTHREAD_CFLAGS} -DVERSION=\"$(VERSION)\" -c gkrellweather.c
+ 
+ install:
+-	if [ -d /usr/lib/gkrellm2/plugins/ ] ; then \
+-		install -c -s -m 644 gkrellweather.so /usr/lib/gkrellm2/plugins/ ; \
+-	elif [ -d /usr/local/lib/gkrellm2/plugins/ ] ; then \
+-		install -c -s -m 644 gkrellweather.so /usr/local/lib/gkrellm2/plugins/ ; \
+-	else \
+-		install -D -c -s -m 644 gkrellweather.so /usr/local/lib/gkrellm2/plugins/gkrellweather.so ; \
+-	fi
+-	install -c -m 755 GrabWeather /usr/local/bin
++	${MKDIR} ${PREFIX}/libexec/gkrellm2/plugins
++	${INSTALL_DATA} gkrellweather.so ${PREFIX}/libexec/gkrellm2/plugins
+ 
+ uninstall:
+ 	rm -f /usr/lib/gkrellm2/plugins/gkrellweather.so
