@@ -1,13 +1,8 @@
-Index: cvsweb.cgi
-===================================================================
-RCS file: /home/ncvs/projects/cvsweb/cvsweb.cgi,v
-retrieving revision 1.119
-diff -a -u -r1.119 cvsweb.cgi
---- cvsweb.cgi	23 Jul 2002 13:58:32 -0000	1.119
-+++ cvsweb.cgi	23 Jul 2002 14:16:12 -0000
+--- cvsweb.cgi.orig	Fri Sep 27 05:56:05 2002
++++ cvsweb.cgi	Tue Feb 24 23:12:51 2004
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -wT
-+#!!!PERL!! -wT
++#!!!PERL!! -w
  #
  # cvsweb - a CGI interface to CVS trees.
  #
