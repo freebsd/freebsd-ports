@@ -29,6 +29,12 @@ CIIDEST=	${PREFIX}/lib/cii
 SAMPLES=	double calc ids	mpcalc wf xref cref iref kref \
 		idents words basename dirname sort spin	sieve
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${ARCH} != "alpha"
+BROKEN=		"Does not compile on !i386 and !alpha"
+.endif
+
 pre-build:
 	@${MKDIR} ${CIIBUILD}
 	@${MKDIR} ${CIIBUILD}/include
@@ -67,4 +73,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/* ${PREFIX}/share/doc/cii/src
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
