@@ -1,13 +1,16 @@
---- Makefile.orig	Mon Jul  5 22:01:43 1999
-+++ Makefile	Thu Jul  8 15:07:45 1999
-@@ -1,5 +1,10 @@
- #	$Id$
- 
-+DESTDIR=	${PREFIX}
-+BINDIR=		/bin
-+MANDIR=		/man/man
-+NOMANCOMPRESS=	1
-+
- PROG=	grep
- SRCS=	binary.c grep.c util.c
- LINKS=  ${BINDIR}/grep ${BINDIR}/egrep \
+*** grep/Makefile.orig	Mon Dec  6 12:27:29 1999
+--- grep/Makefile	Mon Dec  6 12:27:47 1999
+***************
+*** 9,14 ****
+--- 9,19 ----
+  	grep.1 fgrep.1 \
+  	grep.1 zgrep.1
+  
++ DESTDIR=       ${PREFIX}
++ BINDIR=                /bin
++ MANDIR=                /man/man
++ NOMANCOMPRESS= 1
++ 
+  CFLAGS+= ${P} -I/usr/local/include -Wall -pedantic
+  
+  LDADD=  -lz -L../regex/ -lregex -L/usr/local/lib/ -liberty
