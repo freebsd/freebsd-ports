@@ -59,6 +59,9 @@ $LOG_FILE      = "/tmp/#cvs.files.log";
 $SUMMARY_FILE  = "/tmp/#cvs.files.summary";
 $MAIL_FILE     = "/tmp/#cvs.files.mail";
 $SUBJ_FILE     = "/tmp/#cvs.files.subj";
+$TAGS_FILE     = "/tmp/#cvs.files.tags";
+
+$X_BRANCH_HDR  = "X-FreeBSD-CVS-Branch:";
 
 $CVSROOT       = $ENV{'CVSROOT'} || "/home/ncvs";
 
@@ -389,6 +392,12 @@ sub mail_notification {
     if ($subject ne "") {
 	print(MAIL $subject, "\n");
     }
+
+    # Add a header to the mail msg showing which branches
+    # were modified during the commit.
+    %tags = map { $_ => 1 } &read_logfile("$TAGS_FILE.$id", "");
+    print (MAIL "$X_BRANCH_HDR ", join(",", sort keys %tags), "\n");
+
     print (MAIL "\n");
 
     print(MAIL join("\n", @text));
@@ -537,6 +546,7 @@ while (<STDIN>) {
 	push (@log_lines,     $_);
     }
 }
+&append_line("$TAGS_FILE.$id", $tag);
 
 #
 # Strip leading and trailing blank lines from the log message.  Also
