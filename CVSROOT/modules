@@ -1757,6 +1757,7 @@ eieio-emacs20	ports/devel/eieio-emacs20
 eif		ports/games/eif
 eiffel		ports/lang/eiffel
 eights		ports/games/eights
+einstein	ports/games/einstein
 eispack		ports/math/eispack
 ejabberd	ports/net/ejabberd
 eject		ports/sysutils/eject
