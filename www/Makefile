@@ -460,6 +460,7 @@
     SUBDIR += p5-HTTPD-Log-Filter
     SUBDIR += p5-HTTPD-Tools
     SUBDIR += p5-IMDB-Movie
+    SUBDIR += p5-MasonX-Apache2Handler
     SUBDIR += p5-MasonX-Interp-WithCallbacks
     SUBDIR += p5-MasonX-Request-WithApacheSession
     SUBDIR += p5-Maypole

@@ -1,0 +1,7 @@
+MasonX::Apache2Handler is a Mason add-on which allows Mason to run
+in a pure mod_perl2 environment.
+
+Author: Beau E. Cox
+WWW:	http://search.cpan.org/dist/MasonX-Apache2Handler/
+
+--- Autrijus Tang <autrijus@autrijus.org>
