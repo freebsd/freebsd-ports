@@ -1,2 +1,4 @@
-MD5 (sbcl-0.8.7-source.tar.bz2) = 6cf1786ab54ae4cf302b9a8ddfe5f2a7
-MD5 (sbcl-0.8.7-html.tar.bz2) = 2f00663b646b2615f12c984e3435d478
+MD5 (sbcl-0.8.9-source.tar.bz2) = 97ca1a5dac091f61943325a3d689a8e3
+SIZE (sbcl-0.8.9-source.tar.bz2) = 2069624
+MD5 (sbcl-0.8.9-html.tar.bz2) = 38f9f6de699d4ed9cb7a99abd99da477
+SIZE (sbcl-0.8.9-html.tar.bz2) = 47167
