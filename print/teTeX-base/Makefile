@@ -1,31 +1,31 @@
-# New ports collection makefile for:	teTeX
+# New ports collection makefile for:	teTeX-base
 # Date created:		5 December 1996
 # Whom:			Bernd Rosauer <br@netland.inka.de>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	teTeX
+PORTNAME=	teTeX-base
 PORTVERSION=	2.0.2
-PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/2.0/distrib/ \
-		${MASTER_SITE_TEX_CTAN} \
-		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
+		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	systems/unix/teTeX/2.0/distrib/
-DISTFILES=	${TETEX_SRC} ${TETEX_TEXMF} dvipsk-jpatch-p1.6${EXTRACT_SUFX}:1
+DISTNAME=	${TETEX_SRC}
 DIST_SUBDIR=	teTeX
-EXTRACT_ONLY=	${TETEX_SRC} dvipsk-jpatch-p1.6${EXTRACT_SUFX}
 
 MAINTAINER=	demon@FreeBSD.org
-COMMENT=	Thomas Esser's distribution of TeX & friends
+COMMENT=	Thomas Esser's distribution of TeX & friends (binaries)
 
+BUILD_DEPENDS=	${TEXMF_TREE}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		tetex-modesw:${PORTSDIR}/print/tex-texmflocal
+RUN_DEPENDS=	${TEXMF_TREE}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		tetex-modesw:${PORTSDIR}/print/tex-texmflocal
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
 
 WRKSRC=		${WRKDIR}/tetex-src-${PORTVERSION}
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-multiplatform \
@@ -43,6 +43,7 @@ CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} TEXMFCNF=${TEXMFCNF}
 PKGINSTALL=	${WRKDIR}/pkg-install.sh
 PKGDEINSTALL=	${WRKDIR}/pkg-install.sh
+PKGMESSAGE=	${WRKDIR}/pkg-message
 CONFLICTS=	ja-ptex-base*
 
 MAN1=		MakeTeXPK.1 access.1 allcm.1 allneeded.1 \
@@ -82,7 +83,8 @@ MAN1+=		afm2tfm.1 dvips.1
 INFO+=		dvips
 CONFLICTS+=	dvips* ja-dvips*
 .else
-CONFIGURE_ARGS+=	--without-dvipsk
+CONFIGURE_ARGS+=--without-dvipsk \
+		--without-odvipsk
 PLIST_SUB+=	DVIPSK="@comment "
 .endif
 
@@ -93,7 +95,8 @@ MAN1+=		xdvi.1 t1mapper.1 xdvizilla.1
 CONFLICTS+=	xdvi* ja-xdvi*
 .else
 USE_XLIB=	yes
-CONFIGURE_ARGS+=	 --without-xdvik
+CONFIGURE_ARGS+=--without-xdvik \
+		--without-oxdvik
 PLIST_SUB+=	XDVIK="@comment "
 .endif
 
@@ -114,15 +117,21 @@ PLIST_SUB+=	X11BITS="@comment "
 #PKGNAMESUFFIX=	${FLAVOR:S,^,-,:Q:S,\\ ,,g:S,\\-,-,g}
 #.endif
 
-TETEX_SRC=	tetex-src-${PORTVERSION}.tar.gz
-TETEX_TEXMF=	tetex-texmf-${PORTVERSION}.tar.gz
+TETEX_SRC=	tetex-src-${PORTVERSION}
 LIBPNG_PREFIX?=	${LOCALBASE}
 LIBWWW_PREFIX?=	${LOCALBASE}
 LIBT1_PREFIX?=	${LOCALBASE}
+
 TEXMF_TREE=	${PREFIX}/share/texmf
-MKTEXLSR?=	${LOCALBASE}/bin/mktexlsr
-TEXMFCNF=	${TEXMF_TREE}/web2c/texmf.cnf
-DVIPSKCNF=	${TEXMF_TREE}/dvips/config/config.ps
+TEXMFVAR=	share/texmf-var
+TETEX_MODESW=	${LOCALBASE}/bin/tetex-modesw
+MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
+
+PLIST_SUB+=	TEXMF_TREE=${TEXMF_TREE:S,^${PREFIX}/,,} \
+		TEXMFVAR=${TEXMFVAR}
+PKGINSTALL_SUB=	TETEX_MODESW=${TETEX_MODESW} \
+		MKTEXLSR=${MKTEXLSR}
+PKGMESSAGE_SUB=	TEXMF_TREE=${TEXMF_TREE}
 
 pre-configure:
 	@${ECHO_MSG}
@@ -130,43 +139,16 @@ pre-configure:
 	@${ECHO_MSG}
 
 post-configure:
-	${SED} -e 's,%%TEXMFCNF%%,${TEXMFCNF},g;s,%%DVIPSKCNF%%,${DVIPSKCNF},g;s,%%WITH_DVIPSK%%,${WITH_DVIPSK},g;s,%%MKTEXLSR%%,${MKTEXLSR},g' \
+	${SED} ${PKGINSTALL_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 	${CHMOD} 0755 ${PKGINSTALL}
-
-pre-install:
-	${MKDIR} ${TEXMF_TREE}
-	cd ${TEXMF_TREE} && \
-		${TAR} xUfz ${DISTDIR}/${DIST_SUBDIR}/${TETEX_TEXMF}
-	${INSTALL_DATA} ${FILESDIR}/listings.sty ${TEXMF_TREE}/tex/latex/listings/
-	${INSTALL_SCRIPT} ${WRKSRC}/utils/texinfo/util/texi2dvi ${PREFIX}/bin
-	${SED} -e "s|^TEXMFMAIN = .*|TEXMFMAIN = ${TEXMF_TREE}|g" \
-		< ${WRKSRC}/texk/kpathsea/texmf.cnf \
-		> ${TEXMF_TREE}/web2c/texmf.cnf
-	${CHMOD} 644 ${TEXMF_TREE}/web2c/texmf.cnf
+	${SED} ${PKGMESSAGE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		< ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 
 post-install:
-	${SETENV} TEXMFMAIN=${TEXMF_TREE} \
-		${WRKSRC}/texk/tetex/texconfig font ro > /dev/null 2>&1
-	${SETENV} TEXMFMAIN=${TEXMF_TREE} \
-		${WRKSRC}/texk/tetex/texconfig font options appendonlydir varfonts
-.if !defined(WITH_XDVIK)
-	${RM} -f ${TEXMF_TREE}/xdvi/XDvi
-.endif
-	cd ${TEXMF_TREE}/dvips/pstricks && \
-		${PATCH} --quiet < ${WRKDIR}/PSTricks.patch && \
-		${RM} -f pst-text.pro.orig
-	${SED} -e 's,^\(o*\),%\1,' \
-		< ${TEXMF_TREE}/dvips/config/config.ps \
-		> ${TEXMF_TREE}/dvips/config/config.ps.tetex
-	${RM} -f ${TEXMF_TREE}/dvips/config/config.ps
-	cd ${TEXMF_TREE}/web2c && \
-		${MV} texmf.cnf texmf.cnf.tetex
+	${INSTALL_SCRIPT} ${WRKSRC}/utils/texinfo/util/texi2dvi ${PREFIX}/bin
 	@${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO_MSG}
-	@${ECHO_MSG} "You may want to run texconfig to configure teTeX for your"
-	@${ECHO_MSG} "local environment. You will find teTeX's local documentation"
-	@${ECHO_MSG} "in ${TEXMF_TREE}/doc/."
-	@${ECHO_MSG}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
