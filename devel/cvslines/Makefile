@@ -15,20 +15,17 @@ MAINTAINER=		trevor@FreeBSD.org
 COMMENT=		Wrapper to ease merging of changes between CVS branches
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
-PLIST=			${WRKDIR}/pkg-plist
 USE_PERL5=		yes
 NO_BUILD=		yes
+.for ii in s s_check s-check s-commit s-config s-status
+PLIST_FILES+=	bin/cvsline${ii}
+.endfor
 
 MAN1=	cvslines.1
 
 pre-patch:
 	${PERL} -pi -e "s:usr/bin/perl5:${PERL5}:g" ${WRKSRC}/cvslines
 	${PERL} -pi -e "s:the the:the:g" ${WRKSRC}/cvslines.1
-
-pre-install:
-.for i in s s_check s-status s-check s-commit s-config
-	${ECHO_CMD} bin/cvsline$i >> ${PLIST}
-.endfor
 
 do-install:
 	PREFIX=${PREFIX} ${PERL5} ${WRKSRC}/INSTALL ${WRKSRC}/CONFIG
