@@ -363,7 +363,6 @@ arm-elf-binutils	ports/devel/arm-elf-binutils
 arm-elf-gcc295	ports/devel/arm-elf-gcc295
 arm-elf-gcc31	ports/devel/arm-elf-gcc31
 arm-rtems-binutils	ports/devel/arm-rtems-binutils
-arm-rtems-chill	ports/devel/arm-rtems-chill
 arm-rtems-g77	ports/devel/arm-rtems-g77
 arm-rtems-gcc	ports/devel/arm-rtems-gcc
 arm-rtems-gcj	ports/devel/arm-rtems-gcj
@@ -2701,7 +2700,6 @@ hypermail	ports/www/hypermail
 hypersrc	ports/devel/hypersrc
 i18ntools	ports/converters/i18ntools
 i386-rtems-binutils	ports/devel/i386-rtems-binutils
-i386-rtems-chill	ports/devel/i386-rtems-chill
 i386-rtems-g77	ports/devel/i386-rtems-g77
 i386-rtems-gcc	ports/devel/i386-rtems-gcc
 i386-rtems-gcj	ports/devel/i386-rtems-gcj
@@ -4308,7 +4306,6 @@ m4		src/usr.bin/m4
 m6811-binutils	ports/devel/m6811-binutils
 m6811-gcc	ports/devel/m6811-gcc
 m68k-rtems-binutils	ports/devel/m68k-rtems-binutils
-m68k-rtems-chill	ports/devel/m68k-rtems-chill
 m68k-rtems-g77	ports/devel/m68k-rtems-g77
 m68k-rtems-gcc	ports/devel/m68k-rtems-gcc
 m68k-rtems-gcj	ports/devel/m68k-rtems-gcj
@@ -6494,7 +6491,6 @@ povray31	ports/graphics/povray31
 powerdns	ports/net/powerdns
 powerpak	ports/games/powerpak
 powerpc-rtems-binutils	ports/devel/powerpc-rtems-binutils
-powerpc-rtems-chill	ports/devel/powerpc-rtems-chill
 powerpc-rtems-g77	ports/devel/powerpc-rtems-g77
 powerpc-rtems-gcc	ports/devel/powerpc-rtems-gcc
 powerpc-rtems-gcj	ports/devel/powerpc-rtems-gcj
@@ -7552,7 +7548,6 @@ sgrep		ports/textproc/sgrep
 sgsc		src/usr.sbin/sgsc
 sh		src/bin/sh
 sh-rtems-binutils	ports/devel/sh-rtems-binutils
-sh-rtems-chill	ports/devel/sh-rtems-chill
 sh-rtems-g77	ports/devel/sh-rtems-g77
 sh-rtems-gcc	ports/devel/sh-rtems-gcc
 sh-rtems-gcj	ports/devel/sh-rtems-gcj
@@ -7760,7 +7755,6 @@ spamoracle	ports/mail/spamoracle
 spamprobe	ports/mail/spamprobe
 spar		ports/math/spar
 sparc-rtems-binutils	ports/devel/sparc-rtems-binutils
-sparc-rtems-chill	ports/devel/sparc-rtems-chill
 sparc-rtems-g77	ports/devel/sparc-rtems-g77
 sparc-rtems-gcc	ports/devel/sparc-rtems-gcc
 sparc-rtems-gcj	ports/devel/sparc-rtems-gcj
