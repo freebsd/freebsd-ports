@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bkmrkconv
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	www
 MASTER_SITES=	http://www.bleb.org/software/bkmrkconv/
 
@@ -23,12 +23,13 @@ post-patch:
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bkmrkconv.pl ${PREFIX}/bin/bkmrkconv
-	@${MKDIR} ${PREFIX}/share/bkmrkconv/src
-	${INSTALL_SCRIPT} ${WRKSRC}/utils/* ${PREFIX}/share/bkmrkconv
-	${INSTALL_DATA} ${WRKSRC}/src.example/* ${PREFIX}/share/bkmrkconv/src
+	@${MKDIR} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/utils/* ${DATADIR}
+	@${MKDIR} ${DATADIR}/src
+	${INSTALL_DATA} ${WRKSRC}/src.example/* ${DATADIR}/src
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/bkmrkconv
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/doc/bkmrkconv
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>

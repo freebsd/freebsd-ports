@@ -1,10 +1,10 @@
 bin/bkmrkconv
-%%PORTDOCS%%share/doc/bkmrkconv/README.txt
-share/bkmrkconv/dilbert.pl
-share/bkmrkconv/random.pl
-share/bkmrkconv/src/contentspage.html
-share/bkmrkconv/src/linkspage.html
-share/bkmrkconv/src/rootpage.html
-@dirrm share/bkmrkconv/src
-@dirrm share/bkmrkconv
-%%PORTDOCS%%@dirrm share/doc/bkmrkconv
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%DATADIR%%/dilbert.pl
+%%DATADIR%%/random.pl
+%%DATADIR%%/src/contentspage.html
+%%DATADIR%%/src/linkspage.html
+%%DATADIR%%/src/rootpage.html
+@dirrm %%DATADIR%%/src
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
