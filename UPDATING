@@ -6,6 +6,21 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20050110:
+  AFFECTS: users of sysutils/nautilus-cd-burner
+  AUTHOR: gnome@FreeBSD.org
+
+  Nautilus-cd-burner now requires cdrtools built with UTF-8 encoding
+  support.  The default sysutils/cdrtools port does not support this
+  encoding, and that will cause nautilus-cd-burner to enter an infinite
+  loop when trying to create CD images.  To workaround this, the cdrtools
+  dependency was changed in nautilus-cd-burner to point to the
+  sysutils/cdrtools-cjk port instead.
+
+  Since sysutils/cdrtools and sysutils/cdrtools-cjk conflict, you must
+  uninstall cdrtools so that the nautilus-cd-burner update can properly
+  pull in cdrtools-cjk.
+
 20050108:
   AFFECTS: users of mail/courier-imap, mail/sqwebmail
   AUTHOR: oliver@FreeBSD.org
