@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.27 1996/04/26 08:30:12 asami Exp $
+# $Id: Makefile,v 1.28 1996/04/30 05:14:13 asami Exp $
 #
 
     SUBDIR += Canna
@@ -26,6 +26,7 @@
     SUBDIR += netscape.language
     SUBDIR += nkf
     SUBDIR += okphone
+    SUBDIR += pine
     SUBDIR += pkfonts
     SUBDIR += platex
     SUBDIR += ptex
