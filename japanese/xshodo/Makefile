@@ -3,11 +3,11 @@
 # Date created:        11 October 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/29 07:20:58 tg Exp $
+# $Id: Makefile,v 1.2 1996/11/30 08:53:03 asami Exp $
 #
 
 DISTNAME=	xbakuzan
-PKGNAME=        xbakuzan-1.0
+PKGNAME=        jp-xbakuzan-1.0
 CATEGORIES=	x11
 MASTER_SITES=	ftp://cclub.tutcc.tut.ac.jp/pub/xwin/
 
