@@ -22,7 +22,7 @@ CAT?=		/bin/cat
 DISTFILES!=	${CAT} ${FILESDIR}/distfiles
 
 CVS_CMD?=	cvs -z3
-CVS_DATE=	Wed Nov 17 14:09:01 EST 1999
+CVS_DATE=	Fri Nov 19 20:25:38 EST 1999
 CVS_SITES=	anoncvs@anoncvs1.ca.openbsd.org:/cvs \
 		:pserver:anoncvs@anoncvs1.usa.openbsd.org:/cvs
 CRYPTOLIBS=	-L${PREFIX}/lib -lcrypto
@@ -54,7 +54,7 @@ do-fetch:
 			export CVS_RSH="${PORTS_CVS_RSH}"; \
 		fi; \
 		${MKDIR} ${DISTDIR}/${PKGNAME} && \
-		cd ${DISTDIR}/${PKGNAME} || exit; \
+		cd ${DISTDIR}/${PKGNAME}; \
 		for CVS_SITE in ${CVS_SITES}; do \
 			${ECHO_MSG} ">> Attempting to CVS checkout from $${CVS_SITE}."; \
 			if ${CVS_CMD} -d $${CVS_SITE} co -D "${CVS_DATE}" \
