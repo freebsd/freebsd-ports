@@ -1,0 +1,7 @@
+bin/gtstarter
+libexec/gtstarter/gtstarter_lib.py
+libexec/gtstarter/gtstarter_lib.pyc
+libexec/gtstarter/gtstarter_lib.pyo
+libexec/gtstarter/gtstarter
+share/gnome/applications/gtstarter.desktop
+@dirrm libexec/gtstarter

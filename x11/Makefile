@@ -69,6 +69,7 @@
     SUBDIR += gromit
     SUBDIR += gtk-theme-switch
     SUBDIR += gtk2-theme-switch
+    SUBDIR += gtstarter
     SUBDIR += gxset
     SUBDIR += gyroscope
     SUBDIR += idesk
