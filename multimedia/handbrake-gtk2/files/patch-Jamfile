@@ -10,9 +10,9 @@
 +    SystemLibraries $(TEST_BIN) : %%LIBAVCODEC%%/libavcodec.a
 +    		-L%%PREFIX%%/lib %%PTHREAD_LIBS%% -la52
 +    		-ldvdcss -ldvdread -lfaac -lmp3lame -lmp4v2 -lmpeg2 -logg
-+		-lsamplerate -lvorbis -lvorbisenc -lxvidcore ;
++		-lsamplerate -lvorbis -lvorbisenc -lxvidcore $(EXTRA_LIBS) ;
 +    SystemLibraries $(GTK2_BIN) : %%LIBAVCODEC%%/libavcodec.a
-+    		-L%%PREFIX%%/lib %%PTHREAD_LIBS%% `pkg-config gtk+-2.0 --libs`
++    		-L%%PREFIX%%/lib %%PTHREAD_LIBS%% $(EXTRA_LIBS) `pkg-config gtk+-2.0 --libs`
 +    		-la52 -ldvdcss -ldvdread -lfaac -lmp3lame -lmp4v2
 +		-lmpeg2 -logg -lsamplerate -lvorbis -lvorbisenc -lxvidcore ;
 +    ObjectCcFlags   $(GTK2_SRC) : `pkg-config gtk+-2.0 --cflags` ;
