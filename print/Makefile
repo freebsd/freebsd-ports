@@ -161,6 +161,7 @@
     SUBDIR += xmbibtex
     SUBDIR += xpp
     SUBDIR += xtem
+    SUBDIR += xtexsh
     SUBDIR += yatex
     SUBDIR += yatex-mule
     SUBDIR += yatex-xemacs

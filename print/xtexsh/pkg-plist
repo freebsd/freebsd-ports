@@ -1,0 +1,10 @@
+bin/xtexsh
+etc/xtexshrc
+%%PORTDOCS%%share/doc/xtexsh/README
+%%PORTDOCS%%share/doc/xtexsh/index.html
+share/xtexsh/xtexsh-mini.png
+share/xtexsh/xtexsh.desktop
+share/xtexsh/xtexsh.png
+share/xtexsh/xtexsh.spec
+@dirrm share/xtexsh
+%%PORTDOCS%%@dirrm share/doc/xtexsh
