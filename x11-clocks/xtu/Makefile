@@ -10,6 +10,9 @@ PORTVERSION=	1.1
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://core.de/~coto/projects/xtu/
 
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Transparent analog clock for X11
+
 USE_IMAKE=	yes
 USE_XPM=	yes
 

@@ -7,8 +7,9 @@
 
 PKGNAMESUFFIX =	-ssl
 
+COMMENT=	A non-graphical, text-based World-Wide Web client with SSL support
+
 MASTERDIR=	${.CURDIR}/../lynx
-COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 
 .include "${MASTERDIR}/Makefile"
