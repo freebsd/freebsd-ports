@@ -32,4 +32,5 @@ share/sk/docbook/%%DTD_VERSION%%/readme.txt
 share/sk/docbook/%%DTD_VERSION%%/soextblx.dtd
 @dirrm share/sk/docbook/%%DTD_VERSION%%/ent
 @dirrm share/sk/docbook/%%DTD_VERSION%%
+@dirrm share/sk/docbook
 @dirrm share/sk
