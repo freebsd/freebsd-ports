@@ -3,7 +3,7 @@
 # Date created:         03 Aug 1996
 # Whom:                 shanee@rabbit.augusta.de
 #
-# $Id: Makefile,v 1.2 1996/08/04 00:27:01 chuckr Exp $
+# $Id: Makefile,v 1.3 1996/08/09 20:50:42 chuckr Exp $
 #
 
 DISTNAME=	zorro-1.1p8
@@ -13,8 +13,7 @@ MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
 
 MAINTAINER=	shanee@rabbit.augusta.de
 
-LIB_DEPENDS=	tcl75\\.1\\.:${PORTSDIR}/lang/tcl75 \
-		tk41\\.1\\.:${PORTSDIR}/x11/tk41
+LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
 
 NO_BUILD=	yes
 
