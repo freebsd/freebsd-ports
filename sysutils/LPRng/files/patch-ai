@@ -1,0 +1,32 @@
+--- man/Makefile.in.orig	Fri Aug 18 16:54:27 2000
++++ man/Makefile.in	Fri Aug 18 16:52:45 2000
+@@ -58,18 +58,18 @@
+ 
+ # Standard man install target.
+ #
++#install:
++#	for suffix in 1 5 8 ; do \
++#	  if [ ! -d $(INSTALL_PREFIX)$(MAN)/man$${suffix} ] ; then \
++#		  echo ${SRC}/mkinstalldirs $(INSTALL_PREFIX)$(MAN)/man$${suffix}; \
++#		  ${SRC}/mkinstalldirs $(INSTALL_PREFIX)$(MAN)/man$${suffix}; \
++#	  fi; \
++#	  for i in ${SRC}/*.$$suffix; do \
++#		echo $(INSTALL) -m 644 $$i $(INSTALL_PREFIX)$(MAN)/man$$suffix/`basename $$i`$(MANEXT); \
++#		$(INSTALL) -m 644 $$i $(INSTALL_PREFIX)$(MAN)/man$$suffix/`basename $$i`$(MANEXT); \
++#	  done; \
++#	done;
+ install:
+-	for suffix in 1 5 8 ; do \
+-	  if [ ! -d $(INSTALL_PREFIX)$(MAN)/man$${suffix} ] ; then \
+-		  echo ${SRC}/mkinstalldirs $(INSTALL_PREFIX)$(MAN)/man$${suffix}; \
+-		  ${SRC}/mkinstalldirs $(INSTALL_PREFIX)$(MAN)/man$${suffix}; \
+-	  fi; \
+-	  for i in ${SRC}/*.$$suffix; do \
+-		echo $(INSTALL) -m 644 $$i $(INSTALL_PREFIX)$(MAN)/man$$suffix/`basename $$i`$(MANEXT); \
+-		$(INSTALL) -m 644 $$i $(INSTALL_PREFIX)$(MAN)/man$$suffix/`basename $$i`$(MANEXT); \
+-	  done; \
+-	done;
+-install.zman:
+ 	for suffix in 1 5 8 ; do \
+ 	  if [ ! -d $(INSTALL_PREFIX)$(MAN)/man$${suffix} ] ; then \
+ 		  echo ${SRC}/mkinstalldirs $(INSTALL_PREFIX)$(MAN)/man$${suffix}$(COMPRESS_DIR); \
