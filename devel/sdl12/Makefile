@@ -19,6 +19,7 @@ LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 INSTALLS_SHLIB=	yes
+USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	NASM="${LOCALBASE}/bin/nasm" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
@@ -86,7 +87,7 @@ post-configure:
 	@cd ${WRKSRC} && \
 		${CP} sdl-config sdl11-config && \
 		${CP} sdl.m4 sdl11.m4
-	@${PERL} -pi -e 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
+	@${REINPLACE_CMD} 's|^deplibs_check_method=.*|deplibs_check_method=pass_all|' \
 		${WRKSRC}/libtool
 
 post-install:
