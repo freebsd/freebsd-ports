@@ -1,5 +1,6 @@
 bin/gnome-font-install
 etc/gnome/fonts/gnome-print-ghostscript.fontmap
+etc/gnome/fonts/gnome-print-x11.fontmap
 etc/printConf.sh
 include/gnome-1.0/libgnomeprint/gnome-font-dialog.h
 include/gnome-1.0/libgnomeprint/gnome-font-face.h
@@ -28,6 +29,7 @@ lib/libgnomeprint.so
 lib/libgnomeprint.so.16
 share/gnome/fonts/README.binaries
 share/gnome/fonts/README.installer
+share/gnome/fonts/adobe-urw.font
 share/gnome/fonts/afms/adobe/pagd8a.afm
 share/gnome/fonts/afms/adobe/pagdo8a.afm
 share/gnome/fonts/afms/adobe/pagk8a.afm
