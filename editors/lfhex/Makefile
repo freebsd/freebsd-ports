@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	lfhex
-PORTVERSION=	0.3
+PORTVERSION=	0.3.2
 CATEGORIES=	editors
 MASTER_SITES=	ftp://typedef.dnsalias.org/pub/lfhex/
 
