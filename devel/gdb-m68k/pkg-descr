@@ -1,0 +1,10 @@
+GNU Debugger can be built to debug programs from architectures other
+than its host.
+
+With this port you can use gdb on FreeBSD to debug binaries produced by a 
+cross-development environment targetting Motorola 68K processors using
+COFF binary format.
+
+--
+Jerry Hicks
+jhicks@atlanta.glenayre.com
