@@ -3967,6 +3967,7 @@ libsx		ports/x11/libsx
 libtacplus	src/lib/libtacplus
 libtai		ports/devel/libtai
 libtar		ports/devel/libtar
+libtasn1	ports/security/libtasn1
 libtcl		src/lib/libtcl
 libtecla	ports/devel/libtecla
 libtelnet	src/lib/libtelnet
