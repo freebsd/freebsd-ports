@@ -1,0 +1,7 @@
+MZiq is a Perl frontend for mpg123. Its main feature is the deployment of
+Perl's regular expressions for ease of playlist creation.
+
+WWW: http://cseg.lucidx.com/mziq/
+
+- Gea-Suan Lin
+  gslin@ccca.nctu.edu.tw

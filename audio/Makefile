@@ -131,6 +131,7 @@
     SUBDIR += musicbrainz
     SUBDIR += mutemix
     SUBDIR += mxv
+    SUBDIR += mziq
     SUBDIR += napster
     SUBDIR += nas
     SUBDIR += normalize
