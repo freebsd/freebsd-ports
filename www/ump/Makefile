@@ -23,7 +23,7 @@ MAINTAINER=	llwang@infor.org
 COMMENT=	Unix MIDI Plugin based on TiMidity++
 
 RUN_DEPENDS=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++	\
-		${X11BASE}/lib/browser_plugins:${PORTSDIR}/www/mozilla
+		${X11BASE}/lib/mozilla/mozilla-bin:${PORTSDIR}/www/mozilla
 
 BZ2DIST=	TiMidity++-${TIMIDITY_VERSION}.tar.bz2
 ZDIST=		unix-sdk-3.0b5.tar.Z ump_with_volume.tar.Z timdiffs.tar.Z
