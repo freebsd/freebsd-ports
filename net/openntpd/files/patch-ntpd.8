@@ -3,7 +3,28 @@ $FreeBSD$
 
 --- ntpd.8.orig
 +++ ntpd.8
-@@ -71,7 +71,7 @@
+@@ -52,6 +52,20 @@
+ .Xr adjtime 2
+ will be logged.
+ .Pp
++.Nm
++is usually started at boot time, and can be enabled by
++setting the following in
++.Pa /etc/rc.conf :
++.Pp
++.Dl openntpd_enable=\&"YES\&"
++.Pp
++See
++.Xr rc 8
++and
++.Xr rc.conf 5
++for more information on the boot process
++and enabling daemons.
++.Pp
+ When
+ .Nm
+ starts up, it reads settings from a configuration file,
+@@ -71,7 +85,7 @@
  .Ar file
  as the configuration file,
  instead of the default
@@ -12,7 +33,7 @@ $FreeBSD$
  .It Fl S
  Do not set the time immediately at startup.
  This is the default.
-@@ -83,22 +83,10 @@
+@@ -83,22 +97,10 @@
  .Xr rdate 8
  before starting
  .Nm .
@@ -37,7 +58,7 @@ $FreeBSD$
  default
  .Nm
  configuration file
-@@ -107,8 +95,8 @@
+@@ -107,8 +109,8 @@
  .Xr date 1 ,
  .Xr adjtime 2 ,
  .Xr ntpd.conf 5 ,
