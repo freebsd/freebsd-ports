@@ -1,6 +1,21 @@
 --- gcc/config/i386/freebsd-elf.h.orig	Mon Jul 13 15:38:36 1998
-+++ gcc/config/i386/freebsd-elf.h	Wed Oct  7 22:18:02 1998
-@@ -108,22 +108,19 @@
++++ gcc/config/i386/freebsd-elf.h	Fri Jan 22 04:11:03 1999
+@@ -26,8 +26,13 @@
+ 
+ /* The svr4 ABI for the i386 says that records and unions are returned
+    in memory.  */
++/* On FreeBSD, we do not. */
+ #undef DEFAULT_PCC_STRUCT_RETURN
+-#define DEFAULT_PCC_STRUCT_RETURN 1
++#define DEFAULT_PCC_STRUCT_RETURN 0
++
++/* This gets defined in tm.h->linux.h->svr4.h, and keeps us from using
++   libraries compiled with the native cc, so undef it. */
++#undef NO_DOLLAR_IN_LABEL
+ 
+ /* This is how to output an element of a case-vector that is relative.
+    This is only used for PIC code.  See comments by the `casesi' insn in
+@@ -108,22 +113,19 @@
   : ((n) >= FIRST_STACK_REG && (n) <= LAST_STACK_REG) ? (n)+3 \
   : (-1))
  
@@ -27,7 +42,7 @@
      }									\
  }
  
-@@ -146,20 +143,8 @@
+@@ -146,20 +148,8 @@
  #define CPP_SPEC "%(cpp_cpu) %{fPIC:-D__PIC__ -D__pic__} %{fpic:-D__PIC__ -D__pic__} %{posix:-D_POSIX_SOURCE}"
  
  #undef	LIB_SPEC
@@ -36,11 +51,11 @@
 - * want to profile or debug the C library, please add
 - * -lc_p or -ggdb to LDFLAGS at the link time, respectively.
 - */
- #define LIB_SPEC \
+-#define LIB_SPEC \
 -  "%{!shared: %{mieee-fp:-lieee} %{p:-lgmon} %{pg:-lgmon} \
 -     %{!ggdb:-lc} %{ggdb:-lg}}"
 -#else
--#define LIB_SPEC \
+ #define LIB_SPEC \
 -  "%{!shared: \
 -     %{mieee-fp:-lieee} %{p:-lgmon -lc_p} %{pg:-lgmon -lc_p} \
 -       %{!p:%{!pg:%{!g*:-lc} %{g*:-lg}}}}"
