@@ -53,7 +53,6 @@ include/gretl/texprint.h
 include/gretl/transforms.h
 include/gretl/var.h
 include/gretl/version.h
-@dirrm include/gretl
 lib/gretl-gtk2/arma.so
 lib/gretl-gtk2/arma_x12.so
 lib/gretl-gtk2/data/urcdata.gz
@@ -70,6 +69,7 @@ lib/gretl-gtk2/mp_ols.so
 lib/gretl-gtk2/nistcheck.so
 lib/gretl-gtk2/panel_data.so
 lib/gretl-gtk2/pca.so
+lib/gretl-gtk2/poisson.so
 lib/gretl-gtk2/progress_bar.so
 lib/gretl-gtk2/range-mean.so
 lib/gretl-gtk2/stats_tables.so
@@ -78,8 +78,6 @@ lib/gretl-gtk2/tobit.so
 lib/gretl-gtk2/tramo-x12a.so
 lib/gretl-gtk2/urcdist.so
 lib/gretl-gtk2/vif.so
-@dirrm lib/gretl-gtk2/data
-@dirrm lib/gretl-gtk2
 lib/libgretl-1.0.a
 lib/libgretl-1.0.so
 lib/libgretl-1.0.so.0
@@ -209,8 +207,10 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/data/misc/kmenta.gdt
 %%DATADIR%%/data/misc/leverage.gdt
 %%DATADIR%%/data/misc/longley.gdt
+%%DATADIR%%/data/misc/mccullagh.gdt
 %%DATADIR%%/data/misc/mrw.gdt
 %%DATADIR%%/data/misc/np.gdt
+%%DATADIR%%/data/misc/poisson.gdt
 %%DATADIR%%/data/misc/sw_ch12.gdt
 %%DATADIR%%/data/misc/sw_ch14.gdt
 %%DATADIR%%/data/nist/Filip.dat
@@ -236,6 +236,7 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/scripts/greene14_2.inp
 %%DATADIR%%/scripts/greene18_6.inp
 %%DATADIR%%/scripts/greene19_1.inp
+%%DATADIR%%/scripts/greene19_3.inp
 %%DATADIR%%/scripts/greene22_2.inp
 %%DATADIR%%/scripts/greene7_8.inp
 %%DATADIR%%/scripts/greene8_3.inp
@@ -333,14 +334,6 @@ libdata/pkgconfig/gretl.pc
 %%DATADIR%%/scripts/ps_descriptions
 %%DATADIR%%/scripts/testinp
 %%DATADIR%%/scripts/wg_ps_descriptions
-@dirrm %%DATADIR%%/data/greene
-@dirrm %%DATADIR%%/data/misc
-@dirrm %%DATADIR%%/data/nist
-@dirrm %%DATADIR%%/data
-@dirrm %%DATADIR%%/scripts/misc
-@dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/db
-@dirrm %%DATADIR%%
 %%GNOME:%%share/gnome/gtksourceview-1.0/language-specs/gnuplot.lang
 %%GNOME:%%share/gnome/gtksourceview-1.0/language-specs/gretl.lang
 %%GNOME:%%share/gnome/help/gretl/C/chapters/appendices.xml
@@ -386,6 +379,7 @@ libdata/pkgconfig/gretl.pc
 %%GNOME:%%share/gnome/help/gretl/C/figures/greeneC.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/gretl-logo.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/hsk.png
+%%GNOME:%%share/gnome/help/gretl/C/figures/hurst.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/important.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/influence.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/lambda.png
@@ -393,6 +387,7 @@ libdata/pkgconfig/gretl.pc
 %%GNOME:%%share/gnome/help/gretl/C/figures/ldy.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/logistic1.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/logistic2.png
+%%GNOME:%%share/gnome/help/gretl/C/figures/mahal.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/mainwin.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/menubar.png
 %%GNOME:%%share/gnome/help/gretl/C/figures/model_table.png
@@ -456,6 +451,7 @@ libdata/pkgconfig/gretl.pc
 %%GNOME:%%share/gnome/help/gretl/it/figures/greeneC.png
 %%GNOME:%%share/gnome/help/gretl/it/figures/gretl-logo.png
 %%GNOME:%%share/gnome/help/gretl/it/figures/hsk.png
+%%GNOME:%%share/gnome/help/gretl/it/figures/hurst.png
 %%GNOME:%%share/gnome/help/gretl/it/figures/important.png
 %%GNOME:%%share/gnome/help/gretl/it/figures/influence.png
 %%GNOME:%%share/gnome/help/gretl/it/figures/lambda.png
@@ -463,6 +459,7 @@ libdata/pkgconfig/gretl.pc
 %%GNOME:%%share/gnome/help/gretl/it/figures/ldy.png
 %%GNOME:%%share/gnome/help/gretl/it/figures/logistic1.png
 %%GNOME:%%share/gnome/help/gretl/it/figures/logistic2.png
+%%GNOME:%%share/gnome/help/gretl/it/figures/mahal.png
 %%GNOME:%%share/gnome/help/gretl/it/figures/mainwin.png
 %%GNOME:%%share/gnome/help/gretl/it/figures/menubar.png
 %%GNOME:%%share/gnome/help/gretl/it/figures/model_table.png
@@ -497,6 +494,7 @@ share/locale/fr/LC_MESSAGES/gretl.mo
 share/locale/it/LC_MESSAGES/gretl.mo
 share/locale/ja/LC_MESSAGES/gretl.mo
 share/locale/pl/LC_MESSAGES/gretl.mo
+share/locale/tr/LC_MESSAGES/gretl.mo
 %%GNOME:%%@dirrm share/gnome/omf/gretl
 %%GNOME:%%@dirrm share/gnome/help/gretl/it/figures
 %%GNOME:%%@dirrm share/gnome/help/gretl/it/chapters
@@ -505,3 +503,14 @@ share/locale/pl/LC_MESSAGES/gretl.mo
 %%GNOME:%%@dirrm share/gnome/help/gretl/C/chapters
 %%GNOME:%%@dirrm share/gnome/help/gretl/C
 %%GNOME:%%@dirrm share/gnome/help/gretl
+@dirrm %%DATADIR%%/scripts/misc
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/db
+@dirrm %%DATADIR%%/data/nist
+@dirrm %%DATADIR%%/data/misc
+@dirrm %%DATADIR%%/data/greene
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
+@dirrm lib/gretl-gtk2/data
+@dirrm lib/gretl-gtk2
+@dirrm include/gretl
