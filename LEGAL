@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.55 1997/01/03 01:01:27 max Exp $
+# $Id: LEGAL,v 1.56 1997/01/03 17:16:09 max Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -23,6 +23,9 @@ bzip-*			ports/archivers/bzip	Some algorithms used may
 						to unfriendly legal action.
 cap60/*			ports/net/cap		Don't sell for profit
 cku190.tar.gz		ports/comms/kermit	Restrictive copyright
+contool-*		ports/x11/contool	Don't incorporate the source
+						code into a product which is
+						subsequently sold.
 dgd/dgd-1.0.37.tar.gz	ports/net/dgd		License required for commercial
 						use as a server, and even for
 						distribution of sources and/or
