@@ -35,6 +35,8 @@ INPUT_PLUGINS=	cdaudio,idcin,mpg123,tonegen,wav
 OUTPUT_PLUGINS=	OSS,disk_writer
 VISUALIZATION_PLUGINS=	blur_scope,sanalyzer
 
+PLIST_SUB=	DATADIR="share"
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_MIKMOD)
