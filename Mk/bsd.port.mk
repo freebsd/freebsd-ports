@@ -701,6 +701,10 @@ MAKE_ENV+=		OPENSSLLIB=${OPENSSLLIB} OPENSSLINC=${OPENSSLINC} \
 .include "${PORTSDIR}/Mk/bsd.ruby.mk"
 .endif
 
+.if defined(USE_QT) || defined(USE_QT2) || defined(USE_QT_VER) || defined(USE_KDELIBS_VER) || defined(USE_KDEBASE_VER)
+.include "${PORTSDIR}/Mk/bsd.kde.mk"
+.endif
+
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
 
 # defaults to 3.3.6; will be changed to 4.0 when it is ready
@@ -821,7 +825,7 @@ LIB_DEPENDS+=			dps.0:${PORTSDIR}/x11/dgs
 LIB_DEPENDS+=			GL.14:${PORTSDIR}/graphics/Mesa3
 .endif
 XAWVER=					6
-PKG_IGNORE_DEPENDS?=	'(XFree86-3\.3\.6_7)'
+PKG_IGNORE_DEPENDS?=	'(XFree86-3\.3\.6_8)'
 .else
 .if defined(USE_IMAKE)
 BUILD_DEPENDS+=			imake:${PORTSDIR}/devel/imake-4
@@ -888,10 +892,6 @@ LIB_DEPENDS+=	X11.6:${PORTSDIR}/x11/XFree86
 .else
 LIB_DEPENDS+=	X11.6:${PORTSDIR}/x11/XFree86-4-libraries
 .endif
-.endif
-
-.if defined(USE_QT) || defined(USE_QT2) || defined(USE_QT_VER) || defined(USE_KDELIBS_VER) || defined(USE_KDEBASE_VER)
-.include "${PORTSDIR}/Mk/bsd.kde.mk"
 .endif
 
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
