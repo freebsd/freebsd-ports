@@ -1,5 +1,3 @@
 bin/dirmngr
-%%NLS%%lib/charset.alias
 %%NLS%%share/locale/de/LC_MESSAGES/dirmngr.mo
-%%NLS%%share/locale/locale.alias
 %%NLS%%@dirrm share/locale/de/LC_MESSAGES
