@@ -592,6 +592,11 @@ MASTER_SITE_SOURCEFORGE+= \
 	ftp://ftp.kddlabs.co.jp/sourceforge/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/sourceforge/%SUBDIR%/
 
+MASTER_SITE_SOURCEFORGE_JP+= \
+	http://osdn.dl.sourceforge.jp/%SUBDIR%/ \
+	http://kyushu-u.dl.sourceforge.jp/%SUBDIR%/ \
+	http://keihanna.dl.sourceforge.jp/%SUBDIR%/
+
 MASTER_SITE_SOURCEWARE+= \
 	http://mirrors.rcn.net/pub/sourceware/%SUBDIR%/ \
 	ftp://mirrors.rcn.net/mirrors/sources.redhat.com/%SUBDIR%/ \
