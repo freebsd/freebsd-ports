@@ -1,5 +1,5 @@
+bin/yaz-asncomp
 bin/yaz-client
-bin/yaz-comp
 bin/yaz-config
 bin/yaz-ztest
 bin/zoomsh
@@ -136,6 +136,12 @@ share/doc/yaz/zoom.query.html
 share/doc/yaz/zoom.records.html
 share/doc/yaz/zoom.resultsets.html
 share/doc/yaz/zoom.scan.html
+share/yaz/etc/MARC21slim2DC.xsl
+share/yaz/etc/MARC21slim2MODS.xsl
+share/yaz/etc/MARC21slim2RDFDC.xsl
+share/yaz/etc/MARC21slimUtils.xsl
+share/yaz/etc/maps.xml
+share/yaz/etc/pqf.properties
 share/yaz/ill/ill.tcl
 share/yaz/ill/ill9702.asn
 share/yaz/ill/item-req.asn
@@ -149,6 +155,7 @@ share/yaz/z39.50/z.tcl
 share/yaz/z39.50/z3950v3.asn
 @dirrm share/yaz/z39.50
 @dirrm share/yaz/ill
+@dirrm share/yaz/etc
 @dirrm share/yaz
 @dirrm share/doc/yaz
 @dirrm include/yaz

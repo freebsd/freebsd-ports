@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yaz
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
@@ -22,7 +22,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 INSTALLS_SHLIB=	yes
 
-MAN1=		yaz-client-ssl.1 yaz-client.1 zoomsh.1
+MAN1=		yaz-asncomp.1 yaz-client-ssl.1 yaz-client.1 zoomsh.1
 MAN7=		yaz.7
 MAN8=		yaz-config.8 yaz-ztest-ssl.8 yaz-ztest.8
 
