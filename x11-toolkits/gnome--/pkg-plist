@@ -21,6 +21,7 @@ include/gnome--/canvas.h
 include/gnome--/client.h
 include/gnome--/clock.h
 include/gnome--/color-picker.h
+include/gnome--/construct_copies.h
 include/gnome--/dateedit.h
 include/gnome--/dentry-edit.h
 include/gnome--/dial.h
@@ -114,6 +115,6 @@ include/gnome--/stock.h
 include/gnome--/types.h
 lib/libgnomemm.a
 lib/libgnomemm.so
-lib/libgnomemm.so.3
+lib/libgnomemm.so.4
 @dirrm include/gnome--/private
 @dirrm include/gnome--
