@@ -2564,6 +2564,7 @@ ifile		ports/mail/ifile
 ifm		ports/games/ifm
 ifmail		ports/news/ifmail
 ifstat		ports/net/ifstat
+igal		ports/www/igal
 iiimecf		ports/editors/iiimecf
 iip		ports/irc/iip
 ija		ports/news/ija
