@@ -50,7 +50,7 @@ pre-extract:
 .endif
 
 post-patch:
-.for D in ./ ../library ../tsx11 ../unicode advapi32 avifil32 comctl32 commdlg crtdll dciman32 ddraw dinput dplay dplayx dsound gdi icmp imagehlp imm32 kernel lzexpand mpr msacm msnet32 msvideo odbc32 ole32 oleaut32 olecli oledlg olepro32 olesvr opengl32 psapi rasapi32 richedit rpcrt4 serialui setupapi shell32 shfolder shlwapi tapi32 ttydrv urlmon user version win32s winaspi wineps wininet winmm winmm/joystick winmm/mcianim winmm/mciavi winmm/mcicda winmm/mciseq winmm/mciwave winmm/midimap winmm/wavemap winmm/wineoss winsock winspool wow32 wsock32 x11drv
+.for D in ../library ../tsx11 ../unicode
 	@${PERL} -pi.sofix -e 's/SOVERSION = 1.0/SOVERSION = 1/g' \
 		${WRKSRC}/dlls/${D}/Makefile.in
 .endfor
