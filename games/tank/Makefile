@@ -24,10 +24,6 @@ ALL_TARGET=	linux-mesa-elf
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tank ${PREFIX}/bin
 	${MKDIR} ${DATADIR}
