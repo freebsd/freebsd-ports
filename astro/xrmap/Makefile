@@ -14,19 +14,19 @@ DISTFILES=	${XRMAPFILE} ${DISTFILE} \
 		pdfmaps-1.1.tar.gz ${CIAFILE}
 EXTRACT_ONLY=	${XRMAPFILE}
 
-MAINTAINER=	thierry@pompo.net
+MAINTAINER=	gagnon_s@sympatico.ca
 COMMENT=	Map portions of the earth from a given longitude/latitude
 
 USE_BZIP2=	yes
 USE_IMAKE=	yes
 USE_XPM=	yes
 USE_REINPLACE=	yes
- XMKMF=		xmkmf
+XMKMF=		xmkmf
 
-MAN1=	xrmap.1
+MAN1=		xrmap.1
 
 CIAFILE=	CIA_WDB2.jpd.gz
-XRMAPFILE=	xrmap-2.29.tar.bz2
+XRMAPFILE=	xrmap-${PORTVERSION}.tar.bz2
 DISTFILE=	anthems-1.1.tar.bz2 \
 		factbook_text_2002.tar.bz2 factbook_html_2002.tar.bz2 \
 		flags-1.1.tar.bz2 hymns-1.2.tar.bz2
