@@ -1,0 +1,11 @@
+--- biblio.h.orig	Sat Feb 26 17:20:53 2000
++++ biblio.h	Sat Feb 26 17:22:19 2000
+@@ -18,7 +18,7 @@
+ 
+ class BIBLIO {
+   /* ...   private part   ... */
+-  const int MAX_FIELD_LENGTH=3000;   /* max fieldlength for BibTeX fields */
++  #define MAX_FIELD_LENGTH 3000   /* max fieldlength for BibTeX fields */
+   struct CITATION {
+     unsigned long id;/* made  unsigned long to simplify ref ID generation */
+     char *doctype;   /* added to standard BibTeX fields */
