@@ -7,6 +7,7 @@
 
 PORTNAME=	WebMagick
 PORTVERSION=	1.46
+PORTREVISION=   1
 CATEGORIES=	www graphics
 MASTER_SITES=	ftp://ftp.simplesystems.org/pub/WebMagick/
 
