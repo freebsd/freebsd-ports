@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mpich
-PORTVERSION=	1.2.5
-PORTREVISION=	3
+PORTVERSION=	1.2.5.2
 CATEGORIES=	net parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/
 DIST_SUBDIR=	mpich
@@ -15,8 +14,8 @@ DIST_SUBDIR=	mpich
 MAINTAINER=	dbader@ece.unm.edu
 COMMENT=	Message Passing Interface (MPI) Library
 
-PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/patch/${PORTVERSION}/
-PATCHFILES=	7633 7629 7791 7814 7829 # 7650
+PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/patch/${PORTVERSION:R}/
+PATCHFILES=	8713 8697
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
 BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
