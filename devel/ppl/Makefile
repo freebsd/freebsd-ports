@@ -35,7 +35,7 @@ INSTALLS_SHLIB=	yes
 
 # ppl needs gcc > 3.1, with libgmp4 compiled with the same gcc version
 .if ${OSVERSION} < 500035
-BROKEN=		"Does not build"
+IGNORE=		"Does not build with older versions of FreeBSD"
 .endif
 
 .include <bsd.port.post.mk>
