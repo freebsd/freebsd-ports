@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xmms-uade
-PORTVERSION=	0.81
-PORTREVISION=	1
+PORTVERSION=	1.00
 CATEGORIES=	audio
 MASTER_SITES=	http://uade.ton.tut.fi/uade/
 DISTNAME=	uade-${PORTVERSION}
@@ -27,10 +26,13 @@ USE_LIBTOOL_VER=	13
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${X11BASE}/lib/xmms \
 		--mymods=/ \
-		--docprefix=${X11BASE}/lib/xmms \
+		--docdir=${X11BASE}/lib/xmms/doc/uade \
 
 CONFIGURE_ENV=	SYSCFLAGS='${CFLAGS}'
 
 WRKSRC=		${WRKDIR}/uade-${PORTVERSION}
+
+post-install:
+		${RM} -rf ${X11BASE}/share/uade/players/S
 
 .include <bsd.port.mk>

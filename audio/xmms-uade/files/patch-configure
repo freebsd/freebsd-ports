@@ -1,73 +1,11 @@
---- configure.orig	Mon Jan  5 23:10:21 2004
-+++ configure	Tue Jan  6 11:02:01 2004
-@@ -227,18 +227,34 @@
- 
- if test "$prefix" = "$HOME/.xmms"; then
-     uadedatadir="$prefix/uade"
--    bindir="$prefix/uade"
-+    if test -n "$binprefix"; then
-+	    docdir="$binprefix/bin"
-+    else
-+            bindir="$prefix/uade"
-+    fi
-     plugin="$HOME/.xmms/Plugins/Input"
--    docdir="$prefix/uade/uade-$VERSION"
-+    if test -n "$docprefix"; then
-+	    docdir="$docprefix/doc/uade-$VERSION"
-+    else
-+	    docdir="$prefix/uade/uade-$VERSION"
-+    fi
- else
-     uadedatadir="$prefix/share/uade"
--    bindir="$prefix/bin"
-+    if test -n "$binprefix"; then
-+	    docdir="$binprefix/bin"
-+    else
-+            bindir="$prefix/bin"
-+    fi
-     if test "$usexmms" = "yes"; then
- 	plugin=`xmms-config --input-plugin-dir`
-     else
- 	plugin="$HOME/.xmms/Plugins/Input"
-     fi
--    docdir="$prefix/doc/uade-$VERSION"
-+    if test -n "$docprefix"; then
-+	    docdir="$docprefix/doc/uade-$VERSION"
-+    else
-+	    docdir="$prefix/doc/uade-$VERSION"
-+    fi
- fi
- 
- if test "$xmmsinputplugindir" != "automatic"; then
-@@ -293,6 +309,7 @@
- 
- sed -e "s|{DATADIR}|$uadedatadir|" \
-     -e "s|{MAKE}|$MAKE|" \
-+    -e "s|{SYSCFLAGS}|$SYSCFLAGS|" \
-     -e "s|{BINDIR}|$bindir|" \
-     -e "s|{DOCDIR}|$docdir|" \
-     -e "s|{USEXMMS}|$usexmms|" \
-@@ -317,10 +334,11 @@
-     XMMS_CONFIG="xmms-config"
- fi
- 
--GLIBFLAGS=`$GLIB_CONFIG --cflags`
--GLIBLIBS=`$GLIB_CONFIG --libs`
--GTKFLAGS=`$GTK_CONFIG --cflags`
--GTKLIBS=`$GTK_CONFIG --libs`
-+GLIBFLAGS=`glib12-config --cflags`
-+GLIBLIBS=`glib12-config --libs`
-+GTKFLAGS=`gtk12-config --cflags`
-+GTKLIBS=`gtk12-config --libs`
-+
- XMMSFLAGS=`$XMMS_CONFIG --cflags`
- XMMSLIBS=`$XMMS_CONFIG --libs`
- 
-@@ -332,6 +350,7 @@
-     -e "s|{GTKFLAGS}|$GTKFLAGS|" -e "s|{GTKLIBS}|$GTKLIBS|" \
-     -e "s|{XMMSFLAGS}|$XMMSFLAGS|" -e "s|{XMMSLIBS}|$XMMSLIBS|" \
-     -e "s|{INCLUDEFLAG}|$INCLUDEFLAG|" -e "s|{LIBFLAG}|$LIBFLAG|" \
-+    -e "s|{SYSCFLAGS}|$SYSCFLAGS|" \
-     -e "s|{PLUGINDIR}|$plugin|" \
-     -e "s|{PACKAGEPREFIX}|$packageprefix|" \
-     -e "s|{ARCHFLAGS}|$ARCHFLAGS|" \
+--- configure.orig	Sat Oct 30 17:59:24 2004
++++ configure	Sun Oct 31 13:33:21 2004
+@@ -198,8 +198,6 @@
+ 	--x-includes=*)
+ 		;;
+ 	*)
+-		echo "illegal option $opt"
+-		exit
+ 		;;
+ 	esac
+ done
