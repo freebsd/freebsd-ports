@@ -83,6 +83,7 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You can add hooks for KDE by defining WITH_KDE"
 	@${ECHO_MSG}
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/WPrefs.app/Paths.c
