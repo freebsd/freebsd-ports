@@ -1,0 +1,4 @@
+sbin/autokernconf
+sbin/doconfig
+man/man8/autokernconf.8.gz
+man/man8/doconfig.8.gz

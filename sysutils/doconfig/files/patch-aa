@@ -1,0 +1,20 @@
+--- doconfig.orig	Tue Jul 28 02:35:51 1998
++++ doconfig	Mon Aug  3 01:23:20 1998
+@@ -8,7 +8,7 @@
+ $log = "$sys_base/$sys_conf/kernelbuild.log";
+ 
+ ## we dont actually need anything here
+-$ENV{PATH} = "/bin:/sbin:/usr/bin:/usr/sbin";
++$ENV{PATH} = "/bin:/sbin:/usr/bin:/usr/sbin:%%PREFIX%%/bin";
+ 
+ # basic verification stuff
+ if ($< || $>) {
+@@ -44,7 +44,7 @@
+ }
+ 
+ $version = "1.1";
+-$autokernconf = "/usr/sbin/autokernconf";
++$autokernconf = "/usr/local/sbin/autokernconf";
+ $autokernconf_args = "";
+ $autoinstall = 0;
+ $autoreboot = 0;
