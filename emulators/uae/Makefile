@@ -7,6 +7,7 @@
 
 PORTNAME=	uae
 PORTVERSION=	0.8.22
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	ftp://ftp.freiburg.linux.de/pub/uae/sources/develop/
 
@@ -15,18 +16,18 @@ COMMENT=	Amiga emulator
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--enable-sound --enable-vidmode --enable-dga
 USE_XLIB=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_REINPLACE=	yes
-USE_GCC=	2.95
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/configure
+		${WRKSRC}/configure.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/uae ${PREFIX}/bin

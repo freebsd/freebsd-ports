@@ -1,0 +1,13 @@
+--- configure.in.orig	Mon Feb  4 14:23:29 2002
++++ configure.in	Tue Feb 25 00:30:57 2003
+@@ -598,9 +598,7 @@
+ 
+ if test $ac_cv_prog_gcc = yes; then
+   WARNING_CFLAGS="-Wall -Wno-unused -Wno-format -W -Wmissing-prototypes -Wstrict-prototypes"
+-  OPTIMIZE_CFLAGS="-O2 -fomit-frame-pointer"
+-  dnl Not nice, but needed to turn off -g
+-  CFLAGS=
++  OPTIMIZE_CFLAGS="-fomit-frame-pointer"
+ fi
+ 
+ if [[ "x$DO_PROFILING" = "xyes" ]]; then
