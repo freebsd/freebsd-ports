@@ -1,5 +1,5 @@
 --- configure.orig	Sat Feb 28 18:02:02 1998
-+++ configure	Tue Aug 11 13:51:17 1998
++++ configure	Mon Feb  8 11:51:44 1999
 @@ -677,9 +677,9 @@
  if test -z "$ac_aux_dir"; then
    { echo "configure: error: can not find install-sh or install.sh in $srcdir $srcdir/.. $srcdir/../.." 1>&2; exit 1; }
@@ -49,6 +49,33 @@
  	i370-*-mvs*)
  		;;
  	i[34567]86-ibm-aix*)		# IBM PS/2 running AIX
+@@ -3256,20 +3278,20 @@
+ # Next line turned off because both 386BSD and BSD/386 use GNU ld.
+ #		use_collect2=yes
+ 		;;
+-	i[34567]86-*-freebsdelf*)
+-		tm_file="i386/i386.h i386/att.h linux.h i386/freebsd-elf.h i386/perform.h"
++	i[34567]86-*-freebsdaout*)
++		tm_file=i386/freebsd-aout.h
+ 		# On FreeBSD, the headers are already ok, except for math.h.
+ 		fixincludes=fixinc.math
+ 		tmake_file=i386/t-freebsd
+-		gas=yes
+-		gnu_ld=yes
+-		stabs=yes
+ 		;;
+ 	i[34567]86-*-freebsd*)
+-		tm_file=i386/freebsd.h
++		tm_file="i386/i386.h i386/att.h linux.h i386/freebsd.h i386/perform.h"
+ 		# On FreeBSD, the headers are already ok, except for math.h.
+ 		fixincludes=fixinc.math
+ 		tmake_file=i386/t-freebsd
++		gas=yes
++		gnu_ld=yes
++		stabs=yes
+ 		;;
+ 	i[34567]86-*-netbsd*)
+ 		tm_file=i386/netbsd.h
 @@ -3277,6 +3299,13 @@
  		fixincludes=fixinc.math
  		tmake_file=t-netbsd

@@ -4,7 +4,7 @@
 # Date created:				17 Jan 1998
 # Whom:					David O'Brien <obrien@NUXI.com>
 #
-# $Id: Makefile,v 1.19 1998/11/13 07:32:21 obrien Exp $
+# $Id: Makefile,v 1.20 1999/01/27 07:41:20 fenner Exp $
 #
 
 DISTNAME=	gcc-2.8.1
@@ -17,9 +17,9 @@ MAINTAINER=	obrien@FreeBSD.org
 .include <bsd.port.pre.mk>
 
 .if ${PORTOBJFORMAT} == "elf"
-GNUHOST=	${ARCH}-unknown-freebsdelf${OSREL}
-.else
 GNUHOST=	${ARCH}-unknown-freebsd${OSREL}
+.else
+GNUHOST=	${ARCH}-unknown-freebsdaout${OSREL}
 .endif
 
 PLIST_SUB=	GNUHOST=${GNUHOST}
@@ -35,15 +35,23 @@ MAN1=		cccp28.1 g++28.1 gcc28.1
 pre-fetch:
 	@${ECHO} "GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}"
 
+pre-patch:
+	@${MV} ${WRKSRC}/config/i386/freebsd.h ${WRKSRC}/config/i386/freebsd-aout.h
+	@${MV} ${WRKSRC}/config/i386/freebsd-elf.h ${WRKSRC}/config/i386/freebsd.h
+
 pre-configure:
+	@# Keep from running `autoconf' and `autoheader' since we modified
+	@# configure.in by patching it.
+	@${TOUCH} ${TOUCH_FLAGS} ${WRKSRC}/configure
+	@${TOUCH} ${TOUCH_FLAGS} ${WRKSRC}/cstamp-h.in
 	@(cd ${WRKSRC}/config/${ARCH}/ ; \
 	MAJ=`sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
+	${MV} freebsd-aout.h freebsd-aout.h.in ; \
+	${SED} -e "s:__FreeBSD__=[0-9]*:__FreeBSD__=$${MAJ}:" \
+		freebsd-aout.h.in >freebsd-aout.h ; \
 	${MV} freebsd.h freebsd.h.in ; \
 	${SED} -e "s:__FreeBSD__=[0-9]*:__FreeBSD__=$${MAJ}:" freebsd.h.in \
-		>freebsd.h ; \
-	${MV} freebsd-elf.h freebsd-elf.h.in ; \
-	${SED} -e "s:__FreeBSD__=[0-9]*:__FreeBSD__=$${MAJ}:" freebsd-elf.h.in \
-		>freebsd-elf.h)
+		>freebsd.h)
 
 post-install:
 	@${RM} -f ${PREFIX}/bin/c++
