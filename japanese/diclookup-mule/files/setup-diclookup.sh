@@ -3,14 +3,14 @@
 	--yesno "\n\
 You have to install appropreate startup code for diclookup-mule. \n\
 This setup script automatically it to: \n\
-PREFIX_DIR/lib/mule/site-lisp/site-start.el. \n\n\
+PREFIX_DIR/share/mule/19.34/site-lisp/site-start.el. \n\n\
 Are you sure?" -1 -1
 RETVAL=$?
 # RETVAL=0 for yes, 1 for no, 255 for ESC.
 
 if [ "X${RETVAL}" = "X0" ] ; then # answer is `Yes'. hack diclookup-mule.
 
-# Hack PREFIX_DIR/lib/mule/site-lisp/site-start.el
+# Hack PREFIX_DIR/share/mule/19.34/site-lisp/site-start.el
 rm -f /tmp/hack-site-start.el
 echo "(defun hack-site-start ()" >> /tmp/hack-site-start.el
 echo "  (interactive)" >> /tmp/hack-site-start.el
@@ -47,12 +47,12 @@ echo "      (insert \"; diclookup-mule\n\")" >> /tmp/hack-site-start.el
 echo "      (write-file fname))))" >> /tmp/hack-site-start.el
 
 mule -batch -q -l /tmp/hack-site-start.el -f hack-site-start \
-		PREFIX_DIR/lib/mule/site-lisp/site-start.el ;
+		PREFIX_DIR/share/mule/19.34/site-lisp/site-start.el ;
 rm -f /tmp/hack-site-start.el
 
 /usr/bin/dialog --title "ja-diclookup setup" --clear \
 	--msgbox "\n\
-original file is saved in PREFIX_DIR/lib/mule/site-lisp/site-start.el.bak" -1 -1
+original file is saved in PREFIX_DIR/share/mule/19.34/site-lisp/site-start.el.bak" -1 -1
 
 else
 /usr/bin/dialog --title "ja-diclookup setup" --clear \

@@ -29,14 +29,14 @@ One of mule (ja-*mule-2.3 or mule-2.3) is necessary for this program.
      |                                                                   |
      | You have to install appropreate startup code for diclookup-mule.  |
      | This setup script automatically it to:                            |
-     | /usr/local/lib/mule/site-lisp/site-start.el.                      |
+     | /usr/local/share/mule/19.34/site-lisp/site-start.el.              |
      |                                                                   |
      | Are you sure?                                                     |
      |-------------------------------------------------------------------|
      |                       [ Yes ]         No                          |
      |-------------------------------------------------------------------|
 	By answering [ Yes ], startup code is automatically added to
-	/usr/local/lib/mule/site-lisp/site-start.el
+	/usr/local/share/mule/19.34/site-lisp/site-start.el
 	(Deinstallation is possible by deinstall-diclookup.sh)
 
 2. Usage.
@@ -81,7 +81,7 @@ diclookup-mule は, mule の上で, 電子辞書を引けるようにするための
     
 I. 起動の準備.
 
-    ~/.emacs もしくは ${PREFIX}/lib/mule/site-lisp/site-start.el などの,
+    ~/.emacs もしくは ${PREFIX}/share/mule/19.34/site-lisp/site-start.el などの,
     初期設定ファイルに, diclookup-mule 起動のためのエントリを追加します.
     [${PREFIX}/lib/dserver/setup-diclookup.sh] を起動すると, 自動的に
    設定をsite-start.el に追加してくれます．
@@ -95,7 +95,7 @@ II. site-start.el の再編集.
 
    setup-diclookup.sh を起動すれば, 自動的に設定を追加してくれるのですが,
    一点だけ修正するところがあります.
-   ${PREFIX}/lib/mule/site-lisp/site-start.el の次の行です.
+   ${PREFIX}/share/mule/19.34/site-lisp/site-start.el の次の行です.
 
 --------
 (setq od-dictfile-list '("od-chujiten" "od-kojien" "od-readers" "od-crown")) ; diclookup-mule
