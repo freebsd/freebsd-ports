@@ -4236,6 +4236,7 @@ jc		ports/java/jc
 jcalendar	ports/java/jcalendar
 jcckit		ports/java/jcckit
 jce-aba		ports/java/jce-aba
+jcifs		ports/net/jcifs
 jclassinfo	ports/devel/jclassinfo
 jcommon		ports/java/jcommon
 jday		ports/astro/jday
