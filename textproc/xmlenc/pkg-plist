@@ -1,4 +1,5 @@
 share/doc/xmlenc/org/znerd/xmlenc/class-use/XMLEncoder.html
+share/doc/xmlenc/org/znerd/xmlenc/class-use/XMLEncoder.State.html
 share/doc/xmlenc/org/znerd/xmlenc/class-use/UnicodeXMLEncoder.html
 share/doc/xmlenc/org/znerd/xmlenc/class-use/SevenBitXMLEncoder.html
 share/doc/xmlenc/org/znerd/xmlenc/package-use.html
@@ -8,6 +9,7 @@ share/doc/xmlenc/org/znerd/xmlenc/package-frame.html
 share/doc/xmlenc/org/znerd/xmlenc/SevenBitXMLEncoder.html
 share/doc/xmlenc/org/znerd/xmlenc/UnicodeXMLEncoder.html
 share/doc/xmlenc/org/znerd/xmlenc/XMLEncoder.html
+share/doc/xmlenc/org/znerd/xmlenc/XMLEncoder.State.html
 share/doc/xmlenc/serialized-form.html
 share/doc/xmlenc/packages.html
 share/doc/xmlenc/package-list
