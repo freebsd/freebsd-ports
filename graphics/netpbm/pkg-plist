@@ -111,6 +111,7 @@ bin/pgmtexture
 bin/pgmtofs
 bin/pgmtolispm
 bin/pgmtopbm
+bin/pgmtopgm
 bin/pgmtoppm
 bin/pi1toppm
 bin/pi3topbm
@@ -194,6 +195,7 @@ bin/ppmquant
 bin/ppmquantall
 bin/ppmrainbow
 bin/ppmrelief
+bin/ppmrough
 bin/ppmshadow
 bin/ppmshift
 bin/ppmspread
@@ -216,9 +218,11 @@ bin/ppmtopi1
 bin/ppmtopict
 bin/ppmtopj
 bin/ppmtopjxl
+bin/ppmtoppm
 bin/ppmtopuzz
 bin/ppmtorgb3
 bin/ppmtosixel
+bin/ppmtoterm
 bin/ppmtouil
 bin/ppmtowinicon
 bin/ppmtoxpm
@@ -277,4 +281,5 @@ share/netpbm/palmcolor8.map
 share/netpbm/palmgray1.map
 share/netpbm/palmgray2.map
 share/netpbm/palmgray4.map
+share/netpbm/rgb.txt
 @dirrm share/netpbm

@@ -1,6 +1,6 @@
---- Makefile.common.orig	Fri Jun 14 11:55:58 2002
-+++ Makefile.common	Tue Jun 18 00:00:00 2002
-@@ -209,11 +209,11 @@
+--- Makefile.common.orig	Tue Sep  3 10:56:40 2002
++++ Makefile.common	Sat Oct  5 00:00:00 2002
+@@ -235,19 +235,19 @@
  INSTALLBIN_TARGETS = $(BINARIES:%=%_installbin) netpbm_installbin
  .PHONY: $(INSTALLBIN_TARGETS)
  $(INSTALLBIN_TARGETS): $(PKGDIR)/bin
@@ -13,4 +13,14 @@
 +	${BSD_INSTALL_SCRIPT} \
  	  $(SRCDIR)/$(SUBDIR)/$(@:%_installscript=%) $<
  
- .PHONY: install.man install.man1 install.man3 install.man5
+ .PHONY: install.data
+ install.data: $(DATAFILES:%=%_installdata) 
+ 
+ .PHONY: $(DATAFILES:%=%_installdata) 
+-$(DATAFILES:%=%_installdata): $(PKGDIR)/misc
+-	$(INSTALL) -c -m $(INSTALL_PERM_DATA) \
++$(DATAFILES:%=%_installdata): $(PKGDIR)/share/netpbm
++	${BSD_INSTALL_DATA} \
+ 	  $(SRCDIR)/$(SUBDIR)/$(@:%_installdata=%) $<
+ 
+ 
