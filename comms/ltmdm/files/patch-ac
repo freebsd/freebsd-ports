@@ -1,0 +1,39 @@
+--- ltmdm.sh.orig	Wed Mar 13 12:36:38 2002
++++ ltmdm.sh	Wed Mar 13 12:36:38 2002
+@@ -1,36 +0,0 @@
+-#!/bin/sh
+-
+-PREFIX=/usr/local
+-LTMDM_DEV_MAJOR=228
+-HAVEDEVFS=`mount | awk '{print $4}' | grep devfs | wc -l`
+-HAVEDEVFS=`echo $HAVEDEVFS`
+- 
+-case "$1" in
+-  restart)
+-    $0 stop
+-    sleep 2
+-    $0 start
+-    ;;
+-  stop)
+-    if [ $HAVEDEVFS -eq 0 ]; then
+-      rm -f /dev/cual0 /dev/cuail0 /dev/cuall0 /dev/ttyl0 /dev/ttyil0 /dev/ttyll0
+-    fi
+-    kldstat -n ltmdm 2>/dev/null >/dev/null && kldunload ltmdm
+-    ;;
+-  start)
+-    if [ $HAVEDEVFS -eq 0 ]; then
+-      rm -f /dev/cual0 /dev/cuail0 /dev/cuall0 /dev/ttyl0 /dev/ttyil0 /dev/ttyll0
+-      umask 7
+-      mknod /dev/cual0  c $LTMDM_DEV_MAJOR 128 uucp:dialer
+-      mknod /dev/cuail0  c $LTMDM_DEV_MAJOR 160 uucp:dialer
+-      mknod /dev/cuall0  c $LTMDM_DEV_MAJOR 192 uucp:dialer
+-      umask 77
+-      mknod /dev/ttyl0  c $LTMDM_DEV_MAJOR 0 root:wheel
+-      mknod /dev/ttyil0  c $LTMDM_DEV_MAJOR 32 root:wheel
+-      mknod /dev/ttyll0  c $LTMDM_DEV_MAJOR 64 root:wheel
+-    fi
+-
+-    kldstat -n ltmdm 2>/dev/null >/dev/null || kldload $PREFIX/share/ltmdm/ltmdm.ko
+-    echo -n ' ltmdm'
+-    ;;
+-esac
