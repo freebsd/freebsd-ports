@@ -50,6 +50,7 @@
     SUBDIR += rkive
     SUBDIR += slnr
     SUBDIR += slrn
+    SUBDIR += slrnface
     SUBDIR += slurp
     SUBDIR += suck
     SUBDIR += suck-cnews
