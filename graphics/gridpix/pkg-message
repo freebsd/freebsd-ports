@@ -1,0 +1,41 @@
+Here's an example to get started.  Let's assume you have an image "mypic.jpg".
+
+(1) djpeg -ppm mypic.jpg | gridpack -o /usr/local/www/data/gridpix/mypic.gpx
+
+(2) Make sure you have CGI scripts with symlinks enabled on your web server.
+    For Apache, you need something like
+
+ScriptAlias /cgi-bin/ "/usr/local/www/cgi-bin/"
+
+<Directory "/usr/local/www/cgi-bin">
+    AllowOverride None
+    Options ExecCGI FollowSymLinks
+    Order allow,deny
+    Allow from all
+</Directory>
+
+    in your /usr/local/etc/apache/httpd.conf file.
+
+(3) Use a URL like this to refer to the image:
+
+    http://hostname/cgi-bin/getimg2.cgi?mypic&720&576
+
+    720 and 576 are the width and height of the GridPix window.  The default
+    tile size is 144 by 144 so choose multiples of 144.
+
+(4) To pop up a new window, use something like:
+
+===
+<script language="JavaScript">
+<!--
+function gridpix(pic) {
+  window.open('/cgi-bin/getimg2.cgi?' + pic + '&720&576',
+    'gridpix',
+    'toolbar=no,status=yes,width=850,height=650,directories=no,scrollbars=no,location=no,resize=yes,menubar=no');
+}
+// -->
+</script>
+<a href="javascript:gridpix('mypic')">click here</a>
+===
+
+For more info, please read the documents in /usr/local/share/doc/gridpix.
