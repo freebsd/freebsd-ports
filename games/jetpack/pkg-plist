@@ -1,8 +1,8 @@
-@cd /usr/local
-@owner games
+@cd /usr/X11R6
 @mode 644
-man/man6/jetpack.6
-lib/jetpack/jetpack.lev000
+man/man6/jetpack.6.gz
+@owner games
+@mode
+lib/X11/jetpack
 @mode 4755
 bin/jetpack
-@exec chown games lib/jetpack
