@@ -1,13 +1,13 @@
 # New ports collection makefile for:	kinput2-wnn4
-# Version required:	2.0p4
+# Version required:	3.0
 # Date created:		19 Dec 1997
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1998/09/21 22:33:24 steve Exp $
+# $Id: Makefile,v 1.3 1999/05/01 04:01:42 taoka Exp $
 #
 
-DISTNAME=	kinput2-v2-fix4
-PKGNAME?=	ja-kinput2-wnn4-2.0.4
+DISTNAME=	kinput2-v3
+PKGNAME=	ja-kinput2${INPUT_METHOD}-3.0
 CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/x11/kinput2/ 
 
@@ -18,7 +18,6 @@ BUILD_DEPENDS=	${BUILD_INPUT_METHOD}
 
 PATCHDIR=	${.CURDIR}/../kinput2-wnn4/patches
 FILESDIR=	${.CURDIR}/../kinput2-wnn4/files
-NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
 
 .if !defined(CANNA) && !defined(SJ3) && !defined(WNN4) && !defined(WNN6)
@@ -30,22 +29,26 @@ WNN4=			yes
 # LIB_DEPENDS, etc.
 .if defined(CANNA)
 INPUT_METHOD+=		canna
-LIB_INPUT_METHOD+=	canna.1:${PORTSDIR}/japanese/Canna
-KINPUT2_DEF+=		-DUseCanna
+LIB_INPUT_METHOD+=	canna16.1:${PORTSDIR}/japanese/Canna
+KINPUT2_DEF+=		-DUseCanna -Dport_CANNASRC=${LOCALBASE}/include \
+			-Dport_CANNALIB="-L${LOCALBASE}/lib -lcanna16"
 .endif
 .if defined(SJ3)
 INPUT_METHOD+=		sj3
 BUILD_INPUT_METHOD+=	sj3serv:${PORTSDIR}/japanese/sj3
-KINPUT2_DEF+=		-DUseSj3
+KINPUT2_DEF+=		-DUseSj3 -Dport_SJ3SRC=${LOCALBASE}/include \
+			-Dport_SJ3LIB="-L${LOCALBASE}/lib -lsj3lib"
 .endif
 .if defined(WNN4)
 INPUT_METHOD+=		wnn4
-BUILD_INPUT_METHOD+=	${LOCALBASE}/bin/Wnn4/jserver:${PORTSDIR}/japanese/Wnn
-KINPUT2_DEF+=		-DUseWnn
+BUILD_INPUT_METHOD+=	${X11BASE}/lib/libwnn.a:${PORTSDIR}/japanese/Wnn
+KINPUT2_DEF+=		-DUseWnn -Dport_WNNINCDIR=$(X11BASE)/include/wnn \
+			-Dport_WNNLIB="-L$(X11BASE)/lib -lwnn -lcrypt"
 .elif defined(WNN6)
 INPUT_METHOD+=		wnn6
-BUILD_INPUT_METHOD+=	${LOCALBASE}/bin/Wnn4/jserver:${PORTSDIR}/japanese/Wnn
-KINPUT2_DEF+=		-DUseWnn -DWnnLibDir=${LOCALBASE}/lib/wnn6
+LIB_INPUT_METHOD+=	wnn6.1:${PORTSDIR}/japanese/Wnn6-lib
+KINPUT2_DEF+=		-DUseWnn -DUseWnn6 -Dport_WNNINCDIR=$(LOCALBASE)/include/wnn \
+			-Dport_WNNLIB="-L$(LOCALBASE)/lib -lwnn6 -lcrypt"
 .endif
 #
 # Make a value of INPUT_METHOD
@@ -55,6 +58,12 @@ INPUT_METHOD!=	echo ${INPUT_METHOD} | sed -e 's/^/-/' -e 's/ /+/g'
 #
 # Redefine $(IMAKE_CMD) with $(PORT_IMAKE_DEFINES) in ${WRKSRC}/Kinput2.conf
 MAKE_ENV+=	 PORT_IMAKE_DEFINES='${KINPUT2_DEF}'
+
+pre-configure:
+	if [ -f ${WRKSRC}/Kinput2.conf ]; then \
+		${MV} -f ${WRKSRC}/Kinput2.conf ${WRKSRC}/Kinput2.conf.org; \
+	fi
+	${CP} ${FILESDIR}/Kinput2.conf ${WRKSRC}/Kinput2.conf
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${XMKMF}

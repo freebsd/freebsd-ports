@@ -1,12 +1,11 @@
 # New ports collection makefile for:	kinput2-wnn6
-# Version required:	2.0p4
+# Version required:	3.0
 # Date created:		19 Dec 1997
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.2 1998/12/01 03:06:05 asami Exp $
+# $Id: Makefile,v 1.3 1999/05/01 04:01:46 taoka Exp $
 #
 
-PKGNAME=	ja-kinput2-wnn6-2.0.4
 WNN6=		yes
 
 MASTERDIR=	${.CURDIR}/../kinput2-wnn4/

@@ -1,12 +1,11 @@
 # New ports collection makefile for:	kinput2-canna
-# Version required:	2.0p4
+# Version required:	3.0
 # Date created:		19 Dec 1997
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.7 1998/12/01 03:05:59 asami Exp $
+# $Id: Makefile,v 1.8 1999/05/01 04:01:14 taoka Exp $
 #
 
-PKGNAME=	ja-kinput2-canna-2.0.4
 CANNA=		yes
 
 MASTERDIR=	${.CURDIR}/../kinput2-wnn4/
