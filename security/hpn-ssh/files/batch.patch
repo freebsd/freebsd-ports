@@ -1,6 +1,6 @@
---- Makefile.in.orig	Mon Nov 12 00:34:23 2001
-+++ Makefile.in	Sun Dec  2 08:01:27 2001
-@@ -176,7 +176,7 @@
+--- Makefile.in.orig	Tue Feb 26 20:24:22 2002
++++ Makefile.in	Fri Mar  8 22:02:48 2002
+@@ -183,7 +183,7 @@
  	autoreconf
  	(cd scard && $(MAKE) -f Makefile.in distprep)
  
@@ -9,10 +9,10 @@
  install-nokeys: $(CONFIGFILES) $(MANPAGES) $(TARGETS) install-files
  
  scard-install:
-@@ -213,37 +213,6 @@
+@@ -222,37 +222,6 @@
+ 	ln -s ssh$(EXEEXT) $(DESTDIR)$(bindir)/slogin
  	-rm -f $(DESTDIR)$(mandir)/$(mansubdir)1/slogin.1
  	ln -s ssh.1 $(DESTDIR)$(mandir)/$(mansubdir)1/slogin.1
- 	#@FILEPRIV@ -f dev,filesys,driver $(DESTDIR)$(bindir)/ssh $(DESTDIR)$(bindir)/slogin
 -	if [ ! -d $(DESTDIR)$(sysconfdir) ]; then \
 -		$(srcdir)/mkinstalldirs $(DESTDIR)$(sysconfdir); \
 -	fi
