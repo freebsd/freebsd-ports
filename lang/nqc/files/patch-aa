@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Oct 22 11:26:06 2000
-+++ Makefile	Thu Nov  9 01:29:29 2000
+--- Makefile.orig	Sun Apr 15 17:56:31 2001
++++ Makefile	Thu May  3 22:43:42 2001
 @@ -28,14 +28,14 @@
  #
  # Pick your C++ compiler. 
@@ -18,7 +18,14 @@
  
  #
  # Define the FLEX processor
-@@ -47,24 +47,25 @@
+@@ -45,30 +45,30 @@
+ 
+ # Link in any necessary C++ libraries
+ #
+-# LIBS = -lstdc++
++LIBS = -lstdc++
+ 
+ #
  # Use this to define the default device driver name
  # for serial port connections.
  #
@@ -40,7 +47,6 @@
 -MKDIR=mkdir
 -MV=mv -f
 -RM=rm -f
-+LD?=$(LD)
 +CP?=cp -f
 +MKDIR?=mkdir
 +MV?=mv -f
@@ -53,17 +59,16 @@
  
  OBJ = $(NQCOBJ) $(COBJ) $(RCXOBJ) $(POBJ)
  
-@@ -106,10 +107,10 @@
+@@ -111,10 +111,10 @@
  	$(MKDIR) bin
  
  bin/nqc : compiler/parse.cpp $(OBJ)
--	$(LD) -o $@ $(OBJ)
-+	$(CC) -o $@ $(OBJ) -lstdc++
+-	$(LD) -o $@ $(OBJ) $(LIBS)
++	$(CC) -o $@ $(OBJ) $(LIBS)
  
--bin/mkdata : mkdata/mkdata.cpp nqc/SRecord.cpp
+ bin/mkdata : mkdata/mkdata.cpp nqc/SRecord.cpp
 -	$(LD) -o bin/mkdata -Inqc/ -Iplatform/ mkdata/mkdata.cpp nqc/SRecord.cpp
-+bin/mkdata : mkdata/mkdata.o nqc/SRecord.o
-+	$(CC) -o bin/mkdata mkdata/mkdata.o nqc/SRecord.o -lstdc++
++	$(CC) -o bin/mkdata -Inqc/ -Iplatform/ mkdata/mkdata.cpp nqc/SRecord.cpp
  
  #
  # clean up stuff
