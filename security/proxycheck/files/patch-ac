@@ -1,0 +1,11 @@
+--- proxycheck.1.orig	Fri Jun 13 03:07:05 2003
++++ proxycheck.1	Fri Jun 13 03:07:42 2003
+@@ -72,7 +72,7 @@
+ (username, password, recipient address, cookie server, ...) are
+ expected to be found in environment variables.  Run \fBproxycheck\fR
+ with \fB\-h\fR option to see a list of recognized variables and
+-their default values.  By default, \fBproxycheck\fR will anonimously
++their default values.  By default, \fBproxycheck\fR will anonymously
+ submit all found proxies to unconfirmed.dsbl.org (which isn't very
+ useful).  For trusted DSBL user, at least DSBL_USER and DSBL_PASS
+ variables should be set properly.

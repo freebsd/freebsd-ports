@@ -1,0 +1,22 @@
+--- Makefile.orig	Sun May 11 10:47:38 2003
++++ Makefile	Fri Jun 13 03:01:04 2003
+@@ -2,15 +2,15 @@
+ # Makefile for proxycheck.  GPL
+ 
+-CC = cc
+-CFLAGS = -O
++CC ?= cc
++CFLAGS += -O
+ DEFS = -D_GNU_SOURCE
+ LD = $(CC)
+-LDFLAGS =
++# LDFLAGS =
+ 
+ # For Solaris, we need -lsocket -lnsl and -lresolv for inet_aton
+-RSOCKLIBS = `[ -f /usr/lib/libsocket.so ] && echo -lresolv -lsocket -lnsl || :`
+-SOCKLIBS = `[ -f /usr/lib/libsocket.so ] && echo -lsocket -lnsl || :`
++# RSOCKLIBS = `[ -f /usr/lib/libsocket.so ] && echo -lresolv -lsocket -lnsl || :`
++# SOCKLIBS = `[ -f /usr/lib/libsocket.so ] && echo -lsocket -lnsl || :`
+ 
+ USE_CFLAGS = $(CFLAGS) $(DEFS)
+ 
