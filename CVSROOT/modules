@@ -8074,6 +8074,7 @@ prelude-manager	ports/security/prelude-manager
 prelude-nids	ports/security/prelude-nids
 premail		ports/mail/premail
 premake		ports/devel/premake
+preps-gui	ports/devel/preps-gui
 preview-latex	ports/print/preview-latex
 primer3		ports/biology/primer3
 print_pmw	ports/print/pmw
