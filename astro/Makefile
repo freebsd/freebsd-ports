@@ -51,6 +51,7 @@
     SUBDIR += saoimage
     SUBDIR += sattrack
     SUBDIR += setiathome
+    SUBDIR += sky2000
     SUBDIR += spacechart
     SUBDIR += squeuer
     SUBDIR += sscalc
