@@ -10,6 +10,7 @@
     SUBDIR += SpecTcl
     SUBDIR += a2dev
     SUBDIR += adabroker
+    SUBDIR += ald
     SUBDIR += allegro
     SUBDIR += amulet
     SUBDIR += anjuta
