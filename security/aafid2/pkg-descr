@@ -1,0 +1,10 @@
+Autonomous Agents For Intrusion Detection
+
+AAFID(tm) is a distributed monitoring and intrusion detection system
+that employs small stand-alone programs (Agents) to perform monitoring
+functions in the hosts of a network. AAFID uses a hierarchical
+structure to collect the information produced by each agent, by each
+host, and by each set of hosts, to be able to detect suspicious
+activity.
+
+WWW: http://www.cerias.purdue.edu/projects/aafid.html

@@ -1,0 +1,190 @@
+lib/aafid2/aas/00README
+lib/aafid2/aas/ARPWatcher.aas
+lib/aafid2/aas/CPUload.aas
+lib/aafid2/aas/CheckFilePermissions.aas
+lib/aafid2/aas/CheckInet.aas
+lib/aafid2/aas/CheckInetPeriodic.aas
+lib/aafid2/aas/CheckRhosts.aas
+lib/aafid2/aas/CmdSequence.aas
+lib/aafid2/aas/ConnSameHost.aas
+lib/aafid2/aas/DiskSpace.aas
+lib/aafid2/aas/FTP.aas
+lib/aafid2/aas/GroupFilesChecker.aas
+lib/aafid2/aas/LFS.aas
+lib/aafid2/aas/Makefile
+lib/aafid2/aas/PasswdFilesChecker.aas
+lib/aafid2/aas/RootShells.aas
+lib/aafid2/aas/SU.aas
+lib/aafid2/aas/SYNflood.aas
+lib/aafid2/aas/SpaceTmp.aas
+lib/aafid2/aas/WeirdConn.aas
+lib/aafid2/aas/test.aas
+lib/aafid2/00README
+lib/aafid2/ANNOUNCE
+lib/aafid2/COPYRIGHT
+lib/aafid2/CREDITS
+lib/aafid2/FEEDBACK
+lib/aafid2/HISTORY
+lib/aafid2/INSTALL
+lib/aafid2/MAILLIST
+lib/aafid2/PROBLEMS
+lib/aafid2/SIGNATURE
+lib/aafid2/classes/Log/Topics.pm
+lib/aafid2/classes/Makefile
+lib/aafid2/classes/Resources.pm
+lib/aafid2/classes/AAFID/GUI/NeXTterm.xpm
+lib/aafid2/classes/AAFID/GUI/aafid2.conf
+lib/aafid2/classes/AAFID/GUI/aafid2.pm
+lib/aafid2/classes/AAFID/GUI/aafid2gui
+lib/aafid2/classes/AAFID/GUI/agents1.conf
+lib/aafid2/classes/AAFID/GUI/agents2.conf
+lib/aafid2/classes/AAFID/GUI/agents3.conf
+lib/aafid2/classes/AAFID/GUI/agents4.conf
+lib/aafid2/classes/AAFID/GUI/hosts1.conf
+lib/aafid2/classes/AAFID/GUI/hosts2.conf
+lib/aafid2/classes/AAFID/GUI/killstarter
+lib/aafid2/classes/AAFID/GUI/morehosts.conf
+lib/aafid2/classes/AAFID/GUI/sequence.txt
+lib/aafid2/classes/AAFID/Agent.pm
+lib/aafid2/classes/AAFID/Comm.pm
+lib/aafid2/classes/AAFID/Common.pm
+lib/aafid2/classes/AAFID/Config.pm
+lib/aafid2/classes/AAFID/Constants.pm
+lib/aafid2/classes/AAFID/ControllerEntity.pm
+lib/aafid2/classes/AAFID/Entity.pm
+lib/aafid2/classes/AAFID/Filter.pm
+lib/aafid2/classes/AAFID/Log.pm
+lib/aafid2/classes/AAFID/Makefile
+lib/aafid2/classes/AAFID/Message.pm
+lib/aafid2/classes/AAFID/Monitor.pm
+lib/aafid2/classes/AAFID/PlainTransceiver.pm
+lib/aafid2/classes/AAFID/Starter.pm
+lib/aafid2/classes/AAFID/System.pm
+lib/aafid2/classes/AAFID/makeagent.man
+lib/aafid2/classes/AAFID/makeagent.nw
+lib/aafid2/classes/AAFID/makeagent.pl
+lib/aafid2/classes/AAFID/template_version.pl
+lib/aafid2/classes/Agents/00IDEAS
+lib/aafid2/classes/Agents/00README
+lib/aafid2/classes/Agents/ARPWatcher.pm
+lib/aafid2/classes/Agents/CPUload.pm
+lib/aafid2/classes/Agents/CheckFilePermissions.pm
+lib/aafid2/classes/Agents/CheckInet.pm
+lib/aafid2/classes/Agents/CheckInetPeriodic.pm
+lib/aafid2/classes/Agents/CheckNFSserver.pm
+lib/aafid2/classes/Agents/CheckRhosts.pm
+lib/aafid2/classes/Agents/CmdSequence.pm
+lib/aafid2/classes/Agents/ConnSameHost.pm
+lib/aafid2/classes/Agents/DiskSpace.pm
+lib/aafid2/classes/Agents/FTP.pm
+lib/aafid2/classes/Agents/GroupFilesChecker.pm
+lib/aafid2/classes/Agents/IllegalIPPackets.pm
+lib/aafid2/classes/Agents/LFS.pm
+lib/aafid2/classes/Agents/Land.pm
+lib/aafid2/classes/Agents/LoginFailures.pm
+lib/aafid2/classes/Agents/PasswdFilesChecker.pm
+lib/aafid2/classes/Agents/SU.pm
+lib/aafid2/classes/Agents/SYNFloodAsync.pm
+lib/aafid2/classes/Agents/SYNflood.pm
+lib/aafid2/classes/Agents/SpaceTmp.pm
+lib/aafid2/classes/Agents/WeirdConn.pm
+lib/aafid2/classes/Agents/test.pm
+lib/aafid2/classes/Comm/Conn.pm
+lib/aafid2/classes/Comm/Reactor.pm
+lib/aafid2/classes/Comm/Tags.pm
+lib/aafid2/classes/Comm/Timer.pm
+lib/aafid2/classes/Filter/00README
+lib/aafid2/classes/Filter/ActiveSockets.pm
+lib/aafid2/classes/Filter/CPUload.pm
+lib/aafid2/classes/Filter/FileSystems.pm
+lib/aafid2/classes/Filter/Fproc.pm
+lib/aafid2/classes/Filter/Ftcpw.pm
+lib/aafid2/classes/Filter/LibpcapFilter.pm
+lib/aafid2/classes/Util/FiniteQueue.pm
+lib/aafid2/classes/Util/NumQueue.pm
+lib/aafid2/config/00README
+lib/aafid2/config/AAFID
+lib/aafid2/config/Agents
+lib/aafid2/config/CheckInet
+lib/aafid2/config/Filter
+lib/aafid2/config/Monitor
+lib/aafid2/config/basm/Ftcpw
+lib/aafid2/config/fiji/00README
+lib/aafid2/config/fiji/AAFID
+lib/aafid2/config/fiji/CheckInet
+lib/aafid2/doc/00README
+lib/aafid2/doc/code/00README
+lib/aafid2/doc/code/Agent.ps
+lib/aafid2/doc/code/Comm.ps
+lib/aafid2/doc/code/Common.ps
+lib/aafid2/doc/code/Config.ps
+lib/aafid2/doc/code/Conn.ps
+lib/aafid2/doc/code/Constants.ps
+lib/aafid2/doc/code/ControllerEntity.ps
+lib/aafid2/doc/code/Entity.ps
+lib/aafid2/doc/code/Filter.ps
+lib/aafid2/doc/code/FiniteQueue.ps
+lib/aafid2/doc/code/Log.ps
+lib/aafid2/doc/code/Message.ps
+lib/aafid2/doc/code/Monitor.ps
+lib/aafid2/doc/code/NumQueue.ps
+lib/aafid2/doc/code/PlainTransceiver.ps
+lib/aafid2/doc/code/RMod.ps
+lib/aafid2/doc/code/Reactor.ps
+lib/aafid2/doc/code/Starter.ps
+lib/aafid2/doc/code/System.ps
+lib/aafid2/doc/code/Tags.ps
+lib/aafid2/doc/code/Timer.ps
+lib/aafid2/doc/notes/Attack_and_agent_ideas.txt
+lib/aafid2/doc/notes/Config.txt
+lib/aafid2/doc/notes/Directory_hierarchy.txt
+lib/aafid2/doc/notes/Filters.txt
+lib/aafid2/doc/notes/How_to_run.txt
+lib/aafid2/doc/notes/How_to_use_GUI.txt
+lib/aafid2/doc/notes/How_to_use_filters.txt
+lib/aafid2/doc/notes/How_to_write_filters.txt
+lib/aafid2/doc/notes/Introspection.txt
+lib/aafid2/doc/notes/Reduction_Modules.txt
+lib/aafid2/doc/papers/00README
+lib/aafid2/doc/papers/architecture_report.ps
+lib/aafid2/doc/papers/implementation_report_draft.ps
+lib/aafid2/doc/papers/users_guide_draft.ps
+lib/aafid2/lib/pixmaps/NeXTterm.xpm
+lib/aafid2/misc/Resources.patch
+lib/aafid2/misc/Topics.patch
+lib/aafid2/utils/00README
+lib/aafid2/utils/aafid.vim
+@exec mkdir -p %D/lib/aafid2/bin
+@exec mkdir -p %D/lib/aafid2/man/man1
+@exec ln -s ../classes/AAFID/makeagent.pl %D/lib/aafid2/bin/makeagent.pl
+@exec ln -s makeagent.pl %D/lib/aafid2/bin/makeagent
+@exec ln -s ../classes/AAFID/GUI/aafid2gui %D/lib/aafid2/bin/aafid2gui
+@exec ln -s ../../classes/AAFID/makeagent.man %D/lib/aafid2/man/man1/makeagent.1
+@unexec rm -f %D/lib/aafid2/bin/makeagent.pl
+@unexec rm -f %D/lib/aafid2/bin/makeagent
+@unexec rm -f %D/lib/aafid2/bin/aafid2gui
+@unexec rm -f %D/lib/aafid2/man/man1/makeagent.1
+@dirrm lib/aafid2/utils
+@dirrm lib/aafid2/misc
+@dirrm lib/aafid2/man/man1
+@dirrm lib/aafid2/man
+@dirrm lib/aafid2/lib/pixmaps
+@dirrm lib/aafid2/lib
+@dirrm lib/aafid2/doc/papers
+@dirrm lib/aafid2/doc/notes
+@dirrm lib/aafid2/doc/code
+@dirrm lib/aafid2/doc
+@dirrm lib/aafid2/config/fiji
+@dirrm lib/aafid2/config/basm
+@dirrm lib/aafid2/config
+@dirrm lib/aafid2/classes/Util
+@dirrm lib/aafid2/classes/Log
+@dirrm lib/aafid2/classes/Filter
+@dirrm lib/aafid2/classes/Comm
+@dirrm lib/aafid2/classes/Agents
+@dirrm lib/aafid2/classes/AAFID/GUI
+@dirrm lib/aafid2/classes/AAFID
+@dirrm lib/aafid2/classes
+@dirrm lib/aafid2/bin
+@dirrm lib/aafid2/aas
+@dirrm lib/aafid2
