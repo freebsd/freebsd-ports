@@ -24,6 +24,7 @@
     SUBDIR += pcemu
     SUBDIR += prodosemu
     SUBDIR += quasi88
+    SUBDIR += rtc
     SUBDIR += sim
     SUBDIR += sim6811
     SUBDIR += snes9x
