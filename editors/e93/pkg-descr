@@ -1,4 +1,4 @@
-This is e93-1.0.3rX, a nifty little editor based on Tcl/Tk.
+This is e93-1.1.4rX, a nifty little editor based on Tcl/Tk.
 
 Note that this requires a .e93rc file in the user's home directory.
 You can find this file in /usr/X11R6/lib/e93.
