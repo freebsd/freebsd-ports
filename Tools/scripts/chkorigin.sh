@@ -46,7 +46,26 @@
 #   [env PORTSDIR=/usr/ports] chkorigin.sh [category ...]
 #
 
-echo "checking categories for ports with a wrong PKGORIGIN"
+opt_verbose=false
+opt_quiet=false
+
+while getopts vq opt; do
+        case "$opt" in
+        q)
+                opt_quiet=true;;
+        v)
+                opt_verbose=true;;
+        ?)
+                echo "Usage: $0 [-qv] [category ...]"
+                exit 2;;
+        esac
+done
+
+shift $((${OPTIND}-1))
+
+rc=0
+
+$opt_quiet || echo "checking categories for ports with a wrong PKGORIGIN"
 
 cd "${PORTSDIR:=/usr/ports}"
 if [ $# -gt 0 ]; then
@@ -66,7 +85,7 @@ for category in ${CATEGORIES}; do
         packages) continue ;;
     esac
 
-    echo "==> ${category}"
+    $opt_quiet || echo "==> ${category}"
 
     cd "${PORTSDIR}/${category}"
     PORTS=`echo *`
@@ -77,11 +96,17 @@ for category in ${CATEGORIES}; do
             CVS) continue ;;
             pkg) continue ;;
         esac
+
+        $opt_verbose && echo "==> ${category}/${port}"
+
         cd "${PORTSDIR}/${category}/${port}"
         PKGORIGIN=`/usr/bin/make -VPKGORIGIN 2>/dev/null || true"`
 
         if [ "${PKGORIGIN}" != "${category}/${port}" ]; then
             echo "port \"${category}/${port}\" has the wrong PKGORIGIN \"${PKGORIGIN}\""
+            rc=1
         fi
     done
 done
+
+return ${rc}
