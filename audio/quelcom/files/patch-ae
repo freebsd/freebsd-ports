@@ -1,0 +1,10 @@
+--- src/qmp3info.cc.orig	Tue Dec 26 18:55:29 2000
++++ src/qmp3info.cc		Wed Dec 27 13:23:36 2000
+@@ -2,6 +2,7 @@
+ # include "qmp3.hh"
+ # include "qexception.hh"
+ 
++typedef unsigned long ulong;
+ 
+ void usage () {
+ 

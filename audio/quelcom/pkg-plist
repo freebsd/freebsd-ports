@@ -1,0 +1,8 @@
+bin/qmp3check
+bin/qwavsilence
+bin/qwavinfo
+bin/qwavjoin
+bin/qwavcut
+bin/qmp3info
+bin/qmp3join
+bin/qmp3cut

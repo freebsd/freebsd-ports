@@ -1,0 +1,9 @@
+quelcom is a set of command-line .wav and .mp3 tools including
+utilities to show information about a file, to join multiple files
+into one, to extract and/or delete fragments of a file, to detect
+silence sequences in wav files, and to check and clean mp3 streams.
+
+WWW: http://www.etse.urv.es/~dmanye/quelcom/quelcom.html
+
+- George Reid
+greid@ukug.uk.freebsd.org

@@ -1,0 +1,38 @@
+--- makefile.orig	Tue Dec 26 18:55:29 2000
++++ makefile	Wed Dec 27 13:55:29 2000
+@@ -3,17 +3,18 @@
+ #
+ 
+ # change these variables to fit your needs
+-MANDIR=/usr/local/man
++MANDIR=${PREFIX}/man
+ #BINDIR=/usr/local/bin
+ # you should change BINDIR in src/makefile
+ 
+ VERSION=0.2.0
++INSTALL_P=/usr/bin/install
+ 
+ all:
+-	cd src; make
++	cd src; ${MAKE}
+ 
+ clean:
+-	cd src; make clean
++	cd src; ${MAKE} clean
+ 
+ html: man/*
+ 	mkdir -p ./html
+@@ -24,11 +25,10 @@
+ 	done
+ 
+ install: all
+-	cd src; make install
++	cd src; ${MAKE} install
+ 	for i in man/*; \
+ 	do \
+-	  mkdir -p $(MANDIR)/man1; \
+-	  cp $$i $(MANDIR)/man1; \
++	$(INSTALL_P) -c -o root -g wheel -m 444 $$i ${PREFIX}/man/man1; \
+ 	done
+ 
+ package: html

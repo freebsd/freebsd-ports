@@ -1,0 +1,10 @@
+--- src/qmp3.cc.orig	Tue Dec 26 18:55:29 2000
++++ src/qmp3.cc		Wed Dec 27 13:24:32 2000
+@@ -346,6 +346,7 @@
+ 
+   qfile::cut(offset_first,offset_last+length_last-1);
+  // remapejar
++  return 0;
+ }
+ 
+ // provar donant l'@ de mem=F2ria...

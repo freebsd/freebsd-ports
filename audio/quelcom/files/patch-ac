@@ -1,0 +1,10 @@
+--- src/qmisc.cc.orig	Tue Dec 26 18:55:29 2000
++++ src/qmisc.cc	Wed Dec 27 13:21:23 2000
+@@ -1,6 +1,6 @@
+ # include <string>
+ # include <stdio.h>
+-
++# include "qmisc.hh"
+ 
+ string uint2string (uint ui) {
+ 
