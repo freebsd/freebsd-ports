@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openssh
-PORTVERSION=	3.2.3
-PORTREVISION=	1
+PORTVERSION=	3.3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/ \
 		ftp://ftp.usa.openbsd.org/pub/OpenBSD/OpenSSH/ \
@@ -22,7 +21,8 @@ MAINTAINER=	dinoex@FreeBSD.org
 
 MAN1=		scp.1 slogin.1 ssh-add.1 ssh-agent.1 ssh-keygen.1 ssh.1 \
 		ssh-keyscan.1 sftp.1
-MAN8=		sshd.8 sftp-server.8
+MAN5=		ssh_config.5 sshd_config.5
+MAN8=		sshd.8 sftp-server.8 ssh-keysign.8
 MANCOMPRESSED=	yes
 MODIFY=		ssh.h sshd_config sshd.sh pathnames.h
 FIXME=		lib/Makefile scp/Makefile sftp/Makefile sftp-server/Makefile \
