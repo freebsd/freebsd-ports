@@ -509,6 +509,7 @@
     SUBDIR += ruby-pcap
     SUBDIR += ruby-radius
     SUBDIR += ruby-romp
+    SUBDIR += ruby-spread
     SUBDIR += ruby-snmp
     SUBDIR += ruby-soap
     SUBDIR += ruby-tcpsocketpipe
