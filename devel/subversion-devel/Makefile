@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.3
 CATEGORIES=	devel
 MASTER_SITES=	http://subversion.tigris.org/tarballs/
 
@@ -16,7 +16,6 @@ LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
 
 INSTALLS_SHLIB=	yes
 
-USE_SIZE=	yes
 USE_BZIP2=	yes
 USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
@@ -58,6 +57,13 @@ PLIST_SUB+=		WITHOUT_NEON=""
 .else
 CONFIGURE_ARGS+=	--without-neon
 PLIST_SUB+=		WITHOUT_NEON="@comment "
+.endif
+
+.if defined(WITHOUT_BDB)
+CONFIGURE_ARGS+=	--without-berkeley-db
+PLIST_SUB+=		WITHOUT_BDB="@comment "
+.else
+PLIST_SUB+=		WITHOUT_BDB=""
 .endif
 
 .if defined(WITH_PERL)
@@ -108,7 +114,7 @@ DEPENDS_ARGS+=		SWIG_LANGUAGES='${SWIG_BINDINGS}'
 CONFIGURE_ARGS+=	--with-swig=${LOCALBASE} \
 			--enable-swig-bindings=${SWIG_BINDINGS:Q:S/ /,/g:S/\\//g}
 .else
-CONFIGURE_ARGS+=	--without-swig --disable-swig-bindings 
+CONFIGURE_ARGS+=	--without-swig --disable-swig-bindings
 .endif
 
 .if defined(WITH_MOD_DAV_SVN)
@@ -126,19 +132,26 @@ SVNGROUP?=	svn
 APACHE2_PORT?=	www/apache2
 BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE2_PORT}
 RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE2_PORT}
-DEPENDS_ARGS+=	WITH_BERKELEYDB=db4
 APR_APU_DIR=	${LOCALBASE}/lib/apache2
 APR_CONFIG=	apr-config
 APU_CONFIG=	apu-config
 APR_PORT=	www/apache2
+.if !defined(WITHOUT_BDB)
+DEPENDS_ARGS+=	WITH_BERKELEYDB=db4
 OPT_NAME=	WITH_BERKELEYDB=(db4|db41|db42)
+.endif
 .else
-LIB_DEPENDS+=	apr-1.0:${PORTSDIR}/devel/apr-svn
 APR_APU_DIR=	${LOCALBASE}/bin
 APR_CONFIG=	apr-1-config
 APU_CONFIG=	apu-1-config
-APR_PORT=	devel/apr
+.if !defined(WITHOUT_BDB)
+LIB_DEPENDS+=	apr-1.0:${PORTSDIR}/devel/apr-svn
+APR_PORT=	devel/apr-svn
 OPT_NAME=	APR_UTIL_WITH_BERKELEY_DB=yes
+.else
+LIB_DEPENDS+=	apr-1.0:${PORTSDIR}/devel/apr
+APR_PORT=	devel/apr
+.endif
 .endif
 CONFIGURE_ARGS+=--with-apr=${APR_APU_DIR}/${APR_CONFIG} \
 		--with-apr-util=${APR_APU_DIR}/${APU_CONFIG}
@@ -150,10 +163,8 @@ EXTRA_PATCHES=	${PATCHDIR}/build-outputs.mk.patch
 PLIST_SUB+=	SVNSERVE_WRAPPER="@comment "
 .endif
 
-.if defined(WITH_BOOK_HTML)
+.if !defined(NOPORTDOCS) && defined(WITH_BOOK)
 PORTDOCS+=	book
-BUILD_DEPENDS+=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:${PORTSDIR}/textproc/docbook-xsl \
-		${LOCALBASE}/bin/xsltproc:${PORTSDIR}/textproc/libxslt
 .endif
 
 SCRIPTS=
@@ -167,6 +178,13 @@ pre-extract:
 .else
 	@${ECHO_MSG} "WebDAV/Delta-V repository access module enabled."
 	@${ECHO_MSG} "To disable it define WITHOUT_NEON"
+.endif
+	@${ECHO_MSG} ""
+.if defined(WITHOUT_BDB)
+	@${ECHO_MSG} "db4 repository backend disabled."
+.else
+	@${ECHO_MSG} "db4 repository backend enabled."
+	@${ECHO_MSG} "To disable it define WITHOUT_DBD"
 .endif
 	@${ECHO_MSG} ""
 .if defined(WITH_MAINTAINER_DEBUG)
@@ -237,11 +255,10 @@ pre-extract:
 	@${ECHO_MSG} ""
 .endif
 	@${ECHO_MSG} ""
-.if defined(WITH_BOOK_HTML)
-	@${ECHO_MSG} "Subversion Book (HTML) enabled."
+.if !defined(NOPORTDOCS) && defined(WITH_BOOK)
+	@${ECHO_MSG} "Subversion Book will be installed."
 .else
-	@${ECHO_MSG} "You can install the Subversion Book (HTML) by defining"
-	@${ECHO_MSG} "WITH_BOOK_HTML."
+	@${ECHO_MSG} "You can install the Subversion Book by defining WITH_BOOK."
 .endif
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "May useful scripts will be installed into ${PREFIX}/share/subversion"
@@ -268,13 +285,18 @@ pre-configure:
 		${ECHO_MSG} "" ; \
 		${FALSE} ; \
 	fi
+.if !defined(WITHOUT_BDB)
 	@if [ `${APR_APU_DIR}/${APU_CONFIG} --db-version` != "4" ] ; then \
 		${ECHO_MSG} "" ; \
  		${ECHO_MSG} 'You should build `'"${APR_PORT}' with db4 support to use subversion with it." ; \
  		${ECHO_MSG} 'Please rebuild `'"${APR_PORT}' with option "'`'"${OPT_NAME}' and try again." ; \
 		${ECHO_MSG} "" ; \
+		${ECHO_MSG} "Or you can disable db4 support. Only 'fs' repository backend will be availible." ; \
+		${ECHO_MSG} "To disable db4 support, define WITHOUT_BDB." ; \
+		${ECHO_MSG} "" ; \
 		${FALSE} ; \
 	fi
+.endif
 
 post-build:
 .if defined(WITH_PERL)
@@ -290,12 +312,6 @@ post-build:
 #	cd ${WRKSRC} ; \
 #	  ${MAKE} javahl
 #.endif
-.if defined(WITH_BOOK_HTML)
-	cd ${WRKSRC}/doc/book/tools/ ; \
-	  ${LN} -s ${PREFIX}/share/xsl/docbook xsl
-	cd ${WRKSRC}/doc/book ; \
-	  ${MAKE} all-html
-.endif
 
 .if defined(WITH_MOD_DAV_SVN)
 pre-install:
@@ -311,9 +327,12 @@ post-install:
 	for f in ${TXT_DOCS}; do \
 	  ${INSTALL_DATA} ${WRKSRC}/$$f ${DOCSDIR}; \
 	done
-.if defined(WITH_BOOK_HTML)
-	cd ${WRKSRC}/doc/book ; \
-	  ${MAKE} install-book-html install-book-html-chunk INSTALL_DIR=${DOCSDIR}
+.if defined(WITH_BOOK)
+	@${MKDIR} ${DOCSDIR}/book/images
+	cd ${WRKSRC}/doc/book/book ; \
+	  ${INSTALL_DATA} svn-book.html svn-book.pdf ${DOCSDIR}/book
+	cd ${WRKSRC}/doc/book/book/images ; \
+	  ${INSTALL_DATA} *.png ${DOCSDIR}/book/images
 .endif
 .endif
 .if defined(WITH_PERL)

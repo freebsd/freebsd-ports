@@ -1,4 +1,6 @@
 #!/bin/sh
+#
+# $FreeBSD$
 
 SVNSERVE=$(dirname $(realpath $0))/svnserve.bin
 

@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/svn
 bin/svnadmin
 bin/svndumpfilter
@@ -52,9 +53,9 @@ lib/libsvn_diff-1.so.0
 lib/libsvn_fs-1.a
 lib/libsvn_fs-1.so
 lib/libsvn_fs-1.so.0
-lib/libsvn_fs_base-1.a
-lib/libsvn_fs_base-1.so
-lib/libsvn_fs_base-1.so.0
+%%WITHOUT_BDB%%lib/libsvn_fs_base-1.a
+%%WITHOUT_BDB%%lib/libsvn_fs_base-1.so
+%%WITHOUT_BDB%%lib/libsvn_fs_base-1.so.0
 lib/libsvn_fs_fs-1.a
 lib/libsvn_fs_fs-1.so
 lib/libsvn_fs_fs-1.so.0
@@ -88,68 +89,68 @@ lib/libsvn_wc-1.so.0
 %%WITHOUT_GETTEXT%%share/locale/sv/LC_MESSAGES/subversion.mo
 %%WITHOUT_GETTEXT%%share/locale/zh_CN/LC_MESSAGES/subversion.mo
 %%WITHOUT_GETTEXT%%share/locale/zh_TW/LC_MESSAGES/subversion.mo
-share/subversion/backup/hot-backup.py
-share/subversion/client-side/bash_completion
-share/subversion/client-side/bash_completion_test
-share/subversion/client-side/server-vsn.py
-share/subversion/client-side/showchange.pl
-share/subversion/cvs2svn/README
-share/subversion/dev/check-license.py
-share/subversion/dev/datecheck.py
-share/subversion/dev/find-textfiles.sh
-share/subversion/dev/gcov.patch
-share/subversion/dev/gnuify-changelog.pl
-share/subversion/dev/iz/defect.dem
-share/subversion/dev/iz/ff2csv.command
-share/subversion/dev/iz/ff2csv.py
-share/subversion/dev/iz/find-fix.py
-share/subversion/dev/iz/run-queries.sh
-share/subversion/dev/normalize-dump.py
-share/subversion/dev/prebuild-cleanup.sh
-share/subversion/dev/random-commits.py
-share/subversion/dev/scramble-tree.py
-share/subversion/dev/stress.pl
-share/subversion/dev/svn-dev.el
-share/subversion/dev/svn-dev.vim
-share/subversion/dev/trails.py
-share/subversion/dev/verify-history.py
-share/subversion/examples/blame.py
-share/subversion/examples/check-modified.py
-share/subversion/examples/dumpprops.py
-share/subversion/examples/getfile.py
-share/subversion/examples/geturl.py
-share/subversion/examples/minimal_client.c
-share/subversion/examples/putfile.py
-share/subversion/examples/revplist.py
-share/subversion/examples/svnlook.py
-share/subversion/examples/svnserve-sgid.c
-share/subversion/examples/svnshell.py
-share/subversion/hook-scripts/commit-access-control.cfg.example
-share/subversion/hook-scripts/commit-access-control.pl
-share/subversion/hook-scripts/commit-email.pl
-share/subversion/hook-scripts/mailer/mailer.conf.example
-share/subversion/hook-scripts/mailer/mailer.py
-share/subversion/hook-scripts/mailer/tests/mailer-init.sh
-share/subversion/hook-scripts/mailer/tests/mailer-t1.output
-share/subversion/hook-scripts/mailer/tests/mailer-t1.sh
-share/subversion/hook-scripts/mailer/tests/mailer-tweak.py
-share/subversion/hook-scripts/propchange-email.pl
-share/subversion/hook-scripts/README
-share/subversion/hook-scripts/svnperms.conf.example
-share/subversion/hook-scripts/svnperms.py
-share/subversion/hook-scripts/verify-po.py
-share/subversion/po/svn-po-status-report.sh
-share/subversion/test-scripts/svntest/README
-share/subversion/test-scripts/svntest/svntest-check-configuration.sh
-share/subversion/test-scripts/svntest/svntest-config.sh
-share/subversion/test-scripts/svntest/svntest-rebuild-generic.sh
-share/subversion/test-scripts/svntest/svntest-rebuild.sh
-share/subversion/test-scripts/svntest/svntest-run.sh
-share/subversion/test-scripts/svntest/svntest-sendmail.sh
-share/subversion/test-scripts/svntest/svntest-update.sh
-share/subversion/test-scripts/svntest/svntest.sh
-share/subversion/xslt/svnindex.css
-share/subversion/xslt/svnindex.xsl
+%%DATADIR%%/backup/hot-backup.py
+%%DATADIR%%/client-side/bash_completion
+%%DATADIR%%/client-side/bash_completion_test
+%%DATADIR%%/client-side/server-vsn.py
+%%DATADIR%%/client-side/showchange.pl
+%%DATADIR%%/cvs2svn/README
+%%DATADIR%%/dev/check-license.py
+%%DATADIR%%/dev/datecheck.py
+%%DATADIR%%/dev/find-textfiles.sh
+%%DATADIR%%/dev/gcov.patch
+%%DATADIR%%/dev/gnuify-changelog.pl
+%%DATADIR%%/dev/iz/defect.dem
+%%DATADIR%%/dev/iz/ff2csv.command
+%%DATADIR%%/dev/iz/ff2csv.py
+%%DATADIR%%/dev/iz/find-fix.py
+%%DATADIR%%/dev/iz/run-queries.sh
+%%DATADIR%%/dev/normalize-dump.py
+%%DATADIR%%/dev/prebuild-cleanup.sh
+%%DATADIR%%/dev/random-commits.py
+%%DATADIR%%/dev/scramble-tree.py
+%%DATADIR%%/dev/stress.pl
+%%DATADIR%%/dev/svn-dev.el
+%%DATADIR%%/dev/svn-dev.vim
+%%DATADIR%%/dev/trails.py
+%%DATADIR%%/dev/verify-history.py
+%%DATADIR%%/examples/blame.py
+%%DATADIR%%/examples/check-modified.py
+%%DATADIR%%/examples/dumpprops.py
+%%DATADIR%%/examples/getfile.py
+%%DATADIR%%/examples/geturl.py
+%%DATADIR%%/examples/minimal_client.c
+%%DATADIR%%/examples/putfile.py
+%%DATADIR%%/examples/revplist.py
+%%DATADIR%%/examples/svnlook.py
+%%DATADIR%%/examples/svnserve-sgid.c
+%%DATADIR%%/examples/svnshell.py
+%%DATADIR%%/hook-scripts/commit-access-control.cfg.example
+%%DATADIR%%/hook-scripts/commit-access-control.pl
+%%DATADIR%%/hook-scripts/commit-email.pl
+%%DATADIR%%/hook-scripts/mailer/mailer.conf.example
+%%DATADIR%%/hook-scripts/mailer/mailer.py
+%%DATADIR%%/hook-scripts/mailer/tests/mailer-init.sh
+%%DATADIR%%/hook-scripts/mailer/tests/mailer-t1.output
+%%DATADIR%%/hook-scripts/mailer/tests/mailer-t1.sh
+%%DATADIR%%/hook-scripts/mailer/tests/mailer-tweak.py
+%%DATADIR%%/hook-scripts/propchange-email.pl
+%%DATADIR%%/hook-scripts/README
+%%DATADIR%%/hook-scripts/svnperms.conf.example
+%%DATADIR%%/hook-scripts/svnperms.py
+%%DATADIR%%/hook-scripts/verify-po.py
+%%DATADIR%%/po/svn-po-status-report.sh
+%%DATADIR%%/test-scripts/svntest/README
+%%DATADIR%%/test-scripts/svntest/svntest-check-configuration.sh
+%%DATADIR%%/test-scripts/svntest/svntest-config.sh
+%%DATADIR%%/test-scripts/svntest/svntest-rebuild-generic.sh
+%%DATADIR%%/test-scripts/svntest/svntest-rebuild.sh
+%%DATADIR%%/test-scripts/svntest/svntest-run.sh
+%%DATADIR%%/test-scripts/svntest/svntest-sendmail.sh
+%%DATADIR%%/test-scripts/svntest/svntest-update.sh
+%%DATADIR%%/test-scripts/svntest/svntest.sh
+%%DATADIR%%/xslt/svnindex.css
+%%DATADIR%%/xslt/svnindex.xsl
 %%MOD_DAV_SVN%%libexec/apache2/mod_dav_svn.so
 %%MOD_DAV_SVN%%libexec/apache2/mod_authz_svn.so
 %%MOD_DAV_SVN%%@exec %D/sbin/apxs -e -S LIBEXECDIR=%D/libexec/apache2 -a -n dav libexec/apache2/mod_dav.so
@@ -235,17 +236,17 @@ share/subversion/xslt/svnindex.xsl
 %%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/svn/wc.pyc
 %%WITH_PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/libsvn
 %%WITH_PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/svn
-@dirrm share/subversion/backup
-@dirrm share/subversion/client-side
-@dirrm share/subversion/cvs2svn
-@dirrm share/subversion/dev/iz
-@dirrm share/subversion/dev
-@dirrm share/subversion/examples
-@dirrm share/subversion/hook-scripts/mailer/tests
-@dirrm share/subversion/hook-scripts/mailer
-@dirrm share/subversion/hook-scripts
-@dirrm share/subversion/po
-@dirrm share/subversion/test-scripts/svntest
-@dirrm share/subversion/test-scripts
-@dirrm share/subversion/xslt
+@dirrm %%DATADIR%%/backup
+@dirrm %%DATADIR%%/client-side
+@dirrm %%DATADIR%%/cvs2svn
+@dirrm %%DATADIR%%/dev/iz
+@dirrm %%DATADIR%%/dev
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/hook-scripts/mailer/tests
+@dirrm %%DATADIR%%/hook-scripts/mailer
+@dirrm %%DATADIR%%/hook-scripts
+@dirrm %%DATADIR%%/po
+@dirrm %%DATADIR%%/test-scripts/svntest
+@dirrm %%DATADIR%%/test-scripts
+@dirrm %%DATADIR%%/xslt
 @dirrm share/subversion
