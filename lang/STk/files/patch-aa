@@ -14,7 +14,7 @@ diff -cr STk-3.1/Makefile.in STk-3.1.new/Makefile.in
   	@echo "SH_LDFLAGS	= @SH_LDFLAGS@"			>> config.make
   	@echo "SH_LOADER	= @SH_LOADER@"			>> config.make
   	@echo "SH_SUFFIX	= @SH_SUFFIX@"			>> config.make
-! 	@echo "LIB_MALLOC	= -lgnumalloc"			>> config.make
+! 	@echo "LIB_MALLOC	= "				>> config.make
   	@echo "LIB_DLD		= @LIB_DLD@"			>> config.make
   		
   	@echo "STK_LIBRARY	= $(libdir)"			>> config.make
