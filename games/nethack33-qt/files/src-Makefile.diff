@@ -24,16 +24,3 @@
  
  # make NetHack
  GAME     = nethack
-@@ -536,6 +536,12 @@
- 
- # DO NOT DELETE THIS LINE
- 
-+qaudio-p.moc: ../win/Qt/qaudio-p.h
-+	moc ../win/Qt/qaudio-p.h > qaudio-p.moc
-+qaudio-p.o: ../win/Qt/qaudio-p.cc qaudio-p.moc
-+	$(CXX) $(CXXFLAGS) -c ../win/Qt/qaudio-p.cc
-+qaudio.o: ../win/Qt/qaudio.cc
-+	$(CXX) $(CXXFLAGS) -c ../win/Qt/qaudio.cc
- qt_win.o: ../win/Qt/qt_win.cc  ../include/hack.h ../include/qt_win.h ../include/cluster.h qt_win.moc
- 	$(CXX) $(CXXFLAGS) -c ../win/Qt/qt_win.cc
- qviewp.o: ../win/Qt/qviewp.cc  ../include/qviewp.h qviewp.moc
