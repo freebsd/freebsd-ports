@@ -27,6 +27,14 @@ post-patch:
 	${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.3
 	${CP} ${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.0 \
 	${WRKDIR}/webmin-${PORTVERSION}/bind8/config-freebsd-3.4
+	${CP} ${WRKSRC}/postfix/config ${WRKSRC}/postfix/config.sed
+	${SED}	-e "s@/usr/sbin/postfix@${LOCALBASE}/sbin/postfix@" \
+		-e "s@/usr/sbin/postconf@${LOCALBASE}/sbin/postconf@" \
+		-e "s@/etc/postfix/main.cf@${LOCALBASE}/etc/postfix/main.cf@" \
+		-e "s@/usr/sbin/postalias@${LOCALBASE}/sbin/postalias@" \
+		-e "s@/usr/sbin/postmap@${LOCALBASE}/sbin/postmap@" \
+		${WRKSRC}/postfix/config.sed > ${WRKSRC}/postfix/config
+	${RM} ${WRKSRC}/postfix/config.sed
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/webmin
