@@ -6,3 +6,5 @@ This module supplants the Term::ReadLine stubs with real command line
 editing and recall facilities, written entirely in Perl.  Applications
 that use Term::ReadLine do not need to be modified to gain the benefits
 of this package; it will happen transparently upon installation.
+
+WWW: http://search.cpan.org/dist/Term-ReadLine-Perl/
