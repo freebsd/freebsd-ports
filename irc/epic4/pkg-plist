@@ -1,5 +1,5 @@
 bin/epic
-bin/epic-EPIC4-0.9.2
+bin/epic-EPIC4-0.9.9
 libexec/wserv
 share/epic/help/1_General/away
 share/epic/help/1_General/describe
@@ -876,6 +876,7 @@ share/epic/script/genalias
 share/epic/script/grep
 share/epic/script/global
 share/epic/script/guh
+share/epic/script/hybrid6
 share/epic/script/imap
 share/epic/script/ircprimer
 share/epic/script/keybinds
