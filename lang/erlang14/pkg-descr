@@ -1,12 +1,5 @@
- Most of the concepts in Erlang have been taken from modern programming 
- languages   that have proven to be good. The languages Prolog, Strand, Parlog 
- and Eri-Pascal  have had an especially high influence. Erlang was created as 
- a result of ongoing  research at the Ericsson and Ellemtel Computer Science
- laboratory regarding ways  to improve the software development of telecom 
- applications. Many of the Erlang  primitives provide solutions to problems 
- that are commonly encountered when programming large, concurrent, real-time 
- systems.
+Erlang is a small concurrent functional programming language 
+developed by Ericsson. It is being used by Ericsson as a systems 
+programming language for large concurrent distributed systems. 
 
- The language is based on the functional programmint theory.
-
- For more info, please, refer to http://www.erlang.org
+For more information visit http://www.erlang.org/

@@ -1,54 +1,198 @@
 bin/erl
+bin/erl_call
 bin/erlc
 lib/erlang/bin/epmd
 lib/erlang/bin/erl
 lib/erlang/bin/erl_call
+lib/erlang/bin/erlc.boot
+lib/erlang/bin/erlc.script
 lib/erlang/bin/start.boot
 lib/erlang/bin/start.script
 lib/erlang/bin/start_sasl.boot
 lib/erlang/bin/start_sasl.script
-lib/erlang/erts-47.4.0/bin/epmd
-lib/erlang/erts-47.4.0/bin/epmd_r2
-lib/erlang/erts-47.4.0/bin/erl
-lib/erlang/erts-47.4.0/bin/erl_call
-lib/erlang/erts-47.4.0/bin/erlc
-lib/erlang/erts-47.4.0/bin/erlexec
-lib/erlang/erts-47.4.0/bin/heart
-lib/erlang/erts-47.4.0/bin/inet_gethost
-lib/erlang/erts-47.4.0/bin/jam
-lib/erlang/erts-47.4.0/bin/mkam
-lib/erlang/erts-47.4.0/bin/mkbif
-lib/erlang/erts-47.4.0/bin/mkconfig
-lib/erlang/erts-47.4.0/bin/mkpreload
-lib/erlang/erts-47.4.0/bin/mkver
-lib/erlang/usr/include/ei.h
-lib/erlang/usr/include/eicode.h
-lib/erlang/usr/include/eiext.h
-lib/erlang/usr/include/eihash.h
-lib/erlang/usr/include/eireg.h
-lib/erlang/usr/include/eisend.h
-lib/erlang/usr/include/erl_config.h
-lib/erlang/usr/include/erl_connect.h
-lib/erlang/usr/include/erl_epmd.h
-lib/erlang/usr/include/erl_error.h
-lib/erlang/usr/include/erl_eterm.h
-lib/erlang/usr/include/erl_fix_alloc.h
-lib/erlang/usr/include/erl_format.h
-lib/erlang/usr/include/erl_global.h
-lib/erlang/usr/include/erl_interface.h
-lib/erlang/usr/include/erl_internal.h
-lib/erlang/usr/include/erl_locking.h
-lib/erlang/usr/include/erl_malloc.h
-lib/erlang/usr/include/erl_marshal.h
-lib/erlang/usr/include/erl_md5.h
-lib/erlang/usr/include/erl_resolve.h
-lib/erlang/usr/include/erl_rport.h
-lib/erlang/usr/include/erl_start.h
-lib/erlang/usr/include/erl_timeout.h
-lib/erlang/usr/include/putget.h
-lib/erlang/usr/lib/libei.a
-lib/erlang/usr/lib/liberl_interface.a
-lib/erlang/usr/lib/libz.a
+lib/erlang/doc/design_principles/application.gif
+lib/erlang/doc/design_principles/applications.html
+lib/erlang/doc/design_principles/ch_tel_4.gif
+lib/erlang/doc/design_principles/clientserver.gif
+lib/erlang/doc/design_principles/des_princ.html
+lib/erlang/doc/design_principles/dist1.gif
+lib/erlang/doc/design_principles/dist2.gif
+lib/erlang/doc/design_principles/dist3.gif
+lib/erlang/doc/design_principles/dist4.gif
+lib/erlang/doc/design_principles/dist5.gif
+lib/erlang/doc/design_principles/dist_app.gif
+lib/erlang/doc/design_principles/error_logging.html
+lib/erlang/doc/design_principles/events.html
+lib/erlang/doc/design_principles/fsm.html
+lib/erlang/doc/design_principles/gen_server.html
+lib/erlang/doc/design_principles/hlr_sup.gif
+lib/erlang/doc/design_principles/inclappls.gif
+lib/erlang/doc/design_principles/min_head.gif
+lib/erlang/doc/design_principles/note.gif
+lib/erlang/doc/design_principles/part.html
+lib/erlang/doc/design_principles/part_cite.html
+lib/erlang/doc/design_principles/part_first.html
+lib/erlang/doc/design_principles/part_frame.html
+lib/erlang/doc/design_principles/part_term.html
+lib/erlang/doc/design_principles/spec_proc.html
+lib/erlang/doc/design_principles/startphase.gif
+lib/erlang/doc/design_principles/sup4.gif
+lib/erlang/doc/design_principles/sup5.gif
+lib/erlang/doc/design_principles/sup6.gif
+lib/erlang/doc/design_principles/sup7.gif
+lib/erlang/doc/design_principles/sup_princ.html
+lib/erlang/doc/design_principles/upgrade3.gif
+lib/erlang/doc/design_principles/warning.gif
+lib/erlang/doc/design_principles/writing_apps.html
+lib/erlang/doc/getting_started/getting_started.html
+lib/erlang/doc/getting_started/min_head.gif
+lib/erlang/doc/getting_started/note.gif
+lib/erlang/doc/getting_started/part.html
+lib/erlang/doc/getting_started/part_cite.html
+lib/erlang/doc/getting_started/part_first.html
+lib/erlang/doc/getting_started/part_frame.html
+lib/erlang/doc/getting_started/part_term.html
+lib/erlang/doc/getting_started/starterl_fig1.gif
+lib/erlang/doc/getting_started/starterl_fig2.gif
+lib/erlang/doc/getting_started/starterl_fig3.gif
+lib/erlang/doc/getting_started/starterl_fig4.1.gif
+lib/erlang/doc/getting_started/starterl_fig4.2.gif
+lib/erlang/doc/getting_started/starterl_fig4.gif
+lib/erlang/doc/getting_started/starterl_fig5.gif
+lib/erlang/doc/getting_started/starterl_fig6.gif
+lib/erlang/doc/getting_started/starterl_fig7.gif
+lib/erlang/doc/getting_started/warning.gif
+lib/erlang/doc/oam/min_head.gif
+lib/erlang/doc/oam/note.gif
+lib/erlang/doc/oam/oam_intro.html
+lib/erlang/doc/oam/part.html
+lib/erlang/doc/oam/part_cite.html
+lib/erlang/doc/oam/part_first.html
+lib/erlang/doc/oam/part_frame.html
+lib/erlang/doc/oam/part_term.html
+lib/erlang/doc/oam/warning.gif
+lib/erlang/doc/pics/app.gif
+lib/erlang/doc/pics/ede.gif
+lib/erlang/doc/pics/erlang.gif
+lib/erlang/doc/pics/min_head.gif
+lib/erlang/doc/pics/notes.gif
+lib/erlang/doc/pics/otp.gif
+lib/erlang/doc/pics/otp_logo.gif
+lib/erlang/doc/pics/ps.gif
+lib/erlang/doc/pics/ref_man.gif
+lib/erlang/doc/pics/user_guide.gif
+lib/erlang/doc/system_architecture_intro/min_head.gif
+lib/erlang/doc/system_architecture_intro/note.gif
+lib/erlang/doc/system_architecture_intro/part.html
+lib/erlang/doc/system_architecture_intro/part_cite.html
+lib/erlang/doc/system_architecture_intro/part_first.html
+lib/erlang/doc/system_architecture_intro/part_frame.html
+lib/erlang/doc/system_architecture_intro/part_term.html
+lib/erlang/doc/system_architecture_intro/sys_arch_intro.html
+lib/erlang/doc/system_architecture_intro/warning.gif
+lib/erlang/doc/system_principles/min_head.gif
+lib/erlang/doc/system_principles/note.gif
+lib/erlang/doc/system_principles/part.html
+lib/erlang/doc/system_principles/part_cite.html
+lib/erlang/doc/system_principles/part_first.html
+lib/erlang/doc/system_principles/part_frame.html
+lib/erlang/doc/system_principles/part_term.html
+lib/erlang/doc/system_principles/system_principles.html
+lib/erlang/doc/system_principles/warning.gif
+lib/erlang/erts-47.4.1/bin/epmd
+lib/erlang/erts-47.4.1/bin/epmd_r2
+lib/erlang/erts-47.4.1/bin/erl
+lib/erlang/erts-47.4.1/bin/erl_call
+lib/erlang/erts-47.4.1/bin/erlc
+lib/erlang/erts-47.4.1/bin/erlexec
+lib/erlang/erts-47.4.1/bin/heart
+lib/erlang/erts-47.4.1/bin/inet_gethost
+lib/erlang/erts-47.4.1/bin/jam
+lib/erlang/erts-47.4.1/bin/mkam
+lib/erlang/erts-47.4.1/bin/mkbif
+lib/erlang/erts-47.4.1/bin/mkconfig
+lib/erlang/erts-47.4.1/bin/mkpreload
+lib/erlang/erts-47.4.1/bin/mkver
+lib/erlang/erts-47.4.1/doc/html/application.html
+lib/erlang/erts-47.4.1/doc/html/application_cite.html
+lib/erlang/erts-47.4.1/doc/html/application_erl_interface.html
+lib/erlang/erts-47.4.1/doc/html/application_erl_interface_cite.html
+lib/erlang/erts-47.4.1/doc/html/application_erl_interface_first.html
+lib/erlang/erts-47.4.1/doc/html/application_erl_interface_frame.html
+lib/erlang/erts-47.4.1/doc/html/application_erl_interface_index.html
+lib/erlang/erts-47.4.1/doc/html/application_erl_interface_term.html
+lib/erlang/erts-47.4.1/doc/html/application_first.html
+lib/erlang/erts-47.4.1/doc/html/application_frame.html
+lib/erlang/erts-47.4.1/doc/html/application_index.html
+lib/erlang/erts-47.4.1/doc/html/application_term.html
+lib/erlang/erts-47.4.1/doc/html/book.gif
+lib/erlang/erts-47.4.1/doc/html/epmd.html
+lib/erlang/erts-47.4.1/doc/html/erl.html
+lib/erlang/erts-47.4.1/doc/html/erl_call.html
+lib/erlang/erts-47.4.1/doc/html/erl_connect.html
+lib/erlang/erts-47.4.1/doc/html/erl_error.html
+lib/erlang/erts-47.4.1/doc/html/erl_eterm.html
+lib/erlang/erts-47.4.1/doc/html/erl_format.html
+lib/erlang/erts-47.4.1/doc/html/erl_global.html
+lib/erlang/erts-47.4.1/doc/html/erl_interface.html
+lib/erlang/erts-47.4.1/doc/html/erl_malloc.html
+lib/erlang/erts-47.4.1/doc/html/erl_marshal.html
+lib/erlang/erts-47.4.1/doc/html/erl_set_memory_block.html
+lib/erlang/erts-47.4.1/doc/html/erlc.html
+lib/erlang/erts-47.4.1/doc/html/erlsrv.html
+lib/erlang/erts-47.4.1/doc/html/erts.gif
+lib/erlang/erts-47.4.1/doc/html/highlights.html
+lib/erlang/erts-47.4.1/doc/html/min_head.gif
+lib/erlang/erts-47.4.1/doc/html/note.gif
+lib/erlang/erts-47.4.1/doc/html/notes.gif
+lib/erlang/erts-47.4.1/doc/html/part.html
+lib/erlang/erts-47.4.1/doc/html/part_cite.html
+lib/erlang/erts-47.4.1/doc/html/part_erl_interface.html
+lib/erlang/erts-47.4.1/doc/html/part_erl_interface_cite.html
+lib/erlang/erts-47.4.1/doc/html/part_erl_interface_first.html
+lib/erlang/erts-47.4.1/doc/html/part_erl_interface_frame.html
+lib/erlang/erts-47.4.1/doc/html/part_erl_interface_term.html
+lib/erlang/erts-47.4.1/doc/html/part_first.html
+lib/erlang/erts-47.4.1/doc/html/part_frame.html
+lib/erlang/erts-47.4.1/doc/html/part_notes.html
+lib/erlang/erts-47.4.1/doc/html/part_notes_cite.html
+lib/erlang/erts-47.4.1/doc/html/part_notes_first.html
+lib/erlang/erts-47.4.1/doc/html/part_notes_frame.html
+lib/erlang/erts-47.4.1/doc/html/part_notes_term.html
+lib/erlang/erts-47.4.1/doc/html/part_term.html
+lib/erlang/erts-47.4.1/doc/html/ref_man.gif
+lib/erlang/erts-47.4.1/doc/html/registry.html
+lib/erlang/erts-47.4.1/doc/html/start_erl.html
+lib/erlang/erts-47.4.1/doc/html/tty.html
+lib/erlang/erts-47.4.1/doc/html/user_guide.gif
+lib/erlang/erts-47.4.1/doc/html/warning.gif
+lib/erlang/erts-47.4.1/doc/html/werl.html
+lib/erlang/erts-47.4.1/doc/index.html
+lib/erlang/erts-47.4.1/notes_history.html
+lib/erlang/erts-47.4.1/notes_latest.html
+lib/erlang/index.html
+lib/erlang/lib/compiler-1.2.1/doc/html/application.html
+lib/erlang/lib/compiler-1.2.1/doc/html/application_cite.html
+lib/erlang/lib/compiler-1.2.1/doc/html/application_first.html
+lib/erlang/lib/compiler-1.2.1/doc/html/application_frame.html
+lib/erlang/lib/compiler-1.2.1/doc/html/application_index.html
+lib/erlang/lib/compiler-1.2.1/doc/html/application_term.html
+lib/erlang/lib/compiler-1.2.1/doc/html/book.gif
+lib/erlang/lib/compiler-1.2.1/doc/html/compile.html
+lib/erlang/lib/compiler-1.2.1/doc/html/compiler.gif
+lib/erlang/lib/compiler-1.2.1/doc/html/highlights.html
+lib/erlang/lib/compiler-1.2.1/doc/html/min_head.gif
+lib/erlang/lib/compiler-1.2.1/doc/html/note.gif
+lib/erlang/lib/compiler-1.2.1/doc/html/notes.gif
+lib/erlang/lib/compiler-1.2.1/doc/html/part_notes.html
+lib/erlang/lib/compiler-1.2.1/doc/html/part_notes_cite.html
+lib/erlang/lib/compiler-1.2.1/doc/html/part_notes_first.html
+lib/erlang/lib/compiler-1.2.1/doc/html/part_notes_frame.html
+lib/erlang/lib/compiler-1.2.1/doc/html/part_notes_term.html
+lib/erlang/lib/compiler-1.2.1/doc/html/ref_man.gif
+lib/erlang/lib/compiler-1.2.1/doc/html/user_guide.gif
+lib/erlang/lib/compiler-1.2.1/doc/html/warning.gif
+lib/erlang/lib/compiler-1.2.1/doc/index.html
 lib/erlang/lib/compiler-1.2.1/ebin/beam_asm_int.jam
 lib/erlang/lib/compiler-1.2.1/ebin/beam_cleanup.jam
 lib/erlang/lib/compiler-1.2.1/ebin/beam_compile.jam
@@ -70,6 +214,79 @@ lib/erlang/lib/compiler-1.2.1/ebin/sys_bifs.jam
 lib/erlang/lib/compiler-1.2.1/ebin/sys_pre_attributes.jam
 lib/erlang/lib/compiler-1.2.1/ebin/sys_pre_expand.jam
 lib/erlang/lib/compiler-1.2.1/ebin/sys_pre_pj.jam
+lib/erlang/lib/compiler-1.2.1/notes_history.html
+lib/erlang/lib/compiler-1.2.1/notes_latest.html
+lib/erlang/lib/compiler-1.2.1/src/beam_asm_int.erl
+lib/erlang/lib/compiler-1.2.1/src/beam_cleanup.erl
+lib/erlang/lib/compiler-1.2.1/src/beam_compile.erl
+lib/erlang/lib/compiler-1.2.1/src/beam_dict.erl
+lib/erlang/lib/compiler-1.2.1/src/beam_listing.erl
+lib/erlang/lib/compiler-1.2.1/src/beam_opcodes.erl
+lib/erlang/lib/compiler-1.2.1/src/beam_opcodes.hrl
+lib/erlang/lib/compiler-1.2.1/src/beam_optimize.erl
+lib/erlang/lib/compiler-1.2.1/src/compile.erl
+lib/erlang/lib/compiler-1.2.1/src/erl_mkbif.erl
+lib/erlang/lib/compiler-1.2.1/src/jam_asm.erl
+lib/erlang/lib/compiler-1.2.1/src/jam_compile.erl
+lib/erlang/lib/compiler-1.2.1/src/jam_encode.erl
+lib/erlang/lib/compiler-1.2.1/src/jam_listing.erl
+lib/erlang/lib/compiler-1.2.1/src/jam_opcodes.hrl
+lib/erlang/lib/compiler-1.2.1/src/jam_optimize.erl
+lib/erlang/lib/compiler-1.2.1/src/jam_yecc_pj.erl
+lib/erlang/lib/compiler-1.2.1/src/sys_bifs.erl
+lib/erlang/lib/compiler-1.2.1/src/sys_pre_attributes.erl
+lib/erlang/lib/compiler-1.2.1/src/sys_pre_expand.erl
+lib/erlang/lib/compiler-1.2.1/src/sys_pre_pj.erl
+lib/erlang/lib/kernel-2.1.4/doc/html/app.html
+lib/erlang/lib/kernel-2.1.4/doc/html/application.html
+lib/erlang/lib/kernel-2.1.4/doc/html/application_holder.html
+lib/erlang/lib/kernel-2.1.4/doc/html/application_holder_cite.html
+lib/erlang/lib/kernel-2.1.4/doc/html/application_holder_first.html
+lib/erlang/lib/kernel-2.1.4/doc/html/application_holder_frame.html
+lib/erlang/lib/kernel-2.1.4/doc/html/application_holder_index.html
+lib/erlang/lib/kernel-2.1.4/doc/html/application_holder_term.html
+lib/erlang/lib/kernel-2.1.4/doc/html/auth.html
+lib/erlang/lib/kernel-2.1.4/doc/html/book.gif
+lib/erlang/lib/kernel-2.1.4/doc/html/code.html
+lib/erlang/lib/kernel-2.1.4/doc/html/config.html
+lib/erlang/lib/kernel-2.1.4/doc/html/disk_log.html
+lib/erlang/lib/kernel-2.1.4/doc/html/erl_boot_server.html
+lib/erlang/lib/kernel-2.1.4/doc/html/erl_ddll.html
+lib/erlang/lib/kernel-2.1.4/doc/html/erl_prim_loader.html
+lib/erlang/lib/kernel-2.1.4/doc/html/erlang.html
+lib/erlang/lib/kernel-2.1.4/doc/html/error_handler.html
+lib/erlang/lib/kernel-2.1.4/doc/html/error_logger.html
+lib/erlang/lib/kernel-2.1.4/doc/html/file.html
+lib/erlang/lib/kernel-2.1.4/doc/html/gen_tcp.html
+lib/erlang/lib/kernel-2.1.4/doc/html/gen_udp.html
+lib/erlang/lib/kernel-2.1.4/doc/html/global.html
+lib/erlang/lib/kernel-2.1.4/doc/html/global_group.html
+lib/erlang/lib/kernel-2.1.4/doc/html/heart.html
+lib/erlang/lib/kernel-2.1.4/doc/html/highlights.html
+lib/erlang/lib/kernel-2.1.4/doc/html/inet.html
+lib/erlang/lib/kernel-2.1.4/doc/html/init.html
+lib/erlang/lib/kernel-2.1.4/doc/html/kernel.gif
+lib/erlang/lib/kernel-2.1.4/doc/html/kernel_app.html
+lib/erlang/lib/kernel-2.1.4/doc/html/min_head.gif
+lib/erlang/lib/kernel-2.1.4/doc/html/net_adm.html
+lib/erlang/lib/kernel-2.1.4/doc/html/net_kernel.html
+lib/erlang/lib/kernel-2.1.4/doc/html/note.gif
+lib/erlang/lib/kernel-2.1.4/doc/html/notes.gif
+lib/erlang/lib/kernel-2.1.4/doc/html/os.html
+lib/erlang/lib/kernel-2.1.4/doc/html/part_notes.html
+lib/erlang/lib/kernel-2.1.4/doc/html/part_notes_cite.html
+lib/erlang/lib/kernel-2.1.4/doc/html/part_notes_first.html
+lib/erlang/lib/kernel-2.1.4/doc/html/part_notes_frame.html
+lib/erlang/lib/kernel-2.1.4/doc/html/part_notes_term.html
+lib/erlang/lib/kernel-2.1.4/doc/html/pg2.html
+lib/erlang/lib/kernel-2.1.4/doc/html/ref_man.gif
+lib/erlang/lib/kernel-2.1.4/doc/html/rpc.html
+lib/erlang/lib/kernel-2.1.4/doc/html/seq_trace.html
+lib/erlang/lib/kernel-2.1.4/doc/html/user.html
+lib/erlang/lib/kernel-2.1.4/doc/html/user_guide.gif
+lib/erlang/lib/kernel-2.1.4/doc/html/warning.gif
+lib/erlang/lib/kernel-2.1.4/doc/html/wrap_log_reader.html
+lib/erlang/lib/kernel-2.1.4/doc/index.html
 lib/erlang/lib/kernel-2.1.4/ebin/application.jam
 lib/erlang/lib/kernel-2.1.4/ebin/application_controller.jam
 lib/erlang/lib/kernel-2.1.4/ebin/application_master.jam
@@ -141,6 +358,8 @@ lib/erlang/lib/kernel-2.1.4/ebin/user_sup.jam
 lib/erlang/lib/kernel-2.1.4/ebin/wrap_log_reader.jam
 lib/erlang/lib/kernel-2.1.4/include/file.hrl
 lib/erlang/lib/kernel-2.1.4/include/inet.hrl
+lib/erlang/lib/kernel-2.1.4/notes_history.html
+lib/erlang/lib/kernel-2.1.4/notes_latest.html
 lib/erlang/lib/kernel-2.1.4/src/application.erl
 lib/erlang/lib/kernel-2.1.4/src/application_controller.erl
 lib/erlang/lib/kernel-2.1.4/src/application_master.erl
@@ -219,6 +438,28 @@ lib/erlang/lib/kernel-2.1.4/src/user.erl
 lib/erlang/lib/kernel-2.1.4/src/user_drv.erl
 lib/erlang/lib/kernel-2.1.4/src/user_sup.erl
 lib/erlang/lib/kernel-2.1.4/src/wrap_log_reader.erl
+lib/erlang/lib/parsetools-1.0.1/doc/html/application.html
+lib/erlang/lib/parsetools-1.0.1/doc/html/application_cite.html
+lib/erlang/lib/parsetools-1.0.1/doc/html/application_first.html
+lib/erlang/lib/parsetools-1.0.1/doc/html/application_frame.html
+lib/erlang/lib/parsetools-1.0.1/doc/html/application_index.html
+lib/erlang/lib/parsetools-1.0.1/doc/html/application_term.html
+lib/erlang/lib/parsetools-1.0.1/doc/html/book.gif
+lib/erlang/lib/parsetools-1.0.1/doc/html/min_head.gif
+lib/erlang/lib/parsetools-1.0.1/doc/html/note.gif
+lib/erlang/lib/parsetools-1.0.1/doc/html/notes.gif
+lib/erlang/lib/parsetools-1.0.1/doc/html/notes.html
+lib/erlang/lib/parsetools-1.0.1/doc/html/parsetools.gif
+lib/erlang/lib/parsetools-1.0.1/doc/html/part_notes.html
+lib/erlang/lib/parsetools-1.0.1/doc/html/part_notes_cite.html
+lib/erlang/lib/parsetools-1.0.1/doc/html/part_notes_first.html
+lib/erlang/lib/parsetools-1.0.1/doc/html/part_notes_frame.html
+lib/erlang/lib/parsetools-1.0.1/doc/html/part_notes_term.html
+lib/erlang/lib/parsetools-1.0.1/doc/html/ref_man.gif
+lib/erlang/lib/parsetools-1.0.1/doc/html/user_guide.gif
+lib/erlang/lib/parsetools-1.0.1/doc/html/warning.gif
+lib/erlang/lib/parsetools-1.0.1/doc/html/yecc.html
+lib/erlang/lib/parsetools-1.0.1/doc/index.html
 lib/erlang/lib/parsetools-1.0.1/ebin/yecc.jam
 lib/erlang/lib/parsetools-1.0.1/ebin/yeccparser.jam
 lib/erlang/lib/parsetools-1.0.1/ebin/yeccscan.jam
@@ -226,6 +467,67 @@ lib/erlang/lib/parsetools-1.0.1/include/yeccpre.hrl
 lib/erlang/lib/parsetools-1.0.1/src/yecc.erl
 lib/erlang/lib/parsetools-1.0.1/src/yeccparser.erl
 lib/erlang/lib/parsetools-1.0.1/src/yeccscan.erl
+lib/erlang/lib/stdlib-1.5.2/doc/html/application.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/application_cite.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/application_first.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/application_frame.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/application_index.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/application_term.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/book.gif
+lib/erlang/lib/stdlib-1.5.2/doc/html/c.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/calendar.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/dets.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/dict.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/digraph.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/epp.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/erl_eval.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/erl_id_trans.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/erl_internal.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/erl_lint.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/erl_parse.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/erl_pp.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/erl_scan.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/ets.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/filename.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/gen_event.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/gen_fsm.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/gen_server.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/highlights.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/io.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/io_lib.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/lib.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/lists.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/log_mf_h.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/math.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/min_head.gif
+lib/erlang/lib/stdlib-1.5.2/doc/html/note.gif
+lib/erlang/lib/stdlib-1.5.2/doc/html/notes.gif
+lib/erlang/lib/stdlib-1.5.2/doc/html/ordsets.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/part_notes.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/part_notes_cite.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/part_notes_first.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/part_notes_frame.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/part_notes_term.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/pg.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/pool.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/proc_lib.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/queue.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/random.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/ref_man.gif
+lib/erlang/lib/stdlib-1.5.2/doc/html/regexp.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/shell.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/shell_default.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/slave.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/stdlib.gif
+lib/erlang/lib/stdlib-1.5.2/doc/html/string.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/supervisor.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/supervisor_bridge.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/sys.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/timer.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/unix.html
+lib/erlang/lib/stdlib-1.5.2/doc/html/user_guide.gif
+lib/erlang/lib/stdlib-1.5.2/doc/html/warning.gif
+lib/erlang/lib/stdlib-1.5.2/doc/index.html
 lib/erlang/lib/stdlib-1.5.2/ebin/bplus_tree.jam
 lib/erlang/lib/stdlib-1.5.2/ebin/c.jam
 lib/erlang/lib/stdlib-1.5.2/ebin/calendar.jam
@@ -281,6 +583,8 @@ lib/erlang/lib/stdlib-1.5.2/ebin/timer.jam
 lib/erlang/lib/stdlib-1.5.2/ebin/unix.jam
 lib/erlang/lib/stdlib-1.5.2/ebin/win32reg.jam
 lib/erlang/lib/stdlib-1.5.2/include/erl_compile.hrl
+lib/erlang/lib/stdlib-1.5.2/notes_history.html
+lib/erlang/lib/stdlib-1.5.2/notes_latest.html
 lib/erlang/lib/stdlib-1.5.2/src/bplus_tree.erl
 lib/erlang/lib/stdlib-1.5.2/src/c.erl
 lib/erlang/lib/stdlib-1.5.2/src/calendar.erl
@@ -334,29 +638,82 @@ lib/erlang/lib/stdlib-1.5.2/src/sys.erl
 lib/erlang/lib/stdlib-1.5.2/src/timer.erl
 lib/erlang/lib/stdlib-1.5.2/src/unix.erl
 lib/erlang/lib/stdlib-1.5.2/src/win32reg.erl
-@dirrm lib/erlang/lib/compiler-1.2.1/ebin
-@dirrm lib/erlang/lib/kernel-2.1.4/ebin
-@dirrm lib/erlang/lib/kernel-2.1.4/include
-@dirrm lib/erlang/lib/kernel-2.1.4/src
-@dirrm lib/erlang/lib/parsetools-1.0.1/ebin
-@dirrm lib/erlang/lib/parsetools-1.0.1/include
-@dirrm lib/erlang/lib/parsetools-1.0.1/src
-@dirrm lib/erlang/lib/stdlib-1.5.2/ebin
-@dirrm lib/erlang/lib/stdlib-1.5.2/include
-@dirrm lib/erlang/lib/stdlib-1.5.2/src
-@dirrm lib/erlang/erts-47.4.0/bin
-@dirrm lib/erlang/lib/compiler-1.2.1
-@dirrm lib/erlang/lib/kernel-2.1.4
-@dirrm lib/erlang/lib/parsetools-1.0.1
-@dirrm lib/erlang/lib/stdlib-1.5.2
-@dirrm lib/erlang/man/man1
+lib/erlang/usr/include/driver.h
+lib/erlang/usr/include/driver_int.h
+lib/erlang/usr/include/ei.h
+lib/erlang/usr/include/eicode.h
+lib/erlang/usr/include/eiext.h
+lib/erlang/usr/include/eihash.h
+lib/erlang/usr/include/eireg.h
+lib/erlang/usr/include/eisend.h
+lib/erlang/usr/include/erl_config.h
+lib/erlang/usr/include/erl_connect.h
+lib/erlang/usr/include/erl_epmd.h
+lib/erlang/usr/include/erl_error.h
+lib/erlang/usr/include/erl_eterm.h
+lib/erlang/usr/include/erl_fix_alloc.h
+lib/erlang/usr/include/erl_format.h
+lib/erlang/usr/include/erl_global.h
+lib/erlang/usr/include/erl_interface.h
+lib/erlang/usr/include/erl_internal.h
+lib/erlang/usr/include/erl_locking.h
+lib/erlang/usr/include/erl_malloc.h
+lib/erlang/usr/include/erl_marshal.h
+lib/erlang/usr/include/erl_md5.h
+lib/erlang/usr/include/erl_resolve.h
+lib/erlang/usr/include/erl_rport.h
+lib/erlang/usr/include/erl_start.h
+lib/erlang/usr/include/erl_timeout.h
+lib/erlang/usr/include/putget.h
+lib/erlang/usr/lib/libei.a
+lib/erlang/usr/lib/liberl_interface.a
+@exec mkdir -p %D/lib/erlang/man/cat3
+@exec mkdir -p %D/lib/erlang/man/cat4
+@exec mkdir -p %D/lib/erlang/man/cat6
 @dirrm lib/erlang/man/man3
 @dirrm lib/erlang/man/man4
 @dirrm lib/erlang/man/man6
+@dirrm lib/erlang/man/cat3
+@dirrm lib/erlang/man/cat4
+@dirrm lib/erlang/man/cat6
+@dirrm lib/erlang/man
+@dirrm lib/erlang/lib/compiler-1.2.1/src
+@dirrm lib/erlang/lib/compiler-1.2.1/ebin
+@dirrm lib/erlang/lib/compiler-1.2.1/doc/html
+@dirrm lib/erlang/lib/compiler-1.2.1/doc
+@dirrm lib/erlang/lib/compiler-1.2.1
+@dirrm lib/erlang/lib/kernel-2.1.4/src
+@dirrm lib/erlang/lib/kernel-2.1.4/include
+@dirrm lib/erlang/lib/kernel-2.1.4/ebin
+@dirrm lib/erlang/lib/kernel-2.1.4/doc/html
+@dirrm lib/erlang/lib/kernel-2.1.4/doc
+@dirrm lib/erlang/lib/kernel-2.1.4
+@dirrm lib/erlang/lib/stdlib-1.5.2/src
+@dirrm lib/erlang/lib/stdlib-1.5.2/include
+@dirrm lib/erlang/lib/stdlib-1.5.2/ebin
+@dirrm lib/erlang/lib/stdlib-1.5.2/doc/html
+@dirrm lib/erlang/lib/stdlib-1.5.2/doc
+@dirrm lib/erlang/lib/stdlib-1.5.2
+@dirrm lib/erlang/lib/parsetools-1.0.1/src
+@dirrm lib/erlang/lib/parsetools-1.0.1/ebin
+@dirrm lib/erlang/lib/parsetools-1.0.1/include
+@dirrm lib/erlang/lib/parsetools-1.0.1/doc/html
+@dirrm lib/erlang/lib/parsetools-1.0.1/doc
+@dirrm lib/erlang/lib/parsetools-1.0.1
+@dirrm lib/erlang/lib
+@dirrm lib/erlang/bin
 @dirrm lib/erlang/usr/include
 @dirrm lib/erlang/usr/lib
-@dirrm lib/erlang/bin
-@dirrm lib/erlang/erts-47.4.0
-@dirrm lib/erlang/lib
-@dirrm lib/erlang/man
 @dirrm lib/erlang/usr
+@dirrm lib/erlang/erts-47.4.1/bin
+@dirrm lib/erlang/erts-47.4.1/doc/html
+@dirrm lib/erlang/erts-47.4.1/doc
+@dirrm lib/erlang/erts-47.4.1
+@dirrm lib/erlang/doc/design_principles
+@dirrm lib/erlang/doc/getting_started
+@dirrm lib/erlang/doc/system_architecture_intro
+@dirrm lib/erlang/doc/system_principles
+@dirrm lib/erlang/doc/oam
+@dirrm lib/erlang/doc/pics
+@dirrm lib/erlang/doc
+@dirrm lib/erlang
