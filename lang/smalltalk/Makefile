@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smalltalk
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.6
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
-		gdbm.2:${PORTSDIR}/databases/gdbm
+		gdbm.2:${PORTSDIR}/databases/gdbm \
+		gmp.6:${PORTSDIR}/math/libgmp4
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
@@ -22,8 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
-		MAKEINFO='makeinfo --no-split'
-CONFIGURE_ARGS=	--without-gmp
+		MAKEINFO="makeinfo --no-split"
 
 MAN1=		gst.1
 
@@ -47,5 +47,9 @@ pre-patch:
 		's|-release [\$$][(]VERSION[)]|-avoid-version|g'
 	@${REINPLACE_CMD} -e \
 		's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/examples/modules/gdbm.c
+
+pre-build:
+	@cd ${WRKSRC}/snprintfv && ${SETENV} ${MAKE_ENV} \
+		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET}
 
 .include <bsd.port.mk>
