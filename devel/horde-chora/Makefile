@@ -82,7 +82,7 @@ do-install:
 	  ${CP} ${CONFDIR}/${FILE}.dist ${CONFDIR}/${FILE} ; \
 	fi
 .endfor
-	@${REINPLACE_CMD} -e "s:%%CVSROOT%%:${CVSROOT}:;s:%%CONFDIR%%:${CONFDIR}:" \
+	@${REINPLACE_CMD} -e "s|%%CVSROOT%%|${CVSROOT}|;s|%%CONFDIR%%|${CONFDIR}|" \
 		${CONFDIR}/cvsroots.php
 	@${RM} ${CONFDIR}/cvsroots.php.beforeChora
 	@${CHOWN} -R www:www ${CHORADIR}
