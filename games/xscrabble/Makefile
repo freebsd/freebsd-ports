@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	mph
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	X version of the popular board game
 
 USE_REINPLACE=		yes
 USE_IMAKE=		yes

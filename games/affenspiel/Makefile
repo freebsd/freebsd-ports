@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	games/strategy
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Little puzzle game with monkey for X Window System
 
 WRKSRC=		${WRKDIR}/affenspiel
 USE_X_PREFIX=	yes

@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.earth.li/projectpurple/files/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Clone of "Puzzle Bobble" for X11 that uses GTK/Imlib
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

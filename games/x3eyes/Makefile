@@ -12,6 +12,7 @@ MASTER_SITES=	http://puma.cis.ibaraki.ac.jp/pub/X11/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An xeyes-like game except with 3 eyes
 
 USE_IMAKE=	yes
 MAN1=		x3eyes.1

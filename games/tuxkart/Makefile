@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://tuxkart.sourceforge.net/dist/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An OpenGL action kart racing game
 
 BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 

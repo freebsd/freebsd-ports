@@ -17,6 +17,7 @@ DIST_SUBDIR=	wmpuzzle
 EXTRACT_ONLY=	wmpuzzle_${PORTVERSION}.orig${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A dockable puzzle game for WindowMaker and AfterStep
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 

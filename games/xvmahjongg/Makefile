@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTFILES=	${PORTNAME}${PORTVERSION}.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Mahjongg for XView with multicolored tiles
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 

@@ -12,6 +12,7 @@ MASTER_SITES=	http://shh.thathost.com/pub-unix/files/
 DISTNAME=	shhcards-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Library for displaying game cards on X Window System
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

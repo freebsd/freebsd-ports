@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://samba.anu.edu.au/pub/KnightCap/ \
 DISTNAME=	KnightCap-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Chess program with 3D interface for X Window System
 
 WRKSRC=		${WRKDIR}/Export
 USE_MESA=	yes

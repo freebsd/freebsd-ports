@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.nbswebfx.com/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A clone of Activision's classic Atari 2600 console game "Kaboom!"
 
 LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer

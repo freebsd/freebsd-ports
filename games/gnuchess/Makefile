@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	chess
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	"Classic" Gnu Chess
 
 WRKSRC=	${WRKDIR}/chess
 GNU_CONFIGURE=	yes

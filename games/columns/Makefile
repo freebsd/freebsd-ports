@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.rzuser.uni-heidelberg.de/~dheck/columns/
 DISTNAME=	Columns-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Nice little implementation of columns game for X Window System
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://vipe.technion.ac.il/~shlomif/freecell-solver/ \
 		http://fc-solve.berlios.de/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A program that automatically solves games of Freecell
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/arcade
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Simple ncurses based pseudo-3D driving game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

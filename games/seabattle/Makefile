@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 MASTER_SITE_SUBDIR=	games/strategy
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A curses based battleship type game
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/seabattle ${PREFIX}/bin

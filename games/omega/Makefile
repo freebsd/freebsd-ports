@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.alcyone.com/binaries/omega/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A complex rogue-style game of dungeon exploration
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ALL_TARGET=	# empty

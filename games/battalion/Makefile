@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.evl.uic.edu/aej/BATTALION/
 DISTFILES=	battalionSource1.4.tar.Z battalionSUN4.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Monsters, explosions, destruction game for X Window System
 
 WRKSRC=		${WRKDIR}/battalionSource
 

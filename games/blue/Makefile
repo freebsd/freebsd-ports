@@ -11,6 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.catb.org/~esr/blue/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Blue Moon card solitaire
 
 ALL_TARGET=	# empty
 MAN6=		blue.6

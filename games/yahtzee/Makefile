@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}-src
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A curses version of the dice game for one or more players
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

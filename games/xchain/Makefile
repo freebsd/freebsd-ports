@@ -12,6 +12,7 @@ MASTER_SITES=	http://linux.tucows.com/files/x11/entertain/
 DISTNAME=	${PORTNAME}_1.0-2
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Chain Reaction, a strategy game for 2-4 players
 
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 

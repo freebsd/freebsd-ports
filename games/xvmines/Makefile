@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.csd.uch.gr/pub/X11/games/ \
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Simple minesweeper game for X Window System
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
 MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Another minesweeper game for the X Window System
 
 USE_IMAKE=	yes
 USE_XPM=	yes

@@ -8,6 +8,7 @@
 MASTERDIR=      ${.CURDIR}/../nethack33
 
 MAINTAINER=	Jan.Stocker@t-online.de
+COMMENT=	A dungeon explorin', slashin', hackin' game (w/ GNOME graphics)
 
 WITH_GNOME_GRAPHICS=	yes
 

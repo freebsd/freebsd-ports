@@ -17,6 +17,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		${PORTNAME}-${PORTVERSION}-maps.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Server for multiplayer graphical arcade and adventure game
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 

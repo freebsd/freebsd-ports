@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	games/strategy
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Small text based maze game
 
 WRKSRC=		${WRKDIR}/blocks
 MAKEFILE=	makefile

@@ -12,6 +12,7 @@ MASTER_SITES=	http://12.252.48.14/ftp/gno3dtet/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GNOME version of the classic 3D-ified T*tris
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
 
 MAINTAINER=		ports@FreeBSD.org
+COMMENT=	Mastermind game for X Window System
 
 LIB_DEPENDS=		forms.1:${PORTSDIR}/x11-toolkits/xforms
 

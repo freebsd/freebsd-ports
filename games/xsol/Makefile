@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.simcb.ru/pub/unix/src/
 DISTNAME=	${PORTNAME}-new
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Solitaire
 
 USE_IMAKE=	yes
 MAN6=		xsol.6

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	pool/main/x/xjump
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A simple X game where one tries to jump up as many levels as possible
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/g}
 

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.idsoftware.com/idstuff/source/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	The QuakeC compiler, for building custom games of Quake
 
 WRKSRC=		${WRKDIR}/send
 MAKEFILE=	makefile

@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.stevens-bradfield.com/MahJong/Source/ \
 DISTNAME=	mj-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A networked Mah Jong program, together with a computer player
 
 USE_PERL5=	yes
 USE_GNOMENG=	yes

@@ -12,6 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/unix/linux/games/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Rich city simulation game for X
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
 

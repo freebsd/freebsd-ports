@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	games
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An X11/Motif blackjack game
 
 BROKEN=		"Broken by open-motif upgrade"
 

@@ -12,6 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://gtkballs.antex.ru/dist/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Lines-like simple logic game for X Window System
 
 LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20
 

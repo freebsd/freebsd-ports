@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.doc.ic.ac.uk/~np2/software/download/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A pointless puzzle game for Tcl/Tk
 
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 

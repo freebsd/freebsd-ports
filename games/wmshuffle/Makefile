@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.linuks.mine.nu/dockapp/ \
 		ftp://regency.nsu.ru/tmp/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A dockable Shuffle game for WindowMaker and AfterStep
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes

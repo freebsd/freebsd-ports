@@ -13,6 +13,7 @@ DISTNAME=	xlife
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	John Horton Conway's Game of Life
 
 USE_IMAKE=	yes
 INSTALL_TARGET=	install install.patterns

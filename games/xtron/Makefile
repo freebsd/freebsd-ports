@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	games/arcade
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Avoid running into walls, your own tail, and that of your opponent
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes

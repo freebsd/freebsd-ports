@@ -15,6 +15,7 @@ MASTER_SITES=  	ftp://stardust.sfc.wide.ad.jp/pub/JG/JG-0.9.1/sources/ \
 EXTRACT_SUFX=	.taz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Yet Another Mine Sweeper
 
 USE_IMAKE=	yes
 MAN1=		yamsweeper.1

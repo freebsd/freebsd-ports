@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/icbm3d/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	"Inter-Continental Ballistic Missiles, 3D" - 3D game of defense
 
 WRKSRC=		${WRKDIR}/icbm3d
 USE_X_PREFIX=	yes

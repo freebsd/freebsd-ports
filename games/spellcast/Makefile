@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Multiplayer fight with spells turn based game for X Window System
 
 USE_X_PREFIX=	yes
 MAN6=		spellcast.6

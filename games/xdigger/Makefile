@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	games/arcade
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Boulderdash-like KC85 Digger for X Window System
 
 USE_REINPLACE=	yes
 USE_IMAKE=	yes

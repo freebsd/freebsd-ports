@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	X11/demos
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	O. J. Simpson Simulator root window demo
 
 USE_XPM=	yes
 USE_IMAKE=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.mk.bsdclub.org/pub/FreeBSD/distfiles/
 DISTFILES=	xchada01.lzh
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Display a dancing girl "ChaCha."
 
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 

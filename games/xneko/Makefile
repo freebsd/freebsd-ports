@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	../R5contrib
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The classic cat-and-mouse
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes
