@@ -157,9 +157,9 @@ MASTER_SITE_NETBSD+=	\
 	ftp://ftp.chg.ru/pub/NetBSD/packages/distfiles/%SUBDIR%/
 
 MASTER_SITE_PERL_CPAN+=	\
-	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%SUBDIR%/ \
 	http://www.cpan.dk/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/by-module/%SUBDIR%/ \
+	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%SUBDIR%/ \
 	ftp://uiarchive.uiuc.edu/pub/ftp/ftp.cpan.org/pub/CPAN/modules/by-module/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,lang/perl/CPAN/modules/by-module/&,} \
 	ftp://ftp.kddlabs.co.jp/lang/perl/CPAN/modules/by-module/%SUBDIR%/ \
