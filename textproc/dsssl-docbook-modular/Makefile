@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dsssl-docbook-modular
-PORTVERSION=	1.59
+PORTVERSION=	1.60
 CATEGORIES=	textproc
 MASTER_SITES=	http://nwalsh.com/docbook/dsssl/
 DISTNAME=	db${PORTVERSION:S/.//g}
