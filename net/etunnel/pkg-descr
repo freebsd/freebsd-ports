@@ -1,0 +1,7 @@
+This is a port of etunnel. Etunnel is a flexible TCP/UDP
+connections tunneling tool. It supports tunnels via proxy
+server (HTTP/SOCKS5), proxy servers chain (HTTP&SOCKS5) and
+directly.
+
+- Kostas Petrikas
+expl@punktas.lt
