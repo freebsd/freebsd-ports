@@ -20,15 +20,14 @@ LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomelibs bonobo libglade gal
+USE_GNOME=	gnomeprefix gnomehack gnomelibs bonobo libglade gal gnometarget
 USE_PYTHON=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-explicit-python-linking
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include/libglade-1.0" \
-		LIBS="-L${LOCALBASE}/lib -pthread" \
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		GNUMERIC_IDLDIR="`cd ${PORTSDIR}/math/gnumeric && ${MAKE} -V WRKSRC`/idl"
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
 # Can't use BUILD_DEPENDS, because then we have `short circuit' for
