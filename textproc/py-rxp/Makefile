@@ -24,6 +24,12 @@ USE_REINPLACE=	yes
 EXAMPLESDIR=	${PREFIX}/share/examples/py-rxp
 DOCSDIR=	${PREFIX}/share/doc/py-rxp
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600000
+BROKEN=		"Does not build on FreeBSD >= 6.x"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/freebsd4/freebsd4","freebsd5/g' ${WRKSRC}/setup.py
 
@@ -34,4 +40,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
