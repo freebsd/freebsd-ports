@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- capplet/mtm-selector.c	2001/07/10 06:15:32	1.1
-+++ capplet/mtm-selector.c	2001/07/10 06:16:15
-@@ -203,7 +203,7 @@
+--- capplet/mtm-selector.c.orig	Sun May 19 17:05:01 2002
++++ capplet/mtm-selector.c	Sun May 19 17:05:11 2002
+@@ -209,7 +209,7 @@
  
  	g_return_if_fail (MTM_IS_SELECTOR (selector));
  				   

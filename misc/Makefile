@@ -187,6 +187,7 @@
     SUBDIR += mc
     SUBDIR += menushki
     SUBDIR += metatheme
+    SUBDIR += metatheme2
     SUBDIR += mgp-mode.el
     SUBDIR += misterproper
     SUBDIR += mmv

@@ -1,23 +1,11 @@
-
-$FreeBSD$
-
---- plugins/background/Makefile.in.orig	Wed Dec 19 13:42:05 2001
-+++ plugins/background/Makefile.in	Wed Dec 19 13:44:54 2001
-@@ -137,7 +137,7 @@
- 
- libbackground_la_LIBADD = $(GDK_PIXBUF_LIBS) $(LIBGLADE_LIBS)
- 
--INCLUDES =  	-I$(top_srcdir)						-I$(METATHEME_SRC_DIR)					-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-I$(includedir)						$(GNOME_INCLUDEDIR)					-DSHAREDIR=\"$(SHAREDIR)\"				$(LIBGLADE_CFLAGS)
-+INCLUDES =  	$(GDK_PIXBUF_CFLAGS)	-I$(top_srcdir)						-I$(METATHEME_SRC_DIR)					-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	-I$(includedir)						$(GNOME_INCLUDEDIR)					-DSHAREDIR=\"$(SHAREDIR)\"				$(LIBGLADE_CFLAGS)
- 
- 
- EXTRA_DIST = bg-config-gui.glade translatable.c
-@@ -155,7 +155,7 @@
+--- plugins/background/Makefile.in.orig	Sun May 19 04:18:15 2002
++++ plugins/background/Makefile.in	Sun May 19 04:19:16 2002
+@@ -145,7 +145,7 @@
  CPPFLAGS = @CPPFLAGS@
  LDFLAGS = @LDFLAGS@
  LIBS = @LIBS@
--libbackground_la_LDFLAGS = 
-+libbackground_la_LDFLAGS = -module -avoid-version
- libbackground_la_DEPENDENCIES = 
- libbackground_la_OBJECTS =  background-plugin.lo config-io.lo \
- bg-ext-handler.lo bg-config-gui.lo
+-libbgplugin_la_LDFLAGS = 
++libbgplugin_la_LDFLAGS = -avoid-version -module
+ libbgplugin_la_DEPENDENCIES =  \
+ $(top_builddir)/libbackground/libbackground.la
+ libbgplugin_la_OBJECTS =  background-plugin.lo config-io.lo \
