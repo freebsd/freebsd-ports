@@ -1,0 +1,4 @@
+Userinfo displays information about a local user. The output is separated by a
+field deliminator so it's easy to integrate into shell scripts.
+
+WWW: http://arbornet.org/~bjk/userinfo/

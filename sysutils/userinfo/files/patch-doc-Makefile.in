@@ -1,0 +1,10 @@
++++ doc/Makefile.in	Tue Nov  5 15:33:15 2002
+@@ -114,7 +114,7 @@
+ target_cpu = @target_cpu@
+ target_os = @target_os@
+ target_vendor = @target_vendor@
+-dist_man1_MANS = ui.man
++dist_man1_MANS = ui.1
+ subdir = doc
+ mkinstalldirs = $(SHELL) $(top_srcdir)/build/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/config.h
