@@ -314,8 +314,6 @@ lib/libmicoir2.3.10.so
 lib/libmicoqt.2.3.10.so
 lib/libmicotcl.2.3.10.so
 lib/libmicox.2.3.10.so
-lib/libmicox2.3.10.a
-lib/libmicox2.3.10.so
 lib/mico-setup.csh
 lib/mico-setup.sh
 share/doc/mico/examples/MakeVars
@@ -358,13 +356,8 @@ share/doc/mico/examples/codesets/client.cc
 share/doc/mico/examples/codesets/hello.idl
 share/doc/mico/examples/codesets/runit
 share/doc/mico/examples/codesets/server.cc
-share/doc/mico/examples/dispatcher/Makefile
 share/doc/mico/examples/dispatcher/README
-share/doc/mico/examples/dispatcher/x11/Makefile
-share/doc/mico/examples/dispatcher/x11/client.cc
-share/doc/mico/examples/dispatcher/x11/hello.idl
-share/doc/mico/examples/dispatcher/x11/server.cc
-share/doc/mico/examples/dispatcher/x11/xhello
+share/doc/mico/examples/dispatcher/Makefile
 share/doc/mico/examples/dynany/Makefile
 share/doc/mico/examples/dynany/dynany.cc
 share/doc/mico/examples/dynany/dynanytest.cc
@@ -815,7 +808,6 @@ share/doc/mico/manual.ps
 @dirrm share/doc/mico/examples/henning
 @dirrm share/doc/mico/examples/generic
 @dirrm share/doc/mico/examples/dynany
-@dirrm share/doc/mico/examples/dispatcher/x11
 @dirrm share/doc/mico/examples/dispatcher
 @dirrm share/doc/mico/examples/codesets
 @dirrm share/doc/mico/examples/boa/activate

@@ -1,4 +1,26 @@
-a CORBA 2.0 implementation which goal is freely available
+The acronym MICO expands to MICO Is CORBA. The intention of this project
+is to provide a freely available and fully compliant implementation of
+the latest CORBA standard. 
 
-WWW: http://diamant.vsb.cs.uni-frankfurt.de/~mico/
-     http://www.mico.org
+Here is some of MICO features:
+    * IDL to C++ mapping
+    * Multi-threaded
+    * Dynamic Invocation Interface (DII)
+    * Dynamic Skeleton Interface (DSI)
+    * graphical Interface Repository browser
+    * Interface Repository (IR)
+    * IIOP as native protocol (ORB prepared for multiprotocol support)
+    * Portable Object Adapter (POA)
+    * Objects by Value (OBV)
+    * CORBA Components (CCM)
+    * Dynamic Any
+    * Portable Interceptors (PI)
+    * Support for secure communication and authentication using SSL
+    * Support for nested method invocations
+    * Any offers an interface for inserting and extracting constructed
+       types that were not known at compile time
+    * CORBA Services: o Interoperable Naming service, o Trading service,
+        o Event service, o Relationship service, o Property service,
+	o Time service, o Security service 
+
+WWW: http://www.mico.org
