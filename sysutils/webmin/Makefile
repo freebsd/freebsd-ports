@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.150
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -58,7 +58,9 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} -e "s=%%PREFIX%%=${PREFIX}=" ${WRKSRC}/setup.sh
 	@${FIND} ${WRKSRC} -name "*.cgi" -print \
-		| ${XARGS} ${REINPLACE_CMD} -e "s@/usr/local/bin/perl@${PERL}@"
+		| ${XARGS} ${REINPLACE_CMD} -e "s@#!/usr/local/bin/perl@#!${PERL}@"
+	@${FIND} ${WRKSRC} -name "*.pl" -print \
+		| ${XARGS} ${REINPLACE_CMD} -e "s@#!/usr/local/bin/perl@#!${PERL}@"
 	@${FIND} ${WRKSRC} -name "*.orig" -print | ${XARGS} ${RM}
 	@${FIND} ${WRKSRC} -name "*.bak" -print | ${XARGS} ${RM}
 # we may have 2 levels of empty directories which cause the plist generation
