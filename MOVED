@@ -494,3 +494,18 @@ x11-toolkits/ruby-qt2iconview||2003-08-09|obsolete
 x11-toolkits/ruby-qt2table||2003-08-09|obsolete
 x11-wm/toolbox||2003-08-09|superseded by bbconf
 devel/p5-DateTime-LeapSecond|devel/p5-DateTime|2003-08-09|integrated into devel/p5-DateTime
+astro/glunarclock||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+astro/seti_applet||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+deskutils/bulb||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+ftp/gtm||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+net/gnomicu||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+palm/gnomepilot||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+palm/gnomepilot-conduits||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+sysutils/bubblemon||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+sysutils/battstat-applet||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+x11/gbackground||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+x11/gnoclip||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+x11/gvid||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+x11/libpanel||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+x11-fm/file_applet_menu||2003-08-12|removed as part of GNOME 1.4 desktop phase out
+x11-toolkits/panel--||2003-08-12|removed as part of GNOME 1.4 desktop phase out
