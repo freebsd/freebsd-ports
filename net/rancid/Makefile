@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.shrubbery.net/pub/rancid/
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Really Awesome New Cisco confIg Differ
 
+BROKEN=		"Bad pkg-plist"
+
 BUILD_DEPENDS=	expect:${PORTSDIR}/lang/expect
 RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
