@@ -233,6 +233,7 @@
     SUBDIR += nltk
     SUBDIR += nn-aspell
     SUBDIR += nunnimcax
+    SUBDIR += nux
     SUBDIR += ny-aspell
     SUBDIR += ocaml-pxp
     SUBDIR += ocaml-yaxi
