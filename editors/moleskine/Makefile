@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moleskine
-PORTVERSION=	0.6.6
+PORTVERSION=	0.7.2
 CATEGORIES=	editors python gnome
 MASTER_SITES=	http://www.moleskine.f2s.com/files/
 DISTNAME=	${PORTNAME:S/^m/M/}-${PORTVERSION}
@@ -32,13 +32,13 @@ do-install:
 	${MKDIR} ${CONF_DIR}
 	${INSTALL_DATA} ${WRKSRC}/LanguageModes ${CONF_DIR}
 	${INSTALL_DATA} ${WRKSRC}/Preferences ${CONF_DIR}
+	${INSTALL_DATA} ${WRKSRC}/dialogs/*.glade ${INST_DIR}/dialogs
+	${INSTALL_DATA} ${WRKSRC}/images/*.png ${INST_DIR}/images
+	${INSTALL_DATA} ${WRKSRC}/images/*.jpeg ${INST_DIR}/images
+	${INSTALL_DATA} ${WRKSRC}/images/moleskine.png ${PREFIX}/share/gnome/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/Moleskine/*.py ${WRKSRC}/Moleskine/*.pyc ${INST_DIR}/Moleskine
+	${INSTALL_DATA} ${WRKSRC}/moleskine.desktop ${PREFIX}/share/gnome/apps/Development
 	${INSTALL_SCRIPT} ${WRKSRC}/moleskine ${INST_DIR}
 	${LN} -sf ${INST_DIR}/moleskine ${PREFIX}/bin/moleskine
-	${INSTALL_DATA} ${WRKSRC}/Moleskine/*.py ${WRKSRC}/Moleskine/*.pyc ${INST_DIR}/Moleskine
-	${INSTALL_DATA} ${WRKSRC}/dialogs/*.glade ${INST_DIR}/dialogs
-	${INSTALL_DATA} ${WRKSRC}/images/*.jpeg ${INST_DIR}/images
-	${INSTALL_DATA} ${WRKSRC}/images/*.png ${INST_DIR}/images
-	${INSTALL_DATA} ${WRKSRC}/moleskine.desktop ${PREFIX}/share/gnome/apps/Development
-	${INSTALL_DATA} ${WRKSRC}/images/moleskine.png ${PREFIX}/share/gnome/pixmaps
 
 .include <bsd.port.mk>
