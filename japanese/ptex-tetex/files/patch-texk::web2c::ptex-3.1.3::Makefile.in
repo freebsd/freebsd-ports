@@ -1,0 +1,70 @@
+--- texk/web2c/ptex-3.1.3/Makefile.in.orig	Tue Jun 17 14:30:40 2003
++++ texk/web2c/ptex-3.1.3/Makefile.in	Sat Feb 14 05:07:31 2004
+@@ -5,7 +5,7 @@
+ 
+ default: programs formats
+ 
+-programs=ptex tftopl pltotf pdvitype jbibtex
++programs=ptex tftopl-ptex pltotf-ptex pdvitype jbibtex
+ euc-formats=ptex-euc.fmt platex-euc.fmt
+ sjis-formats=ptex-sjis.fmt platex-sjis.fmt
+ 
+@@ -94,7 +94,7 @@
+ 	$(srcdir)/tie -c ptex.ch ptex.web ptex-base.ch
+ 
+ ### TFtoPL
+-tftopl: tftopl.o $(plib_o) $(kpathsea) $(proglib)
++tftopl-ptex: tftopl.o $(plib_o) $(kpathsea) $(proglib)
+ 	$(kpathsea_link) tftopl.o $(plib_o) $(LOADLIBES)
+ tftopl.o: tftopl.c kanji.h ptexhelp.h
+ tftopl.c: tftopl.p $(web2c_aux)
+@@ -105,7 +105,7 @@
+ 
+ 
+ ### PLtoTF
+-pltotf: pltotf.o $(plib_o) $(kpathsea) $(proglib)
++pltotf-ptex: pltotf.o $(plib_o) $(kpathsea) $(proglib)
+ 	$(kpathsea_link) pltotf.o $(plib_o) $(LOADLIBES)
+ pltotf.o: pltotf.c kanji.h ptexhelp.h
+ pltotf.c: pltotf.p $(web2c_aux)
+@@ -167,7 +167,7 @@
+ texmf.cnf: $(kpathsea_dir)/texmf.cnf
+ 	$(SHELL) $(thisdir)/mkconf $(kpathsea_dir)/texmf.cnf > texmf.cnf
+ 
+-dumpenv = TEXMFCNF=$(thisdir) TEXMF=$(texmf)
++dumpenv = TEXMFCNF=$(thisdir) TEXMF=\{$(texmf),${TEXMFLOCAL}\}
+ 
+ ptex-euc.fmt: ptex texmf.cnf
+ 	$(dumpenv) $(MAKE) $(makeargs) files="--progname=ptex ptex.tex min10.tfm" prereq-check
+@@ -236,10 +236,7 @@
+ 	$(SHELL) $(top_srcdir)/mkinstalldirs \
+ 		$(texpooldir) $(web2cdir) $(fontnamedir)
+ 	$(INSTALL_DATA) ptex.pool $(texpooldir)/ptex.pool
+-	if [ -f $(web2cdir)/texmf.cnf ]; then \
+-		mv -f $(web2cdir)/texmf.cnf $(web2cdir)/texmf.cnf.orig ;\
+-	else true; fi
+-	$(INSTALL_DATA) texmf.cnf $(web2cdir)/texmf.cnf
++	$(INSTALL_DATA) texmf.cnf $(web2cdir)/texmf.cnf.ptex-tetex
+ # tcx files
+ #	cd $(thisdir)/share && \
+ #	for f in *.tcx; do $(INSTALL_DATA) $$f $(web2cdir)/$$f; done
+@@ -277,13 +274,13 @@
+ 	-$(DIFF) $(DIFFFLAGS) $(tripdir)/trip.typ trip.typ
+ 
+ # Ad hoc tests.
+-pltotf-check: pltotf
+-	./pltotf -verbose $(testdir)/cmr10 $(testdir)/xcmr10
+-	./pltotf -verbose $(testdir)/min10 $(testdir)/xmin10
++pltotf-check: pltotf-ptex
++	./pltotf-ptex -verbose $(testdir)/cmr10 $(testdir)/xcmr10
++	./pltotf-ptex -verbose $(testdir)/min10 $(testdir)/xmin10
+ 
+-tftopl-check: tftopl
+-	./tftopl -verbose $(testdir)/cmr10 $(testdir)/xcmr10
+-	./tftopl -verbose $(testdir)/min10 $(testdir)/xmin10
++tftopl-check: tftopl-ptex
++	./tftopl-ptex -verbose $(testdir)/cmr10 $(testdir)/xcmr10
++	./tftopl-ptex -verbose $(testdir)/min10 $(testdir)/xmin10
+ 
+ pooltype-check: $(srcdir)/pooltype
+ 	$(srcdir)/pooltype ptex.pool > $(testdir)/xtexpool.typ

@@ -1,0 +1,31 @@
+--- texk/web2c/Makefile.in.orig	Sat Feb 14 01:57:41 2004
++++ texk/web2c/Makefile.in	Sat Feb 14 01:58:37 2004
+@@ -137,8 +137,8 @@
+ @MFW@@MFN@mfn = mf-nowin
+ programs = bibtex ctangle cweave dvicopy dvitomp dvitype $(etex) gftodvi \
+ gftopk gftype $(mfn) $(mfw) mft mpost $(odvicopy) $(odvitype) $(omega) \
+-$(otangle) patgen $(pdftex) $(pdfetex) $(pdftosrc) pktogf pktype pltotf \
+-pooltype tangle $(tex) tftopl tie $(ttf2afm) vftovp vptovf weave
++$(otangle) patgen $(pdftex) $(pdfetex) $(pdftosrc) pktogf pktype pltotf-ptex \
++pooltype tangle $(tex) tftopl-ptex tie $(ttf2afm) vftovp vptovf weave
+ 
+ mpware = mpware/dmp mpware/makempx mpware/mpto mpware/newer
+ mpware_sources = mpware/dmp.c mpware/makempx.in mpware/mpto.c mpware/newer.c
+@@ -207,7 +207,7 @@
+ 	$(kpathsea_link) pktogf.o $(LOADLIBES)
+ pktype: pktype.o
+ 	$(kpathsea_link) pktype.o $(LOADLIBES)
+-pltotf: pltotf.o
++pltotf-ptex: pltotf.o
+ 	$(kpathsea_link) pltotf.o $(LOADLIBES)
+ pooltype: pooltype.o
+ 	$(kpathsea_link) pooltype.o $(LOADLIBES)
+@@ -215,7 +215,7 @@
+ 	$(kpathsea_link) $(tex_o) $(socketlibs) $(LOADLIBES)
+ tie: tie.o
+ 	$(kpathsea_link) tie.o $(LOADLIBES)
+-tftopl: tftopl.o
++tftopl-ptex: tftopl.o
+ 	$(kpathsea_link) tftopl.o $(LOADLIBES)
+ vftovp: vftovp.o
+ 	$(kpathsea_link) vftovp.o $(LOADLIBES)

@@ -315,6 +315,7 @@
     SUBDIR += ptex-pkfonts360
     SUBDIR += ptex-pkfonts400
     SUBDIR += ptex-pkfonts600
+    SUBDIR += ptex-tetex
     SUBDIR += py-kanjilib
     SUBDIR += pycodec
     SUBDIR += qkc
