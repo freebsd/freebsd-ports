@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	ircii
-PORTVERSION=	20030709
+PORTVERSION=	20040216
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.warped.com/pub/ircII/ \
 		ftp://ircftp.au.eterna.com.au/pub/ircII/ \
-		ftp://ftp.plig.net/pub/ircII/
+		ftp://ftp.sergei.cc/pub/ircII/
 
 MAINTAINER=	anders@andersa.net
-COMMENT=	The 'Internet Relay Chat' Client
+COMMENT=	The 'Internet Relay Chat' and 'Internet Citizens Band' Client
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	IRCLIB=${PREFIX}/share/irc
