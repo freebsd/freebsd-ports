@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.python.org/ftp/python/${PORTVERSION}/ \
 MASTER_SITE_SUBDIR=	python
 DISTFILES=	${PYTHON_DISTFILE}
 
-MAINTAINER?=	tg@FreeBSD.org
+MAINTAINER?=	alane@FreeBSD.org
 
 DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}

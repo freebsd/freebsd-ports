@@ -1,6 +1,6 @@
 # New ports collection makefile for:    python-doc
 # Date created:         12 May 1999
-# Whom:                 Thomas Gellekum <tg@FreeBSD.org>
+# Whom:                 Thomas Gellekum <alane@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.python.org/ftp/python/doc/${PORTVERSION}/ \
 		http://SunSITE.Informatik.RWTH-Aachen.DE/python/ftp/python/doc/${PORTVERSION}/
 DISTNAME=	${DOCFORMAT}-${PORTVERSION}
 
-MAINTAINER=	tg@FreeBSD.org
+MAINTAINER=	alane@FreeBSD.org
 
 DIST_SUBDIR=	python
 USE_PYTHON=	yes
