@@ -32,12 +32,3 @@
  
  # "Bundle" an Ascii file.
  .ps.h:
-@@ -42,3 +43,8 @@
- 
- clean:
- 	rm -f pstotext *.o core $(BUNDLE)
-+
-+install:
-+	cp -p pstotext		/usr/local/bin
-+	cp -p pstotext.1	/usr/local/man/man1
-+
