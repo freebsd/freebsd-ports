@@ -32,6 +32,45 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="bef4515b-eaa9-11d8-9440-000347a4fa7d">
+    <topic>xine -- vcd URL buffer overflow</topic>
+    <affects>
+      <package>
+	<name>libxine</name>
+	<range><lt>1.0.r5_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>c0ntex[at]open-security.org reports a buffer overflow in
+	  xine's handling of vcd:// URLs:</p>
+	<blockquote cite="http://www.open-security.org/advisories/6">
+          <p>Like the excellent Mplayer, Xine is a superb free media
+            player for Linux. Sadly there is a generic stack based
+            buffer overflow in all versions of Xine-lib, including
+            Xine-lib-rc5 that allows for local and remote malicious
+	    code execution.</p>
+          <p>By overflowing the vcd:// input source identifier buffer,
+            it is possible to modify the instruction pointer with a
+            value that a malicious attacker can control. The issue
+            can be replicated in a remote context by embedding the
+            input source idientifier within a playlist file, such as
+            an asx.  When a user plays the file, this stack overflow
+            will occur, exploit code can then be executed with the
+	    rights of the user running Xine.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.open-security.org/advisories/6</url>
+      <url>http://cvs.sourceforge.net/viewcvs.py/xine/xine-vcdnav/input/xineplug_inp_vcd.c#rev1.109</url>
+    </references>
+    <dates>
+      <discovery>2004-07-18</discovery>
+      <entry>2004-08-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0d3a5148-f512-11d8-9837-000c41e2cdad">
     <topic>SpamAssassin -- denial-of-service in tokenize_headers</topic>
     <affects>
