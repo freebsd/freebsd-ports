@@ -83,8 +83,8 @@ CFLAGS+=	-I${PREFIX}/include/ncurses -I${PREFIX}/include
 .if defined(WITH_MUTT_CYRUS_SASL)
 CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 .endif
-MAN1=		mutt.1 mutt_dotlock.1
-MAN5=		muttrc.5
+MAN1=		flea.1 mutt.1 mutt_dotlock.1 muttbug.1
+MAN5=		mbox.5 muttrc.5
 
 # XXX
 # this should be done automagically by aclocal but ....
