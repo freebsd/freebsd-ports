@@ -1,12 +1,30 @@
---- src/Makefile.orig	Sat Mar  8 05:52:32 1997
-+++ src/Makefile	Mon Mar 31 20:10:52 1997
-@@ -136,8 +136,8 @@
+--- src/Makefile.orig	Fri Sep  5 18:01:33 1997
++++ src/Makefile	Fri Sep  5 18:05:13 1997
+@@ -94,7 +94,7 @@
+ #
+ # This is my compiler of choice, it seems to work most everywhere
+ #
+-CC = gcc
++#CC = gcc
+ 
+ 
+ #
+@@ -115,8 +115,8 @@
+ # including "USE_GETCH" and "USE_CURS_SET".  Note that "config.h" will
+ # attempt to "guess" at many of these flags based on your system.
+ #
+-CFLAGS = -Wall -O1 -pipe -g -D"USE_X11" -D"USE_GCU"
+-LIBS = -lX11 -lcurses -ltermcap
++#CFLAGS = -Wall -O1 -pipe -g -D"USE_X11" -D"USE_GCU"
++#LIBS = -L/usr/X11-lX11 -lcurses -ltermcap
+ 
+ 
  ##
+@@ -137,7 +137,7 @@
  ## Variation -- Use "main-xaw.c" instead of "main-x11.c"
  ##
--#CFLAGS = -Wall -O1 -pipe -g -D"USE_XAW" -D"USE_GCU"
+ #CFLAGS = -Wall -O1 -pipe -g -D"USE_XAW" -D"USE_GCU"
 -#LIBS = -lXaw -lXmu -lXt -lX11 -lcurses -ltermcap
-+CFLAGS = -Wall -O1 -pipe -I/usr/X11R6/include -DDEFAULT_PATH=\"${PREFIX}/lib/angband/\" -D"USE_XAW" -D"USE_GCU"
 +LIBS = -L/usr/X11R6/lib -lXaw -lXmu -lXt -lX11 -lcurses -ltermcap
  
  

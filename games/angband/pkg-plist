@@ -1,44 +1,80 @@
 bin/angband
-lib/angband/help/attack.txt
-lib/angband/help/birth.txt
-lib/angband/help/command.txt
-lib/angband/help/dungeon.txt
-lib/angband/help/general.txt
-lib/angband/help/help.hlp
-lib/angband/help/option.txt
-lib/angband/help/version.txt
-lib/angband/edit/a_info.txt
-lib/angband/edit/e_info.txt
-lib/angband/edit/f_info.txt
-lib/angband/edit/k_info.txt
-lib/angband/edit/r_info.txt
-lib/angband/edit/v_info.txt
-lib/angband/user/font-ami.prf
-lib/angband/user/font-ibm.prf
-lib/angband/user/font-win.prf
-lib/angband/user/graf-ami.prf
-lib/angband/user/graf-win.prf
-lib/angband/user/pref-acn.prf
-lib/angband/user/graf-mac.prf
-lib/angband/user/xtra-gcu.prf
-lib/angband/user/pref-emx.prf
-lib/angband/user/pref-ibm.prf
-lib/angband/user/pref-lsl.prf
-lib/angband/user/pref-mac.prf
-lib/angband/user/pref-win.prf
-lib/angband/user/pref-x11.prf
-lib/angband/user/pref-xaw.prf
-lib/angband/user/pref.prf
-lib/angband/file/dead.txt
-lib/angband/file/news.txt
-@exec mkdir -p %D/lib/angband/bone
-@exec mkdir -p %D/lib/angband/data
-@exec mkdir -p %D/lib/angband/info
-@exec mkdir -p %D/lib/angband/save
-@exec mkdir -p %D/lib/angband/xtra
-@dirrm lib/angband/bone
-@dirrm lib/angband/data
-@dirrm lib/angband/info
-@dirrm lib/angband/save
-@dirrm lib/angband/xtra
-
+lib/X11/angband/apex/scores.raw
+lib/X11/angband/edit/a_info.txt
+lib/X11/angband/edit/e_info.txt
+lib/X11/angband/edit/f_info.txt
+lib/X11/angband/edit/k_info.txt
+lib/X11/angband/edit/r_info.txt
+lib/X11/angband/edit/v_info.txt
+lib/X11/angband/file/dead.txt
+lib/X11/angband/file/news.txt
+lib/X11/angband/help/attack.txt
+lib/X11/angband/help/birth.txt
+lib/X11/angband/help/command.txt
+lib/X11/angband/help/dungeon.txt
+lib/X11/angband/help/general.txt
+lib/X11/angband/help/help.hlp
+lib/X11/angband/help/option.txt
+lib/X11/angband/help/playing.txt
+lib/X11/angband/help/version.txt
+lib/X11/angband/user/font-ami.prf
+lib/X11/angband/user/font-ibm.prf
+lib/X11/angband/user/font-mac.prf
+lib/X11/angband/user/font-win.prf
+lib/X11/angband/user/font.prf
+lib/X11/angband/user/graf-ami.prf
+lib/X11/angband/user/graf-mac.prf
+lib/X11/angband/user/graf-win.prf
+lib/X11/angband/user/graf-xxx.prf
+lib/X11/angband/user/graf.prf
+lib/X11/angband/user/pref-acn.prf
+lib/X11/angband/user/pref-ami.prf
+lib/X11/angband/user/pref-emx.prf
+lib/X11/angband/user/pref-gcu.prf
+lib/X11/angband/user/pref-mac.prf
+lib/X11/angband/user/pref-win.prf
+lib/X11/angband/user/pref-x11.prf
+lib/X11/angband/user/pref.prf
+lib/X11/angband/user/user-mac.prf
+lib/X11/angband/user/user.prf
+@exec mkdir -p %D/lib/X11/angband/bone
+@exec mkdir -p %D/lib/X11/angband/data
+@exec mkdir -p %D/lib/X11/angband/info
+@exec mkdir -p %D/lib/X11/angband/save
+@exec mkdir -p %D/lib/X11/angband/xtra
+@exec mkdir -p %D/lib/X11/angband/apex
+@exec mkdir -p %D/lib/X11/angband/edit
+@exec mkdir -p %D/lib/X11/angband/file
+@exec mkdir -p %D/lib/X11/angband/help
+@exec mkdir -p %D/lib/X11/angband/user
+@exec chown bin.games %D/lib/X11/angband/apex
+@exec chown bin.games %D/lib/X11/angband/bone
+@exec chown bin.games %D/lib/X11/angband/data
+@exec chown bin.games %D/lib/X11/angband/edit
+@exec chown bin.games %D/lib/X11/angband/file
+@exec chown bin.games %D/lib/X11/angband/help
+@exec chown bin.games %D/lib/X11/angband/info
+@exec chown bin.games %D/lib/X11/angband/xtra
+@exec chown bin.games %D/lib/X11/angband/save
+@exec chown bin.games %D/lib/X11/angband/user
+@exec chmod 775 %D/lib/X11/angband/apex
+@exec chmod 775 %D/lib/X11/angband/bone
+@exec chmod 775 %D/lib/X11/angband/data
+@exec chmod 775 %D/lib/X11/angband/edit
+@exec chmod 775 %D/lib/X11/angband/file
+@exec chmod 775 %D/lib/X11/angband/help
+@exec chmod 775 %D/lib/X11/angband/info
+@exec chmod 775 %D/lib/X11/angband/xtra
+@exec chmod 1777 %D/lib/X11/angband/save
+@exec chmod 1777 %D/lib/X11/angband/user
+@exec chmod 664 %D/lib/X11/angband/apex/scores.raw
+@dirrm lib/X11/angband/bone
+@dirrm lib/X11/angband/data
+@dirrm lib/X11/angband/info
+@dirrm lib/X11/angband/save
+@dirrm lib/X11/angband/xtra
+@dirrm lib/X11/angband/apex
+@dirrm lib/X11/angband/edit
+@dirrm lib/X11/angband/file
+@dirrm lib/X11/angband/help
+@dirrm lib/X11/angband/user
