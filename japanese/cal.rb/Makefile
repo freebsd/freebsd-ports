@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cal.rb
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	japanese deskutils
 MASTER_SITES=	http://aglaia.c.u-tokyo.ac.jp/~yamamoto/Script/Calendar/
 DISTFILES=	cal.rb Calendar.rb era_name
