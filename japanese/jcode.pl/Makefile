@@ -1,13 +1,13 @@
 # New ports collection makefile for:	jcode.pl
-# Version required:	2.6
+# Version required:	2.10
 # Date created:		20 February 1998
 # Whom:			sada
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/06/29 19:42:15 max Exp $
 #
 
-DISTNAME=	jcode.pl-2.6
-PKGNAME=	ja-jcode.pl-2.6
+DISTNAME=	jcode.pl-2.10
+PKGNAME=	ja-jcode.pl-2.10
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/IIJ/dist/utashiro/perl/ \
 		ftp://ftp.sra.co.jp/pub/lang/perl/sra-scripts/
