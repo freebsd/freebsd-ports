@@ -36,7 +36,7 @@
 -	if [ ${OSTYPE} = "IRIX" ]; then
 -		$sympadir/$1.pl $startparam && echo "success" || echo "failure"
 +	if [ ${OSTYPE} = "IRIX" -o ${OSTYPE} = "FreeBSD" ]; then
-+		su sympa -c "$sympadir/$1.pl $startparam" && echo "success" || echo "failure"
++		su -m sympa -c "$sympadir/$1.pl $startparam" && echo "success" || echo "failure"
  	else
  		$sympadir/$1.pl $startparam && success || failure
  	fi
