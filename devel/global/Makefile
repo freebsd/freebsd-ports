@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	global
-PORTVERSION=	4.5.2
+PORTVERSION=	4.5.3
 CATEGORIES=	devel
-MASTER_SITES=	http://www.tamacom.com/global/
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	${PORTNAME} 
 
-MAINTAINER=	jos@catnook.com
+MAINTAINER=	rui@ruilopes.com
 COMMENT=	A source code tag system
 
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=		gctags.1 global.1 gozilla.1 gtags.1 htags.1
 
