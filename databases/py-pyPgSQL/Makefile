@@ -21,7 +21,7 @@ LIB_DEPENDS=   pq.2:${PORTSDIR}/databases/postgresql7
 
 WRKSRC=		${WRKDIR}/pypgsql
 USE_PYTHON=	yes
-SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
+USE_PYDISTUTILS=	yes
 
 DOCS=		README
 
@@ -37,12 +37,8 @@ post-patch:
 		-e 's#^library_dirs  = \[ "/usr/local/pgsql/lib" \]#library_dirs  = [ "${LOCALBASE}/lib" ]#' \
 		${WRKSRC}/setup.py
 
-do-build:
-	${SETUP_CMD} build_ext --inplace
-
-do-install:
-	${SETUP_CMD} install -c -O1
 .if !defined(NOPORTDOCS)
+post-install:
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCS}
 	@${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}

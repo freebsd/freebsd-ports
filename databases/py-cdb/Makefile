@@ -14,13 +14,7 @@ DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jason@mastaler.com
 
-BUILD_DEPENDS=	${PYDISTUTILS}
 USE_PYTHON=	yes
-
-do-build:
-	(cd ${WRKSRC}; ${PYTHON_CMD} setup.py build)
-
-do-install:
-	(cd ${WRKSRC}; ${PYTHON_CMD} setup.py install)
+USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>
