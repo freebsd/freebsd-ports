@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	angband
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.3
 CATEGORIES=	games
 MASTER_SITES=	ftp://clockwork.dementia.org/angband/Source/  \
 		ftp://ftp.sunet.se/pub/games/Angband/Source/
