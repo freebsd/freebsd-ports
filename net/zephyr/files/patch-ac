@@ -1,0 +1,11 @@
+--- clients/xzwrite/XZwrite.in.orig	Wed Mar  3 19:57:39 1999
++++ clients/xzwrite/XZwrite.in	Wed Mar  3 20:05:46 1999
+@@ -17,7 +17,7 @@
+ *readAnyone:		on
+ *readXzwrite:		on
+ 
+-*icon.bitmap:		@datadir@/xzwrite.bitmap
++*icon.bitmap:		XX_PREFIX_XX/share/zephyr/xzwrite.bitmap
+ *icon.translations:	#override\
+ 	<BtnDown>:	set() \n\
+ 	<Btn1Up>:	OpenSend() unset() \n\

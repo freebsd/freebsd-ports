@@ -66,12 +66,17 @@ sbin/zhm
 sbin/zmailnotify
 sbin/zpopnotify
 sbin/zshutdown_notify
-share/XZwrite
+share/zephyr/XZwrite
 share/doc/zephyr/INSTALL
 share/doc/zephyr/NOTES
 share/doc/zephyr/OPERATING
 share/doc/zephyr/README
 share/doc/zephyr/USING
-share/xzwrite.bitmap
-share/zwgc.desc
-share/zwgc_resources
+share/zephyr/xzwrite.bitmap
+share/zephyr/zwgc.desc
+share/zephyr/zwgc_resources
+@dirrm etc/zephyr/acl
+@dirrm etc/zephyr
+@dirrm include/zephyr
+@dirrm share/doc/zephyr
+@dirrm share/zephyr

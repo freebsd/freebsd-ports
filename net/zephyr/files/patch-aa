@@ -1,7 +1,24 @@
-*** configure	Sun Jul 23 09:11:27 1995
---- configure	Tue Aug  1 21:51:42 1995
+*** configure.orig	Wed Mar  3 20:37:09 1999
+--- configure	Wed Mar  3 20:39:35 1999
 ***************
-*** 430,446 ****
+*** 44,50 ****
+  bindir='${exec_prefix}/bin'
+  sbindir='${exec_prefix}/sbin'
+  libexecdir='${exec_prefix}/libexec'
+! datadir='${prefix}/share'
+  sysconfdir='${prefix}/etc'
+  sharedstatedir='${prefix}/com'
+  localstatedir='${prefix}/var'
+--- 44,50 ----
+  bindir='${exec_prefix}/bin'
+  sbindir='${exec_prefix}/sbin'
+  libexecdir='${exec_prefix}/libexec'
+! datadir='${prefix}/share/zephyr'
+  sysconfdir='${prefix}/etc'
+  sharedstatedir='${prefix}/com'
+  localstatedir='${prefix}/var'
+***************
+*** 547,563 ****
   	       confdir=${confdir-'$(prefix)/etc/zephyr'}
   	       sbindir=${sbindir-'$(exec_prefix)/sbin'}
   	       lsbindir=${lsbindir-'$(exec_prefix)/sbin'}
@@ -19,7 +36,7 @@
   fi
   
   
---- 430,449 ----
+--- 547,566 ----
   	       confdir=${confdir-'$(prefix)/etc/zephyr'}
   	       sbindir=${sbindir-'$(exec_prefix)/sbin'}
   	       lsbindir=${lsbindir-'$(exec_prefix)/sbin'}
