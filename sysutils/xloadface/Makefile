@@ -3,7 +3,7 @@
 # Date created:		4 February 1998
 # Whom:			FURUSAWA,Kazuhisa <kazu@jp.freebsd.org>
 #
-# $Id: Makefile,v 1.2 1998/02/07 19:53:25 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xloadface-1.6.1

@@ -3,7 +3,7 @@
 # Date created:		6 Nov 1997
 # Whom:			Sheldon Hearn <axl@iafrica.com>
 #
-# $Id: Makefile,v 1.6 1999/02/03 11:11:57 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	asrpages

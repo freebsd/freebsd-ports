@@ -3,7 +3,7 @@
 # Date created:        27 November 1998
 # Whom:                Kris Kennaway <kkennawa@physics.adelaide.edu.au>
 #
-# $Id: Makefile,v 1.8 1999/06/07 12:03:33 kris Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wmmon-1.0b2

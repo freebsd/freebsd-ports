@@ -3,7 +3,7 @@
 # Date created:        23 May 1999
 # Whom:                Stephen Kiernan <sk-ports@vegamuse.org>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	wminet-2.0.2

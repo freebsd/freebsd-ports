@@ -3,7 +3,7 @@
 # Date created:		99/07/02
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1999/08/25 01:37:58 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wmapm-3.01

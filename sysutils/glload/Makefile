@@ -3,7 +3,7 @@
 # Date created:			04 Dec 1998
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1998/12/20 01:22:58 vanilla Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	glload-0.4.0

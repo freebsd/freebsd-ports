@@ -3,7 +3,7 @@
 # Date created:		04 Janyary 1999
 # Whom:			Sergey Osokin aka oZZ <ozz@FreeBSD.org.ru>
 #
-# $Id: Makefile,v 1.3 1999/05/05 03:16:41 kuriyama Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wmmount-1.0-beta1

@@ -3,7 +3,7 @@
 # Date created:		19 Nov 1997
 # Whom:			Brian Handy <handy@physics.montana.edu>
 #
-# $Id: Makefile,v 1.15 1999/05/10 16:33:50 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xosview-1.7.1

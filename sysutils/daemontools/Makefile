@@ -3,7 +3,7 @@
 # Date created:		09 June 1998
 # Whom:			Dom Mitchell <dom@myrddin.demon.co.uk>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	daemontools-0.53

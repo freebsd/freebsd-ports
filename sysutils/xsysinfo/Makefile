@@ -3,7 +3,7 @@
 # Date created:		4 April 1996
 # Whom:			jdli
 #
-# $Id: Makefile,v 1.8 1998/10/06 23:56:13 gj Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xsysinfo-1.4a

@@ -3,7 +3,7 @@
 # Date created:		March 16, 1998
 # Whom:			jseger@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.4 1999/01/27 07:41:27 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       cfengine-1.4.12

@@ -4,7 +4,7 @@
  *
  * Handel the FreeBSD Versions in a central file!
  *
- *     $Id: fbsd_vers.h,v 3.1 1998/10/15 19:56:47 lkoeller Exp lkoeller $
+ * $FreeBSD$
  */
 
 #ifdef HAVE_SYS_PARAM_H

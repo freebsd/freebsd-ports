@@ -3,7 +3,7 @@
 # Date created:		07 Aug 1996
 # Whom:			jhk
 #
-# $Id: Makefile,v 1.11 1999/03/31 11:17:08 dirk Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mkisofs-1.12b5

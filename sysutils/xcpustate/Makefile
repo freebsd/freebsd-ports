@@ -4,7 +4,7 @@
 # Date created:		31-Dec-1995
 # Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
 #
-# $Id: Makefile,v 1.11 1998/03/06 01:58:14 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xcpustate-2.5

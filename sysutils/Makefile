@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.71 1999/08/12 00:20:58 taoka Exp $
+# $FreeBSD$
 #
 
     SUBDIR += LPRng

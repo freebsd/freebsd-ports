@@ -3,7 +3,7 @@
 # Date created:		4 June 1999
 # Whom:				jack
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/14 19:58:10 taoka Exp $
+# $FreeBSD$
 
 DISTNAME=	asfsm-1.0pre15
 PKGNAME=	asfsm-1.0p15

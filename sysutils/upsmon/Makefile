@@ -3,7 +3,7 @@
 # Date created:		5 Oct 1998
 # Whom:			Igor Vinokurov <igor@zynaps.ru>
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/24 22:43:40 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	upsmon-2.1.3

@@ -3,7 +3,7 @@
 # Date created:	12 March 1997
 # Whom:	Andrew <andrew@ugh.net.au>, Iain Templeton <iain@ugh.net.au>
 #
-# $Id: Makefile,v 1.2 1997/03/25 08:19:32 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	idled-1.16

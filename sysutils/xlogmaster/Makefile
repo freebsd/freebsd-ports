@@ -3,7 +3,7 @@
 # Date created:		1 August 1998
 # Whom:			Adrian Wontroba <aw1@stade.co.uk>
 #
-# $Id: Makefile,v 1.10 1999/04/19 04:15:29 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xlogmaster-1.6.0

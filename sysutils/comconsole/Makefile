@@ -3,7 +3,7 @@
 # Date created:		27 Dec 1998
 # Whom:			SADA Kenji <sada@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/26 17:16:47 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	comconsole-0.1

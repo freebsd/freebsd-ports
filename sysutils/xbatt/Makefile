@@ -3,7 +3,7 @@
 # Date created:		2 May 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.7 1998/11/21 07:27:40 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xbatt-1.2.1

@@ -3,7 +3,7 @@
 # Date created:		Tue Jun 22 21:17:03 MET DST 1999
 # Whom:			Juergen Lock <nox@jelal.kn-bremen.de>
 #
-# $Id: Makefile,v 1.3 1999/08/14 08:04:50 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gcombust-0.1.20

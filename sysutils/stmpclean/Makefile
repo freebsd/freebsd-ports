@@ -3,7 +3,7 @@
 # Date created:        4 August 1999
 # Whom:                shalunov
 #
-# $Id:$
+# $FreeBSD$
 
 DISTNAME=	stmpclean-0.1
 CATEGORIES=	sysutils

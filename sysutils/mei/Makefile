@@ -3,7 +3,7 @@
 # Date created:		19 Sep 1997
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.6 1999/04/25 08:14:57 itojun Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mei-1.53

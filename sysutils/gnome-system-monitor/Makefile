@@ -3,7 +3,7 @@
 # Date created:				28 September 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.9 1999/04/08 18:08:37 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gtop-1.0.2

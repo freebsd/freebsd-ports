@@ -3,7 +3,7 @@
 # Date created:         1 May 1997
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.12 1998/11/11 05:37:31 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       cd-write-1.4.1

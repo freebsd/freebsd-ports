@@ -3,7 +3,7 @@
 # Date created:         20 July 1998
 # Whom:                 Vladimir Kushnir <kushn@mail.kar.net>
 #
-# $Id: Makefile,v 1.3 1998/11/11 20:59:28 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wmavgload-0.7.0

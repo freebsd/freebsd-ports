@@ -3,7 +3,7 @@
 # Date created:         10 September 1995
 # Whom:                 joerg
 #
-# $Id: Makefile,v 1.9 1997/08/16 10:14:49 wosch Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       manck-1.2

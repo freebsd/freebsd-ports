@@ -3,7 +3,7 @@
 # Date created:         16 Februar 1996
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.4 1997/08/21 22:58:18 wosch Exp $
+# $FreeBSD$
 
 DISTNAME=       stat-1.3
 CATEGORIES=	sysutils

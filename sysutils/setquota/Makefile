@@ -3,7 +3,7 @@
 # Date created:		27 September 1997
 # Whom:			winter@jurai.net
 #
-# $Id: Makefile,v 1.1.1.1 1997/09/27 22:34:20 joerg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	setquota-0.1

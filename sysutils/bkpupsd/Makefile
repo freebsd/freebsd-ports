@@ -3,7 +3,7 @@
 # Date created:             26 May 1995
 # Whom:                     Yoshifumi Watanabe <mwatts@edu1.tokyo-med.ac.jp>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=      bkpupsd-1.0a

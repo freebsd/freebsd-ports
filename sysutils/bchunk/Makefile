@@ -3,7 +3,7 @@
 # Date created:                	9 Jan 1999
 # Whom:                        	bsdx
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/13 23:08:52 billf Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bchunk-1.0.0

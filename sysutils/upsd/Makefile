@@ -3,7 +3,7 @@
 # Date created:         11 Jul 1996
 # Whom:                 alexis
 #
-# $Id: Makefile,v 1.2 1998/07/03 23:40:20 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	upsd-2.0.1.6

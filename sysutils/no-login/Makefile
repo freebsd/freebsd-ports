@@ -3,7 +3,7 @@
 # Date created:         15 Jul 1998
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/07/25 12:37:36 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nologin

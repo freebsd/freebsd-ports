@@ -3,7 +3,7 @@
 # Date created:         10 March 1998
 # Whom:                 rantapaa@uswest.net
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/20 03:55:54 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       psmisc-17

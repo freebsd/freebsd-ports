@@ -3,7 +3,7 @@
 # Date created:		23 October 1998
 # Whom:			Stephen J. Roznowski <sjr@home.net>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/20 21:14:43 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		copytape
