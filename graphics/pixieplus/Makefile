@@ -7,13 +7,14 @@
 
 PORTNAME=	pixieplus
 PORTVERSION=	0.5.4.1
+PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	http://people.fruitsalad.org/avleeuwen/distfiles/${PORTNAME}/
 
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	A free, fast, and feature packed image browser and viewer for KDE
 
-LIB_DEPENDS=	Magick.6:${PORTSDIR}/graphics/ImageMagick \
+LIB_DEPENDS=	Magick.7:${PORTSDIR}/graphics/ImageMagick \
 		ungif.5:${PORTSDIR}/graphics/libungif
 
 GNU_CONFIGURE=	yes
@@ -28,5 +29,10 @@ USE_BZIP2=	yes
 .if ${OSVERSION} < 500000
 BROKEN=		"Does not compile on 4.x"
 .endif
+
+post-patch:
+	@${CP} ${FILESDIR}/blob_private.h ${WRKSRC}/app/
+	@${CP} ${FILESDIR}/exception_private.h ${WRKSRC}/app/
+	@${CP} ${FILESDIR}/image_private.h ${WRKSRC}/app/
 
 .include <bsd.port.post.mk>
