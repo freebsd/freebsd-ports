@@ -32,6 +32,32 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ca543e06-207a-11d9-814e-0001020eed82">
+    <topic>cacti -- SQL injection</topic>
+    <affects>
+      <package>
+	<name>cacti</name>
+	<range><lt>0.8.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Fernando Quintero reports that Cacti 0.8.5a suffers from a
+	  SQL injection attack where an attacker can change the
+	  password for any Cacti user.	This attack is not possible if
+	  the PHP option magic_quotes_gpc is set to On, which is the
+	  default for PHP in FreeBSD.</p>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="1092686621.818.8.camel@mitnick.nadied.org">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=109269427427368</mlist>
+    </references>
+    <dates>
+      <discovery>2004-08-16</discovery>
+      <entry>2004-10-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="18974c8a-1fbd-11d9-814e-0001020eed82">
     <topic>apache13-modssl -- format string vulnerability in
       proxy support</topic>
