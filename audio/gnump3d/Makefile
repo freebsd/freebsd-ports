@@ -35,7 +35,7 @@ PERL_SITELIBDIR=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-BROKEN=	"You need at least perl 5.6.0. Do not use FreeBSD 4.x' system perl,\
+IGNORE=	"You need at least perl 5.6.0. Do not use FreeBSD 4.x' system perl,\
 	it's outdated. Install lang/perl5 and issue 'use.perl port'"
 .endif
 
