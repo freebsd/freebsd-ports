@@ -1,2 +1,0 @@
-share/java/classes/jdictionary/Plugins/SmartEngHun-1_4.jar
-@unexec rmdir %D/share/java/classes/jdictionary/Plugins || true
