@@ -10,27 +10,32 @@ bin/rgettext
 @dirrm %%RUBY_SITELIBDIR%%/gettext
 share/locale/ja/LC_MESSAGES/rgettext.mo
 @unexec rmdir -p %D/share/locale/ja/LC_MESSAGES 2>/dev/null || true
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/README
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello2.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hellogtk.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hellogtk_utf8.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello_noop.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hello_plural.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hellogtk.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hellogtk2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/hellotk.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/ja/LC_MESSAGES/hello.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/ja/LC_MESSAGES/hello2.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/ja/LC_MESSAGES/hello_noop.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/ja/LC_MESSAGES/hello_plural.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/ja/LC_MESSAGES/hellogtk.mo
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/locale/ja/LC_MESSAGES/hellotk.mo
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/makemo.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/hello.pot
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/hello2.pot
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/hello_noop.pot
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/hello_plural.pot
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/hellogtk.pot
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/ja/hello.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/ja/hello2.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/ja/hello_noop.po
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/ja/hello_plural.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/ja/hellogtk.po
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/ja/hellotk.po
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/po/makemo.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po/ja_JP.eucJP
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/po
@@ -42,11 +47,11 @@ share/locale/ja/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/en/ruby-gettext.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/ja/ruby-gettext.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/style.css
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/makehtml.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/en/LANGUAGE
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/en/ruby-gettext.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/ja/LANGUAGE
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/ja/ruby-gettext.rd
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/yard2html.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rd/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rd/en
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/rd
