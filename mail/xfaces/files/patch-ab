@@ -5,7 +5,7 @@ diff -c -N ../xfaces-3.3-org/images/Imakefile ./images/Imakefile
 *** 0 ****
 --- 1,5 ----
 + 
-+ InstallNonExec( *.xpm, $(INCDIR)/pixmaps)
++ InstallNonExec( *.xpm, $(INCDIR)/X11/pixmaps)
 + 
 + clean::
 + 	rm -f Makefile.*
