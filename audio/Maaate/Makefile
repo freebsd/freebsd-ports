@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Maaate
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cmis.csiro.au/maaate/packages/
 
