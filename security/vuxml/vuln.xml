@@ -136,10 +136,14 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </description>
     <references>
       <url>http://developer.berlios.de/forum/forum.php?forum_id=5814</url>
+      <url>http://www.osvdb.org/7266</url>
+      <url>http://secunia.com/advisories/11941</url>
+      <bid>10604</bid>
     </references>
     <dates>
       <discovery>2004-06-19</discovery>
       <entry>2004-06-25</entry>
+      <modified>2004-06-29</modified>
     </dates>
   </vuln>
 
@@ -3649,7 +3653,7 @@ misc.c:
     </dates>
   </vuln>
 
-  <vuln vid="9fe115e6-cbb9-11d8-a8d4-0002b34cc336">
+  <vuln vid="0d4c31ac-cb91-11d8-8898-000d6111a684">
     <topic>Remote code injection in phpMyAdmin</topic>
     <affects>
       <package>
@@ -3666,7 +3670,10 @@ misc.c:
       </body>
     </description>
     <references>
-      <url>http://www.securityfocus.com/archive/1/367486/2004-06-28/2004-07-04/0</url>
+      <url>http://sf.net/forum/forum.php?forum_id=387635</url>
+      <mlist msgid="20040629025752.976.qmail@www.securityfocus.com">http://www.securityfocus.com/archive/1/367486</mlist>
+      <url>http://secunia.com/advisories/11974</url>
+      <url>http://eagle.kecapi.com/sec/fd/phpMyAdmin.html</url>
     </references>
     <dates>
       <discovery>2004-06-29</discovery>
