@@ -977,6 +977,7 @@ crossgo32-f77	ports/lang/crossgo32-f77
 crosspad	ports/misc/crosspad
 crt0		-a csu
 crunch		src/usr.sbin/crunch
+crux		ports/x11-toolkits/crux
 crw		ports/graphics/crw
 cryptcat	ports/net/cryptcat
 cryptix-jce	ports/java/cryptix-jce
