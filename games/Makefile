@@ -60,6 +60,7 @@
     SUBDIR += bugsquish
     SUBDIR += bugsx
     SUBDIR += burgerspace
+    SUBDIR += bygfoot
     SUBDIR += bzflag
     SUBDIR += cardpics
     SUBDIR += cgoban
