@@ -413,7 +413,6 @@
     SUBDIR += xemacs21-canna+freewnn
     SUBDIR += xemacs21-canna+wnn6
     SUBDIR += xemacs21-freewnn
-    SUBDIR += xemacs21-sumo-wnn6
     SUBDIR += xemacs21-wnn6
     SUBDIR += xjman
     SUBDIR += xjman-3
