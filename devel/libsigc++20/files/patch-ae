@@ -1,0 +1,11 @@
+--- sigc++/macros/Makefile.in	Thu Jan 20 03:40:59 2000
++++ sigc++/macros/Makefile.in	Fri Jan 28 00:03:54 1994
+@@ -83,7 +83,7 @@
+ templates =    template.macros.m4  slot.h.m4          func_slot.h.m4      class_slot.h.m4     object_slot.h.m4   basic_signal.h.m4                                          bind.h.m4           rettype.h.m4        convert.h.m4
+ 
+ 
+-m4includedir = $(includedir)/sigc++/macros
++m4includedir = $(prefix)/share/libsigc++
+ m4include_HEADERS = $(templates)
+ 
+ EXTRA_DIST = README $(templates)

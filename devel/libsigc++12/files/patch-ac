@@ -1,0 +1,20 @@
+--- sigc++/Makefile.in	Thu Jan 20 03:40:56 2000
++++ sigc++/Makefile.in	Thu Jan 27 23:40:23 1994
+@@ -65,7 +65,7 @@
+ CXX = @CXX@
+ DLLTOOL = @DLLTOOL@
+ LD = @LD@
+-LIBSIGC_SO_VERSION = @LIBSIGC_SO_VERSION@
++LIBSIGC_SO_VERSION = 1:0:0
+ LIBTOOL = @LIBTOOL@
+ LN_S = @LN_S@
+ M4 = @M4@
+@@ -90,7 +90,7 @@
+ libsigc_la_SOURCES =     object.cc   scope.cc   marshal.cc   slot.cc    basic_signal.cc adaptor.cc thread.cc
+ 
+ 
+-libsigc_la_LDFLAGS = -version-info $(LIBSIGC_SO_VERSION)                      -release $(SIGC_RELEASE) -no-undefined
++libsigc_la_LDFLAGS = -version-info $(LIBSIGC_SO_VERSION)                      -no-undefined
+ 
+ libsigcdir = $(prefix)/include/sigc++
+ 

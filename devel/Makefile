@@ -86,6 +86,7 @@
     SUBDIR += libmalloc
     SUBDIR += libshhmsg
     SUBDIR += libshhopt
+    SUBDIR += libsigc++
     SUBDIR += libslang
     SUBDIR += libtool
     SUBDIR += libxalloc

@@ -1,0 +1,37 @@
+# New ports collection makefile for:   libsigc++
+# Version required:    0.8.6
+# Date created:        27 January 2000
+# Whom:                Joe Lu <JoeLu@JoeLu.m8.ntu.edu.tw>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	libsigc++-0.8.6
+CATEGORIES=	devel
+MASTER_SITES=	ftp://ftp.ece.ucdavis.edu/pub/kenelson/libsigc++/
+
+MAINTAINER=	JoeLu@JoeLu.m8.ntu.edu.tw
+
+GNU_CONFIGURE=	yes
+USE_NEWGCC=	yes
+
+post-install:
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/libsigc++
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/libsigc++
+	${INSTALL_DATA} ${WRKSRC}/FEATURES ${PREFIX}/share/doc/libsigc++
+	${INSTALL_DATA} ${WRKSRC}/doc/API ${PREFIX}/share/doc/libsigc++
+	${INSTALL_DATA} ${WRKSRC}/doc/FAQ ${PREFIX}/share/doc/libsigc++
+	${INSTALL_DATA} ${WRKSRC}/doc/UML ${PREFIX}/share/doc/libsigc++
+	${INSTALL_DATA} ${WRKSRC}/doc/conventions ${PREFIX}/share/doc/libsigc++
+	${INSTALL_DATA} ${WRKSRC}/doc/diagrams ${PREFIX}/share/doc/libsigc++
+	${INSTALL_DATA} ${WRKSRC}/doc/marshal ${PREFIX}/share/doc/libsigc++
+	${INSTALL_DATA} ${WRKSRC}/doc/powerusers ${PREFIX}/share/doc/libsigc++
+	${INSTALL_DATA} ${WRKSRC}/doc/requirements ${PREFIX}/share/doc/libsigc++
+	${INSTALL_DATA} ${WRKSRC}/doc/riscos ${PREFIX}/share/doc/libsigc++/
+	${INSTALL_DATA} ${WRKSRC}/doc/signals ${PREFIX}/share/doc/libsigc++
+	${INSTALL_DATA} ${WRKSRC}/doc/win32 ${PREFIX}/share/doc/libsigc++
+.endif
+
+.include <bsd.port.mk>

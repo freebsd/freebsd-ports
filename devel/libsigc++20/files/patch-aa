@@ -1,0 +1,11 @@
+--- Makefile.in	Thu Jan 20 03:40:54 2000
++++ Makefile.in	Thu Jan 27 23:34:05 1994
+@@ -80,7 +80,7 @@
+ USE_SYMBOL_UNDERSCORE = @USE_SYMBOL_UNDERSCORE@
+ VERSION = @VERSION@
+ 
+-SUBDIRS = sigc++ tests 
++SUBDIRS = sigc++
+ DIST_SUBDIRS = sigc++ examples tests scripts
+ 
+ bin_SCRIPTS = sigc-config
