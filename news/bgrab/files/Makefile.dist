@@ -1,7 +1,8 @@
 OBJ	  =	main.o server.o screen.o tree.o multipart.o grouplist.o \
-		findfile.o
+		findfile.o parsecfgfile.o
 CXX	 ?=	g++
-CXXFLAGS ?=	-O6 
+CXXFLAGS ?=	-O6
+CXXFLAGS +=	-DFREEBSD
 LIBS	  =	-lncurses
 PREFIX	 ?=	/usr/local
 DEST	  =	$(PREFIX)/bin

@@ -1,39 +1,44 @@
---- main.cc.orig	Thu Sep 30 09:20:30 1999
-+++ main.cc	Thu Sep 30 09:22:51 1999
-@@ -7,7 +7,6 @@
- #include <sys/types.h>
- #include <sys/wait.h>
- #include <stdlib.h>
--#include <curses.h>
- #include "server.h"
- #include "screen.h"
- #include "tree.h"
-@@ -15,7 +14,7 @@
- #include "grouplist.h"
+--- main.cc.orig	Tue Mar 14 08:03:04 2000
++++ main.cc	Tue Mar 21 15:13:59 2000
+@@ -15,7 +15,7 @@
  #include "findfile.h"
+ #include "parsecfgfile.h"
  
 -#define		NNTP_PORT		119
 +unsigned NNTP_PORT = 119;
  
  char *NNTP_SERVER = NULL;
  groupListPointer NNTP_GROUP = new groupList();
-@@ -249,6 +248,10 @@
- 	fprintf(stderr," -a user pass	Authenticate the login to the server with\n");
- 	fprintf(stderr,"		'user' as username and 'pass' as password.\n");
- 	fprintf(stderr,"		Both username and password must be present.\n");
-+	fprintf(stderr,"\nThe hostname or IP address of the news server can be\n");
-+	fprintf(stderr,"specified by the NNTPSERVER environment variable, or defaults\n");
-+	fprintf(stderr,"to \"news\". The port to connect to can be specified by the\n");
-+	fprintf(stderr,"NNTPPORT environment variable or defaults to 119.\n");
- 	exit(-1);
- }
+@@ -282,6 +282,8 @@
+     fprintf(stderr,"grouplist     newsgroups to read\n");
+     fprintf(stderr,"-S name       name of the news server\n");
+     fprintf(stderr,"              (if not specified, environ. var. NNTPSERVER is used )\n");
++    fprintf(stderr,"-P port       number of the port on the news server to connect to\n");
++    fprintf(stderr,"              (if not specified, environ. var. NNTPPORT is used, or 119)\n");
+     fprintf(stderr,"-n            don't output to stdout\n");
+     fprintf(stderr,"-f            fork to background.  use only with -n\n");
+     fprintf(stderr,"-s num        consider messages posted to more than\n");
+@@ -321,6 +323,14 @@
+ 		}
+ 		NNTP_SERVER = argv[i];
+ 		break;
++	    case 'P':
++		i++;
++		if (i > argc) {
++		    usage_error(argv[0]);
++		    break;
++		}
++		NNTP_PORT = atoi(argv[i]);
++		break;
+  	    case 's':	i++; 
+ 		if (i == argc) {
+ 		    usage_error(argv[0]);
+@@ -366,6 +376,8 @@
+ 	missing_helper();
  
-@@ -301,6 +304,8 @@
- 
- 	if (getenv("NNTPSERVER")) NNTP_SERVER = strdup(getenv("NNTPSERVER"));
- 	else NNTP_SERVER = strdup("news");
+     if (getenv("NNTPGROUP")) NNTP_GROUP->addGroup( getenv("NNTPGROUP") ); // Check env for group to be checked
 +
-+	if (getenv("NNTPPORT")) NNTP_PORT = atoi(getenv("NNTPPORT"));
++    if (getenv("NNTP_PORT")) NNTP_PORT = atoi(getenv("NNTPPORT"));
  
- 	process_command_line(argc, argv);
- 
+     process_command_line(argc, argv);
+     if ( cfgfilename ) // Parse the config file
