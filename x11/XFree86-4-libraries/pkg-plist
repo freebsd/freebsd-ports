@@ -361,8 +361,6 @@ include/X11/pixmaps/mouse.xpm
 include/X11/xpm.h
 include/xf86Optrec.h
 include/xf86Parser.h
-lib/X11/doc/html/Xaw.3.html
-lib/X11/doc/html/libxrx.1.html
 lib/X11/locale/C/XLC_LOCALE
 lib/X11/locale/armscii-8/Compose
 lib/X11/locale/armscii-8/XLC_LOCALE
