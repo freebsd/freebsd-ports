@@ -7358,6 +7358,7 @@ packit		ports/net-mgmt/packit
 pad		ports/security/pad
 pager		ports/x11-wm/pager
 paicc		ports/sysutils/paicc
+paintlib	ports/graphics/paintlib
 pal		ports/deskutils/pal
 palmos-sdk	ports/palm/palmos-sdk
 palmpower	ports/palm/palmpower
