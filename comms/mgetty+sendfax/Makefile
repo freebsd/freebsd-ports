@@ -3,13 +3,13 @@
 # Date created:         21 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.21 1997/11/11 01:33:22 asami Exp $
+# $Id: Makefile,v 1.22 1998/01/26 10:14:30 vanilla Exp $
 #
 
 DISTNAME=	mgetty1.1.11-Dec16
 PKGNAME=	mgetty-1.1.11
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.leo.org/pub/comp/networking/communication/modem/mgetty/
+MASTER_SITES=	ftp://ftp.leo.org/pub/comp/os/unix/networking/mgetty/
 
 MAINTAINER=	jmz@FreeBSD.org
 
