@@ -3,11 +3,11 @@
 # Date created:         18 August 1997
 # Whom:                 Chuck Robey (chuckr@freebsd.org)
 #
-# $Id: Makefile,v 1.13 1998/02/26 02:16:32 steve Exp $
+# $Id: Makefile,v 1.14 1998/02/26 04:31:49 asami Exp $
 #
 
-DISTNAME=	a2ps-4.9.9
-PKGNAME=	a2ps-${PAPERSIZE}-4.9.9
+DISTNAME=	a2ps-4.10
+PKGNAME=	a2ps-${PAPERSIZE}-4.10
 CATEGORIES=	print
 MASTER_SITES=	http://www-inf.enst.fr/~demaille/ftp/a2ps/
 

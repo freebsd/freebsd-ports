@@ -21,7 +21,7 @@ info/regex.info-3
 @exec install-info %D/info/regex.info %D/info/dir
 lib/liba2ps.a
 lib/liba2ps.la
-lib/liba2ps.so.0.3
+lib/liba2ps.so.1.0
 @exec /sbin/ldconfig -R %B
 man/man1/a2ps.1.gz
 man/man1/ogonkify.1.gz
@@ -87,7 +87,7 @@ share/a2ps/encoding/encoding.map
 share/a2ps/encoding/hp.edf
 share/a2ps/encoding/ibmpc.edf
 share/a2ps/encoding/iso5.edf
-share/a2ps/encoding/koi8r.edf
+share/a2ps/encoding/koi8.edf
 share/a2ps/encoding/latin1.edf
 share/a2ps/encoding/latin2.edf
 share/a2ps/encoding/latin3.edf
@@ -95,10 +95,9 @@ share/a2ps/encoding/latin4.edf
 share/a2ps/encoding/latin5.edf
 share/a2ps/encoding/latin6.edf
 share/a2ps/encoding/mac.edf
-share/a2ps/printers/README
-share/a2ps/printers/level1.ppd
-share/a2ps/printers/level2.ppd
-share/a2ps/printers/printers.map
+share/a2ps/ppd/README
+share/a2ps/ppd/level1.ppd
+share/a2ps/ppd/level2.ppd
 share/a2ps/ps/Courier-Bold-Ogonki.pfa
 share/a2ps/ps/Courier-BoldOblique-Ogonki.pfa
 share/a2ps/ps/Courier-Oblique-Ogonki.pfa
@@ -126,6 +125,7 @@ share/a2ps/ps/crr56__i.pfb
 share/a2ps/ps/ehandler.ps
 share/a2ps/ps/gray.pro
 share/a2ps/ps/gray2.pro
+share/a2ps/ps/matrix.pro
 share/a2ps/ps/textb18.pfb
 share/a2ps/ps/textb19.pfb
 share/a2ps/ps/textb20.pfb
@@ -134,6 +134,7 @@ share/a2ps/sheets/a2psrc.ssh
 share/a2ps/sheets/ada.ssh
 share/a2ps/sheets/c.ssh
 share/a2ps/sheets/caml.ssh
+share/a2ps/sheets/card.ssh
 share/a2ps/sheets/chlog.ssh
 share/a2ps/sheets/claire.ssh
 share/a2ps/sheets/clisp.ssh
@@ -146,23 +147,28 @@ share/a2ps/sheets/eps.ssh
 share/a2ps/sheets/fortran.ssh
 share/a2ps/sheets/gnuc.ssh
 share/a2ps/sheets/initora.ssh
+share/a2ps/sheets/idl.ssh
+share/a2ps/sheets/is5rul.ssh
 share/a2ps/sheets/java.ssh
 share/a2ps/sheets/lace.ssh
 share/a2ps/sheets/lex.ssh
 share/a2ps/sheets/mail.ssh
 share/a2ps/sheets/make.ssh
+share/a2ps/sheets/matlab4.ssh
 share/a2ps/sheets/modula2.ssh
 share/a2ps/sheets/modula3.ssh
 share/a2ps/sheets/o2c.ssh
 share/a2ps/sheets/oberon.ssh
 share/a2ps/sheets/objc.ssh
 share/a2ps/sheets/octave.ssh
+share/a2ps/sheets/oldperl.ssh
 share/a2ps/sheets/oracle.ssh
 share/a2ps/sheets/pascal.ssh
 share/a2ps/sheets/perl.ssh
 share/a2ps/sheets/plsql.ssh
 share/a2ps/sheets/ppd.ssh
 share/a2ps/sheets/pre.ssh
+share/a2ps/sheets/pretex.ssh
 share/a2ps/sheets/prolog.ssh
 share/a2ps/sheets/promela.ssh
 share/a2ps/sheets/ps.ssh
@@ -175,9 +181,11 @@ share/a2ps/sheets/sheets.map
 share/a2ps/sheets/sql.ssh
 share/a2ps/sheets/sql92.ssh
 share/a2ps/sheets/ssh.ssh
+share/a2ps/sheets/symbols.ssh
 share/a2ps/sheets/tcl.ssh
 share/a2ps/sheets/tex.ssh
 share/a2ps/sheets/texinfo.ssh
+share/a2ps/sheets/texscript.ssh
 share/a2ps/sheets/tk.ssh
 share/a2ps/sheets/unity.ssh
 share/a2ps/sheets/verilog.ssh
@@ -185,8 +193,6 @@ share/a2ps/sheets/vhdl.ssh
 share/a2ps/sheets/vrml.ssh
 share/a2ps/sheets/yacc.ssh
 share/a2ps/sheets/zsh.ssh
-share/emacs/site-lisp/a2ps.el
-share/emacs/site-lisp/make-regexp.el
 share/locale/ca/LC_MESSAGES/a2ps.mo
 share/locale/cs/LC_MESSAGES/a2ps.mo
 share/locale/de/LC_MESSAGES/a2ps.mo
@@ -199,7 +205,7 @@ share/locale/pl/LC_MESSAGES/a2ps.mo
 share/locale/tr/LC_MESSAGES/a2ps.mo
 @dirrm share/a2ps/afm
 @dirrm share/a2ps/encoding
-@dirrm share/a2ps/printers
+@dirrm share/a2ps/ppd
 @dirrm share/a2ps/ps
 @dirrm share/a2ps/sheets
 @dirrm share/a2ps
