@@ -1,0 +1,22 @@
+$FreeBSD$
+
+Patch comments:
+
+sim/ppc/emul_chirp.c:
+Add a mapping for the kernel to obtain the mapping for the
+OpenFirmware callback.
+
+sim/ppc/hw_cpu.c:
+Add the device type and timebase-frequency to the cpu device.
+Add code to create an instance of the cpu for the translation of the
+OpenFirmware callback.
+
+sim/ppc/hw_init.c:
+Allow the simulator to load a dynamically linked OEA environment.
+
+sim/ppc/hw_tab.c:
+Ignore warnings for the improper alignment of the htab. A better fix would be
+to properly align the htab when the memory is allocated in the first place.
+
+sim/ppc/ppc-spr-table:
+Correct 2 of the SPR entries to allow "info all-registers" to work when the

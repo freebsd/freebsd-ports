@@ -36,6 +36,7 @@
     SUBDIR += p-interp
     SUBDIR += pcemu
     SUBDIR += prodosemu
+    SUBDIR += psim-freebsd
     SUBDIR += qcl
     SUBDIR += quasi88
     SUBDIR += rtc

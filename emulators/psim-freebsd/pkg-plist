@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+bin/psim-freebsd
+share/examples/psim-freebsd/dot.gdbinit
+%%PORTDOCS%%share/doc/psim-freebsd/HOW-TO
