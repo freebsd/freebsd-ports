@@ -1859,6 +1859,7 @@ filepp		ports/textproc/filepp
 fileprune	ports/sysutils/fileprune
 fileroller	ports/archivers/fileroller
 filerunner	ports/x11-fm/filerunner
+fileschanged	ports/sysutils/fileschanged
 filtermail	ports/mail/filtermail
 find-zlib	ports/security/find-zlib
 find_ddos	ports/security/find_ddos
