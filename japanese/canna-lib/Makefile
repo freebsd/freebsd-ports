@@ -8,7 +8,7 @@
 
 PORTNAME=	Canna
 PORTVERSION=	3.5b2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.tokyonet.ad.jp/pub/misc/Canna/Canna35/ \
 		ftp://ftp.biglobe.ne.jp/pub/tool/Canna/Canna35/ \
