@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fetchyahoo
-PORTVERSION=	2.5.5
+PORTVERSION=	2.8.0
 CATEGORIES=	mail
 MASTER_SITES=	http://fetchyahoo.sourceforge.net/
 
@@ -32,10 +32,6 @@ USE_PERL5=	yes
 
 .include <bsd.port.pre.mk>
 
-do-patch:
-# Use an RFC 2606 domain:  myhost.com is registered.
-	${PERL} -pi -e "s:myhost.com:example:g" ${WRKSRC}/fetchyahoorc
-
 pre-install:
 	${ECHO_CMD} bin/fetchyahoo > ${PLIST}
 .if !defined(NOPORTDOCS)
@@ -46,7 +42,7 @@ pre-install:
 .endif
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/fetchyahoo.pl ${PREFIX}/bin/fetchyahoo
+	${INSTALL_SCRIPT} ${WRKSRC}/fetchyahoo ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR} ${DOCSDIR}
