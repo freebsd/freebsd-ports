@@ -1,0 +1,4 @@
+The purpose of this project is to create a recursive descent parser for C99.
+The output from the parser should be a parse tree.
+
+WWW: http://www.mazumdar.demon.co.uk/c_parser.html
