@@ -1,0 +1,12 @@
+XML-DBMS is middleware for transferring data between XML documents and
+relational databases.  It views the XML document as a tree of
+data-specific objects in which element types are generally viewed as
+classes and attributes and PCDATA as properties of those classes.  It
+then uses an object-relational mapping to map these objects to the
+database.  An XML-based mapping language is used to define the view and
+map it to the database.
+
+WWW: http://www.rpbourret.com/xmldbms/index.htm
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
