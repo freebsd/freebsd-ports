@@ -1,28 +1,43 @@
-@comment $FreeBSD$
 bin/dspam
-bin/dspam_2mysql
-bin/dspam_dump
+bin/dspam_2sql
 bin/dspam_clean
 bin/dspam_corpus
 bin/dspam_crc
+bin/dspam_dump
 bin/dspam_genaliases
 bin/dspam_merge
-bin/dspam_ngstats
-%%DB4%%bin/dspam_purge
-%%DB4%%bin/dspam_purge.libdb4
 bin/dspam_stats
-%%DB4%%bin/libdb4_purge
-lib/libdspam.so
-lib/libdspam.so.4
+include/dspam/buffer.h
+include/dspam/decode.h
+include/dspam/error.h
+include/dspam/lht.h
+include/dspam/libdspam.h
+include/dspam/libdspam_objects.h
+include/dspam/nodetree.h
+include/dspam/storage_driver.h
 lib/libdspam.a
+lib/libdspam.so
+lib/libdspam.so.5
+libdata/pkgconfig/dspam.pc
+%%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/CHANGE
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%MYSQL%%%%EXAMPLESDIR%%/README
-%%MYSQL%%%%EXAMPLESDIR%%/mysql.data
-%%MYSQL%%%%EXAMPLESDIR%%/mysql_objects.sql.space.optimized
-%%MYSQL%%%%EXAMPLESDIR%%/mysql_objects.sql.speed.optimized
-%%MYSQL%%%%EXAMPLESDIR%%/purge.sql
-%%MYSQL%%%%EXAMPLESDIR%%/virtual_users.sql
+%%MYSQL%%%%EXAMPLESDIR%%/mysql/README
+%%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql.data
+%%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql_objects.sql.space.optimized
+%%MYSQL%%%%EXAMPLESDIR%%/mysql/mysql_objects.sql.speed.optimized
+%%MYSQL%%%%EXAMPLESDIR%%/mysql/purge.sql
+%%MYSQL%%%%EXAMPLESDIR%%/mysql/virtual_users.sql
+%%MYSQL%%@dirrm %%EXAMPLESDIR%%/mysql
 %%MYSQL%%@dirrm %%EXAMPLESDIR%%
+%%PGSQL%%%%EXAMPLESDIR%%/pgsql/README
+%%PGSQL%%%%EXAMPLESDIR%%/pgsql/pgsql.data
+%%PGSQL%%%%EXAMPLESDIR%%/pgsql/pgsql_objects.sql
+%%PGSQL%%%%EXAMPLESDIR%%/pgsql/purge.sql
+%%PGSQL%%%%EXAMPLESDIR%%/pgsql/virtual_users.sql
+%%PGSQL%%@dirrm %%EXAMPLESDIR%%/pgsql
+%%PGSQL%%@dirrm %%EXAMPLESDIR%%
+@dirrm include/dspam
 @dirrm etc/dspam

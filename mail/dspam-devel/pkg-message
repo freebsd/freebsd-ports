@@ -1,8 +1,9 @@
+
 --------------------------------------------------------------------
 
  See the file %%DOCSDIR%%/README for advice about
  how to configure DSPAM with your MTA. Examples are provided for
- sendmail, exim and other popular MTAs.
+ sendmail, postfix, exim and courier MTAs.
 %%MYSQL%%
 %%MYSQL%% See %%EXAMPLESDIR%%/README
 %%MYSQL%% for instructions on how to configure MySQL
@@ -12,5 +13,24 @@
 %%MYSQL%% contains an example configuration for use with MySQL.
 %%MYSQL%% Edit and install as
 %%MYSQL%% %%LOCALBASE%%/etc/dspam/mysql.data
+%%MYSQL%% To modify an existing database use and use it with dspam 3.x:
+%%MYSQL%% [ TO BE WRITTEN ]
+%%MYSQL%% dspam versions use
+%%MYSQL%% %%EXAMPLESDIR%%/convert2db.sql
+%%MYSQL%% To modify the existing db and use it with both versions use
+%%MYSQL%% 
+%%MYSQL%%
+%%MYSQL%%
+%%PGSQL%%
+%%PGSQL%% See %%EXAMPLESDIR%%/README
+%%PGSQL%% for instructions on how to configure PostrgreSQL
+%%PGSQL%% for use with DSPAM.
+%%PGSQL%% [ To add a nice tutorial on this ]
+%%PGSQL%% [ To add a nice turorial on converting a MySQL DB ]
+%%PGSQL%% %%EXAMPLESDIR%%/pgsql.data
+%%PGSQL%% contains an example configuration for use with PostgreSQL.
+%%PGSQL%% Edit and install as
+%%PGSQL%% %%LOCALBASE%%/etc/dspam/pgsql.data
+%%PGSQL%% 
 
 --------------------------------------------------------------------
