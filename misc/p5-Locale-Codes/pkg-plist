@@ -1,7 +1,5 @@
-lib/perl5/man/man3/Locale::Country.3.gz
-lib/perl5/man/man3/Locale::Language.3.gz
-lib/perl5/site_perl/Locale/Country.pm
-lib/perl5/site_perl/Locale/Language.pm
-lib/perl5/site_perl/i386-freebsd/auto/Locale/.packlist
-@dirrm lib/perl5/site_perl/i386-freebsd/auto/Locale
-@dirrm lib/perl5/site_perl/Locale
+lib/perl5/site_perl/%%PERL_VER%%/Locale/Country.pm
+lib/perl5/site_perl/%%PERL_VER%%/Locale/Language.pm
+lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Locale/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Locale
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Locale
