@@ -1,0 +1,17 @@
+*** imap/src/osdep/unix/os_bsi.h.orig	Thu Feb 13 07:25:33 1997
+--- imap/src/osdep/unix/os_bsi.h	Fri Jul 10 00:12:36 1998
+***************
+*** 37,43 ****
+--- 37,48 ----
+  #include <unistd.h>
+  #include <string.h>
+  #include <sys/types.h>
++ #ifdef __FreeBSD__
++ #include <dirent.h>
++ #define direct dirent
++ #else
+  #include <sys/dir.h>
++ #endif
+  #include <fcntl.h>
+  #include <syslog.h>
+  #include <sys/file.h>

@@ -1,0 +1,36 @@
+*** imap/src/osdep/unix/Makefile.orig	Wed Jan 27 01:19:19 1999
+--- imap/src/osdep/unix/Makefile	Tue Feb  9 21:32:44 1999
+***************
+*** 82,88 ****
+  # Commands possibly overriden by the individual port
+  
+  ARRC=ar rc
+! CC=cc
+  LN=ln -s
+  RANLIB=ranlib
+  
+--- 82,88 ----
+  # Commands possibly overriden by the individual port
+  
+  ARRC=ar rc
+! #CC=cc
+  LN=ln -s
+  RANLIB=ranlib
+  
+***************
+*** 100,106 ****
+   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
+   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
+   unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
+! CFLAGS=$(BASECFLAGS) $(EXTRACFLAGS)
+  MAKE=make
+  MV=mv
+  RM=rm -rf
+--- 100,106 ----
+   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
+   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
+   unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
+! CFLAGS+=$(BASECFLAGS) $(EXTRACFLAGS)
+  MAKE=make
+  MV=mv
+  RM=rm -rf

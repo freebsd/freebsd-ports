@@ -1,0 +1,51 @@
+#! /bin/sh
+# ---------- pgpdecode ---------
+# 21.03.96 Roland Rosenfeld <roland@spinnaker.rhein.de>
+#
+# Sun Mar 24 12:01:21 MET 1996 Andreas Klemm <andreas@knobel.gun.de>
+# The tmp files in the original version were world readable for
+# the short time of unpacking, setting suitable umask prevents this
+#
+# Wed Sep 16 21:35:43 WST 1997 Anthony Di Pietro <anthony@dino.omen.com.au>
+# Modified to work with both PGP v2 and PGP v5.
+# Now uses mktemp to prevent symlink attack and tmp races.
+
+umask 077
+
+MYNAME=`basename $0`
+
+STDOUT=`mktemp -q /tmp/${MYNAME}.XXXXXX`
+if [ $? -ne 0 ]
+then
+  echo "$0: Can't create temporary file to decode message."
+  exit 1
+fi
+
+trap "rm -f $STDOUT ; exit" 0 1 2 15
+
+STDERR=`mktemp -q /tmp/${MYNAME}.XXXXXX`
+if [ $? -ne 0 ]
+then
+  echo "$0: Can't create temporary file to decode message."
+  exit 1
+fi
+
+trap "rm -f $STDOUT $STDERR; exit" 0 1 2 15
+
+if [ -x @@PREFIX@@/bin/pgpv ]
+then
+  pgpv 2>&1 > $STDOUT |tee $STDERR > /dev/tty
+else
+  pgp -f 2>&1 > $STDOUT |tee $STDERR > /dev/tty
+fi
+
+cat $STDERR | \
+grep -v '^No files specified.  Using stdin.$' | \
+grep -v '^Opening file \"stdout\" type text.$' | \
+grep -v '^Opening file \"stdout\" type binary.$' | \
+grep -v '^Opening file \"/dev/null\" type text.$' | \
+grep -v '^Opening file \"/dev/null\" type binary.$' | \
+grep -v '^$'| \
+sed -e 's/^/| /'
+echo ""
+cat $STDOUT

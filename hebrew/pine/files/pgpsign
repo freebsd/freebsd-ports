@@ -1,0 +1,11 @@
+#!/bin/sh
+# ---------- pgpsign ---------
+# 21.03.96 Roland Rosenfeld <roland@spinnaker.rhein.de>
+# Wed 16 Sep 1998 23:48:51 WST Anthony Di Pietro <anthony@dino.omen.com.au>
+# Modified to work with both PGP v2 and PGP v5.
+if [ -x @@PREFIX@@/bin/pgps ]
+then
+  pgps -a -t
+else
+  pgp -fast
+fi

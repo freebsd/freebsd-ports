@@ -1,0 +1,38 @@
+*** pico/display.c.orig	Fri Jun 19 20:19:53 1998
+--- pico/display.c	Mon Jul 13 01:36:38 1998
+***************
+*** 77,83 ****
+      {"^X", "Exit", KS_EXIT},		{"^J", "Justify", KS_JUSTIFY},
+      {"^W", "Where is", KS_WHEREIS},	{"^V", "Next Pg", KS_NEXTPAGE},
+      {"^U", NULL, KS_NONE},
+! #ifdef	SPELLER
+      {"^T", "To Spell", KS_SPELLCHK}
+  #else
+      {"^D", "Del Char", KS_NONE}
+--- 77,83 ----
+      {"^X", "Exit", KS_EXIT},		{"^J", "Justify", KS_JUSTIFY},
+      {"^W", "Where is", KS_WHEREIS},	{"^V", "Next Pg", KS_NEXTPAGE},
+      {"^U", NULL, KS_NONE},
+! #if defined(SPELLER) && !defined(__FreeBSD__)
+      {"^T", "To Spell", KS_SPELLCHK}
+  #else
+      {"^D", "Del Char", KS_NONE}
+*** pico/main.c.orig	Tue Apr 21 20:28:08 1998
+--- pico/main.c	Mon Jul 13 01:36:39 1998
+***************
+*** 66,72 ****
+      { F9,  (CTRL|'K')},
+      { F10, (CTRL|'U')},
+      { F11, (CTRL|'C')},
+! #ifdef	SPELLER
+      { F12, (CTRL|'T')}
+  #else
+      { F12, (CTRL|'D')}
+--- 66,72 ----
+      { F9,  (CTRL|'K')},
+      { F10, (CTRL|'U')},
+      { F11, (CTRL|'C')},
+! #if defined(SPELLER) && !defined(__FreeBSD__)
+      { F12, (CTRL|'T')}
+  #else
+      { F12, (CTRL|'D')}

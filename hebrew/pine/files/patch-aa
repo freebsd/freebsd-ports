@@ -1,0 +1,22 @@
+--- pico/search.c.old	Tue Oct  5 01:49:41 1999
++++ pico/search.c	Wed Feb 16 03:41:45 2000
+@@ -97,12 +97,15 @@
+ int bc;
+ int pc;
+ {
++    bc = (unsigned char)bc;
++    pc = (unsigned char)pc;
++
+     if ((curwp->w_bufp->b_mode & MDEXACT) == 0){
+-	if (bc>='a' && bc<='z')
+-	  bc -= 0x20;
++	if (islower(bc))
++	  bc = toupper(bc);
+ 
+-	if (pc>='a' && pc<='z')
+-	  pc -= 0x20;
++	if (islower(pc))
++	  pc = toupper(pc);
+     }
+ 
+     return(bc == pc);

@@ -1,0 +1,91 @@
+*** pine/osdep/os-bsf.h.orig	Thu Oct  8 00:51:40 1998
+--- pine/osdep/os-bsf.h	Tue Feb  9 20:15:18 1999
+***************
+*** 74,80 ****
+     default-composer-hdrs or customized-hdrs to get at it. Instead of
+     defining NEVER_ALLOW_CHANGING_FROM, an easier way of preventing From
+     changing is to put the feature "no-allow-changing-from" in the
+!    /usr/local/lib/pine.conf.fixed file.
+   ----*/
+  /* #define NEVER_ALLOW_CHANGING_FROM */
+  
+--- 74,80 ----
+     default-composer-hdrs or customized-hdrs to get at it. Instead of
+     defining NEVER_ALLOW_CHANGING_FROM, an easier way of preventing From
+     changing is to put the feature "no-allow-changing-from" in the
+!    @@PREFIX@@/etc/pine.conf.fixed file.
+   ----*/
+  /* #define NEVER_ALLOW_CHANGING_FROM */
+  
+***************
+*** 87,93 ****
+     NOTE: You'll also have to make sure the appropriate osdep/postreap.*
+           file is included in the os-*.ic file for your system.
+   ----*/
+! /* #define BACKGROUND_POST */
+  
+  
+  
+--- 87,93 ----
+     NOTE: You'll also have to make sure the appropriate osdep/postreap.*
+           file is included in the os-*.ic file for your system.
+   ----*/
+! #define BACKGROUND_POST
+  
+  
+  
+***************
+*** 160,167 ****
+  
+  
+  /*----- System-wide config file ----------------------------------------*/
+! #define SYSTEM_PINERC             "/usr/local/lib/pine.conf"
+! #define SYSTEM_PINERC_FIXED       "/usr/local/lib/pine.conf.fixed"
+  
+  
+  
+--- 160,167 ----
+  
+  
+  /*----- System-wide config file ----------------------------------------*/
+! #define SYSTEM_PINERC             "@@PREFIX@@/etc/pine.conf"
+! #define SYSTEM_PINERC_FIXED       "@@PREFIX@@/etc/pine.conf.fixed"
+  
+  
+  
+***************
+*** 219,225 ****
+  /*----------------------------------------------------------------------
+     If no nntp-servers are defined, this program will be used to post news.
+   ----*/
+! #define SENDNEWS	"/usr/local/news/inews -h"
+  
+  
+  /*--------- Program employed by users to change their password ---------*/
+--- 219,227 ----
+  /*----------------------------------------------------------------------
+     If no nntp-servers are defined, this program will be used to post news.
+   ----*/
+! #define SENDNEWS	"/usr/local/news/lib/inews -h"	/* For NN inews    */
+! /*#define SENDNEWS	"/usr/local/bin/inews -h"	/* For INN inews   */
+! /*#define SENDNEWS	"/usr/local/bin/inews -h"	/* For Cnews inews */
+  
+  
+  /*--------- Program employed by users to change their password ---------*/
+***************
+*** 268,274 ****
+         8
+         9 logs gross details of command execution
+   ----*/
+! #define DEFAULT_DEBUG 2
+  
+  
+  
+--- 270,276 ----
+         8
+         9 logs gross details of command execution
+   ----*/
+! #define DEFAULT_DEBUG 0
+  
+  
+  
