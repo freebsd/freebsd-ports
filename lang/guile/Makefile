@@ -26,9 +26,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 PLIST_SUB=	GUILE_VER=${PORTVERSION}
 
+REINPLACE_FILES=	libguile/gc.c libguile/mallocs.c \
+			libguile/ports.c libguile/smob.c
+
+post-extract:
+	cd ${WRKSRC}; ${CHMOD} u+w ${REINPLACE_FILES}
+
 post-patch:
-	@(cd ${WRKSRC} ; \
-	  ${FIND} . -type f -name "*.c" | ${XARGS} ${REINPLACE_CMD} -e \
-		"s|<malloc.h>|<stdlib.h>|g")
+	cd ${WRKSRC} ; \
+	  ${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' ${REINPLACE_FILES}
 
 .include <bsd.port.mk>
