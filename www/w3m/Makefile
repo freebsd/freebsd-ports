@@ -23,9 +23,6 @@ CONFLICTS?=	ja-w3m-0.5.* ja-w3m-img-0.5.* w3m-m17n-0.5.* w3m-img-0.5.* w3m-m17n-
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
-CONFIGURE_ENV=	DEFS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="${LIBS} ${PTHREAD_LIBS}"
-
 MAN1=		w3m.1 w3mman.1
 MANLANG=	"" ja
 
@@ -80,6 +77,16 @@ PKGMESSAGE=	${NONEXISTENT}
 
 .if defined(KEY_LYNX)
 CONFIGURE_ARGS+=	--enable-keymap=lynx
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if  ${OSVERSION} < 500016
+CONFIGURE_ENV=	DEFS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LIBS="${LIBS} ${PTHREAD_LIBS} -lc_r"
+.else
+CONFIGURE_ENV=	DEFS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LIBS="${LIBS} ${PTHREAD_LIBS} -lc"
 .endif
 
 pre-everything::
@@ -144,4 +151,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
