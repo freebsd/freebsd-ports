@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.153 1998/04/24 13:35:37 mph Exp $
+# $Id: Makefile,v 1.154 1998/04/26 20:45:36 jseger Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -53,6 +53,7 @@
     SUBDIR += mirror
     SUBDIR += moxftp
     SUBDIR += mpd
+    SUBDIR += mpich
     SUBDIR += mrtg
     SUBDIR += ncftp
     SUBDIR += ncftp2
