@@ -1,0 +1,4 @@
+%%PEARDIR%%/Net/NNTP.php
+%%PKGREGDIR%%/package.xml
+@dirrm %%PKGREGDIR%%
+@unexec rmdir %D/share/pear/Net 2> /dev/null || true

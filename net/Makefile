@@ -518,6 +518,7 @@
     SUBDIR += pchar
     SUBDIR += pcnfsd
     SUBDIR += pdnsd
+    SUBDIR += pear-Net_NNTP
     SUBDIR += pear-Net_SMTP
     SUBDIR += pear-Net_Sieve
     SUBDIR += pear-Net_Socket

@@ -1,0 +1,5 @@
+Complete class for communicating with an NNTP server (this is: the USENET),
+including: post, view, list, authentication, overview, header manipulation, 
+NNTP commands debugger, etc. 
+
+WWW: http://pear.php.net/package-info.php?package=Net_NNTP
