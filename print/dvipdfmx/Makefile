@@ -7,10 +7,15 @@
 
 PORTNAME=	dvipdfmx
 PORTVERSION=	20031116
+PORTREVISION=	1
 CATEGORIES=	print
-MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/release/
+MASTER_SITES=	http://project.ktug.or.kr/dvipdfmx/snapshot/release/:main \
+		http://project.ktug.or.kr/dvipdfmx/snapshot/patch/:patch1
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main \
+		dvipdfmx-${PORTVERSION}.patch:patch1
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	matusita@FreeBSD.org
 COMMENT=	Dvipdfm with Asian languages by CID-keyed font technology support
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libkpathsea.a:${PORTSDIR}/print/teTeX
@@ -19,6 +24,10 @@ RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/Resource/ai0/CMap/Identity-H:${PORTS
 		kpsepath:${PORTSDIR}/print/teTeX
 
 GNU_CONFIGURE=	yes
+PATCH_STRIP=	-p1
+
+post-patch:
+	(cd ${WRKSRC}/src; ${PATCH} --quiet < ${DISTDIR}/dvipdfmx-${PORTVERSION}.patch)
 
 post-install:
 	@${LN} -fs ${LOCALBASE}/share/ghostscript/Resource ${PREFIX}/share/texmf/dvipdfm/

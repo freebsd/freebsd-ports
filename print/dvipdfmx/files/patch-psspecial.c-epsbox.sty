@@ -1,0 +1,105 @@
+Origin: http://www.matsusaka-u.ac.jp/~okumura/texfaq/qa/23745.html
+
+This patch enables to handle dvifile using epsbox.sty.  The epsbox.sty
+embeds EPS files with "postscriptbox" directive, but original dvipdfmx
+doesn't know what postscriptbox is, showing "Unrecognized special ignored"
+and exit abnormally.
+
+Note that following 8bit strings are Japanese EUC characters.  Actually
+this file is a Web bulletinboard message; there is "name" field, but
+it only says "noda"-san (no email address or contact information are there),
+I cannot contact to the person posted this.  If there's something wrong,
+please contact to matusita@FreeBSD.org, current MAINTAINER of this port.
+
+--- contents below --
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-JP">
+<title>23745</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<body>
+<h2>Re: dvipdfm･･･</h2>
+<pre>
+名前: 野田
+日時: 2003-11-24 00:36:45
+IPアドレス: 218.47.0.*
+<hr>
+<a href="20624.html">&gt;&gt;20624</a>
+
+だいぶ前の話な上に元質問者の方は既に解決済みのようですが…
+
+古いソースから作成したDVIファイルをPDF化するのに，epsbox.styに対応する
+必要に迫られたため，dvipdfmx用のepsbox.sty対応パッチを作成しました．
+
+別解ということで，投稿しておきます．
+
+diff -ur dvipdfmx-20031110.orig/src/psspecial.c dvipdfmx-20031110/src/psspecial.c
+--- dvipdfmx-20031110.orig/src/psspecial.c	2002-10-30 11:27:16.000000000 +0900
++++ dvipdfmx-20031110/src/psspecial.c	2003-11-14 09:56:59.000000000 +0900
+@@ -260,6 +260,53 @@
+     result = 1; /* Likewise */
+     do_raw_ps_special (&amp;start, end, 1,
+ 		       block_pending?pending_x:x_user, block_pending?pending_y:y_user);
++  } else if (!strncmp (start, "postscriptbox", strlen("postscriptbox"))) {
++    char filename[256];
++    double width, height;
++
++    if (sscanf (start+13, "{%lfpt}{%lfpt}{%256[^}]}",
++		&amp;width, &amp;height, filename) == 3) {
++      struct xform_info *p = new_xform_info();
++      
++      p -&gt; width = width*72/72.27;
++      p -&gt; height = height*72/72.27;
++
++      {
++	FILE *image_file;
++	char *kpse_file_name;
++	char buf[256], *pos;
++	if ((kpse_file_name = kpse_find_pict (filename)) &amp;&amp;
++	    (image_file = MFOPEN (kpse_file_name, FOPEN_R_MODE))) {
++	  while (fgets (buf, 256, image_file)) {
++	    if ((pos = strstr(buf, "%%BoundingBox:" )) != NULL){
++	      double llx, lly, urx, ury;
++
++	      while (*pos++ != ':' );
++	      if (sscanf (pos, "%lf %lf %lf %lf",
++			  &amp;llx, &amp;lly, &amp;urx, &amp;ury) == 4) {
++		p -&gt; u_llx = llx;
++		p -&gt; u_lly = lly;
++		p -&gt; u_urx = urx;
++		p -&gt; u_ury = ury;
++		p -&gt; user_bbox = 1;
++		break;
++	      }
++	    }
++	  }
++	  MFCLOSE (image_file);
++	}
++      }
++	      
++      if(p -&gt; user_bbox &amp;&amp; validate_image_xform_info (p)) {
++	pdf_obj *embeded;
++	embeded = embed_image (filename, p, x_user, y_user, NULL);
++	if (embeded)
++	  pdf_release_obj (embeded);
++	result = 1;
++      }
++      
++      release_xform_info (p);
++    }
+   }
+   return result;
+ }
+
+</pre>
+<hr>
+<p>この書き込みへの返事：
+<form action="webbbs.cgi" method="post">
+お名前 <input type="text" name="name" size="20"><br>
+題名　 <input type="text" name="subject" size="40" value="Re: dvipdfm･･･"><br>
+メッセージ（タグは &lt;a href="..."&gt;...&lt;/a&gt; だけ使えます）<br>
+<textarea name="message" rows="6" cols="80">
+<a href="23745.html">&gt;&gt;23745</a>
+</textarea>
+<br>
+<input type="submit" value="送る">
+<input type="reset" value="リセット">
+</form>
