@@ -54,6 +54,9 @@ CONFIGURE_ARGS:=	${CONFIGURE_ARGS:M-*} \
 			--with-opt-dir="${LOCALBASE}"
 .endif
 
+MAKE_ENV=	LANG=C	# prevent bison 1.33 w/ gettext 0.10.35 from coredumping
+MAKE_ARGS=	-j3
+
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 IF_DEFAULT=	""
 .else
