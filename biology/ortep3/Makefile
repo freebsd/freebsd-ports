@@ -9,9 +9,9 @@ PORTNAME=	ortep3
 PORTVERSION=	1.0.3
 PORTREVISION=	2
 CATEGORIES=	biology
-MASTER_SITES=	ftp://ftp.ccl.net/pub/chemistry/software/SOURCES/FORTRAN/ortep/ \
-		ftp://ftp.ornl.gov/pub/ortep/src/
-DISTFILES=	ortep.tar.Z ortep.f
+MASTER_SITES=	http://www.ccl.net/cca/software/SOURCES/FORTRAN/ortep/:Z \
+		ftp://ftp.ornl.gov/pub/ortep/src/:f
+DISTFILES=	ortep.tar.Z:Z ortep.f:f
 EXTRACT_ONLY=	ortep.tar.Z
 
 MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
