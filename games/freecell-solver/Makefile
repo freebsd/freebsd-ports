@@ -7,17 +7,16 @@
 #
 
 PORTNAME=	freecell-solver
-PORTVERSION=	1.6.4
+PORTVERSION=	1.8.0
 CATEGORIES=	games
 MASTER_SITES=	http://vipe.technion.ac.il/~shlomif/freecell-solver/ \
 		http://fc-solve.berlios.de/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-USE_GMAKE=	yes
-ALL_TARGET=	fc-solve
+GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/fc-solve ${PREFIX}/bin
+MAN6=	fc-solve-board_gen.6 fc-solve.6
 
 .include <bsd.port.mk>
