@@ -7,6 +7,3 @@ libraries that pkg-config knows.  It is really just boilerplate code
 that you would've written yourself.
 
 WWW: http://search.cpan.org/dist/ExtUtils-PkgConfig/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
