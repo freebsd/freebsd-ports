@@ -30,6 +30,7 @@
     SUBDIR += dtd-catalogs
     SUBDIR += eruby
     SUBDIR += expat
+    SUBDIR += expat2
     SUBDIR += freegrep
     SUBDIR += fribidi
     SUBDIR += gaspell
