@@ -1,0 +1,11 @@
+--- apr/Makefile.in.orig	Mon Mar 18 20:14:35 2002
++++ apr/Makefile.in	Mon Mar 18 20:11:05 2002
+@@ -42,7 +42,7 @@
+ includedir=@includedir@
+ srcdir=@srcdir@
+ top_srcdir=@top_srcdir@
+-top_blddir=@top_builddir@
++top_blddir=@apr_builddir@
+ 
+ EXPORT_FILES = $(top_srcdir)/include/*.h
+ 
