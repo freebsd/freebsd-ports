@@ -1,0 +1,10 @@
+bin/cfftot1
+bin/mmafm
+bin/mmpfb
+bin/otfinfo
+bin/otftotfm
+bin/t1lint
+bin/t1testpage
+%%DATADIR%%/7t.enc
+%%DATADIR%%/glyphlist.txt
+@dirrm %%DATADIR%%

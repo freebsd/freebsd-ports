@@ -184,6 +184,7 @@
     SUBDIR += ttftot42
     SUBDIR += txfonts
     SUBDIR += txtbdf2ps
+    SUBDIR += typetools
     SUBDIR += virtualpaper
     SUBDIR += wmlpq
     SUBDIR += wprint
