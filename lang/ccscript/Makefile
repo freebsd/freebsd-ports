@@ -9,29 +9,25 @@ PORTNAME=	ccscript
 PORTVERSION=	2.5.6
 PORTREVISION=	1
 CATEGORIES=	lang
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	ccscript
+MASTER_SITES=	${MASTER_SITE_GNU:S/$/:gnu/} \
+		${MASTER_SITE_SOURCEFORGE:S/$/:sf/}
+MASTER_SITE_SUBDIR=	ccaudio/:gnu \
+			bayonne/:sf
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:gnu \
+		${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:sf
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	State-event driven class extendible C++ script interpreter
 
-LIB_DEPENDS=	ccgnu2-1.0.0:${PORTSDIR}/devel/commoncpp
+LIB_DEPENDS=	ccgnu2-1.1.0:${PORTSDIR}/devel/commoncpp
 
-BROKEN=		"Broken dependency"
-
-USE_GMAKE=	yes
-USE_LIBTOOL=	yes
-USE_AUTOCONF=	yes
-WANT_AUTOCONF_VER=	257
+USE_GNOME=	gnometarget
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install man
 INSTALLS_SHLIB=	yes
-
-CONFIGURE_TARGET=
 
 MAN3=		ScriptCommand.3cc ScriptImage.3cc ScriptInterp.3cc \
 		ScriptModule.3cc ScriptSymbol.3cc Script_Locks.3cc \
 		Script_Package.3cc Script_Property.3cc Script_Session.3cc
-
-post-install:
-	(cd ${WRKSRC} ; ${MAKE} man)
 
 .include <bsd.port.mk>
