@@ -7,12 +7,15 @@
 
 PORTNAME=	staroffice
 PORTVERSION=	6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors linux
-MASTER_SITES=
+MASTER_SITES=	ftp://ftp.sunsite.auc.dk/disk6/sun-patches/:patch \
+		ftp://ftp.math.ohio-state.edu/private/sun/.../:patch \
+		ftp://ftp.uga.edu/pub/unix/sun/patches/:patch \
+		ftp://ftp.cs.tu-berlin.de/pub/sun/sun-fixes/.../:patch
 DISTNAME=	so-6_0-ga-bin-linux-en.bin
 .if !defined(USE_CDROM)
-DISTFILES=      so-6_0-ga-bin-linux-en.bin 112887-03.tar
+DISTFILES=      so-6_0-ga-bin-linux-en.bin 112887-03.tar:patch
 .endif
 .if defined(WITH_ADABAS)
 DISTFILES+=	soa-6_0-ga-bin-linux-en.bin
@@ -23,7 +26,7 @@ EXTRACT_ONLY=	112887-03.tar
 MAINTAINER=	mbr@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
-NO_CDROM=	'Must be downloaded direct from Sun via www interface'
+NO_CDROM=	'Must be bought and downloaded direct from Sun via www interface'
 
 USE_LINUX=	yes
 IS_INTERACTIVE=	yes
@@ -182,7 +185,6 @@ do-install:
 .endif
 	@${SED} -i .orig -e 's%DefaultDestPath = "${PREFIX}/staroffice%DefaultDestPath = "staroffice%' \
 	${INSTDB.INS}
-	@make install-user
 .endif
 .if defined(WITH_ADABAS)
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
@@ -194,17 +196,27 @@ do-install:
 	@make install-patch
 	@${CAT} ${PKGMESSAGE}
 
-install-user:
-	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" ${LINUXBASE}/bin/sh -c \
-		${PREFIX}/${SOVERSION}/program/setup
+post-install:
+	@${ECHO_MSG} "===>  Add wrapper scripts";
+	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' < ${FILESDIR}/wrapper \
+	   > ${WRKDIR}/staroffice6
+	 @${INSTALL_SCRIPT} ${WRKDIR}/staroffice6 ${PREFIX}/bin/staroffice6
+	@${LN} -fs ${PREFIX}/bin/staroffice6 ${PREFIX}/bin/staroffice-sagenda
+	@${LN} -fs ${PREFIX}/bin/staroffice6 ${PREFIX}/bin/staroffice-scalc
+	@${LN} -fs ${PREFIX}/bin/staroffice6 ${PREFIX}/bin/staroffice-sdraw
+	@${LN} -fs ${PREFIX}/bin/staroffice6 ${PREFIX}/bin/staroffice-setup
+	@${LN} -fs ${PREFIX}/bin/staroffice6 ${PREFIX}/bin/staroffice-sfax
+	@${LN} -fs ${PREFIX}/bin/staroffice6 ${PREFIX}/bin/staroffice-simpress
+	@${LN} -fs ${PREFIX}/bin/staroffice6 ${PREFIX}/bin/staroffice-spadmin
+	@${LN} -fs ${PREFIX}/bin/staroffice6 ${PREFIX}/bin/staroffice-sweb
+	@${LN} -fs ${PREFIX}/bin/staroffice6 ${PREFIX}/bin/staroffice-swriter
 
 install-patch:
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
-		TEMP=${TMPDIR} ${LINUXBASE}/bin/sh -c '${WRKSRC}/../112887-03/so-6_0-pp1-bin-linux.bin'
+		TEMP=${TMPDIR} ${LINUXBASE}/bin/sh -c '${WRKSRC}/../112887-03/so-6_0-pp2-bin-linux.bin -patch:${PREFIX}/staroffice6.0'
 
 install-update:
 	@make extract
-	@make install-user
 	@make install-patch
 
 .include <bsd.port.post.mk>
