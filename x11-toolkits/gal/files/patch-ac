@@ -1,0 +1,21 @@
+--- gal/widgets/e-font.c.orig	Wed Feb  7 14:35:03 2001
++++ gal/widgets/e-font.c	Fri Feb  9 10:55:19 2001
+@@ -19,3 +19,3 @@
+ #include <unicode.h>
+-#include <iconv.h>
++#include <giconv.h>
+ #include "gal/util/e-cache.h"
+--- gal/widgets/e-font.h.orig	Tue Feb  6 15:24:03 2001
++++ gal/widgets/e-font.h	Fri Feb  9 10:55:41 2001
+@@ -16,3 +16,3 @@
+ #include <gdk/gdk.h>
+-#include <iconv.h>
++#include <giconv.h>
+ #include <libgnome/gnome-defs.h>
+--- gal/widgets/e-unicode.c.orig	Wed Feb  7 14:35:03 2001
++++ gal/widgets/e-unicode.c	Fri Feb  9 11:02:57 2001
+@@ -15,3 +15,3 @@
+ #include <unicode.h>
+-#include <iconv.h>
++#include <giconv.h>
+ #include <gdk/gdk.h>
