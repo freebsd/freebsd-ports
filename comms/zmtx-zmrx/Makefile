@@ -4,7 +4,7 @@
 # Date created:         29 July 1996
 # Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
 #
-# $Id: Makefile,v 1.1.1.1 1996/03/05 07:46:57 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/12/08 23:39:32 obrien Exp $
 #
 
 DISTNAME=	zmtx-zmrx
@@ -18,13 +18,12 @@ EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	obrien@cs.ucdavis.edu
 
-NO_CDROM=	"can't use use this software for commercial purposes"
-NO_PACKAGE=	"can't use use this software for commercial purposes"
 EXTRACT_CMD=	zcat
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|sh
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
+PKG_CMD=	/usr/sbin/pkg_create -D ${PKGDIR}/licence
 MAN1=		zmrx.1 zmtx.1
 
 do-install:
@@ -35,7 +34,7 @@ do-install:
 
 post-install:
 	@${ECHO} ""
-	@${CAT} ${PKGDIR}/licence
+	@/usr/bin/more ${PKGDIR}/licence
 	@${ECHO} ""
 
 .include <bsd.port.mk>
