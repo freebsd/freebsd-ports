@@ -1,0 +1,4 @@
+Fep is a general purpose front end processor applicable to
+most UNIX commands that features vi(1)-  or  emacs(1)-like
+line  editing and a command history mechanism like that of
+csh(1).

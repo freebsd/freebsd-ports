@@ -1,0 +1,29 @@
+--- Makefile.orig	Thu Jun 10 11:51:22 1993
++++ Makefile	Tue Feb 20 14:17:52 1996
+@@ -19,13 +19,13 @@
+ 
+ #STAT	= -DSTAT#		Delete # for statistic info
+ #KANJI	= -DKANJI#		Delete # for KANJI handling
+-CONFIG	= $(STAT) $(KANJI)
++CONFIG	= $(STAT) $(KANJI) -D_cnt=_r
+ 
+ #DEBUG	= -g
+-DEBUG	= -O
++#DEBUG	= -O
+ 
+-CFLAGS	= $(DEBUG) $(CONFIG)
++CFLAGS	+= $(DEBUG) $(CONFIG)
+-LDFLAGS = -ltermcap
++LDFLAGS = -ltermcap -lcompat
+ 
+ all: $(TARGET)
+ 
+@@ -37,7 +37,7 @@
+ 
+ install: $(TARGET)
+ 	install -s $(TARGET) $(INSTDIR)
+-	install -c fep.1 /usr/man/manl/fep.l
++	gzip -9n -c fep.1 > /usr/local/man/man1/fep.1.gz
+ 
+ fep.1: fep.jman
+ 	sed -e '/^\.EG/d' -e '/^\.JP/,/^\.EJ/d' -e '/^\.\\"KS/,/^\.\\"KE/d' \
