@@ -48,6 +48,7 @@
     SUBDIR += bing
     SUBDIR += binkd
     SUBDIR += bmon
+    SUBDIR += bnbt
     SUBDIR += boclient
     SUBDIR += bounce
     SUBDIR += bpft
