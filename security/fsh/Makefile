@@ -13,8 +13,11 @@ MASTER_SITES=	http://www.lysator.liu.se/fsh/
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	Fast remote command execution
 
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
-
+USE_PYTHON=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+
+post-patch:
+	${REINPLACE_CMD} -e '/^[^#]/s/FCNTL/fcntl/g' ${WRKSRC}/fshcompat.py
 
 .include <bsd.port.mk>
