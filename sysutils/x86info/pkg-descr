@@ -1,0 +1,3 @@
+The x86info utility displays information about each of the systems 80x86
+processors. Cache info, flags, registers, msr's, and processor 
+name/family/model are all displayed.
