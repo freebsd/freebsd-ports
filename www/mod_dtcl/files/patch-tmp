@@ -1,23 +1,25 @@
---- apache_request.c	Mon Mar 19 12:36:42 2001
-+++ apache_request.c	Fri Jun  1 20:36:57 2001
-@@ -328,20 +328,34 @@
+--- apache_request.c	Sat Jun 23 10:11:03 2001
++++ apache_request.c	Tue Aug  7 22:37:51 2001
+@@ -341,22 +341,33 @@
+ {
      request_rec *r = req->r;
      FILE *fp;
 -    char prefix[] = "apreq";
--    char *name;
--    int fd, tries = 100;
--    
++#define PREFIX "apreq"
+     char *name = NULL;
+-    int fd = 0; 
+-    int tries = 100;
++    int fd;
++    char *dirs[5], **dir;
+ 
 -    while (--tries > 0) {
--	if ( (name = tempnam(req->temp_dir, prefix)) == NULL ) continue;
--	fd = ap_popenf(r->pool, name, O_CREAT|O_EXCL|O_RDWR, 0600);
+-	if ( (name = tempnam(req->temp_dir, prefix)) == NULL )
+-	    continue;
+-	fd = ap_popenf(r->pool, name, O_CREAT|O_EXCL|O_RDWR|O_BINARY, 0600);
 -	if ( fd >= 0 )
 -	    break; /* success */
 -	else
-+#define PREFIX "apreq"
-+    char *name = NULL;
-+    int fd = -1;
-+    char *dirs[5], **dir;
-+
+-	    free(name);
 +    dirs[0] = getenv("TMPDIR"); dirs[1] = req->temp_dir;
 +    dirs[2] = P_tmpdir; dirs[3] = "/tmp"; dirs[4] = NULL;
 +
@@ -27,7 +29,7 @@
 +     */
 +    for (dir = dirs; *dir == NULL; dir++) /* Nothing */;
 +
-+    /* Now, try to create the temporary file in on of the directories: */
++    /* Now, try to create the temporary file in one of the directories: */
 +    for (fd = -1; fd == -1 && *dir; dir++) {
 +	name = malloc(strlen(*dir) + sizeof PREFIX + 8);
 +	if (!name) {
@@ -36,15 +38,11 @@
 +	}
 +	sprintf(name, "%s/%s.XXXXXX", *dir, PREFIX);
 +	fd = mkstemp(name);
-+	if (fd == -1)
- 	    free(name);
++	if (fd == -1) free(name);
      }
--    
--    if ( tries == 0  || (fp = ap_pfdopen(r->pool, fd, "w+") ) == NULL ) {
-+
-+    if ( fd == -1 || (fp = ap_pfdopen(r->pool, fd, "w+") ) == NULL ) {
- 	ap_log_rerror(REQ_ERROR,
--		      "[libapreq] could not open temp file '%s'", name); 	
-+		      "[libapreq] could not open temp file '%s'", name);
+ 
+-    if ( tries == 0  || (fp = ap_pfdopen(r->pool, fd, "w+" "b") ) == NULL ) {
++    if ( fd == -1 || (fp = ap_pfdopen(r->pool, fd, "w+" "b") ) == NULL ) {
+ 	ap_log_rerror(REQ_ERROR, "[libapreq] could not create/open temp file");
  	if ( fd >= 0 ) { remove(name); free(name); }
  	return NULL;
