@@ -1,5 +1,5 @@
 --- configure.orig	Sun Dec 15 05:20:37 2002
-+++ configure	Tue Dec  2 21:05:55 2003
++++ configure	Mon Dec 15 00:51:38 2003
 @@ -1730,12 +1730,14 @@
      TCL_BUILD_SAM_SPEC="-L`pwd` -ltclsam${TCL_VERSION}"
      TK_BUILD_SAM_SPEC="-L`pwd` -ltksam${TK_VERSION}"
@@ -26,3 +26,12 @@
  
      # The Tcl SAM library
      #
+@@ -1772,7 +1774,7 @@
+     
+     # The Tix SAM library
+     #
+-    eval "TIX_SAM_FILE=libtixsam${TCL_SHARED_LIB_SUFFIX}"
++    eval "TIX_SAM_FILE=libtixsam${LIB_VERSION}.so.1"
+     TIX_MAKE_SAM="\${SHLIB_LD} -o ${TIX_SAM_FILE} \${TIX_SAM_OBJS} ${SHLIB_LD_LIBS}"
+ 
+ else
