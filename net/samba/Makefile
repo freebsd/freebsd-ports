@@ -111,6 +111,8 @@ CONFIGURE_ARGS+=	--with-utmp
 CONFIGURE_ARGS+=	--with-msdfs
 .endif
 
+LIB_DEPENDS+=	popt.0:${PORTSDIR}/devel/popt
+
 .if defined(WITH_LDAP)
 LIB_DEPENDS+=  ldap.2:${PORTSDIR}/net/openldap20-client
 CONFIGURE_ARGS+=	--with-ldapsam
