@@ -1,6 +1,6 @@
 --- client/Makefile.FreeBSD.orig	Mon Oct  9 14:34:12 1995
-+++ client/Makefile.FreeBSD	Thu Jan 11 11:48:49 1996
-@@ -1,6 +1,9 @@
++++ client/Makefile.FreeBSD	Fri Mar 28 17:25:06 1997
+@@ -1,14 +1,22 @@
  INCLUDE = ../server/dhcp.h dhcpc.h common.h ../server/common_subr.h dhcpc_subr.h
  OBJ = dhcpc_subr.o flushroute.o getmac.o common_subr.o dhcpc.o
 -LDFLAGS =
@@ -9,10 +9,13 @@
 +LIBEXEC=	${PREFIX}/libexec 
 +MAN=		${PREFIX}/man
  
- CC = gcc
+-CC = gcc
 -CFLAGS = -Wall -g -I. -I../server #-DDEBUG
+-#CC = cc
++#CC = gcc
 +CFLAGS += -Wall -I. -I../server #-DDEBUG
-@@ -9,6 +12,11 @@
++CC = cc
+ #CFLAGS = -g -I. -I../server #-DDEBUG
  
  dhcpc: ${OBJ}
  	${CC} ${CFLAGS} -o dhcpc ${OBJ} ${LDFLAGS}

@@ -15,6 +15,7 @@ share/dhcp/intro.dhcp
 share/dhcp/dhcpdb.pool.sample
 share/dhcp/dhcpdb.relay.sample
 share/dhcp/dhcpdb.server.sample
+etc/rc.d/wide-dhcps.sh.sample
 @exec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^dhcps /etc/services.bak ; echo "dhcps		67/udp    # dhcp server") > /etc/services
 @unexec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^dhcps /etc/services.bak ) > /etc/services
 @exec echo "updating /etc/services"; cp /etc/services /etc/services.bak; (grep -v ^dhcpc /etc/services.bak ; echo "dhcpc		68/udp    # dhcp client") > /etc/services

@@ -1,14 +1,16 @@
---- server/Makefile.FreeBSD.org	Sat Jan 20 20:53:25 1996
-+++ server/Makefile.FreeBSD	Sat Jan 20 20:56:27 1996
+--- server/Makefile.FreeBSD.orig	Mon Nov  6 16:18:41 1995
++++ server/Makefile.FreeBSD	Fri Mar 28 17:26:44 1997
 @@ -1,13 +1,25 @@
  OBJ = dhcps.o database.o hash.o ctime.o getmac.o common_subr.o \
        interface.o delarp.o
 -LDFLAGS =
-+LDFLAGS = -lkvm
- CC = gcc
+-CC = gcc
 -CFLAGS = -g -Wall #-DCOMPAT_RFC1541 #-DNOICMPCHK
+-#CC = cc
++LDFLAGS = -lkvm
++#CC = gcc
 +CFLAGS += -Wall #-DCOMPAT_RFC1541 #-DNOICMPCHK
- #CC = cc
++CC = cc
  #CFLAGS = -g #-DCOMPAT_RFC1541 #-DNOICMPCHK
 +SBIN=		${PREFIX}/sbin
 +LIBEXEC=	${PREFIX}/libexec
