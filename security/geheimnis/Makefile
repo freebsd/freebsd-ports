@@ -34,5 +34,6 @@ post-install:
 	@cd ${WRKSRC}/geheimniskeepopen && \
 		${SETENV} ${MAKE_ENV} ${MAKE} install
 	strip ${PREFIX}/bin/geheimniskeepopen
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
