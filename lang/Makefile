@@ -20,6 +20,7 @@
     SUBDIR += compaq-cc
     SUBDIR += crossgo32-f77
     SUBDIR += cu-prolog
+    SUBDIR += dis
     SUBDIR += diveintopython
     SUBDIR += dylan
     SUBDIR += egcs
