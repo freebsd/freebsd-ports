@@ -1,0 +1,12 @@
+--- tools/fax2ps.c.orig	Wed Mar 29 13:22:33 2000
++++ tools/fax2ps.c	Sat Apr  1 00:00:00 2000
+@@ -382,8 +382,7 @@
+ 	char temp[1024], buf[16*1024];
+ 
+ 	strcpy(temp, "/tmp/fax2psXXXXXX");
+-	(void) mktemp(temp);
+-	fd = fopen(temp, "w");
++	fd = fdopen(mkstemp(temp), "w+");
+ 	if (fd == NULL) {
+ 	    fprintf(stderr, "Could not create temp file \"%s\"\n", temp);
+ 	    exit(-2);

@@ -1,6 +1,15 @@
---- html/Makefile.in.orig	Wed Jul 28 06:50:27 1999
-+++ html/Makefile.in	Wed Nov 24 06:20:07 1999
-@@ -80,6 +80,8 @@
+--- html/Makefile.in.orig	Tue Mar 28 02:05:55 2000
++++ html/Makefile.in	Sat Apr  1 00:00:00 2000
+@@ -76,8 +76,6 @@
+ 	v3.5.1.html		\
+ 	v3.5.2.html		\
+ 	v3.5.3.html		\
+-	v3.5.4.html		\
+-	v3.5.5.html		\
+ 	${NULL}
+ IMAGES=\
+ 	images/back.gif		\
+@@ -85,6 +83,8 @@
  	images/cat.gif		\
  	images/cover.jpg	\
  	images/cramps.gif	\
@@ -9,3 +18,13 @@
  	images/jello.jpg	\
  	images/jim.gif		\
  	images/note.gif		\
+@@ -102,8 +102,7 @@
+ install: all
+ 	${INSTALL} -m 755 -dir -idb tiff.man.html ${HTML} ${HTML}/images
+ 	for i in ${HTMLFILES} ${IMAGES}; do \
+-	    ${INSTALL} -idb tiff.man.html -m 444 -F ${HTML} \
+-		-src ${SRCDIR}/$$i -O $$i; \
++	    ${BSD_INSTALL_DATA} ${SRCDIR}/$$i ${HTML}/$$i; \
+ 	done
+ 
+ clean:;

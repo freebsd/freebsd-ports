@@ -22,8 +22,8 @@ include/tiffio.h
 lib/libtiff.a
 lib/libtiff.so
 lib/libtiff.so.4
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
 share/doc/tiff/bugs.html
 share/doc/tiff/build.html
 share/doc/tiff/contrib.html
@@ -64,5 +64,8 @@ share/doc/tiff/v3.4beta033.html
 share/doc/tiff/v3.4beta034.html
 share/doc/tiff/v3.4beta035.html
 share/doc/tiff/v3.4beta036.html
+share/doc/tiff/v3.5.1.html
+share/doc/tiff/v3.5.2.html
+share/doc/tiff/v3.5.3.html
 @dirrm share/doc/tiff/images
 @dirrm share/doc/tiff
