@@ -1,11 +1,38 @@
---- lib/rld.c.org	Wed Jun 24 22:32:37 1998
-+++ lib/rld.c	Wed Jun 24 22:33:11 1998
-@@ -140,7 +140,7 @@
+--- lib/rld.c.orig	Wed Aug  4 04:59:28 1999
++++ lib/rld.c	Mon Feb 21 03:55:45 2000
+@@ -143,7 +143,7 @@
  static void DGetOriginalFunc(void **fptr, char *name, int libmask) {
      /* Synchronize access to func and lib opening functions if we can...     */
  
 -#ifndef __FreeBSD__
 +#if !defined(__FreeBSD__) || __FreeBSD__ != 2
      name++;
+ #endif
+ 
+@@ -197,6 +197,26 @@
+     lsInRLDFunctions = 0;
+     S5LogUpdate(S5LogDefaultHandle, S5_LOG_DEBUG(10), 0, "RLD: gethostbyname2 results: %s %s", name, hp?hp->h_name:"???");
+     return hp;
++}
++#endif
++
++#ifdef HAVE_GETADDRINFO
++int REAL(getaddrinfo)(const char *hostname, const char *servname,
++		      const struct addrinfo *hints, struct addrinfo **aip) {
++    int error;
++    static void *func = NULL;
++
++    S5LogUpdate(S5LogDefaultHandle, S5_LOG_DEBUG(10), 0, "RLD: getaddrinfo: %s", hostname);
++    GetOriginalFunc(&func, "_getaddrinfo", TRY_LIBC | TRY_LIBNSL | TRY_LIBRESOLV);
++    if (!func || func == (void *)-1) return NULL;
++
++    lsInRLDFunctions = 1;
++    error = ((int (*)P((const char *, const char *, const struct addrinfo *,
++			struct addrinfo **)))func)(hostname, servname,
++						   hints, aip);
++    lsInRLDFunctions = 0;
++    S5LogUpdate(S5LogDefaultHandle, S5_LOG_DEBUG(10), 0, "RLD: getaddrinfo results: %s %s", hostname, (*aip&&(*aip)->ai_canonname)?(*aip)->ai_canonname:"???");
++    return error;
+ }
  #endif
  

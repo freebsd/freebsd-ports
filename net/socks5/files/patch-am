@@ -1,0 +1,10 @@
+--- configure.in.orig	Tue Aug  3 00:00:50 1999
++++ configure.in	Sun Feb 20 21:24:32 2000
+@@ -120,6 +120,7 @@
+ 
+ AC_CHECK_FUNCS(gethostbyname2)
+ AC_CHECK_FUNCS(gethostbyname_r gethostbyaddr_r getpwuid_r getservbyname_r)
++AC_CHECK_FUNCS(getaddrinfo getnameinfo)
+ AC_CHECK_FUNCS(memset memcmp memmove strchr strrchr strdup strerror)
+ AC_CHECK_FUNCS(bcopy bcmp bzero index rindex)
+ AC_CHECK_FUNCS(setenv putenv unsetenv getenv)

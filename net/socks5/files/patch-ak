@@ -1,55 +1,162 @@
-
-The patch is for clients that do not have DNS resolution.  Sites that do not
-use the remote name resolution do not have to apply this patch.
-
-The fakehost files (/tmp/.s5fakehost-<uid>) created with releases prior to 
-release 10 are not compatible.  
-
-If the fakehost file has size 65284 bytes, it is the old version.  Delete the
-file, apply the following patch, and rebuild the clients.  The new fakehost
-file has size 32644 bytes.
-
-steve@syl.dl.nec.com
-
-Index: lib/hostname.c
-===================================================================
-RCS file: lib/hostname.c,v
-retrieving revision 1.31.4.12
-retrieving revision 1.31.4.17
-diff -c -r1.31.4.12 -r1.31.4.17
-*** hostname.c	1999/08/02 14:52:23	1.31.4.12
---- hostname.c	1999/08/11 18:53:42	1.31.4.17
-***************
-*** 171,177 ****
-          strncpy(hostname, name, MIN(strlen(name), S5_HOSTNAME_SIZE-1));
-          hostname[MIN(strlen(name), S5_HOSTNAME_SIZE-1)] = '\0';
+--- lib/hostname.c.orig	Wed Aug  4 04:59:29 1999
++++ lib/hostname.c	Tue Feb 22 09:51:48 2000
+@@ -17,6 +17,11 @@
+ #define S5_HOSTLIST_SIZE    256
+ #define S5_HOSTALIASES_SIZE 16
+ #define S5_FAKEHOSTFILE     ".s5fakehost"
++
++/* wrapper for KAME-special getnameinfo() */
++#ifndef NI_WITHSCOPEID
++#define	NI_WITHSCOPEID	0
++#endif
   
-!         lseek(fd, (j-1)*256+sizeof(int), SEEK_SET);
-          if (REAL(write)(fd, hostname, sizeof(hostname)) != sizeof(hostname)) {
-              S5LogUpdate(S5LogDefaultHandle, S5_LOG_ERROR, 0, "GetHostFromFile: write table failed %m");
-              SetWriteLock(0);
---- 170,176 ----
-          strncpy(hostname, name, MIN(strlen(name), S5_HOSTNAME_SIZE-1));
-          hostname[MIN(strlen(name), S5_HOSTNAME_SIZE-1)] = '\0';
-  
-!         lseek(fd, (j-1)*S5_HOSTNAME_SIZE+sizeof(int), SEEK_SET);
-          if (REAL(write)(fd, hostname, sizeof(hostname)) != sizeof(hostname)) {
-              S5LogUpdate(S5LogDefaultHandle, S5_LOG_ERROR, 0, "GetHostFromFile: write table failed %m");
-              SetWriteLock(0);
-***************
-*** 472,478 ****
-  
-      if (fd > 0) {
-          SetReadLock(1);
-!         lseek(fd, (i-1)*256+sizeof(int), SEEK_SET);
-  
-          if (REAL(read)(fd, hostname, len) != len) {
-              S5LogUpdate(S5LogDefaultHandle, S5_LOG_ERROR, 0, "lsGetCachedHostname: read fake table failed %m");
---- 471,477 ----
-  
-      if (fd > 0) {
-          SetReadLock(1);
-!         lseek(fd, (i-1)*S5_HOSTNAME_SIZE+sizeof(int), SEEK_SET);
-  
-          if (REAL(read)(fd, hostname, len) != len) {
-              S5LogUpdate(S5LogDefaultHandle, S5_LOG_ERROR, 0, "lsGetCachedHostname: read fake table failed %m");
+ struct hostEntry {
+     char name[S5_HOSTNAME_SIZE];
+@@ -171,7 +176,7 @@
+         strncpy(hostname, name, MIN(strlen(name), S5_HOSTNAME_SIZE-1));
+         hostname[MIN(strlen(name), S5_HOSTNAME_SIZE-1)] = '\0';
+ 
+-        lseek(fd, (j-1)*256+sizeof(int), SEEK_SET);
++        lseek(fd, (j-1)*S5_HOSTNAME_SIZE+sizeof(int), SEEK_SET);
+         if (REAL(write)(fd, hostname, sizeof(hostname)) != sizeof(hostname)) {
+             S5LogUpdate(S5LogDefaultHandle, S5_LOG_ERROR, 0, "GetHostFromFile: write table failed %m");
+             SetWriteLock(0);
+@@ -402,6 +407,129 @@
+ }
+ #endif
+ 
++#if defined(HAVE_GETADDRINFO) && defined(HAVE_GETNAMEINFO)
++/* wrapper around the getaddrinfo call.                                      */
++/* similar to getaddrinfo() except for:                                      */
++/* *** if getaddrinfo() fails, then it returns a pointer to a addrinfo       */
++/*     structure filled with a special value, so that SOCKSxxxxxx() will     */
++/*     realize that this host was unresolved and fill in the protocol        */
++/*     accordingly...                                                        */
++/*                                                                           */
++/* returns an error number on failure; 0 on success   */
++int LIBPREFIX(getaddrinfo)(const char *hostname, const char *servname,
++			    const struct addrinfo *hints,
++			    struct addrinfo **aip) {
++    static char numaddrbuf[MAXHOSTNAMELEN];
++    static struct addrinfo *ai;
++    char *local, *fake;
++    int error = 0, i;
++    int addrlen, namelen, family;
++
++#ifdef FOR_SHARED_LIBRARY
++    if (lsInRLDFunctions || lsInWrapFunction || lsInWrapHostname) return REAL(getaddrinfo)(hostname, servname, hints, aip);
++#endif
++
++    lsInWrapFunction = 1;
++    lsInWrapHostname = 1;
++    LIBPREFIX2(init)("libsocks5");
++    S5LogUpdate(S5LogDefaultHandle, S5_LOG_DEBUG(10), 0, "SOCKS getaddrinfo: looking up %s", hostname);
++
++    fake  = getenv("SOCKS5_FAKEALLHOSTS");
++    local = getenv("SOCKS5_LOCALDNSONLY");
++
++    if (!fake &&
++	(error = REAL(getaddrinfo)(hostname, servname, hints, aip)) == NULL) {
++        getnameinfo((*aip)->ai_addr, (*aip)->ai_addrlen, numaddrbuf,
++		    sizeof(numaddrbuf) - 1, NULL, 0,
++		    NI_NUMERICHOST|NI_WITHSCOPEID);
++	S5LogUpdate(S5LogDefaultHandle, S5_LOG_DEBUG(10), 0, "SOCKS getaddrinfo: REAL: %s", numaddrbuf);
++
++        lsInWrapFunction = 0;
++        lsInWrapHostname = 0;
++	return error;
++    }
++
++    /* If your DNS is the same as the socks server, don't fake a correct     */
++    /* lookup when you know it won't work...                                 */
++    if (local) {
++	S5LogUpdate(S5LogDefaultHandle, S5_LOG_DEBUG(10), 0, "SOCKS getaddrinfo: REAL: Fake not configured");
++        lsInWrapFunction = 0;
++        lsInWrapHostname = 0;
++	return (error != 0) ? error : EAI_FAIL;
++    }
++
++    /* Fill in some UNRESOLVED values and let the daemon resolve it          */
++    if ((i = GetFakeHost(hostname)) <= 0) {
++        S5LogUpdate(S5LogDefaultHandle, S5_LOG_ERROR, 0, "SOCKS getaddrinfo: Get fake host failed");
++        lsInWrapFunction = 0;
++        lsInWrapHostname = 0;
++	return (error != 0) ? error : EAI_FAIL;
++    }
++
++    /* create fake for AF_INET. AF_INET6 support is not yet */
++    if (hints->ai_family == AF_UNSPEC || hints->ai_family == AF_INET) {
++        addrlen = sizeof(struct sockaddr_in);
++	family = AF_INET;
++        ai = (struct addrinfo *)malloc(sizeof(struct addrinfo) + addrlen);
++	if (ai == NULL)
++	    return EAI_MEMORY;
++	memcpy(ai, hints, sizeof(struct addrinfo));
++	ai->ai_family = family;
++	ai->ai_addr = (struct sockaddr *)(ai + 1);
++	memset(ai->ai_addr, 0, addrlen);
++	ai->ai_addr->sa_len = addrlen;
++	ai->ai_addrlen = addrlen;
++	ai->ai_addr->sa_family = family;
++	if (servname != NULL) {
++	    struct servent *sp;
++	    const char *p;
++	    int is_number, port;
++
++	    p = servname;
++	    is_number = 1;
++	    while (*p) {
++	        if (!isdigit(*p))
++		    is_number = 0;
++		p++;
++	    }
++	    if (is_number) {
++	        port = htons(atoi(servname));
++		if (port < 0 || port > 65535) {
++		    free(ai);
++		    return EAI_SERVICE;
++		}
++	    } else {
++	        sp = getservbyname(servname, NULL);
++		if (sp == NULL) {
++		    free(ai);
++		    return EAI_SERVICE;
++		}
++	        port = sp->s_port;		
++	    }
++	    ((struct sockaddr_in *)ai->ai_addr)->sin_port = port;
++	}
++	((struct sockaddr_in *)ai->ai_addr)->sin_addr.s_addr = htonl(i);
++	if ((hints->ai_flags & AI_CANONNAME) != 0) {
++	    ai->ai_canonname = (char *)malloc(strlen(hostname) + 1);
++	    if (ai->ai_canonname == NULL) {
++	        free(ai);
++		return EAI_MEMORY;
++	    }
++	    strncpy(ai->ai_canonname, hostname, strlen(hostname) + 1);
++	}
++    } else
++        return EAI_FAMILY;
++    *aip = ai;
++
++    getnameinfo((*aip)->ai_addr, (*aip)->ai_addrlen, numaddrbuf,
++		sizeof(numaddrbuf) - 1, NULL, 0, NI_NUMERICHOST);
++    S5LogUpdate(S5LogDefaultHandle, S5_LOG_DEBUG(10), 0, "SOCKS getaddrinfo: FAKE: %s",  numaddrbuf);
++    lsInWrapFunction = 0;
++    lsInWrapHostname = 0;
++    return 0;
++}
++#endif
++
+ int lsGetCachedAddress(const char *name, S5NetAddr *na) {
+     int i;
+     char hostname[S5_HOSTNAME_SIZE];
+@@ -472,7 +600,7 @@
+ 
+     if (fd > 0) {
+         SetReadLock(1);
+-        lseek(fd, (i-1)*256+sizeof(int), SEEK_SET);
++        lseek(fd, (i-1)*S5_HOSTNAME_SIZE+sizeof(int), SEEK_SET);
+ 
+         if (REAL(read)(fd, hostname, len) != len) {
+             S5LogUpdate(S5LogDefaultHandle, S5_LOG_ERROR, 0, "lsGetCachedHostname: read fake table failed %m");

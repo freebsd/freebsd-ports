@@ -1,0 +1,12 @@
+--- include/system.h.orig	Wed Aug  4 04:59:30 1999
++++ include/system.h	Mon Feb 21 14:43:42 2000
+@@ -24,6 +24,9 @@
+ #ifdef HAVE_GETHOSTBYNAME2
+ struct hostent * REAL(gethostbyname2) P((const char *, int));
+ #endif
++int		 REAL(getaddrinfo) P((const char *, const char *,
++				      const struct addrinfo *,
++			 	      struct addrinfo **));
+ struct hostent * REAL(gethostbyname) P((const char *));
+ struct hostent * REAL(gethostbyaddr) P((const void *, int, int));
+ struct servent * REAL(getservbyname) P((const char *, const char *)); 
