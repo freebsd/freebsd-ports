@@ -21,40 +21,6 @@ lib/mozilla/chrome/en-unix.jar
 lib/mozilla/chrome/en-win.jar
 lib/mozilla/chrome/forms.jar
 lib/mozilla/chrome/help.jar
-lib/mozilla/chrome/icons/default/abcardWindow.xpm
-lib/mozilla/chrome/icons/default/abcardWindow16.xpm
-lib/mozilla/chrome/icons/default/addressbookWindow.xpm
-lib/mozilla/chrome/icons/default/addressbookWindow16.xpm
-lib/mozilla/chrome/icons/default/bmPropsWindow.xpm
-lib/mozilla/chrome/icons/default/bmPropsWindow16.xpm
-lib/mozilla/chrome/icons/default/bookmark-window.xpm
-lib/mozilla/chrome/icons/default/bookmark-window16.xpm
-lib/mozilla/chrome/icons/default/calendar-window.xpm
-lib/mozilla/chrome/icons/default/calendar-window16.xpm
-lib/mozilla/chrome/icons/default/chatzilla-window.xpm
-lib/mozilla/chrome/icons/default/chatzilla-window16.xpm
-lib/mozilla/chrome/icons/default/downloadManager.xpm
-lib/mozilla/chrome/icons/default/downloadManager16.xpm
-lib/mozilla/chrome/icons/default/editorWindow.xpm
-lib/mozilla/chrome/icons/default/editorWindow16.xpm
-lib/mozilla/chrome/icons/default/findBookmarkWindow.xpm
-lib/mozilla/chrome/icons/default/findBookmarkWindow16.xpm
-lib/mozilla/chrome/icons/default/findHistoryWindow.xpm
-lib/mozilla/chrome/icons/default/findHistoryWindow16.xpm
-lib/mozilla/chrome/icons/default/history-window.xpm
-lib/mozilla/chrome/icons/default/history-window16.xpm
-lib/mozilla/chrome/icons/default/jsconsoleWindow.xpm
-lib/mozilla/chrome/icons/default/jsconsoleWindow16.xpm
-lib/mozilla/chrome/icons/default/main-window.xpm
-lib/mozilla/chrome/icons/default/main-window16.xpm
-lib/mozilla/chrome/icons/default/messengerWindow.xpm
-lib/mozilla/chrome/icons/default/messengerWindow16.xpm
-lib/mozilla/chrome/icons/default/msgcomposeWindow.xpm
-lib/mozilla/chrome/icons/default/msgcomposeWindow16.xpm
-lib/mozilla/chrome/icons/default/venkman-window.xpm
-lib/mozilla/chrome/icons/default/venkman-window16.xpm
-lib/mozilla/chrome/icons/default/winInspectorMain.xpm
-lib/mozilla/chrome/icons/default/winInspectorMain16.xpm
 lib/mozilla/chrome/inspector.jar
 lib/mozilla/chrome/installed-chrome.txt
 %%MOZILLAMAILNEWS%%lib/mozilla/chrome/messenger.jar
@@ -69,9 +35,8 @@ lib/mozilla/chrome/pipnss.jar
 lib/mozilla/chrome/pippki.jar
 lib/mozilla/chrome/toolkit.jar
 lib/mozilla/chrome/venkman.jar
-lib/mozilla/chrome/user-locales.rdf
-lib/mozilla/chrome/user-skins.rdf
 lib/mozilla/chrome/xmlterm.jar
+lib/mozilla/component.reg
 %%MOZILLAMAILNEWS%%lib/mozilla/components/absync.xpt
 lib/mozilla/components/accessibility.xpt
 %%MOZILLAMAILNEWS%%lib/mozilla/components/addrbook.xpt
@@ -85,11 +50,10 @@ lib/mozilla/components/chardet.xpt
 lib/mozilla/components/chrome.xpt
 lib/mozilla/components/commandhandler.xpt
 lib/mozilla/components/composer.xpt
-lib/mozilla/components/compreg.dat
 lib/mozilla/components/content.xpt
-lib/mozilla/components/content_xslt.xpt
 lib/mozilla/components/content_base.xpt
 lib/mozilla/components/content_html.xpt
+lib/mozilla/components/content_xsl.xpt
 lib/mozilla/components/cookie.xpt
 lib/mozilla/components/directory.xpt
 lib/mozilla/components/docshell.xpt
@@ -161,7 +125,6 @@ lib/mozilla/components/libimglib2.so
 lib/mozilla/components/libimgmng.so
 lib/mozilla/components/libimgpng.so
 lib/mozilla/components/libimgppm.so
-lib/mozilla/components/libimgxbm.so
 %%MOZILLAMAILNEWS%%lib/mozilla/components/libimpComm4xMail.so
 %%MOZILLAMAILNEWS%%lib/mozilla/components/libimpText.so
 %%MOZILLAMAILNEWS%%lib/mozilla/components/libimport.so
@@ -180,6 +143,7 @@ lib/mozilla/components/libmork.so
 lib/mozilla/components/libmozbrwsr.so
 lib/mozilla/components/libmozfind.so
 %%MOZILLALDAP%%lib/mozilla/components/libmozldap.so
+lib/mozilla/components/libmozxfer.so
 %%MOZILLAMAILNEWS%%lib/mozilla/components/libmsgcompose.so
 %%MOZILLAMAILNEWS%%lib/mozilla/components/libmsgdb.so
 %%MOZILLAMAILNEWS%%lib/mozilla/components/libmsgimap.so
@@ -236,6 +200,7 @@ lib/mozilla/components/mimetype.xpt
 lib/mozilla/components/mozbrwsr.xpt
 lib/mozilla/components/mozfind.xpt
 %%MOZILLALDAP%%lib/mozilla/components/mozldap.xpt
+lib/mozilla/components/mozxfer.xpt
 %%MOZILLAMAILNEWS%%lib/mozilla/components/msgbase.xpt
 %%MOZILLAMAILNEWS%%lib/mozilla/components/msgcompose.xpt
 %%MOZILLAMAILNEWS%%lib/mozilla/components/msgdb.xpt
@@ -291,6 +256,7 @@ lib/mozilla/components/signonviewer.xpt
 lib/mozilla/components/timebomb.xpt
 lib/mozilla/components/transformiix.xpt
 lib/mozilla/components/txmgr.xpt
+lib/mozilla/components/txtsvc.xpt
 lib/mozilla/components/uconv.xpt
 lib/mozilla/components/unicharutil.xpt
 lib/mozilla/components/uriloader.xpt
@@ -304,7 +270,6 @@ lib/mozilla/components/webBrowser_core.xpt
 lib/mozilla/components/webbrowserpersist.xpt
 lib/mozilla/components/webshell_idls.xpt
 lib/mozilla/components/widget.xpt
-lib/mozilla/components/windowds.xpt
 lib/mozilla/components/windowwatcher.xpt
 lib/mozilla/components/xml-rpc.xpt
 lib/mozilla/components/xmlextras.xpt
@@ -324,10 +289,11 @@ lib/mozilla/components/xpti.dat
 lib/mozilla/components/xremoteservice.xpt
 lib/mozilla/components/xuldoc.xpt
 lib/mozilla/components/xultmpl.xpt
-lib/mozilla/defaults/autoconfig/platform.js
 lib/mozilla/defaults/autoconfig/prefcalls.js
 lib/mozilla/defaults/pref/all.js
+lib/mozilla/defaults/pref/config.js
 lib/mozilla/defaults/pref/editor.js
+lib/mozilla/defaults/pref/initpref.js
 lib/mozilla/defaults/pref/inspector.js
 lib/mozilla/defaults/pref/mailnews.js
 %%MOZILLAMAILNEWS%%lib/mozilla/defaults/pref/mdn.js
@@ -398,6 +364,7 @@ lib/mozilla/res/arrowd.gif
 lib/mozilla/res/broken-image.gif
 lib/mozilla/res/builtin/htmlBindings.xml
 lib/mozilla/res/builtin/platformHTMLBindings.xml
+lib/mozilla/res/builtin/xbl-forms.css
 lib/mozilla/res/charsetData.properties
 lib/mozilla/res/charsetalias.properties
 lib/mozilla/res/cmessage.txt
@@ -408,7 +375,6 @@ lib/mozilla/res/entityTables/html40Latin1.properties
 lib/mozilla/res/entityTables/html40Special.properties
 lib/mozilla/res/entityTables/html40Symbols.properties
 lib/mozilla/res/entityTables/htmlEntityVersions.properties
-lib/mozilla/res/entityTables/mathml20.properties
 lib/mozilla/res/entityTables/transliterate.properties
 lib/mozilla/res/fonts/mathfont.properties
 lib/mozilla/res/fonts/mathfontCMEX10.properties
@@ -585,7 +551,7 @@ lib/mozilla/xpidl
 lib/mozilla/xpt_dump
 lib/mozilla/xpt_link
 @unexec rm -f %D/lib/mozilla/chrome/chrome.rdf || true
-@unexec rm -f %D/lib/mozilla/compreg.dat || true
+@unexec rm -f %D/lib/mozilla/component.reg || true
 @unexec rm -f %D/lib/mozilla/components/xpti.dat || true
 @dirrm lib/mozilla/searchplugins
 @dirrm lib/mozilla/res/throbber
@@ -624,7 +590,5 @@ lib/mozilla/xpt_link
 @dirrm lib/mozilla/chrome/overlayinfo/communicator/content
 @dirrm lib/mozilla/chrome/overlayinfo/communicator
 @dirrm lib/mozilla/chrome/overlayinfo
-@dirrm lib/mozilla/chrome/icons/default
-@dirrm lib/mozilla/chrome/icons
 @dirrm lib/mozilla/chrome
 @dirrm lib/mozilla

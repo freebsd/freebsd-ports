@@ -22,6 +22,8 @@ RUN_DEPENDS=	${MAKE} -V RUN_DEPENDS -f ${MAINDIR}/${MKFILE}
 
 USE_X_PREFIX=	yes
 
+NO_LATEST_LINK=	yes
+
 MAINDIR=	${.CURDIR}/../mozilla
 MKFILE!=	/usr/bin/basename ${MAKEFILE}
 PORTVERSION!=	${PORTVERSION}
@@ -40,9 +42,9 @@ do-build:
 	@find ${WRKSRC}/dist/Embed -name "*.so" | xargs strip
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/mozilla-embedded
-	${CHMOD} 755 ${PREFIX}/lib/mozilla-embedded
+	${MKDIR} ${PREFIX}/lib/mozilla-embedded-devel
+	${CHMOD} 755 ${PREFIX}/lib/mozilla-embedded-devel
 	cd ${WRKSRC}/dist/Embed && ${FIND} . | \
-		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/mozilla-embedded
+		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/mozilla-embedded-devel
 
 .include <bsd.port.mk>
