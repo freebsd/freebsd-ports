@@ -8075,6 +8075,7 @@ py-rrdpipe	ports/net/py-rrdpipe
 py-rrdtool_lgpl	ports/net/py-rrdtool_lgpl
 py-rt		ports/net/py-rt
 py-rxp		ports/textproc/py-rxp
+py-samba	ports/net/py-samba
 py-scgi		ports/www/py-scgi
 py-scientific	ports/math/py-scientific
 py-serial	ports/comms/py-serial
