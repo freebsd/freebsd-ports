@@ -81,6 +81,7 @@
     SUBDIR += libogg
     SUBDIR += libshout
     SUBDIR += libsidplay
+    SUBDIR += libvorbis
     SUBDIR += libworkman
     SUBDIR += linux-realplayer
     SUBDIR += lopster
