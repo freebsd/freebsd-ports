@@ -1,3 +1,4 @@
 bin/jikes
-share/doc/jikes-1.15/license.htm
-@dirrm share/doc/jikes-1.15
+include/jikesapi.h
+share/doc/jikes-1.16/license.htm
+@dirrm share/doc/jikes-1.16
