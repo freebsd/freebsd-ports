@@ -7,15 +7,13 @@
 #
 
 PORTNAME=	sam2p
-PORTVERSION=	0.44
-PORTREVISION=	2
+PORTVERSION=	0.44.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.inf.bme.hu/~pts/
+DISTNAME=	${PORTNAME}-latest
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts raster (bitmap) image formats into PS or PDF files
-
-USE_GHOSTSCRIPT_RUN=	yes
 
 BUILD_DEPENDS=	tif22pnm:${PORTSDIR}/graphics/tif22pnm \
 		tifftopnm:${PORTSDIR}/graphics/netpbm \
@@ -23,6 +21,9 @@ BUILD_DEPENDS=	tif22pnm:${PORTSDIR}/graphics/tif22pnm \
 		bash:${PORTSDIR}/shells/bash2
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 
+USE_GHOSTSCRIPT_RUN=	yes
+
+WRKSRC=		${WRKDIR}
 PLIST_FILES=	bin/sam2p
 USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
@@ -31,10 +32,6 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 ALL_TARGET=	${PORTNAME}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sam2p ${PREFIX}/bin
