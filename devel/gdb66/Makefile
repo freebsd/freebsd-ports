@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2004-06-15
+SNAPDATE=	2004-07-13
 SNAPVER=	${SNAPDATE:S/-//g}
 
 PORTNAME=	gdb
@@ -23,8 +23,6 @@ PATCH_SITE_SUBDIR=	obrien
 
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	GNU GDB 6
-
-BROKEN=		Unfetchable
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/-weekly//}
 USE_BZIP2=	yes
