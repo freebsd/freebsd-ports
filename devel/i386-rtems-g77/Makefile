@@ -44,7 +44,6 @@ PKGNAMEPREFIX=	${LCLTARGET}-
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all info
-NO_CPUCFLAGS=	yes
 
 CONFIGURE_TARGET?=	--target=${LCLTARGET}
 CONFIGURE_ARGS?=	--with-gnu-as --with-gnu-ld --with-newlib --verbose \
@@ -57,7 +56,13 @@ CONFIGURE_SCRIPT?=	../${G77NAME}/configure
 PATCH_WRKSRC=		${WRKDIR}
 PATCH_STRIP=		-p
 
-MAKE_FLAGS=	LANGUAGES="f77"
+NO_CPU_FLAGS=	true
+MAKE_FLAGS=	LANGUAGES="c c++ java"
+MAKE_ENV=	MACHINE_ARCH=${RTEMS_ARCH} NO_CPU_CFLAGS=true
+# Since once mk/bsd.cpu.mk adds the _CPUCFLAGS they can't be removed
+# by NO_CPU_FLAGS, and since they are added long before here we are
+# stuck with this hack.
+CFLAGS:=	${CFLAGS:C/-mcpu=[^ ]*//:C/-march=[^ ]*//}
 
 pre-configure:
 	@(cd ${WRKDIR} ; \
