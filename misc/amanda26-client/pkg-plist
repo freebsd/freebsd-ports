@@ -1,7 +1,10 @@
 libexec/amanda/amandad
-libexec/amanda/sendsize-dump
+libexec/amanda/sendsize
+libexec/amanda/calcsize
 libexec/amanda/sendbackup-dump
-libexec/amanda/selfcheck-dump
+libexec/amanda/sendbackup-gnutar
+libexec/amanda/runtar
+libexec/amanda/selfcheck
 libexec/amanda/taper
 libexec/amanda/dumper
 libexec/amanda/driver
@@ -10,12 +13,13 @@ libexec/amanda/reporter
 libexec/amanda/getconf
 sbin/amrestore
 sbin/amadmin
-sbin/amlabel
 sbin/amflush
+sbin/amlabel
 sbin/amcheck
 sbin/amdump
 sbin/amcleanup
 sbin/amtape
+libexec/amanda/chg-generic
 man/man8/amanda.8.gz
 man/man8/amadmin.8.gz
 man/man8/amcheck.8.gz
