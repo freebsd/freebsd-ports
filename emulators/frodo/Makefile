@@ -22,12 +22,6 @@ WRKSRC=		${WRKDIR}/Frodo/Src
 
 ROM=		1541 Basic Char Kernal
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 500000
-BROKEN=		"Does not build"
-.endif
-
 post-patch:
 	@${MV} ${WRKDIR}/Frodo/TkGui.tcl ${WRKDIR}/Frodo/TkGui.tcl.sed
 	${SED} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" \
@@ -60,4 +54,4 @@ post-install:
 	@${TAR} -C ${WRKDIR}/Frodo/Docs -cf - . | ${TAR} -C ${DOCSDIR} -xf -
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
