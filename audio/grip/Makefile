@@ -22,20 +22,25 @@ PATCH_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui vte
 USE_GMAKE=	yes
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 OPTIONS=	CDPARANOIA "Ripper: Enable cdparanoia support" on \
-		CDDA2WAV "Ripper: cdda2wav: Install sysutils/cdrtools" off \
-		LAME "Encoder: lame: Install audio/lame" on \
-		BLADEENC "Encoder: bladeenc: Install audio/bladeenc" off \
+		CDDA2WAV "Ripper: cdda2wav: Install sysutils/cdrtools" off
+.if defined(PACKAGE_BUILDING)
+OPTIONS+=	LAME "Encoder: lame: Install audio/lame" off \
+		VORBIS "Encoder: oggenc: Install audio/vorbis-tools" on
+.else
+OPTIONS+=	LAME "Encoder: lame: Install audio/lame" on \
+		VORBIS "Encoder: oggenc: Install audio/vorbis-tools" off
+.endif
+OPTIONS+=	BLADEENC "Encoder: bladeenc: Install audio/bladeenc" off \
 		FAAC "Encoder: faac: Install audio/faac" off \
 		FLAC "Encoder: flac: Install audio/flac" off \
 		GOGO "Encoder: gogo: Install audio/gogo" off \
-		MP3ENCODE "Encoder: mp3encode: Install audio/mp3encode" off \
-		VORBIS "Encoder: oggenc: Install audio/vorbis-tools" off
+		MP3ENCODE "Encoder: mp3encode: Install audio/mp3encode" off
 
 ISO_LOCALES=	de es fr pt_BR ru
 
