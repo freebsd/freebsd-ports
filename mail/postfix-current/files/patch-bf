@@ -1,0 +1,19 @@
+*** man/man5/virtual.5.orig	Mon Mar 29 22:36:55 1999
+--- man/man5/virtual.5	Mon Mar 29 22:37:02 1999
+***************
+*** 8,14 ****
+  .SH SYNOPSIS
+  .na
+  .nf
+! \fBpostmap /etc/postfix/virtual\fR
+  .SH DESCRIPTION
+  .ad
+  .fi
+--- 8,14 ----
+  .SH SYNOPSIS
+  .na
+  .nf
+! \fBpostmap !!PREFIX!!/etc/postfix/virtual\fR
+  .SH DESCRIPTION
+  .ad
+  .fi

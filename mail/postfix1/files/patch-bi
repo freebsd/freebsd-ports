@@ -1,0 +1,21 @@
+*** man/man8/master.8.orig	Mon Mar 29 22:38:17 1999
+--- man/man8/master.8	Mon Mar 29 22:38:46 1999
+***************
+*** 116,123 ****
+  .SH FILES
+  .na
+  .nf
+! /etc/postfix/main.cf: global configuration file.
+! /etc/postfix/master.cf: master process configuration file.
+  /var/spool/postfix/pid/master.pid: master lock file.
+  .SH SEE ALSO
+  .na
+--- 116,123 ----
+  .SH FILES
+  .na
+  .nf
+! !!PREFIX!!/etc/postfix/main.cf: global configuration file.
+! !!PREFIX!!/etc/postfix/master.cf: master process configuration file.
+  /var/spool/postfix/pid/master.pid: master lock file.
+  .SH SEE ALSO
+  .na

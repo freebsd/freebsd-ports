@@ -1,0 +1,21 @@
+*** man/man8/cleanup.8.orig	Mon Mar 29 22:37:59 1999
+--- man/man8/cleanup.8	Mon Mar 29 22:38:13 1999
+***************
+*** 118,125 ****
+  .SH FILES
+  .na
+  .nf
+! /etc/postfix/canonical*, canonical mapping table
+! /etc/postfix/virtual*, virtual mapping table
+  .SH LICENSE
+  .na
+  .nf
+--- 118,125 ----
+  .SH FILES
+  .na
+  .nf
+! !!PREFIX!!/etc/postfix/canonical*, canonical mapping table
+! !!PREFIX!!/etc/postfix/virtual*, virtual mapping table
+  .SH LICENSE
+  .na
+  .nf
