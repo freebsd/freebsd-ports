@@ -1,11 +1,13 @@
---- configure	Thu Jan  6 22:28:51 2000
-+++ /tmp/configure.new	Sat Apr  8 20:55:29 2000
-@@ -4951,7 +4951,7 @@
-     # try the user-specified path --- too lazy to test for it right now
-     LIB_SASL="-L$sasldir/lib -lsasl"
-     
--    SASLFLAGS="-I$sasldir/include"
-+    SASLFLAGS="-I$sasldir/include/sasl"
-         
-   fi
+Index: configure
+diff -u configure.orig configure
+--- configure.orig	Thu Dec 21 06:39:31 2000
++++ configure	Thu Jan  4 23:22:47 2001
+@@ -4178,7 +4178,7 @@
+ 	cmu_saved_LIBS=$LIBS
+ 	if test -d ${with_sasl}; then
+           ac_cv_sasl_where_lib=${with_sasl}/lib
+-          ac_cv_sasl_where_inc=${with_sasl}/include
++          ac_cv_sasl_where_inc=${with_sasl}/include/sasl
  
+ 	  SASLFLAGS="-I$ac_cv_sasl_where_inc"
+ 	  LIB_SASL="-L$ac_cv_sasl_where_lib"

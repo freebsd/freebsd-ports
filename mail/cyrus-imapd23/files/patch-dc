@@ -1,0 +1,13 @@
+Index: master/Makefile.in
+diff -u master/Makefile.in.orig master/Makefile.in
+--- master/Makefile.in.orig	Fri Dec 15 04:26:50 2000
++++ master/Makefile.in	Sat Jan  6 06:08:21 2001
+@@ -52,7 +52,7 @@
+ CYRUS_USER=@cyrus_user@
+ CYRUS_GROUP=@cyrus_group@
+ 
+-DEFS = @DEFS@ @LOCALDEFS@
++DEFS = @DEFS@ @LOCALDEFS@ -DCONFIG_FILENAME=\"$(prefix)/etc/cyrus.conf\"
+ CPPFLAGS = -I. -I.. -I$(srcdir) @CPPFLAGS@ @COM_ERR_CPPFLAGS@
+ DEPLIBS = @DEPLIBS@
+ 
