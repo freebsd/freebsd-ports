@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnomecommon
-PORTVERSION=	1.2.4
+PORTVERSION=	2.4.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-common/1.2
+MASTER_SITE_SUBDIR=	sources/gnome-common/2.4
 DISTNAME=	gnome-common-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
