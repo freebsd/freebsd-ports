@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	apache-ant
-PORTVERSION=	1.5.3
-PORTREVISION=	1
+PORTVERSION=	1.5.3.1
 CATEGORIES=	devel java
 MASTER_SITES=	http://apache.mirror.trueserver.nl/dist/ant/binaries/ \
 		http://apache.proserve.nl/dist/ant/binaries/ \
@@ -28,7 +27,7 @@ PORTDESTDIR=	${PREFIX}/ant
 PLIST_SUB+=	T=${PORTDESTDIR:S/^${PREFIX}\///}
 
 READMES=	LICENSE README WHATSNEW
-ANT_VERSION=	${PORTVERSION}
+ANT_VERSION=	1.5.3-1
 
 DATADIRS=	lib
 .if !defined(NOPORTDOCS)
