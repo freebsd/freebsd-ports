@@ -59,7 +59,7 @@ RESTRICTED=     "Contains strong cryptography"
 .include <bsd.port.pre.mk>
 .endif
 
-.if (${ARCH} == "i386") && !defined(USE_LINUX_LIB)
+.if (${ARCH} == "i386") && !defined(USE_LINUX_LIB) && !defined(WITHOUT_AOUT)
 USE_AOUT_LIB=	yes
 PKGREQ=		${MASTERDIR}/pkg/REQ.aout
 RUN_DEPENDS+=	${X11BASE}/lib/aout/libX11.so.6.1:${PORTSDIR}/x11/XFree86-aoutlibs
