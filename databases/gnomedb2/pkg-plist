@@ -136,4 +136,5 @@ share/locale/uk/LC_MESSAGES/gnome-db.mo
 @dirrm share/gnome/help/gnome-db/C/images
 @dirrm share/gnome/help/gnome-db/C
 @dirrm share/gnome/help/gnome-db
+@dirrm share/gnome/apps/Applications
 @dirrm include/gnome-db

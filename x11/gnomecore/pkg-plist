@@ -1522,7 +1522,6 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnome-core.mo
 @dirrm share/gnome/apps/Graphics
 @dirrm share/gnome/apps/Games
 @dirrm share/gnome/apps/Development
-@dirrm share/gnome/apps/Applications
 @dirrm share/gnome/applets/Utility
 @dirrm share/gnome/applets/Network
 @dirrm share/gnome/applets/Multimedia
