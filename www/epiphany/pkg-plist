@@ -65,10 +65,16 @@ share/gnome/help/epiphany/C/legal.xml
 share/gnome/help/epiphany/nl/epiphany.xml
 share/gnome/help/epiphany/nl/figures/ephy-screenshot.png
 share/gnome/help/epiphany/nl/legal.xml
+share/gnome/help/epiphany/uk/epiphany.xml
+share/gnome/help/epiphany/uk/figures/ephy-history-window-screenshot.png
+share/gnome/help/epiphany/uk/figures/ephy-screenshot.png
+share/gnome/help/epiphany/uk/legal.xml
 share/gnome/omf/epiphany/epiphany-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/epiphany/epiphany-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/epiphany/epiphany-nl.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/epiphany/epiphany-nl.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/epiphany/epiphany-uk.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/epiphany/epiphany-uk.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/epiphany-bookmarks.png
 share/locale/am/LC_MESSAGES/epiphany.mo
 share/locale/az/LC_MESSAGES/epiphany.mo
@@ -113,10 +119,13 @@ share/locale/sr@Latn/LC_MESSAGES/epiphany.mo
 share/locale/sv/LC_MESSAGES/epiphany.mo
 share/locale/ta/LC_MESSAGES/epiphany.mo
 share/locale/tr/LC_MESSAGES/epiphany.mo
+share/locale/uk/LC_MESSAGES/epiphany.mo
 share/locale/vi/LC_MESSAGES/epiphany.mo
 share/locale/zh_CN/LC_MESSAGES/epiphany.mo
 share/locale/zh_TW/LC_MESSAGES/epiphany.mo
 @dirrm share/gnome/omf/epiphany
+@dirrm share/gnome/help/epiphany/uk/figures
+@dirrm share/gnome/help/epiphany/uk
 @dirrm share/gnome/help/epiphany/nl/figures
 @dirrm share/gnome/help/epiphany/nl
 @dirrm share/gnome/help/epiphany/C/figures
@@ -137,3 +146,4 @@ share/locale/zh_TW/LC_MESSAGES/epiphany.mo
 @dirrm etc/gconf/gconf.xml.defaults/apps/epiphany
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/epiphany/epiphany-C.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/epiphany/epiphany-nl.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/epiphany/epiphany-uk.omf 2>/dev/null || /usr/bin/true
