@@ -1,0 +1,26 @@
+--- Makefile.orig	Sun Feb  3 02:44:49 2002
++++ Makefile	Thu Aug  8 02:50:28 2002
+@@ -31,10 +31,10 @@
+ ## 
+ 
+ # Default (Linux / BSD)
+-CC       = gcc -pthread
+-LD       = gcc
+-XLIBS    = -lpthread
+-RFLAGS   = -march=i686
++#CC       = gcc -pthread
++#LD       = gcc
++XLIBS    = ${PTHREAD_LIBS}
++RFLAGS   = ${PTHREAD_CFLAGS}
+ SHFLAGS  = -fPIC
+ 
+ # Solaris (SPARC)
+@@ -56,7 +56,7 @@
+ # Release Flags
+ ##
+ 
+-RFLAGS += -O3 -fomit-frame-pointer
++RFLAGS += ${CFLAGS}
+ RFLAGS += -DNDEBUG -D_REENTRANT
+ 
+ ##
