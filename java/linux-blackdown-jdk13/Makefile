@@ -29,7 +29,7 @@ NO_BUILD=	yes
 LATEST_LINK=	linux-blackdown-jdk13
 
 USE_LINUX=	yes
-ONLY_FOR_ARCHS=	arm i386 ppc sparc
+ONLY_FOR_ARCHS=	i386
 
 JDK_VERSION=	1.3.1
 JDK_VER_SUFFIX=	-02b-FCS
