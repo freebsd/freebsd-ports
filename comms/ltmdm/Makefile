@@ -7,7 +7,7 @@
 
 PORTNAME=	ltmdm
 PORTVERSION=	1.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms
 MASTER_SITES=	http://www.dons.net.au/~darius/ \
 		http://www.csociety.org/~will/ \
