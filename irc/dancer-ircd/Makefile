@@ -26,8 +26,6 @@ IGNOREFILES=	dancer-oper-guide.txt \
 		dancer-user-guide.txt
 
 USE_RC_SUBR=	yes
-SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
