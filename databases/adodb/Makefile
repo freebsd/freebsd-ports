@@ -7,6 +7,7 @@
 
 PORTNAME=	adodb
 PORTVERSION=	1.81
+PORTREVISION=	1
 CATEGORIES=	databases www
 MASTER_SITES=	http://phplens.com/lens/dl/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
@@ -52,15 +53,16 @@ DRIVERS= 	drivers/adodb-access.inc.php \
 		drivers/adodb-postgres.inc.php \
 		drivers/adodb-postgres7.inc.php \
 		drivers/adodb-proxy.inc.php \
+		drivers/adodb-sqlanywhere.inc.php \
 		drivers/adodb-sybase.inc.php \
 		drivers/adodb-vfp.inc.php \
 
 INCLUDES=	adodb-csvlib.inc.php \
 		adodb-errorhandler.inc.php \
 		adodb-errorpear.inc.php \
-		adodb-pear.inc.php \
-		adodb-lib.inc.php \
 		adodb.inc.php \
+		adodb-lib.inc.php \
+		adodb-pear.inc.php \
 		client.php \
 		crypt.inc.php \
 		tohtml.inc.php
