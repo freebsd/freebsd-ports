@@ -31,6 +31,14 @@ EXAMPLEDIR=	${PREFIX}/share/examples/reportlab
 post-patch:
 	${MV} ${WRKSRC}/lib/setup.py ${WRKDIR}
 
+do-build:
+	@(cd ${WRKDIR}; \
+		${PYTHON_CMD} setup.py build)
+
+do-install:
+	@(cd ${WRKDIR}; \
+		${PYTHON_CMD} setup.py install -c -O1 --prefix="${PREFIX}")
+
 post-install:
 	${MKDIR} ${REPORTLABDIR}/fonts
 .for fontfile in LeERC___.AFM LeERC___.PFB
