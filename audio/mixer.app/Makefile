@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mixer.app
-PORTVERSION=	1.7.0
+PORTVERSION=	1.8.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.fukt.bth.se/~per/mixer/
 DISTNAME=	Mixer.app-${PORTVERSION}
