@@ -34,6 +34,38 @@ copypkg()
     fi
 }
 
+kill_procs()
+{
+  dir=$1
+
+  pids="XXX"
+  while [ ! -z "${pids}" ]; do
+    pids=$(fstat -f "$dir" | tail +2 | awk '{print $3}' | sort -u)
+    if [ ! -z "${pids}" ]; then
+      echo "Killing off pids in ${dir}"
+      ps -p $pids
+      kill -KILL ${pids} 2> /dev/null
+      sleep 2
+    fi
+  done
+}
+
+cleanup_mount() {
+  chroot=$1
+  mount=$2
+
+  if [ -d ${chroot}${mount} ]; then
+    mdir=$(fstat -f ${chroot}${mount} | head -2 | tail -1 | awk '{print $5}')
+    if [ "${mdir}" = "MOUNT" ]; then
+      umount ${chroot}${mount} || echo "Cleanup of ${chroot}${mount} failed!"
+    fi
+    if [ "${mdir}" = "${chroot}${mount}" ]; then
+      kill_procs ${chroot}${mount}
+      umount ${chroot}${mount} || echo "Cleanup of ${chroot}${mount} failed!"
+    fi
+  fi
+}
+
 cleanup()
 {
   chroot=$1
@@ -46,13 +78,14 @@ cleanup()
 
   echo ARCH=${arch}
   if [ ${arch} = "i386" ]; then
-    umount -f ${chroot}/compat/linux/proc
+    cleanup_mount ${chroot} /compat/linux/proc
   fi
 
-  umount -f ${chroot}/a/ports
-  umount -f ${chroot}/usr/opt/doc
-  umount -f ${chroot}/usr/src
-  umount -f ${chroot}/dev
+  cleanup_mount ${chroot} /a/ports
+  cleanup_mount ${chroot} /usr/opt/doc
+  cleanup_mount ${chroot} /usr/src
+  cleanup_mount ${chroot} /dev
+  test -d ${chroot}/root/.ccache && cleanup_mount ${chroot} /root/.ccache
 
   if [ $noclean = 0 -o $error = 0 ]; then
     rm -rf ${chroot}/tmp/*
@@ -239,6 +272,11 @@ echo "in directory ${chroot}" | tee -a ${chroot}/tmp/${pkgname}.log
 mkdir -p ${chroot}/a/ports
 rm -rf ${chroot}/usr/ports
 
+if [ ! -z "${ccache_dir}" ]; then
+  mkdir -p ${chroot}/root/.ccache/
+  mount -o rw -t nullfs ${ccache_dir} ${chroot}/root/.ccache/
+fi
+
 mount_fs ${pb}/${arch}/${branch}/ports ${chroot}/a/ports ${master}
 ln -sf ../a/ports ${chroot}/usr/ports
 
@@ -249,7 +287,7 @@ mount_fs ${pb}/${arch}/${branch}/doc ${chroot}/usr/opt/doc ${master}
 
 mount -t devfs foo ${chroot}/dev
 
-umount -f ${chroot}/compat/linux/dev > /dev/null 2>&1
+umount -f ${chroot}/compat/linux/proc > /dev/null 2>&1
 
 # just in case...
 for dir in ${cleandirs}; do
