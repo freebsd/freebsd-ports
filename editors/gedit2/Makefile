@@ -19,8 +19,8 @@ MAINTAINER=		andy@icc.surw.chel.su
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		art_lgpl.2:${PORTSDIR}/x11/gnomelibs \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile \
-		esd.1:${PORTSDIR}/audio/esound \
-		gdk_imlib.4:${PORTSDIR}/graphics/imlib \
+		esd.2:${PORTSDIR}/audio/esound \
+		gdk_imlib.5:${PORTSDIR}/graphics/imlib \
 		gdk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		gif.5:${PORTSDIR}/graphics/png \
 		glib12.2:${PORTSDIR}/devel/glib12 \

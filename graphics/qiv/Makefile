@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	billf@FreeBSD.org
 
-LIB_DEPENDS=	gdk_imlib.4:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	gdk_imlib.5:${PORTSDIR}/graphics/imlib
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes

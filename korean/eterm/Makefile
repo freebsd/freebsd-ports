@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.eterm.org/pub/Eterm/ \
 
 MAINTAINER=	hollywar@mail.holywar.net
 
-LIB_DEPENDS=	Imlib.4:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
 RUN_DEPENDS=    ${PREFIX}/lib/X11/fonts/local/hmm12.pcf.gz:${PORTSDIR}/korean/hanyangfonts
 
 USE_GMAKE=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.nott.ac.uk/~psystrj/ \
 
 MAINTAINER=	andrews@technologist.com
 
-LIB_DEPENDS=	Imlib.4:${PORTSDIR}/graphics/imlib \
+LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib \
 		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 USE_X_PREFIX=	YES

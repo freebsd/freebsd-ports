@@ -15,7 +15,7 @@ MAINTAINER=	anders@fix.no
 
 BUILD_DEPENDS=	${X11BASE}/include/ppm.h:${PORTSDIR}/graphics/netpbm
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		gdk_imlib.4:${PORTSDIR}/graphics/imlib
+		gdk_imlib.5:${PORTSDIR}/graphics/imlib
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
 USE_LIBTOOL=	yes

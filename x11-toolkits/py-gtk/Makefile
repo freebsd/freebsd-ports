@@ -19,7 +19,7 @@ MAINTAINER=	nectar@FreeBSD.org
 
 BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12                  \
-		Imlib.4:${PORTSDIR}/graphics/imlib
+		Imlib.5:${PORTSDIR}/graphics/imlib
 RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python
 
 GTK_CONFIG=	${X11BASE}/bin/gtk12-config

@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	nacai@iname.com
 
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		Imlib.4:${PORTSDIR}/graphics/imlib
+		Imlib.5:${PORTSDIR}/graphics/imlib
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 

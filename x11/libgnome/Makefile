@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	sources/gnome-libs
 
 MAINTAINER=	nacai@iname.com
 
-LIB_DEPENDS=	gdk_imlib.4:${PORTSDIR}/graphics/imlib \
+LIB_DEPENDS=	gdk_imlib.5:${PORTSDIR}/graphics/imlib \
 		Xpm.4:${PORTSDIR}/graphics/xpm \
 		ORBit.2:${PORTSDIR}/devel/ORBit \
 		esd.2:${PORTSDIR}/audio/esound

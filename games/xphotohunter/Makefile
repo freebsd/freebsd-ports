@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.oz.nthu.edu.tw/~u860905/Xphotohunter/
 
 MAINTAINER=	Clive Lin <clive@CirX.ORG>
 
-LIB_DEPENDS=	Imlib.4:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
 
 USE_GMAKE=	yes
 

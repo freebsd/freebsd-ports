@@ -33,7 +33,7 @@ RUBY_ARCH=	${ARCH}-freebsd${OSREL}
 .if defined(NO_IMLIB)
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 .else
-LIB_DEPENDS+=	Imlib.4:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS+=	Imlib.5:${PORTSDIR}/graphics/imlib
 GTK_CONFIG?=	${X11BASE}/bin/imlib-config
 .endif
 

@@ -15,7 +15,7 @@ MASTER_SITES=	http://gview.netpedia.net/ \
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-LIB_DEPENDS=	gdk_imlib.4:${PORTSDIR}/graphics/imlib \
+LIB_DEPENDS=	gdk_imlib.5:${PORTSDIR}/graphics/imlib \
 		intl.1:${PORTSDIR}/devel/gettext
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config

@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://www.rasterman.com/pub/enlightenment/enlightenment/ \
 
 MAINTAINER=	vanilla@FreeBSD.org
 
-LIB_DEPENDS=	Imlib.4:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
