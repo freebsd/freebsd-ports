@@ -1,0 +1,15 @@
+Grisbi is a personnal accounting application, written with Gnome and Gtk,
+and is released under the GPL licence.
+
+Its aim is to provide you with the most simple and intuitive software for
+basic use, although it can be very powerful if you spend a little time on the
+setup.
+
+Grisbi is an application written by french developpers, so it perfectly
+respects french accounting rules. Grisbi can manage multiple accounts,
+currencies and users. It manages third parties, expenditures and receipts
+categories, and also budgetary lines, financial years, and other information
+that make Grisbi adapted for associations (except those that require double
+entry accounting).
+
+WWW: http://www.grisbi.org/
