@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dataplot
-PORTVERSION=	20050128
+PORTVERSION=	20050310
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.nist.gov/pub/dataplot/unix/:source \
 		http://www.itl.nist.gov/div898/software/dataplot.html/:doc
@@ -18,9 +18,6 @@ EXTRACT_ONLY=	dpsrc_1_2005${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free software system for statistical visualization
 
-BROKEN=		Size mismatch
-
-#FORBIDDEN=	checksum mismatch due to extensive changes to distfile
 LIB_DEPENDS=	gd:${PORTSDIR}/graphics/gd \
 		png:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg
@@ -47,4 +44,4 @@ post-install:
 		${DOCSDIR}
 .endif
 
-.include	<bsd.port.mk>
+.include <bsd.port.mk>
