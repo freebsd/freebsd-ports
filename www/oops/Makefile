@@ -7,7 +7,7 @@
 
 PORTNAME=	oops
 PORTVERSION=	${OOPSVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://oops-cache.org/
 DISTNAME=	${PORTNAME}-${OOPSVERSION}
@@ -20,7 +20,6 @@ BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 OOPSVERSION=	1.5.23
 
 USE_SUBMAKE=	yes
-USE_REINPLACE=	yes
 USE_AUTOCONF=	yes
 CONFIGURE_ARGS?=--sbindir=${PREFIX}/sbin \
 		--sysconfdir=${PREFIX}/etc/oops \
@@ -28,7 +27,8 @@ CONFIGURE_ARGS?=--sbindir=${PREFIX}/sbin \
 		--libdir=${PREFIX}/libexec/oops \
 		--enable-oops-user=oops \
 		--enable-large-files
-MAKE_ENV+=	CXX="${CXX}" \
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC" \
+		CXXFLAGS="${CXXFLAGS} -fPIC" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
@@ -45,10 +45,6 @@ pre-fetch:
 .if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
 .include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|CXX=g++||g' \
-		${WRKSRC}/configure.in
 
 pre-configure:
 	@cd ${WRKSRC} && ${AUTOHEADER}
