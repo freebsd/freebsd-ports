@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Sep 29 13:07:34 2001
++++ Makefile.in	Sat Sep 29 13:08:00 2001
+@@ -90,7 +90,7 @@
+ 
+ bin_SCRIPTS = gsl-config
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = gsl.pc
+ 
+ EXTRA_DIST = autogen.sh gsl-config.in gsl.pc.in configure.in THANKS KNOWN-PROBLEMS gsl.spec.in gsl.m4 MACHINES test_gsl_histogram.sh
