@@ -1,7 +1,7 @@
 The Free Software Foundation's "file" utilities, including "chgrp",
 "chmod", "chown", "cp", "dd", "df", "dir", "dircolors", "du",
 "install", "ln", "ls", "mkdir", "mkfifo", "mknod", "mv", "rm",
-"rmdir", "sync", "touch", "vdir".
+"rmdir", "shred", "sync", "touch", "vdir".
 
 These utilities exist in the FreeBSD base collection, but the GNU
 versions have added functionality that is sometimes useful.
