@@ -7,7 +7,7 @@
 
 PORTNAME=	metalist
 PORTVERSION=	2.2.6
-PORTREVISION=	10286
+PORTREVISION=	11069
 CATEGORIES=	chinese www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	slashcode
@@ -18,8 +18,6 @@ PATCHFILES=	metalist-${PORTREVISION}${EXTRACT_SUFX}
 
 MAINTAINER=	autrijus@autrijus.org
 COMMENT=	A Chinese port of Slash-Like Automatic Storytelling Homepage system
-
-BROKEN=		Unfetchable
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
 		${SITE_PERL}/Bundle/Slash.pm:${PORTSDIR}/www/p5-Bundle-Slash \
