@@ -1,0 +1,14 @@
+Socketpipe connects over a TCP/IP socket a remote command to a local
+input generation command and/or a local output processing command.
+The connection is made by redirecting the input/output file descriptors
+to the socket.  This saves the context switching and data copying
+overhead associated with piping data through ssh(1) or rsh(1).
+Socketpipe must be installed on both machines and user authentication
+is still performed by a command like ssh(1) or rsh(1).  The
+confidentiality and integrity of the data in transit is not protected
+against mallicious attacks; the command is designed for use in a
+trusted LAN environment.
+
+WWW: http://www.spinellis.gr/sw/unix/socketpipe
+
+- Diomidis Spinellis dds@aueb.gr

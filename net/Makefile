@@ -654,6 +654,7 @@
     SUBDIR += sntop
     SUBDIR += socat
     SUBDIR += socketbind
+    SUBDIR += socketpipe
     SUBDIR += socks5
     SUBDIR += spread
     SUBDIR += spread-j
