@@ -7,6 +7,7 @@
 
 PORTNAME=	pike75
 PORTVERSION=	7.5.17
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		ftp://ftp.oav.net/pkg_freebsd/distfiles/ \
@@ -24,7 +25,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
 		fftw.2:${PORTSDIR}/math/fftw \
-		pcre.0:${PORTSDIR}/devel/pcre
+		pcre.0:${PORTSDIR}/devel/pcre \
+		mird.1:${PORTSDIR}/databases/mird
 # Nettle doesn't work ;(
 #		nettle.1:${PORTSDIR}/security/nettle \
 
@@ -56,7 +58,7 @@ CONFIGURE_ARGS+=	--without-debug \
 		 --with-zlib \
 		 --with-threads \
 		 --with-readline \
-		 --with-jpeg=${PREFIX} \
+		 --with-jpeg \
 		 --with-tiff \
 		 --with-gdbm \
 		 --without-java \

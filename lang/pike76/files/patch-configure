@@ -14,7 +14,7 @@
  
      OLD_CPPFLAGS="$CPPFLAGS"
 -    CPPFLAGS="$OLD_CPPFLAGS -pthread"
-+    CPPFLAGS="$OLD_CPPFLAGS %%PTHREAD_FLAGS%%"
++    CPPFLAGS="$OLD_CPPFLAGS %%PTHREAD_CFLAGS%%"
      old_ac_link="$ac_link"
      ac_link="$old_ac_link 2>conftezt.out.2"
      if test "$cross_compiling" = yes; then
