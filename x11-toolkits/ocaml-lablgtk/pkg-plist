@@ -263,3 +263,4 @@ share/examples/ocaml/lablgtk/test.xpm
 %%GLADE%%@dirrm share/examples/ocaml/lablgtk/glade
 @dirrm share/examples/ocaml/lablgtk
 %%PORTDOCS%%@dirrm share/doc/ocaml/lablgtk
+%%PORTDOCS%%@dirrm share/doc/ocaml
