@@ -1,0 +1,46 @@
+--- asxxxx/i51mch.c.orig	Mon Jun 28 23:27:59 1999
++++ asxxxx/i51mch.c	Mon Jun 28 23:47:41 1999
+@@ -389,8 +389,8 @@
+ 			v1 = -3;
+ 		    else
+ 			v1 = e1.e_addr - dot.s_addr - 1;
+-			/* if ((v1 < -128) || (v1 > 127))
+-				aerr(); */
++			if (((v1 < -128) || (v1 > 127)) && pass > 0)
++				aerr();
+ 			outab(v1);
+ 		} else {
+ 			outrb(&e1, R_PCR);
+@@ -408,8 +408,8 @@
+ 			v1 = -2;
+ 		    else   
+ 			v1 = e1.e_addr - dot.s_addr - 1;
+-			/* if ((v1 < -128) || (v1 > 127))
+-				aerr();*/
++			if (((v1 < -128) || (v1 > 127)) && pass > 0)
++				aerr();
+ 			outab(v1);
+ 		} else {
+ 			outrb(&e1, R_PCR);
+@@ -463,8 +463,8 @@
+ 			v1 = -3;
+ 		    else   
+ 			v1 = e1.e_addr - dot.s_addr - 1;
+-			/* if ((v1 < -128) || (v1 > 127))
+-				aerr(); */
++			if (((v1 < -128) || (v1 > 127)) && pass > 0)
++				aerr();
+ 			outab(v1);
+ 		} else {
+ 			outrb(&e1, R_PCR);
+@@ -500,8 +500,8 @@
+ 			v1 = -3;
+ 		    else   
+ 			v1 = e1.e_addr - dot.s_addr - 1;
+-			/* if ((v1 < -128) || (v1 > 127))
+-				aerr(); */
++			if (((v1 < -128) || (v1 > 127)) && pass > 0)
++				aerr();
+ 			outab(v1);
+ 		} else {
+ 			outrb(&e1, R_PCR);
