@@ -1,0 +1,5 @@
+The package logilab.common contains several modules providing low
+level functionnalities shared among some python projects developped
+by logilab.
+
+WWW: http://www.logilab.org/projects/common/project_view
