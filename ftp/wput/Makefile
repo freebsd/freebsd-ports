@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wput
-PORTVERSION=	0.4
-PORTREVISION=	1
+PORTVERSION=	0.4.1
 CATEGORIES=	ftp
 MASTER_SITES=	http://itooktheredpill.dyndns.org/wput/
 EXTRACT_SUFX=	.tgz
