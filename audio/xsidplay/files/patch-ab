@@ -1,36 +1,11 @@
---- src/MainDialog.cpp.orig	Sat Jul  3 12:57:28 1999
-+++ src/MainDialog.cpp	Tue Sep 12 03:47:31 2000
-@@ -152,9 +152,30 @@
-     timeLCD->setMode( QLCDNumber::DEC );
-     timeLCD->setSegmentStyle( QLCDNumber::Filled );
-     {
--        QColorGroup normal( QColor( QRgb(0) ), QColor( QRgb(11513755) ), QColor( QRgb(16777215) ), QColor( QRgb(6316128) ), QColor( QRgb(10789024) ), QColor( QRgb(0) ), QColor( QRgb(16777215) ) );
--        QColorGroup disabled( QColor( QRgb(8421504) ), QColor( QRgb(12632256) ), QColor( QRgb(16777215) ), QColor( QRgb(6316128) ), QColor( QRgb(10789024) ), QColor( QRgb(8421504) ), QColor( QRgb(12632256) ) );
--        QColorGroup active( QColor( QRgb(0) ), QColor( QRgb(12632256) ), QColor( QRgb(16777215) ), QColor( QRgb(6316128) ), QColor( QRgb(10789024) ), QColor( QRgb(0) ), QColor( QRgb(16777215) ) );
-+        QColorGroup normal(
-+		QColor( (unsigned int)0 ),
-+		QColor( (unsigned int)11513755 ),
-+		QColor( (unsigned int)16777215 ),
-+		QColor( (unsigned int)6316128 ),
-+		QColor( (unsigned int)10789024 ),
-+		QColor( (unsigned int)0 ),
-+		QColor( (unsigned int)16777215 ) );
-+        QColorGroup disabled(
-+		QColor( (unsigned int)8421504 ),
-+		QColor( (unsigned int)12632256 ),
-+		QColor( (unsigned int)16777215 ),
-+		QColor( (unsigned int)6316128 ),
-+		QColor( (unsigned int)10789024 ),
-+		QColor( (unsigned int)8421504 ),
-+		QColor( (unsigned int)12632256 ) );
-+        QColorGroup active(
-+		QColor( (unsigned int)0 ),
-+		QColor( (unsigned int)12632256 ),
-+		QColor( (unsigned int)16777215 ),
-+		QColor( (unsigned int)6316128 ),
-+		QColor( (unsigned int)10789024 ),
-+		QColor( (unsigned int)0 ),
-+		QColor( (unsigned int)16777215 ) );
-         QPalette palette( normal, disabled, active );
-         timeLCD->setPalette( palette );
- 	}
+--- src/MainDialogData.cpp.orig	Fri Sep 15 22:51:57 2000
++++ src/MainDialogData.cpp	Tue Sep 19 00:12:43 2000
+@@ -169,7 +169,7 @@
+     subSongSlider->setPageStep( 1 );
+     subSongSlider->setValue( 1 );
+     subSongSlider->setFocusPolicy( QSlider::TabFocus );
+-    subSongSlider->setSizePolicy( QSizePolicy( (QSizePolicy::SizeType)7, (QSizePolicy::SizeType)0 ) );
++    // subSongSlider->setSizePolicy( QSizePolicy( (QSizePolicy::SizeType)7, (QSizePolicy::SizeType)0 ) );
+     subSongSlider->setCursor( QCursor( 13 ) );
+     QToolTip::add(  subSongSlider, tr( "Quick song selection" ) );
+ 

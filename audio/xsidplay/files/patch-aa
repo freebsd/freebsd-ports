@@ -1,36 +1,11 @@
---- src/HVSCDialogData.cpp.orig	Fri Oct  9 09:08:24 1998
-+++ src/HVSCDialogData.cpp	Tue Sep 12 04:02:45 2000
-@@ -109,9 +109,30 @@
- 	browseBtn = new QPushButton( this, "BrowseButton" );
- 	browseBtn->setGeometry( 320, 32, 70, 30 );
- 	{
--		QColorGroup normal( QColor( QRgb(0) ), QColor( QRgb(11862015) ), QColor( QRgb(16777215) ), QColor( QRgb(6316128) ), QColor( QRgb(10789024) ), QColor( QRgb(0) ), QColor( QRgb(16777215) ) );
--		QColorGroup disabled( QColor( QRgb(8421504) ), QColor( QRgb(12632256) ), QColor( QRgb(16777215) ), QColor( QRgb(6316128) ), QColor( QRgb(10789024) ), QColor( QRgb(8421504) ), QColor( QRgb(12632256) ) );
--		QColorGroup active( QColor( QRgb(0) ), QColor( QRgb(8505544) ), QColor( QRgb(16777215) ), QColor( QRgb(6316128) ), QColor( QRgb(10789024) ), QColor( QRgb(0) ), QColor( QRgb(16777215) ) );
-+		QColorGroup normal(
-+		 	QColor( (unsigned int)0 ),
-+			QColor( (unsigned int)11862015 ),
-+			QColor( (unsigned int)16777215 ),
-+			QColor( (unsigned int)6316128 ),
-+			QColor( (unsigned int)10789024 ),
-+			QColor( (unsigned int)0 ),
-+			QColor( (unsigned int)16777215 ) );
-+		QColorGroup disabled(
-+			QColor( (unsigned int)8421504 ),
-+			QColor( (unsigned int)12632256 ),
-+			QColor( (unsigned int)16777215 ),
-+			QColor( (unsigned int)6316128 ),
-+			QColor( (unsigned int)10789024 ),
-+			QColor( (unsigned int)8421504 ),
-+			QColor( (unsigned int)12632256 ) );
-+		QColorGroup active(
-+			QColor( (unsigned int)0 ),
-+			QColor( (unsigned int)8505544 ),
-+			QColor( (unsigned int)16777215 ),
-+			QColor( (unsigned int)6316128 ),
-+			QColor( (unsigned int)10789024 ),
-+			QColor( (unsigned int)0 ),
-+			QColor( (unsigned int)16777215 ) );
- 		QPalette palette( normal, disabled, active );
- 		browseBtn->setPalette( palette );
- 	}
+--- configure.orig	Mon Sep 18 19:55:14 2000
++++ configure	Tue Sep 19 00:48:06 2000
+@@ -1480,7 +1480,7 @@
+ # Check whether --with-qt-dir or --without-qt-dir was given.
+ if test "${with_qt_dir+set}" = set; then
+   withval="$with_qt_dir"
+-    ac_qt_includes="$withval"/include
++    ac_qt_includes="$withval"/include/qt2
+        ac_qt_libraries="$withval"/lib
+     
+ fi
