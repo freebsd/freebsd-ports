@@ -3,7 +3,7 @@
 # Date created:		April 2, 1997
 # Whom:			Marc G. Fournier <scrappy@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.19 1997/10/30 14:34:23 andreas Exp $
+# $Id: Makefile,v 1.20 1997/11/26 23:42:12 jseger Exp $
 
 DISTNAME=	postgresql-6.2.1
 CATEGORIES=	databases
@@ -65,6 +65,9 @@ post-build:
 	@ ${ECHO} "------------------------------------------------------------"
 
 pre-install:
+.if defined(PACKAGE_BUILDING)
+	/bin/rm -rf ${PREFIX}/pgsql
+.endif
 	@ ${MKDIR} ${PREFIX}/pgsql
 	@ ${SETENV} ${MAKE_ENV} perl ${SCRIPTDIR}/createuser
 
