@@ -31,6 +31,10 @@ case "$1" in
     fi
 
     kldload ${PREFIX}/share/ltmdm/ltmdm.ko
+
+    # by default ignore incoming calls
+    echo "ats0=0">/dev/cual0
+
     echo -n ' ltmdm'
     ;;
 esac
