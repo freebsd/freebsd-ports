@@ -1,0 +1,11 @@
+--- plugins/sawfish/Makefile.in	2000/11/26 21:12:29	1.1
++++ plugins/sawfish/Makefile.in	2000/11/26 21:13:06
+@@ -148,7 +148,7 @@
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-libsawfish_la_LDFLAGS = 
++libsawfish_la_LDFLAGS = -module -avoid-version
+ libsawfish_la_LIBADD = 
+ libsawfish_la_OBJECTS =  sawfish-plugin.lo
+ CFLAGS = @CFLAGS@

@@ -1,0 +1,11 @@
+--- plugins/background/Makefile.in	2000/11/26 21:12:29	1.1
++++ plugins/background/Makefile.in	2000/11/26 21:13:03
+@@ -150,7 +150,7 @@
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-libbackground_la_LDFLAGS = 
++libbackground_la_LDFLAGS = -module -avoid-version
+ libbackground_la_DEPENDENCIES = 
+ libbackground_la_OBJECTS =  background-plugin.lo config-io.lo \
+ bg-ext-handler.lo

@@ -1,0 +1,11 @@
+--- plugins/preview/Makefile.in	2000/11/26 21:12:29	1.1
++++ plugins/preview/Makefile.in	2000/11/26 21:13:09
+@@ -148,7 +148,7 @@
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-libpreview_la_LDFLAGS = 
++libpreview_la_LDFLAGS = -module -avoid-version
+ libpreview_la_LIBADD = 
+ libpreview_la_OBJECTS =  preview-plugin.lo
+ CFLAGS = @CFLAGS@

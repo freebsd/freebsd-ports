@@ -91,6 +91,7 @@
     SUBDIR += magicpoint
     SUBDIR += man.el
     SUBDIR += mc
+    SUBDIR += metatheme
     SUBDIR += mgp-mode.el
     SUBDIR += mmv
     SUBDIR += most
