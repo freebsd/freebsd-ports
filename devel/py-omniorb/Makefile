@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	omniorb
-PORTVERSION= 	1.4
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	devel python
-MASTER_SITES=	ftp://ftp.uk.research.att.com/pub/omniORB/omniORBpy/
+MASTER_SITES=	http://belnet.dl.sourceforge.net/sourceforge/omniorb/ \
+		http://telia.dl.sourceforge.net/sourceforge/omniorb/ \
+		http://unc.dl.sourceforge.net/sourceforge/omniorb/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	omniORBpy_${PORTVERSION:S/./_/g}
 
