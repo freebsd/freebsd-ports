@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	msdosfs
-PORTVERSION=	20001009
+PORTVERSION=	${LAST_UPDATED}
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.linkclub.or.jp/~clover/ \
 		${MASTER_SITE_LOCAL}
@@ -18,14 +18,16 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	imura@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/msdosfs.ja
-NO_PACKAGE=	"to avoid crashing a machine when try to install incorrect version"
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 410001 && ${OSVERSION} < 500000
+LAST_UPDATED=	20001007
 PATCHDIR=	${MASTERDIR}/patches.4
 .elif ${OSVERSION} >= 500013
+LAST_UPDATED=	20001009
 PATCHDIR=	${MASTERDIR}/patches.5
+NO_PACKAGE=	"to avoid crashing a machine when try to install incorrect version"
 .else
 BROKEN=		"It may not work with your FreeBSD version (but I'm not sure)"
 .endif
