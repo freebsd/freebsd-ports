@@ -1,4 +1,5 @@
 # New ports collection makefile for:	imap-uw
+# Version required:	4.7c2
 # Date created:		9 Jan 1997
 # Whom:			pst
 #
@@ -14,7 +15,7 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
 		ftp://ftp.uni-halle.de/pub/mail/pine/
 DISTNAME=	imap-${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
-DISTFILES=	${DISTNAME}1${EXTRACT_SUFX} \
+DISTFILES=	${DISTNAME}2${EXTRACT_SUFX} \
 		imap-utils${EXTRACT_SUFX}
 
 MAINTAINER=	imap-uw@freebsd.ady.ro
