@@ -1,10 +1,10 @@
-Index: xc/extras/Xpm/lib/Attrib.c
+Index: extras/Xpm/lib/Attrib.c
 ===================================================================
-RCS file: /cvs/OpenBSD/XF4/xc/extras/Xpm/lib/Attrib.c,v
-retrieving revision 1.1.1.1
-diff -u -r1.1.1.1 Attrib.c
---- extras/Xpm/lib/Attrib.c	15 Feb 2001 07:59:10 -0000	1.1.1.1
-+++ extras/Xpm/lib/Attrib.c	31 Aug 2004 23:28:59 -0000
+RCS file: /cvs/xorg/xc/extras/Xpm/lib/Attrib.c,v
+retrieving revision 1.1
+diff -u -r1.1 Attrib.c
+--- extras/Xpm/lib/Attrib.c	14 Nov 2003 16:48:24 -0000	1.1
++++ extras/Xpm/lib/Attrib.c	31 Oct 2004 20:12:38 -0000
 @@ -35,7 +35,7 @@
  #include "XpmI.h"
  
@@ -14,7 +14,7 @@ diff -u -r1.1.1.1 Attrib.c
  				 XpmColor ***oldct));
  
  LFUNC(FreeOldColorTable, void, (XpmColor **colorTable, int ncolors));
-@@ -46,11 +46,14 @@
+@@ -46,12 +46,15 @@
  static int
  CreateOldColorTable(ct, ncolors, oldct)
      XpmColor *ct;
@@ -24,35 +24,36 @@ diff -u -r1.1.1.1 Attrib.c
  {
      XpmColor **colorTable, **color;
      int a;
-+
-+    if (ncolors >= SIZE_MAX / sizeof(XpmColor *)) 
-+	return XpmNoMemory;
  
++    if (ncolors >= UINT_MAX / sizeof(XpmColor *)) 
++	return XpmNoMemory;
++
      colorTable = (XpmColor **) XpmMalloc(ncolors * sizeof(XpmColor *));
      if (!colorTable) {
-Index: xc/extras/Xpm/lib/CrDatFrI.c
+ 	*oldct = NULL;
+Index: extras/Xpm/lib/CrDatFrI.c
 ===================================================================
-RCS file: /cvs/OpenBSD/XF4/xc/extras/Xpm/lib/CrDatFrI.c,v
-retrieving revision 1.1.1.2
-diff -u -r1.1.1.2 CrDatFrI.c
---- extras/Xpm/lib/CrDatFrI.c	19 Jan 2002 11:08:43 -0000	1.1.1.2
-+++ extras/Xpm/lib/CrDatFrI.c	31 Aug 2004 23:28:59 -0000
+RCS file: /cvs/xorg/xc/extras/Xpm/lib/CrDatFrI.c,v
+retrieving revision 1.1.10.1
+diff -u -r1.1.10.1 CrDatFrI.c
+--- extras/Xpm/lib/CrDatFrI.c	4 Mar 2004 17:46:10 -0000	1.1.10.1
++++ extras/Xpm/lib/CrDatFrI.c	31 Oct 2004 20:12:38 -0000
 @@ -124,6 +124,8 @@
       */
      header_nlines = 1 + image->ncolors;
      header_size = sizeof(char *) * header_nlines;
-+    if (header_size >= SIZE_MAX / sizeof(char *))
++    if (header_size >= UINT_MAX / sizeof(char *))
 +	return (XpmNoMemory);
      header = (char **) XpmCalloc(header_size, sizeof(char *));
      if (!header)
  	return (XpmNoMemory);
-Index: xc/extras/Xpm/lib/WrFFrI.c
+Index: extras/Xpm/lib/WrFFrI.c
 ===================================================================
-RCS file: /cvs/OpenBSD/XF4/xc/extras/Xpm/lib/WrFFrI.c,v
-retrieving revision 1.1.1.2
-diff -u -r1.1.1.2 WrFFrI.c
---- extras/Xpm/lib/WrFFrI.c	19 Jan 2002 11:08:43 -0000	1.1.1.2
-+++ extras/Xpm/lib/WrFFrI.c	31 Aug 2004 23:28:59 -0000
+RCS file: /cvs/xorg/xc/extras/Xpm/lib/WrFFrI.c,v
+retrieving revision 1.1.10.1
+diff -u -r1.1.10.1 WrFFrI.c
+--- extras/Xpm/lib/WrFFrI.c	4 Mar 2004 17:46:10 -0000	1.1.10.1
++++ extras/Xpm/lib/WrFFrI.c	31 Oct 2004 20:12:26 -0000
 @@ -248,6 +248,8 @@
      unsigned int x, y, h;
  
@@ -62,13 +63,13 @@ diff -u -r1.1.1.2 WrFFrI.c
      p = buf = (char *) XpmMalloc(width * cpp + 3);
      if (!buf)
  	return (XpmNoMemory);
-Index: xc/extras/Xpm/lib/XpmI.h
+Index: extras/Xpm/lib/XpmI.h
 ===================================================================
-RCS file: /cvs/OpenBSD/XF4/xc/extras/Xpm/lib/XpmI.h,v
-retrieving revision 1.6
-diff -u -r1.6 XpmI.h
---- extras/Xpm/lib/XpmI.h	13 Feb 2004 22:40:56 -0000	1.6
-+++ extras/Xpm/lib/XpmI.h	31 Aug 2004 23:28:59 -0000
+RCS file: /cvs/xorg/xc/extras/Xpm/lib/XpmI.h,v
+retrieving revision 1.1.4.1.6.1
+diff -u -r1.1.4.1.6.1 XpmI.h
+--- extras/Xpm/lib/XpmI.h	4 Mar 2004 17:46:10 -0000	1.1.4.1.6.1
++++ extras/Xpm/lib/XpmI.h	31 Oct 2004 20:12:26 -0000
 @@ -86,6 +86,18 @@
  		boundCheckingCalloc((long)(nelem),(long) (elsize))
  #endif
@@ -101,13 +102,13 @@ diff -u -r1.6 XpmI.h
      xpmHashAtom *atomTable;
  }      xpmHashTable;
  
-Index: xc/extras/Xpm/lib/create.c
+Index: extras/Xpm/lib/create.c
 ===================================================================
-RCS file: /cvs/OpenBSD/XF4/xc/extras/Xpm/lib/create.c,v
-retrieving revision 1.3
-diff -u -r1.3 create.c
---- extras/Xpm/lib/create.c	13 Feb 2004 22:40:56 -0000	1.3
-+++ extras/Xpm/lib/create.c	31 Aug 2004 23:28:59 -0000
+RCS file: /cvs/xorg/xc/extras/Xpm/lib/create.c,v
+retrieving revision 1.1.4.1.6.1
+diff -u -r1.1.4.1.6.1 create.c
+--- extras/Xpm/lib/create.c	4 Mar 2004 17:46:10 -0000	1.1.4.1.6.1
++++ extras/Xpm/lib/create.c	31 Oct 2004 20:12:38 -0000
 @@ -1,3 +1,4 @@
 +/* $XdotOrg: pre-CVS proposed fix for CESA-2004-003 alanc 7/25/2004 $ */
  /*
@@ -117,32 +118,34 @@ diff -u -r1.3 create.c
  
      ErrorStatus = XpmSuccess;
  
-+    if (image->ncolors >= SIZE_MAX / sizeof(Pixel)) 
++    if (image->ncolors >= UINT_MAX / sizeof(Pixel)) 
 +	return (XpmNoMemory);
 +
      /* malloc pixels index tables */
      image_pixels = (Pixel *) XpmMalloc(sizeof(Pixel) * image->ncolors);
      if (!image_pixels)
-@@ -988,6 +992,8 @@
+@@ -988,6 +992,10 @@
  	return (XpmNoMemory);
  
  #if !defined(FOR_MSW) && !defined(AMIGA)
-+    if (height != 0 && (*image_return)->bytes_per_line >= SIZE_MAX / height)
++    if (height != 0 && (*image_return)->bytes_per_line >= SIZE_MAX / height) {
++	XDestroyImage(*image_return);
 +	return XpmNoMemory;
++    }
      /* now that bytes_per_line must have been set properly alloc data */
      (*image_return)->data =
  	(char *) XpmMalloc((*image_return)->bytes_per_line * height);
-@@ -2055,6 +2061,9 @@
+@@ -2055,6 +2063,9 @@
  	xpmGetCmt(data, &colors_cmt);
  
      /* malloc pixels index tables */
-+    if (ncolors >= SIZE_MAX / sizeof(Pixel)) 
-+	return XpmNoMemory;
++    if (ncolors >= UINT_MAX / sizeof(Pixel)) 
++	RETURN(XpmNoMemory);
 +
      image_pixels = (Pixel *) XpmMalloc(sizeof(Pixel) * ncolors);
      if (!image_pixels)
  	RETURN(XpmNoMemory);
-@@ -2309,7 +2318,8 @@
+@@ -2309,7 +2320,8 @@
  	    }
  	    obm = SelectObject(*dc, image->bitmap);
  #endif
@@ -152,23 +155,32 @@ diff -u -r1.3 create.c
  
  	    bzero((char *)colidx, 256 * sizeof(short));
  	    for (a = 0; a < ncolors; a++)
-@@ -2414,6 +2424,9 @@
- 	{
+@@ -2356,7 +2368,7 @@
+ 
+ 	    /* array of pointers malloced by need */
+ 	    unsigned short *cidx[256];
+-	    int char1;
++	    unsigned int char1;
+ 
+ 	    bzero((char *)cidx, 256 * sizeof(unsigned short *)); /* init */
+ 	    for (a = 0; a < ncolors; a++) {
+@@ -2415,6 +2427,9 @@
  	    char *s;
  	    char buf[BUFSIZ];
-+
+ 
 +	    if (cpp >= sizeof(buf))
 +		return (XpmFileInvalid);
- 
++
  	    buf[cpp] = '\0';
  	    if (USE_HASHTABLE) {
-Index: xc/extras/Xpm/lib/data.c
+ 		xpmHashAtom *slot;
+Index: extras/Xpm/lib/data.c
 ===================================================================
-RCS file: /cvs/OpenBSD/XF4/xc/extras/Xpm/lib/data.c,v
-retrieving revision 1.1.1.2
-diff -u -r1.1.1.2 data.c
---- extras/Xpm/lib/data.c	19 Jan 2002 11:08:44 -0000	1.1.1.2
-+++ extras/Xpm/lib/data.c	31 Aug 2004 23:28:59 -0000
+RCS file: /cvs/xorg/xc/extras/Xpm/lib/data.c,v
+retrieving revision 1.1.10.1
+diff -u -r1.1.10.1 data.c
+--- extras/Xpm/lib/data.c	4 Mar 2004 17:46:10 -0000	1.1.10.1
++++ extras/Xpm/lib/data.c	31 Oct 2004 20:12:26 -0000
 @@ -375,7 +375,7 @@
  {
      if (!data->type)
@@ -178,14 +190,14 @@ diff -u -r1.1.1.2 data.c
  	*cmt = (char *) XpmMalloc(data->CommentLength + 1);
  	strncpy(*cmt, data->Comment, data->CommentLength);
  	(*cmt)[data->CommentLength] = '\0';
-Index: xc/extras/Xpm/lib/hashtab.c
+Index: extras/Xpm/lib/hashtab.c
 ===================================================================
-RCS file: /cvs/OpenBSD/XF4/xc/extras/Xpm/lib/hashtab.c,v
-retrieving revision 1.1.1.1
-diff -u -r1.1.1.1 hashtab.c
---- extras/Xpm/lib/hashtab.c	15 Feb 2001 07:59:10 -0000	1.1.1.1
-+++ extras/Xpm/lib/hashtab.c	31 Aug 2004 23:28:59 -0000
-@@ -135,7 +135,7 @@
+RCS file: /cvs/xorg/xc/extras/Xpm/lib/hashtab.c,v
+retrieving revision 1.1
+diff -u -r1.1 hashtab.c
+--- extras/Xpm/lib/hashtab.c	14 Nov 2003 16:48:24 -0000	1.1
++++ extras/Xpm/lib/hashtab.c	31 Oct 2004 20:12:38 -0000
+@@ -135,15 +135,17 @@
      xpmHashTable *table;
  {
      xpmHashAtom *atomTable = table->atomTable;
@@ -193,12 +205,14 @@ diff -u -r1.1.1.1 hashtab.c
 +    unsigned int size = table->size;
      xpmHashAtom *t, *p;
      int i;
-     int oldSize = size;
-@@ -144,6 +144,8 @@
+-    int oldSize = size;
++    unsigned int oldSize = size;
+ 
+     t = atomTable;
      HASH_TABLE_GROWS
  	table->size = size;
      table->limit = size / 3;
-+    if (size >= SIZE_MAX / sizeof(*atomTable)) 
++    if (size >= UINT_MAX / sizeof(*atomTable)) 
 +	return (XpmNoMemory);
      atomTable = (xpmHashAtom *) XpmMalloc(size * sizeof(*atomTable));
      if (!atomTable)
@@ -207,18 +221,18 @@ diff -u -r1.1.1.1 hashtab.c
      table->size = INITIAL_HASH_SIZE;
      table->limit = table->size / 3;
      table->used = 0;
-+    if (table->size >= SIZE_MAX / sizeof(*atomTable))
++    if (table->size >= UINT_MAX / sizeof(*atomTable))
 +	return (XpmNoMemory);
      atomTable = (xpmHashAtom *) XpmMalloc(table->size * sizeof(*atomTable));
      if (!atomTable)
  	return (XpmNoMemory);
-Index: xc/extras/Xpm/lib/parse.c
+Index: extras/Xpm/lib/parse.c
 ===================================================================
-RCS file: /cvs/OpenBSD/XF4/xc/extras/Xpm/lib/parse.c,v
-retrieving revision 1.1.1.2
-diff -u -r1.1.1.2 parse.c
---- extras/Xpm/lib/parse.c	19 Jan 2002 11:08:44 -0000	1.1.1.2
-+++ extras/Xpm/lib/parse.c	31 Aug 2004 23:28:59 -0000
+RCS file: /cvs/xorg/xc/extras/Xpm/lib/parse.c,v
+retrieving revision 1.1.10.1
+diff -u -r1.1.10.1 parse.c
+--- extras/Xpm/lib/parse.c	4 Mar 2004 17:46:10 -0000	1.1.10.1
++++ extras/Xpm/lib/parse.c	31 Oct 2004 20:12:38 -0000
 @@ -1,3 +1,4 @@
 +/* $XdotOrg: pre-CVS proposed fix for CESA-2004-003 alanc 7/25/2004 $ */
  /*
@@ -275,7 +289,7 @@ diff -u -r1.1.1.2 parse.c
      char **defaults;
      int ErrorStatus;
  
-+    if (ncolors >= SIZE_MAX / sizeof(XpmColor))
++    if (ncolors >= UINT_MAX / sizeof(XpmColor))
 +	return (XpmNoMemory);
      colorTable = (XpmColor *) XpmCalloc(ncolors, sizeof(XpmColor));
      if (!colorTable)
@@ -284,7 +298,7 @@ diff -u -r1.1.1.2 parse.c
  	    /*
  	     * read pixel value
  	     */
-+	    if (cpp >= SIZE_MAX - 1) {
++	    if (cpp >= UINT_MAX - 1) {
 +		xpmFreeColorTable(colorTable, ncolors);
 +		return (XpmNoMemory);
 +	    }
@@ -340,7 +354,7 @@ diff -u -r1.1.1.2 parse.c
  	    /*
  	     * read pixel value
  	     */
-+	    if (cpp >= SIZE_MAX - 1) {
++	    if (cpp >= UINT_MAX - 1) {
 +		xpmFreeColorTable(colorTable, ncolors);
 +		return (XpmNoMemory);
 +	    }
@@ -374,7 +388,7 @@ diff -u -r1.1.1.2 parse.c
      unsigned int a, x, y;
  
 +    if ((height > 0 && width >= SIZE_MAX / height) ||
-+	width * height >= SIZE_MAX / sizeof(unsigned int)) 
++	width * height >= UINT_MAX / sizeof(unsigned int)) 
 +	return XpmNoMemory;
  #ifndef FOR_MSW
      iptr2 = (unsigned int *) XpmMalloc(sizeof(unsigned int) * width * height);
@@ -389,23 +403,32 @@ diff -u -r1.1.1.2 parse.c
  	    bzero((char *)colidx, 256 * sizeof(short));
  	    for (a = 0; a < ncolors; a++)
  		colidx[(unsigned char)colorTable[a].string[0]] = a + 1;
-@@ -441,6 +479,9 @@
- 	{
+@@ -394,7 +432,7 @@
+ 
+ 	    /* array of pointers malloced by need */
+ 	    unsigned short *cidx[256];
+-	    int char1;
++	    unsigned int char1;
+ 
+ 	    bzero((char *)cidx, 256 * sizeof(unsigned short *)); /* init */
+ 	    for (a = 0; a < ncolors; a++) {
+@@ -442,6 +480,9 @@
  	    char *s;
  	    char buf[BUFSIZ];
-+
+ 
 +	    if (cpp >= sizeof(buf))
 +		return (XpmFileInvalid);
- 
++
  	    buf[cpp] = '\0';
  	    if (USE_HASHTABLE) {
-Index: xc/extras/Xpm/lib/scan.c
+ 		xpmHashAtom *slot;
+Index: extras/Xpm/lib/scan.c
 ===================================================================
-RCS file: /cvs/OpenBSD/XF4/xc/extras/Xpm/lib/scan.c,v
-retrieving revision 1.1.1.2
-diff -u -r1.1.1.2 scan.c
---- extras/Xpm/lib/scan.c	19 Jan 2002 11:08:44 -0000	1.1.1.2
-+++ extras/Xpm/lib/scan.c	31 Aug 2004 23:28:59 -0000
+RCS file: /cvs/xorg/xc/extras/Xpm/lib/scan.c,v
+retrieving revision 1.1.10.1
+diff -u -r1.1.10.1 scan.c
+--- extras/Xpm/lib/scan.c	4 Mar 2004 17:46:10 -0000	1.1.10.1
++++ extras/Xpm/lib/scan.c	31 Oct 2004 20:12:38 -0000
 @@ -107,7 +107,8 @@
  LFUNC(ScanTransparentColor, int, (XpmColor *color, unsigned int cpp,
  				  XpmAttributes *attributes));
@@ -421,14 +444,14 @@ diff -u -r1.1.1.2 scan.c
  	cpp = 0;
  
 +    if ((height > 0 && width >= SIZE_MAX / height) ||
-+	width * height >= SIZE_MAX / sizeof(unsigned int))
++	width * height >= UINT_MAX / sizeof(unsigned int))
 +	RETURN(XpmNoMemory);
      pmap.pixelindex =
  	(unsigned int *) XpmCalloc(width * height, sizeof(unsigned int));
      if (!pmap.pixelindex)
  	RETURN(XpmNoMemory);
  
-+    if (pmap.size >= SIZE_MAX / sizeof(Pixel)) 
++    if (pmap.size >= UINT_MAX / sizeof(Pixel)) 
 +	RETURN(XpmNoMemory);
 +
      pmap.pixels = (Pixel *) XpmMalloc(sizeof(Pixel) * pmap.size);
@@ -439,7 +462,7 @@ diff -u -r1.1.1.2 scan.c
       * color
       */
 -
-+    if (pmap.ncolors >= SIZE_MAX / sizeof(XpmColor))
++    if (pmap.ncolors >= UINT_MAX / sizeof(XpmColor))
 +	RETURN(XpmNoMemory);
      colorTable = (XpmColor *) XpmCalloc(pmap.ncolors, sizeof(XpmColor));
      if (!colorTable)
@@ -448,7 +471,7 @@ diff -u -r1.1.1.2 scan.c
  
      /* first get a character string */
      a = 0;
-+    if (cpp >= SIZE_MAX - 1)
++    if (cpp >= UINT_MAX - 1)
 +	return (XpmNoMemory);
      if (!(s = color->string = (char *) XpmMalloc(cpp + 1)))
  	return (XpmNoMemory);
@@ -466,18 +489,18 @@ diff -u -r1.1.1.2 scan.c
      }
  
      /* first get character strings and rgb values */
-+    if (ncolors >= SIZE_MAX / sizeof(XColor) || cpp >= SIZE_MAX - 1)
++    if (ncolors >= UINT_MAX / sizeof(XColor) || cpp >= UINT_MAX - 1)
 +	return (XpmNoMemory);
      xcolors = (XColor *) XpmMalloc(sizeof(XColor) * ncolors);
      if (!xcolors)
  	return (XpmNoMemory);
-Index: xc/lib/Xpm/Imakefile
+Index: lib/Xpm/Imakefile
 ===================================================================
-RCS file: /cvs/OpenBSD/XF4/xc/lib/Xpm/Imakefile,v
-retrieving revision 1.1.1.1
-diff -u -r1.1.1.1 Imakefile
---- lib/Xpm/Imakefile	15 Feb 2001 07:56:01 -0000	1.1.1.1
-+++ lib/Xpm/Imakefile	31 Aug 2004 23:28:59 -0000
+RCS file: /cvs/xorg/xc/lib/Xpm/Imakefile,v
+retrieving revision 1.1.10.1
+diff -u -r1.1.10.1 Imakefile
+--- lib/Xpm/Imakefile	4 Mar 2004 17:46:58 -0000	1.1.10.1
++++ lib/Xpm/Imakefile	31 Oct 2004 20:12:26 -0000
 @@ -42,11 +42,16 @@
  SPRINTFDEF = -DVOID_SPRINTF
  #endif
