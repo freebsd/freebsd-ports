@@ -7,6 +7,7 @@
 
 PORTNAME=	gnometelnet
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.cyest.org/downloads/
 DISTNAME=	${PORTNAME:S/gnome/gnome-/}-${PORTVERSION}
@@ -14,36 +15,32 @@ DISTNAME=	${PORTNAME:S/gnome/gnome-/}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A nice frontend to the telnet, ssh, and rlogin clients for GNOME
 
-BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake
+BUILD_DEPENDS=	${LOCALBASE}/share/automake/install-sh:${PORTSDIR}/devel/automake
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	yes
-USE_LIBTOOL=	yes
+USE_GNOME=	gnomehack gnomelibs gnomeprefix
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
-
 pre-configure:
 .for file in install-sh mkinstalldirs
-	${LN} -sf ${LOCALBASE}/share/automake/${file} ${WRKSRC}/${file}
+	@${LN} -sf ${LOCALBASE}/share/automake/${file} ${WRKSRC}/${file}
 .endfor
-	${RM} -f ${WRKSRC}/config.cache
+	@${RM} -f ${WRKSRC}/config.cache
+
 
 post-install:
-	${MKDIR} ${PREFIX}/share/gnome/apps/Internet
-	${MKDIR} ${PREFIX}/share/gnome/pixmaps/gnome-telnet
-	cd ${WRKSRC}/share && \
-		${INSTALL_DATA} GTelnet.desktop ${PREFIX}/share/gnome/apps/Internet && \
-		${INSTALL_DATA} *.jpg *.png ${PREFIX}/share/gnome/pixmaps/gnome-telnet
-	${LN} -sf ${PREFIX}/share/gnome/pixmaps/gnome-telnet/gnome-telnet.png \
-		${PREFIX}/share/gnome/pixmaps/gnome-telnet.png
+	@${MKDIR} ${PREFIX}/share/gnome/apps/Internet
+	${INSTALL_DATA} ${WRKSRC}/share/GTelnet.desktop \
+		${PREFIX}/share/gnome/apps/Internet
+	@${MKDIR} ${PREFIX}/share/gnome/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/share/*.png \
+		${PREFIX}/share/gnome/pixmaps
+	@${MKDIR} ${PREFIX}/share/gnome/pixmaps/gnome-telnet
+	${INSTALL_DATA} ${WRKSRC}/share/*.jpg \
+		${PREFIX}/share/gnome/pixmaps/gnome-telnet
 
 .include <bsd.port.mk>
