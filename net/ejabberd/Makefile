@@ -48,8 +48,10 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/ejabberdctl ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/ejabberd.sh ${PREFIX}/etc/rc.d
 	@${INSTALL_DATA} ${FILESDIR}/ejabberd.cfg.sample ${PREFIX}/etc/
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/../doc/* ${DOCSDIR}
+.endif
 
 post-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL

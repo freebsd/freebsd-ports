@@ -1,4 +1,4 @@
-% Default Debian ejabberd.cfg
+% Default FreeBSD ejabberd.cfg
 
 %override_acls.
 
@@ -34,7 +34,7 @@
 % and body:
 {welcome_message,
  {"Welcome!",
-  "Welcome to Debian Jabber Service.  "
+  "Welcome to FreeBSD Jabber Service.  "
   "For information about Jabber visit http://jabber.org"}}.
 % Replace them with 'none' if you don't want to send such message:
 %{welcome_message, none}.
