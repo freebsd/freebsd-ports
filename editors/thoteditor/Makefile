@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.inrialpes.fr/pub/opera/sources/thot/ \
 MASTER_SITE_SUBDIR=	apps/editors/X/thot
 DISTFILES=	${THOT_SRC} ${EDITOR_SRC}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chuckr@FreeBSD.org
 
 BROKEN= 'FUBARed'
 
