@@ -1,5 +1,14 @@
 --- appl/telnet/telnetd/telnetd.c.orig	Wed Feb 28 14:06:51 2001
-+++ appl/telnet/telnetd/telnetd.c	Thu Jul 19 19:20:46 2001
++++ appl/telnet/telnetd/telnetd.c	Mon Jul 23 17:27:05 2001
+@@ -693,7 +693,7 @@
+     char *error_message =
+ 	"Encryption was not successfully negotiated.  Goodbye.\r\n\r\n";
+ 
+-    writenet(error_message, strlen(error_message));
++    output_datalen(error_message, strlen(error_message));
+     netflush();
+     exit(1);
+ }
 @@ -782,9 +782,7 @@
  			{ IAC, SB, TELOPT_TSPEED, TELQUAL_SEND, IAC, SE };
  
@@ -106,7 +115,7 @@
  					neturg = nfrontp-1; /* off by one XXX */
  #endif
  				}
-@@ -1495,8 +1477,7 @@
+@@ -1495,13 +1477,11 @@
  					    ptyibuf[0] & TIOCPKT_DOSTOP ? 1 : 0;
  					if (newflow != flowmode) {
  						flowmode = newflow;
@@ -116,7 +125,12 @@
  							IAC, SB, TELOPT_LFLOW,
  							flowmode ? LFLOW_ON
  								 : LFLOW_OFF,
-@@ -1524,19 +1505,19 @@
+ 							IAC, SE);
+-						nfrontp += 6;
+ 					}
+ 				}
+ 				pcc--;
+@@ -1524,19 +1504,19 @@
  				break;
  			c = *ptyip++ & 0377, pcc--;
  			if (c == IAC)
@@ -141,7 +155,7 @@
  			}
  		}
  #if	defined(CRAY2) && defined(UNICOS5)
-@@ -1707,10 +1688,7 @@
+@@ -1707,10 +1687,7 @@
  		return;
  	}
  #endif

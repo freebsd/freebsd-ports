@@ -1,5 +1,5 @@
---- appl/telnet/telnetd/state.c.ORIG	Wed Feb 28 16:06:51 2001
-+++ appl/telnet/telnetd/state.c	Fri Jul 20 08:41:10 2001
+--- appl/telnet/telnetd/state.c.orig	Wed Feb 28 14:06:51 2001
++++ appl/telnet/telnetd/state.c	Mon Jul 23 17:48:48 2001
 @@ -33,6 +33,7 @@
  
  /* based on @(#)state.c	8.1 (Berkeley) 6/4/93 */
@@ -8,6 +8,15 @@
  #include "telnetd.h"
  #if	defined(AUTHENTICATION)
  #include <libtelnet/auth.h>
+@@ -86,7 +87,7 @@
+   if (!auth_negotiated) {
+     static char *error =
+       "An environment option was sent before authentication negotiation completed.\r\nThis may create a security hazard. Connection dropped.\r\n";
+-    writenet(error, strlen(error));
++    output_datalen(error, strlen(error));
+     netflush();
+     exit(1);
+   }
 @@ -209,8 +210,7 @@
  				}
  
@@ -70,7 +79,13 @@
  
  		}
  	    }
-@@ -1638,6 +1633,46 @@
+@@ -1633,11 +1628,51 @@
+ 	ADD(IAC);
+ 	ADD(SE);
+ 
+-	writenet(statusbuf, ncp - statusbuf);
++	output_datalen(statusbuf, ncp - statusbuf);
+ 	netflush();	/* Send it on its way */
  
  	DIAG(TD_OPTIONS,
  		{printsub('>', statusbuf, ncp - statusbuf); netflush();});
