@@ -81,6 +81,5 @@ post-install:
 	install-info ${PREFIX}/info/gnuplot.info ${PREFIX}/info/dir
 	${MKDIR} ${PREFIX}/share/examples/gnuplot+
 	${INSTALL_DATA} ${WRKSRC}/demo/* ${PREFIX}/share/examples/gnuplot+
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
