@@ -213,6 +213,7 @@
     SUBDIR += safecat
     SUBDIR += samefile
     SUBDIR += sarah
+    SUBDIR += sb16config
     SUBDIR += sbniconfig
     SUBDIR += sdd
     SUBDIR += service-config
