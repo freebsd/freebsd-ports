@@ -1,0 +1,15 @@
+bin/ja-communicator-4.06
+@exec /bin/ln -sf %f %B/netscape
+lib/netscape/ja_JP.EUC/Netscape
+lib/netscape/ja_JP.EUC/about
+lib/netscape/ja_JP.EUC/mail.msg
+lib/netscape/ja_JP.EUC/nethelp-v406.nif
+lib/netscape/ja_JP.EUC/netscape.cfg
+lib/netscape/ja_JP.EUC/plugins
+lib/netscape/ja_JP.EUC/splash
+lib/netscape/preferences.js
+@exec /bin/mkdir -p %B/locale
+@exec /bin/ln -sf /usr/share/locale/en_US.ISO_8859-1 %B/locale/ja_JP.EUC
+@unexec rm -f %B/locale/ja_JP.EUC
+@dirrm lib/netscape/locale
+@dirrm lib/netscape/ja_JP.EUC

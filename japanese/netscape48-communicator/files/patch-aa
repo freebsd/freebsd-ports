@@ -1,0 +1,31 @@
+--- Netscape.ad-ja_euc.orig	Fri Sep 11 19:29:46 1998
++++ Netscape.ad-ja_euc	Wed Oct  7 17:06:49 1998
+@@ -94,7 +94,7 @@
+ !Solaris[EUC]   *appDir location:     /usr/openwin/lib/locale/ja/netscape
+ !Solaris[Sjis]  *appDir location:     /usr/openwin/lib/locale/ja_JP.PCK/netscape
+ 
+-*appDir:			/usr/X11R6/lib/X11/ja_JP.EUC/netscape
++*appDir:			@NDIR@/@LANG@
+ 
+ ! This resource is the same as the -visual command line option, which selects
+ ! an X visual on which the windows should be created.  Legal options are:
+@@ -4801,6 +4801,9 @@
+ *openURLDialog*openInEditor.labelString: Composer で開く
+ *openURLDialog*openInBrowser.labelString: Navigator で開く
+ 
++*openURLDialog*XmTextField.fontList:\
++-adobe-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
++
+ *message_popup.title:			Netscape
+ *message_popup*OK.labelString:	OK
+ *message_popup*OkLabelString:	OK
+@@ -6720,6 +6723,9 @@
+ 
+ !! Maximum number of pixels an item can be dragged (for one mouse motion)
+ *toolBox*dragThreshold:					10
++
++*mainForm.toolBox.urlBarItem.urlBarMainForm.urlComboBox.Text.fontList:\
++-adobe-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
+ 
+ !!
+ !! *toolBar
