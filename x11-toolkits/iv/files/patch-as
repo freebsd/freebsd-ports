@@ -1,0 +1,11 @@
+--- src/lib/IV-X11/xwindow.c.orig	Tue Nov 24 05:26:43 1992
++++ src/lib/IV-X11/xwindow.c	Sun Jan 17 17:48:18 1999
+@@ -64,7 +64,7 @@
+ 
+ /* no standard place for this */
+ extern "C" {
+-    extern int ioctl(int, int, ...);
++    extern int ioctl(int, long unsigned int, ...);
+ }
+ 
+ implementPtrList(WindowVisualList,WindowVisual)

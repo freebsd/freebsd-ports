@@ -1,0 +1,15 @@
+--- src/lib/IV/Imakefile.orig	Sat Sep 19 01:36:17 1992
++++ src/lib/IV/Imakefile	Sat Jan 16 19:47:51 1999
+@@ -32,7 +32,12 @@
+ 	$(OS)$(SLASH)*.$(CCSUFFIX)
+ 	/* TIFF not included because it can't use the same flags */
+ LIB	   = IV
++#VERSION	   = 3.1
++.if defined(PORTOBJFORMAT) && ($(PORTOBJFORMAT) == "elf")
++VERSION	   = 3
++.else
+ VERSION	   = 3.1
++.endif
+ 
+ KIT_CCFLAGS = KitFlags
+ LIBPATHS   = -DIV_LIBALL='"$(ABSLIBALLDIR)"' -DX_LIBDIR='"$(XLIBDIR)"'

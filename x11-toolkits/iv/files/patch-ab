@@ -1,26 +1,11 @@
-*** makefile.old	Sat Sep 24 06:49:19 1994
---- makefile	Sat Sep 24 05:47:49 1994
-***************
-*** 0 ****
---- 1,21 ----
-+ CPU=FREEBSD
-+ 
-+ all: src/Makefile
-+ 	@$(MAKE) $(.MAKEFLAGS) -f Makefile 'CPU=$(CPU)'
-+ 
-+ # simple but brutal. Will not install to multiple destinations simultaneously.
-+ install: Makefile
-+ 	@rm -rf installed ${DESTDIR}/usr/local/interviews
-+ 	@mkdir -p ${DESTDIR}/usr/local/interviews
-+ 	@ln -s ${DESTDIR}/usr/local/interviews installed
-+ 	@$(MAKE) $(.MAKEFLAGS) -f Makefile 'CPU=$(CPU)' $@
-+ 
-+ src/Makefile: Makefile
-+ 	@$(MAKE) Makefiles
-+ 
-+ Makefile:
-+ 	imake -T "InterViews/template" -I./src/config \
-+ 		-I/usr/X386/lib/X11/config -DTOPDIR=. -DCURDIR=.
-+ 
-+ .DEFAULT: src/Makefile
-+ 	@$(MAKE) $(.MAKEFLAGS) -f Makefile 'CPU=$(CPU)' $@
+--- src/bin/iclass/dialogs.c.orig	Thu Sep 24 01:45:09 1992
++++ src/bin/iclass/dialogs.c	Sun Jan 17 17:48:18 1999
+@@ -45,7 +45,7 @@
+ #if !defined(AIXV3) && !defined(hpux) && !(defined(sun) && OSMajorVersion >= 5)
+ /* sigh, not all systems have this prototype */
+ extern "C" {
+-    char* getcwd(char*, int);
++    char* getcwd(char*, unsigned int);
+ }
+ #endif
+ 

@@ -1,0 +1,10 @@
+--- src/lib/TIFF/mkg3states.c.orig	Sat Mar  7 04:11:03 1992
++++ src/lib/TIFF/mkg3states.c	Sun Jan 17 17:48:19 1999
+@@ -68,6 +68,7 @@
+  * END (from the original source)
+  */
+ #include <stdio.h>
++#define va_dcl /**/
+ #include "prototypes.h"
+ 
+ #ifndef TRUE

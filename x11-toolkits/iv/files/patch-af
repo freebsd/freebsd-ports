@@ -1,0 +1,14 @@
+--- src/config/InterViews/TIFF.def.orig	Sat Dec 12 08:33:54 1992
++++ src/config/InterViews/TIFF.def	Sun Jan 17 17:48:18 1999
+@@ -90,6 +90,11 @@
+  *
+  */
+ #ifndef TIFFStdCDefines
++#if defined(FreeBSDArchitecture)
++#define TIFFStdCDefines \
++    -DCOLORIMETRY_SUPPORT -DYCBCR_SUPPORT -DMMAP_SUPPORT \
++    -DHAVE_IEEEFP=1 -DUSE_VARARGS=1 -DUSE_PROTOTYPES=1 -DUSE_CONST=1
++#endif
+ #if defined(SGIArchitecture)
+ #define TIFFStdCDefines \
+     -DCOLORIMETRY_SUPPORT -DJPEG_SUPPORT -DYCBCR_SUPPORT -DCMYK_SUPPORT \

@@ -1,0 +1,64 @@
+--- src/include/InterViews/_undefs.h.orig	Wed May 13 05:59:09 1992
++++ src/include/InterViews/_undefs.h	Sun Jan 17 17:48:20 1999
+@@ -65,6 +65,7 @@
+ #undef Compositor
+ #undef Control
+ #undef ControlState
++#undef CoordinateSpace
+ #undef Cursor
+ #undef CursorRep
+ #undef CursorRepBitmap
+@@ -76,9 +77,16 @@
+ #undef Deck
+ #undef Dialog
+ #undef DialogKit
++#undef DialogKitImpl
+ #undef Display
+ #undef DisplayRep
+ #undef DownMover
++#undef Drag
++#undef DragRep
++#undef DragZone
++#undef DragZoneRep
++#undef DragZoneSink
++#undef DragZoneSinkHandler
+ #undef Enlarger
+ #undef Event
+ #undef EventRep
+@@ -140,6 +148,7 @@
+ #undef MFKit
+ #undef MFKitImpl
+ #undef Macro
++#undef MacroActionList
+ #undef ManagedWindow
+ #undef ManagedWindowHintInfo
+ #undef ManagedWindowRep
+@@ -152,9 +161,14 @@
+ #undef MenuItem
+ #undef Message
+ #undef MonoGlyph
++#undef MonoKit
++#undef MonoKitImpl
+ #undef MonoScene
+ #undef Mover
+ #undef NaturalLayout
++#undef OLDialogKit
++#undef OLKit
++#undef OLKitImpl
+ #undef Observable
+ #undef Observer
+ #undef ObserverList
+@@ -293,10 +307,13 @@
+ #undef WidgetKit
+ #undef WidgetKitImpl
+ #undef Window
++#undef WindowCursorStack
+ #undef WindowRep
+ #undef WindowTable
+ #undef WindowVisual
+ #undef World
++#undef XDisplay
++#undef XDrag
+ #undef XSlider
+ #undef XYMarker
+ #undef XYSlider

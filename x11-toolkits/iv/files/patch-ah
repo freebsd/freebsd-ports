@@ -1,0 +1,64 @@
+--- src/config/InterViews/local.def.orig	Wed Nov 25 05:08:51 1992
++++ src/config/InterViews/local.def	Sun Jan 17 18:12:51 1999
+@@ -8,7 +8,14 @@
+ /*
+  * If you are using gcc/g++, then uncomment the include below.
+  */
+-/* #include <InterViews/gcc.def> */
++#include <InterViews/gcc.def>
++
++#if defined (FreeBSDArchitecture)
++#undef HasSunOSSharedLibs
++#define HasSunOSSharedLibs YES
++#undef HasSunOSSharedLibraries
++#define HasSunOSSharedLibraries YES
++#endif
+ 
+ /*
+  * Default customization of kits.
+@@ -33,11 +40,15 @@
+ #define BuildRPCClasses YES
+ #endif
+ 
++#if defined (FreeBSDArchitecture)
++#undef BuildRPCClasses
++#define BuildRPCClasses NO
++#endif
++
+ /*
+  * Delete this definition if your /tmp space is less than five megabytes.
+  */
+ #undef HasLargeTmp
+-#define HasLargeTmp YES
+ 
+ /*
+  * If you do not want to create a symbolic link called "/interviews"
+@@ -49,7 +60,7 @@
+  * installed data files.
+  */
+ #undef InstalledRoot
+-#define InstalledRoot /interviews
++#define InstalledRoot /usr/local/interviews
+ 
+ /*
+  * If the X11 config files are not in /usr/lib/X11/config, the X11
+@@ -60,11 +71,14 @@
+  * If you have to set XConfigDir, don't forget to override XCONFIGDIR
+  * on the command line when saying "make World" for the first time.
+  */
+-/*
++
+ #undef XConfigDir
+-#define XConfigDir /usr/X11R5/lib/X11/config
++#define XConfigDir /usr/X11R6/lib/X11/config
+ #undef XIncDir
+-#define XIncDir /usr/X11R5/include
++#define XIncDir /usr/X11R6/include
+ #undef XLibDir
+-#define XLibDir /usr/X11R5/lib
+-*/
++#define XLibDir /usr/X11R6/lib
++
++#undef SharedCCFlags
++#define SharedCCFlags -fpic
++
