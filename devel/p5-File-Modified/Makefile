@@ -14,8 +14,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for checking intelligently if files have changed
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
-		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
-		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -23,6 +22,10 @@ PERL_CONFIGURE=	yes
 MAN3=		File::Modified.3
 
 .include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
+.endif
 
 post-patch:
 	${PERL} -pi -e 's/\r\n/\n/;' -e 's/^use warnings;//' ${WRKSRC}/Modified.pm

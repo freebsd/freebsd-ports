@@ -17,7 +17,6 @@ COMMENT=	This module is to help you automate interaction with a website
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
 		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple \
 		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
 RUN_DEPENDS=	${BUILD_DEPENDS}
@@ -31,6 +30,8 @@ MAN1=		mech-dump.1
 
 .include <bsd.port.pre.mk>
 
+.if ${PERL_LEVEL} < 500800
+BUILD_DEPENDS+=	${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp
 .if ${PERL_LEVEL} < 500601
 BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
 
@@ -40,6 +41,7 @@ post-patch:
 		-e 's/^our\s+([\%]\w+)/use vars qw($$1)/;' \
 		-e '$$_="" if /use warnings/;' \
 		${WRKSRC}/lib/WWW/Mechanize.pm ${WRKSRC}/lib/WWW/Mechanize/Link.pm
+.endif
 .endif
 
 .include <bsd.port.post.mk>
