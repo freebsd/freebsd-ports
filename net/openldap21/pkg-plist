@@ -38,9 +38,6 @@ etc/openldap/schema/krb5-kdc.schema.default
 @unexec if cmp -s %D/etc/openldap/schema/misc.schema %D/etc/openldap/schema/misc.schema.default; then rm -f %D/etc/openldap/schema/misc.schema; fi
 etc/openldap/schema/misc.schema.default
 @exec [ -f %B/misc.schema ] || cp %B/%f %B/misc.schema
-@unexec if cmp -s %D/etc/openldap/schema/nadf.schema %D/etc/openldap/schema/nadf.schema.default; then rm -f %D/etc/openldap/schema/nadf.schema; fi
-etc/openldap/schema/nadf.schema.default
-@exec [ -f %B/nadf.schema ] || cp %B/%f %B/nadf.schema
 @unexec if cmp -s %D/etc/openldap/schema/nis.schema %D/etc/openldap/schema/nis.schema.default; then rm -f %D/etc/openldap/schema/nis.schema; fi
 etc/openldap/schema/nis.schema.default
 @exec [ -f %B/nis.schema ] || cp %B/%f %B/nis.schema
