@@ -7,7 +7,7 @@
 
 PORTNAME=	sgmlformat
 PORTVERSION=	1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc print
 MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
 
@@ -38,6 +38,12 @@ USE_PERL5=	yes
 MAN1=		instant.1 sgmlfmt.1
 MAN5=		transpec.5
 MANCOMPRESSED=	yes
+
+.if defined(WITH_OPENJADE)
+post-patch:
+	@${PERL} -pi -e 's,nsgmls,onsgmls,g' ${WRKSRC}/sgmlfmt/sgmlfmt.pl
+	@${PERL} -pi -e 's,nsgmls,onsgmls,g' ${WRKSRC}/instant/traninit.c
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
