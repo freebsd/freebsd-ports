@@ -2486,8 +2486,8 @@ Office51/xp3/xprinter.prolog
 @dirrm Office51/explorer/Samples
 @dirrm Office51/explorer
 @dirrm Office51/filter
-@dirrm Office51/fonts/75dpi
 @dirrm Office51/fonts/75dpi/bdf
+@dirrm Office51/fonts/75dpi
 @dirrm Office51/fonts/type1
 @dirrm Office51/fonts
 @dirrm Office51/gallery/bullets
@@ -2533,9 +2533,9 @@ Office51/xp3/xprinter.prolog
 @dirrm Office51/template
 @dirrm Office51/wordbook
 @dirrm Office51/work
-@dirrm Office51/xp3/fontmetrics
 @dirrm Office51/xp3/fontmetrics/afm
 @dirrm Office51/xp3/fontmetrics/tfm
+@dirrm Office51/xp3/fontmetrics
 @dirrm Office51/xp3/ppds
 @dirrm Office51/xp3/pssoftfonts
 @dirrm Office51/xp3
