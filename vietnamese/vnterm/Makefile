@@ -35,7 +35,7 @@ post-patch:
 
 pre-build:
 	${LN} -f ${WRKSRC}/XTerm.ad ${WRKSRC}/VNTerm.ad
-	${LN} -f ${FILESDIR}/vnterm.1V ${WRKSRC}/vnterm.man
+	${CP} -p ${FILESDIR}/vnterm.1V ${WRKSRC}/vnterm.man
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/VNterm.sh ${PREFIX}/bin/VNterm
