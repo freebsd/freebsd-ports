@@ -1,0 +1,6 @@
+ECL (Embeddable Common-Lisp) is an interpreter of the Common-Lisp
+language as described in the X3J13 Ansi specification, featuring CLOS
+(Common-Lisp Object System), conditions, loops, etc, plus a translator
+to C, which can produce standalone executables.
+
+WWW: http://sourceforge.net/projects/ecls/
