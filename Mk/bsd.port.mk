@@ -1,7 +1,7 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
 #
-#	$Id: bsd.port.mk,v 1.302 1999/01/20 01:55:05 asami Exp $
+#	$Id: bsd.port.mk,v 1.303 1999/01/26 03:58:58 asami Exp $
 #	$NetBSD: $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
@@ -52,8 +52,9 @@ OpenBSD_MAINTAINER=	imp@OpenBSD.ORG
 # DISTFILES		- Name(s) of archive file(s) containing distribution
 #				  (default: ${DISTNAME}${EXTRACT_SUFX}).  Set this to
 #				  an empty string if the port doesn't require it.
-# EXTRACT_SUFX	- Suffix for archive names (default: .tar.gz).  You
-#				  never have to set both DISTFILES and EXTRACT_SUFX.
+# EXTRACT_SUFX	- Suffix for archive names (default: .tar.bz2 if USE_BZIP2
+#				  is set, .tar.gz otherwise).  You never have to set both
+#				  DISTFILES and EXTRACT_SUFX.
 # MASTER_SITES	- Primary location(s) for distribution files if not found
 #				  locally.
 # PATCHFILES	- Name(s) of additional files that contain distribution
@@ -111,6 +112,8 @@ OpenBSD_MAINTAINER=	imp@OpenBSD.ORG
 #
 # Use these if your port uses some of the common software packages.
 #
+# USE_BZIP2		- Says that the port tarballs use bzip2, not gzip, for
+#				  compression.
 # USE_GMAKE		- Says that the port uses gmake.
 # GMAKE			- Set to path of GNU make if not in $PATH (default: gmake).
 # USE_AUTOCONF	- Says that the port uses autoconf.  Implies GNU_CONFIGURE.
@@ -311,13 +314,14 @@ OpenBSD_MAINTAINER=	imp@OpenBSD.ORG
 #
 # For extract:
 #
-# EXTRACT_CMD	- Command for extracting archive (default: tar).
+# EXTRACT_CMD	- Command for extracting archive (default: "bzip2" if
+#				  USE_BZIP2 is set, "gzip" if not).
 # EXTRACT_BEFORE_ARGS -
 #				  Arguments to ${EXTRACT_CMD} before filename
-#				  (default: -xzf).
+#				  (default: "-dc").
 # EXTRACT_AFTER_ARGS -
 #				  Arguments to ${EXTRACT_CMD} following filename
-#				  (default: none).
+#				  (default: "| tar -xf -").
 #
 # For configure:
 #
@@ -456,7 +460,11 @@ LOCALBASE?=		${DESTDIR}/usr/local
 X11BASE?=		${DESTDIR}/usr/X11R6
 DISTDIR?=		${PORTSDIR}/distfiles
 _DISTDIR?=		${DISTDIR}/${DIST_SUBDIR}
-EXTRACT_SUFX?=	.tar.gz
+.if defined(USE_BZIP2)
+EXTRACT_SUFX?=			.tar.bz2
+.else
+EXTRACT_SUFX?=			.tar.gz
+.endif
 PACKAGES?=		${PORTSDIR}/packages
 TEMPLATES?=		${PORTSDIR}/Templates
 
@@ -547,6 +555,9 @@ MANCOMPRESSED?=	yes
 MANCOMPRESSED?=	no
 .endif
 
+.if defined(USE_BZIP2)
+BUILD_DEPENDS+=		bzip2:${PORTSDIR}/archivers/bzip2
+.endif
 .if defined(USE_GMAKE)
 BUILD_DEPENDS+=		gmake:${PORTSDIR}/devel/gmake
 .endif
@@ -661,15 +672,18 @@ PATCH_DIST_ARGS+=	-C
 .endif
 
 .if exists(/bin/tar)
-EXTRACT_CMD?=	/bin/tar
+TAR?=	/bin/tar
 .else
-EXTRACT_CMD?=	/usr/bin/tar
+TAR?=	/usr/bin/tar
 .endif
-# Backwards compatability.
-.if defined(EXTRACT_ARGS)
-EXTRACT_BEFORE_ARGS?=   ${EXTRACT_ARGS}
+
+# EXTRACT_SUFX is defined in .pre.mk section
+EXTRACT_BEFORE_ARGS?=	-dc
+EXTRACT_AFTER_ARGS?=	| ${TAR} -xf -
+.if defined(USE_BZIP2)
+EXTRACT_CMD?=			bzip2
 .else
-EXTRACT_BEFORE_ARGS?=   -xzf
+EXTRACT_CMD?=			${GZIP_CMD}
 .endif
 
 # Figure out where the local mtree file is
@@ -802,7 +816,7 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.cdrom.com/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.duke.edu/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.gamma.ru/pub/gnu/%SUBDIR%/ \
-	ftp://ftp.nihon-u.ac.jp/pub/gnu/%SUBDIR%/
+	ftp://tron.um.u-tokyo.ac.jp/pub/GNU/prep/%SUBDIR%/
 
 MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/%SUBDIR%/ \
@@ -842,13 +856,19 @@ MASTER_SITE_GNOME+=	\
 MASTER_SITES?=
 PATCH_SITES?=
 
-# To avoid double-slashes
+# Default
 MASTER_SITE_SUBDIR?=	.
 PATCH_SITE_SUBDIR?=	.
 
 # Substitute subdirectory names
-MASTER_SITES:=	${MASTER_SITES:S/%SUBDIR%/${MASTER_SITE_SUBDIR}/}
-PATCH_SITES:=	${PATCH_SITES:S/%SUBDIR%/${PATCH_SITE_SUBDIR}/}
+.for dir in ${MASTER_SITE_SUBDIR}
+MASTER_SITES_TMP+=	${MASTER_SITES:S^%SUBDIR%^${dir}^}
+.endfor
+MASTER_SITES:=	${MASTER_SITES_TMP}
+.for dir in ${PATCH_SITE_SUBDIR}
+PATCH_SITES_TMP+=	${PATCH_SITES:S^%SUBDIR%^${dir}^}
+.endfor
+PATCH_SITES:=	${PATCH_SITES_TMP}
 
 # The primary backup site.
 MASTER_SITE_BACKUP?=	\
