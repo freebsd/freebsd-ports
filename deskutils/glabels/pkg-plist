@@ -5,6 +5,8 @@ share/gnome/applications/glabels.desktop
 share/gnome/glabels/avery-iso-templates.xml
 share/gnome/glabels/avery-us-templates.xml
 share/gnome/glabels/glabels-2.0.dtd
+share/gnome/glabels/glade/object-editor.glade
+share/gnome/glabels/glade/prefs-dialog.glade
 share/gnome/glabels/misc-iso-templates.xml
 share/gnome/glabels/misc-us-templates.xml
 share/gnome/glabels/paper-sizes.xml
@@ -22,6 +24,7 @@ share/locale/cs/LC_MESSAGES/glabels.mo
 share/locale/de/LC_MESSAGES/glabels.mo
 share/locale/es/LC_MESSAGES/glabels.mo
 share/locale/fr/LC_MESSAGES/glabels.mo
+share/locale/it/LC_MESSAGES/glabels.mo
 share/locale/ja/LC_MESSAGES/glabels.mo
 share/locale/pl/LC_MESSAGES/glabels.mo
 share/locale/pt_BR/LC_MESSAGES/glabels.mo
@@ -31,4 +34,5 @@ share/locale/zh_TW.Big5/LC_MESSAGES/glabels.mo
 @dirrm share/gnome/help/glabels/C
 @dirrm share/gnome/help/glabels
 @dirrm share/gnome/glabels/ui
+@dirrm share/gnome/glabels/glade
 @dirrm share/gnome/glabels
