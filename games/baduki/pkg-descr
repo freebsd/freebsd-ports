@@ -1,0 +1,17 @@
+Baduki plays the game of Go (baduk in Korean, wei-chi in Chinese), either
+against a human with a GTK interface, or against another program using the
+Go Modem Protocol.  It can also read a game in progress in SGF (Smart Go
+Format) and output its analysis of the moves.
+
+Options:
+
+-L <level>	Set play level, from 1 to 12 (default 7)
+-gmp		Play in Go Modem Protocol mode
+-sgf <file>	Analyze game in <file>; write annotated game to standard
+                output in SGF
+-lsgf <file>    Load game in <file>
+
+WWW: http://soback.kornet21.net/~artist/baduk/baduki.html
+
+- Steve Coltrin
+spcoltri@unm.edu
