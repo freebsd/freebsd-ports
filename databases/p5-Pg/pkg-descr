@@ -9,5 +9,3 @@ Pg95perl5 is based on the pgperl package from Igor Metz and Robert Withrow.
 Because the perl interface changed, this interface has been rewritten
 following the guidelines from the perlapi manpage. Also the test script
 has been adapted to SQL, which has replaced the query language POSTQUEL.
-
-
