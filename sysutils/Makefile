@@ -227,7 +227,6 @@
     SUBDIR += libchk
     SUBDIR += libgksu
     SUBDIR += libgksuui
-    SUBDIR += libgnomesu
     SUBDIR += libieee1284
     SUBDIR += libretto-config
     SUBDIR += libutempter
