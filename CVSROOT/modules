@@ -4809,6 +4809,7 @@ p5-perl-ldap	ports/net/p5-perl-ldap
 p5-sqlrelay	ports/databases/p5-sqlrelay
 p5-tagged	ports/audio/p5-tagged
 p5-type1inst	ports/x11-fonts/p5-type1inst
+p65		ports/devel/p65
 pad		ports/security/pad
 pagesize	src/usr.bin/pagesize
 paicc		ports/sysutils/paicc
