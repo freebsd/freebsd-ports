@@ -14,13 +14,15 @@ MASTER_SITE_SUBDIR=	cedet
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dryice@liu.com.cn
 COMMENT=	Quick access to files and tags in an Emacs frame
 
 EMACS_PORT_NAME?=	emacs21
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
+CONFLICTS=	cedet*
+INFO=		speedbar
 
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/speedbar
 
@@ -29,6 +31,12 @@ LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/speedbar
 MUST_BE_RECOMPILED=	gud.el info.el rmail.el vhdl-mode.el
 
 EMACS_ARGS=	 -batch -l speedbar-compile-script -f batch-byte-compile
+
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "New version of speedbar is now in devel/cedet."
+	@${ECHO_MSG} "Hit C-c now if you want the new version."
+	@${ECHO_MSG} ""
 
 pre-build:
 .for i in ${MUST_BE_RECOMPILED}
