@@ -1,0 +1,14 @@
++-----------------------------------------------------------------
+
+You need to have an X server with the "DEC-XTRAP" module loaded.
+In example, an XFree86 configuration file might contain the
+following "Modules" section:
+    
+       Section "Module" 
+           ...
+
+           # DEC-XTRAP extension module.
+           Load     "xtrap"
+       EndSection
+
+-----------------------------------------------------------------+
