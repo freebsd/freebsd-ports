@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	libgii
-PORTVERSION=	0.8.5
+PORTVERSION=	0.9.0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.ggi-project.org/pub/packages/ggi/ggi/v2.0/ \
+MASTER_SITES=	http://www.ggi-project.org/ftp/ggi/v2.1/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ggi
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -19,7 +19,6 @@ COMMENT=	GGI API for input sources
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_BZIP2=	yes
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 
@@ -30,9 +29,11 @@ PLIST_SUB+=	KII=""
 PLIST_SUB+=	KII="@comment "
 .endif
 
-MAN1=		mhub.1
-MAN3=		ggGetSwarType.3 ggGetUserDir.3 ggInit.3 \
-		ggLockCreate.3 ggRegisterCleanup.3 giiEventPoll.3 \
+MAN1=		mhub.1 xsendbut.1
+MAN3=		ggAddTask.3 ggCurTime.3 \
+		ggGetSwarType.3 ggGetUserDir.3 ggInit.3 ggLoadModule.3 \
+		ggLockCreate.3 ggRegisterCleanup.3 ggstrlcpy.3 \
+		gg-error.3 gg-types.3 giiEventPoll.3 \
 		giiEventSend.3 giiInit.3 giiMTInit.3 \
 		giiOpen.3 giiPanic.3 giiQueryDeviceInfo.3 \
 		giiQueryValInfo.3 giiSetEventMask.3 gii_cmd_event.3 \
@@ -44,10 +45,17 @@ MAN7=		filter-key.7 filter-mouse.7 filter-save.7 filter-tcp.7 \
 		input-directx.7 input-file.7 input-linux-evdev.7 \
 		input-linux-kbd.7 input-linux-mouse.7 input-lk201.7 \
 		input-mouse.7 input-tcp.7 libgg.7 libgii.7
-MLINKS=		ggRegisterCleanup.3 ggCleanupForceExit.3 \
-		- ggUnregisterCleanup.3 ggInit.3 ggExit.3 \
+MLINKS=		ggAddTask.3 ggDelTask.3 - ggTimeBase.3 \
+		- GG_SCHED_TICKS2USECS.3 - GG_SCHED_USECS2TICKS.3 \
+		ggRegisterCleanup.3 ggCleanupForceExit.3 \
+		- ggUnregisterCleanup.3 \
+		ggCurTime.3 ggUSleep.3 - ggUSlumber.3 \
+		ggInit.3 ggExit.3 \
+		ggLoadModule.3 ggFreeModule.3 - ggGetSymbolAddress.3 \
 		ggLockCreate.3 ggLock.3 - ggLockDestroy.3 \
 		- ggTryLock.3 - ggUnlock.3 \
+		gg-error.3 ggi-error.3 - gii-error.3 \
+		ggstrlcpy.3 ggstrlcat.3 \
 		giiSetEventMask.3 giiAddEventMask.3 - giiGetEventMask.3 \
 		giiOpen.3 giiClose.3 - giiJoinInputs.3 - giiSplitInputs.3 \
 		giiEventPoll.3 giiEventRead.3 - giiEventSelect.3 \
@@ -60,8 +68,7 @@ MLINKS=		ggRegisterCleanup.3 ggCleanupForceExit.3 \
 		gii_cmddata_getvalinfo.3 gii_phystype.3 - gii_valrange.3 \
 		filter-key.7 filter-keytrans.7
 DOCSDIR=	share/doc/libgii
-DOCS=		ChangeLog NEWS README \
-		doc/env.txt doc/inputs.txt
+DOCS=		ChangeLog NEWS README
 EXAMPLESDIR=	share/examples/libgii
 EXAMPLES=	demos/demo.c demos/filter.c \
 		demos/mhub.c demos/xsendbut.c
@@ -74,9 +81,6 @@ PLIST_SUB+=	VGL="@comment "
 .else
 PLIST_SUB+=	VGL=""
 .endif
-
-post-configure:
-	@${REINPLACE_CMD} -e 's/\(deplibs\) -lc/\1/;' ${WRKSRC}/libtool
 
 post-install:
 	@${CP} ${WRKSRC}/libgii.conf ${PREFIX}/etc/ggi/libgii.conf.dist

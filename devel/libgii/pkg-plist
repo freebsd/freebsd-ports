@@ -11,9 +11,14 @@ etc/ggi/libgii.conf.dist
 @exec [ -f %B/libgii.conf ] || cp %B/%f %B/libgii.conf
 include/ggi/errors.h
 include/ggi/events.h
+include/ggi/gg-defs.h
 include/ggi/gg.h
+include/ggi/gii-defs.h
 include/ggi/gii-unix.h
 include/ggi/gii.h
+include/ggi/input/cocoa.h
+include/ggi/input/directx.h
+include/ggi/input/kii.h
 include/ggi/input/lin_kbd.h
 include/ggi/input/xwin.h
 include/ggi/internal/gii-dl.h
@@ -59,8 +64,6 @@ lib/libgii.so.0
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/env.txt
-%%PORTDOCS%%%%DOCSDIR%%/inputs.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/demo.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/filter.c
 %%PORTDOCS%%%%EXAMPLESDIR%%/mhub.c
