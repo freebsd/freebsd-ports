@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	drscheme
-PORTVERSION=	205
+PORTVERSION=	206p1
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/ \
 		http://www.cs.utah.edu/plt/download/${PORTVERSION}/plt/ \
@@ -14,7 +14,8 @@ MASTER_SITES=	http://download.plt-scheme.org/bundles/${PORTVERSION}/plt/ \
 		ftp://archive.informatik.uni-tuebingen.de/unix/language/plt/${PORTVERSION}/plt/ \
 		ftp://infogroep.be/pub/plt/bundles/${PORTVERSION}/plt/ \
 		ftp://morpheus.wish.com.mx/pub/plt/${PORTVERSION}/plt/
-DISTNAME=	plt-${PORTVERSION}.src.x
+DISTNAME=	plt-${PORTVERSION}-src-unix
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	jkoshy@FreeBSD.org
 COMMENT=	An interactive, integrated, graphical Scheme programming environment
@@ -27,14 +28,12 @@ USE_XLIB=	yes
 
 PLTHOME=	${PREFIX}/drscheme
 DRS_D=		bin install collects teachpack include lib
-DRS_B=		drscheme mred mzc mzscheme tex2page
+DRS_B=		drscheme mred mzc mzscheme
 MAN1=		drscheme.1 mred.1 mzscheme.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
+ONLY_FOR_ARCH=	i386
 
 do-install:
 	${MKDIR} ${PLTHOME}
