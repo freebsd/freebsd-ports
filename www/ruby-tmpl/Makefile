@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmpl
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	www textproc ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ruby-${PORTNAME}
@@ -21,6 +21,6 @@ USE_RUBY=	yes
 NO_BUILD=	yes
 
 do-install:
-	cd ${WRKSRC} && ${RUBY} install.rb
+	cd ${WRKSRC}; ${RUBY} install.rb
 
 .include <bsd.port.mk>
