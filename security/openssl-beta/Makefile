@@ -7,7 +7,7 @@
 
 PORTNAME=	openssl
 PKGNAMESUFFIX=	-beta
-PORTVERSION=	0.9.7-beta5
+PORTVERSION=	0.9.7
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/source/ \
 		ftp://ftp.openssl.org/source/ \
