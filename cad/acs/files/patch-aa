@@ -1,0 +1,31 @@
+*** src/_unix.h.orig	Sat Dec 17 08:50:39 1994
+--- src/_unix.h	Sun Jan  1 12:18:58 1995
+***************
+*** 29,35 ****
+  #define STEPFILE   	"/tmp/SXXXXXX"
+  #define PLOTFILE    	"acs.plot"
+  #define HELPFILE    	"acs.hlp"
+! #define HELPPATH	getenv("PATH")
+  
+  /* standard collection of includes */
+  #include <ctype.h>
+--- 29,35 ----
+  #define STEPFILE   	"/tmp/SXXXXXX"
+  #define PLOTFILE    	"acs.plot"
+  #define HELPFILE    	"acs.hlp"
+! #define HELPPATH	"/usr/local/lib"
+  
+  /* standard collection of includes */
+  #include <ctype.h>
+*** /dev/null	Sun Jan  1 11:16:29 1995
+--- Makefile	Sun Jan  1 12:24:21 1995
+***************
+*** 0 ****
+--- 1,7 ----
++ all:
++ 	(cd src; make freebsd)
++ 
++ install:
++ 	(cd src/FreeBSD; install -c -s -m 755 -g bin -o bin acs /usr/local/bin)
++ 	(cd doc; install -c -m 644 -g bin -o bin acs.hlp /usr/local/lib)
++ 
