@@ -1060,6 +1060,7 @@ copytape	ports/sysutils/copytape
 coreutils	ports/sysutils/coreutils
 corewars	ports/games/corewars
 corkscrew	ports/net/corkscrew
+corona		ports/graphics/corona
 cos		ports/java/cos
 cosmo		ports/games/cosmo
 cost		ports/textproc/cost
