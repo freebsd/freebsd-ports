@@ -4,11 +4,11 @@
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.63 1997/09/21 20:37:03 ache Exp $
+# $Id: Makefile,v 1.64 1997/09/28 13:59:07 ache Exp $
 #
 
-DISTNAME=       lynx2.7.1ac-0.73
-PKGNAME=        lynx-2.7.1ac-0.73
+DISTNAME=       lynx2.7.1ac-0.74
+PKGNAME=        lynx-2.7.1ac-0.74
 CATEGORIES=	www
 MASTER_SITES=   http://sol.slcc.edu/lynx/current/
 
