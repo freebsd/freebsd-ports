@@ -1,0 +1,34 @@
+# New ports collection makefile for:   pth
+# Version required:		1.1b5
+# Date Created:			17 Aug 1999
+# Whom:				Ralf S. Engelschall
+#
+# $Id$
+#
+
+DISTNAME=	pth-1.1b5
+CATEGORIES=	devel
+MASTER_SITES=	ftp://alpha.gnu.org/gnu/pth/ \
+		ftp://ftp.engelschall.com/sw/pth/
+
+MAINTAINER=	rse@engelschall.com
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--enable-pthread \
+		--enable-syscall-soft \
+		--enable-batch
+
+MAN1=		pth-config.1 pthread-config.1
+MAN3=		pth.3 pthread.3
+
+post-build:
+	@${ECHO_MSG} "===>  Use 'make test' to run a quick test suite."
+
+test:
+	@cd ${WRKSRC} && ${MAKE} test
+
+post-install:
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+
+.include <bsd.port.mk>
