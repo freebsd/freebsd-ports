@@ -118,6 +118,7 @@
     SUBDIR += ruby-html-parser
     SUBDIR += ruby-rdtool
     SUBDIR += ruby-xmlparser
+    SUBDIR += rxp
     SUBDIR += sablotron
     SUBDIR += sarep
     SUBDIR += sdf

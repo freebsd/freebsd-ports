@@ -1,0 +1,16 @@
+bin/rxp
+lib/librxp.a
+include/rxp/charset.h
+include/rxp/ctype16.h
+include/rxp/dtd.h
+include/rxp/hash.h
+include/rxp/input.h
+include/rxp/namespaces.h
+include/rxp/rxputil.h
+include/rxp/stdio16.h
+include/rxp/string16.h
+include/rxp/system.h
+include/rxp/url.h
+include/rxp/version.h
+include/rxp/xmlparser.h
+@dirrm include/rxp
