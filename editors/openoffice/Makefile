@@ -147,4 +147,8 @@ do-install:
 		TEMP=${WRKDIR} DISPLAY=${DISPLAY} \
 		${WRKSRC}/../instsetoo/*.pro/01/normal/setup -r:oo_setup.resp
 
+install-user:
+	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" \
+		${PREFIX}/OpenOffice.org1.0/program/setup
+
 .include <bsd.port.post.mk>
