@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	gnuchess-4.0.pl79
-PKGNAME=	gnuchess-4.0.79
+DISTNAME=	gnuchess-4.0.pl80
+PKGNAME=	gnuchess-4.0.80
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnuchess
