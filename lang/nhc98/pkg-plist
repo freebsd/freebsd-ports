@@ -9,10 +9,7 @@ bin/tprofprel
 bin/hp2graph
 include/nhc98/Array.T.hi
 include/nhc98/Array.hi
-include/nhc98/BinArray.hi
 include/nhc98/Binary.T.hi
-include/nhc98/Binary.hi
-include/nhc98/Bit.hi
 include/nhc98/CPUTime.T.hi
 include/nhc98/CPUTime.hi
 include/nhc98/Char.T.hi
@@ -25,19 +22,14 @@ include/nhc98/DbgStub.hi
 include/nhc98/Directory.T.hi
 include/nhc98/Directory.hi
 include/nhc98/FFI.T.hi
-include/nhc98/FFI.hi
 include/nhc98/FFIBuiltin.T.hi
-include/nhc98/FFIBuiltin.hi
 include/nhc98/GreenCard.T.hi
-include/nhc98/GreenCard.gc
-include/nhc98/GreenCard.hi
 include/nhc98/Haskell.hi
 include/nhc98/HatBuiltin.hi
 include/nhc98/HsFFI.h
 include/nhc98/IO.T.hi
 include/nhc98/IO.hi
 include/nhc98/IOExtras.T.hi
-include/nhc98/IOExtras.hi
 include/nhc98/Ix.T.hi
 include/nhc98/Ix.hi
 include/nhc98/List.T.hi
@@ -56,7 +48,6 @@ include/nhc98/NonStdUnsafeCoerce.T.hi
 include/nhc98/NonStdUnsafeCoerce.hi
 include/nhc98/Numeric.T.hi
 include/nhc98/Numeric.hi
-include/nhc98/Observe.hi
 include/nhc98/PackedString.T.hi
 include/nhc98/PackedString.hi
 include/nhc98/Prelude.T.hi
@@ -92,6 +83,84 @@ include/nhc98/node.h
 include/nhc98/runtime.h
 include/nhc98/stableptr.h
 include/nhc98/twopass.h
+include/nhc98/NHC/BinArray.hi
+include/nhc98/NHC/Binary.hi
+include/nhc98/NHC/Bit.hi
+include/nhc98/NHC/FFI.hi
+include/nhc98/NHC/GreenCard.gc
+include/nhc98/NHC/GreenCard.hi
+include/nhc98/NHC/IOExtras.hi
+include/nhc98/NHC/Internal.hi
+include/nhc98/NHC/Observe.hi
+include/nhc98/NHC/PackedString.hi
+include/nhc98/NHC/Prelude.hi
+include/nhc98/base/Control/Arrow.hi
+include/nhc98/base/Control/Monad/Fix.hi
+include/nhc98/base/Control/Monad/Identity.hi
+include/nhc98/base/Control/Monad/Trans.hi
+include/nhc98/base/Control/Monad.hi
+include/nhc98/base/Data/Array.hi
+include/nhc98/base/Data/Bits.hi
+include/nhc98/base/Data/Bool.hi
+include/nhc98/base/Data/Char.hi
+include/nhc98/base/Data/Complex.hi
+include/nhc98/base/Data/Dynamic.hi
+include/nhc98/base/Data/Either.hi
+include/nhc98/base/Data/FiniteMap.hi
+include/nhc98/base/Data/IORef.hi
+include/nhc98/base/Data/Int.hi
+include/nhc98/base/Data/Ix.hi
+include/nhc98/base/Data/List.hi
+include/nhc98/base/Data/Maybe.hi
+include/nhc98/base/Data/PackedString.hi
+include/nhc98/base/Data/Ratio.hi
+include/nhc98/base/Data/Set.hi
+include/nhc98/base/Data/Tuple.hi
+include/nhc98/base/Data/Word.hi
+include/nhc98/base/Debug/Trace.hi
+include/nhc98/base/Foreign/C/Error.hi
+include/nhc98/base/Foreign/C/String.hi
+include/nhc98/base/Foreign/C/Types.hi
+include/nhc98/base/Foreign/C/TypesISO.hi
+include/nhc98/base/Foreign/C.hi
+include/nhc98/base/Foreign/ForeignPtr.hi
+include/nhc98/base/Foreign/Marshal/Alloc.hi
+include/nhc98/base/Foreign/Marshal/Array.hi
+include/nhc98/base/Foreign/Marshal/Error.hi
+include/nhc98/base/Foreign/Marshal/Pool.hi
+include/nhc98/base/Foreign/Marshal/Utils.hi
+include/nhc98/base/Foreign/Marshal.hi
+include/nhc98/base/Foreign/Ptr.hi
+include/nhc98/base/Foreign/StablePtr.hi
+include/nhc98/base/Foreign/Storable.hi
+include/nhc98/base/Foreign.hi
+include/nhc98/base/System/Cmd.hi
+include/nhc98/base/System/Console/GetOpt.hi
+include/nhc98/base/System/Directory.hi
+include/nhc98/base/System/Environment.hi
+include/nhc98/base/System/Exit.hi
+include/nhc98/base/System/IO/Error.hi
+include/nhc98/base/System/IO/Unsafe.hi
+include/nhc98/base/System/IO.hi
+include/nhc98/base/System/Info.hi
+include/nhc98/base/System/Locale.hi
+include/nhc98/base/System/Mem.hi
+include/nhc98/base/System/Random.hi
+include/nhc98/base/Text/Html/BlockTable.hi
+include/nhc98/base/Text/Html.hi
+include/nhc98/base/Text/ParserCombinators/Parsec/Char.hi
+include/nhc98/base/Text/ParserCombinators/Parsec/Combinator.hi
+include/nhc98/base/Text/ParserCombinators/Parsec/Error.hi
+include/nhc98/base/Text/ParserCombinators/Parsec/Expr.hi
+include/nhc98/base/Text/ParserCombinators/Parsec/Perm.hi
+include/nhc98/base/Text/ParserCombinators/Parsec/Pos.hi
+include/nhc98/base/Text/ParserCombinators/Parsec/Prim.hi
+include/nhc98/base/Text/ParserCombinators/Parsec.hi
+include/nhc98/base/Text/PrettyPrint/HughesPJ.hi
+include/nhc98/base/Text/PrettyPrint.hi
+include/nhc98/base/Text/Read.hi
+include/nhc98/base/Text/Show/Functions.hi
+include/nhc98/base/Text/Show.hi
 lib/nhc98/hood.jar
 lib/nhc98/ix86-FreeBSD/Array.z.a
 lib/nhc98/ix86-FreeBSD/BinArray.z.a
@@ -139,6 +208,7 @@ lib/nhc98/ix86-FreeBSD/config
 lib/nhc98/ix86-FreeBSD/greencard-nhc98
 lib/nhc98/ix86-FreeBSD/hmake-PRAGMA
 lib/nhc98/ix86-FreeBSD/hp2graph
+lib/nhc98/ix86-FreeBSD/libHSbase.a
 lib/nhc98/ix86-FreeBSD/main.o
 lib/nhc98/ix86-FreeBSD/main.p.o
 lib/nhc98/ix86-FreeBSD/main.z.o
@@ -225,22 +295,29 @@ lib/hmake/ix86-FreeBSD/hmakerc
 %%PORTDOCS%%share/doc/nhc98/bugs/nhc98test22.hs
 %%PORTDOCS%%share/doc/nhc98/bugs/nhc98test23.hs
 %%PORTDOCS%%share/doc/nhc98/examples/ZooQuiz.hs
+%%PORTDOCS%%share/doc/nhc98/hat/.xvpics/hat.bmp
+%%PORTDOCS%%share/doc/nhc98/hat/.xvpics/hat.png
 %%PORTDOCS%%share/doc/nhc98/hat/BadInsort.hs
 %%PORTDOCS%%share/doc/nhc98/hat/Insort.hs
+%%PORTDOCS%%share/doc/nhc98/hat/afp2002.ps.gz
 %%PORTDOCS%%share/doc/nhc98/hat/browser-detail.html
 %%PORTDOCS%%share/doc/nhc98/hat/bugs-tools.html
 %%PORTDOCS%%share/doc/nhc98/hat/bugs.html
 %%PORTDOCS%%share/doc/nhc98/hat/config.html
 %%PORTDOCS%%share/doc/nhc98/hat/copyright.html
+%%PORTDOCS%%share/doc/nhc98/hat/cvs.html
 %%PORTDOCS%%share/doc/nhc98/hat/download.html
 %%PORTDOCS%%share/doc/nhc98/hat/faq.html
 %%PORTDOCS%%share/doc/nhc98/hat/feature-table.html
 %%PORTDOCS%%share/doc/nhc98/hat/fest-0202.bugs
 %%PORTDOCS%%share/doc/nhc98/hat/frejaHatHood.ps.gz
 %%PORTDOCS%%share/doc/nhc98/hat/hat-reference.tex
+%%PORTDOCS%%share/doc/nhc98/hat/hat-tools.html
+%%PORTDOCS%%share/doc/nhc98/hat/hat-trans.html
 %%PORTDOCS%%share/doc/nhc98/hat/hat-trail-1.eps
 %%PORTDOCS%%share/doc/nhc98/hat/hat-trail-1.pdf
 %%PORTDOCS%%share/doc/nhc98/hat/hat-trail.gif
+%%PORTDOCS%%share/doc/nhc98/hat/hat.bmp
 %%PORTDOCS%%share/doc/nhc98/hat/hat.gif
 %%PORTDOCS%%share/doc/nhc98/hat/hatuser-old.html
 %%PORTDOCS%%share/doc/nhc98/hat/hatuser.dvi
@@ -250,6 +327,7 @@ lib/hmake/ix86-FreeBSD/hmakerc
 %%PORTDOCS%%share/doc/nhc98/hat/hatuser.tex
 %%PORTDOCS%%share/doc/nhc98/hat/hatuser001.gif
 %%PORTDOCS%%share/doc/nhc98/hat/hw01-draft.ps.gz
+%%PORTDOCS%%share/doc/nhc98/hat/ifl2002.ps.gz
 %%PORTDOCS%%share/doc/nhc98/hat/index.html
 %%PORTDOCS%%share/doc/nhc98/hat/install.html
 %%PORTDOCS%%share/doc/nhc98/hat/libraries.html
@@ -263,14 +341,16 @@ lib/hmake/ix86-FreeBSD/hmakerc
 %%PORTDOCS%%share/doc/nhc98/hat/publications.html
 %%PORTDOCS%%share/doc/nhc98/hat/requirements.html
 %%PORTDOCS%%share/doc/nhc98/hat/status.html
+%%PORTDOCS%%share/doc/nhc98/hat/todo.html
 %%PORTDOCS%%share/doc/nhc98/hat/toolkitThesis.ps.gz
 %%PORTDOCS%%share/doc/nhc98/hat/tracing.html
-%%PORTDOCS%%share/doc/nhc98/hat/tutorial1.dvi
 %%PORTDOCS%%share/doc/nhc98/hat/tutorial1.html
 %%PORTDOCS%%share/doc/nhc98/hat/tutorial1.hva
 %%PORTDOCS%%share/doc/nhc98/hat/tutorial1.pdf
 %%PORTDOCS%%share/doc/nhc98/hat/tutorial1.ps
 %%PORTDOCS%%share/doc/nhc98/hat/tutorial1.tex
+%%PORTDOCS%%share/doc/nhc98/hat/tutorial1-old.html
+%%PORTDOCS%%share/doc/nhc98/hmake/bugs.html
 %%PORTDOCS%%share/doc/nhc98/hmake/changes.html
 %%PORTDOCS%%share/doc/nhc98/hmake/hi-commands.html
 %%PORTDOCS%%share/doc/nhc98/hmake/hmake-config.html
@@ -294,11 +374,30 @@ lib/hmake/ix86-FreeBSD/hmakerc
 %%PORTDOCS%%share/doc/nhc98/libs/index.html
 %%PORTDOCS%%@dirrm share/doc/nhc98/bugs
 %%PORTDOCS%%@dirrm share/doc/nhc98/examples
+%%PORTDOCS%%@dirrm share/doc/nhc98/hat/.xvpics
 %%PORTDOCS%%@dirrm share/doc/nhc98/hat
 %%PORTDOCS%%@dirrm share/doc/nhc98/hmake
 %%PORTDOCS%%@dirrm share/doc/nhc98/implementation-notes
 %%PORTDOCS%%@dirrm share/doc/nhc98/libs
 %%PORTDOCS%%@dirrm share/doc/nhc98
+@dirrm include/nhc98/base/Control/Monad
+@dirrm include/nhc98/base/Control
+@dirrm include/nhc98/base/Data
+@dirrm include/nhc98/base/Debug
+@dirrm include/nhc98/base/Foreign/C
+@dirrm include/nhc98/base/Foreign/Marshal
+@dirrm include/nhc98/base/Foreign
+@dirrm include/nhc98/base/System/Console
+@dirrm include/nhc98/base/System/IO
+@dirrm include/nhc98/base/System
+@dirrm include/nhc98/base/Text/Html
+@dirrm include/nhc98/base/Text/ParserCombinators/Parsec
+@dirrm include/nhc98/base/Text/ParserCombinators
+@dirrm include/nhc98/base/Text/PrettyPrint
+@dirrm include/nhc98/base/Text/Show
+@dirrm include/nhc98/base/Text
+@dirrm include/nhc98/base
+@dirrm include/nhc98/NHC
 @dirrm include/nhc98
 @dirrm lib/hmake/ix86-FreeBSD
 @dirrm lib/hmake

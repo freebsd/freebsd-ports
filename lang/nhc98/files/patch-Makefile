@@ -1,9 +1,9 @@
---- Makefile.orig	Fri Jun 14 18:23:12 2002
-+++ Makefile	Fri Jun 14 18:24:00 2002
-@@ -141,15 +141,15 @@
+--- Makefile.orig	Tue Mar 11 10:20:35 2003
++++ Makefile	Tue Mar 11 10:21:23 2003
+@@ -155,14 +155,14 @@
  
  TARGDIR= targets
- TARGETS= runtime prelude greencard hp2graph hattools \
+ TARGETS= runtime prelude libraries greencard hp2graph hattools \
 -	 profruntime profprelude profprelude-$(CC) \
 -	 timeruntime timeprelude timeprelude-$(CC) \
 +	 profruntime profprelude profprelude-gcc \
@@ -13,28 +13,27 @@
 -	 compiler-nhc compiler-hbc compiler-ghc compiler-$(CC) \
 -	 hmake-nhc hmake-hbc hmake-ghc hmake-$(CC) \
 -	 greencard-nhc greencard-hbc greencard-ghc greencard-$(CC) \
+-	 prelude-$(CC) pragma-$(CC) libraries-$(CC) \
 +	 traceruntime traceprelude traceprelude-gcc \
 +	 compiler-nhc compiler-hbc compiler-ghc compiler-gcc \
 +	 hmake-nhc hmake-hbc hmake-ghc hmake-gcc \
 +	 greencard-nhc greencard-hbc greencard-ghc greencard-gcc \
- 	 hat-nhc hat-ghc \
--	 prelude-$(CC) pragma-$(CC)
-+	 prelude-gcc pragma-gcc
++	 prelude-gcc pragma-gcc libraries-gcc \
+ 	 hat-nhc hat-ghc hat-trans-ghc hat-trans-nhc hat-lib-ghc hat-lib-nhc \
+ 	 hat-tools-ghc hat-tools-nhc
  
- .PHONY: default basic all tracer compiler help config install hat hattools
- 
-@@ -183,8 +183,8 @@
- basic-nhc: $(PRAGMA) runtime hmake-nhc greencard-nhc compiler-nhc prelude
- basic-hbc: $(PRAGMA) runtime hmake-hbc greencard-hbc compiler-hbc prelude
- basic-ghc: $(PRAGMA) runtime hmake-ghc greencard-ghc compiler-ghc prelude
+@@ -203,8 +203,8 @@
+ 								libraries
+ basic-ghc: $(PRAGMA) runtime hmake-ghc greencard-ghc compiler-ghc prelude \
+ 								libraries
 -basic-$(CC):   runtime prelude-$(CC) pragma-$(CC) compiler-$(CC) \
--		 greencard-$(CC) hmake-$(CC)
+-		 greencard-$(CC) hmake-$(CC) libraries-$(CC)
 +basic-gcc:   runtime prelude-gcc pragma-gcc compiler-gcc \
-+		 greencard-gcc hmake-gcc
++		 greencard-gcc hmake-gcc libraries-gcc
  
  all-$(BUILDCOMP): basic-$(BUILDCOMP) heapprofile timeprofile #tracer #hoodui
  
-@@ -204,9 +204,9 @@
+@@ -224,9 +224,9 @@
  		compiler-ghc traceruntime traceprelude hattools hat-ghc
  tracer-hbc: $(PRAGMA) runtime hmake-hbc greencard-hbc \
  		compiler-hbc traceruntime traceprelude hattools
@@ -47,7 +46,7 @@
  timetraceprofile: timetraceruntime timetraceprelude
  
  $(TARGETS): % : $(TARGDIR)/$(MACHINE)/%
-@@ -328,44 +328,44 @@
+@@ -328,47 +328,47 @@
  	touch $(TARGDIR)/$(MACHINE)/timeprelude
  
  
@@ -60,7 +59,7 @@
 -$(TARGDIR)/$(MACHINE)/traceprelude-$(CC): $(PRELUDEC)
 +$(TARGDIR)/$(MACHINE)/traceprelude-gcc: $(PRELUDEC)
  	cd src/prelude;        $(MAKE) CFG=T fromC
- 	cd src/prelude/$(MACHINE); $(MAKE) CFG=T clean all
+ 	cd src/prelude/$(MACHINE)/NHC; $(MAKE) CFG=T clean all
  	cd src/prelude;        $(MAKE) CFG=T relink
 -	touch $(TARGDIR)/$(MACHINE)/traceprelude-$(CC)
 +	touch $(TARGDIR)/$(MACHINE)/traceprelude-gcc
@@ -68,7 +67,7 @@
 -$(TARGDIR)/$(MACHINE)/timeprelude-$(CC): $(PRELUDEC)
 +$(TARGDIR)/$(MACHINE)/timeprelude-gcc: $(PRELUDEC)
  	cd src/prelude;        $(MAKE) CFG=z fromC
- 	cd src/prelude/$(MACHINE); $(MAKE) CFG=z clean all
+ 	cd src/prelude/$(MACHINE)/NHC; $(MAKE) CFG=z clean all
  	cd src/prelude;        $(MAKE) CFG=z relink
 -	touch $(TARGDIR)/$(MACHINE)/timeprelude-$(CC)
 +	touch $(TARGDIR)/$(MACHINE)/timeprelude-gcc
@@ -76,7 +75,7 @@
 -$(TARGDIR)/$(MACHINE)/profprelude-$(CC): $(PRELUDEC)
 +$(TARGDIR)/$(MACHINE)/profprelude-gcc: $(PRELUDEC)
  	cd src/prelude;        $(MAKE) CFG=p fromC
- 	cd src/prelude/$(MACHINE); $(MAKE) CFG=p clean all
+ 	cd src/prelude/$(MACHINE)/NHC; $(MAKE) CFG=p clean all
  	cd src/prelude;        $(MAKE) CFG=p relink
 -	touch $(TARGDIR)/$(MACHINE)/profprelude-$(CC)
 +	touch $(TARGDIR)/$(MACHINE)/profprelude-gcc
@@ -84,7 +83,7 @@
 -$(TARGDIR)/$(MACHINE)/compiler-$(CC): $(COMPILERC)
 +$(TARGDIR)/$(MACHINE)/compiler-gcc: $(COMPILERC)
  	cd src/compiler98;     $(MAKE) fromC
- 	cd src/prelude/$(MACHINE); $(MAKE) clean all	# Patch machine-specific parts.
+ 	cd src/prelude/$(MACHINE)/NHC; $(MAKE) clean all	# Patch machine-specific parts.
  	cd src/prelude;        $(MAKE) relink
  	cd src/compiler98;     $(MAKE) relink
 -	touch $(TARGDIR)/$(MACHINE)/compiler-$(CC)
@@ -104,7 +103,12 @@
  	cd src/hmake;          $(MAKE) fromC config
  	cd src/interpreter;    $(MAKE) fromC
 -	touch $(TARGDIR)/$(MACHINE)/hmake-$(CC)
+-$(TARGDIR)/$(MACHINE)/libraries-$(CC): $(LIBRARIES)
 +	touch $(TARGDIR)/$(MACHINE)/hmake-gcc
++$(TARGDIR)/$(MACHINE)/libraries-gcc: $(LIBRARIES)
+ 	cd src/libraries/base; $(MAKE) -f Makefile.nhc98 fromC
+-	touch $(TARGDIR)/$(MACHINE)/libraries-$(CC)
++	touch $(TARGDIR)/$(MACHINE)/libraries-gcc
  
  
  script/errnogen.c: script/GenerateErrNo.hs
