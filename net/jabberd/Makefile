@@ -32,7 +32,7 @@ AUTHREG+=	anon pipe
 CONFIGURE_ARGS+=--enable-debug
 .endif
 
-.if defined(WITH_PGSQL)
+.if defined(WITH_POSTGRESQL)
 LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql-client
 CONFIGURE_ARGS+=--with-pgsql=${LOCALBASE}/include:${LOCALBASE}/lib
 STORAGE+=	pgsql
@@ -64,10 +64,10 @@ MAN8=		c2s.8 jabberd.8 resolver.8 router.8 s2s.8 sm.8
 pre-everything::
 	@${ECHO}
 	@${ECHO} "You can build Jabber with the following options:"
-	@${ECHO} "WITH_PGSQL	use PostgreSQL for storage and authentication"
-	@${ECHO} "WITH_BDB	use Berkeley DB for storage and authentication"
-	@${ECHO} "WITH_MYSQL	use MySQL for storage and authentication"
-	@${ECHO} "WITH_LDAP	use LDAP for authentication"
+	@${ECHO} "WITH_POSTGRESQL	use PostgreSQL for storage and authentication"
+	@${ECHO} "WITH_BDB		use Berkeley DB for storage and authentication"
+	@${ECHO} "WITH_MYSQL		use MySQL for storage and authentication"
+	@${ECHO} "WITH_LDAP		use LDAP for authentication"
 	@${ECHO}
 
 pre-install:
