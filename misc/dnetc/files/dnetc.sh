@@ -26,7 +26,7 @@ start)
 	fi
 
 	echo -n " dnetc"
-	su -m nobody -c "$dir/dnetc -quiet" 2>/dev/null >/dev/null &
+	su -m dnetc -c "$dir/dnetc -quiet" 2>/dev/null >/dev/null &
 	;;
 stop)
 	killall dnetc && echo -n " dnetc"
