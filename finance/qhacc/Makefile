@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qhacc
-PORTVERSION=	2.9
-PORTREVISION=	2
+PORTVERSION=	2.9.1
 CATEGORIES=	finance
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,23 +18,24 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
 USE_QT_VER=	3
 USE_X_PREFIX=	yes
+USE_GNOME=	gnometarget libxml
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--enable-mysql=no \
+CONFIGURE_ARGS=	--enable-xml=yes \
 		--with-qt-moc=${QT_PREFIX}/bin \
 		--with-qt-libs=${QT_PREFIX}/lib
 INSTALLS_SHLIB=	yes
 
 STRIP=		# none
 
+post-extract:
+	@${CP} -f ${FILESDIR}/xmlplugin.h ${WRKSRC}/plugins/xml
+
 post-patch:
 	@${REINPLACE_CMD} 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|/usr/local/|${PREFIX}/lib/|g ; \
-		 s|#! /bin/sh|#!${LOCALBASE}/bin/bash|g' \
-			${WRKSRC}/src/qhacc.orig
+	@${REINPLACE_CMD} -e 's|#! /bin/sh|#!${LOCALBASE}/bin/bash|g ; \
+		 s|/usr/local/q|${PREFIX}/lib/q|g' ${WRKSRC}/src/qhacc.orig
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-O2 -Wall -g||g ; \
 		 s|contrib docs qm|contrib|g ; \
