@@ -1,10 +1,7 @@
-Index: src/share/tools/hprof/hprof_method.c
-===================================================================
-RCS file: /home/Java/CVS/JDK2/javasrc/src/share/tools/hprof/hprof_method.c,v
-retrieving revision 1.3
-diff -u -r1.3 hprof_method.c
---- src/share/tools/hprof/hprof_method.c	26 Oct 1999 20:42:59 -0000	1.3
-+++ src/share/tools/hprof/hprof_method.c	20 Feb 2003 07:11:17 -0000
+$FreeBSD$
+
+--- ../../src/share/tools/hprof/hprof_method.c	26 Oct 1999 20:42:59 -0000	1.3
++++ ../../src/share/tools/hprof/hprof_method.c	20 Feb 2003 07:11:17 -0000
 @@ -123,7 +123,7 @@
      int stack_depth;
      int trace_depth;
