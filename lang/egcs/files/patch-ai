@@ -1,14 +1,5 @@
 --- gcc/final.c.orig	Sat Sep  5 22:52:01 1998
 +++ gcc/final.c	Wed Oct  7 17:06:58 1998
-@@ -383,6 +383,8 @@
-       /* zero word */
-       assemble_integer (const0_rtx, long_bytes, 1);
- 
-+      fprintf(asm_out_file,".stabs \"bbset\", 25, 0, 0, LPBX0\n");
-+
-       /* address of filename */
-       ASM_GENERATE_INTERNAL_LABEL (name, "LPBX", 1);
-       assemble_integer (gen_rtx_SYMBOL_REF (Pmode, name), pointer_bytes, 1);
 @@ -1635,6 +1637,9 @@
      leaf_renumber_regs (first);
  #endif
