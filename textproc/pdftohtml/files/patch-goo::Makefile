@@ -1,0 +1,16 @@
+--- goo/Makefile.orig	Mon Aug  6 20:03:55 2001
++++ goo/Makefile	Mon Aug  6 20:04:26 2001
+@@ -2,11 +2,9 @@
+ 
+ srcdir = .
+ 
+-CFLAGS = -g -O2  -DHAVE_DIRENT_H=1 -DHAVE_REWINDDIR=1 -DHAVE_POPEN=1   -I$(srcdir)
+-CXXFLAGS = -g -O2  -DHAVE_DIRENT_H=1 -DHAVE_REWINDDIR=1 -DHAVE_POPEN=1   -I$(srcdir)
++CFLAGS += -DHAVE_DIRENT_H=1 -DHAVE_REWINDDIR=1 -DHAVE_POPEN=1   -I$(srcdir)
++CXXFLAGS += -DHAVE_DIRENT_H=1 -DHAVE_REWINDDIR=1 -DHAVE_POPEN=1   -I$(srcdir)
+ 
+-CC = gcc
+-CXX = c++
+ AR = ar rc
+ RANLIB = ranlib
+ 
