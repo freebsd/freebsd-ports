@@ -7,7 +7,7 @@
 
 PORTNAME=	XFree86
 PORTVERSION=	3.3.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -16,13 +16,8 @@ DISTFILES=	X336src-1.tgz X336src-2.tgz
 DISTFILES+=	X336src-3.tgz
 .endif
 
-PATCH_SITES=	ftp://ftp.xfree.org/pub/XFree86/3.3.6/fixes/ \
-		ftp://ftp.freesoftware.com/pub/XFree86/3.3.6/fixes/ \
-		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-3.3.6/fixes/ \
-		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/3.3.6/fixes/ \
-		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.3.6/fixes/
-PATCHFILES=	fix-01-r128 fix-04-s3trio3d2x fix-05-s3trio3d fix-06-s3trio3d2x\
-		fix-07-s3trio64v2gx+netfinity fix-08-s3savage_ix+mx   
+PATCH_SITES=	${MASTER_SITE_LOCAL:S,%SUBDIR%,jmz,g}
+PATCHFILES=	3.3.6-3.3.6a.diffs.gz
 
 MAINTAINER=	jmz@FreeBSD.org
 
@@ -35,7 +30,6 @@ INSTALL_TARGET=	install install.man
 INSTALL_TARGET+=	install.linkkit
 .endif
 DIST_SUBDIR=	xc
-PATCH_DIST_ARGS=-p2 -E -d ${WRKDIR}/xc/programs --quiet
 SCRIPTS_ENV=	OSVERSION=${OSVERSION} MACHINE=${MACHINE} \
 		MACHINE_ARCH=${MACHINE_ARCH}
 # can't use USE_X_PREFIX here -- it will cause a circular dependency
