@@ -1,0 +1,20 @@
+The NSL (The New Scripting Language) is a scripting language intended
+primarily for processing text documents in various input formats and in
+various languages. It is being developed as to be as light-weight as possible,
+however, providing a possibility to solve a wide range of tasks. It can be
+used as a stand-alone tool, as well as a CGI engine. It is not intended to be
+embeddable like Tcl, but since the interpreter is very compact, it can be
+attached to an application without great overhead.
+
+The NSL should be easy to learn. Its syntax is much simplier than that of perl
+or even awk and is more like Tcl or csh. It has, however, some peculiarities
+in syntax, as well as in programming techniques, so it would probably require
+some time to get accustomed to.
+
+However, the NSL is not a quick-development language. Its core does not and
+shall not include 'complete solutions'. Inspite of its rather high level, it
+should be regarded as a toolbox by the means of which a programmer may
+implement what he wants. Only such approach (IMHO) may allow to keep the
+language small, efficient, easy both to learn and to use.
+
+WWW: http://www.freesoftware.fsf.org/nsl/
