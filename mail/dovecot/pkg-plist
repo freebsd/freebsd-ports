@@ -9,5 +9,7 @@ sbin/imap-master
 %%PORTDOCS%%share/doc/dovecot/nfs.txt
 %%PORTDOCS%%share/doc/dovecot/index.txt
 %%PORTDOCS%%share/doc/dovecot/multiaccess.txt
+%%PORTDOCS%%share/doc/dovecot/configuration.txt
+%%PORTDOCS%%share/doc/dovecot/mail-storages.txt
 %%PORTDOCS%%@dirrm share/doc/dovecot
 @dirrm lib/dovecot
