@@ -401,6 +401,7 @@
     SUBDIR += php-screw
     SUBDIR += php-templates
     SUBDIR += php4-cgi
+    SUBDIR += php5-cgi
     SUBDIR += phpSysInfo
     SUBDIR += phpbb
     SUBDIR += phpnuke

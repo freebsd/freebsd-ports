@@ -1,11 +1,11 @@
 *****************************************************************************
 
-You have installed the php4-cgi package.
+You have installed the php5-cgi package.
 
-Have a look at the php4-cgi port if you need additional extensions other than
-CTYPE, MYSQL, OVERLOAD, PCRE, POSIX, SESSION, TOKENIZER, XML and ZLIB.
+Have a look at the php5-cgi port if you need additional extensions other than
+CTYPE, DOM, PCRE, POSIX, SESSION, SIMPLEXML, SQLITE, TOKENIZER and XML.
 
 You can find it at
-ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/ports/www/php4-cgi.tar
+ftp://ftp.freebsd.org/pub/FreeBSD/FreeBSD-current/ports/www/php5-cgi.tar
 
 *****************************************************************************
