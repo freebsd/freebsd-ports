@@ -6,8 +6,8 @@
 
 PORTNAME=	ldapmodule
 PORTVERSION=	1.10alpha3
-PORTREVISION=	3
-CATEGORIES=	net
+PORTREVISION=	4
+CATEGORIES=	net python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	python-ldap
 DISTNAME=	python-ldap-${PORTVERSION}-src
@@ -15,13 +15,13 @@ DISTNAME=	python-ldap-${PORTVERSION}-src
 MAINTAINER=	dinoex@FreeBSD.org
 
 LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 
-# BROKEN for python 2.2
-PYTHON_VERSION=	python2.1
+USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
+CONFIGURE_ARGS+=--with-ldap=${LOCALBASE} --with-python=${PYTHON_CMD}
 WRKSRC=		${WRKDIR}/${DISTNAME:S=-src==}
+
+pre-configure:
+	@${CP} ${FILESDIR}/Makefile.pre.in ${WRKSRC}/Misc/Makefile.python-1.4
 
 .include <bsd.port.mk>
