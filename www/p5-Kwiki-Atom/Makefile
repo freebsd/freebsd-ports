@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Kwiki-Atom
-PORTVERSION=	0.10
+PORTVERSION=	0.14
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Kwiki
@@ -16,7 +16,6 @@ MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Kwiki Atom Plugin
 
 BUILD_DEPENDS=	${SITE_PERL}/Kwiki.pm:${PORTSDIR}/www/p5-Kwiki \
-		${SITE_PERL}/XML/XPath.pm:${PORTSDIR}/textproc/p5-XML-XPath \
 		${SITE_PERL}/XML/Atom.pm:${PORTSDIR}/textproc/p5-XML-Atom
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
