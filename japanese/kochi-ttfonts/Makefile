@@ -8,7 +8,8 @@
 PORTNAME=	kochi-ttfonts
 PORTVERSION=	20020727
 CATEGORIES=	japanese x11-fonts
-MASTER_SITES=	http://www.on.cs.keio.ac.jp/~yasu/linux/fonts/
+MASTER_SITES=	http://www.on.cs.keio.ac.jp/~yasu/linux/fonts/ \
+		${MASTER_SITE_PORTS_JP}
 DISTFILES=	kochi-mincho-0.2.${PORTVERSION}.tar.bz2 \
 		kochi-gothic-0.2.${PORTVERSION}.tar.bz2
 
