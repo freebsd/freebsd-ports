@@ -5,10 +5,10 @@
   */
  #ifdef DEBUG
 -#define DEFAULT_HELPPATH ".:/usr/lib/help:/usr/local/lib/help"
-+#define DEFAULT_HELPPATH ".:/usr/X11R6/help:/usr/local/help"
++#define DEFAULT_HELPPATH ".:/usr/X11R6/lib/help:/usr/local/lib/help"
  #else
 -#define DEFAULT_HELPPATH "/usr/lib/help:/usr/local/lib/help"
-+#define DEFAULT_HELPPATH "/usr/X11R6/help:/usr/local/help"
++#define DEFAULT_HELPPATH "/usr/X11R6/lib/help:/usr/local/lib/help"
  #endif
  
  /***********************************************************************

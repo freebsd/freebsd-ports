@@ -14,7 +14,7 @@
  MAN1DIR = $(ROOTDIR)/man/man1
 -HELPDIR = $(ROOTDIR)/setup/$(SUBSYS)/help
 -BITDIR = $(ROOTDIR)/setup/bitmaps
-+HELPDIR = $(ROOTDIR)/info
++HELPDIR = $(ROOTDIR)/lib/help
 +BITDIR = $(ROOTDIR)/include/X11/bitmaps
  
  #
