@@ -1,11 +1,27 @@
---- Makefile.in.orig	Wed May 14 17:52:28 1997
-+++ Makefile.in	Sat May 17 21:09:48 1997
-@@ -292,7 +292,7 @@
- 		-$(INSTALL_DATA) $(PLBASE)/man/$(PL).$(mansec) $(mandir)
- 		-$(INSTALL_DATA) $(PLBASE)/man/chpl.$(mansec) $(mandir)
- 		-$(INSTALL_DATA) $(PLBASE)/man/plld.$(mansec) $(mandir)
--		-$(INSTALL_DATA) $(PLBASE)/man/readline.$(lmansec) $(lmandir)
-+#		-$(INSTALL_DATA) $(PLBASE)/man/readline.$(lmansec) $(lmandir)
-  
+--- Makefile.in	1999/03/23 20:02:10	1.1
++++ Makefile.in	1999/03/23 20:02:47
+@@ -287,7 +287,7 @@
+ 		$(INSTALL_DATA) pl.1 $(plmandir)/$(PL).$(mansec)
+ 		$(INSTALL_DATA) $(srcdir)/plrc.1 $(plmandir)/plrc.$(mansec)
+ 		$(INSTALL_DATA) $(srcdir)/plld.1 $(plmandir)/plld.$(mansec)
+-		$(INSTALL_DATA) $(srcdir)/readline.3 $(plmandir)/readline.$(lmansec)
++		#$(INSTALL_DATA) $(srcdir)/readline.3 $(plmandir)/readline.$(lmansec)
+ 		-if [ ! -d $(man_prefix) ]; then $(MKDIR) $(man_prefix); fi
+ 		-if [ ! -d $(mandir)  ];    then $(MKDIR) $(mandir);     fi
+ 		-$(INSTALL_DATA) $(plmandir)/$(PL).$(mansec) $(mandir)
+@@ -295,10 +295,11 @@
+ 		-$(INSTALL_DATA) $(plmandir)/plld.$(mansec) $(mandir)
+ 
+ install_rlman:
+-		-if [ ! -d $(lmandir) ]; then $(MKDIR) $(lmandir); fi
+-		-if [ ! -r $(lmandir)/readline.$(lmansec) ]; then \
+-		  $(INSTALL_DATA) $(srcdir)/readline.3 $(lmandir)/readline.$(lmansec); \
+-		fi
++		-true
++#		-if [ ! -d $(lmandir) ]; then $(MKDIR) $(lmandir); fi
++#		-if [ ! -r $(lmandir)/readline.$(lmansec) ]; then \
++#		  $(INSTALL_DATA) $(srcdir)/readline.3 $(lmandir)/readline.$(lmansec); \
++#		fi
+ 
  #
  # runtime-only environment installation
