@@ -7,13 +7,12 @@
 # $FreeBSD$
 #
 
-DISTNAME=	gcc-2.95.1
+DISTNAME=	gcc-2.95.2
 CATEGORIES=	lang java
-MASTER_SITES=	ftp://go.cygnus.com/pub/sourceware.cygnus.com/pub/egcs/releases/${DISTNAME}/ \
-		ftp://egcs.cygnus.com/pub/egcs/releases/${DISTNAME}/ \
-		${MASTER_SITE_GNU} \
-		ftp://ftp.nluug.nl/pub/languages/egcs/releases/${DISTNAME}/ \
-		ftp://ftp.iij.ad.jp/pub/egcs/releases/${DISTNAME}/ \
+MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/releases/${DISTNAME}/  \
+		ftp://ftp.ninemoons.com/pub/mirrors/egcs/releases/${DISTNAME}/ \
+		ftp://ftp.iij.ad.jp/pub/egcs/releases/${DISTNAME}/  \
+		ftp://ftp.yggdrasil.com/mirrors/site/egcs.cygnus.com/pub/egcs/releases/${DISTNAME}/  \
 		ftp://ftp.fu-berlin.de/unix/languages/egcs/releases/${DISTNAME}/
 MASTER_SITE_SUBDIR=	gcc
 DISTFILES=	gcc-core-${GCC_REV}${EXTRACT_SUFX} \
