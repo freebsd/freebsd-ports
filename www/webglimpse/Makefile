@@ -4,7 +4,7 @@
 # Date created:                         2 Nov 1998
 # Whom:                                 ache
 #
-# $Id: Makefile,v 1.3 1998/11/04 04:16:57 ache Exp $
+# $Id: Makefile,v 1.5 1998/11/07 12:39:29 ache Exp $
 #
 
 DISTNAME=       webglimpse-1.6.src
@@ -18,6 +18,7 @@ WRKSRC=         ${WRKDIR}/webglimpse-1.6.edu
 
 MAINTAINER=     ache@freebsd.org
 
+NO_CDROM=	depends on glimpse
 USE_PERL5=      YES
 NO_BUILD=       YES
 
