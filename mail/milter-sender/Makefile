@@ -35,10 +35,9 @@ DOCS= CHANGES.TXT index.shtml style.css mailto.js \
 .include <bsd.port.pre.mk>
 
 CFLAGS+= ${PTHREAD_CFLAGS}
-CONFIGURE_ENV=  LIBS="${PTHREAD_LIBS}"
-CONFIGURE_TARGET=--build=${ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS= --localstatedir=${PREFIX} --with-db
-MAKE_ENV=       PREFIX="${PREFIX}"
+CONFIGURE_ENV+=  LIBS="${PTHREAD_LIBS}"
+CONFIGURE_ARGS+= --localstatedir=${PREFIX} --with-db
+MAKE_ENV+=       PREFIX="${PREFIX}"
 
 pre-configure:
 	@cd ${WRKSRC}/../lib && \
