@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	termlog
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.3
 CATEGORIES=	security sysutils
 MASTER_SITES=	http://www.seccuris.com/documents/downloads/
 MASTER_SITE_SUBDIR=	termlog
