@@ -1,11 +1,11 @@
 bin/it-config
-lib/libit++.a
 include/it++/base/array.h
 include/it++/base/bessel.h
 include/it++/base/binary.h
 include/it++/base/binfile.h
 include/it++/base/cblas.h
 include/it++/base/cholesky.h
+include/it++/base/circular_buffer.h
 include/it++/base/converters.h
 include/it++/base/det.h
 include/it++/base/eigen.h
@@ -16,9 +16,11 @@ include/it++/base/help_functions.h
 include/it++/base/inv.h
 include/it++/base/itassert.h
 include/it++/base/itfile.h
+include/it++/base/itpp_version.h
 include/it++/base/ls_solve.h
 include/it++/base/lu.h
 include/it++/base/machdep.h
+include/it++/base/machdep.h.bak
 include/it++/base/mat.h
 include/it++/base/matfunc.h
 include/it++/base/operators.h
@@ -29,13 +31,14 @@ include/it++/base/sigfun.h
 include/it++/base/smat.h
 include/it++/base/source.h
 include/it++/base/specmat.h
+include/it++/base/stack.h
 include/it++/base/svd.h
 include/it++/base/svec.h
 include/it++/base/timing.h
 include/it++/base/transforms.h
 include/it++/base/vec.h
-include/it++/comm/channel.h
 include/it++/comm/bch.h
+include/it++/comm/channel.h
 include/it++/comm/commfunc.h
 include/it++/comm/convcode.h
 include/it++/comm/crc.h
@@ -61,9 +64,11 @@ include/it++/itsrccode.h
 include/it++/matlab/matlab_engine.h
 include/it++/srccode/audiodev.h
 include/it++/srccode/audiofile.h
+include/it++/srccode/lpcfunc.h
 include/it++/srccode/vq.h
-@dirrm include/it++/base
-@dirrm include/it++/comm
-@dirrm include/it++/matlab
+lib/libit++.a
 @dirrm include/it++/srccode
+@dirrm include/it++/matlab
+@dirrm include/it++/comm
+@dirrm include/it++/base
 @dirrm include/it++
