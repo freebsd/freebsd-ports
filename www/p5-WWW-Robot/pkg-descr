@@ -1,0 +1,6 @@
+WWW::Robot is a perl interface that provides a web traversal engine
+for use in web robots.
+
+Author: Neil Bowers <neilb@cre.canon.co.uk>
+
+--will
