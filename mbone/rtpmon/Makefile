@@ -14,6 +14,12 @@ MASTER_SITES=	ftp://mm-ftp.cs.berkeley.edu/pub/rtpmon/
 MAINTAINER=	fenner@FreeBSD.org
 COMMENT=	A program to montior loss in multicast sessions
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 501000
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
@@ -27,4 +33,4 @@ pre-configure:
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/rtpmon
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
