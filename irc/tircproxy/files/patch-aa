@@ -1,6 +1,6 @@
---- tircproxy.h.orig	Wed Aug 11 15:40:04 1999
-+++ tircproxy.h	Wed Aug 11 15:43:06 1999
-@@ -25,8 +25,8 @@
+--- tircproxy.h.orig	Fri Dec 22 01:13:40 2000
++++ tircproxy.h	Fri Dec 22 01:15:39 2000
+@@ -34,8 +34,8 @@
  /* Set the location of the broadcast & MOTD files.  Undef these to disable
  ** the broadcasting feature.
  */
@@ -11,7 +11,7 @@
  
  /* Enable this if you want to use the IPF code for tranparency.
  */
-@@ -34,7 +34,7 @@
+@@ -43,7 +43,7 @@
  
  /* Enable this if you want to use the Linux code for tranparency.
  */
@@ -20,15 +20,17 @@
  
  /* Enable this if you want to ask proxy users for passwords.
  */
-@@ -97,10 +97,10 @@
+@@ -117,11 +117,11 @@
  **
  ** This means the proxy does NOT need to run as root for ident responses to
- ** be correct (so go get oidentd-1.4+cdir !!).
+ ** be correct.  This method is now obsolete - use UDB if at all possible!
 -*/
- #define CDIR		"/var/oidentd/"
- #define CDIR_IDENT	"ident"
- #define CDIR_MAP       	"user"
++
+ #define CDIR        "/var/oidentd/"
+ #define CDIR_IDENT  "ident"
+ #define CDIR_MAP    "user"
+-
 +*/
  
- 
  /* The following table defines a list of filenames that are not
+ ** to be handled transparently by the DCC code.. if replace points to
