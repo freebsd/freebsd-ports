@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	stefan.jahn@nemesis-sektor.de
 COMMENT=	KDE instant messaging system (ICQ, AIM, MSN, Jabber, Yahoo, IRC)
 
+CONFLICTS=	kdenetwork-3.[2-].*
+
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
