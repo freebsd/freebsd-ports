@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The C++ Debugging Support Library
 
-USE_GCC=	3.1
+USE_GCC=	3.3
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-threading
 USE_GMAKE=	yes
