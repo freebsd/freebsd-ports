@@ -1,7 +1,7 @@
-share/guile/1.4/net/http.scm
-share/guile/1.4/net/http/client.scm
-share/guile/1.4/net/http/message.scm
-share/guile/1.4/net/http/server.scm
-share/guile/1.4/net/http/util.scm
-@dirrm share/guile/1.4/net/http
-@dirrm share/guile/1.4/net
+share/guile/1.4.1/net/http.scm
+share/guile/1.4.1/net/http/client.scm
+share/guile/1.4.1/net/http/message.scm
+share/guile/1.4.1/net/http/server.scm
+share/guile/1.4.1/net/http/util.scm
+@dirrm share/guile/1.4.1/net/http
+@dirrm share/guile/1.4.1/net

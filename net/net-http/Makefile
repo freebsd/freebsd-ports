@@ -21,6 +21,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
 do-install:
-	${CP} -R ${WRKSRC}/net ${LOCALBASE}/share/guile/1.4/net
+	${CP} -R ${WRKSRC}/net/ ${LOCALBASE}/share/guile/1.4.1/net/
 
 .include <bsd.port.mk>
