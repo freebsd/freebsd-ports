@@ -1,0 +1,11 @@
+--- ../include/db_cxx.h.orig	Tue Aug 31 13:45:43 1999
++++ ../include/db_cxx.h	Sat Sep 14 14:50:27 2002
+@@ -717,7 +717,7 @@
+     // call set_error_stream() to force all errors to a C++ stream.
+     // It is unwise to mix these approaches.
+     //
+-    void set_error_stream(class ostream*);
++    void set_error_stream(ostream*);
+ 
+     // used internally
+     static int runtime_error(const char *caller, int err,
