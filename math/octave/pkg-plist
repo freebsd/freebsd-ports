@@ -1,82 +1,19 @@
-bin/octave-bug
 bin/mkoctfile
-include/octave-2.0.9/config.h
-libexec/octave/2.0.9/exec/i386-unknown-freebsd/info
-libexec/octave/2.0.9/exec/i386-unknown-freebsd/info-emacs-info
-libexec/octave/2.0.9/exec/i386-unknown-freebsd/info-emacs-octave-help
-include/octave-2.0.9/f77-fcn.h
-include/octave-2.0.9/lo-error.h
-lib/libcruft.a
-lib/libcruft.so.2.0
-lib/liboctave.a
-lib/liboctave.so.2.0
-lib/libreadline.a
-lib/libreadline.so.2.0
-lib/libhistory.a
-lib/libhistory.so.2.0
-lib/libkpathsea.a
-lib/libkpathsea.so.2.0
-include/octave-2.0.9/Bounds.h
-include/octave-2.0.9/CollocWt.h
-include/octave-2.0.9/DAE.h
-include/octave-2.0.9/DAEFunc.h
-include/octave-2.0.9/DASSL.h
-include/octave-2.0.9/FEGrid.h
-include/octave-2.0.9/LinConst.h
-include/octave-2.0.9/LP.h
-include/octave-2.0.9/LPsolve.h
-include/octave-2.0.9/LSODE.h
-include/octave-2.0.9/NLConst.h
-include/octave-2.0.9/NLEqn.h
-include/octave-2.0.9/NLFunc.h
-include/octave-2.0.9/NLP.h
-include/octave-2.0.9/ODE.h
-include/octave-2.0.9/ODEFunc.h
-include/octave-2.0.9/Objective.h
-include/octave-2.0.9/QP.h
-include/octave-2.0.9/Quad.h
-include/octave-2.0.9/Range.h
-include/octave-2.0.9/base-de.h
-include/octave-2.0.9/base-min.h
-include/octave-2.0.9/byte-swap.h
-include/octave-2.0.9/cmd-hist.h
-include/octave-2.0.9/data-conv.h
-include/octave-2.0.9/dir-ops.h
-include/octave-2.0.9/file-ops.h
-include/octave-2.0.9/getopt.h
-include/octave-2.0.9/idx-vector.h
-include/octave-2.0.9/lo-ieee.h
-include/octave-2.0.9/lo-mappers.h
-include/octave-2.0.9/lo-utils.h
-include/octave-2.0.9/mach-info.h
-include/octave-2.0.9/oct-alloc.h
-include/octave-2.0.9/oct-cmplx.h
-include/octave-2.0.9/oct-glob.h
-include/octave-2.0.9/oct-math.h
-include/octave-2.0.9/oct-term.h
-include/octave-2.0.9/pathsearch.h
-include/octave-2.0.9/prog-args.h
-include/octave-2.0.9/statdefs.h
-include/octave-2.0.9/str-vec.h
-include/octave-2.0.9/sun-utils.h
-include/octave-2.0.9/sysdir.h
-include/octave-2.0.9/Array.h
-include/octave-2.0.9/Array2.h
-include/octave-2.0.9/Array3.h
-include/octave-2.0.9/DiagArray2.h
+bin/octave-2.0.9
+bin/octave
+bin/octave-bug
 include/octave-2.0.9/Array-flags.h
 include/octave-2.0.9/Array-idx.h
+include/octave-2.0.9/Array.cc
+include/octave-2.0.9/Array.h
 include/octave-2.0.9/Array2-idx.h
+include/octave-2.0.9/Array2.cc
+include/octave-2.0.9/Array2.h
 include/octave-2.0.9/Array3-idx.h
-include/octave-2.0.9/MArray-defs.h
-include/octave-2.0.9/MArray.h
-include/octave-2.0.9/MArray2.h
-include/octave-2.0.9/MDiagArray2.h
-include/octave-2.0.9/Matrix.h
-include/octave-2.0.9/base-lu.h
-include/octave-2.0.9/mx-base.h
-include/octave-2.0.9/mx-defs.h
-include/octave-2.0.9/mx-ext.h
+include/octave-2.0.9/Array3.cc
+include/octave-2.0.9/Array3.h
+include/octave-2.0.9/BaseSLList.h
+include/octave-2.0.9/Bounds.h
 include/octave-2.0.9/CColVector.h
 include/octave-2.0.9/CDiagMatrix.h
 include/octave-2.0.9/CMatrix.h
@@ -90,12 +27,55 @@ include/octave-2.0.9/CmplxQR.h
 include/octave-2.0.9/CmplxQRP.h
 include/octave-2.0.9/CmplxSCHUR.h
 include/octave-2.0.9/CmplxSVD.h
+include/octave-2.0.9/CollocWt.h
+include/octave-2.0.9/DAE.h
+include/octave-2.0.9/DAEFunc.h
+include/octave-2.0.9/DASSL.h
+include/octave-2.0.9/DiagArray2.cc
+include/octave-2.0.9/DiagArray2.h
 include/octave-2.0.9/EIG.h
+include/octave-2.0.9/FEGrid.h
+include/octave-2.0.9/LP.h
+include/octave-2.0.9/LPsolve.h
+include/octave-2.0.9/LSODE.h
+include/octave-2.0.9/LinConst.h
+include/octave-2.0.9/MArray-defs.h
+include/octave-2.0.9/MArray.cc
+include/octave-2.0.9/MArray.h
+include/octave-2.0.9/MArray2.cc
+include/octave-2.0.9/MArray2.h
+include/octave-2.0.9/MDiagArray2.cc
+include/octave-2.0.9/MDiagArray2.h
+include/octave-2.0.9/Map.h
+include/octave-2.0.9/Matrix.h
+include/octave-2.0.9/NLConst.h
+include/octave-2.0.9/NLEqn.h
+include/octave-2.0.9/NLFunc.h
+include/octave-2.0.9/NLP.h
+include/octave-2.0.9/ODE.h
+include/octave-2.0.9/ODEFunc.h
+include/octave-2.0.9/Objective.h
+include/octave-2.0.9/QP.h
+include/octave-2.0.9/Quad.h
+include/octave-2.0.9/Range.h
+include/octave-2.0.9/SLList.h
+include/octave-2.0.9/SLStack.h
+include/octave-2.0.9/Stack.h
+include/octave-2.0.9/base-de.h
+include/octave-2.0.9/base-lu.cc
+include/octave-2.0.9/base-lu.h
+include/octave-2.0.9/base-min.h
+include/octave-2.0.9/builtins.h
+include/octave-2.0.9/byte-swap.h
 include/octave-2.0.9/chMatrix.h
+include/octave-2.0.9/cmd-hist.h
+include/octave-2.0.9/config.h
 include/octave-2.0.9/dColVector.h
 include/octave-2.0.9/dDiagMatrix.h
 include/octave-2.0.9/dMatrix.h
 include/octave-2.0.9/dRowVector.h
+include/octave-2.0.9/data-conv.h
+include/octave-2.0.9/data.h
 include/octave-2.0.9/dbleAEPBAL.h
 include/octave-2.0.9/dbleCHOL.h
 include/octave-2.0.9/dbleDET.h
@@ -106,102 +86,52 @@ include/octave-2.0.9/dbleQR.h
 include/octave-2.0.9/dbleQRP.h
 include/octave-2.0.9/dbleSCHUR.h
 include/octave-2.0.9/dbleSVD.h
-include/octave-2.0.9/Array.cc
-include/octave-2.0.9/Array2.cc
-include/octave-2.0.9/Array3.cc
-include/octave-2.0.9/DiagArray2.cc
-include/octave-2.0.9/MArray.cc
-include/octave-2.0.9/MArray2.cc
-include/octave-2.0.9/MDiagArray2.cc
-include/octave-2.0.9/base-lu.cc
-bin/octave
-bin/octave-2.0.9
-bin/octave
-lib/liboctinterp.a
-lib/liboctinterp.so.2.0
-lib/libtinst.a
-lib/libtinst.so.2.0
-@exec /sbin/ldconfig -m %D/lib
-include/octave-2.0.9/builtins.h
-include/octave-2.0.9/data.h
-include/octave-2.0.9/defun.h
+include/octave-2.0.9/defaults.h
 include/octave-2.0.9/defun-dld.h
 include/octave-2.0.9/defun-int.h
+include/octave-2.0.9/defun.h
+include/octave-2.0.9/dir-ops.h
 include/octave-2.0.9/dirfns.h
 include/octave-2.0.9/dynamic-ld.h
 include/octave-2.0.9/error.h
+include/octave-2.0.9/f77-fcn.h
 include/octave-2.0.9/file-io.h
+include/octave-2.0.9/file-ops.h
 include/octave-2.0.9/fn-cache.h
+include/octave-2.0.9/getopt.h
 include/octave-2.0.9/gripes.h
 include/octave-2.0.9/help.h
+include/octave-2.0.9/idx-vector.h
 include/octave-2.0.9/input.h
 include/octave-2.0.9/lex.h
+include/octave-2.0.9/lo-error.h
+include/octave-2.0.9/lo-ieee.h
+include/octave-2.0.9/lo-mappers.h
+include/octave-2.0.9/lo-utils.h
 include/octave-2.0.9/load-save.h
+include/octave-2.0.9/mach-info.h
 include/octave-2.0.9/mappers.h
-include/octave-2.0.9/oct.h
+include/octave-2.0.9/mx-base.h
+include/octave-2.0.9/mx-defs.h
+include/octave-2.0.9/mx-ext.h
+include/octave-2.0.9/oct-alloc.h
+include/octave-2.0.9/oct-cmplx.h
+include/octave-2.0.9/oct-conf.h
 include/octave-2.0.9/oct-fstrm.h
+include/octave-2.0.9/oct-glob.h
+include/octave-2.0.9/oct-gperf.h
 include/octave-2.0.9/oct-hist.h
 include/octave-2.0.9/oct-iostrm.h
 include/octave-2.0.9/oct-map.h
+include/octave-2.0.9/oct-math.h
 include/octave-2.0.9/oct-obj.h
 include/octave-2.0.9/oct-prcstrm.h
 include/octave-2.0.9/oct-procbuf.h
 include/octave-2.0.9/oct-stdstrm.h
 include/octave-2.0.9/oct-stream.h
 include/octave-2.0.9/oct-strstrm.h
-include/octave-2.0.9/pager.h
-include/octave-2.0.9/parse.h
-include/octave-2.0.9/pathlen.h
-include/octave-2.0.9/pr-output.h
-include/octave-2.0.9/procstream.h
-include/octave-2.0.9/pt-base.h
-include/octave-2.0.9/pt-cmd.h
-include/octave-2.0.9/pt-const.h
-include/octave-2.0.9/pt-exp-base.h
-include/octave-2.0.9/pt-exp.h
-include/octave-2.0.9/pt-fcn.h
-include/octave-2.0.9/pt-fvc-base.h
-include/octave-2.0.9/pt-fvc.h
-include/octave-2.0.9/pt-mat.h
-include/octave-2.0.9/pt-misc.h
-include/octave-2.0.9/pt-mvr-base.h
-include/octave-2.0.9/pt-mvr.h
-include/octave-2.0.9/pt-plot.h
-include/octave-2.0.9/pt-pr-code.h
-include/octave-2.0.9/pt-walk.h
-include/octave-2.0.9/sighandlers.h
-include/octave-2.0.9/symtab.h
-include/octave-2.0.9/syscalls.h
-include/octave-2.0.9/sysdep.h
-include/octave-2.0.9/systime.h
-include/octave-2.0.9/syswait.h
-include/octave-2.0.9/token.h
-include/octave-2.0.9/toplev.h
-include/octave-2.0.9/unwind-prot.h
-include/octave-2.0.9/utils.h
-include/octave-2.0.9/variables.h
-include/octave-2.0.9/version.h
-include/octave-2.0.9/xdiv.h
-include/octave-2.0.9/xpow.h
-include/octave-2.0.9/BaseSLList.h
-include/octave-2.0.9/Map.h
-include/octave-2.0.9/SLList.h
-include/octave-2.0.9/SLStack.h
-include/octave-2.0.9/Stack.h
-include/octave-2.0.9/ov-re-mat.h
-include/octave-2.0.9/ov-cx-mat.h
-include/octave-2.0.9/ov-ch-mat.h
-include/octave-2.0.9/ov-struct.h
-include/octave-2.0.9/ov-scalar.h
-include/octave-2.0.9/ov-range.h
-include/octave-2.0.9/ov-complex.h
-include/octave-2.0.9/ov-va-args.h
-include/octave-2.0.9/ov-colon.h
-include/octave-2.0.9/ov-base.h
-include/octave-2.0.9/ov-str-mat.h
-include/octave-2.0.9/ov.h
-include/octave-2.0.9/ov-typeinfo.h
-include/octave-2.0.9/ops.h
+include/octave-2.0.9/oct-term.h
+include/octave-2.0.9/oct.h
 include/octave-2.0.9/op-cm-cm.h
 include/octave-2.0.9/op-cm-cs.h
 include/octave-2.0.9/op-cm-m.h
@@ -219,8 +149,96 @@ include/octave-2.0.9/op-s-cs.h
 include/octave-2.0.9/op-s-m.h
 include/octave-2.0.9/op-s-s.h
 include/octave-2.0.9/op-str-str.h
-include/octave-2.0.9/oct-conf.h
-include/octave-2.0.9/oct-gperf.h
+include/octave-2.0.9/ops.h
+include/octave-2.0.9/ov-base.h
+include/octave-2.0.9/ov-ch-mat.h
+include/octave-2.0.9/ov-colon.h
+include/octave-2.0.9/ov-complex.h
+include/octave-2.0.9/ov-cx-mat.h
+include/octave-2.0.9/ov-range.h
+include/octave-2.0.9/ov-re-mat.h
+include/octave-2.0.9/ov-scalar.h
+include/octave-2.0.9/ov-str-mat.h
+include/octave-2.0.9/ov-struct.h
+include/octave-2.0.9/ov-typeinfo.h
+include/octave-2.0.9/ov-va-args.h
+include/octave-2.0.9/ov.h
+include/octave-2.0.9/pager.h
+include/octave-2.0.9/parse.h
+include/octave-2.0.9/pathlen.h
+include/octave-2.0.9/pathsearch.h
+include/octave-2.0.9/pr-output.h
+include/octave-2.0.9/procstream.h
+include/octave-2.0.9/prog-args.h
+include/octave-2.0.9/pt-base.h
+include/octave-2.0.9/pt-cmd.h
+include/octave-2.0.9/pt-const.h
+include/octave-2.0.9/pt-exp-base.h
+include/octave-2.0.9/pt-exp.h
+include/octave-2.0.9/pt-fcn.h
+include/octave-2.0.9/pt-fvc-base.h
+include/octave-2.0.9/pt-fvc.h
+include/octave-2.0.9/pt-mat.h
+include/octave-2.0.9/pt-misc.h
+include/octave-2.0.9/pt-mvr-base.h
+include/octave-2.0.9/pt-mvr.h
+include/octave-2.0.9/pt-plot.h
+include/octave-2.0.9/pt-pr-code.h
+include/octave-2.0.9/pt-walk.h
+include/octave-2.0.9/sighandlers.h
+include/octave-2.0.9/statdefs.h
+include/octave-2.0.9/str-vec.h
+include/octave-2.0.9/sun-utils.h
+include/octave-2.0.9/symtab.h
+include/octave-2.0.9/syscalls.h
+include/octave-2.0.9/sysdep.h
+include/octave-2.0.9/sysdir.h
+include/octave-2.0.9/systime.h
+include/octave-2.0.9/syswait.h
+include/octave-2.0.9/token.h
+include/octave-2.0.9/toplev.h
+include/octave-2.0.9/unwind-prot.h
+include/octave-2.0.9/utils.h
+include/octave-2.0.9/variables.h
+include/octave-2.0.9/version.h
+include/octave-2.0.9/xdiv.h
+include/octave-2.0.9/xpow.h
+info/liboctave.info
+info/liboctave.info-1
+info/liboctave.info-2
+info/liboctave.info-3
+info/octave.info
+info/octave.info-1
+info/octave.info-10
+info/octave.info-11
+info/octave.info-12
+info/octave.info-2
+info/octave.info-3
+info/octave.info-4
+info/octave.info-5
+info/octave.info-6
+info/octave.info-7
+info/octave.info-8
+info/octave.info-9
+lib/libcruft.a
+lib/libcruft.so.2.0
+lib/libhistory.a
+lib/libhistory.so.2.0
+lib/libkpathsea.a
+lib/libkpathsea.so.2.0
+lib/liboctave.a
+lib/liboctave.so.2.0
+lib/liboctinterp.a
+lib/liboctinterp.so.2.0
+lib/libreadline.a
+lib/libreadline.so.2.0
+lib/libtinst.a
+lib/libtinst.so.2.0
+libexec/octave/2.0.9/exec/i386-unknown-freebsd/info
+libexec/octave/2.0.9/exec/i386-unknown-freebsd/info-emacs-info
+libexec/octave/2.0.9/exec/i386-unknown-freebsd/info-emacs-octave-help
+man/man1/octave.1.gz
+share/octave/2.0.9/imagelib/default.img
 share/octave/2.0.9/m/audio/lin2mu.m
 share/octave/2.0.9/m/audio/loadaudio.m
 share/octave/2.0.9/m/audio/mu2lin.m
@@ -326,6 +344,7 @@ share/octave/2.0.9/m/miscellaneous/flops.m
 share/octave/2.0.9/m/miscellaneous/is_leap_year.m
 share/octave/2.0.9/m/miscellaneous/list_primes.m
 share/octave/2.0.9/m/miscellaneous/menu.m
+share/octave/2.0.9/m/miscellaneous/paren.m
 share/octave/2.0.9/m/miscellaneous/popen2.m
 share/octave/2.0.9/m/miscellaneous/semicolon.m
 share/octave/2.0.9/m/miscellaneous/texas_lotto.m
@@ -441,25 +460,52 @@ share/octave/2.0.9/m/time/asctime.m
 share/octave/2.0.9/m/time/clock.m
 share/octave/2.0.9/m/time/ctime.m
 share/octave/2.0.9/m/time/date.m
-man/man1/octave.1.gz
-info/octave.info
-info/octave.info-1
-info/octave.info-10
-info/octave.info-11
-info/octave.info-12
-info/octave.info-2
-info/octave.info-3
-info/octave.info-4
-info/octave.info-5
-info/octave.info-6
-info/octave.info-7
-info/octave.info-8
-info/octave.info-9
-info/liboctave.info
-info/liboctave.info-1
-info/liboctave.info-2
-info/liboctave.info-3
-share/octave/doc/octave.ps
 share/octave/doc/liboctave.ps
-share/octave/doc/refcard-letter.ps
+share/octave/doc/octave.ps
 share/octave/doc/refcard-a4.ps
+share/octave/doc/refcard-letter.ps
+share/octave/ls-R
+share/octave/site/m/startup/octaverc
+@dirrm share/octave/site/m/startup
+@dirrm share/octave/site/m
+@dirrm share/octave/site
+@dirrm share/octave/doc
+@dirrm share/octave/2.0.9/m/time
+@dirrm share/octave/2.0.9/m/strings
+@dirrm share/octave/2.0.9/m/statistics
+@dirrm share/octave/2.0.9/m/startup
+@dirrm share/octave/2.0.9/m/special-matrix
+@dirrm share/octave/2.0.9/m/specfun
+@dirrm share/octave/2.0.9/m/signal
+@dirrm share/octave/2.0.9/m/set
+@dirrm share/octave/2.0.9/m/polynomial
+@dirrm share/octave/2.0.9/m/plot
+@dirrm share/octave/2.0.9/m/miscellaneous
+@dirrm share/octave/2.0.9/m/linear-algebra
+@dirrm share/octave/2.0.9/m/io
+@dirrm share/octave/2.0.9/m/image
+@dirrm share/octave/2.0.9/m/general
+@dirrm share/octave/2.0.9/m/elfun
+@dirrm share/octave/2.0.9/m/control
+@dirrm share/octave/2.0.9/m/audio
+@dirrm share/octave/2.0.9/m
+@dirrm share/octave/2.0.9/imagelib
+@dirrm share/octave/2.0.9
+@dirrm share/octave
+@dirrm libexec/octave/site/oct/i386-unknown-freebsd
+@dirrm libexec/octave/site/oct
+@dirrm libexec/octave/site/exec/i386-unknown-freebsd
+@dirrm libexec/octave/site/exec
+@dirrm libexec/octave/site
+@dirrm libexec/octave/2.0.9/oct/i386-unknown-freebsd
+@dirrm libexec/octave/2.0.9/oct
+@dirrm libexec/octave/2.0.9/exec/i386-unknown-freebsd
+@dirrm libexec/octave/2.0.9/exec
+@dirrm libexec/octave/2.0.9
+@dirrm libexec/octave
+@dirrm include/octave-2.0.9
+include/octave
+@exec /bin/mkdir -p %D/libexec/octave/site/exec/i386-unknown-freebsd
+@exec /bin/mkdir -p %D/libexec/octave/site/oct/i386-unknown-freebsd
+@exec /bin/mkdir -p %D/libexec/octave/2.0.9/oct/i386-unknown-freebsd
+@exec /sbin/ldconfig -m %D/lib
