@@ -59,6 +59,7 @@
     SUBDIR += hdf
     SUBDIR += hobbes-icons-xpm
     SUBDIR += hpscan
+    SUBDIR += icod
     SUBDIR += imlib
     SUBDIR += jbigkit
     SUBDIR += jgraph
