@@ -16,7 +16,7 @@ DISTFILES=	unixded-${PORTVERSION}-i386-unknown-bsdi3.0.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A server to host Quake network games under FreeBSD
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
+EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip \
 		lha:${PORTSDIR}/archivers/lha
 
 NO_WRKSUBDIR=	YES
