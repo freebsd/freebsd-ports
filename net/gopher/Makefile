@@ -9,7 +9,7 @@ PORTNAME=	gopher
 PORTVERSION=	2.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://boombox.micro.umn.edu/pub/gopher/Unix/
-DISTNAME=	gopher2.3
+DISTNAME=	gopher2_3
 
 MAINTAINER=	ports@FreeBSD.org
 
