@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Text-VimColor
-PORTVERSION=	0.08
+PORTVERSION=	0.09
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/G/GE/GEOFFR/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Syntax color text in HTML or XML using Vim
 
 BUILD_DEPENDS=	${SITE_PERL}/Path/Class.pm:${PORTSDIR}/devel/p5-Path-Class
