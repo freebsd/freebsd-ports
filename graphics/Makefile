@@ -308,6 +308,7 @@
     SUBDIR += qiv
     SUBDIR += qslim
     SUBDIR += quat
+    SUBDIR += quat-gui
     SUBDIR += quickpics
     SUBDIR += qvplay
     SUBDIR += ray++
