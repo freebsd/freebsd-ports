@@ -6,21 +6,25 @@
 #
 
 PORTNAME=	xscreensaver
-PORTVERSION=	3.34
+PORTVERSION=	4.00
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
 MAINTAINER=	DougB@FreeBSD.org
 
-LIB_DEPENDS=	gle.3:${PORTSDIR}/graphics/gle
+LIB_DEPENDS=	gle.3:${PORTSDIR}/graphics/gle \
+		xml.5:${PORTSDIR}/textproc/libxml
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_MESA=	yes
 USE_GTK=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-pam --with-gl --with-xpm --without-gnome \
-		--with-zippy=/usr/games/fortune --with-gle
+CONFIGURE_ARGS=	--without-pam --without-gnome --with-gl --with-gle --with-xpm \
+		--with-xml --with-hackdir=${PREFIX}/bin/xscreensaver-hacks/ \
+		--with-configdir=${PREFIX}/share/xscreensaver/config/
+
+CONFIGURE_ENV=	X_CFLAGS=-I${LOCALBASE}/include/gnome-xml
 
 MAN1=		attraction.1 blitspin.1 bouboule.1 braid.1 \
 		bsod.1 bubbles.1 critical.1 decayscreen.1 \
@@ -44,8 +48,10 @@ post-patch:
 	@ ${CP} ${WRKSRC}/configure ${WRKSRC}/configure.Patched
 	@ ${SED} -e 's#-lpthread#${PTHREAD_LIBS}#g' \
 		${WRKSRC}/configure.Patched > ${WRKSRC}/configure
-.for file in pulsar.c extrusion.c extrusion.c
-	@${PERL} -pi -e "s/malloc.h/stdlib.h/g" ${WRKSRC}/hacks/glx/${file}
+.for file in pulsar.c extrusion.c
+	@ ${CP} ${WRKSRC}/hacks/glx/${file} ${WRKSRC}/hacks/glx/${file}.Dist
+	@ ${SED} -e 's/malloc.h/stdlib.h/g' ${WRKSRC}/hacks/glx/${file}.Dist > \
+		${WRKSRC}/hacks/glx/${file}
 .endfor
 
 .include <bsd.port.pre.mk>

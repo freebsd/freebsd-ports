@@ -1,15 +1,6 @@
---- configure.orig	Tue Feb 13 00:09:23 2001
-+++ configure	Mon Feb 26 01:54:03 2001
-@@ -3239,7 +3239,7 @@
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--  X_PRE_LIBS="$X_PRE_LIBS -lSM -lICE"
-+  X_PRE_LIBS="$X_PRE_LIBS -lSM -lICE -lXmu -lXt"
- else
-   echo "$ac_t""no" 1>&6
- fi
-@@ -5401,7 +5401,7 @@
+--- configure.orig	Wed Jan  2 00:15:22 2002
++++ configure	Sun Jan 13 15:52:38 2002
+@@ -5999,7 +5999,7 @@
      PASSWD_LIBS="$PASSWD_LIBS -lkrb4 -ldes425 -lkrb5 -lk5crypto -lcrypt -lcom_err"
    elif test "$have_kerberos" = yes ; then
      # from Tim Showalter <tjs+@andrew.cmu.edu>
@@ -18,3 +9,12 @@
    fi
  
    if test "$have_kerberos" = yes ; then
+@@ -9883,6 +9883,8 @@
+ if test -z "$HACK_CONF_DIR" ; then
+   if test -n "$GNOME_DATADIR" ; then
+     HACK_CONF_DIR='${GNOME_DATADIR}/control-center/screensavers'
++  elif test -n "$CONFIGDIR" ; then
++    HACK_CONF_DIR="$CONFIGDIR"
+   else
+     HACK_CONF_DIR='${prefix}/lib/xscreensaver/config'
+   fi
