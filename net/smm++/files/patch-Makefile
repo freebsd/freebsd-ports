@@ -1,11 +1,22 @@
---- Makefile.orig	Tue Jan 22 18:45:51 2002
-+++ Makefile	Tue Jan 22 18:46:40 2002
-@@ -58,6 +58,8 @@
+--- Makefile.orig	Wed May  1 17:15:20 2002
++++ Makefile	Wed Jun 12 20:02:20 2002
+@@ -11,8 +11,8 @@
+ 
+ # --- The default settings will install SMM++ nicely into an
+ #     usual unix environment (if you have root access).
+-BIN=/usr/local/bin
+-SRC=/usr/local/lib/smm
++BIN=${PREFIX}/bin
++SRC=${PREFIX}/lib/smm
+ 
+ # --- If you don't have root access, you could choose to install
+ #     SMM++ locally in your home directory. Therefore use the
+@@ -57,6 +57,8 @@
+ # ---  You don't need to edit/understand/read the rest of
  #      this Makefile. If you can read Makefiles, feel free
  #      to do whatever you like.
- 
-+all: smm
 +
++all: smm
+ 
  smm: Makefile
  	@echo "--- Building startup file."
- 	@if [ -z ${ITKWISH} ] ; then \
