@@ -1,0 +1,49 @@
+--- pwebstats.orig	Tue Jul 15 01:35:07 2003
++++ pwebstats	Tue Jul 15 01:35:59 2003
+@@ -414,8 +414,8 @@
+ 		$date_num_size{$num} = &get_width("$image_templates/dates/$num.gif");
+ 	}
+ 
+-	$num_size{'\''} = &get_width("$image_templates/\'.gif");
+-	$date_num_size{'\''} = &get_width("$image_templates/dates/\'.gif");
++	$num_size{'\''} = &get_width("$image_templates/10.gif");
++	$date_num_size{'\''} = &get_width("$image_templates/dates/10.gif");
+ 
+ 	foreach $mon ( keys(%months) ) {
+ 		$mon_size{$mon} = &get_width("$image_templates/$mon.gif");
+@@ -2264,7 +2264,7 @@
+ 	print "copy 10,214,0,0,24,16,$image_templates/dates/$mon.gif\n";
+ 	($y1,$y2) = $yea =~ m/^\d\d(.)(.)$/;
+ 	$x = 34;
+-	printf "copy $x,214,0,0,%s,16,$image_templates/dates/'.gif\n", $date_num_size{"'"};
++	printf "copy $x,214,0,0,%s,16,$image_templates/dates/10.gif\n", $date_num_size{"'"};
+ 	$x += $date_num_size{"'"};
+ 	printf "copy $x,214,0,0,%s,16,$image_templates/dates/$y1.gif\n", $date_num_size{"$y1"};
+ 	$x += $date_num_size{$y1};
+@@ -2276,7 +2276,7 @@
+ 	print "copy 397,214,0,0,24,16,$image_templates/dates/$mon.gif\n";
+ 	($y1,$y2) = $yea =~ m/^\d\d(.)(.)$/;
+ 	$x = 423;
+-	printf "copy $x,214,0,0,%s,16,$image_templates/dates/'.gif\n", $date_num_size{"'"};
++	printf "copy $x,214,0,0,%s,16,$image_templates/dates/10101010101010101010.gif\n", $date_num_size{"'"};
+ 	$x += $date_num_size{"'"};
+ 	printf "copy $x,214,0,0,%s,16,$image_templates/dates/$y1.gif\n", $date_num_size{"$y1"};
+ 	$x += $date_num_size{$y1};
+@@ -2456,7 +2456,7 @@
+ 	print "copy 10,214,0,0,24,16,$image_templates/dates/$mon.gif\n";
+ 	($y1,$y2) = $yea =~ m/^\d\d(.)(.)$/;
+ 	$x = 34;
+-	printf "copy $x,214,0,0,%s,16,$image_templates/dates/'.gif\n", $date_num_size{"'"};
++	printf "copy $x,214,0,0,%s,16,$image_templates/dates/10.gif\n", $date_num_size{"'"};
+ 	$x += $date_num_size{"'"};
+ 	printf "copy $x,214,0,0,%s,16,$image_templates/dates/$y1.gif\n", $date_num_size{"$y1"};
+ 	$x += $date_num_size{$y1};
+@@ -2468,7 +2468,7 @@
+ 	print "copy 397,214,0,0,24,16,$image_templates/dates/$mon.gif\n";
+ 	($y1,$y2) = $yea =~ m/^\d\d(.)(.)$/;
+ 	$x = 423;
+-	printf "copy $x,214,0,0,%s,16,$image_templates/dates/'.gif\n", $date_num_size{"'"};
++	printf "copy $x,214,0,0,%s,16,$image_templates/dates/10.gif\n", $date_num_size{"'"};
+ 	$x += $date_num_size{"'"};
+ 	printf "copy $x,214,0,0,%s,16,$image_templates/dates/$y1.gif\n", $date_num_size{"$y1"};
+ 	$x += $date_num_size{$y1};
