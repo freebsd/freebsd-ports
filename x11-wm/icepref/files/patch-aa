@@ -1,0 +1,22 @@
+--- icepref.orig	Wed Jan  5 17:16:04 2000
++++ icepref	Tue Jun  6 23:26:56 2000
+@@ -1898,8 +1898,8 @@
+ 		# work on other non Linux systems.  Under Debian, this function requires
+ 		# the installation of the psmisc package.
+ 		
+-		os.system('killall -HUP -q icewm')
+-		os.system('killall -HUP -q icewm-gnome')
++		os.system('killall -HUP icewm')
++		os.system('killall -HUP icewm-gnome')
+ 	
+ 	# this is the callback for the OK button
+ 	
+@@ -2090,7 +2090,7 @@
+ 			button.show()
+ 			
+ 			# Disable the Restart button in the OS is BSD or the user is root
+-			if item[0] == 'Restart' and ( self.os == 'BSD' or USER == 'root'):
++			if item[0] == 'Restart' and ( USER == 'root'):
+ 			    button.set_sensitive(FALSE)
+ 			    
+ 			bbox.pack_start(button, TRUE, FALSE, 0)

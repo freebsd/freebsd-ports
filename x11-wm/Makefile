@@ -20,6 +20,7 @@
     SUBDIR += fvwm95-i18n
     SUBDIR += gnome2wmaker
     SUBDIR += gwm
+    SUBDIR += icepref
     SUBDIR += icewm
     SUBDIR += icewm-i18n
     SUBDIR += libdockapp

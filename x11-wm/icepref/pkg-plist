@@ -1,0 +1,5 @@
+bin/icepref
+%%PORTDOCS%%share/doc/icepref/FAQ
+%%PORTDOCS%%share/doc/icepref/LICENSE
+%%PORTDOCS%%share/doc/icepref/README
+%%PORTDOCS%%@dirrm share/doc/icepref
