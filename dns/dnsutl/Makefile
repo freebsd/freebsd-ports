@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.canb.auug.org.au/~millerp/dnsutl/ \
 		http://gd.tuwien.ac.at/softeng/Aegis/dnsutl/ \
 		ftp://ftp.agso.gov.au/pub/Aegis/dnsutl/
 
-MAINTAINER=	Karl.Dietz@frankfurt.netsurf.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programs to make using DNS easier
 
 GNU_CONFIGURE=	yes
