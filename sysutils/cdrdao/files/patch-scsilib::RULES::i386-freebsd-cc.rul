@@ -4,9 +4,9 @@
  ###########################################################################
  
  CPPFLAGS=	$(CPPOPTS) $(CPPOPTX)
--CFLAGS=		$(COPTS) $(CWARNOPTS) $(COPTOPT) $(COPTX)
+-CFLAGS=		$(COPTS) $(CWARNOPTS) $(COPTOPT) $(GCCOPTOPT) $(COPTX)
 +XCFLAGS:=	$(CFLAGS)
-+CFLAGS=		$(COPTS) $(CWARNOPTS) $(XCFLAGS) $(COPTX)
++CFLAGS=		$(COPTS) $(CWARNOPTS) $(XCFLAGS) $(GCCOPTOPT) $(COPTX)
  
  CPPOPTS=	-I. -I$(ARCHDIR) -I$(OINCSDIR) $(INCDIRS:%=-I%) $(OSDEFS)
  COPTS=

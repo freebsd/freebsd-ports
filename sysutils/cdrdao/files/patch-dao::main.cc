@@ -9,7 +9,7 @@
 -    message(3, "Read settings from \"%s\".", settingsPath);
 -
 -  settingsPath = "/etc/defaults/cdrdao";
-+  settingsPath = "%%LOCALBASE%%/etc/cdrdao.conf";
++  settingsPath = "%%PREFIX%%/etc/cdrdao.conf";
    if (SETTINGS->read(settingsPath) == 0)
      message(3, "Read settings from \"%s\".", settingsPath);
  
