@@ -9,7 +9,7 @@ PORTNAME=	pgadmin3
 PORTVERSION=	1.2.0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
-MASTER_SITE_SUBDIR= pgadmin3/release/src
+MASTER_SITE_SUBDIR= pgadmin3/release/v${PORTVERSION}/src
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	PostgreSQL database design and management system
