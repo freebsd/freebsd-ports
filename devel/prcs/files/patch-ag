@@ -1,0 +1,8 @@
+--- contrib/prcs-emerge.orig	Tue Oct 30 21:22:28 2001
++++ contrib/prcs-emerge	Tue Oct 30 21:22:52 2001
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl
++#! /usr/bin/env perl
+ #                              -*- Mode: Perl -*-
+ # $Basename: prcs-emerge $
+ # $Revision: 1.2 $

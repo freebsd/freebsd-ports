@@ -1,11 +1,16 @@
 bin/prcs
-@unexec install-info --delete %D/info/prcs.info %D/info/dir
+bin/prcs-callback
+bin/prcs-ediff
+bin/prcs-emerge
 info/prcs.info
 info/prcs.info-1
 info/prcs.info-2
 info/prcs.info-3
+%%EMACS%%share/emacs/site-lisp/prcs.el
+%%EMACS%%share/emacs/site-lisp/prcs.elc
+%%EMACS%%share/emacs/site-lisp/prcs-ediff.el
+%%EMACS%%share/emacs/site-lisp/prcs-ediff.elc
+%%EMACS%%share/emacs/site-lisp/prcs-hooks.el
+%%EMACS%%share/emacs/site-lisp/prcs-hooks.elc
+@unexec install-info --delete %D/info/prcs.info %D/info/dir
 @exec install-info %D/info/prcs.info %D/info/dir
-share/emacs/site-lisp/prcs.el
-share/emacs/site-lisp/prcs.elc
-share/emacs/site-lisp/prcs-ediff.el
-share/emacs/site-lisp/prcs-ediff.elc

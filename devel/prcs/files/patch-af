@@ -1,0 +1,8 @@
+--- contrib/prcs-ediff.orig	Tue Oct 30 21:21:37 2001
++++ contrib/prcs-ediff	Tue Oct 30 21:21:55 2001
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/perl5
++#! /usr/bin/env perl5
+ # Original author: Ulrich Pfeifer
+ # modified jglick@sig.bsh.com:
+ # $Id: prcs-ediff 1.2 Sat, 11 Apr 1998 17:54:43 -0700 jmacd $
