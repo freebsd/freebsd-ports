@@ -56,12 +56,19 @@
 # If you want to use the signature menu define:
 #  WITH_MUTT_SIGNATURE_MENU
 #
+# If you want to use enhanced pgp features define:
+#  WITH_MUTT_PGP_PATCH
+#
+# If you want to use the printf-like enhancement to the mbox-hook command
+# define:
+#  WITH_MUTT_MBOX_HOOK_PATCH
+#
 # If you want to use the ifdef feature define:
 #  WITH_MUTT_IFDEF_PATCH
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.1
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -103,6 +110,9 @@ PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${PATCH_VERSION}/ \
 .if defined(WITH_MUTT_EDIT_THREADS) || defined(WITH_MUTT_SIGNATURE_MENU) || \
 		defined(WITH_MUTT_IFDEF_PATCH)
 PATCH_SITES+=	http://cedricduval.free.fr/download/mutt/
+.endif
+.if defined(WITH_MUTT_MBOX_HOOK_PATCH) 
+PATCH_SITES+=	http://home.woolridge.ca/mutt/patches/
 .endif
 
 # XXX
@@ -167,6 +177,11 @@ USE_OPENSSL=	yes
 .if defined(WITH_MUTT_CYRUS_SASL)
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
+.if defined(WITH_MUTT_PGP_PATCH)
+SGML_NEEDED=	yes
+pre-configure::
+	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-pgp-dw
+.endif
 .if defined(WITHOUT_MUTT_SMIME_OUTLOOK_COMPAT)
 pre-configure::
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-smime-no-outlook
@@ -192,27 +207,33 @@ PATCH_DIST_STRIP=	-p1
 .if defined(WITH_MUTT_COMPRESSED_FOLDERS)
 PATCHFILES+=	patch-${PATCH_VERSION}.rr.compressed.gz
 CONFIGURE_ARGS+=	--enable-compressed
-.if !defined(WITHOUT_MUTT_SGMLFORMAT)
-SGML_USED=	yes
-.endif
+SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_NNTP)
 PATCHFILES+=	patch-${PATCH_VERSION}.vvv.nntp.gz
 CONFIGURE_ARGS+=	--enable-nntp
+SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_QUOTE_PATCH)
 PATCHFILES+=	patch-${PATCH_VERSION}.vvv.initials.gz \
 		patch-${PATCH_VERSION}.vvv.quote.gz
+SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_EDIT_THREADS)
 PATCHFILES+=	patch-${PATCH_VERSION}.cd.edit_threads.9.2
 CONFIGURE_ARGS+=	--enable-imap-edit-threads
+SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_SIGNATURE_MENU)
 PATCHFILES+=	patch-${PATCH_VERSION}.cd.signatures_menu.2.1
+SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_IFDEF_PATCH)
 PATCHFILES+=	patch-${PATCH_VERSION}.cd.ifdef.1
+SGML_NEEDED=	yes
+.endif
+.if defined(WITH_MUTT_MBOX_HOOK_PATCH)
+PATCHFILES+=	patch-1.5.1.dw.mbox-hook.1
 .endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
@@ -245,6 +266,9 @@ SCRIPTS_ENV+=	MUTT_SIGNATURE_MENU="yes"
 .if defined(WITH_MUTT_IFDEF_PATCH)
 SCRIPTS_ENV+=	MUTT_IFDEF_PATCH="yes"
 .endif
+.if defined(WITH_MUTT_PGP_PATCH)
+SCRIPTS_ENV+=	MUTT_PGP_PATCH="yes"
+.endif
 .if defined(WITH_MUTT_HTML)
 SCRIPTS_ENV+=	MUTT_HTML="yes"
 .endif
@@ -255,10 +279,10 @@ post-build:
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-doc-ref
 	printf ",s|\$${PREFIX}|%s|g\nw\nq\n" ${PREFIX} | \
 		ed -s ${WRKSRC}/doc/mutt.man
-.if defined(WITH_MUTT_NNTP) && !defined(WITHOUT_MUTT_SGMLFORMAT)
+.if defined(WITH_MUTT_HTML)
 SGML_USED=	yes
 .endif
-.if defined(WITH_MUTT_HTML)
+.if defined(SGML_NEEDED) && !defined(WITHOUT_MUTT_SGMLFORMAT)
 SGML_USED=	yes
 .endif
 .else 	# ! NOPORTDOCS
