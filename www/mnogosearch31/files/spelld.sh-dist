@@ -11,6 +11,7 @@ start)
 	if [ -x ${PREFIX}/sbin/spelld ]; then
 # Uncomment to disallow access from outside
 #                /sbin/ipfw -q add 7001 deny tcp from any to any 7001
+		rm -f /var/mnogosearch/spelld.pid
 		su -f -m www -c "exec ${PREFIX}/sbin/spelld &" > /dev/null 2>&1 && echo -n ' spelld'
 	fi
 	;;

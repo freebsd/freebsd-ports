@@ -9,14 +9,3 @@
  	for(i=0;i<MAXRANDOM;i++)
  		Randoms[i]=0;
  }
-@@ -1404,6 +1404,10 @@
- 		if(!UDM_STRNCMP(token,"q=")){
- 			char str[UDMSTRSIZ]="";
- 			query_words=strdup(UdmUnescapeCGIQuery(str,token+2));
-+			if (strlen(query_words) > 512) {
-+				printf("<html><body>Query string too long!</body></html>\n");
-+				return(0);
-+			}
- 			query_url_escaped=strdup(UdmEscapeURL(str,query_words));
- 			query_form_escaped=UdmHtmlSpecialChars(query_words);
- 		}else
