@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portaudit-db
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	security
 DISTFILES=
 
@@ -14,6 +14,8 @@ MAINTAINER=	eik@FreeBSD.org
 COMMENT=	Creates a portaudit database from a current ports tree
 
 RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
+
+DEPENDS_ARGS+=	WITHOUT_PYTHON=yes
 
 DATABASEDIR?=	${AUDITFILE:H}
 

@@ -316,9 +316,9 @@ Usage:
     portaudit makes no claim of authorship or ownership of any of the information contained herein.</p>
       <p>
         If you have found a vulnerability in a FreeBSD port not listed in the
-        database, please <a href="mailto:security-officer@FreeBSD.org?subject=vid%20{$vid}">contact the
-        FreeBSD Security Officer</a>. Refer to
-        <a href="http://www.freebsd.org/security/#sec">"FreeBSD Security
+        database, please <a href="mailto:security@FreeBSD.org?subject=vid%20{$vid}">contact
+        the FreeBSD Security Team</a>. Refer to
+        <a href="http://www.freebsd.org/security/#how">"FreeBSD Security
         Information"</a> for more information.
         </p>
     <hr/>
