@@ -1,3 +1,5 @@
+bin/mbas
+bin/mbas.exe
 bin/mcs
 bin/mcs.exe
 bin/mint
@@ -76,6 +78,7 @@ lib/I18N.West.dll
 lib/I18N.dll
 lib/Microsoft.VisualBasic.dll
 lib/Mono.CSharp.Debugger.dll
+lib/Mono.Data.DB2Client.dll
 lib/Mono.Data.MySql.dll
 lib/Mono.Data.PostgreSqlClient.dll
 lib/Mono.Data.SqliteClient.dll
