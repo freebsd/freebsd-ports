@@ -1,0 +1,202 @@
+--- makeotf.orig	Wed Feb 18 00:02:30 2004
++++ makeotf	Sat Aug 21 20:27:17 2004
+@@ -1,69 +1,69 @@
+ #!/bin/sh
+ echo "making tfm ..."
+ perl script/mktfm.pl
+-pltotf basepl/base-h.pl tfm/nmlminr-h.tfm
+-pltotf basepl/base-v.pl tfm/nmlminr-v.tfm
+-pltotf basepl/base-h.pl tfm/nmlgothr-h.tfm
+-pltotf basepl/base-v.pl tfm/nmlgothr-v.tfm
+-pltotf basepl/base-h.pl tfm/nmlminb-h.tfm
+-pltotf basepl/base-v.pl tfm/nmlminb-v.tfm
+-pltotf basepl/base-h.pl tfm/nmlgothb-h.tfm
+-pltotf basepl/base-v.pl tfm/nmlgothb-v.tfm
+-pltotf basepl/base-h.pl tfm/nmlmgothr-h.tfm
+-pltotf basepl/base-v.pl tfm/nmlmgothr-v.tfm
+-pltotf basepl/base-h.pl tfm/expminr-h.tfm
+-pltotf basepl/base-v.pl tfm/expminr-v.tfm
+-pltotf basepl/base-h.pl tfm/expgothr-h.tfm
+-pltotf basepl/base-v.pl tfm/expgothr-v.tfm
+-pltotf basepl/base-h.pl tfm/expminb-h.tfm
+-pltotf basepl/base-v.pl tfm/expminb-v.tfm
+-pltotf basepl/base-h.pl tfm/expgothb-h.tfm
+-pltotf basepl/base-v.pl tfm/expgothb-v.tfm
+-pltotf basepl/base-h.pl tfm/expmgothr-h.tfm
+-pltotf basepl/base-v.pl tfm/expmgothr-v.tfm
+-pltotf basepl/base-v.pl tfm/rubyminr-v.tfm
+-pltotf basepl/base-h.pl tfm/rubyminr-h.tfm
+-pltotf basepl/base-h.pl tfm/rubygothr-h.tfm
+-pltotf basepl/base-v.pl tfm/rubygothr-v.tfm
+-pltotf basepl/base-v.pl tfm/rubyminb-v.tfm
+-pltotf basepl/base-h.pl tfm/rubyminb-h.tfm
+-pltotf basepl/base-h.pl tfm/rubygothb-h.tfm
+-pltotf basepl/base-v.pl tfm/rubygothb-v.tfm
+-pltotf basepl/base-h.pl tfm/rubymgothr-h.tfm
+-pltotf basepl/base-v.pl tfm/rubymgothr-v.tfm
+-pltotf basepl/base0-h.pl tfm/cidjmr0-h.tfm
+-pltotf basepl/base2-h.pl tfm/cidjmr2-h.tfm
+-pltotf basepl/base2-v.pl tfm/cidjmr2-v.tfm
+-pltotf basepl/base3-v.pl tfm/cidjmr3-v.tfm
+-pltotf basepl/base0-h.pl tfm/cidjgr0-h.tfm
+-pltotf basepl/base2-h.pl tfm/cidjgr2-h.tfm
+-pltotf basepl/base2-v.pl tfm/cidjgr2-v.tfm
+-pltotf basepl/base3-v.pl tfm/cidjgr3-v.tfm
+-pltotf basepl/base0-h.pl tfm/cidjmb0-h.tfm
+-pltotf basepl/base2-h.pl tfm/cidjmb2-h.tfm
+-pltotf basepl/base2-v.pl tfm/cidjmb2-v.tfm
+-pltotf basepl/base3-v.pl tfm/cidjmb3-v.tfm
+-pltotf basepl/base0-h.pl tfm/cidjgb0-h.tfm
+-pltotf basepl/base2-h.pl tfm/cidjgb2-h.tfm
+-pltotf basepl/base2-v.pl tfm/cidjgb2-v.tfm
+-pltotf basepl/base3-v.pl tfm/cidjgb3-v.tfm
+-pltotf basepl/base0-h.pl tfm/cidjmgr0-h.tfm
+-pltotf basepl/base2-h.pl tfm/cidjmgr2-h.tfm
+-pltotf basepl/base2-v.pl tfm/cidjmgr2-v.tfm
+-pltotf basepl/base3-v.pl tfm/cidjmgr3-v.tfm
++pltotf-ptex basepl/base-h.pl tfm/nmlminr-h.tfm
++pltotf-ptex basepl/base-v.pl tfm/nmlminr-v.tfm
++pltotf-ptex basepl/base-h.pl tfm/nmlgothr-h.tfm
++pltotf-ptex basepl/base-v.pl tfm/nmlgothr-v.tfm
++pltotf-ptex basepl/base-h.pl tfm/nmlminb-h.tfm
++pltotf-ptex basepl/base-v.pl tfm/nmlminb-v.tfm
++pltotf-ptex basepl/base-h.pl tfm/nmlgothb-h.tfm
++pltotf-ptex basepl/base-v.pl tfm/nmlgothb-v.tfm
++pltotf-ptex basepl/base-h.pl tfm/nmlmgothr-h.tfm
++pltotf-ptex basepl/base-v.pl tfm/nmlmgothr-v.tfm
++pltotf-ptex basepl/base-h.pl tfm/expminr-h.tfm
++pltotf-ptex basepl/base-v.pl tfm/expminr-v.tfm
++pltotf-ptex basepl/base-h.pl tfm/expgothr-h.tfm
++pltotf-ptex basepl/base-v.pl tfm/expgothr-v.tfm
++pltotf-ptex basepl/base-h.pl tfm/expminb-h.tfm
++pltotf-ptex basepl/base-v.pl tfm/expminb-v.tfm
++pltotf-ptex basepl/base-h.pl tfm/expgothb-h.tfm
++pltotf-ptex basepl/base-v.pl tfm/expgothb-v.tfm
++pltotf-ptex basepl/base-h.pl tfm/expmgothr-h.tfm
++pltotf-ptex basepl/base-v.pl tfm/expmgothr-v.tfm
++pltotf-ptex basepl/base-v.pl tfm/rubyminr-v.tfm
++pltotf-ptex basepl/base-h.pl tfm/rubyminr-h.tfm
++pltotf-ptex basepl/base-h.pl tfm/rubygothr-h.tfm
++pltotf-ptex basepl/base-v.pl tfm/rubygothr-v.tfm
++pltotf-ptex basepl/base-v.pl tfm/rubyminb-v.tfm
++pltotf-ptex basepl/base-h.pl tfm/rubyminb-h.tfm
++pltotf-ptex basepl/base-h.pl tfm/rubygothb-h.tfm
++pltotf-ptex basepl/base-v.pl tfm/rubygothb-v.tfm
++pltotf-ptex basepl/base-h.pl tfm/rubymgothr-h.tfm
++pltotf-ptex basepl/base-v.pl tfm/rubymgothr-v.tfm
++pltotf-ptex basepl/base0-h.pl tfm/cidjmr0-h.tfm
++pltotf-ptex basepl/base2-h.pl tfm/cidjmr2-h.tfm
++pltotf-ptex basepl/base2-v.pl tfm/cidjmr2-v.tfm
++pltotf-ptex basepl/base3-v.pl tfm/cidjmr3-v.tfm
++pltotf-ptex basepl/base0-h.pl tfm/cidjgr0-h.tfm
++pltotf-ptex basepl/base2-h.pl tfm/cidjgr2-h.tfm
++pltotf-ptex basepl/base2-v.pl tfm/cidjgr2-v.tfm
++pltotf-ptex basepl/base3-v.pl tfm/cidjgr3-v.tfm
++pltotf-ptex basepl/base0-h.pl tfm/cidjmb0-h.tfm
++pltotf-ptex basepl/base2-h.pl tfm/cidjmb2-h.tfm
++pltotf-ptex basepl/base2-v.pl tfm/cidjmb2-v.tfm
++pltotf-ptex basepl/base3-v.pl tfm/cidjmb3-v.tfm
++pltotf-ptex basepl/base0-h.pl tfm/cidjgb0-h.tfm
++pltotf-ptex basepl/base2-h.pl tfm/cidjgb2-h.tfm
++pltotf-ptex basepl/base2-v.pl tfm/cidjgb2-v.tfm
++pltotf-ptex basepl/base3-v.pl tfm/cidjgb3-v.tfm
++pltotf-ptex basepl/base0-h.pl tfm/cidjmgr0-h.tfm
++pltotf-ptex basepl/base2-h.pl tfm/cidjmgr2-h.tfm
++pltotf-ptex basepl/base2-v.pl tfm/cidjmgr2-v.tfm
++pltotf-ptex basepl/base3-v.pl tfm/cidjmgr3-v.tfm
+ #for extra fonts
+-pltotf basepl/base-h.pl tfm/nmlgotheb-h.tfm
+-pltotf basepl/base-v.pl tfm/nmlgotheb-v.tfm
+-pltotf basepl/base-h.pl tfm/nmlminl-h.tfm
+-pltotf basepl/base-v.pl tfm/nmlminl-v.tfm
+-pltotf basepl/base-h.pl tfm/expminl-h.tfm
+-pltotf basepl/base-v.pl tfm/expminl-v.tfm
+-pltotf basepl/base-v.pl tfm/rubyminl-v.tfm
+-pltotf basepl/base-h.pl tfm/rubyminl-h.tfm
+-pltotf basepl/base0-h.pl tfm/cidjml0-h.tfm
+-pltotf basepl/base2-h.pl tfm/cidjml2-h.tfm
+-pltotf basepl/base2-v.pl tfm/cidjml2-v.tfm
+-pltotf basepl/base3-v.pl tfm/cidjml3-v.tfm
++pltotf-ptex basepl/base-h.pl tfm/nmlgotheb-h.tfm
++pltotf-ptex basepl/base-v.pl tfm/nmlgotheb-v.tfm
++pltotf-ptex basepl/base-h.pl tfm/nmlminl-h.tfm
++pltotf-ptex basepl/base-v.pl tfm/nmlminl-v.tfm
++pltotf-ptex basepl/base-h.pl tfm/expminl-h.tfm
++pltotf-ptex basepl/base-v.pl tfm/expminl-v.tfm
++pltotf-ptex basepl/base-v.pl tfm/rubyminl-v.tfm
++pltotf-ptex basepl/base-h.pl tfm/rubyminl-h.tfm
++pltotf-ptex basepl/base0-h.pl tfm/cidjml0-h.tfm
++pltotf-ptex basepl/base2-h.pl tfm/cidjml2-h.tfm
++pltotf-ptex basepl/base2-v.pl tfm/cidjml2-v.tfm
++pltotf-ptex basepl/base3-v.pl tfm/cidjml3-v.tfm
+ echo "making vf (wait a while)..."
+ perl script/mkutfvf.pl
+ echo "vf for utf finished. making vf for cid..."
+@@ -113,37 +113,37 @@
+ ./mkjvf -cm -cp -ruby rubyminl-v hminl-v cidjminl
+ echo "making proportional kana tfm/vf"
+ perl script/mkpkana.pl
+-pltotf -kanji=euc pl/phiraminw6-h.pl tfm/phiraminw6-h.tfm
+-pltotf -kanji=euc pl/phirakakuw3-h.pl tfm/phirakakuw3-h.tfm
+-pltotf -kanji=euc pl/phiraminw3-h.pl tfm/phiraminw3-h.tfm
+-pltotf -kanji=euc pl/phiramaruw4-h.pl tfm/phiramaruw4-h.tfm
+-pltotf -kanji=euc pl/phirakakuw6-h.pl tfm/phirakakuw6-h.tfm
+-ovp2ovf ovp/phirakakuw3-h.ovp vf/phirakakuw3-h.vf vf/phirakakuw3-h.ofm
+-ovp2ovf ovp/phiraminw6-h.ovp vf/phiraminw6-h.vf vf/phiraminw6-h.ofm
+-ovp2ovf ovp/phiraminw3-h.ovp vf/phiraminw3-h.vf vf/phiraminw3-h.ofm
+-ovp2ovf ovp/phirakakuw6-h.ovp vf/phirakakuw6-h.vf vf/phirakakuw6-h.ofm
+-ovp2ovf ovp/phiramaruw4-h.ovp vf/phiramaruw4-h.vf vf/phiramaruw4-h.ofm
++pltotf-ptex -kanji=euc pl/phiraminw6-h.pl tfm/phiraminw6-h.tfm
++pltotf-ptex -kanji=euc pl/phirakakuw3-h.pl tfm/phirakakuw3-h.tfm
++pltotf-ptex -kanji=euc pl/phiraminw3-h.pl tfm/phiraminw3-h.tfm
++pltotf-ptex -kanji=euc pl/phiramaruw4-h.pl tfm/phiramaruw4-h.tfm
++pltotf-ptex -kanji=euc pl/phirakakuw6-h.pl tfm/phirakakuw6-h.tfm
++ovp2ovf-old ovp/phirakakuw3-h.ovp vf/phirakakuw3-h.vf vf/phirakakuw3-h.ofm
++ovp2ovf-old ovp/phiraminw6-h.ovp vf/phiraminw6-h.vf vf/phiraminw6-h.ofm
++ovp2ovf-old ovp/phiraminw3-h.ovp vf/phiraminw3-h.vf vf/phiraminw3-h.ofm
++ovp2ovf-old ovp/phirakakuw6-h.ovp vf/phirakakuw6-h.vf vf/phirakakuw6-h.ofm
++ovp2ovf-old ovp/phiramaruw4-h.ovp vf/phiramaruw4-h.vf vf/phiramaruw4-h.ofm
+ perl script/mkvpkana.pl
+-pltotf -kanji=euc pl/phiraminw6-v.pl tfm/phiraminw6-v.tfm
+-pltotf -kanji=euc pl/phirakakuw3-v.pl tfm/phirakakuw3-v.tfm
+-pltotf -kanji=euc pl/phiraminw3-v.pl tfm/phiraminw3-v.tfm
+-pltotf -kanji=euc pl/phiramaruw4-v.pl tfm/phiramaruw4-v.tfm
+-pltotf -kanji=euc pl/phirakakuw6-v.pl tfm/phirakakuw6-v.tfm
+-ovp2ovf ovp/phirakakuw3-v.ovp vf/phirakakuw3-v.vf vf/phirakakuw3-v.ofm
+-ovp2ovf ovp/phiraminw6-v.ovp vf/phiraminw6-v.vf vf/phiraminw6-v.ofm
+-ovp2ovf ovp/phiraminw3-v.ovp vf/phiraminw3-v.vf vf/phiraminw3-v.ofm
+-ovp2ovf ovp/phirakakuw6-v.ovp vf/phirakakuw6-v.vf vf/phirakakuw6-v.ofm
+-ovp2ovf ovp/phiramaruw4-v.ovp vf/phiramaruw4-v.vf vf/phiramaruw4-v.ofm
+-pltotf basepl/base-h.pl tfm/hiramin-w3-h.tfm
+-pltotf basepl/base-h.pl tfm/hiramin-w6-h.tfm
+-pltotf basepl/base-h.pl tfm/hirakaku-w3-h.tfm
+-pltotf basepl/base-h.pl tfm/hirakaku-w6-h.tfm
+-pltotf basepl/base-h.pl tfm/hiramaru-w4-h.tfm
+-pltotf basepl/base-v.pl tfm/hiramin-w3-v.tfm
+-pltotf basepl/base-v.pl tfm/hiramin-w6-v.tfm
+-pltotf basepl/base-v.pl tfm/hirakaku-w3-v.tfm
+-pltotf basepl/base-v.pl tfm/hirakaku-w6-v.tfm
+-pltotf basepl/base-v.pl tfm/hiramaru-w4-v.tfm
++pltotf-ptex -kanji=euc pl/phiraminw6-v.pl tfm/phiraminw6-v.tfm
++pltotf-ptex -kanji=euc pl/phirakakuw3-v.pl tfm/phirakakuw3-v.tfm
++pltotf-ptex -kanji=euc pl/phiraminw3-v.pl tfm/phiraminw3-v.tfm
++pltotf-ptex -kanji=euc pl/phiramaruw4-v.pl tfm/phiramaruw4-v.tfm
++pltotf-ptex -kanji=euc pl/phirakakuw6-v.pl tfm/phirakakuw6-v.tfm
++ovp2ovf-old ovp/phirakakuw3-v.ovp vf/phirakakuw3-v.vf vf/phirakakuw3-v.ofm
++ovp2ovf-old ovp/phiraminw6-v.ovp vf/phiraminw6-v.vf vf/phiraminw6-v.ofm
++ovp2ovf-old ovp/phiraminw3-v.ovp vf/phiraminw3-v.vf vf/phiraminw3-v.ofm
++ovp2ovf-old ovp/phirakakuw6-v.ovp vf/phirakakuw6-v.vf vf/phirakakuw6-v.ofm
++ovp2ovf-old ovp/phiramaruw4-v.ovp vf/phiramaruw4-v.vf vf/phiramaruw4-v.ofm
++pltotf-ptex basepl/base-h.pl tfm/hiramin-w3-h.tfm
++pltotf-ptex basepl/base-h.pl tfm/hiramin-w6-h.tfm
++pltotf-ptex basepl/base-h.pl tfm/hirakaku-w3-h.tfm
++pltotf-ptex basepl/base-h.pl tfm/hirakaku-w6-h.tfm
++pltotf-ptex basepl/base-h.pl tfm/hiramaru-w4-h.tfm
++pltotf-ptex basepl/base-v.pl tfm/hiramin-w3-v.tfm
++pltotf-ptex basepl/base-v.pl tfm/hiramin-w6-v.tfm
++pltotf-ptex basepl/base-v.pl tfm/hirakaku-w3-v.tfm
++pltotf-ptex basepl/base-v.pl tfm/hirakaku-w6-v.tfm
++pltotf-ptex basepl/base-v.pl tfm/hiramaru-w4-v.tfm
+ echo "making ofm file for dvipdfmx in CVS"
+ perl script/mkcidofm.pl
+ perl script/mkpropofm.pl

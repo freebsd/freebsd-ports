@@ -1,0 +1,16 @@
+
+Several fontmap files are installed in %%DVIPSDIR%%
+and %%DVIPDFMDIR%%:
+
+ for udvips:
+	ckt.map (Korean and Chinese support)
+	hiragino.map
+	kozuka.map
+	morisawa.map
+
+ for dvipdfmx:
+	cktx.map (Korean and Chinese support)
+	hiraginox.map
+	kozukax.map
+	morisawax.map
+	cid-otf-noembed.map (for Ryumin/GothicBBB)

@@ -1,0 +1,15 @@
+%% $FreeBSD$
+
+otf-ujmr-h    UniJIS-UTF16-H Ryumin-Light
+otf-ujmr-v    UniJIS-UTF16-V Ryumin-Light
+otf-cjmr-h    Adobe-Japan1-5 Ryumin-Light
+otf-cjmr-v    Adobe-Japan1-5-V Ryumin-Light
+hminr-h       H Ryumin-Light
+hminr-v       V Ryumin-Light
+
+otf-ujgr-h    UniJIS-UTF16-H GothicBBB-Medium
+otf-ujgr-v    UniJIS-UTF16-V GothicBBB-Medium
+otf-cjgr-h    Adobe-Japan1-5 GothicBBB-Medium
+otf-cjgr-v    Adobe-Japan1-5-V GothicBBB-Medium
+hgothr-h      H GothicBBB-Medium
+hgothr-v      V GothicBBB-Medium

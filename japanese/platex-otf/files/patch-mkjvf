@@ -1,0 +1,11 @@
+--- mkjvf.orig	Wed Feb 25 04:03:52 2004
++++ mkjvf	Sat Aug 21 20:28:00 2004
+@@ -194,7 +194,7 @@
+ }
+ sub make_vf {
+ 	close(OVP);
+-	system("ovp2ovf $tfm_name.ovp $tfm_name.vf $tfm_name.ofm");
++	system("ovp2ovf-old $tfm_name.ovp $tfm_name.vf $tfm_name.ofm");
+ 	unlink "$tfm_name.ovp";
+ 	unlink "$tfm_name.ofm";
+ }
