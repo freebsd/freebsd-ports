@@ -1,6 +1,6 @@
 --- browser/app/mozilla.in.orig	Sat Nov 13 00:54:51 2004
 +++ browser/app/mozilla.in	Sat Nov 13 00:57:22 2004
-@ -110,6 +110,7 @@
+@@ -110,6 +110,7 @@
    # Check default compile-time libdir
    if [ -x "$moz_libdir/run-mozilla.sh" ]; then
      dist_bin="$moz_libdir"
