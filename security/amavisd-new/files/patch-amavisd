@@ -1,11 +1,20 @@
---- amavisd.orig	Fri Jan 10 22:03:39 2003
-+++ amavisd	Thu Mar  6 21:18:38 2003
-@@ -5070,7 +5070,7 @@
- my($amavisd_path) = find_program_path($0, [split(/:/, $path, -1)]);
- $amavisd_path = $1  if $amavisd_path =~ m{^([A-Za-z0-9/._=+-]+)$};    # untaint
+--- amavisd.orig	Mon Aug 25 18:07:56 2003
++++ amavisd	Mon Aug 25 20:47:40 2003
+@@ -3903,7 +3903,7 @@
+ 	/^\.lzo$/  && defined $lzop
+ 	    && return do_uncompress($part,$tempdir,"$lzop -d -c");
+ 	/^\.cpio$/ && defined $cpio && return do_cpio($part,$tempdir);
+-#	/^\.tar$/  && defined $cpio && return do_cpio($part,$tempdir);
++	/^\.tar$/  && defined $cpio && return do_cpio($part,$tempdir);
+ 	/^\.tar$/  && return do_tar($part,$tempdir);  # fallback
+ 	/^\.zip$/  && return do_unzip($part,0,$tempdir);
+ 	/^\.rar$/  && return do_unrar($part,0,$tempdir);
+@@ -6260,7 +6260,7 @@
+ my($amavisd_path) = find_program_path($0, [split(/:/, $path, -1)], 0);
+ $amavisd_path = $1 if $amavisd_path=~m{^([A-Za-z0-9/._=+-]+)$(?!\n)}; # untaint
  
 -my($config_file) = '/etc/amavisd.conf';  # default location of config file
 +my($config_file) = '%%PREFIX%%/etc/amavisd.conf';  # default location of config file
  if (@ARGV >= 2 && $ARGV[0] eq '-c') {    # override by command line option -c
      shift @ARGV; $config_file = shift @ARGV;
-     $config_file = $1  if $config_file =~ m{^([A-Za-z0-9/._=+-]+)$};  # untaint
+     $config_file = $1 if $config_file=~m{^([A-Za-z0-9/._=+-]+)$(?!\n)};# untaint
