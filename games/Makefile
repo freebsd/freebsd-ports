@@ -223,6 +223,7 @@
     SUBDIR += mirrormagic
     SUBDIR += miscom
     SUBDIR += moon-buggy
+    SUBDIR += mvdsv
     SUBDIR += myth2_demo
     SUBDIR += mythserver
     SUBDIR += nInvaders
