@@ -69,7 +69,7 @@ gtk12_CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}"
 gtk12_MAKE_ENV=		GTK_CONFIG="${GTK_CONFIG}"
 gtk12_PKGNAMESUFFIX=	-gtk
 gtk12_DETECT=		${GTK_CONFIG}
-gtk12_USE_GNOME_IMPL=	glib12 gnomehier
+gtk12_USE_GNOME_IMPL=	glib12
 
 XML_CONFIG?=		${LOCALBASE}/bin/xml-config
 libxml_LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
