@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	wput
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5
 CATEGORIES=	ftp
 MASTER_SITES=	http://itooktheredpill.dyndns.org/wput/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	chip-set@mail.ru
 COMMENT=	Uploads files or directories to a ftpserver with support of resuming
-
-BROKEN=		Size mismatch
 
 PORTDOCS=	TODO ChangeLog
 
@@ -26,6 +24,7 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	LIBS="${LDFLAGS}"
 
 PLIST_FILES=	bin/wput
+MANCOMPRESSED=	yes
 MAN1=		wput.1
 
 post-install:
