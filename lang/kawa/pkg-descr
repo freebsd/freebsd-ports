@@ -1,0 +1,7 @@
+Kawa is a full Scheme implementation written in Java. With Kawa
+you can access Java objects, methods, fields and classes within
+your scheme code. Scheme functions and files are compiled into
+optimized Java byte-code, allowing you to write Java
+applications, applets, classes, and servlets in scheme.
+
+WWW: http://www.gnu.org/software/kawa/
