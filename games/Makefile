@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.152 1998/07/04 19:33:26 steve Exp $
+# $Id: Makefile,v 1.153 1998/07/12 23:09:51 steve Exp $
 #
 
     SUBDIR += 3dc
@@ -109,6 +109,7 @@
     SUBDIR += xminehunter
     SUBDIR += xminesweep
     SUBDIR += xmj
+    SUBDIR += xmlink
     SUBDIR += xmris
     SUBDIR += xneko
     SUBDIR += xnibbles
