@@ -1,8 +1,30 @@
-*** Unix/ui.c	Sun Oct  2 15:28:51 1994
---- Unix/ui.c	Sun Oct  2 15:30:05 1994
+*** Unix/ui.c.orig	Sun Feb 13 17:45:57 1994
+--- Unix/ui.c	Sun Nov 27 15:06:44 1994
 ***************
-*** 82,88 ****
---- 82,90 ----
+*** 69,74 ****
+--- 69,76 ----
+   *
+   */
+  
++ #include "defs.h"
++ 
+  #ifdef dec
+  #define stub_only
+  #endif
+***************
+*** 82,92 ****
+  #include <sys/termio.h>
+  #endif
+  #ifdef __386BSD__
+  #include <sys/ioctl.h>
+  #endif
+  #include <stdio.h>
+  #include <signal.h>
+- #include "defs.h"
+  #include "extern.h"
+  #include "tags.h"
+  #include "prefs.h"
+--- 84,95 ----
   #include <sys/termio.h>
   #endif
   #ifdef __386BSD__
@@ -12,9 +34,12 @@
   #endif
   #include <stdio.h>
   #include <signal.h>
+  #include "extern.h"
+  #include "tags.h"
+  #include "prefs.h"
 ***************
 *** 193,198 ****
---- 195,201 ----
+--- 196,202 ----
      if (run_in_fg())
         {
   #ifdef __386BSD__
@@ -31,7 +56,7 @@
   #else
         ioctl(fileno(stdin), TCSETA, &zap);
   #endif
---- 220,226 ----
+--- 221,227 ----
   #endif
         zap.c_lflag &= ~(ICANON | ECHO);
   #ifdef __386BSD__
@@ -41,7 +66,7 @@
   #endif
 ***************
 *** 227,232 ****
---- 230,244 ----
+--- 231,245 ----
         is_fg = FALSE;
      }
   
@@ -72,7 +97,7 @@
      }
   
   
---- 252,264 ----
+--- 253,265 ----
         {
         psanity = &sanity;
   #ifdef __386BSD__
@@ -95,7 +120,7 @@
   #else
         ioctl(fileno(stdin), TCSETA, psanity);
   #endif
---- 267,273 ----
+--- 268,274 ----
   LOCAL void sane_tty()
      {
   #ifdef __386BSD__
