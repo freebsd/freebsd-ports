@@ -8692,6 +8692,7 @@ wmpuzzle	ports/games/wmpuzzle
 wmq3		ports/net/wmq3
 wmrecord	ports/audio/wmrecord
 wmshuffle	ports/games/wmshuffle
+wmshutdown	ports/x11/wmshutdown
 wmsmixer	ports/audio/wmsmixer
 wmsolar		ports/astro/wmsolar
 wmspaceweather	ports/astro/wmspaceweather
