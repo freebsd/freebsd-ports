@@ -23,7 +23,7 @@ missing=$(/usr/bin/awk -v FS="|" -v pkgdir=$pkgdir '{
 delete=""
 sed=""
 for i in $missing; do
-	if fgrep -q $i $tmpindex; then
+	if grep -q "[ |]$i[ |]" $tmpindex; then
 		delete="$delete $i"
 		sed="$sed -e s/$(echo $i | sed -e 's/\./\\./g')//g"
 	fi
