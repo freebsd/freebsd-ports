@@ -2545,6 +2545,7 @@ icqlib0		ports/net/icqlib0
 icqmail		ports/mail/icqmail
 icqnix		ports/net/icqnix
 icu		ports/devel/icu
+icu2		ports/devel/icu2
 icukrell	ports/net/icukrell
 id-utils	ports/devel/id-utils
 id3ed		ports/audio/id3ed
