@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnumail
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.collaboration-world.com/gnumail.data/releases/Stable/
 DISTNAME=	GNUMail-${PORTVERSION}
@@ -16,7 +15,9 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep mail client
 
 BUILD_DEPENDS+=	${LOCALLIBDIR}/libPantomime.so:${PORTSDIR}/${PANTOMIME_PORT}
+BUILD_DEPENDS+=	${LOCALLIBDIR}/libAddresses.so:${PORTSDIR}/mail/addresses
 RUN_DEPENDS+=	${LOCALLIBDIR}/libPantomime.so:${PORTSDIR}/${PANTOMIME_PORT}
+RUN_DEPENDS+=	${LOCALLIBDIR}/libAddresses.so:${PORTSDIR}/mail/addresses
 
 PREFIX=		${LOCALBASE}/GNUstep
 NO_MTREE=	yes
