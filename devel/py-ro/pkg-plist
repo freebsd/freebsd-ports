@@ -87,8 +87,10 @@ lib/%%PYTHON_VERSION%%/site-packages/Pyro/xnsc.pyo
 %%PORTDOCS%%share/examples/py-ro/agent2/serv/server.py
 %%PORTDOCS%%share/examples/py-ro/agent2/serv/shop.py
 %%PORTDOCS%%share/examples/py-ro/attributes/Readme.txt
+%%PORTDOCS%%share/examples/py-ro/attributes/attrs_proxy.py
 %%PORTDOCS%%share/examples/py-ro/attributes/client.py
 %%PORTDOCS%%share/examples/py-ro/attributes/server.py
+%%PORTDOCS%%share/examples/py-ro/attributes/t.py
 %%PORTDOCS%%share/examples/py-ro/autoreconnect/Readme.txt
 %%PORTDOCS%%share/examples/py-ro/autoreconnect/client.py
 %%PORTDOCS%%share/examples/py-ro/autoreconnect/server.py

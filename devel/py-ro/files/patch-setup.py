@@ -1,20 +1,24 @@
---- setup.py.orig	Fri Mar 22 18:04:34 2002
-+++ setup.py	Fri Mar 22 18:11:18 2002
-@@ -36,16 +36,11 @@
- 	else:	
+--- setup.py.orig	Sat May 18 04:48:44 2002
++++ setup.py	Tue May 21 04:24:22 2002
+@@ -35,19 +35,13 @@
+ 		print 'This script will install Pyro on your system.'
  		# first, confirm the installation path of the scripts.
  		scripts=[]
 -		scr=raw_input('Do you want the Pyro scripts (in bin/) installed (y/n)? ')
 +		scr='y'
+ 		config='setup.cfg'
  		if scr.lower()=='y':
  			cp=ConfigParser()
- 			cp.read('setup.cfg')
- 			loc=cp.get('install','install-scripts')
+ 			cp.read(config)
+ 			#loc=cp.get('install','install-scripts')
 -			print 'Some Pyro scripts may conflict with system tools already on your system.'
 -			print 'Choose your script install directory carefully.'
--			scr=raw_input('Where do you want them to be installed ('+loc+')? ')
+-			print 'The default location is usually something like C:\\Python\\Scripts'
+-			print 'on Windows and /usr/local/bin on Unixes.'
+-			#scr=raw_input('Where do you want them to be installed ('+loc+')? ')
+-			scr=raw_input('Where do you want them to be installed (empty=default loc.)? ')
 -			if scr:
--				loc=scr
- 			cp.set('install','install-scripts',loc)
- 			cp.write(open('setup.cfg','w'))
- 		
++			if 0:
+ 				loc=scr
+ 				if not cp.has_section('install'):
+ 					cp.add_section('install')

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ro
-PORTVERSION=	2.7
+PORTVERSION=	2.8
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pyro
@@ -22,8 +22,8 @@ USE_PYDISTUTILS=	yes
 DOCSDIR=	${PREFIX}/share/doc/py-ro
 EXAMPLESDIR=	${PREFIX}/share/examples/py-ro
 
-post-patch:
-	${PERL} -pi -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/setup.cfg
+post-extract:
+	@${FIND} ${WRKSRC}/examples -name '*.pyc' -exec ${RM} -f {} \;
 
 .if !defined(NOPORTDOCS)
 post-install:
