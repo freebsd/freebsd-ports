@@ -6,21 +6,18 @@
 #
 
 PORTNAME=	gbackground
-PORTVERSION=	1.0.0.b2
-PORTREVISION=	1
+PORTVERSION=	1.0.0
+#PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://gBackGround.sourceforge.net/
-DISTNAME=	gBackGround-1.0.0-beta2
+DISTNAME=	gBackGround-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome Panel applet to change the background on the desktop
 
-USE_GNOME=	gnomelibs libpanel
+USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
-ALL_TARGET=	gBackGround_applet
-USE_X_PREFIX=	YES
-USE_AUTOCONF=	YES
-MAKE_ENV=	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-			INSTALL_DATA="${INSTALL_DATA}"
+USE_GNOME=	libpanel
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
