@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ro
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pyro
@@ -20,8 +20,8 @@ COMMENT=	Python Remote Objects
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-DOCSDIR=	${PREFIX}/share/doc/py-ro
-EXAMPLESDIR=	${PREFIX}/share/examples/py-ro
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
 post-patch:
 	${ECHO} -e 'install-scripts=${PREFIX}/bin\n' \
