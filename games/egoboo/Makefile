@@ -15,7 +15,7 @@ DISTNAME=	ego222
 MAINTAINER=	Jan.Stocker@t-online.de
 COMMENT=	A 3d dungeon crawling adventure in the spirit of NetHack
 
-BROKEN=		"gmake is a BUILD_DEPENDS but is used in the patch phase"
+PATCH_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_SDL=	sdl
