@@ -1,7 +1,7 @@
 bin/explosions
-share/doc/explosions/BUGS.txt
-share/doc/explosions/CHANGES.txt
-share/doc/explosions/README.txt
+%%PORTDOCS%%share/doc/explosions/BUGS.txt
+%%PORTDOCS%%share/doc/explosions/CHANGES.txt
+%%PORTDOCS%%share/doc/explosions/README.txt
 share/explosions/spark1.png
 share/explosions/spark2.png
 share/explosions/spark3.png
@@ -10,3 +10,4 @@ share/explosions/spark5.png
 share/explosions/spark6.png
 share/explosions/spark7.png
 @dirrm share/explosions
+%%PORTDOCS%%@dirrm share/doc/explosions
