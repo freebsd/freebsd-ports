@@ -1,0 +1,6 @@
+A library that builds up a specialized mtrie, a supposedly efficient data
+structure for looking up IP addresses.
+
+See the test program in the distribution for examples.
+
+-Alfred Perlstein <alfred@freebsd.org>
