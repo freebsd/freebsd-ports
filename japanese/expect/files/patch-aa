@@ -1,5 +1,5 @@
---- Makefile.in.ORIG	Fri Oct 17 10:44:20 1997
-+++ Makefile.in	Fri Oct 17 10:45:10 1997
+--- Makefile.in.ORIG	Fri Oct 17 14:53:29 1997
++++ Makefile.in	Fri Oct 17 14:54:11 1997
 @@ -30,7 +30,7 @@
  TCL_LIBRARY = @TCL_LIBRARY@
  
@@ -23,7 +23,7 @@
  man3dir = $(mandir)/man3
  infodir = @infodir@
 -includedir = @includedir@
-+includedir = @includedir@/expect5.25jp
++includedir = @includedir@/expect$(VERSION)
  
  # Expect's utility script directories - arch-independent and arch-non-
  # independent.  These correspond to the variables "exp_library" and
@@ -84,11 +84,26 @@
  
  # install Expect library
  # This is done before the install target because the libraries have to be
-@@ -350,12 +352,12 @@
+@@ -341,21 +343,22 @@
+ #   Local copy is pkgIndex rather than pkgIndex.tcl because pkgIndex.tcl.in
+ #   is too long for some filesystems, sigh.
+ install_shared_lib: $(EXP_LIB_FILES)
++	${srcdir}/mkinstalldirs $(tcl_libdir)
+ 	${srcdir}/mkinstalldirs $(libdir)
+ 	if [ -s $(EXP_UNSHARED_LIB_FILE) ] ; then \
+-	  $(INSTALL_DATA) $(EXP_UNSHARED_LIB_FILE) $(libdir)/$(EXP_UNSHARED_LIB_FILE) ; \
+-	  $(UNSHARED_RANLIB) $(libdir)/$(EXP_UNSHARED_LIB_FILE) ; \
+-	  $(INSTALL_DATA) $(EXP_UNSHARED_LIB_FILE) $(tcl_libdir)/$(EXP_UNSHARED_LIB_FILE) ; \
+-	  $(UNSHARED_RANLIB) $(tcl_libdir)/$(EXP_UNSHARED_LIB_FILE) ; \
++	  $(INSTALL_DATA) $(EXP_UNSHARED_LIB_FILE) $(LIB_INSTALL_DIR)/$(EXP_UNSHARED_LIB_FILE) ; \
++	  $(UNSHARED_RANLIB) $(LIB_INSTALL_DIR)/$(EXP_UNSHARED_LIB_FILE) ; \
++	  $(INSTALL_DATA) $(EXP_UNSHARED_LIB_FILE) $(LIB_INSTALL_DIR)/$(EXP_UNSHARED_LIB_FILE) ; \
++	  $(UNSHARED_RANLIB) $(LIB_INSTALL_DIR)/$(EXP_UNSHARED_LIB_FILE) ; \
  	else true; fi
  	if [ -s $(EXP_SHARED_LIB_FILE) ] ; then \
- 	  $(INSTALL_PROGRAM) $(EXP_SHARED_LIB_FILE) $(tcl_libdir)/$(EXP_SHARED_LIB_FILE) ; \
+-	  $(INSTALL_PROGRAM) $(EXP_SHARED_LIB_FILE) $(tcl_libdir)/$(EXP_SHARED_LIB_FILE) ; \
 -	  $(INSTALL_PROGRAM) pkgIndex $(libdir)/pkgIndex.tcl ; \
++	  $(INSTALL_PROGRAM) $(EXP_SHARED_LIB_FILE) $(LIB_INSTALL_DIR)/$(EXP_SHARED_LIB_FILE) ; \
 +	  $(INSTALL_SCRIPT) pkgIndex $(libdir)/pkgIndex.tcl ; \
  	else true; fi
  
@@ -101,7 +116,7 @@
  
  # Build Expect with TestCenter
  expect.tc: exp_main_exp.o $(OFILES) 
-@@ -368,13 +370,13 @@
+@@ -368,13 +371,13 @@
  # together.  I could fix it by testing all the libraries (again, in Expect's
  # configure) separately for Expectk, but as far as I know, it doesn't hurt
  # anything here, so I'm not worrying about it.
@@ -122,7 +137,7 @@
  
  # Build Expectk with TestCenter
  expectk.tc: exp_main_tk.o $(OFILES) 
-@@ -397,19 +399,14 @@
+@@ -397,19 +400,14 @@
  .PHONY: install-info install info
  install-info:
  
@@ -147,7 +162,7 @@
  # install Expect's public include files
  #	$(INSTALL_DATA) expect_cf.h $(includedir)
  	$(INSTALL_DATA) $(srcdir)/expect.h $(includedir)
-@@ -430,15 +427,10 @@
+@@ -430,15 +428,10 @@
  	${srcdir}/mkinstalldirs $(bindir_arch_indep) $(man1dir) $(SCRIPTDIR) $(EXECSCRIPTDIR)
  	-for i in $(SCRIPT_LIST) ; do \
  	  if [ -f $$i ] ; then \
@@ -164,23 +179,25 @@
  
  $(SCRIPT_LIST):
  	TCL_LIBRARY=$(TCL_LIBRARY) ; \
-@@ -448,14 +440,11 @@
+@@ -448,14 +441,11 @@
  # Delete all the installed files that the `install' target creates
  # (but not the noninstalled files such as `make all' creates)
  uninstall:
 -	-rm -f  $(bindir)/expectk \
 -		$(man1dir)/expect.1 \
 -		$(man1dir)/expectk.1 \
+-		$(libdir)/$(EXP_SHARED_LIB_FILE) \
 +	-rm -f  $(bindir)/expectkjp \
- 		$(libdir)/$(EXP_SHARED_LIB_FILE) \
++		$(tcl_libdir)/$(EXP_SHARED_LIB_FILE) \
  		$(tcl_libdir)/$(EXP_SHARED_LIB_FILE) \
- 		$(libdir)/$(EXP_UNSHARED_LIB_FILE) \
+-		$(libdir)/$(EXP_UNSHARED_LIB_FILE) \
  		$(tcl_libdir)/$(EXP_UNSHARED_LIB_FILE) \
 -		$(man3dir)/libexpect.3 \
++		$(tcl_libdir)/$(EXP_UNSHARED_LIB_FILE) \
  		$(includedir)/expect_cf.h \
  		$(includedir)/expect.h \
  		$(includedir)/expect_tcl.h \
-@@ -464,10 +453,7 @@
+@@ -464,10 +454,7 @@
  # debugger is not removed, since other things could depend on it
  # remove standalone scripts and man pages
  	-for i in $(SCRIPT_LIST) ; do \
@@ -192,7 +209,7 @@
  	done
  
  ###################################
-@@ -514,7 +500,7 @@
+@@ -514,7 +501,7 @@
  # delete all files from current directory that are created by "make"
  clean:
  	-rm -rf *~ *.o shared core \
@@ -201,7 +218,7 @@
  		dumb exho devtty \
  		$(EXP_UNSHARED_LIB_FILE) $(EXP_SHARED_LIB_FILE) \
  		$(SCRIPT_LIST)
-@@ -530,7 +516,7 @@
+@@ -530,7 +517,7 @@
  # because most people don't have to worry about them
  mostlyclean:
  	-rm -rf *~ *.o shared core \
@@ -210,7 +227,7 @@
  		$(EXP_UNSHARED_LIB_FILE) $(EXP_SHARED_LIB_FILE)
  	@$(MAKE) subdir_do DO=$@ $(FLAGS_TO_PASS)
  
-@@ -682,7 +668,7 @@
+@@ -682,7 +669,7 @@
  expect-$(VERSION).tar.gz:	expect-$(VERSION).tar
  	gzip -fc expect-$(VERSION).tar > $@
  
@@ -219,7 +236,7 @@
  	rm -f .tmp
  	echo "set objdir" `pwd` > .tmp
  	if [ "$(srcdir)" = "." ] ; then \
-@@ -692,7 +678,7 @@
+@@ -692,7 +679,7 @@
  	echo "source all" >> .tmp
  	rootme=`pwd`; export rootme; \
  	srcdir=${srcdir} ; export srcdir ; \
