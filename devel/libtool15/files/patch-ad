@@ -1,5 +1,5 @@
 --- ltmain.sh.orig	Fri Jul  2 09:02:40 1999
-+++ ltmain.sh	Fri Sep  3 02:01:51 1999
++++ ltmain.sh	Wed Sep 15 00:00:38 1999
 @@ -54,7 +54,7 @@
  # Constants.
  PROGRAM=ltmain.sh
@@ -41,6 +41,15 @@
        -module)
  	module=yes
  	continue
+@@ -1162,7 +1171,7 @@
+ 
+       *.o | *.obj | *.a | *.lib)
+ 	# A standard object.
+-	objs="$objs $arg"
++	libobjs="$libobjs $arg"
+ 	;;
+ 
+       *.lo)
 @@ -1789,6 +1798,9 @@
  	*-*-cygwin* | *-*-mingw* | *-*-os2* | *-*-beos*)
  	  # these systems don't actually have a c library (as such)!
