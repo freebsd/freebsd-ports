@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	powerdns
-PORTVERSION=	2.9.10
+PORTVERSION=	2.9.11
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/
 DISTNAME=	pdns-${PORTVERSION}
@@ -62,17 +62,6 @@ MAN8=		pdns_control.8 pdns_server.8 zone2sql.8
 pre-everything::
 	@ ${SETENV} ${SCRIPTS_ENV} ${SH} ${FILESDIR}/configure.powerdns
 
-post-install:
-.if !exists(${PREFIX}/etc/pdns.conf)
-	${INSTALL_DATA} ${PREFIX}/etc/pdns.conf-dist ${PREFIX}/etc/pdns.conf
-.endif
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${EXAMPLESDIR}
-.for i in pdns.conf pdns_mysql.sql pdns_postgresql.sql
-	${INSTALL_DATA} ${FILESDIR}/$i ${EXAMPLESDIR}/
-.endfor
-.endif
-
 post-clean:
 	@ ${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
@@ -85,6 +74,13 @@ describe:
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000 && defined(POWERDNS_WITH_RECURSOR)
+CONFIGURE_ARGS+=	--enable-recursor
+PLIST_SUB+=		RECURSOR=""
+.else
+PLIST_SUB+=		RECURSOR="@comment "
+.endif
 
 .if ${OSVERSION} >= 500043 && defined(WITH_LDAP)
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/${LDAP_PORT}
@@ -100,11 +96,15 @@ post-patch:
 		${WRKSRC}/pdns/Makefile.in
 .endif
 
-.if ${OSVERSION} >= 500000 && defined(POWERDNS_WITH_RECURSOR)
-CONFIGURE_ARGS+=	--enable-recursor
-PLIST_SUB+=		RECURSOR=""
-.else
-PLIST_SUB+=		RECURSOR="@comment "
+post-install:
+.if !exists(${PREFIX}/etc/pdns.conf)
+	${INSTALL_DATA} ${PREFIX}/etc/pdns.conf-dist ${PREFIX}/etc/pdns.conf
+.endif
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${EXAMPLESDIR}
+.for i in pdns.conf pdns_mysql.sql pdns_postgresql.sql
+	${INSTALL_DATA} ${FILESDIR}/$i ${EXAMPLESDIR}/
+.endfor
 .endif
 
 .include <bsd.port.post.mk>
