@@ -1,0 +1,11 @@
+--- lib/parser_inst.m4.orig	Thu Feb  6 01:03:36 2003
++++ lib/parser_inst.m4	Thu Feb  6 01:04:17 2003
+@@ -164,7 +164,7 @@
+ __instantiate(Vector<ContentModelAmbiguity>)
+ __instantiate(Vector<Transition>)
+ __instantiate(Vector<LeafContentToken*>)
+-#if 0
++#if defined(__alpha__) || defined(__ia64__) || defined(__sparc64__)
+ __instantiate(Vector<size_t>)
+ #endif
+ __instantiate(Vector<unsigned int>)

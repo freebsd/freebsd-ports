@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Oct 10 00:15:02 1998
-+++ Makefile	Sun Oct 27 01:05:00 2002
+--- Makefile.orig	Sat Oct 10 06:15:02 1998
++++ Makefile	Wed Feb  5 23:25:16 2003
 @@ -1,11 +1,12 @@
  # Copyright (c) 1994, 1995 James Clark
  # See the file COPYING for copying permission.
@@ -29,9 +29,10 @@
  #  which doesn't appropriately define sig_atomic_t).
  # Add -DJADE_MIF to include the Jade MIF backend
 -XDEFINES=
-+XDEFINES=-DSGML_CATALOG_FILES_DEFAULT=\"/usr/local/share/sgml/catalog\"
- DEFINES=-DSP_HAVE_BOOL -DSP_ANSI_CLASS_INST -DSP_MULTI_BYTE $(XDEFINES)
+-DEFINES=-DSP_HAVE_BOOL -DSP_ANSI_CLASS_INST -DSP_MULTI_BYTE $(XDEFINES)
 -CXXFLAGS=-ansi $(DEBUG) $(WARN)
++XDEFINES=-DSGML_CATALOG_FILES_DEFAULT=\"/usr/local/share/sgml/catalog\"
++DEFINES=-DSP_HAVE_BOOL -DSP_ANSI_CLASS_INST -DSP_MULTI_BYTE -DSP_HAVE_LOCALE -DSP_HAVE_SOCKET $(XDEFINES)
 +CXXFLAGS+=-ansi $(DEBUG) $(WARN)
  # Flag to pass to CXX to make it output list of dependencies as a Makefile.
  CXXDEPGENFLAGS=-MM
