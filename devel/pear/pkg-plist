@@ -19,6 +19,7 @@
 %%PEARDIR%%/Date/Calc.php
 %%PEARDIR%%/Date/Human.php
 %%PEARDIR%%/DB/common.php
+%%PEARDIR%%/DB/fbsql.php
 %%PEARDIR%%/DB/ibase.php
 %%PEARDIR%%/DB/ifx.php
 %%PEARDIR%%/DB/msql.php
@@ -50,6 +51,7 @@
 %%PEARDIR%%/Log/sql.php
 %%PEARDIR%%/Log/syslog.php
 %%PEARDIR%%/Mail/RFC822.php
+%%PEARDIR%%/Mail/mime.php
 %%PEARDIR%%/Mail/sendmail.php
 %%PEARDIR%%/Mail/smtp.php
 %%PEARDIR%%/Math/Fraction.php
@@ -61,8 +63,11 @@
 %%PEARDIR%%/Numbers/Roman.php
 %%PEARDIR%%/Payment/Verisign.php
 %%PEARDIR%%/PEAR/Common.php
+%%PEARDIR%%/PEAR/Config.php
 %%PEARDIR%%/PEAR/Installer.php
 %%PEARDIR%%/PEAR/Packager.php
+%%PEARDIR%%/PEAR/Registry.php
+%%PEARDIR%%/PEAR/Remote.php
 %%PEARDIR%%/PEAR/Uploader.php
 %%PEARDIR%%/Schedule/At.php
 %%PEARDIR%%/XML/Parser.php
@@ -85,6 +90,7 @@
 %%PEARDIR%%/Log.php
 %%PEARDIR%%/Mail.php
 %%PEARDIR%%/PEAR.php
+%%PEARDIR%%/System.php
 @dirrm %%PEARDIR%%/Archive
 @dirrm %%PEARDIR%%/Benchmark
 @dirrm %%PEARDIR%%/Cache/Container
