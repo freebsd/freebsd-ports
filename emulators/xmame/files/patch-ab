@@ -1,29 +1,47 @@
-diff -ruN ../../OLD/xmame-0.30.1/./conv2zip ./conv2zip
---- ../../OLD/xmame-0.30.1/./conv2zip	Wed Dec 31 16:00:00 1969
-+++ ./conv2zip	Fri Jan 30 19:54:06 1998
-@@ -0,0 +1,25 @@
-+#!/bin/sh
-+
-+if [ ! -x /usr/local/bin/zip ]
-+then
-+	echo "ZIP program not installed.  Check /usr/ports/archivers."
-+	exit 1
-+fi
-+
-+cd /usr/local/lib/mame
-+find . -type d -print | sed 's/^\.\///g' | grep -v ^\\. | grep -v cfg | \
-+grep -v hi | grep -v roms | grep -v samples > /tmp/dirs.$$
-+
-+for D in `cat /tmp/dirs.$$`
-+do
-+	cd ${D}
-+	echo "Converting: ${D}"
-+	zip -9 ../roms/${D}.zip *
-+	echo ""
-+	cd ..
-+	rm -rf ${D}
-+done
-+
-+echo "All ROM directories have been converted to zipfiles."
-+
-+rm -f /tmp/dirs.$$
+--- doc/xmamerc.dist.orig	Mon Aug  9 23:49:19 1999
++++ doc/xmamerc.dist	Sat Sep  4 22:38:22 1999
+@@ -23,16 +23,16 @@
+ 
+ # Where does your Mame rom files reside? 
+ # This option can be overriden by MAMEDIR environment variable
+-rompath		/usr/games/lib/xmame:/usr/local/lib/xmame
++rompath		/usr/local/lib/xmame
+ 
+ # Also Mame needs a public-writable directory to store high scores
+-spooldir        /usr/games/lib/xmame
++spooldir        /usr/local/lib/xmame/hi
+ 
+ # Where can xmame find the cheat database?
+-cheatfile	/usr/games/lib/xmame/CHEAT.DAT
++cheatfile	/usr/local/lib/xmame/cheat.dat
+ 
+ # What is your loved game? ( remember that mame defaults to "pacman" )
+-defaultgame	galturbo
++defaultgame	snowbros
+ 
+ # Type here the name of the display where play xmame
+ # overriden by DISPLAY environment variable. Not usefull in config file but...
+@@ -43,7 +43,7 @@
+ #
+ 
+ # Use sound if available. default is 0 (Don't)
+-sound	 	0
++sound	 	1
+ 
+ # Use stereo sound if available
+ stereo		1
+@@ -105,11 +105,11 @@
+ # Define X and Y axis scale related to original bitmap. Default is 1,
+ # since xmame-0.34b5.3 also used to scale vector games, vector games also
+ # except values like 1.5 and even 0.5 these are rounded for normal games
+-widthscale	2
+-heightscale	2
++#widthscale	2
++#heightscale	2
+ 
+ #scale sets both widthscale and heightscale in one option
+-#scale 2
++scale 2
+ 
+ # We want autoframeskip ;)
+ autoframeskip	1

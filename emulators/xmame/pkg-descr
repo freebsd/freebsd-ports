@@ -1,23 +1,24 @@
-X-Mame 0.30.1 is an emulator.  It emulates many classic coin-operated arcade
-game machines, right on your FreeBSD PC.
+XMAME is an arcade game machine emulator for UNIX/X11.  It will emulate
+the hardware, video, sound, and other services, of many classic arcade
+game machines.
 
-This emulator supports over 200 arcade games, and the nunmber grows every
-day!  A partial list of the (more popular and well-known) games currently
-supported by this emulator include:
+As of this release, XMAME supports an incredible 1642 arcade games, and 
+the number grows every day!  A partial list of the (more popular and
+well-known) games currently supported by this emulator include:
 
 PacMan, Ms. PacMan, Jr. PacMan, Super PacMan, Dig Dug, Star Trek, Galaga,
 Space Invaders, Tempest, Frogger, Mr. Do!, Battle Zone, Missile Command,
-Asteroids, Burger Time, Centipede, Millipede, Gorf, Donkey Kong, Donkey
-Kong III, Donkey Kong Jr., Mario Bros., Defender, Stargate, Galaxians,
 Gyruss, Kangaroo, Moon Patrol, Phoenix, Q*Bert, Rally X, Robotron,
-Star Wars, Zaxxon, ... you get the idea.
+Star Wars, Zaxxon, Bubble Bobble, Snow Bros, ... you get the idea.
 
 To run these games, however, you will need images of the ROM chips that
 are used on these games.  If you actually have one of these games (or the
 motherboard to one of them), and access to a ROM burner, it is a fairly
-trivial process to make ROM image files for use with MAME.  If you DON'T
+trivial process to make ROM image files for use with XMAME.  If you DON'T
 have access to a ROM burner, or you don't own one of these video games
 (and you are aware of the possible legal ramifications of doing this),
-you can obtain ROM images for MAME on the Net.
+you can obtain ROM images for XMAME on the Net.
+
+Official XMAME homepage:	http://xmame.retrogames.com
 
 [ This port is maintained by Donald Burr <dburr@FreeBSD.ORG>. ]
