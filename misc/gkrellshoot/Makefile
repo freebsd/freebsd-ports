@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	gkrellshoot
-PORTVERSION=	0.2
+PORTVERSION=	0.3.2
 CATEGORIES=	misc
-MASTER_SITES=	http://www.geocities.com/m_muthukumar/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	elitetek@tekrealm.net
 
