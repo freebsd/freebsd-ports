@@ -7,37 +7,35 @@
 
 PORTNAME=	db4
 PORTVERSION=	4.0.14
-#PORTREVISION=	2
-#PORTEPOCH=	1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sleepycat.com/update/snapshot/
 DISTNAME=	db-${PORTVERSION}
 DIST_SUBDIR=	bdb
 
-MAINTAINER=	ports@FreeBSD.org
-
 #PATCH_SITES=	${MASTER_SITES}
 #PATCHFILES=	patch.${PORTVERSION}.1 patch.${PORTVERSION}.2
 #PATCH_DIST_STRIP= -d ${WRKDIR}/${DISTNAME}
 
+MAINTAINER=	ports@FreeBSD.org
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/build_unix
 
-INSTALLS_SHLIB=		yes
-HAS_CONFIGURE=		yes
-USE_REINPLACE=		yes
+USE_REINPLACE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../dist/configure
-CONFIGURE_ARGS=		--enable-compat185 \
-			--enable-dump185 --enable-cxx \
-			--enable-dynamic \
-			--prefix=${PREFIX} \
-			--includedir=${PREFIX}/include/db4 \
-			--target=${ARCH}-unknown-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--enable-compat185 --enable-dump285 \
+		--enable-cxx --enable-dynamic \
+		--includedir=${PREFIX}/include/db4
+INSTALLS_SHLIB=	yes
 
-pre-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+.if !defined(NOPORTDOCS)
+INSTALL_TARGET=	install install_docs
+.endif
 
 post-patch:
-	@${CHMOD} 755 ${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/../dist/configure
+	@${REINPLACE_CMD} -e \
+		's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
---- ../dist/Makefile.in.orig	Sat Nov 10 01:48:45 2001
-+++ ../dist/Makefile.in	Wed Dec  5 13:38:23 2001
+--- ../dist/Makefile.in.orig	Sat Nov 10 07:48:45 2001
++++ ../dist/Makefile.in	Sat Nov  9 17:36:00 2002
 @@ -11,7 +11,7 @@
  bindir=	@bindir@
  includedir=@includedir@
@@ -133,3 +133,12 @@
  	$(CCLINK) -o $@ $(LDFLAGS) \
  	    db_verify@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
  	$(POSTLINK) $@
+@@ -385,7 +386,7 @@
+ # Library and standard utilities install.
+ ##################################################
+ library_install: install_setup
+-library_install: install_include install_lib install_utilities install_docs
++library_install: install_include install_lib install_utilities
+ 
+ uninstall: uninstall_include uninstall_lib uninstall_utilities uninstall_docs
+ 
