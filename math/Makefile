@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.46 1998/07/11 18:21:26 steve Exp $
+# $Id: Makefile,v 1.47 1998/08/09 23:55:27 steve Exp $
 #
 
     SUBDIR += Scilab
@@ -27,6 +27,7 @@
     SUBDIR += pygist
     SUBDIR += r
     SUBDIR += rng
+    SUBDIR += sc
     SUBDIR += siag
     SUBDIR += simpack
     SUBDIR += ss
