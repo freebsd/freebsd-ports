@@ -26,7 +26,8 @@ MAINTAINER=     ache@FreeBSD.ORG
 post-extract:
 	cd ${WRKSRC}/..; \
 		for i in ${EPHEM}; do \
-			zcat ${DISTDIR}/$$i.gz > $$i; \
+			zcat ${DISTDIR}/$$i.gz > \
+				`echo $$i | tr '[:lower:]' '[:upper:]'`; \
 		done
 
 post-patch:
@@ -43,7 +44,7 @@ do-install:
 	-@mkdir ${PREFIX}/lib/astrolog
 	cd ${WRKSRC}/..; \
 		${INSTALL} -c -m ${SHAREMODE} -o ${SHAREOWN} -g ${SHAREGRP} \
-			${EPHEM} ${PREFIX}/lib/astrolog
+			LRZ5_* CHI_* CPJV_* ${PREFIX}/lib/astrolog
 	cd ${WRKSRC}/..; \
 		if [ -f ${PREFIX}/lib/astrolog/astrolog.dat ] ; then \
 			${INSTALL} -c -m ${SHAREMODE} -o ${SHAREOWN} -g ${SHAREGRP} \
