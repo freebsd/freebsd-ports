@@ -1,12 +1,12 @@
 # New ports collection makefile for:	eperl
-# Version required:	2.2.1
-# Date created:		Sat Aug  2 17:22:46 MET DST 1997
+# Version required:	2.2.2
+# Date created:		Thu Aug 14 16:57:13 MET DST 1997
 # Whom:			Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.9 1997/08/11 08:59:04 rse Exp $
+# $Id: Makefile,v 1.10 1997/08/13 09:40:07 asami Exp $
 #
 
-DISTNAME=	eperl-2.2.1
+DISTNAME=	eperl-2.2.2
 CATEGORIES=	lang www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://www.engelschall.com/sw/eperl/distrib/ \
@@ -30,9 +30,6 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-perl=${PREFIX}/bin/perl
 
 MAN1=	eperl.1
-
-post-patch:
-	rm -f ${WRKSRC}/eg/demo.errsync.phtml # remove bad file
 
 test:
 	@(cd ${WRKSRC}; make test)
