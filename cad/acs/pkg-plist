@@ -26,3 +26,5 @@ share/acs/examples/opamp-vf.ckt
 share/acs/examples/opamp.doc
 share/acs/examples/opol.ckt
 share/acs/examples/sc18.ckt
+@dirrm share/acs/examples
+@dirrm share/acs

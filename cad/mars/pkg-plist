@@ -2,3 +2,7 @@ bin/mars
 share/doc/mars/proman/prog.ps
 share/doc/mars/usrman/user.ps
 share/doc/mars/motifman/Xmotif.ps
+@dirrm share/doc/mars/proman
+@dirrm share/doc/mars/usrman
+@dirrm share/doc/mars/motifman
+@dirrm share/doc/mars
