@@ -7,6 +7,7 @@
 
 PORTNAME=	einstein
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.babichev.info/files/einstein/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src

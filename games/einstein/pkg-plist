@@ -1,1 +1,3 @@
 bin/einstein
+share/einstein/einstein.res
+@dirrm share/einstein
