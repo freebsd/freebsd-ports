@@ -1,13 +1,13 @@
---- etc/drweb/drweb32.ini.orig	Sat May 11 16:44:26 2002
-+++ etc/drweb/drweb32.ini	Mon May 13 18:46:14 2002
+--- etc/drweb/drweb32.ini.orig	Wed May 15 04:09:24 2002
++++ etc/drweb/drweb32.ini	Fri May 17 12:34:29 2002
 @@ -1,11 +1,11 @@
  [BSD]
 -EnginePath = "/opt/drweb/lib/drweb32.dll"
--VirusBase = "/var/drweb/bases/*.vdb"
+-VirusBase = "/var/drweb/bases/*.vdb", "/var/drweb/bases/*.VDB"
 -MoveFilesTo = "/var/drweb/infected"
 -;LngFileName = "/opt/drweb/lib/russian.dwl"
 +EnginePath = "%INSTALL%/lib/drweb32.dll"
-+VirusBase = "%INSTALL%/bases/*.vdb"
++VirusBase = "%INSTALL%/bases/*.vdb", "%INSTALL%/bases/*.VDB"
 +MoveFilesTo = "%INSTALL%/infected"
 +;LngFileName = "%INSTALL%/lib/russian.dwl"
  
@@ -32,15 +32,15 @@
  
  [BSD:Daemon]
 -EnginePath = "/opt/drweb/lib/drweb32.dll"
--VirusBase = "/var/drweb/bases/*.vdb"
+-VirusBase = "/var/drweb/bases/*.vdb", "/var/drweb/bases/*.VDB"
 -MoveFilesTo = "/var/drweb/infected"
 -;LngFileName = "/opt/drweb/lib/russian.dwl"
 +EnginePath = "%INSTALL%/lib/drweb32.dll"
-+VirusBase = "%INSTALL%/bases/*.vdb"
++VirusBase = "%INSTALL%/bases/*.vdb", "%INSTALL%/bases/*.VDB"
 +MoveFilesTo = "%INSTALL%/infected"
 +;LngFileName = "%INSTALL%/lib/russian.dwl"
  
--Key = "/opt/drweb/drwebd.key"
+-Key = "/opt/drweb/drweb.key"
 +Key = "%INSTALL%/drwebd.key"
  LogTime = Yes
  LogFileName = "syslog"
@@ -61,7 +61,7 @@
  SocketReuseAddr = Yes
 -FileTimeout = 5
 -OutputMode = Terminal
-+FileTimeout = 10
++FileTimeout = 20
 +OutputMode = Quiet
  LimitLog = No
 -MaxLogSize = 512
