@@ -22,7 +22,7 @@ BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
 		popt.0:${PORTSDIR}/devel/popt
 
-RPMVERSION=	0.50.33
+RPMVERSION=	0.50.35
 RPMREVISION=	1
 WRKSRC=		${WRKDIR}/newt-${RPMVERSION}
 
@@ -65,7 +65,7 @@ post-build:
 	@cd ${WRKSRC} && ${MAKE_ENV} ${PYTHON_CMD} ${FILESDIR}/setup.py build
 
 post-install:
-	@cd ${WRKSRC} && ${MAKE_ENV} ${PYTHON_CMD} ${FILESDIR}/setup.py install
+	@cd ${WRKSRC} && ${MAKE_ENV} ${PYTHON_CMD} ${FILESDIR}/setup.py install --prefix=${PREFIX}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/peanuts.py ${WRKSRC}/popcorn.py ${EXAMPLESDIR}
