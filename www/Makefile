@@ -582,6 +582,7 @@
     SUBDIR += zope-cmf13
     SUBDIR += zope-cmfforum
     SUBDIR += zope-guf
+    SUBDIR += zope-parsedxml
     SUBDIR += zope-zmysqlda
     SUBDIR += zope-zpt
     SUBDIR += zope-zwiki
