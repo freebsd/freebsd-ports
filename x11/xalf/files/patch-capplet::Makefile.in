@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- capplet/Makefile.in	2001/08/15 12:49:11	1.1
++++ capplet/Makefile.in	2001/08/15 12:49:37
+@@ -80,7 +80,7 @@
+ 
+ xalf_capplet_SOURCES = xalf-capplet.c getopt.c getopt1.c
+ 
+-CFLAGS = $(GNOME_CC_CFLAGS)
++CFLAGS = @CFLAGS@ $(GNOME_CC_CFLAGS)
+ 
+ xalf_capplet_LDADD = $(GNOME_CC_LIBS) @GTK_LIBS@
+ 
