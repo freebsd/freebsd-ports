@@ -7,6 +7,7 @@
 
 PORTNAME=	iozone
 PORTVERSION=	3.83
+PORTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.iozone.org/src/current/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
