@@ -55,6 +55,7 @@
     SUBDIR += gtweakui
     SUBDIR += gucharmap
     SUBDIR += gworkspace
+    SUBDIR += hot-babe
     SUBDIR += howm
     SUBDIR += ical
     SUBDIR += ithought
