@@ -1,9 +1,9 @@
 bin/nethack
+lib/nethackdir/nethack
 @exec mkdir %D/lib/nethackdir/save
 @exec chmod 775 %D/lib/nethackdir/save
 @exec chown games.games %D/lib/nethackdir/save
 @unexec rmdir %D/lib/nethackdir/save
-lib/nethackdir/nethack
 man/man6/dgn_comp.6.gz
 man/man6/dlb.6.gz
 man/man6/lev_comp.6.gz
