@@ -31,12 +31,12 @@ ALL_TARGET=
 BUILDHASH=	${WRKSRC}/buildhash
 DATADIR=	${PREFIX}/share/ispell
 
-.if (!defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DK) && !defined(ISPELL_SA))
+.if (!defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DK) && !defined(ISPELL_ZA))
 pre-everything:
 	@${ECHO_MSG} '*********************************************************'
 	@${ECHO_MSG} '* You can add further dictionaries:                     *'
 	@${ECHO_MSG} '*                              Use make-flag:           *'
-	@${ECHO_MSG} '*  - Afrikaans                 ISPELL_SA=yes            *'
+	@${ECHO_MSG} '*  - Afrikaans                 ISPELL_ZA=yes            *'
 	@${ECHO_MSG} '*  - British                   ISPELL_BRITISH=yes       *'
 	@${ECHO_MSG} '*    (replaces the American dictionary)                 *'
 	@${ECHO_MSG} '*  - Dutch                     ISPELL_NL=yes            *'
@@ -102,13 +102,13 @@ MASTER_SITE_SUBDIR=	asmodai
 EXTRA_DICT+=	${DKDISTFILE}
 EXTRACT_ONLY+=	${DKDISTFILE}
 .endif
-.if defined(ISPELL_SA)
-SADISTFILE=	ispell-sa-1.0.0.tar.gz
+.if defined(ISPELL_ZA)
+ZADISTFILE=	ispell-sa-1.0.0.tar.gz
 MASTER_SITES+=	${MASTER_SITE_LOCAL} \
 		http://www.ninth-circle.org/~asmodai/
 MASTER_SITE_SUBDIR=	asmodai
-EXTRA_DICT+=	${SADISTFILE}
-EXTRACT_ONLY+=	${SADISTFILE}
+EXTRA_DICT+=	${ZADISTFILE}
+EXTRACT_ONLY+=	${ZADISTFILE}
 .endif
 
 
@@ -151,8 +151,8 @@ post-patch:
 .if defined(ISPELL_DK)
 	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/DK.patch 2>/dev/null
 .endif
-.if defined(ISPELL_SA)
-	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/SA.patch 2>/dev/null
+.if defined(ISPELL_ZA)
+	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/ZA.patch 2>/dev/null
 .endif
 
 
@@ -204,8 +204,8 @@ post-build:
 	@cd ${WRKDIR}/${DKDISTFILE:S=.tar.gz==} && \
 		${MAKE} ${MAKEFLAGS} BUILDHASH=${BUILDHASH} all
 .endif
-.if defined(ISPELL_SA)
-	@cd ${WRKDIR}/${SADISTFILE:S=.tar.gz==} && \
+.if defined(ISPELL_ZA)
+	@cd ${WRKDIR}/${ZADISTFILE:S=.tar.gz==} && \
 		${MAKE} ${MAKEFLAGS} BUILDHASH=${BUILDHASH} all
 .endif
 
@@ -238,8 +238,8 @@ post-install:
 .if defined(ISPELL_DK)
 	@${CAT} ${MASTERDIR}/pkg-plist.dk >> ${TMPPLIST}
 .endif
-.if defined(ISPELL_SA)
-	@${CAT} ${MASTERDIR}/pkg-plist.sa >> ${TMPPLIST}
+.if defined(ISPELL_ZA)
+	@${CAT} ${MASTERDIR}/pkg-plist.za >> ${TMPPLIST}
 .endif
 .if defined(ISPELL_BRITISH)
 	@${CAT} ${MASTERDIR}/pkg-plist.british >> ${TMPPLIST}

@@ -1,0 +1,11 @@
+--- ispell-sa-1.0.0/Makefile.orig	Wed Jan 10 12:52:01 2001
++++ ispell-sa-1.0.0/Makefile	Wed Jan 10 12:52:16 2001
+@@ -7,7 +7,7 @@
+ 	install -o root -g root -m 0644 afrikaans.aff $(installdir)
+ 
+ afrikaans.hash: afrikaans.aff woordelys
+-	buildhash woordelys afrikaans.aff afrikaans.hash
++	${BUILDHASH} woordelys afrikaans.aff afrikaans.hash
+ 
+ clean:
+ 	rm -f woordelys.stat afrikaans.hash woordelys.cnt *~
