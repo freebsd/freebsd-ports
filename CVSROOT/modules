@@ -4380,6 +4380,7 @@ linux-relview	ports/math/linux-relview
 linux-runrev	ports/devel/linux-runrev
 linux-sdl12	ports/devel/linux-sdl12
 linux-setiathome	ports/astro/linux-setiathome
+linux-steam	ports/games/linux-steam
 linux-sun-jdk12	ports/java/linux-sun-jdk12
 linux-sun-jdk13	ports/java/linux-sun-jdk13
 linux-sun-jdk14	ports/java/linux-sun-jdk14
@@ -8512,7 +8513,6 @@ starplot	ports/astro/starplot
 stars		ports/astro/stars
 startup-notification	ports/x11/startup-notification
 staticcharge	ports/dns/staticcharge
-steam		ports/games/steam
 sted		ports/editors/sted
 stegdetect	ports/security/stegdetect
 steghide	ports/security/steghide
