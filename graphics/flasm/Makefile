@@ -8,8 +8,9 @@
 PORTNAME=	flasm
 PORTVERSION=	1.52
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.nowrap.de/download/
-DISTNAME=	flasm15src
+#MASTER_SITES=	http://www.nowrap.de/download/
+MASTER_SITES=	http://dist.bsdlab.org/
+DISTNAME=	flasm152src
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Command line assembler/disassembler of flash actionscript bytecode
