@@ -8,7 +8,7 @@
 
 PORTNAME=	dhcp
 PORTVERSION=	3.0.1.r14
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	dhcp dhcp/dhcp-3.0-history
@@ -30,10 +30,30 @@ OPTIONS=	INTERFACE_POLLING "interface polling support" on
 .endif
 .if ${SUBSYS} == server
 OPTIONS=	DHCP_PARANOIA "add -user, -group and -chroot options" on \
-		DHCP_JAIL "add -chroot and -jail options" on
+		DHCP_JAIL "add -chroot and -jail options" on \
+		DHCP_LDAP "add experimental LDAP backend support" off \
+		DHCP_LDAP_SSL "support LDAP connection over SSL/TLS" on \
+		OPENSSL_BASE "use the base system OpenSSL (required by TLS)" on \
+		OPENSSL_PORT "use OpenSSL from ports (requires by TLS)" off
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${SUBSYS} == server && defined(WITH_DHCP_LDAP)
+# Based on patch from Brian Masney :
+PATCH_SITES=	http://www.newwave.net/~masneyb/
+PATCHFILES=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}-ldap-patch
+PATCH_DIST_STRIP=	-p1
+
+USE_PERL5_RUN=	yes
+USE_OPENLDAP=	yes
+
+.if !defined(WITHOUT_DHCP_LDAP_SSL)
+USE_OPENSSL=	yes
+# hack to get bsd.openssl.mk included at this late state
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+.endif
+.endif
 
 # Global variables
 #
@@ -102,6 +122,9 @@ PATCH_SUBDIRS+=	${SUBSYS}
 PATCH_SUBDIRS+=	omshell
 .endif
 
+.if !defined(NOPORTDOCS)
+PORTDOCS=	LICENSE README RELNOTES
+.endif
 .if ${SUBSYS} == client
 BIN_FILES=	dhclient
 CONF_FILES=	dhclient.conf
@@ -112,21 +135,30 @@ BIN_FILES=	dhcpd omshell
 RC_FILES=	isc-dhcpd
 SAMP_FILES=	server/dhcpd.conf
 DATA_FILES=	dhcpd.leases
+.if defined(WITH_DHCP_LDAP)
+PORTDOCS+=	README.ldap
+LDAP_SCRIPT=	contrib/dhcpd-conf-to-ldap.pl
+LDAP_SCHEMA=	contrib/dhcp.schema
+.endif
 .elif ${SUBSYS} == relay
 BIN_FILES=	dhcrelay
 RC_FILES=	isc-dhcrelay
-.endif
-.if !defined(NOPORTDOCS)
-PORTDOCS=	LICENSE README RELNOTES
 .endif
 
 SAMP_SUFX=	.sample
 
 CONF_DIR=	${PREFIX}/etc
 RC_DIR=		${PREFIX}/etc/rc.d
+SCHEMA_DIR=	${PREFIX}/share/${PKGBASE}
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 DATADIR=	/var/db
 
+PLIST_SUB+=	SCHEMA_DIR="${SCHEMA_DIR:S,^${PREFIX}/,,}"
+.if defined(WITH_DHCP_LDAP)
+PLIST_SUB+=	LDAP=""
+.else
+PLIST_SUB+=	LDAP="@comment "
+.endif
 REINPLACE_SUB=	PREFIX=${PREFIX}
 RCSCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 .if !defined(WITHOUT_DHCP_PARANOIA)
@@ -139,7 +171,8 @@ RCSCRIPTS_SUB+=	JAIL=YES
 .else
 RCSCRIPTS_SUB+=	JAIL=NO
 .endif
-PKGMESSAGE_SUB=	PREFIX=${PREFIX} MAN1PREFIX=${MAN1PREFIX}
+PKGMESSAGE_SUB=	PREFIX="${PREFIX}" MAN1PREFIX="${MAN1PREFIX}" \
+		DOCSDIR="${DOCSDIR}" SCHEMA_DIR="${SCHEMA_DIR}"
 
 # Post-extract
 #
@@ -179,6 +212,15 @@ patch-site-conf:
 .if !defined(WITHOUT_DHCP_JAIL)
 	@${ECHO_CMD} CFLAGS += -DJAIL >> ${WRKSRC}/site.conf
 .endif
+.if defined(WITH_DHCP_LDAP)
+	@${ECHO_CMD} CFLAGS += -I${LOCALBASE}/include >> ${WRKSRC}/site.conf
+	@${ECHO_CMD} LIBS += -L${LOCALBASE}/lib >> ${WRKSRC}/site.conf
+.if !defined(WITHOUT_DHCP_LDAP_SSL)
+	@${ECHO_CMD} CFLAGS += -DUSE_SSL -I${OPENSSLINC} >> ${WRKSRC}/site.conf
+	@${ECHO_CMD} LIBS += -L${OPENSSLLIB} >> ${WRKSRC}/site.conf
+	@${ECHO_CMD} LIBS += -lcrypto -lssl >> ${WRKSRC}/site.conf
+.endif
+.endif
 .endif
 
 patch-makefile-conf:
@@ -205,6 +247,11 @@ patch-pkgmessage:
 .if ${SUBSYS} != devel
 	@${SED} ${PKGMESSAGE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${MSG_FILE} > ${PKGMESSAGE}
+.if defined(WITH_DHCP_LDAP)
+	@${REINPLACE_CMD} -e 's|^%%LDAP%%||g' ${PKGMESSAGE}
+.else
+	@${REINPLACE_CMD} -e '/^%%LDAP%%/d' ${PKGMESSAGE}
+.endif
 .endif
 
 # Post-install
@@ -216,7 +263,7 @@ post-install: ${POST-INSTALL}
 
 parallel-post-install: \
 	strip-binary-files install-startup-files \
-	install-doc-files install-sample-files \
+	install-doc-files install-ldap-files install-sample-files \
 	create-conf-files create-data-files
 
 strip-binary-files:
@@ -240,6 +287,13 @@ install-doc-files:
 .for f in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
+.endif
+
+install-ldap-files:
+.if ${SUBSYS} == server && defined(WITH_DHCP_LDAP)
+	@${INSTALL_SCRIPT} ${WRKSRC}/${LDAP_SCRIPT} ${PREFIX}/bin
+	@${MKDIR} ${SCHEMA_DIR}
+	@${INSTALL_DATA} ${WRKSRC}/${LDAP_SCHEMA} ${SCHEMA_DIR}
 .endif
 
 install-sample-files:
