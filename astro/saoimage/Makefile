@@ -1,14 +1,14 @@
 # New ports collection makefile for:	saoimage
-# Version required:	1.22
+# Version required:	1.26.10
 # Date created:		21 Feb 1998
 # Whom:			giffunip@asme.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=       saoimage-1.22
+DISTNAME=       saoimage-1.26.10
 CATEGORIES=	astro
-MASTER_SITES=	ftp://cfa-ftp.harvard.edu/pub/gsc/SAOimage/Old/
+MASTER_SITES=	ftp://cfa-ftp.harvard.edu/pub/gsc/SAOimage/
 
 MAINTAINER=	giffunip@asme.org
 
@@ -19,8 +19,6 @@ INSTALL_TARGET= -f makefile.$(ALL_TARGET) install_saobin install_saoman
 MANL=		saoimage.l
 USE_X_PREFIX=	yes
 
-pre-patch:
-	$(CP) $(WRKSRC)/makefile.sun $(WRKSRC)/makefile.$(ALL_TARGET)
 pre-build:
 	@(cd ${WRKSRC}/btnlib; ${MAKE})
 post-install:
