@@ -3,7 +3,7 @@
 # Whom:			ejc@bazzle.com
 # Version required:	2.2.0
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/04 05:54:33 asami Exp $
 #
 
 DISTNAME=	omniORB_2.2.0
@@ -12,6 +12,8 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.orl.co.uk/pub/omniORB/
 
 MAINTAINER=	ejc@bazzle.com
+
+BROKEN=		posix.cc
 
 MAN1=		omniidl2.1 nameclt.1 omniNames.1 catior.1 genior.1
 
