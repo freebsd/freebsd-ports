@@ -3,7 +3,7 @@
 # Date created:		5 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.4 1995/05/08 22:50:56 asami Exp $
+# $Id: Makefile,v 1.5 1995/05/09 05:41:41 asami Exp $
 #
 
 DISTNAME=	gawk-2.15.6
@@ -25,6 +25,7 @@ DISTPATCHES=	950503.01.Z 950503.02.Z 950503.03.Z 950503.04.Z
 # DISTPATCHES=	372.gz 373.gz 374.gz 375.gz
 PATCH_DIST_STRIP=	-p1
 
+.if !defined(MASTER_SITE_OVERRIDE)
 pre-fetch: 
 	@(cd ${DISTDIR}; \
 	 if [ ! -f ${PATCHFILES} ]; then \
@@ -40,5 +41,6 @@ pre-fetch:
 		sed -e '1,/-----8</d' -e '/-----8</,/-----8</d' | uudecode; \
 	    rm -f ${DISTPATCHES};\
 	 fi)
+.endif
 
 .include <bsd.port.mk>
