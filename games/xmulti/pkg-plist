@@ -1,0 +1,69 @@
+bin/xmaid
+@exec ln -sf %D/%F %B/xmulti
+@unexec rm %B/xmulti
+lib/X11/app-defaults/XMaid
+lib/X11/xmaid/defaultstyle
+lib/X11/xmaid/html40dtd
+lib/X11/xmaid/datas/about.html
+lib/X11/xmaid/datas/bheart.gif
+lib/X11/xmaid/datas/end.html
+lib/X11/xmaid/datas/foot_b.gif
+lib/X11/xmaid/datas/foot_g.gif
+lib/X11/xmaid/datas/foot_m.gif
+lib/X11/xmaid/datas/foot_r.gif
+lib/X11/xmaid/datas/foot_w.gif
+lib/X11/xmaid/datas/foot_y.gif
+lib/X11/xmaid/datas/logo.gif
+lib/X11/xmaid/datas/maid_b.gif
+lib/X11/xmaid/datas/maid_f.gif
+lib/X11/xmaid/datas/maid_l.gif
+lib/X11/xmaid/datas/maid_r.gif
+lib/X11/xmaid/datas/menu.html
+lib/X11/xmaid/datas/smile.gif
+lib/X11/xmaid/datas/start.xhtml
+lib/X11/xmaid/datas/sun.gif
+lib/X11/xmaid/datas/tonbo.gif
+lib/X11/xmaid/datas/xmaid.gif
+lib/X11/xmaid/multi/about.html
+lib/X11/xmaid/multi/bheart.gif
+lib/X11/xmaid/multi/end.html
+lib/X11/xmaid/multi/function.html
+lib/X11/xmaid/multi/leaf_bg.gif
+lib/X11/xmaid/multi/leaf_bn.gif
+lib/X11/xmaid/multi/logo.gif
+lib/X11/xmaid/multi/maid_b.gif
+lib/X11/xmaid/multi/maid_f.gif
+lib/X11/xmaid/multi/maid_l.gif
+lib/X11/xmaid/multi/maid_r.gif
+lib/X11/xmaid/multi/menu.html
+lib/X11/xmaid/multi/multi.gif
+lib/X11/xmaid/multi/multi_n0.gif
+lib/X11/xmaid/multi/multi_n1.gif
+lib/X11/xmaid/multi/multi_n2.gif
+lib/X11/xmaid/multi/multi_n3.gif
+lib/X11/xmaid/multi/multi_nade_0.gif
+lib/X11/xmaid/multi/multi_nade_1.gif
+lib/X11/xmaid/multi/multi_nade_2.gif
+lib/X11/xmaid/multi/multi_nade_3.gif
+lib/X11/xmaid/multi/nade.xbm
+lib/X11/xmaid/multi/nade.xbmmsk
+lib/X11/xmaid/multi/nade2.xbm
+lib/X11/xmaid/multi/nade2.xbmmsk
+lib/X11/xmaid/multi/notice.html
+lib/X11/xmaid/multi/smile.gif
+lib/X11/xmaid/multi/souji_l.gif
+lib/X11/xmaid/multi/souji_r.gif
+lib/X11/xmaid/multi/start.xhtml
+lib/X11/xmaid/multi/sun.gif
+lib/X11/xmaid/multi/suwari.gif
+lib/X11/xmaid/multi/xmultiback.gif
+lib/X11/xmaid/multi/xmultimark.gif
+lib/X11/xmaid/multi/xmultimark2.gif
+share/doc/ja/xmulti/MODULE.jp
+share/doc/ja/xmulti/README.jp
+share/doc/ja/xmulti/STYLESHEET.jp
+share/doc/ja/xmulti/XMULTI.jp
+@dirrm lib/X11/xmaid/datas
+@dirrm lib/X11/xmaid/multi
+@dirrm lib/X11/xmaid
+@dirrm share/doc/ja/xmulti
