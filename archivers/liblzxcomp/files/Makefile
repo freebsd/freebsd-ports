@@ -2,7 +2,7 @@
 
 LIB = 	lzxcomp
 SRCS=	lz_nonslide.c lzx_layer.c
-INCS=	lzx_compress.h
+INCS=	lzx_compress.h lzx_constants.h
 
 COPTS= -DLZ_ONEBUFFER -DLAZY -DNONSLIDE
 LDADD= -lm

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liblzxcomp
-PORTVERSION=	20020618
+PORTVERSION=	20020619
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.speakeasy.org/~russotto/chm/
 DISTNAME=	lzx_compress
