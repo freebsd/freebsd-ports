@@ -1,3 +1,5 @@
-   This package allows accessing loading and top job status across many
-machines on a network, comprising a server farm.  It also allows for   
-scheduling new jobs on the best machine across the entire network.     
+This package allows accessing loading and top job status across many
+machines on a network, comprising a server farm.  It also allows for
+scheduling new jobs on the best machine across the entire network.
+
+WWW: http://search.cpan.org/dist/Schedule-Load/
