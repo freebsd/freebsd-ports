@@ -1,5 +1,3 @@
 bin/less
 bin/lesskey
 bin/lessecho
-man/man1/less.1.gz
-man/man1/lesskey.1.gz

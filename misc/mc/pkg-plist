@@ -29,8 +29,6 @@ lib/mc/term/vt100.ti
 lib/mc/term/xterm.ad
 lib/mc/term/xterm.tcap
 lib/mc/term/xterm.ti
-man/man1/midc.1.gz
-man/man8/mcserv.8.gz
 @dirrm lib/mc/bin
 @dirrm lib/mc/extfs
 @dirrm lib/mc/term

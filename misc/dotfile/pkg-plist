@@ -1,6 +1,5 @@
 bin/dotfile-2.2
 bin/dotfile
-man/man1/dotfile.1.gz
 share/doc/dotfile-2.2/index.html
 share/doc/dotfile-2.2/dotfile/index.html
 share/doc/dotfile-2.2/dotfile/config_page.jpg

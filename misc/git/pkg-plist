@@ -60,13 +60,6 @@ lib/git/term/.gitrc.vt420
 lib/git/term/.gitrc.xterm
 lib/git/term/.gitrc.xterm-color
 lib/git/term/.gitrc.xterms
-man/man1/git.1.gz
-man/man1/gitaction.1.gz
-man/man1/gitmount.1.gz
-man/man1/gitkeys.1.gz
-man/man1/gitrgrep.1.gz
-man/man1/gitps.1.gz
-man/man1/gitview.1.gz
 @dirrm lib/git/term
 @dirrm lib/git/html
 @dirrm lib/git

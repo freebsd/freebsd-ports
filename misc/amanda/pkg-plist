@@ -20,12 +20,3 @@ sbin/amdump
 sbin/amcleanup
 sbin/amtape
 libexec/amanda/chg-generic
-man/man8/amanda.8.gz
-man/man8/amadmin.8.gz
-man/man8/amcheck.8.gz
-man/man8/amcleanup.8.gz
-man/man8/amdump.8.gz
-man/man8/amflush.8.gz
-man/man8/amlabel.8.gz
-man/man8/amrestore.8.gz
-man/man8/amtape.8.gz

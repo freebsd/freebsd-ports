@@ -13,4 +13,3 @@ lib/dejagnu/util-defs.exp
 lib/dejagnu/utils.exp
 lib/dejagnu/vrtx.exp
 lib/dejagnu/vxworks.exp
-man/man1/runtest.1.gz
