@@ -1,9 +1,0 @@
-Report, which font is missing to aid the user trying to configure things.
---- src/FontLoader.C	Thu Mar 21 12:25:07 2002
-+++ src/FontLoader.C	Thu Aug  1 10:44:19 2002
-@@ -302,3 +302,4 @@
- 		} else {
--			lyxerr << "Could not get font. Using 'fixed'." << endl;
-+			lyxerr << "Could not get font '" << font.c_str() <<
-+				"'. Using 'fixed'." << endl;
- 			fs = XLoadQueryFont(GUIRunTime::x11Display(), "fixed");

@@ -1,7 +1,0 @@
---- src/graphics/GraphicsImageXPM.h	Thu Mar 21 12:27:08 2002
-+++ src/graphics/GraphicsImageXPM.h	Wed Jul 31 18:08:13 2002
-@@ -17,3 +17,3 @@
- #include "GraphicsImage.h"
--#include XPM_H_LOCATION
-+#include <X11/xpm.h>
- #include "support/smart_ptr.h"
