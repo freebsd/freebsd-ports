@@ -19,8 +19,6 @@ DIST_SUBDIR=	ghostscript
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Postscript interpreter for CUPS printing to non-PS printers
 
-BROKEN=		Changes ownership of previously installed files
-
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-base
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/${PORTVERSION}/lib/gs_init.ps:${PORTSDIR}/print/ghostscript-gnu
 
@@ -68,8 +66,6 @@ do-install:
 .for file in pstopxl pstoraster
 	${INSTALL_SCRIPT} ${ESPGS_WRKSRC}/${file} ${PREFIX}/libexec/cups/filter
 .endfor
-	${CHOWN} -R ${CUPSOWN}:${CUPSGRP} \
-		${PREFIX}/etc/cups ${PREFIX}/libexec/cups/filter
 .for file in pxlcolor.ppd pxlmono.ppd
 	${INSTALL_DATA} ${ESPGS_WRKSRC}/${file} ${PREFIX}/share/cups/model
 .endfor
