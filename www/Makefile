@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.16 1996/06/09 23:25:24 asami Exp $
+# $Id: Makefile,v 1.17 1996/06/14 09:10:34 asami Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -20,6 +20,7 @@
     SUBDIR += mapedit
     SUBDIR += netscape2
     SUBDIR += netscape3
+    SUBDIR += slang-lynx
     SUBDIR += squid
     SUBDIR += tkHTML
     SUBDIR += tkWWW
