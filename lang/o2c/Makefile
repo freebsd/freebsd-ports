@@ -12,8 +12,10 @@ MASTER_SITES=	ftp://ftp.uni-kl.de/pub/informatik/software/ \
 
 MAINTAINER=	ob@seicom.NET
 
-MAKE_ENV= 	MAKEOBJDIR=.
+# does not support 64-bit platforms
+ONLY_FOR_ARCHS=	i386
 
+MAKE_ENV= 	MAKEOBJDIR=.
 MAN1=	o2b.1 o2c.1 o2ef.1 o2whereis.1
 
 post-extract:
