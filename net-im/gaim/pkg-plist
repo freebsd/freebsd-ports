@@ -13,6 +13,8 @@ lib/gaim/libyahoo.so
 lib/gaim/libyahoo.so.0
 lib/gaim/libmsn.so
 lib/gaim/libmsn.so.0
+lib/gaim/libzephyr.so
+lib/gaim/libzephyr.so.0
 lib/gaim/napster.so
 lib/gaim/notify.so
 lib/gaim/spellchk.so

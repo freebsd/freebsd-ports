@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Wed Mar  7 08:54:56 2001
-+++ src/Makefile.in	Wed Mar  7 08:56:37 2001
-@@ -125,14 +125,14 @@
+--- src/Makefile.in.orig	Mon Apr 16 12:38:54 2001
++++ src/Makefile.in	Mon Apr 16 12:40:38 2001
+@@ -125,16 +125,16 @@
  l = @l@
  perlpath = @perlpath@
  sedpath = @sedpath@
@@ -9,20 +9,24 @@
  @GNOMEAPPLET_FALSE@bin_PROGRAMS = gaim
 -@GNOMEAPPLET_TRUE@gaim_applet_SOURCES = about.c 			aim.c 			applet.c 			away.c 			browser.c 			buddy.c 			buddy_chat.c 			conversation.c 			dialogs.c 			gaimrc.c 			gtkimhtml.c 			gtkspell.c 			gtkticker.c 			html.c 			idle.c 			multi.c 			oscar.c 			perl.c 			plugins.c 			prefs.c 			proxy.c 			prpl.c 			server.c 			sound.c 			ticker.c 			toc.c 			util.c
 -@GNOMEAPPLET_TRUE@gaim_applet_DEPENDENCIES = ../libfaim/libfaim.a @LIBOBJS@
+-@GNOMEAPPLET_TRUE@gaim_applet_LDFLAGS = -export-dynamic
 -@GNOMEAPPLET_TRUE@gaim_applet_LDADD = @LDADD@ @LIBOBJS@
 -@GNOMEAPPLET_FALSE@gaim_SOURCES = about.c 		aim.c 		applet.c 		away.c 		browser.c 		buddy.c 		buddy_chat.c 		conversation.c 		dialogs.c 		gaimrc.c 		gtkimhtml.c 		gtkspell.c 		gtkticker.c 		html.c 		idle.c 		multi.c 		oscar.c 		perl.c 		plugins.c 		prefs.c 		proxy.c 		prpl.c 		server.c 		sound.c 		ticker.c 		toc.c 		util.c
 -@GNOMEAPPLET_FALSE@gaim_DEPENDENCIES = ../libfaim/libfaim.a @LIBOBJS@
+-@GNOMEAPPLET_FALSE@gaim_LDFLAGS = -export-dynamic
 -@GNOMEAPPLET_FALSE@gaim_LDADD = @LDADD@ @LIBOBJS@
 +gaim_applet_SOURCES = about.c 			aim.c 			applet.c 			away.c 			browser.c 			buddy.c 			buddy_chat.c 			conversation.c 			dialogs.c 			gaimrc.c 			gtkimhtml.c 			gtkspell.c 			gtkticker.c 			html.c 			idle.c 			multi.c 			oscar.c 			perl.c 			plugins.c 			prefs.c 			proxy.c 			prpl.c 			server.c 			sound.c 			ticker.c 			toc.c 			util.c
 +gaim_applet_DEPENDENCIES = ../libfaim/libfaim.a @LIBOBJS@
++gaim_applet_LDFLAGS = -export-dynamic
 +gaim_applet_LDADD = @LDADD@ @LIBOBJS@
 +gaim_SOURCES = about.c 		aim.c 		applet.c 		away.c 		browser.c 		buddy.c 		buddy_chat.c 		conversation.c 		dialogs.c 		gaimrc.c 		gtkimhtml.c 		gtkspell.c 		gtkticker.c 		html.c 		idle.c 		multi.c 		oscar.c 		perl.c 		plugins.c 		prefs.c 		proxy.c 		prpl.c 		server.c 		sound.c 		ticker.c 		toc.c 		util.c
 +gaim_DEPENDENCIES = ../libfaim/libfaim.a @LIBOBJS@
++gaim_LDFLAGS = -export-dynamic
 +gaim_LDADD = @LDADD@ @LIBOBJS@
  
  # any other stuff
  CFLAGS = @CFLAGS@ -I$(top_srcdir)/libfaim $(PERL_CFLAGS) -DLOCALEDIR=\"$(datadir)/locale\" -DLIBDIR=\"$(libdir)/gaim/\" $(DEBUG_CFLAGS)
-@@ -149,19 +149,19 @@
+@@ -151,18 +151,18 @@
  DEFS = @DEFS@ -I. -I$(srcdir) -I..
  CPPFLAGS = @CPPFLAGS@
  LDFLAGS = @LDFLAGS@
@@ -32,25 +36,24 @@
 -@GNOMEAPPLET_TRUE@html.o idle.o multi.o oscar.o perl.o plugins.o \
 -@GNOMEAPPLET_TRUE@prefs.o proxy.o prpl.o server.o sound.o ticker.o \
 -@GNOMEAPPLET_TRUE@toc.o util.o
-+gaim_applet_OBJECTS =  about.o aim.o applet.o away.o \
-+browser.o buddy.o buddy_chat.o conversation.o \
-+dialogs.o gaimrc.o gtkimhtml.o gtkspell.o gtkticker.o \
-+html.o idle.o multi.o oscar.o perl.o plugins.o \
-+prefs.o proxy.o prpl.o server.o sound.o ticker.o \
-+toc.o util.o
- gaim_applet_LDFLAGS = 
 -@GNOMEAPPLET_FALSE@gaim_OBJECTS =  about.o aim.o applet.o away.o \
 -@GNOMEAPPLET_FALSE@browser.o buddy.o buddy_chat.o conversation.o \
 -@GNOMEAPPLET_FALSE@dialogs.o gaimrc.o gtkimhtml.o gtkspell.o \
 -@GNOMEAPPLET_FALSE@gtkticker.o html.o idle.o multi.o oscar.o perl.o \
 -@GNOMEAPPLET_FALSE@plugins.o prefs.o proxy.o prpl.o server.o sound.o \
 -@GNOMEAPPLET_FALSE@ticker.o toc.o util.o
++gaim_applet_OBJECTS =  about.o aim.o applet.o away.o \
++browser.o buddy.o buddy_chat.o conversation.o \
++dialogs.o gaimrc.o gtkimhtml.o gtkspell.o gtkticker.o \
++html.o idle.o multi.o oscar.o perl.o plugins.o \
++prefs.o proxy.o prpl.o server.o sound.o ticker.o \
++toc.o util.o
 +gaim_OBJECTS =  about.o aim.o applet.o away.o \
 +browser.o buddy.o buddy_chat.o conversation.o \
 +dialogs.o gaimrc.o gtkimhtml.o gtkspell.o \
 +gtkticker.o html.o idle.o multi.o oscar.o perl.o \
 +plugins.o prefs.o proxy.o prpl.o server.o sound.o \
 +ticker.o toc.o util.o
- gaim_LDFLAGS = 
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
