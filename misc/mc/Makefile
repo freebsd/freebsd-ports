@@ -17,13 +17,13 @@ COMMENT=	Midnight Commander, a free Norton Commander Clone
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
-.include <bsd.port.pre.mk>
-
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
+
+.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_SAMBA)
 CONFIGURE_ARGS+=--with-samba --with-configdir=${LOCALBASE}/etc \

@@ -21,6 +21,8 @@ BUILD_DEPENDS= \
 RUN_DEPENDS= \
 	${LOCALBASE}/sbin/pfctl:${PORTSDIR}/security/pf
 
+USE_GNOME=	glib12
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
@@ -31,7 +33,6 @@ CONFLICTS=	nocatauth-server-*
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib12
 
 CONFIGURE_ARGS+=	--disable-dependency-tracking
 CONFIGURE_ARGS+=	--disable-glibtest

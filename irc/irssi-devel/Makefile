@@ -17,6 +17,8 @@ COMMENT?=	A modular IRC client with many features
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
+WANT_GNOME=	yes
+
 MAN1=		irssi.1
 
 .include <bsd.port.pre.mk>

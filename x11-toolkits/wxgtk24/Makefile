@@ -46,6 +46,8 @@ PLIST=		${.CURDIR}/pkg-plist
 
 WXGTK_FLAVOR?=	gtk
 
+WANT_GNOME=	yes
+
 .if ${WXGTK_FLAVOR} != "gtk-common"
 RUN_DEPENDS=	${X11BASE}/include/wx/wx.h:${PORTSDIR}/x11-toolkits/wxgtk-common
 .endif
