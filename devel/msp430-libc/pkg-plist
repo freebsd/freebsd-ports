@@ -175,6 +175,29 @@
 %%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/miniterm.py
 %%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/swuart.h
 %%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/swuart.s
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/LICENSE.txt
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/README.txt
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/asmlib.S
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/game.c
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/hardware.h
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/history.txt
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/intro.c
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/lchanima.ci
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/logo.c
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/main.c
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/makefile
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/msppong.ci
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/winlogos.ci
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/winscreen.c
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVTetris/LICENSE.txt
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVTetris/README.txt
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVTetris/asmlib.S
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVTetris/game.c
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVTetris/hardware.h
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVTetris/main.c
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVTetris/makefile
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVTetris/numbers.ci
+%%LIBC_TARG%%/share/mspgcc/examples/video/TVTetris/tiles.ci
 @dirrm %%LIBC_TARG%%/include/msp430
 @dirrm %%LIBC_TARG%%/include/sys
 @dirrm %%LIBC_TARG%%/include
@@ -192,6 +215,9 @@
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/tasker
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/tcpip
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/timerA_uart
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/video/TVPong
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/video/TVTetris
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/video
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples
 @dirrm %%LIBC_TARG%%/share/mspgcc
 @unexec rmdir %D/%%LIBC_TARG%%/share 2>/dev/null || true
