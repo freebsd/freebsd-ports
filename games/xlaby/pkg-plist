@@ -1,0 +1,4 @@
+bin/xlaby
+man/man6/xlaby.6.gz
+share/doc/xlaby/COPYING
+@dirrm share/doc/xlaby

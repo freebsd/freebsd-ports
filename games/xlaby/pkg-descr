@@ -1,0 +1,10 @@
+   X Labyrinth  is a  labyrinth  game   under X11 that is played
+directly with the mouse  pointer: the  walls block the pointer's
+movement on the screen.
+
+   The goal of the game is to retrieve the four colored squares:
+to retrieve a square, it is sufficient to move  the pointer over
+it,  and  it  will  disappear.  However,  to  make  things  more
+infuriating,  the  squares  have  to be  taken in the  following 
+order:  red,  yellow,  green  and  blue. When the blue square is
+obtained, the game is won.
