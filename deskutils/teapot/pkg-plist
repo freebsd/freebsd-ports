@@ -9,6 +9,7 @@ bin/teapot
 %%PORTDOCS%%share/examples/teapot/counter.README
 %%PORTDOCS%%share/examples/teapot/life
 %%PORTDOCS%%share/examples/teapot/life.README
+%%PORTDOCS%%share/examples/teapot/graphtest.sh
 %%PORTDOCS%%share/examples/teapot/sqrt
 %%PORTDOCS%%share/examples/teapot/sqrt.README
 %%PORTDOCS%%@dirrm share/examples/teapot
