@@ -14,10 +14,3 @@ slow and floating point is almost nonexistent (see description of
 floatnums, below).  DEFINE-SYNTAX, LET-SYNTAX, LETREC-SYNTAX, and
 SYNTAX-RULES are supported, but not the rest of the Revised^4 Scheme
 macro proposal.
-
-Notes for FreeBSD port:  The external dynamic loading doesn't work
-properly due in part to non-portable code and limited support by
-FreeBSD for SUN dlfcn routines.  Unless you need to load external
-C code, this is a fine interpreter.
-
-Ported to FreeBSD by Josh MacDonald, <jmacd@uclink.berkeley.edu>
