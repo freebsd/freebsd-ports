@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/CharName.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode/String.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/String/String.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/String/String.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/String/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode/String
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Unicode
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Unicode
