@@ -22,7 +22,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		esd.1:${PORTSDIR}/audio/esound \
 		gdk_imlib.4:${PORTSDIR}/graphics/imlib \
 		gdk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		gif.3:${PORTSDIR}/graphics/png \
+		gif.5:${PORTSDIR}/graphics/png \
 		glib12.2:${PORTSDIR}/devel/glib12 \
 		gmodule12.2:${PORTSDIR}/devel/glib12 \
 		gnome.2:${PORTSDIR}/x11/gnomelibs \

@@ -12,7 +12,7 @@ MASTER_SITES=	http://elektra.e-technik.uni-ulm.de/~mbuck/download/
 
 MAINTAINER=	roger@freebsd.org
 
-LIB_DEPENDS=	gif.3:${PORTSDIR}/graphics/giflib \
+LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
 		png.3:${PORTSDIR}/graphics/png \
 		xview.3:${PORTSDIR}/x11-toolkits/xview
 
