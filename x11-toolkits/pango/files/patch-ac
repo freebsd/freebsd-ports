@@ -1,20 +1,14 @@
---- Makefile.in.orig	Fri Nov 17 23:44:38 2000
-+++ Makefile.in	Mon Nov 20 12:55:05 2000
-@@ -88,7 +88,7 @@
+
+$FreeBSD$
+
+--- Makefile.in	2001/04/29 11:31:14	1.1
++++ Makefile.in	2001/04/29 11:31:26
+@@ -94,7 +94,7 @@
  VERSION = @VERSION@
- X_LIBS = @X_LIBS@
+ XFT_LIBS = @XFT_LIBS@
  
--SUBDIRS = modules pango examples docs tools fonts
-+SUBDIRS = modules pango examples tools fonts
+-SUBDIRS = modules pango examples docs tools tests
++SUBDIRS = modules pango examples tools tests
  
- bin_SCRIPTS = pango-config
+ EXTRA_DIST =  	pango.spec.in		pango.pc.in		pangox.pc.in		pangoxft.pc.in		pangoft2.pc.in		TODO.xml		README.win32
  
-@@ -369,7 +369,7 @@
- install-exec-am: install-binSCRIPTS
- install-exec: install-exec-recursive
- 
--install-data-am: install-pkgconfigDATA
-+install-data-am: 
- install-data: install-data-recursive
- 
- install-am: all-am
