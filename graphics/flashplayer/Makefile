@@ -1,27 +1,24 @@
-# New ports collection makefile for:   flashplayer
-# Date created:        2 October 1999
-# Whom:                Akinori MUSHA aka knu <knu@idaemons.org>
+# New ports collection makefile for:	flashplayer
+# Date created:		2 October 1999
+# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	flashplayer
-PORTVERSION=	0.4.3
+PORTVERSION=	0.4.10
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.geocities.com/TimesSquare/Labyrinth/5084/flash/Linux/ \
-		http://perso.club-internet.fr/odebon/flash/Linux/
+MASTER_SITES=	http://www.swift-tools.com/Flash/
 DISTNAME=	flash-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-PATCH_SITES=	http://leed.t.u-tokyo.ac.jp/~yamagata/flash/
-PATCHFILES=	flash-0.4.3-fbsd-19990512.patch
-
 MAINTAINER=	knu@FreeBSD.org
 
-USE_X_PREFIX=	yes
-ALL_TARGET=	swfplayer
+LIB_DEPENDS=	flash.0:${.CURDIR}/../libflash
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/swfplayer ${PREFIX}/bin
+WRKSRC=		${WRKDIR}/${DISTNAME}/Player
+
+pre-build:
+	${CP} ${FILESDIR}/Makefile ${WRKSRC}/
 
 .include <bsd.port.mk>
