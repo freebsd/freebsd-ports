@@ -2,7 +2,7 @@
 #
 # New ports collection makefile for:	kenny
 # Date created:		2001/12/25
-# Whom:			Alan E AlanE@FreeBSD.org
+# Whom:			Alan E alane@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -16,7 +16,7 @@ DISTNAME=	kenny.pl-${PORTVERSION}
 EXTRACT_SUFX=	.gz
 EXTRACT_ONLY=
 
-MAINTAINER=	AlanE@FreeBSD.org
+MAINTAINER=	alane@FreeBSD.org
 
 USE_PERL5=	yes
 NO_BUILD=	yes

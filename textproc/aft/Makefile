@@ -1,6 +1,6 @@
 # New ports collection makefile for:	aft
 # Date created:		2002/03/28
-# Whom:			Alan Eldridge <AlanE@FreeBSD.org>
+# Whom:			Alan Eldridge <alane@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	5.0792
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.maplefish.com/todd/
 
-MAINTAINER=	AlanE@FreeBSD.org
+MAINTAINER=	alane@FreeBSD.org
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
