@@ -28,7 +28,6 @@ CONFIGURE_ENV=	WITH_GTK2=yes
 FAKEDIR=	${WRKDIR}/fake
 FAKESUBDIR=	${FAKEDIR}/lib/${PORTNAME}
 HAS_CONFIGURE=	yes
-JREDIR=		${LOCALBASE}/jdk1.3.1/jre
 ESD_LIB=	libesd.so.2
 LOCAL_PREFIX=	${PREFIX}/lib/${PORTNAME}
 NO_MTREE=	yes
@@ -42,6 +41,12 @@ USE_PERL5=	yes
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/mozilla
+
+JPI_LIST?=\
+	${LOCALBASE}/jdk1.4.2/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so \
+	${LOCALBASE}/jdk1.4.1/jre/plugin/${ARCH}/ns610/libjavaplugin_oji.so \
+	${LOCALBASE}/diablo-jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
+	${LOCALBASE}/jdk1.3.1/jre/plugin/${ARCH}/ns600/libjavaplugin_oji.so
 
 OPTIONS=	DEBUG "Build a debugging image" off \
 		HEADERS "Install headers and IDL files" off \
@@ -149,8 +154,14 @@ post-install:
 	${LN} -sf ${LOCAL_PREFIX}/bin/mozilla-config \
 		${PREFIX}/bin/firefox-config
 	${RM} -f ${PLUGINSDIR}/libjavaplugin_oji.so
-	-${LN} -sf \
-		${JREDIR}/plugin/${ARCH}/ns600/libjavaplugin_oji.so \
-		${PLUGINSDIR}/libjavaplugin_oji.so
+	if [ ! -L ${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ]; then \
+		for jpi in ${JPI_LIST}; do \
+			if [ -f $${jpi} ]; then \
+				-${LN} -sf $${jpi} \
+					${PREFIX}/lib/browser_plugins/libjavaplugin_oji.so ; \
+				break; \
+			fi; \
+		done; \
+	fi
 
 .include <bsd.port.post.mk>
