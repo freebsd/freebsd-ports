@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTVERSION=	0.6.2
 CATEGORIES=	multimedia audio
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+#MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://gstreamer.net/releases/${PORTVERSION}/src/
 PKGNAMESUFFIX=	-plugins
 DISTNAME=	gst-plugins-${PORTVERSION}
 
@@ -18,7 +18,7 @@ MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	GStreamer written collection of plugins handling several media types
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
-LIB_DEPENDS=	gstreamer-0.6.0:${PORTSDIR}/multimedia/gstreamer \
+LIB_DEPENDS=	gstreamer-0.6.1:${PORTSDIR}/multimedia/gstreamer \
 		popt.0:${PORTSDIR}/devel/popt \
 
 USE_X_PREFIX=	yes
@@ -57,7 +57,7 @@ SDL_CONFIG?="${LOCALBASE}/bin/sdl11-config"
 XMMS_CONFIG?="${LOCALBASE}/bin/xmms-config"
 
 # library minor number
-SHLIB_VERSION=  0
+SHLIB_VERSION=  1
 
 post-patch:
 # as of this writing, FreeBSD does not support lrint* C99 math functions
@@ -136,6 +136,11 @@ WITH_ARTS=yes
 # avifile
 .if exists(${LOCALBASE}/lib/libaviplay.a)
 WITH_AVIFILE=yes
+.endif
+
+# cdparanoia
+.if exists(${LOCALBASE}/lib/libcdda_paranoia.a)
+WITH_CDPARANOIA=yes
 .endif
 
 # esound
@@ -302,6 +307,16 @@ PLIST_SUB+=	AVIFILE="@comment "
 LIB_DEPENDS+=	aviplay.0:${PORTSDIR}/multimedia/avifile
 
 PLIST_SUB+=	AVIFILE=""
+.endif
+
+# cdparanoia
+.ifndef(WITH_CDPARANOIA)
+CONFIGURE_ARGS+=	--disable-cdparanoia
+PLIST_SUB+=	CDPARANOIA="@comment "
+.else
+LIB_DEPENDS+=	cdda_interface.0:${PORTSDIR}/audio/cdparanoia
+
+PLIST_SUB+=	CDPARANOIA=""
 .endif
 
 # esound
@@ -604,6 +619,10 @@ pre-everything::
 .ifndef(WITH_AVIFILE)
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_AVIFILE to enable avifile Video plugin'
+.endif
+.ifndef(WITH_CDPARANOIA)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> Define WITH_CDPARANOIA to enable cdparanoia Audio plugin'
 .endif
 .ifndef(WITH_ESOUND)
 	@${ECHO_MSG} '===>'

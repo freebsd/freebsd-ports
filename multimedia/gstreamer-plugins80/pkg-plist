@@ -22,6 +22,7 @@ lib/gstreamer-%%VERSION%%/libgstaudioscale.so
 lib/gstreamer-%%VERSION%%/libgstauparse.so
 lib/gstreamer-%%VERSION%%/libgstavidemux.so
 lib/gstreamer-%%VERSION%%/libgstavimux.so
+%%CDPARANOIA%%lib/gstreamer-%%VERSION%%/libgstcdparanoia.so
 lib/gstreamer-%%VERSION%%/libgstcdxaparse.so
 lib/gstreamer-%%VERSION%%/libgstchart.so
 %%HERMES%%lib/gstreamer-%%VERSION%%/libgstcolorspace.so
@@ -54,7 +55,6 @@ lib/gstreamer-%%VERSION%%/libgstlevel.so
 %%LIBMAD%%lib/gstreamer-%%VERSION%%/libgstmad.so
 lib/gstreamer-%%VERSION%%/libgstmedian.so
 %%LIBMIKMOD%%lib/gstreamer-%%VERSION%%/libgstmikmod.so
-lib/gstreamer-%%VERSION%%/libgstmodplug.so
 lib/gstreamer-%%VERSION%%/libgstmono2stereo.so
 lib/gstreamer-%%VERSION%%/libgstmonoscope.so
 lib/gstreamer-%%VERSION%%/libgstmp1videoparse.so
@@ -117,7 +117,7 @@ lib/libgstgconf-%%VERSION%%.so
 lib/libgstgconf-%%VERSION%%.so.%%SHLIB_VERSION%%
 lib/libgstmedia-info-%%VERSION%%.a
 lib/libgstmedia-info-%%VERSION%%.so
-lib/libgstmedia-info-%%VERSION%%.so.%%SHLIB_VERSION%%
+lib/libgstmedia-info-%%VERSION%%.so.0
 lib/libgstplay-%%VERSION%%.a
 lib/libgstplay-%%VERSION%%.so
 lib/libgstplay-%%VERSION%%.so.%%SHLIB_VERSION%%

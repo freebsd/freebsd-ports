@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	multimedia
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+#MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://gstreamer.net/releases/${PORTVERSION}/src/
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Development framework for creating media applications
@@ -41,12 +42,13 @@ INSTALLS_SHLIB=	yes
 
 MAN1=	gst-complete.1 gst-compprep.1 gst-inspect.1 gst-launch.1 \
 	gst-feedback.1 gst-md5sum.1 \
+	gst-typefind.1 \
 	gst-register.1 gst-xmllaunch.1
 
 PKG_CONFIG?="${LOCALBASE}/bin/pkg-config"
 
 # library minor number
-SHLIB_VERSION=	0
+SHLIB_VERSION=	1
 
 post-install:
 # register plugins
