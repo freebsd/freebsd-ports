@@ -1,72 +1,69 @@
-@exec mkdir -p %D/rancid/var
-@exec chmod 775 %D/rancid/var
-rancid/bin/alogin
-rancid/bin/arancid
-rancid/bin/blogin
-rancid/bin/brancid
-rancid/bin/cat5rancid
-rancid/bin/clogin
-rancid/bin/control_rancid
-rancid/bin/cssrancid
-rancid/bin/elogin
-rancid/bin/erancid
-rancid/bin/f10rancid
-rancid/bin/flogin
-rancid/bin/fnrancid
-rancid/bin/francid
-rancid/bin/hlogin
-rancid/bin/hpuifilter
-rancid/bin/hrancid
-rancid/bin/htlogin
-rancid/bin/htrancid
-rancid/bin/jerancid
-rancid/bin/jlogin
-rancid/bin/jrancid
-rancid/bin/lg.cgi
-rancid/bin/lgform.cgi
-rancid/bin/mrancid
-rancid/bin/nlogin
-rancid/bin/nrancid
-rancid/bin/nslogin
-rancid/bin/nsrancid
-rancid/bin/par
-rancid/bin/prancid
-rancid/bin/rancid
-rancid/bin/rancid-cvs
-rancid/bin/rancid-fe
-rancid/bin/rancid-run
-rancid/bin/rivlogin
-rancid/bin/rivrancid
-rancid/bin/rrancid
-rancid/bin/tntlogin
-rancid/bin/tntrancid
-rancid/bin/xrancid
-rancid/bin/zrancid
-rancid/etc/lg.conf.sample
-rancid/etc/rancid.conf.sample
-rancid/share/rancid/CHANGES
-rancid/share/rancid/COPYING
-rancid/share/rancid/FAQ
-rancid/share/rancid/README
-rancid/share/rancid/README.lg
-rancid/share/rancid/README.misc
-rancid/share/rancid/UPGRADING
-rancid/share/rancid/cisco-load.exp
-rancid/share/rancid/cisco-reload.exp
-rancid/share/rancid/cloginrc.sample
-rancid/share/rancid/downreport
-rancid/share/rancid/getipacctg
-rancid/share/rancid/index.html
-rancid/share/rancid/lg.conf.sample
-rancid/share/rancid/lgnotes.html
-rancid/share/rancid/rancid.conf.sample
-rancid/share/rancid/rtrfilter
-@dirrm rancid/share/rancid
-@dirrm rancid/share
-@dirrm rancid/var
-@dirrm rancid/etc
-@dirrm rancid/bin
-@dirrm rancid/man/man1
-@dirrm rancid/man/man5
-@dirrm rancid/man
-@dirrm rancid
+@exec mkdir -p %D/var/rancid
+@exec chmod 775 %D/var/rancid
+bin/rancid-cvs
+bin/rancid-run
+libexec/rancid/alogin
+libexec/rancid/arancid
+libexec/rancid/blogin
+libexec/rancid/brancid
+libexec/rancid/cat5rancid
+libexec/rancid/clogin
+libexec/rancid/control_rancid
+libexec/rancid/cssrancid
+libexec/rancid/elogin
+libexec/rancid/erancid
+libexec/rancid/f10rancid
+libexec/rancid/flogin
+libexec/rancid/fnrancid
+libexec/rancid/francid
+libexec/rancid/hlogin
+libexec/rancid/hpuifilter
+libexec/rancid/hrancid
+libexec/rancid/htlogin
+libexec/rancid/htrancid
+libexec/rancid/jerancid
+libexec/rancid/jlogin
+libexec/rancid/jrancid
+libexec/rancid/lg.cgi
+libexec/rancid/lgform.cgi
+libexec/rancid/mrancid
+libexec/rancid/nlogin
+libexec/rancid/nrancid
+libexec/rancid/nslogin
+libexec/rancid/nsrancid
+libexec/rancid/par
+libexec/rancid/prancid
+libexec/rancid/rancid
+libexec/rancid/rancid-cvs
+libexec/rancid/rancid-fe
+libexec/rancid/rancid-run
+libexec/rancid/rivlogin
+libexec/rancid/rivrancid
+libexec/rancid/rrancid
+libexec/rancid/tntlogin
+libexec/rancid/tntrancid
+libexec/rancid/xrancid
+libexec/rancid/zrancid
+etc/rancid/lg.conf.sample
+etc/rancid/rancid.conf.sample
+share/rancid/CHANGES
+share/rancid/COPYING
+share/rancid/FAQ
+share/rancid/README
+share/rancid/README.lg
+share/rancid/README.misc
+share/rancid/UPGRADING
+share/rancid/cisco-load.exp
+share/rancid/cisco-reload.exp
+share/rancid/cloginrc.sample
+share/rancid/downreport
+share/rancid/getipacctg
+share/rancid/index.html
+share/rancid/lg.conf.sample
+share/rancid/lgnotes.html
+share/rancid/rancid.conf.sample
+share/rancid/rtrfilter
+@dirrm share/rancid
+@dirrm var/rancid
+@dirrm etc/rancid
+@dirrm libexec/rancid
