@@ -155,7 +155,9 @@ CONFIGURE_ARGS+=--without-authcram
 CONFIGURE_ARGS+=--with-authcram
 .endif
 
-.if defined(WITH_FAM)
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_FAM) || exists(${LOCALBASE}/lib/libfam.so)
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS}"
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -187,7 +189,6 @@ MLINKS=		authlib.7 authpwd.7 \
 
 EXTRA_DOCS=	README INSTALL AUTHORS imap/ChangeLog
 
-.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^case x$$lockmethod in|${TEST} \&\& &|g' \
