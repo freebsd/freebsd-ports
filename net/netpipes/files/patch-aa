@@ -14,7 +14,7 @@
  # the controlling terminal)
  
 +# FreeBSD 2.1.0
-+CFLAGS = -DUSE_IOCTL $(CDEBUGFLAGS)
++CFLAGS += -DUSE_IOCTL $(CDEBUGFLAGS)
 +CC = gcc
 +
  # SunOS 4.1.4
