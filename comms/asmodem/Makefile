@@ -3,7 +3,7 @@
 # Date created:        11 May 1998
 # Whom:                Sean Cole <scole@aracnet.com>
 #
-# $Id: Makefile,v 1.1.1.1 1999/03/18 05:51:46 taoka Exp $
+# $Id: Makefile,v 1.2 1999/03/19 22:18:39 asami Exp $
 #
 
 DISTNAME=       asmodem-0.6
@@ -15,8 +15,9 @@ MAINTAINER=     ports@FreeBSD.ORG
 
 LIB_DEPENDS=    Xpm.4:${PORTSDIR}/graphics/xpm
 
-USE_GMAKE=      yes
+USE_GMAKE=	yes
 USE_IMAKE=	yes
+MAN1=		asmodem.1
 
 post-install:
 		strip ${PREFIX}/bin/asmodem
