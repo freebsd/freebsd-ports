@@ -27,4 +27,12 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lgnuregex"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+EXTRA_PATCHES+=	${FILESDIR}/current-src_backends_libgbf_am_gbf-am-project.c
+.else
+EXTRA_PATCHES+=	${FILESDIR}/stable-src_backends_libgbf_am_gbf-am-project.c
+.endif
+
+.include <bsd.port.post.mk>
