@@ -7,9 +7,9 @@
 
 PORTNAME=	cvsnt
 PORTVERSION=	2.0.58d
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.cvsnt.org/archive/ \
-		http://homepages.nildram.co.uk/~tmhoyle/
+MASTER_SITES=	http://www.cvsnt.org/archive/
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	CVS clone
@@ -22,6 +22,7 @@ USE_RC_SUBR=	yes
 CONFIGURE_ARGS=	--enable-fork
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 USE_GETOPT_LONG=yes
+USE_ICONV=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
