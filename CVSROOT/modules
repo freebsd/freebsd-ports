@@ -10324,6 +10324,7 @@ tac_plus4	ports/net/tac_plus4
 tacshell	ports/net/tacshell
 tads		ports/games/tads
 taglib		ports/audio/taglib
+tagtool		ports/audio/tagtool
 taipan		ports/games/taipan
 talkfilters	ports/misc/talkfilters
 tamago		ports/editors/tamago
