@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cpphs
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.cs.york.ac.uk/fp/cpphs/
 PKGNAMEPREFIX=	hs-
@@ -18,10 +18,13 @@ BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
 PLIST_FILES=	bin/cpphs
 
+MAN1=	cpphs.1
+
 do-build:
-	@(cd ${WRKSRC} && ghc -o cpphs --make Main)
+	@(cd ${WRKSRC} && ghc -o cpphs --make cpphs)
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/cpphs ${PREFIX}/bin/cpphs
+	@${INSTALL_MAN} ${WRKSRC}/docs/cpphs.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
