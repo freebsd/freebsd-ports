@@ -1,5 +1,7 @@
+lib/perl5/man/man3/GtkColorSelectButton.3.gz
 lib/perl5/site_perl/Gtk.pm
 lib/perl5/site_perl/Gtk/Atoms.pm
+lib/perl5/site_perl/Gtk/ColorSelectButton.pm
 lib/perl5/site_perl/Gtk/Gdk.pm
 lib/perl5/site_perl/Gtk/Types.pm
 lib/perl5/site_perl/auto/Gtk/autosplit.ix
