@@ -11,9 +11,10 @@ Included with it are some command-line utilities:
 - audinfo describes the current state of the audio hardware.
 - sndsine writes a mono NeXT/Sun sound file of a 440 Hz sine wave.
 
-To build without the GUI, define WITHOUT_X.  To build without the enhanced
-file-selection dialog, define WITHOUT_GTKEXTRA (this is implied by WITHOUT_X).
-To omit support for GUILE, define WITHOUT_GUILE.
+To build without the GUI, define WITHOUT_X11.  To build without the enhanced
+file-selection dialog, define WITHOUT_GTKEXTRA (this is implied by WITHOUT_X11).
+To omit support for the GUILE or Ruby languages, or the Enlightened Sound
+Daemon, define WITHOUT_GUILE, WITHOUT_RUBY or WITHOUT_ESD.
 
 Saving a selection from the Edit menu does not work.
 
