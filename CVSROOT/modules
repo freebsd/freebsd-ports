@@ -5468,6 +5468,7 @@ ruby-gimp	ports/graphics/ruby-gimp
 ruby-gnome	ports/x11/ruby-gnome
 ruby-gnuplot	ports/math/ruby-gnuplot
 ruby-gnustep	ports/devel/ruby-gnustep
+ruby-graph	ports/graphics/ruby-graph
 ruby-gserver	ports/net/ruby-gserver
 ruby-gtk	ports/x11-toolkits/ruby-gtk
 ruby-html-parser	ports/textproc/ruby-html-parser
