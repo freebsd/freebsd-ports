@@ -3,7 +3,7 @@
 # Date created:		11 September 1997
 # Whom:			giffunip
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/24 12:13:20 jseger Exp $
+# $Id: Makefile,v 1.2 1999/01/27 07:41:26 fenner Exp $
 #
 
 DISTNAME=	gsfonts-5.10
@@ -30,6 +30,5 @@ do-install:
 	tar -xzf ${DISTDIR}/${GS_FONTS_OTHER} -C ${GSDIR}/fonts
 	tar -xzf ${DISTDIR}/${GS_FONTS_STD} -C ${GSDIR}/fonts
 	(cd ${PREFIX}/share/ghostscript/fonts; $(LOCALBASE)/bin/type1inst -nogs -nolog -q)
-	mkfontdir ${GSDIR}/fonts
 
 .include <bsd.port.mk>
