@@ -29,8 +29,8 @@ post-extract:
 pre-patch:
 	${CP} ${FILESDIR}/Makefile.ortep3 ${WRKDIR}/${DISTNAME}/src/Makefile
 .if defined(USEPGPLOT)
-	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/patch-aa
-	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/patch-ab
+	cd ${WRKSRC} && ${PATCH} < ${PATCHDIR}/extra-patch-aa
+	cd ${WRKSRC} && ${PATCH} < ${PATCHDIR}/extra-patch-ab
 .endif
 
 pre-install:
