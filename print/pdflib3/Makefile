@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.pdflib.com/pdflib/download/
 
 MAINTAINER=	billf@FreeBSD.org
 
+BROKEN=		"Distfile has disappeared"
+
 RUN_DEPENDS=	${LOCALBASE}/lib/afm/Courier:${PORTSDIR}/print/afm
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
