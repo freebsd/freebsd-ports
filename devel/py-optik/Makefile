@@ -16,17 +16,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Optik-${PORTVERSION}
 
 MAINTAINER=	ports@geeksrus.net
-BUILD_DEPENDS=	${PYDISTUTILS}
 
 USE_PYTHON=	yes
-
-SETUP_CMD=	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
-
-do-build:
-	@${SETUP_CMD} build
-
-do-install:
-	@${SETUP_CMD} install
+USE_PYDISTUTILS=	yes
 
 .if !defined(NOPORTDOCS)
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}

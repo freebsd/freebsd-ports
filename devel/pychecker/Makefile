@@ -14,17 +14,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	sobomax@FreeBSD.org
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 
 DOCS=		CHANGELOG COPYRIGHT KNOWN_BUGS MAINTAINERS README TODO \
 		VERSION
 
-SETUP_CMD=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
-
-do-build:
-	${SETUP_CMD} build
-
-do-install:
-	${SETUP_CMD} install -c -O1 --prefix=${PREFIX}
+post-install:
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCS}
 	@${INSTALL_MAN} ${WRKSRC}/${file} ${DOCSDIR}

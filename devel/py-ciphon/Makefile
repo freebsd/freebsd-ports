@@ -18,14 +18,9 @@ MAINTAINER=	ports@FreeBSD.org
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyexpat.so:${PORTSDIR}/textproc/py-expat
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=	yes
 
-SETUP_CMD=	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
-
-do-build:
-	@${SETUP_CMD} build
-
-do-install:
-	@${SETUP_CMD} install
+post-install:
 	@${MV} -f ${PREFIX}/bin/ciphon.py ${PREFIX}/bin/ciphon
 
 .include <bsd.port.mk>

@@ -16,21 +16,13 @@ DISTNAME=	egenix-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${PYDISTUTILS} \
-		${PREFIX}/include/gmp.h:${PORTSDIR}/math/libgmp4
+BUILD_DEPENDS=	${PREFIX}/include/gmp.h:${PORTSDIR}/math/libgmp4
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/mx/BeeBase/BeeBase.py:${PORTSDIR}/lang/py-mx-base
 
 USE_PYTHON=	yes
-
-SETUP_CMD=	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
+USE_PYDISTUTILS=	yes
 
 post-patch:
 	@${PERL} -pi  -e "s|LIBGMPH|${PREFIX}/include|" ${WRKSRC}/mxEXPERIMENTAL.py
-
-do-build:
-	@${SETUP_CMD} build
-
-do-install:
-	@${SETUP_CMD} install
 
 .include <bsd.port.mk>

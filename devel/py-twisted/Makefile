@@ -15,13 +15,12 @@ DISTNAME=	Twisted-${PORTVERSION}
 
 MAINTAINER=	wjv@FreeBSD.org
 
-BUILD_DEPENDS=	${PYDISTUTILS}
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/unittest.py:${PORTSDIR}/devel/py-unit \
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-PYTHON_SETUP=	${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
+USE_PYDISTUTILS=	yes
 CPIO=		cpio --quiet -pdum -R
 MAN1=		coil.1 im.1 manhole.1 mktap.1 t-im.1 twistd.1
 
@@ -29,20 +28,13 @@ post-patch:
 	@ ${PERL} -pi -e 's/from pyunit import/import/g' \
 	  ${WRKSRC}/admin/runtests ${WRKSRC}/twisted/test/*.py
 
-do-build:
-	@ cd ${WRKSRC} && ${PYTHON_SETUP} build
-
-do-install:
-	@ cd ${WRKSRC} && ${PYTHON_SETUP} install -c -O1 \
-	  --prefix=${PREFIX}
+post-install:
 	@ ${MKDIR} ${DATADIR}/admin
 	@ ${INSTALL_SCRIPT} ${WRKSRC}/admin/accepttests \
 	  ${WRKSRC}/admin/runtests ${DATADIR}/admin
 .for manpage in ${MAN1}
 	@ ${INSTALL_MAN} ${WRKSRC}/doc/man/${manpage} ${MANPREFIX}/man/man1
 .endfor
-
-post-install:
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}/api
 	@ cd ${WRKSRC}/doc/api && find * \
