@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.19 1995/08/19 06:32:57 asami Exp $
+# $Id: LEGAL,v 1.20 1995/08/21 09:42:31 asami Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -33,3 +33,4 @@ uzap.tar.gz             ports/editors/uzap      Restrictive copyright
 joe2.8.tar.Z		ports/editors/joe	Restrictive copyright
 rkive3.1.tar.gz		ports/news/rkive	Restrictive copyright
 netscape-*		ports/net/netscape	Commercial product
+msql-1.0.5.tar.gz	ports/databases/msql	Restrictive copyright
