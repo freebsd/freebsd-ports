@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mydns
-PORTVERSION=	0.10.3
+PORTVERSION=	0.10.4
 CATEGORIES=	dns databases
 MASTER_SITES=	http://mydns.bboy.net/download/
 
