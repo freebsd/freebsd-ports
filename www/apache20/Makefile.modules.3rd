@@ -84,9 +84,9 @@ AP_EXTRAS+=	-L ${AP_LIB}
 ap-gen-plist:
 .if defined(AP_GENPLIST)
 	@${ECHO} "===>  Generating apache plist"
-	@${ECHO} "%%APACHEMODDIR%%/%%AP_MODULE%%" > ${PLIST}
+	@${ECHO} "@unexec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%%APACHEMODDIR%%/%%AP_MODULE%%" > ${PLIST}
+	@${ECHO} "%%APACHEMODDIR%%/%%AP_MODULE%%" >> ${PLIST}
 	@${ECHO} "@exec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%F" >> ${PLIST}
-	@${ECHO} "@unexec %D/sbin/apxs -e -A -n %%AP_NAME%% %D/%F" >> ${PLIST}
 .else
 	@${DO_NADA}
 .endif
@@ -94,5 +94,5 @@ do-build: ap-gen-plist
 	@cd ${WRKSRC} && ${APXS} -c ${AP_EXTRAS} -o ${MODULENAME}.${AP_BUILDEXT} ${SRC_FILE}
 
 do-install:
-	@${APXS} -i -a -n ${SHORTMODNAME} ${WRKSRC}/${MODULENAME}.${AP_BUILDEXT}
+	@${APXS} -i -A -n ${SHORTMODNAME} ${WRKSRC}/${MODULENAME}.${AP_BUILDEXT}
 .endif
