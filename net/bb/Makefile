@@ -3,7 +3,7 @@
 # Date created:         So  17 Nov 1996 16:59:23 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.5 1997/01/04 15:12:59 andreas Exp $
+# $Id: Makefile,v 1.6 1997/01/04 15:24:34 andreas Exp $
 #
 
 DISTNAME=	bb
@@ -16,6 +16,8 @@ MAINTAINER=	andreas@klemm.gtn.com
 
 BUILD_DEPENDS=	${PREFIX}/sbin/httpd:${PORTSDIR}/www/apache
 RUN_DEPENDS=	netscape:${PORTSDIR}/www/netscape3
+
+NO_CDROM=	"It can't be sold"
 
 post-configure:
 	( cd ${WRKSRC}/doc; /bin/sh bbconfig freebsd )
