@@ -13,6 +13,10 @@ MASTER_SITES=	ftp://ftp.porcupine.org/pub/security/
 
 MAINTAINER=	torstenb@FreeBSD.org
 
+.if exists(/usr/include/tcpd.h)
+FORBIDDEN=	tcp_wrappers is in the base system
+.endif
+
 ALL_TARGET=	freebsd
 MAN3=		hosts_access.3
 MAN5=		hosts_access.5 hosts_options.5
