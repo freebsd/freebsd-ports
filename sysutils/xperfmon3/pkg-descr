@@ -18,5 +18,3 @@ Changes from xperfmon++ V2.0 to xperfmon++ V3.0:
 	- Add many graphs, now there are a total of 25 graphs
 	- Change scaling of graphs from integer to float.
 	- Problems during first resize of the window are fixed
-
-See also /usr/ports/sysutils/xperfmon/pkg/DESCR for older change information.
