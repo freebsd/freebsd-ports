@@ -34,7 +34,7 @@ MAN3+=	cdk.3 \
 	cdk_uscale.3 \
 	cdk_uslider.3 \
 	cdk_viewer.3
-MLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
+BROKENMLINKS+=cdk_alphalist.3 activateCDKAlphalist.3 \
 	cdk_alphalist.3 destroyCDKAlphalist.3 \
 	cdk_alphalist.3 drawCDKAlphalist.3 \
 	cdk_alphalist.3 eraseCDKAlphalist.3 \

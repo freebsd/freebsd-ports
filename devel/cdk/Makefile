@@ -41,8 +41,13 @@ ALL_TARGET=	default examples demos cli cdkshlib
 INSTALL_TARGET=	install installCDKSHLibrary
 INSTALLS_SHLIB=	yes
 
-NOMANCOMPRESS=	yes	# work around 'argument list too long' issue
 .include "${.CURDIR}/maninfo.mk"
+
+post-patch:
+.	for f in cli/Makefile.in demos/Makefile.in examples/Makefile.in
+		@${REINPLACE_CMD} -e 's|^\(LINKIT.*\)|& \&\& ${STRIP_CMD} $$@|' ${WRKSRC}/$f
+		@${RM} ${WRKSRC}/$f.bak
+.	endfor
 
 post-configure:
 	${REINPLACE_CMD} -e 's|^DOCUMENT_DIR.*$$|DOCUMENT_DIR=${DOCSDIR}|' \
