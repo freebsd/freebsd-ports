@@ -123,6 +123,7 @@
     SUBDIR += hlserver-glbwar
     SUBDIR += hlserver-heroes
     SUBDIR += hlserver-opfor
+    SUBDIR += hlserver-oz
     SUBDIR += hlserver-si
     SUBDIR += hlserver-svencoop
     SUBDIR += hlserver-wasteland
