@@ -3,11 +3,11 @@
 # Date created:		31 December 1996
 # Whom:			MITA Yoshio <mita@ee.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.5 1997/07/13 18:49:30 max Exp $
+# $Id: Makefile,v 1.6 1998/10/10 04:51:50 asami Exp $
 #
 
 DISTNAME=	w3-2.2.26
-CATEGORIES?=	www
+CATEGORIES?=	www elisp
 MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/network/WWW/w3/ \
 		ftp://ftp.cs.indiana.edu/pub/elisp/w3/
 
