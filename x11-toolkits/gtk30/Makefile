@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtk
-PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTVERSION=	2.2.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,sources/gtk+/2.2,} \
 		ftp://ftp.gtk.org/pub/gtk/v2.0/ \
@@ -39,7 +38,7 @@ USE_GNOME=	gnomehack atk pango
 CONFIGURE_ARGS=	--enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/freetype2 \
 			  -I${LOCALBASE}/include -I${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 PLIST_SUB=	GTK_VERSION="2.2.0"
 
 MAN1=		gdk-pixbuf-csource.1
@@ -47,10 +46,6 @@ MAN1=		gdk-pixbuf-csource.1
 post-patch:
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${GREP} -l lgmodule | \
 		xargs ${REINPLACE_CMD} -e 's|-lgmodule|@GMODULE_LIBS@|g'
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|[(]libdir[)]/locale|(prefix)/share/locale|g' \
-		${WRKSRC}/po/Makefile.in.in
 
 pre-build:
 	${RM} -rf ${WRKSRC}/docs/gtk.info*
