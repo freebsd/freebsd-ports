@@ -1,0 +1,10 @@
+--- include/proto.h.orig	Fri Feb  2 15:34:50 2001
++++ include/proto.h	Fri Feb  2 16:13:03 2001
+@@ -1420,6 +1420,7 @@
+ char *lp_addprinter_cmd(void);
+ char *lp_deleteprinter_cmd(void);
+ char *lp_lockdir(void);
++char *lp_piddir(void);
+ char *lp_utmpdir(void);
+ char *lp_wtmpdir(void);
+ char *lp_utmp_hostname(void);

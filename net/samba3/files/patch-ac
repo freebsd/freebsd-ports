@@ -1,6 +1,6 @@
---- lib/pidfile.c.orig	Fri Jan 15 22:40:47 1999
-+++ lib/pidfile.c	Fri Jan 15 22:41:05 1999
-@@ -37,7 +37,7 @@
+--- lib/pidfile.c.orig	Fri Feb  2 00:38:09 2001
++++ lib/pidfile.c	Fri Feb  2 00:38:26 2001
+@@ -39,7 +39,7 @@
  	unsigned ret;
  	pstring pidFile;
  
@@ -9,9 +9,9 @@
  
  	fd = sys_open(pidFile, O_NONBLOCK | O_RDWR, 0644);
  	if (fd == -1) {
-@@ -78,7 +78,7 @@
+@@ -80,7 +80,7 @@
  	pstring pidFile;
- 	int pid;
+ 	pid_t pid;
  
 -	slprintf(pidFile, sizeof(pidFile)-1, "%s/%s.pid", lp_lockdir(), name);
 +	slprintf(pidFile, sizeof(pidFile)-1, "%s/%s.pid", lp_piddir(), name);

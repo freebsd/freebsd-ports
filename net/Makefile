@@ -251,6 +251,7 @@
     SUBDIR += ruby-uri
     SUBDIR += rwhois
     SUBDIR += samba
+    SUBDIR += samba-devel
     SUBDIR += scotty
     SUBDIR += scotty3
     SUBDIR += sdl_net
