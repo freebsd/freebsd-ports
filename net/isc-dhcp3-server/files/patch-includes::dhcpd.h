@@ -47,7 +47,7 @@
  void state_stop PROTO ((void *));
  void state_panic PROTO ((void *));
 +
-+#ifdef __FreeBSD__
++#if __FreeBSD_version > 502010
 +void set_ieee80211 PROTO ((struct interface_info *));
 +#endif
 +int interface_active PROTO ((struct interface_info *));

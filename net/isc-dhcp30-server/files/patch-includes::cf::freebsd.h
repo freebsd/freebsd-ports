@@ -1,5 +1,14 @@
 --- includes/cf/freebsd.h.orig	Wed Mar  3 02:32:39 2004
 +++ includes/cf/freebsd.h	Wed Mar  3 02:31:56 2004
+@@ -42,7 +42,7 @@
+  */
+ 
+ #include <syslog.h>
+-#include <sys/types.h>
++#include <sys/param.h>
+ #include <string.h>
+ #include <paths.h>
+ #include <errno.h>
 @@ -101,6 +101,10 @@
  #define SOCKLEN_T int
  #endif

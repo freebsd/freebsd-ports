@@ -4,7 +4,7 @@
  #include "dhcpd.h"
  #include "version.h"
  
-+#ifdef __FreeBSD__
++#if __FreeBSD_version > 502010
 +#include <sys/ioctl.h>
 +#include <net/if_media.h>
 +#include <net80211/ieee80211_ioctl.h>
@@ -63,7 +63,7 @@
  				       argv [i], (long)strlen (argv [i]));
 - 		    strcpy (tmp -> name, argv [i]);
 + 		    strlcpy (tmp -> name, argv [i], IFNAMSIZ);
-+#ifdef __FreeBSD__
++#if __FreeBSD_version > 502010
 +		    set_ieee80211 (tmp);
 +#endif
 +		    /* Init some interface vars, enable polling */
@@ -79,7 +79,7 @@
  					     INTERFACE_AUTOMATIC)) !=
  			     INTERFACE_REQUESTED))
  				continue;
-+#ifdef __FreeBSD__
++#if __FreeBSD_version > 502010
 +			set_ieee80211 (ip);
 +#endif
 +#ifdef ENABLE_POLLING_MODE
@@ -285,7 +285,7 @@
 +/* Check to see if there's a wire plugged in */
 +int
 +interface_active(struct interface_info *ip) {
-+#ifdef __FreeBSD__
++#if __FreeBSD_version > 502010
 +	struct ifmediareq ifmr;
 +	int *media_list, i;
 +	char *ifname;
@@ -350,7 +350,7 @@
 +	return (HAVELINK);
 +}
 + 
-+#ifdef __FreeBSD__
++#if __FreeBSD_version > 502010
 +void
 +set_ieee80211 (struct interface_info *ip) {
 + 
@@ -385,7 +385,7 @@
 +	}
 +	close (sock);
 + }
-+#endif /* __FreeBSD__ */
++#endif /* __FreeBSD_version */
 + 
 +#ifdef ENABLE_POLLING_MODE
 +/* Go to background after some time */

@@ -8,7 +8,7 @@
 
 PORTNAME=	dhcp
 PORTVERSION=	3.0.1.r12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	dhcp dhcp/dhcp-3.0-history
@@ -35,16 +35,6 @@ INSTALL_TARGET=	install.${SUBSYS}
 SUBSYS?=	server
 
 .if ${SUBSYS} == client
-.if ${OSVERSION} >= 502000
-# Include 802.11 patches
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-client::clparse.c \
-		${PATCHDIR}/extra-patch-client::dhclient.8 \
-		${PATCHDIR}/extra-patch-client::dhclient.c \
-		${PATCHDIR}/extra-patch-client::dhclient.conf
-.else
-# 4.x doesn't support interface polling
-WITHOUT_INTERFACE_POLLING=	Unsupported
-.endif
 MAN5=		dhclient.conf.5 dhclient.leases.5
 MAN8=		dhclient.8 dhclient-script.8
 .elif ${SUBSYS} == server
