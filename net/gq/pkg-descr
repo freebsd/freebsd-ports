@@ -1,0 +1,12 @@
+GQ is a GTK-based LDAP client. Features include:
+
+  - browse and search modes
+  - LDAP V3 schema browser
+  - template editor
+  - edit and delete entries
+  - add entries with templates
+  - export subtree or whole server to LDIF file
+  - use any number of servers
+  - search based on single argument or LDAP filter
+
+WWW: http://biot.com/gq/
