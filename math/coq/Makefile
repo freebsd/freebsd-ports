@@ -32,6 +32,10 @@ ALL_TARGET=	world
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
+BROKEN=	"OCaml bug prevents compilation"
+.endif
+
 .if exists(${LOCALBASE}/bin/lablgtk2)
 BUILD_DEPENDS+=	lablgtk2:${PORTSDIR}/x11-toolkits/ocaml-lablgtk2
 RUN_DEPENDS+=	${BUILD_DEPENDS}
