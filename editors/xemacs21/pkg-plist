@@ -12,7 +12,7 @@ bin/xemacs-%%XEMACS_VER%%
 @exec ln -s %D/%F %B/xemacs21
 @unexec rm %B/xemacs
 @unexec rm %B/xemacs21
-etc/rc.d/xemacs.sh
+etc/rc.d/xemacs21.sh
 @exec mkdir -p /var/run/xemacs/lock ; chmod 1777 /var/run/xemacs/lock
 lib/xemacs-%%XEMACS_VER%%/etc/BETA
 lib/xemacs-%%XEMACS_VER%%/etc/CHARSETS
