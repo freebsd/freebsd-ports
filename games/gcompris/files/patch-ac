@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- Makefile.in.orig	Tue Apr 17 11:15:52 2001
-+++ Makefile.in	Tue Apr 17 11:35:09 2001
-@@ -173,9 +173,9 @@
+--- Makefile.in.orig	Mon May 28 13:18:45 2001
++++ Makefile.in	Mon May 28 13:33:59 2001
+@@ -183,9 +183,9 @@
  		rm -f $(srcdir)/stamp-h.in; \
  		$(MAKE) $(srcdir)/stamp-h.in; \
  	else :; fi
@@ -16,30 +16,29 @@ $FreeBSD$
  
  mostlyclean-hdr:
  
-@@ -456,22 +456,22 @@
+@@ -417,7 +417,7 @@
+ install-exec-am:
+ install-exec: install-exec-recursive
+ 
+-install-data-am: install-GamesDATA install-MenuDATA install-iconDATA \
++install-data-am: install-GamesDATA install-iconDATA \
+ 		install-data-local
+ install-data: install-data-recursive
+ 
+@@ -488,14 +488,14 @@
  	@$(NORMAL_INSTALL)
- 	if test -d pixmaps; then \
- 	  $(mkinstalldirs) $(pixmapdir); \
--	  cd pixmaps ; tar cf -  --exclude CVS --exclude .xvpics * | ( cd $(pixmapdir) ; tar xf -) ; cd .. ; \
-+	  cd pixmaps ; tar --exclude CVS --exclude .xvpics -cf - * | ( cd $(pixmapdir) ; tar xf -) ; cd .. ; \
- 	fi
- 	if test -d data; then \
- 	  $(mkinstalldirs) $(leveldatadir); \
--	  cd data ; tar cf -  --exclude CVS --exclude .xvpics * | ( cd $(leveldatadir) ; tar xf -) ; cd .. ; \
-+	  cd data ; tar --exclude CVS --exclude .xvpics -cf - * | ( cd $(leveldatadir) ; tar xf -) ; cd .. ; \
+ 	if test -d @PACKAGE_DATA_DIR@; then \
+ 	  $(mkinstalldirs) $(DESTDIR)/$(pkgdatadir)/@PACKAGE_DATA_DIR@; \
+-	  cd @PACKAGE_DATA_DIR@ ; tar cf -  --exclude CVS --exclude .xvpics * | ( cd $(DESTDIR)/$(pkgdatadir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
++	  cd @PACKAGE_DATA_DIR@ ; tar --exclude CVS --exclude .xvpics -cf - * | ( cd $(DESTDIR)/$(pkgdatadir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
  	fi
  
  dist-hook:
  	cp gcompris.spec $(distdir)
- 	if test -d pixmaps; then \
- 	  $(mkinstalldirs) $(distdir)/pixmaps; \
--	  cd pixmaps ; tar cf -  --exclude CVS --exclude .xvpics * | ( cd ../$(distdir)/pixmaps ; tar xf -) ; cd .. ; \
-+	  cd pixmaps ; tar --exclude CVS --exclude .xvpics -cf - * | ( cd ../$(distdir)/pixmaps ; tar xf -) ; cd .. ; \
- 	fi
- 	if test -d data; then \
- 	  $(mkinstalldirs) $(distdir)/data; \
--	  cd data ; tar cf -  --exclude CVS --exclude .xvpics * | ( cd ../$(distdir)/data ; tar xf -) ; cd .. ; \
-+	  cd data ; tar --exclude CVS --exclude .xvpics -cf - * | ( cd ../$(distdir)/data ; tar xf -) ; cd .. ; \
+ 	if test -d @PACKAGE_DATA_DIR@; then \
+ 	  $(mkinstalldirs) $(distdir)/@PACKAGE_DATA_DIR@; \
+-	  cd @PACKAGE_DATA_DIR@ ; tar cf -  --exclude CVS --exclude .xvpics * | ( cd ../$(distdir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
++	  cd @PACKAGE_DATA_DIR@ ; tar --exclude CVS --exclude .xvpics -cf - * | ( cd ../$(distdir)/@PACKAGE_DATA_DIR@ ; tar xf -) ; cd .. ; \
  	fi
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
