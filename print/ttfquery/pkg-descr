@@ -1,0 +1,10 @@
+TTFQuery builds on the FontTools package to allow the Python programmer to
+accomplish a number of tasks:
+    * query the system to find installed fonts
+    * retrieve metadata about any TTF font file (even those not yet installed)
+          o abstract family type
+          o proper font name
+          o glyph outlines
+    * build simple metadata registries for run-time font matching
+
+WWW: http://ttfquery.sourceforge.net/
