@@ -7,6 +7,7 @@
 
 PORTNAME=	libowfat
 PORTVERSION=	0.18
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://dl.fefe.de/
 
