@@ -14,35 +14,32 @@ PKGNAMEPREFIX=	ant-
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	XInclude task for Jakarta Ant
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant \
-		${JAVASHAREDIR}/classes/xincluder.jar:${PORTSDIR}/textproc/xincluder
+BUILD_DEPENDS=	${JAVAJARDIR}/xincluder.jar:${PORTSDIR}/textproc/xincluder
 
-BROKEN=		Install fails
+USE_JAVA=	yes
+JAVA_VERSION=	1.1+
+USE_ANT=	yes
 
-USE_JAVA=	1.1+
-
-ANT?=		${LOCALBASE}/bin/ant
-.if defined(NOPORTDOCS)
-ANT_TARGET=	jar
-.else
-ANT_TARGET=	jar apidocs
+ALL_TARGET=	jar
+.if !defined(NOPORTDOCS)
+ALL_TARGET+=	apidocs
 PORTDOCS=	*
 .endif
+MAKE_ENV+=	CLASSPATH=${JAVAJARDIR}/xincluder.jar
 
-do-build:
-	cd ${WRKSRC} && ${SETENV} ANT_INCLUDE_SHARED_JARS=YES ${ANT} ${ANT_TARGET}
+PLIST_FILES+=	%%JAVAJARDIR%%/${PORTNAME}.jar
 
 do-install:
-
-	@${ECHO} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
-	@${CP} ${WRKSRC}/build/${PORTNAME}.jar ${JAVAJARDIR}/
-	@${ECHO} " [ DONE ]"
+	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
+	@${MKDIR} ${JAVAJARDIR}
+	@${INSTALL_DATA} ${WRKSRC}/build/${PORTNAME}.jar ${JAVAJARDIR}/
+	@${ECHO_MSG} " [ DONE ]"
 
 .if !defined(NOPORTDOCS)
-	@${ECHO} -n ">> Installing documentation in ${DOCSDIR}..."
-	@${MKDIR} ${DOCSDIR}
-	@${CP} -r ${WRKSRC}/build/apidocs/* ${DOCSDIR}
-	@${ECHO} " [ DONE ]"
+	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
+	@cd ${WRKSRC}/build/apidocs && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} ";"
+	@cd ${WRKSRC}/build/apidocs && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} ";"
+	@${ECHO_MSG} " [ DONE ]"
 .endif
 
 .include <bsd.port.mk>
