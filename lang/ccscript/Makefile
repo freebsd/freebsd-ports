@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ccscript
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://www.voxilla.org/pub/ccscript/
 
