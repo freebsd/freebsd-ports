@@ -8,7 +8,9 @@
 PORTNAME=	imaging
 PORTVERSION=	1.1.4
 CATEGORIES=	graphics python
-MASTER_SITES=	http://effbot.org/downloads/
+MASTER_SITES=	http://www.pythonware.com/downloads/ \
+		ftp://www.python.org/pub/python/src/ \
+		ftp://ftp.cwi.nl/pub/python/src/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Imaging-${PORTVERSION}
 
@@ -16,7 +18,8 @@ MAINTAINER=	tg@FreeBSD.org
 COMMENT=	The Python Imaging Library
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
 DIST_SUBDIR=	python
@@ -27,11 +30,27 @@ CONFIGURE_ARGS=	--with-jpeg=${PREFIX}/lib
 CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
 MAKE_FLAGS=	OPT="${CFLAGS}"
 
+.include <bsd.port.pre.mk>
+
 PILDIR=		${PYTHON_SITELIBDIR}/PIL
 PILDOCDIR=	${PREFIX}/share/doc/PIL
 PILEXDIR=	${PREFIX}/share/examples/PIL
 PILINCDIR=	${PREFIX}/include/${PYTHON_VERSION}
 
+.if ${PYTHON_REL} > 200
+post-build:
+	@(cd ${WRKSRC}/..; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} build ${PYDISTUTILS_BUILDARGS})
+
+do-install:
+	@(cd ${WRKSRC}/..; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} ${PYSETUP} install ${PYDISTUTILS_INSTALLARGS})
+	@${MKDIR} ${PILDOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/../README ${PILDOCDIR}
+	@${MKDIR} ${PILEXDIR}
+	${INSTALL_DATA} ${WRKSRC}/../Scripts/* ${PILEXDIR}
+.for file in ImConfig.h ImPlatform.h Imaging.h
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PILINCDIR}
+.endfor
+.else
 post-extract:
 	@${CP} ${FILESDIR}/Setup ${WRKSRC}/..
 
@@ -55,5 +74,5 @@ do-install:
 .for file in ImConfig.h ImPlatform.h Imaging.h
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PILINCDIR}
 .endfor
-
-.include <bsd.port.mk>
+.endif
+.include <bsd.port.post.mk>

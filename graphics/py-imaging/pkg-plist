@@ -199,12 +199,13 @@ lib/%%PYTHON_VERSION%%/site-packages/PIL/XbmImagePlugin.pyo
 lib/%%PYTHON_VERSION%%/site-packages/PIL/XpmImagePlugin.py
 lib/%%PYTHON_VERSION%%/site-packages/PIL/XpmImagePlugin.pyc
 lib/%%PYTHON_VERSION%%/site-packages/PIL/XpmImagePlugin.pyo
+lib/%%PYTHON_VERSION%%/site-packages/PIL/_imaging.so
+lib/%%PYTHON_VERSION%%/site-packages/PIL/_imagingft.so
+lib/%%PYTHON_VERSION%%/site-packages/PIL/_imagingtk.so
 lib/%%PYTHON_VERSION%%/site-packages/PIL/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/PIL/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/PIL/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/PIL.pth
-lib/%%PYTHON_VERSION%%/site-packages/_imaging.so
-lib/%%PYTHON_VERSION%%/site-packages/_imagingtk.so
 share/doc/PIL/README
 share/examples/PIL/README
 share/examples/PIL/bdf2pil.py
