@@ -10,7 +10,7 @@ PORTVERSION=	2.13
 CATEGORIES=	devel
 MASTER_SITES=	http://distcc.samba.org/ftp/distcc/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dom@helenmarks.co.uk
 COMMENT=	Distribute compilation of C(++) code acrosss machines on a network
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
