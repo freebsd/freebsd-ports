@@ -7,6 +7,7 @@
 
 PORTNAME=	tinyldap
 PORTVERSION=	0.0.${SNAPSHOT}
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.dinoex.de/pub/tinyldap/
 DISTNAME=	${PORTNAME}-${SNAPSHOT}
