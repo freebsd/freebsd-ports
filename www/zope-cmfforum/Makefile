@@ -16,26 +16,16 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	nbm@FreeBSD.org
 COMMENT=	A forum for ZOPE CMF with file attachments
 
-RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope \
-		${LOCALBASE}/${SZOPEBASEDIR}/lib/python/Products/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf
+RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/lib/python/Products/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf
 
 USE_PYTHON=	yes
+USE_ZOPE=	yes
 DIST_SUBDIR=	zope
 
 WRKSRC=		${WRKDIR}/CMFForum
 
-# You can change this in the environment if you like.
-SZOPEBASEDIR?=		www/Zope
-
-# Don't change these
-ZOPEBASEDIR=		${PREFIX}/${SZOPEBASEDIR}
-ZOPEPRODUCTNAME=
-ZOPEPRODUCTDIR=		lib/python/Products
-
-PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR}
-
 do-build:
-	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
+	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
 	@${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
