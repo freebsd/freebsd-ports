@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.93 1998/10/02 01:47:57 steve Exp $
+# $Id: Makefile,v 1.94 1998/10/27 16:58:02 vanilla Exp $
 #
 
     SUBDIR += 4va
@@ -97,6 +97,7 @@
     SUBDIR += xpdf
     SUBDIR += xpm
     SUBDIR += xv
+    SUBDIR += xv-m17n
     SUBDIR += xwpick
 
 .include <bsd.port.subdir.mk>
