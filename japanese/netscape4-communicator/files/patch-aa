@@ -1,0 +1,1881 @@
+--- Netscape.ad-ja_euc.orig	Fri Oct  9 08:04:08 1998
++++ Netscape.ad-ja_euc	Fri Jun 25 02:37:05 1999
+@@ -1,4 +1,4 @@
+-! Netscape.ad --- app-defaults file for Netscape 4.07.
++! Netscape.ad --- app-defaults file for Netscape 4.08.
+ !
+ ! Copyright (c) 1994-1997 Netscape Communications Corporation,
+ ! all rights reserved.
+@@ -45,6 +45,9 @@
+ ! complaints from people who think they understand this stuff better than
+ ! I do.
+ 
++*international: True
++*allowSendEvents: True
++
+ ! Language localization:
+ *versionLocale: ja_JP.EUC
+ 
+@@ -65,7 +68,7 @@
+ ! the problem. See *useEnhancedFSB above.
+ !@NOTSGI@*nsMotifFSBHacks: True
+ 
+-*nsMotifFSBHacks: True
++*nsMotifFSBHacks: False
+ 
+ ! This resource enables the CDE mode of the File Selection Box.
+ ! You must be running a CDE enhanced Motif library for this
+@@ -94,7 +97,7 @@
+ !Solaris[EUC]   *appDir location:     /usr/openwin/lib/locale/ja/netscape
+ !Solaris[Sjis]  *appDir location:     /usr/openwin/lib/locale/ja_JP.PCK/netscape
+ 
+-*appDir:			/usr/X11R6/lib/X11/ja_JP.EUC/netscape
++*appDir:			@NDIR@/@LANG@
+ 
+ ! This resource is the same as the -visual command line option, which selects
+ ! an X visual on which the windows should be created.  Legal options are:
+@@ -183,8 +186,8 @@
+ ! If you find a need to let one or both of them continue on to the actual
+ ! terminal of Netscape, you can do it by setting these resources to False.
+ !
+-*useStderrDialog:		True
+-*useStdoutDialog:		True
++*useStderrDialog:		False
++*useStdoutDialog:		False
+ 
+ ! For those MIME content-encodings which are not directly understood
+ ! internally, it is possible to specify another Unix program to use as
+@@ -316,7 +319,7 @@
+ ! These resources control the foreground and background colors of normal text.
+ !
+ *defaultForeground:			#000000
+-*defaultBackground:			#C0C0C0
++*defaultBackground:			#F0F0F0
+ 
+ ! This resource may be used to specify a default background image.  It should
+ ! be a file name or URL pointing to a GIF, JPEG, or XBM image.  If it is blank,
+@@ -785,7 +788,15 @@
+ 	<Btn3Motion>:			DisarmLinkIfMoved()		\n\
+ 	<Motion>:			DescribeLink()			\n\
+ 	<Btn3Down>:			xfeDoPopup()			\n\
+-	<Btn3Up>:			ActivatePopup()		\n
++	<Btn3Up>:			ActivatePopup()			\n\
++	Ctrl<Btn4Down>: PageUp()\n\
++	Ctrl<Btn5Down>: PageDown()\n\
++	Shift<Btn4Down>: LineUp()\n\
++	Shift<Btn5Down>: LineDown()\n\
++	None<Btn4Down>: LineUp()LineUp()LineUp()LineUp()LineUp()LineUp()\n\
++	None<Btn5Down>: LineDown()LineDown()LineDown()LineDown()LineDown()LineDown()\n\
++	Alt<Btn4Down>: xfeDoCommand(forward)\n\
++	Alt<Btn5Down>: xfeDoCommand(back)\n
+ 
+ *drawingArea*XmList.highlightThickness:	2
+ 
+@@ -1064,6 +1075,12 @@
+ ! in which case they ought to apply to the text in that text field instead.
+ ! Doesn't all this crap just make you want to hurl?
+ *globalNonTextTranslations:		#override			\n\
++	Shift<Btn4Down>: LineUp()\n\
++	Shift<Btn5Down>: LineDown()\n\
++	None<Btn4Down>:LineUp()LineUp()LineUp()LineUp()LineUp()LineUp()\n\
++	None<Btn5Down>:LineDown()LineDown()LineDown()LineDown()LineDown()LineDown()\n\
++	Alt<Btn4Down>: xfeDoCommand(forward)\n\
++	Alt<Btn5Down>: xfeDoCommand(back)\n\
+ 	~Meta ~Alt ~Ctrl<Key>space:	xfeDoCommand(spacebar)		\n\
+ 									  \
+ 	~Meta ~Alt ~Ctrl<Key>Delete:	PageUp()			\n\
+@@ -4086,9 +4103,9 @@
+ 
+ *attachmentProps.dialogTitle:			Attachment
+ Netscape*attachmentProps*XmLabelGadget.fontList:	\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0	
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0	
+ 
+ *attachmentProps.okLabelString:			Ok
+ *attachmentProps*nameLabel.labelString:		名前:
+@@ -4243,7 +4260,7 @@
+ ! changed at runtime; these resources won't override that.
+ *title:					Netscape
+ *iconName:				Netscape
+-*Navigator.title:			Netscape Navigator 4.07
++*Navigator.title:			Netscape Navigator 4.08
+ *MailThread.title:			Netscape メール & ディスカッション
+ *MailThread.iconName:		メール & ディスカッション
+ @MAIL_IM_HACK@
+@@ -4800,6 +4817,8 @@
+ !*openURLDialog.width:				500
+ *openURLDialog*openInEditor.labelString: Composer で開く
+ *openURLDialog*openInBrowser.labelString: Navigator で開く
++*openURLDialog*XmTextField.fontList:\
++-adobe-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
+ 
+ *message_popup.title:			Netscape
+ *message_popup*OK.labelString:	OK
+@@ -4989,9 +5008,9 @@
+ *AddressBook*outline.Secure:			Secure
+ *AddressBook*outline.HTML:			HTML
+ *AddressBook*mainform.fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ ! The mail compose window part of addr book
+ *mc_queryLabel.labelString:	検索する名前を入力してください:
+@@ -5179,7 +5198,7 @@
+ 
+ ! Do not under any circumstances change the following line:
+ ! Netscape.version: 		@VERSION@
+-Netscape.version: 		4.07
++Netscape.version: 		4.08
+ 
+ 
+ ! ============================================================================
+@@ -5190,24 +5209,24 @@
+ ! ============================================================================
+ !
+ *fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ *XmTextField.fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ *XmText.fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ *XmList*fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ ! SGI default:
+ !*menuBar*fontList:		-*-helvetica-bold-o-*-*-*-120-*-*-*-*-iso8859-*
+@@ -5215,14 +5234,14 @@
+ !*menuBar*fontList:		-*-lucida-medium-r-normal-*-*-120-*-*-*-*-iso8859-*
+ 
+ *menuBar*historyTruncated.fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ *popup*fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ !*topArea*fontList:		-*-helvetica-bold-r-*-*-*-120-*-*-*-*-iso8859-*
+ !*topArea*XmTextField.fontList:	-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
+@@ -5236,69 +5255,69 @@
+ !*bookmark*XmText.fontList:	-*-courier-medium-r-*-*-*-120-*-*-*-*-iso8859-*
+ 
+ *docinfoButton.fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ *mailto*urlLabel.fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ *licenseDialog*text.fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ ! These are the fonts used in the outline lists used in Mail, News, Bookmarks,
+ ! and Address Book windows.  (Note that there can't be any whitespace after
+ ! the commas.)
+ 
+ *XmLGrid*fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ ! Font for the Mail/News banner
+ *banner*folderDropdown*XmLabel.fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ *banner*folderDropdown*shadowThickness: 1
+ 
+ *banner*folderDropdown*.fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ *banner*title.fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ *banner*subtitle.fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ *banner*info.fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ ! Font for the Thread window expando flippy label
+ *arrowlabel.fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ ! Font for the attachment panel icon label
+ ! need class name to defeat *sgiMode
+ Netscape*attachItemLabel*fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ ! This is the default charset for documents without the charset parameter
+ ! for MIME Content-type: text.  Valid values for *defaultCharset:
+@@ -5706,9 +5725,9 @@
+ ! Navigator mouse documentation.
+ !
+ *tipLabel.fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ Netscape*tipLabel.background:  #FFFFCC
+ Netscape*tipLabel.foreground:  Black
+ Netscape*tipShell.borderColor: Black
+@@ -5787,7 +5806,7 @@
+ 
+ 
+ *urlLocationLabel.netsiteLabelString:		Netsite:
+-*urlLocationLabel.uneditedLabelString:		場所:
++*urlLocationLabel.uneditedLabelString:		　　場所:
+ *urlLocationLabel.editedLabelString:		ジャンプ:
+ 
+ ! this must be the longer of the two...
+@@ -5991,9 +6010,9 @@
+ ! Preferences dialog
+ !
+ *prefs*fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ *prefs_popup.title:							Netscape: 設定
+ 
+ *prefs.form.leftPane.topOffset:				8
+@@ -6006,14 +6025,14 @@
+ 
+ *prefs*pageTitle.alignment:					ALIGNMENT_BEGINNING
+ *prefs*pageTitle.fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ *prefs*categoryList*fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ *prefs*pageForm.topOffset:					4
+ *prefs*XmFrame.marginWidth:					8
+@@ -6079,9 +6098,9 @@
+ ! Preferences dialog - Browser/Languages - Add
+ 
+ *prefsLang*fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ *prefsLang_popup.title:					Netscape: 言語の追加
+ *prefsLang*langLabel.labelString:		追加する言語を選択してください。\n\n言語:
+ *prefsLang*langList.visibleItemCount:	15
+@@ -6139,9 +6158,9 @@
+ ! Preferences dialog - General - Applications - Edit
+ 
+ *prefsApplEdit*fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ *prefsApplEdit_popup.title:						Netscape: アプリケーション
+ *prefsApplEdit*mimeTypesDescriptionLabel.labelString: 説明:
+ *prefsApplEdit*mimeTypesLabel.labelString: 		MIME タイプ:
+@@ -6158,10 +6177,10 @@
+ 
+ *prefs*cache*cacheLabel.labelString:		\
+ キャッシュは頻繁にアクセスされるドキュメントをコピーしておくことで、\n\
+-ネットワークに接続する時間を節約します。[再読み込み]ボタンを押すと、\n\
++ネットワークに接続する時間を節約します。[再読込]ボタンを押すと、\n\
+ キャッシュしたドキュメントとネットワーク上のものを比較して、\n\
+ 最新のドキュメントを表示します。ページや画像をキャッシュからではなく\n\
+-ネットワークから読み込むには、Shift キーを押しながら[再読み込み]\n\
++ネットワークから読み込むには、Shift キーを押しながら[再読込]\n\
+ ボタンをクリックします。
+ *prefs*cache*cacheDirLabel.labelString:		キャッシュフォルダ:
+ *prefs*cache*memoryLabel.labelString:		メモリ キャッシュ:
+@@ -6195,9 +6214,9 @@
+ ! Preferences dialog - General - Proxies - View
+ 
+ *prefsProxiesView*fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ *prefsProxiesView_popup.title:				Netscape: 手動プロキシ設定の表示
+ *prefsProxiesView*proxyViewLabel1.labelString:	\
+ Netscape のサポートするインターネット プロトコル毎にプロキシと\n\
+@@ -6240,9 +6259,9 @@
+ ! Preferences dialog - Advanced/Disk Space - More
+ 
+ *prefsDiskMore*fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ *prefsDiskMore_popup.title:					Netscape: ディスク スペース オプションの詳細
+ *prefsDiskMore*form.marginWidth:			10
+ *prefsDiskMore*XmLabelGadget.alignment:		ALIGNMENT_BEGINNING
+@@ -6340,9 +6359,9 @@
+ ! Preferences dialog - Mail News/Messages - More
+ 
+ *prefsMsgMore*fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ *prefsMsgMore_popup.title:					Netscape: メッセージ設定の詳細
+ *prefsMsgMore*addressingLabel.labelString:	メッセージのアドレス:
+ *prefsMsgMore*nameAndNicknamesToggle.labelString:	名前とニックネームを展開する
+@@ -6415,9 +6434,9 @@
+ ! Preferences dialog - Mail News/Mail Server - More
+ 
+ *prefsMserverMore*fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ *prefsMserverMore_popup.title:					Netscape: メール サーバ設定の詳細
+ *prefsMserverMore*mailDirLabel.labelString:		ローカル メール ディレクトリ:
+ *prefsMserverMore*mailDirBrowse.labelString:	選択...
+@@ -6466,9 +6485,9 @@
+ ! Preferences dialog - Mail News/Directory - New/Edit
+ 
+ *prefsLdapProp*fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ *prefsLdapProp_popup.title:					Netscape: LDAP サーバの設定
+ *prefsLdapProp*descLabel.labelString:		説明:
+ *prefsLdapProp*serverLabel.labelString:		LDAP サーバ:
+@@ -6612,9 +6631,9 @@
+ ! Subscribe UI
+ 
+ *subscribeFolder*fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ *subscribeFolder*toggleSubscribe.labelString:	参加
+ *subscribeFolder*expandAll.labelString:		展開する
+ *subscribeFolder*collapseAll.labelString:	閉じる
+@@ -6633,9 +6652,9 @@
+ 
+ ! The Add server dialog
+ *serverDialog*fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ *serverDialogForm*serverLabel.labelString:	サーバ名:
+ *serverDialogForm*portLabel.labelString:	サーバ ポート:
+ *serverDialogForm*secureLabel.labelString:	保護付き:
+@@ -6741,9 +6760,9 @@
+ *toolBar*fillOnRaise:					false
+ *toolBar*raiseForeground:				Blue
+ *toolBar*fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ !!
+ !! Browser Toolbar destinations
+@@ -6786,9 +6805,9 @@
+ *dashBoard*statusBar.shadowThickness:				1
+ *dashBoard*statusBar.truncateLabel:					false
+ *dashBoard*statusBar.fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ ! initial value for the status bar
+ *dashBoard*statusBar.labelString:					Netscape
+@@ -6799,9 +6818,9 @@
+ *dashBoard*progressBar.shadowType:					shadow_in
+ *dashBoard*progressBar.shadowThickness:				1
+ *dashBoard*progressBar.fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ *dashBoard*progressBar.width:						100
+ 
+ !! The color of the progress bar
+@@ -6822,9 +6841,9 @@
+ *taskBar.shadowType:								shadow_out
+ *taskBar.shadowThickness:							1
+ *taskBar*fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ *taskBar*openOrBringUpBrowser.labelString:			Navigator
+ *taskBar*openInboxAndGetNewMessages.labelString:	メールボックス
+@@ -6908,7 +6927,7 @@
+ *toolBar*forward.labelString:	次
+ *toolBar*home.labelString:	ホーム
+ *toolBar*search.labelString:	検索
+-*toolBar*destinations.labelString:      Netscape
++*toolBar*destinations.labelString:      個人
+ *toolBar*guide.labelString:     ガイド
+ *toolBar*showImages.labelString:	画像
+ *toolBar*loadImages.labelString:	画像の読み込み
+@@ -6916,8 +6935,8 @@
+ *print.tipString:                   このページを印刷
+ *MailThread*print.tipString:        選択したメッセージを印刷
+ *MailMsg*print.tipString:           選択したメッセージを印刷
+-*toolBar*reload.labelString:	再読み込み
+-*toolBar*stopReload.labelString: 再読み込み
++*toolBar*reload.labelString:	再読込
++*toolBar*stopReload.labelString: 再読込
+ *reloadCmdString:		再読み込み
+ *stopCmdString:		停止
+ 
+@@ -6976,7 +6995,7 @@
+ *bccBtn.documentationString:          メッセージを作成してブラインドカーボン コピーを選択した項目宛に送信します
+ !
+ ! buttons used everywhere (it seems.)
+-*toolBar*viewSecurity.labelString:	セキュリティ
++*toolBar*viewSecurity.labelString:	保護
+ *toolBar*stopLoading.labelString:	停止
+ 
+ *changeDocumentEncoding.documentationString: ドキュメントの文字コード セットを指定します。
+@@ -6997,9 +7016,9 @@
+ Netscape*MessageDownload*stopButtonForm*stopLoading.labelString: Cancel
+ 
+ Netscape*NewsDownload*fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ Netscape*NewsDownload_popup.title:			Netscape: Download Headers
+ 
+ Netscape*NewsDownload*allToggle.labelString: Download all headers
+@@ -7047,9 +7066,9 @@
+ Netscape*splashShell*background:	Black
+ Netscape*splashShell*foreground:	White
+ Netscape*splashShell*fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ !
+ ! Special for HTMLCompose
+@@ -7094,21 +7113,21 @@
+ *spellDialog*msgNull.labelString:          [ ]
+ 
+ *spellDialog*text_label.fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ *spellDialog*list_label.fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ *spellDialog*right_rc*fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ *spellDialog*combo_frame*fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ *spellDialog*langCzech.labelString:                チェコ語
+ *spellDialog*langRussian.labelString:              ロシア語
+@@ -7256,9 +7275,9 @@
+ 
+ *strings.6718:ヘルプ トピックを読み込めません
+ 
+-*strings.6699:お使いになられている Netscape は有効期限を過ぎました。\nこの評価版の Netscape Navigator は有効期限を過ぎており、\n新しいバージョンの Navigatorのダウンロードにしかご利用になれません。
++*strings.6699:お使いになられている Netscape は有効期限を過ぎました。\nこの評価版の Netscape Communicator は有効期限を過ぎており、\n新しいバージョンの Communicator のダウンロードにしかご利用になれません。
+ 
+-*strings.6698:お使いになられている評価版の Netscape は有効期限を過ており、\n新規購入または新しいバージョンの Navigator のダウンロードにしかご利用になれません。
++*strings.6698:お使いになられている評価版の Netscape は有効期限を過ており、\n新規購入または新しいバージョンの Communicator のダウンロードにしかご利用になれません。
+ 
+ *strings.6697:WAIS プロキシが設定されていません。\n\nプロキシの設定を確認して、やり直してください。
+ 
+@@ -7300,7 +7319,7 @@
+ 
+ *strings.6675:次のファイルを投稿できませんでした: %.80s。\n原因:\n  %.200s\n\nディレクトリが書き込み禁止になって\nいるようです。\n属性を確認して、やり直してください。
+ 
+-*strings.6674:お使いになられている Netscape Navigator は評価版のため\n%s で有効期限が切れます。\n[ヘルプ]メニューからソフトウェアを選択して Netscape Navigator \nの新しい評価版または最新の製品版(有効期限はありません) \nを入手して下さい。
++*strings.6674:お使いになられている Netscape Communicator は評価版のため\n%s で有効期限が切れます。\n[ヘルプ]メニューからソフトウェアを選択して Netscape Communicator \nの新しい評価版または最新の製品版(有効期限はありません) \nを入手して下さい。
+ 
+ *strings.6673:ファイルを削除できません:\n       %s
+ 
+@@ -7314,9 +7333,9 @@
+ 
+ *strings.6668:認証に失敗しました
+ 
+-*strings.6667:この評価版の Netscape は有効期限が切れています。\n\n製品版の Netscape Navigator のご購入については、\n(有効期限はありません) [ヘルプ]メニューの[ソフトウェア]を選択して下さい。
++*strings.6667:この評価版の Netscape は有効期限が切れています。\n\n製品版の Netscape Communicator のご購入については、\n(有効期限はありません) [ヘルプ]メニューの[ソフトウェア]を選択して下さい。
+ 
+-*strings.6666:この評価版の Netscape Navigator は、\n%s で有効期限が切れます。\n\n製品版の Netscape Navigator のご購入については、\n(有効期限はありません) [ヘルプ]メニューの[ソフトウェア]を選択して下さい。
++*strings.6666:この評価版の Netscape Communicator は、\n%s で有効期限が切れます。\n\n製品版の Netscape Communicator のご購入については、\n(有効期限はありません) [ヘルプ]メニューの[ソフトウェア]を選択して下さい。
+ 
+ *strings.6665:URL リクエストがリダイレクトされましたが、\nクライアントによって許可されていません。
+ 
+@@ -7412,7 +7431,7 @@
+ 
+ *strings.6551:IMAP メッセージの移動に失敗しました\nコピーは成功しましたが、元のメッセージの削除ができませんでした。
+ 
+-*strings.6550:オフライン時の変更内容をアップロードする際に問題が発生しました｡\n残りの変更内容のアップロードを続けますか（ＯＫ）\nそれとも後でやり直しますか （キャンセル）｡
++*strings.6550:オフライン時の変更内容をアップロードする際に問題が発生しました。\n残りの変更内容のアップロードを続けますか（ＯＫ）\nそれとも後でやり直しますか （キャンセル）。
+ 
+ *strings.6549:受信トレイ フォルダを移動することはできません。
+ 
+@@ -7458,7 +7477,7 @@
+ 
+ *strings.6528:新しいメール ディレクトリの設定は、\n次回 Communicator を再起動後\n有効になります。
+ 
+-*strings.6527:ディスカッション メッセージを IMAP メールボックスに移動することはできません｡
++*strings.6527:ディスカッション メッセージを IMAP メールボックスに移動することはできません。
+ 
+ *strings.-1192:セキュリティの認証中に I/O エラーが発生しました。\n接続し直してみてください。
+ 
+@@ -7650,7 +7669,7 @@
+ 
+ *strings.-1089:入力した証明書名が既に他の証明書で使用されています。
+ 
+-*strings.-1088:サーバ FORTEZZA チェーンに FORTEZZA 以外の証明書が含まれています｡ \nおそらく､このサイトには安全に接続できません｡
++*strings.-1088:サーバ FORTEZZA チェーンに FORTEZZA 以外の証明書が含まれています。 \nおそらく、このサイトには安全に接続できません。
+ 
+ *strings.-1087:不明
+ 
+@@ -7666,9 +7685,9 @@
+ 
+ *strings.-1081:読み込もうとしている CKL は現在の CKL と発行者が違います。\nまず、現在の CKL を削除して下さい。
+ 
+-*strings.-1080:このサイトの証明書のキー取り消しリストは､まだ有効ではありません｡\n新しいキー取り消しリストを読み込み直してください｡
++*strings.-1080:このサイトの証明書のキー取り消しリストは、まだ有効ではありません。\n新しいキー取り消しリストを読み込み直してください。
+ 
+-*strings.-1079:このサイトの証明書の証明書取り消しリストは､まだ有効\nではありません｡新しい証明書取り消しリストを読み込み\n直してください｡
++*strings.-1079:このサイトの証明書の証明書取り消しリストは、まだ有効\nではありません。新しい証明書取り消しリストを読み込み\n直してください。
+ 
+ *strings.30000:<head>%-styleinfo-%</head><body bgcolor="#bbbbbb"><div><form name=theform action=internal-dialog-handler method=post><input type="hidden" %-cont-%
+ 
+@@ -7720,121 +7739,121 @@
+ 
+ *strings.30034:%0%%1%%2%
+ 
+-*strings.30035:%sec-banner-begin%%0%%sec-banner-end%<b><div><font size=4>%1% は転送される情報を保護するために､暗号化を使用しているサイトです｡ %-cont-%
++*strings.30035:%sec-banner-begin%%0%%sec-banner-end%<b><div><font size=4>%1% は転送される情報を保護するために、暗号化を使用しているサイトです。 %-cont-%
+ 
+-*strings.30036:ですが､Netscape は､証明書に署名した発行人を認識できません｡</font></b></div><p><div>Netscape が証明書の署名者を認識できないので､ %-cont-%
++*strings.30036:ですが、Netscape は、証明書に署名した発行人を認識できません。</font></b></div><p><div>Netscape が証明書の署名者を認識できないので、 %-cont-%
+ 
+-*strings.30037:このサイトに接続して情報を交換できるように､この証明書を受け付けるかどうかを決定して下さい｡<p>この %-cont-%
++*strings.30037:このサイトに接続して情報を交換できるように、この証明書を受け付けるかどうかを決定して下さい。<p>この %-cont-%
+ 
+-*strings.30038:アシスタントを利用して証明を受け付けるかどうか､またどの程度受け付けるのかを決定して下さい｡%2%</div>
++*strings.30038:アシスタントを利用して証明を受け付けるかどうか、またどの程度受け付けるのかを決定して下さい。%2%</div>
+ 
+-*strings.30044:%sec-banner-begin%%0%%sec-banner-end%<div>以下が､ 提出された証明書です:</div><hr><table><tr><td valign=top><font %-cont-%
++*strings.30044:%sec-banner-begin%%0%%sec-banner-end%<div>以下が、 提出された証明書です:</div><hr><table><tr><td valign=top><font %-cont-%
+ 
+ *strings.30045:size=2>証明書: <br>署名者: <br>暗号化: </font></td><td valign=top><font size=2>%1%<br>%2%<br>%3% グレード (%4% with %5%-ビットの秘密鍵) %-cont-%
+ 
+ *strings.30046:</font></td><td valign=bottom><input type="submit" name="button" value="%moreinfo%"></td></tr></table><hr><div>証明書の %-cont-%
+ 
+-*strings.30047:署名者は､この証明書の所持者の身元を保証しています｡ 暗号化レベルは､このWeb サイトとの間で交換される %-cont-%
++*strings.30047:署名者は、この証明書の所持者の身元を保証しています。 暗号化レベルは、このWeb サイトとの間で交換される %-cont-%
+ 
+-*strings.30048:あらゆる情報を第三者が盗聴することが､どの程度困難であるかを示しています｡%6%</div>
++*strings.30048:あらゆる情報を第三者が盗聴することが、どの程度困難であるかを示しています。%6%</div>
+ 
+-*strings.30049:%sec-banner-begin%%0%%sec-banner-end%<div>この Web サイトから暗号化された情報を受け取るために､この証明書を受け付けますか？ %-cont-%
++*strings.30049:%sec-banner-begin%%0%%sec-banner-end%<div>この Web サイトから暗号化された情報を受け取るために、この証明書を受け付けますか？ %-cont-%
+ 
+-*strings.30050:<p>受け付けた場合､このサイトが見えるようになりドキュメントを受け取ることができるようになります｡また､これらのドキュメントの %-cont-%
++*strings.30050:<p>受け付けた場合、このサイトが見えるようになりドキュメントを受け取ることができるようになります。また、これらのドキュメントの %-cont-%
+ 
+-*strings.30051:すべてがサードパーティの監視下の元で､暗号化されて 保護されます｡<p><input type=radio name=accept value=session%1%>このセッションに対して %-cont-%
++*strings.30051:すべてがサードパーティの監視下の元で、暗号化されて 保護されます。<p><input type=radio name=accept value=session%1%>このセッションに対して %-cont-%
+ 
+-*strings.30052:証明書を受け付ける<br><input type=radio name=accept value=cancel%2%>証明書を受け付けず､接続しない<br><input type=radio name=accept %-cont-%
++*strings.30052:証明書を受け付ける<br><input type=radio name=accept value=cancel%2%>証明書を受け付けず、接続しない<br><input type=radio name=accept %-cont-%
+ 
+ *strings.30053:value=forever%3%>証明書を受け付ける (有効期限まで)</div><br>%4%
+ 
+-*strings.30064:%sec-banner-begin%%0%%sec-banner-end%<div>この証明書を受け付けると､このサイトとのすべての情報の交換が暗号化されることが %-cont-%
++*strings.30064:%sec-banner-begin%%0%%sec-banner-end%<div>この証明書を受け付けると、このサイトとのすべての情報の交換が暗号化されることが %-cont-%
+ 
+-*strings.30065:保証されます｡しかし､暗号化は､詐欺を避けることはできません｡<p> 詐欺から守るためには､このサイトが完全に信用できない場合は､情報 %-cont-%
++*strings.30065:保証されます。しかし、暗号化は、詐欺を避けることはできません。<p> 詐欺から守るためには、このサイトが完全に信用できない場合は、情報 %-cont-%
+ 
+-*strings.30066:(特に個人情報､クレジットカードﾞ番号､パスワードなど)を送信しないで下さい｡<p> 保護のために %-cont-%
++*strings.30066:(特に個人情報、クレジットカード゛番号、パスワードなど)を送信しないで下さい。<p> 保護のために %-cont-%
+ 
+-*strings.30067:Netscape は､必要に応じてこのことをお知らせ します｡<p><center><input type=checkbox name=postwarn value=yes %1%>このサイト %-cont-%
++*strings.30067:Netscape は、必要に応じてこのことをお知らせ します。<p><center><input type=checkbox name=postwarn value=yes %1%>このサイト %-cont-%
+ 
+ *strings.30068:に情報を送信する前に警告する</center><p></div>%2%
+ 
+ *strings.30069:%sec-banner-begin%%0%%sec-banner-end%<b><div>以下から提出された証明書の審査が終わりました:<br>%1%</b><p>この ID %-cont-%
+ 
+-*strings.30070:を拒絶することにしました｡もし今後､この決定を変更したい場合には､ もう一度このサイトを訪問して下さい｡再びアシスタントが表示されます｡ %-cont-%
++*strings.30070:を拒絶することにしました。もし今後、この決定を変更したい場合には、 もう一度このサイトを訪問して下さい。再びアシスタントが表示されます。 %-cont-%
+ 
+-*strings.30071:<p>[終了]を押すと､このサイトに接続しようとする前に､ 表示していたドキュメントに戻ります｡</div>%2%
++*strings.30071:<p>[終了]を押すと、このサイトに接続しようとする前に、 表示していたドキュメントに戻ります。</div>%2%
+ 
+-*strings.30072:%sec-banner-begin%%0%%sec-banner-end%<b><div>以下から 提出された証明書の審査が終わりました:<br>%1%</b></div><p><div>この証明書を受け付け､%-cont-%
++*strings.30072:%sec-banner-begin%%0%%sec-banner-end%<b><div>以下から 提出された証明書の審査が終わりました:<br>%1%</b></div><p><div>この証明書を受け付け、%-cont-%
+ 
+-*strings.30073:このサイトに情報を送信する前に Netscape Communicator が警告することにしました｡<p>もし今後､ %-cont-%
++*strings.30073:このサイトに情報を送信する前に Netscape Communicator が警告することにしました。<p>もし今後、 %-cont-%
+ 
+-*strings.30074:この決定を変更したい場合には､[Communicator]メニューから[セキュリティ情報]を開いてサイト証明書を編集して下さい｡<p>[完了]を押すと､ドキュメントの受信を開始します｡%2%
++*strings.30074:この決定を変更したい場合には、[Communicator]メニューから[セキュリティ情報]を開いてサイト証明書を編集して下さい。<p>[完了]を押すと、ドキュメントの受信を開始します。%2%
+ 
+-*strings.30080: %sec-banner-begin%%0%%sec-banner-end%<b><div>以下から 提出された証明書の審査が終わりました:<br>%1%</div></b><p><div>この証明書を受け付け､%-cont-%
++*strings.30080: %sec-banner-begin%%0%%sec-banner-end%<b><div>以下から 提出された証明書の審査が終わりました:<br>%1%</div></b><p><div>この証明書を受け付け、%-cont-%
+ 
+-*strings.30081:このサイトに情報を送信する前に Netscape Communicator が警告しないことにしました｡</div><p><div>もし今後､ %-cont-%
++*strings.30081:このサイトに情報を送信する前に Netscape Communicator が警告しないことにしました。</div><p><div>もし今後、 %-cont-%
+ 
+-*strings.30082:この決定を変更したい場合には､[Communicator]メニューから[セキュリティ情報]を開いてサイト証明書を編集して下さい｡<p>[完了]を押すと､ %-cont-%
++*strings.30082:この決定を変更したい場合には、[Communicator]メニューから[セキュリティ情報]を開いてサイト証明書を編集して下さい。<p>[完了]を押すと、 %-cont-%
+ 
+-*strings.30083:ドキュメントの受信を開始します｡</div>%2%
++*strings.30083:ドキュメントの受信を開始します。</div>%2%
+ 
+-*strings.30084:%sec-banner-begin%%0%%sec-banner-end%<div>サイト '%1%' から提出された証明書には､正しいサイト名が含まれていません｡ %-cont-%
++*strings.30084:%sec-banner-begin%%0%%sec-banner-end%<div>サイト '%1%' から提出された証明書には、正しいサイト名が含まれていません。 %-cont-%
+ 
+-*strings.30085:第三者がこのサイトとの通信を傍受しようとしている可能\性が わずかですがあります｡もしも､ %-cont-%
++*strings.30085:第三者がこのサイトとの通信を傍受しようとしている可能\性が わずかですがあります。もしも、 %-cont-%
+ 
+-*strings.30086:下に表示される証明書が接続先のものでないという疑いのある場合は､ 接続をキャンセルして､サイト管理者に連絡して下さい｡ <p>%-cont-%
++*strings.30086:下に表示される証明書が接続先のものでないという疑いのある場合は、 接続をキャンセルして、サイト管理者に連絡して下さい。 <p>%-cont-%
+ 
+-*strings.30087:以下が､提出された証明書です:</div><hr><table><tr><td valign=top><font size=2>証明書: <br>署名者: <br>暗号化: %-cont-%
++*strings.30087:以下が、提出された証明書です:</div><hr><table><tr><td valign=top><font size=2>証明書: <br>署名者: <br>暗号化: %-cont-%
+ 
+-*strings.30088:</font></td><td valign=top><font size=2>%2%<br>%3%<br>%4% ｸﾞﾚｰﾄﾞ (%5% ､ %6% ビット秘密鍵)</font></td><td valign=bottom><input %-cont-%
++*strings.30088:</font></td><td valign=top><font size=2>%2%<br>%3%<br>%4% グレ−ド (%5% 、 %6% ビット秘密鍵)</font></td><td valign=bottom><input %-cont-%
+ 
+ *strings.30089:type="submit" name="button" value="%moreinfo%"></td></tr></table><hr>%7%
+ 
+-*strings.30100:%sec-banner-begin%%0%%sec-banner-end%新しいパスワード を入力して下さい｡最も安全なパスワードは､ %-cont-%
++*strings.30100:%sec-banner-begin%%0%%sec-banner-end%新しいパスワード を入力して下さい。最も安全なパスワードは、 %-cont-%
+ 
+-*strings.30101:英文字と数字の組み合わせの最低でも８文字で､辞書の単語を含んでいないようなものです｡<p>パスワード: <input type=password name=password1><p>確認のため %-cont-%
++*strings.30101:英文字と数字の組み合わせの最低でも８文字で、辞書の単語を含んでいないようなものです。<p>パスワード: <input type=password name=password1><p>確認のため %-cont-%
+ 
+ *strings.30102:もう一度パスワードを入力して下さい:<p>パスワードの再入力: <input type=password name=password2><p><b>パスワードを忘れないで下さい!   %-cont-%
+ 
+-*strings.30103:パスワードは修復することができません｡忘れてしまうと､新しい証明書を入手しなければなりません｡</b>
++*strings.30103:パスワードは修復することができません。忘れてしまうと、新しい証明書を入手しなければなりません。</b>
+ 
+-*strings.30109:%sec-banner-begin%%0%%sec-banner-end%パスワードを 間違えています｡もう一度入力して下さい:<p>パスワード: <input %-cont-%
++*strings.30109:%sec-banner-begin%%0%%sec-banner-end%パスワードを 間違えています。もう一度入力して下さい:<p>パスワード: <input %-cont-%
+ 
+-*strings.30110:type=password name=password1><p>確認のため､もう一度パスワードを 入力して下さい:<p>パスワードの再入力: <input type=password name=password2><p>%-cont-%
++*strings.30110:type=password name=password1><p>確認のため、もう一度パスワードを 入力して下さい:<p>パスワードの再入力: <input type=password name=password2><p>%-cont-%
+ 
+-*strings.30111:<b>パスワードを忘れないで下さい!  パスワードは修復することができません｡ 忘れてしまうと､新しい証明書を入手しなければなりません｡</b>
++*strings.30111:<b>パスワードを忘れないで下さい!  パスワードは修復することができません。 忘れてしまうと、新しい証明書を入手しなければなりません。</b>
+ 
+-*strings.30112:%sec-banner-begin%%0%%sec-banner-end%秘密鍵を Communicator パスワードで保護することを強くお勧めします｡ %-cont-%
++*strings.30112:%sec-banner-begin%%0%%sec-banner-end%秘密鍵を Communicator パスワードで保護することを強くお勧めします。 %-cont-%
+ 
+-*strings.30113:パスワードを使用しない場合は､パスワードのテキストボックスを空欄にして下さい｡<P>最も安全なパスワードは､英文字と数字の組み合わせの最低でも８文字で､<P>%-cont-%
++*strings.30113:パスワードを使用しない場合は、パスワードのテキストボックスを空欄にして下さい。<P>最も安全なパスワードは、英文字と数字の組み合わせの最低でも８文字で、<P>%-cont-%
+ 
+-*strings.30114:辞書の単語を含んでいないようなものです｡<table><tr><td>パスワード:</td><td><input type=password name=password1></td>%-cont-%
++*strings.30114:辞書の単語を含んでいないようなものです。<table><tr><td>パスワード:</td><td><input type=password name=password1></td>%-cont-%
+ 
+ *strings.30115:</td></tr><tr><td>確認のためもう一度パスワードを入力して下さい:</td><td><input type=password name=password2></td><td valign=bottom></td></tr></table><B>重要: %-cont-%
+ 
+-*strings.30116:パスワードは修復することができません｡忘れてしまうと､すべての証明書が失われます｡</B><P>パスワードやその他のセキュリティ設定を変更するには､ %-cont-%
++*strings.30116:パスワードは修復することができません。忘れてしまうと、すべての証明書が失われます。</B><P>パスワードやその他のセキュリティ設定を変更するには、 %-cont-%
+ 
+-*strings.30117:[Communicator]メニューから[セキュリティ情報]を選択して下さい｡
++*strings.30117:[Communicator]メニューから[セキュリティ情報]を選択して下さい。
+ 
+-*strings.30128:%sec-banner-begin%%0%%sec-banner-end%パスワードを使用せずに処理します｡<p>秘密鍵と証明書を保護するために､ %-cont-%
++*strings.30128:%sec-banner-begin%%0%%sec-banner-end%パスワードを使用せずに処理します。<p>秘密鍵と証明書を保護するために、 %-cont-%
+ 
+-*strings.30129:パスワードを使用する時は､[セキュリティの設定]でパスワードを設定 して下さい｡
++*strings.30129:パスワードを使用する時は、[セキュリティの設定]でパスワードを設定 して下さい。
+ 
+-*strings.30130:%sec-banner-begin%%0%%sec-banner-end% %1% のパスワード変更｡<p>古いパスワードを入力して下さい: <input %-cont-%
++*strings.30130:%sec-banner-begin%%0%%sec-banner-end% %1% のパスワード変更。<p>古いパスワードを入力して下さい: <input %-cont-%
+ 
+-*strings.30131:type=password name=password value=%2%><P><P>新しいパスワードを入力して下さい｡ パスワードを使用しない場合は､空欄にして下さい｡<p><table><tr><td>%-cont-%
++*strings.30131:type=password name=password value=%2%><P><P>新しいパスワードを入力して下さい。 パスワードを使用しない場合は、空欄にして下さい。<p><table><tr><td>%-cont-%
+ 
+ *strings.30132:新しいパスワード:</td><td><input type=password name=password1></td></tr><tr><td>確認のためもう一度パスワードを入力して下さい:</td><td><input type=password name=password2>%-cont-%
+ 
+-*strings.30133:</td></tr></table><p><B>重要: パスワードは修復することができません｡ 忘れてしまうと､すべての証明書が失われます｡</B>
++*strings.30133:</td></tr></table><p><B>重要: パスワードは修復することができません。 忘れてしまうと、すべての証明書が失われます。</B>
+ 
+-*strings.30140:%sec-banner-begin%%0%%sec-banner-end%パスワードを変更できませんでした｡<p>原因はおそらく %-cont-%
++*strings.30140:%sec-banner-begin%%0%%sec-banner-end%パスワードを変更できませんでした。<p>原因はおそらく %-cont-%
+ 
+-*strings.30141:鍵データベースにアクセスできない(Communicatorが２つ以上動作している時などに起こります)ためか､ 他のエラーによるものです｡ %-cont-%
++*strings.30141:鍵データベースにアクセスできない(Communicatorが２つ以上動作している時などに起こります)ためか、 他のエラーによるものです。 %-cont-%
+ 
+-*strings.30142:<p>鍵データベースファイルが壊れていることも考えられますので､可能\ならば､バックアップをとっておいて下さい｡ 最後の手段として､ %-cont-%
++*strings.30142:<p>鍵データベースファイルが壊れていることも考えられますので、可能\ならば、バックアップをとっておいて下さい。 最後の手段として、 %-cont-%
+ 
+-*strings.30143:鍵データベースを削除して､ 新しい個人証明書を入手する必要があるかもしれません｡
++*strings.30143:鍵データベースを削除して、 新しい個人証明書を入手する必要があるかもしれません。
+ 
+ *strings.30194:<table border=0 cellpadding=0 cellspacing=0 width="100%%"><td><input type="button" value="%moreinfo%" width=80 onclick="parent.clicker(this,window.parent)"></td>%-cont-%
+ 
+@@ -7850,19 +7869,19 @@
+ 
+ *strings.30212:%0%%1%
+ 
+-*strings.30213:<b><FONT SIZE=4>警告: この証明書を削除すると､この証明書によって暗号化されているすべての電子メールを読むことができなくなります｡</FONT></b><p>この個人証明書を削除しますか?<p>%0%
++*strings.30213:<b><FONT SIZE=4>警告: この証明書を削除すると、この証明書によって暗号化されているすべての電子メールを読むことができなくなります。</FONT></b><p>この個人証明書を削除しますか?<p>%0%
+ 
+ *strings.30214:このサイト証明書を削除しますか?<p>%0%
+ 
+ *strings.30215:この証明書発行人を削除しますか?<p>%0%
+ 
+-*strings.30216:%0%<hr>この証明書はSSLサーバ サイトに属しています｡<br><input type=radio name=allow value=yes %1%>このサイトへの接続を許可する<br>%-cont-%
++*strings.30216:%0%<hr>この証明書はSSLサーバ サイトに属しています。<br><input type=radio name=allow value=yes %1%>このサイトへの接続を許可する<br>%-cont-%
+ 
+ *strings.30217:<input type=radio name=allow value=no %2%>このサイトへの接続を 許可しない<hr><input type=checkbox name=postwarn value=yes %3%> %-cont-%
+ 
+ *strings.30218:このサイトへデータを送信する前に警告する
+ 
+-*strings.30224:%0%<hr><div>この証明書は証明書発行人に属しています｡<br> %-cont-%
++*strings.30224:%0%<hr><div>この証明書は証明書発行人に属しています。<br> %-cont-%
+ 
+ *strings.30225:%1%<br>%2%<br>%3%<hr><input %-cont-%
+ 
+@@ -7870,37 +7889,37 @@
+ 
+ *strings.30232:%sec-banner-begin%%0%%sec-banner-end%<b>警告: %-cont-%
+ 
+-*strings.30233:暗号化された情報をサイト %1% に送信しようとしています｡</b><p>もし､証明書などが完全には信用できない場合は､情報(特に個人情報､ %-cont-%
++*strings.30233:暗号化された情報をサイト %1% に送信しようとしています。</b><p>もし、証明書などが完全には信用できない場合は、情報(特に個人情報、 %-cont-%
+ 
+-*strings.30234:クレジットカード番号､パスワードなど)を送信するのは控えた方が安全です｡<br>以下が､このサイトの証明書です:<hr> %-cont-%
++*strings.30234:クレジットカード番号、パスワードなど)を送信するのは控えた方が安全です。<br>以下が、このサイトの証明書です:<hr> %-cont-%
+ 
+ *strings.30235:<table><tr><td valign=top><font size=2>証明書: <br>署名者: <br>暗号化: </font></td><td valign=top><font size=2>%2%<br>%3%<br>%-cont-%
+ 
+-*strings.30236:%4% グレード (%5% ､ %6% ビット秘密鍵)</font></td><td valign=bottom><font size=2><input type="submit" name="button" value="%moreinfo%%-cont-%
++*strings.30236:%4% グレード (%5% 、 %6% ビット秘密鍵)</font></td><td valign=bottom><font size=2><input type="submit" name="button" value="%moreinfo%%-cont-%
+ 
+-*strings.30237:"></font></td></tr></table><hr><input type=radio name=action value=sendandwarn checked>この情報を送信して､ %-cont-%
++*strings.30237:"></font></td></tr></table><hr><input type=radio name=action value=sendandwarn checked>この情報を送信して、 %-cont-%
+ 
+-*strings.30238:次回も警告する<br><input type=radio name=action value=send>この情報を送信して､ 次回から警告しない<br><input type=radio name=action value=dontsend>情報を送信しない<br>%7%
++*strings.30238:次回も警告する<br><input type=radio name=action value=send>この情報を送信して、 次回から警告しない<br><input type=radio name=action value=dontsend>情報を送信しない<br>%7%
+ 
+-*strings.30239:%sec-banner-begin%%0%%sec-banner-end%<div>証明書発行人を受け付けようとしています｡ %-cont-%
++*strings.30239:%sec-banner-begin%%0%%sec-banner-end%<div>証明書発行人を受け付けようとしています。 %-cont-%
+ 
+-*strings.30240:今後 Netscape を利用して暗号化を行なう際のセキュリティに､重大な関連があります｡ %-cont-%
++*strings.30240:今後 Netscape を利用して暗号化を行なう際のセキュリティに、重大な関連があります。 %-cont-%
+ 
+-*strings.30241:このアシスタントを利用して証明書発行人を受け付けるかどうかを決定して下さい｡</div>
++*strings.30241:このアシスタントを利用して証明書発行人を受け付けるかどうかを決定して下さい。</div>
+ 
+ *strings.30252:%sec-banner-begin%%0%%sec-banner-end%<div>証明書発行人は %-cont-%
+ 
+-*strings.30253:インターネット上のサイトの身元を証明します｡証明書発行人を受け付けると､Netscape Communicator は､ %-cont-%
++*strings.30253:インターネット上のサイトの身元を証明します。証明書発行人を受け付けると、Netscape Communicator は、 %-cont-%
+ 
+-*strings.30254:この発行人が証明するどのサイトに対してもプロンプトを表示したり警告したりせずに､接続して情報を受信するようになります｡ </div><p><div>この証明書発行人を拒否した場合は､  %-cont-%
++*strings.30254:この発行人が証明するどのサイトに対してもプロンプトを表示したり警告したりせずに、接続して情報を受信するようになります。 </div><p><div>この証明書発行人を拒否した場合は、  %-cont-%
+ 
+-*strings.30255:この発行人が証明するサイトに対して接続したり情報を受信したりする前にプロンプトが表示されます｡</div>
++*strings.30255:この発行人が証明するサイトに対して接続したり情報を受信したりする前にプロンプトが表示されます。</div>
+ 
+-*strings.30261:%sec-banner-begin%%0%%sec-banner-end%<div>以下が､この証明書発行人の証明書です｡よく調べて下さい｡ %-cont-%
++*strings.30261:%sec-banner-begin%%0%%sec-banner-end%<div>以下が、この証明書発行人の証明書です。よく調べて下さい。 %-cont-%
+ 
+-*strings.30262:証明書フィンガープリントはこの発行人の身元を確かめるのに使うことができます｡この発行人が他の場所で発行しているフィンガープリントと､ %-cont-%
++*strings.30262:証明書フィンガープリントはこの発行人の身元を確かめるのに使うことができます。この発行人が他の場所で発行しているフィンガープリントと、 %-cont-%
+ 
+-*strings.30263:このフィンガープリントとを比べて下さい｡</div><hr> <table><tr><td valign=top><font size=2>証明書: <br>署名者: </font></td>%-cont-%
++*strings.30263:このフィンガープリントとを比べて下さい。</div><hr> <table><tr><td valign=top><font size=2>証明書: <br>署名者: </font></td>%-cont-%
+ 
+ *strings.30264:<td valign=top><font size=2>%1%<br>%2%</font></td><td valign=bottom><font size=2><input type="submit" name="button" value="%moreinfo%%-cont-%
+ 
+@@ -7910,57 +7929,57 @@
+ 
+ *strings.30267:この証明書発行人を受け付けますか?<p> %1%%2%%3%</div>
+ 
+-*strings.30275:%sec-banner-begin%%0%%sec-banner-end%<div>この証明書発行人を受け付けると､Netscape Communicator は､この発行人が証明するどのサイトに対しても､ %-cont-%
++*strings.30275:%sec-banner-begin%%0%%sec-banner-end%<div>この証明書発行人を受け付けると、Netscape Communicator は、この発行人が証明するどのサイトに対しても、 %-cont-%
+ 
+-*strings.30276:接続したり情報を受信したりする際に､警告したりプロンプトを表示したりしません｡<p>ですが､ %-cont-%
++*strings.30276:接続したり情報を受信したりする際に、警告したりプロンプトを表示したりしません。<p>ですが、 %-cont-%
+ 
+-*strings.30277:このようなサイトに対して情報を送信する前に､警告することができます｡</div><p><div><input type=checkbox name=postwarn value=yes %1%>この証明書発行人によって証明されたサイトに %-cont-%
++*strings.30277:このようなサイトに対して情報を送信する前に、警告することができます。</div><p><div><input type=checkbox name=postwarn value=yes %1%>この証明書発行人によって証明されたサイトに %-cont-%
+ 
+ *strings.30278:情報を送信する前に警告する</div>
+ 
+-*strings.30279:%sec-banner-begin%%0%%sec-banner-end%<div>この証明書発行人を受け付けました｡この証明書発行人を識別するために使用するニックネームを選ぶ必要があります｡ %-cont-%
++*strings.30279:%sec-banner-begin%%0%%sec-banner-end%<div>この証明書発行人を受け付けました。この証明書発行人を識別するために使用するニックネームを選ぶ必要があります。 %-cont-%
+ 
+-*strings.30280:例えば､<b>Mozilla's Certificate Shack</b>などです｡<p>ニックネーム: <font size=4><input type=text %-cont-%
++*strings.30280:例えば、<b>Mozilla's Certificate Shack</b>などです。<p>ニックネーム: <font size=4><input type=text %-cont-%
+ 
+ *strings.30281:name=nickname></font></div>
+ 
+-*strings.30282:%sec-banner-begin%%0%%sec-banner-end%この証明書発行人を 拒否すると､Netscape Communicator は､ %-cont-%
++*strings.30282:%sec-banner-begin%%0%%sec-banner-end%この証明書発行人を 拒否すると、Netscape Communicator は、 %-cont-%
+ 
+-*strings.30283:この発行人が証明するサイトに対して接続したり情報を受信したりする前に､必ずプロンプト を表示します｡
++*strings.30283:この発行人が証明するサイトに対して接続したり情報を受信したりする前に、必ずプロンプト を表示します。
+ 
+ *strings.30294:%0%
+ 
+-*strings.30295:%sec-banner-begin%%0%%sec-banner-end%サイト '%1%' はクライアント認証を要求しました｡<p>以下が､ %-cont-%
++*strings.30295:%sec-banner-begin%%0%%sec-banner-end%サイト '%1%' はクライアント認証を要求しました。<p>以下が、 %-cont-%
+ 
+ *strings.30296:サイトの証明書です:<hr><table><tr><td valign=top><font size=2>証明書: <br>署名者: <br>暗号化: </font></td><td valign=top><font %-cont-%
+ 
+-*strings.30297:size=2>%2%<br>%3%<br>%4% グレード (%5% ､ %6% ビット秘密鍵)</font></td><td valign=bottom><input type="submit" name="button" value="%moreinfo%%-cont-%
++*strings.30297:size=2>%2%<br>%3%<br>%4% グレード (%5% 、 %6% ビット秘密鍵)</font></td><td valign=bottom><input type="submit" name="button" value="%moreinfo%%-cont-%
+ 
+ *strings.30298:"></td></tr></table><hr>証明書を選択して下さい:<select name=cert>%7%</select>%8%
+ 
+-*strings.30304:%sec-banner-begin%%0%%sec-banner-end%サイト '%1%' はクライアント認証を要求しましたが､あなた自身を証明する %-cont-%
++*strings.30304:%sec-banner-begin%%0%%sec-banner-end%サイト '%1%' はクライアント認証を要求しましたが、あなた自身を証明する %-cont-%
+ 
+-*strings.30305:個人証明書がありません｡このサイトはおそらく証明書がないとアクセスできません｡%2%
++*strings.30305:個人証明書がありません。このサイトはおそらく証明書がないとアクセスできません。%2%
+ 
+-*strings.30306:%sec-banner-begin%%0%%sec-banner-end%<B>リクエストしたすべてのファイルは暗号化されています｡</B><p> これは､ %-cont-%
++*strings.30306:%sec-banner-begin%%0%%sec-banner-end%<B>リクエストしたすべてのファイルは暗号化されています。</B><p> これは、 %-cont-%
+ 
+-*strings.30307:ドキュメントを構成するファイルが､転送中のプライバシー保護のため暗号化されて送られることを意味します｡<p> ドキュメントの暗号化の詳細については､ %-cont-%
++*strings.30307:ドキュメントを構成するファイルが、転送中のプライバシー保護のため暗号化されて送られることを意味します。<p> ドキュメントの暗号化の詳細については、 %-cont-%
+ 
+ *strings.30308:document, open Document Information.<p> <center><input type="submit" name="button" value="%ok%"><input type="submit" name="button" %-cont-%
+ 
+ *strings.30309:value="%showdocinfo%"></center>%1%
+ 
+-*strings.30315:<img src=about:security?banner-mixed>%0%<br clear=all><p><B>リクエストしたファイルのいくつかは暗号化されています｡</B><p> これらのファイルは､ %-cont-%
++*strings.30315:<img src=about:security?banner-mixed>%0%<br clear=all><p><B>リクエストしたファイルのいくつかは暗号化されています。</B><p> これらのファイルは、 %-cont-%
+ 
+-*strings.30316:転送中のプライバシー保護のため暗号化されて送られます｡その他のファイルは､ 暗号化されず､転送中に第三者によって監視される可能\性があります｡<p> %-cont-%
++*strings.30316:転送中のプライバシー保護のため暗号化されて送られます。その他のファイルは、 暗号化されず、転送中に第三者によって監視される可能\性があります。<p> %-cont-%
+ 
+-*strings.30317:ファイルが暗号化され､どのファイルが暗号化されないのかお調べになるには､ [ドキュメント情報]をご覧下さい｡<p> <center><input type="submit" name="button" %-cont-%
++*strings.30317:ファイルが暗号化され、どのファイルが暗号化されないのかお調べになるには、 [ドキュメント情報]をご覧下さい。<p> <center><input type="submit" name="button" %-cont-%
+ 
+ *strings.30318:value="%ok%"><input type="submit" name="button" value="%showdocinfo%"></center>%1%
+ 
+-*strings.30319:<img src=about:security?banner-insecure>%0%<br clear=all><p><B>リクエストした ファイルは暗号化されません｡</B><p>暗号化されていないファイルは､ %-cont-%
++*strings.30319:<img src=about:security?banner-insecure>%0%<br clear=all><p><B>リクエストした ファイルは暗号化されません。</B><p>暗号化されていないファイルは、 %-cont-%
+ 
+-*strings.30320:転送中に第三者によって監視される可能性があります｡<p> <center><input type="submit" name="button" value="%ok%"></center>%1%
++*strings.30320:転送中に第三者によって監視される可能性があります。<p> <center><input type="submit" name="button" value="%ok%"></center>%1%
+ 
+ *strings.30336:40 ビットキーによる CBC モードの RC2 暗号化
+ 
+@@ -7978,7 +7997,7 @@
+ 
+ *strings.30343:128 ビットキーによる CBC モードの RC5 暗号化
+ 
+-*strings.30351:このバージョンの Communicator には有効な暗号化法ファイルがありません｡\nすべての暗号化と解読の機能は無効になります｡
++*strings.30351:このバージョンの Communicator には有効な暗号化法ファイルがありません。\nすべての暗号化と解読の機能は無効になります。
+ 
+ *strings.30352:  (暗号は利用できません)
+ 
+@@ -7990,81 +8009,81 @@
+ 
+ *strings.30356:%sec-banner-begin%%0%%sec-banner-end%<h3>SSL v3 %1% を有効にするための暗号を選択して下さい</h3><ul>%2%</ul>%3%
+ 
+-*strings.30362:%sec-banner-begin%%0%%sec-banner-end%新しい証明書を受け取りました｡Communicator は､ %-cont-%
++*strings.30362:%sec-banner-begin%%0%%sec-banner-end%新しい証明書を受け取りました。Communicator は、 %-cont-%
+ 
+-*strings.30363:次の名前でこの証明書を参照します｡  %1%<P><B>OK</B> をクリックすると､ この証明書を Communicator にインストールします｡<B>キャンセル</B> をクリックすると､ %-cont-%
++*strings.30363:次の名前でこの証明書を参照します。  %1%<P><B>OK</B> をクリックすると、 この証明書を Communicator にインストールします。<B>キャンセル</B> をクリックすると、 %-cont-%
+ 
+-*strings.30364:この証明書を拒否します｡<HR>証明書名: %2%<P><table width=97%%><tr><td>証明書:%3%<BR>署名者: %4%</td><td align=right><input type=submit name=button %-cont-%
++*strings.30364:この証明書を拒否します。<HR>証明書名: %2%<P><table width=97%%><tr><td>証明書:%3%<BR>署名者: %4%</td><td align=right><input type=submit name=button %-cont-%
+ 
+ *strings.30365:value="%showcert%"></td></tr></table><HR><P>%5%</font>
+ 
+-*strings.30371:提供されている名前を使用するか､新しい名前を入力して下さい｡
++*strings.30371:提供されている名前を使用するか、新しい名前を入力して下さい。
+ 
+-*strings.30372:%sec-banner-begin%%0%%sec-banner-end%証明書を %1% から受け取りました｡<p>この証明書は､ %-cont-%
++*strings.30372:%sec-banner-begin%%0%%sec-banner-end%証明書を %1% から受け取りました。<p>この証明書は、 %-cont-%
+ 
+-*strings.30373:証明書をリクエストしたときに生成された秘密鍵と共に使用されます｡これら2つにより､Webサイトや電子メールで身分証明を行うことができます｡<p>証明書と秘密鍵による保護機能は､ %-cont-%
++*strings.30373:証明書をリクエストしたときに生成された秘密鍵と共に使用されます。これら2つにより、Webサイトや電子メールで身分証明を行うことができます。<p>証明書と秘密鍵による保護機能は、 %-cont-%
+ 
+-*strings.30374:従来のユーザ名とパスワードによるセキュリティ手法よりも､より安全です｡証明書についての詳細は､[Communicator]メニューから<b>セキュリティ情報</b>をご覧下さい。
++*strings.30374:従来のユーザ名とパスワードによるセキュリティ手法よりも、より安全です。証明書についての詳細は、[Communicator]メニューから<b>セキュリティ情報</b>をご覧下さい。
+ 
+-*strings.30380:%sec-banner-begin%%0%%sec-banner-end%新しい証明書のコピーを作成することができます｡<p>証明書をなくしてしまうと､ %-cont-%
++*strings.30380:%sec-banner-begin%%0%%sec-banner-end%新しい証明書のコピーを作成することができます。<p>証明書をなくしてしまうと、 %-cont-%
+ 
+-*strings.30381:<b>修復することはできません</b>｡秘密鍵は他人に渡さないで下さい｡秘密鍵がないと､ %-cont-%
++*strings.30381:<b>修復することはできません</b>。秘密鍵は他人に渡さないで下さい。秘密鍵がないと、 %-cont-%
+ 
+-*strings.30382:証明書を使用して受信したすべての電子メールを読むことができなくなります｡<p>コピーを作成するには､<b>名前を付けて保存</b>をクリックして､証明書を保存する場所を指定して下さい｡可能ならば､ %-cont-%
++*strings.30382:証明書を使用して受信したすべての電子メールを読むことができなくなります。<p>コピーを作成するには、<b>名前を付けて保存</b>をクリックして、証明書を保存する場所を指定して下さい。可能ならば、 %-cont-%
+ 
+-*strings.30383:フロッピーディスク に保存して､安全な場所に保管して下さい｡<p><input type=submit name=button value="%saveas%">
++*strings.30383:フロッピーディスク に保存して、安全な場所に保管して下さい。<p><input type=submit name=button value="%saveas%">
+ 
+ *strings.30384:ユーザ 証明書の保存
+ 
+-*strings.30392:%sec-banner-begin%%0%%sec-banner-end%[OK]をクリックすると､Communicator は､証明書のための秘密鍵を生成します｡ %-cont-%
++*strings.30392:%sec-banner-begin%%0%%sec-banner-end%[OK]をクリックすると、Communicator は、証明書のための秘密鍵を生成します。 %-cont-%
+ 
+-*strings.30393:この処理には数分間かかります｡<P><B>重要: この処理を中断すると､証明書を再適用する必要があります｡</B>%1% %2% %3%<P>
++*strings.30393:この処理には数分間かかります。<P><B>重要: この処理を中断すると、証明書を再適用する必要があります。</B>%1% %2% %3%<P>
+ 
+ *strings.30394:鍵の全般情報
+ 
+ *strings.30400:証明書ダウンロード情報
+ 
+-*strings.30401:%sec-banner-begin%%0%%sec-banner-end%%1% は保護された情報の転送のために暗号化を使用しているサイトです｡ %-cont-%
++*strings.30401:%sec-banner-begin%%0%%sec-banner-end%%1% は保護された情報の転送のために暗号化を使用しているサイトです。 %-cont-%
+ 
+-*strings.30402:ですが､このサイトの身元を保証するデジタル証明書の有効期限が切れています｡ 実際に証明書の有効期限が切れているか､ %-cont-%
++*strings.30402:ですが、このサイトの身元を保証するデジタル証明書の有効期限が切れています。 実際に証明書の有効期限が切れているか、 %-cont-%
+ 
+-*strings.30403:お使いのコンピュータの日付が間違っていることが考えられます｡<p>この証明書の有効期限は %2% です｡<p>お使いのコンピュータの日付は %3% です｡もし､日付が間違っている時は､ %-cont-%
++*strings.30403:お使いのコンピュータの日付が間違っていることが考えられます。<p>この証明書の有効期限は %2% です。<p>お使いのコンピュータの日付は %3% です。もし、日付が間違っている時は、 %-cont-%
+ 
+-*strings.30404:コンピュータの日付を訂正する必要があります｡<p>この接続を続けるかキャンセル して下さい｡%4%
++*strings.30404:コンピュータの日付を訂正する必要があります。<p>この接続を続けるかキャンセル して下さい。%4%
+ 
+-*strings.30410:%sec-banner-begin%%0%%sec-banner-end%%1% は､ 保護された情報の転送のために暗号化を使用しているサイトです｡ %-cont-%
++*strings.30410:%sec-banner-begin%%0%%sec-banner-end%%1% は、 保護された情報の転送のために暗号化を使用しているサイトです。 %-cont-%
+ 
+-*strings.30411:ですが､このサイトの身元を保証するデジタル証明書がまだ有効ではありません｡ サイト管理者によって証明書がインストールされた直後か､ %-cont-%
++*strings.30411:ですが、このサイトの身元を保証するデジタル証明書がまだ有効ではありません。 サイト管理者によって証明書がインストールされた直後か、 %-cont-%
+ 
+-*strings.30412:お使いのコンピュータの日付が間違っていることが考えられます｡<p>この証明書の有効開始日は %2% です｡<p>お使いのコンピュータの日付は %-cont-%
++*strings.30412:お使いのコンピュータの日付が間違っていることが考えられます。<p>この証明書の有効開始日は %2% です。<p>お使いのコンピュータの日付は %-cont-%
+ 
+-*strings.30413:%3% です｡もし､日付が間違っている時は､コンピュータの日付を訂正する必要があります｡<p>この接続を続けるかキャンセルして下さい｡%4%
++*strings.30413:%3% です。もし、日付が間違っている時は、コンピュータの日付を訂正する必要があります。<p>この接続を続けるかキャンセルして下さい。%4%
+ 
+-*strings.30419:%sec-banner-begin%%0%%sec-banner-end%%1% は､ 保護された情報の転送のために暗号化を使用しているサイトです｡ %-cont-%
++*strings.30419:%sec-banner-begin%%0%%sec-banner-end%%1% は、 保護された情報の転送のために暗号化を使用しているサイトです。 %-cont-%
+ 
+-*strings.30420:ですが､このサイトの身元を保証する証明書発行人のうちの1つの有効期限が切れています｡ 実際に証明書の有効期限が切れているか､お使いのコンピュータの日付が間違っていることが考えられます｡ %-cont-%
++*strings.30420:ですが、このサイトの身元を保証する証明書発行人のうちの1つの有効期限が切れています。 実際に証明書の有効期限が切れているか、お使いのコンピュータの日付が間違っていることが考えられます。 %-cont-%
+ 
+-*strings.30421:[詳細]ボタンを押すと､有効期限の切れている証明書の 詳細をご覧になることができます｡<hr><table cellspacing=0 cellpadding=0><tr><td %-cont-%
++*strings.30421:[詳細]ボタンを押すと、有効期限の切れている証明書の 詳細をご覧になることができます。<hr><table cellspacing=0 cellpadding=0><tr><td %-cont-%
+ 
+ *strings.30422:valign=top><font size=2>証明書発行人: <br>有効期限: </font></td><td valign=top><font size=2>%2%<br>%3%</font></td><td %-cont-%
+ 
+ *strings.30423:valign=center align=right><input type="submit" name="button" value="%moreinfo%"></td></tr></table><hr>お使いのコンピュータの日付は %-cont-%
+ 
+-*strings.30424:%4% です｡もし､日付が間違っている時は､コンピュータの日付を訂正する 必要があります｡<p>この接続を続けるかキャンセルして下さい｡
++*strings.30424:%4% です。もし、日付が間違っている時は、コンピュータの日付を訂正する 必要があります。<p>この接続を続けるかキャンセルして下さい。
+ 
+-*strings.30430:%sec-banner-begin%%0%%sec-banner-end%%1% は､ 保護された情報の転送のために暗号化を使用しているサイトです｡ %-cont-%
++*strings.30430:%sec-banner-begin%%0%%sec-banner-end%%1% は、 保護された情報の転送のために暗号化を使用しているサイトです。 %-cont-%
+ 
+-*strings.30431:%sec-banner-begin%%0%%sec-banner-end%%1% は､ 保護された情報の転送のために暗号化を使用しているサイトです｡ %-cont-%
++*strings.30431:%sec-banner-begin%%0%%sec-banner-end%%1% は、 保護された情報の転送のために暗号化を使用しているサイトです。 %-cont-%
+ 
+-*strings.30432:お使いのコンピュータの日付が間違っていることが考えられます｡[詳細]ボタンを 押すと､有効期限の切れている証明書の詳細をご覧になることができます｡<hr><table %-cont-%
++*strings.30432:お使いのコンピュータの日付が間違っていることが考えられます。[詳細]ボタンを 押すと、有効期限の切れている証明書の詳細をご覧になることができます。<hr><table %-cont-%
+ 
+ *strings.30433:cellspacing=0 cellpadding=0><tr><td valign=top><font size=2>証明書発行人: <br>証明書の有効開始日: </font></td><td valign=top><font %-cont-%
+ 
+ *strings.30434:size=2>%2%<br>%3%</font></td><td valign=center align=right><input type="submit" name="button" value="%moreinfo%"></td></tr></table>%-cont-%
+ 
+-*strings.30435:<hr>お使いのコンピュータの日付は %4% です｡もし､日付が間違っている時は､ コンピュータの日付を訂正する必要があります｡<p>この接続を続けるか､ %-cont-%
++*strings.30435:<hr>お使いのコンピュータの日付は %4% です。もし、日付が間違っている時は、 コンピュータの日付を訂正する必要があります。<p>この接続を続けるか、 %-cont-%
+ 
+-*strings.30436:キャンセルして下さい｡
++*strings.30436:キャンセルして下さい。
+ 
+ *strings.30492:キャンセル
+ 
+@@ -8144,19 +8163,19 @@
+ 
+ *strings.30556:証明書暗号
+ 
+-*strings.30557:%sec-banner-begin%%0%%sec-banner-end%選択した証明書の有効期限が切れていますので､ %-cont-%
++*strings.30557:%sec-banner-begin%%0%%sec-banner-end%選択した証明書の有効期限が切れていますので、 %-cont-%
+ 
+-*strings.30558:おそらく サーバに拒否されます｡[続ける]を押してとにかく送信してみるか､ [キャンセル]を押して接続を中止して下さい｡
++*strings.30558:おそらく サーバに拒否されます。[続ける]を押してとにかく送信してみるか、 [キャンセル]を押して接続を中止して下さい。
+ 
+-*strings.30569:%sec-banner-begin%%0%%sec-banner-end%<table><tr><td>選択した証明書の有効期限が切れていますので､ %-cont-%
++*strings.30569:%sec-banner-begin%%0%%sec-banner-end%<table><tr><td>選択した証明書の有効期限が切れていますので、 %-cont-%
+ 
+-*strings.30570:おそらく サーバに拒否されます｡[%continue%]を押してとにかく送信してみるか､[%cancel%]を押して接続を中止して下さい｡証明書を更新するには､ %-cont-%
++*strings.30570:おそらく サーバに拒否されます。[%continue%]を押してとにかく送信してみるか、[%cancel%]を押して接続を中止して下さい。証明書を更新するには、 %-cont-%
+ 
+-*strings.30571:[%renew%]ボタンを押して下さい｡</td><td><input type=submit name=button value=%renew%></td></tr></table>
++*strings.30571:[%renew%]ボタンを押して下さい。</td><td><input type=submit name=button value=%renew%></td></tr></table>
+ 
+ *strings.30577:更新
+ 
+-*strings.30578:%sec-banner-begin%%0%%sec-banner-end%選択した証明書はまだ有効ではないので､おそらく サーバに拒否されます｡[続ける]を押してとにかく送信してみるか､ [キャンセル]を押して接続を中止して下さい｡
++*strings.30578:%sec-banner-begin%%0%%sec-banner-end%選択した証明書はまだ有効ではないので、おそらく サーバに拒否されます。[続ける]を押してとにかく送信してみるか、 [キャンセル]を押して接続を中止して下さい。
+ 
+ *strings.30579:証明書の有効期限が切れています
+ 
+@@ -8164,9 +8183,9 @@
+ 
+ *strings.30581:Communicator が自動で選択
+ 
+-*strings.30582:1024 (上位ｸﾞﾚｰﾄﾞ)
++*strings.30582:1024 (上位グレ−ド)
+ 
+-*strings.30583: 768 (中間ｸﾞﾚｰﾄﾞ)
++*strings.30583: 768 (中間グレ−ド)
+ 
+ *strings.30584: 512 (下位グレード)
+ 
+@@ -8230,19 +8249,19 @@
+ 
+ *strings.30736:非暗号化 FORTEZZA 認証と SHA-1 MAC
+ 
+-*strings.30742:パスワードまたはピンを入力してください\n%s｡
++*strings.30742:パスワードまたはピンを入力してください\n%s。
+ 
+-*strings.30743:%sec-banner-begin%%0%%sec-banner-end%%1% はユーザ ピンまたはパスワードで初期化されていません｡このカードを初期化するには､ %-cont-%
++*strings.30743:%sec-banner-begin%%0%%sec-banner-end%%1% はユーザ ピンまたはパスワードで初期化されていません。このカードを初期化するには、 %-cont-%
+ 
+-*strings.30744:管理用またはサイト セキュリティ パスワードを入力する必要があります｡パスワードがわからない場合は<b>キャンセル</b>を押して､ %-cont-%
++*strings.30744:管理用またはサイト セキュリティ パスワードを入力する必要があります。パスワードがわからない場合は<b>キャンセル</b>を押して、 %-cont-%
+ 
+-*strings.30745:カードを発行人に戻して初期化してもらって下さい｡<p>%2% の管理用のパスワードを入力して下さい:<input type=password name=ssopassword>.
++*strings.30745:カードを発行人に戻して初期化してもらって下さい。<p>%2% の管理用のパスワードを入力して下さい:<input type=password name=ssopassword>.
+ 
+-*strings.30751:%sec-banner-begin%%0%%sec-banner-end%入力された %1% の管理用のパスワードが正しくありません｡ %-cont-%
++*strings.30751:%sec-banner-begin%%0%%sec-banner-end%入力された %1% の管理用のパスワードが正しくありません。 %-cont-%
+ 
+-*strings.30752:何度もパスワードを間違えると多くのカードは無効になります｡パスワードがわからない場合は<b>キャンセル</b>を押して､ %-cont-%
++*strings.30752:何度もパスワードを間違えると多くのカードは無効になります。パスワードがわからない場合は<b>キャンセル</b>を押して、 %-cont-%
+ 
+-*strings.30753:カードを発行人に戻して初期化してもらって下さい｡<p>%2% の管理用のパスワードを入力して下さい:<input type=password name=ssopassword>.
++*strings.30753:カードを発行人に戻して初期化してもらって下さい。<p>%2% の管理用のパスワードを入力して下さい:<input type=password name=ssopassword>.
+ 
+ *strings.30754:%sec-banner-begin%%0%%sec-banner-end%%1% は次のエラーのため初期化することができませんでした:<p> %2%
+ 
+@@ -8258,21 +8277,21 @@
+ 
+ *strings.30760:パスワードを設定...
+ 
+-*strings.30761:スロットまたはトークンはログインを必要としません｡
++*strings.30761:スロットまたはトークンはログインを必要としません。
+ 
+-*strings.30762:スロットまたはログインは既にログインしています｡
++*strings.30762:スロットまたはログインは既にログインしています。
+ 
+ *strings.30763:<p>作成する鍵を入れるカードまたはデータベースを選択して下さい:<SELECT name="tokenName">
+ 
+-*strings.30764:トークン %s は書き込み禁止です｡証明書や鍵は削除できませんでした｡
++*strings.30764:トークン %s は書き込み禁止です。証明書や鍵は削除できませんでした。
+ 
+-*strings.30766:スロットの初期化に失敗しました｡
++*strings.30766:スロットの初期化に失敗しました。
+ 
+-*strings.30767:ユーザがこのスロットを無効にしています｡
++*strings.30767:ユーザがこのスロットを無効にしています。
+ 
+-*strings.30768:トークンが起動時テストに失敗しました｡
++*strings.30768:トークンが起動時テストに失敗しました。
+ 
+-*strings.30769:永続トークンがありません｡
++*strings.30769:永続トークンがありません。
+ 
+ *strings.30780:Java セキュリティ
+ 
+@@ -8304,13 +8323,13 @@
+ 
+ *strings.30804:すべてのアプレットとスクリプトに対する <b>%0%</b> 特権を <b>%1%</b> から削除してもよろしいですか?
+ 
+-*strings.30805:<b> %0% </b> は <b> %1% </b> アクセスです｡<br> <ul>以下から構成されています:<br><select name=details size=6> %2% </select></ul>
++*strings.30805:<b> %0% </b> は <b> %1% </b> アクセスです。<br> <ul>以下から構成されています:<br><select name=details size=6> %2% </select></ul>
+ 
+ *strings.30806:<table BORDER=0><tr><td VALIGN=top><font SIZE=2><b>危険 <SPACER TYPE=horizontal SIZE=7></B><br></td> %-cont-%
+ 
+-*strings.30807:<td "100%%"><font SIZE=2><b>%0%</b> からの Java アプレットまたは JavaScript がお使いのコンピュータまたはネットワークに対して通常以外のアクセスを要求しています｡%-cont-%
++*strings.30807:<td "100%%"><font SIZE=2><b>%0%</b> からの Java アプレットまたは JavaScript がお使いのコンピュータまたはネットワークに対して通常以外のアクセスを要求しています。%-cont-%
+ 
+-*strings.30808:このベンダーまたは配布者を確認しないでこのアクセスを許可することはしないで下さい｡</td></tr><tr><td valign=top colspan=2><center> <input type="submit" name="button" value="%3%"></input> %-cont-%
++*strings.30808:このベンダーまたは配布者を確認しないでこのアクセスを許可することはしないで下さい。</td></tr><tr><td valign=top colspan=2><center> <input type="submit" name="button" value="%3%"></input> %-cont-%
+ 
+ *strings.30809:</center><spacer type=vertical size=20></td></tr> <tr><td></td><td><font size=2>要求されたアクセスは <b>%1%</b> で、以下から構\成されます:</td></tr> %-cont-%
+ 
+@@ -8324,9 +8343,9 @@
+ 
+ *strings.30824:<table BORDER=0><tr><td VALIGN=top><font SIZE=2><b>危険 <SPACER TYPE=horizontal SIZE=7></B><br></td> %-cont-%
+ 
+-*strings.30825:<td "100%%"><font SIZE=2> サーバ "<b>%0%</b>" からの Java アプレットまたは JavaScript がお使いのコンピュータまたはネットワークに対して通常以外のアクセスを要求しています｡ %-cont-%
++*strings.30825:<td "100%%"><font SIZE=2> サーバ "<b>%0%</b>" からの Java アプレットまたは JavaScript がお使いのコンピュータまたはネットワークに対して通常以外のアクセスを要求しています。 %-cont-%
+ 
+-*strings.30826:これは<b>デジタル署名されていません</b>｡ 改竄されていたり､お使いのコンピュータに障害を与える可能性があります｡ </td></tr> <tr><td></td><td><font size=2>要求されたアクセスは <b>%1%</b> で、以下から構成されます:</td></tr> %-cont-%
++*strings.30826:これは<b>デジタル署名されていません</b>。 改竄されていたり、お使いのコンピュータに障害を与える可能性があります。 </td></tr> <tr><td></td><td><font size=2>要求されたアクセスは <b>%1%</b> で、以下から構成されます:</td></tr> %-cont-%
+ 
+ *strings.30827:<tr><td coldspan=2><center><table> <td><select multiple name=target size=4>%2%</select></td> <td><input type="submit" name="button" value="%moreinfo%"> </input></td></table></center></td></tr></table> %-cont-%
+ 
+@@ -8344,7 +8363,7 @@
+ 
+ *strings.30844:%4%<b>トークン名:</b> %5%<br><b>トークン製造:</b>%6%<br><b>トークン モデル:</b> %7%<br><b>トークン シリアル番号:</b>%8%<br>%-cont-%
+ 
+-*strings.30845:<b>トークン バージョン:</b> %9%<br><b>トークン ファームウェア バージョン:</b> %10%<br><b>ログイン タイプﾟ:</b> %11%<br><b>状態:</b>%12%%13%%14%
++*strings.30845:<b>トークン バージョン:</b> %9%<br><b>トークン ファームウェア バージョン:</b> %10%<br><b>ログイン タイプ゜:</b> %11%<br><b>状態:</b>%12%%13%%14%
+ 
+ *strings.30846:トークン/スロット情報
+ 
+@@ -8372,9 +8391,9 @@
+ 
+ *strings.30863:   パスワードなし   
+ 
+-*strings.30864:%sec-banner-begin%%0%%sec-banner-end%他のユーザの電子メール証明書をダウンロードしています｡ %-cont-%
++*strings.30864:%sec-banner-begin%%0%%sec-banner-end%他のユーザの電子メール証明書をダウンロードしています。 %-cont-%
+ 
+-*strings.30865:この証明書を受け付けると､このユーザに対して暗号化電子メールを送信できるようになります｡電子メール証明書の詳細をごらんになるには[詳細]ボタンを押して下さい｡ %-cont-%
++*strings.30865:この証明書を受け付けると、このユーザに対して暗号化電子メールを送信できるようになります。電子メール証明書の詳細をごらんになるには[詳細]ボタンを押して下さい。 %-cont-%
+ 
+ *strings.30866:<hr><table cellspacing=0 cellpadding=0><tr><td valign=top><table cellspacing=0 cellpadding=0><tr><td><font size=2>証明書:%-cont-%
+ 
+@@ -8424,11 +8443,11 @@
+ 
+ *strings.30954:Netscape FIPS-140-1 User Private Key Services                   
+ 
+-*strings.30955:選択した証明書の確認は､以下の理由により失敗しました:<p>%0%
++*strings.30955:選択した証明書の確認は、以下の理由により失敗しました:<p>%0%
+ 
+ *strings.30956:証明書を確認
+ 
+-*strings.30962:証明書は正しく確認されました｡
++*strings.30962:証明書は正しく確認されました。
+ 
+ *strings.30963:証明書の有効期限が切れています
+ 
+@@ -8470,13 +8489,13 @@
+ 
+ *strings.30987:%0%
+ 
+-*strings.30988:これにより､Netscape内部モジュールが､Netscape FIPS-140-1 暗号化モジュールに置き換わります｡\n\nFIPS-104-1 暗号化モジュールのセキュリティ機能は､
++*strings.30988:これにより、Netscape内部モジュールが、Netscape FIPS-140-1 暗号化モジュールに置き換わります。\n\nFIPS-104-1 暗号化モジュールのセキュリティ機能は、
+ 
+-*strings.30989:合衆国連邦政府の内部規定により許可された者のみに制限されます｡\n\n内部モジュールを削除しますか?
++*strings.30989:合衆国連邦政府の内部規定により許可された者のみに制限されます。\n\n内部モジュールを削除しますか?
+ 
+-*strings.30995:これにより､FIPS-140-1 暗号化モジュールが Netscape 内部モジュールに置き換わります｡\n\nCommunicator は､FIPS-140-1 互換
++*strings.30995:これにより、FIPS-140-1 暗号化モジュールが Netscape 内部モジュールに置き換わります。\n\nCommunicator は、FIPS-140-1 互換
+ 
+-*strings.30996:(合衆国連邦政府の内部規定により許可された者のみ使用できるセキュリティ機能) ではなくなります｡\n\nFIPS-140-1 モジュールを削除しますか?
++*strings.30996:(合衆国連邦政府の内部規定により許可された者のみ使用できるセキュリティ機能) ではなくなります。\n\nFIPS-140-1 モジュールを削除しますか?
+ 
+ *strings.30997:検索
+ 
+@@ -8484,9 +8503,9 @@
+ 
+ *strings.31004:<div align=right><input type="button" name="button" value="%fetch%" onclick="parent.clicker(this,window.parent)" width=80>&nbsp;&nbsp;<input type="button" name="button" value="%cancel%" onclick="parent.clicker(this,window.parent)" width=80>%0%
+ 
+-*strings.31005:Communicator は､暗号化メールメッセージﾞを送信するために使用するセキュリティ証明書用のネットワーク ディレクトリを検索します｡<p>検索する人の正しい電子メールアドレスを入力して､ %-cont-%
++*strings.31005:Communicator は、暗号化メールメッセージ゛を送信するために使用するセキュリティ証明書用のネットワーク ディレクトリを検索します。<p>検索する人の正しい電子メールアドレスを入力して、 %-cont-%
+ 
+-*strings.31006:[検索]を押して下さい｡ <table border=0 cellspacing=0 cellpadding=5><tr><td><b>ディレクトリ:</b></td><td><select name=dirmenu>%0%%-cont-%
++*strings.31006:[検索]を押して下さい。 <table border=0 cellspacing=0 cellpadding=5><tr><td><b>ディレクトリ:</b></td><td><select name=dirmenu>%0%%-cont-%
+ 
+ *strings.31007:</select></td></tr>%-cont-%
+ 
+@@ -8496,19 +8515,19 @@
+ 
+ *strings.31015:検索結果
+ 
+-*strings.31016:検索した証明書を保存するには<b>%ok%</b>ボタンを押して下さい｡破棄する場合は､<b>%cancel%</b>を押して下さい｡<p>次の電子メール ユーザﾞの証明書がディレクトリ内に見つかりました:<br> %0%<p>%1%%2%
++*strings.31016:検索した証明書を保存するには<b>%ok%</b>ボタンを押して下さい。破棄する場合は、<b>%cancel%</b>を押して下さい。<p>次の電子メール ユーザ゛の証明書がディレクトリ内に見つかりました:<br> %0%<p>%1%%2%
+ 
+-*strings.31017:次の電子メールユーザﾞの証明書は､ディレクトリ内には見つかりませんでした:<br>
++*strings.31017:次の電子メールユーザ゛の証明書は、ディレクトリ内には見つかりませんでした:<br>
+ 
+ *strings.31018:電子メール証明書をディレクトリに送信
+ 
+ *strings.31019:証明書を送信するディレクトリを選択して下さい:<p><select name=dirmenu>%0%</select><br>%-cont-%
+ 
+-*strings.31020:Communicator は､ネットワーク ディレクトリにセキュリティ証明書を送信します｡他のユーザがあなたに暗号化メッセージを送信するために証明書を検索することが容易になります｡
++*strings.31020:Communicator は、ネットワーク ディレクトリにセキュリティ証明書を送信します。他のユーザがあなたに暗号化メッセージを送信するために証明書を検索することが容易になります。
+ 
+ *strings.31021:%0%%1%%2%%3%%4%
+ 
+-*strings.31022:Communicator は､暗号化メッセージの送信に必要なセキュリティ証明書をディレクトリから検索します｡ %-cont-%
++*strings.31022:Communicator は、暗号化メッセージの送信に必要なセキュリティ証明書をディレクトリから検索します。 %-cont-%
+ 
+ *strings.31023:<input type=hidden name=searchfor value="%0%"><table border=0 cellspacing=0 cellpadding=5><tr><td><b>ディレクトリを選択して下さい:</b></td><td><select name=dirmenu>%1%%-cont-%
+ 
+@@ -8522,67 +8541,67 @@
+ 
+ *strings.31078:ディレクトリと通信中にエラーが発生しました
+ 
+-*strings.31079:%sec-banner-begin%%0%%sec-banner-end%Communicator は秘密鍵を生成しようとしています｡秘密鍵は､Webサイト上や電子メールであなたの身元を保証するために､%-cont-%
++*strings.31079:%sec-banner-begin%%0%%sec-banner-end%Communicator は秘密鍵を生成しようとしています。秘密鍵は、Webサイト上や電子メールであなたの身元を保証するために、%-cont-%
+ 
+-*strings.31080:現在リクエストしている証明書とともに使用されます｡秘密鍵は､鍵を生成したお使いのコンピュータから外に出されることはなく､Communicator パスワードによって保護する事もできます｡ <P>%-cont-%
++*strings.31080:現在リクエストしている証明書とともに使用されます。秘密鍵は、鍵を生成したお使いのコンピュータから外に出されることはなく、Communicator パスワードによって保護する事もできます。 <P>%-cont-%
+ 
+-*strings.31081:パスワードは特に､他人がお使いのコンピュータに物理的にあるいはネットワーク経由でアクセスできる環境の場合は､重要です｡ %-cont-%
++*strings.31081:パスワードは特に、他人がお使いのコンピュータに物理的にあるいはネットワーク経由でアクセスできる環境の場合は、重要です。 %-cont-%
+ 
+-*strings.31082:絶対にパスワードを他人に教えないで下さい｡インターネット上であなたになりすますために証明書を利用できてしまいます｡<P>%-cont-%
++*strings.31082:絶対にパスワードを他人に教えないで下さい。インターネット上であなたになりすますために証明書を利用できてしまいます。<P>%-cont-%
+ 
+-*strings.31083:Communicator は､複雑な数学的処理で秘密鍵を生成します｡この処理には数分間かかります｡この過程で %-cont-%
++*strings.31083:Communicator は、複雑な数学的処理で秘密鍵を生成します。この処理には数分間かかります。この過程で %-cont-%
+ 
+-*strings.31084:Communicator を中断すると､鍵は生成されず､証明書を再適用する必要があります｡
++*strings.31084:Communicator を中断すると、鍵は生成されず、証明書を再適用する必要があります。
+ 
+-*strings.31090:%sec-banner-begin%%0%%sec-banner-end%パスワードは特に､他人がお使いのコンピュータに物理的にあるいは %-cont-%
++*strings.31090:%sec-banner-begin%%0%%sec-banner-end%パスワードは特に、他人がお使いのコンピュータに物理的にあるいは %-cont-%
+ 
+-*strings.31091:ネットワーク経由でアクセスできる環境の場合は､重要です｡絶対にパスワードを他人に教えないで下さい｡インターネット上であなたになりすますために %-cont-%
++*strings.31091:ネットワーク経由でアクセスできる環境の場合は、重要です。絶対にパスワードを他人に教えないで下さい。インターネット上であなたになりすますために %-cont-%
+ 
+-*strings.31092:証明書を利用できてしまいます｡<P>最も安全なパスワードは､英文字と数字や記号の組み合わせの最低でも8文字で､辞書の単語を含んでいないようなものです｡
++*strings.31092:証明書を利用できてしまいます。<P>最も安全なパスワードは、英文字と数字や記号の組み合わせの最低でも8文字で、辞書の単語を含んでいないようなものです。
+ 
+ *strings.31098:カードまたはデータベースの選択
+ 
+ *strings.31099:証明書をインポートするカードまたはデータベースを選択してください: <BR> <SELECT NAME=""tokenName"" SIZE=10>%0%</SELECT>
+ 
+-*strings.31100:有効な FORTEZZA 証明書発行機関ではありません｡
++*strings.31100:有効な FORTEZZA 証明書発行機関ではありません。
+ 
+-*strings.31101:証明書に公開鍵がありません｡
++*strings.31101:証明書に公開鍵がありません。
+ 
+-*strings.31102:このファイルを暗号化して[OK]または暗号化せず[キャンセル]に保存します｡
++*strings.31102:このファイルを暗号化して[OK]または暗号化せず[キャンセル]に保存します。
+ 
+-*strings.31103:連続してログインに失敗すると､このカードまたはデータベースは無効になります｡パスワードが無効です｡やり直しますか?\n    %s\n
++*strings.31103:連続してログインに失敗すると、このカードまたはデータベースは無効になります。パスワードが無効です。やり直しますか?\n    %s\n
+ 
+-*strings.31104:証明書のキー無効化リストが見つかりません｡\n続ける前にキー無効化リストを読み込んでください｡
++*strings.31104:証明書のキー無効化リストが見つかりません。\n続ける前にキー無効化リストを読み込んでください。
+ 
+-*strings.31105:証明書のキー無効化リストの有効期限が切れています｡\n新しいキー無効化リストを読み込んでください｡
++*strings.31105:証明書のキー無効化リストの有効期限が切れています。\n新しいキー無効化リストを読み込んでください。
+ 
+-*strings.31106:証明書のキー無効化リストの署名が無効です｡\n新しいキー無効化リストを読み込んでください｡
++*strings.31106:証明書のキー無効化リストの署名が無効です。\n新しいキー無効化リストを読み込んでください。
+ 
+-*strings.31107:証明書のキーが取り消されています｡
++*strings.31107:証明書のキーが取り消されています。
+ 
+-*strings.31108:キー無効化リストが不正なフォーマットです｡
++*strings.31108:キー無効化リストが不正なフォーマットです。
+ 
+-*strings.31109:Netscape はこのサイトと安全に通信を行うことができません｡ \n接続しようとしているドメインがサーバ証明書内のドメイン名と\n一致しません｡
++*strings.31109:Netscape はこのサイトと安全に通信を行うことができません。 \n接続しようとしているドメインがサーバ証明書内のドメイン名と\n一致しません。
+ 
+ *strings.31160:デジタル証明書
+ 
+-*strings.31161:サイト '%0%' は､次のメッセージに署名をするように要求してきました:<br><pre><dl><dd><tt>%1%</dl></tt></pre><br><b>このメッセージに署名を行う場合は､[%ok%]を押してください｡行わない場合は､[%cancel%]を押してください｡</b>
++*strings.31161:サイト '%0%' は、次のメッセージに署名をするように要求してきました:<br><pre><dl><dd><tt>%1%</dl></tt></pre><br><b>このメッセージに署名を行う場合は、[%ok%]を押してください。行わない場合は、[%cancel%]を押してください。</b>
+ 
+-*strings.31200:サイト '%0%' は､次のメッセージに署名をするように要求してきました: <br><pre><dl><dd><tt>%1%</dl></tt></pre><br>%-cont-%
++*strings.31200:サイト '%0%' は、次のメッセージに署名をするように要求してきました: <br><pre><dl><dd><tt>%1%</dl></tt></pre><br>%-cont-%
+ 
+-*strings.31201:署名に使用する証明書を選択してください:<br><SELECT NAME=certname>%2%</SELECT><br><b>このメッセージに署名を行う場合は､[%ok%]を押してください｡行わない場合は､[%cancel%]を押してください｡</b>
++*strings.31201:署名に使用する証明書を選択してください:<br><SELECT NAME=certname>%2%</SELECT><br><b>このメッセージに署名を行う場合は、[%ok%]を押してください。行わない場合は、[%cancel%]を押してください。</b>
+ 
+ *strings.31202:個人証明書を表示/編集
+ 
+-*strings.31203:%0%<hr><div><b>この電子メール ユーザの証明書の発行人は信任されていません｡</b> <br>証明書を直接信任すれば､このユーザと署名付き電子メールや %-cont-%
++*strings.31203:%0%<hr><div><b>この電子メール ユーザの証明書の発行人は信任されていません。</b> <br>証明書を直接信任すれば、このユーザと署名付き電子メールや %-cont-%
+ 
+-*strings.31204:暗号化電子メールの交換を行うことができるようになります｡<p>%-cont-%
++*strings.31204:暗号化電子メールの交換を行うことができるようになります。<p>%-cont-%
+ 
+-*strings.31205:安全のため､この証明書を信認する前に､この電子メール ユーザﾞと連絡を取り､上に表示されている証明書フィンガープリントと %-cont-%
++*strings.31205:安全のため、この証明書を信認する前に、この電子メール ユーザ゛と連絡を取り、上に表示されている証明書フィンガープリントと %-cont-%
+ 
+-*strings.31206:相手の証明書フィンガープリントが同一であることを確認してください｡<p><input type=radio name=dirtrust value=no %1%>この証明書を信認しない｡<br> %-cont-%
++*strings.31206:相手の証明書フィンガープリントが同一であることを確認してください。<p><input type=radio name=dirtrust value=no %1%>この証明書を信認しない。<br> %-cont-%
+ 
+-*strings.31207:<input type=radio name=dirtrust value=yes %2%>信任していない発行者によるものであるが､この証明書を信任する｡</div>
++*strings.31207:<input type=radio name=dirtrust value=yes %2%>信任していない発行者によるものであるが、この証明書を信任する。</div>
+ 
+ *strings.31213:<font face="Impress BT, Verdana, Arial, Helvetica, sans-serif" point-size=16>
+ 
+@@ -8708,9 +8727,9 @@
+ 
+ *strings.31557:SSL v3 の設定
+ 
+-*strings.31558:<B>署名付き･暗号化メッセージ用の証明書:</B>
++*strings.31558:<B>署名付き・暗号化メッセージ用の証明書:</B>
+ 
+-*strings.31559:<B>(電子メール証明書はありません｡)</B>
++*strings.31559:<B>(電子メール証明書はありません。)</B>
+ 
+ *strings.31560:S/MIME 暗号の選択
+ 
+@@ -8736,23 +8755,23 @@
+ 
+ *strings.31571:署名付きメッセージ
+ 
+-*strings.31572:このメッセージは送信時に<B>暗号化することができます</B>｡
++*strings.31572:このメッセージは送信時に<B>暗号化することができます</B>。
+ 
+-*strings.31573: 暗号化してメッセージを送信することは､はがきでなく封書で送ることに似ています｡他人がメッセージを読むことが困難になります｡
++*strings.31573: 暗号化してメッセージを送信することは、はがきでなく封書で送ることに似ています。他人がメッセージを読むことが困難になります。
+ 
+ *strings.31574:このメッセージを暗号化する
+ 
+-*strings.31575:メッセージを暗号化せずに送信するのは封書ではなくはがきで送ることに似ています｡他人がメッセージを読むことが可能になります｡
++*strings.31575:メッセージを暗号化せずに送信するのは封書ではなくはがきで送ることに似ています。他人がメッセージを読むことが可能になります。
+ 
+-*strings.31576:このメッセージの受取人を最低1人指定する必要があります｡
++*strings.31576:このメッセージの受取人を最低1人指定する必要があります。
+ 
+-*strings.31577:このメッセージを送信時に<B>暗号化することはできません</B>｡理由:
++*strings.31577:このメッセージを送信時に<B>暗号化することはできません</B>。理由:
+ 
+-*strings.31578: セキュリティ証明書がありません｡
++*strings.31578: セキュリティ証明書がありません。
+ 
+-*strings.31579: セキュリティ証明書の有効期限が切れています｡
++*strings.31579: セキュリティ証明書の有効期限が切れています。
+ 
+-*strings.31580: セキュリティ証明書が取り消されています｡
++*strings.31580: セキュリティ証明書が取り消されています。
+ 
+ *strings.31581: エイリアスにセキュリティ証明書がありません。
+ 
+@@ -8760,39 +8779,39 @@
+ 
+ *strings.31583: 無効なセキュリティ証明書です。
+ 
+-*strings.31584: 信用できないセキュリティ証明書とされています｡
++*strings.31584: 信用できないセキュリティ証明書とされています。
+ 
+-*strings.31585: 信用できないセキュリティ証明書発行人とされています｡
++*strings.31585: 信用できないセキュリティ証明書発行人とされています。
+ 
+-*strings.31586: セキュリティ証明書発行人が不明です｡
++*strings.31586: セキュリティ証明書発行人が不明です。
+ 
+ *strings.31587:: 未定義証明書エラー
+ 
+-*strings.31588:ディレクトリから有効なセキュリティ証明書を入手するには､<I>証明書を入手</I>を押して下さい｡または､まず受取人が自分自身の証明書を入手してから､
++*strings.31588:ディレクトリから有効なセキュリティ証明書を入手するには、<I>証明書を入手</I>を押して下さい。または、まず受取人が自分自身の証明書を入手してから、
+ 
+-*strings.31589:その証明書を署名付き電子メール メッセージﾞで送信してもらう必要があります｡この新しい証明書は､受信すると自動的に登録されます｡<P>ディスカッション グループﾟは､暗号化メッセージを受け取れません｡
++*strings.31589:その証明書を署名付き電子メール メッセージ゛で送信してもらう必要があります。この新しい証明書は、受信すると自動的に登録されます。<P>ディスカッション グループ゜は、暗号化メッセージを受け取れません。
+ 
+-*strings.31590:このメッセージは送信時に<B>署名を付けることができます</B>｡
++*strings.31590:このメッセージは送信時に<B>署名を付けることができます</B>。
+ 
+-*strings.31591:このメッセージは送信時に<B>署名を付けることができません</B>｡
++*strings.31591:このメッセージは送信時に<B>署名を付けることができません</B>。
+ 
+-*strings.31592:有効なセキュリティ証明書がありません｡メッセージにあなたのセキュリティ証明書を含めると､
++*strings.31592:有効なセキュリティ証明書がありません。メッセージにあなたのセキュリティ証明書を含めると、
+ 
+-*strings.31593:メッセージにデジタル署名をします｡これによりメッセージが実際にあなたから届いたものかどうか確認をすることができます｡
++*strings.31593:メッセージにデジタル署名をします。これによりメッセージが実際にあなたから届いたものかどうか確認をすることができます。
+ 
+-*strings.31594:メッセージにデジタル署名をする際に､あなたのセキュリティ証明書をメッセージに含めます｡これによりメッセージが実際にあなたから届いたものかどうか確認することができます｡
++*strings.31594:メッセージにデジタル署名をする際に、あなたのセキュリティ証明書をメッセージに含めます。これによりメッセージが実際にあなたから届いたものかどうか確認することができます。
+ 
+-*strings.31595:場所によっては､このデジタル署名は書いた署名と同等に取り扱われます｡
++*strings.31595:場所によっては、このデジタル署名は書いた署名と同等に取り扱われます。
+ 
+ *strings.31596:メッセージにセキュリティ証明書を含めてデジタル署名でこのメッセージに署名する
+ 
+-*strings.31597:このメッセージは送信時に<B>暗号化されています</B>｡ <P>これにより他人がメッセージを送信中に盗聴することが困難になります｡
++*strings.31597:このメッセージは送信時に<B>暗号化されています</B>。 <P>これにより他人がメッセージを送信中に盗聴することが困難になります。
+ 
+-*strings.31598:このメッセージは送信時に<B>暗号化されていません</B>｡ <P>このため他人がメッセージを送信中に表示することが可能になります｡
++*strings.31598:このメッセージは送信時に<B>暗号化されていません</B>。 <P>このため他人がメッセージを送信中に表示することが可能になります。
+ 
+-*strings.31599:復号化に必要なセキュリティ証明書がないためこのメッセージを読むことができません｡
++*strings.31599:復号化に必要なセキュリティ証明書がないためこのメッセージを読むことができません。
+ 
+-*strings.31600:これは､セキュリティ証明書が違うコンピュータにあるか､メッセージが他人のセキュリティ証明書で暗号化されているためです｡
++*strings.31600:これは、セキュリティ証明書が違うコンピュータにあるか、メッセージが他人のセキュリティ証明書で暗号化されているためです。
+ 
+ *strings.31601:使用されているアルゴリズム：
+ 
+@@ -8804,73 +8823,73 @@
+ 
+ *strings.31605:, 署名日付:
+ 
+-*strings.31606:証明書をチェックするには､[表示/編集]ボタンを押して下さい｡<P>この人物に対して安全にメールを送信できるように､
++*strings.31606:証明書をチェックするには、[表示/編集]ボタンを押して下さい。<P>この人物に対して安全にメールを送信できるように、
+ 
+-*strings.31607:この証明書は自動的に証明書の一覧に追加されます｡
++*strings.31607:この証明書は自動的に証明書の一覧に追加されます。
+ 
+-*strings.31608:このメッセージは<B>デジタル署名されていません</B>｡ <P>このメッセージが実際に差出人から来たものかどうか確認することができません｡
++*strings.31608:このメッセージは<B>デジタル署名されていません</B>。 <P>このメッセージが実際に差出人から来たものかどうか確認することができません。
+ 
+-*strings.31609:<B>このメッセージのデジタル署名に使用されている証明書が無効です｡</B> <P>このメッセージが実際に差出人から来たものかどうか確認することができません｡
++*strings.31609:<B>このメッセージのデジタル署名に使用されている証明書が無効です。</B> <P>このメッセージが実際に差出人から来たものかどうか確認することができません。
+ 
+-*strings.31610:<B>このメッセージを復号することができません｡</B>
++*strings.31610:<B>このメッセージを復号することができません。</B>
+ 
+ *strings.31611:エラー
+ 
+-*strings.31612:警告! 差出人がメッセージを送信してからあなたが受け取るまでに､メッセージが改竄されているようです｡
++*strings.31612:警告! 差出人がメッセージを送信してからあなたが受け取るまでに、メッセージが改竄されているようです。
+ 
+-*strings.31613:メッセージの一部または全部が変更されています｡メッセージの差出人やシステム管理者にご連絡下さい｡
++*strings.31613:メッセージの一部または全部が変更されています。メッセージの差出人やシステム管理者にご連絡下さい。
+ 
+ *strings.31614:このメッセージは電子メール アドレス <TT><B>
+ 
+-*strings.31615:</B></TT> から送信されたもののようですが､このメッセージの署名に使用されている証明書に記載されている電子メールアドレスは <TT><B>
++*strings.31615:</B></TT> から送信されたもののようですが、このメッセージの署名に使用されている証明書に記載されている電子メールアドレスは <TT><B>
+ 
+-*strings.31616:</B></TT> です｡もし､この2つの電子メールアドレスが同じ人物のものでない場合は､偽造物である可能性があります｡
++*strings.31616:</B></TT> です。もし、この2つの電子メールアドレスが同じ人物のものでない場合は、偽造物である可能性があります。
+ 
+ *strings.31617:Usenet ニュース セキュリティ
+ 
+-*strings.31618:このニュースサーバﾞへの接続は<B>暗号化されます</B>｡お読みになるメッセージは送信中に暗号化されます｡
++*strings.31618:このニュースサーバ゛への接続は<B>暗号化されます</B>。お読みになるメッセージは送信中に暗号化されます。
+ 
+-*strings.31619:これによりあなたがご覧になっているメッセージを他人が読むことが困難になります｡
++*strings.31619:これによりあなたがご覧になっているメッセージを他人が読むことが困難になります。
+ 
+-*strings.31620:このニュースサーバﾞへの接続は<B>暗号化されません</B>｡<P>これはあなたがご覧になっているメッセージを他人が読むことが可能であることを意味します｡
++*strings.31620:このニュースサーバ゛への接続は<B>暗号化されません</B>。<P>これはあなたがご覧になっているメッセージを他人が読むことが可能であることを意味します。
+ 
+ *strings.31621:暗号化
+ 
+ *strings.31622:確認
+ 
+-*strings.31623:このページは<B>暗号化されていません</B>｡これは､他人が読み込み時にこのページを表示することが可能であることを意味します｡
++*strings.31623:このページは<B>暗号化されていません</B>。これは、他人が読み込み時にこのページを表示することが可能であることを意味します。
+ 
+-*strings.31624:また､Web サイトの身分保証を確認できないことも意味します｡このページ内にあるすべてのファイルの完全な詳細については､<B>ページ情報を開く</B>をクリックして下さい｡
++*strings.31624:また、Web サイトの身分保証を確認できないことも意味します。このページ内にあるすべてのファイルの完全な詳細については、<B>ページ情報を開く</B>をクリックして下さい。
+ 
+-*strings.31625:このページは<B>暗号化されています</B>｡これは､他人が読み込み時にこのページを表示することが困難であることを意味します｡<P>
++*strings.31625:このページは<B>暗号化されています</B>。これは、他人が読み込み時にこのページを表示することが困難であることを意味します。<P>
+ 
+-*strings.31626:あなたがお持ちのこのページの証明書のコピーを審査したり､Web サイト の身分を確認したりすることができます｡
++*strings.31626:あなたがお持ちのこのページの証明書のコピーを審査したり、Web サイト の身分を確認したりすることができます。
+ 
+-*strings.31627:この Web サイトの証明書をご覧になるには､<B>証明書を表示</B>をクリックして下さい｡このページ内にあるすべてのファイルの完全な詳細と証明書については､<B>ページ情報を開く</B>をクリックして下さい｡
++*strings.31627:この Web サイトの証明書をご覧になるには、<B>証明書を表示</B>をクリックして下さい。このページ内にあるすべてのファイルの完全な詳細と証明書については、<B>ページ情報を開く</B>をクリックして下さい。
+ 
+-*strings.31628:このページは<B>暗号化されていません</B>が､含まれているファイルの内いくつかは暗号化されています｡
++*strings.31628:このページは<B>暗号化されていません</B>が、含まれているファイルの内いくつかは暗号化されています。
+ 
+-*strings.31629:これは､他人が読み込み時に､暗号化されたﾌｧｲﾙを表示することが困難であることを意味します｡また､このページの Web サイトの身分保証を確認できないことを意味します｡
++*strings.31629:これは、他人が読み込み時に、暗号化されたファイルを表示することが困難であることを意味します。また、このページの Web サイトの身分保証を確認できないことを意味します。
+ 
+-*strings.31630:<P>このページ内にあるすべてのファイルの完全な詳細については､<B>ページ情報を開く</B>をクリックして下さい｡
++*strings.31630:<P>このページ内にあるすべてのファイルの完全な詳細については、<B>ページ情報を開く</B>をクリックして下さい。
+ 
+-*strings.31631:このページは<B>暗号化されています</B>｡これは､他人が読み込み時にこのページを表\示することが困難であることを意味します｡
++*strings.31631:このページは<B>暗号化されています</B>。これは、他人が読み込み時にこのページを表\示することが困難であることを意味します。
+ 
+-*strings.31632:あなたがお持ちのこのページの証明書のコピーを審査したり､Web サイト の身分を確認したりすることができます｡
++*strings.31632:あなたがお持ちのこのページの証明書のコピーを審査したり、Web サイト の身分を確認したりすることができます。
+ 
+-*strings.31633:この Web サイトの証明書をご覧になるには､<B>証明書を表示</B>をクリックして下さい｡<P>ですが､このページのファイルの内いくつかは､<B>
++*strings.31633:この Web サイトの証明書をご覧になるには、<B>証明書を表示</B>をクリックして下さい。<P>ですが、このページのファイルの内いくつかは、<B>
+ 
+-*strings.31634:暗号化されていません</B>｡これは､これらのファイルを他人が読み込み時に表示することが可能であることを意味します｡
++*strings.31634:暗号化されていません</B>。これは、これらのファイルを他人が読み込み時に表示することが可能であることを意味します。
+ 
+-*strings.31635:このページ内にあるすべてのファイルの完全な詳細と証明書については､<B>ページ情報を開く</B>をクリックして下さい｡
++*strings.31635:このページ内にあるすべてのファイルの完全な詳細と証明書については、<B>ページ情報を開く</B>をクリックして下さい。
+ 
+-*strings.31636:ページの証明書をご覧になって下さい｡
++*strings.31636:ページの証明書をご覧になって下さい。
+ 
+-*strings.31637:このサイトが本来のものであるか確認して下さい｡このページは以下のサイトから来ています:
++*strings.31637:このサイトが本来のものであるか確認して下さい。このページは以下のサイトから来ています:
+ 
+ *strings.31638:以下の項目がウィンドウに表示されていません:
+ 
+-*strings.31639:｡重要な情報を見落とす可能性があります｡
++*strings.31639:。重要な情報を見落とす可能性があります。
+ 
+ *strings.31640:メニューバー
+ 
+@@ -8882,89 +8901,89 @@
+ 
+ *strings.31644:ステータスバー
+ 
+-*strings.31645:このウィンドウは､Java アプリケーションによって作成されています(
++*strings.31645:このウィンドウは、Java アプリケーションによって作成されています(
+ 
+-*strings.31646:)｡ このアプリケーションは､このウィンドウを管理しており､表示をコントロールしています｡
++*strings.31646:)。 このアプリケーションは、このウィンドウを管理しており、表示をコントロールしています。
+ 
+-*strings.31647:このウィンドウは､JavaScript アプリケーションによって作成されています(
++*strings.31647:このウィンドウは、JavaScript アプリケーションによって作成されています(
+ 
+-*strings.31648:)｡ このアプリケーションは､このウィンドウを管理しており､表示をコントロールしています｡
++*strings.31648:)。 このアプリケーションは、このウィンドウを管理しており、表示をコントロールしています。
+ 
+-*strings.31649:<B><H2>このウィンドウに対するセキュリティ情報はありません｡</H2></B>
++*strings.31649:<B><H2>このウィンドウに対するセキュリティ情報はありません。</H2></B>
+ 
+-*strings.31650:セキュリティ情報は､ブラウザ、Messenger メッセージ、 ディスカッション メッセージ ウィンドウで利用可能です｡ 
++*strings.31650:セキュリティ情報は、ブラウザ、Messenger メッセージ、 ディスカッション メッセージ ウィンドウで利用可能です。 
+ 
+-*strings.31651:<P>セキュリティの設定を変更する際は､左側のタブを使って表示する内容を切り替えます｡
++*strings.31651:<P>セキュリティの設定を変更する際は、左側のタブを使って表示する内容を切り替えます。
+ 
+-*strings.31652:セキュリティ証明書の説明です｡<P> <B>証明書:</B> 個人または組織の身分証明のファイルです｡Communicator は､情報を暗号化するために証明書を使用します｡
++*strings.31652:セキュリティ証明書の説明です。<P> <B>証明書:</B> 個人または組織の身分証明のファイルです。Communicator は、情報を暗号化するために証明書を使用します。
+ 
+-*strings.31653:証明書を利用して､証明書の所有者の身分証明を確認することができます｡証明書を発行した個人または組織が信用できる場合のみ､その証明書を信用して下さい｡
++*strings.31653:証明書を利用して、証明書の所有者の身分証明を確認することができます。証明書を発行した個人または組織が信用できる場合のみ、その証明書を信用して下さい。
+ 
+-*strings.31654:<P>あなた自身の証明書により､暗号化した情報を受け取ることが可能になります｡また､Communicator は､他人､Web サイトアプレットスクリプトからの証明書の記録を保持します｡
++*strings.31654:<P>あなた自身の証明書により、暗号化した情報を受け取ることが可能になります。また、Communicator は、他人、Web サイトアプレットスクリプトからの証明書の記録を保持します。
+ 
+-*strings.31655:<P><UL><B>本人</B> は､あなた自身の証明書の一覧です｡<P><B>他人</B> は､自分以外の個人または組織の証明書の一覧です｡ 
++*strings.31655:<P><UL><B>本人</B> は、あなた自身の証明書の一覧です。<P><B>他人</B> は、自分以外の個人または組織の証明書の一覧です。 
+ 
+-*strings.31656:<P><B>Web サイト</B> は､Web サイトの証明書の一覧です｡<P><B>署名者</B> は､証明書署名者(``証明書発行人'') の証明書の一覧です｡
++*strings.31656:<P><B>Web サイト</B> は、Web サイトの証明書の一覧です。<P><B>署名者</B> は、証明書署名者(``証明書発行人'') の証明書の一覧です。
+ 
+-*strings.31657:<P><B>ソフトウェア ディベロッパー</B> は､署名付き Java アプレットや JavaScript スクリプトに添えられた証明書の一覧です｡</UL>
++*strings.31657:<P><B>ソフトウェア ディベロッパー</B> は、署名付き Java アプレットや JavaScript スクリプトに添えられた証明書の一覧です。</UL>
+ 
+-*strings.31658:これらの証明書は､あなた自身を他人やWebサイトに対して身分証明するために用いることができます｡Communicator は､あなたに対して送信された情報を復号するために証明書を使用します｡
++*strings.31658:これらの証明書は、あなた自身を他人やWebサイトに対して身分証明するために用いることができます。Communicator は、あなたに対して送信された情報を復号するために証明書を使用します。
+ 
+-*strings.31659:あなたの証明書は､発行機関によって署名されています｡<P><B>あなたの証明書:</B>
++*strings.31659:あなたの証明書は、発行機関によって署名されています。<P><B>あなたの証明書:</B>
+ 
+-*strings.31660:証明書のコピーを作成し､安全な場所に保管することをお勧めします｡もし､証明書をなくしてしまうと､
++*strings.31660:証明書のコピーを作成し、安全な場所に保管することをお勧めします。もし、証明書をなくしてしまうと、
+ 
+-*strings.31661:受信した暗号化メールを読むことができなくなり､Webサイトに対しての身分証明に問題が発生します｡
++*strings.31661:受信した暗号化メールを読むことができなくなり、Webサイトに対しての身分証明に問題が発生します。
+ 
+-*strings.31662:これらの証明書は､あなたに対して身分証明するために使用されています｡Communicator では､
++*strings.31662:これらの証明書は、あなたに対して身分証明するために使用されています。Communicator では、
+ 
+-*strings.31663:あなたが証明書をお持ちの人物に対して､暗号化したメッセージを送信することができます｡<P><B>他人の証明書:</B>
++*strings.31663:あなたが証明書をお持ちの人物に対して、暗号化したメッセージを送信することができます。<P><B>他人の証明書:</B>
+ 
+-*strings.31664:ネットワーク ディレクトリから証明書を入手するには､<I>ディレクトリ検索</I>を押して下さい｡<p>
++*strings.31664:ネットワーク ディレクトリから証明書を入手するには、<I>ディレクトリ検索</I>を押して下さい。<p>
+ 
+ *strings.31665:<B>受け付けた Web サイトの証明書:</B>
+ 
+ *strings.31666:<B>受け付けた証明書署名者の証明書:</B>
+ 
+-*strings.31667:<B>Navigator のセキュリティ設定｡</B> <P>Navigatorのセキュリティ警告により､安全でない動作を行う前に警告を受けることができます｡<P><B>警告の表示
++*strings.31667:<B>Navigator のセキュリティ設定。</B> <P>Navigatorのセキュリティ警告により、安全でない動作を行う前に警告を受けることができます。<P><B>警告の表示
+ 
+-*strings.31668:<B>Messenger のセキュリティ設定｡</B> <P>Messengerのセキュリティ警告により､安全でない動作を行う前に警告を受けることができます｡
++*strings.31668:<B>Messenger のセキュリティ設定。</B> <P>Messengerのセキュリティ警告により、安全でない動作を行う前に警告を受けることができます。
+ 
+ *strings.31669:<B>署名付き/暗号化メールの送信:</B>
+ 
+-*strings.31670:メールメッセージﾞを暗号化する(可能な場合)
++*strings.31670:メールメッセージ゛を暗号化する(可能な場合)
+ 
+ *strings.31671:メールメッセージに署名する(可能な場合)
+ 
+ *strings.31672:ディスカッション(ニュース)メッセージに署名する(可能な場合)
+ 
+-*strings.31673:この証明書は､<B>署名</B>するすべての電子メールメッセージﾞに含められます｡これを受信した人は､あなたに対して暗号化メールを送信することができます｡
++*strings.31673:この証明書は、<B>署名</B>するすべての電子メールメッセージ゛に含められます。これを受信した人は、あなたに対して暗号化メールを送信することができます。
+ 
+-*strings.31674:また､他人がディレクトリからあなたの証明書を入手できるようにすることもできます:
++*strings.31674:また、他人がディレクトリからあなたの証明書を入手できるようにすることもできます:
+ 
+-*strings.31675:証明書を入手すると､その証明書は､<B>署名</B>するすべての電子メールメッセージﾞに含められます｡これを受信した人は､
++*strings.31675:証明書を入手すると、その証明書は、<B>署名</B>するすべての電子メールメッセージ゛に含められます。これを受信した人は、
+ 
+-*strings.31676:あなたに対して暗号化メールを送信することができます｡(証明書の入手に関しては､左の ``本人'' タブをご覧下さい｡)
++*strings.31676:あなたに対して暗号化メールを送信することができます。(証明書の入手に関しては、左の ``本人'' タブをご覧下さい。)
+ 
+ *strings.31677:<B>詳細 S/MIME 設定:</B>
+ 
+ *strings.31678:暗号設定:
+ 
+-*strings.31679:<B>Java アプレットや JavaScript スクリプトによるアクセスのコントロールの設定を行います｡</B> <P>アプレットやスクリプトは許可なしにお使いのコンピュータやネットワークにアクセスする事はありません｡
++*strings.31679:<B>Java アプレットや JavaScript スクリプトによるアクセスのコントロールの設定を行います。</B> <P>アプレットやスクリプトは許可なしにお使いのコンピュータやネットワークにアクセスする事はありません。
+ 
+-*strings.31680:以下のベンダ、配布者､Web サイトからのすべてのアプレットやスクリプトによるアクセスは､明示的に許可または禁止されます｡
++*strings.31680:以下のベンダ、配布者、Web サイトからのすべてのアプレットやスクリプトによるアクセスは、明示的に許可または禁止されます。
+ 
+-*strings.31681:<B>Communicator パスワードは､あなたの証明書を保護するために使用されます｡</B> <P>
++*strings.31681:<B>Communicator パスワードは、あなたの証明書を保護するために使用されます。</B> <P>
+ 
+-*strings.31682:他人がお使いのコンピュータに(物理的にあるいはネットワーク経由で)アクセスできる環境の場合は､Communicator パスワードが必要です｡<P>
++*strings.31682:他人がお使いのコンピュータに(物理的にあるいはネットワーク経由で)アクセスできる環境の場合は、Communicator パスワードが必要です。<P>
+ 
+ *strings.31683:<B>暗号化モジュール:</B>
+ 
+ *strings.31684:CRL を表示/編集
+ 
+-*strings.31685:証明書取り消しリストを表示または編集するには､<I>CRL を表示/編集</I>を押してください｡<p>
++*strings.31685:証明書取り消しリストを表示または編集するには、<I>CRL を表示/編集</I>を押してください。<p>
+ 
+-*strings.31686:証明書をチェックまたは証明書の信任情報を編集するには､[表示/編集]ボタンを押して下さい｡<P>この人物に対して安全にメールを送信できるように､
++*strings.31686:証明書をチェックまたは証明書の信任情報を編集するには、[表示/編集]ボタンを押して下さい。<P>この人物に対して安全にメールを送信できるように、
+ 
+ *strings.31687:<B>プロキシ認証に使用する証明書:</B>
+ 
+@@ -9384,7 +9403,7 @@
+ 
+ *strings.32543: <P> <DT><INPUT TYPE=Radio %4% NAME=""enabledisable"" VALUE=""disable""> <B> このトークンを無効にする</B> %-cont-%
+ 
+-*strings.32544: <FORM><P> <DL> <DT><INPUT TYPE=Radio %5% NAME=""enabledisable"" VALUE=""enable""> <B>このトークンを有効にして､以下の機能をオンにする: </B> %6% </FORM>
++*strings.32544: <FORM><P> <DL> <DT><INPUT TYPE=Radio %5% NAME=""enabledisable"" VALUE=""enable""> <B>このトークンを有効にして、以下の機能をオンにする: </B> %6% </FORM>
+ 
+ *strings.32555: <P><B>モジュール名:</B> %0% <BR><B>スロットの説明:</B> %1% <BR><B>トークン名: </B> %2% <P><HR> %-cont-%
+ 
+@@ -9416,15 +9435,15 @@
+ 
+ *strings.32589:新しい CRL/CKL を読み込む URL を入力してください:
+ 
+-*strings.32590:<h3 align=center>%0%</h3>証明書取り消しリストの URL を入力してください｡ <br><br><b>URL:</b><input name=url size=70 type=text value="%1%">
++*strings.32590:<h3 align=center>%0%</h3>証明書取り消しリストの URL を入力してください。 <br><br><b>URL:</b><input name=url size=70 type=text value="%1%">
+ 
+-*strings.32591:CRL が選択されていません｡一覧から CRL を選択してください｡
++*strings.32591:CRL が選択されていません。一覧から CRL を選択してください。
+ 
+-*strings.32592:選択した CRL には､読み込み先となる有効な URL がありません｡\n'新規/編集...'で URL を設定してください｡
++*strings.32592:選択した CRL には、読み込み先となる有効な URL がありません。\n'新規/編集...'で URL を設定してください。
+ 
+ *strings.32593:<font color=red>有効期限切れ</font>
+ 
+-*strings.32594:URL が入力されませんでした: 新しい CRL は読み込まれませんでした｡
++*strings.32594:URL が入力されませんでした: 新しい CRL は読み込まれませんでした。
+ 
+ *strings.32595:CRL を編集
+ 
+@@ -11600,7 +11619,7 @@
+ 
+ *strings.23331:入力したパスワードが前回サーバに使用したパスワードと一致しません
+ 
+-*strings.23332:パスワードを入力しなかったか､パスワードの文字数制限を越えてしまっています｡このウィンドウは閉じられます｡
++*strings.23332:パスワードを入力しなかったか、パスワードの文字数制限を越えてしまっています。このウィンドウは閉じられます。
+ 
+ *strings.8000:一覧の最後
+ 
+@@ -11844,7 +11863,7 @@
+ 
+ *strings.8094:\n%s を使用し続けることもできますが、\nディスクキャッシュ、大域履歴および\n個人証明書は利用できません。\n
+ 
+-*strings.8095:\nまたは、キャンセルを選択し他の %s Navigator\nが実行中でないことを確認して、\nファイル %s を削除し\n%s を再起動して下さい。
++*strings.8095:\nまたは、キャンセルを選択し他の %s Communicator\nが実行中でないことを確認して、\nファイル %s を削除し\n%s を再起動して下さい。
+ 
+ *strings.8096:%s: %s は存在しますがディレクトリではありませんでした。\n古いファイルの名前を %s に変更して\nディレクトリを作成しました。\n\n
+ 
+@@ -12156,7 +12175,7 @@
+ 
+ *strings.8254:アクション ハンドラに対する不正なウィンドウ タイプ: %s
+ 
+-*strings.8255:修正 Netscape Navigator アドミニストレーション キット\nバージョン: %s\nユーザ エージェント： C
++*strings.8255:修正 Netscape Communicator アドミニストレーション キット\nバージョン: %s\nユーザ エージェント： C
+ 
+ *strings.8256:ディスク上の個人用 MIME タイプ ファイル (%s) は変更されています。変更を\n取り消して読み直しますか?
+ 
+@@ -12809,29 +12828,29 @@
+ !! BSDI binary
+ ! Collabra News Reader の右クリックメニュー
+ *folderList.popup_popup.popup*fontList: \
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ ! 検索ダイアログのテキスト入力の部分
+ *findDialog.form.findText*fontList:     \
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+  メッセージ編集のサブジェクト入力
+ *Composition*subject.fontList:  \
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ ! アドレス帳の検索ダイアログ
+ AddressBook*filterTypeIn.fontList:     \
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ ! 履歴の一覧
+ *history*historyList*fontList:  \
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1;\
+--*-fixed-medium-r-normal--16-*-*-*-*-*-jisx0208.1983-0;\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-jisx0201.1976-0:
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+ 
+ !! Linux binary
+ ! Linux については江後田さんのページ
+@@ -12840,5 +12859,4 @@
+ 
+ ! kinput2 が Bus error を起こさないように
+ *mainForm.toolBox.urlBarItem.urlBarMainForm.urlComboBox.Text.fontList:\
+--sony-fixed-medium-r-normal--16-*-*-*-*-*-iso8859-1
+-
++-misc-fixed-medium-r-normal--14-*-*-*-*-*-iso8859-1
