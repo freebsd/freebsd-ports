@@ -42,21 +42,6 @@ MASTER_SITES=	ftp://ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/l
 		ftp://sunsite.sut.ac.jp/pub/archives/WWW/netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.mirror.ac.uk/sites/ftp.netscape.com/pub/netscape6/english/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.ntua.gr/pub/www/Netscape/netscape6/english/${PORTVERSION}/unix/linux22/xpi/
-DISTFILES=	browser.xpi \
-		deflenus.xpi \
-		langenus.xpi \
-		flash.xpi \
-		jre.xpi \
-		langenus.xpi \
-		mail.xpi \
-		psm.xpi \
-		regca.xpi \
-		reges.xpi \
-		reggb.xpi \
-		regus.xpi \
-		spellchecker.xpi \
-		talkback.xpi \
-		xpcom.xpi
 DIST_SUBDIR=	netscape6/english/${PORTVERSION}
 
 PATCH_SITES=	${MASTER_SITE_LOCAL}
@@ -83,12 +68,19 @@ INSTALL_DIR=	${PREFIX}/lib/linux-netscape6
 PLIST=		${WRKDIR}/pkg-plist
 STARTUP_CMD=	netscape6
 
+.include <bsd.port.pre.mk>
+
+pre-everything::
+	${MKDIR} ${WRKSRC}/bin/plugins/java2 ${WRKSRC}/bin/chrome \
+		${WRKSRC}/plugins
+	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
+DISTFILES!=${CAT} ${.CURDIR}/work/${WRKSRC}/components.conf; ${TRUE}
+
 do-extract:
-	${MKDIR} ${WRKSRC}
 .for i in ${DISTFILES}
 	unzip -qo ${DISTDIR}/${DIST_SUBDIR}/${i} -d ${WRKSRC}
 .endfor
-	${MV} ${WRKSRC}/jre-image-i386 ${WRKSRC}/bin/plugins/java2
+	- ${MV} ${WRKSRC}/jre-image-i386 ${WRKSRC}/bin/plugins/java2
 	cd ${WRKSRC}/bin/plugins && ${LN} -s java2/plugin/i386/ns600/libjavaplugin_oji.so;
 
 do-patch:
@@ -125,4 +117,4 @@ do-install:
 post-install:
 	${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
