@@ -7,6 +7,7 @@
 
 PORTNAME=	uvscan
 PORTVERSION=	4.32e
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://download.nai.com/products/evaluation/virusscan/english/cmdline/bsd/v4.32/
 DISTNAME=	vbsd432e
@@ -16,7 +17,11 @@ MAINTAINER=	jeh@FreeBSD.org
 COMMENT=	Evaluation version of a DOS/Windows/Linux file virus scanner
 
 RUN_DEPENDS+=	${LOCALBASE}/sbin/update_dat:${PORTSDIR}/security/uvscan-dat
+# misc/compat3x is forbidden, but if it is compiled into the system
+# we may still be good to go.
+.if !defined(COMPAT3X)
 LIB_DEPENDS+=	c.3:${PORTSDIR}/misc/compat3x
+.endif
 
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	YES
