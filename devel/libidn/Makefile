@@ -18,7 +18,7 @@ COMMENT=	Internationalized Domain Names command line tool
 BUILD_DEPENDS=	gengetopt:${PORTSDIR}/devel/gengetopt
 
 USE_GETOPT_LONG=	yes
-USE_GNOME=	gnomehack gnometarget
+USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_ICONV=	yes
 USE_PERL5_BUILD=	yes
 USE_REINPLACE=	yes
