@@ -3,7 +3,7 @@
 # Date created:         Jul 7, 1999
 # Whom:                 marcel@FreeBSD.org
 #
-# $Id: Makefile,v 1.27 1999/08/06 15:13:17 billf Exp $
+# $Id: Makefile,v 1.28 1999/08/08 11:40:53 marcel Exp $
 #
 
 DISTNAME=		linux_base
@@ -105,13 +105,13 @@ NEEDLOADLINK=		true
 .endif
 
 do-install:
-	@if [ -z "`kldstat | ${GREP} linux.ko | ${AWK} '{print $1}'`" ]; then \
-		${ECHO} 'The Linux emulator kernel module is not loaded.\
-		  Loading Linux emulator kernel module...' | fmt; \
+	@if [ -z "`kldstat -v | ${GREP} -E 'linux(aout|elf)'`" ]; then \
+		${ECHO} 'Linux mode is not enabled.\
+			Loading linux kernel module...' | fmt; \
 		linux || { \
-		${ECHO} 'The Linux emulator kernel module could not be\
-		  loaded. Please manually load the module and retry.\
-		  See "man linux" for details.' | fmt; \
+		${ECHO} 'The linux kernel module could not be loaded.\
+			Please manually load the module and retry.\
+			See "man linux" for details.' | fmt; \
 		${FALSE}; \
 		};\
 	fi
