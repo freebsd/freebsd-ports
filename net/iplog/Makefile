@@ -7,10 +7,9 @@
 
 PORTNAME=	iplog
 PORTVERSION=	2.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://misc.ojnk.net/~odin/stuff/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ojnk
 
 MAINTAINER=	udo.schweigert@siemens.com
@@ -19,15 +18,18 @@ COMMENT=	TCP/IP traffic logging tool
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 MAN5=	iplog.conf.5
 MAN8=	iplog.8
 
 .include <bsd.port.pre.mk>
 post-patch:
-.for file in example-iplog.conf iplog.8 iplog.conf.5 src/iplog.h
-	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${file}
+.for FILE in example-iplog.conf iplog.8 iplog.conf.5 src/iplog.h
+	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${FILE}
 .endfor
+	@${REINPLACE_CMD} -e 's|-pthread||g' ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/example-iplog.conf ${PREFIX}/etc
