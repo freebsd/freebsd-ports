@@ -1,5 +1,5 @@
---- Makefile.in.orig	Wed May 12 04:19:31 1999
-+++ Makefile.in	Sun Sep 17 01:39:40 2000
+--- Makefile.in.orig	Wed May 12 14:19:31 1999
++++ Makefile.in	Fri Apr 26 09:19:30 2002
 @@ -301,12 +301,17 @@
  SHELL = /bin/sh
  
@@ -7,9 +7,9 @@
 -GMPLIBS 	= -L$(GMPDIR) -lgmp
 -GMPDEP 		= $(GMPDIR)/gmp.h $(GMPDIR)/libgmp.a
 +# We have the same libgmp in the system, so use it instead
-+GMPINCDIR	= /usr/include
-+GMPLIBDIR	= /usr/lib
-+GMPLIBS 	= -lgmp
++GMPINCDIR	?= /usr/include
++GMPLIBDIR	?= /usr/lib
++GMPLIBS 	= -L$(GMPLIBDIR) -lgmp
 +GMPDEP 		= $(GMPINCDIR)/gmp.h $(GMPLIBDIR)/libgmp.a
  
  ZLIBDIR		= zlib-1.0.4
@@ -27,7 +27,7 @@
  
  .c.o:
 -	$(CC) -c -I. $(KERBEROS_INCS) -I$(srcdir)/$(GMPDIR) -I$(srcdir)/$(ZLIBDIR) $(DEFS) -DHOST_KEY_FILE=\"$(HOST_KEY_FILE)\" -DHOST_CONFIG_FILE=\"$(HOST_CONFIG_FILE)\" -DSERVER_CONFIG_FILE=\"$(SERVER_CONFIG_FILE)\" -DSSH_PROGRAM=\"$(SSH_PROGRAM)\" -DETCDIR=\"$(etcdir)\" -DPIDDIR=\"$(piddir)\" -DSSH_BINDIR=\"$(bindir)\" -DTIS_MAP_FILE=\"$(TIS_MAP_FILE)\" $(CFLAGS) $(X_CFLAGS) $<
-+	$(CC) -c -I. $(KERBEROS_INCS) -I$(srcdir)/$(GMPINCDIR) -I$(srcdir)/$(ZLIBINCDIR) $(DEFS) -DHOST_KEY_FILE=\"$(HOST_KEY_FILE)\" -DHOST_CONFIG_FILE=\"$(HOST_CONFIG_FILE)\" -DSERVER_CONFIG_FILE=\"$(SERVER_CONFIG_FILE)\" -DSSH_PROGRAM=\"$(SSH_PROGRAM)\" -DETCDIR=\"$(etcdir)\" -DPIDDIR=\"$(piddir)\" -DSSH_BINDIR=\"$(bindir)\" -DTIS_MAP_FILE=\"$(TIS_MAP_FILE)\" $(CFLAGS) $(X_CFLAGS) $<
++	$(CC) -c -I. $(KERBEROS_INCS) -I$(GMPINCDIR) -I$(srcdir)/$(ZLIBINCDIR) $(DEFS) -DHOST_KEY_FILE=\"$(HOST_KEY_FILE)\" -DHOST_CONFIG_FILE=\"$(HOST_CONFIG_FILE)\" -DSERVER_CONFIG_FILE=\"$(SERVER_CONFIG_FILE)\" -DSSH_PROGRAM=\"$(SSH_PROGRAM)\" -DETCDIR=\"$(etcdir)\" -DPIDDIR=\"$(piddir)\" -DSSH_BINDIR=\"$(bindir)\" -DTIS_MAP_FILE=\"$(TIS_MAP_FILE)\" $(CFLAGS) $(X_CFLAGS) $<
  
  sshd: $(SSHD_OBJS) $(GMPDEP) $(RSAREFDEP) $(ZLIBDEP)
  	-rm -f sshd
