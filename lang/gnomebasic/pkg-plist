@@ -1,0 +1,27 @@
+etc/gbConf.sh
+include/gb/gb-eval.h
+include/gb/gb-expr.h
+include/gb/gb-lex.h
+include/gb/gb-main.h
+include/gb/gb-mmap-lex.h
+include/gb/gb-object.h
+include/gb/gb-project.h
+include/gb/gb-value.h
+include/gb/gb.h
+include/gb/libgb.h
+include/gbrun/gbrun-eval.h
+include/gbrun/gbrun-object.h
+include/gbrun/gbrun-project.h
+include/gbrun/gbrun.h
+include/gbrun/libgbrun.h
+include/gbrun/objects/gbrun-form.h
+include/gbrun/objects/libgbobj.h
+lib/libgb.a
+lib/libgb.so
+lib/libgb.so.0
+lib/libgbrun.a
+lib/libgbrun.so
+lib/libgbrun.so.0
+@dirrm include/gbrun/objects
+@dirrm include/gbrun
+@dirrm include/gb
