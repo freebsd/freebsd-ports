@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	HTML-Mason
-PORTVERSION=	1.13
-PORTREVISION=	1
+PORTVERSION=	1.14
+PORTREVISION=	0
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
@@ -27,17 +27,32 @@ CONFIGURE_ARGS+=	--no-prompts
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
-MAN3=		Bundle::HTML::Mason.3 HTML::Mason.3 HTML::Mason::Admin.3 \
-		HTML::Mason::ApacheHandler.3 HTML::Mason::Buffer.3 \
-		HTML::Mason::CGIHandler.3 HTML::Mason::Compiler.3 \
-		HTML::Mason::Compiler::ToObject.3 HTML::Mason::Component.3 \
-		HTML::Mason::ComponentSource.3 HTML::Mason::Devel.3 \
-		HTML::Mason::Exceptions.3 HTML::Mason::Interp.3 \
-		HTML::Mason::Lexer.3 HTML::Mason::MethodMaker.3 \
-		HTML::Mason::Params.3 HTML::Mason::Parser.3 \
-		HTML::Mason::Request.3 HTML::Mason::Resolver.3 \
-		HTML::Mason::Resolver::File.3 HTML::Mason::Resolver::Null.3 \
-		HTML::Mason::Subclassing.3 HTML::Mason::Tests.3 \
-		HTML::Mason::Tools.3 HTML::Mason::Utils.3
+MAN3=		Bundle::HTML::Mason.3 \
+		HTML::Mason.3 \
+		HTML::Mason::Admin.3 \
+		HTML::Mason::ApacheHandler.3 \
+		HTML::Mason::Buffer.3 \
+		HTML::Mason::Cache::BaseCache.3 \
+		HTML::Mason::CGIHandler.3 \
+		HTML::Mason::Compiler.3 \
+		HTML::Mason::Compiler::ToObject.3 \
+		HTML::Mason::Component.3 \
+		HTML::Mason::ComponentSource.3 \
+		HTML::Mason::Devel.3 \
+		HTML::Mason::Escapes.3 \
+		HTML::Mason::Exceptions.3 \
+		HTML::Mason::Interp.3 \
+		HTML::Mason::Lexer.3 \
+		HTML::Mason::MethodMaker.3 \
+		HTML::Mason::Params.3 \
+		HTML::Mason::Parser.3 \
+		HTML::Mason::Request.3 \
+		HTML::Mason::Resolver.3 \
+		HTML::Mason::Resolver::File.3 \
+		HTML::Mason::Resolver::Null.3 \
+		HTML::Mason::Subclassing.3 \
+		HTML::Mason::Tests.3 \
+		HTML::Mason::Tools.3 \
+		HTML::Mason::Utils.3
 
 .include <bsd.port.mk>
