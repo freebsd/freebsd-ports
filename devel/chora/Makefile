@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	chora
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	devel www
 MASTER_SITES=	ftp://ftp.horde.org/pub/chora/tarballs/	\
 		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/chora/tarballs/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-RC1
 
 MAINTAINER=	thierry@pompo.net
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 #-----------------------------------------------------------------------
 # You may define these options:
@@ -45,7 +47,8 @@ CVSROOT=	/home/cvs
 DOCS=		COPYING README  docs/BUGS docs/CHANGES docs/CREDITS \
 		docs/GOALS docs/INSTALL
 CONFFILE=	conf.php cvsroots.php html.php longIntro.txt \
-		mime_drivers.php
+		mime_drivers.php prefs.php
+SUB_DIRS=	config graphics lib locale po templates
 
 LHORDEDIR?=	www/horde
 LCHORADIR?=	${LHORDEDIR}/chora
@@ -60,8 +63,9 @@ HORDE_INC=	${LOCALBASE}/etc/horde
 
 do-install:
 	@${MKDIR}  ${CHORADIR}
-	@${CP} -Rp ${WRKSRC}/config ${WRKSRC}/graphics ${WRKSRC}/lib ${CHORADIR}
-	@${CP} -Rp ${WRKSRC}/locale ${WRKSRC}/po ${WRKSRC}/templates ${CHORADIR}
+.for REP in ${SUB_DIRS}
+	@${CP} -Rp ${WRKSRC}/${REP} ${CHORADIR}
+.endfor
 	@${CP} -p  ${WRKSRC}/*.php ${CHORADIR}
 .for FILE in ${CONFFILE}
 	@if [ ! -f ${CONFDIR}/${FILE} ]; then \
