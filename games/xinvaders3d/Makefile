@@ -1,13 +1,13 @@
 # New ports collection makefile for:	xinv3d
-# Version required:			1.3
+# Version required:			1.31
 # Date created:				21 January 2000
 # Whom:					Chris D. Faulhaber <jedgar@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xinv3d.1.3
-PKGNAME=	xinvaders3d-1.3
+DISTNAME=	xinv3d.src
+PKGNAME=	xinvaders3d-1.31
 CATEGORIES=	games
 MASTER_SITES= 	http://www.fiu.edu/~dllopi01/
 
