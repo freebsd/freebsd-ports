@@ -3,22 +3,25 @@
 # Date created:		26 May 1999
 # Whom:			Anders Nordby <anders@fix.no>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/06 17:22:09 steve Exp $
 #
 
-DISTNAME=	gphoto-19990511
+DISTNAME=	gphoto-0.3.2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.gphoto.org/projects/gphoto/pub/snap/ \
+MASTER_SITES=	http://www.mustec.eu.org/~psj/downloads/ \
 		http://www.freenix.no/~anders/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	anders@fix.no
 
+BUILD_DEPENDS=	${X11BASE}/include/ppm.h:${PORTSDIR}/graphics/netpbm
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		gdk_imlib.4:${PORTSDIR}/graphics/imlib
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
-USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	GLIB_CONFIG="${PREFIX}/bin/glib12-config" \
+		GTK_CONFIG="${X11BASE}/bin/gtk12-config" \
+		IMLIB_CONFIG="${X11BASE}/bin/imlib-config" \
 
 MAN1=		gphoto.1
 
