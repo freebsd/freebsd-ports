@@ -1,0 +1,11 @@
+lib/ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/gtk.so
+share/examples/ruby/gtk/drawing.rb
+share/examples/ruby/gtk/helloworld.rb
+share/examples/ruby/gtk/text.rb
+share/examples/ruby/gtk/texthook.rb
+share/examples/ruby/gtk/browser/gtkbrows.rb
+share/examples/ruby/gtk/browser/rbbr_gtk.rb
+share/examples/ruby/gtk/browser/rbbr_rb.rb
+share/examples/ruby/gtk/browser/rbdump.rb
+@dirrm share/examples/ruby/gtk/browser
+@dirrm share/examples/ruby/gtk
