@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	1.28
+PORTVERSION=	1.29
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.iDaemons.org/distfiles/
 MASTER_SITE_SUBDIR=	knu
-DISTNAME=	pkgtools-20010530c
+DISTNAME=	pkgtools-20010530d
 
 MAINTAINER=	knu@FreeBSD.org
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse
+RUN_DEPENDS=	${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse \
+		pkg_tarup:${PORTSDIR}/misc/pkg_tarup
 
 USE_RUBY=	yes
 
