@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icc
-PORTVERSION=	7.1.021
+PORTVERSION=	7.1.025
 #PORTREVISION=	1
 CATEGORIES=	lang linux devel
 MASTER_SITES=
@@ -23,7 +23,7 @@ NO_PACKAGE=	${RESTRICTED}
 NO_CDROM=	${RESTRICTED}
 
 ONLY_FOR_ARCHS=		i386
-CONFLICS=		linux_devtools* ifc*
+CONFLICTS=		linux_devtools* ifc*
 
 USE_LINUX=		yes
 USE_REINPLACE=		yes
@@ -64,12 +64,12 @@ post-extract:
 		${FILESDIR}/cpio-exclude_noportdocs >>${WRKDIR}/cpio-exclude
 .endif
 .for i in \
-	intel-icc7-7.1-22.i386.rpm
-#	intel-iidb7-7.1-47.i386.rpm \
-#	intel-isubh7-7.1-22.i386.rpm \
-#	intel-ecc7-7.1-22.ia64.rpm \
-#	intel-eidb7-7.1-47.ia64.rpm \
-#	intel-esubh7-7.1-22.ia64.rpm
+	intel-icc7-7.1-26.i386.rpm
+#	intel-iidb7-7.2.2-54.i386.rpm \
+#	intel-isubh7-7.1-26.i386.rpm \
+#	intel-ecc7-7.1-26.ia64.rpm \
+#	intel-eidb7-7.2.2-54.ia64.rpm \
+#	intel-esubh7-7.1-26.ia64.rpm
 	@cd ${WRKSRC} && rpm2cpio 2>/dev/null ${i} | \
 		${CPIO} -idfuE ${WRKDIR}/cpio-exclude --quiet
 .endfor
@@ -169,5 +169,23 @@ post-install:
 	@${ECHO_CMD} "If you encounter further problems with icc please consult the errata at"
 	@${ECHO_CMD} "http://support.intel.com/support/performancetools/c/C_Compiler_Errata.htm"
 	@${ECHO_CMD} "first."
+	@${ECHO_CMD}
+	@${ECHO_CMD} "Call for benchmarks:"
+	@${ECHO_CMD} "Intel is interested to see some benchmark numbers which compare gcc with icc."
+	@${ECHO_CMD} "If you have a CPU produced by Intel and are able to do benchmarks with"
+	@${ECHO_CMD} "either your own source or with one of our major ports (e.g. with"
+	@${ECHO_CMD} "a webserver, a mailserver, a database system, an important graphics"
+	@${ECHO_CMD} "suite/program or some important math tool, ...) please try to spend some time"
+	@${ECHO_CMD} "to do a benchmark and send me (${MAINTAINER}) the result. You should"
+	@${ECHO_CMD} "include your system specs (CPU: speed/model, RAM: amount/speed, used disks"
+	@${ECHO_CMD} "(if necessary), chipset/mainboard type, ...), the version of the used"
+	@${ECHO_CMD} "software (OS, gcc, icc, ...), non default tuning options (kernel, sysctl) and"
+	@${ECHO_CMD} "the used compiler switches. If you don't use some 'standard' benchmark"
+	@${ECHO_CMD} "(e.g. the official MySQL benchmark, or the performance test suite of your"
+	@${ECHO_CMD} "prefered scripting language), please include a description about the"
+	@${ECHO_CMD} "benchmark too."
+	@${ECHO_CMD}
+	@${ECHO_CMD} "To read the entire post install message again, just run"
+	@${ECHO_CMD} "'make post-install | less'."
 
 .include <bsd.port.post.mk>
