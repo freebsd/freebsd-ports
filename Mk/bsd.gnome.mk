@@ -443,9 +443,6 @@ USE_GNOME=	imlib
 .if defined(USE_GLIB)
 USE_GNOME=	glib12
 .endif
-.if defined(USE_GNOMECTRL)
-USE_GNOME=	gnomeprefix gnomehack libcapplet
-.endif
 
 # Hack USE_GNOME to the modular infrastructure for port maintainers that
 # didn't do so themselves.  This will allow us to get rid of the old
