@@ -39,6 +39,10 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502102
+BROKEN=		"Broken pkg-plist"
+.endif
+
 .if (${HAVE_GNOME:Mesound}!="")
 WITH_ESOUND=	yes
 .endif
