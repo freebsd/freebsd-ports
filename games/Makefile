@@ -192,6 +192,7 @@
     SUBDIR += xemeraldia
     SUBDIR += xevil
     SUBDIR += xeyesplus
+    SUBDIR += xfireworks
     SUBDIR += xflame
     SUBDIR += xfrisk
     SUBDIR += xgalaga
