@@ -17,30 +17,30 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	pmarquis@pobox.com
 COMMENT=	Free peer-reviewed portable C++ source libraries
 
-MAKE_ENV+=	BOOST_ROOT=${WRKSRC} BUILD="debug release"
+MAKE_ENV=	BOOST_ROOT=${WRKSRC} BUILD="debug release"
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=	yes
 # 1.30.2 doesn't support python2.3
 PYTHON_VERSION=	python2.2
-COMPILED_LIBS+=	python
-PLIST_SUB+=	BOOST_PYTHON=""
+COMPILED_LIBS=	python
+PLIST_SUB=	BOOST_PYTHON=""
+MAKE_ENV+=	PYTHON_ROOT="${PREFIX}" \
+		PYTHON_VERSION="${_PYTHON_VERSION}" \
+		PYTHON_INCLUDES="${PYTHON_INCLUDEDIR}" \
+		PYTHON_LIB_PATH="${PYTHON_LIBDIR}" 
 .else
-PLIST_SUB+=	BOOST_PYTHON="@comment "
+PLIST_SUB=	BOOST_PYTHON="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
-MAKE_ENV+=	PYTHON_ROOT="${PREFIX}"
-MAKE_ENV+=	PYTHON_VERSION="${_PYTHON_VERSION}"
-MAKE_ENV+=	PYTHON_INCLUDES="${PYTHON_INCLUDEDIR}"
-MAKE_ENV+=	PYTHON_LIB_PATH="${PYTHON_LIBDIR}"
 INSTALLS_SHLIB=	yes
 DOCFILES=	*.css *.gif *.htm *.html *.jpeg *.jpg *.png
 
 BJAM=		${WRKSRC}/tools/build/jam_src/bin.freebsd/bjam
   
 COMPILED_LIBS+=	date_time filesystem regex signals test thread
+
+.include <bsd.port.pre.mk>
 
 do-configure:
 # for -pthread options
