@@ -31,4 +31,4 @@ To use apel, put the following setup into your ~/.emacs:
 
 	(require 'apel-setup)
 
---- Porting by shige <shige@kuis.kyoto-u.ac.jp>
+--- Porting by shige <shige@FreeBSD.ORG>.

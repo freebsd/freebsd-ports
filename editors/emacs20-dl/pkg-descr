@@ -9,4 +9,4 @@ Emacs binary is:
 Dynamic loading patch:
     ftp://ftp.jaist.ac.jp/pub/GNU/elisp/emacs-20-dl/emacs-${EMACS_VER}-dl.diff
 
---- Port by shige@kuis.kyoto-u.ac.jp
+--- Port by shige@FreeBSD.ORG
