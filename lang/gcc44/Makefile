@@ -147,7 +147,7 @@ pre-configure:
 post-build:
 	@echo "Consider running 'make check' before 'make install',"
 	@echo "especially if you have not built port on -STABLE or -CURRENT."
-	@echo "This suggestion assumes that you have dejagnu port installed."
+	@echo "This assumes that you have the dejagnu port installed."
 
 check: build
 	cd ${WRKSRC}; export RUNTESTFLAGS='--target_board ''unix{-pthread}'''; ${GMAKE} -sk check
@@ -157,31 +157,30 @@ pre-install:
 
 post-install:
 	@${RM} -f ${PREFIX}/bin/c++ ${PREFIX}/bin/${CONFIGURE_TARGET}-c++
-	@(for prog in ${PREFIX}/bin/gcc ${PREFIX}/bin/g++ \
-		${PREFIX}/bin/g77 ${PREFIX}/bin/gcov \
-		${PREFIX}/bin/${CONFIGURE_TARGET}-gcc \
+	@(for prog in \
 		${TARGLIB}/cc1 ${TARGLIB}/cc1obj ${TARGLIB}/cc1plus \
 		${TARGLIB}/collect2 ${TARGLIB}/f771 ; \
 	do \
-		strip $$prog ; \
+		${STRIP_CMD} $$prog ; \
 	done )
-.for file in gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
-	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}33
-	( ${TEST} ! -e ${PREFIX}/man/man1/${file}.1 \
-		|| ${MV} -f ${PREFIX}/man/man1/${file}.1 \
-		${PREFIX}/man/man1/${file}33.1 )
+.for f in gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh gij jv-scan jcf-dump jv-convert jar grepjar rmic rmiregistry
+	${STRIP_CMD} ${PREFIX}/bin/${f}
+	${MV} -f ${PREFIX}/bin/${f} ${PREFIX}/bin/${f}33
+	( ${TEST} ! -e ${PREFIX}/man/man1/${f}.1 \
+		|| ${MV} -f ${PREFIX}/man/man1/${f}.1 \
+		${PREFIX}/man/man1/${f}33.1 )
 .endfor
-.for file in g77
-	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}-33
-	( ${TEST} ! -e ${PREFIX}/man/man1/${file}.1 \
-		|| ${MV} -f ${PREFIX}/man/man1/${file}.1 \
-		${PREFIX}/man/man1/${file}-33.1 )
+.for f in g77
+	${MV} -f ${PREFIX}/bin/${f} ${PREFIX}/bin/${f}-33
+	( ${TEST} ! -e ${PREFIX}/man/man1/${f}.1 \
+		|| ${MV} -f ${PREFIX}/man/man1/${f}.1 \
+		${PREFIX}/man/man1/${f}-33.1 )
 .endfor
 	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${PORTVERSION}
 	# These 3 libraries are moved from PREFIX/lib to avoid conflicts
 	# 	with the stock compiler.
-.for file in libstdc++ libsupc++ libg2c libfrtbegin libobjc ${EXTRA_SHLIB}
-	${MV} -f ${PREFIX}/lib/${file}.* ${TARGLIB}
+.for f in libstdc++ libsupc++ libg2c libfrtbegin libobjc ${EXTRA_SHLIB}
+	${MV} -f ${PREFIX}/lib/${f}.* ${TARGLIB}
 .endfor
 	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
 	# Java
