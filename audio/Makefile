@@ -64,6 +64,7 @@
     SUBDIR += napster
     SUBDIR += nas
     SUBDIR += nspmod
+    SUBDIR += opennap
     SUBDIR += pimp3
     SUBDIR += play
     SUBDIR += playmidi
