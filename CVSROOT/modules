@@ -281,6 +281,7 @@ ale		ports/graphics/ale
 alephone	ports/games/alephone
 alephone-data	ports/games/alephone-data
 alevt		ports/misc/alevt
+alexandria	ports/deskutils/alexandria
 alf		ports/devel/alf
 algae		ports/math/algae
 algotutor	ports/math/algotutor
