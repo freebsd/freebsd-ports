@@ -18,7 +18,6 @@ MAINTAINER=	mad@madpilot.net
 COMMENT=	Tools to talk to GSM cellular phones
 
 USE_REINPLACE=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 INSTALLS_SHLIB=	yes
@@ -80,6 +79,14 @@ USE_XPM=	yes
 USE_GNOME+=	gtk12
 PLIST_SUB+=	X11=''
 MAN1+=	xgnokii.1
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 pre-fetch:
