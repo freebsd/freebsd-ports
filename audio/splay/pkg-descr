@@ -1,20 +1,14 @@
-The splay program uses the MPEG/Wave Sound library to play sound files in
+splay-0.3
+---------
+
+Splay program uses the MPEG/Wave Sound library to play sound files in
 several formats, notably the MPEG audio and Wave format. This early version
-has only limited functionally and a simplistic user interface. For the moment,
-only Intel pc's running Linux are supported.
+has only limited functionally and a simplistic user interface.
 
 This program have NO WARRANTY.
+You can use this program under GPL.
+You can use these libraries under Library GPL.
 
-Now, threaded playing and 'Force to mono' are implemented.
-And implemented poor shuffle play.
-
-Bug report
-	jwj95@eve.kaist.ac.kr
-	jwj95@nownuri.net
-
-THANKS FOR this document
-  Tommy Thorn
-
+* This version of splay was not compiled with pthread library.
 --
-From FreeBSD porter:
-  * This version of splay was not compiled with pthread library.
+Port by Choi Jun Ho <junker@jazz.snu.ac.kr>
