@@ -6,4 +6,3 @@ bin/mkepmlist
 %%PORTDOCS%%%%DOCSDIR%%/epm-manual.html
 %%PORTDOCS%%%%DOCSDIR%%/epm-manual.pdf
 @dirrm %%PORTDOCS%%%%DOCSDIR%%
-
