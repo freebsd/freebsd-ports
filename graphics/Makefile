@@ -411,6 +411,7 @@
     SUBDIR += xfig
     SUBDIR += xfpovray
     SUBDIR += xfractint
+    SUBDIR += xglurbules
     SUBDIR += xgrasp
     SUBDIR += xine_d4d_plugin
     SUBDIR += xine_d5d_plugin
