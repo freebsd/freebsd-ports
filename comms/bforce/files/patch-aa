@@ -1,0 +1,17 @@
+diff -ur configure configure
+--- configure	Sun Nov 12 22:19:24 2000
++++ configure	Thu Jan 16 09:34:36 2003
+@@ -746,10 +746,10 @@
+ #
+ echo $ac_n "checking "UUCP lock files directory"""... $ac_c" 1>&6
+ echo "configure:749: checking "UUCP lock files directory"" >&5
+-if test -d /var/lock ; then
+-	lockdir=/var/lock/
+-elif test -d /var/spool/lock ; then
++if test -d /var/spool/lock ; then
+ 	lockdir=/var/spool/lock/
++elif test -d /var/lock ; then
++	lockdir=/var/lock/
+ else
+ 	lockdir=/var/lock/
+ fi
