@@ -33,14 +33,6 @@ OPTIONS=	MYSQL "Use mysql" ON \
 		HYB "Hybrid IRCd 7.0 [experimental]" OFF \
 		VIA "ViagraIRCd 1.3.x [or later]" OFF \
 		PTL "PTlink 6.15.0 [experimental]" OFF
-# in that case, OPTIONS are ignored, no defaults
-.if defined(PACKAGE_BUILDING) || defined(BATCH)
-WITH_MYSQL=	yes
-WITH_MODULES=	yes
-WITH_MD5=	yes
-WITH_THREAD=	yes
-WITH_UNREAL=	yes
-.endif
 #}}}
 
 ANOPEBIN?=	${PREFIX}/libexec/anope
