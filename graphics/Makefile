@@ -69,6 +69,7 @@
     SUBDIR += enfle
     SUBDIR += entice
     SUBDIR += eog2
+    SUBDIR += epeg
     SUBDIR += epix
     SUBDIR += eps2png
     SUBDIR += epstool
