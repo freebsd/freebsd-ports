@@ -1,0 +1,13 @@
+%%SITE_PERL%%/Tree/Simple/Visitor/BreadthFirstTraversal.pm
+%%SITE_PERL%%/Tree/Simple/Visitor/FindByPath.pm
+%%SITE_PERL%%/Tree/Simple/Visitor/GetAllDescendents.pm
+%%SITE_PERL%%/Tree/Simple/Visitor/PathToRoot.pm
+%%SITE_PERL%%/Tree/Simple/Visitor/PostOrderTraversal.pm
+%%SITE_PERL%%/Tree/Simple/VisitorFactory.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree/Simple/VisitorFactory/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree/Simple/VisitorFactory
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree/Simple 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Tree 2>/dev/null || true
+@dirrm %%SITE_PERL%%/Tree/Simple/Visitor
+@unexec rmdir %D/%%SITE_PERL%%/Tree/Simple 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Tree 2>/dev/null || true
