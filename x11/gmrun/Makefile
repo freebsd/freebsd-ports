@@ -14,8 +14,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	A customizable program to run programs, with tab-completion
 
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -23,8 +21,8 @@ USE_GNOME=	gnomeprefix gnomehack gtk20
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
+.if ${OSVERSION} < 500000
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 .endif
 
 post-install:
