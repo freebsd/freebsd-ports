@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mulberry
-PORTVERSION=	3.1.3
+PORTVERSION=	3.1.5
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cyrusoft.com/pub/Mulberry/v${PORTVERSION:S/./_/g}/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}-rh6
