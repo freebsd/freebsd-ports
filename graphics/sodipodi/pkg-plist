@@ -1,5 +1,5 @@
 bin/sodipodi
-share/gnome/apps/Graphics/sodipodi.desktop
+share/gnome/applications/sodipodi.desktop
 share/gnome/pixmaps/sodipodi.png
 share/gnome/sodipodi/about.svg
 share/gnome/sodipodi/add.xpm
