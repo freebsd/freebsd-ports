@@ -19,21 +19,22 @@ LIB_DEPENDS=	exif.8:${PORTSDIR}/graphics/libexif
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-USE_RUBY_RDTOOL=	yes
 
 INSTALL_TARGET=	site-install
 
-DOCS_EN=	ChangeLog	README	exif.rd.en	exif.en.html
-DOCS_JA=				exif.rd.ja	exif.ja.html
+RUBY_RD_FILES=	exif.rd.en	exif.rd.ja
 
-.if !defined(NOPORTDOCS)
-post-build:
-.for lang in en ja
-	cd ${WRKSRC}; ${RUBY_RD2} exif.rd.${lang} > exif.${lang}.html
-.endfor
-.endif
+DOCS_EN=	ChangeLog	README \
+		${RUBY_RD_FILES:M*.rd.en} \
+		${RUBY_RD_HTML_FILES:M*.en.html}
+DOCS_JA=	${RUBY_RD_FILES:M*.rd.ja} \
+		${RUBY_RD_HTML_FILES:M*.ja.html}
 
-post-install:
+post-install: doc-install
+
+.include <bsd.port.mk>
+
+doc-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
 .for f in ${DOCS_EN}
@@ -43,5 +44,3 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
-
-.include <bsd.port.mk>

@@ -18,22 +18,24 @@ MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-USE_RUBY_RDTOOL=	yes
 
 INSTALL_TARGET=	site-install
 
-DOCS=		ChangeLog	README		termios.html	termios.rd
+RUBY_RD_FILES=	termios.rd
+
+DOCS=		ChangeLog	README \
+		${RUBY_RD_FILES} \
+		${RUBY_RD_HTML_FILES}
 
 post-patch:
 	${RUBY} -i -pe 'gsub(/ttyS\d/, "cuaa0")' ${WRKSRC}/examples/*.rb
 	${RUBY} -i -pe 'gsub(/\.c_/, ".")' ${WRKSRC}/examples/*.rb
 
-post-build:
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC}; ${RUBY_RD2} termios.rd > termios.html
-.endif
+post-install: doc-install
 
-post-install:
+.include <bsd.port.mk>
+
+doc-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.rb ${RUBY_MODEXAMPLESDIR}/
@@ -42,5 +44,3 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
-
-.include <bsd.port.mk>

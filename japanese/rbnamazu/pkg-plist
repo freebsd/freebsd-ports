@@ -4,7 +4,9 @@ bin/rbnamazu
 %%RUBY_SITELIBDIR%%/nmzqr.rb
 %%RUBY_SITELIBDIR%%/nmzqr.tab.rb
 %%RUBY_SITELIBDIR%%/rbnamazu.rb
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/rbnamazu.html.ja
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rbnamazu.html.en
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/ja/rbnamazu.ja.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/rbnamazu.rd.ja
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/rbnamazu.en.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/rbnamazu.rd.en
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

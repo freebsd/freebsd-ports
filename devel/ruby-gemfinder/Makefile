@@ -18,26 +18,31 @@ MAINTAINER=	knu@FreeBSD.org
 RUN_DEPENDS=	${RUBY_LIBDIR}/tk.rb:${PORTSDIR}/x11-toolkits/ruby-tk
 
 USE_RUBY=	yes
-USE_RUBY_RDTOOL=	yes
 
+NO_BUILD=	yes
+
+RUBY_RD_FILES=	gemfinder.rd
 RUBY_SHEBANG_FILES=	${WRKSRC}/gemfinder
 
-DOCS=		README		gemfinder.html	gemfinder.rd
+DOCS=		README \
+		${RUBY_RD_FILES} \
+		${RUBY_RD_HTML_FILES}
 
-do-build:
-.if !defined(NOPORTDOCS)
-	${RUBY_RD2} < ${WRKSRC}/gemfinder.rd \
-		| ${SED} -e 's/<BODY>/<body bgcolor="#ffffff">/' \
-		> ${WRKSRC}/gemfinder.html
-.endif
+post-patch:
+	${RUBY} -i -pe 'sub(/<BODY>/, "<BODY bgcolor=\"#ffffff\">")' \
+		${WRKSRC}/gemfinder.rd
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/gemfinder ${PREFIX}/bin/
+
+post-install: doc-install
+
+.include <bsd.port.mk>
+
+doc-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
-
-.include <bsd.port.mk>

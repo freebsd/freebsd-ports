@@ -22,23 +22,24 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-USE_RUBY_RDTOOL=	yes
 
 INSTALL_TARGET=	site-install
 
-DOCS_JA=	readme.ja.html	readme.ja.rd	readme.ja.txt
+RUBY_RD_FILES=	readme.ja.rd
+
+DOCS_JA=	readme.ja.txt \
+		${RUBY_RD_FILES} \
+		${RUBY_RD_HTML_FILES}
 EXAMPLES_EN=	es.png		png.rb		pngtest.rb	pngtest.sh	\
 		sample/0.png	sample/1.png	sample/2.png	sample/3.png	\
 		sample/4.png	sample/5.png	sample/6.png	sample/7.png	\
 		sample/8.png	sample/9.png	sample/pngcat.rb
 
-.if !defined(NOPORTDOCS)
-post-build:
-	@cd ${WRKSRC}; \
-	${RUBY_RD2} readme.ja.rd > readme.ja.html
-.endif
+post-install: doc-install
 
-post-install:
+.include <bsd.port.mk>
+
+doc-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 .for f in ${EXAMPLES_EN}
@@ -49,5 +50,3 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
-
-.include <bsd.port.mk>

@@ -14,7 +14,6 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
-USE_RUBY_RDTOOL=	yes
 
 CONFIGURE_ARGS=	--enable-shared --with-charset="${DEFAULT_CHARSET}"
 INSTALL_TARGET=	site-install
@@ -24,18 +23,21 @@ DEFAULT_CHARSET?=	ISO-8859-1
 
 MAN1=		eruby.1
 
-DOCS_EN=	COPYING ChangeLog README.en eruby.html eruby.rd
+RUBY_RD_FILES=	eruby.rd
+
+DOCS_EN=	COPYING ChangeLog README.en \
+		${RUBY_RD_FILES} \
+		${RUBY_RD_HTML_FILES}
 DOCS_JA=	README.ja
 
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} configure.rb ${CONFIGURE_ARGS}
 
-post-build:
-.if !defined(NOPORTDOCS)
-	cd ${WRKSRC}; ${RUBY_RD2} eruby.rd > eruby.html
-.endif
+post-install: doc-install
 
-post-install:
+.include <bsd.port.mk>
+
+doc-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${RUBY_MODEXAMPLESDIR}/
@@ -47,5 +49,3 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
-
-.include <bsd.port.mk>

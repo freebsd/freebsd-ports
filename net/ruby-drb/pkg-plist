@@ -45,18 +45,18 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/changelog.rd
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/changelog.html
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/changelog.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/drb-ref.rd
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/drb-ref.html
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/drb-ref.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/security.rd
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/security.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/drb-ref.ja.html
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/security.html
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/ja/drb-ref.ja.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/drb-ref.rd.ja
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/mutexm.ja.html
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/ja/mutexm.ja.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/mutexm.rd.ja
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/security.ja.html
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/ja/security.ja.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/security.rd.ja
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/tuplespace-ref.ja.html
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/ja/tuplespace-ref.ja.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/tuplespace-ref.rd.ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

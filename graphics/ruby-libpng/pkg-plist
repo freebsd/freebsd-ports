@@ -15,7 +15,7 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/9.png
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/pngcat.rb
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/readme.ja.html
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/ja/readme.ja.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/readme.ja.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/readme.ja.txt
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja

@@ -1,11 +1,11 @@
 %%RUBY_SITEARCHLIBDIR%%/pdflib.so
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/pdflib-api.html
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/pdflib-api.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/pdflib-api.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/ChangeLog.jp
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/README.jp
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/pdflib-api-jp.html
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/ja/pdflib-api-jp.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/pdflib-api-jp.rd
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

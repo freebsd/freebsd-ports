@@ -20,25 +20,30 @@ BUILD_DEPENDS=	rdoc:${PORTSDIR}/textproc/ruby-rdoc
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-USE_RUBY_RDTOOL=	yes
+
+RUBY_RD_FILES=	mmap.rd
 
 INSTALL_TARGET=	site-install
 
-DOCS=		Changes		README.en	mmap.html	mmap.rd	\
+DOCS=		Changes \
+		README.en \
+		${RUBY_RD_FILES} \
+		${RUBY_RD_HTML_FILES} \
 		docs/doc
 
 post-build:
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC}; ${RUBY_RD2} mmap.rd > mmap.html
-	cd ${WRKSRC}/docs; ${RUBY} b.rb mmap; rdoc mmap.rb
+	cd ${WRKSRC}/docs; ${RUBY} b.rb mmap; ${RUBY_RDOC} mmap.rb
 .endif
 
-post-install:
+post-install: doc-install
+
+.include <bsd.port.mk>
+
+doc-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
 	${CP} -R ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
-
-.include <bsd.port.mk>

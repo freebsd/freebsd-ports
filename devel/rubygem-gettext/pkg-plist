@@ -45,8 +45,8 @@ share/locale/ja/LC_MESSAGES/rgettext.mo
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/config.rb
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/en/ruby-gettext.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/ja/ruby-gettext.html
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/html/en/ruby-gettext.html
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/html/ja/ruby-gettext.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/html/style.css
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/makehtml.rb
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/rd/en/LANGUAGE

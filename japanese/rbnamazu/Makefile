@@ -15,12 +15,18 @@ MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	optparse
-USE_RUBY_RDTOOL=	yes
 
 NO_BUILD=	yes
 
 MODULES=	rbnamazu.rb nmzqr.rb nmzqr.tab.rb nmzdoc.rb
-RD_DOCS=	rbnamazu.rd.ja rbnamazu.rd.en
+RD_DOCS=	
+
+RUBY_RD_FILES=	rbnamazu.rd.ja rbnamazu.rd.en
+
+DOCS_EN=	${RUBY_RD_FILES:M*.rd.en} \
+		${RUBY_RD_HTML_FILES:M*.en.html}
+DOCS_JA=	${RUBY_RD_FILES:M*.rd.ja} \
+		${RUBY_RD_HTML_FILES:M*.ja.html}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/namazu.rb ${PREFIX}/bin/
@@ -28,18 +34,18 @@ do-install:
 .for f in ${MODULES}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_SITELIBDIR}
 .endfor
+
+post-install: doc-install
+
+.include <bsd.port.mk>
+
+doc-install:
 .if !defined(NOPORTDOCS)
-.for f in ${RD_DOCS}
-	cd ${WRKSRC}; \
-	${RUBY_RD2} ${f} > ${f:S/.rd/.html/}
-.endfor
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
-.for f in ${RD_DOCS:S/.rd/.html/:M*.en}
+.for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
-.for f in ${RD_DOCS:S/.rd/.html/:M*.ja}
+.for f in ${DOCS_JA}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
-
-.include <bsd.port.mk>

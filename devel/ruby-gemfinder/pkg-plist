@@ -1,5 +1,5 @@
 bin/gemfinder
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/gemfinder.html
+%%PORTDOCS%%%%RUBY_RD_HTML_FILES%%%%RUBY_MODDOCDIR%%/gemfinder.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/gemfinder.rd
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
