@@ -3,6 +3,15 @@ $FreeBSD$
 
 --- ../ext/plugin/build/solaris/GNUmakefile	2002/03/13 13:35:23	1.1
 +++ ../ext/plugin/build/solaris/GNUmakefile	2002/03/13 13:36:33
+@@ -481,7 +481,7 @@
+ 
+ $(OUTPUT_DIR)/lib/locale/%/LC_MESSAGES/sunw_java_plugin.mo : $(RESOURCESRCDIR)/%/sunw_java_plugin.po
+ 	@mkdir -p $(@D)
+-	msgfmt -o $(@) $<
++	msgfmt-old -o $(@) $<
+ 
+ 
+ #----------------------------------------------------------------------
 @@ -645,7 +645,7 @@
  $(PLUGIN_OJI): $(NAVIG5_OFILES) $(COMMON_OFILES_GNU)
  	export LD_LIBRARY_PATH; LD_LIBRARY_PATH=$(X11_LIB); \
