@@ -16,17 +16,16 @@ MAINTAINER=	karlj000@unbc.ca
 COMMENT=	MagicCube4D is a four-dimensional analog of Rubik's cube
 
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION:S/./_/}
 DOCS=		ChangeLog Intro.txt MagicCube4D-unix.txt \
 		ideas.txt readme-unix.txt
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e 's/stickers)()/stickers)(0)/' \
+		${WRKSRC}/EventHandler.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/magiccube4d ${PREFIX}/bin
@@ -37,4 +36,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
