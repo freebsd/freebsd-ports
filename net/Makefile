@@ -480,6 +480,7 @@
     SUBDIR += p5-Tie-DNS
     SUBDIR += p5-Tie-NetAddr-IP
     SUBDIR += p5-URI
+    SUBDIR += p5-Validate-Net
     SUBDIR += p5-XPC
     SUBDIR += p5-perl-ldap
     SUBDIR += pancho
