@@ -5401,6 +5401,7 @@ munin-node	ports/sysutils/munin-node
 mup		ports/print/mup
 mupad		ports/math/mupad
 muse		ports/sysutils/muse
+musepack	ports/audio/musepack
 musicbox	ports/audio/musicbox
 musicbrainz	ports/audio/musicbrainz
 musiccontrol	ports/audio/musiccontrol
