@@ -37,7 +37,7 @@ lib/mysql/libmerge.a
 lib/mysql/libmysqlclient.a
 lib/mysql/libmysqlclient.la
 lib/mysql/libmysqlclient.so
-lib/mysql/libmysqlclient.so.5.2
+lib/mysql/libmysqlclient.so.6
 lib/mysql/libmystrings.a
 lib/mysql/libmysys.a
 lib/mysql/libnisam.a
