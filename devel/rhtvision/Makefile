@@ -7,7 +7,7 @@
 
 PORTNAME=	rhtvision
 PORTVERSION=	1.1.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tvision
@@ -15,9 +15,8 @@ DISTNAME=	rhtvision-${PORTVERSION}.src
 
 MAINTAINER=	perky@FreeBSD.org
 
-BUILD_DEPENDS=	${PERL5}:${PORTSDIR}/lang/perl5
-
 WRKSRC=		${WRKDIR}/tvision
+USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
@@ -31,5 +30,8 @@ post-patch:
 .for f in ${PATCHPERL_FILES}
 	@${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL5},g' ${WRKSRC}/${f}
 .endfor
+
+post-install:
+	@cd ${PREFIX}/lib && ${LN} -sf librhtv.so.1.1.4 librhtv.so.1
 
 .include <bsd.port.mk>
