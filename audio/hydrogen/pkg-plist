@@ -1,4 +1,5 @@
 bin/hydrogen
+bin/hydrogen2midi
 bin/hydrogenPlayer
 share/hydrogen/data/DefaultSong.h2song
 share/hydrogen/data/click.wav
@@ -7,24 +8,25 @@ share/hydrogen/data/demo_songs/GM_kit_Jazzy.h2song
 share/hydrogen/data/demo_songs/GM_kit_demo1.h2song
 share/hydrogen/data/demo_songs/GM_kit_demo2.h2song
 share/hydrogen/data/demo_songs/GM_kit_demo3.h2song
-share/hydrogen/data/drumkits/GMkit/clap_Dry_c.wav
-share/hydrogen/data/drumkits/GMkit/cra_Jazz.wav
-share/hydrogen/data/drumkits/GMkit/cra_Rock_a.wav
-share/hydrogen/data/drumkits/GMkit/cym_Jazz.wav
-share/hydrogen/data/drumkits/GMkit/cym_Rock_b.wav
+share/hydrogen/data/demo_songs/tutorial_georgyporgy.h2song
+share/hydrogen/data/drumkits/GMkit/clap_Dry_c.flac
+share/hydrogen/data/drumkits/GMkit/cra_Jazz.flac
+share/hydrogen/data/drumkits/GMkit/cra_Rock_a.flac
+share/hydrogen/data/drumkits/GMkit/cym_Jazz.flac
+share/hydrogen/data/drumkits/GMkit/cym_Rock_b.flac
 share/hydrogen/data/drumkits/GMkit/drumkit.xml
-share/hydrogen/data/drumkits/GMkit/emptySample.wav
-share/hydrogen/data/drumkits/GMkit/hhc_Dry_a.wav
-share/hydrogen/data/drumkits/GMkit/hhc_Rock_b.wav
-share/hydrogen/data/drumkits/GMkit/hhp_Dry_a.wav
-share/hydrogen/data/drumkits/GMkit/kick_Dry_b.wav
-share/hydrogen/data/drumkits/GMkit/misc_Cowbell.wav
-share/hydrogen/data/drumkits/GMkit/sn_Jazz_c.wav
-share/hydrogen/data/drumkits/GMkit/sn_Wet_b.wav
-share/hydrogen/data/drumkits/GMkit/stick_Woody.wav
-share/hydrogen/data/drumkits/GMkit/tom_Rock_hi.wav
-share/hydrogen/data/drumkits/GMkit/tom_Rock_lo.wav
-share/hydrogen/data/drumkits/GMkit/tom_Rock_mid.wav
+share/hydrogen/data/drumkits/GMkit/emptySample.flac
+share/hydrogen/data/drumkits/GMkit/hhc_Dry_a.flac
+share/hydrogen/data/drumkits/GMkit/hhc_Rock_b.flac
+share/hydrogen/data/drumkits/GMkit/hhp_Dry_a.flac
+share/hydrogen/data/drumkits/GMkit/kick_Dry_b.flac
+share/hydrogen/data/drumkits/GMkit/misc_Cowbell.flac
+share/hydrogen/data/drumkits/GMkit/sn_Jazz_c.flac
+share/hydrogen/data/drumkits/GMkit/sn_Wet_b.flac
+share/hydrogen/data/drumkits/GMkit/stick_Woody.flac
+share/hydrogen/data/drumkits/GMkit/tom_Rock_hi.flac
+share/hydrogen/data/drumkits/GMkit/tom_Rock_lo.flac
+share/hydrogen/data/drumkits/GMkit/tom_Rock_mid.flac
 share/hydrogen/data/emptySample.wav
 share/hydrogen/i18n/hydrogen.es.qm
 share/hydrogen/i18n/hydrogen.fr.qm
@@ -170,11 +172,27 @@ share/hydrogen/manual/img/recBtn_on.png
 share/hydrogen/manual/img/showFX_on.png
 share/hydrogen/manual/img/showPeaks_on.png
 share/hydrogen/manual/img/tastiera.png
+share/hydrogen/manual/img_tutorial/Bridge1_4th.png
+share/hydrogen/manual/img_tutorial/Bridge3_3a_hh.png
+share/hydrogen/manual/img_tutorial/C3_6+7.png
+share/hydrogen/manual/img_tutorial/Intro4th.png
+share/hydrogen/manual/img_tutorial/PatternBase1.png
+share/hydrogen/manual/img_tutorial/PatternBase2.png
+share/hydrogen/manual/img_tutorial/Riff1b.png
+share/hydrogen/manual/img_tutorial/Riff1c.png
+share/hydrogen/manual/img_tutorial/Riff1d.png
+share/hydrogen/manual/img_tutorial/Verse8th.png
+share/hydrogen/manual/img_tutorial/VerseAll.png
+share/hydrogen/manual/img_tutorial/VerseBridge.png
+share/hydrogen/manual/img_tutorial/VerseBridge_hh.png
 share/hydrogen/manual/manual.html
 share/hydrogen/manual/manual_de.html
 share/hydrogen/manual/manual_en.html
 share/hydrogen/manual/manual_es.html
+share/hydrogen/manual/manual_fr.html
 share/hydrogen/manual/manual_it.html
+share/hydrogen/manual/tutorial_en.html
+share/hydrogen/manual/tutorial_it.html
 @dirrm share/hydrogen/data/demo_songs
 @dirrm share/hydrogen/data/drumkits/GMkit
 @dirrm share/hydrogen/data/drumkits
@@ -188,5 +206,6 @@ share/hydrogen/manual/manual_it.html
 @dirrm share/hydrogen/img/splash
 @dirrm share/hydrogen/img
 @dirrm share/hydrogen/manual/img
+@dirrm share/hydrogen/manual/img_tutorial
 @dirrm share/hydrogen/manual
 @dirrm share/hydrogen
