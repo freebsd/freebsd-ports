@@ -8,7 +8,7 @@
 PORTNAME=		juke
 PORTVERSION=		0.7
 CATEGORIES=		audio
-MASTER_SITES=		http://www.nocrew.org/software/juke/archive/ \
+MASTER_SITES=		http://johan.nocrew.org/unix/juke/archive/ \
 			http://www.initio.no/~oyvindmo/distfiles/
 
 MAINTAINER=		oyvindmo@initio.no
