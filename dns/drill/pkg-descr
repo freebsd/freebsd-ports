@@ -1,0 +1,9 @@
+Drill is a tool ala dig from BIND. It was designed with DNSSEC in
+mind and should be a useful debugging/query tool for DNSSEC.
+
+WWW:	http://www.nlnetlabs.nl/dnssec/drill.html.
+
+
+	jaap akkerhuis
+
+jaap@nletlabs.nl

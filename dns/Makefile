@@ -30,6 +30,7 @@
     SUBDIR += dnsutl
     SUBDIR += dnswalk
     SUBDIR += domtools
+    SUBDIR += drill
     SUBDIR += ez-ipupdate
     SUBDIR += fastresolve
     SUBDIR += firedns
