@@ -1,28 +1,30 @@
---- makefile.orig	Wed Sep 25 09:32:22 1996
-+++ makefile	Fri Aug  6 19:37:41 1999
-@@ -1,6 +1,6 @@
+--- makefile.orig	Wed Sep 25 23:32:22 1996
++++ makefile	Mon Mar 13 01:34:19 2000
+@@ -1,7 +1,7 @@
  PURIFY   = #purify
  PURELINK = #purelink
 -C++    = $(PURIFY) g++  
-+C++    = $(PURIFY) g++  -w -I$(X11BASE)/include
- LD     = $(PURELINK) g++
+-LD     = $(PURELINK) g++
++C++    = ${CXX}
++LD     = ${CXX}
  
  #C++    = $(PURIFY) g++ -w  -I/sgisoft/gnu/lib/g++-include 	# !!! SGI GNU 2.7.1
+ #LD     = $(PURIFY) g++ -w 
 @@ -18,25 +18,33 @@
  #FORFLAGS = -O -extend_source 				# SGI
  
  DEBFLAG  = -g
 -OPTFLAG  = -Wall -O -g
-+#OPTFLAG  = -Wall -O -g
++OPTFLAG  = ${CXXFLAGS}
  
  LIBS     = -lX11 -lm $(F77LIBS) 
 -#LIBDIR  = /usr/X11/lib						# PC LINUX, XFree86 3.1.1
 +.if ${PORTOBJFORMAT} == "elf"
-+LIBS+=-Wl,-rpath,$(X11BASE)/lib
++LIBS+=-Wl,-rpath,${X11BASE}/lib
 +.endif
  
 -F77LIBS  = -L/opt/SUNWspro/SC4.0/lib -lF77 -lM77 -lsunmath -lsocket -lnsl # SUN
-+LIBDIR  = $(X11BASE)/lib						# PC LINUX, XFree86 3.1.1
++LIBDIR  = ${X11BASE}/lib
 +
 +#F77LIBS  = -L/opt/SUNWspro/SC4.0/lib -lF77 -lM77 -lsunmath -lsocket -lnsl # SUN
  #F77LIBS  = -lftn						# SGI
@@ -30,17 +32,19 @@
  # F77LIBS  =  -lxlf -lxlf90 -lxlfutil     			# IBM
  # F77LIBS  =  -lfor     			      		# DEC Alpha
 -# F77LIBS  =  -lf2c						# PC LINUX, XFree86 3.1.1
+-
+-CFLAGS   = -ansi 
+-CPPFLAGS =  
+-LDFLAGS  = $(DEBFLAG)
 +.if defined(HAVE_G2C)
 +F77LIBS  =  -lg2c						# PC LINUX, XFree86 3.1.1
 +.else
 +F77LIBS  =  -lf2c						# PC LINUX, XFree86 3.1.1
 +.endif
- 
--CFLAGS   = -ansi 
--CPPFLAGS =  
++
 +#CFLAGS   = -ansi 
-+CPPFLAGS =  $(CFLAGS)
- LDFLAGS  = $(DEBFLAG)
++CPPFLAGS = -I${X11BASE}/include
++#LDFLAGS  = $(DEBFLAG)
  
  # -------------------------------------------------------------------------
  
