@@ -20,6 +20,7 @@ MAKEFILE=	makefile
 ALL_TARGET=	freebsd-${MACHINE_ARCH} OS_CFLAGS="${CFLAGS}"
 PGPLIB=		${PREFIX}/lib/pgp
 MAN1=		pgp.1 pgp2.1
+ONLY_FOR_ARCHS=	i386 alpha
 
 do-install:
 	cd ${WRKSRC}; ${INSTALL_PROGRAM} -c -o bin -g bin -m 555 pgp ${PREFIX}/bin
