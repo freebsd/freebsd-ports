@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	serveez
-PORTVERSION=	0.1.4
-PORTREVISOIN=	0
+PORTVERSION=	0.1.5
 CATEGORIES=	net devel
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://www.textsure.net/~ela/download/
@@ -28,10 +27,11 @@ USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
 
-MAN1=	serveez.1
+MAN1=	serveez.1 serveez-config.1
 
 CPPFLAGS=	`${GUILE_CONFIG} compile`
 LDFLAGS=	`${GUILE_CONFIG} link`
