@@ -1,5 +1,5 @@
 # New ports collection makefile for:   jpilot
-# Version required:    0.93.1
+# Version required:    0.95
 # Date created:        23 August 1999
 # Whom:                Alex Varju <varju@webct.com>
 #
@@ -7,7 +7,7 @@
 #
 # "?=" and "+=" are for including this Makefile from japanese/jpilot
 
-DISTNAME=	jpilot-0.93.1
+DISTNAME=	jpilot-0.95
 CATEGORIES=	palm comms
 MASTER_SITES=	http://jpilot.linuxbox.com/
 
