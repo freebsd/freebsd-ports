@@ -1,0 +1,11 @@
+--- main.c	2003/11/12 14:09:11	1.1
++++ main.c	2003/11/12 14:09:31
+@@ -751,7 +751,7 @@
+   }
+   if (!(PAT_FILE) && Pattern[0] == '\0') { /* Pattern not set with -e option */
+     if (argc == 0) usage();
+-    strcpy(Pattern, *argv); 
++    strncpy(Pattern, *argv, sizeof(Pattern)); 
+     argc--;
+     argv++;
+   }
