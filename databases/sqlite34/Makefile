@@ -12,6 +12,7 @@
 
 PORTNAME=	sqlite
 PORTVERSION=	3.0.8
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
@@ -36,6 +37,9 @@ WITH_TCL=	YES
 
 .if defined(WITH_TCL)
 ALL_TARGET+=	libtclsqlite.la
+PLIST_SUB+=     WITH_TCL=""
+.else
+PLIST_SUB+=     WITH_TCL="@comment "
 .endif
 
 .if !defined(NOPORTDOCS)
