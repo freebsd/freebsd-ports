@@ -81,7 +81,28 @@ System/Library/Bundles/SSL.bundle/stamp.make
 %%SYSTEMLIBRARY%%/Headers/Foundation/NSValue.h
 %%SYSTEMLIBRARY%%/Headers/Foundation/NSZone.h
 %%GNUSTEP_STABLE%%System/Headers/Foundation/objc-load.h
-%%SYSTEMLIBRARY%%/Headers/gnustep/base/DistributedObjects.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/unicode/caseconv.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/unicode/cop.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/unicode/cyrillic.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/unicode/latin2.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/unicode/decomp.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/unicode/nextstep.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/GSObjCRuntime.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/GSCategories.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/GSFileHandle.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/GSUnion.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/GSIArray.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/GSIMap.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/GCObject.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/GSMime.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/GSXML.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/GSLocale.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/Unicode.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/GNUstep.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/behavior.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/preface.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/GNUstepBase/objc-gnu2next.h
+%%GNUSTEP_STABLE%%System/Headers/gnustep/base/DistributedObjects.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/base/GCObject.h
 %%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/GNUstep.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/base/GSCategories.h
@@ -89,12 +110,13 @@ System/Library/Bundles/SSL.bundle/stamp.make
 %%SYSTEMLIBRARY%%/Headers/gnustep/base/GSIArray.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/base/GSIMap.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/base/GSLocale.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/GSMime.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/base/GSObjCRuntime.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/base/GSUnion.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/GSXML.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/base/Unicode.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/base/behavior.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/base/objc-gnu2next.h
-%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/objc-load.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/base/preface.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/unicode/caseconv.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/unicode/cop.h
@@ -105,7 +127,6 @@ System/Library/Bundles/SSL.bundle/stamp.make
 %%GNUSTEP_STABLE%%%%SYSTEMLIBRARY%%/Headers/%%GNU_ARCH%%/%%OPSYS%%/GSConfig.h
 %%GNUSTEP_STABLE%%%%SYSTEMLIBRARY%%/Headers/%%GNU_ARCH%%/%%OPSYS%%/mframe.h
 %%GNUSTEP_DEVEL%%%%SYSTEMLIBRARY%%/Headers/GSConfig.h
-%%GNUSTEP_DEVEL%%%%SYSTEMLIBRARY%%/Headers/mframe.h
 %%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-base/English.lproj/Localizable.strings
 %%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-base/French.lproj/Localizable.strings
 %%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-base/German.lproj/Localizable.strings
@@ -119,6 +140,7 @@ System/Library/Bundles/SSL.bundle/stamp.make
 %%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-base/Languages/Locale.encodings
 %%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-base/Languages/Russian
 %%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-base/Languages/Slovak
+%%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-base/Languages/TraditionalChinese
 %%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-base/Languages/UkraineRussian
 %%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-base/NSCharacterSets/alphanumericCharSet.dat
 %%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-base/NSCharacterSets/controlCharSet.dat
@@ -704,6 +726,7 @@ System/Library/Bundles/SSL.bundle/stamp.make
 %%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/W-SU
 %%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/WET
 %%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Zulu
+%%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-base/TraditionalChinese.lproj/Localizable.strings
 %%GNUSTEP_STABLE%%System/Libraries/Resources/DTDs/gsdoc-0_6_5.dtd
 %%GNUSTEP_STABLE%%System/Libraries/Resources/DTDs/gsdoc-0_6_6.dtd
 %%GNUSTEP_STABLE%%System/Libraries/Resources/DTDs/gsdoc-0_6_7.dtd
@@ -1335,6 +1358,7 @@ System/Tools/%%NOFLAT%%sfparse
 %%GNUSTEP_STABLE%%@dirrm %%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
 %%GNUSTEP_STABLE%%@dirrm %%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%
 %%GNUSTEP_STABLE%%@dirrm %%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/Resources/gnustep-base/TraditionalChinese.lproj
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/US
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/SystemV
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Pacific
@@ -1401,6 +1425,8 @@ System/Tools/%%NOFLAT%%sfparse
 @dirrm %%SYSTEMLIBRARY%%/Headers/gnustep/unicode
 @dirrm %%SYSTEMLIBRARY%%/Headers/gnustep/base
 @dirrm %%SYSTEMLIBRARY%%/Headers/gnustep
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Headers/GNUstepBase/unicode
+%%GNUSTEP_DEVEL%%@dirrm System/Library/Headers/GNUstepBase
 @dirrm %%SYSTEMLIBRARY%%/Headers/Foundation
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Documentation/man/man8
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Documentation/man/man1
