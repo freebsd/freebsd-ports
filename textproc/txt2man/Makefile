@@ -14,10 +14,8 @@ MASTER_SITES=	http://mvertes.free.fr/download/
 MAINTAINER=	ijliao@FreeBSD.org
 
 ALL_TARGET=	txt2man.1
+INSTALL_TARGET=	install prefix=${PREFIX}
 
 MAN1=	txt2man.1
-
-post-patch:
-	@${PERL} -pi -e "s,/usr/local,${PREFIX},g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
