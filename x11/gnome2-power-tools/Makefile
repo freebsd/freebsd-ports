@@ -24,7 +24,7 @@ RUN_DEPENDS=	${X11BASE}/lib/gnome-vfs-2.0/modules/libsmb.so:${PORTSDIR}/devel/gn
 		${X11BASE}/libexec/netspeed_applet2:${PORTSDIR}/net/netspeed_applet \
 		${X11BASE}/lib/gedit-2/plugins/libasciitable.so:${PORTSDIR}/editors/gedit-plugins \
 		gdesklets:${PORTSDIR}/deskutils/gdesklets \
-		${X11BASE}/sbin/gkrellmd:${PORTSDIR}/sysutils/gkrellm2 \
+		${LOCALBASE}/sbin/gkrellmd:${PORTSDIR}/sysutils/gkrellm2 \
 		${X11BASE}/libexec/gnome-netstatus-applet:${PORTSDIR}/net/gnomenetstatus \
 		splashsetter:${PORTSDIR}/deskutils/splashsetter \
 		gnome-netinfo:${PORTSDIR}/net/gnomenetwork
