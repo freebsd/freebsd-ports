@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	sfront
-PORTVERSION=	0.7.8
+PORTVERSION=	0.7.9
 CATEGORIES=	audio
 MASTER_SITES=	http://www.cs.berkeley.edu/~lazzaro/sa/
 DISTNAME=	${PORTNAME}
