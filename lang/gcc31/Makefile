@@ -27,6 +27,7 @@ PATCHFILES=	port_gcc31_${SNAPDATE}.diff
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Compiler Collection 3.1 (inprogress version)
 
+NOT_FOR_ARCHS=	amd64 ia64
 NO_CDROM=	'dated material'
 LATEST_LINK=	gcc31
 

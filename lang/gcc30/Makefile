@@ -20,6 +20,7 @@ DISTFILES=	gcc-core-${GCC_REV}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Compiler Collection 3.0.
 
+NOT_FOR_ARCHS=	amd64 sparc64 ia64
 LATEST_LINK=	gcc30
 
 USE_BZIP2=	yes
