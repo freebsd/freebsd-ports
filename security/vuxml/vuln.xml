@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4e4bd2c2-6bd5-11d9-9e1e-c296ac722cb3">
+    <topic>squid -- HTTP response splitting cache pollution attack</topic>
+    <affects>
+      <package>
+	  <name>squid</name>
+	  <range><lt>2.5.7_8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	  <p>According to a whitepaper published by Sanctum, Inc., it
+	    is possible to mount cache poisoning attacks against, among others,
+	    squid proxies by inserting false replies into the HTTP stream.</p>
+	  <p>The squid patches page notes:</p>
+	  <blockquote cite="http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-response_splitting">
+	    <p>This patch additionally strengthens Squid from the HTTP response
+	      attack described by Sanctum.</p>
+	  </blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-response_splitting</url>
+      <url>http://www.squid-cache.org/bugs/show_bug.cgi?id=1200</url>
+      <url>https://www.watchfire.com/securearea/whitepapers.aspx?id=8</url>
+    </references>
+    <dates>
+      <discovery>2004-03-01</discovery>
+      <entry>2004-01-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="338d1723-5f03-11d9-92a7-000bdb1444a4">
     <topic>horde -- XSS vulnerabilities</topic>
     <affects>
