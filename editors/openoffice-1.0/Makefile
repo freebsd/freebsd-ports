@@ -14,17 +14,27 @@ MASTER_SITES=	ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/${PORTVERSION}/ \
 		ftp://gd.tuwien.ac.at/office/openoffice/${PORTVERSION}/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/ \
 		http://people.freebsd.org/~mbr/distfiles/
-DISTFILES=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z \
-		oo_moz1.0RC2_i386_FreeBSD-4.tar.gz
-EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.bz2
+DISTFILES=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z
 
 BROKEN=		"Compiles and installs ok. Gcc bugs and a system rtld-elf bug make it coredumping." \
 		"We have to fix that first. Please be patient.";
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500000
+DISTFILES+=	oo_moz1.0RC3_i386_FreeBSD-5.tar.gz
+.else
+DISTFILES+=	oo_moz1.0RC2_i386_FreeBSD-4.tar.gz
+.endif
+EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.bz2
+
 MAINTAINER=	mbr@FreeBSD.org
+.if ${OSVERSION} < 500000 && !defined(USEPORTGCC295) && !defined(USEPORTGCC31) && !defined(USEPORTGCC32)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
+.endif
 BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk13
+BUILD_DEPENDS+=	imake:${PORTSDIR}/devel/imake-4
 LIB_DEPENDS+=	pth.14:${PORTSDIR}/devel/pth
 
 USE_XLIB=	yes
@@ -34,7 +44,11 @@ USE_GMAKE=	yes
 EXTRACT_BEFORE_ARGS_R= -dc
 EXTRACT_AFTER_ARGS_R= | ${TAR} -xf -
 EXTRACT_CMD_R= ${GZIP_CMD}
+.if ${OSVERSION} > 500000
+EXTRACT_REST=	gpc231.tar.Z oo_moz1.0RC3_i386_FreeBSD-5.tar.gz
+.else
 EXTRACT_REST=	gpc231.tar.Z oo_moz1.0RC2_i386_FreeBSD-4.tar.gz
+.endif
 
 GCC_VERSION!=	${CC} --version
 JDK13DIR?=      ${LOCALBASE}/jdk1.3.1
@@ -45,29 +59,51 @@ USE_AUTOCONF=	yes
 WRKSRC=	${WRKDIR}/oo_1.0_src/config_office
 LD_PATH=	${WRKSRC}/../vos/unxfbsd.pro/lib:${WRKSRC}/../ucbhelper/unxfbsd.pro/lib
 
-CONFIGURE_ARGS+=	--with-stlport4-home=${PREFIX} \
-			--with-jdk-home=${JDK13DIR} \
-			--with-os-version=${OSVERSION}
-
 CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 			PTHREAD_LIBS=${PTHREAD_LIBS}
 
-.include <bsd.port.pre.mk>
+CONFIGURE_ARGS+=	--with-jdk-home=${JDK13DIR} \
+			--with-os-version=${OSVERSION}
+
+.if ${OSVERSION} < 500000
+.if !defined(USEPORTGCC295) && !defined(USEPORTGCC31) && !defined(USEPORTGCC32)
+CONFIGURE_ARGS+=	--with-stlport4-home=${PREFIX}
+.endif
+.else
+CONFIGURE_ARGS+=	--enable-gcc3
+MAKE_ENV=		CC=${CC} CXX=${CXX} CFLAGS=${CFLAGS}
+CONFIGURE_ENV+=		CC=${CC} CXX=${CXX}
+.endif
+
+.if defined(USEPORTGCC295)
+MAKE_ENV=		CC=${PREFIX}/bin/gcc295 CXX=${PREFIX}/bin/g++295 CFLAGS=${CFLAGS}
+CONFIGURE_ENV+=		CC=${PREFIX}/bin/gcc295 CXX=${PREFIX}/bin/g++295
+.endif
+
+.if defined(USEPORTGCC31)
+MAKE_ENV=		CC=${PREFIX}/bin/gcc31 CXX=${PREFIX}/bin/g++31 CFLAGS=${CFLAGS}
+CONFIGURE_ARGS+=	--enable-gcc3
+CONFIGURE_ENV+=		CC=${PREFIX}/bin/gcc31 CXX=${PREFIX}/bin/g++31
+.endif
+
+.if defined(USEPORTGCC32)
+MAKE_ENV=		CC=${PREFIX}/bin/gcc32 CXX=${PREFIX}/bin/g++32 CFLAGS=${CFLAGS}
+CONFIGURE_ARGS+=	--enable-gcc3
+CONFIGURE_ENV+=		CC=${PREFIX}/bin/gcc32 CXX=${PREFIX}/bin/g++32
+.endif
 
 pre-fetch:
-.if ${OSVERSION} > 500000
+.if !defined(USEPORTGCC295) && !defined(USEPORTGCC31) && !defined(USEPORTGCC32)
 	@${ECHO}
-	@${ECHO} OS-VERSION ${OSVERSION} too high
+	@${ECHO} You can compile openoffice with different
+	@${ECHO} gcc compiler versions:
 	@${ECHO}
-	@${ECHO} Openoffice is currently broken on CURRENT and does
-	@${ECHO} not yet work with GCC 3.1
+	@${ECHO} Use: USEPORTGCC295=YES, USEPORTGCC31=YES and
+	@${ECHO} USEPORTGCC32=YES to compile openoffice with your
+	@${ECHO} prefered compiler.
 	@${ECHO}
-	@${ECHO} It also does not work without some important
-	@${ECHO} libc_r gcc fixes.
-	@${ECHO}
-	@${FALSE}
 .endif
-.if ${OSVERSION} < 450005
+.if ${OSVERSION} < 450002
 	@${ECHO}
 	@${ECHO} OS-VERSION ${OSVERSION} too low
 	@${ECHO}
@@ -75,12 +111,6 @@ pre-fetch:
 	@${ECHO} gcc fixes to build. Please upgrade to 4.6
 	@${ECHO} PRE-RELEASE or RELEASE.
 	@${FALSE}
-.endif
-.if ${GCC_VERSION}!="2.95.2" && ${GCC_VERSION}!="2.95.3" && ${GCC_VERSION}!="2.95.4"
-	@ ${ECHO}
-	@ ${ECHO} Openoffice requires gcc 2.95.2 or better
-	@ ${ECHO}
-	@ ${FALSE}
 .endif
 	@${ECHO}
 	@${ECHO} NOTICE:
@@ -103,7 +133,7 @@ pre-extract:
 	@${ECHO}
 .if !defined(DISPLAY) || ${DISPLAY} == ""
 	@ ${ECHO}
-	@ ${ECHO} Cannot open display; please check your DISPLAY variable.
+	@ ${ECHO} "Cannot open display; please check your DISPLAY variable."
 	@ ${ECHO}
 	@ ${FALSE}
 .endif
