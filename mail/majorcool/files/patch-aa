@@ -28,12 +28,3 @@
  cat <<EOM
  
  MajorCool needs to place it's Help file somewhere on the Web server.
-@@ -668,7 +668,7 @@
- Cache file name for each end-user "personality" you install.
- EOM
- 
--	[ "$COOL_CACHE" ] || COOL_CACHE="$DOMO_DIR/.majordomo_keys"
-+	[ "$COOL_CACHE" ] || COOL_CACHE="$DOMO_DIR/tmp/.majordomo_keys"
- 	while : ; do
- 		echo " "
- 		echo "Where do you want to keep the Key Cache file?"
