@@ -1726,6 +1726,7 @@ ezmlm		ports/mail/ezmlm
 ezmlm-idx	ports/mail/ezmlm-idx
 ezmlm-web	ports/mail/ezmlm-web
 f-prot		ports/security/f-prot
+f-prot-sig	ports/security/f-prot-sig
 f2py		ports/lang/f2py
 f77		ports/lang/f77
 f77flow		ports/devel/f77flow
