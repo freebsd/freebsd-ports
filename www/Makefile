@@ -23,6 +23,7 @@
     SUBDIR += asp2php
     SUBDIR += aswedit
     SUBDIR += august
+    SUBDIR += auth_ldap
     SUBDIR += bacon
     SUBDIR += barque
     SUBDIR += bk2site
