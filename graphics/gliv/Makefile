@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	gliv
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://gliv.tuxfamily.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An image viewer that uses Gdk-Pixbuf and OpenGL
 
-LIB_DEPENDS=	gtkgl-2.0.1:${PORTSDIR}/x11-toolkits/gtkglarea2
+LIB_DEPENDS=	gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
 RUN_DEPENDS=	${LOCALBASE}/bin/convert:${PORTSDIR}/graphics/ImageMagick
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		gliv.1
@@ -34,7 +33,6 @@ LDFLAGS+=	-lgnugetopt
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|LDFLAGS="[\$$]CFLAGS|LDFLAGS="\$$LDFLAGS|g ; \
-		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
