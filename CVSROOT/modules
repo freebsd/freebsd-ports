@@ -6648,6 +6648,7 @@ ruby-robjectteam	ports/devel/ruby-robjectteam
 ruby-romp	ports/net/ruby-romp
 ruby-rreadline	ports/devel/ruby-rreadline
 ruby-rss	ports/textproc/ruby-rss
+ruby-rss.alt	ports/textproc/ruby-rss.alt
 ruby-rudl	ports/devel/ruby-rudl
 ruby-sablot	ports/textproc/ruby-sablot
 ruby-sary	ports/textproc/ruby-sary
