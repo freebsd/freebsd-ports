@@ -54,7 +54,7 @@ pre-everything::
 	@${ECHO_MSG} "Use make -DWITH_VOODOO3 if you have a Voodoo3 or Banshee card"
 .endif
 
-post-extract:
+pre-configure:
 	cd $(WRKSRC) && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal
 
 .include <bsd.port.post.mk>
