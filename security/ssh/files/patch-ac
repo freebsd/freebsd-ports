@@ -1,5 +1,5 @@
---- Makefile.in.orig	Thu Jan 17 14:35:34 2002
-+++ Makefile.in	Mon Oct 21 23:43:07 2002
+--- Makefile.in.orig	Thu Jan 17 08:35:34 2002
++++ Makefile.in	Wed Jan  8 18:13:41 2003
 @@ -307,11 +307,13 @@
  
  SHELL = /bin/sh
@@ -18,7 +18,7 @@
  ZLIBDEP		= $(ZLIBDIR)/libz.a
  ZLIBLIBS	= @ssh_zlib_ldadd_options@
  
-@@ -418,7 +420,7 @@
+@@ -418,17 +420,19 @@
  	$(CC) -o rfc-pg rfc-pg.o
  
  .c.o:
@@ -27,7 +27,32 @@
  
  sshd: $(SSHD_OBJS) $(GMPDEP) $(RSAREFDEP) $(ZLIBDEP)
  	-rm -f sshd
-@@ -461,12 +463,12 @@
+ 	$(CC) $(LDFLAGS) -o sshd $(SSHD_OBJS) \
+-		$(GMPLIBS) $(ZLIBLIBS) $(WRAPLIBS) $(LIBS) $(KERBEROS_LIBS)
++		$(KERBEROS_LIBS) \
++		$(GMPLIBS) $(ZLIBLIBS) $(WRAPLIBS) $(LIBS)
+ 
+ ssh: $(SSH_OBJS) $(GMPDEP) $(RSAREFDEP) $(ZLIBDEP)
+ 	-rm -f ssh
+ 	$(CC) $(LDFLAGS) -o ssh $(SSH_OBJS) \
+-		$(GMPLIBS) $(ZLIBLIBS) $(WRAPLIBS) $(LIBS) $(KERBEROS_LIBS)
++		$(KERBEROS_LIBS) \
++		$(GMPLIBS) $(ZLIBLIBS) $(WRAPLIBS) $(LIBS)
+ 
+ ssh-keygen: $(KEYGEN_OBJS) $(GMPDEP) $(RSAREFDEP)
+ 	-rm -f ssh-keygen
+@@ -436,7 +440,9 @@
+ 
+ ssh-agent: $(AGENT_OBJS) $(GMPDEP) $(RSAREFDEP)
+ 	-rm -f ssh-agent
+-	$(CC) $(LDFLAGS) -o ssh-agent $(AGENT_OBJS) $(GMPLIBS) $(LIBS) $(KERBEROS_LIBS) 
++	$(CC) $(LDFLAGS) -o ssh-agent $(AGENT_OBJS) \
++	$(KERBEROS_LIBS) \
++	$(GMPLIBS) $(LIBS)
+ 
+ ssh-add: $(ADD_OBJS) $(GMPDEP) $(RSAREFDEP)
+ 	-rm -f ssh-add
+@@ -461,12 +467,12 @@
  	sed "s#&PERL&#$(PERL)#" <$(srcdir)/make-ssh-known-hosts.pl >make-ssh-known-hosts
  	chmod +x make-ssh-known-hosts
  
@@ -43,7 +68,7 @@
  	-if test '!' -d $(ZLIBDIR); then \
  	  mkdir $(ZLIBDIR); \
  	  cp $(srcdir)/$(ZLIBDIR)/Makefile $(ZLIBDIR); \
-@@ -530,7 +532,7 @@
+@@ -530,7 +536,7 @@
  # (otherwise it can only log in as the user it runs as, and must be
  # bound to a non-privileged port).  Also, password authentication may
  # not be available if non-root and using shadow passwords.
@@ -52,7 +77,7 @@
  	-rm -f $(install_prefix)$(bindir)/ssh1.old
  	-chmod 755 $(install_prefix)$(bindir)/ssh1
  	-chmod 755 $(install_prefix)$(bindir)/ssh
-@@ -756,7 +758,7 @@
+@@ -756,7 +762,7 @@
  	 (echo "s/\.$$old_version\"/.$$new_version\"/g"; echo w; echo q) | ed $(srcdir)/version.h >/dev/null
  
  depend:
