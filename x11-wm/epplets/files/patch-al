@@ -1,0 +1,226 @@
+--- epplets/Makefile.in.orig	Mon Jul 17 23:26:55 2000
++++ epplets/Makefile.in	Mon Jul 17 23:32:29 2000
+@@ -75,7 +75,7 @@
+ LD = @LD@
+ LDFLAGS = @LDFLAGS@
+ LIBGTOP_CONFIG = @LIBGTOP_CONFIG@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -lepplet
+ LIBTOOL = @LIBTOOL@
+ LN_S = @LN_S@
+ MAINT = @MAINT@
+@@ -108,7 +108,7 @@
+ E_Mixer_epplet_SOURCES = E-Mixer.c
+ E_Mixer_epplet_DEPENDENCIES = $(top_srcdir)/api/libepplet.la
+ E_Mixer_epplet_LDFLAGS = -rpath $(libdir):$(pkglibdir)
+-E_Mixer_epplet_LDADD = $(top_builddir)/api/libepplet.la -L$(libdir) -L$(prefix)/lib $(LIBS) $(X_LIBS) @SGI_LIBS@
++E_Mixer_epplet_LDADD = -L$(libdir) -L$(prefix)/lib $(LIBS) $(X_LIBS) @SGI_LIBS@
+ 
+ Emix_epplet_SOURCES = Emix.c
+ Emix_epplet_DEPENDENCIES = $(top_srcdir)/api/libepplet.la
+@@ -117,7 +117,7 @@
+ E_PlayCD_epplet_SOURCES = E-PlayCD.c
+ E_PlayCD_epplet_DEPENDENCIES = $(top_srcdir)/api/libepplet.la
+ E_PlayCD_epplet_LDFLAGS = -rpath $(libdir):$(pkglibdir)
+-E_PlayCD_epplet_LDADD = $(top_builddir)/api/libepplet.la -L$(libdir) -L$(prefix)/lib $(LIBS) $(X_LIBS) -lcdaudio
++E_PlayCD_epplet_LDADD = -L$(libdir) -L$(prefix)/lib $(LIBS) $(X_LIBS) -lcdaudio
+ 
+ EppletTest_epplet_SOURCES = TestEpplet.c
+ EppletTest_epplet_DEPENDENCIES = $(top_srcdir)/api/libepplet.la
+@@ -139,7 +139,7 @@
+ E_Load_epplet_SOURCES = E-Load.c
+ E_Load_epplet_DEPENDENCIES = $(top_srcdir)/api/libepplet.la
+ E_Load_epplet_LDFLAGS = -rpath $(libdir):$(pkglibdir)
+-E_Load_epplet_LDADD = $(top_builddir)/api/libepplet.la -L$(libdir) -L$(prefix)/lib $(LIBS) $(X_LIBS) $(GTLIBS)
++E_Load_epplet_LDADD = -L$(libdir) -L$(prefix)/lib $(LIBS) $(X_LIBS) $(GTLIBS)
+ 
+ E_Clock_epplet_SOURCES = E-Clock.c
+ E_Clock_epplet_DEPENDENCIES = $(top_srcdir)/api/libepplet.la
+@@ -172,7 +172,7 @@
+ E_Cpu_epplet_SOURCES = E-Cpu.c proc.h
+ E_Cpu_epplet_DEPENDENCIES = $(top_srcdir)/api/libepplet.la
+ E_Cpu_epplet_LDFLAGS = -rpath $(libdir):$(pkglibdir)
+-E_Cpu_epplet_LDADD = $(top_builddir)/api/libepplet.la -L$(libdir) -L$(prefix)/lib $(LIBS) $(X_LIBS) $(GTLIBS)
++E_Cpu_epplet_LDADD = -L$(libdir) -L$(prefix)/lib $(LIBS) $(X_LIBS) $(GTLIBS)
+ 
+ E_Power_epplet_SOURCES = E-Power.c
+ E_Power_epplet_DEPENDENCIES = $(top_srcdir)/api/libepplet.la
+@@ -185,7 +185,7 @@
+ E_MemWatch_epplet_SOURCES = E-MemWatch.c
+ E_MemWatch_epplet_DEPENDENCIES = $(top_srcdir)/api/libepplet.la
+ E_MemWatch_epplet_LDFLAGS = -rpath $(libdir):$(pkglibdir)
+-E_MemWatch_epplet_LDADD = $(top_builddir)/api/libepplet.la -L$(libdir) -L$(prefix)/lib $(LIBS) $(X_LIBS) $(GTLIBS)
++E_MemWatch_epplet_LDADD = -L$(libdir) -L$(prefix)/lib $(LIBS) $(X_LIBS) $(GTLIBS)
+ 
+ E_Disk_epplet_SOURCES = E-Disk.c
+ E_Disk_epplet_DEPENDENCIES = $(top_srcdir)/api/libepplet.la
+@@ -194,7 +194,7 @@
+ E_Sys_epplet_SOURCES = E-Sys.c
+ E_Sys_epplet_DEPENDENCIES = $(top_srcdir)/api/libepplet.la
+ E_Sys_epplet_LDFLAGS = -rpath $(libdir):$(pkglibdir)
+-E_Sys_epplet_LDADD = $(top_builddir)/api/libepplet.la -L$(libdir) -L$(prefix)/lib $(LIBS) $(X_LIBS) $(GTLIBS)
++E_Sys_epplet_LDADD = -L$(libdir) -L$(prefix)/lib $(LIBS) $(X_LIBS) $(GTLIBS)
+ 
+ E_Slides_epplet_SOURCES = E-Slides.c
+ E_Slides_epplet_DEPENDENCIES = $(top_srcdir)/api/libepplet.la
+@@ -221,14 +221,14 @@
+ E_UrlWatch_epplet_SOURCES = E-UrlWatch.c E-UrlWatch.h utils.c utils.h
+ E_UrlWatch_epplet_DEPENDENCIES = $(top_srcdir)/api/libepplet.la
+ E_UrlWatch_epplet_LDFLAGS = -rpath $(libdir):$(pkglibdir) $(X_LIBS)
+-E_UrlWatch_epplet_LDADD = $(top_builddir)/api/libepplet.la -L$(libdir) -L$(prefix)/lib $(LIBS) $(X_LIBS)
++E_UrlWatch_epplet_LDADD = -L$(libdir) -L$(prefix)/lib $(LIBS) $(X_LIBS)
+ 
+ E_Mountbox_epplet_SOURCES = E-Mountbox.c E-Mountbox.h
+ E_Mountbox_epplet_DEPENDENCIES = $(top_srcdir)/api/libepplet.la
+ E_Mountbox_epplet_LDFLAGS = -rpath $(libdir):$(pkglibdir)
+ 
+ INCLUDES = -I. -I$(top_builddir)/api -I$(top_srcdir)/api -I$(top_srcdir) -I.. -I$(includedir) -I$(prefix)/include -I/usr/local/include $(X_CFLAGS) @SGI_DEFINES@
+-LDADD = $(top_builddir)/api/libepplet.la -L$(libdir) -L$(prefix)/lib -L/usr/local/lib $(LIBS) $(X_LIBS)
++LDADD = -L$(libdir) -L$(prefix)/lib -L/usr/local/lib $(LIBS) $(X_LIBS)
+ 
+ # You can use the following command to generate this line:
+ # ABOUT_DOCS = `(cd epplets && ls -1d *.ABOUT/* 2>/dev/null | grep -v CVS)`
+@@ -397,115 +397,115 @@
+ 
+ maintainer-clean-libtool:
+ 
+-EppletTest.epplet: $(EppletTest_epplet_OBJECTS) $(EppletTest_epplet_DEPENDENCIES)
++EppletTest.epplet: $(EppletTest_epplet_OBJECTS)
+ 	@rm -f EppletTest.epplet
+ 	$(LINK) $(EppletTest_epplet_LDFLAGS) $(EppletTest_epplet_OBJECTS) $(EppletTest_epplet_LDADD) $(LIBS)
+ 
+-EppletConfigTest.epplet: $(EppletConfigTest_epplet_OBJECTS) $(EppletConfigTest_epplet_DEPENDENCIES)
++EppletConfigTest.epplet: $(EppletConfigTest_epplet_OBJECTS)
+ 	@rm -f EppletConfigTest.epplet
+ 	$(LINK) $(EppletConfigTest_epplet_LDFLAGS) $(EppletConfigTest_epplet_OBJECTS) $(EppletConfigTest_epplet_LDADD) $(LIBS)
+ 
+-E-Mixer.epplet: $(E_Mixer_epplet_OBJECTS) $(E_Mixer_epplet_DEPENDENCIES)
++E-Mixer.epplet: $(E_Mixer_epplet_OBJECTS)
+ 	@rm -f E-Mixer.epplet
+ 	$(LINK) $(E_Mixer_epplet_LDFLAGS) $(E_Mixer_epplet_OBJECTS) $(E_Mixer_epplet_LDADD) $(LIBS)
+ 
+-Emix.epplet: $(Emix_epplet_OBJECTS) $(Emix_epplet_DEPENDENCIES)
++Emix.epplet: $(Emix_epplet_OBJECTS)
+ 	@rm -f Emix.epplet
+ 	$(LINK) $(Emix_epplet_LDFLAGS) $(Emix_epplet_OBJECTS) $(Emix_epplet_LDADD) $(LIBS)
+ 
+-E-PlayCD.epplet: $(E_PlayCD_epplet_OBJECTS) $(E_PlayCD_epplet_DEPENDENCIES)
++E-PlayCD.epplet: $(E_PlayCD_epplet_OBJECTS)
+ 	@rm -f E-PlayCD.epplet
+ 	$(LINK) $(E_PlayCD_epplet_LDFLAGS) $(E_PlayCD_epplet_OBJECTS) $(E_PlayCD_epplet_LDADD) $(LIBS)
+ 
+-E-Load.epplet: $(E_Load_epplet_OBJECTS) $(E_Load_epplet_DEPENDENCIES)
++E-Load.epplet: $(E_Load_epplet_OBJECTS)
+ 	@rm -f E-Load.epplet
+ 	$(LINK) $(E_Load_epplet_LDFLAGS) $(E_Load_epplet_OBJECTS) $(E_Load_epplet_LDADD) $(LIBS)
+ 
+-E-Clock.epplet: $(E_Clock_epplet_OBJECTS) $(E_Clock_epplet_DEPENDENCIES)
++E-Clock.epplet: $(E_Clock_epplet_OBJECTS)
+ 	@rm -f E-Clock.epplet
+ 	$(LINK) $(E_Clock_epplet_LDFLAGS) $(E_Clock_epplet_OBJECTS) $(E_Clock_epplet_LDADD) $(LIBS)
+ 
+-E-Time.epplet: $(E_Time_epplet_OBJECTS) $(E_Time_epplet_DEPENDENCIES)
++E-Time.epplet: $(E_Time_epplet_OBJECTS)
+ 	@rm -f E-Time.epplet
+ 	$(LINK) $(E_Time_epplet_LDFLAGS) $(E_Time_epplet_OBJECTS) $(E_Time_epplet_LDADD) $(LIBS)
+ 
+-E-Net.epplet: $(E_Net_epplet_OBJECTS) $(E_Net_epplet_DEPENDENCIES)
++E-Net.epplet: $(E_Net_epplet_OBJECTS)
+ 	@rm -f E-Net.epplet
+ 	$(LINK) $(E_Net_epplet_LDFLAGS) $(E_Net_epplet_OBJECTS) $(E_Net_epplet_LDADD) $(LIBS)
+ 
+-E-Cpu.epplet: $(E_Cpu_epplet_OBJECTS) $(E_Cpu_epplet_DEPENDENCIES)
++E-Cpu.epplet: $(E_Cpu_epplet_OBJECTS)
+ 	@rm -f E-Cpu.epplet
+ 	$(LINK) $(E_Cpu_epplet_LDFLAGS) $(E_Cpu_epplet_OBJECTS) $(E_Cpu_epplet_LDADD) $(LIBS)
+ 
+-E-Biff.epplet: $(E_Biff_epplet_OBJECTS) $(E_Biff_epplet_DEPENDENCIES)
++E-Biff.epplet: $(E_Biff_epplet_OBJECTS)
+ 	@rm -f E-Biff.epplet
+ 	$(LINK) $(E_Biff_epplet_LDFLAGS) $(E_Biff_epplet_OBJECTS) $(E_Biff_epplet_LDADD) $(LIBS)
+ 
+-E-Power.epplet: $(E_Power_epplet_OBJECTS) $(E_Power_epplet_DEPENDENCIES)
++E-Power.epplet: $(E_Power_epplet_OBJECTS)
+ 	@rm -f E-Power.epplet
+ 	$(LINK) $(E_Power_epplet_LDFLAGS) $(E_Power_epplet_OBJECTS) $(E_Power_epplet_LDADD) $(LIBS)
+ 
+-E-MemWatch.epplet: $(E_MemWatch_epplet_OBJECTS) $(E_MemWatch_epplet_DEPENDENCIES)
++E-MemWatch.epplet: $(E_MemWatch_epplet_OBJECTS)
+ 	@rm -f E-MemWatch.epplet
+ 	$(LINK) $(E_MemWatch_epplet_LDFLAGS) $(E_MemWatch_epplet_OBJECTS) $(E_MemWatch_epplet_LDADD) $(LIBS)
+ 
+-E-Disk.epplet: $(E_Disk_epplet_OBJECTS) $(E_Disk_epplet_DEPENDENCIES)
++E-Disk.epplet: $(E_Disk_epplet_OBJECTS)
+ 	@rm -f E-Disk.epplet
+ 	$(LINK) $(E_Disk_epplet_LDFLAGS) $(E_Disk_epplet_OBJECTS) $(E_Disk_epplet_LDADD) $(LIBS)
+ 
+-E-Areas.epplet: $(E_Areas_epplet_OBJECTS) $(E_Areas_epplet_DEPENDENCIES)
++E-Areas.epplet: $(E_Areas_epplet_OBJECTS)
+ 	@rm -f E-Areas.epplet
+ 	$(LINK) $(E_Areas_epplet_LDFLAGS) $(E_Areas_epplet_OBJECTS) $(E_Areas_epplet_LDADD) $(LIBS)
+ 
+-E-Magic.epplet: $(E_Magic_epplet_OBJECTS) $(E_Magic_epplet_DEPENDENCIES)
++E-Magic.epplet: $(E_Magic_epplet_OBJECTS)
+ 	@rm -f E-Magic.epplet
+ 	$(LINK) $(E_Magic_epplet_LDFLAGS) $(E_Magic_epplet_OBJECTS) $(E_Magic_epplet_LDADD) $(LIBS)
+ 
+-E-NetFlame.epplet: $(E_NetFlame_epplet_OBJECTS) $(E_NetFlame_epplet_DEPENDENCIES)
++E-NetFlame.epplet: $(E_NetFlame_epplet_OBJECTS)
+ 	@rm -f E-NetFlame.epplet
+ 	$(LINK) $(E_NetFlame_epplet_LDFLAGS) $(E_NetFlame_epplet_OBJECTS) $(E_NetFlame_epplet_LDADD) $(LIBS)
+ 
+-E-Sys.epplet: $(E_Sys_epplet_OBJECTS) $(E_Sys_epplet_DEPENDENCIES)
++E-Sys.epplet: $(E_Sys_epplet_OBJECTS)
+ 	@rm -f E-Sys.epplet
+ 	$(LINK) $(E_Sys_epplet_LDFLAGS) $(E_Sys_epplet_OBJECTS) $(E_Sys_epplet_LDADD) $(LIBS)
+ 
+-E-ScreenShoot.epplet: $(E_ScreenShoot_epplet_OBJECTS) $(E_ScreenShoot_epplet_DEPENDENCIES)
++E-ScreenShoot.epplet: $(E_ScreenShoot_epplet_OBJECTS)
+ 	@rm -f E-ScreenShoot.epplet
+ 	$(LINK) $(E_ScreenShoot_epplet_LDFLAGS) $(E_ScreenShoot_epplet_OBJECTS) $(E_ScreenShoot_epplet_LDADD) $(LIBS)
+ 
+-E-Slides.epplet: $(E_Slides_epplet_OBJECTS) $(E_Slides_epplet_DEPENDENCIES)
++E-Slides.epplet: $(E_Slides_epplet_OBJECTS)
+ 	@rm -f E-Slides.epplet
+ 	$(LINK) $(E_Slides_epplet_LDFLAGS) $(E_Slides_epplet_OBJECTS) $(E_Slides_epplet_LDADD) $(LIBS)
+ 
+-E-Xss.epplet: $(E_Xss_epplet_OBJECTS) $(E_Xss_epplet_DEPENDENCIES)
++E-Xss.epplet: $(E_Xss_epplet_OBJECTS)
+ 	@rm -f E-Xss.epplet
+ 	$(LINK) $(E_Xss_epplet_LDFLAGS) $(E_Xss_epplet_OBJECTS) $(E_Xss_epplet_LDADD) $(LIBS)
+ 
+-E-Mountbox.epplet: $(E_Mountbox_epplet_OBJECTS) $(E_Mountbox_epplet_DEPENDENCIES)
++E-Mountbox.epplet: $(E_Mountbox_epplet_OBJECTS)
+ 	@rm -f E-Mountbox.epplet
+ 	$(LINK) $(E_Mountbox_epplet_LDFLAGS) $(E_Mountbox_epplet_OBJECTS) $(E_Mountbox_epplet_LDADD) $(LIBS)
+ 
+-E-Exec.epplet: $(E_Exec_epplet_OBJECTS) $(E_Exec_epplet_DEPENDENCIES)
++E-Exec.epplet: $(E_Exec_epplet_OBJECTS)
+ 	@rm -f E-Exec.epplet
+ 	$(LINK) $(E_Exec_epplet_LDFLAGS) $(E_Exec_epplet_OBJECTS) $(E_Exec_epplet_LDADD) $(LIBS)
+ 
+-E-SD.epplet: $(E_SD_epplet_OBJECTS) $(E_SD_epplet_DEPENDENCIES)
++E-SD.epplet: $(E_SD_epplet_OBJECTS)
+ 	@rm -f E-SD.epplet
+ 	$(LINK) $(E_SD_epplet_LDFLAGS) $(E_SD_epplet_OBJECTS) $(E_SD_epplet_LDADD) $(LIBS)
+ 
+-E-ScreenSave.epplet: $(E_ScreenSave_epplet_OBJECTS) $(E_ScreenSave_epplet_DEPENDENCIES)
++E-ScreenSave.epplet: $(E_ScreenSave_epplet_OBJECTS)
+ 	@rm -f E-ScreenSave.epplet
+ 	$(LINK) $(E_ScreenSave_epplet_LDFLAGS) $(E_ScreenSave_epplet_OBJECTS) $(E_ScreenSave_epplet_LDADD) $(LIBS)
+ 
+-E-NetGraph.epplet: $(E_NetGraph_epplet_OBJECTS) $(E_NetGraph_epplet_DEPENDENCIES)
++E-NetGraph.epplet: $(E_NetGraph_epplet_OBJECTS)
+ 	@rm -f E-NetGraph.epplet
+ 	$(LINK) $(E_NetGraph_epplet_LDFLAGS) $(E_NetGraph_epplet_OBJECTS) $(E_NetGraph_epplet_LDADD) $(LIBS)
+ 
+-E-MoonClock.epplet: $(E_MoonClock_epplet_OBJECTS) $(E_MoonClock_epplet_DEPENDENCIES)
++E-MoonClock.epplet: $(E_MoonClock_epplet_OBJECTS)
+ 	@rm -f E-MoonClock.epplet
+ 	$(LINK) $(E_MoonClock_epplet_LDFLAGS) $(E_MoonClock_epplet_OBJECTS) $(E_MoonClock_epplet_LDADD) $(LIBS)
+ 
+-E-UrlWatch.epplet: $(E_UrlWatch_epplet_OBJECTS) $(E_UrlWatch_epplet_DEPENDENCIES)
++E-UrlWatch.epplet: $(E_UrlWatch_epplet_OBJECTS)
+ 	@rm -f E-UrlWatch.epplet
+ 	$(LINK) $(E_UrlWatch_epplet_LDFLAGS) $(E_UrlWatch_epplet_OBJECTS) $(E_UrlWatch_epplet_LDADD) $(LIBS)
+ 

@@ -13,7 +13,8 @@ DISTNAME=	epplet-base-${PORTVERSION}
 
 MAINTAINER=	nakai@FreeBSD.org
 
-LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop
+LIB_DEPENDS=	gtop.1:${PORTSDIR}/devel/libgtop \
+		epplet.1:${PORTSDIR}/x11-wm/libepplet
 BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 
 WRKSRC=		${WRKDIR}/Epplets-0.5
