@@ -2,3 +2,7 @@ mpg123 reads one or more files (or standard input if ``-'' is
 specified) or URLs and plays them on the audio device (default) or
 outputs them to stdout.  file/URL is assumed to be an MPEG-1/2 audio
 bit stream.
+
+URL:	http://www-ti.informatik.uni-tuebingen.de/~hippm/mpg123.html
+	and 	
+	http://mpg.123.org	 
