@@ -1,0 +1,14 @@
+%%PYTHON_SITELIBDIR%%/scgi/__init__.py
+%%PYTHON_SITELIBDIR%%/scgi/__init__.pyc
+%%PYTHON_SITELIBDIR%%/scgi/__init__.pyo
+%%PYTHON_SITELIBDIR%%/scgi/quixote_handler.py
+%%PYTHON_SITELIBDIR%%/scgi/quixote_handler.pyc
+%%PYTHON_SITELIBDIR%%/scgi/quixote_handler.pyo
+%%PYTHON_SITELIBDIR%%/scgi/scgi_server.py
+%%PYTHON_SITELIBDIR%%/scgi/scgi_server.pyc
+%%PYTHON_SITELIBDIR%%/scgi/scgi_server.pyo
+%%PYTHON_SITELIBDIR%%/scgi/test_passfd.py
+%%PYTHON_SITELIBDIR%%/scgi/test_passfd.pyc
+%%PYTHON_SITELIBDIR%%/scgi/test_passfd.pyo
+%%PYTHON_SITELIBDIR%%/scgi/passfd.so
+@dirrm %%PYTHON_SITELIBDIR%%/scgi
