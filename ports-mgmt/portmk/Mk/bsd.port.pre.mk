@@ -4,7 +4,7 @@
 # $FreeBSD$
 #
 
-PORTMK_VERSION=	20040705
+PORTMK_VERSION=	20040717
 
 .if defined(_PREMKINCLUDED)
 check-makefile::
@@ -86,6 +86,10 @@ ZIPDEPENDS=	yes
 WHICH?=		/usr/bin/which
 XARGS?=		/usr/bin/xargs
 YACC?=		/usr/bin/yacc
+
+.if !defined(UID)
+UID!=	${ID} -u
+.endif
 
 # ECHO is defined in /usr/share/mk/sys.mk, which can either be "echo",
 # or "true" if the make flag -s is given.  Use ECHO_CMD where you mean
@@ -174,7 +178,7 @@ UNIQUENAME?=	${PKGNAMEPREFIX}${PORTNAME}
 .endif
 OPTIONSFILE?=	${PORT_DBDIR}/${UNIQUENAME}/options
 _OPTIONSFILE!=	${ECHO_CMD} "${OPTIONSFILE}"
-.if defined(OPTIONS)
+.if defined(OPTIONS) && !defined(_OPTIONSNG_READ)
 .if exists(${_OPTIONSFILE}) && !make(rmconfig)
 .include "${_OPTIONSFILE}"
 .endif
@@ -219,9 +223,9 @@ DISTNAME?=	${PORTNAME}-${PORTVERSION}
 # tree we are and thus can't go relative.  They can, of course, be overridden
 # by individual Makefiles or local system make configuration.
 PORTSDIR?=		/usr/ports
-LOCALBASE?=		${DESTDIR}/usr/local
-X11BASE?=		${DESTDIR}/usr/X11R6
-LINUXBASE?=		${DESTDIR}/compat/linux
+LOCALBASE?=		/usr/local
+X11BASE?=		/usr/X11R6
+LINUXBASE?=		/compat/linux
 DISTDIR?=		${PORTSDIR}/distfiles
 _DISTDIR?=		${DISTDIR}/${DIST_SUBDIR}
 .if ${OSVERSION} >= 500036

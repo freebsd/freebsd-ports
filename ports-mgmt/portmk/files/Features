@@ -61,6 +61,20 @@ Useful for sites that have ...?file=xxx&download=true or cvsweb style download s
 
 For people behind firewalls that need the extended capabilities. Be aware that some extra features (like size checking) are currently not availible with those download clients.
 
-- eliminated the master-site-{all,ALL,default,DEFAULT,*} targets, since they are of little use
+* next generation options handling (work in progress)
 
-In case someone needs them, I can add them back again.
+- only prototype functionality is available
+
+- saved configuration affects clean, describe etc.
+
+- the port is build with the correct default options when not configured
+
+- honours options given on the command line, so that portupgrade et al still work
+
+- custom configurations are available before bsd.port.pre.mk is included
+
+- completely unintrusive, a port doesn't need to be configured when the defaults are acceptable
+
+* ability to build packages without the need to install a port (work in progress)
+
+- not available yet
