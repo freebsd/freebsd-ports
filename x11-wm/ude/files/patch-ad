@@ -1,11 +1,11 @@
---- Makefile.in.orig	Sun Mar 19 10:25:32 2000
-+++ Makefile.in	Sun Nov 12 13:18:17 2000
-@@ -85,7 +85,7 @@
- VERSION = @VERSION@
- l = @l@
+--- Makefile.in.orig	Mon Dec  1 00:57:41 2003
++++ Makefile.in	Sun Dec  7 22:42:04 2003
+@@ -142,7 +142,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = intl m4  config extras gfx doc lib uwm po
++SUBDIRS = intl m4  config extras gfx lib uwm po
+ EXTRA_DIST = config.rpath mkinstalldirs  ude.spec.in INSTALL.redhat REQUIREMENTS INSTALL.UDE 
  
--SUBDIRS = config extras gfx doc lib intl uwm po
-+SUBDIRS = config extras gfx lib intl uwm po
- EXTRA_DIST = ude.spec.in INSTALL.redhat REQUIREMENTS INSTALL.UDE 
- ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
- mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ ACLOCAL_AMFLAGS = -I m4
