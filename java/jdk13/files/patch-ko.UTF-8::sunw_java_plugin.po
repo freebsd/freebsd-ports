@@ -1,0 +1,25 @@
+$FreeBSD: /tmp/pcvs/ports/java/jdk13/files/Attic/patch-ko.UTF-8::sunw_java_plugin.po,v 1.1 2002-06-05 21:43:14 kris Exp $
+
+--- ../ext/plugin/oji-plugin/src/motif/resources/ko.UTF-8/sunw_java_plugin.po.orig	Sun May  6 15:15:35 2001
++++ ../ext/plugin/oji-plugin/src/motif/resources/ko.UTF-8/sunw_java_plugin.po	Sat Apr 27 01:06:46 2002
+@@ -21,20 +21,12 @@
+ msgstr "플러그인: 다음으로부터 Netscape 프락시 구성 URL을 읽을 수 없습니다.\n"
+ msgid  "Plugin: couldn't read directory"
+ msgstr "플러그인: 디렉토리를 읽을 수 없습니다."
+-msgid  "plugin: java process exited with status"
+-msgstr "플러그인: 현재 상태로 자바 프로세스를 종료합니다."
+ msgid  "plugin: java process died due to signal"
+ msgstr "플러그인: 신호로 인해 자바 프로세스가 중단되었습니다."
+ msgid  "  a core file was generated"
+ msgstr "  코어 파일이 생성되었습니다."
+-msgid  "Plugin: trouble with work request from child"
+-msgstr "플러그인: 하위로부터의 작업 요청에 문제가 발생했습니다."
+ msgid  "Plugin: can't find IP address for current host"
+ msgstr "플러그인: 현재 호스트의 IP 주소를 찾을 수 없습니다."
+-msgid  "Plugin: trouble reading Netscape proxy  configuration URL from\n"
+-msgstr "플러그인: 다음으로부터 Netscape 프락시 구성 URL을 읽을 수 없습니다.\n"
+-msgid  "Plugin: can't find plugins/../java directory"
+-msgstr "플러그인: plugins/../java 디렉토리를 찾을 수 없습니다."
+ msgid  "Plugin: unexpected work request from child"
+ msgstr "플러그인: 하위로부터의 예상치 못한 작업 요청입니다."
+ msgid  "Plugin: Java VM process has died."
