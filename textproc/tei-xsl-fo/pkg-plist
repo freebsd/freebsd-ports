@@ -8,11 +8,6 @@ share/xsl/tei/fo/tei-makecolspec.xsl
 share/xsl/tei/fo/tei-markers.xsl
 share/xsl/tei/fo/tei-math.xsl
 share/xsl/tei/fo/tei-notes.xsl
-share/xsl/tei/fo/tei-oddlib.xsl
-share/xsl/tei/fo/tei-odds.xsl
-share/xsl/tei/fo/tei-oucs.xsl
-share/xsl/tei/fo/tei-oucsdoc.xsl
-share/xsl/tei/fo/tei-oucsheader.xsl
 share/xsl/tei/fo/tei-para.xsl
 share/xsl/tei/fo/tei-param.xsl
 share/xsl/tei/fo/tei-poetry.xsl
