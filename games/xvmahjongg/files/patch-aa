@@ -1,0 +1,20 @@
+--- image-stuff/Makefile	Thu Dec 19 23:01:20 1991
++++ /home/andy/tmp/wrk/image-stuff/Makefile	Sat Mar 21 23:44:49 1998
+@@ -18,13 +18,13 @@
+ 	cd ..; image-stuff/Img-mk-swap
+ 
+ ../images/color: ../images
+-	mkdir $@
++	- mkdir $@
+ 
+ ../images/bandw: ../images
+-	mkdir $@
++	- mkdir $@
+ 
+ ../images/swap: ../images
+-	mkdir $@
++	- mkdir $@
+ 
+ ../images:
+-	mkdir $@
++	- mkdir $@
