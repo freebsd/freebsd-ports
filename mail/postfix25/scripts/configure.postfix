@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix25/scripts/Attic/configure.postfix,v 1.43 2004-02-20 15:36:26 osa Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix25/scripts/Attic/configure.postfix,v 1.44 2004-03-10 22:54:03 ale Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -29,13 +29,11 @@ IPv6TLS		"IPv6 support with SSL and TLS" "$status_IPv6TLS" \
 DB3		"Berkeley DB3 (required if SASL also built with DB3)" "$status_DB3" \
 DB40		"Berkeley DB4.0 (required if SASL also built with DB4.0)" "$status_DB40" \
 DB41		"Berkeley DB4.1 (required if SASL also built with DB4.1)" "$status_DB41" \
-MySQL		"MySQL map lookups" "$status_MySQL" \
+MySQL		"MySQL map lookups (choose version with WITH_MYSQL_VER)" "$status_MySQL" \
 PgSQL		"PostgreSQL v7.4 map lookups" "$status_PgSQL" \
 PgSQL73		"PostgreSQL v7.3 map lookups" "$status_PgSQL73" \
 PgSQL72		"PostgreSQL v7.2 map lookups" "$status_PgSQL72" \
-OpenLDAP12	"OpenLDAP 1.2 map lookups" "$status_OpenLDAP" \
-OpenLDAP20	"OpenLDAP 2.0 map lookups" "$status_OpenLDAP" \
-OpenLDAP21	"OpenLDAP 2.1 map lookups" "$status_OpenLDAP" \
+OpenLDAP	"OpenLDAP map lookups (choose ver. with USE_OPENLDAP_VER)" "$status_OpenLDAP" \
 Test		"SMTP/LMTP test server and generator" "$status_Test" \
 2> $tempfile
 
@@ -80,6 +78,7 @@ while [ "$1" ]; do
                         echo "SASL_SUFFIX=      +sasl"
                         if [ -f ${PREFIX}/lib/libsasl.a ]; then
                                 if nm ${PREFIX}/lib/libsasl.a | grep -wq "mysql_verify_password"; then
+					echo "USE_MYSQL=YES"
                                         echo "POSTFIX_CCARGS+=  -DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
                                         echo "POSTFIX_AUXLIBS+= \${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
                                 fi
@@ -93,6 +92,7 @@ while [ "$1" ]; do
 			echo "SASL_SUFFIX=	+sasl2"
 			if [ -f ${PREFIX}/lib/libsasl2.a ]; then
 				if nm ${PREFIX}/lib/libsasl2.a | grep -wq "mysql_verify_password"; then
+					echo "USE_MYSQL=YES"
 					echo "POSTFIX_CCARGS+=  -DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
 					echo "POSTFIX_AUXLIBS+= \${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
 				fi
@@ -150,7 +150,7 @@ while [ "$1" ]; do
 			DB41_SELECTED="YES"
 			;;
 		MySQL)
-			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/mysql/libmysqlclient.a:\${PORTSDIR}/databases/mysql323-client"
+			echo "USE_MYSQL=YES"
 			echo "POSTFIX_CCARGS+=	-DHAS_MYSQL -I\${LOCALBASE}/include/mysql"
 			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
 			echo "MYSQL_SUFFIX=	+mysql"
@@ -185,23 +185,11 @@ while [ "$1" ]; do
 			echo "PATCH_DIST_STRIP= -p1"
 			echo "PGSQL_SUFFIX=	+pgsql"
 			;;
-		OpenLDAP12)
-			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libldap.a:\${PORTSDIR}/net/openldap12"
-			echo "POSTFIX_CCARGS+=	-DHAS_LDAP -I\${LOCALBASE}/include"
-			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/libldap.a \${PREFIX}/lib/liblber.a"
-			echo "OPENLDAP_SUFFIX=	+openldap12"
-			;;
-		OpenLDAP20)
-			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libldap.a:\${PORTSDIR}/net/openldap20-client"
+		OpenLDAP)
+			echo "USE_OPENLDAP=YES"
 			echo "POSTFIX_CCARGS+=	-DHAS_LDAP -I\${LOCALBASE}/include"
  			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -lldap -llber"
-			echo "OPENLDAP_SUFFIX=	+openldap20"
-			;;
-		OpenLDAP21)
-			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libldap.a:\${PORTSDIR}/net/openldap21-client"
- 			echo "POSTFIX_CCARGS+=	-DHAS_LDAP -I\${LOCALBASE}/include"
- 			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -lldap -llber"
- 			echo "OPENLDAP_SUFFIX=	+openldap21"
+			echo "OPENLDAP_SUFFIX=	+openldap"
 			;;
 		Test)
 			echo "BIN1=		smtp-sink smtp-source"
