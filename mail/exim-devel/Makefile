@@ -70,18 +70,18 @@ SEDLIST+=	-e 's,^EXIM_MONITOR,\#EXIM_MONITOR,'
 
 .if defined(WITH_TLS) && ${WITH_TLS} == "yes"
 SEDLIST+=	-e 's,XX_TLS_LIBS_XX,-lssl -lcrypto,' \
-		-e 's,^\# SUPPORT_TLS,SUPPORT_TLS,'
+		-e 's,^\# SUPPORT_TLS=,SUPPORT_TLS=,'
 .else
 SEDLIST+=	-e 's,^TLS_LIBS,\#TLS_LIBS,'
 .endif
 
 .if defined(WITH_PERL) && ${WITH_PERL} == "yes"
-SEDLIST+=	-e 's,^\# EXIM_PERL,EXIM_PERL,'
+SEDLIST+=	-e 's,^\# EXIM_PERL=,EXIM_PERL=,'
 .endif
 
 .if defined(WITH_TCP_WRAPPERS) && ${WITH_TCP_WRAPPERS} == "yes"
 SEDLIST+=	-e 's,XX_TCP_WRAPPERS_LIBS_XX,-lwrap,' \
-		-e 's,^\# USE_TCP_WRAPPERS,USE_TCP_WRAPPERS,'
+		-e 's,^\# USE_TCP_WRAPPERS=,USE_TCP_WRAPPERS=,'
 .endif
 
 .if defined(WITH_LDAP)
@@ -89,7 +89,7 @@ LIB_DEPENDS+=	lber.1:${PORTSDIR}/net/openldap
 SEDLIST+=	-e 's,XX_LDAP_LIBS_XX,-L${PREFIX}/lib -llber -lldap,' \
 		-e 's,XX_LDAP_INCLUDE_XX,-I${PREFIX}/include,' \
 		-e 's,XX_LDAP_TYPE_XX,${LDAP_LIB_TYPE},' \
-		-e 's,^\# LOOKUP_LDAP,LOOKUP_LDAP,'
+		-e 's,^\# LOOKUP_LDAP=,LOOKUP_LDAP=,'
 .else
 SEDLIST+=	-e 's,XX_LDAP_[^ ]*_XX,,' \
 		-e 's,^LDAP_LIB_TYPE,\#LDAP_LIB_TYPE,'
@@ -99,31 +99,31 @@ SEDLIST+=	-e 's,XX_LDAP_[^ ]*_XX,,' \
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 SEDLIST+=	-e 's,XX_MYSQL_LIBS_XX,-L${PREFIX}/lib/mysql -lmysqlclient,' \
 		-e 's,XX_MYSQL_INCLUDE_XX,-I${PREFIX}/include/mysql,' \
-		-e 's,^\# LOOKUP_MYSQL,LOOKUP_MYSQL,'
+		-e 's,^\# LOOKUP_MYSQL=,LOOKUP_MYSQL=,'
 .else
 SEDLIST+=	-e 's,XX_MYSQL_[^ ]*_XX,,'
 .endif
 
 .if defined(WITH_PAM) && ${WITH_PAM} == "yes"
 SEDLIST+=	-e 's,XX_PAM_LIBS_XX,-lpam,' \
-		-e 's,^\# SUPPORT_PAM,SUPPORT_PAM,'
+		-e 's,^\# SUPPORT_PAM=,SUPPORT_PAM=,'
 .else
 SEDLIST+=	-e 's,XX_PAM_LIBS_XX,,'
 .endif
 
 .if defined(WITH_AUTH_CRAM_MD5) && ${WITH_AUTH_CRAM_MD5} == "yes"
-SEDLIST+=	-e 's,^\# AUTH_CRAM_MD5,AUTH_CRAM_MD5,'
+SEDLIST+=	-e 's,^\# AUTH_CRAM_MD5=,AUTH_CRAM_MD5=,'
 .endif
 
 .if defined(WITH_AUTH_PLAINTEXT) && ${WITH_AUTH_PLAINTEXT} == "yes"
-SEDLIST+=	-e 's,^\# AUTH_PLAINTEXT,AUTH_PLAINTEXT,'
+SEDLIST+=	-e 's,^\# AUTH_PLAINTEXT=,AUTH_PLAINTEXT=,'
 .endif
 
 .if defined(WITH_PGSQL)
 LIB_DEPENDS+=	pq.2:${PORTSDIR}/databases/postgresql7
 SEDLIST+=	-e 's,XX_PGSQL_LIBS_XX,-L${PREFIX}/pgsql/lib -lpq,' \
 		-e 's,XX_PGSQL_INCLUDE_XX,-I${PREFIX}/pgsql/include,' \
-		-e 's,^\# LOOKUP_PGSQL,LOOKUP_PGSQL,'
+		-e 's,^\# LOOKUP_PGSQL=,LOOKUP_PGSQL=,'
 .else
 SEDLIST+=	-e 's,XX_PGSQL_[^ ]*_XX,,'
 .endif
@@ -134,15 +134,15 @@ SEDLIST+=	-e 's,^LOOKUP_LIBS,\#LOOKUP_LIBS,' \
 .endif
 
 .if defined(WITH_MAILDIR) && ${WITH_MAILDIR} == "yes"
-SEDLIST+=	-e 's,^\# SUPPORT_MAILDIR,SUPPORT_MAILDIR,'
+SEDLIST+=	-e 's,^\# SUPPORT_MAILDIR=,SUPPORT_MAILDIR=,'
 .endif
 
 .if defined(WITH_MAILSTORE) && ${WITH_MAILSTORE} == "yes"
-SEDLIST+=	-e 's,^\# SUPPORT_MAILSTORE,SUPPORT_MAILSTORE,'
+SEDLIST+=	-e 's,^\# SUPPORT_MAILSTORE=,SUPPORT_MAILSTORE=,'
 .endif
 
 .if defined(WITH_MAILMBX) && ${WITH_MAILMBX} == "yes"
-SEDLIST+=	-e 's,^\# SUPPORT_MBX,SUPPORT_MBX,'
+SEDLIST+=	-e 's,^\# SUPPORT_MBX=,SUPPORT_MBX=,'
 .endif
 
 do-configure:
