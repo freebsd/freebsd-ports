@@ -62,4 +62,5 @@
 @dirrm %%SITE_PERL%%/Tangram/Relational
 @dirrm %%SITE_PERL%%/Tangram/Type
 @dirrm %%SITE_PERL%%/Tangram
+@dirrm %%SITE_PERL%%/auto/Tangram
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Tangram
