@@ -3,7 +3,7 @@
 # Date Created:		8 April 1998
 # Whom:			Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.4 1998/09/15 21:31:45 asami Exp $
+# $Id: Makefile,v 1.5 1999/06/22 22:51:00 cpiazza Exp $
 #
 
 DISTNAME=	Chart-0.99b
@@ -12,7 +12,7 @@ CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Chart
 
-MAINTAINER=	ports@FreeBSD.ORG
+MAINTAINER=	dan@trinsec.com
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/GD.pm:${PORTSDIR}/graphics/p5-GD
 
