@@ -1,0 +1,13 @@
+This is the port of the Roxen Challenger http and ftp server.  It has
+a configuration interface to be accessed with a webrowser and comes with
+some nice modules like automatic generation of graphical text.
+
+It is written in Pike (version 0.6), a modern language derived from lpc.
+
+If you want support for mysql in Roxen, make sure to install mysql
+first.  This port will then notice the installed mysql.
+
+Official Roxen Homepage: http://Roxen.com/
+
+Kai Voigt
+(k@123.org)
