@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ffsrecov
-PORTVERSION=	0.1
+PORTVERSION=	0.5
 CATEGORIES=	sysutils
-MASTER_SITES=	http://people.freebsd.org/~jmg/
-DISTNAME=	ffsrecov
+MASTER_SITES=	http://resnet.uoregon.edu/~gurney_j/
 
 MAN8=		ffsrecov.8
 
