@@ -1,0 +1,6 @@
+This module provides a simple object for logging to files under the
+Log::Dispatch::* system, and automatically rotating them according to
+different constraints. This is basically a Log::Dispatch::File wrapper
+with additions.
+
+WWW: http://search.cpan.org/dist/Log-Dispatch-FileRotate/
