@@ -39,6 +39,10 @@ CONFIGURE_ARGS=	--enable-fsstd --with-included-gettext
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lxpg4"
 
+.if (${MACHINE} == "alpha")
+CONFIGURE_ARS+=	--disable-zoom
+.endif
+
 MAN1=		enlightenment.1
 
 pre-build:
