@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- pixmaps/Makefile.in.orig	Thu Aug 15 00:39:17 2002
-+++ pixmaps/Makefile.in	Thu Aug 15 00:39:43 2002
-@@ -301,7 +301,7 @@
+--- pixmaps/Makefile.in	Sat Jul 12 22:16:06 2003
++++ pixmaps/Makefile.in.new	Tue Jul 15 00:08:40 2003
+@@ -302,7 +302,7 @@
  
  info-am:
  
