@@ -47,6 +47,7 @@ share/listmanager/help/digsize
 share/listmanager/help/disable
 share/listmanager/help/disabled
 share/listmanager/help/domain
+share/listmanager/help/dual
 share/listmanager/help/enable
 share/listmanager/help/exclusive
 share/listmanager/help/fast
@@ -110,6 +111,7 @@ share/listmanager/help/owner
 share/listmanager/help/owner-unlimit
 share/listmanager/help/password
 share/listmanager/help/pending
+share/listmanager/help/permanent
 share/listmanager/help/pipe
 share/listmanager/help/private
 share/listmanager/help/probation
@@ -163,6 +165,8 @@ share/listmanager/help/validfreq
 share/listmanager/help/verbose
 share/listmanager/help/verify
 share/listmanager/help/version
+@dirrm share/listmanager/db
+@dirrm share/listmanager/files
 @dirrm share/listmanager/help
+@dirrm share/listmanager/synchfiles
 @dirrm share/listmanager
-@unexec rmdir %D/share/listmanager 2>/dev/null || true

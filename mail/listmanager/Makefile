@@ -7,6 +7,7 @@
 
 PORTNAME=	listmanager
 PORTVERSION=	2.107
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.listmanager.org/
 DISTNAME=	${PORTNAME}
