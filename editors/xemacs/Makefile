@@ -59,14 +59,15 @@ PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 CONFIGURE_ARGS+=--with-system-malloc --pdump
 .endif
 
+.if exists(${X11BASE}/lib/libXm.so)
+USE_MOTIF=	yes
+HAVE_MOTIF=	yes
+.endif
+
 pre-fetch:
 .if !defined(WANT_GTK)
 	@${ECHO_MSG} "If you want to use GTK, please set the environment variable WANT_GTK "
 	@${ECHO_MSG} "and recompile."
-.endif
-.if exists(${X11BASE}/lib/libXm.so)
-USE_MOTIF=	yes
-HAVE_MOTIF=	yes
 .endif
 .if defined(HAVE_MOTIF)
 .if !defined(MOTIF_STATIC)
