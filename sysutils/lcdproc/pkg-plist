@@ -1,0 +1,10 @@
+bin/fortune.pl
+bin/iosock.pl
+bin/lcdheadlines
+bin/lcdmetar.pl
+bin/lcdproc
+bin/tail.pl
+bin/x11amp.pl
+etc/LCDd.conf.sample
+etc/rc.d/LCDd.sh.sample
+sbin/LCDd
