@@ -1,11 +1,150 @@
---- configure.orig	Sat Jan  9 14:08:55 1999
-+++ configure	Sat Jan  9 14:10:24 1999
-@@ -842,7 +842,7 @@
-   echo $ac_n "(cached) $ac_c" 1>&6
- else
-   ac_save_LIBS="$LIBS"
--LIBS="-lslang  $LIBS"
-+LIBS="-lslang -ltermcap $LIBS"
- cat > conftest.$ac_ext <<EOF
- #line 848 "configure"
- #include "confdefs.h"
+*** configure.orig	Thu Jan 14 17:49:33 1999
+--- configure	Thu Jan 14 17:50:19 1999
+***************
+*** 832,835 ****
+--- 832,902 ----
+  rmdir ./test 2>/dev/null
+  
++ Terminfo_Dirs="/usr/lib/terminfo \
++ 	/usr/share/lib/terminfo \
++ 	/usr/local/lib/terminfo"
++ TERMCAP=yes
++ echo $ac_n "checking for terminfo""... $ac_c" 1>&6
++ echo "configure:840: checking for terminfo" >&5
++ for terminfo_dir in $Terminfo_Dirs
++ do
++ 	if test -d $terminfo_dir; then
++ 		echo "$ac_t""found" 1>&6
++ 		TERMCAP=""
++ 		break
++ 	fi
++ done
++ if test "$TERMCAP"; then
++ 	echo "$ac_t""not found" 1>&6
++ 	echo $ac_n "checking for tgetent in -ltermcap""... $ac_c" 1>&6
++ echo "configure:852: checking for tgetent in -ltermcap" >&5
++ ac_lib_var=`echo termcap'_'tgetent | sed 'y%./+-%__p_%'`
++ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
++   echo $ac_n "(cached) $ac_c" 1>&6
++ else
++   ac_save_LIBS="$LIBS"
++ LIBS="-ltermcap  $LIBS"
++ cat > conftest.$ac_ext <<EOF
++ #line 860 "configure"
++ #include "confdefs.h"
++ /* Override any gcc2 internal prototype to avoid an error.  */
++ /* We use char because int might match the return type of a gcc2
++     builtin and then its argument prototype would still apply.  */
++ char tgetent();
++ 
++ int main() {
++ tgetent()
++ ; return 0; }
++ EOF
++ if { (eval echo configure:871: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
++   rm -rf conftest*
++   eval "ac_cv_lib_$ac_lib_var=yes"
++ else
++   echo "configure: failed program was:" >&5
++   cat conftest.$ac_ext >&5
++   rm -rf conftest*
++   eval "ac_cv_lib_$ac_lib_var=no"
++ fi
++ rm -f conftest*
++ LIBS="$ac_save_LIBS"
++ 
++ fi
++ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
++   echo "$ac_t""yes" 1>&6
++     ac_tr_lib=HAVE_LIB`echo termcap | sed -e 's/[^a-zA-Z0-9_]/_/g' \
++     -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'`
++   cat >> confdefs.h <<EOF
++ #define $ac_tr_lib 1
++ EOF
++ 
++   LIBS="-ltermcap $LIBS"
++ 
++ else
++   echo "$ac_t""no" 1>&6
++ fi
++ 
++ 	# Note that if this fails, we continue and make probably dies with
++ 	# an error. Unless terminfo is hiding somewhere else..
++ fi
++ 
+  if test "$SLANG_LIB_LOC" != "" ; then 
+  	CFLAGS="-L$SLANG_LIB_LOC $CFLAGS"
+***************
+*** 1679,1749 ****
+  else
+  	echo "configure: warning: pdmenu will be built without GPM mouse support." 1>&2
+- fi
+- 
+- Terminfo_Dirs="/usr/lib/terminfo \
+- 	/usr/share/lib/terminfo \
+- 	/usr/local/lib/terminfo"
+- TERMCAP=yes
+- echo $ac_n "checking for terminfo""... $ac_c" 1>&6
+- echo "configure:1689: checking for terminfo" >&5
+- for terminfo_dir in $Terminfo_Dirs
+- do
+- 	if test -d $terminfo_dir; then
+- 		echo "$ac_t""found" 1>&6
+- 		TERMCAP=""
+- 		break
+- 	fi
+- done
+- if test "$TERMCAP"; then
+- 	echo "$ac_t""not found" 1>&6
+- 	echo $ac_n "checking for tgetent in -ltermcap""... $ac_c" 1>&6
+- echo "configure:1701: checking for tgetent in -ltermcap" >&5
+- ac_lib_var=`echo termcap'_'tgetent | sed 'y%./+-%__p_%'`
+- if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+-   echo $ac_n "(cached) $ac_c" 1>&6
+- else
+-   ac_save_LIBS="$LIBS"
+- LIBS="-ltermcap  $LIBS"
+- cat > conftest.$ac_ext <<EOF
+- #line 1709 "configure"
+- #include "confdefs.h"
+- /* Override any gcc2 internal prototype to avoid an error.  */
+- /* We use char because int might match the return type of a gcc2
+-     builtin and then its argument prototype would still apply.  */
+- char tgetent();
+- 
+- int main() {
+- tgetent()
+- ; return 0; }
+- EOF
+- if { (eval echo configure:1720: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+-   rm -rf conftest*
+-   eval "ac_cv_lib_$ac_lib_var=yes"
+- else
+-   echo "configure: failed program was:" >&5
+-   cat conftest.$ac_ext >&5
+-   rm -rf conftest*
+-   eval "ac_cv_lib_$ac_lib_var=no"
+- fi
+- rm -f conftest*
+- LIBS="$ac_save_LIBS"
+- 
+- fi
+- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+-   echo "$ac_t""yes" 1>&6
+-     ac_tr_lib=HAVE_LIB`echo termcap | sed -e 's/[^a-zA-Z0-9_]/_/g' \
+-     -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'`
+-   cat >> confdefs.h <<EOF
+- #define $ac_tr_lib 1
+- EOF
+- 
+-   LIBS="-ltermcap $LIBS"
+- 
+- else
+-   echo "$ac_t""no" 1>&6
+- fi
+- 
+- 	# Note that if this fails, we continue and make probably dies with
+- 	# an error. Unless terminfo is hiding somewhere else..
+  fi
+  
+--- 1746,1749 ----
