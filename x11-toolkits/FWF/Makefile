@@ -3,7 +3,7 @@
 # Date created:		14 July 1995
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.17 1999/02/11 13:32:08 flathill Exp $
+# $Id: Makefile,v 1.18 1999/07/04 20:41:48 steve Exp $
 #
 
 DISTNAME=	fwf-4.0
@@ -23,6 +23,6 @@ BROKEN=		../../lib/libfwf.a: cannot read symbols
 REQUIRES_MOTIF=	yes
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/FWF
-XMKMF=		env X11BASE=${X11BASE} WRKSRC=${WRKSRC} sh ${FILESDIR}/xmkmf
+XMKMF=		${SETENV} X11BASE=${X11BASE} WRKSRC=${WRKSRC} sh ${FILESDIR}/xmkmf
 
 .include <bsd.port.mk>

@@ -37,7 +37,7 @@ pre-configure:
 
 post-build:
 	$(ECHO) "Building additional libraries (boehm-gc compatibility)"
-	(cd $(WRKSRC); env PATH=$(WRKDIR)/bin:$(PATH) ./makeLibs)
+	(cd $(WRKSRC); ${SETENV} PATH=$(WRKDIR)/bin:$(PATH) ./makeLibs)
 
 pre-install:
 	$(MKDIR) $(PREFIX)/share/doc/objc
