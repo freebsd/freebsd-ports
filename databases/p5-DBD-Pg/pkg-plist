@@ -1,5 +1,5 @@
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/DBD/Pg.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/DBD/Pg/Pg.bs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/DBD/Pg/Pg.so
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/DBD/Pg/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/DBD/Pg
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/Pg.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD/Pg/Pg.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD/Pg/Pg.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD/Pg/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD/Pg

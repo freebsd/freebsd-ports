@@ -8,6 +8,6 @@ lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/ppmsize.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/tiffsize.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/xbmsize.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size/xpmsize.al
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Image/Size/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Image/Size
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Size/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Size
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Image/Size

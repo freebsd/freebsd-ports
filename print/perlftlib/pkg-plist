@@ -1,11 +1,11 @@
 bin/mkttfdir
 bin/ftinfo
 lib/perl5/site_perl/%%PERL_VER%%/FreeTypeWrapper.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/FreeType/FreeType.so
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/FreeType/FreeType.bs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/FreeType/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/FreeType/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/FreeType.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/FreeType/FreeType.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/FreeType/FreeType.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/FreeType/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/FreeType/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreeType.pm
 @comment I do not know how to treat the next files
 @comment lib/perl5/%%PERL_VERSION%%/i386-freebsd/perllocal.pod
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/FreeType
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/FreeType

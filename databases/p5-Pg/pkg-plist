@@ -1,6 +1,6 @@
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Pg.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Pg/Pg.bs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Pg/Pg.so
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Pg/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Pg/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Pg
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Pg.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Pg/Pg.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Pg/Pg.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Pg/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Pg/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Pg

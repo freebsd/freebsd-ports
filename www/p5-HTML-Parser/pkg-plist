@@ -4,5 +4,5 @@ lib/perl5/site_perl/%%PERL_VER%%/HTML/HeadParser.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTML/LinkExtor.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTML/Parser.pm
 lib/perl5/site_perl/%%PERL_VER%%/HTML/TokeParser.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/HTML/Parser/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/HTML/Parser
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/Parser/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/Parser

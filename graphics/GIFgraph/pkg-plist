@@ -8,6 +8,6 @@ lib/perl5/site_perl/%%PERL_VER%%/GIFgraph/area.pm
 lib/perl5/site_perl/%%PERL_VER%%/GIFgraph/lines.pm
 lib/perl5/site_perl/%%PERL_VER%%/GIFgraph/points.pm
 lib/perl5/site_perl/%%PERL_VER%%/GIFgraph.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/GIFgraph/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/GIFgraph
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GIFgraph/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GIFgraph
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/GIFgraph

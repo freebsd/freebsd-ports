@@ -1,6 +1,6 @@
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Crypt/IDEA.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Crypt/IDEA.pod
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Crypt/IDEA/IDEA.bs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Crypt/IDEA/IDEA.so
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Crypt/IDEA/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Crypt/IDEA
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/IDEA.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/IDEA.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/IDEA/IDEA.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/IDEA/IDEA.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/IDEA/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/IDEA

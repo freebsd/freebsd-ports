@@ -2,5 +2,5 @@ lib/perl5/site_perl/%%PERL_VER%%/Date/Format.pm
 lib/perl5/site_perl/%%PERL_VER%%/Date/Language.pm
 lib/perl5/site_perl/%%PERL_VER%%/Date/Parse.pm
 lib/perl5/site_perl/%%PERL_VER%%/Time/Zone.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/TimeDate/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/TimeDate
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/TimeDate/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/TimeDate

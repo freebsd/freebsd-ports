@@ -1,5 +1,5 @@
 lib/perl5/site_perl/%%PERL_VER%%/Locale/Country.pm
 lib/perl5/site_perl/%%PERL_VER%%/Locale/Language.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Locale/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Locale
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Locale/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Locale
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Locale

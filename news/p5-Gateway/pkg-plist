@@ -19,5 +19,5 @@ lib/perl5/site_perl/%%PERL_VER%%/auto/News/Gateway/nobinaries.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/News/Gateway/post.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/News/Gateway/previoushop.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/News/Gateway/whitelist.al
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/News/Gateway/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/News/Gateway
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/News/Gateway/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/News/Gateway

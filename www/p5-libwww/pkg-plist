@@ -110,7 +110,7 @@ lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/file/vms_path.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/http/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/http/keywords.al
 lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/http/query_form.al
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/libwww-perl/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libwww-perl/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/lwpcook.pod
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTP/Headers
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTP/Request
@@ -125,4 +125,4 @@ lib/perl5/site_perl/%%PERL_VER%%/lwpcook.pod
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL/http
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/URI/URL
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/URI
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/libwww-perl
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/libwww-perl

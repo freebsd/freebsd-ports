@@ -1,5 +1,5 @@
 lib/perl5/site_perl/%%PERL_VER%%/Bundle/pRPC-modules.pm
 lib/perl5/site_perl/%%PERL_VER%%/RPC/pClient.pm
 lib/perl5/site_perl/%%PERL_VER%%/RPC/pServer.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/RPC/pServer/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/RPC/pServer
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RPC/pServer/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RPC/pServer

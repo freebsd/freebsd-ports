@@ -3,5 +3,5 @@ lib/perl5/site_perl/%%PERL_VER%%/Mail/Folder/Emaul.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Folder/Maildir.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Folder/Mbox.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Folder/NNTP.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Mail/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/Folder

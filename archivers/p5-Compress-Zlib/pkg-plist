@@ -1,8 +1,8 @@
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Compress/Zlib.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Compress/Zlib/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Compress/Zlib/Zlib.bs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Compress/Zlib/Zlib.so
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Compress/Zlib/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Compress/Zlib
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Compress
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/Compress
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Compress/Zlib.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Zlib/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Zlib/Zlib.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Zlib/Zlib.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Zlib/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress/Zlib
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Compress
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Compress

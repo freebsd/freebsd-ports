@@ -1,6 +1,6 @@
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/MD5.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/MD5/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/MD5/autosplit.ix
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/MD5/MD5.bs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/MD5/MD5.so
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/MD5
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/MD5.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MD5/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MD5/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MD5/MD5.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MD5/MD5.so
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MD5

@@ -5,5 +5,5 @@ lib/perl5/site_perl/%%PERL_VER%%/IO/ScalarArray.pm
 lib/perl5/site_perl/%%PERL_VER%%/IO/Stringy.pm
 lib/perl5/site_perl/%%PERL_VER%%/IO/Wrap.pm
 lib/perl5/site_perl/%%PERL_VER%%/IO/WrapTie.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/IO-stringy/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/IO-stringy
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO-stringy/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO-stringy

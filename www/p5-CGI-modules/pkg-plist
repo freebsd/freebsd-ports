@@ -5,6 +5,6 @@ lib/perl5/site_perl/%%PERL_VER%%/CGI/BasePlus.pm
 lib/perl5/site_perl/%%PERL_VER%%/CGI/test.pl
 lib/perl5/site_perl/%%PERL_VER%%/CGI/MiniSvr.pm
 lib/perl5/site_perl/%%PERL_VER%%/CGI/Request.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/CGI/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/CGI
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/CGI
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/CGI

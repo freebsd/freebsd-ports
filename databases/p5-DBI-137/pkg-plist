@@ -1,24 +1,24 @@
 bin/dbiproxy
 bin/dbish
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/DBI.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/DBD/ExampleP.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/DBD/NullP.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/DBD/Proxy.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/DBD/Sponge.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/DBI/DBD.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/DBI/FAQ.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/DBI/ProxyServer.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/DBI/Shell.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/DBI/W32ODBC.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/DBI/DBI.bs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/DBI/DBI.so
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/DBI/DBIXS.h
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/DBI/Driver.xst
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/DBI/DriverDB.xst
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/DBI/DriverST.xst
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/DBI/dbd_xsh.h
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/DBI/dbi_sql.h
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/DBI/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/DBD
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/DBI
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/DBI
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/ExampleP.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/NullP.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/Proxy.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/Sponge.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/DBD.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/FAQ.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/ProxyServer.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/Shell.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/W32ODBC.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBI/DBI.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBI/DBI.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBI/DBIXS.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBI/Driver.xst
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBI/DriverDB.xst
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBI/DriverST.xst
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBI/dbd_xsh.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBI/dbi_sql.h
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBI/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBD
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBI
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI

@@ -7,10 +7,10 @@ lib/perl5/site_perl/%%PERL_VER%%/LWP/Parallel/RobotUA.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/Parallel/UserAgent.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/ParallelUA.pm
 lib/perl5/site_perl/%%PERL_VER%%/LWP/RobotPUA.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/LWP/Parallel/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/LWP/Parallel/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/LWP/Parallel/Protocol
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/LWP/Parallel
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/LWP
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Bundle
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/LWP/Parallel
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/LWP
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/LWP/Parallel
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/LWP

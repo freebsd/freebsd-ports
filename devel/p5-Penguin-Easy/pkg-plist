@@ -1,8 +1,8 @@
 lib/perl5/site_perl/%%PERL_VER%%/Penguin/Easy.pm
 lib/perl5/site_perl/Penguin/Easy/doc/Penguin-howto
 lib/perl5/site_perl/Penguin/Easy/bin/ep
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Penguin/Easy/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Penguin/Easy
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Penguin/Easy/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Penguin/Easy
 @dirrm lib/perl5/site_perl/Penguin/Easy/doc
 @dirrm lib/perl5/site_perl/Penguin/Easy/bin
 @dirrm lib/perl5/site_perl/Penguin/Easy

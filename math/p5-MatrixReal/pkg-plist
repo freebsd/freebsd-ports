@@ -1,4 +1,4 @@
 lib/perl5/site_perl/%%PERL_VER%%/Math/MatrixReal.pm
 lib/perl5/site_perl/%%PERL_VER%%/Math/Kleene.pod
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Math/MatrixReal/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Math/MatrixReal
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/MatrixReal/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Math/MatrixReal

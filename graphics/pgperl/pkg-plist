@@ -1,8 +1,8 @@
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/ExtUtils/F77.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/PGPLOT.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/PGPLOT/PGPLOT.so
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/PGPLOT/PGPLOT.bs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/PGPLOT/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/ExtUtils/F77.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/PGPLOT.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PGPLOT/PGPLOT.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PGPLOT/PGPLOT.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PGPLOT/.packlist
 share/doc/pgperl/LICENSE
 share/doc/pgperl/test.img
 share/doc/pgperl/test.pl
@@ -18,5 +18,5 @@ share/doc/pgperl/test6.p
 share/doc/pgperl/test7.p
 share/doc/pgperl/test8.p
 share/doc/pgperl/test9.p
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/PGPPLOT
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/PGPPLOT
 @dirrm share/doc/pgperl

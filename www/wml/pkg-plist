@@ -91,39 +91,39 @@ lib/wml/perl/lib/site_perl/%%PERL_VER%%/auto/Image/Size/ppmsize.al
 lib/wml/perl/lib/site_perl/%%PERL_VER%%/auto/Image/Size/tiffsize.al
 lib/wml/perl/lib/site_perl/%%PERL_VER%%/auto/Image/Size/xbmsize.al
 lib/wml/perl/lib/site_perl/%%PERL_VER%%/auto/Image/Size/xpmsize.al
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/Bit/Vector.pm
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/GD.pm
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/IO.pm
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/IO/Dir.pm
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/IO/File.pm
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/IO/Handle.pm
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/IO/Pipe.pm
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/IO/Poll.pm
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/IO/Seekable.pm
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/IO/Select.pm
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/IO/Socket.pm
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/IO/Socket/INET.pm
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/IO/Socket/UNIX.pm
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/Term/ReadKey.pm
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/Bit/Vector/.packlist
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/Bit/Vector/Vector.bs
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/Bit/Vector/Vector.so
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/File/PathConvert/.packlist
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/GD/.packlist
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/GD/GD.bs
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/GD/GD.so
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/GD/autosplit.ix
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/Getopt/Long/.packlist
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/IO/.packlist
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/IO/IO.bs
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/IO/IO.so
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/Image/Size/.packlist
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/Term/ReadKey/.packlist
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/Term/ReadKey/ReadKey.bs
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/Term/ReadKey/ReadKey.so
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/Term/ReadKey/autosplit.ix
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/Text/BlockParser/.packlist
-lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/Text/DelimMatch/.packlist
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bit/Vector.pm
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/GD.pm
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO.pm
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Dir.pm
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/File.pm
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Handle.pm
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Pipe.pm
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Poll.pm
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Seekable.pm
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Select.pm
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Socket.pm
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Socket/INET.pm
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Socket/UNIX.pm
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Term/ReadKey.pm
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bit/Vector/.packlist
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bit/Vector/Vector.bs
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bit/Vector/Vector.so
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/PathConvert/.packlist
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/.packlist
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/GD.bs
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/GD.so
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD/autosplit.ix
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Getopt/Long/.packlist
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/.packlist
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/IO.bs
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO/IO.so
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Size/.packlist
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Term/ReadKey/.packlist
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Term/ReadKey/ReadKey.bs
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Term/ReadKey/ReadKey.so
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Term/ReadKey/autosplit.ix
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/BlockParser/.packlist
+lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/DelimMatch/.packlist
 man/cat1/wml_p2_mhc.1.gz
 man/cat1/wml_p4_gm4.1.gz
 man/cat1/wml_aux_linklint.1.gz
@@ -153,27 +153,27 @@ man/cat7/wml_std_html40.7.gz
 @dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/auto/Text/DelimMatch
 @dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/auto/Text
 @dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/auto
-@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/Bit
-@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/IO/Socket
-@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/IO
-@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/Term
-@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/Bit/Vector
-@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/Bit
-@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/File/PathConvert
-@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/File
-@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/GD
-@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/Getopt/Long
-@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/Getopt
-@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/IO
-@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/Image/Size
-@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/Image
-@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/Term/ReadKey
-@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/Term
-@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/Text/BlockParser
-@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/Text/DelimMatch
-@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto/Text
-@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd/auto
-@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/i386-freebsd
+@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Bit
+@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO/Socket
+@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/IO
+@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Term
+@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bit/Vector
+@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Bit
+@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/PathConvert
+@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File
+@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/GD
+@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Getopt/Long
+@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Getopt
+@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO
+@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Size
+@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image
+@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Term/ReadKey
+@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Term
+@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/BlockParser
+@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/DelimMatch
+@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text
+@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto
+@dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/%%PERL_ARCH%%
 @dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/File
 @dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/Getopt
 @dirrm lib/wml/perl/lib/site_perl/%%PERL_VER%%/Image

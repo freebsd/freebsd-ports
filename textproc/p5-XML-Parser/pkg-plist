@@ -1,10 +1,10 @@
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/XML/Parser/Expat/Expat.bs
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/XML/Parser/Expat/Expat.so
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/XML/Parser/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/XML/Parser.pm
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/XML/Parser/Expat.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/XML/Parser/Expat
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/XML/Parser
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/XML
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/XML/Parser
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/XML
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Parser/Expat/Expat.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Parser/Expat/Expat.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Parser/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser/Expat.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Parser/Expat
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/Parser
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML/Parser
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/XML

@@ -1,4 +1,4 @@
 lib/perl5/site_perl/%%PERL_VER%%/Date/Manip.pm
 lib/perl5/site_perl/%%PERL_VER%%/Date/Manip.pod
-lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Date/Manip/.packlist
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/i386-freebsd/auto/Date/Manip
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date/Manip/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Date/Manip
