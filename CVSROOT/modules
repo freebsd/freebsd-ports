@@ -3558,7 +3558,6 @@ kvirc		ports/irc/kvirc
 kvm_mkdb	src/usr.sbin/kvm_mkdb
 kwatch		ports/misc/kwatch
 kwebget		ports/ftp/kwebget
-kwebwatch	ports/www/kwebwatch
 kxicq-devel		ports/net/kxicq-devel
 kxl		ports/games/kxl
 kxmleditor	ports/editors/kxmleditor
