@@ -1,0 +1,7 @@
+lib/tclreadline1.0/libtclreadline1.0.so
+lib/tclreadline1.0/pkgIndex.tcl
+lib/tclreadline1.0/tclreadlineCompleter.tcl
+lib/tclreadline1.0/tclreadlineConfig.sh
+lib/tclreadline1.0/tclreadlineInit.tcl
+lib/tclreadline1.0/tclreadlineSetup.tcl
+@dirrm lib/tclreadline1.0
