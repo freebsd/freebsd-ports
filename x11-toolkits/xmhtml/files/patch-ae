@@ -1,11 +1,11 @@
---- ./tools/Imakefile.org	Wed May 12 01:31:49 1999
-+++ ./tools/Imakefile	Wed May 12 02:04:11 1999
-@@ -35,7 +35,7 @@
- DEFAULT_LIBS =
+--- tools/Makefile.orig	Wed Feb  3 19:43:27 1999
++++ tools/Makefile	Tue Nov  2 01:38:36 1999
+@@ -88,7 +88,7 @@
  
- XCOMM X libraries, required for reptype
--LOCAL_LIBRARIES = $(XMLIB) $(XTOOLLIB) $(XLIB) $(DMALLOCLIB) $(DEFAULT_LIBS)
-+LOCAL_LIBRARIES = $(MOTIFLIB) $(XTOOLLIB) $(XLIB) $(DMALLOCLIB) $(DEFAULT_LIBS)
+ httpget::  httpget.o
+ 	$(RM) $@ \ 
+-	$(CC) -o $@ $(LDFLAGS) httpget.o -L../http -lhttp $(DMALLOCLIB)
++	$(CC) -o $@ $(LDFLAGS) httpget.o ../http/libhttp.la $(DMALLOCLIB)
  
- #if (IHaveZLIB)
- SRCS = GetRepTypes.c WidgetSize.c gifinfo.c ImBuffer.c parse.c gif2gzf.c \
+ # gif to gzf converter
+ gif2gzf:: gif2gzf.o LZWStream.o ImBuffer.o
