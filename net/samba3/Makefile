@@ -214,13 +214,8 @@ CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME}
 .elif ( defined(MAKE_KERBEROS5) || ${OSVERSION} > 500105 ) && exists(/usr/lib/libkrb5.a)
 CONFIGURE_ARGS+=	--with-krb5=${DESTDIR}/usr
 .else
-BUILD_DEPENDS+=		krb5-config:${PORTSDIR}/security/heimdal
-KRB5_PREFIX!=		krb5-config --prefix 2>/dev/null || true
-.if defined(KRB5_PREFIX) && !empty (KRB5_PREFIX)
-CONFIGURE_ARGS+=	--with-krb5=${KRB5_PREFIX}
-.else
-BROKEN=			"Kerberos5 is necessary for ADS support. Please, install either Heimdal or MIT-Kerberos"
-.endif
+LIB_DEPENDS+=		krb5:${PORTSDIR}/security/heimdal
+CONFIGURE_ARGS+=	--with-krb5=${LOCALBASE}
 .endif
 .else
 CONFIGURE_ARGS+=	--without-krb5
