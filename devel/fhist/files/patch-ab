@@ -1,0 +1,38 @@
+--- fhist/breaks.c~	Fri Oct  7 18:05:04 1994
++++ fhist/breaks.c	Wed Apr 29 09:25:29 1998
+@@ -23,13 +23,34 @@
+  * MANIFEST: Unix-specific routines to implement special actions.
+  */
+ 
++#ifdef HAVE_SYS_PARAM_H
++#include <sys/param.h>
++#endif
++
+ #include <signal.h>
+ 
+ #include <breaks.h>
+ 
+-#if defined(sun) || defined(__sun__)
++#if defined(sun) || defined(__sun__) 
+ #define sighold(n)
+ #define sigrelse(n)
++#elif (defined(BSD) && (BSD > 199306))
++/* POSIX handling, assumed present from 4.4 days */
++/* Will this be valid for {Open,Net}BSD too? */
++#define sighold(n)						\
++	do {							\
++	  sigset_t set;						\
++	  (void) sigemptyset(&set);				\
++	  (void) sigaddset(&set, (n));				\
++	  (void) sigprocmask(SIG_BLOCK, &set, (void *)0);	\
++	} while(0)
++#define sigrelse(n)						\
++	do {							\
++	  sigset_t set;						\
++	  (void) sigemptyset(&set);				\
++	  (void) sigaddset(&set, (n));				\
++	  (void) sigprocmask(SIG_UNBLOCK, &set, (void *)0);	\
++	} while (0)  
+ #endif
+ 
+ 
