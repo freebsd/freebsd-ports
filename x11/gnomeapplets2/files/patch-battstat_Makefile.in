@@ -1,26 +1,26 @@
---- battstat/Makefile.in.orig	Tue Apr 30 14:48:53 2002
-+++ battstat/Makefile.in	Tue Apr 30 15:00:42 2002
-@@ -138,11 +138,11 @@
+--- battstat/Makefile.in.orig	Wed Nov 20 02:26:09 2002
++++ battstat/Makefile.in	Wed Nov 20 02:28:24 2002
+@@ -144,11 +144,11 @@
  pixmapsdir = $(datadir)/pixmaps
  pixmaps_DATA = battstat.png
  @HAVE_LIBAPM_TRUE@APMLIB = -lapm
 -@HAVE_LIBAPM_FALSE@APMLIB = apmlib/libapm.a
-+@HAVE_LIBAPM_FALSE@APMLIB =
++@HAVE_LIBAPM_FALSE@APMLIB = 
  @HAVE_LIBAPM_TRUE@APMDIR = 
 -@HAVE_LIBAPM_FALSE@APMDIR = apmlib
-+@HAVE_LIBAPM_FALSE@APMDIR =
++@HAVE_LIBAPM_FALSE@APMDIR = 
  @HAVE_LIBAPM_TRUE@APMINC = 
 -@HAVE_LIBAPM_FALSE@APMINC = -Iapmlib/
-+@HAVE_LIBAPM_FALSE@APMINC =
++@HAVE_LIBAPM_FALSE@APMINC = 
  
- SUBDIRS = sounds $(APMDIR)
+ SUBDIRS = docs sounds $(APMDIR)
  
-@@ -187,7 +187,7 @@
- X_PRE_LIBS = @X_PRE_LIBS@
+@@ -194,7 +194,7 @@
  battstat_applet_2_OBJECTS =  properties.$(OBJEXT) \
  battstat_applet.$(OBJEXT) acpi-linux.$(OBJEXT)
+ @HAVE_LIBAPM_TRUE@battstat_applet_2_DEPENDENCIES = 
 -@HAVE_LIBAPM_FALSE@battstat_applet_2_DEPENDENCIES =  apmlib/libapm.a
 +@HAVE_LIBAPM_FALSE@battstat_applet_2_DEPENDENCIES =
- @HAVE_LIBAPM_TRUE@battstat_applet_2_DEPENDENCIES = 
  battstat_applet_2_LDFLAGS = 
  CFLAGS = @CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)

@@ -338,15 +338,10 @@ share/gnome/pixmaps/gweather/tstorm.xpm
 share/gnome/pixmaps/mini-commander/browser-mini.xpm
 share/gnome/pixmaps/mini-commander/history-mini.xpm
 share/gnome/pixmaps/mixer/gnome-mixer-applet.png
-share/gnome/pixmaps/mixer/volume-max-small.png
 share/gnome/pixmaps/mixer/volume-max.png
-share/gnome/pixmaps/mixer/volume-medium-small.png
 share/gnome/pixmaps/mixer/volume-medium.png
-share/gnome/pixmaps/mixer/volume-min-small.png
 share/gnome/pixmaps/mixer/volume-min.png
-share/gnome/pixmaps/mixer/volume-mute-small.png
 share/gnome/pixmaps/mixer/volume-mute.png
-share/gnome/pixmaps/mixer/volume-zero-small.png
 share/gnome/pixmaps/mixer/volume-zero.png
 share/gnome/xmodmap/xmodmap.am
 share/gnome/xmodmap/xmodmap.be
@@ -422,8 +417,10 @@ share/gnome/xmodmap/xmodmap.us-sun
 share/gnome/xmodmap/xmodmap.us.old
 share/gnome/xmodmap/xmodmap.us_intl
 share/gnome/xmodmap/xmodmap.yu
+share/locale/am/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/be/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/cs/LC_MESSAGES/gnome-applets-2.0.mo
