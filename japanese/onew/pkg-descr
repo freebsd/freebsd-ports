@@ -1,7 +1,7 @@
-ONEW is a library for using Japanese Input Method Canna, Wnn4, or
+ONEW is a library for using Japanese Input Method Canna, FreeWnn, or
 Wnn6.
 
-This is for Wnn4.
+This is for FreeWnn.
 
 -- S. Taoka
 <taoka@FreeBSD.org>

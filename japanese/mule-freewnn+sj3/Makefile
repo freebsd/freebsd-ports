@@ -1,15 +1,15 @@
-# New ports collection makefile for:	mule 2.3@19.34 with sj3 and Wnn4
+# New ports collection makefile for:	mule with sj3 and FreeWnn
 # Date created:		7 July 1997
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PKGNAMESUFFIX=	-sj3+wnn4
+PKGNAMESUFFIX=	-freewnn+sj3
 CATEGORIES=	japanese
 
 SJ3=		yes
-WNN4=		yes
+FREEWNN=	yes
 
 MASTERDIR=	${.CURDIR}/../../editors/mule
 PKGDIR=		${.CURDIR}/pkg

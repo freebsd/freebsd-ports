@@ -1,12 +1,12 @@
-# New ports collection makefile for:	jvim for Wnn4
+# New ports collection makefile for:	jvim for FreeWnn
 # Date created:		5 Sep 1997
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PKGNAMESUFFIX=	-wnn4
-WNN4=		yes
+PKGNAMESUFFIX=	-freewnn
+FREEWNN=	yes
 
 MASTERDIR=	${.CURDIR}/../jvim
 PKGDIR=		${.CURDIR}/pkg

@@ -1,7 +1,8 @@
 # $FreeBSD$
 #
 
-    SUBDIR += Wnn
+    SUBDIR += FreeWnn-lib
+    SUBDIR += FreeWnn-server
     SUBDIR += acroread-korfont
     SUBDIR += ami
     SUBDIR += baekmukfonts-bdf
@@ -46,7 +47,7 @@
     SUBDIR += linuxdoc-sgml
     SUBDIR += linux_locale
     SUBDIR += mizifont
-    SUBDIR += mule-wnn4
+    SUBDIR += mule-freewnn
     SUBDIR += munhwafonts-cid
     SUBDIR += netscape3
     SUBDIR += netscape4-communicator

@@ -25,9 +25,9 @@ XEMACS_MAJOR_VER=	21
 .for dir in \
 	editors/xemacs${XEMACS_MAJOR_VER}-mule \
 	japanese/xemacs${XEMACS_MAJOR_VER}-canna \
-	japanese/xemacs${XEMACS_MAJOR_VER}-canna+wnn4 \
+	japanese/xemacs${XEMACS_MAJOR_VER}-canna+freewnn \
 	japanese/xemacs${XEMACS_MAJOR_VER}-canna+wnn6 \
-	japanese/xemacs${XEMACS_MAJOR_VER}-wnn4 \
+	japanese/xemacs${XEMACS_MAJOR_VER}-freewnn \
 	japanese/xemacs${XEMACS_MAJOR_VER}-wnn6
 .if exists(${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work/.install_done)
 WRKDIR=	${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work

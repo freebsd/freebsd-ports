@@ -1,4 +1,4 @@
-# New ports collection makefile for:	ONEW for Canna and Wnn4
+# New ports collection makefile for:	ONEW for Canna and FreeWnn
 # Date created:		5 Sep 1997
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
@@ -6,9 +6,9 @@
 #
 
 CANNA=		yes
-WNN4=		yes
+FREEWNN=	yes
 
-MASTERDIR=	${.CURDIR}/../onew-wnn4
+MASTERDIR=	${.CURDIR}/../onew-freewnn
 PKGDIR=         ${.CURDIR}/pkg
 
 .include	"${MASTERDIR}/Makefile"

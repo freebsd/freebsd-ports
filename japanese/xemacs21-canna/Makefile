@@ -29,27 +29,25 @@ DESCR=		${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-canna/pkg/DESCR
 
 XEMACS_MAJOR_VER?=	21
 DESCR_TMPL=		${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-canna/files/DESCR.tmpl
-.if defined(CANNA) && defined(WNN4)
-PKGNAMESUFFIX=		-canna+wnn4
-SITE_INCLUDES=		${X11BASE}/include
-SITE_LIBRARIES=		${X11BASE}/lib
+.if defined(CANNA) && defined(FREEWNN)
+PKGNAMESUFFIX=		-canna+freewnn
+SITE_INCLUDES=		${LOCALBASE}/include/wnn
 WITH_INPUT_METHOD=	--with-canna --with-wnn --with-wnn6=no
-LIB_INPUT_METHOD=	canna.1:${PORTSDIR}/japanese/Canna
-BUILD_INPUT_METHOD=	${PREFIX}/bin/Wnn4/jserver:${PORTSDIR}/japanese/Wnn
-COMMENT_TEXT=		XEmacs(version ${XEMACS_MAJOR_VER}) text editor, with SJ3, SKK, Canna and Wnn4 support
+LIB_INPUT_METHOD=	canna.1:${PORTSDIR}/japanese/Canna \
+			wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
+COMMENT_TEXT=		XEmacs(version ${XEMACS_MAJOR_VER}) text editor, with SJ3, SKK, Canna and FreeWnn support
 .elif defined(CANNA) && defined(WNN6)
 PKGNAMESUFFIX=		-canna+wnn6
 WITH_INPUT_METHOD=	--with-canna --with-wnn6
 LIB_INPUT_METHOD=	canna.1:${PORTSDIR}/japanese/Canna
 BUILD_INPUT_METHOD=	${PREFIX}/include/wnn/jlib.h:${PORTSDIR}/japanese/Wnn6-lib
 COMMENT_TEXT=		XEmacs(version ${XEMACS_MAJOR_VER}) text editor, with SJ3, SKK, Canna and Wnn6 support
-.elif defined(WNN4)
-PKGNAMESUFFIX=		-wnn4
-SITE_INCLUDES=		${X11BASE}/include
-SITE_LIBRARIES=		${X11BASE}/lib
+.elif defined(FREEWNN)
+PKGNAMESUFFIX=		-freewnn
+SITE_INCLUDES=		${LOCALBASE}/include/wnn
 WITH_INPUT_METHOD=	--with-wnn --with-canna=no --with-wnn6=no
-BUILD_INPUT_METHOD=	${PREFIX}/bin/Wnn4/jserver:${PORTSDIR}/japanese/Wnn
-COMMENT_TEXT=		XEmacs(version ${XEMACS_MAJOR_VER}) text editor, with SJ3, SKK and Wnn4 support
+LIB_INPUT_METHOD=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
+COMMENT_TEXT=		XEmacs(version ${XEMACS_MAJOR_VER}) text editor, with SJ3, SKK and FreeWnn support
 .elif defined(WNN6)
 PKGNAMESUFFIX=		-wnn6
 WITH_INPUT_METHOD=	--with-wnn6 --with-canna=no

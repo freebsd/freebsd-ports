@@ -1,4 +1,4 @@
-# New ports collection makefile for:	ONEW for Wnn4
+# New ports collection makefile for:	ONEW for FreeWnn
 # Date created:		5 Sep 1997
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
@@ -19,9 +19,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 # A value 'all' must not be set to TARGET.
 ALL_TARGET=	
 
-.if !defined(CANNA) && !defined(WNN4) && !defined(WNN6)
+.if !defined(CANNA) && !defined(FREEWNN) && !defined(WNN6)
 # For this port
-WNN4=		yes
+FREEWNN=	yes
 .endif
 # Specifying a velue INPUT_METHOD, and seting values BUILD_DEPENDS,
 # LIB_DEPENDS, etc.
@@ -30,14 +30,14 @@ INPUT_METHOD+=	canna
 LIB_DEPENDS+=	canna.1:${PORTSDIR}/japanese/Canna
 JPLIB+=		-lcanna
 .endif
-.if defined(WNN4)
-INPUT_METHOD+=	wnn4
-BUILD_DEPENDS+=	${X11BASE}/lib/libjd.a:${PORTSDIR}/japanese/Wnn
+.if defined(FREEWNN)
+INPUT_METHOD+=	freewnn
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libjd.a:${PORTSDIR}/japanese/FreeWnn-lib
 JPLIB+=		-ljd -lcrypt
 JPDEF+=		-DWNN_ISDIR
 .elif defined(WNN6)
 INPUT_METHOD+=	wnn6
-BUILD_DEPENDS+=	${X11BASE}/lib/libjd.a:${PORTSDIR}/japanese/Wnn
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libjd.a:${PORTSDIR}/japanese/FreeWnn-lib
 JPLIB+=		-ljd -lcrypt
 JPDEF+=		-DWNN_ISDIR
 .endif

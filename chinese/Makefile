@@ -3,7 +3,8 @@
     SUBDIR += xmms
 
     SUBDIR += CJK
-    SUBDIR += Wnn
+    SUBDIR += FreeWnn-lib
+    SUBDIR += FreeWnn-server
     SUBDIR += acroread-chsfont
     SUBDIR += acroread-chtfont
     SUBDIR += arphicttf
@@ -24,7 +25,7 @@
     SUBDIR += libtabe
     SUBDIR += lunar
     SUBDIR += moettf
-    SUBDIR += mule-wnn4
+    SUBDIR += mule-freewnn
     SUBDIR += muni
     SUBDIR += mutt
     SUBDIR += nvi-big5

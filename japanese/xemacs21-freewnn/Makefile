@@ -1,4 +1,4 @@
-# New ports collection makefile for:	XEmacs with Wnn4
+# New ports collection makefile for:	XEmacs with FreeWnn
 # Date created:		25 January 1998
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
@@ -8,6 +8,6 @@
 COMMENT=		${.CURDIR}/pkg/COMMENT
 
 XEMACS_MAJOR_VER=	21
-WNN4=			yes
+FREEWNN=		yes
 
 .include	"${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-canna/Makefile"
