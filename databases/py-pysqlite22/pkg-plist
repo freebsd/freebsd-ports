@@ -1,26 +1,10 @@
-%%PYTHON_SITELIBDIR%%/pysqlite_exceptions.py
-%%PYTHON_SITELIBDIR%%/pysqlite_exceptions.pyc
-%%PYTHON_SITELIBDIR%%/pysqlite_exceptions.pyo
 %%PYTHON_SITELIBDIR%%/sqlite/__init__.py
 %%PYTHON_SITELIBDIR%%/sqlite/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sqlite/__init__.pyo
 %%PYTHON_SITELIBDIR%%/sqlite/main.py
 %%PYTHON_SITELIBDIR%%/sqlite/main.pyc
 %%PYTHON_SITELIBDIR%%/sqlite/main.pyo
-%%PYTHON_SITELIBDIR%%/sqlite/threadutils.py
-%%PYTHON_SITELIBDIR%%/sqlite/threadutils.pyc
-%%PYTHON_SITELIBDIR%%/sqlite/threadutils.pyo
-%%PYTHON_SITELIBDIR%%/sqlite/constants/__init__.py
-%%PYTHON_SITELIBDIR%%/sqlite/constants/__init__.pyc
-%%PYTHON_SITELIBDIR%%/sqlite/constants/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sqlite/constants/FIELD_TYPE.py
-%%PYTHON_SITELIBDIR%%/sqlite/constants/FIELD_TYPE.pyc
-%%PYTHON_SITELIBDIR%%/sqlite/constants/FIELD_TYPE.pyo
-%%PYTHON_SITELIBDIR%%/sqlite/py22features.py
-%%PYTHON_SITELIBDIR%%/sqlite/py22features.pyc
-%%PYTHON_SITELIBDIR%%/sqlite/py22features.pyo
 %%PYTHON_SITELIBDIR%%/_sqlite.so
-@dirrm %%PYTHON_SITELIBDIR%%/sqlite/constants
 @dirrm %%PYTHON_SITELIBDIR%%/sqlite
 %%PORTDOCS%%share/doc/py-PySQLite/README
 %%PORTDOCS%%@dirrm share/doc/py-PySQLite
