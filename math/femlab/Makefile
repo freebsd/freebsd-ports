@@ -3,7 +3,7 @@
 # Date created:		19 June 1997
 # Whom:			Pedro Giffuni
 #
-# $Id: Makefile,v 1.3 1997/01/19 02:47:27 obrien Exp $
+# $Id: Makefile,v 1.1.1.1 1997/09/16 07:04:58 tg Exp $
 #
 
 DISTNAME=	femlab-2d-v1.1
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.md.chalmers.se/pub/Femlab/	\
 
 MAINTAINER=	giffunip@asme.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/libsx.a:${PORTSDIR}/X11/libsx
+BUILD_DEPENDS=	${PREFIX}/lib/libsx.a:${PORTSDIR}/x11/libsx
 
 WRKSRC=         ${WRKDIR}/${PKGNAME}
 USE_X11=	yes
