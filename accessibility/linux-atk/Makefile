@@ -7,6 +7,7 @@
 
 PORTNAME=	atk
 PORTVERSION=	1.2.0
+PORTREVISION=	0
 CATEGORIES=	devel accessibility
 
 MAINTAINER=	trevor@FreeBSD.org
