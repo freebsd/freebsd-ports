@@ -23,7 +23,7 @@ USE_LIBTOOL_VER=15
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != "i386"
-IGNORE=		"Does not compile on !i386"
+IGNORE=		Does not build on 64-bit platforms, but new release is imminent
 .endif
 
 .include <bsd.port.post.mk>
