@@ -8,7 +8,7 @@ PATH=/bin:/usr/bin:/sbin:/usr/sbin:${PATH}
 export PATH
 
 if [ "$2" = "PRE-INSTALL" ]; then
-     GNOME_ONE_DESKTOP="gnomecore gnomeapplets gnomemedia gnomeutils gtop libgtop sawfish nautilus glade gedit xalf bugbuddy gnomegames gdm eog"
+     GNOME_ONE_DESKTOP="gnomecore gnomeapplets gnomemedia gnomeutils gtop libgtop sawfish nautilus gedit xalf bugbuddy gnomegames gdm eog"
      for package in ${GNOME_ONE_DESKTOP}; do
 	 if pkg_info | grep "^${package}-[0-9]" >/dev/null 2>&1; then
 	     echo "${package} was detected on the system.  This package is part of the GNOME 1.x"
