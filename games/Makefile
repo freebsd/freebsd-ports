@@ -181,6 +181,7 @@
     SUBDIR += xkoules
     SUBDIR += xlaby
     SUBDIR += xlife
+    SUBDIR += xlifegame
     SUBDIR += xlines
     SUBDIR += xmahjongg
     SUBDIR += xmastermind
