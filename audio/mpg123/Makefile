@@ -3,7 +3,7 @@
 # Date created:			25 June 1997
 # Whom:				Carey Jones <mcj@acquiesce.org>
 #
-# $Id: Makefile,v 1.12 1999/08/05 05:53:52 jkoshy Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mpg123-0.59r

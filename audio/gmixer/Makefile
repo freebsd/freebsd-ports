@@ -3,7 +3,7 @@
 # Date created:        25 February 1999
 # Whom:                Chris Piazza <cpiazza@FreeBSD.org>
 #
-# $Id: Makefile,v 1.3 1999/05/29 03:55:31 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gmixer-0.98c

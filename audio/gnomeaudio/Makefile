@@ -3,7 +3,7 @@
 # Date created:				29 Dec 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.8 1999/04/07 18:10:08 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gnome-audio-1.0.0

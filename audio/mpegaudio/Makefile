@@ -2,7 +2,7 @@
 # Date created:		1 July 1996
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.2 1996/11/15 23:13:52 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mpegaudio

@@ -3,7 +3,7 @@
 # Date created:         2 Oct 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.30 1997/11/26 02:05:15 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       tracker-5.3

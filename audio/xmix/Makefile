@@ -3,7 +3,7 @@
 # Date created:		30 June 1995
 # Whom:			janek@gaja.ipan.lublin.pl
 #
-# $Id: Makefile,v 1.5 1996/11/18 13:56:53 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xmix-2.1

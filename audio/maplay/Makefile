@@ -3,7 +3,7 @@
 # Date created:         Feb 13 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.7 1998/01/25 20:44:10 torstenb Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       maplay1_2

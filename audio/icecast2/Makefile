@@ -3,7 +3,7 @@
 # Date created:		28 Jan 1999
 # Whom:			Chip Marshall <chip@eboai.org>
 #
-# $Id: Makefile,v 1.4 1999/04/14 00:22:58 scrappy Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	icecast-1.1.4

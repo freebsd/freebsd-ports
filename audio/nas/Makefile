@@ -3,7 +3,7 @@
 # Date created:		03 Nov 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.9 1998/09/28 01:52:27 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	nas-1.2p5

@@ -3,7 +3,7 @@
 # Date created:         27 Feb 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.7 1996/11/18 10:34:31 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       playmidi-2.3

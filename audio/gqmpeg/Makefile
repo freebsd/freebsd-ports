@@ -3,7 +3,7 @@
 # Date Created:		28 Oct 1998
 # Whom:			Vanilla Pooh Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.15 1999/06/08 23:19:01 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	gqmpeg-0.6.3

@@ -3,7 +3,7 @@
 # Date created:		7 December 1998
 # Whom:			Chia-liang Kao <clkao@CirX.ORG>
 #
-# $Id: Makefile,v 1.4 1999/01/18 06:42:58 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wmcdplay-1.0-beta1

@@ -3,7 +3,7 @@
 # Date created:		01 June 1999
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/01 10:46:54 tg Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	libcdaudio_0.7.0

@@ -3,7 +3,7 @@
 # Date created:			3 July 1999
 # Whom:				Espen Skoglund <espensk@stud.cs.uit.no>
 #
-# $Id:$
+# $FreeBSD$
 #
 
 DISTNAME=	xmms-0.9.1

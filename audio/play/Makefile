@@ -3,7 +3,7 @@
 # Date created:		20 May 1998
 # Whom:			Masanori Kiriake <seiken@nbs.co.jp>
 #
-# $Id: Makefile,v 1.4 1999/04/07 18:44:01 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	play-1.0

@@ -3,7 +3,7 @@
 # Date created:		Jun 23 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.6 1998/11/02 04:55:33 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	amp-0.7.6

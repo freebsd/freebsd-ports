@@ -3,7 +3,7 @@
 # Date created:		2nd, Jan 1999
 # Whom:			Chia-liang Kao <clkao@CirX.ORG>
 #
-# $Id: Makefile,v 1.2 1999/01/03 18:58:53 hoek Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dagrab-0.3.1

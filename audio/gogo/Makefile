@@ -3,7 +3,7 @@
 # Date created:        01 July 1999
 # Whom:                Yukihiro Nakai <Nacai@iname.com>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	bsd0709

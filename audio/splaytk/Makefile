@@ -3,7 +3,7 @@
 # Date created:         19 Apr 1998
 # Whom:                 brett@peloton.physics.montana.edu
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/24 02:33:34 mph Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		splaytk-2.0

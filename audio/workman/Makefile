@@ -3,7 +3,7 @@
 # Date created:         25 Now 1995
 # Whom:                 Donald Burr <d_burr@ix.netcom.com>
 #
-# $Id: Makefile,v 1.9 1998/10/13 03:30:30 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       WorkMan-1.3a

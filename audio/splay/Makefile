@@ -3,7 +3,7 @@
 # Date created:         1 Apr 1997
 # Whom:                 junker@jazz.snu.ac.kr
 #
-# $Id: Makefile,v 1.6 1998/04/19 15:40:42 steve Exp $
+# $FreeBSD$
 #
 # pthread library can be used, but sound quality is buggy
 #

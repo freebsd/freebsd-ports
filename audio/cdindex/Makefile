@@ -3,7 +3,7 @@
 # Date created:		15 June 1999
 # Whom:			Marc E E van Woerkom <van.woerkom@netcologne.de>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	cdindex-1.1.0

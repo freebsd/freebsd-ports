@@ -3,7 +3,7 @@
 # Date created:         2 May 1999
 # Whom:                 oyvindmo@initio.no
 #
-# $Id: Makefile,v 1.3 1999/05/04 07:06:23 flathill Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ripit-1.4

@@ -3,7 +3,7 @@
 # Date created:				16 March 1999
 # Whom:					Rod Taylor <tr49986@rcc.on.ca>
 #
-# $Id: Makefile,v 1.3 1999/07/10 02:42:12 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xhippo-1.1

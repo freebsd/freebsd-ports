@@ -3,7 +3,7 @@
 # Date created:        11 July 1998
 # Whom:                Rich Neswold <rneswold@mcs.net>
 #
-# $Id: Makefile,v 1.6 1999/06/27 01:52:37 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	wmmixer-1.0-beta1

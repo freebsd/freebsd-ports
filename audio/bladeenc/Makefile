@@ -3,7 +3,7 @@
 # Date created:		Thu Jan 14 23:28:40 CET 1999
 # Whom:			Dirk Froemberg <dirk@FreeBSD.org>
 #
-# $Id: Makefile,v 1.6 1999/07/27 13:08:48 dirk Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	bladeenc-082-src-stable

@@ -4,7 +4,7 @@
 # Date created:         28 February 1999
 # Whom:                 Joao Carlos Mendes Luis <jonny@jonny.eng.br>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/27 13:02:51 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	id3ren97a

@@ -3,7 +3,7 @@
 # Date created:		Tue Nov 12 15:54:21 CST 1996
 # Whom:			erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.4 1996/11/20 02:09:54 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cam-1.02

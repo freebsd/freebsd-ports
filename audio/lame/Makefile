@@ -3,7 +3,7 @@
 # Date created:        11 January 1998
 # Whom:                yoshiaki Uchikawa
 #
-# $Id: Makefile,v 1.4 1999/07/04 20:44:48 sada Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	dist10

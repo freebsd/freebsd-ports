@@ -3,7 +3,7 @@
 # Date created:				19 June 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1999/06/22 04:34:38 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		mp3info-0.2.16

@@ -3,7 +3,7 @@
 # Date created:		16 March 1995
 # Whom:			rmallory@csusb.edu
 #
-# $Id: Makefile,v 1.12 1999/06/23 18:21:29 cpiazza Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       rplay-3.2.0b6

@@ -3,7 +3,7 @@
 # Date created:        31 October 1996
 # Whom:                Stefan Zehl <sec@42.org>
 #
-# $Id: Makefile,v 1.3 1998/11/28 09:07:10 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sidplay-1_36_31

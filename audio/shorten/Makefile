@@ -3,7 +3,7 @@
 # Date created:        17 Feb 1999
 # Whom:                Stefan Zehl <sec@42.org>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	shorten

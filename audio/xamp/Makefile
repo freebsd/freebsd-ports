@@ -3,7 +3,7 @@
 # Date created:			29 July 1998
 # Whom:				Joe Jih-Shian Lu <jslu@dns.ntu.edu.tw>
 #
-# $Id: Makefile,v 1.3 1998/08/26 06:40:27 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xamp-0.8-7

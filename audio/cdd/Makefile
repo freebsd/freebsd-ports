@@ -3,7 +3,7 @@
 # Date created:         Wed Dec 23 11:15:30 CET 1998
 # Whom:                 luigi@iet.unipi.it
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/31 12:02:03 luigi Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cdd-1.0

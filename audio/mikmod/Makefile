@@ -3,7 +3,7 @@
 # Date created:        16 November 1998
 # Whom:                yoshiaki Uchikawa
 #
-# $Id: Makefile,v 1.12 1999/07/03 18:56:53 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	mikmod-3.1.6

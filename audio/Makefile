@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.98 1999/07/17 04:16:42 cpiazza Exp $
+# $FreeBSD$
 #
 
     SUBDIR += amp

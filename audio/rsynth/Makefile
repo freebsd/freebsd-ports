@@ -3,7 +3,7 @@
 # Date created:		03 Jan 1995
 # Whom:			faulkner@mpd.tandem.com
 #
-# $Id: Makefile,v 1.9 1998/11/29 08:16:52 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rsynth-2.0

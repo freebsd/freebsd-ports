@@ -3,7 +3,7 @@
 # Date created:        1 March 1999
 # Whom:                Tom Hukins <tom@eborcom.com>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/27 13:42:12 taoka Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	kmikmod-2.04

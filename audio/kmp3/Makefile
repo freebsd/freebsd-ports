@@ -3,7 +3,7 @@
 # Date created:        24 May 1999
 # Whom:                Oscar Bonilla <obonilla@fisicc-ufm.edu>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	kmp3-0.2.2

@@ -3,7 +3,7 @@
 # Date created:		17 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.10 1999/07/18 04:33:20 green Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	sox-12.16
