@@ -8,7 +8,7 @@
 
 PORTNAME=	diskcheckd
 PORTVERSION=	20010823
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	# part of port
 DISTFILES=	# part of port
@@ -24,7 +24,7 @@ MANCOMPRESSED=	no
 
 NO_WRKSUBDIR=	yes
 
-CFLAGS+=	-D_PATH_CONF='\"${PREFIX}/etc\"'
+CFLAGS+=	-D_PATH_CONF='\"${PREFIX}/etc/diskcheckd.conf\"'
 
 .include <bsd.port.pre.mk>
 
