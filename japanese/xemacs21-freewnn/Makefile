@@ -1,0 +1,13 @@
+# New ports collection makefile for:	XEmacs with Wnn4
+# Version required:	20.4
+# Date created:		25 January 1998
+# Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
+#
+# $Id$
+#
+
+PKGNAME=	ja-xemacs-wnn4-20.4
+
+WNN4=		yes
+
+.include "${.CURDIR}/../../japanese/xemacs/Makefile"
