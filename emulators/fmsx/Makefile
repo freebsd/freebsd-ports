@@ -3,14 +3,13 @@
 # Date created:         15 Oct 1996
 # Whom:                 dk
 #
-# $Id: Makefile,v 1.3 1997/03/24 18:44:29 obrien Exp $
+# $Id: Makefile,v 1.4 1997/07/21 19:28:42 max Exp $
 #
 
-DISTNAME=       fMSX-1.5
+DISTNAME=       fMSX
 PKGNAME=	fmsx-1.5
 CATEGORIES=	emulators
-MASTER_SITES=   ftp://cam031313.student.utwente.nl/pub/MSX/fMSX/ \
-		ftp://ftp.saitama-u.ac.jp/pub/msx/cam031313.student.utwente.nl/fMSX/ 
+MASTER_SITES=	http://www.komkon.org/fms/fMSX/
 EXTRACT_SUFX=   .tar.Z
 
 MAINTAINER=	dk@farm.org
