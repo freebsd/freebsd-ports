@@ -13,8 +13,8 @@ bin/xgc
 bin/xload
 bin/xman
 bin/xmessage
-include/bitmaps/ldblarrow 
-include/bitmaps/rdblarrow 
+include/bitmaps/ldblarrow
+include/bitmaps/rdblarrow
 lib/X11/app-defaults/Viewres
 lib/X11/app-defaults/XCalc
 lib/X11/app-defaults/Xditview
