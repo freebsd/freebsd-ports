@@ -1,13 +1,13 @@
 # New ports collection makefile for:	eterm
-# Version required:    0.8.9
+# Version required:    0.8.10
 # Date created:        24 November 1997
 # Whom:                Murray Stokely <murray@cdrom.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Eterm-0.8.9
-PKGNAME=	eterm-0.8.9
+DISTNAME=	Eterm-0.8.10
+PKGNAME=	eterm-0.8.10
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.eterm.org/pub/Eterm/ \
 		http://eterm.is.nontoxic.org/download/ \
@@ -44,7 +44,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/ReleaseNotes ${PREFIX}/share/doc/Eterm
 	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm.tcap ${PREFIX}/share/doc/Eterm
 	@${INSTALL_DATA} ${WRKSRC}/doc/Eterm.ti ${PREFIX}/share/doc/Eterm
-	@${INSTALL_DATA} ${WRKSRC}/doc/FAQ.html ${PREFIX}/share/doc/Eterm
 .endif
 
 .include <bsd.port.mk>
