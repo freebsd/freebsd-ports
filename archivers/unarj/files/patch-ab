@@ -1,0 +1,55 @@
+diff -urN unarj-2.43/unarj.c unarj-2.43.new/unarj.c
+--- unarj.c.orig	Mon Sep 29 14:00:24 1997
++++ unarj.c	Tue Aug  8 15:57:58 2000
+@@ -42,7 +42,8 @@
+  * 02/17/93  R. Jung     Added archive modified date support.
+  * 01/22/94  R. Jung     Changed copyright message.
+  * 07/29/96  R. Jung     Added "/" to list of path separators.
+- *
++ * 08/08/00  P. Knirsch  Added subdirectory creation for the x command. Also
++ *                       fixed some compiler warnings.
+  */
+ 
+ #include "unarj.h"
+@@ -51,6 +52,10 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <ctype.h>
++#include <sys/stat.h>
++#include <sys/types.h>
++#include <fcntl.h>
++#include <unistd.h>
+ #else /* !MODERN */
+ extern void free();
+ extern void exit();
+@@ -712,6 +717,8 @@
+ extract()
+ {
+     char name[FNAME_MAX];
++    char dir[FNAME_MAX];
++    char *pos;
+ 
+     if (check_flags())
+     {
+@@ -730,6 +737,21 @@
+ 
+     if (host_os != OS)
+         default_case_path(name);
++
++
++    /*
++       8/8/2000 Phil Knirsch: Bugfix to create subdirectories. Unarj didn't
++       do this for a long time, so it's finally fixed.
++    */
++    pos = strchr(name, PATH_CHAR);
++
++    while (pos != NULL)
++    {
++        strncpy(dir, name, pos-name);
++        dir[pos-name] = '\0';
++        mkdir(dir, 0777);
++        pos = strchr(pos+1, PATH_CHAR);
++    }
+ 
+     if (file_exists(name))
+     {

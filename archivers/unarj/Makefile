@@ -7,6 +7,7 @@
 
 PORTNAME=	unarj
 PORTVERSION=	2.43
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
 EXTRACT_SUFX=	.tgz
