@@ -38,7 +38,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <package>
 	<name>gaim</name>
 	<name>ja-gaim</name>
-	<range><le>0.81</le></range>
+	<range><le>0.81_1</le></range>
       </package>
     </affects>
     <description>
@@ -54,6 +54,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-08-12</discovery>
       <entry>2004-08-12</entry>
+      <modified>2004-08-12</modified>
     </dates>
   </vuln>
 
