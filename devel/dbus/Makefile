@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dbus
-PORTVERSION=	0.21
-PORTREVISION?=	2
+PORTVERSION=	0.22
 CATEGORIES?=	devel gnome
 MASTER_SITES=	http://freedesktop.org/Software/dbus/releases/
 
@@ -25,6 +24,7 @@ CONFIGURE_ARGS?=--enable-gtk \
 		--disable-python \
 		--disable-gcj \
 		--disable-mono \
+		--disable-mono-docs \
 		--with-system-pid-file=/var/run/dbus.pid \
 		--with-system-socket=/var/run/dbus \
 		--with-session-socket-dir=/var/tmp \

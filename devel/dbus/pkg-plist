@@ -12,6 +12,8 @@ include/dbus-%%VERSION%%/dbus/dbus-address.h
 include/dbus-%%VERSION%%/dbus/dbus-bus.h
 include/dbus-%%VERSION%%/dbus/dbus-connection.h
 include/dbus-%%VERSION%%/dbus/dbus-errors.h
+include/dbus-%%VERSION%%/dbus/dbus-glib-error-enum.h
+include/dbus-%%VERSION%%/dbus/dbus-glib-lowlevel.h
 include/dbus-%%VERSION%%/dbus/dbus-glib.h
 include/dbus-%%VERSION%%/dbus/dbus-macros.h
 include/dbus-%%VERSION%%/dbus/dbus-memory.h
@@ -19,6 +21,7 @@ include/dbus-%%VERSION%%/dbus/dbus-message.h
 include/dbus-%%VERSION%%/dbus/dbus-pending-call.h
 include/dbus-%%VERSION%%/dbus/dbus-protocol.h
 include/dbus-%%VERSION%%/dbus/dbus-server.h
+include/dbus-%%VERSION%%/dbus/dbus-shared.h
 include/dbus-%%VERSION%%/dbus/dbus-threads.h
 include/dbus-%%VERSION%%/dbus/dbus-types.h
 include/dbus-%%VERSION%%/dbus/dbus.h

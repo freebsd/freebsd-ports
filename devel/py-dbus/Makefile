@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	3
+PORTREVISION=	0
 CATEGORIES=	devel gnome python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -29,7 +29,9 @@ USE_PYTHON=	yes
 CONFIGURE_ARGS=	--enable-python \
 		--disable-gcj \
 		--disable-mono \
+		--disable-mono-docs \
 		--disable-gtk \
+		--disable-qt \
 		--with-system-pid-file=/var/run/dbus.pid \
 		--with-system-socket=/var/run/dbus \
 		--with-session-socket-dir=/var/tmp \
