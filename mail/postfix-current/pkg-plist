@@ -24,7 +24,9 @@ etc/postfix/sample-misc.cf
 %%SUB_PCRE%%etc/postfix/pcre_table
 etc/postfix/sample-qmqpd.cf
 etc/postfix/sample-rate.cf
-etc/postfix/sample-regexp.cf
+etc/postfix/sample-regexp-access.cf
+etc/postfix/sample-regexp-body.cf
+etc/postfix/sample-regexp-header.cf
 etc/postfix/sample-regexp_table
 etc/postfix/sample-relocated
 etc/postfix/sample-relocated.cf
