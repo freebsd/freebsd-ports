@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	proxytunnel
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,16 +16,17 @@ MAINTAINER=	hmendes@brturbo.com
 COMMENT=	Connects stdin and stdout to an origin server through an HTTPS proxy
 
 ALL_TARGET=	${PORTNAME}
+USE_GETOPT_LONG=yes
+NO_WRKSUBDIR=	yes
 
-DOC_FILES=	CHANGES CREDITS README
+PLIST_FILES=	bin/proxytunnel
+PORTDOCS=	CHANGES CREDITS README
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for doc in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
-.endfor
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
