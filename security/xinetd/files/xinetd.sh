@@ -8,7 +8,7 @@ fi
 case "$1" in
 start)
 	[ -x ${PREFIX}/sbin/xinetd ] && \
-		${PREFIX}/sbin/xinetd -pid 2> /var/run/xinetd.pid && \
+		${PREFIX}/sbin/xinetd -pidfile /var/run/xinetd.pid && \
 		echo -n ' xinetd'
 	;;
 stop)
