@@ -1,0 +1,32 @@
+# Ports collection makefile for:  pixilate
+# Date created:			  Wed Apr 30 06:10:16 PDT 2003
+# Whom:				  Barry Irwin <bvi@moria.org>
+#
+# $FreeBSD$
+
+PORTNAME=	pixilate
+PORTVERSION=	0.4
+#PORTREVISION=	3
+CATEGORIES=	net
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	winfingerprint
+
+MAINTAINER=	bvi-ports@moria.org
+COMMENT=	Generates packets to match a list of Cisco PIX access lists
+
+BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet-devel
+
+WRKSRC=		${WRKDIR}/pixilate
+
+HAS_CONFIGURE=	yes
+
+LIBNET_CONFIG=	${LOCALBASE}/bin/libnet-config
+CFLAGS+=	`${LIBNET_CONFIG} --cflags` `${LIBNET_CONFIG} --defines`
+CFLAGS+=	-I${LOCALBASE}/include
+LIBS=		`${LIBNET_CONFIG} --libs`
+#GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${LIBS}"
+
+MAN1=		pixilate.1
+
+.include <bsd.port.mk>
