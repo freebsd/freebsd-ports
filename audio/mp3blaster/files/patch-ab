@@ -1,9 +1,22 @@
 
 $FreeBSD$
 
---- configure.orig	Sat Mar 16 21:00:46 2002
-+++ configure	Sun Jul 21 17:31:27 2002
-@@ -2652,7 +2652,7 @@
+--- configure.orig	Sun Oct 20 19:04:59 2002
++++ configure	Thu Sep 25 23:33:55 2003
+@@ -1970,7 +1970,11 @@
+ 
+ 
+ if test "$INCLUDEPTHREAD" = 1 ; then
+-	if test "$FREEBSD" = 1 -o "$OPENBSD" = 1 ; then
++	if test "${PTHREAD_CFLAGS}${PTHREAD_LIBS}" != ""; then
++	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
++	CXXFLAGS="${CXXFLAGS} ${PTHREAD_CFLAGS}"
++	LIBS="${LIBS} ${PTHREAD_LIBS}"
++	elif test "$OPENBSD" = 1 ; then
+   	LDFLAGS="$LDFLAGS -pthread"
+ 	else
+   	echo $ac_n "checking for main in -lpthread""... $ac_c" 1>&6
+@@ -2420,7 +2424,7 @@
  fi
  done
  
@@ -12,3 +25,14 @@ $FreeBSD$
  do
  ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
  echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
+@@ -3704,7 +3708,9 @@
+ 
+ 
+ if test "$INCLUDEPTHREAD" = 1 ; then
+-  if test "$FREEBSD" = 1 -o "$OPENBSD" = 1 ; then
++  if test "${PTHREAD_CFLAGS}${PTHREAD_LIBS}" != ""; then
++    : already handled
++  elif test "$OPENBSD" = 1 ; then
+     LDFLAGS="$LDFLAGS -pthread"
+     cat >> confdefs.h <<\EOF
+ #define _THREAD_SAFE 1
