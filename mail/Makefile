@@ -21,6 +21,7 @@
     SUBDIR += bincimap
     SUBDIR += bmf
     SUBDIR += bogofilter
+    SUBDIR += bogofilter-tdb
     SUBDIR += bsmtp
     SUBDIR += bulk_mailer
     SUBDIR += cclient
