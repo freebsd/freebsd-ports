@@ -7443,6 +7443,7 @@ tr-ircd		ports/irc/tr-ircd
 tr-openoffice	ports/editors/openoffice-tr
 tr2latex	ports/print/tr2latex
 tracker		ports/audio/tracker
+tractorgen	ports/games/tractorgen
 trafcount	ports/net/trafcount
 trafd		ports/net/trafd
 trafshow	ports/net/trafshow
