@@ -8,11 +8,10 @@
 PORTNAME=	hanterm
 PORTVERSION=	3.1.3
 CATEGORIES=	korean x11
-MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	sada
+MASTER_SITES=	ftp://elf.kaist.ac.kr/pub/hanterm/ \
+		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 
-MAINTAINER=	cjh@kr.freebsd.org
+MAINTAINER=	cjh@FreeBSD.org
 
 RUN_DEPENDS=	${PREFIX}/lib/X11/fonts/local/johabm16.pcf.gz:${PORTSDIR}/korean/johabfonts
 
