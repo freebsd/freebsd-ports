@@ -130,6 +130,7 @@
     SUBDIR += p5-Devel-Peek
     SUBDIR += p5-Devel-Symdump
     SUBDIR += p5-Errno
+    SUBDIR += p5-Expect
     SUBDIR += p5-File-BasicFlock
     SUBDIR += p5-File-Lock
     SUBDIR += p5-File-Slurp
@@ -137,6 +138,8 @@
     SUBDIR += p5-File-Tools
     SUBDIR += p5-Filter
     SUBDIR += p5-FreezeThaw
+    SUBDIR += p5-IO-Stty
+    SUBDIR += p5-IO-Tty
     SUBDIR += p5-IO-stringy
     SUBDIR += p5-Include
     SUBDIR += p5-IniConf
