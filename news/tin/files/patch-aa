@@ -1,29 +1,11 @@
-*** src/screen.c.bak	Thu Oct 30 06:12:34 1997
---- src/screen.c	Tue Nov  4 10:39:41 1997
-***************
-*** 307,316 ****
-  ring_bell (void)
-  {
-  #if USE_CURSES
-! 	beep();
-! #else
-  	my_fputc ('\007', stdout);
-  	my_flush();
-  #endif
-  }
-  
---- 307,320 ----
-  ring_bell (void)
-  {
-  #if USE_CURSES
-! 	if (!cmd_line)
-! 		beep();
-! 	else {
-! #endif
-  	my_fputc ('\007', stdout);
-  	my_flush();
-+ #if USE_CURSES
-+ 	}
-  #endif
-  }
-  
+--- src/Makefile.in.orig	Sat Nov 22 06:03:52 1997
++++ src/Makefile.in	Wed Nov 26 03:12:30 1997
+@@ -20,7 +20,7 @@
+ LDFLAGS	= @LDFLAGS@
+ YACC	= @YACC@
+ 
+-LIBS	= -L../pcre -lpcre @LIBS@ @INN_NNTPLIB@
++LIBS	= ../pcre/libpcre.a  @LIBS@ @INN_NNTPLIB@  ../pcre/libpcre.a
+ 
+ # Where do you want the binary & manual page installed?
+ INSTALL_PREFIX	= @INSTALL_PREFIX@
