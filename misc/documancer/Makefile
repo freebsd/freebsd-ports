@@ -22,6 +22,8 @@ LIB_DEPENDS=	wxmozilla_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxmozilla
 RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${PYTHON_SITELIBDIR}/wxPython/__init__.py:${PORTSDIR}/x11-toolkits/py-wxPython
 
+BROKEN=		Broken dependency
+
 USE_PYTHON=	2.3
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
