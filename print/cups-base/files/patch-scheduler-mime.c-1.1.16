@@ -1,11 +1,11 @@
-Index: mime.c
+Index: scheduler/mime.c
 ===================================================================
 RCS file: /home/anoncvs/cups/scheduler/mime.c,v
 retrieving revision 1.12
 retrieving revision 1.14
 diff -u -3 -r1.12 -r1.14
---- mime.c	2002/05/16 13:45:02	1.12
-+++ mime.c	2002/08/23 01:33:46	1.14
+--- scheduler/mime.c	2002/05/16 13:45:02	1.12
++++ scheduler/mime.c	2002/08/23 01:33:46	1.14
 @@ -1,5 +1,5 @@
  /*
 - * "$Id: mime.c,v 1.12 2002/05/16 13:45:02 mike Exp $"
