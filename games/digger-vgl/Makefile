@@ -16,7 +16,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 .if defined(WITH_SOUND)
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 MAKE_ENV=	SOUND=yes \
 		SDL_CONFIG=${SDL_CONFIG}
 .endif

@@ -15,7 +15,7 @@ DISTNAME=	paranormal-${PORTVERSION:S/.p/pre/}
 MAINTAINER=	dyeske@yahoo.com
 
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2 \
-		SDL-1.1.4:${PORTSDIR}/devel/sdl12
+		SDL-1.1.5:${PORTSDIR}/devel/sdl12
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 

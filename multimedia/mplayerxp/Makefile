@@ -134,7 +134,7 @@ CONFIGURE_ARGS+=	--with-libdvdnav=${LOCALBASE}
 .endif
 # sdl
 .ifdef(WITH_SDL)
-LIB_DEPENDS+=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS+=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 
 CONFIGURE_ARGS+=	--enable-sdl
 CONFIGURE_ENV+=	SDL_CONFIG=${SDL_CONFIG}

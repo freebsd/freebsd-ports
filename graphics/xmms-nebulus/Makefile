@@ -13,7 +13,7 @@ MASTER_SITES=	http://nebulus.tuxfamily.org/
 MAINTAINER=	dyeske@yahoo.com
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config

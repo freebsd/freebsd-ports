@@ -12,7 +12,7 @@ MASTER_SITES=	http://foobillard.sunsite.dk/dnl/
 
 MAINTAINER=	thomas.vogt@bsdunix.ch
 
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		png.5:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 

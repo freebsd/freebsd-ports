@@ -118,7 +118,7 @@ WITHOUT_FFMPEG=	YES
 .endif
 
 .if defined(WITH_SDL)
-LIB_DEPENDS+=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS+=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 WITH_LIBDV=	yes
 PLIST_SUB+=	WITH_SDL=""
 .else

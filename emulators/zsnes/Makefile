@@ -17,7 +17,7 @@ MAINTAINER=	stijn@win.tue.nl
 
 # This must be >= 0.98!
 BUILD_DEPENDS=	nasm-0.98.33:${PORTSDIR}/devel/nasm
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		png.5:${PORTSDIR}/graphics/png
 
 USE_X_PREFIX=	yes

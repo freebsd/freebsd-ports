@@ -13,7 +13,7 @@ DISTNAME=	yapeSDL-${PORTVERSION}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 
 NO_WRKSUBDIR=	yes
 USE_REINPLACE=	yes

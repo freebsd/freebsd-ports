@@ -15,7 +15,7 @@ MAINTAINER=	lehmann@ans-netz.de
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		sigc.1:${PORTSDIR}/devel/libsigc++ \
-		SDL-1.1.4:${PORTSDIR}/devel/sdl12
+		SDL-1.1.5:${PORTSDIR}/devel/sdl12
 
 USE_FREETYPE=	yes
 USE_LIBTOOL=	yes

@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.libsdl.org/projects/newvox/src/
 
 MAINTAINER=	kris@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

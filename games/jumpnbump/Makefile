@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.jumpbump.mine.nu/port/ \
 
 MAINTAINER=	gurkan@linuks.mine.nu
 
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 
 .if !defined (WITHOUT_TCL)

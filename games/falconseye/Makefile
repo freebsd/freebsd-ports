@@ -14,7 +14,7 @@ DISTNAME=	nethack_source_331_jtp_${PORTVERSION:S/.//g}
 
 MAINTAINER=	kris@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
 NHDIR=		"${PREFIX}/share/falconseyedir"

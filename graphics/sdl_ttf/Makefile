@@ -14,7 +14,7 @@ DISTNAME=	SDL_ttf-${PORTVERSION}
 MAINTAINER=	sobomax@FreeBSD.org
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
-LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12 \
+LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
