@@ -29,6 +29,7 @@ share/locale/it/LC_MESSAGES/krename.mo
 share/locale/ja/LC_MESSAGES/krename.mo
 share/locale/nl/LC_MESSAGES/krename.mo
 share/locale/pl/LC_MESSAGES/krename.mo
+share/locale/ru/LC_MESSAGES/krename.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/krename.mo
 @unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
