@@ -57,6 +57,12 @@ CFLAGS+=	-DDEBUG=1
 pre-everything::
 	@if ! ${GREP} libmap.conf ${RTLD} > /dev/null 2>&1; then \
 		${ECHO_MSG} 'Please enable libmap.conf(5) feature for rtld(1).'; \
+		${ECHO_MSG} '4-stable user:'; \
+		${ECHO_MSG} '	You can get a following patch.'; \
+		${ECHO_MSG} '	http://people.FreeBSD.org/~nork/libmap_4stable.diff'; \
+		${ECHO_MSG} '	Please apply on /usr/src and make install on /usr/src/libexec/rtld-elf.'; \
+		${ECHO_MSG} '5.1-RELEASE user:'; \
+		${ECHO_MSG} '	Please see /usr/src/libexec/rtld-elf/Makefile.'; \
 		${FALSE}; \
 	fi
 .endif
