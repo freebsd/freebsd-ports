@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libexif
-PORTVERSION=	0.6.10
+PORTVERSION=	0.6.12
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	Library to read digital camera file meta-data
 
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_INC_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
