@@ -1,0 +1,33 @@
+diff -urN EMU-ELS.orig EMU-ELS
+--- EMU-ELS.orig	Thu Jan 13 07:06:35 2000
++++ EMU-ELS	Tue Apr 25 09:03:54 2000
+@@ -50,20 +50,24 @@
+ 
+    ;; pccl modules; pccl modules depend on broken.
+    (cond
+-    ((featurep 'mule)
++    ((featurep 'xemacs)
+      (cond
+       ;; XEmacs 21 w/ mule.
+-      ((and (featurep 'xemacs)
++      ((and (featurep 'mule)
+ 	    (>= emacs-major-version 21))
+        '(pccl-20 pccl))
++      (t
++       '(pccl))))
++    ((featurep 'mule)
++     (cond
+       ;; Emacs 20.
+       ((>= emacs-major-version 20)
+        '(pccl-20 pccl))
++      ;; Mule 1.* and 2.*.
+       (t
+-       ;; Mule 1.* and 2.*.
+        '(pccl-om pccl))))
+-     (t
+-      '(pccl)))
++    (t
++     '(pccl)))
+ 
+    ;; pces modules; pces modules depend on poe.
+    (cond
