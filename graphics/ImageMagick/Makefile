@@ -3,7 +3,7 @@
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.26 1998/01/29 16:44:00 fenner Exp $
+# $Id: Makefile,v 1.27 1998/01/30 22:51:07 jseger Exp $
 #
 
 DISTNAME=	ImageMagick-4.0
@@ -33,7 +33,6 @@ BUILD_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig \
 MAN1=	ImageMagick.1 animate.1 combine.1 convert.1 display.1 identify.1 import.1 mogrify.1 xtp.1
 MAN4=	miff.4
 MAN5=	quantize.5
-WRKSRC=		${WRKDIR}/ImageMagick
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--enable-lzw
 
