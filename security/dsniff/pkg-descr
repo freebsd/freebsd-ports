@@ -1,0 +1,17 @@
+Various tools for network penetration testing. Please do not abuse them.
+
+arpredirect  redirect packets from a target host (or all hosts) on the LAN
+	     intended for another host on the LAN by forging ARP replies
+findgw       determine the local gateway of an unknown network via passive
+	     sniffing
+macof        flood the local network with random MAC addresses
+dsniff       simple password sniffer
+mailsnarf    a fast and easy way to violate the Electronic Communications
+             Privacy Act of 1986 (18 USC 2701-2711), be careful
+urlsnarf     output all requested URLs sniffed from HTTP traffic in CLF
+             (Common Log Format, used by almost all web servers), suitable
+             for offline post-processing
+webspy       sends URLs sniffed from a client to your local Netscape
+             browser for display, a fun party trick
+
+WWW: http://www.monkey.org/~dugsong/
