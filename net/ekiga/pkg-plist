@@ -16,3 +16,4 @@ share/gnome/pixmaps/gnomemeeting-logo.png
 share/gnome/sounds/gnomemeeting/gnomemeeting.wav
 etc/sound/events/GnomeMeeting.soundlist
 share/gnome/gnome/apps/Internet/gnomemeeting.desktop
+etc/gconf/schemas/gnomemeeting.schema
