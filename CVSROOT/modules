@@ -7107,6 +7107,7 @@ xmms-quix3dn	ports/audio/xmms-quix3dn
 xmms-shn	ports/audio/xmms-shn
 xmms-tfmx	ports/audio/xmms-tfmx
 xmms-volnorm	ports/audio/xmms-volnorm
+xmms-xvs	ports/graphics/xmms-xvs
 xmold		ports/x11/xmold
 xmolwt		ports/biology/xmolwt
 xmorph		ports/graphics/xmorph
