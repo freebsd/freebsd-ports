@@ -7,8 +7,7 @@
 
 PORTNAME=	snow
 PORTVERSION=	1.0
-MASTER_SITES=	http://ftp.gigabell.net/pub/exp/hl/mod/snowwar/ \
-		ftp://ftp2.extreme-players.de/hl/mod/snowwar/ \
+MASTER_SITES=	ftp://ftp2.extreme-players.de/hl/mod/snowwar/ \
 		ftp://ftp.task.gda.pl/mirror/ftp.extreme-players.de/exp/hl/mod/snowwar/
 DISTFILES=	sw10.zip 10linux.zip
 DIST_SUBDIR=	snow
