@@ -1,0 +1,11 @@
+pstoepsi convertes EPS (and some PS) file to EPS file with Image preview.
+This EPSI file is very useful to import to Tgif (with 'Ctrl-(' key).
+
+Ghostscript has similar script (ps2epsi) but since version 7.05 it no more
+creates EPSI files which are compatible with tgif.
+
+Using is very simple:
+
+pstoepsi input_file_name output_file_name.epsi
+
+You will find that output_file_name.epsi in the same directory.

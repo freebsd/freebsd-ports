@@ -283,6 +283,7 @@
     SUBDIR += ppmcaption
     SUBDIR += proj
     SUBDIR += pstoedit
+    SUBDIR += pstoepsi
     SUBDIR += pvmpov
     SUBDIR += py-exif
     SUBDIR += py-gd
