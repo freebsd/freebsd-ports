@@ -1,0 +1,22 @@
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/RSA/Key.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/RSA/SS/PSS.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/RSA/SS/PKCS1v15.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/RSA/ES/OAEP.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/RSA/ES/PKCS1v15.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/RSA/Primitives.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/RSA/Key/Private/SSH.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/RSA/Key/Private.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/RSA/Key/Public/SSH.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/RSA/Key/Public.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/RSA/DataFormat.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/RSA/Debug.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/RSA/Errorhandler.pm
+lib/perl5/site_perl/%%PERL_VER%%/Crypt/RSA.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/RSA/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Crypt/RSA/ES
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Crypt/RSA/Key/Private
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Crypt/RSA/Key/Public
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Crypt/RSA/Key
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Crypt/RSA/SS
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Crypt/RSA
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/RSA
