@@ -1,5 +1,0 @@
-sbin/dhcpd
-sbin/dhcrelay
-etc/rc.d/%%STARTUP_SCRIPT%%
-@exec touch /var/db/dhcpd.leases
-@exec touch %D/etc/dhclient.conf

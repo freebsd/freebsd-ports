@@ -177,7 +177,6 @@
     SUBDIR += iplog
     SUBDIR += ipsorc
     SUBDIR += ipw
-    SUBDIR += isc-dhcp2
     SUBDIR += isc-dhcp3
     SUBDIR += isic
     SUBDIR += jabber

@@ -1,6 +1,0 @@
-ISC-DHCP Dynamic Host Configuration Protocol server
-
-This is a release of the Internet Software Consortium
-DHCP Server (ISC dhcpd).  In this release, support for the core
-DHCP protocol is provided.  BOOTP support is also provided for
-backwards compatibility. 
