@@ -261,7 +261,8 @@ MASTER_SITE_RUBY+= \
 
 MASTER_SITE_THEMES+= \
 	ftp://ftp.themes.org/pub/themes/%SUBDIR%/ \
-	ftp://ftp.tuwien.ac.at/opsys/linux/themes.org/%SUBDIR%/
+	ftp://ftp.tuwien.ac.at/opsys/linux/themes.org/%SUBDIR%/ \
+	ftp://ftp.chg.ru/pub/X11/themes/%SUBDIR%/
 
 # Where to put distfiles that don't have any other master site
 MASTER_SITE_LOCAL?= \
