@@ -1,0 +1,40 @@
+--- configure.orig	Mon Jul 14 08:49:26 2003
++++ configure	Mon Jul 14 08:50:23 2003
+@@ -10352,23 +10352,23 @@
+   else
+      PKG_CONFIG_MIN_VERSION=0.9.0
+      if $PKG_CONFIG --atleast-pkgconfig-version $PKG_CONFIG_MIN_VERSION; then
+-        echo "$as_me:$LINENO: checking for gtk" >&5
+-echo $ECHO_N "checking for gtk... $ECHO_C" >&6
++        echo "$as_me:$LINENO: checking for gtk+" >&5
++echo $ECHO_N "checking for gtk+... $ECHO_C" >&6
+ 
+-        if $PKG_CONFIG --exists "gtk" ; then
++        if $PKG_CONFIG --exists "gtk+" ; then
+             echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+             succeeded=yes
+ 
+             echo "$as_me:$LINENO: checking GTK_CFLAGS" >&5
+ echo $ECHO_N "checking GTK_CFLAGS... $ECHO_C" >&6
+-            GTK_CFLAGS=`$PKG_CONFIG --cflags "gtk"`
++            GTK_CFLAGS=`$PKG_CONFIG --cflags "gtk+"`
+             echo "$as_me:$LINENO: result: $GTK_CFLAGS" >&5
+ echo "${ECHO_T}$GTK_CFLAGS" >&6
+ 
+             echo "$as_me:$LINENO: checking GTK_LIBS" >&5
+ echo $ECHO_N "checking GTK_LIBS... $ECHO_C" >&6
+-            GTK_LIBS=`$PKG_CONFIG --libs "gtk"`
++            GTK_LIBS=`$PKG_CONFIG --libs "gtk+"`
+             echo "$as_me:$LINENO: result: $GTK_LIBS" >&5
+ echo "${ECHO_T}$GTK_LIBS" >&6
+         else
+@@ -10376,7 +10376,7 @@
+             GTK_LIBS=""
+             ## If we have a custom action on failure, don't print errors, but
+             ## do set a variable so people can do so.
+-            GTK_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "gtk"`
++            GTK_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "gtk+"`
+ 
+         fi
+ 
