@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- sh/makedepend.orig	Thu Dec 19 00:29:14 2002
++++ sh/makedepend	Thu Dec 19 00:29:26 2002
+@@ -66,7 +66,7 @@
+ for file in $files
+ do	objname="$objprefix"`expr "$file" : '\(.*\)\.[^.]*$'`"$objsuffix"
+ 	gcc $cppflags -E $file |
+-		grep '^# 1 "[^/][^"]*"' |
++		grep '^# 1 "[^/<][^"]*"' |
+ 		sed '	s/[^"]*"\([^"]*\)".*/\1/
+ 			s|///*|/|g
+ 			: dotloop
