@@ -1,0 +1,5 @@
+%%SITE_PERL%%/News/Article/NoCeM.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/News/Article/NoCeM/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/News/Article/NoCeM
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/News/Article 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/News/Article 2>/dev/null || true
