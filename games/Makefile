@@ -284,6 +284,7 @@
     SUBDIR += mangband
     SUBDIR += marathon-evil
     SUBDIR += marbles
+    SUBDIR += meqcc
     SUBDIR += merlin
     SUBDIR += mindfocus
     SUBDIR += mindguard
