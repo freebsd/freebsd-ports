@@ -17,7 +17,7 @@ EOF
 my $port_perl = '%%PREFIX%%/bin/perl';
 $port_perl =~ tr|/|/|s;
 
-my $ident = `/usr/bin/ident /usr/bin/perl5`;
+my $ident = `/usr/bin/ident -q /usr/bin/perl5`;
 
 @ARGV == 1 or usage();
 if ($ARGV[0] eq 'port') {
@@ -63,6 +63,18 @@ sub switch_to_system
 
 EOF
 	close MK;
+
+	open MPOLD, "< /etc/manpath.config" or die "/etc/manpath.config: $!";
+	open MPNEW, "> /etc/manpath.config.new" or die "/etc/manpath.config.new: $!";
+	while (<MPOLD>) {
+		next if m|use.perl generated line|;
+		next if m|^\s*OPTIONAL_MANPATH\s+\S+/lib/perl5/%%PERL_VERSION%%/man\s*$|;
+		print MPNEW;
+	}
+	close MPNEW;
+	close MPOLD;
+	rename '/etc/manpath.config', '/etc/manpath.config.bak';
+	rename '/etc/manpath.config.new', '/etc/manpath.config';
 }
 
 sub switch_to_port
@@ -96,4 +108,18 @@ NO_PERL_WRAPPER=yo
 
 EOF
 	close MK;
+
+	open MPOLD, "< /etc/manpath.config" or die "/etc/manpath.config: $!";
+	open MPNEW, "> /etc/manpath.config.new" or die "/etc/manpath.config.new: $!";
+	while (<MPOLD>) {
+		print MPNEW <<EOF if m|^\s*OPTIONAL_MANPATH\s+\S+/lib/perl5/\S+/man\s*$|;
+# -- use.perl generated line -- #
+OPTIONAL_MANPATH	%%PREFIX%%/lib/perl5/%%PERL_VERSION%%/man
+EOF
+		print MPNEW;
+	}
+	close MPNEW;
+	close MPOLD;
+	rename '/etc/manpath.config', '/etc/manpath.config.bak';
+	rename '/etc/manpath.config.new', '/etc/manpath.config';
 }
