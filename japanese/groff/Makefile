@@ -22,8 +22,9 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	okazaki@FreeBSD.org
 COMMENT=	Japanese enhancement of GNU groff
 
-BUILD_DEPENDS=	pnmcut:${PORTSDIR}/graphics/netpbm
+.if !defined(PACKAGE_BUILDING)
 RUN_DEPENDS=	pnmcut:${PORTSDIR}/graphics/netpbm
+.endif
 
 TMAC_DATE=	20030521
 TMAC_DISTNAME=	tmac-${TMAC_DATE}_2
