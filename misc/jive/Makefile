@@ -4,14 +4,13 @@
 # Date created:			  Mon Feb 17, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.2 1997/01/25 18:08:40 obrien Exp $
+# $Id: Makefile,v 1.1.1.1 1997/02/19 03:38:56 obrien Exp $
 #
 
 DISTNAME=	jive-1.1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
-#MASTER_SITE_SUBDIR= games/amusements
-MASTER_SITE_SUBDIR= Incoming
+MASTER_SITE_SUBDIR= games/amusements
 
 MAINTAINER=     obrien@FreeBSD.org
 
