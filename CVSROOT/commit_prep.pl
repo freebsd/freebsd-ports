@@ -101,7 +101,7 @@ sub check_version {
 	my $filename = shift;
 	my $directory = shift;
 	my $hastag = shift;
-	my %versions = @_;
+	my $lastversion = shift;
 
 	my $bareid;
 	my $exclude;
@@ -157,7 +157,7 @@ sub check_version {
 		return (0);
 	}
 	($id, $rname, $version) = split(' ', substr($line, $pos));
-	if ($versions{$filename} eq '0') {
+	if ($lastversion eq '0') {
 		if (!$bareid) {
 			printf($NoName, $filename);
 			return(1);
@@ -185,8 +185,8 @@ sub check_version {
 			return(1);
 		}
 	}
-	if ($versions{$filename} ne $version) {
-		printf($BadVersion, $filename, $versions{$filename},
+	if ($lastversion ne $version) {
+		printf($BadVersion, $filename, $lastversion,
 		    $version, $filename);
 		return(1);
 	}
@@ -254,7 +254,7 @@ if ($check_id != 0) {
 		next if ($check_id == 2 && $arg ne "Makefile");
 		next if ($check_id == 3 && $hastag);
 		$failed += &check_version($arg, $directory, $hastag,
-		    %cvsversion);
+		    $cvsversion{$arg});
 	}
 	if ($failed) {
 		print "\n";
