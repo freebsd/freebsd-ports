@@ -1,0 +1,74 @@
+libexec/sqwebmail/maildirmake
+libexec/sqwebmail/makedatprog
+sbin/sqwebmail.makeuserdb
+sbin/sqwebmail.pw2userdb
+sbin/sqwebmail.userdb
+sbin/sqwebmail.userdbpw
+sbin/sqwebmail.vchkpw2userdb
+share/sqwebmail/authmodulelist
+%%CACHE%%@unexec %D/share/sqwebmail/cleancache.pl
+share/sqwebmail/cleancache.pl
+share/sqwebmail/html/en-us/CHARSET
+share/sqwebmail/html/en-us/ISPELLDICT
+share/sqwebmail/html/en-us/LANGUAGE
+share/sqwebmail/html/en-us/LANGUAGE_PREF
+share/sqwebmail/html/en-us/LOCALE
+share/sqwebmail/html/en-us/abooklist.html
+share/sqwebmail/html/en-us/attachments.html
+share/sqwebmail/html/en-us/empty.html
+share/sqwebmail/html/en-us/expired.html
+share/sqwebmail/html/en-us/filter.html
+share/sqwebmail/html/en-us/folder.html
+share/sqwebmail/html/en-us/folders.html
+share/sqwebmail/html/en-us/index.html
+share/sqwebmail/html/en-us/invalid.html
+share/sqwebmail/html/en-us/ldaplist.html
+share/sqwebmail/html/en-us/ldapsearch.html
+share/sqwebmail/html/en-us/login.html
+share/sqwebmail/html/en-us/newmsg.html
+share/sqwebmail/html/en-us/preferences.html
+share/sqwebmail/html/en-us/print.html
+share/sqwebmail/html/en-us/printnocookie.html
+share/sqwebmail/html/en-us/printredirect.html
+share/sqwebmail/html/en-us/readmsg.html
+share/sqwebmail/html/en-us/redirect.html
+share/sqwebmail/html/en-us/spellchk.html
+share/sqwebmail/ldapaddressbook
+share/sqwebmail/ldapsearch
+share/sqwebmail/sbin/makeuserdb
+share/sqwebmail/sbin/pw2userdb
+share/sqwebmail/sbin/userdb
+share/sqwebmail/sbin/userdbpw
+share/sqwebmail/sbin/vchkpw2userdb
+share/sqwebmail/sendit.sh
+www/cgi-bin.default/sqwebmail/sqwebmail
+www/data.default/sqwebmail/folder.gif
+www/data.default/sqwebmail/folder2.gif
+www/data.default/sqwebmail/folders.gif
+www/data.default/sqwebmail/forward.gif
+www/data.default/sqwebmail/forwardatt.gif
+www/data.default/sqwebmail/fullheaders.gif
+www/data.default/sqwebmail/left.gif
+www/data.default/sqwebmail/left2.gif
+www/data.default/sqwebmail/print.gif
+www/data.default/sqwebmail/reply.gif
+www/data.default/sqwebmail/replyall.gif
+www/data.default/sqwebmail/right.gif
+www/data.default/sqwebmail/right2.gif
+www/data.default/sqwebmail/trash2.gif
+@dirrm www/data.default/sqwebmail
+@dirrm www/data.default
+@unexec /bin/rmdir %D/www/data.default 2> /dev/null || true
+@dirrm www/cgi-bin.default/sqwebmail
+@unexec /bin/rmdir %D/www/cgi-bin.default 2> /dev/null || true
+@unexec /bin/rmdir %D/www 2> /dev/null || true
+@dirrm share/sqwebmail/sbin
+@dirrm share/sqwebmail/man/man8
+@dirrm share/sqwebmail/man/man1
+@dirrm share/sqwebmail/man
+@dirrm share/sqwebmail/html/en-us
+@unexec /bin/rm -f %D/share/sqwebmail/html/en
+@dirrm share/sqwebmail/html
+@dirrm share/sqwebmail
+%%CACHE%%@unexec rmdir /var/sqwebmail/cache 2> /dev/null || true
+%%CACHE%%@unexec rmdir /var/sqwebmail 2> /dev/null || true

@@ -1,0 +1,12 @@
+SqWebMail is a web CGI client for sending and receiving E-mail using
+Maildir mailboxes.  It DOES NOT support traditional Mailbox files - only
+Maildirs.
+
+Features:
+
+. Very lightweight
+. Hierarchical mail folders
+. Virtual accounts
+. vpopmail authentication
+
+WWW:	http://inter7.com/sqwebmail/
