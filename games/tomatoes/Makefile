@@ -34,6 +34,10 @@ USE_SDL=	mixer image sound
 BROKEN=		Does not build on 4.X
 .endif
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${MKDIR} ${DATADIR}/music
