@@ -77,6 +77,7 @@
     SUBDIR += frontpage-ko
     SUBDIR += frontpage-nl
     SUBDIR += frontpage-pt_BR
+    SUBDIR += frontpage-sv
     SUBDIR += fxhtml
     SUBDIR += g-gcl
     SUBDIR += galeon
