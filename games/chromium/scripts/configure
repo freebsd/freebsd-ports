@@ -1,0 +1,32 @@
+
+SDL_CONFIG=sdl11-config
+SMPEG_CONFIG=smpeg-config
+OPENAL_CONFIG_OPTS="./configure  --enable-sdl --enable-smpeg--enable-vorbis"
+SDL_LIBS="\`\$(SDL_CONFIG) --libs\`"
+SDL_CFLAGS="\`\$(SDL_CONFIG) --cflags\` -DUSE_SDL"
+SMPEG_LIBS="\`\$(SMPEG_CONFIG) --libs\`"
+SMPEG_CFLAGS="\`\$(SMPEG_CONFIG) --cflags\`"
+GL_LIBS="-lglpng -lGL -lGLU -lm"
+AL_LIBS="-L${LOCALBASE}/lib -lopenal" 
+AL_CFLAGS="-I${LOCALBASE}/include"
+PKG_CFLAGS="-DPKGDATADIR=\\\"$PREFIX/share/chromium\\\""
+
+CONFIGFILE=${WRKSRC}/config.mak
+
+echo "OPENAL_CONFIG_OPTS = $OPENAL_CONFIG_OPTS" > ${CONFIGFILE}
+echo ""                               >> ${CONFIGFILE}
+echo "SDL_CONFIG   = $SDL_CONFIG"     >> ${CONFIGFILE}
+echo "SMPEG_CONFIG = $SMPEG_CONFIG"   >> ${CONFIGFILE}
+echo ""                               >> ${CONFIGFILE}
+echo "AL_CFLAGS    = $AL_CFLAGS"      >> ${CONFIGFILE}
+echo "SDL_CFLAGS   = $SDL_CFLAGS"     >> ${CONFIGFILE}
+echo "SMPEG_CFLAGS = $SMPEG_CFLAGS"   >> ${CONFIGFILE}
+echo "PKG_CFLAGS   = $PKG_CFLAGS"     >> ${CONFIGFILE}
+echo ""                               >> ${CONFIGFILE}
+echo "GL_LIBS      = $GL_LIBS"        >> ${CONFIGFILE}
+echo "AL_LIBS      = $AL_LIBS"        >> ${CONFIGFILE}
+echo "SDL_LIBS     = $SDL_LIBS"       >> ${CONFIGFILE}
+echo "SMPEG_LIBS   = $SMPEG_LIBS"     >> ${CONFIGFILE}
+echo "VORBIS_LIBS  = $VORBIS_LIBS"    >> ${CONFIGFILE}
+
+cp -f ${WRKSRC}/scripts/Makefile.no-setup ${WRKSRC}/Makefile

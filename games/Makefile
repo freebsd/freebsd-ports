@@ -56,6 +56,7 @@
     SUBDIR += bzflag
     SUBDIR += cgoban
     SUBDIR += cgoban2
+    SUBDIR += chromium
     SUBDIR += circuslinux
     SUBDIR += civ2demo
     SUBDIR += clanbomber

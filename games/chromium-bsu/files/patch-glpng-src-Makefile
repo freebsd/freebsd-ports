@@ -1,0 +1,13 @@
+--- support/glpng/src/Makefile.orig	Fri Mar 14 20:53:54 2003
++++ support/glpng/src/Makefile	Fri Mar 14 20:54:26 2003
+@@ -7,10 +7,6 @@
+ 
+ ####### Compiler, tools and options
+ 
+-CC	=	gcc
+-CXX	=	g++
+-CFLAGS	=	-pipe -O2
+-CXXFLAGS=	-pipe -O2
+ INCPATH	=	-I../include -I/usr/include -I/usr/X11R6/include
+ AR	=	ar cqs
+ RANLIB	=	

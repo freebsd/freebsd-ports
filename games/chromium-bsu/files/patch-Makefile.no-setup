@@ -1,0 +1,8 @@
+--- scripts/Makefile.no-setup.orig	Fri Mar 14 20:45:01 2003
++++ scripts/Makefile.no-setup	Fri Mar 14 20:45:07 2003
+@@ -1,5 +1,4 @@
+ SUPPORT_DIRS	=	 \
+-			./support/openal/ \
+ 			./support/glpng/src
+ 
+ CHROMIUM_DIRS	=	\

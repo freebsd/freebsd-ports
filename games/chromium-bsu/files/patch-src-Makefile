@@ -1,0 +1,18 @@
+--- src/Makefile.orig	Mon May 21 22:25:50 2001
++++ src/Makefile	Fri Mar 14 20:56:28 2003
+@@ -8,12 +8,10 @@
+ include ../config.mak
+ ####### Compiler, tools and options
+ 
+-CC	=	gcc
+-CXX	=	g++
+-CFLAGS	=	-pipe $(PKG_CFLAGS) $(AL_CFLAGS) $(SDL_CFLAGS) $(SMPEG_CFLAGS) -O2 -DOLD_OPENAL -DAUDIO_OPENAL -D_REENTRANT
+-CXXFLAGS=	-pipe $(PKG_CFLAGS) $(AL_CFLAGS) $(SDL_CFLAGS) $(SMPEG_CFLAGS) -O2 -DOLD_OPENAL -DAUDIO_OPENAL -D_REENTRANT
++CFLAGS	+=	$(PKG_CFLAGS) $(AL_CFLAGS) $(SDL_CFLAGS) $(SMPEG_CFLAGS) -DAUDIO_OPENAL -D_REENTRANT
++CXXFLAGS+=	$(PKG_CFLAGS) $(AL_CFLAGS) $(SDL_CFLAGS) $(SMPEG_CFLAGS) -DAUDIO_OPENAL -D_REENTRANT
+ INCPATH	=	-I../support/include -I../support/glpng/include -I/usr/X11R6/include
+-LINK	=	g++
++LINK	=	${CXX}
+ LFLAGS	=	
+ LIBS	=	$(SUBLIBS) -L../support/glpng/lib -L/usr/lib -L/usr/X11R6/lib -L/usr/local/lib $(GL_LIBS) $(AL_LIBS) $(SDL_LIBS) $(SMPEG_LIBS) $(VORBIS_LIBS)
+ MOC	=	$(QTDIR)/bin/moc
