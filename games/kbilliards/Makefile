@@ -10,7 +10,7 @@ CATEGORIES=	games kde
 MASTER_SITES=	http://members.xoom.virgilio.it/samuele_c/kbilliards/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/b/}
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Funny billiards simulator game for KDE
 
 USE_KDELIBS_VER=	3

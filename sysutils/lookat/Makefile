@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://staf.patat.org/downloads/
 DISTNAME=	${PORTNAME}_bekijk-${PORTVERSION}
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Lookat is a program to view Un*x text files and manual pages
 
 MAN1=	  	lookat.1

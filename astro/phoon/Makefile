@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.acme.com/software/phoon/
 PKGNAMESUFFIX=	_20jan
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}${PORTVERSION}
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Phoon displays the phase of the moon
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

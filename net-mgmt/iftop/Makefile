@@ -10,7 +10,7 @@ PORTVERSION=	0.13
 CATEGORIES=	net
 MASTER_SITES=	http://www.ex-parrot.com/~pdw/iftop/download/
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Network utility for real-time bandwidth usage information
 
 MAN8=		iftop.8

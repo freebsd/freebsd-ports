@@ -11,7 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://utenti.quipo.it/claudioscordino/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	File compressor based on Huffman coding
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -10,7 +10,7 @@ PORTVERSION=	1.0.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.zerotao.org/downloads/${PORTNAME}/
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Collection of utility code for C application/server development
 
 GNU_CONFIGURE=	yes

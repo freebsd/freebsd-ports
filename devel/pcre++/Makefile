@@ -11,7 +11,7 @@ PORTVERSION=	0.9.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.daemon.de/scip/Apps/pcre++/
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	A wrapper class around the pcre library
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre

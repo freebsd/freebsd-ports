@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.lafn.org/~av832/
 PKGNAMEPREFIX=	health-
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Nut is nutrition software to record what you eat
 
 MAN1=		nut.1

@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	astro
 MASTER_SITES=	http://makemebad.net/geek/codes/${PORTNAME}/
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Show latitude and longitude of the moon
 
 LIB_DEPENDS=	nova:${PORTSDIR}/astro/libnova

@@ -10,7 +10,7 @@ PORTVERSION=	0.41
 CATEGORIES=	net
 MASTER_SITES=	http://s-tech.elsat.net.pl/braa/
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Tool for making SNMP queries
 
 LIB_DEPENDS=	netsnmp.5:${PORTSDIR}/net/net-snmp

@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://alpha.gnu.org/pub/gnu/${PORTNAME}/ \
 		ftp://ftp.funet.fi/pub/mirrors/alpha.gnu.org/gnu/${PORTNAME}/
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Internationalized Domain Names command line tool
 
 LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv

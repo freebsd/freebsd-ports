@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.altmode.com/disco/
 DISTNAME=	${PORTNAME}-${PORTVERSION}bsd
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	IP discovery and fingerprinting utility
 
 GNU_CONFIGURE=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	0.8
 CATEGORIES=	net
 MASTER_SITES=	http://www.rezrov.net/software/
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Shell authentication for TACACS+ protocol
 
 GNU_CONFIGURE=	yes
