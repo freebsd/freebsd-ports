@@ -30,6 +30,7 @@
     SUBDIR += linpack
     SUBDIR += metis
     SUBDIR += netcdf
+    SUBDIR += ngraph
     SUBDIR += numpy
     SUBDIR += octave
     SUBDIR += oleo
