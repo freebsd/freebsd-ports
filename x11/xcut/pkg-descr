@@ -1,0 +1,5 @@
+xcut is a small but useful program which can take standard input and
+store it in the X cut buffer, and also work in reverse by writing
+the X cut buffer onto standard output.
+
+WWW: http://acsys.anu.edu.au/~tpot/xcut/

@@ -1,0 +1,13 @@
+--- Imakefile.orig	Mon Sep 20 22:46:38 1999
++++ Imakefile	Thu Sep 23 14:59:31 1999
+@@ -11,8 +11,8 @@
+ 
+ XCOMM Set up for local environment
+ 
+-BINDIR=/usr/local/bin
+-MANPATH=/usr/local/man
++BINDIR=${X11BASE}/bin
++MANPATH=${X11BASE}${MAN1PREFIX}/man
+ MANSUFFIX=1
+ 
+ XCOMM Build xcut and manpage
