@@ -45,6 +45,7 @@ lib/samba/vfs/default_quota.so
 lib/samba/vfs/expand_msdfs.so
 lib/samba/vfs/extd_audit.so
 lib/samba/vfs/fake_perms.so
+%%I18N%%lib/samba/vfs/hex.so
 lib/samba/vfs/netatalk.so
 lib/samba/vfs/readonly.so
 lib/samba/vfs/recycle.so
