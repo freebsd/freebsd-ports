@@ -1,36 +1,36 @@
-*** Xbae.tmpl.orig	Tue Jul 27 11:21:55 1999
---- Xbae.tmpl	Wed Sep  8 18:00:52 1999
+*** Xbae.tmpl.orig	Thu Dec 28 20:02:38 2000
+--- Xbae.tmpl	Thu Dec 28 20:05:49 2000
 ***************
 *** 12,18 ****
-  
+
   #define DoNormalLib		YES
   #define DoSharedLib		YES
 ! #define DoDebugLib		YES
-  
+
   #include <Library.tmpl>
-  
+
 --- 12,18 ----
-  
+
   #define DoNormalLib		YES
   #define DoSharedLib		YES
 ! #define DoDebugLib		NO
-  
+
   #include <Library.tmpl>
-  
+
 ***************
-*** 138,144 ****
-     LOCAL_LDFLAGS = -L../../src $(EXTRA_LDOPTIONS)
-  
-  #if HaveXpm
-!  LOCAL_LIBRARIES = -lXbae -lXm -lXpm $(X11R6_LIBS) $(EDITRES_LIBS) -lXt -lX11 $(SVR4_LIBS)
-  #else
-   LOCAL_LIBRARIES = -lXbae -lXm $(X11R6_LIBS) $(EDITRES_LIBS) -lXt -lX11 $(SVR4_LIBS)
+*** 166,172 ****
   #endif
---- 138,144 ----
-     LOCAL_LDFLAGS = -L../../src $(EXTRA_LDOPTIONS)
-  
-  #if HaveXpm
-!  LOCAL_LIBRARIES = -lXbae ${MOTIFLIB} -lXpm $(X11R6_LIBS) $(EDITRES_LIBS) -lXt -lX11 $(SVR4_LIBS)
-  #else
-   LOCAL_LIBRARIES = -lXbae -lXm $(X11R6_LIBS) $(EDITRES_LIBS) -lXt -lX11 $(SVR4_LIBS)
+
+  #ifndef XmClientLibs
+! # define XmClientLibs -lXm $(XTOOLLIB) $(XLIB)
   #endif
+
+  #ifndef HasSaberC
+--- 166,172 ----
+  #endif
+
+  #ifndef XmClientLibs
+! # define XmClientLibs ${MOTIFLIB} $(XTOOLLIB) $(XLIB)
+  #endif
+
+  #ifndef HasSaberC
