@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.22 1999/03/09 01:08:46 nectar Exp $
+# $Id: Makefile,v 1.23 1999/03/16 19:42:33 nectar Exp $
 #
 
     SUBDIR += FWF
@@ -15,6 +15,8 @@
     SUBDIR += gtk12
     SUBDIR += gtkgl
     SUBDIR += gtkstep
+    SUBDIR += itk
+    SUBDIR += iwidgets
     SUBDIR += iv
     SUBDIR += lesstif
     SUBDIR += neXtaw
