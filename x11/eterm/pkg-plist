@@ -1,5 +1,6 @@
 bin/Esetroot
 bin/Eterm
+@exec chmod 4711 %D/bin/Eterm
 lib/libEterm.a
 lib/libEterm.so
 lib/libEterm.so.8
@@ -8,7 +9,6 @@ lib/libmej.so
 lib/libmej.so.8
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-share/Eterm/colortest.sh
 share/Eterm/pix/014.png
 share/Eterm/pix/backwave.jpg
 share/Eterm/pix/button1.jpg
@@ -40,13 +40,10 @@ share/Eterm/themes/tn3270/pixmaps.list
 share/Eterm/themes/trans/MAIN
 share/Eterm/themes/trans/pixmaps.list
 share/Eterm/themes/trans/trans.menu
-share/doc/Eterm/Eterm.help
-share/doc/Eterm/Eterm.ref
 share/doc/Eterm/Eterm.tcap
 share/doc/Eterm/Eterm.ti
 share/doc/Eterm/FAQ.html
 share/doc/Eterm/ReleaseNotes
-share/doc/Eterm/menu_cmd
 @dirrm share/doc/Eterm
 @dirrm share/Eterm/themes/Eterm
 @dirrm share/Eterm/themes/chooser
