@@ -2778,6 +2778,7 @@ jgnat-doc-ps	ports/lang/jgnat-doc-ps
 jgnat-doc-txt	ports/lang/jgnat-doc-txt
 jgraph		ports/graphics/jgraph
 jgv		ports/graphics/jgv
+jhead		ports/graphics/jhead
 jift		ports/net/jift
 jikes		ports/java/jikes
 jive		ports/misc/jive
