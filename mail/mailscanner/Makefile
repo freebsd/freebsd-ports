@@ -7,6 +7,7 @@
 
 PORTNAME=	MailScanner
 PORTVERSION=	4.36.4
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
@@ -209,18 +210,23 @@ do-install:
 	   ${ECHO} "Changes in MailScanner.conf found. Please look at \
 		${PREFIX}/etc/MailScanner/MailScanner.conf.new.${PORTVERSION}" ; \
 	fi
-	# Upgrading langauages.conf... Please wait... ATTENTION: English version only!
-	@${WRKSRC}/bin/upgrade_languages_conf \
-		${DATADIR}/reports/en/languages.conf \
-		${DATADIR}/reports/en/languages.conf.sample > \
-		${DATADIR}/reports/en/languages.conf.new.${PORTVERSION} \
-		2> /dev/null
-	@if diff -b -B -q ${DATADIR}/reports/en/languages.conf \
-		${DATADIR}/reports/en/languages.conf.new.${PORTVERSION} ; \
-	  then  ${ECHO} "No changes in languages.conf found" ; \
-		${RM} ${DATADIR}/reports/en/languages.conf.new.${PORTVERSION} ; \
-	  else  ${CP} ${DATADIR}/reports/en/languages.conf.new.${PORTVERSION} ${DATADIR}/reports/en/languages.conf ; \
-	fi
+	@for LANG_DIR in ${DATADIR}/reports/*; do \
+		if [ -f $${LANG_DIR}/languages.conf ]; then \
+			${ECHO} -n Upgrading $${LANG_DIR}/languages.conf... Please wait...; \
+			${WRKSRC}/bin/upgrade_languages_conf \
+				$${LANG_DIR}/languages.conf \
+				$${LANG_DIR}/languages.conf.sample > \
+				$${LANG_DIR}/languages.conf.new.${PORTVERSION} \
+				2> /dev/null ; \
+			if diff -b -B -q $${LANG_DIR}/languages.conf \
+				$${LANG_DIR}/languages.conf.new.${PORTVERSION} ; \
+			  then  ${ECHO} " no changes"; \
+				${RM} $${LANG_DIR}/languages.conf.new.${PORTVERSION} ; \
+			  else  ${ECHO} " done"; \
+				${CP} $${LANG_DIR}/languages.conf.new.${PORTVERSION} $${LANG_DIR}/languages.conf ; \
+			fi; \
+		fi; \
+	done
 .endif
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},' pkg-message > ${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
