@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	sqlobject
-PORTVERSION=	0.5.2
+PORTVERSION=	0.6
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	SQLObject-${PORTVERSION}
 
-MAINTAINER=	whitekid@netian.com
+MAINTAINER=	whitekid@gmail.com
 COMMENT=	A python object for manipulation with SQL table row
 
 # Someone will add SQLite, Firebird and DBMConnection support things.
