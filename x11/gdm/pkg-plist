@@ -24,7 +24,7 @@ etc/gdm/factory-gnomerc
 etc/gdm/factory-gdm.conf
 @unexec if cmp -s %D/etc/gdm/locale.alias %D/etc/gdm/factory-locale.alias; then rm -f %D/etc/gdm/locale.alias; fi
 etc/gdm/factory-locale.alias
-sbin/gdmaskpass
+%%PAM_MISC%%sbin/gdmaskpass
 sbin/gdm-restart
 sbin/gdm-safe-restart
 share/gnome/apps/Settings/gdmphotosetup.desktop
