@@ -1,13 +1,13 @@
 # New ports collection makefile for:	apache2
 # Date created:				7 April 2001
-# Whom:					Hye-Shik Chang <perky@python.or.kr>
+# Whom:					Hye-Shik Chang <perky@fallin.lv>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	apache
 PORTVERSION=	2.0.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://httpd.apache.org/dist/httpd/ \
 		http://www.cybernic.com/mirror/dist/httpd/ \
@@ -21,7 +21,7 @@ MASTER_SITES=	http://httpd.apache.org/dist/httpd/ \
 		ftp://ftp.cuckoo.com/pub/mirrors/apache/httpd/
 DISTNAME=	httpd-${PORTVERSION:S/./_/g}-beta
 
-MAINTAINER?=	perky@python.or.kr
+MAINTAINER?=	perky@fallin.lv
 
 WRKSRC=		${WRKDIR}/httpd-${PORTVERSION:S/./_/g}
 FIND?=		find
@@ -64,6 +64,9 @@ CONFIGURE_ARGS+= --enable-${mod}=yes
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.orig"|${XARGS} ${RM} -f
+
+pre-install:
+	PKG_PREFIX=${PREFIX} ./pkg-install ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
