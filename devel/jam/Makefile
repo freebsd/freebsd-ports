@@ -10,7 +10,7 @@ PORTVERSION=	2.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp1.perforce.com/pub/jam/
 
-MAINTAINER=	hsu@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 HTML_DOCS_DIR=	${PREFIX}/share/doc/jam
 HTML_DOCS=	Jam.html Jambase.html Jamfile.html Jamlang.html
