@@ -1,0 +1,24 @@
+--- Makefile.orig	Fri Jun  6 10:13:51 2003
++++ Makefile	Sat Oct  4 11:33:31 2003
+@@ -1,8 +1,7 @@
+-LAPACK = $(HOME)/lib/b/lapack
++LAPACK = %%LOCALBASE%%
+ RSDPA  = .
+ 
+-LAPACK_LIB =  -llapack -lcblaswr -lcblas \
+-              -lf77blas -lI77 -lF77 -latlas
++LAPACK_LIB =  %%LAPACK%% %%CBLAS%%
+ 
+ # if you use BLAS in clapack.tgz, use next line
+ # and set NON_ATLAS_SDPA in rsdpa_include.h to 1.
+@@ -14,8 +13,8 @@
+ #RSDPA_LIB_NAME = rsdpa
+ RSDPA_LIB = -l$(RSDPA_LIB_NAME)
+ 
+-CC = g++
+-OPTION = -O3 # -Wall # -g
++CC = %%CXX%%
++OPTION = %%CXXFLAGS%%
+ 
+ TARGET_EXE = $(RSDPA_LIB_NAME)
+ #TARGET_EXE = rsdpa_main.exe
