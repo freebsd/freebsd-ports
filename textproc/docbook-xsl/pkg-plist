@@ -658,6 +658,7 @@ share/xsl/docbook/common/en.xml
 share/xsl/docbook/common/es.xml
 share/xsl/docbook/common/et.xml
 share/xsl/docbook/common/eu.xml
+share/xsl/docbook/common/fa.xml
 share/xsl/docbook/common/fi.xml
 share/xsl/docbook/common/fr.xml
 share/xsl/docbook/common/gentext.xsl
