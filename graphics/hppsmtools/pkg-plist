@@ -2,5 +2,5 @@ bin/psmget
 bin/psmdir
 bin/psmdel
 bin/psmsho
-share/doc/hppsmtools/README
-@dirrm share/doc/hppsmtools
+%%PORTDOCS%%share/doc/hppsmtools/README
+%%PORTDOCS%%@dirrm share/doc/hppsmtools
