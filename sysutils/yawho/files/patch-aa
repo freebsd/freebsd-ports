@@ -1,0 +1,11 @@
+--- Makefile.in	Fri May 19 14:15:10 2000
++++ Makefile.in.new	Sat Dec 16 15:01:07 2000
+@@ -64,7 +64,7 @@
+ 	@rm -f yawho
+ 	$(LINK) $(yawho_LDFLAGS) $(yawho_OBJECTS) $(yawho_LDADD) $(LIBS)
+ install:
+-	$(INSTALL) -o root -m 0755 yawho $(bindir)/yawho
++	$(BSD_INSTALL_PROGRAM) yawho $(bindir)/yawho
+ clean: 
+ 	rm -f ./*.o
+ 	rm -f yawho

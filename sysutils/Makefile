@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += yawho
 
     SUBDIR += LPRng
     SUBDIR += afio
