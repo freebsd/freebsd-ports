@@ -1,0 +1,10 @@
+PPPoE (Point-to-Point Protocol over Ethernet) is a protocol used
+by many ADSL service providers. Roaring Penguin's PPPoE software
+is a reliable program for connecting unix systems to PPPoE service
+providers without requiring any kernel patches.
+
+Note that this port has had little testing (it works on 5-CURRENT
+to access T-Online in Germany from the client side) and the server side
+is entirely untested.
+
+WWW: http://www.roaringpenguin.com/pppoe/
