@@ -1758,7 +1758,7 @@ misc.c:
     </description>
     <references>
       <cvename>CAN-2003-0914</cvename>
-      <freebsdsa>SA-03:19</freebsdsa>
+      <freebsdsa>SA-03:19.bind</freebsdsa>
       <certvu>734644</certvu>
     </references>
     <dates>
