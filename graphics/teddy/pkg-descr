@@ -1,0 +1,11 @@
+Teddy is a 3D graphics library. The main purpose is to be a simple scene graph
+manager. Here is a brief list of main features:
+    * scene graph
+    * windowing system
+    * multiple scenes
+    * multiple cameras
+    * multiple camera windows
+    * LightWave objects
+    * LightWave scenes 
+
+WWW: http://teddy.sourceforge.net/

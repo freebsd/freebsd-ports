@@ -401,6 +401,7 @@
     SUBDIR += swftools
     SUBDIR += synaesthesia
     SUBDIR += tcm
+    SUBDIR += teddy
     SUBDIR += tgif
     SUBDIR += tgif-nls
     SUBDIR += threeDS
