@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amaterus
-PORTVERSION= 	0.32.9
+PORTVERSION= 	0.33.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.taiyaki.org/src/
 
