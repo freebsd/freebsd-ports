@@ -70,7 +70,7 @@ do-install:
 		| tar -C ${PREFIX} -xpf -
 
 .if !defined(NO_INSTALL)
-package:
+do-package:
 	@${MAKE} ${.MAKEFLAGS} NO_INSTALL= package
 .endif
 
