@@ -7,15 +7,17 @@
 
 PORTNAME?=	mozilla
 PORTVERSION=	1.7.3
-PORTREVISION?=	2
+PORTREVISION?=	3
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
 MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION}/src \
 			adamw/:local
-DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX} \
-		libart_lgpl${EXTRACT_SUFX}:local
+DISTFILES=	${PORTNAME}-source-${PORTVERSION}${EXTRACT_SUFX}
+.if !defined(WITH_CAIRO_RENDER)
+DISTFILES+=	libart_lgpl${EXTRACT_SUFX}:local
+.endif
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
@@ -72,7 +74,6 @@ CONFIGURE_ARGS=					\
 		--disable-bidi			\
 		--disable-plaintext-editor-only	\
 		--enable-svg			\
-		--enable-svg-renderer-libart	\
 		--disable-tests			\
 		--disable-xterm-updates		\
 		--enable-xinerama		\
@@ -86,8 +87,7 @@ CONFIGURE_ARGS=					\
 
 PLIST=		${WRKDIR}/pkg-plist
 MOZ_EXTENSIONS=	default
-CONFIGURE_ENV=	MOZ_INTERNAL_LIBART_LGPL=1 \
-		LOCALBASE=${LOCALBASE}
+CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 
@@ -122,6 +122,18 @@ OPTIONS=XFT "Enable Xft font anti-aliasing" on \
 	SMB "Enable smb:// URI support using gnomevfs" off
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_CAIRO_RENDER)
+LIB_DEPENDS+=		svg-cairo.1:${PORTSDIR}/graphics/libsvg-cairo
+
+CONFIGURE_ARGS+=	--enable-svg-renderer-cairo \
+			--disable-svg-renderer-libart
+CONFIGURE_ENV+=		MOZ_SVG_RENDERER_CAIRO=1
+.else
+CONFIGURE_ARGS+=	--enable-svg-renderer-libart \
+			--disable-svg-renderer-cairo
+CONFIGURE_ENV+=		MOZ_INTERNAL_LIBART_LGPL=1
+.endif
 
 .if !defined(WITHOUT_XFT)
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
@@ -191,7 +203,7 @@ FAKEDIR=	${WRKDIR}/fake
 #CONFIGURE_ARGS+=	--enable-reorder
 #.endif
 
-.if ${OSVERSION} < 500035
+.if ${OSVERSION} < 500035 && !defined(WITH_CAIRO_RENDER)
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-nsSVGLibartGlyphMetricsFT.cpp
 .endif
 
@@ -295,6 +307,7 @@ pre-install:
 	fi
 	${ECHO_CMD} lib/${MOZILLA}/mozilla >> ${PLIST}
 	${ECHO_CMD} lib/${MOZILLA}/mozilla-config >> ${PLIST}
+	@${CP} -RL ${WRKSRC}/dist/bin/defaults/isp ${FAKEDIR}/lib/${MOZILLA}/defaults
 	cd ${FAKEDIR}/lib/${MOZILLA} && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's:^:lib/${MOZILLA}/:' >> ${PLIST} \
 			&& ${FIND} -d * -type d | \
