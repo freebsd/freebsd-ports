@@ -1,0 +1,4 @@
+lib/perl5/site_perl/5.6.0/Convert/BER.pod
+lib/perl5/site_perl/5.6.0/Convert/BER.pm
+lib/perl5/site_perl/5.6.0/mach/auto/Convert/BER/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Convert/BER
