@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	gtk
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/pygtk/2.0
+MASTER_SITE_SUBDIR=	sources/pygtk/2.2
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pygtk-${PORTVERSION}
 DIST_SUBDIR=	gnome2
@@ -17,7 +16,6 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of Python bindings for GTK
 
-LIB_DEPENDS=	gtkgl-2.0.1:${PORTSDIR}/x11-toolkits/gtkglarea2
 RUN_DEPENDS=	${PYNUMERIC}
 
 USE_BZIP2=	yes
@@ -35,7 +33,7 @@ CONFLICTS=	py*-gtk-0*
 # Use the same way as the Python port to determine if we want
 # threading support.
 #
-LIBC_R!=	/sbin/ldconfig -r | grep c_r || true
+LIBC_R!=	/sbin/ldconfig -r | grep "c_r|pthread" || true
 .if (${LIBC_R} != "") && !defined(WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--enable-thread
 CFLAGS+=		${PTHREAD_CFLAGS}
