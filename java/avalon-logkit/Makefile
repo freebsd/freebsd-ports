@@ -24,7 +24,9 @@ DEST_JARFILE=		${PORTNAME}.jar
 JAVA_WRKDOCSDIR=	${WRKSRC}/docs
 PLIST_SUB+=		JAVAJARDIR=${JAVAJARDIR:S/^${PREFIX}\///}
 
+.if !defined(NOPORTDOCS)
 PORTDOCS=	api changes.html css features.html images index.html whitepaper.html
+.endif
 
 do-install:
 	@${ECHO_CMD} -n ">> Installing JAR file..."
