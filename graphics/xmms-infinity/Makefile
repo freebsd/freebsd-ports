@@ -15,16 +15,12 @@ DISTNAME=	infinity-${PORTVERSION}
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	A XMMS plug-in which generate full-screen interactive light effects
 
-LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
-		SDL-1.1.5:${PORTSDIR}/devel/sdl12
+LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
-
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
-CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
 PLIST_FILES=	lib/xmms/Visualization/libinfinite.so
 GNU_CONFIGURE=	yes
+USE_SDL=	sdl
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12

@@ -15,14 +15,10 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/^0.//}
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	3D objects flying around resembling explosions with various effects
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		SDL_image.10:${PORTSDIR}/graphics/sdl_image
-
+USE_SDL=	sdl image
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_X_PREFIX=	yes
-
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 
 post-patch:
 	@${PERL} -pi -e 's!CFLAGS=-Wall -O2!CFLAGS+=-Wall!; \

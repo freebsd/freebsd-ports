@@ -15,11 +15,9 @@ DISTNAME=	yapeSDL-${PORTVERSION}
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Yet Another Commodore +4 Emulator
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
-
+USE_SDL=	sdl
 NO_WRKSUBDIR=	yes
 USE_REINPLACE=	yes
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 USE_GMAKE=	yes
 ALL_TARGET=	yape
 
