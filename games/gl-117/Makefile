@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gl-117
-PORTVERSION=	0.8.8
+PORTVERSION=	0.9
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	erik@smluc.org
 COMMENT=	An OpenGL & SDL action flight simulator
 
-LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
+LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer\
+		glut.3:${PORTSDIR}/graphics/Mesa3
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
