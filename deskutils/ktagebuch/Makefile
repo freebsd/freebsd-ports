@@ -5,13 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=		ktagebuch
-PORTVERSION=		0.72
-PORTREVISION=	3
+PORTVERSION=		0.73
 CATEGORIES=		deskutils kde
-MASTER_SITES=		http://home.tiscali.de/rainerb/ktagebuch/
+MASTER_SITES=		http://www.theblessing.net/programming/${PORTNAME}/
 
 MAINTAINER=		markus@FreeBSD.org
 COMMENT=		A diary program for KDE 3
+
+LIB_DEPENDS=		sqlite3:${PORTSDIR}/databases/sqlite3
+
+EXTRA_PATCHES=		${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure
 
 USE_KDELIBS_VER=	3
 USE_BZIP2=		yes
@@ -20,12 +23,7 @@ GNU_CONFIGURE=		yes
 INSTALLS_SHLIB=		yes
 USE_REINPLACE=		yes
 
-CONFIGURE_ENV=		LDFLAGS="${PTHREAD_LIBS}"
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O2|-fPIC|g; s|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/${CONFIGURE_SCRIPT}
-	@${RM} ${WRKSRC}/ktagebuch/library/ui/inserthtmldialog.cpp \
-		${WRKSRC}/ktagebuch/library/ui/inserthtmldialog.h
+	@${REINPLACE_CMD} -e 's|-O2|-fPIC|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
