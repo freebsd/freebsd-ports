@@ -6,10 +6,10 @@ pb=/var/portbuild
 . ${pb}/portbuild.conf
 
 # packages for dependencies only
-dummyports="x11/XFree86 x11-toolkits/Motif-dummy"
+dummyports="x11/XFree86"
 
 # packages with very long dependency lists -- try to start building these first
-quickports="x11/kde11 x11/kde11-i18n x11/gnome"
+quickports="x11/kde2 x11/gnome"
 
 status=${pb}/status
 
@@ -19,7 +19,7 @@ errorexit () {
 }
 
 usage () {
-  echo "usage: [-nobuild] [-noindex] [-noduds] [-nocvsup] [-nocvs] [-norestr] [-noplistcheck] [-nodummy] branch date"
+  echo "usage: [-nobuild] [-noindex] [-noduds] [-nocvsup] [-nocvs] [-norestr] [-noplistcheck] [-nodummy] [-ftp] branch date"
   errorexit 1
 }
 
@@ -137,6 +137,28 @@ cdromlist () {
   echo $(grep -c '^#' ${pb}/${branch}/cdrom.sh) "ports in ${pb}/${branch}/cdrom.sh"
 }
 
+# usage: archiveports pb branch
+archiveports () {
+  pb=$1
+  branch=$2
+
+  echo "started archive of /usr/ports at $(date)"
+  cd ${pb}/usr
+  tar --exclude CVS -czf ${pb}/${branch}/tarballs/ports.tar.gz ports
+  echo "ended archive of /usr/ports at $(date)"
+}
+
+# usage: generatemd5 pb branch
+generatemd5 () {
+  pb=$1
+  branch=$2
+
+  echo "started generating CHECKSUM.MD5 at $(date)"
+  cd ${pb}/${branch}/packages/All
+  find . -name '*.tgz' | sort | sed -e 's/^..//' | xargs md5 > CHECKSUM.MD5
+  echo "ended generating CHECKSUM.MD5 at $(date)"
+}
+
 scripts=${pb}/scripts
 
 umask 002
@@ -148,6 +170,8 @@ echo "Subject: $me package building logs"
 echo
 echo "Called with arguments: "${1+"$@"}
 echo "Started at $(date)"
+
+starttime=$(date +%s)
 
 PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/X11R6/bin
 
@@ -163,6 +187,7 @@ nocvs=0
 norestr=0
 noplistcheck=0
 nodummy=0
+ftp=0
 
 # optional arguments
 while [ $# -gt 2 ]; do
@@ -191,6 +216,9 @@ while [ $# -gt 2 ]; do
     x-nodummy)
       nodummy=1
       ;;
+    x-ftp)
+      ftp=1
+      ;;
     *)
       usage
       ;;
@@ -215,7 +243,6 @@ fi
 
 if [ "$nodummy" = 1 ]; then
   export NODUMMY=t
-  export MOTIF_OPEN=t
   export XFREE86_VERSION=4
 fi
 
@@ -320,15 +347,18 @@ if [ "$nobuild" = 0 ]; then
 #      cp /dev/null $i
 #    done
 #  fi
+  shortdate=$(echo ${date} | sed -e 's/..$//')
   cd ${pb}/${branch}
   mkdir -p packages/All
   mkdir -p ${pb}/archive/errorlogs
-  rm -rf ${pb}/archive/errorlogs/e.${branch}.${date}
+  rm -rf ${pb}/archive/errorlogs/e.${branch}.${date} ${pb}/archive/errorlogs/e.${branch}.${shortdate}
   mkdir -p ${pb}/archive/errorlogs/e.${branch}.${date}
   ln -sf ${pb}/archive/errorlogs/e.${branch}.${date} ${pb}/${branch}/errors
-  rm -rf ${pb}/archive/errorlogs/a.${branch}.${date}
+  ln -sf e.${branch}.${date} ${pb}/archive/errorlogs/e.${branch}.${shortdate}
+  rm -rf ${pb}/archive/errorlogs/a.${branch}.${date} ${pb}/archive/errorlogs/a.${branch}.${shortdate}
   mkdir -p ${pb}/archive/errorlogs/a.${branch}.${date}
   ln -sf ${pb}/archive/errorlogs/a.${branch}.${date} ${pb}/${branch}/logs
+  ln -sf a.${branch}.${date} ${pb}/archive/errorlogs/a.${branch}.${shortdate}
   cp -p ${pb}/cvsdone ${pb}/archive/errorlogs/e.${branch}.${date}/cvsdone
   cp -p ${pb}/cvsdone ${pb}/archive/errorlogs/a.${branch}.${date}/cvsdone
   cp -p ${pb}/usr/ports/INDEX-${branch} ${pb}/archive/errorlogs/e.${branch}.${date}/INDEX
@@ -341,6 +371,8 @@ if [ "$nobuild" = 0 ]; then
     done
   fi
 
+  find /tmp -name 'make*' -mmin +60 | xargs rm -f
+
   count=$(awk '{sum+=$2}END{print sum+NR/2}' ${pb}/mlist | sed -e 's/\..*$//')
   cd ${pb}/${branch}/packages/All
   ln -sf ../../Makefile .
@@ -348,8 +380,11 @@ if [ "$nobuild" = 0 ]; then
   echo "building packages (phase 1)"
   echo "================================================"
   echo "started at $(date)"
+  phase1start=$(date +%s)
   make -k -j$count ${quickpkgs} all > ../../make.0 2>&1 </dev/null
   echo "ended at $(date)"
+  phase1end=$(date +%s)
+  echo "phase 1 took $(date -u -j -r $(($phase1end - $phase1start)) | awk '{print $4}')"
   echo $(echo $(ls -1 ${pb}/${branch}/packages/All | wc -l) - 2 | bc) "packages built"
   echo $(echo $(du -sk ${pb}/${branch}/packages | awk '{print $1}') / 1024 | bc) "MB of packages"
   echo $(echo $(du -sk ${pb}/distfiles | awk '{print $1}') / 1024 | bc) "MB of distfiles"
@@ -381,8 +416,11 @@ if [ "$nobuild" = 0 ]; then
   echo "building packages (phase 2)"
   echo "================================================"
   echo "started at $(date)"
+  phase2start=$(date +%s)
   make -k -j$count ${quickpkgs} all > ../../make.1 2>&1 </dev/null
   echo "ended at $(date)"
+  phase2end=$(date +%s)
+  echo "phase 2 took $(date -u -j -r $(($phase2end - $phase2start)) | awk '{print $4}')"
   rm Makefile
   if [ "$nodummy" = 0 ]; then
     rm ${dummypkgs}
@@ -414,8 +452,6 @@ if [ "$nobuild" = 0 ]; then
       rm ../*/$i
     fi
   done
-  echo "generating CHECKSUM.MD5"
-  md5 *.tgz > CHECKSUM.MD5
   cd ${pb}/${branch}
   if grep -qE '(ptimeout|pnohang): killing' make.1; then
     echo "The following port(s) timed out:"
@@ -431,6 +467,8 @@ if [ "$nobuild" = 0 ]; then
   if [ "x$new" != "x" ]; then
     echo "The following port(s) didn't build the first time around: $new"
   fi
+  archiveports ${pb} ${branch} &
+  generatemd5 ${pb} ${branch} &
   echo "================================================"
   echo "new failures"
   echo "================================================"
@@ -473,13 +511,9 @@ if [ "$nobuild" = 0 ]; then
     fi
   done
   echo
-  echo "================================================"
-  echo "archiving /usr/ports"
-  echo "================================================"
-  echo "started at $(date)"
-  cd ${pb}/usr
-  tar --exclude CVS -czf ${pb}/${branch}/tarballs/ports.tar.gz ports
-  echo "ended at $(date)"
+  wait
+  ls -asFlrt ${pb}/${branch}/packages/All > ${pb}/${branch}/logs/ls-lrt
+  cp -p ${pb}/${branch}/make.[01] ${pb}/${branch}/logs
   echo "================================================"
   echo "copying distfiles"
   echo "================================================"
@@ -488,8 +522,7 @@ if [ "$nobuild" = 0 ]; then
   rm -rf bak/distfiles
   mv -f distfiles bak
   su ${user} -c ${scripts}/cpdistfiles > ${pb}/cpdistfiles.log 2>&1 </dev/null &
-  # if norestr flag is set, assume it's for ftp and copy the packages over
-  if [ "$norestr" = 1 ]; then
+  if [ "$ftp" = 1 ]; then
     echo "ended at $(date)"
     echo "================================================"
     echo "copying packages"
@@ -497,6 +530,8 @@ if [ "$nobuild" = 0 ]; then
     su ${user} -c "${scripts}/docppackages ${branch}"
   fi
 fi
+endtime=$(date +%s)
 echo "================================================"
 echo "all done at $(date)"
+echo "entire process took $(date -u -j -r $(($endtime - $starttime)) | awk '{print $4}')"
 echo "================================================"
