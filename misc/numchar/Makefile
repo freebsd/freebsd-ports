@@ -8,9 +8,9 @@
 PORTNAME=	numchar
 PORTVERSION=	1.0
 CATEGORIES=	misc
-MASTER_SITES=	ftp://www.whizkidtech.net/unix/
+MASTER_SITES=	ftp://www.whizkidtech.redprince.net/unix/
 
-MAINTAINER=	adam@whizkidtech.net
+MAINTAINER=	adam@redprince.net
 COMMENT=	Converts phone numbers between digits and characters
 
 do-install:
