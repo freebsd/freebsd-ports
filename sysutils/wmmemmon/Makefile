@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmmemmon
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.1
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.sh.rim.or.jp/~ssato/src/
 DISTNAME=	WMMemMon-${PORTVERSION}
@@ -17,17 +17,16 @@ LIB_DEPENDS=	dockapp.1:${PORTSDIR}/x11-wm/libdockapp
 
 ONLY_FOR_ARCHS=	i386
 WRKSRC=		${WRKDIR}/${DISTNAME}
-USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-HAS_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/src/wmmemmon ${PREFIX}/bin
 .ifndef(NOPORTDOCS)
 	@${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m ${SHAREMODE} \
-		${PREFIX}/share/doc/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/${PORTNAME}
+		${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif # !NOPORTDOCS
 
 .include <bsd.port.mk>
