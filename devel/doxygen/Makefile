@@ -33,27 +33,28 @@ MAKE_ARGS+=	HAVE_LATEX=yes
 PLIST_SUB+=	HAVE_LATEX="@comment "
 .endif # !defined(HAVE_LATEX)
 
-.if defined(WITH_QT2)
-BROKEN=	"QT2 support has been removed"
-.else # not QT2
+.if !defined(WITHOUT_DOXYWIZARD)
 USE_QT_VER=	3
 QT_INC=		${X11BASE}/include
 QTNAME=		qt-mt
 QT_OPENGL=
 THREADLIBS=	${PTHREAD_LIBS}
 CFLAGS+=	${PTHREAD_CFLAGS}
-.endif # not QT2
 
 # Need this in env for build
 QTDIR?=		${X11BASE}
 CONFIGURE_ENV+=	QTDIR="${QTDIR}"
+CONFIGURE_ARGS+=--with-doxywizard
+.else # !WITHOUT_DOXYWIZARD
+PLIST_SUB+=	HAVE_DOXYWIZARD="@comment "
+.endif # !WITHOUT_DOXYWIZARD
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 QT_NONSTANDARD=	yes	# non-standard configure arguments
 CONFIGURE_ARGS+=--prefix ${PREFIX} --perl ${PERL} --make ${GMAKE} \
-		--with-doxywizard --install ${INSTALL}
+		--install ${INSTALL}
 
 .if !defined(NOPORTDOCS) && !defined(HAVE_LATEX)
 pre-everything::
@@ -92,7 +93,9 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxygen ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxytag ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxysearch ${PREFIX}/bin
+.ifndef WITHOUT_DOXYWIZARD
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/doxywizard ${PREFIX}/bin
+.endif
 .ifndef NOPORTDOCS
 	${MKDIR} ${PREFIX}/share/doc/doxygen/html
 	${TAR} -C ${WRKSRC} --exclude '*/_*' -cf - html \
