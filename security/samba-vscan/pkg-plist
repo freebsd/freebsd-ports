@@ -6,13 +6,16 @@ etc/samba-vscan/vscan-mks32.conf
 etc/samba-vscan/vscan-oav.conf
 etc/samba-vscan/vscan-sophos.conf
 etc/samba-vscan/vscan-trend.conf
-lib/samba/vscan-clamav.so
-lib/samba/vscan-fprotd.so
-lib/samba/vscan-icap.so
-lib/samba/vscan-kavp.so
-lib/samba/vscan-mksd.so
-lib/samba/vscan-oav.so
-lib/samba/vscan-sophos.so
-lib/samba/vscan-trend.so
+%%VFSDIR%%/vscan-clamav.so
+%%VFSDIR%%/vscan-fprotd.so
+%%VFSDIR%%/vscan-fsav.so
+%%VFSDIR%%/vscan-icap.so
+%%VFSDIR%%/vscan-kavp.so
+%%VFSDIR%%/vscan-mcdaemon.so
+%%VFSDIR%%/vscan-mksd.so
+%%VFSDIR%%/vscan-oav.so
+%%VFSDIR%%/vscan-sophos.so
+%%VFSDIR%%/vscan-trend.so
+@unexec rmdir %D/%%VFSDIR%% 2>/dev/null || true
 @unexec rmdir %D/lib/samba 2>/dev/null || true
 @dirrm etc/samba-vscan
