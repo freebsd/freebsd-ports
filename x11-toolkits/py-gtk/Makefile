@@ -16,13 +16,14 @@ MAINTAINER=	gnome@FreeBSD.org
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
+		glade.4:${PORTSDIR}/devel/libglade
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/pygtk
 
 USE_GMAKE=	yes
-USE_GNOME=	yes
+USE_GNOMELIBS=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
