@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Cache-FastMmap
-PORTVERSION=	1.07
+PORTVERSION=	1.08
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Cache
@@ -27,9 +27,5 @@ MAN3=		Cache::FastMmap.3 Cache::FastMmap::CImpl.3
 .if ${PERL_LEVEL} < 500600
 IGNORE=	Perl 5.6 or newer required. Install lang/perl5.8 or lang/perl5 and try again
 .endif
-
-post-patch:
-	@${FIND} ${WRKSRC} -name "*.PL" | \
-		${XARGS} ${PERL} -i -pe 's/^use 5.008/use 5.006/'
 
 .include <bsd.port.post.mk>
