@@ -58,10 +58,16 @@ PLIST_SUB+=	WITH_TCL=""
 PLIST_SUB+=	WITH_TCL="@comment "
 .endif
 
+.include <bsd.port.pre.mk>
+
 pre-patch:
 	@${PERL5} -pi -e "s/= tclsh/=tclsh${TCL_V}/" \
 		${WRKSRC}/../unix/Makefile.in
 	@${PERL5} -pi -e "s=doc/==" ${WRKSRC}/../MetaKit.html
+.if defined(METAKIT_WITH_PYTHON)
+	${PERL5} -pi -e "s=python2.1=${PYTHON_VERSION}=" \
+		${WRKSRC}/../unix/Makefile.in
+.endif
 
 post-install:
 .if defined(METAKIT_WITH_PYTHON)
@@ -83,4 +89,4 @@ test:
 	${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} test-tcl)
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
