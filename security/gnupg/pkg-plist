@@ -5,16 +5,20 @@ bin/gpgm
 share/gnupg/options.skel
 @dirrm share/gnupg
 share/locale/de/LC_MESSAGES/gnupg.mo
-share/locale/en/LC_MESSAGES/gnupg.mo
-@dirrm share/locale/en/LC_MESSAGES
-@dirrm share/locale/en
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/de
 share/locale/es_ES/LC_MESSAGES/gnupg.mo
 @dirrm share/locale/es_ES/LC_MESSAGES
 @dirrm share/locale/es_ES
 share/locale/fr/LC_MESSAGES/gnupg.mo
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/fr
 share/locale/it/LC_MESSAGES/gnupg.mo
 @dirrm share/locale/it/LC_MESSAGES
 @dirrm share/locale/it
+share/locale/pt_BR/LC_MESSAGES/gnupg.mo
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/pt_BR
 share/locale/ru/LC_MESSAGES/gnupg.mo
 @dirrm share/locale/ru/LC_MESSAGES
 @dirrm share/locale/ru
