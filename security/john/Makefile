@@ -9,8 +9,11 @@
 PORTNAME=	john
 PORTVERSION=	1.6
 CATEGORIES=	security
-MASTER_SITES=	http://www.false.com/security/john/ \
-		ftp://ftp.false.com/pub/security/john/
+MASTER_SITES=	ftp://ftp.ca.openwall.com/pub/projects/john/ \
+		http://www.openwall.com/john/ \
+		ftp://ftp.ru.openwall.com/pub/projects/john/ \
+		ftp://ftp.false.com/pub/security/projects/ \
+		http://www.false.com/security/john/
 
 MAINTAINER=	obrien@FreeBSD.org
 
