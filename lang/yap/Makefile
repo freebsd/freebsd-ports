@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	yap
-PORTVERSION=	4.3.22
+PORTVERSION=	4.4.3
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,19 @@ COMMENT=	A high-performance Prolog compiler
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+INFO=		yap
+
+post-extract:
+	@${RM} -f ${WRKSRC}/docs/*.info*
+
+post-build:
+	cd ${WRKSRC}/docs && makeinfo --no-split yap.tex
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/docs/yap.info ${PREFIX}/info
+	install-info ${PREFIX}/info/yap.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
