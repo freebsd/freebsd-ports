@@ -89,4 +89,8 @@ post-patch:
 	@${REINPLACE_CMD} -E -e 's|PY_LIBS=.*|PY_LIBS="-L\$$PY_EXEC_PREFIX/lib/python\$$PY_VER/config -lpython\$$PY_VER ${PTHREAD_LIBS} -lutil"|' \
 		${WRKSRC}/configure
 
+# Create plugins directory even when no plugins are installed
+post-install:
+	@${MKDIR} ${PREFIX}/lib/xchat/plugins
+
 .include <bsd.port.post.mk>
