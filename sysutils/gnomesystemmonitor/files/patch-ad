@@ -1,5 +1,5 @@
---- main.c.orig	Thu Dec 17 05:10:26 1998
-+++ main.c	Fri Jan  1 13:55:58 1999
+--- main.c.orig	Sun Feb 13 16:27:56 2000
++++ main.c	Thu Feb 17 12:07:45 2000
 @@ -32,6 +32,8 @@
  
  #include <gnome.h>
@@ -8,24 +8,23 @@
 +
  #include <glibtop/close.h>
  
- #include <assert.h>
-@@ -149,6 +151,8 @@
+ #include <locale.h>
+@@ -205,6 +207,8 @@
  	poptContext ctx;
- 	char **args;
+ 	const char **args;
  
 +	fpsetmask (fpgetmask() & ~(FP_X_DZ|FP_X_INV));
-+	
++
+ 	setlocale (LC_ALL, "");
  	bindtextdomain (PACKAGE, GNOMELOCALEDIR);
  	textdomain (PACKAGE);
- 
-@@ -256,6 +260,9 @@
-         gtk_main ();
- 
- 	glibtop_close ();
--        
+@@ -294,6 +298,9 @@
+ 			 gtop_properties.global.show_toolbar);
+ 		gnome_config_sync ();
+ 	}
 +
 +	fpresetsticky (FP_X_DZ|FP_X_INV);
 +	fpsetmask (FP_X_DZ|FP_X_INV);
-+
+         
          return 0;
  }
