@@ -1,0 +1,5 @@
+Gtk+ Journal is a Journal/Diary application written using the C++ bindings for
+Gtk+-2 (gtkmm). It uses SQlite to store your entries, and the OpenSSL
+implementations of the BlowFish and SHA-1 algorithms to keep your data safe.
+
+WWW: http://linuxhelp.homeunix.com/cgi-bin/rblh/index.rb?handler=downloads&d=GtkJournal
