@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	CGI-Builder
-PORTVERSION=	1.25
+PORTVERSION=	1.26
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CGI
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION}+
 
 MAINTAINER=	daniel@itxl.nl
 COMMENT=	Perl module intended to make it easier to create reusable web apps
@@ -19,6 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/IO/Util.pm:${PORTSDIR}/devel/p5-IO-Util \
 		${SITE_PERL}/Class/constr.pm:${PORTSDIR}/devel/p5-OOTools
 
 PERL_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 MAN3=		CGI::Builder.3  \
 		CGI::Builder::Const.3 \
