@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtomcrypt
-PORTVERSION=	0.94
+PORTVERSION=	0.98
 CATEGORIES=	security
 MASTER_SITES=	http://libtomcrypt.org/files/
 DISTNAME=	crypt-${PORTVERSION}
