@@ -1,0 +1,16 @@
+The system Risa/Asir is a general computer algebra system.
+It performs arithmetics in various rings and fields, factorization,
+and Groebner basis computations. It can call outer modules complient
+to the OpenXM protocols.
+
+The asir user language is like C.
+
+The most recent source distribution from Kobe University can be found at
+
+	http://www.asir.org/
+
+Risa/Asir was originally developed at Fujitsu Research Laboratory.
+Fujitsu Research Laboratory holds the copyright of Risa/Asir.
+See the COPYRIGHT file in the source distribution.
+
+WWW: http://www.asir.org/
