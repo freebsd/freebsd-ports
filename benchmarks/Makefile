@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.4 1997/02/16 13:32:59 andreas Exp $
+# $Id: Makefile,v 1.5 1998/03/27 12:29:00 tg Exp $
 #
 
     SUBDIR += bonnie
     SUBDIR += bytebench
+    SUBDIR += hint
     SUBDIR += iozone
     SUBDIR += lmbench
     SUBDIR += nbench
