@@ -33,6 +33,14 @@ TXT_DOCS=	BUGS CHANGES COMMITTERS COPYING HACKING INSTALL README
 PORTDOCS=	${TXT_DOCS}
 .endif
 
+.if !defined(WITHOUT_GETTEXT)
+USE_GETTEXT=		yes
+PLIST_SUB+=		WITHOUT_GETTEXT=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		WITHOUT_GETTEXT="@comment "
+.endif
+
 .include <bsd.port.pre.mk>
 
 SVNREPOS?=	/home/svn/repos
