@@ -20,19 +20,13 @@ NO_WRKSUBDIR=	yes
 
 USE_ZIP=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500035
-BROKEN=		"Does not compile on 5.0"
-.endif
-
 post-extract:
 	@cd ${WRKSRC} && unzip -q -aa source.zip \
 		&& ${LN} -sf GIF.CPP gif.cpp \
 		&& ${LN} -sf FLIPLAY.CPP fliplay.cpp
 
 do-build:
-	@cd ${WRKSRC} && ${CC} ${CFLAGS} -o ${PORTNAME} *.cpp
+	@cd ${WRKSRC} && ${CXX} ${CXXFLAGS} -o ${PORTNAME} *.cpp
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fli2gif ${PREFIX}/bin
@@ -41,4 +35,4 @@ do-install:
 	${INSTALL_DATA}	${WRKSRC}/*.TXT ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
