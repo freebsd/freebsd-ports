@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	libs/compression
 MAINTAINER=	ports@FreeBSD.org
 
 USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--enable-shared
 INSTALLS_SHLIB=	yes
 
 post-install:
