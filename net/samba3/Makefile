@@ -3,7 +3,7 @@
 # Date created:				11th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.23 1998/05/12 06:59:10 hosokawa Exp $
+# $Id: Makefile,v 1.24 1998/05/14 06:05:53 hosokawa Exp $
 #
 
 DISTNAME=	samba-1.9.18p7
@@ -76,6 +76,6 @@ post-install:
 	fi
 	chmod 500 ${SAMBA_PRIVATE}
 	chown root.wheel ${PREFIX}/bin/smbpasswd
-	chmod 4111 ${PREFIX}/bin/smbpasswd
+	chmod 111 ${PREFIX}/bin/smbpasswd
 
 .include <bsd.port.mk>
