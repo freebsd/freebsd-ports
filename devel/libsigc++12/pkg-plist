@@ -1,54 +1,38 @@
-bin/sigc-config
-include/sigc++-1.0/sigc++/adaptor.h
-include/sigc++-1.0/sigc++/basic_signal.h
-include/sigc++-1.0/sigc++/bind.h
-include/sigc++-1.0/sigc++/class_slot.h
-include/sigc++-1.0/sigc++/convert.h
-include/sigc++-1.0/sigc++/func_slot.h
-include/sigc++-1.0/sigc++/generator.h
-include/sigc++-1.0/sigc++/handle.h
-include/sigc++-1.0/sigc++/handle_system.h
-include/sigc++-1.0/sigc++/marshal.h
-include/sigc++-1.0/sigc++/object.h
-include/sigc++-1.0/sigc++/object_slot.h
-include/sigc++-1.0/sigc++/retbind.h
-include/sigc++-1.0/sigc++/rettype.h
-include/sigc++-1.0/sigc++/scope.h
-include/sigc++-1.0/sigc++/signal_system.h
-include/sigc++-1.0/sigc++/slot.h
-include/sigc++-1.0/sigc++/thread.h
-include/sigc++-1.0/sigc++/type.h
-include/sigc++-1.0/sigc++config.h
-lib/libsigc.a
-lib/libsigc.so
-lib/libsigc.so.1
-share/aclocal/sigc++.m4
-%%PORTDOCS%%share/doc/libsigc++/API
-%%PORTDOCS%%share/doc/libsigc++/FAQ
-%%PORTDOCS%%share/doc/libsigc++/FEATURES
-%%PORTDOCS%%share/doc/libsigc++/README
-%%PORTDOCS%%share/doc/libsigc++/UML
-%%PORTDOCS%%share/doc/libsigc++/conventions
-%%PORTDOCS%%share/doc/libsigc++/diagrams
-%%PORTDOCS%%share/doc/libsigc++/marshal
-%%PORTDOCS%%share/doc/libsigc++/powerusers
-%%PORTDOCS%%share/doc/libsigc++/requirements
-%%PORTDOCS%%share/doc/libsigc++/riscos
-%%PORTDOCS%%share/doc/libsigc++/signals
-%%PORTDOCS%%share/doc/libsigc++/win32
-share/sigc++-1.0/sigc++/macros/basic_signal.h.m4
-share/sigc++-1.0/sigc++/macros/bind.h.m4
-share/sigc++-1.0/sigc++/macros/class_slot.h.m4
-share/sigc++-1.0/sigc++/macros/convert.h.m4
-share/sigc++-1.0/sigc++/macros/func_slot.h.m4
-share/sigc++-1.0/sigc++/macros/object_slot.h.m4
-share/sigc++-1.0/sigc++/macros/retbind.h.m4
-share/sigc++-1.0/sigc++/macros/rettype.h.m4
-share/sigc++-1.0/sigc++/macros/slot.h.m4
-share/sigc++-1.0/sigc++/macros/template.macros.m4
-@dirrm include/sigc++-1.0/sigc++
-@dirrm include/sigc++-1.0
-%%PORTDOCS%%@dirrm share/doc/libsigc++
-@dirrm share/sigc++-1.0/sigc++/macros
-@dirrm share/sigc++-1.0/sigc++
-@dirrm share/sigc++-1.0
+include/sigc++-1.2/sigc++/adaptor.h
+include/sigc++-1.2/sigc++/bind.h
+include/sigc++-1.2/sigc++/bind_return.h
+include/sigc++-1.2/sigc++/class_slot.h
+include/sigc++-1.2/sigc++/connection.h
+include/sigc++-1.2/sigc++/hide.h
+include/sigc++-1.2/sigc++/macros/bind.h.m4
+include/sigc++-1.2/sigc++/macros/bind_return.h.m4
+include/sigc++-1.2/sigc++/macros/class_slot.h.m4
+include/sigc++-1.2/sigc++/macros/hide.h.m4
+include/sigc++-1.2/sigc++/macros/method_slot.h.m4
+include/sigc++-1.2/sigc++/macros/object_slot.h.m4
+include/sigc++-1.2/sigc++/macros/retype.h.m4
+include/sigc++-1.2/sigc++/macros/retype_return.h.m4
+include/sigc++-1.2/sigc++/macros/signal.h.m4
+include/sigc++-1.2/sigc++/macros/slot.h.m4
+include/sigc++-1.2/sigc++/macros/template.macros.m4
+include/sigc++-1.2/sigc++/marshal.h
+include/sigc++-1.2/sigc++/method_slot.h
+include/sigc++-1.2/sigc++/node.h
+include/sigc++-1.2/sigc++/object.h
+include/sigc++-1.2/sigc++/object_slot.h
+include/sigc++-1.2/sigc++/retype.h
+include/sigc++-1.2/sigc++/retype_return.h
+include/sigc++-1.2/sigc++/sigc++.h
+include/sigc++-1.2/sigc++/signal.h
+include/sigc++-1.2/sigc++/slot.h
+include/sigc++-1.2/sigc++/trait.h
+lib/libsigc-1.1.a
+lib/libsigc-1.1.so
+lib/libsigc-1.1.so.5
+lib/sigc++-1.2/include/sigcconfig.h
+libdata/pkgconfig/sigc++-1.2.pc
+@dirrm lib/sigc++-1.2/include
+@dirrm lib/sigc++-1.2
+@dirrm include/sigc++-1.2/sigc++/macros
+@dirrm include/sigc++-1.2/sigc++
+@dirrm include/sigc++-1.2
