@@ -1,0 +1,21 @@
+NARVAL is the first software agent available as free software (Gnu Public
+License).
+
+Narval is the acronym of "Network Assistant Reasoning with a Validating
+Agent Language".
+
+Narval is a framework (language + interpreter + GUI/IDE) dedicated to the
+setting up of intelligent personal assistants (IPAs). An Intelligent Personal
+Assitant is a companion that will help you in your daily work in the
+information world. It runs on your machine or on a remote server, and you
+can communicate with it via all standard means (email, web, telnet, phone,
+specific GUI, etc). It executes recipes (sequences of actions) you wrote, to
+perform a wide range of tasks, such as prepare your morning newspaper, help
+you surf the web by filtering out junk ads, keep searching the web day after
+day for things you want, participe in on-line auctions, learn you interests
+and bring you back valuable information, take care of repetitive chores,
+answer e-mail, negociate the date and time of a meeting, and much more... It
+is easy to extend the built in action library by writing new actions in
+Python.
+
+WWW: http://www.logilab.org/narval/
