@@ -7,6 +7,7 @@
 
 PORTNAME=	avifile
 PORTVERSION=	0.7.18.20021107
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://avifile.sourceforge.net/
@@ -82,7 +83,7 @@ PLIST_SUB+=	AC3_PASS="@comment "
 LIB_DEPENDS+=	a52.0:${PORTSDIR}/audio/liba52
 
 CONFIGURE_ARGS+=	--enable-a52 \
-			--disable-ffmpeg-a52bin \
+			--enable-ffmpeg-a52bin \
 			--with-a52-prefix=${LOCALBASE}
 PLIST_SUB+=	A52=""
 .else
