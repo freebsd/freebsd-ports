@@ -1,0 +1,10 @@
+@cwd /usr/X11R6
+@mode 755
+bin/sxpm
+@mode 644
+lib/libXpm.a
+lib/libXpm.so.3.4
+@exec ranlib %D/lib/libXpm.a
+@mode 444
+include/X11/xpm.h
+man/man1/sxpm.1x
