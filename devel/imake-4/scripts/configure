@@ -125,12 +125,14 @@ if [ X$BuildTTFonts != "X" ]; then
 fi
 
 echo "#define BuildXF86Setup NO" >> $F
+echo "#define HasFreetype2 YES" >> $F
+echo "#define Freetype2Dir ${LOCALBASE}" >> $F
 cat >> $F <<EOF
 #ifndef XF86CardDrivers
 #ifdef i386Architecture
 #define XF86CardDrivers         mga glint nv tga s3virge sis rendition \
                                 neomagic i740 tdfx savage \
-                                cirrus tseng trident chips apm \
+                                cirrus vmware tseng trident chips apm \
                                 GlideDriver fbdev i128 \
                                 ati AgpGartDrivers DevelDrivers ark cyrix \
 				siliconmotion \
@@ -155,5 +157,6 @@ cat $F >> ${WRKDIR}/xc/config/cf/xf86site.def
 echo "#define ProjectRoot ${PREFIX}" > ${WRKDIR}/xc/config/cf/host.def
 
 cd ${WRKDIR}/xc
+touch config/cf/version.def
 make Makefile.boot
-make -f xmakefile SUBDIRS="include config" VerifyOS Makefiles includes
+make -f xmakefile SUBDIRS="include config" VerifyOS version.def Makefiles includes
