@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_dtcl
-PORTVERSION=	0.8.12
+PORTVERSION=	0.10.1
 CATEGORIES=	www tcl83
 MASTER_SITES=	http://tcl.apache.org/mod_dtcl/download/
 
@@ -23,7 +23,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/libmod_dtcl.so.1* \
 		${PREFIX}/libexec/apache/mod_dtcl.so
 	${PREFIX}/sbin/apxs -e -A -n dtcl ${PREFIX}/libexec/apache/mod_dtcl.so
-	${MKDIR} ${PREFIX}/share/mod_dtcl
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/mod_dtcl
 	${INSTALL_DATA} ${WRKSRC}/docs/*.?tml ${WRKSRC}/docs/*.gif \

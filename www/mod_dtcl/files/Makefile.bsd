@@ -9,9 +9,7 @@ DTCL_VERSION!=	cat ${.CURDIR}/VERSION
 
 CC!=		${PREFIX}/sbin/apxs -q CC
 CFLAGS!=	${PREFIX}/sbin/apxs -q CFLAGS CFLAGS_SHLIB
-CFLAGS+=	-Wall -DSTATUS -DNO_DBM_REWRITEMAP ${INCLUDES}
-CFLAGS+=	-DDEBUG_SCRIPT_DIR="\"${PREFIX}/share/mod_dtcl/\""
-CFLAGS+=	-DDTCL_VERSION="\"${DTCL_VERSION}\""
+CFLAGS+=	${INCLUDES} -DDTCL_VERSION="\"${DTCL_VERSION}\""
 
 LIB=	mod_dtcl
 SHLIB_MAJOR=1
@@ -24,6 +22,9 @@ NOPROFILE=	True	# to avoid building profiled library
 INTERNALLIB=	True	# to avoid building a static version
 
 SRCS=	mod_dtcl.c
+SRCS+=	apache_cookie.c apache_multipart_buffer.c apache_request.c \
+	tcl_commands.c
+
 NOMAN=	True	# don't bother with the man-page here, let the port handle it
 
 all:	${SHLIB_NAME}

@@ -1,7 +1,6 @@
 libexec/apache/mod_dtcl.so
 @exec %D/sbin/apxs -e -A -n dtcl %D/%F
 @unexec %D/sbin/apxs -e -A -n dtcl %D/%F
-@dirrm share/mod_dtcl
 %%PORTDOCS%%share/doc/mod_dtcl/asf_logo.gif
 %%PORTDOCS%%share/doc/mod_dtcl/documentation.html
 %%PORTDOCS%%share/doc/mod_dtcl/dtcl.gif
