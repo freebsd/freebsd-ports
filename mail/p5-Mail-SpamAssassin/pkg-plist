@@ -78,7 +78,7 @@ etc/rc.d/sa-spamd.sh
 %%DATADIR%%/user_prefs.template
 @dirrm %%DATADIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
 @dirrm %%SITE_PERL%%/Mail/SpamAssassin/Util
 @dirrm %%SITE_PERL%%/Mail/SpamAssassin/Plugin
 @dirrm %%SITE_PERL%%/Mail/SpamAssassin/Message/Metadata
