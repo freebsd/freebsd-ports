@@ -7517,7 +7517,6 @@ tcl84		ports/lang/tcl84
 tclExpat	ports/textproc/tclExpat
 tclX		ports/lang/tclX
 tclX80		ports/lang/tclX80
-tclX82		ports/lang/tclX82
 tclcheck	ports/devel/tclcheck
 tclcl		ports/devel/tclcl
 tclgetopts	ports/devel/tclgetopts
