@@ -7,7 +7,7 @@
 
 PORTNAME?=	qt
 PORTVERSION?=	3.0.5
-PORTREVISION?=  1
+PORTREVISION?=  2
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/ \
 		ftp://ftp.chg.ru/pub/X11/qt/source/
@@ -28,13 +28,14 @@ IMAGELIB_TYPE=	qt
 PLIST_SUB+=	IMAGE_PLUGINS="@comment "
 .endif
 
-QT_PREFIX?=	${PREFIX}
-USE_BZIP2=	yes
-USE_GMAKE=	yes
-USE_REINPLACE=	yes
-REINPLACE_ARGS=	-i ""
-USE_X_PREFIX=	yes
-HAS_CONFIGURE=	yes
+QT_PREFIX?=		${PREFIX}
+USE_BZIP2=		yes
+USE_GMAKE=		yes
+USE_REINPLACE=		yes
+REINPLACE_ARGS=		-i ""
+USE_X_PREFIX=		yes
+NO_FILTER_SHLIBS=	yes
+HAS_CONFIGURE=		yes
 CONFIGURE_ARGS=	-prefix ${QT_PREFIX} \
 		-shared -qt-gif -system-zlib \
 		-no-g++-exceptions -thread -no-stl \
@@ -73,10 +74,11 @@ CFLAGS+=	-O0
 BROKEN=		"The QT 3.x port does not support any XFree86 < 4.x"
 .endif
 
+.if defined(BATCH) || defined(PACKAGE_BUILDING)
+SLEEP=${TRUE}
+.else
 SLEEP=/bin/sleep
-pre-everything:
-	@${CAT} ${PKGMESSAGE}
-	@${SLEEP} 10
+.endif
 
 pre-fetch:
 .if exists(${X11BASE}/include/qt2/qapp.h)
