@@ -1,8 +1,9 @@
-# $Id: Makefile,v 1.49 1995/04/25 07:30:27 asami Exp $
+# $Id: Makefile,v 1.50 1995/05/06 09:12:46 asami Exp $
 #
 # restricted: pgp.usa_only pgp.non-usa_only 
 #
 # BROKEN: wine (doesn't install)
+#	  lmbench (not done yet)
 #
 
 SUBDIR= amanda chord colorls cpm hfs iozone ispell less mmv mshell mtools \
