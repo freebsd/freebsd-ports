@@ -8,7 +8,7 @@
 PORTNAME=	xrisk
 PORTVERSION=	2.15
 CATEGORIES=	games
-MASTER_SITES=	http://my.pages.de/pub/comp/games/xrisk/
+MASTER_SITES=	http://my.pages.de/pub/comp/unix/games/xrisk/old/
 
 MAINTAINER=	adam-ports@blacktabby.org
 COMMENT=	A game for X11, much like the popular board game
