@@ -1,16 +1,16 @@
 # New ports collection makefile for:	xphotohunter
-# Version required:	1.3
+# Version required:	1.4
 # Date created:		12 Aug 1999
 # Whom:			clive
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xphotohunter-1.3
+DISTNAME=	xphotohunter-1.4
 CATEGORIES=	chinese games
 MASTER_SITES=	http://www.oz.nthu.edu.tw/~u860905/Xphotohunter/
 
-MAINTAINER=	Clive Lin <clive@CirX.ORG>
+MAINTAINER=	clive@CirX.ORG
 
 LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
 
