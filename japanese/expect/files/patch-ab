@@ -1,5 +1,5 @@
---- configure.in.ORIG	Wed Jul  8 09:44:06 1998
-+++ configure.in	Wed Jul  8 09:49:30 1998
+--- configure.in.ORIG	Tue Jul 21 09:43:58 1998
++++ configure.in	Tue Jul 21 09:45:12 1998
 @@ -10,11 +10,14 @@
  # note when updating version numbers here, also update pkgIndex.in (see
  # comments in Makefile)
@@ -11,7 +11,7 @@
  EXP_MICRO_VERSION=0
  EXP_VERSION=$EXP_MAJOR_VERSION.$EXP_MINOR_VERSION
  EXP_VERSION_NODOTS=$EXP_MAJOR_VERSION$EXP_MINOR_VERSION
- EXP_VERsion_FULL=$EXP_VERSION.$EXP_MICRO_VERSION
+ EXP_VERSION_FULL=$EXP_VERSION.$EXP_MICRO_VERSION
 +EXP_VERSION_PKG=$EXP_MAJOR_VERSION.$EXP_MINOR_VERSION_PREFIX.$EXP_MICRO_VERSION
  # Tcl's handling of shared_lib_suffix requires this symbol exist
  VERSION=$EXP_MAJOR_VERSION.$EXP_MINOR_VERSION
