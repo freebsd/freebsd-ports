@@ -1,0 +1,53 @@
+@comment I can't add the below files to the package because pkg_delete
+@comment will complain when removing this package:
+@comment     lib/modules/extensions/XXX-libglx.a.%%XLIBVERSION%%
+@comment     lib/modules/extensions/XXX-libGLcore.a.%%XLIBVERSION%%
+@comment     lib/XXX-libGL.a.%%XLIBVERSION%%
+@comment     lib/XXX-libGL.so.1.%%XLIBVERSION%%
+@comment They are however restored when this package is removed:
+@unexec mv -f %D/lib/modules/extensions/XXX-libglx.a.%%%%.%%XSERVVERSION%% %D/lib/modules/extensions/libglx.a
+@unexec mv -f %D/lib/modules/extensions/XXX-libGLcore.a.%%%%.%%XSERVVERSION%% %D/lib/modules/extensions/libGLcore.a
+@unexec mv -f %D/lib/XXX-libGL.a.%%%%.%%XLIBVERSION%% %D/lib/libGL.a
+lib/libGL.so.1
+@unexec mv -f %D/lib/XXX-libGL.so.1.%%%%.%%XLIBVERSION%% %D/lib/libGL.so.1
+@exec ln -sf %D/lib/libGL.so.1 %D/lib/libGL.so
+@comment no rm -f %D/lib/libGL.so because default XFree needs this also
+lib/libGLcore.so.1
+@exec ln -sf %D/lib/libGLcore.so.1 %D/lib/libGLcore.so
+@unexec rm -f %D/lib/libGLcore.so
+lib/libXvMCNVIDIA.so.1
+@exec ln -sf %D/lib/libXvMCNVIDIA.so.1 %D/lib/libXvMCNVIDIA.so
+@unexec rm -f %D/lib/libXvMCNVIDIA.so
+lib/libXvMCNVIDIA.a
+lib/modules/drivers/nvidia_drv.o
+lib/modules/extensions/libglx.so.1
+@exec ln -sf %D/lib/modules/extensions/libglx.so.1 %D/lib/modules/extensions/libglx.so
+@unexec rm -f %D/lib/modules/extensions/libglx.so
+share/doc/NVIDIA/README
+share/doc/NVIDIA/README.Linux
+share/doc/NVIDIA/XF86Config.sample
+share/doc/NVIDIA/license.txt
+@cwd /modules
+nvidia.ko
+@cwd /dev
+MAKEDEV.nvidia
+@exec mknod /dev/nvidia0 c 180 0
+@exec chmod 0666 /dev/nvidia0
+@exec mknod /dev/nvidia1 c 180 1
+@exec chmod 0666 /dev/nvidia1
+@exec mknod /dev/nvidia2 c 180 2
+@exec chmod 0666 /dev/nvidia2
+@exec mknod /dev/nvidia3 c 180 3
+@exec chmod 0666 /dev/nvidia3
+@exec mknod /dev/nvidiactl c 180 255
+@exec chmod 0666 /dev/nvidiactl
+@unexec rm -f /dev/nvidia0
+@unexec rm -f /dev/nvidia1
+@unexec rm -f /dev/nvidia2
+@unexec rm -f /dev/nvidia3
+@unexec rm -f /dev/nvidiactl
+@cwd %%LINUXBASE%%
+usr/lib/libGL.so.1.0.3203
+usr/lib/libGLcore.so.1.0.3203
+@exec ln -sf %D/usr/lib/libGL.so.1.0.3203 %D/usr/lib/libGL.so.1
+@exec ln -sf %D/usr/lib/libGLcore.so.1.0.3203 %D/usr/lib/libGLcore.so.1
