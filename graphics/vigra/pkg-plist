@@ -73,6 +73,7 @@ include/vigra/tuple.hxx
 include/vigra/utilities.hxx
 lib/libvigraimpex.a
 lib/libvigraimpex.la
+lib/libvigraimpex.so
 lib/libvigraimpex.so.2
 %%DOCSDIR%%/AlgebraicConcepts.html
 %%DOCSDIR%%/BorderTreatmentMode.html
