@@ -43,7 +43,7 @@
     SUBDIR += emacs20-dl-wnn6
     SUBDIR += epwutil
     SUBDIR += escpf
-    SUBDIR += esecanna-vje30
+    SUBDIR += esecanna
     SUBDIR += eterm
     SUBDIR += ewipe
     SUBDIR += exmh2
