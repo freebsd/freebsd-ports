@@ -1,6 +1,6 @@
---- config.mk.in.orig	Thu Oct 18 11:54:14 2001
-+++ config.mk.in	Sun Feb 24 01:49:43 2002
-@@ -8,13 +8,13 @@
+--- config.mk.in.orig	Tue Dec 16 19:05:34 2003
++++ config.mk.in	Wed May 26 16:34:41 2004
+@@ -14,13 +14,13 @@
  exec_prefix= @exec_prefix@
  incdir = @includedir@
  libdir = @libdir@
@@ -10,9 +10,9 @@
  bindir = @bindir@
  localstatedir = @localstatedir@
  sysconfdir = @sysconfdir@
- localstatedir = @localstatedir@
+ mandir = @mandir@
 -docdir = ${prefix}/doc/sqlrelay
 +docdir = ${prefix}/share/doc/sqlrelay
  tmpdir = ${localstatedir}/sqlrelay/tmp
  cachedir = ${localstatedir}/sqlrelay/cache
- 
+ debugdir = ${localstatedir}/sqlrelay/debug

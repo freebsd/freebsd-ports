@@ -2,6 +2,8 @@ bin/backupschema
 bin/fields
 bin/query
 bin/sqlr-cachemanager
+bin/sqlrclient-config
+bin/sqlrclientwrapper-config
 %%IF_GTK%%bin/sqlr-config-gtk
 %%IF_FREETDS%%bin/sqlr-connection-freetds
 %%IF_FREETDS%%bin/sqlr-connection-freetds-debug
@@ -37,96 +39,139 @@ include/sqlrelay/sqlrclientwrapper.h
 @dirrm include/sqlrelay/private
 @dirrm include/sqlrelay
 lib/libsqlrclient.a
+lib/libsqlrclient.la
 lib/libsqlrclient.so
 lib/libsqlrclient.so.0
-%%PROFILE%%lib/libsqlrclient_p.a
 lib/libsqlrclientwrapper.a
+lib/libsqlrclientwrapper.la
 lib/libsqlrclientwrapper.so
 lib/libsqlrclientwrapper.so.0
-%%PROFILE%%lib/libsqlrclientwrapper_p.a
+lib/libpqsqlrelay.a
+lib/libpqsqlrelay.la
+lib/libpqsqlrelay.so
+lib/libpqsqlrelay.so.0
+lib/libsqlrconnection.a
+lib/libsqlrconnection.la
+lib/libsqlrconnection.so
+lib/libsqlrconnection.so.0
+lib/libsqlrconnection_debug.a
+lib/libsqlrconnection_debug.la
+lib/libsqlrconnection_debug.so
+lib/libsqlrconnection_debug.so.0
+lib/libsqlrutil.a
+lib/libsqlrutil.la
+lib/libsqlrutil.so
+lib/libsqlrutil.so.0
+lib/sqlrelay/pkgIndex.tcl
+lib/sqlrelay/sqlrelay.so
+share/doc/sqlrelay/api/c++/sqlrclient.h.html
+share/doc/sqlrelay/api/c/sqlrclientwrapper.h.html
+share/doc/sqlrelay/api/java/allclasses-frame.html
+share/doc/sqlrelay/api/java/allclasses-noframe.html
+share/doc/sqlrelay/api/java/com/firstworks/sqlrelay/SQLRConnection.html
+share/doc/sqlrelay/api/java/com/firstworks/sqlrelay/SQLRCursor.html
+share/doc/sqlrelay/api/java/com/firstworks/sqlrelay/package-frame.html
+share/doc/sqlrelay/api/java/com/firstworks/sqlrelay/package-summary.html
+share/doc/sqlrelay/api/java/com/firstworks/sqlrelay/package-tree.html
+share/doc/sqlrelay/api/java/constant-values.html
+share/doc/sqlrelay/api/java/deprecated-list.html
+share/doc/sqlrelay/api/java/help-doc.html
+share/doc/sqlrelay/api/java/index-all.html
+share/doc/sqlrelay/api/java/index.html
+share/doc/sqlrelay/api/java/overview-tree.html
+share/doc/sqlrelay/api/java/package-list
+share/doc/sqlrelay/api/java/packages.html
+share/doc/sqlrelay/api/java/stylesheet.css
+share/doc/sqlrelay/api/perl/SQLRConnection.html
+share/doc/sqlrelay/api/perl/SQLRCursor.html
+share/doc/sqlrelay/api/perl/SQLRelay.html
+share/doc/sqlrelay/api/perl/perl.html
+share/doc/sqlrelay/api/php/doc.html
+share/doc/sqlrelay/api/python/PySQLRClient.py.html
+share/doc/sqlrelay/api/python/PySQLRDB.py.html
+share/doc/sqlrelay/api/ruby/ruby.html
+share/doc/sqlrelay/api/ruby/rubydbi.html
+share/doc/sqlrelay/clientapis.html
+share/doc/sqlrelay/configuring.html
+share/doc/sqlrelay/connections.html
+share/doc/sqlrelay/css/styles.css
+share/doc/sqlrelay/gettingstarted/db2.html
+share/doc/sqlrelay/gettingstarted/interbase.html
+share/doc/sqlrelay/gettingstarted/lago.html
+share/doc/sqlrelay/gettingstarted/msql.html
+share/doc/sqlrelay/gettingstarted/mssqlserver.html
+share/doc/sqlrelay/gettingstarted/mysql.html
+share/doc/sqlrelay/gettingstarted/oracle.html
+share/doc/sqlrelay/gettingstarted/oracle/linux/redhat/5/805.html
+share/doc/sqlrelay/gettingstarted/oracle/linux/redhat/6/8i.html
+share/doc/sqlrelay/gettingstarted/oracle/linux/redhat/7/8i.html
+share/doc/sqlrelay/gettingstarted/oracle/linux/redhat/7/9i.html
+share/doc/sqlrelay/gettingstarted/oracle/linux/redhat/9/9iR2.html
+share/doc/sqlrelay/gettingstarted/oracle/linux/slackware/7/8i.html
+share/doc/sqlrelay/gettingstarted/oracle/linux/slackware/8/8i.html
+share/doc/sqlrelay/gettingstarted/oracle/linux/slackware/8/9i.html
+share/doc/sqlrelay/gettingstarted/postgresql.html
+share/doc/sqlrelay/gettingstarted/sqlite.html
+share/doc/sqlrelay/gettingstarted/sybase.html
+share/doc/sqlrelay/gettingstarted/sybase/11.0.3.3.html
+share/doc/sqlrelay/gettingstarted/sybase/11.9.2.html
+share/doc/sqlrelay/index.html
+share/doc/sqlrelay/installing.html
+share/doc/sqlrelay/introduction.html
+share/doc/sqlrelay/introtowebdb.html
+share/doc/sqlrelay/invisible.gif
+share/doc/sqlrelay/oraclentier.html
+share/doc/sqlrelay/programming/binds.html
+share/doc/sqlrelay/programming/c++.html
+share/doc/sqlrelay/programming/c.html
+share/doc/sqlrelay/programming/java.html
+share/doc/sqlrelay/programming/perl.html
+share/doc/sqlrelay/programming/perldbi.html
+share/doc/sqlrelay/programming/php.html
+share/doc/sqlrelay/programming/python.html
+share/doc/sqlrelay/programming/pythondb.html
+share/doc/sqlrelay/programming/ruby.html
+share/doc/sqlrelay/programming/rubydbi.html
+share/doc/sqlrelay/programming/zope.html
+share/doc/sqlrelay/programming/zope/instance.gif
+share/doc/sqlrelay/programming/zope/management.gif
+share/doc/sqlrelay/programming/zope/resultset.gif
+share/doc/sqlrelay/programming/zope/sqlrelay.gif
+share/doc/sqlrelay/programming/zope/test.gif
+share/doc/sqlrelay/programming/zope/testzsqlmethod.gif
+share/doc/sqlrelay/programming/zope/zsqlmethod.gif
+share/doc/sqlrelay/programming/zope/zsqlmethodresultset.gif
+share/doc/sqlrelay/running.html
+@dirrm lib/sqlrelay
 @dirrm sqlrelay/tmp
 @dirrm sqlrelay/debug
 @dirrm sqlrelay/cache
 @dirrm sqlrelay
-%%PORTDOCS%%share/doc/sqlrelay/api/c++/sqlrclient.h.html
-%%PORTDOCS%%share/doc/sqlrelay/api/c/sqlrclientwrapper.h.html
-%%PORTDOCS%%share/doc/sqlrelay/api/java/SQLRConnection.html
-%%PORTDOCS%%share/doc/sqlrelay/api/java/SQLRCursor.html
-%%PORTDOCS%%share/doc/sqlrelay/api/java/allclasses-frame.html
-%%PORTDOCS%%share/doc/sqlrelay/api/java/deprecated-list.html
-%%PORTDOCS%%share/doc/sqlrelay/api/java/help-doc.html
-%%PORTDOCS%%share/doc/sqlrelay/api/java/index-all.html
-%%PORTDOCS%%share/doc/sqlrelay/api/java/index.html
-%%PORTDOCS%%share/doc/sqlrelay/api/java/overview-tree.html
-%%PORTDOCS%%share/doc/sqlrelay/api/java/package-list
-%%PORTDOCS%%share/doc/sqlrelay/api/java/packages.html
-%%PORTDOCS%%share/doc/sqlrelay/api/java/serialized-form.html
-%%PORTDOCS%%share/doc/sqlrelay/api/java/stylesheet.css
-%%PORTDOCS%%share/doc/sqlrelay/api/perl/SQLRConnection.html
-%%PORTDOCS%%share/doc/sqlrelay/api/perl/SQLRCursor.html
-%%PORTDOCS%%share/doc/sqlrelay/api/perl/SQLRelay.html
-%%PORTDOCS%%share/doc/sqlrelay/api/php/doc.html
-%%PORTDOCS%%share/doc/sqlrelay/api/python/PySQLRClient.py.html
-%%PORTDOCS%%share/doc/sqlrelay/api/python/PySQLRDB.py.html
-%%PORTDOCS%%share/doc/sqlrelay/api/ruby/ruby.html
-%%PORTDOCS%%share/doc/sqlrelay/api/ruby/rubydbi.html
-%%PORTDOCS%%share/doc/sqlrelay/clientapis.html
-%%PORTDOCS%%share/doc/sqlrelay/configuring.html
-%%PORTDOCS%%share/doc/sqlrelay/connections.html
-%%PORTDOCS%%share/doc/sqlrelay/css/styles.css
-%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/db2.html
-%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/interbase.html
-%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/lago.html
-%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/msql.html
-%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/mssqlserver.html
-%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/mysql.html
-%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/oracle.html
-%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/oracle/805.html
-%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/oracle/817.html
-%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/postgresql.html
-%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/sqlite.html
-%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/sybase.html
-%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/sybase/11.0.3.3.html
-%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/sybase/11.9.2.html
-%%PORTDOCS%%share/doc/sqlrelay/index.html
-%%PORTDOCS%%share/doc/sqlrelay/installing.html
-%%PORTDOCS%%share/doc/sqlrelay/introduction.html
-%%PORTDOCS%%share/doc/sqlrelay/introtowebdb.html
-%%PORTDOCS%%share/doc/sqlrelay/invisible.gif
-%%PORTDOCS%%share/doc/sqlrelay/oraclentier.html
-%%PORTDOCS%%share/doc/sqlrelay/programming/binds.html
-%%PORTDOCS%%share/doc/sqlrelay/programming/c++.html
-%%PORTDOCS%%share/doc/sqlrelay/programming/c.html
-%%PORTDOCS%%share/doc/sqlrelay/programming/java.html
-%%PORTDOCS%%share/doc/sqlrelay/programming/perl.html
-%%PORTDOCS%%share/doc/sqlrelay/programming/perldbi.html
-%%PORTDOCS%%share/doc/sqlrelay/programming/php.html
-%%PORTDOCS%%share/doc/sqlrelay/programming/python.html
-%%PORTDOCS%%share/doc/sqlrelay/programming/pythondb.html
-%%PORTDOCS%%share/doc/sqlrelay/programming/ruby.html
-%%PORTDOCS%%share/doc/sqlrelay/programming/rubydbi.html
-%%PORTDOCS%%share/doc/sqlrelay/programming/zope.html
-%%PORTDOCS%%share/doc/sqlrelay/programming/zope/instance.gif
-%%PORTDOCS%%share/doc/sqlrelay/programming/zope/management.gif
-%%PORTDOCS%%share/doc/sqlrelay/programming/zope/resultset.gif
-%%PORTDOCS%%share/doc/sqlrelay/programming/zope/sqlrelay.gif
-%%PORTDOCS%%share/doc/sqlrelay/programming/zope/test.gif
-%%PORTDOCS%%share/doc/sqlrelay/programming/zope/testzsqlmethod.gif
-%%PORTDOCS%%share/doc/sqlrelay/programming/zope/zsqlmethod.gif
-%%PORTDOCS%%share/doc/sqlrelay/programming/zope/zsqlmethodresultset.gif
-%%PORTDOCS%%share/doc/sqlrelay/running.html
-%%PORTDOCS%%@dirrm share/doc/sqlrelay/programming/zope
-%%PORTDOCS%%@dirrm share/doc/sqlrelay/programming
-%%PORTDOCS%%@dirrm share/doc/sqlrelay/gettingstarted/sybase
-%%PORTDOCS%%@dirrm share/doc/sqlrelay/gettingstarted/oracle
-%%PORTDOCS%%@dirrm share/doc/sqlrelay/gettingstarted
-%%PORTDOCS%%@dirrm share/doc/sqlrelay/css
-%%PORTDOCS%%@dirrm share/doc/sqlrelay/api/ruby
-%%PORTDOCS%%@dirrm share/doc/sqlrelay/api/python
-%%PORTDOCS%%@dirrm share/doc/sqlrelay/api/php
-%%PORTDOCS%%@dirrm share/doc/sqlrelay/api/perl
-%%PORTDOCS%%@dirrm share/doc/sqlrelay/api/java
-%%PORTDOCS%%@dirrm share/doc/sqlrelay/api/c++
-%%PORTDOCS%%@dirrm share/doc/sqlrelay/api/c
-%%PORTDOCS%%@dirrm share/doc/sqlrelay/api
-%%PORTDOCS%%@dirrm share/doc/sqlrelay
+@dirrm share/doc/sqlrelay/programming/zope
+@dirrm share/doc/sqlrelay/programming
+@dirrm share/doc/sqlrelay/gettingstarted/sybase
+@dirrm share/doc/sqlrelay/gettingstarted/oracle/linux/slackware/8
+@dirrm share/doc/sqlrelay/gettingstarted/oracle/linux/slackware/7
+@dirrm share/doc/sqlrelay/gettingstarted/oracle/linux/slackware
+@dirrm share/doc/sqlrelay/gettingstarted/oracle/linux/redhat/9
+@dirrm share/doc/sqlrelay/gettingstarted/oracle/linux/redhat/8
+@dirrm share/doc/sqlrelay/gettingstarted/oracle/linux/redhat/7
+@dirrm share/doc/sqlrelay/gettingstarted/oracle/linux/redhat/6
+@dirrm share/doc/sqlrelay/gettingstarted/oracle/linux/redhat/5
+@dirrm share/doc/sqlrelay/gettingstarted/oracle/linux/redhat
+@dirrm share/doc/sqlrelay/gettingstarted/oracle/linux
+@dirrm share/doc/sqlrelay/gettingstarted/oracle
+@dirrm share/doc/sqlrelay/gettingstarted
+@dirrm share/doc/sqlrelay/css
+@dirrm share/doc/sqlrelay/api/ruby
+@dirrm share/doc/sqlrelay/api/python
+@dirrm share/doc/sqlrelay/api/php
+@dirrm share/doc/sqlrelay/api/perl
+@dirrm share/doc/sqlrelay/api/java/com/firstworks/sqlrelay
+@dirrm share/doc/sqlrelay/api/java/com/firstworks
+@dirrm share/doc/sqlrelay/api/java/com
+@dirrm share/doc/sqlrelay/api/java
+@dirrm share/doc/sqlrelay/api/c++
+@dirrm share/doc/sqlrelay/api/c
+@dirrm share/doc/sqlrelay/api
+@dirrm share/doc/sqlrelay

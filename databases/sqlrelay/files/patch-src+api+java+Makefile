@@ -1,11 +1,11 @@
---- src/api/java/Makefile.orig	Sun Mar 24 09:09:19 2002
-+++ src/api/java/Makefile	Mon Oct 28 02:46:52 2002
-@@ -3,7 +3,7 @@
- top_srcdir = ../../..
- INSTALL = $(top_srcdir)/install-sh -c
+--- src/api/java/Makefile.orig	Wed Dec 17 09:29:12 2003
++++ src/api/java/Makefile	Wed May 26 16:41:43 2004
+@@ -2,7 +2,7 @@
  
--CPPFLAGS = $(BASECPPFLAGS) -I./ -I../c++/include $(RUDIMENTSINCLUDES) $(JAVAINCLUDES)
-+CPPFLAGS = $(JAVAINCLUDES) $(BASECPPFLAGS) -I./ -I../c++/include $(RUDIMENTSINCLUDES)
+ include ../../../config.mk
  
- SRCS = SQLRConnection.C SQLRCursor.C
- OBJS = SQLRConnection.o SQLRCursor.o
+-CPPFLAGS = $(BASECPPFLAGS) -I./ -I$(top_builddir)/src/api/c++/include $(RUDIMENTSINCLUDES) $(JAVAINCLUDES)
++CPPFLAGS = $(JAVAINCLUDES) $(BASECPPFLAGS) -I./ -I$(top_builddir)/src/api/c++/include $(RUDIMENTSINCLUDES)
+ RPATH =
+ ifneq ($(strip $(libdir)),)
+ ifeq ($(JAVAUSERPATH),yes)
