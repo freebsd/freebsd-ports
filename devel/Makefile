@@ -11,6 +11,7 @@
     SUBDIR += SpecTcl
     SUBDIR += a2dev
     SUBDIR += adabroker
+    SUBDIR += allegro
     SUBDIR += amulet
     SUBDIR += arm-aout-binutils
     SUBDIR += arm-aout-gcc295

@@ -1,0 +1,11 @@
+--- makefile.in.orig	Sat Feb 24 00:00:59 2001
++++ makefile.in	Sat Feb 24 00:01:06 2001
+@@ -279,7 +279,7 @@
+ 	done
+ 	$(mkinstalldirs) $(bindir)
+ 	@echo Installing allegro-config to $(bindir)
+-	@$(INSTALL_PROGRAM) allegro-config $(bindir)
++	@$(INSTALL) allegro-config $(bindir)
+ 	@if test -n "$(LIBDIR)/liball*-$(shared_version).so"; then \
+ 		grep -q $(libdir) /etc/ld.so.conf && ($(LDCONFIG) $(libdir) || true) || (\
+ 			echo "" ; \
