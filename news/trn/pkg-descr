@@ -1,0 +1,17 @@
+Trn is Threaded RN -- a newsreader that uses an article's references to
+order the discussions in a very natural, reply-ordered sequence called
+threads.  Having the replies associated with their parent articles not
+only makes following the discussion easier, but also makes it easy to back-
+track and (re-)read a specific discussion from the beginning.  Trn also
+has a visual representation of the current thread in the upper right corner
+of the header, which will give you a feel for how the discussion is going
+and how the current article is related to the last one you read.
+
+In addition, a thread selector makes it easy to browse through a large
+group looking for interesting articles.  You can even browse through the
+articles you've already read and select the one(s) you wish to read again.
+Other nice features include the extract commands for the source and binary
+groups, thread-oriented kill directives, a better newgroup finding strategy,
+and lots more.  See the file NEW for a list of the things that are new to
+trn 3.0 from previous versions.
+
