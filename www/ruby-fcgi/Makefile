@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fcgi
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.moonwolf.com/ruby/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
