@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2003.01.10
+PORTVERSION=	2003.01.17
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -67,6 +67,7 @@ liveMedia= \
 		liveMedia/include/MP3FileSource.hh \
 		liveMedia/include/MP3HTTPSource.hh \
 		liveMedia/include/MP3Transcoder.hh \
+		liveMedia/include/MPEG4LATMAudioRTPSource.hh \
 		liveMedia/include/MPEGAudioRTPSink.hh \
 		liveMedia/include/MPEGAudioRTPSource.hh \
 		liveMedia/include/MPEGAudioStreamFramer.hh \

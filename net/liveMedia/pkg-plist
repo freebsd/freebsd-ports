@@ -43,6 +43,7 @@ live/liveMedia/include/MP3ADUinterleaving.hh
 live/liveMedia/include/MP3FileSource.hh
 live/liveMedia/include/MP3HTTPSource.hh
 live/liveMedia/include/MP3Transcoder.hh
+live/liveMedia/include/MPEG4LATMAudioRTPSource.hh
 live/liveMedia/include/MPEGAudioRTPSink.hh
 live/liveMedia/include/MPEGAudioRTPSource.hh
 live/liveMedia/include/MPEGAudioStreamFramer.hh
