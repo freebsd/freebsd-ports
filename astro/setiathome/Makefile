@@ -3,7 +3,7 @@
 # Date created:         22 Apr 1999
 # Whom:                 stb@freebsd.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/22 01:44:26 stb Exp $
 #
 
 PKGNAME=	setiathome-0.46
@@ -19,7 +19,7 @@ EXTRACT_BEFORE_ARGS=	-xf
 EXTRACT_AFTER_ARGS=
 
 .if !defined(OSRELEASE)
-OSRELEASE!=	uname -r | ${SED} -e 's/^\(^[^-]*\)-.*/\1/'
+OSRELEASE!=	uname -r | sed -e 's/^\(^[^-]*\)-.*/\1/'
 .endif
 
 .if (${OSRELEASE} == 2.2.6)
