@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xosd
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.4
 CATEGORIES=	misc
 MASTER_SITES=	http://www.ignavus.net/
 
