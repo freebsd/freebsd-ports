@@ -8,7 +8,7 @@
 PORTNAME=	pantomime
 PORTVERSION=	0.4.0
 CATEGORIES=	mail
-MASTER_SITES=	http://www.gnustep.it/nicola/Applications/
+MASTER_SITES=	http://www.collaboration-world.com/pantomime.data/releases/Development/
 DISTNAME=	Pantomime-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
