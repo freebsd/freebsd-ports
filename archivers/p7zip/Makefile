@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p7zip
-PORTVERSION=	0.90
+PORTVERSION=	0.91
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	p7zip
@@ -18,14 +18,21 @@ COMMENT=	Command line versions of 7-zip
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKEFILE=	makefile
-MAKE_ARGS+=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
 ONLY_FOR_ARCHS=	alpha amd64 i386 ia64
+
+USE_REINPLACE=	yes
+MMACHINE=	${WRKSRC}/makefile.machine
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500039
 BROKEN=		'Requires wchar functions (mbrtowc(3) etc.) for compilation'
 .endif
+
+post-patch:
+	${ECHO} "LOCAL_LIBS=	${PTHREAD_LIBS}" > ${MMACHINE}
+	${ECHO} "LOCAL_FLAGS+=	${PTHREAD_CFLAGS}" >> ${MMACHINE}
+	${REINPLACE_CMD} -e 's/-O2/${CXXFLAGS}/' ${WRKSRC}/makefile.glb
 
 do-install:
 	${MKDIR} ${PREFIX}/libexec/p7zip/Codecs
