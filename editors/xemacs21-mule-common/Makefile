@@ -1,107 +1,96 @@
 # New ports collection makefile for:	files except executables for xemacs with mule
-# Version required:	21.1.6
+# Version required:	21.1.8
 # Date created:		5 Dec 1997
 # Whom:			Kazuyuki IENAGA <ienaga@jsys.co.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xemacs-${VERSION}
-PKGNAME=	xemacs-mule-common-${VERSION}
-CATEGORIES=	editors japanese
-MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/xemacs/${FTP_DIR}/ \
-		ftp://ftp.xemacs.org/pub/xemacs/${FTP_DIR}/ \
-		ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/ftp.xemacs.org/xemacs/${FTP_DIR}/ \
-		ftp://ftp.th-darmstadt.de/pub/editors/xemacs/${FTP_DIR}/ \
-		ftp://ftp.jpl.org/pub/elisp/
-DISTFILES=	xemacs-${VERSION}.tar.gz xemacs-${VERSION}-elc.tar.gz \
-		xemacs-${VERSION}-info.tar.gz \
-		ps-print-jp.el.gz
-DIST_SUBDIR=	xemacs
-
-MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
-
-# from xemacs-mule
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.3:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		compface.1:${PORTSDIR}/mail/faces
-USE_AUTOCONF=	yes
-
-EXTRACT_ONLY=	xemacs-${VERSION}.tar.gz xemacs-${VERSION}-elc.tar.gz \
-		xemacs-${VERSION}-info.tar.gz
+# This is the COMMON port of XEmacs Mule slave ports(editors/xemacs-mule,
+# japanese/xemacs-*) and provides `Architecture Independent' parts of xemacs binary.
+#
+# Caracteristic variables of XEmacs Mule ports family:
+#	MULE_COMMON       : COMMON port if defined
+#	PKGLDIR           : Local PKGDIR of MASTER port(editors/xemacs-mule/pkg)
+#	SITE_INCLUDES     : site include path(configure arguments)
+#	SITE_LIBRARIES    : site libraries path(configure arguments)
+#	WITH_INPUT_METHOD : input methods(configure arguments)
+#	LIB_INPUT_METHOD  : LIB_DEPENDS list of Input Methods
+#	BUILD_INPUT_METHOD: BUILD_DEPENDS list of Input Methods
 
 .include <bsd.port.pre.mk>
 
 .for dir in \
 	editors/xemacs-mule \
-	japanese/xemacs \
 	japanese/xemacs-canna \
 	japanese/xemacs-canna+wnn4 \
 	japanese/xemacs-canna+wnn6 \
 	japanese/xemacs-wnn4 \
 	japanese/xemacs-wnn6
 .if exists(${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work/.install_done)
-WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work
+WRKDIR=	${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work
 .elif exists(${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work/.build_done)
-WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work
+WRKDIR=	${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work
 .endif
 .endfor
-WRKSRC= ${WRKDIR}/xemacs-${VERSION}
-
 .if !defined(WRKDIR)
 .if defined(PACKAGE_BUILDING)
-# XXX
 pre-build:
-	@cd ${.CURDIR}/../xemacs-mule; make
+	@cd ${.CURDIR}/../xemacs-mule; ${MAKE}
 .else
 BROKEN=		You should build install one of the other xemacs ports first
 .endif
 .endif
 
-INSTALL_COOKIE=	${WRKDIR}/.install_done-${PKGNAME}
-PACKAGE_COOKIE=	${WRKDIR}/.package_done-${PKGNAME}
-TMPPLIST=	${WRKDIR}/.PLIST.mktmp-${PKGNAME}
-
-USE_XLIB=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	i386-unknown-freebsd \
-		--with-x11 \
+CONFIGURE_ARGS=	--with-x11 \
 		--with-mule \
 		--x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib
 MAN1=		ctags.1 etags.1 gnuattach.1 gnuclient.1 gnudoit.1 \
 		gnuserv.1 xemacs.1
-
-STRIP=
 INSTALL_TARGET=	install-arch-indep
+PKGINSTALL=	${WRKDIR}/INSTALL.${PKGNAME}
+PLIST=		${PKGDIR}/PLIST
+DESCR=		${WRKDIR}/DESCR.${PKGNAME}
 PLIST_SUB=	XEMACS_DIR=${XEMACS_DIR}
+PKGINSTALL=	${WRKDIR}/INSTALL
+TMPPLIST=	${WRKDIR}/.PLIST.mktmp-${PKGNAME}
 
-MAJOR_VERSION=	21.1
-VERSION=	21.1.6
-XEMACS_DIR=	xemacs-${VERSION}
-FTP_DIR=	xemacs-${MAJOR_VERSION}
+MULE_COMMON=	yes
+PKGNAMEEXT=	-mule-common
+DESCR_TMPL=	${.CURDIR}/../xemacs-mule-common/files/DESCR.tmpl
+INSTALL_TMPL=	${.CURDIR}/../xemacs-mule-common/files/INSTALL.tmpl
 
 pre-build:
-	${RM} -f ${WRKSRC}/lib-src/DOC* ${WRKSRC}/src/xemacs
+	@${RM} -f ${WRKSRC}/lib-src/DOC* ${WRKSRC}/src/xemacs
 
 pre-install:
-	@${MKDIR} ${PREFIX}/lib/xemacs
+.for dirp in site mule xemacs
+.for dir in etc info man pkginfo
+	@${MKDIR} ${PREFIX}/lib/xemacs/${dirp}-packages/${dir}
+.endfor
+.endfor
 	@(cd ${PREFIX}/lib/xemacs; ${MKDIR} info etc site-lisp)
 	@if [ ! -f ${PREFIX}/lib/xemacs/info/dir ]; then \
 		${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/lib/xemacs/info/dir; \
 	fi
+	@${SED} -e "s/%%XEMACS_VER%%/${XEMACS_VER}/g" \
+		${DESCR_TMPL} > ${DESCR}
+	@${SED} -e "s/%%XEMACS_VER%%/${XEMACS_VER}/g" \
+		${INSTALL_TMPL} > ${PKGINSTALL}
 
-post-install:
+post-install::
 # install xemacs-mule.sh into ${PREFIX}/etc/rc.d
-	@${MKDIR} /var/run/emacs/lock
-	${CHMOD} 1777 /var/run/emacs/lock
+	@if [ ! -d /var/run/emacs/lock ]; then \
+		${MKDIR} /var/run/emacs/lock; \
+		${CHMOD} 1777 /var/run/emacs/lock; \
+	fi
 	@${MKDIR} ${PREFIX}/etc/rc.d
 	@${INSTALL_SCRIPT} ${FILESDIR}/xemacs-mule.sh ${PREFIX}/etc/rc.d
+	@if [ -f ${PKGDIR}/INSTALL ]; then \
+		${SETENV} PKG_PREFIX=${PREFIX} \
+			${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL; \
+	fi
 	@${TOUCH} ${TOUCH_FLAGS} ${INSTALL_COOKIE}
 
-post-package:
-	@${TOUCH} ${TOUCH_FLAGS} ${PACKAGE_COOKIE}
-
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/../xemacs-mule/Makefile"
