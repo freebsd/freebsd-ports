@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME applet that displays the current phase of the Moon
 
+LIB_DEPENDS=	xklavier.8:${PORTSDIR}/x11/libxklavier
+
 USE_X_PREFIX=	yes
 USE_GNOME=	gail gnomehack gnomepanel gnomeprefix gnometarget intlhack
 USE_REINPLACE=	yes
