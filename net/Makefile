@@ -293,6 +293,7 @@
     SUBDIR += net-snmp-tkmib
     SUBDIR += netatalk
     SUBDIR += netcat
+    SUBDIR += netdude
     SUBDIR += netmap
     SUBDIR += netmask
     SUBDIR += netpipes

@@ -1,0 +1,5 @@
+Netdude is the NETwork DUmp data Displayer and Editor for tcpdump tracefiles.
+It is a GUI-based tool that allows you to make detailed changes to packets in
+tcpdump tracefiles.
+
+WWW: http://netdude.sourceforge.net/
