@@ -1,5 +1,5 @@
---- Makefile.orig	Wed Apr 28 09:27:59 1999
-+++ Makefile	Sat Aug 14 14:56:31 1999
+--- Makefile.orig	Sat Mar 25 17:16:58 2000
++++ Makefile	Sat Apr 29 13:06:05 2000
 @@ -27,14 +27,14 @@
  #
  # Pick your C++ compiler. 
@@ -29,10 +29,10 @@
  # other commands
 @@ -58,7 +58,7 @@
  
- IFLAGS=-Iplatform -Ircxlib -Inqc
+ IFLAGS=-Iplatform -Ircxlib -Inqc -Icompiler
  WFLAGS=-Wall -Wstrict-prototypes -Wmissing-prototypes
 -CFLAGS = -O6 -pipe $(IFLAGS) $(WFLAGS) -DDEFAULT_SERIAL_NAME='$(DEFAULT_SERIAL_NAME)'
 +CFLAGS += $(IFLAGS) $(WFLAGS) -DDEFAULT_SERIAL_NAME='$(DEFAULT_SERIAL_NAME)'
  
- OBJ = $(NQCOBJ) $(RCXOBJ) $(POBJ)
+ OBJ = $(NQCOBJ) $(COBJ) $(RCXOBJ) $(POBJ)
  
