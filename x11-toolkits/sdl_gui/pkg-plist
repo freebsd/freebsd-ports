@@ -1,5 +1,4 @@
-include/SDL/SDL_gui.h
-@dirrm include/SDL
+include/SDL11/SDL_gui.h
 lib/libSDL_gui-0.10.3.so
 lib/libSDL_gui.a
 lib/libSDL_gui.so

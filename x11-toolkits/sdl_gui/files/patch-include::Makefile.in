@@ -1,0 +1,11 @@
+--- include/Makefile.in.orig	Sun Sep 15 23:11:18 2002
++++ include/Makefile.in	Sun Sep 15 23:11:32 2002
+@@ -82,7 +82,7 @@
+ SDL_LIBS = @SDL_LIBS@
+ VERSION = @VERSION@
+ 
+-libSDL_guiincludedir = $(includedir)/SDL
++libSDL_guiincludedir = $(includedir)/SDL11
+ 
+ # Which header files to install
+ libSDL_guiinclude_HEADERS = SDL_gui.h
