@@ -2,4 +2,4 @@ Ruby/GNOME2 is a set of Ruby bindings for GNOME2 which consists of
 glib2, gtk2, gdk_pixbuf2, gnome2, gnomecanvas2, libglade2, libart2 and
 gconf2 modules.
 
-WWW:	http://ruby-gnome2.sourceforge.net/
+WWW: http://ruby-gnome2.sourceforge.jp/

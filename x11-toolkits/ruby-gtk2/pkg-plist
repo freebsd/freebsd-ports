@@ -1,7 +1,9 @@
 %%RUBY_SITEARCHLIBDIR%%/gtk2.so
 %%RUBY_SITEARCHLIBDIR%%/gtk20.so
 %%RUBY_SITEARCHLIBDIR%%/gtk22.so
+%%RUBY_SITEARCHLIBDIR%%/rbgtk.h
 %%RUBY_SITELIBDIR%%/gtk2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/README
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/alphatest.png
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/appwindow.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/button_box.rb
@@ -20,10 +22,12 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/menus.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/panes.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/pixbufs.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/ruby-gnome2-logo.png
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/sizegroup.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/stock_browser.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/textview.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gtk-demo/tree_store.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/bindings.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/button.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/button2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/buttonbox.rb
@@ -50,8 +54,12 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/listview.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/menu.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/pointer_grab.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/properties.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/radiobutton.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/settings.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/stock.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/style_property.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/style_property.rc
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/t-gtkplug.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/t-gtksocket.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/misc/test.xpm

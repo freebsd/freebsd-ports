@@ -1,4 +1,7 @@
 %%RUBY_SITEARCHLIBDIR%%/glib2.so
+%%RUBY_SITEARCHLIBDIR%%/rbglib.h
+%%RUBY_SITEARCHLIBDIR%%/rbgobject.h
+%%RUBY_SITEARCHLIBDIR%%/rbgutil.h
 %%RUBY_SITELIBDIR%%/glib2.rb
 %%RUBY_SITELIBDIR%%/mkmf-gnome2.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/type-register.rb

@@ -1,6 +1,8 @@
 bin/ruby-glade-create-template
 %%RUBY_SITEARCHLIBDIR%%/libglade2.so
 %%RUBY_SITELIBDIR%%/libglade2.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/custom.glade
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/custom.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test.glade
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/treeview.glade
