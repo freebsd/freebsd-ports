@@ -279,6 +279,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/utf7.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/uudecode.el
 %%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/uudecode.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/yenc.el
+%%EMACS_VERSION_SITE_LISPDIR%%/t-gnus/yenc.elc
 share/doc/t-gnus-%%EMACS_PORT_NAME%%/ChangeLog
 share/doc/t-gnus-%%EMACS_PORT_NAME%%/ChangeLog.1
 share/doc/t-gnus-%%EMACS_PORT_NAME%%/ChangeLog.2

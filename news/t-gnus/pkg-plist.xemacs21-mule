@@ -299,6 +299,8 @@
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/uudecode.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/webmail.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/webmail.elc
+%%EMACS_PACKAGESDIR%%/lisp/t-gnus/yenc.el
+%%EMACS_PACKAGESDIR%%/lisp/t-gnus/yenc.elc
 %%EMACS_PACKAGESDIR%%/pkginfo/MANIFEST.t-gnus
 share/doc/t-gnus-%%EMACS_PORT_NAME%%/ChangeLog
 share/doc/t-gnus-%%EMACS_PORT_NAME%%/ChangeLog.1
