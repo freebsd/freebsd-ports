@@ -31,10 +31,7 @@ do-extract:
 	${LN} -sf `cd ${PORTSDIR}/${RUBY_PORT} && ${MAKE} -V WRKSRC`/misc ${WRKSRC}
 
 do-install:
-	${MKDIR} ${RUBY_ELISPDIR}
 	${INSTALL_DATA} ${WRKSRC}/* ${RUBY_ELISPDIR}/
-	${MKDIR} ${EMACSLISPDIR}
-	${MKDIR} ${XEMACSLISPDIR}
 .for f in ${ELISP_FILES}
 	${LN} -sf ${RUBY_ELISPDIR}/${f} ${EMACSLISPDIR}/
 	${LN} -sf ${RUBY_ELISPDIR}/${f} ${XEMACSLISPDIR}/
