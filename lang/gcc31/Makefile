@@ -1,10 +1,10 @@
 # ex:ts=8 
 # Ports collection makefile for:	egcs 
-# Version required: 			1998-02-28 
+# Version required: 			1998-08-03
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.24 1998/08/07 22:49:30 asami Exp $
+# $Id: Makefile,v 1.25 1998/08/11 08:22:45 obrien Exp $
 #
 
 DISTNAME=	egcs-19980803
