@@ -48,6 +48,7 @@ pre-configure:
 		${AUTOCONF_ARGS})
 
 do-install:
+	${MKDIR} ${NAGIOS_PLUGIN_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/check_snmp_disk ${NAGIOS_PLUGIN_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/check_snmp_proc ${NAGIOS_PLUGIN_DIR}
 .if !defined(NOPORTDOCS)
