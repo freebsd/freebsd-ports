@@ -87,6 +87,7 @@
     SUBDIR += doomlegacy
     SUBDIR += dopewars
     SUBDIR += drm
+    SUBDIR += dsnake
     SUBDIR += dungeon
     SUBDIR += dungeoncrawl
     SUBDIR += easysok
