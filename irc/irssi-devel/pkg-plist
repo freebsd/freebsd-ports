@@ -1,8 +1,18 @@
 bin/botti
 bin/irssi
+doc/irssi/botnet.txt
+doc/irssi/design.txt
+doc/irssi/formats.txt
+doc/irssi/manual.txt
+doc/irssi/perl.txt
+doc/irssi/signals.txt
+doc/irssi/special_vars.txt
 etc/irssi/colorless.theme
 etc/irssi/config
 etc/irssi/split.theme
+i386-freebsd/auto/Irssi/.packlist
+i386-freebsd/auto/Irssi/Irssi.bs
+i386-freebsd/auto/Irssi/Irssi.so
 lib/irssi/plugins/libfe_common_irc_dcc.a
 lib/irssi/plugins/libfe_common_irc_dcc.so
 lib/irssi/plugins/libfe_common_irc_dcc.so.0
@@ -137,4 +147,7 @@ share/locale/pt_BR/LC_MESSAGES/irssi.mo
 @dirrm share/irssi
 @dirrm lib/irssi/plugins
 @dirrm lib/irssi
+@dirrm i386-freebsd/auto/Irssi
 @dirrm etc/irssi
+@dirrm doc/irssi
+@dirrm doc

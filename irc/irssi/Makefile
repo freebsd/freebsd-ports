@@ -13,19 +13,19 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-3
 
 MAINTAINER=	jim@FreeBSD.org
 
-LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12 \
-		intl.1:${PORTSDIR}/devel/gettext
-
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
+USE_GLIB=	yes
 USE_LIBTOOL=	yes
-
 CONFIGURE_ARGS=	--without-socks --with-textui --with-bot \
 		--without-servertest
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -lintl"
 
 .include <bsd.port.pre.mk>
 
@@ -35,8 +35,10 @@ CONFIGURE_ARGS+= --enable-ipv6
 CONFIGURE_ARGS+= --disable-ipv6
 .endif
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		GLIB_CONFIG="${GLIB_CONFIG}" \
-		LIBS="-L${LOCALBASE}/lib -lintl"
+pre-patch:
+	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
+		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
+		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>

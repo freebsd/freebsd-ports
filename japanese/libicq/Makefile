@@ -20,12 +20,8 @@ PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	flathill@FreeBSD.org
 
-LIB_DEPENDS=    glib12.3:${PORTSDIR}/devel/glib12
-
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
-
+USE_GLIB=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}"
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>

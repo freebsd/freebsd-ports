@@ -13,13 +13,9 @@ MASTER_SITE_SUBDIR=	unstable/sources/libole2
 
 MAINTAINER=	ade@FreeBSD.org
 
-LIB_DEPENDS=	glib12.3:${PORTSDIR}/devel/glib12
-
-GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
-
 USE_GMAKE=	yes
+USE_GLIB=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}"
 
 .include <bsd.port.mk>
