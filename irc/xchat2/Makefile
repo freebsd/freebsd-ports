@@ -22,12 +22,14 @@ LIB_DEPENDS=		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 LIB_DEPENDS+=		gnome.4:${PORTSDIR}/x11/gnomelibs
 .endif
 
-.if defined(WITH_GDK_PIXBUF)
-LIB_DEPENDS+=		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
-.endif
-
 .if exists(${X11BASE}/bin/panel) && defined(WITH_GNOME)
 WITH_GDK_PIXBUF=	YES
+WITH_PANEL=		YES
+LIB_DEPENDS+=		panel_applet.4:${PORTSDIR}/x11/gnomecore
+.endif
+
+.if defined(WITH_GDK_PIXBUF)
+LIB_DEPENDS+=		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 .endif
 
 GTK_CONFIG?=		${X11BASE}/bin/gtk12-config
@@ -62,9 +64,11 @@ CONFIGURE_ARGS+=	--enable-gdk-pixbuf
 CONFIGURE_ARGS+=	--disable-gdk-pixbuf
 .endif
 
-CONFIGURE_ENV=		GTK_CONFIG="${GTK_CONFIG}" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			GTK_CONFIG="${GTK_CONFIG}" \
 			GLIB_CONFIG="${GLIB_CONFIG}" \
-			GDK_PIXBUF_CONFIG="${GDK_PIXBUF_CONFIG}"
+			GDK_PIXBUF_CONFIG="${GDK_PIXBUF_CONFIG}" \
+			LIBS="-L${LOCALBASE}/lib"
 
 .if defined(WITH_GNOME)
 PLIST=			${PKGDIR}/PLIST.gnome
