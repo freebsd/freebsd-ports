@@ -318,11 +318,11 @@ JAVA_CLASSES=	${JAVA_HOME}/jre/lib/rt.jar
 	@${FALSE}
 .		endif
 _DEPEND_JAVA=	${JAVA}:${PORTSDIR}/${JAVA_PORT}
-.		if !defined(JAVA_NO_BUILD_DEPENDS)
+.		if !defined(NO_BUILD_DEPENDS_JAVA)
 BUILD_DEPENDS+=		${_DEPEND_JAVA}
 .BEGIN:
 .		endif
-.		if !defined(JAVA_NO_RUN_DEPENDS)
+.		if !defined(NO_RUN_DEPENDS_JAVA)
 RUN_DEPENDS+=		${_DEPEND_JAVA}
 .		endif
 .	endif
