@@ -3,7 +3,7 @@
 # Date created:        18 August 1997
 # Whom:                Vanill I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.3 1997/08/28 04:38:36 chuckr Exp $
+# $Id: Makefile,v 1.4 1997/09/14 19:36:41 max Exp $
 #
 
 DISTNAME=	imlib_DR-0.5
@@ -13,6 +13,10 @@ MASTER_SITES=	http://www.rasterman.com/ftp/ \
 		ftp://cthulhu.mandrake.net/pub/enlightenment/
 
 MAINTAINER=	vanilla@MinJe.com.TW
+
+RUN_DEPENDS=	djpeg:${PORTSDIR}/graphics/jpeg \
+		tgatoppm:${PORTSDIR}/graphics/netpbm \
+		convert:${PORTSDIR}/graphics/ImageMagick
 
 USE_GMAKE=	yes
 USE_IMAKE=	yes
