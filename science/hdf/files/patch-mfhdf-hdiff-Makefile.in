@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- mfhdf/hdiff/Makefile.in.orig	Sat Mar 19 15:02:26 2005
++++ mfhdf/hdiff/Makefile.in	Sat Mar 19 15:03:32 2005
+@@ -250,7 +250,7 @@
+ 	-test -z "$(noinst_PROGRAMS)" || rm -f $(noinst_PROGRAMS)
+ hdiff$(EXEEXT): $(hdiff_OBJECTS) $(hdiff_DEPENDENCIES) 
+ 	@rm -f hdiff$(EXEEXT)
+-	$(LINK) $(hdiff_LDFLAGS) $(hdiff_OBJECTS) $(hdiff_LDADD) $(LIBS)
++	$(LINK) $(hdiff_LDFLAGS) $(hdiff_OBJECTS) $(hdiff_LDADD) $(LIBS) -lm
+ hdifftst$(EXEEXT): $(hdifftst_OBJECTS) $(hdifftst_DEPENDENCIES) 
+ 	@rm -f hdifftst$(EXEEXT)
+ 	$(LINK) $(hdifftst_LDFLAGS) $(hdifftst_OBJECTS) $(hdifftst_LDADD) $(LIBS)
