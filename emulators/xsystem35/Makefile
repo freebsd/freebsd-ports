@@ -6,38 +6,52 @@
 # $FreeBSD$
 #
 
-DISTNAME=	xsystem35-1.0.7
+DISTNAME=	xsystem35-1.2.4
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.aist-nara.ac.jp/~masaki-c/private/unitbase/xsys35/down/
 
-MAINTAINER=	k5@respo.or.jp
+MAINTAINER=	k5@cheerful.com
 
-LIB_DEPENDS+=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
+.if defined(WITH_ESOUND)
+LIB_DEPENDS+=	esd.2:${PORTSDIR}/audio/esound
+.endif
 
 USE_IMAKE=	YES
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
+PKGMESSAGE=	${WRKSRC}/MESSAGE
 
-DOC_FILES=	BUGS ChangeLog FAQ GRFMT.TXT INSTALL README README.midi \
-		README.miko THANKS TODO MISCGAME.TXT
-EXAMPLES=	README.TXT atlach.inf dalk.inf diabo.inf drstop.inf \
-		katsumi.inf kichiku.inf miko.inf ningen.inf oudou.inf \
-		panyo.inf rance1.inf rance2.inf rance3.inf rance4.inf \
-		toushin.inf toushin2.inf zero.inf
+DOC_FILES=	BUGS ChangeLog FAQ GRFMT.TXT INSTALL MISCGAME.TXT README \
+		README.color README.miko README.music README.pastel THANKS \
+		TODO
+EXAMPLES=	README.TXT ambi.inf atlach.inf dalk.inf darcrows.inf \
+		diabo.inf drstop.inf hushaby.inf katsumi.inf kichiku.inf \
+		mamatoto.inf mamori.inf miko.inf mugen.inf ningen.inf \
+		oudou.inf panyo.inf pascha.inf progood.inf rance1.inf \
+		rance2.inf rance3.inf rance4.inf toushin.inf toushin2.inf \
+		zero.inf
+
+pre-configure:
+.if defined(WITH_ESOUND)
+	${MV} ${WRKSRC}/config.h ${WRKSRC}/config.h.orig
+	${SED} -e 43,43d -e 45,45d ${WRKSRC}/config.h.orig > ${WRKSRC}/config.h
+.endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/xsystem35 ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/../contrib/instgame ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/xsystem35 ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/../contrib/instgame ${PREFIX}/bin
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ja/xsystem35
+	@${MKDIR} ${PREFIX}/share/doc/ja/xsystem35
 	@(cd ${WRKSRC}/../doc;\
 		${INSTALL_MAN} ${DOC_FILES} ${PREFIX}/share/doc/ja/xsystem35)
-	${MKDIR} ${PREFIX}/share/examples/xsystem35
-	${INSTALL_DATA} ${WRKSRC}/xsys35rc.sample ${PREFIX}/share/examples/xsystem35
+	@${MKDIR} ${PREFIX}/share/examples/xsystem35
+	@${INSTALL_DATA} ${WRKSRC}/xsys35rc.sample ${PREFIX}/share/examples/xsystem35
 	@(cd ${WRKSRC}/../contrib; \
 		${INSTALL_DATA} ${EXAMPLES} ${PREFIX}/share/examples/xsystem35)
+	@${SED} -e s,PREFIX,${PREFIX}, ${PKGDIR}/MESSAGE > ${WRKSRC}/MESSAGE
+	@${CAT} ${WRKSRC}/MESSAGE
 .endif
-	${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
