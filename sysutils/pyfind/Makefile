@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pyfind
-PORTVERSION=	0.9.0
+PORTVERSION=	0.10.2
 CATEGORIES=	sysutils python gnome
-MASTER_SITES=	http://homepage.ntlworld.com/kinematics/downloads/
+MASTER_SITES=	http://www.anti-particle.com/downloads/
 DISTNAME=	${PORTNAME:S/f/F/}-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
