@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nautilus-media
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.2
@@ -25,10 +25,6 @@ GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomeprefix gnomehack nautilus2
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
