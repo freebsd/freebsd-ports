@@ -1,0 +1,12 @@
+--- scponly.c.orig	Sun Nov 28 10:16:39 2004
++++ scponly.c	Wed Dec 15 13:38:11 2004
+@@ -76,7 +76,9 @@
+  */
+ cmd_arg_t dangerous_args[] =
+ {
++#ifdef ENABLE_SCP2
+ 	{ PROG_SCP, "-S" },
++#endif
+ 	{ PROG_SFTP_SERVER, "-S" },
+ #ifdef UNISON_COMPAT
+ 	{ PROG_UNISON, "-rshcmd" },
