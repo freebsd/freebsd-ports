@@ -1,0 +1,16 @@
+This is a very basic tool to convert Visual Basic forms which use
+the intrinsic controls to GTK C code.
+
+The author leaves license issues regarding the use of this code
+unclear; the code is freely available but has a 'NO GPL' proviso
+stamped all over it. Users would be advised to contact the author
+before using it.
+
+This particular port has sped up one of my GUI side projects somewhat,
+which is why I feel it should receive FreeBSD exposure.
+
+Author:	mike@naken.cc
+WWW: http://www.naken.cc/vb2c/
+
+Bruce
+bms@spc.org
