@@ -12,23 +12,19 @@ MASTER_SITES=	http://www.abaforum.es/martim/
 
 MAINTAINER=	mi@aldan.algebra.com
 
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
-GNU_CONFIGURE=	yes
-
-post-build: test
-
-test:
-	cd ${WRKSRC}/profiles && ${WRKSRC}/testbed/testcms
+.ifndef NOPORTDOCS
+PLIST_SUB=	DOC=""
+.else
+PLIST_SUB=	DOC="@comment "
+.endif
 
 .ifndef NOPORTDOCS
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/lcms
 	${CP} -rp ${WRKSRC}/doc/* ${PREFIX}/share/doc/lcms/
-
-PLIST_SUB=	DOC=""
-.else
-PLIST_SUB=	DOC="@comment "
 .endif
 
 .include <bsd.port.mk>

@@ -1,11 +1,9 @@
-include/lcms/lcms.h
-include/lcms/icc34.h
-@dirrm include/lcms
-lib/liblcms.a
-lib/liblcms.so.1
-lib/liblcms.so
-lib/liblcms.la
 bin/testcms
+include/lcms/icc34.h
+include/lcms/lcms.h
+lib/liblcms.a
+lib/liblcms.so
+lib/liblcms.so.1
 %%DOC%%share/doc/lcms/README.simple
 %%DOC%%share/doc/lcms/filter.c
 %%DOC%%share/doc/lcms/jpgemb.c
@@ -16,4 +14,5 @@ bin/testcms
 %%DOC%%share/doc/lcms/tiffemb.c
 %%DOC%%share/doc/lcms/tutorial.txt
 %%DOC%%share/doc/lcms/wtpt.c
-%%DOC%%@dirrm share/doc/lcms/
+%%DOC%%@dirrm share/doc/lcms
+@dirrm include/lcms
