@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.math.polytechnique.fr/cmat/auroux/prog/
 
 MAINTAINER=	jos@catnook.com
 
+USE_REINPLACE=	yes
+
 MAN1=		gpp.1
 
 post-patch:

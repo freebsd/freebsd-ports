@@ -15,6 +15,8 @@ MAINTAINER=	ume@FreeBSD.org
 
 NO_CDROM=	"Cannot be sold for profit"
 
+USE_REINPLACE=	yes
+
 MAN5=		pim6dd.conf.5
 MAN8=		pim6dd.8
 MANCOMPRESSED=	yes

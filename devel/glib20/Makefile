@@ -27,6 +27,7 @@ NO_LATEST_LINK=	yes
 
 USE_BZIP2=	yes
 USE_LIBTOOL=	yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--enable-static --with-libiconv=gnu

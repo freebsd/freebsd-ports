@@ -17,6 +17,7 @@ LIB_DEPENDS=	t1.4:${PORTSDIR}/devel/t1lib \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

@@ -19,6 +19,7 @@ MAINTAINER=	obraun@informatik.unibw-muenchen.de
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

@@ -12,6 +12,7 @@ MASTER_SITES=	http://network.terramail.pl/files/
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
 
+USE_REINPLACE=	yes
 ALL_TARGET=	${PORTNAME}
 
 post-patch:

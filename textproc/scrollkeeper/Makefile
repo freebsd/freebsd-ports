@@ -32,6 +32,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_BISON=	yes
+USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --datadir=${PREFIX}/share/gnome \
 		--with-omfdirs=${PREFIX}/share/gnome/omf
