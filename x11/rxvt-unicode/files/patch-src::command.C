@@ -1,5 +1,5 @@
---- src/command.C.orig	Mon Aug 16 09:13:25 2004
-+++ src/command.C	Tue Aug 17 23:49:02 2004
+--- src/command.C.orig	Wed Aug 25 05:45:20 2004
++++ src/command.C	Wed Aug 25 19:28:03 2004
 @@ -51,6 +51,8 @@
  #include "command.h"
  
@@ -9,7 +9,7 @@
  
  /*----------------------------------------------------------------------*/
  
-@@ -4250,7 +4252,7 @@
+@@ -4287,7 +4289,7 @@
      {
        if (v_buflen == 0)
          {
@@ -18,12 +18,12 @@
  
            if ((unsigned int)written == len)
              return;
-@@ -4268,7 +4270,7 @@
+@@ -4305,7 +4307,7 @@
  
    for (;;)
      {
--      int written = write (pty.pty, v_buffer, min (MAX_PTY_WRITE, v_buflen));
-+      int written = write (pty.pty, v_buffer, min ((unsigned int) MAX_PTY_WRITE, v_buflen));
+-      int written = write (pty.pty, v_buffer, min (v_buflen, MAX_PTY_WRITE));
++      int written = write (pty.pty, v_buffer, min (v_buflen, (unsigned int) MAX_PTY_WRITE));
  
        if (written > 0)
          {
