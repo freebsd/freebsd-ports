@@ -1,0 +1,23 @@
+--- configure.orig	Mon Oct 13 19:33:20 2003
++++ configure	Mon Oct 13 19:36:04 2003
+@@ -2701,16 +2701,11 @@
+     }
+   else
+     {
+-      printf("\n*** 'smpeg-config --version' returned %d.%d.%d, but the 
+-minimum version\n", $smpeg_major_version, $smpeg_minor_version, 
+-$smpeg_micro_version);
+-      printf("*** of SMPEG required is %d.%d.%d. If smpeg-config is 
+-correct, then it is\n", major, minor, micro);
++      printf("\n*** 'smpeg-config --version' returned %d.%d.%d, but the minimum version\n", $smpeg_major_version, $smpeg_minor_version, $smpeg_micro_version);
++      printf("*** of SMPEG required is %d.%d.%d. If smpeg-config is correct, then it is\n", major, minor, micro);
+       printf("*** best to upgrade to the required version.\n");
+-      printf("*** If smpeg-config was wrong, set the environment variable 
+-SMPEG_CONFIG\n");
+-      printf("*** to point to the correct copy of smpeg-config, and remove 
+-the file\n");
++      printf("*** If smpeg-config was wrong, set the environment variable SMPEG_CONFIG\n");
++      printf("*** to point to the correct copy of smpeg-config, and remove the file\n");
+       printf("*** config.cache before re-running configure\n");
+       return 1;
+     }
