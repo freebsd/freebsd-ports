@@ -22,6 +22,7 @@ RUN_DEPENDS=	${RUBY_SITELIBDIR}/amazon.rb:${PORTSDIR}/www/ruby-amazon \
 		${RUBY_SITEARCHLIBDIR}/gdk_pixbuf2.so:${PORTSDIR}/graphics/ruby-gdk_pixbuf2 \
 		${RUBY_SITEARCHLIBDIR}/gconf2.so:${PORTSDIR}/devel/ruby-gconf2
 
+USE_GETTEXT=	yes
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
