@@ -1,6 +1,6 @@
---- ../MailScanner-4.21-9.orig/lib/MailScanner/ConfigDefs.pl	Sun May 18 13:24:36 2003
-+++ lib/MailScanner/ConfigDefs.pl	Thu Jun 12 15:29:39 2003
-@@ -153,9 +153,9 @@
+--- ../MailScanner-4.22-5.old/lib/MailScanner/ConfigDefs.pl	Mon Aug 11 12:15:30 2003
++++ lib/MailScanner/ConfigDefs.pl	Mon Aug 11 12:36:06 2003
+@@ -154,9 +154,9 @@
  # Check the first word of these for file existence
  [Simple,File]
  pidfile			/var/run/MailScanner.pid
@@ -13,7 +13,7 @@
  
  # Check these to ensure they are just numbers
  [Simple,Number]
-@@ -194,7 +194,7 @@
+@@ -197,7 +197,7 @@
  SpamAssassinDefaultRulesDir	
  SpamAssassinInstallPrefix	
  SpamStarsCharacter	s
@@ -22,7 +22,7 @@
  VirusScanners		none  # Space-separated list
  
  #
-@@ -239,23 +239,23 @@
+@@ -246,23 +246,23 @@
  WarnSenders		1	no	0	yes	1
  
  [First,File]
@@ -61,12 +61,12 @@
  
  [First,Command]
  Sendmail		/usr/sbin/sendmail
-@@ -311,7 +311,7 @@
+@@ -317,7 +317,7 @@
  UseSpamAssassin		0	no	0	yes	1
  
  [All,File]
 -#FilenameRules		/opt/MailScanner/etc/filename.rules.conf
 +#FilenameRules		/usr/local/etc/MailScanner/filename.rules.conf
  FilenameRules		
+ FiletypeRules		
  
- [All,Other]

@@ -1,5 +1,5 @@
---- ../MailScanner-4.21-9.orig/bin/MailScanner	Mon Jun  2 11:01:26 2003
-+++ bin/MailScanner	Thu Jun 12 15:29:38 2003
+--- ../MailScanner-4.22-5.old/bin/MailScanner	Mon Aug 11 12:15:30 2003
++++ bin/MailScanner	Mon Aug 11 12:36:06 2003
 @@ -1,4 +1,4 @@
 -#!/usr/bin/perl -I/opt/MailScanner/lib
 +#!/usr/bin/perl -I/usr/local/lib/MailScanner

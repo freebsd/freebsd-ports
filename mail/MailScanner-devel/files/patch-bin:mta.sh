@@ -1,6 +1,6 @@
---- ../MailScanner-4.21-9.orig/bin/mta.sh	Thu Jan  1 01:00:00 1970
-+++ bin/mta.sh	Thu Jun 12 15:29:39 2003
-@@ -0,0 +1,112 @@
+--- ../MailScanner-4.22-5.old/bin/mta.sh	Thu Jan  1 01:00:00 1970
++++ bin/mta.sh	Mon Aug 11 12:36:06 2003
+@@ -0,0 +1,117 @@
 +#!/bin/sh
 +
 +outgoing_queue_time=15m
@@ -10,7 +10,12 @@
 +	exim)
 +		program=/usr/local/sbin/exim
 +
-+		incoming_config=/usr/local/etc/exim/configure.in
++		if [ -f /usr/local/etc/exim/configure.in ]; then
++			incoming_config=/usr/local/etc/exim/configure.in
++		else
++			incoming_config=/usr/local/etc/exim/configure
++		fi
++
 +		outgoing_config=/usr/local/etc/exim/configure.out
 +
 +		inpidfile=/var/run/exim_in.pid

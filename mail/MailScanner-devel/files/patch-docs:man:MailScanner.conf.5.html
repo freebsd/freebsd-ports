@@ -1,171 +1,3570 @@
---- ../MailScanner-4.21-9.orig/docs/man/MailScanner.conf.5.html	Sun May 11 02:35:53 2003
-+++ docs/man/MailScanner.conf.5.html	Thu Jun 12 15:29:20 2003
-@@ -1,5 +1,5 @@
- <!-- Creator     : groff version 1.18.1 -->
--<!-- CreationDate: Fri May  9 19:19:36 2003 -->
-+<!-- CreationDate: Thu Jun 12 15:28:39 2003 -->
+--- ../MailScanner-4.22-5.old/docs/man/MailScanner.conf.5.html	Mon Aug 11 12:15:30 2003
++++ docs/man/MailScanner.conf.5.html	Mon Aug 11 12:36:06 2003
+@@ -1,8 +1,11 @@
+-<!-- Creator     : groff version 1.18.1 -->
+-<!-- CreationDate: Tue Jul  1 18:33:27 2003 -->
++<!-- Creator     : groff version 1.19 -->
++<!-- CreationDate: Mon Aug 11 12:28:56 2003 -->
++<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
++"http://www.w3.org/TR/html4/loose.dtd">
  <html>
  <head>
  <meta name="generator" content="groff -Thtml, see www.gnu.org">
-@@ -804,8 +804,8 @@
- <p>Which Virus Scanning package to use. Possible choices are
- sophos, sophossavi, mcafee, command, kaspersky,
- kavdaemonclient, inoculate, onoculan, nod32, f&minus;secure,
--f&minus;prot, panda, rav, antivir, clamav, trend, none (no
--virus scanning at all)</p>
-+f&minus;prot, panda, rav, antivir, clamav, trend,
-+bitdefender, none (no virus scanning at all)</p>
++<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+ <meta name="Content-Style" content="text/css">
+ <title>MailScanner.conf</title>
+ </head>
+@@ -42,7 +45,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p>MailScanner.conf &minus; Main configuration for
+ MailScanner</p>
+@@ -54,7 +57,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p>none</p>
+ </td>
+@@ -65,7 +68,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p>MailScanner is configured using the file
+ MailScanner.conf. The location of this file varies from
+@@ -76,24 +79,24 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="5" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="7%">
+ 
+ <p>Linux:</p>
+ </td>
+-<td width="7%"></td>
+-<td width="7%">
++<td width="8%"></td>
++<td width="8%">
+ 
+ <p>/etc/MailScanner</p>
+ </td>
+-<td width="67%">
++<td width="66%">
+ </td>
+ </table>
  <!-- INDENTATION -->
- <p>Note for McAfee users: Do NOT use any symlinks with
- McAfee at all. It is very strange but McAfee may not detect
-@@ -883,7 +883,14 @@
- such as &quot;Klez&quot; and &quot;Bugbear&quot; which put
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p>FreeBSD: /usr/local/etc/MailScanner<br>
+ Other: /opt/MailScanner/etc</p>
+@@ -128,7 +131,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Max Children</b></p></td>
+ </table>
+@@ -136,8 +139,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: 5</p>
+ <!-- INDENTATION -->
+ <p>MailScanner uses your server efficiently by running
+@@ -153,7 +156,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Run as User</b></p></td>
+ </table>
+@@ -161,8 +164,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: not to change user</p>
+ <!-- INDENTATION -->
+ <p>Provided for Exim users (and anyone not running sendmail
+@@ -174,7 +177,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Run as Group</b></p></td>
+ </table>
+@@ -182,8 +185,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: not to change group</p>
+ <!-- INDENTATION -->
+ <p>Provided for Exim users (and anyone not running sendmail
+@@ -195,7 +198,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Queue Scan Interval</b></p></td>
+ </table>
+@@ -203,8 +206,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: 5</p>
+ <!-- INDENTATION -->
+ <p>How often (in seconds) should each process check the
+@@ -219,7 +222,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Incoming Queue Dir</b></p></td>
+ </table>
+@@ -227,8 +230,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: /var/spool/mqueue.in</p>
+ <!-- INDENTATION -->
+ <p>Directory in which MailScanner should find e&minus;mail
+@@ -248,7 +251,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Outgoing Queue Dir</b></p></td>
+ </table>
+@@ -256,8 +259,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: /var/spool/mqueue</p>
+ <!-- INDENTATION -->
+ <p>Directory in which MailScanner should place scanned
+@@ -269,7 +272,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Incoming work dir</b></p></td>
+ </table>
+@@ -277,8 +280,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: /opt/MailScanner/var/incoming<br>
+ Default FreeBSD: /var/spool/MailScanner/incoming</p>
+ <!-- INDENTATION -->
+@@ -290,7 +293,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Quarantine Dir</b></p></td>
+ </table>
+@@ -298,8 +301,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: /opt/MailScanner/var/quarantine<br>
+ Default FreeBSD: /var/spool/MailScanner/quarantine</p>
+ <!-- INDENTATION -->
+@@ -312,7 +315,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>PID file</b></p></td>
+ </table>
+@@ -320,8 +323,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: /opt/MailScanner/var/MailScanner.pid<br>
+ Default FreeBSD: /var/run/MailScanner.pid</p>
+ <!-- INDENTATION -->
+@@ -335,7 +338,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Restart Every</b></p></td>
+ </table>
+@@ -343,8 +346,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: 14400</p>
+ <!-- INDENTATION -->
+ <p>To avoid resource leaks the MailScanner parent process
+@@ -362,20 +365,20 @@
+ 
+ <p><b>MTA</b></p>
+ </td>
+-<td width="13%"></td>
+-<td width="25%">
++<td width="7%"></td>
++<td width="26%">
+ 
+ <p>Default: sendmail</p>
+ </td>
+-<td width="45%">
++<td width="52%">
+ </td>
+ </table>
+ <!-- INDENTATION -->
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>MailScanner works with sendmail and exim. Since the queue
+ handling differs a bit, you have to tell MailScanner which
+ MTA you are using. Valid options are sendmail and exim.</p>
+@@ -385,7 +388,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Sendmail</b></p></td>
+ </table>
+@@ -393,8 +396,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: /usr/lib/sendmail<br>
+ Default FreeBSD: /usr/sbin/sendmail</p>
+ <!-- INDENTATION -->
+@@ -408,7 +411,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Sendmail2</b></p></td>
+ </table>
+@@ -416,8 +419,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: same value as the Sendmail setting</p>
+ <!-- INDENTATION -->
+ <p>Sendmail2 is provided for exim users. It is the command
+@@ -433,7 +436,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Max Unscanned Bytes Per Scan</b></p></td>
+ </table>
+@@ -441,8 +444,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: 100000000</p>
+ <!-- INDENTATION -->
+ <p>MailScanner handles messages in batches for efficiency.
+@@ -460,7 +463,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Max Unsafe Bytes per Scan</b></p></td>
+ </table>
+@@ -468,8 +471,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: 50000000</p>
+ <!-- INDENTATION -->
+ <p>This setting limits the total size of messages per batch
+@@ -480,7 +483,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Max Unscanned Messages Per Scan</b></p></td>
+ </table>
+@@ -488,8 +491,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: 100</p>
+ <!-- INDENTATION -->
+ <p>This setting limits the total number of messages per
+@@ -501,7 +504,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Max Unsafe Messages per Scan</b></p></td>
+ </table>
+@@ -509,8 +512,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: 100</p>
+ <!-- INDENTATION -->
+ <p>This setting limits the total number of messages per
+@@ -522,7 +525,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Expand TNEF</b></p></td>
+ </table>
+@@ -530,8 +533,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>TNEF is primarily used by Microsoft programs such as
+@@ -551,7 +554,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Deliver Unparsable TNEF</b></p></td>
+ </table>
+@@ -559,8 +562,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>Rich Text format attachments produced by some versions of
+@@ -578,7 +581,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>TNEF Expander</b></p></td>
+ </table>
+@@ -586,8 +589,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: /opt/MailScanner/bin/tnef<br>
+ Default FreeBSD: /usr/local/bin/tnef</p>
+ <!-- INDENTATION -->
+@@ -601,7 +604,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>TNEF Timeout</b></p></td>
+ </table>
+@@ -609,8 +612,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: 120</p>
+ <!-- INDENTATION -->
+ <p>The maximum length of time (in seconds) the TNEF Expander
+@@ -621,7 +624,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>File Command</b></p></td>
+ </table>
+@@ -629,8 +632,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: /usr/bin/file</p>
+ <!-- INDENTATION -->
+ <p>Where the &quot;file&quot; command is installed. This is
+@@ -643,7 +646,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>File Timeout</b></p></td>
+ </table>
+@@ -651,8 +654,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: 20</p>
+ <!-- INDENTATION -->
+ <p>The maximum length of time the &quot;file&quot; command
+@@ -664,7 +667,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Block Encrypted Messages</b></p></td>
+ </table>
+@@ -672,8 +675,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>This is inteded for use with a ruleset to ensure that
+@@ -687,7 +690,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Block Unencrypted Messages</b></p></td>
+ </table>
+@@ -695,8 +698,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>This is intended for use with a ruleset to ensure that
+@@ -709,7 +712,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Maximum Message Size</b></p></td>
+ </table>
+@@ -717,8 +720,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: 0</p>
+ <!-- INDENTATION -->
+ <p>The maximum size of any message including the headers. If
+@@ -735,7 +738,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Allowed Sophos Error Messages</b></p></td>
+ </table>
+@@ -743,24 +746,34 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default:</p>
+ <!-- INDENTATION -->
+ <p>Anything on the next line that appears in brackets at the
+ end of a line of output from Sophos will cause the
+ error/infection to be ignored. Use of this option is
+ dangerous, and should only be used if you are having trouble
+-with lots of corrupt PDF files, for example. Example:<br>
++with lots of corrupt PDF files, for example. This option
++allows for multiple strings as well. In this case, the
++strings should be put in double quotes (&quot;) and each
++string separated with commas. Examples:<br>
+ Allowed Sophos Error Messages = corrupt format not
+-supported</p>
++supported<br>
++Allowed Sophos Error Messages = &quot;corrupt&quot;,
++&quot;format not supported&quot;</p>
++<!-- INDENTATION -->
++<p>The first version will match &quot;corrupt format not
++supported&quot; only. The second version will match
++&quot;corrupt&quot; and &quot;format not
++supported&quot;.</p>
+ </td>
+ </table>
+ <!-- INDENTATION -->
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Sophos IDE Dir</b></p></td>
+ </table>
+@@ -768,8 +781,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: /usr/local/Sophos/ide</p>
+ <!-- INDENTATION -->
+ <p>The directory (or a link to it) containing all the Sophos
+@@ -781,7 +794,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Sophos Lib Dir</b></p></td>
+ </table>
+@@ -789,8 +802,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: /usr/local/Sophos/lib</p>
+ <!-- INDENTATION -->
+ <p>The directory (or a link to it) containing all the Sophos
+@@ -803,7 +816,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Monitors For Sophos Updates</b></p></td>
+ </table>
+@@ -811,8 +824,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: /usr/local/Sophos/ide/*ides.zip</p>
+ <!-- INDENTATION -->
+ <p>SophosSAVI only: monitor each of these files for changes
+@@ -828,7 +841,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Virus Scanning</b></p></td>
+ </table>
+@@ -836,8 +849,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>Do you want to scan email for viruses? A few people
+@@ -856,7 +869,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Virus Scanners</b></p></td>
+ </table>
+@@ -864,8 +877,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: none</p>
+ <!-- INDENTATION -->
+ <p>Which Virus Scanning package to use. Possible choices are
+@@ -888,7 +901,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Virus Scanner Timeout</b></p></td>
+ </table>
+@@ -896,8 +909,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: 300</p>
+ <!-- INDENTATION -->
+ <p>The maximum time (in seconds) that the cirus scanner is
+@@ -908,7 +921,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Deliver Disinfected Files</b></p></td>
+ </table>
+@@ -916,8 +929,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>Should infected attached documents be automatically
+@@ -928,7 +941,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Silent Viruses</b></p></td>
+ </table>
+@@ -936,8 +949,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: Klez Yaha&minus;E Bugbear Braid&minus;A
+ WinEvar</p>
+ <!-- INDENTATION -->
+@@ -951,20 +964,23 @@
  fake addresses on messages they send, so there is no point
  informing the sender of the message, as it won&rsquo;t
--actually be them who sent it anyway.</p>
-+actually be them who sent it anyway. Other words that can be
-+put in this list are the 2 special keywords<br>
-+HTML&minus;IFrame: inserting this will stop senders being
-+warned about HTML Iframe tags, when they are not
+ actually be them who sent it anyway. Other words that can be
+-put in this list are the 2 special keywords<br>
++put in this list are the 3 special keywords<br>
+ HTML&minus;IFrame: inserting this will stop senders being
+ warned about HTML Iframe tags, when they are not
+ allowed.<br>
+ HTML&minus;Codebase: inserting this will stop senders being
+ warned about HTML Object Codebase tags, when they are not
+-allowed.</p>
 +allowed.<br>
-+HTML&minus;Codebase: inserting this will stop senders being
-+warned about HTML Object Codebase tags, when they are not
-+allowed.</p>
++All&minus;Viruses: inserting this will stop senders being
++warned about any virus, while still allowing you to warn
++senders about HTML&minus;based attacks.</p>
  </td>
  </table>
  <!-- INDENTATION -->
-@@ -1642,6 +1649,27 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
  <tr valign="top" align="left">
- <td width="10%"></td>
+-<td width="10%"></td>
++<td width="11%"></td>
  <td width="89%">
-+<p><b>Include Scores In SpamAssassin Report</b></p></td>
-+</table>
-+<!-- INDENTATION -->
-+<table width="100%" border=0 rules="none" frame="void"
-+       cols="2" cellspacing="0" cellpadding="0">
-+<tr valign="top" align="left">
-+<td width="21%"></td>
-+<td width="77%">
-+<p>Default: yes</p>
-+<!-- INDENTATION -->
-+<p>Do you want to include the numerical scores in the
-+detailed SpamAssassin report, or just list the names of the
-+scores?</p>
+ <p><b>Still Deliver Silent Viruses</b></p></td>
+ </table>
+@@ -972,8 +988,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>If this is set to yes then disinfected messsages that
+@@ -993,7 +1009,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Allow Partial Messages</b></p></td>
+ </table>
+@@ -1001,8 +1017,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>Do you want to allow partial messages, which only contain
+@@ -1020,7 +1036,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Allow External Message Bodies</b></p></td>
+ </table>
+@@ -1028,8 +1044,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>There is a mechanism, very rarely used, in which the body
+@@ -1049,7 +1065,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Allow IFrame Tags</b></p></td>
+ </table>
+@@ -1057,8 +1073,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>Do you want to allow HTML &lt;IFrame&gt; tags in email
+@@ -1073,7 +1089,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Log IFrame Tags</b></p></td>
+ </table>
+@@ -1081,8 +1097,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>You may receive complaints from your users that HTML
+@@ -1100,7 +1116,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Allow Object Codebase Tags</b></p></td>
+ </table>
+@@ -1108,8 +1124,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>Do you want to allow HTML &lt;Object Codebase=...&gt;
+@@ -1123,7 +1139,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Convert Dangerous HTML To Text</b></p></td>
+ </table>
+@@ -1131,8 +1147,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>When &lt;IFrame&gt; or &lt;Object Codebase=...&gt; HTML
+@@ -1149,7 +1165,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Convert HTML To Text</b></p></td>
+ </table>
+@@ -1157,8 +1173,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>If you have users who are children, or who are offended
+@@ -1175,7 +1191,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Allow Form Tags</b></p></td>
+ </table>
+@@ -1183,8 +1199,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>Do you want to allow &lt;Form&gt; tags in email messages?
+@@ -1200,7 +1216,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Filename Rules</b></p></td>
+ </table>
+@@ -1208,8 +1224,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: /opt/MailScanner/etc/filename.rules.conf<br>
+ Default Linux: /etc/MailScanner/filename.rules.conf<br>
+ Default FreeBSD:
+@@ -1226,7 +1242,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Filetype Rules</b></p></td>
+ </table>
+@@ -1234,8 +1250,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: /opt/MailScanner/etc/filetype.rules.conf<br>
+ Default Linux: /etc/MailScanner/filetype.rules.conf<br>
+ Default FreeBSD:
+@@ -1257,7 +1273,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Quarantine Infections</b></p></td>
+ </table>
+@@ -1265,8 +1281,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>Set this to store infected / dangerous attachments in
+@@ -1280,7 +1296,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Quarantine Whole Message</b></p></td>
+ </table>
+@@ -1288,8 +1304,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>When an infected message is stored in the quarantine, a
+@@ -1301,7 +1317,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Quarantine Whole Messages As Queue Files</b></p></td>
+ </table>
+@@ -1309,8 +1325,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>When an entire message is saved in the quarantine for any
+@@ -1329,7 +1345,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Language Strings</b></p></td>
+ </table>
+@@ -1337,8 +1353,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default:
+ /opt/MailScanner/etc/reports/en/languages.conf<br>
+ Default Linux:
+@@ -1356,7 +1372,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Deleted Bad Filename Message Report</b></p></td>
+ </table>
+@@ -1364,8 +1380,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default:
+ /opt/MailScanner/etc/reports/en/deleted.filename.message.txt<br>
+ Default Linux:
+@@ -1384,7 +1400,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Deleted Virus Message Report</b></p></td>
+ </table>
+@@ -1392,8 +1408,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default:
+ /opt/MailScanner/etc/reports/en/deleted.virus.message.txt<br>
+ Default Linux:
+@@ -1412,7 +1428,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Stored Bad Filename Message Report</b></p></td>
+ </table>
+@@ -1420,8 +1436,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default:
+ /opt/MailScanner/etc/reports/en/stored.filename.message.txt<br>
+ Default Linux:
+@@ -1429,10 +1445,65 @@
+ Default FreeBSD:
+ /usr/local/share/MailScanner/reports/en/stored.filename.message.txt</p>
+ <!-- INDENTATION -->
+-<p>When an attachment is deleted from a message (and the
+-attachment has been stored in the quarantine) because the
+-filename failed the filename rules in force for the message,
+-it is replaced by the contents of this file. A few variable
++<p>When an attachment is deleted and stored from a message
++(and the attachment has been stored in the quarantine)
++because the filename failed the filename rules in force for
++the message, it is replaced by the contents of this file. A
++few variable substitutions can be made in this file, an
++example of each of which is contained in the supplied sample
++file.</p>
 +</td>
 +</table>
 +<!-- INDENTATION -->
 +<table width="100%" border=0 rules="none" frame="void"
 +       cols="2" cellspacing="0" cellpadding="0">
 +<tr valign="top" align="left">
-+<td width="10%"></td>
++<td width="11%"></td>
 +<td width="89%">
++<p><b>Deleted Bad Content Message Report</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default:
++/opt/MailScanner/etc/reports/en/deleted.content.message.txt<br>
++Default Linux:
++/etc/MailScanner/reports/en/deleted.content.message.txt<br>
++Default FreeBSD:
++/usr/local/share/MailScanner/reports/en/deleted.content.message.txt</p>
++<!-- INDENTATION -->
++<p>This report is sent when a message is deleted because it
++contained bad or dangerous content. A few variable
++substitutions can be made in this file, an example of each
++of which is contained in the supplied sample file.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Stored Bad Content Message Report</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default:
++/opt/MailScanner/etc/reports/en/stored.content.message.txt<br>
++Default Linux:
++/etc/MailScanner/reports/en/stored.content.message.txt<br>
++Default FreeBSD:
++/usr/local/share/MailScanner/reports/en/stored.content.message.txt</p>
++<!-- INDENTATION -->
++<p>This report is sent when a message is stored because it
++contained bad or dangerous content. A few variable
+ substitutions can be made in this file, an example of each
+ of which is contained in the supplied sample file.</p>
+ </td>
+@@ -1441,7 +1512,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Disinfected Report</b></p></td>
+ </table>
+@@ -1449,8 +1520,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default:
+ /opt/MailScanner/etc/reports/en/disinfected.report.txt<br>
+ Default Linux:
+@@ -1470,7 +1541,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Inline HTML Signature</b></p></td>
+ </table>
+@@ -1478,8 +1549,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default:
+ /opt/MailScanner/etc/reports/en/inline.sig.html<br>
+ Default Linux:
+@@ -1501,7 +1572,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Inline Text Signature</b></p></td>
+ </table>
+@@ -1509,8 +1580,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default:
+ /opt/MailScanner/etc/reports/en/inline.sig.txt<br>
+ Default Linux:
+@@ -1532,7 +1603,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Sender Error Report</b></p></td>
+ </table>
+@@ -1540,8 +1611,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default:
+ /opt/MailScanner/etc/reports/en/sender.error.report.txt<br>
+ Default Linux:
+@@ -1561,7 +1632,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Sender Bad Filename Report</b></p></td>
+ </table>
+@@ -1569,8 +1640,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default:
+ /opt/MailScanner/etc/reports/en/sender.filename.report.txt<br>
+ Default Linux:
+@@ -1579,14 +1650,14 @@
+ /usr/local/share/MailScanner/reports/en/sender.filename.report.txt</p>
+ <!-- INDENTATION -->
+ <p>When an attachment is trapped by the filename rules, this
+-message is sent back to the sender. :</p>
++message is sent back to the sender.</p>
+ </td>
+ </table>
+ <!-- INDENTATION -->
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Sender Virus Report</b></p></td>
+ </table>
+@@ -1594,8 +1665,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default:
+ /opt/MailScanner/etc/reports/en/sender.virus.report.txt<br>
+ Default Linux:
+@@ -1611,7 +1682,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Hide Incoming Work Dir</b></p></td>
+ </table>
+@@ -1619,8 +1690,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>When this option is set, the full directory in which the
+@@ -1633,7 +1704,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Include Scanner Name in Reports</b></p></td>
+ </table>
+@@ -1641,14 +1712,20 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
+-<p>Default: no</p>
++<td width="22%"></td>
++<td width="78%">
++<p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>Include the name of the virus scanner in each of the
+-scanner reports. Very useful if you use several virus
+-scanners, but a bad idea if you don&rsquo;t want to let your
+-customers know which scanners you use.</p>
++scanner reports. This also includes the translation of
++&quot;MailScanner&quot; in each of the report lines
++resulting from one of MailScanner&rsquo;s own checks such as
++filename, filetype or dangerous HTML content. To change the
++name &quot;MailScanner&quot;, look in
++reports/...../languages.conf.<br>
++Very useful if you use several virus scanners, but a bad
++idea if you don&rsquo;t want to let your customers know
++which scanners you use.</p>
+ </td>
+ </table>
+ <a name="Changes to message headers"></a>
+@@ -1657,7 +1734,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Mail Header</b></p></td>
+ </table>
+@@ -1665,8 +1742,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: X&minus;MailScanner:</p>
+ <!-- INDENTATION -->
+ <p>Extra header that should be added to all scanned messages
+@@ -1679,7 +1756,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Spam Header</b></p></td>
+ </table>
+@@ -1687,8 +1764,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: X&minus;MailScanner&minus;SpamCheck:</p>
+ <!-- INDENTATION -->
+ <p>Name of the header to add to mail detected as spam. The
+@@ -1700,7 +1777,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Spam Score Header</b></p></td>
+ </table>
+@@ -1708,8 +1785,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: X&minus;MailScanner&minus;SpamScore:</p>
+ <!-- INDENTATION -->
+ <p>If the option &quot;Spam Score&quot; is set, this is the
+@@ -1721,7 +1798,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Information Header</b></p></td>
+ </table>
+@@ -1729,8 +1806,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: X&minus;MailScanner&minus;Information:</p>
+ <!-- INDENTATION -->
+ <p>Name of the header to add to all messages, to be used for
+@@ -1743,7 +1820,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Detailed Spam Report</b></p></td>
+ </table>
+@@ -1751,8 +1828,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>If this is set to yes then you get the normal fully
+@@ -1766,7 +1843,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Include Scores In SpamAssassin Report</b></p></td>
+ </table>
+@@ -1774,8 +1851,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>Do you want to include the numerical scores in the
+@@ -1787,7 +1864,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
  <p><b>Spam Score Character</b></p></td>
  </table>
- <!-- INDENTATION -->
-@@ -2623,6 +2651,32 @@
+@@ -1795,8 +1872,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
  <tr valign="top" align="left">
- <td width="10%"></td>
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: s</p>
+ <!-- INDENTATION -->
+ <p>If the option &quot;Spam Score&quot; is set, this is the
+@@ -1809,7 +1886,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
  <td width="89%">
-+<p><b>Spam Lists To Reach High Score</b></p></td>
+ <p><b>Clean header Value</b></p></td>
+ </table>
+@@ -1817,8 +1894,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: Found to be clean</p>
+ <!-- INDENTATION -->
+ <p>This is the text that is added to the &quot;Mail
+@@ -1830,7 +1907,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Infected Header Value</b></p></td>
+ </table>
+@@ -1838,8 +1915,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: Found to be infected</p>
+ <!-- INDENTATION -->
+ <p>This is the text that is added to the &quot;Mail
+@@ -1851,7 +1928,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Disinfected Header Value</b></p></td>
+ </table>
+@@ -1859,8 +1936,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: Disinfected</p>
+ <!-- INDENTATION -->
+ <p>This is the text that is added to the &quot;Mail
+@@ -1874,7 +1951,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Information Header Value</b></p></td>
+ </table>
+@@ -1882,8 +1959,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: Please contact the ISP for more information</p>
+ <!-- INDENTATION -->
+ <p>This is the text that is added to the &quot;Information
+@@ -1899,7 +1976,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Multiple Headers</b></p></td>
+ </table>
+@@ -1907,8 +1984,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: append</p>
+ <!-- INDENTATION -->
+ <p>When a message passes through more than one MailScanner
+@@ -1924,7 +2001,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Hostname</b></p></td>
+ </table>
+@@ -1932,8 +2009,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: the MailScanner</p>
+ <!-- INDENTATION -->
+ <p>This is the name of the MailScanner server that is put in
+@@ -1946,7 +2023,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Sign Messages Already Processed</b></p></td>
+ </table>
+@@ -1954,8 +2031,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>If a message has already been processed by another
+@@ -1970,7 +2047,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Sign Clean Messages</b></p></td>
+ </table>
+@@ -1978,8 +2055,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>If this option is set, then the &quot;Inline HTML/Text
+@@ -1996,7 +2073,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Mark Infected Messages</b></p></td>
+ </table>
+@@ -2004,8 +2081,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>If this option is set, then the &quot;Inline HTML/Text
+@@ -2020,7 +2097,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Mark Unscanned Messages</b></p></td>
+ </table>
+@@ -2028,8 +2105,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>If this option is set, then any message which is not
+@@ -2044,7 +2121,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Unscanned Header Value</b></p></td>
+ </table>
+@@ -2052,8 +2129,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: Not scanned: please contact your Internet
+ E&minus;Mail Service Provider for details</p>
+ <!-- INDENTATION -->
+@@ -2068,7 +2145,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Deliver Cleaned Messages</b></p></td>
+ </table>
+@@ -2076,8 +2153,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>Once a message has had all viruses and dangerous content
+@@ -2094,7 +2171,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Notify Senders</b></p></td>
+ </table>
+@@ -2102,8 +2179,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>If this option is set, a message will be sent back to the
+@@ -2116,7 +2193,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Never Notify Senders Of Precedence</b></p></td>
+ </table>
+@@ -2124,8 +2201,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: list bulk</p>
+ <!-- INDENTATION -->
+ <p>This contains a space&minus;separated list of message
+@@ -2142,7 +2219,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Scanned Modify Subject</b></p></td>
+ </table>
+@@ -2150,8 +2227,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no # end</p>
+ <!-- INDENTATION -->
+ <p>If this is set to &quot;start&quot; or &quot;end&quot;
+@@ -2165,7 +2242,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Scanned Subject Text</b></p></td>
+ </table>
+@@ -2173,8 +2250,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: {Scanned}</p>
+ <!-- INDENTATION -->
+ <p>This is the text inserted at the start or the end of the
+@@ -2186,7 +2263,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Virus Modify Subject</b></p></td>
+ </table>
+@@ -2194,8 +2271,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>If this is set, then the &quot;Subject:&quot; line of a
+@@ -2208,7 +2285,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Virus Subject Text</b></p></td>
+ </table>
+@@ -2216,8 +2293,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: {Virus?}</p>
+ <!-- INDENTATION -->
+ <p>This is the text inserted at the start of the
+@@ -2229,7 +2306,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Filename Modify Subject</b></p></td>
+ </table>
+@@ -2237,21 +2314,21 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>If this is set, then the &quot;Subject:&quot; line of a
+ message that had an attachment with a dangerous filename
+-will have the &quot;Virus Subject Text&quot; text inserted
+-at the start.</p>
++will have the &quot;Filename Subject Text&quot; text
++inserted at the start.</p>
+ </td>
+ </table>
+ <!-- INDENTATION -->
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Filename Subject Text</b></p></td>
+ </table>
+@@ -2259,9 +2336,9 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
+-<p>Default: yes</p>
++<td width="22%"></td>
++<td width="78%">
++<p>Default: {Virus?}</p>
+ <!-- INDENTATION -->
+ <p>This is the text inserted at the start of the
+ &quot;Subject:&quot; line if the &quot;Filename Modify
+@@ -2272,7 +2349,50 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
++<td width="89%">
++<p><b>Content Modify Subject</b></p></td>
 +</table>
 +<!-- INDENTATION -->
 +<table width="100%" border=0 rules="none" frame="void"
 +       cols="2" cellspacing="0" cellpadding="0">
 +<tr valign="top" align="left">
-+<td width="21%"></td>
-+<td width="77%">
-+<p>Default: 5</p>
++<td width="22%"></td>
++<td width="78%">
++<p>Default: yes</p>
 +<!-- INDENTATION -->
-+<p>If a message appears in at least this number of
-+&quot;Spam Lists&quot; (as defined above), then the message
-+will be treated as &quot;High Scoring Spam&quot; and so the
-+&quot;High Scoring Spam Actions&quot; will happen. You
-+probably want to set this to 2 if you are actually using
-+this feature. 5 is high enough that it will never happen
-+unless you use lots of &quot;Spam Lists&quot;. This can also
-+be the filename of a ruleset.</p>
++<p>If this is set, then the &quot;Subject:&quot; line of a
++message that triggered a content check without anything else
++wrong in the message will have the &quot;Content Subject
++Text&quot; text inserted at the start.</p>
 +</td>
 +</table>
 +<!-- INDENTATION -->
 +<table width="100%" border=0 rules="none" frame="void"
 +       cols="2" cellspacing="0" cellpadding="0">
 +<tr valign="top" align="left">
-+<td width="10%"></td>
++<td width="11%"></td>
 +<td width="89%">
++<p><b>Content Subject Text</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: {Filename?}</p>
++<!-- INDENTATION -->
++<p>This is the text inserted at the start of the
++&quot;Subject:&quot; line if the &quot;Content Modify
++Subject&quot; option is set.</p>
++</td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Spam Modify Subject</b></p></td>
+ </table>
+@@ -2280,8 +2400,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>If this is set, then the &quot;Subject:&quot; line of a
+@@ -2294,7 +2414,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Spam Subject Text</b></p></td>
+ </table>
+@@ -2302,8 +2422,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: {Spam?}</p>
+ <!-- INDENTATION -->
+ <p>This is the text inserted at the start of the
+@@ -2315,7 +2435,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>High Scroing Spam Modify Subject</b></p></td>
+ </table>
+@@ -2323,8 +2443,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>If this is set, then the &quot;Subject:&quot; line of a
+@@ -2338,7 +2458,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>High Scoring Spam Subject Text</b></p></td>
+ </table>
+@@ -2346,8 +2466,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: {Spam?}</p>
+ <!-- INDENTATION -->
+ <p>This is the text inserted at the start of the
+@@ -2361,7 +2481,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Warning Is Attachment</b></p></td>
+ </table>
+@@ -2369,8 +2489,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>When an infected or dangerous attachment is replaced with
+@@ -2383,7 +2503,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Attachment Warning Filename</b></p></td>
+ </table>
+@@ -2391,8 +2511,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: VirusWarning.txt</p>
+ <!-- INDENTATION -->
+ <p>What an infected or dangerous attachment is replaced with
+@@ -2404,7 +2524,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Attachment Encoding Charset</b></p></td>
+ </table>
+@@ -2412,8 +2532,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: us&minus;ascii</p>
+ <!-- INDENTATION -->
+ <p>This is the name of the encoding character set used for
+@@ -2429,7 +2549,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Archive Mail</b></p></td>
+ </table>
+@@ -2437,8 +2557,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default:</p>
+ <!-- INDENTATION -->
+ <p>Space&minus;separated list of any combination of</p></td>
+@@ -2448,20 +2568,20 @@
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+ <td width="29%"></td>
+-<td width="70%">
++<td width="71%">
+ 
+ <p>1. email addresses to which mail should be
+ forwarded,</p>
+ </td>
+ <tr valign="top" align="left">
+ <td width="29%"></td>
+-<td width="70%">
++<td width="71%">
+ 
+ <p>2. directory names where you want mail to be stored,</p>
+ </td>
+ <tr valign="top" align="left">
+ <td width="29%"></td>
+-<td width="70%">
++<td width="71%">
+ 
+ <p>3. file names to which mail will be appended.</p>
+ </td>
+@@ -2470,8 +2590,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>The files (option 3) are using the &quot;mbox&quot;
+ format suitable for most Unix mail systems. These files must
+ already exist since MailScanner will not create them!</p>
+@@ -2489,7 +2609,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Send Notices</b></p></td>
+ </table>
+@@ -2497,8 +2617,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>Should system administrators listed in the &quot;Notices
+@@ -2509,7 +2629,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Notives Include Full Headers</b></p></td>
+ </table>
+@@ -2517,8 +2637,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>If this option is set, then the system administrator
+@@ -2531,7 +2651,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Hide Incoming Work Dir in Notices</b></p></td>
+ </table>
+@@ -2539,8 +2659,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>When this option is set, the full directory in which the
+@@ -2554,7 +2674,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Notice Signature</b></p></td>
+ </table>
+@@ -2562,8 +2682,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: &minus;&minus; \nMailScanner\nEmail Virus
+ Scanner\nwww.mailscanner.info</p>
+ <!-- INDENTATION -->
+@@ -2578,7 +2698,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Notices From</b></p></td>
+ </table>
+@@ -2586,8 +2706,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: MailScanner</p>
+ <!-- INDENTATION -->
+ <p>The visible part of the email address used in the
+@@ -2600,7 +2720,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Notices To</b></p></td>
+ </table>
+@@ -2608,8 +2728,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: postmaster</p>
+ <!-- INDENTATION -->
+ <p>This option provides a list of the addresses to which
+@@ -2622,7 +2742,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Local Postmaster</b></p></td>
+ </table>
+@@ -2630,8 +2750,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: postmaster</p>
+ <!-- INDENTATION -->
+ <p>When virus warnings are sent to any users, this is the
+@@ -2645,7 +2765,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Spam List Definitions</b></p></td>
+ </table>
+@@ -2653,8 +2773,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: /opt/MailScanner/etc/spam.lists.conf<br>
+ Defualt Linux: /etc/MailScanner/spam.lists.conf<br>
+ Default FreeBSD:
+@@ -2672,7 +2792,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Virus Scanner Definitions</b></p></td>
+ </table>
+@@ -2680,8 +2800,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: /opt/MailScanner/etc/virus.scanners.conf<br>
+ Default Linux: /etc/MailScanner/virus.scanners.conf<br>
+ Default FreeBSD:
+@@ -2699,7 +2819,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Spam Checks</b></p></td>
+ </table>
+@@ -2707,8 +2827,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>If this option is set, messages will be checked to see if
+@@ -2719,7 +2839,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Spam List</b></p></td>
+ </table>
+@@ -2727,8 +2847,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: ORDB&minus;RBL Infinite&minus;Monkeys</p>
+ <!-- INDENTATION -->
+ <p>This provides a space&minus;separated list of &quot;Spam
+@@ -2744,7 +2864,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Spam Domain List</b></p></td>
+ </table>
+@@ -2752,8 +2872,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default:</p>
+ <!-- INDENTATION -->
+ <p>This provides a space&minus;separated list of &quot;Spam
+@@ -2768,7 +2888,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Spam Lists To Reach High Score</b></p></td>
+ </table>
+@@ -2776,8 +2896,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: 5</p>
+ <!-- INDENTATION -->
+ <p>If a message appears in at least this number of
+@@ -2794,7 +2914,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
  <p><b>Spam List Timeout</b></p></td>
  </table>
+@@ -2802,8 +2922,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: 10</p>
  <!-- INDENTATION -->
-@@ -3021,6 +3075,11 @@
- action on its own does not imply that the message will be
- delivered, you will need to specify &quot;deliver&quot; or
- &quot;forward&quot; to actually deliver the message.</p>
-+<!-- INDENTATION -->
-+<p>&quot;attachment&quot; &minus; Convert the original
-+message into an attachment of the message. This means the
-+user has to take an extra step to open the spam, and stops
-+&quot;web bugs&quot; very effectively.</p>
+ <p>This is the number of seconds to wait for each &quot;Spam
+@@ -2815,7 +2935,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Max Spam List Timeouts</b></p></td>
+ </table>
+@@ -2823,8 +2943,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: 7</p>
+ <!-- INDENTATION -->
+ <p>If a &quot;Spam List&quot; lookup times out for this many
+@@ -2840,7 +2960,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Is Definitely Not Spam</b></p></td>
+ </table>
+@@ -2848,8 +2968,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default:
+ /opt/MailScanner/etc/rules/spam.whitelist.rules<br>
+ Default Linux:
+@@ -2869,7 +2989,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Is Definitely Spam</b></p></td>
+ </table>
+@@ -2877,8 +2997,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>This option would normally be a ruleset. Any messages for
+@@ -2887,13 +3007,36 @@
+ &quot;blacklist&quot; of addresses of known spammers.</p>
  </td>
  </table>
- <!-- INDENTATION -->
-@@ -3051,6 +3110,28 @@
- <tr valign="top" align="left">
- <td width="10%"></td>
- <td width="89%">
-+<p><b>Non Spam Actions</b></p></td>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Definite Spam Is High Scoring</b></p></td>
 +</table>
 +<!-- INDENTATION -->
 +<table width="100%" border=0 rules="none" frame="void"
 +       cols="2" cellspacing="0" cellpadding="0">
 +<tr valign="top" align="left">
-+<td width="21%"></td>
-+<td width="77%">
-+<p>Default: deliver</p>
++<td width="22%"></td>
++<td width="78%">
++<p>Default: no</p>
 +<!-- INDENTATION -->
-+<p>This is the same as the &quot;Spam Actions&quot; option
-+above, except that it applies to messages that are NOT spam.
-+The bounce option does not make much sense here so do not
-+use it.</p>
++<p>Setting this to yes means that spam found in the
++blacklist is treated as &quot;High Scoring Spam&quot; in the
++&quot;Spam Actions&quot; section below. Setting it to no
++means that it will be treated as &quot;normal&quot; spam.
++This can also be the filename of a ruleset.</p>
 +</td>
 +</table>
-+<!-- INDENTATION -->
-+<table width="100%" border=0 rules="none" frame="void"
-+       cols="2" cellspacing="0" cellpadding="0">
-+<tr valign="top" align="left">
-+<td width="10%"></td>
-+<td width="89%">
+ <a name="SpamAssassin"></a>
+ <h2>SpamAssassin</h2>
+ <!-- INDENTATION -->
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Use SpamAssassin</b></p></td>
+ </table>
+@@ -2901,8 +3044,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>Do you want to detect spam using the very good
+@@ -2919,7 +3062,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Max SpamAssassin Size</b></p></td>
+ </table>
+@@ -2927,8 +3070,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: 90000</p>
+ <!-- INDENTATION -->
+ <p>SpamAssassin is quite slow when processing very large
+@@ -2942,7 +3085,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Required Spam Assassin Score</b></p></td>
+ </table>
+@@ -2950,8 +3093,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: 5</p>
+ <!-- INDENTATION -->
+ <p>This gives the minimum SpamAssassin score value above
+@@ -2965,7 +3108,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>High SpamAssassin Score</b></p></td>
+ </table>
+@@ -2973,8 +3116,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: 20</p>
+ <!-- INDENTATION -->
+ <p>Messages with a SpamAssassin score greater than this
+@@ -2987,7 +3130,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>SpamAssassin Auto Whitelist</b></p></td>
+ </table>
+@@ -2995,8 +3138,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>SpamAssassin has a feature which measures the ratio of
+@@ -3012,7 +3155,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>SpamAssassin Prefs File</b></p></td>
+ </table>
+@@ -3020,8 +3163,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default:
+ /opt/MailScanner/etc/spam.assassin.prefs.conf<br>
+ Default Linux: /etc/MailScanner/spam.assassin.prefs.conf<br>
+@@ -3041,7 +3184,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>SpamAssassin Timeout</b></p></td>
+ </table>
+@@ -3049,8 +3192,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: 30</p>
+ <!-- INDENTATION -->
+ <p>This option sets the maximum number of seconds to wait
+@@ -3063,7 +3206,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Max SpamAssasin Timeouts</b></p></td>
+ </table>
+@@ -3071,8 +3214,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: 20</p>
+ <!-- INDENTATION -->
+ <p>If several consecutive calls to SpamAssassin time out,
+@@ -3086,7 +3229,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Check SpamAssassin If On Spam List</b></p></td>
+ </table>
+@@ -3094,8 +3237,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>If a message has already triggered any of the &quot;Spam
+@@ -3109,7 +3252,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Always Include SpamAssasin Report</b></p></td>
+ </table>
+@@ -3117,8 +3260,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>If this option is set, then the &quot;Spam Header&quot;
+@@ -3131,7 +3274,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Spam Score</b></p></td>
+ </table>
+@@ -3139,8 +3282,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>If a message is spam, and this option is set, then a
+@@ -3157,7 +3300,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Spam Actions</b></p></td>
+ </table>
+@@ -3165,8 +3308,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: deliver</p>
+ <!-- INDENTATION -->
+ <p>This can be any combination of 1 or more of the following
+@@ -3205,7 +3348,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>High Scoring Spam Actions</b></p></td>
+ </table>
+@@ -3213,8 +3356,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: deliver</p>
+ <!-- INDENTATION -->
+ <p>This is the same as the &quot;Spam Actions&quot; option
+@@ -3227,7 +3370,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Non Spam Actions</b></p></td>
+ </table>
+@@ -3235,8 +3378,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: deliver</p>
+ <!-- INDENTATION -->
+ <p>This is the same as the &quot;Spam Actions&quot; option
+@@ -3249,7 +3392,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
  <p><b>Sender Spam Report</b></p></td>
  </table>
+@@ -3257,8 +3400,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default:
+ /opt/MailScanner/etc/reports/en/sender.spam.report.txt<br>
+ Default Linux:
+@@ -3276,7 +3419,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Sender Spam List Report</b></p></td>
+ </table>
+@@ -3284,8 +3427,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default:
+ /opt/MailScanner/etc/reports/en/sender.spam.rbl.report.txt<br>
+ Default Linux:
+@@ -3302,7 +3445,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Sender SpamAssassin Report</b></p></td>
+ </table>
+@@ -3310,8 +3453,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default:
+ /opt/MailScanner/etc/reports/en/sender.spam.sa.report.txt<br>
+ Default Linux:
+@@ -3328,7 +3471,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Inline Spam Warning</b></p></td>
+ </table>
+@@ -3336,8 +3479,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default:
+ /opt/MailScanner/etc/reports/en/inline.spam.warning.txt<br>
+ Default Linux:
+@@ -3356,7 +3499,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Syslog Facility</b></p></td>
+ </table>
+@@ -3364,8 +3507,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: mail</p>
  <!-- INDENTATION -->
-@@ -3122,6 +3203,32 @@
- <p>When the &quot;bounce&quot; spam action is applied to a
- message that triggered SpamAssassin, this file gives the
- text to put in that message.</p>
-+</td>
-+</table>
-+<!-- INDENTATION -->
-+<table width="100%" border=0 rules="none" frame="void"
-+       cols="2" cellspacing="0" cellpadding="0">
-+<tr valign="top" align="left">
-+<td width="10%"></td>
-+<td width="89%">
-+<p><b>Inline Spam Warning</b></p></td>
-+</table>
-+<!-- INDENTATION -->
-+<table width="100%" border=0 rules="none" frame="void"
-+       cols="2" cellspacing="0" cellpadding="0">
-+<tr valign="top" align="left">
-+<td width="21%"></td>
-+<td width="77%">
-+<p>Default:
-+/opt/MailScanner/etc/reports/en/inline.spam.warning.txt<br>
-+Default Linux:
-+/etc/MailScanner/reports/en/inline.spam.warning.txt<br>
-+Default FreeBSD:
-+/usr/local/share/MailScanner/reports/en/inline.spam.warning.txt</p>
-+<!-- INDENTATION -->
-+<p>If you use the &rsquo;attachment&rsquo; Spam Action or
-+High Scoring Spam Action then this is the location of inline
-+spam report that is inserted at the top of the message.</p>
+ <p>This is the name of the &quot;facility&quot; used by
+@@ -3378,7 +3521,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Log Spam</b></p></td>
+ </table>
+@@ -3386,8 +3529,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>If this option is set, then every spam message will be
+@@ -3402,7 +3545,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Log Permitted Filenames</b></p></td>
+ </table>
+@@ -3410,8 +3553,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>If this option is set, then every attachment filename
+@@ -3425,7 +3568,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Log Permitted Filetypes</b></p></td>
+ </table>
+@@ -3433,8 +3576,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>Log all the filenames that are allowed by the Filetype
+@@ -3448,7 +3591,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p>If you are using Postfix you may well need to use some of
+ the settings below, as the home directory for the
+@@ -3462,7 +3605,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>SpamAssassin User State Dir</b></p></td>
+ </table>
+@@ -3470,8 +3613,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default:</p>
+ <!-- INDENTATION -->
+ <p>The per&minus;user files (bayes, auto&minus;whitelist,
+@@ -3486,13 +3629,13 @@
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+ <td width="29%"></td>
+-<td width="70%">
++<td width="71%">
+ 
+ <p>mkdir /var/spool/MailScanner/spamassassin</p>
+ </td>
+ <tr valign="top" align="left">
+ <td width="29%"></td>
+-<td width="70%">
++<td width="71%">
+ 
+ <p>chown postfix.postfix
+ /var/spool/MailScanner/spamassassin</p>
+@@ -3502,7 +3645,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>SpamAssassin Install Prefix</b></p></td>
+ </table>
+@@ -3510,8 +3653,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default:</p>
+ <!-- INDENTATION -->
+ <p>This setting is useful if SpamAssassin is installed in an
+@@ -3526,7 +3669,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>SpamAssassin Local Rules Dir</b></p></td>
+ </table>
+@@ -3534,8 +3677,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default:</p>
+ <!-- INDENTATION -->
+ <p>The site&minus;local rules are searched for here, and in
+@@ -3550,7 +3693,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>SpamAssassin Default Rules Dir</b></p></td>
+ </table>
+@@ -3558,8 +3701,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default:</p>
+ <!-- INDENTATION -->
+ <p>The default rules are searched for here, and in
+@@ -3580,20 +3723,20 @@
+ 
+ <p><b>Debug</b></p>
+ </td>
+-<td width="13%"></td>
++<td width="4%"></td>
+ <td width="16%">
+ 
+ <p>Default: no</p>
+ </td>
+-<td width="51%">
++<td width="62%">
  </td>
  </table>
- <a name="System logging"></a>
+ <!-- INDENTATION -->
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Not for use by normal users. Setting this option to
+ &quot;yes&quot; will put MailScanner into debugging mode, in
+ which it creates slightly more output and will not become a
+@@ -3604,7 +3747,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Debug SpamAssassin</b></p></td>
+ </table>
+@@ -3612,8 +3755,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>Do you want to debug SpamAssassin from within
+@@ -3624,7 +3767,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Always Looked Up Last</b></p></td>
+ </table>
+@@ -3632,8 +3775,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: no</p>
+ <!-- INDENTATION -->
+ <p>The value of the option is actually never used, but it is
+@@ -3649,7 +3792,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Deliver in Background</b></p></td>
+ </table>
+@@ -3657,8 +3800,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>When attempting delivery of any messages (when the
+@@ -3673,7 +3816,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Lockfile Dir</b></p></td>
+ </table>
+@@ -3681,8 +3824,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: /tmp</p>
+ <!-- INDENTATION -->
+ <p>This is the directory in which lock files are placed to
+@@ -3697,7 +3840,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Lock Type</b></p></td>
+ </table>
+@@ -3705,8 +3848,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Do not set this option to anything unless you know
+ exactly what you are doing. For sendmail and Exim,
+ MailScanner will choose the correct value by default. This
+@@ -3720,7 +3863,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Minimum Code Status</b></p></td>
+ </table>
+@@ -3728,8 +3871,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: supported</p>
+ <!-- INDENTATION -->
+ <p>Some of the virus scanners are not supported by the
+@@ -3747,7 +3890,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p><b>Split Exim Spool</b></p></td>
+ </table>
+@@ -3755,8 +3898,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Default: yes</p>
+ <!-- INDENTATION -->
+ <p>Are you using Exim with split spool directories? If you
+@@ -3765,13 +3908,51 @@
+ information about split spool directories.</p>
+ </td>
+ </table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
++<p><b>Use Default Rules With Multiple
++Recipients</b></p></td>
++</table>
++<!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
++<p>Default: no</p>
++<!-- INDENTATION -->
++<p>When trying to work out the value of configuration
++parameters which are using a ruleset, this controls the
++behaviour when a rule is checking the &quot;To:&quot;
++addresses. If this option is set to &quot;yes&quot;, then
++the following happens when checking the ruleset:</p>
++<!-- INDENTATION -->
++<p>a) 1 recipient. Same behaviour as normal.<br>
++b) Several recipients, but all in the same domain
++(domain.com for example). The rules are checked for one that
++matches the string &quot;*@domain.com&quot;.<br>
++c) Several recipients, not all in the same domain. The rules
++are checked for one that matches the string
++&quot;*@*&quot;.</p>
++<!-- INDENTATION -->
++<p>If this option is set to &quot;no&quot;, then some rules
++will use the result they get from the first matching rule
++for any of the recipients of a message, so the exact value
++cannot be predicted for messages with more than 1 recipient.
++This value *cannot* be the filename of a ruleset.</p>
++</td>
++</table>
+ <a name="RULESETS"></a>
+ <h2>RULESETS</h2>
+ <!-- INDENTATION -->
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p>Ruleset files should all be put in
+ /opt/MailScanner/etc/rules (FreeBSD:
+@@ -3795,35 +3976,39 @@
+ </table>
+ <!-- TABS -->
+ <table width="100%" border=0 rules="none" frame="void"
+-       cols="4" cellspacing="0" cellpadding="0">
++       cols="5" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+ <td width="7%">
+ 
+ <p>From:</p>
+ </td>
+-<td width="10%"></td>
+-<td width="70%">
++<td width="4%"></td>
++<td width="78%">
+ 
+ <p>Matches when the message is from a matching address</p>
+ </td>
++<td width="0%">
++</td>
+ <tr valign="top" align="left">
+ <td width="11%"></td>
+ <td width="7%">
+ 
+ <p>To:</p>
+ </td>
+-<td width="10%"></td>
+-<td width="70%">
++<td width="4%"></td>
++<td width="78%">
+ 
+ <p>Matches when the message is to a matching address</p>
+ </td>
++<td width="0%">
++</td>
+ </table>
+ <!-- INDENTATION -->
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p>FromOrTo:</p></td>
+ </table>
+@@ -3831,8 +4016,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Matches when the message is from or to a matching
+ address</p>
+ </td>
+@@ -3841,7 +4026,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p>FromAndTo:</p></td>
+ </table>
+@@ -3849,8 +4034,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Matches when the message is from and to a matching
+ address</p>
+ </td>
+@@ -3859,7 +4044,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p>The syntax of these is very loosely defined. Any word
+ containing &quot;from&quot;, any word containing
+@@ -3867,12 +4052,25 @@
+ &quot;to&quot; (in either order), and any word containing
+ &quot;and&quot; will work just fine. You can put them in
+ upper or lower case, it doesn&rsquo;t matter. And any
+-additional punctuation will be ignored.</p>
++additional punctuation will be ignored.</p></td>
++</table>
+ <!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="22%"></td>
++<td width="78%">
+ <p>This specifies the whether the rule should be matched
+ against the sender&rsquo;s address (or IP address), or the
+ recipient&rsquo;s address.</p>
++</td>
++</table>
+ <!-- INDENTATION -->
++<table width="100%" border=0 rules="none" frame="void"
++       cols="2" cellspacing="0" cellpadding="0">
++<tr valign="top" align="left">
++<td width="11%"></td>
++<td width="89%">
+ <p>2. The pattern describes what messages should match this
+ rule. Some examples are:</p>
+ <!-- INDENTATION -->
+@@ -3911,7 +4109,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p>This is held in the filename pointed to by the
+ configuration option Filename rules. It contains a set of
+@@ -3951,7 +4149,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p>allow / deny</p></td>
+ </table>
+@@ -3959,8 +4157,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>Accept or reject the attachment if its filename matches
+ the regular expression</p>
+ </td>
+@@ -3969,7 +4167,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p>regular expression</p></td>
+ </table>
+@@ -3977,8 +4175,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>The rule is executed if the attachment matches this
+ expression. It may optionally be surrounded in
+ &rsquo;/&rsquo; characters.</p>
+@@ -3988,7 +4186,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p>log text</p></td>
+ </table>
+@@ -3996,8 +4194,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>If the rule matches, this text is placed in the syslog.
+ If the text is &quot;&minus;&quot;, no string is logged.</p>
+ </td>
+@@ -4006,7 +4204,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p>user text</p></td>
+ </table>
+@@ -4014,8 +4212,8 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="21%"></td>
+-<td width="77%">
++<td width="22%"></td>
++<td width="78%">
+ <p>If the rule matches, this text is placed in the text
+ message sent to the user. If the text is
+ &quot;&minus;&quot;, no text is used.</p>
+@@ -4025,7 +4223,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p>Please have a look at the filename.rules.conf or
+ filename.rules.conf.sample file provided with this
+@@ -4038,7 +4236,7 @@
+ <table width="100%" border=0 rules="none" frame="void"
+        cols="2" cellspacing="0" cellpadding="0">
+ <tr valign="top" align="left">
+-<td width="10%"></td>
++<td width="11%"></td>
+ <td width="89%">
+ <p>MailScanner(1)</p>
+ </td>

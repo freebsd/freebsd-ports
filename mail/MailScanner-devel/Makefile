@@ -6,26 +6,27 @@
 #
 
 PORTNAME=	mailscanner
-PORTVERSION=	4.21.9
+PORTVERSION=	4.22.5
 PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sng.ecs.soton.ac.uk/mailscanner/files/4/tar/
-DISTNAME=       MailScanner-4.21-9
-#EXTRACT_SUFX=  .tar.gz
+DISTNAME=	MailScanner-4.22-5
 
 MAINTAINER=	j.koopmann@seceidos.de
 COMMENT=	A powerful virus/spam scanning framework for Sendmail and Exim
 
-BUILD_DEPENDS=	${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy:install \
-		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64:install \
-		${SITE_PERL}/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools:install \
-		${SITE_PERL}/HTML/Tagset.pm:${PORTSDIR}/www/p5-HTML-Tagset:install \
-		${SITE_PERL}/${PERL_ARCH}/HTML/HeadParser.pm:${PORTSDIR}/www/p5-HTML-Parser:install \
-		${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools:install \
-		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp:install \
-		${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF:install
+BUILD_DEPENDS=	${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
+		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
+		${SITE_PERL}/Mail/Header.pm:${PORTSDIR}/mail/p5-Mail-Tools \
+		${SITE_PERL}/HTML/Tagset.pm:${PORTSDIR}/www/p5-HTML-Tagset \
+		${SITE_PERL}/${PERL_ARCH}/HTML/HeadParser.pm:${PORTSDIR}/www/p5-HTML-Parser \
+		${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools \
+		${SITE_PERL}/File/Temp.pm:${PORTSDIR}/devel/p5-File-Temp \
+		${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF
 
 RUN_DEPENDS=	${BUILD_DEPENDS}
+DATADIR=	${PREFIX}/share/MailScanner
+DOCSDIR=	${PREFIX}/share/doc/MailScanner
 
 MAN8=		MailScanner.8
 MAN5=		MailScanner.conf.5
@@ -47,7 +48,7 @@ pre-install:
 	${RM} -rf ${WRKSRC}/.install_*
 
 do-install:
-	( cd ${WRKSRC} ; make install BINOWN="${BINOWN}" BINGRP="${BINGRP}" BINMODE="${BINMODE}" SHAREOWN="${SHAREOWN}" SHAREGRP="{SHAREGRP}" SHAREMODE="${SHAREMODE}" INSTALL_SCRIPT="${INSTALL_SCRIPT}" INSTALL_DATA="${INSTALL_DATA}" PREFIX="${PREFIX}" WRKSPACE="${WRKSPACE}" OVERWRITE_FILENAMERULES="${OVERWRITE_FILENAMERULES}" OVERWRITE_REPORTS="${OVERWRITE_REPORTS}" )
+	( cd ${WRKSRC} ; ${MAKE} ${INSTALL_TARGET} BINOWN="${BINOWN}" BINGRP="${BINGRP}" BINMODE="${BINMODE}" SHAREOWN="${SHAREOWN}" SHAREGRP="{SHAREGRP}" SHAREMODE="${SHAREMODE}" INSTALL_SCRIPT="${INSTALL_SCRIPT}" INSTALL_DATA="${INSTALL_DATA}" PREFIX="${PREFIX}" WRKSPACE="${WRKSPACE}" OVERWRITE_FILENAMERULES="${OVERWRITE_FILENAMERULES}" OVERWRITE_REPORTS="${OVERWRITE_REPORTS}" )
 
 post-install:
 .for file in ${MAN5}
@@ -73,6 +74,6 @@ post-install:
 	@${SED} -e 's#PREFIX#${PREFIX}#' pkg-message
 
 initial-config:
-	( cd ${WRKSRC} ; make initial-config BINOWN="${BINOWN}" BINGRP="${BINGRP}" BINMODE="${BINMODE}" SHAREOWN="${SHAREOWN}" SHAREGRP="{SHAREGRP}" SHAREMODE="${SHAREMODE}" INSTALL_SCRIPT="${INSTALL_SCRIPT}" INSTALL_DATA="${INSTALL_DATA}" PREFIX="${PREFIX}" WRKSPACE="${WRKSPACE}" OVERWRITE_FILENAMERULES="${OVERWRITE_FILENAMERULES}" OVERWRITE_REPORTS="${OVERWRITE_REPORTS}" )
+	( cd ${WRKSRC} ; ${MAKE} initial-config BINOWN="${BINOWN}" BINGRP="${BINGRP}" BINMODE="${BINMODE}" SHAREOWN="${SHAREOWN}" SHAREGRP="{SHAREGRP}" SHAREMODE="${SHAREMODE}" INSTALL_SCRIPT="${INSTALL_SCRIPT}" INSTALL_DATA="${INSTALL_DATA}" PREFIX="${PREFIX}" WRKSPACE="${WRKSPACE}" OVERWRITE_FILENAMERULES="${OVERWRITE_FILENAMERULES}" OVERWRITE_REPORTS="${OVERWRITE_REPORTS}" )
 
 .include <bsd.port.post.mk>
