@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	py-MySQLdb
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.2
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mysql-python
@@ -20,9 +20,6 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 DOCS=		MANIFEST README doc/*.html
-
-do-configure:
-	@${PERL} -pi -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py
 
 .if !defined(NOPORTDOCS)
 post-install:
