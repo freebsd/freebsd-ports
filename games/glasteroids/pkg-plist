@@ -1,6 +1,6 @@
 bin/glasteroids
-share/doc/glasteroids/COPYING
-share/doc/glasteroids/README
+%%PORTDOCS%%share/doc/glasteroids/COPYING
+%%PORTDOCS%%share/doc/glasteroids/README
 share/glasteroids/gameText.txf
 @mode 666
 share/glasteroids/scores.txt
