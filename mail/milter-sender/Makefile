@@ -69,7 +69,7 @@ post-install:
 
 post-deinstall:
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Do not forget delete filter description from /etc/mail/YOUR-CONF.mc"
+	@${ECHO_MSG} "Do not forget to delete the filter description from /etc/mail/YOUR-CONF.mc"
 	@${ECHO_MSG} "and rebuild sendmail.cf file!"
 	@${ECHO_MSG} ""
 
