@@ -7,3 +7,4 @@ lib/libfam.a
 lib/libfam.so
 lib/libfam.so.0
 @dirrm lib/fam
+@unexec rm -f %D/etc/rc.d/fam.sh || true
