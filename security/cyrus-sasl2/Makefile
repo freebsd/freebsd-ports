@@ -17,6 +17,8 @@ MASTER_SITE_SUBDIR=	. OLD-VERSIONS/sasl
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
+LATEST_LINK=	${PORTNAME}2
+
 INSTALLS_SHLIB=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}2
