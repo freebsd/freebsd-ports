@@ -1,6 +1,6 @@
 diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_os.h skipsrc-1.0/skip/freebsd/skip_os.h
 --- skipsrc-1.0.orig/skip/freebsd/skip_os.h	Fri Oct 25 13:12:43 1996
-+++ skipsrc-1.0/skip/freebsd/skip_os.h	Mon Dec 15 17:44:31 1997
++++ skipsrc-1.0/skip/freebsd/skip_os.h	Tue Jan 13 11:19:16 1998
 @@ -54,7 +54,6 @@
  #ifndef KERNEL
  #include <stdio.h>
@@ -22,7 +22,16 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_os.h skips
  #include <sys/types.h>
  #include <sys/errno.h>
  #include <sys/time.h>
-@@ -83,10 +88,14 @@
+@@ -77,16 +82,23 @@
+ #include <sys/malloc.h>
+ #include <sys/stat.h>
+ #include <sys/socket.h>
++#if __FreeBSD_version >= 300000
++#include <sys/socketvar.h> 
++#endif
+ #include <sys/syslog.h>
+ #include <sys/param.h>
+ #include <sys/uio.h>
  #include <sys/file.h>
  #include <sys/sockio.h>
  #include <sys/wait.h>
@@ -37,7 +46,7 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_os.h skips
  #include <netinet/in_systm.h>
  #endif
  #include <netinet/in.h>
-@@ -94,8 +103,8 @@
+@@ -94,8 +106,8 @@
  #include <netinet/ip.h>
  #include <netinet/udp.h>
  #include <netinet/in_var.h>
@@ -47,7 +56,7 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_os.h skips
  
  /* 
   * Basic required types and constants
-@@ -116,6 +125,7 @@
+@@ -116,6 +128,7 @@
  #include <sys/sysent.h>
  #include <sys/exec.h>
  #include <sys/lkm.h>
@@ -55,7 +64,7 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_os.h skips
  #include <sys/protosw.h>
  #include <net/route.h>
  #include <sys/kernel.h>
-@@ -123,6 +133,7 @@
+@@ -123,6 +136,7 @@
  #include <net/netisr.h>
  #include <sys/proc.h>
  #include <sys/device.h>
@@ -63,7 +72,7 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_os.h skips
  
  #define	PANIC(s)		panic(s)
  
-@@ -131,11 +142,17 @@
+@@ -131,11 +145,17 @@
   */
  #define	SYSMEM_ALLOC(size)	malloc((u_long)size, M_PCB, M_NOWAIT) 
  #define	SYSMEM_FREE(m, n)	free(m, M_PCB)
@@ -84,7 +93,7 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_os.h skips
  
  #define ALIGNED(x)		(((unsigned int)(x)&(skip_alignment - 1)) == 0)
  
-@@ -205,26 +222,21 @@
+@@ -205,26 +225,21 @@
  }
  
  /*
@@ -121,7 +130,7 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_os.h skips
  #else /* KERNEL */
  
  /*
-@@ -251,37 +263,12 @@
+@@ -251,37 +266,12 @@
  #endif
  #define	STATIC
  
@@ -161,7 +170,7 @@ diff -ur --unidirectional-new-file skipsrc-1.0.orig/skip/freebsd/skip_os.h skips
  #define KEYMGR			"/dev/skip_key"
  
  /*
-@@ -306,12 +293,6 @@
+@@ -306,12 +296,6 @@
  /* General purpose */
  
  typedef unsigned char byte;
