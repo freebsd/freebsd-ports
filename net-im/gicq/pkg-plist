@@ -1,1 +1,6 @@
 bin/gicq
+share/gnome/help/gicq/C/index.html
+share/gnome/help/gicq/C/topic.dat
+@dirrm share/gnome/help/gicq/C
+@dirrm share/gnome/help/gicq
+share/gnome/apps/Applications/gicq.desktop
