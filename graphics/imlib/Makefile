@@ -22,7 +22,9 @@ USE_X_PREFIX=	yes
 USE_GTK=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/imlib --disable-modules
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/imlib --disable-modules \
+		--x-includes=${X11BASE}/include \
+		--x-libraries=${X11BASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
