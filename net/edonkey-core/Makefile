@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	edonkey
-PORTVERSION=	16.16.58.3
+PORTVERSION=	0.44
+PORTEPOCH=	1
 CATEGORIES=	net linux
-MASTER_SITES=	http://users.aber.ac.uk/tpm01/
+MASTER_SITES=	http://sda.edonkey2000.com/files/
 PKGNAMESUFFIX=	-core
-DISTNAME=	donkey_s_1658-gaps-3
+DISTNAME=	eDonkey${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 
@@ -28,7 +29,7 @@ BRANDELF?=	/usr/bin/brandelf
 BRANDELF?=	brandelf
 .endif
 
-BINARY_NAME_OLD?=	${DISTNAME}
+BINARY_NAME_OLD?=	donkey_s_${PORTVERSION:S/^0.//}
 BINARY_NAME=	donkey
 
 post-patch:
