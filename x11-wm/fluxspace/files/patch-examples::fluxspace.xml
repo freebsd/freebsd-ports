@@ -1,0 +1,11 @@
+--- ../fluxspace-0.0.3.orig/examples/fluxspace.xml	Thu Jan  9 06:03:16 2003
++++ examples/fluxspace.xml	Wed Mar 26 17:30:59 2003
+@@ -30,7 +30,7 @@
+   </rox>
+ 
+   <!-- Idesk module - for desktop icons on each workspace -->
+-  <idesk enable="no"\>
++  <idesk enable="no"/>
+ 
+   <!-- Runner module - command execution -->
+   <runner enable="no">

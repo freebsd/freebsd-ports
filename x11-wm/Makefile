@@ -29,6 +29,7 @@
     SUBDIR += fluxbox
     SUBDIR += fluxbox-devel
     SUBDIR += fluxconf
+    SUBDIR += fluxspace
     SUBDIR += fluxter
     SUBDIR += flwm
     SUBDIR += fvwm
