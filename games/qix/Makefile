@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	jmz
 
 MAINTAINER=	jmz@FreeBSD.org
 
-.if defined(NO_X)
+.if defined(WITHOUT_X11)
 MAKE_ARGS=	NO_X11=yes
 .include <bsd.port.pre.mk>
 .else

@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-nox11
 
 MAINTAINER=	nik@freebsd.org
 
-NO_X=		yes
+WITHOUT_X11=	yes
 
 MASTERDIR=	${.CURDIR}/../ghostscript6
 
