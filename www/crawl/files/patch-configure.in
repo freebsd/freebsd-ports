@@ -1,0 +1,17 @@
+--- configure.in.orig	Wed Jun 20 14:41:44 2001
++++ configure.in	Wed Jun 20 17:30:07 2001
+@@ -38,11 +38,11 @@
+      ;;
+   *)
+      AC_MSG_RESULT($withval)
+-     if test -f $withval/event.h -a -f $withval/libevent.a; then
++     if test -f $withval/include/event.h -a -f $withval/lib/libevent.a; then
+         owd=`pwd`
+         if cd $withval; then withval=`pwd`; cd $owd; fi
+-        EVENTINC="-I$withval"
+-        EVENTLIB="-L$withval -levent"
++        EVENTINC="-I$withval/include"
++        EVENTLIB="-L$withval/lib -levent"
+      else
+         AC_ERROR(event.h or libevent.a not found in $withval)
+      fi

@@ -47,6 +47,7 @@
     SUBDIR += chimera2
     SUBDIR += comclear
     SUBDIR += comline
+    SUBDIR += crawl
     SUBDIR += css-mode.el
     SUBDIR += decss
     SUBDIR += demoroniser
