@@ -1,0 +1,12 @@
+share/java/classes/dtd2relax.jar
+share/examples/dtd2relax/test01-utf8.rlx
+share/examples/dtd2relax/test01.dtd
+share/examples/dtd2relax/xmlspec-19990205-utf8.rlx
+share/examples/dtd2relax/xmlspec-19990205.dtd
+@dirrm share/examples/dtd2relax
+share/doc/dtd2relax/DTD2RELAX-j.html
+share/doc/dtd2relax/DTD2RELAX.html
+share/doc/dtd2relax/DTDtoRELAXConverterGUI.gif
+share/doc/dtd2relax/test01.dtd
+share/doc/dtd2relax/test01.rlx
+@dirrm share/doc/dtd2relax
