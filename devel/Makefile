@@ -29,6 +29,7 @@
     SUBDIR += asl
     SUBDIR += asmutils
     SUBDIR += astyle
+    SUBDIR += atk
     SUBDIR += atlas
     SUBDIR += autoconf
     SUBDIR += autogen
