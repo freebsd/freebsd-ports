@@ -11,14 +11,15 @@ PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	bacula
+PKGNAMESUFFIX?=	-server
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.DE
-COMMENT=	The network backup solution
+COMMENT=	The network backup solution (server)
 
 # The user/group IDs below are registered, see
 # http://www.freebsd.org/doc/en_US.ISO8859-1/books/porters-handbook/book.html#DADS-UID
 #
-BACULA_DIR=/var/db/bacula
+BACULA_DIR?=/var/db/bacula
 #
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -38,12 +39,26 @@ CONFIGURE_ARGS=	--with-tcp-wrappers=/usr/lib \
 CONFIGURE_ENV+=	CPPFLAGS="-I/usr/include/readline -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
-OPTIONS=	CLIENT_ONLY "Build bacula file daemon only" off
+ALL_OPTIONS=    CLIENT_ONLY WXCONSOLE GNOMECONSOLE MYSQL POSTGRESQL
+
+.for opt in ${ALL_OPTIONS}
+.if defined(WITH_${opt})
+BATCH=  yes
+.endif
+.endfor
+
+.if !defined(BATCH)
+IS_INTERACTIVE= yes
+.endif
+
+.if defined(WITH_CLIENT_ONLY)
 OPTIONS+=	WXCONSOLE "Build with wxGTK based GUI console" off
 OPTIONS+=	GNOMECONSOLE "Build with GNOME based GUI console" off
-OPTIONS+=	MYSQL "Use MySQL database instead of SqLite" off
+.else
+OPTIONS=	MYSQL "Use MySQL database instead of SqLite" off
 OPTIONS+=	POSTGRESQL7 "Use PostgreSQL 7.X database instead of SqLite" off
 OPTIONS+=	MTX "Install mtx for control of autochanger devices" off
+.endif
 
 # Prepare if gnome-console is selected this must be happen before
 # include of bsd.port.pre.mk!
@@ -81,7 +96,10 @@ PLIST_SUB+=	 	WXCONS="@comment "
 # Client only or full server version
 .if defined(WITH_CLIENT_ONLY)
 CONFIGURE_ARGS+=	--enable-client-only
-PLIST_SUB+=		SERVER="@comment "
+PORTDOCS=	bacula.pdf ReleaseNotes html-manual
+PKGDEINSTALL=  	${PKGDIR}/pkg-deinstall.client
+PKGINSTALL=    	${PKGDIR}/pkg-install.client
+
 .else
 .if defined(WITH_MYSQL)
 CONFIGURE_ARGS+=	--with-mysql=yes
@@ -104,8 +122,6 @@ PLIST_SUB+=		SERVER=""
 .if defined(WITH_MTX)
 RUN_DEPENDS+=		${LOCALBASE}/sbin/mtx:${PORTSDIR}/misc/mtx
 .endif
-
-PORTDOCS=	bacula.pdf ReleaseNotes html-manual
 
 pre-everything::
 .if !defined(WITH_CLIENT_ONLY)
@@ -147,19 +163,7 @@ post-install:
 	# Extend only /etc/services
 	@ ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME}
-.else
-	# Extend /etc/services and install UID/GID
-	@ ${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
-	# Install config files and preserve existing ones
-	${INSTALL_SCRIPT} ${FILESDIR}/chio-bacula ${PREFIX}/sbin
-	if [ -f ${PREFIX}/etc/bacula-barcodes ]; then \
-		${INSTALL_DATA} ${FILESDIR}/bacula-barcodes ${PREFIX}/etc/bacula-barcodes.new ; \
-		${ECHO_CMD} "etc/bacula-barcodes.new" >> ${TMPPLIST}; \
-	else \
-		${INSTALL_DATA} ${FILESDIR}/bacula-barcodes ${PREFIX}/etc/bacula-barcodes.samples ; \
-		${ECHO_CMD} "etc/bacula-barcodes.samples" >> ${TMPPLIST}; \
-	fi
+	# Console stuff
 	if [ -f ${PREFIX}/etc/bconsole.conf.new ]; then \
 		${ECHO_CMD} "etc/bconsole.conf.new" >> ${TMPPLIST}; \
 	elif [ -f ${PREFIX}/etc/bconsole.conf ]; then \
@@ -181,12 +185,30 @@ post-install:
 		${MV} ${PREFIX}/etc/gnome-console.conf ${PREFIX}/etc/gnome-console.conf.sample; \
 		${ECHO_CMD} "etc/gnome-console.conf.sample" >> ${TMPPLIST}; \
 	fi
-.endif	# chmod of bsmtp program so bacula can use it with dropped down permissions
+.endif
+.else
+	# Extend /etc/services and install UID/GID
+	@ ${SETENV} PKG_PREFIX=${PREFIX} \
+		${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
+	# Install config files and preserve existing ones
+	${INSTALL_SCRIPT} ${FILESDIR}/chio-bacula ${PREFIX}/sbin
+	if [ -f ${PREFIX}/etc/bacula-barcodes ]; then \
+		${INSTALL_DATA} ${FILESDIR}/bacula-barcodes ${PREFIX}/etc/bacula-barcodes.new ; \
+		${ECHO_CMD} "etc/bacula-barcodes.new" >> ${TMPPLIST}; \
+	else \
+		${INSTALL_DATA} ${FILESDIR}/bacula-barcodes ${PREFIX}/etc/bacula-barcodes.samples ; \
+		${ECHO_CMD} "etc/bacula-barcodes.samples" >> ${TMPPLIST}; \
+	fi
+	# chmod of bsmtp program so bacula can use it with dropped down permissions
 	${CHMOD} o+x ${PREFIX}/sbin/bsmtp
 	${CHOWN} -R bacula:bacula ${PREFIX}/share/bacula
 .endif
 	# Install leaves existing conf files untouched. Respect this here!
-	for na in sd fd dir; do \
+.if defined(WITH_CLIENT_ONLY)
+	for na in fd; do \
+.else
+	for na in sd dir; do \
+.fi
 		if [ -f ${PREFIX}/etc/bacula-$$na.conf.new ]; then \
 			${ECHO_CMD} "etc/bacula-$$na.conf.new" >> ${TMPPLIST}; \
 		elif [ -f ${PREFIX}/etc/bacula-$$na.conf ]; then \
@@ -252,6 +274,8 @@ post-install:
 .endif
 	@${ECHO_MSG} "*********************************************************************"
 
-	@$(CAT) pkg-message
+.if !defined(WITH_CLIENT_ONLY)
+	$(CAT) pkg-message
+.endif
 
 .include <bsd.port.post.mk>
