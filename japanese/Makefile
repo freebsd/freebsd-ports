@@ -267,8 +267,6 @@
     SUBDIR += onew-wnn6
     SUBDIR += onew-wnn7
     SUBDIR += openoffice
-    SUBDIR += openoffice-1.0
-    SUBDIR += openoffice-1.1
     SUBDIR += openoffice-devel
     SUBDIR += openoffice-templates
     SUBDIR += otojiro-fpw
