@@ -25,11 +25,8 @@ share/xml/entity/iso-lat2.ent
 share/xml/entity/iso-num.ent
 share/xml/entity/iso-pub.ent
 share/xml/entity/iso-tech.ent
-share/xml/misc/docbook/README
-share/xml/misc/docbook/VERSION
-share/xml/misc/docbook/COPYRIGHT
-share/xml/misc/docbook/ChangeLog
-share/xml/misc/docbook/test.xml
+share/xml/misc/docbook/40chg.txt
+share/xml/misc/docbook/readme.txt
 @dirrm share/xml/dtd/docbook
 @dirrm share/xml/misc/docbook
 @unexec rmdir %D/share/xml/dtd 2>/dev/null || true
