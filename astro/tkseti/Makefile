@@ -7,13 +7,13 @@
 
 PORTNAME=	tkseti
 PORTVERSION=	3.06
-CATEGORIES=	astro tk83
+CATEGORIES=	astro tk84
 MASTER_SITES=	http://www.cuug.ab.ca/~macdonal/tkseti/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tk-based interface to SETI@Home
 
-RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83 \
+RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 		${LOCALBASE}/sbin/setiathome:${PORTSDIR}/astro/setiathome
 
 NO_BUILD=	yes
