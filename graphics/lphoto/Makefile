@@ -21,7 +21,7 @@ RUN_DEPENDS=	gphoto2:${PORTSDIR}/graphics/gphoto2 \
 		kdepyuic:${PORTSDIR}/x11-toolkits/py-kde
 
 USE_REINPLACE=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.3
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 

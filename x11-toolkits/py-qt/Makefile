@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/sip:${PORTSDIR}/devel/py-sip
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_QT_VER=	3
-USE_PYTHON=	yes
+USE_PYTHON=	2.3
 USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>

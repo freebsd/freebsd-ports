@@ -15,7 +15,7 @@ COMMENT=	Python to C and C++ bindings generator
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.3
 USE_QT_VER=	3
 
 .include <bsd.port.pre.mk>
