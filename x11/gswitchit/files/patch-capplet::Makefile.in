@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- capplet/Makefile.in	2001/12/19 11:04:02	1.1
++++ capplet/Makefile.in	2001/12/19 11:05:31
+@@ -142,7 +142,7 @@
+ 
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I..
+-CPPFLAGS = @CPPFLAGS@
++CPPFLAGS = $(GDK_PIXBUF_CFLAGS)	@CPPFLAGS@
+ LIBS = @LIBS@
+ gswitchit_properties_capplet_OBJECTS =  gswitchit_capplet.o
+ gswitchit_properties_capplet_DEPENDENCIES =  ../src/libgswitchit.a
