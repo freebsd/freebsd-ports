@@ -25,7 +25,7 @@ do-install:
 	@ cd ${WRKSRC} && INSTDIR=${PREFIX}/${INSTDIR} ${PYTHON_CMD} viewcvs-install
 
 post-install:
-	@ ${SED} -e "s:%%INSTDIR%%:${PREFIX}/${INSTDIR}:g" pkg-message >${PKGMESSAGE}
+	@ ${SED} -e "s:%%INSTDIR%%:${PREFIX}/${INSTDIR}:g" ${MASTERDIR}/pkg-message >${PKGMESSAGE}
 	@ ${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
