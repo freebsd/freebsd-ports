@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	kdelibs
-PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
+PORTVERSION=	${KDE_VERSION}a
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
@@ -34,6 +33,7 @@ USE_QT_VER=	3
 PREFIX=		${KDE_PREFIX}
 USE_OPENSSL=	yes
 
+USE_OPENLDAP=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
@@ -53,22 +53,10 @@ FONTENCOD=	${X11BASE}/lib/X11/fonts/encodings/tcvn-0.enc
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 .include <bsd.port.pre.mk>
 
-# fam provides a measurable performance increase for file watching
-# operations within KDE
-.if exists(${LOCALBASE}/bin/fam)
-LIB_DEPENDS+=	fam.0:${PORTSDIR}/devel/fam
-.endif # exists(${LOCALBASE}/bin/fam)
-
 # bzip2 is required as a libdepend for the help: kioslave
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif # !exists(/usr/bin/bzip2)
-
-# kabc (the addressbook backend) can use ldap if it's available
-.if defined(WITH_LDAP) || exists($(LOCALBASE)/lib/libldap.so)
-LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap21-client
-PLIST_APPEND+=	plist.ldap
-.endif
 
 pre-configure:
 	${REINPLACE_CMD} "s, kspell,,g" ${WRKSRC}/doc/Makefile.in
