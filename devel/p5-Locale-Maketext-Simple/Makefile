@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Locale-Maketext-Simple
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Locale
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	autrijus@autrijus.org
+MAINTAINER=	rafan@infor.org
 COMMENT=	Simple interface to Locale::Maketext::Lexicon
 
 PERL_CONFIGURE=	yes
