@@ -22,8 +22,7 @@ EXTRACT_ONLY=	${PORTNAME}.${PORTVERSION}.src.tar.gz
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	SDPA(SemiDefinite Programming Algorithm) Very efficent SDP Solver
 
-LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack \
-		atlas:${PORTSDIR}/math/atlas
+LIB_DEPENDS=	atlas:${PORTSDIR}/math/atlas
 
 RESTRICTED=	"unsure distribution condition"
 
