@@ -39,9 +39,11 @@ MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
 # kernel.  Exim's IPv6 support is still experimental.
 #WITH_IPV6=		yes
 
-# If WITH_LDAP is defined, LDAP_LIB_TYPE must be one of UMICHIGAN,
-# NETSCAPE or SOLARIS7.
-LDAP_LIB_TYPE=UMICHIGAN
+# If WITH_LDAP is defined, LDAP_LIB_TYPE must be either OPENLDAP1 or
+# OPENLDAP2.  UMICHIGAN is an alias for OPENLDAP1.  Exim also supports
+# NETSCAPE and SOLARIS7 lookup types, but no client libraries exist
+# for these in the ports tree.
+LDAP_LIB_TYPE?=OPENLDAP1
 
 # The following options may be defined to turn off support for various
 # features that this port enables by default.
@@ -93,7 +95,13 @@ SEDLIST+=	-e 's,XX_TCP_WRAPPERS_LIBS_XX,,'
 .endif
 
 .if defined(WITH_LDAP)
+.if (${LDAP_LIB_TYPE} == OPENLDAP1) || (${LDAP_LIB_TYPE} == UMICHIGAN)
 LIB_DEPENDS+=	lber.1:${PORTSDIR}/net/openldap
+.elif ${LDAP_LIB_TYPE} == OPENLDAP2
+LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap2
+.else
+.error LDAP_LIB_TYPE must be either OPENLDAP1 or OPENLDAP2
+.endif
 SEDLIST+=	-e 's,XX_LDAP_LIBS_XX,-L${PREFIX}/lib -llber -lldap,' \
 		-e 's,XX_LDAP_INCLUDE_XX,-I${PREFIX}/include,' \
 		-e 's,XX_LDAP_TYPE_XX,${LDAP_LIB_TYPE},' \
