@@ -1,18 +1,26 @@
 @comment $FreeBSD$
 bin/bison
-share/bison/bison.hairy
-share/bison/bison.simple
 @unexec install-info --delete %D/info/bison.info %D/info/dir
 info/bison.info
 @exec install-info %D/info/bison.info %D/info/dir
+share/bison/c.m4
+share/bison/glr.c
+share/bison/lalr1.cc
+share/bison/m4sugar/m4sugar.m4
+share/bison/m4sugar/version.m4
+share/bison/yacc.c
 share/locale/de/LC_MESSAGES/bison.mo
 share/locale/es/LC_MESSAGES/bison.mo
 share/locale/et/LC_MESSAGES/bison.mo
 share/locale/fr/LC_MESSAGES/bison.mo
+share/locale/hr/LC_MESSAGES/bison.mo
+share/locale/id/LC_MESSAGES/bison.mo
 share/locale/it/LC_MESSAGES/bison.mo
 share/locale/ja/LC_MESSAGES/bison.mo
 share/locale/nl/LC_MESSAGES/bison.mo
+share/locale/pt_BR/LC_MESSAGES/bison.mo
 share/locale/ru/LC_MESSAGES/bison.mo
 share/locale/sv/LC_MESSAGES/bison.mo
 share/locale/tr/LC_MESSAGES/bison.mo
+@dirrm share/bison/m4sugar
 @dirrm share/bison
