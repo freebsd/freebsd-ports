@@ -51,7 +51,6 @@ System/Library/Preferences/Keyboard.prefs/stamp.make
 @dirrm System/Library/Frameworks/PrefsModule.framework/Versions/A
 @dirrm System/Library/Frameworks/PrefsModule.framework/Versions
 @dirrm System/Library/Frameworks/PrefsModule.framework
-@dirrm System/Library/Frameworks
 @dirrm System/Library/Preferences/Keyboard.prefs/Resources
 @dirrm System/Library/Preferences/Keyboard.prefs
 @dirrm System/Library/Preferences
