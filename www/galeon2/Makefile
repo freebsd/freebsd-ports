@@ -91,6 +91,6 @@ post-configure:
 		s|%%FLASHPLAYER%%|${FLASHPLAYER}|g' ${WRKSRC}/src/galeon
 
 pre-install:
-	@-${X11BASE}/bin/gconftool --shutdown
+	@-${X11BASE}/bin/gconftool-2 --shutdown
 
 .include <bsd.port.post.mk>
