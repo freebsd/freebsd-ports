@@ -8,11 +8,16 @@ bin/nsupdate
 include/bind/arpa/inet.h
 include/bind/arpa/nameser.h
 include/bind/arpa/nameser_compat.h
+include/bind/isc/assertions.h
 include/bind/isc/eventlib.h
 include/bind/isc/heap.h
+include/bind/isc/list.h
 include/bind/isc/logging.h
+include/bind/isc/memcluster.h
 include/bind/isc/misc.h
 include/bind/isc/tree.h
+include/bind/hesiod.h
+include/bind/irs.h
 include/bind/netdb.h
 include/bind/resolv.h
 include/bind/sys/bitypes.h
@@ -24,6 +29,7 @@ man/man1/host.1.gz
 man/man3/gethostbyname.3.gz
 man/man3/getnetent.3.gz
 man/man3/resolver.3.gz
+man/man5/irs.conf.5.gz
 man/man5/resolver.5.gz
 man/man7/hostname.7.gz
 man/man7/mailaddr.7.gz
