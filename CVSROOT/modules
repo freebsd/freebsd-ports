@@ -6649,6 +6649,7 @@ py-vmaps	ports/devel/py-vmaps
 py-vorbis	ports/audio/py-vorbis
 py-websvcs	ports/www/py-websvcs
 py-wordnet	ports/textproc/py-wordnet
+py-wsdllib	ports/devel/py-wsdllib
 py-wxPython	ports/x11-toolkits/py-wxPython
 py-xlib		ports/x11-toolkits/py-xlib
 py-xml		ports/textproc/py-xml
