@@ -27,6 +27,7 @@ USE_NEWGCC=     yes
 USE_OPENSSL=	yes
 USE_PERL5=      yes
 
+CONFIGURE_ARGS=	--with-qt-includes=${X11BASE}/include/qt2
 CONFIGURE_TARGET= $(ARCH)-unknown-freebsdelf$(OSREL)
 DATANAME=       licq-data-1.6
 DATAFILES=	${DATANAME}${EXTRACT_SUFX}
