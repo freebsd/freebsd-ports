@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.cannam.demon.co.uk/rosegarden/distribution/
 DISTNAME=	${PORTNAME}-2.1pl2
 
-MAINTAINER=	shanee@augusta.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Rosegarden Editor and Sequencer suite
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/tclmidi/tclmidi31.so:${PORTSDIR}/audio/tclmidi
