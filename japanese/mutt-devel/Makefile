@@ -18,6 +18,7 @@ DISTNAME=	${PORTNAME}-${VERSION}i
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}-ja.${JP_VERSION}${EXTRACT_SUFX} \
 		manual_ja-${MANUALVERSION}i-0${EXTRACT_SUFX}
+DIST_SUBDIR=	mutt
 
 MAINTAINER=	shuna@pop16.odn.ne.jp
 
@@ -39,8 +40,8 @@ MANUALVERSION=	1.4
 
 FETCH_BEFORE_ARGS=	-A	# ha4.seikyou.ne.jp is running broken httpd
 
-DIST_SUBDIR=	mutt
 NO_LATEST_LINK=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE=	yes
 USE_OPENSSL=	yes
@@ -82,11 +83,11 @@ pre-configure:
 	(cd ${WRKSRC}; ${ACLOCAL} -I m4)
 
 post-configure:
-	@${PERL} -pi -e "\
-		s/^(s%\@ACLOCAL\@%).+(%g)/\1${ACLOCAL}\2/; \
-		s/^(s%\@AUTOCONF\@%).+(%g)/\1${AUTOCONF}\2/; \
-		s/^(s%\@AUTOMAKE\@%).+(%g)/\1${AUTOMAKE}\2/; \
-		s/^(s%\@AUTOHEADER\@%).+(%g)/\1${AUTOHEADER}\2/" \
+	@${REINPLACE_CMD} -E "\
+		s|^(s%\@ACLOCAL\@%).+(%g)|\1${ACLOCAL}\2|; \
+		s|^(s%\@AUTOCONF\@%).+(%g)|\1${AUTOCONF}\2|; \
+		s|^(s%\@AUTOMAKE\@%).+(%g)|\1${AUTOMAKE}\2|; \
+		s|^(s%\@AUTOHEADER\@%).+(%g)|\1${AUTOHEADER}\2|" \
 		${BUILD_WRKSRC}/config.status
 
 .if !defined(NOPORTDOCS)
