@@ -37,6 +37,9 @@
 #  WITH_MUTT_COMPRESSED_FOLDERS
 #  This is a default knob and can be disabled by WITHOUT_MUTT_COMPRESSED_FOLDERS
 #
+# If you do not want mutt to use the iconv library define:
+#  WITHOUT_MUTT_ICONV
+#
 # If you want to enable extended quoting functions define:
 #  WITH_MUTT_QUOTE_PATCH
 #  This is a default knob and can be disabled by WITHOUT_MUTT_QUOTE_PATCH
@@ -113,7 +116,7 @@ CONFIGURE_ENV=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-flock --disable-fcntl --with-ssl=${OPENSSLBASE} \
 		--with-sharedir=${PREFIX}/share/mutt --with-docdir=${DOCSDIR} \
 		--sysconfdir=${PREFIX}/etc --enable-external-dotlock \
-		--with-libiconv-prefix=${PREFIX} --enable-pop --enable-imap
+		--enable-pop --enable-imap
 .if defined(MUTT_CONFIGURE_ARGS)
 CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 .endif
@@ -184,6 +187,9 @@ SGML_USED=	no
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 .endif
+.if !defined(WITHOUT_MUTT_ICONV)
+USE_ICONV=	yes
+.endif
 
 .if defined(NOPORTDOCS)
 SGML_USED=	no
@@ -239,6 +245,11 @@ CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 .endif
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
+.endif
+.if defined(WITHOUT_MUTT_ICONV) 
+CONFIGURE_ARGS+=	--disable-iconv
+.else
+CONFIGURE_ARGS+=	--with-libiconv-prefix=${PREFIX}
 .endif
 
 PATCH_DIST_STRIP=	-p1
