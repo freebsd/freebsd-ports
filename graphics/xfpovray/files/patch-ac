@@ -1,5 +1,5 @@
---- src/Imakefile.orig	Mon Feb 23 12:40:53 1998
-+++ src/Imakefile	Wed Nov  1 10:01:38 2000
+--- src/Imakefile.orig	Sun Feb 22 22:40:53 1998
++++ src/Imakefile	Mon Jul  1 03:02:20 2002
 @@ -9,8 +9,8 @@
  XCOMM * * * No need to edit below here * * *
  
@@ -16,9 +16,8 @@
  	$(TOP)/../help/help_topics
  			
 -EXTRA_LIBRARIES = -L$(XFORMS_LIBDIR) ../flx/libflx.a -lforms -lm
-- EXTRA_INCLUDES = -I$(XFORMS_INCDIR) -I../flx
-+EXTRA_LIBRARIES = ../flx/libflx.a -lxforms $(XPMLIB) -lm
-+ EXTRA_INCLUDES = -I../flx
++EXTRA_LIBRARIES = ../flx/libflx.a -L$(XFORMS_LIBDIR) -lforms $(XPMLIB) -lm
+  EXTRA_INCLUDES = -I$(XFORMS_INCDIR) -I../flx
    EXTRA_DEFINES = -DHELP_DIR=\"$(XFHELPDIR)\"
           LDLIBS = $(EXTRA_LIBRARIES) $(XLIB)
  
