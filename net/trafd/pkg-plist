@@ -7,6 +7,7 @@ bin/trafstat
 bin/trafstatd
 bin/trafstop
 etc/traflog.format
+etc/rc.d/trafd.sh.sample
 %%PORTDOCS%%share/doc/trafd/README
 %%PORTDOCS%%@dirrm share/doc/trafd
 @exec mkdir %D/var 2>/dev/null || true
