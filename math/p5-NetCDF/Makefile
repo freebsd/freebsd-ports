@@ -17,6 +17,8 @@ COMMENT=	Perl5 module to read and write netCDF files
 
 LIB_DEPENDS=	netcdf.1:${PORTSDIR}/math/netcdf
 
+BROKEN=		Installs perllocal.pod file
+
 USE_PERL5=	yes
 
 WRKSRC=		${WRKDIR}/netcdf-perl-${PORTVERSION}/src
