@@ -1,0 +1,3 @@
+#!/bin/sh
+# this script is used to detect Mozilla revision only.
+$2 -v | $1 's/.*rv://; s/).*//'
