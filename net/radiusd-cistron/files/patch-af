@@ -1,6 +1,6 @@
---- src/radwho.c.orig	Wed Jul  5 12:53:20 2000
-+++ src/radwho.c	Wed Jan 10 23:55:49 2001
-@@ -16,6 +16,7 @@
+--- src/radwho.c.orig	Wed Jun 11 15:32:33 2003
++++ src/radwho.c	Wed Jun 25 17:41:32 2003
+@@ -20,6 +20,7 @@
  #include <errno.h>
  #include <sys/stat.h>
  #include <sys/utsname.h>
@@ -8,35 +8,38 @@
  #include <time.h>
  #include <ctype.h>
  #include <netinet/in.h>
-@@ -34,18 +35,21 @@
+@@ -40,18 +41,20 @@
   *	Header above output and format.
   */
  char *hdr1 = 
 -"Login      Name              What  TTY  When      From      Location";
 -char *ufmt1 = "%-10.10s %-17.17s %-5.5s %-4.4s %-9.9s %-9.9s %-.16s%s";
+-char *ufmt1r = "%s,%s,%s,%s,%s,%s,%s%s";
 +"Login            Name              What  TTY  When      From      Location";
 +char *ufmt1 = "%-16.16s %-17.17s %-5.5s %-4.4s %-9.9s %-9.9s %-.*s%s";
- char *ufmt1r = "%s,%s,%s,%s,%s,%s,%s%s";
++char *ufmt1r = "%s,%s,%s,%s,%s,%s,%u%s";
 -char *rfmt1 = "%-10.10s %-17.17s %-5.5s %s%-3d %-9.9s %-9.9s %-.19s%s";
+-char *rfmt1r = "%s,%s,%s,%s%u,%s,%s,%s%s";
 +char *rfmt1 = "%-16.16s %-17.17s %-5.5s %s%-3d %-9.9s %-9.9s %-.*s%s";
- char *rfmt1r = "%s,%s,%s,%s%d,%s,%s,%s%s";
++char *rfmt1r = "%s,%s,%s,%s%u,%s,%s,%u%s";
 +#define FMT1_HOST_SIZE        13
  
  char *hdr2 = 
 -"Login      Port    What   When          From       Location";
 -char *ufmt2 = "%-10.10s %-6.6d %-7.7s %-13.13s %-10.10s %-.16s%s";
+-char *ufmt2r = "%s,%u,%s,%s,%s,%s%s";
 +"Login           Port    What   When          From       Location";
 +char *ufmt2 = "%-16.16s %-6.6d %-7.7s %-13.13s %-10.10s %-.*s%s";
- char *ufmt2r = "%s,%d,%s,%s,%s,%s%s";
++char *ufmt2r = "%s,%u,%s,%s,%s,%u%s";
 -char *rfmt2 = "%-10.10s %s%-5d  %-6.6s %-13.13s %-10.10s %-.28s%s";
+-char *rfmt2r = "%s,%s%u,%s,%s,%s,%s%s";
 +char *rfmt2 = "%-16.16s %s%-5d  %-6.6s %-13.13s %-10.10s %-.*s%s";
- char *rfmt2r = "%s,%s%d,%s,%s,%s,%s%s";
++char *rfmt2r = "%s,%s%u,%s,%s,%s,%u%s";
 +#define FMT2_HOST_SIZE        19
-+
  
  char *eol = "\n";
  NAS *naslist;
-@@ -301,7 +305,8 @@
+@@ -307,7 +312,8 @@
  		return tmp;
  	}
  	if (strncmp(tty, "cu", 2) == 0) {
@@ -46,7 +49,7 @@
  	}
  	return "??";
  }
-@@ -363,6 +368,8 @@
+@@ -371,6 +377,8 @@
   */
  int main(int argc, char **argv)
  {
@@ -55,7 +58,7 @@
  	FILE *fp;
  	struct radutmp rt;
  	struct utmp ut;
-@@ -378,6 +385,11 @@
+@@ -389,6 +397,11 @@
  	char *p, *q, *portind;
  	int c, portno;
  
@@ -67,7 +70,7 @@
  	while((c = getopt(argc, argv, "Dd:flhnsipcru:")) != EOF) switch(c) {
  		case 'D':
  			use_dns = 0;
-@@ -469,14 +481,17 @@
+@@ -486,14 +499,17 @@
  		while(fread(&ut, sizeof(ut), 1, fp) == 1) {
  #ifdef USER_PROCESS
  			if (ut.ut_user[0] && ut.ut_line[0] &&
@@ -90,7 +93,7 @@
  					"shell",
  					ttyshort(ut.ut_line),
  #ifdef __svr4__
-@@ -485,10 +500,11 @@
+@@ -502,10 +518,11 @@
  					dotime(ut.ut_time),
  #endif
  					ut.ut_host,
@@ -103,7 +106,7 @@
  					ttyshort(ut.ut_line),
  					"shell",
  #ifdef __svr4__
-@@ -497,6 +513,7 @@
+@@ -514,6 +531,7 @@
  					dotime(ut.ut_time),
  #endif
  					ut.ut_host,
@@ -111,7 +114,7 @@
  					myname, eol);
  			}
  		}
-@@ -541,6 +558,7 @@
+@@ -560,6 +578,7 @@
  				portind, portno,
  				dotime(rt.time),
  				nasname(ntohl(rt.nas_address)),
@@ -119,7 +122,7 @@
  				hostname(rt.framed_address), eol);
  			else
  			    printf((rawoutput == 0? rfmt2: rfmt2r),
-@@ -549,6 +567,7 @@
+@@ -568,6 +587,7 @@
  				proto(rt.proto, rt.porttype),
  				dotime(rt.time),
  				nasname(ntohl(rt.nas_address)),

@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	radiusd-cistron
-PORTVERSION=	1.6.6
-PORTREVISION=	1
+PORTVERSION=	1.6.7
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/radius/ \
 		ftp://ftp.freeradius.org/pub/radius/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-rc2
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A RADIUS-compliant remote authentication and accouting server
@@ -18,8 +18,9 @@ COMMENT=	A RADIUS-compliant remote authentication and accouting server
 MAKEFILE=	Makefile.BSD
 RADIUS_DIR=	${PREFIX}/etc/raddb
 MAKE_ENV+=	RADIUS_DIR="${RADIUS_DIR}"
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MAN1=		radclient.1 radlast.1 radtest.1 raduse.1 radwho.1 radzap.1
+MAN1=		radclient.1 radlast.1 radtest.1 radwho.1 radzap.1
 MAN5=		clients.5rad naslist.5rad
 MAN8=		radiusd.8 radrelay.8 radwatch.8
 
@@ -44,7 +45,6 @@ do-install:
 .endif
 	${INSTALL_MAN} ${WRKSRC}/doc/radlast.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/radtest.1 ${MANPREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/raduse.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/radwho.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/radzap.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/clients.5rad ${MANPREFIX}/man/man5
