@@ -1,15 +1,16 @@
---- src/jpegframe.cc.orig	Thu Sep 26 23:59:23 2002
-+++ src/jpegframe.cc	Fri Sep 27 00:04:28 2002
-@@ -19,6 +19,8 @@
+--- src/jpegframe.cc.orig	Tue May 14 07:48:06 2002
++++ src/jpegframe.cc	Wed Aug 13 11:12:33 2003
+@@ -19,6 +19,9 @@
   */
  
  #include <limits.h>
 +#include <string>
 +#include <vector>
++#include <assert.h>
  
  #include <libintl.h>
  #define _(S) gettext (S)
-@@ -34,16 +36,16 @@
+@@ -34,16 +37,16 @@
  	: JpegContainer()
  {
  	framehdr = NULL ;
@@ -30,7 +31,7 @@
  
  	read (io) ;
  }
-@@ -164,24 +166,24 @@
+@@ -164,24 +167,24 @@
  	JpegContainer::write (io) ;
  }
  
@@ -64,7 +65,7 @@
  		*j = -1 ;
  	}
  
-@@ -230,9 +232,9 @@
+@@ -230,9 +233,9 @@
  	return codesize ;
  }
  
@@ -76,7 +77,7 @@
  
  	for (unsigned int i = 0 ; i < 257 ; i++) {
  		if (codesize[i] > 0) {
-@@ -275,9 +277,9 @@
+@@ -275,9 +278,9 @@
  	return bits ;
  }
  

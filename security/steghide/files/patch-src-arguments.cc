@@ -1,14 +1,15 @@
---- src/arguments.cc.orig	Thu Sep 26 21:38:44 2002
-+++ src/arguments.cc	Thu Sep 26 21:44:01 2002
-@@ -19,6 +19,7 @@
+--- src/arguments.cc.orig	Tue May 14 07:48:06 2002
++++ src/arguments.cc	Wed Aug 13 10:40:26 2003
+@@ -19,6 +19,8 @@
   */
  
  #include <iostream>
 +#include <string>
++#include <assert.h>
  
  #include <libintl.h>
  #define _(S) gettext (S)
-@@ -53,15 +54,15 @@
+@@ -53,15 +55,15 @@
  		command.setValue (SHOWHELP) ;
  		return ;
  	}
@@ -27,7 +28,7 @@
  		command.setValue (SHOWVERSION) ;
  		if (argc > 2) {
  			Warning w (_("you cannot use arguments with the \"version\" command")) ;
-@@ -69,7 +70,7 @@
+@@ -69,7 +71,7 @@
  		}
  		return ;
  	}
@@ -36,7 +37,7 @@
  		command.setValue (SHOWLICENSE) ;
  		if (argc > 2) {
  			Warning w (_("you cannot use arguments with the \"license\" command")) ;
-@@ -77,7 +78,7 @@
+@@ -77,7 +79,7 @@
  		}
  		return ;
  	}
@@ -45,7 +46,7 @@
  		command.setValue (SHOWHELP) ;
  		if (argc > 2) {
  			Warning w (_("you cannot use arguments with the \"help\" command")) ;
-@@ -86,7 +87,7 @@
+@@ -86,7 +88,7 @@
  		return ;
  	}
  #ifdef DEBUG
@@ -54,7 +55,7 @@
  		steghide_test_all () ;
  		exit (EXIT_SUCCESS) ;
  	}
-@@ -97,7 +98,7 @@
+@@ -97,7 +99,7 @@
  
  	// parse rest of arguments
  	for (int i = 2; i < argc; i++) {
@@ -63,7 +64,7 @@
  			unsigned int tmp = 0 ;
  
  			if (command.getValue() != EMBED) {
-@@ -112,7 +113,7 @@
+@@ -112,7 +114,7 @@
  				throw SteghideError (_("the argument \"%s\" is incomplete. type \"%s --help\" for help."), argv[i - 1], PROGNAME) ;
  			}
  
@@ -72,7 +73,7 @@
  				dmtd.setValue (DMTD_CNSTI) ;
  				
  				if ((i + 1 < argc) && (argv[i + 1][0] != '-')) {
-@@ -127,7 +128,7 @@
+@@ -127,7 +129,7 @@
  					dmtdinfo.setValue (di) ;	
  				}
  			}
@@ -81,7 +82,7 @@
  				dmtd.setValue (DMTD_PRNDI) ;
  				
  				if ((i + 1 < argc) && (argv[i + 1][0] != '-')) {
-@@ -147,7 +148,7 @@
+@@ -147,7 +149,7 @@
  			}
  		}
  
@@ -90,7 +91,7 @@
  			if (command.getValue() != EMBED) {
  				throw SteghideError (_("the argument \"%s\" can only be used with the \"embed\" command. type \"%s --help\" for help."), argv[i], PROGNAME) ;
  			}
-@@ -159,7 +160,7 @@
+@@ -159,7 +161,7 @@
  			encryption.setValue (true) ;
  		}
  
@@ -99,7 +100,7 @@
  			if (command.getValue () != EMBED) {
  				throw SteghideError (_("argument \"%s\" can only be used with the \"embed\" command. type \"%s --help\" for help."), argv[i], PROGNAME) ;
  			}
-@@ -171,7 +172,7 @@
+@@ -171,7 +173,7 @@
  			encryption.setValue (false) ;
  		}
  
@@ -108,7 +109,7 @@
  			if (sthdrencryption.is_set()) {
  				throw SteghideError (_("the stego header encryption argument can be used only once. type \"%s --help\" for help."), PROGNAME) ;
  			}
-@@ -179,7 +180,7 @@
+@@ -179,7 +181,7 @@
  			sthdrencryption.setValue (true) ;
  		}
  
@@ -117,7 +118,7 @@
  			if (sthdrencryption.is_set()) {
  				throw SteghideError (_("the stego header encryption argument can be used only once. type \"%s --help\" for help."), PROGNAME) ;
  			}
-@@ -187,7 +188,7 @@
+@@ -187,7 +189,7 @@
  			sthdrencryption.setValue (false) ;
  		}
  
@@ -126,7 +127,7 @@
  			if (command.getValue() != EMBED) {
  				throw SteghideError (_("argument \"%s\" can only be used with the \"embed\" command. type \"%s --help\" for help."), argv[i], PROGNAME) ;
  			}
-@@ -199,7 +200,7 @@
+@@ -199,7 +201,7 @@
  			checksum.setValue (true) ;
  		}
  
@@ -135,7 +136,7 @@
  			if (command.getValue() != EMBED) {
  				throw SteghideError (_("argument \"%s\" can only be used with the \"embed\" command. type \"%s --help\" for help."), argv[i], PROGNAME) ;
  			}
-@@ -211,7 +212,7 @@
+@@ -211,7 +213,7 @@
  			checksum.setValue (false) ;
  		}
  
@@ -144,7 +145,7 @@
  			if (command.getValue() != EMBED) {
  				throw SteghideError (_("argument \"%s\" can only be used with the \"embed\" command. type \"%s --help\" for help."), argv[i], PROGNAME) ;
  			}
-@@ -223,7 +224,7 @@
+@@ -223,7 +225,7 @@
  			embedplnfn.setValue (true) ;
  		}
  
@@ -153,7 +154,7 @@
  			if (command.getValue() != EMBED) {
  				throw SteghideError (_("argument \"%s\" can only be used with the \"embed\" command. type \"%s --help\" for help."), argv[i], PROGNAME) ;
  			}
-@@ -235,7 +236,7 @@
+@@ -235,7 +237,7 @@
  			embedplnfn.setValue (false) ;
  		}
  
@@ -162,7 +163,7 @@
  			if (compatibility.is_set()) {
  				throw SteghideError (_("the compatibility argument can be used only once. type \"%s --help\" for help."), PROGNAME) ;
  			}
-@@ -243,7 +244,7 @@
+@@ -243,7 +245,7 @@
  			compatibility.setValue (true) ;
  		}
  
@@ -171,7 +172,7 @@
  			if (passphrase.is_set()) {
  				throw SteghideError (_("the passphrase argument can be used only once. type \"%s --help\" for help."), PROGNAME) ;
  			}
-@@ -263,7 +264,7 @@
+@@ -263,7 +265,7 @@
  			}
  		}
  
@@ -180,7 +181,7 @@
  			if (command.getValue() != EMBED) {
  				throw SteghideError (_("argument \"%s\" can only be used with the \"embed\" command. type \"%s --help\" for help."), argv[i], PROGNAME) ;
  			}
-@@ -276,7 +277,7 @@
+@@ -276,7 +278,7 @@
  				throw SteghideError (_("the \"%s\" argument must be followed by the cover file name. type \"%s --help\" for help."), argv[i - 1], PROGNAME) ;
  			}
  
@@ -189,7 +190,7 @@
  				cvrfn.setValue ("") ;
  			}
  			else {
-@@ -284,7 +285,7 @@
+@@ -284,7 +286,7 @@
  			}
  		}
  
@@ -198,7 +199,7 @@
  			if (stgfn.is_set()) {
  				throw SteghideError (_("the stego file name argument can be used only once. type \"%s --help\" for help."), PROGNAME) ;
  			}
-@@ -293,7 +294,7 @@
+@@ -293,7 +295,7 @@
  				throw SteghideError (_("the \"%s\" argument must be followed by the stego file name. type \"%s --help\" for help."), argv[i - 1], PROGNAME) ;
  			}
  
@@ -207,7 +208,7 @@
  				stgfn.setValue ("") ;
  			}
  			else {
-@@ -301,7 +302,7 @@
+@@ -301,7 +303,7 @@
  			}
  		}
  
@@ -216,7 +217,7 @@
  			if (plnfn.is_set()) {
  				throw SteghideError (_("the plain file name argument can be used only once. type \"%s --help\" for help."), PROGNAME) ;
  			}
-@@ -310,7 +311,7 @@
+@@ -310,7 +312,7 @@
  				throw SteghideError (_("the \"%s\" argument must be followed by the plain file name. type \"%s --help\" for help."), argv[i - 1], PROGNAME) ;
  			}
  
@@ -225,7 +226,7 @@
  				plnfn.setValue ("") ;
  			}
  			else {
-@@ -318,7 +319,7 @@
+@@ -318,7 +320,7 @@
  			}
  		}
  
@@ -234,7 +235,7 @@
  			if (force.is_set()) {
  				throw SteghideError (_("the force argument can be used only once. type \"%s --help\" for help."), PROGNAME) ;
  			}
-@@ -326,7 +327,7 @@
+@@ -326,7 +328,7 @@
  			force.setValue (true);
  		}
  
@@ -243,7 +244,7 @@
  			if (verbosity.is_set()) {
  				throw SteghideError (_("the \"%s\" argument cannot be used here because the verbosity has already been set."), argv[i]) ;
  			}
-@@ -334,7 +335,7 @@
+@@ -334,7 +336,7 @@
  			verbosity.setValue (QUIET) ;
  		}
  

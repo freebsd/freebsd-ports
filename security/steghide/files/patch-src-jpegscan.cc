@@ -1,14 +1,15 @@
---- src/jpegscan.cc.orig	Thu Sep 26 21:26:56 2002
-+++ src/jpegscan.cc	Thu Sep 26 21:30:37 2002
-@@ -20,6 +20,7 @@
+--- src/jpegscan.cc.orig	Tue May 14 07:48:06 2002
++++ src/jpegscan.cc	Wed Aug 13 10:27:45 2003
+@@ -20,6 +20,8 @@
  
  #include <vector>
  #include <limits.h>
 +#include <string>
++#include <assert.h>
  
  #include <libintl.h>
  #define _(S) gettext (S)
-@@ -141,11 +142,11 @@
+@@ -141,11 +143,11 @@
  	}
  }
  
