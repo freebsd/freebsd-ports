@@ -1,41 +1,59 @@
-bin/cyradm
 bin/imtest
-bin/installsieve
-cyrus/bin/arbitron
-cyrus/bin/collectnews
+bin/cyradm
+cyrus/bin/ctl_deliver
+cyrus/bin/ctl_mboxlist
 cyrus/bin/cyrquota
 cyrus/bin/deliver
-cyrus/bin/dump_deliverdb
 cyrus/bin/feedcyrus
 cyrus/bin/fud
 cyrus/bin/imapd
+cyrus/bin/ipurge
+cyrus/bin/lmtpd
+cyrus/bin/master
 cyrus/bin/mbpath
 cyrus/bin/pop3d
 cyrus/bin/reconstruct
-cyrus/bin/syncnews
 cyrus/bin/timsieved
+etc/cyrus.conf.dist
+etc/cyrus.conf
 etc/imapd.conf.dist
-etc/inetd.conf.cyrus
+etc/imapd.conf
+etc/rc.d/imapd.sh.sample
+include/cyrus/acap.h
 include/cyrus/acl.h
 include/cyrus/assert.h
 include/cyrus/auth.h
 include/cyrus/bsearch.h
 include/cyrus/charset.h
+include/cyrus/cyrusdb.h
 include/cyrus/glob.h
 include/cyrus/gmtoff.h
+include/cyrus/hash.h
+include/cyrus/imapurl.h
 include/cyrus/imclient.h
 include/cyrus/imparse.h
 include/cyrus/lock.h
+include/cyrus/lsort.h
 include/cyrus/map.h
 include/cyrus/mkgmtime.h
 include/cyrus/nonblock.h
 include/cyrus/parseaddr.h
 include/cyrus/prot.h
 include/cyrus/retry.h
+include/cyrus/stristr.h
 include/cyrus/sysexits.h
 include/cyrus/util.h
 include/cyrus/xmalloc.h
 lib/libcyrus.a
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/IMAP/Admin.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/IMAP/IMSP.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/IMAP/Shell.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/IMAP.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/SIEVE/acap.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/SIEVE/managesieve.pm
 @dirrm cyrus/bin
 @dirrm cyrus
 @dirrm include/cyrus
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/IMAP
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus/SIEVE
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Cyrus

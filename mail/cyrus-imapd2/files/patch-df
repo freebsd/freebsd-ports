@@ -1,0 +1,22 @@
+Index: master/service.c
+===================================================================
+RCS file: /usr/home/ume/ncvs/src/cyrus-imapd/master/service.c,v
+retrieving revision 1.2
+diff -u -r1.2 service.c
+--- master/service.c	2001/02/01 14:11:43	1.2
++++ master/service.c	2001/02/01 22:10:35
+@@ -99,7 +99,13 @@
+     
+     /* is this a connection from the local host? */
+     if (getpeername(fd, (struct sockaddr *) &sin, &len) == 0) {
+-	if (((struct sockaddr *)&sin)->sa_family == AF_UNIX) {
++	switch (((struct sockaddr *)&sin)->sa_family) {
++	case AF_INET:
++#ifdef INET6
++	case AF_INET6:
++#endif
++	    break;
++	default:
+ 	    return 1;
+ 	}
+     }

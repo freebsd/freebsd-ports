@@ -1,0 +1,13 @@
+Index: imap/lmtpd.c
+diff -u imap/lmtpd.c.orig imap/lmtpd.c
+--- imap/lmtpd.c.orig	Wed Dec 20 04:31:41 2000
++++ imap/lmtpd.c	Thu Jan  4 23:26:22 2001
+@@ -407,7 +407,7 @@
+     }
+ }
+ 
+-#define DEFAULT_SENDMAIL ("/usr/lib/sendmail")
++#define DEFAULT_SENDMAIL ("/usr/sbin/sendmail")
+ #define DEFAULT_POSTMASTER ("postmaster")
+ 
+ #define SENDMAIL (config_getstring("sendmail", DEFAULT_SENDMAIL))

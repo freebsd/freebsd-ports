@@ -97,23 +97,7 @@ case $2 in
 		cd ${PKG_PREFIX}
 		cyrus_conf
 		checkfile ${PKG_PREFIX}/etc/imapd.conf
-		if grep '^imap4' /etc/inetd.conf; then
-			echo "** Please check that your /etc/inetd.conf entry for \`imap4'"
-			echo "   is suitable for the Cyrus IMAP server."
-		else
-			echo "** Please add an entry for the imap4 protocol to /etc/inetd.conf."
-		fi
-		echo
-		if grep '^sieve' /etc/inetd.conf; then
-			echo "** Please check that your /etc/inetd.conf entry for \`sieve'"
-			echo "   is suitable for the Cyrus timsieved daemon"
-		else
-			echo "** Please add an entry for timseived to /etc/inetd.conf."
-			echo "   If you wish to have user's upload their sieve filter"
-			echo "   scripts to the server."
-		fi
-		echo
-		echo "   An example can be found in ${PKG_PREFIX}/etc/inetd.conf.cyrus."
+		checkfile ${PKG_PREFIX}/etc/cyrus.conf
 		if grep 'sieve' /etc/services; then
 			echo
 		else

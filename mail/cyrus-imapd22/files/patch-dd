@@ -1,0 +1,14 @@
+Index: master/masterconf.c
+diff -u master/masterconf.c.orig master/masterconf.c
+--- master/masterconf.c.orig	Wed May 24 05:56:30 2000
++++ master/masterconf.c	Sat Jan  6 06:07:22 2001
+@@ -60,7 +60,9 @@
+ 
+ extern int errno;
+ 
++#if !defined(CONFIG_FILENAME)
+ #define CONFIG_FILENAME "/etc/cyrus.conf"
++#endif
+ 
+ struct configlist {
+     char *key;

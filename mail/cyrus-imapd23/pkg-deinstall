@@ -40,6 +40,7 @@ case $2 in
 		cd ${PKG_PREFIX}
 		cyrus_conf
 		checkfile ${PKG_PREIFX}/etc/imapd.conf
+		checkfile ${PKG_PREIFX}/etc/cyrus.conf
 		;;
 	POST-DEINSTALL)
 		;;
