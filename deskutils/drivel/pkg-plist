@@ -7,8 +7,6 @@ share/gnome/help/drivel/C/drivel.xml
 share/gnome/help/drivel/C/legal.xml
 share/gnome/mime-info/drivel.keys
 share/gnome/mime-info/drivel.mime
-share/gnome/mime/application/x-drivel.xml
-share/gnome/mime/packages/drivel.xml
 share/gnome/omf/drivel/drivel-C.omf
 share/gnome/pixmaps/drivel/checkbutton.xpm
 share/gnome/pixmaps/drivel/combobox.xpm
@@ -48,11 +46,14 @@ share/locale/sr/LC_MESSAGES/drivel.mo
 share/locale/sr@Latn/LC_MESSAGES/drivel.mo
 share/locale/sv/LC_MESSAGES/drivel.mo
 share/locale/zh_CN/LC_MESSAGES/drivel.mo
+share/mime/application/x-drivel.xml
+share/mime/packages/drivel.xml
 @dirrm share/gnome/pixmaps/drivel
-@dirrm share/gnome/mime 2>/dev/null || true
 @dirrm share/gnome/omf/drivel
 @dirrm share/gnome/help/drivel/C
 @dirrm share/gnome/help/drivel
 @dirrm share/gnome/drivel/languages
 @dirrm share/gnome/drivel/glade
 @dirrm share/gnome/drivel
+@exec update-mime-database %D/share/mime
+@unexec update-mime-database %D/share/mime

@@ -43,8 +43,6 @@ PLIST_SUB+=	GDA="@comment "
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|[(]datadir[)]/doc|(prefix)/share/doc|g ; \
-		 s|[(]datadir[)]/mime/|(prefix)/share/mime/|g ; \
-		 s|[(]datadir[)]/mime"|(prefix)/share/mime"|g'
+		's|[(]datadir[)]/doc|(prefix)/share/doc|g'
 
 .include <bsd.port.post.mk>
