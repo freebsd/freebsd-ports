@@ -4,8 +4,6 @@ user accounts, Apache, DNS, file sharing and so on.
 
 Webmin consists of a simple web server, and a number of CGI programs
 which directly update system files like /etc/inetd.conf and
-/etc/passwd. The web server and all CGI programs are written in
-Perl version 5, and use no external modules. This means that you
-only need a Perl binary to run Webmin.
+/etc/passwd.
 
 WWW: http://www.webmin.com/webmin/
