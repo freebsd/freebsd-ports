@@ -7,6 +7,7 @@
 
 PORTNAME=	openssh
 PORTVERSION=	3.8.1p1
+PORTEPOCH=	1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/ \
 		ftp://carroll.cac.psu.edu/pub/OpenBSD/OpenSSH/portable/
