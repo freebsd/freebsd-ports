@@ -60,6 +60,7 @@ etc/gentoorc
 %%PORTDOCS%%share/doc/gentoo/images/tone.gif
 %%PORTDOCS%%share/doc/gentoo/images/tone2.gif
 %%PORTDOCS%%share/doc/gentoo/images/tone3.gif
+%%PORTDOCS%%share/doc/gentoo/index.bt
 %%PORTDOCS%%share/doc/gentoo/index.html
 %%PORTDOCS%%share/doc/gentoo/intro.html
 %%PORTDOCS%%share/doc/gentoo/layout.html

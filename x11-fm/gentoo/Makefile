@@ -6,37 +6,36 @@
 #
 
 PORTNAME=	gentoo
-PORTVERSION=	0.11.17
+PORTVERSION=	0.11.18
 CATEGORIES=	x11-fm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
-
 USE_GTK=	yes
+GNU_CONFIGURE=	yes
 
 MAN1=		gentoo.1
 
-DOCS=		BUGS CONFIG-CHANGES CREDITS NEWS README README.NLS \
+PORTDOCS=	BUGS CONFIG-CHANGES CREDITS NEWS README README.NLS \
 		README.gtkrc TODO
 
-GNU_CONFIGURE=	yes
-
 post-patch:
-	${PERL} -pi -e "s@icons@${PREFIX}/share/gentoo/icons@g" \
-		${WRKSRC}/gentoorc.in
+	@${PERL} -pi -e 's|icons|${DATADIR}/icons|g' ${WRKSRC}/gentoorc.in
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/docs/gentoo.1x ${PREFIX}/man/man1/gentoo.1
+	${INSTALL_MAN} ${WRKSRC}/docs/gentoo.1x ${MANPREFIX}/man/man1/gentoo.1
 .if !defined(NOPORTDOCS)
-	${CP} -R ${WRKSRC}/docs ${PREFIX}/share/doc/gentoo
-	${RM} ${PREFIX}/share/doc/gentoo/gentoo.1x
-	${CHMOD} -R a+r,+X ${PREFIX}/share/doc/gentoo
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/doc/gentoo
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
+	${TAR} -C ${WRKSRC}/docs --exclude "gentoo.1x" -cf - . | \
+		${TAR} -C ${DOCSDIR} --unlink -xf -
+	@find ${DOCSDIR} | xargs ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	@find ${DOCSDIR} | xargs ${CHMOD} ${SHAREMODE}
+	@find ${DOCSDIR} -type d | xargs ${CHMOD} a+x
 .endif
 
 .include <bsd.port.mk>
