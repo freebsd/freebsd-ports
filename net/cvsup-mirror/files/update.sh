@@ -34,8 +34,9 @@ date "+CVSup update begins at %Y/%m/%d %H:%M:%S"
 lockf -t 0 ${lock} /bin/sh << 'E*O*F'
 
 base=${PREFIX}/etc/cvsup
-cd ${base} || exit
-. ./config.sh || exit
+rundir=/var/tmp
+cd ${rundir} || exit
+. ${base}/config.sh || exit
 
 colldir=sup.client
 startup=${PREFIX}/etc/rc.d
@@ -45,24 +46,27 @@ umask 2
 ok=yes
 if [ ${host_crypto} = ${host} ]; then
     echo "Updating from ${host}"
-    cvsup ${options} -h ${host} supfile || ok=no
+    su -m ${cuser} -c \
+	"cvsup ${options} -h ${host} ${base}/supfile" || ok=no
 else
     if [ -d prefixes/FreeBSD-crypto.cvs ]; then
 	echo "Updating from ${host_crypto}"
-	cvsup ${options} -h ${host_crypto} supfile.crypto || ok=no
+	su -m ${cuser} -c \
+	    "cvsup ${options} -h ${host_crypto} ${base}/supfile.crypto" || ok=no
     fi
     echo "Updating from ${host}"
-    cvsup ${options} -h ${host} supfile.non-crypto || ok=no
+    su -m ${cuser} -c \
+	"cvsup ${options} -h ${host} ${base}/supfile.non-crypto" || ok=no
 fi
 
 if [ ${ok} = yes ]; then
-    if [ -f .start_server ]; then
+    if [ -f ${base}/.start_server ]; then
 	if [ -x ${startup}/cvsupd.sh ]; then
 	    echo -n "Starting the server:"
-	    /bin/sh ${startup}/cvsupd.sh
+	    /bin/sh ${startup}/cvsupd.sh start
 	    echo "."
 	fi
-	rm -f .start_server
+	rm -f ${base}/.start_server
     fi
 fi
 

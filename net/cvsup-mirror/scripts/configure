@@ -1,7 +1,8 @@
 #! /bin/sh
 
 base=${PREFIX}/etc/cvsup
-variables="user group host host_crypto interval maxclients facility distribs"
+variables="user group cuser cgroup host host_crypto interval \
+    maxclients facility distribs"
 
 ask() {
     local question default answer
@@ -48,6 +49,11 @@ EOF
 	fi
 	while :; do
 	    dir=$(ask "Where would you like to put it" ${dflt})
+	    case ${dir} in
+	    /*)	;;
+	    *)	echo "Please specify an absolute pathname."
+		continue;;
+	    esac
 	    if [ "${subdir}" = "." ]; then
 		break
 	    fi
@@ -130,31 +136,34 @@ EOF
 
 distribs="distrib.self .. ."
 ask_distrib FreeBSD.cvs /home/ncvs . \
-    "main source tree, except crypto code (350 MB)"
+    "main source tree, except crypto code"
 ask_distrib FreeBSD-crypto.cvs /home/ncvs . \
-    "crypto code (7 MB)"
+    "crypto code"
 ask_distrib FreeBSD-www.current /usr/local/www . \
-    "installed World Wide Web data (16 MB)"
+    "installed World Wide Web data"
 ask_distrib FreeBSD-gnats.current /home/gnats gnats \
-    "GNATS bug tracking database (12 MB)"
+    "GNATS bug tracking database"
 ask_distrib FreeBSD-mail.current /home/mail . \
-    "mailing list archive (150 MB)"
+    "mailing list archive"
 
 cat <<EOF
 
 Now, a few questions so that I can set up your CVSup server properly.
 
-For security reasons, the CVSup server should run under its own
-unique user and group IDs.  These IDs should have no special access
-privileges.  Normally, the user "cvsup" and group "cvsup" are used,
-but you can choose other names if you wish.  At "make install"
-time, I will create the user and group, if they don't already exist.
+For security reasons, both the CVSup client and server should run
+under their own unique user and group IDs.  These IDs should have no
+special access privileges.  Normally, the user:group "cvsupin:cvsupin"
+is used for the client and "cvsup:cvsup" is used for the server, but
+you can choose other names if you wish.  At "make install" time, I
+will create the users and groups, if they don't already exist.
 
-For security reasons, you must use unique user and group IDs for
-this.  Do NOT use "nobody", "nonroot", or "nogroup".
+Use unique user and group IDs for these.  Do not use "nobody",
+"nonroot", or "nogroup".
 
 EOF
 
+cuser=$(ask "Unique unprivileged user ID for running the client" cvsupin)
+cgroup=$(ask "Unique unprivileged group ID for running the client" cvsupin)
 user=$(ask "Unique unprivileged user ID for running the server" cvsup)
 group=$(ask "Unique unprivileged group ID for running the server" cvsup)
 
@@ -199,4 +208,12 @@ echo -n "Building the \"config.sh\" file ... "
 for var in ${variables}; do
     eval echo ${var}=\\\"\${${var}}\\\"
 done > ${WRKSRC}/config.sh
+echo "Done."
+
+echo -n "Building the \"cvsupd.access\" file ... "
+cat <<EOF > ${WRKSRC}/cvsupd.access
+-0.0.0.0/0	${maxclients}	# Limit total connections
+-0.0.0.0/0/32	1	# Allow only 1 connection from each host
++0.0.0.0/0		# If we reach this rule, we let the client in
+EOF
 echo "Done."

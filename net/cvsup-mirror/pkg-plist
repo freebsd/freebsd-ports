@@ -1,4 +1,5 @@
 etc/cvsup/config.sh
+etc/cvsup/cvsupd.access
 etc/cvsup/sup.client/distrib/refuse.self
 etc/cvsup/supfile
 etc/cvsup/supfile.crypto

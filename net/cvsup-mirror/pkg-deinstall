@@ -29,6 +29,21 @@ yesno() {
     done
 }
 
+delete_account() {
+    local u g
+
+    u=$1
+    g=$2
+    if yesno "Do you want me to remove group \"${g}\"" y; then
+	pw groupdel -n ${g}
+	echo "Done."
+    fi
+    if yesno "Do you want me to remove user \"${u}\"" y; then
+	pw userdel -n ${u}
+	echo "Done."
+    fi
+}
+
 if [ x$2 != xDEINSTALL ]; then
     exit
 fi
@@ -80,11 +95,5 @@ if yesno "Do you want me to remove the cvsupd log entry from \
     echo "Done."
 fi
 
-if yesno "Do you want me to remove group \"${group}\"" y; then
-    pw groupdel -n ${group}
-    echo "Done."
-fi
-if yesno "Do you want me to remove user \"${user}\"" y; then
-    pw userdel -n ${user}
-    echo "Done."
-fi
+delete_account ${user} ${group}
+delete_account ${cuser} ${cgroup}

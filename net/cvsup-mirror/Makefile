@@ -6,13 +6,14 @@
 # $FreeBSD$
 #
 
-DISTNAME=	cvsup-mirror-1.0
+DISTNAME=	cvsup-mirror-1.1
 CATEGORIES=	net
 DISTFILES=
 
 MAINTAINER=	jdp@FreeBSD.org
 
-RUN_DEPENDS=	${PREFIX}/sbin/cvsupd:${PORTSDIR}/net/cvsup
+RUN_DEPENDS=	${PREFIX}/bin/cvsup:${PORTSDIR}/net/cvsup-bin \
+		${PREFIX}/sbin/cvsupd:${PORTSDIR}/net/cvsupd-bin
 
 NO_WRKSUBDIR=	true
 NO_CHECKSUM=	true
@@ -33,6 +34,7 @@ do-install:
 	@test -d ${distrib} || ${MKDIR} ${distrib}
 	@test -d ${rc} || ${MKDIR} ${rc}
 	@${INSTALL_DATA} ${WRKSRC}/config.sh ${base}
+	@${INSTALL_DATA} ${WRKSRC}/cvsupd.access ${base}
 	@${INSTALL_SCRIPT} ${FILESDIR}/update.sh ${base}
 	@${INSTALL_DATA} ${FILESDIR}/supfile ${base}
 	@${INSTALL_DATA} ${FILESDIR}/supfile.crypto ${base}
