@@ -247,6 +247,7 @@
     SUBDIR += pdmenu
     SUBDIR += peq
     SUBDIR += pg
+    SUBDIR += phraze
     SUBDIR += pinfo
     SUBDIR += pl-sms
     SUBDIR += porteasy
