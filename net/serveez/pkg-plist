@@ -1,0 +1,55 @@
+bin/mkpassword
+bin/serveez
+bin/serveez-config
+include/libserveez.h
+include/libserveez/alloc.h
+include/libserveez/array.h
+include/libserveez/binding.h
+include/libserveez/boot.h
+include/libserveez/codec/codec.h
+include/libserveez/core.h
+include/libserveez/coserver/coserver.h
+include/libserveez/defines.h
+include/libserveez/dynload.h
+include/libserveez/hash.h
+include/libserveez/icmp-socket.h
+include/libserveez/interface.h
+include/libserveez/passthrough.h
+include/libserveez/pipe-socket.h
+include/libserveez/portcfg.h
+include/libserveez/raw-socket.h
+include/libserveez/server-core.h
+include/libserveez/server-loop.h
+include/libserveez/server-socket.h
+include/libserveez/server.h
+include/libserveez/snprintf.h
+include/libserveez/socket.h
+include/libserveez/sparsevec.h
+include/libserveez/tcp-socket.h
+include/libserveez/udp-socket.h
+include/libserveez/util.h
+include/libserveez/vector.h
+include/libserveez/windoze.h
+include/svzconfig.h
+@dirrm include/libserveez/codec
+@dirrm include/libserveez/coserver
+@dirrm include/libserveez
+lib/libserveez-0.1.3.so
+lib/libserveez.a
+lib/libserveez.la
+lib/libserveez.so
+@unexec install-info --delete %D/info/serveez-api.info %D/info/dir
+@unexec install-info --delete %D/info/serveez.info %D/info/dir
+info/serveez-api.info
+info/serveez.info
+@exec install-info %D/info/serveez-api.info %D/info/dir
+@exec install-info %D/info/serveez.info %D/info/dir
+share/aclocal/serveez.m4
+share/serveez/echo-server.scm
+share/serveez/eval-server.scm
+share/serveez/inetd.scm
+share/serveez/mandel-client.scm
+share/serveez/mandel-server.scm
+share/serveez/mandel-shared.scm
+share/serveez/serveez.scm
+@dirrm share/serveez
