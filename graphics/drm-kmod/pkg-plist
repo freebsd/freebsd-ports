@@ -1,0 +1,7 @@
+etc/rc.d/drm.sh.sample
+lib/drm/gamma.ko
+lib/drm/mga.ko
+lib/drm/r128.ko
+lib/drm/radeon.ko
+lib/drm/tdfx.ko
+@dirrm lib/drm
