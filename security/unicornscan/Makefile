@@ -22,6 +22,22 @@ MAN1=		unicornscan.1
 
 PKGMESSAGE=     ${WRKDIR}/pkg-message
 
+.include <bsd.port.pre.mk>
+
+# Check if where building on a 5.3 or older system. Older
+# system require libpcap 0.8.x to be installed.
+
+.if ${OSVERSION} < 503000
+BUILD_DEPENDS+= libpcap:${PORTSDIR}/net/libpcap
+.endif
+
+# Systems newer then 502103 include the getopt_long
+# function
+
+.if ${OSVERSION} > 502103
+CFLAGS+= -DWITH_LONGOPTS
+.endif
+
 post-patch:
 .for text in pkg-message
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' \
@@ -61,4 +77,4 @@ do-install:
 	done
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,0 +1,11 @@
+--- src/Makefile.orig	Mon Dec 13 22:24:21 2004
++++ src/Makefile	Mon Dec 13 22:24:38 2004
+@@ -4,7 +4,7 @@
+ HDRS=$(SRCS:.c=.h) config.h settings.h
+ OBJS=$(SRCS:.c=.o)
+ 
+-CFLAGS=$(MYCFLAGS)
++CFLAGS+=$(MYCFLAGS)
+ LIBS=-lscan -luni -lparse -lpcap -lnet $(LDADD)
+ LIBDIRS=-L./unilib -L./scan_progs -L./parse -L../libs/fake/lib
+ TARGETNAME=unicornscan

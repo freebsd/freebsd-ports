@@ -1,5 +1,14 @@
---- src/config.h.orig	Mon Oct  4 21:42:19 2004
-+++ src/config.h	Mon Oct  4 21:45:12 2004
+--- src/config.h.orig	Mon Dec 13 12:26:43 2004
++++ src/config.h	Mon Dec 13 12:29:18 2004
+@@ -39,7 +39,7 @@
+  * GNU/Linux and some other (newer) systems might have this, its ok to say no
+  * even if you dont have this, you just wont have the -- options on the command line
+  */
+-#define WITH_LONGOPTS
++//#define WITH_LONGOPTS
+ 
+ /*
+  * lots of newer bsd'ish systems have this as well as some (newer?) linux systems. youll need this
 @@ -47,7 +47,7 @@
   * and are not running linux, however it likely will not work arp scanning.
   * side note: dont use this on linux, its broken!
@@ -34,7 +43,7 @@
  /*
   * XXX
   * you shouldnt have to play with these, most likely
-@@ -123,8 +123,8 @@
+@@ -128,8 +128,8 @@
  
  #define MODULE_DIR	PREFIX "/libexec/" TARGETNAME "/modules"
  #define PORT_NUMBERS	PREFIX "/share/" TARGETNAME "/port-numbers"
