@@ -31,6 +31,7 @@ LIB_DEPENDS+=   lber.2:${PORTSDIR}/net/openldap2
 SPOOLDIR?=	/var/spool
 
 NO_CDROM=	Free for individuals and non-military, non-profit organisations only
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${SPOOLDIR}
@@ -68,7 +69,7 @@ post-configure:
 	@cd ${WRKSRC}/src && ${GMAKE} ${AUTHINFO_EXT}
 
 post-patch:
-	@${PERL} -pi -e 's,AUTOMAKE=automake,AUTOMAKE=automake14,' \
+	@${REINPLACE_CMD} -e 's,AUTOMAKE=automake,AUTOMAKE=automake14,' \
 		${WRKSRC}/configure
 
 post-install:
