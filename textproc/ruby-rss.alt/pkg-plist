@@ -9,21 +9,11 @@
 %%RUBY_SITELIBDIR%%/rss/syndication.rb
 %%RUBY_SITELIBDIR%%/rss/taxonomy.rb
 %%RUBY_SITELIBDIR%%/rss/utils.rb
+%%RUBY_SITELIBDIR%%/rss/xmlparser.rb
 %%RUBY_SITELIBDIR%%/rss/xmlscanner.rb
-%%RUBY_SITELIBDIR%%/rwiki/recent1.0.rrdf
-%%RUBY_SITELIBDIR%%/rwiki/rss-maneger.rb
-%%RUBY_SITELIBDIR%%/rwiki/rss-navi.rhtml
-%%RUBY_SITELIBDIR%%/rwiki/rss-page.rb
-%%RUBY_SITELIBDIR%%/rwiki/rss-recent.erd
-%%RUBY_SITELIBDIR%%/rwiki/rss-recent.rb
-%%RUBY_SITELIBDIR%%/rwiki/rss-recent.rhtml
-%%RUBY_SITELIBDIR%%/rwiki/rss-topic.erd
-%%RUBY_SITELIBDIR%%/rwiki/rss-topic.rb
-%%RUBY_SITELIBDIR%%/rwiki/rss-topic.rhtml
-%%RUBY_SITELIBDIR%%/rwiki/rss.rb
-@dirrm %%RUBY_SITELIBDIR%%/rwiki
 @dirrm %%RUBY_SITELIBDIR%%/rss
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/articles.rss
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/index.rdf
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/list_description.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/news.rss
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/php.rss

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rss
-PORTVERSION=	0.0.2
+PORTVERSION=	0.0.3
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://cozmixng.sgk.iwate-u.ac.jp/~kou/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -18,6 +18,8 @@ COMMENT=	Ruby library for handling RSS (alternative impl.)
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/uconv.so:${PORTSDIR}/japanese/ruby-uconv \
 		${RUBY_SITELIBDIR}/xmlscan/parser.rb:${PORTSDIR}/textproc/ruby-xmlscan
+# You can use ruby-xmlparser as an alternative to xmlscan:
+#		${RUBY_SITEARCHLIBDIR}/xmlparser.so:${PORTSDIR}/textproc/ruby-xmlparser
 # You can use REXML as an alternative to xmlscan, but 2.5.0 or later only:
 #		${RUBY_SITELIBDIR}/rexml/document.rb:${PORTSDIR}/textproc/ruby-rexml
 
