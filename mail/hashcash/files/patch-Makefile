@@ -1,14 +1,16 @@
---- Makefile.orig	Wed Aug 11 04:01:24 2004
-+++ Makefile	Sat Aug 28 11:23:16 2004
-@@ -1,6 +1,6 @@
+--- Makefile.orig	Wed Aug 11 19:01:24 2004
++++ Makefile	Wed Sep  8 10:01:54 2004
+@@ -1,7 +1,7 @@
  HC_VERS = 1.02
 -INSTALL_PATH = /usr/bin
 -MAN_INSTALL_PATH = /usr/share/man/man1
+-DOC_INSTALL_PATH = /usr/share/doc/hashcash-$(HC_VERS)
 +INSTALL_PATH = ${PREFIX}/bin
 +MAN_INSTALL_PATH = ${PREFIX}/man/man1
- DOC_INSTALL_PATH = /usr/share/doc/hashcash-$(HC_VERS)
++DOC_INSTALL_PATH = ${PREFIX}/share/doc/hashcash
  MAKEDEPEND = makedepend
  # add -DCHROMATIX for libfastmint integration
+ EXTRA_COPT = -O3 -funroll-loops
 @@ -12,8 +12,8 @@
  # if no POSIX or BSD, disable, still have builtin basic wildcard support
  # OPT = -O
