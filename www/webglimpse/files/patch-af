@@ -1,0 +1,104 @@
+--- makenh.orig	Tue Jul 28 03:21:30 1998
++++ makenh	Mon Nov  2 11:46:14 1998
+@@ -68,6 +68,7 @@
+ $SITE_RE = '[^:]+:\/\/([^\/]+)\/.*';
+ $NumLocalCollected = 0;
+ $NumRemoteCollected = 0;
++$max_redir = 6;
+ # LOGFILE, ERRFILE -- files for logging
+ 
+ ### *TO CHANGE TRAVERSAL*
+@@ -398,7 +399,7 @@
+ &close_logs();
+ 
+ # remove the robots file
+-system("rm -rf $TEMPROBOTFILE");
++unlink($TEMPROBOTFILE);
+ 
+ #----------------------
+ #change the dir back
+@@ -751,7 +752,7 @@
+    my($prot, $host, $port, $path) = &url::parse_url($url);
+    
+    # if the protocol isn't http, assume it's good
+-   if($prot!~/http/i){
++   if(defined($prot) && $prot!~/http/i){
+       return 1;
+    }
+    
+@@ -800,6 +801,7 @@
+    my($output);
+    my($olddata, $newdata);
+    my($newprot, $newhost, $newport, $newpath, $url);
++   my($redcount)=0;
+    
+    # make the $url
+    $url = "http://$host:$port/robots.txt";
+@@ -815,6 +817,7 @@
+    while($output ne ""){
+       # more for error?
+       if($output=~/^error/i){
++	 truncate($TEMPROBOTFILE,0);
+ 	 print ERRFILE "Error with getting $url\n";
+ 	 #			print LOGFILE "Error with getting $url\n";
+ 	 last;
+@@ -822,7 +825,13 @@
+       
+       # look at output for redirect -- store redirects in file, too
+       if($output=~/^Redirect: (.*)$/){
+-	 print LOGFILE "Redirected to: $1...";
++	 if ($redcount >= $max_redir) {
++	     truncate($TEMPROBOTFILE,0);
++	     print ERRFILE "Too many redirections with $url\n";
++	     last;
++	 }
++	 $redcount++;
++	 print LOGFILE "Redirected to: $1...\n";
+ 	 
+ 	 # see if we have the redirected server
+ 	 ($newprot, $newhost, $newport, $newpath) = &url::parse_url($1);
+@@ -843,6 +852,7 @@
+ 	 }
+       }else{
+ 	 # we've got it, or there's an error...
++	 truncate($TEMPROBOTFILE,0);
+ 	 last;
+       }
+    }
+@@ -894,6 +904,7 @@
+ sub geturl2file{
+    my($url) = @_;
+    my($output, $link, $file, $oldfile, @aliases);
++   my($redcount)=0;
+    
+    # check if we have that in stock (we know it's not local)
+    if (defined($URL2FILE{$url})) {
+@@ -930,6 +941,7 @@
+       while($output ne ""){
+ 	 # more for error?
+ 	 if($output=~/^error/i){
++	    truncate($file,0);
+ 	    print ERRFILE "Error with getting $url: $output\n";
+ 	    #				print LOGFILE "Error with getting $url\n";
+ 	    last;
+@@ -937,6 +949,12 @@
+ 	 
+ 	 # look at output for redirect -- store redirects in file, too
+ 	 if($output=~/^Redirect: (.*)$/){
++	    if ($redcount >= $max_redir) {
++		truncate($file,0);
++		print ERRFILE "Too many redirections with $url\n";
++		last;
++	    }
++	    $redcount++;
+ 	    &ungetnewname();	# rewind the name counter		
+ 				# The next get will overwrite the unnecessary file
+ 	    
+@@ -970,6 +988,7 @@
+ 	    }
+ 	 }else{
+ 	    # we've got it, or there's an error...
++	    truncate($file,0);
+ 	    last;
+ 	 }
+       }
