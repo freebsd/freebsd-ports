@@ -6,38 +6,29 @@
 #
 
 PORTNAME=	m2crypto
-PORTVERSION=	0.11
-PORTREVISION=	1
+PORTVERSION=	0.13.1
 CATEGORIES=	security python
-MASTER_SITES=	# http://www.post1.com/home/ngps/m2/ unfetchable
+MASTER_SITES=	http://sandbox.rulemaker.net/ngps/Dist/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.1$//}
 
-MAINTAINER=	ports@FreeBSD.org
+PATCH_SITES=	${MASTER_SITES}
+
+MAINTAINER=	marcus@corp.grupos.com.br
 COMMENT=	Crypto and SSL toolkit for Python
 
-BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13 \
-		pinstall:${PORTSDIR}/devel/pinstall
+BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/SWIG
+PATCHFILES+=	0.13p1.patch
+
+DIST_SUBDIR=	python
 USE_PYTHON=	yes
+USE_PYDISTUTILS=yes
 USE_ZIP=	yes
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
 
-PINSTALL_PLIST=	${WRKDIR}/pinstall-plist
-
 post-patch:
-	${REINPLACE_CMD} "s|%%PYTHON_INCLUDEDIR%%|${PYTHON_INCLUDEDIR}|" ${WRKSRC}/Makefile
-
-post-build:
-	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/../M2Crypto
-
-do-install:
-	${MKDIR} ${WRKDIR}/lib/${PYTHON_VERSION}/site-packages
-	cd ${WRKDIR}/lib/${PYTHON_VERSION}/site-packages && ${LN} -sf ../../../${DISTNAME}/M2Crypto
-
-post-install:
-	${LOCALBASE}/bin/pinstall -v -f ${TMPPLIST} -d ${WRKDIR}
+	@${REINPLACE_CMD} "s|%%PYTHON_INCLUDEDIR%%|${PYTHON_INCLUDEDIR}|g" ${WRKSRC}/SWIG/Makefile
 
 .include <bsd.port.mk>

@@ -1,2 +1,4 @@
-MD5 (m2crypto-0.11.zip) = c018c94e00b33aac969fbbe02b244aba
-SIZE (m2crypto-0.11.zip) = 404629
+MD5 (python/m2crypto-0.13.zip) = be2790a34349ab452dddbcfe4c95606a
+SIZE (python/m2crypto-0.13.zip) = 410759
+MD5 (python/0.13p1.patch) = 4bc65c6cd30d01fa5ea5163b637464d5
+SIZE (python/0.13p1.patch) = 1645
