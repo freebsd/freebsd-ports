@@ -1,0 +1,20 @@
+#!/bin/sh
+# $FreeBSD: /tmp/pcvs/ports/www/apache13-modssl/Attic/pkg-deinstall,v 1.1 2001-10-22 18:05:33 ache Exp $
+#
+
+if [ "$2" != "POST-DEINSTALL" ]; then
+    exit 0
+fi
+
+USER=www
+
+if pw usershow "${USER}" 2>/dev/null 1>&2; then
+	if pw userdel ${USER}; then
+		echo "Delete user/group \"${USER}\"."
+	else
+		echo "Deleting user/group \"${USER}\" failed..."
+		exit 1
+	fi
+fi
+
+exit 0
