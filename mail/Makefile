@@ -82,6 +82,7 @@
     SUBDIR += p5-MIME-Lite
     SUBDIR += p5-MIME-Tools
     SUBDIR += p5-Mail-Audit
+    SUBDIR += p5-Mail-Box
     SUBDIR += p5-Mail-CClient
     SUBDIR += p5-Mail-Ezmlm
     SUBDIR += p5-Mail-Folder

@@ -1,0 +1,12 @@
+lib/perl5/site_perl/%%PERL_VER%%/Mail/Box.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Index.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Locker.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/MH.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Manager.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Mbox.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Message.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Threads.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/Box/Tie.pm
+lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Mail/Box/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/mach/auto/Mail/Box
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/Box
