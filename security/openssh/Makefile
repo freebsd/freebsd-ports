@@ -8,12 +8,11 @@
 
 DISTNAME=	src/usr.bin/ssh
 PKGNAME=	OpenSSH-1.2.1
-CATEGORIES=	security net
+CATEGORIES=	security net ipv6
 # ${MASTER_SITES} is only for if CVS won't work, period.
 MASTER_SITES=	ftp://internat.FreeBSD.org/pub/Crypto/OpenSSH/
 
 MAINTAINER=	green@FreeBSD.org
-MAINTAINER+=	sumikawa@FreeBSD.org
 
 RESTRICTED=	"One file calls external cryptographic routines."
 
@@ -37,6 +36,9 @@ CRYPTOLIBS+=	-lRSAglue -lrsaref
 MAKE_ENV=	DESTDIR=${PREFIX} MANDIR=/man/man CRYPTOLIBS="${CRYPTOLIBS}"
 .if defined(USE_INET6)
 MAKE_ENV+=	USET_INET6=yes
+.endif
+.if ${OSVERSION} < 400014
+MAKE_ENV+=	COMPAT_GETADDRINFO=yes
 .endif
 .if !exists(/usr/include/tcpd.h)
 MAKE_ENV+=	TCP_WRAPPERS=no
@@ -110,17 +112,17 @@ fetchsrctarball:
 	done; \
 	${ECHO_MSG} ">> Couldn't fetch $$file."; \
 	${ECHO_MSG} ">> Please try to retrieve this file manually into"; \
-	${ECHO_MSG" ">> ${_DISTDIR} and try again."; \
+	${ECHO_MSG} ">> ${_DISTDIR} and try again."; \
 	exit 1
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
 	@${CP} -r ${DISTDIR}/${PKGNAME}/${DISTNAME} ${WRKDIR}
 	@${CP} ${FILESDIR}/strlcat.c ${FILESDIR}/strlcpy.c ${WRKSRC}/lib/
-.if !defined(USE_INET6)
+.if ${OSVERSION} < 400014
 	@${CP} ${FILESDIR}/getaddrinfo.c  ${FILESDIR}/name6.c ${WRKSRC}/lib/
 	@${CP} ${FILESDIR}/bindresvport.c ${FILESDIR}/rcmd.c ${WRKSRC}/lib/
-	@${CP} ${FILESDIR}/getnameinfo.c ${FILESDIR}/rcmd.c ${WRKSRC}/lib/
+	@${CP} ${FILESDIR}/getnameinfo.c ${WRKSRC}/lib/
 	@${CP} ${FILESDIR}/netdb.h ${WRKSRC}/
 .endif
 	@${MKDIR} ${WRKSRC}/pam_ssh
