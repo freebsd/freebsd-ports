@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	evolution
-PORTVERSION=	0.99.2
+PORTVERSION=	1.0
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/evolution
