@@ -3,7 +3,7 @@
 # Date created:         Nov 26 1996
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.4 1997/04/30 03:17:57 asami Exp $
+# $Id: Makefile,v 1.5 1998/08/23 01:50:27 hoek Exp $
 #
 
 DISTNAME=	linux_devel-0.2
@@ -13,6 +13,8 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MAINTAINER=	erich@FreeBSD.org
 
 RUN_DEPENDS=	/compat/linux/lib/libc.so.5:${PORTSDIR}/emulators/linux_lib
+
+BROKEN_ELF=	library names
 
 PREFIX=		/compat/linux
 NO_MTREE=	yes
