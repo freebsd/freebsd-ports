@@ -1,13 +1,7 @@
 bin/AutoSearch
 bin/WebSearch
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/AdvancedNews.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/AdvancedWeb.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/Intranet.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/NL.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/News.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista/Web.pm
+lib/perl5/site_perl/%%PERL_VER%%/WWW/Search.pm.rej
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Crawler.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Excite/News.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/ExciteForWebServers.pm
@@ -24,16 +18,13 @@ lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Null.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/PLweb.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/SearchResult.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/SFgate.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Scraper.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Search97.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Simple.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Test.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Verity.pm
 lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/VoilaFr.pm
-lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/WebCrawler.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW/Search/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW/Search
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/AltaVista
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search/Excite
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/WWW/Search
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/WWW 2>/dev/null || true

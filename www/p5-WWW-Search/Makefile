@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Search
-PORTVERSION=	2.19
+PORTVERSION=	2.22
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
@@ -26,13 +26,6 @@ MAN1=		AutoSearch.1 \
 		WebSearch.1
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		WWW::Search.3 \
-		WWW::Search::AltaVista.3 \
-		WWW::Search::AltaVista::AdvancedNews.3 \
-		WWW::Search::AltaVista::AdvancedWeb.3 \
-		WWW::Search::AltaVista::Intranet.3 \
-		WWW::Search::AltaVista::NL.3 \
-		WWW::Search::AltaVista::News.3 \
-		WWW::Search::AltaVista::Web.3 \
 		WWW::Search::Crawler.3 \
 		WWW::Search::Excite::News.3 \
 		WWW::Search::ExciteForWebServers.3 \
@@ -48,13 +41,11 @@ MAN3=		WWW::Search.3 \
 		WWW::Search::Null.3 \
 		WWW::Search::PLweb.3 \
 		WWW::Search::SFgate.3 \
-		WWW::Search::Scraper.3 \
 		WWW::Search::Search97.3 \
 		WWW::Search::Simple.3 \
 		WWW::Search::Test.3 \
 		WWW::Search::Verity.3 \
 		WWW::Search::VoilaFr.3 \
-		WWW::Search::WebCrawler.3 \
 		WWW::SearchResult.3
 
 .include <bsd.port.mk>
