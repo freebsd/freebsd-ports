@@ -41,6 +41,17 @@ post-patch:
 	find ${WRKSRC} -type f | xargs ${PERL} -pi -e \
 		"s@#include.*<malloc.h>@#include <stdlib.h>@g"
 
+pre-configure:
+.if !exists(${PREFIX}/lib/X11/config/host.def)
+	${CP} ${FILESDIR}/host.def ${PREFIX}/lib/X11/config
+HOST_DEF_INSTALLED_BY_XTEL=	yes
+.endif
+
+post-configure:
+.if defined(HOST_DEF_INSTALLED_BY_XTEL)
+	${RM} ${PREFIX}/lib/X11/config/host.def
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}

@@ -1,0 +1,9 @@
+/*
+ * Host.def for building FreeBSD bindists
+ *
+ * $XFree86: xc/programs/Xserver/hw/xfree86/etc/bindist/FreeBSD/host.def,v 1.3.4.1 2001/05/31 22:20:27 dawes Exp $
+ */
+
+#define InstallEmptyHostDef
+#define BuildBindist
+
