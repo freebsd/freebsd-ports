@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Jul 28 04:29:06 2000
-+++ Makefile	Fri Jul 28 04:31:02 2000
+--- Makefile.orig	Mon Sep 18 23:28:22 2000
++++ Makefile	Mon Sep 18 23:28:45 2000
 @@ -3,7 +3,7 @@
  
  # Mmucl installs itself under BASE_DIR
@@ -18,30 +18,3 @@
  
  # Location of install
  
-@@ -34,17 +34,19 @@
- 
- .PHONY: install clean gzip zip dist rpm test
- 
-+all: mmucl
-+
- install: mmucl
- 
- 	$(INSTALL) -d $(LIB_DIR)/lib $(LIB_DIR)/interface $(LIB_DIR)/images
- 	$(INSTALL) -d $(BIN_DIR) $(INFO_DIR)
--	$(INSTALL) -m 0664 lib/*.tcl $(LIB_DIR)/lib	
--	$(INSTALL) -m 0664 images/*.gif $(LIB_DIR)/images
--	$(INSTALL) -m 0664 interface/*.tcl $(LIB_DIR)/interface
--	$(INSTALL) -m 0664 .tkconf $(LIB_DIR)
--	$(INSTALL) -m 0775 mmucl $(BIN_DIR)
--	$(INSTALL) -m 0664 mmucl.info $(INFO_DIR)
--	$(INSTALL_INFO) mmucl.info --info-dir=$(INFO_DIR)
-+	$(INSTALL) -cm 0644 lib/*.tcl $(LIB_DIR)/lib	
-+	$(INSTALL) -cm 0644 images/*.gif $(LIB_DIR)/images
-+	$(INSTALL) -cm 0644 interface/*.tcl $(LIB_DIR)/interface
-+	$(INSTALL) -cm 0644 .tkconf $(LIB_DIR)
-+	$(INSTALL) -cm 0755 mmucl $(BIN_DIR)
-+	$(INSTALL) -cm 0644 mmucl.info $(INFO_DIR)
-+	$(INSTALL_INFO) $(INFO_DIR)/mmucl.info --info-dir=$(INFO_DIR)
- 
- mmucl: Makefile init
- 	echo "#! /bin/sh" > mmucl
