@@ -67,7 +67,7 @@ include/pqxx/util.h
 lib/libpqxx.a
 lib/libpqxx.la
 lib/libpqxx.so
-lib/libpqxx-2.2.3.so
+lib/libpqxx-%%PORTVERSION%%.so
 lib/libdata/pkgconfig/libpqxx.pc
 @dirrm include/pqxx
 @unexec rmdir %D/lib/libdata/pkgconfig 2>/dev/null || true
