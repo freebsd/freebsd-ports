@@ -8,11 +8,12 @@
 PORTNAME=	blt
 PORTVERSION=	2.4z
 CATEGORIES=	x11-toolkits tk84
-MASTER_SITES=	ftp://ftp.sourceforge.net/blt/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.csl.sony.co.jp/pub/kjc/ttt-libs/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	BLT${PORTVERSION}
 
-PATCH_SITES=	ftp://ftp.sourceforge.net/blt/ \
+PATCH_SITES=	${MASTER_SITE_SOURCEFORGE:S/%SUBDIR%/${PORTNAME}/} \
 		ftp://ftp.csl.sony.co.jp/pub/kjc/ttt-libs/
 PATCHFILES=	blt2.4z-patch-2
 PATCH_DIST_STRIP= -p1
