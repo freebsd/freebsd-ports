@@ -48,7 +48,6 @@ CONFIGURE_ARGS+=	--mandir=${PREFIX}/man \
 			--with-etc-dir=${ETC_DIR}
 
 .if defined(WITH_BERKELEYDB)
-CONFIGURE_ARGS+=	--with-berkeleydb=${LOCABASE}
 .    if !defined(WITH_BDB_VER)
 WITH_BDB_VER=	42
 .    endif
