@@ -1,17 +1,19 @@
---- Makefile.in.orig	Tue Sep 22 11:27:49 1998
-+++ Makefile.in	Tue Sep 22 21:10:17 1998
-@@ -84,8 +84,6 @@
+--- Makefile.in.orig	Sun Oct 25 15:59:19 1998
++++ Makefile.in	Wed Oct 28 23:22:13 1998
+@@ -82,9 +82,7 @@
+ RANLIB = @RANLIB@
+ VERSION = @VERSION@
  
- SUBDIRS = gmodule
- 
--configincludedir = $(pkglibdir)/include
+-SUBDIRS = gmodule docs
 -
+-configincludedir = $(pkglibdir)/include
++SUBDIRS = gmodule
+ 
  bin_SCRIPTS=glib-config
  BUILT_SOURCES=glib-config
- 
-@@ -93,9 +91,9 @@
- 		glib.m4 \
- 		glib.spec
+@@ -94,9 +92,9 @@
+ 		glib.spec	\
+ 		sanity_check
  
 -lib_LTLIBRARIES = libglib.la
 +lib_LTLIBRARIES = libglib11.la
@@ -21,7 +23,7 @@
  		garray.c	\
  		gcache.c	\
  		gcompletion.c	\
-@@ -117,17 +115,15 @@
+@@ -119,17 +117,15 @@
  		gutils.c
  
  include_HEADERS = \
@@ -34,7 +36,7 @@
 -libglib_la_LDFLAGS = \
 -	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) -release $(LT_RELEASE)
 +libglib11_la_LDFLAGS = \
-+	-version-info 0:3:0
++	-version-info 0:4:0
  INCLUDES = -I$(top_srcdir)
  
  noinst_PROGRAMS = testglib
@@ -43,7 +45,7 @@
  
  m4datadir = $(datadir)/aclocal
  m4data_DATA = glib.m4
-@@ -142,8 +138,8 @@
+@@ -144,8 +140,8 @@
  CPPFLAGS = @CPPFLAGS@
  LDFLAGS = @LDFLAGS@
  LIBS = @LIBS@
@@ -51,10 +53,10 @@
 -libglib_la_OBJECTS =  garray.lo gcache.lo gcompletion.lo gdataset.lo \
 +libglib11_la_LIBADD = 
 +libglib11_la_OBJECTS =  garray.lo gcache.lo gcompletion.lo gdataset.lo \
- gerror.lo ghash.lo glist.lo gmem.lo gmessages.lo gnode.lo gprimes.lo \
- gslist.lo gtimer.lo gtree.lo grel.lo gstring.lo gstrfuncs.lo \
+ gerror.lo ghash.lo ghook.lo glist.lo gmem.lo gmessages.lo gnode.lo \
+ gprimes.lo gslist.lo gtimer.lo gtree.lo grel.lo gstring.lo gstrfuncs.lo \
  gscanner.lo gutils.lo
-@@ -151,7 +147,7 @@
+@@ -153,7 +149,7 @@
  
  testglib_SOURCES = testglib.c
  testglib_OBJECTS =  testglib.o
@@ -63,16 +65,16 @@
  testglib_LDFLAGS = 
  SCRIPTS =  $(bin_SCRIPTS)
  
-@@ -159,7 +155,7 @@
+@@ -161,7 +157,7 @@
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
  LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(INCLUDES) $(CPPFLAGS) $(CFLAGS)
  LINK = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) $(LDFLAGS) -o $@
 -DATA =  $(configinclude_DATA) $(m4data_DATA)
-+DATA =  $(m4data_DATA)
++DATA = $(m4data_DATA)
  
  HEADERS =  $(include_HEADERS)
  
-@@ -173,8 +169,8 @@
+@@ -175,8 +171,8 @@
  
  TAR = tar
  GZIP = --best
@@ -83,7 +85,7 @@
  
  all: all-recursive-am all-am
  
-@@ -281,8 +277,8 @@
+@@ -283,8 +279,8 @@
  
  maintainer-clean-libtool:
  
@@ -94,7 +96,7 @@
  
  mostlyclean-noinstPROGRAMS:
  
-@@ -316,25 +312,6 @@
+@@ -318,25 +314,6 @@
  	  rm -f $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`; \
  	done
  
@@ -120,7 +122,7 @@
  install-m4dataDATA: $(m4data_DATA)
  	@$(NORMAL_INSTALL)
  	$(mkinstalldirs) $(DESTDIR)$(m4datadir)
-@@ -517,9 +494,9 @@
+@@ -499,9 +476,9 @@
  
  install-exec-am: install-libLTLIBRARIES install-binSCRIPTS
  
@@ -132,7 +134,7 @@
  
  install-exec: install-exec-recursive install-exec-am
  	@$(NORMAL_INSTALL)
-@@ -595,7 +572,6 @@
+@@ -577,7 +554,6 @@
  maintainer-clean-libtool mostlyclean-noinstPROGRAMS \
  distclean-noinstPROGRAMS clean-noinstPROGRAMS \
  maintainer-clean-noinstPROGRAMS uninstall-binSCRIPTS install-binSCRIPTS \
@@ -140,8 +142,8 @@
  uninstall-m4dataDATA install-m4dataDATA uninstall-includeHEADERS \
  install-includeHEADERS install-data-recursive uninstall-data-recursive \
  install-exec-recursive uninstall-exec-recursive installdirs-recursive \
---- gmodule/Makefile.in.orig	Tue Sep 22 21:04:45 1998
-+++ gmodule/Makefile.in	Tue Sep 22 21:09:58 1998
+--- gmodule/Makefile.in.orig	Sun Oct 25 15:59:20 1998
++++ gmodule/Makefile.in	Wed Oct 28 23:12:09 1998
 @@ -94,30 +94,29 @@
  include_HEADERS = \
  		gmodule.h
@@ -159,7 +161,7 @@
  	@G_MODULE_LDFLAGS@ \
 -	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
 -	-release $(LT_RELEASE)
-+	-version-info 0:3:0
++	-version-info 0:4:0
  
 -libgmodule_la_LIBADD = @G_MODULE_LIBS@ # $(libglib)
 +libgmodule11_la_LIBADD = @G_MODULE_LIBS@ # $(libglib)
@@ -244,7 +246,7 @@
  
  mostlyclean-noinstPROGRAMS:
  
-@@ -387,10 +386,10 @@
+@@ -380,10 +379,10 @@
  	  echo $$p; \
  	done
  
