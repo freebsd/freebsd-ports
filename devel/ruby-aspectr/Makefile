@@ -16,8 +16,6 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	seanc@FreeBSD.org
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/runit/error.rb:${PORTSDIR}/devel/ruby-unit
-
 USE_RUBY=	yes
 
 NO_BUILD=	yes
