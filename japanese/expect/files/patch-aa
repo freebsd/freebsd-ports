@@ -1,5 +1,5 @@
---- Makefile.in.ORIG	Wed Oct  7 14:07:34 1998
-+++ Makefile.in	Wed Oct  7 14:11:25 1998
+--- Makefile.in.orig	Thu Aug 19 01:52:07 1999
++++ Makefile.in	Tue Aug 31 13:40:29 1999
 @@ -24,7 +24,7 @@
  TCL_LIBRARY = @TCL_LIBRARY@
  
@@ -23,20 +23,20 @@
  # Note: On Linux systems which only have dynamic X libraries, the -g prevents
  # the linker from using them.  So do not use -g on such systems.
 -CFLAGS = @CFLAGS@
-+CFLAGS = @CFLAGS@ -DKANJI -DBUGFIX -DKINPUT2 -DXIM_IMPROVE -DCHECK_XTT
++CFLAGS += @CFLAGS@ -DKANJI -DKINPUT2
  #XCFLAGS = @CFLAGS@ @EXP_CFLAGS@ @EXP_SHLIB_CFLAGS@ 
  XCFLAGS = @CFLAGS@ @EXP_CFLAGS@
  
-@@ -171,7 +171,7 @@
+@@ -179,7 +179,7 @@
  man1dir = $(mandir)/man1
  man3dir = $(mandir)/man3
- infodir = @infodir@
--includedir = @includedir@
-+includedir = @includedir@/expect$(VERSION)
+ infodir = $(INSTALL_ROOT)@infodir@
+-includedir = $(INSTALL_ROOT)@includedir@
++includedir = $(INSTALL_ROOT)@includedir@/expect$(VERSION)
  
  # Expect's utility script directories - arch-independent and arch-non-
  # independent.  These correspond to the variables "exp_library" and
-@@ -183,12 +183,13 @@
+@@ -191,12 +191,13 @@
  
  INSTALL = @INSTALL@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
@@ -46,12 +46,12 @@
  AR = ar
  ARFLAGS = cr
  
--LOCAL_EXPECT=LD_LIBRARY_PATH=.:$$LD_LIBRARY_PATH ./expect
-+LOCAL_EXPECT=LD_LIBRARY_PATH=.:$$LD_LIBRARY_PATH ./expectjp
+-LOCAL_EXPECT=LD_LIBRARY_PATH=.:@TCL_EXEC_PREFIX@/lib:$(tcl_libdir):$$LD_LIBRARY_PATH ./expect
++LOCAL_EXPECT=LD_LIBRARY_PATH=.:@TCL_EXEC_PREFIX@/lib:$(tcl_libdir):$$LD_LIBRARY_PATH ./expectjp
  
  # These definitions are used by the "subdirs_do" target to pass
  # the compile flags down recursively.
-@@ -199,6 +200,7 @@
+@@ -207,6 +208,7 @@
  	"HDEFS=$(HDEFS)" \
  	"INSTALL=$(INSTALL)" \
  	"INSTALL_DATA=$(INSTALL_DATA)" \
@@ -59,7 +59,7 @@
  	"INSTALL_PROGRAM=$(INSTALL_PROGRAM)" \
  	"LDFLAGS=$(LDFLAGS)" \
  	"RUNTEST=$(RUNTEST)" \
-@@ -214,9 +216,9 @@
+@@ -222,9 +224,9 @@
  # These let the DejaGnu test suite run when DejaGnu isn't 
  # installed yet, so run it from the srcdir and objdir.
  EXPECT = ` \
@@ -72,7 +72,7 @@
  
  RUNTESTFLAGS =
  RUNTEST = ` \
-@@ -316,16 +318,16 @@
+@@ -324,7 +326,7 @@
  	   $(CC) -c $(CFLAGS_INT) @EXP_SHLIB_CFLAGS@ $(STTY) $(HDEFS) $< -o shared/$@ ; \
  	fi
  
@@ -81,9 +81,10 @@
  	@$(MAKE) subdir_do DO=$@  $(FLAGS_TO_PASS)
  
  info:
- dvi:
+@@ -332,9 +334,9 @@
  
  # build expect binary that does not depend on Expect's shared libs
+ # IFF static Tcl/Tk libraries are available.
 -expect:	exp_main_exp.o $(EXP_UNSHARED_LIB_FILE)
 -	$(CC) $(XCFLAGS) @TCL_LD_FLAGS@ -o expect exp_main_exp.o $(EXP_UNSHARED_LIB_FILE) $(TCLLIB) $(EXP_AND_TCL_LIBS)
 -	$(SETUID) expect
@@ -93,7 +94,7 @@
  
  # install Expect library
  # This is done before the install target because the libraries have to be
-@@ -338,21 +340,25 @@
+@@ -347,21 +349,25 @@
  #   Local copy is pkgIndex rather than pkgIndex.tcl because pkgIndex.tcl.in
  #   is too long for some filesystems, sigh.
  install_shared_lib: $(EXP_LIB_FILES)
@@ -128,7 +129,7 @@
  
  # Build Expect with TestCenter
  expect.tc: exp_main_exp.o $(OFILES) 
-@@ -365,13 +371,13 @@
+@@ -375,13 +381,13 @@
  # together.  I could fix it by testing all the libraries (again, in Expect's
  # configure) separately for Expectk, but as far as I know, it doesn't hurt
  # anything here, so I'm not worrying about it.
@@ -149,8 +150,8 @@
  
  # Build Expectk with TestCenter
  expectk.tc: exp_main_tk.o $(OFILES) 
-@@ -389,24 +395,24 @@
- # rule out for each file, sigh).
+@@ -401,24 +407,28 @@
+ expect-shared-lib-file :: $(EXP_SHARED_LIB_FILE)
  $(EXP_SHARED_LIB_FILE): $(OFILES)
  	-rm -f $(EXP_SHARED_LIB_FILE)
 +.if ${PORTOBJFORMAT} == "aout"
@@ -177,14 +178,16 @@
 +	-if [ -s expectkjp_installed ] ; then \
 +	  $(INSTALL_PROGRAM) expectkjp_installed $(bindir)/expectkjp ; \
  	else true; fi
--# install Expect man page
+ # install Expect man page
 -	$(INSTALL_DATA) $(srcdir)/expect.man $(man1dir)/expect.1
--# install man page for Expect and Expectk libraries
++#	$(INSTALL_DATA) $(srcdir)/expect.man $(man1dir)/expect.1
+ # install man page for Expect and Expectk libraries
 -	$(INSTALL_DATA) $(srcdir)/libexpect.man $(man3dir)/libexpect.3
++#	$(INSTALL_DATA) $(srcdir)/libexpect.man $(man3dir)/libexpect.3
  # install Expect's public include files
  #	$(INSTALL_DATA) expect_cf.h $(includedir)
  	$(INSTALL_DATA) $(srcdir)/expect.h $(includedir)
-@@ -421,21 +427,16 @@
+@@ -433,21 +443,16 @@
  	TCL_LIBRARY=$(TCL_LIBRARY) ; \
  	export TCL_LIBRARY ; \
  	   if $(LOCAL_EXPECT) $(srcdir)/fixcat ; then \
@@ -208,7 +211,7 @@
  
  $(SCRIPT_LIST):
  	TCL_LIBRARY=$(TCL_LIBRARY) ; \
-@@ -445,27 +446,21 @@
+@@ -457,27 +462,21 @@
  # Delete all the installed files that the `install' target creates
  # (but not the noninstalled files such as `make all' creates)
  uninstall:
@@ -239,7 +242,7 @@
  	done
  
  ###################################
-@@ -516,7 +511,7 @@
+@@ -528,7 +527,7 @@
  # delete all files from current directory that are created by "make"
  clean:
  	-rm -rf *~ *.o shared core \
@@ -248,7 +251,7 @@
  		dumb exho devtty \
  		$(EXP_UNSHARED_LIB_FILE) $(EXP_SHARED_LIB_FILE) \
  		$(SCRIPT_LIST)
-@@ -532,7 +527,7 @@
+@@ -544,7 +543,7 @@
  # because most people don't have to worry about them
  mostlyclean:
  	-rm -rf *~ *.o shared core \
@@ -257,7 +260,7 @@
  		$(EXP_UNSHARED_LIB_FILE) $(EXP_SHARED_LIB_FILE)
  	@$(MAKE) subdir_do DO=$@ $(FLAGS_TO_PASS)
  
-@@ -684,7 +679,7 @@
+@@ -685,7 +684,7 @@
  expect-$(VERSION).tar.gz:	expect-$(VERSION).tar
  	gzip -fc expect-$(VERSION).tar > $@
  
@@ -266,7 +269,7 @@
  	rm -f .tmp
  	echo "set objdir" `pwd` > .tmp
  	if [ "$(srcdir)" = "." ] ; then \
-@@ -694,7 +689,7 @@
+@@ -695,7 +694,7 @@
  	echo "source all" >> .tmp
  	rootme=`pwd`; export rootme; \
  	srcdir=${srcdir} ; export srcdir ; \
