@@ -3098,6 +3098,7 @@ kawa		ports/lang/kawa
 kb2mb2		ports/x11/kb2mb2
 kbdcontrol	src/usr.sbin/kbdcontrol
 kbdmap		src/usr.sbin/kbdmap
+kbear		ports/ftp/kbear
 kbedic		ports/textproc/kbedic
 kbiff		ports/mail/kbiff
 kcd		ports/misc/kcd
