@@ -8603,6 +8603,7 @@ xml-lite.el	ports/textproc/xml-lite.el
 xml2rfc		ports/textproc/xml2rfc
 xml4j		ports/textproc/xml4j
 xmlada		ports/textproc/xmlada
+xmlcatmgr	ports/textproc/xmlcatmgr
 xmlcharent	ports/textproc/xmlcharent
 xmleditor	ports/editors/xmleditor
 xmlenc		ports/textproc/xmlenc
