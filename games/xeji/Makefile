@@ -7,6 +7,7 @@
 
 PORTNAME=	xeji
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://yindy1.aist-nara.ac.jp/~tetu-s/sofken/software/
 DISTNAME=	${PORTNAME}${PORTVERSION}
