@@ -12,7 +12,10 @@ etc/pure-ftpd.conf.sample
 %%PORTDOCS%%share/doc/pure-ftpd/NEWS
 %%PORTDOCS%%share/doc/pure-ftpd/README
 %%PORTDOCS%%share/doc/pure-ftpd/README.Configuration-File
+%%PORTDOCS%%share/doc/pure-ftpd/README.Contrib
 %%PORTDOCS%%share/doc/pure-ftpd/README.LDAP
 %%PORTDOCS%%share/doc/pure-ftpd/README.Netfilter
 %%PORTDOCS%%share/doc/pure-ftpd/THANKS
 %%PORTDOCS%%@dirrm share/doc/pure-ftpd
+share/examples/pure-ftpd/xml_python_processors.txt
+@dirrm share/examples/pure-ftpd

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	0.98.4
+PORTVERSION=	0.98.5
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pureftpd
@@ -20,7 +20,7 @@ LIB_DEPENDS+=	dmalloc.1:${PORTSDIR}/devel/dmalloc
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-pam --with-cookie --with-throttling \
 			--with-ratios --with-ftpwho --with-largefile \
-			--with-uploadscript
+			--with-uploadscript --with-virtualhosts
 # language support requested?
 .if defined(WITH_LANG)
 CONFIGURE_ARGS+=	--with-language="${WITH_LANG}"
@@ -34,8 +34,11 @@ CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 MAN8=		pure-ftpd.8 pure-ftpwho.8 pure-mrtginfo.8 pure-uploadscript.8
 
 DOCS=		AUTHORS CONTACT COPYING HISTORY NEWS \
-		README README.Configuration-File README.LDAP README.Netfilter \
+		README README.Configuration-File README.Contrib README.LDAP \
+		README.Netfilter \
 		THANKS
+
+CONTRIB=	xml_python_processors.txt
 
 pre-fetch:
 	@${ECHO} "You can use the following additional options:"
@@ -47,6 +50,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/pureftpd-ldap.conf ${PREFIX}/etc/pureftpd-ldap.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/configuration-file/pure-ftpd.conf ${PREFIX}/etc/pure-ftpd.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/configuration-file/pure-config.pl ${PREFIX}/sbin/
+	${MKDIR} ${PREFIX}/share/examples/pure-ftpd
+	(cd ${WRKSRC}/contrib && ${INSTALL_SCRIPT} ${CONTRIB} ${PREFIX}/share/examples/pure-ftpd)
 	${CHMOD} 755 ${PREFIX}/sbin/pure-config.pl
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/pure-ftpd
