@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Jun 17 16:36:06 2003
++++ Makefile.in	Tue Jun 17 16:36:19 2003
+@@ -148,7 +148,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
+-SUBDIRS = m4 src po intl
++SUBDIRS = m4 intl src po
+ EXTRA_DIST = \
+ 	ABOUT-NLS \
+ 	BUGS \
