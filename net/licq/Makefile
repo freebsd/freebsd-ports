@@ -18,7 +18,6 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	green@FreeBSD.org
 
 BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake
-LIB_DEPENDS=	qt2:${PORTSDIR}/x11-toolkits/qt22
 
 USE_QT2=	yes
 USE_GMAKE=	yes
