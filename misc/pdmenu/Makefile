@@ -7,9 +7,8 @@
 PORTNAME=	pdmenu
 PORTVERSION=	1.2.81
 CATEGORIES=	misc
-MASTER_SITES=	http://kitenet.net/programs/pdmenu/
+MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	pdmenu_${PORTVERSION}
-#BROKEN=		"can't find required slang library or library is obsolete"
 
 MAINTAINER=	nbm@FreeBSD.org
 COMMENT=	A simple console menu program
