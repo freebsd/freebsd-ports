@@ -1,53 +1,21 @@
 share/java/classes/activation.jar
-%%T%%/activation.jar
-%%T%%/RELNOTES.txt
-%%T%%/README.txt
-%%T%%/LICENSE.txt
-%%T%%/demo/TextInternalizer.java
-%%T%%/demo/DCHTest.java
-%%T%%/demo/DCHTest2.java
-%%T%%/demo/DHURL.java
-%%T%%/demo/FileView.java
-%%T%%/demo/JAFApp.java
-%%T%%/demo/MCTest.java
-%%T%%/demo/ODCHTest.java
-%%T%%/demo/PlainDCH.java
-%%T%%/demo/PrefTest.java
-%%T%%/demo/SimpleDCF.java
-%%T%%/demo/CompViewer.java
-%%T%%/docs/javadocs/index-files/index-16.html
-%%T%%/docs/javadocs/index-files/index-2.html
-%%T%%/docs/javadocs/index-files/index-3.html
-%%T%%/docs/javadocs/index-files/index-4.html
-%%T%%/docs/javadocs/index-files/index-5.html
-%%T%%/docs/javadocs/index-files/index-6.html
-%%T%%/docs/javadocs/index-files/index-7.html
-%%T%%/docs/javadocs/index-files/index-8.html
-%%T%%/docs/javadocs/index-files/index-9.html
-%%T%%/docs/javadocs/index-files/index-10.html
-%%T%%/docs/javadocs/index-files/index-11.html
-%%T%%/docs/javadocs/index-files/index-12.html
-%%T%%/docs/javadocs/index-files/index-13.html
-%%T%%/docs/javadocs/index-files/index-14.html
-%%T%%/docs/javadocs/index-files/index-15.html
-%%T%%/docs/javadocs/index-files/index-1.html
-%%T%%/docs/javadocs/javax/activation/class-use/CommandObject.html
-%%T%%/docs/javadocs/javax/activation/class-use/DataContentHandler.html
-%%T%%/docs/javadocs/javax/activation/class-use/ActivationDataFlavor.html
-%%T%%/docs/javadocs/javax/activation/class-use/FileDataSource.html
-%%T%%/docs/javadocs/javax/activation/class-use/UnsupportedDataTypeException.html
+%%T%%/docs/javadocs/javax/activation/class-use/URLDataSource.html
 %%T%%/docs/javadocs/javax/activation/class-use/CommandMap.html
 %%T%%/docs/javadocs/javax/activation/class-use/MailcapCommandMap.html
-%%T%%/docs/javadocs/javax/activation/class-use/MimeTypeParameterList.html
-%%T%%/docs/javadocs/javax/activation/class-use/DataSource.html
+%%T%%/docs/javadocs/javax/activation/class-use/UnsupportedDataTypeException.html
+%%T%%/docs/javadocs/javax/activation/class-use/DataContentHandlerFactory.html
+%%T%%/docs/javadocs/javax/activation/class-use/DataContentHandler.html
+%%T%%/docs/javadocs/javax/activation/class-use/MimeTypeParseException.html
+%%T%%/docs/javadocs/javax/activation/class-use/ActivationDataFlavor.html
 %%T%%/docs/javadocs/javax/activation/class-use/FileTypeMap.html
+%%T%%/docs/javadocs/javax/activation/class-use/MimetypesFileTypeMap.html
+%%T%%/docs/javadocs/javax/activation/class-use/FileDataSource.html
+%%T%%/docs/javadocs/javax/activation/class-use/DataSource.html
+%%T%%/docs/javadocs/javax/activation/class-use/MimeTypeParameterList.html
 %%T%%/docs/javadocs/javax/activation/class-use/DataHandler.html
 %%T%%/docs/javadocs/javax/activation/class-use/MimeType.html
-%%T%%/docs/javadocs/javax/activation/class-use/MimetypesFileTypeMap.html
-%%T%%/docs/javadocs/javax/activation/class-use/DataContentHandlerFactory.html
-%%T%%/docs/javadocs/javax/activation/class-use/URLDataSource.html
+%%T%%/docs/javadocs/javax/activation/class-use/CommandObject.html
 %%T%%/docs/javadocs/javax/activation/class-use/CommandInfo.html
-%%T%%/docs/javadocs/javax/activation/class-use/MimeTypeParseException.html
 %%T%%/docs/javadocs/javax/activation/package-use.html
 %%T%%/docs/javadocs/javax/activation/package-summary.html
 %%T%%/docs/javadocs/javax/activation/package-tree.html
@@ -69,6 +37,23 @@ share/java/classes/activation.jar
 %%T%%/docs/javadocs/javax/activation/URLDataSource.html
 %%T%%/docs/javadocs/javax/activation/MimeTypeParseException.html
 %%T%%/docs/javadocs/javax/activation/UnsupportedDataTypeException.html
+%%T%%/docs/javadocs/overview-tree.html
+%%T%%/docs/javadocs/index-files/index-1.html
+%%T%%/docs/javadocs/index-files/index-2.html
+%%T%%/docs/javadocs/index-files/index-3.html
+%%T%%/docs/javadocs/index-files/index-4.html
+%%T%%/docs/javadocs/index-files/index-5.html
+%%T%%/docs/javadocs/index-files/index-6.html
+%%T%%/docs/javadocs/index-files/index-7.html
+%%T%%/docs/javadocs/index-files/index-8.html
+%%T%%/docs/javadocs/index-files/index-9.html
+%%T%%/docs/javadocs/index-files/index-10.html
+%%T%%/docs/javadocs/index-files/index-11.html
+%%T%%/docs/javadocs/index-files/index-12.html
+%%T%%/docs/javadocs/index-files/index-13.html
+%%T%%/docs/javadocs/index-files/index-14.html
+%%T%%/docs/javadocs/index-files/index-15.html
+%%T%%/docs/javadocs/index-files/index-16.html
 %%T%%/docs/javadocs/deprecated-list.html
 %%T%%/docs/javadocs/allclasses-frame.html
 %%T%%/docs/javadocs/index.html
@@ -77,16 +62,31 @@ share/java/classes/activation.jar
 %%T%%/docs/javadocs/package-list
 %%T%%/docs/javadocs/help-doc.html
 %%T%%/docs/javadocs/stylesheet.css
-%%T%%/docs/javadocs/overview-tree.html
-%%T%%/docs/JAF-1.0.pdf
 %%T%%/docs/JAF-1.0.ps
-@dirrm %%T%%/demo
-@dirrm %%T%%/docs/javadocs/index-files
-@dirrm %%T%%/docs/javadocs/javax/activation/class-use
-@dirrm %%T%%/docs/javadocs/javax/activation
-@dirrm %%T%%/docs/javadocs/javax
-@dirrm %%T%%/docs/javadocs
-@dirrm %%T%%/docs
+%%T%%/docs/JAF-1.0.pdf
+%%T%%/demo/CompViewer.java
+%%T%%/demo/DCHTest.java
+%%T%%/demo/DCHTest2.java
+%%T%%/demo/DHURL.java
+%%T%%/demo/FileView.java
+%%T%%/demo/JAFApp.java
+%%T%%/demo/MCTest.java
+%%T%%/demo/ODCHTest.java
+%%T%%/demo/PlainDCH.java
+%%T%%/demo/PrefTest.java
+%%T%%/demo/SimpleDCF.java
+%%T%%/demo/TextInternalizer.java
+%%T%%/activation.jar
+%%T%%/README.txt
+%%T%%/LICENSE.txt
+%%T%%/RELNOTES.txt
+@dirrm %%T%%/docs/javadocs/index-files/
+@dirrm %%T%%/docs/javadocs/javax/activation/class-use/
+@dirrm %%T%%/docs/javadocs/javax/activation/
+@dirrm %%T%%/docs/javadocs/javax/
+@dirrm %%T%%/docs/javadocs/
+@dirrm %%T%%/docs/
+@dirrm %%T%%/demo/
 @dirrm %%T%%/
 @unexec rmdir %D/share/java/classes 2>/dev/null || true
 @unexec rmdir %D/share/java 2>/dev/null || true
