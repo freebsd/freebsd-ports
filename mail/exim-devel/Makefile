@@ -3,7 +3,7 @@
 # Date created:		23 June 1996
 # Whom:			axl@iafrica.com
 #
-# $Id: Makefile,v 1.21 1998/11/17 11:05:15 markm Exp $
+# $Id: Makefile,v 1.22 1998/11/28 05:38:56 asami Exp $
 #
 
 DISTNAME=	exim-2.053
@@ -40,6 +40,11 @@ do-configure:
 
 post-build:
 	${INSTALL_SCRIPT} ${FILESDIR}/exim.sh ${WRKSRC}/build-FreeBSD-i386
+
+pre-install:
+	if [ ! -f ${PREFIX}/info/dir ]; then \
+	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	fi
 
 post-install:
 	@${SETENV} ${SCRIPTS_ENV} ${PERL5} ${PKGDIR}/INSTALL \
