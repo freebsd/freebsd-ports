@@ -29,7 +29,7 @@ ask() {
 	question=$1
 	default=$2
 	if [ -z "${PACKAGE_BUILDING}" -a x${BATCH} = xno ]; then
-		/usr/bin/read -p "${question} [${default}]? " answer
+		read -p "${question} [${default}]? " answer
 	fi
 	if [ x${answer} = x ]; then
 		answer=${default}
