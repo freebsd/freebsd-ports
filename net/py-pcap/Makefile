@@ -16,7 +16,7 @@ DIST_SUBDIR=	python
 
 MAINTAINER=	perky@FreeBSD.org
 
-BUILD_DEPENDS=	swig:${PORTSDIR}/devel/SWIG
+BUILD_DEPENDS=	swig:${PORTSDIR}/devel/swig11
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
