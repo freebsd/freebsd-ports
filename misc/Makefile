@@ -88,6 +88,7 @@
     SUBDIR += ftree
     SUBDIR += gctpc
     SUBDIR += geekcode
+    SUBDIR += getopt
     SUBDIR += git
     SUBDIR += gkrellm-reminder
     SUBDIR += gkrellmaflag

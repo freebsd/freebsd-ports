@@ -1,0 +1,38 @@
+--- Makefile.orig	Thu Jan 23 23:52:29 2003
++++ Makefile	Thu Jun  5 16:17:44 2003
+@@ -1,7 +1,7 @@
+ .SUFFIXES:
+ 
+ DESTDIR=
+-prefix=/usr/local
++prefix=$(PREFIX)
+ bindir=$(prefix)/bin
+ mandir=$(prefix)/man
+ man1dir=$(mandir)/man1
+@@ -29,7 +29,7 @@
+ LANGUAGES = cs de es fr it ja nl pt_BR
+ MOFILES:=$(patsubst %,po/%.mo,$(LANGUAGES))
+ 
+-CPPFLAGS=-DLIBCGETOPT=$(LIBCGETOPT) -DWITH_GETTEXT=$(WITH_GETTEXT) -DLOCALEDIR=\"$(localedir)\" -DNOT_UTIL_LINUX
++CPPFLAGS+=-DLIBCGETOPT=$(LIBCGETOPT) -DWITH_GETTEXT=$(WITH_GETTEXT) -DLOCALEDIR=\"$(localedir)\" -DNOT_UTIL_LINUX
+ ifeq ($(LIBCGETOPT),0)
+ CPPFLAGS+=-I./gnu 
+ endif
+@@ -39,8 +39,6 @@
+          -Wwrite-strings -Wstrict-prototypes -Wmissing-prototypes \
+          -Wnested-externs -Winline
+ OPTIMIZE=-O3 -fno-strength-reduce
+-CFLAGS=$(WARNINGS) $(OPTIMIZE)
+-LDFLAGS=
+ 
+ sources=getopt.c
+ ifeq ($(LIBCGETOPT),0)
+@@ -71,7 +69,7 @@
+ 	                  getopt-test.bash getopt-test.tcsh \
+ 	           $(DESTDIR)$(getoptdir)
+ 
+-ifeq ($(WITH_GETTEXT),1)
++ifeq ($(WITHOUT_GETTEXT),0)
+ all_po: $(MOFILES)
+ install_po: all_po
+ 	$(INSTALL) -m 755 -d $(DESTDIR)$(localedir)
