@@ -18,6 +18,12 @@ WRKSRC=		${WRKDIR}/xswallow/xswallow
 
 PORTOBJFORMAT=	aout
 
+.include <bsd.port.pre.mk>
+
+.if ( ${OSVERSION} >= 500040 )
+IGNORE=		"a.out binaries cannot be built on 5.0"
+.endif
+
 #can't use ${INSTALL_PROGRAM} with aout binaries, do strip separately
 
 STRIP=		/usr/libexec/aout/strip
@@ -62,4 +68,4 @@ post-install:
 	@echo WWW: http://skynet.csn.ul.ie/~caolan/docs/XSwallow.html
 	@echo
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
