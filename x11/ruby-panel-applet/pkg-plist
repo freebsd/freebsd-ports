@@ -1,0 +1,7 @@
+%%RUBY_SITEARCHLIBDIR%%/panel_applet.so
+%%RUBY_SITELIBDIR%%/panel-applet.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/panel-applet/clock-applet.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/panel-applet
+%%PORTDOCS%%%%RUBY_DOCDIR%%/panel-applet/ChangeLog
+%%PORTDOCS%%%%RUBY_DOCDIR%%/panel-applet/README
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/panel-applet
