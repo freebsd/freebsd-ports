@@ -6,13 +6,10 @@
 #
 
 PORTNAME=	coq
-PORTVERSION=	8.0p1
+PORTVERSION=	8.0p2
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.inria.fr/INRIA/coq/V8.0pl1/
-DISTNAME=	coq-8.0pl1
-
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	patch-coq-8.0pl1-ocaml-3.08.1
+MASTER_SITES=	ftp://ftp.inria.fr/INRIA/coq/V8.0pl2/
+DISTNAME=	coq-8.0pl2
 
 MAINTAINER=	r.c.ladan@student.tue.nl
 COMMENT=	Theorem prover based on lambda-C
