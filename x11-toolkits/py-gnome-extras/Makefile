@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome
 PORTVERSION=	2.10.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-python-extras/${PORTVERSION:C/..$//}
@@ -18,9 +19,11 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of Python bindings for GNOME 2
 
+BUILD_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell2 \
 		gtop-2.0.2:${PORTSDIR}/devel/libgtop2 \
 		totem-plparser.0:${PORTSDIR}/multimedia/totem-gstreamer
+RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
 
 MOZILLA=	mozilla
 HEADERS_SUFX=
