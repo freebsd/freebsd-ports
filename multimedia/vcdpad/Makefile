@@ -8,7 +8,7 @@
 
 PORTNAME=	vcdpad
 PORTVERSION=	0.8
-CATEGORIES=	graphics
+CATEGORIES=	multimedia
 MASTER_SITES=	http://www.nocrew.org/software/vcdpad/
 
 MAINTAINER=	ijliao@FreeBSD.org

@@ -34,6 +34,11 @@
     SUBDIR += openquicktime
     SUBDIR += oqtencoder
     SUBDIR += oqtplayer
+    SUBDIR += tosvcd
+    SUBDIR += vcdgear
+    SUBDIR += vcdimager
+    SUBDIR += vcdpad
+    SUBDIR += vcdtools
     SUBDIR += win32-codecs
     SUBDIR += xmms
     SUBDIR += xmms-avi
