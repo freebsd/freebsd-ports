@@ -9,6 +9,7 @@
 
 PORTNAME=	tiff
 PORTVERSION=	3.5.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.onshore.com/pub/libtiff/ \
 		http://www.libtiff.org/
