@@ -16,20 +16,18 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Perl port of Java package XML-DBMS v1.0
 
-BROKEN=		"Does not compile"
-
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/XML/Parser/PerlSAX.pm:${PORTSDIR}/textproc/p5-libxml \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS=	${SITE_PERL}/XML/Parser/PerlSAX.pm:${PORTSDIR}/textproc/p5-libxml \
+		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
+		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
+		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PLIST_SUB=	EXAMPLESDIR="share/examples/${PORTNAME}"
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PERL_CONFIGURE=	yes
 
 post-extract:
 	@${FIND} ${WRKSRC} -type f | \
-		xargs ${PERL} -pi -e 's/\x0D(?=\x0A)//g'
+		${XARGS} ${PERL} -pi -e 's/\x0D(?=\x0A)//g'
 
 post-install:
 .ifndef(NOPORTDOCS)
