@@ -12,10 +12,11 @@ CATEGORIES=	java
 MASTER_SITES=	# http://java.sun.com/j2ee/sdk_1.3/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}-linux
 
-MAINTAINER=	java@freebsd.org
+MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java 2 SDK Enterprise Edition
 
-USE_JAVA=	1.3+
+USE_JAVA=	yes
+JAVA_VERSION=	1.3+
 
 NO_BUILD=	YES
 
