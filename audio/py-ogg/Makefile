@@ -7,7 +7,7 @@
 
 PORTNAME=	ogg
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://www.andrewchatham.com/pyogg/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +22,6 @@ USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
 do-configure:
-	@cd ${WRKSRC} && ${PYTHON_CMD} config_unix.py
+	@cd ${WRKSRC} && ${PYTHON_CMD} config_unix.py --prefix ${LOCALBASE}
 
 .include <bsd.port.mk>
