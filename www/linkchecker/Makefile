@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Check HTML documents for broken links
 
-USE_PYTHON=	2.3
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
 
 MAN1=	linkchecker.1
