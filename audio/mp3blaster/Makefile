@@ -26,6 +26,10 @@ MAN1=		mp3blaster.1 nmixer.1 splay.1
 CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
+OPTIONS=	LIRC "LIRC support" off \
+		SIDPLAY "Sidplayer support" on \
+		VORBIS "Ogg Vorbis support" on
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400010
@@ -48,15 +52,6 @@ CONFIGURE_ARGS+=	--without-oggvorbis
 .else
 LIB_DEPENDS+=	vorbisfile.4:${PORTSDIR}/audio/libvorbis
 .endif
-
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "MP3Blaster has the following tunable option(s):"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "	WITH_LIRC=yes		Turns on LIRC support"
-	@${ECHO_MSG} "	WITHOUT_SIDPLAY=yes	Turns off Sidplayer support"
-	@${ECHO_MSG} "	WITHOUT_VORBIS=yes	Turns off Ogg Vorbis support"
-	@${ECHO_MSG} ""
 
 post-extract:
 	@${FIND} ${WRKSRC} -name "getopt*" -delete
