@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	wxgtk
-PORTVERSION=	2.2.7
+PORTVERSION=	2.2.9
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://wesley.informatik.uni-freiburg.de/pub/linux/wxxt/source/ \
-		http://www.mirror.ac.uk/sites/wesley.informatik.uni-freiburg.de/pub/linux/wxxt/source/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	wxwindows
 DISTNAME=	wxGTK-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
@@ -18,6 +18,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_MESA=	yes
 USE_GMAKE=	yes
@@ -31,6 +32,7 @@ CONFIGURE_ARGS=	--with-libpng=sys \
 		--with-zlib=sys \
 		--with-opengl
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} \
+			  -I${WRKSRC}/include \
 			  -I${LOCALBASE}/include \
 			  -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib \

@@ -1,5 +1,5 @@
 bin/wx-config
-bin/wxgtk-config
+bin/wxgtk-2.2-config
 include/wx/accel.h
 include/wx/app.h
 include/wx/arrimpl.cpp
@@ -321,10 +321,10 @@ include/wx/wxprec.h
 include/wx/xpmhand.h
 include/wx/zipstrm.h
 include/wx/zstream.h
-lib/libwx_gtk.so
-lib/libwx_gtk.so.2
-lib/libwx_gtk_gl.so
-lib/libwx_gtk_gl.so.2
+lib/libwx_gtk-2.2.so
+lib/libwx_gtk-2.2.so.2
+lib/libwx_gtk-2.2_gl.so
+lib/libwx_gtk-2.2_gl.so.2
 share/locale/cs/LC_MESSAGES/wxstd.mo
 share/locale/da/LC_MESSAGES/wxstd.mo
 share/locale/de/LC_MESSAGES/wxstd.mo
@@ -334,6 +334,7 @@ share/locale/fr/LC_MESSAGES/wxstd.mo
 share/locale/it/LC_MESSAGES/wxstd.mo
 share/locale/nl/LC_MESSAGES/wxstd.mo
 share/locale/ru/LC_MESSAGES/wxstd.mo
+share/locale/sl/LC_MESSAGES/wxstd.mo
 share/locale/sv/LC_MESSAGES/wxstd.mo
 share/locale/zh/LC_MESSAGES/wxstd.mo
 share/wx/afm/Cour.afm

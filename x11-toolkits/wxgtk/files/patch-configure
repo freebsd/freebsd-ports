@@ -1,16 +1,16 @@
 
 $FreeBSD$
 
---- configure.orig	Mon Jul 23 14:48:10 2001
-+++ configure	Mon Jul 23 15:12:50 2001
-@@ -7452,14 +7452,14 @@
-     TOOLKIT=GTK
-     GUIDIST=GTK_DIST
+--- configure.orig	Mon Sep  9 14:00:36 2002
++++ configure	Mon Sep  9 14:20:43 2002
+@@ -7993,14 +7993,14 @@
+         TOOLKIT=GTK
+         GUIDIST=GTK_DIST
  
--        echo $ac_n "checking for gdk_im_open in -lgdk""... $ac_c" 1>&6
--echo "configure:7457: checking for gdk_im_open in -lgdk" >&5
-+        echo $ac_n "checking for gdk_im_open in -lgdk12""... $ac_c" 1>&6
-+echo "configure:7457: checking for gdk_im_open in -lgdk12" >&5
+-                echo $ac_n "checking for gdk_im_open in -lgdk""... $ac_c" 1>&6
+-echo "configure:7998: checking for gdk_im_open in -lgdk" >&5
++                echo $ac_n "checking for gdk_im_open in -lgdk12""... $ac_c" 1>&6
++echo "configure:7998: checking for gdk_im_open in -lgdk12" >&5
  ac_lib_var=`echo gdk'_'gdk_im_open | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
@@ -19,47 +19,27 @@ $FreeBSD$
 -LIBS="-lgdk  $LIBS"
 +LIBS="-lgdk12  $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 7465 "configure"
+ #line 8006 "configure"
  #include "confdefs.h"
-@@ -8707,16 +8707,12 @@
+@@ -9395,13 +9395,11 @@
  WX_LIBRARY_NAME_STATIC="lib${WX_LIBRARY}.a"
- WX_LIBRARY_NAME_STATIC_GL="lib${WX_LIBRARY}_gl.a"
+ WX_LIBRARY_NAME_STATIC_GL="lib${WX_LIBRARY_GL}.a"
  
--WX_LIBRARY_NAME_SHARED="lib${WX_LIBRARY}-${WX_RELEASE}.so.${WX_CURRENT}.${WX_REVISION}.${WX_AGE}"
--WX_LIBRARY_NAME_SHARED_GL="lib${WX_LIBRARY}_gl-${WX_RELEASE}.so.${WX_CURRENT}.${WX_REVISION}.${WX_AGE}"
--
--WX_LIBRARY_LINK1="lib${WX_LIBRARY}-${WX_RELEASE}.so.${WX_CURRENT}"
--WX_LIBRARY_LINK2="lib${WX_LIBRARY}-${WX_RELEASE}.so"
--WX_LIBRARY_LINK3="lib${WX_LIBRARY}.so"
--WX_LIBRARY_LINK1_GL="lib${WX_LIBRARY}_gl-${WX_RELEASE}.so.${WX_CURRENT}"
--WX_LIBRARY_LINK2_GL="lib${WX_LIBRARY}_gl-${WX_RELEASE}.so"
--WX_LIBRARY_LINK3_GL="lib${WX_LIBRARY}_gl.so"
+-WX_LIBRARY_NAME_SHARED="lib${WX_LIBRARY}.${SO_SUFFIX}.${WX_CURRENT}.${WX_REVISION}.${WX_AGE}"
+-WX_LIBRARY_NAME_SHARED_GL="lib${WX_LIBRARY_GL}.${SO_SUFFIX}.${WX_CURRENT}.${WX_REVISION}.${WX_AGE}"
 +WX_LIBRARY_NAME_SHARED="lib${WX_LIBRARY}.so.2"
 +WX_LIBRARY_NAME_SHARED_GL="lib${WX_LIBRARY}_gl.so.2"
  
+-WX_LIBRARY_LINK1="lib${WX_LIBRARY}.${SO_SUFFIX}.${WX_CURRENT}"
+-WX_LIBRARY_LINK2="lib${WX_LIBRARY}.${SO_SUFFIX}"
+-WX_LIBRARY_LINK1_GL="lib${WX_LIBRARY_GL}.${SO_SUFFIX}.${WX_CURRENT}"
+-WX_LIBRARY_LINK2_GL="lib${WX_LIBRARY_GL}.${SO_SUFFIX}"
 +WX_LIBRARY_LINK1="lib${WX_LIBRARY}.so"
 +WX_LIBRARY_LINK1_GL="lib${WX_LIBRARY}_gl.so"
-+       
- SHARED_LD=
- PIC_FLAG=
- WX_ALL=
-@@ -8805,8 +8801,13 @@
-       *-*-freebsd* | *-*-openbsd* | *-*-netbsd*)
-         SHARED_LD="${CC} -shared -o"
-         PIC_FLAG="-fPIC"
--        WX_ALL_INSTALLED="CREATE_INSTALLED_LINKS"
--        WX_ALL="CREATE_LINKS"
-+        if test "$wxUSE_OPENGL" = "yes"; then
-+            WX_ALL_INSTALLED="CREATE_INSTALLED_LINKS CREATE_INSTALLED_LINKS_GL"
-+            WX_ALL="CREATE_LINKS CREATE_LINKS_GL"
-+        else
-+            WX_ALL_INSTALLED="CREATE_INSTALLED_LINKS"
-+            WX_ALL="CREATE_LINKS"
-+        fi
-       ;;
-       *-*-osf* )
-         SHARED_LD="${CXX} -shared -o"
-@@ -12054,24 +12055,6 @@
+ 
+ 
+ 
+@@ -12796,24 +12802,6 @@
  fi
  
  
@@ -81,24 +61,20 @@ $FreeBSD$
 -fi
 -
 -
- ZLIB_INCLUDE=
- if test "$wxUSE_ZLIB" = "yes" -o "$wxUSE_ZLIB" = "sys" ; then
+ if test "$wxUSE_GUI" = "yes"; then
    cat >> confdefs.h <<\EOF
-@@ -14754,8 +14737,6 @@
- s%@WX_LIBRARY@%$WX_LIBRARY%g
+ #define wxUSE_GUI 1
+@@ -14995,13 +14983,11 @@
+ s%@WX_LIBRARY_NAME_SHARED@%$WX_LIBRARY_NAME_SHARED%g
  s%@WX_TARGET_LIBRARY@%$WX_TARGET_LIBRARY%g
  s%@WX_LIBRARY_LINK1@%$WX_LIBRARY_LINK1%g
 -s%@WX_LIBRARY_LINK2@%$WX_LIBRARY_LINK2%g
--s%@WX_LIBRARY_LINK3@%$WX_LIBRARY_LINK3%g
  s%@PROGRAM_EXT@%$PROGRAM_EXT%g
- s%@WX_LIBRARY_NAME_GL@%$WX_LIBRARY_NAME_GL%g
  s%@WX_LIBRARY_NAME_STATIC_GL@%$WX_LIBRARY_NAME_STATIC_GL%g
-@@ -14763,8 +14744,6 @@
- s%@WX_LIBRARY_GL@%$WX_LIBRARY_GL%g
+ s%@WX_LIBRARY_NAME_SHARED_GL@%$WX_LIBRARY_NAME_SHARED_GL%g
  s%@WX_TARGET_LIBRARY_GL@%$WX_TARGET_LIBRARY_GL%g
  s%@WX_LIBRARY_LINK1_GL@%$WX_LIBRARY_LINK1_GL%g
 -s%@WX_LIBRARY_LINK2_GL@%$WX_LIBRARY_LINK2_GL%g
--s%@WX_LIBRARY_LINK3_GL@%$WX_LIBRARY_LINK3_GL%g
  s%@WX_ALL@%$WX_ALL%g
  s%@WX_ALL_INSTALLED@%$WX_ALL_INSTALLED%g
  s%@SHARED_LD@%$SHARED_LD%g
