@@ -1,0 +1,71 @@
+--- pthreadcc/Makefile.orig	Fri Dec 31 06:52:25 2004
++++ pthreadcc/Makefile	Thu Mar 10 12:40:04 2005
+@@ -50,7 +50,7 @@
+ LIB_DIR     = /usr/lib
+ HEAD_DIR    = /usr/include
+ LIB_HEADERS = pthreadcc.h
+-PLATFORM    = macosx_jaguar
++PLATFORM    = freebsd
+ PRE_CFLAGS  = -DPLATFORM_$(PLATFORM)
+ #OPENWRT		= /home/luis/devel/Kai/buildroot/build_mipsel/staging_dir
+ 
+@@ -81,7 +81,7 @@
+ LD			= $(OPENWRT)/bin/mipsel-linux-ld
+ else
+ CC         = gcc
+-CFLAGS     = -I$/usr/include -Wall -O2 -fPIC
++CFLAGS     = -I$/usr/include -Wall -O2
+ LD         = gcc
+ LDFLAGS    = -lpthread -shared -Wl,-soname,$(LIB_SONAME)
+ endif
+@@ -97,7 +97,7 @@
+ ################################################################################
+ ifeq ($(PLATFORM), solaris)
+ CC         = cc
+-CFLAGS     = -I$/usr/include -XO2 -KPIC
++CFLAGS     = -I$/usr/include -XO2
+ LIB_NAME   = libpthreadcc.so
+ LIB_SONAME = $(LIB_NAME).$(MAJ_VER)
+ LIB_TARGET = $(LIB_SONAME).$(MIN_VER)
+@@ -112,7 +112,7 @@
+ ################################################################################
+ ifeq ($(PLATFORM), freebsd)
+ CC         = gcc
+-CFLAGS     = -I$/usr/include -Wall -Wstrict-prototypes -O2 -fPIC
++CFLAGS     = $(SYSTEM_CFLAGS)
+ LIB_NAME   = libpthreadcc.so
+ LIB_SONAME = $(LIB_NAME).$(MAJ_VER)
+ LIB_TARGET = $(LIB_SONAME).$(MIN_VER)
+@@ -127,7 +127,7 @@
+ ################################################################################
+ ifeq ($(PLATFORM), macosx_1)
+ CC         = g++
+-CFLAGS     = -I$/usr/include -Wall -Wstrict-prototypes -O2 -fPIC
++CFLAGS     = -I$/usr/include -Wall -Wstrict-prototypes -O2
+ LIB_NAME   = libpthreadcc.dylib
+ LIB_SONAME = libpthreadcc.$(MAJ_VER).dylib
+ LIB_TARGET = libpthreadcc.$(MAJ_VER).$(MIN_VER).dylib
+@@ -142,7 +142,7 @@
+ ################################################################################
+ ifeq ($(PLATFORM), macosx_jaguar)
+ CC         = g++
+-CFLAGS     = -I$/usr/include -Wall -Wstrict-prototypes -O2 -fPIC
++CFLAGS     = -I$/usr/include -Wall -Wstrict-prototypes -O2
+ LIB_NAME   = libpthreadcc.dylib
+ LIB_SONAME = libpthreadcc.$(MAJ_VER).dylib
+ LIB_TARGET = libpthreadcc.$(MAJ_VER).$(MIN_VER).dylib
+@@ -180,10 +180,12 @@
+ # make all and make library perform the same task of resolving to making the   #
+ # target libary file.                                                          #
+ ################################################################################
+-all:				library
+-	@echo Run \'make install\' to use this library with other projects...
++all:				static
++
++static:				pre-compile-info objects
+ 
+ library:			pre-compile-info $(LIB_TARGET)
++	@echo Run \'make install\' to use this library with other projects...
+ 
+ ################################################################################
+ # make pre-compile-info echos pre-compilation information to the screen.       #
