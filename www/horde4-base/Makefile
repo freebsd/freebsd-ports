@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	horde
-PORTVERSION=	3.0
+PORTVERSION=	3.0.1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
 		ftp://ftp.planetmirror.com/pub/horde/horde/		\
