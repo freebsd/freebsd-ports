@@ -51,7 +51,7 @@ CONFIGURE_ARGS=	--with-slang --enable-locales-fix \
 .if defined(WITH_GETTEXT)
 CONFIGURE_ARGS+=	--with-included-gettext
 .endif
-MAN1=		mutt.1 muttbug.1 mutt_dotlock.1
+MAN1=		flea.1 mutt.1 muttbug.1 mutt_dotlock.1
 MAN5=		muttrc.5 mbox.5
 
 DIFFDIR=	${WRKDIR}/${DISTNAME}-ja${JP_VERSION}-beta${JP_SUBVERSION}
