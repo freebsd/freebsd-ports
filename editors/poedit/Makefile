@@ -8,16 +8,16 @@
 
 PORTNAME=	poedit
 PORTVERSION=	1.2.3
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	gettext catalogs (.po files) editor
+COMMENT=	Gettext catalogs (.po files) editor
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3 \
-		intl.5:${PORTSDIR}/devel/gettext \
+LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 		wx_gtk2-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk2
 
 USE_X_PREFIX=	yes
@@ -28,14 +28,30 @@ CONFIGURE_ARGS=	--with-wx-config=${X11BASE}/bin/wxgtk2-2.4-config
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
-CPPFLAGS=	-I${LOCALBASE}/include/db3 -I${LOCALBASE}/include \
-		${PTHREAD_CFLAGS}
+CPPFLAGS=	-I${LOCALBASE}/include/db${USE_BDB_VER} \
+		-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 MAN1=		poedit.1
 
+.if defined(WITH_BDB_VER)
+USE_BDB_VER=	${WITH_BDB_VER}
+.else
+USE_BDB_VER=	3
+.endif
+
+.if ${USE_BDB_VER} == 41
+LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
+.elif ${USE_BDB_VER} == 4
+LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
+.elif ${USE_BDB_VER} == 3
+LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
+.else
+BROKEN=		"WITH_BDB_VER must be 3, 4 or 41"
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} -e 's|db-3.1;|db-3.1 db3;|g ; \
+	@${REINPLACE_CMD} -e 's|db-3.1;|db-3.1 db${USE_BDB_VER};|g ; \
 		 s|-O3||g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
