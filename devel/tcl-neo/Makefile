@@ -7,7 +7,7 @@
 
 PORTNAME=	neotcl
 PORTVERSION=	8.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel tcl83
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=nws
@@ -28,20 +28,17 @@ WRKSRC=		${WRKDIR}/${SUBDIR}/generic
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - ${SUBDIR}/generic ${SUBDIR}/neolibs
 
 MAKEFILE=	${FILESDIR}/Makefile.bsd
-MAKE_ENV+=	NEO_LIBRARY=${NEO_LIBRARY}
+TCL_VER?=	8.4
+MAKE_ENV+=	NEO_LIBRARY=${NEO_LIBRARY} TCL_VER=${TCL_VER}
 
 DDIR=		${PREFIX}/lib/tcl${TCLV}/Trf
 
 post-build:
-	cd ${WRKSRC}/../neolibs && ${ECHO_CMD} 'auto_mkindex . */*.tcl' | tclsh8.3
+	cd ${WRKSRC}/../neolibs && ${ECHO_CMD} 'auto_mkindex . */*.tcl' | tclsh${TCL_VER}
 
 NEO_LIBRARY=	${PREFIX}/lib/neo8.2
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Broken pkg-plist"
-.endif
 
 post-install:
 	${MKDIR} ${NEO_LIBRARY}

@@ -1,7 +1,9 @@
 PREFIX?=	/usr/local
 
 NEO_LIBRARY?=	${PREFIX}/lib/neo8.2
-CFLAGS+=	-I${PREFIX}/include/tcl8.3 -I${PREFIX}/include
+TCL_VER?=	8.4
+TCL_DVER=	${TCL_VER:S/.//}
+CFLAGS+=	-I${PREFIX}/include/tcl${TCL_VER} -I${PREFIX}/include
 CFLAGS+=	-DNEO_LIBRARY=\"${NEO_LIBRARY}\"
 CFLAGS+=	-DHAVE_TERMIOS_H -DHAVE_STDLIB_H -DHAVE_SYS_TIME_H -DHAVE_UNISTD_H
 CFLAGS+=	-DNEO_DB # -DDB_185_COMPAT -- seems broken :-(
@@ -16,7 +18,7 @@ SRCS=		neoXcrypt.c neoPkgInit.c neoXwww.c neoXgeneral.c \
 
 SHLIB_NAME=	libneo82.so.1
 
-LDADD+=		-lcrypt -L${PREFIX}/lib -ltcl83 -lm -lmd -ldb2 # -ldap -llber
+LDADD+=		-lcrypt -L${PREFIX}/lib -ltcl${TCL_DVER} -lm -lmd -ldb2 # -ldap -llber
 
 SHLIBDIR=	${PREFIX}/lib
 
