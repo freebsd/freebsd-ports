@@ -42,21 +42,8 @@ STRIPFILES=	bin/i386/green_threads/jre \
 .if ${PORTOBJFORMAT} == "aout"
 DISTFILES=	jre${JRE_VERSION}i_AOUT.V1999-11-9.tar.gz
 .else
+LIB_DEPENDS+=	c.3:${PORTSDIR}/misc/compat3x
 DISTFILES=	jre${JRE_VERSION}i_ELF.V1999-11-9.tar.gz
-.endif
-
-pre-extract:
-.if ${PORTOBJFORMAT} == "elf"
-	@if ! (${LDCONFIG} -r | ${GREP} -qwF -e "-lc.3"); then \
-		${ECHO_MSG} ; \
-		${ECHO_MSG} " WARNING! It appears that you don't have installed libc.so.3 shared library," ; \
-		${ECHO_MSG} "          which is required to run JRE. Usually you can install it as part of" ; \
-		${ECHO_MSG} "          the \`compat3x' package. If you have FreeBSD source code installed" ; \
-		${ECHO_MSG} "          then you can use the following command to install it:" ; \
-		${ECHO_MSG} ; \
-		${ECHO_MSG} "          # cd /usr/src/lib/compat/compat3x.${ARCH} ; make install" ; \
-		${ECHO_MSG} ; \
-	fi
 .endif
 
 do-build:
