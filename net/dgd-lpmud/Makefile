@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/lpc/ \
 DISTFILES=	2.4.5-for-1.1.tgz
 
 MAINTAINER=	glewis@FreeBSD.org
+COMMENT=	LPmud mudlib, for use with DGD
 
 NO_PACKAGE=	"depends on DGD, which is NO_CDROM"
 RESTRICTED=	"no monetary gain, tarball OK for CDROM"
