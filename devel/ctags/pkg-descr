@@ -6,6 +6,8 @@ Alternatively, it can generate a cross reference file which lists,
 in human-readable form, information about the various objects found
 in a set of source code files.
 
-Supported languages include: C, C++, Java, Eiffel, FORTRAN.
+Supported languages include: Assembler, AWK, ASP, BETA, Bourne/Korn/Zsh 
+Shell, C, C++, COBOL, Eiffel, Fortran, Java, Lisp, Make, Pascal, Perl, 
+PHP, Python, REXX, Ruby, S-Lang, Scheme, Tcl, and Vim.
 
-WWW:    http://fly.hiwaay.net/~darren/ctags/
+WWW:    http://ctags.sourceforge.net/

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ctags
-PORTVERSION=	4.0.3
+PORTVERSION=	5.0
 CATEGORIES=	devel
 MASTER_SITES=	http://ctags.sourceforge.net/archives/ \
 		${MASTER_SITE_SUNSITE} \
