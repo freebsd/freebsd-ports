@@ -20,7 +20,9 @@ USE_REINPLACE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's|@@PREFIX@@|${PREFIX}|g' ${WRKSRC}/server.c
 
-post-install:
-	${CP} ${WRKSRC}/xbms.conf ${PREFIX}/etc/xbms.conf.sample
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/xbms ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/xbms.conf ${PREFIX}/etc/xbms.conf.sample
+	${INSTALL_DATA} ${FILESDIR}/xbms.sh.sample ${PREFIX}/etc/rc.d/xbms.sh.sample
 
 .include <bsd.port.mk>
