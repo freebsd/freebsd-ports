@@ -3,6 +3,7 @@ bin/plplot-config
 bin/plpr
 bin/plrender
 bin/pltek
+bin/pstex2eps
 include/plplot/drivers.h
 include/plplot/pdf.h
 include/plplot/plConfig.h

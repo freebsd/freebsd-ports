@@ -1,5 +1,5 @@
---- cf/inst_lib.in.orig	Sat Feb 17 07:35:23 2001
-+++ cf/inst_lib.in	Sat Apr 28 07:49:40 2001
+--- cf/inst_lib.in.orig	Sat Apr 21 10:49:12 2001
++++ cf/inst_lib.in	Fri Aug  3 07:26:36 2001
 @@ -16,30 +16,33 @@
  	  if test ! -d $(INFO_DIR); then mkdir -p $(INFO_DIR); fi
  
@@ -29,8 +29,8 @@
  	  fi
  
  install_scriptfiles:
--	@-cd $(top_srcdir)/scripts; $(CP) pl* $(BIN_DIR)
-+	@-cd $(top_srcdir)/scripts; ${BSD_INSTALL_SCRIPT} pl* $(BIN_DIR)
+-	@-cd $(top_srcdir)/scripts; $(CP) pl* pstex2eps $(BIN_DIR)
++	@-cd $(top_srcdir)/scripts; ${BSD_INSTALL_SCRIPT} pl* pstex2eps $(BIN_DIR)
  
  install_includes:
 -	@-$(CP) plConfig.h plDevs.h $(INCLUDE_DIR); \
