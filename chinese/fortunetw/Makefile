@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	fortunetw
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	chinese
-MASTER_SITES=	http://freebsd.sinica.edu.tw/~statue/
+MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/fortunetw/
 DISTNAME=	zh-fortunetw-${PORTVERSION}
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
@@ -19,6 +19,7 @@ STRCMD=		/usr/games/strfile
 
 do-install:
 	@${MKDIR} ${PREFIX}/share/games/fortune
+	@${INSTALL_DATA} ${WRKSRC}/liuyong ${PREFIX}/share/games/fortune
 	@${INSTALL_DATA} ${WRKSRC}/tangshi ${PREFIX}/share/games/fortune
 	@${INSTALL_DATA} ${WRKSRC}/yijing ${PREFIX}/share/games/fortune
 
@@ -29,10 +30,13 @@ pre-install:
 .endif
 
 post-install:
+	@${STRCMD} ${PREFIX}/share/games/fortune/liuyong
 	@${STRCMD} ${PREFIX}/share/games/fortune/tangshi
 	@${STRCMD} ${PREFIX}/share/games/fortune/yijing
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Usage:"
+	@${ECHO_MSG} "/usr/games/fortune ${PREFIX}/share/games/fortune/liuyong"
+	@${ECHO_MSG} "or"
 	@${ECHO_MSG} "/usr/games/fortune ${PREFIX}/share/games/fortune/tangshi"
 	@${ECHO_MSG} "or"
 	@${ECHO_MSG} "/usr/games/fortune ${PREFIX}/share/games/fortune/yijing"
