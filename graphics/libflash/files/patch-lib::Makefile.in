@@ -1,0 +1,12 @@
+--- lib/Makefile.in.orig	Fri Oct 15 13:34:57 2004
++++ lib/Makefile.in	Wed Nov 17 16:03:58 2004
+@@ -256,8 +256,7 @@
+ 
+ libflash_includedir = $(includedir)
+ libflash_la_LDFLAGS = \
+-	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)	\
+-	-release $(LT_RELEASE) 					\
++	-version-info $(LT_CURRENT)				\
+ 	-export-dynamic						\
+ 	$(LIBJPEG) $(LIBZ) $(LIBMAD)
+ 

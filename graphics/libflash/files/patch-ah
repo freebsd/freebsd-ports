@@ -1,5 +1,5 @@
---- cxform.cc.orig	Tue May  2 04:18:33 2000
-+++ cxform.cc	Thu Oct 12 14:44:03 2000
+--- lib/cxform.cc.orig	Tue May  2 04:18:33 2000
++++ lib/cxform.cc	Thu Oct 12 14:44:03 2000
 @@ -26,6 +26,10 @@
  static char *rcsid = "$Id";
  #endif
