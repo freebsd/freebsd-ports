@@ -94,6 +94,7 @@
     SUBDIR += koog
     SUBDIR += krio
     SUBDIR += lame
+    SUBDIR += liba52
     SUBDIR += libao
     SUBDIR += libaudiofile
     SUBDIR += libcdaudio
