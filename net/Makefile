@@ -196,6 +196,7 @@
     SUBDIR += naim
     SUBDIR += nam
     SUBDIR += nat
+    SUBDIR += nc
     SUBDIR += ncat
     SUBDIR += ncplib
     SUBDIR += nemesis
