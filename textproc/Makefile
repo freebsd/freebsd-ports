@@ -197,6 +197,7 @@
     SUBDIR += modlogan
     SUBDIR += ms-aspell
     SUBDIR += mt-aspell
+    SUBDIR += nb-aspell
     SUBDIR += nfbtrans
     SUBDIR += nicetext
     SUBDIR += nl-aspell
