@@ -31,6 +31,17 @@ test: build
 retest: build
 	@(cd ${WRKSRC}; make rerun)
 
+# The distribution comes with unwritable files; patch's magic RCS behavior
+# causes files to be checked out of RCS before being patched.  If an $Id$
+# string is in the patch, this behavior causes the string to change to
+# reflect the locker, meaning that the patch will probably fail.  Instead,
+# just chmod +w the files.
+PATCHEDFILES=	src/Makefile scripts/config-run scripts/getbg
+pre-patch:
+.for f in ${PATCHEDFILES}
+	@${CHMOD} +w ${WRKSRC}/${f}
+.endfor
+
 pre-install:
 	[ -d ${PREFIX}/lib/lmbench ] || ${MKDIR} ${PREFIX}/lib/lmbench
 
