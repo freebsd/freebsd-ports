@@ -77,6 +77,9 @@ post-install:
 	@${ECHO} "Add this lines to your pam.conf:"
 	@${CAT} ${FILESDIR}/uucp-pam.conf
 .endif
+.if exists(/usr/sbin/uuchk)
+	${MAKE} base-package
+.endif
 
 upgrade:
 	@${ECHO} "Copying old configuration files from /etc/uucp to ${PREFIX}/etc/uucp"
