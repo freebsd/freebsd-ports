@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	analog
-PORTVERSION=	4.11
+PORTVERSION=	4.16
 CATEGORIES=	www
 MASTER_SITES=	http://www.analog.cx/ \
 		http://brendanr.simplenet.com/analog/ \
