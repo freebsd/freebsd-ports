@@ -1,0 +1,42 @@
+--- Makefile.orig	Fri Aug 10 01:50:35 2001
++++ Makefile	Sat Aug 11 23:35:31 2001
+@@ -2,24 +2,23 @@
+ 
+ # (un-)installation prefix
+ # e.g. /usr/local/cxsc or local home directory
+-export PREFIX=/home/user/cxsc
+ 
+ #========= the following commands should work on most Unix systems ========
+ 
+-export CC=gcc#                  name of the C compiler
+-export CCOPTS=-Wall#            optional flags to give to the C compiler
++#export CC=gcc#                  name of the C compiler
++#export CCOPTS=-Wall#            optional flags to give to the C compiler
+ export CCINC=-I. -I../.. -I../rts# 
+                                 # additional include path
+-export CCFLAGS=$(CCINC) $(CCOPTS)#
++export CCFLAGS=${CFLAGS} $(CCINC) $(CCOPTS)#
+ 			        # extra flags to give to the C compiler
+ 
+-export CXX=g++#                 name of the C++ compiler
+-export CXXOPTS=-Wall -Winline#  optional flags to give to the C++ compiler
++#export CXX=g++#                 name of the C++ compiler
++#export CXXOPTS=-Wall -Winline#  optional flags to give to the C++ compiler
+                                 # -O3# at the moment without optimization 
+                                 # (takes too much RAM)
+ export CXXINC=-I. -I.. -Irts/ -Ifi_lib#
+                                 # additional include path
+-export CXXFLAGS=$(CXXINC) $(CXXOPTS)#
++export CXXFLAGS+=$(CXXINC) $(CXXOPTS)#
+                                 # extra flags to give to the C++ compiler
+  
+ export AR=ar#                   put object file into archive
+@@ -29,7 +28,7 @@
+ export RM=rm -f#                remove files (forced)
+ export RMDIR=rm -rf#            remove directory
+ 
+-export INSTALL=install -m 644#  copy files
++export INSTALL=${INSTALL_DATA}#  copy files
+ export STRIP=strip -g#          strip executables from debug symbols
+ export INSTDIR=install -d#      create installation directory
+ 

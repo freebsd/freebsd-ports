@@ -1,0 +1,18 @@
+Language eXtensions for Scientific Computation provide all features
+indispensable for modern numerical software development, such as :
+   - Operator concept (user-defined operators)
+   - Overloading concept
+   - Module concept
+   - Dynamic arrays
+   - Controlled rounding
+   - Predefined arithmetic data types real, (extended real), complex,
+     interval, complex interval, and corresponding vector and matrix types
+   - Predefined arithmetic operators of highest accuracy for the arithmetic
+     data types
+   - Predefined elementary functions of highest accuracy for the arithmetic
+     data types
+   - Data type dotprecision for the exact representation of dot products
+   - Library of mathematical problem-solving routines with automatic result
+     verification and high accuracy
+
+WWW: http://www.math.uni-wuppertal.de/~xsc/

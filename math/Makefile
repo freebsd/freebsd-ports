@@ -16,6 +16,7 @@
     SUBDIR += ccmath
     SUBDIR += cln
     SUBDIR += concorde
+    SUBDIR += cxsc
     SUBDIR += dcdflib
     SUBDIR += eispack
     SUBDIR += eval
