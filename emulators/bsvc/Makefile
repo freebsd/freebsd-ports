@@ -3,7 +3,7 @@
 # Date released:	03-Mar-1997
 # Whom			tenser
 #
-# $Id: Makefile,v 1.1.1.1 1997/03/05 08:30:54 tg Exp $
+# $Id: Makefile,v 1.2 1997/03/06 11:39:52 asami Exp $
 #
 
 DISTNAME=	bsvc-2.0
@@ -44,6 +44,6 @@ pre-patch:
 	}' < ${WRKSRC}/Makefile.ULTRIX > ${WRKSRC}/Makefile
 
 pre-clean:
-	${RM} ${PATCHDIR}/patch-aa
+	${RM} -f ${PATCHDIR}/patch-aa
 
 .include <bsd.port.mk>
