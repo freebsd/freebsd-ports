@@ -1,0 +1,11 @@
+--- components/html-editor/Makefile.in.orig	Wed May  7 00:13:34 2003
++++ components/html-editor/Makefile.in	Wed May  7 00:14:21 2003
+@@ -307,7 +307,7 @@
+ 
+ 
+ libgnome_gtkhtml_editor_3_0_la_LDFLAGS = \
+-	-avoid-version -no-undefined
++	-avoid-version -module -no-undefined
+ 
+ 
+ libgnome_gtkhtml_editor_3_0_la_LIBADD = \
