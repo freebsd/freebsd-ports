@@ -25,6 +25,7 @@
  */
 #include "avformat.h"
 #include <machine/ioctl_meteor.h>
+#include <machine/ioctl_bt848.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include <sys/ioctl.h>
@@ -44,11 +45,18 @@ typedef struct {
 
 const char *video_device = "/dev/bktr0";
 
-#define GRABBER_SETTLE_TIME 3
 #define PAL 1
+#define PALBDGHI 1
 #define NTSC 2
+#define NTSCM 2
+#define SECAM 3
+#define PALN 4
+#define PALM 5
+#define NTSCJ 6
+
 /* PAL is 768 x 576. NTSC is 640 x 480 */
 #define PAL_HEIGHT 576
+#define SECAM_HEIGHT 576
 #define NTSC_HEIGHT 480
 
 #ifndef VIDEO_FORMAT
@@ -70,7 +78,7 @@ static void catchsignal(int signal)
 static int bktr_init(AVFormatContext *s1,  AVFormatParameters *ap)
 {
 	VideoData *s = s1->priv_data;
-	int width, height;
+	int width, height, h_max;
 	int video_fd;
 	int format = VIDEO_FORMAT;
 	struct meteor_geomet geo;
@@ -87,12 +95,12 @@ static int bktr_init(AVFormatContext *s1,  AVFormatParameters *ap)
 	height = s->height;
 	s->last_frame_time = 0;
 
-	s->tuner_fd = open ("/dev/tuner0", O_RDWR);
+	s->tuner_fd = open ("/dev/tuner0", O_RDONLY);
 	if (s->tuner_fd < 0) {
 		perror("Warning: Tuner not opened continuing");
 	}
 
-	video_fd = open(video_device, O_RDWR);
+	video_fd = open(video_device, O_RDONLY);
 	if (video_fd < 0) {
 		perror(video_device);
 		return -EIO;
@@ -103,24 +111,26 @@ static int bktr_init(AVFormatContext *s1,  AVFormatParameters *ap)
 	geo.frames = 1;
 	geo.oformat = METEOR_GEO_YUV_422 | METEOR_GEO_YUV_12;
 
-	if ((format == PAL) && (height <= (PAL_HEIGHT/2)))
+	switch (format) {
+	case PAL:   h_max = PAL_HEIGHT;   c = BT848_IFORM_F_PALBDGHI; break;
+	case PALN:  h_max = PAL_HEIGHT;   c = BT848_IFORM_F_PALN;     break;
+	case PALM:  h_max = PAL_HEIGHT;   c = BT848_IFORM_F_PALM;     break;
+	case SECAM: h_max = SECAM_HEIGHT; c = BT848_IFORM_F_SECAM;    break;
+	case NTSC:  h_max = NTSC_HEIGHT;  c = BT848_IFORM_F_NTSCM;    break;
+	case NTSCJ: h_max = NTSC_HEIGHT;  c = BT848_IFORM_F_NTSCJ;    break;
+	default:    h_max = PAL_HEIGHT;   c = BT848_IFORM_F_PALBDGHI; break;
+	}
+	if (height <= h_max/2) {
 		geo.oformat |= METEOR_GEO_EVEN_ONLY;
-	if ((format == NTSC) && (height <= (NTSC_HEIGHT/2)))
-		geo.oformat |= METEOR_GEO_EVEN_ONLY;
+	}
 
 	if (ioctl(video_fd, METEORSETGEO, &geo) < 0) {
 		perror ("METEORSETGEO");
 		return -EIO;
 	}
 
-	switch (format) {
-		case PAL:   c = METEOR_FMT_PAL; break;
-		case NTSC:  c = METEOR_FMT_NTSC; break;
-		default:    c = METEOR_FMT_PAL; break;
-	}
-
-	if (ioctl(video_fd, METEORSFMT, &c) < 0) {
-		perror ("METEORSFMT");
+	if (ioctl(video_fd, BT848SFMT, &c) < 0) {
+		perror ("BT848SFMT");
 		return -EIO;
 	}
 
@@ -147,7 +157,6 @@ static int grab_read_packet(AVFormatContext *s1, AVPacket *pkt)
 {
 	VideoData *s = s1->priv_data;
 	int size, halfsize;
-	sigset_t msig;
 	UINT64 curtime;
 
 	size = s->width * s->height;
@@ -163,19 +172,11 @@ static int grab_read_packet(AVFormatContext *s1, AVPacket *pkt)
 				printf ("\nSLEPT NO signals - %d microseconds late\n",
 				        av_gettime() - s->last_frame_time - s->per_frame);
 		}
-	} else if ((s->last_frame_time + s->per_frame*5 < curtime)) {
-		bzero (pkt->data, size + halfsize);
-		printf ("\nBlank %d signals - %d microseconds\n",
-		        nsignals, curtime - s->last_frame_time - s->per_frame);
-		s->last_frame_time += s->per_frame;
-		return size + halfsize;
 	}
 	nsignals = 0;
 
-	s->last_frame_time = s->last_frame_time
-		? s->last_frame_time + s->per_frame
-		: av_gettime();
-
+	s->last_frame_time = curtime;
+	pkt->pts = curtime & ((1LL << 48) - 1);
 	memcpy (pkt->data, video_buf, size + halfsize);
 	return size + halfsize;
 }
@@ -209,6 +210,8 @@ static int grab_read_header (AVFormatContext *s1,  AVFormatParameters *ap)
 	st->codec.width = width;
 	st->codec.height = height;
 	st->codec.frame_rate = frame_rate;
+
+	av_set_pts_info(s1, 48, 1, 1000000); /* 48 bits pts in us */
 
 	return bktr_init(s1, ap);
 }
