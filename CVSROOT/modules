@@ -7258,6 +7258,7 @@ svr4_base	ports/emulators/svr4_base
 swarm		ports/devel/swarm
 swatch		ports/security/swatch
 sweep		ports/audio/sweep
+swfdec		ports/graphics/swfdec
 swftools	ports/graphics/swftools
 swhplugins	ports/audio/swhplugins
 swi-pl		ports/lang/swi-pl
