@@ -1,0 +1,52 @@
+!Patch configure directly to enable testing for the
+!--enable-follow-x-forwarding-for configuration option
+!instead of running configure.in through autoconf as in the
+!original follow-XFF patchset from devel.squid-cache.org.
+!Beware that all line number informations in configure.log greater
+!than 2972 are offset by -29 (correcting all line numbers would have
+!bloated the patch by 92kB!)
+--- configure.orig	Tue Mar  2 10:18:14 2004
++++ configure	Tue Mar  2 10:18:56 2004
+@@ -222,6 +222,12 @@
+                           variance within an accelerator setup.
+                           Typically used together with other code
+                           that adds custom HTTP headers to the requests."
++ac_help="$ac_help
++  --enable-follow-x-forwarded-for
++                          Enable support for following the X-Forwarded-For
++                          HTTP header to try to find the IP address of the
++                          original or indirect client when a request has
++                          been forwarded through other proxies."
+ 
+ # Initialize some variables set by options.
+ # The variables have the same names as the options, with
+@@ -2966,6 +2972,29 @@
+ fi
+ 
+ 
++follow_xff=1
++# Check whether --enable-follow-x-forwarded-for or --disable-follow-x-forwarded-for was given.
++if test "${enable_follow_x_forwarded_for+set}" = set; then
++  enableval="$enable_follow_x_forwarded_for"
++   if test "$enableval" = "yes" ; then
++    echo "follow X-Forwarded-For enabled"
++    follow_xff=1
++  fi
++
++fi
++
++if test $follow_xff = 1; then
++    cat >> confdefs.h <<\EOF
++#define FOLLOW_X_FORWARDED_FOR 1
++EOF
++
++else
++    cat >> confdefs.h <<\EOF
++#define FOLLOW_X_FORWARDED_FOR 0
++EOF
++
++fi
++
+ # Force some compilers to use ANSI features
+ #
+ case "$host" in

@@ -8,15 +8,13 @@
 # KEYWORD: FreeBSD
 # 
 # Note:
-# If you are running an rcNG-System (i.e. FreeBSD 5 and later or after
-# having installed the rc_subr-port on an earlier system) you must set
+# If you are running an rcNG-System (i.e. FreeBSD 5 and later) you need to set
 # "squid_enable=YES" in either /etc/rc.conf, /etc/rc.conf.local or
 # /etc/rc.conf.d/squid to make this script actually do something. There
 # you can also set squid_chdir, squid_user, and squid_flags.
 #
 # Please see squid(8), rc.conf(5) and rc(8) for further details.
 
-unset rcNG
 name="squid"
 command=%%PREFIX%%/sbin/squid
 extra_commands=reload
@@ -28,26 +26,22 @@ stop_cmd="${command} -k shutdown"
 default_config=%%PREFIX%%/etc/squid/squid.conf
 
 if [ -f /etc/rc.subr ]; then
-	. /etc/rc.subr && rcNG=yes
-else
-	if [ -f %%PREFIX%%/etc/rc.subr ]; then
-		. %%PREFIX%%/etc/rc.subr && rcNG=yes
-	fi
-fi
-
-if [ "${rcNG}" ]; then
+	# make use of rcNG features:
+	. /etc/rc.subr
 	rcvar=`set_rcvar`
 	load_rc_config ${name}
-	# check that squid's default configuration is present when
-	# squid_flags is not set. We assume that you specify at
-	# least the path to your non-default configuration with
-	# '-f /path/to/config.file' in squid_flags if you delete this file.
+	# squid(8) will not start if ${default_config} is not present so try
+	# to catch that beforehand via ${required_files} rather than make
+	# squid(8) crash.
+	# If you remove the default configuration file make sure to add
+	# '-f /path/to/your/squid.conf' to squid_flags
 	if [ -z "${squid_flags}" ]; then
 		required_files=${default_config}
 	fi
 	required_dirs=${squid_chdir}
 	run_rc_command "$1"
 else
+	# implement the startup using the "old style" for non-rcNG-systems:
 	case $1 in
 	start)
 		if [ -x "${command}" -a \
