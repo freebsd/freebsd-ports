@@ -1225,3 +1225,4 @@ audio/p5-dapple|audio/p5-Net-DAAP-Client|2004-08-09|Module renamed
 audio/p5-Net-DAAP-Client-Auth||2004-08-09|Obsoleted
 x11-servers/XFree86-4-Server-snap|x11-servers/XFree86-4-Server|2004-08-09|Obsoleted by XFree86-4-Server update
 net/ntp-devel||2004-08-10|Cleanup, NTP development branch has been dormant for a long while.
+shells/bash3|shells/bash|2004-08-11|move latest stable version to unnumbered directory

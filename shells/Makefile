@@ -4,10 +4,10 @@
     COMMENT = Shells
 
     SUBDIR += 44bsd-csh
+    SUBDIR += bash
     SUBDIR += bash-completion
     SUBDIR += bash1
     SUBDIR += bash2
-    SUBDIR += bash3
     SUBDIR += es
     SUBDIR += esh
     SUBDIR += fd
