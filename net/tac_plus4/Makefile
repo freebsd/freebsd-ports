@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	tac_plus
-PORTVERSION=	F4.0.3
+PORTVERSION=	F4.0.4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp-eng.cisco.com/pub/tacacs/
-DISTNAME=	tac_plus.F4.0.3.alpha
+DISTNAME=	tac_plus.F4.0.4.alpha
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	tasic@lucky.net
+MAINTAINER=	andreas@FreeBSD.org
 
 ALL_TARGET=	tac_plus
 MAN1=		tac_plus.1
