@@ -6,6 +6,6 @@ integrity checking), om_mysql and om_pgsql (modules that sends output to a
 MySQL and PostgreSQL database, respectively) and om_regex (a module that allows
 output redirection using regular expressions).
 
-WWW: http://www.core-sdi.com/download/download1.html
+WWW: http://www.corest.com/products/corewisdom/CW01.php
 
 - Anders Nordby <anders@fix.no>

@@ -1,14 +1,14 @@
---- src/modules/im_tcp.c.orig	Thu Jun 14 07:30:35 2001
-+++ src/modules/im_tcp.c	Sun Jul  1 03:34:58 2001
+--- src/modules/im_tcp.c.orig	Sat Jan  4 15:42:05 2003
++++ src/modules/im_tcp.c	Sat Jan  4 15:42:41 2003
 @@ -61,6 +61,7 @@
  #include <sys/types.h>
  #include <sys/socket.h>
  #include <sys/uio.h>
 +#include <sys/param.h>
+ #include <ctype.h>
  #include <stdlib.h>
  #include <unistd.h>
- #include <errno.h>
-@@ -71,11 +72,6 @@
+@@ -72,11 +73,6 @@
  
  #include "../modules.h"
  #include "../syslogd.h"

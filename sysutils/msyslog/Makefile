@@ -7,15 +7,15 @@
 
 PORTNAME=	msyslog
 PORTVERSION=	1.08f
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://community.corest.com/pub/msyslog/ \
+MASTER_SITES=	http://www.corest.com/download/msyslog/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
-DISTNAME=	${PORTNAME}-pre_${PORTVERSION}
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	anders@FreeBSD.org
 
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 .if defined(WITH_MYSQL)
 LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 .endif
@@ -24,8 +24,6 @@ POSTGRESQL_PORT?=	databases/postgresql7
 LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 .endif
 
-#USE_AUTOCONF_VER=	252 # not yet
-AUTOCONF=	${LOCALBASE}/bin/autoconf
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
@@ -62,9 +60,6 @@ pre-patch:
 	${REINPLACE_CMD} -e "s|/etc/syslog.conf|${PREFIX}/etc/syslog.conf|g" \
 		${WRKSRC}/${f}
 .endfor
-
-pre-configure:
-	(cd ${CONFIGURE_WRKSRC} && ${AUTOCONF})
 
 post-install:
 	${INSTALL} -d -o root -g wheel -m 0775 ${PREFIX}/share/examples/msyslog

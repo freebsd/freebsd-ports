@@ -1,0 +1,54 @@
+--- configure.orig	Sat Jan  4 15:45:31 2003
++++ configure	Sat Jan  4 15:51:07 2003
+@@ -2941,7 +2941,7 @@
+ echo "$as_me:2941: result: $ac_cv_lib_dl_dlopen" >&5
+ echo "${ECHO_T}$ac_cv_lib_dl_dlopen" >&6
+ if test $ac_cv_lib_dl_dlopen = yes; then
+-  SYSLOGD_LIBS="$SYSLOGD_LIBS -ldl"
++  SYSLOGD_LIBS="$SYSLOGD_LIBS"
+ fi
+ 
+ echo "$as_me:2947: checking for connect in -lsocket" >&5
+@@ -3573,9 +3573,9 @@
+ #define MSYSLOG_VERSION_STR "$MSYSLOG_VERSION"
+ EOF
+ 
+-echo msyslog version... $MSYSLOG_VERSION
++echo msyslog version... 1
+ 
+-MLIBNAME="libmsyslog.so.$MSYSLOG_VERSION" ;
++MLIBNAME="libmsyslog.so.1" ;
+ cat >>confdefs.h <<EOF
+ #define MLIBNAME_STR "$MLIBNAME"
+ EOF
+@@ -3644,14 +3644,6 @@
+ #define PID_DIR "$dir"
+ EOF
+ 
+-for MANDIR in "/usr/share/man" "/usr/man"
+-do
+-	if test -d $MANDIR ; then
+-		mandir=$MANDIR;
+-		break;
+-	fi
+-done
+-
+ echo "$as_me:3655: checking wether netdb.h requires _USE_IRS" >&5
+ echo $ECHO_N "checking wether netdb.h requires _USE_IRS... $ECHO_C" >&6
+ if grep _USE_IRS /usr/include/netdb.h >/dev/null ;then
+@@ -3736,6 +3728,15 @@
+ 
+ 	SHARED_PARAMS="-Bshareable"
+ 	DCCFLAGS="-fPIC"
++elif test "$UNAME" = "FreeBSD" ; then
++	cat >>confdefs.h <<\EOF
++#define DLOPEN_FLAGS RTLD_LAZY
++#define SYMBOL_PREFIX "_"
++EOF
++
++	SHARED_PARAMS="-Bshareable"
++	DCCFLAGS="-fPIC"
++	SYSLOGD_LIBS="$SYSLOGD_LIBS -Wl,-E"
+ elif test "$UNAME" = "Linux" ; then
+ 	cat >>confdefs.h <<\EOF
+ #define DLOPEN_FLAGS RTLD_LAZY | RTLD_GLOBAL
