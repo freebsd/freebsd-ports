@@ -1481,6 +1481,7 @@ distcc		ports/devel/distcc
 distel		ports/devel/distel
 distribfold	ports/biology/distribfold
 distribute	ports/mail/distribute
+dits		ports/devel/dits
 diveintopython	ports/lang/diveintopython
 divxcalc	ports/graphics/divxcalc
 djbdns		ports/dns/djbdns
