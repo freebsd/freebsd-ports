@@ -88,7 +88,6 @@ DIST_SUBDIR=	squid2.5
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
 PATCHFILES=	squid-2.5.STABLE6-ufs_no_valid_dir.patch \
-		squid-2.5.STABLE6-ldap_helpers.patch \
 		squid-2.5.STABLE6-concurrent_dns_lookups.patch \
 		squid-2.5.STABLE6-request_header_max_size.patch \
 		squid-2.5.STABLE6-ntlm_challengereuse_leak.patch \
