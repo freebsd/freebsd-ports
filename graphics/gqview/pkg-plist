@@ -1,16 +1,19 @@
 bin/gqview
-share/doc/gqview/README
+%%PORTDOCS%%share/doc/gqview/README
 share/gnome/apps/Graphics/gqview.desktop
 share/gnome/pixmaps/gqview.png
 share/locale/de/LC_MESSAGES/gqview.mo
 share/locale/es/LC_MESSAGES/gqview.mo
 share/locale/fr/LC_MESSAGES/gqview.mo
+share/locale/hu/LC_MESSAGES/gqview.mo
 share/locale/it/LC_MESSAGES/gqview.mo
 share/locale/ja/LC_MESSAGES/gqview.mo
 share/locale/pl/LC_MESSAGES/gqview.mo
 share/locale/pt_BR/LC_MESSAGES/gqview.mo
 share/locale/ru/LC_MESSAGES/gqview.mo
 share/locale/sk/LC_MESSAGES/gqview.mo
+share/locale/sl/LC_MESSAGES/gqview.mo
 share/locale/tr/LC_MESSAGES/gqview.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/gqview.mo
 share/locale/zh_TW.Big5/LC_MESSAGES/gqview.mo
-@dirrm share/doc/gqview
+%%PORTDOCS%%@dirrm share/doc/gqview
