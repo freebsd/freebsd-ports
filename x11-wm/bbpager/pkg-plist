@@ -1,5 +1,0 @@
-bin/bbpager
-share/bbtools/bbpager.bb
-share/bbtools/bbpager.nobb
-share/bbtools/README.bbpager
-@unexec rmdir %D/share/bbtools >/dev/null 2>&1 || true
