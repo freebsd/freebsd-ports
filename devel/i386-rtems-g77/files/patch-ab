@@ -1,5 +1,5 @@
---- gcc/Makefile.in.orig	Tue Jan 28 16:54:07 2003
-+++ gcc/Makefile.in	Sun Nov 16 19:35:27 2003
+--- gcc-3.2.3/gcc/Makefile.in.orig	Tue Jan 28 16:54:07 2003
++++ gcc-3.2.3/gcc/Makefile.in	Sun Nov 16 19:35:27 2003
 @@ -405,7 +405,7 @@
  
  # It is convenient for configure to add the assignment at the beginning,
