@@ -32,15 +32,13 @@ ALL_TARGET=	# empty
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/local/lib/cdict5|${DATADIR}|" ${WRKSRC}/cdict5.h
 
-post-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} index
-
 do-install:
 	@${MKDIR} ${DATADIR}
 	${TAR} -zxf ${DISTDIR}/cdict5-file.tgz -C ${DATADIR} && \
 		${MV} ${DATADIR}/cdict5-file/* ${DATADIR} && \
 		${RMDIR} ${DATADIR}/cdict5-file
 	${INSTALL_PROGRAM} ${WRKSRC}/cdict5 ${PREFIX}/bin
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} index
 	${INSTALL_DATA} ${WRKSRC}/Index.gdbm ${DATADIR}
 
 .include <bsd.port.post.mk>
