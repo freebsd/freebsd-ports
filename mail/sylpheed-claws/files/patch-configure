@@ -1,5 +1,5 @@
---- configure.orig	Mon Jan 14 16:15:33 2002
-+++ configure	Tue Jan 15 15:53:11 2002
+--- configure.orig	Thu Feb 14 10:08:51 2002
++++ configure	Sat Feb 16 02:43:04 2002
 @@ -756,7 +756,7 @@
  fi
  
@@ -9,7 +9,7 @@
  
  MAJOR_VERSION=0
  MINOR_VERSION=7
-@@ -1056,7 +1056,7 @@
+@@ -1146,7 +1146,7 @@
  fi
  
  
@@ -18,7 +18,7 @@
    SYLPHEED_GNOME_TRUE=
    SYLPHEED_GNOME_FALSE='#'
  else
-@@ -7419,7 +7419,7 @@
+@@ -7470,7 +7470,7 @@
  localedir='${prefix}/${DATADIRNAME}/locale'
  
  
@@ -26,4 +26,13 @@
 +manualdir='${prefix}/${DATADIRNAME}/doc/${PACKAGE}/manual'
  
  
- # Check whether --with-glib-prefix or --without-glib-prefix was given.
+ if test "x${datadir}" = 'x${prefix}/share'; then
+@@ -9041,7 +9041,7 @@
+ 
+ 	if test "$ac_cv_enable_ldap" = yes; then
+ 		CFLAGS="$CFLAGS `$GLIB_CONFIG --cflags gthread`"
+-		LIBS="$LIBS -lldap -llber -lpthread -lresolv `$GLIB_CONFIG --libs gthread`"
++		LIBS="$LIBS -lldap -llber ${PTHREAD_LIBS} `$GLIB_CONFIG --libs gthread`"
+ 	fi
+ else
+ 	echo "$ac_t""no" 1>&6
