@@ -14,7 +14,7 @@ DISTFILES=
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/mozilla:build \
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/www/mozilla-devel:build \
 		zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	${MAKE} -V LIB_DEPENDS -f ${MAINDIR}/${MKFILE}
@@ -24,7 +24,7 @@ USE_X_PREFIX=	yes
 
 NO_LATEST_LINK=	yes
 
-MAINDIR=	${.CURDIR}/../mozilla
+MAINDIR=	${.CURDIR}/../mozilla-devel
 MKFILE!=	/usr/bin/basename ${MAKEFILE}
 PORTVERSION!=	${PORTVERSION}
 PORTREVISION!=	${PORTREVISION}
