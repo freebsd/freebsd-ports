@@ -111,6 +111,7 @@
     SUBDIR += libgnome
     SUBDIR += libgnome-java
     SUBDIR += libgnomemm
+    SUBDIR += libgnomemm26
     SUBDIR += libsx
     SUBDIR += libxfce4mcs
     SUBDIR += libxfce4util
