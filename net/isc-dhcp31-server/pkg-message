@@ -17,6 +17,7 @@
 	    dhcpd_withuser="dhcpd"			# user name to run as
 	    dhcpd_withgroup="dhcpd"			# group name to run as
 	    dhcpd_chroot_enable="YES"			# runs chrooted?
+	    dhcpd_devfs_enable="YES"		      # uses devfs if available?
 	    dhcpd_rootdir="/var/db/dhcpd"		# directory to run in
 	    dhcpd_flags="-early_chroot"			# needs full root
 
