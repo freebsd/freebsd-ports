@@ -1,5 +1,5 @@
-# $Id: Makefile,v 1.6 1994/11/27 14:52:00 ats Exp $
+# $Id: Makefile,v 1.7 1995/01/06 10:00:37 pst Exp $
 #
-SUBDIR=	gsm nas sox tracker
+SUBDIR=	gmod gsm nas sox tracker
 
 .include <bsd.port.subdir.mk>
