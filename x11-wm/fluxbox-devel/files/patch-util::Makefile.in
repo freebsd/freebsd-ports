@@ -1,5 +1,5 @@
---- util/Makefile.in.orig	Fri Apr 30 01:35:18 2004
-+++ util/Makefile.in	Fri Apr 30 01:36:19 2004
+--- util/Makefile.in.orig	Thu Sep  2 04:53:00 2004
++++ util/Makefile.in	Thu Sep  2 04:53:32 2004
 @@ -94,7 +94,7 @@
  SUBDIRS = fbrun
  INCLUDES = -I$(top_srcdir)/src -I$(top_srcdir)/src/FbTk
@@ -7,8 +7,8 @@
 -bin_PROGRAMS = bsetroot
 +bin_PROGRAMS = 
  bsetroot_SOURCES = bsetroot.cc bsetroot.hh
- bsetroot_LDADD = ../src/FbRootWindow.o ../src/I18n.o \
- 			../src/FbAtoms.o ../src/FbTk/libFbTk.a
+ bsetroot_LDADD = ../src/FbRootWindow.o ../src/FbAtoms.o \
+ 			../src/FbTk/libFbTk.a
 @@ -108,7 +108,7 @@
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = $(top_builddir)/config.h
