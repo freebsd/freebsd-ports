@@ -1,0 +1,18 @@
+pdnMesh: A finite element program
+=================================
+
+Copyright (c) 2001 Sarod Yatawatta
+
+PdnMesh is  a 2D finite element program, especially designed to solve
+electromagnetic, fluid dynamic and heatflow problems. It is written in C and
+uses OpenGL/Mesa and glut for visualization. There is also a script written
+in perl called 'd2m' that can be used to convert DXF files to ones suitable
+for this program.
+
+Apart from producing graphical output, pdnmesh can be run in text mode to
+produce encapsulated postscript files of the solution.
+
+WWW: http://pdnmesh.sourceforge.net/
+
+-sarod-
+<sarod@cs.pdn.ac.lk>
