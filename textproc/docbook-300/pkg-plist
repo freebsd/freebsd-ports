@@ -10,4 +10,4 @@ share/sgml/docbook/3.0/docbook.dcl
 share/sgml/docbook/3.0/docbook.dtd
 share/sgml/docbook/3.0/catalog
 @dirrm share/sgml/docbook/3.0
-@dirrm share/sgml/docbook
+@unexec rmdir %D/share/sgml/docbook 2>/dev/null || true
