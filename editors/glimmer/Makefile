@@ -20,10 +20,10 @@ USE_GNOME=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-PYTHON_LIBS=	-lutil -lreadline -lcrypt -lpython
 .if exists(/usr/lib/libcrypto.a)
-PYTHON_LIBS+=	-lcrypto
+PYTHON_LIBS=	-lcrypto
 .endif
+PYTHON_LIBS+=	-lutil -lreadline -lcrypt -lpython
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
