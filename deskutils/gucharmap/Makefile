@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gucharmap
-PORTVERSION=	0.8.0
+PORTVERSION=	0.9.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.8
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.9
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -27,6 +27,12 @@ INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 	       	LDFLAGS="-L${LOCALBASE}/lib"
+
+.if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
+.undef WITHOUT_GNOME
+.undef WITHOUT_ALL
+WITH_GNOME=	yes
+.endif
 
 .include <bsd.port.pre.mk>
 
