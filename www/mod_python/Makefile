@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	mod_python
-PORTVERSION=	2.7.10
+PORTVERSION=	2.7.11
 CATEGORIES=	www python
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 MASTER_SITE_SUBDIR=	modpython
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	python
 
-MAINTAINER=	jre@vineyard.net
+MAINTAINER=	josh@elsasser.org
 COMMENT=	Apache module for integrating Python
 
 USE_APACHE=	yes
