@@ -73,7 +73,7 @@ PLIST_SUB+=	X86_ONLY="@comment "
 .if ${ARCH} == amd64
 CFLAGS+=	-fPIC
 .endif
-.if ${ARCH} == amd64 || ${ARCH} == ia64 || ${ARCH} == sparc64
+.if ${ARCH} == amd64 || ${ARCH} == ia64 || ${ARCH} == sparc64 || ${ARCH} == alpha
 PLIST_SUB+=	32BIT_ONLY="@comment "
 .else
 PLIST_SUB+=	32BIT_ONLY=""
