@@ -18,25 +18,39 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.3:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
+LIBVER=		3
+PLIST_SUB+=	LIBVER="${LIBVER}"
+MAKE_ENV+=	SOMAJOR="${LIBVER}" SOMINOR="0"
+
 USE_BZIP2=	yes
+USE_GMAKE=	yes
 USE_QT=		yes
+USE_LIBTOOL=	yes
+LIBTOOLFLAGS=
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --x-includes="$(X11BASE)/include" \
 		--x-libraries="$(X11BASE)/lib" --disable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${PREFIX}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-USE_GMAKE=	yes
-LIBVER=		3
-PLIST_SUB+=	LIBVER="${LIBVER}"
-MAKE_ENV+=	SOMAJOR="${LIBVER}" SOMINOR="0"
 
 # generate KDE style mtree
 MTREE_CMD=	${CAT} ${MTREE_FILE} ${FILESDIR}/kde.dist | /usr/sbin/mtree
 MTREE_ARGS=	-U -d -e -p
 
-post-install:
-.for LIB in jscript kab kdecore kdeui kfile kfm khtmlw kimgio kspell mediatool
-	@${LN} -sf ${PREFIX}/lib/lib${LIB}.so.${LIBVER} ${PREFIX}/lib/lib${LIB}.so
+pre-install:
+.for applink in Applications Development Games Graphics Internet Multimedia \
+		Network Settings System Utilities
+	@${MKDIR} ${PREFIX}/share/applnk/${applink}
 .endfor
+.for lang in cs da de el es fi fr hu it ja nl pl pt ru sv zh_CN.GB2312
+	@${MKDIR} ${PREFIX}/share/doc/HTML/${lang}
+.endfor
+.for mimelnk in application audio image inode text video
+	@${MKDIR} ${PREFIX}/share/mimelnk/${mimelnk}
+.endfor
+	@${MKDIR} ${PREFIX}/share/icons/large
+	@${MKDIR} ${PREFIX}/share/icons/mini
+	@${MKDIR} ${PREFIX}/share/sounds
+	@${MKDIR} ${PREFIX}/share/wallpapers
 
 .include <bsd.port.mk>

@@ -123,24 +123,34 @@ include/mediatool.h
 include/sections.h
 include/stl_headers.h
 include/xview.h
+lib/libjscript.so
 lib/libjscript.so.%%LIBVER%%
 lib/libjscript.la
+lib/libkab.so
 lib/libkab.so.%%LIBVER%%
 lib/libkab.la
+lib/libkdecore.so
 lib/libkdecore.so.%%LIBVER%%
 lib/libkdecore.la
+lib/libkdeui.so
 lib/libkdeui.so.%%LIBVER%%
 lib/libkdeui.la
+lib/libkfile.so
 lib/libkfile.so.%%LIBVER%%
 lib/libkfile.la
+lib/libkfm.so
 lib/libkfm.so.%%LIBVER%%
 lib/libkfm.la
+lib/libkhtmlw.so
 lib/libkhtmlw.so.%%LIBVER%%
 lib/libkhtmlw.la
+lib/libkimgio.so
 lib/libkimgio.so.%%LIBVER%%
 lib/libkimgio.la
+lib/libkspell.so
 lib/libkspell.so.%%LIBVER%%
 lib/libkspell.la
+lib/libmediatool.so
 lib/libmediatool.so.%%LIBVER%%
 lib/libmediatool.la
 share/apps/kab/pics/background_1.jpg
@@ -301,64 +311,18 @@ share/toolbar/viewmag+.xpm
 share/toolbar/viewmag-.xpm
 share/toolbar/viewmag.xpm
 share/toolbar/viewzoom.xpm
-@exec ln -sf en %D/share/doc/HTML/default
-@exec ln -sf libjscript.so.%%LIBVER%% %D/lib/libjscript.so
-@exec ln -sf libkab.so.%%LIBVER%% %D/lib/libkab.so
-@exec ln -sf libkdecore.so.%%LIBVER%% %D/lib/libkdecore.so
-@exec ln -sf libkdeui.so.%%LIBVER%% %D/lib/libkdeui.so
-@exec ln -sf libkfile.so.%%LIBVER%% %D/lib/libkfile.so
-@exec ln -sf libkfm.so.%%LIBVER%% %D/lib/libkfm.so
-@exec ln -sf libkhtmlw.so.%%LIBVER%% %D/lib/libkhtmlw.so
-@exec ln -sf libkimgio.so.%%LIBVER%% %D/lib/libkimgio.so
-@exec ln -sf libkspell.so.%%LIBVER%% %D/lib/libkspell.so
-@exec ln -sf libmediatool.so.%%LIBVER%% %D/lib/libmediatool.so
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@exec mkdir -p %D/share/applnk/Applications
-@exec mkdir -p %D/share/applnk/Development
-@exec mkdir -p %D/share/applnk/Games
-@exec mkdir -p %D/share/applnk/Graphics
-@exec mkdir -p %D/share/applnk/Internet
-@exec mkdir -p %D/share/applnk/Multimedia
-@exec mkdir -p %D/share/applnk/Network
-@exec mkdir -p %D/share/applnk/Settings
-@exec mkdir -p %D/share/applnk/System
-@exec mkdir -p %D/share/applnk/Utilities
-@exec mkdir -p %D/share/doc/HTML/cs
-@exec mkdir -p %D/share/doc/HTML/da
-@exec mkdir -p %D/share/doc/HTML/de
-@exec mkdir -p %D/share/doc/HTML/el
-@exec mkdir -p %D/share/doc/HTML/es
-@exec mkdir -p %D/share/doc/HTML/fi
-@exec mkdir -p %D/share/doc/HTML/fr
-@exec mkdir -p %D/share/doc/HTML/hu
-@exec mkdir -p %D/share/doc/HTML/it
-@exec mkdir -p %D/share/doc/HTML/ja
-@exec mkdir -p %D/share/doc/HTML/nl
-@exec mkdir -p %D/share/doc/HTML/pl
-@exec mkdir -p %D/share/doc/HTML/pt
-@exec mkdir -p %D/share/doc/HTML/ru
-@exec mkdir -p %D/share/doc/HTML/sv
-@exec mkdir -p %D/share/doc/HTML/zh_CN.GB2312
-@exec mkdir -p %D/share/icons/large
-@exec mkdir -p %D/share/icons/mini
-@exec mkdir -p %D/share/mimelnk/application
-@exec mkdir -p %D/share/mimelnk/audio
-@exec mkdir -p %D/share/mimelnk/image
-@exec mkdir -p %D/share/mimelnk/inode
-@exec mkdir -p %D/share/mimelnk/text
-@exec mkdir -p %D/share/mimelnk/video
-@exec mkdir -p %D/share/sounds
-@exec mkdir -p %D/share/wallpapers
-@dirrm share/wallpapers
-@dirrm share/toolbar
-@dirrm share/sounds
-@dirrm share/mimelnk/video
-@dirrm share/mimelnk/text
-@dirrm share/mimelnk/inode
-@dirrm share/mimelnk/image
-@dirrm share/mimelnk/audio
-@dirrm share/mimelnk/application
-@dirrm share/mimelnk
+@exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
+@unexec rmdir %D/share/wallpapers 2>/dev/null || true
+@unexec rmdir %D/share/toolbar 2>/dev/null || true
+@unexec rmdir %D/share/sounds 2>/dev/null || true
+@unexec rmdir %D/share/mimelnk/video 2>/dev/null || true
+@unexec rmdir %D/share/mimelnk/text 2>/dev/null || true
+@unexec rmdir %D/share/mimelnk/inode 2>/dev/null || true
+@unexec rmdir %D/share/mimelnk/image 2>/dev/null || true
+@unexec rmdir %D/share/mimelnk/audio 2>/dev/null || true
+@unexec rmdir %D/share/mimelnk/application 2>/dev/null || true
+@unexec rmdir %D/share/mimelnk 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_TW.Big5/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_TW.Big5 2>/dev/null || true
 @unexec rmdir %D/share/locale/zh_CN.GB2312/LC_MESSAGES 2>/dev/null || true
@@ -431,57 +395,46 @@ share/toolbar/viewzoom.xpm
 @unexec rmdir %D/share/locale/br 2>/dev/null || true
 @unexec rmdir %D/share/locale 2>/dev/null || true
 @unexec rm -f %D/share/doc/HTML/default
-@dirrm share/icons/mini
-@dirrm share/icons/large
-@dirrm share/icons
-@dirrm share/doc/HTML/zh_CN.GB2312
-@dirrm share/doc/HTML/sv
-@dirrm share/doc/HTML/ru
-@dirrm share/doc/HTML/pt
-@dirrm share/doc/HTML/pl
-@dirrm share/doc/HTML/nl
-@dirrm share/doc/HTML/ja
-@dirrm share/doc/HTML/it
-@dirrm share/doc/HTML/hu
-@dirrm share/doc/HTML/fr
-@dirrm share/doc/HTML/fi
-@dirrm share/doc/HTML/es
-@dirrm share/doc/HTML/en/kspell
-@dirrm share/doc/HTML/en/kfiledialog
-@dirrm share/doc/HTML/en/kdelibs
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML/el
-@dirrm share/doc/HTML/de
-@dirrm share/doc/HTML/da
-@dirrm share/doc/HTML/cs
-@dirrm share/doc/HTML
-@dirrm share/config
-@dirrm share/apps/khtmlw/pics
-@dirrm share/apps/khtmlw
-@dirrm share/apps/kde/pics
-@dirrm share/apps/kde
-@dirrm share/apps/kab/pics
-@dirrm share/apps/kab
-@dirrm share/apps
-@dirrm share/applnk/Utilities
-@dirrm share/applnk/System
-@dirrm share/applnk/Settings
-@dirrm share/applnk/Network
-@dirrm share/applnk/Multimedia
-@dirrm share/applnk/Internet
-@dirrm share/applnk/Graphics
-@dirrm share/applnk/Games
-@dirrm share/applnk/Development
-@dirrm share/applnk/Applications
-@dirrm share/applnk
-@unexec rm -f %D/lib/libjscript.so
-@unexec rm -f %D/lib/libkab.so
-@unexec rm -f %D/lib/libkdecore.so
-@unexec rm -f %D/lib/libkdeui.so
-@unexec rm -f %D/lib/libkfile.so
-@unexec rm -f %D/lib/libkfm.so
-@unexec rm -f %D/lib/libkhtmlw.so
-@unexec rm -f %D/lib/libkimgio.so
-@unexec rm -f %D/lib/libkspell.so
-@unexec rm -f %D/lib/libmediatool.so
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@unexec rmdir %D/share/icons/mini 2>/dev/null || true
+@unexec rmdir %D/share/icons/large 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/zh_CN.GB2312 2>/dev/null || true
+@unexec rmdir %Dshare/doc/HTML/sv 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/ru 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/pt 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/pl 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/nl 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/ja 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/it 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/hu 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/fr 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/fi 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/es 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/en/kspell 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/en/kfiledialog 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/en/kdelibs 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/el 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/de 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/da 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/cs 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@unexec rmdir %D/share/config 2>/dev/null || true
+@unexec rmdir %D/share/apps/khtmlw/pics 2>/dev/null || true
+@unexec rmdir %D/share/apps/khtmlw 2>/dev/null || true
+@unexec rmdir %D/share/apps/kde/pics 2>/dev/null || true
+@unexec rmdir %D/share/apps/kde 2>/dev/null || true
+@unexec rmdir %D/share/apps/kab/pics 2>/dev/null || true
+@unexec rmdir %D/share/apps/kab 2>/dev/null || true
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
+@unexec rmdir %D/share/applnk/System 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Settings 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Network 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Multimedia 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Internet 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Graphics 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Games 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Development 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true
