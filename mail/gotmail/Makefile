@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gotmail
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.4
 CATEGORIES=	mail perl5
 MASTER_SITES=	http://ssl.usu.edu/paul/gotmail/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -29,7 +29,7 @@ pre-patch:
 do-install:
 .for i in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/${i} ${MANPREFIX}/man/man1
-.endfor
+.endfor # i in ${MAN1}
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
 post-install:
@@ -37,7 +37,7 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
 .for i in ChangeLog README sample.gotmailrc
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/${PORTNAME}
-.endfor
-.endif
+.endfor # i in ChangeLog README sample.gotmailrc
+.endif # !defined(NOPORTDOCS)
 
 .include <bsd.port.mk>
