@@ -8,7 +8,8 @@
 PORTNAME=	httrack
 PORTVERSION=	3.20.2
 CATEGORIES=	www
-MASTER_SITES=	http://www.httrack.com/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dirk
 DISTNAME=	httrack-3.20-2
 
 MAINTAINER=	dirk@FreeBSD.org
