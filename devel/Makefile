@@ -384,6 +384,7 @@
     SUBDIR += p5-IPC-SharedCache
     SUBDIR += p5-Include
     SUBDIR += p5-Inline
+    SUBDIR += p5-Inline-ASM
     SUBDIR += p5-Ioctl
     SUBDIR += p5-Locale-Maketext
     SUBDIR += p5-Locale-PGetText
