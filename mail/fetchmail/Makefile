@@ -1,6 +1,6 @@
 # New ports collection makefile for:	fetchmail
-# Version required:     5.2.8
-# Date created:		26 Oct 1996
+# Version required:     5.3.0
+# Date created:		25 Feb 2000
 # Whom:			Ville Eerola <ve@sci.fi>
 #
 # $FreeBSD$
