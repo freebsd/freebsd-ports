@@ -1,0 +1,110 @@
+bin/Wingz
+lib/X11/Wingz/bin/brander
+lib/X11/Wingz/bin/Wingz
+lib/X11/Wingz/bin/Wingz.dynamic
+lib/X11/Wingz/bin/Wingz.sh
+lib/X11/Wingz/bin/Wingz.sh.orig
+lib/X11/Wingz/lib/libwztools.a
+lib/X11/Wingz/Utilities/DateConv/DATE.README
+lib/X11/Wingz/Utilities/DateConv/DateConv.scz
+lib/X11/Wingz/Utilities/External/FUNC.README
+lib/X11/Wingz/Utilities/External/UserFunc.c
+lib/X11/Wingz/Utilities/External/FILEIO.README
+lib/X11/Wingz/Utilities/External/FileIO.c
+lib/X11/Wingz/Utilities/International/CONF.README
+lib/X11/Wingz/Utilities/International/Configure.scz
+lib/X11/Wingz/Utilities/International/Startup.txt
+lib/X11/Wingz/Utilities/Resolution/RESL.README
+lib/X11/Wingz/Utilities/Resolution/Resltn.c
+lib/X11/Wingz/Utilities/Resolution/Resolution.scz
+lib/X11/Wingz/Examples/CopyDemo.wkz
+lib/X11/Wingz/Examples/ErrMsg.txt
+lib/X11/Wingz/Examples/ExtDemo.scz
+lib/X11/Wingz/Examples/ExtDemo.wkz
+lib/X11/Wingz/Examples/ExtEvent.scz
+lib/X11/Wingz/Examples/README.ext
+lib/X11/Wingz/Examples/RtFormat.scz
+lib/X11/Wingz/Examples/Sample.Sheet.scz
+lib/X11/Wingz/Examples/Sample.Startup.scz
+lib/X11/Wingz/Examples/Sheet1.wkz
+lib/X11/Wingz/Examples/Startup.scz
+lib/X11/Wingz/Examples/magic-add
+lib/X11/Wingz/Examples/CellSize.scz
+lib/X11/Wingz/Examples/Delete.scz
+lib/X11/Wingz/Examples/Insert.scz
+lib/X11/Wingz/Examples/TextVal.scz
+lib/X11/Wingz/include/WZTools.h
+lib/X11/Wingz/README
+lib/X11/Wingz/REGISTER
+lib/X11/Wingz/INSTALL
+lib/X11/Wingz/SHAREWARE
+lib/X11/Wingz/WngzHelp
+lib/X11/Wingz/.wingz
+@exec chmod 666 %D/%F
+@unexec rm %D/%F
+lib/X11/Wingz/DG
+lib/X11/Wingz/WZScript
+lib/X11/Wingz/printer.info
+lib/X11/Wingz/Startup.scz
+lib/X11/Wingz/Wingz.Xdefs
+lib/X11/Wingz/SetEnv.csh
+lib/X11/Wingz/SetEnv.ksh
+lib/X11/Wingz/Miscellaneous/DG.scp
+lib/X11/Wingz/Miscellaneous/WZScript.scp
+lib/X11/Wingz/.wingz_msgs
+lib/X11/Wingz/.wingz_cmds
+lib/X11/Wingz/TestFlight/TFFiles/1040A.wkz
+lib/X11/Wingz/TestFlight/TFFiles/2dGraphs.wkz
+lib/X11/Wingz/TestFlight/TFFiles/3dGraphs.wkz
+lib/X11/Wingz/TestFlight/TFFiles/Art1.wkz
+lib/X11/Wingz/TestFlight/TFFiles/Art2.wkz
+lib/X11/Wingz/TestFlight/TFFiles/Art3.wkz
+lib/X11/Wingz/TestFlight/TFFiles/Art4.wkz
+lib/X11/Wingz/TestFlight/TFFiles/Art5.wkz
+lib/X11/Wingz/TestFlight/TFFiles/Blank.wkz
+lib/X11/Wingz/TestFlight/TFFiles/Britain.wkz
+lib/X11/Wingz/TestFlight/TFFiles/Business.wkz
+lib/X11/Wingz/TestFlight/TFFiles/Charts.wkz
+lib/X11/Wingz/TestFlight/TFFiles/Contour.wkz
+lib/X11/Wingz/TestFlight/TFFiles/East.wkz
+lib/X11/Wingz/TestFlight/TFFiles/Europe.wkz
+lib/X11/Wingz/TestFlight/TFFiles/FinHilts.wkz
+lib/X11/Wingz/TestFlight/TFFiles/France.wkz
+lib/X11/Wingz/TestFlight/TFFiles/Fun.wkz
+lib/X11/Wingz/TestFlight/TFFiles/Germany.wkz
+lib/X11/Wingz/TestFlight/TFFiles/HiLo.wkz
+lib/X11/Wingz/TestFlight/TFFiles/LoanCalc.wkz
+lib/X11/Wingz/TestFlight/TFFiles/Midwest.wkz
+lib/X11/Wingz/TestFlight/TFFiles/Phoenix.wkz
+lib/X11/Wingz/TestFlight/TFFiles/Play.wkz
+lib/X11/Wingz/TestFlight/TFFiles/Polar.wkz
+lib/X11/Wingz/TestFlight/TFFiles/Presents.wkz
+lib/X11/Wingz/TestFlight/TFFiles/Sales.wkz
+lib/X11/Wingz/TestFlight/TFFiles/Scatter.wkz
+lib/X11/Wingz/TestFlight/TFFiles/Shapes.wkz
+lib/X11/Wingz/TestFlight/TFFiles/Surface.wkz
+lib/X11/Wingz/TestFlight/TFFiles/TF.scz
+lib/X11/Wingz/TestFlight/TFFiles/TechGrph.wkz
+lib/X11/Wingz/TestFlight/TFFiles/USA.wkz
+lib/X11/Wingz/TestFlight/TFFiles/UsingTF.wkz
+lib/X11/Wingz/TestFlight/TFFiles/West.wkz
+lib/X11/Wingz/TestFlight/TFFiles/Wirefrme.wkz
+lib/X11/Wingz/TestFlight/TFFiles/WrldWide.wkz
+lib/X11/Wingz/TestFlight/TFFiles/XOX.wkz
+lib/X11/Wingz/TestFlight/TFFiles/XY.wkz
+lib/X11/Wingz/TestFlight/TestFlgt.wkz
+lib/X11/Wingz/MANIFEST
+lib/X11/app-defaults/Wingz
+@dirrm lib/X11/Wingz/bin
+@dirrm lib/X11/Wingz/lib
+@dirrm lib/X11/Wingz/Utilities/DateConv
+@dirrm lib/X11/Wingz/Utilities/External
+@dirrm lib/X11/Wingz/Utilities/International
+@dirrm lib/X11/Wingz/Utilities/Resolution
+@dirrm lib/X11/Wingz/Utilities
+@dirrm lib/X11/Wingz/Examples
+@dirrm lib/X11/Wingz/include
+@dirrm lib/X11/Wingz/Miscellaneous
+@dirrm lib/X11/Wingz/TestFlight/TFFiles
+@dirrm lib/X11/Wingz/TestFlight
+@dirrm lib/X11/Wingz
