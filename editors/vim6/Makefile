@@ -41,13 +41,14 @@ PATCH_DIST_ARGS=	-d ${WRKDIR}/${PORTNAME}${PORTVERSION:S/.//g} --forward --quiet
 MAKE_ARGS+=	CONF_ARGS="--prefix=${PREFIX} --with-tlib=termlib"
 ALL_TARGET=	#
 PLIST_SUB=	VIM_VER=${DISTNAME:S/-//:S/.//}
-MAN1=		eview.1 evim.1 gvimdiff.1 vim.1 vimdiff.1 vimtutor.1 xxd.1
+MAN1=		evim.1 vim.1 vimdiff.1 vimtutor.1 xxd.1
 MLINKS=		vim.1 rvim.1  vim.1 rview.1
 
 .include <bsd.port.pre.mk>
 
 .if !defined(LITE)
-MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1
+MLINKS+=	vim.1 gvim.1  vim.1 gview.1  vim.1 rgvim.1  vim.1 rgview.1  \
+		eview.1 gvimdiff.1
 
 MAKE_ARGS+=	CONF_OPT_MAX="--enable-max-features"
 I18N=		CONF_OPT_MULTIBYTE="--enable-multibyte --enable-fontset --enable-xim"
@@ -91,6 +92,12 @@ pre-build:
 
 post-install:
 	[ -e ${PREFIX}/bin/gvim ] || (cd ${PREFIX}/bin ; ${LN} -sf vim gvim)
+	#	below needed for `vim-lite' port
+	test -e ${PREFIX}/bin/rgvim  || (cd ${PREFIX}/bin ; ${LN} -s vim rgvim) 
+	test -e ${PREFIX}/bin/gview  || (cd ${PREFIX}/bin ; ${LN} -s vim gview)
+	test -e ${PREFIX}/bin/rgview || (cd ${PREFIX}/bin ; ${LN} -s vim rgview)
+	test -e ${PREFIX}/bin/evim   || (cd ${PREFIX}/bin ; ${LN} -s vim evim) 
+	test -e ${PREFIX}/bin/eview  || (cd ${PREFIX}/bin ; ${LN} -s vim eview)
 	cd ${PREFIX} ;\
 	    find share/vim/${DISTNAME:S/-//:S/.//}/ -type f -o -type l	\
 	    	| sort \

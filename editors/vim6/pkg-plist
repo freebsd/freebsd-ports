@@ -15,7 +15,7 @@ bin/rvim
 bin/vimdiff
 bin/gvimdiff
 @comment bin/view
-@exec mkdir %D/share/vim/%%VIM_VER%%/lang
+@exec mkdir -p %D/share/vim/%%VIM_VER%%/lang
 @comment Insert PLIST.share-vim here
 @comment -=[ begin PLIST.share-vim ]=-
 @comment -=[ end PLIST.share-vim ]=-
