@@ -562,12 +562,14 @@ http_access deny Gopher</pre>
       </body>
     </description>
     <references>
+      <cvename>CAN-2004-1138</cvename>
       <url>ftp://ftp.vim.org/pub/vim/patches/6.3/6.3.045</url>
       <mlist>http://groups.yahoo.com/group/vimdev/message/38084</mlist>
     </references>
     <dates>
       <discovery>2004-12-09</discovery>
       <entry>2005-01-06</entry>
+      <modified>2005-01-13</modified>
     </dates>
   </vuln>
 
