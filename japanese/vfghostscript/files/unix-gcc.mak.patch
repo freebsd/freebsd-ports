@@ -20,7 +20,7 @@
   #   specific stuff that <math.h> typically needs; nevertheless, we expect
   #   gcc to accept ANSI-style function prototypes and function definitions.
   
-! CFLAGS=-O -m486 $(XCFLAGS) -DCOMPFONT -DWMODE -DKANJI -D_POSIX_SOURCE \
+! CFLAGS+= $(XCFLAGS) -DCOMPFONT -DWMODE -DKANJI -D_POSIX_SOURCE \
 ! 	-D_HAVE_PARAM_H -I/usr/local/include
   
   # Define platform flags for ld.
