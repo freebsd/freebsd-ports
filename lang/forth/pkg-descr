@@ -5,3 +5,5 @@ The Forth-system is closely modeled along the new American National
 Standard for the programming language Forth. I implemented every word
 of every word set mentioned in the dpANS-6 document of june 1993.
 Additionally it is compatible to Forth-83.
+
+WWW: http://pfe.sourceforge.net/
