@@ -1,0 +1,10 @@
+Amateur Radio DSP utility (SDR)
+
+Linrad receives a signal in digital form by reading a device. Currently Linrad
+operates by sampling sound on line-in channel of an audio card. In the future
+boards sampling directly at RF frequencies will be available.
+
+WWW: http://www.nitehawk.com/sm5bsz/linuxdsp/linrad.htm
+
+- Diane Bruce, VA3DB
+db@db.net
