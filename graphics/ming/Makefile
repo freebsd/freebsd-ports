@@ -69,6 +69,9 @@ post-build:
 	cd ${WRKSRC}/../util && \
 	${CC} ${CFLAGS} -L${PREFIX}/lib -o swftophp swftophp.o blocktypes.o decompile.o read.o -lm
 
+pre-install:
+	${MKDIR} ${PREFIX}/include/ming/blocks
+
 post-install:
 .for f in ${UTILS}
 	${INSTALL_PROGRAM} ${WRKSRC}/../util/${f} ${PREFIX}/bin/

@@ -52,6 +52,7 @@ SRCS=		blocklist.c \
 		blocks/sprite.c \
 		blocks/text.c \
 		blocks/textfield.c
+INCSGROUPS=	INCS BLKS
 INCS=		blocklist.h \
 		blocktypes.h \
 		displaylist.h \
@@ -68,30 +69,25 @@ INCS=		blocklist.h \
 
 NOMAN=		YES
 LIBDIR=		${LOCALBASE}/lib
-INCDIR=		${LOCALBASE}/include/ming
+INCSDIR=	${LOCALBASE}/include/ming
+
+BLKS=		block.h cxform.h \
+		error.h exports.h \
+		input.h matrix.h \
+		outputblock.h placeobject.h \
+		sound.h sprite.h \
+		swf.h blocktypes.h \
+		character.h libswf.h \
+		method.h output.h \
+		rect.h
+BLKS:=		${BLKS:S;^;${.CURDIR}/blocks/;}
+BLKSDIR=	${INCSDIR}/blocks
 
 .include <bsd.lib.mk>
 
-# For FreeBSD 3.x or older
-.if !target(_includeinstall)
-_includeinstall:
-.if defined(INCS)
-.for header in ${INCS}
-        cd ${.CURDIR} && \
-        ${INSTALL} -C -o ${INCOWN} -g ${INCGRP} -m ${INCMODE} \
-                ${header} ${DESTDIR}${INCDIR}
-
-.endfor
-.endif
-
-beforeinstall: _includeinstall
-.endif
-
-_includeinstall: pre-_includeinstall
-
-pre-_includeinstall:
-	mkdir -p ${DESTDIR}${INCDIR}/blocks
-
+# For pre-bsd.incs.mk API
+.if defined(INCOWN)
+INCDIR=		${INCSDIR}
 beforeinstall:
 	${INSTALL} -C -o ${INCOWN} -g ${INCGRP} -m ${INCMODE} \
 		${.CURDIR}/blocks/block.h ${.CURDIR}/blocks/cxform.h \
@@ -103,6 +99,7 @@ beforeinstall:
 		${.CURDIR}/blocks/character.h ${.CURDIR}/blocks/libswf.h \
 		${.CURDIR}/blocks/method.h ${.CURDIR}/blocks/output.h \
 		${.CURDIR}/blocks/rect.h  ${INCDIR}/blocks/
+.endif
 
 dynamic: lib${LIB}.so
 
