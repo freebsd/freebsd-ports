@@ -300,15 +300,17 @@ sub update_index() {
 
     $parent = $portsdir;
     $parent =~ s/\/*ports\/*$//;
-    cd($parent);
-    if (-f "ports/INDEX" || (-d "ports" && -d "ports/CVS")) {
-	cvs("update", "ports/INDEX")
-	    or bsd::errx(1, "error updating the index file");
-    } else {
+    if (! -f "ports/INDEX" || ! -d "ports/CVS") {
+	cd($parent);
 	cvs("checkout", "-l", "ports")
 	    or bsd::errx(1, "error checking out the index file");
+	cd($portsdir);
+    } else {
+	cd($portsdir);
+	cvs("update", "Makefile", "INDEX")
+	    or bsd::errx(1, "error updating the index file");
     }
-    cvs("update", "-l", "ports/Mk")
+    cvs("update", "Mk")
 	or bsd::errx(1, "error updating the Makefiles");
 }
 
@@ -803,7 +805,7 @@ sub build_port($) {
 #
 sub usage() {
 
-    stderr("Usage: porteasy [-abCceFfhikluVv] [-d dir] [-D date]\n" .
+    stderr("Usage: porteasy [-abCceFfhikLluVvw] [-D date] [-d dir]\n" .
 	   "    [-p dir] [-r dir] [-t tag] [port ...]\n");
     exit(1);
 }
@@ -830,18 +832,20 @@ $COPYRIGHT
 Options:
   -a, --anoncvs            Use the FreeBSD project's anoncvs server
   -b, --build              Build required ports
-  -c, --clean              Clean the specified ports
   -C, --dontclean          Don't clean after build
+  -c, --clean              Clean the specified ports
   -e, --exclude-installed  Exclude installed ports
+  -F, --force-pkg-register Force package registration
   -f, --fetch              Fetch distfiles
   -h, --help               Show this information
   -i, --info               Show info about specified ports
   -k, --packages           Build packages for the specified ports
-  -L, --plist	           Show the packing lists for the specified ports
+  -L, --plist              Show the packing lists for the specified ports
   -l, --list               List required ports and their dependencies
   -u, --update             Update relevant portions of the ports tree
-  -V, --version	           Show version number
+  -V, --version            Show version number
   -v, --verbose            Verbose mode
+  -w, --website            Show the URL to the port's website
 
 Parameters:
   -D, --date=DATE          Specify CVS date
@@ -860,6 +864,11 @@ MAIN:{
     my $err = 0;		# Error count
     my $need_index;		# Need the index
 
+    # Show usage if no arguments were specified on the command line
+    if (!@ARGV) {
+	usage();
+    }
+    
     # Get option defaults
     if ($ENV{'PORTEASY_OPTIONS'}) {
 	foreach (split(' ', $ENV{'PORTEASY_OPTIONS'})) {
