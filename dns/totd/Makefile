@@ -6,7 +6,7 @@
 
 PORTNAME=	totd
 PORTVERSION=	1.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.pasta.cs.uit.no/pub/Vermicelli/
 
@@ -18,5 +18,7 @@ GNU_CONFIGURE=	YES
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/totd.conf.sample ${PREFIX}/etc
+	@${SED} 's@%PREFIX%@${LOCALBASE}@g' ${FILESDIR}/totd.sh > ${PREFIX}/etc/rc.d/totd.sh
+	@${CHMOD} +x ${PREFIX}/etc/rc.d/totd.sh
 
 .include <bsd.port.mk>
