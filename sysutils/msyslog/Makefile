@@ -26,6 +26,7 @@ LIB_DEPENDS+=	pq.2:${PORTSDIR}/databases/postgresql7
 #USE_AUTOCONF_VER=	252 # not yet
 AUTOCONF=	${LOCALBASE}/bin/autoconf
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 .if !defined(WITH_MYSQL)
 CONFIGURE_ARGS+=	--without-mysql
@@ -56,8 +57,8 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 
 pre-patch:
 .for f in ${FIXPREFIX}
-	${PERL} -pi -e "s|/etc/syslog.conf|${PREFIX}/etc/syslog.conf|g" \
-	${WRKSRC}/${f}
+	${REINPLACE_CMD} -e "s|/etc/syslog.conf|${PREFIX}/etc/syslog.conf|g" \
+		${WRKSRC}/${f}
 .endfor
 
 pre-configure:

@@ -20,10 +20,11 @@ DOCFILES=	README GPL
 DOCDIR=		share/doc/${PORTNAME}/
 PLIST=		${WRKDIR}/pkg-plist
 WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_REINPLACE=	yes
 
 post-patch:
-	@${PERL} -pi -e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/Makefile
-	@${PERL} -pi -e "s:PI:M_PI:g" ${WRKSRC}/linplasma.c
+	@${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s:PI:M_PI:g" ${WRKSRC}/linplasma.c
 
 pre-install:
 	${ECHO_CMD} "bin/linplasma" > ${PLIST}

@@ -30,6 +30,7 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/acroread4:${PORTSDIR}/print/acroread4
 ONLY_FOR_ARCHS=	i386
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
+USE_PERL5=	yes
 PKGDEINSTALL=	${PKGINSTALL}
 
 MAN1=		delp.1 fpc.1 fpcmake.1 h2pas.1 plex.1 ppc386.1 ppdep.1 \
