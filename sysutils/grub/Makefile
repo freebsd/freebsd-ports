@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grub
-PORTVERSION=	0.5.95
+PORTVERSION=	0.5.96
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/grub/
 
