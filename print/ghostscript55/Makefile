@@ -3,7 +3,7 @@
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.6 1997/08/24 14:36:24 andreas Exp $
+# $Id: Makefile,v 1.7 1997/08/27 06:52:42 andreas Exp $
 #
 
 DISTNAME=	ghostscript-5.03
@@ -60,11 +60,7 @@ post-extract:
 	touch ${WRKSRC}/trees.o
 	ln -s ${PORTSDIR}/graphics/jpeg/work/jpeg-6a ${WRKSRC}/jpeg-6a
 	ln -s ${PORTSDIR}/graphics/png/work/libpng-0.96 ${WRKSRC}/libpng
-	cd ${WRKSRC} && unzip ${DISTDIR}/${HP850_DRV}
-.for file in gdevcd8.c gdevcd8.h
-#	( cd ${WRKSRC} && sed -e "s/\\\\,//" < ${file} | sed -e "s/\\//" > ${file}.tmp && mv ${file}.tmp ${file} )
-	( cd ${WRKSRC} && sed -e "s///" < ${file} > ${file}.tmp && mv ${file}.tmp ${file} )
-.endfor
+	cd ${WRKSRC} && unzip -La ${DISTDIR}/${HP850_DRV}
 
 do-configure:
 .if defined(BATCH)
