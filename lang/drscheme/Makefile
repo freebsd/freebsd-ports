@@ -30,6 +30,12 @@ DRS_D=		bin install collects teachpack include lib
 DRS_B=		drscheme mred mzc mzscheme tex2page
 MAN1=		drscheme.1 mred.1 mzscheme.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 do-install:
 	${MKDIR} ${PLTHOME}
 	cd ${WRKDIR}/plt && ${TAR} -cf - --exclude '/CVS/*' ${DRS_D} | tar -C ${PLTHOME} -xf -
@@ -41,4 +47,4 @@ do-install:
 	${INSTALL_MAN} ${WRKDIR}/plt/man/man1/$f ${PREFIX}/man/man1
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
