@@ -1,6 +1,6 @@
-GCC, the GNU Compiler Collection includes gcc, g++, gcj, and g77.
+GCC, the GNU Compiler Collection includes gcc, g++, gcj, and gfortran.
 
-This port installs the various front ends as gcc34, g++34, gcj34,
-and g77-34 into the ${PREFIX}/bin directory.
+This port installs the various front ends as gcc35, g++35, gcj35,
+and gfortran35 into the ${PREFIX}/bin directory.
 
 WWW: http://gcc.gnu.org/

@@ -7,25 +7,25 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	3.4.2
-PORTREVISION=	20040806
+PORTVERSION=	3.5.0
+PORTREVISION=	20040829
 CATEGORIES=	lang java
-VERSIONSTRING=	3.4-${PORTREVISION}
+VERSIONSTRING=	3.5-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC} \
 		http://web.inter.NL.net/hcc/Haj.Ten.Brugge/:bc
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
 DISTFILES=	\
 		gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-g77-${VERSIONSTRING}${EXTRACT_SUFX} \
+		gcc-fortran-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-java-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-objc-${VERSIONSTRING}${EXTRACT_SUFX} \
 		gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
 
 MAINTAINER?=	gerald@FreeBSD.org
-COMMENT?=	GNU Compiler Collection 3.4
+COMMENT?=	GNU Compiler Collection 3.5
 
-LATEST_LINK?=	gcc34${PKGNAMESUFFIX}
+LATEST_LINK?=	gcc35${PKGNAMESUFFIX}
 
 USE_BISON=	yes
 USE_BZIP2=	yes
@@ -39,6 +39,8 @@ NOMANCOMPRESS=	yes	# too hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
+BROKEN=		"Build problems on all platforms, due to configure problems."
+
 .if ${ARCH} == "amd64"
 CONFIGURE_TARGET=	x86_64-portbld-freebsd${OSREL}
 .else
@@ -51,12 +53,11 @@ WITHOUT_LIBJAVA=	yes
 
 SRCDIR=		${WRKDIR}/gcc-${VERSIONSTRING}
 WRKSRC=		${WRKDIR}/build
-SUFFIX=		34
+SUFFIX=		35
 TARGLIB=	${PREFIX}/lib/gcc/${CONFIGURE_TARGET}/${PORTVERSION}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls \
 		--with-system-zlib \
-		--with-libiconv-prefix=${LOCALBASE} \
 		--program-suffix=${SUFFIX} \
 		--with-gxx-include-dir=${TARGLIB}/include/c++/
 MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
