@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- glib/libcharset/Makefile.in	2002/01/18 08:04:15	1.1
-+++ glib/libcharset/Makefile.in	2002/01/18 08:13:49
+--- glib/libcharset/Makefile.in.orig	Tue Jun  4 01:47:05 2002
++++ glib/libcharset/Makefile.in	Tue Jun  4 03:41:15 2002
 @@ -148,7 +148,7 @@
  ms_librarian = @ms_librarian@
  
@@ -12,7 +12,7 @@ $FreeBSD$
  
  
  noinst_LTLIBRARIES = libcharset.la
-@@ -172,8 +172,8 @@
+@@ -171,8 +171,8 @@
  	make-patch.sh
  
  
@@ -23,3 +23,12 @@ $FreeBSD$
  
  SUFFIXES = .sed .sin
  
+@@ -326,7 +326,7 @@
+ check: check-am
+ installcheck-am:
+ installcheck: installcheck-am
+-install-exec-am: install-exec-local
++install-exec-am: # install-exec-local
+ install-exec: install-exec-am
+ 
+ install-data-am:
