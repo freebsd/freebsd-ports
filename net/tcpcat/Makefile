@@ -8,7 +8,7 @@
 PORTNAME=	tcpcat
 PORTVERSION=	1.2.0
 CATEGORIES=	net
-MASTER_SITES=	http://www.gusnet.cx/proj/tcpcat/
+MASTER_SITES=	http://www.gusnet.cx:8080/proj/tcpcat/
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	"A simple utility for sending/receiving data over a TCP or a Unix-domain socket"
