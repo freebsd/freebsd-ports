@@ -1,8 +1,10 @@
 @unexec if cmp -s %D/%%ADODB_DIR%%/adodb-cryptsession.php %D/%%ADODB_DIR%%/adodb-cryptsession.php.sample; then rm -f %D/%%ADODB_DIR%%/adodb-cryptsession.php; fi
+@unexec if cmp -s %D/%%ADODB_DIR%%/adodb-session-clob.php %D/%%ADODB_DIR%%/adodb-session-clob.php.sample; then rm -f %D/%%ADODB_DIR%%/adodb-session-clob.php; fi
 @unexec if cmp -s %D/%%ADODB_DIR%%/adodb-session.php %D/%%ADODB_DIR%%/adodb-session.php.sample; then rm -f %D/%%ADODB_DIR%%/adodb-session.php; fi
 @unexec if cmp -s %D/%%ADODB_DIR%%/server.php %D/%%ADODB_DIR%%/server.php.sample; then rm -f %D/%%ADODB_DIR%%/server.php; fi
 @unexec if cmp -s %D/%%ADODB_TESTS%%/benchmark.php %D/%%ADODB_TESTS%%/benchmark.php.sample; then rm -f %D/%%ADODB_TESTS%%/benchmark.php; fi
 @unexec if cmp -s %D/%%ADODB_TESTS%%/client.php %D/%%ADODB_TESTS%%/client.php.sample; then rm -f %D/%%ADODB_TESTS%%/client.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/test-datadict.php %D/%%ADODB_TESTS%%/test-datadict.php.sample; then rm -f %D/%%ADODB_TESTS%%/test-datadict.php; fi
 @unexec if cmp -s %D/%%ADODB_TESTS%%/test.php %D/%%ADODB_TESTS%%/test.php.sample; then rm -f %D/%%ADODB_TESTS%%/test.php; fi
 @unexec if cmp -s %D/%%ADODB_TESTS%%/test2.php %D/%%ADODB_TESTS%%/test2.php.sample; then rm -f %D/%%ADODB_TESTS%%/test2.php; fi
 @unexec if cmp -s %D/%%ADODB_TESTS%%/test3.php %D/%%ADODB_TESTS%%/test3.php.sample; then rm -f %D/%%ADODB_TESTS%%/test3.php; fi
@@ -10,26 +12,48 @@
 @unexec if cmp -s %D/%%ADODB_TESTS%%/test5.php %D/%%ADODB_TESTS%%/test5.php.sample; then rm -f %D/%%ADODB_TESTS%%/test5.php; fi
 @unexec if cmp -s %D/%%ADODB_TESTS%%/testcache.php %D/%%ADODB_TESTS%%/testcache.php.sample; then rm -f %D/%%ADODB_TESTS%%/testcache.php; fi
 @unexec if cmp -s %D/%%ADODB_TESTS%%/testdatabases.inc.php %D/%%ADODB_TESTS%%/testdatabases.inc.php.sample; then rm -f %D/%%ADODB_TESTS%%/testdatabases.inc.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/testgenid.php %D/%%ADODB_TESTS%%/testgenid.php.sample; then rm -f %D/%%ADODB_TESTS%%/testgenid.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/testmssql.php %D/%%ADODB_TESTS%%/testmssql.php.sample; then rm -f %D/%%ADODB_TESTS%%/testmssql.php; fi
 @unexec if cmp -s %D/%%ADODB_TESTS%%/testoci8.php %D/%%ADODB_TESTS%%/testoci8.php.sample; then rm -f %D/%%ADODB_TESTS%%/testoci8.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/testoci8cursor.php %D/%%ADODB_TESTS%%/testoci8cursor.php.sample; then rm -f %D/%%ADODB_TESTS%%/testoci8cursor.php; fi
 @unexec if cmp -s %D/%%ADODB_TESTS%%/testpaging.php %D/%%ADODB_TESTS%%/testpaging.php.sample; then rm -f %D/%%ADODB_TESTS%%/testpaging.php; fi
 @unexec if cmp -s %D/%%ADODB_TESTS%%/testpear.php %D/%%ADODB_TESTS%%/testpear.php.sample; then rm -f %D/%%ADODB_TESTS%%/testpear.php; fi
 @unexec if cmp -s %D/%%ADODB_TESTS%%/testsessions.php %D/%%ADODB_TESTS%%/testsessions.php.sample; then rm -f %D/%%ADODB_TESTS%%/testsessions.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/time.php %D/%%ADODB_TESTS%%/time.php.sample; then rm -f %D/%%ADODB_TESTS%%/time.php; fi
+@unexec if cmp -s %D/%%ADODB_TESTS%%/tmssql.php %D/%%ADODB_TESTS%%/tmssql.php.sample; then rm -f %D/%%ADODB_TESTS%%/tmssql.php; fi
 %%ADODB_DIR%%/adodb-cryptsession.php.sample
 %%ADODB_DIR%%/adodb-csvlib.inc.php
+%%ADODB_DIR%%/adodb-datadict.inc.php
+%%ADODB_DIR%%/adodb-error.inc.php
 %%ADODB_DIR%%/adodb-errorhandler.inc.php
 %%ADODB_DIR%%/adodb-errorpear.inc.php
 %%ADODB_DIR%%/adodb-lib.inc.php
+%%ADODB_DIR%%/adodb-pager.inc.php
 %%ADODB_DIR%%/adodb-pear.inc.php
+%%ADODB_DIR%%/adodb-session-clob.php.sample
 %%ADODB_DIR%%/adodb-session.php.sample
 %%ADODB_DIR%%/adodb-time.inc.php
+%%ADODB_DIR%%/adodb-xmlschema.inc.php
 %%ADODB_DIR%%/adodb.gif
 %%ADODB_DIR%%/adodb.inc.php
 %%ADODB_DIR%%/adodb.png
 %%ADODB_DIR%%/adodb2.gif
 %%ADODB_DIR%%/adodb2.png
 %%ADODB_DIR%%/crypt.inc.php
+%%ADODB_DIR%%/pivottable.inc.php
+%%ADODB_DIR%%/rsfilter.inc.php
 %%ADODB_DIR%%/server.php.sample
+%%ADODB_DIR%%/toexport.inc.php
 %%ADODB_DIR%%/tohtml.inc.php
+%%ADODB_DATADICT%%/datadict-access.inc.php
+%%ADODB_DATADICT%%/datadict-db2.inc.php
+%%ADODB_DATADICT%%/datadict-generic.inc.php
+%%ADODB_DATADICT%%/datadict-ibase.inc.php
+%%ADODB_DATADICT%%/datadict-informix.inc.php
+%%ADODB_DATADICT%%/datadict-mssql.inc.php
+%%ADODB_DATADICT%%/datadict-mysql.inc.php
+%%ADODB_DATADICT%%/datadict-oci8.inc.php
+%%ADODB_DATADICT%%/datadict-postgres.inc.php
 %%ADODB_DRIVERS%%/adodb-access.inc.php
 %%ADODB_DRIVERS%%/adodb-ado.inc.php
 %%ADODB_DRIVERS%%/adodb-ado_access.inc.php
@@ -41,23 +65,30 @@
 %%ADODB_DRIVERS%%/adodb-firebird.inc.php
 %%ADODB_DRIVERS%%/adodb-ibase.inc.php
 %%ADODB_DRIVERS%%/adodb-informix.inc.php
+%%ADODB_DRIVERS%%/adodb-informix72.inc.php
 %%ADODB_DRIVERS%%/adodb-mssql.inc.php
+%%ADODB_DRIVERS%%/adodb-mssqlpo.inc.php
 %%ADODB_DRIVERS%%/adodb-mysql.inc.php
 %%ADODB_DRIVERS%%/adodb-mysqlt.inc.php
 %%ADODB_DRIVERS%%/adodb-oci8.inc.php
+%%ADODB_DRIVERS%%/adodb-oci805.inc.php
 %%ADODB_DRIVERS%%/adodb-oci8po.inc.php
 %%ADODB_DRIVERS%%/adodb-odbc.inc.php
 %%ADODB_DRIVERS%%/adodb-odbc_mssql.inc.php
 %%ADODB_DRIVERS%%/adodb-odbc_oracle.inc.php
 %%ADODB_DRIVERS%%/adodb-oracle.inc.php
 %%ADODB_DRIVERS%%/adodb-postgres.inc.php
+%%ADODB_DRIVERS%%/adodb-postgres64.inc.php
 %%ADODB_DRIVERS%%/adodb-postgres7.inc.php
 %%ADODB_DRIVERS%%/adodb-proxy.inc.php
 %%ADODB_DRIVERS%%/adodb-sqlanywhere.inc.php
 %%ADODB_DRIVERS%%/adodb-sybase.inc.php
 %%ADODB_DRIVERS%%/adodb-vfp.inc.php
+%%ADODB_LANG%%/adodb-en.inc.php
+%%ADODB_LANG%%/adodb-fr.inc.php
 %%ADODB_TESTS%%/benchmark.php.sample
 %%ADODB_TESTS%%/client.php.sample
+%%ADODB_TESTS%%/test-datadict.php.sample
 %%ADODB_TESTS%%/test.php.sample
 %%ADODB_TESTS%%/test2.php.sample
 %%ADODB_TESTS%%/test3.php.sample
@@ -65,15 +96,27 @@
 %%ADODB_TESTS%%/test5.php.sample
 %%ADODB_TESTS%%/testcache.php.sample
 %%ADODB_TESTS%%/testdatabases.inc.php.sample
+%%ADODB_TESTS%%/testgenid.php.sample
+%%ADODB_TESTS%%/testmssql.php.sample
 %%ADODB_TESTS%%/testoci8.php.sample
+%%ADODB_TESTS%%/testoci8cursor.php.sample
 %%ADODB_TESTS%%/testpaging.php.sample
 %%ADODB_TESTS%%/testpear.php.sample
 %%ADODB_TESTS%%/testsessions.php.sample
+%%ADODB_TESTS%%/time.php.sample
+%%ADODB_TESTS%%/tmssql.php.sample
+%%PORTDOCS%%%%DOCSDIR%%/adodb-xmlschema.zip
+%%PORTDOCS%%%%DOCSDIR%%/docs-adodb.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs-datadict.htm
+%%PORTDOCS%%%%DOCSDIR%%/docs-session.htm
 %%PORTDOCS%%%%DOCSDIR%%/readme.htm
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%%%DOCSDIR%%/tips_portable_sql.htm
 %%PORTDOCS%%%%DOCSDIR%%/tute.htm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%ADODB_DATADICT%%
 @dirrm %%ADODB_DRIVERS%%
+@dirrm %%ADODB_LANG%%
 @dirrm %%ADODB_TESTS%%
 @dirrm %%ADODB_DIR%%
 @dirrm www/data.default/php
