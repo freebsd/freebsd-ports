@@ -7,14 +7,13 @@
 
 PORTNAME=	mozilla-flp
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	french www
 MASTER_SITES=	http://frenchmozilla.sourceforge.net/FTP/${PORTVERSION}/
 DISTNAME=	mozilla-l10n-fr-FR-${PORTVERSION}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Mozilla French Language Pack (FLP)
-
-BROKEN=		"Size mismatch"
 
 USE_X_PREFIX=	yes	# Cannot be included after <bsd.port.pre.mk>.
 WRKSRC=		${WRKDIR}/bin
