@@ -7,11 +7,11 @@
 
 PORTNAME=	tircproxy
 PORTVERSION=	0.4.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc
 MASTER_SITES=	http://bre.klaki.net/programs/tircproxy/
 
-MAINTAINER=	CoreDumped@CoreDumped.null.ru
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/tircproxy-0.4
 GNU_CONFIGURE=	YES
@@ -21,9 +21,9 @@ do-install:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${ECHO} "===>   Installing tircproxy docs in ${PREFIX}/share/doc/tircproxy"
-	@${MKDIR} ${PREFIX}/share/doc/tircproxy && ${CHMOD} a+rx ${PREFIX}/share/doc/tircproxy
-	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/tircproxy
+	@${ECHO} "===>   Installing tircproxy docs in ${DOCSDIR}"
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
