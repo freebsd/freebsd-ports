@@ -3,7 +3,7 @@
 # Date created:		March 16, 1998
 # Whom:			jseger@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.3 1998/12/10 02:18:15 jseger Exp $
+# $Id: Makefile,v 1.4 1999/01/27 07:41:27 fenner Exp $
 #
 
 DISTNAME=       cfengine-1.4.12
@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	cfengine
 
 MAINTAINER=	jseger@FreeBSD.ORG
 
-.if defined(PACKAGE_BUILDING)
+.if defined(PACKAGE_BUILDING) && !exists(/usr/include/tcpd.h)
 LIB_DEPENDS=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 .endif
 
