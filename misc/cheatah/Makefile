@@ -15,6 +15,8 @@ DISTFILES=
 MAINTAINER=	wvengen@stack.nl
 COMMENT=	Temporary gtk GUI to the SWORD project
 
+BROKEN=		"Does not build"
+
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/misc/sword:extract
 LIB_DEPENDS=	sword.1:${PORTSDIR}/misc/sword
 RUN_DEPENDS=	${LOCALBASE}/share/sword/mods.d:${PORTSDIR}/misc/sword-modules
