@@ -3,7 +3,7 @@
 # Date created:				06 January 1996
 # Whom:					bmc@WillsCreek.COM
 #
-# $Id: Makefile,v 1.4 1996/11/18 10:25:10 asami Exp $
+# $Id: Makefile,v 1.5 1996/11/18 14:06:53 asami Exp $
 #
 
 DISTNAME=	fileutils-3.12
@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 
 PATCHFILES=	color-ls-3.12.0.2.patch.gz
 PATCH_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	distributions/slackware/source/a/bin/
+PATCH_SITE_SUBDIR=	distributions/slackware/source/a/bin/
 
 MAINTAINER=	bmc@WillsCreek.COM
 
