@@ -39,8 +39,8 @@ etc/openldap/ldap.conf.default
 %%SERVER%%@unexec if cmp -s %D/etc/openldap/slapd.conf %D/etc/openldap/slapd.conf.default; then rm -f %D/etc/openldap/slapd.conf; fi
 %%SERVER%%etc/openldap/slapd.conf.default
 %%SERVER%%@exec [ -f %B/slapd.conf ] || cp %B/%f %B/slapd.conf
-%%SERVER%%@unexec /bin/rmdir %D/etc/openldap/schema 2>/dev/null || true
-@unexec /bin/rmdir %D/etc/openldap 2>/dev/null || true
+%%SERVER%%@unexec rmdir %D/etc/openldap/schema 2>/dev/null || true
+@unexec rmdir %D/etc/openldap 2>/dev/null || true
 %%SERVER%%etc/rc.d/slapd.sh
 %%SERVER%%etc/rc.d/slurpd.sh
 include/lber.h
@@ -78,6 +78,6 @@ share/openldap/ucdata/kdecomp.dat
 share/openldap/ucdata/num.dat
 @dirrm share/openldap/ucdata
 @dirrm share/openldap
-%%SERVER%%@unexec /bin/rmdir %%LOCALSTATEDIR%%/openldap-slurp 2>/dev/null || true
-%%SERVER%%@unexec /bin/rmdir %%LOCALSTATEDIR%%/openldap-data 2>/dev/null || true
-%%SERVER%%@unexec /bin/rmdir %%LDAP_RUN_DIR%% 2>/dev/null || true
+%%SERVER%%@unexec rmdir %%LOCALSTATEDIR%%/openldap-slurp 2>/dev/null || true
+%%SERVER%%@unexec rmdir %%LOCALSTATEDIR%%/openldap-data 2>/dev/null || true
+%%SERVER%%@unexec rmdir %%LDAP_RUN_DIR%% 2>/dev/null || true

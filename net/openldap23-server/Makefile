@@ -7,7 +7,7 @@
 
 PORTNAME=	openldap
 PORTVERSION=	${OPENLDAP_VERSION}.a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net databases
 MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/		\
 		http://public.planetmirror.com/pub/openldap/%SUBDIR%/	\
@@ -41,15 +41,17 @@ USE_OPENSSL=		yes
 USE_REINPLACE=		yes
 USE_LIBTOOL_VER=	14
 
+PLIST=			${WRKDIR}/pkg-plist
 PKGINSTALL=		${WRKDIR}/pkg-install
 PKGMESSAGE=		${WRKDIR}/pkg-message
 
-LOCALSTATEDIR?=		/var/db
-LDAP_RUN_DIR?=		/var/run/openldap
+LOCALSTATEDIR?=		${DESTDIR}/var/db
+LDAP_RUN_DIR?=		${DESTDIR}/var/run/openldap
 
 WITH_BDB_VER?=		41
 
-CONFIGURE_ARGS=		--with-threads \
+CONFIGURE_ARGS=		--enable-dynamic \
+			--with-threads \
 			--with-tls=openssl
 
 SED_SCRIPT=		-e 's,%%PREFIX%%,${PREFIX},g' \
@@ -61,7 +63,7 @@ PKGNAMESUFFIX=		-client
 CONFIGURE_ARGS+=	--disable-slapd
 PLIST_SUB+=		SERVER="@comment " \
 			SLAPI="@comment "
-SED_SCRIPT+=            -e '/^%%SERVER%%/d'
+SED_SCRIPT+=		-e '/^%%SERVER%%/d'
 .else
 CONFIGURE_ARGS+=	--localstatedir=${LOCALSTATEDIR} \
 			--enable-lmpasswd \
@@ -93,7 +95,6 @@ CONFIGURE_ARGS+=	--enable-shell
 .endif
 
 .if defined(WITH_PERL)
-.error build with Perl backend broken: <http://www.openldap.org/its/index.cgi/Development?id=2513>
 USE_PERL5=	yes
 CONFIGURE_ARGS+=	--enable-perl
 .endif
@@ -114,7 +115,6 @@ CONFIGURE_ARGS+=	--enable-sql
 .if defined(WITH_SLAPI)
 LIB_DEPENDS+=		ltdl.4:${PORTSDIR}/devel/libltdl
 CONFIGURE_ARGS+=	--enable-slapi
-LIBS+=			-lltdl
 PLIST_SUB+=		SLAPI=""
 .else
 PLIST_SUB+=		SLAPI="@comment "
@@ -137,7 +137,7 @@ CPPFLAGS+=		-D_REENTRANT ${PTHREAD_CFLAGS} \
 			-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 
-CONFIGURE_TARGET=	--host=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="${LDFLAGS}" \
 			LIBS="${LIBS}"
@@ -167,6 +167,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,%LOCALSTATEDIR%/slapd\.,${LDAP_RUN_DIR}/slapd.,g' \
 		${WRKSRC}/servers/slapd/slapd.conf
 
+pre-configure:
+	@${REINPLACE_CMD} -e '/^LIBTOOL=/s^\$$(top_builddir)/libtool^${LIBTOOL}^g' \
+		${WRKSRC}/configure
+
 post-build:
 .for script in slapd.sh slurpd.sh
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/${script} >${WRKDIR}/${script}
@@ -174,6 +178,18 @@ post-build:
 .for text in pkg-install pkg-message
 	@${SED} ${SED_SCRIPT} ${.CURDIR}/${text} >${WRKDIR}/${text}
 .endfor
+
+pre-install:
+	@${CP} ${.CURDIR}/pkg-plist ${PLIST}
+.if !defined(NOPORTDOCS)
+	@for dir in rfc drafts; do \
+		${FIND} ${WRKSRC}/doc/$${dir} -maxdepth 1 -type f \
+			| ${SED} -e "s,^${WRKSRC}/doc/,%%DOCSDIR%%/," \
+			>>${PLIST}; \
+		${ECHO_CMD} "@dirrm %%DOCSDIR%%/$${dir}" >>${PLIST}; \
+	done
+	@${ECHO_CMD} "@dirrm %%DOCSDIR%%" >>${PLIST}
+.endif
 
 post-install:
 .if !defined(CLIENT_ONLY)
@@ -185,12 +201,8 @@ post-install:
 	@for dir in rfc drafts; do \
 		${MKDIR} ${DOCSDIR}/$${dir}; \
 		${FIND} ${WRKSRC}/doc/$${dir} -maxdepth 1 -type f \
-			-exec ${INSTALL_DATA} {} ${DOCSDIR}/$${dir} \; -print \
-			| ${SED} -e "s,^${WRKSRC}/doc/,${DOCSDIR:S,^${PREFIX}/,,}/," \
-			>>${TMPPLIST}; \
-		${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}/$${dir}" >>${TMPPLIST}; \
+			-exec ${INSTALL_DATA} {} ${DOCSDIR}/$${dir} \; ; \
 	done
-	@${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}" >>${TMPPLIST}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
