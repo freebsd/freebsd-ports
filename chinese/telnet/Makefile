@@ -14,6 +14,8 @@ DISTFILES=	# none
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	8bit compatible telnet client for Chinese input
 
+BROKEN=		"Fails to patch"
+
 SRCDIR=		/usr/src/usr.bin/telnet
 USE_REINPLACE=	yes
 
