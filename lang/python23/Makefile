@@ -7,7 +7,7 @@
 
 PORTNAME=	python
 PORTVERSION=	2.3.4
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -25,13 +25,14 @@ CONFIGURE_ARGS=	--with-fpectl
 CONFIGURE_ENV=	OPT="${CFLAGS}"
 MAKE_ENV=	VPATH="${WRKSRC}"
 INSTALLS_SHLIB=	yes
-INSTALL_TARGET=	install
-MAN1=		python.1
+INSTALL_TARGET=	altinstall
+MAN1=		${PYTHON_VERSION}.1
 
 USE_PYTHON=	yes
 PYTHON_VERSION=	python2.3
 PYTHON_NO_DEPENDS=	yes
 USE_REINPLACE=	yes
+LATEST_LINK=	${PYTHON_VERSION:S/.//}
 
 SHARED_WRKSRC=	${WRKSRC}/build.shared
 PLIST_SUB=	PYVER=${PYTHON_VERSION:S/python//}
@@ -160,6 +161,9 @@ post-install:
 	@# shared version of executable and library
 	${INSTALL_PROGRAM} ${SHARED_WRKSRC}/lib${PYTHON_VERSION}.so.1 \
 		${PREFIX}/lib
+	@${MKDIR} ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/Misc/python.man \
+		${MANPREFIX}/man/man1/${PYTHON_VERSION}.1
 	cd ${PREFIX}/lib; ${LN} -sf lib${PYTHON_VERSION}.so.1 \
 		lib${PYTHON_VERSION}.so
 	${LN} -sf ${PREFIX}/lib/lib${PYTHON_VERSION}.so \
@@ -167,12 +171,8 @@ post-install:
 	${INSTALL_PROGRAM} \
 		${SHARED_WRKSRC}/${PYTHON_VERSION:S/thon/thon-shared/} \
 		${PREFIX}/bin
-	cd ${PREFIX}/bin; \
-		${LN} -f ${PYTHON_VERSION:S/thon/thon-shared/} python-shared
 
 	@# additional files installing by ports
-	${INSTALL_DATA} ${WRKSRC}/Misc/python-mode.el \
-		${PREFIX}/share/emacs/site-lisp
 	${INSTALL_SCRIPT} ${WRKDIR}/pydoc2.3 ${WRKDIR}/idle2.3 \
 		${PREFIX}/bin
 

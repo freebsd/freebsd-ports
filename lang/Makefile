@@ -210,6 +210,7 @@
     SUBDIR += python-doc-postscript-letter
     SUBDIR += python21
     SUBDIR += python22
+    SUBDIR += python23
     SUBDIR += q
     SUBDIR += qscheme
     SUBDIR += quack
