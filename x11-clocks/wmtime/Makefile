@@ -3,12 +3,12 @@
 # Date created:        1 July 1998
 # Whom:                Rich Neswold <rneswold@mcs.net>
 #
-# $Id: Makefile,v 1.3 1998/09/15 11:13:31 asami Exp $
+# $Id: Makefile,v 1.4 1998/09/17 00:32:54 asami Exp $
 #
 
 DISTNAME=	wmtime-1.0b2
 CATEGORIES=	x11-clock
-MASTER_SITES=	http://www.xs4all.nl/~warp/files/
+MASTER_SITES=	ftp://ftp.mezaway.org/pub/
 
 MAINTAINER=	rneswold@mcs.net
 
