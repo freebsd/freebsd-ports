@@ -1,0 +1,16 @@
+@comment $FreeBSD$
+@unexec if cmp -s %D/etc/nginx/mime.types %D/etc/nginx/mime.types-dist; then rm -f %D/etc/nginx/mime.types; fi
+etc/nginx/mime.types-dist
+@exec [ -f %B/mime.types ] || cp %B/%f %B/mime.types
+@unexec if cmp -s %D/etc/nginx/nginx.conf %D/etc/nginx/nginx.conf-dist; then rm -f %D/etc/nginx/nginx.conf; fi
+etc/nginx/nginx.conf-dist
+@exec [ -f %B/nginx.conf ] || cp %B/%f %B/nginx.conf
+@unexec rmdir $D/etc/nginx 2>/dev/null || true
+@exec mkdir -p -m 755 www/nginx-dist
+@comment @unexec chmod u+w www/nginx-dist
+www/nginx-dist/EXAMPLE_DIRECTORY-DONT_ADD_OR_TOUCH_ANYTHING
+@exec [ -d %D/www/nginx/ ] || ln -fs %B %D/www/nginx
+www/nginx-dist/index.html
+@exec chmod a-w www/nginx-dist
+@unexec if [ -L %D/www/nginx ]; then rm -f %D/www/nginx; fi
+@dirrm www/nginx-dist

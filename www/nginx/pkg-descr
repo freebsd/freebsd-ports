@@ -1,0 +1,5 @@
+Another one small and robust www server, supports
+kqueue (EV_CLEAR, EV_DISABLE, NOTE_LOWAT, EV_EOF, etc.),
+select, poll, sendfile.
+
+WWW: http://sysoev.ru/nginx/
