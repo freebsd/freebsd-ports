@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of MIME, the Multipurpose Internet Mail Extensions
 
 DEPRECATED=	"mastersite disappeared\; last distfile update was in 1994"
-EXPIRATION_DATE=	"June 12 2004"
 
 RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage
 
