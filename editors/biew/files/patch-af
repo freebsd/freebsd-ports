@@ -1,5 +1,5 @@
---- lib/sysdep/generic/unix/keyboard.c.orig	Fri Apr 14 15:02:21 2000
-+++ lib/sysdep/generic/unix/keyboard.c	Tue Apr 18 00:15:50 2000
+--- lib/sysdep/generic/unix/keyboard.c.orig	Fri Jun  2 21:01:12 2000
++++ lib/sysdep/generic/unix/keyboard.c	Fri Jun  9 08:08:46 2000
 @@ -30,7 +30,11 @@
  #endif
  
@@ -9,6 +9,6 @@
 +#else
  #include <curses.h>
 +#endif
- #ifdef HAVE_MOUSE
  MEVENT me;
  #endif
+ 
