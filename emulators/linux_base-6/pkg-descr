@@ -3,14 +3,13 @@ for FreeBSD.  To get linux compat working you will need
 
 1) A linux binary such as doom, Wingz, or maple
 
-2) a kernel with ``options LINUX_COMPAT'' in the config file
+2) these libraries
 
-3) these libraries
-
-4) the linux compat lkm (ie run /usr/bin/linux)
+3) the linux compat lkm (ie run /usr/bin/linux)
 
 then run the linux binary. 
 
+the kernel option `COMAPT_LINUX' is not necessary anymore.
 
 eric.
 erich@FreeBSD.org
