@@ -3,13 +3,13 @@
 # Date created:		23 August 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.14 1996/12/30 21:26:52 max Exp $
+# $Id: Makefile,v 1.15 1997/03/11 23:47:08 torstenb Exp $
 #
 
-DISTNAME=	irc2.9.1p16
-PKGNAME=	irc-2.9.1.16
+DISTNAME=	irc2.9.2p3
+PKGNAME=	irc-2.9.2.3
 CATEGORIES=	net
-MASTER_SITES=	ftp://cs-ftp.bu.edu/irc/servers/
+MASTER_SITES=	ftp://ftp.funet.fi/pub/networking/services/irc/server/
 
 MAINTAINER=	torstenb@FreeBSD.ORG
 
