@@ -29,6 +29,8 @@ INSTDIR=	${PREFIX}/share/sgml/docbook
 ISOCAT=		${PREFIX}/share/sgml/iso8879/catalog
 MKCATALOG=	${PREFIX}/sbin/mkcatalog
 
+LATEST_LINK=	docbook-300
+
 pre-install:
 	@[ -d ${INSTDIR}/3.0 ] || ${MKDIR} ${INSTDIR}/3.0
 
