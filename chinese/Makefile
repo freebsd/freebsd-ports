@@ -30,6 +30,7 @@
     SUBDIR += cle_base
     SUBDIR += cless
     SUBDIR += cmexfonts
+    SUBDIR += cnprint
     SUBDIR += cwtex
     SUBDIR += cwtexttf
     SUBDIR += cxterm

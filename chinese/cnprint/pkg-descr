@@ -1,0 +1,24 @@
+CNPRINT is a utility to print Chinese/Japanese/Korean (CJK) text
+(or convert to PostScript) under DOS, VMS and UNIX systems. It
+works just as a print command on your system. Currently GB, Hz,
+zW, BIG5, CNS, JIS, EUC, Shift-JIS, KSC, UTF8, UTF7 and UTF16
+formats are supported.
+
+CNPRINT also has many other features, among them:
+
+    * print all CJK codes using a single Unicode CJK font
+    * print GB using Big5 fonts or print Big5 using GB fonts
+    * multiple columns, vertical printing, change font or character
+      size within document
+    * phrase-based GB<->BIG5 conversions
+    * built-in HZ<->GB conversion
+    * repair/re-format functions for CJK text
+    * envelope and address label printing
+    * decode MIME quoted printable (=20=3C=5E like text)
+    * true type fonts (TTF) support
+
+With its full Unicode support, it should be able to print other
+language (e.g. Thai, Vietnames, Arabic as well). For more information,
+please read the help file.
+
+WWW: http://www.neurophys.wisc.edu/~cai/software/
