@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	middleman
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	middle-man
@@ -18,6 +18,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
+
+MAN8=		mman.8
 
 .if defined(WITH_SYSLOG)
 CONFIGURE_ARGS+=	--enable-syslog
@@ -41,10 +43,12 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 	's|/usr/bin/mman|${PREFIX}/bin/mman|g ; \
 	s|/etc/mman/config.xml|${PREFIX}/etc/mman.xml|g' \
-		${WRKSRC}/scripts/mman.init
+		${WRKSRC}/scripts/mman.init \
+		${WRKSRC}/man/mman.8
 
 do-install:
 	@${MKDIR} ${MMAN_CACHE}
+	${INSTALL_MAN} ${WRKSRC}/man/mman.8 ${MANPREFIX}/man/man8
 	${INSTALL_PROGRAM} ${WRKSRC}/mman ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/config.xml \
 		${PREFIX}/etc/mman.xml
