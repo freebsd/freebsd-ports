@@ -1282,6 +1282,7 @@ dungeon		ports/games/dungeon
 dungeoncrawl	ports/games/dungeoncrawl
 durep		ports/sysutils/durep
 dv2jpg		ports/multimedia/dv2jpg
+dvd+rw-tools	ports/sysutils/dvd+rw-tools
 dvdauthor	ports/multimedia/dvdauthor
 dvdrip		ports/multimedia/dvdrip
 dvdtape		ports/sysutils/dvdtape
