@@ -19,7 +19,7 @@ COMMENT=	A mailing list manager (MLM) with a user-friendly web front-end
 
 RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx
 .if defined(WITH_CHINESE)
-RUN_DEPENDS+=	${PYTHONPREFIX_LIBDIR}/encodings/chinesecn/__init__.py:${PORTSDIR}/chinese/pycodec
+RUN_DEPENDS+=	${PYTHONPREFIX_SITELIBDIR}/cjkcodecs.pth:${PORTSDIR}/converters/py-cjkcodecs
 .endif
 
 HAS_CONFIGURE=	yes
