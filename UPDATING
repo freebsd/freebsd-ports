@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041212:
+  AFFECTS: users of sysutils/bacula
+  AUTHOR: lkoeller@FreeBSD.org
+
+  The port was split into a -server and -client component.
+  The -server part contains the storage and director daemon, the -client
+  part the console, file daemon and the documentation.
+
+  For migration delete the bacula port and install the -server and/or
+  -client port afterwards.
+
 20041208:
   AFFECTS: users of mail/getmail
   AUTHOR: question+fbsdports@closedsrc.org
