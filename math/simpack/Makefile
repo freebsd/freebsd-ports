@@ -28,6 +28,11 @@ VERSION=	1
 VERSION=	1.0
 .endif
 
+pre-patch:
+	@${PERL} -pi -e 's,<malloc.h>,<stdlib.h>,' \
+		${WRKSRC}/func/queuing/queuing.c \
+		${WRKSRC}/func/queuing/queuing.h
+
 post-build: create-libs create-scripts
 
 do-install: do-install-bin do-install-include do-install-lib do-install-doc
