@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	haproxy
-PORTVERSION=	1.1.21
-PORTREVISION=	0
+PORTVERSION=	1.1.24
 CATEGORIES=	net www
 MASTER_SITES=	http://w.ods.org/tools/haproxy/ \
 		http://w.ods.org/tools/haproxy/old/
@@ -15,30 +14,49 @@ MASTER_SITES=	http://w.ods.org/tools/haproxy/ \
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	High-performance and highly-robust TCP/HTTP load balancer
 
-STATS_INTERVAL?= 0
-REGEX_TYPE?=	libc
+USE_REINPLACE=	yes
 
-MAKE_ENV+=	REGEX=${REGEX_TYPE} INTERVAL=${STATS_INTERVAL}
+STATS_INTERVAL?= 0
+CFLAGS+=	-DSTATTIME=${STATS_INTERVAL}
+
+.if defined(WITH_TPROXY)
+CFLAGS+=	-DTPROXY
+.endif
 
 .if defined(WITH_PCRE)
-REGEX_TYPE=	pcre
 PKGNAMESUFFIX=	-pcre
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
+CFLAGS+=	-DUSE_PCRE -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -lpcreposix -lpcre
 .endif
 
 pre-fetch:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Available options:"
 	@${ECHO_MSG} "WITH_PCRE:            Use pcre regex engine"
+	@${ECHO_MSG} "WITH_DTPROXY:         Enable Transparent proxy support"
 	@${ECHO_MSG} "STATS_INTERVAL=###:   Statistics interval in milliseconds,"
 	@${ECHO_MSG} "                         (default to 0, disabled)"
 	@${ECHO_MSG} ""
 
+post-patch:
+	@${REINPLACE_CMD} -e 's!localtime(!localtime((time_t *)!' ${WRKSRC}/haproxy.c
+
+do-build:
+	@(cd ${WRKSRC} ;\
+	echo "Compiling haproxy:" ; \
+	echo "${CC} ${CFLAGS} ${LDFLAGS} ${PORTNAME}.c -o ${PORTNAME}" ;\
+	${CC} ${CFLAGS} ${LDFLAGS} ${PORTNAME}.c -o ${PORTNAME} )
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/haproxy ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKSRC}/examples/haproxy.cfg \
+	@${INSTALL_PROGRAM} ${WRKSRC}/haproxy ${PREFIX}/sbin
+	@${INSTALL_DATA} ${WRKSRC}/examples/haproxy.cfg \
 			${PREFIX}/etc/haproxy.cfg.sample
-	${INSTALL_SCRIPT} ${FILESDIR}/haproxy.sh \
+	@${INSTALL_SCRIPT} ${FILESDIR}/haproxy.sh \
 			${PREFIX}/etc/rc.d/haproxy.sh.sample
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
