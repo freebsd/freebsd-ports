@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	samba-tng
-PORTVERSION=	2.6.1c20020514
+PORTVERSION=	2.6.1c20020524
 CATEGORIES=	net
 MASTER_SITES=	http://www.samba-tng.org/download/tng/ \
 		http://something.inethouston.net/~poseiden/
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}_0.${PORTVERSION:S,c,cvs,}
 
 MAINTAINER=	dwcjr@FreeBSD.org
+
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 GNU_CONFIGURE=	YES
 INSTALLS_SHLIB=	YES
@@ -30,7 +32,8 @@ SAMBA_CONFDIR=	${PREFIX}/etc
 
 CONFIGURE_ARGS=	--localstatedir=${VARDIR}/lock \
 		--with-privatedir=${SAMBA_PRIVATE} --with-pam \
-		--with-logdir=${VARDIR}/log --with-tmpdir=${VARDIR}/run/samba-tng
+		--with-logdir=${VARDIR}/log --with-tmpdir=${VARDIR}/run/samba-tng \
+		--with-libiconv=${LOCALBASE}
 
 MAN1=		debug2html.1 make_smbcodepage.1 nmblookup.1 \
 		regedit.1 rpcclient.1 smbclient.1 smbrun.1 \
@@ -47,10 +50,7 @@ MAN8=		browserd.8 lsarpcd.8 netlogond.8 nmbd.8 rpcclient.8 \
 		srvsvcd.8 svcctld.8 swat.8 winbindd.8 winregd.8 \
 		wkssvcd.8
 
-.include <bsd.port.pre.mk>
-
-CONFIGURE_ENV=		AUTOCONF=${PREFIX}/bin/${AUTOCONF} \
-			AUTOHEADER=${PREFIX}/bin/${AUTOHEADER}
+.include<bsd.port.pre.mk>
 
 .if defined(WITH_SYSLOG)
 CONFIGURE_ARGS+=	--with-syslog
