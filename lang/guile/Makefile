@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	guile
 
 MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	GNU Ubiquitous Intelligent Language for Extension
 
 LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool
 
