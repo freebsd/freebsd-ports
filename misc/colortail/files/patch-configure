@@ -1,0 +1,11 @@
+--- configure.orig	Sun Aug 15 16:36:25 1999
++++ configure	Tue Jan 28 15:06:04 2003
+@@ -1206,7 +1206,7 @@
+ 
+ fi
+ 
+-for ac_hdr in malloc.h unistd.h regex.h gnuregex.h
++for ac_hdr in malloc.h unistd.h regex.h
+ do
+ ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`
+ echo $ac_n "checking for $ac_hdr""... $ac_c" 1>&6
