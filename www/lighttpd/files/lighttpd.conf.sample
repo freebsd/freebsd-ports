@@ -2,7 +2,7 @@
 # 
 # use a it as base for lighttpd 1.0.0 and above
 #
-# $Id: lighttpd.conf,v 1.6 2004/08/29 09:44:53 weigon Exp $
+# $Id: lighttpd.conf,v 1.7 2004/11/03 22:26:05 weigon Exp $
 
 ############ Options you really have to take care of ####################
 
@@ -159,10 +159,10 @@ server.groupname           = "www"
 #### fastcgi module
 ## read fastcgi.txt for more info
 #fastcgi.server              = ( ".php" =>
-#				( "grisu" => 
+#				( "localhost" => 
 #				  ( 
-#				    "host" => "192.168.2.10",
-#				    "port" => 1026
+#				    "socket" => "/tmp/php-fastcgi.socket",
+#				    "bin-path" => "/usr/local/bin/php"
 #				  )
 #				)
 #			      )
