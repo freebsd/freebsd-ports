@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	fastdep
-PORTVERSION=	0.13
-PORTREVISION=	1
+PORTVERSION=	0.14
 CATEGORIES=	devel
 MASTER_SITES=	http://www.irule.be/bvh/c++/fastdep/
 
@@ -18,19 +17,23 @@ LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
-ALL_TARGET=	boot
+HAS_CONFIGURE=	yes
+MAKE_ENV=	CXX="${CXX} -I${LOCALBASE}/include" \
+		CXXFLAGS="${CXXFLAGS}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|make |\$$\{MAKE\} |g' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|CXXFLAGS=|CXXFLAGS+=|g ; \
-		 s|-O2||g' ${WRKSRC}/Makefile.common
+.for file in Makefile config/link.mk build/dependencies.mk
+	@${REINPLACE_CMD} -e 's|g++|\$$\(CXX\)|g ; \
+		 s|[\$$][(]CFLAGS[)]||g ; \
+		 s|\. -l|\$$\{LOCALBASE\}/lib -l|g' ${WRKSRC}/${file}
+.endfor
+	@${REINPLACE_CMD} -e 's|PREFIX=|PREFIX?=|g' ${WRKSRC}/Makefile.options
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fastdep ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
