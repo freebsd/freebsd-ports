@@ -15,7 +15,7 @@ COMMENT=	Converts data between Korean KSC-5601 and Unicode 3.0 UTF-16
 
 INSTALLS_SHLIB=	YES
 
-if ${MACHINE_ARCH:L} == "amd64"
+.if ${MACHINE_ARCH:L} == "amd64"
 CFLAGS+=	"-fPIC"
 .endif
 
