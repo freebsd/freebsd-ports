@@ -8,6 +8,7 @@
     SUBDIR += ffmpeg045
     SUBDIR += goggles
     SUBDIR += gstreamer
+    SUBDIR += gstreamer-editor
     SUBDIR += gstreamer-player
     SUBDIR += gstreamer-plugins
     SUBDIR += gsubedit

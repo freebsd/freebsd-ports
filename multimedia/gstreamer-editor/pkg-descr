@@ -1,0 +1,7 @@
+The goal of gst-editor is to provide View and Controller counterparts
+to GStreamer's Model. It mirrors the state of GStreamer pipelines,
+and can be used to modify pipeline topology, state, and properties.
+Furthermore, it provides an interface to GStreamer's XML pipeline
+(de)serialization code, and a few more goodies.
+
+WWW: http://gstreamer.sourceforge.net/
