@@ -7,6 +7,7 @@
 
 PORTNAME=	pspell
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,17 +15,16 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/^0//}
 
 MAINTAINER=	ports@FreeBSD.org
 
+LIB_DEPENDS=	ltdl.1:${PORTSDIR}/devel/libtool
+
 USE_NEWGCC=	yes
-USE_LIBTOOL=	yes
-INSTALLS_SHLIB=	yes
-LIBTOOLFILES=	configure modules/configure libltdl/configure
-CONFIGURE_ENV+=	CXXFLAGS="${CXXFLAGS} -I${WRKSRC}" \
-		CPPFLAGS=-I${LOCALBASE}/include \
-		LDFLAGS=-L${LOCALBASE}/lib
-MAKE_ARGS+=	NOPORTDOCS=${NOPORTDOCS}
-.if !defined(NOPORTDOCS)
-CONFIGURE_ARGS=	--enable-doc-dir=${PREFIX}/share/doc/pspell
-.endif
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+LIBTOOLFILES=	configure modules/configure libltdl/configure
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--enable-doc-dir=${PREFIX}/share/doc/pspell
+MAKE_ARGS=	NOPORTDOCS=${NOPORTDOCS}
+INSTALLS_SHLIB=	yes
 
 .include <bsd.port.mk>
