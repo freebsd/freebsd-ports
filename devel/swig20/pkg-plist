@@ -1,78 +1,62 @@
 bin/swig
-lib/libswig.a
+lib/swig%%VER%%/tcl/constarray.i
+lib/swig%%VER%%/tcl/consthash.i
+lib/swig%%VER%%/tcl/ptrlang.i
+lib/swig%%VER%%/tcl/tclsh.i
+lib/swig%%VER%%/tcl/typemaps.i
+lib/swig%%VER%%/tcl/wish.i
+lib/swig%%VER%%/tcl/object.swg
+lib/swig%%VER%%/tcl/swigtcl8.swg
+lib/swig%%VER%%/perl5/perlmain.i
+lib/swig%%VER%%/perl5/ptrlang.i
+lib/swig%%VER%%/perl5/typemaps.i
+lib/swig%%VER%%/perl5/headers.swg
+lib/swig%%VER%%/perl5/perl5.swg
+lib/swig%%VER%%/perl5/perl5mg.swg
+lib/swig%%VER%%/perl5/Makefile.pl
+lib/swig%%VER%%/python/embed.i
+lib/swig%%VER%%/python/embed13.i
+lib/swig%%VER%%/python/embed14.i
+lib/swig%%VER%%/python/embed15.i
+lib/swig%%VER%%/python/ptrlang.i
+lib/swig%%VER%%/python/typemaps.i
+lib/swig%%VER%%/python/typemaps_old.i
+lib/swig%%VER%%/python/defarg.swg
+lib/swig%%VER%%/python/python.swg
+lib/swig%%VER%%/guile/guilemain.i
+lib/swig%%VER%%/guile/interpreter.i
+lib/swig%%VER%%/guile/typemaps.i
+lib/swig%%VER%%/guile/guile.swg
+lib/swig%%VER%%/java/typemaps.i
+lib/swig%%VER%%/java/java.swg
+lib/swig%%VER%%/array.i
+lib/swig%%VER%%/autodoc.i
+lib/swig%%VER%%/carray.i
+lib/swig%%VER%%/constraints.i
+lib/swig%%VER%%/ctype.i
+lib/swig%%VER%%/exception.i
+lib/swig%%VER%%/malloc.i
+lib/swig%%VER%%/math.i
+lib/swig%%VER%%/memory.i
+lib/swig%%VER%%/objc.i
+lib/swig%%VER%%/pointer.i
+lib/swig%%VER%%/stdlib.i
+lib/swig%%VER%%/timers.i
+lib/swig%%VER%%/swigptr.swg
+lib/libswigtcl8.so
+lib/libswigtcl8.a
 lib/libswigpl.a
-lib/libswigpy.a
 lib/libswigpl.so
+lib/libswigpy.a
 lib/libswigpy.so
-include/swig.h
-lib/swig_lib/Makefile
-lib/swig_lib/array.i
-lib/swig_lib/autodoc.i
-lib/swig_lib/carray.i
-lib/swig_lib/constraints.i
-lib/swig_lib/ctype.i
-lib/swig_lib/exception.i
-lib/swig_lib/malloc.i
-lib/swig_lib/math.i
-lib/swig_lib/memory.i
-lib/swig_lib/objc.i
-lib/swig_lib/pointer.i
-lib/swig_lib/stdlib.i
-lib/swig_lib/timers.i
-lib/swig_lib/swigptr.swg
-lib/swig_lib/tcl/blt.i
-lib/swig_lib/tcl/expect.i
-lib/swig_lib/tcl/expectk.i
-lib/swig_lib/tcl/ish.i
-lib/swig_lib/tcl/itclsh.i
-lib/swig_lib/tcl/itkwish.i
-lib/swig_lib/tcl/iwish.i
-lib/swig_lib/tcl/ptrlang.i
-lib/swig_lib/tcl/tclsh.i
-lib/swig_lib/tcl/tix.i
-lib/swig_lib/tcl/typemaps.i
-lib/swig_lib/tcl/wish.i
-lib/swig_lib/tcl/class.swg
-lib/swig_lib/tcl/configcode.swg
-lib/swig_lib/tcl/constarray.i
-lib/swig_lib/tcl/consthash.i
-lib/swig_lib/tcl/delcmd.swg
-lib/swig_lib/tcl/delcmd8.swg
-lib/swig_lib/tcl/methodcmd.swg
-lib/swig_lib/tcl/methodcmd8.swg
-lib/swig_lib/tcl/objcmd.swg
-lib/swig_lib/tcl/objcmd8.swg
-lib/swig_lib/tcl/swigtcl.swg
-lib/swig_lib/tcl/tcl8ptr.swg
-lib/swig_lib/tcl/Makefile
-lib/swig_lib/perl4/userinit.i
-lib/swig_lib/perl5/perlmain.i
-lib/swig_lib/perl5/ptrlang.i
-lib/swig_lib/perl5/typemaps.i
-lib/swig_lib/perl5/perl5.swg
-lib/swig_lib/perl5/perl5mg.swg
-lib/swig_lib/perl5/perl5ptr.swg
-lib/swig_lib/perl5/Makefile
-lib/swig_lib/perl5/Makefile.pl
-lib/swig_lib/python/embed.i
-lib/swig_lib/python/embed13.i
-lib/swig_lib/python/embed14.i
-lib/swig_lib/python/embed15.i
-lib/swig_lib/python/ptrlang.i
-lib/swig_lib/python/typemaps.i
-lib/swig_lib/python/typemaps_old.i
-lib/swig_lib/python/defarg.swg
-lib/swig_lib/python/pyexp.swg
-lib/swig_lib/python/python.swg
-lib/swig_lib/python/Makefile
-lib/swig_lib/guile/guilemain.i
-lib/swig_lib/guile/interpreter.i
-lib/swig_lib/guile/guile.swg
-lib/swig_lib/config/swigptr.swg
-@dirrm lib/swig_lib/tcl
-@dirrm lib/swig_lib/perl4
-@dirrm lib/swig_lib/perl5
-@dirrm lib/swig_lib/python
-@dirrm lib/swig_lib/guile
-@dirrm lib/swig_lib/config
-@dirrm lib/swig_lib
+lib/libswigpl.la
+lib/libswigpy.la
+lib/libswigtcl8.la
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
+@dirrm lib/swig%%VER%%/guile
+@dirrm lib/swig%%VER%%/java
+@dirrm lib/swig%%VER%%/python
+@dirrm lib/swig%%VER%%/perl5
+@dirrm lib/swig%%VER%%/tcl
+@dirrm lib/swig%%VER%%
