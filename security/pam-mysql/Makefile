@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-post-patch:
+pre-build:
 	@cd ${WRKSRC} && ${GMAKE} clean
 
 do-build:
