@@ -1,0 +1,7 @@
+libpdtp is a client library for the Peer Distributed Transfer
+Protocol (PDTP), a protocol which provides BitTorrent-like peer-based
+content distribution while operating more like HTTP or FTP.
+
+For a more thorough description of PDTP, see http://www.pdtp.org/.
+
+WWW: http://libpdtp.sourceforge.net/
