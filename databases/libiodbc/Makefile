@@ -17,6 +17,8 @@ MASTER_SITES=	http://www.iodbc.org/dist/
 MAINTAINER=	ebakke@trolltech.com
 COMMENT=	An ODBC 3.x driver manager, for universal data source access
 
+CONFLICTS=	unixODBC-*
+
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
