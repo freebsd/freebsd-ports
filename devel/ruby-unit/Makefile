@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unit
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.4
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://homepage1.nifty.com/markey/ruby/rubyunit/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
