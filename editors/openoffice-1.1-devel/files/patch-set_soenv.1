@@ -1,15 +1,22 @@
 --- set_soenv.1.orig	Wed Feb 27 10:46:41 2002
-+++ set_soenv.1	Mon Mar 11 13:46:57 2002
++++ set_soenv.1	Wed Mar 13 19:13:01 2002
 @@ -40,7 +40,7 @@
  #
  # Set this value equal to the corresponding amount of
  # command line arguments. 
 -my $numArgs = 19;
-+my $numArgs = 22;
++my $numArgs = 24;
  # Determining the amount of arguments in the call.
  my $numEnter = $#ARGV + 1;
  if ( $numEnter != $numArgs ) 
-@@ -72,8 +72,9 @@
+@@ -66,14 +66,15 @@
+ my ( $CALL_CDECL, $COMMON_OUTDIR, $NO_SRS_PATCH, $PROFULLSWITCH, $BIG_GOODIES, $BMP_WRITES_FLAG, 
+      $common_build, $MK_UNROLL, $NO_REC_RES, $PROEXT, $SO3, $SOLAR_JAVA, 
+      $SOLAR_PLUGIN, $TF_PACKAGES, $TF_SDBAPI, $TF_FILEURL, $UPDATER, $BUILD_DELIVER, $USE_NEWCHARSET, $USE_NEW_RSC, $VCL, 
+-     $TF_CFGDATA, $TF_SVDATA,
++     $TF_CFGDATA, $TF_SVDATA, $CC, $CXX,
+      $USE_NAMESPACE, $BUILD_SOSL, $LOCAL_SOLENV, $ENABLEUNICODE, $NEW_JAR_PACK, $NO_BSYMBOLIC, 
+      $USE_XPRINT, $BUILD_SOSL_RELEASE );
  #
  # Platform dependent constant values.
  my ( $BIG_SVX, $COM, $CPU, $CPUNAME, $CVER, $DLLSUFFIX, $GLIBC, $GUI, $GUIBASE, $GUIENV, 
@@ -21,7 +28,16 @@
  #
  #-------------------------------------------
  # IIc. Declaring the environment variables.
-@@ -303,7 +304,7 @@
+@@ -145,6 +146,8 @@
+ $STLPORT4	= $ARGV [ 12 ];     # Location of STLport4
+ $MINGWIN32	= $ARGV [ 17 ];     # use MINGWIN32
+ $USE_GCC3	= $ARGV [ 18 ];     # use gcc3 (only for unxlngi4 at the moment)
++$CC		= $ARGV [ 22 ];     # get cc from environment
++$CXX		= $ARGV [ 23 ];     # use c++ from environment
+ #
+ #---------------------------------------------------------------
+ # IIIb. Initialising the variables for the system commands, etc.
+@@ -303,7 +306,7 @@
     $PROSWITCH      = "-DPRODUCT";
     $XPVERSION      = "3";
     $SOLAR_JAVA	   = "TRUE"; 
@@ -30,7 +46,7 @@
  } 
  elsif ( $platform eq "$FreeBSD" ) 
  {     print "Setting FreeBSD specific values... ";
-@@ -326,6 +327,9 @@
+@@ -326,6 +329,9 @@
        $PATH_SEPERATOR = $ps;
        $PROSWITCH      = "-DPRODUCT";
        $XPVERSION      = "3";
@@ -40,7 +56,7 @@
  } 
  elsif ( $platform eq "$Linux" ) 
  {
-@@ -889,15 +893,16 @@
+@@ -889,15 +895,16 @@
                          $D.$COM.
  			$D.$CVER.
                          $D.$GVER.
@@ -60,7 +76,7 @@
  {  $SOLARDEF         .= $D."GLIBC=".$GLIBC;
  }
  $SOLARDEF            .= $D."SUPD=$UPD".
-@@ -990,7 +995,7 @@
+@@ -990,7 +997,7 @@
                          $ps.$USR.$LIB.
                          $ps.$USR_LOCAL.$BIN;
  }
@@ -69,7 +85,7 @@
  {  $PATH              = $cur_dir.
                          $ps.'$SOLARVER'.$ds.'$UPD'.$ds.'$INPATH'.$BIN.
                          $ps.'$SOLARENV'.$ds.'$OUTPATH'.$BIN.
-@@ -1004,6 +1009,22 @@
+@@ -1004,6 +1011,22 @@
                          $ps.$USR.$BIN.$ds."X11".
                          $ps.$USR.$LIB;
  }
@@ -92,7 +108,7 @@
  elsif ($platform eq "$Winnt")
  {  $COMPATH_ROOT      = $COMPATH;
     $COMPATH_ROOT      =~ s/\/vc98$//;
-@@ -1107,21 +1128,14 @@
+@@ -1107,21 +1130,14 @@
  	$SOLARINC            .= $I.$USR.$INCLUDE;
  }
  $SOLARINC	     .= $STLPORT_stlport;
@@ -117,8 +133,12 @@
  {
  # This simply adds an include path, so even cases that break the FHS work
  $SOLARINC            .= $STLPORT_inc_stlport;
-@@ -1313,6 +1327,9 @@
+@@ -1311,8 +1327,13 @@
+ ToFile( "GLIBC",             $GLIBC,             "e" );
+ ToFile( "GUIBASE",           $GUIBASE,           "e" );
  ToFile( "GUIENV",            $GUIENV,            "e" );
++ToFile( "CC",                $CC,                "e" );
++ToFile( "CXX",               $CXX,               "e" );
  ToFile( "GVER",              $GVER,              "e" );
  ToFile( "OS",                $OS,                "e" );
 +ToFile( "OSVERSION",         $OSVERSION,         "e" );
