@@ -1,11 +1,29 @@
---- configure.orig	Tue Jun 20 00:25:46 2000
-+++ configure	Thu Jun 29 12:16:30 2000
-@@ -2149,7 +2149,7 @@
+--- configure.orig	Tue May 29 23:04:03 2001
++++ configure	Mon Dec 10 16:48:26 2001
+@@ -2237,7 +2237,7 @@
  objext="$OBJEXT" exeext="$EXEEXT" reload_flag="$reload_flag" \
  deplibs_check_method="$deplibs_check_method" file_magic_cmd="$file_magic_cmd" \
  ${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
--$libtool_flags --no-verify --build="$build" $ac_aux_dir/ltmain.sh $lt_target \
-+$libtool_flags --build="$build" $ac_aux_dir/ltmain.sh $lt_target \
+-$libtool_flags --no-verify --build="$build" $ac_aux_dir/ltmain.sh $host \
++$libtool_flags --build="$build" $ac_aux_dir/ltmain.sh $host \
  || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
  
  # Reload cache, that may have been modified by ltconfig
+@@ -2254,7 +2254,7 @@
+ LIBTOOL_DEPS="$ac_aux_dir/ltconfig $ac_aux_dir/ltmain.sh $ac_aux_dir/ltcf-c.sh"
+ 
+ # Always use our own libtool.
+-LIBTOOL='$(SHELL) $(top_builddir)/libtool'
++LIBTOOL=${LIBTOOL}
+ 
+ # Redirect the config.log output again, so that the ltconfig log is not
+ # clobbered by the next message.
+@@ -2273,7 +2273,7 @@
+ deplibs_check_method="$deplibs_check_method" \
+ file_magic_cmd="$file_magic_cmd" \
+ ${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig -o libtool $libtool_flags \
+---build="$build" --add-tag=CXX $ac_aux_dir/ltcf-cxx.sh $host \
++--build="$build" $ac_aux_dir/ltcf-cxx.sh $host \
+ || { echo "configure: error: libtool tag configuration failed" 1>&2; exit 1; }
+ CC="$lt_save_CC"
+ CFLAGS="$lt_save_CFLAGS"
