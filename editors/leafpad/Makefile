@@ -28,12 +28,13 @@ post-patch:
 		s|/applications|/gnome/applications|' \
 		${WRKSRC}/Makefile.in ${WRKSRC}/src/Makefile.in
 
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${PORTDOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
+	@${X11BASE}/bin/update-desktop-database
 
 .include <bsd.port.mk>
