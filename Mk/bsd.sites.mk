@@ -84,6 +84,7 @@ MASTER_SITE_KDE+=	\
 	ftp://ftp.chg.ru/pub/X11/kde/%SUBDIR%/ \
 	ftp://ftp.synesis.net/pub/mirrors/kde/%SUBDIR%/ \
 	ftp://ftp.twoguys.org/pub/kde/%SUBDIR%/ \
+	ftp://ftp.mirror.ac.uk/sites/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.dataplus.se/pub/linux/kde/%SUBDIR%/
 
 MASTER_SITE_MOZILLA+= \
