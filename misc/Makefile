@@ -125,6 +125,7 @@
     SUBDIR += viz
     SUBDIR += wmcp
     SUBDIR += wmmand
+    SUBDIR += wmpccard
     SUBDIR += wmstock
     SUBDIR += wmweather
     SUBDIR += xd
