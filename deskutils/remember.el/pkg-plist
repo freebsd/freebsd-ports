@@ -1,0 +1,10 @@
+%%EMACS_VERSION_SITE_LISPDIR%%/remember/read-file-name.el
+%%EMACS_VERSION_SITE_LISPDIR%%/remember/remember-bbdb.el
+%%EMACS_VERSION_SITE_LISPDIR%%/remember/remember-bibl.el
+%%EMACS_VERSION_SITE_LISPDIR%%/remember/remember-blosxom.el
+%%EMACS_VERSION_SITE_LISPDIR%%/remember/remember-diary.el
+%%EMACS_VERSION_SITE_LISPDIR%%/remember/remember-emacs-wiki-journal.el
+%%EMACS_VERSION_SITE_LISPDIR%%/remember/remember-experimental.el
+%%EMACS_VERSION_SITE_LISPDIR%%/remember/remember-planner.el
+%%EMACS_VERSION_SITE_LISPDIR%%/remember/remember.el
+@dirrm %%EMACS_VERSION_SITE_LISPDIR%%/remember
