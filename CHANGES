@@ -10,6 +10,51 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20050107:
+AUTHOR: portmgr@FreeBSD.org
+  The following changes were committed:
+
+  * Change bento to pointyhat names in comments.
+
+  * Document DISABLE_VULNERABILITIES variable.
+
+  * Add WWW: line for 'search' target.
+
+  * Speedup check-vulnerable invokation, if portaudit is installed.
+
+  * Run install-info for all .info files.
+
+  * Run add-plist-docs more strictly and prevent some situations
+    with leftover files in the future.
+
+  * Introduce two new variables: MASTER_PORT and SLAVE_PORT.
+    The results from these variables is only used as information for
+    users.
+
+  * Honour OPTIONS if PACKAGE_BUILDING or BATCH are defined.
+
+  * Move all USE_GCC entries to new file - bsd.gcc.mk.  'test-gcc'
+    target allows users to check gcc version if USE_GCC is used.
+    Give maintainers opportunity to add '+' character to USE_GCC version
+    for using specified and higher versions.
+
+    Example:
+
+    USE_GCC=3.3+
+
+    builds ports with gcc version 3.3 and higher (3.4, 4.0).
+
+  * Install startup scripts with the help of USE_RC_SUBR variable.
+
+  * Add three new targets: config-recursive, rmconfig-recursive and
+    config-conditional.  You can set or delete OPTIONS for all
+    dependencies before every build.  config-conditional target is
+    used to skip configuring ports which have already been
+    configured.
+
+  * Fix using of WANT_PGSQL_VER variable if postgresql is already
+    installed.
+
 20041231:
 AUTHOR: netchild@FreeBSD.org
   USE_LINUX_PREFIX doesn't implies USE_LINUX anymore.
