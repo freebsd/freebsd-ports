@@ -1,0 +1,9 @@
+This is Graph, the Perl module for graph operations as the code was for
+the 1st edition of "Mastering Algorithms with Perl", by Jon Orwant,
+Jarkko Hietaniemi, and John Macdonald, published in August 1999 by the
+O'Reilly and Associates.
+
+WWW: http://search.cpan.org/search?dist=Graph
+
+-Anton
+<tobez@FreeBSD.org>
