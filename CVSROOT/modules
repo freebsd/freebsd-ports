@@ -3955,6 +3955,7 @@ koctave		ports/math/koctave
 koffice-i18n	ports/misc/koffice-i18n
 koffice-i18n-af	ports/misc/koffice-i18n-af
 koffice-i18n-bs	ports/misc/koffice-i18n-bs
+koffice-i18n-ca	ports/misc/koffice-i18n-ca
 koffice-i18n-cs	ports/misc/koffice-i18n-cs
 koffice-i18n-da	ports/misc/koffice-i18n-da
 koffice-i18n-el	ports/misc/koffice-i18n-el
