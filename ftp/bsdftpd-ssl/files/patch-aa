@@ -1,0 +1,89 @@
+diff -urN bsdftpd-ssl.ORI/ftp/ftp.c bsdftpd-ssl/ftp/ftp.c
+--- ftp/ftp.c	Sun Jul  4 22:00:32 2004
++++ ftp/ftp.c	Fri Aug  6 22:13:06 2004
+@@ -1544,6 +1544,7 @@
+ 			prt[1] &= 0xff;
+ 			error = 0;
+ epsv_done:
++			;
+ 		} else
+ 			error = 1;
+ 
+@@ -1867,6 +1868,7 @@
+ 
+ 			    return NULL;
+ 			default:
++			    ;
+ 			}
+ 
+ 			X509_free(x509_ssl_con);
+@@ -1982,6 +1984,7 @@
+ 
+ 		    return NULL;
+ 		default:
++		    ;
+ 		}
+ 
+ 		X509_free(x509_ssl_con);
+diff -urN bsdftpd-ssl.ORI/ftp/util.c bsdftpd-ssl/ftp/util.c
+--- ftp/util.c	Mon May 31 02:24:47 2004
++++ ftp/util.c	Fri Aug  6 21:59:59 2004
+@@ -987,6 +987,7 @@
+ 		ssl_log_msgn(bio_err,"Reason: Certificate revoked");
+ 		break;
+ 	    default:
++		;
+ 	    }
+ 
+ 	    warnx("TLS/SSL connection to server failed");
+diff -urN bsdftpd-ssl.ORI/ftpd/ftpd.c bsdftpd-ssl/ftpd/ftpd.c
+--- ftpd/ftpd.c	Thu Jul  8 02:35:54 2004
++++ ftpd/ftpd.c	Fri Aug  6 21:46:26 2004
+@@ -2262,6 +2262,7 @@
+ 			SSL_get_shutdown(ssl_data_con);
+ 			break;
+ 		    default:
++			;
+ 		    }
+ 		}
+ 		SSL_free(ssl_data_con);
+@@ -2385,6 +2386,7 @@
+ 			SSL_get_shutdown(ssl_data_con);
+ 			break;
+ 		    default:
++			;
+ 		    }
+ 		}
+ 		SSL_free(ssl_data_con);
+@@ -2636,6 +2638,7 @@
+ 
+ 			    return NULL;
+ 			default:
++			    ;
+ 			}
+ 
+ 			X509_free(x509_ssl_con);
+@@ -2797,6 +2800,7 @@
+ 
+ 		    return NULL;
+ 		default:
++		    ;
+ 		}
+ 
+ 		X509_free(x509_ssl_con);
+@@ -4100,6 +4104,7 @@
+ 					    SSL_get_shutdown(ssl_data_con);
+ 					    break;
+ 					default:
++					    ;
+ 					}
+ 				    }
+ 				    SSL_free(ssl_data_con);
+@@ -4214,6 +4219,7 @@
+ 			    SSL_get_shutdown(ssl_data_con);
+ 			    break;
+ 			default:
++			    ;
+ 			}
+ 		    }
+ 		    SSL_free(ssl_data_con);
