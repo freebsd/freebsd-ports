@@ -9,8 +9,7 @@
 PORTNAME=	translate
 PORTVERSION=	1.00
 CATEGORIES=	misc
-MASTER_SITES=	http://www.freebsdcluster.org/~mich/software/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	http://www.freebsdcluster.org/~mich/software/
 DISTNAME=	translate
 
 MAINTAINER=	mich@freebsdcluster.org
