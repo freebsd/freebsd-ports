@@ -119,7 +119,6 @@
     SUBDIR += freecolor
     SUBDIR += freedt
     SUBDIR += freesbie
-    SUBDIR += fsck_ext2fs
     SUBDIR += ftrace
     SUBDIR += fvcool
     SUBDIR += ganglia-monitor-core
