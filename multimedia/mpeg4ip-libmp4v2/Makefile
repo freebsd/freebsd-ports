@@ -7,6 +7,7 @@
 
 PORTNAME=	mpeg4ip
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -43,5 +44,10 @@ post-patch:
 			${WRKSRC}/configure
 pre-build:
 	@cd ${WRKSRC}/lib/gnu && ${MAKE}
+
+post-install:
+.for i in include/mpeg4ip.h include/mpeg4ip_version.h mpeg4ip_config.h
+	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/include
+.endfor
 
 .include <bsd.port.post.mk>

@@ -7,6 +7,7 @@
 
 PORTNAME=	mpeg4ip
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -161,6 +162,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-I$(top_srcdir)/lib/mp4v2||; \
 		s|../mp4v2/libmp4v2.la||; s|@LIBS@|@LIBS@ -lmp4v2|' \
 		${WRKSRC}/lib/mp4av/Makefile.in
+	@${REINPLACE_CMD} -e 's|mpeg4ip.h||; \
+		s|mpeg4ip_config.h||; s|mpeg4ip_version.h||' \
+		${WRKSRC}/include/Makefile.in
+	@${REINPLACE_CMD} -e 's|include_HEADERS = mpeg4ip_config.h||' \
+		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|mp4venc_template.par||' \
 		${WRKSRC}/server/util/mp4encode/Makefile.in
 	@${FIND} ${WRKSRC} -type f -name "*.[ch]" -or -name "*.cpp" | ${XARGS} -n 10 \

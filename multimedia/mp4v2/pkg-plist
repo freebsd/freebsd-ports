@@ -4,6 +4,9 @@ bin/mp4info
 bin/mp4tags
 bin/mp4trackdump
 include/mp4.h
+include/mpeg4ip.h
+include/mpeg4ip_config.h
+include/mpeg4ip_version.h
 lib/libmp4v2.a
 lib/libmp4v2.so
 lib/libmp4v2.so.0
