@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rssgrab
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.6.1
 CATEGORIES=	net gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
@@ -30,12 +29,13 @@ do-build:
 	@${CAT} pkg-message | ${SED} -e 's|%%PREFIX%%|${PREFIX}|g ; s|%%NAME%%|${NAME}|g' > ${PKGMESSAGE}
 
 do-install:
-	@${MKDIR} ${DATADIR}/gdesklets/Displays/${NAME}/gfx
+	@${MKDIR} ${DATADIR}/gdesklets/Displays/${NAME}/gfx/bg
 	@${MKDIR} ${DATADIR}/gdesklets/Sensors/${NAME}
 	@${INSTALL_DATA} ${WRKSRC}/${NAME}/*.py ${DATADIR}/gdesklets/Sensors/${NAME}/
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${DATADIR}/gdesklets/Sensors/${NAME}/
 	@${INSTALL_DATA} ${WRKSRC}/*.display ${DATADIR}/gdesklets/Displays/${NAME}/
 	@${INSTALL_DATA} ${WRKSRC}/gfx/*.png ${DATADIR}/gdesklets/Displays/${NAME}/gfx/
+	@${INSTALL_DATA} ${WRKSRC}/gfx/bg/*.png ${DATADIR}/gdesklets/Displays/${NAME}/gfx/bg/
 	@${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}/gdesklets/Displays/${NAME}/
 	@${LN} -s ${DATADIR}/gdesklets/Displays/${NAME}/README \
 		${DATADIR}/gdesklets/Sensors/${NAME}/README
