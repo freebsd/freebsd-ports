@@ -1,3 +1,4 @@
+@unexec [ ! -f /var/run/authdaemond/pid ] || %D/etc/rc.d/courier-authdaemond.sh stop || true
 bin/courierauthconfig
 etc/rc.d/courier-authdaemond.sh
 %%MYSQLFLAG%%etc/authlib/authmysqlrc.dist
@@ -60,11 +61,9 @@ sbin/courierlogger
 %%PORTDOCS%%%%DOCSDIR%%/README.ldap
 %%PORTDOCS%%%%DOCSDIR%%/README_authlib.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@exec mkdir -p %D/var/spool/authdaemon 2>/dev/null || true
-@unexec rmdir %D/var/spool/authdaemon 2>/dev/null || true
-@unexec rmdir %D/var/spool 2>/dev/null || true
-@unexec rmdir %D/var/authdaemon 2>/dev/null || true
-@unexec rmdir %D/var 2>/dev/null || true
+@exec mkdir -m 0750 /var/run/authdaemond 2>/dev/null || true
+@exec chown %%MAILUSER%%:%%MAILGROUP%% /var/run/authdaemond 2>/dev/null || true
+@unexec rmdir /var/run/authdaemond 2>/dev/null || true
 @unexec rmdir %D/etc/authlib 2>/dev/null || true
 @dirrm lib/courier-authlib
 @dirrm libexec/courier-authlib
