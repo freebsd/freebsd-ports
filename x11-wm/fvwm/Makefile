@@ -3,7 +3,7 @@
 # Date created:		25 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.11 1995/01/13 13:17:41 jkh Exp $
+# $Id: Makefile,v 1.12 1995/02/11 13:51:22 asami Exp $
 #
 
 DISTNAME=	fvwm
@@ -12,6 +12,7 @@ DISTFILES=	fvwm-core.tar.gz fvwm-modules.tar.gz \
 		fvwm-icons.tar.gz
 MASTER_SITES=	ftp://spcot.sanders.com/pub/fvwm/
 USE_IMAKE=	yes
+XMKMF=		xmkmf
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 PKG_ARGS=	-v -c ${PKGDIR}/COMMENT -d ${PKGDIR}/DESCR -f ${PKGDIR}/PLIST \
 		-r ${PKGDIR}/REQUIRES -p ${PREFIX}
