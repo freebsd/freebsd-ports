@@ -19,7 +19,8 @@ LIB_DEPENDS=	pisock.8:${PORTSDIR}/palm/pilot-link
 USE_GMAKE=	YES
 USE_LIBTOOL_VER=13
 HAS_CONFIGURE=	YES
+CONFIGURE_ARGS=	--with-pilot-prefix=${LOCALBASE}
 INSTALLS_SHLIB=	YES
-CONFLICTS=	malsync-*
+CONFLICTS=	malsync-[0-9]*
 
 .include <bsd.port.mk>
