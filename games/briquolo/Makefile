@@ -6,32 +6,33 @@
 #
 
 PORTNAME=	briquolo
-PORTVERSION=	0.4.2
-PORTREVISION=	2
+PORTVERSION=	0.5
 CATEGORIES=	games
 MASTER_SITES=	http://briquolo.free.fr/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Breakout clone with an OpenGL 3D representation
 
-LIB_DEPENDS=	GUI.0:${PORTSDIR}/graphics/guilib \
-		png.5:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
+USE_SDL=	mixer sdl
+USE_GCC=	3.4
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-USE_SDL=	mixer sdl
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-.include <bsd.port.pre.mk>
+PLIST_SUB=	VERSION="${PORTVERSION}"
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
-	@${FIND} ${WRKSRC} -name "*.cpp" | ${XARGS} \
-		${REINPLACE_CMD} -e 's|SDL/|SDL11/|g'
-	@${FIND} ${WRKSRC} -name "*.h" | ${XARGS} \
-		${REINPLACE_CMD} -e 's|SDL/|SDL11/|g'
+	@${REINPLACE_CMD} -e 's|="-Wall"|="$$CXXFLAGS"|g ; \
+		 s|-O3||g' ${WRKSRC}/configure
+	@${GREP} -lR "SDL/SDL" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|SDL/SDL|SDL|g'
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
