@@ -1,5 +1,5 @@
-# $Id: Makefile,v 1.7 1994/10/03 23:56:51 jkh Exp $
+# $Id: Makefile,v 1.8 1994/10/06 23:43:08 ache Exp $
 #
-SUBDIR= calc libncurses dialog mshell iozone
+SUBDIR= calc dialog mshell iozone
 
 .include <bsd.port.subdir.mk>
