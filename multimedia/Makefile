@@ -9,6 +9,7 @@
     SUBDIR += dtv
     SUBDIR += dumpmpeg
     SUBDIR += dv2jpg
+    SUBDIR += dvdauthor
     SUBDIR += dvdrip
     SUBDIR += enjoympeg
     SUBDIR += ffmpeg

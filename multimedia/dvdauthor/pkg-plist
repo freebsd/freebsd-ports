@@ -1,0 +1,9 @@
+bin/dvdauthor
+bin/dvddirgen
+bin/makedvd
+bin/makevob
+bin/mpeg2desc
+bin/vob_dump
+bin/vob_dump
+%%PORTDOCS%%share/doc/dvdauthor/README
+%%PORTDOCS%%@dirrm share/doc/dvdauthor
