@@ -7,6 +7,7 @@
 
 PORTNAME=	postfix
 PORTVERSION=	20010502
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/experimental/ \
 		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/%SUBDIR%/ \
@@ -62,7 +63,8 @@ MAKEFILEFLAGS+=	OPT="${CFLAGS}"
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		PREFIX="${PREFIX}" \
 		TOUCH="${TOUCH}" \
-		MKDIR="${MKDIR}"
+		MKDIR="${MKDIR}" \
+		PREFIX="${PREFIX}"
 
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.postfix
