@@ -1,0 +1,13 @@
+vls -- the VideoLAN Server
+
+The vls is distributed with a GPL license.  See the file COPYING in the
+base directory.
+
+The vls is part of the VideoLAN project, a full client/server
+solution for video streaming using multicast or unicast.
+
+The VideoLAN web site at http://www.videolan.org/ is a good start for
+information about MPEG and DVD playing. Have a look at the documentation
+section (http://www.videolan.org/doc/), as well as the bookmarks.
+
+WWW: http://www.videolan.org/

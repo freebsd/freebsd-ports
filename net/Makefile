@@ -685,6 +685,7 @@
     SUBDIR += v6eval
     SUBDIR += vchat
     SUBDIR += vicq
+    SUBDIR += vls
     SUBDIR += vnc
     SUBDIR += vomit
     SUBDIR += vtun
