@@ -2578,6 +2578,7 @@ grhino		ports/games/grhino
 gri		ports/math/gri
 gribouy		ports/print/gribouy
 gridpix		ports/graphics/gridpix
+grig		ports/comms/grig
 gringotts	ports/security/gringotts
 grip		ports/audio/grip
 grisbi		ports/finance/grisbi
