@@ -28,6 +28,14 @@ USE_GCC=3.1
 .endif
 
 .if ${OSVERSION} > 500000
+.if ${USE_GCC} == 3.1
+#
+# We depend on the port. System g++ is broken at the moment.
+#
+BUILD_DEPENDS+= gcc31:${PORTSDIR}/lang/gcc31
+CC=		gcc31
+CXX=		g++31
+.endif
 .if defined(USE_GCC) && ${USE_GCC} == 2.95
 MOZILLADIST=	oo_moz1.0RC3_${ARCH}_FreeBSD-5-gcc2.95-ports.tar.gz
 .else
@@ -50,7 +58,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk13
 BUILD_DEPENDS+=	imake:${PORTSDIR}/devel/imake-4
-BUILD_DEPENDS+= Xvfb:${PORTSDIR}/XFree86-4-VirtualFramebufferServer
+BUILD_DEPENDS+= Xvfb:${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer
 LIB_DEPENDS+=	pth.14:${PORTSDIR}/devel/pth
 
 USE_PERL5=	yes
