@@ -56,6 +56,7 @@
     SUBDIR += gleyes
     SUBDIR += gltron
     SUBDIR += gma
+    SUBDIR += gno3dtet
     SUBDIR += gnomegames
     SUBDIR += gnuchess
     SUBDIR += gnugo
