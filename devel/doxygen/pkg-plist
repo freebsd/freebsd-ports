@@ -1,7 +1,7 @@
 bin/doxygen
 bin/doxysearch
 bin/doxytag
-bin/doxywizard
+%%HAVE_DOXYWIZARD%%bin/doxywizard
 %%PORTDOCS%%%%HAVE_LATEX%%share/doc/doxygen/archoverview.eps
 %%PORTDOCS%%%%HAVE_LATEX%%share/doc/doxygen/doxygen_logo.eps
 %%PORTDOCS%%%%HAVE_LATEX%%share/doc/doxygen/doxygen_manual.dvi
