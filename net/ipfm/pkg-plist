@@ -1,4 +1,3 @@
 sbin/ipfm
 etc/ipfm.conf
 @exec mkdir -p /var/log/ipfm
-@unexec rm -rf /var/log/ipfm
