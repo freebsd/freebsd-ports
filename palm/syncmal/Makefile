@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	syncmal
-PORTVERSION=	0.62
+PORTVERSION=	0.62.2
 CATEGORIES=	palm
 MASTER_SITES=	http://people.atl.mediaone.net/jasonday/code/syncmal/
 DISTNAME=	jpilot-${PORTNAME}_${PORTVERSION}${EXTRACTSUFX}
@@ -22,7 +22,7 @@ USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 CONFIGURE_ENV=	GTK_CONFIG=${X11BASE}/bin/gtk12-config
 CONFIGURE_ARGS=	--with-pilot-prefix=${PREFIX} \
-		--with-plugin-prefix=${WRKDIR}/../../jpilot/work/jpilot-0.99 \
+		--with-plugin-prefix=${WRKDIR}/../../jpilot/work/jpilot-0.99.2 \
 		--with-mal-source=${WRKDIR}/../../malsync/work/malsync
 
 .include <bsd.port.mk>
