@@ -3425,7 +3425,7 @@ kdebase3	ports/x11/kdebase3
 kdegames3	ports/games/kdegames3
 kdegraphics3	ports/graphics/kdegraphics3
 kdelibs3	ports/x11/kdelibs3
-kdemultimedia3		ports/audio/kdemultimedia3
+kdemultimedia3	ports/multimedia/kdemultimedia3
 kdenetwork3	ports/net/kdenetwork3
 kdepim3		ports/deskutils/kdepim3
 kdesdk3		ports/devel/kdesdk3
