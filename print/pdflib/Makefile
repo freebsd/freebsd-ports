@@ -15,6 +15,7 @@ MAINTAINER=	sysadmin@alexdupre.com
 RESTRICTED=	"many odd restrictions on usage and distribution"
 
 INSTALLS_SHLIB=	yes
+USE_GMAKE=	yes
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-cxx
