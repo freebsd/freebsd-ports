@@ -1,17 +1,16 @@
 # New ports collection makefile for:	wu-ftpd
-# Version required:     2.4.2-vr
+# Version required:     2.5.*
 # Date created:		18 Oct 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.23 1999/03/09 12:07:09 ache Exp $
+# $Id: Makefile,v 1.24 1999/04/07 11:08:42 ache Exp $
 #
 # REMINDER: to use ftpaccess(5) you need to specify -a in command line,
 # it is changed from previous versions
 
-DISTNAME=       wu-ftpd-2.4.2-vr17
-PKGNAME=        wu-ftpd-2.4.2v17
+DISTNAME=       wu-ftpd-2.5.0
 CATEGORIES=	net
-MASTER_SITES=   ftp://ftp.vr.net/pub/wu-ftpd/
+MASTER_SITES=   ftp://ftp.vr.net/pub/wu-ftpd/wu-ftpd/
 
 MAINTAINER=     ache@FreeBSD.org
 
