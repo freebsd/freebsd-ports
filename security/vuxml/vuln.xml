@@ -50,7 +50,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <references>
       <cvename>CAN-2004-0807</cvename>
       <cvename>CAN-2004-0808</cvename>
-      <url>www.idefense.com/application/poi/display?id=139&amp;type=vulnerabilities</url>
+      <url>http://www.idefense.com/application/poi/display?id=139&amp;type=vulnerabilities</url>
     </references>
     <dates>
       <discovery>2004-09-02</discovery>
@@ -255,7 +255,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </references>
     <dates>
       <discovery>2003-08-16</discovery>
-      <entry>2004-09-13</entry>
+      <entry>2004-09-14</entry>
     </dates>
   </vuln>
 
