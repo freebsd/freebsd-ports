@@ -7,6 +7,8 @@ bin/qconfirm-check
 bin/qconfirm-check-mid
 bin/qconfirm-conf
 bin/qconfirm-control
+bin/qconfirm-inject
+bin/qconfirm-notice
 bin/qconfirm-return
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
@@ -27,6 +29,8 @@ bin/qconfirm-return
 %%PORTDOCS%%%%DOCSDIR%%/qconfirm-check-mid.1.html
 %%PORTDOCS%%%%DOCSDIR%%/qconfirm-conf.1.html
 %%PORTDOCS%%%%DOCSDIR%%/qconfirm-control.1.html
+%%PORTDOCS%%%%DOCSDIR%%/qconfirm-inject.1.html
+%%PORTDOCS%%%%DOCSDIR%%/qconfirm-notice.1.html
 %%PORTDOCS%%%%DOCSDIR%%/qconfirm-return.1.html
 %%PORTDOCS%%%%DOCSDIR%%/technical.html
 %%PORTDOCS%%%%DOCSDIR%%/upgrade.html
