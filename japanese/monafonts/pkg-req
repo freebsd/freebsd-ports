@@ -58,6 +58,22 @@ monak16 -mona-gothic-medium-r-normal--16-150-75-75-p-160-jisx0208.1990-0
 monak16B -mona-gothic-bold-r-normal--16-150-75-75-p-160-jisx0208.1990-0
 monak16BI -mona-gothic-bold-i-normal--16-150-75-75-p-160-jisx0208.1990-0
 monak16I -mona-gothic-medium-i-normal--16-150-75-75-p-160-jisx0208.1990-0
+-mona-gothic-medium-i-normal--12-110-75-75-p-120-jisx0208.1983-0 -mona-gothic-medium-i-normal--12-110-75-75-p-120-jisx0208.1990-0
+-mona-gothic-bold-r-normal--16-150-75-75-p-160-jisx0208.1983-0 -mona-gothic-bold-r-normal--16-150-75-75-p-160-jisx0208.1990-0
+-mona-gothic-bold-r-normal--14-130-75-75-p-140-jisx0208.1983-0 -mona-gothic-bold-r-normal--14-130-75-75-p-140-jisx0208.1990-0
+-mona-gothic-medium-i-normal--16-150-75-75-p-160-jisx0208.1983-0 -mona-gothic-medium-i-normal--16-150-75-75-p-160-jisx0208.1990-0
+-mona-gothic-bold-r-normal--12-110-75-75-p-120-jisx0208.1983-0 -mona-gothic-bold-r-normal--12-110-75-75-p-120-jisx0208.1990-0
+-mona-gothic-medium-i-normal--14-130-75-75-p-140-jisx0208.1983-0 -mona-gothic-medium-i-normal--14-130-75-75-p-140-jisx0208.1990-0
+-mona-gothic-bold-i-normal--14-130-75-75-p-140-jisx0208.1983-0 -mona-gothic-bold-i-normal--14-130-75-75-p-140-jisx0208.1990-0
+-mona-gothic-bold-i-normal--16-150-75-75-p-160-jisx0208.1983-0 -mona-gothic-bold-i-normal--16-150-75-75-p-160-jisx0208.1990-0
+-mona-gothic-bold-i-normal--12-110-75-75-p-120-jisx0208.1983-0 -mona-gothic-bold-i-normal--12-110-75-75-p-120-jisx0208.1990-0
+-mona-gothic-medium-r-normal--16-150-75-75-p-160-jisx0208.1983-0 -mona-gothic-medium-r-normal--16-150-75-75-p-160-jisx0208.1990-0
+-mona-gothic-medium-r-normal--14-130-75-75-p-140-jisx0208.1983-0 -mona-gothic-medium-r-normal--14-130-75-75-p-140-jisx0208.1990-0
+-mona-gothic-medium-r-normal--12-110-75-75-p-120-jisx0208.1983-0 -mona-gothic-medium-r-normal--12-110-75-75-p-120-jisx0208.1990-0
+-mona-gothic-medium-r-normal--24-230-75-75-p-240-jisx0208.1983-0 -jis-fixed-medium-r-normal--24-230-75-75-c-240-jisx0208.1983-0
+-mona-gothic-medium-r-normal--20-190-75-75-p-200-jisx0208.1983-0 -kappa-mincho-medium-r-normal--20-190-75-75-c-200-jisx0208.1990-0
+-mona-gothic-medium-r-normal--10-70-75-75-p-100-jisx0208.1983-0 -elisa-fixed-medium-r-normal--10-70-75-75-c-100-jisx0208.1983-0
+-mona-gothic-bold-r-normal--20-190-75-75-p-200-jisx0208.1983-0 -kappa-mincho-bold-r-normal--20-190-75-75-c-200-jisx0208.1990-0
 EOF
 
 echo "Updating ${FONTDIR}/fonts.alias"
