@@ -1,5 +1,5 @@
---- support/log_server_status.in.orig	Fri Nov 16 22:11:16 2001
-+++ support/log_server_status.in	Fri Nov 16 22:13:50 2001
+--- support/log_server_status.in.orig	Mon Mar 12 08:40:47 2001
++++ support/log_server_status.in	Fri Feb 22 02:50:20 2002
 @@ -63,10 +63,10 @@
  #
  require 'sys/socket.ph';

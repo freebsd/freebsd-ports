@@ -1,8 +1,8 @@
---- config.layout.orig	Fri Oct 26 11:59:26 2001
-+++ config.layout	Fri Nov 16 18:36:14 2001
-@@ -285,3 +285,25 @@
-     logfiledir:    $prefix/logs
-     proxycachedir: $prefix/proxy
+--- config.layout.orig	Thu Feb 21 03:02:06 2002
++++ config.layout	Thu Feb 21 03:04:56 2002
+@@ -307,3 +307,26 @@
+     infodir:       $exec_prefix/share/info
+     installbuilddir: $prefix/etc/apache2/build
  </Layout>
 +
 +<Layout FreeBSD>
@@ -12,17 +12,18 @@
 +    sbindir:       $exec_prefix/sbin
 +    libexecdir:    $exec_prefix/libexec/apache
 +    mandir:        $prefix/man
-+    sysconfdir:    $prefix/etc/apache
++    sysconfdir:    $prefix/etc/apache2
 +    datadir:       $prefix/www
-+    installbuilddir: $prefix/share/mk/apache
++    installbuilddir: $prefix/share/apache
 +    errordir:      $datadir/error
 +    iconsdir:      $datadir/icons
 +    htdocsdir:     $datadir/data
-+    manualdir:     ${prefix}/share/doc/apache
++    manualdir:     $prefix/share/doc/apache
 +    cgidir:        $datadir/cgi-bin
 +    includedir:    $prefix/include/apache
 +    localstatedir: /var
 +    runtimedir:    $localstatedir/run
 +    logfiledir:    $localstatedir/log
 +    proxycachedir: $datadir/proxy
++    infodir:       $exec_prefix/share/info
 +</Layout>

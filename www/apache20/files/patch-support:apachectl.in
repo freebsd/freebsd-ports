@@ -1,6 +1,6 @@
---- support/apachectl.in.orig	Fri Nov 16 21:22:36 2001
-+++ support/apachectl.in	Fri Nov 16 22:07:31 2001
-@@ -25,10 +25,10 @@
+--- support/apachectl.in.orig	Sat Dec 15 22:56:36 2001
++++ support/apachectl.in	Fri Feb 22 02:40:03 2002
+@@ -26,10 +26,10 @@
  # --------------------                              --------------------
  # 
  # the path to your PID file
@@ -11,13 +11,13 @@
 -HTTPD='@prefix@/bin/@progname@'
 +HTTPD='@prefix@/sbin/@progname@'
  #
- # a command that outputs a formatted text version of the HTML at the
- # url given on the command line.  Designed for lynx, however other
-@@ -41,6 +41,7 @@
+ # pick up any necessary environment variables
+ if test -f @prefix@/bin/envvars; then
+@@ -47,6 +47,7 @@
  #
  # --------------------                              --------------------
  # ||||||||||||||||||||   END CONFIGURATION SECTION  ||||||||||||||||||||
 +eval `limits -e -C daemon` >/dev/null 2>&1
  
  ERROR=0
- ARGV="$@"
+ if [ "x$ARGV" = "x" ] ; then 
