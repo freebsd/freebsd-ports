@@ -782,6 +782,7 @@ cn2jp		ports/converters/cn2jp
 cnet		ports/net/cnet
 cnews		ports/news/cnews
 coalesce	ports/biology/coalesce
+coco		ports/textproc/coco
 cocoon		ports/textproc/cocoon
 coda		src/sys/coda
 coda5_client	ports/net/coda5_client
