@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= findutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ust@cert.siemens.de
 
 GNU_CONFIGURE=	yes
 
