@@ -1,8 +1,7 @@
 bin/screen
 bin/screen-3.7.2
 man/man1/screen.1.gz
+@unexec install-info --delete %D/info/screen.info %D/info/dir
 info/screen.info
-info/screen.info-1
-info/screen.info-2
-info/screen.info-3
-info/screen.info-4
+@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/screen.info %D/info/dir
