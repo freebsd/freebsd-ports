@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gphoto2
-PORTVERSION=	2.0
-PORTREVISION=	4
+PORTVERSION=	2.1.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.gphoto.net/dist/
@@ -23,34 +22,41 @@ LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
 		exif.5:${PORTSDIR}/graphics/libexif
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
+USE_BZIP2=	yes
+USE_REINPLACE=	yes
 USE_GLIB=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--without-cdk --without-fig2dev
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ARGS=	--without-cdk --without-fig2dev --without-xmlto
 INSTALLS_SHLIB=	yes
 
 MAN1=		gphoto2.1
-
-INSTALL_CMD=	/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}
+MAN3=		gphoto2.3 gphoto2_port.3
 
 post-patch:
 .for file in configure libgphoto2_port/configure
-	@${PERL} -pi -e 's|-g -Wall||g' ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e 's|-g -Wall||g ; \
+		 s|-pthread|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/${file}
 .endfor
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
-		's|\@INSTALL\@|${INSTALL_CMD}|g ; \
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|`glib-config|`\$$(GLIB_CONFIG)|g ; \
 		 s| install-docDATA||g ; \
 		 s| install-figureDATA||g ; \
-		 s|`glib-config|`\$$\(GLIB_CONFIG\)|g ; \
-		 s|\$$\(libdir\)/pkgconfig|\$$\(prefix\)/libdata/pkgconfig|g'
+		 s|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in AUTHORS NEWS README doc/FAQ doc/gphoto2-cli.txt doc/gphoto2.txt
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+	@${MKDIR} ${PREFIX}/share/doc/libgphoto2_port
+.for file in AUTHORS NEWS README
+	${INSTALL_DATA} ${WRKSRC}/libgphoto2_port/${file} \
+		${PREFIX}/share/doc/libgphoto2_port
 .endfor
 .endif
 
