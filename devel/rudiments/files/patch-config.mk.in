@@ -1,9 +1,9 @@
---- config.mk.in.orig	Fri Jun 29 13:04:24 2001
-+++ config.mk.in	Mon Jul  2 16:41:46 2001
-@@ -6,13 +6,13 @@
- prefix = @prefix@
- incdir = $(prefix)/include
- libdir = $(prefix)/lib
+--- config.mk.in.orig	Fri Aug 10 12:23:23 2001
++++ config.mk.in	Sat Sep 22 02:04:54 2001
+@@ -7,13 +7,13 @@
+ exec_prefix = @exec_prefix@
+ incdir = @includedir@
+ libdir = @libdir@
 -docdir = $(prefix)/doc/rudiments
 +docdir = $(prefix)/share/doc/rudiments
  
