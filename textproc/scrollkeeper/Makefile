@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
+LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml \
+		intl.1:${PORTSDIR}/devel/gettext
 
 # Don't use USE_X_PREFIX - the port doesn't really require X11 to run.
 # The reason why it should be in X11BASE is that GNOME is the primary
