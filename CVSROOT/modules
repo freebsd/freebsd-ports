@@ -202,6 +202,7 @@ acrobatviewer	ports/print/acrobatviewer
 acron		ports/misc/acron
 acroread	ports/print/acroread
 acroread5-commfont	ports/print/acroread5-commfont
+acroread7	ports/print/acroread7
 activitymail	ports/devel/activitymail
 actx		ports/games/actx
 acx100		ports/net/acx100
