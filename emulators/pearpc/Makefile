@@ -46,6 +46,7 @@ CONFIGURE_ARGS+=	--disable-fpo
 
 # jitc_x86 is avaible only on x86
 .if ${ARCH} == "i386"
+BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 .if !defined(WITH_JITC)
 CONFIGURE_ARGS+=	--enable-cpu=generic
 .else
