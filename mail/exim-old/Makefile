@@ -1,18 +1,17 @@
 # New ports collection makefile for:	exim
-# Version required:	3.10
+# Version required:	3.13
 # Date created:		23 June 1996
 # Whom:			markm@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	exim-3.12
+DISTNAME=	exim-3.13
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cus.cam.ac.uk/pub/software/programs/exim/ \
-		ftp://ftp.quite.net/pub/exim/ \
 		http://www.exim.org/ftp/ \
 		ftp://ftp.is.co.za/networking/mail/transport/exim/
-DISTFILES=	exim-3.12.tar.gz exim-texinfo-3.10.tar.gz
+DISTFILES=	exim-3.13.tar.gz exim-texinfo-3.10.tar.gz
 
 MAINTAINER=	sheldonh@FreeBSD.org
 
@@ -24,14 +23,21 @@ USE_PERL5=	YES
 
 MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
 
-# Uncomment the USE_LDAP and USE_MYSQL definitions to link against libldap
-# and libmysqlclient respectively:
+# Uncomment the USE_LDAP, USE_MYSQL and USE_PAM definitions to link against
+# libldap, libmysqlclient and libpam respectively.  The libpam linkage is
+# required for SMTP AUTH support.
 #USE_LDAP=	YES
 #USE_MYSQL=	YES
+#USE_PAM=	YES
 
 # If USE_LDAP==YES then LDAP_LIB_TYPE should be one of UMICHIGAN, NETSCAPE or
 # SOLARIS7:
 LDAP_LIB_TYPE=	UMICHIGAN
+
+# If USE_PAM==YES then one or more of USE_CRAM_MD5 and USE_PLAINTEXT
+# must be left uncommented.
+PAM_CRAM_MD5=	YES
+PAM_PLAINTEXT=	YES
 
 # You should not need to fiddle with anything below this point.
 
@@ -63,6 +69,21 @@ SEDLIST+=	-e 's/^LOOKUP_LIBS/\#LOOKUP_LIBS/' \
 		-e 's/^LOOKUP_INCLUDE/\#LOOKUP_INCLUDE/'
 .endif
 
+.if ( !defined(USE_PAM) || ${USE_PAM} != YES )
+SEDLIST+=	-e 's/^SUPPORT_PAM/\#SUPPORT_PAM/' \
+		-e 's/^PAM_LIBS/\#PAM_LIBS/'
+.endif
+
+.if ( !defined(USE_PAM) || ${USE_PAM} != YES ) || \
+    ( !defined(PAM_CRAM_MD5) || ${PAM_CRAM_MD5} != YES )
+SEDLIST+=	-e 's/^AUTH_CRAM_MD5/\#AUTH_CRAM_MD5/'
+.endif
+
+.if ( !defined(USE_PAM) || ${USE_PAM} != YES ) || \
+    ( !defined(PAM_PLAINTEXT) || ${PAM_PLAINTEXT} != YES )
+SEDLIST+=	-e 's/^AUTH_PLAINTEXT/\#AUTH_PLAINTEXT/'
+.endif
+
 do-configure:
 	${MKDIR} ${WRKSRC}/Local
 	${SED} ${SEDLIST} < ${FILESDIR}/Makefile > ${WRKSRC}/Local/Makefile
@@ -79,8 +100,5 @@ post-build:
 		${WRKSRC}/build-${OPSYS}-${MACHINE_ARCH}
 	${TOUCH} ${WRKSRC}/build-${OPSYS}-${MACHINE_ARCH}/eximon.bin
 	${TOUCH} ${WRKSRC}/build-${OPSYS}-${MACHINE_ARCH}/eximon
-
-post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
