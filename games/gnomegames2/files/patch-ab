@@ -1,25 +1,24 @@
---- gnome-stones/objects/Makefile.in.orig	Tue Jul 23 20:35:33 2002
-+++ gnome-stones/objects/Makefile.in	Tue Jul 23 20:35:28 2002
-@@ -142,7 +142,7 @@
- install_sh = @install_sh@
+--- gnome-stones/objects/Makefile.in.orig	Wed Aug 28 22:11:08 2002
++++ gnome-stones/objects/Makefile.in	Wed Aug 28 23:17:53 2002
+@@ -133,7 +133,7 @@
+ 
  GSTONES_SRC_DIR = $(srcdir)/../
  
 -objectdir = $(libdir)/gnome-stones/objects
 +objectdir = $(datadir)/gnome-stones/objects
  
- INCLUDES = \
- 	-I$(GSTONES_SRC_DIR)				\
-@@ -167,11 +167,11 @@
- CONFIG_CLEAN_FILES =
- LTLIBRARIES = $(object_LTLIBRARIES)
+ INCLUDES =  	-I$(GSTONES_SRC_DIR)					$(GNOME_GAMES_CFLAGS)					-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 		-DG_DISABLE_DEPRECATED                          	-DGTK_DISABLE_DEPRECATED 				-I$(includedir)						-DG_DISABLE_DEPRECATED					-DGDK_DISABLE_DEPRECATED 				-DGTK_DISABLE_DEPRECATED				-DGNOME_DISABLE_DEPRECATED
  
--libgnome_stones_la_LDFLAGS =
+@@ -150,10 +150,10 @@
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../..
+ LIBS = @LIBS@
+-libgnome_stones_la_LDFLAGS = 
 +libgnome_stones_la_LDFLAGS = -avoid-version
- libgnome_stones_la_LIBADD =
- am_libgnome_stones_la_OBJECTS = gnome-stones.lo
- libgnome_stones_la_OBJECTS = $(am_libgnome_stones_la_OBJECTS)
--libgnomekoban_la_LDFLAGS =
+ libgnome_stones_la_LIBADD = 
+ libgnome_stones_la_OBJECTS =  gnome-stones.lo
+-libgnomekoban_la_LDFLAGS = 
 +libgnomekoban_la_LDFLAGS = -avoid-version
- libgnomekoban_la_LIBADD =
- am_libgnomekoban_la_OBJECTS = gnomekoban.lo
- libgnomekoban_la_OBJECTS = $(am_libgnomekoban_la_OBJECTS)
+ libgnomekoban_la_LIBADD = 
+ libgnomekoban_la_OBJECTS =  gnomekoban.lo
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
