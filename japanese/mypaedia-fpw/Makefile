@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mypaedia-fpw
-PORTVERSION=	1.4
+PORTVERSION=	1.4.1
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/mypaedia-fpw/
 DISTNAME=	mypaedia-fpw${PORTVERSION}-src
@@ -20,21 +20,21 @@ BUILD_DEPENDS=	fpwmake:${PORTSDIR}/japanese/freepwing \
 IS_INTERACTIVE= YES
 RESTRICTED=	"The original dictionary is not free"
 WRKSRC=		${WRKDIR}/mypaedia-fpw${PORTVERSION}
-MOUNT_PT?=	/cdrom
+DICT_PATH?=	/cdrom
 
 post-extract:
-	@if [ ! -f ${MOUNT_PT}/INDEX/ITEM.DAT ]; then \
+	@if [ ! -f ${DICT_PATH}/INDEX/ITEM.DAT ]; then \
 	  ${ECHO} "###################################################"; \
 	  ${ECHO} "Specify a mount point for Mypaedia's CD-ROM"; \
 	  ${ECHO} "and excecute the following command again:"; \
-	  ${ECHO} "  make MOUNT_PT=${MOUNT_PT}"; \
+	  ${ECHO} "  make DICT_PATH=${DICT_PATH}"; \
 	  ${ECHO} "###################################################"; \
 	  ${FALSE}; \
 	fi
 
 do-build:
-#	cd ${WRKSRC}; fpwmake SRCDIR=${MOUNT_PT} > /dev/null; \
-	cd ${WRKSRC}; fpwmake SRCDIR=${MOUNT_PT}; \
+#	cd ${WRKSRC}; fpwmake SRCDIR=${DICT_PATH} > /dev/null; \
+	cd ${WRKSRC}; fpwmake SRCDIR=${DICT_PATH}; \
 	fpwmake catalogs
 
 do-install:
