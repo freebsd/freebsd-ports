@@ -6,6 +6,7 @@
 #
 
 CATEGORIES=	japanese lang
+PKGNAMEPREFIX=
 PHP_LANG=	ja
 MASTERDIR=	${.CURDIR}/../../lang/php_doc
 
