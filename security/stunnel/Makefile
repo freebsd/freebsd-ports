@@ -22,15 +22,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/run
 
 MAN8=		stunnel.8
-CONFIGURE_ENV+= LOCALBASE=${LOCALBASE}
 
 cert:
 	@(cd ${WRKSRC}; make cert)
-
-post-patch:
-	${SED} -e 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/configure > ${WRKSRC}/configure~
-	${MV} ${WRKSRC}/configure~ ${WRKSRC}/configure
-	${CHMOD} a+x ${WRKSRC}/configure
 
 post-build:
 	@${ECHO} ""
