@@ -18,7 +18,7 @@ PATCH_SITES=	http://www.hh.iij4u.or.jp/%7Ehayasida/oleo/
 PATCHFILES=	${DISTNAME}-${PORTVERSION}jb2.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	sanpei@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Spreadsheet Program + Japanese patches
 
 # xmkmf is for configure script, not for USE_IMAKE.
