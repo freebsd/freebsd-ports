@@ -1,0 +1,6 @@
+OSGEdit is an editor of scenes for the library OpenSceneGraph. It's only a
+composer, not a modeller. You can use many programs to model your objects and
+then import them into OSGEdit to compose a complex OSG scene to use in your
+application.
+
+WWW: http://osgedit.sourceforge.net/
