@@ -6,21 +6,15 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2003-03-11
-SNAPVER=	${SNAPDATE:S/-//g}
-
 PORTNAME=	gdb
 PORTVERSION=	5.3
-PORTREVISION=	${SNAPVER}
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=	gdb/snapshots/branch
-DISTNAME=	gdb+dejagnu-weekly-5.3.0.90_${SNAPVER}
+MASTER_SITE_SUBDIR=	gdb/releases
 
 MAINTAINER=	mp@FreeBSD.org
 COMMENT=	GNU GDB 5.3 developmental snapshot
 
-WRKSRC=		${WRKDIR}/${DISTNAME:S/-weekly//}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
