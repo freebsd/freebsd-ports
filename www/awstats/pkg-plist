@@ -4,6 +4,7 @@ bin/awstats_updateall.pl
 bin/awstats_logresolvemerge.pl
 bin/awstats_maillogconvert.pl
 bin/awstats_urlaliasbuilder.pl
+bin/awstats-1.1.wbm
 %%PORTDOCS%%%%DOCSDIR%%/images/awstats.ico
 %%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo1.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/awstats_logo1.png
@@ -33,12 +34,15 @@ bin/awstats_urlaliasbuilder.pl
 %%PORTDOCS%%%%DOCSDIR%%/awstats_changelog.txt
 %%PORTDOCS%%%%DOCSDIR%%/awstats_compare.html
 %%PORTDOCS%%%%DOCSDIR%%/awstats_config.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_extra.html
 %%PORTDOCS%%%%DOCSDIR%%/awstats_faq.html
 %%PORTDOCS%%%%DOCSDIR%%/awstats_glossary.html
 %%PORTDOCS%%%%DOCSDIR%%/awstats_license.html
 %%PORTDOCS%%%%DOCSDIR%%/awstats_security.html
 %%PORTDOCS%%%%DOCSDIR%%/awstats_setup.html
 %%PORTDOCS%%%%DOCSDIR%%/awstats_tools.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_update.html
+%%PORTDOCS%%%%DOCSDIR%%/awstats_webmin.html
 %%PORTDOCS%%%%DOCSDIR%%/awstats_what.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/styles.css
@@ -507,6 +511,7 @@ www/icons/os/winxp.png
 www/icons/other/awstats_logo1.png
 www/icons/other/awstats_logo5.png
 www/icons/other/awstats_logo6.png
+www/icons/other/backleft.png
 www/icons/other/button.gif
 www/icons/other/he.png
 www/icons/other/hh.png
