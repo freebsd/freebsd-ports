@@ -162,6 +162,7 @@ homard-*		ports/french/homard	Only free for use in conjunction with
 						french/aster. For any other purpose,
 						you have to acquire a license
 hptools*		ports/devel/hptools	Not made or distributed for resale
+ICON-*			ports/x11-themes/gnome-icons-*	Author rights unclear
 install_flash_player_6_linux*	ports/www/linux-flashplugin6	License forbids redistribution
 invitation-to-ruby	ports/devel/invitation_to_ruby	no commercial use
 j2sdkee-*		ports/java/j2sdkee	For development and testing use
