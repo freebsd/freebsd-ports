@@ -1,5 +1,5 @@
---- src/Imakefile.orig	Sun Mar 17 12:54:27 1996
-+++ src/Imakefile	Sat Feb  7 15:31:54 1998
+--- src/Imakefile.orig	Sun Mar 17 20:54:27 1996
++++ src/Imakefile	Tue Jan 18 00:00:00 2000
 @@ -46,17 +46,17 @@
  # BINDIR and LIBDIR should be predefined by the templates
  # BINDIR = /usr/bin/X11
@@ -32,6 +32,23 @@
  
  # *****************************************************************************
  # I hope you don't need to change anything below this point
+@@ -74,14 +74,14 @@
+ CC = c89
+ CCOPTIONS =
+ #else
+-CC = gcc
++XCOMM CC = gcc
+ #ifdef EXTRA_WARNINGS
+ CCOPTIONS = -O2 -pipe -ansi -fno-common -Wall -Wshadow -Wpointer-arith \
+ 	-Wcast-qual -Wcast-align -Waggregate-return \
+ 	-Wstrict-prototypes -Wmissing-prototypes \
+ 	-Wnested-externs -Wwrite-strings
+ #else
+-CCOPTIONS = -O2 -pipe -ansi -Wall -fno-common
++XCOMM CCOPTIONS = -O2 -pipe -ansi -Wall -fno-common
+ #endif
+ #endif
+ 
 @@ -109,7 +109,7 @@
  # *.c  require  version.h xsok.h
  # X*.c additionally require X-sok.h and Tableau.h
@@ -40,4 +57,31 @@
 +LIBCONTS = *.xpm *.gz *.help keys
  
  all::	$(ALLTARGETS)
+ 
+@@ -132,9 +132,9 @@
+ 
+ # the install targets require that make has been run in the lib directory
+ install:: $(MYPROGS)
+-	(umask 022 && mkdirhier $(XSOKLIBDIR))
++	(umask 022 && $(MKDIRHIER) $(XSOKLIBDIR))
+ 	# chmod 755 $(XSOKLIBDIR)
+-	(umask 022 && mkdirhier $(XSOKSAVEDIR))
++	(umask 022 && $(MKDIRHIER) $(XSOKSAVEDIR))
+ 	chmod 777 $(XSOKSAVEDIR)
+ 	(cd ../lib; tar cf - $(LIBCONTS) | (cd $(XSOKLIBDIR); tar xf -))
+ 	chown -R root $(XSOKLIBDIR) $(XSOKSAVEDIR)
+@@ -142,12 +142,12 @@
+ 	(cd ../lib && ../src/mergescores $(XSOKSAVEDIR)/Xsok.score \
+ 	   $(XSOKSAVEDIR)/Sokoban.score $(XSOKSAVEDIR)/Cyberbox.score)
+ 	chmod 666 $(XSOKSAVEDIR)/[A-z]*.score
+-	(umask 022 && mkdirhier $(XSOKDOCDIR))
++	(umask 022 && $(MKDIRHIER) $(XSOKDOCDIR))
+ 	if [ -r ../doc/xsok.dvi ]; then cp ../doc/xsok.dvi $(XSOKDOCDIR); fi
+ 	cp ../doc/cyberbox.doc $(XSOKDOCDIR)
+ 	cp ../etc/COPYRIGHT* $(XSOKDOCDIR)
+ 	chmod -R a+r $(XSOKDOCDIR)
+-	mkdirhier $(XSOKMANDIR)
++	$(MKDIRHIER) $(XSOKMANDIR)
+ 	cp xsok.man $(XSOKMANDIR)/xsok.6x
+ 	chmod 644 $(XSOKMANDIR)/xsok.6x
  

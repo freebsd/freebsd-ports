@@ -18,5 +18,5 @@ share/doc/xsok/COPYRIGHT.xpm
 share/doc/xsok/COPYRIGHT.xsok
 share/doc/xsok/cyberbox.doc
 share/doc/xsok/xsok.tex
-@dirrm lib/X11/xsok
 @dirrm share/doc/xsok
+@dirrm lib/X11/xsok
