@@ -7,7 +7,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	1.1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mplayerhq.hu/MPlayer/Skin/ \
 		http://ftp.lug.udel.edu/MPlayer/Skin/ \
@@ -193,9 +193,9 @@ do-build:
 do-install:
 # create target directories
 	@${MKDIR} ${PREFIX}/${myDATADIR}
-.if defined(WITH_SKIN_DEFAULT)
-	@${LN} -sf "${PREFIX}/${myDATADIR}/Blue" "${PREFIX}/${myDATADIR}/default"
-.endif
+#.if defined(WITH_SKIN_DEFAULT)
+#	@${LN} -sf "${PREFIX}/${myDATADIR}/Blue" "${PREFIX}/${myDATADIR}/default"
+#.endif
 # both anotate and create target directories
 	@for dir in `cd ${WRKDIR} && ${FIND} . -type d ! -name ".*" | ${SORT} -r` ; do \
 		${MKDIR} "${PREFIX}/${myDATADIR}/$${dir#./}" ; \
