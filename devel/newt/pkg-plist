@@ -1,10 +1,12 @@
 bin/whiptail
-lib/python1.5/lib-dynload/_snackmodule.so
-lib/python1.5/snack.py
-lib/whiptcl.so
+%%PYTHONOPT%%lib/%%PYTHON_VERSION%%/site-packages/_snack.so
+%%PYTHONOPT%%lib/%%PYTHON_VERSION%%/site-packages/snack.py
+%%PYTHONOPT%%lib/%%PYTHON_VERSION%%/site-packages/snack.pyc
+%%TCLOPT%%lib/whiptcl.so
 lib/libnewt.a
 lib/libnewt.so
 lib/libnewt.so.%%VERSION%%
 include/newt.h
-@unexec rmdir %D/lib/python1.5/lib-dynload 2>/dev/null || true
-@unexec rmdir %D/lib/python1.5 2>/dev/null || true
+%%PORTDOCS%%%%PYTHONOPT%%%%EXAMPLESDIR%%/peanuts.py
+%%PORTDOCS%%%%PYTHONOPT%%%%EXAMPLESDIR%%/popcorn.py
+%%PORTDOCS%%%%PYTHONOPT%%@dirrm %%EXAMPLESDIR%%
