@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kanatest
-PORTVERSION=	0.1.1
+PORTVERSION=	0.3.6
 CATEGORIES=	games
 MASTER_SITES=	http://clay.ll.pl/download/
 
@@ -15,7 +15,9 @@ COMMENT=	A simple hiragana/katakana drill tool
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+
+MAN1=		kanatest.1
 
 .include <bsd.port.mk>
