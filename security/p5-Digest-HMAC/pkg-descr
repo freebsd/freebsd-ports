@@ -1,0 +1,20 @@
+Digest:: HMAC
+---------------------------------
+
+This package provide modules which calculate HMAC digests.
+
+To build the extensions, unpack this distribution somewhere, create
+the Makefile by running 'perl Makefile.PL' and do a 'make', 'make
+test', and if successful 'make install'.
+
+You will need perl version 5.004 or better to install these modules.
+Further documentation is embedded in the individual modules.
+
+Copyright 1998-1999 Gisle Aas.
+Copyright 1998 Graham Barr.
+Copyright 1997 Uwe Hollerbach.
+Copyright 1995-1996 Neil Winton.
+Copyright 1990-1992 RSA Data Security, Inc.
+
+This library is free software; you can redistribute it and/or
+modify it under the same terms as Perl itself.
