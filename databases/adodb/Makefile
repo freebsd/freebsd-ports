@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	adodb
-PORTVERSION=	1.72
+PORTVERSION=	1.81
 CATEGORIES=	databases www
 MASTER_SITES=	http://phplens.com/lens/dl/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
@@ -19,49 +19,101 @@ RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	YES
 
-ADODB_DIR=	www/data.default/adodb
-ADODB_TEST=	share/examples/adodb
+ADODB_DIR=	www/data.default/php/adodb
+ADODB_DRIVERS=	${ADODB_DIR}/drivers
+ADODB_TESTS=	${ADODB_DIR}/tests
 PLIST_SUB=	ADODB_DIR=${ADODB_DIR} \
-		ADODB_TEST=${ADODB_TEST} \
+		ADODB_DRIVERS=${ADODB_DRIVERS} \
+		ADODB_TESTS=${ADODB_TESTS} \
 		DOCSDIR=share/doc/adodb
 
-DOCS=	readme.htm tute.htm readme.txt
-LIBS=	adodb-access.inc.php adodb-ado.inc.php adodb-ado_access.inc.php \
-	adodb-ado_mssql.inc.php adodb-borland_ibase.inc.php adodb-csv.inc.php \
-	adodb-csvlib.inc.php adodb-db2.inc.php adodb-errorhandler.inc.php \
-	adodb-errorpear.inc.php adodb-fbsql.inc.php adodb-firebird.inc.php \
-	adodb-ibase.inc.php adodb-informix.inc.php adodb-lib.inc.php \
-	adodb-mssql.inc.php adodb-mysql.inc.php adodb-mysqlt.inc.php \
-	adodb-oci8.inc.php adodb-oci8po.inc.php adodb-odbc.inc.php \
-	adodb-odbc_mssql.inc.php adodb-odbc_oracle.inc.php \
-	adodb-oracle.inc.php adodb-pear.inc.php adodb-postgres.inc.php \
-	adodb-postgres7.inc.php adodb-proxy.inc.php adodb-sybase.inc.php \
-	adodb.inc.php adodb-vfp.inc.php crypt.inc.php tohtml.inc.php
-PICS=	adodb.gif adodb.png adodb2.gif adodb2.png
-SAMPLES=adodb-cryptsession.php adodb-session.php server.php
-TESTS=	benchmark.php client.php test.php test2.php test3.php test4.php \
-	test5.php testcache.php testdatabases.inc.php testoci8.php \
-	testpaging.php testpear.php testsessions.php
+DOCS=		readme.htm tute.htm readme.txt
 
-post-patch:
-.for FILE in adodb-session.php benchmark.php client.php server.php test.php \
-	test2.php test3.php test4.php test5.php testcache.php testoci8.php \
-	testpaging.php testpear.php testsessions.php
-	${PERL} -pi -e "s#(\./)?(adodb(-session|-pear)?|tohtml)+(\.inc)?\.php#${PREFIX}/${ADODB_DIR}/\2\4\.php#" ${WRKSRC}/${FILE}
-.endfor
+DRIVERS= 	drivers/adodb-access.inc.php \
+		drivers/adodb-ado.inc.php \
+		drivers/adodb-ado_access.inc.php \
+		drivers/adodb-ado_mssql.inc.php \
+		drivers/adodb-borland_ibase.inc.php \
+		drivers/adodb-csv.inc.php \
+		drivers/adodb-db2.inc.php \
+		drivers/adodb-fbsql.inc.php \
+		drivers/adodb-firebird.inc.php \
+		drivers/adodb-ibase.inc.php \
+		drivers/adodb-informix.inc.php \
+		drivers/adodb-mssql.inc.php \
+		drivers/adodb-mysql.inc.php \
+		drivers/adodb-mysqlt.inc.php \
+		drivers/adodb-oci8.inc.php \
+		drivers/adodb-oci8po.inc.php \
+		drivers/adodb-odbc.inc.php \
+		drivers/adodb-odbc_mssql.inc.php \
+		drivers/adodb-odbc_oracle.inc.php \
+		drivers/adodb-oracle.inc.php \
+		drivers/adodb-postgres.inc.php \
+		drivers/adodb-postgres7.inc.php \
+		drivers/adodb-proxy.inc.php \
+		drivers/adodb-sybase.inc.php \
+		drivers/adodb-vfp.inc.php \
+
+INCLUDES=	adodb-csvlib.inc.php \
+		adodb-errorhandler.inc.php \
+		adodb-errorpear.inc.php \
+		adodb-pear.inc.php \
+		adodb-lib.inc.php \
+		adodb.inc.php \
+		client.php \
+		crypt.inc.php \
+		tohtml.inc.php
+
+PICS=		cute_icons_for_site/adodb.gif \
+		cute_icons_for_site/adodb.png \
+		cute_icons_for_site/adodb2.gif \
+		cute_icons_for_site/adodb2.png
+
+SAMPLES=	adodb-cryptsession.php \
+		adodb-session.php \
+		server.php
+
+TESTS=		tests/benchmark.php \
+		tests/test.php \
+		tests/test2.php \
+		tests/test3.php \
+		tests/test4.php \
+		tests/test5.php \
+		tests/testcache.php \
+		tests/testdatabases.inc.php \
+		tests/testoci8.php \
+		tests/testpaging.php \
+		tests/testpear.php \
+		tests/testsessions.php
 
 do-install:
-	@${MKDIR} ${PREFIX}/${ADODB_DIR}
+	@${MKDIR} ${PREFIX}/${ADODB_DRIVERS}
+	@${MKDIR} ${PREFIX}/${ADODB_TESTS}
+.for FILE in ${DRIVERS}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${ADODB_DRIVERS}
+.endfor
+.for FILE in ${INCLUDES}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${ADODB_DIR}/${FILE}
+.endfor
+.for FILE in ${PICS}
+	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${ADODB_DIR}
+.endfor
 .for FILE in ${SAMPLES}
+	if [ ! -f ${PREFIX}/${ADODB_DIR}/${FILE} ]; then \
+		${INSTALL_DATA} ${WRKSRC}/${FILE} \
+		${PREFIX}/${ADODB_DIR}/${FILE};\
+	fi
 	${INSTALL_DATA} ${WRKSRC}/${FILE} \
 		${PREFIX}/${ADODB_DIR}/${FILE}.sample
 .endfor
-.for FILE in ${LIBS} ${PICS}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${ADODB_DIR}
-.endfor
-	@${MKDIR} ${PREFIX}/${ADODB_TEST}
 .for FILE in ${TESTS}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/${ADODB_TEST}
+	if [ ! -f ${PREFIX}/${ADODB_DIR}/${FILE} ]; then \
+		${INSTALL_DATA} ${WRKSRC}/${FILE} \
+		${PREFIX}/${ADODB_DIR}/${FILE};\
+	fi
+	${INSTALL_DATA} ${WRKSRC}/${FILE} \
+	${PREFIX}/${ADODB_DIR}/${FILE}.sample
 .endfor
 
 post-install:
