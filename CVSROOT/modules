@@ -7933,6 +7933,7 @@ tksol		ports/games/tksol
 tkstep80	ports/x11-toolkits/tkstep80
 tktable		ports/x11-toolkits/tktable
 tkxanim		ports/multimedia/tkxanim
+tla		ports/devel/tla
 tlb		ports/mail/tlb
 tmake		ports/devel/tmake
 tmda		ports/mail/tmda
