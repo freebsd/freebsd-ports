@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vlc
-PORTVERSION=	0.2.82
+PORTVERSION=	0.2.83
 PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
