@@ -3,7 +3,7 @@
 # Date created:		1998-11-14
 # Whom:			rmiya
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/07 06:57:51 taoka Exp $
 #
 
 DISTNAME=	molden3.4
@@ -17,6 +17,10 @@ MAINTAINER=	rmiya@cc.hirosaki-u.ac.jp
 
 EXTRACT_ONLY=	molden3.4.tar.Z
 RESTRICTED=     "free for academic, non profit usage; do not re-distribute source and executable"
+
+.if ${MACHINE_ARCH} == "alpha"
+DONOTUSE_ORIGINALBINARY=	yes
+.endif
 
 pre-build:
 .if defined(DONOTUSE_ORIGINALBINARY)
