@@ -1,0 +1,11 @@
+--- formula.c.orig	Thu Nov  4 15:01:23 1999
++++ formula.c	Thu Nov  4 15:01:27 1999
+@@ -642,7 +642,7 @@
+   new_record = malloc (sizeof (stack_record));
+   test (new_record != NULL, 10);
+   if (data == NULL)
+-    new_record->data == NULL;
++    new_record->data = NULL;
+   else
+   {
+     new_record->data = data;

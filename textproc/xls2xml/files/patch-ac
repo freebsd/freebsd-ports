@@ -1,0 +1,11 @@
+--- formula.h.orig	Thu Nov  4 14:52:58 1999
++++ formula.h	Thu Nov  4 14:56:07 1999
+@@ -25,6 +25,8 @@
+ 
+ #include <cole1compat.h>
+ #include <stdlib.h> /* FIXME: TEMP to call calloc */
++#include "xmlunicode.h"
++#include "pcommon.h"
+ 
+ int fil_parsed_formula2str (char ** result_string, U8 * parsed_expression,
+ 			    int * volatile_function);

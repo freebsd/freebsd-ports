@@ -72,6 +72,7 @@
     SUBDIR += urlview
     SUBDIR += wdiff
     SUBDIR += word2x
+    SUBDIR += xls2xml
     SUBDIR += xml4j
     SUBDIR += xp
     SUBDIR += xt
