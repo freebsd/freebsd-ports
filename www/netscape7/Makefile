@@ -34,6 +34,7 @@ MASTER_SITES=	ftp://ftp.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSI
 		ftp://sunsite.cnlab-switch.ch/mirror/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://sunsite.sut.ac.jp/pub/archives/WWW/netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
 		ftp://ftp.mirror.ac.uk/sites/ftp.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/ \
+		ftp://ftp.rediris.es/sites/ftp.netscape.com/pub/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/ \
 		ftp://ftp.ntua.gr/pub/www/Netscape/netscape6/${NETSCAPE6_LANG}/${PORTVERSION}/unix/linux22/xpi/
 DIST_SUBDIR=	netscape6/${NETSCAPE6_LANG}/${PORTVERSION}
 
