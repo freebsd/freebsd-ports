@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Oct 13 10:43:03 1998
++++ Makefile.in	Tue Oct 13 10:43:31 1998
+@@ -83,7 +83,7 @@
+ 	_ad.c _switch_help.c
+ mgv_LDADD = _bld.o -Lwlib -lwlib \
+ 	@LIBHELP_LIBS@ @XM_LIBS@ @EDITRES_LIBS@ @XT_LIBS@ @XPM_LIBS@ \
+-	@XEXT_LIBS@ @X11_LIBS@
++	@XEXT_LIBS@ @X11_LIBS@ @X_PRE_LIBS@
+ 
+ mgvresdir = $(pkgdatadir)/$(VERSION)
+ mgvres_DATA = MGv
