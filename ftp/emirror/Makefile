@@ -7,18 +7,18 @@
 #
 
 PORTNAME=	emirror
-PORTVERSION=	2.1.20
+PORTVERSION=	2.1.21
 CATEGORIES=	ftp python
 MASTER_SITES=	ftp://eclipt.uni-klu.ac.at/projects/emirror/ \
-		ftp://emirror.sourceforge.net/pub/emirror/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
+USE_GMAKE=	yes
 NO_BUILD=	yes
 
 MAN1=	emirror.1
