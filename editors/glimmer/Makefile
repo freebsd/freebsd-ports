@@ -13,10 +13,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
+BUILD_DEPENDS=	python:${PORTSDIR}/lang/python15
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
 RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
-		python:${PORTSDIR}/lang/python
+		python:${PORTSDIR}/lang/python15
 
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
