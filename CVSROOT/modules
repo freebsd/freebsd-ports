@@ -3431,7 +3431,6 @@ klone		ports/lang/klone
 kludge3d	ports/graphics/kludge3d
 kmess		ports/net/kmess
 kmymoney2	ports/deskutils/kmymoney2
-knapster	ports/audio/knapster
 knews		ports/news/knews
 knocker		ports/security/knocker
 knowledgekit	ports/www/knowledgekit
@@ -3512,7 +3511,6 @@ ko-w3m		ports/korean/w3m
 kobodeluxe	ports/games/kobodeluxe
 koffice-kde3	ports/editors/koffice-kde3	
 koi8r-ps	ports/russian/koi8r-ps
-koncd		ports/sysutils/koncd
 konverse	ports/net/konverse
 kopete		ports/net/kopete
 korelib		ports/devel/korelib
