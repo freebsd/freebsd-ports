@@ -1,7 +1,10 @@
 bin/antiword
+bin/kantiword
 share/doc/antiword/COPYING
-share/doc/antiword/Changes
+share/doc/antiword/ChangeLog
+share/doc/antiword/FAQ
 share/doc/antiword/History
+share/doc/antiword/Netscape
 share/doc/antiword/QandA
 share/doc/antiword/ReadMe
 @dirrm share/doc/antiword
