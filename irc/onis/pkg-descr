@@ -1,2 +1,5 @@
-Onis is a script that converts IRC logfiles into an HTML statistics page.
-It provides information about daily channel usage and user activity.
+Onis is a perl script that converts IRC logfiles into an HTML statistics page.
+It provides information about daily channel usage and user activity. It does
+support a lot of log file formats like Xchat, eggdrop, irssi and many more.
+
+WWW: http://verplant.org/onis/
