@@ -3298,6 +3298,7 @@ jump		ports/java/jump
 jumpgate	ports/net/jumpgate
 jumpnbump	ports/games/jumpnbump
 junglemonkey	ports/ftp/junglemonkey
+junipoll	ports/net/junipoll
 junit		ports/java/junit
 junkbuster	ports/www/junkbuster
 junkfilter	ports/mail/junkfilter
