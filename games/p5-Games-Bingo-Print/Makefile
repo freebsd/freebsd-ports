@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Games-Bingo-Print
-PORTVERSION=	0.01
+PORTVERSION=	0.02
 CATEGORIES=	games perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Games
@@ -21,8 +21,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Games::Bingo::Print.3 \
-		Games::Bingo::Print::Card.3
+MAN3=		Games::Bingo::Print.3
 
 post-install:
 .ifndef(NOPORTDOCS)
