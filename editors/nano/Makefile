@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nano
-PORTVERSION=	0.9.24
+PORTVERSION=	1.0.0
 CATEGORIES=	editors
 MASTER_SITES=	http://www.nano-editor.org/dist/ \
 		http://www.asty.org/nano/dist/ \
@@ -20,6 +20,12 @@ LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+
+.if defined(LITE)
+CONFIGURE_ARGS+=	--disable-tabcomp --enable-tiny --disable-speller \
+		--disable-justify --disable-nls --disable-browser --disable-help
+PLIST=		${PKGDIR}/pkg-plist.nonls
+.endif
 
 MAN1=		nano.1
 
