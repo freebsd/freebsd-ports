@@ -32,6 +32,43 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7b81fc47-239f-11d9-814e-0001020eed82">
+    <topic>apache2 -- SSL remote DoS</topic>
+    <affects>
+      <package>
+	<name>apache</name>
+	<range><gt>2.0</gt><lt>2.0.51</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache HTTP Server 2.0.51 release notes report that the
+	  following issues have been fixed:</p>
+	<blockquote cite="http://marc.theaimsgroup.com/?l=apache-httpd-announce&amp;m=109527608022322">
+	  <p>A segfault in mod_ssl which can be triggered by a
+            malicious remote server, if proxying to SSL servers has
+            been configured.  [CAN-2004-0751]</p>
+	  <p>A potential infinite loop in mod_ssl which could be
+            triggered given particular timing of a connection
+            abort.  [CAN-2004-0748]</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>11094</bid>
+      <bid>11154</bid>
+      <cvename>CAN-2004-0748</cvename>
+      <cvename>CAN-2004-0751</cvename>
+      <mlist msgid="029f01c49b54$dec30f20$1500a8c0@Cougar>">http://marc.theaimsgroup.com/?l=apache-httpd-announce&amp;m=109527608022322</mlist>
+      <url>http://nagoya.apache.org/bugzilla/show_bug.cgi?id=29964</url>
+      <url>http://nagoya.apache.org/bugzilla/show_bug.cgi?id=30134</url>
+    </references>
+    <dates>
+      <discovery>2004-07-07</discovery>
+      <entry>2004-10-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fc07c9ca-22ce-11d9-814e-0001020eed82">
     <topic>phpmyadmin -- remote command execution
       vulnerability</topic>
