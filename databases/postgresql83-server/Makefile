@@ -7,6 +7,7 @@
 
 PORTNAME?=	postgresql
 PORTVERSION?=	7.3.2
+PORTREVISION=	1
 CATEGORIES?=	databases
 MASTER_SITES=	ftp://ftp3.us.postgresql.org/pub/postgresql/%SUBDIR%/ \
 		ftp://ftp5.us.postgresql.org/pub/PostgreSQL/%SUBDIR%/ \
@@ -28,6 +29,7 @@ DISTFILES=	postgresql-base-${PORTVERSION}${EXTRACT_SUFX} \
 
 MAINTAINER?=	girgen@pingpong.net
 
+COMMENT=	The most advanced open-source database available anywhere
 WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
 DIST_SUBDIR=	postgresql
 
