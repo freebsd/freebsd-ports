@@ -17,6 +17,8 @@ MAINTAINER?=	dscheidt@enteract.com
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+NO_LATEST_LINK=	yes
+
 USE_GMAKE=	yes
 MAKE_ENV=	CXX="${CXX}" GRAPHICS="${GRAPHICS}"
 
