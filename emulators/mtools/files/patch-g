@@ -1,0 +1,69 @@
+--- ../mtools-3.9.6/configure	Thu Jun  3 20:51:36 1999
++++ configure	Sun Oct 15 15:32:07 2000
+@@ -2461,10 +2461,10 @@
+ host_cpu1=`echo $host_cpu | sed 's/\./_/g'`
+ host_vendor1=`echo $host_vendor | sed 's/\./_/g'`
+ HOST_ID="-DCPU_$host_cpu1 -DVENDOR_$host_vendor1 -DOS_$host_os1"
+-if [ $host_os1 != $host_os2 ] ; then
++if [ "$host_os1" != "$host_os2" ] ; then
+ 	HOST_ID="$HOST_ID -DOS_$host_os2"
+ fi
+-if [ $host_os1 != $host_os3 ] && [ $host_os2 != $host_os3 ] ; then
++if [ "$host_os1" != "$host_os3" ] && [ "$host_os2" != "$host_os3" ] ; then
+ 	HOST_ID="$HOST_ID -DOS_$host_os3"
+ fi
+ 
+@@ -2490,44 +2490,44 @@
+     fi	
+     CFLAGS="$CFLAGS $Wall"
+ else
+-    if [ $host_os3 = hpux ] ; then
++    if [ "$host_os3" = hpux ] ; then
+ 	    CPPFLAGS="$CPPFLAGS -Ae"
+     fi
+ 
+-    if [ $host_os3 = xenix ] ; then
++    if [ "$host_os3" = xenix ] ; then
+ 	    CFLAGS="$CFLAGS -M2e"
+     fi
+ fi
+ 
+-if [ $host_os3 = hpux ] ; then
++if [ "$host_os3" = hpux ] ; then
+ 	    LDFLAGS="$LDFLAGS -z"
+ fi
+ 
+ 
+-if [ $host_vendor = linux ] ; then
++if [ "$host_vendor" = linux ] ; then
+     LDFLAGS="$LDFLAGS -z"
+ fi
+ 
+-if [ $host_os3 = xenix ] ; then
++if [ "$host_os3" = xenix ] ; then
+     LDFLAGS="$LDFLAGS -M2e -i -f 5000"
+ fi
+ 
+-if [ $host_os2 = sysv4 ] ; then
++if [ "$host_os2" = sysv4 ] ; then
+     SHLIB="-lc -L/usr/ucblib -lucb"
+ else
+     SHLIB=""
+ fi
+ 
+-if [ $host_os3 = isc ] ; then
++if [ "$host_os3" = isc ] ; then
+     CFLAGS="$CFLAGS -D_SYSV3"
+     SHLIB="-lc_s"
+ fi
+ 
+-if [ $host_os3 = solaris -a x$newVold = xxyes ] ; then
++if [ "$host_os3" = solaris -a x$newVold = xxyes ] ; then
+     SHLIB="$SHLIB -s -lvolmgt"
+ fi
+ 
+-if [ $host_os3 = nextstep ] ; then
++if [ "$host_os3" = nextstep ] ; then
+     CFLAGS="$CFLAGS -DBSD"
+     SHLIB=""
+ fi
