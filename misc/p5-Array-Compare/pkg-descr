@@ -1,0 +1,16 @@
+Array::Compare is a Perl module which allows you to compare two arrays.
+
+It has a number of features which allow you to control the way that
+the arrays are compared:
+
+* white space in array elements can be significant or ignored.
+
+* particular columns in the arrays can be ignored.
+
+Additionally you can get a simple true/false return value or the number
+of columns which differ or an array containing the indexes of the 
+differing columns.
+
+WWW: http://search.cpan.org/search?dist=Array-Compare
+
+Seamus Venasse <svenasse@polaris.ca>
