@@ -20,7 +20,13 @@ MAN1=		ppmcaption.1
 PLIST_FILES=	bin/ppmcaption
 USE_REINPLACE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64 or ia64"
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s,-lang-c89,," ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
