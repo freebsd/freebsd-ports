@@ -1,9 +1,9 @@
-bin/libgnutls-config
-bin/libgnutls-extra-config
 bin/gnutls-serv
 bin/gnutls-cli
 bin/gnutls-srpcrypt
 bin/gnutls-cli-debug
+bin/libgnutls-config
+bin/libgnutls-extra-config
 include/gnutls/extra.h
 include/gnutls/compat4.h
 include/gnutls/openssl.h
@@ -11,11 +11,9 @@ include/gnutls/gnutls.h
 @dirrm include/gnutls
 lib/libgnutls.so.7
 lib/libgnutls.so
-lib/libgnutls.la
 lib/libgnutls.a
 lib/libgnutls-extra.so.7
 lib/libgnutls-extra.so
-lib/libgnutls-extra.la
 lib/libgnutls-extra.a
 share/aclocal/libgnutls.m4
 share/aclocal/libgnutls-extra.m4
