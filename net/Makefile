@@ -73,7 +73,6 @@
     SUBDIR += gnu-finger
     SUBDIR += gopher
     SUBDIR += gtic
-    SUBDIR += gtkicq
     SUBDIR += gtksamba
     SUBDIR += gtkyahoo
     SUBDIR += h2n
