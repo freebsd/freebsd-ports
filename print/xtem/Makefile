@@ -8,9 +8,9 @@
 DISTNAME=	xtem_texmenu.6.18
 PKGNAME=	xtem-6.18
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.iwd.uni-bremen.de/pub/tex/xtem/
+MASTER_SITES=	ftp://ftp.iwd.uni-bremen.de/pub/tex/xtem/xtem.v6/
 
-MAINTAINER=     ports@FreeBSD.ORG
+MAINTAINER=     ports@FreeBSD.org
 
 RUN_DEPENDS=	wishx:${PORTSDIR}/lang/tclX80
 .if defined(BUILD_IT_ALL)
