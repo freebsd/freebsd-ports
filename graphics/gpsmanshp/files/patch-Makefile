@@ -1,0 +1,37 @@
+--- Makefile.orig	Fri Jul  9 11:05:39 2004
++++ Makefile	Fri Jul  9 11:18:01 2004
+@@ -25,11 +25,15 @@
+ VERSION = 1.2
+ 
+ TCLVERSION = 8.4
++TCLLVERSION = 84
+ 
+-INSTALLDIR = /usr/lib/tcl$(TCLVERSION)
++INSTALLDIR = ${PREFIX}/lib/tcl$(TCLVERSION)/gpsmanshp-$(VERSION)
+ 
+-CFLAGS = -Wall -fPIC -c -I/usr/include/tcl$(TCLVERSION)
+-LINKOPT = -lshp -ltcl$(TCLVERSION)
++CFLAGS += -Wall -fPIC -c -I${PREFIX}/include/tcl$(TCLVERSION)
++CFLAGS += -I${PREFIX}/include
++LINKOPT = -L${PREFIX}/lib -lshp -ltcl$(TCLLVERSION)
++
++all:	pkgIndex.tcl
+ 
+ gpsmanshp.so: gpsmanshp.o
+ 	$(CC) -shared -o gpsmanshp.so $(LINKOPT) gpsmanshp.o
+@@ -38,12 +42,13 @@
+ 	$(CC) $(CFLAGS) gpsmanshp.c
+ 
+ pkgIndex.tcl: gpsmanshp.so
+-	echo "source package-8.3.tcl ; pkg_mkIndex -lazy -verbose . gpsmanshp.so" | tclsh$(TCLVERSION)
++	echo "pkg_mkIndex -lazy -verbose . gpsmanshp.so" | tclsh$(TCLVERSION)
+ 	chmod 644 gpsmanshp.so pkgIndex.tcl
+ 
+ install: pkgIndex.tcl
+ 	-mkdir $(INSTALLDIR)
+-	cp gpsmanshp.so pkgIndex.tcl $(INSTALLDIR)
++	install -c -s -m 555 -o root -g wheel gpsmanshp.so $(INSTALLDIR)/
++	install -c -m 555 -o root -g wheel pkgIndex.tcl $(INSTALLDIR)/
+ 
+ clean:
+ 	rm -f gpsmanshp.o gpsmanshp.so pkgIndex.tcl G*.aux G*.log

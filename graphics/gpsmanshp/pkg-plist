@@ -1,0 +1,19 @@
+lib/tcl%%TCLVERSION%%/gpsmanshp-%%PORTVERSION%%/gpsmanshp.so
+lib/tcl%%TCLVERSION%%/gpsmanshp-%%PORTVERSION%%/pkgIndex.tcl
+@dirrm lib/tcl%%TCLVERSION%%/gpsmanshp-%%PORTVERSION%%
+%%PORTDOCS%%%%DOCSDIR%%/GPL.txt
+%%PORTDOCS%%%%DOCSDIR%%/GPSManSHP.html
+%%PORTDOCS%%%%DOCSDIR%%/GPSManSHP.pdf
+%%PORTDOCS%%%%DOCSDIR%%/GPSManSHP_1.html
+%%PORTDOCS%%%%DOCSDIR%%/GPSManSHP_2.html
+%%PORTDOCS%%%%DOCSDIR%%/GPSManSHP_3.html
+%%PORTDOCS%%%%DOCSDIR%%/GPSManSHP_4.html
+%%PORTDOCS%%%%DOCSDIR%%/backgr.gif
+%%PORTDOCS%%%%DOCSDIR%%/blank.gif
+%%PORTDOCS%%%%DOCSDIR%%/gpsman-logo-small.gif
+%%PORTDOCS%%%%DOCSDIR%%/newarr.gif
+%%PORTDOCS%%%%DOCSDIR%%/newearr.gif
+%%PORTDOCS%%%%DOCSDIR%%/next.gif
+%%PORTDOCS%%%%DOCSDIR%%/previous.gif
+%%PORTDOCS%%%%DOCSDIR%%/up.gif
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

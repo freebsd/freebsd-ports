@@ -136,6 +136,7 @@
     SUBDIR += gpdf
     SUBDIR += gphoto2
     SUBDIR += gplot
+    SUBDIR += gpsmanshp
     SUBDIR += gqview
     SUBDIR += gracula
     SUBDIR += graphopt
