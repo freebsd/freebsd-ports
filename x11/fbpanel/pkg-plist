@@ -1,0 +1,15 @@
+bin/fbpanel
+share/fbpanel/default
+share/fbpanel/pager
+share/fbpanel/images/Desktop2.png
+share/fbpanel/images/Editor.png
+share/fbpanel/images/Emacs.png
+share/fbpanel/images/GNOME-Terminal.png
+share/fbpanel/images/Menu.png
+share/fbpanel/images/Networking.png
+share/fbpanel/images/bottom-left.xpm
+share/fbpanel/images/bottom-right.xpm
+share/fbpanel/images/top-left.xpm
+share/fbpanel/images/top-right.xpm
+@dirrm share/fbpanel/images
+@dirrm share/fbpanel

@@ -1,0 +1,12 @@
+Fbpanel is a lightweight desktop panel that works with any
+NETWM (http://www.freedesktop.org/) compliant window manager.
+It features:
+  o taskbar      - show list of open windows
+  o pager        - thumbnailed view of the desktop(s)
+  o launchbar    - buttons to launch applications
+  o show desktop - button to iconify or shade all windows 
+  o image        - display an image
+  o clock        - show the current time and/or date
+  o sytem tray   - tray for XEMBED icons (aka docklets)
+
+WWW: http://fbpanel.sourceforge.net/
