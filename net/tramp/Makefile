@@ -27,7 +27,8 @@ PLIST_SUB+=	TRAMP_LISPDIR=${TRAMP_LISPDIR} \
 		INFOENTRY=${INFOENTRY} INFOENTRY_JA=${INFOENTRY_JA}
 CONFIGURE_ENV=	TEXI2DVI=no
 CONFIGURE_ARGS= --with-contrib --prefix=${PREFIX} \
-		--with-lispdir=${PREFIX}/${TRAMP_LISPDIR}
+		--with-lispdir=${PREFIX}/${TRAMP_LISPDIR} \
+		--with-emacs=${EMACS_CMD}
 
 .if defined(JAPANESE_INFO)
 CONFIGURE_ARGS+= --with-japanese-manual
@@ -45,9 +46,6 @@ PLIST_SUB+=	EMACS20_ONLY="@comment "
 pre-build:
 .if ${EMACS_PORT_NAME} == emacs20
 	(cd ${WRKSRC}/contrib; ${GMAKE})
-.for i in format-spec md5
-	(${CP} -p ${WRKSRC}/contrib/${i}.el ${WRKSRC}/contrib/${i}.elc ${BUILD_WRKSRC}/lisp)
-.endfor
 .endif
 
 post-install:
