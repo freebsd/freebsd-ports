@@ -37,6 +37,7 @@ libexec/fidogate/logcheck
 libexec/fidogate/logdaily
 libexec/fidogate/logreport
 libexec/fidogate/logsendmail
+libexec/fidogate/logsendmail2
 libexec/fidogate/logstat
 libexec/fidogate/nl-autoupd
 libexec/fidogate/nl-check
