@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dbh
-PORTVERSION=	1.0.10
+PORTVERSION=	1.0.11
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://dbh.sourceforge.net/archive/
