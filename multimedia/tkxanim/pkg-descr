@@ -1,0 +1,10 @@
+Tkxanim is a Tcl/Tk frontend to the xanim program
+written by Mark Podlipec.  The purpose of tkxanim is
+to allow a quick configuration for all of xanim's
+available options for those who are not familiar
+with the command line.
+
+WWW: http://members.yourlink.net/aaron/tkxanim.html
+
+- Chris D. Faulhaber
+jedgar@fxp.org
