@@ -44,7 +44,6 @@ MAN1=			XFree86.1 \
 			Xserver.1 \
 			kbd_mode.1 \
 			pcitweak.1 \
-			scanpci.1 \
 			xf86cfg.1 \
 			xf86config.1
 MAN3=			XF86VidMode.3 \
@@ -70,7 +69,6 @@ MAN4=			mga.4 \
 			nv.4 \
 			siliconmotion.4 \
 			vga.4 \
-			vmware.4 \
 			keyboard.4 \
 			mouse.4
 MAN5=			XF86Config.5
@@ -107,6 +105,15 @@ BuildXF86DRM=		NO
 PLIST_SUB+=		DRI="@comment "
 PLIST_SUB+=		DRI_KMOD="@comment "
 .endif	# have /sys
+
+# Some things are not applicable if this machine is an alpha
+.if ${ARCH} == alpha
+PLIST_SUB+=	ALPHA_NA="@comment "
+.else
+PLIST_SUB+=	ALPHA_NA=""
+MAN1+=		scanpci.1
+MAN4+=		vmware.4
+.endif
 
 .if ${ARCH} == i386
 PLIST_SUB+=	I386:=""
@@ -184,6 +191,7 @@ post-install::
 .endif	# !WITH_MATROX_GXX_DRIVER
 .else
 HaveMatroxHal=		NO
+PLIST_SUB+=		MATROX="@comment "
 .endif
 
 do-configure:
