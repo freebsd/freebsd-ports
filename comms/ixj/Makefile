@@ -1,6 +1,6 @@
 # New ports collection makefile for:	ixj
 # Date Created:				Mon Jan 14 2002
-# Whom:					Roger Hardiman <noger@freebsd.org>
+# Whom:					Roger Hardiman <roger@freebsd.org>
 #
 # $FreeBSD$
 #
