@@ -7,6 +7,7 @@
 
 PORTNAME=	openh323
 PORTVERSION=	1.12.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
@@ -18,7 +19,8 @@ COMMENT=	A H323 Video Conferencing library
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/pwlib:build
 
-LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2 \
+		ldap.2:${PORTSDIR}/net/openldap20-client
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 500000
