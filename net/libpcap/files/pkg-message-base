@@ -1,0 +1,13 @@
+***************************************
+* You might run into troubles running *
+* tcpdump, you should recompile it if *
+* it segfaults:                       *
+* $ cd /usr/src/usr.sbin/tcpdump      *
+* $ make && make install              *
+***************************************
+* You can always reinstall the older  *
+* libraries via the source directory  *
+* of the base system:                 *
+* $ cd /usr/src/lib/libpcap           *
+* $ make && make install              *
+***************************************
