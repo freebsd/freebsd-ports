@@ -12,7 +12,7 @@ CATEGORIES=	editors textproc print
 MASTER_SITES=	ftp://ftp.nluug.nl/pub/editors/ted/
 EXTRACT_SUFX=	.src.tar.gz
 
-MAINTAINER=	j.e.drews@att.net
+MAINTAINER=	jon.drews@gmail.com
 COMMENT=	X11 based RTF editor
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
