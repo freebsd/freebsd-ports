@@ -1,13 +1,11 @@
---- common/net_udp.c.orig	Tue Jun 22 10:54:05 1999
-+++ common/net_udp.c	Mon Jan 24 17:14:12 2000
-@@ -335,6 +335,10 @@
-              }
-         }
+--- rat/Makefile.in.orig	Sat Sep 16 20:45:21 2000
++++ rat/Makefile.in	Sat Sep 16 20:45:29 2000
+@@ -15,7 +15,7 @@
+ ECHO    = echo
  
-+#ifndef IPV6_ADD_MEMBERSHIP
-+#define IPV6_ADD_MEMBERSHIP IPV6_JOIN_GROUP
-+#endif
-+
- 	if (IN6_IS_ADDR_MULTICAST(&(s->addr6))) {
- 		unsigned int      loop = 1;
- 		struct ipv6_mreq  imr;
+ VERSION = @VERSION@
+-RATVER  = rat-$(VERSION)
++RATVER  = rat
+ 
+ AU_OBJ  = @AU_OBJ@
+ AU_INC  = @AU_INC@

@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	rat
-PORTVERSION=	4.0.4
+PORTVERSION=	4.2.9
 CATEGORIES=	mbone audio
-MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/4.0.4/ \
+MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/4.2.9/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	cpiazza
 
@@ -16,17 +16,22 @@ MAINTAINER=	O.Hodson@cs.ucl.ac.uk
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
+USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 MAN1=		rat.1
 MANCOMPRESSED=	no
 
+PATCH_DEBUG=	yes
+
 RAT_BUILD_DIRS=	common rat
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/rat/rat-4.0.4 ${PREFIX}/bin/rat
+	${INSTALL_PROGRAM} ${WRKSRC}/rat/rat ${PREFIX}/bin/rat
+	${INSTALL_PROGRAM} ${WRKSRC}/rat/rat-ui ${PREFIX}/bin/rat-ui
+	${INSTALL_PROGRAM} ${WRKSRC}/rat/rat-media ${PREFIX}/bin/rat-media
 	${INSTALL_MAN}  ${WRKSRC}/rat/man/man1/rat.1 ${PREFIX}/man/man1
 	${MKDIR} ${LOCALBASE}/etc/sdr/plugins
-	${INSTALL_DATA} ${WRKSRC}/rat/sdr2.plugin.S02.audio.rtp.*.rat-4.0.4 ${LOCALBASE}/etc/sdr/plugins
+	${INSTALL_DATA} ${WRKSRC}/rat/sdr2.plugin.S02.audio.rtp.*.rat ${LOCALBASE}/etc/sdr/plugins
 
 do-build:
 	for d in ${RAT_BUILD_DIRS}; do \
@@ -34,8 +39,7 @@ do-build:
 	done
 
 do-configure:
-	for d in ${RAT_BUILD_DIRS}; do \
-		cd ${WRKSRC}/$$d && ./configure; \
-	done
+	cd ${WRKSRC}/common && ./configure
+	cd ${WRKSRC}/rat && autoconf && ./configure --with-tcl=${LOCALBASE} --with-tk=${LOCALBASE}
 
 .include "bsd.port.mk"
