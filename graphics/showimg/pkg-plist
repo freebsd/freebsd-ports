@@ -2,6 +2,21 @@ bin/showimg
 share/applnk/Graphics/showimg.desktop
 share/apps/konqueror/servicemenus/konqshowimg.desktop
 share/apps/showimg/convert2png.pl
+share/apps/showimg/icons/crystalsvg/16x16/actions/viewmag_bis+.png
+share/apps/showimg/icons/crystalsvg/16x16/actions/viewmag_bis-.png
+share/apps/showimg/icons/crystalsvg/16x16/actions/viewmag_full.png
+share/apps/showimg/icons/crystalsvg/16x16/actions/viewmag_lock.png
+share/apps/showimg/icons/crystalsvg/16x16/actions/viewmag_no.png
+share/apps/showimg/icons/crystalsvg/22x22/actions/viewmag_bis+.png
+share/apps/showimg/icons/crystalsvg/22x22/actions/viewmag_bis-.png
+share/apps/showimg/icons/crystalsvg/22x22/actions/viewmag_full.png
+share/apps/showimg/icons/crystalsvg/22x22/actions/viewmag_lock.png
+share/apps/showimg/icons/crystalsvg/22x22/actions/viewmag_no.png
+share/apps/showimg/icons/crystalsvg/32x32/actions/viewmag_bis+.png
+share/apps/showimg/icons/crystalsvg/32x32/actions/viewmag_bis-.png
+share/apps/showimg/icons/crystalsvg/32x32/actions/viewmag_full.png
+share/apps/showimg/icons/crystalsvg/32x32/actions/viewmag_lock.png
+share/apps/showimg/icons/crystalsvg/32x32/actions/viewmag_no.png
 share/apps/showimg/icons/hicolor/16x16/actions/flip.png
 share/apps/showimg/icons/hicolor/16x16/actions/item_rename.png
 share/apps/showimg/icons/hicolor/16x16/actions/miror.png
@@ -35,15 +50,24 @@ share/apps/showimg/icons/hicolor/32x32/actions/rotation_acw.png
 share/apps/showimg/icons/hicolor/32x32/actions/rotation_cw.png
 share/apps/showimg/icons/hicolor/32x32/actions/viewmag_bis+.png
 share/apps/showimg/icons/hicolor/32x32/actions/viewmag_bis-.png
+share/apps/showimg/icons/hicolor/32x32/actions/viewmag_enlarge.png
 share/apps/showimg/icons/hicolor/32x32/actions/viewmag_factor.png
 share/apps/showimg/icons/hicolor/32x32/actions/viewmag_full.png
 share/apps/showimg/icons/hicolor/32x32/actions/viewmag_h.png
 share/apps/showimg/icons/hicolor/32x32/actions/viewmag_lock.png
 share/apps/showimg/icons/hicolor/32x32/actions/viewmag_no.png
+share/apps/showimg/icons/hicolor/32x32/actions/viewmag_shrink.png
 share/apps/showimg/icons/hicolor/32x32/actions/viewmag_w.png
 share/apps/showimg/icons/hicolor/32x32/mimetypes/psd.png
 share/apps/showimg/icons/hicolor/48x48/mimetypes/psd.png
 share/apps/showimg/icons/hicolor/64x64/mimetypes/psd.png
+share/apps/showimg/pics/bgxpm.png
+share/apps/showimg/pics/border.png
+share/apps/showimg/pics/gradient.png
+share/apps/showimg/pics/layout1.png
+share/apps/showimg/pics/layout2.png
+share/apps/showimg/pics/layout3.png
+share/apps/showimg/pics/layout4.png
 share/apps/showimg/pics/logo.png
 share/apps/showimg/showimgui.rc
 share/doc/HTML/de/showimg/but-back.png
@@ -117,14 +141,24 @@ share/doc/HTML/en/showimg/main-window.png
 share/icons/hicolor/32x32/apps/showimg.png
 share/icons/hicolor/48x48/apps/showimg.png
 share/icons/hicolor/64x64/apps/showimg.png
+share/locale/da/LC_MESSAGES/showimg.mo
 share/locale/de/LC_MESSAGES/showimg.mo
+share/locale/en_GB/LC_MESSAGES/showimg.mo
 share/locale/es/LC_MESSAGES/showimg.mo
+share/locale/et/LC_MESSAGES/showimg.mo
 share/locale/fr/LC_MESSAGES/showimg.mo
 share/locale/it/LC_MESSAGES/showimg.mo
 share/locale/ja/LC_MESSAGES/showimg.mo
 share/locale/nl/LC_MESSAGES/showimg.mo
+share/locale/pt/LC_MESSAGES/showimg.mo
+share/locale/pt_BR/LC_MESSAGES/showimg.mo
+share/locale/ru/LC_MESSAGES/showimg.mo
 share/locale/sk/LC_MESSAGES/showimg.mo
+share/locale/sr/LC_MESSAGES/showimg.mo
 share/locale/sv/LC_MESSAGES/showimg.mo
+share/locale/ta/LC_MESSAGES/showimg.mo
+share/locale/tr/LC_MESSAGES/showimg.mo
+share/locale/zh_CN/LC_MESSAGES/showimg.mo
 share/mimelnk/image/x-psd.desktop
 @dirrm share/doc/HTML/en/showimg
 @dirrm share/doc/HTML/de/showimg
@@ -142,5 +176,12 @@ share/mimelnk/image/x-psd.desktop
 @dirrm share/apps/showimg/icons/hicolor/16x16/actions
 @dirrm share/apps/showimg/icons/hicolor/16x16
 @dirrm share/apps/showimg/icons/hicolor
+@dirrm share/apps/showimg/icons/crystalsvg/32x32/actions
+@dirrm share/apps/showimg/icons/crystalsvg/32x32
+@dirrm share/apps/showimg/icons/crystalsvg/22x22/actions
+@dirrm share/apps/showimg/icons/crystalsvg/22x22
+@dirrm share/apps/showimg/icons/crystalsvg/16x16/actions
+@dirrm share/apps/showimg/icons/crystalsvg/16x16
+@dirrm share/apps/showimg/icons/crystalsvg
 @dirrm share/apps/showimg/icons
 @dirrm share/apps/showimg
