@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp710.univ-lyon1.fr/pub/xbl/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D block-dropping game
 
+BROKEN=		Missing dependency
+
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 MANN=		xbl.n
