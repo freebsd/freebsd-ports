@@ -17,7 +17,8 @@ COMMENT=	Prepare the installation of the PEAR framework
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/php-config:${PORTSDIR}/www/mod_php4
 .if defined(WITH_APACHE2)
-RUN_DEPENDS=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4.else
+RUN_DEPENDS=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4
+.else
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 .endif
 
