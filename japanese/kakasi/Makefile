@@ -8,7 +8,7 @@
 PORTNAME=	kakasi
 PORTVERSION=	2.3.4
 CATEGORIES=	japanese textproc
-MASTER_SITES=	ftp://kakasi.namazu.org/pub/kakasi/stable/
+MASTER_SITES=	http://kakasi.namazu.org/stable/
 
 MAINTAINER=	max@FreeBSD.org
 COMMENT=	Kanji-Kana Simple Inverter, language filter for Japanese
