@@ -3,7 +3,7 @@
 # Date created:        20 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.2 1997/11/19 03:15:39 asami Exp $
+# $Id: Makefile,v 1.3 1998/04/19 17:14:33 steve Exp $
 #
 
 DISTNAME=	vrweb-1.5
@@ -12,6 +12,8 @@ MASTER_SITES=	http://sunsite.unc.edu/pub/packages/infosystems/WWW/VRML/VRweb/UNI
 DISTFILES=	vrweb-src-1.5.tar.gz help-1.5.tar.gz
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
+
+LIB_DEPENDS=	GL\\.13\\.:${PORTSDIR}/graphics/Mesa
 
 USE_GMAKE=	yes
 USE_X11=	yes

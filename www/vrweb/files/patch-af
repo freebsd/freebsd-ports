@@ -1,0 +1,11 @@
+--- src/harmony/scene/Imakefile.orig	Thu Apr 23 16:25:17 1998
++++ src/harmony/scene/Imakefile	Thu Apr 23 16:29:05 1998
+@@ -135,7 +135,7 @@
+ #endif
+ #ifdef MESA_GL
+ MESA_CCLDLIBS = $(APP_CCLDLIBS) -l$(MESA_GE3D) $(MESA_LIBS) $(IV_CCLDLIBS) $(EXTRA_CCLDLIBS)
+-MESA_CCDEPLIBS = $(HGLIBDIR)/lib$(MESA_GE3D).a $(HGLIBDIR)/libMesaGL.a $(HGLIBDIR)/libMesaGLU.a
++MESA_CCDEPLIBS = $(HGLIBDIR)/lib$(MESA_GE3D).a
+ #endif
+ 
+ # Mosaic CCI
