@@ -1,0 +1,7 @@
+**************************************************
+
+An example configuration file is located in
+%%PREFIX%%/share/led/dot.ledrc; to use it,
+move it to ~/.ledrc.
+
+**************************************************
