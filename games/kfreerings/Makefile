@@ -20,7 +20,9 @@ LIB_DEPENDS=	kdegames.3:${PORTSDIR}/games/kdegames3
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/x11/kde3/Makefile.kde"
-.include <bsd.port.post.mk>
+post-patch:
+	${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
+
+.include <bsd.port.mk>
