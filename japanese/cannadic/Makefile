@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cannadic
-PORTVERSION=	0.95a
+PORTVERSION=	0.95c
 CATEGORIES=	japanese
 MASTER_SITES=	http://cannadic.oucrc.org/
 
@@ -27,7 +27,7 @@ do-install:
 	${INSTALL} -c -g bin -m 664 -o bin ${DICS} ${DICSFILE} ${DICDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.ja ${DOCSDIR}
 	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${DOCSDIR}
 .endif
 
