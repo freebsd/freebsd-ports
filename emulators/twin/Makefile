@@ -9,7 +9,8 @@ PORTNAME=	twin
 PORTVERSION=	3.1.14
 PORTEPOCH=	1
 CATEGORIES=	emulators devel
-MASTER_SITES=	ftp://ftp.willows.com/pub/twin/
+MASTER_SITES=	${MASTER_SITE_NETBSD} \
+		ftp://ftp.willows.com/pub/twin/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
