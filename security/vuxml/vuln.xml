@@ -32,6 +32,34 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="8c33b299-163b-11d9-ac1b-000d614f7fad">
+    <topic>getmail -- symlink vulnerability during maildir delivery</topic>
+      <affects>
+        <package>
+	  <name>getmail</name>
+	  <range><lt>3.2.5</lt></range>
+	</package>
+      </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>David Watson reports a symlink vulnerability in getmail.
+          If run as root (not the recommended mode of operation), a
+          local user may be able to cause getmail to write files in
+          arbitrary directories via a symlink attack on subdirectories
+          of the maildir.</p>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="200409191532.38997.baikie@ehwat.freeserve.co.uk">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=109571883130372</mlist>
+      <cvename>CAN-2004-0881</cvename>
+      <bid>11224</bid>
+    </references>
+    <dates>
+      <discovery>2004-09-19</discovery>
+      <entry>2004-10-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="67710833-1626-11d9-bc4a-000c41e2cdad">
     <topic>Boundary checking errors in syscons</topic>
     <affects>
