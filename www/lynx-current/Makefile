@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	lynx
-PORTVERSION=    2.8.5r1
+PORTVERSION=	2.8.6d4
 CATEGORIES=     www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
-DISTNAME=       ${PORTNAME}2.8.5rel.1
+DISTNAME=	${PORTNAME}2.8.6dev.4
 
 MAINTAINER=	ache@FreeBSD.org
 COMMENT=	A non-graphical, text-based World-Wide Web client
 
-WRKSRC=		${WRKDIR}/${PORTNAME}2-8-5
+WRKSRC=		${WRKDIR}/${PORTNAME}2-8-6
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
 		--enable-nsl-fork --enable-nls --with-bzlib \
 		--enable-nested-tables --enable-locale-charset \
@@ -40,7 +41,7 @@ CONFIGURE_ARGS+= --enable-ipv6
 CONFIGURE_ARGS+= --disable-ipv6
 .endif
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CC="${CC} -I${LOCALBASE}/include" LDFLAGS="${LDFLAGS}" \
+CONFIGURE_ENV+= CC="${CC} -I${LOCALBASE}/include -Darc4random_push=" LDFLAGS="${LDFLAGS}" \
 		LIBS=-lncurses
 MAKE_FLAGS=	helpdir=${L_HELP} docdir=${L_DOC} -f
 MAKEFILE=	makefile
