@@ -3,7 +3,7 @@
 # Date created:         Sat Aug 10, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.2 1996/10/16 02:25:40 chuckr Exp $
+# $Id: Makefile,v 1.3 1996/10/16 12:55:54 chuckr Exp $
 #
 
 DISTNAME=	cxterm5.0.p3
@@ -34,7 +34,7 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/CXterm.ad  \
 			${PREFIX}/lib/X11/cxterm.dic/
 .if !defined(NOPORTDOCS)
-	mkdir -p ${PREFIX}/share/doc/cxterm
+	${MKDIR} ${PREFIX}/share/doc/cxterm
 	${INSTALL_DATA} ${WRKSRC}/Doc/CXTERM.FAQ ${PREFIX}/share/doc/cxterm
 	${INSTALL_DATA} ${WRKSRC}/Doc/input.doc ${PREFIX}/share/doc/cxterm
 .endif
