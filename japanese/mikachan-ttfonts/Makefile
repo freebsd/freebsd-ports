@@ -18,7 +18,7 @@ EXTRACT_SUFX=	.lzh
 MAINTAINER=	sada@FreeBSD.org
 COMMENT=	Handwritten Japanese TrueType fonts by Mika-chan
 
-BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
+EXTRACT_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
 NO_CDROM=	"Don't sell distfile"
 EXTRACT_CMD=	lha
