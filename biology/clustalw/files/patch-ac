@@ -77,7 +77,7 @@
  			strcat(local_prompt," [%s]: ");          
  			fprintf(stdout,local_prompt,file_name);
 -			gets(temp);
-+			fgets(temp,FILENAMELEN+1,stdin);
++			fgets(temp,FILENAMELEN+1,stdin); if(*temp != EOS) temp[strlen(temp)-1]=EOS;
  			if(*temp != EOS) strcpy(file_name,temp);
  		}
  	}
@@ -86,7 +86,7 @@
  		strcat(local_prompt," [%s]: ");          
  		fprintf(stdout,local_prompt,file_name);
 -		gets(temp);
-+		fgets(temp,FILENAMELEN+1,stdin);
++		fgets(temp,FILENAMELEN+1,stdin); if(*temp != EOS) temp[strlen(temp)-1]=EOS;
  		if(*temp != EOS) strcpy(file_name,temp);
  	}
  
@@ -95,7 +95,7 @@
              	fprintf(stdout,"\nUse the existing GUIDE TREE file,  %s  (y/n) ? [y]: ",
                                             tree_name);
 -                gets(temp);
-+                fgets(temp,MAXLINE,stdin);
++                fgets(temp,MAXLINE,stdin); if(*temp != EOS) temp[strlen(temp)-1]=EOS;
                  if(*temp != 'n' && *temp != 'N') {
                      strcpy(phylip_name,tree_name);
                      use_tree = TRUE;
@@ -104,7 +104,7 @@
              fprintf(stdout,"\nEnter a name for the guide tree file [%s]: ",
                                             phylip_name);
 -                	gets(temp);
-+			fgets(temp,MAXLINE,stdin);
++			fgets(temp,MAXLINE,stdin); if(*temp != EOS) temp[strlen(temp)-1]=EOS;
                  	if(*temp != EOS)
                          	strcpy(phylip_name,temp);
          	}
@@ -113,7 +113,7 @@
              	fprintf(stdout,"\nUse the existing GUIDE TREE file for Profile 1,  %s  (y/n) ? [y]: ",
                                             tree_name);
 -                gets(temp);
-+                fgets(temp,MAXLINE,stdin);
++                fgets(temp,MAXLINE,stdin); if(*temp != EOS) temp[strlen(temp)-1]=EOS;
                  if(*temp != 'n' && *temp != 'N') {
                      strcpy(p1_tree_name,tree_name);
                      use_tree1 = TRUE;
@@ -122,7 +122,7 @@
              	fprintf(stdout,"\nUse the existing GUIDE TREE file for Profile 2,  %s  (y/n) ? [y]: ",
                                             tree_name);
 -                gets(temp);
-+                fgets(temp,MAXLINE,stdin);
++                fgets(temp,MAXLINE,stdin); if(*temp != EOS) temp[strlen(temp)-1]=EOS;
                  if(*temp != 'n' && *temp != 'N') {
                      strcpy(p2_tree_name,tree_name);
                      use_tree2 = TRUE;
@@ -131,7 +131,7 @@
      fprintf(stdout,"\nEnter a name for the parameter output file [%s]: ",
  	    parname);
 -    gets(temp);
-+    fgets(temp,FILENAMELEN+1,stdin);
++    fgets(temp,FILENAMELEN+1,stdin); if(*temp != EOS) temp[strlen(temp)-1]=EOS;
      if(*temp != EOS)
        strcpy(parname,temp);
    }
