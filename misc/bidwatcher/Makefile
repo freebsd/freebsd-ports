@@ -23,6 +23,7 @@ COMMENT=	Bid monitor for eBay
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
 PLIST_FILES=	bin/bidwatcher
+USE_GCC=	3.1+
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	YES
 CFLAGS+=	-UHAVE_GMTIME -DHAVE_TM_ZONE
