@@ -14,7 +14,7 @@ PORTREVISION=	4
 CATEGORIES=	databases
 MASTER_SITES=	http://www.iodbc.org/downloads/iODBC/
 
-MAINTAINER=	ebakke@trolltech.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ODBC 3.x driver manager, for universal data source access
 
 CONFLICTS=	unixODBC-*
