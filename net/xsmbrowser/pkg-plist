@@ -51,3 +51,4 @@ share/xsmbrowser/xsmbrowser-mini.xpm
 share/xsmbrowser/xsmbrowser.xpm
 share/xsmbrowser/zip.gif
 @dirrm share/xsmbrowser
+@dirrm etc/xsmbrowser
