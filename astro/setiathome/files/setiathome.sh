@@ -74,17 +74,19 @@ start)
 		fi
 	done
 	for i in ${seti_wrksuff}; do
-		su -fm ${seti_user} -c "\
-			cd ${seti_wrkdir}/${i} || exit; \
-			echo \$\$ > shpid.sah; \
-			trap 'kill \$pid;exit' 15; \
-			while :; do \
+		su -fm ${seti_user} -c "exec /bin/sh -T" << EOF > /dev/null &
+			cd ${seti_wrkdir}/${i} || exit
+			echo \$\$ > shpid.sah
+			trap 'kill \$pid;exit' 15
+			while :; do
 				${program_path} \
 					${seti_std_args} ${seti_proxy_args} \
-					${seti_nice:+-nice} ${seti_nice} & \
-				pid=\$!; wait \$pid; \
-				sleep ${seti_sleep}; \
-			done > /dev/null" &
+					${seti_nice:+-nice} ${seti_nice} &
+				pid=\$!; wait \$pid
+				sleep ${seti_sleep} &
+				pid=\$!; wait \$pid
+			done
+EOF
 	done
 	echo -n " SETI@home"
 	;;
