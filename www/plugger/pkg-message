@@ -1,0 +1,15 @@
+
+**************************************************
+**************************************************
+NOTE:
+
+Be sure to create a /usr/local/etc/pluggerrc file; use
+/usr/local/etc/pluggerrc.sample as a starting point. 
+It should work fine as is.
+
+Also note that you will need the various external viewers
+(splay, xanim, etc) in order to view embedded web content.
+
+**************************************************
+**************************************************
+
