@@ -18,4 +18,10 @@ WRKSRC=		${WRKDIR}/cocktail-9309
 MAN1=		ag.1 puma.1 mpp.1 lalr.1 ell.1 bnf.1 ast.1 rex.1 mtc.1
 MAN2=		mtc.2
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Coredump during build on sparc64"
+.endif
+
+.include <bsd.port.post.mk>
