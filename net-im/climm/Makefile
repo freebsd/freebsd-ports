@@ -7,13 +7,14 @@
 
 PORTNAME=	micq
 PORTVERSION=	0.4.8.pl3
-PORTREVISION=
+PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=   ftp://micq.ukeer.de/pub/micq/source/
 EXTRACT_SUFX=	.tgz
-HAS_CONFIGURE=	yes
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
+
+HAS_CONFIGURE=	yes
 
 MAN1=		micq.1
 MAN5=		micqrc.5
@@ -24,10 +25,10 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/micqrc.5 ${MANPREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/doc/micq.7 ${MANPREFIX}/man/man7
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/micq
-	${INSTALL_DATA} ${WRKSRC}/doc/commands.txt ${PREFIX}/share/doc/micq
-	${INSTALL_DATA} ${WRKSRC}/doc/icq091.txt ${PREFIX}/share/doc/micq
-	${INSTALL_DATA} ${WRKSRC}/doc/icqv7.txt ${PREFIX}/share/doc/micq
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/commands.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/icq091.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/icqv7.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
