@@ -1,14 +1,16 @@
+# ex:ts=8
 # New ports collection makefile for:    fwtk
 # Version required:                     1.3
 # Date created:                         15th June 1996
 # Whom:                                 gpalmer
 #
-# $Id: Makefile,v 1.9 1997/05/31 22:41:49 gpalmer Exp $
+# $Id: Makefile,v 1.10 1997/08/08 01:55:22 obrien Exp $
 #
 
-DISTNAME=	fwtk-1.3
+DISTNAME=	fwtk2.1
+PKGNAME=	fwtk-2.1
 CATEGORIES=	security net
-DISTFILES=	fwtk-v1.3${EXTRACT_SUFX} fwtk-doc-only${EXTRACT_SUFX}
+DISTFILES=	fwtk2.1${EXTRACT_SUFX} fwtk-doc-only${EXTRACT_SUFX}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	obrien@FreeBSD.org
@@ -30,25 +32,29 @@ LIBEXEC_BINS=	authsrv ftp-gw http-gw netacl plug-gw rlogin-gw smap smapd \
 		tn-gw x-gw
 
 do-fetch:
-	@if [ ! -f ${DISTDIR}/fwtk-v1.3${EXTRACT_SUFX} ]; then \
-	  echo ""; \
-	  echo "Please read ftp://ftp.tis.com/pub/firewalls/toolkit/README"; \
-	  echo "for details of how to obtain the FTWK source.  Put the files"; \
-	  echo "fwtk-v1.3${EXTRACT_SUFX} and fwtk-doc-only${EXTRACT_SUFX} in the directory"; \
-	  echo "${DISTDIR} and run make again"; \
-	  echo ""; \
+	@if [ ! -f ${DISTDIR}/fwtk2.1${EXTRACT_SUFX} ]; then \
+	  ${ECHO} ""; \
+	  ${ECHO} "Please read ftp://ftp.tis.com/pub/firewalls/toolkit/README"; \
+	  ${ECHO} "for details of how to obtain the FTWK source.  Put the files"; \
+	  ${ECHO} "fwtk2.1${EXTRACT_SUFX} and fwtk-doc-only${EXTRACT_SUFX} in the directory"; \
+	  ${ECHO} "${DISTDIR} and run make again"; \
+	  ${ECHO} ""; \
 	  exit 1;\
 	fi
 
 pre-configure:
-	@/usr/bin/sed -e s:%%FWTKSRCDIR%%:${WRKSRC}: \
-				-e s:%%BSD_PREFIX%%:${PREFIX}: \
-				${WRKSRC}/Makefile.config > ${WRKSRC}/Makefile.config.out
-	@/bin/mv ${WRKSRC}/Makefile.config.out ${WRKSRC}/Makefile.config
+	@${MV} ${WRKSRC}/Makefile.config ${WRKSRC}/Makefile.config.in
+	@${SED} -e s:%%FWTKSRCDIR%%:${WRKSRC}: \
+		-e s:%%BSD_PREFIX%%:${PREFIX}: \
+		${WRKSRC}/Makefile.config.in > ${WRKSRC}/Makefile.config
+	@${MV} ${WRKSRC}/firewall.h ${WRKSRC}/firewall.h.in
+	@${SED} -e s:%%FWTKSRCDIR%%:${WRKSRC}: \
+		-e s:%%BSD_PREFIX%%:${PREFIX}: \
+		${WRKSRC}/firewall.h.in > ${WRKSRC}/firewall.h
 
 post-install:
 	( cd ${PREFIX}/libexec ; strip ${SBIN_BINS} ${LIBEXEC_BINS} )
-	( cd ${PREFIX}/libexec ; mv ${SBIN_BINS} ../sbin )
+	( cd ${PREFIX}/libexec ; ${MV} ${SBIN_BINS} mqueue ../sbin )
 	${MKDIR} ${PREFIX}/share/doc/fwtk
 	${INSTALL_MAN} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/fwtk
 	( cd ${WRKSRC}/doc/man ; ${INSTALL_MAN} ${MAN3} ${PREFIX}/man/man3 )

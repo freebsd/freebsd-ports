@@ -1,21 +1,27 @@
---- Makefile.config.orig	Fri Nov  4 15:31:31 1994
-+++ Makefile.config	Sun Feb 23 12:51:08 1997
-@@ -25,8 +25,7 @@
+--- Makefile.config.orig	Tue Mar  4 20:17:46 1997
++++ Makefile.config	Sat Apr 18 00:51:14 1998
+@@ -24,13 +24,13 @@
+ 
+ # Defines for your operating system
+ #
+-DEFINES=
++DEFINES= -D_SKEY_INTERNAL
+ #DEFINES=-DSYSV -DSOLARIS
+ 
  # Options for your compiler (eg, "-g" for debugging, "-O" for
  # optimizing, or "-g -O" for both under GCC)
- #COPT=	-g -traditional
--COPT=	-g
--#COPT=	-O
-+COPT=
- 
+ #COPT=	-g -traditional $(DEFINES)
+-COPT=	-g $(DEFINES)
++COPT=	$(DEFINES)
+ #COPT=	-O $(DEFINES)
  
  # Version of "make" you want to use
-@@ -40,17 +39,18 @@
+@@ -44,16 +44,16 @@
  
  
  # Destination directory for installation of binaries
 -DEST=	/usr/local/etc
-+DEST=	%%BSD_PREFIX%%/libexec
++DEST=	$(PREFIX)/libexec
  
  
  # Destination directory for installation of man pages
@@ -25,34 +31,47 @@
  
  # Names of any auxiliary libraries your system may require (e.g., -lsocket)
  # If you want to link against a resolver library, specify it here.
--AUXLIB= -lresolv
-+#AUXLIB= -lresolv
+-AUXLIB=
++AUXLIB= -lcrypt -lskey
  #AUXLIB= -lsocket
-+AUXLIB= -lcrypt
- 
- 
- # DBM library should be specified if it is an external library or
-@@ -63,19 +63,19 @@
+ #AUXLIB= -lresolv
+ # For Solaris:
+@@ -72,23 +72,23 @@
  # or -Bstatic for static binaries under SunOS 4.1.x)
  #LDFL=	-Bstatic
  #LDFL=
 -LDFL= -g
-+LDFL=
++#LDFL= -g
+ # Flags for X gateway link - usually the same as LDFL
+ XLDFL=$(LDFL)
  
  
  # Location of the fwtk sources [For #include by any external tools needing it]
 -FWTKSRCDIR=/u/b/mjr/firewall/fwtk
-+FWTKSRCDIR=%%FWTKSRCDIR%%
++FWTKSRCDIR=/FBSD/pkg/Fix/fwtk/work/fwtk
  #FWTKSRCDIR=/usr/local/src/fwtk
  
  
  # Location of X libraries for X-gw
- #XLIBDIR=/usr/X11/lib
--XLIBDIR=/usr/local/X11R5/lib
-+XLIBDIR=${X11BASE}/lib
+-XLIBDIR=/usr/X11/lib
++XLIBDIR=$(X11BASE)/lib
+ #XLIBDIR=/usr/local/X11R5/lib
  
+ # X Libraries
+ # For BSD:
+-XLIBS= -L$(XLIBDIR) -lXaw -lXmu -lXt -lXext -lX11 -lSM -lICE -lipc
++XLIBS= -L$(XLIBDIR) -lXaw -lXmu -lXt -lXext -lX11 -lSM -lICE
+ #XLIBS =  -L$(XLIBDIR) -lXaw -lXmu -lXt -lXext -lX11
+ # for Linux:
+ #XLIBS =  -L$(XLIBDIR) -lXaw -lXmu -lXt -lXext -lX11 -lc
+@@ -98,8 +98,8 @@
+ #XLIBS = -L$(XLIBDIR) -lXaw -lXmu -lXt -lXext -lX11
  
  # Location of X include files
- #XINCLUDE=/usr/X11/include
--XINCLUDE=/usr/local/X11R5/include
-+XINCLUDE=${X11BASE}/include
+-XINCLUDE=/usr/X11/include
++XINCLUDE=$(X11BASE)/include
+ #XINCLUDE=/usr/local/X11R5/include
+ 
+ # Objects to include in libfwall for SYSV
+-SYSVOBJ= signal.o
++#SYSVOBJ= signal.o

@@ -1,0 +1,11 @@
+--- auth.h.orig	Fri Nov  4 15:31:26 1994
++++ auth.h	Sat Apr 18 00:37:48 1998
+@@ -69,7 +69,7 @@
+ #define	AUTHPROTO_PASSWORD
+ 
+ /* define this if you want to use bellcore's S/Key */
+-/* #define	AUTHPROTO_SKEY */
++#define	AUTHPROTO_SKEY
+ 
+ /* define this if you want to use Security Dynamics' SecurID */
+ /* #define	AUTHPROTO_SECURID */
