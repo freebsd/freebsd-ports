@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	lv
-PORTVERSION=	4.50
+PORTVERSION=	4.51
 CATEGORIES=	misc
 MASTER_SITES=	http://www.ff.iij4u.or.jp/~nrt/freeware/
-DISTNAME=	lv450
+DISTNAME=	lv451
 
 MAINTAINER=	sumikawa@FreeBSD.org
 COMMENT=	Powerful Multilingual File Viewer
