@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	--without-xmms
 .endif
 
 .if defined(WITH_GTKHTML)
-LIB_DEPENDS+=	gtkhtml-3:${PORTSDIR}/www/gtkhtml3
+USE_GNOME+=	gtkhtml3
 .else
 CONFIGURE_ARGS+=	--without-gtkhtml
 .endif
