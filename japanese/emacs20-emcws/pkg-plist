@@ -7,11 +7,11 @@ share/emacs/%%EMACS_VER%%-emcws/lisp/ange-ftp.elc
 share/emacs/%%EMACS_VER%%-emcws/lisp/busyu.el
 share/emacs/%%EMACS_VER%%-emcws/lisp/can-n-egg.el
 share/emacs/%%EMACS_VER%%-emcws/lisp/canna.el
-share/emacs/%%EMACS_VER%%-emcws/lisp/canna.elc
+%%WITH_CANNA%%share/emacs/%%EMACS_VER%%-emcws/lisp/canna.elc
 share/emacs/%%EMACS_VER%%-emcws/lisp/egg-jsymbol.el
 share/emacs/%%EMACS_VER%%-emcws/lisp/egg-keymap.el
 share/emacs/%%EMACS_VER%%-emcws/lisp/egg.el
-share/emacs/%%EMACS_VER%%-emcws/lisp/egg.elc
+%%WITH_WNN%%share/emacs/%%EMACS_VER%%-emcws/lisp/egg.elc
 share/emacs/%%EMACS_VER%%-emcws/lisp/eggrc-sj3
 share/emacs/%%EMACS_VER%%-emcws/lisp/eggrc-v41
 share/emacs/%%EMACS_VER%%-emcws/lisp/eggrc-wnn
@@ -38,10 +38,12 @@ share/emacs/%%EMACS_VER%%-emcws/lisp/loaddefs.el
 share/emacs/%%EMACS_VER%%-emcws/lisp/loadup.el
 share/emacs/%%EMACS_VER%%-emcws/lisp/mule-inst.el
 share/emacs/%%EMACS_VER%%-emcws/lisp/sj3-client.el
+%%WITH_SJ3%%share/emacs/%%EMACS_VER%%-emcws/lisp/sj3-client.elc
 share/emacs/%%EMACS_VER%%-emcws/lisp/sj3-egg.el
+%%WITH_SJ3%%share/emacs/%%EMACS_VER%%-emcws/lisp/sj3-egg.elc
 share/emacs/%%EMACS_VER%%-emcws/lisp/wnn-client.el
 share/emacs/%%EMACS_VER%%-emcws/lisp/wnn-egg.el
-share/emacs/%%EMACS_VER%%-emcws/lisp/wnn-egg.elc
+%%WITH_WNN%%share/emacs/%%EMACS_VER%%-emcws/lisp/wnn-egg.elc
 share/emacs/%%EMACS_VER%%-emcws/site-lisp/subdirs.el
 share/emacs/%%EMACS_VER%%-emcws/lisp/subdirs.el
 @dirrm share/emacs/%%EMACS_VER%%-emcws/lisp/its
