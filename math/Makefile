@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.37 1998/04/10 05:05:16 hoek Exp $
+# $Id: Makefile,v 1.38 1998/04/13 00:51:58 jseger Exp $
 #
 
     SUBDIR += Scilab
@@ -7,6 +7,7 @@
     SUBDIR += calc
     SUBDIR += calctool
     SUBDIR += eispack
+    SUBDIR += eval
     SUBDIR += femlab
     SUBDIR += fftpack
     SUBDIR += freefem
