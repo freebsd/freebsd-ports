@@ -1,4 +1,5 @@
 bin/mwm
+bin/mxmkmf
 bin/uil
 bin/xmbind
 include/Mrm/MrmDecls.h
@@ -124,12 +125,15 @@ include/Xm/XmP.h
 include/Xm/XmStrDefs.h
 include/Xm/XmosP.h
 lib/X11/app-defaults/Mwm
+lib/X11/lesstif/Motif.rules
+lib/X11/lesstif/Motif.tmpl
 lib/X11/mwm/alt.map
 lib/X11/mwm/system.mwmrc
 lib/libMrm.so.0.0
 lib/libXm.so.0.0
 lib/libltc.a
 @exec /sbin/ldconfig -m %D/lib
+@dirrm lib/X11/lesstif
 @dirrm lib/X11/mwm
 @dirrm include/Xm
 @dirrm include/Mrm
