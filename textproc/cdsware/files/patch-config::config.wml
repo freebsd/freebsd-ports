@@ -1,0 +1,88 @@
+--- config/config.wml.orig	Wed Apr 21 12:19:45 2004
++++ config/config.wml	Sun Jun 27 22:34:14 2004
+@@ -69,31 +69,32 @@
+ ## CDSNAME -- the visible name of your CDSware installation:
+ ##  (example: "My Document Server")
+ <define-tag CDSNAME whitespace=delete>
+-Atlantis Institute of Fictive Science
++%%CDSNAME%%
+ </define-tag>
+ 
+ ## CDSNAMEINTL -- the international versions of CDSNAME in various
+ ## languages, defined using the standard locale-like language codes.
+ ##  (example: "<fr>Mon Serveur des Documents</fr>")
++## Note: to be typed in UTF8
+ 
+ <define-tag CDSNAMEINTL whitespace=delete>
+- <en>Atlantis Institute of Fictive Science</en>
+- <fr>Atlantis Institut des Sciences Fictives</fr>
+- <de>Atlantis Institut der fiktiven Wissenschaft</de>
+- <es>Atlantis Instituto de la Ciencia Fictive</es>
+- <pt>Instituto Atlantis de Ciência Fictícia</pt>
+- <it>Atlantis Istituto di Scienza Fittizia</it>
+- <ru>Атлантис Институт фиктивных Наук</ru>
+- <sk>Atlantis Inštitút Fiktívnych Vied</sk>
+- <cz>Atlantis Institut Fiktivních Věd</cz>
+- <no>Atlantis Institutt for Fiktiv Vitenskap</no>
+- <se>Atlantis Institut för Fiktiv Vetenskap</se>
++ <en>%%CDSNAME%%</en>
++ <fr>%%CDSNAME%% (fr)</fr>
++ <de>%%CDSNAME%% (de)</de>
++ <es>%%CDSNAME%% (es)</es>
++ <pt>%%CDSNAME%% (pt)</pt>
++ <it>%%CDSNAME%% (it)</it>
++ <ru>%%CDSNAME%% (ru)</ru>
++ <sk>%%CDSNAME%% (sk)</sk>
++ <cz>%%CDSNAME%% (cz)</cz>
++ <no>%%CDSNAME%% (no)</no>
++ <se>%%CDSNAME%% (no)</se>
+ </define-tag>
+ 
+ ## CDSLANG -- the default language of the interface:
+ ##  (example: "en")
+ <define-tag CDSLANG whitespace=delete>
+-en
++%%CDSLANG%%
+ </define-tag>
+ 
+ ## CDSLANGS -- list of all languages the user interface should be
+@@ -112,13 +113,13 @@
+ ## ALERTENGINEEMAIL -- the email address from which the alert emails will appear to be send:
+ ##  (example: "cds.alert@cdsware.cern.ch")
+ <define-tag ALERTENGINEEMAIL whitespace=delete>
+-cds.alert@cdsdev.cern.ch
++%%ALERTEMAIL%%
+ </define-tag>
+ 
+ ## SUPPORTEMAIL -- the email address of the support team for this installation:
+ ##  (example: "cds.support@cern.ch")
+ <define-tag SUPPORTEMAIL whitespace=delete>
+-cds.support@cern.ch
++%%SUPPORTEMAIL%%
+ </define-tag>
+ 
+ ## ADMINEMAIL -- the email address of the 'superuser' for this
+@@ -127,7 +128,7 @@
+ ## be automatically recognized as superuser of the system.
+ ##  (example: "cds.support@cern.ch")
+ <define-tag ADMINEMAIL whitespace=delete>
+-cds.support@cern.ch
++%%ADMINEMAIL%%
+ </define-tag>
+ 
+ ## CFG_MAX_RECID -- maximum record ID number possible, i.e. the upper
+@@ -151,12 +152,12 @@
+ 
+ ## CFG_APACHE_PASSWORD_FILE -- where Apache user credentials are stored
+ <define-tag CFG_APACHE_PASSWORD_FILE whitespace=delete>
+-/soft/httpd-bis/conf/httpd.password
++%%PREFIX%%/etc/httpd.password
+ </define-tag>
+ 
+ ## CFG_APACHE_GROUP_FILE -- where Apache user groups are stored
+ <define-tag CFG_APACHE_GROUP_FILE whitespace=delete>
+-/soft/httpd-bis/conf/httpd.group
++%%PREFIX%%/etc/httpd.group
+ </define-tag>
+ 
+ ## CFG_CERN_SITE -- do we want to enable CERN-specific code, like the

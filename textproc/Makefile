@@ -28,6 +28,7 @@
     SUBDIR += cbedic
     SUBDIR += cdif
     SUBDIR += cdiff
+    SUBDIR += cdsware
     SUBDIR += chpp
     SUBDIR += cl-meta
     SUBDIR += cl-meta-clisp

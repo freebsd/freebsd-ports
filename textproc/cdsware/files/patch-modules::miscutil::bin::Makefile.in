@@ -1,0 +1,11 @@
+--- modules/miscutil/bin/Makefile.in.orig	Wed May 12 14:25:18 2004
++++ modules/miscutil/bin/Makefile.in	Sat Jun 26 18:40:36 2004
+@@ -169,7 +169,7 @@
+ install-exec-am: install-binSCRIPTS
+ install-exec: install-exec-am
+ 
+-install-data-am: install-data-local
++install-data-am:
+ install-data: install-data-am
+ 
+ install-am: all-am
