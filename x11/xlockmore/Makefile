@@ -17,4 +17,7 @@ LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
 
+post-extract:
+	@cp ${FILESDIR}/flag-freebsd.h ${WRKSRC}/flags
+
 .include <bsd.port.mk>
