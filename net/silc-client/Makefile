@@ -9,7 +9,17 @@ PORTNAME=	silc
 PORTVERSION=	0.6.4
 CATEGORIES=	net security
 MASTER_SITES=	http://www.silcnet.org/download/ \
-		ftp://ftp.silcnet.org/pub/silc/
+		ftp://ftp.silcnet.org/pub/silc/ \
+		http://ftp.silcnet.org/ \
+		http://munitions.vipul.net/software/mirrors/silc/ \
+		ftp://ftp.wiretapped.net/pub/security/network-security/silc/ \
+		http://www.au.silcnet.org/download/ \
+		ftp://ftp.au.silcnet.org/pub/silcnet/ \
+		http://www.planetmirror.com/pub/silcnet/ \
+		http://the.wiretapped.net/security/network-security/silc/ \
+		ftp://ftp.wiretapped.net/pub/security/network-security/silc/ \
+		http://www.no.silcnet.org/download/ \
+		ftp://ftp.no.silcnet.org/pub/silc/
 PKGNAMESUFFIX=	-client
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
@@ -23,6 +33,7 @@ CONFIGURE_ARGS=	--with-docdir=share/doc/${PORTNAME} \
 		--with-helpdir=share/${PORTNAME}/help \
 		--with-simdir=libexec/${PORTNAME}/modules
 PLIST_SUB=	INSTALL_DIR="${INSTALL_DIR}"
+PKGDEINSTALL=	${PKGINSTALL}
 
 INSTALL_DIR?=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
 
@@ -57,6 +68,10 @@ post-patch:
 .ifndef(WITH_OPTIMIZED_CFLAGS)
 	@${PERL} -pi -e 's/-O2//' ${WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
+
+post-install:
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
+		${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.pre.mk>
 
