@@ -9,4 +9,5 @@ include/dvdnav/vm.h
 include/dvdnav/vmcmd.h
 lib/libdvdnav.so.1
 lib/libdvdnav.so
+share/aclocal/dvdnav.m4
 @dirrm include/dvdnav
