@@ -4738,6 +4738,7 @@ p5-XML-Parser	ports/textproc/p5-XML-Parser
 p5-XML-RSS	ports/textproc/p5-XML-RSS
 p5-XML-SAX	ports/textproc/p5-XML-SAX
 p5-XML-SAX-Expat	ports/textproc/p5-XML-SAX-Expat
+p5-XML-SAX-Writer	ports/textproc/p5-XML-SAX-Writer
 p5-XML-Sablotron	ports/textproc/p5-XML-Sablotron
 p5-XML-Simple	ports/textproc/p5-XML-Simple
 p5-XML-SimpleObject	ports/textproc/p5-XML-SimpleObject
