@@ -3,7 +3,7 @@
 # Date created:		09 January 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1998/09/15 11:13:16 asami Exp $
+# $Id: Makefile,v 1.7 1998/09/17 00:32:37 asami Exp $
 #
 
 DISTNAME=	xminehunter-0.4
@@ -12,6 +12,9 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=	tg@FreeBSD.ORG
+
+
+BROKEN_ELF=	yes
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
