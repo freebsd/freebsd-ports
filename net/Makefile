@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.244 1999/04/10 19:10:56 jseger Exp $
+# $Id: Makefile,v 1.245 1999/04/10 19:46:26 jseger Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -135,6 +135,7 @@
     SUBDIR += pppload
     SUBDIR += ppxp
     SUBDIR += proftpd
+    SUBDIR += pvm
     SUBDIR += queso
     SUBDIR += radius
     SUBDIR += radiusclient
