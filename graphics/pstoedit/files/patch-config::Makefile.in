@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- config/Makefile.in	2002/09/12 17:18:05	1.1
++++ config/Makefile.in	2002/09/12 17:18:20
+@@ -98,7 +98,7 @@
+ 
+ EXTRA_DIST = pstoedit.pc.in pstoedit-config.af pstoedit-config.in
+ 
+-pkgconfigdir = $(libdir)/pkgconfig
++pkgconfigdir = $(prefix)/libdata/pkgconfig
+ pkgconfig_DATA = pstoedit.pc
+ 
+ bin_SCRIPTS = pstoedit-config

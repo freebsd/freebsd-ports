@@ -1,11 +1,38 @@
 bin/pstoedit
-%%PORTDOCS%%share/doc/pstoedit/changelog.htm
-%%PORTDOCS%%share/doc/pstoedit/index.htm
-%%PORTDOCS%%share/doc/pstoedit/pstoedit.htm
+bin/pstoedit-config
+include/pstoedit/base64writer.h
+include/pstoedit/cppcomp.h
+include/pstoedit/drvbase.h
+include/pstoedit/drvfuncs.h
+include/pstoedit/miscutil.h
+include/pstoedit/poptions.h
+include/pstoedit/psimage.h
+include/pstoedit/pstoedit.h
+include/pstoedit/pstoeditoptions.h
+include/pstoedit/pstoeditoutputlib.h
+include/pstoedit/pstoedll.h
+lib/libpstoedit.a
+lib/libpstoedit.so
+lib/libpstoedit.so.0
+lib/pstoedit/libp2edrvlplot.a
+lib/pstoedit/libp2edrvlplot.so
+lib/pstoedit/libp2edrvlplot.so.0
+lib/pstoedit/libp2edrvstd.a
+lib/pstoedit/libp2edrvstd.so
+lib/pstoedit/libp2edrvstd.so.0
+lib/pstoedit/libp2edrvswf.a
+lib/pstoedit/libp2edrvswf.so
+lib/pstoedit/libp2edrvswf.so.0
+libdata/pkgconfig/pstoedit.pc
+share/doc/pstoedit/pstoedit.htm
 share/pstoedit/latex2e.fmp
 share/pstoedit/mpost.fmp
+share/pstoedit/safer.ps
 share/pstoedit/svg.fmp
 share/pstoedit/swffonts/default.fdb
+share/pstoedit/wemf.fmp
 @dirrm share/pstoedit/swffonts
 @dirrm share/pstoedit
-%%PORTDOCS%%@dirrm share/doc/pstoedit
+@dirrm share/doc/pstoedit
+@dirrm lib/pstoedit
+@dirrm include/pstoedit

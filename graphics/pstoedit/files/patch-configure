@@ -1,0 +1,32 @@
+
+$FreeBSD$
+
+--- configure	2002/09/12 16:53:58	1.1
++++ configure	2002/09/12 16:54:04
+@@ -7031,6 +7031,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -8016,16 +8017,15 @@
+ echo "${ECHO_T}GNU" >&6
+     SPECIAL_CXXFLAGS="-DBUGGYGPP -pedantic -Wall -Wwrite-strings -Wcast-qual -Wpointer-arith -Wstrict-prototypes"
+   fi
+-  CXXFLAGS="-g"
+ elif test `echo "$CXX" | egrep -c 'xlC$'` -eq 1; then
+   echo "$as_me:8021: result: AIX xlC" >&5
+ echo "${ECHO_T}AIX xlC" >&6
+-  CXXFLAGS="-D__unix__ -g -+ -I/usr/lpp/xlC/src/nihC/aixinclude"
++  CXXFLAGS="$CXXFLAGS -D__unix__ -+ -I/usr/lpp/xlC/src/nihC/aixinclude"
+ elif test `echo "$CXX" | egrep -c 'cxx$'` -eq 1; then
+   echo "$as_me:8025: result: OSF/1 cxx" >&5
+ echo "${ECHO_T}OSF/1 cxx" >&6
+   SPECIAL_CXXFLAGS=-w
+-  CXXFLAGS=-define_templates
++  CXXFLAGS="$CXXFLAGS -define_templates"
+ elif test `echo "$CXX" | egrep -c 'CC$'` -eq 1; then
+   if test "$host_os" = irix5.3; then
+     echo "$as_me:8031: result: Irix 5.3" >&5

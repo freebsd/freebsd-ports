@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/Makefile.in	2002/09/12 17:11:07	1.1
++++ src/Makefile.in	2002/09/12 17:13:02
+@@ -191,7 +191,7 @@
+ 	psimage.h
+ 
+ 
+-CPPFLAGS = \
++CPPFLAGS = @CPPFLAGS@ \
+ 	${LIBPLOTTER_CFLAGS}			\
+ 	${LIBMING_CFLAGS}			\
+ 	${LIBMAGICK_CFLAGS}			\
