@@ -8,12 +8,12 @@ and to make it easy to view and compose them. With Mew you can send a
 picture of a birthday cake with the song "Happy Birthday to you" to your
 friend, which is encrypted by strong cryptograph.
 
-This port is the Mew2(Mew with version 2) for xemacs-21.1.14(editors/xemacs21). 
+This port is the Mew3(Mew with version 3) for xemacs-21.*(editors/xemacs21). 
 The Mew2 port and corresponding Emacs port are listed bellow and elisp
 `site-lisp' directory(elisp load path), info path and etc directory(only
 effective for xemacs ports) are shown as well. 
 
-mail/mew2-xemacs21(mew-xemacs21-2.0) ===> editors/xemacs21(xemacs-21.1.14) 
-	Lisp directory : /usr/local/lib/xemacs/site-packages/lisp/mew2
+mail/mew3-xemacs21(mew-xemacs21-3.*) ===> editors/xemacs21(xemacs-21.*) 
+	Lisp directory : /usr/local/lib/xemacs/site-packages/lisp/mew3
 	Info directory : /usr/local/lib/xemacs/site-packages/info
-	ETC directory  : /usr/local/lib/xemacs/site-packages/etc/mew2
+	ETC directory  : /usr/local/lib/xemacs/site-packages/etc/mew3
