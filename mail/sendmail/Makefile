@@ -95,7 +95,7 @@ BERKELEYDB_PORT?=	databases/db42
 BERKELEYDB_LIB?=		db-4.2
 BERKELEYDB_INCLUDE?=	${LOCALBASE}/include/db42
 .endif
-LIB_DEPENDS+=		${BERKELEYDB_LIB}:${PORTSDIR}/${BERKLEYDB_PORT}
+LIB_DEPENDS+=		${BERKELEYDB_LIB}:${PORTSDIR}/${BERKELEYDB_PORT}
 CONFLICTS+=	sendmail+tls-8.* \
 		sendmail+tls+ldap-8.* \
 		sendmail+tls+sasl-8.* \
@@ -287,7 +287,7 @@ do-configure:
 	 'APPENDDEF(`confENVDEF'\'', `-I${BERKELEYDB_INCLUDE}'\'')' \
 		>> ${WCONF}/site.config.m4
 	${ECHO_CMD} \
-	 'APPENDDEF(`confLIBDIRS'\'', `-I${LOCALBASE}/lib'\'')' \
+	 'APPENDDEF(`confLIBDIRS'\'', `-L${LOCALBASE}/lib'\'')' \
 		>> ${WCONF}/site.config.m4
 .for i in sendmail editmap makemap praliases vacation
 	${ECHO_CMD} \
