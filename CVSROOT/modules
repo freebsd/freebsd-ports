@@ -5824,6 +5824,7 @@ radiusd-cistron	ports/net/radiusd-cistron
 radiusniff	ports/security/radiusniff
 radreport	ports/net/radreport
 radvd		ports/net/radvd
+ragel		ports/devel/ragel
 rain		src/games/rain
 rand		ports/textproc/rand
 random		src/games/random
