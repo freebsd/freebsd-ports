@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stickynotes_applet
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.11
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://loban.caltech.edu/stickynotes/packages/
 
@@ -36,7 +36,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
-	${INSTALL_DATA} ${WRKSRC}/pixmaps/stickynotes.png \
-		${PREFIX}/share/gnome/pixmaps
 
 .include <bsd.port.mk>
