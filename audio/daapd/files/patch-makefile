@@ -1,15 +1,74 @@
---- makefile.orig	Sat Dec 13 23:25:47 2003
-+++ makefile	Sat Dec 13 23:26:24 2003
-@@ -2,9 +2,9 @@
+--- makefile.orig	Mon Jun 21 16:07:51 2004
++++ makefile	Mon Jun 21 16:14:40 2004
+@@ -1,7 +1,5 @@
+ # configure daapd here
+ 
+-HOWL_ENABLE = 1
+-MPEG4_ENABLE = 0
+ 
+ 
+ # no need to touch anything below this line
+@@ -10,24 +8,23 @@
+ CC = g++
+ MAKE = $(MAKE_COMMAND)
  TARGET = daapd
+-DEPS = daaplib_ libhttpd_
  OBJS = daapd.o db.o dboutput.o songcache.o parsemp3.o
- LIBS = -ldaaplib -lhttpd-persistent -lid3tag -lz
--LIBPATH = -L. -L/usr/local/lib
--INCPATH = -I. -I/usr/local/include
--DEPLOY = /usr/local/bin
+ LIBS = -ldaaplib -lhttpd-persistent -lid3tag -lz 
+-LIBPATH = -L. -L./daaplib/src -L./libhttpd/src  -L/usr/local/lib
+-INCPATH = -I. -I./daaplib/include -I./libhttpd/src  -I/usr/local/include
+-DEPLOY = /usr/local
 +LIBPATH = -L. -L%%LOCALBASE%%/lib
 +INCPATH = -I. -I%%LOCALBASE%%/include
-+DEPLOY = %%PREFIX%%/bin
++DEPLOY = %%PREFIX%%
  CFLAGS = -Wall -Wno-multichar
  
+ # HOWL
+ ifeq ($(HOWL_ENABLE),1)
+-	HOWLDIRS := $(sort $(wildcard /usr/local/include/howl*) )
++	HOWLDIRS := $(sort $(wildcard %%LOCALBASE%%/include/howl*) )
+ ifeq ($(words $(HOWLDIRS) ), 0)
+ $(error howl not found in /usr/local/include. Install howl or disable it in the makefile)
+ endif
+ 	HOWLRECENT := $(word $(words $(HOWLDIRS)),$(HOWLDIRS) )
+ 	INCPATH := $(INCPATH) -I$(HOWLRECENT)
+-	LIBS := $(LIBS) -lpthread -lhowl
+-	CFLAGS := $(CFLAGS) -DHOWL_ENABLE
++	LIBS := $(LIBS) $(PTHREAD_LIBS) -lhowl
++	CFLAGS := $(CFLAGS) $(PTHREAD_CFLAGS) -DHOWL_ENABLE
+ 	ifneq ($(shell $(CC) -E -dM - < /dev/null | grep __APPLE__),)
+ 		LIBS := $(LIBS) -framework CoreFoundation
+ 	endif
+@@ -53,28 +50,17 @@
  .cc.o:
+ 	$(CC) $(CFLAGS) $(INCPATH) -c $<
+ 
+-all: $(DEPS) $(TARGET)
++all: $(TARGET)
+ 
+ $(TARGET): $(OBJS)
+ 	$(CC) $(CFLAGS) $(LIBPATH) -o $(TARGET) $(OBJS) $(LIBS)
+ 
+ $(OBJS): types.h dboutput.h songcache.h parsemp3.h
+ 
+-daaplib_:
+-	cd daaplib/src && $(MAKE)
+-
+-libhttpd_:
+-	if test ! -e libhttpd/Site.mm; then cd libhttpd && ./configure; fi
+-	cd libhttpd && $(MAKE)
+-
+ clean:
+-	if test -e libhttpd/Site.mm; then cd libhttpd && $(MAKE) very-clean; fi
+-	cd daaplib/src && $(MAKE) clean
+ 	rm $(OBJS) $(TARGET)
+ 
+-install: $(DEPS) $(TARGET)
+-	cd libhttpd && $(MAKE) install
+-	cd daaplib/src && $(MAKE) install
+-	cp $(TARGET) $(DEPLOY)/bin
+-	chmod a+rx $(DEPLOY)/bin/$(TARGET)
++install: $(TARGET)
++	cp $(TARGET) $(DEPLOY)/sbin
++	chmod a+rx $(DEPLOY)/sbin/$(TARGET)
+ 	cp $(TARGET).8 $(DEPLOY)/man/man8

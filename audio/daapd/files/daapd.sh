@@ -1,27 +1,41 @@
 #!/bin/sh
 # $FreeBSD$
 
-DAAPD_USER=%%USER%%
-DAAPD=%%PREFIX%%/sbin/daapd
-DAAPD_LOG=%%LOGDIR%%/daapd.log
-DAAPD_PID=/var/run/daapd.pid
-DAAPD_CONF=%%PREFIX%%/etc/daapd.conf
+# PROVIDE: daapd
+# REQUIRE: DAEMON
+# KEYWORD: FreeBSD shutdown
 
-case "$1" in
-	start)
-		if [ -r "${DAAPD_CONF}" ]; then
-			su -m ${DAAPD_USER} -c "${DAAPD} -c ${DAAPD_CONF}" >> ${DAAPD_LOG} 2>&1 &
-			echo $(($!+1)) > "${DAAPD_PID}"
-			echo -n ' daapd'
-		fi
-		;;
-	stop)
-		kill -TERM `cat "${DAAPD_PID}"` && rm -f "${DAAPD_PID}"
-		;;
-	*)
-		echo ""
-		echo "Usage: `basename $0` { start | stop }"
-		echo ""
-		exit 64
-		;;
-esac
+# Define these daapd_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/daapd
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+daapd_enable="NO"
+daapd_flags=""
+
+. %%RC_SUBR%%
+
+name="daapd"
+rcvar=`set_rcvar`
+
+daapd_user="%%USER%%"
+daapd_group="%%USER%%"
+prefix="%%PREFIX%%"
+logdir="%%LOGDIR%%"
+cache="%%CACHE%%"
+
+daapdBin="${prefix}/sbin/daapd"
+daapdCfg="${prefix}/etc/daapd.conf"
+daapdLog="${logdir}/daapd.log"
+
+required_files="${daapdCfg}"
+
+start_precmd="touch ${daapdLog}; chown ${daapd_user} ${daapdLog}; touch ${cache}; chown ${daapd_user} ${cache};"
+
+command="${daapdBin}"
+command_args="${daapd_flags} >>${daapdLog} 2>&1 &"
+
+load_rc_config $name
+run_rc_command "$1"
