@@ -325,6 +325,7 @@ arping		ports/net/arping
 arprelease	ports/net/arprelease
 arpwatch	ports/net/arpwatch
 arrow		ports/mail/arrow
+artemis		ports/biology/artemis
 arts++		ports/net/arts++
 as		src/gnu/usr.bin/as
 as80		ports/devel/as80
