@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	proftpd
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.net/distrib/source/ \
 		ftp://ftp.stikman.com/pub/proftpd/source/ \
@@ -25,6 +25,10 @@ USE_BZIP2=	YES
 
 CONFIGURE_ARGS=	--localstatedir=/var/run \
 		--disable-sendfile
+
+.if defined(WITH_SETPASSENT)
+CONFIGURE_ARGS+=	--enable-force-setpassent
+.endif
 
 .if defined(WITHOUT_PAM)
 CONFIGURE_ARGS+=	--disable-pam
