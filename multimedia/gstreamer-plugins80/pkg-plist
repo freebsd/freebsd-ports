@@ -1,8 +1,8 @@
 bin/gst-launch-ext-%%VERSION%%
 bin/gst-visualise-%%VERSION%%
-@unexec GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gstreamer-%%VERSION%%.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gstreamer-%%VERSION%%.schemas
-@exec GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gstreamer-%%VERSION%%.schemas > /dev/null || /usr/bin/true
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gstreamer-%%VERSION%%.schemas >/dev/null || /usr/bin/true
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gstreamer-%%VERSION%%.schemas >/dev/null || /usr/bin/true
 include/gstreamer-%%VERSION%%/gst/audio/gstaudiofilter.h
 include/gstreamer-%%VERSION%%/gst/audio/audioclock.h
 include/gstreamer-%%VERSION%%/gst/audio/audio.h
@@ -87,7 +87,6 @@ lib/gstreamer-%%VERSION%%/libgstinterleave.so
 %%IVORBIS%%lib/gstreamer-%%VERSION%%/libgstivorbis.so
 %%JACK%%lib/gstreamer-%%VERSION%%/libgstjack.so
 %%JPEG%%lib/gstreamer-%%VERSION%%/libgstjpeg.so
-%%KIO%%lib/gstreamer-%%VERSION%%/libgstkio.so
 %%LADSPA%%lib/gstreamer-%%VERSION%%/libgstladspa.so
 %%LAME%%lib/gstreamer-%%VERSION%%/libgstlame.so
 lib/gstreamer-%%VERSION%%/libgstlevel.so
@@ -107,6 +106,8 @@ lib/gstreamer-%%VERSION%%/libgstmpeg2subt.so
 lib/gstreamer-%%VERSION%%/libgstmpegaudio.so
 lib/gstreamer-%%VERSION%%/libgstmpegaudioparse.so
 lib/gstreamer-%%VERSION%%/libgstmpegstream.so
+%%MNG%%lib/gstreamer-%%VERSION%%/libgstmng.so
+%%MJPEGTOOLS%%lib/gstreamer-%%VERSION%%/libgstmplex.so
 lib/gstreamer-%%VERSION%%/libgstmulaw.so
 lib/gstreamer-%%VERSION%%/libgstmultifilesink.so
 lib/gstreamer-%%VERSION%%/libgstmultipart.so
@@ -127,7 +128,6 @@ lib/gstreamer-%%VERSION%%/libgstrtjpeg.so
 lib/gstreamer-%%VERSION%%/libgstrtp.so
 %%SDL%%lib/gstreamer-%%VERSION%%/libgstsdlvideosink.so
 %%LIBSHOUT%%lib/gstreamer-%%VERSION%%/libgstshout.so
-%%LIBSIDPLAY%%lib/gstreamer-%%VERSION%%/libgstsid.a
 %%LIBSIDPLAY%%lib/gstreamer-%%VERSION%%/libgstsid.so
 lib/gstreamer-%%VERSION%%/libgstsilence.so
 lib/gstreamer-%%VERSION%%/libgstsinesrc.so
@@ -199,6 +199,7 @@ share/locale/cs/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/en_GB/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/hu/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/nl/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
+share/locale/or/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/sq/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/sr/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
 share/locale/sv/LC_MESSAGES/gst-plugins-%%VERSION%%.mo
