@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# The user may have a tclsh they want to preserve
+if [ ! -f ${PKG_PREFIX}/bin/tclsh ] || [ \
+   `grep -a awieYJFnsuILOnfsYEW ${PKG_PREFIX}/bin/tclsh | sed -e 's/.*\*\*//'` \
+   -lt 001 ]
+then
+	[ -f ${PKG_PREFIX}/bin/tclsh ] && chmod u+w ${PKG_PREFIX}/bin/tclsh
+
+	cat > ${PKG_PREFIX}/bin/tclsh <<'EOF'
+#!/bin/sh
+# Installed by ports system.  id: awieYJFnsuILOnfsYEW**001
+ 
+(
+echo "In FreeBSD, tclsh is named with a version number.  This is because"
+echo "different versions of tclsh are not compatible with each other and"
+echo "they can not all be called \"tclsh\"!  You may need multiple versions"
+echo "installed because a given port may depend on a specific version."
+echo
+echo "On your system, tclsh is installed under at least the following names:"
+echo
+for name in $(/bin/ls $(echo $PATH | sed 's/:/ /g') 2> /dev/null | egrep '^tclsh[0-9]+\.[0-9]+([a-z][a-z])?$')
+do
+	echo $name
+done
+[ "$name" = "" ] && echo "No tclsh installations found, sorry."
+) 1>&2
+exit 1
+EOF
+	chmod a+rx ${PKG_PREFIX}/bin/tclsh
+fi

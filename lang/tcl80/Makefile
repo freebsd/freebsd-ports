@@ -3,7 +3,7 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.5 1998/03/18 00:56:08 jmz Exp $
+# $Id: Makefile,v 1.6 1998/07/03 23:06:48 steve Exp $
 #
 
 DISTNAME=	tcl8.0p2
@@ -32,8 +32,13 @@ pre-build:
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
+.if exists(${PKGDIR}/INSTALL.tclsh)
+	${SH} ${PKGDIR}/INSTALL.tclsh
+.endif
 
 test:
 	cd ${WRKSRC} && ${MAKE} test
 
 .include <bsd.port.mk>
+
+PKG_ARGS+=	-i ${PKGDIR}/INSTALL.tclsh
