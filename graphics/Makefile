@@ -190,7 +190,8 @@
     SUBDIR += ruby-opengl
     SUBDIR += ruby-qt2gl
     SUBDIR += s10sh
-    SUBDIR += sane
+    SUBDIR += sane_backends
+    SUBDIR += sane_frontends
     SUBDIR += sced
     SUBDIR += scrot
     SUBDIR += scwm-icons
