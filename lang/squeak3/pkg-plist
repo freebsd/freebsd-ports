@@ -1,18 +1,23 @@
 bin/inisqueak
 bin/squeak
-share/squeak/3.2-5/B3DAcceleratorPlugin.la
-share/squeak/3.2-5/B3DAcceleratorPlugin.so
-share/squeak/3.2-5/PseudoTTYPlugin.la
-share/squeak/3.2-5/PseudoTTYPlugin.so
-share/squeak/3.2-5/UnixOSProcessPlugin.la
-share/squeak/3.2-5/UnixOSProcessPlugin.so
-share/squeak/3.2-5/npsqueak.so
-share/squeak/3.2-5/npsqueakrun
-share/squeak/3.2-5/squeak
+share/doc/squeak/COPYING
+share/doc/squeak/COPYRIGHT
+share/doc/squeak/LICENSE
+share/doc/squeak/README.Contributing
+share/doc/squeak/README.Keyboard
+share/doc/squeak/README.Sound
+share/squeak/3.4-1/B3DAcceleratorPlugin.la
+share/squeak/3.4-1/B3DAcceleratorPlugin.so
+share/squeak/3.4-1/PseudoTTYPlugin.la
+share/squeak/3.4-1/PseudoTTYPlugin.so
+share/squeak/3.4-1/npsqueak.so
+share/squeak/3.4-1/npsqueakrun
+share/squeak/3.4-1/squeak
 share/squeak/ReadMe.txt
-share/squeak/Squeak3.2-4956.changes.gz
-share/squeak/Squeak3.2-4956.image.gz
+share/squeak/Squeak3.5-5180.changes.gz
+share/squeak/Squeak3.5-5180.image.gz
 share/squeak/SqueakV3.sources
 share/squeak/npsqueakregister
-@dirrm share/squeak/3.2-5
+@dirrm share/squeak/3.4-1
 @dirrm share/squeak
+@dirrm share/doc/squeak

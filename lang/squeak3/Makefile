@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	squeak
-PORTVERSION=	3.2
+PORTVERSION=	3.5
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/3.2/unix-linux/ \
-		ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/3.2/ \
-		ftp://st.cs.uiuc.edu/Smalltalk/Squeak/3.2/unix-linux/
+MASTER_SITES=	ftp://st.cs.uiuc.edu/Smalltalk/Squeak/3.5/ \
+		http://www-sor.inria.fr/~piumarta/squeak/unix/release/ \
+		ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/3.4/unix-linux/ \
+		ftp://st.cs.uiuc.edu/Smalltalk/Squeak/3.4/unix-linux/
 DISTNAME=	Squeak-${SQUEAK_VERSION}.src
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SQUEAK_SRC} ${SQUEAK_IMAGE_SRC}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
@@ -20,13 +21,15 @@ COMMENT=	Full Smalltalk 80 with portability to UNIX, Mac, and Windows
 
 # Don't set USE_ZIP as this breaks EXTRACT_CMD, EXTRACT_SUFX, and what not.
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
+LIB_DEPENDS+=	audio.2:${PORTSDIR}/audio/nas
 
-SQUEAK_VERSION=	3.2-5
-SQUEAK_PATCHNR=	4956
+SQUEAK_VERSION=	3.4-1
+SQUEAK_IMAGE_VERSION=	3.5
+SQUEAK_PATCHNR=	5180
 SQUEAK_SRC=	SqueakV3.sources.gz
-SQUEAK_IMAGE_SRC=	Squeak3.2-4956.zip
-SQUEAK_IMAGE=	Squeak3.2-${SQUEAK_PATCHNR}.image \
-		Squeak3.2-${SQUEAK_PATCHNR}.changes
+SQUEAK_IMAGE_SRC=	Squeak${SQUEAK_IMAGE_VERSION}-${SQUEAK_PATCHNR}.zip
+SQUEAK_IMAGE=	Squeak${SQUEAK_IMAGE_VERSION}-${SQUEAK_PATCHNR}.image \
+		Squeak${SQUEAK_IMAGE_VERSION}-${SQUEAK_PATCHNR}.changes
 
 WRKSRC=		${WRKDIR}/Squeak-${SQUEAK_VERSION}
 MAN1=		inisqueak.1 squeak.1
@@ -39,7 +42,7 @@ LDCONFIG_DIRS=	${PREFIX}/share/squeak/${SQUEAK_VERSION}
 CONFIGURE_WRKSRC=	${WRKSRC}/build
 INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
 CONFIGURE_SCRIPT=	../platforms/unix/config/configure
-CONFIGURE_ARGS+=	--libdir=${PREFIX}/share
+CONFIGURE_ARGS+=	--libdir=${PREFIX}/share --with-audio
 # don't pass "-s" to install to avoid trying to strip a shell script
 CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}"
 BUILD_WRKSRC=	${WRKSRC}/build
@@ -57,6 +60,13 @@ pre-configure:
 	@${MKDIR} ${BUILD_WRKSRC}
 	@cd ${WRKSRC}/platforms/unix/npsqueak && ${REINPLACE_CMD} -e 's|include|include -I${X11BASE}/include|g' Makefile
 
+post-configure:
+# PREFIX safeness
+	@${REINPLACE_CMD} -E \
+		-e s'|^(prefix).*$$|\1=${PREFIX}|' \
+		-e s'|^(docdir).*$$|\1=${DOCSDIR}|' \
+		${CONFIGURE_WRKSRC}/${MAKEFILE}
+
 post-install:
 	(cd ${DISTDIR}/${DIST_SUBDIR} && ${INSTALL_DATA} ${SQUEAK_SRC} ${PREFIX}/share/squeak/)
 	(cd ${PREFIX}/share/squeak && ${EXTRACT_CMD} -d ${SQUEAK_SRC})
@@ -64,18 +74,10 @@ post-install:
 .for file in ${SQUEAK_IMAGE}
 	(cd ${PREFIX}/share/squeak && ${GZIP_CMD} ${file})
 .endfor
-	strip ${PREFIX}/share/squeak/${SQUEAK_VERSION}/squeak
 # install inisqueak and change the build in version number on the fly
-	${SED} -e 's|VERSION=3.2gamma-4881|VERSION=3.2-4956|' ${WRKSRC}/build/inisqueak > ${PREFIX}/bin/inisqueak
-	(cd ${PREFIX}/bin && ${CHMOD} 755 inisqueak)
-	@${ECHO} "--------------- Please note: ---------------"
-	@${ECHO} "Make sure you have ${PREFIX}/bin in your PATH"
-	@${ECHO} "and ${PREFIX}/lib in your LD_LIBRARY_PATH."
-	@${ECHO} ""
-	@${ECHO} "In order to be able to make use of squeak you need"
-	@${ECHO} "to have an image and a changes file in your working"
-	@${ECHO} "directory as well as access to a source file."
-	@${ECHO} "Please see the inisqueak(1) manpage for details."
-	@${ECHO} "--------------- Thanks for listening. ---------------"
+	${SED} -e 's|VERSION=3.4-5170|VERSION=3.5-5180|' ${WRKSRC}/build/inisqueak > ${PREFIX}/bin/inisqueak
+	${CHMOD} 755 ${PREFIX}/bin/inisqueak
+	${STRIP_CMD} ${PREFIX}/share/squeak/${SQUEAK_VERSION}/squeak
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
