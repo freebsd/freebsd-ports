@@ -269,6 +269,9 @@ saint/html/tutorials/vulnerability/http_Website_Pro.html
 saint/html/tutorials/vulnerability/ntop_server_vulnerability.html
 saint/html/tutorials/vulnerability/packet_flooding_problems.html
 saint/html/tutorials/vulnerability/Vulnerability_Exploits.html
+saint/html/tutorials/vulnerability/CFEngine_detected.html
+saint/html/tutorials/vulnerability/Net_Tools_PKI_Server.html
+saint/html/tutorials/vulnerability/finger_vulnerabilities.html
 saint/include/netinet/if_ether.h
 saint/include/netinet/igmp.h
 saint/include/netinet/in.h
@@ -285,6 +288,7 @@ saint/include/netinet/tcp_var.h
 saint/include/netinet/tcpip.h
 saint/include/netinet/udp.h
 saint/include/netinet/udp_var.h
+saint/include/glibc21/arpa/inet.h
 saint/include/glibc21/rpc/auth.h
 saint/include/glibc21/rpc/auth_des.h
 saint/include/glibc21/rpc/auth_unix.h
@@ -370,6 +374,7 @@ saint/reconfig
 @dirrm saint/html/tutorials
 @dirrm saint/html
 @dirrm saint/include/netinet
+@dirrm saint/include/glibc21/arpa
 @dirrm saint/include/glibc21/rpc
 @dirrm saint/include/glibc21
 @dirrm saint/include

@@ -13,7 +13,6 @@ MASTER_SITES=	ftp://ftp.wwdsi.com/pub/saint/			\
 
 MAINTAINER=	cj@vallcom.net
 
-DISTNAME=	${PKGNAME}.beta1
 BUILD_DEPENDS=	nmap:${PORTSDIR}/security/nmap
 
 USE_PERL5=	yes
