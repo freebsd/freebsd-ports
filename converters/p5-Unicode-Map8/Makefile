@@ -5,22 +5,20 @@
 # $FreeBSD$
 
 PORTNAME=	Unicode-Map8
-PORTVERSION=	0.10
+PORTVERSION=	0.12
 CATEGORIES=	converters perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Unicode
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ilia@cgu.chel.su
-COMMENT=	Perl class that implement efficient mapping tables between 8-bit charsets and Unicode
+COMMENT=	Mapping table between 8-bit chars and Unicode
 
-BUILD_DEPENDS=	${SITE_PERL}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-String
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unicode/String.pm:${PORTSDIR}/converters/p5-Unicode-String
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
 PERL_CONFIGURE=	yes
 
 MAN1=		umap.1
 MAN3=		Unicode::Map8.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
