@@ -1,5 +1,5 @@
 lib/libtcl76jp.a
-lib/libtcl76jp.so.1.0
+lib/libtcl76jp.so.1
 lib/libtcl76jp.so
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
