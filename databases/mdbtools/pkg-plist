@@ -1,0 +1,27 @@
+bin/mdb-export
+bin/mdb-array
+bin/mdb-schema
+bin/mdb-tables
+bin/mdb-parsecsv
+bin/mdb-header
+bin/prtable
+bin/prcat
+bin/prdata
+bin/prkkd
+bin/prdump
+bin/mdb-dump
+bin/mdb-sql
+include/mdbtools.h
+include/mdbsql.h
+lib/libmdb.so.0
+lib/libmdb.so
+lib/libmdb.la
+lib/libmdb.a
+%%PORTDOCS%%share/doc/mdbtools/AUTHORS
+%%PORTDOCS%%share/doc/mdbtools/ChangeLog
+%%PORTDOCS%%share/doc/mdbtools/HACKING
+%%PORTDOCS%%share/doc/mdbtools/NEWS
+%%PORTDOCS%%share/doc/mdbtools/README
+%%PORTDOCS%%share/doc/mdbtools/TODO
+%%PORTDOCS%%share/doc/mdbtools/INSTALL
+%%PORTDOCS%%@dirrm share/doc/mdbtools

@@ -21,6 +21,7 @@
     SUBDIR += interbase4
     SUBDIR += jdbc-oracle816
     SUBDIR += libiodbc
+    SUBDIR += mdbtools
     SUBDIR += metakit
     SUBDIR += msql
     SUBDIR += myodbc
