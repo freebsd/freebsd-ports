@@ -1,0 +1,11 @@
+--- src/OpenH323d.dtf.orig	Sat Feb 19 11:25:40 2005
++++ src/OpenH323d.dtf	Sat Feb 19 11:26:27 2005
+@@ -29709,7 +29709,7 @@
+     ?RingLine@OpalLineInterfaceDevice@@UAEHIK@Z @16774 NONAME ;public: virtual int __thiscall OpalLineInterfaceDevice::RingLine(unsigned int,unsigned long)
+     ?RingLine@OpalVoipBlasterDevice@@UAEHIK@Z @29808 NONAME ;public: virtual int __thiscall OpalVoipBlasterDevice::RingLine(unsigned int,unsigned long)
+     ?ROWZAG@@3QBEB @16775 NONAME ;unsigned char const * const  ROWZAG
+-    ?RtpCallback@H323_H263Codec@@SAXPAXHH@Z @38109 NONAME ;public: static void __cdecl H323_H263Codec::RtpCallback(void *,int,int)
++    ?RtpCallback@H323_H263Codec@@SAXPAXHH@Z @38109 NONAME ;public: static void __cdecl H323_H263Codec::RtpCallback(AVCodecContext *,void *,int,int)
+     ?SameSize@Encoder@@IAEHPBVVideoFrame@@@Z @16776 NONAME ;protected: int __thiscall Encoder::SameSize(class VideoFrame const *)
+     ?save@Pre_Vid_Coder@@IAEXPAE0H@Z @16777 NONAME ;protected: void __thiscall Pre_Vid_Coder::save(unsigned char *,unsigned char *,int)
+     ?saveblks@Pre_Vid_Coder@@IAEXPAE@Z @16778 NONAME ;protected: void __thiscall Pre_Vid_Coder::saveblks(unsigned char *)
