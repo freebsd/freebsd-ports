@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.78 1997/07/01 23:02:42 max Exp $
+# $Id: Makefile,v 1.79 1997/07/02 07:15:50 tg Exp $
 #
 
     SUBDIR += acm
@@ -46,6 +46,7 @@
     SUBDIR += xboing
     SUBDIR += xchomp
     SUBDIR += xcubes
+    SUBDIR += xdeblock
     SUBDIR += xdino
     SUBDIR += xemeraldia
     SUBDIR += xevil
