@@ -1,0 +1,16 @@
+--- common/mp4v2/configure.in.orig	Wed Jan  8 19:45:23 2003
++++ common/mp4v2/configure.in	Wed Jan  8 19:45:57 2003
+@@ -1,11 +1,12 @@
+ AC_INIT()
++AC_CANONICAL_TARGET
+ AM_INIT_AUTOMAKE(mpeg4ip,0.9.2.8,dummy)
+
+ AC_PROG_CC
+ AC_PROG_CXX
+ AC_PROG_INSTALL
+
+-AM_PROG_LIBTOOL
++AC_PROG_LIBTOOL
+
+ AM_CONFIG_HEADER(config.h)
+
