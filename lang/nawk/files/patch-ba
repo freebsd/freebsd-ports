@@ -1,5 +1,5 @@
---- b.c.orig	Mon May 10 07:26:44 1999
-+++ b.c	Mon Nov 29 02:10:52 1999
+--- b.c.orig	Sun Sep 24 17:18:38 2000
++++ b.c	Fri Nov  3 01:59:32 2000
 @@ -27,6 +27,9 @@
  #define	DEBUG
  
@@ -35,45 +35,44 @@
  fa *makedfa(char *s, int anchor)	/* returns dfa for reg expr s */
  {
  	int i, use, nuse;
-@@ -285,6 +306,9 @@
- char *cclenter(char *p)	/* add a character class */
- {
+@@ -287,6 +308,9 @@
  	int i, c, c2;
+ 	uschar *p = (uschar *) argp;
+ 	uschar *op, *bp;
 +#ifdef	__FreeBSD__
-+	int c3;
++ 	int c3;
 +#endif
- 	char *op, *bp;
- 	static char *buf = 0;
+ 	static uschar *buf = 0;
  	static int bufsz = 100;
-@@ -302,6 +326,23 @@
+ 
+@@ -303,6 +327,22 @@
  				c2 = *p++;
  				if (c2 == '\\')
- 					c2 = quoted(&p);
+ 					c2 = quoted((char **) &p);
 +#ifdef	__FreeBSD__
-+				if (collate_range_cmp(c, c2) > 0) {
-+					bp--;
-+					i--;
-+					continue;
-+				}
-+				for (c3 = 0; c3 < (1 << CHAR_BIT) - 1; c3++) {
-+					if (collate_range_cmp(c, c3) <= 0 &&
-+					    collate_range_cmp(c3, c2) <= 0) {
-+						if (!adjbuf(&buf, &bufsz, bp-buf+2, 100, &bp, 0))
-+							FATAL("out of space for character class [%.10s...] 2", p);
-+						*bp++ = c3 + 1;
-+						i++;
-+					}
-+				}
-+#else
-+ 				if (c > c2) {	/* empty; ignore */					
++ 				if (collate_range_cmp(c, c2) > 0) {
++ 					bp--;
++ 					i--;
++ 					continue;
++ 				}
++ 				for (c3 = 0; c3 < (1 << CHAR_BIT) - 1; c3++) {
++ 					if (collate_range_cmp(c, c3) <= 0 &&
++ 					    collate_range_cmp(c3, c2) <= 0) {
++ 						if (!adjbuf(&buf, &bufsz, bp-buf+2, 100, &bp, 0))
++ 							FATAL("out of space for character class [%.10s...] 2", p);
++ 						*bp++ = c3 + 1;
++ 						i++;
++ 					}
++ 				}
++#else /*FreeBSD*/
  				if (c > c2) {	/* empty; ignore */
  					bp--;
  					i--;
-@@ -313,6 +354,7 @@
+@@ -314,6 +354,7 @@
  					*bp++ = ++c;
  					i++;
  				}
-+#endif
++#endif /*FreeBSD*/
  				continue;
  			}
  		}
