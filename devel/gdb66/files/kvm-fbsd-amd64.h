@@ -115,17 +115,17 @@ fetch_kcore_registers (struct pcb *pcb)
    */
   noreg = 0;
   for (i = 0; i < 3; ++i)		/* eax,ecx,edx */
-    supply_register (i, (char *)&noreg);
+    regcache_raw_supply (current_regcache, i, (char *)&noreg);
 
   /* DEO:XXX use SP_REGNUM and PC_REGNUM -- this is GDB_MULTI_ARCH */
-  supply_register (3, (char *) &pcb->pcb_rbx);
-  supply_register (SP_REGNUM, (char *) &pcb->pcb_rsp);
-  supply_register (AMD64_RBP_REGNUM, (char *) &pcb->pcb_rbp);
-  supply_register (PC_REGNUM, (char *) &pcb->pcb_rip);
+  regcache_raw_supply (current_regcache, 3, (char *) &pcb->pcb_rbx);
+  regcache_raw_supply (current_regcache, SP_REGNUM, (char *) &pcb->pcb_rsp);
+  regcache_raw_supply (current_regcache, AMD64_RBP_REGNUM, (char *) &pcb->pcb_rbp);
+  regcache_raw_supply (current_regcache, PC_REGNUM, (char *) &pcb->pcb_rip);
 
   for (i = 9; i < 14; ++i)		/* rflags, cs, ss, ds, es, fs */
-    supply_register (i, (char *) &noreg);
-  supply_register (15, (char *) &pcb->pcb_gs);
+    regcache_raw_supply (current_regcache, i, (char *) &noreg);
+  regcache_raw_supply (current_regcache, 15, (char *) &pcb->pcb_gs);
 
   /* XXX 80387 registers?  */
 }

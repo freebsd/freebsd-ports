@@ -116,19 +116,19 @@ fetch_kcore_registers (struct pcb *pcb)
    */
   noreg = 0;
   for (i = 0; i < 3; ++i)		/* eax,ecx,edx */
-    supply_register (i, (char *)&noreg);
+    regcache_raw_supply (current_regcache, i, (char *)&noreg);
 
   /* DEO:XXX use SP_REGNUM and PC_REGNUM -- this is GDB_MULTI_ARCH */
-  supply_register (3, (char *) &pcb->pcb_ebx);
-  supply_register (SP_REGNUM, (char *) &pcb->pcb_esp);
-  supply_register (I386_EBP_REGNUM, (char *) &pcb->pcb_ebp);
-  supply_register (6, (char *) &pcb->pcb_esi);
-  supply_register (7, (char *) &pcb->pcb_edi);
-  supply_register (PC_REGNUM, (char *) &pcb->pcb_eip);
+  regcache_raw_supply (current_regcache, 3, (char *) &pcb->pcb_ebx);
+  regcache_raw_supply (current_regcache, SP_REGNUM, (char *) &pcb->pcb_esp);
+  regcache_raw_supply (current_regcache, I386_EBP_REGNUM, (char *) &pcb->pcb_ebp);
+  regcache_raw_supply (current_regcache, 6, (char *) &pcb->pcb_esi);
+  regcache_raw_supply (current_regcache, 7, (char *) &pcb->pcb_edi);
+  regcache_raw_supply (current_regcache, PC_REGNUM, (char *) &pcb->pcb_eip);
 
   for (i = 9; i < 14; ++i)		/* eflags, cs, ss, ds, es, fs */
-    supply_register (i, (char *) &noreg);
-  supply_register (15, (char *) &pcb->pcb_gs);
+    regcache_raw_supply (current_regcache, i, (char *) &noreg);
+  regcache_raw_supply (current_regcache, 15, (char *) &pcb->pcb_gs);
 
   /* XXX 80387 registers?  */
 }

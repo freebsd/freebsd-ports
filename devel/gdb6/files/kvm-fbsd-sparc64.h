@@ -40,15 +40,15 @@ fetch_kcore_registers (struct pcb *pcbp)
    *     the last context switch to the debugger.
    * XXX do something with the floating-point registers?
    */
-  supply_register (SP_REGNUM, &pcbp->pcb_sp);
-  supply_register (PC_REGNUM, &pcbp->pcb_pc);
+  regcache_raw_supply (current_regcache, SP_REGNUM, &pcbp->pcb_sp);
+  regcache_raw_supply (current_regcache, PC_REGNUM, &pcbp->pcb_pc);
   f_addr = extract_unsigned_integer (&pcbp->pcb_sp, SPARC_INTREG_SIZE);
   /* Load the previous frame by hand (XXX) and supply it. */
   read_memory (f_addr + SPOFF, (char *)&top, sizeof (top));
   for (i = 0; i < 8; i++)
-    supply_register (i + SPARC_L0_REGNUM, &top.fr_local[i]);
+    regcache_raw_supply (current_regcache, i + SPARC_L0_REGNUM, &top.fr_local[i]);
   for (i = 0; i < 8; i++)
-    supply_register (i + SPARC_I0_REGNUM, &top.fr_in[i]);
+    regcache_raw_supply (current_regcache, i + SPARC_I0_REGNUM, &top.fr_in[i]);
 }
 
 CORE_ADDR
