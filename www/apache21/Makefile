@@ -7,7 +7,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.0.39
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		http://apache.mirrorcentral.com/dist/httpd/ \
@@ -25,7 +25,7 @@ MAINTAINER?=	perky@fallin.lv
 
 LATEST_LINK=	apache2
 
-WITH_MPM?=	prefork
+WITH_MPM?=	prefork # or worker, perchild
 HTTP_PORT?=	80
 
 HAS_CONFIGURE=	yes
@@ -42,31 +42,21 @@ CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 CONFIGURE_ENV=	CC="${CC}" CPPFLAGS="${CPPFLAGS}" CFLAGS="${CFLAGS}" \
 		LDFLAGS="${LDFLAGS}" CONFIG_SHELL="${SH}"
 SHARED_MODULES= all cgid ext_filter bucketeer
-PREFIX_RELDEST=	${PREFIX:S,${DESTDIR},,}
+PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 RC_SUB=		-e 's,@@PREFIX@@,${PREFIX_RELDEST},g'
 MAKE_ENV+=	DESTDIR=${DESTDIR} EXPR_COMPAT=yes
-PLIST_SUB+=	DESTDIR=${DESTDIR}
 
 .if defined(NOPORTDOCS)
 MAKE_ENV+=	-DNOPORTDOCS
 .endif
 
-.if defined(WITH_BUNDLED_EXPAT)
+.if !defined(WITHOUT_BUNDLED_EXPAT)
 EXPAT_PATHS=	xml/expat-cvs xml/expat $$srcdir/xml/expat
 PLIST_SUB+=	EXPAT=""
 .else
 LIB_DEPENDS=	expat.2:${PORTSDIR}/textproc/expat2
-EXPAT_PATHS=	${LOCALBASE} ${PREFIX} ${LOCALBASE:S,${DESTDIR},,}
+EXPAT_PATHS=	${LOCALBASE} ${PREFIX} ${LOCALBASE:S,^${DESTDIR},,}
 PLIST_SUB+=	EXPAT="@comment "
-.endif
-
-.if !defined(WITHOUT_SSL) && exists(/usr/lib/libcrypto.so)
-SHARED_MODULES+= ssl
-PLIST_SUB+=	MODSSL=""
-RC_SUB+=	-e 's,@@SSL@@,ssl,g'
-.else
-PLIST_SUB+=	MODSSL="@comment "
-RC_SUB+=	-e 's,@@SSL@@,,g'
 .endif
 
 .if defined(WITH_SUEXEC)
@@ -83,6 +73,28 @@ CONFIGURE_ARGS+= --enable-suexec \
 PLIST_SUB+=	SUEXEC=""
 .else
 PLIST_SUB+=	SUEXEC="@comment "
+.endif
+
+.if ${WITH_MPM} != "prefork"
+PKGNAMESUFFIX=	-${WITH_MPM}
+WITH_THREADS=	yes
+.if !defined(FORCE_THREADING_MPM)
+FORBIDDEN=	"doesn't work with threading MPMs on FreeBSD. If you are\
+		brave enough, make again with FORCE_THREADING_MPM=yes"
+.endif
+.endif
+
+.if defined(WITH_THREADS)
+CONFIGURE_ARGS+= --enable-threads
+.endif
+
+.if !defined(WITHOUT_SSL) && exists(/usr/lib/libcrypto.so)
+SHARED_MODULES+= ssl
+PLIST_SUB+=	MODSSL=""
+RC_SUB+=	-e 's,@@SSL@@,ssl,g'
+.else
+PLIST_SUB+=	MODSSL="@comment "
+RC_SUB+=	-e 's,@@SSL@@,,g'
 .endif
 
 .if !defined(WITHOUT_CACHE) && defined(WITH_THREADS)
@@ -106,19 +118,6 @@ PLIST_SUB+=	EXPERIMENTAL=""
 PLIST_SUB+=	EXPERIMENTAL="@comment "
 .endif
 
-.if ${WITH_MPM} != "prefork"
-PKGNAMESUFFIX=	-${WITH_MPM}
-WITH_THREADS=	yes
-.if !defined(FORCE_THREADING_MPM)
-FORBIDDEN=	"doesn\'t work with threading MPMs on FreeBSD. If you are \
-		brave enough, make again with -DFORCE_THREADING_MPM"
-.endif
-.endif
-
-.if defined(WITH_THREADS)
-CONFIGURE_ARGS+= --enable-threads
-.endif
-
 CONFIGURE_ARGS+= --enable-mods-shared="${SHARED_MODULES}" ${CONFIGURE_TARGET}
 
 MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
@@ -130,7 +129,7 @@ post-extract:
 post-patch:
 	@cd ${WRKSRC}/docs/docroot && \
 	 for f in index.html.*; do (\
-	  ${REINPLACE_CMD} -e 's,apache_pb,icons/freebsd.gif" \
+	  ${REINPLACE_CMD} -e 's,apache_pb,icons/freebsd.gif"\
 		ALT="[Powered by FreeBSD]"><IMG SRC="apache_pb2_ani,g' $$f \
 	 ); done
 	@${REINPLACE_CMD} -e 's,/usr .*/xml/expat,${EXPAT_PATHS},g' \
