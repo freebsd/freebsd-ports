@@ -169,6 +169,7 @@
     SUBDIR += linux_glx
     SUBDIR += linux_mesa
     SUBDIR += linux_mesa3
+    SUBDIR += maverik
     SUBDIR += ming
     SUBDIR += morpheus
     SUBDIR += mpeg
