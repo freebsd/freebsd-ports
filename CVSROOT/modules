@@ -8368,6 +8368,7 @@ xmms		ports/audio/xmms
 xmms-a52dec	ports/audio/xmms-a52dec
 xmms-alarm	ports/x11-clocks/xmms-alarm
 xmms-avi	ports/graphics/xmms-avi
+xmms-blursk	ports/graphics/xmms-blursk
 xmms-bonk	ports/audio/xmms-bonk
 xmms-crossfade	ports/audio/xmms-crossfade
 xmms-crystality	ports/audio/xmms-crystality
