@@ -1,14 +1,14 @@
 # New ports collection makefile for:	pine
 # http://www.washington.edu/pine/
-# Version required:     4.01
+# Version required:     4.02
 # Date created:		09 July 1998
 # Whom:			Adrian Penisoara <ady@freebsd.ady.ro>
 #
-# $Id: Makefile,v 1.23 1998/07/18 05:48:37 ache Exp $
+# $Id: Makefile,v 1.24 1998/07/21 13:45:58 asami Exp $
 #
 
-DISTNAME=       pine4.01
-PKGNAME=        pine-4.01
+DISTNAME=       pine4.02
+PKGNAME=        pine-4.02
 CATEGORIES=     mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
 
@@ -36,8 +36,12 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/pilot.1 ${PREFIX}/man/man1/pilot.1
 	${INSTALL_MAN} ${WRKSRC}/doc/pine.1 ${PREFIX}/man/man1/pine.1
 .if !defined(NOPORTDOCS)
-	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} ${PREFIX}/share/doc/pine
+	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} \
+			${PREFIX}/share/doc/pine/tech-notes
+	${INSTALL_DATA} ${WRKSRC}/doc/brochure.txt ${PREFIX}/share/doc/pine
 	${INSTALL_DATA} ${WRKSRC}/doc/tech-notes.txt ${PREFIX}/share/doc/pine
+	${INSTALL_DATA} ${WRKSRC}/doc/tech-notes/*.html \
+			${PREFIX}/share/doc/pine/tech-notes/
 .endif
 
 post-install:
