@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ptypes
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.melikyan.com/ptypes/ \
 		http://ptypes.sourceforge.net/ \

@@ -53,6 +53,7 @@ lib/libptypes.a
 %%PORTDOCS%%share/doc/ptypes/streams.md5.html
 %%PORTDOCS%%share/doc/ptypes/streams.outfile.html
 %%PORTDOCS%%share/doc/ptypes/streams.outstm.html
+%%PORTDOCS%%share/doc/ptypes/streams.stdio.html
 %%PORTDOCS%%share/doc/ptypes/string.constructors.html
 %%PORTDOCS%%share/doc/ptypes/string.html
 %%PORTDOCS%%share/doc/ptypes/string.manipulation.html
