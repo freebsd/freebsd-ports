@@ -1,0 +1,11 @@
+--- src/afterstep/configure.c.orig	Fri Oct 20 05:27:57 2000
++++ src/afterstep/configure.c	Sun Dec 31 13:55:16 2000
+@@ -2201,7 +2201,7 @@
+
+   sprintf (errMsg, "ReadPipeConfig (%d)", semaCounter);
+
+-  if (tmpnam (tmpFileName) == NULL)
++  if (mkstemp (tmpFileName) == NULL)
+     {
+       afterstep_err (errMsg, "cannot tmpnam", NULL, NULL);
+       semaCounter--;
