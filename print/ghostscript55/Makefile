@@ -6,38 +6,37 @@
 #
 
 PORTNAME=	ghostscript
-PORTVERSION=	5.50
+PORTVERSION=	5.50a
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/gs550/ \
-		http://www.erdw.ethz.ch/~bonk/ftp/gs-driver-distrib/ \
-		http://www.ozemail.com.au/~geoffk/pdfencrypt/
+MASTER_SITES=	${MASTER_SITE_GNU} \
+		ftp://ftp.cs.wisc.edu/ghost/gnu/gs550/ \
+		ftp://ftp.cs.wisc.edu/ghost/gnu/fonts/ \
+		http://www.erdw.ethz.ch/~bonk/ftp/gs-driver-distrib/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
-		${HP850_DRV} ${DECRYPT_PDF}
+		${HP850_DRV}
+EXTRACT_ONLY=	${GS_SOURCES}
 
 MAINTAINER=	andreas@FreeBSD.org
 
-Y2K=		http://www.cs.wisc.edu/~ghost/aladdin/y2k.html
-
 BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg:extract \
-		/nonexistent:${PORTSDIR}/graphics/png:extract \
 		unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
 
-USE_XLIB=	yes
-EXTRACT_ONLY=	${GS_SOURCES}
 WRKSRC=		${WRKDIR}/gs5.50
+
+USE_XLIB=	yes
 USE_GMAKE=	yes
 MAKEFILE=	unix-gcc.mak
 MAN1=		gs.1 pdf2dsc.1 pdf2ps.1 ps2ascii.1 ps2epsi.1 ps2pdf.1 ps2ps.1
 
-GS_SOURCES=	ghostscript-5.50.tar.gz
-GS_SOURCES+=	ghostscript-5.50gnu.tar.gz
+GS_SOURCES=	gnu-gs-5.50a.tar.gz
 #  Note: the following two are real files that have symlinks with
 #  later version numbers pointing to them.  To avoid unnecessarily
 #  downloading distfiles, do not change these when upgrading the port
 #  unless the files really change.
-GS_FONTS_STD=	ghostscript-fonts-std-5.50.tar.gz
-GS_FONTS_OTHER=	ghostscript-fonts-other-5.50.tar.gz
+GS_FONTS_STD=	gnu-gs-fonts-std-6.0.tar.gz
+GS_FONTS_OTHER=	gnu-gs-fonts-other-6.0.tar.gz
 
 # Additional driver HP 850, see http://www.erdw.ethz.ch/~bonk/hp850/hp850.html
 HP850_DRV=	hp8xxs13.zip
@@ -55,10 +54,7 @@ pre-fetch:
 
 post-extract:
 	${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../../graphics/jpeg/work/jpeg-6b ${WRKSRC}/jpeg
-	${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../../graphics/png/work/libpng ${WRKSRC}/libpng
-	${MV} ${WRKSRC}/devs.mak ${WRKSRC}/devs.mak.bak
-	cd ${WRKSRC} && unzip -Lao ${DISTDIR}/${HP850_DRV}
-	${MV} ${WRKSRC}/devs.mak.bak ${WRKSRC}/devs.mak
+	unzip -L -q -aa -o ${DISTDIR}/${HP850_DRV} -d ${WRKSRC} -x devs.mak
 
 do-configure:
 .if defined(BATCH)
@@ -71,11 +67,9 @@ pre-build:
 	${MKDIR} ${WRKSRC}/obj
 
 pre-install:
-	@${MKDIR} ${PREFIX}/share/ghostscript ${PREFIX}/bin ${PREFIX}/man/man1
-	(cd ${PREFIX}/share/ghostscript ; \
-			${TAR} -xzf ${DISTDIR}/${GS_FONTS_STD})
-	(cd ${PREFIX}/share/ghostscript/fonts ; \
-			${TAR} -xzf ${DISTDIR}/${GS_FONTS_OTHER})
+	@${MKDIR} ${PREFIX}/share/ghostscript
+	${TAR} -C ${PREFIX}/share/ghostscript -xzf ${DISTDIR}/${GS_FONTS_STD}
+	${TAR} -C ${PREFIX}/share/ghostscript -xzf ${DISTDIR}/${GS_FONTS_OTHER}
 
 # install the readme and license file of the hp8xxx driver as well
 post-install:

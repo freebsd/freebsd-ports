@@ -1,13 +1,12 @@
-This is Aladdin Ghostscript, the non-GPL version that comes with a licence
-different from the GPL. Read the file PUBLIC in the work/gsX.Y directory or
-in ${PREFIX}/share/ghostscript/X.Y/doc/PUBLIC after installation for details !
+GNU Ghostscript is the name of a set of software that provides:
 
-Ghostscript is the well-known PostScript interpreter which is available for
-all common and most esoteric platforms and supports many different printers
-and some displays.
+	- An interpreter for the PostScript (TM) language, and
 
-Official ghostscript homepage, see:
-	http://www.cs.wisc.edu/~ghost/index.html
+	- A set of C procedures (the Ghostscript library) that implement
+the graphics capabilities that appear as primitive operations in the
+PostScript language.
+
+GNU Ghostscript comes with NO WARRANTY and NO SUPPORT.  
 
 This FreeBSD port includes two useful add-on packages:
 	o Support for HP DeskJet 670, 690, 850, 855, 870, 890, 1100 and 1600,
@@ -16,10 +15,8 @@ This FreeBSD port includes two useful add-on packages:
 	o Support for pdfencrypt, see description on
 	  	http://www.ozemail.com.au/~geoffk/pdfencrypt/
 		
-Thomas Merz has written a Ghostscript manual in PDF format:
-	http://www.cs.wisc.edu/~ghost/merz.html
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-The manual is also available in German language, see:
-	http://www.muc.de/~tm/free/free.html
+PostScript is a trademark of Adobe Systems, Incorporated.
 
-WWW: http://www.cs.wisc.edu/~ghost/index.html
+WWW: http://www.gnu.org/software/ghostscript/ghostscript.html
