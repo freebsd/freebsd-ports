@@ -19,7 +19,7 @@ COMMENT=	An OpenGL & SDL action flight simulator
 
 WRKSRC=		${WRKDIR}/${DISTNAME}-src
 USE_SDL=	mixer sdl
-USE_MESA=	yes
+USE_GL=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--x-include=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib \
