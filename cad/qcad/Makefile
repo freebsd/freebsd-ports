@@ -17,12 +17,14 @@ MAINTAINER=	ports@FreeBSD.org
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_REINPLACE=	yes
 USE_QT_VER=	3
+QTDIR?=		${X11BASE}
 
 .include <bsd.port.pre.mk>
 
 .if ${MACHINE_ARCH} == "alpha"
 CFLAGS+=	-O0
 .endif
+MAKE_ENV+=	QTDIR=${QTDIR}
 
 post-patch:
 	${REINPLACE_CMD} -e 's,warn_on,warn_on thread,' ${WRKSRC}/qcad.pro
@@ -31,7 +33,7 @@ post-patch:
 		${WRKSRC}/rfonts.cpp ${WRKSRC}/rlibrarybrowser.cpp
 
 pre-build:
-	cd ${BUILD_WRKSRC}; qmake -spec ${X11BASE}/mkspecs/freebsd-g++ qcad.pro
+	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} qmake -spec ${X11BASE}/mkspecs/freebsd-g++ qcad.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/qcad ${PREFIX}/bin
