@@ -1,3 +1,0 @@
-bin/odsclient
-%%PORTDOCS%%share/doc/odsclient/README
-%%PORTDOCS%%@dirrm share/doc/odsclient

@@ -1,7 +1,0 @@
---- calendar/gui/Makefile.in.orig	Mon Jul 10 21:34:31 2000
-+++ calendar/gui/Makefile.in	Tue Jul 11 22:41:10 2000
-@@ -593,3 +593,3 @@
- install-data-local:
--	$(mkinstalldirs) $(DESTDIR)$(help_base)/C
-+#	$(mkinstalldirs) $(DESTDIR)$(help_base)/C
- 	$(mkinstalldirs) $(Conduitsdir)

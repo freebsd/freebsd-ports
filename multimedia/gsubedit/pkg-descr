@@ -1,6 +1,0 @@
-GSubEdit, or GNOME Subtitle Editor, is a tool for editing and converting
-DivX ;-) subtitles. It currently features read/write of SubRip (.srt) and
-MicroDVD (.sub) subtitles. Framerate conversion and frame displacement
-(Increase/decrease all frames by a given offset) is also supported.
-
-WWW: http://gsubedit.sourceforge.net/

@@ -1,9 +1,0 @@
-Installation of the Linux base system is
-finished. The Linux kernel mode, which
-must be enabled for Linux binaries to run,
-is now enabled. Linux mode can be enabled
-permanently with the linux_enable variable
-of rc.conf(5).
-
-When using NIS, don't forget to edit
-yp.conf in /compat/linux/etc.

@@ -1,7 +1,0 @@
-bin/mbmon
-%%X11_ONLY%%bin/xmbmon
-%%PORTDOCS%%share/doc/xmbmon/00README.txt
-%%PORTDOCS%%share/doc/xmbmon/00READMEj.txt
-%%PORTDOCS%%share/doc/xmbmon/DEBUG_Info
-%%X11_ONLY%%%%PORTDOCS%%share/doc/xmbmon/xmbmon.resources
-%%PORTDOCS%%@dirrm share/doc/xmbmon

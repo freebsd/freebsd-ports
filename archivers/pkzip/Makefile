@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.exe
 
 MAINTAINER=	dbader@eece.unm.edu
 
+FORBIDDEN=	"security bug--see <URL:http://www.security.nnov.ru/advisories/archdt.asp> and <URL:http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2001-1270>"
+
 BUILD_DEPENDS=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
 
 ONLY_FOR_ARCHS=	i386

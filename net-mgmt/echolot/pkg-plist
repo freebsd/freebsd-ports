@@ -1,5 +1,0 @@
-bin/echolot
-%%PORTDOCS%%share/doc/echolot/DESIGN
-%%PORTDOCS%%share/doc/echolot/SCRIPTING
-%%PORTDOCS%%share/doc/echolot/SYNTAX
-%%PORTDOCS%%@dirrm share/doc/echolot
