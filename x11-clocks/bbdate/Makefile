@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bbdate
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.3
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://bbtools.thelinuxcommunity.org/sources/
 
