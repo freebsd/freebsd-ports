@@ -1,7 +1,9 @@
 %%PORTDOCS%%share/doc/ettercap/AUTHORS
 %%PORTDOCS%%share/doc/ettercap/CHANGELOG
+%%PORTDOCS%%share/doc/ettercap/CONFUSION.HOWTO
 %%PORTDOCS%%share/doc/ettercap/COPYING
 %%PORTDOCS%%share/doc/ettercap/HISTORY
+%%PORTDOCS%%share/doc/ettercap/HYDRA.HOWTO
 %%PORTDOCS%%share/doc/ettercap/INSTALL
 %%PORTDOCS%%share/doc/ettercap/KNOWN-BUGS
 %%PORTDOCS%%share/doc/ettercap/PORTINGS
@@ -15,8 +17,40 @@
 %%PORTDOCS%%share/doc/ettercap/ZARATAN.HOWTO
 %%PORTDOCS%%share/doc/ettercap/debug.txt
 %%PORTDOCS%%share/doc/ettercap/errors.txt
-%%PORTDOCS%%share/doc/ettercap/ettercap.fr.8.in
 %%PORTDOCS%%share/doc/ettercap/threads.txt
+bin/lc-converter
+lib/ettercap/ec_H00_lurker.so
+lib/ettercap/ec_H01_zaratan.so
+lib/ettercap/ec_H02_troll.so
+%%SSL%%lib/ettercap/ec_H03_hydra1.so
+lib/ettercap/ec_H04_hydra2.so
+lib/ettercap/ec_H05_hydra3.so
+lib/ettercap/ec_H06_hydra4.so
+lib/ettercap/ec_H07_hydra5.so
+lib/ettercap/ec_H08_hydra6.so
+lib/ettercap/ec_H09_roper.so
+lib/ettercap/ec_H10_phantom.so
+lib/ettercap/ec_H12_giant1.so
+lib/ettercap/ec_H13_giant2.so
+lib/ettercap/ec_H20_dwarf.so
+lib/ettercap/ec_H30_thief.so
+lib/ettercap/ec_H99_dummy.so
+lib/ettercap/ec_arpcop.so
+lib/ettercap/ec_banshee.so
+lib/ettercap/ec_basilisk.so
+lib/ettercap/ec_beholder.so
+lib/ettercap/ec_confusion.so
+lib/ettercap/ec_dummy.so
+lib/ettercap/ec_golem.so
+lib/ettercap/ec_hunter.so
+lib/ettercap/ec_imp.so
+lib/ettercap/ec_lamia.so
+lib/ettercap/ec_leech.so
+lib/ettercap/ec_ooze.so
+lib/ettercap/ec_phantom.so
+lib/ettercap/ec_shadow.so
+lib/ettercap/ec_spectre.so
+lib/ettercap/ec_triton.so
 sbin/ettercap
 share/ettercap/etter.conf
 share/ettercap/etter.dns
@@ -28,5 +62,6 @@ share/ettercap/etter.ssl.crt
 share/ettercap/mac-fingerprints
 share/ettercap/nmap-os-fingerprints
 share/ettercap/services
+@dirrm lib/ettercap
 @dirrm share/ettercap
 %%PORTDOCS%%@dirrm share/doc/ettercap

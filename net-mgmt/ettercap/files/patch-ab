@@ -1,19 +1,99 @@
 --- configure.orig	Fri Jun 14 18:53:14 2002
 +++ configure	Wed Jul 17 17:09:18 2002
-@@ -8554,14 +8554,14 @@
+@@ -3924,27 +3924,27 @@
+ if test "${ac_cv_path_WGET_PATH+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+-  case $WGET_PATH in
+-  [\\/]* | ?:[\\/]*)
++#  case $WGET_PATH in
++#  [\\/]* | ?:[\\/]*)
+   ac_cv_path_WGET_PATH="$WGET_PATH" # Let the user override the test with a path.
+-  ;;
+-  *)
+-  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
+-for as_dir in $PATH
+-do
+-  IFS=$as_save_IFS
+-  test -z "$as_dir" && as_dir=.
+-  for ac_exec_ext in '' $ac_executable_extensions; do
+-  if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-    ac_cv_path_WGET_PATH="$as_dir/$ac_word$ac_exec_ext"
+-    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    break 2
+-  fi
+-done
+-done
++#  ;;
++#  *)
++#  as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
++#for as_dir in $PATH
++#do
++#  IFS=$as_save_IFS
++#  test -z "$as_dir" && as_dir=.
++#  for ac_exec_ext in '' $ac_executable_extensions; do
++#  if $as_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
++#    ac_cv_path_WGET_PATH="$as_dir/$ac_word$ac_exec_ext"
++#    echo "$as_me:$LINENO: found $as_dir/$ac_word$ac_exec_ext" >&5
++#    break 2
++#  fi
++#done
++#done
+ 
+-  ;;
+-esac
++#  ;;
++#esac
+ fi
+ WGET_PATH=$ac_cv_path_WGET_PATH
+ 
+@@ -6735,7 +6735,6 @@
+          echo "$as_me:$LINENO: checking whether $CC accepts -pthread" >&5
+ echo $ECHO_N "checking whether $CC accepts -pthread... $ECHO_C" >&6
+          CFLAGS_store="$CFLAGS"
+-         CFLAGS="$CFLAGS -pthread"
+          cat >conftest.$ac_ext <<_ACEOF
+ #line $LINENO "configure"
+ /* confdefs.h.  */
+@@ -9656,14 +9655,14 @@
        ;;
     no)  echo "$as_me:$LINENO: result: no." >&5
  echo "${ECHO_T}no." >&6
--      E_CFLAGS="-O3 -funroll-loops -fomit-frame-pointer -Wall"
-+#      E_CFLAGS="-O3 -funroll-loops -fomit-frame-pointer -Wall"
+-      E_CFLAGS="-O2 -funroll-loops -fomit-frame-pointer -Wall"
++#      E_CFLAGS="-O2 -funroll-loops -fomit-frame-pointer -Wall"
        ac_cv_ec_debug=no
        ;;
  esac
  else
    echo "$as_me:$LINENO: result: no. disabled by default." >&5
  echo "${ECHO_T}no. disabled by default." >&6
--   E_CFLAGS="-O3 -funroll-loops -fomit-frame-pointer -Wall"
-+#   E_CFLAGS="-O3 -funroll-loops -fomit-frame-pointer -Wall"
+-   E_CFLAGS="-O2 -funroll-loops -fomit-frame-pointer -Wall"
++#   E_CFLAGS="-O2 -funroll-loops -fomit-frame-pointer -Wall"
     ac_cv_ec_debug=no
  
  fi;
+@@ -10085,6 +10084,8 @@
+    if test $ac_cv_ec_ssh = "yes"; then
+       CYGWINLIB="$CYGWINLIB cygcrypto.dll cygssl.dll"
+       echo "Dissector_ssh" >> ./src/ec_add.def
++   else
++      PLUGINS_SOURCES=`echo $PLUGINS_SOURCES | sed 's/.\/plugins\/H03_hydra1\/H03_hydra1.c//g'`
+    fi
+ 
+ 
+@@ -10238,9 +10239,15 @@
+ if test "$ac_cv_ec_plugin" = "yes"; then
+ 
+    PLUGINS=`ls ./plugins | grep -v Make | grep -v CVS | awk ' { printf "%s ", $1 } '`
++   if test $ac_cv_ec_ssh = "no"; then
++      PLUGINS=`echo $PLUGINS | sed 's/H03_hydra1//g'`
++   fi
+ 
+ 
+    makeplug=`ls ./plugins | grep -v Make | grep -v CVS | awk '{ printf("plugins/%s/Makefile ", $1) }'`
++   if test $ac_cv_ec_ssh = "no"; then
++      makeplug=`echo $makeplug | sed 's/plugins\/H03_hydra1\/Makefile//g'`
++   fi
+    makeplug="plugins/Makefile $makeplug"
+    MAKEPLUG="1"
+ else

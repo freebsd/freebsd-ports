@@ -1,25 +1,46 @@
 --- Makefile.in.orig	Thu Jun 27 19:27:33 2002
 +++ Makefile.in	Wed Jul 17 17:06:29 2002
-@@ -70,10 +70,7 @@
+@@ -25,10 +25,10 @@
+ DOC      = COPYING README README.PLUGINS README.WIN32 CHANGELOG HISTORY \
+            AUTHORS TODO TODO.WIN32 THANKS KNOWN-BUGS PORTINGS INSTALL \
+            ./plugins/H01_zaratan/ZARATAN.HOWTO ./plugins/H09_roper/ROPER.HOWTO \
+-	   ./plugins/H03_hydra1/HYDRA.HOWTO    
++	   ./plugins/H03_hydra1/HYDRA.HOWTO ./plugins/confusion/CONFUSION.HOWTO
+ 
+ DEBUG    = @DEBUG@
+-CFLAG    = @E_CFLAGS@
++CFLAG    = @CFLAGS@
+ COPTS    = -I. -Isrc/include @COPTS@ @GTK_CFLAGS@
+ 
+ PROG     = @PROG@
+@@ -74,12 +74,7 @@
  	$(INSTALL) -m 644 ./etter.filter.ssh $(DESTDIR)$(DATADIR)
  	$(INSTALL) -m 644 ./etter.passive.os.fp $(DESTDIR)$(DATADIR)
  	$(INSTALL) -m 644 ./etter.ssl.crt $(DESTDIR)$(DATADIR)
 -	$(INSTALL) -d $(DESTDIR)$(DOCDIR)
 -	$(INSTALL) -m 644 $(DOC) $(DESTDIR)$(DOCDIR)
+-	$(INSTALL) -m 644 ./THANKS $(DESTDIR)$(DATADIR)
+-	$(INSTALL) -m 644 ./AUTHORS $(DESTDIR)$(DATADIR)
  	-$(INSTALL) -m 644 ./share/[a-z]* $(DESTDIR)$(DATADIR)
 -	-$(INSTALL) -m 644 ./docs/[a-z]*/[a-z]* $(DESTDIR)$(DOCDIR)
  	$(INSTALL) -d $(DESTDIR)$(MANDIR)/man8
  	$(INSTALL) -m 644 $(PROG).8 $(DESTDIR)$(MANDIR)/man8/$(PROG).8
  	@echo
-@@ -86,6 +83,11 @@
- 	@echo
- 	@echo "=============================================================="
- 	@echo
+@@ -88,6 +83,17 @@
+ 	@echo "@SB@ $(PROG)@EB@     installed in @SB@$(DESTDIR)$(BINDIR) @EB@"
+ 	@echo "@SB@ shared files@EB@ installed in @SB@$(DESTDIR)$(DATADIR) @EB@"
+ 	@echo "@SB@ man pages@EB@    installed in @SB@$(DESTDIR)$(MANDIR)/man8/ @EB@"
++	@echo
++	@echo "=============================================================="
++	@echo
 +
 +install-doc:
 +	$(INSTALL) -d $(DESTDIR)$(DOCDIR)
 +	$(INSTALL) -m 644 $(DOC) $(DESTDIR)$(DOCDIR)
-+	-$(INSTALL) -m 644 ./docs/[a-z]*/[a-z]* $(DESTDIR)$(DOCDIR)
- 
- plug-ins: src/include/ec_install_path.h
- 	@if test "@MAKEPLUG@" = "0"; then \
++	-$(INSTALL) -m 644 ./docs/development/[a-z]* $(DESTDIR)$(DOCDIR)
++	@echo
++	@echo "=============================================================="
++	@echo
+ 	@echo "@SB@ DOCS@EB@         installed in @SB@$(DESTDIR)$(DOCDIR) @EB@"
+ 	@echo
+ 	@echo "=============================================================="
