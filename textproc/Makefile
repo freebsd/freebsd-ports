@@ -125,6 +125,7 @@
     SUBDIR += p5-FreeBSD-Ports
     SUBDIR += p5-HTML-Format
     SUBDIR += p5-LJ-SpellCheck
+    SUBDIR += p5-Lingua-Conjunction
     SUBDIR += p5-Lingua-EN-AddressParse
     SUBDIR += p5-Lingua-EN-Gender
     SUBDIR += p5-Lingua-EN-Infinitive
