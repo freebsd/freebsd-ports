@@ -1991,6 +1991,7 @@ galeon2		ports/www/galeon2
 gallery		ports/www/gallery
 gambit		ports/math/gambit
 games_crimson	ports/games/crimson
+gammu		ports/comms/gammu
 ganglia-monitor-core	ports/sysutils/ganglia-monitor-core
 ganglia-webfrontend	ports/sysutils/ganglia-webfrontend
 gap		ports/math/gap
