@@ -1,0 +1,23 @@
+Usage: cdif [-Bvn] [-A #] [-C #] [-D #] [-I #] [-[bwcu]] file1 file2
+       cdif [-rcs] [-q] [-rrev1 [-rrev2]] [cdif options] file
+       cdif [cdif options] [diff-output-file]
+Options:
+	-B	byte compare
+	-v	use video standout (default for tty)
+	-n	use nroff style overstrike (default for non-tty)
+	-b	ignore trailing blank
+	-w	ignore whitespace
+	-c[#]	context diff
+	-u[#]	unified diff (if diff has -u option)
+	-e #	expression of `word' (default is '\w+')
+	-A, -C, -D (Append, Change, Delete) takes one of
+		vso: video standout	vul: video underline
+		vbd: video bold		bd:  nroff style overstrike
+		ul:  nroff style underline
+		or any sequence or sequences separated by comma
+	-I	specify string to be shown on insertion point
+		Following strings have special meanings.
+		vbar:	print vertical bar at the point
+		caret:	print caret under the point
+	-diff=command
+		specify any diff command
