@@ -20,6 +20,8 @@
 %%CHORADIR%%/config/longIntro.txt.dist
 %%CHORADIR%%/config/mime_drivers.php
 %%CHORADIR%%/config/mime_drivers.php.dist
+%%CHORADIR%%/config/prefs.php
+%%CHORADIR%%/config/prefs.php.dist
 %%CHORADIR%%/cvs.php
 %%CHORADIR%%/diff.php
 %%CHORADIR%%/graphics/back.gif
@@ -40,7 +42,6 @@
 %%CHORADIR%%/lib/CVSLib/Error.php
 %%CHORADIR%%/lib/CVSLib/File.php
 %%CHORADIR%%/lib/CVSLib/Log.php
-%%CHORADIR%%/lib/CVSLib/Log.php.orig
 %%CHORADIR%%/lib/CVSLib/Rev.php
 %%CHORADIR%%/lib/Chora.php
 %%CHORADIR%%/lib/MIME/Viewer/text.php
@@ -53,8 +54,8 @@
 %%CHORADIR%%/locale/de_DE/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/es_ES/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/fr_FR/LC_MESSAGES/chora.mo
+%%CHORADIR%%/locale/nb_NO/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/nl_NL/LC_MESSAGES/chora.mo
-%%CHORADIR%%/locale/no_BOK/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/pl_PL/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/pt_BR/LC_MESSAGES/chora.mo
 %%CHORADIR%%/locale/sv_SE/LC_MESSAGES/chora.mo
@@ -66,8 +67,8 @@
 %%CHORADIR%%/po/es_ES.po
 %%CHORADIR%%/po/extract.pl
 %%CHORADIR%%/po/fr_FR.po
+%%CHORADIR%%/po/nb_NO.po
 %%CHORADIR%%/po/nl_NL.po
-%%CHORADIR%%/po/no_BOK.po
 %%CHORADIR%%/po/pl_PL.po
 %%CHORADIR%%/po/pt_BR.po
 %%CHORADIR%%/po/shtool
@@ -124,10 +125,10 @@ etc/horde/httpd.conf.chora
 @dirrm %%CHORADIR%%/locale/es_ES
 @dirrm %%CHORADIR%%/locale/fr_FR/LC_MESSAGES
 @dirrm %%CHORADIR%%/locale/fr_FR
+@dirrm %%CHORADIR%%/locale/nb_NO/LC_MESSAGES
+@dirrm %%CHORADIR%%/locale/nb_NO
 @dirrm %%CHORADIR%%/locale/nl_NL/LC_MESSAGES
 @dirrm %%CHORADIR%%/locale/nl_NL
-@dirrm %%CHORADIR%%/locale/no_BOK/LC_MESSAGES
-@dirrm %%CHORADIR%%/locale/no_BOK
 @dirrm %%CHORADIR%%/locale/pl_PL/LC_MESSAGES
 @dirrm %%CHORADIR%%/locale/pl_PL
 @dirrm %%CHORADIR%%/locale/pt_BR/LC_MESSAGES
