@@ -23,6 +23,8 @@ RUN_DEPENDS=	\
 USE_PERL5=	yes
 NO_BUILD=	yes
 
+CONFLICTS=	userneu-devel
+
 SCRIPTS=	userneu.pl userquick.pl smbrepair.pl
 MAN8=		userneu.8 userquick.8
 DOCS=		BUGS CHANGES CREDITS REQUIREMENTS TODO \
