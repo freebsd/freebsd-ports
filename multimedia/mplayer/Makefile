@@ -4,9 +4,149 @@
 #			with lots of help from Vladimir Kushnir
 # $FreeBSD$
 #
+# There are many knobs to tune mplayer towards your specific wishes
+# and preferences.
+# You can activate a knob by typing something like
+# "make -DKNOB" or "make KNOB=yes" instead of just "make"
+#
+# A description of the several possibilities is available here:
+#
+# Core funcionality:
+#
+# WITH_OPTIMIZED_CFLAGS
+# default: undefined
+# define if you want to enable -O3 -ffast-math -fomit-frame-pointer
+# on gcc build commands. This will improve speed on most machines.
+#
+# WITHOUT_RUNTIME_CPUDETECTION
+# default: undefined
+# by default, mplayer is built with support for changing the used cpu
+# instruction set while playing. This is necessary for package building.
+# If you want to compile a specific version of mplayer working faster
+# but only on your cpu type, then define this knob.
+# If you define this, there are several additional knobs to explicitly
+# disable some possible CPU features. See below.
+#
+# WITHOUT_MENCODER
+# default: undefined
+# the default is to build mplayer with mencoder. If you're sure that you
+# don't want to encode or recode any media file, then define this.
+#
+# WITH_GUI
+# default: defined if gtk12 libs are installed on the system
+# defining this knob will force the ports system to install gtk12 first
+# (if not available) and then link mplayer against it. Then you'll
+# be able to use gmplayer, the graphical version of mplayer
+#
+# WITH_FREETYPE
+# default: undefined
+# defining this will change mplayer's font display ability from bitmap
+# fonts to truetype fonts
+#
+#
+# CPU features:
+#
+# The following is only of interest if you have enabled
+# WITHOUT_RUNTIME_CPUDETECTION
+# Further, the correct instruction set of your processor is normally
+# auto-detected, so there is probably no necissity to change them.
+#
+# WITHOUT_MMX
+# default: autodetected
+# disables using of mmx code
+#
+# WITHOUT_3DNOW
+# default: autodetected
+# disables using of 3dNow! instructions on AMD CPUs
+#
+# WITHOUT_DSP
+# default: autodetected
+# disables using of AMD Athlon DSP extentions
+#
+# WITHOUT_SSE
+# default: autodetected
+# disables all mmx2 and sse/sse2 code
+# CAUTION: There are some Athlon CPUs which claim to be sse-able but
+# they aren't. If you have strange problems on this subject, try
+# to build mplayer with this knob and report the problem
+# NOTE: SSE is available only if "options CPU_ENABLE_SSE" in your
+# kernel config. This is standard for 5.x systems on I686_CPU and above.
+# 4.x users will have to define this explicitly.
+#
+#
+# Feature options:
+# These options influence, which libraries mplayer is linked to.
+# Note: The libraries are needed to play the particular files under
+# particular circumstances.
+# ("autodetect" in this sections means: If the ports system finds
+# the libary on your system, it is used, otherwise not.
+# If you define it, it will be built and installed as dependency.)
+#
+# WITH_DVD
+# default: autodetect
+#
+# WITH_LIBDVDREAD
+# default: disabled
+# define this if you prefer the use of libdvdread instead of the
+# mplayer-internal dvd reading routine (which is derived from
+# libdvdread). This only affect mplayer if WITH_DVD is used.
+#
+# WITH_LIBDVDNAV
+# default: autodetect
+#
+# WITH_ARTS
+# default: autodetect
+#
+# WITH_LIBDV
+# default: autodetect
+#
+# WITH_MAD
+# default: autodetect
+#
+# WITH_SVGALIB
+# default: autodetect
+#
+# WITH_SDL
+# default: autodetect
+#
+# WITH_ESOUND
+# default: autodetect
+#
+# WITH_VORBIS
+# default: autodetect
+#
+# WITH_XANIM
+# default: autodetect
+#
+# WITH_REALPLAYER
+# default: autodetect
+#
+# WITH_LIVEMEDIA
+# default: autotedect
+#
+# WITH_XVID
+# default: autodetect
+#
+# WITHOUT_WIN32_CODECS
+# default: undefined
+# By default, mplayer depends on and uses the win32-codecs collection.
+# Of course, thanks to Microsoft's very cool hyper-super-multi-platform
+# support, this is only available on x86 architecture.
+# If you're working on x86 and want to disable using of the windows codecs,
+# define this knob.
+#
+#
+# Additional knobs:
+#
+# NOPORTDOCS
+# default: undefined
+# This knob prevents the ports system from installing additional
+# documentation. If you define this, only the manpage is going
+# to be installed.
 
 PORTNAME=	mplayer
 PORTVERSION=	0.90.0.103
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -35,13 +175,14 @@ CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 		--with-x11libdir=${X11BASE}/lib \
 		--with-x11incdir=${X11BASE}/include \
 		--enable-png \
-		--disable-tv-v4l \
-		--disable-vidix
+		--disable-tv-v4l
 
 USE_GNOMENG=	yes
 WANT_GNOME=	yes
 MAN1=		mplayer.1
 MANCOMPRESSED=	no
+INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/mplayer/vidix
 
 CONFFILES=	codecs.conf example.conf input.conf menu.conf
 DOCFILES=	bugreports.html cd-dvd.html codecs-in.html \
@@ -78,6 +219,10 @@ WITH_SVGALIB=	yes
 
 .if exists(${LOCALBASE}/lib/libSDL-1.1.so.5)
 WITH_SDL=	yes
+.endif
+
+.if ${HAVE_GNOME:Mesound}!=""
+WITH_ESOUND=	yes
 .endif
 
 .if exists(${LOCALBASE}/lib/libvorbis.so.2)
@@ -117,8 +262,21 @@ PLIST_SUB+=	GMPLAYER="@comment "
 
 .if defined(WITH_GUI)
 USE_GNOME+=	gtk12
+.if defined(PKGNAMESUFFIX)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gtk
+.else
 PKGNAMESUFFIX=	-gtk
+.endif
 CONFIGURE_ARGS+=	--enable-gui
+.endif
+
+.if !defined(WITHOUT_MENCODER)
+LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
+MLINKS+=	mplayer.1 mencoder.1
+PLIST_SUB+=	MENCODER=""
+.else
+CONFIGURE_ARGS+=	--disable-mencoder
+PLIST_SUB+=	MENCODER="@comment "
 .endif
 
 .if defined(WITH_ARTS)
@@ -174,22 +332,21 @@ CONFIGURE_ARGS+=	--enable-mad \
 CONFIGURE_ARGS+=	--disable-mad
 .endif
 
-.if !defined(WITHOUT_MENCODER)
-LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
-
-MLINKS+=	mplayer.1 mencoder.1
-PLIST_SUB+=	MENCODER=""
-.else
-CONFIGURE_ARGS+=	--disable-mencoder
-PLIST_SUB+=	MENCODER="@comment "
-.endif
-
 .if defined(WITH_SVGALIB)
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 .endif
 
 .if defined(WITH_SDL)
 LIB_DEPENDS+=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
+.endif
+
+.if defined(WITH_ESOUND)
+USE_GNOME+=	esound
+.if defined(PKGNAMESUFFIX)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-esound
+.else
+PKGNAMESUFFIX=	-esound
+.endif
 .endif
 
 .if defined(WITH_VORBIS)
@@ -273,87 +430,18 @@ CONFIGURE_ARGS+=	--disable-win32 \
 .endif # ARCH == i386
 
 pre-everything::
+	@${ECHO_MSG} "N - O - T - E"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Take a careful look into the Makefile in order"
+	@${ECHO_MSG} "to learn how to tune mplayer towards you personal preferences!"
+	@${ECHO_MSG} "For example,"
+	@${ECHO_MSG} "make WITH_GUI=yes"
+	@${ECHO_MSG} "builds MPlayer with GUI support."
+
 .if defined(WITH_GUI)
 	@${ECHO_MSG} "You can download official skin collections from"
 	@${ECHO_MSG} "http://www.mplayerhq.hu/homepage/dload.html"
 .endif
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_MSG} "You can enable additional compilation optimizations"
-	@${ECHO_MSG} "by defining WITH_OPTIMIZED_CFLAGS"
-.endif
-.if !defined(WITH_GUI) && ${HAVE_GNOME:Mgtk12}==""
-	@${ECHO_MSG} "You can enable GTK GUI by defining WITH_GUI."
-.endif
-.if !defined(WITH_DVD)
-	@${ECHO_MSG} "You can enable DVD support by defining WITH_DVD."
-.if !defined(WITH_LIBDVDNAV)
-	@${ECHO_MSG} "You can enable libdvdnav support by defining WITH_LIBDVDNAV."
-.endif
-.endif
-.if defined(WITH_DVD) && !defined(WITH_LIBDVDREAD)
-	@${ECHO_MSG} "You can replace mplayer internal DVD routines with libdvdread"
-	@${ECHO_MSG} "support by defining WITH_LIBDVDREAD."
-.endif
-.if !defined(WITH_LIBDV)
-	@${ECHO_MSG} "You can enable libdv support by defining WITH_LIBDV."
-.endif
-.if !defined(WITH_LIBFAME)
-	@${ECHO_MSG} "You can enable libfame support by defining WITH_LIBFAME."
-.endif
-.if !defined(WITH_MAD)
-	@${ECHO_MSG} "You can enable mad support by defining WITH_MAD."
-.endif
-.if !defined(WITH_SVGALIB)
-	@${ECHO_MSG} "You can enable SVGALIB support by defining WITH_SVGALIB."
-.endif
-.if !defined(WITH_SDL)
-	@${ECHO_MSG} "You can enable SDL support by defining WITH_SDL."
-.endif
-.if !defined(WITH_VORBIS)
-	@${ECHO_MSG} "You can enable VORBIS sound support by defining WITH_VORBIS."
-.endif
-.if !defined(WITH_XANIM)
-	@${ECHO_MSG} "You can enable XAnim DLL support by defining WITH_XANIM."
-.endif
-.if !defined(WITH_LIVEMEDIA)
-	@${ECHO_MSG} "You can enable liveMedia support by defining WITH_LIVEMEDIA."
-.endif
-.if !defined(WITH_XVID)
-	@${ECHO_MSG} "You can enable XviD support by defining WITH_XVID."
-.endif
-.if !defined(WITH_FREETYPE)
-	@${ECHO_MSG} "You can enable truetype font support by defining WITH_FREETYPE."
-	@${ECHO_MSG} "    But use with caution. mplayer won't use the standard fonts anymore."
-.endif
-.if ${ARCH} == "i386"
-.if !defined(WITHOUT_WIN32_CODECS)
-	@${ECHO_MSG} "You can disable support (this turns this into a X86 only port)"
-	@${ECHO_MSG} "for Win32 codecs by defining WITHOUT_WIN32_CODECS"
-.if !defined(WITH_REALPLAYER)
-	@${ECHO_MSG} \
-		"You can enable RealPlayer DLL support by defining WITH_REALPLAYER."
-.endif
-.endif
-.if defined(WITHOUT_RUNTIME_CPUDETECTION)
-.if !defined(WITHOUT_SSE)
-	@${ECHO_MSG} "You have to enable \"options CPU_ENABLE_SSE\" in your kernel"
-	@${ECHO_MSG} "config in order to enable kernel support for SSE/MMX2."
-.endif
-.if !defined(WITHOUT_MMX)
-	@${ECHO_MSG} "You can disable use of MMX routines by defining WITHOUT_MMX."
-.endif
-.if !defined(WITHOUT_3DNOW) && ${OSVERSION} >= 400021
-	@${ECHO_MSG} "You can disable use of 3DNow! optimized routines by defining WITHOUT_3DNOW."
-.endif
-.if !defined(WITHOUT_3DNOW) && !defined(WITHOUT_DSP) && ${OSVERSION} >= 400021
-	@${ECHO_MSG} "You can disable support for Athlon DSP extensions by defining WITHOUT_DSP."
-.endif
-	@${ECHO_MSG} "Note: The cpu features are autodetected, so there is probably no need"
-	@${ECHO_MSG} "to manually disable them."
-.else
-	@${ECHO_MSG} "You can disable runtime cpu detection features by defining WITHOUT_RUNTIME_CPUDETECTION"
-.endif
-.endif # ARCH == i386
 
 pre-configure:
 .if defined(WITH_LIBDVDREAD)

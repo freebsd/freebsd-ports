@@ -13,9 +13,20 @@ bin/mplayer
 %%PORTDOCS%%share/doc/mplayer/sound.html
 %%PORTDOCS%%share/doc/mplayer/video.html
 %%PORTDOCS%%share/doc/mplayer/users_against_developers.html
+lib/libdha.so.0
+lib/libdha-1.so.0
+lib/mplayer/vidix/cyberblade_vid.so
+lib/mplayer/vidix/mach64_vid.so
+lib/mplayer/vidix/mga_crtc2_vid.so
+lib/mplayer/vidix/mga_vid.so
+lib/mplayer/vidix/pm3_vid.so
+lib/mplayer/vidix/radeon_vid.so
+lib/mplayer/vidix/rage128_vid.so
 share/mplayer/codecs.conf
 share/mplayer/example.conf
 share/mplayer/input.conf
 share/mplayer/menu.conf
 @unexec rmdir %D/share/mplayer 2>/dev/null || true
 %%PORTDOCS%%@dirrm share/doc/mplayer
+@dirrm lib/mplayer/vidix
+@dirrm lib/mplayer
