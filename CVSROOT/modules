@@ -7711,6 +7711,7 @@ q3server-wfa	ports/games/q3server-wfa
 qadsl		ports/net/qadsl
 qbrew		ports/misc/qbrew
 qc--		ports/lang/qc--
+qca-tls		ports/security/qca-tls
 qcad		ports/cad/qcad
 qcc		ports/games/qcc
 qcl		ports/emulators/qcl
