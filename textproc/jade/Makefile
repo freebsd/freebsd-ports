@@ -3,7 +3,7 @@
 # Date created:		June 19, 1997
 # Whom:			jfieber
 #
-# $Id: Makefile,v 1.13 1999/01/27 00:12:22 dirk Exp $
+# $Id: Makefile,v 1.14 1999/01/27 12:47:14 dirk Exp $
 #
 
 DISTNAME=	jade-1.2.1
@@ -24,7 +24,7 @@ post-install:
 	${MKDIR} ${PREFIX}/share/doc/jade
 	${INSTALL_DATA} ${WRKSRC}/doc/*.htm ${PREFIX}/share/doc/jade
 	${MKDIR} ${PREFIX}/share/sgml/jade
-	${INSTALL_DATA} ${WRKSRC}/doc/*.htm ${PREFIX}/share/sgml/jade
+	${INSTALL_DATA} ${WRKSRC}/dsssl/* ${PREFIX}/share/sgml/jade
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m $(PREFIX)/lib
 
 .include <bsd.port.mk>

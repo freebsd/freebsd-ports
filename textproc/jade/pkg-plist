@@ -171,25 +171,17 @@ share/doc/jade/sx.htm
 share/doc/jade/sysdecl.htm
 share/doc/jade/sysid.htm
 share/doc/jade/xml.htm
-share/sgml/jade/archform.htm
-share/sgml/jade/build.htm
-share/sgml/jade/catalog.htm
-share/sgml/jade/charset.htm
-share/sgml/jade/features.htm
-share/sgml/jade/generic.htm
-share/sgml/jade/ideas.htm
-share/sgml/jade/index.htm
-share/sgml/jade/new.htm
-share/sgml/jade/nsgmls.htm
-share/sgml/jade/sgmldecl.htm
-share/sgml/jade/sgmlnorm.htm
-share/sgml/jade/sgmlsout.htm
-share/sgml/jade/spam.htm
-share/sgml/jade/spent.htm
-share/sgml/jade/sx.htm
-share/sgml/jade/sysdecl.htm
-share/sgml/jade/sysid.htm
-share/sgml/jade/xml.htm
+share/sgml/jade/Makefile.jadetex
+share/sgml/jade/catalog
+share/sgml/jade/demo.dsl
+share/sgml/jade/demo.sgm
+share/sgml/jade/dsssl.dtd
+share/sgml/jade/fot.dtd
+share/sgml/jade/jadetex.dtx
+share/sgml/jade/jadetex.ini
+share/sgml/jade/jadetex.ins
+share/sgml/jade/pdfjadetex.ini
+share/sgml/jade/style-sheet.dtd
 @dirrm include/sp
 @dirrm share/doc/jade
 @dirrm share/sgml/jade
