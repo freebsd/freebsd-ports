@@ -193,7 +193,7 @@ CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME}
 .elif (defined(MAKE_KERBEROS5) || ${OSVERSION} > 500105) && exists(/usr/lib/libkrb5.a)
 CONFIGURE_ARGS+=	--with-krb5=${DESTDIR}/usr
 .else
-#BROKEN=			"Kerberos5 is necessary for ADS support. Please, install either Heimdal or MIT-Kerberos"
+BROKEN=			"Kerberos5 is necessary for ADS support. Please, install either Heimdal or MIT-Kerberos"
 .endif
 .else
 CONFIGURE_ARGS+=	--without-krb5
@@ -269,7 +269,7 @@ RC_SCRIPTS_SUB=		PREFIX=${PREFIX} \
 
 pre-fetch:
 	@${ECHO_MSG} "===> -------------------------------------------"
-	@${ECHO_MSG} "===>  Run 'make config' to (re)configure the port"
+	@${ECHO_MSG} "===> Run 'make config' to (re)configure the port"
 	@${ECHO_MSG} "===> -------------------------------------------"
 
 post-install:
