@@ -3,8 +3,12 @@
 # Date created:		30 Jul 1996
 # Whom:			searle@longacre.demon.co.uk
 #
-# $Id: Makefile,v 1.25 1998/10/01 02:17:40 jseger Exp $
+# $Id: Makefile,v 1.26 1998/11/03 05:58:17 jkoshy Exp $
 #
+
+################################
+BROKEN=		for testing only
+################################
 
 DISTNAME=	qt-${MAJ}.${MIN}
 CATEGORIES=	x11-toolkits
