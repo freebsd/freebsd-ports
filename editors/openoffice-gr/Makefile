@@ -9,7 +9,6 @@ CATEGORIES=	editors
 
 LANG_PKGNAME=	gr
 LANG_EXT=	30
-EXTRACT_LANGDIST+=	el_GR-enhanced.zip
 LANG_CONFIGURE_ARG=	GREEK
 MASTERDIR=	${.CURDIR}/../openoffice
 

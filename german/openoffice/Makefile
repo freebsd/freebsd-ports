@@ -9,7 +9,6 @@ CATEGORIES=	german editors
 
 LANG_PKGNAME=	de
 LANG_EXT=	49
-EXTRACT_LANGDIST+=	de_DE.zip de_CH.zip
 #
 # Special case. We do not need LANG_CONFIGURE_ARG cause
 # the EN_US and DE_DE versions are always built.
