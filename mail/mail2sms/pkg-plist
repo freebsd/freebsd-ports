@@ -1,0 +1,5 @@
+bin/mail2sms
+%%PORTDOCS%%share/doc/mail2sms/README
+%%PORTDOCS%%share/doc/mail2sms/REGEX
+%%PORTDOCS%%share/doc/mail2sms/example.conf
+%%PORTDOCS%%@dirrm share/doc/mail2sms

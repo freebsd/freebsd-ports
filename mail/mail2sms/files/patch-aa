@@ -1,0 +1,70 @@
+--- main.c.orig	Wed Apr 16 05:11:21 2003
++++ main.c	Wed Apr 16 05:12:16 2003
+@@ -18,7 +18,7 @@
+ #ifdef AFS
+ #define CONFIGDIR "/var/mail2sms/"
+ #else
+-#define GLOBAL_CONFIG "/etc/mail/sms/mail2sms.conf"
++#define GLOBAL_CONFIG "%%PREFIX%%/etc/mail2sms.conf"
+ #endif
+ 
+ extern FILE *logfile; /* write logs to this file pointer */
+--- parse.c.orig	Wed Apr 16 05:06:23 2003
++++ parse.c	Wed Apr 16 05:45:31 2003
+@@ -48,8 +48,9 @@
+ /*
+ ** strcasestr() - case insensitive strstr()
+ */
+- 
+-char *strcasestr(char *haystack, char *needle)
++
++/* FreeBSD defines this function a bit differently, so rename this version */
++char *mail2sms_strcasestr(char *haystack, char *needle)
+ {
+   int nlen = strlen(needle);
+   int hlen = strlen(haystack);
+--- mail2sms.1.orig	Wed Apr 16 05:22:01 2003
++++ mail2sms.1	Wed Apr 16 05:22:57 2003
+@@ -32,7 +32,7 @@
+ .IP "-v"
+ Shows mail2sms' version number then quits.
+ .SH AUTHORS
+-mail2sms has been written by Daniel Stenberg <daniel@haxx.se> with lofs of
++mail2sms has been written by Daniel Stenberg <daniel@haxx.se> with lots of
+ help from friendly contributors, such as:
+ 
+  - Linus Nielsen <linus@haxx.se>
+@@ -48,4 +48,4 @@
+ .SH WWW
+ http://www.contactor.se/~dast/mail2sms/
+ .SH "SEE ALSO"
+-.BR mail2sms (4)
++.BR mail2sms (5)
+--- mail2sms.4.orig	Wed Apr 16 05:11:35 2003
++++ mail2sms.4	Wed Apr 16 06:03:10 2003
+@@ -1,12 +1,12 @@
+ .\" You can view this file with:
+-.\" nroff -man mail2sms.4
++.\" nroff -man mail2sms.5
+ .\" Written by Daniel Stenberg
+ .\"
+-.TH mail2sms 4 "11 October 1999"
++.TH mail2sms 5 "11 October 1999"
+ .SH NAME
+ mail2sms \- reads a (MIME) mail and converts it to a short message.
+ .SH SYNOPSIS
+-.B /etc/mail/sms/mail2sms.conf
++.B %%PREFIX%%/etc/mail2sms.conf
+ .br
+ .B ~/.mail2sms
+ .SH DESCRIPTION
+@@ -67,7 +67,7 @@
+ http://www.contactor.se/~dast/mail2sms/
+ .SH "SEE ALSO"
+ .BR mail2sms (1),
+-.BR sendmail (1M),
++.BR sendmail (8),
+ .BR procmail (1),
+-.BR aliases (4)
++.BR aliases (5)
+ 
