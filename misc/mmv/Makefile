@@ -3,7 +3,7 @@
 # Date created:		2 Feb 1995
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.9 1996/03/29 03:28:08 asami Exp $
+# $Id: Makefile,v 1.10 1996/04/12 08:38:33 asami Exp $
 #
 
 
@@ -31,7 +31,7 @@ do-fetch:
 			echo ">> Attempting to fetch it from a master site."; \
 			for site in ${MASTER_SITES}; do \
 				pwd;\
-				if ${NCFTP} ${NCFTPFLAGS} $${site}$${file}; then \
+				if ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}$${file} ${FETCH_AFTER_ARGS}; then \
 					break; \
 				fi \
 			done; \
