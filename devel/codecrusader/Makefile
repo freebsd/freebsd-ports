@@ -3,7 +3,7 @@
 # Date created:		30 July 1999
 # Whom:			Davec <davec@unforgettable.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/08/02 23:18:50 cpiazza Exp $
 #
 
 DISTNAME=	CodeCrusader-2.1.3
@@ -48,6 +48,12 @@ MASTER_SITES+=	ftp://ftp.cco.caltech.edu/pub/glenn/Medic/source/ \
 		ftp://ftp.cco.caltech.edu/pub/glenn/Arrow/source/
 DISTFILES+=	Code_Medic_source-1.0.3.tar.gz \
 		JSearch_source-0.5.6.tar.gz
+.endif
+
+.if !defined(CODEMEDIC) || (${CODEMEDIC} != no && ${CODEMEDIC} != NO)
+post-patch:
+		@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-medic
+		@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-jsearch
 .endif
 
 .include <bsd.port.pre.mk>
