@@ -1,14 +1,39 @@
-*** configure.orig	Sun Feb 22 10:05:56 1998
---- configure	Sun Feb 22 10:06:13 1998
-***************
-*** 1427,1435 ****
-  chmod 755 dotfile
-  chmod 755 Modules/fvwm2/fvwmrc_convert
-  
-- echo ----------------------------------------------------------------------
-- echo ----------------------------------------------------------------------
-- echo please login to your mail host, go to the directory Modules/procmail
-- echo and run ./configure from there.
-- echo ----------------------------------------------------------------------
-- echo ----------------------------------------------------------------------
---- 1427,1429 ----
+--- configure.orig	Sun Dec 21 05:40:27 1997
++++ configure	Sun Jan 30 19:30:22 2000
+@@ -538,7 +538,7 @@
+ echo "######################################################################"
+ echo "######################################################################"
+ 
+-for ac_prog in wish8.0 wish4.2 wish4.1 wish4.0
++for ac_prog in wish8.2 wish8.0 wish4.2 wish4.1 wish4.0
+ do
+ # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2
+@@ -660,7 +660,7 @@
+ fi
+ 
+ if test "$WISH" = ""; then
+-  for ac_prog in wish8.0 wish4.2 wish4.1 wish4.0 wish
++  for ac_prog in wish8.2 wish8.0 wish4.2 wish4.1 wish4.0 wish
+ do
+ # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2
+@@ -710,7 +710,7 @@
+     echo "####################################################################"
+   fi
+ fi
+-for ac_prog in tclsh8.0 tclsh7.6 tclsh7.5 tclsh7.4 tclsh
++for ac_prog in tclsh8.2 tclsh8.0 tclsh7.6 tclsh7.5 tclsh7.4 tclsh
+ do
+ # Extract the first word of "$ac_prog", so it can be a program name with args.
+ set dummy $ac_prog; ac_word=$2
+@@ -1427,9 +1427,3 @@
+ chmod 755 dotfile
+ chmod 755 Modules/fvwm2/fvwmrc_convert
+ 
+-echo ----------------------------------------------------------------------
+-echo ----------------------------------------------------------------------
+-echo please login to your mail host, go to the directory Modules/procmail
+-echo and run ./configure from there.
+-echo ----------------------------------------------------------------------
+-echo ----------------------------------------------------------------------

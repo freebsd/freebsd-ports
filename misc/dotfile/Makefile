@@ -10,7 +10,7 @@ DISTNAME=	dotfile-2.2
 CATEGORIES=	misc tk82
 MASTER_SITES=	ftp://ftp.imada.ou.dk/pub/dotfile/
 
-MAINTAINER=	oly@world.std.com
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
