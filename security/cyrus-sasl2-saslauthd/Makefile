@@ -59,12 +59,13 @@ CONFIGURE_ARGS+=--with-dblib=ndbm
 .endif
 
 .if defined(WITH_OPENLDAP_VER)
-.if ${WITH_OPENLDAP_VER} == 20 || ${WITH_OPENLDAP_VER} == 21
+.if ${WITH_OPENLDAP_VER} == 20 || ${WITH_OPENLDAP_VER} == 21 || \
+    ${WITH_OPENLDAP_VER} == 22
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap${WITH_OPENLDAP_VER}
 LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap${WITH_OPENLDAP_VER}
 CONFIGURE_ARGS+=--with-ldap=${PREFIX}
 .else
-BROKEN=		"WITH_OPENLDAP_VER must be 20 or 21"
+BROKEN=		"WITH_OPENLDAP_VER must be 20, 21 or 22"
 .endif
 .endif
 
