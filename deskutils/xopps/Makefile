@@ -3,7 +3,7 @@
 # Date created:		1 Ag 1997
 # Whom:			Pedro Giffuni (orig)
 #
-# $Id: Makefile,v 1.1.1.1 1997/07/31 08:18:36 tg Exp $
+# $Id: Makefile,v 1.2 1998/02/22 14:58:36 andreas Exp $
 #
 
 DISTNAME=	xopps.1.13
@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 ALL_TARGET=
 USE_X11=	yes
 REQUIRES_MOTIF=	yes
-MOTIF_STATIC=	yes
 MACH=		FreeBSD
 MAKE_ENV=	'MACH=$(MACH)'
 
