@@ -7,7 +7,7 @@
 
 PORTNAME=	zabbix
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES?=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -27,7 +27,7 @@ PKGNAMESUFFIX=	-agent
 PLIST=		${MASTERDIR}/pkg-plist.agent
 PKGMESSAGE=	nonexistent
 .else # ZABBIX_AGENT_ONLY
-LIB_DEPENDS=	netsnmp.6:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	netsnmp.7:${PORTSDIR}/net-mgmt/net-snmp
 USE_PHP=	gd snmp sockets
 .endif # ZABBIX_AGENT_ONLY
 
