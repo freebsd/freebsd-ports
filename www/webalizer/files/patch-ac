@@ -27,15 +27,6 @@
                 {
                    *cp1='\0';
                    if (log_rec.url[0]=='\0')
-@@ -735,7 +735,7 @@
-             while ( *cp1 != '\0' )
-             {
-                cp3=cp2;
--               if (*cp1<32 || *cp1>=127 || *cp1=='<') *cp1=0;
-+	       if (*cp1<32 || *cp1==127 || *cp1=='<') *cp1=0;
-                else *cp2++=*cp1++;
-             }
-             *cp3 = '\0';
 @@ -1466,19 +1466,19 @@
     while ( (fgets(buffer,BUFSIZE,fp)) != NULL)
     {
@@ -60,15 +51,6 @@
  
        /* check if blank keyword/value */
        if ( (keyword[0]=='\0') || (value[0]=='\0') ) continue;
-@@ -1727,7 +1727,7 @@
- 
- int isurlchar(char ch)
- {
--   if (isalnum((int)ch)) return 1;           /* allow letters, numbers...    */
-+   if (isalnum((unsigned char)ch)) return 1;           /* allow letters, numbers...    */
-    return (strchr(":/\\.,' *-+_@~()[]",ch)!=NULL); /* and a few special ones */
- }
- 
 @@ -1820,7 +1820,7 @@
           if (*cp1=='+') *cp1=' ';                      /* change + to space  */
           if (sp_flg && *cp1==' ') { cp1++; continue; } /* compress spaces    */

@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	webalizer
-PORTVERSION=	2.1.9
-PORTREVISION=	1
+PORTVERSION=	2.1.10
 CATEGORIES+=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/ \
 		ftp://ftp.dinoex.de/pub/FreeBSD/distfiles/
-DISTNAME=	${PORTNAME}-2.01-09-src
+DISTNAME=	${PORTNAME}-2.01-10-src
 
 MAINTAINER=	dinoex@FreeBSD.org
 
@@ -19,7 +18,8 @@ MAINTAINER=	dinoex@FreeBSD.org
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 .endif
 
-USE_BZIP2=	yes
+#USE_BZIP2=	yes
+EXTRACT_SUFX=	.tgz
 GNU_CONFIGURE=	yes
 DOCSDIR?=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 EXAMPLESDIR?=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
