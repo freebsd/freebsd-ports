@@ -5,14 +5,8 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	1.0
 MASTER_SITES?=	http://www.epkowa.on.arena.ne.jp/pips/data/777_680/
-MASTERDIR=	${.CURDIR}/../pips800
+MASTERDIR=	${.CURDIR}/../pips-sc880
 PRTYPE=		-sc680_777
 
-INTERNATIONAL_PRODUCTS=yes
-
 .include "${MASTERDIR}/Makefile"
-
-# to cancel in this port (for international products)
-_MAKE_COMMENT_DESCR:
