@@ -6,7 +6,7 @@ simulation environment for research on and application of neural nets.
 
 The SNNS simulator consists of two main components:
 
-1) simultor kernel written in C
+1) simulator kernel written in C
 2) graphical user interface under X
 
 The simulator kernel operates on the internal network data structures of the
