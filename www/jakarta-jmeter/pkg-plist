@@ -1,88 +1,60 @@
 bin/jmeter
-%%T%%/LICENSE
-%%T%%/README
-%%T%%/bin/ApacheJMeter.jar
-%%T%%/bin/HTTPSamplerFullTestFile.txt
-%%T%%/bin/jmeter
-%%T%%/bin/jmeter-server
-%%T%%/bin/jmeter.log
-%%T%%/bin/jmeter.properties
-%%T%%/bin/log4j.conf
-%%T%%/bin/quartz.log
-%%T%%/bin/testfiles/AssertionTestPlan.jmx
-%%T%%/bin/testfiles/AuthManagerTestPlan.jmx
-%%T%%/bin/testfiles/HeaderManagerTestPlan.jmx
-%%T%%/bin/testfiles/InterleaveTestPlan.jmx
-%%T%%/bin/testfiles/InterleaveTestPlan2.jmx
-%%T%%/bin/testfiles/LoopTestPlan.jmx
-%%T%%/bin/testfiles/Modification Manager.jmx
-%%T%%/bin/testfiles/OnceOnlyTestPlan.jmx
-%%T%%/bin/testfiles/ProxyServerTestPlan.jmx
-%%T%%/bin/testfiles/SimpleTestPlan.jmx
-%%T%%/bin/testfiles/Test Plan.jmx
-%%T%%/bin/testfiles/URLRewritingExample.jmx
-%%T%%/bin/testfiles/assertion.jmx
-%%T%%/bin/testfiles/proxy.jmx
-%%T%%/bin/testresults.txt
-%%T%%/bin/users.dtd
-%%T%%/bin/users.xml
-%%T%%/docs/bugs.html
-%%T%%/docs/changes.html
-%%T%%/docs/contributing.html
-%%T%%/docs/demos/AssertionTestPlan.jmx
-%%T%%/docs/demos/AuthManagerTestPlan.jmx
-%%T%%/docs/demos/HeaderManagerTestPlan.jmx
-%%T%%/docs/demos/InterleaveTestPlan.jmx
-%%T%%/docs/demos/InterleaveTestPlan2.jmx
-%%T%%/docs/demos/LoopTestPlan.jmx
-%%T%%/docs/demos/OnceOnlyTestPlan.jmx
-%%T%%/docs/demos/ProxyServerTestPlan.jmx
-%%T%%/docs/demos/SimpleTestPlan.jmx
-%%T%%/docs/demos/URLRewritingExample.jmx
-%%T%%/docs/extending.html
-%%T%%/docs/extending/JMeter Extension Scenario.html
-%%T%%/docs/extending/index.html
-%%T%%/docs/how_to_use_jmeter.html
-%%T%%/docs/images/httpcontroller.jpg
-%%T%%/docs/images/httptestsample.jpg
-%%T%%/docs/images/java-apache-project.gif
-%%T%%/docs/images/jdbc_controller.jpg
-%%T%%/docs/images/jmeter.jpg
-%%T%%/docs/images/jmeter2.jpg
-%%T%%/docs/images/jmeter_run_panel.jpg
-%%T%%/docs/images/jmeter_running.jpg
-%%T%%/docs/images/screenshots/adding_threadgroup.gif
-%%T%%/docs/images/screenshots/aggregate_report.png
 %%T%%/docs/images/screenshots/assertion/assertion.gif
-%%T%%/docs/images/screenshots/assertion/example1a.gif
+%%T%%/docs/images/screenshots/assertion/example1a.png
 %%T%%/docs/images/screenshots/assertion/example1b.gif
 %%T%%/docs/images/screenshots/assertion/example1c-fail.gif
 %%T%%/docs/images/screenshots/assertion/example1c-pass.gif
-%%T%%/docs/images/screenshots/assertion_results.gif
-%%T%%/docs/images/screenshots/assertions.gif
-%%T%%/docs/images/screenshots/base_ui.gif
-%%T%%/docs/images/screenshots/constant_timer.gif
-%%T%%/docs/images/screenshots/counter.png
-%%T%%/docs/images/screenshots/data_analyzer.gif
-%%T%%/docs/images/screenshots/duration_assertion.png
-%%T%%/docs/images/screenshots/file_reporter.gif
+%%T%%/docs/images/screenshots/ldaptest/viewtable.png
+%%T%%/docs/images/screenshots/ldaptest/delete.png
+%%T%%/docs/images/screenshots/ldaptest/login-config-element.png
+%%T%%/docs/images/screenshots/ldaptest/modify.png
+%%T%%/docs/images/screenshots/ldaptest/requestdefaults.png
+%%T%%/docs/images/screenshots/ldaptest/search.png
+%%T%%/docs/images/screenshots/ldaptest/threadgroup.png
+%%T%%/docs/images/screenshots/ldaptest/add.png
+%%T%%/docs/images/screenshots/logic-controller/simple-example.gif
+%%T%%/docs/images/screenshots/logic-controller/interleave.png
+%%T%%/docs/images/screenshots/logic-controller/interleave2.png
+%%T%%/docs/images/screenshots/logic-controller/interleave3.png
+%%T%%/docs/images/screenshots/logic-controller/loop-controller.gif
+%%T%%/docs/images/screenshots/logic-controller/loop-example.gif
+%%T%%/docs/images/screenshots/logic-controller/once-only-controller.gif
+%%T%%/docs/images/screenshots/logic-controller/once-only-example.png
+%%T%%/docs/images/screenshots/logic-controller/random-controller.gif
+%%T%%/docs/images/screenshots/logic-controller/recording-controller.gif
+%%T%%/docs/images/screenshots/logic-controller/simple-controller.gif
+%%T%%/docs/images/screenshots/logic-controller/interleave-controller.png
+%%T%%/docs/images/screenshots/remote/run-menu00.gif
+%%T%%/docs/images/screenshots/timers/constant_throughput_timer.gif
+%%T%%/docs/images/screenshots/timers/constant_timer.gif
+%%T%%/docs/images/screenshots/timers/gauss_random_timer.gif
+%%T%%/docs/images/screenshots/timers/uniform_random_timer.gif
+%%T%%/docs/images/screenshots/webtest/threadgroup2.png
+%%T%%/docs/images/screenshots/webtest/file-reporter.gif
+%%T%%/docs/images/screenshots/webtest/http-defaults1.png
+%%T%%/docs/images/screenshots/webtest/http-defaults2.png
+%%T%%/docs/images/screenshots/webtest/http-request1.png
+%%T%%/docs/images/screenshots/webtest/http-request2.png
+%%T%%/docs/images/screenshots/webtest/threadgroup.png
+%%T%%/docs/images/screenshots/webtest/file-reporter-results.gif
+%%T%%/docs/images/screenshots/jdbctest/graph-results.png
+%%T%%/docs/images/screenshots/jdbctest/JDBCRequest.png
+%%T%%/docs/images/screenshots/jdbctest/JDBCRequest2.png
+%%T%%/docs/images/screenshots/jdbctest/JDBCRequest3.png
+%%T%%/docs/images/screenshots/jdbctest/threadgroup.png
+%%T%%/docs/images/screenshots/jdbctest/threadgroup2.png
 %%T%%/docs/images/screenshots/ftp-config/ftp-request-defaults.gif
-%%T%%/docs/images/screenshots/ftptest.gif
-%%T%%/docs/images/screenshots/ftptest/ftp-defaults.png
+%%T%%/docs/images/screenshots/ftptest/ftp-request2.png
 %%T%%/docs/images/screenshots/ftptest/ftp-defaults2.png
 %%T%%/docs/images/screenshots/ftptest/ftp-request.png
-%%T%%/docs/images/screenshots/ftptest/ftp-request2.png
+%%T%%/docs/images/screenshots/ftptest/ftp-defaults.png
 %%T%%/docs/images/screenshots/ftptest/spline-results.png
 %%T%%/docs/images/screenshots/ftptest/threadgroup.png
 %%T%%/docs/images/screenshots/ftptest/threadgroup2.png
-%%T%%/docs/images/screenshots/function_helper_dialog.png
-%%T%%/docs/images/screenshots/gauss_random_timer.gif
 %%T%%/docs/images/screenshots/gen-controller/ftp-request.gif
 %%T%%/docs/images/screenshots/gen-controller/http-request.png
 %%T%%/docs/images/screenshots/gen-controller/jdbc-request.gif
-%%T%%/docs/images/screenshots/graph_full_results.gif
-%%T%%/docs/images/screenshots/graph_results.gif
-%%T%%/docs/images/screenshots/html_param_mask.gif
+%%T%%/docs/images/screenshots/http-config/.xvpics/http-config-example.png
 %%T%%/docs/images/screenshots/http-config/auth-manager-example1a.gif
 %%T%%/docs/images/screenshots/http-config/auth-manager-example1b.gif
 %%T%%/docs/images/screenshots/http-config/header-manager-example1a.gif
@@ -92,94 +64,85 @@ bin/jmeter
 %%T%%/docs/images/screenshots/http-config/http-cookie-manager.gif
 %%T%%/docs/images/screenshots/http-config/http-header-manager.gif
 %%T%%/docs/images/screenshots/http-config/http-proxy-server.gif
-%%T%%/docs/images/screenshots/http-config/http-request-defaults.gif
+%%T%%/docs/images/screenshots/http-config/http-request-defaults.png
 %%T%%/docs/images/screenshots/http-config/proxy-server-example1a.gif
-%%T%%/docs/images/screenshots/interleave.gif
-%%T%%/docs/images/screenshots/java_request.gif
 %%T%%/docs/images/screenshots/jdbc-config/jdbc-db-conn-pool.gif
 %%T%%/docs/images/screenshots/jdbc-config/jdbc-db-login.gif
 %%T%%/docs/images/screenshots/jdbc-config/jdbc-sql-query.gif
+%%T%%/docs/images/screenshots/.xvpics/modification.png
+%%T%%/docs/images/screenshots/function_helper_dialog.png
+%%T%%/docs/images/screenshots/gauss_random_timer.gif
+%%T%%/docs/images/screenshots/graph_full_results.gif
+%%T%%/docs/images/screenshots/graph_results.png
+%%T%%/docs/images/screenshots/html_param_mask.gif
+%%T%%/docs/images/screenshots/interleave.gif
+%%T%%/docs/images/screenshots/java_defaults.png
+%%T%%/docs/images/screenshots/java_request.gif
 %%T%%/docs/images/screenshots/jdbctest.gif
-%%T%%/docs/images/screenshots/jdbctest/JDBCRequest.png
-%%T%%/docs/images/screenshots/jdbctest/JDBCRequest2.png
-%%T%%/docs/images/screenshots/jdbctest/JDBCRequest3.png
-%%T%%/docs/images/screenshots/jdbctest/graph-results.png
-%%T%%/docs/images/screenshots/jdbctest/threadgroup.png
-%%T%%/docs/images/screenshots/jdbctest/threadgroup2.png
-%%T%%/docs/images/screenshots/logic-controller/interleave-controller.gif
-%%T%%/docs/images/screenshots/logic-controller/interleave.gif
-%%T%%/docs/images/screenshots/logic-controller/interleave2.gif
-%%T%%/docs/images/screenshots/logic-controller/loop-controller.gif
-%%T%%/docs/images/screenshots/logic-controller/loop-example.gif
-%%T%%/docs/images/screenshots/logic-controller/once-only-controller.gif
-%%T%%/docs/images/screenshots/logic-controller/once-only-example.gif
-%%T%%/docs/images/screenshots/logic-controller/simple-controller.gif
-%%T%%/docs/images/screenshots/logic-controller/simple-example.gif
+%%T%%/docs/images/screenshots/ldap_defaults.png
+%%T%%/docs/images/screenshots/ldap_request.png
+%%T%%/docs/images/screenshots/login-config.png
 %%T%%/docs/images/screenshots/loop_controller.gif
 %%T%%/docs/images/screenshots/mailer_vis.png
 %%T%%/docs/images/screenshots/modification.png
+%%T%%/docs/images/screenshots/module_controller.png
 %%T%%/docs/images/screenshots/once_only.gif
 %%T%%/docs/images/screenshots/parameter_mask.png
 %%T%%/docs/images/screenshots/proxy_control.png
-%%T%%/docs/images/screenshots/remote/run-menu00.gif
+%%T%%/docs/images/screenshots/regex_extractor.png
+%%T%%/docs/images/screenshots/scoping1.png
+%%T%%/docs/images/screenshots/scoping2.png
+%%T%%/docs/images/screenshots/scoping3.png
+%%T%%/docs/images/screenshots/simple_config_element.png
+%%T%%/docs/images/screenshots/size_assertion.png
 %%T%%/docs/images/screenshots/soap_sampler.png
-%%T%%/docs/images/screenshots/spline_visualizer.gif
-%%T%%/docs/images/screenshots/table_results.gif
-%%T%%/docs/images/screenshots/test_plan.gif
-%%T%%/docs/images/screenshots/timers/constant_timer.gif
-%%T%%/docs/images/screenshots/timers/gauss_random_timer.gif
-%%T%%/docs/images/screenshots/timers/uniform_random_timer.gif
+%%T%%/docs/images/screenshots/webtest.gif
+%%T%%/docs/images/screenshots/spline_visualizer.png
+%%T%%/docs/images/screenshots/table_results.png
+%%T%%/docs/images/screenshots/testplan.png
+%%T%%/docs/images/screenshots/threadgroup.png
+%%T%%/docs/images/screenshots/throughput_controller.png
 %%T%%/docs/images/screenshots/uniform_random_timer.gif
+%%T%%/docs/images/screenshots/url_rewriter.png
 %%T%%/docs/images/screenshots/url_rewrite_example_a.png
 %%T%%/docs/images/screenshots/url_rewrite_example_b.gif
-%%T%%/docs/images/screenshots/url_rewriter.gif
-%%T%%/docs/images/screenshots/user_param_modifier.gif
 %%T%%/docs/images/screenshots/user_params.png
-%%T%%/docs/images/screenshots/webtest.gif
-%%T%%/docs/images/screenshots/webtest/file-reporter-results.gif
-%%T%%/docs/images/screenshots/webtest/file-reporter.gif
-%%T%%/docs/images/screenshots/webtest/http-defaults1.png
-%%T%%/docs/images/screenshots/webtest/http-defaults2.png
-%%T%%/docs/images/screenshots/webtest/http-request1.png
-%%T%%/docs/images/screenshots/webtest/http-request2.png
-%%T%%/docs/images/screenshots/webtest/threadgroup.png
-%%T%%/docs/images/screenshots/webtest/threadgroup2.png
-%%T%%/docs/images/screenshots/view_result_tree.gif
+%%T%%/docs/images/screenshots/user_param_modifier.gif
 %%T%%/docs/images/screenshots/view_results_tree.png
+%%T%%/docs/images/screenshots/view_result_tree.gif
+%%T%%/docs/images/screenshots/webservice_sampler.png
+%%T%%/docs/images/screenshots/workbench.png
+%%T%%/docs/images/screenshots/xml_assertion.png
+%%T%%/docs/images/screenshots/assertions.gif
+%%T%%/docs/images/screenshots/adding_threadgroup.gif
+%%T%%/docs/images/screenshots/aggregate_report.png
+%%T%%/docs/images/screenshots/assertion_results.gif
+%%T%%/docs/images/screenshots/assertion_results.png
+%%T%%/docs/images/screenshots/base_ui.gif
+%%T%%/docs/images/screenshots/constant_timer.gif
+%%T%%/docs/images/screenshots/counter.png
+%%T%%/docs/images/screenshots/data_analyzer.gif
+%%T%%/docs/images/screenshots/duration_assertion.png
+%%T%%/docs/images/screenshots/file_reporter.gif
+%%T%%/docs/images/screenshots/ftptest.gif
+%%T%%/docs/images/httpcontroller.jpg
+%%T%%/docs/images/httptestsample.jpg
+%%T%%/docs/images/java-apache-project.gif
+%%T%%/docs/images/jdbc_controller.jpg
+%%T%%/docs/images/jmeter.jpg
+%%T%%/docs/images/jmeter2.jpg
+%%T%%/docs/images/jmeter_running.jpg
+%%T%%/docs/images/jmeter_run_panel.jpg
 %%T%%/docs/images/simplehttpcontroller.jpg
 %%T%%/docs/images/snapshot.gif
 %%T%%/docs/images/test_sample.jpg
-%%T%%/docs/index.html
-%%T%%/docs/installing.html
-%%T%%/docs/license.html
-%%T%%/docs/running.html
-%%T%%/docs/todo.html
-%%T%%/docs/user_manual/assertions.html
-%%T%%/docs/user_manual/ftp_test.html
-%%T%%/docs/user_manual/index.html
-%%T%%/docs/user_manual/interleave.html
-%%T%%/docs/user_manual/jdbc_test.html
-%%T%%/docs/user_manual/logical_controllers.html
-%%T%%/docs/user_manual/loop_controller.html
-%%T%%/docs/user_manual/modification_manager.html
-%%T%%/docs/user_manual/once_only.html
-%%T%%/docs/user_manual/proxy_server.html
-%%T%%/docs/user_manual/ready_components.html
-%%T%%/docs/user_manual/rmi.html
-%%T%%/docs/user_manual/running.html
-%%T%%/docs/user_manual/saving.html
-%%T%%/docs/user_manual/sslmanager.html
-%%T%%/docs/user_manual/test_samples.html
-%%T%%/docs/user_manual/threadgroups.html
-%%T%%/docs/user_manual/timers.html
-%%T%%/docs/user_manual/web_test.html
-%%T%%/docs/user_manual/visualizers.html
-%%T%%/docs/usermanual/best-practices.html
+%%T%%/docs/usermanual/test_plan.html
 %%T%%/docs/usermanual/boss.html
 %%T%%/docs/usermanual/build-adv-web-test-plan.html
 %%T%%/docs/usermanual/build-db-test-plan.html
 %%T%%/docs/usermanual/build-ftp-test-plan.html
 %%T%%/docs/usermanual/build-jndi-test-plan.html
+%%T%%/docs/usermanual/build-ldap-test-plan.html
 %%T%%/docs/usermanual/build-test-plan.html
 %%T%%/docs/usermanual/build-web-test-plan.html
 %%T%%/docs/usermanual/component_reference.html
@@ -189,50 +152,129 @@ bin/jmeter
 %%T%%/docs/usermanual/index.html
 %%T%%/docs/usermanual/intro.html
 %%T%%/docs/usermanual/remote-test.html
-%%T%%/docs/usermanual/test_plan.html
-%%T%%/lib/Tidy.jar
-%%T%%/lib/ant-1.5-optional.jar
-%%T%%/lib/ant-1.5.jar
-%%T%%/lib/avalon-excalibur-4.1.jar
-%%T%%/lib/avalon-framework.jar
-%%T%%/lib/ext/ApacheJMeter_components.jar
+%%T%%/docs/usermanual/best-practices.html
+%%T%%/docs/extending/index.html
+%%T%%/docs/extending/JMeter Extension Scenario.html
+%%T%%/docs/demos/URLRewritingExample.jmx
+%%T%%/docs/demos/AuthManagerTestPlan.jmx
+%%T%%/docs/demos/HeaderManagerTestPlan.jmx
+%%T%%/docs/demos/InterleaveTestPlan.jmx
+%%T%%/docs/demos/InterleaveTestPlan2.jmx
+%%T%%/docs/demos/LoopTestPlan.jmx
+%%T%%/docs/demos/OnceOnlyTestPlan.jmx
+%%T%%/docs/demos/ProxyServerTestPlan.jmx
+%%T%%/docs/demos/SimpleTestPlan.jmx
+%%T%%/docs/demos/AssertionTestPlan.jmx
+%%T%%/docs/extending.html
+%%T%%/docs/how_to_use_jmeter.html
+%%T%%/docs/index.html
+%%T%%/docs/installing.html
+%%T%%/docs/jmeter_irc.html
+%%T%%/docs/license.html
+%%T%%/docs/running.html
+%%T%%/docs/todo.html
+%%T%%/docs/bugs.html
+%%T%%/docs/changes.html
+%%T%%/docs/contributing.html
+%%T%%/lib/ext/ApacheJMeter_ldap.jar
 %%T%%/lib/ext/ApacheJMeter_core.jar
 %%T%%/lib/ext/ApacheJMeter_ftp.jar
 %%T%%/lib/ext/ApacheJMeter_functions.jar
 %%T%%/lib/ext/ApacheJMeter_http.jar
 %%T%%/lib/ext/ApacheJMeter_java.jar
 %%T%%/lib/ext/ApacheJMeter_jdbc.jar
-%%T%%/lib/jakarta-oro-2.0.1.jar
+%%T%%/lib/ext/ApacheJMeter_components.jar
+%%T%%/lib/avalon-excalibur-4.1.jar
+%%T%%/lib/avalon-framework-4.1.4.jar
+%%T%%/lib/commons-collections.jar
+%%T%%/lib/jakarta-oro-2.0.7.jar
+%%T%%/lib/jdom-b8.jar
 %%T%%/lib/jorphan.jar
+%%T%%/lib/js.jar
+%%T%%/lib/js_jar_license(mozilla).html
 %%T%%/lib/junit.jar
 %%T%%/lib/junit_license.html
-%%T%%/lib/logkit-1.0.1.jar
-%%T%%/lib/util.jar
+%%T%%/lib/logkit-1.2.jar
+%%T%%/lib/soap.jar
+%%T%%/lib/Tidy.jar
 %%T%%/lib/xalan.jar
-%%T%%/lib/xerces.jar
+%%T%%/lib/xercesImpl.jar
 %%T%%/lib/xml-apis.jar
-@dirrm %%T%%/lib/ext
-@dirrm %%T%%/lib
-@dirrm %%T%%/docs/usermanual
-@dirrm %%T%%/docs/user_manual
-@dirrm %%T%%/docs/images/screenshots/webtest
-@dirrm %%T%%/docs/images/screenshots/timers
-@dirrm %%T%%/docs/images/screenshots/remote
-@dirrm %%T%%/docs/images/screenshots/logic-controller
-@dirrm %%T%%/docs/images/screenshots/jdbctest
-@dirrm %%T%%/docs/images/screenshots/jdbc-config
-@dirrm %%T%%/docs/images/screenshots/http-config
-@dirrm %%T%%/docs/images/screenshots/gen-controller
-@dirrm %%T%%/docs/images/screenshots/ftptest
-@dirrm %%T%%/docs/images/screenshots/ftp-config
+%%T%%/extras/JMeter Ant Task_files/JMeterResults.jpg
+%%T%%/extras/ant-jmeter.jar
+%%T%%/extras/JMeter Ant Task.html
+%%T%%/extras/jmeter-results-report.xsl
+%%T%%/extras/JMeterResults.jpg
+%%T%%/extras/JMeterResultsDetail.jpg
+%%T%%/extras/jmeter-results-detail-report.zip
+%%T%%/printable_docs/usermanual/test_plan.html
+%%T%%/printable_docs/usermanual/boss.html
+%%T%%/printable_docs/usermanual/build-adv-web-test-plan.html
+%%T%%/printable_docs/usermanual/build-db-test-plan.html
+%%T%%/printable_docs/usermanual/build-ftp-test-plan.html
+%%T%%/printable_docs/usermanual/build-jndi-test-plan.html
+%%T%%/printable_docs/usermanual/build-ldap-test-plan.html
+%%T%%/printable_docs/usermanual/build-test-plan.html
+%%T%%/printable_docs/usermanual/build-web-test-plan.html
+%%T%%/printable_docs/usermanual/component_reference.html
+%%T%%/printable_docs/usermanual/functions.html
+%%T%%/printable_docs/usermanual/get-started.html
+%%T%%/printable_docs/usermanual/glossary.html
+%%T%%/printable_docs/usermanual/index.html
+%%T%%/printable_docs/usermanual/intro.html
+%%T%%/printable_docs/usermanual/remote-test.html
+%%T%%/printable_docs/usermanual/best-practices.html
+%%T%%/printable_docs/extending/index.html
+%%T%%/printable_docs/extending/JMeter Extension Scenario.html
+%%T%%/printable_docs/changes.html
+%%T%%/printable_docs/contributing.html
+%%T%%/printable_docs/extending.html
+%%T%%/printable_docs/how_to_use_jmeter.html
+%%T%%/printable_docs/index.html
+%%T%%/printable_docs/installing.html
+%%T%%/printable_docs/jmeter_irc.html
+%%T%%/printable_docs/license.html
+%%T%%/printable_docs/running.html
+%%T%%/printable_docs/todo.html
+%%T%%/printable_docs/bugs.html
+%%T%%/bin/jmeter-server
+%%T%%/bin/jmeter.log
+%%T%%/bin/jmeter.properties
+%%T%%/bin/upgrade.properties
+%%T%%/bin/users.dtd
+%%T%%/bin/users.xml
+%%T%%/bin/jmeter
+%%T%%/bin/ApacheJMeter.jar
+%%T%%/README
+%%T%%/LICENSE
+share/nls/POSIX
+share/nls/en_US.US-ASCII
 @dirrm %%T%%/docs/images/screenshots/assertion
+@dirrm %%T%%/docs/images/screenshots/ldaptest
+@dirrm %%T%%/docs/images/screenshots/logic-controller
+@dirrm %%T%%/docs/images/screenshots/remote
+@dirrm %%T%%/docs/images/screenshots/timers
+@dirrm %%T%%/docs/images/screenshots/webtest
+@dirrm %%T%%/docs/images/screenshots/jdbctest
+@dirrm %%T%%/docs/images/screenshots/ftp-config
+@dirrm %%T%%/docs/images/screenshots/ftptest
+@dirrm %%T%%/docs/images/screenshots/gen-controller
+@dirrm %%T%%/docs/images/screenshots/http-config/.xvpics
+@dirrm %%T%%/docs/images/screenshots/http-config
+@dirrm %%T%%/docs/images/screenshots/jdbc-config
+@dirrm %%T%%/docs/images/screenshots/.xvpics
 @dirrm %%T%%/docs/images/screenshots
 @dirrm %%T%%/docs/images
+@dirrm %%T%%/docs/usermanual
 @dirrm %%T%%/docs/extending
 @dirrm %%T%%/docs/demos
 @dirrm %%T%%/docs
-@dirrm %%T%%/bin/testfiles
-@dirrm %%T%%/bin/proxy_script
-@dirrm %%T%%/bin/Cache
+@dirrm %%T%%/lib/ext
+@dirrm %%T%%/lib
+@dirrm %%T%%/extras/JMeter Ant Task_files
+@dirrm %%T%%/extras
+@dirrm %%T%%/printable_docs/usermanual
+@dirrm %%T%%/printable_docs/extending
+@dirrm %%T%%/printable_docs
 @dirrm %%T%%/bin
 @dirrm %%T%%
