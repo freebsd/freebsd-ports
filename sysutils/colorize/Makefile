@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	colorize
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://colorize.raszi.hu/download/
+MASTER_SITES=	http://colorize.raszi.hu/downloads/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	petef@FreeBSD.org
