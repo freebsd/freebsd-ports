@@ -7,7 +7,7 @@
 
 PORTNAME=	ttfm
 PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese print
 MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/ttfm/
 
@@ -32,10 +32,10 @@ do-install:
 .endfor
 	@${INSTALL_MAN} ${WRKSRC}/ttfm.sh.1 ${PREFIX}/man/man1
 	@${MKDIR} ${MODULESDIR}
-.for module in abiword.ttfm ghostscript6.ttfm xfreetype.ttfm xttfm.ttfm
+.for module in abiword.ttfm gscjk.ttfm xfreetype.ttfm xttfm.ttfm
 	@${INSTALL_SCRIPT} ${WRKSRC}/modules/${module} ${MODULESDIR}
 .endfor
-.for module in chitex.ttfm ttf2pk.ttfm xttfm-tcl.ttfm
+.for module in chitex.ttfm ghostscript6.ttfm ttf2pk.ttfm xttfm-tcl.ttfm
 	@${INSTALL_SCRIPT} ${WRKSRC}/modules/${module} ${MODULESDIR}/${module}.nop
 .endfor
 	@${MKDIR} ${FONTSDIR}
