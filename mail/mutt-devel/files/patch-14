@@ -1,0 +1,74 @@
+diff -durp mutt-1.3.27.orig/imap/message.c mutt-1.3.27/imap/message.c
+--- imap/message.c	Sun Jan 13 16:15:43 2002
++++ imap/message.c	Wed Feb 27 15:01:07 2002
+@@ -350,14 +350,10 @@ int imap_fetch_message (MESSAGE *msg, CO
+    * envelope into the old one. Also messy and lowlevel. */
+   if (ctx->id_hash && h->env->message_id)
+     hash_delete (ctx->id_hash, h->env->message_id, h, NULL);
+-  if (ctx->subj_hash && h->env->real_subj)
+-    hash_delete (ctx->subj_hash, h->env->real_subj, h, NULL);
+   mutt_free_envelope (&h->env);
+   h->env = mutt_read_rfc822_header (msg->fp, h, 0, 0);
+   if (ctx->id_hash && h->env->message_id)
+     hash_insert (ctx->id_hash, h->env->message_id, h, 0);
+-  if (ctx->subj_hash && h->env->real_subj)
+-    hash_insert (ctx->subj_hash, h->env->real_subj, h, 1);
+ 
+   /* see above. We want the new status in h->read, so we unset it manually
+    * and let mutt_set_flag set it correctly, updating context. */
+diff -durp mutt-1.3.27.orig/mbox.c mutt-1.3.27/mbox.c
+--- mbox.c	Wed Oct 31 04:40:05 2001
++++ mbox.c	Wed Feb 27 14:58:27 2002
+@@ -1082,8 +1082,6 @@ int mutt_reopen_mailbox (CONTEXT *ctx, i
+   /* simulate a close */
+   if (ctx->id_hash)
+     hash_destroy (&ctx->id_hash, NULL);
+-  if (ctx->subj_hash)
+-    hash_destroy (&ctx->subj_hash, NULL);
+   mutt_clear_threads (ctx);
+   safe_free ((void **) &ctx->v2r);
+   if (ctx->readonly)
+@@ -1110,7 +1108,6 @@ int mutt_reopen_mailbox (CONTEXT *ctx, i
+   ctx->flagged = 0;
+   ctx->changed = 0;
+   ctx->id_hash = NULL;
+-  ctx->subj_hash = NULL;
+ 
+   switch (ctx->magic)
+   {
+diff -durp mutt-1.3.27.orig/mx.c mutt-1.3.27/mx.c
+--- mx.c.orig2	Thu Feb 28 08:56:55 2002
++++ mx.c	Thu Feb 28 09:01:24 2002
+@@ -804,2 +803,0 @@
+-  if (ctx->subj_hash)
+-    hash_destroy (&ctx->subj_hash, NULL);
+@@ -1180,2 +1177,0 @@
+-      if (ctx->subj_hash && ctx->hdrs[i]->env->real_subj)
+-	hash_delete (ctx->subj_hash, ctx->hdrs[i]->env->real_subj, ctx->hdrs[i], NULL);
+@@ -1716,2 +1711,0 @@
+-    if (ctx->subj_hash && h->env->real_subj)
+-      hash_insert (ctx->subj_hash, h->env->real_subj, h, 1);
+diff -durp mutt-1.3.27.orig/thread.c mutt-1.3.27/thread.c
+--- thread.c	Wed Jan 16 15:43:59 2002
++++ thread.c	Wed Feb 27 15:04:43 2002
+@@ -435,8 +435,9 @@ static void pseudo_threads (CONTEXT *ctx
+   THREAD *tree = ctx->tree, *top = tree;
+   THREAD *tmp, *cur, *parent, *curchild, *nextchild;
+ 
+-  if (!ctx->subj_hash)
+-    ctx->subj_hash = mutt_make_subj_hash (ctx);
++  if (ctx->subj_hash)
++    hash_destroy (&ctx->subj_hash, NULL);
++  ctx->subj_hash = mutt_make_subj_hash (ctx);
+ 
+   while (tree)
+   {
+@@ -504,6 +505,8 @@ void mutt_clear_threads (CONTEXT *ctx)
+ 
+   if (ctx->thread_hash)
+     hash_destroy (&ctx->thread_hash, *free);
++  if (ctx->subj_hash)
++    hash_destroy (&ctx->subj_hash, NULL);
+ }
+ 
+ int compare_threads (const void *a, const void *b)
