@@ -1,0 +1,9 @@
+CElvis is a clone of vi/ex, the standard UNIX editor.  CElvis supports
+nearly all of the vi/ex commands, in both visual mode and colon mode.
+It also allows displaying and editing of documents using the
+Chinese GB (simple) and Big-5 (complex) encodings.
+
+Celvis is based on Elvis version 1.3 by Steve Kirkendall.
+
+David O'Brien
+obrien@cs.ucdavis.edu

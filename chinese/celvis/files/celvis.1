@@ -1,0 +1,103 @@
+.TH ELVIS 1
+.SH NAME
+celvis, cex, cvi, cview, cinput - The Chinese editor
+.SH SYNOPSIS
+\fBcelvis\fP [\fIflags\fP] [\fB+\fP\fIcmd\fP] [\fIfiles\fP...]
+.SH DESCRIPTION
+\fIElvis\fP is a text editor which emulates \fIvi\fP/\fIex\fP.
+\fICelvis\fP is a Chinese version of \fIelvis\fP.
+It should run on top of some Chinese terminal or Chinese system,
+such as \fIcxterm\fP in X11 window system.
+This version supports both GB encoding and Big5 encoding
+Chinese text.
+.PP
+On systems which pass the program name as an argument, such as Unix and Minix,
+you may also install \fIcelvis\fP under the names
+"cex", "cvi", "cview", and "cinput".
+These extra names would normally be links to celvis;
+see the "ln" shell command.
+.PP
+When \fIcelvis\fP is invoked as "cvi",
+it behaves exactly as though it was invoked as "celvis".
+However, if you invoke \fIcelvis\fP as "cview",
+then the readonly option is set as though you had given it the "-R" flag.
+If you invoke \fIcelvis\fP as "cex",
+then \fIcelvis\fP will start up in the colon command mode
+instead of the visual command mode,
+as though you had given it the "-e" flag.
+If you invoke \fIcelvis\fP as "cinput" or "cedit",
+then \fIcelvis\fP will start up in input mode,
+as though the "-i" flag was given.
+.SH OPTIONS
+.IP \fB-r\fP
+To the real vi, this flag means that a previous edit should be recovered.
+\fICelvis\fP, though, has a separate program, called \fIvirec(1)\fP,
+for recovering files.
+When you invoke \fIcelvis\fP with -r,
+\fIcelvis\fP will tell you to run \fIvirec\fP.
+.IP \fB-R\fP
+This sets the "readonly" option,
+so you won't accidentally overwrite a file.
+.IP "\fB-t\fP \fItag\fP"
+This causes \fIcelvis\fP to start editing at the given tag.
+.IP \fB-e\fP
+\fICelvis\fP will start up in colon command mode.
+.IP \fB-v\fP
+\fICelvis\fP will start up in visual command mode.
+.IP \fB-i\fP
+\fICelvis\fP will start up in input mode.
+.IP "\fB+\fP\fIcommand\fP
+If you use the +\fIcommand\fP parameter,
+then after the first file is loaded
+\fIcommand\fP is executed as an EX command.
+A typical example would be "celvis +237 foo",
+which would cause \fIcelvis\fP to start editing foo and
+then move directly to line 237.
+.SH FILES
+.IP /tmp/elv*
+During editing,
+\fIcelvis\fP stores text in a temporary file.
+For UNIX, this file will usually be stored in the /tmp directory,
+and the first three characters will be "elv".
+For other systems, the temporary files may be stored someplace else;
+see the version-specific section of the documentation.
+.IP tags
+This is the database used by the \fI:tags\fP command and the \fB-t\fP option.
+It is usually created by the \fIctags(1)\fP program.
+.IP ".exrc or elvis.rc"
+On UNIX-like systems, a file called ".exrc" in your home directory
+is executed as a series of \fIex\fR commands.
+A file by the same name may be executed in the current directory, too.
+On non-UNIX systems, ".exrc" is usually an invalid file name;
+there, the initialization file is called "elvis.rc" instead.
+.SH "SEE ALSO"
+ctags(1), ref(1), virec(1), cxterm(1)
+.PP
+\fIElvis - A Clone of Vi/Ex\fP, the complete \fIelvis\fP documentation.
+.SH BUGS
+There is no LISP support.
+Certain other features are missing, too.
+.PP
+Auto-indent mode is not quite compatible with the real vi.
+Among other things, 0^D and ^^D don't do what you might expect.
+.PP
+Long lines are displayed differently.
+The real vi wraps long lines onto multiple rows of the screen,
+but \fIcelvis\fP scrolls sideways.
+.SH AUTHOR
+.nf
+Steve Kirkendall
+kirkenda@cs.pdx.edu
+\&...uunet!tektronix!psueea!eecs!kirkenda
+.fi
+.PP
+Many other people have worked to port \fIelvis\fP to various operating systems.
+To see who deserves credit, run the \fI:version\fP command
+from within \fIcelvis\fP,
+or look in the system-specific section of the complete documentation.
+.PP
+The Chinese version, \fIcelvis\fP, is developed by Man-Chi Pong
+(now with the Hong Kong University of Science and Technology, HK.
+E-mail: mcpong@uxmail.usthk.hk)
+and Yongguang Zhang
+(Purdue University, e-mail: ygz@cs.purdue.edu).
