@@ -14,19 +14,21 @@ MASTER_SITES=	http://web.uni-svishtov.bg/netqc/
 MAINTAINER=	rvasilev@uni-svishtov.bg
 COMMENT=	Network Monitoring System based on Net-Snmp
 
-LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client \
-		snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
+LIB_DEPENDS=	snmp.4:${PORTSDIR}/net-mgmt/net-snmp4
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_MYSQL=	yes
+DEFAULT_MYSQL_VER=	323
+WANT_MYSQL_VER=		323
+USE_REINPLACE=	yes
 MAN1=		netqc.1
 DOCFILES=	COPYING README
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=		"Does not compile due to varargs.h being deprecated"
-.endif
+post-patch:
+	${REINPLACE_CMD} -e "s,varargs.h,stdarg.h," ${WRKSRC}/poll.c
 
 post-install:
 		${INSTALL_DATA} ${WRKSRC}/conf ${PREFIX}/etc/netqc.conf.sample
