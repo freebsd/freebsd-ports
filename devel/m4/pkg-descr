@@ -1,6 +1,3 @@
-GNU `m4'
-********
-
    GNU `m4' is an implementation of the traditional UNIX macro
 processor.  It is mostly SVR4 compatible, although it has some
 extensions (for example, handling more than 9 positional parameters to
@@ -24,4 +21,3 @@ for changing the syntax for what is a "word" in `m4'.  You should use:
 if you want this feature compiled in.  The current implementation slows
 down `m4' considerably and is hardly acceptable.  So, it might go away,
 do not count on it yet.
-
