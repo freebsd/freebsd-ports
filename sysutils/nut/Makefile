@@ -10,7 +10,7 @@ PORTVERSION=	0.45.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.exploits.org/nut/release/
 
-MAINTAINER=	jeh@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 .if defined(CGI)
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
