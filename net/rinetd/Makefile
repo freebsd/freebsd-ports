@@ -17,13 +17,23 @@ COMMENT=	A simple TCP port redirector
 WRKSRC=		${WRKDIR}/rinetd/
 
 MAN8=		rinetd.8
-PORTDOCS=	index.html README
-PLIST_FILES=	sbin/rinetd
+PORTDOCS=	index.html
+PLIST_FILES=	etc/rc.d/rinetd.sh sbin/rinetd
+
+
+USE_RC_SUBR=	yes
+RC_SCRIPTS_SUB= PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
+
+post-patch:
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/rinetd.sh > ${WRKDIR}/rinetd.sh
 
 post-install:
+	${INSTALL_SCRIPT} -m 751 ${WRKDIR}/rinetd.sh ${PREFIX}/etc/rc.d/rinetd.sh
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} ; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
