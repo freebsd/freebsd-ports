@@ -4,16 +4,15 @@ bin/monitest
 @unexec if cmp -s %D/etc/ggi/libggi.conf %D/etc/ggi/libggi.conf.dist; then rm -f %D/etc/ggi/libggi.conf; fi
 etc/ggi/libggi.conf.dist
 @exec [ -f %B/libggi.conf ] || cp %B/%f %B/libggi.conf
-@unexec if cmp -s %D/etc/ggi/libggimisc.conf %D/etc/ggi/libggimisc.conf.dist; then rm -f %D/etc/ggi/libggimisc.conf; fi
-etc/ggi/libggimisc.conf.dist
-@exec [ -f %B/libggimisc.conf ] || cp %B/%f %B/libggimisc.conf
-include/ggi/default/genkgi.h
 include/ggi/display/aa.h
 include/ggi/display/directx.h
 include/ggi/display/fbdev.h
 include/ggi/display/file.h
 include/ggi/display/glide.h
+include/ggi/display/ipc.h
+include/ggi/display/kgi.h
 include/ggi/display/lcd823.h
+include/ggi/display/libkgi.h
 include/ggi/display/linvtsw.h
 include/ggi/display/mansync.h
 include/ggi/display/memory.h
@@ -30,6 +29,7 @@ include/ggi/display/vcsa.h
 include/ggi/display/vgl.h
 include/ggi/display/x.h
 include/ggi/display/xcommon.h
+include/ggi/display/xevi.h
 include/ggi/display/xf86dga.h
 include/ggi/display/xlib.h
 include/ggi/ggi-unix.h
@@ -41,10 +41,9 @@ include/ggi/internal/ggi-dl.h
 include/ggi/internal/ggidlinit.h
 include/ggi/internal/ggilibinit.h
 include/ggi/internal/internal.h
-include/ggi/internal/misc_int.h
 include/ggi/internal/plat.h
 include/ggi/internal/structs.h
-include/ggi/misc.h
+include/ggi/ll.h
 include/ggi/types.h
 lib/ggi/default/color.la
 lib/ggi/default/color.so
@@ -80,12 +79,12 @@ lib/ggi/default/text_32.la
 lib/ggi/default/text_32.so
 lib/ggi/display/X.la
 lib/ggi/display/X.so
-lib/ggi/display/X_misc.la
-lib/ggi/display/X_misc.so
-lib/ggi/display/Xlib.la
-lib/ggi/display/Xlib.so
 %%WITH_AALIB%%lib/ggi/display/aa.la
 %%WITH_AALIB%%lib/ggi/display/aa.so
+lib/ggi/display/file.la
+lib/ggi/display/file.so
+lib/ggi/display/ipc.la
+lib/ggi/display/ipc.so
 lib/ggi/display/mansync.la
 lib/ggi/display/mansync.so
 lib/ggi/display/memory.la
@@ -100,8 +99,6 @@ lib/ggi/display/sub.la
 lib/ggi/display/sub.so
 %%WITH_SVGALIB%%lib/ggi/display/svgalib.la
 %%WITH_SVGALIB%%lib/ggi/display/svgalib.so
-%%WITH_SVGALIB%%lib/ggi/display/svgalib_misc.la
-%%WITH_SVGALIB%%lib/ggi/display/svgalib_misc.so
 lib/ggi/display/tele.la
 lib/ggi/display/tele.so
 lib/ggi/display/terminfo.la
@@ -117,10 +114,6 @@ lib/ggi/display/vgl.so
 lib/libggi.la
 lib/libggi.so
 lib/libggi.so.2
-lib/libggimisc.la
-lib/libggimisc.so
-lib/libggimisc.so.2
-@dirrm include/ggi/default
 @dirrm include/ggi/display
-@dirrm lib/ggi/default
 @dirrm lib/ggi/display
+@dirrm lib/ggi/default
