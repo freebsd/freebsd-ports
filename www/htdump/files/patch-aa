@@ -1,0 +1,39 @@
+--- Makefile.orig	Tue Dec 19 16:26:47 2000
++++ Makefile	Wed Feb 21 00:33:15 2001
+@@ -5,10 +5,11 @@
+ #
+ #
+ 
+-CFLAGS	= -O4 -m486 -Wall #-funsigned-char -Wshadow -Wmissing-prototypes -Wmissing-declarations -Winline
++CFLAGS	= -O4 -Wall -I${PREFIX}/include #-funsigned-char -Wshadow -Wmissing-prototypes -Wmissing-declarations -Winline
+ PROGS	= htdump
+ LFLAGS	= -s #-static
+ CC	= cc
++LDFLAGS	+= -L${PREFIX}/lib
+ 
+ # Nothing should have to change beneath this line
+ 
+@@ -22,19 +23,19 @@
+ 
+ htdump:		$(OBJS) socket.o
+ 		rm -f htdump
+-		$(CC) $(LFLAGS) -o htdump $(OBJS) socket.o
++		$(CC) $(LFLAGS) -o htdump $(OBJS) socket.o ${LDFLAGS} -lgnugetopt
+ 
+ ssl:		$(OBJS) socket-ssl.o
+ 		rm -f htdump
+-		$(CC) $(LFLAGS) -o htdump $(OBJS) socket-ssl.o -lssl -lcrypto -L/usr/local/ssl/lib
++		$(CC) $(LFLAGS) -o htdump $(OBJS) socket-ssl.o ${LDFLAGS} -lssl -lcrypto -lgnugetopt
+ 
+-$(OBJS):	%.o: %.c $(HDRS)
++$(OBJS):	$(HDRS)
+ 
+ socket.o:	socket.c $(HDRS)
+ 		$(CC) $(CFLAGS)   -c socket.c
+ 
+ socket-ssl.o:	socket.c socket-ssl.c $(HDRS)
+-		$(CC) $(CFLAGS)   -c socket-ssl.c -I /usr/local/ssl/include
++		$(CC) $(CFLAGS)   -c socket-ssl.c
+ 
+ install:	$(PROGS)
+ 		cp htdump /usr/local/bin

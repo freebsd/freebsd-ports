@@ -63,6 +63,7 @@
     SUBDIR += gtkhtml
     SUBDIR += harvest
     SUBDIR += hotjava
+    SUBDIR += htdump
     SUBDIR += htmlpp
     SUBDIR += http-analyze
     SUBDIR += http_load
