@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	vmware3
-PORTVERSION=	3.2.1-2242
+PORTVERSION=	3.2.1.2242
 CATEGORIES=	emulators linux
 MASTER_SITES=	http://www4.vmware.com/software/ \
 		${FREEBSD_MODULE_SITES} \
 		${VMWARE_MIRROR_SITES}
-DISTFILES=	VMware-workstation-${PORTVERSION}${EXTRACT_SUFX}:vmware \
-		vmmon-only-3.2.1-20031009${EXTRACT_SUFX}:patch \
-		vmnet-only-3.2.1-20030412${EXTRACT_SUFX}:patch
+DISTFILES=	VMware-workstation-${PORTVERSION:R}-${PORTVERSION:E}${EXTRACT_SUFX}:vmware \
+		vmmon-only-${PORTVERSION:R}-20031009${EXTRACT_SUFX}:patch \
+		vmnet-only-${PORTVERSION:R}-20030412${EXTRACT_SUFX}:patch
 
 # Feel free to post your questions/reports/suggestions on this port to
 # freebsd-emulation mailing list with the following maintainer address CC'ed.
