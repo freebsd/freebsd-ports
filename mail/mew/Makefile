@@ -42,7 +42,7 @@ PATCHDIR=	${.CURDIR}/../mew/patches
 SCRIPTDIR=	${.CURDIR}/../mew/scripts
 FILESDIR=	${.CURDIR}/../mew/files
 
-EMACS_PORT_NAME?=	emacs19
+EMACS_PORT_NAME?=	emacs
 SAMPLEFILES=		Addrbook
 SAMPLEDOTEMACS=		dot.emacs.el
 PORTDOCS=		00changes 00copyright 00copyright.jis 00diff 00readme
@@ -62,7 +62,7 @@ SAMPLEDIR=		${PREFIX}/share/examples/mew
 PORTDOCDIR=		${PREFIX}/share/doc/mew
 COMMENT_TEXT=		Message interface to Emacs Window for ${EMACS_PORT_NAME}
 
-.if (${EMACS_PORT_NAME} == "emacs19")
+.if (${EMACS_PORT_NAME} == "emacs")
 BUILD_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/emacs
 EMACS_NAME=		emacs
 EMACS_VER=		19.34
@@ -86,7 +86,7 @@ EMACS_LIBDIR_WITH_VER=	${EMACS_LIBDIR}/${EMACS_VER}
 EMACS_ETCDIR=		${EMACS_LIBDIR}/etc
 EMACS_LISPDIR=		${EMACS_LIBDIR}/site-lisp
 EMACS_INFODIR=		info
-.elif (${EMACS_PORT_NAME} == "mule19")
+.elif (${EMACS_PORT_NAME} == "mule")
 BUILD_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/mule
 EMACS_NAME=		mule
 EMACS_VER=		19.34
@@ -99,7 +99,7 @@ EMACS_LISPDIR=		${EMACS_LIBDIR}/site-lisp
 EMACS_INFODIR=		${EMACS_LIBDIR}/info
 EMACS_SITELISPDIR=	${EMACS_LIBDIR}/site-lisp
 SITE_STARTUP_FILE=	mew-startup.el
-.elif (${EMACS_PORT_NAME} == "xemacs19")
+.elif (${EMACS_PORT_NAME} == "xemacs")
 BUILD_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/xemacs
 EMACS_NAME=		xemacs
 EMACS_VER=		19.16
@@ -170,7 +170,7 @@ XEMACS_VER_OVER20=	yes
 INST_TARGET_LIST=	install install-info
 REQUIRE=		(require \'${SITE_STARTUP_FILE:S/^mew-/&${EMACS_PORT_NAME}-/:S/.el$//})
 .endif
-.if (${EMACS_PORT_NAME} == "emacs20") || (${EMACS_PORT_NAME} == "mule19") || \
+.if (${EMACS_PORT_NAME} == "emacs20") || (${EMACS_PORT_NAME} == "mule") || \
     (${EMACS_PORT_NAME} == "xemacs21-mule")
 INST_TARGET_LIST+=	install-jinfo
 .endif
@@ -209,7 +209,7 @@ post-install:
 .endif
 .if (${EMACS_NAME} != "xemacs") || ${EMACS_MAJOR_VER} <= 20
 	@install-info ${WRKSRC}/info/mew.info ${INFODIR}/dir
-.if (${EMACS_PORT_NAME} == "emacs20") || (${EMACS_PORT_NAME} == "mule19")
+.if (${EMACS_PORT_NAME} == "emacs20") || (${EMACS_PORT_NAME} == "mule")
 	@install-info ${WRKSRC}/info/mew.jis.info ${INFODIR}/dir
 .endif
 .endif

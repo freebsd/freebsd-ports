@@ -5,6 +5,6 @@
 # $FreeBSD$
 #
 
-EMACS_PORT_NAME=	xemacs19
+EMACS_PORT_NAME=	xemacs
 
 .include "${.CURDIR}/../mew/Makefile"
