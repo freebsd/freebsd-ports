@@ -1,6 +1,20 @@
---- Makefile	Wed Aug 13 20:37:02 1997
-+++ /home/andy/tmp/wrk/Makefile	Sun Apr 12 19:14:29 1998
-@@ -62,7 +62,7 @@
+--- Makefile.orig	Sun Jul  5 03:30:26 1998
++++ Makefile	Sun May 30 21:12:31 1999
+@@ -53,16 +53,16 @@
+ endif
+ 
+ # DEC Alpha at USIT
+-ifeq ($(HOSTTYPE),alpha)
+-INCDIR		= -I$$HOME/include -I/usr/include/X11 \
+-		  -I/usr/local/X11R5/include
+-LIBDIR		= -L$$HOME/lib/$$HOSTTYPE -L/usr/lib/X11 -L/usr/local/X11R5/lib
+-endif
++#ifeq ($(HOSTTYPE),alpha)
++#INCDIR		= -I$$HOME/include -I/usr/include/X11 \
++#		  -I/usr/local/X11R5/include
++#LIBDIR		= -L$$HOME/lib/$$HOSTTYPE -L/usr/lib/X11 -L/usr/local/X11R5/lib
++#endif
+ 
  ###########################################################################
  
  # Where do you want to install the program and the highscore file?

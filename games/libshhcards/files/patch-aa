@@ -1,7 +1,7 @@
---- Makefile.orig	Sun Mar 23 03:02:53 1997
-+++ Makefile	Wed Sep 30 23:28:35 1998
+--- Makefile.orig	Sun Jul  5 11:52:26 1998
++++ Makefile	Sun May 30 21:07:36 1999
 @@ -1,14 +1,17 @@
- # $Id: patch-aa,v 1.4 1999/01/10 17:21:34 simokawa Exp $
+ # $Id: Makefile,v 1.4 1998/07/05 16:52:26 sverrehu Exp $
  DIST		= shhcards
  VERMAJ		= 1
 -VERMIN		= 0
@@ -30,6 +30,21 @@
 -OPTIM		= -O2
 +#CC		= gcc
 +OPTIM		= $(CFLAGS)
+ 
+ ###########################################################################
+ 
+@@ -68,10 +71,10 @@
+ endif
+ 
+ # Alpha at USIT
+-ifeq ($(HOSTTYPE),alpha)
+-INCDIR		= -I. -I/usr/include/X11 -I/usr/local/X11R5/include
+-LIBDIR		= -L. -L/usr/lib/X11 -L/usr/local/X11R5/lib
+-endif
++#ifeq ($(HOSTTYPE),alpha)
++#INCDIR		= -I. -I/usr/include/X11 -I/usr/local/X11R5/include
++#LIBDIR		= -L. -L/usr/lib/X11 -L/usr/local/X11R5/lib
++#endif
  
  ###########################################################################
  
