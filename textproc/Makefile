@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.53 1999/05/26 08:03:27 tg Exp $
+# $Id: Makefile,v 1.54 1999/06/06 17:17:50 steve Exp $
 #
 
     SUBDIR += agrep
@@ -55,6 +55,7 @@
     SUBDIR += wdiff
     SUBDIR += word2x
     SUBDIR += xml4j
+    SUBDIR += xt
     SUBDIR += yodl
 
 .include <bsd.port.subdir.mk>
