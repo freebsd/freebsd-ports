@@ -1,8 +1,12 @@
-*** fig.h.orig	Wed Nov 23 02:13:41 1994
---- fig.h	Wed Nov 23 02:19:18 1994
+*** fig.h.orig	Wed Jun  1 23:35:23 1994
+--- fig.h	Wed Jan  4 20:58:06 1995
 ***************
-*** 223,225 ****
+*** 228,234 ****
+  
+  extern int	errno;
   extern int	sys_nerr;
 - extern char    *sys_errlist[];
+  extern char    *mktemp();
   
---- 223,224 ----
+  #include <math.h>	/* for sin(), cos() etc */
+--- 228,233 ----
