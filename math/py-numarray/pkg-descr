@@ -6,4 +6,4 @@ Numeric though we hope it will be before long. It is not fully
 backwards compatible with Numeric, particularly with regard to the
 C API.
 
-WWW: http://stsdas.stsci.edu/numarray
+WWW: http://www.stsci.edu/resources/software_hardware/numarray
