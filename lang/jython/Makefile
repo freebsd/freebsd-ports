@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jython
-PORTVERSION=	2.1.b2
+PORTVERSION=	2.1
 CATEGORIES=	lang python java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= ${PORTNAME}
@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.class
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	perky@python.or.kr
+MAINTAINER=	perky@fallin.lv
 
 BUILD_DEPENDS=	${JAVA}:${PORTSDIR}/java/javavmwrapper
 RUN_DEPENDS=	${JAVA}:${PORTSDIR}/java/javavmwrapper
@@ -33,7 +33,7 @@ do-install:
 	cd ${JYTHON_PREFIX} && ./jython Lib/compileall.py Lib/
 
 	# symbolic links for convenience
-	-${LN} -s ${JYTHON_PREFIX}/jython ${PREFIX}/bin/jython
-	-${LN} -s ${JYTHON_PREFIX}/registry ${PREFIX}/etc/jython.reg
+	-${LN} -sf ${JYTHON_PREFIX}/jython ${PREFIX}/bin/jython
+	-${LN} -sf ${JYTHON_PREFIX}/registry ${PREFIX}/etc/jython.reg
 
 .include <bsd.port.mk>
