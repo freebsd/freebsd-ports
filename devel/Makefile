@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.27 1996/08/23 06:49:39 tg Exp $
+# $Id: Makefile,v 1.28 1996/09/11 06:11:21 asami Exp $
 #
 
     SUBDIR += SWIG
@@ -8,6 +8,7 @@
     SUBDIR += dmake
     SUBDIR += flex
     SUBDIR += gcc11
+    SUBDIR += gdb
     SUBDIR += gmake
     SUBDIR += libdlmalloc
     SUBDIR += libmalloc
