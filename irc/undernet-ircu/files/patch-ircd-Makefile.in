@@ -1,0 +1,20 @@
+--- ircd/Makefile.in	Sat Nov  1 05:19:09 2003
++++ ircd/Makefile.in	Wed Feb 18 01:45:08 2004
+@@ -273,7 +273,7 @@
+ 	  ${LN_S} ircd.`cat /tmp/ircd.tag` ${SYMLINK}; )
+ 	@${RM} /tmp/ircd.tag
+ 	${INSTALL} -s -m 700 -o ${IRCDOWN} -g ${IRCDGRP} chkconf ${BINDIR}
+-	${INSTALL} -m 600 -o ${IRCDOWN} -g ${IRCDGRP} ${top_srcdir}/doc/example.conf ${DPATH}
++	${INSTALL} -m 600 -o ${IRCDOWN} -g ${IRCDGRP} ${top_srcdir}/doc/example.conf ${DPATH}/ircd.conf.example
+ # 	( cd ${DPATH}; \
+ # 	  ${TOUCH} ${MPATH}; \
+ # 	  ${TOUCH} ${RPATH}; \
+@@ -291,7 +291,7 @@
+ 	@echo "Installing new ircd as ${BINDIR}/ircd :"
+ 	${INSTALL} -m ${IRCDMODE} -o ${IRCDOWN} -g ${IRCDGRP} ircd ${BINDIR}/ircd
+ 	${INSTALL} -s -m 700 -o ${IRCDOWN} -g ${IRCDGRP} chkconf ${BINDIR}
+-	${INSTALL} -m 600 -o ${IRCDOWN} -g ${IRCDGRP} ${top_srcdir}/doc/example.conf ${DPATH}
++	${INSTALL} -m 600 -o ${IRCDOWN} -g ${IRCDGRP} ${top_srcdir}/doc/example.conf ${DPATH}/ircd.conf.example
+ # 	( cd ${DPATH}; \
+ # 	  ${TOUCH} ${MPATH}; \
+ # 	  ${TOUCH} ${RPATH}; \
