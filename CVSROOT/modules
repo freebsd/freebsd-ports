@@ -2340,6 +2340,7 @@ gocr		ports/graphics/gocr
 gofish		ports/net/gofish
 goggles		ports/multimedia/goggles
 gogo		ports/audio/gogo
+gogo-petit	ports/audio/gogo-petit
 gok		ports/sysutils/gok
 golddig		ports/games/golddig
 golded+		ports/news/golded+
