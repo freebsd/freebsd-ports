@@ -1,6 +1,14 @@
 --- Imakefile.orig	Sun Jan  9 02:23:15 2000
-+++ Imakefile	Wed Nov  1 12:13:37 2000
-@@ -160,13 +160,13 @@
++++ Imakefile	Sun Jan 21 15:45:27 2001
+@@ -28,7 +28,6 @@
+   OSDEPDEF = -DUSE_OSS
+   OSDEPINC = -I/usr/local/lib/oss/include
+ ****/
+-OSDEPLIB = -lxpg4
+ CDROM_S  = cdrom.FreeBSD
+ AUDIO_IO = audioIO_oss
+ JOY_S    = joystick_dmy
+@@ -160,13 +159,13 @@
  /*
   * include / library / definition
   */
@@ -16,7 +24,7 @@
  EXTRA_DEFINES   = $(OSDEPDEF)
  
  /*
-@@ -196,4 +196,4 @@
+@@ -196,4 +195,4 @@
  /*
   * install program
   */
