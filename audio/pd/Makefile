@@ -27,8 +27,7 @@ PATCH_WRKSRC=	${WRKSRC}/..
 PLIST=		${WRKDIR}/pkg-plist
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_AUTOCONF=	yes
-WANT_AUTOCONF_VER=	257
+USE_AUTOCONF_VER=	257
 WRKSRC=		${WRKDIR}/pd-0.37-1test1/src
 
 .include <bsd.port.pre.mk>

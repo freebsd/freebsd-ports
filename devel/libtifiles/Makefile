@@ -18,7 +18,7 @@ COMMENT=	TI calculator file types library
 BUILD_DEPENDS=  pkg-config:${PORTSDIR}/devel/pkgconfig
 RUN_DEPENDS=    pkg-config:${PORTSDIR}/devel/pkgconfig
 
-WANT_AUTOMAKE_VER=	15
+USE_AUTOMAKE_VER=	15
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_LIBTOOL=	yes
