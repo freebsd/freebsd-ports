@@ -79,6 +79,7 @@
     SUBDIR += jgraph
     SUBDIR += jgv
     SUBDIR += jpeg
+    SUBDIR += jslice
     SUBDIR += juno-2
     SUBDIR += kdc2tiff
     SUBDIR += kdegraphics11
