@@ -23,4 +23,7 @@ MD5_FILE=	${.CURDIR}/distinfo
 BROKEN=		"/usr/include/langinfo.h needed; 4-stable after Mar 13 2002 and -current"
 .endif
 
+post-patch:
+	@${PERL} -pi -e 's,UTF8,UTF-8,g' ${WRKSRC}/src/util.c
+
 .include "${MASTERDIR}/Makefile"
