@@ -6,9 +6,9 @@
 -// #define USE_BIG_ENDIAN   1
 +
 +#include <machine/endian.h>
-+#if _BYTE_ORDER == _BIG_ENDIAN
++#if BYTE_ORDER == BIG_ENDIAN
 +#	define USE_BIG_ENDIAN   1
-+#elif _BYTE_ORDER != _LITTLE_ENDIAN
++#elif BYTE_ORDER != LITTLE_ENDIAN
 +#	error "Unexpected BYTE_ORDER on this architecture"
 +#endif
  
