@@ -1,12 +1,12 @@
 # New ports collection makefile for:    Proc-ProcessTable
 # Date created:                         Tue Jun 26 12:46:19 EDT 2001
 # Whom:                                 Michael Johnson <ahze@ahze.net>
-# 
+#
 # $FreeBSD$
 #
 
 PORTNAME=	Proc-ProcessTable
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Proc
