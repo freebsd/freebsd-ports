@@ -28,9 +28,6 @@ EXAMPLE_FILES=	\
 		reverse.py \
 		xfr.py
 
-poast-extract:
-	@${CHMOD} -Rf u+w ${WRKSRC}
-
 post-install:
 # docs
 .ifndef(NOPORTDOCS)
