@@ -10,10 +10,10 @@
 # PATCH INFO:	(note: patches had to be regenerated, the patch files in
 #		patches/ are not exactly the same as the ftp source)
 #
-#	patches/patch-aa	
+#	patches/patch-aa
 #	    patch to compile under FreeBSD (local)
 #
-#	patches/patch-ab	
+#	patches/patch-ab
 #	    ftp://ftp.crocodile.org/pub/jikes/divide0.patch
 #
 #	patches/patch-ac
@@ -28,7 +28,7 @@
 #	patches/patch-ae
 #	    ftp://ftp.crocodile.org/pub/jikes/jikes.makedepend.patch
 #
-# $Id: Makefile,v 1.3 1998/12/16 00:12:24 steve Exp $
+# $Id: Makefile,v 1.4 1998/12/16 06:03:37 dillon Exp $
 #
 
 DISTNAME=	jikes-0.41
