@@ -1,0 +1,14 @@
+This program generates a graph (in PNG format) showing the revisions,
+tags, and branching of a file in a CVS or RCS repository.  Example:
+
+cvsgraph -r /home/ncvs -m ports/devel/cvsgraph -o test.png pkg-descr,v
+
+It can also be used with cvsweb.
+
+The sorting is buggy:  revision 1.2 appears between 1.19 and 1.20,
+for instance.
+
+WWW:  http://www.akhphd.au.dk/~bertho/cvsgraph/
+
+Trevor Johnson
+trevor@FreeBSD.org
