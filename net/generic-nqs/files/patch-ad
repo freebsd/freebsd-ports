@@ -1,0 +1,31 @@
+--- Source-Tree/SETUP/all-systems/General.inst.orig	Sun Nov 14 11:52:32 1999
++++ Source-Tree/SETUP/all-systems/General.inst	Sun Nov 14 11:56:57 1999
+@@ -46,17 +46,21 @@
+   Boolean "  Do you want nmapmgr to automatically allocate a machine ID?" nmapmgr_allocate "y"
+   echo
+   if [ "$nmapmgr_allocate" = "y" ]; then
+-    echo "  Okay.  I need to know what the fully-qualified hostname of this machine"
+-    echo "  is.  For example, my workstation is called 'lanfear'.  It's fully-"
+-    echo "  qualified hostname is 'lanfear.shef.ac.uk'."
+-    echo
+-    String "  What is your machine's full name?" nmapmgr_fqdn ""
++    fqdn=`hostname`
++    short=`hostname | cut -d. -f 1`
++    if [ $fqdn = $short ]; then
++      echo "  Okay.  I need to know what the fully-qualified hostname of this"
++      echo "  machine is. For example, my workstation is called 'zen'."
++      echo "  It's fully-qualified hostname is 'zen.my.domain'."
++      echo
++      String "  What is your machine's full name?" fqdn ""
++    fi
+     echo
+     echo "  Okay.  I will now run nmapmgr; when the nmapmgr prompt appears, please"
+     echo "  type in the commands below."
+     echo
+-    echo "      add host `hostname`"
+-    echo "      add alias $nmapmgr_fqdn `hostname`"
++    echo "      add host $fqdn"
++    echo "      add alias $short $fqdn"
+     echo "      list"
+     echo "      exit"
+   else

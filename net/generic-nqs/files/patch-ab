@@ -1,21 +1,20 @@
---- Source-Tree/nqsdaemon/all-systems/nqs_reqser.c.orig	Wed Sep 11 05:32:26 1996
-+++ Source-Tree/nqsdaemon/all-systems/nqs_reqser.c	Sat May  2 11:09:26 1998
-@@ -1746,7 +1746,7 @@
-     char    *cp;
-     
-     environment_file = fopen("/etc/environment",  "r");
--    if ( environment_file != (FILE *) 0 ) {
-+    if ( environment_file > (FILE *) 0 ) {
- 	while ( (fgets (env_line, sizeof(env_line), environment_file )
- 		!= (char *) 0) ) {
- 	    if (env_line[0] == '#') continue;
-@@ -1758,8 +1758,8 @@
- 		 return (the_path); 
- 	    }   
- 	}
-+    	fclose ( environment_file );
-     }
--    fclose ( environment_file );
-     /*
-      * The file was not found, or the path was not in it.
-      */
+--- SETUPDir/GSetup-Scripts/GPort-Scripts/1020-Is-gcc.sh.orig	Sat Nov 13 19:32:02 1999
++++ SETUPDir/GSetup-Scripts/GPort-Scripts/1020-Is-gcc.sh	Sat Nov 13 19:32:36 1999
+@@ -72,7 +72,7 @@
+ 		F_ECHO_LN     "egcs"
+ 
+ 		F_DEFINE_STRING  GPORT_CC_FLAGS_DEBUG "-Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations"
+-		F_DEFINE_STRING  GPORT_CC_FLAGS_OPTIMISE "-O6 -fno-strength-reduce"
++		F_DEFINE_STRING  GPORT_CC_FLAGS_OPTIMISE "-O2"
+ 		F_DEFINE_STRING  GPORT_CC_FLAGS_COMMON "-Wall"
+ 	elif [ "$GPORT_HAS_GCC" = 1 ]; then
+ 		F_TEST_TYPE BLANK
+@@ -80,7 +80,7 @@
+ 		F_ECHO_LN     "gcc"
+ 
+ 		F_DEFINE_STRING  GPORT_CC_FLAGS_DEBUG "-Wpointer-arith -Wbad-function-cast -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations"
+-		F_DEFINE_STRING  GPORT_CC_FLAGS_OPTIMISE "-O6 -fno-strength-reduce"
++		F_DEFINE_STRING  GPORT_CC_FLAGS_OPTIMISE "-O2"
+ 		F_DEFINE_STRING  GPORT_CC_FLAGS_COMMON "-Wall"
+ 	fi
+ }
