@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lout
-PORTVERSION=	3.29
-PORTREVISION=	1
+PORTVERSION=	3.30
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.it.usyd.edu.au/jeff/lout/
@@ -19,12 +18,13 @@ COMMENT=	LaTeX like document creation system with PostScript/PDF output
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	lout prg2lout
+
+MAN1=		lout.1 prg2lout.1
+
+.if defined(NOPORTDOCS)
 INSTALL_TARGET=	install installman
-
-.if !defined(NOPORTDOCS)
-INSTALL_TARGET+=installdoc
+.else
+INSTALL_TARGET=	install installman installdoc
 .endif
-
-MAN1=		prg2lout.1 lout.1
 
 .include <bsd.port.mk>

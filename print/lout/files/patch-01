@@ -1,8 +1,18 @@
---- makefile.orig	Fri Dec 20 00:12:05 2002
-+++ makefile	Fri May  2 14:18:44 2003
-@@ -281,10 +281,10 @@
- # DEBUGGING = 1
- # TRACING = -g
+--- makefile.orig	Wed Oct 27 17:59:37 2004
++++ makefile	Tue Nov  2 23:17:17 2004
+@@ -253,16 +253,16 @@
+ USESTAT = 1
+ SAFEDFT = 0
+ 
+-# DEBUGGING = 0
+-# TRACING =
++DEBUGGING = 0
++TRACING =
+ 
+-DEBUGGING = 1
+-TRACING = -g
++#DEBUGGING = 1
++#TRACING = -g
  
 -BINDIR	= /home/jeff/bin
 -LIBDIR	= /home/jeff/lout.lib
@@ -15,7 +25,7 @@
  
  LIBFONT = font
  LIBMAPS = maps
-@@ -296,23 +296,23 @@
+@@ -274,23 +274,23 @@
  CHARIN	= 1
  CHAROUT	= 0
  
@@ -45,7 +55,7 @@
  	  -DOS_DOS=$(OSDOS)					\
  	  -DOS_MAC=$(OSMAC)					\
  	  -DDB_FIX=$(DBFIX)					\
-@@ -358,42 +358,41 @@
+@@ -336,42 +336,41 @@
  install: lout prg2lout
  	@echo ""
  	@echo "(a) Installing lout and prg2lout binaries into BINDIR $(BINDIR)"
@@ -98,7 +108,7 @@
  	@echo ""
  	@echo "(c) Initializing run (should be silent, no errors expected)"
  	$(BINDIR)/lout -x -s $(LIBDIR)/$(LIBINCL)/init
-@@ -401,6 +400,7 @@
+@@ -379,6 +378,7 @@
  	@echo "(d) Changing mode of files just created by initializing run"
  	chmod 644 $(LIBDIR)/$(LIBDATA)/*
  	chmod 644 $(LIBDIR)/$(LIBHYPH)/*
@@ -106,7 +116,7 @@
  
  installman:
  	@echo ""
-@@ -409,23 +409,27 @@
+@@ -387,23 +387,27 @@
  	    -e "s@<DOCDIR>@$(DOCDIR)@" -e "s@<MANDIR>@$(MANDIR)@"	\
  	man/lout.1 > $(MANDIR)/lout.1
  	chmod 644 $(MANDIR)/lout.1
@@ -137,7 +147,7 @@
  	chmod 755 $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES
  	cp locale/msgs.fr $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES/msgs.$(LOC_FR)
  	gencat $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES/errors.$(LOC_FR)	\
-@@ -435,9 +439,9 @@
+@@ -413,9 +417,9 @@
  installde:
  	@echo ""
  	@echo "Putting German error messages into $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)"

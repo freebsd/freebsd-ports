@@ -1,5 +1,5 @@
-bin/prg2lout
 bin/lout
+bin/prg2lout
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/design/README
 %%PORTDOCS%%%%DOCSDIR%%/design/all
@@ -73,6 +73,7 @@ bin/lout
 %%PORTDOCS%%%%DOCSDIR%%/expert/pre_head
 %%PORTDOCS%%%%DOCSDIR%%/expert/pre_hexp
 %%PORTDOCS%%%%DOCSDIR%%/expert/pre_hlim
+%%PORTDOCS%%%%DOCSDIR%%/expert/pre_hmir
 %%PORTDOCS%%%%DOCSDIR%%/expert/pre_hsca
 %%PORTDOCS%%%%DOCSDIR%%/expert/pre_hshi
 %%PORTDOCS%%%%DOCSDIR%%/expert/pre_incg
@@ -144,6 +145,7 @@ bin/lout
 %%PORTDOCS%%%%DOCSDIR%%/user/bgr_boxs
 %%PORTDOCS%%%%DOCSDIR%%/user/bgr_colo
 %%PORTDOCS%%%%DOCSDIR%%/user/bgr_incl
+%%PORTDOCS%%%%DOCSDIR%%/user/bgr_mirr
 %%PORTDOCS%%%%DOCSDIR%%/user/bgr_outl
 %%PORTDOCS%%%%DOCSDIR%%/user/bgr_rota
 %%PORTDOCS%%%%DOCSDIR%%/user/bgr_scal
@@ -449,10 +451,10 @@ bin/lout
 %%DATADIR%%/font/ZC-Rm+
 %%DATADIR%%/font/ZD
 %%DATADIR%%/hyph/README
-%%DATADIR%%/hyph/czech.lh
-%%DATADIR%%/hyph/czech.lp
 %%DATADIR%%/hyph/croatian.lh
 %%DATADIR%%/hyph/croatian.lp
+%%DATADIR%%/hyph/czech.lh
+%%DATADIR%%/hyph/czech.lp
 %%DATADIR%%/hyph/danish.lh
 %%DATADIR%%/hyph/danish.lp
 %%DATADIR%%/hyph/dutch.lh
@@ -551,6 +553,8 @@ bin/lout
 %%DATADIR%%/include/rubyf
 %%DATADIR%%/include/russian
 %%DATADIR%%/include/russian.fd
+%%DATADIR%%/include/save_graphf
+%%DATADIR%%/include/save_graphf.lpg
 %%DATADIR%%/include/slides
 %%DATADIR%%/include/slidesf
 %%DATADIR%%/include/tab
@@ -559,18 +563,21 @@ bin/lout
 %%DATADIR%%/include/tbl
 %%DATADIR%%/include/tblf
 %%DATADIR%%/include/ts
+%%DATADIR%%/include/xind
+%%DATADIR%%/include/xinda
+%%DATADIR%%/include/xindb
 %%DATADIR%%/include/xrgb
 %%DATADIR%%/locale/.place_holder
 %%DATADIR%%/maps/00README
 %%DATADIR%%/maps/Ding.LCM
+%%DATADIR%%/maps/KOI8-R.LCM
 %%DATADIR%%/maps/Latin1.LCM
+%%DATADIR%%/maps/LtKOI8.LCM
 %%DATADIR%%/maps/LtLatin1.LCM
 %%DATADIR%%/maps/LtLatin2.LCM
-%%DATADIR%%/maps/LtKOI8.LCM
 %%DATADIR%%/maps/Std.LCM
 %%DATADIR%%/maps/Symb.LCM
 %%DATADIR%%/maps/koi8r.LCM
-%%DATADIR%%/maps/KOI8-R.LCM
 %%DATADIR%%/maps/null.LCM
 @dirrm %%DATADIR%%/maps
 @dirrm %%DATADIR%%/locale
