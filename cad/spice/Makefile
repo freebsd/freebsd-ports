@@ -3,7 +3,7 @@
 # Date created:         26 Mar 96
 # Whom:                 Julian Jenkins <kaveman@magna.com.au>
 #
-# $Id: Makefile,v 1.5 1996/11/18 10:34:54 asami Exp $
+# $Id: Makefile,v 1.6 1996/12/23 07:26:16 tg Exp $
 #
 
 DISTNAME=       sp3f4.kit
@@ -11,7 +11,6 @@ PKGNAME=	spice-3f4
 CATEGORIES=	cad
 MASTER_SITES=	ftp://ic.eecs.berkeley.edu/pub/Spice3/
 EXTRACT_SUFX=   .tar.Z
-WRKSRC=		${WRKDIR}
 
 #PATCH_SITES=	ftp://ic.eecs.berkeley.edu/pub/Spice3/3f4patches
 #PATCHFILES=	grid.patch newcoms.patch spsmp.patch
@@ -20,6 +19,7 @@ WRKSRC=		${WRKDIR}
 MAINTAINER=	kaveman@magna.com.au
 
 RESTRICTED=	"export restrictions"
+NO_WRKSUBDIR=	yes
 MAN1=		sconvert.1 nutmeg.1 spice.1
 MAN3=		mfb.3
 MAN5=		mfbcap.5
