@@ -5168,6 +5168,7 @@ p5-DateTime-Calendar-Christian	ports/devel/p5-DateTime-Calendar-Christian
 p5-DateTime-Calendar-Julian	ports/devel/p5-DateTime-Calendar-Julian
 p5-DateTime-Calendar-Mayan	ports/devel/p5-DateTime-Calendar-Mayan
 p5-DateTime-Event-Cron	ports/devel/p5-DateTime-Event-Cron
+p5-DateTime-Event-Easter	ports/devel/p5-DateTime-Event-Easter
 p5-DateTime-LeapSecond	ports/devel/p5-DateTime-LeapSecond
 p5-DateTime-Precise	ports/devel/p5-DateTime-Precise
 p5-DateTime-Set	ports/devel/p5-DateTime-Set
