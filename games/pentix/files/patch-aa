@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Sep 23 17:14:43 2000
-+++ Makefile	Mon Oct  9 23:35:38 2000
+--- Makefile.orig	Sat Sep 23 14:14:43 2000
++++ Makefile	Sat Nov 11 01:42:49 2000
 @@ -4,9 +4,9 @@
  CFLAGS = -O2 -Wall
  LFLAGS = -lncurses 
@@ -13,3 +13,18 @@
  
  PROG = pentix
  DATA = pentix.qtn pentix.res readme.txt
+@@ -23,10 +23,10 @@
+ all: $(INSTALL)
+ 
+ install: $(PROG)
+-	install -c -s -o bin -g bin -m 755 $(PROG) $(BINDIR)
+-	install -d -o bin -g bin -m 755 $(DATDIR)
+-	install -c -o bin -g bin -m 666 $(DATA) $(DATDIR)
+-	install -c -o bin -g bin -m 644 $(MAN1) $(MANDIR)
++	install -c -s -o root -g games -m 2755 $(PROG) $(BINDIR)
++	install -d -o root -g games -m 755 $(DATDIR)
++	install -c -o root -g games -m 664 $(DATA) $(DATDIR)
++	install -c -o root -g games -m 644 $(MAN1) $(MANDIR)
+ 
+ # Cleanup procedure
+ clean:
