@@ -1,0 +1,11 @@
+--- ./book/Imakefile.org	Wed May 12 01:31:48 1999
++++ ./book/Imakefile	Wed May 12 02:03:40 1999
+@@ -36,7 +36,7 @@
+      DEPLIBS = $(DEPXMLIB) $(DEPXTOOLLIB) $(DEPXLIB)
+ 
+ XCOMM required libraries
+-LOCAL_LIBRARIES = $(XMHTMLLIB) $(XMLIB) $(XTOOLLIB) $(XLIB) $(DMALLOCLIB)
++LOCAL_LIBRARIES = $(XMHTMLLIB) $(MOTIFLIB) $(XTOOLLIB) $(XLIB) $(DMALLOCLIB)
+ 
+ SRCS = simple_html.c simple_html2.c autosize_html.c forced_html.c html.c
+ 
