@@ -1,0 +1,25 @@
+--- wolcomp/Makefile.orig	Wed Mar 12 02:53:32 1997
++++ wolcomp/Makefile	Mon Sep 20 07:10:09 1999
+@@ -52,10 +52,11 @@
+   
+ 
+ CHIPMUNKCC = gcc
+-CC = $(CHIPMUNKCC) 
++CC ?= $(CHIPMUNKCC) 
+ 
+ LOCINC = ../psys/include
+-XINCLUDEDIR = .
++XINCLUDEDIR = %%X11BASE%%/include
++XLIBDIR = %%X11BASE%%/lib
+ 
+ ##
+ ## (2) Adding appropriate flags
+@@ -109,7 +110,7 @@
+   
+ 
+ 
+-CFLAGS =  -I$(LOCINC) -I$(XINCLUDEDIR)
++CFLAGS +=  -DBSD -DF_OK -I$(LOCINC) -I$(XINCLUDEDIR) -L$(XLIBDIR)
+ 
+ install : $(OBJS)
+ 	-rm -f wolcomp.a

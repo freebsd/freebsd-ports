@@ -1,0 +1,57 @@
+--- wol/Makefile.orig	Wed Mar 12 02:51:43 1997
++++ wol/Makefile	Mon Sep 20 07:08:14 1999
+@@ -39,7 +39,8 @@
+ ## or some other directory, depending on your installation.
+ ##
+ 
+-XINCLUDEDIR = .
++XINCLUDEDIR = %%X11BASE%%/include
++XLIBDIR = %%X11BASE%%/lib
+ 
+ ##
+ ## If X isn't in the library path (the case for many MachTen and Linux 
+@@ -66,7 +67,7 @@
+ ##
+ ## on some systems, -ldl must be added to the following line
+ 
+-OTHERLIBS= -lm
++OTHERLIBS= -lm -lcompat
+ 
+ 
+ ##
+@@ -97,11 +98,11 @@
+ ##
+ 
+ CHIPMUNKCC = gcc
+-CC = $(CHIPMUNKCC) 
++CC ?= $(CHIPMUNKCC) 
+ 
+-LIBDIR = `pwd`/
++LIBDIR = %%PREFIX%%/share/chipmunk
+ WOLPL = $(LIBDIR)
+-BINDIR = ../bin
++BINDIR = %%PREFIX%%/bin
+ 
+ 
+ ##
+@@ -155,9 +156,9 @@
+ ## in view rule
+ ##
+ 
+-CFLAGS= -I$(LOCINC) -I$(XINCLUDEDIR) -DWOLLIBDIR=\"$(WOLPL)\"
++CFLAGS += -DBSD -DF_OK -I$(LOCINC) -I$(XINCLUDEDIR) -DWOLLIBDIR=\"$(WOLPL)\"
+ 
+-LDFLAGS= $(LIBP2C)  $(LIBX11) $(OTHERLIBS)
++LDFLAGS += $(LIBP2C)  $(LIBX11) $(OTHERLIBS) -L$(XLIBDIR)
+ 
+ OBJ =               	\
+          cell_stuff.o	\
+@@ -198,7 +199,7 @@
+   
+ 
+ install: wol 
+-	cp wol $(BINDIR)
++	install -c -s wol $(BINDIR)
+ 
+ clean:
+ 	-rm -f *.o wol

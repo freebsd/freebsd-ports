@@ -1,0 +1,37 @@
+--- netcmp/Makefile.orig	Wed Mar 12 02:41:59 1997
++++ netcmp/Makefile	Mon Sep 20 06:53:59 1999
+@@ -22,7 +22,7 @@
+ #
+ # netcmp makefile
+ 
+-BINDIR=	../bin
++BINDIR=	%%PREFIX%%/bin
+ 
+ ##
+ ##  (1) Choosing your compiler
+@@ -48,7 +48,7 @@
+ ## For SGI, cc is recommended
+ 
+ CHIPMUNKCC = gcc
+-CC = $(CHIPMUNKCC)
++CC ?= $(CHIPMUNKCC)
+ 
+ ##
+ ## (2) Adding appropriate flags
+@@ -90,13 +90,13 @@
+ ## -ansi
+ ##
+ 
+-CFLAGS = 
++CFLAGS += -DBSD -DF_OK
+ 
+ netcmp:     main.o parser.o datastruct.o compare.o
+-	$(CC)  parser.o datastruct.o compare.o main.o -o netcmp
++	$(CC)  parser.o datastruct.o compare.o main.o -lcompat -o netcmp
+ 
+ install:    netcmp
+-	cp netcmp $(BINDIR)  
++	install -c -s netcmp $(BINDIR)
+ 
+ clean:
+ 	-rm -f *.o netcmp

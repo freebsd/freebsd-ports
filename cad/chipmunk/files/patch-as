@@ -1,0 +1,38 @@
+--- util/spc-tools/ss/Makefile.orig	Wed Mar 12 02:47:27 1997
++++ util/spc-tools/ss/Makefile	Tue Sep 21 03:40:50 1999
+@@ -18,7 +18,7 @@
+ #
+ # ss makefile
+ 
+-BINDIR=	../../../bin
++BINDIR=	%%PREFIX%%/bin
+ 
+ ##
+ ##  (1) Choosing your compiler
+@@ -46,7 +46,7 @@
+ 
+ 
+ CHIPMUNKCC = gcc
+-CC = $(CHIPMUNKCC)
++CC ?= $(CHIPMUNKCC)
+ 
+ ##
+ ## (2) Adding appropriate flags
+@@ -90,14 +90,14 @@
+ ##   -m68040              : for 68040 and 68060
+ ##
+ 
+-CFLAGS = 
++CFLAGS += -DBSD -DF_OK=0
+ 
+ ss:     spice.o ss.o
+ 	$(CC) ss.o spice.o  -o ss
+ 
+ install:    ss
+-	cp ss $(BINDIR)  
+-	cp test/ucbsim $(BINDIR)
++	install -c -s ss $(BINDIR)  
++	install -c test/ucbsim $(BINDIR)
+ 
+ clean:
+ 	-rm -f *.o ss

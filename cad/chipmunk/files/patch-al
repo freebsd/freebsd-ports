@@ -1,0 +1,50 @@
+--- util/boxify/Makefile.orig	Wed Mar 12 02:47:23 1997
++++ util/boxify/Makefile	Tue Sep 21 21:29:44 1999
+@@ -21,7 +21,7 @@
+ #
+ # boxify makefile
+ 
+-BINDIR=	../../bin
++BINDIR=	%%PREFIX%%/bin
+ 
+ ##
+ ##  (1) Choosing your compiler
+@@ -48,7 +48,7 @@
+ ##
+ 
+ CHIPMUNKCC = gcc
+-CC = $(CHIPMUNKCC)
++CC ?= $(CHIPMUNKCC)
+ 
+ ##
+ ## (2) Adding appropriate flags
+@@ -92,7 +92,7 @@
+ ##   -m68040              : for 68040 and 68060
+ ##
+ 
+-CFLAGS = 
++CFLAGS += -DBSD -DF_OK=0
+ 
+ TRAPESSRC	= trapes/edges.c trapes/findnext.c trapes/mates.c \
+ 		trapes/delete.c trapes/gentrapes.c trapes/trapes.c
+@@ -102,16 +102,16 @@
+ 
+ INCLUDES	= trapes/poly.h trapes/trapes.h p2c.h boxify.h
+ 
+-boxify: boxify.o
+-	(cd trapes; make)
++all: boxify.o
++	(cd trapes; $(MAKE) all)
+ 	$(CC) -o boxify boxify.o $(TRAPESOBJ)  -lm
+ 
+ 
+ install: boxify
+-	cp boxify $(BINDIR)  
++	install -c -s boxify $(BINDIR)  
+ 
+ clean:
+-	(cd trapes; make clean)
++	(cd trapes; $(MAKE) clean)
+ 	-rm -f *.o boxify
+ 
+ #tar:	$(INCLUDES) $(TRAPESSRC) boxify.c boxify.1 Makefile

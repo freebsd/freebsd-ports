@@ -1,0 +1,54 @@
+--- view/Makefile.orig	Wed Mar 12 02:50:04 1997
++++ view/Makefile	Mon Sep 20 07:19:44 1999
+@@ -41,7 +41,8 @@
+ ## or some other directory, depending on your installation.
+ ##
+ 
+-XINCLUDEDIR = .
++XINCLUDEDIR = %%X11BASE%%/include
++XLIBDIR = %%X11BASE%%/lib
+ 
+ ##
+ ## If X isn't in the library path (the case for many MachTen and Linux 
+@@ -68,7 +69,7 @@
+ ##
+ ## on Sun Solaris 2.X, -lsocket -lnsl must be added to OTHERLIBS
+ 
+-OTHERLIBS= -lm  
++OTHERLIBS= -lm -lcompat
+ 
+ ##
+ ## (2) IEEE library directory
+@@ -115,7 +116,7 @@
+ 
+ CHIPMUNKCC = gcc -O2
+ 
+-CC = $(CHIPMUNKCC) 
++CC ?= $(CHIPMUNKCC) 
+ 
+ ##
+ ## (4) Adding appropriate flags
+@@ -171,11 +172,11 @@
+ ## in view rule
+ ##
+   
+-CFLAGS= -I$(LOCINC) -I$(XINCLUDEDIR) -DF_OK=0
++CFLAGS += -I$(LOCINC) -I$(XINCLUDEDIR) -DF_OK=0
+ 
+-LDFLAGS= $(LIBP2C) $(LIBX11) $(OTHERLIBS) 
++LDFLAGS += $(LIBP2C) $(LIBX11) $(OTHERLIBS) -L$(XLIBDIR)
+ MYLDFLAGS= $(LIBP2C)  $(IEEEDIR) $(LIBX11)  $(OTHERLIBS)
+-BINDIR= ../bin
++BINDIR = %%PREFIX%%/bin
+ 
+ OBJS =			\
+ 	viewfit.o	\
+@@ -243,7 +244,7 @@
+ 	(chdir mt;	make; chdir ..; chdir tek2430; make; chdir ..; make mtlink)
+ 
+ install: view
+-	cp view $(BINDIR)/vc
++	install -c -s view $(BINDIR)/vc
+ 
+ myinstall: myview
+ 	cp view ../bin/myview

@@ -1,4 +1,4 @@
-  		    Chipmunk CAD  (Jan 1993 Revision)
+  		    Chipmunk CAD  (Oct 1998 Revision)
 		    -------- ---   --- ---- --------
 
 This directory contains a revised public beta-test version of the
@@ -28,3 +28,5 @@ Naval Research were the main sources of funding for these tools. These
 tools are distributed under a license very similar to the GNU license;
 the minor changes protect Caltech from liability. Each tar file
 contains this license.
+
+WWW: http://www.pcmp.caltech.edu/chipmunk/

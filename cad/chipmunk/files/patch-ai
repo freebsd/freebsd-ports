@@ -1,0 +1,56 @@
+--- psys/src/mylib.c.orig	Wed Jul 21 04:06:25 1999
++++ psys/src/mylib.c	Mon Sep 20 06:58:55 1999
+@@ -4162,7 +4162,7 @@
+ 
+   if (currentmode == m_hitdet) {
+     m_hitcount += hitdet_drawpoly(n, pointlist);
+-    cfree(pointlist);
++    free(pointlist);
+     return;
+   }
+ 
+@@ -4174,7 +4174,7 @@
+   Xfprintf(stderr, "XDrawLines()\n");
+   XDrawLines(m_display, m_window, gc[currentcolor], pointlist, n+1, CoordModeOrigin);
+ 
+-  cfree(pointlist);
++  free(pointlist);
+ 
+ #ifdef SAVECURSOR
+   if (cursor_is_on)
+@@ -4335,7 +4335,7 @@
+ 	j++;
+       } while (count != 0 && j < last);
+       if (edges[i].curx <= m_clip_x2 && edges[j-1].curx >= m_clip_x1) {
+-	cfree(edges);
++	free(edges);
+ 	return 1;     /* Found a visible trapezoid */
+       }
+     }
+@@ -4345,7 +4345,7 @@
+   }
+ 
+   /* No trapezoids intersect */
+-  cfree(edges);
++  free(edges);
+   return 0;
+ }
+ 
+@@ -4370,7 +4370,7 @@
+ 
+   if (currentmode == m_hitdet) {
+     m_hitcount += hitdet_fillpoly(n, pointlist);
+-    cfree(pointlist);
++    free(pointlist);
+     return;
+   }
+ 
+@@ -4382,7 +4382,7 @@
+   Xfprintf(stderr, "XFillPolygon()\n");
+   XFillPolygon(m_display, m_window, gc[currentcolor], pointlist, n, Complex, CoordModeOrigin);
+ 
+-  cfree(pointlist);
++  free(pointlist);
+ 
+ #ifdef SAVECURSOR
+   if (cursor_is_on)

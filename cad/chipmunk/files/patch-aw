@@ -1,0 +1,15 @@
+--- view/viewfit.c.orig	Wed Mar 12 02:50:07 1997
++++ view/viewfit.c	Mon Sep 20 21:50:59 1999
+@@ -58,7 +58,12 @@
+ 
+ 
+ #include <stdio.h>
++#include <sys/param.h>
++#ifndef __STDC__ 
+ #include <malloc.h>
++#else
++#include <stdlib.h>
++#endif
+ #include <math.h>
+ 
+ #include "global.h"

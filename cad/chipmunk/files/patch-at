@@ -1,0 +1,15 @@
+--- util/spc-tools/ss/test/Makefile.orig	Wed Mar 12 02:47:28 1997
++++ util/spc-tools/ss/test/Makefile	Tue Sep 21 03:40:27 1999
+@@ -1,9 +1,9 @@
+ #!/bin/sh
+ 
+ test:	
+-	make magic
+-	make log
+-	make gemini
++	$(MAKE) magic
++	$(MAKE) log
++	$(MAKE) gemini
+ 
+ magic:	
+ 	ext2sim -R -C inv.ext
