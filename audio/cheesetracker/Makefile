@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cheesetracker
-PORTVERSION=	0.2.7
+PORTVERSION=	0.5.5
 CATEGORIES=	audio
 MASTER_SITES=	http://www.reduz.com.ar/cheesetracker/
 
