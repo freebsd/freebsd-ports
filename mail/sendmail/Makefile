@@ -7,6 +7,7 @@
 
 PORTNAME=	sendmail
 PORTVERSION=	8.12.6
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.sendmail.org/pub/sendmail/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/sendmail/&,}
@@ -218,6 +219,31 @@ ${DESTDIR}/etc/mail/submit.cf:	${DESTDIR}/etc/mail/submit.mc
 	@( cd ${DESTDIR}/etc/mail && ${MAKE} \
 		SENDMAIL_CF_DIR=${PREFIX}/share/sendmail/cf \
 		SENDMAIL_MC=submit )
+
+# create basics for smtp-auth
+#
+root-sasldb:
+	@${ECHO_CMD} "# Links:"
+	@${ECHO_CMD} "#"
+	@${ECHO_CMD} "# http://www.sendmail.org/~ca/email/auth.html"
+	@${ECHO_CMD} "# http://www.asp.ogi.edu/people/paja/linux/sendmail/"
+	@${ECHO_CMD} "# http://blue-labs.org/clue/sendmail.php"
+	@${ECHO_CMD} "# http://www.digitalanswers.org/sendmail/"
+	@${ECHO_CMD} "#"
+.if defined(SASLPWD)
+	-@${ECHO_CMD} ${SASLPWD} | \
+	${LOCALBASE}/sbin/saslpasswd -p -c -u ${REALM} "sendmail"
+.else
+	@${ECHO_CMD} "make SASLPWD=passwort owner-sasldb"
+.endif
+	${CHOWN} root:wheel ${DESTDIR}${PREFIX}/etc/sasldb.db
+	${CHMOD} 0600 ${DESTDIR}${PREFIX}/etc/sasldb.db
+
+# create certificates for TLS/SSL
+#
+tls-install:
+	env DESTDIR=${DESTDIR} FILESDIR=${FILESDIR} \
+		sh ${FILESDIR}/tls-install.sh
 
 .include <bsd.port.pre.mk>
 
