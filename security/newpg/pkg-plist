@@ -4,3 +4,4 @@ bin/kbxutil
 %%WITH_OPENSC%%bin/scdaemon
 lib/newpg/gpg-protect-tool
 share/locale/de/LC_MESSAGES/newpg.mo
+@dirrm lib/newpg
