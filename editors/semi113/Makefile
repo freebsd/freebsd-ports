@@ -21,6 +21,8 @@ COMMENT?=	SEMI, Library of MIME feature for GNU Emacs for emacs21
 
 PORTCLASS?=	master
 
+NO_LATEST_LINK=	yes
+
 # distfile version
 FLIM_TRUNK=	1.13
 SEMI_TRUNK=	1.13
