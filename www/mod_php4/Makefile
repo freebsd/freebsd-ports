@@ -3,7 +3,7 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.19 1996/10/31 17:42:13 markm Exp $
+# $Id: Makefile,v 1.20 1996/11/07 01:49:46 ache Exp $
 #
 
 DISTNAME=       apache_1.1.1
@@ -14,9 +14,12 @@ MASTER_SITES=   ftp://www.apache.org/apache/dist/
 MAINTAINER=	ache@freebsd.org
 
 # User-controlled variables list
-# CHARSET_ACHE - add charset negotiation to .var files and charset guessing
-# DIR_ACHE - add SuppressHTMLPreamble option to directory index
-# ALL_ACHE - both patches from above
+# CHARSET_ACHE  - add charset negotiation to .var files and charset guessing
+#                 see http://www.nagual.ru/~ache/apache_var.html
+# DIR_ACHE      - add SuppressHTMLPreamble option to directory index
+#                 see http://www.nagual.ru/~ache/apache_dir.html
+# ALL_ACHE      - both patches from above
+#
 # SECURE_SERVER - build Apache with SSL
 
 .if defined(ALL_ACHE)
