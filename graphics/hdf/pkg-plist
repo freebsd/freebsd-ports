@@ -68,7 +68,3 @@ include/netcdf.inc
 include/tbbt.h
 include/vattr.h
 include/vg.h
-man/man1/hdf.1.gz
-man/man1/hdfunpac.1.gz
-man/man1/ncdump.1.gz
-man/man1/ncgen.1.gz
