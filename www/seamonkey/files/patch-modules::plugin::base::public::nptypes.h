@@ -1,15 +1,11 @@
---- modules/plugin/base/public/nptypes.h.orig	Tue Jul 13 18:15:51 2004
-+++ modules/plugin/base/public/nptypes.h	Sun Jul 25 03:11:09 2004
-@@ -70,6 +70,12 @@
+--- modules/plugin/base/public/nptypes.h.orig	Sun Sep  5 18:56:55 2004
++++ modules/plugin/base/public/nptypes.h	Thu Oct 21 19:29:29 2004
+@@ -73,7 +73,7 @@
+   #if defined(bsdi) || defined(OPENBSD)
+   typedef u_int32_t uint32_t;
+ 
+-  #if defined(bsdi)
++  #if defined(bsdi) || defined(__FreeBSD__)
    #if !defined(__cplusplus)
      typedef int bool;
    #endif
-+#elif defined(__FreeBSD__)
-+  #include <sys/types.h>
-+
-+  #if !defined(__cplusplus)
-+    typedef int bool;
-+  #endif
- #else
-   /*
-    * For those that ship a standard C99 stdint.h header file, include

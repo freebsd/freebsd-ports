@@ -6,15 +6,14 @@
 #
 
 PORTNAME?=	mozilla
-PORTVERSION=	1.8.a3
-PORTREVISION?=	4
+PORTVERSION=	1.8.a4
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.a3/a3/}/src \
+MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.a4/a4/}/src \
 			adamw/:local
-DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.a3/a3/}${EXTRACT_SUFX} \
+DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.a4/a4/}${EXTRACT_SUFX} \
 		libart_lgpl${EXTRACT_SUFX}:local
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -119,7 +118,7 @@ BROKEN=		"Does not compile on ia64 or alpha"
 
 .if !defined(WITHOUT_XFT)
 LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
-CONFIGURE_ARGS+=--enable-xft
+CONFIGURE_ARGS+=--enable-xft --disable-freetype2
 .if exists(${X11BASE}/lib/X11/fonts/mozilla/fonts.dir)
 BROKEN=		Mozilla${MOZ_SUFX} and Xft2 render the mozilla-fonts \
 		illegibly. Please remove the mozilla-fonts package.
