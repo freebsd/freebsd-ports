@@ -12,11 +12,11 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	dhcp dhcp/dhcp-3.0-history
 PKGNAMEPREFIX=	isc-
-PKGNAMESUFFIX=	3
+PKGNAMESUFFIX=	3-${SUBSYS}
 DISTNAME=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}
 
 MAINTAINER=	cyrille.lefevre@laposte.net
-COMMENT=	ISC Dynamic Host Configuration Protocol client and server code
+COMMENT?=	The ISC Dynamic Host Configuration Protocol server
 
 USE_REINPLACE=	yes
 
@@ -26,16 +26,32 @@ USE_REINPLACE=	yes
 #
 
 HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--subsys ${SUBSYS}
+ALL_TARGET=	all.${SUBSYS}
+INSTALL_TARGET=	install.${SUBSYS}
 
+SUBSYS?=	server
+
+.if ${SUBSYS} == client
+MAN5=		dhclient.conf.5 dhclient.leases.5
+MAN8=		dhclient.8 dhclient-script.8
+.elif ${SUBSYS} == server
 MAN1=		omshell.1
-MAN3=		dhcpctl.3 omapi.3 omshell.3
-MAN5=		dhclient.conf.5 dhclient.leases.5 \
-		dhcp-eval.5 dhcp-options.5 dhcpd.conf.5 \
-		dhcpd.leases.5
-MAN8=		dhclient.8 dhclient-script.8 dhcpd.8 dhcrelay.8
+MAN5=		dhcpd.conf.5 dhcpd.leases.5
+MAN8=		dhcpd.8
+.elif ${SUBSYS} == relay
+MAN8=		dhcrelay.8
+.else
+MAN3=		dhcpctl.3 omapi.3
+.endif
+.if ${SUBSYS} != relay
+MAN5+=		dhcp-eval.5 dhcp-options.5
+.endif
 
-MSG_FILE=	${PKGDIR}/pkg-message
-PKGMESSAGE=	${WRKDIR}/pkg-message
+MSG_FILE=	${.CURDIR}/pkg-message
+MSG_FILE=	${.CURDIR}/pkg-message
+PKGMESSAGE=	${.CURDIR}/pkg-message
+PLIST=		${.CURDIR}/pkg-plist
 
 # Local variables
 #
@@ -61,14 +77,32 @@ PATCHLEVEL=	pl${PORTVERSION:E}
 RELEASE=	${PORTVERSION}
 .endif
 
-PATCH_SUBDIRS=	common minires dst omapip server client relay dhcpctl
+PATCH_SUBDIRS=	common minires dst omapip
+.if ${SUBSYS} == server || ${SUBSYS} == devel
+PATCH_SUBDIRS+=	dhcpctl
+.endif
+.if ${SUBSYS} != devel
+PATCH_SUBDIRS+=	${SUBSYS}
+.endif
+.if ${SUBSYS} == server
+PATCH_SUBDIRS+=	omshell
+.endif
 
-BIN_FILES=	dhclient dhcpd dhcrelay omshell
+.if ${SUBSYS} == client
+BIN_FILES=	dhclient
 CONF_FILES=	dhclient.conf
-RC_FILES=	isc-dhcpd isc-dhcrelay
+SAMP_FILES=	client/dhclient.conf
+DATA_FILES=	dhclient.leases
+.elif ${SUBSYS} == server
+BIN_FILES=	dhcpd omshell
+RC_FILES=	isc-dhcpd
+SAMP_FILES=	server/dhcpd.conf
+DATA_FILES=	dhcpd.leases
+.elif ${SUBSYS} == relay
+BIN_FILES=	dhcrelay
+RC_FILES=	isc-dhcrelay
+.endif
 DOC_FILES=	ANONCVS CHANGES COPYRIGHT README RELNOTES
-SAMP_FILES=	client/dhclient.conf server/dhcpd.conf
-DATA_FILES=	dhclient.leases dhcpd.leases
 
 SAMP_SUFX=	.sample
 
@@ -78,6 +112,17 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 DATADIR=	/var/db
 
 STRIP_CMD?=	strip
+
+# Post-extract
+#
+
+post-extract: extract-omshell
+
+extract-omshell:
+	@${MKDIR} ${WRKSRC}/omshell
+	@${MV} ${WRKSRC}/dhcpctl/omshell.? ${WRKSRC}/omshell
+	@${CP} ${FILESDIR}/omshell::Makefile.dist \
+		${WRKSRC}/omshell/Makefile.dist
 
 # Post-patch
 #
