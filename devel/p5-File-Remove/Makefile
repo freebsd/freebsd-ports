@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	jus@security.za.net
 COMMENT=	Perl5 module to easily removes files and directories
 
-PERL_CONFIGURE= YES
+PERL_CONFIGURE=	YES
 
 MAN3=		File::Remove.3
 
