@@ -7,19 +7,28 @@
 #
 
 PORTNAME=	libsndfile
-PORTVERSION=	0.0.23
+PORTVERSION=	0.0.24
 CATEGORIES=	audio
 MASTER_SITES=	http://www.zip.com.au/~erikd/libsndfile/
 
 MAINTAINER=	ports@FreeBSD.org
 
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--enable-justsrc --disable-gcc-pipe
 INSTALLS_SHLIB=	yes
+
+PORTDOCS=	ChangeLog NEWS api.html bugs.html index.html libsndfile.jpg \
+		new_file_type.HOWTO sf_info.html
+
+pre-patch:
+	@${PERL} -pi -e 's|-g -O2 |\$$CFLAGS |g' ${WRKSRC}/configure
 
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
-	@${CP} -R ${WRKSRC}/doc/ ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
