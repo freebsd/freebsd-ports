@@ -15,12 +15,13 @@ COMMENT=	GTK+ library, version 2.X, i386 Linux binary
 
 # these libraries are required by gtk-query-immodules-2.0 or
 # gdk-pixbuf-query-loaders
-RUN_DEPENDS=	${LINUXBASE}/usr/lib/libglib-2.0.so.0:${PORTSDIR}/devel/linux-glib2 \
+BUILD_DEPENDS=	${LINUXBASE}/usr/lib/libglib-2.0.so.0:${PORTSDIR}/devel/linux-glib2 \
 		${LINUXBASE}/usr/lib/libatk-1.0.so.0:${PORTSDIR}/accessibility/linux-atk \
 		${LINUXBASE}/usr/lib/libjpeg.so.62:${PORTSDIR}/graphics/linux-jpeg \
 		${LINUXBASE}/usr/lib/libpng12.so.0:${PORTSDIR}/graphics/linux-png \
 		${LINUXBASE}/usr/lib/libtiff.so.3.5:${PORTSDIR}/graphics/linux-tiff \
 		${LINUXBASE}/usr/lib/libpango-1.0.so.0:${PORTSDIR}/x11-toolkits/linux-pango
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 BASEVERSION=	9
 ONLY_FOR_ARCHS=	i386
