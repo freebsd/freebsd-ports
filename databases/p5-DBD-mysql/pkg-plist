@@ -1,0 +1,8 @@
+lib/perl5/man/man3/Mysql.3.gz
+lib/perl5/site_perl/Mysql.pm
+lib/perl5/site_perl/Mysql/Statement.pm
+lib/perl5/site_perl/i386-freebsd/auto/Mysql/Mysql.bs
+lib/perl5/site_perl/i386-freebsd/auto/Mysql/Mysql.so
+lib/perl5/site_perl/i386-freebsd/auto/Mysql/.packlist
+@dirrm lib/perl5/site_perl/i386-freebsd/auto/Mysql
+@dirrm lib/perl5/site_perl/Mysql
