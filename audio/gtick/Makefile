@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	gtick
-PORTVERSION=	0.2.14
-PORTREVISION=	1
+PORTVERSION=	0.3.1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.antcom.de/gtick/download/
 
 MAINTAINER=	liamfoy@sepulcrum.org
 COMMENT=	A metronome application
+
+LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
@@ -27,5 +28,6 @@ MAN1=		gtick.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|machine/soundcard.h|sys/soundcard.h|' ${WRKSRC}/src/dsp.c
+	@${REINPLACE_CMD} -e 's|-O3||' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
