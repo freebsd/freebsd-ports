@@ -862,7 +862,7 @@ INSTALLS_SHLIB=	yes
 .endif
 
 .if defined(OPENSSL_OVERWRITE_BASE)
-.if exists(/lib/libcrypto.so)
+.if exists(/lib/libcrypto.so) || exists(/lib/libcrypto.so.3)
 pre-everything::
 	@${ECHO_CMD} "#"
 	@${ECHO_CMD} "# this ports does not support the dynamic root"
