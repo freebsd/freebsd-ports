@@ -15,18 +15,16 @@ PKGNAMESUFFIX=	-debian
 DISTFILES=	basedebs.tar util-linux-locales_2.11n-7_all.deb
 EXTRACT_ONLY=	basedebs.tar
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Debian base set for the Linux mode
 
 CONFLICTS=	linux_base-6* linux_base-7* linux_base-8* linux_base-gentoo* \
 		linux_base-rh* linux_base-suse*
 ONLY_FOR_ARCHS=	i386 amd64
 
-BUILD_DEPENDS=	${DPKG_CMD}:${PORTSDIR}/archivers/dpkg
+RESTRICTED=	"binaries under GNU GPL:  http://www.gnu.org/licenses/gpl.txt"
 
-BROKEN=		"Does not build"
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
+BUILD_DEPENDS=	${DPKG_CMD}:${PORTSDIR}/archivers/dpkg
 
 PREFIX?=	${LINUXBASE}
 
@@ -73,13 +71,6 @@ post-extract:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/util-linux-locales_2.11n-7_all.deb \
 		${WRKSRC}
 
-do-patch: build-depends
-	cd ${WRKSRC} && \
-	${DPKG_CMD} -x ${LIBC6NAME}.deb ${LIBC6NAME} && \
-	${DPKG_CMD} -e ${LIBC6NAME}.deb ${LIBC6NAME}/DEBIAN && \
-	${BRANDELF} -t Linux ${WRKSRC}/${LIBC6NAME}/sbin/ldconfig && \
-	${DPKG_CMD} -b ${LIBC6NAME}
-
 do-install:
 # Create /dev/null for the chrooted environment
 	${MKDIR} ${PREFIX}/dev
@@ -107,7 +98,9 @@ do-install:
 
 # Install the `special' base packages that must be installed before all
 	${DPKG} -i ${WRKSRC}/dpkg_*.deb
-	${DPKG} --force-all -i ${WRKSRC}/libc6_*.deb
+	${DPKG} --unpack ${WRKSRC}/libc6_*.deb
+	${BRANDELF} -t Linux ${PREFIX}/sbin/ldconfig
+	${DPKG} --configure libc6
 
 # Install the base packages
 	${MKDIR} ${WRKSRC}/instpkgs
