@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.2 1995/09/13 09:55:30 asami Exp $
+# $Id: Makefile,v 1.3 1995/10/02 14:51:20 erich Exp $
 #
 
+    SUBDIR += afio
     SUBDIR += manck
     SUBDIR += sudo
     SUBDIR += top
