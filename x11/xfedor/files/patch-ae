@@ -1,5 +1,5 @@
-*** filer.c.bak	Tue Sep  3 02:38:19 1996
---- filer.c	Tue Sep  3 02:37:19 1996
+*** filer.c.orig	Thu May 26 21:59:10 1994
+--- filer.c	Tue Sep  3 15:01:15 1996
 ***************
 *** 85,91 ****
   {
@@ -26,12 +26,14 @@
       return -1 ;
   }
   
---- 187,194 ----
+--- 187,196 ----
       fprintf(stderr,"\n");
       fprintf(stderr, msg, p1, p2, p3, p4);
       fprintf(stderr,"\n");
-!     if (pF != NULL)
+!     if (pF != NULL) {
 ! 	fclose(pF);
+! 	pF = NULL;
+!     }
       return -1 ;
   }
   
@@ -44,7 +46,7 @@
   
       getline(linebuf);
       if ((sscanf(linebuf, "STARTFONT %s", namebuf) != 1) ||
---- 301,307 ----
+--- 303,309 ----
   
       if (!Extension(filename,".bdf")) strcat(filename,".bdf");
   
