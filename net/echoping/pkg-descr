@@ -1,0 +1,16 @@
+"echoping" is a small program to test (approximatively) performances of a 
+remote host by sending it TCP "echo" (or other protocol) packets.
+
+- uses the protocols echo, discard, chargen or HTTP, 
+- uses UDP instead of TCP for the protocols which accept it (like echo),
+- can repeat the test and display various measures about it,
+- can use T/TCP on systems which support it.
+
+It's useful for checking that http servers are running and not wedged.
+
+The reference site for echoping is:
+
+ftp://ftp.pasteur.fr/pub/Network/echoping
+
+Stephane Bortzmeyer <bortzmeyer@pasteur.fr>. October 1995 for the
+first version. November 1996 for this one.
