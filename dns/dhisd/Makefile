@@ -15,6 +15,8 @@ MASTER_SITES=	http://bsltwr.dhis.org/ftp/pub/dhis/ \
 
 MAINTAINER=	baskruit@bsltwr.dnsalias.org
 
+LIB_DEPENDS=	gmp.3:${PORTSDIR}/math/libgmp-freebsd
+
 DOCFILES=	CONTRIBUTORS COPYRIGHT INSTALL MODULES README
 
 post-patch:
