@@ -19,6 +19,7 @@ lib/epiphany/extensions/libtabsmenuextension.so.0
 share/gnome/epiphany-extensions/ephy-gestures.xml
 share/gnome/epiphany-extensions/glade/error-viewer.glade
 share/gnome/epiphany-extensions/icons/popup-blocker.svg
+share/locale/bg/LC_MESSAGES/epiphany-extensions-1.0.mo
 share/locale/ca/LC_MESSAGES/epiphany-extensions-1.0.mo
 share/locale/cs/LC_MESSAGES/epiphany-extensions-1.0.mo
 share/locale/da/LC_MESSAGES/epiphany-extensions-1.0.mo
@@ -35,6 +36,7 @@ share/locale/lt/LC_MESSAGES/epiphany-extensions-1.0.mo
 share/locale/nl/LC_MESSAGES/epiphany-extensions-1.0.mo
 share/locale/no/LC_MESSAGES/epiphany-extensions-1.0.mo
 share/locale/pa/LC_MESSAGES/epiphany-extensions-1.0.mo
+share/locale/pl/LC_MESSAGES/epiphany-extensions-1.0.mo
 share/locale/pt/LC_MESSAGES/epiphany-extensions-1.0.mo
 share/locale/pt_BR/LC_MESSAGES/epiphany-extensions-1.0.mo
 share/locale/ru/LC_MESSAGES/epiphany-extensions-1.0.mo
