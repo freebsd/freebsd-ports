@@ -1,0 +1,6 @@
+include/tifmerge.h
+lib/libtifmerge.a
+lib/libtifmerge.so
+lib/libtifmerge.so.1
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
