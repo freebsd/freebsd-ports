@@ -1,0 +1,19 @@
+bin/wolf3d
+libexec/wolf3d/audiohed.wl1
+libexec/wolf3d/audiot.wl1
+libexec/wolf3d/gamemaps.wl1
+libexec/wolf3d/maphead.wl1
+libexec/wolf3d/sdlwolf3d
+libexec/wolf3d/vgadict.wl1
+libexec/wolf3d/vgagraph.wl1
+libexec/wolf3d/vgahead.wl1
+libexec/wolf3d/vswap.wl1
+%%PORTDOCS%%%%DOCSDIR%%/docs/goodstuf.txt
+%%PORTDOCS%%%%DOCSDIR%%/docs/release.txt
+%%PORTDOCS%%%%DOCSDIR%%/IDEAS
+%%PORTDOCS%%%%DOCSDIR%%/NOTES
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/docs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm libexec/wolf3d

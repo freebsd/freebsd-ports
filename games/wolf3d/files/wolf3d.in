@@ -1,0 +1,18 @@
+#!/bin/sh
+# wolf3d - wolf3d-20011028 wrapper script
+#
+# 2004 Travis Poppe
+
+echo "Basic options:"
+echo ""
+echo "-nowait           Skips introduction"
+echo "-nojoy            Disables joystick"
+echo "-nomouse          Disables mouse"
+echo "-x2               Increases screen size by x2"
+echo "-x3               Increases screen size by x3"
+echo "-fullscreen       Enables fullscreen mode"
+echo "-demotest         Starts wolf3d in demonstration mode"
+echo "-version          Reports game version"
+echo ""
+cd %%PREFIX%%/libexec/wolf3d
+./sdlwolf3d $*

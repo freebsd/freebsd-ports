@@ -429,6 +429,7 @@
     SUBDIR += wmshuffle
     SUBDIR += wmtictactoe
     SUBDIR += wmtimebomb
+    SUBDIR += wolf3d
     SUBDIR += wolfpack
     SUBDIR += wordplay
     SUBDIR += wtf
