@@ -3,7 +3,7 @@
 # Date created:        29 Jul 1998
 # Whom:                rom
 #
-# $Id: Makefile,v 1.11 1998/10/30 16:00:03 jkh Exp $
+# $Id: Makefile,v 1.12 1998/11/03 00:18:57 jseger Exp $
 #
 
 DISTNAME= 	gIDE-0.0.10
@@ -17,7 +17,7 @@ LIB_DEPENDS=	gtk11.1:${PORTSDIR}/x11-toolkits/gtk11 \
 		guile.4:${PORTSDIR}/lang/guile
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake
 
-BROKEN_ELF=	yes
+BROKEN=		build
 
 USE_X_PREFIX=   yes
 GNU_CONFIGURE=  yes
