@@ -43,6 +43,7 @@ share/doc/qtez/help/projects/projects.gif
 share/doc/qtez/help/projview/index.htm
 share/doc/qtez/help/projview/projview.gif
 share/doc/qtez/help/projview/pvdlgcap.gif
+share/doc/qtez/help/projects/sample.qtz
 share/doc/qtez/help/sigslo/index.htm
 share/doc/qtez/help/sigslo/sgdlgcap.gif
 share/doc/qtez/help/sigslo/sigslo.gif
@@ -51,8 +52,10 @@ share/doc/qtez/help/srcedit/fndlgcap.gif
 share/doc/qtez/help/srcedit/index.htm
 share/doc/qtez/help/srcedit/scdlgcap.gif
 share/doc/qtez/help/srcedit/srcedit.gif
+share/doc/qtez/listserv/index.htm
 share/doc/qtez/tech/index.htm
 share/examples/qtez/a.qtz
+share/examples/qtez/krash.qtz
 share/examples/qtez/arnt/arnt.qtz
 share/examples/qtez/arnt/arnt2.qtz
 share/examples/qtez/bnacho/demo.qtz
@@ -62,14 +65,16 @@ share/examples/qtez/bnacho/quitButt.xpm
 share/examples/qtez/calculator/calc.qtz
 share/examples/qtez/calendar/calend.qtz
 share/examples/qtez/custom/custom.qtz
+share/examples/qtez/custom/qfiledlg.qtz
 share/examples/qtez/d.qtz
 share/examples/qtez/dblclick.qtz
 share/examples/qtez/dynamic/dynamic.qtz
+share/examples/qtez/dynamic/dyn2.qtz
 share/examples/qtez/echo/client.qtz.debunct
 share/examples/qtez/echo/server.qtz.debunct
 share/examples/qtez/finger/finger.qtz
 share/examples/qtez/include/include.qtz
-share/examples/qtez/krash.qtz
+share/examples/qtez/kde/kde.qtz
 share/examples/qtez/menubar/highlight.qtz
 share/examples/qtez/menubar/menubar.qtz
 share/examples/qtez/multdlg/2dialog.qtz
@@ -85,6 +90,13 @@ share/examples/qtez/stress/30buttons.qtz
 share/examples/qtez/stress/all.qtz
 share/examples/qtez/swatch/time.qtz
 share/examples/qtez/tablevw/table.qtz
+share/examples/qtez/troll.tut/t1.qtz
+share/examples/qtez/troll.tut/t2.qtz
+share/examples/qtez/troll.tut/t3.qtz
+share/examples/qtez/troll.tut/t5.qtz
+share/examples/qtez/troll.tut/t6.qtz
+share/examples/qtez/troll.tut/t7.qtz
+share/examples/qtez/troll.tut/t8.qtz
 share/examples/qtez/tutorial/chap1.qtz
 share/examples/qtez/tutorial/chap2.qtz
 share/examples/qtez/tutorial/chap3.qtz
@@ -99,6 +111,8 @@ share/examples/qtez/tutorial/frame6.bmp
 share/examples/qtez/tutorial/frame7.bmp
 share/examples/qtez/tutorial/frame8.bmp
 share/examples/qtez/xalarm.qtz
+share/qtez/progress.qtl
+share/qtez/tableview.qtl
 @dirrm share/doc/qtez/dnload
 @dirrm share/doc/qtez/features
 @dirrm share/doc/qtez/help/attribs
@@ -117,6 +131,7 @@ share/examples/qtez/xalarm.qtz
 @dirrm share/doc/qtez/help/sigslo
 @dirrm share/doc/qtez/help/srcedit
 @dirrm share/doc/qtez/help
+@dirrm share/doc/qtez/listserv
 @dirrm share/doc/qtez/tech
 @dirrm share/doc/qtez
 @dirrm share/examples/qtez/arnt
@@ -128,6 +143,7 @@ share/examples/qtez/xalarm.qtz
 @dirrm share/examples/qtez/echo
 @dirrm share/examples/qtez/finger
 @dirrm share/examples/qtez/include
+@dirrm share/examples/qtez/kde
 @dirrm share/examples/qtez/menubar
 @dirrm share/examples/qtez/multdlg
 @dirrm share/examples/qtez/notepad
@@ -136,5 +152,7 @@ share/examples/qtez/xalarm.qtz
 @dirrm share/examples/qtez/stress
 @dirrm share/examples/qtez/swatch
 @dirrm share/examples/qtez/tablevw
+@dirrm share/examples/qtez/troll.tut
 @dirrm share/examples/qtez/tutorial
 @dirrm share/examples/qtez
+@dirrm share/qtez
