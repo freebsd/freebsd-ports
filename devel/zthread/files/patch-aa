@@ -1,25 +1,6 @@
---- Makefile.in.orig	Thu Jul 12 23:46:03 2001
-+++ Makefile.in	Fri Aug  3 12:52:00 2001
-@@ -146,6 +146,9 @@
- 	cd $(top_srcdir) && $(AUTOHEADER)
- 	@echo timestamp > $(srcdir)/src/stamp-h.in 2> /dev/null
- 
-+$(srcdir)/libtool: ltconfig
-+	$(srcdir)/ltconfig $(srcdir)/ltmain.sh
-+
- mostlyclean-hdr:
- 
- clean-hdr:
-@@ -327,7 +330,7 @@
- uninstall-am: uninstall-local
- uninstall: uninstall-recursive
- all-am: Makefile
--all-redirect: all-recursive
-+all-redirect: $(srcdir)/libtool all-recursive
- install-strip:
- 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
- installdirs: installdirs-recursive
-@@ -382,7 +385,7 @@
+--- Makefile.in.orig	Fri Aug 31 15:12:28 2001
++++ Makefile.in	Wed Nov 14 16:04:12 2001
+@@ -382,7 +382,7 @@
  
  install-exec-hook:
  	$(mkinstalldirs) $(bindir)
