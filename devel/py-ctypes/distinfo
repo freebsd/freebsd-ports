@@ -1,2 +1,4 @@
-MD5 (ctypes-0.6.2.tar.gz) = 6abeef042e407a062a8698dd37f3b5c8
+MD5 (ctypes-0.6.3.tar.gz) = db17353042d9b96c9187fb8c4507f79f
+SIZE (ctypes-0.6.3.tar.gz) = 150590
 MD5 (libffi-030511.tar.gz) = dcce311e68911b3d16729ce8602fd946
+SIZE (libffi-030511.tar.gz) = 190872
