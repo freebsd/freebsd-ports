@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Apr 22 09:47:37 2000
-+++ Makefile	Sat Apr 22 09:48:06 2000
+--- Makefile.orig	Wed Dec 31 02:33:53 1997
++++ Makefile	Mon Mar 15 04:46:29 2004
 @@ -9,12 +9,12 @@
  ###
  # set this to the absolute path (less extn) of compressed dict.
@@ -15,3 +15,12 @@
  
  ###
  # If you have installed the cracklib-dicts directory, use this
+@@ -24,7 +24,7 @@
+ 	@echo "you evidently don't know what you're doing. go read the README"
+ 
+ all:
+-	( cd cracklib && make && exit $$? )
++	( cd cracklib && make all && exit $$? )
+ 	( cd util && make DICTPATH=$(DICTPATH) && exit $$? )
+ ###	( cd passwd && make DICTPATH=$(DICTPATH) passwd && exit $$? )
+ ###	touch all

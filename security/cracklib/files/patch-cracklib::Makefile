@@ -1,0 +1,28 @@
+--- cracklib/Makefile.orig	Mon Mar 15 04:45:15 2004
++++ cracklib/Makefile	Mon Mar 15 04:45:21 2004
+@@ -7,12 +7,24 @@
+ ###
+ 
+ LIB=	libcrack.a
++SHLIB=	libcrack.so.1
+ OBJ=	fascist.o packlib.o rules.o stringlib.o
+-CFLAGS= -O -I../cracklib -DIN_CRACKLIB
++SHOBJ=	fascist.So packlib.So rules.So stringlib.So
++CFLAGS+=-I../cracklib -DIN_CRACKLIB
++
++.SUFFIXES: .o .So
++
++.c.So:
++	$(CC) $(CFLAGS) -fPIC -o $*.So -c $?
+ 
+ $(LIB):	$(OBJ)
+ 	ar rv $(LIB) $?
+ 	-ranlib $(LIB)
++
++$(SHLIB): $(SHOBJ)
++	ld -shared -o ${SHLIB} ${SHOBJ}
++
++all:	$(LIB) $(SHLIB)
+ 
+ clean:
+ 	-rm -f $(OBJ) $(LIB) *~
