@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bugbuddy2
-PORTVERSION=	2.2.104
+PORTVERSION=	2.2.106
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/bug-buddy/2.2
@@ -24,12 +24,8 @@ USE_LIBTOOL=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomedesktop
 GNOME_DESKTOP_VERSION=2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=	bug-buddy.1
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
