@@ -1,0 +1,10 @@
+This is a deamon the uses the LM78/79 or WINBond hardware monitor chips
+to warn the operator when something is out of range.  The software is
+capable of monitoring up to 3 tempuratures, 3 fan speeds and 7 voltages. 
+The configuration file specifies which functions are active and their
+acceptable ranges.
+
+WWW: http://thehousleys.net/healthd/
+
+- Jim
+jim@thehousleys.net
