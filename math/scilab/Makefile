@@ -46,8 +46,8 @@ MAKE_ENV=	PVM_INCLUDE=${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
-BROKEN=		"Does not compile on alpha 5.x"
+.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102 || ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on alpha 5.x or sparc64"
 .endif
 
 post-patch:
