@@ -7,9 +7,9 @@
 
 PORTNAME=	ghostscript
 PORTVERSION=	7.04
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gs_fonts/} \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gs_fonts,bjc250/} \
 		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \
 		http://home.t-online.de/home/Martin.Lottermoser/pcl3dist/:hpdj_pcl3 \
 		http://www.harsch.net/Download/:dj970 \
@@ -23,6 +23,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:gs_srcs,gs_fonts/} \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/fonts/:fonts \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/gs704/
 MASTER_SITE_SUBDIR=	ghostscript/:gs_srcs,gs_fonts,ports_jp_gs \
+			bjc250gs/:bjc250 \
 			./:ports_jp
 PKGNAMESUFFIX=	-afpl
 DISTFILES=	${GS_SRCS}:gs_srcs \
@@ -35,6 +36,7 @@ DISTFILES=	${GS_SRCS}:gs_srcs \
 		${MD2K_SRCS}:md2k \
 		${ALPS_SRCS}:ports_jp_gs \
 		${BJ10V_SRCS}:ports_jp_gs \
+		${BJC250_SRCS}:bjc250 \
 		${LIPS_SRCS}:lips \
 		${DMPRT_SRCS}:ports_jp_gs \
 		${EPAG_SRCS}:epag \
@@ -156,6 +158,13 @@ BJ10V=		bj10v
 BJ10V_NAME=	gdev10v
 BJ10V_SRCS=	${BJ10V_NAME}.tar.gz
 
+# BJC250 - additional driver for Canon BJC-210/240/250/265/1000
+# http://bjc250gs.sourceforge.net/
+BJC250=		bjc250
+BJC250_VERS=	0.756
+BJC250_NAME=	${BJC250}-v${BJC250_VERS}
+BJC250_SRCS=	gs7.05-${BJC250_NAME}.diff.gz
+
 # LIPS - additional driver for Canon LIPS II+/III/IVc/IV printers
 # http://www.ucatv.ne.jp/~taeko/software/gs/
 LIPS=		lips
@@ -250,6 +259,13 @@ post-extract:
 # for BJ10V driver
 	${ECHO_MSG} ">>>   extracting ${BJ10V_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${BJ10V_SRCS}
+# for BJC250 driver
+	${ECHO_MSG} ">>>   extracting ${BJC250_SRCS} ..."
+	${MKDIR} ${WRKSRC}/${BJC250_NAME}/src
+	${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/${BJC250_SRCS} | \
+		${PATCH} -d ${WRKSRC}/${BJC250_NAME} -f -s -N -E -p1 \
+		2>/dev/null || ${TRUE}
+
 # for LIPS driver
 	${ECHO_MSG} ">>>   extracting ${LIPS_SRCS} ..."
 	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${LIPS_SRCS}
@@ -319,6 +335,10 @@ pre-configure:
 	${ECHO_MSG} ">>>   adding ${BJ10V} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/${BJ10V_NAME}/gdev10v.mak \
 		>> ${WRKSRC}/src/contrib.mak
+# for BJC250 driver
+	${ECHO_MSG} ">>>   adding ${BJC250} driver to contrib.mak ..."
+	${CAT} ${FILESDIR}/bjc250.contrib.mak \
+		>> ${WRKSRC}/src/contrib.mak
 # for LIPS driver
 	${ECHO_MSG} ">>>   adding ${LIPS} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/${LIPS_NAME}/gdevlips.mak \
@@ -378,6 +398,11 @@ pre-build:
 	${ECHO_MSG} ">>>   creating symlinks for ${BJ10V} ..."
 .for i in gdev10v.c
 	${LN} -sf ${WRKSRC}/${BJ10V_NAME}/${i} ${WRKSRC}/src
+.endfor
+# for BJC250 driver
+	${ECHO_MSG} ">>>   creating symlinks for ${BJC250} ..."
+.for i in gdevbjc_.[ch] gdevbjca.c
+	${LN} -sf ${WRKSRC}/${BJC250_NAME}/src/${i} ${WRKSRC}/src
 .endfor
 # for LIPS driver
 	${ECHO_MSG} ">>>   creating symlinks for ${LIPS} ..."
