@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abook
-PORTVERSION=	0.4.13
+PORTVERSION=	0.4.14
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,5 +23,11 @@ GNU_CONFIGURE=	yes
 
 MAN1=		abook.1
 MAN5=		abookrc.5
+
+post-install:
+	${MKDIR} ${DOCSDIR}
+.for file in FAQ README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 
 .include <bsd.port.post.mk>
