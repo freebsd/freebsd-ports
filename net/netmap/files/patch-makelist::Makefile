@@ -1,0 +1,20 @@
+--- makelist/Makefile.orig	Fri Jun  7 00:13:32 2002
++++ makelist/Makefile	Fri Jun  7 00:13:40 2002
+@@ -1,8 +1,7 @@
+ CFILES   = makelist.c args.c config.c
+ OFILES   = $(CFILES:.c=.o)
+ 
+-CFLAGS = -O -Wall 
+-CC = g++
++CC = ${CXX}
+ 
+ CPPFLAGS = -I../belgolib
+ LDFLAGS   = ../belgolib/belgolib.a
+@@ -21,6 +20,6 @@
+ 	-/bin/rm -f $(OFILES) $(OEXE)
+ 
+ depend: 
+-	makedepend $(CPP_HEADERS)  -D__make_dep__ -- $(CFLAGS) -- $(CFILES)
++	makedepend $(CPP_HEADERS)  -D__make_dep__ -- $(CXXFLAGS) -- $(CFILES)
+ 
+ # DO NOT DELETE
