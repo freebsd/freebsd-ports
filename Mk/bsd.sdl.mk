@@ -16,27 +16,28 @@
 # the standard SDL and SDL_sound, use "USE_SDL=sdl sound" and the
 # required libraries are included in your LIB_DEPENDS.
 #
+# If you want to check for the availability for certain SDL ports, you
+# can set WANT_SDL and run it through bsd.port.pre.mk:
+#	WANT_SDL=	yes
+#	USE_SDL=	sdl
+#	.include <bsd.port.pre.mk>
+#	.if ${HAVE_SDL:Mgraphics}
+#	USE_SDL+=	graphics
+#	.endif
+#	.include <bsd.port.post.mk>
+# Run "make -V USE_SDL" to see which libs are asked for at the end.
+#
 
 #
 # $FreeBSD$
 #
 
-.if !defined(SDL_Include)
-
-SDL_Include=			bsd.sdl.mk
 SDL_Include_MAINTAINER=		edwin@FreeBSD.org
 
 #
 # These are the current supported SDL modules
 #
 _USE_SDL_ALL=	gfx gui image mixer ldbad mm net sdl sound ttf
-
-#
-# Keep some backward compatibility
-#
-.if ${USE_SDL}=="yes"
-USE_SDL=sdl
-.endif
 
 #
 # Variables used to determine what is needed:
@@ -107,6 +108,42 @@ _REQUIRES_${component}=
 .endfor
 
 #
+# If WANT_SDL is defined, check for the available libraries
+#
+.if !defined(AFTERPORTMK)
+.if !defined(SDL_Include_pre)
+
+SDL_Include_pre=	bsd.sdl.mk
+
+HAVE_SDL?=
+.if defined(WANT_SDL)
+.for component in ${_USE_SDL_ALL}
+.if exists(${LOCALBASE}/lib/lib${_LIB_${component}}.so.${_VERSION_${component}})
+HAVE_SDL+=	${component}
+.endif
+.endfor
+.endif
+
+.endif
+.endif
+
+#
+# If USE_SDL is defined, make dependencies for the libraries
+#
+.if !defined(BEFOREPORTMK)
+.if !defined(SDL_Include_post)
+.if defined(USE_SDL)
+
+SDL_Include_post=	bsd.sdl.mk
+
+#
+# Keep some backward compatibility
+#
+.if ${USE_SDL}=="yes"
+USE_SDL=	sdl
+.endif
+
+#
 # Check if all the values given in USE_SDL are valid.
 #
 _USE_SDL=
@@ -142,4 +179,6 @@ SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 CONFIGURE_ENV+=	SDL_CONFIG=${SDL_CONFIG}
 MAKE_ENV+=		SDL_CONFIG=${SDL_CONFIG}
 
+.endif
+.endif
 .endif

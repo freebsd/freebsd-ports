@@ -65,6 +65,17 @@ PORTOBJFORMAT!= test -x /usr/bin/objformat && /usr/bin/objformat || echo aout
 .endif
 .endif
 
+ID?=	/usr/bin/id
+UID!=	${ID} -u
+LOCALBASE?=	${DESTDIR}/usr/local
+.if exists(${LOCALBASE}/sbin/pkg_info)
+PKG_INFO?=	${LOCALBASE}/sbin/pkg_info
+.else
+PKG_INFO?=	/usr/sbin/pkg_info
+.endif
+SED?=		/usr/bin/sed
+PKGINSTALLVER!=	${PKG_INFO} -P 2>/dev/null | ${SED} -e 's/.*: //'
+
 .if !defined(OPSYS)
 OPSYS!=	/usr/bin/uname -s
 .endif
@@ -301,7 +312,9 @@ README.html:
 	OPSYS="${OPSYS:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
 	OSREL="${OSREL:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
 	OSVERSION="${OSVERSION:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
-	PORTOBJFORMAT="${PORTOBJFORMAT:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}"
+	PORTOBJFORMAT="${PORTOBJFORMAT:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
+	UID="${UID:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
+	PKGINSTALLVER="${PKGINSTALLVER:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}"
 .endif
 
 

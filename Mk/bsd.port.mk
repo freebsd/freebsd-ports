@@ -36,7 +36,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # These are meta-variables that are automatically set to the system
 # you are running on.  These are provided in case you need to take
 # different actions for different values.
-# 
+#
 # ARCH			- The architecture, as returned by "uname -p".
 # OPSYS			- Portability clause.  This is the operating system the
 #				  makefile is being used on.  Automatically set to
@@ -70,7 +70,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # PKGNAMESUFFIX	- Suffix to specify compilation options.  Optional.
 #				  Do not define this in your Makefile.
 # UNIQUENAME	- A name for your port that is globally unique.  By default,
-# 				  this is set to ${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
+# 				  this is set to ${LATEST_LINK} when LATEST_LINK is set,
+# 				  and to ${PKGNAMEPREFIX}${PORTNAME} otherwise.
 # DISTNAME		- Name of port or distribution used in generating
 #				  WRKSRC and DISTFILES below (default:
 #				  ${PORTNAME}-${PORTVERSION}).
@@ -83,14 +84,14 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  (default: ${DISTNAME}${EXTRACT_SUFX}).  Set this to
 #				  an empty string if the port doesn't require it.
 # EXTRACT_SUFX	- Suffix for archive names (default: .tar.bz2 if USE_BZIP2
-#				  is set, .zip if USE_ZIP is set, .tar.gz otherwise).  
+#				  is set, .zip if USE_ZIP is set, .tar.gz otherwise).
 #				  You never have to set both DISTFILES and EXTRACT_SUFX.
 # MASTER_SITES	- Primary location(s) for distribution files if not found
 #				  locally.  See bsd.sites.mk for common choices for
 #				  MASTER_SITES.
 # MASTER_SITE_SUBDIR	- Subdirectory of MASTER_SITES (default: empty).
 #				  Will sometimes need to be set to ${PORTNAME} for (e.g.)
-#				  MASTER_SITE_SOURCEFORGE.  Only guaranteed to work for 
+#				  MASTER_SITE_SOURCEFORGE.  Only guaranteed to work for
 #				  choices of ${MASTER_SITES} defined in bsd.sites.mk.
 # PATCHFILES	- Name(s) of additional files that contain distribution
 #				  patches (default: none).  make will look for them at
@@ -192,7 +193,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # GMAKE			- Set to path of GNU make if not in $PATH (default: gmake).
 ##
 # USE_AUTOMAKE_VER (PORT MAY SET THIS VALUE)
-#				- Implies USE_AUTOMAKE. 
+#				- Implies USE_AUTOMAKE.
 #				- Implies WANT_AUTOMAKE_VER=(value)
 # USE_AUTOMAKE (PORT MAY SET THIS VALUE)	
 #				- Implies USE_AUTOCONF.
@@ -208,7 +209,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- If set with an unknown value, the port is marked BROKEN.
 #				- Implies WANT_AUTOCONF_VER=(appropriate version)
 # AUTOMAKE_ARGS (PORT MAY ALTER THIS VALUE)
-#				- Pass these args to ${AUTOMAKE} if ${USE_AUTOMAKE_VER} 
+#				- Pass these args to ${AUTOMAKE} if ${USE_AUTOMAKE_VER}
 #				  is set. If an application sets this value, it should
 #				  use the += form of assignment to append, not overwrite.
 ##
@@ -229,11 +230,11 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  autoconf-related program paths.
 #				- If set with an unknown value, the port is marked BROKEN.
 # AUTOCONF_ARGS (PORT MAY ALTER THIS VALUE)
-#				- Pass these args to ${AUTOCONF} if ${USE_AUTOCONF_VER} 
+#				- Pass these args to ${AUTOCONF} if ${USE_AUTOCONF_VER}
 #				  is set. If an application sets this value, it should
 #				  use the += form of assignment to append, not overwrite.
 # AUTOHEADER_ARGS (PORT MAY ALTER THIS VALUE)
-#				- Pass these args to ${AUTOHEADER} if ${USE_AUTOHEADER} 
+#				- Pass these args to ${AUTOHEADER} if ${USE_AUTOHEADER}
 #				  is set. If an application sets this value, it should
 #				  use the += form of assignment to append, not overwrite.
 ##
@@ -241,13 +242,13 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- Set to path of GNU automake (default:
 #				  according to USE_AUTOMAKE_VER value)
 # AUTOMAKE_ENV (READ-ONLY)
-#				- Pass these env var=value pairs (shell-like) 
+#				- Pass these env var=value pairs (shell-like)
 #				  to ${AUTOMAKE} if ${USE_AUTOMAKE_VER} is set.
 # ACLOCAL (READ-ONLY)
 #				- Set to path of GNU automake aclocal (default:
 #				  according to USE_AUTOMAKE_VER value)
 # ACLOCAL_DIR (READ-ONLY)
-#				- Set to path of GNU automake aclocal shared directory 
+#				- Set to path of GNU automake aclocal shared directory
 #                 (default:	according to USE_AUTOMAKE_VER value)
 # AUTOMAKE_DIR (READ-ONLY)
 #				- Set to path of GNU automake shared directory (default:
@@ -257,7 +258,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- Set to path of GNU autoconf (default:
 #				  according to USE_AUTOCONF_VER value)
 # AUTOCONF_ENV (READ-ONLY)
-#				- Pass these env var=value pairs (shell-like) 
+#				- Pass these env var=value pairs (shell-like)
 #				  to ${AUTOCONF} if ${USE_AUTOCONF_VER} is set.
 # AUTOHEADER (READ-ONLY)
 #				- Set to path of GNU autoconf autoheader
@@ -276,10 +277,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  according to USE_AUTOCONF_VER value)
 ##
 # USE_LIBTOOL_VER (PORT MAY SET THIS VALUE)
-#				- Implies USE_LIBTOOL. 
+#				- Implies USE_LIBTOOL.
 #				- Implies WANT_LIBTOOL_VER=(value)
 # USE_LIBTOOL (PORT MAY SET THIS VALUE)
-#				- Says that the port uses Libtool.  
+#				- Says that the port uses Libtool.
 #				- Implies GNU_CONFIGURE.
 #				- Implies WANT_LIBTOOL_VER?=13
 # LIBTOOL (READ-ONLY)
@@ -303,9 +304,12 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 ##
 # USE_GETOPT_LONG	- Says that the port uses getopt_long. If OSVERSION
 #				  less than 500041, automatically adds devel/libgnugeopt
-#				  to LIB_DEPENDS, and pass adjusted values of 
+#				  to LIB_DEPENDS, and pass adjusted values of
 #				  CPPFLAGS and LDFLAGS in CONFIGURE_ENV.
 #				  Default: not set.
+##
+# USE_ICONV		- Says that the port uses libiconv.
+# USE_GETTEXT		- Says that the port uses GNU gettext (libintl).
 ##
 # USE_PERL5		- Says that the port uses perl5 for building and running.
 # USE_PERL5_BUILD	- Says that the port uses perl5 for building.
@@ -329,6 +333,8 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  (value: perl5)
 # SITE_PERL		- Directory name where site specific perl packages go.
 #					This value is added to PLIST_SUB.
+# PERL_MODBUILD		- Use Module::Build to configure, build and install
+#			  port.
 #
 # USE_GHOSTSCRIPT	- Says that the port needs ghostscript to both
 #					build and run.  Default: not set.
@@ -355,13 +361,14 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # USE_GL		- Says that the port uses libGL.
 # USE_MESA		- Says that the port uses libGL/libglut (deprecated).
 # USE_MOTIF		- Says that the port uses a Motif toolkit.  Implies USE_XPM.
-# NO_OPENMOTIF		- Says that the port uses a custom Motif toolkit 
+# NO_OPENMOTIF		- Says that the port uses a custom Motif toolkit
 #			  instead of Openmotif.
 #			  Used only when USE_MOTIF is set.
 # WANT_LESSTIF		- Says that the port uses Lesstif as Motif toolkit.
 #			  Used only when USE_MOTIF is set.  Implies
 #			  NO_OPENMOTIF.
 # USE_SDL		- Says that the port uses the sdl libraries.
+#				See bsd.sdl.mk for more information.
 # USE_XPM		- Says that the port uses the xpm graphics libraries.
 ##
 # USE_OPENSSL	- Says that the port relies on the OpenSSL package.
@@ -416,18 +423,18 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 #
 # USE_MYSQL			- Add MySQL client dependency.
-#					  If no version is given (by the maintainer via the port or 
-#					  by the user via defined variable), try to find the 
-#					  currently installed version.  Fall back to default if 
+#					  If no version is given (by the maintainer via the port or
+#					  by the user via defined variable), try to find the
+#					  currently installed version.  Fall back to default if
 #					  necessary (MySQL4.0 = 40).
 #
-# DEFAULT_MYSQL_VER	- MySQL default version. Can be overriden within a port. 
+# DEFAULT_MYSQL_VER	- MySQL default version. Can be overriden within a port.
 #					  Default: 40.
 #
-# WANT_MYSQL_VER 	- Maintainer can set an arbitrary version of MySQL by 
+# WANT_MYSQL_VER 	- Maintainer can set an arbitrary version of MySQL by
 #					  using it.
 #
-# BROKEN_WITH_MYSQL	- This variable can be defined if the ports doesn't support 
+# BROKEN_WITH_MYSQL	- This variable can be defined if the ports doesn't support
 #					  one or more version of MySQL.
 #
 # MYSQL_VER			- Internal variable for MySQL version.
@@ -526,9 +533,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # MASTERDIR		- Where the port finds patches, package files, etc.  Define
 #				  this is you have two or more ports that share most of the
 #				  files (default: ${.CURDIR}).
-# PORTSDIR		- The root of the ports tree.  Defaults:
-#					FreeBSD/OpenBSD: /usr/ports
-#					NetBSD:          /usr/opt
+# PORTSDIR		- The root of the ports tree. (default: /usr/ports)
 # DISTDIR 		- Where to get gzip'd, tarballed copies of original sources
 #				  (default: ${PORTSDIR}/distfiles).
 # PACKAGES		- A top level directory where all packages go (rather than
@@ -548,7 +553,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  (default: ${MASTERDIR}/scripts)
 # FILESDIR 		- A directory containing any miscellaneous additional files.
 #				  (default: ${MASTERDIR}/files)
-# PKGDIR 		- A direction containing any package creation files.
+# PKGDIR 		- A directory containing any package creation files.
 #				  (default: ${MASTERDIR})
 #
 # Variables that serve as convenient "aliases" for your *-install targets.
@@ -600,7 +605,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # INFO			- A list of .info files (omitting the trailing ".info");
 #				  only one entry per document!
 #
-# Set the following to specify all documentation your port installs into 
+# Set the following to specify all documentation your port installs into
 # ${DOCSDIR}
 #
 # PORTDOCS		- A list of files and directories relative to DOCSDIR.
@@ -711,7 +716,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # For extract:
 #
 # EXTRACT_CMD	- Command for extracting archive (default: "bzip2" if
-#				  USE_BZIP2 is set, "unzip" if USE_ZIP is set, "gzip" 
+#				  USE_BZIP2 is set, "unzip" if USE_ZIP is set, "gzip"
 #				  otherwise).
 # EXTRACT_BEFORE_ARGS -
 #				  Arguments to ${EXTRACT_CMD} before filename
@@ -724,6 +729,13 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  change the owner and group of all files under ${WRKDIR}
 #				  to 0:0.  Set this variable if you want to turn off this
 #				  feature.
+#
+# For makesum:
+#
+# NO_SIZE			- Don't record size data in distinfo, needed 
+#				  when the master site does not report file
+#				  sizes, or when multiple valid versions of
+#				  a distfile, having different sizes, exist.
 #
 # For patch:
 #
@@ -780,7 +792,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # For install:
 #
-# INSTALL_TARGET - Default target for sub-make in install stage 
+# INSTALL_TARGET - Default target for sub-make in install stage
 # 				  (default: install).
 # INSTALL_WRKSRC - Directory to install from (default: ${WRKSRC}).
 # NO_MTREE		- If set, will not invoke mtree from bsd.port.mk from
@@ -816,7 +828,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  (default: ${PREFIX}/share/examples/${PORTNAME}).
 # DATADIR		- Name of the directory to install the packages shared data
 #				  in (default: ${PREFIX}/share/${PORTNAME}).
-# 
+#
 # Note that the install target will automatically add manpages (see
 # above) and also substitute special sequences of characters (delimited
 # by "%%") as defined in PLIST_SUB to generate ${TMPPLIST}.  For
@@ -862,6 +874,9 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  of building the port from scratch.
 # INSTALL_AS_USER - Define this to install as the current user, intended
 #			      for systems where you have no root access.
+# DISABLE_SIZE	  - Do not check the size of a distfile even if the SIZE field
+#			      has been specified in distinfo.  This is useful
+#			      when using an alternate FETCH_CMD.
 #
 # End of the list of all variables that need to be defined in a port.
 # Most port authors should not need to understand anything after this point.
@@ -899,6 +914,7 @@ CPIO?=		/usr/bin/cpio
 CUT?=		/usr/bin/cut
 DC?=		/usr/bin/dc
 DIALOG?=	/usr/bin/dialog
+DIRNAME?=	/usr/bin/dirname
 EGREP?=		/usr/bin/egrep
 EXPR?=		/bin/expr
 FALSE?=		false				# Shell builtin
@@ -1019,13 +1035,20 @@ USE_SUBMAKE=	yes
 # where 'make config' records user configuration options
 PORT_DBDIR?=	/var/db/ports
 
-UNIQUENAME?=${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
-OPTIONSFILE?=${PORT_DBDIR}/${UNIQUENAME}/options
-.if exists(${OPTIONSFILE})
-.include "${OPTIONSFILE}"
+.if defined(LATEST_LINK)
+UNIQUENAME?=	${LATEST_LINK}
+.else
+UNIQUENAME?=	${PKGNAMEPREFIX}${PORTNAME}
 .endif
-.if exists(${OPTIONSFILE}.local)
-.include "${OPTIONSFILE}.local"
+OPTIONSFILE?=	${PORT_DBDIR}/${UNIQUENAME}/options
+_OPTIONSFILE!=	${ECHO_CMD} "${OPTIONSFILE}"
+.if defined(OPTIONS)
+.if exists(${_OPTIONSFILE}) && !make(rmconfig)
+.include "${_OPTIONSFILE}"
+.endif
+.if exists(${_OPTIONSFILE}.local)
+.include "${_OPTIONSFILE}.local"
+.endif
 .endif
 
 # check for old, crufty, makefile types, part 1:
@@ -1063,11 +1086,7 @@ DISTNAME?=	${PORTNAME}-${PORTVERSION}
 # These need to be absolute since we don't know how deep in the ports
 # tree we are and thus can't go relative.  They can, of course, be overridden
 # by individual Makefiles or local system make configuration.
-.if (${OPSYS} == "NetBSD")
-PORTSDIR?=		/usr/opt
-.else
 PORTSDIR?=		/usr/ports
-.endif
 LOCALBASE?=		${DESTDIR}/usr/local
 X11BASE?=		${DESTDIR}/usr/X11R6
 LINUXBASE?=		${DESTDIR}/compat/linux
@@ -1133,22 +1152,11 @@ BUILD_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 RUN_DEPENDS+=	${APXS}:${PORTSDIR}/${APACHE_PORT}
 .endif
 
-.if !defined(PERL_LEVEL) && defined(PERL_VERSION)
-perl_major=		${PERL_VERSION:C|^([1-9]+).*|\1|}
-_perl_minor=	00${PERL_VERSION:C|^([1-9]+)\.([0-9]+).*|\2|}
-perl_minor=		${_perl_minor:C|^.*(...)|\1|}
-.if ${perl_minor} >= 100
-perl_minor=		${PERL_VERSION:C|^([1-9]+)\.([0-9][0-9][0-9]).*|\2|}
-perl_patch=		${PERL_VERSION:C|^.*(..)|\1|}
-.else # ${perl_minor} < 100
-_perl_patch=	0${PERL_VERSION:C|^([1-9]+)\.([0-9]+)\.*|0|}
-perl_patch=		${_perl_patch:C|^.*(..)|\1|}
-.endif # ${perl_minor} < 100
-PERL_LEVEL=	${perl_major}${perl_minor}${perl_patch}
+.if ${OSVERSION} >= 502100
+PERL_VERSION?=	5.8.2
+PERL_VER?=	5.8.2
+PERL_ARCH?=	mach
 .else
-PERL_LEVEL=0
-.endif # !defined(PERL_LEVEL) && defined(PERL_VERSION)
-
 .if ${OSVERSION} >= 500032
 PERL_VERSION?=	5.6.1
 PERL_VER?=		5.6.1
@@ -1168,6 +1176,23 @@ PERL_VER?=		5.005
 PERL_ARCH?=		${ARCH}-freebsd
 .endif
 .endif
+.endif
+
+.if !defined(PERL_LEVEL) && defined(PERL_VERSION)
+perl_major=		${PERL_VERSION:C|^([1-9]+).*|\1|}
+_perl_minor=	00${PERL_VERSION:C|^([1-9]+)\.([0-9]+).*|\2|}
+perl_minor=		${_perl_minor:C|^.*(...)|\1|}
+.if ${perl_minor} >= 100
+perl_minor=		${PERL_VERSION:C|^([1-9]+)\.([0-9][0-9][0-9]).*|\2|}
+perl_patch=		${PERL_VERSION:C|^.*(..)|\1|}
+.else # ${perl_minor} < 100
+_perl_patch=	0${PERL_VERSION:C|^([1-9]+)\.([0-9]+)\.*|0|}
+perl_patch=		${_perl_patch:C|^.*(..)|\1|}
+.endif # ${perl_minor} < 100
+PERL_LEVEL=	${perl_major}${perl_minor}${perl_patch}
+.else
+PERL_LEVEL=0
+.endif # !defined(PERL_LEVEL) && defined(PERL_VERSION)
 
 .if ${PERL_LEVEL} >= 500800
 PERL_PORT?=	perl5.8
@@ -1175,7 +1200,8 @@ PERL_PORT?=	perl5.8
 PERL_PORT?=	perl5
 .endif
 
-SITE_PERL?=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VER}
+SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
 
 .if exists(/usr/bin/perl5) && ${OSVERSION} >= 300000 && ${OSVERSION} < 500036
 PERL5=		/usr/bin/perl${PERL_VERSION}
@@ -1197,6 +1223,10 @@ PERL=		${LOCALBASE}/bin/perl
 .include "${PORTSDIR}/Mk/bsd.gnustep.mk"
 .endif
 
+.if defined(USE_PHP)
+.include "${PORTSDIR}/Mk/bsd.php.mk"
+.endif
+
 .if defined(USE_PYTHON)
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 .endif
@@ -1213,7 +1243,13 @@ PERL=		${LOCALBASE}/bin/perl
 .include "${PORTSDIR}/Mk/bsd.kde.mk"
 .endif
 
+.if defined(WANT_GNOME) || defined(USE_GNOME) || defined(USE_GTK)
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
+.endif
+
+.if defined(USE_SDL) || defined(WANT_SDL)
+.include "${PORTSDIR}/Mk/bsd.sdl.mk"
+.endif
 
 # defaults to 4.x for 5.0-CURRENT and 4.5-STABLE; and 3.3.6 for all other branches
 .if ${OSVERSION} > 500025 || ( ${OSVERSION} >= 450005 && ${OSVERSION} < 500000 )
@@ -1260,7 +1296,11 @@ INSTALL_WRKSRC?=${WRKSRC}
 PLIST_SUB+=	OSREL=${OSREL} PREFIX=%D LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
 
 .if defined(WITHOUT_CPU_CFLAGS)
+.if defined(_CPUCFLAGS)
+.if !empty(_CPUCFLAGS)
 CFLAGS:=	${CFLAGS:C/${_CPUCFLAGS}//}
+.endif
+.endif
 .endif
 
 .if defined(NOPORTDOCS)
@@ -1615,16 +1655,24 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 .endif
 
 .if defined(USE_RC_SUBR)
+.if ${OSVERSION} < 500037
 RUN_DEPENDS+=	${LOCALBASE}/etc/rc.subr:${PORTSDIR}/sysutils/rc_subr
 RC_SUBR=	${LOCALBASE}/etc/rc.subr
+.else
+RC_SUBR=	/etc/rc.subr
+.endif
+.endif
+
+.if defined(USE_ICONV)
+LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
+.endif
+
+.if defined(USE_GETTEXT)
+LIB_DEPENDS+=	intl.6:${PORTSDIR}/devel/gettext
 .endif
 
 .if defined(USE_LINUX)
 RUN_DEPENDS+=	${LINUXBASE}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
-.endif
-
-.if defined(USE_SDL)
-.include "${PORTSDIR}/Mk/bsd.sdl.mk"
 .endif
 
 .if defined(USE_MOTIF)
@@ -1680,7 +1728,22 @@ BUILD_DEPENDS+=	bison:${PORTSDIR}/devel/bison
 PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 				PERL_VER=${PERL_VER} \
 				PERL_ARCH=${PERL_ARCH} \
-				SITE_PERL=${SITE_PERL:S|^${LOCALBASE}/||}
+				SITE_PERL=${SITE_PERL_REL}
+
+.if defined(PERL_MODBUILD)
+PERL_CONFIGURE=		yes
+CONFIGURE_SCRIPT?=	Build.PL
+BUILD_DEPENDS+=		${SITE_PERL}/Module/Build.pm:${PORTSDIR}/devel/p5-Module-Build
+ALL_TARGET?=
+PL_BUILD?=		Build
+CONFIGURE_ARGS+= \
+	install_path=lib="${PREFIX}/${SITE_PERL_REL}" \
+	install_path=arch="${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH}" \
+	install_path=script="${PREFIX}/bin" \
+	install_path=bin="${PREFIX}/bin" \
+	install_path=libdoc="${MAN3PREFIX}/man/man3" \
+	install_path=bindoc="${MAN1PREFIX}/man/man1"
+.endif
 
 .if defined(PERL_CONFIGURE)
 USE_PERL5=	yes
@@ -1706,24 +1769,21 @@ RUN_DEPENDS+=	${PERL5}:${PORTSDIR}/lang/${PERL_PORT}
 .if defined(USE_MYSQL)
 DEFAULT_MYSQL_VER?=	40
 # MySQL client version currently supported.
-MYSQL323_LIBVER=10
+MYSQL323_LIBVER=	10
 MYSQL40_LIBVER=		12
 MYSQL41_LIBVER=		14
+MYSQL50_LIBVER=		14
 
 # Setting/finding MySQL version we want.
 .if defined(WANT_MYSQL_VER)
 MYSQL_VER=	${WANT_MYSQL_VER}
 .elif defined(WITH_MYSQL_VER)
 MYSQL_VER=	${WITH_MYSQL_VER}
-.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.${MYSQL323_LIBVER})
-MYSQL_VER=	323
-.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.${MYSQL40_LIBVER})
-MYSQL_VER=	40
-.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.${MYSQL41_LIBVER})
-MYSQL_VER=	41
+.elif exists(${LOCALBASE}/bin/mysql)
+MYSQL_VER!=	${LOCALBASE}/bin/mysql --version | ${SED} -e 's/.*Distrib \([0-9]\)\.\([0-9]*\).*/\1\2/'
 .else
 MYSQL_VER=	${DEFAULT_MYSQL_VER}
-.endif # WANT_MYSQL
+.endif # WANT_MYSQL_VER
 
 # And now we are checking if we can use it
 .if exists(${PORTSDIR}/databases/mysql${MYSQL_VER}-client)
@@ -1756,7 +1816,13 @@ CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 .endif
 .endif
 
+.if defined(WANT_GNOME) || defined(USE_GNOME) || defined(USE_GTK)
 .include "${PORTSDIR}/Mk/bsd.gnome.mk"
+.endif
+
+.if defined(USE_SDL) || defined(WANT_SDL)
+.include "${PORTSDIR}/Mk/bsd.sdl.mk"
+.endif
 
 .if defined(USE_PYTHON)
 .include "${PORTSDIR}/Mk/bsd.python.mk"
@@ -1845,11 +1911,14 @@ MAKEFILE?=		Makefile
 MAKE_ENV+=		PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} MOTIFLIB="${MOTIFLIB}" LIBDIR="${LIBDIR}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" MANPREFIX="${MANPREFIX}"
 
 .if ${OSVERSION} < 500016
-PTHREAD_CFLAGS=	-D_THREAD_SAFE
-PTHREAD_LIBS=		-pthread
+PTHREAD_CFLAGS?=	-D_THREAD_SAFE
+PTHREAD_LIBS?=		-pthread
+.elif ${OSVERSION} < 502102
+PTHREAD_CFLAGS?=	-D_THREAD_SAFE
+PTHREAD_LIBS?=		-lc_r
 .else
-PTHREAD_CFLAGS=	-D_THREAD_SAFE
-PTHREAD_LIBS=		-lc_r
+PTHREAD_CFLAGS?=
+PTHREAD_LIBS?=		-lpthread
 .endif
 
 .if exists(/usr/bin/fetch)
@@ -1860,7 +1929,10 @@ FETCH_CMD?=		/usr/bin/fetch
 FETCH_CMD?=		/usr/bin/fetch -ARr
 FETCH_REGET?=	1
 .endif
+.if ${OSVERSION} >= 480000 && !defined(DISABLE_SIZE)
+# Avoid -S for 4.7 and earlier since it causes fetch errors
 FETCH_BEFORE_ARGS+=	$${CKSIZE:+-S $$CKSIZE}
+.endif
 .else
 FETCH_CMD?=		/usr/bin/ftp
 FETCH_REGET?=	0
@@ -1950,7 +2022,9 @@ MTREE_CMD?=	/usr/sbin/mtree
 MTREE_ARGS?=	-U ${MTREE_FOLLOWS_SYMLINKS} -f ${MTREE_FILE} -d -e -p
 
 # Determine whether or not we can use rootly owner/group functions.
-UID!=	id -u
+.if !defined(UID)
+UID!=	${ID} -u
+.endif
 .if ${UID} == 0
 _BINOWNGRP=	-o ${BINOWN} -g ${BINGRP}
 _SHROWNGRP=	-o ${SHAREOWN} -g ${SHAREGRP}
@@ -1998,33 +2072,37 @@ TMPPLIST?=	${WRKDIR}/.PLIST.mktmp
 .for _CATEGORY in ${CATEGORIES}
 PKGCATEGORY?=	${_CATEGORY}
 .endfor
-_PORTDIRNAME!=	${BASENAME} ${.CURDIR}
+_PORTDIRNAME=	${.CURDIR:T}
 PORTDIRNAME?=	${_PORTDIRNAME}
 PKGORIGIN?=		${PKGCATEGORY}/${PORTDIRNAME}
 .endif
 
-.if ${OSVERSION} < 460102 && ${PKGORIGIN} != "sysutils/pkg_install"
-BUILD_DEPENDS+=	${LOCALBASE}/sbin/pkg_info:${PORTSDIR}/sysutils/pkg_install
 .if exists(${LOCALBASE}/sbin/pkg_info)
 PKG_CMD?=		${LOCALBASE}/sbin/pkg_create
 PKG_ADD?=		${LOCALBASE}/sbin/pkg_add
 PKG_DELETE?=	${LOCALBASE}/sbin/pkg_delete
 PKG_INFO?=		${LOCALBASE}/sbin/pkg_info
+PKG_VERSION?=		${LOCALBASE}/sbin/pkg_version
+.elif ${OSVERSION} < 460102 && ${PKGORIGIN} != "sysutils/pkg_install"
+BUILD_DEPENDS+=		${LOCALBASE}/sbin/pkg_info:${PORTSDIR}/sysutils/pkg_install
+PKG_CMD?=		${LOCALBASE}/sbin/pkg_create
+PKG_ADD?=		${LOCALBASE}/sbin/pkg_add
+PKG_DELETE?=		${LOCALBASE}/sbin/pkg_delete
+PKG_INFO?=		${LOCALBASE}/sbin/pkg_info
+PKG_VERSION?=		${LOCALBASE}/sbin/pkg_version
 .else
 PKG_CMD?=		/usr/sbin/pkg_create
 PKG_ADD?=		/usr/sbin/pkg_add
 PKG_DELETE?=	/usr/sbin/pkg_delete
 PKG_INFO?=		/usr/sbin/pkg_info
-.endif
-.else
-PKG_CMD?=		/usr/sbin/pkg_create
-PKG_ADD?=		/usr/sbin/pkg_add
-PKG_DELETE?=	/usr/sbin/pkg_delete
-PKG_INFO?=		/usr/sbin/pkg_info
+PKG_VERSION?=		/usr/sbin/pkg_version
 .endif
 
 # Does the pkg_create tool support conflict checking?
+# XXX Slow?
+.if !defined(PKGINSTALLVER)
 PKGINSTALLVER!= ${PKG_INFO} -P 2>/dev/null | ${SED} -e 's/.*: //'
+.endif
 .if ${PKGINSTALLVER} < 20030417
 DISABLE_CONFLICTS=	YES
 .endif
@@ -2495,7 +2573,7 @@ VALID_CATEGORIES+= accessibility afterstep arabic archivers astro audio \
 	deskutils devel dns editors elisp emulators finance french ftp \
 	games german gnome graphics haskell hebrew hungarian \
 	ipv6 irc japanese java kde korean lang linux lisp \
-	mail math mbone misc multimedia net news \
+	mail math mbone misc multimedia net net-mgmt news \
 	offix palm parallel pear perl5 picobsd plan9 polish portuguese print \
 	python ruby russian \
 	scheme science security shells sysutils \
@@ -2725,24 +2803,9 @@ LDCONFIG_RUNLIST!=	${ECHO_CMD} ${LDCONFIG_PLIST} | ${SED} -e "s!%D!${PREFIX}!g"
 # Don't build a port if the system is too old.
 ################################################################
 
-.if ${OSVERSION} >= 300000
+.if ${OSVERSION} < 420000
 # You need an upgrade kit or make world newer than this
-BSDPORTMKVERSION=	20001103
-.if exists(/var/db/port.mkversion)
-VERSIONFILE=	/var/db/port.mkversion
-.else
-VERSIONFILE=	${PKG_DBDIR}/.mkversion
-.endif
-.if exists(${VERSIONFILE})
-.if !defined(SYSTEMVERSION)
-SYSTEMVERSION!=	${CAT} ${VERSIONFILE}
-.endif
-.else
-SYSTEMVERSION=	0
-.endif
-.if ${BSDPORTMKVERSION} > ${SYSTEMVERSION}
 IGNORE=	": Your system is too old to use this bsd.port.mk.  You need a fresh make world or an upgrade kit.  Please go to http://www.FreeBSD.org/ports/ or a mirror site and follow the instructions"
-.endif
 .endif
 
 .if defined(ONLY_FOR_ARCHS)
@@ -2888,7 +2951,7 @@ DEPENDS_ARGS+=	FORCE_PKG_REGISTER=yes
 ################################################################
 .if (!defined(OPTIONS) || defined(CONFIG_DONE) || \
 	defined(PACKAGE_BUILDING) || defined(BATCH) || \
-	exists(${OPTIONSFILE}) || exists(${OPTIONSFILE}.local))
+	exists(${_OPTIONSFILE}) || exists(${_OPTIONSFILE}.local))
 _OPTIONS_OK=yes
 .endif
 
@@ -2965,6 +3028,13 @@ options-message:
 .else
 	@${DO_NADA}
 .endif
+.if defined(_OPTIONS_READ)
+	@${ECHO_MSG} "===>  Found saved configuration for ${_OPTIONS_READ}"
+.if ${OPTIONSFILE} != ${_OPTIONSFILE}
+	@${ECHO_MSG} "===>  *** CAUTION *** Using wrong configuration file ${_OPTIONSFILE}"
+.endif
+.endif
+
 
 # Warn user about deprecated packages.  Advisory only.
 
@@ -2982,6 +3052,43 @@ check-deprecated:
 	@${ECHO_MSG}
 .endif
 .endif
+.endif
+
+# Check if the port is listed in the vulnerability database
+
+.if ${PKGINSTALLVER} < 20040125 || ${OSVERSION} < 420001 || ${OSVERSION} >= 500000 && ${OSVERSION} < 500014
+DISABLE_VULNERABILITIES=	yes
+.endif
+
+AUDITFILE?=		/var/db/portaudit/auditfile.tbz
+_EXTRACT_AUDITFILE=	${TAR} -jxOf "${AUDITFILE}" auditfile
+
+check-vulnerable:
+.if !defined(DISABLE_VULNERABILITIES) && !defined(PACKAGE_BUILDING)
+	@if [ -f "${AUDITFILE}" ]; then \
+		audit_created=`${_EXTRACT_AUDITFILE} | \
+			${SED} -nEe "1s/^#CREATED: *([0-9]{4})-?([0-9]{2})-?([0-9]{2}).*$$/\1\2\3/p"`; \
+		audit_expiry=`date -u -v-14d "+%Y%m%d"`; \
+		if [ "$$audit_created" -lt "$$audit_expiry" ]; then \
+			${ECHO_MSG} "===>  WARNING: Vulnerability database out of date, checking anyway"; \
+		fi; \
+		vlist=`${_EXTRACT_AUDITFILE} | ${AWK} -F\| ' \
+			/^[^#]/ { \
+				if (!system("${PKG_VERSION} -T \"${PKGNAME}\" \"" $$1 "\"")) \
+					print ">> " $$3 ".\n   Reference: <" $$2 ">" \
+			} \
+		'`; \
+		if [ -n "$$vlist" ]; then \
+			${ECHO_MSG} "===>  ${PKGNAME} has known vulnerabilities:"; \
+			${ECHO_MSG} "$$vlist"; \
+			${ECHO_MSG} ">> Please update your ports tree and try again."; \
+			exit 1; \
+		fi; \
+	else \
+		${ECHO_MSG} "===>  Vulnerability check disabled, database not found"; \
+	fi
+.else
+	@${ECHO_MSG} "===>  Vulnerability check disabled"
 .endif
 
 # Fetch
@@ -3125,7 +3232,7 @@ do-extract:
 		fi \
 	done
 .if !defined(EXTRACT_PRESERVE_OWNERSHIP)
-	@if [ `id -u` = 0 ]; then \
+	@if [ `${ID} -u` = 0 ]; then \
 		${CHMOD} -R ug-s ${WRKDIR}; \
 		${CHOWN} -R 0:0 ${WRKDIR}; \
 	fi
@@ -3217,7 +3324,7 @@ do-configure:
 	fi
 .if defined(GNU_CONFIGURE)
 	@CONFIG_GUESS_DIRS=$$(${FIND} ${WRKDIR} -name config.guess -o -name config.sub \
-		| ${XARGS} -n 1 /usr/bin/dirname); \
+		| ${XARGS} -n 1 ${DIRNAME}); \
 	for _D in $${CONFIG_GUESS_DIRS}; do \
 		${CP} -f ${TEMPLATES}/config.guess $${_D}/config.guess; \
 		${CHMOD} a+rx $${_D}/config.guess; \
@@ -3258,7 +3365,11 @@ do-build:
 .if defined(USE_GMAKE)
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 .else
+.if defined(PERL_MODBUILD)
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} ${PL_BUILD} ${MAKE_ARGS} ${ALL_TARGET})
+.else
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+.endif
 .endif
 .endif
 
@@ -3278,7 +3389,7 @@ check-conflicts:
 		found=`${CAT} ${WRKDIR}/.CONFLICTS | ${SED} -e s'|${PKG_DBDIR}/||g' | ${TR} '\012' ' '`; \
 		conflicting=0; \
 		for entry in $${found}; do \
-			prfx=`${PKG_INFO} -q -p $${entry} 2> /dev/null | ${HEAD} -n 1 | ${SED} -ne '1s|^@cwd ||p'`; \
+			prfx=`${PKG_INFO} -q -p $${entry} 2> /dev/null | ${SED} -ne '1s|^@cwd ||p'`; \
 			if [ "x${PREFIX}" = "x$${prfx}" ]; then \
 				conflicting=1;\
 				conflicts_with="$${conflicts_with} $${entry}";\
@@ -3311,12 +3422,16 @@ do-install:
 	@${MKHTMLINDEX} ${PREFIX}/lib/X11/doc/html
 .endif
 .endif
-.else defined(USE_GMAKE)
+.else # !defined(USE_GMAKE)
+.if defined(PERL_MODBUILD)
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} ${PL_BUILD} ${MAKE_ARGS} ${INSTALL_TARGET})
+.else
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
 .if defined(USE_IMAKE) && !defined(NO_INSTALL_MANPAGES)
 	@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} install.man)
 .if ${XFREE86_HTML_MAN:L} == yes
 	@${MKHTMLINDEX} ${PREFIX}/lib/X11/doc/html
+.endif
 .endif
 .endif
 .endif
@@ -3422,7 +3537,7 @@ check-already-installed:
 		@already_installed=`${PKG_INFO} -q -O ${PKGORIGIN}`; \
 		if [ -n "$${already_installed}" ]; then \
 				for p in $${already_installed}; do \
-						prfx=`${PKG_INFO} -q -p $${p} 2> /dev/null | ${HEAD} -n 1 | ${SED} -ne '1s|^@cwd ||p'`; \
+						prfx=`${PKG_INFO} -q -p $${p} 2> /dev/null | ${SED} -ne '1s|^@cwd ||p'`; \
 						if [ "x${PREFIX}" = "x$${prfx}" ]; then \
 								df=`${PKG_INFO} -q -f $${p} 2> /dev/null | ${GREP} -v "^@" | ${COMM} -12 - ${TMPPLIST}`; \
 								if [ -n "$${df}" ]; then \
@@ -3462,7 +3577,7 @@ check-umask:
 .if !target(install-mtree)
 install-mtree:
 	@${MKDIR} ${PREFIX}
-	@if [ `id -u` != 0 ]; then \
+	@if [ `${ID} -u` != 0 ]; then \
 		if [ -w ${PREFIX}/ ]; then \
 			${ECHO_MSG} "Warning: not superuser, you may get some errors during installation."; \
 		else \
@@ -3471,7 +3586,7 @@ install-mtree:
 		fi; \
 	fi
 .if !defined(NO_MTREE)
-	@if [ `id -u` = 0 ]; then \
+	@if [ `${ID} -u` = 0 ]; then \
 		if [ ! -f ${MTREE_FILE} ]; then \
 			${ECHO_CMD} "Error: mtree file \"${MTREE_FILE}\" is missing."; \
 			${ECHO_CMD} "Copy it from a suitable location (e.g., /usr/src/etc/mtree) and try again."; \
@@ -3554,7 +3669,7 @@ security-check:
 #   4.  startup scripts, in conjunction with 2.
 #   5.  world-writable files/dirs
 #
-	-@rm -f ${WRKDIR}/.PLIST.setuid ${WRKDIR}/.PLIST.stupid \
+	-@${RM} -f ${WRKDIR}/.PLIST.setuid ${WRKDIR}/.PLIST.stupid \
 		${WRKDIR}/.PLIST.network ${WRKDIR}/.PLIST.writable; \
 	if [ -n "$$PORTS_AUDIT" ]; then \
 		stupid_functions_regexp=' (gets|mktemp|tempnam|tmpnam|strcpy|strcat|sprintf)$$'; \
@@ -3641,7 +3756,7 @@ security-check:
 
 ################################################################
 # Skeleton targets start here
-# 
+#
 # You shouldn't have to change these.  Either add the pre-* or
 # post-* targets/scripts or redefine the do-* targets.  These
 # targets don't do anything other than checking for cookies and
@@ -3653,7 +3768,7 @@ security-check:
 
 _SANITY_SEQ=		pre-everything check-makefile check-categories \
 			check-makevars check-depends check-deprecated \
-			buildanyway-message options-message
+			check-vulnerable buildanyway-message options-message
 _FETCH_DEP=		check-sanity
 _FETCH_SEQ=		fetch-depends pre-fetch pre-fetch-script \
 				do-fetch post-fetch post-fetch-script
@@ -3883,7 +3998,7 @@ deinstall:
 	for p in $${found_names}; do \
 			check_name=`${ECHO_CMD} $${p} | ${SED} -e 's/-[^-]*$$//'`; \
 			if [ "$${check_name}" = "${PKGBASE}" ]; then \
-					prfx=`${PKG_INFO} -q -p $${p} 2> /dev/null | ${HEAD} -n 1 | ${SED} -ne '1s|^@cwd ||p'`; \
+					prfx=`${PKG_INFO} -q -p $${p} 2> /dev/null | ${SED} -ne '1s|^@cwd ||p'`; \
 					if [ "x${PREFIX}" = "x$${prfx}" ]; then \
 							${ECHO_MSG} "===>   Deinstalling $${p}"; \
 							${PKG_DELETE} -f $${p}; \
@@ -4091,7 +4206,7 @@ makesum:
 	@(cd ${DISTDIR}; \
 	 for file in ${_CKSUMFILES}; do \
 		${MD5} $$file >> ${MD5_FILE}; \
-		if [ -n "${USE_SIZE}" ]; then \
+		if [ -z "${NO_SIZE}" ]; then \
 			${ECHO_CMD} "SIZE ($$file) = "`${LS} -ALln $$file | ${AWK} '{print $$5}'` >> ${MD5_FILE}; \
 		fi; \
 	 done)
@@ -4104,7 +4219,7 @@ makesum:
 .if !target(checksum)
 checksum: fetch
 	@if [ -f ${MD5_FILE} ]; then \
-		(cd ${DISTDIR}; OK="true"; \
+		(cd ${DISTDIR}; OK=""; \
 		  for file in ${_CKSUMFILES}; do \
 			pattern="`${ECHO_CMD} $$file | ${SED} -e 's/\./\\\\./g'`"; \
 			CKSUM=`${MD5} < $$file`; \
@@ -4116,12 +4231,21 @@ checksum: fetch
 				${ECHO_MSG} ">> Checksum for $$file is set to IGNORE in distinfo file even though"; \
 				${ECHO_MSG} "   the file is not in the "'$$'"{IGNOREFILES} list."; \
 				OK="false"; \
-			elif ${EXPR} "$$CKSUM2" : ".*$$CKSUM" > /dev/null; then \
-				${ECHO_MSG} ">> Checksum OK for $$file."; \
 			else \
-				${ECHO_MSG} ">> Checksum mismatch for $$file."; \
-				refetchlist="$$refetchlist$$file "; \
-				OK="retry"; \
+				ckmatch=${FALSE}; \
+				for cksum2 in $$CKSUM2; do \
+					if [ "$$cksum2" = "$$CKSUM" ]; then \
+						ckmatch=${TRUE}; \
+						break; \
+					fi; \
+				done; \
+				if $$ckmatch; then \
+					${ECHO_MSG} ">> Checksum OK for $$file."; \
+				else \
+					${ECHO_MSG} ">> Checksum mismatch for $$file."; \
+					refetchlist="$$refetchlist$$file "; \
+					OK="$${OK:-retry}"; \
+				fi; \
 			fi; \
 		  done; \
 		  for file in ${_IGNOREFILES}; do \
@@ -4136,7 +4260,7 @@ checksum: fetch
 				OK="false"; \
 			fi; \
 		  done; \
-		  if [ "$$OK" = "retry" ] && [ ${FETCH_REGET} -gt 0 ]; then \
+		  if [ "$${OK:=true}" = "retry" ] && [ ${FETCH_REGET} -gt 0 ]; then \
 			  ${ECHO_MSG} "===>  Refetch for ${FETCH_REGET} more times files: $$refetchlist"; \
 			  if ( cd ${.CURDIR} && \
 			    ${MAKE} ${.MAKEFLAGS} FORCE_FETCH="$$refetchlist" FETCH_REGET="`expr ${FETCH_REGET} - 1`" fetch); then \
@@ -4145,7 +4269,7 @@ checksum: fetch
 			  	      OK="true"; \
 			  	  fi; \
 			  fi; \
-			fi ; \
+		  fi ; \
 		  if [ "$$OK" != "true" -a ${FETCH_REGET} -eq 0 ]; then \
 			  ${ECHO_MSG} "===>  Giving up on fetching files: $$refetchlist"; \
 			  ${ECHO_MSG} "Make sure the Makefile and distinfo file (${MD5_FILE})"; \
@@ -4360,11 +4484,13 @@ misc-depends:
 # Dependency lists: both build and runtime, recursive.  Print out directory names.
 
 all-depends-list:
+.if defined(EXTRACT_DEPENDS) || defined(PATCH_DEPENDS) || defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS)
 	@${ALL-DEPENDS-LIST}
+.endif
 
 ALL-DEPENDS-LIST= \
 	checked="${PARENT_CHECKED}"; \
-	for dir in $$(${ECHO_CMD} "${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//') $$(${ECHO_CMD} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//'); do \
+	for dir in $$(${ECHO_CMD} "${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS} ${RUN_DEPENDS}" | ${SED} -e 'y/ /\n/' | ${CUT} -f 2 -d ':') $$(${ECHO_CMD} ${DEPENDS} | ${SED} -e 'y/ /\n/' | ${CUT} -f 1 -d ':'); do \
 		if [ -d $$dir ]; then \
 			if (${ECHO_CMD} $$checked | ${GREP} -qwv "$$dir"); then \
 				child=$$(cd $$dir; ${MAKE} PARENT_CHECKED="$$checked" all-depends-list); \
@@ -4413,10 +4539,10 @@ fetch-required: fetch
 .if defined(${deptype}_DEPENDS)
 .if !defined(NO_DEPENDS)
 	@for i in ${${deptype}_DEPENDS}; do \
-		prog=`${ECHO_CMD} $$i | ${SED} -e 's/:.*//'`; \
-		dir=`${ECHO_CMD} $$i | ${SED} -e 's/[^:]*://'`; \
+		prog=`${ECHO_CMD} $$i | ${CUT} -f 1 -d ':'`; \
+		dir=`${ECHO_CMD} $$i | ${CUT} -f 2-999 -d ':'`; \
 		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
-			dir=`${ECHO_CMD} $$dir | ${SED} -e 's/:.*//'`; \
+			dir=`${ECHO_CMD} $$dir | ${CUT} -f 1 -d ':'`; \
 			if ${EXPR} "$$prog" : \\/ >/dev/null; then \
 				if [ ! -e "$$prog" ]; then \
 					(cd $$dir; ${MAKE} fetch); \
@@ -4441,10 +4567,10 @@ fetch-required-list: fetch-list
 .if defined(${deptype}_DEPENDS)
 .if !defined(NO_DEPENDS)
 	@for i in ${${deptype}_DEPENDS}; do \
-		prog=`${ECHO_CMD} $$i | ${SED} -e 's/:.*//'`; \
-		dir=`${ECHO_CMD} $$i | ${SED} -e 's/[^:]*://'`; \
+		prog=`${ECHO_CMD} $$i | ${CUT} -f 1 -d ':'`; \
+		dir=`${ECHO_CMD} $$i | ${CUT} -f 2-999 -d ':'`; \
 		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
-			dir=`${ECHO_CMD} $$dir | ${SED} -e 's/:.*//'`; \
+			dir=`${ECHO_CMD} $$dir | ${CUT} -f 1 -d ':'`; \
 			if ${EXPR} "$$prog" : \\/ >/dev/null; then \
 				if [ ! -e "$$prog" ]; then \
 					(cd $$dir; ${MAKE} fetch-list); \
@@ -4474,7 +4600,9 @@ checksum-recursive:
 # Dependency lists: build and runtime.  Print out directory names.
 
 build-depends-list:
+.if defined(EXTRACT_DEPENDS) || defined(PATCH_DEPENDS) || defined(FETCH_DEPENDS) || defined(BUILD_DEPENDS) || defined(LIB_DEPENDS) || defined(DEPENDS)
 	@${BUILD-DEPENDS-LIST}
+.endif
 
 BUILD-DEPENDS-LIST= \
 	for dir in $$(${ECHO_CMD} "${EXTRACT_DEPENDS} ${PATCH_DEPENDS} ${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u) $$(${ECHO_CMD} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u); do \
@@ -4486,10 +4614,12 @@ BUILD-DEPENDS-LIST= \
 	done | sort -u
 
 run-depends-list:
+.if defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS)
 	@${RUN-DEPENDS-LIST}
+.endif
 
 RUN-DEPENDS-LIST= \
-	for dir in $$(${ECHO_CMD} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u) $$(${ECHO_CMD} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u); do \
+	for dir in $$(${ECHO_CMD} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${SED} -e 'y/ /\n/' | ${CUT} -f 2 -d ':' | sort -u) $$(${ECHO_CMD} ${DEPENDS} | ${SED} -e 'y/ /\n/' | ${CUT} -f 1 -d ':' | sort -u); do \
 		if [ -d $$dir ]; then \
 			${ECHO_CMD} $$dir; \
 		else \
@@ -4501,7 +4631,9 @@ RUN-DEPENDS-LIST= \
 # and package names.
 
 package-depends-list:
+.if defined(CHILD_DEPENDS) || defined(LIB_DEPENDS) || defined(RUN_DEPENDS) || defined(DEPENDS)
 	@${PACKAGE-DEPENDS-LIST}
+.endif
 
 PACKAGE-DEPENDS-LIST?= \
 	if [ "${CHILD_DEPENDS}" ]; then \
@@ -4518,7 +4650,7 @@ PACKAGE-DEPENDS-LIST?= \
 		done; \
 	fi; \
 	checked="${PARENT_CHECKED}"; \
-	for dir in $$(${ECHO_CMD} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//') $$(${ECHO_CMD} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//'); do \
+	for dir in $$(${ECHO_CMD} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${SED} -e 'y/ /\n/' | ${CUT} -f 2 -d ':') $$(${ECHO_CMD} ${DEPENDS} | ${SED} -e 'y/ /\n/' | ${CUT} -f 1 -d ':'); do \
 		dir=$$(${REALPATH} $$dir); \
 		if [ -d $$dir ]; then \
 			if (${ECHO_CMD} $$checked | ${GREP} -qwv "$$dir"); then \
@@ -4566,8 +4698,7 @@ package-recursive: package
 
 .if !target(describe)
 describe:
-	@${ECHO_CMD} -n "`perl -e ' \
-		print q{${PKGNAME}|${.CURDIR}|${PREFIX}|}`"
+	@${ECHO_CMD} -n '${PKGNAME}|${.CURDIR}|${PREFIX}|'
 .if defined(COMMENT)
 	@${ECHO_CMD} -n ${COMMENT:Q}
 .else
@@ -4629,7 +4760,7 @@ readmes:	readme
 
 .if !target(readme)
 readme:
-	@rm -f ${.CURDIR}/README.html
+	@${RM} -f ${.CURDIR}/README.html
 	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} ${.CURDIR}/README.html
 .endif
 
@@ -4684,11 +4815,11 @@ pretty-print-run-depends-list:
 .if !target(generate-plist)
 generate-plist:
 	@${ECHO_MSG} "===>   Generating temporary packing list"
-	@${MKDIR} `dirname ${TMPPLIST}`
+	@${MKDIR} `${DIRNAME} ${TMPPLIST}`
 	@if [ ! -f ${DESCR} ]; then ${ECHO_CMD} "** Missing pkg-descr for ${PKGNAME}."; exit 1; fi
 	@>${TMPPLIST}
 	@for file in ${PLIST_FILES}; do \
-		${ECHO_CMD} $${file} >> ${TMPPLIST}; \
+		${ECHO_CMD} $${file} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} >> ${TMPPLIST}; \
 	done
 	@for man in ${__MANPAGES}; do \
 		${ECHO_CMD} $${man} >> ${TMPPLIST}; \
@@ -4729,7 +4860,7 @@ generate-plist:
 		${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} >> ${TMPPLIST}; \
 	fi
 .for dir in ${PLIST_DIRS}
-	@${ECHO_CMD} ${dir} | ${SED} -e 's,^,@dirrm ,' >> ${TMPPLIST}
+	@${ECHO_CMD} ${dir} | ${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} | ${SED} -e 's,^,@dirrm ,' >> ${TMPPLIST}
 .endfor
 .if !defined(NO_MTREE)
 	@${ECHO_CMD} "@unexec if [ -f %D/info/dir ]; then if sed -e '1,/Menu:/d' %D/info/dir | grep -q '^[*] '; then true; else rm %D/info/dir; fi; fi" >> ${TMPPLIST}
@@ -4903,10 +5034,21 @@ config:
 .if !defined(OPTIONS)
 	@${ECHO_MSG} "===> No options to configure"
 .else
-	@(${MKDIR} ${PORT_DBDIR}/${UNIQUENAME} 2> /dev/null) || \
-		(${ECHO_MSG} "===> Cannot create ${PORT_DBDIR}/${UNIQUENAME}, check permissions"; exit 1)
-	-@if [ -e ${OPTIONSFILE} ]; then \
-		. ${OPTIONSFILE}; \
+.if ${OPTIONSFILE} != ${_OPTIONSFILE}
+	@${ECHO_MSG} "===> Using wrong configuration file ${_OPTIONSFILE}"
+	@exit 1
+.endif
+.if ${UID} != 0 && !defined(INSTALL_AS_USER)
+	@${ECHO_MSG} "===>  Switching to root credentials to create `${DIRNAME} ${_OPTIONSFILE}`"
+	@(${SU_CMD} "${MKDIR} `${DIRNAME} ${_OPTIONSFILE}` 2> /dev/null") || \
+		(${ECHO_MSG} "===> Cannot create `${DIRNAME} ${_OPTIONSFILE}`, check permissions"; exit 1)
+	@${ECHO_MSG} "===>  Returning to user credentials"
+.else
+	@(${MKDIR} `${DIRNAME} ${_OPTIONSFILE}` 2> /dev/null) || \
+		(${ECHO_MSG} "===> Cannot create `${DIRNAME} ${_OPTIONSFILE}`, check permissions"; exit 1)
+.endif
+	-@if [ -e ${_OPTIONSFILE} ]; then \
+		. ${_OPTIONSFILE}; \
 	fi; \
 	set ${OPTIONS} XXX; \
 	while [ $$# -gt 3 ]; do \
@@ -4916,7 +5058,6 @@ config:
 		withoutvar=WITHOUT_$$1; \
 		withval=$$(eval ${ECHO_CMD} $$\{$${withvar}\}); \
 		withoutval=$$(eval ${ECHO_CMD} $$\{$${withoutvar}\}); \
-		${ECHO_CMD} $${withval}; \
 		if [ ! -z "$${withval}" ]; then \
 			val=on; \
 		elif [ ! -z "$${withoutval}" ]; then \
@@ -4926,10 +5067,10 @@ config:
 		fi; \
 		DEFOPTIONS="$${DEFOPTIONS} $$1 \"$$2\" $${val}"; \
 		shift 3; \
-	done > /dev/null; \
+	done; \
 	TMPOPTIONSFILE=$$(mktemp -t portoptions); \
 	trap "${RM} -f $${TMPOPTIONSFILE}; exit 1" 1 2 3 5 10 13 15; \
-	${SH} -c "${DIALOG} --checklist \"Options for ${PORTNAME} ${PORTVERSION}\" 21 70 15 $${DEFOPTIONS} 2> $${TMPOPTIONSFILE}"; \
+	${SH} -c "${DIALOG} --checklist \"Options for ${PKGNAME:C/-([^-]+)$/ \1/}\" 21 70 15 $${DEFOPTIONS} 2> $${TMPOPTIONSFILE}"; \
 	status=$$?; \
 	if [ $${status} -ne 0 ] ; then \
 		${RM} -f $${TMPOPTIONSFILE}; \
@@ -4937,29 +5078,60 @@ config:
 		exit 0; \
 	fi; \
 	if [ ! -e ${TMPOPTIONSFILE} ]; then \
-		${ECHO_MSG} "===> No user-specified options to save for ${PORTNAME}"; \
+		${ECHO_MSG} "===> No user-specified options to save for ${PKGNAME}"; \
 		exit 0; \
 	fi; \
 	SELOPTIONS=$$(${CAT} $${TMPOPTIONSFILE}); \
 	${RM} -f $${TMPOPTIONSFILE}; \
-	${ECHO_MSG} "# This file is auto-generated by 'make config'.  No user-servicable parts" > ${OPTIONSFILE}; \
-	${ECHO_MSG} "# inside!" >> ${OPTIONSFILE}; \
+	TMPOPTIONSFILE=$$(mktemp -t portoptions); \
+	trap "${RM} -f $${TMPOPTIONSFILE}; exit 1" 1 2 3 5 10 13 15; \
+	${ECHO_CMD} "# This file is auto-generated by 'make config'." > $${TMPOPTIONSFILE}; \
+	${ECHO_CMD} "# No user-servicable parts inside!" >> $${TMPOPTIONSFILE}; \
+	${ECHO_CMD} "# Options for ${PKGNAME}" >> $${TMPOPTIONSFILE}; \
+	${ECHO_CMD} "_OPTIONS_READ=${PKGNAME}" >> $${TMPOPTIONSFILE}; \
 	for i in $${OPTIONSLIST}; do \
 		${ECHO_CMD} $${SELOPTIONS} | ${GREP} -qw $${i}; \
 		if [ $$? -eq 0 ]; then \
-			${ECHO_CMD} WITH_$${i}=true >> ${OPTIONSFILE}; \
+			${ECHO_CMD} WITH_$${i}=true >> $${TMPOPTIONSFILE}; \
 		else \
-			${ECHO_CMD} WITHOUT_$${i}=true >> ${OPTIONSFILE}; \
+			${ECHO_CMD} WITHOUT_$${i}=true >> $${TMPOPTIONSFILE}; \
 		fi; \
-	done
+	done; \
+	if [ `${ID} -u` != 0 -a "x${INSTALL_AS_USER}" = "x" ]; then \
+		${ECHO_MSG} "===>  Switching to root credentials to write ${_OPTIONSFILE}"; \
+		${SU_CMD} "${CAT} $${TMPOPTIONSFILE} > ${_OPTIONSFILE}"; \
+		${ECHO_MSG} "===>  Returning to user credentials"; \
+	else \
+		${CAT} $${TMPOPTIONSFILE} > ${_OPTIONSFILE}; \
+	fi; \
+	${RM} -f $${TMPOPTIONSFILE}
 .endif
 .endif
 
 .if !target(showconfig)
 showconfig:
-.if exists(${OPTIONSFILE})
-	@${ECHO_MSG} "===> The following configuration options are set for ${PORTNAME}"; \
-	${GREP} -v ^# ${OPTIONSFILE}
+.if defined(OPTIONS) && exists(${_OPTIONSFILE})
+	@${ECHO_MSG} "===> The following configuration options are set for ${PKGNAME}:"
+	-@if [ -e ${_OPTIONSFILE} ]; then \
+		. ${_OPTIONSFILE}; \
+	fi; \
+	set ${OPTIONS} XXX; \
+	while [ $$# -gt 3 ]; do \
+		defaultval=$$3; \
+		withvar=WITH_$$1; \
+		withoutvar=WITHOUT_$$1; \
+		withval=$$(eval ${ECHO_CMD} $$\{$${withvar}\}); \
+		withoutval=$$(eval ${ECHO_CMD} $$\{$${withoutvar}\}); \
+		if [ ! -z "$${withval}" ]; then \
+			val=on; \
+		elif [ ! -z "$${withoutval}" ]; then \
+			val=off; \
+		else \
+			val="$$3 (default)"; \
+		fi; \
+		${ECHO_MSG} "     $$1=$${val} \"$$2\""; \
+		shift 3; \
+	done
 .else
 	@${ECHO_MSG} "===> No configuration options are set for this port"
 .if defined(OPTIONS)
@@ -4970,12 +5142,19 @@ showconfig:
 
 .if !target(rmconfig)
 rmconfig:
-.if exists(${OPTIONSFILE})
-	-@${ECHO_MSG} "===> Removing user-configured options for ${PORTNAME}"; \
-	${RM} -f ${OPTIONSFILE}; \
-	${RMDIR} ${PORT_DBDIR}/${UNIQUENAME}
+.if defined(OPTIONS) && exists(${_OPTIONSFILE})
+	-@${ECHO_MSG} "===> Removing user-configured options for ${PKGNAME}"; \
+	if [ `${ID} -u` != 0 -a "x${INSTALL_AS_USER}" = "x" ]; then \
+		${ECHO_MSG} "===> Switching to root credentials to remove ${_OPTIONSFILE} and `${DIRNAME} ${_OPTIONSFILE}`"; \
+		${SU_CMD} "${RM} -f ${_OPTIONSFILE} ; \
+			${RMDIR} `${DIRNAME} ${_OPTIONSFILE}`"; \
+		${ECHO_MSG} "===> Returning to user credentials"; \
+	else \
+		${RM} -f ${_OPTIONSFILE}; \
+		${RMDIR} `${DIRNAME} ${_OPTIONSFILE}`; \
+	fi
 .else
-	@${ECHO_MSG} "===> No user-specified options configured for ${PORTNAME}"
+	@${ECHO_MSG} "===> No user-specified options configured for ${PKGNAME}"
 .endif
 .endif
 
