@@ -11,7 +11,7 @@ CATEGORIES=	audio net
 MASTER_SITES=	ftp://ftp.cwi.nl/pub/audio/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	janek@gaja.ipan.lublin.pl
+MAINTAINER=	ports@FreeBSD.Org
 
 NO_WRKSUBDIR=	yes
 MAKE_FLAGS=	FreeBSD -f
