@@ -1,7 +1,7 @@
 *** Makefile.in.bak	Mon Jan 16 17:59:20 1995
 --- Makefile.in	Wed Jan 18 04:13:40 1995
 ***************
-*** 20,26 ****
+*** 21,27 ****
   ETCSCREENRC = `sed < config.h -n -e '/define ETCSCREENRC/s/^.*"\([^"]*\)"/\1/p'`
   
   CC = @CC@
@@ -9,4 +9,4 @@
   LDFLAGS =
   LIBS = @LIBS@
   
---- 20,25 ----
+--- 21,26 ----
