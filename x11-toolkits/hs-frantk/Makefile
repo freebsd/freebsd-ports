@@ -22,6 +22,7 @@ RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 .endif
 
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/FranTk1.1/src
 
 .if defined(WITH_HUGS)
@@ -62,7 +63,7 @@ pre-fetch:
 	@${ECHO} ""
 
 post-patch:
-	${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/frantk.conf
+	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/frantk.conf
 
 post-install:
 .if !defined(NOPORTDOCS)
