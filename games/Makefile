@@ -1,10 +1,11 @@
-# $Id: Makefile,v 1.70 1997/06/04 02:32:23 asami Exp $
+# $Id: Makefile,v 1.71 1997/06/04 03:22:13 asami Exp $
 #
 
     SUBDIR += acm
     SUBDIR += an
     SUBDIR += angband
     SUBDIR += block
+    SUBDIR += bs
     SUBDIR += cgoban
     SUBDIR += connect4
     SUBDIR += cosmo
