@@ -22,11 +22,13 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 APXS=		${LOCALBASE}/sbin/apxs
 
+CONFIGURE_ARGS=	--apxs="${APXS}"
+
 DOCS_EN=	ChangeLog README.en
 DOCS_JA=	README.ja
 
 do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} Makefile.RB
+	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} Makefile.RB ${CONFIGURE_ARGS}
 
 do-install:
 	${APXS} -i -A -n ruby ${WRKSRC}/mod_ruby.so
