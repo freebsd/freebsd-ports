@@ -7,4 +7,7 @@ lib/libtre.so
 lib/libtre.so.5
 libdata/pkgconfig/tre.pc
 %%NLS%%share/locale/fi/LC_MESSAGES/tre.mo
+%%PORTDOCS%%%%DOCSDIR%%/tre-api.html
+%%PORTDOCS%%%%DOCSDIR%%/tre-syntax.html
 @dirrm include/tre
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

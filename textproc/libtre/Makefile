@@ -8,6 +8,7 @@
 
 PORTNAME=	libtre
 PORTVERSION=	0.6.8
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://laurikari.net/tre/
 DISTNAME=	tre-${PORTVERSION}
@@ -48,5 +49,13 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|^CFLAGS=|#CFLAGS=|g' ${WRKSRC}/configure
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for i in tre-api.html tre-syntax.html
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
