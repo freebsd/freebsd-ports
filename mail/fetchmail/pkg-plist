@@ -1,9 +1,11 @@
+@comment $FreeBSD$
 bin/fetchmail
 bin/fetchmailconf
 libexec/fetchmailconf.bin
 %%PORTDOCS%%share/doc/fetchmail/COPYING
 %%PORTDOCS%%share/doc/fetchmail/FAQ
 %%PORTDOCS%%share/doc/fetchmail/FEATURES
+%%PORTDOCS%%share/doc/fetchmail/NEWS
 %%PORTDOCS%%share/doc/fetchmail/NOTES
 %%PORTDOCS%%share/doc/fetchmail/README
 %%NTLMDOCS%%share/doc/fetchmail/README.NTLM
@@ -12,10 +14,14 @@ libexec/fetchmailconf.bin
 %%PORTDOCS%%share/doc/fetchmail/fetchmail-FAQ.html
 %%PORTDOCS%%share/doc/fetchmail/fetchmail-features.html
 %%PORTDOCS%%@dirrm share/doc/fetchmail
+share/locale/ca/LC_MESSAGES/fetchmail.mo
 share/locale/cs/LC_MESSAGES/fetchmail.mo
 share/locale/da/LC_MESSAGES/fetchmail.mo
+share/locale/de/LC_MESSAGES/fetchmail.mo
 share/locale/es/LC_MESSAGES/fetchmail.mo
 share/locale/fr/LC_MESSAGES/fetchmail.mo
 share/locale/gl/LC_MESSAGES/fetchmail.mo
+share/locale/ja/LC_MESSAGES/fetchmail.mo
 share/locale/pl/LC_MESSAGES/fetchmail.mo
 share/locale/pt_BR/LC_MESSAGES/fetchmail.mo
+share/locale/tr/LC_MESSAGES/fetchmail.mo
