@@ -6,53 +6,49 @@
 #
 
 PORTNAME=	ftgl
-PORTVERSION=	2.07
-PORTREVISION=	1
+PORTVERSION=	2.09
 CATEGORIES=	graphics
 MASTER_SITES=	http://homepages.paradise.net.nz/henryj/code/
-DISTNAME=	${PORTNAME:U}
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/([[:digit:]])$/.\1/}
 
 MAINTAINER=	tiamat@comset.net
 COMMENT=	An OpenGL FreeType fonts rendering library
 
+BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_WRKSRC=	${WRKDIR}/${DISTNAME}/unix
+WRKSRC=		${WRKDIR}/${PORTNAME:U}
+CONFIGURE_WRKSRC=	${WRKSRC}/unix
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-gl-inc=${X11BASE}/include --with-gl-lib=${X11BASE}/lib
 BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
 INSTALL_WRKSRC=	${CONFIGURE_WRKSRC}
-INSTALLS_SHLIB=	yes
+MAKE_ENV=	MKDIR="${MKDIR}"
 
-do-install:
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/src/.libs/lib${PORTNAME}.a ${PREFIX}/lib
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/${PORTNAME}.pc ${PREFIX}/libdata/pkgconfig
-	@${MKDIR} ${PREFIX}/include/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/include/${PORTNAME}
+.ifdef (NOPORTDOCS)
+DO_INSTALL_DOCS=\#
+.endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%PORTDOCS%%|${DO_INSTALL_DOCS}|' \
+		${BUILD_WRKSRC}/Makefile
+
+post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/demo/* ${EXAMPLESDIR}
-	${PERL} -pi -e 's|%%CC%%|${CC}|g;		\
-			s|%%CXX%%|${CXX}|g;		\
-			s|%%RM%%|${RM}|g;		\
-			s|%%CFLAGS%%|${CFLAGS}|g;	\
-			s|%%CXXFLAGS%%|${CXXFLAGS}|g;	\
-			s|%%PREFIX%%|${PREFIX}|g;	\
-			s|%%X11BASE%%|${X11BASE}|g;	\
-			s|%%LOCALBASE%%|${LOCALBASE}|g'	\
+	@${SED} -e 's|%%CC%%|${CC}|g;			\
+		    s|%%CXX%%|${CXX}|g;			\
+		    s|%%RM%%|${RM}|g;			\
+		    s|%%CFLAGS%%|${CFLAGS}|g;		\
+		    s|%%CXXFLAGS%%|${CXXFLAGS}|g;	\
+		    s|%%PREFIX%%|${PREFIX}|g;		\
+		    s|%%X11BASE%%|${X11BASE}|g;		\
+		    s|%%LOCALBASE%%|${LOCALBASE}|g'	\
 	<${FILESDIR}/makefile.ex >${EXAMPLESDIR}/makefile
-
-.ifndef (NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.txt ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/FTGL.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/FTGL_1_3.gif ${DOCSDIR}
-	@${MKDIR} ${DOCSDIR}/images
-	${INSTALL_DATA} ${WRKSRC}/docs/images/* ${DOCSDIR}/images
-.endif
 
 .include <bsd.port.mk>

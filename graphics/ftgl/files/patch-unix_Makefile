@@ -1,0 +1,22 @@
+--- unix/Makefile.orig	Mon Jan 13 00:27:04 2003
++++ unix/Makefile	Thu Jun 17 17:20:29 2004
+@@ -1,7 +1,7 @@
+ top_builddir=.
+ -include $(top_builddir)/Make.conf
+ 
+-SUBDIRS = src demo docs
++SUBDIRS = src demo %%PORTDOCS%%docs
+ 
+ AUTOGEN = Make.conf config.log config.status libtool autom4te.cache ftgl.pc
+ AUTOGEN_MAINT = aclocal.m4 acinclude.m4 config.guess config.sub configure ltmain.sh install-sh
+@@ -16,8 +16,8 @@
+ 	./configure
+ 
+ install-local: ftgl.pc
+-	$(INSTALL) -d -m 0755 $(libdir)/pkgconfig
+-	$(INSTALL) -m 0644 ftgl.pc $(libdir)/pkgconfig/
++	${MKDIR} ${PREFIX}/libdata/pkgconfig
++	$(INSTALL) -m 0644 ftgl.pc ${PREFIX}/libdata/pkgconfig/
+ 
+ maint-clean-local:
+ 	$(RM) $(AUTOGEN_MAINT)

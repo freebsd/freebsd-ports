@@ -1,11 +1,13 @@
 # Make sure, that you have graphics/libglut installed
 # in order to build example program
+#
+# $FreeBSD$
 
 CC=		%%CC%%
 CXX=		%%CXX%%
 RM=		%%RM%%
-CFLAGS=		%%CFLAGS%% -I. -I%%X11BASE%%/include -I%%PREFIX%%/include/ftgl
-CXXFLAGS=	%%CXXFLAGS%% -I. -I%%X11BASE%%/include -I%%PREFIX%%/include/ftgl
+CFLAGS=		%%CFLAGS%% -I. -I%%X11BASE%%/include -I%%PREFIX%%/include/FTGL
+CXXFLAGS=	%%CXXFLAGS%% -I. -I%%X11BASE%%/include -I%%PREFIX%%/include/FTGL
 LDFLAGS=	-L%%X11BASE%%/lib -L%%PREFIX%%/lib -lglut -lftgl
 
 FREETYPE_CFLAGS!=%%LOCALBASE%%/bin/freetype-config --cflags
