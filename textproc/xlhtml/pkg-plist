@@ -3,6 +3,6 @@ bin/nspptview
 bin/nsxlview
 bin/ppthtml
 bin/xlhtml
-share/doc/xlhtml/README.xlhtml
 share/doc/xlhtml/README.ppthtml
+share/doc/xlhtml/README.xlhtml
 @dirrm share/doc/xlhtml
