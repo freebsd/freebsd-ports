@@ -2973,6 +2973,7 @@ kenny		ports/misc/kenny
 kenv		src/usr.bin/kenv
 kerberos	src/eBones/kerberos
 kerberosIV	src/kerberosIV
+kerberos5	src/kerberos5
 kermit		ports/comms/kermit
 kernbb		src/usr.sbin/kernbb
 kernfs		src/sys/miscfs/kernfs
