@@ -863,6 +863,7 @@ cfe		ports/misc/cfe
 cfengine	ports/sysutils/cfengine
 cfengine2	ports/sysutils/cfengine2
 cfgstoragemk	ports/net-mgmt/cfgstoragemk
+cfitsio		ports/astro/cfitsio
 cflow		ports/devel/cflow
 cflow2vcg	ports/devel/cflow2vcg
 cflowd		ports/net-mgmt/cflowd
