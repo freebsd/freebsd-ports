@@ -1,0 +1,44 @@
+*** Makefile.orig	Sat May 25 00:20:04 2002
+--- Makefile	Sat May 25 00:21:51 2002
+*************** ifndef OPENH323DIR
+*** 13,26 ****
+  OPENH323DIR=$(HOME)/openh323
+  endif
+  
+! H323_INCDIR	= ${OPENH323DIR}/include
+! H323_LIBDIR	= ${OPENH323DIR}/lib
+! H323_LIB	= h323_$(PLATFORM_TYPE)_$(OBJ_SUFFIX)
+  
+! LDFLAGS		= -L$(H323_LIBDIR)
+! LDLIBS		= -l$(H323_LIB)
+  
+! STDCCFLAGS := -I${H323_INCDIR} -DPTRACING  #-DPASN_NOPRINT
+  
+  
+  ifndef PWLIBDIR
+--- 13,26 ----
+  OPENH323DIR=$(HOME)/openh323
+  endif
+  
+! ##H323_INCDIR	= ${OPENH323DIR}/include
+! ##H323_LIBDIR	= ${OPENH323DIR}/lib
+! ##H323_LIB	= h323_$(PLATFORM_TYPE)_$(OBJ_SUFFIX)
+  
+! ##LDFLAGS		= -L$(H323_LIBDIR)
+! ##LDLIBS		= -l$(H323_LIB)
+  
+! ##STDCCFLAGS := -I${H323_INCDIR} -DPTRACING  #-DPASN_NOPRINT
+  
+  
+  ifndef PWLIBDIR
+*************** ifndef PWLIBDIR
+*** 28,33 ****
+--- 28,35 ----
+  endif
+  
+  include $(PWLIBDIR)/make/ptlib.mak
++ include $(OPENH323DIR)/openh323u.mak
++ 
+  
+  
+  # Extra dependencies
