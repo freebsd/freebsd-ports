@@ -2,7 +2,9 @@ bin/xsane
 share/locale/cs/LC_MESSAGES/xsane.mo
 share/locale/de/LC_MESSAGES/xsane.mo
 share/locale/fr/LC_MESSAGES/xsane.mo
+share/locale/it/LC_MESSAGES/xsane.mo
 share/locale/sv/LC_MESSAGES/xsane.mo
+share/locale/tr/LC_MESSAGES/xsane.mo
 share/sane/autoenhance.jpg
 share/sane/brightness.jpg
 share/sane/contrast.jpg
@@ -59,11 +61,14 @@ share/sane/sane-xsane-zoom-undo.jpg
 share/sane/sane-xsane.jpg
 share/sane/store.jpg
 share/sane/threshold.jpg
+share/sane/xsane-logo.jpg
+share/sane/xsane-logo2.jpg
+share/sane/xsane/sane-epson-logo.xpm
+share/sane/xsane/sane-umax-logo.xpm
+share/sane/xsane/sane-xsane-logo.xpm
 share/sane/xsane/xsane-calibration.pnm
 share/sane/xsane/xsane-logo.xpm
 share/sane/xsane/xsane-startimage.pnm
 share/sane/xsane/xsane-style.rc
-share/sane/xsane-logo.jpg
-share/sane/xsane-logo2.jpg
 @dirrm share/sane/xsane
 @dirrm share/sane
