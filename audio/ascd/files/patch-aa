@@ -6,5 +6,5 @@
  #define DEFAULT_BGCOLOR "#000000"
 -#define DEFAULTDEVICE "/dev/cdrom"
 -#define THDIR "/usr/local/share/AScd"
-+#define DEFAULTDEVICE "/dev/wcd0c"
-+#define THDIR "/usr/X11R6/share/ascd"
++#define DEFAULTDEVICE "/dev/acd0c"
++#define THDIR "%%PREFIX%%/share/ascd"

@@ -4,6 +4,6 @@
 -#define CBINDIR /usr/local/bin
 -#define CMANDIR /usr/local/man/man1
 -#define CTHDIR /usr/local/share/AScd
-+#define CBINDIR /usr/X11R6/bin
-+#define CMANDIR /usr/X11R6/man/man1
-+#define CTHDIR /usr/X11R6/share/ascd
++#define CBINDIR %%PREFIX%%/bin
++#define CMANDIR %%PREFIX%%/man/man1
++#define CTHDIR %%PREFIX%%/share/ascd
