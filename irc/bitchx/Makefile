@@ -1,12 +1,12 @@
 # New ports collection makefile for:	BitchX ircII client
-# Version required:	1.0c15
+# Version required:	1.0c16
 # Date created:		26 Jan 1998
 # Whom:			griffin
 #
 # $FreeBSD$
 #
 
-DISTNAME=	BitchX-1.0c15
+DISTNAME=	BitchX-1.0c16
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 		ftp://bitchx.dimension6.com/pub/BitchX/source/
@@ -20,7 +20,7 @@ LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 WRKSRC=		${WRKDIR}/BitchX
-GNU_CONFIGURE=	yes
+USE_AUTOCONF=	yes
 USE_GMAKE=	yes
 .if defined(USE_GNOME)
 CONFIGURE_ARGS+=	--with-plugins --with-gtk --enable-sound
@@ -44,25 +44,20 @@ pre-extract:
 	@${ECHO} "You can add hooks for GNOME by defining USE_GNOME"
 .endif
 
-# Horrible hack to remove bogus CR's at the end of this file
-post-patch:
-	@${PERL} -pi -e 's,\r$$,,' ${WRKSRC}/script/menu.bx
-
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/bx/help
 	${MKDIR} ${PREFIX}/share/doc/bitchx
-	${TAR} --directory ${WRKSRC}/bitchx-docs -cf - . --exclude CVS | \
-		${TAR} --directory ${PREFIX}/share/bx/help -xf -
+	${CP} -r ${WRKSRC}/bitchx-docs/* ${PREFIX}/share/bx/help
 	${INSTALL_DATA} ${WRKSRC}/doc/bxfaq.html ${PREFIX}/share/doc/bitchx
 .endif
 .if defined(USE_GNOME)
 	@${ECHO} bin/gtkBitchX >> ${TMPPLIST}
-	@${ECHO} bin/gtkBitchX-1.0c15 >> ${TMPPLIST}
+	@${ECHO} bin/gtkBitchX-1.0c16 >> ${TMPPLIST}
 	@${ECHO} share/bx/plugins/nicklist.so >> ${TMPPLIST}
 .else
 	@${ECHO} bin/BitchX >> ${TMPPLIST}
-	@${ECHO} bin/BitchX-1.0c15 >> ${TMPPLIST}
+	@${ECHO} bin/BitchX-1.0c16 >> ${TMPPLIST}
 	@${ECHO} bin/scr-bx >> ${TMPPLIST}
 	@${ECHO} share/bx/wserv >> ${TMPPLIST}
 .endif
