@@ -6,7 +6,7 @@
 #
 
 DISTNAME=	korfont
-CATEGORIES=	korean linux
+CATEGORIES=	korean
 
 MASTERDIR=	${.CURDIR}/../../print/acroread-commfont
 

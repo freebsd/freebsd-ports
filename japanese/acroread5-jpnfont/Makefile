@@ -6,7 +6,7 @@
 #
 
 DISTNAME=	jpnfont
-CATEGORIES=	japanese linux
+CATEGORIES=	japanese
 
 MASTERDIR=	${.CURDIR}/../../print/acroread-commfont
 

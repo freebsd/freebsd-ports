@@ -7,7 +7,7 @@
 PORTNAME=	acroread
 PORTVERSION=	1999.7.20
 PKGNAMESUFFIX=	-${DISTNAME}
-CATEGORIES?=	japanese print linux
+CATEGORIES+=	print linux
 MASTER_SITES=	ftp://ftp-pac.adobe.com/pub/adobe/acrobatreader/unix/4.x/
 DISTNAME?=	commfont # dummy
 
