@@ -13,6 +13,14 @@
 #
 # Core funcionality:
 #
+# MPLAYER_GENERIC_BUILD
+# default: undefined
+# By default, the mplayer port creates a custom build based on personal
+# preferences.
+# If you want to build a generic package with certain fixed options,
+# suitable for any CPU within ${ARCH}, define this knob.
+# Note: The following knobs will have no effect in this case!
+#
 # WITH_OPTIMIZED_CFLAGS
 # default: undefined
 # define if you want to enable -O3 -ffast-math -fomit-frame-pointer
@@ -38,6 +46,12 @@
 # the default is to build mplayer with mencoder. If you're sure that you
 # don't want to encode or recode any media file, then define this.
 #
+# WITHOUT_X11
+# default: undefined
+# the default is to build mplayer with X11 support because of its capabilities
+# as a video player. If you don't want to install any X11 environment and use
+# mplayer as a multi-format audio-only player, this one is for you.
+#
 # WITH_GTK1|WITH_GTK2
 # default: autodetect GTK1
 # if you want mplayer to have gui abilities, you can use this knob to define
@@ -47,8 +61,8 @@
 # user interface by defining WITHOUT_GUI
 # Note: If you define WITH_GTK* *and* WITHOUT_GUI, mplayer will be built without
 #       gui capabilities.
-#       The GTK2 patches are not official ones, so they should be considered as
-#       experimental.
+#       At the moment there is no current gtk2 patch available, so defining this
+#       knob has no effect right now.
 #
 # WITHOUT_GUI
 # default: undefined
@@ -242,8 +256,7 @@
 # to be installed.
 
 PORTNAME=	mplayer
-PORTVERSION=	0.99.5
-PORTREVISION=	6
+PORTVERSION=	0.99.6
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -255,7 +268,7 @@ MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		ftp://ftp.lug.udel.edu/MPlayer/releases/ \
 		ftp://mirrors.xmission.com/MPlayer/releases/ \
 		http://www.rrr.de/~riggs/mplayer/
-DISTNAME=	MPlayer-1.0pre5try2
+DISTNAME=	MPlayer-1.0pre6a
 
 MAINTAINER=	riggs@rrr.de
 COMMENT=	High performance media player/encoder supporting many formats
@@ -269,15 +282,12 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS=${PTHREAD_LIBS} \
 		TMPDIR="${WRKSRC}"
 CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 		--with-extraincdir=${LOCALBASE}/include \
-		--with-x11libdir=${X11BASE}/lib \
-		--with-x11incdir=${X11BASE}/include \
 		--enable-png \
 		--enable-menu \
 		--disable-libfame \
@@ -285,9 +295,25 @@ CONFIGURE_ARGS=	--with-extralibdir=${LOCALBASE}/lib \
 		--disable-tv-v4l \
 		--disable-tremor
 
+.if !defined(MPLAYER_GENERIC_BUILD)
+.if defined(WITHOUT_X11)
+WITHOUT_GUI=	yes
+BUILD_DEPENDS+=	imake:${X_IMAKE_PORT}
+CONFIGURE_ARGS+=--disable-x11
+.else
+USE_XLIB=	yes
+CONFIGURE_ARGS+=--with-x11libdir=${X11BASE}/lib \
+		--with-x11incdir=${X11BASE}/include
+.endif
+
 .if defined(WITH_LANG)
 CONFIGURE_ARGS+=--language=${WITH_LANG}
 .endif
+.else
+USE_XLIB=	yes
+CONFIGURE_ARGS+=--with-x11libdir=${X11BASE}/lib \
+		--with-x11incdir=${X11BASE}/include
+.endif #MPLAYER_GENERIC_BUILD
 
 WANT_GNOME=	yes
 WANT_SDL=	yes
@@ -295,7 +321,7 @@ USE_REINPLACE=	yes
 MAN1=		mplayer.1
 MANCOMPRESSED=	no
 
-CONFFILES=	codecs.conf example.conf input.conf menu.conf
+CONFFILES=	example.conf input.conf menu.conf
 TOOLFILES=	calcbpp.pl countquant.pl \
 		dvd2divxscript.pl menc2pass \
 		mencvcd mp.pl sws-test w32codec_dl.pl \
@@ -412,11 +438,85 @@ WITH_LZO=	yes
 WITH_FREETYPE=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libmatroska.a)
-WITH_MATROSKA=	yes
-.endif
+# Esablish de-facto dependencies for either building generic mplayer
+# binary-suitable package or custom build
 
-.if defined (DEBUG)
+.if defined(MPLAYER_GENERIC_BUILD)
+#Compiler flags
+CFLAGS=		#let mplayer decide on this
+CONFIGURE_ARGS+=--enable-runtime-cpudetection
+#GUI
+USE_GNOME+=	gtk12
+.if defined(PKGNAMESUFFIX)
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gtk
+.else
+PKGNAMESUFFIX=	-gtk
+.endif
+CONFIGURE_ARGS+=	--enable-gui
+PLIST_SUB+=	GMPLAYER=""
+RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/Skin:${PORTSDIR}/multimedia/mplayer-skins
+#RTC
+CONFIGURE_ARGS+=	--disable-rtc
+#lame for mencoder
+LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
+#mencoder
+MLINKS+=	mplayer.1 mencoder.1
+PLIST_SUB+=	MENCODER=""
+#ARTS
+CONFIGURE_ARGS+=	--disable-arts
+#Fribidi
+CONFIGURE_ARGS+=	--disable-fribidi
+#Cdparanoia
+CONFIGURE_ARGS+=	--disable-cdparanoia
+#Caca
+CONFIGURE_ARGS+=	--disable-caca
+#Libungif
+CONFIGURE_ARGS+=	--disable-gif
+#Libdv
+CONFIGURE_ARGS+=	--disable-libdv
+#Mad
+CONFIGURE_ARGS+=	--disable-mad
+#Theora
+CONFIGURE_ARGS+=	--disable-theora
+#Svgalib
+LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
+#Aalib
+LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
+#SDL
+USE_SDL=	sdl
+#Esound
+CONFIGURE_ARGS+=	--disable-esd
+#Vorbis
+LIB_DEPENDS+=	vorbis.3:${PORTSDIR}/audio/libvorbis
+#Real
+CONFIGURE_ARGS+=	--disable-real
+#Live media
+CONFIGURE_ARGS+=	--disable-live
+#XviD
+CONFIGURE_ARGS+=	--enable-xvid
+LIB_DEPENDS+=		xvidcore.4:${PORTSDIR}/multimedia/xvid
+#LZO
+CONFIGURE_ARGS+=	--disable-liblzo
+#Freetype
+CONFIGURE_ARGS+=	--with-extraincdir=${LOCALBASE}/include/freetype2 \
+			--enable-freetype
+LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2
+#XAnim codecs
+BUILD_DEPENDS+=	xanim:${PORTSDIR}/multimedia/xanim
+CONFIGURE_ARGS+=	--enable-xanim \
+			--with-xanimlibdir=${X11BASE}/lib/X11/xanim
+#Optical drive descriptors
+.if ${OSVERSION} < 500000
+DEFAULT_DVD_DEVICE=/dev/acd0c
+DEFAULT_CDROM_DEVICE=/dev/acd0c
+.else
+DEFAULT_DVD_DEVICE=/dev/acd0
+DEFAULT_CDROM_DEVICE=/dev/acd0
+.endif
+#Kernel granularity
+DEFAULT_KERN_HZ=1024
+.else #MPLAYER_GENERIC_BUILD
+.if defined(DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
@@ -424,7 +524,8 @@ CONFIGURE_ARGS+=	--enable-debug
 CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer
 .endif
 
-.if ${HAVE_GNOME:Mgtk12}!="" && !defined(WITH_GTK2) && !defined(WITHOUT_GUI)
+#.if ${HAVE_GNOME:Mgtk12}!="" && !defined(WITH_GTK2) && !defined(WITHOUT_GUI)
+.if ${HAVE_GNOME:Mgtk12}!="" && !defined(WITHOUT_GUI)
 WITH_GTK1=	yes
 .endif
 
@@ -437,24 +538,25 @@ RUN_DEPENDS+=	${LOCALBASE}/share/mplayer/Skin:${PORTSDIR}/multimedia/mplayer-ski
 PLIST_SUB+=	GMPLAYER="@comment "
 .endif
 
-.if defined(WITH_GTK2) && !defined(WITH_GTK1) && !defined(WITHOUT_GUI)
-.if ( ${OSVERSION} < 500000 )
-USE_GCC=	3.4
-.endif
-USE_GNOME+=	gtk20
-PATCHFILES+=	mplayer1.0pre5-gtk2-20040730.patch.bz2
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gtk2
-.else
-PKGNAMESUFFIX=	-gtk2
-.endif
-CONFIGURE_ARGS+=	--enable-gui
-.if defined(WITH_LANG)
-WITH_LANG=	""
-.endif
-.endif
+#.if defined(WITH_GTK2) && !defined(WITH_GTK1) && !defined(WITHOUT_GUI)
+#.if ( ${OSVERSION} < 500000 )
+#USE_GCC=	3.4
+#.endif
+#USE_GNOME+=	gtk20
+#PATCHFILES+=	mplayer1.0pre5-gtk2-20040730.patch.bz2
+#.if defined(PKGNAMESUFFIX)
+#PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gtk2
+#.else
+#PKGNAMESUFFIX=	-gtk2
+#.endif
+#CONFIGURE_ARGS+=	--enable-gui
+#.if defined(WITH_LANG)
+#WITH_LANG=	""
+#.endif
+#.endif
 
-.if defined(WITH_GTK1) && !defined(WITH_GTK2) && !defined(WITHOUT_GUI)
+#.if defined(WITH_GTK1) && !defined(WITH_GTK2) && !defined(WITHOUT_GUI)
+.if defined(WITH_GTK1) && !defined(WITHOUT_GUI)
 USE_GNOME+=	gtk12
 .if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gtk
@@ -543,13 +645,6 @@ CONFIGURE_ARGS+=	--enable-mad \
 CONFIGURE_ARGS+=	--disable-mad
 .endif
 
-.if defined(WITH_MATROSKA)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libmatroska.a:${PORTSDIR}/multimedia/libmatroska
-CONFIGURE_ARGS+=	--enable-external-matroska=${LOCALBASE}/lib
-.else
-CONFIGURE_ARGS+=	--disable-external-matroska
-.endif
-
 .if defined(WITH_SVGALIB)
 LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 .endif
@@ -560,6 +655,8 @@ LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
 
 .if defined(WITH_THEORA)
 LIB_DEPENDS+=	theora.1:${PORTSDIR}/multimedia/libtheora
+.else
+CONFIGURE_ARGS+=	--disable-theora
 .endif
 
 #.if defined(WITH_TREMOR)
@@ -593,6 +690,8 @@ CONFIGURE_ARGS+=	--enable-real \
 			--with-reallibdir=${LOCALBASE}/lib/RealPlayer8/Codecs
 RUN_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
 BUILD_DEPENDS+=		realplay:${PORTSDIR}/multimedia/linux-realplayer
+.else
+CONFIGURE_ARGS+=	--disable-real
 .endif
 
 .if defined(WITH_LIVEMEDIA)
@@ -600,6 +699,8 @@ CONFIGURE_ARGS+=	--enable-live \
 			--with-livelibdir=${LOCALBASE}/live
 RUN_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
 BUILD_DEPENDS+=		${LOCALBASE}/live/liveMedia/libliveMedia.a:${PORTSDIR}/net/liveMedia
+.else
+CONFIGURE_ARGS+=	--disable-live
 .endif
 
 .if defined(WITH_XVID)
@@ -629,7 +730,6 @@ CONFIGURE_ARGS+=	--disable-freetype
 
 .if defined(WITH_XANIM)
 BUILD_DEPENDS+=	xanim:${PORTSDIR}/multimedia/xanim
-
 CONFIGURE_ARGS+=--enable-xanim --with-xanimlibdir=${X11BASE}/lib/X11/xanim
 .else
 CONFIGURE_ARGS+=--disable-xanim
@@ -703,6 +803,7 @@ CONFIGURE_ARGS+=	--disable-win32 \
 			--disable-qtx-codecs
 .endif
 .endif # ARCH == i386
+.endif #MPLAYER_GENERIC_BUILD
 
 pre-everything::
 	@${ECHO_MSG} "N - O - T - E"
@@ -720,16 +821,16 @@ pre-everything::
 	@${ECHO_MSG} "http://www.mplayerhq.hu/homepage/dload.html"
 .endif
 
-.if defined(WITH_GTK2) && !defined(WITHOUT_GUI)
-	@${ECHO_MSG} "=====================> <Caution> <======================"
-	@${ECHO_MSG} "GTK2 and UTF8 language options cannot peacefully coexist"
-	@${ECHO_MSG} "If you have defined WITH_LANG=<something> and WITH_GTK2"
-	@${ECHO_MSG} "your language options are ignored."
-	@${ECHO_MSG} "====================> </Caution> <======================"
-.endif
+#.if defined(WITH_GTK2) && !defined(WITHOUT_GUI)
+#	@${ECHO_MSG} "=====================> <Caution> <======================"
+#	@${ECHO_MSG} "GTK2 and UTF8 language options cannot peacefully coexist"
+#	@${ECHO_MSG} "If you have defined WITH_LANG=<something> and WITH_GTK2"
+#	@${ECHO_MSG} "your language options are ignored."
+#	@${ECHO_MSG} "====================> </Caution> <======================"
+#.endif
 
 post-patch:
-.if ${OSVERSION} > 502125
+.if (${OSVERSION} > 502125 || (defined(USE_GCC) && ${USE_GCC} == 3.4))
 	@cd ${WRKSRC} && ${PATCH} < ${PATCHDIR}/extra-patch-gcc34
 .endif
 	@${REINPLACE_CMD} -e \
@@ -738,8 +839,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|; \
 		s|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
+	@${REINPLACE_CMD} -e 's!/usr/local!${PREFIX}!' \
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${FIND} ${WRKSRC}/DOCS/man -name "mplayer.1" | ${XARGS} ${REINPLACE_CMD} -E -e \
-		's|/dev/\\:(dvd[[:alnum:]]*[[:>:]])|${DEFAULT_DVD_DEVICE:S/dev\//dev\/\\\:/}|g ; \
+		's|/usr/\\:local/\\:etc/\\:mplayer|${DATADIR:S/\//\/\\\:/g}|g ; \
+		 s|/dev/\\:(dvd[[:alnum:]]*[[:>:]])|${DEFAULT_DVD_DEVICE:S/dev\//dev\/\\\:/}|g ; \
 		 s|/dev/\\:(cdrom[[:alnum:]]*[[:>:]])|${DEFAULT_CDROM_DEVICE:S/dev\//dev\/\\\:/}|g'
 .if defined(WITH_RTC)
 	@${REINPLACE_CMD} -e \
@@ -757,6 +861,11 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|irqp = 1024|irqp = ${DEFAULT_KERN_HZ}|' \
 		${WRKSRC}/mplayer.c
+.endif
+.if defined(MPLAYER_GENERIC_BUILD)
+	@${REINPLACE_CMD} -e \
+		's|1.0pre6|1.0pre6-FreeBSD-generic|' \
+		${WRKSRC}/version.sh
 .endif
 
 post-configure:
@@ -788,3 +897,4 @@ install-user:
 	@${PERL} ${FILESDIR}/install-user
 
 .include <bsd.port.post.mk>
+
