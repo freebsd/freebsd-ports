@@ -1,6 +1,6 @@
 # New ports collection makefile for:	Xfstt
-# Date created:		11 September 1998
-# Whom:			jabley@clear.co.nz
+# Date created:				11 September 1998
+# Whom:					jabley@clear.co.nz
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	x11-servers
 MASTER_SITES=	$(MASTER_SITE_SUNSITE)
 MASTER_SITE_SUBDIR=	X11/fonts
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	olgeni@uli.it
 
 USE_X_PREFIX=	yes
 MAN1=		xfstt.1
