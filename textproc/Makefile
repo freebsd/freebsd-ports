@@ -88,6 +88,7 @@
     SUBDIR += ruby-html-parser
     SUBDIR += ruby-rdtool
     SUBDIR += ruby-xmlparser
+    SUBDIR += sablotron
     SUBDIR += sarep
     SUBDIR += se-ispell
     SUBDIR += sgmlformat
