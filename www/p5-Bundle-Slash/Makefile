@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-D
 		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
 		${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec \
 		${SITE_PERL}/Net/Cmd.pm:${PORTSDIR}/net/p5-Net \
-		${SITE_PERL}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
+		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/HTML/Element.pm:${PORTSDIR}/www/p5-HTML-Tree \
 		${SITE_PERL}/Font/AFM.pm:${PORTSDIR}/x11-fonts/p5-Font-AFM \
@@ -32,7 +32,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-D
 		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-Mysql \
 		${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI \
 		${SITE_PERL}/AppConfig.pm:${PORTSDIR}/devel/p5-AppConfig \
-		${SITE_PERL}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
+		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes \
 		${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail \
 		${SITE_PERL}/Email/Valid.pm:${PORTSDIR}/mail/p5-Email-Valid \
@@ -49,5 +49,8 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
 PERL_CONFIGURE=	yes
+
+MAN3=		Bundle::Slash.3
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
