@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	xenophilia
-PORTVERSION= 	0.4
+PORTVERSION= 	200012301145
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://www.obsession.se/johan/gtk/
-DISTNAME=	Xenophilia-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_THEMES}
+MASTER_SITE_SUBDIR=	gtk
+DISTNAME=	Xenophilia-1.2.x-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
+
+WRKSRC=		${WRKDIR}/Xenophilia-0.5
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
