@@ -1829,6 +1829,7 @@ ffproxy		ports/www/ffproxy
 ffsrecov	ports/sysutils/ffsrecov
 fftpack		ports/math/fftpack
 fftw		ports/math/fftw
+fftw3		ports/math/fftw3
 fget		ports/ftp/fget
 fgkicker	ports/games/fgkicker
 fhist		ports/devel/fhist
