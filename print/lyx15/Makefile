@@ -28,8 +28,7 @@ USE_GMAKE=	yes
 USE_AUTOMAKE_VER=	15
 AUTOMAKE=	${WRKSRC}/autogen.sh
 AUTOCONF=	${TRUE}
-CONFIGURE_ARGS=	--with-extra-lib="${X11BASE}/lib ${LOCALBASE}/lib" \
-		--with-extra-inc="${X11BASE}/include ${LOCALBASE}/include"
+CONFIGURE_ARGS=	--with-extra-lib="${X11BASE}/lib ${LOCALBASE}/lib"
 MAN1=		lyx.1 reLyX.1
 
 .if defined(WITH_ASPELL)
