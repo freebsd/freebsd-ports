@@ -28,7 +28,7 @@
    file_transport = address_file
    pipe_transport = address_pipe
  
-@@ -446,6 +449,7 @@
+@@ -454,6 +457,7 @@
    file_transport = address_file
    pipe_transport = address_pipe
    reply_transport = address_reply
@@ -36,7 +36,7 @@
  
  
  # This router matches local user mailboxes. If the router fails, the error
-@@ -491,8 +495,10 @@
+@@ -506,8 +510,10 @@
    delivery_date_add
    envelope_to_add
    return_path_add
