@@ -19,4 +19,10 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Does not install (Makefiles need rework)"
+.endif
+
+.include <bsd.port.post.mk>
