@@ -1,0 +1,10 @@
+--- ./zvt/gnome-pty-helper.c.org	Mon Feb 21 14:41:10 2000
++++ ./zvt/gnome-pty-helper.c	Fri Mar 10 17:21:20 2000
+@@ -41,6 +41,7 @@
+ #include <limits.h>
+ #include <unistd.h>
+ #include <string.h>
++#include <machine/param.h>
+ #include <signal.h>
+ #include <fcntl.h>
+ #include <termios.h>
