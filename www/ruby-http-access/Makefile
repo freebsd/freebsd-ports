@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	http-access
-PORTVERSION=	0.0.4p3
+PORTVERSION=	2.B
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.jin.gr.jp/~nahi/Ruby/http-access/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -20,19 +21,15 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
-DOCS_EN=	README_en.txt
-DOCS_JA=	README_ja.txt
+post-patch:
+	${RUBY} -i.orig -pe 'gsub(/\burb\b/, "uri"); gsub(/\bURb\b/, "URI")' \
+		${WRKSRC}/lib/http-access2.rb
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/http-access.rb ${RUBY_SITELIBDIR}/
+	cd ${WRKSRC}; ${RUBY} install.rb
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
-.for f in ${DOCS_EN}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
-.endfor
-.for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/ja/
-.endfor
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/sample/*.rb ${RUBY_EXAMPLESDIR}/${PORTNAME}/
 .endif
 
 .include <bsd.port.mk>
