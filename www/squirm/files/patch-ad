@@ -1,0 +1,24 @@
+--- squirm.conf.dist.orig	Wed Jun  7 10:37:09 2000
++++ squirm.conf.dist	Wed Jun  7 10:37:27 2000
+@@ -26,8 +26,8 @@
+ begin
+ network 10.0.0.0/8
+ network 192.168.0.0/24
+-#log logs/match.log
+-#abort-log logs/abort.log
++#log squirm/logs/match.log
++#abort-log squirm/logs/abort.log
+ pattern squirm.patterns get
+ pattern common.patterns all
+ end
+@@ -35,8 +35,8 @@
+ 
+ begin
+ network 127.0.0.0/24
+-log logs/private-match.log
+-abort-log logs/private-abort.log
++log squirm/logs/private-match.log
++abort-log squirm/logs/private-abort.log
+ pattern private.patterns get
+ pattern common.pattterns all
+ end

@@ -1,26 +1,24 @@
---- paths.h.orig	Sun Mar  8 21:56:22 1998
-+++ paths.h	Mon Jun  7 22:53:48 1999
-@@ -14,15 +14,15 @@
+--- ../squirm-1.23.orig/paths.h	Fri Mar 31 08:08:43 2000
++++ paths.h	Wed Jun  7 10:26:23 2000
+@@ -17,14 +17,14 @@
  
  /*************  Log File Locations (must be writable by **********/
  /*************  the user given in the squid.conf file   **********/
--#define LOG_MATCH "/usr/local/squirm/logs/squirm.match"
--#define LOG_FAIL  "/usr/local/squirm/logs/squirm.fail"
--#define LOG_ERROR "/usr/local/squirm/logs/squirm.error"
--#define LOG_WHERE "/usr/local/squirm/logs/squirm.where"
--#define LOG_DEBUG "/usr/local/squirm/logs/squirm.debug"
--#define LOG_INFO  "/usr/local/squirm/logs/squirm.info"
-+#define LOG_MATCH "%PREFIX%/squirm/logs/squirm.match"
-+#define LOG_FAIL  "%PREFIX%/squirm/logs/squirm.fail"
-+#define LOG_ERROR "%PREFIX%/squirm/logs/squirm.error"
-+#define LOG_WHERE "%PREFIX%/squirm/logs/squirm.where"
-+#define LOG_DEBUG "%PREFIX%/squirm/logs/squirm.debug"
-+#define LOG_INFO  "%PREFIX%/squirm/logs/squirm.info"
+-#define LOG_MATCH PREFIX"/logs/squirm.match"
+-#define LOG_FAIL  PREFIX"/logs/squirm.fail"
+-#define LOG_ERROR PREFIX"/logs/squirm.error"
+-#define LOG_WHERE PREFIX"/logs/squirm.where"
+-#define LOG_DEBUG PREFIX"/logs/squirm.debug"
+-#define LOG_INFO PREFIX"/logs/squirm.info"
++#define LOG_MATCH PREFIX"/squirm/logs/squirm.match"
++#define LOG_FAIL  PREFIX"/squirm/logs/squirm.fail"
++#define LOG_ERROR PREFIX"/squirm/logs/squirm.error"
++#define LOG_WHERE PREFIX"/squirm/logs/squirm.where"
++#define LOG_DEBUG PREFIX"/squirm/logs/squirm.debug"
++#define LOG_INFO PREFIX"/squirm/logs/squirm.info"
  
  /*************  Configuration file locations  ***********/
--#define LOCAL_ADDRESSES   "/usr/local/squirm/etc/squirm.local"
--#define REDIRECT_PATTERNS "/usr/local/squirm/etc/squirm.patterns"
-+#define LOCAL_ADDRESSES   "%PREFIX%/etc/squirm/squirm.local"
-+#define REDIRECT_PATTERNS "%PREFIX%/etc/squirm/squirm.patterns"
+-#define SQUIRM_CONF PREFIX"/etc/squirm.conf"
++#define SQUIRM_CONF PREFIX"/etc/squirm/squirm.conf"
  
  #endif
