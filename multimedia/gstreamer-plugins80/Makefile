@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.8.2
-PORTREVISION=	4
+PORTVERSION=	0.8.3
 CATEGORIES=	multimedia audio
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://gstreamer.freedesktop.org/src/gst-plugins/
@@ -31,7 +30,7 @@ USE_GNOME=	gnomehack \
 		pkgconfig \
 		gconf2
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL_VER=15
 CONFIGURE_ARGS=	--disable-tests \
 		--disable-alsa \
 		--enable-cdrom \
@@ -42,18 +41,23 @@ CONFIGURE_ARGS=	--disable-tests \
 		--disable-raw1394 \
 		--disable-v4l2 \
 		--disable-v4l \
+		--disable-osx_audio \
+		--disable-sunaudio \
 		--disable-dependency-tracking \
 		--enable-xshm \
+		--enable-x \
+		--enable-xvideo \
 		--enable-static
 
 # list of plugins that need some work in one way or the other to work
 # probable the lib needs to be ported, disable them for now.
-CONFIGURE_ARGS+=--disable-mas \
-		--disable-faac \
+CONFIGURE_ARGS+=\
 		--disable-tarkin \
 		--disable-lcs \
 		--disable-mplex \
 		--disable-shout2 \
+		--disable-libvisual \
+		--disable-dirac \
 		--disable-librfb
 
 CONFIGURE_ENV=	PKG_CONFIG=${PKG_CONFIG} \
@@ -167,6 +171,11 @@ WITH_CDPARANOIA=yes
 # dts
 .if exists(${LOCALBASE}/lib/libdts_pic.a)
 WITH_DTS=yes
+.endif
+
+# faac
+.if exists(${LOCALBASE}/lib/libfaac.a)
+WITH_FAAC=yes
 .endif
 
 # esound
@@ -458,6 +467,15 @@ USE_GNOME+=	esound
 CONFIGURE_ARGS+=	--with-esd-prefix=${LOCALBASE}  \
 			--with-esd-exec-prefix=${LOCALBASE}
 PLIST_SUB+=	ESOUND=""
+.endif
+
+# faac
+.ifndef(WITH_FAAC)
+CONFIGURE_ARGS+=	--disable-faac
+PLIST_SUB+=	FAAC="@comment "
+.else
+LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
+PLIST_SUB+=	FAAC=""
 .endif
 
 # faad
@@ -873,14 +891,13 @@ PLIST_SUB+=	XINE=""
 .endif
 
 # xvid
-#.ifndef(WITH_XVID)
+.ifndef(WITH_XVID)
 CONFIGURE_ARGS+=	--disable-xvid
 PLIST_SUB+=	XVID="@comment "
-#.undef WITH_XVID
-#.else
-#LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
-#PLIST_SUB+=	XVID=""
-#.endif
+.else
+LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
+PLIST_SUB+=	XVID=""
+.endif
 
 post-build:
 .ifdef(EXTRA_BUILD_DIR)
@@ -896,7 +913,8 @@ post-install:
 . endfor
 .endif
 # register plugins
-	-@${X11BASE}/bin/gst-register-${GST_VERSION} 2>/dev/null
+	-@${X11BASE}/bin/gst-register-${GST_VERSION} \
+		--gst-registry=${PREFIX}/share/gnome/cache/gstreamer-${GST_VERSION}/registry.xml 2>/dev/null
 
 pre-everything::
 .ifndef(WITH_AALIB)
@@ -933,6 +951,10 @@ pre-everything::
 .ifndef(WITH_ESOUND)
 	@${ECHO_MSG} '===>'
 	@${ECHO_MSG} '===> Define WITH_ESOUND to enable esound Audio plugin'
+.endif
+.ifndef(WITH_FAAC)
+	@${ECHO_MSG} '===>'
+	@${ECHO_MSG} '===> Define WITH_FAAC to enable faac Audio plugin'
 .endif
 .ifndef(WITH_FAAD)
 	@${ECHO_MSG} '===>'
