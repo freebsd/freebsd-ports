@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_RPC
-DISTVERSION=	1.2.0RC7
+PORTVERSION=	1.2.1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
@@ -25,10 +25,10 @@ post-extract:
 
 post-patch:
 .for file in ${FILES}
-	@${REINPLACE_CMD} -e "s|@package_version@|${DISTVERSION}|" ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e "s|@package_version@|${PORTVERSION}|" ${WRKSRC}/${file}
 .endfor
 .for file in ${TESTS}
-	@${REINPLACE_CMD} -e "s|@package_version@|${DISTVERSION}|" ${WRKSRC}/tests/${file}
+	@${REINPLACE_CMD} -e "s|@package_version@|${PORTVERSION}|" ${WRKSRC}/tests/${file}
 .endfor
 
 .include <bsd.port.pre.mk>
