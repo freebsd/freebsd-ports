@@ -1,5 +1,61 @@
 --- configure.orig	Mon Jun 10 04:35:15 2002
-+++ configure	Thu Jun 20 00:06:10 2002
++++ configure	Tue Sep 10 14:01:26 2002
+@@ -7644,13 +7644,13 @@
+ 
+ subdirs="$subdirs libmutt"
+ 
+-echo "$as_me:7647: checking for new_pspell_manager in -lpspell" >&5
+-echo $ECHO_N "checking for new_pspell_manager in -lpspell... $ECHO_C" >&6
+-if test "${ac_cv_lib_pspell_new_pspell_manager+set}" = set; then
++echo "$as_me:7647: checking for new_aspell_speller in -lpspell" >&5
++echo $ECHO_N "checking for new_aspell_speller in -lpspell... $ECHO_C" >&6
++if test "${ac_cv_lib_pspell_new_aspell_speller+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpspell -lstdc++ -lpspell-modules $LIBS"
++LIBS="-lpspell -lstdc++ $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 7655 "configure"
+ #include "confdefs.h"
+@@ -7661,11 +7661,11 @@
+ #endif
+ /* We use char because int might match the return type of a gcc2
+    builtin and then its argument prototype would still apply.  */
+-char new_pspell_manager ();
++char new_aspell_speller ();
+ int
+ main ()
+ {
+-new_pspell_manager ();
++new_aspell_speller ();
+   ;
+   return 0;
+ }
+@@ -7682,18 +7682,18 @@
+   ac_status=$?
+   echo "$as_me:7683: \$? = $ac_status" >&5
+   (exit $ac_status); }; }; then
+-  ac_cv_lib_pspell_new_pspell_manager=yes
++  ac_cv_lib_pspell_new_aspell_speller=yes
+ else
+   echo "$as_me: failed program was:" >&5
+ cat conftest.$ac_ext >&5
+-ac_cv_lib_pspell_new_pspell_manager=no
++ac_cv_lib_pspell_new_aspell_speller=no
+ fi
+ rm -f conftest.$ac_objext conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-echo "$as_me:7694: result: $ac_cv_lib_pspell_new_pspell_manager" >&5
+-echo "${ECHO_T}$ac_cv_lib_pspell_new_pspell_manager" >&6
+-if test $ac_cv_lib_pspell_new_pspell_manager = yes; then
++echo "$as_me:7694: result: $ac_cv_lib_pspell_new_aspell_speller" >&5
++echo "${ECHO_T}$ac_cv_lib_pspell_new_aspell_speller" >&6
++if test $ac_cv_lib_pspell_new_aspell_speller = yes; then
+   cat >>confdefs.h <<EOF
+ #define HAVE_LIBPSPELL 1
+ EOF
 @@ -9345,7 +9345,7 @@
    echo "$as_me: failed program was:" >&5
  cat conftest.$ac_ext >&5
