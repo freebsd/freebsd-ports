@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	csv
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	textproc python
 MASTER_SITES=	http://object-craft.com.au/projects/csv/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
