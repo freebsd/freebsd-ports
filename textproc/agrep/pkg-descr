@@ -1,0 +1,45 @@
+Agrep is a tool for fast text searching allowing errors.
+
+The three most significant features of agrep that are not supported by
+the grep family are 
+1) the ability to search for approximate patterns;
+    for example, "agrep -2 homogenos foo" will find homogeneous as well 
+    as any other word that can be obtained from homogenos with at most 
+    2 substitutions, insertions, or deletions.
+    "agrep -B homogenos foo" will generate a message of the form
+    best match has 2 errors, there are 5 matches, output them? (y/n)
+2) agrep is record oriented rather than just line oriented;  a record
+    is by default a line, but it can be user defined;
+    for example, "agrep -d '^From ' 'pizza' mbox"
+    outputs all mail messages that contain the keyword "pizza".
+    Another example:  "agrep -d '$$' pattern foo" will output all
+    paragraphs (separated by an empty line) that contain pattern.
+3) multiple patterns with AND (or OR) logic queries.   
+    For example, "agrep -d '^From ' 'burger,pizza' mbox" 
+    outputs all mail messages containing at least one of the 
+    two keywords (, stands for OR).
+    "agrep -d '^From ' 'good;pizza' mbox" outputs all mail messages
+    containing both keywords.
+
+Putting these options together one can ask queries like
+
+agrep -d '$$' -2 '<CACM>;TheAuthor;Curriculum;<198[5-9]>' bib
+
+which outputs all paragraphs referencing articles in CACM between 
+1985 and 1989 by TheAuthor dealing with curriculum.  
+Two errors are allowed, but they cannot be in either CACM or the year 
+(the <> brackets forbid errors in the pattern between them).  
+
+Two technical papers describing agrep are available as:
+
+	agrep.ps.1 is a technical report from June 1991 describing the
+	design and implementation of agrep
+		ftp://ftp.cs.arizona.edu/agrep/agrep.ps.1.Z
+
+	agrep.ps.2 is a copy of the paper as appeared in the 1992 Winter
+	USENIX conference.
+		ftp://ftp.cs.arizona.edu/agrep/agrep.ps.2.Z
+
+
+- David O'Brien
+obrien@NUXI.com

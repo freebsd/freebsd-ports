@@ -1,0 +1,29 @@
+# ex:ts=8
+# Ports collection makefile for:  agrep
+# Version required:     	  2.04
+# Date created:			  Fri May 23, 1997
+# Whom:				  David O'Brien (obrien@FreeBSD.org)
+#
+# $Id: Makefile,v 1.2 1997/01/25 18:08:40 obrien Exp $
+#
+
+DISTNAME=	agrep-2.04
+CATEGORIES=	textproc
+MASTER_SITES=	ftp://ftp.cs.arizona.edu/agrep/
+EXTRACT_SUFX=	.tar.Z
+#DISTFILES=	${DISTNAME}.${EXTRACT_SUFX} agrep.ps.1.Z  agrep.ps.2.Z
+
+MAINTAINER=     obrien@NUXI.com
+
+ALL_TARGET=
+MAN1=		agrep.1
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/agrep ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/agrep.1 ${PREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/agrep
+	@${INSTALL_MAN} ${WRKSRC}/agrep.algorithms ${PREFIX}/share/doc/agrep
+.endif
+
+.include <bsd.port.mk>
