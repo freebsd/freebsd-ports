@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome2-all
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
+PORTREVISION=	1
 CATEGORIES=	x11 ruby gnome
 MASTER_SITES=	# none
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -23,6 +24,8 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gtkhtml2.so:${PORTSDIR}/www/ruby-gtkhtml2
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gnomevfs.so:${PORTSDIR}/devel/ruby-gnomevfs
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gst.so:${PORTSDIR}/multimedia/ruby-gst
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/libgda.so:${PORTSDIR}/databases/ruby-libgda
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gtksourceview.so:${PORTSDIR}/x11-toolkits/ruby-gtksourceview
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/panelapplet2.so:${PORTSDIR}/x11-toolkits/ruby-panelapplet
 
 USE_RUBY=       yes
 
