@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	zipcodes
-PORTVERSION=	20030307
+PORTVERSION=	20030325
 CATEGORIES=	japanese misc
-MASTER_SITES=	http://www.post.yusei.go.jp/newnumber/lzh/s/
+MASTER_SITES=	http://post.ah-tech.co.jp/zipcode/dl/address/do/lzh/
 DISTNAME=	ken_all
 EXTRACT_SUFX=	.lzh
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese zipcode tables. includes both 3/5 and 7 digits form
 
-BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
-		nkf:${PORTSDIR}/japanese/nkf
+EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha
+BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
 EXTRACT_CMD=	lha
 EXTRACT_BEFORE_ARGS=	p
 EXTRACT_AFTER_ARGS=	>ken_all.csv
 NO_WRKSUBDIR=	yes
 
-USE_PERL5=	yes
+USE_PERL5_BUILD=yes
 MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}" SCRIPTDIR=${SCRIPTDIR} PERL=${PERL}
 
 post-extract:
