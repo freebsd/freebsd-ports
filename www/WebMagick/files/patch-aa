@@ -2,15 +2,15 @@ Index: webmagick.in
 ===================================================================
 RCS file: /cvsroot/webmagick/WebMagick/webmagick.in,v
 retrieving revision 1.117
-retrieving revision 1.147
-diff -u -r1.117 -r1.147
+retrieving revision 1.148
+diff -u -r1.117 -r1.148
 --- webmagick.in	23 Oct 2002 16:14:47 -0000	1.117
-+++ webmagick.in	30 May 2004 18:54:37 -0000	1.147
++++ webmagick.in	16 Jun 2004 14:47:03 -0000	1.148
 @@ -1,6 +1,6 @@
  #! @PERL@ 
  #
 -# $Id: webmagick.in,v 1.117 2002/10/23 16:14:47 clindell Exp $
-+# $Id: webmagick.in,v 1.147 2004/05/30 18:54:37 ache Exp $
++# $Id: webmagick.in,v 1.148 2004/06/16 14:47:03 ache Exp $
  #
  # You are looking at the main PERL script for WebMagick, a package to
  # intelligently create HTML and JavaScript index files and imagemaps
@@ -623,7 +623,7 @@ diff -u -r1.117 -r1.147
      open( INDEX, ">${opt_indexname}")
  	|| die("$0: Failed to open file ${opt_indexname} for output\n$@\n");
 -    print( INDEX "<HTML>\n<HEAD>\n" );
-+    print( INDEX "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Frameset//EN\">\n<HTML>\n<HEAD>\n" );
++    print( INDEX "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Frameset//EN\" \"http://www.w3.org/TR/html4/frameset.dtd\">\n<HTML>\n<HEAD>\n" );
      # Charset is better before title
      print( INDEX "  <META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=${opt_metacharset}\">\n" )
  	if( "$opt_metacharset" ne '' );
@@ -690,7 +690,7 @@ diff -u -r1.117 -r1.147
  	|| die("$0: Failed to open file $fileNames{'jsDirIndex'} for output\n$@\n");
 -    print( INDEX "<HTML>\n" );
 -    print( INDEX "<HEAD>\n" );
-+    print( INDEX "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n<HTML>\n<HEAD>\n" );
++    print( INDEX "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<HTML>\n<HEAD>\n" );
      print( INDEX "</HEAD>\n" );
 -    print( INDEX q/<SCRIPT LANGUAGE="JavaScript" SRC="/ . $fileNames{'jsVariables'} . q!"></SCRIPT>! . "\n" );
 -    print( INDEX q/<SCRIPT LANGUAGE="JavaScript" SRC="/ . $fileNames{'jsFunctions'}    . q!"></SCRIPT>! . "\n" );
@@ -706,7 +706,7 @@ diff -u -r1.117 -r1.147
  	|| die("$0: Failed to open file \"${opt_pageindexname}dir${opt_dirhtmlext}\"",
                  " for output\n$@\n");
 -    print( INDEX "<HTML>\n<HEAD>\n" );
-+    print( INDEX "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n<HTML>\n<HEAD>\n" );
++    print( INDEX "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<HTML>\n<HEAD>\n" );
      # Charset is better before title
      print( INDEX "  <META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=${opt_metacharset}\">\n" )
  	if( "$opt_metacharset" ne '' );
@@ -769,7 +769,7 @@ diff -u -r1.117 -r1.147
      open( INDEX, ">$fileNames{'htmlCurrentIndex'}")
          || die("$0: Failed to open file $fileNames{'htmlCurrentIndex'} for output\n$@\n");
 -    print( INDEX "<HTML>\n<HEAD>\n" );
-+    print( INDEX "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n<HTML>\n<HEAD>\n" );
++    print( INDEX "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<HTML>\n<HEAD>\n" );
      # Charset is better before title
      print( INDEX "  <META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=${opt_metacharset}\">\n" )
  	if( "$opt_metacharset" ne '' );
@@ -903,7 +903,7 @@ diff -u -r1.117 -r1.147
  			open( PICHTML, ">$pichtml")
  			    || die("$0: Failed to open file $pichtml for output\n$@\n");
 -			print( PICHTML "<HTML>\n<HEAD>\n" );
-+			print( PICHTML "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n<HTML>\n<HEAD>\n" );
++			print( PICHTML "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<HTML>\n<HEAD>\n" );
  			# Charset is better before title
  			print( PICHTML "  <META HTTP-EQUIV=\"Content-Type\" CONTENT=\"text/html; charset=${opt_metacharset}\">\n" )
  			    if( "$opt_metacharset" ne '' );
@@ -1177,7 +1177,7 @@ diff -u -r1.117 -r1.147
 -    print( JSINDEX "<HEAD>\n");
 -    print( JSINDEX "<SCRIPT LANGUAGE=\"JavaScript\" SRC=\"$fileNames{'jsVariables'}\"></SCRIPT>\n");
 -    print( JSINDEX "<SCRIPT LANGUAGE=\"JavaScript\" SRC=\"$fileNames{'jsFunctions'}\"></SCRIPT>\n");
-+    print( JSINDEX "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n<HTML>\n<HEAD>\n" );
++    print( JSINDEX "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\" \"http://www.w3.org/TR/html4/loose.dtd\">\n<HTML>\n<HEAD>\n" );
 +    print( JSINDEX "<SCRIPT TYPE=\"text/javascript\" SRC=\"$fileNames{'jsVariables'}\"></SCRIPT>\n");
 +    print( JSINDEX "<SCRIPT TYPE=\"text/javascript\" SRC=\"$fileNames{'jsFunctions'}\"></SCRIPT>\n");
      print( JSINDEX "</HEAD>\n");
