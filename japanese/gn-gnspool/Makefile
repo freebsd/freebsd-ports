@@ -3,7 +3,7 @@
 # Date created:				14 Feb. 1997
 # Whom:					Kiroh HARADA <kiroh@kh.rim.or.jp>
 #
-# $Id: Makefile,v 1.6 1999/01/14 22:19:32 sada Exp $
+# $Id: Makefile,v 1.7 1999/01/15 00:43:24 sada Exp $
 #
 
 DISTNAME=	gn-1.40
@@ -13,9 +13,9 @@ MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/misc/gn/
 
 MAINTAINER=	kiroh@kh.rim.or.jp
 
+# The program ``configur'' sometimes issue questions and
+# batch-mode build would fail.
 IS_INTERACTIVE=	yes
-	# The program ``configur'' sometimes issue questions and
-	# batch-mode build would fail.
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 pre-configure:
