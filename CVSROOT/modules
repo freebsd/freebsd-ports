@@ -6002,6 +6002,7 @@ p5-B-Deobfuscate	ports/devel/p5-B-Deobfuscate
 p5-B-Graph	ports/devel/p5-B-Graph
 p5-B-Keywords	ports/devel/p5-B-Keywords
 p5-B-LexInfo	ports/www/p5-B-LexInfo
+p5-BFD		ports/devel/p5-BFD
 p5-BIND-Conf_Parser	ports/dns/p5-BIND-Conf_Parser
 p5-BSD-Resource	ports/devel/p5-BSD-Resource
 p5-BSD-stat	ports/devel/p5-BSD-stat
@@ -6990,6 +6991,7 @@ p5-Test-Reporter	ports/devel/p5-Test-Reporter
 p5-Test-Simple	ports/devel/p5-Test-Simple
 p5-Test-Unit	ports/devel/p5-Test-Unit
 p5-Text-Autoformat	ports/textproc/p5-Text-Autoformat
+p5-Text-Aligner		ports/textproc/p5-Text-Aligner
 p5-Text-Balanced	ports/textproc/p5-Text-Balanced
 p5-Text-BibTeX	ports/textproc/p5-Text-BibTeX
 p5-Text-Bind	ports/textproc/p5-Text-Bind
@@ -7029,6 +7031,7 @@ p5-Text-Shellwords	ports/textproc/p5-Text-Shellwords
 p5-Text-SimpleTemplate	ports/textproc/p5-Text-SimpleTemplate
 p5-Text-Striphigh	ports/textproc/p5-Text-Striphigh
 p5-Text-Tabs+Wrap	ports/textproc/p5-Text-Tabs+Wrap
+p5-Text-Table		ports/textproc/p5-Text-Table
 p5-Text-Template	ports/textproc/p5-Text-Template
 p5-Text-Tmpl	ports/textproc/p5-Text-Tmpl
 p5-Text-WikiFormat	ports/textproc/p5-Text-WikiFormat
