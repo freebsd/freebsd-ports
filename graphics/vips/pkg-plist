@@ -1,4 +1,6 @@
+bin/batch_crop
 bin/batch_image_convert
+bin/batch_resize
 bin/batch_rubber_sheet
 bin/binfile
 bin/cooc
@@ -335,6 +337,8 @@ lib/libvipsCC.a
 lib/libvipsCC.la
 lib/libvipsCC.so
 lib/libvipsCC.so.0
+libdata/pkgconfig/vips.pc
+libdata/pkgconfig/vipsCC.pc
 share/aclocal/vips.m4
 %%PORTDOCS%%%%DOCSDIR%%/html/appguide/WARNINGS
 %%PORTDOCS%%%%DOCSDIR%%/html/appguide/appguide.css

@@ -7,7 +7,7 @@
 
 PORTNAME=	vips
 PORTVERSION=	7.8.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.vips.ecs.soton.ac.uk/vips-7.8/
 
@@ -21,6 +21,7 @@ LIB_DEPENDS=	fftw.2:${PORTSDIR}/math/fftw \
 		lcms.1:${PORTSDIR}/graphics/lcms
 
 USE_GMAKE=	yes
+USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
@@ -28,9 +29,9 @@ USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--without-magick --without-x
 
-MAN1=		batch_image_convert.1 batch_rubber_sheet.1 \
-		binfile.1 cooc.1 cooc_features.1 debugim.1 \
-		edvips.1 glds.1 glds_features.1 header.1 \
+MAN1=		batch_crop.1 batch_image_convert.1 batch_resize.1 \
+		batch_rubber_sheet.1 binfile.1 cooc.1 cooc_features.1 \
+		debugim.1 edvips.1 glds.1 glds_features.1 header.1 \
 		light_correct.1 printlines.1 simcontr.1 \
 		sines.1 squares.1 vdump.1 vips.1
 
