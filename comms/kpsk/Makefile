@@ -12,21 +12,22 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kpsk
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A PSK31 digital radio communications application for the KDE 3.x 
+COMMENT=	A PSK31 digital radio communications application for the KDE
 
-LIB_DEPENDS=    db4:${PORTSDIR}/databases/db4
+LIB_DEPENDS=	db4:${PORTSDIR}/databases/db4
 
 USE_BZIP2=	yes
-USE_GMAKE=      yes
+USE_GMAKE=	yes
 USE_KDELIBS_VER=3
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=  CPPFLAGS="-D_POSIX_C_SOURCE -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-D_POSIX_C_SOURCE -I${LOCALBASE}/include" \
 		USER_LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS= --enable-debug=full
+CONFIGURE_ARGS=	--enable-debug=full
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g; \
+		s,-pedantic,,g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's/-ldb-4.0/-ldb4/g' ${WRKSRC}/configure
 
 post-install:
