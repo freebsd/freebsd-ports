@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.fractal.net/files/
 DISTNAME=	mod_v2h
 
-MAINTAINER=     hikari@hikari.org.uk
+MAINTAINER=     ports@FreeBSD.org
 COMMENT=	A mass virtual hosting module for Apache with support
 
 BUILD_DEPENDS=  ${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache2 \
