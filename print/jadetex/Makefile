@@ -13,21 +13,24 @@
 #
 
 DISTNAME=		jadetex
-CATEGORIES=		print
-VERSION=		2.3
 PKGNAME=		${DISTNAME}-${VERSION}
-MAINTAINER=		kelly@plutotech.com
+CATEGORIES=		print
 MASTER_SITES=		http://people.FreeBSD.org/~nik/distfiles/jadetex/
+EXTRACT_SUFX=
 DISTFILES=		Makefile.jadetex jadetex.dtx jadetex.ini jadetex.ins \
 			pdfjadetex.ini
-DIST_SUBDIR=		jadetex
-NO_WRKSUBDIR=   	yes
+
+MAINTAINER=		kelly@plutotech.com
+
 BUILD_DEPENDS=		tex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=		tex:${PORTSDIR}/print/teTeX
+
+VERSION=		2.3
+DIST_SUBDIR=		jadetex
+NO_WRKSUBDIR=   	yes
 EXTRACT_CMD=		${CP}
 EXTRACT_BEFORE_ARGS=	-fp
 EXTRACT_AFTER_ARGS=	.
-EXTRACT_SUFX=
 
 post-extract:
 	@${ECHO} all: default > ${WRKSRC}/Makefile
