@@ -35,6 +35,8 @@ PATCH_ARGS=		-d ${WRKDIR}/${DISTNAME} --forward --quiet -E ${PATCH_STRIP}
 
 VERSION=	${PORTVERSION}jp
 
+NO_LATEST_LINK=	yes
+
 .include <bsd.port.pre.mk>
 
 post-extract:
