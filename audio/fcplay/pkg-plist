@@ -1,0 +1,5 @@
+bin/fcplay
+share/doc/fcplay/ABOUT
+share/doc/fcplay/COPYING
+share/doc/fcplay/POINTER
+@dirrm share/doc/fcplay
