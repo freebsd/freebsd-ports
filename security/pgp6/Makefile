@@ -25,6 +25,8 @@ USE_GMAKE=      YES
 
 RESTRICTED=     "Crypto"
 
+MAN1=		pgp.1
+
 do-install:
 	cd ${WRKSRC}/clients/pgp/cmdline ; ${GMAKE} install
 
