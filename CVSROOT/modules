@@ -4191,6 +4191,7 @@ kronolith	ports/deskutils/kronolith
 krosswordplayer	ports/games/krosswordplayer
 krss		ports/deskutils/krss
 krusader	ports/x11-fm/krusader
+kscope		ports/devel/kscope
 kseg		ports/math/kseg
 ksetisaver	ports/astro/ksetisaver
 ksetispy	ports/astro/ksetispy
