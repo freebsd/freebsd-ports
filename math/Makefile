@@ -112,7 +112,6 @@
     SUBDIR += py-numeric
     SUBDIR += py-numeric17
     SUBDIR += py-scientific
-    SUBDIR += pygist
     SUBDIR += qscanplot
     SUBDIR += rascal
     SUBDIR += rcalc
