@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.215 1999/06/22 23:42:22 sada Exp $
+# $Id: Makefile,v 1.216 1999/06/27 03:27:06 cpiazza Exp $
 #
 
     SUBDIR += 221upgrade
@@ -8,7 +8,6 @@
     SUBDIR += 30upgrade
     SUBDIR += 31upgrade
     SUBDIR += 32upgrade
-    SUBDIR += Generic-NQS
     SUBDIR += Howto
     SUBDIR += acron
     SUBDIR += amanda
@@ -39,6 +38,7 @@
     SUBDIR += fep
     SUBDIR += figlet
     SUBDIR += fortuneit
+    SUBDIR += generic-nqs
     SUBDIR += git
     SUBDIR += gnomeutils
     SUBDIR += gnuls
