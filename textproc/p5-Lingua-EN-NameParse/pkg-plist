@@ -1,0 +1,8 @@
+lib/perl5/site_perl/%%PERL_VER%%/Lingua/EN/NameGrammar.pm
+lib/perl5/site_perl/%%PERL_VER%%/Lingua/EN/NameParse.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua/EN/NameParse/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua/EN/NameParse
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua/EN 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Lingua 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Lingua/EN
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Lingua 2>/dev/null || true
