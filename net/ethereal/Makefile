@@ -7,6 +7,7 @@
 
 PORTNAME=	ethereal
 PORTVERSION=	0.8.19
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/ \
 		ftp://gd.tuwien.ac.at/infosys/security/ethereal/ \
@@ -33,9 +34,7 @@ CONFIGURE_ARGS+=	--enable-snmp=no
 .endif
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
-USE_GMAKE=	yes
-
-MAN1=		ethereal.1 tethereal.1 editcap.1
+MAN1=		ethereal.1 tethereal.1 editcap.1 mergecap.1 text2pcap.1
 
 pre-install:
 .for i in ${MAN1}
