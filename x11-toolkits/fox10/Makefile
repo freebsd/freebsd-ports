@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fox
-PORTVERSION=	0.99.157
+PORTVERSION=	0.99.161
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.cfdrc.com/pub/FOX/ \
 		ftp://SunSITE.Informatik.RWTH-Aachen.DE/pub/Linux/fox/
