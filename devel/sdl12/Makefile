@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdl-devel
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/ \
 		http://www.devolution.com/~slouken/SDL/release/
@@ -18,7 +18,6 @@ LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
 		vga.1:${PORTSDIR}/graphics/svgalib
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
-USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_ESOUND=	yes
 INSTALLS_SHLIB=	yes
