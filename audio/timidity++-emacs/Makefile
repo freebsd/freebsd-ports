@@ -1,6 +1,6 @@
 # New ports collection makefile for:	TiMidity++
 # Date created:		27 Feb 1999
-# Whom:			Yoichi Asai <yatt@msc.biglobe.ne.jp>
+# Whom:			Yoichi Asai <yatt@luna2.org>
 #
 # $FreeBSD$
 #
@@ -8,11 +8,11 @@
 PORTNAME=	timidity++
 PORTVERSION=	2.11.3
 CATEGORIES+=	audio
-MASTER_SITES=	http://www.goice.co.jp/member/mo/timidity/dist/
+MASTER_SITES=	http://www.timidity.jp/dist/
 PKGNAMESUFFIX=	-${INTERFACE}
 DISTNAME=	TiMidity++-${PORTVERSION}
 
-MAINTAINER=	yatt@msc.biglobe.ne.jp
+MAINTAINER=	yatt@luna2.org
 
 RUN_DEPENDS=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++
 LIB_DEPENDS=	${INTERFACE_DEPS}
@@ -95,6 +95,13 @@ NO_INSTALL=	yes
 CONFIGURE_ENV+=	LDFLAGS=-export-dynamic
 .endif
 
+.if ${OSVERSION} >= 450002
+EUCJP_LOCALE=	ja_JP.eucJP
+.else
+EUCJP_LOCALE=	ja_JP.EUC
+.endif
+PLIST_SUB=	EUCJP_LOCALE=${EUCJP_LOCALE}
+
 .if ${INTERFACE} == "motif"
 post-configure:
 	@${MV} ${WRKSRC}/interface/Makefile ${WRKSRC}/interface/Makefile.orig
@@ -115,11 +122,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/interface/timidity.el ${ELISPDIR}
 .endif
 .if ${INTERFACE} == "xaw"
-	@${MKDIR} ${X11BASE}/lib/X11/ja_JP.EUC/app-defaults
+	@${MKDIR} ${X11BASE}/lib/X11/${EUCJP_LOCALE}/app-defaults
 	${INSTALL_DATA} ${WRKSRC}/TiMidity.ad \
 	${X11BASE}/lib/X11/app-defaults/TiMidity
 	${INSTALL_DATA} ${WRKSRC}/TiMidity-uj.ad \
-	${X11BASE}/lib/X11/ja_JP.EUC/app-defaults/TiMidity
+	${X11BASE}/lib/X11/${EUCJP_LOCALE}/app-defaults/TiMidity
 .endif
 .if defined(DOCFILES)
 .if !defined(NOPORTDOCS)
