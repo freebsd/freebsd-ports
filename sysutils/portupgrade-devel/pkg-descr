@@ -1,17 +1,17 @@
-Portupgrade is a tool to upgrade installed packages with ports.
+Portupgrade is a tool to upgrade installed packages via the port.
 
 It upgrades ports without reinstalling dependent packages by directly
 modifying the package info recorded in the files under /var/db/pkg.
 
 The procedures it takes is shown as follows:
 
-    1.  Build the corresponding port of the given package
+    1.  Build the corresponding port of the given installed package
     2.  Fix the dependency info of the ones which depends on the given
         package
     3.  Save the +REQUIRED_BY list of the given package
     4.  Uninstall the given package forcibly if -u is specified
-    5.  Install the port
-    6.  Restore the +REQUIRED_BY list
+    5.  Install the new version via the port (built in <1>)
+    6.  Restore the +REQUIRED_BY list (saved in <3>)
 
 The usage can be shown by running it without arguments or with a -h.
 
