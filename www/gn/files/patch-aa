@@ -1,36 +1,19 @@
 *** Makefile.org	Mon Jul 18 10:27:03 1994
 --- Makefile	Fri Sep 16 19:45:13 1994
 ***************
-*** 8,14 ****
-  #	Where to put the programs
-  #
-  SERVBINDIR  = /usr/local/etc
-! BINDIR  = /home/john/bin
-  LIBDIR = /usr/local/etc
-  
-  #
---- 8,14 ----
-  #	Where to put the programs
-  #
-  SERVBINDIR  = /usr/local/etc
-! BINDIR  = /usr/local/bin
-  LIBDIR = /usr/local/etc
-  
-  #
-***************
 *** 43,49 ****
   
   
-  all: 		gn mkcache uncache waisgn sgn
-! install:	inst-gn inst-mkcache inst-uncache
+  all: 		gn mkcache waisgn sgn
+! install:	inst-gn inst-mkcache
   gn:		gn/gn
   sgn:		gn/sgn
   mkcache:	mkcache/mkcache
 --- 43,49 ----
   
   
-  all: 		gn mkcache uncache waisgn sgn
-! install:	inst-gn inst-mkcache inst-uncache inst-waisgn
+  all: 		gn mkcache waisgn sgn
+! install:	inst-gn inst-mkcache inst-waisgn
   gn:		gn/gn
   sgn:		gn/sgn
   mkcache:	mkcache/mkcache

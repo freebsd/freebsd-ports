@@ -1,0 +1,94 @@
+*** Makefile.old	Thu May  4 14:49:25 1995
+--- Makefile	Thu May  4 14:50:11 1995
+***************
+*** 53,69 ****
+  	@echo "Making gn"
+  	(cd gn; $(MAKE) CC="$(CC)" CFLAGS="$(CFLAGS)" LIBS="$(LIBS)" \
+  		INSTALL="$(INSTALL_STRIP)" BINDIR="$(SERVBINDIR)" )
+! 	
+  gn/sgn:	config.h 
+  	@echo "Making sgn"
+  	(cd gn; $(MAKE) CC="$(CC)" CFLAGS="$(CFLAGS)" LIBS="$(LIBS)" \
+  		INSTALL="$(INSTALL_STRIP)" BINDIR="$(SERVBINDIR)" sgn )
+! 	
+  mkcache/mkcache: config.h
+  	@echo "Making mkcache"
+  	(cd mkcache; $(MAKE) CC="$(CC)" CFLAGS="$(CFLAGS)" LIBS="$(LIBS)" \
+  		INSTALL="$(INSTALL)" BINDIR="$(BINDIR)" )
+! 	
+  waisgn/waisgn: config.h
+  	@echo "Making waisgn"
+  	@if [ -d waisgn/ir ] ; then \
+--- 53,69 ----
+  	@echo "Making gn"
+  	(cd gn; $(MAKE) CC="$(CC)" CFLAGS="$(CFLAGS)" LIBS="$(LIBS)" \
+  		INSTALL="$(INSTALL_STRIP)" BINDIR="$(SERVBINDIR)" )
+! 
+  gn/sgn:	config.h 
+  	@echo "Making sgn"
+  	(cd gn; $(MAKE) CC="$(CC)" CFLAGS="$(CFLAGS)" LIBS="$(LIBS)" \
+  		INSTALL="$(INSTALL_STRIP)" BINDIR="$(SERVBINDIR)" sgn )
+! 
+  mkcache/mkcache: config.h
+  	@echo "Making mkcache"
+  	(cd mkcache; $(MAKE) CC="$(CC)" CFLAGS="$(CFLAGS)" LIBS="$(LIBS)" \
+  		INSTALL="$(INSTALL)" BINDIR="$(BINDIR)" )
+! 
+  waisgn/waisgn: config.h
+  	@echo "Making waisgn"
+  	@if [ -d waisgn/ir ] ; then \
+*** gn/Makefile.old	Thu May  4 15:05:12 1995
+--- gn/Makefile	Thu May  4 15:05:19 1995
+***************
+*** 24,30 ****
+  
+  clean:
+  	@rm -f *.o *~ gn sgn
+! 	
+  gn.o:		gn.h chkcache.h ../config.h
+  sgn.o:		gn.h gn.c chkcache.h ../config.h
+  pselect.o:	gn.h ../config.h
+--- 24,30 ----
+  
+  clean:
+  	@rm -f *.o *~ gn sgn
+! 
+  gn.o:		gn.h chkcache.h ../config.h
+  sgn.o:		gn.h gn.c chkcache.h ../config.h
+  pselect.o:	gn.h ../config.h
+*** mkcache/Makefile.old	Thu May  4 15:11:06 1995
+--- mkcache/Makefile	Thu May  4 15:11:06 1995
+***************
+*** 8,14 ****
+  
+  clean:
+  	@rm -f *.o *~  mkcache
+! 	
+  mkcache.o: 		mkcache.h ../config.h
+  init.o: 		mkcache.h ../config.h
+  content.o: 		mkcache.h ../config.h
+--- 8,14 ----
+  
+  clean:
+  	@rm -f *.o *~  mkcache
+! 
+  mkcache.o: 		mkcache.h ../config.h
+  init.o: 		mkcache.h ../config.h
+  content.o: 		mkcache.h ../config.h
+*** waisgn/Makefile.old	Thu May  4 15:25:59 1995
+--- waisgn/Makefile	Thu May  4 15:26:06 1995
+***************
+*** 9,14 ****
+  
+  clean:
+  	@rm -f *.o *~ waisgn
+! 	
+  waisgn.o:	waisgn.h ../config.h
+  ../gn/www.o:	../gn/www.c ../gn/gn.h
+--- 9,14 ----
+  
+  clean:
+  	@rm -f *.o *~ waisgn
+! 
+  waisgn.o:	waisgn.h ../config.h
+  ../gn/www.o:	../gn/www.c ../gn/gn.h
