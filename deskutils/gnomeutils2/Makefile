@@ -8,7 +8,7 @@
 PORTNAME=	gnomeutils2
 PORTVERSION=	2.2.3
 PORTEPOCH=	1
-CATEGORIES=	misc gnome
+CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-utils/2.2
 DISTNAME=	gnome-utils-${PORTVERSION}

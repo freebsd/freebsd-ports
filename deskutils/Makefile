@@ -20,6 +20,7 @@
     SUBDIR += gmcal
     SUBDIR += gnofin
     SUBDIR += gnomepim
+    SUBDIR += gnomeutils2
     SUBDIR += gnotime
     SUBDIR += gtimer
     SUBDIR += gworkspace
