@@ -1,0 +1,6 @@
+bin/mp3info
+man/man1/mp3info.1.gz
+share/doc/mp3info/COPYRIGHT
+share/doc/mp3info/ChangeLog
+share/doc/mp3info/README
+@dirrm share/doc/mp3info
