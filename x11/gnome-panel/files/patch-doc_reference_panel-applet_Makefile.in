@@ -1,0 +1,11 @@
+--- doc/reference/panel-applet/Makefile.in.orig	Tue Apr 30 23:24:10 2002
++++ doc/reference/panel-applet/Makefile.in	Tue Apr 30 23:28:36 2002
+@@ -149,7 +149,7 @@
+ DOC_MODULE = panel-applet
+ 
+ # Where the html is to be installed
+-HTML_DIR = $(datadir)/gtk-doc/html
++HTML_DIR = $(prefix)/share/doc
+ 
+ # The top-level SGML file. Change it if you want.
+ DOC_MAIN_SGML_FILE = $(DOC_MODULE)-docs.sgml

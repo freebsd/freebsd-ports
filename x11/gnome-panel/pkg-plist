@@ -1,0 +1,256 @@
+bin/fish-applet-2
+bin/gnome-desktop-item-edit
+bin/gnome-panel
+bin/gnome-panel-preferences
+bin/gnome-panel-screenshot
+bin/panel-test-applets
+etc/gconf/gconf.xml.defaults/apps/panel/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/panel/global/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet/prefs/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet/prefs/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck-applet/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck-applet/prefs/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck_applet/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck_applet/prefs/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/pager_applet/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/pager_applet/prefs/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/large/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/large/general/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/large/panels/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/large/panels/00000001/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/large/panels/00000002/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets/00000001/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets/00000002/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets/00000003/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets/00000004/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/general/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/objects/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/objects/00000001/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/objects/00000002/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/panels/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/panels/00000001/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/panels/00000002/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/small/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/small/general/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/small/panels/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/small/panels/00000001/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/panel/global/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/tasklist_applet/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/tasklist_applet/prefs/%gconf.xml
+etc/gconf/schemas/clock.schemas
+etc/gconf/schemas/fish.schemas
+etc/gconf/schemas/mailcheck.schemas
+etc/gconf/schemas/pager.schemas
+etc/gconf/schemas/panel-global-config.schemas
+etc/gconf/schemas/panel-per-panel-config.schemas
+etc/gconf/schemas/tasklist.schemas
+etc/sound/events/mailcheck.soundlist
+include/panel-2.0/GNOME_Panel.h
+include/panel-2.0/panel-applet-gconf.h
+include/panel-2.0/panel-applet.h
+lib/libgen_util_applet-2.so
+lib/libpanel-applet-2.a
+lib/libpanel-applet-2.so
+lib/libpanel-applet-2.so.0
+libdata/bonobo/servers/GNOME_FishApplet_Factory.server
+libdata/bonobo/servers/GNOME_GenUtilApplet_Factory.server
+libdata/bonobo/servers/GNOME_Panel.server
+libdata/pkgconfig/libpanelapplet-2.0.pc
+share/gnome/applications/gnome-panel-screenshot.desktop
+share/gnome/control-center-2.0/capplets/gnome-panel-preferences.desktop
+share/gnome/gen_util/pager.glade
+share/gnome/gen_util/tasklist.glade
+share/gnome/gnome-2.0/ui/GNOME_ClockApplet.xml
+share/gnome/gnome-2.0/ui/GNOME_FishApplet.xml
+share/gnome/gnome-2.0/ui/GNOME_MailCheckApplet.xml
+share/gnome/gnome-2.0/ui/GNOME_PagerApplet.xml
+share/gnome/gnome-2.0/ui/GNOME_Panel_Popup.xml
+share/gnome/gnome-2.0/ui/GNOME_TasklistApplet.xml
+share/gnome/gnome-panel/glade/panel-test-applets.glade2
+share/doc/panel-applet/applet-popups.html
+share/doc/panel-applet/applet-porting.html
+share/doc/panel-applet/applet-writing.html
+share/doc/panel-applet/index.sgml
+share/doc/panel-applet/libpanel-applet.html
+share/doc/panel-applet/multi-applets.html
+share/doc/panel-applet/panel-applet.html
+share/doc/panel-applet/panel-signals.html
+share/doc/panel-applet/panelapplet.html
+share/doc/panel-applet/session-saving.html
+share/gnome/help/clock/C/clock.xml
+share/gnome/help/clock/C/figures/clock_applet.png
+share/gnome/help/clock/C/legal.xml
+share/gnome/help/clock/C/topic.dat
+share/gnome/help/mailcheck/C/figures/mailcheck-applet.png
+share/gnome/help/mailcheck/C/figures/mailcheck-properties-mailbox.png
+share/gnome/help/mailcheck/C/figures/mailcheck-properties-mailcheck.png
+share/gnome/help/mailcheck/C/legal.xml
+share/gnome/help/mailcheck/C/mailcheck.xml
+share/gnome/help/mailcheck/C/topic.dat
+share/gnome/help/panel/C/figures/controlcenter_icon.png
+share/gnome/help/panel/C/figures/drawerprop_dialog.png
+share/gnome/help/panel/C/figures/footprint_icon.png
+share/gnome/help/panel/C/figures/four_hide_button.png
+share/gnome/help/panel/C/figures/gnome_panel.png
+share/gnome/help/panel/C/figures/gnometerminal_icon.png
+share/gnome/help/panel/C/figures/help_icon.png
+share/gnome/help/panel/C/figures/launcherprop1_dialog.png
+share/gnome/help/panel/C/figures/launcherprop2_dialog.png
+share/gnome/help/panel/C/figures/lockscreen_icon.png
+share/gnome/help/panel/C/figures/logout_icon.png
+share/gnome/help/panel/C/figures/menu_panel.png
+share/gnome/help/panel/C/figures/netscape_icon.png
+share/gnome/help/panel/C/figures/open_drawer.png
+share/gnome/help/panel/C/figures/panel_object_popup_menu.png
+share/gnome/help/panel/C/figures/panelprop_dialog.png
+share/gnome/help/panel/C/figures/runprogram_dialog.png
+share/gnome/help/panel/C/figures/runprogram_icon.png
+share/gnome/help/panel/C/figures/sample_applet.png
+share/gnome/help/panel/C/figures/statusdock2_button.png
+share/gnome/help/panel/C/figures/statusdock_button.png
+share/gnome/help/panel/C/figures/swallapp_dialog.png
+share/gnome/help/panel/C/figures/swallow_applet.png
+share/gnome/help/panel/C/figures/tasklist_applet.png
+share/gnome/help/panel/C/figures/typical_menu.png
+share/gnome/help/panel/C/legal.xml
+share/gnome/help/panel/C/panel.xml
+share/gnome/help/window-list/C/figures/window_list_applet.png
+share/gnome/help/window-list/C/figures/window_list_group.png
+share/gnome/help/window-list/C/legal.xml
+share/gnome/help/window-list/C/window-list.xml
+share/gnome/help/workspace-switcher/C/figures/workspacelist_applet.png
+share/gnome/help/workspace-switcher/C/legal.xml
+share/gnome/help/workspace-switcher/C/workspace-switcher.xml
+share/gnome/idl/gnome-panel-2.0/GNOME_Panel.idl
+share/gnome/omf/gnome-panel/clock-C.omf
+share/gnome/omf/gnome-panel/mailcheck-C.omf
+share/gnome/omf/gnome-panel/panel-C.omf
+share/gnome/omf/gnome-panel/window-list-C.omf
+share/gnome/omf/gnome-panel/workspace-switcher-C.omf
+share/gnome/panel/gnome-panel-preferences.glade
+share/gnome/panel/gnome-panel-screenshot.glade2
+share/gnome/pixmaps/fish/fishanim.png
+share/gnome/pixmaps/fish/footguy.png
+share/gnome/pixmaps/fish/monkey.png
+share/gnome/pixmaps/fish/oldwanda.png
+share/gnome/pixmaps/gnome-fish.png
+share/gnome/pixmaps/mailcheck/eclouds.png
+share/gnome/pixmaps/mailcheck/email-e.png
+share/gnome/pixmaps/mailcheck/email-eclouds.png
+share/gnome/pixmaps/mailcheck/email-tiny.png
+share/gnome/pixmaps/mailcheck/email.png
+share/gnome/pixmaps/mailcheck/tux-anim.png
+share/locale/az/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/bg/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ca/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/cs/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/da/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/de/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/el/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/en_GB/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/es/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/et/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/eu/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/fi/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/fr/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ga/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/gl/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/hu/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/it/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ja/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ko/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/lt/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/lv/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ms/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/nl/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/nn/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/no/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/pl/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/pt/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ro/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ru/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/sk/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/sl/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/sp/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/sr/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/sv/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/ta/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/tr/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/uk/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/vi/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/wa/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/zh_CN/LC_MESSAGES/gnome-panel-2.0.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
+@dirrm share/gnome/pixmaps/mailcheck
+@dirrm share/gnome/pixmaps/fish
+@dirrm share/gnome/panel
+@dirrm share/gnome/omf/gnome-panel
+@dirrm share/gnome/idl/gnome-panel-2.0
+@dirrm share/gnome/help/workspace-switcher/C/figures
+@dirrm share/gnome/help/workspace-switcher/C
+@dirrm share/gnome/help/workspace-switcher
+@dirrm share/gnome/help/window-list/C/figures
+@dirrm share/gnome/help/window-list/C
+@dirrm share/gnome/help/window-list
+@dirrm share/gnome/help/panel/C/figures
+@dirrm share/gnome/help/panel/C
+@dirrm share/gnome/help/panel
+@dirrm share/gnome/help/mailcheck/C/figures
+@dirrm share/gnome/help/mailcheck/C
+@dirrm share/gnome/help/mailcheck
+@dirrm share/gnome/help/clock/C/figures
+@dirrm share/gnome/help/clock/C
+@dirrm share/gnome/help/clock
+@dirrm share/gnome/gnome-panel/glade
+@dirrm share/gnome/gnome-panel
+@dirrm share/gnome/control-center-2.0/capplets
+@dirrm share/gnome/control-center-2.0
+@dirrm share/gnome/applications
+@dirrm share/doc/panel-applet
+@dirrm include/panel-2.0
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/tasklist_applet/prefs
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/tasklist_applet
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/global
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/small/panels/00000001
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/small/panels
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/small/general
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/small
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/panels/00000002
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/panels/00000001
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/panels
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/objects/00000002
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/objects/00000001
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/objects
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/general
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets/00000004
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets/00000003
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets/00000002
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets/00000001
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium/applets
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/medium
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/large/panels/00000002
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/large/panels/00000001
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/large/panels
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/large/general
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles/large
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel/default_profiles
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/pager_applet/prefs
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/pager_applet
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck_applet/prefs
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck_applet
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck-applet/prefs
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/mailcheck-applet
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet/prefs
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/fish_applet
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet/prefs
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/clock_applet
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel/global
+@dirrm etc/gconf/gconf.xml.defaults/apps/panel
