@@ -17,7 +17,6 @@ MAINTAINER=	howardjp@wam.umd.edu
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libiberty.a ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/libiberty_p.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/libiberty.so.1 ${PREFIX}/lib
 	${LN} -sf ${PREFIX}/lib/libiberty.so.1 ${PREFIX}/lib/libiberty.so
 	${INSTALL_DATA} ${WRKSRC}/libiberty.h ${PREFIX}/include
