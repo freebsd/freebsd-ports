@@ -16,8 +16,7 @@ MASTER_SITES+=	${MASTER_SITE_LOCAL} \
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/contrib/helpcontent/:help \
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help
 MASTER_SITE_SUBDIR=	maho/openoffice.org
-DISTFILES+=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z:gpc \
-		patch-openoffice-mozilla101-2002-10-14:moz mozilla-vendor-1.0.2a.tgz:moz
+DISTFILES+=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z:gpc
 EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
@@ -26,6 +25,7 @@ SNAPDATE=	20040810
 NO_LATEST_LINK=	yes
 USE_GNOME=	gtk20
 .if !defined(WITHOUT_MOZILLA)
+DISTFILES+=	patch-openoffice-mozilla101-2002-10-14:moz mozilla-vendor-1.0.2a.tgz:moz
 USE_GNOME+=	orbit gtk12
 .endif
 
