@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	javamail
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	#
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 
-MAINTAINER=	noway@nohow.demon.co.uk
+MAINTAINER=	java@freebsd.org
 
 RUN_DEPENDS=	${LOCALBASE}/share/java/classes/activation.jar:${PORTSDIR}/java/jaf
 
@@ -24,7 +24,7 @@ NO_BUILD=	yes
 NO_CDROM=	"See the license"
 TARGET_DIR=	${PREFIX}/share/java/${PKGNAME}
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
-DOWNLOAD_URL=	"http://java.sun.com/Download4?config-file=JavaMail-1_2.config&platform=zip&button=continue"
+DOWNLOAD_URL=	"http://java.sun.com/products/javamail/"
 
 .include <bsd.port.pre.mk>
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
@@ -34,10 +34,10 @@ IGNORE=	"You must manually fetch the distribution from ${DOWNLOAD_URL} and place
 do-install:
 	${MKDIR} ${TARGET_DIR}
 	${CP} -R ${WRKSRC}/* ${TARGET_DIR}
-	${LN} -sf ${TARGET_DIR}/imap.jar ${PREFIX}/share/java/classes/imap.jar
+	${LN} -sf ${TARGET_DIR}/lib/imap.jar ${PREFIX}/share/java/classes/imap.jar
 	${LN} -sf ${TARGET_DIR}/mail.jar ${PREFIX}/share/java/classes/mail.jar
-	${LN} -sf ${TARGET_DIR}/mailapi.jar ${PREFIX}/share/java/classes/mailapi.jar
-	${LN} -sf ${TARGET_DIR}/pop3.jar ${PREFIX}/share/java/classes/pop3.jar
-	${LN} -sf ${TARGET_DIR}/smtp.jar ${PREFIX}/share/java/classes/smtp.jar
+	${LN} -sf ${TARGET_DIR}/lib/mailapi.jar ${PREFIX}/share/java/classes/mailapi.jar
+	${LN} -sf ${TARGET_DIR}/lib/pop3.jar ${PREFIX}/share/java/classes/pop3.jar
+	${LN} -sf ${TARGET_DIR}/lib/smtp.jar ${PREFIX}/share/java/classes/smtp.jar
 
 .include <bsd.port.post.mk>
