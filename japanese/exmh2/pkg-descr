@@ -1,0 +1,13 @@
+exmh is a TCL/TK based interface to the MH mail system.
+
+IMPORTANT: exmh depends on the TK send facility for its background
+processing.  With TK 3.3, send now uses xauthority mechanisms by default,
+unless you compile TK with -DTK_NO_SECURITY.  Generally, this means that
+you **MUST** must run xdm to start your Xserver.
+
+FEATURES: As well as providing the usual layer on top of MH commands, exmh
+has a number of other features.
+
+JAPANESE ENVIRONMENT: To compose Japanese mail, you can use kinput2 with
+<Ctrl-backslash> key.  Once kinput2 is used, the message header will have
+"charset=iso-2022-jp".
