@@ -215,7 +215,7 @@ cat >> $F <<END
                                 cirrus ncr77c22 compaq mga oak al2101 ali \
                                 cl64xx video7 ark mx realtek apm s3_savage s3v \
                                 s3_svga neo chips cyrix rendition p9x00 \
-				spc8110 i740 tdfx smi generic
+				spc8110 i740 i810 tdfx smi generic
 
 #define XF86Vga16Drivers	et4000 et3000 ncr77c22 ati sis tvga8900 oak \
 				cl64xx generic 
