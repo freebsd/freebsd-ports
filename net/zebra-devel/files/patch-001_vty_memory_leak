@@ -1,0 +1,18 @@
+--- vty.c.orig	Tue Sep 26 23:03:12 2000
++++ vty.c	Tue Dec 26 23:18:00 2000
+@@ -1850,10 +1849,13 @@
+   printf ("line: %s\n", buf);
+ #endif /* VTYSH_DEBUG */
+ 
++  vty_ensure (vty, nbytes);
++  memcpy (vty->buf, buf, nbytes);
++  
+   /* Pass this line to parser. */
+-  vty->buf = buf;
+   ret = vty_execute (vty);
+-  vty->buf = NULL;
++
++  vty_clear_buf (vty);
+ 
+   /* Return result. */
+ #ifdef VTYSH_DEBUG
