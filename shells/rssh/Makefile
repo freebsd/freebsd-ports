@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rssh
-PORTVERSION=	2.2.1
+PORTVERSION=	2.2.2
 CATEGORIES=	shells security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,6 +15,7 @@ MAINTAINER=	enigmatyc@laposte.net
 COMMENT=	A Restricted Secure SHell only for sftp or/and scp
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 MAN1=		rssh.1
 MAN5=		rssh.conf.5
@@ -34,9 +35,13 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/rsync:${PORTSDIR}/net/rsync
 CONFIGURE_ARGS+=--with-rsync=${LOCALBASE}/bin/rsync
 .endif
 
-.if defined(WITH_RSYNC)
+.if defined(WITH_RDIST)
 RUN_DEPENDS+=	${LOCALBASE}/bin/rdist6:${PORTSDIR}/net/rdist6
 CONFIGURE_ARGS+=--with-rdist=${LOCALBASE}/bin/rdist6
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -E -e 's,(\$$\(DESTDIR\)\$$\(sysconfdir\)/\$$\$$f),\1.dist,g' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
