@@ -12,3 +12,5 @@ How to get TCP performance numbers:
 host1%  ttcp -r -s			host2% ttcp -t -s host1
 
 -n and -l options change the number and size of the buffers.
+
+WWW:	http://ftp.arl.mil/~mike/ttcp.html
