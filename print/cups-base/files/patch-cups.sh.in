@@ -1,33 +1,22 @@
---- cups.sh.in.orig	Sat Feb  2 23:26:44 2002
-+++ cups.sh.in	Sat Feb  2 23:27:07 2002
-@@ -78,6 +78,10 @@
- 		IS_ON=/bin/true
- 		;;
- 
-+	FreeBSD*)
-+		IS_ON=/usr/bin/true
-+		;;
-+
- 	*)
- 		IS_ON=/bin/true
- 		;;
-@@ -141,7 +145,8 @@
+--- cups.sh.in.orig	Fri Jun  7 20:15:29 2002
++++ cups.sh.in	Fri Jun  7 20:18:22 2002
+@@ -141,7 +141,8 @@
  				exec_prefix=@exec_prefix@
  				@sbindir@/cupsd
  			fi
 -			$ECHO "cups: scheduler ${1}ed."
 +#			$ECHO "cups: scheduler ${1}ed."
-+			echo -n "cupsd "
++			$ECHO " cupsd"
  		else
  			$ECHO "cups: scheduler stopped."
  		fi
-@@ -150,7 +155,8 @@
+@@ -150,7 +151,8 @@
  	stop)
  		if test "$pid" != ""; then
  			kill $pid
 -			$ECHO "cups: scheduler stopped."
 +#			$ECHO "cups: scheduler stopped."
-+			echo -n "cupsd "
++			$ECHO " cupsd"
  		fi
  		;;
  

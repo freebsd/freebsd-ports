@@ -1,0 +1,50 @@
+--- man/Makefile.common.orig	Fri Jun  7 20:28:16 2002
++++ man/Makefile.common	Fri Jun  7 20:30:55 2002
+@@ -27,30 +27,30 @@
+ #
+ 
+ MAN1	=	backend.man \
+-		filter.man \
+-		lp.man \
+-		lpoptions.man \
+-		lppasswd.man \
+-		lpq.man \
+-		lprm.man \
+-		lpr.man \
+-		lpstat.man
++		filter.man
++#		lp.man \
++#		lpoptions.man \
++#		lppasswd.man \
++#		lpq.man \
++#		lprm.man \
++#		lpr.man \
++#		lpstat.man
+ MAN3	=	cups-config.man
+ MAN5	=	classes.conf.man \
+ 		cupsd.conf.man \
+ 		mime.convs.man \
+ 		mime.types.man \
+ 		printers.conf.man
+-MAN8	=	accept.man \
+-		cupsaddsmb.man \
+-		cups-lpd.man \
++#MAN8	=	accept.man \
++#		cupsaddsmb.man \
++MAN8=		cups-lpd.man \
+ 		cups-polld.man \
+-		cupsd.man \
+-		enable.man \
+-		lpadmin.man \
+-		lpinfo.man \
+-		lpmove.man \
+-		lpc.man
++		cupsd.man
++#		enable.man \
++#		lpadmin.man \
++#		lpinfo.man \
++#		lpmove.man \
++#		lpc.man
+ 
+ CAT1	=	backend.$(CAT1EXT) \
+ 		filter.$(CAT1EXT) \

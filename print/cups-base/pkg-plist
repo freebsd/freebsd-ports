@@ -31,6 +31,7 @@ libexec/cups/backend/http
 libexec/cups/backend/ipp
 libexec/cups/backend/lpd
 libexec/cups/backend/parallel
+libexec/cups/backend/scsi
 libexec/cups/backend/serial
 libexec/cups/backend/socket
 libexec/cups/backend/usb
@@ -45,7 +46,6 @@ libexec/cups/filter/imagetops
 libexec/cups/filter/imagetoraster
 libexec/cups/filter/pdftops
 libexec/cups/filter/pstops
-libexec/cups/filter/pstoraster
 libexec/cups/filter/rastertodymo
 libexec/cups/filter/rastertoepson
 libexec/cups/filter/rastertohp
@@ -86,49 +86,10 @@ share/cups/charsets/windows-874
 share/cups/data/HPGLprolog
 share/cups/data/psglyphs
 share/cups/data/testprint.ps
-share/cups/fonts/AvantGarde-Book
-share/cups/fonts/AvantGarde-BookOblique
-share/cups/fonts/AvantGarde-Demi
-share/cups/fonts/AvantGarde-DemiOblique
-share/cups/fonts/Bookman-Demi
-share/cups/fonts/Bookman-DemiItalic
-share/cups/fonts/Bookman-Light
-share/cups/fonts/Bookman-LightItalic
-share/cups/fonts/Charter-Bold
-share/cups/fonts/Charter-BoldItalic
-share/cups/fonts/Charter-Italic
-share/cups/fonts/Charter-Roman
-share/cups/fonts/Courier
 share/cups/fonts/Courier-Bold
 share/cups/fonts/Courier-BoldOblique
 share/cups/fonts/Courier-Oblique
-share/cups/fonts/Helvetica
-share/cups/fonts/Helvetica-Bold
-share/cups/fonts/Helvetica-BoldOblique
-share/cups/fonts/Helvetica-Narrow
-share/cups/fonts/Helvetica-Narrow-Bold
-share/cups/fonts/Helvetica-Narrow-BoldOblique
-share/cups/fonts/Helvetica-Narrow-Oblique
-share/cups/fonts/Helvetica-Oblique
-share/cups/fonts/NewCenturySchlbk-Bold
-share/cups/fonts/NewCenturySchlbk-BoldItalic
-share/cups/fonts/NewCenturySchlbk-Italic
-share/cups/fonts/NewCenturySchlbk-Roman
-share/cups/fonts/Palatino-Bold
-share/cups/fonts/Palatino-BoldItalic
-share/cups/fonts/Palatino-Italic
-share/cups/fonts/Palatino-Roman
 share/cups/fonts/Symbol
-share/cups/fonts/Times-Bold
-share/cups/fonts/Times-BoldItalic
-share/cups/fonts/Times-Italic
-share/cups/fonts/Times-Roman
-share/cups/fonts/Utopia-Bold
-share/cups/fonts/Utopia-BoldItalic
-share/cups/fonts/Utopia-Italic
-share/cups/fonts/Utopia-Regular
-share/cups/fonts/ZapfChancery-MediumItalic
-share/cups/fonts/ZapfDingbats
 share/cups/model/deskjet.ppd
 share/cups/model/deskjet2.ppd
 share/cups/model/dymo.ppd
@@ -141,44 +102,6 @@ share/cups/model/stcolor.ppd
 share/cups/model/stcolor2.ppd
 share/cups/model/stphoto.ppd
 share/cups/model/stphoto2.ppd
-share/cups/pstoraster/Fontmap
-share/cups/pstoraster/gs_btokn.ps
-share/cups/pstoraster/gs_ccfnt.ps
-share/cups/pstoraster/gs_cff.ps
-share/cups/pstoraster/gs_cidfn.ps
-share/cups/pstoraster/gs_cmap.ps
-share/cups/pstoraster/gs_cmdl.ps
-share/cups/pstoraster/gs_dbt_e.ps
-share/cups/pstoraster/gs_diskf.ps
-share/cups/pstoraster/gs_dpnxt.ps
-share/cups/pstoraster/gs_dps.ps
-share/cups/pstoraster/gs_dps1.ps
-share/cups/pstoraster/gs_dps2.ps
-share/cups/pstoraster/gs_epsf.ps
-share/cups/pstoraster/gs_fform.ps
-share/cups/pstoraster/gs_fonts.ps
-share/cups/pstoraster/gs_init.ps
-share/cups/pstoraster/gs_iso_e.ps
-share/cups/pstoraster/gs_kanji.ps
-share/cups/pstoraster/gs_ksb_e.ps
-share/cups/pstoraster/gs_lev2.ps
-share/cups/pstoraster/gs_ll3.ps
-share/cups/pstoraster/gs_mex_e.ps
-share/cups/pstoraster/gs_mro_e.ps
-share/cups/pstoraster/gs_pfile.ps
-share/cups/pstoraster/gs_res.ps
-share/cups/pstoraster/gs_setpd.ps
-share/cups/pstoraster/gs_statd.ps
-share/cups/pstoraster/gs_std_e.ps
-share/cups/pstoraster/gs_sym_e.ps
-share/cups/pstoraster/gs_ttf.ps
-share/cups/pstoraster/gs_typ32.ps
-share/cups/pstoraster/gs_typ42.ps
-share/cups/pstoraster/gs_type1.ps
-share/cups/pstoraster/gs_wan_e.ps
-share/cups/pstoraster/gs_wl1_e.ps
-share/cups/pstoraster/gs_wl2_e.ps
-share/cups/pstoraster/gs_wl5_e.ps
 share/cups/templates/add-class.tmpl
 share/cups/templates/add-printer.tmpl
 share/cups/templates/admin-op.tmpl
@@ -200,6 +123,7 @@ share/cups/templates/error.tmpl
 share/cups/templates/header.tmpl
 share/cups/templates/job-cancel.tmpl
 share/cups/templates/job-hold.tmpl
+share/cups/templates/job-op.tmpl
 share/cups/templates/job-release.tmpl
 share/cups/templates/job-restart.tmpl
 share/cups/templates/jobs.tmpl
@@ -216,6 +140,7 @@ share/cups/templates/printer-configured.tmpl
 share/cups/templates/printer-confirm.tmpl
 share/cups/templates/printer-deleted.tmpl
 share/cups/templates/printer-modified.tmpl
+share/cups/templates/printer-purge.tmpl
 share/cups/templates/printer-reject.tmpl
 share/cups/templates/printer-start.tmpl
 share/cups/templates/printer-stop.tmpl
@@ -289,6 +214,8 @@ share/doc/cups/sum.html
 share/doc/cups/sum.pdf
 share/doc/cups/svd.html
 share/doc/cups/svd.pdf
+share/doc/cups/translation.html
+share/doc/cups/translation.pdf
 share/locale/C/cups_C
 share/locale/be/cups_be
 share/locale/cs/cups_cs
@@ -330,24 +257,7 @@ share/locale/zh_CN/cups_zh_CN
 @dirrm share/cups/data
 @dirrm share/cups/fonts
 @dirrm share/cups/model
-@dirrm share/cups/pstoraster
 @dirrm share/cups/templates
 @dirrm share/cups
 @dirrm share/doc/cups/images
 @dirrm share/doc/cups
-@dirrm share/locale/C
-@dirrm share/locale/be
-@dirrm share/locale/cs
-@dirrm share/locale/de
-@dirrm share/locale/en
-@dirrm share/locale/es
-@dirrm share/locale/fr
-@dirrm share/locale/he
-@dirrm share/locale/it
-@dirrm share/locale/ru_RU.cp1251
-@dirrm share/locale/ru_RU.koi8r
-@dirrm share/locale/sv
-@dirrm share/locale/uk
-@dirrm share/locale/uk_UA.cp1251
-@dirrm share/locale/zh_CN
-@dirrm share/locale
