@@ -7,5 +7,3 @@
 -LIB     = $(xcinlib) $(extra_lib) $(tabe_lib) $(db_lib)
 +LIB     = $(xcinlib) $(extra_lib) $(tabe_lib) $(db_lib) -lgcc
  TARGET  = bimsphone.$(slib_ext)
- 
- 

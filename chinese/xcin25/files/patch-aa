@@ -8,4 +8,3 @@
 +	if [ ! -d $(xcin_libp)/bin ]; then mkdir -p $(xcin_libp)/bin; fi
 +	if [ -f $(xcin_libp)/bin/$(BIN) ]; then mv $(xcin_libp)/bin/$(BIN) $(xcin_libp)/bin/$(BIN).old; fi
 +	$(INSTALL_PROGRAM) $(BIN) $(xcin_libp)/bin
- 

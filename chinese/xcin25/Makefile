@@ -7,8 +7,12 @@
 
 PORTNAME=	xcin
 PORTVERSION=	2.5.2.2
+PORTREVISION=	1
 CATEGORIES=	chinese x11
-MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/
+MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/ \
+		http://chewing.oio.cx/download/
+PKGNAMEPREFIX=	zh-
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} chewing-0.0.5.1.tar.gz
 
 MAINTAINER=	keith@FreeBSD.org
 
@@ -31,6 +35,10 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-tabelib=${LOCALBASE}/lib \
 		--with-intlinc=${LOCALBASE}/include \
 		--with-intllib=${LOCALBASE}/lib
+
+post-patch:
+	@mv ${WRKDIR}/chewing ${WRKSRC}/src/Cinput
+	@cd ${WRKSRC}/src/Cinput/chewing; ${SH} ./patch_chewing
 
 post-install:
 	strip ${PREFIX}/bin/xcin2.5
