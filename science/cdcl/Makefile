@@ -17,7 +17,7 @@ COMMENT?=	Scientific graphic library for geoscience
 .if defined(WITH_GTK)
 PKGNAMESUFFIX=	-gtk
 PATCH_SITES=	http://www-mete.kugi.kyoto-u.ac.jp/seiya/dcl/tarball/
-PATCHFILES=	${DISTNAME}-gtk2-4.patch
+PATCHFILES=	${DISTNAME}-gtk2-5.patch
 PATCH_DIST_STRIP=	-p1
 USE_GNOME=	gtk20
 .endif

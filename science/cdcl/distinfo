@@ -1,4 +1,4 @@
 MD5 (dcl-5.2-C.3.tar.gz) = 70873b03c0dd854c52522013a7852c09
 SIZE (dcl-5.2-C.3.tar.gz) = 943976
-MD5 (dcl-5.2-C.3-gtk2-4.patch) = faa89c2325933dbe4489c6fa66c62938
-SIZE (dcl-5.2-C.3-gtk2-4.patch) = 427255
+MD5 (dcl-5.2-C.3-gtk2-5.patch) = 6d3435a2fe26b1adc6b1f26b291523b7
+SIZE (dcl-5.2-C.3-gtk2-5.patch) = 427345
