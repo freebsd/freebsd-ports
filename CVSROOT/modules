@@ -1962,7 +1962,6 @@ hagelslag	ports/net/hagelslag
 halflifeserver	ports/games/halflifeserver
 handbook	doc/en_US.ISO8859-1/books/handbook
 hangman		src/games/hangman
-hanzim		ports/chinese/hanzim
 happy		ports/devel/happy
 happydoc	ports/devel/happydoc
 harvest		ports/www/harvest
@@ -7241,6 +7240,7 @@ zh-gbscript	ports/chinese/gbscript
 zh-ghostscript6	ports/chinese/ghostscript6
 zh-gnumeric	ports/chinese/gnumeric
 zh-gugod-clean	ports/chinese/gugod-clean
+zh-hanzim	ports/chinese/hanzim
 zh-hc		ports/chinese/hc
 zh-hztty	ports/chinese/hztty
 zh-irssi	ports/chinese/irssi
