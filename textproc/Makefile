@@ -327,6 +327,7 @@
     SUBDIR += ruby-format
     SUBDIR += ruby-formvalidator
     SUBDIR += ruby-gdome
+    SUBDIR += ruby-html-fillinform
     SUBDIR += ruby-html-parser
     SUBDIR += ruby-htmlcompact
     SUBDIR += ruby-htmlrepair

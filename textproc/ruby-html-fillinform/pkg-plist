@@ -1,0 +1,12 @@
+%%RUBY_SITELIBDIR%%/html/fillform.rb
+%%RUBY_SITELIBDIR%%/html/fillinform.rb
+@unexec rmdir %D/%%RUBY_SITELIBDIR%%/html 2>/dev/null || true
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demo.cgi
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/demo.rhtml
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/fillinform.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/fillinform.ja.rd
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
