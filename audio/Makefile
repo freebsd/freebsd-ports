@@ -126,6 +126,7 @@
     SUBDIR += rsynth
     SUBDIR += s3mod
     SUBDIR += sdl_mixer
+    SUBDIR += shntool
     SUBDIR += shorten
     SUBDIR += shout
     SUBDIR += sidplay

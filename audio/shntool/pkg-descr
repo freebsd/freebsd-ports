@@ -1,0 +1,18 @@
+shntool is a multi-purpose .wav/.shn processing tool.  Input and
+output files are transparent to shntool, meaning that it can
+perform its functions upon both .wav and .shn data.
+
+When in 'len' (length) mode, it reports .wav size and length information
+from both .wav and .shn files, including whether each file is (a) too
+short to be burned to disc, (b) not cut on a sector boundary, or (c)
+contains incorrect header information.
+
+When in 'fix' mode, shntool is capable of rewriting a set of input
+files so that they are all cut on sector boundaries.  You may specify
+whether shntool shifts the track boundaries (a) forward to the next
+multiple of the block size, or (b) backward to the previous multiple
+of the block size.  Alternatively, you may join the input files into
+one large output file, so you can do the splitting yourself (with
+another .wav editor - shntool isn't that advanced yet).
+
+WWW: http://sdf.lonestar.org/~jason/shn-utils/shntool/
