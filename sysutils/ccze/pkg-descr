@@ -1,0 +1,7 @@
+Ccze is a fast, C port of the well known colorize log colorizer.
+It uses ncurses for the output and PCRE for matching. It is also
+extensible via plug-ins.
+Plugins for apm, exim, fetchmail, httpd, postfix, procmail, squid,
+syslog, ulogd, vsftpd, xferlog and more are provided.
+
+WWW: http://bonehunter.rulez.org/CCZE.phtml

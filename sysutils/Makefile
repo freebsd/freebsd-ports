@@ -27,6 +27,7 @@
     SUBDIR += bsdsar
     SUBDIR += bubblemon
     SUBDIR += bubblemon-dockapp
+    SUBDIR += ccze
     SUBDIR += cd-write
     SUBDIR += cd9660_unicode
     SUBDIR += cdbakeoven
