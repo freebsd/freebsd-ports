@@ -115,7 +115,7 @@
     SUBDIR += latte
     SUBDIR += libtre
     SUBDIR += libxml
-#    SUBDIR += libxml++
+    SUBDIR += libxml++
     SUBDIR += libxml2
     SUBDIR += libxode
     SUBDIR += libxslt
