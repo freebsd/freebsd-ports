@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.44 1998/06/12 08:07:11 tg Exp $
+# $Id: Makefile,v 1.45 1998/06/24 15:34:12 mph Exp $
 #
 
     SUBDIR += amp
@@ -30,6 +30,7 @@
     SUBDIR += tosha
     SUBDIR += tracker
     SUBDIR += workman
+    SUBDIR += x11amp
     SUBDIR += xcd
     SUBDIR += xcdplayer
     SUBDIR += xmcd
