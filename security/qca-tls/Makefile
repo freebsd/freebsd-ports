@@ -19,7 +19,6 @@ BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_QT_VER=	3
 QT_NONSTANDARD=	yes
 CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++

@@ -1,5 +1,26 @@
---- configure.orig	Thu Dec 18 01:54:50 2003
-+++ configure	Tue Jan 27 14:58:26 2004
+--- configure.orig	Wed Dec 17 23:54:50 2003
++++ configure	Tue Nov 16 12:33:52 2004
+@@ -20,17 +20,17 @@
+ while [ $# -gt 0 ]; do
+ 	case "$1" in
+ 		--qtdir=*)
+-			QTDIR=`expr "${1}" : "--qtdir=\(.*\)"`
++			QTDIR="${1#--qtdir=}"
+ 			shift
+ 			;;
+ 
+ 		--with-openssl-inc=*)
+-			QC_WITH_OPENSSL_INC=`expr "${1}" : "--with-openssl-inc=\(.*\)"`
++			QC_WITH_OPENSSL_INC="${1#--with-openssl-inc=}"
+ 			shift
+ 			;;
+ 
+ 		--with-openssl-lib=*)
+-			QC_WITH_OPENSSL_LIB=`expr "${1}" : "--with-openssl-lib=\(.*\)"`
++			QC_WITH_OPENSSL_LIB="${1#--with-openssl-lib=}"
+ 			shift
+ 			;;
+ 
 @@ -43,6 +43,8 @@
  	esac
  done
@@ -27,3 +48,17 @@
  			lib = s;
  		}
  		else {
+@@ -570,13 +570,6 @@
+ 	echo
+ 	exit 1;
+ fi
+-cat >Makefile.tmp <<EOT
+-export QTDIR = $QTDIR
+-EOT
+-cat Makefile >> Makefile.tmp
+-rm -f Makefile
+-cp -f Makefile.tmp Makefile
+-rm -f Makefile.tmp
+ 
+ echo
+ echo Good, your configure finished.  Now run \'make\'.
