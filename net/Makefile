@@ -504,6 +504,7 @@
     SUBDIR += py-xmlrpclib
     SUBDIR += py-zsi
     SUBDIR += pygopherd
+    SUBDIR += pyslsk
     SUBDIR += qadsl
     SUBDIR += qtella
     SUBDIR += queso

@@ -1,0 +1,21 @@
+PySoulSeek is a client for SoulSeek filesharing system. To use it on 
+Linux/Unix and X11 you'll need all of the following:
+
+* Gtk+ 1.2
+* Python 2.1 or newer
+* wxPython 2.3.4 or newer (Gtk port)
+
+If you can run wxPython demos, you may be sure PySoulSeek will run too.
+
+After installing pyslsk (see INSTALL for that), the executable
+to run is named 'pyslsk'.
+
+Right-clicking on an item in any list gives you the menu of what's available. 
+To search for files just enter your search string into the input box in 
+the search tab.
+
+Good luck!  As always, feedback is greatly appreciated, bugreports and
+patches even more so.
+
+Author:	ak@sensi.org
+WWW: 	http://www.sensi.org/~ak/pyslsk/
