@@ -4573,6 +4573,7 @@ linux-mozilla-devel	ports/www/linux-mozilla-devel
 linux-mozillafirebird	ports/www/linux-mozillafirebird
 linux-mozillafirebird-el	ports/www/linux-mozillafirebird-el
 linux-mupen64	ports/emulators/linux-mupen64
+linux-nwnclient	ports/games/linux-nwnclient
 linux-nwserver	ports/games/linux-nwserver
 linux-opengroupware	ports/misc/linux-opengroupware
 linux-openmotif	ports/x11-toolkits/linux-openmotif
@@ -4619,8 +4620,6 @@ linux_glide	ports/graphics/linux_glide
 linux_glx	ports/graphics/linux_glx
 linux_kdump	ports/devel/linux_kdump
 linux_mesa3	ports/graphics/linux_mesa3
-linux_nwnclient	ports/games/linux_nwnclient
-linux_nwndata	ports/games/linux_nwndata
 linuxdoc	ports/textproc/linuxdoc
 linuxfdisk	ports/sysutils/linuxfdisk
 linuxigd	ports/net/linuxigd
@@ -5499,6 +5498,7 @@ nvidia-driver	ports/x11/nvidia-driver
 nvnet		ports/net/nvnet
 nwclient	ports/sysutils/nwclient
 nwclient602	ports/sysutils/nwclient602
+nwndata		ports/games/nwndata
 nwnusers	ports/games/nwnusers
 nwreckdum	ports/archivers/nwreckdum
 nwrite		ports/misc/nwrite
