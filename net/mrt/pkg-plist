@@ -1,0 +1,6 @@
+man/man8/mrtd.8.gz
+sbin/bgpsim
+sbin/mrtd
+sbin/route_atob
+sbin/route_btoa
+sbin/sbgp
