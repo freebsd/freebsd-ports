@@ -127,6 +127,7 @@
     SUBDIR += lfm
     SUBDIR += libchk
     SUBDIR += libretto-config
+    SUBDIR += linneighborhood
     SUBDIR += linux-acu
     SUBDIR += linux-e2fsprogs
     SUBDIR += lire
