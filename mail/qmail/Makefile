@@ -154,17 +154,17 @@ MAILQ?=		/usr/bin/mailq
 NEWALIASES?=	/usr/bin/newaliases
 SENDMAIL?=	/usr/sbin/sendmail
 
-ALL_TARGET=	default dot-qmail.5 qmail-control.5 qmail-getpw.8 \
+ALL_TARGET+=	default dot-qmail.5 qmail-control.5 qmail-getpw.8 \
 		qmail-limits.7 qmail-newmrh.8 qmail-newu.8 qmail-pw2u.8 \
 		qmail-send.8 qmail-start.8 qmail-users.5
 
-MAN1=	forward.1 condredirect.1 bouncesaying.1 except.1 maildirmake.1 \
+MAN1+=	forward.1 condredirect.1 bouncesaying.1 except.1 maildirmake.1 \
 	maildir2mbox.1 maildirwatch.1 mailsubj.1 qreceipt.1 qbiff.1 preline.1 \
 	tcp-env.1
-MAN5=	addresses.5 envelopes.5 maildir.5 mbox.5 dot-qmail.5 qmail-control.5 \
+MAN5+=	addresses.5 envelopes.5 maildir.5 mbox.5 dot-qmail.5 qmail-control.5 \
 	qmail-header.5 qmail-log.5 qmail-users.5 tcp-environ.5
-MAN7=	forgeries.7 qmail-limits.7 qmail.7
-MAN8=	qmail-local.8 qmail-lspawn.8 qmail-getpw.8 qmail-remote.8 \
+MAN7+=	forgeries.7 qmail-limits.7 qmail.7
+MAN8+=	qmail-local.8 qmail-lspawn.8 qmail-getpw.8 qmail-remote.8 \
 	qmail-rspawn.8 qmail-clean.8 qmail-send.8 qmail-start.8 splogger.8 \
 	qmail-queue.8 qmail-inject.8 qmail-showctl.8 qmail-newmrh.8 \
 	qmail-newu.8 qmail-pw2u.8 qmail-qread.8 qmail-qstat.8 qmail-tcpok.8 \
