@@ -13,13 +13,6 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/dtd/ext2.dtd
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/dtd/extdtd.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/dtd/extdtd.xml
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/expat-1.2/ext.ent
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/expat-1.2/exttest.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/expat-1.2/exttesti.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/expat-1.2/hoge.dtd
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/expat-1.2/idtest.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/expat-1.2/idtest.xml
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/expat-1.2/xmlextparser.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/namespaces/namespace1.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/namespaces/namespace1.xml
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/namespaces/namespace2.rb
@@ -59,7 +52,6 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/xmlparser/xmlstats.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlparser/ja
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlparser/namespaces
-%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlparser/expat-1.2
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlparser/dtd
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/xmlparser
 %%PORTDOCS%%%%RUBY_DOCDIR%%/xmlparser/ja/README.ja
