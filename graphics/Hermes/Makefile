@@ -8,7 +8,11 @@
 PORTNAME=	Hermes
 PORTVERSION=	1.3.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://hermes.terminal.at/files/ \
+MASTER_SITES=	http://tzo.linux.tucows.com/files/x11/dev/ \
+		ftp://ftp.direct.ca/pub/linuxberg/x11/dev/ \
+		http://oarnet.linux.tucows.com/files/x11/dev/ \
+		ftp://ftp.infomagic.com/pub/mirrors/tucows/mlinux/files/x11/dev/ \
+		http://hermes.terminal.at/files/ \
 		http://dark.x.dtu.dk/~mbn/clanlib/download/
 
 MAINTAINER=	will@FreeBSD.org
