@@ -1,5 +1,6 @@
 bin/fc-cache
 bin/fc-list
+bin/fc-match
 etc/fonts/fonts.conf
 etc/fonts/fonts.dtd
 include/fontconfig/fcfreetype.h
