@@ -8,7 +8,8 @@
 PORTNAME=	xcut
 PORTVERSION=	0.2
 CATEGORIES=	x11
-MASTER_SITES=	http://acsys.anu.edu.au/~tpot/xcut/
+MASTER_SITES=	http://download.sourceforge.net/xcut/ \
+		http://acsys.anu.edu.au/~tpot/xcut/
 
 MAINTAINER=	cy@FreeBSD.org
 
