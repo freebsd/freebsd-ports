@@ -19,6 +19,7 @@ ONLY_FOR_ARCHS=	i386
 CONFLICTS=	valgrind-snapshot-[0-9]*
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_GMAKE=	yes
+USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS+=--enable-maintainer-mode
