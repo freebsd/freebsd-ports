@@ -29,7 +29,7 @@ post-extract:
 
 do-build:
 	@${WRKSRC}/Install_${NAME}_Sensor.bin --nomsg ${WRKSRC}
-	@${PATCH} -sp0 < ${PATCHDIR}/postbuild-patch-__init__.py
+	@${PATCH} -d ${WRKDIR} -sp0 < ${PATCHDIR}/postbuild-patch-__init__.py
 	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 do-install:
