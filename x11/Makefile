@@ -202,6 +202,7 @@
     SUBDIR += xbelld
     SUBDIR += xbindkeys
     SUBDIR += xbindkeys_config
+    SUBDIR += xcalib
     SUBDIR += xcb
     SUBDIR += xclip
     SUBDIR += xcmd

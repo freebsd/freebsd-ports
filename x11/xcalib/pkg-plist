@@ -1,0 +1,8 @@
+bin/xcalib
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README.profilers
+%%EXAMPLESDIR%%/bluish.icc
+%%EXAMPLESDIR%%/gamma_1_0.icc
+%%EXAMPLESDIR%%/gamma_2_2.icc
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%

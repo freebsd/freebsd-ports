@@ -1,0 +1,21 @@
+xcalib is a program that allows you to use ICC profiles (to load its
+'vcgt'-tag) for display calibration on X11-Servers with XVidModeExtension
+supported (like X.org or XFree86 4.x.x). It can't create the profiles
+so you need to acquire them elsewhere (e.g. from some commercial
+program or from your display vendor).
+
+xcalib is a postcardware. So if you like this program, send a picture postcard 
+from your country/area to:
+  
+  Stefan Doehla
+  Steinselb 7
+  95100 Selb
+  GERMANY
+
+
+The latest version is 0.5 (as of April, 2004) 
+
+WWW: http://www.etg.e-technik.uni-erlangen.de/web/doe/xcalib/
+
+- Petr
+hopet@ics.muni.cz
