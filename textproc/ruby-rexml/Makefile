@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rexml
-PORTVERSION=	2.4.7
+PORTVERSION=	2.4.8
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.germane-software.com/software/archives/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
