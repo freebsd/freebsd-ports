@@ -1,0 +1,37 @@
+@comment $FreeBSD$
+bin/cvm-benchclient
+bin/cvm-checkpassword
+bin/cvm-pwfile
+bin/cvm-testclient
+bin/cvm-unix
+include/cvm-sasl.h
+include/cvm/client.h
+include/cvm/errors.h
+include/cvm/facts.h
+include/cvm/module.h
+include/cvm/sasl.h
+lib/libcvm-client.a
+lib/libcvm-command.a
+lib/libcvm-local.a
+lib/libcvm-module.a
+lib/libcvm-sasl.a
+lib/libcvm-udp.a
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/client.html
+%%PORTDOCS%%%%DOCSDIR%%/credentials.html
+%%PORTDOCS%%%%DOCSDIR%%/cvm-benchclient.html
+%%PORTDOCS%%%%DOCSDIR%%/cvm-checkpassword.html
+%%PORTDOCS%%%%DOCSDIR%%/cvm-pwfile.html
+%%PORTDOCS%%%%DOCSDIR%%/cvm-testclient.html
+%%PORTDOCS%%%%DOCSDIR%%/cvm-unix.html
+%%PORTDOCS%%%%DOCSDIR%%/cvm.html
+%%PORTDOCS%%%%DOCSDIR%%/errors.html
+%%PORTDOCS%%%%DOCSDIR%%/facts.html
+%%PORTDOCS%%%%DOCSDIR%%/module.html
+%%PORTDOCS%%%%DOCSDIR%%/protocol-2.html
+%%PORTDOCS%%%%DOCSDIR%%/protocol.html
+%%PORTDOCS%%%%DOCSDIR%%/rationale.html
+%%PORTDOCS%%%%DOCSDIR%%/sasl.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

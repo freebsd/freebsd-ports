@@ -1,0 +1,11 @@
+Credential Validation Modules:
+- The reference source for the CVM interface
+- Diagnostic and benchmark CVM clients
+- A checkpassword interface CVM client
+- A UNIX/POSIX system module (uses getpwnam)
+- A flat-file module
+- A library for client writers
+- A set of libraries for module writers
+
+Author:	Bruce Guenter <bruceg@em.ca>
+WWW:	http://untroubled.org/cvm/
