@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	extipl
-PORTVERSION=	5.01
+PORTVERSION=	5.04
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/ \
-		ftp://ftp.tsden.org/pub/extipl/PC-Unix/
+		http://www.tsden.org/takamiti/extipl/archs/
 
 MAINTAINER=	takamiti@tsden.org
 
