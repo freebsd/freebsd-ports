@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4
-PORTVERSION=	r2
+PORTVERSION=	r3
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	# empty
 DISTFILES=	# empty

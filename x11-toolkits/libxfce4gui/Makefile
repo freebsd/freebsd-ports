@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	libxfce4gui
-PORTVERSION=	3.99.2
-PORTREVISION=	1
+PORTVERSION=	3.99.3
 CATEGORIES=	x11-toolkits xfce
-MASTER_SITES=	http://www.xfce.org/archive/xfce4-rc2/src/ \
-		ftp://ftp.unix-ag.org/user/bmeurer/xfce4/rc2/separate/ \
-		http://usuarios.lycos.es/xfce4/tarballs/rc2/separate/ \
-		http://linux.imp.mx/xfce4/rc2/xfce4-rc2/src/
+MASTER_SITES=	http://www.xfce.org/archive/xfce4-rc3/src/ \
+		ftp://ftp.unix-ag.org/user/bmeurer/xfce4/rc3/separate/ \
+		http://usuarios.lycos.es/xfce4/tarballs/rc3/separate/ \
+		http://linux.imp.mx/xfce4/rc2/xfce4-rc3/src/
 DISTNAME=	libxfcegui4-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
