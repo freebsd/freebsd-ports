@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	Test-Tester
-PORTVERSION=	0.09
+PORTVERSION=	0.10.1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/\1/}
 
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Helps to test various Test::Builder derivatives
@@ -21,6 +22,15 @@ INSTALL_TARGET=	pure_install
 
 MAN3=		Test::Tester.3 Test::Tester::Capture.3 \
 		Test::Tester::CaptureRunner.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	CHANGES
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.pre.mk>
 
