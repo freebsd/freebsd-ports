@@ -11,8 +11,9 @@ start)
 		echo -n ' Canna'
 		$canna
 	fi
+	;;
 stop)
-	killall $canna && echo -n ' Canna'
+	@PREFIX@/sbin/cannakill && echo -n ' Canna'
 	;;
 *)
 	echo "Usage: `basename $0` {start|stop}" >&2
