@@ -9,7 +9,7 @@ PORTNAME=	cmp3
 PORTVERSION=	2.0.p5
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.personal.psu.edu/users/n/k/nkk104/cmp3/
+MASTER_SITES=	http://bsd.tucows.stop.hu/files/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/}
 
 MAINTAINER=	ports@FreeBSD.org

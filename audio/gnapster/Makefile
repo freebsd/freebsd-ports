@@ -8,7 +8,8 @@
 PORTNAME=	gnapster
 PORTVERSION=	1.5.0
 CATEGORIES=	audio
-MASTER_SITES=	http://www.faradic.net/~jasta/files/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gnapster
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME client for the online mp3 community called napster
