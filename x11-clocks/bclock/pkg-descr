@@ -1,0 +1,15 @@
+This is a mutated version of Oclock, using a bezier curve to 
+draw the hands.  It has a pretty funny appearance and it's 
+actually fairly tough to use it to tell the time.
+
+The bezier curve is drawn using 4 control points:
+1) the end of the (not visible) hours hand (closest to the center)
+2) the center of the clock itself
+3) the end of the seconds hand (closest to the border)
+4) the end of the minutes hand (slightly closer to the center)
+
+Visit the home page:
+http://dutian.twi.tudelft.nl/~vgeel/bclock
+
+--
+Brian Handy --> handy@physics.montana.edu
