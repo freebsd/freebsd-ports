@@ -1,3 +1,5 @@
+%%LIBC_TARG%%/include/msp430x13x1.h
+%%LIBC_TARG%%/include/msp430x14x1.h
 %%LIBC_TARG%%/include/ctype.h
 %%LIBC_TARG%%/include/debug.h
 %%LIBC_TARG%%/include/errno.h
@@ -43,10 +45,10 @@
 %%LIBC_TARG%%/include/msp430x32x.h
 %%LIBC_TARG%%/include/msp430x33x.h
 %%LIBC_TARG%%/include/msp430x41x.h
-%%LIBC_TARG%%/include/msp430xE42x.h
-%%LIBC_TARG%%/include/msp430xW42x.h
 %%LIBC_TARG%%/include/msp430x43x.h
 %%LIBC_TARG%%/include/msp430x44x.h
+%%LIBC_TARG%%/include/msp430xE42x.h
+%%LIBC_TARG%%/include/msp430xW42x.h
 %%LIBC_TARG%%/include/setjmp.h
 %%LIBC_TARG%%/include/signal.h
 %%LIBC_TARG%%/include/stdio.h
@@ -78,11 +80,16 @@
 %%LIBC_TARG%%/lib/crt430x135.o
 %%LIBC_TARG%%/lib/crt430x1351.o
 %%LIBC_TARG%%/lib/crt430x147.o
+%%LIBC_TARG%%/lib/crt430x1471.o
 %%LIBC_TARG%%/lib/crt430x148.o
+%%LIBC_TARG%%/lib/crt430x1481.o
 %%LIBC_TARG%%/lib/crt430x149.o
+%%LIBC_TARG%%/lib/crt430x1491.o
 %%LIBC_TARG%%/lib/crt430x155.o
 %%LIBC_TARG%%/lib/crt430x156.o
 %%LIBC_TARG%%/lib/crt430x157.o
+%%LIBC_TARG%%/lib/crt430x1610.o
+%%LIBC_TARG%%/lib/crt430x1611.o
 %%LIBC_TARG%%/lib/crt430x167.o
 %%LIBC_TARG%%/lib/crt430x168.o
 %%LIBC_TARG%%/lib/crt430x169.o
@@ -97,18 +104,18 @@
 %%LIBC_TARG%%/lib/crt430x337.o
 %%LIBC_TARG%%/lib/crt430x412.o
 %%LIBC_TARG%%/lib/crt430x413.o
-%%LIBC_TARG%%/lib/crt430xE423.o
-%%LIBC_TARG%%/lib/crt430xE425.o
-%%LIBC_TARG%%/lib/crt430xE427.o
-%%LIBC_TARG%%/lib/crt430xW423.o
-%%LIBC_TARG%%/lib/crt430xW425.o
-%%LIBC_TARG%%/lib/crt430xW427.o
 %%LIBC_TARG%%/lib/crt430x435.o
 %%LIBC_TARG%%/lib/crt430x436.o
 %%LIBC_TARG%%/lib/crt430x437.o
 %%LIBC_TARG%%/lib/crt430x447.o
 %%LIBC_TARG%%/lib/crt430x448.o
 %%LIBC_TARG%%/lib/crt430x449.o
+%%LIBC_TARG%%/lib/crt430xE423.o
+%%LIBC_TARG%%/lib/crt430xE425.o
+%%LIBC_TARG%%/lib/crt430xE427.o
+%%LIBC_TARG%%/lib/crt430xW423.o
+%%LIBC_TARG%%/lib/crt430xW425.o
+%%LIBC_TARG%%/lib/crt430xW427.o
 %%LIBC_TARG%%/lib/libc.a
 %%LIBC_TARG%%/lib/libm.a
 %%LIBC_TARG%%/lib/msp1/libc.a
@@ -141,8 +148,8 @@
 %%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/README.txt
 %%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/gfxbasic.c
 %%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/gfxbasic.h
+%%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/gfxcore.S
 %%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/gfxcore.h
-%%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/gfxcore.s
 %%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/hardware.h
 %%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/main.c
 %%LIBC_TARG%%/share/mspgcc/examples/gfx_lcd/makefile
@@ -188,6 +195,17 @@
 %%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/miniterm.py
 %%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/swuart.h
 %%LIBC_TARG%%/share/mspgcc/examples/timerA_uart/swuart.s
+%%LIBC_TARG%%/share/mspgcc/examples/uart_test/README.txt
+%%LIBC_TARG%%/share/mspgcc/examples/uart_test/asmlib.S
+%%LIBC_TARG%%/share/mspgcc/examples/uart_test/asmlib.h
+%%LIBC_TARG%%/share/mspgcc/examples/uart_test/hardware.h
+%%LIBC_TARG%%/share/mspgcc/examples/uart_test/main.c
+%%LIBC_TARG%%/share/mspgcc/examples/uart_test/makefile
+%%LIBC_TARG%%/share/mspgcc/examples/uart_test/serialComm.c
+%%LIBC_TARG%%/share/mspgcc/examples/uart_test/serialComm.h
+%%LIBC_TARG%%/share/mspgcc/examples/uart_test/taskhandler.S
+%%LIBC_TARG%%/share/mspgcc/examples/uart_test/taskhandler.h
+%%LIBC_TARG%%/share/mspgcc/examples/uart_test/tasklist.h
 %%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/LICENSE.txt
 %%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/README.txt
 %%LIBC_TARG%%/share/mspgcc/examples/video/TVPong/asmlib.S
@@ -228,6 +246,7 @@
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/tasker
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/tcpip
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/timerA_uart
+@dirrm %%LIBC_TARG%%/share/mspgcc/examples/uart_test
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/video/TVPong
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/video/TVTetris
 @dirrm %%LIBC_TARG%%/share/mspgcc/examples/video
