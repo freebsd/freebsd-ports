@@ -7,6 +7,7 @@
 
 PORTNAME=	libopendaap
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	devel net
 MASTER_SITES=	http://crazney.net/programs/itunes/files/
 
@@ -31,6 +32,7 @@ pre-configure:
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
 		${WRKSRC}/Makefile.am \
-		${WRKSRC}/Makefile.in
+		${WRKSRC}/Makefile.in \
+		${WRKSRC}/opendaap.pc.in
 
 .include <bsd.port.mk>
