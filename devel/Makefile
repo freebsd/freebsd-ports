@@ -421,6 +421,7 @@
     SUBDIR += uclmmbase
     SUBDIR += ucpp
     SUBDIR += uds
+    SUBDIR += uisp
     SUBDIR += understand_c
     SUBDIR += ups-debug
     SUBDIR += veepee
