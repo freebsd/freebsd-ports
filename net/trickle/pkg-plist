@@ -1,0 +1,7 @@
+bin/trickle
+bin/tricklectl
+bin/trickled
+lib/trickle/trickle-overload.so
+%%PORTDOCS%%%%DOCSDIR%%/README
+@dirrm lib/trickle
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
