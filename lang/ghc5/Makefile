@@ -5,15 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	ghc
-PORTVERSION=	5.04.1
+PORTVERSION=	5.04.2
 CATEGORIES=	lang haskell
-MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/
+MASTER_SITES=	http://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
+		http://www.haskell.org/ghc/dist/${PORTVERSION}/FreeBSD/:boot
 
 ONLY_FOR_ARCHS=	i386
 
-SRC_DIST=	ghc-${PORTVERSION}-src${EXTRACT_SUFX} 
-BOOT_DIST=	ghc-${PORTVERSION}-i386-unknown-freebsd-boot${EXTRACT_SUFX}
-BOOT_DIST5=	ghc-${PORTVERSION}-i386-unknown-freebsd5-boot${EXTRACT_SUFX}
+SRC_DIST=	ghc-${PORTVERSION}-src${EXTRACT_SUFX}:source
+BOOT_DIST=	ghc-${PORTVERSION}-i386-unknown-freebsd-boot${EXTRACT_SUFX}:boot
+BOOT_DIST5=	ghc-${PORTVERSION}-i386-unknown-freebsd5-boot${EXTRACT_SUFX}:boot
 
 USE_BZIP2=	yes
 .include <bsd.port.pre.mk>
