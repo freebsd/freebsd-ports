@@ -16,6 +16,7 @@ lib/gaim/libmsn.so
 lib/gaim/libnapster.so
 lib/gaim/libnovell.so
 lib/gaim/liboscar.so
+%%SILC%%lib/gaim/libsilcgaim.so
 lib/gaim/libyahoo.so
 lib/gaim/libzephyr.so
 lib/gaim/notify.so

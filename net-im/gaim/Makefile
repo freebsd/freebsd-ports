@@ -44,6 +44,14 @@ LIB_DEPENDS+=		gnutls:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--disable-gnutls
 .endif
 
+.if defined(WITH_SILC)
+LIB_DEPENDS+=		silcclient-1.0.3:${PORTSDIR}/devel/silc-toolkit
+CONFIGURE_ARGS+=	--with-silc-includes=${LOCALBASE}/include/silc
+PLIST_SUB+=		SILC=""
+.else
+PLIST_SUB+=		SILC="@comment "
+.endif
+
 .if !defined(WITHOUT_NSS)
 LIB_DEPENDS+=		nss3:${PORTSDIR}/security/nss
 CONFIGURE_ARGS+=	--with-nspr-includes=${LOCALBASE}/include/nspr \
@@ -93,6 +101,7 @@ CONFIGURE_ARGS+=	--disable-audio
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Gaim has the following tunable option(s):"
+	@${ECHO_MSG} "	WITH_SILC		Build with Secure Internet Live Conferencing (SILC)"
 	@${ECHO_MSG} "	WITHOUT_GTKSPELL	Turns off spell checking"
 	@${ECHO_MSG} "	WITHOUT_AUDIO		Disable audio support"
 	@${ECHO_MSG} "	WITH_GNUTLS		Enable GNUTLS encryption support"
@@ -109,6 +118,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthreads|${PTHREAD_LIBS:S/"//g}|g' \
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		-e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g' \
+		-e 's|-lsilc -lsilcclient ${PTHREAD_LIBS} -ldl|-lsilc -lsilcclient ${PTHREAD_LIBS} -liconv|' \
 		-e 's|TCL_VERSION found but 8.3 required|TCL_VERSION found but ${_TCL_VER} required|g' \
 		-e 's|TCL_MINOR_VERSION" -ne 3|TCL_MINOR_VERSION" -ne ${_TCL_VER:E}|' \
 			${WRKSRC}/configure
