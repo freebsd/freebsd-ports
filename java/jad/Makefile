@@ -9,8 +9,7 @@ PORTNAME=	jad
 PORTVERSION=	1.5.8c
 CATEGORIES=	java
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Bridge/8617/jad/freebsd/ \
-		http://members.nbci.com/kpdus/jad/freebsd/ \
-		http://www.znerd.demon.nl/ \
+		http://metaverse.euronet.nl/~ernst/
 		http://www.pensioenconsult.com/ \
 		http://www.schraven.nl/ \
 		http://www.jollem.com/~ernst/
