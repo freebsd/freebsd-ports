@@ -19,13 +19,13 @@
   #define	ENDDIR		"/"
   #define PATHSEP		':'
   #define SYSTEMSTARTFILE	"acs.rc"
-! #define SYSTEMSTARTPATH	"@PREFIX@/share/misc"
+! #define SYSTEMSTARTPATH	"@PREFIX@/share/acs"
   #define USERSTARTFILE	".acsrc"
   #define	USERSTARTPATH	getenv("HOME")
   #define STEPFILE   	"/tmp/SXXXXXX"
   #define PLOTFILE    	"acs.plot"
   #define HELPFILE    	"acs.hlp"
-! #define HELPPATH	"@PREFIX@/share/misc"
+! #define HELPPATH	"@PREFIX@/share/acs"
   /*--------------------------------------------------------------------------*/
   #if defined(__GNUG__)
     #define MANUAL_TEMPLATES
