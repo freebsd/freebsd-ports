@@ -105,16 +105,26 @@ MASTER_SITE_MOZILLA+= \
 MASTER_SITE_NETBSD+=	\
 	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.planix.com/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
-	ftp://ftp.plig.net/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
-	ftp://ftp.iastate.edu/pub/netbsd/packages/distfiles/NetBSD/packages/distfiles/%SUBDIR%/ \
-	ftp://sunsite.cnlab-switch.ch/mirror/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://ftp.iastate.edu/pub/netbsd/packages/distfiles/%SUBDIR%/ \
+	ftp://netbsd.stevens-tech.edu/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://download.sourceforge.net/pub/mirrors/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://river.styx.org/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://gd.tuwien.ac.at/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://mirror.inet.tele.dk/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://ftp.funet.fi/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.unina.it/pub/Unix/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://ftp.sunet.se/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://gort.ludd.luth.se/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.sunsite.org.uk/Mirrors/ftp.netbsd.org/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
+	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,NetBSD/packages/distfiles/&,} \
 	ftp://ftp.dti.ad.jp/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.jaist.ac.jp/.arc07/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.tokyonet.ad.jp/NetBSD/packages/distfiles/%SUBDIR%/ \
 	ftp://ftp.sra.co.jp/pub/os/NetBSD/packages/distfiles/%SUBDIR%/ \
-	ftp://ftp.nectec.or.th/pub/bsd-distributions/NetBSD/packages/distfiles/%SUBDIR%/
+	ftp://ftp.questnet.net.au/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://melanoma.cs.rmit.edu.au/pub/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://ftp.nectec.or.th/pub/bsd-distributions/NetBSD/packages/distfiles/%SUBDIR%/ \
+	ftp://ftp.chg.ru/pub/NetBSD/packages/distfiles/%SUBDIR%/
 
 MASTER_SITE_PERL_CPAN+=	\
 	ftp://ftp.digital.com/pub/plan/perl/CPAN/modules/by-module/%SUBDIR%/ \
