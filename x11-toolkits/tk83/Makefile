@@ -3,7 +3,7 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.11 1998/07/01 10:21:02 jseger Exp $
+# $Id: Makefile,v 1.12 1998/07/12 21:07:21 jdp Exp $
 #
 
 DISTNAME=	tk8.1a2
@@ -23,8 +23,13 @@ CONFIGURE_ENV=  PORTSDIR=${PORTSDIR}
 
 post-install:
 	${LDCONFIG} -m ${PREFIX}/lib
+.if exists(${PORTSDIR}/x11/tk80/pkg/INSTALL.wish)
+	${SH} ${PORTSDIR}/x11/tk80/pkg/INSTALL.wish
+.endif
 
 test:
 	cd ${WRKSRC}; make test
 
 .include <bsd.port.mk>
+
+PKG_ARGS+=      -i ${PORTSDIR}/x11/tk80/pkg/INSTALL.wish
