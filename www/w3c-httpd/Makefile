@@ -3,12 +3,12 @@
 # Date created:		29 October 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.6 1995/04/24 09:10:26 asami Exp $
+# $Id: Makefile,v 1.7 1995/10/03 07:03:46 asami Exp $
 #
 
 DISTNAME=	WWW
 PKGNAME=	cern_httpd-3.0
-CATEGORIES+=	networking
+CATEGORIES+=	www
 MASTER_SITES=	ftp://www0.cern.ch/pub/www/src/
 DISTFILES=	WWWDaemon_3.0.tar.Z WWWLibrary_2.17.tar.Z
 

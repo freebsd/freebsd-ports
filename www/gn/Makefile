@@ -3,11 +3,11 @@
 # Date created:         20 Sep 1994
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.10 1995/10/20 08:52:08 adam Exp $
+# $Id: Makefile,v 1.11 1995/10/20 09:14:12 adam Exp $
 #
 
 DISTNAME=       gn-2.23
-CATEGORIES+=	networking
+CATEGORIES+=	www net
 MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/gn/
 
 WAISDIR=	${PORTSDIR}/net/wais/work/freeWAIS-0.3

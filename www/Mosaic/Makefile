@@ -3,11 +3,11 @@
 # Date created:         7 August 1995
 # Whom:                 torstenb
 #
-# $Id: Makefile,v 1.2 1995/10/03 22:11:56 ache Exp $
+# $Id: Makefile,v 1.3 1995/10/17 20:20:37 torstenb Exp $
 #
 
 DISTNAME=	Mosaic-src-2.6
-CATEGORIES=	networking
+CATEGORIES=	www
 
 MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/Web/Mosaic/Unix/source/
 
