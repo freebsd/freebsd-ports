@@ -1,0 +1,11 @@
+--- config.h	Mon Aug  3 17:24:42 1998
++++ /home/andy/tmp/wrk/config.h	Tue Aug  4 12:49:10 1998
+@@ -62,7 +62,7 @@
+    line parameters too. Make sure to put a / on the end, or it won't
+    work correctly */
+ 
+-#define XRMPATH "./"
++#define XRMPATH DATADIR "/"
+ 
+ /* Comment this out to use the P key to pause the game. If you used this
+    key as one of your motion keys, then leave then uncomment it and use

@@ -6,5 +6,10 @@ share/xroads/map0.xrm
 share/xroads/map1.xrm
 share/xroads/map2.xrm
 share/xroads/map3.xrm
+share/xroads/map4.xrm
+share/xroads/map5.xrm
+share/xroads/map6.xrm
+share/xroads/map7.xrm
+share/xroads/map8.xrm
 @dirrm share/doc/xroads
 @dirrm share/xroads
