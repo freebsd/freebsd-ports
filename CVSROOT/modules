@@ -5962,6 +5962,7 @@ p5-postgresql-plperl	ports/databases/p5-postgresql-plperl
 p5-sqlrelay	ports/databases/p5-sqlrelay
 p5-tagged	ports/audio/p5-tagged
 p5-type1inst	ports/x11-fonts/p5-type1inst
+p5-version	ports/devel/p5-version
 p5-vpopmail	ports/mail/p5-vpopmail
 p5-xmltv	ports/textproc/p5-xmltv
 p65		ports/devel/p65
