@@ -1,0 +1,47 @@
+# New ports collection makefile for:    gwget
+# Date created:                		1 November 2004
+# Whom:                    		Radek Kozlowski <radek@raadradd.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gwget
+PORTVERSION=	0.90
+CATEGORIES=	ftp www gnome
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gwget
+
+MAINTAINER=	radek@raadradd.com
+COMMENT=	A download manager for GNOME, based on wget
+
+USE_GMAKE=	yes
+USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui
+USE_LIBTOOL_VER=15
+USE_REINPLACE=	yes
+USE_X_PREFIX=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+EPHY_VER=	1.2
+
+.include <bsd.port.pre.mk>
+
+.if exists(${X11BASE}/bin/epiphany) && !defined(WITHOUT_EPIPHANY)
+WITH_EPIPHANY=	yes
+.endif
+
+.if defined(WITH_EPIPHANY)
+BUILD_DEPENDS+=		epiphany:${PORTSDIR}/www/epiphany
+CONFIGURE_ARGS+=	--enable-epiphany-extension \
+			--with-epiphany-version=${EPHY_VER}
+PLIST_SUB+=		EPIPHANY:="" \
+			VERSION="${EPHY_VER}"
+.else
+CONFIGURE_ARGS+=	--disable-epiphany-extension
+PLIST_SUB+=		EPIPHANY:="@comment "
+.endif # defined(WITH_EPIPHANY)
+
+post-patch:
+		@${REINPLACE_CMD} -e 's|epiphany/extensions|epiphany-${EPHY_VER}/extensions|' \
+			${WRKSRC}/epiphany-extension/Makefile.in
+
+.include <bsd.port.post.mk>
