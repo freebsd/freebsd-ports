@@ -1,2 +1,2 @@
 lib/php/20010901/templates.so
-@unexec rmdir %D/lib/php/20010901
+@unexec rmdir %D/lib/php/20010901 2>/dev/null || true
