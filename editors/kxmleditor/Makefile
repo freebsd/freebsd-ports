@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kxmleditor
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,8 +26,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-O2||g' -e "s,-lpthread,${PTHREAD_LIBS},g" \
 	${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.if ${ARCH} == "ia64"
-BROKEN=	"Does not compile on ia64"
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+BROKEN=	"Does not compile on amd64 or ia64"
 .endif
 
 .include <bsd.port.post.mk>
