@@ -1,4 +1,4 @@
-#!/bin/sh -ef
+#!/bin/sh -e
 #
 # Copyright (c) 2004 Oliver Eikemeier. All rights reserved.
 #
@@ -35,6 +35,9 @@
 portaudit_confs
 
 opt_audit=false
+opt_auditcwd=false
+opt_audittree=false
+opt_verbose=false
 opt_version=false
 opt_dbversion=false
 opt_fetch=false
@@ -44,25 +47,31 @@ if [ $# -eq 0 ] ; then
 	opt_audit=true
 fi
 
-while getopts aVdFq opt; do
+while getopts aACvVdFq opt; do
 	case "$opt" in
 	a)
 		opt_audit=true;;
+	A)
+		opt_audittree=true;;
+	C)
+		opt_auditcwd=true;;
 	d)
 		opt_dbversion=true;;
 	F)
 		opt_fetch=true;;
 	q)
 		opt_quiet=true;;
+	v)
+		opt_verbose=true;;
 	V)
 		opt_version=true;;
 	?)
-		echo "Usage: $0 -adFqV"
+		echo "Usage: $0 -aACvVdFq"
 		exit 2;;
 	esac
 done
 
-shift $(($OPTIND - 1))
+shift $((${OPTIND}-1))
 
 if $opt_version; then
 	echo "portaudit version %%PORTVERSION%%"
@@ -81,10 +90,56 @@ if $opt_dbversion; then
 		echo "portaudit: database corrupt."
 		exit 2
 	fi
-	echo "database created: `getcreated_auditfile`"
+	created=`getcreated_auditfile`
+	echo "database created: `/bin/date -j -f '%Y-%m-%d %H:%M:%S %Z' \"${created} GMT\"`"
 fi
 
 if $opt_audit; then
 	portaudit_prerequisites
 	audit_installed || true
+fi
+
+if $opt_auditcwd; then
+	portaudit_prerequisites
+	audit_cwd
+fi
+
+if $opt_audittree; then
+	echo "auditing ports tree for known vulnerabilities"
+	VULCNT=0
+
+	portaudit_prerequisites
+
+	cd "${PORTSDIR:=/usr/ports}"
+	CATEGORIES=`echo [a-z]*`
+
+	for category in ${CATEGORIES}; do
+		if [ ! -d "${PORTSDIR}/${category}" ]; then continue; fi
+		case "${category}" in
+			CVS) continue ;;
+			Mk) continue ;;
+			Templates) continue ;;
+			Tools) continue ;;
+			distfiles) continue ;;
+			packages) continue ;;
+		esac
+
+		$opt_quiet || echo "==> ${category}"
+
+		cd "${PORTSDIR}/${category}"
+		PORTS=`echo *`
+
+		for port in ${PORTS}; do
+			if [ ! -d "${PORTSDIR}/${category}/${port}" ]; then continue; fi
+			case "${port}" in
+				pkg) continue ;;
+				CVS) continue ;;
+			esac
+
+			cd "${PORTSDIR}/${category}/${port}"
+			audit_cwd;
+		done
+	done
+
+	echo "${VULCNT} ports with unmarked vulnerabilities."
 fi

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portaudit
-PORTVERSION=	0.3
+PORTVERSION=	0.3.1
 CATEGORIES=	security
 DISTFILES=
 
@@ -28,7 +28,7 @@ SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%DATABASEDIR%%,${DATABASEDIR},g'
 
 PKG_INFO_BASE?=	/usr/sbin/pkg_info
-BASEPKGVER!=	${PKG_INFO_BASE} -qP 2>/dev/null
+BASEPKGVER!=	${PKG_INFO_BASE} -qP 2>/dev/null || ${TRUE}
 
 .if ${BASEPKGVER} < 20040125
 RUN_DEPENDS=	${LOCALBASE}/sbin/pkg_info:${PORTSDIR}/sysutils/pkg_install-devel
