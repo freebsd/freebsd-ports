@@ -43,7 +43,7 @@ LIBDIRS=
 
 .if defined(WITH_LDAP)
 MODULES:=${MODULES}:mod_ldap
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libldap.a:${PORTSDIR}/net/openldap
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libldap.a:${PORTSDIR}/net/openldap12
 INCLUDEDIRS:=${INCLUDEDIRS}:${PREFIX}/include
 LIBDIRS:=${LIBDIRS}:${PREFIX}/lib
 .endif

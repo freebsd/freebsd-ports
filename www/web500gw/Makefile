@@ -19,7 +19,7 @@ PATCHFILES=	modtmpl.patch
 MAINTAINER=	Karl.Dietz@frankfurt.netsurf.de
 COMMENT=	HTTP gateway to LDAP-based directories
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libldap.a:${PORTSDIR}/net/openldap
+BUILD_DEPENDS=	${LOCALBASE}/lib/libldap.a:${PORTSDIR}/net/openldap12
 
 INSTDIR=	${PREFIX}/bin
 

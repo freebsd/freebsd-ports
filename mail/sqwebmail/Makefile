@@ -77,7 +77,7 @@ CONFIGURE_ARGS+=	--with-cachedir=${CACHEDIR} \
 .endif
 
 .if defined(WITH_LDAP)
-LIB_DEPENDS+=		ldap.1:${PORTSDIR}/net/openldap
+LIB_DEPENDS+=		ldap.1:${PORTSDIR}/net/openldap12
 CONFIGURE_ARGS+=	--with-authldap
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"

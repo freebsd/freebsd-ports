@@ -21,8 +21,8 @@ COMMENT=	News caching/anti-spam/server-merging system
 
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake
 .if defined(WITH_LDAP) && !defined(WITH_LDAP2)
-LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap
-LIB_DEPENDS+=	lber.1:${PORTSDIR}/net/openldap
+LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap12
+LIB_DEPENDS+=	lber.1:${PORTSDIR}/net/openldap12
 .endif
 .if defined(WITH_LDAP2)
 LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
