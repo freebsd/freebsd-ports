@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	libhash
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/libhash/
+MASTER_SITES=	ftp://ftp.ugh.net.au/pub/unix/libhash/ \
+				ftp://ftp.megamirror.com/pub/ugh/unix/libhash/ \
+				http://ftp.megamirror.com/pub/ugh/unix/libhash/
 
 MAINTAINER=	andrew@ugh.net.au
 COMMENT=	A library for manipulating hash tables
@@ -33,5 +35,11 @@ MLINKS=		libhash.3 hash_initialise.3 \
 		libhash_convenience.3 hash_copy_string.3
 
 INSTALLS_SHLIB=	yes
+
+.if defined(NOPROFILE)
+PLIST_SUB+=	BUILT_PROFILE="@comment "
+.else
+PLIST_SUB+=	BUILT_PROFILE=""
+.endif
 
 .include <bsd.port.mk>
