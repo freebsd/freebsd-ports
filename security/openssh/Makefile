@@ -7,7 +7,7 @@
 
 PORTNAME=	openssh
 PORTVERSION=	3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/ \
 		ftp://ftp.usa.openbsd.org/pub/OpenBSD/OpenSSH/ \
@@ -114,6 +114,10 @@ post-install:
 	@${ECHO_MSG} ">> Generating a DSA secret host key."
 	${PREFIX}/bin/ssh-keygen -t dsa -N "" -f ${PREFIX}/etc/ssh_host_dsa_key
 .endif
+.endif
+.if !exists(${PREFIX}/etc/moduli)
+	@${ECHO_MSG} ">> Installing moduli."
+	${INSTALL_DATA} -c ${FILESDIR}/moduli ${PREFIX}/etc/moduli
 .endif
 .if !exists(${PREFIX}/etc/rc.d/sshd.sh)
 	@${INSTALL_SCRIPT} ${WRKSRC}/sshd.sh ${PREFIX}/etc/rc.d/
