@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pcap
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4
 CATEGORIES=	net python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pylibpcap
@@ -20,5 +20,11 @@ BUILD_DEPENDS=	swig:${PORTSDIR}/devel/SWIG
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
+USE_PYTHON_PREFIX=	yes
+
+PCAPTEST!=	grep PCAP_IF_LOOPBACK /usr/include/pcap.h || true
+.if empty(PCAPTEST)
+BROKEN=		"needs libpcap 0.7 or higher"
+.endif
 
 .include <bsd.port.mk>
