@@ -1,0 +1,17 @@
+--- Makefile.orig	Fri Feb 25 21:40:34 2005
++++ Makefile	Wed Mar  2 18:27:45 2005
+@@ -85,12 +85,12 @@
+ 	$(MAKE) -C gtk-im install
+ 	if [ $(prefix) = /usr/local ]; then \
+ 	   install -m 644 gcin.png /usr/share/icons; \
+-	   install -d $(DOC_DIR); \
+-	   install -m 644 README $(DOC_DIR); \
+ 	   install $(PROGS) $(bindir); \
+ 	else \
+ 	   install -s $(PROGS) $(bindir); \
+ 	fi
++	install -d $(DOC_DIR); \
++	install -m 644 README $(DOC_DIR); \
+ 	$(MAKE) -C scripts install
+ 	$(MAKE) -C menu install
+ clean:

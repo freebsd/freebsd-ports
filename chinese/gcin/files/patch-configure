@@ -1,5 +1,5 @@
 --- configure.orig	Sat Feb 26 10:40:57 2005
-+++ configure	Wed Mar  2 02:51:00 2005
++++ configure	Wed Mar  2 18:26:06 2005
 @@ -1,12 +1,12 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -16,3 +16,12 @@
  if [ $? = 0 ]; then
    FREEBSD=1
  else
+@@ -78,7 +78,7 @@
+ echo "GCIN_SCRIPT_DIR=\$(datadir_r)/gcin/script" >> config.mak
+ echo "GCIN_SCRIPT_DIR_i=\$(datadir)/gcin/script" >> config.mak
+ echo "OPTFLAGS=$OPTFLAGS" >> config.mak
+-echo "DOC_DIR=\$(datadir_r)/doc/gcin-$GCIN_VERSION" >> config.mak
++echo "DOC_DIR=\$(datadir_r)/doc/gcin" >> config.mak
+ echo "GCIN_ICON_DIR=\$(datadir_r)/icons/gcin" >> config.mak
+ echo "SYS_ICON_DIR=\$(datadir_r)/icons" >> config.mak
+ echo "GCIN_ICON_DIR_i=\$(datadir)/icons/gcin" >> config.mak
