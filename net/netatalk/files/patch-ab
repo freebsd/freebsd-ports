@@ -1,0 +1,25 @@
+diff -crP ../netatalk-1.4b2/rc.atalk.freebsd ./rc.atalk.freebsd
+*** ../netatalk-1.4b2/rc.atalk.freebsd	Thu Jan  1 01:00:00 1970
+--- ./rc.atalk.freebsd	Thu Jul 24 02:14:39 1997
+***************
+*** 0 ****
+--- 1,19 ----
++ #
++ # AppleTalk daemons. Make sure not to start atalkd in the background:
++ # its data structures must have time to stablize before running the
++ # other processes.
++ #
++ 
++ case $1 in
++ 	start)	echo -n ' netatalk'
++ 		:SBINDIR:/atalkd
++ 		:BINDIR:/nbprgstr -p 4 `hostname|sed 's/\..*$//'`:Workstation
++ 		:BINDIR:/nbprgstr -p 4 `hostname|sed 's/\..*$//'`:netatalk
++ 		:SBINDIR:/papd
++ 		:SBINDIR:/afpd
++ 		;;
++ 	stop)	killall afpd
++ 		killall papd
++ 		killall atalkd
++ 		;;
++ esac

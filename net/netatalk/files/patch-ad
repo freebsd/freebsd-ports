@@ -1,0 +1,48 @@
+*** etc/atalkd/main.c.orig	Tue Oct 22 00:45:03 1996
+--- etc/atalkd/main.c	Wed Feb 25 02:39:21 1998
+***************
+*** 19,24 ****
+--- 19,35 ----
+  #include <net/if.h>
+  #include <net/route.h>
+  
++ #if __FreeBSD__ >= 2
++ #  include <osreldate.h>
++ #  if __FreeBSD_version >= 300000
++ #    define __FreeBSD_CURRENT
++ #  endif
++ #endif
++ 
++ #ifdef __FreeBSD_CURRENT
++ #include <net/if_dl.h>
++ #endif
++ 
+  #include <signal.h>
+  #include <syslog.h>
+  #include <stdio.h>
+***************
+*** 1150,1158 ****
+--- 1161,1183 ----
+  	    }
+  	} else {
+  	    /* configure multicast for this interface */
++ #ifdef __FreeBSD_CURRENT
++ 	    struct sockaddr_dl *sdl = (struct sockaddr_dl *)&sa;
++ 	    bzero( sdl, sizeof( struct sockaddr ));
++ 	    sdl->sdl_family = AF_LINK;
++ 	    sdl->sdl_nlen = 0 /* strlen(iface->i_name)*/;
++ 	    /*strncpy(sdl->sdl_data, iface->i_name, sdl->sdl_nlen);*/
++ 	    bcopy( ethermulti, LLADDR(sdl), sizeof( ethermulti ));
++ 	    sdl->sdl_alen = sizeof( ethermulti );
++ 	    sdl->sdl_len = sizeof(*sdl);
++ 			/* (sdl->sdl_data + sdl->sdl_alen + sdl->sdl_nlen) 
++ 				- (char *)sdl; */
++ 	    if ( ifconfig( iface->i_name, SIOCADDMULTI, sdl )) {
++ #else
+  	    bzero( &sa, sizeof( struct sockaddr ));
+  	    bcopy( ethermulti, sa.sa_data, sizeof( ethermulti ));
+  	    if ( ifconfig( iface->i_name, SIOCADDMULTI, &sa )) {
++ #endif
+  		syslog( LOG_ERR, "addmulti: %m" );
+  		exit( 1 );
+  	    }

@@ -1,0 +1,45 @@
+*** etc/atalkd/nbp.c.orig	Sat Oct  5 17:17:53 1996
+--- etc/atalkd/nbp.c	Wed Feb 25 18:24:50 1998
+***************
+*** 7,13 ****
+--- 7,26 ----
+  #include <sys/types.h>
+  #include <sys/socket.h>
+  #include <sys/ioctl.h>
++ #include <sys/time.h>
+  #include <net/if.h>
++ 
++ #if __FreeBSD__ >= 2
++ #  include <osreldate.h>
++ #  if __FreeBSD_version >= 300000
++ #    define __FreeBSD_CURRENT
++ #  endif
++ #endif
++ 
++ #ifdef __FreeBSD_CURRENT
++ #include <net/if_dl.h>
++ #endif
++ 
+  #include <netatalk/at.h>
+  #include <atalk/ddp.h>
+  #include <atalk/nbp.h>
+***************
+*** 185,190 ****
+--- 198,214 ----
+  		for ( l = iface->i_rt->rt_zt; l; l = l->l_next ) {
+  		    if ( zt == (struct ziptab *)l->l_data ) {
+  			/* add multicast */
++ #ifdef __FreeBSD_CURRENT
++ 			struct sockaddr_dl *sdl = (struct sockaddr_dl *)&sa;
++ 			sdl->sdl_family = AF_LINK;
++ 			sdl->sdl_nlen = 0;
++ 			bcopy( zt->zt_bcast, sdl->sdl_data, sizeof(ethermulti));
++ 			sdl->sdl_alen = sizeof(ethermulti);
++ 			sdl->sdl_len = sizeof (*sdl);
++ 				/* (sdl->sdl_data
++ 				+ sdl->sdl_alen + sdl->sdl_nlen)  
++ 				- (char *)sdl; */
++ #endif
+  			if ( ifconfig( iface->i_name, SIOCADDMULTI, &sa )) {
+  			    syslog( LOG_ERR, "addmulti: %m" );
+  			    exit( 1 );
