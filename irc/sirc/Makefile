@@ -1,7 +1,7 @@
 # New ports collection makefile for: sirc
 # Version required:                  2.211
 # Date created:                      4 May 1998
-# Whom:                              Studded <Studded@dal.net>
+# Whom:                              Doug Barton <Doug@gorean.org>
 #
 # $FreeBSD$
 #
@@ -15,10 +15,9 @@
 DISTNAME=	sirc-2.211
 CATEGORIES=	irc
 MASTER_SITES=	http://www.eleves.ens.fr:8080/home/espel/sirc/ \
-		ftp://ftp1.dal.net/dalnet/clients/unix/sirc/ \
-		ftp://ftp2.dal.net/dalnet/clients/unix/sirc/
+		http://freebsd.simplenet.com/Downloads/
 
-MAINTAINER=	Studded@dal.net
+MAINTAINER=	Doug@gorean.org
 
 USE_PERL5=	yes
 
