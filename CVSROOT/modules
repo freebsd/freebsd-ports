@@ -4057,6 +4057,7 @@ linplasma	ports/graphics/linplasma
 linpopup	ports/net/linpopup
 linux-ac3d	ports/graphics/linux-ac3d
 linux-acu	ports/sysutils/linux-acu
+linux-afaapps	ports/sysutils/linux-afaapps
 linux-agsatellite	ports/net/linux-agsatellite
 linux-arts	ports/audio/linux-arts
 linux-beonex	ports/www/linux-beonex
