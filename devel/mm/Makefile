@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	mm
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/mm/
 
 MAINTAINER=	rse@engelschall.com
 COMMENT=	Shared memory allocation library for pre-forked process models
 
-USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 
