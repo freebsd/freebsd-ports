@@ -24,6 +24,6 @@ post-extract:
 	@${PERL} -pi -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/Makefile
 
 do-install:	
-	@cd ${WRKSRC}; ${MAKE} BINDIR=${LOCALBASE}/bin SHAREDIR=${LOCALBASE} install
+	@cd ${WRKSRC}; ${MAKE} BINDIR=${PREFIX}/bin SHAREDIR=${PREFIX} install
 
 .include <bsd.port.mk>
