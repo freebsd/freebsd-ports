@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/qconfirm
 bin/qconfirm-accept
 bin/qconfirm-cdb-check

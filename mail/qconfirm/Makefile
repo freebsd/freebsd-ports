@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qconfirm
-PORTVERSION=	0.9.3
+PORTVERSION=	0.10.0
 CATEGORIES=	mail
 MASTER_SITES=	http://smarden.org/qconfirm/
 
@@ -27,7 +27,7 @@ do-configure:
 
 do-build:
 	cd ${WRKSRC} && package/compile
-	
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/command/* ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/man/*.1 ${MANPREFIX}/man/man1
