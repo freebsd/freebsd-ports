@@ -4056,6 +4056,7 @@ libparanoia	ports/security/libparanoia
 libpathan	ports/textproc/libpathan
 libpci		ports/devel/libpci
 libpdel		ports/devel/libpdel
+libpdf++	ports/print/libpdf++
 libprelude	ports/security/libprelude
 libpst		ports/mail/libpst
 libquicktime	ports/multimedia/libquicktime
