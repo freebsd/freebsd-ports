@@ -1,0 +1,5 @@
+The `bibunits' package allows separate bibliographies for different
+units or parts of the text. The units can be chapters, sections or
+bibunit environments. The package is compatible with a wide variety of
+packages, including, but not limited to, natbib, overcite and
+KOMA-SCRIPT classes.
