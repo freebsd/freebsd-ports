@@ -1,0 +1,16 @@
+--- props.c.orig	Fri Mar 18 06:13:17 1994
++++ props.c	Thu Mar 16 15:46:08 2000
+@@ -116,5 +116,5 @@
+       switch (event.type) {
+ 	 case KeyPress:
+-	    XLookupString(&event, &c_buf, 1, &last_key, &status);
++	    XLookupString((XKeyEvent *) &event, &c_buf, 1, &last_key, &status);
+ 	    if ((last_key == XK_q) || (last_key == XK_Q))
+ 	       do_exit();
+@@ -176,5 +176,5 @@
+       switch (event.type) {
+          case KeyPress:
+-            XLookupString(&event, &c_buf, 1, &last_key, &status);
++            XLookupString((XKeyEvent *) &event, &c_buf, 1, &last_key, &status);
+             if (last_key == XK_space)
+                if (!pause_seq())
