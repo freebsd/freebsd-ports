@@ -3,13 +3,14 @@
 # Date created:		22 September 1997
 # Whom:			Torsten Teg Grust (Torsten.Grust@uni-konstanz.de)
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/11/24 00:10:18 fenner Exp $
 #
 
-DISTNAME=	hugs
-PKGNAME=	hugs-1.4
+DISTNAME=	hugs-January1998-source
+PKGNAME=	hugs-1.4-01-1998
 CATEGORIES=	lang
-MASTER_SITES=	ftp://haskell.org/pub/haskell/hugs/BETA/
+MASTER_SITES=	ftp://haskell.org/pub/haskell/hugs/January1998/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	Torsten.Grust@uni-konstanz.de
 
@@ -42,9 +43,9 @@ post-install:
 	${INSTALL_DIR} ${PREFIX}/share/doc/hugs
 	${INSTALL_DATA} ${HUGS_DOC}/README ${PREFIX}/share/doc/hugs
 	${INSTALL_DATA} ${HUGS_DOC}/*.html ${PREFIX}/share/doc/hugs
-.for DOC in haskell-report-1.4 haskell-library-1.4 manual tutorial-1.4
-	${INSTALL_DIR} ${PREFIX}/share/doc/hugs/${DOC}-html
-	${INSTALL_DATA} ${HUGS_DOC}/${DOC}-html/* ${PREFIX}/share/doc/hugs/${DOC}-html
+.for DOC in manual-html haskore-html libs-html report library tutorial
+	${INSTALL_DIR} ${PREFIX}/share/doc/hugs/${DOC}
+	${INSTALL_DATA} ${HUGS_DOC}/${DOC}/* ${PREFIX}/share/doc/hugs/${DOC}
 .endfor
 .endif
 
