@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	Server
-PORTVERSION=	4.2.0
-PORTREVISION=	6
+PORTVERSION=	4.2.1
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
+		${MASTER_SITE_XFREE:S/source//g:S/$/:x421patch/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	${PORTVERSION}/:x \
+MASTER_SITE_SUBDIR=	4.2.0/:x \
+			${PORTVERSION}/patches/:x421patch \
 			anholt/:local
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz:x Wraphelp.gz:local
-EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-1.tgz
+DISTFILES=	X420src-1.tgz:x \
+		4.2.0-4.2.1.diff.gz:x421patch \
+		Wraphelp.gz:local
+EXTRACT_ONLY=	X420src-1.tgz
 
 PATCH_SITES=		${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	anholt/patches-4.2.0/
@@ -196,6 +199,10 @@ PLIST_SUB+=		MATROX="@comment "
 post-extract::
 	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp.gz > \
 		${WRKSRC}/lib/Xdmcp/Wraphelp.c
+
+pre-patch::
+	-@${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/4.2.0-4.2.1.diff.gz \
+		| ${PATCH} -d ${PATCH_WRKSRC} --forward --quiet -E -p1 --batch
 
 do-configure:
 	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure

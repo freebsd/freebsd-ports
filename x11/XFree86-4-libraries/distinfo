@@ -1,4 +1,3 @@
 MD5 (xc/X420src-1.tgz) = ad43a8e9e39703322005cd6f7145b77f
 MD5 (xc/Wraphelp.gz) = 7ee30e397359e8d64ab23f29aa551659
-MD5 (xc/patch-XlcDL.c.gz) = 35449682c3807ab0dfcb12dc987d09cd
-MD5 (xc/4.2.0-libGLU-bad-extern.patch) = 2d5c738854c7cc0378ae457b09a029f4
+MD5 (xc/4.2.0-4.2.1.diff.gz) = 38adc94a4953a6b29e8619c25dda4887
