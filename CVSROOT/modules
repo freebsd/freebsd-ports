@@ -3361,6 +3361,7 @@ joe		ports/editors/joe
 joe-devel	ports/editors/joe-devel
 john		ports/security/john
 join		src/usr.bin/join
+jonah		ports/www/jonah
 jot		src/usr.bin/jot
 jove		ports/editors/jove
 jpeg		ports/graphics/jpeg
