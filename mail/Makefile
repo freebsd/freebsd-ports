@@ -41,6 +41,7 @@
     SUBDIR += gkrellmmailwatch
     SUBDIR += glacier
     SUBDIR += glbiff
+    SUBDIR += gmime
     SUBDIR += grepmail
     SUBDIR += hbiff
     SUBDIR += icqmail
