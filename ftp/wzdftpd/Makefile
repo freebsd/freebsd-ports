@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wzdftpd
-PORTVERSION=	0.4.2
+PORTVERSION=	0.4.3
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,7 +17,6 @@ COMMENT=	Modular FTP server configurable online using SITE commands
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 USE_INC_LIBTOOL_VER=13
@@ -25,10 +24,11 @@ CONFIGURE_ARGS+=	--without-mysql --without-pam
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-OPTIONS=	UFT8 "Enable UTF8 support" off \
+OPTIONS=	UTF8 "Enable UTF8 support" off \
 		TCL "Enable TCL support" off \
 		SSL "Enable OpenSSL support" on \
-		IPV6 "Enable IPv6 support" on
+		IPV6 "Enable IPv6 support" on \
+		PERL "Enable PERL support" off
 
 MAN1=	siteconfig.1 \
 	siteuptime.1 \
@@ -62,9 +62,11 @@ CONFIGURE_ARGS+=	--enable-ipv6
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500600
+.if !defined(WITH_PERL)
+CONFIGURE_ARGS+=	--disable-perl
 PLIST_SUB+=	PERL="@comment "
 .else
+USE_PERL5=	yes
 PLIST_SUB+=	PERL=""
 .endif
 
