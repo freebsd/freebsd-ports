@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ctags
-PORTVERSION=	3.4
+PORTVERSION=	3.5.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE}\
 		http://fly.hiwaay.net/~darren/archives/ \
