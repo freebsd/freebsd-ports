@@ -16,6 +16,16 @@ MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	automake14:${PORTSDIR}/devel/automake14
 
+.if defined(WITH_LDAP) && !defined(WITH_LDAP2)
+LIB_DEPENDS+= ldap.1:${PORTSDIR}/net/openldap
+LIB_DEPENDS+= lber.1:${PORTSDIR}/net/openldap
+.endif
+
+.if defined(WITH_LDAP2)
+LIB_DEPENDS+=   ldap.2:${PORTSDIR}/net/openldap2
+LIB_DEPENDS+=   lber.2:${PORTSDIR}/net/openldap2
+.endif
+
 # This may be set interactively at install-time.  NNTPCache will
 # cache news articles and related data in ${SPOOLDIR}/nntpcache.
 SPOOLDIR?=	/var/spool
@@ -24,12 +34,38 @@ NO_CDROM=	Free for individuals and non-military, non-profit organisations only
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${SPOOLDIR}
+
+AUTHINFO_EXT= authinfo_pam.ext
+.if !defined(WITHOUT_RADIUS)
+CONFIGURE_ARGS+= --with-authinfo-radius
+AUTHINFO_EXT+= authinfo_radius.ext
+.endif
+.if defined(WITH_LDAP) || defined(WITH_LDAP2)
+CONFIGURE_ARGS+= --with-authinfo-ldap
+CPPFLAGS+= -I${PREFIX}/include -I${LOCALBASE}/include
+LDFLAGS+= -L${PREFIX}/lib -L${LOCALBASE}/lib
+AUTHINFO_EXT+= authinfo_ldap.ext
+CONFIGURE_ENV+= CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+.endif
+
 NNTPSPOOLDIR?=	${SPOOLDIR}/${PORTNAME}
 PLIST_SUB+=	SPOOLDIR=${NNTPSPOOLDIR}
 CPIO=		cpio --quiet -pdum -R
 MAN8=		nntpcached.8 newshound.8
 DOCS=		AUTHORS ChangeLog FAQ FAQ.html HACKING HTML \
 		INSTALL LICENSING NEWS README README.INN VERSION
+
+.if !defined(BATCH)
+post-fetch:
+	@${ECHO} "To enable LDAP support use either:"
+	@${ECHO} "	WITH_LDAP - LDAP v1 support"
+	@${ECHO} "	WITH_LDAP2 - LDAP v2 support"
+	@${ECHO}
+	@${ECHO} "To disable radius support use WITHOUT_RADIUS"
+.endif
+
+post-configure:
+	@cd ${WRKSRC}/src && ${GMAKE} ${AUTHINFO_EXT}
 
 post-patch:
 	@${PERL} -pi -e 's,AUTOMAKE=automake,AUTOMAKE=automake14,' \
