@@ -1,18 +1,19 @@
-etc/radiusclient/issue
-etc/radiusclient/port-id-map
-etc/radiusclient/radiusclient.conf
 etc/radiusclient/dictionary
 etc/radiusclient/dictionary.ascend
 etc/radiusclient/dictionary.compat
 etc/radiusclient/dictionary.merit
+etc/radiusclient/issue
+etc/radiusclient/port-id-map
+etc/radiusclient/radiusclient.conf
 etc/radiusclient/servers
 include/radiusclient.h
 lib/libradiusclient.a
 lib/libradiusclient.so
-lib/libradiusclient.so.0
-sbin/radlogin
-sbin/radstatus
+lib/libradiusclient.so.2
+sbin/login.radius
 sbin/radacct
 sbin/radexample
-sbin/login.radius
+sbin/radiusclient
+sbin/radlogin
+sbin/radstatus
 @dirrm etc/radiusclient
