@@ -32,6 +32,57 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="6fd02439-5d70-11d8-80e3-0020ed76ef5a">
+    <topic>Several remotely exploitable buffer overflows in gaim</topic>
+    <affects>
+      <package>
+	<name>gaim</name>
+	<range><lt>0.75_3</lt></range>
+	<range><eq>0.75_5</eq></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Stefan Esser of e-matters found almost a dozen remotely
+	  exploitable vulnerabilities in Gaim.  From the e-matters
+	  advisory:</p>
+	<blockquote cite="http://security.e-matters.de/advisories/012004.txt">
+          <p>While developing a custom add-on, an integer overflow
+          in the handling of AIM DirectIM packets was revealed that
+          could lead to a remote compromise of the IM client. After
+          disclosing this bug to the vendor, they had to make a
+          hurried release because of a change in the Yahoo connection
+          procedure that rendered GAIM useless. Unfourtunately at the
+          same time a closer look onto the sourcecode revealed 11 more
+          vulnerabilities.</p>
+
+          <p>The 12 identified problems range from simple standard
+          stack overflows, over heap overflows to an integer overflow
+          that can be abused to cause a heap overflow. Due to the
+          nature of instant messaging many of these bugs require
+          man-in-the-middle attacks between client and server. But the
+          underlying protocols are easy to implement and MIM attacks
+          on ordinary TCP sessions is a fairly simple task.</p>
+
+          <p>In combination with the latest kernel vulnerabilities or
+          the habit of users to work as root/administrator these bugs
+          can result in remote root compromises.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://security.e-matters.de/advisories/012004.txt</url>
+      <cvename>CAN-2004-0005</cvename>
+      <cvename>CAN-2004-0006</cvename>
+      <cvename>CAN-2004-0007</cvename>
+      <cvename>CAN-2004-0008</cvename>
+    </references>
+    <dates>
+      <discovery>2004/01/26</discovery>
+      <entry>2004/02/12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3388eff9-5d6e-11d8-80e3-0020ed76ef5a">
     <topic>Samba 3.0.x password initialization bug</topic>
     <affects>
