@@ -1,0 +1,16 @@
+--- configure.orig	Fri May 21 05:10:33 2004
++++ configure	Sat May 29 15:23:32 2004
+@@ -3028,13 +3028,6 @@
+ fi
+ 
+ case "$uname" in
+-        *BSD* | Darwin*)
+-        	# *BSD
+-        	CAT1EXT="0"
+-        	MAN1EXT="1"
+-        	CAT3EXT="0"
+-        	MAN3EXT="3"
+-        	;;
+         *)
+         	# All others
+         	CAT1EXT="1"
