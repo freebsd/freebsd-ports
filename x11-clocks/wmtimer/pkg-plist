@@ -1,0 +1,4 @@
+bin/wmtimer
+%%PORTDOCS%%share/doc/wmtimer/README
+%%PORTDOCS%%@dirrm share/doc/wmtimer
+%%PORTDOCS%%@dirrm share/doc

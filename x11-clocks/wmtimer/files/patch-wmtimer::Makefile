@@ -1,0 +1,20 @@
+--- Makefile.orig	Wed Dec 20 19:58:58 2000
++++ Makefile	Thu Apr 26 22:45:10 2001
+@@ -7,13 +7,9 @@
+ 		../wmgeneral/list.o
+ 
+ .c.o:
+-	cc -c -O2 -Wall $< -o $*.o $(CFLAGS)
++	$(CC) -c -Wall $< -o $*.o $(CFLAGS)
+ 
+-wmtimer: $(OBJS)
+-	cc -Wall -g -o wmtimer $^ $(LIBDIR) $(LIBS)
++all: wmtimer
+ 
+-clean::
+-	for i in $(OBJS) ; do \
+-		rm -f $$i; \
+-	done
+-	rm -f wmtimer
++wmtimer: $(OBJS)
++	$(CC) -Wall -g -o wmtimer $^ $(LIBDIR) $(LIBS)
