@@ -1,9 +1,12 @@
 bin/rrdtool
 bin/rrdcgi
 bin/log2rrd.pl
-share/rrdtool/examples/piped-demo.pl
-share/rrdtool/examples/shared-demo.pl
-share/rrdtool/examples/cgi-demo.cgi
+share/examples/rrdtool/bigtops.pl
+share/examples/rrdtool/minmax.pl
+share/examples/rrdtool/piped-demo.pl
+share/examples/rrdtool/shared-demo.pl
+share/examples/rrdtool/stripes.pl
+share/examples/rrdtool/cgi-demo.cgi
 share/doc/rrdtool/README.log2rrd
 share/doc/rrdtool/RRDp.html
 share/doc/rrdtool/RRDs.html
@@ -22,6 +25,5 @@ share/doc/rrdtool/rrdtutorial.html
 share/doc/rrdtool/rrdupdate.html
 lib/perl5/site_perl/%%PERL_VER%%/RRDp.pm
 lib/perl5/site_perl/%%PERL_VER%%/RRDs.pm
-@dirrm share/rrdtool/examples
-@dirrm share/rrdtool
+@dirrm share/examples/rrdtool
 @dirrm share/doc/rrdtool
