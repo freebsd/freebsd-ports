@@ -71,13 +71,4 @@ test check: build
 check-all: build
 	@(cd ${WRKSRC}; ${MAKE} check-all)
 
-.include <bsd.port.pre.mk>
-
-# Work around a gcc-3.3.1 internal compiler error on 5.1-CURRENT.
-.if ${OSVERSION} >= 501103
-pre-build:
-	@(cd ${WRKSRC}/src/include; ${MAKE} Rmath.h)
-	@(cd ${WRKSRC}/src/main; ${MAKE} CFLAGS+=-O0 plotmath.o)
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
