@@ -76,7 +76,7 @@ post-install:
 	${RM} -f ${PREFIX}/share/apps/konsole/linux.desktop
 	${CHMOD} u+s ${PREFIX}/bin/kcheckpass
 	${CHGRP} kmem ${PREFIX}/bin/ksysguardd && \
-		${CHMOD} g+s ${PREFIX}/bin/ksysguard$d
+		${CHMOD} g+s ${PREFIX}/bin/ksysguardd
 	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
