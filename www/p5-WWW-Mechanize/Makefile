@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	WWW-Mechanize
-PORTVERSION=	0.72
+PORTVERSION=	1.02
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	WWW
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	tobez@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	This module is to help you automate interaction with a website
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
@@ -24,8 +24,9 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=		WWW::Mechanize.3 WWW::Mechanize::Examples.3 \
-		WWW::Mechanize::FAQ.3 WWW::Mechanize::Link.3
+MAN3=		WWW::Mechanize.3 WWW::Mechanize::Cookbook.3 \
+		WWW::Mechanize::Examples.3 WWW::Mechanize::FAQ.3 \
+		WWW::Mechanize::Link.3
 MAN1=		mech-dump.1
 
 .include <bsd.port.pre.mk>
