@@ -55,10 +55,16 @@
 #
 # If you want to use the rethreading functions define:
 #  WITH_MUTT_EDIT_THREADS
+#
+# If you want to use the signature menu define:
+#  WITH_MUTT_SIGNATURE_MENU
+#
+# If you want to use the ifdef feature define:
+#  WITH_MUTT_IFDEF_PATCH
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.1
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES+=	mail
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -84,6 +90,9 @@ CONFIGURE_ARGS+=	${MUTT_CONFIGURE_ARGS}
 USE_REINPLACE=	yes
 USE_AUTOMAKE=	yes
 
+PLIST=		${WRKDIR}/PLIST
+SCRIPTS_ENV=	WRKDIR="${WRKDIR}"
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MUTT_COMPRESSED_FOLDERS) || defined(WITH_MUTT_NNTP) || \
@@ -94,7 +103,8 @@ PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${PATCH_VERSION}/ \
 		ftp://ftp2.mutt.org.ua/pub/mutt/mutt-${PATCH_VERSION}/
 .endif
 
-.if defined(WITH_MUTT_EDIT_THREADS)
+.if defined(WITH_MUTT_EDIT_THREADS) || defined(WITH_MUTT_SIGNATURE_MENU) || \
+		defined(WITH_MUTT_IFDEF_PATCH)
 PATCH_SITES+=	http://cedricduval.free.fr/download/mutt/
 .endif
 
@@ -205,6 +215,12 @@ PATCHFILES+=	patch-${PATCH_VERSION}.vvv.initials.gz \
 PATCHFILES+=	patch-${PATCH_VERSION}.cd.edit_threads.9.2
 CONFIGURE_ARGS+=	--enable-imap-edit-threads
 .endif
+.if defined(WITH_MUTT_SIGNATURE_MENU)
+PATCHFILES+=	patch-${PATCH_VERSION}.cd.signatures_menu.2.1
+.endif
+.if defined(WITH_MUTT_IFDEF_PATCH)
+PATCHFILES+=	patch-${PATCH_VERSION}.cd.ifdef.1
+.endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
 MAN1=		flea.1 mutt.1 mutt_dotlock.1 muttbug.1
@@ -218,160 +234,57 @@ post-patch::
 pre-configure::
 	@(cd ${WRKSRC}; ${ACLOCAL} -I m4)
 
+.if defined(WITH_MUTT_NNTP)
+SCRIPTS_ENV+=	MUTT_NNTP="yes"
+.endif
+.if defined(WITH_MUTT_COMPRESSED_FOLDERS)
+SCRIPTS_ENV+=	MUTT_COMPRESSED_FOLDERS="yes"
+.endif
+.if defined(WITH_MUTT_QUOTE_PATCH)
+SCRIPTS_ENV+=	MUTT_QUOTE_PATCH="yes"
+.endif
+.if defined(WITH_MUTT_PGP_OUTLOOK_PATCH)
+SCRIPTS_ENV+=	MUTT_PGP_OUTLOOK_PATCH="yes"
+.endif
+.if defined(WITH_MUTT_EDIT_THREADS)
+SCRIPTS_ENV+=	MUTT_EDIT_THREADS="yes"
+.endif
+.if defined(WITH_MUTT_SIGNATURE_MENU)
+SCRIPTS_ENV+=	MUTT_SIGNATURE_MENU="yes"
+.endif
+.if defined(WITH_MUTT_IFDEF_PATCH)
+SCRIPTS_ENV+=	MUTT_IFDEF_PATCH="yes"
+.endif
+.if defined(WITH_MUTT_HTML)
+SCRIPTS_ENV+=	MUTT_HTML="yes"
+.endif
+
 .if !defined(NOPORTDOCS)
+SCRIPTS_ENV+=	MUTT_PORTDOCS="yes"
 post-build:
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-doc-ref
 	printf ",s|\$${PREFIX}|%s|g\nw\nq\n" ${PREFIX} | \
 		ed -s ${WRKSRC}/doc/mutt.man
-.if defined(WITH_MUTT_NNTP)
-.if !defined(WITHOUT_MUTT_SGMLFORMAT)
+.if defined(WITH_MUTT_NNTP) && !defined(WITHOUT_MUTT_SGMLFORMAT)
 SGML_USED=	yes
-.endif
-PLIST_SUB+=	SUB_NNTP=""
-.else
-PLIST_SUB+=	SUB_NNTP="@comment "
 .endif
 .if defined(WITH_MUTT_HTML)
 SGML_USED=	yes
-PLIST_SUB+=	SUB_HTML=""
-.if defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
-	defined(WITH_MUTT_QUOTE_PATCH)
-PLIST_SUB+=	SUB_ADD_G=""
-PLIST_SUB+=	SUB_ADD_A="@comment "
-PLIST_SUB+=	SUB_ADD_B="@comment "
-PLIST_SUB+=	SUB_ADD_C="@comment "
-PLIST_SUB+=	SUB_ADD_D="@comment "
-PLIST_SUB+=	SUB_ADD_E="@comment "
-PLIST_SUB+=	SUB_ADD_F="@comment "
-PLIST_SUB+=	SUB_PATCHES="@comment "
-.elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
-	!defined(WITH_MUTT_QUOTE_PATCH)
-PLIST_SUB+=	SUB_ADD_F=""
-PLIST_SUB+=	SUB_ADD_A="@comment "
-PLIST_SUB+=	SUB_ADD_B="@comment "
-PLIST_SUB+=	SUB_ADD_C="@comment "
-PLIST_SUB+=	SUB_ADD_D="@comment "
-PLIST_SUB+=	SUB_ADD_E="@comment "
-PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PATCHES="@comment "
-.elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
-	defined(WITH_MUTT_QUOTE_PATCH)
-PLIST_SUB+=	SUB_ADD_C=""
-PLIST_SUB+=	SUB_ADD_A="@comment "
-PLIST_SUB+=	SUB_ADD_B="@comment "
-PLIST_SUB+=	SUB_ADD_D="@comment "
-PLIST_SUB+=	SUB_ADD_E="@comment "
-PLIST_SUB+=	SUB_ADD_F="@comment "
-PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PATCHES="@comment "
-.elif defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
-	!defined(WITH_MUTT_QUOTE_PATCH)
-PLIST_SUB+=	SUB_ADD_B=""
-PLIST_SUB+=	SUB_ADD_A="@comment "
-PLIST_SUB+=	SUB_ADD_C="@comment "
-PLIST_SUB+=	SUB_ADD_D="@comment "
-PLIST_SUB+=	SUB_ADD_E="@comment "
-PLIST_SUB+=	SUB_ADD_F="@comment "
-PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PATCHES="@comment "
-.elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
-	defined(WITH_MUTT_QUOTE_PATCH)
-PLIST_SUB+=	SUB_ADD_E=""
-PLIST_SUB+=	SUB_ADD_A="@comment "
-PLIST_SUB+=	SUB_ADD_B="@comment "
-PLIST_SUB+=	SUB_ADD_C="@comment "
-PLIST_SUB+=	SUB_ADD_D="@comment "
-PLIST_SUB+=	SUB_ADD_F="@comment "
-PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PATCHES="@comment "
-.elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && defined(WITH_MUTT_NNTP) && \
-	!defined(WITH_MUTT_QUOTE_PATCH)
-PLIST_SUB+=	SUB_ADD_D=""
-PLIST_SUB+=	SUB_ADD_A="@comment "
-PLIST_SUB+=	SUB_ADD_B="@comment "
-PLIST_SUB+=	SUB_ADD_C="@comment "
-PLIST_SUB+=	SUB_ADD_E="@comment "
-PLIST_SUB+=	SUB_ADD_F="@comment "
-PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PATCHES="@comment "
-.elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
-	defined(WITH_MUTT_QUOTE_PATCH)
-PLIST_SUB+=	SUB_ADD_A=""
-PLIST_SUB+=	SUB_ADD_B="@comment "
-PLIST_SUB+=	SUB_ADD_C="@comment "
-PLIST_SUB+=	SUB_ADD_D="@comment "
-PLIST_SUB+=	SUB_ADD_E="@comment "
-PLIST_SUB+=	SUB_ADD_F="@comment "
-PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PATCHES="@comment "
-.elif !defined(WITH_MUTT_COMPRESSED_FOLDERS) && !defined(WITH_MUTT_NNTP) && \
-	!defined(WITH_MUTT_QUOTE_PATCH)
-PLIST_SUB+=	SUB_ADD_A="@comment "
-PLIST_SUB+=	SUB_ADD_B="@comment "
-PLIST_SUB+=	SUB_ADD_C="@comment "
-PLIST_SUB+=	SUB_ADD_D="@comment "
-PLIST_SUB+=	SUB_ADD_E="@comment "
-PLIST_SUB+=	SUB_ADD_F="@comment "
-PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PATCHES=""
-.else # patches
-PLIST_SUB+=	SUB_ADD_A="@comment "
-PLIST_SUB+=	SUB_ADD_B="@comment "
-PLIST_SUB+=	SUB_ADD_C="@comment "
-PLIST_SUB+=	SUB_ADD_D="@comment "
-PLIST_SUB+=	SUB_ADD_E="@comment "
-PLIST_SUB+=	SUB_ADD_F="@comment "
-PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PATCHES=""
 .endif
-.else # HTML
-PLIST_SUB+=	SUB_HTML="@comment "
-PLIST_SUB+=	SUB_ADD_A="@comment "
-PLIST_SUB+=	SUB_ADD_B="@comment "
-PLIST_SUB+=	SUB_ADD_C="@comment "
-PLIST_SUB+=	SUB_ADD_D="@comment "
-PLIST_SUB+=	SUB_ADD_E="@comment "
-PLIST_SUB+=	SUB_ADD_F="@comment "
-PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PATCHES="@comment "
-.endif
-.else 	# NOPORTDOCS
-PLIST_SUB+=	SUB_HTML="@comment "
-PLIST_SUB+=	SUB_NNTP="@comment "
-PLIST_SUB+=	SUB_ADD_A="@comment "
-PLIST_SUB+=	SUB_ADD_B="@comment "
-PLIST_SUB+=	SUB_ADD_C="@comment "
-PLIST_SUB+=	SUB_ADD_D="@comment "
-PLIST_SUB+=	SUB_ADD_E="@comment "
-PLIST_SUB+=	SUB_ADD_F="@comment "
-PLIST_SUB+=	SUB_ADD_G="@comment "
-PLIST_SUB+=	SUB_PATCHES="@comment "
+.else 	# ! NOPORTDOCS
 post-patch::
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-nodoc-contrib
-.endif
-.if defined(WITH_MUTT_PGP_OUTLOOK_PATCH) && !defined(WITH_MUTT_EDIT_THREADS)
-PLIST_SUB+=	SUB_PGP=""
-.else
-PLIST_SUB+=	SUB_PGP="@comment "
-.endif
-.if defined(WITH_MUTT_EDIT_THREADS) && !defined(WITH_MUTT_PGP_OUTLOOK_PATCH)
-PLIST_SUB+=	SUB_THREAD=""
-.else
-PLIST_SUB+=	SUB_THREAD="@comment "
-.endif
-.if defined(WITH_MUTT_EDIT_THREADS) && defined(WITH_MUTT_PGP_OUTLOOK_PATCH)
-PLIST_SUB+=	SUB_THREAD_PGP=""
-.else
-PLIST_SUB+=	SUB_THREAD_PGP="@comment "
-.endif
+.endif # ! NOPORTDOCS
+
 .if ${SGML_USED} == yes
+SCRIPTS_ENV+=	MUTT_SGML="yes"
 BUILD_DEPENDS+=	sgmlfmt:${PORTSDIR}/textproc/sgmlformat
 post-patch::
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-sgmlformat
-PLIST_SUB+=	SUB_SGML=""
-.else
-PLIST_SUB+=	SUB_SGML="@comment "
 .endif
+
+pre-install:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/generate-plist > ${PLIST}
 
 post-install:
 	@strip ${PREFIX}/bin/mutt
