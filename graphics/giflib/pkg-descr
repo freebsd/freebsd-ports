@@ -1,7 +1,0 @@
-GIF loading and saving shared library.  (Saving uses an uncompressed gif
-algorithm that does not use LZW compression.)
-
-See /usr/local/share/doc/libungif directory for more information
-on libungif's capabilities.
-
-WWW: http://prtr-13.ucsc.edu/~badger/software/libungif/
