@@ -18,7 +18,7 @@ PATCHFILES=	${PORTNAME}-patches-20040724.bz2
 MAINTAINER=	hiroo+freebsd@oikumene.gcd.org
 COMMENT=	A Japanese input method
 
-BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4
+BUILD_DEPENDS=	xmkmf:${X_IMAKE_PORT}
 
 MAN1=		sj3.1 sj3dic.1 sj3mkdic.1 sj3serv.1
 MANLANG=	ja
