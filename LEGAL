@@ -149,6 +149,8 @@ pklin*			ports/archivers/pkzip	Shareware
 platon-*		ports/biology/platon	US$ 5000 for commercial users,
 						(free for academic)
 prodosemu.*		ports/emulators/prodosemu	Restrictive copyright on the ROM image
+qmail-*			ports/mail/qmail-*	Restricted binary distribution
+						of modified versions
 qvplay-*		ports/graphics/qvplay	No redistribution due to
 						beta status
 quake106.zip		ports/games/quakeserver	Shareware
