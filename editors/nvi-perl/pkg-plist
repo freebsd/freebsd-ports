@@ -9,7 +9,6 @@ man/man1/nview.1
 share/vi/README.english
 share/vi/README.japanese
 share/vi/recover
-share/vi/catalog/
 share/vi/catalog/dutch
 share/vi/catalog/english
 share/vi/catalog/french
