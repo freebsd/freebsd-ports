@@ -1,3 +1,4 @@
+bin/swf_play
 include/swfdec-%%VERSION%%/art.h
 include/swfdec-%%VERSION%%/color.h
 include/swfdec-%%VERSION%%/proto.h
