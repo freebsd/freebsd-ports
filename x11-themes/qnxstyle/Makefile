@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qnxstyle
-PORTVERSION=	0.1
-PORTREVISION=	2
+PORTVERSION=	0.2
 CATEGORIES=	x11-wm kde
 MASTER_SITES=	http://www.kde-look.org/content/files/
 DISTNAME=	${KDELOOKITEM}-${PORTNAME}-${PORTVERSION}
@@ -17,11 +16,17 @@ COMMENT=	A QNX style/theme for KDE3
 
 KDELOOKITEM=	1444
 
-WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_KDELIBS_VER=	3
-GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-USE_GMAKE=		yes
-INSTALLS_SHLIB=		yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-.include <bsd.port.mk>
+USE_KDELIBS_VER=	3
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+INSTALLS_SHLIB=	yes
+
+PLIST_FILES=	lib/kde3/plugins/styles/qnx.so \
+		lib/kde3/plugins/styles/qnx.la \
+		share/apps/kstyle/themes/qnx.themerc
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11/kde3/Makefile.kde"
+.include <bsd.port.post.mk>
