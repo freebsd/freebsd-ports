@@ -3,6 +3,7 @@ assorted collection of code useful for developing embedded applications:
 
 -   C data structure run-time introspection library
 -   Threaded HTTP client/server library with SSL and XML-RPC support
+-   PPP library using netgraph(4) with PPTP and L2TP servers
 -   Application configuration framework
 -   Heap memory accounting and sanity checking
 -   Generic template processing library

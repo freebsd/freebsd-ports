@@ -21,6 +21,21 @@ include/pdel/net/if_util.h
 include/pdel/net/route_msg.h
 include/pdel/net/tcp_server.h
 include/pdel/net/uroute.h
+include/pdel/ppp/ppp_auth.h
+include/pdel/ppp/ppp_auth_chap.h
+include/pdel/ppp/ppp_auth_radius.h
+include/pdel/ppp/ppp_bundle.h
+include/pdel/ppp/ppp_ccp.h
+include/pdel/ppp/ppp_engine.h
+include/pdel/ppp/ppp_ipcp.h
+include/pdel/ppp/ppp_l2tp_server.h
+include/pdel/ppp/ppp_lcp.h
+include/pdel/ppp/ppp_lib.h
+include/pdel/ppp/ppp_link.h
+include/pdel/ppp/ppp_log.h
+include/pdel/ppp/ppp_manager.h
+include/pdel/ppp/ppp_msoft.h
+include/pdel/ppp/ppp_pptp_server.h
 include/pdel/structs/structs.h
 include/pdel/structs/type/array.h
 include/pdel/structs/type/boolean.h
@@ -302,6 +317,7 @@ man/man3/mesg_port_qlen.3.gz
 man/man3/paction.3.gz
 man/man3/paction_cancel.3.gz
 man/man3/paction_start.3.gz
+man/man3/pdel_ppp.3.gz
 man/man3/pevent.3.gz
 man/man3/pevent_ctx_count.3.gz
 man/man3/pevent_ctx_create.3.gz
@@ -508,6 +524,7 @@ man/man3/valog.3.gz
 @dirrm include/pdel/sys
 @dirrm include/pdel/structs/type
 @dirrm include/pdel/structs
+@dirrm include/pdel/ppp
 @dirrm include/pdel/net
 @dirrm include/pdel/io
 @dirrm include/pdel/http/servlet
