@@ -306,6 +306,7 @@
     SUBDIR += skip
     SUBDIR += slurpie
     SUBDIR += slush
+    SUBDIR += smtpscan
     SUBDIR += smurflog
     SUBDIR += sniff
     SUBDIR += snort
