@@ -10,7 +10,7 @@ DISTNAME=	fhttpd-0.4.2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.fhttpd.org/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 LOGFILE=	share/fhttpd/fhttpd.log
 PLIST_SUB+=	LOGFILE=${LOGFILE}

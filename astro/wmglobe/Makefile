@@ -10,7 +10,7 @@ DISTNAME=	wmglobe-1.0
 CATEGORIES=	astro windowmaker
 MASTER_SITES=	http://perso.linuxfr.org/jdumont/wmg/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	wraster.3:${PORTSDIR}/x11-wm/windowmaker
 

@@ -11,7 +11,7 @@ PKGNAME=	wmminichess-0.8
 CATEGORIES=	games
 MASTER_SITES=	http://www.electricrain.com/edavis/miniCHESS/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 RUN_DEPENDS=	${LOCALBASE}/bin/gnuchessx:${PORTSDIR}/games/gnuchess

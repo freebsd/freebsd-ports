@@ -10,7 +10,7 @@ DISTNAME=	blackened-${VERSION}
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.blackened.com/pub/irc/blackened/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PKGNAME}

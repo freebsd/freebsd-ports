@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://ksi.ii.uj.edu.pl/krogue/dl/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	kdecore.3:${PORTSDIR}/x11/kdelibs11
 BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext

@@ -10,7 +10,7 @@ DISTNAME=	kbubbles-0.8.6
 CATEGORIES=	games
 MASTER_SITES=	http://hem.passagen.se/tonybj/kbubbles/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	QwSpriteField.7:${PORTSDIR}/converters/kdesupport11 \

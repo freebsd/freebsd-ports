@@ -11,7 +11,7 @@ PKGNAME=	qcad-1.3.3
 CATEGORIES=	cad
 MASTER_SITES=	http://www.ultraviolet.org/qcad/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 USE_XLIB=	yes
 MAKEFILE=	makefile

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://people.FreeBSD.org/~mph/distfiles/
 MASTER_SITE_SUBDIR=	apps/misc
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 USE_GMAKE=	YES
 USE_QT=		YES

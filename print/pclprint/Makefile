@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://andrsn.stanford.edu/pub/print/ \
 		http://www.psn.net/~andrews/dist/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 NO_BUILD=	YES
 

@@ -12,7 +12,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://download.sourceforge.net/pub/sourceforge/udeproject/ \
 		ftp://ude.the-coffeeshop.dk/pub/UDE/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 BUILD_DEPENDS=	${LOCALBASE}/include/libintl.h:${PORTSDIR}/devel/gettext

@@ -11,7 +11,7 @@ CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.kvirc.bz.nu/pub/mirror/kvirc/ \
 		http://www.kvirc.org/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 USE_QT2=	yes
 USE_X_PREFIX=	yes

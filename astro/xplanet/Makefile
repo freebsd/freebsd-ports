@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.alumni.caltech.edu/~hari/xplanet/ \
 		http://www.radcyberzine.com/xglobe/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} photo_1600.jpg
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib \
 		GL.14:${PORTSDIR}/graphics/Mesa3

@@ -11,7 +11,7 @@ PKGNAME=	pyWeather-0.1b
 CATEGORIES=	astro python
 MASTER_SITES=	http://members.bellatlantic.net/~rasclkng/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 RUN_DEPENDS=	${PYTHON}:${PORTSDIR}/lang/python
 

@@ -12,7 +12,7 @@ CATEGORIES=	lang perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Expect
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 BUILD_DEPENDS=	${SITE_PERL}/IO-Tty.pm:${PORTSDIR}/devel/p5-IO-Tty \
 		${SITE_PERL}/IO-Stty.pm:${PORTSDIR}/devel/p5-IO-Stty

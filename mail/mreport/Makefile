@@ -10,7 +10,7 @@ DISTNAME=	mreport-0.9
 CATEGORIES=	mail sysutils
 MASTER_SITES=	ftp://ftp.datrix.co.za/pub/mreport/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 ALL_TARGET=	ALL
 MAN8=		mreport.8

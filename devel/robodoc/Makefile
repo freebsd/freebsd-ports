@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://www.xs4all.nl/~rfsber/Robo/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 FETCH_BEFORE_ARGS+= -b
 WRKSRC=		${WRKDIR}/Robodoc

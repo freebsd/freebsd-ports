@@ -12,7 +12,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	http://www.lokigames.com/~megastep/makeself/
 EXTRACT_SUFX=	.gz.sh
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 EXTRACT_CMD=	${CP}
 EXTRACT_BEFORE_ARGS=

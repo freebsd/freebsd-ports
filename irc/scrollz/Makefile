@@ -12,7 +12,7 @@ CATEGORIES=	irc
 MASTER_SITES=	ftp://ns0.hole.org/pub/ScrollZ/Bins/
 EXTRACT_SUFX=	.bz2
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 USE_BZIP2=	YES
 NO_BUILD=	YES

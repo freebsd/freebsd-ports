@@ -11,7 +11,7 @@ PKGNAME=	perlsh-${VERSION}
 CATEGORIES=	shells perl5
 MASTER_SITES=	http://www.focusresearch.com/gregor/psh/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 VERSION=	0.007
 USE_PERL5=	yes
