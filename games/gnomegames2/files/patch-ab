@@ -142,7 +142,7 @@
  CONFIG_HEADER = ../../../config.h
  CONFIG_CLEAN_FILES = 
 --- gnome-stones/Makefile.in.orig	Mon Mar  1 02:50:55 1999
-+++  gnome-stones/Makefile.in	Wed Mar  3 00:33:00 1999
++++ gnome-stones/Makefile.in	Wed Mar  3 00:33:00 1999
 @@ -125,12 +125,12 @@
  
  SUBDIRS = objects graphics
@@ -181,16 +181,16 @@
  
  
  object_LTLIBRARIES = libgnome-stones.la libgnomekoban.la
-@@ -142,10 +142,10 @@
+@@ -143,10 +143,10 @@
  
  DEFS = @DEFS@ -I. -I$(srcdir) -I../..
  LIBS = @LIBS@
 -libgnome_stones_la_LDFLAGS = 
-+libgnome_stones_la_LDFLAGS = --export-dynamic
++libgnome_stones_la_LDFLAGS = -avoid-version
  libgnome_stones_la_LIBADD = 
  libgnome_stones_la_OBJECTS =  gnome-stones.lo
 -libgnomekoban_la_LDFLAGS = 
-+libgnomekoban_la_LDFLAGS = --export-dynamic
++libgnomekoban_la_LDFLAGS = -avoid-version
  libgnomekoban_la_LIBADD = 
  libgnomekoban_la_OBJECTS =  gnomekoban.lo
  COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)

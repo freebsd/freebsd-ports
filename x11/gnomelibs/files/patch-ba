@@ -5,7 +5,7 @@
  @FALSE_TRUE@libvfs = libvfs
  
 -SUBDIRS = po intl support macros 	tools 	images 	libart_lgpl 	libgnome libgnomeui gtk-xmhtml $(gnome_hello) zvt 	libgnorba idl $(test_gnome) devel-docs gnome-data $(libvfs) man 	gnome-faq
-+SUBDIRS = po intl support macros 	tools 	images 	libart_lgpl 	libgnome libgnomeui gtk-xmhtml $(gnome_hello) zvt 	libgnorba idl $(test_gnome) gnome-data $(libvfs)
++SUBDIRS = po intl support macros 	tools 	images 	libart_lgpl 	libgnome libgnomeui gtk-xmhtml $(gnome_hello) zvt 	libgnorba idl $(test_gnome) gnome-data $(libvfs) man
  
  
  include_HEADERS = gnome.h

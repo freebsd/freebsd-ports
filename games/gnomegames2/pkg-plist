@@ -19,7 +19,6 @@ etc/sound/events/gnobots2.soundlist
 etc/sound/events/iagno.soundlist
 include/gdkcardimage/gdk-card-image.h
 lib/libgdkcardimage.a
-lib/libgdkcardimage.la
 lib/libgdkcardimage.so
 lib/libgdkcardimage.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
@@ -114,14 +113,8 @@ share/gnome/gnome-stones/default.caves
 share/gnome/gnome-stones/gnome-stonesrc
 share/gnome/gnome-stones/gnome-stonesrc.ko
 share/gnome/gnome-stones/gnomekoban.caves
-share/gnome/gnome-stones/objects/libgnome-stones.a
-share/gnome/gnome-stones/objects/libgnome-stones.la
 share/gnome/gnome-stones/objects/libgnome-stones.so
-share/gnome/gnome-stones/objects/libgnome-stones.so.0
-share/gnome/gnome-stones/objects/libgnomekoban.a
-share/gnome/gnome-stones/objects/libgnomekoban.la
 share/gnome/gnome-stones/objects/libgnomekoban.so
-share/gnome/gnome-stones/objects/libgnomekoban.so.0
 share/gnome/gnome-stones/tutorial.caves
 share/gnome/gturing/examples/3ones2zeroes.tur
 share/gnome/gturing/examples/add.tur
@@ -258,8 +251,8 @@ share/gnome/pixmaps/cards/suits_medium/xpat-21x21.png
 share/gnome/pixmaps/cards/suits_small/knuth-09x10.png
 share/gnome/pixmaps/cards/suits_small/xpat-11x11.png
 share/gnome/pixmaps/cards/suits_small/xpat-15x15.png
-share/gnome/pixmaps/gnibbles/gnibbles.png
 share/gnome/pixmaps/gnibbles/gnibbles-logo.png
+share/gnome/pixmaps/gnibbles/gnibbles.png
 share/gnome/pixmaps/gnobots/aieee.png
 share/gnome/pixmaps/gnobots/cows.png
 share/gnome/pixmaps/gnobots/eggs.png
@@ -284,8 +277,8 @@ share/gnome/pixmaps/gnome-gtali.png
 share/gnome/pixmaps/gnome-gtetris.png
 share/gnome/pixmaps/gnome-mahjongg.png
 share/gnome/pixmaps/gnome-metatris.png
-share/gnome/pixmaps/gnome-stones.png
 share/gnome/pixmaps/gnome-stones-file.png
+share/gnome/pixmaps/gnome-stones.png
 share/gnome/pixmaps/gnome-stones/amoeba.png
 share/gnome/pixmaps/gnome-stones/boulder.png
 share/gnome/pixmaps/gnome-stones/butterfly.png

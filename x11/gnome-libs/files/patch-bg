@@ -1,30 +1,29 @@
---- zvt/Makefile.in.orig	Wed Apr  7 21:34:27 1999
-+++ zvt/Makefile.in	Fri Apr 30 17:53:45 1999
+--- zvt/Makefile.in.orig	Wed Apr 28 02:58:32 1999
++++ zvt/Makefile.in	Sat May  8 22:50:50 1999
+@@ -20,7 +20,7 @@
+ exec_prefix = @exec_prefix@
+ 
+ bindir = @bindir@
+-sbindir = @sbindir@
++sbindir = @bindir@
+ libexecdir = @libexecdir@
+ datadir = @datadir@
+ sysconfdir = @sysconfdir@
 @@ -160,7 +160,7 @@
  libzvt_la_SOURCES =  	gnome-login-support.h		gnome-login-support.c		lists.c				subshell.h			subshell.c			subshell-includes.h		update.c			vt.c				zvtterm.c
  
  
 -libzvt_la_LDFLAGS = -version-info 4:3:2 -rpath $(libdir)
-+libzvt_la_LDFLAGS = -version-info 1:0:0 -rpath $(libdir)
++libzvt_la_LDFLAGS = -version-info 2:0:0 -rpath $(libdir)
  
  libzvtinclude_HEADERS =  	lists.h				vt.h				vtx.h				zvtterm.h
  
-@@ -435,8 +435,7 @@
- check: check-am
- installcheck-am:
- installcheck: installcheck-am
--install-exec-am: install-libLTLIBRARIES install-sbinPROGRAMS \
--		install-exec-local
-+install-exec-am: install-libLTLIBRARIES
- install-exec: install-exec-am
+@@ -200,7 +200,7 @@
+ libzvt_la_LIBADD = 
+ libzvt_la_OBJECTS =  gnome-login-support.lo lists.lo subshell.lo \
+ update.lo vt.lo zvtterm.lo
+-PROGRAMS =  $(noinst_PROGRAMS) $(sbin_PROGRAMS)
++PROGRAMS =  $(sbin_PROGRAMS)
  
- install-data-am: install-libzvtincludeHEADERS
-@@ -448,7 +447,7 @@
- uninstall-am: uninstall-libLTLIBRARIES uninstall-sbinPROGRAMS \
- 		uninstall-libzvtincludeHEADERS
- uninstall: uninstall-am
--all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(HEADERS)
-+all-am: Makefile $(LTLIBRARIES) $(HEADERS)
- all-redirect: all-am
- install-strip:
- 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
+ zterm_OBJECTS =  zterm.o
+ zterm_DEPENDENCIES =  libzvt.la

@@ -1,5 +1,5 @@
---- gnome-config.in.orig	Mon Feb 15 20:05:33 1999
-+++ gnome-config.in	Tue Mar  2 09:00:51 1999
+--- gnome-config.in.orig	Thu Apr 15 13:59:46 1999
++++ gnome-config.in	Sat May  8 17:32:13 1999
 @@ -43,25 +43,25 @@
  
  Known values for LIBRARY are:
@@ -30,7 +30,7 @@
  
      if test "x$conf_shs" = x || test "x$conf_shs" = 'x*Conf.sh'; then
  	echo "    <NONE>"
-@@ -146,36 +146,36 @@
+@@ -146,19 +146,19 @@
  	usage 1
  	;;
      glib)
@@ -46,30 +46,17 @@
 +	the_flags="$the_flags `gtk12-config --cflags`"
  	;;
      gnome)
--       	the_libs="$the_libs @GNOME_LIBDIR@ @GNOME_LIBS@"
-+       	the_libs="$the_libs @GNOME_LIBDIR@ @GNOME_LIBS@ -lintl"
+        	the_libs="$the_libs @GNOME_LIBDIR@ @GNOME_LIBS@"
    	the_flags="$the_flags @GNOME_INCLUDEDIR@ @GTK_CFLAGS@"
  	;;
      gnomeui)
 -	the_libs="$the_libs @GNOME_LIBDIR@ @GNOMEUI_LIBS@"
-+	the_libs="$the_libs @GNOME_LIBDIR@ -lXpm -ljpeg -lpng -lz -ltiff -lgif @GNOMEUI_LIBS@ -lintl"
++	the_libs="$the_libs @GNOME_LIBDIR@ -lXpm -ljpeg -lpng -lz -ltiff -lgif @GNOMEUI_LIBS@"
  	the_flags="$the_flags @GNOME_INCLUDEDIR@ @GTK_CFLAGS@"
  	;;
      gtkxmhtml)
--	the_libs="$the_libs @GNOME_LIBDIR@ @GTKXMHTML_LIBS@"
-+	the_libs="$the_libs @GNOME_LIBDIR@ @GTKXMHTML_LIBS@ -lintl"
- 	;;
-     gnorba)
--        the_libs="$the_libs @GNOME_LIBDIR@ -lgnorba @ORBIT_LIBS@"
-+        the_libs="$the_libs @GNOME_LIBDIR@ -lgnorba @ORBIT_LIBS@ -lintl"
- 	the_flags="$the_flags @GNOME_INCLUDEDIR@ @ORBIT_CFLAGS@"
-         ;;
-     idl)
-         the_flags="@GNOME_IDLDIR@"
- 	;;
-     zvt)
--	the_libs="$the_libs @GNOME_LIBDIR@ @ZVT_LIBS@"
-+	the_libs="$the_libs @GNOME_LIBDIR@ @ZVT_LIBS@ -lintl"
+@@ -175,7 +175,7 @@
+ 	the_libs="$the_libs @GNOME_LIBDIR@ @ZVT_LIBS@"
  	;;
      *)
 -	cnf_sh=${libdir}/${1}Conf.sh

@@ -1,0 +1,8 @@
+--- capplets/wm-properties/wm-desktops/WindowMaker.desktop.orig	Wed May 12 02:56:05 1999
++++ capplets/wm-properties/wm-desktops/WindowMaker.desktop	Wed May 12 02:56:22 1999
+@@ -5,4 +5,4 @@
+ 
+ [Window Manager]
+ SessionManaged=false
+-ConfigExec=/usr/X11R6/lib/GNUstep/Apps/WPrefs.app/WPrefs
++ConfigExec=/usr/X11R6/share/GNUstep/Apps/WPrefs.app/WPrefs

@@ -1,6 +1,15 @@
---- configure.orig	Mon Mar  1 21:51:08 1999
-+++ configure	Sat Mar  6 13:33:05 1999
-@@ -5149,7 +5149,7 @@
+--- configure.orig	Tue Apr 27 21:24:19 1999
++++ configure	Sat May 22 21:16:46 1999
+@@ -2521,7 +2521,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  PTHREAD_LIB="-lc_r"
++  PTHREAD_LIB=""
+ else
+   echo "$ac_t""no" 1>&6
+ echo $ac_n "checking for pthread_create""... $ac_c" 1>&6
+@@ -5215,7 +5215,7 @@
    cat conftest.$ac_ext >&5
    rm -rf conftest*
    CATOBJEXT=.mo
@@ -9,16 +18,16 @@
  fi
  rm -f conftest*
  		INSTOBJEXT=.mo
-@@ -7233,7 +7233,7 @@
+@@ -7372,7 +7372,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-ltiff -lm $LIBS"
 +LIBS="-ltiff -ljpeg -lz -lm $LIBS"
  cat > conftest.$ac_ext <<EOF
- #line 7239 "configure"
+ #line 7378 "configure"
  #include "confdefs.h"
-@@ -10704,7 +10704,7 @@
+@@ -10859,7 +10859,7 @@
  ZVT_LIBS="-lzvt $UTIL_LIBS $GTK_LIBS"
  
  GNOME_LIBDIR='-L${libdir}'
@@ -27,7 +36,7 @@
  GNOME_IDLDIR='-I${datadir}/idl'
  
  
-@@ -11548,10 +11548,6 @@
+@@ -11724,10 +11724,6 @@
        *) # Relative path.
          ac_sub_cache_file="$ac_dots$cache_file" ;;
        esac

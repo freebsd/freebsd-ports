@@ -5,25 +5,16 @@
  
  
 -libgnomeui_la_LDFLAGS = -version-info 41:1:9 -rpath $(libdir)
-+libgnomeui_la_LDFLAGS = -version-info 1:0:0 -rpath $(libdir)
++libgnomeui_la_LDFLAGS = -version-info 2:0:0 -rpath $(libdir)
  libgnomeui_la_LIBADD = $(LIBGNOMEUI_LIBS)
  
  gnome_segv_LDADD =  	libgnomeui.la 						$(top_builddir)/libgnome/libgnome.la 			$(top_builddir)/libart_lgpl/libart_lgpl.la 		@LIBSUPPORT@ $(LIBGNOMEUI_LIBS) 	$(INTLLIBS)
-@@ -1478,7 +1478,7 @@
- check: check-recursive
- installcheck-am:
- installcheck: installcheck-recursive
--install-exec-am: install-libLTLIBRARIES install-binPROGRAMS
-+install-exec-am: install-libLTLIBRARIES
- install-exec: install-exec-recursive
+@@ -258,7 +258,7 @@
+ gnome-startup.lo gnome-stock.lo gnome-winhints.lo \
+ gnome-paper-selector.lo gnome-procbar.lo gnometypes.lo gtkcauldron.lo \
+ gtk-clock.lo gtk-ted.lo gtkdial.lo gtkpixmapmenuitem.lo
+-PROGRAMS =  $(bin_PROGRAMS) $(noinst_PROGRAMS)
++PROGRAMS =  $(bin_PROGRAMS)
  
- install-data-am: install-gtkrcDATA install-libgnomeuiincludeHEADERS
-@@ -1490,7 +1490,7 @@
- uninstall-am: uninstall-libLTLIBRARIES uninstall-binPROGRAMS \
- 		uninstall-gtkrcDATA uninstall-libgnomeuiincludeHEADERS
- uninstall: uninstall-recursive
--all-am: Makefile $(LTLIBRARIES) $(PROGRAMS) $(DATA) $(HEADERS)
-+all-am: Makefile $(LTLIBRARIES) $(DATA) $(HEADERS)
- all-redirect: all-recursive
- install-strip:
- 	$(MAKE) $(AM_MAKEFLAGS) AM_INSTALL_PROGRAM_FLAGS=-s install
+ gnome_segv_OBJECTS =  gnome_segv.o
+ gnome_segv_DEPENDENCIES =  libgnomeui.la \
