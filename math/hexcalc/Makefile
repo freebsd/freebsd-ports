@@ -3,13 +3,14 @@
 # Date created:		5 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.4 1995/04/11 01:19:01 asami Exp $
+# $Id: Makefile,v 1.5 1995/04/28 13:35:37 jkh Exp $
 #
 
 DISTNAME=	hexcalc
 PKGNAME=	hexcalc-1.11
 CATEGORIES+=	math
-MASTER_SITES=	ftp://ftp.cs.columbia.edu/archives/X11R5/contrib/
+MASTER_SITES=	ftp://aixpdslib.seas.ucla.edu/pub/hexcalc/RISC/3.2/src/
+EXTRACT_SUFX=	..tar.Z
 
 MAINTAINER=	asami@FreeBSD.ORG
 
