@@ -129,7 +129,6 @@
     SUBDIR += graphviz
     SUBDIR += gridpix
     SUBDIR += gsculpt
-    SUBDIR += gthumb
     SUBDIR += gthumb2
     SUBDIR += gtkam
     SUBDIR += gtkdps
