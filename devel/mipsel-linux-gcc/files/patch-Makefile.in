@@ -1,0 +1,10 @@
+--- Makefile.in.orig	Wed Oct 15 19:57:01 2003
++++ Makefile.in	Wed Oct 15 19:57:13 2003
+@@ -664,7 +664,6 @@
+ 	install-itcl \
+ 	install-ld \
+ 	install-libgui \
+-	install-libiberty \
+ 	install-libtool \
+ 	install-m4 \
+ 	install-make \

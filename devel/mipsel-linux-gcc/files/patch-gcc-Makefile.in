@@ -1,0 +1,26 @@
+--- gcc/Makefile.in.orig	Wed Oct 15 19:58:25 2003
++++ gcc/Makefile.in	Wed Oct 15 20:06:54 2003
+@@ -521,8 +521,8 @@
+ CPP_INSTALL_NAME = `t='$(program_transform_name)'; echo cpp | sed -e $$t`
+ PROTOIZE_INSTALL_NAME = `t='$(program_transform_name)'; echo protoize | sed -e $$t`
+ UNPROTOIZE_INSTALL_NAME = `t='$(program_transform_name)'; echo unprotoize | sed -e $$t`
+-GCOV_INSTALL_NAME = `t='$(program_transform_name)'; echo gcov | sed -e $$t`
+-GCCBUG_INSTALL_NAME = `t='$(program_transform_name)'; echo gccbug | sed -e $$t`
++GCOV_INSTALL_NAME = `t='$(program_transform_cross_name)'; echo gcov | sed -e $$t`
++GCCBUG_INSTALL_NAME = `t='$(program_transform_cross_name)'; echo gccbug | sed -e $$t`
+ 
+ # Actual name to use when installing a cross-compiler.
+ GCC_CROSS_NAME = `t='$(program_transform_cross_name)'; echo gcc | sed -e $$t`
+@@ -2600,10 +2600,10 @@
+ 	  chmod a-x $(man1dir)/$(GCC_INSTALL_NAME)$(manext); \
+ 	fi
+ 	-rm -f $(man1dir)/cpp$(manext)
+-	-$(INSTALL_DATA) $(srcdir)/cpp.1 $(man1dir)/cpp$(manext)
++	-$(INSTALL_DATA) $(srcdir)/cpp.1 $(man1dir)/$(CPP_CROSS_NAME)$(manext)
+ 	-chmod a-x $(man1dir)/cpp$(manext)
+ 	-rm -f $(man1dir)/gcov$(manext)
+-	-$(INSTALL_DATA) $(srcdir)/gcov.1 $(man1dir)/gcov$(manext)
++	-$(INSTALL_DATA) $(srcdir)/gcov.1 $(man1dir)/$(GCOV_INSTALL_NAME)$(manext)
+ 	-chmod a-x $(man1dir)/gcov$(manext)
+ 
+ # Install the library.

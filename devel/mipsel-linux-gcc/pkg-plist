@@ -2,13 +2,13 @@
 %%GCC_TARG%%/bin/cpp
 %%GCC_TARG%%/bin/g++
 %%GCC_TARG%%/bin/gcc
+%%GCC_TARG%%/bin/gcov
 bin/%%GCC_TARG%%-c++
-bin/%%GCC_TARG%%-c++filt
 bin/%%GCC_TARG%%-cpp
 bin/%%GCC_TARG%%-g++
 bin/%%GCC_TARG%%-gcc
-bin/gccbug
-bin/gcov
+bin/%%GCC_TARG%%-gccbug
+bin/%%GCC_TARG%%-gcov
 lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/cc1
 lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/cc1plus
 lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/collect2
@@ -31,8 +31,6 @@ lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/libgcc.a
 lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/single/libgcc.a
 lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/specs
 lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/tradcpp0
-lib/libiberty.a
-share/locale/sv/LC_MESSAGES/gcc.mo
 @dirrm lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/single
 @dirrm lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%/include
 @dirrm lib/gcc-lib/%%GCC_TARG%%/%%GCC_REV%%
