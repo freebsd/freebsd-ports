@@ -3,7 +3,7 @@
 # Date created:		23 August 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.78 1999/08/22 18:59:22 mharo Exp $
+# $Id: Makefile,v 1.79 1999/08/23 04:23:36 mharo Exp $
 #
 
 DISTNAME=	dgd-1.1p6
@@ -43,7 +43,7 @@ post-build:
 	@${CHMOD} o+r ${WRKDIR}/dgd/doc/kfun/*
 
 do-install:
-	@-mv ${PREFIX}/dgd/bin/driver ${PREFIX}/dgd/bin/driver.old
+	@-${MV} ${PREFIX}/dgd/bin/driver ${PREFIX}/dgd/bin/driver.old
 	@tar -C ${WRKDIR} -cf - `${GREP} '^dgd/' ${PKGDIR}/PLIST` \
 		| tar -C ${PREFIX} -xpf -
 

@@ -17,7 +17,7 @@ MAINTAINER=	roberto@FreeBSD.ORG
 NO_WRKSUBDIR=   yes
 
 do-extract:
-	@rm -rf ${WRKDIR}
+	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
 	${CP} -p ${DISTDIR}/${DISTFILES} ${WRKDIR}
 	${CP} -p ${FILESDIR}/Makefile ${WRKDIR}

@@ -3,7 +3,7 @@
 # Date created:         So  17 Nov 1996 16:59:23 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.32 1999/06/27 14:22:46 andreas Exp $
+# $Id: Makefile,v 1.33 1999/08/27 22:29:52 mharo Exp $
 #
 
 DISTNAME=	bb-1.2a
@@ -38,9 +38,9 @@ do-install:
 	@${LN} -fs ${PREFIX}/bb/www ${PREFIX}/share/apache/htdocs/bb
 	@${LN} -fs bb.html ${PREFIX}/bb/www/index.html
 	@${LN} -fs ${PREFIX}/bb/web/bb-ack.sh ${PREFIX}/share/apache/cgi-bin
-	@mv -f ${PREFIX}/bb/doc/bbclient ${PREFIX}/bb/bin
-	@mv -f ${PREFIX}/bb/doc/bbconfig ${PREFIX}/bb/bin
-	@mv -f ${PREFIX}/bb/doc ${PREFIX}/share/doc/bb
+	@${MV} -f ${PREFIX}/bb/doc/bbclient ${PREFIX}/bb/bin
+	@${MV} -f ${PREFIX}/bb/doc/bbconfig ${PREFIX}/bb/bin
+	@${MV} -f ${PREFIX}/bb/doc ${PREFIX}/share/doc/bb
 	@${MKDIR} ${PREFIX}/share/bb/bbclients
 	@${TOUCH} ${PREFIX}/share/bb/bbclients/.keep_me
 	@${RM} ${PREFIX}/bb/KNOWN.BUGS

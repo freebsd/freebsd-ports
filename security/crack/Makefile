@@ -5,7 +5,7 @@
 # Whom:			David O'Brien <obrien@FreeBSD.org>
 # Whom:                 Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.7 1998/10/10 03:42:59 steve Exp $
+# $Id: Makefile,v 1.8 1999/08/27 22:30:08 mharo Exp $
 #
 
 DISTNAME=	crack5.0
@@ -23,8 +23,8 @@ WRKSRC=		${WRKDIR}/c50a
 
 pre-configure:
 .if !defined(USE_DES)
-	@/bin/mv -f ${WRKSRC}/src/libdes ${WRKSRC}/src/libdes.notused
-	@/bin/mv -f ${WRKSRC}/src/util/elcid.c ${WRKSRC}/src/util/elcid.c.orig
+	@${MV} -f ${WRKSRC}/src/libdes ${WRKSRC}/src/libdes.notused
+	@${MV} -f ${WRKSRC}/src/util/elcid.c ${WRKSRC}/src/util/elcid.c.orig
 	@${CP} -p ${WRKSRC}/src/util/elcid.c,bsd ${WRKSRC}/src/util/elcid.c
 .endif
 	@${ECHO} "XLIB+= -lcrypt" >> ${WRKSRC}/src/util/Makefile

@@ -28,7 +28,7 @@ post-install:
 	${CP} goemon.cfg goemon.cfg.bak && \
 	${SED} 's=dir goemon=dir ${PREFIX}/lib/timidity/goemon=' \
 	   < goemon.cfg.bak > goemon.cfg && \
-	rm goemon.cfg.bak
+	${RM} goemon.cfg.bak
 
 
 .include <bsd.port.mk>

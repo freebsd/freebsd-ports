@@ -52,10 +52,10 @@ pre-configure:
 	cd ${WRKSRC} ; ./configure ; make distclean
 
 post-install:
-	@mv ${PREFIX}/bin/gcc ${PREFIX}/bin/bc-gcc
-	@mv ${PREFIX}/bin/${GNUHOST}-gcc ${PREFIX}/bin/${GNUHOST}-bc-gcc
-	@mv ${PREFIX}/man/man1/gcc.1 ${PREFIX}/man/man1/bc-gcc.1
-	@mv ${PREFIX}/man/man1/cccp.1 ${PREFIX}/man/man1/bc-cccp.1
+	@${MV} ${PREFIX}/bin/gcc ${PREFIX}/bin/bc-gcc
+	@${MV} ${PREFIX}/bin/${GNUHOST}-gcc ${PREFIX}/bin/${GNUHOST}-bc-gcc
+	@${MV} ${PREFIX}/man/man1/gcc.1 ${PREFIX}/man/man1/bc-gcc.1
+	@${MV} ${PREFIX}/man/man1/cccp.1 ${PREFIX}/man/man1/bc-cccp.1
 	@( for prog in ${PREFIX}/bin/bc-gcc ${PREFIX}/bin/${GNUHOST}-bc-gcc ; \
 		do strip $$prog ; \
 		done )

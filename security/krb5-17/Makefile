@@ -3,7 +3,7 @@
 # Date created:				6/5/1998
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.10 1999/06/05 22:31:36 mharo Exp $
+# $Id: Makefile,v 1.11 1999/08/22 18:59:53 mharo Exp $
 #
 
 DISTNAME=		krb5-1.0.6
@@ -167,7 +167,7 @@ post-install:
 # XXX Not sure why tmac.doc is installed here -- I don't think
 #     we need it.  I should patch the distribution to not install
 #     it, I think.
-	@rm -f ${PREFIX}/man/man1/tmac.doc
+	@${RM} -f ${PREFIX}/man/man1/tmac.doc
 # shared libs
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 # html documentation

@@ -20,7 +20,7 @@ MAN6=		golddig.6
 pre-patch:
 	@(cd ${WRKSRC}; for i in 245 244 246 247; do \
 	    ${AWK} '{if (/^#!/) x++} {if(x) print $$0'} $$i| /bin/sh; \
-	  done; mv golddig2/* .)
+	  done; ${MV} golddig2/* .)
 
 pre-install:
 	@${MKDIR} ${PREFIX}/bin

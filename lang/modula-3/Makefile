@@ -46,9 +46,9 @@ MAN1+=		formsedit.1 replayheap.1 showheap.1 shownew.1 showthread.1
 do-install:
 	@${ECHO_MSG} "Deleting extraneous cruft"
 	@cd ${temp_prefix}/lib/m3/pkg; \
-	    rm -rf m3 m3front m3middle m3linker
+	    ${RM} -rf m3 m3front m3middle m3linker
 	@cd ${temp_prefix}/lib/m3/FreeBSD2; \
-	    rm -f libm3front.so.*.* libm3link.so.*.* libm3middle.so.*.*
+	    ${RM} -f libm3front.so.*.* libm3link.so.*.* libm3middle.so.*.*
 	@${ECHO_MSG} "Installing files in \"${PREFIX}\""
 	@cd ${temp_prefix}; \
 	    umask 022; \
@@ -67,7 +67,7 @@ do-install:
 	    PATH=${PREFIX}/bin:$$PATH; \
 	    export LD_LIBRARY_PATH PATH; \
 	    umask 022; \
-	    rm -rf FreeBSD2; \
+	    ${RM} -rf FreeBSD2; \
 	    ${MKDIR} FreeBSD2; \
 	    cd FreeBSD2; \
 	    quake -D_bootstrap -D_all -DPACKAGE_DIR=${WRKSRC}/m3/m3build \
@@ -82,7 +82,7 @@ do-install:
 	    PATH=${PREFIX}/bin:$$PATH; \
 	    export PATH; \
 	    umask 022; \
-	    rm -rf FreeBSD2; \
+	    ${RM} -rf FreeBSD2; \
 	    m3build; \
 	    m3ship
 	@${ECHO_MSG} "Installing copyright notice"

@@ -138,7 +138,7 @@ thereal-post-patch:
 	if [ `dirname $i` != ${FILESDIR} ] ; \
 	then \
 		${CP} $i.sh $i.sh.orig; \
-		(head -c `expr \`ls -l $i.sh.orig \
+		(head -c `${EXPR} \`ls -l $i.sh.orig \
 		    | ${AWK} '{print $$5}'\` - 1` $i.sh.orig ; ${ECHO} '&') \
 		    > $i.sh ; \
 	fi

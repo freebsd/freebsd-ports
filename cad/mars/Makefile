@@ -39,7 +39,7 @@ do-install:
 	@(cd ${PREFIX}/share/doc ; \
 		${TAR} xfpz /${DISTDIR}/MaRS-2-doc.tar.gz ; \
 		[ -d mars ] && ${RM} -rf mars; \
-		/bin/mv doc mars )
+		${MV} doc mars )
 .endif
 
 .include <bsd.port.mk>

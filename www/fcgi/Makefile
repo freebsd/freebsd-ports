@@ -3,7 +3,7 @@
 # Date created:        13 May 1999
 # Whom:                kbyanc
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/09 01:43:04 steve Exp $
+# $Id: Makefile,v 1.2 1999/08/11 19:01:50 cpiazza Exp $
 #
 
 DISTNAME=	fcgi-devkit-2.1
@@ -19,7 +19,7 @@ USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 
 post-install:
-	@rm -f ${PREFIX}/fcgi-devkit/libfcgi/os_unix.c.orig \
+	@${RM} -f ${PREFIX}/fcgi-devkit/libfcgi/os_unix.c.orig \
 	       ${PREFIX}/fcgi-devkit/Makefile.in.orig
 
 .include <bsd.port.mk>

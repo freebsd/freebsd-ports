@@ -3,7 +3,7 @@
 # Date created:		So   2 Mär 1997 12:11:43 MET
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.15 1999/08/22 18:59:08 mharo Exp $
+# $Id: Makefile,v 1.16 1999/08/28 02:17:21 mharo Exp $
 #
 
 DISTNAME=	xmgr-4.1.1
@@ -31,9 +31,9 @@ ALL_TARGET=
 INSTALL_TARGET=	install links
 
 post-patch:
-	mv ${WRKSRC}/configure ${WRKSRC}/configure.input
+	${MV} ${WRKSRC}/configure ${WRKSRC}/configure.input
 	${SED} "s%__MOTIFLIB__%${MOTIFLIB}%" ${WRKSRC}/configure.input > ${WRKSRC}/configure
-	rm -f ${WRKSRC}/configure.input
+	${RM} -f ${WRKSRC}/configure.input
 	${CHMOD} 755 ${WRKSRC}/configure
 
 .include <bsd.port.mk>

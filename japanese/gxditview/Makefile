@@ -35,7 +35,7 @@ pre-fetch:
 	    done; \
 	    for file in ${DISTPATCHES} ; do zcat $${file}; done | \
 		${SED} '/^END -----/,/^BEGIN ----/d' | uudecode; \
-	    rm -f ${DISTPATCHES};\
+	    ${RM} -f ${DISTPATCHES};\
 	 fi)
 
 .include <bsd.port.mk>

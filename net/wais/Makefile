@@ -3,7 +3,7 @@
 # Date created:         20 Sep 1994
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.11 1996/12/01 01:23:17 obrien Exp $
+# $Id: Makefile,v 1.12 1996/12/08 09:48:59 max Exp $
 #
 
 DISTNAME=       freeWAIS-0.5
@@ -21,7 +21,7 @@ is_depended: all
 
 pre-patch:
 	@${CP} ${WRKSRC}/Makefile.bsdi ${WRKSRC}/Makefile.freebsd
-	@mv ${WRKSRC}/src/client/x/Imakefile ${WRKDIR} \
+	@${MV} ${WRKSRC}/src/client/x/Imakefile ${WRKDIR} \
 	&& ${SED} -e '\;/SETME_IN_Imakefile;s;;${WRKSRC};' \
 		<${WRKDIR}/Imakefile >${WRKSRC}/src/client/x/Imakefile
 

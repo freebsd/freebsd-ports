@@ -3,7 +3,7 @@
 # Date created:		23 October 1998
 # Whom:			issei@jp.FreeBSD.ORG
 #
-# $Id: Makefile,v 1.6 1999/02/21 21:51:00 billf Exp $
+# $Id: Makefile,v 1.7 1999/08/28 02:17:33 mharo Exp $
 #
 
 DISTNAME=	AfterStep-1.0
@@ -48,7 +48,7 @@ post-patch:
 	@ ${PATCH} ${PATCH_DIST_ARGS} < ${FILESDIR}/steprc.ja.diff
 	@ for i in ${SRCDIRS}; do \
 		cd ${WRKSRC}/$$i; \
-		mv Imakefile Imakefile.orig; \
+		${MV} Imakefile Imakefile.orig; \
 		${SED} -e 's/#ifdef AlphaArchitecture/#if defined(AlphaArchitecture) \&\& !defined(FreeBSDArchitecture)/' < Imakefile.orig  >  Imakefile; \
 	done
 

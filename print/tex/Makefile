@@ -3,7 +3,7 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.34 1999/08/23 04:23:37 mharo Exp $
+# $Id: Makefile,v 1.35 1999/08/28 02:17:27 mharo Exp $
 #
 
 DISTNAME=	web2c-7.1
@@ -31,7 +31,7 @@ post-install:
 	@for i in kpsewhich dmp bibtex dvicopy dvitomp dvitype gftodvi gftopk \
 	  gftype mf mft patgen pktogf pktype pltotf pooltype tangle tex tftopl \
 	  vftovp vptovf weave; do strip ${PREFIX}/bin/$$i; done
-	@rm -f ${PREFIX}/bin/mpostf ${PREFIX}/bin/inimpost ${PREFIX}/bin/virmpost  ${PREFIX}/bin/latex \
+	@${RM} -f ${PREFIX}/bin/mpostf ${PREFIX}/bin/inimpost ${PREFIX}/bin/virmpost  ${PREFIX}/bin/latex \
 	  ${PREFIX}/share/texmf/web2c/mpost.mem ${PREFIX}/share/texmf/web2c/mp.pool
 	@${MKDIR} ${PREFIX}/share/texmf/fonts/tfm
 	@(cd ${WRKDIR}/tfm; ${INSTALL_DATA} *.tfm ${PREFIX}/share/texmf/fonts/tfm)

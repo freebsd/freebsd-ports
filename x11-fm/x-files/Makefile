@@ -3,7 +3,7 @@
 # Date created:		14 April 1998
 # Whom:			Donald J. Maddox <dmaddox@conterra.com>
 #
-# $Id: Makefile,v 1.9 1999/07/02 00:00:26 mph Exp $
+# $Id: Makefile,v 1.10 1999/08/28 02:17:32 mharo Exp $
 #
 
 DISTNAME=       X-Files-1.43
@@ -23,7 +23,7 @@ USE_X_PREFIX=	yes
 pre-install:
 	@tclsh8.0 ${SCRIPTDIR}/mktclIndex ${WRKSRC}
 	@${SED} s#@X11BASE@#${X11BASE}# <${WRKSRC}/X-Files.tcl >${WRKSRC}/tmpfile
-	@mv ${WRKSRC}/tmpfile ${WRKSRC}/X-Files.tcl
+	@${MV} ${WRKSRC}/tmpfile ${WRKSRC}/X-Files.tcl
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/X11/X-Files

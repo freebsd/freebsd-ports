@@ -31,7 +31,7 @@ post-install:
 	  ${CP} bin/scheme ${PREFIX}/bin/elk; \
 	  ${MKDIR} ${PREFIX}/include/elk; \
 	  ${CP} -R include/* ${PREFIX}/include/elk; \
-	  rm -rf bin include)
+	  ${RM} -rf bin include)
 	@${INSTALL_MAN} ${WRKSRC}/doc/man/elk.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
