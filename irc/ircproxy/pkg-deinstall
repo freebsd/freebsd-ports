@@ -1,0 +1,111 @@
+#!/bin/sh
+#
+# Night Light IRC Proxy
+# Deinstallation script for FreeBSD ports
+# Written by Jonas Kvinge
+#
+# Last modified: Jonas Kvinge (10.07.2003)
+#
+
+c=''
+n=''
+if [ "`eval echo -n 'a'`" = "-n a" ] ; then
+ c='\c'
+else
+ n='-n'
+fi
+
+EGROUP="ircproxy"
+EUSER="ircproxy"
+PIDFILEPATH="$PKG_PREFIX/ircproxy/ircproxy.pid"
+
+if [ "$2" = "DEINSTALL" ]; then
+
+  echo "*-----------------------------------------------------------------------------"
+  echo "* Night Light IRC Proxy FreeBSD de-installation script"
+  echo "* Copyright (C) 2003 Jonas Kvinge, all rights reserved."
+  echo "*-----------------------------------------------------------------------------"
+
+  echo $n "Checking to see whether ircproxy is installed in crontab... $c"
+  grep -q "^[^#]*$PKG_PREFIX/ircproxy/ircproxy\.sh" /etc/crontab >/dev/null 2>&1
+  if [ $? -eq 0 ]; then
+    echo "YES"
+    echo $n "Removing ircproxy from crontab... $c"
+    sed -e "s:^[^#]*$PKG_PREFIX/ircproxy/ircproxy\.sh::" -e '/^$/d' /etc/crontab >/tmp/crontab || exit 1
+    mv /tmp/crontab /etc/crontab || exit
+    chmod 644 /etc/crontab || exit
+    echo "OK"
+  else
+    echo "NO"
+  fi
+  echo $n "Checking to see whether ircproxy is running... $c"
+  if [ -f $PIDFILEPATH ] ; then
+    if [ ! -r $PIDFILEPATH ] ; then
+      echo "ERROR"
+      echo "Error: Cannot read PID file $PIDFILEPATH!"
+      exit 1
+    fi
+    PID=`cat "$PIDFILEPATH"`
+    if ps -p "$PID" >/dev/null 2>&1 ; then
+      echo "YES"
+      for count in 1 2 3 4 5 6 7 8 9 10; do
+        if [ $count -ge 5 ]; then
+          echo $n "Sending KILL signal to ircproxy... $c"
+          kill -KILL "$PID" || break
+          echo "OK"
+          break
+        fi
+        echo $n "Sending TERM signal to ircproxy and waiting two seconds... $c"
+        kill -TERM "$PID" || break
+        sleep 2
+        if ps -p `cat "$PIDFILEPATH"` >/dev/null 2>&1 ; then
+           echo "Still Running!"
+        else
+          echo "Successfully terminated!"
+          break
+        fi
+      done
+    else
+      echo "NO"
+    fi
+  else
+    echo "NO"
+  fi
+fi
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+
+  echo "*-----------------------------------------------------------------------------"
+  echo "* Night Light IRC Proxy FreeBSD post de-installation script"
+  echo "* Copyright (C) 2003 Jonas Kvinge, all rights reserved."
+  echo "*-----------------------------------------------------------------------------"
+
+  echo $n "Checking if $PKG_PREFIX/ircproxy exist... $c"
+  if [ -d "$PKG_PREFIX/ircproxy" ]; then
+    echo "YES"
+    echo $n "Removing $PKG_PREFIX/ircproxy... $c"
+    rm -R -f "$PKG_PREFIX/ircproxy" && echo "OK" || exit 1
+  else
+    echo "NO"
+  fi
+  echo $n "Checking if $EGROUP group exist... $c"
+  pw group show ${EGROUP} >/dev/null 2>&1
+  if [ $? -eq 0 ] ; then
+    echo "YES"
+    echo $n "Removing the $EGROUP group from the system... $c"
+    pw groupdel -n "$EGROUP" && echo "OK" || exit 1
+  else
+    echo "NO"
+  fi
+  echo $n "Checking if $EUSER user account exist... $c"
+  pw user show ${EUSER} >/dev/null 2>&1
+  if [ $? -eq 0 ] ; then
+    echo "YES"
+    echo $n "Removing the $EUSER user account from the system... $c"
+    pw userdel -n "$EUSER" && echo "OK" || exit 1
+  else
+    echo "NO"
+  fi
+fi
+
+exit 0
