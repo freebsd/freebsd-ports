@@ -64,7 +64,7 @@ Acrobat4/bin/acroread
 bin/acroread4
 @exec ln -sf ../../Resource/Font/ %D/Acrobat4/Reader/%%ARCHDIR%%/fonts
 @unexec rm -f %D/Acrobat4/Reader/%%ARCHDIR%%/fonts
-@exec ln -sf ../../res %D/Acrobat4/Reader/%%ARCHDIR%%/res
+@exec ln -sf ../res %D/Acrobat4/Reader/%%ARCHDIR%%/res
 @unexec rm -f %D/Acrobat4/Reader/%%ARCHDIR%%/res
 @exec echo "Be sure to read the license agreement in"
 @exec echo "%D/Acrobat4/Reader/License.pdf"
