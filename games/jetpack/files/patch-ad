@@ -1,0 +1,19 @@
+*** initx.c.orig	Mon Nov  8 15:16:00 1993
+--- initx.c	Wed Sep 21 00:32:35 1994
+***************
+*** 44,50 ****
+  	resulting fontname right into the code.
+  */
+  
+! static char	*fontname = "-*-fixed-medium-r-normal--*-70-*-*-c-*-*-*";
+  static char	*bigfontname = "-*-courier-bold-r-normal--*-180-*-*-m-150-*-*";
+  
+  /*	init_X opens the display and sets up all the color stuff
+--- 44,50 ----
+  	resulting fontname right into the code.
+  */
+  
+! static char	*fontname = "-misc-fixed-medium-r-semicondensed--13-120-75-75-c-*-*-*";
+  static char	*bigfontname = "-*-courier-bold-r-normal--*-180-*-*-m-150-*-*";
+  
+  /*	init_X opens the display and sets up all the color stuff
