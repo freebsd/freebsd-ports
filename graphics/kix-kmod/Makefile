@@ -18,10 +18,16 @@ COMMENT=	A graphical screensaver kernel module
 BROKEN=		"Requires kernel source (/usr/src/sys) to build"
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64
+CFLAGS+=	-fPIC
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/kix_saver.ko ${PREFIX}/lib
 
 post-install:
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
