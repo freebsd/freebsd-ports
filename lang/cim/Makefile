@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cim
-PORTVERSION=	3.33
+PORTVERSION=	3.36
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/cim/
 
