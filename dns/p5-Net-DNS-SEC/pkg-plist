@@ -4,10 +4,12 @@ lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/DS.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/KEY.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/NXT.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/SIG.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/SIG/Private.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/DNS/SEC/.packlist
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/DNS/SEC 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net/DNS     2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Net         2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/SIG		 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR                     2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net/DNS                        2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Net                            2>/dev/null || true
