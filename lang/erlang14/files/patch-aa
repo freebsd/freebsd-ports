@@ -1,0 +1,26 @@
+*** erts/etc/unix/Install.src.ORIG	Tue Nov 23 16:05:11 1999
+--- erts/etc/unix/Install.src	Thu Dec 30 16:39:15 1999
+***************
+*** 165,174 ****
+  # Fixing the man pages
+  #
+  
+! if [ -d $ERL_ROOT/man ]
+! then
+!     cd $ERL_ROOT
+!     ./misc/format_man_pages $ERL_ROOT
+! fi
+! 
+  
+--- 165,175 ----
+  # Fixing the man pages
+  #
+  
+! # This is not needed!
+! # if [ -d $ERL_ROOT/man ]
+! # then
+! #     cd $ERL_ROOT
+! #     ./misc/format_man_pages $ERL_ROOT
+! # fi
+  
++ exit 0
