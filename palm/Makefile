@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += gnomepilot
     SUBDIR += imgvtopgm
     SUBDIR += isilo
     SUBDIR += jpilot
