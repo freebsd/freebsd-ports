@@ -1,0 +1,21 @@
+IIIMF stands for Internet/Intranet Input Method Framework.
+IIIMF is designed to be the next generation of input method framework
+which provides the following capabilities;
+
+* Multiplatform, platform independent.
+* Multlingual and Full UNICODE support, but satisfactory for native speakers.
+* Windowing System Independent.
+* Multiple language engines concurrently run.
+* Multiuser.
+* Distributed, lightweight clients and scalable server.
+* Extensible in multiple means.
+* Input method protocol efficient enough to be used over low-speed modem
+  connection.
+* Easy input method engine development with plugin API.
+* Easy input method enabling with libiiimcf, even on console apps.
+* Small core part to start from.
+
+WWW: http://www.openi18n.org/subgroups/im/IIIMF/
+
+- Kuang-che Wu
+  kcwu@csie.org
