@@ -28,6 +28,9 @@ pre-install:
 	fi)
 
 post-install:
+.if !defined(NOMANCOMPRESS)
+	gzip -9nf ${PREFIX}/man/man1/kaffe.1
+.endif
 	test -d ${PREFIX}/share/kaffe || mkdir -p ${PREFIX}/share/kaffe
 	install -c -m 644  ${WRKSRC}/license.terms ${PREFIX}/share/kaffe
 	/sbin/ldconfig -m ${PREFIX}/lib
