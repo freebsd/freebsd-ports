@@ -1609,13 +1609,16 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>gdk-pixbuf -- image decoding vulnerabilities</topic>
     <affects>
       <package>
-	<name>gdk-pixbuf</name>
 	<name>linux-gdk-pixbuf</name>
 	<range><ge>0</ge></range>
       </package>
       <package>
 	<name>gtk</name>
 	<range><ge>2.0</ge><lt>2.4.9_1</lt></range>
+      </package>
+      <package>
+	<name>gdk-pixbuf</name>
+	<range><lt>0.22.0_2</lt></range>
       </package>
     </affects>
     <description>
@@ -1639,7 +1642,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-09-15</discovery>
       <entry>2004-09-15</entry>
-      <modified>2004-09-18</modified>
+      <modified>2004-10-12</modified>
     </dates>
   </vuln>
 
