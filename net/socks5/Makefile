@@ -34,10 +34,12 @@ CONFIGURE_ARGS=	--with-libconffile=${PREFIX}/etc/libsocks5.conf \
 		${EXTRA_CONFIGURE_ARGS}
 MAN1=		runsocks.1 socks5.1 stopsocks.1 socks5_clients.1
 MAN5=		libsocks5.conf.5 socks5.conf.5
-CONFIGURE_ENV=  LIBS=-lcrypt
+CONFIGURE_ENV=	LIBS=-lcrypt
+
+.include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE="NEC requires that you grab the dist files from their web site at http://www.socks.nec.com/cgi-bin/download.pl .  Please make sure you have ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR} and run make again."
+IGNORE="NEC requires that you grab the dist files from their web site at http://www.socks.nec.com/cgi-bin/download.pl .  Please make sure you have ${DISTNAME}${EXTRACT_SUFX} in ${DISTDIR} and run make again"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
