@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bglibs
-PORTVERSION=	1.016
+PORTVERSION=	1.017
 CATEGORIES=	devel
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
@@ -16,8 +16,6 @@ COMMENT=	One stop library package by Bruce Guenter
 LDFLAGS?=	-s
 
 DOCS=		NEWS README TODO doc/html/*
-
-BROKEN=		Unfetchable
 
 do-configure:
 	${ECHO_CMD} "${PREFIX}"		> ${WRKSRC}/conf-home
