@@ -1,9 +1,10 @@
 bin/gnapster
-share/gnome/gnapster/themes/cyblue.theme
-share/gnome/gnapster/themes/cypress.theme
-share/gnome/gnapster/themes/default.theme
-share/gnome/gnapster/themes/faded.theme
-share/gnome/pixmaps/gnapster.png
+%%GNOME:%%share/gnome/apps/Applications/gnapster.desktop
+%%DATADIR%%/gnapster/themes/cyblue.theme
+%%DATADIR%%/gnapster/themes/cypress.theme
+%%DATADIR%%/gnapster/themes/default.theme
+%%DATADIR%%/gnapster/themes/faded.theme
+%%DATADIR%%/gnapster/pixmaps/gnapster.png
 share/locale/ca/LC_MESSAGES/gnapster.mo
 share/locale/da/LC_MESSAGES/gnapster.mo
 share/locale/de/LC_MESSAGES/gnapster.mo
@@ -19,5 +20,5 @@ share/locale/pt/LC_MESSAGES/gnapster.mo
 share/locale/ru/LC_MESSAGES/gnapster.mo
 share/locale/sv/LC_MESSAGES/gnapster.mo
 share/locale/tr/LC_MESSAGES/gnapster.mo
-@dirrm share/gnome/gnapster/themes
-@dirrm share/gnome/gnapster
+@dirrm %%DATADIR%%/gnapster/themes
+@dirrm %%DATADIR%%/gnapster
