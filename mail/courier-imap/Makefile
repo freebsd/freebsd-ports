@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	courier-imap
-PORTVERSION=	3.0.3
-PORTREVISION=	1
+PORTVERSION=	3.0.4
+PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -169,7 +169,8 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-drac
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif
 
-MAN1=		couriertcpd.1 maildiracl.1 maildirkw.1 maildirmake.1
+MAN1=		courierlogger.1 couriertcpd.1 maildiracl.1 maildirkw.1 \
+		maildirmake.1
 MAN7=		authlib.7
 MAN8=		makeuserdb.8 userdb.8 userdbpw.8 \
 		deliverquota.8 imapd.8 mkimapdcert.8 mkpop3dcert.8
