@@ -1,0 +1,11 @@
+--- man/Makefile.in.orig	Wed Aug 27 23:02:13 2003
++++ man/Makefile.in	Wed Aug 27 23:03:09 2003
+@@ -393,7 +393,7 @@
+ 	groff -Tascii -man $(man_MANS) > Manpage
+ 	gcc cleaner.c -o cleaner
+ 	./cleaner Manpage
+-	dos2unix Manpage.txt
++#	dos2unix Manpage.txt
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

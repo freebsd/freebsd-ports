@@ -51,6 +51,7 @@
     SUBDIR += sms_client
     SUBDIR += snooper
     SUBDIR += sredird
+    SUBDIR += tilp
     SUBDIR += tits
     SUBDIR += tkhylafax
     SUBDIR += tkscanfax
