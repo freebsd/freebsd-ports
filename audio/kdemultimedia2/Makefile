@@ -7,6 +7,7 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -16,6 +17,8 @@ MAINTAINER=	kde@FreeBSD.org
 
 BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
 		automake14:${PORTSDIR}/devel/automake14
+LIB_DEPENDS=	ogg.2:${PORTSDIR}/audio/libogg \
+		vorbis.0:${PORTSDIR}/audio/libvorbis
 RUN_DEPENDS=	xanim:${PORTSDIR}/graphics/xanim
 
 USE_KDELIBS_VER=2
@@ -25,30 +28,13 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-qt-includes=${X11BASE}/include/qt2 \
 		--with-qt-libraries=${X11BASE}/lib
 
+_NO_KDE_FINAL=	yes
 .include "${.CURDIR}/../../x11/kde2/Makefile.kde"
 
 USE_GMAKE=	yes
 MAKE_ENV=	${CONFIGURE_ENV}
 
 .include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/include/ogg/ogg.h) \
-    || exists(${LOCALBASE}/include/vorbis/vorbisfile.h)
-WITH_OGGVORBIS=	yes
-.endif
-
-.if defined(WITH_OGGVORBIS) && ${WITH_OGGVORBIS} == yes
-LIB_DEPENDS+=	ogg.2:${PORTSDIR}/audio/libogg \
-		vorbis.0:${PORTSDIR}/audio/libvorbis
-PLIST_SUB+=	OGGVORBIS=""
-.else
-PLIST_SUB+=	OGGVORBIS="@comment "
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} "If you want to compile with ogg/vorbis support,"
-	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_OGGVORBIS=yes\""
-	@${ECHO_MSG}
-.endif
 
 pre-configure:
 	${PERL} -pi -e "s@all_includes=\"@all_includes=\"-I/usr/include @g" \
