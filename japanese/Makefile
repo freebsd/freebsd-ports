@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.41 1996/11/20 13:51:30 asami Exp $
+# $Id: Makefile,v 1.42 1996/11/29 07:33:37 tg Exp $
 #
 
     SUBDIR += Canna
@@ -47,10 +47,8 @@
     SUBDIR += sj3
     SUBDIR += sjxa
     SUBDIR += skk
-    SUBDIR += tcl
     SUBDIR += tcl75
     SUBDIR += tgif
-    SUBDIR += tk
     SUBDIR += tk41
     SUBDIR += today
     SUBDIR += vfghostscript
