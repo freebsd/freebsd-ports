@@ -1,5 +1,5 @@
 *** Imakefile.orig	Mon Apr  6 12:59:31 1992
---- Imakefile	Thu Oct  6 08:43:31 1994
+--- Imakefile	Mon Jan  2 11:51:53 1995
 ***************
 *** 1,54 ****
 ! 	SRCS = bitmap.c bonus.c collision.c demo.c draw.c erase.c events.c\
@@ -49,14 +49,14 @@
   DependTarget()
   DependDependency()
   
-  InstallNonExec(levels/000,$(LEVELFILE)000)
+! InstallNonExec(levels/000,$(LEVELFILE)000)
   
-  # oops, I can't figure how to override the template default to install the
-  # man page as jetpack.1, so I install both and remove the bad one.
-  install.man:: jetpack.man
+! # oops, I can't figure how to override the template default to install the
+! # man page as jetpack.1, so I install both and remove the bad one.
+! install.man:: jetpack.man
 ! 	$(INSTALL) -c $(INSTMANFLAGS) jetpack.man $(MANDIR)/jetpack.1
 ! 	@rm -f $(MANDIR)/jetpack.n
---- 1,58 ----
+--- 1,53 ----
 ! SRCS = bitmap.c bonus.c collision.c demo.c draw.c erase.c events.c\
   	 gameover.c initx.c main.c maze.c message.c normal.c quitx.c scores.c\
   	 setinmaze.c setup.c special.c time.c update.c windowx.c
@@ -67,8 +67,9 @@
 ! PROGRAMS = jetpack
   
 ! BINDIR = $(PREFIX)/bin
-! LIBDIR = $(PREFIX)/lib/jetpack
+! LIBDIR = $(PREFIX)/lib/X11/jetpack
 ! MANDIR = $(PREFIX)/man/man6
+! MANSUFFIX = 6
   
   # These defines override the template defaults. Trash em if you want to
   # use the template locations
@@ -105,13 +106,7 @@
   DependTarget()
   DependDependency()
   
-+ install::
-+ 	MakeDir($(LIBDIR))
-+ 
-  InstallNonExec(levels/000,$(LEVELFILE)000)
+! install::
+! 	MakeDir($(LIBDIR))
   
-  # oops, I can't figure how to override the template default to install the
-  # man page as jetpack.1, so I install both and remove the bad one.
-  install.man:: jetpack.man
-! 	$(INSTALL) -c $(INSTMANFLAGS) jetpack.man $(MANDIR)/jetpack.6
-! 	@rm -f $(MANDIR)/jetpack.1*
+! InstallNonExec(levels/000,$(LEVELFILE)000)
