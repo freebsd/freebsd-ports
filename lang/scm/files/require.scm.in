@@ -1,2 +1,2 @@
-(define (library-vicinity) "%%PREFIX%%/share/scm/slib/")
+(define (library-vicinity) "%%PREFIX%%/lib/scm/slib/")
 (load (in-vicinity (library-vicinity) "require"))

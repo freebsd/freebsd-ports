@@ -7,6 +7,7 @@
 
 PORTNAME=	scm
 PORTVERSION=	5d5
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
 DISTFILES=	scm5d5.zip slib2d3.zip slib-psd1-3.tar.gz
@@ -28,38 +29,56 @@ PLIST_SUB=	VERSION=${PORTVERSION}
 SCM_DATA=	COPYING Iedline.scm Init${PORTVERSION}.scm Link.scm \
 		Macexp.scm Macro.scm Transcen.scm Tscript.scm mkimpcat.scm \
 		r4rstest.scm
+SCM_MODULES=	crs.so edline.so gsubr.so ioext.so posix.so ramap.so \
+		record.so rgx.so sc2.so socket.so unix.so
 
 post-extract:
 	@${TAR} -C ${WRKDIR} -zxf ${DISTDIR}/slib-psd1-3.tar.gz
+	@${CP} ${FILESDIR}/require.scm.in ${WRKDIR}/require.scm
 
-do-configure:
-	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" \
-		${FILESDIR}/require.scm.in > ${WRKDIR}/require.scm
+post-patch:
+	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKDIR}/require.scm
+	@${PERL} -pi -e 's|%%CC%%|${CC}|g ; \
+		 s|%%CFLAGS%%|${CFLAGS}|g' ${WRKSRC}/build.scm
 
 post-build:
-	cd ${WRKSRC}; SCMLIT="./scmlit" ${SH} ./build \
-		-F "arrays bignums cautious inexact" \
-		-h system \
-		-o scm \
-		-s "${DATADIR}/"
+	@cd ${WRKSRC} \
+		&& SCMLIT="./scmlit" ${SH} ./build \
+		 -F "arrays bignums cautious inexact macro dynamic-linking" \
+		 -h system \
+		 -o scm \
+		 -s "${PREFIX}/lib/scm/" \
+		&& SCMLIT="./scmlit" ${SH} ./build \
+		 -F edit-line \
+		 -h system \
+		 -t dll \
+		&& SCMLIT="./scmlit" ${SH} ./build \
+		 -F curses \
+		 -h system \
+		 -t dll \
+		&& SCMLIT="./scmlit" ${SH} ./build \
+		 -c "sc2.c rgx.c record.c gsubr.c ioext.c posix.c unix.c \
+		     socket.c ramap.c" \
+		 -h system \
+		 -t dll
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/scm ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/scmlit ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/scm.1 ${MANPREFIX}/man/man1
-	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKDIR}/require.scm ${DATADIR}
-.for file in ${SCM_DATA}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DATADIR}
+	@${MKDIR} ${PREFIX}/lib/scm
+	${INSTALL_DATA} ${WRKDIR}/require.scm ${PREFIX}/lib/scm
+.for file in ${SCM_DATA} ${SCM_MODULES}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/lib/scm
 .endfor
-	@${MKDIR} ${DATADIR}/slib
-	${INSTALL_DATA} ${WRKDIR}/slib/*.scm ${DATADIR}/slib
-	@${MKDIR} ${DATADIR}/slib/psd
-	${INSTALL_DATA} ${WRKDIR}/slib/psd/*.scm ${DATADIR}/slib/psd
+	@${MKDIR} ${PREFIX}/lib/scm/slib
+	${INSTALL_DATA} ${WRKDIR}/slib/*.scm ${PREFIX}/lib/scm/slib
+	@${MKDIR} ${PREFIX}/lib/scm/slib/psd
+	${INSTALL_DATA} ${WRKDIR}/slib/psd/*.scm ${PREFIX}/lib/scm/slib/psd
 	${INSTALL_DATA} ${WRKDIR}/scm/scm.info ${PREFIX}/info
 	@install-info ${PREFIX}/info/scm.info ${PREFIX}/info/dir
 	${INSTALL_DATA} ${WRKDIR}/slib/slib.info ${PREFIX}/info
 	@install-info ${PREFIX}/info/slib.info ${PREFIX}/info/dir
-	cd ${DATADIR} && ${PREFIX}/bin/scm -lmkimpcat.scm
+	cd ${PREFIX}/lib/scm && ${PREFIX}/bin/scm -lmkimpcat.scm
 
 .include <bsd.port.mk>
