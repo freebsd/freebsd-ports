@@ -4,7 +4,7 @@
 # Date created:         15 May 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.2 1996/11/12 02:17:36 obrien Exp $
+# $Id: Makefile,v 1.3 1997/05/19 19:42:36 ache Exp $
 #
 
 DISTNAME=       rarbsd
@@ -16,7 +16,7 @@ EXTRACT_SUFX=   .exe
 
 MAINTAINER=     ache@FreeBSD.ORG
 
-RESTRICTED=     "only unmodified original SFX can be distributed"
+NO_PACKAGE=     yes # only unmodified original package can be distributed
 
 NO_WRKSUBDIR=   yes
 EXTRACT_CMD=
