@@ -1,0 +1,18 @@
+--- Makefile.orig	Wed Mar 26 02:29:39 2003
++++ Makefile	Wed Mar 26 02:41:59 2003
+@@ -1,12 +1,12 @@
+ CC = gcc
+ 
+-CFLAGS= -O2 -fno-strength-reduce
++CFLAGS= -O2 -fno-strength-reduce -DSIGUNUSED=32
+ 
+-INC =  -I/usr/X11R6/include -I.
++INC =  -I/usr/local/include -I/usr/X11R6/include -I.
+ 
+ SRC = main.c ime.c AddPhraseWindow.c IC.c InputWindow.c MainWindow.c MyErrorsHandlers.c punc.c py.c PYFA.c pyParser.c pyMapTable.c SetLocale.c tools.c wbx.c window.c xim.c qw.c sp.c py-2.c
+ 
+-LIB = -L/usr/X11R6/lib -lX11
++LIB = -L/usr/local/lib -L/usr/X11R6/lib -lX11 -liconv
+ 
+ OBJ = $(SRC:.c=.o)
+ 

@@ -1,0 +1,8 @@
+bin/fcitx
+share/fcitx/punc.mb
+share/fcitx/pySym.mb
+share/fcitx/pybase.mb
+share/fcitx/pyphrase.mb
+share/fcitx/sp.dat
+share/fcitx/wbx.mb
+@dirrm share/fcitx
