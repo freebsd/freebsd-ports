@@ -9,7 +9,7 @@ if [ "x$1" = "xINSTALL" -o "x$2" = "xINSTALL" ]; then
     exit 0
   else
     echo "-----------------------------------------------------------"
-    echo "  TMDA requires Python version 2.0 or greater -"
+    echo "  TMDA requires Python version 2.1 or greater -"
     echo "  please update your Python installation before proceeding."
     echo "-----------------------------------------------------------"
     exit 1
