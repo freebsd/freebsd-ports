@@ -218,6 +218,9 @@ sub check_version {
 sub fix_up_file {
 	my $filename = shift;
 
+	# not present - either removed or let cvs deal with it.
+	return 0 unless -f $filename;
+
 	open F, "< $filename" or die "Can't open $filename!\n";
 	my @file = <F>;
 	close F;
