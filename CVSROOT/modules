@@ -1214,7 +1214,8 @@ electricfence	ports/devel/ElectricFence
 elf2exe		src/usr.sbin/elf2exe
 elfio		ports/devel/elfio
 elftoaout	ports/devel/elftoaout
-elib-emacs	ports/devel/elib-emacs
+elib		ports/devel/elib
+elib-emacs19	ports/devel/elib-emacs19
 elib-emacs20	ports/devel/elib-emacs20
 elisp-manual	ports/lang/elisp-manual
 elk		ports/lang/elk
