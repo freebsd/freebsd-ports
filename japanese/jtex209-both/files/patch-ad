@@ -86,7 +86,7 @@
   SITEDIR=..
   #CC=gcc
   OPT=-O
-! CFLAGS=$(OPT) -m486 -I$(SITEDIR) -D_HAVE_PRAM_H
+! CFLAGS=$(OPT) -I$(SITEDIR) -D_HAVE_PRAM_H
   LDFLAGS=
   RM=/bin/rm
   
