@@ -18,7 +18,10 @@ COMMENT=	DNS::Zone is set of perl modules for name service zone files
 
 PERL_CONFIGURE=	yes
 
-DOCSDIR=	${PREFIX}/share/doc/p5-DNS-Zone
+post-patch:
+	${FIND} ${WRKSRC} -name '*.pm' -o -name '*.t' -o -name '*.PL' | \
+	${XARGS} ${PERL} -pi -e '$$_="" if /^use 5/;' \
+			     -e '$$_="" if /(use|no) warnings/;'
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -26,10 +29,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} < 500600
-IGNORE= "Perl 5.6 or newer required. Install lang/perl5 or lang/perl5.8 and try again."
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
