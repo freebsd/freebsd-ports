@@ -8,10 +8,9 @@
 PORTNAME=	c-client-maildir
 PORTVERSION=	4.7c
 CATEGORIES=	mail devel
-MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
-		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/mail/ \
-		http://mirror.nucba.ac.jp/mirror/imap/ \
-		ftp://ftp.uni-halle.de/pub/mail/pine/
+MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/old/ \
+		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/imap/old/ \
+		http://mirror.nucba.ac.jp/mirror/imap/old/
 DISTNAME=	imap-${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 DISTFILES=	${DISTNAME}2${EXTRACT_SUFX}
