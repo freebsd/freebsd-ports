@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.research.canon.com.au/pub/misc/ici/ \
 		ftp://ftp.ntua.gr/pub/lang/ici/ \
 		http://www.zeta.org.au/~atrn/ici/distfiles/
 
-MAINTAINER=	andy@research.canon.com.au
+MAINTAINER=	atrn@zeta.org.au
 
 MAKEFILE=	Makefile.bsd
 MAN1=		ici.1
