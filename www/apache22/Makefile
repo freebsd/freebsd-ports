@@ -3,7 +3,7 @@
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 ache@nagual.pp.ru
 #
-# $Id: Makefile,v 1.37 1997/08/12 18:20:00 peter Exp $
+# $Id: Makefile,v 1.38 1997/08/13 15:09:53 ache Exp $
 #
 
 DISTNAME=       apache_1.3a1
@@ -23,9 +23,6 @@ post-patch:
 	sed 's;^#*OPTIM=.*;OPTIM= -DSERVER_SUBVERSION=\\"${VERS_ID}\\";' \
 	< Configuration.old > Configuration
 .endif
-
-post-patch:
-	${CP} /usr/include/md5.h ${WRKSRC}/src/md5.h
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
