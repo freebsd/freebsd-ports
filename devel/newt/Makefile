@@ -18,6 +18,7 @@ EXTRACT_SUFX=	.src.rpm
 MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
+		tcl82.1:${PORTSDIR}/lang/tcl82 \
 		popt.0:${PORTSDIR}/devel/popt
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/misc/rpm \
 		python:${PORTSDIR}/lang/python
