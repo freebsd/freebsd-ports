@@ -516,6 +516,7 @@
     SUBDIR += ossp-l2
     SUBDIR += ossp-val
     SUBDIR += ossp-var
+    SUBDIR += ossp-xds
     SUBDIR += p4.el
     SUBDIR += p4api
     SUBDIR += p4db

@@ -1,0 +1,26 @@
+# New ports collection makefile for:   OSSP xds
+# Date created:                22 February 2004
+# Whom:                        Kimura Fuyuki <fuyuki@nigredo.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	xds
+PORTVERSION=	0.9.0
+CATEGORIES=	devel
+MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/${PORTNAME}/
+PKGNAMEPREFIX=	ossp-
+
+MAINTAINER=	fuyuki@nigredo.org
+COMMENT=	A generic and extensible framework for serialization
+
+USE_LIBTOOL_VER=	15
+INSTALLS_SHLIB=	yes
+
+MAN1=		xds-config.1
+MAN3=		xds.3
+
+test:
+	cd ${WRKSRC}; make check
+
+.include <bsd.port.mk>
