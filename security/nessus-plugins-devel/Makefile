@@ -29,10 +29,10 @@ WRKSRC=		${WRKDIR}/nessus-plugins
 
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>  
-                            
-.if ${OSVERSION} >= 400001     
-BROKEN=		"Can't be built successfully in -CURRENT"       
-.endif 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400001
+BROKEN=		"Can't be built successfully in -CURRENT"
+.endif
 
 .include <bsd.port.mk>
