@@ -37,6 +37,7 @@ CAT=/bin/cat
 DATE=/bin/date
 ENV=/usr/bin/env
 MD5=/sbin/md5
+MKDIR="/bin/mkdir -p"
 MKTEMP=/usr/bin/mktemp
 RM=/bin/rm
 SED=/usr/bin/sed
@@ -53,9 +54,16 @@ STYLESHEET="%%DATADIR%%/vuxml2portaudit.xslt"
 
 PUBLIC_HTML="${PUBLIC_HTML:-$HOME/public_html/portaudit}"
 HTMLSHEET="%%DATADIR%%/vuxml2html.xslt"
-BASEURL="http://people.freebsd.org/~eik/portaudit/"
+BASEURL="${BASEURL:-http://people.freebsd.org/~eik/portaudit/}"
 
 PORTAUDIT2VUXML="%%DATADIR%%/portaudit2vuxml.awk"
+
+[ -d "$DATABASEDIR" ] || $MKDIR "$DATABASEDIR"
+
+if [ ! -w "$DATABASEDIR" ]; then
+    echo "$DATABASEDIR is not writable by you, exiting."
+    exit 1
+fi
 
 TMPNAME=`$BASENAME "$0"`
 
@@ -64,7 +72,7 @@ VULURL="http://cvsweb.freebsd.org/ports/security/vuxml/vuln.xml?rev=$VULVER"
 
 [ -r "%%PREFIX%%/etc/packaudit.conf" ] && . "%%PREFIX%%/etc/packaudit.conf"
 
-if [ -d "$PUBLIC_HTML" ]; then
+if [ -d "$PUBLIC_HTML" -a -w "$PUBLIC_HTML" ]; then
   VULNMD5=`$CAT "$VUXMLDIR/vuln.xml" "$PORTAUDITDBDIR/database/portaudit.xml" "$PORTAUDITDBDIR/database/portaudit.txt" | $MD5`
   if [ -f "$PUBLIC_HTML/portaudit.md5" ]; then
     VULNMD5_OLD=`$CAT "$PUBLIC_HTML/portaudit.md5"`
