@@ -11,7 +11,7 @@
 #
 # Add the following lines to /etc/rc.conf to enable clamav-milter:
 #
-#clamav_milter="YES"
+#clamav_milter_enable="YES"
 #
 # See clamav-milter(1) for flags
 #
