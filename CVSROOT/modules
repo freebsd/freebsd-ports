@@ -3488,8 +3488,8 @@ kde3-i18n-mt	ports/misc/kde3-i18n-mt
 kde3-i18n-nl	ports/misc/kde3-i18n-nl
 kde3-i18n-nn	ports/misc/kde3-i18n-nn
 kde3-i18n-pl	ports/misc/kde3-i18n-pl
-kde3-i18n-pt	ports/misc/kde3-i18n-pt
-kde3-i18n-pt_BR	ports/misc/kde3-i18n-pt_BR
+kde3-i18n-pt	ports/portuguese/kde3-i18n
+kde3-i18n-pt_BR	ports/portuguese/kde3-i18n-pt_BR
 kde3-i18n-ro	ports/misc/kde3-i18n-ro
 kde3-i18n-sk	ports/misc/kde3-i18n-sk
 kde3-i18n-sl	ports/misc/kde3-i18n-sl
