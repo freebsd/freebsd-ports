@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icewm
-PORTVERSION= 	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://download.sourceforge.net/icewm/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
