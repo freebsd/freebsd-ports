@@ -1,0 +1,29 @@
+--- Imakefile.orig	Mon Jan 30 16:41:47 1995
++++ Imakefile	Tue Mar  4 23:50:35 1997
+@@ -31,7 +31,7 @@
+ /* */# Define MAILBOX_DIRECTORY if your mail spool is located in other than the
+ /* */# default /usr/spool/mail.  (If not specified, the default will be used.)
+ /* */#
+-/* */#    MAILBOX_DIR = -DMAILBOX_DIRECTORY=\"/usr/spool/mail\"
++    MAILBOX_DIR = -DMAILBOX_DIRECTORY=\"/var/mail\"
+ /* */#
+ /* */# Define DEFAULT_VISUAL if your copy of vi lies in some place other than
+ /* */# /usr/ucb.  (If not specified, /usr/ucb/vi will be the default editor.)
+@@ -41,7 +41,7 @@
+ /* */# Define DEFAULT_MAILER if your mail program is not the standard
+ /* */# /usr/ucb/Mail.  CAUTION - Operation is NOT guaranteed with other mailers.
+ 	
+-/* */# DEF_MAILER = -DDEFAULT_MAILER=\"/usr/ucb/Mail\"
++    DEF_MAILER = -DDEFAULT_MAILER=\"/usr/bin/Mail\"
+ 
+ /* */#
+ /* */# Define SIGACTION if your system utilizes the sigaction() call rather
+@@ -57,7 +57,7 @@
+         DEFINES = $(USE_DIRENT) $(X_FACE) $(XPM) $(REGEXP) $(XMAIL_DEFINES)
+ 
+         DEPLIBS = $(DEPXAWLIB) $(DEPXMULIB) $(DEPXTOOLLIB) $(DEPXLIB)
+-LOCAL_LIBRARIES = $(LIBXPM) $(XAWLIB) $(XMULIB) $(XTOOLLIB) $(XLIB) $(COMPFACE) $(LPT)
++LOCAL_LIBRARIES = $(LIBXPM) $(XAWLIB) $(XMULIB) $(XTOOLLIB) $(XLIB) $(COMPFACE) $(LPT) -lcompat
+ 
+            SRCS = Mailwatch.c HelpText.c actions.c callMail.c callbacks.c \
+ 		  confirm.c directory.c environs.c handler.c mail.c parser.c \
