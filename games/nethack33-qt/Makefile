@@ -22,7 +22,7 @@ MAKE_ENV=	CXX="${CXX}" MOC="${MOC}" LIBQT="-l${QTNAME}" \
 		QTCPPFLAGS="${QTCPPFLAGS}" QTCFGLIBS="${QTCFGLIBS}"
 MAN6=		dgn_comp.6 dlb.6 lev_comp.6 nethack.6 recover.6
 
-pre-everything:
+pre-everything::
 	@${ECHO} "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	@${ECHO} "!! You cannot install nethack and nethack-qt in parallel  !!"
 	@${ECHO} "!! But nethack-qt might read your prior nethack scores    !!"
