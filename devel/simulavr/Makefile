@@ -8,7 +8,7 @@
 PORTNAME=	simulavr
 PORTVERSION=	0.1.1
 CATEGORIES=	devel
-MASTER_SITES=	http://freesoftware.fsf.org/download/simulavr/
+MASTER_SITES=	http://savannah.nongnu.org/download/simulavr/
 
 MAINTAINER=	joerg@FreeBSD.org
 
