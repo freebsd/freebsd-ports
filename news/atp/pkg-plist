@@ -1,0 +1,10 @@
+bin/atp
+bin/atpdiag
+bin/rot13
+man/man1/atp.1.gz
+man/man1/atpdiag.1.gz
+man/man1/rot13.1.gz
+man/man3/editline.3.gz
+share/atp/atprc
+share/atp/taglines.atp
+@dirrm share/atp

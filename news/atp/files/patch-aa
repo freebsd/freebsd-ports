@@ -1,0 +1,42 @@
+--- Makefile.in.old	Fri May 15 16:34:21 1998
++++ Makefile.in	Fri May 15 16:35:02 1998
+@@ -20,7 +20,7 @@
+ mandir = $(prefix)/man
+ 
+ # path where your ATP data and configuration files will reside:
+-atphome = @ATPHOME@
++atphome = $(prefix)/share/atp
+ 
+ # permissions and ownership
+ bin_prm = 755
+@@ -78,7 +78,7 @@
+ # phony targets (a.k.a "forced" targets)
+ clean_targ = clean distclean clobber spotless mostlyclean unconvert
+ devel_targ = callmap check depend extract lint tags
+-instl_targ = install uninstall in_cfg in_man in_wrap
++instl_targ = install uninstall in_cfg in_man
+ misc_targ  = debug dvi info eline elinedb manifest 
+ .PHONY     : $(clean_targ) $(devel_targ) $(instl_targ) $(misc_targ)
+ 
+@@ -109,7 +109,7 @@
+ utils/rot13:
+ 	cd utils ; $(MAKE) rot13
+ 
+-install: in_bin in_man in_cfg in_wrap
++install: in_bin in_man in_cfg
+ 
+ in_cfg:	
+ 	@echo " "
+@@ -136,12 +136,6 @@
+ 	$(INSTALL) -m $(bin_prm) -o $(bin_own) -g $(bin_grp) ./atp $(bindir)/atp
+ 	$(INSTALL) -m $(bin_prm) -o $(bin_own) -g $(bin_grp) ./utils/atpdiag $(bindir)/atpdiag
+ 	$(INSTALL) -m $(bin_prm) -o $(bin_own) -g $(bin_grp) ./utils/rot13 $(bindir)/rot13
+-
+-in_wrap:
+-	@echo " "
+-	@echo "Now it's YOUR turn, please do this:"
+-	@echo "Set and export the environment variable: ATP=$(atphome)"
+-	@echo "Edit your $(atphome)/atprc and then read the docs!"
+ 
+ in_man:
+ 	@echo " "

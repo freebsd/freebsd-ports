@@ -1,0 +1,20 @@
+Each user who wishes to use ATP must do the following:
+
+1.  set environment variable ATP to the location where s/he
+    wishes configuration files located (e.g. ${HOME}/.qwk')
+
+2.  create the directory named above
+
+3.  copy the files in ${PREFIX}/share/atp into it
+
+4.  edit the atprc and taglines.atp file to contain whatever
+    data you want.
+
+5.  If you want atp to look good in xterms, you should get and install the
+    VGA font, available in the port "emulators/pcemu".  Then run ATP like
+    this: "xterm -fn vga -e atp".  Be sure to set "ansi = on", "color = on",
+    "charset = msdos", and "graphics = off" in your atprc file!  (You can
+    use atp in an xterm even without doing these steps, but you won't get
+    the pretty PC ANSI-style graphics characters!)
+
+see the atp(1) man page for more details.
