@@ -7,13 +7,10 @@
 #
 
 PORTNAME=	widentd
-PORTVERSION=	1.02
-CATEGORIES=	net
+PORTVERSION=	1.03
+CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.webweaving.org/widentd/
 EXTRACT_SUFX=	.tgz
-
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}${EXTRACT_SUFX}.asc
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	dirkx@webweaving.org
 COMMENT=	RFC1413 auth/identd daemon with fixed fake reply
