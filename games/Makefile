@@ -421,6 +421,7 @@
     SUBDIR += ssamtse
     SUBDIR += ssc
     SUBDIR += starlanes
+    SUBDIR += stratagus
     SUBDIR += stvef-paks
     SUBDIR += stvef-server
     SUBDIR += super_methane_brothers
