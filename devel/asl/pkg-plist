@@ -1,7 +1,8 @@
 bin/asl
-bin/plist
 bin/p2hex
 bin/p2bin
+bin/pbind
+bin/plist
 share/asl/80c50x.inc
 share/asl/80c552.inc
 share/asl/as.msg
