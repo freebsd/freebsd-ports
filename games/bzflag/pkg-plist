@@ -55,6 +55,7 @@ share/bzflag/land.wav
 share/bzflag/laser.wav
 share/bzflag/lock.wav
 share/bzflag/menu_arrow.png
+share/bzflag/message_admin.wav
 share/bzflag/message_private.wav
 share/bzflag/message_team.wav
 share/bzflag/missile.png
