@@ -1,9 +1,9 @@
-wmhm uses /dev/io OR the SMBus Driver for PIIX4 provided by Takanori Watanabe 
-to gather information from LM78/79 sensors to provide motherboard temperature, 
-cpu temperature, fan speeds, voltages  and a voltmeter in a nice looking 
+wmhm uses /dev/io or the SMBus Driver for PIIX4 provided by Takanori Watanabe 
+to gather information from hardware sensors and provide motherboard temperature, 
+cpu temperature(s), fan speeds, voltages and a voltmeter in a nice looking 
 WindowMaker dock app.
 
-WWW: http://mongol.dhis.net/wmhm/
+WWW: http://muir.yi.org/wmhm/
 
 - mikem
 mmuir@es.co.nz

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	wmhm
-PORTVERSION=	1.42
+PORTVERSION=	1.43
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	http://www.es.co.nz/~mmuir/ \
-		http://muir.dhis.net/wmhm/
+		http://muir.yi.org/wmhm/
 
 MAINTAINER=	mmuir@es.co.nz
 
