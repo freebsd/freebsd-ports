@@ -10,7 +10,7 @@ PORTVERSION=	0.9.8.1
 CATEGORIES=	news
 MASTER_SITES=	http://slrn.sourceforge.net/cleanscore/
 
-MAINTAINER=	obraun@informatik.unibw-muenchen.de
+MAINTAINER=	obraun@FreeBSD.org
 
 USE_PERL5=	yes
 NO_BUILD=	yes

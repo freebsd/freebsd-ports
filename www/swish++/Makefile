@@ -11,7 +11,7 @@ PORTVERSION=	5.9.4
 CATEGORIES=	www textproc
 MASTER_SITES=	http://homepage.mac.com/pauljlucas/software/
 
-MAINTAINER=	obraun@informatik.unibw-muenchen.de
+MAINTAINER=	obraun@FreeBSD.org
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 

@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://cvs.haskell.org/Hugs/downloads/
 DISTNAME=	${PORTNAME}-${HUGS_DATE}
 
-MAINTAINER=	obraun@informatik.unibw-muenchen.de
+MAINTAINER=	obraun@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/hugs98-${HUGS_DATE}/src
 

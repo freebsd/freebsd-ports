@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.it.usyd.edu.au/jeff/lout/
 MASTER_SITE_SUBDIR=	support/lout
 
-MAINTAINER=	obraun@informatik.unibw-muenchen.de
+MAINTAINER=	obraun@FreeBSD.org
 
 USE_GMAKE=	yes
 MAKEFILE=	makefile
