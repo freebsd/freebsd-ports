@@ -1,6 +1,6 @@
 # ex:ts=8
-# Ports collection makefile for:  foo
-# Date created:			  Mon Feb 03, 2000
+# Ports collection makefile for:  ski
+# Date created:			  Mon Oct 15, 2001
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
 # $FreeBSD$
