@@ -1,1 +1,5 @@
-dummy to keep portlint happy
+MD5 (glib-2.0-docs.tar.gz) = IGNORE
+MD5 (gobject-2.0-docs.tar.gz) = IGNORE
+MD5 (gdk-2.0-docs.tar.gz) = IGNORE
+MD5 (gdk-pixbuf-2.0-docs.tar.gz) = IGNORE
+MD5 (gtk-2.0-docs.tar.gz) = IGNORE
