@@ -38,7 +38,6 @@ share/gnome/pixmaps/truevision/view_restore.png
 share/gnome/pixmaps/truevision/view_rolldown.png
 share/gnome/pixmaps/truevision/view_rollup.png
 share/gnome/pixmaps/truevision/warning.xpm
-@dirrm share/gnome/pixmaps/truevision
 share/gnome/truevision/materials/Effects/Fire1.tvm
 share/gnome/truevision/materials/Finish/dull.tvm
 share/gnome/truevision/materials/Finish/luminous.tvm
@@ -104,19 +103,20 @@ share/gnome/truevision/materials/Woods/Golden_Oak.tvm
 share/gnome/truevision/materials/Woods/Soft_Pine.tvm
 share/gnome/truevision/materials/Woods/dmfwood6.tvm
 share/gnome/truevision/materials/Woods/mahogany.tvm
-@dirrm share/gnome/truevision/materials/Effects
-@dirrm share/gnome/truevision/materials/Finish
-@dirrm share/gnome/truevision/materials/Glass
-@dirrm share/gnome/truevision/materials/Metals/Brass
-@dirrm share/gnome/truevision/materials/Metals/Chrome
-@dirrm share/gnome/truevision/materials/Metals/Copper
-@dirrm share/gnome/truevision/materials/Metals/Golds
-@dirrm share/gnome/truevision/materials/Metals
-@dirrm share/gnome/truevision/materials/Skies
-@dirrm share/gnome/truevision/materials/Stars
-@dirrm share/gnome/truevision/materials/Stones
+share/locale/de/LC_MESSAGES/truevision.mo
+share/locale/fr/LC_MESSAGES/truevision.mo
 @dirrm share/gnome/truevision/materials/Woods
+@dirrm share/gnome/truevision/materials/Stones
+@dirrm share/gnome/truevision/materials/Stars
+@dirrm share/gnome/truevision/materials/Skies
+@dirrm share/gnome/truevision/materials/Metals/Golds
+@dirrm share/gnome/truevision/materials/Metals/Copper
+@dirrm share/gnome/truevision/materials/Metals/Chrome
+@dirrm share/gnome/truevision/materials/Metals/Brass
+@dirrm share/gnome/truevision/materials/Metals
+@dirrm share/gnome/truevision/materials/Glass
+@dirrm share/gnome/truevision/materials/Finish
+@dirrm share/gnome/truevision/materials/Effects
 @dirrm share/gnome/truevision/materials
 @dirrm share/gnome/truevision
-share/gnome/locale/de/LC_MESSAGES/truevision.mo
-share/gnome/locale/fr/LC_MESSAGES/truevision.mo
+@dirrm share/gnome/pixmaps/truevision
