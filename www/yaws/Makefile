@@ -7,7 +7,7 @@
 
 PORTNAME=	yaws
 PORTVERSION=	1.45
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://yaws.hyber.org/download/
 
@@ -50,10 +50,12 @@ do-install:
 	@${MKDIR} ${APPDIR}/ebin
 	@${MKDIR} ${APPDIR}/include
 	@${MKDIR} ${APPDIR}/priv
+	@${MKDIR} ${APPDIR}/src
 	@${MKDIR} ${PREFIX}/www/yaws
 	@${INSTALL_DATA} ${WRKSRC}/ebin/* ${APPDIR}/ebin
 	@${INSTALL_DATA} ${WRKSRC}/priv/* ${APPDIR}/priv
 	@${INSTALL_DATA} ${WRKSRC}/include/* ${APPDIR}/include
+	@${INSTALL_DATA} ${WRKSRC}/src/*.erl ${APPDIR}/src
 	@cd ${WRKSRC}/www && (${FIND} * | ${CPIO} -pu ${PREFIX}/www/yaws)
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/www/yaws
 	@${INSTALL_MAN} ${WRKSRC}/man/*.1 ${MANPREFIX}/man/man1
