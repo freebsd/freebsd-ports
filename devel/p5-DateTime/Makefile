@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime
-PORTVERSION=	0.18
+PORTVERSION=	0.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
@@ -20,8 +20,7 @@ RUN_DEPENDS=	${SITE_PERL}/Class/Factory/Util.pm:${PORTSDIR}/devel/p5-Class-Facto
 		${SITE_PERL}/DateTime/TimeZone.pm:${PORTSDIR}/devel/p5-DateTime-TimeZone \
 		${SITE_PERL}/DateTime/Locale.pm:${PORTSDIR}/devel/p5-DateTime-Locale \
 		${SITE_PERL}/Time/Local.pm:${PORTSDIR}/devel/p5-Time-Local
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
