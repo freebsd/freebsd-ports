@@ -12,6 +12,7 @@ MASTER_SITES=		${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	kris
 
 MAINTAINER=		ports@FreeBSD.org
+COMMENT=	SSL enhanced telnet/telnetd
 
 USE_OPENSSL=		YES
 

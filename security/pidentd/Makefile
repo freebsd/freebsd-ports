@@ -16,6 +16,7 @@ PATCHFILES=	pidentd-2.8.5-ipv6-1.5.diff.gz
 PATCH_DIST_STRIP=	-p2
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An RFC1413 identification server
 
 ALL_TARGET=	freebsd
 MAKE_ENV=	REALPREFIX=${PREFIX}

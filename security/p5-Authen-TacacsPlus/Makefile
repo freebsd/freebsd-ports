@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Authen
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A perl module that provides authentication using a tacacs+ server
 
 PERL_CONFIGURE=	yes
 MAKE_ENV+=	CCFLAGS="${CFLAGS}"

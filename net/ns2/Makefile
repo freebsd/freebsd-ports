@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.isi.edu/nsnam/dist/
 DISTNAME=	ns-src-2.1b9
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The UCB/LBNL Network Simulator Version 2
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtclcl.a:${PORTSDIR}/devel/tclcl
 RUN_DEPENDS=	${LOCALBASE}/bin/tclsh8.3:${PORTSDIR}/lang/tcl83

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.irus.rri.on.ca/~amulder/ss/ \
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A curses-based SpreadSheet program
 
 WRKSRC=		${WRKDIR}/ss_133
 MAN1=		ss.1 pss.1

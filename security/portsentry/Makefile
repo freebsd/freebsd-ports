@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.psionic.com/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Port scan detection and active defense
 
 ALL_TARGET=	freebsd
 USE_REINPLACE=	yes

@@ -19,6 +19,7 @@ DISTFILES+=	cpml_ev5-5.1.0-4.alpha.rpm
 .endif
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Compaq Alpha Tru64 C compiler
 
 RESTRICTED=	"Distribution not allowed"
 

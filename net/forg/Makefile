@@ -12,6 +12,7 @@ CATEGORIES=	net python
 MASTER_SITES=	http://opop.nols.com/proggie/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Gopher client
 
 RUN_DEPENDS= 	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/pmw

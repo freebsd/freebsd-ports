@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A USENET newsgroup archiver
 
 NO_CDROM=	"Don't make money from it"
 MAN1=		rkive.1 article.1 ckconfig.1

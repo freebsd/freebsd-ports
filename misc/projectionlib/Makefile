@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 DISTNAME=	dlgv32v37src
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A C++ wrapper for the USGS GCTP projection library
 
 LIB_DEPENDS=	gctpc.1:${PORTSDIR}/misc/gctpc
 

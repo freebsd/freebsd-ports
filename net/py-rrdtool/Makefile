@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyRRDtool-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Python C extension module to access RRDtool files
 
 LIB_DEPENDS=	rrd:${PORTSDIR}/net/rrdtool
 

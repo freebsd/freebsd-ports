@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/pybliographer/1.0
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GUI and command-line tools for editing and searching bibliographic databases
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome \
 		recode:${PORTSDIR}/converters/recode

@@ -11,6 +11,7 @@ PORTNAME=	xpbiff-youbin
 PORTVERSION=	1.27	
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A replacement for xbiff that handles popup window with mail header
 
 YOUBIN=		yes
 MASTERDIR=	${.CURDIR}/../xpbiff

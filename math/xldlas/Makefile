@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	apps/graphics/visualization
 EXTRACT_SUFX=	-source.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An XForms-based statistics package
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 

@@ -16,6 +16,7 @@ DISTNAME=	DevVNC_unix
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Display X and Win32 desktops on remote X/Win32/Java displays
 
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/unix/vnc_unixsrc

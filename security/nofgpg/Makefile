@@ -12,6 +12,7 @@ CATEGORIES=	security python
 MASTER_SITES=	http://www.cgabriel.org/sw/nofgpg/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	No One Fears GPG
 
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg \
 		${PYTHON_SITELIBDIR}/gtk-1.2/gnome/ui.py:${PORTSDIR}/x11-toolkits/py-gnome

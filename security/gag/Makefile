@@ -14,6 +14,7 @@ DISTNAME=	sickenscan
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A stacheldraht (DOS attack) agent detector
 
 ALL_TARGET=	gag
 

@@ -16,6 +16,7 @@ MASTER_SITES=	http://tinc.nl.linux.org/packages/ \
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Virtual Private Network (VPN) daemon
 
 LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext
 

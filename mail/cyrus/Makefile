@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 DISTNAME=	${PORTNAME}-imapd-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The cyrus mail server, supporting POP3, KPOP, and IMAP4 protocols
 
 LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend \

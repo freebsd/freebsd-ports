@@ -13,6 +13,7 @@ DISTNAME=	bihar
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Biharmonic equation in rectangular geometry and polar coordinates
 
 LIB_DEPENDS=	linpack.1:${PORTSDIR}/math/linpack
 

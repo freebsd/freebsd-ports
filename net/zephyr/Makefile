@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://athena-dist.mit.edu/pub/ATHENA/zephyr/ \
 		ftp://athena-dist.mit.edu/pub/ATHENA/zephyr/old/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Real time message passing and notification service
 
 WRKSRC=		${WRKDIR}/zephyr
 

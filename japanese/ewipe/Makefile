@@ -7,8 +7,10 @@
 
 CATEGORIES=	japanese
 
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Tcl/tk-based presentation tool with Japanese support
+
 MASTERDIR=	${.CURDIR}/../../misc/ewipe
-COMMENTFILE=	${.CURDIR}/pkg-comment
 
 KANJI=		yes
 

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	cpiazza
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A simple port scanner that prints out open ports
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

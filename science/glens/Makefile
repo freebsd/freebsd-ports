@@ -13,6 +13,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://virtual.theo.phys.ulg.ac.be/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	OpenGL gravitational lens simulator
 
 BUILD_DEPENDS=	${X11BASE}/lib/libglui.a:${PORTSDIR}/devel/glui
 

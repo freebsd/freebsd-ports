@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.linuxmafia.com/pub/linux/security/sshbuddy/
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	Simple and small GUI utility to manage ssh sessions
 
 RUN_DEPENDS=	expectk:${PORTSDIR}/lang/expect
 

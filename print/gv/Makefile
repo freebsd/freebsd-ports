@@ -19,6 +19,7 @@ PATCH_SITES=	http://security.debian.org/pool/updates/main/g/gv/
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	A PostScript and PDF previewer
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 

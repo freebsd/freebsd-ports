@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	PEAR
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	PEAR Network Socket Interface
 
 BUILD_DEPENDS=	${PEARDIR}.DIST_PHP:${PORTSDIR}/devel/pear-install
 RUN_DEPENDS=	${PEARDIR}.DIST_PHP:${PORTSDIR}/devel/pear-install

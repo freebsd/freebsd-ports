@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	obrien
 DISTNAME=	relay
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	TCP proxy server with telnet, ftp, finger client wrappers
 
 IS_INTERACTIVE=	'must set server hostname in relay.h'
 

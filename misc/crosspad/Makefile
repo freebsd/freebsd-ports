@@ -11,6 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.itojun.org/pub/misc/
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	Crosspad data downloader/converter
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/crosspad/build

@@ -14,6 +14,7 @@ PKGNAMEPREFIX=	p5-
 DISTNAME=	MailFolder-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl module for a folder-independant interface to email folders
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Date/Format.pm:${PORTSDIR}/devel/p5-TimeDate \

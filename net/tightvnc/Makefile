@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	vnc-tight
 DISTNAME=	${PORTNAME}-${PORTVERSION}_unixsrc
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Enhanced version of VNC
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/misc/10x20.pcf.gz:${PORTSDIR}/x11-fonts/XFree86-4-fontDefaultBitmaps

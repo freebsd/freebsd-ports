@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.vix.com/pub/vixie/
 EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Multiuser "tip"/"cu" replacement with logging
 
 EXTRACT_CMD=	${GZCAT}
 EXTRACT_BEFORE_ARGS=

@@ -14,6 +14,7 @@ CATEGORIES=	security
 DISTNAME=	vp-bro-0.5-alpha
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	System for detecting Network Intruders in real-time
 
 RESTRICTED=	"Author wishes Alpha releases not to be distrubted."
 

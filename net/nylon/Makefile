@@ -12,6 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://monkey.org/~marius/nylon/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Unix SOCKS 4 and 5 proxy server
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
 

@@ -23,6 +23,7 @@ DISTFILES=	devils-dict-pre.tar.gz \
 		elements-20001107-pre.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Dictd words database
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/dictd:${PORTSDIR}/net/dictd
 

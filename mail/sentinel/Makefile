@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	smfilter
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Sentinel is a sendmail milter API implementation
 
 USE_REINPLACE=	yes
 

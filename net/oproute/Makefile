@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.opnix.com/oproute/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A tool for measuring general performance of the Internet
 
 USE_REINPLACE=	yes
 

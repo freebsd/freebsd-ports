@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Math
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl module to solve Bezier curves
 
 PERL_CONFIGURE=	yes
 

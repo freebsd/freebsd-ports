@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	netsaintplug
 DISTNAME=	${PORTNAME}-1.2.9-4
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Plugins for netsaint
 
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GTK-based MUD client with triggers, aliases, colors, etc
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes

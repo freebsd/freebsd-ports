@@ -14,6 +14,7 @@ DISTNAME=	dnews55h2_freebsd4
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Commercial nntp server with enhancements over inn and cnews
 
 WRKSRC=		${WRKDIR}/dtemp
 NO_CDROM=	"no answer yet, if we are allowed to put it onto CDROM"

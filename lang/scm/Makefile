@@ -13,6 +13,7 @@ DISTFILES=	scm5d7.zip slib2d5.zip slib-psd1-3.tar.gz
 EXTRACT_ONLY=	scm5d7.zip slib2d5.zip
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A scheme interpreter
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

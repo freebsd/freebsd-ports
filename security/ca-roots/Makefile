@@ -12,6 +12,7 @@ CATEGORIES=	security
 DISTFILES=	# none
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A list of SSL CA root certificates
 
 NO_BUILD=	yes
 

@@ -11,6 +11,7 @@ CATEGORIES=		sysutils
 MASTER_SITES=		ftp://ftp.cold.org/pub/brandon/
 
 MAINTAINER=		ports@FreeBSD.org
+COMMENT=	Kernel "config" wrapper ala Digital Unix's doconfig
 
 MAN8=			autokernconf.8 doconfig.8
 

@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A dvi-file previewer for text only devices
 
 IGNOREFILES=	${DISTFILES}
 MAN1=		dvi2tty.1

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl module implementing crypt(3) function
 
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 PERL_CONFIGURE=	yes

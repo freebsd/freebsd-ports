@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.iwd.uni-bremen.de/pub/tex/xtem.v8/
 DISTNAME=	${PORTNAME}_texmenu.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Tcl/Tk-based development menu (environment?) for TeX
 
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 .if defined(BUILD_IT_ALL)

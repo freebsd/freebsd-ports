@@ -18,6 +18,7 @@ DISTFILES=	gcc-core-${GCC_REV}${EXTRACT_SUFX} \
 		gcc-objc-${GCC_REV}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GNU Compiler Collection 3.0.
 
 LATEST_LINK=	gcc30
 

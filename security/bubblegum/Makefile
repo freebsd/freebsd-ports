@@ -11,6 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://arbornet.org/~bjk/bubblegum/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Watch a file for changes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

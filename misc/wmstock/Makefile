@@ -11,6 +11,7 @@ CATEGORIES=	misc windowmaker
 MASTER_SITES=	http://mattfischer.com/wmstock/src/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Cool WindowMaker Dockapp that shows stock ticker(s)
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

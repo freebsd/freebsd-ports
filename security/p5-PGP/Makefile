@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	PGP
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl5 module to work with PGP messages
 
 BUILD_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 

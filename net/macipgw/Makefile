@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.hanse.de/sites/transit/netatalk/ \
 MASTER_SITE_SUBDIR=	stb/netatalk
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	MacIP Gateway to allow IP-access from AppleTalk-only networks
 
 BROKEN=		"Does not build"
 

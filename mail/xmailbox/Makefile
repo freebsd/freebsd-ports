@@ -12,6 +12,7 @@ MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=		ports@FreeBSD.org
+COMMENT=	Mailbox checker with sound and animation for X Window System
 
 USE_REINPLACE=		yes
 USE_IMAKE=		yes

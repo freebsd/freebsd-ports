@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	rproxy
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Library for delta compression of streams
 
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 .if !exists(/usr/bin/bzip2)

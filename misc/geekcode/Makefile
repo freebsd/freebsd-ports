@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	geekcode
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Geek Code Generator
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/geekcode ${PREFIX}/bin

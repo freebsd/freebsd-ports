@@ -14,6 +14,7 @@ MASTER_SITES=	http://echolot.sourceforge.net/download/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A packet sniffer that grabs ARP packets on any ethernet devices
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://dickey.his.com/add/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Full-screen editing calculator
 
 WRKSRC=		${WRKDIR}/add-970526
 

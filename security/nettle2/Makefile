@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.lysator.liu.se/~nisse/archive/ \
 		ftp://ftp.lysator.liu.se/pub/security/lsh/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A low-level cryptographic library
 
 LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 

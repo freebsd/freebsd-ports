@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl module for fast IP address lookups
 
 PERL_CONFIGURE=	YES
 

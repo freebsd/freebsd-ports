@@ -13,6 +13,7 @@ MASTER_SITES=	http://perso.wanadoo.fr/obrecht/download/
 DISTNAME=	${PORTNAME}.${PORTVERSION:R}rev${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Euclidean geometry drawing language
 
 RUN_DEPENDS=	pstoedit:${PORTSDIR}/graphics/pstoedit \
 		epstopdf:${PORTSDIR}/print/teTeX

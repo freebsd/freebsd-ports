@@ -11,6 +11,7 @@ PORTVERSION=	1.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Mark a file bootable within a DEC Alpha ISO-9660 image
 
 NO_WRKSUBDIR=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Authen
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl module providing the framework for implementing a ticketing system
 
 PERL_CONFIGURE=	yes
 

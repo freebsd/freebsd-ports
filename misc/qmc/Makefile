@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.pollaknet.at/qmc/program/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/b/bbeta/}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Quine-McClusky process simplification tool
 
 NO_WRKSUBDIR=	yes
 

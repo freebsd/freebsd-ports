@@ -12,6 +12,7 @@ MASTER_SITES=	http://spektr.eu.org/~jp/battstat/
 DISTNAME=	battstat_applet-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A laptop battery monitor utility for the GNOME panel
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

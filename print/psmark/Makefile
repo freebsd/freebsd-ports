@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.antitachyon.com/download/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Renders a vertical string on any PostScript document
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

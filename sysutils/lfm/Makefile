@@ -12,6 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.terra.es/personal7/inigoserna/lfm/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Last File Manager, a simple 'commander'-type file manager
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

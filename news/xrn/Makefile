@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://sipb.mit.edu/pub/xrn/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Usenet News reader for the X Window System
 
 USE_REINPLACE=	yes
 USE_IMAKE=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	SNMP
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A perl5 module for interfacing with the CMU SNMP library
 
 LIB_DEPENDS= 	snmp.4:${PORTSDIR}/net/net-snmp4
 

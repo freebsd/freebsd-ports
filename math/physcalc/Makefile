@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.lightlink.com/pub/vulcan/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Extremely flexible calculator that behaves much like units(1)
 
 EXTRACT_BEFORE_ARGS=	-aq
 EXTRACT_AFTER_ARGS=	-x physcalc -d ${WRKDIR}

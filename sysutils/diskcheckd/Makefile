@@ -15,6 +15,7 @@ DISTFILES=	# part of port
 EXTRACT_ONLY=	# part of port
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Daemon to check for disk read errors
 
 STARTUP=	diskcheckd.sh
 MAN8=		diskcheckd.8

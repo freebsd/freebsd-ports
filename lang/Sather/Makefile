@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Sather compiler
 
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc \
 		tk83.1:${PORTSDIR}/x11-toolkits/tk83

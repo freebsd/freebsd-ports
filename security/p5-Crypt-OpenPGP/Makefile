@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Pure-Perl OpenPGP-compatible PGP implementation
 
 NO_PACKAGE=	"Runaway package build"
 

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	utils/text
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Draws ASCII-art configurable boxes around text or code
 
 MAN1=		boxes.1
 USE_GMAKE=	yes

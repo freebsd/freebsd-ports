@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.tkrat.org/pub/tkrat/ \
 		http://www.tkrat.org/downloads/stable/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A mail user agent for X with a Tcl/Tk user interface
 
 LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83 \
 		tk83:${PORTSDIR}/x11-toolkits/tk83 \

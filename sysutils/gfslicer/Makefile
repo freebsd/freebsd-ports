@@ -12,6 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.geocities.com/gfslicer/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A utility to split and join files
 
 BUILD_DEPENDS=	${LOCALBASE}/share/automake14/install-sh:${PORTSDIR}/devel/automake14
 

@@ -16,6 +16,7 @@ PATCHFILES=	${PORTNAME}mb115.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GNU awk + multi-byte extension
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-bitops --enable-non-decimal-data

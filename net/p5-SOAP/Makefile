@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	SOAP
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl modules providing an API to the Simple Object Access Protocol
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww

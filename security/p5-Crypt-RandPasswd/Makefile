@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Crypt
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An implementation of the Automated Password Generator standard
 
 PERL_CONFIGURE=	yes
 SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}

@@ -13,6 +13,7 @@ DISTNAME=	yahoo-t-${PORTVERSION}
 DIST_SUBDIR=	jabber
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Jabber Yahoo Transport module
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/jabberd:${PORTSDIR}/net/jabber
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv

@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	jabber.py-${PORTVERSION}-1
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Python Jabber library
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pyexpat.so:${PORTSDIR}/textproc/py-expat
 

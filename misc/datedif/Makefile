@@ -13,6 +13,7 @@ MASTER_SITES=	http://buschencrew.hypermart.net/software/datedif/
 DISTNAME=	${PORTNAME}-0.9.1-4
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Calculates the number of days between two dates
 
 ALL_TARGET=
 

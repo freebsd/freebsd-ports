@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.math.uni-augsburg.de/opt/goblin.docs/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Graph Object Library for Network Programming Problems
 
 LIB_DEPENDS=	tcl83:${PORTSDIR}/lang/tcl83 \
 		tk83:${PORTSDIR}/x11-toolkits/tk83

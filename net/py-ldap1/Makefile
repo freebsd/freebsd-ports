@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	python-ldap
 DISTNAME=	python-ldap-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An LDAP module for python
 
 LIB_DEPENDS=	ldap.1:${PORTSDIR}/net/openldap
 

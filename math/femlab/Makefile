@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.md.chalmers.se/pub/Femlab/	\
 DISTFILES=	femlab-2d-v${PORTVERSION}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Interactive program for solving partial differential equations in 2D
 
 BUILD_DEPENDS=	${X11BASE}/lib/libsx.a:${PORTSDIR}/x11/libsx
 

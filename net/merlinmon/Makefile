@@ -14,6 +14,7 @@ DISTNAME=	merlin-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	A curses app that displays the status of a Novatel CDPD modem device
 
 NO_WRKSUBDIR=	yes
 

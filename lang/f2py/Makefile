@@ -13,6 +13,7 @@ MASTER_SITES=	http://cens.ioc.ee/projects/f2py2e/2.x/
 DISTNAME=	${PORTNAME:U}-2.13.175-1250
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Fortran to Python Interface Generator
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/Numeric/Numeric.py:${PORTSDIR}/math/py-numeric
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	finger
 DISTNAME=	finger-1.37
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GNU version of finger
 
 HAS_CONFIGURE=	yes
 INSTALL_TARGET=	server

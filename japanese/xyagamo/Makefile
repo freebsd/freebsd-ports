@@ -11,6 +11,7 @@ CATEGORIES=	japanese games
 MASTER_SITES=	http://www.dokidoki.ne.jp/home2/shinmaru/mahjong/
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	Japanese version of a four player mahjong game
 
 USE_X_PREFIX=	YES
 USE_XPM=	yes

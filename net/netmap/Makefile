@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Make a graphical representation of the surounding network
 
 RUN_DEPENDS=	dotty:${PORTSDIR}/graphics/graphviz
 

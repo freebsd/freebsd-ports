@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ijliao
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Create or verify Simple File Verification (SFV) checksum files
 
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12

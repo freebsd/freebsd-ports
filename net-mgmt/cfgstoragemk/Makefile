@@ -13,6 +13,7 @@ MASTER_SITES=	http://savannah.gnu.org/download/cfgstoragemk/
 DISTNAME=	cfgstoragemaker-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	MRTG configuration generator for storage monitoring via SNMP
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.psionic.com/downloads/
 DISTNAME=	logsentry-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Auditing tool for system logs on Unix boxes
 
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

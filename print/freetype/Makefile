@@ -18,6 +18,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,freetype,} \
 MASTER_SITE_SUBDIR=	freetype1
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A free and portable TrueType font rendering engine
 
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes

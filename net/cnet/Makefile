@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.cs.uwa.edu.au/cnet/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A networking simulator
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 

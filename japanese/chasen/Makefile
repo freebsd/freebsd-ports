@@ -14,6 +14,7 @@ DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Japanese Morphological Analysis System
 
 RUN_DEPENDS=	chasen:${PORTSDIR}/japanese/chasen-base \
 		${LOCALBASE}/share/chasen/dic/ipadic/cforms.cha:${PORTSDIR}/japanese/ipadic

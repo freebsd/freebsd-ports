@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=	dt
 DISTNAME=	Sharity-Light.1.2
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An userland smbfs --- SMB to NFS protocols converter
 
 MAN8=		smbmount.8
 

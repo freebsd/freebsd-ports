@@ -16,6 +16,7 @@ MASTER_SITES=	http://www.geocities.com/CapeCanaveral/Lab/5735/1/ \
 EXTRACT_SUFX=	.txt
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Translator TXT + BDF to PS
 
 USE_PERL5=	yes
 EXTRACT_CMD=	${CP}

@@ -11,6 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=   ftp://ftp.vmunix.org/pub/misc/tua/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The Uucp Analyzer
 
 GNU_CONFIGURE=	yes
 MAN1=		tua.1

@@ -11,6 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://awka.sourceforge.net/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Converts the AWK script to C, then compiles it
 
 GNU_CONFIGURE=	yes
 

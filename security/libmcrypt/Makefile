@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://mcrypt.hellug.gr/pub/mcrypt/libmcrypt/ \
 		ftp://ftp.ntua.gr/pub/security/mcrypt/libmcrypt/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Multi-cipher cryptographic library (used in PHP3)
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes

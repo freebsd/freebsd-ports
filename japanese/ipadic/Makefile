@@ -12,6 +12,7 @@ CATEGORIES=	japanese
 MASTER_SITES=	http://chasen.aist-nara.ac.jp/stable/ipadic/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Japanese Morphological Dictionary for ChaSen
 
 BUILD_DEPENDS=	chasen:${PORTSDIR}/japanese/chasen-base
 

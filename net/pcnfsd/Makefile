@@ -13,6 +13,7 @@ DISTNAME=	pcnfsd.93.02.16
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Sun PC NFS authentication and printing server
 
 MAN8=		pcnfsd.8
 MANCOMPRESSED=	maybe

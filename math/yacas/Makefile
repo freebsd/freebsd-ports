@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/r/rev/}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Yet Another Computer Algebra System
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

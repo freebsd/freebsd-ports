@@ -13,6 +13,7 @@ DISTFILES=	${DISTNAME}.tar.gz cupdoc.tar.gz
 DISTNAME=	cupsrc
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Experimental constraint logic programming language
 
 WRKSRC=		${WRKDIR}/src
 MAKEFILE=	makefile

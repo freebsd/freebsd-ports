@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.oonumerics.org/blitz/download/releases/
 DISTNAME=	blitz-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A C++ class library for scientific computing
 
 LIB_DEPENDS=	blas.1:${PORTSDIR}/math/blas
 

@@ -12,6 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A relay for bidirectional data transfer between two indep. data channels
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R:R}
 

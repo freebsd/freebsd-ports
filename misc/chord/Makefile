@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Produce PS sheet-music from text input
 
 MAN1=		a2crd.1 chord.1
 MANCOMPRESSED=	yes

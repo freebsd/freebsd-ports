@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	utilities
 EXTRACT_SUFX=	.shar
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	System monitoring utility graphicaly showing cpu load and status
 
 EXTRACT_CMD=	${CAT}
 EXTRACT_BEFORE_ARGS=

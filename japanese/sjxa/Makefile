@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.sony.co.jp/pub/unsupported/src/ \
 		ftp://ftp.cs.titech.ac.jp/pub/japanese/sj3/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A X11 frontend of Japanese input method SJ3
 
 RUN_DEPENDS=	sj3serv:${PORTSDIR}/japanese/sj3
 

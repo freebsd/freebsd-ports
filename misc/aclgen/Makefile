@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.sztaki.hu/pub/private/kissg/aclgen/
 DISTNAME=	aclgen-202
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Optimize Cisco routers ip access lists
 
 NO_WRKSUBDIR=	YES
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	lioux
 DISTNAME=	f2c-freebsd.3.0.0
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Fortran-to-C converter and its run-time libraries
 
 .include <bsd.port.pre.mk>
 

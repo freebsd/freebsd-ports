@@ -14,6 +14,7 @@ MASTER_SITES=	http://lcdproc.omnipotent.net/download/ \
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A client/server suite for all kinds of nifty LCD devices
 
 ONLY_FOR_ARCHS=	i386
 GNU_CONFIGURE=	yes

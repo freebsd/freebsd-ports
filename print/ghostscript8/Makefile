@@ -46,6 +46,7 @@ DIST_SUBDIR=	ghostscript
 EXTRACT_ONLY=	${GS_SRCS}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	AFPL Postscript interpreter version 7
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png

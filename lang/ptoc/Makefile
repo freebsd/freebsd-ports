@@ -11,6 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.ispras.ru/~knizhnik/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	ANSI/Turbo Pascal to C/C++ converter
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -14,6 +14,7 @@ DISTNAME=	lprps-2.5
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	PostScript printer filter package supporting a bidirectional serial channel
 
 MAKE_FLAGS?=	PAPERSIZE=${PS} -f
 MAN1=		psrev.1 textps.1

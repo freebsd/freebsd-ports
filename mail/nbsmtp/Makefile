@@ -13,6 +13,7 @@ MASTER_SITES=	http://physeeks.dyndns.org:8000/download/ \
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Simple program for outgoing SMTP delivery
 
 NO_WRKSUBDIR=	yes
 

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.catb.org/~esr/retro/ \
 		http://dl.droso.net/ports/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Assembler and interpreter for Donald Knuth's mythical MIX computer
 
 ALL_TARGET=	# none
 

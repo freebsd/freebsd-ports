@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.ipsmart.com/src/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Runs command repeatedly; shows output (can conflict with ImageMagick)
 
 GNU_CONFIGURE=	yes
 

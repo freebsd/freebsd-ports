@@ -13,6 +13,7 @@ MASTER_SITES=	http://utopia.knoware.nl/users/driehuis/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-fbsd
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Dynamic Library Tracer -- similar to strace, but it traces library calls
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A GNOME client for Hotline
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		xml2.5:${PORTSDIR}/textproc/libxml2

@@ -12,6 +12,7 @@ MASTER_SITES=	http://linuxberg.ii.net/files/gnome/network/ \
 		http://www.open-systems.com/gnosamba/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Samba configuration tool for X Window System
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes

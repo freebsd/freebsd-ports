@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A scientific plotting package
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4

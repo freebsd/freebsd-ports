@@ -8,6 +8,7 @@
 PKGNAMESUFFIX=	-sjis
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A portable multi-window 'vi', handles Japanese SJIS
 
 MASTERDIR=	${.CURDIR}/../xvi-euc
 
@@ -15,7 +16,6 @@ PATCHDIR=	${.CURDIR}/files
 
 EXTRA_PATCHES=	${MASTERDIR}/files/patch-unix.h
 
-COMMENTFILE=	${.CURDIR}/pkg-comment
 PLIST=		${.CURDIR}/pkg-plist
 
 PROG=		sxvi

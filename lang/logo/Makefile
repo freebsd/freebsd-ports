@@ -13,6 +13,7 @@ MASTER_SITES= 	${MASTER_SITE_GNU} \
 MASTER_SITE_SUBDIR=non-gnu/ucblogo
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Brian Harvey's logo language interpreter
 
 .if defined(EMACS_LOGO_MODE)
 BUILD_DEPENDS=  emacs:${PORTSDIR}/editors/emacs

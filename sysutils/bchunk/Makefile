@@ -13,6 +13,7 @@ MASTER_SITES=	http://hes.iki.fi/bchunk/ \
 MASTER_SITE_SUBDIR=	utils/disk-management
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Converts .bin/.cue files to .iso/audio
 
 MAN1=	bchunk.1
 

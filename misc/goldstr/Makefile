@@ -12,6 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://it.geocities.com/andreamolteni/prog/goldstr/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Compute the golden string
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Web Interface to Majordomo
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

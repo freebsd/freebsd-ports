@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.xmms.org/files/plugins/avi-xmms/ \
 DISTNAME=	avi-xmms-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An avifile based .avi and .asf file playback plugin for XMMS
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	aviplay.0:${PORTSDIR}/multimedia/avifile

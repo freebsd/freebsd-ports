@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	ccscript
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	State-event driven class extendible C++ script interpreter
 
 LIB_DEPENDS=	ccgnu2-1.0.0:${PORTSDIR}/devel/commoncpp
 

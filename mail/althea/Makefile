@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Yet another GTK-based mail reader for X. Supports IMAP
 
 USE_REINPLACE=	yes
 USE_GTK=	yes

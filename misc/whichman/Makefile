@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 MASTER_SITE_SUBDIR=	apps/doctools
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Approximate matching utilities to search for manpages and files
 
 MAN1=		whichman.1 ftff.1 ftwhich.1
 

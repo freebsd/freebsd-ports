@@ -13,6 +13,7 @@ DISTNAME=	c-archie-1.4.1-FIXED
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Prospero client for the archie service
 
 WRKSRC=		${WRKDIR}/archie-1.4.1-FIX
 MAN1=		archie.1

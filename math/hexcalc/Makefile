@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	..tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A multi-radix calculator for x11
 
 USE_IMAKE=	yes
 MAN1=		hexcalc.1

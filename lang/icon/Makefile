@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}.v${PORTVERSION:S/.//g}src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The Icon programming language
 
 ONLY_FOR_ARCHS=	alpha i386
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	system/network/file-transfer
 DISTNAME=	fspclient
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A client for the fsp service
 
 WRKSRC=		${WRKDIR}/fspclient
 GNU_CONFIGURE=	yes

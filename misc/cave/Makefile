@@ -14,6 +14,7 @@ MASTER_SITES=	http://arbornet.org/~bjk/cave/ \
 MASTER_SITE_SUBDIR=	apps/graphics/misc
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Character Animation Viewer for Everyone
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=""

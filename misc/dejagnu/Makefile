@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	dejagnu
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Automated program/system tester
 
 RUN_DEPENDS=	expect:${PORTSDIR}/lang/expect
 

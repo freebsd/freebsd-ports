@@ -13,6 +13,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-ldap-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An LDAP module for python, for OpenLDAP2
 
 LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap2
 

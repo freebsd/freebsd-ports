@@ -12,6 +12,7 @@ MASTER_SITES=		ftp://ftp.lexa.ru/pub/domestic/lexa/
 DISTNAME=		cyrproxy-1.4.2
 
 MAINTAINER=		ports@FreeBSD.org
+COMMENT=	Cyrillic proxy for network protocols
 
 do-install:
 	@ ${MKDIR} ${PREFIX}/share/cyrproxy

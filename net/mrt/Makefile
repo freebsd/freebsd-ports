@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.merit.edu/net-research/mrt/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Multi-threaded Routing Toolkit
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 

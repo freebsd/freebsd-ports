@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ls6-ftp.cs.uni-dortmund.de/pub/src/freeWAIS-sf/
 DISTNAME=	freeWAIS-sf-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An enhanced Wide Area Information Server
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure

@@ -11,6 +11,7 @@ CATEGORIES=	misc windowmaker
 MASTER_SITES=	http://www.asleep.net/wmpal/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A one of the most useless dockapps in the world
 
 LIB_DEPENDS=	dockapp.1:${PORTSDIR}/x11-wm/libdockapp
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	hpinkjet
 DIST_SUBDIR=	ghostscript
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The drivers and support resources for the HP Inkjet Printers
 
 LIB_DEPENDS=	ijs.1:${PORTSDIR}/print/libijs
 

@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A GPL PDF generation library
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \

@@ -12,6 +12,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.profzone.ch/drzoom/anteater/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A MTA log analyzer
 
 GNU_CONFIGURE=	yes
 

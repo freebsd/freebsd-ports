@@ -13,6 +13,7 @@ MASTER_SITES=	http://sd.wareonearth.com/~phil/xdu/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Graphically display output of du
 
 NO_WRKSUBDIR=	yes
 USE_IMAKE=	yes

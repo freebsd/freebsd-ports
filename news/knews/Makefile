@@ -12,6 +12,7 @@ CATEGORIES=	news
 MASTER_SITES=	http://www.matematik.su.se/~kjj/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A threaded nntp newsreader for X
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \

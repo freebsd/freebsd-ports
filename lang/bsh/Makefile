@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Java scripting environment
 
 USE_JAVA=	1.1+
 NO_BUILD=	yes

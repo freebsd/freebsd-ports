@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.astron.com/pub/tcsh/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An extended C-shell with many useful features
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} >= 400021

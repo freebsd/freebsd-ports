@@ -13,6 +13,7 @@ MASTER_SITES=	http://txt2regex.sourceforge.net/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Regular Expression "wizard"
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 

@@ -16,6 +16,7 @@ MASTER_SITE_SUBDIR=dwcjr
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} netsaint-graphics.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Extremely powerful network monitoring system
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt

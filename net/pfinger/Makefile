@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.xelia.ch/pub/unix/ \
 		http://www.xelia.ch/unix/pfinger/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Highly configurable, secure and portable finger daemon
 
 USE_REINPLACE=	yes
 USE_GNOMENG=	yes

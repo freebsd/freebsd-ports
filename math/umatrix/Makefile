@@ -11,6 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.sigala.it/sandro/files/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Simple matrix package
 
 GNU_CONFIGURE=	yes
 MAN1=		umatrix.1

@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.godisch.de/debian/wmwork/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A dockapp that keeps track of time you have spent on something
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 

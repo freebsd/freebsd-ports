@@ -11,6 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/cim/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Compiler for the SIMULA programming language
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

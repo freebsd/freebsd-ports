@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 MASTER_SITE_SUBDIR=	apps/misc
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Highly customizable, text-based menu generator
 
 ALL_TARGET=	# empty
 GNU_CONFIGURE=	yes

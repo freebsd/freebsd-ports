@@ -11,6 +11,7 @@ CATEGORIES=	palm converters
 MASTER_SITES=	http://homepage.mac.com/pauljlucas/software/
 
 MAINTAINER=	ports@freebsd.org
+COMMENT=	Converts plain text and HTML files to Palm Pilot Doc formats
 
 PREFIX=		${LOCALBASE}/
 

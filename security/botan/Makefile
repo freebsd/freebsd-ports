@@ -16,6 +16,7 @@ DISTNAME=	Botan-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A portable, easy to use, and efficient C++ crypto library
 
 USE_REINPLACE=	yes
 USE_PERL5=	yes

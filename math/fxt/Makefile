@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.jjj.de/fxt/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	FFT code and related stuff
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

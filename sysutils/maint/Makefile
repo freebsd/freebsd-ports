@@ -11,6 +11,7 @@ CATEGORIES=	sysutils python
 MASTER_SITES=	http://www.dynaplex.net/opensource/software/
 
 MAINTAINER=	ports@FreeBSD.Org
+COMMENT=	System maintenance package written in Python and CSH
 
 BUILD_DEPENDS=	cvsup:${PORTSDIR}/net/cvsup
 RUN_DEPENDS=	cvsup:${PORTSDIR}/net/cvsup

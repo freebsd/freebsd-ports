@@ -14,6 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	vis5d
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An OpenGL-based volumetric visualization program for scientific datasets
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmix.a:${PORTSDIR}/graphics/qslim \
 		convert:${PORTSDIR}/graphics/ImageMagick

@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.rscheme.org/pub/rscheme/
 DISTNAME=	rs-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An object-oriented, extended version of the Scheme dialect of Lisp
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 

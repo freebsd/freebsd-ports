@@ -11,6 +11,7 @@ CATEGORIES=	misc windowmaker
 MASTER_SITES=	http://www.cs.uml.edu/~jhawkins/wmx10/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Remote control for X10 devices
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 

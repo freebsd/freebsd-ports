@@ -12,6 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.cichon.com/floatator/download/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An interactive fluid dynamics simulation
 
 USE_REINPLACE=	yes
 USE_XLIB=	yes

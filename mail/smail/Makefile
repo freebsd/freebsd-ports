@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://ftp.uu.net/networking/mail/smail/ \
 		ftp://ftp.weird.com/pub/local/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A program used for receiving and delivering mail
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libident.a:${PORTSDIR}/security/libident
 .if !exists(/usr/include/tcpd.h)

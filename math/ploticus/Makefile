@@ -13,6 +13,7 @@ MASTER_SITES=	http://ploticus.sourceforge.net/download/
 DISTNAME=	plsrc${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Generates plots and graphs from data
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \

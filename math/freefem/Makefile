@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	kfem
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A language for the Finite Element Method
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes

@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Interactive height field generation and manipulation program
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		intl.4:${PORTSDIR}/devel/gettext \

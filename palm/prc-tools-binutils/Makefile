@@ -15,6 +15,7 @@ DISTNAME=	prc-tools-${PORTVERSION}
 DISTFILES=	${DISTNAME}.tar.gz binutils-2.9.1.tar.bz2
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	PRC-tools for Palm OS (binutils part)
 
 USE_BZIP2=	YES
 USE_BISON=	YES

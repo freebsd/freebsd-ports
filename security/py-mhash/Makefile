@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-mhash-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Python mhash module
 
 LIB_DEPENDS=	mhash:${PORTSDIR}/security/mhash
 

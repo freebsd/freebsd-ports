@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.gregorpurdy.com/gregor/psh/
 DISTNAME=	psh-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	New shell made entirely out of a Perl script
 
 PERL_CONFIGURE=	yes
 USE_REINPLACE=	yes

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Digest
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl interface to the SHA-1 Algorithm
 
 PERL_CONFIGURE=	yes
 

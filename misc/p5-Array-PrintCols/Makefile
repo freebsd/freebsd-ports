@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Array
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl5 module to print arrays of elements in sorted columns
 
 PERL_CONFIGURE=	yes
 

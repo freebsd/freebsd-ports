@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A program computes with real and complex numbers and matrices
 
 WRKSRC=		${WRKDIR}/${DISTNAME:R}/source
 

@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	Bit
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl module implementing various bit shifting operations
 
 PERL_CONFIGURE=	yes
 

@@ -16,6 +16,7 @@ PATCHFILES=	grep-2.4.2-mlb2.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	GNU grep + multi-byte extension
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=j --disable-nls

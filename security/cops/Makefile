@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.fish.com/cops/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}+
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A system secureness checker
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/.//g}+
 HAS_CONFIGURE=	yes

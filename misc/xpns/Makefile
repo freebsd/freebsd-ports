@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.ee.uwa.edu.au/~braunl/pns/ftp/
 DISTFILES=	pns_source.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Petri-Net Simulator for Xwindows
 
 USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes

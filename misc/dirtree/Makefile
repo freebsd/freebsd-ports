@@ -13,6 +13,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://home.pages.at/kingleo/development/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A command line tool for displaying directory trees
 
 LIB_DEPENDS=	LeoArg.2:${PORTSDIR}/devel/leoarg \
 		intl.4:${PORTSDIR}/devel/gettext

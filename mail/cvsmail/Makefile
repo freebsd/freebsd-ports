@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.smithurst.org/ben/software/mail/dists/
 DISTNAME=	mailutils-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A small program to add cvsweb links to FreeBSD commit messages
 
 ALL_TARGET=	cvsmail
 MANCOMPRESSED=	no

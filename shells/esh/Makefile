@@ -11,6 +11,7 @@ CATEGORIES=	shells
 MASTER_SITES=	http://slon.ttk.ru/esh/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	The "easy shell", a small shell with Lisp-like syntax
 
 WRKSRC=		${WRKDIR}/esh
 

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A simple curses-based editor for BibTeX bibliography files
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 MAKEFILE=	Makefile.ncurses

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	Digest
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Perl5 interface to the MD4 message digest algorithm
 
 PERL_CONFIGURE=	yes
 

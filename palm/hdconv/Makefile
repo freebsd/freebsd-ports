@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.SilberSoft.com/pub/Software/Database/HanDBase/
 DISTNAME=	handbase_desktop_${PORTVERSION:S/./_/}.i386-any-linux2.0
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Converts HanDBase database to CSV, and vice versa
 
 BUILD_DEPENDS=	${LINUXBASE}/usr/bin/strip:${PORTSDIR}/devel/linux_devtools-7
 

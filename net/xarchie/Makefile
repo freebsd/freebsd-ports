@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	X11 front-end program for the archie network search service
 
 USE_IMAKE=	yes
 USE_GMAKE=	yes

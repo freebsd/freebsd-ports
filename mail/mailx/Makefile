@@ -18,6 +18,7 @@ PATCHFILES=	mailx.v05.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Mail command with mailx extensions
 
 EXTRACT_ONLY=	mail-2.2.8.tar.gz
 WRKSRC=		${WRKDIR}/mail-2.2.8

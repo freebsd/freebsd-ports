@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pylibnet-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Python module for the libnet packet construction library
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/swig1.1:${PORTSDIR}/devel/swig11 \
 		${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet

@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.uphs.upenn.edu/bbl/software/files/
 EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A set of software tools for medical image processing
 
 USE_PYTHON=	yes
 USE_REINPLACE=	yes

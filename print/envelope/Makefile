@@ -15,6 +15,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Command-line Postscript envelope printer
 
 USE_REINPLACE=	yes
 NO_BUILD=	yes

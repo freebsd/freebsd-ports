@@ -13,6 +13,7 @@ MASTER_SITES=	http://koala.ilog.fr/ftp/pub/Klone/
 DISTNAME=	Klone${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Small, Lisp-like interpreted language
 
 WRKSRC=		${WRKDIR}/Klone
 

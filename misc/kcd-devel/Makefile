@@ -12,6 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Change directory in full-screen visual mode
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

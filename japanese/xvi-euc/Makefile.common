@@ -10,7 +10,7 @@ MASTER_SITES=	http://lion.zero.ad.jp/~zau50357/public_html/ \
 DISTFILES=	${PORTNAME}-2.19.tar.bz2 \
 		j${PORTNAME}219b.lzh
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 

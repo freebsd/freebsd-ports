@@ -12,6 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://lrn.ru/~osgene/files/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Console font editor
 
 GNU_CONFIGURE=	yes
 

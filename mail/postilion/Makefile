@@ -11,6 +11,7 @@ CATEGORIES=	mail tk83
 MASTER_SITES=	http://www.postilion.org/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Mail client with the NeXt look
 
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83 \
 		c-client4:${PORTSDIR}/mail/cclient

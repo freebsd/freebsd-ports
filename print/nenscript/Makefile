@@ -12,6 +12,7 @@ MASTER_SITES=	http://risacher.posixnap.net/nenscript/ \
 		ftp://netsw.org/system/tools/print/
 
 MAINTAINER=	ports@FreeBSD.Org
+COMMENT=	A clone of the proprietary enscript program from Adobe Systems
 
 USE_BZIP2=	yes
 

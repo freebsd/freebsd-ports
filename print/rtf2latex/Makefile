@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	support/rtf2latex
 DISTNAME=	rtf2LaTeX.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A filter that converts RTF (MS Rich Text Format) into LaTeX
 
 WRKSRC=		${WRKDIR}/rtf2LaTeX
 

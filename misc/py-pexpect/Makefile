@@ -15,6 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A Pure Python Expect-like module
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes

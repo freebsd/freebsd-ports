@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Scans for a limited set of distributed denial of service agents
 
 ALL_TARGET=	dds
 

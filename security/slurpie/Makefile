@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A passwd file cracker (supports distributed nodes)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/slurp ${PREFIX}/sbin

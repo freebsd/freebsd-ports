@@ -21,6 +21,7 @@ DISTFILES+=	easton.tar.gz strongs.tar.gz torrey.tar.gz
 .endif
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A GUI based Bible program for X11
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes

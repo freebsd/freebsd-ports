@@ -16,6 +16,7 @@ DISTNAME=	telserv
 EXTRACT_SUFX=	.c
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A telnet server analogous to the unix talk command
 
 NO_WRKSUBDIR=	yes
 
