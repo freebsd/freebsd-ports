@@ -1,5 +1,4 @@
+bin/conjugue
 lib/br.aff
 lib/br.hash
-lib/palavras+flags-2.2
-lib/palavras+flags-2.2.cnt
-lib/palavras+flags-2.2.stat
+lib/verbos
