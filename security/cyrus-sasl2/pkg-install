@@ -61,9 +61,7 @@ create_user() {
 		fi
 		echo "*** Added user \`${USER}' (id ${uid})"
 	else
-		if ! ${PW} mod user ${USER} -g ${gid} -d "${uhome}" \
-				-c "the cyrus mail server" -s "${shell}" -p "*" \
-				; then
+		if ! ${PW} mod user ${USER} -g ${gid}; then
 			e=$?
 			echo "*** Failed to update user \`${USER}'."
 			exit ${e}
