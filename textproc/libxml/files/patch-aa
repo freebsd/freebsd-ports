@@ -1,6 +1,6 @@
---- Makefile.in.orig	Thu Oct  8 17:36:15 1998
-+++ Makefile.in	Thu Oct  8 18:18:42 1998
-@@ -105,7 +105,7 @@
+--- Makefile.in.orig	Sun Jan 17 03:13:33 1999
++++ Makefile.in	Sun Jan 17 16:31:54 1999
+@@ -113,7 +113,7 @@
  tester_DEPENDENCIES = $(DEPS)
  tester_LDADD= $(LDADDS)
  
@@ -8,4 +8,13 @@
 +confexecdir=$(sysconfdir)
  confexec_DATA = xmlConf.sh
  
- EXTRA_DIST = xmlConf.sh.in
+ EXTRA_DIST = xmlConf.sh.in libxml.spec
+@@ -157,7 +157,7 @@
+ SOURCES = $(libxml_la_SOURCES) $(tester_SOURCES)
+ OBJECTS = $(libxml_la_OBJECTS) $(tester_OBJECTS)
+ 
+-all: Makefile $(LTLIBRARIES) $(PROGRAMS) $(SCRIPTS) $(DATA) $(HEADERS) config.h
++all: Makefile $(LTLIBRARIES) $(SCRIPTS) $(DATA) $(HEADERS) config.h
+ 
+ .SUFFIXES:
+ .SUFFIXES: .S .c .lo .o .s
