@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION=	1.1.26
+PORTVERSION=	1.1.27
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gimp/unstable/v${PORTVERSION}/ \
 		ftp://ftp.insync.net/pub/mirrors/ftp.gimp.org/gimp/unstable/v${PORTVERSION}/ \
@@ -28,7 +28,7 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 USE_GTK=	yes
-WANT_GNOME=	yes
+#WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
@@ -57,9 +57,9 @@ pre-fetch:
 
 .include <bsd.port.pre.mk>
 
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
-.endif
+#.if defined(HAVE_GNOME)
+#USE_GNOME=	yes
+#.endif
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/gimp.setfont ${PREFIX}/bin
