@@ -6,43 +6,52 @@
 #
 
 PORTNAME=	swm
-PORTVERSION=	1.2.5
+PORTVERSION=	1.3.4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.informatik.hu-berlin.de/~sperling/prog/
 EXTRACT_SUFX=	-src.tgz
 
 MAINTAINER=	trevor@FreeBSD.org
 
-BINS=		swm swmbg swmpanel swmswitch
+BINS=		swm swmbg swmswitch
 DOCDIR=		share/doc/${PORTNAME}
-DOCS=		AUTHORS COMPILE_PARAMS COPYING ChangeLog LIESMICH README \
-		README.iPaq swm.lsm
-EXAMPLES=	startswm.kde1 startswm.kde2
 MAN1=		swm.1 swmbg.1
+MAKEFILE=	Makefile-xpm
 PLIST=		${WRKDIR}/pkg-plist
 SCRIPTS=	startswm
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_X_PREFIX=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src/src
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
+
+post-patch:
+	${PERL} -pi -e "s:PREFIX:${PREFIX}:g" \
+		${WRKSRC}/init.c ${WRKSRC}/swm.conf
+
+post-build:
+	cd ${WRKSRC}/../swmbg && ${CC} ${CFLAGS} -I${X11BASE}/include *.c \
+		-o ${WRKSRC}/swmbg -lX11 -lXext -lXpm -L${X11BASE}/lib
+	cd ${WRKSRC}/../swmswitch && ${CC} ${CFLAGS} -I${X11BASE}/include *.c \
+	-o ${WRKSRC}/swmswitch -lX11 -L${X11BASE}/lib
 
 pre-install:
 	${RM} -f ${PLIST}
 	for i in ${BINS} ${SCRIPTS}; \
 		do ${ECHO_CMD} bin/$${i} >> ${PLIST}; \
 	done
+	cd ${WRKSRC}/../share/swm/pixmaps && \
+		${FIND} -s . -type f | cut -c3-999 | \
+		${SED} -e 's:^:share/swm/pixmaps/:' >> ${PLIST}
 .if !defined(NOPORTDOCS)
 	for i in ${DOCS}; \
 		do ${ECHO_CMD} ${DOCDIR}/$${i} >> ${PLIST}; \
 	done
-	for i in 1 2 3; \
-		do ${ECHO_CMD} ${DOCDIR}/examples/.swm/button$${i} >> ${PLIST}; \
-	done
-	for i in ${EXAMPLES}; \
-		do ${ECHO_CMD} ${DOCDIR}/examples/$${i} >> ${PLIST}; \
-	done
-	${ECHO_CMD} @dirrm ${DOCDIR}/examples/.swm >> ${PLIST}
-	${ECHO_CMD} @dirrm ${DOCDIR}/examples >> ${PLIST}
+	cd ${WRKSRC}/../doc && ${FIND} -s . -type f | cut -c3-999 \
+		| ${SED} -e 's:^:${DOCDIR}/:' >> ${PLIST}
+	cd ${WRKSRC}/../ && ${FIND} -s examples -type f \
+		| ${SED} -e 's:^examples:share/examples/swm:' >> ${PLIST}
+	cd ${WRKSRC}/../ && ${FIND} -d examples -type d | \
+		${SED} -e 's:^examples:@dirrm share/examples/swm:' >> ${PLIST}
 	${ECHO_CMD} @dirrm ${DOCDIR} >> ${PLIST}
 .endif
 
@@ -52,20 +61,16 @@ do-install:
 	done
 	${INSTALL_SCRIPT} ${WRKSRC}/${SCRIPTS} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/swm.1x ${PREFIX}/man/man1/swm.1
-	${INSTALL_MAN} ${WRKSRC}/swmbg.1x ${PREFIX}/man/man1/swmbg.1
+	${INSTALL_MAN} ${WRKSRC}/../swmbg/swmbg.1x ${PREFIX}/man/man1/swmbg.1
 #	${INSTALL_MAN} ${WRKSRC}/swm-de.1x \
 #		${PREFIX}/man/de_DE.ISO_8859-1/man1/swm.1x
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/${DOCDIR}
-	cd ${WRKSRC}/../ && \
-		${CHMOD} -R 755 examples && \
-		pax -r -w examples ${PREFIX}/${DOCDIR}
-.for i in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/${DOCDIR}/examples/
-.endfor
-	for i in ${DOCS}; \
-		do ${INSTALL_DATA} ${WRKSRC}/../$${i} ${PREFIX}/${DOCDIR}; \
-	done
+	${MKDIR} ${PREFIX}/${DOCDIR} ${EXAMPLESDIR}
+	cd ${WRKSRC}/../ && ${CHMOD} -R 755 doc examples
+	cd ${WRKSRC}/../doc && pax -r -w * ${DOCSDIR}
+	cd ${WRKSRC}/../examples && pax -r -w * .swm ${EXAMPLESDIR}
 .endif
+	${MKDIR} ${DATADIR}/pixmaps
+	cd ${WRKSRC}/../share/swm/pixmaps && pax -r -w * ${DATADIR}/pixmaps
 
 .include <bsd.port.mk>
