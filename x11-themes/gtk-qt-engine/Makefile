@@ -7,7 +7,7 @@
 
 PORTNAME=	gtk-qt-engine
 PORTVERSION=	0.3
-CATEGORIES=	x11-toolkits
+CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.freedesktop.org/Software/gtk-qt/
 
 MAINTAINER=	ports@FreeBSD.org
