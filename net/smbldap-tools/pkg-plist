@@ -1,0 +1,19 @@
+etc/smbldap-tools/configure.pl
+etc/smbldap-tools/smbldap.conf.default
+etc/smbldap-tools/smbldap_bind.conf.default
+sbin/smbldap-groupadd
+sbin/smbldap-groupdel
+sbin/smbldap-groupmod
+sbin/smbldap-groupshow
+sbin/smbldap-migrate-accounts
+sbin/smbldap-migrate-groups
+sbin/smbldap-passwd
+sbin/smbldap-populate
+sbin/smbldap-useradd
+sbin/smbldap-userdel
+sbin/smbldap-usermod
+sbin/smbldap-usershow
+%%EXAMPLESDIR%%/smb.conf
+%%SITE_PERL%%/smbldap_tools.pm
+@dirrm etc/smbldap-tools
+@dirrm %%EXAMPLESDIR%%
