@@ -214,6 +214,7 @@
     SUBDIR += p5-Net-Patricia
     SUBDIR += p5-Net-RawIP
     SUBDIR += p5-Net-SNMP
+    SUBDIR += p5-Net-SSH
     SUBDIR += p5-Net-Telnet
     SUBDIR += p5-Net-Whois
     SUBDIR += p5-Net-ext
