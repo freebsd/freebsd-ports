@@ -3,7 +3,8 @@
 case "$1" in
 	start)
 		if [ -x %%PREFIX%%/bin/safe_mysqld ]; then
-			%%PREFIX%%/bin/safe_mysqld --user=mysql > /dev/null & && echo -n ' mysqld'
+			%%PREFIX%%/bin/safe_mysqld --user=mysql > /dev/null &
+			echo -n ' mysqld'
 		fi
 		;;
 	stop)
