@@ -1,3 +1,4 @@
+bin/knewmail
 share/apps/knewmail/pics/knewmail_active.xpm
 share/apps/knewmail/pics/knewmail_bubble_query.xpm
 share/apps/knewmail/pics/knewmail_bubble_swear.xpm
@@ -10,14 +11,23 @@ share/apps/knewmail/pics/knewmail_panel_1.xpm
 share/apps/knewmail/pics/knewmail_panel_2.xpm
 share/apps/knewmail/pics/knewmail_panel_3.xpm
 share/apps/knewmail/pics/knewmail_panel_4.xpm
-share/apps/knewmail/pics/knewmail_panel_6.xpm
 share/apps/knewmail/pics/knewmail_panel_5.xpm
+share/apps/knewmail/pics/knewmail_panel_6.xpm
 share/apps/knewmail/pics/knewmail_panel_7.xpm
 share/apps/knewmail/pics/knewmail_panel_8.xpm
 share/apps/knewmail/pics/knewmail_panel_normal.xpm
 share/apps/knewmail/pics/knewmail_splash.xpm
-share/doc/HTML/en/knewmail/knewmail_1.html
+share/doc/HTML/en/knewmail/3dletter.gif
+share/doc/HTML/en/knewmail/backward.gif
+share/doc/HTML/en/knewmail/bar.gif
+share/doc/HTML/en/knewmail/email.gif
+share/doc/HTML/en/knewmail/forward.gif
+share/doc/HTML/en/knewmail/homepage.gif
+share/doc/HTML/en/knewmail/index.gif
 share/doc/HTML/en/knewmail/index.html
+share/doc/HTML/en/knewmail/knewmail_1.html
+share/doc/HTML/en/knewmail/knewmail_10.html
+share/doc/HTML/en/knewmail/knewmail_11.html
 share/doc/HTML/en/knewmail/knewmail_2.html
 share/doc/HTML/en/knewmail/knewmail_3.html
 share/doc/HTML/en/knewmail/knewmail_4.html
@@ -26,26 +36,8 @@ share/doc/HTML/en/knewmail/knewmail_6.html
 share/doc/HTML/en/knewmail/knewmail_7.html
 share/doc/HTML/en/knewmail/knewmail_8.html
 share/doc/HTML/en/knewmail/knewmail_9.html
-share/doc/HTML/en/knewmail/knewmail_10.html
-share/doc/HTML/en/knewmail/knewmail_11.html
-share/doc/HTML/en/knewmail/3dletter.gif
-share/doc/HTML/en/knewmail/backward.gif
-share/doc/HTML/en/knewmail/bar.gif
-share/doc/HTML/en/knewmail/email.gif
-share/doc/HTML/en/knewmail/forward.gif
-share/doc/HTML/en/knewmail/homepage.gif
-share/doc/HTML/en/knewmail/index.gif
 share/doc/HTML/en/knewmail/knewmail_docs.gif
-bin/knewmail
 share/icons/mini/knewmail.xpm
+@dirrm share/doc/HTML/en/knewmail
 @dirrm share/apps/knewmail/pics
 @dirrm share/apps/knewmail
-@dirrm share/doc/HTML/en/knewmail
-
-
-
-
-
-
-
-
