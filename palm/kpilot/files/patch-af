@@ -1,9 +1,0 @@
---- kpilot/pilotListener.cc.orig	Thu Feb 10 22:24:08 2000
-+++ kpilot/pilotListener.cc	Thu Feb 10 22:24:33 2000
-@@ -1,5 +1,6 @@
- #include <sys/time.h>
- #include <sys/types.h>
-+#include <string.h>
- #include <sys/stat.h>
- #include <fcntl.h>
- #include <unistd.h>
