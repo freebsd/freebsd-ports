@@ -4,9 +4,9 @@
  				"efnet.mit.edu "\
  				"efnet.vuurwerk.nl "\
  			"[ircnet] "\
-+				"irc.seed.net.tw" \
-+				"irc.tw.freebsd.org" \
-+				"irc.csie.nctu.edu.tw" \
++				"irc.seed.net.tw " \
++				"irc.tw.freebsd.org " \
++				"irc.csie.nctu.edu.tw " \
  				"irc.webbernet.net "\
  				"irc.stealth.net "\
  				"irc.funet.fi "\
