@@ -1,13 +1,13 @@
 # New ports collection makefile for:	ted
-# Version required:	4.2c
+# Version required:	4.2d
 # Date Created:		18 Sep 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.9 1998/01/21 09:18:05 asami Exp $
+# $Id: Makefile,v 1.10 1998/01/24 15:14:10 vanilla Exp $
 #
 
-DISTNAME=		ted4.2c
-PKGNAME=		zh-ted-4.2c
+DISTNAME=		ted4.2d
+PKGNAME=		zh-ted-4.2d
 CATEGORIES=		chinese editors
 MASTER_SITES=		ftp://moon.csie.ntu.edu.tw/pub/X/ted/ \
 			ftp://freebsd.ntu.edu.tw/freebsd/ntu/moon/X/ted/
