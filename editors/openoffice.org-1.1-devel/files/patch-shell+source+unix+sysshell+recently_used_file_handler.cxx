@@ -1,5 +1,5 @@
---- ../shell/source/unix/sysshell/recently_used_file_handler.cxx.orig	Tue Jan 13 00:56:37 2004
-+++ ../shell/source/unix/sysshell/recently_used_file_handler.cxx	Tue Jan 13 00:57:26 2004
+--- shell/source/unix/sysshell/recently_used_file_handler.cxx.orig	Tue Jan 13 00:56:37 2004
++++ shell/source/unix/sysshell/recently_used_file_handler.cxx	Tue Jan 13 00:57:26 2004
 @@ -188,9 +188,12 @@
              write_xml_start_tag(TAG_RECENT_ITEM, file, true);
              write_xml_tag(TAG_URI, uri_, file);
