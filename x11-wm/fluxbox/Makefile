@@ -19,6 +19,15 @@ RUN_DEPENDS=    bsetbg:${PORTSDIR}/x11-wm/boxtools
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 
+.if defined(WITH_XINERAMA)
+CONFIGURE_ARGS+=	--enable-xinerama
+.endif
+
 MAN1=		fluxbox.1
+
+.if !defined(WITH_XINERAMA)
+pre-everything::
+	@${ECHO_CMD} "To enable xinerama support define WITH_XINERAMA"
+.endif
 
 .include <bsd.port.mk>
