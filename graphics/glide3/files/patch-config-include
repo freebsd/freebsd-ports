@@ -1,0 +1,30 @@
+--- cvg/glide3/src/glidesys.h.orig	Sat Mar 31 19:31:07 2001
++++ cvg/glide3/src/glidesys.h	Sat Mar 31 19:24:43 2001
+@@ -49,6 +49,7 @@
+  * 
+  * 5     5/21/97 6:05a Peter
+ */
++#include "config.h"
+ #ifndef __GLIDESYS_H__
+ #define __GLIDESYS_H__
+ 
+--- h3/glide3/src/glidesys.h.orig	Sat Mar 31 19:31:09 2001
++++ h3/glide3/src/glidesys.h	Sat Mar 31 19:24:51 2001
+@@ -56,6 +56,7 @@
+  * 
+  * 5     5/21/97 6:05a Peter
+ */
++#include "config.h"
+ #ifndef __GLIDESYS_H__
+ #define __GLIDESYS_H__
+ 
+--- h5/glide3/src/glidesys.h.orig	Sat Mar 31 19:31:11 2001
++++ h5/glide3/src/glidesys.h	Sat Mar 31 19:24:58 2001
+@@ -55,6 +55,7 @@
+  * 
+  * 5     5/21/97 6:05a Peter
+ */
++#include "config.h"
+ #ifndef __GLIDESYS_H__
+ #define __GLIDESYS_H__
+ 

@@ -61,6 +61,7 @@
     SUBDIR += gimp1
     SUBDIR += giram
     SUBDIR += gle
+    SUBDIR += glide3
     SUBDIR += gliv
     SUBDIR += gltk
     SUBDIR += gnofract4d
