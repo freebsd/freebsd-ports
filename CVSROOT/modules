@@ -1986,6 +1986,7 @@ gkrellm		ports/sysutils/gkrellm
 gkrellm-reminder	ports/misc/gkrellm-reminder
 gkrellm_snmp	ports/net/gkrellm_snmp
 gkrellmaflag	ports/misc/gkrellmaflag
+gkrellmbgchg	ports/misc/gkrellmbgchg
 gkrellmearth	ports/astro/gkrellmearth
 gkrellmlaunch	ports/misc/gkrellmlaunch
 gkrellmmailwatch	ports/mail/gkrellmmailwatch
