@@ -1,6 +1,24 @@
---- resolver-test.cpp.orig	Mon Jun 28 21:06:59 2004
-+++ resolver-test.cpp	Mon Jun 28 21:08:30 2004
-@@ -32,16 +32,16 @@
+--- resolver-test.cpp.orig	Mon Jun  7 08:37:17 2004
++++ resolver-test.cpp	Tue Jul  6 16:16:12 2004
+@@ -1,12 +1,15 @@
+-#include "resolver.hh"
++#include <sys/param.h>
++
+ #include <assert.h>
++
++#include "resolver.hh"
+ /*
+  Originally Written by John MacPherson <jrm21@cs.waikato.ac.nz>
+ 
+ */
+ 
+ // grrr... stupid intel little endian!
+-#define dottedquad(a,b,c,d) (a) + (b << 8) + (c << 16) + (d << 24);
++#define dottedquad(a,b,c,d) htonl((d) + (c << 8) + (b << 16) + (a << 24));
+ 
+ int main(void) {
+ 
+@@ -32,16 +35,16 @@
  	}
  	
  	/* Use Root Servers because they are unlikey to change IP */

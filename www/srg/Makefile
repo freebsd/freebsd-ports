@@ -7,6 +7,7 @@
 
 PORTNAME=	srg
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://mirror.crc.net.nz/pub/srg/
@@ -30,12 +31,6 @@ PLIST_FILES+=	share/examples/srg/${i}
 .endfor
 PLIST_DIRS=	share/examples/srg
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		"Fails self-tests on sparc64"
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's|-g |${CFLAGS} ${CPPFLAGS} |' ${WRKSRC}/Makefile \
 		${WRKSRC}/lib/Makefile
@@ -46,4 +41,4 @@ do-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
