@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	spim
-PORTVERSION=	6.3
-PORTREVISION=	1
+PORTVERSION=	6.4
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://ftp.cs.wisc.edu/pub/spim/
-DISTNAME=	${PORTNAME}${PORTVERSION}
+MASTER_SITES=	http://www.cs.wisc.edu/~larus/SPIM/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
