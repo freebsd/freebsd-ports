@@ -6,34 +6,33 @@
 #
 
 PORTNAME=	PyGreSQL
-PORTREVISION=	0
+PORTVERSION=	3.4
+PORTEPOCH=	1
 CATEGORIES=	databases python
+MASTER_SITES=	ftp://ftp.pygresql.org/pub/distrib/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	girgen@pingpong.net
-COMMENT=	A Python interface to PostgreSQL, including a DP-API 2.0 wrapper
+COMMENT=	A Python interface to PostgreSQL, both classic interface and DP-API 2.0
 
 BUILD_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
-LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
+LIB_DEPENDS=	pq:${PORTSDIR}/${POSTGRESQL_PORT}
 
 POSTGRESQL_PORT?=	databases/postgresql7
-POSTGRESQL_SUBPORT=YES
-
-WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
-
-# The PyGreSQL distfile is nowhere to be found, but exists in
-# postgresql-7.3 distribution so do not be alarmed if you use
-# a newer version of postgresql
-.include <${.CURDIR}/../postgresql73/Makefile>
-
 USE_PYTHON=	yes
-CONFIGURE_ARGS=	--with-python --prefix=${PREFIX}
-MAKE_ARGS+=	-C src/interfaces/python
-CFLAGS+=	-L${LOCALBASE}/lib
-MAKEFILE=	GNUmakefile
-
 DATETIME_DEP=	${PYTHON_SITELIBDIR}/mx/DateTime/__init__.py
+USE_REINPLACE=yes
+
+pre-build:
+	@ cd ${WRKSRC} ; ${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' setup.py
+
+do-build:
+	@ cd ${WRKSRC} ; ${PYTHON_CMD} setup.py build
+
+do-install:
+	@ cd ${WRKSRC} ; ${PYTHON_CMD} setup.py install
 
 post-install:
 	@ ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -lf \
@@ -41,9 +40,9 @@ post-install:
 	@ ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py -lf \
 	  ${PYTHONPREFIX_SITELIBDIR}
 .if !defined(NOPORTDOCS)
-.for docfile in Announce ChangeLog README
+.for docfile in Announce ChangeLog
 	@ ${MKDIR} ${DOCSDIR}
-	  ${INSTALL_DATA} ${WRKSRC}/src/interfaces/python/${docfile} \
+	  ${INSTALL_DATA} ${WRKSRC}/${docfile} \
 	  ${DOCSDIR}
 .endfor
 .endif
