@@ -38,6 +38,7 @@
 %%TURBADIR%%/graphics/search.gif
 %%TURBADIR%%/graphics/turba.gif
 %%TURBADIR%%/graphics/up.gif
+%%TURBADIR%%/graphics/user.gif
 %%TURBADIR%%/index.php
 %%TURBADIR%%/lib/.htaccess
 %%TURBADIR%%/lib/AbstractObject.php
@@ -80,6 +81,7 @@
 %%TURBADIR%%/locale/ru_RU/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/ru_RU.KOI8-R/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/sk_SK/LC_MESSAGES/turba.mo
+%%TURBADIR%%/locale/sl_SI/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/sv_SE/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/uk_UA/LC_MESSAGES/turba.mo
 %%TURBADIR%%/locale/zh_CN/LC_MESSAGES/turba.mo
@@ -109,6 +111,7 @@
 %%TURBADIR%%/po/ru_RU.KOI8-R.po
 %%TURBADIR%%/po/shtool
 %%TURBADIR%%/po/sk_SK.po
+%%TURBADIR%%/po/sl_SI.po
 %%TURBADIR%%/po/sv_SE.po
 %%TURBADIR%%/po/uk_UA.po
 %%TURBADIR%%/po/xgettext.sh
@@ -195,6 +198,8 @@ etc/horde/httpd.conf.turba
 @dirrm %%TURBADIR%%/locale/ru_RU.KOI8-R
 @dirrm %%TURBADIR%%/locale/sk_SK/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/sk_SK
+@dirrm %%TURBADIR%%/locale/sl_SI/LC_MESSAGES
+@dirrm %%TURBADIR%%/locale/sl_SI
 @dirrm %%TURBADIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%TURBADIR%%/locale/sv_SE
 @dirrm %%TURBADIR%%/locale/uk_UA/LC_MESSAGES

@@ -7,9 +7,10 @@
 
 PORTNAME=	turba
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/turba/tarballs/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-RC2
+DISTNAME=	${PORTNAME}-${PORTVERSION}-RC3
 
 MAINTAINER=	thierry@pompo.net
 
