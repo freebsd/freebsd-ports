@@ -7,6 +7,7 @@
 
 PORTNAME=	homard
 PORTVERSION=	7.1
+PORTREVISION=	1
 CATEGORIES=	french cad linux python
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.${ARCH}
@@ -14,8 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1.${ARCH}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A refinement and de-refinement mesh tool
 
-BUILD_DEPENDS=	${LOCALBASE}/aster/${vaster}/asteru.exe:${PORTSDIR}/french/aster
-RUN_DEPENDS=	${LOCALBASE}/aster/${vaster}/asteru.exe:${PORTSDIR}/french/aster
+BUILD_DEPENDS=	${LOCALBASE}/aster/${vaster}/asteru:${PORTSDIR}/french/aster
+RUN_DEPENDS=	${LOCALBASE}/aster/${vaster}/asteru:${PORTSDIR}/french/aster
 
 RESTRICTED=	"Toute personne chargeant le logiciel HOMARD s'engage à ne\
 		l'utiliser qu'en couplage avec le logiciel Code_Aster. Pour\

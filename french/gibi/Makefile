@@ -7,7 +7,7 @@
 
 PORTNAME=	gibi
 PORTVERSION=	2000
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	french cad linux
 MASTER_SITES=	http://www.code-aster.org/FICHIERS/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.${ARCH}
@@ -23,8 +23,8 @@ COMMENT=	GIBI est la partie mailleur et post de CASTEM
 #			zsh (default), bash or ksh.
 #-----------------------------------------------------------------------
 
-BUILD_DEPENDS+=	${LOCALBASE}/aster/${vaster}/asteru.exe:${PORTSDIR}/french/aster
-RUN_DEPENDS+=	${LOCALBASE}/aster/${vaster}/asteru.exe:${PORTSDIR}/french/aster \
+BUILD_DEPENDS+=	${LOCALBASE}/aster/${vaster}/asteru:${PORTSDIR}/french/aster
+RUN_DEPENDS+=	${LOCALBASE}/aster/${vaster}/asteru:${PORTSDIR}/french/aster \
 		${LINUXBASE}/usr/X11R6/lib/libXrender.so.1:${PORTSDIR}/x11/linux-XFree86-libs \
 		${SHELL_RUN_GIBI}:${PORTSDIR}/shells/${SHRGDEP}
 
