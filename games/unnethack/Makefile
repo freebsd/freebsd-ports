@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	slashem
-PORTVERSION=	0.0.6E.4F.4
+PORTVERSION=	0.0.6E.4F.5
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-tty
-DISTNAME=	se006e4f4
+DISTNAME=	se${PORTVERSION:S/.//g:L}
 
-MAINTAINER=	adam@alameda.edu
+MAINTAINER=	adam@blacktabby.org
 
 USE_GMAKE=	yes
 MAN6=		dgn_comp.6 dlb.6 lev_comp.6 slashem-tty.6 recover.6
 
-WRKSRC=		${WRKDIR}/slashem-0.0.6E4F4
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/([A-Z])./\1/g}
 
 post-patch:
 	${PERL} -pi -e "s@/usr/local@${PREFIX}@g" ${WRKSRC}/include/config.h
@@ -31,10 +31,10 @@ post-install:
 	@cp ${WRKSRC}/doc/slashem.6 ${WRKSRC}/doc/slashem${PKGNAMESUFFIX}.6
 	@cd ${WRKSRC}/doc; PREFIX=${PREFIX} ${MAKE} manpages
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
-	${CP} ${WRKSRC}/doc/Guidebook.txt ${PREFIX}/share/doc/slashem${PKGNAMESUFFIX}
-	${CP} ${WRKSRC}/slamfaq.txt ${PREFIX}/share/doc/slashem${PKGNAMESUFFIX}
-	${CP} ${FILESDIR}/sample.slashemrc ${PREFIX}/share/doc/slashem${PKGNAMESUFFIX}
+	${MKDIR} ${DOCSDIR}${PKGNAMESUFFIX}
+	${INSTALL_MAN} ${WRKSRC}/doc/Guidebook.txt ${DOCSDIR}${PKGNAMESUFFIX}
+	${INSTALL_MAN} ${WRKSRC}/slamfaq.txt ${DOCSDIR}${PKGNAMESUFFIX}
+	${INSTALL_MAN} ${FILESDIR}/sample.slashemrc ${DOCSDIR}${PKGNAMESUFFIX}
 .endif
 	@${CAT} ${PKGMESSAGE}
 

@@ -5,10 +5,9 @@ share/slashem-tty/slashem-tty
 @exec chmod 2755 %D/share/slashem-tty/save
 @exec chown games:games %D/share/slashem-tty/save
 @unexec rm -rf %D/share/slashem-tty/save
-@exec chmod -R 775 %D/share/doc/slashem-tty
-share/doc/slashem-tty/Guidebook.txt
-share/doc/slashem-tty/slamfaq.txt
-share/doc/slashem-tty/sample.slashemrc
+%%PORTDOCS%%share/doc/slashem-tty/Guidebook.txt
+%%PORTDOCS%%share/doc/slashem-tty/slamfaq.txt
+%%PORTDOCS%%share/doc/slashem-tty/sample.slashemrc
 share/slashem-tty/license
 share/slashem-tty/nhshare
 share/slashem-tty/nhushare
@@ -17,4 +16,4 @@ share/slashem-tty/logfile
 share/slashem-tty/record
 share/slashem-tty/perm
 @dirrm share/slashem-tty
-@dirrm share/doc/slashem-tty
+%%PORTDOCS%%@dirrm share/doc/slashem-tty
