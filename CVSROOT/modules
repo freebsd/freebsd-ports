@@ -10239,6 +10239,7 @@ vim-lite	ports/editors/vim-lite
 vim5		ports/editors/vim5
 vim6+ruby	ports/editors/vim6+ruby
 vimpart		ports/editors/vimpart
+vino		ports/net/vino
 vipec		ports/cad/vipec
 vips		ports/graphics/vips
 virt		ports/games/virt
