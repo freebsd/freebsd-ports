@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	euchre
-PORTVERSION=	0.3
+PORTVERSION=	0.7
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	laszlof@freebsdmatrix.net
+MAINTAINER=	laszlof@vonostingroup.com
 COMMENT=	Very popular card game with variable skill levels
 
 USE_AUTOMAKE=	yes
