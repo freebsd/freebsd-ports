@@ -10,7 +10,7 @@ PORTVERSION=	3.0
 CATEGORIES=	net
 MASTER_SITES=	http://homepages.tig.com.au/~mrudat/software/msend/
 
-MAINTAINER=	mark@kyne.com.au
+MAINTAINER=	markp@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-DUSE_READLINE

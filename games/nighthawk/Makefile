@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} http://jsno.downunder.net.au/rel/unix_proje
 MASTER_SITE_SUBDIR=	games/arcade
 EXTRACT_SUFX=	-1.tar.gz
 
-MAINTAINER=	mark@kyne.com.au
+MAINTAINER=	markp@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

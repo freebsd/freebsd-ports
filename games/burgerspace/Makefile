@@ -10,7 +10,7 @@ PORTVERSION=	1.5
 CATEGORIES=	games
 MASTER_SITES=	http://sites.netscape.net/sarrazip/
 
-MAINTAINER=	mark@kyne.com.au
+MAINTAINER=	markp@FreeBSD.org
 
 LIB_DEPENDS=	gengameng.3:${PORTSDIR}/devel/gengameng \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt

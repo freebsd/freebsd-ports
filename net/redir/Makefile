@@ -10,7 +10,7 @@ PORTVERSION=	2.2.1
 CATEGORIES=	net
 MASTER_SITES=	http://sammy.net/~sammy/hacks/
 
-MAINTAINER=	mark@kyne.com.au
+MAINTAINER=	markp@FreeBSD.org
 
 MAN1=		redir.1
 

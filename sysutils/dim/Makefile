@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.theory.org/~matt/dim/
 DISTNAME=	dim
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	mark@kyne.com.au
+MAINTAINER=	markp@FreeBSD.org
 
 USE_PERL5=	yes
 NO_WRKSUBDIR=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	games
 MASTER_SITES=	http://www.panix.com/~mbh/xsc/
 
-MAINTAINER=	mark@kyne.com.au
+MAINTAINER=	markp@FreeBSD.org
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	1.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.panix.com/~mbh/icontact/
 
-MAINTAINER=	mark@kyne.com.au
+MAINTAINER=	markp@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/bin/ppmmake:${PORTSDIR}/graphics/netpbm \
 		${LOCALBASE}/bin/cjpeg:${PORTSDIR}/graphics/jpeg

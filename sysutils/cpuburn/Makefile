@@ -12,7 +12,7 @@ MASTER_SITES=	http://users.ev1.net/~redelm/
 DISTNAME=	cpuburn_${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	_tar.gz
 
-MAINTAINER=	mark@kyne.com.au
+MAINTAINER=	markp@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ONLY_FOR_ARCHS=	i386

@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.striker.ottawa.on.ca/pub/isreal/
 EXTRACT_SUFX=	.tar
 
-MAINTAINER=	mark@kyne.com.au
+MAINTAINER=	markp@FreeBSD.org
 
 USE_XLIB=	yes
 USE_IMLIB=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	2.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.tuxedo.org/~esr/deal/
 
-MAINTAINER=	mark@kyne.com.au
+MAINTAINER=	markp@FreeBSD.org
 
 ALL_TARGET=	deal
 MAN1=		deal.1

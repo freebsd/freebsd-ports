@@ -11,7 +11,7 @@ CATEGORIES=     net
 MASTER_SITES=   ${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= system/network
 
-MAINTAINER=     mark@kyne.com.au
+MAINTAINER=	markp@FreeBSD.org
 
 LIB_DEPENDS=    gdbm.2:${PORTSDIR}/databases/gdbm
 

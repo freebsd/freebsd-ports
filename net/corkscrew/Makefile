@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.agroman.net/corkscrew/
 
-MAINTAINER=	mark@kyne.com.au
+MAINTAINER=	markp@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -10,7 +10,7 @@ PORTVERSION=	0.6.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.libsdl.org/projects/pipenightdreams/package/
 
-MAINTAINER=	mark@kyne.com.au
+MAINTAINER=	markp@FreeBSD.org
 
 LIB_DEPENDS=	SDL_image.10:${PORTSDIR}/graphics/sdl_image
 
