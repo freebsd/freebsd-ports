@@ -3,11 +3,11 @@
 # Date created:		8 March 95
 # Whom:			Lars Koeller <lars.koeller@odie.physik2.uni-rostock.de>
 #
-# $Id: Makefile,v 1.2 1995/04/01 12:51:34 jkh Exp $
+# $Id: Makefile,v 1.3 1995/04/12 15:22:37 asami Exp $
 #
 
 DISTNAME=	xperfmon++
-PKGNAME=	xperfmon++-1.1
+PKGNAME=	xperfmon-1.1
 USE_IMAKE=	yes
 CATEGORIES+=	x11
 # In Germany try this
