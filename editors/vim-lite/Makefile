@@ -8,6 +8,6 @@
 
 LITE=		yes
 
-MASTERDIR=	${.CURDIR}/../vim5
+MASTERDIR=	${.CURDIR}/../vim
 
 .include "${MASTERDIR}/Makefile"
