@@ -15,6 +15,7 @@ MAINTAINER=	trevor@jpj.net
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+MAN8=		oidentd.8
 
 .include <bsd.port.pre.mk>
 
