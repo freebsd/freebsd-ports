@@ -15,6 +15,7 @@ MAINTAINER=		yshd@na.rim.or.jp
 
 MAN1=			waveplay.1
 MANLANG=		"" ja
+ONLY_FOR_ARCHS=		i386
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/waveplay ${PREFIX}/bin/waveplay
