@@ -8,9 +8,8 @@
 PORTNAME=	pantomime
 PORTVERSION=	1.0.5
 CATEGORIES=	mail
-MASTER_SITES=	http://www.collaboration-world.com/mirror/ \
-		http://extrovert.screwdriver.net/~extra/ \
-		ftp://ftp.tuwien.ac.at/z6/publishing/gnustep/libs/
+MASTER_SITES=	http://extrovert.screwdriver.net/~extra/ \
+		ftp://ftp.gnustep.org/pub/gnustep/libs/
 DISTNAME=	Pantomime-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
