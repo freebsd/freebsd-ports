@@ -21,4 +21,10 @@ PERL_CONFIGURE=	yes
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Device::SerialPort.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=		"needs at least perl 5.6.1 to build"
+.endif
+
+.include <bsd.port.post.mk>
