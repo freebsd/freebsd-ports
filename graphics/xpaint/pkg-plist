@@ -1,0 +1,4 @@
+@cwd /usr/X11R6
+bin/xpaint
+man/man1/xpaint.1.gz
+lib/X11/app-defaults/XPaint
