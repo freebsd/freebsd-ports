@@ -1,0 +1,22 @@
+--- contrib/emacs/Makefile.in.orig	Thu Feb 24 19:01:08 2000
++++ contrib/emacs/Makefile.in	Fri Apr  4 20:41:55 2003
+@@ -159,7 +159,8 @@
+ 
+ install-dist_lispLISP: $(dist_lisp_LISP) $(ELCFILES)
+ 	@$(NORMAL_INSTALL)
+-	$(mkinstalldirs) $(DESTDIR)$(lispdir)
++	if test $(EMACS) != no; then \
++	$(mkinstalldirs) $(DESTDIR)$(lispdir) \
+ 	@list='$(dist_lisp_LISP)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d= ; else d="$(srcdir)/"; fi; \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+@@ -169,7 +170,8 @@
+ 	    echo " $(INSTALL_DATA) $${p}c $(DESTDIR)$(lispdir)/$${f}c"; \
+ 	    $(INSTALL_DATA) $${p}c $(DESTDIR)$(lispdir)/$${f}c; \
+ 	  else : ; fi; \
+-	done
++	done \
++	fi
+ 
+ uninstall-dist_lispLISP:
+ 	@$(NORMAL_UNINSTALL)

@@ -19,8 +19,6 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	chuckr@FreeBSD.org
 COMMENT=	Formats an ascii file for printing on a postscript printer
 
-BROKEN=		"Installs files in /"
-
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
