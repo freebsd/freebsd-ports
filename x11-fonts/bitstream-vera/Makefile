@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	bitstream-vera
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.10
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.0
+MASTER_SITE_SUBDIR=	sources/ttf-${PORTNAME}/1.10
+DISTNAME=	ttf-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@freebsd.org
-COMMENT=	Bitstream Vera collection of 10 TrueType fonts
+COMMENT=	Bitstream Vera TrueType font collection
 
 BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
@@ -22,9 +22,6 @@ RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
-
-NO_CDROM=	"Restrictive license - may not distribute"
-NO_PACKAGE=	"Restrictive license - may not distribute"
 
 PLIST_SUB=	FONTSDIR="${FONTSDIR:S|${PREFIX}/||}"
 
@@ -66,12 +63,13 @@ install-conf:
 install-docs:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Bitstream_Vera_Fonts_README.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.TXT ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/RELEASENOTES.TXT ${DOCSDIR}
 .endif
 
 post-install:
 	${ECHO_MSG} "===> Running fc-cache"
-	-${X11BASE}/bin/fc-cache -f -v
+	-${X11BASE}/bin/fc-cache -f -v ${FONTSDIR}
 	${ECHO_MSG}
 	${CAT} ${PKGMESSAGE}
 	${ECHO_MSG}
