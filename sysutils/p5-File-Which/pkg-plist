@@ -1,0 +1,6 @@
+bin/pwhich
+lib/perl5/site_perl/%%PERL_VER%%/File/Which.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Which/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Which
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/File

@@ -147,6 +147,7 @@
     SUBDIR += nwclient
     SUBDIR += nwclient602
     SUBDIR += obliterate
+    SUBDIR += p5-File-Which
     SUBDIR += p5-Filesys-DiskSpace
     SUBDIR += p5-LJ-Cache
     SUBDIR += p5-LJ-TextMessage
