@@ -20,7 +20,7 @@ BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/misc/rpm2cpio
 ONLY_FOR_ARCHS=	alpha
 RESTRICTED=	Not allowed to redistribute on our FTP site or CDROMs
 
-PREFIX=			/usr/compat/osf1
+PREFIX=			/compat/osf1
 EXTRACT_CMD=		rpm2cpio
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|cpio -idum
