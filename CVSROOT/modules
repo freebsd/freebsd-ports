@@ -8096,6 +8096,7 @@ wingz3		ports/math/wingz3
 wise		ports/biology/wise
 wizard		ports/devel/wizard
 wm2		ports/x11-wm/wm2
+wmDeskGuide	ports/x11-wm/wmDeskGuide
 wmScoreBoard	ports/misc/wmScoreBoard
 wmakerconf	ports/x11-wm/wmakerconf
 wmanager	ports/x11-wm/wmanager
