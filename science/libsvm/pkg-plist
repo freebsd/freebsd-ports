@@ -5,3 +5,4 @@ bin/svm-train
 %%DATADIR%%/easy.py
 %%LIBSVM_PYTHON%%%%PYTHON_SITELIBDIR%%/svm.py
 %%LIBSVM_PYTHON%%%%PYTHON_SITELIBDIR%%/svmc.so
+@dirrm %%DATADIR%%
