@@ -1,5 +1,5 @@
 # New ports collection makefile for:	argus
-# Version required:	argus-1.7.beta.1e
+# Version required:	1.7.beta.1e
 # Date created:		26 November 1998
 # Whom:			Jonathan Hanna <jhanna@home.com>
 #
@@ -22,32 +22,22 @@ MAN5=	argus.5
 MAN8=	argus.8
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/adjacency ${PREFIX}/bin/adjacency
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/argus_bpf ${PREFIX}/bin/argus
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/connections ${PREFIX}/bin/connections
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/dnstats ${PREFIX}/bin/dnstats
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/ra ${PREFIX}/bin/ra
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/raservices ${PREFIX}/bin/raservices
-	${INSTALL_PROGRAM} ${WRKSRC}/bin/rasort ${PREFIX}/bin/rasort
-	${INSTALL_MAN} ${WRKSRC}/man/man1/connections.1 ${PREFIX}/man/man1/connections.1
-	${INSTALL_MAN} ${WRKSRC}/man/man1/ra.1 ${PREFIX}/man/man1/ra.1
-	${INSTALL_MAN} ${WRKSRC}/man/man1/rasort.1 ${PREFIX}/man/man1/rasort.1
-	${INSTALL_MAN} ${WRKSRC}/man/man1/services.1 ${PREFIX}/man/man1/services.1
+.for i in adjacency argus_bpf connections dnstats ra raservices rasort
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/$i ${PREFIX}/bin
+.endfor
+	${MV} ${PREFIX}/bin/argus_bpf ${PREFIX}/bin/argus
+.for i in connections.1 ra.1 rasort.1 services.1
+	${INSTALL_MAN} ${WRKSRC}/man/man1/$i ${PREFIX}/man/man1
+.endfor
 	${INSTALL_MAN} ${WRKSRC}/man/man5/argus.5 ${PREFIX}/man/man5/argus.5
 	${INSTALL_MAN} ${WRKSRC}/man/man8/argus.8 ${PREFIX}/man/man8/argus.8
 	${INSTALL_DATA} ${WRKSRC}/include/cons_def.h ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/include/cons_out.h ${PREFIX}/include
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/argus
-	${INSTALL_DATA} ${WRKSRC}/examples/CA-95.01 ${PREFIX}/share/doc/argus
-	${INSTALL_DATA} ${WRKSRC}/examples/CA-95.01.scan.sh ${PREFIX}/share/doc/argus
-	${INSTALL_DATA} ${WRKSRC}/examples/README ${PREFIX}/share/doc/argus
-	${INSTALL_DATA} ${WRKSRC}/examples/configs ${PREFIX}/share/doc/argus
-	${INSTALL_DATA} ${WRKSRC}/examples/dailyscan.sh ${PREFIX}/share/doc/argus
-	${INSTALL_DATA} ${WRKSRC}/examples/policy.conf ${PREFIX}/share/doc/argus
-	${INSTALL_DATA} ${WRKSRC}/examples/policy.test ${PREFIX}/share/doc/argus
-	${INSTALL_DATA} ${WRKSRC}/examples/ra.conf ${PREFIX}/share/doc/argus
-	${INSTALL_DATA} ${WRKSRC}/examples/services ${PREFIX}/share/doc/argus
+.for i in CA-95.01 CA-95.01.scan.sh README configs dailyscan.sh policy.conf policy.test ra.conf services
+	${INSTALL_DATA} ${WRKSRC}/examples/$i ${PREFIX}/share/doc/argus
+.endfor
 .endif
 
 .include <bsd.port.mk>
