@@ -1,1 +1,5 @@
 bin/gawk
+bin/gawk-3.0.4
+info/gawk.info
+@dirrm libexec/awk
+@dirrm share/awk
