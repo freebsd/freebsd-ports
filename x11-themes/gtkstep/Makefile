@@ -8,7 +8,7 @@
 PORTNAME=	gtkstep
 PORTVERSION=	2.2
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://ulli.linuxave.net/gtkstep/
+MASTER_SITES=	http://ulli.on.openave.net/gtkstep/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
