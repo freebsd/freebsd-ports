@@ -30,7 +30,10 @@ MAN1=	FvwmAnimate.1 FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 \
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc
-	@${CP} ${WRKSRC}/sample.fvwmrc/system.fvwm2rc ${PREFIX}/etc
+	@${CP} ${WRKSRC}/sample.fvwmrc/system.fvwm2rc ${PREFIX}/etc/system.fvwm2rc.dist
+	@if [ ! -e ${PREFIX}/etc/system.fvwm2rc ]; then \
+		${CP} ${WRKSRC}/sample.fvwmrc/system.fvwm2rc ${PREFIX}/etc/system.fvwm2rc.dist; \
+	fi
 	@${MKDIR} ${PREFIX}/lib/X11/fvwm2/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/icons/*.xpm \
 		${PREFIX}/lib/X11/fvwm2/pixmaps
