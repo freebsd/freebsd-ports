@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.281 1999/06/28 01:46:12 billf Exp $
+# $Id: Makefile,v 1.282 1999/06/28 01:54:56 billf Exp $
 #
 
     SUBDIR += IglooFTP
@@ -59,6 +59,7 @@
     SUBDIR += ftptool
     SUBDIR += gated
     SUBDIR += gaim
+    SUBDIR += generic-nqs
     SUBDIR += gftp
     SUBDIR += ggsd
     SUBDIR += gnome-icu
