@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.dockapps.com/download.php/id/252/ \
 MAINTAINER=	danfe@regency.nsu.ru
 COMMENT=	A dockable XMMS interface
 
+BROKEN=		Does not link
+
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
