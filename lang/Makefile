@@ -101,6 +101,7 @@
     SUBDIR += ruby-man
     SUBDIR += ruby-perl
     SUBDIR += ruby-python
+    SUBDIR += ruby-usersguide
     SUBDIR += scheme48
     SUBDIR += schemetoc
     SUBDIR += scm

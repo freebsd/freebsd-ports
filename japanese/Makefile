@@ -233,6 +233,7 @@
     SUBDIR += ruby-man
     SUBDIR += ruby-slang
     SUBDIR += ruby-uconv
+    SUBDIR += ruby-usersguide
     SUBDIR += rubytk
     SUBDIR += rxvt
     SUBDIR += samba
