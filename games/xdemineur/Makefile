@@ -1,15 +1,14 @@
 # New ports collection makefile for:    xdemineur
-# Version required:     2.1
+# Version required:     2.1.1
 # Date created:         13 Feb 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1998/09/28 02:18:19 steve Exp $
+# $Id: Makefile,v 1.3 1998/11/28 09:06:16 asami Exp $
 #
 
-DISTNAME=       xdemineur-2.1
+DISTNAME=       xdemineur-2.1.1
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	games
+MASTER_SITES=	ftp://ftp.babafou.eu.org/pub/babafou/
 
 MAINTAINER=	ports@FreeBSD.ORG
 
