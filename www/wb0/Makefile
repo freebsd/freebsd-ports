@@ -24,12 +24,12 @@ DOCDIR=		share/doc/${PORTNAME}
 DOCS=		AUTHORS Changelog README
 ONLY_FOR_ARCHS=	i386
 PLIST=		${WRKDIR}/pkg-plist
-USE_REINPLACE=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e 's|/etc/wb0|${LOCALBASE}/etc|g ; \
+	@${MV} ${WRKSRC}/wb0.c ${WRKSRC}/wb0.c.orig
+	@${SED} -e 's|/etc/wb0|${LOCALBASE}/etc|g ; \
 		s|/usr/local/src/wb0/font/bit|${LOCALBASE}/share/wb0/|g' \
-		${WRKSRC}/wb0.c
+		< ${WRKSRC}/wb0.c.orig > ${WRKSRC}/wb0.c
 
 pre-install:
 	${ECHO_CMD} bin/wb0 > ${PLIST}
