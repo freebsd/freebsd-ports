@@ -1,4 +1,9 @@
 @cwd /usr/local
 bin/screen
-bin/screen-3.6.0
+bin/screen-3.6.1
 man/man1/screen.1
+info/screen.info
+info/screen.info-1
+info/screen.info-2
+info/screen.info-3
+info/screen.info-4
