@@ -1,5 +1,104 @@
 #!/bin/sh
-mkdir -p ${WRKDIRPREFIX}${CURDIR}
-. `dirname $0`/configure.linproc
-. `dirname $0`/configure.net
 
+[ "_$VMNET_HOST_IP" = _ ] && VMNET_HOST_IP="192.168.254.1"
+[ "_$VMNET_NETMASK" = _ ] && VMNET_NETMASK="255.255.255.0"
+
+host_ip=$VMNET_HOST_IP
+netmask=$VMNET_NETMASK
+title="VMware network options"
+
+get_network_settings() {
+    result=`/usr/bin/dialog --title "$title" --clear --inputbox \
+"\n"\
+"What will be the IP address of your host on your private network?:"\
+    10 40 $host_ip \
+    2>&1 >/dev/tty `
+
+    case $? in
+    0)
+	if [ -z "$result" ]; then
+	    return 1
+	fi
+	host_ip=$result
+	;;
+    1)	
+	return 1
+	;;
+    esac
+
+    result=`/usr/bin/dialog --title "$title" --clear --inputbox \
+"\n"\
+"What will be the netmask of your private network?:"\
+    10 40 $netmask \
+    2>&1 >/dev/tty `
+
+    case $? in
+    0)
+	if [ -z "$result" ]; then
+	    return 1
+	fi
+	netmask=$result
+	;;
+    1)	
+	return 1
+	;;
+    esac
+    return 0;
+}
+
+do_network() {
+    while true; do
+	get_network_settings
+
+	/usr/bin/dialog --title "Confirmation" --clear --yesno \
+"\n"\
+"Are the following options correct?\n\n"\
+"IP address: $host_ip\n"\
+"Netmask:    $netmask\n"\
+	10 40
+	[ $? -eq 0 ] && return 0
+
+	/usr/bin/dialog --title "Confirmation" --clear --yesno \
+"\n"\
+"Do you want to edit network options again?\n"\
+	10 40
+	[ $? -eq 0 ] && continue
+
+	/usr/bin/dialog --title "Confirmation" --clear --yesno \
+"\n"\
+"Do you want to continue without networking?\n"\
+	10 50
+	[ $? -eq 0 ] && return 1
+
+	host_ip=$VMNET_HOST_IP
+	netmask=$VMNET_NETMASK
+
+	return 0;
+    done
+}
+
+networking=0
+if [ _$BATCH = _ ]; then
+    do_network
+
+    if [ $? -eq 0 ]; then
+	networking=1
+	/usr/bin/dialog --title "$title" --infobox \
+"\n"\
+"The following options will be used.\n\n"\
+"IP address: $host_ip\n"\
+"Netmask:    $netmask\n"\
+	10 40
+    fi
+else #BATCH
+    [ -f ${WRKDIR}/Makefile.inc.net ] && exit
+fi #BATCH
+
+(
+exec > ${WRKDIR}/Makefile.inc.net
+
+echo '#' `date`
+echo VMNET_HOST_IP=$host_ip
+echo VMNET_NETMASK=$netmask
+[ $networking -ne 0 ] && echo VMNET_NETWORKING=1
+)
