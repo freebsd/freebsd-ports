@@ -1,6 +1,6 @@
---- gnome-cd/gst-cdparanoia-cdrom.c.orig	Mon Feb  7 12:39:31 2005
-+++ gnome-cd/gst-cdparanoia-cdrom.c	Sun Mar 20 04:42:32 2005
-@@ -1213,6 +1213,16 @@
+--- gnome-cd/gst-cdparanoia-cdrom.c.orig	Mon Apr  4 16:25:49 2005
++++ gnome-cd/gst-cdparanoia-cdrom.c	Mon Apr  4 16:26:14 2005
+@@ -1224,6 +1224,16 @@
  		*status = NULL;
  		return FALSE;
  	}
@@ -16,8 +16,8 @@
 +	realstatus->cd = GNOME_CDROM_STATUS_OK;
  #endif
  
- 	/* Get the volume */
-@@ -1443,15 +1453,18 @@
+ 	gst_cdparanoia_cdrom_close (lcd);
+@@ -1421,15 +1431,18 @@
  		return FALSE;
  	}
  
@@ -39,7 +39,7 @@
  	if (ioctl (fd, CDIOCGETVOL, 0) < 0) {
  #else
  	if (ioctl (fd, CDROM_GET_CAPABILITY, 0) < 0) {
-@@ -1463,6 +1476,7 @@
+@@ -1441,6 +1454,7 @@
  	}
  
  	close (fd);

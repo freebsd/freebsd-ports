@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnomemedia2
-PORTVERSION=	2.10.0
-PORTREVISION=	3
+PORTVERSION=	2.10.1
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-media/2.10
@@ -43,6 +42,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%CDROM%%|acd0|' ${WRKSRC}/configure
 .else
 	@${REINPLACE_CMD} -e 's|%%CDROM%%|acd0c|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|lrint|rint|' \
+		${WRKSRC}/gnome-cd/gst-cdparanoia-cdrom.c \
+		${WRKSRC}/gst-mixer/src/volume.c
 .endif
 
 .include <bsd.port.post.mk>
