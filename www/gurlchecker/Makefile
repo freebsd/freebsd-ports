@@ -18,7 +18,7 @@ LIB_DEPENDS=	gnutls.12:${PORTSDIR}/security/gnutls \
 
 USE_X_PREFIX=	yes
 DOWNNUM=	335
-USE_GNOME=	gnomeprefix gnomehack libgnomeui
+USE_GNOME=	gnomeprefix gnomehack libgnomeui intlhack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
