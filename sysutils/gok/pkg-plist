@@ -99,9 +99,12 @@ share/gnome/gok/dictionary.txt
 share/gnome/gok/direct-selection.xam
 share/gnome/gok/dwell-selection.xam
 share/gnome/gok/gok.rc
+share/gnome/gok/gok-controls.kbd
+share/gnome/gok/goklogo.png
 share/gnome/gok/goksound1.wav
 share/gnome/gok/goksound2.wav
 share/gnome/gok/inverse-scanning.xam
+share/gnome/gok/hide.kbd
 share/gnome/gok/launcher.kbd
 share/gnome/gok/main.kbd
 share/gnome/gok/manage.kbd
