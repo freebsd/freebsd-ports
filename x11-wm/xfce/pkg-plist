@@ -33,6 +33,8 @@ etc/xfce/fvwmrc
 etc/xfce/xfbdrc
 etc/xfce/xfce3rc
 etc/xfce/xfce3rc.cs
+etc/xfce/xfce3rc.de
+etc/xfce/xfce3rc.fr
 etc/xfce/xfce3rc.hu
 etc/xfce/xfce3rc.ja
 etc/xfce/xfce3rc.ko
@@ -106,6 +108,7 @@ share/xfce/backdrops/Eyes.xpm
 share/xfce/backdrops/Fire.xpm
 share/xfce/backdrops/Flames.xpm
 share/xfce/backdrops/Flow.xpm
+share/xfce/backdrops/Flower.jpg
 share/xfce/backdrops/Funkyblue.xpm
 share/xfce/backdrops/Gallets.xpm
 share/xfce/backdrops/Glasses.xpm
@@ -185,6 +188,7 @@ share/xfce/backdrops/Wood2.xpm
 share/xfce/backdrops/Worm.xpm
 share/xfce/backdrops/Xfce.jpg
 share/xfce/backdrops/Xfce.xpm
+share/xfce/backdrops/XfceStellar.xpm
 share/xfce/backdrops/Xfcelogo.xpm
 share/xfce/backdrops/Xfcemice.jpg
 share/xfce/fonts/cursor2.pcf
@@ -366,6 +370,7 @@ share/xfce/icons/X_server.xpm
 share/xfce/icons/Xmix.xpm
 share/xfce/icons/Xterm.xpm
 share/xfce/icons/Xv.xpm
+share/xfce/icons/xfsamba.xpm
 share/xfce/palettes/Alpine
 share/xfce/palettes/Altxfce
 share/xfce/palettes/Altxfce2
@@ -378,6 +383,7 @@ share/xfce/palettes/Basic
 share/xfce/palettes/BeHappy
 share/xfce/palettes/BeHappy2
 share/xfce/palettes/BeHappy3
+share/xfce/palettes/BeHappy4
 share/xfce/palettes/BlueX
 share/xfce/palettes/BlueX2
 share/xfce/palettes/BlueX3
@@ -391,8 +397,10 @@ share/xfce/palettes/Classic2
 share/xfce/palettes/Clinky
 share/xfce/palettes/Craters
 share/xfce/palettes/Default
+share/xfce/palettes/Defcon
 share/xfce/palettes/Dolly
 share/xfce/palettes/Dust
+share/xfce/palettes/Eaz-l
 share/xfce/palettes/Fall
 share/xfce/palettes/GTK+Default
 share/xfce/palettes/Glass
@@ -409,12 +417,14 @@ share/xfce/palettes/Iceland
 share/xfce/palettes/Jazza
 share/xfce/palettes/Jazza2
 share/xfce/palettes/Kdetheme
+share/xfce/palettes/LightBulb
 share/xfce/palettes/Liquid
 share/xfce/palettes/Liquid2
 share/xfce/palettes/Mauve
 share/xfce/palettes/Metal
 share/xfce/palettes/Military
 share/xfce/palettes/Modern
+share/xfce/palettes/Modern2
 share/xfce/palettes/Moz9
 share/xfce/palettes/Moz9-2
 share/xfce/palettes/Nature
@@ -423,10 +433,13 @@ share/xfce/palettes/Netsy
 share/xfce/palettes/OldWood
 share/xfce/palettes/Pale
 share/xfce/palettes/Paper
+share/xfce/palettes/Pinky
 share/xfce/palettes/Plum
 share/xfce/palettes/Power
 share/xfce/palettes/Power2
 share/xfce/palettes/Prairie
+share/xfce/palettes/Prune
+share/xfce/palettes/PruneDark
 share/xfce/palettes/Salmon
 share/xfce/palettes/Salmon2
 share/xfce/palettes/Sand
@@ -437,11 +450,13 @@ share/xfce/palettes/SmoothBW
 share/xfce/palettes/Spring
 share/xfce/palettes/Standard
 share/xfce/palettes/Stellar
+share/xfce/palettes/Stellar2
 share/xfce/palettes/Stripe
 share/xfce/palettes/Sunny
 share/xfce/palettes/Symbiose
 share/xfce/palettes/TBlue
 share/xfce/palettes/Teal
+share/xfce/palettes/Thinice
 share/xfce/palettes/Tiny
 share/xfce/palettes/Tommy
 share/xfce/palettes/Tradition
