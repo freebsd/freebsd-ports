@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lmtpd
-PORTVERSION=	0.9.13
+PORTVERSION=	0.9.14
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pll
@@ -22,7 +22,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libhome.a:${PORTSDIR}/misc/libhome
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
-CONFIGURE_ARGS=	--with-mysqllog --with-db3 -without-db4 --with-pcre --without-perl
+CONFIGURE_ARGS=	--with-mysqllog --with-db3 -without-db4 \
+		--with-pcre --without-perl
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN8=		lmtpd.8
@@ -33,6 +34,9 @@ post-install:
 		${PREFIX}/etc/lmtpd.conf.dist
 	${INSTALL_SCRIPT} ${WRKSRC}/lmtpdlogsum/lmtpdlogsum.pl \
 		${PREFIX}/bin/lmtpdlogsum
+	@${MKDIR} ${EXAMPLESDIR}/msg
+	${INSTALL_DATA} ${WRKSRC}/sql/* ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/txt/* ${EXAMPLESDIR}/msg
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
