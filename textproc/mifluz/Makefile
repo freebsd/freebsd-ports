@@ -7,19 +7,20 @@
 
 PORTNAME=	mifluz
 PORTVERSION=	0.23.0
+PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	ftp://ftp.gnu.org/pub/gnu/mifluz/
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libiconv.so:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
-CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE}
-
-GNU_CONFIGURE=	yes
-
+USE_REINPLACE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
+		--without-unac
 INSTALLS_SHLIB= yes
-LDCONFIG_DIRS=	%%PREFIX%%/lib
 
 MAN1=	htdb_dump.1 htdb_stat.1 htdb_load.1 mifluzdump.1 mifluzload.1 \
 	mifluzsearch.1 mifluzdict.1
@@ -29,6 +30,14 @@ MAN3=	WordContext.3 WordList.3 WordDict.3 WordListOne.3 WordKey.3 \
 	WordMonitor.3 Configuration.3 mifluz.3
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+post-patch:
+	@${REINPLACE_CMD} 's|-D_THREAD_SAFE -pthread|${PTHREAD_CFLAGS}|g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+
+pre-build:
+	@cd ${WRKSRC}/doc \
+		&& makeinfo --no-split --force mifluz.texinfo || ${TRUE}
 
 post-install:
 	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" ${PKGDIR}/pkg-message > \
