@@ -35,7 +35,7 @@ INSTALLS_SHLIB=	yes
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-#BROKEN=		"does not build with GCC 2.x"
+BROKEN=		"does not build with GCC 2.x"
 .endif
 
 post-patch:
