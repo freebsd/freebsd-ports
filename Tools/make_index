@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #
-# $Id$
+# $Id: make_index,v 1.1 1998/12/12 07:41:49 asami Exp $
 #
 # Written to speed-up INDEX file generation.  The new scheme
 # basically visits each port once and writes out each port's
@@ -8,6 +8,8 @@
 # script goes back in and maps the directories back to pkgnames,
 # fixes up the build-depends and run-depends list, and writes
 # out the new INDEX file.
+
+require 5.002;
 
 # Helper function to map a directory to a pkgname.
 sub by_path {
