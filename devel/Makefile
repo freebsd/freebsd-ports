@@ -495,6 +495,7 @@
     SUBDIR += linuxthreads
     SUBDIR += log4c
     SUBDIR += log4cpp
+    SUBDIR += log4j
     SUBDIR += lwp
     SUBDIR += m17n-db
     SUBDIR += m17n-docs

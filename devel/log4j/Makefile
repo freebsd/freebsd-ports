@@ -5,11 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	jakarta-log4j
-PORTVERSION=	1.2.8
-CATEGORIES=	java devel
-MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
-MASTER_SITE_SUBDIR=	log4j/binaries
+PORTNAME=	log4j
+PORTVERSION=	1.2.9
+CATEGORIES=	devel java
+MASTER_SITES=	${MASTER_SITE_APACHE}
+MASTER_SITE_SUBDIR=	logging/${PORTNAME}/${PORTVERSION}
+DISTNAME=	logging-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	A fast and flexible logging library for Java
@@ -20,30 +21,33 @@ NO_BUILD=	YES
 PLIST_FILES=	%%JAVAJARDIR%%/log4j.jar
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	FAQ.html HISTORY TODO TROUBLESHOOT.html api contactUs.html \
-		contributors.html critique.html deepExtension.html \
-		documentation.html download.html earlier.html history.html \
-		images index.html lf5 manual.html od.gif overview.html \
-		plan.html praise.html srtw.html
+PORTDOCS=	*
 .endif
 
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/log4j.jar..."
+	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/${PORTNAME}.jar..."
 	@${MKDIR} ${JAVAJARDIR}
-	@${INSTALL_DATA} ${WRKSRC}/dist/lib/log4j-${PORTVERSION}.jar ${JAVAJARDIR}/log4j.jar
+	@${INSTALL_DATA} ${WRKSRC}/dist/lib/log4j-${PORTVERSION}.jar ${JAVAJARDIR}/${PORTNAME}.jar
 	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
-	@${ECHO_MSG} -n ">> Installing documentation..."
-	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/docs && ${FIND} ${PORTDOCS} \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR} > /dev/null 2>&1
+	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}/..."
+	@cd ${WRKSRC}/docs \
+	  && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
+	@${ECHO_MSG} -n ">> Installing examples in ${EXAMPLESDIR}/..."
+	@cd ${WRKSRC}/examples \
+	  && ${FIND} . -type d -exec ${MKDIR} ${EXAMPLESDIR}/{} \; \
+	  && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${EXAMPLESDIR}/{} \;
+	@${ECHO_MSG} " [ DONE ]"
+.endif
 
-	@${ECHO_MSG} -n ">> Installing examples..."
-	@${MKDIR} ${EXAMPLESDIR}
-	@cd ${WRKSRC}/examples && ${FIND} . \
-	  | ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR} > /dev/null 2>&1
-	@${ECHO_MSG} " [ DONE ]"
+.if !defined(NOPORTDOCS)
+post-install:
+	@${FIND} -s ${WRKSRC}/examples -not -type d \
+	  | ${SED} -ne 's,^${WRKSRC}/examples,${EXAMPLESDIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
+	@${FIND} -s -d ${WRKSRC}/examples -type d \
+	  | ${SED} -ne 's,^${WRKSRC}/examples,@dirrm ${EXAMPLESDIR:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
 .endif
 
 .include <bsd.port.mk>
