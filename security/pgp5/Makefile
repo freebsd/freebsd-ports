@@ -4,7 +4,7 @@
 # Date created:         8 Jul 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1 1995/07/07 23:50:10 ache Exp $
+# $Id: Makefile,v 1.2 1995/07/07 23:57:25 ache Exp $
 #
 
 CATEGORIES+=	utilities
@@ -51,7 +51,6 @@ EXTRACT_CMD=    unzip
 EXTRACT_ARGS=   -q
 FILESDIR=       ${.CURDIR}/files.usa
 PATCHDIR=       ${.CURDIR}/patches.usa
-PKGDIR=         ${.CURDIR}/pkg.usa
 
 post-extract:
 	cd ${WRKDIR}; $(EXTRACT_CMD) $(EXTRACT_ARGS) -aa $(DISTNAME)i
@@ -67,7 +66,6 @@ MASTER_SITES=   ftp://sable.ox.ac.uk/pub/crypto/pgp/unix/ \
 		ftp://ftp.kiae.su/unix/crypto/pgp/
 FILESDIR=       ${.CURDIR}/files.non_usa
 PATCHDIR=       ${.CURDIR}/patches.non_usa
-PKGDIR=         ${.CURDIR}/pkg.non_usa
 
 post-extract:
 	cd ${WRKDIR}; tar xf pgp262ii.tar; rm -f *.tar
