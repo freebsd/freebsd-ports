@@ -1,17 +1,9 @@
---- helper-progs/configure.orig	Thu Dec 26 12:35:33 2002
-+++ helper-progs/configure	Sat Apr 19 10:54:31 2003
-@@ -2041,20 +2041,3 @@
+--- helper-progs/configure.orig	Tue Nov 11 22:59:24 2003
++++ helper-progs/configure	Tue Nov 11 23:01:31 2003
+@@ -2040,12 +2040,3 @@
  
  
  
--if test "$AMAVISUSER" != "" ; then
--   id $AMAVISUSER > /dev/null 2>&1
--   if test "$?" != 0 ; then
--      echo ""
--      echo "Note:  The Amavis user '$AMAVISUSER' does not seem to"
--      echo "exist.  Please create this user before continuing."
--   fi
--fi
 -
 -if test "$SENDMAILPROG" != "no" ; then
 -        sendmailversion=`$SENDMAILPROG -bv -d0.1 | $AWK '/Version/ {print $2}'`
