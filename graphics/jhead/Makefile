@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	jhead
-PORTVERSION=	1.8
+PORTVERSION=	2.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.sentex.net/~mwandel/jhead/
-MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jamie@hermans.ca
 COMMENT=	Exif Jpeg camera setting parser and thumbnail remover
 
-MAKEFILE=	${FILESDIR}/Makefile
+MAKEFILE=	${WRKSRC}/makefile
+USE_GMAKE=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jhead ${PREFIX}/bin
