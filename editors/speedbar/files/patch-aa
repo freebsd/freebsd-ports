@@ -1,16 +1,14 @@
---- speedbar.texi.orig	Mon Dec 10 11:33:16 2001
-+++ speedbar.texi	Mon Dec 10 11:53:31 2001
-@@ -26,9 +26,10 @@
+--- speedbar.texi.orig	Fri Jan  4 20:31:10 2002
++++ speedbar.texi	Fri Jan  4 20:32:35 2002
+@@ -22,9 +22,9 @@
+ @setfilename speedbar.info
+ @settitle Speedbar: File/Tag summarizing utility
 
- @ifinfo
- @format
--START-INFO-DIR-ENTRY
+-@dircategory Emacs
 +@dircategory The Emacs editor and associated tools
-+@direntry
--* Speedbar: (speedbar).	File/Tag summarizing utility.
+ @direntry
+-* Speedbar: (speedbar).        File/Tag summarizing utility.
 +* Speedbar: (speedbar.info).	File/Tag summarizing utility.
--END-INFO-DIR-ENTRY
-+@end direntry
- @end format
- @end ifinfo
-
+ @end direntry
+ @ifnottex
+ Copyright @copyright{} 1999, 2000, 2001 Free Software Foundation, Inc.
