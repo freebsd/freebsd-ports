@@ -1,14 +1,14 @@
---- configure.orig	Mon Feb 15 03:20:06 1999
-+++ configure	Thu May  9 01:24:55 2002
+--- configure.orig	Mon Feb 15 04:20:06 1999
++++ configure	Fri Nov 28 11:11:28 2003
 @@ -14,9 +14,9 @@
  ac_help="$ac_help
    --enable-gcc            allow use of gcc if available"
  ac_help="$ac_help
 -  --with-tcl=DIR           use Tcl 8.0 source from DIR"
-+  --with-tcl=DIR           use Tcl 8.2 source from DIR"
++  --with-tcl=DIR           use Tcl 8.4 source from DIR"
  ac_help="$ac_help
 -  --with-tk=DIR           use Tk 8.0 source from DIR"
-+  --with-tk=DIR           use Tk 8.2 source from DIR"
++  --with-tk=DIR           use Tk 8.4 source from DIR"
  ac_help="$ac_help
    --enable-sam            build stand-alone modules"
  ac_help="$ac_help
@@ -17,7 +17,7 @@
  TIX_MINOR_VERSION=1
  
 -BIN_VERSION=${TIX_VERSION}.8.0
-+BIN_VERSION=${TIX_VERSION}.8.2
++BIN_VERSION=${TIX_VERSION}.8.4
  
  
  VERSION=${BIN_VERSION}
@@ -29,12 +29,12 @@
      if test ! -d $TCL_SRC_DIR; then
          { echo "configure: error: Directory $TCL_SRC_DIR doesn't exist" 1>&2; exit 1; }
 -        { echo "configure: error: Please install the source code of Tcl 8.0" 1>&2; exit 1; }
-+        { echo "configure: error: Please install the source code of Tcl 8.2" 1>&2; exit 1; }
++        { echo "configure: error: Please install the source code of Tcl 8.4" 1>&2; exit 1; }
          exit 1
      fi
  else
 -    dirs="../../../tcl8.0"
-+    dirs="../../../tcl8.2"
++    dirs="../../../tcl8.4"
      TCL_SRC_DIR="no-no"
      for i in $dirs; do
          if test -d $i; then
@@ -43,14 +43,14 @@
      if test ! -d $TCL_SRC_DIR; then
          { echo "configure: error: Cannot locate Tcl source directory in $dirs" 1>&2; exit 1; }
 -        { echo "configure: error: Please install the source code of Tcl 8.0" 1>&2; exit 1; }
-+        { echo "configure: error: Please install the source code of Tcl 8.2" 1>&2; exit 1; }
++        { echo "configure: error: Please install the source code of Tcl 8.4" 1>&2; exit 1; }
          exit 1
      fi
  fi
  echo "$ac_t""$TCL_SRC_DIR" 1>&6
  
 -TCL_BIN_DIR=$TCL_SRC_DIR/unix
-+TCL_BIN_DIR=$TCL_SRC_DIR/../../lib/tcl8.2
++TCL_BIN_DIR=$TCL_SRC_DIR/../../lib/tcl8.4
  
  #--------------------------------------------------------------------
  #	See if there was a command-line option for where Tk is;  if
@@ -62,12 +62,12 @@
      if test ! -d $TK_SRC_DIR; then
          { echo "configure: error: Directory $TK_SRC_DIR doesn't exist" 1>&2; exit 1; }
 -        { echo "configure: error: Please install the source code of Tk 8.0" 1>&2; exit 1; }
-+        { echo "configure: error: Please install the source code of Tk 8.2" 1>&2; exit 1; }
++        { echo "configure: error: Please install the source code of Tk 8.4" 1>&2; exit 1; }
          exit 1
      fi
  else
 -    dirs="../../../tk8.0"
-+    dirs="../../../tk8.2"
++    dirs="../../../tk8.4"
      TK_SRC_DIR="no-no"
      for i in $dirs; do
          if test -d $i; then
@@ -76,31 +76,24 @@
      if test ! -d $TK_SRC_DIR; then
          { echo "configure: error: Cannot locate Tk source directory in $dirs" 1>&2; exit 1; }
 -        { echo "configure: error: Please install the source code of Tk 8.0" 1>&2; exit 1; }
-+        { echo "configure: error: Please install the source code of Tk 8.2" 1>&2; exit 1; }
++        { echo "configure: error: Please install the source code of Tk 8.4" 1>&2; exit 1; }
          exit 1
      fi
  fi
  echo "$ac_t""$TK_SRC_DIR" 1>&6
  
 -TK_BIN_DIR=$TK_SRC_DIR/unix
-+TK_BIN_DIR=$TK_SRC_DIR/../../lib/tk8.2
++TK_BIN_DIR=$TK_SRC_DIR/../../lib/tk8.4
  
  #--------------------------------------------------------------------
  #	Find out the top level source directory of the Tix package.
-@@ -1141,17 +1143,19 @@
- # up the Tcl library.
- 
- if test "${TCL_LIB_VERSIONS_OK}" = "ok"; then
--    TIX_BUILD_LIB_SPEC="-L`pwd` -ltix${VERSION}"
-+    TIX_BUILD_LIB_SPEC="`pwd`/libtix${VERSION}.so.1"
-     TIX_BUILD_SAM_SPEC="-L`pwd` -ltixsam${VERSION}"
+@@ -1146,12 +1148,14 @@
      TCL_BUILD_SAM_SPEC="-L`pwd` -ltclsam${TCL_VERSION}"
      TK_BUILD_SAM_SPEC="-L`pwd` -ltksam${TK_VERSION}"
      TIX_LIB_SPEC="-L${exec_prefix}/lib -ltix${VERSION}"
 +	LIB_VERSION="${VERSION}"
  else
--    TIX_BUILD_LIB_SPEC="-L`pwd` -ltix`echo ${VERSION} | tr -d .`"
-+    TIX_BUILD_LIB_SPEC="`pwd`/libtix`echo ${VERSION} | tr -d .`.so.1"
+     TIX_BUILD_LIB_SPEC="-L`pwd` -ltix`echo ${VERSION} | tr -d .`"
      TIX_BUILD_SAM_SPEC="-L`pwd` -ltixsam`echo ${VERSION} | tr -d .`"
      TCL_BUILD_SAM_SPEC="-L`pwd` -ltclsam`echo ${TCL_VERSION} | tr -d .`"
      TK_BUILD_SAM_SPEC="-L`pwd` -ltksam`echo ${TK_VERSION} | tr -d .`"
@@ -116,19 +109,19 @@
 -    eval "TIX_LIB_FILE=libtix${TCL_SHARED_LIB_SUFFIX}"
 -    TIX_MAKE_LIB="\${SHLIB_LD} -o ${TIX_LIB_FILE} \${OBJS} ${SHLIB_LD_LIBS}"
 +    eval "TIX_LIB_FILE=libtix${LIB_VERSION}.so.1"
-+    TIX_MAKE_LIB="\${SHLIB_LD} -o ${TIX_LIB_FILE} \${OBJS} ${SHLIB_LD_LIBS} -L${PREFIX}/lib -L\${X11BASE}/lib -lX11 -ltk82"
++    TIX_MAKE_LIB="\${SHLIB_LD} -o ${TIX_LIB_FILE} \${OBJS} ${SHLIB_LD_LIBS} -L${PREFIX}/lib -L\${X11BASE}/lib -lX11 -ltk84"
  
      # The Tcl SAM library
      #
 -    VERSION=8.0
-+    VERSION=8.2
++    VERSION=8.4
      eval "TCL_SAM_FILE=libtclsam${TCL_SHARED_LIB_SUFFIX}"
      TCL_MAKE_SAM="\${SHLIB_LD} -o ${TCL_SAM_FILE} \${TCL_SAM_OBJS} ${SHLIB_LD_LIBS}"
      
      # The Tk SAM library
      #
 -    VERSION=8.0
-+    VERSION=8.2
++    VERSION=8.4
      eval "TK_SAM_FILE=libtksam${TCL_SHARED_LIB_SUFFIX}"
      TK_MAKE_SAM="\${SHLIB_LD} -o ${TK_SAM_FILE} \${TK_SAM_OBJS} ${SHLIB_LD_LIBS}"
      
@@ -145,14 +138,14 @@
      # The Tcl SAM library
      
 -    VERSION=8.0
-+    VERSION=8.2
++    VERSION=8.4
      eval "TCL_SAM_FILE=libtclsam${TCL_UNSHARED_LIB_SUFFIX}"
      TCL_MAKE_SAM="ar cr ${TCL_SAM_FILE} \${TCL_SAM_OBJS}"
      
      # The Tk SAM library
      #
 -    VERSION=8.0
-+    VERSION=8.2
++    VERSION=8.4
      eval "TK_SAM_FILE=libtksam${TCL_UNSHARED_LIB_SUFFIX}"
      TK_MAKE_SAM="ar cr ${TK_SAM_FILE} \${TK_SAM_OBJS}"
      

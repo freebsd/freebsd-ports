@@ -7,8 +7,8 @@
 
 PORTNAME=	tix
 PORTVERSION=	4.1.0.007
-PORTREVISION=	2
-CATEGORIES=	x11-toolkits tk82
+PORTREVISION=	3
+CATEGORIES=	x11-toolkits tk84
 MASTER_SITES=   http://www.neosoft.com/tcl/ftparchive/%SUBDIR%/ \
 		ftp://ftp.riken.go.jp/pub/lang/tcl/netsoft/%SUBDIR%/
 MASTER_SITE_SUBDIR= sorted/packages-8.0/x11/Tix/4.1.0.007
@@ -17,14 +17,14 @@ DISTNAME=	Tix${PORTVERSION}
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	An extension to the Tk toolkit
 
-LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
+LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 
 WRKSRC=		${WRKDIR}/Tix4.1.0.007/unix/tk8.0
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-sam \
-		--with-tcl="${PREFIX}/include/tcl8.2" \
-		--with-tk="${PREFIX}/include/tk8.2"
+		--with-tcl="${PREFIX}/include/tcl8.4" \
+		--with-tk="${PREFIX}/include/tk8.4"
 # this should probably be added to bsd.port.mk
 CONFIGURE_ENV=	PREFIX=${PREFIX}
 MAN1=		tixwish.1
@@ -37,8 +37,8 @@ MANN=		BtnBox.n Balloon.n ChkList.n Destroy.n ComboBox.n Control.n \
 		Select.n StdBBox.n TixIntro.n Tree.n Utils.n Wm.n compound.n \
 		pixmap.n tix.n
 
-TIX_LIB=	libtix4182.so
-TIXSAM_LIB=	libtixsam4182.so
+TIX_LIB=	libtix4184.so
+TIXSAM_LIB=	libtixsam4184.so
 TIX_LIB_FILE=	${TIX_LIB}.1
 TIXSAM_LIB_FILE=${TIXSAM_LIB}.1
 
@@ -54,7 +54,7 @@ pre-configure:
 post-install:
 	@(cd ${WRKSRC}/.. && \
 	    ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
-	${LN} -fs ${PREFIX}/bin/tixwish4.1.8.2 ${PREFIX}/bin/tixwish
+	${LN} -fs ${PREFIX}/bin/tixwish4.1.8.4 ${PREFIX}/bin/tixwish
 	${LN} -fs ${TIX_LIB_FILE} ${PREFIX}/lib/${TIX_LIB}
 	${LN} -fs ${TIXSAM_LIB_FILE} ${PREFIX}/lib/${TIXSAM_LIB}
 .for dir in generic unix
