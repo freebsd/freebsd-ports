@@ -1,8 +1,6 @@
 bin/kpilot
 bin/kpilotDaemon
 bin/pilotListener
-lib/libpisock.a
-lib/libpisock.la
 lib/libpisock.so.2.0
 share/applnk/Utilities/KPilotDaemon.kdelnk
 share/applnk/Utilities/kpilot.kdelnk
@@ -13,7 +11,4 @@ share/doc/HTML/en/kpilot/using-kpilot.html
 share/icons/kpilot.xpm
 share/icons/mini/kpilot.xpm
 @dirrm share/doc/HTML/en/kpilot
-@dirrm share/doc/HTML/en
 @dirrm share/doc/HTML/de/kpilot
-@dirrm share/doc/HTML/de
-@dirrm share/applnk/Utilities
