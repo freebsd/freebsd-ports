@@ -7,7 +7,7 @@
 
 PORTNAME=	cdrtools
 PORTVERSION?=	2.0.3
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/ \
