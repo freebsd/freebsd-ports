@@ -1,2 +1,4 @@
 MD5 (gnome2/gtk+-2.2.4.tar.bz2) = 605332199533e73bc6eec481fb4f1671
 SIZE (gnome2/gtk+-2.2.4.tar.bz2) = 7189272
+MD5 (gnome2/gtk+-menushadow.patch) = 5e02af6c81df2c312c569b40bea129ba
+SIZE (gnome2/gtk+-menushadow.patch) = 15970
