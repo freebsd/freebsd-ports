@@ -1,4 +1,5 @@
 bin/rxvt
+bin/rxvt-2.7.10
 include/rxvtlib.h
 lib/librxvt.a
 lib/librxvt.so

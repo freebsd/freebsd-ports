@@ -9,8 +9,7 @@
 # the same distfile.
 
 PORTNAME=	rxvt
-PORTVERSION=	2.7.8
-PORTREVISION=	1
+PORTVERSION=	2.7.10
 CATEGORIES+=	x11
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/%SUBDIR%/ \
 		ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/rxvt/%SUBDIR%/ \
@@ -95,11 +94,7 @@ CONFIGURE_ARGS+=	--enable-xim
 CONFIGURE_ARGS+=	--enable-xterm-scroll
 .endif # WITH_XTERM_SCROLLBAR
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
+CONFIGURE_ENV+=		LIBS="-lutil"
 
 pre-everything::
 	@${ECHO_MSG}
@@ -134,4 +129,4 @@ post-patch:
 post-install:
 	@${CHMOD} 4711 ${PREFIX}/bin/rxvt
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
