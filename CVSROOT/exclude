@@ -34,6 +34,7 @@
 ^src/sys/boot/i386/loader/help.i386
 ^src/sys/boot/sparc64/loader/help.sparc64
 ^src/sys/contrib/dev/acpica
+^src/tools/regression/.*\.(in|out)
 ^src/usr.bin/doscmd/fonts.dir
 ^src/usr.bin/more/more.help
 ^src/usr.bin/mail/misc/mail.help
