@@ -413,7 +413,6 @@
     SUBDIR += xemacs21-canna+freewnn
     SUBDIR += xemacs21-canna+wnn6
     SUBDIR += xemacs21-freewnn
-    SUBDIR += xemacs21-sumo-canna+freewnn
     SUBDIR += xemacs21-sumo-canna+wnn6
     SUBDIR += xemacs21-sumo-freewnn
     SUBDIR += xemacs21-sumo-wnn6
