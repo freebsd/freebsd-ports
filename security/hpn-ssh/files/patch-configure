@@ -1,0 +1,11 @@
+--- configure.old	Wed Jun 26 22:57:33 2002
++++ configure	Wed Jun 26 22:53:31 2002
+@@ -6541,6 +6541,7 @@
+ #include "confdefs.h"
+ 
+ #include <stdio.h>
++#include <sys/types.h>
+ #include <sys/mman.h>
+ #if !defined(MAP_ANON) && defined(MAP_ANONYMOUS)
+ #define MAP_ANON MAP_ANONYMOUS
+
