@@ -14,6 +14,9 @@ DISTNAME=	vntex
 
 MAINTAINER=     obrien@FreeBSD.org
 
+#	actually just need to make sure ${PREFIX}/share/texmf/tex/ exists
+RUN_DEPENDS=	virtex:${PORTSDIR}/print/teTeX
+
 USE_ZIP=	yes
 NO_BUILD=	yes
 
