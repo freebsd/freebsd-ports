@@ -1,5 +1,5 @@
-*** Makefile.orig	Wed Jan 26 18:32:33 1994
---- Makefile	Sat May  6 12:53:48 1995
+*** Makefile.orig	Wed Jan 26 20:32:33 1994
+--- Makefile	Mon Nov 20 01:31:41 1995
 ***************
 *** 38,44 ****
   
@@ -13,7 +13,7 @@
   
   STATICFLAG=FOOBAR${HOST_ARCH}
   
-! CFLAGS = -O -I.  ${$(STATICFLAG)} 
+! CFLAGS += -I.  ${$(STATICFLAG)}
   # The following is better if you want to make sure you run with SYSV defined
   # CFLAGS = -g -I.  ${$(STATICFLAG)}  -DSYSV
   # Also, for SGI Irix, compile in K&R mode
@@ -34,7 +34,7 @@
   # For Sun and BSD systems, the following should work...
 ! # LDLIBS =
   # On BSD 4.4 systems, you will need the following
-! LDLIBS = -lcompat
+! LDLIBS = -s -lcompat
   # On SGI machines, we need -lsun for getpw...(), and -lc_s saves some space.
   # LDLIBS = -lsun -lc_s
   # ISC SysVr3.2.2 has a shared C library and requires libinet.a to resolve
