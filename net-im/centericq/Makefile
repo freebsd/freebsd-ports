@@ -28,9 +28,9 @@ CONFIGURE_ARGS=	--with-openssl --disable-konst
 
 .if defined(WITH_MULTIBYTE)
 CONFIGURE_ARGS+=	--enable-locales-fix
-#.else
-#pre-patch:
-#	@${ECHO_CMD} "Type \"make WITH_MULTIBYTE=yes\" if you want multibyte support."
+.else
+pre-fetch:
+	@${ECHO_CMD} "Type \"make WITH_MULTIBYTE=yes\" if you want multibyte support."
 .endif
 
 .if defined(WITH_FRIBIDI)
