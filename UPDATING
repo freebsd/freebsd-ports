@@ -6,6 +6,32 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20041001:
+  AFFECTS: users of ports that require several base system libraries who
+	   are running FreeBSD 5.3-BETA7 or later (including -current)
+  AUTHOR: kensmith@freebsd.org
+
+  As part of the FreeBSD-5.3 release the following system libraries
+  had their version number incremented:
+
+	/lib/libm.so.2 -> libm.so.3
+	/lib/libreadline.so.4 -> libreadline.so.5
+	/usr/lib/libhistory.so.4 -> libhistory.so.5
+	/usr/lib/libopie.so.2 -> libopie.so.3
+	/usr/lib/libpcap.so.2 -> libpcap.so.3
+
+  This should have no effect unless you are using FreeBSD 5.3-BETA7 or
+  higher, or if you are a -current user who upgraded after this date.
+  Assuming you did a from-source upgrade new versions of these libraries
+  will be created but the old versions will be left behind (for example
+  /lib/libm.so.2 will be the old one, /lib/libm.so.3 will be the new one).
+  Any ports or pre-built packages you have currently installed will
+  continue to use the old library, any ports you install after the upgrade
+  will begin to use the new library.  You will need to have all your
+  ports recompiled before the old library goes away.  To help with the
+  migration you could also use /etc/libmap.conf to map libm.so.2 to
+  libm.so.3.
+
 20040903:
   AFFECTS: users of net/kdenetwork3
   AUTHOR: kde@freebsd.org
