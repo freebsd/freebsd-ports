@@ -7,13 +7,14 @@
 
 PORTNAME=	ghfaxviewer
 PORTVERSION=	0.22.0
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	halifax
 
 MAINTAINER=	domi@saargate.de
 
-LIB_DEPENDS=	gnomeprint.13:${PORTSDIR}/print/gnomeprint \
+LIB_DEPENDS=	gnomeprint.16:${PORTSDIR}/print/gnomeprint \
 		gconf-1.1:${PORTSDIR}/devel/gconf \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
