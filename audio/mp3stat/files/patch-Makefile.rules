@@ -1,0 +1,83 @@
+--- Makefile.rules.orig	Fri Mar 22 17:00:23 2002
++++ Makefile.rules	Sat Mar 23 02:51:37 2002
+@@ -18,63 +18,26 @@
+ WEBPAGE = "http://safemode.homeip.net"
+ 
+ all:
+-	@if test -n "$(VORBIS)"; then \
+-	    echo "";\
+-	    echo "___ building backend ___";\
+-	    echo "Using flags: $(CXXFLAGS)";\
+-	    echo "";\
+-	    echo "building $(OBJ)";\
+-	    $(CXX) $(CXXFLAGS) $(CPPFLAGS) -c -o $(OBJ) $(OBJSRC);\
+-	    echo "building $(OBJ2)";\
+-	    $(CXX) $(CXXFLAGS) $(CPPFLAGS) -c -o $(OBJ2) $(OBJ2SRC);\
+-	    echo "";\
+-	    echo "___ building frontend ___";\
+-	    if test -n "$(GTK)"; then \
+-		echo "Using flags: $(CXXFLAGS) $(BUILDFLAGS)";\
+-	        echo "";\
+-	        echo "building and linking $(TARGET)";\
+-	        $(CXX) $(BUILDFLAGS) $(CPPFLAGS) -o $(TARGET) $(SRC) $(OBJ) $(OBJ2);\
+-	    else \
+-		echo "Using flags: $(CXXFLAGS) $(TBUILDFLAGS)";\
+-		echo "";\
+-		echo "building and linking $(TARGET)";\
+-		$(CXX) $(TBUILDFLAGS) $(CPPFLAGS) -o $(TARGET) $(TSRC) $(OBJ) $(OBJ2);\
+-	    fi\
+-	else \
+-	    echo "";\
+-	    echo "___ building backend ___";\
+-	    echo "Using flags: $(CXXFLAGS)";\
+-	    echo "";\
+-	    echo "building $(OBJ)";\
+-	    $(CXX) $(CXXFLAGS) $(CPPFLAGS) -c -o $(OBJ) $(OBJSRC);\
+-	    echo "";\
+-	    echo "___ building frontend ___";\
+-	    if test -n "$(GTK)"; then \
+-		echo "Using flags: $(CXXFLAGS) $(BUILD2FLAGS)";\
+-		echo "";\
+-		echo "building and linking $(TARGET)";\
+-		$(CXX) $(BUILD2FLAGS) $(CPPFLAGS) -o $(TARGET) $(SRC) $(OBJ);\
+-	    else \
+-		echo "Using flags: $(CXXFLAGS) $(TBUILD2FLAGS)";\
+-		echo "";\
+-		echo "building and linking $(TARGET)";\
+-		$(CXX) $(TBUILD2FLAGS) $(CPPFLAGS) -o $(TARGET) $(TSRC) $(OBJ);\
+-	    fi\
+-	fi
+-	@echo " "
+-	@echo "-------------------------------------------"
+-	@echo "Vorbis support is set by default."
+-	@echo "to disable edit Makefile and comment VORBIS"
+-	@echo " "
+-	@echo "gtk 1.2 ui built by default, to enable"
+-	@echo "gtk 2.0 ui, read the Makefile"
+-	@echo "To disable, edit Makefile and comment GTK"
+-	@echo "-------------------------------------------"
++ifdef VORBIS
++	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c -o $(OBJ) $(OBJSRC)
++	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c -o $(OBJ2) $(OBJ2SRC)
++ifdef GTK
++		$(CXX) $(BUILDFLAGS) $(CPPFLAGS) -o $(TARGET) $(SRC) $(OBJ) $(OBJ2)
++else
++		$(CXX) $(TBUILDFLAGS) $(CPPFLAGS) -o $(TARGET) $(TSRC) $(OBJ) $(OBJ2)
++endif
++else
++	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c -o $(OBJ) $(OBJSRC)
++ifdef GTK
++		$(CXX) $(BUILD2FLAGS) $(CPPFLAGS) -o $(TARGET) $(SRC) $(OBJ)
++else
++		$(CXX) $(TBUILD2FLAGS) $(CPPFLAGS) -o $(TARGET) $(TSRC) $(OBJ)
++endif
++endif
+ 
+ clean:
+ 	rm -f *.o mp3stat
+ 
+ install:
+-	strip $(TARGET)
+-	cp $(TARGET) /usr/local/bin
++	${BSD_INSTALL_PROGRAM} $(TARGET) ${PREFIX}/bin
+ 
