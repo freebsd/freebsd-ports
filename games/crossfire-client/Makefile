@@ -3,7 +3,7 @@
 # Date created:         So  27 Okt 1996 12:25:55 MET
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.9 1997/01/03 09:36:32 obrien Exp $
+# $Id: Makefile,v 1.10 1997/01/25 12:27:10 andreas Exp $
 #
 
 DISTNAME=	crossfire-0.93.0
@@ -59,6 +59,10 @@ post-install:
 	@${CP} -r ${WRKDIR}/crossfire-0.93.0-doc/* ${CFDIR}/doc
 	@touch ${PREFIX}/crossfire/lib/bookarch
 	@chmod 664 ${PREFIX}/crossfire/lib/bookarch
+	@touch ${PREFIX}/crossfire/lib/shutdown
+	@chmod 664 ${PREFIX}/crossfire/lib/shutdown
+	@touch ${PREFIX}/crossfire/lib/forbid
+	@chmod 664 ${PREFIX}/crossfire/lib/forbid
 	@touch ${PREFIX}/crossfire/lib/players/.keep_me  
 	@touch ${PREFIX}/crossfire/lib/unique-items/.keep_me  
 	@/usr/sbin/chown -R games.games ${CFDIR}
