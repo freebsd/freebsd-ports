@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	http-access
-PORTVERSION=	2.H
+PORTVERSION=	2.J
 CATEGORIES=	www ruby
-MASTER_SITES=	http://www.jin.gr.jp/~nahi/Ruby/http-access/
+MASTER_SITES=	http://www.ruby-lang.org/~nahi/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}${PORTVERSION:S/./_/}
+DISTNAME=	${PORTNAME}${PORTVERSION:S/./-/:L}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -21,9 +21,11 @@ NO_BUILD=	yes
 
 do-install:
 	cd ${WRKSRC}; ${RUBY} install.rb
-#.if !defined(NOPORTDOCS)
-#	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-#	${INSTALL_DATA} ${WRKSRC}/sample/*.rb ${RUBY_MODEXAMPLESDIR}/
-#.endif
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_MODEXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/sample/*.rb ${RUBY_MODEXAMPLESDIR}/
+	${MKDIR} ${RUBY_MODDOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.txt ${RUBY_MODDOCDIR}/
+.endif
 
 .include <bsd.port.mk>
