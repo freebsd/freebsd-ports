@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qpopper
-PORTVERSION=	4.0
-PORTREVISION=	1
+PORTVERSION=	4.0.1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/ \
 		ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.qualcomm.com/eudora/servers/unix/popper/
@@ -17,7 +16,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 .if ${OSVERSION} >= 400014
 PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
-PATCHFILES=	qpopper4.0-ipv6-20010418.diff.gz
+PATCHFILES=	qpopper4.0.1-ipv6-20010425.diff.gz
 PATCH_DIST_STRIP=	-p1
 .endif
 
