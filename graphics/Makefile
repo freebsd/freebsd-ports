@@ -26,6 +26,7 @@
     SUBDIR += dia
     SUBDIR += diacanvas
     SUBDIR += dore
+    SUBDIR += dumpmpeg
     SUBDIR += ecg2png
     SUBDIR += electriceyes
     SUBDIR += enfle
