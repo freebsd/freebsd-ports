@@ -14,7 +14,7 @@ MASTER_SITES=	http://a2024.g.akamai.net/7/2024/2064/OpenOffice638/anoncvs.openof
 DISTNAME=	oo_638_src
 #DISTFILES=	oo_638_src${EXTRACT_SUFX} solenv638_linuxintel${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mbr@FreeBSD.org
 
 BUILD_DEPENDS=	stlport:${PORTSDIR}/devel/stlport
 
