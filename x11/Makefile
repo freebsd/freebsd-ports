@@ -220,6 +220,7 @@
     SUBDIR += xnee
     SUBDIR += xnodecor
     SUBDIR += xorg-libraries
+    SUBDIR += xorg-manpages
     SUBDIR += xprompt
     SUBDIR += xproto
     SUBDIR += xrestop

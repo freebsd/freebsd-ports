@@ -1,0 +1,35 @@
+# New ports collection makefile for:	xorg-manpages
+# Date created:		10 Oct 1999
+# Whom:			taguchi@tohoku.iij.ad.jp
+#
+# $FreeBSD$
+#
+
+PORTNAME=	manpages
+PORTVERSION=	6.7.0
+CATEGORIES=	x11
+MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/
+PKGNAMEPREFIX=	xorg-
+DISTFILES=	X11R6.7.0-src1.tar.gz \
+		X11R6.7.0-src3.tar.gz
+EXTRACT_ONLY=	X11R6.7.0-src1.tar.gz
+
+MAINTAINER=	x11@FreeBSD.org
+COMMENT=	X.Org library manual pages
+
+CONFLICTS=	XFree86-manuals-*
+
+EXTRA_PATCHES=	${CF_PATCHES}
+
+XMAN_DIRS=	lib/Xaw lib/Xcursor lib/Xrandr doc/man programs/Xserver
+XINCLUDE_DIRS=	${XMAN_DIRS}
+
+post-extract:
+	(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
+		${DISTDIR}/${DIST_SUBDIR}/X11R6.7.0-src3.tar.gz | \
+		${TAR} -xf - xc/programs/Xserver);
+
+.include "${.CURDIR}/../../x11-servers/xorg-server/Makefile.inc"
+.include <bsd.port.pre.mk>
+.include "${FILESDIR}/manpages"
+.include <bsd.port.post.mk>
