@@ -12,7 +12,7 @@ MASTER_SITES=	http://onegeek.org/~tom/software/delay/dl/
 
 MAINTAINER=	gmarco@giovannelli.it
 
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 
 MAN1=	delay.1
 
