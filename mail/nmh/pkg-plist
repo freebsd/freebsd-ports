@@ -41,6 +41,7 @@ etc/nmh/mhl.digest
 etc/nmh/mhl.format
 etc/nmh/mhl.forward
 etc/nmh/mhl.headers
+etc/nmh/mhl.reply
 etc/nmh/mhn.defaults
 etc/nmh/mts.conf
 etc/nmh/rcvdistcomps
