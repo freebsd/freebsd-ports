@@ -8,8 +8,8 @@
 
 DISTNAME=	asmon-0.60
 CATEGORIES=	sysutils afterstep
-MASTER_SITES=	ftp://ftp.afterstep.org/apps/asmem/
-#		http://www.tigr.net/afterstep/as-apps/download/asmon/
+MASTER_SITES=	ftp://ftp.afterstep.org/apps/asmon/ \
+		http://www.tigr.net/afterstep/as-apps/download/asmon/
 
 MAINTAINER=	jack@germanium.xtalwind.net
 
