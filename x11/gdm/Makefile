@@ -27,6 +27,14 @@ CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 GDMDIR?=	${PREFIX}/etc/gdm
 
+.include <bsd.port.pre.mk>
+
+.if exists(/usr/include/security/pam_misc.h)
+PLIST_SUB=      PAM_MISC=""
+.else
+PLIST_SUB=      PAM_MISC="@comment "
+.endif
+
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes
 .endif
@@ -52,4 +60,4 @@ post-install:
 	@${CHMOD} 0750 ${PREFIX}/share/gnome/gdm
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
