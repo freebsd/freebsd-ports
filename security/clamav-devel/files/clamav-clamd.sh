@@ -26,16 +26,6 @@ pidfile=/var/run/clamav/clamd.pid
 required_dirs=%%DATADIR%%
 required_files=%%PREFIX%%/etc/clamav.conf
 
-start_precmd=start_precmd
-
-start_precmd()
-{
-	if [ -S "$clamd_socket" ]; then
-		warn "Stale socket $clamd_socket removed."
-		rm "$clamd_socket"
-	fi
-}
-
 stop_postcmd=stop_postcmd
 
 stop_postcmd()

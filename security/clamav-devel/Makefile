@@ -7,6 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	20040210
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.sourceforge.net/snapshot/
 PKGNAMESUFFIX=	-devel
@@ -47,6 +48,7 @@ CLAMAVUSER?=	clamav
 CLAMAVGROUP?=	clamav
 CLAMAV_CLAMD_SOCKET?=	/var/run/clamav/clamd
 CLAMAV_MILTER_SOCKET?=	/var/run/clamav/clmilter.sock
+DOCSDIR?=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 PLIST_SUB+=	CLAMAVUSER="${CLAMAVUSER}"
 PLIST_SUB+=	CLAMAVGROUP="${CLAMAVGROUP}"
@@ -67,13 +69,10 @@ SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?(Checks)$$|\#\1|' \
 		-e 's|^\#?(DatabaseDirectory) .*$$|\1 ${DATADIR}|' \
 		-e 's|^\#?(DatabaseOwner) .*$$|\1 ${CLAMAVUSER}|' \
-		-e 's|^\#?(UpdateLogFile) .*$$|\1 /var/log/clamav/freshclam.log|'
+		-e 's|^\#?(UpdateLogFile) .*$$|\1 /var/log/clamav/freshclam.log|' \
+		-e 's|^\#?(FixStaleSocket)$$|\1|'
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502102
-FORBIDDEN=	"Links against conflicting thread libraries"
-.endif
 
 USE_RC_SUBR=	yes
 RC_DIR=		${PREFIX}/etc/rc.d
@@ -98,7 +97,11 @@ PLIST_SUB+=	CLAMAV-MILTER:="@comment "
 .endif
 
 post-patch:
+.if ${OSVERSION} >= 502102
+	@${REINPLACE_CMD} -e 's|-lc_r|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+.else
 	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+.endif
 	@${REINPLACE_CMD} -e 's|/usr/lib/sendmail|/usr/sbin/sendmail|g' \
 		-e 's|<malloc.h>|<stdlib.h>|' \
 		${WRKSRC}/clamav-milter/clamav-milter.c
@@ -118,8 +121,8 @@ pre-install:
 	 ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PREFIX} PRE-INSTALL
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}${PKGNAMESUFFIX}
-	@${INSTALL_DATA} ${WRKSRC}/docs/*pdf ${DOCSDIR}${PKGNAMESUFFIX}
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/*pdf ${DOCSDIR}
 .endif
 
 post-install:
