@@ -63,233 +63,233 @@ etc/smb.conf.default
 sbin/nmbd
 sbin/smbd
 sbin/swat
-%%PORTDOCS%%share/doc/samba/COPYING
-%%PORTDOCS%%share/doc/samba/Manifest
-%%PORTDOCS%%share/doc/samba/README
-%%PORTDOCS%%share/doc/samba/README.FreeBSD
-%%PORTDOCS%%share/doc/samba/README.swat
-%%PORTDOCS%%share/doc/samba/Registry/NT4-Locking.reg
-%%PORTDOCS%%share/doc/samba/Registry/NT4_PlainPassword.reg
-%%PORTDOCS%%share/doc/samba/Registry/Win2000_PlainPassword.reg
-%%PORTDOCS%%share/doc/samba/Registry/Win95_PlainPassword.reg
-%%PORTDOCS%%share/doc/samba/Registry/Win98_PlainPassword.reg
-%%PORTDOCS%%share/doc/samba/Registry/Win9X-CacheHandling.reg
-%%PORTDOCS%%share/doc/samba/Registry/WinME_PlainPassword.reg
-%%PORTDOCS%%share/doc/samba/Registry/WinXP_SignOrSeal.reg
-%%PORTDOCS%%share/doc/samba/Registry/WindowsTerminalServer.reg
-%%PORTDOCS%%share/doc/samba/Roadmap
-%%PORTDOCS%%share/doc/samba/THANKS
-%%PORTDOCS%%share/doc/samba/WHATSNEW.txt
-%%PORTDOCS%%share/doc/samba/announce
-%%PORTDOCS%%share/doc/samba/faq/README
-%%PORTDOCS%%share/doc/samba/faq/Samba-Server-FAQ-1.html
-%%PORTDOCS%%share/doc/samba/faq/Samba-Server-FAQ-2.html
-%%PORTDOCS%%share/doc/samba/faq/Samba-Server-FAQ.html
-%%PORTDOCS%%share/doc/samba/faq/Samba-Server-FAQ.sgml
-%%PORTDOCS%%share/doc/samba/faq/Samba-meta-FAQ-1.html
-%%PORTDOCS%%share/doc/samba/faq/Samba-meta-FAQ-2.html
-%%PORTDOCS%%share/doc/samba/faq/Samba-meta-FAQ-3.html
-%%PORTDOCS%%share/doc/samba/faq/Samba-meta-FAQ-4.html
-%%PORTDOCS%%share/doc/samba/faq/Samba-meta-FAQ-5.html
-%%PORTDOCS%%share/doc/samba/faq/Samba-meta-FAQ-6.html
-%%PORTDOCS%%share/doc/samba/faq/Samba-meta-FAQ.html
-%%PORTDOCS%%share/doc/samba/faq/Samba-meta-FAQ.sgml
-%%PORTDOCS%%share/doc/samba/faq/Samba-meta-FAQ.txt
-%%PORTDOCS%%share/doc/samba/faq/sambafaq-1.html
-%%PORTDOCS%%share/doc/samba/faq/sambafaq-2.html
-%%PORTDOCS%%share/doc/samba/faq/sambafaq-3.html
-%%PORTDOCS%%share/doc/samba/faq/sambafaq-4.html
-%%PORTDOCS%%share/doc/samba/faq/sambafaq-5.html
-%%PORTDOCS%%share/doc/samba/faq/sambafaq.html
-%%PORTDOCS%%share/doc/samba/faq/sambafaq.sgml
-%%PORTDOCS%%share/doc/samba/faq/sambafaq.txt
-%%PORTDOCS%%share/doc/samba/history
-%%PORTDOCS%%share/doc/samba/htmldocs/CVS-Access.html
-%%PORTDOCS%%share/doc/samba/htmldocs/DOMAIN_MEMBER.html
-%%PORTDOCS%%share/doc/samba/htmldocs/ENCRYPTION.html
-%%PORTDOCS%%share/doc/samba/htmldocs/Integrating-with-Windows.html
-%%PORTDOCS%%share/doc/samba/htmldocs/NT_Security.html
-%%PORTDOCS%%share/doc/samba/htmldocs/OS2-Client-HOWTO.html
-%%PORTDOCS%%share/doc/samba/htmldocs/PAM-Authentication-And-Samba.html
-%%PORTDOCS%%share/doc/samba/htmldocs/Samba-BDC-HOWTO.html
-%%PORTDOCS%%share/doc/samba/htmldocs/Samba-HOWTO-Collection.html
-%%PORTDOCS%%share/doc/samba/htmldocs/Samba-LDAP-HOWTO.html
-%%PORTDOCS%%share/doc/samba/htmldocs/Samba-PDC-HOWTO.html
-%%PORTDOCS%%share/doc/samba/htmldocs/UNIX_INSTALL.html
-%%PORTDOCS%%share/doc/samba/htmldocs/cups.html
-%%PORTDOCS%%share/doc/samba/htmldocs/findsmb.1.html
-%%PORTDOCS%%share/doc/samba/htmldocs/lmhosts.5.html
-%%PORTDOCS%%share/doc/samba/htmldocs/make_smbcodepage.1.html
-%%PORTDOCS%%share/doc/samba/htmldocs/make_unicodemap.1.html
-%%PORTDOCS%%share/doc/samba/htmldocs/msdfs_setup.html
-%%PORTDOCS%%share/doc/samba/htmldocs/nmbd.8.html
-%%PORTDOCS%%share/doc/samba/htmldocs/nmblookup.1.html
-%%PORTDOCS%%share/doc/samba/htmldocs/pdbedit.8.html
-%%PORTDOCS%%share/doc/samba/htmldocs/printer_driver2.html
-%%PORTDOCS%%share/doc/samba/htmldocs/rpcclient.1.html
-%%PORTDOCS%%share/doc/samba/htmldocs/samba.7.html
-%%PORTDOCS%%share/doc/samba/htmldocs/smb.conf.5.html
-%%PORTDOCS%%share/doc/samba/htmldocs/smbcacls.1.html
-%%PORTDOCS%%share/doc/samba/htmldocs/smbclient.1.html
-%%PORTDOCS%%share/doc/samba/htmldocs/smbcontrol.1.html
-%%PORTDOCS%%share/doc/samba/htmldocs/smbd.8.html
-%%PORTDOCS%%share/doc/samba/htmldocs/smbmnt.8.html
-%%PORTDOCS%%share/doc/samba/htmldocs/smbmount.8.html
-%%PORTDOCS%%share/doc/samba/htmldocs/smbpasswd.5.html
-%%PORTDOCS%%share/doc/samba/htmldocs/smbpasswd.8.html
-%%PORTDOCS%%share/doc/samba/htmldocs/smbsh.1.html
-%%PORTDOCS%%share/doc/samba/htmldocs/smbspool.8.html
-%%PORTDOCS%%share/doc/samba/htmldocs/smbstatus.1.html
-%%PORTDOCS%%share/doc/samba/htmldocs/smbtar.1.html
-%%PORTDOCS%%share/doc/samba/htmldocs/smbumount.8.html
-%%PORTDOCS%%share/doc/samba/htmldocs/swat.8.html
-%%PORTDOCS%%share/doc/samba/htmldocs/testparm.1.html
-%%PORTDOCS%%share/doc/samba/htmldocs/testprns.1.html
-%%PORTDOCS%%share/doc/samba/htmldocs/wbinfo.1.html
-%%PORTDOCS%%share/doc/samba/htmldocs/wfw_slip.htm
-%%PORTDOCS%%share/doc/samba/htmldocs/winbind.html
-%%PORTDOCS%%share/doc/samba/htmldocs/winbindd.8.html
-%%PORTDOCS%%share/doc/samba/textdocs/Application_Serving.txt
-%%PORTDOCS%%share/doc/samba/textdocs/BROWSING-Config.txt
-%%PORTDOCS%%share/doc/samba/textdocs/BROWSING.txt
-%%PORTDOCS%%share/doc/samba/textdocs/BUGS.txt
-%%PORTDOCS%%share/doc/samba/textdocs/CUPS-PrintingInfo.txt
-%%PORTDOCS%%share/doc/samba/textdocs/DHCP-Server-Configuration.txt
-%%PORTDOCS%%share/doc/samba/textdocs/DIAGNOSIS.txt
-%%PORTDOCS%%share/doc/samba/textdocs/DNIX.txt
-%%PORTDOCS%%share/doc/samba/textdocs/Faxing.txt
-%%PORTDOCS%%share/doc/samba/textdocs/GOTCHAS.txt
-%%PORTDOCS%%share/doc/samba/textdocs/HINTS.txt
-%%PORTDOCS%%share/doc/samba/textdocs/INSTALL.sambatar
-%%PORTDOCS%%share/doc/samba/textdocs/Imprints.txt
-%%PORTDOCS%%share/doc/samba/textdocs/Macintosh_Clients.txt
-%%PORTDOCS%%share/doc/samba/textdocs/NetBIOS.txt
-%%PORTDOCS%%share/doc/samba/textdocs/PROFILES.txt
-%%PORTDOCS%%share/doc/samba/textdocs/Passwords.txt
-%%PORTDOCS%%share/doc/samba/textdocs/Printing.txt
-%%PORTDOCS%%share/doc/samba/textdocs/README.DCEDFS
-%%PORTDOCS%%share/doc/samba/textdocs/README.NOW
-%%PORTDOCS%%share/doc/samba/textdocs/README.jis
-%%PORTDOCS%%share/doc/samba/textdocs/README.sambatar
-%%PORTDOCS%%share/doc/samba/textdocs/Recent-FAQs.txt
-%%PORTDOCS%%share/doc/samba/textdocs/RoutedNetworks.txt
-%%PORTDOCS%%share/doc/samba/textdocs/SCO.txt
-%%PORTDOCS%%share/doc/samba/textdocs/SMBTAR.notes
-%%PORTDOCS%%share/doc/samba/textdocs/Samba-OpenSSL.txt
-%%PORTDOCS%%share/doc/samba/textdocs/Speed.txt
-%%PORTDOCS%%share/doc/samba/textdocs/Speed2.txt
-%%PORTDOCS%%share/doc/samba/textdocs/Tracing.txt
-%%PORTDOCS%%share/doc/samba/textdocs/UNIX-SMB.txt
-%%PORTDOCS%%share/doc/samba/textdocs/UNIX_SECURITY.txt
-%%PORTDOCS%%share/doc/samba/textdocs/Win95.txt
-%%PORTDOCS%%share/doc/samba/textdocs/WinNT.txt
-%%PORTDOCS%%share/doc/samba/textdocs/cifsntdomain.txt
-%%PORTDOCS%%share/doc/samba/textdocs/security_level.txt
-share/examples/samba/LDAP/README
-share/examples/samba/LDAP/export_smbpasswd.pl
-share/examples/samba/LDAP/import_smbpasswd.pl
-share/examples/samba/LDAP/ldapchpasswd
-share/examples/samba/LDAP/ldapsync.pl
-share/examples/samba/LDAP/samba-nds.schema
-share/examples/samba/LDAP/samba.schema
-share/examples/samba/LDAP/samba-schema-netscapeds4.x
-share/examples/samba/LDAP/samba-schema-netscapeds5.x
-share/examples/samba/LDAP/samba-schema.IBMSecureWay
-share/examples/samba/LDAP/smbldap-tools/CONTRIBUTORS
-share/examples/samba/LDAP/smbldap-tools/COPYING
-share/examples/samba/LDAP/smbldap-tools/ChangeLog
-share/examples/samba/LDAP/smbldap-tools/FILES
-share/examples/samba/LDAP/smbldap-tools/INFRASTRUCTURE
-share/examples/samba/LDAP/smbldap-tools/INSTALL
-share/examples/samba/LDAP/smbldap-tools/Makefile
-share/examples/samba/LDAP/smbldap-tools/README
-share/examples/samba/LDAP/smbldap-tools/TODO
-share/examples/samba/LDAP/smbldap-tools/cgi/README
-share/examples/samba/LDAP/smbldap-tools/cgi/ldappass.cgi
-share/examples/samba/LDAP/smbldap-tools/mkntpwd/Makefile
-share/examples/samba/LDAP/smbldap-tools/mkntpwd/getopt.c
-share/examples/samba/LDAP/smbldap-tools/mkntpwd/getopt.h
-share/examples/samba/LDAP/smbldap-tools/mkntpwd/md4.c
-share/examples/samba/LDAP/smbldap-tools/mkntpwd/mkntpwd.c
-share/examples/samba/LDAP/smbldap-tools/mkntpwd/mkntpwd.h
-share/examples/samba/LDAP/smbldap-tools/mkntpwd/smbdes.c
-share/examples/samba/LDAP/smbldap-tools/smbldap-groupadd.pl
-share/examples/samba/LDAP/smbldap-tools/smbldap-groupdel.pl
-share/examples/samba/LDAP/smbldap-tools/smbldap-groupmod.pl
-share/examples/samba/LDAP/smbldap-tools/smbldap-groupshow.pl
-share/examples/samba/LDAP/smbldap-tools/smbldap-migrate-accounts.pl
-share/examples/samba/LDAP/smbldap-tools/smbldap-migrate-groups.pl
-share/examples/samba/LDAP/smbldap-tools/smbldap-passwd.pl
-share/examples/samba/LDAP/smbldap-tools/smbldap-populate.pl
-share/examples/samba/LDAP/smbldap-tools/smbldap-tools.spec
-share/examples/samba/LDAP/smbldap-tools/smbldap-useradd.pl
-share/examples/samba/LDAP/smbldap-tools/smbldap-userdel.pl
-share/examples/samba/LDAP/smbldap-tools/smbldap-usermod.pl
-share/examples/samba/LDAP/smbldap-tools/smbldap-usershow.pl
-share/examples/samba/LDAP/smbldap-tools/smbldap_conf.pm
-share/examples/samba/LDAP/smbldap-tools/smbldap_tools.pm
-share/examples/samba/README
-%%BUILD_VFS%%share/examples/samba/VFS/Makefile
-share/examples/samba/VFS/README
-share/examples/samba/VFS/block/block.c
-%%BUILD_VFS%%share/examples/samba/VFS/block/block.o
-%%BUILD_VFS%%share/examples/samba/VFS/block/block.so
-share/examples/samba/VFS/block/samba-block.conf
-share/examples/samba/VFS/block/smb.conf
-share/examples/samba/VFS/recycle/README
-share/examples/samba/VFS/recycle/cleanup_recycle.pl
-share/examples/samba/VFS/recycle/recycle.c
-share/examples/samba/VFS/recycle/recycle.conf
-share/examples/samba/VFS/audit.c
-share/examples/samba/VFS/skel.c
-share/examples/samba/VFS/Makefile.in
-share/examples/samba/VFS/configure
-share/examples/samba/VFS/configure.in
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/Manifest
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
+%%PORTDOCS%%%%DOCSDIR%%/README.swat
+%%PORTDOCS%%%%DOCSDIR%%/Registry/NT4-Locking.reg
+%%PORTDOCS%%%%DOCSDIR%%/Registry/NT4_PlainPassword.reg
+%%PORTDOCS%%%%DOCSDIR%%/Registry/Win2000_PlainPassword.reg
+%%PORTDOCS%%%%DOCSDIR%%/Registry/Win95_PlainPassword.reg
+%%PORTDOCS%%%%DOCSDIR%%/Registry/Win98_PlainPassword.reg
+%%PORTDOCS%%%%DOCSDIR%%/Registry/Win9X-CacheHandling.reg
+%%PORTDOCS%%%%DOCSDIR%%/Registry/WinME_PlainPassword.reg
+%%PORTDOCS%%%%DOCSDIR%%/Registry/WinXP_SignOrSeal.reg
+%%PORTDOCS%%%%DOCSDIR%%/Registry/WindowsTerminalServer.reg
+%%PORTDOCS%%%%DOCSDIR%%/Roadmap
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/WHATSNEW.txt
+%%PORTDOCS%%%%DOCSDIR%%/announce
+%%PORTDOCS%%%%DOCSDIR%%/faq/README
+%%PORTDOCS%%%%DOCSDIR%%/faq/Samba-Server-FAQ-1.html
+%%PORTDOCS%%%%DOCSDIR%%/faq/Samba-Server-FAQ-2.html
+%%PORTDOCS%%%%DOCSDIR%%/faq/Samba-Server-FAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/faq/Samba-Server-FAQ.sgml
+%%PORTDOCS%%%%DOCSDIR%%/faq/Samba-meta-FAQ-1.html
+%%PORTDOCS%%%%DOCSDIR%%/faq/Samba-meta-FAQ-2.html
+%%PORTDOCS%%%%DOCSDIR%%/faq/Samba-meta-FAQ-3.html
+%%PORTDOCS%%%%DOCSDIR%%/faq/Samba-meta-FAQ-4.html
+%%PORTDOCS%%%%DOCSDIR%%/faq/Samba-meta-FAQ-5.html
+%%PORTDOCS%%%%DOCSDIR%%/faq/Samba-meta-FAQ-6.html
+%%PORTDOCS%%%%DOCSDIR%%/faq/Samba-meta-FAQ.html
+%%PORTDOCS%%%%DOCSDIR%%/faq/Samba-meta-FAQ.sgml
+%%PORTDOCS%%%%DOCSDIR%%/faq/Samba-meta-FAQ.txt
+%%PORTDOCS%%%%DOCSDIR%%/faq/sambafaq-1.html
+%%PORTDOCS%%%%DOCSDIR%%/faq/sambafaq-2.html
+%%PORTDOCS%%%%DOCSDIR%%/faq/sambafaq-3.html
+%%PORTDOCS%%%%DOCSDIR%%/faq/sambafaq-4.html
+%%PORTDOCS%%%%DOCSDIR%%/faq/sambafaq-5.html
+%%PORTDOCS%%%%DOCSDIR%%/faq/sambafaq.html
+%%PORTDOCS%%%%DOCSDIR%%/faq/sambafaq.sgml
+%%PORTDOCS%%%%DOCSDIR%%/faq/sambafaq.txt
+%%PORTDOCS%%%%DOCSDIR%%/history
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/CVS-Access.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/DOMAIN_MEMBER.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/ENCRYPTION.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/Integrating-with-Windows.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/NT_Security.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/OS2-Client-HOWTO.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/PAM-Authentication-And-Samba.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/Samba-BDC-HOWTO.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/Samba-HOWTO-Collection.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/Samba-LDAP-HOWTO.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/Samba-PDC-HOWTO.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/UNIX_INSTALL.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/cups.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/findsmb.1.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/lmhosts.5.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/make_smbcodepage.1.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/make_unicodemap.1.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/msdfs_setup.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/nmbd.8.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/nmblookup.1.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/pdbedit.8.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/printer_driver2.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/rpcclient.1.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/samba.7.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/smb.conf.5.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/smbcacls.1.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/smbclient.1.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/smbcontrol.1.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/smbd.8.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/smbmnt.8.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/smbmount.8.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/smbpasswd.5.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/smbpasswd.8.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/smbsh.1.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/smbspool.8.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/smbstatus.1.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/smbtar.1.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/smbumount.8.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/swat.8.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/testparm.1.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/testprns.1.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/wbinfo.1.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/wfw_slip.htm
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/winbind.html
+%%PORTDOCS%%%%DOCSDIR%%/htmldocs/winbindd.8.html
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/Application_Serving.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/BROWSING-Config.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/BROWSING.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/BUGS.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/CUPS-PrintingInfo.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/DHCP-Server-Configuration.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/DIAGNOSIS.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/DNIX.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/Faxing.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/GOTCHAS.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/HINTS.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/INSTALL.sambatar
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/Imprints.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/Macintosh_Clients.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/NetBIOS.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/PROFILES.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/Passwords.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/Printing.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/README.DCEDFS
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/README.NOW
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/README.jis
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/README.sambatar
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/Recent-FAQs.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/RoutedNetworks.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/SCO.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/SMBTAR.notes
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/Samba-OpenSSL.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/Speed.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/Speed2.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/Tracing.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/UNIX-SMB.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/UNIX_SECURITY.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/Win95.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/WinNT.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/cifsntdomain.txt
+%%PORTDOCS%%%%DOCSDIR%%/textdocs/security_level.txt
+%%EXAMPLESDIR%%/LDAP/README
+%%EXAMPLESDIR%%/LDAP/export_smbpasswd.pl
+%%EXAMPLESDIR%%/LDAP/import_smbpasswd.pl
+%%EXAMPLESDIR%%/LDAP/ldapchpasswd
+%%EXAMPLESDIR%%/LDAP/ldapsync.pl
+%%EXAMPLESDIR%%/LDAP/samba-nds.schema
+%%EXAMPLESDIR%%/LDAP/samba.schema
+%%EXAMPLESDIR%%/LDAP/samba-schema-netscapeds4.x
+%%EXAMPLESDIR%%/LDAP/samba-schema-netscapeds5.x
+%%EXAMPLESDIR%%/LDAP/samba-schema.IBMSecureWay
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/CONTRIBUTORS
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/COPYING
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/ChangeLog
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/FILES
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/INFRASTRUCTURE
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/INSTALL
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/Makefile
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/README
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/TODO
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/cgi/README
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/cgi/ldappass.cgi
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/mkntpwd/Makefile
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/mkntpwd/getopt.c
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/mkntpwd/getopt.h
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/mkntpwd/md4.c
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/mkntpwd/mkntpwd.c
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/mkntpwd/mkntpwd.h
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/mkntpwd/smbdes.c
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-groupadd.pl
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-groupdel.pl
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-groupmod.pl
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-groupshow.pl
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-migrate-accounts.pl
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-migrate-groups.pl
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-passwd.pl
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-populate.pl
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-tools.spec
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-useradd.pl
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-userdel.pl
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-usermod.pl
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap-usershow.pl
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap_conf.pm
+%%EXAMPLESDIR%%/LDAP/smbldap-tools/smbldap_tools.pm
+%%EXAMPLESDIR%%/README
+%%BUILD_VFS%%%%EXAMPLESDIR%%/VFS/Makefile
+%%EXAMPLESDIR%%/VFS/README
+%%EXAMPLESDIR%%/VFS/block/block.c
+%%BUILD_VFS%%%%EXAMPLESDIR%%/VFS/block/block.o
+%%BUILD_VFS%%%%EXAMPLESDIR%%/VFS/block/block.so
+%%EXAMPLESDIR%%/VFS/block/samba-block.conf
+%%EXAMPLESDIR%%/VFS/block/smb.conf
+%%EXAMPLESDIR%%/VFS/recycle/README
+%%EXAMPLESDIR%%/VFS/recycle/cleanup_recycle.pl
+%%EXAMPLESDIR%%/VFS/recycle/recycle.c
+%%EXAMPLESDIR%%/VFS/recycle/recycle.conf
+%%EXAMPLESDIR%%/VFS/audit.c
+%%EXAMPLESDIR%%/VFS/skel.c
+%%EXAMPLESDIR%%/VFS/Makefile.in
+%%EXAMPLESDIR%%/VFS/configure
+%%EXAMPLESDIR%%/VFS/configure.in
 @exec /bin/mkdir -p %D/VFS/recycle
-share/examples/samba/appliance/Makefile
-share/examples/samba/appliance/README
-share/examples/samba/appliance/appliance.spec
-share/examples/samba/appliance/build.sh
-share/examples/samba/appliance/smb.conf-appliance
-share/examples/samba/autofs/auto.a
-share/examples/samba/dce-dfs/README
-share/examples/samba/dce-dfs/smb.conf
-share/examples/samba/libsmbclient/testsmbc.c
-share/examples/samba/libsmbclient/tree.c
-share/examples/samba/misc/extra_smbstatus
-share/examples/samba/misc/modify_samba_config.pl
-share/examples/samba/misc/swat.pl
-share/examples/samba/misc/wall.perl
-share/examples/samba/printer-accounting/README
-share/examples/samba/printer-accounting/acct-all
-share/examples/samba/printer-accounting/acct-sum
-share/examples/samba/printer-accounting/hp5-redir
-share/examples/samba/printer-accounting/lp-acct
-share/examples/samba/printer-accounting/printcap
-share/examples/samba/printing/smbprint
-share/examples/samba/printing/smbprint.newer
-share/examples/samba/printing/smbprint.sysv
-share/examples/samba/printing/smbprint.old
-share/examples/samba/printing/smbprint.safer
-share/examples/samba/simple/README
-share/examples/samba/simple/smb.conf
-share/examples/samba/smb.conf.default
-share/examples/samba/svr4-startup/README
-share/examples/samba/svr4-startup/samba.server
-share/examples/samba/thoralf/smb.conf
-share/examples/samba/tridge/README
-share/examples/samba/tridge/smb.conf
-share/examples/samba/tridge/smb.conf.WinNT
-share/examples/samba/tridge/smb.conf.fjall
-share/examples/samba/tridge/smb.conf.lapland
-share/examples/samba/tridge/smb.conf.vittjokk
-share/examples/samba/validchars/msdos70.out
-share/examples/samba/validchars/nwdos70.out
-share/examples/samba/validchars/readme
-share/examples/samba/validchars/validchr.c
-share/examples/samba/validchars/validchr.com
-share/examples/samba/libsmbclient/Makefile
-share/examples/samba/libsmbclient/README
+%%EXAMPLESDIR%%/appliance/Makefile
+%%EXAMPLESDIR%%/appliance/README
+%%EXAMPLESDIR%%/appliance/appliance.spec
+%%EXAMPLESDIR%%/appliance/build.sh
+%%EXAMPLESDIR%%/appliance/smb.conf-appliance
+%%EXAMPLESDIR%%/autofs/auto.a
+%%EXAMPLESDIR%%/dce-dfs/README
+%%EXAMPLESDIR%%/dce-dfs/smb.conf
+%%EXAMPLESDIR%%/libsmbclient/testsmbc.c
+%%EXAMPLESDIR%%/libsmbclient/tree.c
+%%EXAMPLESDIR%%/misc/extra_smbstatus
+%%EXAMPLESDIR%%/misc/modify_samba_config.pl
+%%EXAMPLESDIR%%/misc/swat.pl
+%%EXAMPLESDIR%%/misc/wall.perl
+%%EXAMPLESDIR%%/printer-accounting/README
+%%EXAMPLESDIR%%/printer-accounting/acct-all
+%%EXAMPLESDIR%%/printer-accounting/acct-sum
+%%EXAMPLESDIR%%/printer-accounting/hp5-redir
+%%EXAMPLESDIR%%/printer-accounting/lp-acct
+%%EXAMPLESDIR%%/printer-accounting/printcap
+%%EXAMPLESDIR%%/printing/smbprint
+%%EXAMPLESDIR%%/printing/smbprint.newer
+%%EXAMPLESDIR%%/printing/smbprint.sysv
+%%EXAMPLESDIR%%/printing/smbprint.old
+%%EXAMPLESDIR%%/printing/smbprint.safer
+%%EXAMPLESDIR%%/simple/README
+%%EXAMPLESDIR%%/simple/smb.conf
+%%EXAMPLESDIR%%/smb.conf.default
+%%EXAMPLESDIR%%/svr4-startup/README
+%%EXAMPLESDIR%%/svr4-startup/samba.server
+%%EXAMPLESDIR%%/thoralf/smb.conf
+%%EXAMPLESDIR%%/tridge/README
+%%EXAMPLESDIR%%/tridge/smb.conf
+%%EXAMPLESDIR%%/tridge/smb.conf.WinNT
+%%EXAMPLESDIR%%/tridge/smb.conf.fjall
+%%EXAMPLESDIR%%/tridge/smb.conf.lapland
+%%EXAMPLESDIR%%/tridge/smb.conf.vittjokk
+%%EXAMPLESDIR%%/validchars/msdos70.out
+%%EXAMPLESDIR%%/validchars/nwdos70.out
+%%EXAMPLESDIR%%/validchars/readme
+%%EXAMPLESDIR%%/validchars/validchr.c
+%%EXAMPLESDIR%%/validchars/validchr.com
+%%EXAMPLESDIR%%/libsmbclient/Makefile
+%%EXAMPLESDIR%%/libsmbclient/README
 share/swat/help/CVS-Access.html
 share/swat/help/DOMAIN_MEMBER.html
 share/swat/help/ENCRYPTION.html
@@ -512,30 +512,30 @@ share/swat/using_samba/this_edition.html
 @dirrm share/swat/images
 @dirrm share/swat/help
 @dirrm share/swat
-@dirrm share/examples/samba/validchars
-@dirrm share/examples/samba/tridge
-@dirrm share/examples/samba/thoralf
-@dirrm share/examples/samba/svr4-startup
-@dirrm share/examples/samba/simple
-@dirrm share/examples/samba/printing
-@dirrm share/examples/samba/printer-accounting
-@dirrm share/examples/samba/misc
-@dirrm share/examples/samba/libsmbclient
-@dirrm share/examples/samba/dce-dfs
-@dirrm share/examples/samba/autofs
-@dirrm share/examples/samba/appliance
-@dirrm share/examples/samba/LDAP/smbldap-tools/mkntpwd
-@dirrm share/examples/samba/LDAP/smbldap-tools/cgi
-@dirrm share/examples/samba/LDAP/smbldap-tools
-@dirrm share/examples/samba/LDAP
-@dirrm share/examples/samba/VFS/block
-@dirrm share/examples/samba/VFS/recycle
-@dirrm share/examples/samba/VFS
-@dirrm share/examples/samba
-%%PORTDOCS%%@dirrm share/doc/samba/Registry
-%%PORTDOCS%%@dirrm share/doc/samba/textdocs
-%%PORTDOCS%%@dirrm share/doc/samba/htmldocs
-%%PORTDOCS%%@dirrm share/doc/samba/faq
-%%PORTDOCS%%@dirrm share/doc/samba
+@dirrm %%EXAMPLESDIR%%/validchars
+@dirrm %%EXAMPLESDIR%%/tridge
+@dirrm %%EXAMPLESDIR%%/thoralf
+@dirrm %%EXAMPLESDIR%%/svr4-startup
+@dirrm %%EXAMPLESDIR%%/simple
+@dirrm %%EXAMPLESDIR%%/printing
+@dirrm %%EXAMPLESDIR%%/printer-accounting
+@dirrm %%EXAMPLESDIR%%/misc
+@dirrm %%EXAMPLESDIR%%/libsmbclient
+@dirrm %%EXAMPLESDIR%%/dce-dfs
+@dirrm %%EXAMPLESDIR%%/autofs
+@dirrm %%EXAMPLESDIR%%/appliance
+@dirrm %%EXAMPLESDIR%%/LDAP/smbldap-tools/mkntpwd
+@dirrm %%EXAMPLESDIR%%/LDAP/smbldap-tools/cgi
+@dirrm %%EXAMPLESDIR%%/LDAP/smbldap-tools
+@dirrm %%EXAMPLESDIR%%/LDAP
+@dirrm %%EXAMPLESDIR%%/VFS/block
+@dirrm %%EXAMPLESDIR%%/VFS/recycle
+@dirrm %%EXAMPLESDIR%%/VFS
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Registry
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/textdocs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/htmldocs
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/faq
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm etc/codepages
 %%LIBSAMBA%%@dirrm lib/samba

@@ -20,7 +20,6 @@ PATCH_SITES+=	ftp://totem.fix.no/pub/mirrors/misc/:smbjail \
 		ftp://ftp.nuug.no/pub/anders/distfiles/:smbjail
 PATCHFILES+=	samba-2.2.10-freebsd-jail-patch-20040806.gz:smbjail
 .endif
-
 .if defined(WITH_BROWSING_HACKS)
 PATCH_SITES+=	http://cell.sick.ru/~glebius/patches/ \
 		http://people.FreeBSD.org/~glebius/
@@ -29,11 +28,11 @@ PATCHFILES+=	samba-2.2.9-browsing-hacks.diff
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free SMB and CIFS client and server for UNIX
-CONFLICTS=	ja-samba-2.* samba-3.* sharity-light-1.*
 
+CONFLICTS=	ja-samba-2.* samba-3.* sharity-light-1.*
 USE_SUBMAKE=	YES
 USE_GMAKE=	YES
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=	13
 USE_AUTOCONF_VER=	213
 
 # directories
@@ -235,8 +234,8 @@ post-install:
 .if defined(WITH_AUDIT) || defined(WITH_RECYCLE)
 #	@${RM} -rf ${PREFIX}/share/examples/samba/VFS/.libs
 	${FIND} ${PREFIX}/share/examples/samba/VFS -type d -name ".libs" | ${XARGS} ${RM} -r
-	@for file in audit.o audit.so recycle/recycle.o recycle/recycle.so skel.o skel.so ; do \
-		${RM} ${PREFIX}/share/examples/samba/VFS/$${file} ; \
+	@for ifile in audit.o audit.so recycle/recycle.o recycle/recycle.so skel.o skel.so ; do \
+		${RM} ${PREFIX}/share/examples/samba/VFS/$${ifile} ; \
 	done
 .endif
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then				\
