@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hsql
-PORTVERSION=	1.2.1
+PORTVERSION=	1.4
 CATEGORIES=	databases haskell
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	htoolkit
@@ -27,9 +27,8 @@ ALL_TARGET=	all docs
 .endif
 
 WRKSRC=	${WRKDIR}/HSQL
-USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}/lib --enable-postgres
+CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-postgres
 CONFIGURE_ENV+=	CFLAGS=-I${LOCALBASE}/include/postgresql/server \
 		CPPFLAGS=-I${LOCALBASE}/include/postgresql/server
 USE_GMAKE=	yes
@@ -73,5 +72,6 @@ pre-everything::
 post-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/hsql.pkg ${DATADIR}
+	@${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
 
 .include <bsd.port.post.mk>

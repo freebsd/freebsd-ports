@@ -1,13 +1,18 @@
-lib/ghc-%%GHC_VERSION%%/HSsql.o
-lib/ghc-%%GHC_VERSION%%/imports/Database/HSQL/PostgreSQL.hi
-lib/ghc-%%GHC_VERSION%%/imports/Database/HSQL/Types.hi
-lib/ghc-%%GHC_VERSION%%/imports/Database/HSQL.hi
-lib/ghc-%%GHC_VERSION%%/libHSsql.a
-%%HUGS%%lib/hugs/libraries/Database/HSQL/PostgreSQL.hs
-%%HUGS%%lib/hugs/libraries/Database/HSQL/PostgreSQL.so
-%%HUGS%%lib/hugs/libraries/Database/HSQL/Types.hs
-%%HUGS%%lib/hugs/libraries/Database/HSQL.hs
-%%HUGS%%lib/hugs/libraries/Database/HSQL.so
+lib/HSQL/GHC/HSsql.o
+lib/HSQL/GHC/imports/Database/HSQL/PostgreSQL.hi
+lib/HSQL/GHC/imports/Database/HSQL/Types.hi
+lib/HSQL/GHC/imports/Database/HSQL.hi
+lib/HSQL/GHC/libHSsql.a
+%%HUGS%%lib/HSQL/Hugs/libraries/Database/HSQL/PostgreSQL.hs
+%%HUGS%%lib/HSQL/Hugs/libraries/Database/HSQL/PostgreSQL.so
+%%HUGS%%lib/HSQL/Hugs/libraries/Database/HSQL/Types.hs
+%%HUGS%%lib/HSQL/Hugs/libraries/Database/HSQL.hs
+%%HUGS%%lib/HSQL/Hugs/libraries/Database/HSQL.so
+%%PORTDOCS%%%%DOCSDIR%%/Database.HSQL.MySQL.html
+%%PORTDOCS%%%%DOCSDIR%%/Database.HSQL.ODBC.html
+%%PORTDOCS%%%%DOCSDIR%%/Database.HSQL.PostgreSQL.html
+%%PORTDOCS%%%%DOCSDIR%%/Database.HSQL.SQLite.html
+%%PORTDOCS%%%%DOCSDIR%%/Database.HSQL.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-index-B.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-index-C.html
 %%PORTDOCS%%%%DOCSDIR%%/doc-index-D.html
@@ -26,13 +31,16 @@ lib/ghc-%%GHC_VERSION%%/libHSsql.a
 %%PORTDOCS%%%%DOCSDIR%%/haddock.css
 %%PORTDOCS%%%%DOCSDIR%%/haskell_icon.gif
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/Database.HSQL.PostgreSQL.html
-%%PORTDOCS%%%%DOCSDIR%%/Database.HSQL.html
 %%DATADIR%%/hsql.pkg
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Database/HSQL
-@dirrm lib/ghc-%%GHC_VERSION%%/imports/Database
-%%HUGS%%@dirrm lib/hugs/libraries/Database/HSQL
-%%HUGS%%@dirrm lib/hugs/libraries/Database
+@dirrm lib/HSQL/GHC/imports/Database/HSQL
+@dirrm lib/HSQL/GHC/imports/Database
+@dirrm lib/HSQL/GHC/imports
+@dirrm lib/HSQL/GHC
+%%HUGS%%@dirrm lib/HSQL/Hugs/libraries/Database/HSQL
+%%HUGS%%@dirrm lib/HSQL/Hugs/libraries/Database
+%%HUGS%%@dirrm lib/HSQL/Hugs/libraries
+%%HUGS%%@dirrm lib/HSQL/Hugs
+@dirrm lib/HSQL
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
 @exec %D/bin/ghc-pkg -u -g -i %D/share/hsql/hsql.pkg
