@@ -19,6 +19,8 @@ MAINTAINER=	wjv@FreeBSD.org
 
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
+BROKEN=		"Incorrect checksums"
+
 USE_SUBMAKE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
