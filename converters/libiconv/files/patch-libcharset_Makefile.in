@@ -1,0 +1,11 @@
+--- libcharset/Makefile.in.orig	Mon May 21 23:48:37 2001
++++ libcharset/Makefile.in	Sat Apr  6 21:25:39 2002
+@@ -38,7 +38,7 @@
+ # Installs the library and include files only. Typically called with only
+ # $(libdir) and $(includedir) - don't use $(prefix) and $(exec_prefix) here.
+ install-lib : all force
+-	cd lib && $(MAKE) install-lib libdir='$(libdir)' includedir='$(includedir)'
++	cd lib && $(MAKE) install-lib libdir='$(libdir)' includedir='$(includedir)' sysconfdir='$(sysconfdir)'
+ 	$(MKINSTALLDIRS) $(includedir)
+ 	$(INSTALL_DATA) include/libcharset.h $(includedir)/libcharset.h
+ 
