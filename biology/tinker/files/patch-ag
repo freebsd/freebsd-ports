@@ -1,0 +1,11 @@
+--- sizes.i.orig	Fri Jan 12 11:43:06 2001
++++ sizes.i	Fri Jan 12 11:43:38 2001
+@@ -52,7 +52,7 @@
+       integer maxvar,maxopt,maxhess,maxlight,maxvib,maxgeo,maxcell
+       integer maxring,maxfix,maxbio,maxres,maxamino,maxnuc,maxbnd
+       integer maxang,maxtors,maxpi,maxpib,maxpit
+-      parameter (maxatm=10000)
++      parameter (maxatm=2500)
+       parameter (maxval=4)
+       parameter (maxgrp=100)
+       parameter (maxtyp=1000)

@@ -1,10 +1,15 @@
 Tinker is a set of small programs for doing general purpose molecular
-modeling. Tools are included for energy minimizations, geometry
-calculations, and molecular analysis calculations. Tools for converting
-coordinate sets are also provided.
+modeling calculations. Tools are included for energy minimizations,
+geometry calculations, simulated annealing, molecular dynamics, and
+molecular analysis calculations. Tools for converting coordinate sets
+are also provided.  Tinker employs several force fields and minimization
+techniques.
 
-Tinker employs several force fields and minimizaation techniques.
-Simulated annealing and molecular dynamics can be performed with Tinker.
+This port sets the maxatm value to 2500 atoms.  This should be
+sufficient for most molecular systems.  Should you need to work with
+larger systems you can set the maxatm parameter in the sizes.i file
+located in the tinker/source directory and recompile.  Note that if it
+is set too large that tinker programs will abort and core dump.
 
 For more information about Tinker see:
 

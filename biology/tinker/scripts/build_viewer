@@ -1,0 +1,47 @@
+#!/bin/sh
+
+# This builds the molecular viewer for tinker files.  It is a modified
+# version of rasmol.  One of the problems with rasmol is that is only
+# works at one color depth.  This script will build three viewers at
+# different color depths, 8-bit, 16-bit, and 32-bit.  The binaries are
+# called tview-8, tview-16, and tview-32 respectively.
+
+cd ${WRKSRC}/../rasmol
+
+cp Imakefile Imakefile.orig
+
+sed s@/user/ponder@${PREFIX}/share@ Imakefile > Imakefile.temp
+
+sed s@'ComplexProgramTarget(rasmol)'@'ComplexProgramTarget(tview-32)'@ \
+    Imakefile.temp > Imakefile
+
+xmkmf -a
+
+make clean && make
+
+sed -e s@'DEPTHDEF = -DTHIRTYTWOBIT'@'# DEPTHDEF = -DTHIRTYTWOBIT'@ \
+    -e s@'# DEPTHDEF = -DSIXTEENBIT'@'DEPTHDEF = -DSIXTEENBIT'@ \
+    -e s@'ComplexProgramTarget(rasmol)'@'ComplexProgramTarget(tview-16)'@ \
+       Imakefile.temp > Imakefile
+
+xmkmf -a
+
+make clean && make
+
+sed -e s@'DEPTHDEF = -DTHIRTYTWOBIT'@'# DEPTHDEF = -DTHIRTYTWOBIT'@ \
+    -e s@'# DEPTHDEF = -DEIGHTBIT'@'DEPTHDEF = -DEIGHTBIT'@ \
+    -e s@'ComplexProgramTarget(rasmol)'@'ComplexProgramTarget(tview-8)'@ \
+       Imakefile.temp > Imakefile
+
+xmkmf -a
+
+make clean && make
+
+# Restore Imakefile to original state so that rerunning this script does
+# the right thing.
+rm Imakefile.temp
+mv Imakefile.orig Imakefile
+xmkmf -a
+make clean
+
+exit 0

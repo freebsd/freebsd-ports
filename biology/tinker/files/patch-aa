@@ -1,5 +1,5 @@
---- ../make/Makefile.orig	Mon Jul 12 10:56:36 1999
-+++ ../make/Makefile	Wed May 31 16:00:31 2000
+--- ../make/Makefile.orig	Mon Jan 15 12:39:52 2001
++++ ../make/Makefile	Mon Jan 15 15:48:37 2001
 @@ -9,8 +9,8 @@
  ##
  ##   1. make all              Build all the TINKER executables
@@ -24,41 +24,36 @@
  
  ####################################################################
  ##  Known Machine Types; Uncomment One of the Following Sections  ##
-@@ -45,13 +45,13 @@
- ##  Compiler: DEC Fortran 77/90, V4.1
+@@ -87,12 +87,12 @@
+ ##  Compiler: GNU g77
  ##
  
--F77 = /usr/bin/f77
--RM = /sbin/rm
+-F77 = /usr/bin/g77
 -LIBS =
 -F77FLAGS = -c
--OPTFLAGS = -fast -tune host
--LIBFLAGS = -rlv
--LINKFLAGS = -fast -non_shared -om -WL,-om_no_inst_sched
-+#F77 = /usr/bin/f77
-+#RM = /sbin/rm
+-OPTFLAGS = -O3 -ffast-math
+-LIBFLAGS = -crusv
+-LINKFLAGS =
++#F77 = /usr/bin/g77
 +#LIBS =
 +#F77FLAGS = -c
-+#OPTFLAGS = -fast -tune host
-+#LIBFLAGS = -rlv
-+#LINKFLAGS = -fast -non_shared -om -WL,-om_no_inst_sched
++#OPTFLAGS = -O3 -ffast-math
++#LIBFLAGS = -crusv
++#LINKFLAGS =
  
  ##
- ##  Machine:  Silicon Graphics
-@@ -104,6 +104,40 @@
- #diagq.o:
- #	${F77} ${F77FLAGS} -ffast-math diagq.f
+ ##  Machine:  IntelPC / Linux
+@@ -108,6 +108,35 @@
+ #LIBFLAGS = -crusv
+ #LINKFLAGS =
  
 +##
-+##  Machine: IntelPC
-+##  CPU Type:        Pentium Pro
-+##  Oper Sys:        FreeBSD 3.0
-+##  Compiler:        f77(f2c/gcc version 2.7.2.1) || egcs g77
-+##
++##  Machine:  IntelPC / FreeBSD
++##  CPU Type: Intel, AMD, Cyrix
++##  Oper Sys: FreeBSD 4.2
++##  Compiler: f77 , aka g77
 +
 +F77 = ${FC}
-+RM = /bin/rm
-+
 +.if ${FC}==f77
 +.if !defined(HAVE_G2C)
 +LIBS = -lU77
@@ -70,32 +65,38 @@
 +LINKFLAGS =
 +.endif
 +.elseif ${FC}==g77
-+LIBS=
++LIBS =
 +F77FLAGS = -Wno-globals -fno-globals -c -w
 +LINKFLAGS =
 +.endif
 +
 +OPTFLAGS = ${FFLAGS} -ffast-math
 +.if ${MACHINE_ARCH} == "i386"
-+OPTFLAGS+= -malign-double
++OPTFLAGS += -malign-double
 +.endif
 +LIBFLAGS = -rcuv
-+diagq.o:
-+	${F77} ${F77FLAGS} -ffast-math diagq.f
 +
  #################################################################
  ##  Should not be Necessary to Change Things Below this Point  ##
  #################################################################
-@@ -775,6 +809,7 @@
-         volume2.o \
-         writeout.o \
-         xyzatm.o
-+	ranlib libtinker.a
+@@ -486,11 +515,13 @@
+            xyzpdb.x \
+            xyzsybyl.x
  
- alchemy.x:
- 	${F77} ${LINKFLAGS} -o alchemy.x alchemy.o libtinker.a ${LIBS}
-@@ -868,51 +903,51 @@
- 	${F77} ${LINKFLAGS} -o xyzsybyl.x xyzsybyl.o libtinker.a ${LIBS}
++.SUFFIXES: .x
++
+ .f.o:
+ 	${F77} ${F77FLAGS} ${OPTFLAGS} $*.f 
+ 
+-%.x: %.o libtinker.a
+-	${F77} ${LINKFLAGS} -o $@ $^ ${LIBS}
++.o.x: libtinker.a
++	${F77} ${LINKFLAGS} -o $@ $< libtinker.a ${LIBS}
+ 
+ all:	${EXEFILES}
+ 
+@@ -501,56 +532,56 @@
+ 	cat *.i *.f > tinker.txt
  
  rename:
 -	mv  alchemy.x    $(BINDIR)/alchemy
@@ -104,6 +105,7 @@
 -	mv  archive.x    $(BINDIR)/archive
 -	mv  correlate.x  $(BINDIR)/correlate
 -	mv  crystal.x    $(BINDIR)/crystal
+-	mv  diffuse.x    $(BINDIR)/diffuse
 -	mv  distgeom.x   $(BINDIR)/distgeom
 -	mv  document.x   $(BINDIR)/document
 -	mv  dynamic.x    $(BINDIR)/dynamic
@@ -112,8 +114,10 @@
 -	mv  intxyz.x     $(BINDIR)/intxyz
 -	mv  minimize.x   $(BINDIR)/minimize
 -	mv  minirot.x    $(BINDIR)/minirot
+-	mv  minrigid.x   $(BINDIR)/minrigid
 -	mv  newton.x     $(BINDIR)/newton
 -	mv  newtrot.x    $(BINDIR)/newtrot
+-	mv  nucleic.x    $(BINDIR)/nucleic
 -	mv  optimize.x   $(BINDIR)/optimize
 -	mv  optirot.x    $(BINDIR)/optirot
 -	mv  optrigid.x   $(BINDIR)/optrigid
@@ -123,10 +127,12 @@
 -	mv  pss.x        $(BINDIR)/pss
 -	mv  pssrigid.x   $(BINDIR)/pssrigid
 -	mv  pssrot.x     $(BINDIR)/pssrot
+-	mv  radial.x     $(BINDIR)/radial
 -	mv  saddle.x     $(BINDIR)/saddle
 -	mv  scan.x       $(BINDIR)/scan
 -	mv  sniffer.x    $(BINDIR)/sniffer
 -	mv  spacefill.x  $(BINDIR)/spacefill
+-	mv  spectrum.x   $(BINDIR)/spectrum
 -	mv  superpose.x  $(BINDIR)/superpose
 -	mv  sybylxyz.x   $(BINDIR)/sybylxyz
 -	mv  testgrad.x   $(BINDIR)/testgrad
@@ -149,6 +155,7 @@
 +	${INSTALL_PROGRAM}  archive.x    $(BINDIR)/archive
 +	${INSTALL_PROGRAM}  correlate.x  $(BINDIR)/correlate
 +	${INSTALL_PROGRAM}  crystal.x    $(BINDIR)/crystal
++	${INSTALL_PROGRAM}  diffuse.x    $(BINDIR)/diffuse
 +	${INSTALL_PROGRAM}  distgeom.x   $(BINDIR)/distgeom
 +	${INSTALL_PROGRAM}  document.x   $(BINDIR)/document
 +	${INSTALL_PROGRAM}  dynamic.x    $(BINDIR)/dynamic
@@ -157,8 +164,10 @@
 +	${INSTALL_PROGRAM}  intxyz.x     $(BINDIR)/intxyz
 +	${INSTALL_PROGRAM}  minimize.x   $(BINDIR)/minimize
 +	${INSTALL_PROGRAM}  minirot.x    $(BINDIR)/minirot
++	${INSTALL_PROGRAM}  minrigid.x   $(BINDIR)/minrigid
 +	${INSTALL_PROGRAM}  newton.x     $(BINDIR)/newton
 +	${INSTALL_PROGRAM}  newtrot.x    $(BINDIR)/newtrot
++	${INSTALL_PROGRAM}  nucleic.x    $(BINDIR)/nucleic
 +	${INSTALL_PROGRAM}  optimize.x   $(BINDIR)/optimize
 +	${INSTALL_PROGRAM}  optirot.x    $(BINDIR)/optirot
 +	${INSTALL_PROGRAM}  optrigid.x   $(BINDIR)/optrigid
@@ -168,10 +177,12 @@
 +	${INSTALL_PROGRAM}  pss.x        $(BINDIR)/pss
 +	${INSTALL_PROGRAM}  pssrigid.x   $(BINDIR)/pssrigid
 +	${INSTALL_PROGRAM}  pssrot.x     $(BINDIR)/pssrot
++	${INSTALL_PROGRAM}  radial.x     $(BINDIR)/radial
 +	${INSTALL_PROGRAM}  saddle.x     $(BINDIR)/saddle
 +	${INSTALL_PROGRAM}  scan.x       $(BINDIR)/scan
 +	${INSTALL_PROGRAM}  sniffer.x    $(BINDIR)/sniffer
 +	${INSTALL_PROGRAM}  spacefill.x  $(BINDIR)/spacefill
++	${INSTALL_PROGRAM}  spectrum.x   $(BINDIR)/spectrum
 +	${INSTALL_PROGRAM}  superpose.x  $(BINDIR)/superpose
 +	${INSTALL_PROGRAM}  sybylxyz.x   $(BINDIR)/sybylxyz
 +	${INSTALL_PROGRAM}  testgrad.x   $(BINDIR)/testgrad
@@ -191,3 +202,13 @@
  
  remove_links:
  	rm -f $(LINKDIR)/alchemy
+@@ -671,8 +702,8 @@
+         bspline.o \
+         calendar.o \
+         center.o \
+-        chkxyz.o \
+         cholesky.o \
++        chkxyz.o \
+         clock.o \
+         cluster.o \
+         column.o \
