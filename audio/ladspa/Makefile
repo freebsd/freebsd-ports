@@ -21,10 +21,10 @@ PLUGIN_FILES=	amp.so delay.so filter.so noise.so sine.so
 PLUGIN_DIR?=	${PREFIX}/lib/ladspa/
 
 post-patch:
-	${REINPLACE_CMD} -e 's,-ldl,,' ${WRKSRC}/src/makefile
+	${REINPLACE_CMD} -e 's,-ldl,,; s,^CFLAGS[ \t]=,#CFLAGS+=,' ${WRKSRC}/src/makefile
 
 do-build:
-	cd ${WRKSRC}/src; ${GMAKE} -f makefile targets
+	cd ${WRKSRC}/src; ${SETENV} ${MAKE_ENV} ${GMAKE} -f makefile targets
 
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/src/ladspa.h ${PREFIX}/include
