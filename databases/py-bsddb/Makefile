@@ -9,7 +9,7 @@ PORTNAME=	bsddb
 PORTVERSION=	${PYTHON_PORTVERSION}
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_PYTHON}
-MASTER_SITE_SUBDIR=	ftp/python/${PORTVERSION}
+MASTER_SITE_SUBDIR=	${PYTHON_SITE_SUBDIR}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${PYTHON_DISTFILE}
 
@@ -26,18 +26,12 @@ DBVERSION=	db4
 .endif
 
 DIST_SUBDIR=	python
-USE_PYTHON=	yes
+USE_PYTHON=	2.3+
 USE_PYDISTUTILS=yes
 USE_REINPLACE=	yes
 WRKSRC=		${PYTHON_WRKSRC}/Modules
 MD5_FILE=	${PORTSDIR}/lang/python/distinfo
 MAKE_ENV=	BSDDB_VERSION=${DBVERSION}
-
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 230
-IGNORE=		"is a port for python2.3 and later versions"
-.endif
 
 post-extract:
 	@${CP} ${FILESDIR}/setup.py ${WRKSRC}
@@ -47,4 +41,4 @@ post-patch:
 		's,^\(#include.*\)\(db\.h.*\)$$,\1${DBVERSION}/\2,' \
 		${WRKSRC}/_bsddb.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
