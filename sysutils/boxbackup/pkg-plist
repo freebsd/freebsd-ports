@@ -1,0 +1,14 @@
+%%CLIENT%%bin/bbackupctl
+%%CLIENT%%bin/bbackupd
+%%CLIENT%%bin/bbackupd-config
+%%CLIENT%%bin/bbackupquery
+%%SERVER%%bin/bbstoreaccounts
+%%SERVER%%bin/bbstored
+%%SERVER%%bin/bbstored-certs
+%%SERVER%%bin/bbstored-config
+%%SERVER%%bin/raidfile-config
+%%CLIENT%%etc/rc.d/bbackupd.sh
+%%SERVER%%etc/rc.d/bbstored.sh
+%%CLIENT%%@dirrm etc/box/bbackupd
+%%SERVER%%@dirrm etc/box/bbstored
+@dirrm etc/box

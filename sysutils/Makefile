@@ -38,6 +38,7 @@
     SUBDIR += bkpupsd
     SUBDIR += bksh
     SUBDIR += blimitd
+    SUBDIR += boxbackup
     SUBDIR += bpm
     SUBDIR += bsdsar
     SUBDIR += bubblemon-dockapp

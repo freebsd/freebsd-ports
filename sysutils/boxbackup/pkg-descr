@@ -1,0 +1,13 @@
+This is a port of Box Backup, an online backup daemon 
+
+The backup daemon, bbackupd, runs on all machines to be backed up. The
+store server daemon, bbstored runs on a central server. Data is sent
+to the store server, which stores all data on local filesystems, that
+is, only on local hard drives. Tape or other archive media is not
+used.
+
+The system is designed to be easy to set up and run, and cheap to use.
+Once set up, there should be no need for user or administrative
+intervention, apart from usual system maintenance.
+
+WWW: http://www.fluffy.co.uk/boxbackup/
