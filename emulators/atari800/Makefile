@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.signus.demon.co.uk/Software/Portable/Atari800e/ \
 DISTNAME=	Atari800-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${EXTRA_FILES}
 
-MAINTAINER=	jsutton@bbcon.com.au
+MAINTAINER=	ports@freebsd.org
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
