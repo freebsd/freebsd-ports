@@ -1,0 +1,25 @@
+$FreeBSD$
+
+--- ../ext/plugin/oji-plugin/src/motif/resources/ja/sunw_java_plugin.po.orig	Sun May  6 15:15:35 2001
++++ ../ext/plugin/oji-plugin/src/motif/resources/ja/sunw_java_plugin.po	Sat Apr 27 01:05:41 2002
+@@ -21,20 +21,12 @@
+ msgstr "Plugin: Netscape プロキシ設定の読み込みに失敗しました。URL \n"
+ msgid  "Plugin: couldn't read directory"
+ msgstr "Plugin: ディレクトリを読み取れません。"
+-msgid  "plugin: java process exited with status"
+-msgstr "plugin: java プロセスが終了状態付きで終了しました。"
+ msgid  "plugin: java process died due to signal"
+ msgstr "plugin: java プロセスがシグナルのために終了しました。"
+ msgid  "  a core file was generated"
+ msgstr "  コアファイルが生成されました。"
+-msgid  "Plugin: trouble with work request from child"
+-msgstr "Plugin: 子からの処理要求に失敗しました。"
+ msgid  "Plugin: can't find IP address for current host"
+ msgstr "Plugin: 現ホストの IP アドレスが見つかりません。"
+-msgid  "Plugin: trouble reading Netscape proxy  configuration URL from\n"
+-msgstr "Plugin: Netscape プロキシ設定の読み込みに失敗しました。URL \n"
+-msgid  "Plugin: can't find plugins/../java directory"
+-msgstr "Plugin: ディレクトリ plugins/../java が見つかりません。"
+ msgid  "Plugin: unexpected work request from child"
+ msgstr "Plugin: 子からの予期しない処理要求です。"
+ msgid  "Plugin: Java VM process has died."
