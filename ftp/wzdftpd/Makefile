@@ -36,6 +36,8 @@ MAN1=	siteconfig.1 \
      	wzd-config.1
 MAN8=	wzdftpd.8
 
+.include <bsd.port.pre.mk>
+
 .if defined(WITH_UTF8)
 USE_ICONV=	yes
 CONFIGURE_ARGS+=	--enable-utf8
@@ -59,8 +61,6 @@ CONFIGURE_ARGS+=	--with-openssl=/dev/null
 .if defined(WITH_IPV6)
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
-
-.include <bsd.port.pre.mk>
 
 .if !defined(WITH_PERL)
 CONFIGURE_ARGS+=	--disable-perl
