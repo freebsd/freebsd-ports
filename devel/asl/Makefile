@@ -1,12 +1,12 @@
-# New ports collection makefile for:    asl
-# Version required:     1.41r7
-# Date created:         18 June 1997
-# Whom:                 Thomas Gellekum <tg@freebsd.org>
+# New ports collection makefile for:	asl
+# Version required:	1.41r8
+# Date created:		18 June 1997
+# Whom:			Thomas Gellekum <tg@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       asl-1.41r7
+DISTNAME=	asl-1.41r8
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		ftp://john.ccac.rwth-aachen.de/pub/as/source/c_version/
@@ -22,7 +22,7 @@ post-extract:
 	${CP} ${FILESDIR}/Makefile.def ${WRKSRC}
 
 post-install:
-	${MKDIR} ${PREFIX}/share/doc/asl
+	@${MKDIR} ${PREFIX}/share/doc/asl
 	${INSTALL_DATA} ${WRKSRC}/doc_EN/* ${PREFIX}/share/doc/asl
 
 .include <bsd.port.mk>
