@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	http://www.brueffer.de/distfiles/
 
-MAINTAINER=	brueffer@phoenix-systems.de
+MAINTAINER=	markus@FreeBSD.org
 COMMENT=	KDE-based editor for HTML image maps
 
 USE_BZIP2=	yes

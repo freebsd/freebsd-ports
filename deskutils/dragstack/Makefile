@@ -11,7 +11,7 @@ CATEGORIES=		deskutils kde
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		brueffer@phoenix-systems.de
+MAINTAINER=		markus@FreeBSD.org
 COMMENT=		Drop stack applet for KDE
 
 USE_KDEBASE_VER=	3

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/mi/m-i/}
 DISTNAME=	${PORTNAME:S/icq//}-${PORTVERSION}
 
-MAINTAINER=	brueffer@phoenix-systems.de
+MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Plugin-based instant messenger
 
 LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron

@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=		graphics kde
 MASTER_SITES=		http://www.paldandy.com/kalbum/data/${PORTNAME}-${PORTVERSION}/
 
-MAINTAINER=		brueffer@phoenix-systems.de
+MAINTAINER=		markus@FreeBSD.org
 COMMENT=		Create albums from a collection of images
 
 USE_KDELIBS_VER=	3

@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=		deskutils kde
 MASTER_SITES=		http://www.brueffer.de/distfiles/
 
-MAINTAINER=		brueffer@phoenix-systems.de
+MAINTAINER=		markus@FreeBSD.org
 COMMENT=		Desktop organization tool
 
 WRKSRC=			${WRKDIR}/${PORTNAME}-0.3.2

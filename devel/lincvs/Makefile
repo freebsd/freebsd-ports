@@ -12,7 +12,7 @@ MASTER_SITES=	http://ppprs1.phy.tu-dresden.de/~trogisch/lincvs/download/20_LinCV
 DISTNAME=	${PORTNAME}-${PORTVERSION}-0-generic-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	brueffer@phoenix-systems.de
+MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Graphical CVS front-end using QT
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

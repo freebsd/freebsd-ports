@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://www.gnomedia.com/cw/krefty/
 
-MAINTAINER=	brueffer@phoenix-systems.de
+MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Quick Reference sheets for KDE
 
 USE_KDELIBS_VER=3

@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=		german kde
 MASTER_SITES=		http://www.gantz-edv.de/kheisereg/
 
-MAINTAINER=		brueffer@phoenix-systems.de
+MAINTAINER=		markus@FreeBSD.org
 COMMENT=		KDE utility to search within the Heise Register
 
 USE_KDEBASE_VER=	3

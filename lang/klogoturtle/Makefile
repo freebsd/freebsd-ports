@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	lang kde
 MASTER_SITES=	http://klogoturtle.sourceforge.net/
 
-MAINTAINER=	brueffer@phoenix-systems.de
+MAINTAINER=	markus@FreeBSD.org
 COMMENT=	LOGO Interpreter for the KDE Desktop
 
 USE_KDELIBS_VER=	3
