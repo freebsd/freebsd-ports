@@ -18,4 +18,6 @@ MD5_FILE=	${.CURDIR}/distinfo
 
 CONFLICTS=	gaim-[0-9]*
 
+BROKEN=	"Needs an update for Gaim 1.2.0"
+
 .include "${MASTERDIR}/Makefile"
