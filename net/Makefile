@@ -524,6 +524,7 @@
     SUBDIR += poptop
     SUBDIR += pork
     SUBDIR += portfwd
+    SUBDIR += portmon
     SUBDIR += posadis
     SUBDIR += powerdns
     SUBDIR += pppload
