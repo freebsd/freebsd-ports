@@ -3,7 +3,7 @@
 # Date created:        16 December 1997
 # Whom:                alex
 #
-# $Id: Makefile,v 1.12 1998/11/03 02:26:39 alex Exp $
+# $Id: Makefile,v 1.13 1998/12/01 08:04:23 asami Exp $
 #
 
 VGABIOS=	VGABIOS-elpin-2.20
@@ -14,7 +14,7 @@ DISTNAME=	bochs-${DATE}b
 CATEGORIES= 	emulators
 MASTER_SITES= 	ftp://ftp.bochs.com/pub/
 
-MAINTAINER=	alex@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	YES
