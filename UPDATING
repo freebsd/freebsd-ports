@@ -59,7 +59,7 @@ upgrades.
 	portupgrade -rf emulators/linux_base-8
 
 20041229:
-  AFFECTS: users of x11/kdebase3, x11/xorg-server
+  AFFECTS: users of x11/kdebase3, x11-servers/xorg-server
   AUTHOR: lofi@freebsd.org
 
   If KDE does not start anymore after upgrading Xorg to version 6.8.1
@@ -953,7 +953,7 @@ Option "XkbRules" "xfree86"
   DEFAULT_MYSQL_VER) to set system wide defaults.
 
 20040709:
-  AFFECTS: users of mail/sender-milter
+  AFFECTS: users of mail/milter-sender
   AUTHOR: vs@FreeBSD.org
 
   Milter-sender version 0.58 released.
@@ -1025,7 +1025,7 @@ Option "XkbRules" "xfree86"
     daily_status_security_portaudit_user="nobody"
 
 20040629:
-  AFFECTS: users of net/daapd
+  AFFECTS: users of audio/daapd
   AUTHOR: lth@FreeBSD.org
 
   Daapd must now be enabled in rc.conf. Add this to your /etc/rc.conf:
@@ -1305,7 +1305,7 @@ Option "XkbRules" "xfree86"
   kdebase to version 3.2.1, then restart KDE.
 
 20040309:
-  AFFECTS: users of audio/arts and x11/kdebase
+  AFFECTS: users of audio/arts and x11/kdebase3
   AUTHOR: kde@FreeBSD.org
 
   The arts port, PORTVERSION 1.2.1 does not include artswrapper anymore.
