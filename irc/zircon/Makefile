@@ -7,12 +7,12 @@
 
 PORTNAME=	zircon
 PORTVERSION=	1.18.248
-CATEGORIES=	irc tk82
+CATEGORIES=	irc tk83
 MASTER_SITES=	ftp://catless.ncl.ac.uk/pub/
 
 MAINTAINER=	jseger@FreeBSD.org
 
-RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
+RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
 IS_INTERACTIVE=	yes
 NO_BUILD=	yes
