@@ -29,7 +29,7 @@ LATEST_LINK=	gcc295
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} = alpha
+.if (${ARCH} == alpha)
 WITHOUT_CPU_CFLAGS=	yes
 .endif
 
