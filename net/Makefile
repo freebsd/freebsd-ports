@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.149 1998/03/19 06:06:28 obrien Exp $
+# $Id: Makefile,v 1.150 1998/04/04 04:59:26 obrien Exp $
 #
 
+    SUBDIR += SSLtelnet
     SUBDIR += archie
     SUBDIR += arpwatch
     SUBDIR += ascend-radius
