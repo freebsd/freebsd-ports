@@ -3,7 +3,7 @@
 # Date created:				23 September 1997
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.4 1998/06/25 18:03:48 asami Exp $
+# $Id: Makefile,v 1.5 1998/07/03 23:14:14 steve Exp $
 #
 
 DISTNAME=		ncurses-4.2
@@ -13,6 +13,7 @@ MASTER_SITES=		${MASTER_SITE_GNU} \
 
 MAINTAINER=		andy@icc.surw.chel.su
 
+MANUAL_PACKAGE_BUILD=	conflicts with system ncurses
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=	--datadir=${PREFIX}/share/misc --disable-overwrite \
 		--disable-termcap --includedir=${PREFIX}/include/ncurses \
