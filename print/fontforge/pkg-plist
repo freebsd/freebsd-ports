@@ -66,6 +66,8 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/HebrewMetrics.png
 %%PORTDOCS%%share/doc/pfaedit/Hints.png
 %%PORTDOCS%%share/doc/pfaedit/HotKeys.html
+%%PORTDOCS%%share/doc/pfaedit/MacFeatName.png
+%%PORTDOCS%%share/doc/pfaedit/MacMapping.png
 %%PORTDOCS%%share/doc/pfaedit/IndexFS.html
 %%PORTDOCS%%share/doc/pfaedit/IndexFrame.html
 %%PORTDOCS%%share/doc/pfaedit/ItalicCompCaslon.png
@@ -152,10 +154,12 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/contextchain-class.png
 %%PORTDOCS%%share/doc/pfaedit/contextchain-classlist.png
 %%PORTDOCS%%share/doc/pfaedit/contextchain-coverage.png
+%%PORTDOCS%%share/doc/pfaedit/copyfeatures.png
 %%PORTDOCS%%share/doc/pfaedit/contextchain-cselect.png
 %%PORTDOCS%%share/doc/pfaedit/contextchain-format.png
 %%PORTDOCS%%share/doc/pfaedit/contextchain-glyphlists.png
 %%PORTDOCS%%share/doc/pfaedit/contextchain-pickglyph.png
+%%PORTDOCS%%share/doc/pfaedit/cvt-to-mac.png
 %%PORTDOCS%%share/doc/pfaedit/contextchain-rcover.png
 %%PORTDOCS%%share/doc/pfaedit/contextchain-seqlookup.png
 %%PORTDOCS%%share/doc/pfaedit/corpchar.html
@@ -167,6 +171,9 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/document.nvd
 %%PORTDOCS%%share/doc/pfaedit/editexample.html
 %%PORTDOCS%%share/doc/pfaedit/editexample2.html
+%%PORTDOCS%%share/doc/pfaedit/edittransition-context.png
+%%PORTDOCS%%share/doc/pfaedit/edittransition-indic.png
+%%PORTDOCS%%share/doc/pfaedit/edittransition-insert.png
 %%PORTDOCS%%share/doc/pfaedit/editexample3.html
 %%PORTDOCS%%share/doc/pfaedit/editexample4.html
 %%PORTDOCS%%share/doc/pfaedit/editexample5.html
@@ -184,6 +191,7 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/exclude-pre.png
 %%PORTDOCS%%share/doc/pfaedit/expandedlines.png
 %%PORTDOCS%%share/doc/pfaedit/expandstroke.png
+%%PORTDOCS%%share/doc/pfaedit/featsetdlg.png
 %%PORTDOCS%%share/doc/pfaedit/f+i.png
 %%PORTDOCS%%share/doc/pfaedit/faq.html
 %%PORTDOCS%%share/doc/pfaedit/faqFS.html
@@ -204,9 +212,11 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/findprobs-paths.png
 %%PORTDOCS%%share/doc/pfaedit/findprobs-random.png
 %%PORTDOCS%%share/doc/pfaedit/findprobs-refs.png
+%%PORTDOCS%%share/doc/pfaedit/fontinfo-macfeat.png
 %%PORTDOCS%%share/doc/pfaedit/findprobs.png
 %%PORTDOCS%%share/doc/pfaedit/fontinfo-anchors.png
 %%PORTDOCS%%share/doc/pfaedit/fontinfo-cid.png
+%%PORTDOCS%%share/doc/pfaedit/fontinfo-statemach.png
 %%PORTDOCS%%share/doc/pfaedit/fontinfo-comment.png
 %%PORTDOCS%%share/doc/pfaedit/fontinfo-context.png
 %%PORTDOCS%%share/doc/pfaedit/fontinfo-encoding.png
@@ -270,6 +280,7 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/lparen-108.png
 %%PORTDOCS%%share/doc/pfaedit/lparen-174.png
 %%PORTDOCS%%share/doc/pfaedit/layers.png
+%%PORTDOCS%%share/doc/pfaedit/macfeature.png
 %%PORTDOCS%%share/doc/pfaedit/lcani.gif
 %%PORTDOCS%%share/doc/pfaedit/lcdigits.png
 %%PORTDOCS%%share/doc/pfaedit/mergepost.png
@@ -305,6 +316,7 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/phi-nohints-outline.png
 %%PORTDOCS%%share/doc/pfaedit/pnts.gif
 %%PORTDOCS%%share/doc/pfaedit/pointinfo.png
+%%PORTDOCS%%share/doc/pfaedit/prefs-macmap.png
 %%PORTDOCS%%share/doc/pfaedit/pointmenu.html
 %%PORTDOCS%%share/doc/pfaedit/prefs-apps.png
 %%PORTDOCS%%share/doc/pfaedit/prefs-editing.png
@@ -316,6 +328,8 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/prefs.html
 %%PORTDOCS%%share/doc/pfaedit/print.html
 %%PORTDOCS%%share/doc/pfaedit/privatekey.png
+%%PORTDOCS%%share/doc/pfaedit/removefeature.png
+%%PORTDOCS%%share/doc/pfaedit/retagfeature.png
 %%PORTDOCS%%share/doc/pfaedit/privatekeymenu.png
 %%PORTDOCS%%share/doc/pfaedit/problems.html
 %%PORTDOCS%%share/doc/pfaedit/quadbezier.gif
@@ -344,6 +358,11 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/sfddiff.html
 %%PORTDOCS%%share/doc/pfaedit/sfdformat.html
 %%PORTDOCS%%share/doc/pfaedit/sidebearings.png
+%%PORTDOCS%%share/doc/pfaedit/statemachine-class.png
+%%PORTDOCS%%share/doc/pfaedit/statemachine-context.png
+%%PORTDOCS%%share/doc/pfaedit/statemachine-indic.png
+%%PORTDOCS%%share/doc/pfaedit/statemachine-insert.png
+%%PORTDOCS%%share/doc/pfaedit/statemachine.html
 %%PORTDOCS%%share/doc/pfaedit/showatt.html
 %%PORTDOCS%%share/doc/pfaedit/showatt.png
 %%PORTDOCS%%share/doc/pfaedit/splash.png
@@ -358,10 +377,14 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/tilepath-right.png
 %%PORTDOCS%%share/doc/pfaedit/tilepath-scale.png
 %%PORTDOCS%%share/doc/pfaedit/tilepath-selection.png
+%%PORTDOCS%%share/doc/pfaedit/transition-context.png
+%%PORTDOCS%%share/doc/pfaedit/transition-indic.png
+%%PORTDOCS%%share/doc/pfaedit/transition-insert.png
 %%PORTDOCS%%share/doc/pfaedit/tilepath-tile.png
 %%PORTDOCS%%share/doc/pfaedit/tilepath-ts.png
 %%PORTDOCS%%share/doc/pfaedit/tilepath.html
 %%PORTDOCS%%share/doc/pfaedit/tools.png
+%%PORTDOCS%%share/doc/pfaedit/typofeat.html
 %%PORTDOCS%%share/doc/pfaedit/transform.html
 %%PORTDOCS%%share/doc/pfaedit/transform.png
 %%PORTDOCS%%share/doc/pfaedit/ttfinstrs.html
