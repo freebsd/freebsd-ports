@@ -1,0 +1,14 @@
+
+This is the IFD driver for the Gemplus GPR400 PCMCIA Smart Card Reader,
+written by Joe Phillips <joe.phillips@innovationsw.com>. This particular
+reader has been rebranded as part of the IBM SecureWay Smart Card Kit.
+
+It requires the pcsc-lite library in order to build and be useful. Once you
+have installed and configured this IFD driver on your system, you should
+be able to access the device using CITI's libsectok library, if compiled
+with pcsc-lite support.
+
+WWW: http://www.innovationsw.com/~jaiger/downloads/smartcard.html
+
+Bruce
+bms@spc.org
