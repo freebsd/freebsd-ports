@@ -32,7 +32,7 @@ EXTRACT_BEFORE_ARGS=	-qo
 
 MOZILLA_IPV6?=	yes
 
-.if defined(MOZILLA_IPV6)
+.if ${MOZILLA_IPV6:L} == yes
 MOZILLA_PORT=	${PORTSDIR}/www/mozilla+ipv6
 .else
 MOZILLA_PORT=	${PORTSDIR}/www/mozilla
