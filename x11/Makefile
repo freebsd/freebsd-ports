@@ -94,7 +94,6 @@
     SUBDIR += ruby-gnome-all
     SUBDIR += ruby-gnome2
     SUBDIR += ruby-gnome2-all
-    SUBDIR += ruby-panel-applet
     SUBDIR += rxvt
     SUBDIR += rxvt-devel
     SUBDIR += settitle
