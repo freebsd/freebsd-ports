@@ -1,0 +1,6 @@
+bin/hexedit
+man/man1/hexedit.1.gz
+share/doc/hexedit/COPYING
+share/doc/hexedit/Changes
+share/doc/hexedit/TODO
+@dirrm share/doc/hexedit
