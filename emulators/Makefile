@@ -44,7 +44,6 @@
     SUBDIR += libspectrum
     SUBDIR += libvm68k
     SUBDIR += linux-geepee32
-    SUBDIR += linux-mupen64
     SUBDIR += linux-peops-softgpu
     SUBDIR += linux-peops-spu
     SUBDIR += linux-pete-mesagpu
