@@ -3,7 +3,7 @@
 # Date created:      28 Jun 1997
 # Whom:              Ruslan Shevchenko <ruslan@shevchenko.kiev.ua>
 #
-# $Id: Makefile,v 1.2 1998/08/05 09:31:34 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/07 22:17:53 asami Exp $
 #
 
 DISTNAME=	Trash-2.4
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	desktop_managers/OffiX
 
 MAINTAINER=	ruslan@shevchenko.kiev.ua
 
-LIB_DEPENDS=	Dnd++\\.1\\.:${PORTSDIR}/x11/libdnd
+LIB_DEPENDS=	Dnd++.1:${PORTSDIR}/x11/libdnd
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}"

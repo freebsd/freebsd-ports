@@ -3,7 +3,7 @@
 # Date created:      28 Jun 1997
 # Whom:              Ruslan Shevchenko <ruslan@shevchenko.kiev.ua>
 #
-# $Id: Makefile,v 1.4 1998/09/15 11:13:32 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/17 00:32:55 asami Exp $
 #
 
 DISTNAME=	Files-2.4
@@ -17,7 +17,7 @@ MAINTAINER=	ruslan@shevchenko.kiev.ua
 RUN_DEPENDS=	execute:${PORTSDIR}/x11/offix-execute \
 		editor:${PORTSDIR}/editors/offix-editor
 
-LIB_DEPENDS=	Dnd\\.1\\.:${PORTSDIR}/x11/libdnd \
+LIB_DEPENDS=	Dnd.1:${PORTSDIR}/x11/libdnd \
 		Xpm.4:${PORTSDIR}/graphics/xpm
 
 GNU_CONFIGURE=	YES

@@ -3,7 +3,7 @@
 # Date created:      28 Jun 1997
 # Whom:              Ruslan Shevchenko <ruslan@shevchenko.kiev.ua>
 #
-# $Id: Makefile,v 1.3 1998/09/15 11:13:30 asami Exp $
+# $Id: Makefile,v 1.4 1998/09/17 00:32:53 asami Exp $
 #
 
 DISTNAME=	Printer-2.4
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	desktop_managers/OffiX
 
 MAINTAINER=	ruslan@shevchenko.kiev.ua
 
-LIB_DEPENDS=	Dnd\\.1\\.:${PORTSDIR}/x11/libdnd \
+LIB_DEPENDS=	Dnd.1:${PORTSDIR}/x11/libdnd \
 		Xpm.4:${PORTSDIR}/graphics/xpm
 
 GNU_CONFIGURE=	YES
