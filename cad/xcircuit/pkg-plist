@@ -49,6 +49,7 @@ share/examples/xcircuit/diffamp_test.ps
 share/examples/xcircuit/envelope.ps
 share/examples/xcircuit/fourttest.ps
 share/examples/xcircuit/gettext.py
+share/examples/xcircuit/loadlgf.py
 share/examples/xcircuit/logic8.ps
 share/examples/xcircuit/prelude.ps
 share/examples/xcircuit/systemd1.lgf
