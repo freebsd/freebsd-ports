@@ -6,24 +6,22 @@
 #
 
 PORTNAME=	columns
-PORTVERSION=	1.1
+PORTVERSION=	1.2b
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.phreax.net/
+MASTER_SITES=	http://www.rzuser.uni-heidelberg.de/~dheck/columns/
+DISTNAME=	Columns-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl
 
-ALL_TARGET=	# empty
+SDL_CONFIG?=	${LOCALBASE}/bin/sdl-config
 
 USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/columns ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/share/columns
-	${INSTALL_DATA} ${WRKSRC}/*.bmp ${PREFIX}/share/columns
-	${INSTALL_DATA} ${WRKSRC}/*.ofn ${PREFIX}/share/columns
-	${INSTALL_DATA} ${WRKSRC}/*.wav ${PREFIX}/share/columns
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/columns
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/columns

@@ -1,19 +1,22 @@
 bin/columns
-share/columns/applause.wav
-share/columns/bg.bmp
-share/columns/big.ofn
-share/columns/bye.wav
-share/columns/drop.wav
-share/columns/gameover.wav
-share/columns/hello.wav
-share/columns/laugh.wav
-share/columns/level.wav
-share/columns/move.wav
-share/columns/perfect.wav
-share/columns/remove.wav
-share/columns/rotate.wav
-share/columns/small.ofn
-share/columns/tiles.bmp
+share/Columns/applause.wav
+share/Columns/bg.bmp
+share/Columns/big.fnt
+share/Columns/bye.wav
+@mode 0666
+share/Columns/columns.hsc
+@mode
+share/Columns/drop.wav
+share/Columns/hello.wav
+share/Columns/laugh.wav
+share/Columns/level.wav
+share/Columns/magic.wav
+share/Columns/move.wav
+share/Columns/perfect.wav
+share/Columns/remove.wav
+share/Columns/rotate.wav
+share/Columns/small.fnt
+share/Columns/tiles.bmp
 share/doc/columns/README
-@dirrm share/columns
 @dirrm share/doc/columns
+@dirrm share/Columns
