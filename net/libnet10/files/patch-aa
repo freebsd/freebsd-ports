@@ -1,11 +1,29 @@
---- configure.in.orig	Tue Aug  6 07:26:03 2002
-+++ configure.in	Mon Mar 17 17:36:47 2003
-@@ -134,7 +134,7 @@
-     AC_DEFINE(LIBNET_BSD_BYTE_SWAP)
-     AC_DEFINE(HAVE_SOCKADDR_SA_LEN)
-     LIBNET_CONFIG_DEFINES="-DLIBNET_BSDISH_OS -DLIBNET_BSD_BYTE_SWAP -DHAVE_SOCKADDR_SA_LEN"
--    AC_MSG_RESULT(Note: support/bpf-lkm/etherspoof contains the lkm source required to spoof ethernet frames)
-+    dnl AC_MSG_RESULT(Note: support/bpf-lkm/etherspoof contains the lkm source required to spoof ethernet frames)
+--- configure.in.orig	Wed Jan 17 12:59:30 2001
++++ configure.in	Mon Jul  2 19:18:50 2001
+@@ -50,10 +50,10 @@
+ dnl Use these compiler flags if we have gcc.
+ dnl
+ if test $ac_cv_prog_gcc = yes; then
+-dnl if test -z $CFLAGS; then 
+-    CCOPTS='-O2 -funroll-loops -fomit-frame-pointer -Wall'
+-    CFLAGS="$CCOPTS"
+-dnl fi
++    if test -z "$CFLAGS"; then 
++        CCOPTS='-O2 -funroll-loops -fomit-frame-pointer -Wall'
++        CFLAGS="$CCOPTS"
++    fi
+ fi
+ 
+ dnl
+@@ -163,8 +163,9 @@
+     LIB_PREFIX="$prefix/lib/aout"
+     INC_PREFIX="$prefix/include/"
+     BIN_PREFIX="$prefix/bin/"
+-    AC_MSG_RESULT(Note: support/bpf-lkm/etherspoof contains the lkm source \
+-required to spoof ethernet frames)
++dnl etherspoof lkm is horrible and only necesary on < RELENG_4
++dnl     AC_MSG_RESULT(Note: support/bpf-lkm/etherspoof contains the lkm source \
++dnl required to spoof ethernet frames)
      ln -sf FreeBSD support/bpf-lkm/etherspoof
      ;;
  
