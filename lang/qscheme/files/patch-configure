@@ -1,10 +1,57 @@
---- configure.orig	Thu Jun 22 06:09:24 2000
-+++ configure	Sun Feb 10 12:51:27 2002
-@@ -1288,55 +1288,6 @@
- rm -fr conftest*
+--- configure.orig	Thu Jun 22 07:09:24 2000
++++ configure	Sun Oct 19 10:33:16 2003
+@@ -1156,47 +1156,6 @@
+   echo "$ac_t""no" 1>&6
  fi
  
 -
+-# Extract the first word of "perl", so it can be a program name with args.
+-set dummy perl; ac_word=$2
+-echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+-echo "configure:1164: checking for $ac_word" >&5
+-if eval "test \"`echo '$''{'ac_cv_path_PERL'+set}'`\" = set"; then
+-  echo $ac_n "(cached) $ac_c" 1>&6
+-else
+-  case "$PERL" in
+-  /*)
+-  ac_cv_path_PERL="$PERL" # Let the user override the test with a path.
+-  ;;
+-  ?:/*)			 
+-  ac_cv_path_PERL="$PERL" # Let the user override the test with a dos path.
+-  ;;
+-  *)
+-  IFS="${IFS= 	}"; ac_save_ifs="$IFS"; IFS=":"
+-  ac_dummy="$PATH"
+-  for ac_dir in $ac_dummy; do 
+-    test -z "$ac_dir" && ac_dir=.
+-    if test -f $ac_dir/$ac_word; then
+-      ac_cv_path_PERL="$ac_dir/$ac_word"
+-      break
+-    fi
+-  done
+-  IFS="$ac_save_ifs"
+-  test -z "$ac_cv_path_PERL" && ac_cv_path_PERL="no"
+-  ;;
+-esac
+-fi
+-PERL="$ac_cv_path_PERL"
+-if test -n "$PERL"; then
+-  echo "$ac_t""$PERL" 1>&6
+-else
+-  echo "$ac_t""no" 1>&6
+-fi
+-
+-if test "$PERL" = "no" ; then 
+-	echo "configure: warning: Qscheme needs perl5 to rebuild sgtk interface from scratch" 1>&2
+-fi
+-
+ echo $ac_n "checking for stack growing direction""... $ac_c" 1>&6
+ echo "configure:1202: checking for stack growing direction" >&5
+ stackdir=down
+@@ -1289,54 +1248,6 @@
+ fi
+ 
+ 
 -echo $ac_n "checking for dlopen in -ldl""... $ac_c" 1>&6
 -echo "configure:1294: checking for dlopen in -ldl" >&5
 -ac_lib_var=`echo dl'_'dlopen | sed 'y%./+-%__p_%'`
@@ -56,34 +103,34 @@
  echo $ac_n "checking for atan in -lm""... $ac_c" 1>&6
  echo "configure:1342: checking for atan in -lm" >&5
  ac_lib_var=`echo m'_'atan | sed 'y%./+-%__p_%'`
-@@ -1385,14 +1336,14 @@
+@@ -1385,14 +1296,14 @@
  { echo "configure: error: needs libm" 1>&2; exit 1; }
  fi
  
 -echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
 -echo "configure:1390: checking for pthread_create in -lpthread" >&5
-+echo $ac_n "checking for pthread_create in -pthread""... $ac_c" 1>&6
-+echo "configure:1390: checking for pthread_create in -pthread" >&5
++echo $ac_n "checking for pthread_create in -lc_r""... $ac_c" 1>&6
++echo "configure:1390: checking for pthread_create in -lc_r" >&5
  ac_lib_var=`echo pthread'_'pthread_create | sed 'y%./+-%__p_%'`
  if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
    echo $ac_n "(cached) $ac_c" 1>&6
  else
    ac_save_LIBS="$LIBS"
 -LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
++LIBS="-lc_r  $LIBS"
  cat > conftest.$ac_ext <<EOF
  #line 1398 "configure"
  #include "confdefs.h"
-@@ -1426,7 +1377,7 @@
+@@ -1426,7 +1337,7 @@
  #define $ac_tr_lib 1
  EOF
  
 -  LIBS="-lpthread $LIBS"
-+  LIBS="-pthread -L/usr/local/lib -lgetline $LIBS"
++  LIBS="-lc_r $LIBS"
  
  else
    echo "$ac_t""no" 1>&6
-@@ -2485,7 +2436,7 @@
+@@ -2485,7 +2396,7 @@
  ac_given_srcdir=$srcdir
  ac_given_INSTALL="$INSTALL"
  
@@ -92,7 +139,7 @@
  EOF
  cat >> $CONFIG_STATUS <<EOF
  
-@@ -2585,7 +2536,7 @@
+@@ -2585,7 +2496,7 @@
  
  cat >> $CONFIG_STATUS <<EOF
  

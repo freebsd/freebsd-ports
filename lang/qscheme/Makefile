@@ -20,12 +20,22 @@ LIB_DEPENDS=	getline:${PORTSDIR}/devel/libgetline
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 #USE_AUTOCONF=	yes
+USE_GCC=	2.95
+USE_REINPLACE=	yes
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 CONFIGURE_ARGS=	--with-pcre-dir=${LOCALBASE}/lib \
 		--with-pcre-inc=${LOCALBASE}/include \
 		--with-avcall-dir=${LOCALBASE}/lib \
 		--with-avcall-inc=${LOCALBASE}/include
+
+post-patch:
+	${REINPLACE_CMD} \
+		-e "s,^LIBS = @LIBS@,& ${PTHREAD_LIBS} -L${LOCALBASE}/lib -lgetline," \
+		-e "s,^CFLAGS = @CFLAGS@,& ${PTHREAD_CFLAGS}," \
+		${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} \
+		-e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
 
 .include <bsd.port.pre.mk>
 
