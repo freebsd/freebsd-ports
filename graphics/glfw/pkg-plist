@@ -21,6 +21,6 @@ include/GL/glfw.h
 %%EXAMPLESDIR%%/pong3d_winner2.tga
 %%EXAMPLESDIR%%/makefile
 @dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%%%DOCSDIR%%/glfwrm14.pdf
-%%PORTDOCS%%%%DOCSDIR%%/glfwug14.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Reference.pdf
+%%PORTDOCS%%%%DOCSDIR%%/UsersGuide.pdf
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
