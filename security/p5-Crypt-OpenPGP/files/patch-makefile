@@ -1,0 +1,35 @@
+--- Makefile.PL.orig	Tue Sep 11 10:23:45 2001
++++ Makefile.PL	Tue Sep 11 10:25:39 2001
+@@ -49,9 +49,9 @@
+ MSG
+ my $i = 1;
+ for my $ciph (@cryptmod) {
+-    printf "    [%d] %s\n", $i++, $ciph->[0];
++    #printf "    [%d] %s\n", $i++, $ciph->[0];
+ }
+-my $c = prompt("\nEnter your choices, separated by spaces:", 1);
++my $c = "1 2 5";
+ print "\n";
+ 
+ for my $id (split /\s+/, $c) {
+@@ -70,9 +70,9 @@
+ MSG
+ my $i = 1;
+ for my $ciph (@dgstmod) {
+-    printf "    [%d] %s\n", $i++, $ciph->[0];
++    #printf "    [%d] %s\n", $i++, $ciph->[0];
+ }
+-my $c = prompt("\nEnter your choices, separated by spaces:", 2);
++my $c = "1 2";
+ print "\n";
+ 
+ for my $id (split /\s+/, $c) {
+@@ -98,7 +98,7 @@
+ for my $pk (@pkmod) {
+     printf "    [%d] %s\n", $i++, $pk->[0];
+ }
+-my $c = prompt("\nEnter your choices, separated by spaces:", '1 2');
++my $c = "1 2";
+ print "\n";
+ 
+ for my $id (split /\s+/, $c) {

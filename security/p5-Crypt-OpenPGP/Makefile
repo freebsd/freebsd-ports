@@ -1,0 +1,50 @@
+# New ports collection makefile for:	p5-Crypt-OpenPGP
+# Date created:				Tue Sep 11 02:08:49 PDT 2001
+# Whom:	      				Michael Haro <mharo@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Crypt-OpenPGP
+PORTVERSION=	0.16
+CATEGORIES=	security perl5
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
+MASTER_SITE_SUBDIR=	Crypt
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	mharo@FreeBSD.org
+
+PERLBASE=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+
+BUILD_DEPENDS=	${PERLBASE}/${PERL_ARCH}/Crypt/DES.pm:${PORTSDIR}/security/p5-Crypt-DES \
+		${PERLBASE}/${PERL_ARCH}/Crypt/Blowfish.pm:${PORTSDIR}/security/p5-Crypt-Blowfish \
+		${PERLBASE}/${PERL_ARCH}/Crypt/IDEA.pm:${PORTSDIR}/security/p5-Crypt-IDEA \
+		${PERLBASE}/Crypt/DSA.pm:${PORTSDIR}/security/p5-Crypt-DSA \
+		${PERLBASE}/Crypt/RSA.pm:${PORTSDIR}/security/p5-Crypt-RSA \
+		${PERLBASE}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
+		${PERLBASE}/${PERL_ARCH}/Compress/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Zlib \
+		${PERLBASE}/${PERL_ARCH}/Math/Pari.pm:${PORTSDIR}/math/p5-Math-Pari \
+		${PERLBASE}/Data/Buffer.pm:${PORTSDIR}/misc/p5-Data-Buffer \
+
+RESTRICTED=	"Crypto; export-controlled"
+
+PERL_CONFIGURE=	yes
+
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		Crypt::OpenPGP::ErrorHandler.3 Crypt::OpenPGP::Key.3 \
+		Crypt::OpenPGP::CFB.3 Crypt::OpenPGP::SKSessionKey.3 \
+		Crypt::OpenPGP::UserID.3 Crypt::OpenPGP::SessionKey.3 \
+		Crypt::OpenPGP::Words.3 Crypt::OpenPGP::PacketFactory.3 \
+		Crypt::OpenPGP::S2k.3 Crypt::OpenPGP.3 \
+		Crypt::OpenPGP::Signature.3 Crypt::DES_EDE3.3 \
+		Crypt::OpenPGP::KeyBlock.3 Crypt::OpenPGP::MDC.3 \
+		Crypt::OpenPGP::Compressed.3 Crypt::OpenPGP::Armour.3 \
+		Crypt::OpenPGP::KeyRing.3 Crypt::OpenPGP::Plaintext.3 \
+		Crypt::OpenPGP::Buffer.3 Crypt::OpenPGP::Cipher.3 \
+		Crypt::OpenPGP::OnePassSig.3 Crypt::OpenPGP::Constants.3 \
+		Crypt::OpenPGP::Util.3 Crypt::OpenPGP::Digest.3 \
+		Crypt::OpenPGP::Ciphertext.3 Crypt::OpenPGP::Marker.3 \
+		Crypt::OpenPGP::Trust.3 Crypt::OpenPGP::Certificate.3 \
+		Crypt::OpenPGP::Message.3
+
+.include <bsd.port.mk>
