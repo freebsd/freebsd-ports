@@ -1,8 +1,8 @@
-*** filelist.c.orig	Thu Jan  6 03:16:39 2000
---- filelist.c	Fri Jan 21 12:00:00 2000
+*** filelist.c.orig	Tue Feb 29 23:35:01 2000
+--- filelist.c	Mon Mar 13 02:23:41 2000
 ***************
-*** 5,11 ****
---- 5,13 ----
+*** 5,12 ****
+--- 5,19 ----
   
   #include <stdio.h>
   #include <string.h>
@@ -10,5 +10,11 @@
   #include <malloc.h>
 + #endif
   #include <sys/types.h>
++ #ifdef __FreeBSD__
++ #include <dirent.h>
++ #include <unistd.h>
++ #define direct dirent
++ #endif
   #ifdef linux
   #include <dirent.h>
+  #include <linux/unistd.h>
