@@ -1,6 +1,6 @@
---- auth.c.orig	Mon Mar 19 23:15:57 2001
-+++ auth.c	Fri Jun  1 07:59:43 2001
-@@ -158,6 +158,17 @@
+--- auth.c.orig	Tue Mar  5 02:42:43 2002
++++ auth.c	Sun Mar 17 20:53:15 2002
+@@ -193,6 +193,17 @@
  	}
  #endif /* WITH_AIXAUTHENTICATE */
  
