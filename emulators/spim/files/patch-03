@@ -1,0 +1,67 @@
+--- cl-except.c.orig	Fri Aug 25 07:13:05 1995
++++ cl-except.c	Tue Oct 29 00:37:44 1996
+@@ -46,6 +46,7 @@
+ /* Exported Variables: */
+ 
+ mem_addr breakpoint_reinsert; /* !0 -> reinsert break at this address */
++spim_proc proc;                  /* spim's signal tracking structure */
+ 
+ 
+ /* Imported Variables: */
+@@ -67,14 +68,14 @@
+ #ifdef __STDC__
+ static void intercept_signals (int sig, int code, struct sigcontext *scp);
+ static mem_addr compute_branch_target (instruction *inst);
+-static void psignal (int sig);
++static void spim_psignal (int sig);
+ static int issig (void);
+ static int psig (void);
+ static void sendsig (void);
+ #else
+ static void intercept_signals ();
+ static mem_addr compute_branch_target ();
+-static void psignal ();
++static void spim_psignal ();
+ static int issig ();
+ static int psig ();
+ static void sendsig ();
+@@ -266,7 +267,7 @@
+ 
+       else if (retval == 0)
+ 	/* bad system call --> turn into a signal */
+-	psignal (excpt_handler[SYSCALL_EXCPT].sig);
++	spim_psignal (excpt_handler[SYSCALL_EXCPT].sig);
+ 
+       retval = !retval;	 	/* retval == 1 -> syscall ok;
+ 				 * retval == 0 -> syscall bad */
+@@ -286,7 +287,7 @@
+     case IBUS_EXCPT:
+     case DBUS_EXCPT:
+     case CPU_EXCPT:
+-      psignal (excpt_handler[excpt_code].sig);
++      spim_psignal (excpt_handler[excpt_code].sig);
+       break;
+ 
+ 
+@@ -456,7 +457,7 @@
+   }
+   else if (spim_related_sig & (1 << sig))
+     cycle_steps = 0;
+-  else psignal (sig);
++  else spim_psignal (sig);
+ }
+ 
+ 
+@@ -466,10 +467,10 @@
+ 
+ #ifdef __STDC__
+ static void
+-psignal (int sig)
++spim_psignal (int sig)
+ #else
+ static void
+-psignal (sig)
++spim_psignal (sig)
+   int sig;
+ #endif
+ {
