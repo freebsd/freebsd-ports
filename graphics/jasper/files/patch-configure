@@ -1,0 +1,22 @@
+
+$FreeBSD$
+
+--- configure.orig	Sat Oct 19 09:48:25 2002
++++ configure	Sun Jan 19 22:23:50 2003
+@@ -717,7 +717,7 @@
+ 
+ JAS_MAJOR_VERSION=1
+ JAS_MINOR_VERSION=600
+-JAS_MICRO_VERSION=0
++JAS_MICRO_VERSION=4
+ JAS_INTERFACE_AGE=0
+ JAS_BINARY_AGE=0
+ JAS_VERSION=$JAS_MAJOR_VERSION.$JAS_MINOR_VERSION.$JAS_MICRO_VERSION
+@@ -5462,6 +5462,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
