@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomevfs2
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-vfs/2.4
@@ -51,5 +51,7 @@ post-patch:
 		's|\@datadir\@/gnome|\@datadir\@|g'
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/libgnomevfs/Makefile.in
+	@${REINPLACE_CMD} -e "/^SUBDIRS =/s/test//" \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
