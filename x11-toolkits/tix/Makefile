@@ -13,7 +13,7 @@ MASTER_SITES=   http://www.neosoft.com/tcl/ftparchive/%SUBDIR%/ \
 		ftp://ftp.riken.go.jp/pub/lang/tcl/netsoft/%SUBDIR%/
 MASTER_SITE_SUBDIR= sorted/packages-8.0/x11/Tix/4.1.0.007
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jmz@FreeBSD.org
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
@@ -38,7 +38,6 @@ TIX_LIB=	libtix4182.so
 TIXSAM_LIB=	libtixsam4182.so
 TIX_LIB_FILE=	${TIX_LIB}.1
 TIXSAM_LIB_FILE=${TIXSAM_LIB}.1
-CFLAGS+=	-fwritable-strings
 
 .include <bsd.port.pre.mk>
 
@@ -48,8 +47,6 @@ pre-configure:
 	    INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
 	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	    ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS})
-post-configure:
-	@(cd ${WRKSRC} && ${ECHO} CFLAGS=${CFLAGS} >> Makefile)
 
 post-install:
 	@(cd ${WRKSRC}/.. && \
