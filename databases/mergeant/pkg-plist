@@ -18,11 +18,13 @@ share/gnome/pixmaps/mergeant/mergeant_rels.png
 share/gnome/pixmaps/mergeant/mergeant_rels_small.png
 share/gnome/pixmaps/mergeant/mergeant_sequences.png
 share/gnome/pixmaps/mergeant/mergeant_tables.png
+share/locale/cs/LC_MESSAGES/mergeant.mo
 share/locale/da/LC_MESSAGES/mergeant.mo
 share/locale/de/LC_MESSAGES/mergeant.mo
 share/locale/es/LC_MESSAGES/mergeant.mo
 share/locale/fr/LC_MESSAGES/mergeant.mo
 share/locale/it/LC_MESSAGES/mergeant.mo
+share/locale/ms/LC_MESSAGES/mergeant.mo
 share/locale/pl/LC_MESSAGES/mergeant.mo
 share/locale/pt_BR/LC_MESSAGES/mergeant.mo
 share/locale/ru/LC_MESSAGES/mergeant.mo
