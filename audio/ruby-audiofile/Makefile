@@ -1,0 +1,56 @@
+# New ports collection makefile for:	ruby-audiofile
+# Date created:		20 July 2001
+# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	audiofile
+PORTVERSION=	0.1
+CATEGORIES=	audio ruby
+MASTER_SITES=	http://%SUBDIR%.sourceforge.net/download/
+#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	ruby-${PORTNAME}
+PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${CDDB_DISTNAME}${EXTRACT_SUFX}
+DIST_SUBDIR=	ruby
+
+MAINTAINER=	knu@FreeBSD.org
+
+LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
+
+USE_RUBY=	yes
+USE_RUBY_EXTCONF=	yes
+.if !defined(NOPORTDOCS)
+USE_RUBY_RD=	yes
+.endif
+
+CDDB_DISTNAME=	cddb-0.1
+CDDB_WRKSRC=	${WRKDIR}/cddb
+INSTALL_TARGET=	site-install
+
+DOCS=		audiofile.html audiofile.rd
+
+post-patch:
+	${RUBY} -i -pe 'gsub %r|/home/jaredj/ruby-lib/cddb\b|, "cddb"' \
+		${CDDB_WRKSRC}/wavcddb.rb
+	${RUBY} -i -pe 'gsub /\(\(<(.*?)(\||>)/, "((<\"\\1\"\\2"' \
+		${WRKSRC}/audiofile.rd
+
+do-build:
+.if !defined(NOPORTDOCS)
+	cd ${WRKSRC} && ${RUBY_RD} audiofile.rd > audiofile.html
+.endif
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}/cddb
+	${INSTALL_DATA} ${WRKSRC}/test.rb ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${INSTALL_DATA} ${CDDB_WRKSRC}/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/cddb/
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
+.endfor
+.endif
+
+.include <bsd.port.mk>

@@ -161,6 +161,7 @@
     SUBDIR += rosegarden
     SUBDIR += rplay
     SUBDIR += rsynth
+    SUBDIR += ruby-audiofile
     SUBDIR += s3mod
     SUBDIR += sbagen
     SUBDIR += sdl_mixer
