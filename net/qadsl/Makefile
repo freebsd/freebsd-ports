@@ -8,7 +8,7 @@
 PORTNAME=	qadsl
 PORTVERSION=	1.2
 CATEGORIES=	net
-MASTER_SITES=	http://qba.linuxsweden.nu/code/
+MASTER_SITES=	http://kuba.unix.se/code/
 DISTNAME=	qadsl-final-${PORTVERSION}
 
 MAINTAINER=	arlu@telia.com

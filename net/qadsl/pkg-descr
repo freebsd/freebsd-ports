@@ -4,7 +4,7 @@ features like keep-alive daemon, login/logout functions. The
 keep-alive daemon can be configured to either login or to ping your
 login-server after a chosen delay in minutes.
 
-WWW: http://qba.linuxsweden.nu
+WWW: http://kuba.unix.se/
 
 -- Arne Lundberg
 arlu@telia.com
