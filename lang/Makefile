@@ -1,7 +1,6 @@
 # $FreeBSD$
 #
 
-    SUBDIR += ETHOberonV4
     SUBDIR += Gofer
     SUBDIR += STk
     SUBDIR += Sather
