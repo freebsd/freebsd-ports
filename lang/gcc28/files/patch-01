@@ -1,25 +1,16 @@
 --- config/i386/freebsd.h.orig	Sun Oct 19 09:31:05 1997
-+++ config/i386/freebsd.h	Tue Jun 30 13:44:27 1998
-@@ -35,10 +35,24 @@
++++ config/i386/freebsd.h	Sun Jul 19 14:31:18 1998
+@@ -35,10 +35,15 @@
  #include "i386/perform.h"
  
  #undef CPP_PREDEFINES
 -#define CPP_PREDEFINES "-Dunix -Di386 -D__FreeBSD__ -D__386BSD__ -Asystem(unix) -Asystem(FreeBSD) -Acpu(i386) -Amachine(i386)"
 +#define CPP_PREDEFINES "-Dunix -Di386 -D__FreeBSD__=2 -Asystem(unix) -Asystem(FreeBSD) -Acpu(i386) -Amachine(i386)"
 +
-+/* need "-fsjlj-exceptions" (use setjmp/longjmp for exceptions) the default.
-+   The standard exception implementation reliably
-+   dumps core under FreeBSD.  Users can put "-fno-sjlj-exceptions" on
-+   the command line if they really want to override the new default. */
-+#ifdef CC1PLUS_SPEC
-+#error "CC1PLUS_SPEC needs ``-fsjlj-exceptions'', but is already defined."
-+#endif
-+#define CC1PLUS_SPEC "-fsjlj-exceptions"
-+
-+/* We also need "-fsjlj-exceptions" for CC1, because exceptions are
-+   enabled when building portions of libgcc. */
-+#undef CC1_SPEC
-+#define CC1_SPEC "-fsjlj-exceptions %(cc1_spec) "
++/* FreeBSD using a.out does not support DWARF2 unwinding mechanisms.
++   Thus, need the equivalent of "-fsjlj-exceptions" (use setjmp/longjmp
++   for exceptions).  */
++#define DWARF2_UNWIND_INFO 0
  
  /* Like the default, except no -lg.  */
 -#define LIB_SPEC "%{!p:%{!pg:-lc}}%{p:-lc_p}%{pg:-lc_p}"
@@ -27,7 +18,7 @@
  
  #undef SIZE_TYPE
  #define SIZE_TYPE "unsigned int"
-@@ -114,6 +128,7 @@
+@@ -114,6 +119,7 @@
  
  #define TYPE_ASM_OP	".type"
  #define SIZE_ASM_OP	".size"
@@ -35,7 +26,7 @@
  
  /* The following macro defines the format used to output the second
     operand of the .type assembler directive.  Different svr4 assemblers
-@@ -123,6 +138,12 @@
+@@ -123,6 +129,12 @@
  
  #define TYPE_OPERAND_FMT	"@%s"
  
@@ -48,7 +39,7 @@
  /* Write the extra assembler code needed to declare a function's result.
     Most svr4 assemblers don't require any special declaration of the
     result value, but there are exceptions.  */
-@@ -215,7 +236,17 @@
+@@ -215,7 +227,17 @@
  
  #define ASM_SPEC   " %| %{fpic:-k} %{fPIC:-k}"
  #define LINK_SPEC \
@@ -67,3 +58,4 @@
  
  /* This is defined when gcc is compiled in the BSD-directory-tree, and must
   * make up for the gap to all the stuff done in the GNU-makefiles.
+
