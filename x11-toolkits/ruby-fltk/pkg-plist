@@ -12,6 +12,7 @@
 %%RUBY_SITELIBDIR%%/fltk/canvas/rect.rb
 @dirrm %%RUBY_SITELIBDIR%%/fltk/canvas
 @dirrm %%RUBY_SITELIBDIR%%/fltk
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/demo.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/editor.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/othello.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample1.rb
