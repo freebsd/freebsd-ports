@@ -1,11 +1,11 @@
 @comment $FreeBSD$
 bin/cob-config
 bin/cobc
-bin/cobpp
 etc/libcob.conf
 include/libcob.h
 include/libcob/call.h
 include/libcob/common.h
+include/libcob/exception.def
 include/libcob/fileio.h
 include/libcob/move.h
 include/libcob/numeric.h
@@ -18,6 +18,5 @@ info/open-cobol.info
 lib/libcob.a
 lib/libcob.so
 lib/libcob.so.1
-libdata/pkgconfig/cob.pc
 share/locale/ja/LC_MESSAGES/open-cobol.mo
 @dirrm include/libcob
