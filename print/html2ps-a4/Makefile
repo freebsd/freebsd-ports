@@ -3,7 +3,7 @@
 # Date created:		Sat Nov 22 12:54:50 CET 1997
 # Whom:			andreas
 #
-# $Id: Makefile,v 1.8 1997/11/17 16:18:35 rse Exp $
+# $Id: Makefile,v 1.1.1.1 1998/05/17 20:14:39 andreas Exp $
 #
 
 DISTNAME=	html2ps-1.0b1
@@ -16,7 +16,6 @@ MAINTAINER=	andreas@FreeBSD.ORG
 BUILD_DEPENDS=	mogrify:${PORTSDIR}/graphics/ImageMagick \
 		djpeg:${PORTSDIR}/graphics/jpeg \
 		giftopnm:${PORTSDIR}/graphics/netpbm \
-		${site_perl}/Image/Magick.pm:${PORTSDIR}/graphics/p5-PerlMagick \
 		gs:${PORTSDIR}/print/ghostscript5 \
 		tex:${PORTSDIR}/print/teTeX \
 		${site_perl}/LWP.pm:${PORTSDIR}/www/p5-libwww \
