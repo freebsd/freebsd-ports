@@ -431,6 +431,7 @@ autorespond	ports/mail/autorespond
 autosig		ports/mail/autosig
 autotrace	ports/graphics/autotrace
 autozen		ports/audio/autozen
+avcheck		ports/security/avcheck
 avida		ports/biology/avida
 aview		ports/graphics/aview
 avifile		ports/graphics/avifile
