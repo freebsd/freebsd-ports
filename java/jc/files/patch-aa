@@ -1,0 +1,11 @@
+--- libjc/arch/i386/i386_libjc.h
++++ libjc/arch/i386/i386_libjc.h
+@@ -97,7 +97,7 @@
+ static inline const void *
+ _jc_mcontext_sp(const mcontext_t *mctx)
+ {
+-	return (const void *)mctx->mc_isp;
++	return (const void *)mctx->mc_esp;
+ }
+ 
+ static inline const void *
