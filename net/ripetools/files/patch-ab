@@ -1,0 +1,84 @@
+*** whois.man.orig	Fri May 16 16:26:32 1997
+--- whois.man	Thu Jun  5 11:56:57 1997
+***************
+*** 1,9 ****
+! .TH WHOIS 1 "94/09/07"
+  .\" RIPE version marten@ripe.net 1.10 94/09/07
+  .SH NAME
+! whois \- TCP/IP Internet directory service, RIPE version
+  .SH SYNOPSIS
+! .B whois
+  [
+  .B \-aFSr
+  ]
+--- 1,9 ----
+! .TH RIPEWHOIS 1 "94/09/07"
+  .\" RIPE version marten@ripe.net 1.10 94/09/07
+  .SH NAME
+! ripewhois \- TCP/IP Internet directory service, RIPE version
+  .SH SYNOPSIS
+! .B ripewhois
+  [
+  .B \-aFSr
+  ]
+***************
+*** 32,43 ****
+  ]
+  .I identifier
+  
+! .B whois \-t
+  .I type
+  .B whois \-v
+  .I type
+  .SH DESCRIPTION
+! .B whois
+  searches for an object in the RIPE Network Management database.
+  The key can be either a name (such as "Karrenberg"),a nic-handle
+  (such as "DK58"),
+--- 32,43 ----
+  ]
+  .I identifier
+  
+! .B ripewhois \-t
+  .I type
+  .B whois \-v
+  .I type
+  .SH DESCRIPTION
+! .B ripewhois
+  searches for an object in the RIPE Network Management database.
+  The key can be either a name (such as "Karrenberg"),a nic-handle
+  (such as "DK58"),
+***************
+*** 116,122 ****
+  .LP
+  .SH EXAMPLES
+  .IP
+! .B example% whois karrenberg
+  .IP
+  person:  Daniel Karrenberg
+  .br
+--- 116,122 ----
+  .LP
+  .SH EXAMPLES
+  .IP
+! .B example% ripewhois karrenberg
+  .IP
+  person:  Daniel Karrenberg
+  .br
+***************
+*** 142,148 ****
+  .br
+  source:  RIPE
+  .IP
+! .B example% whois -h whois.ripe.net -r 192.87.45.0/24
+  .IP
+  inetnum:     192.87.45.0
+  .br
+--- 142,148 ----
+  .br
+  source:  RIPE
+  .IP
+! .B example% ripewhois -h whois.ripe.net -r 192.87.45.0/24
+  .IP
+  inetnum:     192.87.45.0
+  .br
