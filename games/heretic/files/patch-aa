@@ -1,5 +1,5 @@
---- Makefile.orig	Tue May  2 10:57:07 2000
-+++ Makefile	Wed Jan 10 04:45:14 2001
+--- Makefile.orig	Tue May  2 03:57:07 2000
++++ Makefile	Thu Jan 10 19:33:45 2002
 @@ -1,19 +1,19 @@
  # Makefile for Linux Heretic/GLHeretic
  
@@ -37,7 +37,7 @@
  COPT.alpha = -O2 -D__64BIT__ -DHAVE_ALLOCA_H
  
 -COPT.FreeBSD = -m486 -O2 -malign-jumps=2 -malign-functions=2 -D__32BIT__
-+COPT.FreeBSD = -D__32BIT__ -DHOMEDIR="\"${PREFIX}/share/heretic\""
++COPT.FreeBSD = -D__32BIT__ -DHOMEDIR='"\"${PREFIX}/share/heretic\""'
  
  COPT.arm = -O2 -D__32BIT__ -fsigned-char -fomit-frame-pointer \
             -DHAVE_ALLOCA_H -D__PACKED__=__attribute__\ \(\(packed\)\)
@@ -53,18 +53,17 @@
 -CFLAGS = -Wall $(CDEFS.udp) $(COPT.arch) \
 -	 -I. -I.. -I/usr/X11R6/include $(COPT.sound) $(COPT.opengl)
 +CFLAGS += $(CDEFS.udp) $(COPT.arch) \
-+	 -I. -I.. -I${X11BASE}/include $(COPT.sound) $(COPT.opengl)
++	 -I. -I.. -I${X11BASE}/include -I${LOCALBASE}/include $(COPT.sound) $(COPT.opengl)
  
  # Uncomment the line below if you want to use original "[" and "]" keys
  # for inventory access, instead of "k" and "l".
-@@ -85,12 +85,12 @@
+@@ -85,18 +85,18 @@
  COPT.sound = -D__DOSOUND__ -DSNDSERV -Isoundclient -D__DOMUSIC__ -DMUSSERV # -D_DEBUGSOUND
  X11LIBS = -lXext -lX11
  
 -MUSSERV = musserver
--SNDSERV = sndserver
 +#MUSSERV = musserver
-+#SNDSERV = sndserver
+ SNDSERV = sndserver
  
  endif
  
@@ -73,6 +72,13 @@
  
  X11LIBS = -lXext -lX11
  GLLIBS  = -lSDL -lpthread
+ GGILIBS = -lggi -lm
+ VGALIBS = -lvga
+-SDLLIBS = -lSDL -lpthread 
++SDLLIBS = -L${LOCALBASE}/lib -lSDL ${PTHREAD_LIBS}
+ 
+ OBJS =	am_map.o ct_chat.o d_main.o d_net.o f_finale.o g_game.o \
+ 	p_ceilng.o p_doors.o p_enemy.o p_floor.o p_inter.o p_lights.o \
 @@ -104,7 +104,7 @@
  	p_spec.o p_switch.o p_telept.o  p_tick.o p_user.o r_bsp.o r_data.o \
  	r_draw.o r_plane.o r_segs.o r_things.o r_main.o mn_menu.o sb_bar.o \
