@@ -1,2 +1,16 @@
 usr/bin/fetch
+usr/bin/find2perl
+usr/bin/miniperl
+usr/bin/perl
+usr/bin/perl5
+usr/bin/perl5.00503
+usr/bin/perlbug
+usr/bin/perlcc
+usr/bin/perldoc
+usr/bin/sperl5.00503
+usr/bin/suidperl
+usr/lib/libperl.a
+usr/lib/libperl.so
+usr/lib/libperl.so.3
+usr/libdata/perl/5.00503
 usr/libexec/ld-elf.so.1
