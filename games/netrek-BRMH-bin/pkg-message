@@ -1,0 +1,14 @@
+The Netrek client is now installed.  You may start it by typing "netrek".
+
+Be sure and read the Netrek web site (http://www.netrek.org/) before you
+play!  It contains many useful documents for the new (and not-so-new)
+Netrek player, including the Netrek FAQ.  Highly recommended reading!
+
+NOTE: Since this client was compiled, the address of the Netrek metaserver
+has changed.  The new metaserver address is "metaserver.netrek.org">
+To fix this, please insert the following into your ${HOME}/.netrekrc
+file:
+
+metaserver:		metaserver.netrek.org
+
+Enjoy, have fun, and may you live long and prosper...
