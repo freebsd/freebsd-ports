@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ahze
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gtk+ bindings to cairo
 
 LIB_DEPENDS=	cairo.1:${PORTSDIR}/graphics/cairo
