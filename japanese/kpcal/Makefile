@@ -20,11 +20,12 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	yoichi@FreeBSD.org
 
 ALL_TARGET=	kpcal
+MAN1=	kpcal.1
 
-post-configure:
-	${GZIP_CMD} ${WRKSRC}/kpcal.1
+post-patch:
+	${PERL} -pi -e 's/long/time_t/' ${WRKSRC}/kpcal.c
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/kpcal ${LOCALBASE}/bin
-	${INSTALL_MAN} ${WRKSRC}/kpcal.1.gz ${LOCALBASE}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/kpcal.1 ${LOCALBASE}/man/man1
 
 .include <bsd.port.mk>
