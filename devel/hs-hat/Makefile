@@ -21,6 +21,8 @@ HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
 USE_GNOME=	glib12
 
+BROKEN=		"Does not compile"
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_NHC98) && ${OSVERSION} >= 500000
