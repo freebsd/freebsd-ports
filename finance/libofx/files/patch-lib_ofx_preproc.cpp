@@ -1,5 +1,8 @@
---- lib/ofx_preproc.cpp.orig	Mon Feb 17 16:10:23 2003
-+++ lib/ofx_preproc.cpp	Mon Feb 17 16:10:32 2003
+
+$FreeBSD$
+
+--- lib/ofx_preproc.cpp.orig	Sat Nov 23 23:09:24 2002
++++ lib/ofx_preproc.cpp	Sat Apr 12 22:10:56 2003
 @@ -22,6 +22,7 @@
  #include <stdlib.h>
  #include <stdio.h>
