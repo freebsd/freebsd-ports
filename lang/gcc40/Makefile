@@ -4,10 +4,10 @@
 # Date created:				9 Jan 1998
 # Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.61 1999/06/05 22:30:28 mharo Exp $
+# $Id: Makefile,v 1.62 1999/06/10 14:31:08 simokawa Exp $
 #
 
-SNAPDATE=	1999-05-24
+SNAPDATE=	1999-06-08
 SNAPVER=	${SNAPDATE:S/-//g}
 
 DISTNAME=	egcs-${SNAPVER}
@@ -60,7 +60,6 @@ ALL_TARGET=	bootstrap
 MAN1=		cccp.1 eg++.1 eg77.1 egcc.1
 
 pre-patch:
-	${MV} ${WRKSRC}/gcc/config/i386/t-freebsd ${WRKSRC}/gcc/config/
 	${MV} ${WRKSRC}/gcc/config/i386/freebsd.h ${WRKSRC}/gcc/config/i386/freebsd-aout.h
 	${MV} ${WRKSRC}/gcc/config/i386/freebsd-elf.h ${WRKSRC}/gcc/config/i386/freebsd.h
 	${CP} ${FILESDIR}/alpha-freebsd.h ${WRKSRC}/gcc/config/alpha/freebsd.h
