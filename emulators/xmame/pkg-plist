@@ -2,7 +2,6 @@ bin/%%MAMEMESS%%
 etc/%%MAMEMESS%%rc.sample
 share/%%MAMEMESS%%/%%MAMEMESS%%rc
 %%PORTDOCS%%share/doc/%%MAMEMESS%%/changes.unix
-%%PORTDOCS%%share/doc/%%MAMEMESS%%/credits.txt
 %%PORTDOCS%%share/doc/%%MAMEMESS%%/liesmich.unix
 %%PORTDOCS%%share/doc/%%MAMEMESS%%/multiplayer-readme.txt
 %%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-doc-1.html
@@ -21,16 +20,21 @@ share/%%MAMEMESS%%/%%MAMEMESS%%rc
 %%MAMEONLY%%%%DATFILES%%share/xmame/history.dat
 %%MAMEONLY%%%%DATFILES%%share/xmame/cheat.dat
 %%MAMEONLY%%%%PORTDOCS%%share/doc/xmame/changes.mame
+%%MAMEONLY%%%%PORTDOCS%%share/doc/xmame/changes.opengl
 %%MAMEONLY%%%%PORTDOCS%%share/doc/xmame/gamelist.mame
 %%MAMEONLY%%%%PORTDOCS%%share/doc/xmame/readme.mame
+%%MESSONLY%%%%PORTDOCS%%share/doc/xmess/credits.txt
 %%MESSONLY%%%%PORTDOCS%%share/doc/xmess/changes.mess
 %%MESSONLY%%%%PORTDOCS%%share/doc/xmess/gamelist.mess
 %%MESSONLY%%%%PORTDOCS%%share/doc/xmess/readme.mess
 %%MESSONLY%%%%PORTDOCS%%share/doc/xmess/messold.txt
 %%MESSONLY%%%%PORTDOCS%%share/doc/xmess/messroms.txt
-%%WPCMAMEONLY%%%%PORTDOCS%%share/doc/xwpcmame/simulation.txt
-%%WPCMAMEONLY%%%%PORTDOCS%%share/doc/xwpcmame/whatsnew.txt
-%%WPCMAMEONLY%%%%PORTDOCS%%share/doc/xwpcmame/wpcmame.txt
+%%PINMAMEONLY%%%%PORTDOCS%%share/doc/xpinmame/simulation.txt
+%%PINMAMEONLY%%%%PORTDOCS%%share/doc/xpinmame/whatsnew.txt
+%%PINMAMEONLY%%%%PORTDOCS%%share/doc/xpinmame/pinmame.txt
+%%PINMAMEONLY%%%%PORTDOCS%%share/doc/xpinmame/gamelist.txt
+%%PINMAMEONLY%%%%PORTDOCS%%share/doc/xpinmame/keys.txt
+%%PINMAMEONLY%%%%PORTDOCS%%share/doc/xpinmame/sounds.dat
 %%PORTDOCS%%@dirrm share/doc/%%MAMEMESS%%
 @dirrm share/%%MAMEMESS%%/roms
 @dirrm share/%%MAMEMESS%%
