@@ -9,7 +9,7 @@ PORTNAME=	gconf2
 PORTVERSION=	1.1.10
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020509
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta5
 DISTNAME=	GConf-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 

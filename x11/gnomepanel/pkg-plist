@@ -84,6 +84,10 @@ share/gnome/help/clock/C/clock.xml
 share/gnome/help/clock/C/figures/clock_applet.png
 share/gnome/help/clock/C/legal.xml
 share/gnome/help/clock/C/topic.dat
+share/gnome/help/fish-applet-2/C/figures/fish_applet.png
+share/gnome/help/fish-applet-2/C/fish-applet-2.xml
+share/gnome/help/fish-applet-2/C/legal.xml
+share/gnome/help/fish-applet-2/C/topic.dat
 share/gnome/help/mailcheck/C/figures/mailcheck-applet.png
 share/gnome/help/mailcheck/C/figures/mailcheck-properties-mailbox.png
 share/gnome/help/mailcheck/C/figures/mailcheck-properties-mailcheck.png
@@ -126,6 +130,7 @@ share/gnome/help/workspace-switcher/C/legal.xml
 share/gnome/help/workspace-switcher/C/workspace-switcher.xml
 share/gnome/idl/gnome-panel-2.0/GNOME_Panel.idl
 share/gnome/omf/gnome-panel/clock-C.omf
+share/gnome/omf/gnome-panel/fish-applet-2-C.omf
 share/gnome/omf/gnome-panel/mailcheck-C.omf
 share/gnome/omf/gnome-panel/panel-C.omf
 share/gnome/omf/gnome-panel/window-list-C.omf
@@ -202,6 +207,9 @@ share/locale/zh_TW/LC_MESSAGES/gnome-panel-2.0.mo
 @dirrm share/gnome/help/mailcheck/C/figures
 @dirrm share/gnome/help/mailcheck/C
 @dirrm share/gnome/help/mailcheck
+@dirrm share/gnome/help/fish-applet-2/C/figures
+@dirrm share/gnome/help/fish-applet-2/C
+@dirrm share/gnome/help/fish-applet-2
 @dirrm share/gnome/help/clock/C/figures
 @dirrm share/gnome/help/clock/C
 @dirrm share/gnome/help/clock

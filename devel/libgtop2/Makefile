@@ -10,7 +10,7 @@ PORTVERSION=	1.90.2
 PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta4
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta5
 DISTNAME=	libgtop-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 

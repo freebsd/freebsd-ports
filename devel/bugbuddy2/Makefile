@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	bugbuddy2
-PORTVERSION=	2.1.5
+PORTVERSION=	2.1.6
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020509
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta5
 DISTNAME=	bug-buddy-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 

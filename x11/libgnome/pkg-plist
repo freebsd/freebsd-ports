@@ -12,7 +12,7 @@ etc/gconf/gconf.xml.defaults/desktop/gnome/applications/help_viewer/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/applications/terminal/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/applications/window_manager/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/background/%gconf.xml
-etc/gconf/gconf.xml.defaults/desktop/gnome/file-views/%gconf.xml
+etc/gconf/gconf.xml.defaults/desktop/gnome/file_views/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/interface/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/peripherals/%gconf.xml
 etc/gconf/gconf.xml.defaults/desktop/gnome/peripherals/keyboard/%gconf.xml
@@ -87,27 +87,6 @@ lib/libgnome-2.so
 lib/libgnome-2.so.0
 libdata/bonobo/servers/GNOME_Moniker_std.server
 libdata/pkgconfig/libgnome-2.0.pc
-share/doc/libgnome/index.html
-share/doc/libgnome/index.sgml
-share/doc/libgnome/libgnome-gnome-config.html
-share/doc/libgnome/libgnome-gnome-exec.html
-share/doc/libgnome/libgnome-gnome-gconf.html
-share/doc/libgnome/libgnome-gnome-help.html
-share/doc/libgnome/libgnome-gnome-i18n.html
-share/doc/libgnome/libgnome-gnome-init.html
-share/doc/libgnome/libgnome-gnome-program.html
-share/doc/libgnome/libgnome-gnome-score.html
-share/doc/libgnome/libgnome-gnome-sound.html
-share/doc/libgnome/libgnome-gnome-triggers.html
-share/doc/libgnome/libgnome-gnome-url.html
-share/doc/libgnome/libgnome-gnome-util.html
-share/doc/libgnome/libgnome-libgnometypebuiltins.html
-share/doc/libgnome/libgnome.html
-share/doc/libgnome/x1277.html
-share/doc/libgnome/x2848.html
-share/doc/libgnome/x3213.html
-share/doc/libgnome/x4055.html
-share/doc/libgnome/x9.html
 share/gnome/sgml/docbook/gnome-customization-0.1/gnome-custom.xsl
 share/gnome/sgml/docbook/gnome-customization-0.1/gnome-customization.xsl
 share/gnome/sgml/docbook/gnome-customization-0.1/l10n.xml
@@ -115,6 +94,7 @@ share/locale/az/LC_MESSAGES/libgnome-2.0.mo
 share/locale/da/LC_MESSAGES/libgnome-2.0.mo
 share/locale/de/LC_MESSAGES/libgnome-2.0.mo
 share/locale/es/LC_MESSAGES/libgnome-2.0.mo
+share/locale/eu/LC_MESSAGES/libgnome-2.0.mo
 share/locale/fi/LC_MESSAGES/libgnome-2.0.mo
 share/locale/fr/LC_MESSAGES/libgnome-2.0.mo
 share/locale/it/LC_MESSAGES/libgnome-2.0.mo
@@ -126,6 +106,7 @@ share/locale/nn/LC_MESSAGES/libgnome-2.0.mo
 share/locale/no/LC_MESSAGES/libgnome-2.0.mo
 share/locale/pl/LC_MESSAGES/libgnome-2.0.mo
 share/locale/pt/LC_MESSAGES/libgnome-2.0.mo
+share/locale/pt_BR/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ru/LC_MESSAGES/libgnome-2.0.mo
 share/locale/sk/LC_MESSAGES/libgnome-2.0.mo
 share/locale/sl/LC_MESSAGES/libgnome-2.0.mo
@@ -133,6 +114,7 @@ share/locale/sv/LC_MESSAGES/libgnome-2.0.mo
 share/locale/ta/LC_MESSAGES/libgnome-2.0.mo
 share/locale/tr/LC_MESSAGES/libgnome-2.0.mo
 share/locale/uk/LC_MESSAGES/libgnome-2.0.mo
+share/locale/vi/LC_MESSAGES/libgnome-2.0.mo
 share/locale/wa/LC_MESSAGES/libgnome-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/libgnome-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgnome-2.0.mo
@@ -178,7 +160,7 @@ share/locale/zh_TW/LC_MESSAGES/libgnome-2.0.mo
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/peripherals/keyboard
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/peripherals
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/interface
-@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/file-views
+@dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/file_views
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/background
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/applications/window_manager
 @dirrm etc/gconf/gconf.xml.defaults/desktop/gnome/applications/terminal

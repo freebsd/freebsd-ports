@@ -9,7 +9,7 @@ PORTNAME=	pango
 PORTVERSION=	1.0.1
 PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,pre-gnome2/releases/gnome-2.0-desktop-20020509,} \
+MASTER_SITES=	${MASTER_SITE_GNOME:S,%SUBDIR%,pre-gnome2/releases/gnome-2.0-desktop-beta5,} \
 		ftp://ftp.gtk.org/pub/gtk/v1.3/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.3/ \
 		http://www.ameth.org/gimp/gtk/v1.3/

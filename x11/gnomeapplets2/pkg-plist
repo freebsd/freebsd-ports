@@ -33,8 +33,6 @@ etc/gconf/gconf.xml.defaults/schemas/apps/modemlights/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/modemlights/prefs/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/multiload/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/multiload/prefs/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel-menu-applet/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/panel-menu-applet/prefs/%gconf.xml
 etc/gconf/schemas/battstat.schemas
 etc/gconf/schemas/cdplayer.schemas
 etc/gconf/schemas/charpick.schemas
@@ -46,11 +44,7 @@ etc/gconf/schemas/gweather.schemas
 etc/gconf/schemas/mini-commander.schemas
 etc/gconf/schemas/modemlights.schemas
 etc/gconf/schemas/multiload.schemas
-etc/gconf/schemas/panel-menu.schemas
 etc/sound/events/battstat_applet.soundlist
-lib/libpanel-menu.a
-lib/libpanel-menu.so
-lib/libpanel-menu.so.0
 libdata/bonobo/servers/GNOME_BattstatApplet.server
 libdata/bonobo/servers/GNOME_CDPlayerApplet.server
 libdata/bonobo/servers/GNOME_CharpickerApplet.server
@@ -63,7 +57,6 @@ libdata/bonobo/servers/GNOME_MiniCommanderApplet.server
 libdata/bonobo/servers/GNOME_MixerApplet.server
 libdata/bonobo/servers/GNOME_ModemLightsApplet.server
 libdata/bonobo/servers/GNOME_MultiLoadApplet_Factory.server
-libdata/bonobo/servers/GNOME_PanelMenuApplet.server
 share/gnome/battstat_applet/battstat_applet.glade
 share/gnome/geyes/Bizarre/Bizarre-eye.png
 share/gnome/geyes/Bizarre/Bizarre-pupil.png
@@ -102,6 +95,7 @@ share/gnome/gkb/DE_German.keyprop
 share/gnome/gkb/DE_German_x.keyprop
 share/gnome/gkb/DK_Danish.keyprop
 share/gnome/gkb/DK_Danish_x.keyprop
+share/gnome/gkb/Dvorak.keyprop
 share/gnome/gkb/EE_Estonian.keyprop
 share/gnome/gkb/EE_Estonian_x.keyprop
 share/gnome/gkb/ES_Spanish.keyprop
@@ -159,6 +153,7 @@ share/gnome/gkb/PortugalDeadkeys.keyprop
 share/gnome/gkb/RO_Romanian.keyprop
 share/gnome/gkb/RU_Russian.keyprop
 share/gnome/gkb/RU_Russian_x.keyprop
+share/gnome/gkb/RU_Russian_x_rev.keyprop
 share/gnome/gkb/RussianCyril.keyprop
 share/gnome/gkb/SE_Swedish.keyprop
 share/gnome/gkb/SI_Slovenian.keyprop
@@ -215,6 +210,13 @@ share/gnome/help/char-palette/C/legal.xml
 share/gnome/help/command-line/C/command-line.xml
 share/gnome/help/command-line/C/figures/command-line.png
 share/gnome/help/command-line/C/legal.xml
+share/gnome/help/geyes/C/figures/geyes_applet.png
+share/gnome/help/geyes/C/geyes.xml
+share/gnome/help/geyes/C/legal.xml
+share/gnome/help/geyes/C/topic.dat
+share/gnome/help/gtik2_applet2/C/figures/gtik_applet.png
+share/gnome/help/gtik2_applet2/C/gtik2_applet2.xml
+share/gnome/help/gtik2_applet2/C/legal.xml
 share/gnome/help/gweather/C/figures/gweather_applet.png
 share/gnome/help/gweather/C/figures/gweather_settings.png
 share/gnome/help/gweather/C/figures/gweather_weather.png
@@ -224,6 +226,8 @@ share/gnome/help/gweather/C/topic.dat
 share/gnome/omf/gnome-applets/cdplayer_applet-C.omf
 share/gnome/omf/gnome-applets/char-palette-C.omf
 share/gnome/omf/gnome-applets/command-line-C.omf
+share/gnome/omf/gnome-applets/geyes-C.omf
+share/gnome/omf/gnome-applets/gtik2_applet2-C.omf
 share/gnome/omf/gnome-applets/gweather_applet-C.omf
 share/gnome/pixmaps/battstat.png
 share/gnome/pixmaps/charpick.png
@@ -257,7 +261,7 @@ share/gnome/pixmaps/gkb/fi.png
 share/gnome/pixmaps/gkb/fr.png
 share/gnome/pixmaps/gkb/gb.png
 share/gnome/pixmaps/gkb/ge.png
-share/gnome/pixmaps/gkb/gkb-foot.png
+share/gnome/pixmaps/gkb/gkb.png
 share/gnome/pixmaps/gkb/gr.png
 share/gnome/pixmaps/gkb/hr.png
 share/gnome/pixmaps/gkb/hu.png
@@ -313,7 +317,6 @@ share/gnome/pixmaps/gnome-mixer-applet.png
 share/gnome/pixmaps/gweather/tstorm.xpm
 share/gnome/pixmaps/mini-commander/browser-mini.xpm
 share/gnome/pixmaps/mini-commander/history-mini.xpm
-share/gnome/pixmaps/panel-menu-icon.png
 share/gnome/xmodmap/xmodmap.am
 share/gnome/xmodmap/xmodmap.be
 share/gnome/xmodmap/xmodmap.bg
@@ -365,6 +368,7 @@ share/gnome/xmodmap/xmodmap.qc
 share/gnome/xmodmap/xmodmap.qc-2
 share/gnome/xmodmap/xmodmap.ro
 share/gnome/xmodmap/xmodmap.ru
+share/gnome/xmodmap/xmodmap.ru-rev
 share/gnome/xmodmap/xmodmap.ru_yawerty
 share/gnome/xmodmap/xmodmap.se
 share/gnome/xmodmap/xmodmap.sf
@@ -422,6 +426,7 @@ share/locale/sv/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/ta/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/tr/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/uk/LC_MESSAGES/gnome-applets-2.0.mo
+share/locale/vi/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/wa/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-applets-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
@@ -445,8 +450,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets-2.0.mo
 @dirrm share/gnome/geyes/Bizarre
 @dirrm share/gnome/geyes
 @dirrm share/gnome/battstat_applet
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel-menu-applet/prefs
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/panel-menu-applet
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/multiload/prefs
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/multiload
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/modemlights/prefs
