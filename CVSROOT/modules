@@ -1844,6 +1844,7 @@ exim-ldap2	ports/mail/exim-ldap2
 exim-monitor	ports/mail/exim-monitor
 exim-mysql	ports/mail/exim-mysql
 exim-postgresql	ports/mail/exim-postgresql
+exim-sa-exim	ports/mail/exim-sa-exim
 exmh2		ports/mail/exmh2
 expat2		ports/textproc/expat2
 expect		ports/lang/expect
