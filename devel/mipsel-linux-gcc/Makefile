@@ -7,6 +7,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	2.97
+PORTREVISION=	1
 CATEGORIES=	devel
 #MASTER_SITES=   ftp://ftp.agendacomputing.com/pub/dev/snow/snap-02212000/src/
 MASTER_SITES=   ${MASTER_SITE_LOCAL}
@@ -32,11 +33,12 @@ CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
 		--enable-multilib \
 		--disable-shared
 
+ONLY_FOR_ARCHS=	i386 alpha
 MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFILES=	configure gcc/configure
-MAN1=		${PKGNAMEPREFIX}g++.1 ${PKGNAMEPREFIX}gcc.1
+MAN1=		${PKGNAMEPREFIX}g++.1 ${PKGNAMEPREFIX}gcc.1 cpp.1 gcov.1
 
 GCC_REV=	2.97
 
