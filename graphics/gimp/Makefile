@@ -20,7 +20,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNU Image Manipulation Program (unstable development version)
 
 LIB_DEPENDS=	aa.1:${PORTSDIR}/graphics/aalib \
-		exif.9:${PORTSDIR}/graphics/libexif \
+		exif.10:${PORTSDIR}/graphics/libexif \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		png.5:${PORTSDIR}/graphics/png \
