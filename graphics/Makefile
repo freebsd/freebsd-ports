@@ -167,6 +167,7 @@
     SUBDIR += py-ming
     SUBDIR += py-opengl
     SUBDIR += qcread
+    SUBDIR += qdraw
     SUBDIR += qiv
     SUBDIR += quickpics
     SUBDIR += qvplay
