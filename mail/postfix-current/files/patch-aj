@@ -3,11 +3,11 @@
 ***************
 *** 220,222 ****
   #
-! program_directory = /usr/libexec/postfix
+! daemon_directory = /usr/libexec/postfix
   
 --- 220,222 ----
   #
-! program_directory = !!PREFIX!!/libexec/postfix
+! daemon_directory = !!PREFIX!!/libexec/postfix
   
 ***************
 *** 263,267 ****
