@@ -1,5 +1,5 @@
 --- Makefile.orig	Mon Jan 10 13:14:31 2000
-+++ Makefile	Sun Feb 13 17:53:23 2000
++++ Makefile	Sun May 11 18:46:35 2003
 @@ -1,10 +1,10 @@
  # Makefile for ddos_scan (dds).
  # $Revision: 1.1 $
@@ -13,3 +13,12 @@
  
  default:
  	@clear
+@@ -14,7 +14,7 @@
+ 	@echo "to suit your operating system, then use 'make dds'"
+ 
+ dds:	dds.o
+-	$(CC) -o dds dds.c $(LIBS)
++	$(CC) -o dds dds.o $(LIBS)
+ 
+ # This assumes the source is in a directory named "ddos_scan".
+ tar: ddos_scan.tar
