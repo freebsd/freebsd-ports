@@ -345,6 +345,7 @@
     SUBDIR += w3m
     SUBDIR += w3m-ssl
     SUBDIR += wdic-fpw
+    SUBDIR += weather-emacs20
     SUBDIR += web1913-fpw
     SUBDIR += weblint97
     SUBDIR += word

@@ -1,0 +1,4 @@
+%%EMACS_LIBDIR%%/site-lisp/weather.el
+%%EMACS_LIBDIR%%/site-lisp/weather.elc
+share/doc/weather/README
+@dirrm share/doc/weather
