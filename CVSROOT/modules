@@ -7080,6 +7080,7 @@ replaceit	ports/textproc/replaceit
 replay		ports/audio/replay
 reportmagic	ports/www/reportmagic
 resid		ports/audio/resid
+resin2		ports/www/resin2
 resin3		ports/www/resin3
 resume		ports/textproc/resume
 retawq		ports/www/retawq
