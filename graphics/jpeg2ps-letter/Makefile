@@ -21,6 +21,12 @@ INSTALL_TARGET=
 
 MAN1=           jpeg2ps.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Broken pkg-plist"
+.endif
+
 .if ${PAPERSIZE} == a4
 post-patch:
 	${CP} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.input
@@ -36,4 +42,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/jpeg2ps.1 ${MANPREFIX}/man/man1
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
