@@ -17,7 +17,7 @@ COMMENT=	An extensible Java-based Scheme interpreter
 
 BUILD_DEPENDS=	ant:${PORTSDIR}/devel/jakarta-ant
 
-USE_JAVA=	1.2+
+USE_JAVA=	1.3+
 
 EXTRACT_CMD=	${JAR}
 EXTRACT_BEFORE_ARGS=	-xf
