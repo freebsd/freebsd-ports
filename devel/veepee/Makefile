@@ -14,6 +14,8 @@ DISTNAME=	VeePee-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
+BROKEN=		"Does not build"
+
 LIB_DEPENDS=	gd.2:${PORTSDIR}/graphics/gd
 
 USE_GNOMELIBS=	yes

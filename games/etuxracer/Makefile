@@ -16,6 +16,8 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 
 MAINTAINER=	eanholt@gladstone.uoregon.edu
 
+BROKEN=		"Does not build"
+
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 		tcl83.1:${PORTSDIR}/lang/tcl83
 
