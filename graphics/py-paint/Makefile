@@ -25,7 +25,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 SHARE_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 PYDIST_SETUP=	cd ${WRKSRC} && ${PYTHON_CMD} setup.py
 
-INC_DIRS=	["${LOCALBASE}/include/freetype1","${LOCALBASE}/include","${X11BASE}/include","${LOCALBASE}/include/freetype"]
+INC_DIRS=	["${LOCALBASE}/include/freetype1","${LOCALBASE}/include","${X11BASE}/include","${LOCALBASE}/include/freetype1/freetype"]
 LIB_DIRS=	["${LOCALBASE}/lib","${X11BASE}/lib"]
 REPATCH=	cd ${WRKSRC} && ${SED}
 REPATCHSUBST=	-e 's@^\(.*libraries.*\)$$@\1include_dirs=${INC_DIRS},library_dirs=${LIB_DIRS},@g'
