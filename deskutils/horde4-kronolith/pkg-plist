@@ -69,6 +69,7 @@
 %%KRONOLITHDIR%%/locale/hu_HU/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/hu_HU/help.xml
 %%KRONOLITHDIR%%/locale/it_IT/LC_MESSAGES/kronolith.mo
+%%KRONOLITHDIR%%/locale/ja_JP/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/ko_KR/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/lt_LT/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/lv_LV/LC_MESSAGES/kronolith.mo
@@ -97,6 +98,7 @@
 %%KRONOLITHDIR%%/po/fr_FR.po
 %%KRONOLITHDIR%%/po/hu_HU.po
 %%KRONOLITHDIR%%/po/it_IT.po
+%%KRONOLITHDIR%%/po/ja_JP.po
 %%KRONOLITHDIR%%/po/ko_KR.po
 %%KRONOLITHDIR%%/po/kronolith.pot
 %%KRONOLITHDIR%%/po/lt_LT.po
@@ -245,6 +247,8 @@ etc/horde/httpd.conf.kronolith
 @dirrm %%KRONOLITHDIR%%/locale/lt_LT
 @dirrm %%KRONOLITHDIR%%/locale/ko_KR/LC_MESSAGES
 @dirrm %%KRONOLITHDIR%%/locale/ko_KR
+@dirrm %%KRONOLITHDIR%%/locale/ja_JP/LC_MESSAGES
+@dirrm %%KRONOLITHDIR%%/locale/ja_JP
 @dirrm %%KRONOLITHDIR%%/locale/it_IT/LC_MESSAGES
 @dirrm %%KRONOLITHDIR%%/locale/it_IT
 @dirrm %%KRONOLITHDIR%%/locale/hu_HU/LC_MESSAGES
