@@ -1,0 +1,31 @@
+--- Makefile	Tue Nov 17 19:25:43 1998
++++ Makefile.new	Sat Apr  1 06:43:11 2000
+@@ -1,17 +1,20 @@
+-CC=gcc
+-XFORMSLIBPATH=/usr/X11R6/lib      # path to xforms library
+-XFORMSINCPATH=/usr/X11R6/include  # path to xforms header file <forms.h>
+-XLIBSPATH=/usr/X11R6/lib          # path to standard X libraries
+-XINCPATH=/usr/X11R6/include       # path to standard X header files
+-LIBS= -lm -lX11 -lforms           # libraries 
++X11BASE?=/usr/X11R6
++CC ?=gcc
++XFORMSLIBPATH=${X11BASE}/lib      # path to xforms library
++XFORMSINCPATH=${X11BASE}/include  # path to xforms header file <forms.h>
++XLIBSPATH=${X11BASE}/lib          # path to standard X libraries
++XINCPATH=${X11BASE}/include       # path to standard X header files
++LIBS= -lm -lX11 -lxforms          # libraries 
+ #EXTRALIBS=-lnsl -lsocket         # additional libraries needed by some unices
+ SRC=xftp.c fd_xftp.c
+ OBJ=$(SRC:.c=.o)
+ EXE=xrmftp
+-CFLAGS=-I/usr/include -I${XFORMSINCPATH} -I${XINCPATH} 
+-LDFLAGS=-L/usr/lib -L${XLIBSPATH} ${LIBS} ${EXTRALIBS} -L${XFORMSLIBPATH} -O3
++CFLAGS +=-I/usr/include -I${XFORMSINCPATH} -I${XINCPATH}
++LDFLAGS =-L/usr/lib -L${XLIBSPATH} ${LIBS} ${EXTRALIBS} -L${XFORMSLIBPATH} -O3
+ 
+ #------------------------------------------------------------------------------
++
++all: ${EXE}
+ 
+ ${EXE}: ${OBJ}
+ 	${CC}  ${LDFLAGS} -o ${EXE} ${OBJ}
