@@ -7,7 +7,7 @@
 
 PORTNAME=	squirrelmail
 PORTVERSION?=	1.4.3a
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	mail www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	squirrelmail
@@ -21,9 +21,11 @@ USE_PHP=	session mhash gettext mbstring pcre openssl xml
 WANT_PHP_WEB=	yes
 
 USE_BZIP2=	yes
+USE_REINPLACE=	yes
 
 .ifdef WITH_DATABASE
 WANT_PHP_PEAR=	yes
+RUN_DEPENDS+=	${PREFIX}/share/pear/DB.php:${PORTSDIR}/pear-DB
 .endif
 
 .ifdef WITH_LDAP
@@ -70,6 +72,8 @@ post-patch: slaveport-post-patch
 		${MASTERDIR}/pkg-deinstall > ${PKGDEINSTALL}
 	@${SED} -e "s;%%SQUIRRELDIR%%;${SQUIRRELDIR};g" \
 		${MASTERDIR}/pkg-message > ${PKGMESSAGE}
+	@${REINPLACE_CMD} -e 's|ispell|${LOCALBASE}/bin/ispell|g' \
+		${WRKSRC}/plugins/squirrelspell/sqspell_config.php
 
 # Rearrange the documentation
 do-build:
