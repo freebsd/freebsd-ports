@@ -17,9 +17,11 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	todorov@freebsd-bg.org
 COMMENT=	An English-to-Bulgarian and Bulgarian-to-English dictionary
 
+.if ${PORTNAME} == "kbedic"
 BROKEN=		"fails to patch"
 DEPRECATED=	${BROKEN}
 EXPIRATION_DATE=	2005-02-17
+.endif
 
 RUN_DEPENDS=	${DICT_DIR}/${DICT_CHECK}:${PORTSDIR}/textproc/bedic-data
 
