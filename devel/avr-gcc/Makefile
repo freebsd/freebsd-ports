@@ -54,6 +54,7 @@ pre-build:
 
 .if ${PERL_LEVEL} < 500600
 BROKEN=		"System's Pod::Man too old to generate the documentation."
+IGNORE=		"you need a newer version of Perl to build the documentation"
 .endif
 
 .include <bsd.port.post.mk>
