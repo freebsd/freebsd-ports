@@ -7,6 +7,7 @@
 
 PORTNAME=	Trf
 PORTVERSION=	2.1p2
+PORTREVISION=	1
 CATEGORIES=	devel tcl83
 MASTER_SITES=	http://www.oche.de/~akupries/soft/trf/download/
 PKGNAMEPREFIX=	tcl-
@@ -32,7 +33,17 @@ CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl${TCL_VER} \
 		--with-tclinclude=${LOCALBASE}/include/tcl${TCL_VER} \
 		--enable-static-zlib --enable-static-bzlib \
 		--enable-static-md5
-CONFIGURE_ENV+=	CFLAGS_OPTIMIZE="${CFLAGS}"
+
+post-extract:
+	${RM} -rf ${WRKSRC}/compat
+
+post-patch:
+	# Make direct calls to -lbz2
+	${PERL} -pi -e 's,bz\.([^(]+),BZ2_bz\u\1,g' \
+		${WRKSRC}/generic/bz2.c
+	# Make direct calls to -lz
+	${PERL} -pi -e 's,zf\.([^(]+),\1,g' ${WRKSRC}/generic/adler.c \
+		${WRKSRC}/generic/crc_zlib.c ${WRKSRC}/generic/zip.c
 
 post-install:
 	${LN} -sf ${SHLIB_NAME} ${PREFIX}/lib/${SHLIB_LINK}
@@ -40,6 +51,7 @@ post-install:
 	${RM} -f ${WRKSRC}/doc/html/*.orig
 	${MKDIR} ${DOCSDIR}
 	${CP} -pR ${WRKSRC}/doc/html/* ${DOCSDIR}
+	${CHMOD} -R +r ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/painless-guide-to-crc.txt ${DOCSDIR}
 .endif
 

@@ -1,0 +1,16 @@
+--- generic/bz2_opt.c	Sat Nov 18 17:42:31 2000
++++ generic/bz2_opt.c	Fri Feb 15 14:09:36 2002
+@@ -182,13 +182,4 @@
+ 
+   /*
+-   * 'bz2' is used, therefore load the required library.
+-   * And bail out if it is not available.
+-   */
+-
+-  if (TCL_OK != TrfLoadBZ2lib (interp)) {
+-    return TCL_ERROR;
+-  }
+-
+-  /*
+    * Now perform the real option check.
+    */

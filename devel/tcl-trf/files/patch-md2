@@ -1,6 +1,6 @@
 --- generic/md2.c	Wed Aug  9 15:13:17 2000
-+++ generic/md2.c	Fri Feb  8 10:43:36 2002
-@@ -30,11 +30,6 @@
++++ generic/md2.c	Fri Feb 15 14:55:50 2002
+@@ -30,13 +30,8 @@
  #include "loadman.h"
  
 -/*
@@ -13,7 +13,10 @@
 +#include <sys/types.h>
 +#include <md2.h>
  
- #define DIGEST_SIZE               (MD2_DIGEST_LENGTH)
+-#define DIGEST_SIZE               (MD2_DIGEST_LENGTH)
++#define DIGEST_SIZE               16
+ #define CTX_TYPE                  MD2_CTX
+ 
 @@ -59,9 +54,9 @@
    sizeof (CTX_TYPE),
    DIGEST_SIZE,
