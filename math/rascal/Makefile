@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 
+USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_GNOME=	yes
 WRKSRC=		${WRKDIR}/Rascal-${PORTVERSION}
@@ -26,7 +27,7 @@ MANCOMPRESSED=	yes
 MAN1=	rascal.1
 
 post-patch:
-	@${PERL} -pi -e "s,%%LOCALBASE%%,${LOCALBASE},g ; \
+	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g ; \
 		s,g\+\+,${CXX},g ; \
 		s,doc/,share/doc/,g ; \
 		s,gnome-config,${GNOME_CONFIG},g ; \

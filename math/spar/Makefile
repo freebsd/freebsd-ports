@@ -16,6 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
 INSTALLS_SHLIB=	yes
@@ -23,6 +24,6 @@ INSTALLS_SHLIB=	yes
 MAN1=	spar.1
 
 post-patch:
-	@${PERL} -pi -e "s,-ldl,,g" ${WRKSRC}/lib/Makefile.in
+	@${REINPLACE_CMD} -e "s,-ldl,,g" ${WRKSRC}/lib/Makefile.in
 
 .include <bsd.port.mk>

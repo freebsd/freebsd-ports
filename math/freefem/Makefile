@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	kfem
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
@@ -22,8 +23,8 @@ INSTALLS_SHLIB=	yes
 MAN1=		freefem.1
 
 post-patch:
-	@${PERL} -pi -e 's|-O3 |\$$CXXFLAGS |g' ${WRKSRC}/configure
-	@${PERL} -pi -e 's|debian doc freefem|debian freefem|g ; \
+	@${REINPLACE_CMD} -e 's|-O3 |\$$CXXFLAGS |g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|debian doc freefem|debian freefem|g ; \
 		 s|^install-data-am:|install-data-am: #|g' ${WRKSRC}/Makefile.in
 
 post-install:
