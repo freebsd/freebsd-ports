@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.19 1996/11/03 04:52:10 obrien Exp $
+# $Id: Makefile,v 1.20 1996/11/06 13:06:41 asami Exp $
 #
 
     SUBDIR += bpl+
@@ -8,6 +8,7 @@
     SUBDIR += lrzsz
     SUBDIR += mgetty+sendfax
     SUBDIR += minicom
+    SUBDIR += zmtx-zmrx
     SUBDIR += rzsz
     SUBDIR += seyon
     SUBDIR += xcept
