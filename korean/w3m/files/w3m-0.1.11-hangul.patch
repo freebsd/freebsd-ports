@@ -1,0 +1,105 @@
+diff -Naur w3m-0.1.10.orig/configure w3m-0.1.10/configure
+--- w3m-0.1.10.orig/configure	Mon Jun  5 18:41:35 2000
++++ configure	Fri Jun  9 22:17:04 2000
+@@ -309,10 +309,14 @@
+ 
+ echo "Which language do you prefer?"
+ echo "  1 - Japanese (charset ISO-2022-JP, EUC-JP, Shift_JIS)"
+-echo "  2 - English (charset US_ASCII, ISO-8859-1, etc.)"
++echo "  2 - Korean (charset EUC-KR ISO-2022-KR is not yet supported)"
++echo "  3 - English (charset US_ASCII, ISO-8859-1, etc.)"
+ if [ "$pref_lang" = 2 ]; then
+   Echo '[2]? '
+   def_lg=2
++elif [ "$pref_lang" = 3 ]; then
++  Echo '[3]? '
++  def_lg=3
+ else
+   Echo '[1]? '
+   def_lg=1
+@@ -320,8 +324,8 @@
+ while :
+ do
+   readanswer lg_ans "$def_lg"
+-  if [ "$lg_ans" != 1 -a "$lg_ans" != 2 ]; then
+-    echo "Please choose 1 or 2."
++  if [ "$lg_ans" -lt 1 -o "$lg_ans" -gt 3 ]; then
++    echo "Please choose 1,2 or 3."
+     Echo "[$def_lg]? "
+     continue
+   else
+@@ -333,6 +337,9 @@
+ if [ "$lg_ans" = 1 ]; then
+   use_lang="#define LANG JA"
+   lang=ja
++elif [ "$lg_ans" = 2 ]; then
++  use_lang="#define LANG KO"
++  lang=ko
+ else
+   use_lang="#define LANG EN"
+   lang=en
+@@ -366,6 +373,8 @@
+ 	break
+   done
+   echo "def_dcode=$ncode" >> config.param
++elif [ "$lang" = ko ]; then
++    ncode=E
+ else
+   ncode=x
+ fi
+@@ -1466,7 +1475,8 @@
+ #define DISPLAY_CODE '$ncode'
+ 
+ #define JA 0
+-#define EN 1
++#define KO 1
++#define EN 2
+ $use_lang
+ $def_kanji_symbols
+ $def_color
+diff -Naur w3m-0.1.10.orig/file.c w3m-0.1.10/file.c
+--- w3m-0.1.10.orig/file.c.orig	Mon Feb  5 01:05:34 2001
++++ file.c	Mon Feb  5 01:07:31 2001
+@@ -4252,7 +4252,7 @@
+ 		str++;
+ 	    }
+ 	    else {
+-#ifdef JP_CHARSET
++#if defined(JP_CHARSET) && !defined(KR_CHARSET)
+ 		if (mode == PC_KANJI &&
+ 		    obuf->pos > h_env->envs[h_env->envc].indent &&
+ 		    Strlastchar(obuf->line) == ' ') {
+diff -Naur w3m-0.1.10.orig/fm.h w3m-0.1.10/fm.h
+--- w3m-0.1.10.orig/fm.h	Tue Jun  6 14:54:35 2000
++++ fm.h	Fri Jun  9 22:17:04 2000
+@@ -50,6 +50,9 @@
+ 
+ #if LANG == JA
+ #define JP_CHARSET
++#elif LANG == KO
++#define JP_CHARSET
++#define KR_CHARSET
+ #endif				/* LANG == JA */
+ 
+ /* 
+@@ -521,7 +524,7 @@
+  */
+ 
+ extern int LINES, COLS;
+-#if defined(CYGWIN) && LANG == JA
++#if defined(CYGWIN) && (LANG == JA || LANG == KO)
+ #define LASTLINE (LINES-2)
+ #else				/* not defined(CYGWIN) && LANG == JA */
+ #define LASTLINE (LINES-1)
+diff -Naur w3m-0.1.10.orig/rc.c w3m-0.1.10/rc.c
+--- w3m-0.1.10.orig/rc.c	Mon Jun  5 20:17:04 2000
++++ rc.c	Fri Jun  9 22:17:04 2000
+@@ -128,7 +128,7 @@
+ #define CMT_PAGERLINE    "# of reserved line when w3m is used as a pager"
+ #define CMT_HISTSIZE     "# of reserved URL"
+ #define CMT_SAVEHIST     "Save URL history"
+-/* #define CMT_KANJICODE    "Display Kanji Code" */
++#define CMT_KANJICODE    "Display Kanji Code"
+ #define CMT_FRAME        "Automatic rendering of frame"
+ #define CMT_TSELF        "use _self as default target"
+ #define CMT_DISPLINK     "Automatic display of link URL"

@@ -1,0 +1,12 @@
+--- config.h.orig	Fri Mar 23 15:11:07 2001
++++ config.h	Fri Mar 23 15:12:08 2001
+@@ -172,3 +172,9 @@
+ #endif /* makefile_parameter */
+ #endif /* _CONFIGURED_ */
+ 
++/* Korean configuration */
++#define KO 2
++#define KOREAN
++#undef LANG
++#undef KANJI_SYMBOLS
++#define LANG KO
