@@ -4,7 +4,7 @@ include/xosd.h
 lib/libxosd.a
 lib/libxosd.la
 lib/libxosd.so
-lib/libxosd.so.1
+lib/libxosd.so.2
 lib/xmms/General/libxmms_osd.la
 lib/xmms/General/libxmms_osd.so
 share/aclocal/libxosd.m4

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xosd
-PORTVERSION=	1.0.4
+PORTVERSION=	1.1.1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.ignavus.net/
 
@@ -26,13 +26,15 @@ AUTOMAKE_ARGS=	--add-missing
 USE_AUTOCONF=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	LIBS=${PTHREAD_LIBS}' -L${LOCALBASE}/lib -lgnugetopt' \
-		CFLAGS='${CFLAGS}' X11BASE='${X11BASE}' GTK_CONFIG='${GTK_CONFIG}' \
-		GLIB_CONFIG='${GLIB_CONFIG}' XMMS_PLUGINDIR=${X11BASE}/lib/xmms
+		CFLAGS='${CFLAGS}' X11BASE='${X11BASE}' \
+		GTK_CONFIG='${GTK_CONFIG}' GLIB_CONFIG='${GLIB_CONFIG}' \
+		XMMS_PLUGINDIR=${X11BASE}/lib/xmms
 
 MAN1=		osd_cat.1
-MAN3=		xosd_display.3 xosd_hide.3 xosd_init.3 xosd_is_onscreen.3 \
+MAN3=		xosd.3 xosd_display.3 xosd_get_number_lines.3 xosd_hide.3 \
+		xosd_init.3 xosd_is_onscreen.3 xosd_set_align.3 \
 		xosd_set_offset.3 xosd_set_pos.3 xosd_set_shadow_offset.3 \
-		xosd_show.3 xosd_uninit.3 xosd.3 xosd_get_number_lines.3
+		xosd_show.3 xosd_uninit.3
 
 pre-configure:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/libtoolize --force && ${ACLOCAL}
