@@ -1,14 +1,23 @@
 bin/fpwmake
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/ASCIItoX.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/BaseText.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/BaseUserChar.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/BaseWord.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Control.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/EndWord.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/Copyright.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/FPWParser.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/FPWUtils.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/Heading.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/Menu.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/Text.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils/Word2.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FullUserChar.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/HalfUserChar.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Heading.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Index.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Link.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/RefUserChar.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Reference.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Sort.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Tag.pm
@@ -17,7 +26,10 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Word.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/Word2.pm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING/FPWUtils
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/FreePWING
+libexec/freepwing/cphier
 libexec/freepwing/fpwcontrol
+libexec/freepwing/fpwfullchar
+libexec/freepwing/fpwhalfchar
 libexec/freepwing/fpwindex
 libexec/freepwing/fpwlink
 libexec/freepwing/fpwsort
