@@ -31,6 +31,10 @@ MAN1=		kaffe.1
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "alpha"
+BROKEN=		"Configure fails on alpha"
+.endif
+
 .if ${OSVERSION} >= 502000
 BROKEN=		"Does not compile"
 .endif
