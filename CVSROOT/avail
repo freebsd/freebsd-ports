@@ -11,5 +11,3 @@ avail||doc
 avail||ports
 avail||src
 avail||www
-unavail||src/sys
-avail|peter,jdp,markm|src/sys
