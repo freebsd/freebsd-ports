@@ -3,6 +3,12 @@ share/locale/de/LC_MESSAGES/gtkpod.mo
 share/locale/fr/LC_MESSAGES/gtkpod.mo
 share/locale/it/LC_MESSAGES/gtkpod.mo
 share/locale/ja/LC_MESSAGES/gtkpod.mo
+share/gtkpod/scripts/sync-kaddressbook.sh
+share/gtkpod/scripts/sync-korganizer.sh
+share/gtkpod/pixmaps/gtkpod-icon-48.png
+share/gtkpod/pixmaps/gtkpod-icon-48x48.png
+share/gtkpod/pixmaps/gtkpod-icon-64x64.png
+share/gtkpod/pixmaps/gtkpod-logo.png
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/TODOandBUGS.txt
