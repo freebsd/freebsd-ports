@@ -237,7 +237,8 @@ post-patch:
 	cd ${WRKSRC}/ekpstm/ekpstm-${EKPSTM_VER} && \
 		patch -p < ${FILESDIR}/ekpstm-${EKPSTM_VER}.diff
 .endif
-	${REINPLACE_CMD} -e 's,setup redhat,redhat,' \
+	${REINPLACE_CMD} -e '/^SUBDIRS =/s/setup//' \
+		-e 's,setup redhat,redhat,' \
 		-e '/inst-post.sh/s/^/#/' \
 		${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's,^prefix=/usr$$,,' -e 's,^sysconfdir=/etc$$,,' \
