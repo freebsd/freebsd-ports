@@ -17,8 +17,6 @@ COMMENT=	A GNU project to create a free Java class library
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-BROKEN=		Incomplete pkg-plist
-
 USE_GNOME=	gtk20 libartlgpl2 pkgconfig
 USE_JAVA=	yes
 USE_JIKES=	yes
@@ -38,5 +36,6 @@ post-install:
 	@${FIND} ${dir} -type d | ${SORT} -r | \
 		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 .endfor
+	@echo '@unexec rmdir %D/lib/security 2>/dev/null || true' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
