@@ -1,7 +1,11 @@
-bin/CIDRAdvisor
-bin/RtConfig
 bin/peval
+bin/pmatch
 bin/prpath
-bin/prtraceroute
+bin/RtConfig
+bin/CIDRAdvisor
+bin/prcheck
+bin/irrstat
 bin/roe
-bin/rpslcheck
+bin/aoe
+bin/relayd
+bin/prtraceroute

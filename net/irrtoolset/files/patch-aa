@@ -1,0 +1,45 @@
+--- src/misc/net.hh.orig	Wed Jan 28 17:40:42 1998
++++ src/misc/net.hh	Sat Nov 27 18:11:23 1999
+@@ -86,12 +86,12 @@
+ int bind    (...);
+ int listen  (...);
+ int accept  (...);
+-int recvfrom(...);
++ssize_t recvfrom(...);
+ int gethostname (...);
+ int setsockopt  (...);
+ int select (...);
+-int sendto (...);
+-int send   (...);
++ssize_t sendto (...);
++ssize_t send   (...);
+ int gettimeofday (...);
+ }
+ 
+@@ -132,7 +132,7 @@
+ class Timer {
+     struct timeval tv;
+     struct timezone tz;
+-    init_time () {
++    void init_time () {
+ 	bzero ((char *) &tv, sizeof (struct timeval));
+ 	::gettimeofday (&tv, &tz);
+     }
+@@ -256,7 +256,7 @@
+ 	return ptr;
+     }
+     u_long getInaddr () { return hexaddr; }
+-    print () { printf ("%s\n%s\n0x%x\n", hostname, dottedaddr, hexaddr); }
++    void print () { printf ("%s\n%s\n0x%x\n", hostname, dottedaddr, hexaddr); }
+ 
+     Error error;
+ };
+@@ -331,7 +331,7 @@
+ 	    error.warn("listen");
+ 	return error();
+     }
+-    accept () {
++    int accept () {
+ 	//u_long addrlen;
+ 	int addrlen = sizeof (struct sockaddr);
+ 	bzero ((char *) &socknew, sizeof (socknew));

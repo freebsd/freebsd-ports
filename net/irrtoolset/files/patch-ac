@@ -1,0 +1,208 @@
+--- src/dbase/Node.h.orig	Sat Nov 27 18:11:57 1999
++++ src/dbase/Node.h	Sat Nov 27 18:16:21 1999
+@@ -101,7 +101,7 @@
+   protected:
+    virtual void print(ostream &os) = 0;
+   public:
+-   virtual operator== (Node &b) = 0;
++   virtual int operator== (Node &b) = 0;
+    virtual void InOrderPrint() = 0;
+    virtual void PostOrderPrint() { InOrderPrint(); }
+    virtual ~Node() {};
+@@ -144,7 +144,7 @@
+    virtual void print(ostream &os) = 0;
+ 
+   public:
+-   virtual Execute(Route &r) = 0;
++   virtual void Execute(Route &r) = 0;
+    virtual ActionNode *FindFirst(Node_t _type) = 0;
+    int operator< (ActionNode &b);
+    friend ostream &operator<<(ostream &os, ActionNode *an) {
+@@ -172,7 +172,7 @@
+       type = T_ANDNode;
+    }
+ 
+-   virtual operator== (Node& b) {
++   virtual int operator== (Node& b) {
+       return b.type == T_ANDNode 
+ 	 && left  == ((ANDNode&) b).left
+ 	 && right == ((ANDNode&) b).right;
+@@ -200,7 +200,7 @@
+       type = T_ORNode;
+    }
+ 
+-   virtual operator== (Node& b) {
++   virtual int operator== (Node& b) {
+       return b.type == T_ORNode 
+ 	 && left  == ((ORNode&) b).left
+ 	 && right == ((ORNode&) b).right;
+@@ -227,7 +227,7 @@
+       type = T_NotNode;
+    }
+ 
+-   virtual operator== (Node& b) {
++   virtual int operator== (Node& b) {
+       return b.type == T_NotNode 
+ 	 && left  == ((NotNode&) b).left;
+    }
+@@ -256,7 +256,7 @@
+       type = T_AssignNode;
+    }
+ 
+-   virtual operator== (Node& b) {
++   virtual int operator== (Node& b) {
+       return b.type == T_AssignNode 
+ 	 && val == ((AssignNode&) b).val
+ 	 && left  == ((AssignNode&) b).left;
+@@ -281,7 +281,7 @@
+       type = T_ANYNode;
+    }
+ 
+-   virtual operator== (Node& b) {
++   virtual int operator== (Node& b) {
+       return b.type == T_ANYNode;
+    }
+ 
+@@ -305,7 +305,7 @@
+       type = T_ASNode;
+    }
+ 
+-   virtual operator== (Node& b) {
++   virtual int operator== (Node& b) {
+       return b.type == T_ASNode 
+ 	 && val == ((ASNode&) b).val;
+    }
+@@ -330,7 +330,7 @@
+       type = T_ASMacroNode;
+   }
+ 
+-   virtual operator== (Node& b) {
++   virtual int operator== (Node& b) {
+       return b.type == T_ASMacroNode 
+ 	 && val == ((ASMacroNode&) b).val;
+    }
+@@ -355,7 +355,7 @@
+       type = T_CommNode;
+    }
+ 
+-    virtual operator== (Node& b) {
++    virtual int operator== (Node& b) {
+       return b.type == T_CommNode 
+ 	 && val == ((CommNode&) b).val;
+    }
+@@ -382,7 +382,7 @@
+       cidr_root = NULL;
+    }
+ 
+-   virtual operator== (Node& b) {
++   virtual int operator== (Node& b) {
+       return b.type == T_NetListNode 
+ 	 && nets == ((NetListNode&) b).nets;
+    }
+@@ -391,7 +391,7 @@
+    virtual NormalExpression *Evaluate(int expand);
+    virtual int match(Route &r, char dontcare);
+    virtual int match_exact_or_more_specific(Route &r, char dontcare);
+-   add(Pix pi) { nets.add(pi); }
++   void add(Pix pi) { nets.add(pi); }
+ };
+ 
+ ////////////////////////////// ASPathNode //////////////////////////////
+@@ -412,7 +412,7 @@
+       type = T_ASPathNode;
+    }
+ 
+-   virtual operator== (Node& b) {
++   virtual int operator== (Node& b) {
+       ASSERT(0);
+       return 0;
+    }
+@@ -438,7 +438,7 @@
+       type = T_RegisterNode;
+    }
+ 
+-    virtual operator== (Node& b) {
++    virtual int operator== (Node& b) {
+       return b.type == T_RegisterNode 
+ 	 && val == ((RegisterNode&) b).val;
+    }
+@@ -460,13 +460,13 @@
+       type = T_PrefNode;
+    }
+ 
+-   virtual operator== (Node& b) {
++   virtual int operator== (Node& b) {
+       return b.type == T_PrefNode 
+ 	 && val == ((PrefNode&) b).val;
+    }
+ 
+    virtual void InOrderPrint();
+-   virtual Execute(Route &r) {
++   virtual void Execute(Route &r) {
+    }
+    virtual ActionNode *FindFirst(Node_t _type) {
+       if (type == _type)
+@@ -492,13 +492,13 @@
+       type = T_MEDNode;
+    }
+ 
+-   virtual operator== (Node& b) {
++   virtual int operator== (Node& b) {
+       return b.type == T_MEDNode 
+ 	 && val == ((MEDNode&) b).val;
+    }
+ 
+    virtual void InOrderPrint();
+-   virtual Execute(Route &r) {
++   virtual void Execute(Route &r) {
+    }
+    virtual ActionNode *FindFirst(Node_t _type) {
+       if (type == _type)
+@@ -524,13 +524,13 @@
+       type = T_DPANode;
+    }
+ 
+-   virtual operator== (Node& b) {
++   virtual int operator== (Node& b) {
+       return b.type == T_DPANode 
+ 	 && val == ((DPANode&) b).val;
+    }
+ 
+    virtual void InOrderPrint();
+-   virtual Execute(Route &r) {
++   virtual void Execute(Route &r) {
+    }
+    virtual ActionNode *FindFirst(Node_t _type) {
+       if (type == _type)
+@@ -552,12 +552,12 @@
+       type = T_NoopNode;
+    }
+ 
+-   virtual operator== (Node& b) {
++   virtual int operator== (Node& b) {
+       return b.type == T_NoopNode;
+    }
+ 
+    virtual void InOrderPrint();
+-   virtual Execute(Route &r) {}
++   virtual void Execute(Route &r) {}
+    virtual ActionNode *FindFirst(Node_t _type) {
+       if (type == _type)
+ 	 return this;
+@@ -581,14 +581,14 @@
+    }
+    virtual ~ComposeNode();
+ 
+-   virtual operator== (Node& b) {
++   virtual int operator== (Node& b) {
+       return b.type == T_ComposeNode
+ 	 && left  == ((ComposeNode&) b).left
+ 	 && right == ((ComposeNode&) b).right;
+    }
+ 
+    virtual void InOrderPrint();
+-   virtual Execute(Route &r) {}
++   virtual void Execute(Route &r) {}
+    virtual ActionNode *FindFirst(Node_t _type) {
+       ActionNode *r;
+       if (type == _type)
