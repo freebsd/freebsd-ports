@@ -1,21 +1,21 @@
---- Makefile.orig	Thu Apr 22 12:27:46 1999
-+++ Makefile	Tue Dec 28 17:28:17 1999
+--- Makefile.orig	Sat Apr 21 20:12:15 2001
++++ Makefile		Sat Apr 21 20:15:23 2001
 @@ -1,7 +1,7 @@
 -CC = gcc
 -LIBDIR = -L/usr/X11R6/lib
 +CC ?= gcc
 +LIBDIR = -L${X11BASE}/lib
  LIBS   = -lXpm -lXext -lX11 -lm
--FLAGS = -O2 
-+CFLAGS ?= -Wall -O2 
+-FLAGS = -O2
++CFLAGS ?= -Wall -O2
+ DESTDIR = /usr/local
  OBJS =	wmtz.o \
  		../wmgeneral/wmgeneral.o \
- 		../wmgeneral/misc.o \
-@@ -9,10 +9,10 @@
+@@ -10,10 +10,10 @@
  
  
  .c.o:
--	$(CC) -I/usr/X11R6/share/include $(FLAGS) -c -Wall $< -o $*.o
+-	$(CC) -I/usr/X11R6/include $(FLAGS) -c -Wall $< -o $*.o
 +	$(CC) -I${X11BASE}/include $(CFLAGS) -c $< -o $*.o
  
  wmtz: $(OBJS)
@@ -24,17 +24,21 @@
  
  all:: wmtz
  
-@@ -24,18 +24,4 @@
+@@ -25,22 +25,4 @@
  	rm -f *~
  
  install:: wmtz
--	cp -f wmtz /usr/local/bin/
--	chmod 755 /usr/local/bin/wmtz
--	chown root:root /usr/local/bin/wmtz
--	cp wmtzrc $(HOME)/.wmtzrc
+-	cp -f wmtz $(DESTDIR)/bin/
+-	chmod 755 $(DESTDIR)/bin/wmtz
+-	chown root:root $(DESTDIR)/bin/wmtz
+-	cp -f wmtz.1 $(DESTDIR)/man/man1
+-	chmod 644 $(DESTDIR)/man/man1/wmtz.1
+-	chown root:root $(DESTDIR)/man/man1/wmtz.1
+-	cp -f wmtzrc $(HOME)/.wmtzrc
 -	chmod 600 $(HOME)/.wmtzrc
--	cp wmtzrc /etc/wmtzrc
+-	cp -f wmtzrc /etc/wmtzrc
 -	chmod 644 /etc/wmtzrc
+-	chown root:root /etc/wmtzrc
 -	@echo "wmtz: Installation finished..."
 -
 -uninstall:: 
