@@ -1,0 +1,19 @@
+--- Makefile.in.orig	Thu Nov  4 09:13:13 2004
++++ Makefile.in	Sat Jan 15 21:53:47 2005
+@@ -203,16 +203,11 @@
+ 
+ am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
+  configure.lineno
+-$(srcdir)/Makefile.in:  Makefile.am  $(top_srcdir)/configure.ac $(ACLOCAL_M4)
+-	cd $(top_srcdir) && \
+-	  $(AUTOMAKE) --gnu  Makefile
+ Makefile:  $(srcdir)/Makefile.in  $(top_builddir)/config.status
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@ $(am__depfiles_maybe)
+ 
+ $(top_builddir)/config.status: $(srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
+ 	$(SHELL) ./config.status --recheck
+-$(srcdir)/configure:  $(srcdir)/configure.ac $(ACLOCAL_M4) $(CONFIGURE_DEPENDENCIES)
+-	cd $(srcdir) && $(AUTOCONF)
+ 
+ $(ACLOCAL_M4):  configure.ac acinclude.m4
+ 	cd $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
