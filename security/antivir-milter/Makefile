@@ -6,7 +6,7 @@
 
 PORTNAME=	antivir-milter
 PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security mail
 MASTER_SITES=	ftp://ftp.antivir.de/freebsd/
 DISTNAME=	avfbmlt
@@ -50,16 +50,16 @@ post-patch:
 
 do-install:
 	@${INSTALL} -d -o daemon -g daemon -m 755 ${PREFIX}/AntiVir
-	@${INSTALL} -o daemon -g daemon -m 555 ${WRKSRC}/bin/antivir \
+	@${INSTALL} -o daemon -g daemon -m 755 ${WRKSRC}/bin/antivir \
 		${PREFIX}/AntiVir/antivir-dist
 .if !exists(${PREFIX}/AntiVir/antivir)
-	@${INSTALL} -o daemon -g daemon -m 555 ${WRKSRC}/bin/antivir \
+	@${INSTALL} -o daemon -g daemon -m 755 ${WRKSRC}/bin/antivir \
 		${PREFIX}/AntiVir
 .endif
-	@${INSTALL} -o daemon -g daemon -m 444 ${WRKSRC}/vdf/antivir.vdf \
+	@${INSTALL} -o daemon -g daemon -m 644 ${WRKSRC}/vdf/antivir.vdf \
 		${PREFIX}/AntiVir/antivir.vdf-dist
 .if !exists(${PREFIX}/AntiVir/antivir.vdf)
-	@${INSTALL} -o daemon -g daemon -m 444 ${WRKSRC}/vdf/antivir.vdf \
+	@${INSTALL} -o daemon -g daemon -m 644 ${WRKSRC}/vdf/antivir.vdf \
 		${PREFIX}/AntiVir
 .endif
 	@${INSTALL_SCRIPT} ${WRKSRC}/script/avq ${PREFIX}/bin
