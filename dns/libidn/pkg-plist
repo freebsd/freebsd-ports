@@ -10,6 +10,7 @@ lib/libidn.so.13
 libdata/pkgconfig/libidn.pc
 %%EMACS%%%%EMACSDIR%%/site-lisp/idna.el
 %%EMACS%%%%EMACSDIR%%/site-lisp/punycode.el
+share/locale/sv/LC_MESSAGES/libidn.mo
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/FAQ
 @unexec rmdir %D/lib/pkgconfig 2>/dev/null || true
