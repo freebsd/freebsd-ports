@@ -9,6 +9,7 @@
 
 PORTNAME=	mod_auth_kerb
 PORTVERSION=	4.11
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=modauthkerb
@@ -34,7 +35,7 @@ do-build:
 	cd ${WRKSRC} && \
 		${APXS} -I${KRB5_HOME}/include \
 		-DKRB5 -DKRB5_VERIFY_TICKET -DKRB5_SAVE_CREDENTIALS \
-		-DKRB5_DEFAULT_KEYTAB=\"\\\"file:${LOCALBASE}/etc/apache/keytab\\\"\" \
+		-DKRB5_DEFAULT_KEYTAB=\"\\\"FILE:${LOCALBASE}/etc/apache/keytab\\\"\" \
 		-Dkerb_auth_module=auth_kerb_module \
 		-c ${PORTNAME}.c \
 		-L${KRB5_HOME}/lib -Wl,-rpath -Wl,${KRB5_HOME}/lib \
