@@ -2119,6 +2119,7 @@ foomatic-db	ports/print/foomatic-db
 foomatic-db-engine	ports/print/foomatic-db-engine
 fooseti		ports/astro/fooseti
 fop		ports/textproc/fop
+foremost	ports/sysutils/foremost
 forg		ports/net/forg
 forkbomb	ports/benchmarks/forkbomb
 formication	ports/www/formication
