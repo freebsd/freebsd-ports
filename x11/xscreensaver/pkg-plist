@@ -307,5 +307,4 @@ share/xscreensaver/config/xteevee.xml
 share/xscreensaver/config/zoom.xml
 @dirrm share/xscreensaver/config
 @dirrm share/xscreensaver
-%%NOGNOME:%%@dirrm share/xscreensaver
 @dirrm bin/xscreensaver-hacks
