@@ -16,14 +16,9 @@ EXTRACT_ONLY=	#empty
 MAINTAINER=	mita@FreeBSD.org
 COMMENT=	Wiliam Chia-Wei Cheng's yet another PS to EPSI converter
 
-BROKEN=		"Checksum mismatch"
-EXPIRATION_DATE=2004-08-20
-DEPRECATED=	${BROKEN}
-
-USE_GHOSTSCRIPT_RUN=	yes
-
 RUN_DEPENDS=	pbmtoepsi:${PORTSDIR}/graphics/netpbm
 
+USE_GHOSTSCRIPT_RUN=	yes
 NO_WRKSUBDIR=	yes
 
 .SILENT:
