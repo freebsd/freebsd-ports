@@ -6,22 +6,32 @@
 #
 
 PORTNAME=	ncftpd
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.3
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftpd/${PORTVERSION}/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd4.4-${ARCH}-export
+DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd${BINVER}-${ARCH}-export
 
 MAINTAINER=	jus@security.za.net
 COMMENT=	A well known commercial FTP daemon with a 30-day evaluation license
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-BROKEN=		"Does not fetch"
-
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	YES
 LICENSE=	shareware
 RESTRICTED=	"30 day evaluation license"
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+BINVER=		5.0
+.elif ${OSVERSION} >= 480000
+BINVER=		4.8
+.elif ${OSVERSION} >= 350000
+BINVER=		3.5.1
+.else
+BROKEN=		"FreeBSD version too old"
+.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/etc/ncftpd
@@ -44,4 +54,4 @@ post-install:
 .endif
 	${SED} -e 's,%%PREFIX%%,${PREFIX},' ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
