@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libelf
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.stud.uni-hannover.de/~michael/software/ \
@@ -14,10 +14,14 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 MASTER_SITE_SUBDIR=	libs .
 
 MAINTAINER=	roam@FreeBSD.org
-COMMENT=	"A public ELF file access library"
+COMMENT=	"A public ELF file access library similar to libelf(3) in Solaris"
+
+LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--enable-shared
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_ARGS+=	--enable-shared --disable-compat
 INSTALLS_SHLIB=	yes
 PLIST_SUB+=	LIBVER=${PORTVERSION} \
 		LIBVER_SHORT=${PORTVERSION:R}
