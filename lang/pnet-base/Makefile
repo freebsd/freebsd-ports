@@ -18,6 +18,8 @@ COMMENT=	C\# compiler and runtime engine
 
 BUILD_DEPENDS=	treecc:${PORTSDIR}/lang/treecc
 
+BROKEN=		Incomplete pkg-plist
+
 .if !defined(WITHOUT_X11)
 USE_XLIB=	yes
 .endif
