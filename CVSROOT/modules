@@ -7151,6 +7151,7 @@ p5-POE-Component-Server-HTTP	ports/www/p5-POE-Component-Server-HTTP
 p5-POE-Component-Server-XMLRPC	ports/devel/p5-POE-Component-Server-XMLRPC
 p5-POE-Component-TSTP	ports/devel/p5-POE-Component-TSTP
 p5-POE-Exceptions	ports/devel/p5-POE-Exceptions
+p5-POE-Filter-XML	ports/textproc/p5-POE-Filter-XML
 p5-POE-Session-MultiDispatch	ports/devel/p5-POE-Session-MultiDispatch
 p5-PPerl	ports/devel/p5-PPerl
 p5-PV		ports/devel/p5-PV
