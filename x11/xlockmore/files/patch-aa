@@ -1,12 +1,54 @@
-*** resource.c.orig	Tue Jul 23 08:45:25 1996
---- resource.c	Tue Jul 23 08:45:31 1996
-***************
-*** 890,896 ****
-  				struct hostent *host;
-  				char      **hp;
-  				int         badhost = 1;
-- 				extern int  gethostname(char *, size_t);
-  
-  				if (gethostname(hostname, MAXHOSTNAMELEN))
-  					error("%s: Can not get local hostname.\n");
---- 890,895 ----
+--- Imakefile.orig	Mon Oct  7 17:16:40 1996
++++ Imakefile	Sat Nov  2 14:09:57 1996
+@@ -8,7 +8,7 @@
+ 
+ XCOMM Only the image.c and bat.c modes use this.
+ XCOMM If your system has libXpm, remove the 'XCOMM ' from the next line.
+-XCOMM #define XpmLibrary
++#define XpmLibrary
+ 
+ #ifdef XpmLibrary
+           XPMDEF = -DHAS_XPM
+@@ -16,11 +16,11 @@
+ XCOMM If you get an error "Cannot find xpm.h" while compiling, set
+ XCOMM XPMINC to the directory X11/xpm.h is in.  If your xpm.h is not in a
+ XCOMM X11 directory, edit the xpm modes to reflect this.  Below is a guess.
+-          XPMINC = -I/usr/local/include
++XCOMM          XPMINC = -I/usr/local/include
+ 
+ XCOMM If you get an error "Connot find libXpm" while linking, set XPMLIBPATH
+ XCOMM to the directory libXpm.* is in.  Below is a guess.
+-          XPMLIB = -L/usr/local/lib -lXpm
++          XPMLIB = -lXpm
+ 
+ #endif
+ 
+@@ -270,9 +270,9 @@
+ XCOMM  -DSTAFF_FILE=\"/etc/xlock.staff\"  file of staff who are exempt
+ 
+ XCOMM May have to combine in one long line if "+=" does not work
+-        OPTDEF = -DUSE_VROOT -DALWAYS_ALLOW_ROOT
++XCOMM        OPTDEF = -DUSE_VROOT -DALWAYS_ALLOW_ROOT
+ XCOMM        OPTDEF += -DSYSLOG
+-XCOMM        OPTDEF += -DMOUSE_MOTION
++        OPTDEF += -DMOUSE_MOTION
+ XCOMM        OPTDEF += -DMULTIPLE_ROOT
+ XCOMM        OPTDEF += -DOLD_EVENT_LOOP
+ XCOMM        0PTDEF += -DUSE_XLOCKRC
+@@ -291,14 +291,14 @@
+    MEDIUMPIXMAP = m-$(PIXMAPTYPE)
+ XCOMM     EYESBITMAP = $(MEDIUMBITMAP)
+     IMAGEBITMAP = $(MEDIUMBITMAP)
+-XCOMM     LIFEBITMAP = $(SMALLBITMAP)
++     LIFEBITMAP = $(SMALLBITMAP)
+    LIFE1DBITMAP = $(TINYBITMAP)
+      MAZEBITMAP = $(LARGEBITMAP)
+    PUZZLEBITMAP = $(LARGEBITMAP)
+      EYESBITMAP = m-grelb
+ XCOMM    IMAGEBITMAP = l-bob
+ XCOMM    IMAGEBITMAP = m-xlock
+-     LIFEBITMAP = s-grelb
++XCOMM     LIFEBITMAP = s-grelb
+ XCOMM     MAZEBITMAP = m-xlock
+     IMAGEPIXMAP = $(MEDIUMPIXMAP)
+    PUZZLEPIXMAP = $(MEDIUMPIXMAP)
