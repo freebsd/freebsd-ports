@@ -3,7 +3,7 @@
 # Date created:				11 Nov 1997
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.3 1997/10/03 14:13:23 jfitz Exp $
+# $Id: Makefile,v 1.4 1997/11/11 16:58:47 jfitz Exp $
 #
 
 DISTNAME=	db-2.3.12
@@ -39,5 +39,7 @@ post-install:
 .for example in AccessExample.cpp AppinitExample.cpp LockExample.cpp MpoolExample.cpp TpcbExample.cpp
 	${INSTALL_DATA} ${WRKSRC}/../examples_cxx/${example} ${PREFIX}/share/examples/db
 .endfor
+
+MANUAL_PACKAGE_BUILD=	incompatible with libc version
 
 .include <bsd.port.mk>
