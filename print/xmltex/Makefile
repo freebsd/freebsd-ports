@@ -34,6 +34,7 @@ WRKSRC=		${WRKDIR}/base
 MAKE_ENV=	TEXMFCNF=${FILESDIR}:${LOCALBASE}/${TEXMFWEB2C}
 
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
+TEXMF=		share/texmf
 TEXMFLOCAL=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
 TEXMFWEB2C=	share/texmf/web2c
