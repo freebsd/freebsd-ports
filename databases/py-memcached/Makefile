@@ -7,7 +7,7 @@
 
 PORTNAME=	memcached
 PORTVERSION=	1.2
-CATEGORIES=	databases
+CATEGORIES=	databases python
 MASTER_SITES=	http://www.danga.com/memcached/dist/
 PKGNAMEPREFIX=	py-
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
