@@ -10,6 +10,7 @@
     SUBDIR += cingb
     SUBDIR += cpmemu
     SUBDIR += cpmtools
+    SUBDIR += darcnes
     SUBDIR += dgen-sdl
     SUBDIR += dlx
     SUBDIR += fmsx
