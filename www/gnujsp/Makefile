@@ -6,34 +6,33 @@
 # $FreeBSD$
 #
 
-DISTNAME=	gnujsp-0.9.10
+DISTNAME=	gnujsp-1.0.0
 CATEGORIES=	www java
-MASTER_SITES=	http://www.klomp.org/gnujsp/09x/
+MASTER_SITES=	http://www.klomp.org/gnujsp/downloads/
 
 MAINTAINER=	girgen@partitur.se
 
-RUN_DEPENDS=	${PREFIX}/share/java/classes/jsdk.jar:${PORTSDIR}/java/jsdk
+RUN_DEPENDS=	${LOCALBASE}/libexec/apache/mod_jserv.so:${PORTSDIR}/www/apache-jserv
 
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/MESSAGE
 
+NO_BUILD=	yes  # use the prebuilt jar files
+
 do-install:
 		${MKDIR} ${PREFIX}/share/java/classes
-		${INSTALL_DATA} ${WRKSRC}/lib/gnujsp.jar ${PREFIX}/share/java/classes
+		${INSTALL_DATA} ${WRKSRC}/lib/gnujsp10.jar ${WRKSRC}/lib/servlet-2.0-plus.jar \
+			${PREFIX}/share/java/classes
 .if !defined(NOPORTDOCS)
-		${MKDIR} ${PREFIX}/share/examples/gnujsp/org/gjt/vinny/beans
-.for file in date.jsp mailform.html sendmail.jsp \
-		session.jsp snoop.jsp \
-		org/gjt/vinny/beans/MailBean.java \
-		org/gjt/vinny/beans/MailBean.class
+		${MKDIR} ${PREFIX}/share/examples/gnujsp
 		@ cd ${WRKSRC}/examples ;\
-		 ${INSTALL_DATA} ${file} \
-		 ${PREFIX}/share/examples/gnujsp/`dirname ${file}`
-.endfor
+			${INSTALL_DATA} date.jsp snoop.jsp hello.jsp ${PREFIX}/share/examples/gnujsp
 		${MKDIR} ${PREFIX}/share/doc/gnujsp
-.for file in CHANGES INSTALL README
+.for file in CHANGES FAQ INSTALL.apache INSTALL.vqserver INSTALL.jigsaw README install.html
 		${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/gnujsp
 .endfor
+		@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${FILESDIR}/gnujsp.properties.in > \
+			${PREFIX}/share/doc/gnujsp/gnujsp.properties
 .endif
 
 post-install:
