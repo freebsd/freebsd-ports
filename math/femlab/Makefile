@@ -14,9 +14,9 @@ DISTNAME=	femlab-2d-v${PORTVERSION}
 
 MAINTAINER=	giffunip@asme.org
 
-BUILD_DEPENDS=	${PREFIX}/lib/libsx.a:${PORTSDIR}/x11/libsx
+BUILD_DEPENDS=	${X11BASE}/lib/libsx.a:${PORTSDIR}/x11/libsx
 
-WRKSRC=         ${WRKDIR}/${PKGNAME}
+WRKSRC=		${WRKDIR}/${PKGNAME}
 USE_X_PREFIX=	yes
 
 FEMLAB_HOME=	${PREFIX}/lib/X11/femlab
