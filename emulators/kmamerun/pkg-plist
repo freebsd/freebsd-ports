@@ -1,15 +1,19 @@
 bin/kmamerun
-share/doc/HTML/en/kmamerun/index.nif
-share/doc/HTML/en/kmamerun/index.html
+share/applnk/Applications/kmamerun.kdelnk
+share/apps/kmamerun/toolbar/game_exists.xpm
+share/apps/kmamerun/toolbar/game_noroms.xpm
+share/apps/kmamerun/toolbar/game_wrongroms.xpm
+share/apps/kmamerun/toolbar/preferences.xpm
+share/apps/kmamerun/toolbar/rungame.xpm
 share/doc/HTML/en/kmamerun/index-1.html
 share/doc/HTML/en/kmamerun/index-2.html
 share/doc/HTML/en/kmamerun/index-3.html
 share/doc/HTML/en/kmamerun/index-4.html
 share/doc/HTML/en/kmamerun/index-5.html
-share/doc/HTML/en/kmamerun/index.sgml
-share/doc/HTML/en/kmamerun/logotp3.gif
-share/applnk/Utilities/kmamerun.kdelnk
+share/doc/HTML/en/kmamerun/index-6.html
+share/doc/HTML/en/kmamerun/index.html
 share/icons/kmamerun.xpm
-share/locale/de/LC_MESSAGES/kmamerun.mo
-share/locale/it/LC_MESSAGES/kmamerun.mo
+share/icons/mini/kmamerun.xpm
 @dirrm share/doc/HTML/en/kmamerun
+@dirrm share/apps/kmamerun/toolbar
+@dirrm share/apps/kmamerun
