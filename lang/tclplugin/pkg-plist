@@ -5,8 +5,10 @@ lib/netscape/tclplug/2.0/config/javascript.cfg
 lib/netscape/tclplug/2.0/config/outside.cfg
 lib/netscape/tclplug/2.0/config/plugin.cfg
 lib/netscape/tclplug/2.0/config/trusted.cfg
+lib/netscape/tclplug/2.0/doc/Announce.txt
 lib/netscape/tclplug/2.0/doc/FAQ
-lib/netscape/tclplug/2.0/doc/README
+lib/netscape/tclplug/2.0/doc/INSTALL.unix
+lib/netscape/tclplug/2.0/doc/README.txt
 lib/netscape/tclplug/2.0/doc/changes
 lib/netscape/tclplug/2.0/doc/config.n
 lib/netscape/tclplug/2.0/doc/feature.n
