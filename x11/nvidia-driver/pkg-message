@@ -8,7 +8,7 @@ module, by doing
 
 # kldload nvidia
 
-If you compile this package with USE_FREEBSD_AGP=yes, you must load
+If you compile this package with WITH_FREEBSD_AGP=yes, you must load
 the agp.ko kernel module *at boot time* by putting the following
 line into your /boot/loader.conf:
 
