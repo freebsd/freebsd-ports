@@ -7,10 +7,13 @@ rt3/bin/rt-crontool
 rt3/bin/rt-mailgate
 rt3/bin/webmux.pl
 rt3/etc/RT_Config.pm
+rt3/etc/RT_SiteConfig.pm
+rt3/etc/acl.Informix
 rt3/etc/acl.Oracle
 rt3/etc/acl.Pg
 rt3/etc/acl.mysql
 rt3/etc/initialdata
+rt3/etc/schema.Informix
 rt3/etc/schema.Oracle
 rt3/etc/schema.Pg
 rt3/etc/schema.SQLite
@@ -72,12 +75,14 @@ rt3/lib/RT/Handle.pm
 rt3/lib/RT/I18N.pm
 rt3/lib/RT/I18N/cs.pm
 rt3/lib/RT/I18N/cs.po
+rt3/lib/RT/I18N/da.po
 rt3/lib/RT/I18N/de.po
 rt3/lib/RT/I18N/en.po
 rt3/lib/RT/I18N/es.po
 rt3/lib/RT/I18N/fi.po
 rt3/lib/RT/I18N/fr.po
 rt3/lib/RT/I18N/he.po
+rt3/lib/RT/I18N/hu.po
 rt3/lib/RT/I18N/i_default.pm
 rt3/lib/RT/I18N/it.po
 rt3/lib/RT/I18N/ja.po
@@ -165,13 +170,16 @@ rt3/lib/t/data/8859-15-message-series/msg4
 rt3/lib/t/data/8859-15-message-series/msg5
 rt3/lib/t/data/8859-15-message-series/msg6
 rt3/lib/t/data/8859-15-message-series/msg7
+rt3/lib/t/data/crashes-file-based-parser
 rt3/lib/t/data/multipart-alternative-with-umlaut
 rt3/lib/t/data/multipart-report
 rt3/lib/t/data/nested-mime-sample
 rt3/lib/t/data/nested-rfc-822
 rt3/lib/t/data/new-ticket-from-iso-8859-1
 rt3/lib/t/data/new-ticket-from-iso-8859-1-full
+rt3/lib/t/data/notes-uuencoded
 rt3/lib/t/data/russian-subject-no-content-type
+rt3/lib/t/data/rt-send-cc
 rt3/lib/t/data/text-html-in-russian
 rt3/lib/t/data/text-html-with-umlaut
 rt3/lib/t/regression/00placeholder
@@ -209,6 +217,7 @@ rt3/share/html/Admin/Elements/SelectScrip
 rt3/share/html/Admin/Elements/SelectScripAction
 rt3/share/html/Admin/Elements/SelectScripCondition
 rt3/share/html/Admin/Elements/SelectSingleOrMultiple
+rt3/share/html/Admin/Elements/SelectStage
 rt3/share/html/Admin/Elements/SelectTemplate
 rt3/share/html/Admin/Elements/SelectUsers
 rt3/share/html/Admin/Elements/SystemTabs
@@ -265,6 +274,7 @@ rt3/share/html/Elements/MessageBox
 rt3/share/html/Elements/MyRequests
 rt3/share/html/Elements/MyTickets
 rt3/share/html/Elements/PageLayout
+rt3/share/html/Elements/QueryString
 rt3/share/html/Elements/Quicksearch
 rt3/share/html/Elements/Refresh
 rt3/share/html/Elements/Section
@@ -277,6 +287,7 @@ rt3/share/html/Elements/SelectDateRelation
 rt3/share/html/Elements/SelectDateType
 rt3/share/html/Elements/SelectEqualityOperator
 rt3/share/html/Elements/SelectGroups
+rt3/share/html/Elements/SelectLang
 rt3/share/html/Elements/SelectLinkType
 rt3/share/html/Elements/SelectMatch
 rt3/share/html/Elements/SelectNewTicketQueue
@@ -314,6 +325,7 @@ rt3/share/html/REST/1.0/Forms/queue/default
 rt3/share/html/REST/1.0/Forms/queue/ns
 rt3/share/html/REST/1.0/Forms/ticket/attachments
 rt3/share/html/REST/1.0/Forms/ticket/default
+rt3/share/html/REST/1.0/Forms/ticket/history
 rt3/share/html/REST/1.0/Forms/ticket/links
 rt3/share/html/REST/1.0/Forms/user/default
 rt3/share/html/REST/1.0/Forms/user/ns
@@ -356,6 +368,8 @@ rt3/share/html/Ticket/Elements/EditDates
 rt3/share/html/Ticket/Elements/EditLinks
 rt3/share/html/Ticket/Elements/EditPeople
 rt3/share/html/Ticket/Elements/EditWatchers
+rt3/share/html/Ticket/Elements/FindAttachments
+rt3/share/html/Ticket/Elements/LoadTextAttachments
 rt3/share/html/Ticket/Elements/ShowAttachments
 rt3/share/html/Ticket/Elements/ShowBasics
 rt3/share/html/Ticket/Elements/ShowCustomFields
