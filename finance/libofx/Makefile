@@ -17,13 +17,12 @@ COMMENT=	OpenSource implementation of the OFX (Open Financial eXchange)
 
 LIB_DEPENDS=	osp.3:${PORTSDIR}/textproc/opensp
 
+USE_GNOME=	gnometarget lthack
 USE_LIBTOOL=	yes
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-doxygen --disable-dot
 INSTALLS_SHLIB=	yes
-
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib -lintl
 
 post-install:
 .if !defined(NOPORTDOCS)
