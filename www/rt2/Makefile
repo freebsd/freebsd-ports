@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.fsck.com/pub/rt/release/
 DISTNAME=	rt-${PORTVERSION:S/./-/g}
 
-MAINTAINER=	plasmaball@pchome.com.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RT is an industrial-grade ticketing system written in Perl
 
 BUILD_DEPENDS=	${LOCALBASE}/libexec/apache/libperl.so:${PORTSDIR}/www/mod_perl \
