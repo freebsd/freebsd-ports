@@ -4153,6 +4153,7 @@ mdk		ports/lang/mdk
 mdnsd		ports/net/mdnsd
 mdw		ports/www/mdw
 medusa		ports/sysutils/medusa
+megapov		ports/graphics/megapov
 meld		ports/textproc/meld
 memcached	ports/databases/memcached
 memcheck	ports/devel/memcheck
