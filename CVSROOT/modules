@@ -72,7 +72,6 @@ taginfo		CVSROOT taginfo
 44bsd-rdist	ports/net/44bsd-rdist
 4va		ports/graphics/4va
 54321		ports/games/54321
-6to4		ports/net/6to4
 6tunnel		ports/net/6tunnel
 9box		ports/x11/9box
 9e		ports/archivers/9e
@@ -2540,6 +2539,7 @@ hexcurse	ports/editors/hexcurse
 hexedit		ports/editors/hexedit
 hexpert		ports/editors/hexpert
 heyu		ports/misc/heyu
+hf6to4		ports/net/hf6to4
 hffzip		ports/archivers/hffzip
 hfs		ports/emulators/hfs
 hfsutils	ports/emulators/hfsutils
