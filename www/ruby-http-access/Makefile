@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	http-access
-PORTVERSION=	2.B
+PORTVERSION=	2.C
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.jin.gr.jp/~nahi/Ruby/http-access/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -20,10 +20,6 @@ RUN_DEPENDS=	${RUBY_SITELIBDIR}/uri.rb:${PORTSDIR}/net/ruby-uri
 USE_RUBY=	yes
 
 NO_BUILD=	yes
-
-post-patch:
-	${RUBY} -i.orig -pe 'gsub(/\burb\b/, "uri"); gsub(/\bURb\b/, "URI")' \
-		${WRKSRC}/lib/http-access2.rb
 
 do-install:
 	cd ${WRKSRC}; ${RUBY} install.rb
