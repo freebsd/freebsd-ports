@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmemcache
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
 CATEGORIES=	databases
 MASTER_SITES=	http://people.FreeBSD.org/~seanc/ports/libmemcache/
 
@@ -18,7 +18,15 @@ BUILD_DEPENDS+=	pmk:${PORTSDIR}/devel/pmk
 
 USE_BZIP2=	yes
 
-do-configure:
-	cd ${WRKSRC}; ${LOCALBASE}/bin/pmk
+OPTIONS=	DEBUG	"Build with debugging turned on" off
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_DEBUG)
+PMKARGS=	-e debug
+.endif
+
+do-configure:
+	cd ${WRKSRC}; ${LOCALBASE}/bin/pmk ${PMKARGS}
+
+.include <bsd.port.post.mk>
