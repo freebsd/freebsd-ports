@@ -31,6 +31,7 @@
     SUBDIR += cflow
     SUBDIR += clig
     SUBDIR += codecrusader
+    SUBDIR += commoncpp
     SUBDIR += cons
     SUBDIR += cook
     SUBDIR += cproto
