@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	arson
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.7
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://belnet.dl.sourceforge.net/arson/ \
 		${MASTER_SITE_SOURCEFORGE}
