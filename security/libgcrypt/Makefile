@@ -7,11 +7,8 @@
 PORTNAME=	libgcrypt
 PORTVERSION=	1.1.11
 CATEGORIES=	security
-MASTER_SITES=	http://gd.tuwien.ac.at/privacy/gnupg/alpha/libgcrypt/ \
-		ftp://ftp.gnupg.org/gcrypt/alpha/libgcrypt/ \
-		http://ftp.hi.is/pub/mirrors/gnupg/alpha/libgcrypt/ \
-		http://www.mirrors.wiretapped.net/security/cryptography/apps/pgp/GnuPG/alpha/libgcrypt/  \
-		${MASTER_SITE_RINGSERVER}/net/gnupg/alpha/libgcrypt/ \
+MASTER_SITES=	${MASTER_SITE_GNUPG}
+MASTER_SITE_SUBDIR=	alpha/libgcrypt
 
 MAINTAINER=	arved@FreeBSD.org
 
