@@ -5,6 +5,6 @@ to manipulate multiple-byte character strings.
 This module uses the OOP syntax to tell methods
 in which charset the specified strings should be handled.
 
-WWW: http://search.cpan.org/search?dist=String-Multibyte
+WWW: http://search.cpan.org/dist/String-Multibyte/
 
 Seamus Venasse <svenasse@polaris.ca>
