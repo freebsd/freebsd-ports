@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		streamtuner
-PORTVERSION=		0.11.1
+PORTVERSION=		0.12.1
 CATEGORIES=		audio www
 MASTER_SITES=		${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		A GTK+ stream directory browser
 
+BUILD_DEPENDS=		scrollkeeper-config:${PORTSDIR}/textproc/scrollkeeper
 LIB_DEPENDS=		curl:${PORTSDIR}/ftp/curl
 
 USE_X_PREFIX=		yes
@@ -21,8 +22,6 @@ USE_GNOME=		gtk20 gnomehack
 USE_LIBTOOL_VER=	15
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-MAN1=			streamtuner.1 streamtuner-theme-convert.1
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
