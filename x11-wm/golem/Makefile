@@ -16,7 +16,7 @@ COMMENT=	Small window manager with themes and plugins
 
 .if defined(WANT_SOUND)
 LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound
-CONFIGURE_ARGS= --enable-sound
+CONFIGURE_ARGS=	--enable-sound
 PLIST_SUB+=	NO_SOUND=""
 .else
 PLIST_SUB+=	NO_SOUND="@comment "
