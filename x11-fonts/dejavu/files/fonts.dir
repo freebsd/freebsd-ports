@@ -1,4 +1,4 @@
-110
+132
 DejaVuSans-Bold.ttf -misc-DejaVu Sans-bold-r-normal--0-0-0-0-p-0-ascii-0
 DejaVuSans-Bold.ttf -misc-DejaVu Sans-bold-r-normal--0-0-0-0-p-0-fcd8859-15
 DejaVuSans-Bold.ttf -misc-DejaVu Sans-bold-r-normal--0-0-0-0-p-0-iso10646-1
@@ -54,17 +54,17 @@ DejaVuSansMono-Bold.ttf -misc-DejaVu Sans Mono-bold-r-normal--0-0-0-0-m-0-iso885
 DejaVuSansMono-Bold.ttf -misc-DejaVu Sans Mono-bold-r-normal--0-0-0-0-m-0-iso8859-9
 DejaVuSansMono-Bold.ttf -misc-DejaVu Sans Mono-bold-r-normal--0-0-0-0-m-0-koi8-r
 DejaVuSansMono-Bold.ttf -misc-DejaVu Sans Mono-bold-r-normal--0-0-0-0-m-0-koi8-ru
-DejaVuSansMono-BoldOb.ttf -misc-DejaVu Sans Mono-bold-i-normal--0-0-0-0-p-0-ascii-0
-DejaVuSansMono-BoldOb.ttf -misc-DejaVu Sans Mono-bold-i-normal--0-0-0-0-p-0-fcd8859-15
-DejaVuSansMono-BoldOb.ttf -misc-DejaVu Sans Mono-bold-i-normal--0-0-0-0-p-0-iso10646-1
-DejaVuSansMono-BoldOb.ttf -misc-DejaVu Sans Mono-bold-i-normal--0-0-0-0-p-0-iso8859-1
-DejaVuSansMono-BoldOb.ttf -misc-DejaVu Sans Mono-bold-i-normal--0-0-0-0-p-0-iso8859-15
-DejaVuSansMono-BoldOb.ttf -misc-DejaVu Sans Mono-bold-i-normal--0-0-0-0-p-0-iso8859-2
-DejaVuSansMono-BoldOb.ttf -misc-DejaVu Sans Mono-bold-i-normal--0-0-0-0-p-0-iso8859-3
-DejaVuSansMono-BoldOb.ttf -misc-DejaVu Sans Mono-bold-i-normal--0-0-0-0-p-0-iso8859-5
-DejaVuSansMono-BoldOb.ttf -misc-DejaVu Sans Mono-bold-i-normal--0-0-0-0-p-0-iso8859-9
-DejaVuSansMono-BoldOb.ttf -misc-DejaVu Sans Mono-bold-i-normal--0-0-0-0-p-0-koi8-r
-DejaVuSansMono-BoldOb.ttf -misc-DejaVu Sans Mono-bold-i-normal--0-0-0-0-p-0-koi8-ru
+DejaVuSansMono-BoldOb.ttf -misc-DejaVu Sans Mono-bold-i-normal--0-0-0-0-m-0-ascii-0
+DejaVuSansMono-BoldOb.ttf -misc-DejaVu Sans Mono-bold-i-normal--0-0-0-0-m-0-fcd8859-15
+DejaVuSansMono-BoldOb.ttf -misc-DejaVu Sans Mono-bold-i-normal--0-0-0-0-m-0-iso10646-1
+DejaVuSansMono-BoldOb.ttf -misc-DejaVu Sans Mono-bold-i-normal--0-0-0-0-m-0-iso8859-1
+DejaVuSansMono-BoldOb.ttf -misc-DejaVu Sans Mono-bold-i-normal--0-0-0-0-m-0-iso8859-15
+DejaVuSansMono-BoldOb.ttf -misc-DejaVu Sans Mono-bold-i-normal--0-0-0-0-m-0-iso8859-2
+DejaVuSansMono-BoldOb.ttf -misc-DejaVu Sans Mono-bold-i-normal--0-0-0-0-m-0-iso8859-3
+DejaVuSansMono-BoldOb.ttf -misc-DejaVu Sans Mono-bold-i-normal--0-0-0-0-m-0-iso8859-5
+DejaVuSansMono-BoldOb.ttf -misc-DejaVu Sans Mono-bold-i-normal--0-0-0-0-m-0-iso8859-9
+DejaVuSansMono-BoldOb.ttf -misc-DejaVu Sans Mono-bold-i-normal--0-0-0-0-m-0-koi8-r
+DejaVuSansMono-BoldOb.ttf -misc-DejaVu Sans Mono-bold-i-normal--0-0-0-0-m-0-koi8-ru
 DejaVuSansMono-Oblique.ttf -misc-DejaVu Sans Mono-medium-i-normal--0-0-0-0-m-0-ascii-0
 DejaVuSansMono-Oblique.ttf -misc-DejaVu Sans Mono-medium-i-normal--0-0-0-0-m-0-fcd8859-15
 DejaVuSansMono-Oblique.ttf -misc-DejaVu Sans Mono-medium-i-normal--0-0-0-0-m-0-iso10646-1
@@ -98,6 +98,28 @@ DejaVuSerif-Bold.ttf -misc-DejaVu Serif-bold-r-normal--0-0-0-0-p-0-iso8859-5
 DejaVuSerif-Bold.ttf -misc-DejaVu Serif-bold-r-normal--0-0-0-0-p-0-iso8859-9
 DejaVuSerif-Bold.ttf -misc-DejaVu Serif-bold-r-normal--0-0-0-0-p-0-koi8-r
 DejaVuSerif-Bold.ttf -misc-DejaVu Serif-bold-r-normal--0-0-0-0-p-0-koi8-ru
+DejaVuSerif-BoldOblique.ttf -misc-DejaVu Serif-bold-i-normal--0-0-0-0-p-0-ascii-0
+DejaVuSerif-BoldOblique.ttf -misc-DejaVu Serif-bold-i-normal--0-0-0-0-p-0-fcd8859-15
+DejaVuSerif-BoldOblique.ttf -misc-DejaVu Serif-bold-i-normal--0-0-0-0-p-0-iso10646-1
+DejaVuSerif-BoldOblique.ttf -misc-DejaVu Serif-bold-i-normal--0-0-0-0-p-0-iso8859-1
+DejaVuSerif-BoldOblique.ttf -misc-DejaVu Serif-bold-i-normal--0-0-0-0-p-0-iso8859-15
+DejaVuSerif-BoldOblique.ttf -misc-DejaVu Serif-bold-i-normal--0-0-0-0-p-0-iso8859-2
+DejaVuSerif-BoldOblique.ttf -misc-DejaVu Serif-bold-i-normal--0-0-0-0-p-0-iso8859-3
+DejaVuSerif-BoldOblique.ttf -misc-DejaVu Serif-bold-i-normal--0-0-0-0-p-0-iso8859-5
+DejaVuSerif-BoldOblique.ttf -misc-DejaVu Serif-bold-i-normal--0-0-0-0-p-0-iso8859-9
+DejaVuSerif-BoldOblique.ttf -misc-DejaVu Serif-bold-i-normal--0-0-0-0-p-0-koi8-r
+DejaVuSerif-BoldOblique.ttf -misc-DejaVu Serif-bold-i-normal--0-0-0-0-p-0-koi8-ru
+DejaVuSerif-Oblique.ttf -misc-DejaVu Serif-medium-i-normal--0-0-0-0-p-0-ascii-0
+DejaVuSerif-Oblique.ttf -misc-DejaVu Serif-medium-i-normal--0-0-0-0-p-0-fcd8859-15
+DejaVuSerif-Oblique.ttf -misc-DejaVu Serif-medium-i-normal--0-0-0-0-p-0-iso10646-1
+DejaVuSerif-Oblique.ttf -misc-DejaVu Serif-medium-i-normal--0-0-0-0-p-0-iso8859-1
+DejaVuSerif-Oblique.ttf -misc-DejaVu Serif-medium-i-normal--0-0-0-0-p-0-iso8859-15
+DejaVuSerif-Oblique.ttf -misc-DejaVu Serif-medium-i-normal--0-0-0-0-p-0-iso8859-2
+DejaVuSerif-Oblique.ttf -misc-DejaVu Serif-medium-i-normal--0-0-0-0-p-0-iso8859-3
+DejaVuSerif-Oblique.ttf -misc-DejaVu Serif-medium-i-normal--0-0-0-0-p-0-iso8859-5
+DejaVuSerif-Oblique.ttf -misc-DejaVu Serif-medium-i-normal--0-0-0-0-p-0-iso8859-9
+DejaVuSerif-Oblique.ttf -misc-DejaVu Serif-medium-i-normal--0-0-0-0-p-0-koi8-r
+DejaVuSerif-Oblique.ttf -misc-DejaVu Serif-medium-i-normal--0-0-0-0-p-0-koi8-ru
 DejaVuSerif-Roman.ttf -misc-DejaVu Serif-medium-r-normal--0-0-0-0-p-0-ascii-0
 DejaVuSerif-Roman.ttf -misc-DejaVu Serif-medium-r-normal--0-0-0-0-p-0-fcd8859-15
 DejaVuSerif-Roman.ttf -misc-DejaVu Serif-medium-r-normal--0-0-0-0-p-0-iso10646-1
