@@ -1,0 +1,7 @@
+*
+* Usage:
+*
+* 1) Insert blank floppy
+* 2) dd if=%%DATADIR%%/floppy.bin of=/dev/fd0
+* 3) Boot the floppy
+*
