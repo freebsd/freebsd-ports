@@ -4,7 +4,7 @@ standards, including HTML, CSS, XML, XSL, JavaScript, MathML,
 SVG and RDF.  This version also supports SSL encryption, and Java 
 and Java with the use of the FreeBSD native Java plug-in.
 
-This version is described by mozilla.org as their most stable release.  Users
+This version is described by mozilla.org as their stable vendor release.  Users
 needing the Mozilla vendor API (for applications such as Galeon), or users
 new to Mozilla should stick with this version.
 
