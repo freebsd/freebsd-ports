@@ -1,12 +1,12 @@
 # New ports collection makefile for:	tkrat2
-# Version required:	2.0b7
+# Version required:	2.0b9
 # Date created:		9 November 1999
 # Whom:			Stephen J. Roznowski <sjr@home.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tkrat-2.0b7
+DISTNAME=	tkrat-2.0b9
 CATEGORIES=	mail tk82
 MASTER_SITES=	ftp://ftp.md.chalmers.se/pub/tkrat/ \
 		ftp://ftp.sunet.se/pub/unix/mail/tkrat/
