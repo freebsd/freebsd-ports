@@ -3,7 +3,7 @@
 # Date created:				April 18th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.8 1998/08/30 15:48:29 steve Exp $
+#   $Id: Makefile,v 1.9 1998/09/28 17:11:12 smace Exp $
 #
 
 DISTNAME=	mrtg-2.5.3
@@ -16,6 +16,7 @@ BUILD_DEPENDS=	${PREFIX}/lib/libgd.a:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/PV.pm:${PORTSDIR}/devel/p5-PV
 
 USE_PERL5=	YES
+MAKE_ENV+=	PERL=${PERL}
 
 ALL_TARGET=	rateup substitute
 
