@@ -17,9 +17,10 @@ MAINTAINER=	yoichi@FreeBSD.org
 ALL_TARGET=
 USE_X_PREFIX=	yes
 USE_GTK=	yes
+USE_REINPLACE=	yes
 
-pre-build:
-	${PERL} -pi -e "s@gcc@${CC}@g; \
+post-patch:
+	${REINPLACE_CMD} -e "s@gcc@${CC}@g; \
 			s@-g@${CFLAGS}@g; \
 			s@gtk-config@${GTK_CONFIG}@g" ${WRKSRC}/Makefile
 
