@@ -1,15 +1,16 @@
 --- configure.orig	Wed Aug 27 12:17:39 2003
-+++ configure	Mon Oct 13 10:21:17 2003
-@@ -6257,7 +6257,7 @@
++++ configure	Mon Nov 17 19:41:58 2003
+@@ -6257,7 +6257,8 @@
  
  # detect system type
  case "$host" in
 -#	alpha-*-*bsd*)         ARCH="-D__FBSD__" ;;
++	i386-*-*bsd*)        ARCH="-D__BSD__ -D__I386__" ;;
 +	*-*-*bsd*)           ARCH="-D__BSD__" ;;
  	alpha*-*-linux-*)      ARCH="-D__ALPHA__ -D__LINUX__" ;;
  	alpha*-*-*-*)          ARCH="-D__ALPHA__ -D__LINUX__" ;;
  	arm*-*-linux-*)        ARCH="-D__ARM__ -D__LINUX__" ;;
-@@ -6266,7 +6266,6 @@
+@@ -6266,7 +6267,6 @@
  	i[3456]86-*-hurd-*)  ARCH="-D__LINUX__" ;;
  	i[3456]86-*-mingw*)  ARCH="-D__WIN32__ -D__MINGW32__ -Os -s" ;;
  	i[3456]86-*-cygwin)  ARCH="-D__WIN32__ -D__CYGWIN__ -mno-cygwin" ;;
@@ -17,7 +18,7 @@
  	ia64-*-linux-*)        ARCH="-D__LINUX__" ;;
  	m68k-*-linux-*)        ARCH="-D__M68K__ -D__LINUX__" ;;
  	mips-*-linux-*)        ARCH="-D__MIPS__ -D__LINUX__" ;;
-@@ -24767,6 +24766,7 @@
+@@ -24767,6 +24767,7 @@
  
  
  
