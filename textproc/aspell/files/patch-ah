@@ -1,20 +1,29 @@
---- configure.orig	Mon Jul 26 12:31:53 1999
-+++ configure	Thu Aug 19 11:42:57 1999
-@@ -2581,7 +2581,7 @@
-   \
- dictdir=$enable_dict_dir
+--- configure.orig	Sat Jun 10 16:20:16 2000
++++ configure	Tue Jun 13 13:57:08 2000
+@@ -862,7 +862,7 @@
+   enableval="$enable_dict_dir"
+   dictdir=$enable_dict_dir
  else
 -  dictdir=${libdir}/aspell 
 +  dictdir=${datadir}/aspell 
  fi
  
  
-@@ -2592,7 +2592,7 @@
-   \
- pkgdocdir=$enable_doc_dir
+@@ -872,7 +872,7 @@
+   enableval="$enable_doc_dir"
+   pkgdocdir=$enable_doc_dir
  else
 -  pkgdocdir=\${prefix}/doc/aspell 
 +  pkgdocdir=\${prefix}/share/doc/aspell 
  fi
  
  
+@@ -2197,7 +2197,7 @@
+ objext="$OBJEXT" exeext="$EXEEXT" reload_flag="$reload_flag" \
+ deplibs_check_method="$deplibs_check_method" file_magic_cmd="$file_magic_cmd" \
+ ${CONFIG_SHELL-/bin/sh} $ac_aux_dir/ltconfig --no-reexec \
+-$libtool_flags --no-verify --build="$build" $ac_aux_dir/ltmain.sh $lt_target \
++$libtool_flags $ac_aux_dir/ltmain.sh $lt_target \
+ || { echo "configure: error: libtool configure failed" 1>&2; exit 1; }
+ 
+ # Reload cache, that may have been modified by ltconfig

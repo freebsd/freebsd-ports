@@ -1,6 +1,7 @@
 bin/aspell
 bin/run-with-aspell
 include/aspell/amanager.hh
+include/aspell/app_string.hh
 include/aspell/asuggest.hh
 include/aspell/bad_value.hh
 include/aspell/block_vector.hh
@@ -12,7 +13,6 @@ include/aspell/clone_ptr.hh
 include/aspell/config.hh
 include/aspell/config_data.hh
 include/aspell/const_string.hh
-include/aspell/container.hh
 include/aspell/copy_ptr-t.hh
 include/aspell/copy_ptr.hh
 include/aspell/data.hh
@@ -25,6 +25,8 @@ include/aspell/exception.hh
 include/aspell/file_exceps.hh
 include/aspell/file_util.hh
 include/aspell/filter.hh
+include/aspell/generic_copy_ptr-t.hh
+include/aspell/generic_copy_ptr.hh
 include/aspell/hash_const_string.hh
 include/aspell/hash_repl-p.hh
 include/aspell/hash_repl-t.hh
@@ -32,7 +34,7 @@ include/aspell/hash_repl.hh
 include/aspell/hash_simple_string.hh
 include/aspell/hash_string.hh
 include/aspell/hash_string_s.hh
-include/aspell/itemize.hh
+include/aspell/invalid_word.hh
 include/aspell/itr_equal.hh
 include/aspell/language.hh
 include/aspell/language_exceps.hh
@@ -76,7 +78,10 @@ include/aspell/vector_hash.hh
 include/aspell/weights.hh
 lib/libaspell.a
 lib/libaspell.so
-lib/libaspell.so.4
+lib/libaspell.so.6
+lib/libpspell_aspell.a
+lib/libpspell_aspell.so
+lib/libpspell_aspell.so.1
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/aspell/ASCII.dat
@@ -156,6 +161,8 @@ share/doc/aspell/manual.aux
 share/doc/aspell/manual.dvi
 share/doc/aspell/manual.tex
 share/doc/aspell/manual2.lyx
+share/pspell/en-american-aspell.pwli
+share/pspell/en-aspell.pwli
 @dirrm include/aspell
 @dirrm share/aspell
 @dirrm share/doc/aspell/man-html
