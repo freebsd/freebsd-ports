@@ -13,6 +13,8 @@ distclean - compare md5 sums of distfiles in ports/distfiles with currently
 getpr   - downloads a problem report from GNATS and attempts to extract
           the patch, shar, uuencoded file from it.
           this probably needs to be checked for potential security problems.
+gnomedepends - Analyse pkg/PLIST and give an advice as to which GNOME ports
+               should be listes in {RUN,LIB}_DEPENDS for this port 
 prpatch - just does `patch $1 < pr-patch' (pr-patch is created by getpr)
 prdone  - checks in the port, attempting to fill out the commit message using
           information from the problem report and then takes you into edit-pr
@@ -61,6 +63,39 @@ doesn't have associated md5 entry (most likely outdated distfiles).
 
 ----------------------------------------------------------------------
 
+gnomedepends is a script, which analyses pkg/PLIST and gives an advice as to
+which GNOME ports should be listes in {RUN,LIB}_DEPENDS for the port to ensure
+correct removal of GNOME shared directories. Usage is simple:
+	% cd /usr/ports/CATEGORY/PORT
+	% gnomedepends.py
+	According to the contents of PLIST the port depends on the following GNOME
+	port(s):
+
+	/usr/ports/audio/gnomeaudio, for directories:
+        	share/gnome/sounds
+
+	/usr/ports/sysutils/gnomecontrolcenter, for directories:
+        	share/gnome/apps
+
+	/usr/ports/x11/gnomecore, for directories:
+        	share/gnome/apps/Games
+
+	/usr/ports/x11/gnomelibs, for directories:
+        	etc/sound/events
+        	etc/sound
+        	share/gnome/games
+        	share/gnome/pixmaps
+        	share/gnome
+
+The example above means that you need to have ${PORTSDIR}/audio/gnomeaudio,
+${PORTSDIR}/sysutils/gnomecontrolcenter, ${PORTSDIR}/x11/gnomecore and
+${PORTSDIR}/x11/gnomelibs listed in {RUN,LIB}_DEPENDS for this port.
+Please be warned, that the this only means that the ports listed by the script
+required for correct removal of GNOME shared directories, not for the port
+functionality, so actual {RUN,LIB}_DEPENDS may have more entries.
+
+----------------------------------------------------------------------
+
 NOTE: These scripts need work and are *NOT* safe to use unless you know
       what they do.  Use at your own risk.  Patches would be great, but
-      I'd prefer they pass through me.
+      it is prefered they pass through maintainer of each particular script.
