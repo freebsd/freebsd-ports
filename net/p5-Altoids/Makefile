@@ -1,4 +1,4 @@
-# New ports collection makefile for:	p5-SNMP_Session
+# New ports collection makefile for:	p5-Altoids
 # Date created:				13 June 1999
 # Whom:					Bill Fumerola <billf@FreeBSD.org>
 #
