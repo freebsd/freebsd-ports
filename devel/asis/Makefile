@@ -24,11 +24,7 @@ MAKEFILE=	"${FILESDIR}/Makefile.bsd"
 MAKE_ARGS=	GMAKE=${GMAKE} PORTVERSION=${PORTVERSION} \
 		LN=${LN}
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
 BROKEN=         "Does not compile"
-.endif
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/asis
@@ -51,4 +47,4 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/tools/gnatstub/README ${DOCSDIR}/README.gnatstub
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
