@@ -289,7 +289,7 @@ post-extract:
 	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/../external/gpc/
 	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/../external/gpc/
 	@${MAKE} extract-mozilla WRKDIRPREFIX=""
-	@${RM} ${WRKSRC}/../moz/zipped/*.zip
+	@-${RM} ${WRKSRC}/../moz/zipped/*.zip
 .if defined(L10NHELP)
 	@${ECHO_MSG} "===>  Extracting L10NHELP sub project"
 	@${MKDIR} ${WRKDIR}/L10NHELP
@@ -377,6 +377,10 @@ build-mozilla:
 	@${CP} ${FILESDIR}/zipmoz.sh ${WRKDIR}
 	@${CHMOD} 755 ${WRKDIR}/zipmoz.sh
 	@${WRKDIR}/zipmoz.sh ${WRKDIR}/mozilla/work/mozilla/dist FREEBSDGCCI ${WRKDIR}
+.endif
+
+install-mozilla:
+.if ! exists(${WRKDIR}/../moz/zipped/FREEBSDGCCIinc.zip)
 	@${CP} ${WRKDIR}/FREEBSDGCCIinc.zip ${WRKSRC}/../moz/zipped/
 	@${CP} ${WRKDIR}/FREEBSDGCCIlib.zip ${WRKSRC}/../moz/zipped/
 	@${CP} ${WRKDIR}/FREEBSDGCCIruntime.zip ${WRKSRC}/../moz/zipped/
@@ -386,11 +390,12 @@ mozilla:
 	@${MAKE} extract-mozilla
 	@${MAKE} patch-mozilla
 	@${MAKE} build-mozilla
+	@${MAKE} install-mozilla
 
 do-build:
 	@${MAKE} mozilla
 .if exists(${WRKDIR}/.Xvfb.pid)
-	@${CAT} ${WRKDIR}/.Xvfb.pid | xargs kill
+	@-${CAT} ${WRKDIR}/.Xvfb.pid | xargs kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
 .endif
 .if !defined(DISPLAY)
@@ -403,12 +408,12 @@ do-build:
 	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ./bootstrap
 .if defined(L10NHELP)
 	@${MKDIR} ${WRKSRC}/../solver/641/unxfbsd.pro/pck 
-	@${MV} ${WRKDIR}/L10NHELP/*.zip ${WRKSRC}/../solver/641/unxfbsd.pro/pck
+	@${CP} ${WRKDIR}/L10NHELP/*.zip ${WRKSRC}/../solver/641/unxfbsd.pro/pck
 .endif
 .if !defined(DISPLAY)
 	@cd ${WRKSRC}/.. && DISPLAY=${DISPLAYHACK} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
 		tcsh -c 'source FreeBSDEnv.Set && unsetenv TOP && ${BUILD}'
-	@${CAT} ${WRKDIR}/.Xvfb.pid | xargs kill
+	@-${CAT} ${WRKDIR}/.Xvfb.pid | xargs kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
 .else
 	@cd ${WRKSRC}/.. && DISPLAY=${DISPLAY} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
@@ -433,7 +438,7 @@ do-install:
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
 		TEMP=${WRKDIR} DISPLAY=${DISPLAYHACK} \
 		${WRKSRC}/../instsetoo/*.pro/${LANG_EXT}/normal/setup -r:oo_setup.resp
-	@${CAT} ${WRKDIR}/.Xvfb.pid | xargs kill
+	@-${CAT} ${WRKDIR}/.Xvfb.pid | xargs kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
 .else
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
