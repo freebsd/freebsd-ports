@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	amsn
-PORTVERSION=	0.80
+PORTVERSION=	0.81
 CATEGORIES=	net
 MASTER_SITES=	http://download.sourceforge.net/${PORTNAME}/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	MSN Messenger
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
