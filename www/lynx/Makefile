@@ -3,7 +3,7 @@
 # Date created:         15 Dec 1994
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.77 1998/01/26 16:08:52 jseger Exp $
+# $Id: Makefile,v 1.78 1998/03/27 05:34:10 ache Exp $
 #
 
 DISTNAME=       lynx2-8
@@ -20,7 +20,8 @@ EXTRACT_CMD=	unzip
 EXTRACT_BEFORE_ARGS=    -qq -o
 
 GNU_CONFIGURE=  YES
-CONFIGURE_ARGS= --with-screen=ncurses --with-zlib --libdir="${PREFIX}/etc"
+CONFIGURE_ARGS= --with-screen=ncurses --with-zlib --libdir="${PREFIX}/etc" \
+		--enable-nsl-fork
 MAKEFILE=       makefile
 INSTALL_TARGET= install install-help
 MAN1=		lynx.1
