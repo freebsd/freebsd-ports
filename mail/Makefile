@@ -109,7 +109,7 @@
     SUBDIR += mailfilter
     SUBDIR += mailgraph
     SUBDIR += mailman
-    SUBDIR += mailman-devel
+#   SUBDIR += mailman-devel
     SUBDIR += mailx
     SUBDIR += majorcool
     SUBDIR += majordomo
