@@ -26,6 +26,7 @@
     SUBDIR += arm-aout-gcc295
     SUBDIR += arm-elf-binutils
     SUBDIR += arm-elf-gcc295
+    SUBDIR += arm-elf-gcc31
     SUBDIR += arm-rtems-binutils
     SUBDIR += arm-rtems-chill
     SUBDIR += arm-rtems-g77
