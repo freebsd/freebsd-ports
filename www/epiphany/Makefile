@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	epiphany
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.2
@@ -51,8 +51,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_C
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 FLASHPLAYER=	${LOCALBASE}/lib/libflashplayer.so.1
-XXX_FILES=	EphyAutomation-common.c EphyAutomation-stubs.c \
-	   	EphyAutomation-skels.c EphyAutomation.h
 PLIST_SUB+=	EPHY_VERSION="${PORTVERSION:C/\.[0-9]+$//}"
 
 .if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
@@ -87,11 +85,6 @@ pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "  mozilla-devel "
 	@${ECHO_MSG} ""
-
-post-extract:
-.for i in ${XXX_FILES}
-	@${RM} -f ${WRKSRC}/src/${i}
-.endfor
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|mozilla-gtkmozembed|mozilla-gtkmozembed${HEADERS_SUFX}|g' ${WRKSRC}/configure
