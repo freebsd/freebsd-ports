@@ -3,7 +3,7 @@
 # Date created:         08 August 1995
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.28 1998/04/29 07:15:39 tg Exp $
+# $Id: Makefile,v 1.29 1998/05/05 08:53:27 tg Exp $
 #
 
 DISTNAME=       pyth151
@@ -16,8 +16,8 @@ EXTRACT_SUFX=	.tgz
 PATCH_SITES=	http://www.python.org/1.5/patches-1.5.1/
 PATCHFILES=	_tkinter.1.txt bltinmodule.1.txt configure.2.txt \
 		fileobject.1.txt freeze.1.txt imaplib.1.txt object.1.txt \
-		parsermodule.1.txt pcre.1.txt string.1.txt timemodule.1.txt \
-		urllib.1.txt zlibmodule.1.txt
+		parsermodule.1.txt pcre.1.txt sgmllib.1.txt string.1.txt \
+		timemodule.1.txt urllib.1.txt urllib.2.txt zlibmodule.1.txt
 
 MAINTAINER=	tg@FreeBSD.org
 
@@ -66,13 +66,33 @@ CONFIGURE_ENV=		LDFLAGS="-pthread ${LDFLAGS}"
 SETUP_LOCAL+=	Setup.gmp
 .endif
 
+post-extract:
+	cd ${WRKSRC}/Lib; ${SH} ${FILESDIR}/plat-freebsd2.sh; \
+		${SH} ${FILESDIR}/plat-freebsd3.sh
+
 post-configure:
 	${CP} ${FILESDIR}/${SETUP_FILE} ${WRKSRC}/Modules/Setup
 .for file in ${SETUP_LOCAL}
 	${CAT} ${FILESDIR}/${file} >> ${WRKSRC}/Modules/Setup.local
 .endfor
 
+OSVERSION!=	sysctl -n kern.osreldate
+
+pre-install:
+.if ${OSVERSION} < 300000
+	${MKDIR} ${PREFIX}/lib/python1.5/plat-freebsd3
+	${INSTALL_DATA} ${WRKSRC}/Lib/plat-freebsd3/* ${PREFIX}/lib/python1.5/plat-freebsd3
+.else
+	${MKDIR} ${PREFIX}/lib/python1.5/plat-freebsd2
+	${INSTALL_DATA} ${WRKSRC}/Lib/plat-freebsd2/* ${PREFIX}/lib/python1.5/plat-freebsd2
+.endif
+
 post-install:
+.if ${OSVERSION} < 300000
+	${INSTALL_SCRIPT} ${PREFIX}/lib/python1.5/plat-freebsd2/regen ${PREFIX}/lib/python1.5/plat-freebsd3
+.else
+	${INSTALL_SCRIPT} ${PREFIX}/lib/python1.5/plat-freebsd3/regen ${PREFIX}/lib/python1.5/plat-freebsd2
+.endif
 	strip ${PREFIX}/bin/python
 
 .include <bsd.port.mk>
