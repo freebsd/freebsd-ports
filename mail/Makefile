@@ -230,6 +230,7 @@
     SUBDIR += p5-Email-FolderType
     SUBDIR += p5-Email-LocalDelivery
     SUBDIR += p5-Email-LocalDelivery-Ezmlm
+    SUBDIR += p5-Email-MIME
     SUBDIR += p5-Email-MIME-ContentType
     SUBDIR += p5-Email-MIME-Encodings
     SUBDIR += p5-Email-Simple

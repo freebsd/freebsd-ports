@@ -1,0 +1,6 @@
+This is an extension of the Email::Simple module, to handle MIME
+encoded messages. It takes a message as a string, splits it up into
+its constituent parts, and allows you access to various parts of
+the message. Headers are decoded from MIME encoding.
+
+WWW: http://search.cpan.org/dist/Email-MIME/
