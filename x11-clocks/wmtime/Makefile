@@ -8,7 +8,7 @@
 PORTNAME=	wmtime
 PORTVERSION=	1.0b2
 CATEGORIES=	x11-clocks windowmaker
-MASTER_SITES=	ftp://ftp.enteract.com/users/rneswold/
+MASTER_SITES=	http://linuxberg.matrix.com.br/files/x11/xwin/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Time/Date applet for WindowMaker
