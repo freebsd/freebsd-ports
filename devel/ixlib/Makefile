@@ -25,8 +25,8 @@ INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
+.if ${ARCH} != "i386" || ${OSVERSION} >= 500000
+BROKEN=		"Does not compile on !i386 or on FreeBSD >= 5.x"
 .endif
 
 .include <bsd.port.post.mk>
