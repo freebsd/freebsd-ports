@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	3.14
+PORTVERSION=	3.15
 CATEGORIES=	security
-MASTER_SITES=	http://www.stunnel.org/download/stunnel/src/ \
+MASTER_SITES=	ftp://stunnel.mirt.net/stunnel/ \
+		http://www.stunnel.org/download/stunnel/src/ \
 		ftp://opensores.thebunker.net/pub/mirrors/stunnel/ \
-		ftp://stunnel.mirt.net/stunnel/ \
 		ftp://ftp.cryptoarchive.net/pub/cryptoarchive/mirrors/opensores.thebunker.net/pub/mirrors/stunnel/
 
 MAINTAINER=	martti.kuparinen@iki.fi
