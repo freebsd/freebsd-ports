@@ -1,0 +1,10 @@
+WindowMaker dockapp mixer that allows toggling record source, muting individual
+channels, adjusting volume and balance, all in a compact dockapp size, with
+TV-like on-screen-display for volume levels. Supports mousewheel to adjust
+current channel volume, and can be controlled remotely with SIGUSR1 / SIGUSR2
+to adjust the volume, too. Keeps a simple configuration file for user-defined
+settings.
+
+WWW: http://www.ne.jp/asahi/linux/timecop/
+
+-- K. Konstantinidis <kkonstan@daemon.gr>

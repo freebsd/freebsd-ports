@@ -181,6 +181,7 @@
     SUBDIR += waveplay
     SUBDIR += wavplay
     SUBDIR += wmcdplay
+    SUBDIR += wmix
     SUBDIR += wmmixer
     SUBDIR += wmmp3
     SUBDIR += wmtune

@@ -1,0 +1,148 @@
+*** mix.c.orig	Fri Mar 30 00:38:55 2001
+--- mix.c	Sun Apr  1 22:54:26 2001
+***************
+*** 20,26 ****
+--- 20,30 ----
+  #include <stdlib.h>
+  #include <string.h>
+  #include <ctype.h>
++ #ifdef __FreeBSD__
++ #include <popt.h>
++ #else
+  #include <getopt.h>
++ #endif
+  #include <time.h>
+  #include <unistd.h>
+  #include <fcntl.h>
+***************
+*** 887,899 ****
+  #ifdef CUSTOM
+  #undef SOUND_DEVICE_NAMES
+  
+! #define SOUND_DEVICE_NAMES	{"Master Volume", "Bass", "Treble", "FM Synth Volume", "PCM - Wave Volume", "PC Speaker", "Line In Level", \
+! 				 "Microphone Level", "CD Input Volume", "Mixer Level", "PCM2 - Wave Volume", "Recording Volume", "Input Gain", "Output Gain", \
+! 				 "Line1 Input", "Line2 Input", "Line3 Input", "Digital 1", "Digital 2", "Digital 3", \
+! 				 "Phone Input", "Phone Output", "Video Card Volume", "Radio Card volume", "Monitor Volume"}
+  #endif
+      char *names[] = SOUND_DEVICE_NAMES;
+      struct mixer_info mixer_info;
+  
+      if ((mixer_fd = open(value("mixerdev"), O_RDWR)) == -1) {
+  	printf("error: cannot open mixer device %s\n", value("mixerdev"));
+--- 891,905 ----
+  #ifdef CUSTOM
+  #undef SOUND_DEVICE_NAMES
+  
+! #define SOUND_DEVICE_NAMES	{" Master Volume", " Bass", " Treble", " Synth Volume", " Wave Volume", " PC Speaker", " Line In Level", \
+! 				 " Microphone Level", " CD Volume", " Mixer Level", " Wave 2 Volume", " Recording Volume", " Input Gain", " Output Gain", \
+! 				 " Line1 Input", " Line2 Input", " Line3 Input", " Digital 1", " Digital 2", " Digital 3", \
+! 				 " Phone Input", " Phone Output", " Video Card Volume", " Radio Card Volume", " Monitor Volume"}
+  #endif
+      char *names[] = SOUND_DEVICE_NAMES;
++ #ifndef __FreeBSD__
+      struct mixer_info mixer_info;
++ #endif
+  
+      if ((mixer_fd = open(value("mixerdev"), O_RDWR)) == -1) {
+  	printf("error: cannot open mixer device %s\n", value("mixerdev"));
+***************
+*** 921,932 ****
+  	exit(1);
+      }
+  
+      if (ioctl(mixer_fd, SOUND_MIXER_INFO, &mixer_info) == -1) {
+  	printf("error: cannot get mixer info off mixer\n");
+  	exit(1);
+      }
+- 
+      printf("%s (%s) [", mixer_info.name, mixer_info.id);
+      for (count = 0; count < SOUND_MIXER_NRDEVICES; count++) {
+  	if ((1 << count) & devmask) {
+  	    strcpy(mixer[nchannels].name, names[count]);
+--- 927,942 ----
+  	exit(1);
+      }
+  
++ #ifdef __FreeBSD__
++     printf("[");
++ #else
+      if (ioctl(mixer_fd, SOUND_MIXER_INFO, &mixer_info) == -1) {
+  	printf("error: cannot get mixer info off mixer\n");
+  	exit(1);
+      }
+      printf("%s (%s) [", mixer_info.name, mixer_info.id);
++ #endif
++ 
+      for (count = 0; count < SOUND_MIXER_NRDEVICES; count++) {
+  	if ((1 << count) & devmask) {
+  	    strcpy(mixer[nchannels].name, names[count]);
+***************
+*** 946,951 ****
+--- 956,962 ----
+  	    printf("0");
+  	}
+      }
++ 
+      printf("]\n");
+  }
+  
+***************
+*** 953,971 ****
+  {
+      int i;
+      int left, right, foo;
+      int retry = 3;
+      int stat = 1;
+      struct mixer_info mixer_info;
+      static int modify_counter;
+-     static Mixer old_mix[SOUND_MIXER_NRDEVICES];
+  
+      /* check for possible failure here - happens with older kernels */
+      if (ioctl(mixer_fd, SOUND_MIXER_INFO, &mixer_info)) {
+  	while (retry-- && stat)
+  	    stat = ioctl(mixer_fd, SOUND_MIXER_INFO, &mixer_info);
+      }
+  
+!     if (mixer_info.modify_counter != modify_counter) {
+  	i = 0;
+  	/* this happens if mixer was changed by another program,
+  	 * so we need to update the values.  We do not know, under OSS,
+--- 964,989 ----
+  {
+      int i;
+      int left, right, foo;
++     char doupdate = 0;
++     static Mixer old_mix[SOUND_MIXER_NRDEVICES];
++ #ifndef __FreeBSD__
+      int retry = 3;
+      int stat = 1;
+      struct mixer_info mixer_info;
+      static int modify_counter;
+  
+      /* check for possible failure here - happens with older kernels */
+      if (ioctl(mixer_fd, SOUND_MIXER_INFO, &mixer_info)) {
+  	while (retry-- && stat)
+  	    stat = ioctl(mixer_fd, SOUND_MIXER_INFO, &mixer_info);
+      }
++     doupdate = mixer_info.modify_counter != modify_counter;
++ #else
++     /* clearly something better would be nice, but hey, it works! */
++     doupdate = 1;
++ #endif
+  
+!     if (doupdate) {
+  	i = 0;
+  	/* this happens if mixer was changed by another program,
+  	 * so we need to update the values.  We do not know, under OSS,
+***************
+*** 1022,1028 ****
+--- 1040,1048 ----
+  	    }
+  	}
+      }
++ #ifndef __FreeBSD__
+      modify_counter = mixer_info.modify_counter;
++ #endif
+      memcpy(old_mix, mixer, sizeof(mixer));
+  }
+  

@@ -1,0 +1,34 @@
+*** Makefile.orig	Fri Mar 30 00:49:38 2001
+--- Makefile	Sun Apr  1 22:50:23 2001
+***************
+*** 1,6 ****
+! CC	= gcc
+! CFLAGS	= -O2 -Wall -I/usr/X11R6/include -DCUSTOM
+! LIBS	= -L/usr/X11R6/lib -lX11 -lXpm -lXext
+  
+  SRCS	= mix.c config.c
+  OBJS	= mix.o config.o
+--- 1,6 ----
+! CC	= cc
+! CFLAGS += -Wall -I/usr/local/include -I/usr/X11R6/include -DCUSTOM
+! LDFLAGS+= -L/usr/local/lib -L/usr/X11R6/lib -lX11 -lXpm -lXext
+  
+  SRCS	= mix.c config.c
+  OBJS	= mix.o config.o
+***************
+*** 8,14 ****
+  all:	mixer
+  
+  mixer:	$(OBJS)
+! 	$(CC) $(CFLAGS) -o wmix $(OBJS) $(LIBS)
+  
+  clean:
+  	rm -f *.o *~ wmix trace
+--- 8,14 ----
+  all:	mixer
+  
+  mixer:	$(OBJS)
+! 	$(CC) $(CFLAGS) $(LDFLAGS) -o wmix $(OBJS)
+  
+  clean:
+  	rm -f *.o *~ wmix trace
