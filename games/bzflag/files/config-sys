@@ -98,7 +98,7 @@ NETWORK_LIBS =				\
 	$(NULL)
 
 WINDOW_LIBS =				\
-	-lusb				\
+	-lusbhid			\
 	-lXext				\
 	-lX11				\
 	$(NULL)
