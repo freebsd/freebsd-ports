@@ -1,0 +1,11 @@
+--- cgi/Makefile.in.orig	Mon Feb  2 15:09:56 2004
++++ cgi/Makefile.in	Mon Feb  2 15:10:07 2004
+@@ -86,7 +86,7 @@
+ cgi_PROGRAMS = vpasswd vadduser vdeluser vaddalias vchattr vchforwards 	listvdomain
+ 
+ 
+-CXXLINK = $(CC) $(CXXFLAGS) $(LDFLAGS) -o $@
++CXXLINK = $(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@
+ INCLUDES = -I../lib
+ 
+ vpasswd_SOURCES = vpasswd.cc

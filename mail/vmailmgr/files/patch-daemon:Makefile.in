@@ -1,0 +1,11 @@
+--- daemon/Makefile.in.orig	Mon Feb  2 15:06:13 2004
++++ daemon/Makefile.in	Mon Feb  2 15:06:27 2004
+@@ -91,7 +91,7 @@
+ 
+ EXTRA_DIST = $(man_MANS) $(noinst_HTMLS) $(noinst_PODS)
+ 
+-CXXLINK = $(CC) $(CXXFLAGS) $(LDFLAGS) -o $@
++CXXLINK = $(CXX) $(CXXFLAGS) $(LDFLAGS) -o $@
+ INCLUDES = -I../lib
+ 
+ vmailmgrd_SOURCES = daemon.h 	adduser2.cc 	autoresponse.cc 	chattr.cc 	check.cc 	command.h command.cc 	deluser.cc 	dispatch.cc 	listdomain.cc 	log.h log.cc 	lookup.cc 	main.cc 	state.h state.cc
