@@ -75,7 +75,7 @@
 
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.4
-PORTREVISION?=	4
+PORTREVISION?=	5
 CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
@@ -177,6 +177,7 @@ LIB_DEPENDS+=	slang.1:${PORTSDIR}/devel/libslang
 USE_OPENSSL=	yes
 .endif
 .if defined(WITH_MUTT_CYRUS_SASL)
+BROKEN=		"mutt-devel's SASL code appears to be broken"
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
 .if ! defined(WITHOUT_MUTT_SMIME_OUTLOOK_COMPAT)
