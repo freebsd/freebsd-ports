@@ -1,6 +1,7 @@
---- Makefile.orig	Thu Nov 30 17:28:23 2000
-+++ Makefile	Thu Nov 30 17:35:00 2000
-@@ -0,0 +1,13 @@
+--- Makefile.orig	Mon Dec  4 13:44:56 2000
++++ Makefile	Mon Dec  4 13:45:45 2000
+@@ -0,0 +1,14 @@
++NOPROFILE=	true
 +LIB=		cabinet
 +LIBDIR=		${PREFIX}/lib
 +INCDIR=		${PREFIX}/include/cabinet

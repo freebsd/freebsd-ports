@@ -12,6 +12,8 @@ MASTER_SITES=	http://trill.cis.fordham.edu/~barbacha/cabinet_library/
 
 MAINTAINER=	sobomax@FreeBSD.org
 
+INSTALLS_SHLIB=	yes
+
 SRCFILE=	${WRKSRC}/listcab.cpp
 PROGFILE=	${SRCFILE:S/.cpp$//}
 
