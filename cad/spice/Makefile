@@ -3,7 +3,7 @@
 # Date created:         26 Mar 96
 # Whom:                 Julian Jenkins <kaveman@magna.com.au>
 #
-# $Id: Makefile,v 1.11 1998/09/27 08:16:26 steve Exp $
+# $Id: Makefile,v 1.12 1998/12/18 06:28:20 asami Exp $
 #
 
 DISTNAME=	sp3f4.kit
@@ -13,8 +13,6 @@ MASTER_SITES=	ftp://ic.eecs.berkeley.edu/pub/Spice3/
 EXTRACT_SUFX=   .tar.Z
 
 MAINTAINER=	kaveman@magna.com.au
-
-BROKEN_ELF=	install
 
 # documentation in ftp://ic.eecs.berkeley.edu/pub/Spice3/um.3f3.ps
 
