@@ -2106,6 +2106,7 @@ gdesklets-countdown	ports/x11-clocks/gdesklets-countdown
 gdesklets-goodweather	ports/astro/gdesklets-goodweather
 gdesklets-imapmail	ports/mail/gdesklets-imapmail
 gdesklets-multitail	ports/sysutils/gdesklets-multitail
+gdesklets-praytime	ports/x11-clocks/gdesklets-praytime
 gdesklets-psi_displaypackage	ports/deskutils/gdesklets-psi_displaypackage
 gdesklets-psi_themes	ports/deskutils/gdesklets-psi_themes
 gdesklets-recentlyused	ports/deskutils/gdesklets-recentlyused
