@@ -6,62 +6,63 @@
 #
 
 PORTNAME=	erlang-doc
-PORTVERSION=	9.0
-PORTREVISION=	4
+PORTVERSION=	r9c
 CATEGORIES=	lang
-MASTER_SITES=	http://www.erlang.org/doc/r9b/pdf/ \
+MASTER_SITES=	http://www.erlang.org/doc/r9c/pdf/ \
 		http://erlang.org/download/ \
 		http://www.erlang.se/doc/
-DISTFILES=      appmon-2.1.1.pdf \
-		asn1-1.4.pdf \
-		compiler-4.1.pdf \
-		cosEvent-2.0.pdf \
-		cosEventDomain-1.0.pdf \
-		cosFileTransfer-1.0.2.pdf \
-		cosNotification-1.0.6.pdf \
-		cosProperty-1.0.1.pdf \
-		cosTime-1.0.1.1.pdf \
-		cosTransactions-1.1.2.pdf \
-		crypto-1.1.2.pdf \
-		debugger-2.1.pdf \
-		design_principles-5.2.pdf \
-		efficiency_guide-5.2.pdf \
-		embedded-5.2.pdf \
-		erl_interface-3.3.2.pdf \
-		erts-5.2.pdf \
+DISTFILES=	appmon-2.1.2.pdf \
+		asn1-1.4.2.pdf \
+		compiler-4.2.pdf \
+		cosEvent-2.1.pdf \
+		cosEventDomain-1.1.pdf \
+		cosFileTransfer-1.1.pdf \
+		cosNotification-1.1.pdf \
+		cosProperty-1.1.pdf \
+		cosTime-1.1.pdf \
+		cosTransactions-1.2.pdf \
+		crypto-1.2.pdf \
+		debugger-2.2.pdf \
+		design_principles-5.3.pdf \
+		efficiency_guide-5.3.pdf \
+		embedded-5.3.pdf \
+		erl_interface-3.4.pdf \
+		erts-5.3.pdf \
 		et-1.0.pdf \
-		eva-2.0.3.pdf \
-		extensions-5.2.pdf \
-		getting_started-5.2.pdf \
-		gs-1.5.0.pdf \
-		ic-4.1.6.pdf \
-		inets-3.0.pdf \
-		installation_guide-5.2.pdf \
-		jinterface-1.2.1.pdf \
-		kernel-2.8.0.pdf \
-		megaco-1.1.0.pdf \
+		eva-2.0.4.pdf \
+		getting_started-5.3.pdf \
+		gs-1.5.2.pdf \
+		ic-4.2.1.pdf \
+		inets-3.0.6.pdf \
+		installation_guide-5.3.pdf \
+		jinterface-1.2.1.1.pdf \
+		kernel-2.9.pdf \
+		megaco-1.2.3.pdf \
 		mnemosyne-1.2.5.pdf \
-		mnesia-4.1.pdf \
+		mnesia-4.1.4.pdf \
 		mnesia_session-1.1.5.pdf \
-		oam-5.2.pdf \
-		observer-0.9.pdf \
-		odbc-1.0.pdf \
-		orber-3.3.pdf \
-		os_mon-1.6.0.pdf \
+		oam-5.3.pdf \
+		observer-0.9.5.pdf \
+		odbc-1.0.8.pdf \
+		orber-3.4.2.pdf \
+		os_mon-1.6.1.pdf \
+		otp_mibs-1.0.pdf \
 		parsetools-1.2.pdf \
 		pman-2.4.1.pdf \
-		runtime_tools-1.3.pdf \
-		sasl-1.9.4.pdf \
-		snmp-3.3.8.pdf \
-		ssl-2.3.5.pdf \
-		stdlib-1.11.0.pdf \
-		system_architecture_intro-5.2.pdf \
-		system_principles-5.2.pdf \
+		programming_examples-5.3.pdf \
+		reference_manual-5.3.pdf \
+		runtime_tools-1.4.pdf \
+		sasl-1.10.pdf \
+		snmp-3.4.pdf \
+		ssl-3.0.1.pdf \
+		stdlib-1.12.pdf \
+		system_architecture_intro-5.3.pdf \
+		system_principles-5.3.pdf \
 		toolbar-1.1.0.pdf \
-		tools-2.1.pdf \
-		tutorial-5.2.pdf \
-		tv-2.0.4.pdf \
-		webtool-0.7.1.pdf \
+		tools-2.3.pdf \
+		tutorial-5.3.pdf \
+		tv-2.0.5.pdf \
+		webtool-0.8.1.pdf \
 		course.pdf \
 		erlang-book-part1.pdf \
 		programming_rules.pdf
