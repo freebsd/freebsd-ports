@@ -1,5 +1,5 @@
 # New ports collection makefile for:	nn
-# Version required:	6.5.0
+# Version required:	6.5.3
 # Date created:		24 September 1994
 # Whom:			adam
 #
@@ -13,6 +13,10 @@ MASTER_SITES=	ftp://ftp.visi.com/users/mtpins/ \
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=     ports@FreeBSD.ORG
+MAINTAINER=	jooji@webnology.com
+
+IS_INTERACTIVE=	yes
+NO_PACKAGE=	posting depends on inews utility, which has poster\'s domain compiled in
 
 MAN1=		nn.1 nncheck.1 nngoback.1 nngrab.1  nngrep.1 nnpost.1 \
 		nntidy.1 nnview.1 nnacct.1m nnadmin.1m nnstats.1m nnusage.1m
@@ -24,14 +28,12 @@ pre-patch:
 pre-build:
 	@${CP} ${FILESDIR}/s-freebsd.h ${WRKSRC}/conf
 
-post-build:
-	[ -r ${PREFIX}/news/lib/inews ] || ( cd ${WRKSRC}/inews; ${MAKE} all )
-
 pre-install:
-	${MKDIR} ${PREFIX}/news
-	[ -r ${PREFIX}/news/lib/inews ] || ( cd ${WRKSRC}/inews; ${MAKE} install )
+	@${MKDIR} ${PREFIX}/news
+	[ ! -f ${WRKDIR}/.install_inews ] || (cd ${WRKSRC}/inews; ${MAKE} all)
+	[ ! -f ${WRKDIR}/.install_inews ] || (cd ${WRKSRC}/inews; ${MAKE} install)
 
 post-install:
-	@${ECHO} Put your NNTP host into ${PREFIX}/etc/nntpserver file
+	@${CP} ${WRKDIR}/nntp_server ${PREFIX}/etc/nntp_server
 
 .include <bsd.port.mk>

@@ -1,11 +1,13 @@
---- inews/conf.h.orig	Sun May  2 17:08:27 1999
-+++ inews/conf.h	Sun May  2 17:08:33 1999
-@@ -51,7 +51,7 @@
-  *  define DOMAIN to be your FQDN.
-  */
- 
--/* #define	DOMAIN	"frobozz.com.bogus" */
-+#define	DOMAIN	"frobozz.com.bogus"
- 
- /*
-  *  If you define this, the hostname will not appear in the posting
+*** inews/version.c	Sun Jan 24 23:44:03 1999
+--- inews/version.c.new	Sun Jan 24 23:44:36 1999
+***************
+*** 2,5 ****
+   * Provide the version number of this release.
+   */
+  
+! char	nntp_version[] = "1.5.8 (11 March 90)";
+--- 2,5 ----
+   * Provide the version number of this release.
+   */
+  
+! char	nntp_version[] = "1.5.8.MINI (MINI-INEWS)";
