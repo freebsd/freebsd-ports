@@ -24,6 +24,7 @@ DEPRECATED=	"${IGNORE}"
 
 USE_JAVA=	1.3+
 
+LATEST_LINK=	jedit-devel
 USE_XLIB=	yes
 NO_BUILD=	yes
 

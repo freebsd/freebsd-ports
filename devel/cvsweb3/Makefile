@@ -25,8 +25,8 @@ RUN_DEPENDS+=	${SITE_PERL}/MIME/Types.pm:${PORTSDIR}/mail/p5-MIME-Types \
 		enscript:${PORTSDIR}/print/enscript-a4 \
 		cvsgraph:${PORTSDIR}/devel/cvsgraph
 
+LATEST_LINK=	cvsweb3
 NO_BUILD=	yes
-
 USE_PERL5=	yes
 
 .include <bsd.port.pre.mk>
