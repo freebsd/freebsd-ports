@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- examples/Makefile.in.orig	Fri Mar 18 08:46:51 2005
++++ examples/Makefile.in	Fri Mar 18 08:47:39 2005
+@@ -203,7 +203,7 @@
+ 	done
+ burst_szip$(EXEEXT): $(burst_szip_OBJECTS) $(burst_szip_DEPENDENCIES) 
+ 	@rm -f burst_szip$(EXEEXT)
+-	$(LINK) $(burst_szip_LDFLAGS) $(burst_szip_OBJECTS) $(burst_szip_LDADD) $(LIBS)
++	$(LINK) $(burst_szip_LDFLAGS) $(burst_szip_OBJECTS) $(burst_szip_LDADD) $(LIBS) -lm
+ example$(EXEEXT): $(example_OBJECTS) $(example_DEPENDENCIES) 
+ 	@rm -f example$(EXEEXT)
+ 	$(LINK) $(example_LDFLAGS) $(example_OBJECTS) $(example_LDADD) $(LIBS)
