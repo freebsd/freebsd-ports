@@ -8,3 +8,4 @@ share/AlephOne/Cursed.Physics
 share/AlephOne/Cursed.Shapes
 share/AlephOne/Cursed.Sounds
 share/AlephOne/README.Evil
+@dirrm share/AlephOne
