@@ -1,0 +1,68 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
+    echo "$0: Cannot determine the PREFIX" >&2
+    echo "Please use the complete pathname." >&2
+    exit 1
+fi
+
+if [ -z "${source_rc_confs_defined}" ]; then
+	if [ -r /etc/defaults/rc.conf ]; then
+		. /etc/defaults/rc.conf
+		source_rc_confs
+	elif [ -r /etc/rc.conf ]; then
+		. /etc/rc.conf
+	fi
+fi
+
+case "$1" in
+start)
+	case "${pf_enable}" in
+	    [Yy][Ee][Ss])
+	    echo -n ' pf'
+	    kldload ${PREFIX}/modules/pflog.ko
+	    kldload ${PREFIX}/modules/pfsync.ko
+	    if [ -f ${PREFIX}/modules/pfaltq.ko ]; then
+		kldload ${PREFIX}/modules/pfaltq.ko
+	    fi
+	    ifconfig pflog0 up
+	    ifconfig pfsync0 up
+	    case "${pf_logd}" in
+	    [Yy][Ee][Ss])
+		if [ -x ${PREFIX}/sbin/pflogd ]; then
+			echo -n ' pflogd'
+			${PREFIX}/sbin/pflogd
+		fi
+	    	;;
+	    esac
+	    kldload ${PREFIX}/modules/pf.ko
+	    if [ -f ${pf_conf:-${PREFIX}/etc/pf.conf} ]; then
+		if [ -x ${PREFIX}/sbin/pfctl ]; then
+			${PREFIX}/sbin/pfctl -e \
+				-f ${pf_conf:-${PREFIX}/etc/pf.conf} \
+				${pfctl_flags}
+		fi
+	    fi
+	    ;;
+	esac
+	;;
+stop)
+	if [ -x ${PREFIX}/sbin/pfctl ]; then
+		${PREFIX}/sbin/pfctl -d
+	fi
+	killall pflogd
+	kldunload pf
+	if [ -f ${PREFIX}/modules/pfaltq.ko ]; then
+		kldunload pfaltq
+	fi
+	kldunload pflog
+	kldunload pfsync
+	;;
+*)
+	echo "Usage: `basename $0` {start|stop}" >&2
+	;;
+esac
+
+exit 0

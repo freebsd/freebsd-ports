@@ -1,0 +1,14 @@
+This is a port of OpenBSD's pf (packet filter) to FreeBSD as a loadable
+kernel module ported by Pyun YongHyeon. Information about pf can be found 
+at: http://www.benzendrine.cx/pf.html the website of Daniel Hartmeier the
+original author of pf.
+You have to have:
+=========================================================================
+options		PFIL_HOOKS
+options		RANDOM_IP_ID	# Recommend, but may work without
+=========================================================================
+in your kernel in oder to use pf.
+
+WWW: http://pf4freebsd.love2party.net/
+
+-Max <reports@pf4freebsd.love2party.net>

@@ -1,0 +1,9 @@
+===========================================================================
+Please set the folloing variables in rc.conf according to your needs:
+
+	pf_enable 	= "Yes"
+	pf_logd	  	= "Yes"
+	pf_conf		= "%%PREFIX%%/etc/pf.conf"
+
+They are used within %%PREFIX%%/etc/rc.d/pf.sh to bring pf up!
+===========================================================================

@@ -1,0 +1,23 @@
+libexec/ftp-proxy
+
+modules/linker.hints
+modules/pf.ko
+modules/pflog.ko
+modules/pfsync.ko
+%%WITH_ALTQ%%modules/pfaltq.ko
+
+sbin/pfctl
+sbin/pflogd
+sbin/pftcpdump
+sbin/pftop
+
+etc/rc.d/pf.sh.sample
+etc/pf.conf.default
+
+include/pf/net/pfvar.h
+include/pf/net/if_pflog.h
+include/pf/net/if_pfsync.h
+
+@dirrm modules
+@dirrm include/pf/net
+@dirrm include/pf
