@@ -4860,6 +4860,7 @@ linux-peops-softgpu	ports/emulators/linux-peops-softgpu
 linux-peops-spu	ports/emulators/linux-peops-spu
 linux-pete-mesagpu	ports/emulators/linux-pete-mesagpu
 linux-png	ports/graphics/linux-png
+linux-png10	ports/graphics/linux-png10
 linux-q3ademo	ports/games/linux-q3ademo
 linux-realplayer	ports/multimedia/linux-realplayer
 linux-relview	ports/math/linux-relview
