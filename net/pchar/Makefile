@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pchar
-PORTVERSION=	1.3.2
+PORTVERSION=	1.4
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.employees.org/~bmah/Software/pchar/
 
@@ -18,9 +18,7 @@ MAN8=		pchar.8
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 400014
-CONFIGURE_ARGS= --with-ipv6
-.endif
+CONFIGURE_ARGS= --with-pcap
 
 .if !defined(NOPORTDOCS)
 post-install:
