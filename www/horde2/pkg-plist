@@ -331,6 +331,7 @@ etc/horde/httpd.conf.horde
 %%PORTDOCS%%share/doc/horde/HACKING
 %%PORTDOCS%%share/doc/horde/INSTALL
 %%PORTDOCS%%share/doc/horde/README
+%%PORTDOCS%%share/doc/horde/SECURITY
 %%PORTDOCS%%share/doc/horde/TRANSLATIONS
 %%PORTDOCS%%@dirrm share/doc/horde
 @dirrm %%HORDEDIR%%/graphics/alerts
