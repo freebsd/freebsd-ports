@@ -14,16 +14,22 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_GTK=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-CFLAGS+=	-I${LOCALBASE}/include
-USE_GMAKE=	yes
 
-post-patch:
-	@${PERL} -pi -e "s,glib-config,${GLIB_CONFIG},g ; \
-		s,gtk-config,${GTK_CONFIG},g ; \
-		s,^CXXFLAGS *=,CXXFLAGS+=,g" ${WRKSRC}/Makefile
-# current vorbis support is broken, dont know how to fix
-	@${PERL} -pi -e "s,^VORBIS,#VORBIS,g" ${WRKSRC}/Makefile
+USE_GTK=	yes
+USE_GMAKE=	yes
+MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+
+.if defined(WITH_VORBIS)
+LIB_DEPENDS=	vorbis.1:${PORTSDIR}/audio/libvorbis
+MAKE_ENV+=	WITH_VORBIS="${WITH_VORBIS}"
+.endif
+
+pre-everything::
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you want to compile with Ogg/Vorbis support,"
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_VORBIS=yes\""
+	@${ECHO_MSG}
+.endif
 
 .include <bsd.port.mk>
