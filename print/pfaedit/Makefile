@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	pfaedit
-PORTVERSION=	20010410
+PORTVERSION=	20010808
 CATEGORIES=	print
-MASTER_SITES=   http://bibliofile.mc.duke.edu/gww/Freeware/PfaEdit/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=   http://pfaedit.sourceforge.net/
 DISTFILES=	${PORTNAME}_src-${DIST_VER}.tgz \
-		libgunicode-${LIBGUNI_VER}.tgz libgdraw-${LIBGDRAW_VER}.tgz
+		libgunicode-${LIBGUNI_VER}.tgz libgdraw-${LIBGDRAW_VER}.tgz \
+		cidmaps.tgz
 
 MAINTAINER=	kanou@mil.allnet.ne.jp
 
-DIST_VER=	230401
-LIBGDRAW_VER=	220401
-LIBGUNI_VER=	220401
+DIST_VER=	010808
+LIBGDRAW_VER=	010808
+LIBGUNI_VER=	010808
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
@@ -36,6 +35,8 @@ MAN1=		pfaedit.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pfaedit/pfaedit ${PREFIX}/bin
+	${MKDIR} ${PREFIX}/share/pfaedit
+	${INSTALL_DATA} ${WRKDIR}/*.cidmap ${PREFIX}/share/pfaedit
 	${INSTALL_MAN} ${WRKSRC}/pfaedit/pfaedit.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
