@@ -59,7 +59,6 @@
     SUBDIR += props
     SUBDIR += qrash
     SUBDIR += ruby-kde
-    SUBDIR += ruby-kde-i18n
     SUBDIR += rxvt
     SUBDIR += rxvt-devel
     SUBDIR += stockticker_applet
