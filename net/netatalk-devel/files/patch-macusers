@@ -1,0 +1,138 @@
+--- contrib/macusers/macusers.orig	Fri May 18 14:09:26 2001
++++ contrib/macusers/macusers	Fri May 18 14:08:28 2001
+@@ -1,52 +1,92 @@
+ #!/usr/bin/perl
+ 
++use strict;
++use Socket;
++use vars qw($MAC_PROCESS $PS_STR $MATCH_STR $ASIP_PORT_NO $ASIP_PORT $LSOF);
++
+ # Written for linux; may have to be modified for your brand of Unix.
+ 
+-$MAC_PROCESS="afpd";
+-$PS_STR="-ef";
+-$ASIP_PORT="afpovertcp";
++# Support for FreeBSD added by Joe Clarke <marcus@marcuscom.com>.
++# Support could probably be extended for *BSD, but I do not have Net or
++# OpenBSD machines to test with.  Code has also been cleaned up and made
++# to compile under strict.
++#
++# The new lsof call should also be quicker as it does not involve a 
++# second pipeline.
++#
++# Support has also been added for 16 character usernames.
++
++$MAC_PROCESS = "afpd";
++if ( $^O eq "freebsd" ) {
++        $PS_STR    = "-awwxouser,pid,ppid,start,command";
++        $MATCH_STR = '(\w+)\s+(\d+)\s+(\d+)\s+([\d\w:]+)';
++}
++else {
++        $PS_STR    = "-ef";
++        $MATCH_STR = '\s*(\w+)\s+(\d+)\s+(\d+)\s+\d+\s+([\d\w:]+)';
++}
++$ASIP_PORT    = "afpovertcp";
++$ASIP_PORT_NO = 548;
+ 
+ # Change to 0 if you don't have lsof
+-$LSOF=1;
++$LSOF = 0;
++my %mac = ();
++
++if ( $LSOF == 1 ) {
++        open( LSOF, "lsof -i :$ASIP_PORT |" );
++
++        while (<LSOF>) {
++                next if ( $_ !~ /$ASIP_PORT/ );
++                $_ =~ /\w+\s+(\d+).*->([\w\.-]+).*/;
++                my ( $pid, $host );
++                $pid = $1;
++                $host = $2;
++                ($host) = ( $host =~ /(^[\w\d\-]+)/ );
++                $mac{$pid} = $host;
++        }
++        print
++"PID      UID      Username         Name                 Logintime Mac\n";
++        close(LSOF);
++}
++elsif ( $^O eq "freebsd" ) {
++        open( SOCKSTAT, "sockstat -4 | grep $MAC_PROCESS | grep -v grep |" );
++
++        while (<SOCKSTAT>) {
++                next if ( $_ !~ /$MAC_PROCESS/ );
++                $_ =~
++                  /\S+\s+\S+\s+(\d+)\s+\d+\s+[\w\d]+\s+[\d\.:]+\s+([\d\.]+)/;
++                my ( $pid, $addr, $host );
++                $pid  = $1;
++                $addr = $2;
++                $host =
++                  gethostbyaddr( pack( 'C4', split ( /\./, $addr ) ), AF_INET );
++                ($host) = ( $host =~ /(^[\w\d\-]+)/ );
++                $mac{$pid} = $host;
++        }
++        print
++"PID      UID      Username         Name                 Logintime Mac\n";
++}
++else {
++        print
++          "PID      UID      Username         Name                 Logintime\n";
++}
++
++open( PS, "ps $PS_STR |" ) || die "Unable to open a pipe to ``ps''";
+ 
+-if ($LSOF == 1 )
+-{
+-  open(LSOF,"lsof -i | grep $ASIP_PORT |");
+-
+-  while(<LSOF>)
+-  {
+-    if ($_ !~ /$ASIP_PORT/)
+-    {
+-      next;
+-    }
+-    $_=~/\w+\s+(\d+).*->([\w-]+).*/;
+-    $pid=$1; $host=$2;
+-    $mac{$pid}=$host;
+-  }
+-
+-  close(LSOF);
+-  print "PID      UID      Usercode Name                 Logintime Mac\n";
+-}
+-else
+-{
+-  print "PID      UID      Usercode Name                 Logintime\n";
+-}
+-
+-open(PS," ps $PS_STR |") || die "cannot do ps";
+-
+-while(<PS>)
+-{
+-  if ($_ !~ /$MAC_PROCESS/ )
+-  {
+-    next;
+-  }
+-  $_=~ /\s*(\w+)\s+(\d+)\s+(\d+)\s+\d+\s+([\d\w:]+)/;
+-  $user=$1; $pid=$2; $ppid=$3; $time=$4;
+-  if ($ppid != 1)
+-  {
+-    ($t,$t,$uid,$t,$t,$t,$name,$t,$t)=getpwnam($user);
+-    printf "%-8d %-8d %-8s %-20s %-9s %s\n",$pid,$uid,$user,$name,$time,$mac{$pid};
+-  }
++while (<PS>) {
++        next if ( $_ !~ /$MAC_PROCESS/ );
++        my ( $user, $pid, $ppid, $time, $name, $uid, $t );
++        $_ =~ /$MATCH_STR/;
++        $user = $1;
++        $pid  = $2;
++        $ppid = $3;
++        $time = $4;
++
++        if ( $ppid != 1 ) {
++                ( $t, $t, $uid, $t, $t, $t, $name, $t, $t ) = getpwnam($user);
++                printf "%-8d %-8d %-16s %-20s %-9s %s\n", $pid, $uid, $user,
++                  $name, $time, $mac{$pid};
++        }
+ }
+ 
+-close(PS);  
++close(PS);
