@@ -15,15 +15,30 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Willows Toolkit for migrating and developing Windows applications
 
+ONLY_FOR_ARCHS= i386 alpha powerpc
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_XLIB=	yes
-USE_GMAKE=	yes
+USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--disable-debugger
+.if ${MACHINE_ARCH} != "i386"
+  CONFIGURE_ARGS+= --disable-intp
+.endif
+USE_GMAKE=	yes
+
 ALL_TARGET=	depend world
+
 PLIST_SUB=	LIBVER="${LIBVER}"
 INSTALLS_SHLIB=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Dumps core at making RscData.res.c"
+.endif
 
 FMT?=	/usr/bin/fmt
 
@@ -37,6 +52,9 @@ LIBRARIES=	libadvapi32.so libcomctl32.so libcomm.so \
 	libwinspool.so
 LIBVER=	0
 
+post-configure:
+	@${REINPLACE_CMD} 's|bison -y|yacc|' ${WRKSRC}/Make.rules # dirty
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -48,4 +66,4 @@ post-install:
 .endfor
 	@${FMT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

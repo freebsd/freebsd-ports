@@ -1,0 +1,33 @@
+--- configure.in.orig	Fri Aug  1 23:23:48 2003
++++ configure.in	Fri Aug  1 23:27:42 2003
+@@ -131,6 +131,10 @@
+ 	TARGET=sunos
+ 	;;
+ 
++   alpha-*-freebsd* )
++	TARGET=freebsd
++	;;
++
+    alpha-*-linux* )
+ 	TARGET=linux
+ 	;;
+@@ -143,7 +147,7 @@
+ 	TARGET=sco
+ 	;;
+ 
+-   i*86-unknown-freebsd* )
++   i*86-*-freebsd* )
+ 	TARGET=freebsd
+ 	;;
+ 
+@@ -153,6 +157,10 @@
+ 
+    i*86-*-cygwin* )
+ 	TARGET=cygwin
++	;;
++
++   powerpc-*-freebsd* )
++	TARGET=freebsd
+ 	;;
+ 
+    powerpc-*-linux* )
