@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomebuild
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/gnome/gnome-/}/0.1
@@ -15,7 +16,7 @@ DISTNAME=	${PORTNAME:S/gnome/gnome-/}-${PORTVERSION}
 MAINTAINER?=	gnome@FreeBSD.org
 COMMENT=	A GNOME Build Framework (GBF)
 
-LIB_DEPENDS=	gdl.0:${PORTSDIR}/x11-toolkits/gdl
+LIB_DEPENDS=	gdl-1.0:${PORTSDIR}/x11-toolkits/gdl
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
