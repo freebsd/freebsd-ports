@@ -47,7 +47,6 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--includedir=${PREFIX}/include \
 		--mandir=${MANPREFIX}/man \
 		--enable-static \
-		--enable-login \
 		--enable-auth-sasldb \
 		--with-openssl=${OPENSSLBASE} \
 		--with-rc4=openssl \
@@ -102,6 +101,17 @@ CONFIGURE_ARGS+=--with-devrandom=/dev/urandom
 
 .if defined(WITH_ALWAYSTRUE)
 CONFIGURE_ARGS+=--enable-alwaystrue
+.endif
+
+.if defined(WITHOUT_LOGIN)
+LOGIN=	"@comment "
+.else
+CONFIGURE_ARGS+=--enable-login
+.endif
+
+.if defined(WITHOUT_PLAIN)
+CONFIGURE_ARGS+=--disable-plain
+PLAIN= "@comment "
 .endif
 
 .if defined(WITHOUT_OTP)
@@ -182,6 +192,8 @@ HTDOCS=	advanced appconvert gssapi index install macosx mechanisms \
 	options plugprog programming readme sysadmin upgrading windows
 
 PLIST_SUB=	PREFIX=${PREFIX} \
+		LOGIN=${LOGIN} \
+		PLAIN=${PLAIN} \
 		OTP=${OTP} \
 		CRAM=${CRAM} \
 		DIGEST=${DIGEST} \
