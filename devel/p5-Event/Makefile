@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	Event
-PORTVERSION=	0.86
+PORTVERSION=	0.87
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Event
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	A Generic Perl Event Loop
 
-PLIST_SUB=	DOCSDIR="share/doc/${PORTNAME}"
 PERL_CONFIGURE=	yes
 DOCS=		Tutorial.pdf
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Event.3 Event::MakeMaker.3
 
 post-install:
