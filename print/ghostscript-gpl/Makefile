@@ -16,10 +16,11 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/gs700/ \
 		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/AFPL/fonts/
 MASTER_SITE_SUBDIR=	${PORTNAME} gimp-print hpinkjet
-
+PKGNAMESUFFIX=	-afpl
 DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
 		${DECRYPT_PDF} ${HP8XX_DRV} ${HPDJ_SRC} ${PCL3_SRC} \
 		${HP970_DRV} ${GPRINT_SRC} ${HPIJS_SRC}
+DIST_SUBDIR=	ghostscript
 EXTRACT_ONLY=	${GS_SOURCES}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -54,10 +55,9 @@ MAKE_ENV+=	A4=${A4}
 .endif
 
 .if !defined(WITHOUT_X11)
-PKGNAMESUFFIX=	-afpl
 USE_XLIB=	yes
 .else
-PKGNAMESUFFIX=	-afpl-nox11
+PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nox11
 MAKE_ENV+=	WITHOUT_X11=${WITHOUT_X11}
 .endif
 
