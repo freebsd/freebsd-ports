@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bind
-PORTVERSION=	9.0.0
+PORTVERSION=	9.0.1
 PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.isc.org/isc/bind9/${PORTVERSION}/ \
@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 
-MAN1=	host.1
+MAN1=	host.1 dig.1
 MAN5=	rndc.conf.5
 MAN8=	lwresd.8 named.8 nsupdate.8 rndc.8 dnssec-keygen.8 dnssec-makekeyset.8 \
 	dnssec-signkey.8 dnssec-signzone.8
