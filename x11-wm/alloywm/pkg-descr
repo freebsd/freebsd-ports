@@ -1,0 +1,24 @@
+This window manager is yet another descendant of aewm.  It has title bars,
+shading, a widget for resizing, automatic placement of windows (with the upper
+left corner at the current position of the mouse) as they open, and a list (by
+title) from which iconized windows may be chosen for display.  Some features
+are implemented in applets, not all of which work in this port.
+
+from the home page:
+	It is somewhat ICCCM compliant (it knows what a transient window is,
+	and catches client messages and knows the MIT-SHAPE). It does not try
+	to look like any other known OS (though, some people tell me it looks
+	like Mac OS, others say Amiga.) So, if you want a window manager that
+	is sanely usable within the smallest constraints (and without you
+	thinking you have an inept piece of software), then this is for you.
+
+from the README:
+	As its name implies, alloywm is a quite exquisite, aesthetic little
+	window manager for X11.  The premise of this window manager is not to
+	be over-bloated [...] to keep the interface out of a user's way [...]
+
+	It is not very configurable [...]
+
+	[...] you cannot click inside the window to give focus [...]
+
+WWW:  http://www.phatboydesigns.net/alloywm/
