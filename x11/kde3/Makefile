@@ -19,7 +19,7 @@ RUN_DEPENDS+=	kjumpingcube:${PORTSDIR}/games/kdegames3 \
 		kword:${PORTSDIR}/editors/koffice-kde3 \
 		kppp:${PORTSDIR}/net/kdenetwork3 \
 		kview:${PORTSDIR}/graphics/kdegraphics3 \
-		kmidi:${PORTSDIR}/audio/kdemultimedia3
+		kmidi:${PORTSDIR}/multimedia/kdemultimedia3
 
 .if make(package)
 DEPENDS_TARGET="package"
