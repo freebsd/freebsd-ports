@@ -32,6 +32,32 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f6680c03-0bd8-11d9-8a8a-000c41e2cdad">
+    <topic>tiff --- RLE decoder heap overflows</topic>
+    <affects>
+      <package>
+	<name>tiff</name>
+	<range><le>3.6.1_1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Chris Evans discovered several heap buffer overflows in
+          libtiff's RLE decoder.  These overflows could be triggered
+          by a specially-crafted TIFF image file, resulting in an
+          application crash and possibly arbitrary code execution.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0803</cvename>
+      <url>http://scary.beasts.org/security/CESA-2004-006.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-10-13</discovery>
+      <entry>2004-10-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="26c9e8c6-1c99-11d9-814e-0001020eed82">
     <topic>sharutils -- buffer overflows</topic>
     <affects>
