@@ -17,7 +17,6 @@ MAINTAINER=	lukin@okbmei.msk.su
 USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/DND/DNDlib
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CXXFLAGS="${CFLAGS}"
 
 post-install:
 .if !defined(NOPORTDOCS)

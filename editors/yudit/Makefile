@@ -16,7 +16,7 @@ MAINTAINER=	rch@WriteMe.Com
 LIB_DEPENDS=	ttf.4:${PORTSDIR}/print/freetype
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 
-CONFIGURE_ENV=	LC_ALL=C CXXFLAGS="${CFLAGS}"
+CONFIGURE_ENV=	LC_ALL=C
 GNU_CONFIGURE=	YES
 MAKE_ENV=	LC_ALL=C
 MAN1=		yudit.1 makeumap.1 stripumap.1 uniconv.1 uniprint.1

@@ -14,6 +14,5 @@ MASTER_SITE_SUBDIR=	devel/lang/c++
 MAINTAINER=	ssigala@globalnet.it
 
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)"
 
 .include <bsd.port.mk>

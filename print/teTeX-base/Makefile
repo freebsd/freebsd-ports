@@ -32,8 +32,7 @@ CONFIGURE_ARGS= --disable-multiplatform \
 		--with-libwww-include=${LIBWWW_PREFIX}/include/w3c-libwww \
 		--with-system-pnglib --with-pnglib-libdir=${LIBPNG_PREFIX}/lib \
 		--with-pnglib-include=${LIBPNG_PREFIX}/include
-CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}" \
-		INSTALL_PROGRAM="${BSD_INSTALL_SCRIPT}"
+CONFIGURE_ENV=	INSTALL_PROGRAM="${BSD_INSTALL_SCRIPT}"
 INSTALL_TARGET=	install strip
 NOMANCOMPRESS=	yes
 NOMAN1=		MakeTeXPK.1 access.1 afm2tfm.1 allcm.1 allec.1 allneeded.1 \
