@@ -28,6 +28,10 @@ NVVERSION=	6113
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 503000
+LIB_DEPENDS+=	m.2:${PORTSDIR}/misc/compat4x
+.endif
+
 # XXX Should use ${PKG_INFO} XXX
 #
 XSERVVERSION!=	/usr/sbin/pkg_info -O x11-servers/XFree86-4-Server 2>/dev/null | ${GREP} Server- || /usr/sbin/pkg_info -O x11-servers/xorg-server 2>/dev/null | ${GREP} server- || true
