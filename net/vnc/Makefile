@@ -1,23 +1,23 @@
 # New ports collection makefile for:	vnc
-# Version required:     3.3.1
+# Version required:     3.3.2r3
 # Date created:		24 February 1998
 # Whom:			msmith
 #
-# $Id: Makefile,v 1.6 1998/10/10 02:14:20 msmith Exp $
+# $Id: Makefile,v 1.7 1998/11/21 07:27:39 steve Exp $
 #
 
-DISTNAME=       	vnc-3.3.2r2_unixsrc
-PKGNAME=        	vnc-3.3.2r2
+DISTNAME=       	vnc-3.3.2r3_unixsrc
+PKGNAME=        	vnc-3.3.2r3
 CATEGORIES=		net
 MASTER_SITES=   	http://www.orl.co.uk/vnc/dist/
-DISTFILES=		vnc-3.3.2r2_unixsrc.tgz \
+DISTFILES=		vnc-3.3.2r3_unixsrc.tgz \
 			vnc-3.3.2_doc.tgz
 
 MAINTAINER=	 	bmah@ca.sandia.gov
 
 USE_PERL5=		YES
 
-EXTRACT_ONLY=		vnc-3.3.2r2_unixsrc.tgz
+EXTRACT_ONLY=		vnc-3.3.2r3_unixsrc.tgz
 IGNOREFILES=		${DISTFILES}
 
 NO_WRKSUBDIR=		YES
