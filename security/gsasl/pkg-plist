@@ -1,0 +1,12 @@
+bin/gsasl
+include/gsasl.h
+lib/libgsasl.a
+lib/libgsasl.so
+lib/libgsasl.so.4
+libdata/pkgconfig/libgsasl.pc
+share/locale/sv/LC_MESSAGES/gsasl.mo
+%%DOCSDIR%%/c4.html
+%%DOCSDIR%%/gsasl-gsasl.html
+%%DOCSDIR%%/index.html
+%%DOCSDIR%%/index.sgml
+@dirrm %%DOCSDIR%%

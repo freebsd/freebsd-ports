@@ -102,6 +102,7 @@
     SUBDIR += gpasman
     SUBDIR += gpgme
     SUBDIR += gringotts
+    SUBDIR += gsasl
     SUBDIR += gsfv
     SUBDIR += gss
     SUBDIR += gtk-knocker
