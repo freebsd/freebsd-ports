@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	ohphone
-PORTVERSION=	1.1pl1
+PORTVERSION=	1.1.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
 		http://www.ru.openh323.org/bin/
-DISTNAME=	ohphone_1.1pl1
+DISTNAME=	ohphone_1.1.2
 
 MAINTAINER=	roger@FreeBSD.org
 
@@ -23,6 +23,7 @@ NOCLEANDEPENDS=	yes
 
 USE_NEWGCC=	yes
 USE_BISON=	yes
+USE_XLIB=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	opt
 MAKE_ENV=	PWLIBDIR=${WRKDIRPREFIX}${.CURDIR}/../openh323/work/pwlib \
