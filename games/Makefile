@@ -222,6 +222,7 @@
     SUBDIR += kobodeluxe
     SUBDIR += kpacman
     SUBDIR += kpictorial
+    SUBDIR += krosswordplayer
     SUBDIR += ktritoc
     SUBDIR += kwappen
     SUBDIR += kxl

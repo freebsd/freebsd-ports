@@ -1,0 +1,4 @@
+bin/acrosslite_conv
+bin/krosswordplayer
+share/applnk/Utilities/krosswordplayer.desktop
+@unexec rmdir %D/share/applnk/Utilities 2>/dev/null || true
