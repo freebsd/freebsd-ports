@@ -75,8 +75,6 @@
     SUBDIR += mit-scheme
     SUBDIR += mixal
     SUBDIR += mmix
-    SUBDIR += modula-3
-    SUBDIR += modula-3-lib
     SUBDIR += modula-3-socks
     SUBDIR += moscow_ml
     SUBDIR += mozart
