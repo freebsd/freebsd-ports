@@ -1,14 +1,17 @@
 include/GL/freeglut.h
 include/GL/freeglut_ext.h
+include/GL/freeglut_std.h
 include/GL/glut.h
 lib/libglut.a
 lib/libglut.so
 lib/libglut.so.11
+%%PORTDOCS%%%%EXAMPLESDIR%%/callbackmaker
 %%PORTDOCS%%%%EXAMPLESDIR%%/fractals
 %%PORTDOCS%%%%EXAMPLESDIR%%/fractals_random
 %%PORTDOCS%%%%EXAMPLESDIR%%/fractals.dat
 %%PORTDOCS%%%%EXAMPLESDIR%%/lorenz
 %%PORTDOCS%%%%EXAMPLESDIR%%/one
+%%PORTDOCS%%%%EXAMPLESDIR%%/shapes
 %%PORTDOCS%%%%DOCSDIR%%/download.html
 %%PORTDOCS%%%%DOCSDIR%%/freeglut.html
 %%PORTDOCS%%%%DOCSDIR%%/freeglut_logo.png

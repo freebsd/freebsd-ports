@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		freeglut
-PORTVERSION=		2.0.1
+PORTVERSION=		2.2.0
 CATEGORIES=		x11-toolkits
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +20,9 @@ HAS_CONFIGURE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_XLIB=	yes
-CONFIGURE_ARGS=	--x-includes=${X11BASE}/include --x-libraries=${X11BASE}/lib
+CONFIGURE_ARGS=	--x-includes=${X11BASE}/include			\
+		--x-libraries=${X11BASE}/lib			\
+		--enable-replace-glut
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"			\
 		ACLOCAL="${ACLOCAL}"				\
 		AUTOCONF="${AUTOCONF}"				\
@@ -30,19 +32,27 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"			\
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 DOCS=	download.html freeglut.html freeglut_logo.png		\
 	freeglut_user_interface.html index.html ogl_sm.png	\
 	progress.html structure.html
-BINS=	Fractals Fractals_random Lorenz One
+BINS=	CallbackMaker Fractals Fractals_random Lorenz One shapes
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/X11R6|${X11BASE}|g"	\
 			-e "s|/usr/local|${LOCALBASE}|g"	\
 		${WRKSRC}/aclocal.m4
 .for fract in /fractals.c _random/fractals_random.c
-	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g"	\
+	@${REINPLACE_CMD} -e "s|/usr/local|${PREFIX}|g"		\
 		${WRKSRC}/progs/demos/Fractals${fract}
 .endfor
+
+post-build:
+	@${MV} ${WRKSRC}/progs/demos/CallbackMaker/.libs/CallbackMaker	\
+		${WRKSRC}/progs/demos/CallbackMaker/.libs/callbackmaker
+	@${CAT} pkg-message | ${SED} 's|%%X11BASE%%|${X11BASE}| ; \
+		s|%%PREFIX%%|${PREFIX}|' > ${PKGMESSAGE}
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -54,8 +64,8 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/progs/demos/Fractals/fractals.dat	\
 		${EXAMPLESDIR}
-.for FILE in ${BINS}
-	@${INSTALL_PROGRAM} ${WRKSRC}/progs/demos/${FILE}/.libs/${FILE:L} \
+.for prog in ${BINS}
+	@${INSTALL_PROGRAM} ${WRKSRC}/progs/demos/${prog}/.libs/${prog:L} \
 		${EXAMPLESDIR}
 .endfor
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."

@@ -1,0 +1,10 @@
+******************************************************************
+freeglut requires a DRI / OpenGL enabled-graphic card;
+You may try to run the sample programs to check your installation.
+
+Notice: freeglut is now a GLUT replacement.
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+It has been installed into %%PREFIX%%/lib/
+and the original GLUT is installed under %%X11BASE%%/lib/
+******************************************************************
