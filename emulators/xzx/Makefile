@@ -8,7 +8,7 @@
 PORTNAME=	xzx
 PORTVERSION=	4.1
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.zx-spectrum.net/xzx/files/
+MASTER_SITES=	http://www.philosys.de/~kunze/xzx.purespace.de/xzx/
 DISTNAME=	${PORTNAME}-pro-${PORTVERSION}-eval
 
 MAINTAINER=	ports@FreeBSD.org
