@@ -24,6 +24,8 @@ MAN1=		mailq.1 newaliases.1 vacation.1
 MAN5=		aliases.5
 MAN8=		sendmail.8 mailstats.8 makemap.8 praliases.8 smrsh.8 \
 		mail.local.8 rmail.8 editmap.8
+SENDMAIL=	${PREFIX}/sbin/sendmail
+PLIST_SUB+=	PREFIX=${PREFIX:S=${PREFIX}/==}
 
 # Options to define Features:
 # SENDMAIL_WITHOUT_IPV6=yes
@@ -41,6 +43,10 @@ LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap2
 .if defined(SENDMAIL_WITH_SASL)
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 PKGNAMESUFFIX?=	-sasl
+.endif
+.if defined(SENDMAIL_WITH_SASL2)
+LIB_DEPENDS+=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2
+PKGNAMESUFFIX?=	-sasl2
 .endif
 .if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
 PKGNAMESUFFIX?=	-tls
@@ -62,6 +68,9 @@ SITE+=	${FILESDIR}/site.config.m4.tls
 .if defined(SENDMAIL_WITH_SASL)
 SITE+=	${FILESDIR}/site.config.m4.sasl
 .endif
+.if defined(SENDMAIL_WITH_SASL2)
+SITE+=	${FILESDIR}/site.config.m4.sasl2
+.endif
 .if defined(SENDMAIL_WITH_LDAP)
 SITE+=	${FILESDIR}/site.config.m4.ldap
 .endif
@@ -74,8 +83,6 @@ SITE+=	${FILESDIR}/site.config.m4.milter
 PREFIX?=	${DESTDIR}/usr
 MANPREFIX?=	${DESTDIR}/usr/share
 .endif
-PLIST_SUB+=	PREFIX=${PREFIX:S=${PREFIX}/==}
-SENDMAIL=	${PREFIX}/sbin/sendmail
 
 post-extract:
 	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/sm-client.sh \
@@ -193,9 +200,15 @@ mailer.conf:
 		${DESTDIR}/etc/mail/mailer.conf
 .endif
 
-submit.cf:
+# create sumbit.cf on older systems
+#
+submit.cf:	${DESTDIR}/etc/mail/submit.cf
+
+${DESTDIR}/etc/mail/submit.mc:
 	${INSTALL_DATA} ${PREFIX}/share/sendmail/cf/cf/submit.mc \
 		${DESTDIR}/etc/mail/submit.mc
+
+${DESTDIR}/etc/mail/submit.cf:	${DESTDIR}/etc/mail/submit.mc
 	@( cd ${DESTDIR}/etc/mail && ${MAKE} \
 		SENDMAIL_CF_DIR=${PREFIX}/share/sendmail/cf \
 		SENDMAIL_MC=submit )
