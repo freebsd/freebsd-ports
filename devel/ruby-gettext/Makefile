@@ -23,9 +23,6 @@ USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
 
-post-extract:
-	cd ${WRKSRC}/ext/gettext/gettext; ${RM} -f *.o *.so
-
 #post-build:
 #.if !defined(NOPORTDOCS)
 #	cd ${WRKSRC}/docs; ${RUBY} yard2html.rb
