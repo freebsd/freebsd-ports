@@ -24,6 +24,8 @@ USE_GNOME=	pygtk2 pygnome2
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/BloGTK-${PORTVERSION}
 
+BROKEN=		Incomplete pkg-plist
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/shar,${PREFIX}/shar,' ${WRKSRC}/src/BloGTK.py
 
