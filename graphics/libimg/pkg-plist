@@ -2,8 +2,8 @@
 %%DIR%%/demo.tcl
 %%DIR%%/tkv.tcl
 %%DIR%%/imgmsg.tcl
-%%DIR%%/%%SHLIB_NAME%%
-%%DIR%%/%%SHLIB_LINK%%
+lib/%%SHLIB_NAME%%
+lib/%%SHLIB_LINK%%
 %%DIR%%/msgs/de.msg
 %%DIR%%/msgs/el.msg
 %%DIR%%/msgs/en.msg
