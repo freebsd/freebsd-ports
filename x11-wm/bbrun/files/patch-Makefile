@@ -1,25 +1,29 @@
---- Makefile.orig	Wed Feb  6 15:05:51 2002
-+++ Makefile	Tue Jun 18 01:37:36 2002
-@@ -1,16 +1,17 @@
+--- Makefile.orig	Sat Jul 20 12:47:49 2002
++++ Makefile	Sat Jul 20 20:24:41 2002
+@@ -1,16 +1,15 @@
 -CC     = gcc
 -LIBS   = -lXpm `gtk-config --libs`
 -CFLAGS = `gtk-config --cflags`
 +LIBS   = -lXpm `${GTK_CONFIG} --libs` -L${LOCALBASE}/lib -lgnugetopt
-+CFLAGS += `${GTK_CONFIG} --cflags` -Wall
++CFLAGS = `${GTK_CONFIG} --cflags` -Wall
  OBJS   = bbrun.o \
           ../wmgeneral/wmgeneral.o \
           ../wmgeneral/misc.o \
           ../wmgeneral/list.o
  
  .c.o:
--	$(CC) -c -O2 -Wall $< -o $*.o $(CFLAGS)
+-	$(CC) -g -c -O2 -Wall $< -o $*.o $(CFLAGS)
 +	$(CC) -c $< -o $*.o $(CFLAGS)
  
  bbrun: $(OBJS)
 -	$(CC) -Wall -g -o bbrun $^ $(LIBS)
 +	$(CC) -o bbrun $^ $(LIBS)
  
+ install:
+ 	cp bbrun /usr/local/bin/
+@@ -18,3 +17,5 @@
  clean:
  	rm -f bbrun $(OBJS)
+ 	rm -f core
 +
 +all: bbrun
