@@ -3,7 +3,7 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.18 1999/04/30 16:11:48 cwt Exp $
+# $Id: Makefile,v 1.19 1999/05/04 19:33:48 fenner Exp $
 #
 
 DISTNAME=	tk8.0.5
@@ -15,6 +15,7 @@ MAINTAINER=	cwt@Freebsd.ORG
 
 LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80
 
+NO_LATEST_LINK=	yes
 USE_XLIB=	yes
 WRKSRC=		${WRKDIR}/tk8.0.5/unix
 GNU_CONFIGURE=	yes
