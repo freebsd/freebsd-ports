@@ -91,8 +91,7 @@ case $retval in
 	;;
 esac
 
-echo $choice | sed -e 's:\":          :g' | fold -s -w 14 | tr -d \ \
-	| sort -u | grep zip > ${WRKDIR}/voices.conf
+echo $choice | tr ' ' '\012' | tr -d \" > ${WRKDIR}/voices.conf
 fi
 cut -c1-3 < ${WRKDIR}/voices.conf > ${WRKDIR}/fetchdirs.conf
 
