@@ -150,6 +150,7 @@
     SUBDIR += http_ping
     SUBDIR += hx
     SUBDIR += icb
+    SUBDIR += ickle
     SUBDIR += icmpinfo
     SUBDIR += icmpmonitor
     SUBDIR += icmpquery

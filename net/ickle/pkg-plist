@@ -1,0 +1,18 @@
+bin/ickle
+include/ickle/Client.h
+include/ickle/Contact.h
+include/ickle/ContactList.h
+include/ickle/SNAC.h
+include/ickle/TLV.h
+include/ickle/Xml.h
+include/ickle/buffer.h
+include/ickle/constants.h
+include/ickle/custom_marshal.h
+include/ickle/events.h
+include/ickle/exceptions.h
+include/ickle/socket.h
+lib/libicq2000.a
+lib/libicq2000.la
+lib/libicq2000.so
+lib/libicq2000.so.1
+@dirrm include/ickle
