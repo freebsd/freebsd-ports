@@ -10,10 +10,13 @@ SUBMASTERDIR=	${.CURDIR}/../netscape${BROWSER_VER}-communicator
 FILESDIR=	${SUBMASTERDIR}/files
 PATCHDIR=	${SUBMASTERDIR}/files
 PKGDIR=		${SUBMASTERDIR}
+MD5_FILE=	${SUBMASTERDIR}/distinfo
 
 BROWSER_VER=	47
 BROWSER_VERSION=	4.75
 NETHELP=        nethelp-v451
-KOREAN_KIT=	netscape-korean-kit-v475.20000826
+KOREAN_KIT=	netscape-korean-kit-v475.20001028
+
+PORTREVISION=	1
 
 .include "${MASTERDIR}/Makefile"
