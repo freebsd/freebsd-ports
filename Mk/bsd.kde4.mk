@@ -26,12 +26,12 @@ KDE_MAINTAINER=		will@FreeBSD.org
 
 # Compat shims.
 .if defined(USE_QT)
-QT_VER=			1
+USE_QT_VER=		1
 pre-everything::
 	@${ECHO} ">>> Warning:  this port needs to be updated as it uses the old-style USE_QT variable!"
 .endif
 .if defined(USE_QT2)
-QT_VER=			2
+USE_QT_VER=		2
 pre-everything::
 	@${ECHO} ">>> Warning:  this port needs to be updated as it uses the old-style USE_QT2 variable!"
 .endif
@@ -67,25 +67,25 @@ CONFIGURE_ENV+=	MOC="${MOC}" LIBQT="-l${QTNAME}" \
 				CPPFLAGS="${QTCPPFLAGS}" LIBS="${QTCFGLIBS}"
 .endif
 .endif
-# End of USE_QT section
+# End of USE_QT_VER section
 
-# USE_KDELIBS section
+# USE_KDELIBS_VER section
 .if defined(USE_KDELIBS_VER)
 
 # kdelibs 1.x common stuff 
 .if ${USE_KDELIBS_VER} == 1
 LIB_DEPENDS+=	kdelibs.3:${PORTSDIR}/x11/kdelibs11
-QT_VER=			1
+USE_QT_VER=		1
 
 .else
 
 # kdelibs 2.x common stuff -- DEFAULT
 LIB_DEPENDS+=	kdelibs.4:${PORTSDIR}/x11/kdelibs2
-QT_VER=			2
+USE_QT_VER=		2
 
 .endif
 .endif
-# End of USE_KDELIBS section
+# End of USE_KDELIBS_VER section
 
 # USE_KDEBASE_VER section
 .if defined(USE_KDEBASE_VER)
@@ -93,13 +93,13 @@ QT_VER=			2
 # kdebase 1.x common stuff
 .if ${USE_KDEBASE_VER} == 1
 RUN_DEPENDS+=	kcontrol:${PORTSDIR}/x11/kdebase11
-USE_KDELIBS=	1
+USE_KDELIBS_VER=1
 
 .else
 
 # kdebase 2.x common stuff -- DEFAULT
 LIB_DEPENDS+=	kparts.4:${PORTSDIR}/x11/kdebase2
-USE_KDELIBS=	2
+USE_KDELIBS_VER=2
 
 .endif
 .endif
