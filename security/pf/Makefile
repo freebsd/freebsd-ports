@@ -50,6 +50,10 @@ PLIST_SUB+=	WITH_ALTQ="@comment "
 IGNORE=		"Only for 5.0 and above"
 .endif
 
+.if ${OSVERSION} > 502105
+IGNORE=		"pf moved to the base system, please build it from there"
+.endif
+
 .if !exists(${SRC_BASE}/sys/Makefile) && \
     (defined(WITH_ALTQ) && !exists(${SYS_ALTQ}/Makefile))
 IGNORE=		"Kernel source files required"
