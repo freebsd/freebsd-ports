@@ -41,6 +41,7 @@ share/hugs/lib/Maybe.hs
 share/hugs/lib/Monad.hs
 share/hugs/lib/Numeric.hs
 share/hugs/lib/Prelude.hs
+share/hugs/lib/Quote.hs
 share/hugs/lib/Random.hs
 share/hugs/lib/Ratio.hs
 share/hugs/lib/System.hs
@@ -57,7 +58,9 @@ share/hugs/lib/exts/IOExts.hs
 share/hugs/lib/exts/Int.hs
 share/hugs/lib/exts/LazyST.hs
 share/hugs/lib/exts/Memo.hs
+share/hugs/lib/exts/MonadRec.hs
 share/hugs/lib/exts/NumExts.hs
+share/hugs/lib/exts/Observe.lhs
 share/hugs/lib/exts/Pretty.lhs
 share/hugs/lib/exts/ST.hs
 share/hugs/lib/exts/SampleVar.lhs
@@ -82,11 +85,17 @@ share/hugs/lib/hugs/Sequence.hs
 share/hugs/lib/hugs/StdLibs.hs
 share/hugs/lib/hugs/Trace.hs
 share/hugs/lib/hugs/Trex.hs
-share/doc/hugs/windows-notes.txt
 share/doc/hugs/Makefile
+share/doc/hugs/Makefile.in
+share/doc/hugs/ffi-notes.txt
+share/doc/hugs/hugs.1.in
+share/doc/hugs/machugs-notes.txt
+share/doc/hugs/mdo-notes.txt
+share/doc/hugs/observe-notes.txt
+share/doc/hugs/winhugs-notes.txt
+share/doc/hugs/zipcomp-notes.txt
 share/doc/hugs/server.tex
 share/doc/hugs/server.html
-share/doc/hugs/hugs.man
 share/doc/hugs/hugs.1
 @dirrm share/hugs/lib/hugs
 @dirrm share/hugs/lib/exts
