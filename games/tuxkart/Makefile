@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tuxkart
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.0
 CATEGORIES=	games
 MASTER_SITES=	http://tuxkart.sourceforge.net/dist/
 
