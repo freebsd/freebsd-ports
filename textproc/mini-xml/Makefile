@@ -4,10 +4,10 @@
 # $FreeBSD$
 
 PORTNAME=	mini-xml
-PORTVERSION=	2.0.r1
+PORTVERSION=	2.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.easysw.com/~mike/mxml/swfiles/
-DISTNAME=	mxml-${PORTVERSION:S/.r/rc/}
+DISTNAME=	mxml-${PORTVERSION}
 
 MAINTAINER=	oc@nm.ru
 COMMENT=	Lightweight XML parsing library

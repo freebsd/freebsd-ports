@@ -6,7 +6,6 @@ libdata/pkgconfig/mxml.pc
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/mxml.html
-%%PORTDOCS%%%%DOCSDIR%%/mxml.pdf
 %%PORTDOCS%%%%DOCSDIR%%/mxmldoc.xsd
 %%PORTDOCS%%%%DOCSDIR%%/test.xml
 %%PORTDOCS%%%%DOCSDIR%%/samples/class.cxx
