@@ -60,8 +60,7 @@ post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e \
 		's|\$$(libmozilla_bonobodoc_DATA)|| ; \
-		 s|\$$(mkinstalldirs) \$$(DESTDIR)\$$(libmozilla_bonobodocdir)||
-; \
+		 s|\$$(mkinstalldirs) \$$(DESTDIR)\$$(libmozilla_bonobodocdir)|| ; \
 		 s| \$$(DESTDIR)\$$(libmozilla_bonobodocdir) | |' ${WRKSRC}/Makefile.in
 .endif
 

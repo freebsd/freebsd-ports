@@ -35,6 +35,7 @@ CONFIGURE_ARGS=	--with-perl5="${PERL}" \
 MAN1=		namazu.1 mknmz.1
 INSTALLS_SHLIB=	yes
 
+post-install:
 .if defined(NOPORTDOCS)
 	${RM} -rf ${PREFIX}/share/namazu/doc
 .endif
