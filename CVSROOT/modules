@@ -4331,6 +4331,7 @@ libcapplet	ports/x11/libcapplet
 libcapsinetwork	ports/devel/libcapsinetwork
 libcdaudio	ports/audio/libcdaudio
 libcddb		ports/audio/libcddb
+libcdio		ports/sysutils/libcdio
 libcheck	ports/devel/libcheck
 libchipcard	ports/devel/libchipcard
 libchipcard-kde	ports/devel/libchipcard-kde
