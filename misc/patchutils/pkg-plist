@@ -1,5 +1,6 @@
 @comment $FreeBSD$
 bin/combinediff
+bin/dehtmldiff
 bin/editdiff
 bin/filterdiff
 bin/fixcvsdiff
