@@ -61,11 +61,11 @@
     SUBDIR += elisa8x8
     SUBDIR += elisp-manual
     SUBDIR += elvis
+    SUBDIR += emacs-emcws
     SUBDIR += emacs-manual
     SUBDIR += emacs20-dl-canna
     SUBDIR += emacs20-dl-wnn6
     SUBDIR += emacs20-emcws
-    SUBDIR += emacs21-emcws
     SUBDIR += epic4
     SUBDIR += epwutil
     SUBDIR += escpf
