@@ -19,6 +19,7 @@ LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 USE_KDEBASE_VER=2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CFLAGS+=	-DHAVE_BOOL
 
 post-patch:
 	@${PERL} -pi -e 's#lqt#lqt2#g' ${WRKSRC}/configure
