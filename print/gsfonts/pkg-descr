@@ -1,7 +1,8 @@
-This package installs the required Adobe fonts from GNU Ghostscript's
-distribution, and prepares the Type1 fonts so they may also work in the
-Xwindows environment.
-________
-Postscript is a trademark of Adobe Systems Incorporated, Ghostscript is
-copyrighted by Aladdin Enterprises, and the Xwindows system is a trademark
-of the Open Group.
+Ghostscript is the well-known PostScript interpreter which is available for
+all common and most esoteric platforms and supports many different printers
+and some displays.
+
+This port install the fontpacks with the Type1 fonts ready for X use with
+Adobe foundries.
+
+WWW: http://www.cs.wisc.edu/~ghost/doc/gnu/index.htm
