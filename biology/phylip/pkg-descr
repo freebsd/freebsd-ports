@@ -8,28 +8,6 @@ types that can be handled include molecular sequences, gene
 frequencies, restriction sites, distance matrices, and 0/1 discrete
 characters.
 
-The programs are controlled through a menu, which asks the users which
-options they want to set, and allows them to start the
-computation. The data are read into the program from a text file,
-which the user can prepare using any word processor or text editor
-(but it is important that this text file not be in the special format
-of that word processor -- it should instead be in "flat ASCII" or
-"Text Only" format). Some sequence analysis programs such as alignment
-programs can write data files in the PHYLIP format. Most of the
-programs look for the data in a file called "infile" -- if they do not
-find this file they then ask the user to type in the file name of the
-data file.
-
-Output is written onto special files with names like "outfile" and
-"treefile". Trees written onto "treefile" are in the Newick format, an
-informal standard agreed to in 1986 by authors of a number of major
-phylogeny packages.
-
-PHYLIP is the most widely-distributed phylogeny package, and competes
-with PAUP to be the one responsible for the largest number of
-published trees. PHYLIP has been in distribution since 1980, and has
-over 6,000 registered users.
-
  Joe Felsenstein
  joe@genetics.washington.edu
  Department of Genetics
