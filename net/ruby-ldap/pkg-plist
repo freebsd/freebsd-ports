@@ -14,6 +14,8 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/conf.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/delete.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/ext.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/misc1.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/misc2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/modrdn.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap1/slapd.conf.in
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/ldap/openldap2/slapd-ssl.conf.in
