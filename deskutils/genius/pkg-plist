@@ -1,22 +1,29 @@
 bin/genius
 bin/gnome-genius
-share/doc/genius/AUTHORS
-share/doc/genius/COPYING
-share/doc/genius/ChangeLog
-share/doc/genius/NEWS
-share/doc/genius/README
-share/doc/genius/TODO
+include/genius/calc.h
+include/genius/eval.h
+include/genius/plug_api.h
+include/genius/structs.h
+lib/genius/libtestplugin.a
+lib/genius/libtestplugin.so
+lib/genius/libtestplugin.so.0
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/gnome/apps/Utilities/gnome-genius.desktop
-share/gnome/genius/lib.gel
-share/gnome/genius/lib.cgel
+share/gnome/genius/gel/lib.gel
+share/gnome/genius/gel/lib.cgel
+share/gnome/genius/plugins/test.plugin
 share/locale/cs/LC_MESSAGES/genius.mo
 share/locale/de/LC_MESSAGES/genius.mo
 share/locale/es/LC_MESSAGES/genius.mo
 share/locale/fr/LC_MESSAGES/genius.mo
-share/locale/ga/LC_MESSAGES/genius.mo
 share/locale/it/LC_MESSAGES/genius.mo
 share/locale/ko/LC_MESSAGES/genius.mo
 share/locale/no/LC_MESSAGES/genius.mo
+share/locale/pl/LC_MESSAGES/genius.mo
 share/locale/pt/LC_MESSAGES/genius.mo
-@dirrm share/doc/genius
+share/locale/sv/LC_MESSAGES/genius.mo
+@dirrm share/gnome/genius/plugins
+@dirrm share/gnome/genius/gel
 @dirrm share/gnome/genius
+@dirrm lib/genius
