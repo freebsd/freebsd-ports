@@ -1,26 +1,18 @@
 
 $FreeBSD$
 
---- mediastreamer/Makefile.in.orig	Wed Aug 20 17:45:14 2003
-+++ mediastreamer/Makefile.in	Sat Aug 23 01:37:49 2003
-@@ -224,14 +224,14 @@
-                                                         $(TRUESPEECH_SOURCES)
+--- mediastreamer/Makefile.in.orig	Thu Nov 20 19:41:39 2003
++++ mediastreamer/Makefile.in	Fri Nov 21 10:59:28 2003
+@@ -222,7 +222,7 @@
  
  
--@BUILD_MINIMALGLIB_TRUE@libmediastreamer_la_LIBADD = ../gsmlib/libgsm.la \
-+@BUILD_MINIMALGLIB_TRUE@libmediastreamer_la_LIBADD = -lgsm \
- @BUILD_MINIMALGLIB_TRUE@							../lpc10-1.5/liblpc10.la \
- @BUILD_MINIMALGLIB_TRUE@							../oRTP/src/libortp.la \
- @BUILD_MINIMALGLIB_TRUE@							$(ALSA_LIBS) \
- @BUILD_MINIMALGLIB_TRUE@							$(TRUESPEECH_LIBADD)
- 
- @BUILD_MINIMALGLIB_FALSE@libmediastreamer_la_LIBADD = $(GLIB_LIBS) \
--@BUILD_MINIMALGLIB_FALSE@							../gsmlib/libgsm.la \
-+@BUILD_MINIMALGLIB_FALSE@							-lgsm \
- @BUILD_MINIMALGLIB_FALSE@							../lpc10-1.5/liblpc10.la \
- @BUILD_MINIMALGLIB_FALSE@							../oRTP/src/libortp.la \
- @BUILD_MINIMALGLIB_FALSE@							$(ALSA_LIBS) \
-@@ -261,7 +261,7 @@
+ libmediastreamer_la_LIBADD = $(GLIB_LIBS) \
+-							../gsmlib/libgsm.la \
++							-lgsm \
+ 							../lpc10-1.5/liblpc10.la \
+ 							../oRTP/src/libortp.la \
+ 							$(ALSA_LIBS) \
+@@ -252,7 +252,7 @@
  
  #the speex encoder and decoder 
  libmsspeex_la_SOURCES = msspeexenc.c msspeexenc.h msspeexdec.c msspeexdec.h
@@ -29,46 +21,35 @@ $FreeBSD$
  
  #the v4l plugin 
  libmsv4l_la_SOURCES = msv4l.c msv4l.h
-@@ -349,12 +349,8 @@
+@@ -335,12 +335,8 @@
  						-I$(top_srcdir)/mediastreamer \
  						-I$(top_srcdir)/oRTP/src \
  						-I$(top_srcdir)/oRTP \
 -						-I$(top_srcdir)/gsmlib   \
  						-I$(top_srcdir)/lpc10-1.5    \
-                         -I$(top_srcdir)/ffmpeg/libavcodec \
+             -I$(top_srcdir)/ffmpeg/libavcodec \
 -						-I/usr/X11R6/include/X11 \
 -						-I/usr/include/SDL \
 -						-I$(top_srcdir)/speex/libspeex \
  						$(TRUESPEECH_INCLUDES)
  
  subdir = mediastreamer
-@@ -365,21 +361,21 @@
+@@ -351,12 +347,12 @@
  
  libmediastreamer_la_LDFLAGS =
- @BUILD_MINIMALGLIB_FALSE@@BUILD_TRUESPEECH_TRUE@libmediastreamer_la_DEPENDENCIES = \
--@BUILD_MINIMALGLIB_FALSE@@BUILD_TRUESPEECH_TRUE@	../gsmlib/libgsm.la \
-+@BUILD_MINIMALGLIB_FALSE@@BUILD_TRUESPEECH_TRUE@	-lgsm \
- @BUILD_MINIMALGLIB_FALSE@@BUILD_TRUESPEECH_TRUE@	../lpc10-1.5/liblpc10.la \
- @BUILD_MINIMALGLIB_FALSE@@BUILD_TRUESPEECH_TRUE@	../oRTP/src/libortp.la \
- @BUILD_MINIMALGLIB_FALSE@@BUILD_TRUESPEECH_TRUE@	../win32acm/libwin32acm.a
- @BUILD_MINIMALGLIB_FALSE@@BUILD_TRUESPEECH_FALSE@libmediastreamer_la_DEPENDENCIES = \
--@BUILD_MINIMALGLIB_FALSE@@BUILD_TRUESPEECH_FALSE@	../gsmlib/libgsm.la \
-+@BUILD_MINIMALGLIB_FALSE@@BUILD_TRUESPEECH_FALSE@	-lgsm \
- @BUILD_MINIMALGLIB_FALSE@@BUILD_TRUESPEECH_FALSE@	../lpc10-1.5/liblpc10.la \
- @BUILD_MINIMALGLIB_FALSE@@BUILD_TRUESPEECH_FALSE@	../oRTP/src/libortp.la
- @BUILD_MINIMALGLIB_TRUE@@BUILD_TRUESPEECH_TRUE@libmediastreamer_la_DEPENDENCIES = \
--@BUILD_MINIMALGLIB_TRUE@@BUILD_TRUESPEECH_TRUE@	../gsmlib/libgsm.la \
-+@BUILD_MINIMALGLIB_TRUE@@BUILD_TRUESPEECH_TRUE@	-lgsm \
- @BUILD_MINIMALGLIB_TRUE@@BUILD_TRUESPEECH_TRUE@	../lpc10-1.5/liblpc10.la \
- @BUILD_MINIMALGLIB_TRUE@@BUILD_TRUESPEECH_TRUE@	../oRTP/src/libortp.la \
- @BUILD_MINIMALGLIB_TRUE@@BUILD_TRUESPEECH_TRUE@	../win32acm/libwin32acm.a
- @BUILD_MINIMALGLIB_TRUE@@BUILD_TRUESPEECH_FALSE@libmediastreamer_la_DEPENDENCIES = \
--@BUILD_MINIMALGLIB_TRUE@@BUILD_TRUESPEECH_FALSE@	../gsmlib/libgsm.la \
-+@BUILD_MINIMALGLIB_TRUE@@BUILD_TRUESPEECH_FALSE@	-lgsm \
- @BUILD_MINIMALGLIB_TRUE@@BUILD_TRUESPEECH_FALSE@	../lpc10-1.5/liblpc10.la \
- @BUILD_MINIMALGLIB_TRUE@@BUILD_TRUESPEECH_FALSE@	../oRTP/src/libortp.la
+ @BUILD_TRUESPEECH_TRUE@libmediastreamer_la_DEPENDENCIES = \
+-@BUILD_TRUESPEECH_TRUE@	../gsmlib/libgsm.la \
++@BUILD_TRUESPEECH_TRUE@	-lgsm \
+ @BUILD_TRUESPEECH_TRUE@	../lpc10-1.5/liblpc10.la \
+ @BUILD_TRUESPEECH_TRUE@	../oRTP/src/libortp.la \
+ @BUILD_TRUESPEECH_TRUE@	../win32acm/libwin32acm.a
+ @BUILD_TRUESPEECH_FALSE@libmediastreamer_la_DEPENDENCIES = \
+-@BUILD_TRUESPEECH_FALSE@	../gsmlib/libgsm.la \
++@BUILD_TRUESPEECH_FALSE@	-lgsm \
+ @BUILD_TRUESPEECH_FALSE@	../lpc10-1.5/liblpc10.la \
+ @BUILD_TRUESPEECH_FALSE@	../oRTP/src/libortp.la
  @BUILD_TRUESPEECH_TRUE@am__objects_1 = mstruespeechencoder.lo \
-@@ -410,7 +406,7 @@
+@@ -386,7 +382,7 @@
  libmssmpeg_la_OBJECTS = $(am_libmssmpeg_la_OBJECTS)
  libmsspeex_la_LDFLAGS =
  libmsspeex_la_DEPENDENCIES = libmediastreamer.la \

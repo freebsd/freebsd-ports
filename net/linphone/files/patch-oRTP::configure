@@ -1,14 +1,11 @@
-
-$FreeBSD$
-
---- oRTP/configure.orig	Wed Aug 13 01:22:52 2003
-+++ oRTP/configure	Sat Aug 23 00:17:21 2003
-@@ -18804,8 +18804,6 @@
+--- oRTP/configure.orig	Thu Nov 20 19:42:24 2003
++++ oRTP/configure	Fri Nov 21 11:14:07 2003
+@@ -19430,8 +19430,6 @@
  			CFLAGS="$CFLAGS +DA2.0W +DS2.0"
  		fi
  	fi
 -else
--	CFLAGS="-O2 -g"
+-	CFLAGS="-O2 -g -Wall"
  fi
  
  build_scheduler=yes
