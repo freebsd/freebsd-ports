@@ -14,8 +14,7 @@ DISTNAME=	gnome-core-${PORTVERSION}
 
 MAINTAINER?=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade \
-		gnomecanvaspixbuf.1:${PORTSDIR}/graphics/gnomecanvas
+LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade
 RUN_DEPENDS=	${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio
 
 USE_X_PREFIX=	yes

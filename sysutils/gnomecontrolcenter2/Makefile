@@ -14,7 +14,7 @@ DISTNAME=	control-center-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
+LIB_DEPENDS=	gnomecanvaspixbuf.1:${PORTSDIR}/graphics/gnomecanvas \
 		gnomevfs.0:${PORTSDIR}/devel/gnomevfs
 
 USE_X_PREFIX=	yes
