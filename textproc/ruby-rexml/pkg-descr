@@ -1,0 +1,6 @@
+REXML is a pure Ruby XML processor inspired by the Electric XML
+processor for Java.  The API is terse and intuitive, and XML
+processing is reasonably fast.
+
+Author:	Sean Russell <ser@germane-software.com>
+WWW:	http://www.germane-software.com/~ser/Software/rexml/
