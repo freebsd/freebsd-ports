@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.214 1999/06/11 08:37:52 taoka Exp $
+# $Id: Makefile,v 1.215 1999/06/22 23:42:22 sada Exp $
 #
 
     SUBDIR += 221upgrade
@@ -8,6 +8,7 @@
     SUBDIR += 30upgrade
     SUBDIR += 31upgrade
     SUBDIR += 32upgrade
+    SUBDIR += Generic-NQS
     SUBDIR += Howto
     SUBDIR += acron
     SUBDIR += amanda
