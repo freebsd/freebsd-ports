@@ -611,6 +611,7 @@
     SUBDIR += robodoc
     SUBDIR += rpc2
     SUBDIR += rtems-gcc
+    SUBDIR += rtplib
     SUBDIR += ruby-amstd
     SUBDIR += ruby-aspectr
     SUBDIR += ruby-avl

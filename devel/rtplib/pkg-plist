@@ -1,0 +1,7 @@
+lib/librtp.a
+lib/librtpunix.a
+include/rtp_api.h
+include/rtp_highlevel.h
+include/rtp_lowlevel.h
+%%PORTDOCS%%share/doc/rtplib/rtp_api.html
+%%PORTDOCS%%@dirrm share/doc/rtplib

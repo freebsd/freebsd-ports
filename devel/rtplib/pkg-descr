@@ -1,0 +1,9 @@
+The RTP Library provides a high level interface for developing
+applications that make use of the Real Time Transport Protocol
+(RTP). This protocol was developed in the Audio/Video Working Group
+of the Internet Engineering Task Force (IETF), and has been published
+as RFC1889. This library is based on the most recent version of the
+specification, incorporating some of the newest features, including
+RTCP scalability algorithms.
+
+WWW: http://www-out.bell-labs.com:80/project/RTPlib/
