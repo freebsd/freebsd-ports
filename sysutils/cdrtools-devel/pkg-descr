@@ -1,15 +1,21 @@
-This package contains the following software:
+The cdrtools software includes tools to create and/or extract
+ISO-9660 filesystems, verify their integrity, and write them to
+disc.
 
--	cdda2wav (an digital CD audio extraction program)
-
--	cdrecord (a CD recording program)
-
--	readcd (a stripped down version of scgskeleton)
-	may be used to read data CD's, to write to DVD-RAM
-	and to copy Solaris boot CD's
-
--	scgcheck (checks and validates the ABI of libscg)
-
--	rscsi (daemon providing access to local SCSI-devices over the network)
+This package contains the following programs:
+- cdda2wav (an digital CD audio extraction program)
+- cdrecord (a CD-R[W] recording program)
+- devdump (dump a device or file in hex)
+- isodebug (show debug info contained in an ISO-9660 image)
+- isodump (dump a device or file based on ISO-9660)
+- isoinfo (analyze or list an ISO-9660 image)
+- isovfy (verify an ISO-9660 image)
+- mkisofs (an ISO-9660 filesystem image creator)
+- mkhybrid (an ISO-9660/HFS filesystem image creator)
+  Link to mkisofs.
+- readcd (a data CD reading and recording program)
+  May be used to to write to DVD-RAM and to copy Solaris boot CD's.
+- scgcheck (checks and validates the ABI of libscg)
+- rscsi (daemon providing access to local SCSI-devices over the network)
 
 WWW: http://www.fokus.gmd.de/research/cc/glone/employees/joerg.schilling/private/cdrecord.html

@@ -5,36 +5,30 @@
 # $FreeBSD$
 #
 
-PORTNAME?=	cdrtools
-CDRTLSVERSION=	2.01a29
-PORTVERSION?=	${CDRTLSVERSION}
-PORTREVISION?=	0
-CATEGORIES?=	sysutils audio
+PORTNAME=	cdrtools
+PORTVERSION=	2.01a30
+CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/alpha/ \
 		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/
-DISTNAME=	cdrtools-${CDRTLSVERSION}
 
 MAINTAINER=	marius@FreeBSD.org
-COMMENT?=	Cdrecord and other programs to extract and record CDs/CD-R[W]s
+COMMENT=	CD/CD-R[W] and ISO-9660 image creation and extraction tools
 
-CONFLICTS?=	cdrtools-[0-9]*
+CONFLICTS=	cdrtools-[0-9]*
 
-.if defined(MKISOFS)
+MAN1=		cdda2wav.1 cdrecord.1 readcd.1 scgcheck.1
 MAN8=		isoinfo.8 mkisofs.8
 MLINKS=		isoinfo.8 devdump.8 isoinfo.8 isodump.8 isoinfo.8 isovfy.8 \
 		mkisofs.8 mkhybrid.8
-DOCS=		README README.compression README.eltorito README.graft_dirs \
-		README.hfs_boot README.hfs_magic README.hide README.joliet \
-		README.macosx README.mkhybrid README.prep_boot README.rootinfo \
-		README.session README.sort README.sparcboot README.sunx86boot
-.else
-MAN1=		cdda2wav.1 cdrecord.1 readcd.1 scgcheck.1
 DOCS=		README README.ATAPI README.DiskT@2 README.FreeBSD README.WORM \
 		README.audio README.cdplus README.cdrw README.cdtext \
 		README.clone README.copy README.mkisofs README.multi \
 		README.raw README.rscsi README.sony README.verify
 CDDA2WAVDOCS=	FAQ Frontends HOWTOUSE OtherProgs README THANKS TODO
-.endif
+MKISOFSDOCS=	README README.compression README.eltorito README.graft_dirs \
+		README.hfs_boot README.hfs_magic README.hide README.joliet \
+		README.macosx README.mkhybrid README.prep_boot README.rootinfo \
+		README.session README.sort README.sparcboot README.sunx86boot
 
 NO_LATEST_LINK=	yes
 USE_BZIP2=	yes
@@ -43,14 +37,9 @@ USE_REINPLACE=	yes
 MAKE_ENV=	CCOM=${CC} LANG=C
 #CFLAGS+=	-DSOURCE_MODIFIED
 WRKSRC=		${WRKDIR}/${DISTNAME:C/a(.+)$//}
+PKGMESSAGE=	${WRKDIR}/pkg-message
 CDRTLSTARGET=	${ARCH}-freebsd-${CC}
 
-.if defined(MKISOFS)
-DOCSSRC=	${WRKSRC}/${PORTNAME}
-PKGMESSAGE=	""
-.else
-DOCSSRC=	${WRKSRC}
-PKGMESSAGE=	${WRKDIR}/pkg-message
 .if defined(WITH_RSCSI)
 PKGINSTALL=	${PKGDIR}/pkg-install.rscsi
 PLIST_SUB=	RSCSI=""
@@ -58,13 +47,12 @@ PKGNAMESUFFIX=	-rscsi-devel
 .else
 PLIST_SUB=	RSCSI="@comment "
 .endif
-.endif
 PKGNAMESUFFIX?=	-devel
 
 .include <bsd.port.pre.mk>
 
 pre-everything::
-.if !defined(MKISOFS) && !defined(WITH_RSCSI)
+.if !defined(WITH_RSCSI)
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You may use the following build option(s):"
 	@${ECHO_MSG} ""
@@ -88,15 +76,6 @@ post-extract:
 
 post-patch:
 	@${RM} ${WRKSRC}/TARGETS/55scgskeleton ${WRKSRC}/TARGETS/85man
-.if defined(MKISOFS)
-.for i in 45libedc 45libparanoia 55cdda2wav 55cdrecord 55readcd 55rscsi \
-	55scgcheck
-	@${RM} ${WRKSRC}/TARGETS/${i}
-.endfor
-.else
-.for i in 45libfile 45libhfs_iso 45libunls 55mkisofs 55mkisofs!@!diag
-	@${RM} ${WRKSRC}/TARGETS/${i}
-.endfor
 .if !defined(WITH_RSCSI)
 	@${RM} ${WRKSRC}/TARGETS/55rscsi
 .endif
@@ -113,25 +92,20 @@ post-patch:
 #		${WRKSRC}/cdrecord/cdrecord.c
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message > \
 		${WRKDIR}/pkg-message
-.endif
 
 do-install:
-.if defined(MKISOFS)
-	@${INSTALL_PROGRAM} ${WRKSRC}/mkisofs/OBJ/${CDRTLSTARGET}/mkisofs \
-		${PREFIX}/bin
-	@${LN} -sf mkisofs ${PREFIX}/bin/mkhybrid
-.for i in devdump isodebug isodump isoinfo isovfy
-	@${INSTALL_PROGRAM} ${WRKSRC}/mkisofs/diag/OBJ/${CDRTLSTARGET}/${i} \
-		${PREFIX}/bin
-.endfor
-	@${INSTALL_MAN} ${WRKSRC}/mkisofs/mkisofs.8 ${PREFIX}/man/man8
-	@${INSTALL_MAN} ${WRKSRC}/mkisofs/diag/isoinfo.8 ${PREFIX}/man/man8
-.else
 	@${INSTALL_PROGRAM} ${WRKSRC}/cdda2wav/OBJ/${CDRTLSTARGET}/cdda2wav \
 		${PREFIX}/bin
 	@${LN} -sf cdda2wav ${PREFIX}/bin/list_audio_tracks
 	@${INSTALL_PROGRAM} ${WRKSRC}/cdrecord/OBJ/${CDRTLSTARGET}/cdrecord \
 		${PREFIX}/bin
+.for i in devdump isodebug isodump isoinfo isovfy
+	@${INSTALL_PROGRAM} ${WRKSRC}/mkisofs/diag/OBJ/${CDRTLSTARGET}/${i} \
+		${PREFIX}/bin
+.endfor
+	@${INSTALL_PROGRAM} ${WRKSRC}/mkisofs/OBJ/${CDRTLSTARGET}/mkisofs \
+		${PREFIX}/bin
+	@${LN} -sf mkisofs ${PREFIX}/bin/mkhybrid
 	@${INSTALL_PROGRAM} ${WRKSRC}/readcd/OBJ/${CDRTLSTARGET}/readcd \
 		${PREFIX}/bin
 .if defined(WITH_RSCSI)
@@ -145,6 +119,8 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/cdrecord/cdrecord.1 ${PREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/readcd/readcd.1 ${PREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/scgcheck/scgcheck.1 ${PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/mkisofs/mkisofs.8 ${PREFIX}/man/man8
+	@${INSTALL_MAN} ${WRKSRC}/mkisofs/diag/isoinfo.8 ${PREFIX}/man/man8
 	@${INSTALL_DATA} ${WRKSRC}/cdrecord/cdrecord.dfl \
 		${PREFIX}/etc/cdrecord.sample
 .if !exists(${PREFIX}/etc/cdrecord)
@@ -156,23 +132,24 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/rscsi/rscsi.dfl ${PREFIX}/etc/rscsi
 .endif
 .endif
-.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}
-	@${INSTALL_DATA} ${DOCSSRC}/${i} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
-.if !defined(MKISOFS)
 	@${MKDIR} ${DOCSDIR}/cdda2wav
 .for i in ${CDDA2WAVDOCS}
-	@${INSTALL_DATA} ${DOCSSRC}/cdda2wav/${i} ${DOCSDIR}/cdda2wav
+	@${INSTALL_DATA} ${WRKSRC}/cdda2wav/${i} ${DOCSDIR}/cdda2wav
 .endfor
-.endif
+	@${MKDIR} ${DOCSDIR}/mkisofs
+.for i in ${MKISOFSDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/mkisofs/${i} ${DOCSDIR}/mkisofs
+.endfor
 .endif
 
 post-install:
 	-@if [ -f ${PKGINSTALL} ]; then ${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL; fi
-	@if [ -f ${WRKDIR}/pkg-message ]; then ${CAT} ${WRKDIR}/pkg-message; fi
+	@${CAT} ${WRKDIR}/pkg-message
 
 .include <bsd.port.post.mk>
