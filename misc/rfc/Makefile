@@ -1,5 +1,5 @@
 # New ports collection makefile for:	rfc
-# Version required:			2.0
+# Version required:			2.1
 # Date created:				05 October 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
@@ -7,12 +7,12 @@
 #
 
 DISTNAME=	rfc
-PKGNAME=	rfc-2.0
+PKGNAME=	rfc-2.1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.dewn.com/rfc/
 EXTRACT_SUFX=
 
-MAINTAINER=	jedgar@fxp.org
+MAINTAINER=	jedgar@FreeBSD.org
 
 RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx
 
@@ -24,9 +24,8 @@ do-extract:
 	@${CP} ${DISTDIR}/${DISTNAME} ${WRKDIR}/${DISTNAME}
 
 do-configure:
-	@${MV} ${WRKDIR}/${DISTNAME} ${WRKDIR}/${DISTNAME}.orig
-	@${SED} -e 's|/etc/rfc|${PREFIX}/etc/rfc|' -e 's|/etc/nmap|${PREFIX}/share/misc/nmap|' \
-	   < ${WRKDIR}/${DISTNAME}.orig > ${WRKDIR}/${DISTNAME}
+	@${PERL} -pi.orig -e 's|/etc/rfc|${PREFIX}/etc/rfc|' ${WRKDIR}/${DISTNAME}
+	@${PERL} -pi.orig -e 's|/etc/nmap|${PREFIX}/share/misc/nmap|' ${WRKDIR}/${DISTNAME}
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/rfc ${PREFIX}/bin/rfc
