@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnumeric
-PORTVERSION=	0.53
+PORTVERSION=	0.54
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnumeric
@@ -20,16 +20,19 @@ RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore \
 LIB_DEPENDS=	gnomeprint.9:${PORTSDIR}/print/gnomeprint \
 		glade.3:${PORTSDIR}/devel/libglade
 
+GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
+LIBTOOLFILES=	configure libole2/configure
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
 		--with-gnome=${PREFIX} --with-guile
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		GLIB_CONFIG="${GLIB_CONFIG}" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
 

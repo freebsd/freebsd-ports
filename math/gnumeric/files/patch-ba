@@ -1,11 +1,11 @@
---- Makefile.in.orig	Tue May  9 21:57:18 2000
-+++ Makefile.in	Tue May 16 12:16:37 2000
+--- Makefile.in.orig	Sun May 21 01:25:10 2000
++++ Makefile.in	Mon May 22 10:10:34 2000
 @@ -152,12 +152,12 @@
  perl_val = @perl_val@
  python_val = @python_val@
  
--SUBDIRS = . intl po macros idl plugins wizards src graph doc icons
-+SUBDIRS = . intl po macros idl plugins wizards src graph icons
+-SUBDIRS = . intl po macros libole2 idl plugins wizards src graph doc icons
++SUBDIRS = . intl po macros libole2 idl plugins wizards src graph icons
  
  change_logs =  	OOChangeLog OChangeLog ChangeLog
  

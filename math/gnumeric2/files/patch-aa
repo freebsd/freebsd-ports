@@ -1,9 +1,9 @@
---- configure.orig	Tue May  9 20:50:13 2000
-+++ configure	Tue May 16 09:56:35 2000
-@@ -5951,8 +5951,8 @@
+--- configure.orig	Sun May 21 01:24:08 2000
++++ configure	Mon May 22 10:35:06 2000
+@@ -5934,8 +5934,8 @@
  
  echo $ac_n "checking for GTK >= 1.2.7""... $ac_c" 1>&6
- echo "configure:5954: checking for GTK >= 1.2.7" >&5
+ echo "configure:5937: checking for GTK >= 1.2.7" >&5
 -if gtk-config --version > /dev/null 2>&1; then 
 -        vers=`gtk-config --version | awk 'BEGIN { FS = "."; } { printf "%d", ($1 * 1000 + $2) * 1000 + $3;}'`
 +if $GTK_CONFIG --version > /dev/null 2>&1; then 
@@ -11,3 +11,18 @@
      if test "$vers" -ge 1002007; then
          echo "$ac_t""found" 1>&6
      else
+@@ -6748,10 +6748,10 @@
+       *) # Relative path.
+         ac_sub_cache_file="$ac_dots$cache_file" ;;
+       esac
+-  case "$ac_given_INSTALL" in
+-        [/$]*) INSTALL="$ac_given_INSTALL" ;;
+-        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
+-        esac
++#  case "$ac_given_INSTALL" in
++#        [/$]*) INSTALL="$ac_given_INSTALL" ;;
++#        *) INSTALL="$ac_dots$ac_given_INSTALL" ;;
++#        esac
+ 
+       echo "running ${CONFIG_SHELL-/bin/sh} $ac_sub_configure $ac_sub_configure_args --cache-file=$ac_sub_cache_file --srcdir=$ac_sub_srcdir"
+       # The eval makes quoting arguments work.
