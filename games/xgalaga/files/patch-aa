@@ -1,21 +1,13 @@
---- Makefile.in.orig	Sun Apr 12 03:10:46 1998
-+++ Makefile.in	Sun Jun 20 18:59:18 1999
-@@ -43,11 +43,14 @@
- 	$(CC) $(LDFLAGS) -o $(SOUNDSRV) $(SOUNDOBJS) $(SOUNDLIBS)
- 
- install: all
--	mkinstalldirs $(bindir)
-+	./mkinstalldirs $(bindir)
-+	./mkinstalldirs $(prefix)
+--- Makefile.in.orig	Fri Sep 20 03:24:43 2002
++++ Makefile.in	Fri Sep 20 03:25:29 2002
+@@ -46,7 +46,9 @@
+ 	./mkinstalldirs $(bindir)
+ 	./mkinstalldirs $(prefix)
  	$(INSTALL) $(TARGET) $(bindir)/$(TARGET)
 -	$(INSTALL) $(SOUNDSRV) $(prefix)/$(SOUNDSRV)
--	mkinstalldirs $(prefix)/sounds
--	mkinstalldirs $(prefix)/levels
 +	if [ "X$(SOUNDSRV)" != "X" ]; then \
 +		$(INSTALL) $(SOUNDSRV) $(prefix)/$(SOUNDSRV); \
 +	fi
-+	./mkinstalldirs $(prefix)/sounds
-+	./mkinstalldirs $(prefix)/levels
+ 	./mkinstalldirs $(prefix)/sounds
+ 	./mkinstalldirs $(prefix)/levels
  	for i in levels/*.xgl; do $(INSTALL) $$i $(prefix)/$$i ; done
- 	for i in sounds/*.raw; do $(INSTALL) $$i $(prefix)/$$i ; done
- 

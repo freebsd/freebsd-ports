@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	xgalaga
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.0.34
+PORTREVISION=	0
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_XCONTRIB}
+MASTER_SITES=	http://www.cit.uws.edu.au/pub/unix/games/ \
+		http://ftp.yars.free.net/pub/software/unix/games/arcade/ \
+		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=	ports@FreeBSD.org
 
-HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+HAS_CONFIGURE=	yes
 # xgalaga has a very strange usage of these variables...
 CONFIGURE_ARGS=	--prefix=${X11BASE}/lib/X11/xgalaga \
 		--exec_prefix=${X11BASE}/bin
@@ -26,14 +28,17 @@ CONFIGURE_ARGS+=	--without-sound
 PLIST=			${PKGDIR}/pkg-plist.nosound
 .else
 pre-configure:
-	@${ECHO} "*****************************************************"
-	@${ECHO} "* Note that you can build a version of xgalaga that *"
-	@${ECHO} "* doesn't use the sound driver by typing            *"
-	@${ECHO} "* \"make -DNOSOUND\"                                  *"
-	@${ECHO} "* following a \"make clean\".                         *"
-	@${ECHO} "* Try it if you don't have a sound card and are     *"
-	@${ECHO} "* getting core dumps.                               *"
-	@${ECHO} "*****************************************************"
+	@${ECHO_CMD} "*****************************************************"
+	@${ECHO_CMD} "* Note that you can build a version of xgalaga that *"
+	@${ECHO_CMD} "* doesn't use the sound driver by typing            *"
+	@${ECHO_CMD} "* \"make -DNOSOUND\"                                  *"
+	@${ECHO_CMD} "* following a \"make clean\".                         *"
+	@${ECHO_CMD} "* Try it if you don't have a sound card and are     *"
+	@${ECHO_CMD} "* getting core dumps.                               *"
+	@${ECHO_CMD} "*****************************************************"
 .endif
+
+post-install:
+	@${STRIP_CMD} ${PREFIX}/bin/xgalaga
 
 .include <bsd.port.mk>
