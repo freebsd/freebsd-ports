@@ -20,7 +20,3 @@ install:        ${PROGRAM}
 	${INSTALL} -c -s ${PROGRAM} ${PREFIX}/bin
 	mkdir -p ${MANDIR}
 	${INSTALL} -c ${MANPAGE} ${MANDIR}
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${MANDIR}/${MANPAGE}
-
-.endif
