@@ -5,7 +5,7 @@
   *  You may need to remove -lbsd.
   */
 -  EXTRA_LIBRARIES = -lXm $(DEPLIBS) -lbsd
-+  EXTRA_LIBRARIES = -lXm -lXt -lXmu -lXext -lX11
++  EXTRA_LIBRARIES = ${MOTIFLIB} -lXt -lXmu -lXext -lX11
  #endif
  
  /*
@@ -33,3 +33,27 @@
  #include <Xm/BulletinBP.h>
  
  /*
+--- ./Draw.c.org	Fri Jun 18 10:17:44 1993
++++ ./Draw.c	Mon Aug 19 03:45:59 1996
+@@ -84,7 +84,7 @@
+ #include <Xol/OpenLook.h>
+ #else
+ #include <X11/Xutil.h>
+-#include <X11/Xm/Xm.h>
++#include <Xm/Xm.h>
+ #endif
+ #include "Assert.h"
+ #include "Bitmaps.h"
+--- ./Strategy.c.org	Fri Jun 18 10:17:44 1993
++++ ./Strategy.c	Mon Aug 19 03:48:21 1996
+@@ -95,8 +95,8 @@
+ #include <Xol/OpenLook.h>
+ #include <Xol/StaticText.h>
+ #else
+-#include <X11/Xm/Xm.h>
+-#include <X11/Xm/Label.h>
++#include <Xm/Xm.h>
++#include <Xm/Label.h>
+ #include "Table.h"
+ #endif
+ #include "Assert.h"
