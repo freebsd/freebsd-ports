@@ -227,6 +227,7 @@
     SUBDIR += netcat
     SUBDIR += netmask
     SUBDIR += netpipes
+    SUBDIR += netqc
     SUBDIR += netsaint
     SUBDIR += netsaint-plugins
     SUBDIR += netscript
