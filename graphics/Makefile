@@ -214,6 +214,7 @@
     SUBDIR += utah-glx
     SUBDIR += vcdgear
     SUBDIR += vcdpad
+    SUBDIR += vcdtools
     SUBDIR += vcg
     SUBDIR += vid
     SUBDIR += view3ds

@@ -1,0 +1,7 @@
+--- Makefile.orig	Fri Mar  9 01:43:44 2001
++++ Makefile	Fri Mar  9 01:43:47 2001
+@@ -1,4 +1,3 @@
+-CFLAGS = -O2
+ 
+ OBJS = mkvcdfs.o vcdisofs.o edc_ecc.o
+ 
