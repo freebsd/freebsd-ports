@@ -7,6 +7,7 @@
 
 PORTNAME=	clamav
 PORTVERSION=	0.60
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://clamav.elektrapro.com/stable/ \
 		http://clamav.essentkabel.com/stable/
@@ -36,6 +37,13 @@ MAN5=		clamav.conf.5
 MAN8=		clamd.8
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 500000
+CONFIGURE_ARGS+=--enable-milter
+PLIST_SUB+=	CLAMAV-MILTER:=""
+.else
+PLIST_SUB+=	CLAMAV-MILTER:="@comment "
+.endif
 
 pre-install:
 	@${ECHO} "===>   Creating custom user to run clamav..."
