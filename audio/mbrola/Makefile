@@ -8,72 +8,63 @@
 PORTNAME=	mbrola
 PORTVERSION=	3.0.1
 CATEGORIES=	audio accessibility
-MASTER_SITES=	ftp://tcts.fpms.ac.be/pub/mbrola/freebsd/
+MASTER_SITES?=	ftp://tcts.fpms.ac.be/pub/mbrola/freebsd/
 DISTNAME=	mbr301h
-DIST_SUBDIR=	mbrola
+EXTRACT_SUFX=	.zip
+DIST_SUBDIR?=	mbrola-freebsd
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	MBROLA voice synthesizer
 
-LIB_DEPENDS=	c.3:${PORTSDIR}/misc/compat3x
+.include <bsd.port.pre.mk>
 
+.if !defined(USE_LINUX)
+LIB_DEPENDS=	c.3:${PORTSDIR}/misc/compat3x
+.endif
+RUN_DEPENDS+=	${PREFIX}/share/mbrolavox:${PORTSDIR}/audio/mbrolavox
+
+CONFLICTS?=	linux-mbrola-*
 NO_BUILD=	yes
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS?=i386
 RESTRICTED=	"for non-commercial, non-military applications only"
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/mbr301h
 PLIST=		${WRKDIR}/plist
 
-.include <bsd.port.pre.mk>
-
-.if !defined(BATCH)
-IS_INTERACTIVE=	yes
-.endif
-
-pre-everything::
-	${MKDIR} ${WRKDIR}
-.if !exists(${WRKDIRPREFIX}${.CURDIR}/work/voices.conf)
-.if !defined(BATCH)
-	${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
-.endif
-.endif
-PATCHILES?=	us1.zip
-
-.if exists(${WRKDIRPREFIX}${.CURDIR}/work/voices.conf)
-PATCHFILES!=${CAT} ${WRKDIRPREFIX}${.CURDIR}/work/voices.conf
-PATCHDIRS!=${CAT} ${WRKDIRPREFIX}${.CURDIR}/work/fetchdirs.conf
-.endif
-.for ii in ${PATCHDIRS}
-PATCH_SITES+=	http://www.festvox.org/mbrola/dba/${ii}/ \
-	http://mambo.ucsc.edu/psl/mbrola/dba/${ii}/ \
-	ftp://ftp.loria.fr/pub/pc/mbrpsola/${ii}/ \
-	ftp://tcts.fpms.ac.be/pub/mbrola/VOICES/${ii}/
-.endfor
-
 do-extract:
-.for ii in ${DISTNAME}.zip ${PATCHFILES}
-	@unzip -qo ${DISTDIR}/${DIST_SUBDIR}/${ii} -d ${WRKSRC}
-.endfor
+	@${MKDIR} ${WRKSRC}
+	@unzip -qo ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}.zip -d ${WRKSRC}
 
 do-patch:
 	@${RM} -f ${WRKSRC}/mbrola-FreeBSD-i386-aout
 
 pre-install:
 	@${ECHO_CMD} bin/mbrola > ${PLIST}
-	@cd ${WRKSRC}; \
-	for ii in `${FIND} * \! -type d | sort`; do \
-		${ECHO_CMD} share/mbrola/$${ii} >> ${PLIST}; \
-	done ; \
-	for ii in `${FIND} -d * -type d`; do \
-		${ECHO_CMD} @dirrm share/mbrola/$${ii} >> ${PLIST}; \
-	done
-	@${ECHO_CMD} @dirrm share/mbrola >> ${PLIST}
+.if !defined(NOPORTDOCS)
+	@${ECHO_CMD} share/doc/mbrola/readme.txt >> ${PLIST}
+	@${ECHO_CMD} @dirrm share/doc/mbrola >> ${PLIST}
+.endif
 
 do-install:
-	@${MKDIR} ${DATADIR}
-	@cd ${WRKSRC} && ${FIND} * | cpio -dlmp ${DATADIR}
-	@${CHMOD} +x ${DATADIR}/mbrola*
-	@${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 ${CHMOD} 755
-	@${LN} -s ${DATADIR}/mbrola-FreeBSD-i386-elf ${PREFIX}/bin/mbrola
+.if defined(USE_LINUX)
+.if (${MACHINE_ARCH} == "alpha")
+	@${INSTALL_PROGRAM} ${WRKSRC}/mbrola-linux-alpha ${PREFIX}/bin/mbrola
+.elseif (${MACHINE_ARCH} == "i386")
+	@${INSTALL_PROGRAM} ${WRKSRC}/mbrola-linux-i386 ${PREFIX}/bin/mbrola
+.elseif (${MACHINE_ARCH} == "ppc")
+	@${INSTALL_PROGRAM} ${WRKSRC}/mbrola206a-linux-ppc ${PREFIX}/bin/mbrola
+.elseif (${MACHINE_ARCH} == "sparc64")
+	@${INSTALL_PROGRAM} ${WRKSRC}/mbrola-SuSElinux-ultra1.dat \
+		${PREFIX}/bin/mbrola
+.endif
+.else
+	@${INSTALL_PROGRAM} ${WRKSRC}/mbrola-FreeBSD-i386-elf \
+		${PREFIX}/bin/mbrola
+.endif # defined(USE_LINUX)
+	@${CHMOD} +x ${PREFIX}/bin/mbrola
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
+.endif
 
 .include <bsd.port.post.mk>

@@ -1,5 +1,7 @@
-This is an i386-only binary port of the MBROLA speech synthesizer,
-which uses "a time-domain algorithm with outstanding diphone smoothing
-capabilities."
+This is a binary port of the MBROLA speech synthesizer, which uses
+"a time-domain algorithm with outstanding diphone smoothing
+capabilities."  The audio/mbrola port is for i386 only and requires
+FreeBSD 3.x compatibility; the linux-mbrola port is for alpha, i386,
+ppc or sparc64 and requires Linux compatibility.
 
 WWW:  http://tcts.fpms.ac.be/synthesis
