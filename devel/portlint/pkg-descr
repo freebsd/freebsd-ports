@@ -1,0 +1,7 @@
+portlint makes a small set of sanity checks for port directory.
+
+usage:
+	portlint [-v] [dir]
+
+	-v	verbose
+	dir	directory to check.  checks the current directory if omitted.
