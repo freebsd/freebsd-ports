@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	libgenome
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.5.1
 CATEGORIES=	biology
 MASTER_SITES=	http://www.libgenome.org/releases/
 DISTNAME=	libGenome-${PORTVERSION}
@@ -17,11 +16,11 @@ MAINTAINER=	ports@FreeBSD.org
 
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O3|@CXXFLAGS@|g' ${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's|-O2|@CXXFLAGS@|g' ${WRKSRC}/src/Makefile.in
 
 post-install:
 .if !defined(NOPORTDOCS)
