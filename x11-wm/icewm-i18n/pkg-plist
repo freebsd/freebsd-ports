@@ -192,7 +192,9 @@ share/icewm/themes/win95/minimize.xpm
 share/icewm/themes/win95/restore.xpm
 share/icewm/toolbar
 share/icewm/winoptions
+share/locale/de/LC_MESSAGES/icewm.mo
 share/locale/ja/LC_MESSAGES/icewm.mo
+share/locale/ru/LC_MESSAGES/icewm.mo
 @dirrm share/icewm/icons
 @dirrm share/icewm/ledclock
 @dirrm share/icewm/mailbox
