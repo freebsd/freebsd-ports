@@ -28,8 +28,9 @@ bjfilter850_gui|Canon BJ F850 with GUI and Japanese messages:\
         :mx#0:\
         :lf=/var/log/lpd-errs
 
-Notice: If you use filter850_gui then the host which you are using
-have to run X and be the printer saver (connected the printer Canon BJ).
+Notice: If you use filter850_gui in the printer server, for example
+hostA then you have to run X, execute "xhost hostA" and execute "lpr" on
+the host which you are using.
 
 *********************************************************************
 To run with Japanese messages, you should execute with "env LANG=ja_JP"
