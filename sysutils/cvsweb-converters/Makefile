@@ -25,8 +25,11 @@ GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/commitlog2cvsweb bin/cvsrdiff2cvsweb \
 		bin/cvsuplog2cvsweb etc/cvsweb-converters.conf.sample
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 post-install:
+	@${SED} -e 's|$${PREFIX}|${PREFIX}|g' -- \
+		${.CURDIR}/pkg-message >${PKGMESSAGE}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
