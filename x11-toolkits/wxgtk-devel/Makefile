@@ -20,6 +20,7 @@ LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_NEWGCC=	yes
 
 WRKSRC=         ${WRKDIR}/wxGTK
 
