@@ -36,6 +36,7 @@ RECYCLE?=       "@comment "
 LIBSAMBA?=      "@comment "
 BUILD_VFS?=     "@comment "
 WINBIND?=       "@comment "
+WINBIND_NSS?=	"@comment "
 WINBIND_AUTH_CHALLENGE?= "@comment "
 
 .if defined(WITH_AUDIT)
@@ -49,7 +50,6 @@ RECYCLE=	""
 LIBSAMBA=	""
 BUILD_VFS=	""
 .endif
-
 
 VARDIR=		/var
 SAMBA_SPOOL=	${VARDIR}/spool/samba
@@ -116,6 +116,14 @@ CONFIGURE_ARGS+=	--with-winbind
 WINBIND=	""
 .endif
 
+.if defined(WITH_WINBIND_NSS)
+.if ${OSVERSION} < 500112
+BROKEN=		NSS modules only supported on FreeBSD 5.1 or later
+.else
+WINBIND_NSS=	""
+.endif
+.endif
+
 .if defined(WITH_WINBIND_AUTH_CHALLENGE)
 CONFIGURE_ARGS+=	--with-winbind-auth-challenge
 WINBIND_AUTH_CHALLENGE=	""
@@ -125,8 +133,9 @@ pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.samba
 
 post-patch:
-	${FIND} ${PATCH_WRKSRC} -type f -name '*.orig' -exec ${RM} {} \;
+	#${FIND} ${PATCH_WRKSRC} -type f -name '*.orig' -exec ${RM} {} \;
 	${FIND} ${PATCH_WRKSRC} -type f -empty -exec ${RM} {} \;
+	${CP} ${FILESDIR}/winbind_nss_bsd.c ${WRKSRC}/nsswitch/
 
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
@@ -172,6 +181,7 @@ PLIST_SUB=      AUDIT=${AUDIT} \
 		LIBSAMBA=${LIBSAMBA} \
 		BUILD_VFS=${BUILD_VFS} \
 		WINBIND=${WINBIND} \
+		WINBIND_NSS=${WINBIND_NSS} \
 		WINBIND_AUTH_CHALLENGE=${WINBIND_AUTH_CHALLENGE}
 
 .if defined(WITH_RECYCLE) || defined(WITH_AUDIT)
@@ -186,6 +196,9 @@ pre-build:
 	(cd ${WRKSRC} && make proto)
 
 post-install:
+.if defined(WITH_WINBIND_NSS)
+	${INSTALL_PROGRAM} ${WRKSRC}/nsswitch/libnss_winbind.so ${PREFIX}/lib/nss_winbind.so.1
+.endif
 .if defined(WITH_AUDIT) || defined(WITH_RECYCLE)
 	@test -d ${SAMBA_VFSDIR} || ${MKDIR} ${SAMBA_VFSDIR}
 .if defined(WITH_AUDIT)
