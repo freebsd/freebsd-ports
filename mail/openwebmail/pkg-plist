@@ -1,1 +1,1 @@
-@comment real PLIST will be generated in do-install phase
+@comment real PLIST will be generated in pre-install phase
