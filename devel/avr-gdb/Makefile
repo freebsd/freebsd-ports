@@ -26,6 +26,6 @@ pre-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gdb/gdb \
-		${PREFIX}/bin/${PKGNAMEPREFIX}-${PORTNAME}
+		${PREFIX}/bin/${PKGNAMEPREFIX}${PORTNAME}
 
 .include <bsd.port.mk>
