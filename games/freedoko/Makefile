@@ -21,6 +21,7 @@ LIB_DEPENDS=    gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtk--2
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME:C/\.src$//}/src
 USE_GMAKE=	yes
+USE_GCC=	3.3
 MAKE_ENV=	OSTYPE=linux-gnu DATADIR=${DATADIR}
 
 CPIOFLAGS=	--quiet -pdum
