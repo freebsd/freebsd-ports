@@ -1,0 +1,20 @@
+--- configure.orig	Thu Oct 16 19:31:57 2003
++++ configure	Sun May  9 09:54:12 2004
+@@ -3488,7 +3488,7 @@
+   enableval="$enable_debug"
+   CPPFLAGS="-g -Wall -pedantic -DDEBUG"; qmake_debug="debug"
+ else
+-  CPPFLAGS="-O3 -ffast-math"; qmake_debug="release"
++  CPPFLAGS+="-ffast-math"; qmake_debug="release"
+ fi;
+ 
+ # Check whether --enable-gnu-debug or --disable-gnu-debug was given.
+@@ -3545,7 +3545,7 @@
+   CPPFLAGS="${CPPFLAGS} -pedantic"
+ fi;
+ 
+-htmldir='${datadir}/doc_html'
++htmldir='${prefix}/share/doc/avida'
+ HTMLDIR=${htmldir}
+ 
+ # Check whether --enable-primitive or --disable-primitive was given.
