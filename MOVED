@@ -484,3 +484,4 @@ x11/wscan||2003-08-07|port was marked broken for 3 months with no fix submitted
 x11-toolkits/ruby-fltk||2003-08-07|port was marked broken for 3 months with no fix submitted
 x11-wm/scwm||2003-08-07|port was marked broken for 3 months with no fix submitted
 chinese/cce||2003-08-07|port contains a security vulnerability and is no longer developed
+net/ruby-romp||2003-08-08|discontinued
