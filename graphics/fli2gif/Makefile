@@ -3,12 +3,12 @@
 # Date created:		7 Jan 1998
 # Whom:			giffunip@asme.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/01/29 16:33:34 jseger Exp $
 #
 
 DISTNAME=       fli2gif
 PKGNAME=	fli2gif-1.1
-CATEGORIES=	graphics misc
+CATEGORIES=	graphics
 MASTER_SITES=   ftp://ftp.sco.com/skunkware/src/misc/ \
 		ftp://ftp.doc.ic.ac.uk/Mirrors/ftp.sco.com/skunkware/src/misc/ \
 		ftp://ftp.vse.cz/pub/.ccd0c/SCO/ftp.sco.com/skunkware/src/misc/
