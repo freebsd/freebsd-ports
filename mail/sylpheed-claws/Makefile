@@ -7,6 +7,7 @@
 
 PORTNAME=	sylpheed-claws
 PORTVERSION=	0.9.12b
+PORTREVISION=	1
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -47,7 +48,12 @@ CONFIGURE_ARGS=		--enable-openssl --with-openssl-includes=${OPENSSLINC} \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_SSL)
-SSLTEST!=test ${OPENSSLVER} \< 0.9.7 && ${ECHO_CMD} bad || ${TRUE}
+.if defined(OPENSSLVER)
+MYSSLVER=${OPENSSLVER}
+.else
+MYSSLVER!=openssl version | cut -d ' ' -f 2
+.endif
+SSLTEST!=test ${MYSSLVER} \< 0.9.7 && ${ECHO_CMD} bad || ${TRUE}
 . if ${SSLTEST} == "bad"
 IGNORE=You need at least OpenSSL v0.9.7
 . endif
@@ -169,6 +175,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/tools/README.sylprint ${WRKSRC}/tools/sylprint.pl
 	@${REINPLACE_CMD} -e "s|po intl src|po src|" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's:%%OPENSSL_LIBS%%:"-lssl -lcrypto":g' ${WRKSRC}/configure
 	@for f in ${WRKSRC}/tools/*; do \
 		${REINPLACE_CMD} -e "s|/usr/bin/perl|${PERL}|" $$f; done
 #	@${LN} -s ${WRKSRC}/po/sylpheed.pot ${WRKSRC}/po/${PORTNAME}.pot
