@@ -8,7 +8,8 @@
 PORTNAME=	gtkgraph
 PORTVERSION=	0.6.1
 CATEGORIES=	graphics math
-MASTER_SITES=	http://gtkgraph.linuxave.net/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR= jedgar
 
 MAINTAINER=	jedgar@FreeBSD.org
 
