@@ -458,6 +458,7 @@
     SUBDIR += redland
     SUBDIR += replaceit
     SUBDIR += resume
+    SUBDIR += rl
     SUBDIR += rman
     SUBDIR += ro-aspell
     SUBDIR += roap
