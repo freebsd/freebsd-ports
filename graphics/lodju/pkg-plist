@@ -1,6 +1,7 @@
 bin/lodju
 bin/lodju-create
 bin/lodju-gallery
+share/locale/locale/fi/LC_MESSAGES/lodju.mo
 share/lodju/lodju.glade
 share/lodju/lodju.css
 share/lodju/gallery.xsl
