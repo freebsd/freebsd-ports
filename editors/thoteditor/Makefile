@@ -20,6 +20,12 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An structured document editor, offering a graphical WYSIWYG interface
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+BROKEN=		"Does not compile on ${OSVERSION}"
+.endif
+
 THOT_SUBDIR=	Target
 USE_MOTIF=	yes
 WRKSRC=		$(WRKDIR)/Thot/$(THOT_SUBDIR)
@@ -49,4 +55,4 @@ post-install:
 	$(INSTALL_MAN) $(WRKSRC)/../tools/cextract-1.7/cextrc.5 $(PREFIX)/man/man5
 	$(INSTALL_MAN) $(WRKSRC)/../tools/cextract-1.7/cextract.man $(PREFIX)/man/man1/cextract.1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
