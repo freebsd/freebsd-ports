@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	demime
-PORTVERSION= 	1.01a
+PORTVERSION= 	1.1c
 CATEGORIES=	mail textproc
-MASTER_SITES=	http://scifi.squawk.com/
-DISTFILES=	${PORTNAME}.stable demime_junkmail.cf
+MASTER_SITES=	http://majordomo.squawk.com/njs/demime/:demime \
+		http://scifi.squawk.com/:junkmail
+DISTFILES=	${PORTNAME}.${PORTVERSION}:demime demime_junkmail.cf:junkmail
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	A tool to scrub mime from mailing lists
@@ -22,19 +23,20 @@ RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base
 
 NO_BUILD=	yes
 
+USE_REINPLACE=	yes
 USE_PERL5=	yes
 POD2MAN?=	pod2man
 MAN1=		demime.1
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	@${CP} ${DISTDIR}/demime.stable ${WRKSRC}/demime
+	@${CP} ${DISTDIR}/demime.${PORTVERSION}  ${WRKSRC}/demime
 
 post-patch:
-	@${PERL} -pi -e 's!/usr/lib/majordomo/demime_junkmail.cf!${PREFIX}/etc/demime_junkmail.cf!g' ${WRKSRC}/demime
+	@${REINPLACE_CMD} -e 's!/usr/lib/majordomo/demime_junkmail.cf!${PREFIX}/etc/demime_junkmail.cf!g' ${WRKSRC}/demime
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/demime ${PREFIX}/bin/demime
+	${INSTALL_SCRIPT} -c ${WRKSRC}/demime ${PREFIX}/bin/demime
 	${INSTALL_DATA} ${DISTDIR}/demime_junkmail.cf ${PREFIX}/etc
 	${POD2MAN} ${WRKSRC}/demime > ${PREFIX}/man/man1/demime.1
 
