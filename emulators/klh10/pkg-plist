@@ -1,0 +1,49 @@
+bin/kn10-ks
+bin/tapedd
+bin/udlconv
+bin/vdkfmt
+bin/wfconv
+bin/wxtest
+libexec/klh10-ks-its/dpimp
+libexec/klh10-ks-its/dprpxx
+libexec/klh10-ks-its/dptm03
+share/klh10-ks-its/@.ddt-u
+share/klh10-ks-its/@.its-647kn-u
+share/klh10-ks-its/@.nsalv-260-u
+share/klh10-ks-its/itsbin.647kn-u
+share/klh10-ks-its/klh10-kn.ini
+%%PORTDOCS%%share/doc/klh10-ks-its/pubits/adm/hosts.its
+%%PORTDOCS%%share/doc/klh10-ks-its/pubits/adm/its.ipfw
+%%PORTDOCS%%share/doc/klh10-ks-its/pubits/adm/rc.firewall-its
+%%PORTDOCS%%share/doc/klh10-ks-its/pubits/adm/router.notes
+%%PORTDOCS%%share/doc/klh10-ks-its/pubits/doc/bootload.files
+%%PORTDOCS%%share/doc/klh10-ks-its/pubits/doc/distrib.its
+%%PORTDOCS%%share/doc/klh10-ks-its/pubits/doc/dumpsys.help
+%%PORTDOCS%%share/doc/klh10-ks-its/Intro.txt
+%%PORTDOCS%%share/doc/klh10-ks-its/backgrnd.txt
+%%PORTDOCS%%share/doc/klh10-ks-its/cmdref.txt
+%%PORTDOCS%%share/doc/klh10-ks-its/cmdsum.txt
+%%PORTDOCS%%share/doc/klh10-ks-its/coding.txt
+%%PORTDOCS%%share/doc/klh10-ks-its/dfkfb.txt
+%%PORTDOCS%%share/doc/klh10-ks-its/dvhost.txt
+%%PORTDOCS%%share/doc/klh10-ks-its/history.txt
+%%PORTDOCS%%share/doc/klh10-ks-its/install.txt
+%%PORTDOCS%%share/doc/klh10-ks-its/kldiff.txt
+%%PORTDOCS%%share/doc/klh10-ks-its/klt10.txt
+%%PORTDOCS%%share/doc/klh10-ks-its/klt20.txt
+%%PORTDOCS%%share/doc/klh10-ks-its/ksits.txt
+%%PORTDOCS%%share/doc/klh10-ks-its/kst10.txt
+%%PORTDOCS%%share/doc/klh10-ks-its/kst20.txt
+%%PORTDOCS%%share/doc/klh10-ks-its/news.txt
+%%PORTDOCS%%share/doc/klh10-ks-its/PDPs
+%%PORTDOCS%%share/doc/klh10-ks-its/README
+%%PORTDOCS%%share/doc/klh10-ks-its/usage.txt
+%%PORTDOCS%%share/doc/klh10-ks-its/utils.txt
+%%PORTDOCS%%share/doc/klh10-ks-its/vtape.txt
+@dirrm share/klh10-ks-its/flushed
+@dirrm share/klh10-ks-its
+@dirrm libexec/klh10-ks-its
+%%PORTDOCS%%@dirrm share/doc/klh10-ks-its/pubits/adm
+%%PORTDOCS%%@dirrm share/doc/klh10-ks-its/pubits/doc
+%%PORTDOCS%%@dirrm share/doc/klh10-ks-its/pubits
+%%PORTDOCS%%@dirrm share/doc/klh10-ks-its
