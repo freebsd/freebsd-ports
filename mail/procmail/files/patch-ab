@@ -1,24 +1,28 @@
-*** config.h.bak	Mon Oct 30 05:09:07 1995
---- config.h	Wed Aug 28 17:10:52 1996
+*** config.h.orig	Mon Apr 28 04:27:41 1997
+--- config.h	Wed Apr 22 05:55:53 1998
 ***************
-*** 45,51 ****
+*** 43,51 ****
+     >From_ field will be added in the header */
+  
   #define TRUSTED_IDS	{"root","daemon","uucp","mail","x400","network",\
-  			 "list","slist","lists","news",0}
+! 			 "list","slist","lists","news",0}
   
 ! /*#define NO_fcntl_LOCK		/* uncomment any of these three if you	     */
   /*#define NO_lockf_LOCK		/* definitely do not want procmail to make   */
   /*#define NO_flock_LOCK		/* use of those kernel-locking methods	     */
   
---- 45,51 ----
+--- 43,51 ----
+     >From_ field will be added in the header */
+  
   #define TRUSTED_IDS	{"root","daemon","uucp","mail","x400","network",\
-  			 "list","slist","lists","news",0}
+! 			 "list","slist","lists","news","majordom","majordomo",0}
   
 ! #define NO_fcntl_LOCK         /* uncomment any of these three if you       */
   /*#define NO_lockf_LOCK		/* definitely do not want procmail to make   */
   /*#define NO_flock_LOCK		/* use of those kernel-locking methods	     */
   
 ***************
-*** 69,79 ****
+*** 71,81 ****
   	is not found, maildelivery will proceed as normal to the default
   	system mailbox. */
   
@@ -30,7 +34,7 @@
   					   rcfiles which will be executed with
   	the uid of the owner of the rcfile (this only happens if procmail is
   	called with the -m option, without variable assignments on the command
---- 69,79 ----
+--- 71,81 ----
   	is not found, maildelivery will proceed as normal to the default
   	system mailbox. */
   
