@@ -16,3 +16,5 @@ FEATURES
         .  Supports native Embedding of bitmap images (jpeg,ppm,png,gif)
         .  Supports modification of existing pdfs
                 and import/cloning of pages
+
+WWW: http://search.cpan.org/dist/PDF-API2/
