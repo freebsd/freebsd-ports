@@ -55,17 +55,17 @@ fi
 
 export PATH=/bin:/usr/bin:/usr/sbin
 
-user=jabber
-group=jabber
+USER=jabber
+GROUP=jabber
 
 if ps -axc | grep -q jabberd; then
     if yesno "There are some jabberd processes running.  Shall I kill them" y
     then
-	killall jabberd
+	killall -SIGKILL -u ${USER} jabberd
 	sleep 2
     else
 	echo "OK ... I hope you know what you are doing."
     fi
 fi
 
-delete_account ${user} ${group}
+delete_account ${USER} ${GROUP}

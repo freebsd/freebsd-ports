@@ -2,12 +2,11 @@ sbin/jabberd
 @unexec if cmp -s %D/etc/jabber.xml.sample %D/etc/jabber.xml; then rm -f %D/etc/jabber.xml; fi
 etc/jabber.xml.sample
 etc/rc.d/jabberd.sh
-include/jabber/
 include/jabber/lib/lib.h
 include/jabber/lib/xmlparse.h
 include/jabber/platform-settings
 include/jabber/jabberd.h
-include/jabberd/pth.h
+include/jabber/pth.h
 lib/jabber/dialback/dialback.so
 lib/jabber/dnsrv/dnsrv.so
 lib/jabber/jsm/jsm.so

@@ -133,11 +133,6 @@ EOF
     chown root:${group} ${etcdir}/jabber.xml ${etcdir}/jabber.xml.sample
     chmod 640 ${etcdir}/jabber.xml ${etcdir}/jabber.xml.sample
 
-    if [ ! -f /var/log/jabber.log ]; then
-	echo "Creating \"/var/log/jabber.log\"."
-	cp /dev/null /var/log/jabber.log
-    fi
-
     if [ ! -f /var/log/jabber.error ]; then
 	echo "Creating \"/var/log/jabber.error\"."
 	cp /dev/null /var/log/jabber.error
@@ -149,8 +144,8 @@ EOF
     fi
 
     echo "Fixing log files ownerships and modes."
-    chown ${user}:${group} /var/log/jabber.log /var/log/jabber.error /var/log/jabber.record
-    chmod 640 /var/log/jabber.log /var/log/jabber.error /var/log/jabber.record
+    chown ${user}:${group} /var/log/jabber.error /var/log/jabber.record
+    chmod 640 /var/log/jabber.error /var/log/jabber.record
 
     ;;
 esac
