@@ -3883,6 +3883,7 @@ look		src/usr.bin/look
 lopster		ports/audio/lopster
 lorder		src/usr.bin/lorder
 loserjabber	ports/deskutils/loserjabber
+lostirc		ports/irc/lostirc
 lout		ports/print/lout
 lpe		ports/editors/lpe
 lpr		src/usr.sbin/lpr
