@@ -8,7 +8,7 @@
 PORTNAME=	postgresql-pltcl
 CATEGORIES=	databases tcl83
 
-MAINTAINER=	girgen@partitur.se
+MAINTAINER=	girgen@pingpong.net
 
 POSTGRESQL_SUBPORT=YES
 .include <${.CURDIR}/../postgresql7/Makefile>
