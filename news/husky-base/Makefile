@@ -15,6 +15,7 @@ MAINTAINER=	fjoe@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/huskybse-${PORTVERSION}
 NO_BUILD=	yes
+USE_REINPLACE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} \
