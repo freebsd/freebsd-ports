@@ -1,16 +1,16 @@
 # New ports collection makefile for:    xpaint
-# Version required:     2.4.8
+# Version required:     2.5.2
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.13 1997/02/06 09:19:44 tg Exp $
+# $Id: Makefile,v 1.14 1997/08/29 12:17:50 tg Exp $
 #
 
-DISTNAME=       xpaint-2.5
+DISTNAME=       xpaint-2.5.2
 CATEGORIES=	graphics x11
 MASTER_SITES=	http://www.danbbs.dk/~torsten/xpaint/
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	jseger@FreeBSD.org
 
 LIB_DEPENDS=    jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg \
 		tiff\\.3\\.:${PORTSDIR}/graphics/tiff \
