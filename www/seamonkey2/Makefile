@@ -6,16 +6,15 @@
 #
 
 PORTNAME?=	mozilla
-PORTVERSION=	1.7.b
-PORTREVISION?=	1
+PORTVERSION=	1.7.r1
+PORTREVISION?=	0
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.b/b/}/src \
+MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.r1/rc1/}/src \
 			marcus/:local
-DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.b/b/}-source${EXTRACT_SUFX} \
-		 libart_lgpl-moz-2.3.10${EXTRACT_SUFX}:local
+DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.r1/rc1/}${EXTRACT_SUFX}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
@@ -241,8 +240,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|libesd\.so\.0|${ESD_LIB}|g' \
 		${WRKSRC}/widget/src/gtk2/nsSound.cpp
 	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/' \
-		${WRKSRC}/modules/libpref/src/init/all.js \
-		${WRKSRC}/calendar/sunbird/app/profile/all.js
+		${WRKSRC}/modules/libpref/src/init/all.js
 	@${REINPLACE_CMD} -e 's|<iconv.h>|\"${LOCALBASE}/include/iconv.h\"|g' \
 		${WRKSRC}/configure \
 		${WRKSRC}/intl/uconv/native/nsNativeUConvService.cpp \
