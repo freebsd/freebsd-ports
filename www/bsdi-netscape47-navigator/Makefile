@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.23 1998/09/22 15:33:40 asami Exp $
+# $Id: Makefile,v 1.24 1998/09/22 17:54:24 asami Exp $
 #
 
 DISTNAME=       netscape-navigator-4.06
@@ -15,9 +15,11 @@ MAINTAINER=     asami@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/navigator-v406.x86-unknown-freebsd
 NO_BUILD=       Yes
+STRIP=
 
 NDIR=           ${PREFIX}/lib/netscape
 BINDIR=		${PREFIX}/bin
+INFILE_HEAD=	'Navigator,4.06.0.98225,'
 
 .if defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO
 MASTER_SITES+=	ftp://ftp.fortify.net/pub/Fortify/ \
@@ -32,9 +34,21 @@ pre-extract:
 		@${ECHO} "and defining USA_RESIDENT to NO"
 .endif
 
+do-configure:
+	${ECHO} -n ${INFILE_HEAD} > ${WRKSRC}/infile
+	${ECHO} ${NDIR} >> ${WRKSRC}/infile
+	${SED} -e "s;@X11BASE@;${X11BASE};g" -e "s;@PREFIX@;${PREFIX};g" \
+		${FILESDIR}/netscape.sh >${WRKSRC}/netscape
+	chmod +x ${WRKSRC}/netscape
+
 do-install:
-	cd ${WRKSRC} && yes "" | \
-	    LC_TIME=C MOZILLA_HOME="${NDIR}" ./ns-install
+	${MKDIR} ${NDIR}/java/classes
+	${INSTALL_DATA} ${WRKSRC}/*.jar ${NDIR}/java/classes
+	${INSTALL_PROGRAM} ${WRKSRC}/vreg ${NDIR}
+	for i in ${WRKSRC}/*.nif; do \
+		${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} $${i} -C ${NDIR}; \
+	done
+	${WRKSRC}/vreg ${NDIR}/registry ${WRKSRC}/infile
 	${MV} -f ${NDIR}/netscape ${NDIR}/navigator-4.06.bin
 	${INSTALL_SCRIPT} ${WRKSRC}/netscape ${BINDIR}/navigator-4.06
 	ln -sf navigator-4.06 ${BINDIR}/navigator-4
