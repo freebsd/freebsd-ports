@@ -1,0 +1,15 @@
+bin/pod2usage
+bin/podchecker
+bin/podselect
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Pod/Parser/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Pod/Checker.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pod/Find.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pod/InputObjects.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pod/ParseUtils.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pod/Parser.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pod/PlainText.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pod/Select.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pod/Usage.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Pod/Parser
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Pod 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Pod 2>/dev/null || true
