@@ -3,6 +3,7 @@ bin/svnadmin
 bin/svndumpfilter
 bin/svnlook
 bin/svnserve
+%%SVNSERVE_WRAPPER%%bin/svnserve.bin
 bin/svnversion
 include/subversion-1/mod_dav_svn.h
 include/subversion-1/svn-revision.txt

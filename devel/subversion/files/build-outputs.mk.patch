@@ -1,0 +1,11 @@
+--- build-outputs.mk.orig	Wed Oct  8 16:01:40 2003
++++ build-outputs.mk	Wed Oct  8 16:02:00 2003
+@@ -447,7 +447,7 @@
+ 	cd subversion/svnadmin ; $(INSTALL_FS_BIN) svnadmin$(EXEEXT) $(DESTDIR)$(fs_bindir)/svnadmin$(EXEEXT)
+ 	cd subversion/svndumpfilter ; $(INSTALL_FS_BIN) svndumpfilter$(EXEEXT) $(DESTDIR)$(fs_bindir)/svndumpfilter$(EXEEXT)
+ 	cd subversion/svnlook ; $(INSTALL_FS_BIN) svnlook$(EXEEXT) $(DESTDIR)$(fs_bindir)/svnlook$(EXEEXT)
+-	cd subversion/svnserve ; $(INSTALL_FS_BIN) svnserve$(EXEEXT) $(DESTDIR)$(fs_bindir)/svnserve$(EXEEXT)
++	cd subversion/svnserve ; $(INSTALL_FS_BIN) svnserve$(EXEEXT) $(DESTDIR)$(fs_bindir)/svnserve.bin$(EXEEXT)
+ 
+ install-fs-lib: subversion/libsvn_fs/libsvn_fs-1.la subversion/libsvn_repos/libsvn_repos-1.la subversion/libsvn_ra_local/libsvn_ra_local-1.la
+ 	$(MKDIR) $(DESTDIR)$(fs_libdir)
