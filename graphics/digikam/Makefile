@@ -15,7 +15,8 @@ MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	Photo album manager for KDE with gphoto2 backend
 
 LIB_DEPENDS=	exif:${PORTSDIR}/graphics/libexif \
-		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
+		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
+		Imlib.5:${PORTSDIR}/graphics/imlib
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
