@@ -7769,6 +7769,7 @@ tora		ports/databases/tora
 tornado		ports/games/tornado
 tosha		ports/audio/tosha
 totd		ports/net/totd
+totem		ports/graphics/totem
 touch		src/usr.bin/touch
 towitoko	ports/devel/towitoko
 tpg		ports/devel/tpg
