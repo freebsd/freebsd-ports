@@ -7,6 +7,7 @@
 
 PORTNAME=	wdm
 PORTVERSION=	1.20
+PORTREVISION=	1
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://www.tcscs.com/wdm/wdm/ \
 		http://www.de.freebsd.org/de/gif/bsd/
@@ -36,6 +37,13 @@ CONFIGURE_ARGS=	--with-logdir=/var/log \
 		--with-defuserpath=/bin:/usr/bin:/sbin:/usr/sbin:${X11BASE}/bin:${LOCALBASE}/bin \
 		--with-defsystempath=/bin:/usr/bin:/sbin:/usr/sbin:${X11BASE}/bin \
 		--with-wmlist=wmaker:afterstep:blackbox:ctwm:enlightenment:fvwm:fvwm2:fvwm95:olvwm:qvwm:tvtwm
+
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4
+CFLAGS+=	-DHAVE_XINERAMA
+CONFIGURE_ENV+=	LIBS="-Wl,-export-dynamic ${X11BASE}/lib/libXinerama.a"
+.endif
 
 MAN1=	wdm.1 wdmLogin.1
 
@@ -79,4 +87,4 @@ post-install:
 	fi
 	@${INSTALL_DATA} ${_DISTDIR}/${DAEMONPIC} ${PREFIX}/lib/X11/wdm/pixmaps
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
