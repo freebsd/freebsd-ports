@@ -15,7 +15,7 @@ EXTRACT_SUFX=	_rpm
 MAINTAINER=	vns@delta.odessa.ua
 
 RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base
-BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/misc/rpm2cpio
+BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm2cpio
 
 EXTRACT_CMD=	rpm2cpio
 EXTRACT_BEFORE_ARGS=

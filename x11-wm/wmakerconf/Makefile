@@ -13,7 +13,7 @@ MASTER_SITES=	http://ulli.linuxave.net/wmakerconf/
 
 MAINTAINER=	dr@domix.de
 
-RUN_DEPENDS=	rpm:${PORTSDIR}/misc/rpm \
+RUN_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm \
 		bunzip2:${PORTSDIR}/archivers/bzip2
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \

@@ -7,7 +7,7 @@
 
 PORTNAME=	rpm2cpio
 PORTVERSION=	1.1
-CATEGORIES=	misc
+CATEGORIES=	archivers
 MASTER_SITES=	http://www.iagora.com/~espel/
 DISTFILES=	${PORTNAME}
 

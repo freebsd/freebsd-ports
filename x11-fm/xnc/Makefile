@@ -16,7 +16,7 @@ MAINTAINER=	demon@FreeBSD.org
 # xnc will use the following programs if you have them installed.
 #RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip		\
 #		unzip:${PORTSDIR}/archivers/unzip	\
-#		rpm:${PORTSDIR}/misc/rpm		\
+#		rpm:${PORTSDIR}/archivers/rpm		\
 #		rar:${PORTSDIR}/archivers/rar		\
 #		unarj:${PORTSDIR}/archivers/unarj	\
 #		lha:${PORTSDIR}/archivers/lha		\

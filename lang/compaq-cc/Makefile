@@ -22,7 +22,7 @@ MAINTAINER=	obrien@FreeBSD.org
 
 RESTRICTED=	"Distribution not allowed"
 
-BUILD_DEPENDS=	rpm:${PORTSDIR}/misc/rpm
+BUILD_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 
 ONLY_FOR_ARCHS=	alpha
 

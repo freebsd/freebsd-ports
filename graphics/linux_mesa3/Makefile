@@ -18,7 +18,7 @@ PATCHFILES=
 
 MAINTAINER=		mastake@msel.t.u-tokyo.ac.jp
 
-BUILD_DEPENDS=		rpm2cpio:${PORTSDIR}/misc/rpm
+BUILD_DEPENDS=		rpm2cpio:${PORTSDIR}/archivers/rpm
 RUN_DEPENDS=		\
 	/compat/linux/lib/ld-linux.so.2:${PORTSDIR}/emulators/linux_base
 

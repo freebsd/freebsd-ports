@@ -128,8 +128,6 @@
     SUBDIR += quranref
     SUBDIR += rfc
     SUBDIR += rname
-    SUBDIR += rpm
-    SUBDIR += rpm2cpio
     SUBDIR += rtfm
     SUBDIR += screen
     SUBDIR += scriptkit
