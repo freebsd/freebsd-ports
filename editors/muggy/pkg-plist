@@ -34,3 +34,4 @@ bin/Muggy.app
 @dirrm JDE/Muggy/modules/Undo.m
 @dirrm JDE/Muggy/modules
 @dirrm JDE/Muggy
+@unexec rmdir %D/JDE 2>/dev/null || true
