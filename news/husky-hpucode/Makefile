@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	hpucode
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	news mail
-DISTNAME=	${PORTNAME}-${PORTVERSION}-release
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Scan for UUE in message base
