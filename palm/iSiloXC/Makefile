@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	iSiloXC
-PORTVERSION=	3.25
+PORTVERSION=	3.3
 CATEGORIES=	palm textproc
 MASTER_SITES=	http://www.isilox.com/download/dl/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}BSD
 
 MAINTAINER=	skv@FreeBSD.org
+COMMENT=	Converts documents from text/html files or URLs to iSilo format
 
 USE_ZIP=	yes
 NO_BUILD=	yes
