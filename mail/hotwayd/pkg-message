@@ -17,4 +17,3 @@ killall -HUP inetd
 You can now use fetchmail or any pop3 mail client to read your e-mail.
 The POP username should be your full hotmail or msn e-mail address,
 and the password is your hotmail/msn password.
-
