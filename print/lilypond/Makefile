@@ -8,46 +8,86 @@
 #
 
 PORTNAME=	lilypond
-PORTVERSION=	1.6.0
+PORTVERSION=	2.0.1
 CATEGORIES=	print audio
-MASTER_SITES=	ftp://ftp.lilypond.org/pub/LilyPond/v1.6/
+MASTER_SITES=	ftp://ftp.lilypond.org//pub/LilyPond/v2.0/
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	atamaniuk@frobs.net
 COMMENT=	The GNU music typesetter
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/latex:${PORTSDIR}/print/teTeX
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
-MAN1=	abc2ly.1 as2text.1 convert-ly.1 etf2ly.1 lilypond.1 \
-	lilypond-book.1 ly2dvi.1 midi2ly.1 mup2ly.1 musedata2ly.1 pmx2ly.1
+MAN1=	abc2ly.1 as2text.1 convert-ly.1 etf2ly.1 lilypond.1 lilypond-bin.1 \
+	lilypond-book.1 midi2ly.1 mup2ly.1 musedata2ly.1 pmx2ly.1
+INFO=		lilypond lilypond-internals
 
 GNU_CONFIGURE=	yes
 USE_BISON=	yes
 USE_GMAKE=	YES
 USE_PYTHON=	YES
-USE_GCC=	2.95
-USE_REINPLACE=	yes
 MAKEFILE=	GNUmakefile
 
-INFO_FILES=		lilypond.info lilypond-internals.info
 CONFIGURE_ARGS+=	--with-kpathsea-include=${PREFIX}/include \
 			--with-kpathsea-lib=${PREFIX}/lib
 
-.include <bsd.port.pre.mk>
+# inform kpathsea.h of getopt-prototype version
+CFLAGS+=	-D__GNU_LIBRARY__
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Configure fails"
+.include <bsd.port.pre.mk>
+.if !defined(WITHOUT_PFA_FONTS)
+BUILD_DEPENDS+=	${PREFIX}/bin/mftrace:${PORTSDIR}/print/pktrace
+MAKE_ENV+=	MAKE_PFA_FILES=1
+ALL_TARGET=	all	# XXX pfa-fonts
 .endif
 
-post-configure:
-	${REINPLACE_CMD} -e "s:^INFO_FILES:xxxINFO_FILES:g" \
-		${WRKSRC}/Documentation/user/GNUmakefile
+.if ${OSVERSION} < 500000
+USE_GCC=	3.3
+OLD_CPP_INCLUDEDIR=	/usr/include/g++
+CONFIGURE_ENV+=	"CPPFLAGS=$${CPPFLAGS} -idirafter ${OLD_CPP_INCLUDEDIR}"
+.endif
+
+SCRIPTS_ENV+=	PORTVERSION=${PORTVERSION}
+
+pre-everything::
+	@${CAT} ${PKGMESSAGE}
+	@${ECHO_CMD} Pausing ten seconds--press control-C to cancel the build.
+	@sleep 10
 
 post-install:
-	@cd ${WRKSRC}/input ; \
-	${MKDIR} ${PREFIX}/share/examples/lilypond ;\
-	${TAR} -chf - . | ${TAR} -xf - -C ${PREFIX}/share/examples/lilypond ;\
-	${FIND} ${PREFIX}/share/examples/lilypond -name "GNUmakefile" | xargs ${RM} ;\
-	${FIND} ${PREFIX}/share/examples/lilypond -name "out" | xargs ${RM} -rf ;\
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}/scripts
+	cd ${WRKSRC}/input ; \
+	${TAR} -chf - --exclude=out --exclude=CVS --exclude=GNUmakefile . | \
+		${TAR} -xf - -C ${EXAMPLESDIR};\
+	${FIND} ${EXAMPLESDIR} -name "out" | xargs ${RM} -rf ;\
+.for ii in login profile
+	${INSTALL_SCRIPT} ${WRKSRC}/buildscripts/out/lilypond-${ii} \
+		${EXAMPLESDIR}/scripts
+.endfor
+.for ii in lilypond-font-lock.el lilypond-indent.el lilypond-init.el \
+	lilypond-mode.el lilypond-init.el
+	${INSTALL_SCRIPT} ${WRKSRC}/elisp/${ii} ${EXAMPLESDIR}/scripts
+.endfor
+.for ii in lilypond.vim server.el.patch
+	${INSTALL_SCRIPT} ${WRKSRC}/${ii} ${EXAMPLESDIR}/scripts
+.endfor
+	cd ${WRKSRC}/Documentation/topdocs/out && ${TAR} -chf - \
+		--exclude=dummy.dep --exclude=CVS --exclude=GNUmakefile . \
+		| ${TAR} -xf - -C ${DOCSDIR}
+
+.for file in ${INFO}
+	${INSTALL_DATA} ${WRKSRC}/Documentation/user/out/${file}.info \
+		${PREFIX}/info/
+	install-info ${PREFIX}/info/${file}.info ${PREFIX}/info/dir
+.endfor
+.endif
+	${ENV} PKG_PREFIX=${PREFIX} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+#	${ENV} PATH=${LOCALBASE}/bin:${PREFIX}/bin:${PATH} \
+#	TEXMF="{${DATADIR}/${PORTVERSION}},"`kpsexpand  \\$$TEXMF`"}" texhash
+
+	@${ECHO_CMD} "* Look in ${EXAMPLESDIR}/scripts for needed additions to"
+	@${ECHO_CMD} "* your .profile (at least the TEXMF environment variable"
+	@${ECHO_CMD} "* is required)."
 
 .include <bsd.port.post.mk>
