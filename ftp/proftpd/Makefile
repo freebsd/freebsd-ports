@@ -1,13 +1,13 @@
 # New ports collection makefile for:	proftpd
-# Version required:	1.2.0pl8
+# Version required:	1.2.0pl9
 # Date created:		26 January 1998
 # Whom:			Stephane Legrand
 #
 # $FreeBSD$
 #
 
-DISTNAME=	proftpd-1.2.0pre8
-PKGNAME=	proftpd-1.2.0p8
+DISTNAME=	proftpd-1.2.0pre9
+PKGNAME=	proftpd-1.2.0p9
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.tos.net/pub/proftpd/
 
@@ -20,8 +20,14 @@ MAN8=	proftpd.8 ftpshut.8
 USE_GMAKE=	yes
 USE_AUTOCONF=	yes
 
-CONFIGURE_ARGS=	--localstatedir=/var/run \
-		--with-modules=mod_ratio
+CONFIGURE_ARGS=	--localstatedir=/var/run
+
+MODULES?=	mod_ratio
+
+CONFIGURE_ARGS+= --with-modules=${MODULES}
+
+pre-configure:
+	@${ECHO_MSG} "==> Configuring with ${MODULES}"
 
 post-configure:
 	@${MV} ${WRKSRC}/src/proftpd.8 ${WRKSRC}/src/proftpd.8.pre_sed
@@ -42,7 +48,7 @@ post-configure:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftpcount ${PREFIX}/bin/ftpcount
-	@(cd ${PREFIX}/bin && ${LN} -s ftpcount ftpwho)
+	@${INSTALL_PROGRAM} ${WRKSRC}/ftpwho ${PREFIX}/bin/ftpwho
 	@${INSTALL_PROGRAM} ${WRKSRC}/proftpd ${PREFIX}/libexec/proftpd
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftpshut ${PREFIX}/sbin/ftpshut
 	@${INSTALL_MAN} ${WRKSRC}/src/ftpcount.1 ${PREFIX}/man/man1/ftpcount.1

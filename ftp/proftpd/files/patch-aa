@@ -9,7 +9,7 @@
  # This is a basic ProFTPD configuration file (rename it to 
  # 'proftpd.conf' for actual use.  It establishes a single server
  # and a single anonymous login.  It assumes that you have a user/group
-@@ -23,24 +28,38 @@
+@@ -30,24 +35,38 @@
    AllowOverwrite		on
  </Directory>
  
