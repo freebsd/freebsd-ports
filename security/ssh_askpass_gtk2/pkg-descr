@@ -1,0 +1,7 @@
+A small SSH Askpass replacement written with GTK2. Features fullscreen
+dialog and translucent background.
+
+WWW: http://www.cgabriel.org/sw/gtk2-ssh-askpass/
+
+- Manuel Rodrigo Rabade Garcia
+mig@mig-29.net
