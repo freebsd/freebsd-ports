@@ -29,8 +29,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,/news,${PREFIX}/news,g' ${WRKSRC}/cleanfeed*
 
 do-install:
-.for file in bad_adult_paths bad_cancel_paths bad_hosts bad_paths cleanfeed cleanfeed.local.sample
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${LOCALBASE}/news/bin/filter
+.for f in bad_adult_paths bad_cancel_paths bad_hosts bad_paths cleanfeed cleanfeed.local.sample
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${LOCALBASE}/news/bin/filter
 .endfor
 	@cd ${LOCALBASE}/news/bin/filter; ${LN} -f cleanfeed filter_innd.pl
 
