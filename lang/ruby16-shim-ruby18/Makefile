@@ -26,11 +26,9 @@ MAKE_ARGS=	RUBY=${RUBY}
 #CONFIGURE_ARGS+= CONFIGURE_ARGS="-- --config-opt=--with-opt-dir=${LOCALBASE}"
 WRKSRC=		${WRKDIR}/shim/ruby16
 
-.include <bsd.port.pre.mk>
+RUBY_VER=	1.6
 
-.if ${RUBY_VER} >= 1.7
-IGNORE=		is only for ruby 1.6, ruby ${RUBY_VER} does not need it
-.endif
+.include <bsd.port.pre.mk>
 
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
 IF_DEFAULT=	""
