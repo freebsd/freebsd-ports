@@ -294,6 +294,8 @@
     SUBDIR += pkill
     SUBDIR += plconfig
     SUBDIR += pmap
+    SUBDIR += port-authoring-tools
+    SUBDIR += port-maintenance-tools
     SUBDIR += portdowngrade
     SUBDIR += portsman
     SUBDIR += portupgrade
