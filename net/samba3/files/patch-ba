@@ -1,54 +1,11 @@
---- configure.in.orig	Sat Oct 13 22:09:16 2001
-+++ configure.in	Tue Oct 16 17:21:21 2001
-@@ -406,21 +406,6 @@
- AC_CHECK_TYPE(ssize_t, int)
- AC_CHECK_TYPE(wchar_t, unsigned short)
+--- configure.orig	Sun Dec 16 01:41:44 2001
++++ configure	Sun Dec 16 01:41:54 2001
+@@ -16688,7 +16688,7 @@
  
--############################################
--# for cups support we need libcups, and a handful of header files
--
--AC_CHECK_LIB(cups,httpConnect)
--
--# I wonder if there is a nicer way of doing this?
--
--if test x"$ac_cv_lib_cups_httpConnect" = x"yes"; then
--        AC_CHECK_HEADERS(cups/cups.h cups/language.h)
--        if test x"$ac_cv_header_cups_cups_h" = x"yes"; then
--                if test x"$ac_cv_header_cups_language_h" = x"yes"; then
--                        AC_DEFINE(HAVE_CUPS)
--                fi
--        fi
--fi
+     fi
  
- ############################################
- # we need libdl for PAM and the new VFS code
-@@ -1622,7 +1607,7 @@
-   yes)
-     AC_MSG_RESULT(yes)
-     AC_DEFINE(KRB5_AUTH)
--    LIBS="$LIBS -ldes425 -lkrb5 -lcrypto -lcom_err"
-+    LIBS="$LIBS -ldes425 -lkrb5 -lk5crypto -lcom_err"
-     CFLAGS="$CFLAGS -I$withval/include"
-     LDFLAGS="$LDFLAGS -L$withval/lib"
-     ;;
-@@ -1961,6 +1946,20 @@
-     ;;
-   esac ],
-   AC_MSG_RESULT(no)
-+)
-+
-+#################################################
-+# check for CUPS printing support
-+AC_MSG_CHECKING(whether to use CUPS printing)
-+AC_ARG_WITH(cups,
-+[  --with-cups=base-dir		Include CUPS printing support
-+   --without-cups		Don't include CUPS printing support (default)],
-+[  AC_MSG_RESULT(yes)
-+   LIBS="$LIBS -lcups"
-+   CFLAGS="$CFLAGS -I$withval/include"
-+   LDFLAGS="$LDFLAGS -L$withval/lib"
-+   AC_CHECK_LIB(cups,httpConnect)],
-+ AC_MSG_RESULT(no)
- )
+-    LIBS="-lssl -lcrypto $LIBS"
++    LIBS="-lssl -lk5crypto $LIBS"
  
- 
+ #    if test ! -d ${withval}; then
+ #      echo "configure: error: called with --with-ssl, but ssl base directory ${withval} does not exist or is not a directory. Aborting config" 1>&2

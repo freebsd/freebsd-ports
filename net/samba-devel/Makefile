@@ -6,26 +6,20 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTVERSION=	3.0a8
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://samba.anu.edu.au/pub/samba/%SUBDIR%/ \
 		ftp://de.samba.org/pub/mirror/samba/%SUBDIR%/ \
 		ftp://se.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://ftp.sunet.se/pub/unix/utilities/samba/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. old-versions alpha old
-DISTNAME=	samba-${PORTVERSION}
+MASTER_SITE_SUBDIR=	alpha old
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/a/-alpha/}
 
 MAINTAINER=	dwcjr@FreeBSD.org
 
 .if defined(WITH_CUPS)
 LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups
-.endif
-
-.if defined(WITH_RECYCLE)
-PATCH_SITES+=	http://www.amherst.edu/~bbstone/recycle_bin/2.2.2/
-PATCHFILES+=	proto.h.patch loadparm.c.patch reply.c.patch
 .endif
 
 # directories
