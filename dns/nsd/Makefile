@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nsd
-PORTVERSION=	1.2.2
+PORTVERSION=	1.2.3
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/
 
@@ -22,7 +22,7 @@ CONFIGURE_ARGS=	--with-user=bind \
 		--with-namedxfer=/usr/libexec/named-xfer \
 		--with-libwrap
 
-MAN8=	nsd.8 zonec.8 nsdc.8
+MAN8=	nsd.8 zonec.8 nsdc.8 nsd-notify.8
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/nsd.zones.sample \
