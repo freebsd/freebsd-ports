@@ -5,17 +5,18 @@
 # $FreeBSD$
 #
 
-PORTNAME=	archie.el	
-PORTVERSION=	3.0.2	
+PORTNAME=	archie.el
+PORTVERSION=	3.0.2
 CATEGORIES=	net elisp
-# I don't know the master site
-MASTER_SITES=	ftp://ftp.cis.ohio-state.edu/pub/elisp-lisp/interfaces/ \
-		ftp://ftp.kddlabs.co.jp/.2/gnu-attic/ohio-elisp/interfaces/
+MASTER_SITES=	#
 DISTNAME=	archie.el
 EXTRACT_SUFX=	.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mock-interface to Archie for Emacs
+
+DEPRECATED=	"master site disappeared"
+EXPIRATION_DATE=2005-06-01
 
 RUN_DEPENDS=	archie:${PORTSDIR}/net/archie
 
@@ -25,8 +26,11 @@ NO_BUILD=	yes
 ELISPDIR=	${PREFIX}/share/emacs/site-lisp
 XELISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 
+PLIST_FILES=	share/emacs/site-lisp/archie.el \
+		lib/xemacs/site-lisp/archie.el
+PLIST_DIRS=	share/emacs/site-lisp lib/xemacs/site-lisp
+
 do-extract:
-	${RM} -rf ${WRKDIR}
 	${MKDIR} ${WRKDIR}
 	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${DISTFILES} \
 		> ${WRKDIR}/${PKGNAME}
