@@ -1,9 +1,0 @@
---- src/common/Makefile.orig	Sun Feb  4 11:57:32 2001
-+++ src/common/Makefile	Tue Feb  6 09:42:15 2001
-@@ -1,7 +1,6 @@
- # Makefile for stuff that's common between server & client.
- 
- CC	= gcc
--CFLAGS	= -g -Wall -O2 -DDATADIR=\"$(DATADIR)\"
- AR	= ar
- RANLIB	= ranlib
