@@ -16,14 +16,9 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--program-prefix=""
 
 MAN1=		ticker.app.1
-
-pre-patch:
-.for dir in src doc .
-	@${PERL} -pi -e 's|\@program_transform_name\@||' \
-		${WRKSRC}/${dir}/Makefile.in
-.endfor
 
 post-install:
 .if !defined(NOPORTDOCS)

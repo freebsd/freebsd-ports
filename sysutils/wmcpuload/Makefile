@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.sh.rim.or.jp/~ssato/src/
 
 MAINTAINER=	pat@FreeBSD.org
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_XPM=	yes
