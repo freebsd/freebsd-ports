@@ -8,7 +8,7 @@
 PORTNAME=	ac3dec
 PORTVERSION=	0.6.1
 CATEGORIES=	audio
-MASTER_SITES=	http://dara.notbsd.org/~aholtzma/ac3/tarballs/
+MASTER_SITES=	http://liba52.sourceforge.net/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software for research in digital audio coding/decoding
