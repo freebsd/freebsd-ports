@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.192 1998/11/18 22:16:01 billf Exp $
+# $Id: Makefile,v 1.193 1998/11/19 02:29:06 mph Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -48,6 +48,7 @@
     SUBDIR += gated
     SUBDIR += gnu-finger
     SUBDIR += gopher
+    SUBDIR += gicq
     SUBDIR += gtkicq
     SUBDIR += gtksamba
     SUBDIR += hesiod
