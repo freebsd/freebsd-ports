@@ -8,20 +8,19 @@
 
 PORTNAME=	Mail-Procmailrc
 PORTVERSION=	1.03
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://scott.wiersdorf.org/perl/
 MASTER_SITE_SUBDIR=	Mail
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	erwin@lansing.dk
+COMMENT=	A Perl OO interface to procmail rc files
 
 PERL_CONFIGURE=	YES
 
-.include <bsd.port.pre.mk>
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		Mail::Procmailrc.3
 
-.if ${PERL_LEVEL} < 500600
-BROKEN=		This port requires perl 5.6.0
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
