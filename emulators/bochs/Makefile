@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S/$/:bochs/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	${PORTNAME}:bochs \
+MASTER_SITE_SUBDIR=	${PORTNAME}/:bochs \
 			anholt/:local
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:bochs \
 		BIOS-bochs-1.4.1.gz:local
