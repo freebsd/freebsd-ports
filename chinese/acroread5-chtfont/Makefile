@@ -1,16 +1,14 @@
 # New ports collection makefile for:	acroread-chtfont
-# Version required:	1999.5.24
+# Version required:	1999.7.20
 # Date created:		99/06/16
 # Whom:			Satoshi Taoka <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/17 09:34:58 taoka Exp $
+# $Id: Makefile,v 1.2 1999/07/04 07:57:00 obrien Exp $
 #
 
 DISTNAME=	chtfont
 CATEGORIES=	chinese
 
 MASTERDIR=	${.CURDIR}/../../print/acroread-commfont
-
-BROKEN='cannot fetch'
 
 .include "${MASTERDIR}/Makefile"
