@@ -9,7 +9,7 @@ PORTNAME=	myth2_demo
 PORTVERSION=	1.3
 CATEGORIES=	games linux
 MASTER_SITES=	ftp://ftp.linux.tucows.com/pub/Loki/updates/loki_demos/ \
-		ftp://ftp.sunsite.auc.dk/disk2/lokigames/updates/loki_demos/
+		ftp://ftp.sunsite.auc.dk/disk1/lokigames/updates/loki_demos/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	myth2-demo
 EXTRACT_SUFX=	.run
