@@ -7,7 +7,7 @@
 
 PORTNAME=	mnogosearch
 PORTVERSION=    3.1.20
-PORTREVISION=	1
+PORTREVISION=   2
 CATEGORIES=	www databases
 MASTER_SITES=   http://www.mnogosearch.org/Download/
 
@@ -25,6 +25,9 @@ CONFIGURE_ARGS= --enable-phrase \
 		--enable-freebsd-pthreads \
 		--sysconfdir=${PREFIX}/etc/mnogosearch \
 		--localstatedir=/var/mnogosearch
+
+CFLAGS+=        ${PTHREAD_CFLAGS}
+CONFIGURE_ENV=  LIBS="${PTHREAD_LIBS}"
 
 RUN_DEPENDS+=	${LOCALBASE}/etc/apache/httpd.conf:${PORTSDIR}/www/apache13
 
