@@ -1,13 +1,22 @@
---- dhid.h.orig	Sun Jan 14 19:39:01 2001
-+++ dhid.h	Sun Jan 14 19:41:37 2001
-@@ -73,8 +73,8 @@
- #define	OFFLINE_REQ	0x00000451
+--- dhid.h.orig	Thu Nov 20 21:02:38 2003
++++ dhid.h	Sat Feb 19 21:14:47 2005
+@@ -56,7 +56,7 @@
+ 
+ #define	DHIS_VERSION	52		/* DHIS Version */
+ 
+-#define	MAX_HOSTNAME	64
++#define	MAX_HOSTNAME	256
+ #define	MAX_PASS	16		/* Characters in password */
+ 
+ /* Message opcodes */
+@@ -72,8 +72,8 @@
+ #define	OFFLINE_REQ	0x00000551
  
  
 -#define	DHID_CONF	"/etc/dhid.conf"
 -#define	DHID_PID	"/etc/dhid.pid"
 +#define	DHID_CONF	"__PREFIX__/etc/dhid.conf"
-+#define	DHID_PID	"/var/run/dhid.pid"
++#define	DHID_PID	"/var/run/dhis/dhid.pid"
  
  #define	DEF_ISPORT	58800
  #define	FAIL_ALLOW	3

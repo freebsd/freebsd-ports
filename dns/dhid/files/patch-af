@@ -1,0 +1,32 @@
+--- network.c.orig	Wed Sep 12 12:13:18 2001
++++ network.c	Sat Feb 19 21:29:32 2005
+@@ -290,12 +290,12 @@
+ 	static int seed=0;
+ 
+ 	if(!seed) { seed++; srandom(time(NULL)); }
+-	memset(buff,0,256);	
+-	memset(temp,0,128);	
++	memset(buff,0,sizeof(buff));
++	memset(temp,0,sizeof(temp));
+ 
+ 	do {
+-		sprintf(temp,"%u",(unsigned)random());
+-		strcat(buff,temp);
++		snprintf(temp,sizeof(temp),"%u",(unsigned)random());
++		strlcat(buff,temp,sizeof(buff));
+ 		
+ 	} while(strlen(buff) < n);
+ 	buff[n]='\0';
+@@ -441,10 +441,10 @@
+ 	if(j<0) return;
+ 
+ 	buff[0]='\0';
+-	for(i=0;i<j;i++) strcat(buff,"0");	/* Place 0's */
++	for(i=0;i<j;i++) strlcat(buff,"0",sizeof(buff));	/* Place 0's */
+ 
+ 	mpz_get_str(buff2,10,x);		/* Add x */
+-	strcat(buff,buff2);
++	strlcat(buff,buff2,sizeof(buff));
+ 
+ 	/* Now copy n digits to str */
+ 	cp1=str;

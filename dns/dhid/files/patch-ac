@@ -1,0 +1,79 @@
+--- main.c.orig	Thu Nov 20 22:11:59 2003
++++ main.c	Sat Feb 19 21:22:50 2005
+@@ -74,7 +74,7 @@
+                         unsigned char linecmd[512];
+                         struct in_addr sa;
+                         sa.s_addr=cp->laddr;
+-                        sprintf(linecmd,"%s %d %s %s",cp->off_cmd,cp->id,
++                        snprintf(linecmd,sizeof(linecmd),"%s %d %s %s",cp->off_cmd,cp->id,
+                         inet_ntoa((struct in_addr)sa)
+                         ,cp->off_cmdp);
+                         cmd_fork(linecmd);
+@@ -106,7 +106,7 @@
+                         unsigned char linecmd[512];
+                         struct in_addr sa;
+                         sa.s_addr=cp->laddr;
+-                        sprintf(linecmd,"%s %d %s %s",cp->off_cmd,cp->id,
++                        snprintf(linecmd,sizeof(linecmd),"%s %d %s %s",cp->off_cmd,cp->id,
+                         inet_ntoa((struct in_addr)sa)
+                         ,cp->off_cmdp);
+                         cmd_fork(linecmd);
+@@ -189,7 +189,7 @@
+ 		unsigned char linecmd[512];
+ 		struct in_addr sa;
+ 		sa.s_addr=cp->laddr;
+-		sprintf(linecmd,"%s %d %s %s",cp->on_cmd,cp->id,
++		snprintf(linecmd,sizeof(linecmd),"%s %d %s %s",cp->on_cmd,cp->id,
+ 		inet_ntoa((struct in_addr)sa)
+ 		,cp->on_cmdp);
+ 		cmd_fork(linecmd);
+@@ -223,8 +223,8 @@
+ 			return;
+ 		cp->cserver=sp;
+ 		cp->stage=AUTH_STAGE;
+-		if(cp->atype==APASS) strcpy(m.pass,cp->pass);
+-		else memset(m.pass,0,16);
++		if(cp->atype==APASS) strlcpy(m.pass,cp->pass,sizeof(m.pass));
++		else memset(m.pass,0,sizeof(m.pass));
+ 		m.hdr.opcode=AUTH_REQ;
+ 		m.hdr.hostid=cp->id;
+ 		m.refresh=cp->refresh;
+@@ -289,25 +289,19 @@
+ 	int c;
+ 	extern char *optarg;
+ 
+-	strcpy(conf_file,DHID_CONF);
+-	strcpy(pid_file,DHID_PID);
++	strlcpy(conf_file,DHID_CONF,sizeof(conf_file));
++	strlcpy(pid_file,DHID_PID,sizeof(pid_file));
+ 
+ 	while((c=getopt(argc,argv,"hf:p:P:"))!=EOF)
+ 	switch(c) {
+ 	case('p'): rport=atoi(optarg); break;
+-	case('P'): strncpy(pid_file,optarg,sizeof(pid_file)); break;
+-	case('f'): strncpy(conf_file,optarg,sizeof(conf_file)); break;
++	case('P'): strlcpy(pid_file,optarg,sizeof(pid_file)); break;
++	case('f'): strlcpy(conf_file,optarg,sizeof(conf_file)); break;
+ 	case('h'): usage(argv);
+ 	default: usage(argv);
+ 	}
+ 
+ 	
+-	if(getuid()) {
+-		syslog(LOG_ERR,"%s must be executed by root",argv[0]);
+-		exit(1);
+-	}
+-
+-
+ 	close(0);
+ 	close(1);
+ 	close(2);
+@@ -376,7 +370,7 @@
+                 	unsigned char linecmd[512];
+                 	struct in_addr sa;
+                 	sa.s_addr=cp->laddr;
+-                	sprintf(linecmd,"%s %d %s %s",cp->off_cmd,cp->id,
++                	snprintf(linecmd,sizeof(linecmd),"%s %d %s %s",cp->off_cmd,cp->id,
+                 	inet_ntoa((struct in_addr)sa)
+                 	,cp->off_cmdp);
+                 	cmd_fork(linecmd);
