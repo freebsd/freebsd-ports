@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mailparse
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTVERSION=	0.9.2
 CATEGORIES=	mail www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,9 +15,9 @@ COMMENT=	PEAR classes to create and decode MIME messages
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
 
+IS_INTERACTIVE=	'need to build php4 with mbstring support.'
+
 USE_PHPIZE=	yes
-USE_REINPLACE=	yes
-REINPLACE_ARGS=	-i.before_mailparse
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../lang/php4/bsd.php.mk"
@@ -51,11 +50,6 @@ post-install-script:
 		${ECHO_MSG} "===>   Creating ${PHP_INI} for PHP" ; \
 		${CP} -p ${PHP_INI}-dist ${PHP_INI} ; \
 	fi
-	@if ${GREP} -q -e '^extension_dir = ./' ${PHP_INI} ; then \
-		${ECHO_MSG} "===>   Configuring ${PHP_INI}" ; \
-		${REINPLACE_CMD} -e 's!^extension_dir = ./!extension_dir = ${PHP_BASE}/${EXT_DIR}!' \
-			${PHP_INI} ; \
-	fi
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for FILE in ${DOCS}
@@ -67,5 +61,10 @@ post-install-script:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${TESTDIR}
 	@${ECHO_MSG} "===> Examples installed in ${TESTDIR}."
 .endif
+	@${ECHO_MSG}
+	@${CAT} ${PKGMESSAGE} | \
+	${SED} -e "s:/usr/local/etc/php.ini:${PHP_INI}:"	\
+		-e "s:/usr/local/lib/php/20020429:${PHP_BASE}/${EXT_DIR}:"
+	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
