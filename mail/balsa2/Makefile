@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.balsa.net/pub/balsa/
 
 MAINTAINER=	ports@FreeBSD.org
 
-#RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomegore
+RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
 LIB_DEPENDS=	gnome.3:${PORTSDIR}/x11/gnomelibs \
 		PropList.2:${PORTSDIR}/devel/libPropList
 
