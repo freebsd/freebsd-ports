@@ -8,7 +8,7 @@ fi
 pkg_info 'apache-2*' > /dev/null 2<&1
 
 if [ $? = 0 ]; then
-  echo "apr-devel cannot currently be installed alongside apache2.  sorry."
+  echo "apr cannot currently be installed alongside apache2.  sorry."
   exit 1
 fi
 
