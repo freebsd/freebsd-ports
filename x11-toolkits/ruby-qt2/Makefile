@@ -15,6 +15,8 @@ DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
+BROKEN=		"Weird problem on 4-STABLE + XFree86 4.0.2 + Mesa 3.2.1"
+
 LIB_DEPENDS=	qt2.4:${PORTSDIR}/x11-toolkits/qt22
 
 USE_MESA=	yes
