@@ -4,7 +4,7 @@
 # Date created:         14 Feb 1998
 # Whom:                 obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.3 1998/05/11 22:13:18 obrien Exp $
+# $Id: Makefile,v 1.4 1998/10/07 13:23:18 obrien Exp $
 #
 
 DISTNAME=	communicator-v407-us.x86-unknown-linux2.0_libc5
@@ -12,6 +12,8 @@ PKGNAME=	netscape-communicator-4.07.us
 CATEGORIES=	www
 
 MAINTAINER=	obrien@FreeBSD.ORG
+
+RUN_DEPENDS=	/compat/linux/lib/ld-linux.so.1:${PORTSDIR}/emulators/linux_lib
 
 RESTRICTED=	"Commerial & USA ITAR export restrictions"
 
