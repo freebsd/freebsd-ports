@@ -1,0 +1,74 @@
+This patch has been submitted to the author, it allows one to disconnect
+ssh from the supplied libgmp and libz.  The next patch (patch-ag) actually
+uses these disconnect points to hook us into the system libraries.
+
+The rationale for splitting them up was that the previous patch (patch-ae)
+that these two patches replace was unmaintainable and overly drastic.
+
+*** Makefile.in	Thu Jan 25 17:58:10 1996
+--- Makefile.in	Mon Feb  5 18:36:09 1996
+***************
+*** 114,125 ****
+  SHELL = /bin/sh
+  
+  GMPDIR 		= gmp-1.3.2
+! GMPLIBS 	= -L$(GMPDIR) -lgmp
+! GMPDEP 		= $(GMPDIR)/gmp.h $(GMPDIR)/libgmp.a
+  
+  ZLIBDIR		= zlib095
+! ZLIBDEP		= $(ZLIBDIR)/libz.a
+! ZLIBLIBS	= -L$(ZLIBDIR) -lz
+  
+  RSAREFDIR	= rsaref2
+  RSAREFSRCDIR 	= $(RSAREFDIR)/source
+--- 114,129 ----
+  SHELL = /bin/sh
+  
+  GMPDIR 		= gmp-1.3.2
+! GMPINCDIR	= $(GMPDIR)
+! GMPLIBDIR	= $(GMPDIR)
+! GMPDEP 		= $(GMPINCDIR)/gmp.h $(GMPLIBDIR)/libgmp.a
+! GMPLIBS 	= -L$(GMPLIBDIR) -lgmp
+  
+  ZLIBDIR		= zlib095
+! ZLIBINCDIR	= $(ZLIBDIR)
+! ZLIBLIBDIR	= $(ZLIBDIR)
+! ZLIBDEP		= $(ZLIBINCDIR)/libz.h $(ZLIBLIBDIR)/libz.a
+! ZLIBLIBS	= -L$(ZLIBLIBDIR) -lz
+  
+  RSAREFDIR	= rsaref2
+  RSAREFSRCDIR 	= $(RSAREFDIR)/source
+***************
+*** 186,192 ****
+  	$(CC) -o rfc-pg rfc-pg.c
+  
+  .c.o:
+! 	$(CC) -c -I. -I$(srcdir)/$(GMPDIR) -I$(srcdir)/$(ZLIBDIR) $(DEFS) -DHOST_KEY_FILE=\"$(HOST_KEY_FILE)\" -DHOST_CONFIG_FILE=\"$(HOST_CONFIG_FILE)\" -DSERVER_CONFIG_FILE=\"$(SERVER_CONFIG_FILE)\" -DSSH_PROGRAM=\"$(SSH_PROGRAM)\" -DETCDIR=\"$(etcdir)\" -DPIDDIR=\"$(piddir)\" -DBINDIR=\"$(bindir)\" $(CFLAGS) $<
+  
+  sshd: $(SSHD_OBJS) $(GMPDEP) $(RSAREFDEP) $(ZLIBDEP)
+  	-rm -f sshd
+--- 190,196 ----
+  	$(CC) -o rfc-pg rfc-pg.c
+  
+  .c.o:
+! 	$(CC) -c -I. -I$(GMPINCDIR) -I$(ZLIBINCDIR) $(DEFS) -DHOST_KEY_FILE=\"$(HOST_KEY_FILE)\" -DHOST_CONFIG_FILE=\"$(HOST_CONFIG_FILE)\" -DSERVER_CONFIG_FILE=\"$(SERVER_CONFIG_FILE)\" -DSSH_PROGRAM=\"$(SSH_PROGRAM)\" -DETCDIR=\"$(etcdir)\" -DPIDDIR=\"$(piddir)\" -DBINDIR=\"$(bindir)\" $(CFLAGS) $<
+  
+  sshd: $(SSHD_OBJS) $(GMPDEP) $(RSAREFDEP) $(ZLIBDEP)
+  	-rm -f sshd
+***************
+*** 247,253 ****
+                CC="$(CC)" CFLAGS="$(CFLAGS) -I. -I$(srcdir)/$(GMPDIR) \
+  	       -I../$(srcdir)/$(GMPDIR)" RANLIB="$(RANLIB)"
+  
+! $(ZLIBDEP):
+  	-if test '!' -d $(ZLIBDIR); then \
+  	  mkdir $(ZLIBDIR); \
+  	  cp $(srcdir)/$(ZLIBDIR)/Makefile $(ZLIBDIR); \
+--- 251,257 ----
+                CC="$(CC)" CFLAGS="$(CFLAGS) -I. -I$(srcdir)/$(GMPDIR) \
+  	       -I../$(srcdir)/$(GMPDIR)" RANLIB="$(RANLIB)"
+  
+! $(ZLIBDIR)/libz.a:
+  	-if test '!' -d $(ZLIBDIR); then \
+  	  mkdir $(ZLIBDIR); \
+  	  cp $(srcdir)/$(ZLIBDIR)/Makefile $(ZLIBDIR); \

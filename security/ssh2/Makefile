@@ -3,10 +3,10 @@
 # Date created:		30 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.11 1996/01/25 02:08:25 ache Exp $
+# $Id: Makefile,v 1.12 1996/01/25 04:17:28 ache Exp $
 #
 
-DISTNAME=       ssh-1.2.12a
+DISTNAME=       ssh-1.2.12.92
 CATEGORIES=	security net
 MASTER_SITES=   ftp://ftp.cs.hut.fi/pub/ssh/snapshots/
 LIB_DEPENDS=    z\\.0\\.:${PORTSDIR}/devel/libz
