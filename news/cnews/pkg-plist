@@ -7,29 +7,26 @@ libexec/news
 @exec ln -s /usr/local/newsspool /var/news
 @exec mkdir -p /usr/local/newsspool/in.coming/bad
 @exec cd /usr/local/newsspool; mkdir -p out.going out.master out.nntp
-@cwd man/man1
-checknews.1cn
-inews.1cn
-postnews.1cn
-readnews.1cn
-@cwd ../man5
-controlperm.5
-news.5
-newsctl.5
-newsdb.5
-newsoverview.5
-newssys.5
-@cwd ../man8
-cnewsdo.8cn
-expire.8cn
-explode.8cn
-mergeactive.8
-mkhistory.8cn
-newsaux.8cn
-newsbatch.8cn
-newsmail.8cn
-newsmaint.8cn
-newsoverview.8
-relaynews.8cn
-report.8cn
-rnews.8cn
+man/man1/checknews.1cn
+man/man1/inews.1cn
+man/man1/postnews.1cn
+man/man1/readnews.1cn
+man/man5/controlperm.5
+man/man5/news.5
+man/man5/newsctl.5
+man/man5/newsdb.5
+man/man5/newsoverview.5
+man/man5/newssys.5
+man/man8/cnewsdo.8cn
+man/man8/expire.8cn
+man/man8/explode.8cn
+man/man8/mergeactive.8
+man/man8/mkhistory.8cn
+man/man8/newsaux.8cn
+man/man8/newsbatch.8cn
+man/man8/newsmail.8cn
+man/man8/newsmaint.8cn
+man/man8/newsoverview.8
+man/man8/relaynews.8cn
+man/man8/report.8cn
+man/man8/rnews.8cn
