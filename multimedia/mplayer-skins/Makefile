@@ -98,9 +98,9 @@ DISTFILES+=	default-1.7.tar.bz2:Skin
 EXTRACT_ONLY+=	default-1.7.tar.bz2
 .endif
 
-DISTFILES+=	AlienMind-1.0.tar.bz2:Skin
+DISTFILES+=	AlienMind-1.1.tar.bz2:Skin
 .ifdef(WITH_SKIN_ALIENMIND)
-EXTRACT_ONLY+=	AlienMind-1.0.tar.bz2
+EXTRACT_ONLY+=	AlienMind-1.1.tar.bz2
 .endif
 
 DISTFILES+=	avifile-1.5.tar.bz2:Skin
