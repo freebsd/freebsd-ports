@@ -271,6 +271,7 @@
     SUBDIR += sweep
     SUBDIR += swhplugins
     SUBDIR += tclmidi
+    SUBDIR += teamspeak_client
     SUBDIR += teknap
     SUBDIR += tempest_for_eliza
     SUBDIR += terminatorx

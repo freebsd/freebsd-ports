@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# This starup script will set the correct library path
+# and then startup the teamspeak binary.
+#
+
+TSHOME=%%TSHOME%%
+if [ -z "$LD_LIBRARY_PATH" ]; then
+  export LD_LIBRARY_PATH=$TSHOME
+else
+  export LD_LIBRARY_PATH=$TSHOME:$LD_LIBRARY_PATH
+fi
+
+if [ -r $TSHOME/setduplexfake.so ]; then
+  if [ -z "$LD_PRELOAD" ]; then
+    export LD_PRELOAD=$TSHOME/setduplexfake.so
+  else
+    export LD_PRELOAD=$TSHOME/setduplexfake.so:$LD_PRELOAD
+  fi
+fi
+
+$TSHOME/TeamSpeak.bin "$@"
