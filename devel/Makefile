@@ -127,6 +127,7 @@
     SUBDIR += doxygen
     SUBDIR += ebnf2yacc
     SUBDIR += ecb
+    SUBDIR += ecb-emacs20
     SUBDIR += ecgi
     SUBDIR += eieio
     SUBDIR += eieio-emacs20
