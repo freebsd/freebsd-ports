@@ -1,5 +1,5 @@
---- wireless/wireless-applet.c.orig	Sun May 18 08:50:43 2003
-+++ wireless/wireless-applet.c	Fri Aug  1 23:06:51 2003
+--- wireless-applet/wireless-applet.c.orig	Sun May 18 11:50:43 2003
++++ wireless-applet/wireless-applet.c	Fri Aug  8 10:10:53 2003
 @@ -30,12 +30,25 @@
  #include <math.h>
  #include <dirent.h>
@@ -70,7 +70,7 @@
  		applet->state = BUSTED_LINK;
  		wireless_applet_animation_state (applet);
  	} else if (percent == 0) {
-@@ -387,22 +412,177 @@
+@@ -387,22 +412,179 @@
  	applet->show_dialogs = show;
  }
  
@@ -83,7 +83,7 @@
 + 
 +	bzero((char *)&ifr, sizeof(ifr));
 + 
-+	strcpy(ifr.ifr_name, device);
++	strlcpy(ifr.ifr_name, device, sizeof(ifr.ifr_name));
 +	ifr.ifr_data = (caddr_t)wreq;
 + 
 +	s = socket(AF_INET, SOCK_DGRAM, 0);
@@ -94,7 +94,7 @@
 +				GTK_WIDGET (applet),
 +				"Socket Error",
 +				NULL);
-+		return(1);
++		return 0;
 +	}
 + 
 +	if (ioctl(s, SIOCGWAVELAN, &ifr) == -1)
@@ -103,12 +103,12 @@
 +				GTK_WIDGET (applet),
 +				"ioctl Error",
 +				NULL);
-+		return(1);
++		return 0;
 +	}
 + 
 +	close(s);
 +                                                                 
-+	return(0);
++	return 1;
 +}
 +
 +static void
@@ -117,12 +117,14 @@
 +    	struct wi_req wreq;
 +	long int signal_strength;
 +
++	bzero((char *)&wreq, sizeof(wreq));
++
 +	wreq.wi_len  = WI_MAX_DATALEN;
 +	wreq.wi_type = WI_RID_COMMS_QUALITY;
 +
 +	(void)wi_getval(applet, device, &wreq);
 +
-+	signal_strength = (long int) (wreq.wi_val[0]);
++	signal_strength = (long int) (wreq.wi_val[1]);
 +
 +	memcpy(level, &signal_strength, sizeof(level));
 +
@@ -250,7 +252,7 @@
  		char *ptr;
  
  		fgets (line, 256, applet->file);
-@@ -435,6 +615,7 @@
+@@ -435,6 +617,7 @@
  				wireless_applet_update_state (applet, device, link, level, noise);
  			}
  		}
@@ -258,7 +260,7 @@
  	} while (1);
  
  	if (g_list_length (applet->devices)==1) {
-@@ -446,17 +627,23 @@
+@@ -446,17 +629,23 @@
  	}
  
  	/* rewind the /proc/net/wireless file */
@@ -282,7 +284,7 @@
  
  	wireless_applet_read_device_state (applet);
  
-@@ -522,6 +709,7 @@
+@@ -522,6 +711,7 @@
  static void
  start_file_read (WirelessApplet *applet)
  {
@@ -290,7 +292,7 @@
  	applet->file = fopen ("/proc/net/wireless", "rt");
  	if (applet->file == NULL) {
  		gtk_tooltips_set_tip (applet->tips,
-@@ -530,6 +718,7 @@
+@@ -530,6 +720,7 @@
  				NULL);
  		show_error_dialog (_("There doesn't seem to be any wireless devices configured on your system.\nPlease verify your configuration if you think this is incorrect."));
  	}
@@ -298,7 +300,7 @@
  }
  
  static void
-@@ -775,8 +964,10 @@
+@@ -775,8 +966,10 @@
  		applet->prefs = NULL;
  	}
  
