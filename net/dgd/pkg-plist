@@ -1,130 +1,180 @@
-dgd/Copyright
-dgd/Credits
-dgd/README
-dgd/bin/driver
-dgd/bin/precomp
-dgd/doc/Commercial
-dgd/doc/Introduction
-dgd/doc/LPC.html
-dgd/doc/Platforms
-dgd/doc/editor
-dgd/doc/kfun/allocate
-dgd/doc/kfun/call_other
-dgd/doc/kfun/call_out
-dgd/doc/kfun/call_trace
-dgd/doc/kfun/ceil
-dgd/doc/kfun/clone_object
-dgd/doc/kfun/compile_object
-dgd/doc/kfun/crypt
-dgd/doc/kfun/ctime
-dgd/doc/kfun/destruct_object
-dgd/doc/kfun/dump_state
-dgd/doc/kfun/editor
-dgd/doc/kfun/error
-dgd/doc/kfun/explode
-dgd/doc/kfun/fabs
-dgd/doc/kfun/find_object
-dgd/doc/kfun/floor
-dgd/doc/kfun/fmod
-dgd/doc/kfun/frexp
-dgd/doc/kfun/function_object
-dgd/doc/kfun/get_dir
-dgd/doc/kfun/implode
-dgd/doc/kfun/ldexp
-dgd/doc/kfun/make_dir
-dgd/doc/kfun/map_indices
-dgd/doc/kfun/map_sizeof
-dgd/doc/kfun/map_values
-dgd/doc/kfun/modf
-dgd/doc/kfun/object_name
-dgd/doc/kfun/parse_string
-dgd/doc/kfun/previous_object
-dgd/doc/kfun/previous_program
-dgd/doc/kfun/query_editor
-dgd/doc/kfun/query_ip_number
-dgd/doc/kfun/random
-dgd/doc/kfun/read_file
-dgd/doc/kfun/remove_call_out
-dgd/doc/kfun/remove_dir
-dgd/doc/kfun/remove_file
-dgd/doc/kfun/rename_file
-dgd/doc/kfun/restore_object
-dgd/doc/kfun/save_object
-dgd/doc/kfun/send_message
-dgd/doc/kfun/shutdown
-dgd/doc/kfun/sizeof
-dgd/doc/kfun/sscanf
-dgd/doc/kfun/status
-dgd/doc/kfun/strlen
-dgd/doc/kfun/swapout
-dgd/doc/kfun/this_object
-dgd/doc/kfun/this_user
-dgd/doc/kfun/time
-dgd/doc/kfun/typeof
-dgd/doc/kfun/users
-dgd/doc/kfun/write_file
-dgd/mud/doc/kernel/efun/add_event
-dgd/mud/doc/kernel/efun/call_other
-dgd/mud/doc/kernel/efun/call_trace
-dgd/mud/doc/kernel/efun/clone_object
-dgd/mud/doc/kernel/efun/compile_object
-dgd/mud/doc/kernel/efun/destruct_object
-dgd/mud/doc/kernel/efun/event
-dgd/mud/doc/kernel/efun/find_object
-dgd/mud/doc/kernel/efun/get_dir
-dgd/mud/doc/kernel/efun/query_events
-dgd/mud/doc/kernel/efun/remove_event
-dgd/mud/doc/kernel/efun/status
-dgd/mud/doc/kernel/efun/subscribe_event
-dgd/mud/doc/kernel/efun/unsubscribe_event
-dgd/mud/doc/kernel/hook/driver
-dgd/mud/doc/kernel/hook/rsrcd
-dgd/mud/doc/kernel/hook/userd
-dgd/mud/doc/kernel/lfun/allow_subscribe
-dgd/mud/doc/kernel/lfun/create
-dgd/mud/doc/kernel/lfun/query_owner
-dgd/mud/doc/kernel/overview
-dgd/mud/include/config.h
-dgd/mud/include/kernel/access.h
-dgd/mud/include/kernel/kernel.h
-dgd/mud/include/kernel/net.h
-dgd/mud/include/kernel/objreg.h
-dgd/mud/include/kernel/rsrc.h
-dgd/mud/include/kernel/user.h
-dgd/mud/include/std.h
-dgd/mud/kernel/lib/api/access.c
-dgd/mud/kernel/lib/api/objreg.c
-dgd/mud/kernel/lib/api/rsrc.c
-dgd/mud/kernel/lib/api/user.c
-dgd/mud/kernel/lib/auto.c
-dgd/mud/kernel/lib/connection.c
-dgd/mud/kernel/lib/user.c
-dgd/mud/kernel/lib/wiztool.c
-dgd/mud/kernel/obj/binary.c
-dgd/mud/kernel/obj/port.c
-dgd/mud/kernel/obj/rsrc.c
-dgd/mud/kernel/obj/telnet.c
-dgd/mud/kernel/obj/user.c
-dgd/mud/kernel/obj/wiztool.c
-dgd/mud/kernel/sys/accessd.c
-dgd/mud/kernel/sys/driver.c
-dgd/mud/kernel/sys/objregd.c
-dgd/mud/kernel/sys/rsrcd.c
-dgd/mud/kernel/sys/userd.c
-@dirrm dgd/bin
-@dirrm dgd/doc/kfun
-@dirrm dgd/doc
-@dirrm dgd/mud/doc/kernel/efun
-@dirrm dgd/mud/doc/kernel/hook
-@dirrm dgd/mud/doc/kernel/lfun
-@dirrm dgd/mud/doc/kernel
-@dirrm dgd/mud/doc
-@dirrm dgd/mud/include/kernel
-@dirrm dgd/mud/include
-@dirrm dgd/mud/kernel/lib/api
-@dirrm dgd/mud/kernel/lib
-@dirrm dgd/mud/kernel/obj
-@dirrm dgd/mud/kernel/sys
-@dirrm dgd/mud/kernel
-@dirrm dgd/mud
-@dirrm dgd
+bin/precomp
+etc/dgd/kernel.dgd
+etc/rc.d/dgd.sh.sample
+sbin/dgd
+%%DATADIR%%/kernel/doc/kernel/efun/add_event
+%%DATADIR%%/kernel/doc/kernel/efun/call_limited
+%%DATADIR%%/kernel/doc/kernel/efun/call_other
+%%DATADIR%%/kernel/doc/kernel/efun/call_trace
+%%DATADIR%%/kernel/doc/kernel/efun/clone_object
+%%DATADIR%%/kernel/doc/kernel/efun/compile_object
+%%DATADIR%%/kernel/doc/kernel/efun/destruct_object
+%%DATADIR%%/kernel/doc/kernel/efun/event
+%%DATADIR%%/kernel/doc/kernel/efun/event_except
+%%DATADIR%%/kernel/doc/kernel/efun/file_info
+%%DATADIR%%/kernel/doc/kernel/efun/find_object
+%%DATADIR%%/kernel/doc/kernel/efun/get_dir
+%%DATADIR%%/kernel/doc/kernel/efun/query_events
+%%DATADIR%%/kernel/doc/kernel/efun/query_subscribed_event
+%%DATADIR%%/kernel/doc/kernel/efun/remove_event
+%%DATADIR%%/kernel/doc/kernel/efun/status
+%%DATADIR%%/kernel/doc/kernel/efun/subscribe_event
+%%DATADIR%%/kernel/doc/kernel/efun/unsubscribe_event
+%%DATADIR%%/kernel/doc/kernel/hook/driver
+%%DATADIR%%/kernel/doc/kernel/hook/rsrcd
+%%DATADIR%%/kernel/doc/kernel/hook/userd
+%%DATADIR%%/kernel/doc/kernel/lfun/allow_subscribe
+%%DATADIR%%/kernel/doc/kernel/lfun/create
+%%DATADIR%%/kernel/doc/kernel/lfun/query_owner
+%%DATADIR%%/kernel/doc/kernel/overview
+%%DATADIR%%/kernel/include/config.h
+%%DATADIR%%/kernel/include/kernel/access.h
+%%DATADIR%%/kernel/include/kernel/kernel.h
+%%DATADIR%%/kernel/include/kernel/net.h
+%%DATADIR%%/kernel/include/kernel/objreg.h
+%%DATADIR%%/kernel/include/kernel/rsrc.h
+%%DATADIR%%/kernel/include/kernel/tls.h
+%%DATADIR%%/kernel/include/kernel/user.h
+%%DATADIR%%/kernel/include/kernel/version.h
+%%DATADIR%%/kernel/include/std.h
+%%DATADIR%%/kernel/kernel/lib/api/access.c
+%%DATADIR%%/kernel/kernel/lib/api/objreg.c
+%%DATADIR%%/kernel/kernel/lib/api/rsrc.c
+%%DATADIR%%/kernel/kernel/lib/api/tls.c
+%%DATADIR%%/kernel/kernel/lib/api/user.c
+%%DATADIR%%/kernel/kernel/lib/auto.c
+%%DATADIR%%/kernel/kernel/lib/connection.c
+%%DATADIR%%/kernel/kernel/lib/port.c
+%%DATADIR%%/kernel/kernel/lib/user.c
+%%DATADIR%%/kernel/kernel/lib/wiztool.c
+%%DATADIR%%/kernel/kernel/obj/binary.c
+%%DATADIR%%/kernel/kernel/obj/port.c
+%%DATADIR%%/kernel/kernel/obj/rsrc.c
+%%DATADIR%%/kernel/kernel/obj/telnet.c
+%%DATADIR%%/kernel/kernel/obj/udp.c
+%%DATADIR%%/kernel/kernel/obj/user.c
+%%DATADIR%%/kernel/kernel/obj/wiztool.c
+%%DATADIR%%/kernel/kernel/sys/accessd.c
+%%DATADIR%%/kernel/kernel/sys/driver.c
+%%DATADIR%%/kernel/kernel/sys/objregd.c
+%%DATADIR%%/kernel/kernel/sys/rsrcd.c
+%%DATADIR%%/kernel/kernel/sys/userd.c
+%%PORTDOCS%%%%DOCSDIR%%/Commercial
+%%PORTDOCS%%%%DOCSDIR%%/Copyright
+%%PORTDOCS%%%%DOCSDIR%%/Credits
+%%PORTDOCS%%%%DOCSDIR%%/Extensions
+%%PORTDOCS%%%%DOCSDIR%%/Introduction
+%%PORTDOCS%%%%DOCSDIR%%/LPC.html
+%%PORTDOCS%%%%DOCSDIR%%/Platforms
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/editor
+%%PORTDOCS%%%%DOCSDIR%%/kfun/acos
+%%PORTDOCS%%%%DOCSDIR%%/kfun/allocate
+%%PORTDOCS%%%%DOCSDIR%%/kfun/allocate_float
+%%PORTDOCS%%%%DOCSDIR%%/kfun/allocate_int
+%%PORTDOCS%%%%DOCSDIR%%/kfun/asin
+%%PORTDOCS%%%%DOCSDIR%%/kfun/atan
+%%PORTDOCS%%%%DOCSDIR%%/kfun/atan2
+%%PORTDOCS%%%%DOCSDIR%%/kfun/block_input
+%%PORTDOCS%%%%DOCSDIR%%/kfun/call_other
+%%PORTDOCS%%%%DOCSDIR%%/kfun/call_out
+%%PORTDOCS%%%%DOCSDIR%%/kfun/call_trace
+%%PORTDOCS%%%%DOCSDIR%%/kfun/ceil
+%%PORTDOCS%%%%DOCSDIR%%/kfun/clone_object
+%%PORTDOCS%%%%DOCSDIR%%/kfun/compile_object
+%%PORTDOCS%%%%DOCSDIR%%/kfun/cos
+%%PORTDOCS%%%%DOCSDIR%%/kfun/cosh
+%%PORTDOCS%%%%DOCSDIR%%/kfun/crypt
+%%PORTDOCS%%%%DOCSDIR%%/kfun/ctime
+%%PORTDOCS%%%%DOCSDIR%%/kfun/destruct_object
+%%PORTDOCS%%%%DOCSDIR%%/kfun/dump_state
+%%PORTDOCS%%%%DOCSDIR%%/kfun/editor
+%%PORTDOCS%%%%DOCSDIR%%/kfun/error
+%%PORTDOCS%%%%DOCSDIR%%/kfun/exp
+%%PORTDOCS%%%%DOCSDIR%%/kfun/explode
+%%PORTDOCS%%%%DOCSDIR%%/kfun/fabs
+%%PORTDOCS%%%%DOCSDIR%%/kfun/find_object
+%%PORTDOCS%%%%DOCSDIR%%/kfun/floor
+%%PORTDOCS%%%%DOCSDIR%%/kfun/fmod
+%%PORTDOCS%%%%DOCSDIR%%/kfun/frexp
+%%PORTDOCS%%%%DOCSDIR%%/kfun/function_object
+%%PORTDOCS%%%%DOCSDIR%%/kfun/get_dir
+%%PORTDOCS%%%%DOCSDIR%%/kfun/hash_crc16
+%%PORTDOCS%%%%DOCSDIR%%/kfun/hash_md5
+%%PORTDOCS%%%%DOCSDIR%%/kfun/implode
+%%PORTDOCS%%%%DOCSDIR%%/kfun/ldexp
+%%PORTDOCS%%%%DOCSDIR%%/kfun/log
+%%PORTDOCS%%%%DOCSDIR%%/kfun/log10
+%%PORTDOCS%%%%DOCSDIR%%/kfun/make_dir
+%%PORTDOCS%%%%DOCSDIR%%/kfun/map_indices
+%%PORTDOCS%%%%DOCSDIR%%/kfun/map_sizeof
+%%PORTDOCS%%%%DOCSDIR%%/kfun/map_values
+%%PORTDOCS%%%%DOCSDIR%%/kfun/millitime
+%%PORTDOCS%%%%DOCSDIR%%/kfun/modf
+%%PORTDOCS%%%%DOCSDIR%%/kfun/object_name
+%%PORTDOCS%%%%DOCSDIR%%/kfun/parse_string
+%%PORTDOCS%%%%DOCSDIR%%/kfun/pow
+%%PORTDOCS%%%%DOCSDIR%%/kfun/previous_object
+%%PORTDOCS%%%%DOCSDIR%%/kfun/previous_program
+%%PORTDOCS%%%%DOCSDIR%%/kfun/query_editor
+%%PORTDOCS%%%%DOCSDIR%%/kfun/query_ip_name
+%%PORTDOCS%%%%DOCSDIR%%/kfun/query_ip_number
+%%PORTDOCS%%%%DOCSDIR%%/kfun/random
+%%PORTDOCS%%%%DOCSDIR%%/kfun/read_file
+%%PORTDOCS%%%%DOCSDIR%%/kfun/remove_call_out
+%%PORTDOCS%%%%DOCSDIR%%/kfun/remove_dir
+%%PORTDOCS%%%%DOCSDIR%%/kfun/remove_file
+%%PORTDOCS%%%%DOCSDIR%%/kfun/rename_file
+%%PORTDOCS%%%%DOCSDIR%%/kfun/restore_object
+%%PORTDOCS%%%%DOCSDIR%%/kfun/save_object
+%%PORTDOCS%%%%DOCSDIR%%/kfun/send_datagram
+%%PORTDOCS%%%%DOCSDIR%%/kfun/send_message
+%%PORTDOCS%%%%DOCSDIR%%/kfun/shutdown
+%%PORTDOCS%%%%DOCSDIR%%/kfun/sin
+%%PORTDOCS%%%%DOCSDIR%%/kfun/sinh
+%%PORTDOCS%%%%DOCSDIR%%/kfun/sizeof
+%%PORTDOCS%%%%DOCSDIR%%/kfun/sqrt
+%%PORTDOCS%%%%DOCSDIR%%/kfun/sscanf
+%%PORTDOCS%%%%DOCSDIR%%/kfun/status
+%%PORTDOCS%%%%DOCSDIR%%/kfun/strlen
+%%PORTDOCS%%%%DOCSDIR%%/kfun/swapout
+%%PORTDOCS%%%%DOCSDIR%%/kfun/tan
+%%PORTDOCS%%%%DOCSDIR%%/kfun/tanh
+%%PORTDOCS%%%%DOCSDIR%%/kfun/this_object
+%%PORTDOCS%%%%DOCSDIR%%/kfun/this_user
+%%PORTDOCS%%%%DOCSDIR%%/kfun/time
+%%PORTDOCS%%%%DOCSDIR%%/kfun/typeof
+%%PORTDOCS%%%%DOCSDIR%%/kfun/users
+%%PORTDOCS%%%%DOCSDIR%%/kfun/write_file
+%%PORTDOCS%%%%DOCSDIR%%/parser
+@exec mkdir -p %D/%%DATADIR%%/tmp
+@comment Remove files generated by DGD
+@unexec rm -f %D/%%DATADIR%%/kernel/include/float.h
+@unexec rm -f %D/%%DATADIR%%/kernel/include/limits.h
+@unexec rm -f %D/%%DATADIR%%/kernel/include/status.h
+@unexec rm -f %D/%%DATADIR%%/kernel/include/trace.h
+@unexec rm -f %D/%%DATADIR%%/kernel/include/type.h
+@unexec rm -f %D/%%DATADIR%%/kernel.log
+@unexec rm -f %D/%%DATADIR%%/tmp/kernel.swap
+@unexec rmdir %D/%%DATADIR%%/tmp
+@dirrm etc/dgd
+@dirrm %%DATADIR%%/kernel/usr/admin
+@dirrm %%DATADIR%%/kernel/usr/System
+@dirrm %%DATADIR%%/kernel/usr
+@dirrm %%DATADIR%%/kernel/kernel/sys
+@dirrm %%DATADIR%%/kernel/kernel/obj
+@dirrm %%DATADIR%%/kernel/kernel/lib/api
+@dirrm %%DATADIR%%/kernel/kernel/lib
+@dirrm %%DATADIR%%/kernel/kernel/data
+@dirrm %%DATADIR%%/kernel/kernel
+@dirrm %%DATADIR%%/kernel/include/kernel
+@dirrm %%DATADIR%%/kernel/include
+@dirrm %%DATADIR%%/kernel/doc/kernel/lfun
+@dirrm %%DATADIR%%/kernel/doc/kernel/hook
+@dirrm %%DATADIR%%/kernel/doc/kernel/efun
+@dirrm %%DATADIR%%/kernel/doc/kernel
+@dirrm %%DATADIR%%/kernel/doc
+@dirrm %%DATADIR%%/kernel
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/kfun
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
