@@ -17,6 +17,8 @@ COMMENT=	A fast, feature-rich web content filter for Squid proxy servers
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid \
 		${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
 
+IGNORE=		"currently at lower revision than www/dansguardian"
+
 USE_RC_SUBR=	yes
 RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
