@@ -57,6 +57,7 @@
     SUBDIR += crafty-open-rock
     SUBDIR += crafty-open-small
     SUBDIR += crimson
+    SUBDIR += criticalmass
     SUBDIR += crossfire-client
     SUBDIR += crossfire-server
     SUBDIR += crossword
