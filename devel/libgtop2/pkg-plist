@@ -59,6 +59,8 @@ share/locale/cy/LC_MESSAGES/libgtop-2.0.mo
 share/locale/da/LC_MESSAGES/libgtop-2.0.mo
 share/locale/de/LC_MESSAGES/libgtop-2.0.mo
 share/locale/el/LC_MESSAGES/libgtop-2.0.mo
+share/locale/en_CA/LC_MESSAGES/libgtop-2.0.mo
+share/locale/en_GB/LC_MESSAGES/libgtop-2.0.mo
 share/locale/es/LC_MESSAGES/libgtop-2.0.mo
 share/locale/et/LC_MESSAGES/libgtop-2.0.mo
 share/locale/fa/LC_MESSAGES/libgtop-2.0.mo
@@ -83,6 +85,7 @@ share/locale/ms/LC_MESSAGES/libgtop-2.0.mo
 share/locale/nl/LC_MESSAGES/libgtop-2.0.mo
 share/locale/nn/LC_MESSAGES/libgtop-2.0.mo
 share/locale/no/LC_MESSAGES/libgtop-2.0.mo
+share/locale/pa/LC_MESSAGES/libgtop-2.0.mo
 share/locale/pl/LC_MESSAGES/libgtop-2.0.mo
 share/locale/pt/LC_MESSAGES/libgtop-2.0.mo
 share/locale/pt_BR/LC_MESSAGES/libgtop-2.0.mo
