@@ -1,1 +1,5 @@
 bin/firewalk
+%%PORTDOCS%%share/doc/firewalk/README
+%%PORTDOCS%%share/doc/firewalk/BUGS
+%%PORTDOCS%%share/doc/firewalk/TODO
+%%PORTDOCS%%@dirrm share/doc/firewalk

@@ -1,4 +1,4 @@
-# New ports collection makefile for:  slush
+# New ports collection makefile for:  firewalk
 # Date created:		Sun May 3, 1999
 # Whom:			shipley@dis.org
 #
@@ -6,28 +6,34 @@
 #
 
 PORTNAME=	firewalk
-PORTVERSION=	1.0
+PORTVERSION=	5.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.packetfactory.net/firewalk/dist/
+EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A network auditing tool
+MAINTAINER=	Yonatan@xpert.com
+COMMENT=	A remote firewall auditing tool
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
+BUILD_DEPENDS=	${LOCALBASE}/lib/libdnet.a:${PORTSDIR}/net/libdnet
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
-WRKSRC=		${WRKDIR}/Firewalk-${PORTVERSION}
+WRKSRC=		${WRKDIR}/Firewalk
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-gtk=no
+MAN8=		firewalk.8
 
-MAN1=		firewalk.1
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/src/firewalk ${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/man/firewalk.8 ${MANPREFIX}/man/man8/
+.	if !defined(NOPORTDOCS)
+		${MKDIR} ${DOCSDIR}
+.		for i in README BUGS TODO CHANGES LICENSE
+			${INSTALL_DATA} ${WRKSRC}/BUGS ${DOCSDIR}
+			${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}
+			${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.		endfor
+.	endif
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} <= 300000
-BROKEN=		may not build
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
