@@ -10,7 +10,7 @@ PORTVERSION=	7.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.xach.com/snarf/
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another small command-line URL (http/ftp/gopher/finger) fetcher
 
 GNU_CONFIGURE=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://adm.freelsd.net/ADM/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sniffer for RADIUS traffic
 
 WRKSRC=		${WRKDIR}/radiusniff-0.2

@@ -11,7 +11,7 @@ CATEGORIES=	security devel
 MASTER_SITES=	http://www.striker.ottawa.on.ca/~aland/pscan/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Security C code scanner for misuse of format strings
 
 ALL_TARGET=	#empty

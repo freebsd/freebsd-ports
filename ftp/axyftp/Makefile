@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.wxftp.seul.org/pub/wxftp/${PORTVERSION}/ \
 		ftp://ftp.sunsite.auc.dk/disk2/linuxberg.com/files/x11/network/ \
 		ftp://ftp.bitcon.no/.10/linux/linuxberg/files/x11/network/
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X Window System FTP client, with WSftp-like UI
 
 USE_X_PREFIX=	yes
