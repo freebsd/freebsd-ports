@@ -624,7 +624,7 @@ TEMPLATES?=		${PORTSDIR}/Templates
 	(!defined(PKGDIR) && exists(${MASTERDIR}/pkg)) || \
 	(!defined(MD5_FILE) && exists(${MASTERDIR}/files/md5))
 pre-everything::
-	@${ECHO} "Error: your port uses an old layout.  Please update it to match this bsd.port.mk."
+	@${ECHO} "Error: your port uses an old layout.  Please update it to match this bsd.port.mk.  If you have updated your ports collection via cvsup and are still getting this error, see Q12 and Q13 in the cvsup FAQ on http://www.polstra.com for further information."
 	@${FALSE}
 .endif
 PATCHDIR?=		${MASTERDIR}/files
@@ -806,7 +806,7 @@ LIBTOOLFLAGS?=		--disable-ltlibs
 .if defined(USE_NEWGCC) && ${OSVERSION} < 400012
 CC=				gcc295
 CXX=			g++295
-BUILD_DEPENDS+=	gcc295:${PORTSDIR}/lang/egcs
+BUILD_DEPENDS+=	gcc295:${PORTSDIR}/lang/gcc295
 MAKE_ENV+=		CC=${CC} CXX=${CXX}
 .endif
 
@@ -836,7 +836,7 @@ LIB_DEPENDS+=			dps.0:${PORTSDIR}/x11/dgs
 LIB_DEPENDS+=			GL.14:${PORTSDIR}/graphics/Mesa3
 .endif
 XAWVER=					6
-PKG_IGNORE_DEPENDS?=	'(XFree86-3\.3\.6_4)'
+PKG_IGNORE_DEPENDS?=	'(XFree86-3\.3\.6_7)'
 .else
 .if defined(USE_IMAKE)
 BUILD_DEPENDS+=			imake:${PORTSDIR}/devel/imake-4
