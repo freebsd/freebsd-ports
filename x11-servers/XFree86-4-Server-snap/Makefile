@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Server
-PORTVERSION=	4.3.99.12
-PORTREVISION=	2
+PORTVERSION=	4.3.99.15
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S|source/||:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -26,11 +25,11 @@ PATCHDIR=		${MASTERDIR}/files
 
 .for pf in patch-Imake.cf patch-Imake.rules \
 			patch-Imake.tmpl patch-X11.tmpl patch-Xcursor-Imakefile \
-			patch-c2 patch-dps patch-dri-Imakefile \
+			patch-c2 patch-dri-Imakefile \
 			patch-f patch-imake.c \
 			patch-texteroids patch-xditview-Imakefile patch-xdm \
 			patch-xdm_session.c patch-xf86.tmpl patch-xfree86.cf \
-			patch-xterm-Imakefile patch-z04 patch-z05 patch-z14 \
+			patch-xterm-Imakefile patch-z05 patch-z14 \
 			patch-z15 patch-z30 patch-z32 patch-z34 patch-z35 \
 			patch-z41 patch-z44 patch-z45
 # patch-startx
@@ -93,18 +92,19 @@ XINCLUDE_DIRS=		lib/xkbfile lib/xtrans
 XINSTALL_DIRS=		lib/font programs/Xserver
 XINSTALL_MAN_DIRS=	programs/Xserver
 
+NOT_FOR_ARCHS=		ia64
+
 .include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == i386 ||  ${ARCH} == alpha
+.if ${ARCH} == i386 || ${ARCH} == alpha
+RUN_DEPENDS+=		${X11BASE}/lib/modules/dri/r200_dri.so:${PORTSDIR}/graphics/dri
 BuildXF86DRI=		YES
 PLIST_SUB+=		DRI=""
-XBUILD_DIRS+=		lib/XThrStub lib/X11 lib/Xext lib/GL
-XINSTALL_DIRS+=		lib/GL/mesa/src/drv
 .else
 BuildXF86DRI=		NO
 PLIST_SUB+=		DRI="@comment "
-.endif # i386
+.endif
 
 .if ${ARCH} == alpha
 PLIST_SUB+=	ALPHA_NA="@comment "

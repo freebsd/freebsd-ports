@@ -1,5 +1,7 @@
 bin/X
 bin/XFree86
+bin/getconfig
+bin/getconfig.pl
 bin/gtf
 %%SPARC64_NA%%bin/inb
 %%SPARC64_NA%%bin/inl
@@ -65,7 +67,6 @@ lib/X11/doc/README.rapidaccess
 %%SPARC64_NA%%%%IA64_NA%%lib/X11/doc/README.rendition
 %%SPARC64_NA%%%%IA64_NA%%lib/X11/doc/README.s3virge
 lib/X11/doc/RELNOTES
-lib/X11/doc/ServersOnly
 lib/X11/doc/Status
 lib/X11/doc/Versions
 lib/X11/doc/VideoBoard98
@@ -73,6 +74,8 @@ lib/X11/etc/Xinstall.sh
 lib/X11/etc/sun.termcap
 lib/X11/etc/sun.terminfo
 lib/X11/etc/xmodmap.std
+lib/X11/getconfig/cfg.sample
+lib/X11/getconfig/xfree86.cfg
 lib/modules/codeconv/libARABIC.a
 lib/modules/codeconv/libARMSCII8.a
 lib/modules/codeconv/libBIG5.a
@@ -112,6 +115,7 @@ lib/modules/codeconv/libVISCII.a
 %%DRI%%lib/modules/dri/r128_dri.so
 %%DRI%%lib/modules/dri/r200_dri.so
 %%DRI%%lib/modules/dri/radeon_dri.so
+%%DRI%%lib/modules/dri/sis_dri.so
 %%DRI%%lib/modules/dri/tdfx_dri.so
 %%I386%%lib/modules/drivers/apm_drv.o
 %%I386%%lib/modules/drivers/ark_drv.o
@@ -130,10 +134,10 @@ lib/modules/drivers/atimisc_drv.o
 %%I386%%lib/modules/drivers/neomagic_drv.o
 %%I386%%lib/modules/drivers/nsc_drv.o
 lib/modules/drivers/nv_drv.o
-lib/modules/drivers/riva128.o
 lib/modules/drivers/r128_drv.o
 lib/modules/drivers/radeon_drv.o
 %%SPARC64_NA%%%%IA64_NA%%lib/modules/drivers/rendition_drv.o
+lib/modules/drivers/riva128.o
 %%SPARC64_NA%%%%IA64_NA%%lib/modules/drivers/s3_drv.o
 %%SPARC64_NA%%%%IA64_NA%%lib/modules/drivers/s3virge_drv.o
 %%SPARC64_NA%%%%IA64_NA%%lib/modules/drivers/savage_drv.o
