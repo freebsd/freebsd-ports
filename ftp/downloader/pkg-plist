@@ -50,9 +50,11 @@ share/locale/sk/LC_MESSAGES/nt.mo
 share/locale/tr/LC_MESSAGES/nt.mo
 share/locale/uk/LC_MESSAGES/nt.mo
 share/locale/zh_CN.GBK/LC_MESSAGES/nt.mo
+share/locale/zh_TW/LC_MESSAGES/nt.mo
 share/d4x/sounds/add.wav
 share/d4x/sounds/complete.wav
 share/d4x/sounds/dnd.wav
+share/d4x/sounds/fail.wav
 share/d4x/sounds/finish.wav
 share/d4x/sounds/startup.wav
 @dirrm share/d4x/sounds
