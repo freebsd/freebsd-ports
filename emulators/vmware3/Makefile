@@ -82,7 +82,7 @@ PLIST_SUB+=	FREEBSD5=""
 .endif
 
 pre-fetch:
-.if ${OSVERSION} < 500000
+.if ${OSVERSION} < 500000 && ${OSVERSION} < 490100
 	@${ECHO}
 	@${ECHO} "You need an uncommitted kernel patch to run this port:"
 	@${ECHO} "You can get it at: http://people.freebsd.org/~fjoe/shm-freebsd4-20031105.diff"
