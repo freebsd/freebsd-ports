@@ -10,7 +10,7 @@
 # dictd_enable="YES"
 #
 
-. /etc/rc.subr
+. %%RC_SUBR%%
 
 name=dictd
 rcvar=`set_rcvar`
