@@ -1,22 +1,10 @@
---- Makefile.in.orig	Sun Mar  8 09:47:15 1998
-+++ Makefile.in	Sun Mar  8 09:48:22 1998
-@@ -7,7 +7,7 @@
- first_rule: all
+--- Makefile.in.orig	Mon Apr 20 00:24:12 1998
++++ Makefile.in	Sun Oct  4 22:13:09 1998
+@@ -9,6 +9,7 @@
  dummy:
  
--subdirs = src doc rclock src/graphics
-+subdirs = src doc #rclock src/graphics
+ subdirs = src doc rclock src/graphics
++subdirs = src doc # rclock src/graphics
  
  DIST =	INSTALL configure Makefile Makefile.in
  
---- doc/Makefile.in.orig	Sun Mar  8 09:51:09 1998
-+++ doc/Makefile.in	Sun Mar  8 09:51:27 1998
-@@ -53,7 +53,7 @@
- 
- tags allbin:
- 
--alldoc:	lsm rxvt.1
-+alldoc:	rxvt.1
- 
- clean:
- 	$(RMF) $(VERNAME).lsm rxvt.1 *~
