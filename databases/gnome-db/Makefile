@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomedb
-PORTVERSION=	0.2.94
+PORTVERSION=	0.2.95
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-db
