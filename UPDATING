@@ -51,8 +51,8 @@ upgrades.
 
   If you update KDE from version 3.2.1 or earlier to version 3.2.2 while
   running a KDE session, newly opened instances of Konqueror might hang
-  or crash, depending on how far the update has progressed. 
-  
+  or crash, depending on how far the update has progressed.
+
   If this happens, it is necessary to restart your KDE session in order to
   restore proper operations.
 
