@@ -13,8 +13,7 @@ MASTER_SITES=	http://www.silcnet.org/download/toolkit/sources/ \
 		http://public.www.planetmirror.com/pub/silcnet/toolkit/sources/ \
 		ftp://ftp.au.silcnet.org/pub/silcnet/toolkit/sources/ \
 		http://www.mirrors.wiretapped.net/security/network-security/silc/toolkit/sources/ \
-		ftp://ftp.mirrors.wiretapped.net/pub/security/network-security/silc/toolkit/sources/ \
-		ftp://ftp.no.silcnet.org/pub/silc/toolkit/sources/
+		ftp://ftp.mirrors.wiretapped.net/pub/security/network-security/silc/toolkit/sources/
 PKGNAMESUFFIX=	-toolkit
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 

@@ -10,7 +10,6 @@ PORTVERSION=	0.62
 PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cr.yp.to/clockspeed/ \
-		ftp://ftp.sunsite.auc.dk/disk1/qmail/ \
 		ftp://ftp.task.gda.pl/mirror/mirror.qmail.org/koobera/pub/software/
 
 MAINTAINER=	lioux@FreeBSD.org
