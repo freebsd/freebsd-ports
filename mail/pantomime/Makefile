@@ -16,35 +16,18 @@ DISTNAME=	Pantomime-${PORTVERSION}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Mail/MIME handling library for GNUstep
 
-BUILD_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
-RUN_DEPENDS=	${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
-
 PREFIX=		${LOCALBASE}/GNUstep
+NO_MTREE=	yes
 WRKSRC=		${WRKDIR}/Pantomime
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=
-NO_MTREE=	yes
-USE_GCC=	3.2
-
-BACKBUNDLEDIR=	${PREFIX}/System/Library/Bundles/libgnustep-back.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_ARCH} == "i386"
-GNU_ARCH=	ix86
-.else
-GNU_ARCH=	${MACHINE_ARCH}
-.endif
-
-PLIST_SUB+=	GNU_ARCH=${GNU_ARCH} OPSYS=${OPSYS:L}
-
-do-build:
-	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
-
-do-install:
-	@(cd ${WRKSRC}; . ${PREFIX}/System/Makefiles/GNUstep.sh; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
+USE_GNUSTEP_BACK=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
+.include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
 
 .include <bsd.port.post.mk>

@@ -17,22 +17,11 @@ MASTER_SITE_SUBDIR=	core
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GNUstep Foundation library
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall
-BUILD_DEPENDS+=	${SYSTEMDIR}/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
-RUN_DEPENDS+=	${SYSTEMDIR}/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make
-
-BREAKS_IF_PEDANTIC=	yes
-USE_GCC=		3.2
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 300000
-BROKEN=		"Sorry, this port does not work on FreeBSD-2.2.x"
-.endif
+LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 
 PREFIX=		${LOCALBASE}/GNUstep
-PLIST_SUB+=	LOCALBASE=${LOCALBASE}
+NO_MTREE=	yes
+ETCDIR=		${LOCALBASE}/etc
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-procfs
@@ -40,46 +29,21 @@ CONFIGURE_TARGET=
 USE_GMAKE=	yes
 MAKEFILE=
 MAKE_FLAGS=	OPTFLAG="${CFLAGS}"
-NO_MTREE=	yes
 CFLAGS+=	-I${LOCALBASE}/include/libxml2/libxml
+BREAKS_IF_PEDANTIC=	yes
+PLIST_SUB+=	MAJORVERSION=${PORTVERSION:C/([0-9]).*/\1/1}
+PLIST_SUB+=	LOCALBASE=${LOCALBASE}
 
-.if ${MACHINE_ARCH} == "i386"
-GNU_ARCH=	ix86
-.else
-GNU_ARCH=	${MACHINE_ARCH}
-.endif
-PLIST_SUB+=	GNU_ARCH=${GNU_ARCH} OPSYS=${OPSYS:L} VERSION=${PORTVERSION} \
-		MAJORVERSION=${PORTVERSION:C/([0-9]).*/\1/1}
-ETCDIR=		${LOCALBASE}/etc
-SYSTEMDIR=	${PREFIX}/System
-SYSLIBDIR=	${SYSTEMDIR}/Libraries/${GNU_ARCH}/${OPSYS:L}
+.include <bsd.port.pre.mk>
+
+USE_GNUSTEP_CONFIGURE=	yes
+USE_GNUSTEP_BUILD=	yes
+USE_GNUSTEP_INSTALL=	yes
+.include "${PORTSDIR}/devel/gnustep/bsd.gnustep.mk"
 
 post-extract:
 	@${SED} -e "s=%%PREFIX%%=${LOCALBASE}=" ${FILESDIR}/GNUstep.sh \
 		> ${WRKSRC}/GNUstep.sh
-
-do-configure:
-	@(cd ${WRKSRC}; . ${SYSTEMDIR}/Makefiles/GNUstep.sh; \
-	    if ! ${SETENV} CC="${CC}" CXX="${CXX}" \
-		CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
-		INSTALL="/usr/bin/install -c -o ${BINOWN} -g ${BINGRP}" \
-		INSTALL_DATA="${INSTALL} -c" \
-		INSTALL_PROGRAM="${INSTALL} -c" \
-		INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
-		${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}; then \
-		    ${ECHO} "===>  Script \"${CONFIGURE_SCRIPT}\" failed: here are the contents of \"${CONFIGURE_LOG}\""; \
-		    ${CAT} ${CONFIGURE_LOG}; \
-		    ${ECHO} "(end of \"${CONFIGURE_LOG}\")"; \
-		    ${FALSE}; \
-	    fi)
-
-do-build:
-	@(cd ${WRKSRC}; . ${SYSTEMDIR}/Makefiles/GNUstep.sh; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
-
-do-install:
-	@(cd ${WRKSRC}; . ${SYSTEMDIR}/Makefiles/GNUstep.sh; \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 
 post-install:
 	-@${MKDIR} ${ETCDIR}/rc.d
