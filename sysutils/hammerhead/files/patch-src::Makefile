@@ -1,0 +1,17 @@
+--- src/Makefile.orig	Wed Nov 13 19:40:15 2002
++++ src/Makefile	Thu Nov 21 00:38:20 2002
+@@ -90,10 +90,10 @@
+ 
+ install: $(TARGET)
+ 	$(INSTALL) -m 0755 $(TARGET) $(BINDIR) 
+-	-mkdir -p /etc/hammerhead
+-	-$(INSTALL) -m 0644 ../doc/test.conf /etc/hammerhead/hh.conf
+-	-$(INSTALL) -m 0644 ../doc/root.scn /etc/hammerhead/root.scn
+-	-$(INSTALL) -m 0644 ../doc/post.scn /etc/hammerhead/post.scn
++	-mkdir -p %%PREFIX%%/etc/hammerhead
++	-$(INSTALL) -m 0644 ../doc/test.conf %%PREFIX%%/etc/hammerhead/hh.conf
++	-$(INSTALL) -m 0644 ../doc/root.scn %%PREFIX%%/etc/hammerhead/root.scn
++	-$(INSTALL) -m 0644 ../doc/post.scn %%PREFIX%%/etc/hammerhead/post.scn
+ 
+ $(TARGET): $(HOBJ)
+ 	$(CC) $(PROF) -o $(TARGET) $(DEFS) $(CFLAGS) $^ $(LIBS)

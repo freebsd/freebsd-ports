@@ -1,0 +1,33 @@
+--- Makefile.in.orig	Wed Nov 13 19:40:14 2002
++++ Makefile.in	Thu Nov 21 00:36:01 2002
+@@ -55,6 +55,8 @@
+ 
+ install: .PHONY
+ 	cd src; $(MAKE) install
++	-mkdir -p $(mandir)/man1
++	-$(INSTALL) doc/hammerhead.1 $(mandir)/man1/
+ 
+ src: .PHONY
+ 	cd src; $(MAKE)
+@@ -67,20 +69,10 @@
+ # Should be fixed to ignore CVS directories on build
+ # (perhaps use a Manifest)
+ #
+-package: veryclean
+-	-cd ..; mv hammerhead hammerhead-$(HAMMER_VSN); tar --exclude CVS -cf - hammerhead-$(HAMMER_VSN) | gzip -c > /tmp/hammerhead-$(HAMMER_VSN).tar.gz; mv hammerhead-$(HAMMER_VSN) hammerhead
+-	-mv /tmp/hammerhead-$(HAMMER_VSN).tar.gz .
+ 
+ clean: .PHONY
+-	-rm config.log config.status
++	-rm config.cache Makefile hammer.mk
+ 	cd src; $(MAKE) clean
+ 
+-veryclean: clean
+-	-rm -f config.cache config.h hammerhead-$(HAMMER_VSN).tar.gz hammer.mk Makefile
+-	-rm -f $(BINPATH)hammerhead $(BINPATH)convertLog $(COBJ) $(HOBJ) $(JOBJ) $(PUREOBJ)
+-	
+-install-doc: .PHONY
+-	-mkdir -p $(mandir)/man1
+-	-$(INSTALL) -m 0644 doc/hammerhead.1 $(mandir)/man1/hammerhead.1
+ .PHONY: 
+ 

@@ -1,0 +1,11 @@
+Hammerhead 2 is a stress testing tool designed to test out your web server 
+and web site. It can initiate multiple connections from IP aliases and 
+simulated numerous (256+) users at any given time. The rate at which 
+Hammerhead 2 attempts to pound your site is fully configurable, there are 
+numerous other options for trying to create problems with a web site (so you 
+can fix them). It can be used to test the behaviour of the port under load, 
+or the ability of the port to service a set of requests. Warning: Hammerhead 
+can destroy a web site very quickly. It should only be used to generate heavy 
+loads on local web sites for testing purposes. 
+
+WWW: http://hammerhead.sourceforge.net/
