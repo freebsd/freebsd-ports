@@ -1,0 +1,9 @@
+--- MANIFEST.orig	Thu Sep 11 13:36:37 1997
++++ MANIFEST	Thu Sep 11 13:36:48 1997
+@@ -3,5 +3,5 @@
+ README
+ INSTALL
+ Makefile.PL
+-Authen/Radius.pm
++Radius.pm
+ test.pl

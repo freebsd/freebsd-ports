@@ -1,0 +1,13 @@
+--- Authen/Radius.pm.orig	Thu Sep 11 13:36:16 1997
++++ Authen/Radius.pm	Thu Sep 11 13:36:29 1997
+@@ -20,9 +20,8 @@
+ use vars qw($VERSION @ISA @EXPORT);
+ 
+ require Exporter;
+-require AutoLoader;
+ 
+-@ISA = qw(Exporter AutoLoader);
++@ISA = qw(Exporter);
+ @EXPORT = qw(ACCESS_REQUEST ACCESS_ACCEPT ACCESS_REJECT);
+ $VERSION = '0.05';
+ 

@@ -1,0 +1,11 @@
+--- Makefile.PL.orig	Thu Sep 11 13:37:04 1997
++++ Makefile.PL	Thu Sep 11 13:37:13 1997
+@@ -4,7 +4,7 @@
+ WriteMakefile(
+     'NAME'			=> 'Authen::Radius',
+     'DISTNAME'		=> 'RadiusPerl',
+-    'VERSION_FROM' 	=> 'Authen/Radius.pm', # finds $VERSION
++    'VERSION_FROM' 	=> 'Radius.pm', # finds $VERSION
+ 	'PREREQ_PM' 	=> { MD5 => 1.7, IO => 1.12 },
+ 	'dist'			=> { COMPRESS => 'gzip', SUFFIX => 'gz' },
+ );
