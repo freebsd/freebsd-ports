@@ -333,7 +333,7 @@ sub update_index() {
 	cvs("update", "-l")
 	    or bsd::errx(1, "error updating the index file");
     }
-    cvs("update", "Mk", "Templates")
+    cvs("update", "Mk", "Templates", "Tools")
 	or bsd::errx(1, "error updating the ports infrastructure");
     $index = "$portsdir/INDEX-" . substr($release, 0, 1);
     if (! -f $index) {
@@ -741,7 +741,7 @@ sub find_port_file($$) {
     $master = $port;
     while (!-f "$portsdir/$master/$file") {
 	if (!($master = $masterport{$master})) {
-	    bsd:errx(1, "$port has no $file");
+	    bsd::errx(1, "$port has no $file");
 	}
     }
     return "$portsdir/$master/$file";
