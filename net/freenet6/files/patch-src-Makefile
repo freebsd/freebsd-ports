@@ -1,0 +1,11 @@
+--- src/Makefile.orig	Sat Sep  8 01:52:26 2001
++++ src/Makefile	Thu Oct 11 13:01:53 2001
+@@ -22,7 +22,7 @@
+ 	@echo Installing tspc
+ 	mkdir -p $(install_bin)
+ 	$(COPY) $(BIN)/$(TSPC) $(install_bin)/$(TSPC)
+-	$(COPY) $(BIN)/tspc.conf $(install_bin)/tspc.conf
++	$(COPY) $(BIN)/tspc.conf $(install_etc)/tspc.conf
+ 	@echo End of tspc installation
+ 
+ $(BIN)/tspc.conf:

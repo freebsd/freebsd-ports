@@ -103,6 +103,7 @@
     SUBDIR += forg
     SUBDIR += fping
     SUBDIR += freebsd-uucp
+    SUBDIR += freenet6
     SUBDIR += freeradius-devel
     SUBDIR += freewais-sf
     SUBDIR += fspclient

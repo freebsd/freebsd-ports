@@ -1,0 +1,30 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# Start or stop the IPv6 tunnel to Freenet6.net
+#
+
+case "$1" in
+	start)
+		echo -n " freenet6"
+		if [ -f @@PREFIX@@/etc/tspc.conf ]; then
+			@@PREFIX@@/bin/tspc
+		fi
+		;;
+
+	stop)
+		if [ ! -f /var/run/tspc.if ]; then
+			echo "TSPC not running"
+			exit 64
+		fi
+		/sbin/ifconfig `cat /var/run/tspc.if` destroy
+		;;
+
+	*)
+		echo ""
+		echo "Usage: `basename $0` { start | stop }"
+		echo ""
+		exit 64
+		;;
+esac
