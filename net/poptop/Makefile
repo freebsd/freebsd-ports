@@ -5,30 +5,37 @@
 # $FreeBSD$
 #
 
-PORTNAME=		poptop
-PORTVERSION=		1.1.4.b4
-CATEGORIES=		net
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	poptop
-DISTNAME=		pptpd-${PORTVERSION:S/.b/-b/}
+PORTNAME=	poptop
+PORTVERSION=	1.1.4.b4
+PORTREVISION=	1
+CATEGORIES=	net
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	pptpd-${PORTVERSION:S/.b/-b/}
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Windows 9x compatible PPTP (VPN) server
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Windows 9x compatible PPTP (VPN) server
 
-GNU_CONFIGURE=		yes
-.ifdef(POPTOP_KERNPPP)
-CONFIGURE_ARGS=
-.else
-CONFIGURE_ARGS=		--with-bsdppp
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
+
+USE_GETOPT_LONG=	yes
+USE_REINPLACE=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}" \
+
+MAN5=		pptpd.conf.5
+MAN8=		pptpd.8 pptpctrl.8
+
+.ifdef(WITH_KERNPPP)
+CONFIGURE_ARGS+=	--with-bsdppp
 .endif
-WRKSRC=			${WRKDIR}/${PORTNAME}-1.1.4
 
-MAN5=			pptpd.conf.5
-MAN8=			pptpd.8 pptpctrl.8
-
-# fix broken timestamps that trigger autotools hell
-pre-patch:
-	@cd ${WRKSRC}; ${TOUCH} aclocal.m4 Makefile.in stamp-h.in
+post-patch:
+.for file in bcrelay.c pptpd.c
+	@${REINPLACE_CMD} -e 's|"out_getopt\.h"|<getopt.h>|g' ${WRKSRC}/${file}
+.endfor
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/samples/pptpd.conf \
