@@ -1,8 +1,5 @@
-
-$FreeBSD: /tmp/pcvs/ports/misc/mc/files/Attic/patch-aa,v 1.12 2002-08-05 21:26:26 fjoe Exp $
-
---- configure.orig	Fri Aug 24 11:05:06 2001
-+++ configure	Tue Sep 11 18:16:08 2001
+--- configure.orig	Fri Aug 24 15:05:06 2001
++++ configure	Tue Aug  6 16:45:45 2002
 @@ -2552,6 +2552,8 @@
    echo "$as_me:2552: result: no" >&5
  echo "${ECHO_T}no" >&6
@@ -12,3 +9,30 @@ $FreeBSD: /tmp/pcvs/ports/misc/mc/files/Attic/patch-aa,v 1.12 2002-08-05 21:26:2
  rm -f conftest*
  
  echo "$as_me:2557: checking for minix/config.h" >&5
+@@ -12971,7 +12973,7 @@
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lslang  $LIBS"
++LIBS="-lslang -ltermcap $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 12976 "configure"
+ #include "confdefs.h"
+@@ -13251,7 +13253,7 @@
+ #define HAVE_SYSTEM_SLANG 1
+ EOF
+ 
+-	    LSLANG="-lslang"
++	    LSLANG="-lslang -ltermcap"
+ 	    screen_manager="SLang (system-installed library)"
+ 	    echo "$as_me:13256: result: Using system installed SLang library" >&5
+ echo "${ECHO_T}Using system installed SLang library" >&6
+@@ -14223,7 +14225,7 @@
+ #define HAVE_SYSTEM_SLANG 1
+ EOF
+ 
+-	    LSLANG="-lslang"
++	    LSLANG="-lslang -ltermcap"
+ 	    screen_manager="SLang (system-installed library)"
+ 	    echo "$as_me:14228: result: Using system installed SLang library" >&5
+ echo "${ECHO_T}Using system installed SLang library" >&6
