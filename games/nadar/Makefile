@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	nadar
-PORTVERSION=	1.0
+PORTVERSION=	2.0
 CATEGORIES=	games
-MASTER_SITES=	http://www.seki.ee.kagu.tus.ac.jp/~sakai/myfreesoft/
+MASTER_SITES=	http://web.ffn.ne.jp/~hsakai/myfreesoft/
 
-MAINTAINER=	sakai@seki.ee.kagu.tus.ac.jp
+MAINTAINER=	hsakai@m8.ffn.ne.jp
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
@@ -21,7 +21,7 @@ MANCOMPRESSED=	yes
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nadar ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/nadars ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/nadar.1.gz ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/nadars.1.gz ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/nadar.1.gz ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/nadars.1.gz ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>

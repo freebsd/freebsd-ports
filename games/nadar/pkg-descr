@@ -1,5 +1,5 @@
-N.A.D.A.R. is a network tank battle game. You can play N.A.D.A.R. with some
-players over the network.
+N.A.D.A.R. is a network tank battle game. You can play N.A.D.A.R. with
+computer players and human players over the network.
 
 This port installs "/usr/X11R6/bin/nadars" and "/usr/X11R6/bin/nadar".
 "nadars" is a server of N.A.D.A.R. Run it before playing N.A.D.A.R.
@@ -18,7 +18,7 @@ If playing speed is very slow, Run nadar as below with size option.
 
 See nadars(1) and nadar(1) for more details.
 
-WWW: http://www.seki.ee.kagu.tus.ac.jp/~sakai/myfreesoft/index.html
+WWW: http://web.ffn.ne.jp/~hsakai/myfreesoft/index.html
 
 - Sakai Hiroaki
-sakai@seki.ee.kagu.tus.ac.jp, hsakai@pfu.co.jp
+hsakai@m8.ffn.ne.jp
