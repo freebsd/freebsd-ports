@@ -76,6 +76,7 @@
     SUBDIR += libSM
     SUBDIR += libX11
     SUBDIR += libXau
+    SUBDIR += libXfont
     SUBDIR += libXtrans
     SUBDIR += libcapplet
     SUBDIR += libdnd
