@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	libstash
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	devel
-DISTNAME=	canonware-1.0.0
+DISTNAME=	canonware-1.1.0
 MASTER_SITES=	http://www.canonware.com/download/canonware/
 
 MAINTAINER=	jasone@FreeBSD.org
 
 BUILD_DEPENDS=	cook:${PORTSDIR}/devel/cook
 
-USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
 
 MAN3= libstash_dbg.3s libstash_pezz.3s libstash_rwl.3s \
@@ -23,7 +22,7 @@ MAN3= libstash_dbg.3s libstash_pezz.3s libstash_rwl.3s \
 	libstash_bhp.3s libstash_mem.3s libstash_ql.3s libstash_thd.3s \
 	libstash_buf.3s libstash_mq.3s libstash_qr.3s libstash_treen.3s \
 	libstash_ch.3s libstash_mtx.3s libstash_qs.3s libstash_tsd.3s \
-	libstash_cnd.3s libstash_out.3s libstash_res.3s
+	libstash_cnd.3s libstash_out.3s libstash_res.3s libstash_xep.3s
 MANCOMPRESSED=	no
 
 do-build:

@@ -21,6 +21,7 @@ include/libstash/sema.h
 include/libstash/thd.h
 include/libstash/treen.h
 include/libstash/tsd.h
+include/libstash/xep.h
 include/libstash/libstash_defs.h
 lib/libstash.a
 lib/libstash_p.a
