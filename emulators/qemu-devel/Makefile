@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.5.5.s.20040610
+PORTVERSION=	0.5.5.s.20040615
 CATEGORIES=	emulators
-MASTER_SITES=	http://dad-answers.com/qemu/
-DISTNAME=	${PORTNAME}-snapshot-2004-06-10_23-40
+MASTER_SITES=	http://dad-answers.com/qemu/FreeBSD/
+DISTNAME=	${PORTNAME}-snapshot-2004-06-15_00
 
 MAINTAINER=	nox@jelal.kn-bremen.de
 COMMENT=	QEMU CPU Emulator
