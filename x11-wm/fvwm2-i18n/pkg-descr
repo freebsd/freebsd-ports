@@ -4,7 +4,7 @@ shaped/color icons.  It gives a very good emulation of mwm.  A nice
 button-bar can be used to provide convenient access to frequently used
 functions or programs.
 
-This packages also employs I18N_MB patch, to add internationalized features;
-use multibyte characters in titlebar, icon name, etc.
+This package also enables multibyte support to add internationalized
+features; use multibyte characters in titlebar, icon name, etc.
 
 WWW: http://www.fvwm.org/
