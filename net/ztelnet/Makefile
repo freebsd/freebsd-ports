@@ -14,10 +14,11 @@
 PORTNAME=	ztelnet
 PORTVERSION=	1.0.p3
 CATEGORIES=	net
-MASTER_SITES=	ftp://jazz.snu.ac.kr/pub/unix/util/net/ztelnet/ \
-		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
+MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/users/cjh/unix-app/net/ztelnet/
 DISTFILES=	ztelnet-linux.tar.gz ztelnet-patch.tar.gz \
 		ztelnet-patch-cmascott.tar.gz
+
+MAINTAINER=	cjh@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 PATCH_STRIP=	-p1

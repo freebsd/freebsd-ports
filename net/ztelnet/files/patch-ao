@@ -1,69 +1,72 @@
-diff -uNr ../ztelnet/telnet/utilities.c ./telnet/utilities.c
---- ../ztelnet/telnet/utilities.c	Tue Sep 19 21:41:41 1995
-+++ ./telnet/utilities.c	Wed Dec  3 01:57:23 1997
-@@ -40,6 +40,15 @@
- 
+diff -uNr --exclude=*.orig work.old/ztelnet/telnet/sys_bsd.c work/ztelnet/telnet/sys_bsd.c
+--- work.old/ztelnet/telnet/sys_bsd.c	Wed Sep 20 08:35:50 1995
++++ work/ztelnet/telnet/sys_bsd.c	Tue Jun 20 22:58:32 2000
+@@ -43,13 +43,16 @@
  #include "externs.h"
+ #include "types.h"
  
-+#ifdef SLC_NAME_OK
-+#undef SLC_NAME_OK
-+#define SLC_NAME_OK(x)  ( (x) < NSLC )
-+#endif
-+#ifdef TELOPT_OK
-+#undef TELOPT_OK
-+#define TELOPT_OK(x) ((x) <= TELOPT_LAST)
+-/* PMS: BYPMS is added */
+-#if	defined(CRAY) || (defined(USE_TERMIO) && !defined(SYSV_TERMIO)) || defined(BYPMS)
++#if	defined(CRAY) || (defined(USE_TERMIO) && !defined(SYSV_TERMIO))
+ #define	SIG_FUNC_RET	void
+ #else
+ #define	SIG_FUNC_RET	int
+ #endif
+ 
++#ifdef  SIGINFO
++extern SIG_FUNC_RET ayt_status();
 +#endif
 +
- FILE	*NetTrace = 0;		/* Not in bss, since needs to stay */
- int	prettydump;
+ int
+ 	tout,			/* Output file descriptor */
+ 	tin,			/* Input file descriptor */
+@@ -65,16 +68,9 @@
+ # define old_tc ottyb
  
-@@ -282,9 +291,6 @@
-     register int i;
-     char buf[512];
-     extern int want_status_response;
+ #else	/* USE_TERMIO */
+-
 -#ifdef BYPMS
--	unsigned int bypms;
--#endif /* PMS */
- 
-     if (showoptions || direction == 0 ||
- 	(want_status_response && (pointer[0] == TELOPT_STATUS))) {
-@@ -578,12 +584,7 @@
- 	    case LM_SLC:
- 		fprintf(NetTrace, "SLC");
- 		for (i = 2; i < length - 2; i += 3) {
--#ifdef BYPMS
--			bypms = (unsigned int) pointer[i+SLC_FUNC];
--		    if (SLC_NAME_OK(bypms))
+-struct	termios old_tc = { 0 };
+-extern struct termios new_tc;
 -#else
- 		    if (SLC_NAME_OK(pointer[i+SLC_FUNC]))
+ struct	termio old_tc = { 0 };
+ extern struct termio new_tc;
 -#endif /* PMS */
- 			fprintf(NetTrace, " %s", SLC_NAME(pointer[i+SLC_FUNC]));
- 		    else
- 			fprintf(NetTrace, " %d", pointer[i+SLC_FUNC]);
-@@ -672,12 +673,7 @@
- 		    case WONT:	cp = "WONT"; goto common2;
- 		    common2:
- 			i++;
--#ifdef BYPMS
--			bypms = (unsigned int) pointer[i];
--			if (TELOPT_OK(bypms))
--#else
- 			if (TELOPT_OK((int)pointer[i]))
--#endif /* PMS */
- 			    fprintf(NetTrace, " %s %s", cp, TELOPT(pointer[i]));
- 			else
- 			    fprintf(NetTrace, " %s %d", cp, pointer[i]);
-@@ -799,12 +795,7 @@
- 	    break;
  
- 	default:
--#ifdef BYPMS
--		bypms = (unsigned int) pointer[0];
-- 		if (TELOPT_OK(bypms))
--#else	   
-- 		if (TELOPT_OK(pointer[0]))
+-#ifndef BYPMS
+ # ifndef	TCSANOW
+ #  ifdef TCSETS
+ #   define	TCSANOW		TCSETS
+@@ -100,7 +96,6 @@
+ #  endif
+ # endif /* TCSANOW */
+ #endif	/* USE_TERMIO */
 -#endif /* PMS */
-+	    if (TELOPT_OK(pointer[0]))
- 		fprintf(NetTrace, "%s (unknown)", TELOPT(pointer[0]));
- 	    else
- 		fprintf(NetTrace, "%d (unknown)", pointer[i]);
+ 
+ static fd_set ibits, obits, xbits;
+ 
+@@ -166,11 +161,11 @@
+  *	1	Do add this character
+  */
+ 
++void xmitAO(), xmitEL(), xmitEC(), intp(), sendbrk();
+     int
+ TerminalSpecialChars(c)
+     int	c;
+ {
+-    void xmitAO(), xmitEL(), xmitEC(), intp(), sendbrk();
+ 
+     if (c == termIntChar) {
+ 	intp();
+@@ -382,11 +377,7 @@
+     struct sgttyb sb;
+     int lmode;
+ #else	/* USE_TERMIO */
+-#ifdef BYPMS
+-    struct termios tmp_tc;
+-#else
+     struct termio tmp_tc;
+-#endif /* PMS */
+ #endif	/* USE_TERMIO */
+     int onoff;
+     int old;

@@ -1,48 +1,42 @@
-diff -uNr ../ztelnet/telnet/Makefile.generic ./telnet/Makefile.generic
---- ../ztelnet/telnet/Makefile.generic	Wed Sep 20 19:42:39 1995
-+++ ./telnet/Makefile.generic	Wed Dec  3 08:58:33 1997
-@@ -19,28 +19,22 @@
+diff -uNr --exclude=*.orig work.old/ztelnet/libtelnet/Makefile.generic work/ztelnet/libtelnet/Makefile.generic
+--- work.old/ztelnet/libtelnet/Makefile.generic	Thu Sep 21 04:52:44 1995
++++ work/ztelnet/libtelnet/Makefile.generic	Tue Jun 20 22:58:31 2000
+@@ -19,32 +19,24 @@
  #	@(#)Makefile.generic	5.5 (Berkeley) 3/1/91
  #
  
--INCLUDES=	-I..
--
+-LIB=	libtelnet.a
+-SRCS=	auth.c encrypt.c genget.c \
++LIB=    libtelnet.a
++SRCS=   auth.c encrypt.c genget.c \
+ 	misc.c enc_des.c \
+ 	setenv.c getent.c strdup.c strcasecmp.c \
+ 	strchr.c strrchr.c strftime.c strerror.c \
+ 	${LIB_SRC}
+ 
+-OBJS=	auth.o encrypt.o genget.o \
++OBJS=   auth.o encrypt.o genget.o \
+ 	misc.o enc_des.o \
+ 	${LIB_OBJ}
+ 
 -ifeq (linux,${LINUX})
--ARPA_TELNET=	../arpa/tel-lnx.h
+-TELNET_H=	../arpa/tel-lnx.h
 -CFLAGS=	${LCCFLAGS} ${INCLUDES} ${DEFINES}
 -else
--ARPA_TELNET=	../arpa/telnet.h
--CFLAGS=	-O ${INCLUDES} ${DEFINES}
+-TELNET_H=	../arpa/telnet.h
+-CFLAGS=	-O ${DEFINES} ${INCLUDES}
 -endif
-+INCLUDES= -I..
-+ARPA_TELNET= ../arpa/telnet.h
- 
- SRCS=	commands.c main.c network.c ring.c \
- 	sys_bsd.c telnet.c terminal.c \
- 	utilities.c ${GETOPT_SRC}
- 
-+CFLAGS=	-O2 ${INCLUDES} ${DEFINES}
- 
- ALLHC=	${SRCS} \
- 	defines.h externs.h fdset.h general.h \
- 	ring.h types.h
- 
- OBJS=	authenc.o commands.o main.o network.o ring.o sys_bsd.o \
--	telnet.o terminal.o utilities.o ${GETOPT_OBJ} \
--	../zmodem/rz.o ../zmodem/sz.o
-+	telnet.o terminal.o utilities.o ${GETOPT_OBJ}
++TELNET_H= ../arpa/telnet.h
 +
- MAN=	telnet.0
++CFLAGS= -O2 ${DEFINES} ${INCLUDES}
  
- #
-@@ -73,8 +67,8 @@
- 	mkdep ${CFLAGS} `make clist`
+ ${LIB}: ${OBJS}
+ 	rm -f ${LIB}
+-ifeq (linux,${LINUX})
+-	${AR} ${ARFLAGS} ${LIB} ${OBJS}
+-else
+ 	${AR} ${ARFLAGS} ${LIB} `lorder ${OBJS} | tsort`
+-endif
+ 	@if [ ${RANLIB} != NONE ]; \
+ 		then echo ${RANLIB} ${LIB}; ${RANLIB} ${LIB}; fi
  
- install: ${MAN} FRC
--	install -s -o bin -g bin -m 755 telnet ${LIBEXEC}
--	install -c -o bin -g bin -m 444 telnet.0 ${DEST}/man/cat1
-+	install -s -o bin -g bin -m 755 telnet ${DEST}
-+	install -c -o bin -g bin -m 444 telnet.0 ${DESTDIR}/usr/man/cat1
- 
- lint: FRC ${SRCS}
- 	lint ${CFLAGS} `make clist`
