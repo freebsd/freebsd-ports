@@ -15,6 +15,7 @@
 
 MASTER_SITE_XCONTRIB+=	\
 	ftp://crl.dec.com/pub/X11/contrib/%SUBDIR%/ \
+	ftp://ftp.net.ohio-state.edu/disk/d/X11/contrib/%SUBDIR%/ \
 	ftp://uiarchive.uiuc.edu/pub/X11/contrib/%SUBDIR%/ \
 	ftp://ftp.gwdg.de/pub/x11/x.org/contrib/%SUBDIR%/ \
 	ftp://ftp.duke.edu/pub/X11/contrib/%SUBDIR%/ \
@@ -94,15 +95,21 @@ MASTER_SITE_SUNSITE+=	\
 	ftp://metalab.unc.edu/pub/Linux/%SUBDIR%/ \
 	ftp://ftp.freesoftware.com/pub/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.sourceforge.net/pub/mirrors/metalab/Linux/%SUBDIR%/ \
+	ftp://ftp.rz.uni-wuerzburg.de/pub/linux/MIRROR.sunsite/%SUBDIR%/ \
+	ftp://sunsite.cnlab-switch.ch/mirror/linux/sunsite/%SUBDIR%/ \
+	ftp://ftp.is.co.za/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.sun.ac.za/pub/linux/sunsite/%SUBDIR%/ \
 	ftp://ftp.nuri.net/pub/Linux/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp//Linux/metalab.unc.edu/%SUBDIR%/ \
-	ftp://ftp.jaring.my/pub/Linux/%SUBDIR%/ \
+	ftp://ftp.cse.cuhk.edu.hk/pub4/Linux/%SUBDIR%/ \
+	ftp://ftp.u-aizu.ac.jp/pub/os/Linux/sunsite.unc.edu/%SUBDIR%/ \
+	ftp://ftp.kobe-u.ac.jp/pub/Linux/metalab.unc.edu/%SUBDIR%/ \
+	ftp://ftp.kddlabs.co.jp/Linux/metalab.unc.edu/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/Linux/mirrors/metalab/%SUBDIR%/ \
-	ftp://ftp.archive.de.uu.net/pub/systems/Linux/Mirror.SunSITE/%SUBDIR%/ \
 	ftp://sunsite.doc.ic.ac.uk/packages/linux/sunsite.unc-mirror/%SUBDIR%/ \
-	ftp://uiarchive.cso.uiuc.edu/pub/systems/linux/sunsite/%SUBDIR%/ \
-	ftp://ftp.cs.umn.edu/pub/Linux/sunsite/%SUBDIR%/
+	ftp://ftp.nluug.nl/vol/2/metalab/%SUBDIR%/ \
+	ftp://sunsite.anu.edu.au/mnt/disk1/linux/metalab/%SUBDIR%/ \
+	ftp://ftp.cs.umn.edu/pub/Linux/sunsite/%SUBDIR%/ \
+	http://metalab.unc.edu/pub/Linux/%SUBDIR%/
 
 MASTER_SITE_RINGSERVER+=	\
 	ftp://core.ring.gr.jp/pub/%SUBDIR%/ \
