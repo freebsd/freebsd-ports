@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	formvalidator
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	textproc www ruby
 MASTER_SITES=	http://grub.ath.cx/formvalidator/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
