@@ -13,7 +13,8 @@ MASTER_SITES=	http://www.unikol.com.pl/~adolf/
 MAINTAINER=	edybsd@yahoo.com.ar
 
 USE_X_PREFIX=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix libpanel
 
 ALL_TARGET=	gnoclip_applet
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
