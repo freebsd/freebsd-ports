@@ -1,3 +1,27 @@
+%%PORTDOCS%%share/doc/py-xml/4DOM/4DOM.web
+%%PORTDOCS%%share/doc/py-xml/4DOM/Extensions.api
+%%PORTDOCS%%share/doc/py-xml/4DOM/Extensions.html
+%%PORTDOCS%%share/doc/py-xml/4DOM/Ranges.api
+%%PORTDOCS%%share/doc/py-xml/4DOM/Ranges.html
+%%PORTDOCS%%share/doc/py-xml/4DOM/index.html
+%%PORTDOCS%%share/doc/py-xml/xml-howto.tex
+%%PORTDOCS%%share/doc/py-xml/xml-howto.txt
+%%PORTDOCS%%share/doc/py-xml/xml-ref.tex
+%%PORTDOCS%%share/doc/py-xml/xml-ref.txt
+%%PORTDOCS%%share/doc/py-xml/xmlproc/artikler.css
+%%PORTDOCS%%share/doc/py-xml/xmlproc/basicapi.gif
+%%PORTDOCS%%share/doc/py-xml/xmlproc/cmdline.gif
+%%PORTDOCS%%share/doc/py-xml/xmlproc/standard.css
+%%PORTDOCS%%share/doc/py-xml/xmlproc/wxval.gif
+%%PORTDOCS%%share/doc/py-xml/xmlproc/xmlproc-catalog-doco.html
+%%PORTDOCS%%share/doc/py-xml/xmlproc/xmlproc-doco.html
+%%PORTDOCS%%share/doc/py-xml/xmlproc/xmlproc-dtd-doco.html
+%%PORTDOCS%%share/doc/py-xml/xmlproc/xmlproc-license.html
+%%PORTDOCS%%share/doc/py-xml/xmlproc/xmlproc.html
+%%PORTDOCS%%share/doc/py-xml/xmlproc/xmlproc_cmdline.html
+%%PORTDOCS%%share/doc/py-xml/xmlproc/xmlproc_dtdparser.html
+%%PORTDOCS%%share/doc/py-xml/xmlproc/xmlproc_ns.html
+%%PORTDOCS%%share/doc/py-xml/xmlproc/xmlproc_tut.html
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/_checkversion.py
@@ -28,6 +52,8 @@ lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/Event.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/Event.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/FtNode.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/FtNode.pyc
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/MessageSource.py
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/MessageSource.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/NamedNodeMap.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/NamedNodeMap.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/NodeFilter.py
@@ -40,18 +66,24 @@ lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/Notation.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/Notation.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ProcessingInstruction.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ProcessingInstruction.pyc
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/Range.py
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/Range.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/Text.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/Text.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/TreeWalker.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/TreeWalker.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/en_US.py
-lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/en_US.pyc
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/de/LC_MESSAGES/4Suite.mo
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/domreg.py
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/domreg.pyc
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/en_US/LC_MESSAGES/4Suite.mo
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/Printer.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/Printer.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/Visitor.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/Visitor.pyc
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/XHtml2HtmlPrinter.py
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/XHtml2HtmlPrinter.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/XHtmlPrinter.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/XHtmlPrinter.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/__init__.py
@@ -68,8 +100,13 @@ lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/reader/Sax2.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/reader/Sax2.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/reader/Sax2Lib.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/reader/Sax2Lib.pyc
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/reader/Sgmlop.py
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/reader/Sgmlop.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/reader/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/reader/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/fr_FR/LC_MESSAGES/4Suite.mo
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/html/GenerateHtml.py
+lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/html/GenerateHtml.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/html/HTMLAnchorElement.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/html/HTMLAnchorElement.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/html/HTMLAppletElement.py
@@ -184,8 +221,6 @@ lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/html/HTMLUListElement.p
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/html/HTMLUListElement.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/html/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/html/__init__.pyc
-lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/html/generateHtml.py
-lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/html/generateHtml.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/javadom.py
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/javadom.pyc
 lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/minidom.py
@@ -307,7 +342,16 @@ lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/utils/qp_xml.pyc
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/parsers
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/marshal
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/html
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/fr_FR/LC_MESSAGES
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/fr_FR
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext/reader
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/ext
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/en_US/LC_MESSAGES
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/en_US
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/de/LC_MESSAGES
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom/de
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/dom
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/%%PACKAGE_DIR%%/
+%%PORTDOCS%%@dirrm share/doc/py-xml/xmlproc
+%%PORTDOCS%%@dirrm share/doc/py-xml/4DOM
+%%PORTDOCS%%@dirrm share/doc/py-xml
