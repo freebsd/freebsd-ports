@@ -1,5 +1,7 @@
+Amaya/amaya/Amaya.svg
 Amaya/amaya/AmayaPage.html
 Amaya/amaya/AmayaPage.html.de
+Amaya/amaya/AmayaPage.html.es
 Amaya/amaya/AmayaPage.html.fr
 Amaya/amaya/AmayaSrcSyncIndex.gif
 Amaya/amaya/Annot.conf
@@ -124,8 +126,10 @@ Amaya/config/fi-amayamsg
 Amaya/config/fi-corrdialogue
 Amaya/config/fi-libdialogue
 Amaya/config/fonts.gl
+Amaya/config/fonts.gl.deb
 Amaya/config/fonts.tmpl
 Amaya/config/fonts.unix
+Amaya/config/fonts.unix.deb
 Amaya/config/fonts.win
 Amaya/config/fr-amayadialogue
 Amaya/config/fr-amayamsg
@@ -330,6 +334,7 @@ Amaya/doc/html/Views.html.de
 Amaya/doc/html/Views.html.es
 Amaya/doc/html/Views.html.fr
 Amaya/doc/html/WebDAV.html
+Amaya/doc/html/WebDAV.html.es
 Amaya/doc/html/Xml.html
 Amaya/doc/html/Xml.html.de
 Amaya/doc/html/Xml.html.es
@@ -343,6 +348,19 @@ Amaya/doc/html/accessibility_in_amaya/about_producing_accessible_content.html.es
 Amaya/doc/html/accessibility_in_amaya/accessibility_in_amaya.html
 Amaya/doc/html/accessibility_in_amaya/accessibility_in_amaya.html.de
 Amaya/doc/html/accessibility_in_amaya/accessibility_in_amaya.html.es
+Amaya/doc/html/attaching_annotations/About_Reading_Annotations.html.de
+Amaya/doc/html/attaching_annotations/About_Storing_Local_Annotations.html.de
+Amaya/doc/html/attaching_annotations/About_Storing_Remote_Annotations.html.de
+Amaya/doc/html/attaching_annotations/Annotation_Issues.html.de
+Amaya/doc/html/attaching_annotations/Annotation_Menu.html.de
+Amaya/doc/html/attaching_annotations/Configuring_Annotation_Settings.html.de
+Amaya/doc/html/attaching_annotations/Configuring_Icons.html.de
+Amaya/doc/html/attaching_annotations/Creating_an_Annotation.html.de
+Amaya/doc/html/attaching_annotations/Loading_and_Presenting_Annotations.html.de
+Amaya/doc/html/attaching_annotations/Moving_Annotations.html.de
+Amaya/doc/html/attaching_annotations/Navigating_Annotations.html.de
+Amaya/doc/html/attaching_annotations/Replying_To_Annotations.html.de
+Amaya/doc/html/attaching_annotations/What_is_an_Annotation.html.de
 Amaya/doc/html/attaching_annotations/about_reading_annotations.html
 Amaya/doc/html/attaching_annotations/about_reading_annotations.html.de
 Amaya/doc/html/attaching_annotations/about_reading_annotations.html.es
@@ -502,7 +520,6 @@ Amaya/doc/html/editing_tables/remove_column.html.es
 Amaya/doc/html/editing_tables/working_with_tables.html
 Amaya/doc/html/editing_tables/working_with_tables.html.de
 Amaya/doc/html/editing_tables/working_with_tables.html.es
-Amaya/doc/html/elements/about_white_space_handling.html.es
 Amaya/doc/html/elements/buttons_and_types_menu.html
 Amaya/doc/html/elements/buttons_and_types_menu.html.de
 Amaya/doc/html/elements/buttons_and_types_menu.html.es
@@ -512,7 +529,6 @@ Amaya/doc/html/elements/changing_the_document_title.html.es
 Amaya/doc/html/elements/creating_nested_structures.html
 Amaya/doc/html/elements/creating_nested_structures.html.de
 Amaya/doc/html/elements/creating_nested_structures.html.es
-Amaya/doc/html/elements/creating_new_documents.html.es
 Amaya/doc/html/elements/exiting_anchors.html
 Amaya/doc/html/elements/exiting_anchors.html.de
 Amaya/doc/html/elements/exiting_anchors.html.es
@@ -620,9 +636,13 @@ Amaya/doc/html/style_sheets/working_with_styles.html.es
 Amaya/doc/html/tans_annot.html.de
 Amaya/doc/html/timeline_help.html
 Amaya/doc/html/using_graphics/AddSVGLib.html
+Amaya/doc/html/using_graphics/AddSVGLib.html.es
 Amaya/doc/html/using_graphics/ChangeSVGLibPresentation.html
+Amaya/doc/html/using_graphics/ChangeSVGLibPresentation.html.es
 Amaya/doc/html/using_graphics/SVGLibrary.html
+Amaya/doc/html/using_graphics/SVGLibrary.html.es
 Amaya/doc/html/using_graphics/UseSVGLib.html
+Amaya/doc/html/using_graphics/UseSVGLib.html.es
 Amaya/doc/html/using_graphics/creating_graphics_with_the_palette.html
 Amaya/doc/html/using_graphics/creating_graphics_with_the_palette.html.de
 Amaya/doc/html/using_graphics/creating_graphics_with_the_palette.html.es
@@ -722,11 +742,11 @@ Amaya/doc/images/ProfilesMenu-fr.gif
 Amaya/doc/images/ProfilesMenu.gif
 Amaya/doc/images/ProxyMenu-fr.gif
 Amaya/doc/images/ProxyMenu.gif
-Amaya/doc/images/PublishMenu-es.gif
 Amaya/doc/images/PublishMenu-fr.gif
 Amaya/doc/images/PublishMenu.gif
 Amaya/doc/images/Reload.gif
 Amaya/doc/images/Reload.png
+Amaya/doc/images/SVGLibrary.gif
 Amaya/doc/images/SaveAs-fr.gif
 Amaya/doc/images/SaveAs.gif
 Amaya/doc/images/Strong.gif
@@ -764,7 +784,6 @@ Amaya/doc/images/color_preferences.png
 Amaya/doc/images/configuration_for_annotations-de.png
 Amaya/doc/images/configuration_for_annotations-es.png
 Amaya/doc/images/configuration_for_annotations.png
-Amaya/doc/images/configurebox-es.png
 Amaya/doc/images/configurebox-fr.png
 Amaya/doc/images/configurebox.png
 Amaya/doc/images/createRule-de.png

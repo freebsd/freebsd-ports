@@ -6,12 +6,21 @@
 #
 
 PORTNAME=	amaya
-PORTVERSION=	7.2
+PORTVERSION=	8.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
-		ftp://ftp.w3.org/pub/amaya/
+		ftp://ftp.w3.org/pub/amaya/ \
+		http://ftp.uni-koeln.de/www/amaya/ \
+		http://public.planetmirror.com/pub/amaya/ \
+		ftp://ftp.uni-koeln.de/WWW/amaya/ \
+		http://gd.tuwien.ac.at/infosys/browsers/amaya/ \
+		http://www.mirror.ac.uk/sites/ftp.w3.org/pub/afs/w3.org/ftp/pub/amaya/ \
+		http://ftp.ntua.gr/pub/www/W3C/amaya/ \
+		ftp://ftp.ntua.gr/pub/www/W3C/amaya/ \
+		ftp://nic.funet.fi/index/WWW/W3/amaya/ \
+		http://www.nic.funet.fi/index/WWW/W3/amaya/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
-DISTFILES=	${DISTNAME}.tgz
+EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	amaya
 
 MAINTAINER=	adam-ports@blacktabby.org
@@ -24,9 +33,11 @@ USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../configure
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LIBS="${LDFLAGS}"
 CONFIGURE_ARGS=	--without-graphic-libs
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 DICT?=		none
 
@@ -44,6 +55,15 @@ DISTFILES+=	${DICT:S/$/.tgz/g}
 .endif
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} >= 4 && defined(WITH_OPENGL)
+LIB_DEPENDS+=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
+USE_MESA=	yes
+CONFIGURE_ARGS+=	--with-gl
+LDFLAGS+=	-lcompat
+.endif
+
 pre-everything::
 .if ${DICT} == "none"
 	@${ECHO_MSG} Several spellchecking dictionaries are available.  To use
@@ -51,7 +71,11 @@ pre-everything::
 .endif
 
 post-extract:
-	${MKDIR} ${WRKSRC}
+	@${MKDIR} ${WRKSRC}
+
+post-patch:
+	@${GREP} -lR "<malloc\.h>" ${WRKDIR} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|<malloc\.h>|<stdlib.h>|g'
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/../amaya/COPYRIGHT.html ${PREFIX}/Amaya/amaya
@@ -64,4 +88,4 @@ post-install:
 	${RM} ${TMPPLIST}.new
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
