@@ -21,9 +21,7 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 USE_X_PREFIX=	yes
 USE_BISON=	yes
 USE_BZIP2=	yes
-USE_PYTHON=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack \
 		gnomeprefix \
@@ -31,6 +29,7 @@ USE_GNOME=	gnomehack \
 		libxml2
 USE_LIBTOOL_VER=15
 CONFIGURE_ARGS=	--disable-tests \
+		--disable-examples \
 		--disable-docs-build \
 		--disable-failing-tests
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
@@ -57,10 +56,4 @@ post-install:
 	-@${PREFIX}/bin/gst-register-${GST_VERSION} \
 		--gst-registry=${PREFIX}/share/gnome/cache/gstreamer-${GST_VERSION}/registry.xml 2>/dev/null
 
-.include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mlibgnomeui}!=""
-USE_GNOME+=	libgnomeui
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
