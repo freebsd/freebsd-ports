@@ -568,13 +568,10 @@ www/js/awstats_misc_tracker.js
 @dirrm www/icons/cpu
 @dirrm www/icons/clock
 @dirrm www/icons/browser
-@dirrm www/icons
 @dirrm www/css
 @dirrm www/cgi-bin/plugins/example
 @dirrm www/cgi-bin/plugins
 @dirrm www/cgi-bin/lib
 @dirrm www/cgi-bin/lang
-@dirrm www/cgi-bin
-@dirrm www
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
