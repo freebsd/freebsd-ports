@@ -36,6 +36,7 @@ Select the skins you want to install:" -1 -1 13 \
   "WindowsMediaPlayer6"	"no comment"				OFF \
   "Xanim"	"xanim \"feeling\""					OFF \
   "Xine-LCD"	"MPlayer conversion of Xine's LCD skin"		OFF \
+  "Orange"	"Very nice VCR lookalike skin"			OFF \
   "Mini"	"Mplayer-plugin for mozilla"			OFF \
 2> /tmp/mplayer-skins-checklist.$$
 
