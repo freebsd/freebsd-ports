@@ -11,12 +11,12 @@ PORTVERSION=	${BROWSER_VERSION}
 CATEGORIES=	korean www
 MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/users/cjh/netscape-ko/ \
 		http://www.kr.freebsd.org/~cjh/freetime/mozilla/netscape-ko/
-DISTFILES=	${KOREAN_KIT}.tar.gz
+DISTNAME=	${KOREAN_KIT}
 
 MAINTAINER?=	cjh@FreeBSD.org
 
 # ?= for ports that include this Makefile
-RUN_DEPENDS?=	${PREFIX}/bin/${BROWSER_ARC}-${BROWSER_VERSION}:${PORTSDIR}/www/netscape${BROWSER_VER}-${BROWSER}
+RUN_DEPENDS?=	${LOCALBASE}/bin/${BROWSER_ARC}-${BROWSER_VERSION}:${PORTSDIR}/www/netscape${BROWSER_VER}-${BROWSER}
 RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf \
 		${X11BASE}/lib/X11/fonts/local/mzgt16h1.pcf.gz:${PORTSDIR}/korean/mizifont
 
@@ -24,7 +24,6 @@ NO_BUILD=	yes
 PKGINSTALL=	${WRKDIR}/INSTALL
 PLIST_SUB=	NSUBDIR=${NSUBDIR} LANG=${LANG} \
 		BROWSER=${BROWSER_ARC} VER=${BROWSER_VER}
-WRKSRC=		${WRKDIR}/${KOREAN_KIT}
 NDIR=		${PREFIX}/${NSUBDIR}
 NSUBDIR?=	lib/netscape
 
@@ -45,6 +44,7 @@ KOREAN_KIT?=	netscape-v408.generic-generic-generic-19990612
 
 NETHELP?=	nethelp-v403
 START_SCRIPT?=	${MASTERDIR}/files/start.sh.in
+ADDXRESOURCE?=	${MASTERDIR}/files/xresource.ad
 
 LANG=		ko_KR.EUC
 MAKESCRIPT=	${SED} -e "s;@X11BASE@;${X11BASE};g" \
@@ -64,7 +64,10 @@ DIST_SUBDIR=    korean-netscape
 
 do-configure:
 	${MAKESCRIPT} ${START_SCRIPT} >${WRKDIR}/start.sh
-	${MAKESCRIPT} ${WRKSRC}/Netscape.ad-ko >${WRKSRC}/Netscape
+	# add FreeBSD-specific resource
+	${MAKESCRIPT} ${WRKSRC}/Netscape.ad-ko >${WRKSRC}/Netscape.2.ad
+	${CAT} ${WRKSRC}/Netscape.2.ad ${ADDXRESOURCE} \
+		> ${WRKSRC}/Netscape
 	${MAKESCRIPT} ${FILESDIR}/INSTALL >${PKGINSTALL}
 	# make navigator resource
 .if defined(BROWSER) && ${BROWSER} == navigator
@@ -76,7 +79,6 @@ do-configure:
 	${CP} ${WRKSRC}/about ${WRKDIR}/about
 	${CP} ${WRKSRC}/splash ${WRKDIR}/splash
 .endif
-
 
 do-install:
 	${INSTALL_DATA} ${MASTERDIR}/files/preferences.js ${NDIR}
