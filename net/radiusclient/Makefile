@@ -3,7 +3,7 @@
 # Date created:        Wed Nov  4 08:48:08 EST 1998
 # Whom:                maurice
 #
-# $Id: Makefile,v 1.2 1999/01/12 23:37:49 dirk Exp $
+# $Id: Makefile,v 1.3 1999/05/04 22:36:19 steve Exp $
 #
 
 DISTNAME=	radiusclient-0.3
@@ -12,16 +12,7 @@ MASTER_SITES=	ftp://ftp.cityline.net/pub/radiusclient/
 
 MAINTAINER=	maurice@serc.rmit.edu.au
 
-BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/devel/libtool:patch
-
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-
-pre-configure:
-	${CP} ${WRKDIRPREFIX}${PORTSDIR}/devel/libtool/work/libtool-1.3/ltconfig ${WRKSRC}
-	${CP} ${WRKDIRPREFIX}${PORTSDIR}/devel/libtool/work/libtool-1.3/ltmain.sh ${WRKSRC}
-
-post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+USE_LIBTOOL=	yes
 
 .include <bsd.port.mk>
