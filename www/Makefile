@@ -657,7 +657,6 @@
     SUBDIR += snarf
     SUBDIR += snownews
     SUBDIR += squid
-    SUBDIR += squid24
     SUBDIR += squidclients
     SUBDIR += squidguard
     SUBDIR += squidpurge
