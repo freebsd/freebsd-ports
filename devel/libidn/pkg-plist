@@ -16,7 +16,6 @@ info/libidn.info-2
 info/libidn.info-3
 @exec install-info %D/info/libidn.info %D/info/dir
 lib/libidn.a
-lib/libidn.la
 lib/libidn.so
 lib/libidn.so.10
 lib/pkgconfig/libidn.pc
