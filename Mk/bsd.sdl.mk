@@ -78,7 +78,7 @@ _VERSION_net=	0
 _SUBDIR_net=	net
 _REQUIRES_net=	sdl
 
-_VERSION_sdl=	5
+_VERSION_sdl=	7
 _SUBDIR_sdl=	devel
 _LIB_sdl=		SDL-1.1
 _PORTDIR_sdl=	sdl12

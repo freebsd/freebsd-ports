@@ -1,33 +1,46 @@
-
-$FreeBSD$
-
---- Makefile.in.orig	Fri Jan  5 22:18:18 2001
-+++ Makefile.in	Wed Jan 24 12:02:04 2001
-@@ -44,10 +44,10 @@
- 
- top_builddir = .
- 
+--- Makefile.in.orig	Mon Feb 23 08:32:04 2004
++++ Makefile.in	Mon Mar  8 16:01:47 2004
+@@ -81,7 +81,7 @@
+ GZIP_ENV = --best
+ distuninstallcheck_listfiles = find . -type f -print
+ distcleancheck_listfiles = find . -type f -print
 -ACLOCAL = @ACLOCAL@
--AUTOCONF = @AUTOCONF@
--AUTOMAKE = @AUTOMAKE@
--AUTOHEADER = @AUTOHEADER@
 +ACLOCAL = #@ACLOCAL@
+ ALLOCA = @ALLOCA@
+ AMDEP_FALSE = @AMDEP_FALSE@
+ AMDEP_TRUE = @AMDEP_TRUE@
+@@ -93,9 +93,9 @@
+ ASFLAGS = @ASFLAGS@
+ AUDIO_DRIVERS = @AUDIO_DRIVERS@
+ AUDIO_SUBDIRS = @AUDIO_SUBDIRS@
+-AUTOCONF = @AUTOCONF@
+-AUTOHEADER = @AUTOHEADER@
+-AUTOMAKE = @AUTOMAKE@
 +AUTOCONF = #@AUTOCONF@
-+AUTOMAKE = #@AUTOMAKE@
 +AUTOHEADER = #@AUTOHEADER@
- 
- INSTALL = @INSTALL@
- INSTALL_PROGRAM = @INSTALL_PROGRAM@
-@@ -110,7 +110,7 @@
- DIST_SUBDIRS = $(SUBDIRS) docs
++AUTOMAKE = #@AUTOMAKE@
+ AWK = @AWK@
+ CC = @CC@
+ CCAS = @CCAS@
+@@ -285,7 +285,7 @@
+ DIST_SUBDIRS = $(SUBDIRS)
  
  # SDL runtime configuration script
 -bin_SCRIPTS = sdl-config
 +bin_SCRIPTS = sdl11-config
  
  # All the rest of the distributed files
- EXTRA_DIST =  	BUGS			TODO		        COPYING		        CREDITS		        INSTALL		        README		        README-SDL.txt	        README.Win32	        README.MacOS	        README.MacOSX	        VisualC.html	        VisualC.zip		CWprojects.sea.hqx         MPWmake.sea.hqx	        WhatsNew	        docs.html	        sdl.m4		        autogen.sh	        strip_fPIC.sh
-@@ -118,7 +118,7 @@
+ EXTRA_DIST = \
+@@ -321,7 +321,7 @@
+ 	EpocBuildFiles.zip \
+ 	WhatsNew	\
+ 	docs.html	\
+-	sdl.m4		\
++	sdl11.m4	\
+ 	SDL.spec	\
+ 	autogen.sh	\
+ 	strip_fPIC.sh
+@@ -329,7 +329,7 @@
  
  # M4 macro file for inclusion with autoconf
  m4datadir = $(datadir)/aclocal
@@ -35,4 +48,13 @@ $FreeBSD$
 +m4data_DATA = sdl11.m4
  
  # Create a CVS snapshot that people can run update -d on
- CVSROOT = :pserver:guest@cvs.lokigames.com:/cvs
+ CVSROOT = :pserver:guest@libsdl.org:/home/sdlweb/libsdl.org/cvs
+@@ -369,7 +369,7 @@
+ 	cd $(srcdir) && $(AUTOCONF)
+ $(ACLOCAL_M4):  $(am__aclocal_m4_deps)
+ 	cd $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
+-sdl-config: $(top_builddir)/config.status $(srcdir)/sdl-config.in
++sdl11-config: $(top_builddir)/config.status $(srcdir)/sdl-config.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
+ SDL.spec: $(top_builddir)/config.status $(srcdir)/SDL.spec.in
+ 	cd $(top_builddir) && $(SHELL) ./config.status $@
