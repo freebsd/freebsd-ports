@@ -3832,6 +3832,7 @@ mailman-devel	ports/mail/mailman-devel
 mailsync	ports/mail/mailsync
 mailx		ports/mail/mailx
 maint		ports/sysutils/maint
+mairix		ports/mail/mairix
 majorcool	ports/mail/majorcool
 majordomo	ports/mail/majordomo
 make++		ports/devel/make++
