@@ -1,0 +1,19 @@
+TetriNET is an addictive 6 player tetr*s game
+   
+What this program does is set up a TetriNET server that ordinary
+TetriNET clients can connect to. It attempts to fix some of the
+"glaring" holes in the TetriNET protocol that I discovered, and which
+I'm sure some people use as cheats, but I now see why it is nearly
+impossible to fix ;), without a modification to the client.
+I've kept the server as close to the same as the original TetriNET
+server, but I've added some extras that I've often wanted, such as
+the "/kick" and "/ban" keywords.
+Please note, this server in no way encompasses the whole game. The clients
+are the ones that do most of the work, with the server just passing suitable
+packets between each client, and of course adding some of it's own.
+
+Author: Brendan Grieve (brg@cheerful.com)
+Homepage: ftp://ftp.dementia.nu/tetrinet/servers/tetrix
+Distfiles: tetrinet-x.1.13.16.tgz (89 kb)
+
+- ported to FreeBSD by Gianmarco (gmarco@giovannelli.it)
