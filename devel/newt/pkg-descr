@@ -1,0 +1,8 @@
+This is the Redhat newt library, a library that is
+similar to (and based on) ncurses in that it does
+special things with console I/O.
+
+Unfortunately, there do not seem to be any documentation
+available on Redhat's website about newt.
+
+--Will <andrews@technologist.com>

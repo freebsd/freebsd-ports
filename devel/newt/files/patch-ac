@@ -1,0 +1,25 @@
+--- form.c	Fri Mar  5 18:27:57 1999
++++ form.c.new	Wed Jan 26 20:33:25 2000
+@@ -3,9 +3,7 @@
+ #include <slang.h>
+ #include <stdarg.h>
+ #include <stdlib.h>
+-#include <sys/select.h>
+-
+-#ifdef USE_GPM
++#include <string.h>
+ #include <ctype.h>
+ #include <sys/time.h>      /* timeval */
+ #include <sys/types.h>     /* socket() */
+@@ -15,11 +13,8 @@
+ #include <sys/stat.h>      /* stat() */
+ #include <termios.h>       /* winsize */
+ #include <unistd.h>
+-#include <sys/kd.h>        /* KDGETMODE */
+ #include <signal.h>
+ #include <stdio.h>
+-#endif
+-
+ #include "newt.h"
+ #include "newt_pr.h"
+ 

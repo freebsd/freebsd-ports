@@ -1,0 +1,10 @@
+bin/whiptail
+lib/python1.5/lib-dynload/_snackmodule.so
+lib/python1.5/snack.py
+lib/whiptcl.so
+lib/libnewt.a
+lib/libnewt.so
+lib/libnewt.so.%%VERSION%%
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+include/newt.h

@@ -1,0 +1,111 @@
+--- Makefile.in	Wed Feb  2 22:18:26 2000
++++ Makefile.in.new	Wed Feb  2 22:19:01 2000
+@@ -1,16 +1,11 @@
+-LIBS = -lslang -lm #-lefence
+-SHLIBS = -lslang -lm -lc
++CC ?= cc
++LIBS = -L$(PREFIX)/lib -lslang -ltcl82 -lpopt -lncurses -lm
++SHLIBS = $(LIBS)
+ 
+-GPM_SUPPORT=@gpm_support@
++CFLAGS = $(PCFLAGS) -Wall -I$(prefix)/include -I$(prefix)/include/tcl8.2
+ 
+-CFLAGS = $(RPM_OPT_FLAGS) -Wall -I/usr/include/slang
+-ifeq ($(RPM_OPT_FLAGS),)
+-CFLAGS += -g # -O2 -I/usr/include/slang
+-endif
+-
+-VERSION = @VERSION@
+-CVSTAG = r$(subst .,-,$(VERSION))
+-SONAME = @VERSION@
++VERSION ?= 0
++SONAME = $(VERSION)
+ 
+ PROGS = test whiptail whiptcl.so testgrid testtree
+ TESTOBJS = test.o
+@@ -25,7 +20,7 @@
+ 
+ SHCFLAGS = -fPIC
+ 
+-prefix = /usr
++prefix ?= /usr/local
+ includedir = $(prefix)/include
+ libdir = $(prefix)/lib
+ bindir = $(prefix)/bin
+@@ -49,25 +44,25 @@
+ all:	$(TARGET) _snackmodule.so
+ 
+ test:	$(TESTOBJS) $(LIBNEWT)
+-	gcc -g -o test $(TESTOBJS) $(LIBNEWT) $(LIBS) -static
++	$(CC) -o test $(TESTOBJS) $(LIBNEWT) $(LIBS) -static
+ 
+ testgrid:	testgrid.o $(LIBNEWT)
+-	gcc -g -o testgrid testgrid.o $(LIBNEWT) $(LIBS)
++	$(CC) -o testgrid testgrid.o $(LIBNEWT) $(LIBS)
+ 
+ testtree:	testtree.o $(LIBNEWT)
+-	gcc -g -o testtree testtree.o $(LIBNEWT) $(LIBS)
++	$(CC) -o testtree testtree.o $(LIBNEWT) $(LIBS)
+ 
+ _snackmodule.so:   snackmodule.o $(LIBNEWTSH)
+-	gcc --shared -o _snackmodule.so snackmodule.o -L . $(LIBNEWTSH)
++	$(CC) --shared -o _snackmodule.so snackmodule.o -L . $(LIBNEWTSH)
+ 
+ snackmodule.o:   snackmodule.c
+-	gcc -I/usr/include/python1.5 -fPIC $(CFLAGS) -c snackmodule.c
++	$(CC) -I$(prefix)/include/python1.5 -fPIC $(CFLAGS) -c snackmodule.c
+ 
+ whiptail: $(NDIALOGOBJS) $(LIBNEWTSH)
+-	gcc -g -o whiptail $(NDIALOGOBJS) -L . $(LIBNEWTSH) $(LIBS) -lpopt
++	$(CC) -o whiptail $(NDIALOGOBJS) -L . $(LIBNEWTSH) $(LIBS)
+ 
+ whiptcl.so: $(WHIPTCLOBJS) $(LIBNEWTSH)
+-	gcc -shared -o whiptcl.so $(WHIPTCLOBJS) -L . $(LIBNEWTSH) -ltcl -lslang -lpopt -lm
++	$(CC) -shared -o whiptcl.so $(WHIPTCLOBJS) -L . $(LIBNEWTSH) $(LIBS)
+ 
+ $(LIBNEWT): $(LIBNEWT)($(LIBOBJS))
+ 
+@@ -90,7 +85,7 @@
+ sharedlib: $(LIBNEWTSH)
+ 
+ $(LIBNEWTSH): $(SHAREDDIR) $(SHAREDOBJS)
+-	gcc -shared -o $(LIBNEWTSH) -Wl,-soname,$(LIBNEWTSONAME) $(SHAREDOBJS) $(SHLIBS)
++	$(CC) -shared -o $(LIBNEWTSH) -Wl,-soname,$(LIBNEWTSONAME) $(SHAREDOBJS) $(SHLIBS)
+ 
+ $(SHAREDDIR)/%.o : %.c
+ 	$(CC) $(SHCFLAGS) -c $(CFLAGS) -o $@ $<
+@@ -100,21 +95,21 @@
+ 
+ 
+ install: $(LIBNEWT) install-sh whiptail
+-	[ -d $(instroot)/$(bindir) ] || install -m 755 -d $(instroot)/$(bindir)
+-	[ -d $(instroot)/$(libdir) ] || install -m 755 -d $(instroot)/$(libdir)
+-	[ -d $(instroot)/$(includedir) ] || install -m 755 -d $(instroot)/$(includedir)
+-	install -m 644 newt.h $(instroot)/$(includedir)
+-	install -m 644 $(LIBNEWT) $(instroot)/$(libdir)
+-	install -s -m 755 whiptail $(instroot)/$(bindir)
++	[ -d $(bindir) ] || install -m 755 -d $(bindir)
++	[ -d $(libdir) ] || install -m 755 -d $(libdir)
++	[ -d $(includedir) ] || install -m 755 -d $(includedir)
++	install -c -m 644 newt.h $(includedir)
++	install -c -m 644 $(LIBNEWT) $(libdir)
++	install -c -s -m 755 whiptail $(bindir)
+ 
+ install-sh: sharedlib whiptcl.so _snackmodule.so
+-	[ -d $(instroot)/$(libdir) ] || install -m 755 -d $(instroot)/$(libdir)
+-	install -m 755 $(LIBNEWTSH) $(instroot)/$(libdir)
+-	ln -sf $(LIBNEWTSH) $(instroot)/$(libdir)/libnewt.so
+-	install -m 755 whiptcl.so $(instroot)/$(libdir)
+-	[ -d $(instroot)/$(pythonbindir) ] || install -m 755 -d $(instroot)/$(pythonbindir)
+-	install -m 755 _snackmodule.so $(instroot)/$(pythonbindir)
+-	install -m 755 snack.py $(instroot)/$(pythondir)
++	[ -d $(libdir) ] || install -m 755 -d $(libdir)
++	install -c -m 755 $(LIBNEWTSH) $(libdir)
++	ln -sf $(LIBNEWTSH) $(libdir)/libnewt.so
++	install -c -m 755 whiptcl.so $(libdir)
++	[ -d $(pythonbindir) ] || install -m 755 -d $(pythonbindir)
++	install -c -m 755 _snackmodule.so $(pythonbindir)
++	install -c -m 755 snack.py $(pythondir)
+ 
+ archive:
+ 	@cvs tag -F $(CVSTAG)
