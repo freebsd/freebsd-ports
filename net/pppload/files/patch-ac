@@ -1,0 +1,27 @@
+diff -u --new-file pppload-1.0/Options.H ./Options.H
+--- pppload-1.0/Options.H	Tue Sep 10 16:53:36 1996
++++ ./Options.H	Thu Jan 29 21:12:01 1998
+@@ -31,6 +31,8 @@
+ 	int     _divider;
+ 	//: Statistics polling interval in seconds.
+ 	int     _interval;
++        //: Network device to monitor
++        char  _device[4];
+ 	//: PPP link number to monitor.
+ 	int     _link;
+ 	//: Load averaging interval in seconds.
+@@ -49,9 +51,12 @@
+ 	//: Extract command line opotions from argc and argv.
+ 	Options( int argc, char* argv[] );
+ 
+-    //: Return the PPP command.
+-    QString& cmd()      { return _cmd;      }
++        //: Return the PPP command.
++        QString& cmd()      { return _cmd;      }
+ 	
++        //: Return the name of the device being monitored
++        char *  device() { return _device; }
++
+ 	//: Return the spacing between horizontal dividers.
+ 	int      divider()  { return _divider;  }
+ 

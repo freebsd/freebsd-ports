@@ -1,0 +1,64 @@
+diff -u --new-file pppload-1.0/pppload.1 ./pppload.1
+--- pppload-1.0/pppload.1	Tue Sep 10 16:56:20 1996
++++ ./pppload.1	Fri Jan 30 21:35:55 1998
+@@ -3,7 +3,7 @@
+ pppload \- display an xload-style graph of PPP activity
+ .SH SYNOPSIS
+ .B pppload
+-[\-cmd ppp_cmd] [\-i interval] [\-p period] [\-retry interval] [\-rx] [\-norx]
++[\-cmd ppp_cmd] [\-i interval] [\-device name] [\-p period] [\-retry interval] [\-rx] [\-norx]
+ [\-rxcolor color] [\-tx] [\-notx] [\-txcolor color]
+ .SH DESCRIPTION
+ .BR pppload
+@@ -28,6 +28,9 @@
+ .I "\-h"
+ Print command line usage.
+ .TP
++.I "\-device name"
++Network device to monitor (default: tun)
++.TP
+ .I "\-i interval"
+ The statistics polling interval in seconds (default: 5).
+ .TP
+@@ -60,3 +63,41 @@
+ The name of the color to draw transmit rates in (default: red).
+ .SH AUTHOR
+ Sean Vyain <svyain@mail.tds.net, smvyain@softart.com>
++www.geocities.com/SiliconValley/Pines/1029/pppload.html
++
++.SH FREEBSD PORT
++Examples of usage for the FreeBSD port:
++
++For tun0 (tun is the default device,0 is the default link number):
++
++% pppload &
++
++For the first ne2000 ethernet card:
++
++% pppload -device ed -link 0 &
++
++for the third ppp device:
++
++% pppload -device ppp -link 2 &
++
++.SH BUGS
++The port to FreeBSD can't determine when the link is up or down, so 
++some of the command line options like
++.I "\-cmd" 
++.I "\-percmd"
++may not work.
++
++Command line is awkward with -device and -link.
++
++Keeps track of all packets network device has ever used, even if it
++has gone down then up again.  This is different than the linux
++version. 
++
++Requires awk, grep, and netstat to get the data.  Very short polling
++times are definitely not recommended.
++
++Network interface names are limited to a total of 4 characters or less
++at the moment, e.g. ppp0 ed3 ze1.
++
++ 
++Modified January 1998
