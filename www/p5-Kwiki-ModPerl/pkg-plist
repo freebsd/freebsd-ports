@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Kwiki/ModPerl.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/ModPerl/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Kwiki/ModPerl

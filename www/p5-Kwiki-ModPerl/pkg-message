@@ -1,0 +1,23 @@
+/* ================================================================= */
+Note: 
+	Kwiki-ModPerl plugin installed! Now you should modify
+    your Apache configuration:
+
+    <Location /kwiki>
+	SetHandler  perl-script
+	PerlSetVar  KwikiBaseDir /path/to/webroot/kwiki
+	PerlHandler +Kwiki::ModPerl
+    </Location>
+
+       If you have a custom lib directory for your Kwiki:
+
+    <Perl>
+	use lib '/path/to/webroot/kwiki/lib';
+    </Perl>
+
+	If you're using mod_perl2, please add the following line 
+    into your httpd.conf:
+
+    PerlModule Apache2
+
+/* ================================================================= */

@@ -512,6 +512,7 @@
     SUBDIR += p5-Kwiki-Diff
     SUBDIR += p5-Kwiki-GDGraphGenerator
     SUBDIR += p5-Kwiki-Icons-Gnome
+    SUBDIR += p5-Kwiki-ModPerl
     SUBDIR += p5-Kwiki-NewPage
     SUBDIR += p5-Kwiki-PagePrivacy
     SUBDIR += p5-Kwiki-RecentChanges
