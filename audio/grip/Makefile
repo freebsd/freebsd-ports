@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grip
-PORTVERSION=	2.99.0
+PORTVERSION=	3.0.0
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=grip
@@ -33,7 +33,7 @@ CONFIGURE_ENV+=	CFLAGS="-g" \
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 .endif
 
-INSTALL_SUBDIRS=	po src intl pixmaps
+INSTALL_SUBDIRS=	contrib intl pixmaps po src
 .if !defined(NOPORTDOCS)
 INSTALL_SUBDIRS+=	doc
 .endif

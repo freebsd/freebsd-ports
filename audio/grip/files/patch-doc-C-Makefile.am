@@ -1,0 +1,26 @@
+--- doc/C/Makefile.am.orig	Mon Feb 25 23:09:25 2002
++++ doc/C/Makefile.am	Fri Apr 19 20:45:01 2002
+@@ -1,4 +1,4 @@
+-grip_helpdir = $(DESTDIR)$(datadir)/gnome/help/grip/C
++grip_helpdir = $(datadir)/gnome/help/grip/C
+ 
+ grip_help_DATA =         \
+         grip.html        \
+@@ -35,10 +35,10 @@
+ 	-cp grip.html $(distdir)
+ 
+ install-data-local: grip.html
+-	$(mkinstalldirs) $(grip_helpdir)/images
++	$(mkinstalldirs) $(DESTDIR)$(grip_helpdir)/images
+ 	-for file in $(srcdir)/grip/*.html $(srcdir)/grip/*.css $(srcdir)/grip/*.png; do \
+ 	basefile=`basename $$file`; \
+-	$(INSTALL_DATA) $(srcdir)/$$file $(grip_helpdir)/$$basefile; \
++	$(INSTALL_DATA) $(srcdir)/$$file  $(DESTDIR)$(grip_helpdir)/$$basefile; \
+ 	done
+ 
+ grip.ps: grip.sgml
+@@ -46,4 +46,3 @@
+ 
+ grip.rtf: grip.sgml       
+ 	-db2rtf $<
+-
