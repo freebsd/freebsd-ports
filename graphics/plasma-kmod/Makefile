@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A plasma-effect screensaver kernel module
 
 .if !exists(/usr/src/sys/dev/syscons/syscons.h)
-BROKEN=		"Requires kernel source (/usr/src/sys) to build"
+IGNORE=		"Requires kernel source (/usr/src/sys) to build"
 .endif
 
 do-install:

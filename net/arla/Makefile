@@ -13,16 +13,16 @@ MASTER_SITES=	ftp://ftp.stacken.kth.se/pub/arla/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free AFS client implementation
 
-BROKEN=		"Does not build"
+ROKEN=		"Does not build"
 
 USE_XLIB=	yes
 
 .if !exists(/usr/lib/libkafs.a)
-BROKEN=		requires kerberos
+IGNORE=		requires kerberos
 .endif
 
 .if !exists(/usr/src/sys/kern/vnode_if.src)
-BROKEN=		requires kernel source
+IGNORE=		requires kernel source
 .endif
 
 GNU_CONFIGURE=	yes

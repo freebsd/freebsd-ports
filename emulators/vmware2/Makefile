@@ -54,15 +54,15 @@ MODULES=	vmmon vmnet
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 400013
-BROKEN=		"Systems prior to 400013 is out of support"
+IGNORE=		"Systems prior to 400013 is out of support"
 .endif
 
 .if !defined(HAVE_LINPROCFS) && !exists(/modules/linprocfs.ko) && !exists(/boot/kernel/linprocfs.ko) && !exists(${PREFIX}/modules/linprocfs.ko)
-BROKEN=		"This software absolutely requires Linux procfs support"
+IGNORE=		"This software absolutely requires Linux procfs support"
 .endif
 
 .if !exists(/${SRC_BASE}/Makefile)
-BROKEN=		"Kernel source files required"
+IGNORE=		"Kernel source files required"
 .endif
 
 .if exists(${WRKDIRPREFIX}${.CURDIR}/work/Makefile.inc.net)
