@@ -14,6 +14,13 @@ DISTNAME=	PHP-Nuke-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+.if defined(WITH_PHP4)
+RUN_DEPENDS+=	$(LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
+.else
+RUN_DEPENDS+=	$(LOCALBASE}/libexec/apache/libphp3.so:${PORTSDIR}/www/mod_php3
+.endif
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 DOCS=		BUGS CHANGES README TODO
