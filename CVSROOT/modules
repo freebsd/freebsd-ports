@@ -7704,6 +7704,7 @@ php4-odbc	ports/databases/php4-odbc
 php4-oracle	ports/databases/php4-oracle
 php4-pcre	ports/devel/php4-pcre
 php4-pear	ports/devel/php4-pear
+php4-pgsql	ports/databases/php4-pgsql
 php4-recode	ports/converters/php4-recode
 php4-xml	ports/textproc/php4-xml
 php4-zlib	ports/archivers/php4-zlib
