@@ -18,4 +18,6 @@ ONLY_FOR_ARCHS=	i386
 
 MAN1=		wavplay.1
 
+PLIST_FILES=	bin/wavplay bin/wavrec
+
 .include <bsd.port.mk>
