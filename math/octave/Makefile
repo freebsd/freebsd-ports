@@ -39,7 +39,7 @@ CONFIGURE_ARGS=	--disable-shared --with-fftw --host=${GNU_HOST}
 CONFIGURE_ARGS+=	--with-f2c
 .endif
 
-.if ${OSVERSION} <= 470101
+.if ${OSVERSION} < 500000
 CONFIGURE_ARGS+=	--disable-readline
 .endif
 
