@@ -7,20 +7,36 @@
 #
 
 PORTNAME=	Lingua-ZH-TaBE
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	chinese perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	../by-authors/id/A/AU/AUTRIJUS
+MASTER_SITE_SUBDIR=	Lingua
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	clsung@dragon2.net
 COMMENT=	Chinese processing via libtabe
 
 LIB_DEPENDS=	tabe.2:${PORTSDIR}/chinese/libtabe
 
 PERL_CONFIGURE=	yes
+WITH_DB?=	db3
+CONFIGURE_ARGS=	DB="${WITH_DB}"
 
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
-MAN3=	Lingua::ZH::TaBE.3
+.if ${WITH_DB} == "db2"
+LIB_DEPENDS+=	db2.0:${PORTSDIR}/databases/db2
+.elif ${WITH_DB} == "db4"
+LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
+.else
+LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
+.endif
+
+MAN3=		Lingua::ZH::TaBE.3
+
+pre-fetch:
+	@${ECHO} ""
+	@${ECHO} "You may specify db version to use:"
+	@${ECHO} ""
+	@${ECHO} "      WITH_DB=db_version          (Default db3)."
+	@${ECHO} ""
 
 .include <bsd.port.mk>
