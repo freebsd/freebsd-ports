@@ -16,7 +16,7 @@
 -PREPROCESSOR=/lib/cpp -$$ -I.
 -xdraw2.o : xdraw2.S xdraw2.inc.S fxgasm.h
 -	$(CC) $(AFLAGS) -c -o $@ xdraw2.S
-+PREPROCESSOR=/usr/libexec/cpp0 -$$ -I.
++PREPROCESSOR=$(CPP) -$$ -I.
 +xdraw2.lo : xdraw2.S xdraw2.inc.S fxgasm.h
 +	libtool --mode=compile $(CC) $(AFLAGS) -c -o $@ xdraw2.S
  

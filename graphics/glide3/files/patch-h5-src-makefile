@@ -5,7 +5,7 @@
  # Special rules for assembly files.
  #
 -PREPROCESSOR=/lib/cpp -$$ -I.
-+PREPROCESSOR=/usr/libexec/cpp0 -$$ -I.
++PREPROCESSOR=$(CPP) -$$ -I.
  xdraw2_def.o xdraw2_def.lo: xdraw2.s xdraw2.inc.s fxgasm.h
  	$(PREPROCESSOR) $< > $*.tmp.s
 -	$(CC) $(AFLAGS) -c -o $*.o $*.tmp.s
