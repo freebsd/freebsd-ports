@@ -16,7 +16,7 @@ DISTFILES=	pk${RESOLUTION}.tar.gz
 DIST_SUBDIR=	pkfonts
 EXTRACT_ONLY=	# extracted directly in install target
 NO_BUILD=	yes
-PLIST=		${PKGDIR}/${RESOLUTION}.list
+PLIST=		${PKGDIR}/pkg-plist.${RESOLUTION}
 
 .if !defined(RESOLUTION)
 RESOLUTION=	300
