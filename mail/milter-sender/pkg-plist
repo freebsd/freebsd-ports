@@ -3,8 +3,8 @@ etc/milter-sender.cf.sample
 @exec if [ ! -f %D/etc/milter-sender.cf ] ; then cp %D/%F %B/milter-sender.cf; fi
 etc/rc.d/milter-sender.sh
 sbin/milter-sender
-@exec install -d -o smmsp -g smmsp -m 755 /var/milter-sender
-@unexec rm -rf /var/milter-sender
+@exec install -d -o smmsp -g smmsp -m 755 /var/spool/milter-sender
+@unexec rm -rf /var/spool/milter-sender
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.TXT
 %%PORTDOCS%%%%DOCSDIR%%/Img/bg.gif
 %%PORTDOCS%%%%DOCSDIR%%/Img/dilbert2003071742312.gif
