@@ -14,14 +14,13 @@ DISTNAME=	WorkMan-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.Org
 
-BROKEN=		"Fails to package (html manpages)"
-
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		${WRKDIR}/workman
 USE_IMAKE=	yes
 MAN1=		workman.1
 MAN5=		workmandb.5
+XFREE86_HTML_MAN=no
 
 post-install:
 	${GZIP_CMD} ${X11BASE}/man/man5/workmandb.5
