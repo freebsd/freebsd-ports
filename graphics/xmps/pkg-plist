@@ -1,9 +1,22 @@
 bin/xmps
+bin/xmps-config
+include/xmps/plugin.h
+include/xmps/types.h
+include/xmps/xmps_config.h
+include/xmps/xmps_message.h
+include/xmps/xmps_support.h
+lib/libxmps.so
+lib/xmps/Codecs/libflx.so
 lib/xmps/Codecs/libsmpeg.so
 lib/xmps/Renderers/libSDL.so
 lib/xmps/Renderers/libX11.so
+share/aclocal/xmps.m4
 share/gnome/apps/Multimedia/XMPS.desktop
-share/gnome/pixmaps/xmps.png
+share/gnome/xmps/fast_forward.xpm
+share/gnome/xmps/load.xpm
+share/gnome/xmps/pause.xpm
+share/gnome/xmps/play.xpm
+share/gnome/xmps/rewind.xpm
 share/gnome/xmps/skins/DarkDepth/buttons.xpm
 share/gnome/xmps/skins/DarkDepth/config
 share/gnome/xmps/skins/DarkDepth/controls.xpm
@@ -18,7 +31,10 @@ share/gnome/xmps/skins/default/digits.xpm
 share/gnome/xmps/skins/default/main.xpm
 share/gnome/xmps/skins/default/playlist.xpm
 share/gnome/xmps/skins/default/titlebar.xpm
+share/gnome/xmps/stop.xpm
+share/gnome/xmps/xmps-logo.xpm
 share/gnome/xmps/xmps_intro.xpm
+share/locale/de/LC_MESSAGES/xmps.mo
 share/locale/fi/LC_MESSAGES/xmps.mo
 share/locale/fr/LC_MESSAGES/xmps.mo
 share/locale/pl/LC_MESSAGES/xmps.mo
@@ -30,3 +46,4 @@ share/locale/sv/LC_MESSAGES/xmps.mo
 @dirrm lib/xmps/Renderers
 @dirrm lib/xmps/Codecs
 @dirrm lib/xmps
+@dirrm include/xmps

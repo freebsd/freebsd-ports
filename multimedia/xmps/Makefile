@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmps
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.3
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://xmps.sourceforge.net/sources/
 
@@ -22,13 +22,10 @@ USE_GNOME=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		SDL_CONFIG="${SDL_CONFIG}" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
-		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
-		 s|\$$\(top_builddir\)/intl/libintl.a|-lintl|g' ${WRKSRC}/configure
+	@${PERL} -pi -e "s|-lpthread|-pthread|g" ${WRKSRC}/configure
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
 		 s|\$$\(datadir\)/aclocal|\$$\(prefix\)/share/aclocal|g ; \
