@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Type-2 DV codec-encoded AVI streams to mjpeg-encoded AVI
 
-LIB_DEPENDS=	dv.3:${PORTSDIR}/multimedia/libdv
+LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv
 
 USE_GNOME=	gdkpixbuf
 MAKEFILE=	makefile

@@ -63,7 +63,7 @@ PLIST_SUB+=	ZVBI="@comment " ZVBI5="@comment "
 .endif
 
 .if defined(WITH_LIBDV)
-LIB_DEPENDS+=	dv.3:${PORTSDIR}/multimedia/libdv
+LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv
 CONFIGURE_ARGS+=--enable-dv
 PLIST_SUB+=	DV=
 .else

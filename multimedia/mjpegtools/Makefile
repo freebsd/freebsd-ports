@@ -60,7 +60,7 @@ PLIST_SUB+=	DIVX=''
 
 # pre-detection
 # LIBDV
-.if exists(${LOCALBASE}/lib/libdv.so.3)
+.if exists(${LOCALBASE}/lib/libdv.a)
 WITH_LIBDV=	yes
 .endif
 # LIBGNUGETOPT
@@ -90,7 +90,7 @@ PLIST_SUB+=	GTK="@comment "
 .endif
 #
 .ifdef(WITH_LIBDV)
-LIB_DEPENDS+=	dv.3:${PORTSDIR}/multimedia/libdv
+LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv
 
 CONFIGURE_ARGS+=	--with-dv=${LOCALBASE}
 .endif

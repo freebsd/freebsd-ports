@@ -244,7 +244,7 @@ WITH_ARTS=	yes
 WITH_CDPARANOIA=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libdv.so.3)
+.if exists(${LOCALBASE}/lib/libdv.a)
 WITH_LIBDV=	yes
 .endif
 
@@ -394,7 +394,7 @@ CONFIGURE_ARGS+=	--disable-gif
 .endif
 
 .if defined(WITH_LIBDV)
-LIB_DEPENDS+=	dv.3:${PORTSDIR}/multimedia/libdv
+LIB_DEPENDS+=	dv.4:${PORTSDIR}/multimedia/libdv
 
 CONFIGURE_ARGS+=	--enable-libdv
 .else
