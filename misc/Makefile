@@ -57,6 +57,7 @@
     SUBDIR += freedialog
     SUBDIR += geekcode
     SUBDIR += git
+    SUBDIR += gnomepm
     SUBDIR += gnomeusersguide
     SUBDIR += gnomeutils
     SUBDIR += gnuls
