@@ -6,18 +6,16 @@
 #
 
 PORTNAME=		kaspaliste
-PORTVERSION=		0.94
-PORTREVISION=	2
+PORTVERSION=		0.96
 CATEGORIES=		print kde
-MASTER_SITES=		http://kaspaliste.sourceforge.net/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	kaspaliste
 
 MAINTAINER=		jaapb@kerguelen.org
 COMMENT=		Bibliography tool for KDE/Postgres/BibTeX
 
-LIB_DEPENDS= \
-		pq.3:${PORTSDIR}/databases/postgresql7
+LIB_DEPENDS=		pq.3:${PORTSDIR}/databases/postgresql7
 
-USE_BZIP2=		yes
 USE_KDEBASE_VER=	3
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
@@ -26,10 +24,16 @@ CONFIGURE_ARGS+=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}	\
 			--with-pg-includes=${LOCALBASE}/include \
 			--with-pg-libs=${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
+PKGMESSAGE=		${WRKDIR}/pkg-message
 
-.if ( ${OSVERSION} >= 502102 )
-BROKEN=			"Does not compile on FreeBSD >= 5.x"
-.endif
+pre-configure:
+	@${RM} ${WRKSRC}/config.cache
 
-.include <bsd.port.post.mk>
+post-install:
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/data/create.tables.sql ${DATADIR}
+	@${SED} -e "s|%%DATADIR%%|${DATADIR}|" < ${FILESDIR}/pkg-message.in	\
+		> ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>

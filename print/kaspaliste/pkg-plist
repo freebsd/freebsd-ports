@@ -111,6 +111,7 @@ share/apps/kaspaliste/icons/locolor/16x16/apps/inspart.png
 share/apps/kaspaliste/icons/locolor/16x16/apps/editundo.png
 share/apps/kaspaliste/pics/books.jpg
 share/config/kaspalisterc
+%%DATADIR%%/create.tables.sql
 share/doc/HTML/en/kaspaliste/author-doc.png
 share/doc/HTML/en/kaspaliste/biblio-doc.png
 share/doc/HTML/en/kaspaliste/bibtex-doc.png
@@ -135,5 +136,6 @@ share/doc/HTML/en/kaspaliste/search-doc.png
 @dirrm share/apps/kaspaliste/icons
 @dirrm share/apps/kaspaliste/pics
 @dirrm share/apps/kaspaliste
+@dirrm %%DATADIR%%
 @unexec rm %D/share/doc/HTML/en/kaspaliste/common 2>/dev/null || true
 @dirrm share/doc/HTML/en/kaspaliste
