@@ -6200,6 +6200,7 @@ p5-Apache-NNTPGateway	ports/www/p5-Apache-NNTPGateway
 p5-Apache-PageKit	ports/www/p5-Apache-PageKit
 p5-Apache-ParseLog	ports/textproc/p5-Apache-ParseLog
 p5-Apache-Peek	ports/www/p5-Apache-Peek
+p5-Apache-Profiler	ports/www/p5-Apache-Profiler
 p5-Apache-Radius	ports/www/p5-Apache-Radius
 p5-Apache-Reload	ports/www/p5-Apache-Reload
 p5-Apache-SSI	ports/www/p5-Apache-SSI
