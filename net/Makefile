@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.205 1998/12/08 04:20:11 billf Exp $
+# $Id: Makefile,v 1.206 1998/12/16 11:11:24 flathill Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -107,6 +107,7 @@
     SUBDIR += p5-SNMP
     SUBDIR += p5-pRPC
     SUBDIR += pathchar
+    SUBDIR += pavuk
     SUBDIR += pcnfsd
     SUBDIR += pmf
     SUBDIR += portscanner
