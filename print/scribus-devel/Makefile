@@ -9,8 +9,9 @@
 PORTNAME=	scribus
 PORTVERSION=	1.2.1
 CATEGORIES=	print editors
-MASTER_SITES=	http://www.scribus.org.uk/downloads/%SUBDIR%/
-MASTER_SITE_SUBDIR=	${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://www.scribus.org.uk/downloads/${PORTVERSION}/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A comprehensive desktop publishing program
