@@ -9,7 +9,7 @@
 
 PORTNAME=		phoenix
 PORTVERSION=		0.5
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		www # pita
 MASTER_SITES=		${MASTER_SITE_LOCAL} ${BSD_WEBDIR}
 MASTER_SITE_SUBDIR=	alane
@@ -174,6 +174,6 @@ cons-plist:
 # dependency without trashing the actual code of the generate-plist
 # target. This is a limitation of the make(1) program itself. 
 # </alane>
-generate-plist: link-bins cleanup-install cons-plist
+generate-plist: link-bins link-java cleanup-install cons-plist
 
 #EOF
