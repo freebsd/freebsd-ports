@@ -20,6 +20,8 @@ lib/modules/codeconv/BIG5.so
 lib/modules/codeconv/GB2312.so
 lib/modules/codeconv/ISO8859_1.so
 lib/modules/codeconv/ISO8859_10.so
+lib/modules/codeconv/ISO8859_11.so
+lib/modules/codeconv/ISO8859_14.so
 lib/modules/codeconv/ISO8859_15.so
 lib/modules/codeconv/ISO8859_2.so
 lib/modules/codeconv/ISO8859_3.so
@@ -35,6 +37,7 @@ lib/modules/codeconv/JISX0212.so
 lib/modules/codeconv/KOI8.so
 lib/modules/codeconv/KSC5601.so
 lib/modules/codeconv/KSCJOHAB.so
+lib/modules/codeconv/VISCII.so
 lib/libfont.a
 lib/libfont.so
 lib/libfont.so.1.0

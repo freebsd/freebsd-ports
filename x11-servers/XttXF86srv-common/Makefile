@@ -3,7 +3,7 @@
 # Date created:		15 April 1998
 # Whom:			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
-# $Id: Makefile,v 1.5 1998/10/10 04:22:09 steve Exp $
+# $Id: Makefile,v 1.6 1998/10/15 01:18:23 jseger Exp $
 #
 
 DISTNAME=	xc
@@ -23,8 +23,6 @@ PATCHFILES=	3.3.2-patch1 3.3.2-patch2 3.3.2-patch3 \
 		xtt10-to-pl00.diff.gz 
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
-
-BROKEN_ELF=	yes
 
 LIB_DEPENDS=	ttf.2:${PORTSDIR}/print/freetype
 
@@ -104,7 +102,7 @@ pre-fetch:
 pre-patch:
 	@( ${PATCH} ${PATCH_DIST_ARGS} < ${XTTDIR}/xtt-1.0.diff; \
 	${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/xttdoc10-to-pl00.diff.gz | \
-	${PATCH} -d ${XTTDIR} )
+	${PATCH} -s -d ${XTTDIR} )
 
 pre-configure:
 	@( \
@@ -141,10 +139,14 @@ do-install:
 	@( \
 	cd ${WRKSRC}/lib/font; \
 	${SETENV} ${MAKE_ENV} ${MAKE} install; \
+	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
+		${LN} -sf libfont.so.1.0 ${PREFIX}/lib/libfont.so; \
+	fi; \
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib; \
 	${INSTALL_SCRIPT} ${FILESDIR}/mkfontdir.pl ${PREFIX}/bin; \
 	${MKDIR} ${DOCDIR}; \
-	${INSTALL_DATA} ${XTTDIR}/xtt10-* ${DOCDIR})
+	${INSTALL_DATA} ${XTTDIR}/xtt10-*.eng ${DOCDIR}; \
+	${INSTALL_DATA} ${XTTDIR}/xtt10-*.jis ${DOCDIR} )
 .elif defined(SERVER) && ${SERVER} == xfs
 do-install:
 	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${INSTALL_PROGRAM} ${WRKSRC}/programs/xfs/xfs ${PREFIX}/bin/xfs.xtt
