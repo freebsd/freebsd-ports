@@ -18,7 +18,7 @@ PATCH_DIST_STRIP=	-p2
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An RFC1413 identification server
 
-BROKEN=		"Checksum mismatch"
+BROKEN=		"Does not fetch"
 
 ALL_TARGET=	freebsd
 MAKE_ENV=	REALPREFIX=${PREFIX}
