@@ -32,6 +32,42 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="759b8dfe-3972-11d9-a9e7-0001020eed82">
+    <topic>Overflow error in fetch</topic>
+    <affects>
+      <system>
+	<name>FreeBSD</name>
+	<range><ge>5.3</ge><lt>5.3_1</lt></range>
+	<range><ge>5.2.1</ge><lt>5.2.1_12</lt></range>
+	<range><ge>5.1</ge><lt>5.1_18</lt></range>
+	<range><ge>5.0</ge><lt>5.0_22</lt></range>
+	<range><ge>4.10</ge><lt>4.10_4</lt></range>
+	<range><ge>4.9</ge><lt>4.9_13</lt></range>
+	<range><ge>4.8</ge><lt>4.8_26</lt></range>
+	<range><lt>4.7_28</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>An integer overflow condition in <a
+	    href="http://www.freebsd.org/cgi/man.cgi?query=fetch">fetch(1)</a>
+	  in the processing of HTTP headers can result in a buffer
+	  overflow.</p>
+	<p>A malicious server or CGI script can respond to an HTTP or
+	  HTTPS request in such a manner as to cause arbitrary
+	  portions of the client's memory to be overwritten, allowing
+	  for arbitrary code execution.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdsa>SA-04:16.fetch</freebsdsa>
+    </references>
+    <dates>
+      <discovery>2004-11-14</discovery>
+      <entry>2004-11-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f3d3f621-38d8-11d9-8fff-000c6e8f12ef">
     <topic>smbd -- buffer-overrun vulnerability</topic>
     <affects>
