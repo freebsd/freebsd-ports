@@ -1,5 +1,5 @@
---- configure.in.orig	Tue Feb 13 02:19:24 2001
-+++ configure.in	Sat Feb 17 05:17:02 2001
+--- configure.in.orig	Sun Mar  4 11:07:42 2001
++++ configure.in	Wed Mar 28 05:33:09 2001
 @@ -65,7 +65,7 @@
  #
  AC_ENABLE_SHARED(no)
@@ -9,21 +9,7 @@
  # Substitute INCLTDL and LIBLTDL in the Makefiles
  AC_SUBST(INCLTDL)
  AC_SUBST(LIBLTDL)
-@@ -487,10 +487,10 @@
- LIB_THREAD=''
- if test "$with_threads" != 'no'
- then
--  AC_CHECK_LIB(pthread,pthread_attr_init,
-+  AC_CHECK_LIB(c_r,pthread_attr_init,
-     [AC_DEFINE(HasPTHREADS,,Define if you have Posix thread methods.)
--     LIB_THREAD="-lpthread"
--     DEF_THREAD="-D_REENTRANT"],,)
-+     LIB_THREAD="-pthread"
-+     DEF_THREAD="-D_THREAD_SAFE"],,)
-   LIBS="$LIB_THREAD $LIBS"
-   CPPFLAGS="$DEF_THREAD $CPPFLAGS"
- fi
-@@ -1021,6 +1021,22 @@
+@@ -1021,6 +1027,22 @@
      AC_MSG_RESULT()
      failed=0;
      passed=0;
@@ -46,7 +32,7 @@
      AC_CHECK_HEADER(libxml/parser.h,passed=`expr $passed + 1`,failed=`expr $failed + 1`)
      AC_CHECK_LIB(xml2,xmlParseExternalEntity,passed=`expr $passed + 1`,failed=`expr $failed + 1`,)
      AC_MSG_CHECKING(if XML package is complete)
-@@ -1030,6 +1046,8 @@
+@@ -1030,6 +1052,8 @@
      then
  	AC_MSG_RESULT(no -- some components failed test)
          have_xml='no (failed tests)'

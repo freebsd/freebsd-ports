@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	5.2.9
-PORTREVISION=	1
+PORTVERSION=	5.3.1
 CATEGORIES=	graphics perl5
-MASTER_SITES=	ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/ImageMagick/ \
-		ftp://gd.tuwien.ac.at/pub/graphics/ImageMagick/ \
-		ftp://ftp.sunet.se/pub/multimedia/graphics/ImageMagick/ \
-		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/ImageMagick/ \
-		ftp://ftp.fifi.org/pub/ImageMagick/ \
-		ftp://ftp.simplesystems.org/pub/ImageMagick/ \
-		${MASTER_SITE_RINGSERVER}
-MASTER_SITE_SUBDIR=	graphics/ImageMagick
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%,imagemagick,} \
+		ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/%SUBDIR%/ \
+		ftp://gd.tuwien.ac.at/pub/graphics/%SUBDIR%/ \
+		ftp://ftp.sunet.se/pub/multimedia/graphics/%SUBDIR%/ \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/ImageMagick,} \
+		ftp://ftp.simplesystems.org/pub/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -88,9 +86,11 @@ PLIST_SUB+=	X11=''
 .endif
 
 pre-patch:
+	@${PERL} -pi -e 's|\(pthread,|\(c_r,|g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g ; \
+		 s|-D_REENTRANT|${PTHREAD_CFLAGS}|g' ${WRKSRC}/configure.in
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$$\(top_builddir\)/ltdl/libltdlc.la|\$$\(LIBLTDL\)|g'
-	${PERL} -pi -e 's|lcms/lcms.h|lcms.h|g' \
-		${WRKSRC}/configure.in ${WRKSRC}/magick/transform.c
+	@${PERL} -pi -e 's|lcms/lcms.h|lcms.h|g' ${WRKSRC}/magick/transform.c
 
 .include <bsd.port.mk>
