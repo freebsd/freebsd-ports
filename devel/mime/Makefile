@@ -15,11 +15,9 @@ COMMENT=	C library to parse mime data
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+INSTALLS_SHLIB=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e "s,-fpic,-fpic -fPIC,g" ${WRKSRC}/Makefile.in
-
-post-install:
-	@${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

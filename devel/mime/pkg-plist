@@ -4,5 +4,3 @@ include/mimemisc.h
 lib/libmime.a
 lib/libmime.so.1
 lib/libmime_p.a
-@unexec /usr/bin/env /sbin/ldconfig -R
-@exec /usr/bin/env /sbin/ldconfig -m %B
