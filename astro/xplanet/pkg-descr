@@ -1,0 +1,10 @@
+Xplanet was inspired by Xearth, which renders an image of the earth into the X
+root window. Xplanet uses the Imlib library to read user supplied maps of the
+earth (or another planet). Orthographic and mercator projections can be
+rendered to the root window or saved to a file. An image that the user can
+rotate interactively can be popped up in a window using OpenGL or Mesa. 
+
+WWW: http://www.wrightflyer.org/~hari/xplanet/
+Author: Hari Nair <hari@almuni.caltech.edu>
+
+--Will <andrews@technologist.com>
