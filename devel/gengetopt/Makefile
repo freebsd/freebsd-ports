@@ -7,11 +7,10 @@
 #
 
 PORTNAME=	gengetopt
-PORTVERSION=	2.9
-PORTREVISION=	1
+PORTVERSION=	2.11
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR= ${PORTNAME}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	cyrille.lefevre@laposte.net
 COMMENT=	A tool for generating a C function which parses command line arguments
