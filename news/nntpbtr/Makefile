@@ -3,7 +3,7 @@
 # Date created:         1 July 1996
 # Whom:                 dk
 #
-# $Id: Makefile,v 1.1.1.1 1996/07/23 08:05:10 asami Exp $
+# $Id: Makefile,v 1.2 1996/11/18 11:38:01 asami Exp $
 #
 
 DISTNAME=       nntpbtr-1.7
@@ -17,7 +17,7 @@ MAN1=		nntpbtr.1
 
 # "patch" complains otherwise
 post-extract:
-	rm -rf ${WRKSRC}/RCS
+	@${RM} -rf ${WRKSRC}/RCS
 
 pre-build:
 	cd ${FILESDIR} ; pax -rw -l -u dbz ${WRKDIR} || true
