@@ -4900,6 +4900,7 @@ metacity	ports/x11-wm/metacity
 metacity-theme-6nome	ports/x11-themes/metacity-theme-6nome
 metacity-theme-aero	ports/x11-themes/metacity-theme-aero
 metacity-theme-alloy-c	ports/x11-themes/metacity-theme-alloy-c
+metacity-theme-iridium-rounded	ports/x11-themes/metacity-theme-iridium-rounded
 metacity-themes	ports/x11-themes/metacity-themes
 metakit		ports/databases/metakit
 metalog		ports/sysutils/metalog
