@@ -3,7 +3,7 @@
 # Date created:		17 May 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/09 13:08:40 kuriyama Exp $
 #
 
 DISTNAME=	swing11
@@ -21,7 +21,7 @@ WRKSRC=		${WRKDIR}/swing-1.1
 NO_BUILD=	YES
 PLIST_SUB=	JFCSUBDIR=${JFCSUBDIR}
 
-JAVASUBDIR=	jdk1.1.7
+JAVASUBDIR=	jdk1.1.8
 JFCSUBDIR=	swing-1.1
 
 do-fetch:
