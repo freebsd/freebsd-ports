@@ -14,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
-
 USE_PERL5=	yes
 USE_XLIB=	yes
 NO_BUILD=	yes
@@ -30,4 +28,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/README.type1inst
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${XFREE86_VERSION} == 4 
+RUN_DEPENDS+=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+.endif
+
+.include <bsd.port.post.mk>
