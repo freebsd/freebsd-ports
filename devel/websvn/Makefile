@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	websvn
-PORTVERSION=	1.38
+PORTVERSION=	1.40
 CATEGORIES=	devel www
 MASTER_SITES=	http://websvn.tigris.org/files/documents/1380/10659/
-DISTNAME=	WebSVN
+DISTNAME=	WebSVN_${PORTVERSION:S/.//}
 
 MAINTAINER=	ychsiao@ychsiao.idv.tw
 COMMENT=	Subversion repository web frontend
@@ -25,6 +25,7 @@ PLIST_SUB+=	WEBSVNDIR=${WEBSVNDIR}
 do-install:
 	${MKDIR} ${PREFIX}/${WEBSVNDIR}
 	${CP} -R ${WRKSRC}/* ${PREFIX}/${WEBSVNDIR}
-	${CHOWN} www:www ${PREFIX}/${WEBSVNDIR}
+	${CHOWN} -R www:www ${PREFIX}/${WEBSVNDIR}
+	${FIND} ${PREFIX}/${WEBSVNDIR} -type f | ${XARGS} ${CHMOD} 644
 
 .include <bsd.port.mk>
