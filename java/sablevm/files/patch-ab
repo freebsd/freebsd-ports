@@ -1,16 +1,17 @@
-diff -ur sablevm-0.1.6.orig/configure.in sablevm-0.1.6/configure.in
---- sablevm-0.1.6.orig/configure.in	Fri Apr 27 21:14:41 2001
-+++ sablevm-0.1.6/configure.in	Mon Jul  8 18:12:47 2002
-@@ -47,12 +47,13 @@
+diff -ur work.orig/sablevm-1.0.2/configure.ac work/sablevm-1.0.2/configure.ac
+--- work.orig/sablevm-1.0.2/configure.ac	Wed Aug 14 22:29:54 2002
++++ work/sablevm-1.0.2/configure.ac	Thu Aug 15 14:54:29 2002
+@@ -114,12 +114,15 @@
  AC_LIBTOOL_DLOPEN
  AM_PROG_LIBTOOL
  
 +dnl Required FreeBSD compile flags
-+CFLAGS="$CFLAGS -D_P1003_1B_VISIBLE -pthread -I/usr/local/include -L/usr/local/lib"
++test "x$prefix" = xNONE && prefix=$ac_default_prefix
++CFLAGS="${CFLAGS} -D_P1003_1B_VISIBLE -pthread -I${prefix}/include -L${prefix}/lib"
 +
  dnl Checks for libraries.
--AC_CHECK_LIB(dl,dlopen,echo -n,echo ***ERROR: libdl is missing; exit 1)
  AC_CHECK_LIB(ffi,ffi_prep_cif,echo -n,echo ***ERROR: libffi is missing; exit 1)
+ AC_CHECK_LIB(ltdl,lt_dlinit,echo -n,echo ***ERROR: libltdl is missing; exit 1)
  AC_CHECK_LIB(m,fmod,echo -n,echo ***ERROR: libm is missing; exit 1)
  AC_CHECK_LIB(popt,poptGetContext,echo -n,echo ***ERROR: libpopt is missing; exit 1)
 -AC_CHECK_LIB(pthread,pthread_self,echo -n,echo ***ERROR: libpthread is missing; exit 1)

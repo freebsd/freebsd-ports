@@ -1,12 +1,12 @@
-diff -ur sablevm-0.1.6.orig/src/libsablevm/Makefile.in sablevm-0.1.6/src/libsablevm/Makefile.in
---- sablevm-0.1.6.orig/src/libsablevm/Makefile.in	Fri Apr 27 21:54:35 2001
-+++ sablevm-0.1.6/src/libsablevm/Makefile.in	Mon Jul  8 18:13:03 2002
-@@ -83,7 +83,7 @@
- libsablevm_la_SOURCES =  	constants.h 	includes.h 	jnidefs.h 	invoke_interface.c 	invoke_interface.h 	init.c 	init.h 	types.h 	alloc.c 	alloc.h 	thread.c 	thread.h 	util.c 	util.h 	native_interface.c 	native_interface.h 	class_loader.c 	class_loader.h 	macros.c 	macros.h 	clalloc.h 	clalloc.c 	error.c 	error.h 	system.c 	system.h 	class_file.c 	class_file.h 	class_init.c 	class_init.h 	verifier.c 	verifier.h 	resolve.c 	resolve.h 	global_refs.c 	global_refs.h 	local_refs.c 	local_refs.h 	prepare.c 	prepare.h 	prepare_code.c 	prepare_code.h 	heap_manager.c 	heap_manager.h 	interpreter.c 	interpreter.h 	method_invoke.c 	method_invoke.h 	pthread_rec_svm.c 	pthread_rec_svm.h 	vmlib.c 	vmlib.h 	native.c 	native.h
+diff -ur work.orig/sablevm-1.0.2/src/libsablevm/Makefile.in work/sablevm-1.0.2/src/libsablevm/Makefile.in
+--- work.orig/sablevm-1.0.2/src/libsablevm/Makefile.in	Wed Aug 14 22:34:07 2002
++++ work/sablevm-1.0.2/src/libsablevm/Makefile.in	Thu Aug 15 14:56:32 2002
+@@ -245,7 +245,7 @@
+ 	vm_args.m4.c
  
  
--libsablevm_la_LIBADD = -lpthread -lm -ldl -lffi
-+libsablevm_la_LIBADD = -lm -L@libdir@ -lffi
+-libsablevm_la_LIBADD = -lpthread -lm -lffi -lltdl
++libsablevm_la_LIBADD = -lm -L@libdir@ -lffi -lltdl
  
- libsablevm_la_LDFLAGS = -version-info @LIBVERSION@
+ libsablevm_la_LDFLAGS = -version-info @LIBRARY_VERSION@
  
