@@ -1,5 +1,6 @@
 bin/dbget
 %%RUBY_SITELIBDIR%%/bio.rb
+%%RUBY_SITELIBDIR%%/bio/appl/blast.rb
 %%RUBY_SITELIBDIR%%/bio/data/aa.rb
 %%RUBY_SITELIBDIR%%/bio/data/codontable.rb
 %%RUBY_SITELIBDIR%%/bio/data/keggorg.rb
@@ -7,6 +8,8 @@ bin/dbget
 %%RUBY_SITELIBDIR%%/bio/db.rb
 %%RUBY_SITELIBDIR%%/bio/db/aaindex.rb
 %%RUBY_SITELIBDIR%%/bio/db/ddbj.rb
+%%RUBY_SITELIBDIR%%/bio/db/embl.rb
+%%RUBY_SITELIBDIR%%/bio/db/fasta.rb
 %%RUBY_SITELIBDIR%%/bio/db/genbank.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/brite.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/cell.rb
@@ -14,12 +17,18 @@ bin/dbget
 %%RUBY_SITELIBDIR%%/bio/db/kegg/enzyme.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/genes.rb
 %%RUBY_SITELIBDIR%%/bio/db/kegg/genome.rb
+%%RUBY_SITELIBDIR%%/bio/db/kegg/keggtab.rb
+%%RUBY_SITELIBDIR%%/bio/db/kegg/microarray.rb
 %%RUBY_SITELIBDIR%%/bio/db/litdb.rb
 %%RUBY_SITELIBDIR%%/bio/db/medline.rb
 %%RUBY_SITELIBDIR%%/bio/db/prosite.rb
 %%RUBY_SITELIBDIR%%/bio/db/refseq.rb
+%%RUBY_SITELIBDIR%%/bio/db/sptr.rb
+%%RUBY_SITELIBDIR%%/bio/db/swissprot.rb
 %%RUBY_SITELIBDIR%%/bio/db/transfac.rb
+%%RUBY_SITELIBDIR%%/bio/db/trembl.rb
 %%RUBY_SITELIBDIR%%/bio/io/dbget.rb
+%%RUBY_SITELIBDIR%%/bio/io/flatfile.rb
 %%RUBY_SITELIBDIR%%/bio/io/pubmed.rb
 %%RUBY_SITELIBDIR%%/bio/location.rb
 %%RUBY_SITELIBDIR%%/bio/matrix.rb
@@ -27,6 +36,8 @@ bin/dbget
 %%RUBY_SITELIBDIR%%/bio/reference.rb
 %%RUBY_SITELIBDIR%%/bio/sequence.rb
 %%RUBY_SITELIBDIR%%/bio/util/fold.rb
+%%RUBY_SITELIBDIR%%/bio/util/hoge.rb
+@dirrm %%RUBY_SITELIBDIR%%/bio/appl
 @dirrm %%RUBY_SITELIBDIR%%/bio/data
 @dirrm %%RUBY_SITELIBDIR%%/bio/db/kegg
 @dirrm %%RUBY_SITELIBDIR%%/bio/db
@@ -47,4 +58,9 @@ bin/dbget
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/bio/vs-genes.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bio
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bio/README
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bio/ja/BioRuby.rd.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bio/ja/Design.rd.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bio/ja/TODO.rd.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bio/ja/Tutorial.rd.ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/bio/ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/bio
