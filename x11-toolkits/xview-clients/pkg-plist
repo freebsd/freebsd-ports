@@ -3,8 +3,11 @@ bin/cmdtool
 bin/olwm
 bin/olwmslave
 bin/shelltool
-lib/help/clock.info
-lib/help/olwm.info
 lib/help/workspace.info
 lib/openwin-menu
 lib/openwin-menu-programs
+lib/X11/doc/html/clock.1.html
+lib/X11/doc/html/cmdtool.1.html
+lib/X11/doc/html/olwmslave.1.html
+lib/X11/doc/html/olwm.1.html
+lib/X11/doc/html/shelltool.1.html

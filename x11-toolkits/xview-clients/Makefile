@@ -7,20 +7,22 @@
 
 PORTNAME=	xview-clients
 PORTVERSION=	3.2.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		${MASTER_SITE_XCONTRIB}
-# former for ${MASER_SITE_LOCAL}, latter for ${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS .
+MASTER_SITES=	ftp://ftp.efd.lth.se/pub/X11/ \
+		ftp://ftp.uni-heidelberg.de/pub/X11/contrib/libraries/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	pav
 DISTNAME=	xview3.2p1-X11R6
+EXTRACT_ONLY=	# empty
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenLook applications and man pages
 
-DEPENDS=	${PORTSDIR}/x11-toolkits/xview:install
+BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-toolkits/xview:build
+LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 USE_X_PREFIX=	yes
-EXTRACT_ONLY=	# empty
 WRKSRC=		${WRKDIRPREFIX}${.CURDIR}/../xview/work/${DISTNAME}
 ALL_TARGET=	Clients
 INSTALL_TARGET=	'SUBDIRS=clients' install install.man
