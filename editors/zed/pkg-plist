@@ -1,4 +1,6 @@
+@comment $FreeBSD$
 bin/zed
-etc/zedrc
-share/doc/zed/zed.doc
-@dirrm share/doc/zed
+etc/zedrc.sample
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/zed.doc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
