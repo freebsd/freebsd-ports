@@ -1300,6 +1300,7 @@ cvsweb-converters	ports/sysutils/cvsweb-converters
 cvsweb3		ports/devel/cvsweb3
 cvswrap		ports/devel/cvswrap
 cvsync		ports/net/cvsync
+cwdaemon	ports/comms/cwdaemon
 cweb		ports/devel/cweb
 cwish		ports/misc/cwish
 cwtext		ports/textproc/cwtext
