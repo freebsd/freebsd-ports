@@ -7,7 +7,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=       sarep-1.0
+DISTNAME=       sarep-1.1
 CATEGORIES=	textproc
 MASTER_SITES=   http://tarp.worldserve.net/software/
 EXTRACT_SUFX=
