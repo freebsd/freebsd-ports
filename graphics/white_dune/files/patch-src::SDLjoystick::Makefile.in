@@ -1,0 +1,27 @@
+--- src/SDLjoystick/Makefile.in.orig	Tue Nov 25 01:30:45 2003
++++ src/SDLjoystick/Makefile.in	Tue Nov 25 15:23:59 2003
+@@ -13,7 +13,7 @@
+ SDL_JOYSTICK_SUBDIR = @SDL_JOYSTICK_SUBDIR@
+ LIBS = @LIBS@
+ 
+-CFLAGS = @CFLAGS@ -I$$PWD 
++CFLAGS = @CFLAGS@ -I$$PWD @CPPFLAGS@
+ RANLIB = @RANLIB@
+ 
+ OBJS =  mini_SDL_joystick.o $(SDL_JOYSTICK_SUBDIR)/SDL_sysjoystick.o
+@@ -24,13 +24,13 @@
+ 	$(RANLIB) $@ 
+ 
+ joysticktest: joysticktest.c libSDLjoystick.a
+-	cc -o $@ $(CFLAGS) joysticktest.c libSDLjoystick.a $(LIBS)
++	$(CC) -o $@ $(CFLAGS) joysticktest.c libSDLjoystick.a $(LIBS)
+ 
+ clean:
+ 	rm -f joysticktest libSDLjoystick.a *.o */*.o
+ 
+ depend: 
+-	cc -M -I$$PWD $(SDL_JOYSTICK_SUBDIR)/SDL_sysjoystick.c >> Makefile
++	$(CC) -M -I$$PWD $(SDL_JOYSTICK_SUBDIR)/SDL_sysjoystick.c >> Makefile
+ 
+ # do not delete 
+ 
