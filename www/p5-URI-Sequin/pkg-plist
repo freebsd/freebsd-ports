@@ -1,8 +1,8 @@
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/URI/Sequin/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/URI/Sequin.pm
-lib/perl5/site_perl/%%PERL_VER%%/URI/Sequin/examples/Example.pl
-lib/perl5/site_perl/%%PERL_VER%%/URI/Sequin/examples/referer_log1.txt
-lib/perl5/site_perl/%%PERL_VER%%/URI/Sequin/examples/referer_log2.txt
+lib/perl5/site_perl/%%PERL_VER%%/URI/Sequin/examples/example.pl
+lib/perl5/site_perl/%%PERL_VER%%/URI/Sequin/examples/ref1.log
+lib/perl5/site_perl/%%PERL_VER%%/URI/Sequin/examples/ref2.log
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/URI/Sequin
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/URI/Sequin/examples
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/URI/Sequin
