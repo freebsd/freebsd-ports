@@ -1,0 +1,10 @@
+bin/pypanda
+share/doc/pypanda/README
+share/pypanda/camdown.jpg
+share/pypanda/camrefresh.jpg
+share/pypanda/pypanda.png
+share/pypanda/pypanda.py
+share/pypanda/pypanda.pyc
+share/pypanda/pypanda.pyo
+@dirrm share/pypanda
+@dirrm share/doc/pypanda
