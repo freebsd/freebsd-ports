@@ -28,4 +28,6 @@ CONFIGURE_ARGS+="--with-xdmdir=${X11BASE}/lib/X11/xdm" \
 CONFIGURE_ENV+=	MOC="${MOC}"
 USE_GMAKE=	yes
 
+FORBIDDEN=	"Local buffer overflow yielding gid nogroup"
+
 .include <bsd.port.mk>
