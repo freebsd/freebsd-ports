@@ -1,0 +1,21 @@
+--- Makefile.in.orig	Sun Mar  7 07:36:03 2004
++++ Makefile.in	Sat Mar 20 16:06:19 2004
+@@ -108,7 +108,7 @@
+ USE_NLS = @USE_NLS@
+ VERSION = @VERSION@
+ 
+-SUBDIRS = intl m4  art doc help omf-install packaging pixmaps po src test
++SUBDIRS = intl m4  art doc $(GNOME_SUBDIRS) packaging pixmaps po src test
+ 
+ gtkamdocdir = $(datadir)/doc/gtkam
+ gtkamdoc_DATA = AUTHORS COPYING NEWS README TODO
+@@ -412,8 +412,7 @@
+ install-exec-am:
+ install-exec: install-exec-recursive
+ 
+-install-data-am: install-desktopDATA install-gtkamdocDATA \
+-		install-iconDATA
++install-data-am:
+ install-data: install-data-recursive
+ 
+ install-am: all-am

@@ -1,20 +1,35 @@
 bin/gtkam
 %%GIMP%%libexec/gimp/1.3/plug-ins/gtkam-gimp
-%%PORTDOCS%%share/doc/gtkam/AUTHORS
-%%PORTDOCS%%share/doc/gtkam/NEWS
-%%PORTDOCS%%share/doc/gtkam/README
-share/gtkam/images/gtkam-audio.png
-share/gtkam/images/gtkam-camera.png
-share/gtkam/images/gtkam-folder-camera.png
-share/gtkam/images/gtkam-folder.png
-share/gtkam/images/gtkam-lock.png
-share/gtkam/images/gtkam-new.png
-share/gtkam/pixmaps/camera.xpm
-share/gtkam/pixmaps/configure.xpm
-share/gtkam/pixmaps/delete_images.xpm
-share/gtkam/pixmaps/exit.xpm
-share/gtkam/pixmaps/folder.xpm
-share/gtkam/pixmaps/save_current_image.xpm
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+share/gnome/applications/gtkam.desktop
+%%GNOME:%%share/gnome/help/gtkam/C/figures/gtkam_add_camera_enhanced_window.png
+%%GNOME:%%share/gnome/help/gtkam/C/figures/gtkam_add_camera_window.png
+%%GNOME:%%share/gnome/help/gtkam/C/figures/gtkam_fileinfo.png
+%%GNOME:%%share/gnome/help/gtkam/C/figures/gtkam_makedir.png
+%%GNOME:%%share/gnome/help/gtkam/C/figures/gtkam_save.png
+%%GNOME:%%share/gnome/help/gtkam/C/figures/gtkam_save_all.png
+%%GNOME:%%share/gnome/help/gtkam/C/figures/gtkam_start_window.png
+%%GNOME:%%share/gnome/help/gtkam/C/gtkam.xml
+%%GNOME:%%share/gnome/help/gtkam/C/legal.xml
+%%GNOME:%%@exec scrollkeeper-install -q %D/share/gnome/omf/gtkam/gtkam-C.omf 2>/dev/null || true
+%%GNOME:%%share/gnome/omf/gtkam/gtkam-C.omf
+%%GNOME:%%@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gtkam/gtkam-C.omf 2>/dev/null || true
+share/gnome/pixmaps/gtkam.png
+%%DATADIR%%/images/gtkam-audio.png
+%%DATADIR%%/images/gtkam-camera.png
+%%DATADIR%%/images/gtkam-folder-camera.png
+%%DATADIR%%/images/gtkam-folder.png
+%%DATADIR%%/images/gtkam-lock.png
+%%DATADIR%%/images/gtkam-new.png
+%%DATADIR%%/pixmaps/camera.xpm
+%%DATADIR%%/pixmaps/configure.xpm
+%%DATADIR%%/pixmaps/delete_images.xpm
+%%DATADIR%%/pixmaps/exit.xpm
+%%DATADIR%%/pixmaps/folder.xpm
+%%DATADIR%%/pixmaps/save_current_image.xpm
+share/locale/cs/LC_MESSAGES/gtkam.mo
 share/locale/da/LC_MESSAGES/gtkam.mo
 share/locale/de/LC_MESSAGES/gtkam.mo
 share/locale/es/LC_MESSAGES/gtkam.mo
@@ -29,7 +44,11 @@ share/locale/ru/LC_MESSAGES/gtkam.mo
 share/locale/sl/LC_MESSAGES/gtkam.mo
 share/locale/sv/LC_MESSAGES/gtkam.mo
 share/locale/uk/LC_MESSAGES/gtkam.mo
-@dirrm share/gtkam/pixmaps
-@dirrm share/gtkam/images
-@dirrm share/gtkam
-%%PORTDOCS%%@dirrm share/doc/gtkam
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%
+%%GNOME:%%@dirrm share/gnome/omf/gtkam
+%%GNOME:%%@dirrm share/gnome/help/gtkam/C/figures
+%%GNOME:%%@dirrm share/gnome/help/gtkam/C
+%%GNOME:%%@dirrm share/gnome/help/gtkam
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
