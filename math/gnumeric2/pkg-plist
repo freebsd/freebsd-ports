@@ -134,6 +134,7 @@ share/gnome/gnumeric/%%VERSION%%/templates/loan.gnumeric
 share/gnome/gnumeric/%%VERSION%%/templates/mileage.gnumeric
 share/gnome/gnumeric/%%VERSION%%/templates/purchase_order.gnumeric
 share/gnome/help/gnumeric/C/LEGALNOTICE.html
+share/gnome/help/gnumeric/C/alignmentandothertabs.html
 share/gnome/help/gnumeric/C/analysis-tools.html
 share/gnome/help/gnumeric/C/analysis-tools.sgml
 share/gnome/help/gnumeric/C/anova.html
@@ -155,7 +156,6 @@ share/gnome/help/gnumeric/C/copying-moving.sgml
 share/gnome/help/gnumeric/C/correlation-tool.html
 share/gnome/help/gnumeric/C/covariance-tool.html
 share/gnome/help/gnumeric/C/cutandpaste.html
-share/gnome/help/gnumeric/C/data-and-time-formatting.html
 share/gnome/help/gnumeric/C/data-entry.html
 share/gnome/help/gnumeric/C/data-menu.html
 share/gnome/help/gnumeric/C/descriptive-statistics-tool.html
@@ -823,6 +823,7 @@ share/gnome/help/gnumeric/C/print-preview.html
 share/gnome/help/gnumeric/C/print-setup.html
 share/gnome/help/gnumeric/C/printing.html
 share/gnome/help/gnumeric/C/printing.sgml
+share/gnome/help/gnumeric/C/protectionandvalidation.html
 share/gnome/help/gnumeric/C/random-number-generation-tool.html
 share/gnome/help/gnumeric/C/rank-and-percentile-tool.html
 share/gnome/help/gnumeric/C/regression-tool.html
@@ -951,7 +952,6 @@ share/locale/zh_TW/LC_MESSAGES/gnumeric.mo
 @dirrm share/gnome/gnumeric/%%VERSION%%/autoformat-templates
 @dirrm share/gnome/gnumeric/%%VERSION%%
 @dirrm share/gnome/gnumeric
-@unexec rmdir %D/share/gnome/oaf 2>/dev/null || true
 @dirrm lib/gnumeric/%%VERSION%%/plugins/xml_sax
 @dirrm lib/gnumeric/%%VERSION%%/plugins/xbase
 @dirrm lib/gnumeric/%%VERSION%%/plugins/sylk
