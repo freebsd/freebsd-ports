@@ -1,0 +1,22 @@
+--- components/gatherer/catdoc/doc/Makefile.in.orig	Thu Jan 31 05:00:58 2002
++++ components/gatherer/catdoc/doc/Makefile.in	Wed Nov 13 10:00:45 2002
+@@ -5,6 +5,8 @@
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
+ INSTALL = @INSTALL@
++INSTALL_BIN = @INSTALL_PROGRAM@
++INSTALL_LIB = @INSTALL_DATA@
+ VPATH = @srcdir@
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+@@ -20,8 +22,8 @@
+ clean:
+ install: catdoc.1 xls2csv.1
+ 	../mkinstalldirs $(installroot)$(mandir)
+-	$(INSTALL) -m 644 catdoc.1 $(installroot)$(mandir)/catdoc$(manext)
+-	$(INSTALL) -m 644 xls2csv.1 $(installroot)$(mandir)/xls2csv$(manext)
++	$(INSTALL_LIB) catdoc.1 $(installroot)$(mandir)/catdoc$(manext)
++	$(INSTALL_LIB) xls2csv.1 $(installroot)$(mandir)/xls2csv$(manext)
+ # Following rules are primarily for developers use. I doubt that you
+ # need to rebuild these versions of documentation
+ distclean: catdoc.1 catdoc.txt catdoc.ps xls2csv.1 xls2csv.txt xls2csv.ps

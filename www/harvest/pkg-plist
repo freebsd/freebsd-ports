@@ -4,31 +4,45 @@ harvest/bin/Gatherer
 harvest/bin/Harvest
 harvest/bin/broker
 harvest/bin/gather
-harvest/bin/gzip
-harvest/bin/hostname
-harvest/bin/perl
-harvest/bin/whoami
 harvest/brokers/Attributes.html
 harvest/brokers/adminhelp.html
+harvest/brokers/images/harvest-ic1.gif
+harvest/brokers/images/harvest-ic1.png
+harvest/brokers/images/harvest-ic2.gif
+harvest/brokers/images/harvest-ic2.png
+harvest/brokers/images/harvest-lg.gif
+harvest/brokers/images/harvest-lg.png
+harvest/brokers/images/harvest-spike.gif
+harvest/brokers/images/harvest-spike.png
+harvest/brokers/images/harvest-weight.gif
+harvest/brokers/images/harvest-weight.png
+harvest/brokers/images/index.html
 harvest/brokers/queryhelp.html
 harvest/brokers/skeleton/Makefile.in
 harvest/brokers/skeleton/Query.cgi.in
 harvest/brokers/skeleton/RunBroker.in
-harvest/brokers/skeleton/RunUpdate.in
 harvest/brokers/skeleton/admin/Collection.conf.in
 harvest/brokers/skeleton/admin/admin.html.in
 harvest/brokers/skeleton/admin/broker.conf.in
+harvest/brokers/skeleton/query-glimpse-modern.html.de.in
+harvest/brokers/skeleton/query-glimpse-modern.html.es.in
+harvest/brokers/skeleton/query-glimpse-modern.html.in
 harvest/brokers/skeleton/query-glimpse.html.in
+harvest/brokers/skeleton/query-swish-modern.html.in
+harvest/brokers/skeleton/query-swish.html.in
+harvest/brokers/skeleton/query-wais-modern.html.in
 harvest/brokers/skeleton/query-wais.html.in
 harvest/brokers/soifhelp.html
-harvest/cgi-bin/BrokerAdmin.cgi
-harvest/cgi-bin/BrokerQuery.pl.cgi
-harvest/cgi-bin/DisplayObject.cgi
-harvest/cgi-bin/HarvestGather.cgi
-harvest/cgi-bin/cgiparse.pl
-harvest/cgi-bin/lib/BrokerQuery.cf
+harvest/cgi-bin/BrokerAdmin.pl.cgi
+harvest/cgi-bin/displaySOIF.cgi
 harvest/cgi-bin/lib/Sample.cf
+harvest/cgi-bin/lib/classic.cf
+harvest/cgi-bin/lib/german.cf
+harvest/cgi-bin/lib/modern.cf
+harvest/cgi-bin/lib/search.cf
+harvest/cgi-bin/lib/spanish.cf
 harvest/cgi-bin/nph-search.cgi
+harvest/cgi-bin/search.cgi
 harvest/gatherers/example-1/RunGatherer
 harvest/gatherers/example-1/example-1.cf
 harvest/gatherers/example-2/RunGatherer
@@ -61,42 +75,48 @@ harvest/gatherers/example-5/example-5.cf
 harvest/gatherers/example-5/mydomain-host-filter
 harvest/gatherers/example-5/mydomain-url-filter
 harvest/lib/broker/BrokerRestart
-harvest/lib/broker/RunBrokers.sh
 harvest/lib/broker/agrep
 harvest/lib/broker/brkclient
 harvest/lib/broker/dumpregistry
 harvest/lib/broker/glimpse
 harvest/lib/broker/glimpseindex
+harvest/lib/broker/glimpseindex.bin
 harvest/lib/broker/glimpseserver
 harvest/lib/broker/info-to-html.pl
 harvest/lib/broker/mkbrokerstats.pl
-harvest/lib/ctime.pl
+harvest/lib/broker/swish
+harvest/lib/chat2.pl
 harvest/lib/dateconv.pl
+harvest/lib/ftp.pl
 harvest/lib/ftpget
 harvest/lib/gatherer/Archive.sum
 harvest/lib/gatherer/Binary-raw.sum
 harvest/lib/gatherer/Binary.sum
-harvest/lib/gatherer/C-raw.sum
 harvest/lib/gatherer/C.sum
 harvest/lib/gatherer/CHeader.sum
 harvest/lib/gatherer/Configuration.sum
 harvest/lib/gatherer/Dvi.sum
 harvest/lib/gatherer/FAQ.sum
 harvest/lib/gatherer/FullText.sum
+harvest/lib/gatherer/GifImage.sum
 harvest/lib/gatherer/HTML-lax.sum
+harvest/lib/gatherer/HTML-sum.pl
 harvest/lib/gatherer/HTML.sum
 harvest/lib/gatherer/HTMLurls
+harvest/lib/gatherer/HTTP-Query.sum
 harvest/lib/gatherer/HomeHTML.sum
 harvest/lib/gatherer/IMS-DOCUMENT.sum
+harvest/lib/gatherer/MSWord.sum
 harvest/lib/gatherer/Mail.sum
 harvest/lib/gatherer/ManPage.sum
 harvest/lib/gatherer/NewsArticle.sum
 harvest/lib/gatherer/NewsGroup.sum
 harvest/lib/gatherer/Object.sum
+harvest/lib/gatherer/Pdf.sum
 harvest/lib/gatherer/PostScript.sum
 harvest/lib/gatherer/RCS.sum
 harvest/lib/gatherer/RFC.sum
-harvest/lib/gatherer/RunGatherers.sh
+harvest/lib/gatherer/RTF.sum
 harvest/lib/gatherer/SCCS.sum
 harvest/lib/gatherer/SGML.sum
 harvest/lib/gatherer/SourceDistribution-raw.sum
@@ -110,25 +130,64 @@ harvest/lib/gatherer/Troff-me.sum
 harvest/lib/gatherer/Troff-ms.sum
 harvest/lib/gatherer/Troff.sum
 harvest/lib/gatherer/URL-filter-default
+harvest/lib/gatherer/WordPerfect.sum
 harvest/lib/gatherer/bycontent.cf
 harvest/lib/gatherer/byname.cf
 harvest/lib/gatherer/byurl.cf
+harvest/lib/gatherer/catdoc
+harvest/lib/gatherer/catdoc-lib/8859-1.txt
+harvest/lib/gatherer/catdoc-lib/8859-2.txt
+harvest/lib/gatherer/catdoc-lib/8859-3.txt
+harvest/lib/gatherer/catdoc-lib/8859-4.txt
+harvest/lib/gatherer/catdoc-lib/8859-5.txt
+harvest/lib/gatherer/catdoc-lib/8859-6.txt
+harvest/lib/gatherer/catdoc-lib/8859-7.txt
+harvest/lib/gatherer/catdoc-lib/8859-8.txt
+harvest/lib/gatherer/catdoc-lib/8859-9.txt
+harvest/lib/gatherer/catdoc-lib/ascii.replchars
+harvest/lib/gatherer/catdoc-lib/ascii.specchars
+harvest/lib/gatherer/catdoc-lib/cp2250.txt
+harvest/lib/gatherer/catdoc-lib/cp2251.txt
+harvest/lib/gatherer/catdoc-lib/cp2252.txt
+harvest/lib/gatherer/catdoc-lib/cp2253.txt
+harvest/lib/gatherer/catdoc-lib/cp2254.txt
+harvest/lib/gatherer/catdoc-lib/cp2255.txt
+harvest/lib/gatherer/catdoc-lib/cp2256.txt
+harvest/lib/gatherer/catdoc-lib/cp2257.txt
+harvest/lib/gatherer/catdoc-lib/cp2258.txt
+harvest/lib/gatherer/catdoc-lib/cp437.txt
+harvest/lib/gatherer/catdoc-lib/cp850.txt
+harvest/lib/gatherer/catdoc-lib/cp852.txt
+harvest/lib/gatherer/catdoc-lib/cp855.txt
+harvest/lib/gatherer/catdoc-lib/cp857.txt
+harvest/lib/gatherer/catdoc-lib/cp860.txt
+harvest/lib/gatherer/catdoc-lib/cp861.txt
+harvest/lib/gatherer/catdoc-lib/cp862.txt
+harvest/lib/gatherer/catdoc-lib/cp863.txt
+harvest/lib/gatherer/catdoc-lib/cp864.txt
+harvest/lib/gatherer/catdoc-lib/cp865.txt
+harvest/lib/gatherer/catdoc-lib/cp866.txt
+harvest/lib/gatherer/catdoc-lib/cp869.txt
+harvest/lib/gatherer/catdoc-lib/cp874.txt
+harvest/lib/gatherer/catdoc-lib/koi8-r.txt
+harvest/lib/gatherer/catdoc-lib/koi8-u.txt
+harvest/lib/gatherer/catdoc-lib/tex.replchars
+harvest/lib/gatherer/catdoc-lib/tex.specchars
+harvest/lib/gatherer/catdoc-lib/us-ascii.txt
+harvest/lib/gatherer/catdoc-lib/x-mac-cyrillic.txt
 harvest/lib/gatherer/cksoif
 harvest/lib/gatherer/cleandb
 harvest/lib/gatherer/consoldb
-harvest/lib/gatherer/deroff
 harvest/lib/gatherer/dvi2tty
 harvest/lib/gatherer/enum
 harvest/lib/gatherer/essence
 harvest/lib/gatherer/expiredb
-harvest/lib/gatherer/extract-perl-procs
 harvest/lib/gatherer/fileenum
 harvest/lib/gatherer/folddb
 harvest/lib/gatherer/ftpenum
 harvest/lib/gatherer/ftpenum.pl
 harvest/lib/gatherer/gatherd
 harvest/lib/gatherer/gdbmutil
-harvest/lib/gatherer/get-include-files
 harvest/lib/gatherer/gifinfo
 harvest/lib/gatherer/gopherenum-breadth
 harvest/lib/gatherer/gopherenum-depth
@@ -137,10 +196,9 @@ harvest/lib/gatherer/httpenum-breadth
 harvest/lib/gatherer/httpenum-depth
 harvest/lib/gatherer/in.gatherd
 harvest/lib/gatherer/kill-gatherd
-harvest/lib/gatherer/l2h.pl
+harvest/lib/gatherer/l2h
 harvest/lib/gatherer/magic
 harvest/lib/gatherer/mergedb
-harvest/lib/gatherer/mkcompressed
 harvest/lib/gatherer/mkgathererstats.pl
 harvest/lib/gatherer/mkindex
 harvest/lib/gatherer/mktemplate
@@ -155,6 +213,7 @@ harvest/lib/gatherer/quick-sum
 harvest/lib/gatherer/quick-sum.cf
 harvest/lib/gatherer/rast
 harvest/lib/gatherer/rmbinary
+harvest/lib/gatherer/rtf2html
 harvest/lib/gatherer/sgmls
 harvest/lib/gatherer/sgmls-lib/HTML/HTML.decl
 harvest/lib/gatherer/sgmls-lib/HTML/HTML.sum.LaTeX.tbl
@@ -168,58 +227,107 @@ harvest/lib/gatherer/sgmls-lib/HTML/html-1.dtd
 harvest/lib/gatherer/sgmls-lib/HTML/html-1s.dtd
 harvest/lib/gatherer/sgmls-lib/HTML/html-3.dtd
 harvest/lib/gatherer/sgmls-lib/HTML/html-32.dtd
+harvest/lib/gatherer/sgmls-lib/HTML/html-4fs.dtd
+harvest/lib/gatherer/sgmls-lib/HTML/html-4strict.dtd
+harvest/lib/gatherer/sgmls-lib/HTML/html-4trans.dtd
 harvest/lib/gatherer/sgmls-lib/HTML/html-hj.dtd
 harvest/lib/gatherer/sgmls-lib/HTML/html-mcom.dtd
 harvest/lib/gatherer/sgmls-lib/HTML/html-s.dtd
 harvest/lib/gatherer/sgmls-lib/HTML/html.dtd
-harvest/lib/gatherer/sgmls-lib/HTMLPLUS/HTMLplus.dtd
 harvest/lib/gatherer/sgmls-lib/IMS/IMS.decl
 harvest/lib/gatherer/sgmls-lib/IMS/IMS.dtd
 harvest/lib/gatherer/sgmls-lib/IMS/IMS.sum.tbl
 harvest/lib/gatherer/sgmls-lib/ISOlat1-no-convert.sgml
 harvest/lib/gatherer/sgmls-lib/ISOlat1.sgml
+harvest/lib/gatherer/sgmls-lib/README
 harvest/lib/gatherer/sgmls-lib/catalog
+harvest/lib/gatherer/sgmls-lib/html-3.2/HTML32.cat
+harvest/lib/gatherer/sgmls-lib/html-3.2/HTML32.dtd
+harvest/lib/gatherer/sgmls-lib/html-3.2/ISOlat1.ent
+harvest/lib/gatherer/sgmls-lib/html-4.0/HTML4.cat
+harvest/lib/gatherer/sgmls-lib/html-4.0/HTML4.decl
+harvest/lib/gatherer/sgmls-lib/html-4.0/HTMLlat1.ent
+harvest/lib/gatherer/sgmls-lib/html-4.0/HTMLspecial.ent
+harvest/lib/gatherer/sgmls-lib/html-4.0/HTMLsymbol.ent
+harvest/lib/gatherer/sgmls-lib/html-4.0/frameset.dtd
+harvest/lib/gatherer/sgmls-lib/html-4.0/loose.dtd
+harvest/lib/gatherer/sgmls-lib/html-4.0/strict.dtd
+harvest/lib/gatherer/sgmls-lib/html-4.01/HTML4.cat
+harvest/lib/gatherer/sgmls-lib/html-4.01/HTML4.decl
+harvest/lib/gatherer/sgmls-lib/html-4.01/HTMLlat1.ent
+harvest/lib/gatherer/sgmls-lib/html-4.01/HTMLspecial.ent
+harvest/lib/gatherer/sgmls-lib/html-4.01/HTMLsymbol.ent
+harvest/lib/gatherer/sgmls-lib/html-4.01/frameset.dtd
+harvest/lib/gatherer/sgmls-lib/html-4.01/loose.dtd
+harvest/lib/gatherer/sgmls-lib/html-4.01/strict.dtd
+harvest/lib/gatherer/sgmls-lib/html/ISOlat1.sgml
+harvest/lib/gatherer/sgmls-lib/html/catalog
+harvest/lib/gatherer/sgmls-lib/html/html-0.dtd
+harvest/lib/gatherer/sgmls-lib/html/html-1.dtd
+harvest/lib/gatherer/sgmls-lib/html/html-1s.dtd
+harvest/lib/gatherer/sgmls-lib/html/html-s.dtd
+harvest/lib/gatherer/sgmls-lib/html/html.decl
+harvest/lib/gatherer/sgmls-lib/html/html.dtd
+harvest/lib/gatherer/sgmls-lib/htmlplus/HTMLplus.dtd
 harvest/lib/gatherer/sgmlsasp
 harvest/lib/gatherer/skim
 harvest/lib/gatherer/staturl
 harvest/lib/gatherer/stoplist.cf
 harvest/lib/gatherer/template2db
 harvest/lib/gatherer/unshar
+harvest/lib/gatherer/uudecode
+harvest/lib/gatherer/wp2x
+harvest/lib/gatherer/wp2x-lib/accent.cfg
+harvest/lib/gatherer/wp2x-lib/ascii.cfg
+harvest/lib/gatherer/wp2x-lib/gml.cfg
+harvest/lib/gatherer/wp2x-lib/html.cfg
+harvest/lib/gatherer/wp2x-lib/latex.cfg
+harvest/lib/gatherer/wp2x-lib/sample.cfg
+harvest/lib/gatherer/wp2x-lib/script.cfg
+harvest/lib/gatherer/wp2x-lib/tex.cfg
+harvest/lib/gatherer/wp2x-lib/troff.cfg
+harvest/lib/gatherer/wp2x.sh
 harvest/lib/gatherer/wrapit
+harvest/lib/gatherer/xls2csv
 harvest/lib/gopherget.pl
 harvest/lib/harvest-check.pl
 harvest/lib/lsparse.pl
+harvest/lib/md5
 harvest/lib/newsget.pl
 harvest/lib/socket.ph
 harvest/lib/soif-mem-efficient.pl
 harvest/lib/soif.pl
-harvest/lib/test-socket-ph.pl
 harvest/lib/timelocal.pl
 harvest/lib/urlget
 harvest/lib/urlpurge
-@dirrm harvest/bin
+@dirrm harvest/lib/gatherer/wp2x-lib
+@dirrm harvest/lib/gatherer/sgmls-lib/htmlplus
+@dirrm harvest/lib/gatherer/sgmls-lib/html-4.01
+@dirrm harvest/lib/gatherer/sgmls-lib/html-4.0
+@dirrm harvest/lib/gatherer/sgmls-lib/html-3.2
+@dirrm harvest/lib/gatherer/sgmls-lib/html
 @dirrm harvest/lib/gatherer/sgmls-lib/IMS
 @dirrm harvest/lib/gatherer/sgmls-lib/HTML
-@dirrm harvest/lib/gatherer/sgmls-lib/HTMLPLUS
 @dirrm harvest/lib/gatherer/sgmls-lib
+@dirrm harvest/lib/gatherer/catdoc-lib
 @dirrm harvest/lib/gatherer
 @dirrm harvest/lib/broker
 @dirrm harvest/lib
-@dirrm harvest/cgi-bin/lib
-@dirrm harvest/cgi-bin
-@dirrm harvest/man/man1
-@dirrm harvest/man
-@dirrm harvest/gatherers/example-1
-@dirrm harvest/gatherers/example-2/lib
-@dirrm harvest/gatherers/example-2
+@dirrm harvest/gatherers/example-5
+@dirrm harvest/gatherers/example-4/lib
+@dirrm harvest/gatherers/example-4/bin
+@dirrm harvest/gatherers/example-4
 @dirrm harvest/gatherers/example-3/lib
 @dirrm harvest/gatherers/example-3
-@dirrm harvest/gatherers/example-4/bin
-@dirrm harvest/gatherers/example-4/lib
-@dirrm harvest/gatherers/example-4
-@dirrm harvest/gatherers/example-5
+@dirrm harvest/gatherers/example-2/lib
+@dirrm harvest/gatherers/example-2
+@dirrm harvest/gatherers/example-1
 @dirrm harvest/gatherers
+@dirrm harvest/cgi-bin/lib
+@dirrm harvest/cgi-bin
 @dirrm harvest/brokers/skeleton/admin
 @dirrm harvest/brokers/skeleton
+@dirrm harvest/brokers/images
 @dirrm harvest/brokers
+@dirrm harvest/bin
 @dirrm harvest

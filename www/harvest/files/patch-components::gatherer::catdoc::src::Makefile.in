@@ -1,0 +1,36 @@
+--- components/gatherer/catdoc/src/Makefile.in.orig	Sat Jun  8 17:13:17 2002
++++ components/gatherer/catdoc/src/Makefile.in	Wed Nov 13 10:02:19 2002
+@@ -12,13 +12,15 @@
+ libdir = @prefix@/lib/gatherer/catdoc-lib
+ mandir = @mandir@
+ INSTALL = @INSTALL@
++INSTALL_BIN = @INSTALL_PROGRAM@
++INSTALL_LIB = @INSTALL_DATA@
+ WISH = @WISH@
+ CC = @CC@
+ build_targets = @buildtargets@
+ install_targets = @installtargets@
+ # Flags to pass to your C compilier
+ # remove -O2 on HP/UX 9. It is known to cause problems
+-FLAGS=-Wall -O2 -g
++CFLAGS = @CFLAGS@
+ 
+ #Compile-time configuration of catdoc itself. Edit according to taste
+ 
+@@ -77,12 +79,12 @@
+ install: @installtargets@
+ install-catdoc:catdoc xls2csv
+ 	$(top_srcdir)/mkinstalldirs $(installroot)$(bindir)
+-	$(INSTALL) -m 755 catdoc $(installroot)$(bindir)/catdoc
+-	$(INSTALL) -m 755 xls2csv $(installroot)$(bindir)/xls2csv
+-#	$(INSTALL) -m 755 msxlsview.sh $(installroot)$(bindir)/xlsview
++	$(INSTALL_BIN) catdoc $(installroot)$(bindir)/catdoc
++	$(INSTALL_BIN) xls2csv $(installroot)$(bindir)/xls2csv
++#	$(INSTALL_BIN) msxlsview.sh $(installroot)$(bindir)/xlsview
+ install-wordview: wordview
+ 	$(top_srcdir)/mkinstalldirs $(installroot)$(bindir)
+-	$(INSTALL) -m 755 wordview $(installroot)$(bindir)/wordview
++	$(INSTALL_BIN) wordview $(installroot)$(bindir)/wordview
+ wordview: wordview.tcl
+ 	echo "#! $(WISH)" >wordview
+ 	echo set charset_lib "\"$(LIB_DIR)\"">>wordview
