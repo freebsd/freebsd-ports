@@ -8,7 +8,9 @@ share/tightvnc/classes/ButtonPanel.class
 share/tightvnc/classes/ClipboardFrame.class
 share/tightvnc/classes/DesCipher.class
 share/tightvnc/classes/OptionsFrame.class
+share/tightvnc/classes/RecordingFrame.class
 share/tightvnc/classes/RfbProto.class
+share/tightvnc/classes/SessionRecorder.class
 share/tightvnc/classes/VncCanvas.class
 share/tightvnc/classes/VncViewer.class
 share/tightvnc/classes/VncViewer.jar

@@ -1,6 +1,6 @@
---- vncviewer/Imakefile.orig	Tue Apr 30 09:07:31 2002
-+++ vncviewer/Imakefile	Wed May 22 21:48:12 2002
-@@ -10,12 +10,12 @@
+--- vncviewer/Imakefile.orig	Thu Sep 26 11:26:17 2002
++++ vncviewer/Imakefile	Thu Sep 26 11:28:47 2002
+@@ -10,17 +10,12 @@
  DEFINES = -DMITSHM
  #endif
  
@@ -11,13 +11,18 @@
  INCLUDES = -I../include -I. $(ZLIB_INC) $(JPEG_INC) -I/usr/include
  VNCAUTH_LIB = ../libvncauth/libvncauth.a
 -ZLIB_LIB = -L/usr/local/lib -lz
+-#ifdef OSF1Architecture
+-XCOMM Avoid linking with different libjpeg in /usr/shlib under Tru64.
+-JPEG_LIB = /usr/local/lib/libjpeg.a
+-#else
 -JPEG_LIB = -L/usr/local/lib -ljpeg
+-#endif
 +ZLIB_LIB = -L%%LOCALBASE%%/lib -lz
 +JPEG_LIB = -L%%LOCALBASE%%/lib -ljpeg
  
  DEPLIBS = XawClientDepLibs $(VNCAUTH_LIB)
  LOCAL_LIBRARIES = XawClientLibs $(VNCAUTH_LIB) $(ZLIB_LIB) $(JPEG_LIB)
-@@ -39,4 +39,4 @@
+@@ -44,4 +39,4 @@
  
  OBJS = $(SRCS:.c=.o)
  
