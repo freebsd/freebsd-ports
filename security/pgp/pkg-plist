@@ -1,4 +1,8 @@
 @cwd /usr/local
 bin/pgp
 man/man1/pgp.1
-lib/pgp
+lib/pgp/pgp.hlp
+lib/pgp/pgpdoc1.txt
+lib/pgp/pgpdoc2.txt
+lib/pgp/language.txt
+lib/pgp/config.txt
