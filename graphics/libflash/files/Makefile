@@ -16,21 +16,7 @@ SRCS=		adpcm.cc bitmap.cc button.cc character.cc cxform.cc \
 INCS=		flash.h
 NOMAN=		YES
 LIBDIR=		${LOCALBASE}/lib
-INCDIR=		${LOCALBASE}/include
+INCSDIR=	${LOCALBASE}/include
+INCDIR=		${INCSDIR}		# for pre-bsd.incs.mk API
 
 .include <bsd.lib.mk>
-
-# For FreeBSD 3.x or older
-.if !target(_includeinstall)
-_includeinstall:
-.if defined(INCS)
-.for header in ${INCS}
-        cd ${.CURDIR} && \
-        ${INSTALL} -C -o ${INCOWN} -g ${INCGRP} -m ${INCMODE} \
-                ${header} ${DESTDIR}${INCDIR}
-
-.endfor
-.endif
-
-beforeinstall: _includeinstall
-.endif
