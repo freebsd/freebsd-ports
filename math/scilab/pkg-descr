@@ -22,6 +22,6 @@ user-friendly environment. It features:
 Note: To configure your local printers, add their names to the PRINTERS
  variable in the scilab script.
 
-For more information see Scilab Home Page http://www-rocq.inria.fr/scilab/.
+WWW: http://www-rocq.inria.fr/scilab/
 
 -- P. Menezes (paulo@isr.uc.pt)
