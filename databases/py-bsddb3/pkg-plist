@@ -1,7 +1,7 @@
 %%PYTHON_SITELIBDIR%%/bsddb3/__init__.py
 %%PYTHON_SITELIBDIR%%/bsddb3/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bsddb3/__init__.pyo
-%%PYTHON_SITELIBDIR%%/bsddb3/_bsddb.so
+%%PYTHON_SITELIBDIR%%/bsddb3/_pybsddb.so
 %%PYTHON_SITELIBDIR%%/bsddb3/db.py
 %%PYTHON_SITELIBDIR%%/bsddb3/db.pyc
 %%PYTHON_SITELIBDIR%%/bsddb3/db.pyo
