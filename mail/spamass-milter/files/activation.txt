@@ -57,8 +57,8 @@ In order to activate spamass-milter, follow these steps:
 
 9. Test the whole piece:
 
-	/usr/sbin/sendmail root < /usr/local/share/doc/Mail-SpamAssassin/sample-nonspam.txt
-	/usr/sbin/sendmail root < /usr/local/share/doc/Mail-SpamAssassin/sample-spam.txt
+	/usr/sbin/sendmail root < /usr/local/share/doc/p5-Mail-SpamAssassin/sample-nonspam.txt
+	/usr/sbin/sendmail root < /usr/local/share/doc/p5-Mail-SpamAssassin/sample-spam.txt
 
    Each of these commands might take a long time to finish (up to about
    10-20 seconds), so please be patient.
