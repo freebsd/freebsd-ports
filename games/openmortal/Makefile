@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openmortal
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,4 +32,10 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "*.h" | ${XARGS} \
 		${REINPLACE_CMD} -e 's|SDL/|SDL11/|g' -e 's|<malloc.h>|<stdlib.h>|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+IGNORE=		Port requires perl 5.6.x or later. Install lang/perl5 then try again
+.endif
+
+.include <bsd.port.post.mk>
