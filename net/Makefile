@@ -253,7 +253,6 @@
     SUBDIR += nat
     SUBDIR += nbtscan
     SUBDIR += nc
-    SUBDIR += ncat
     SUBDIR += ncplib
     SUBDIR += nemesis
     SUBDIR += net-http
@@ -376,7 +375,6 @@
     SUBDIR += pptpclient
     SUBDIR += ppxp
     SUBDIR += priss
-    SUBDIR += proxy
     SUBDIR += proxy-suite
     SUBDIR += psi
     SUBDIR += punkbuster
