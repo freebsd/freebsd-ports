@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kphone
-PORTVERSION=	4.0.4
+PORTVERSION=	4.0.5
 CATEGORIES=	net
 MASTER_SITES=	http://www.wirlab.net/kphone/
 
@@ -22,14 +22,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	QTDIR="${QT_PREFIX}"
 
 post-patch:
-	${REINPLACE_CMD} -e "s,-O3,${CFLAGS} ${PTHREAD_CFLAGS}," ${WRKSRC}/configure
-	${REINPLACE_CMD} -e "s,-lresolv,${PTHREAD_LIBS}," ${WRKSRC}/kphone/Makefile.in
-
-do-build:
-	cd ${WRKSRC}/dissipate2; ${SETENV} ${MAKE_ENV} ${GMAKE}
-	cd ${WRKSRC}/gsm; ${SETENV} ${MAKE_ENV} ${GMAKE}
-	cd ${WRKSRC}/ilbc; ${SETENV} ${MAKE_ENV} ${GMAKE}
-	cd ${WRKSRC}/kphone; ${SETENV} ${MAKE_ENV} ${GMAKE}
+	@${REINPLACE_CMD} -e 's,-O3,,g ; \
+		 s,-Wall,$$CFLAGS,g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's,make -C,$$(MAKE) -C,g ; \
+		 s,/apps/,/,g ; \
+		 s,-lresolv,${PTHREAD_LIBS},g'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/kphone/kphone ${PREFIX}/bin
