@@ -30,7 +30,7 @@ JDK_VERSION=	1.3.1
 JDK_REVISION=	07
 ONLY_FOR_ARCHS=	i386
 TARGET_DIR?=	${PREFIX}/${PKGBASE}${JDK_VERSION}
-DOWNLOAD_URL?=	http://java.sun.com/webapps/download/Display?BundleId=7163
+DOWNLOAD_URL?=	http://java.sun.com/webapps/download/Display?BundleId=7479
 
 .include <bsd.port.pre.mk>
 
