@@ -47,6 +47,11 @@ CONFIGURE_ARGS+=	--enable-cpu=jitc_x86
 CONFIGURE_ARGS+=	--enable-cpu=generic
 .endif
 
+.if ${OSVERSION} < 500000
+USE_GCC=	3.3
+CFLAGS+=	-DFREEBSD_MB_SUPPORT
+.endif
+
 pre-everything::
 .if !defined(WITH_OPTIMIZED_CFLAGS)
 	@${ECHO_MSG} ""
@@ -57,6 +62,10 @@ pre-everything::
 post-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/src/Makefile
+.if ${OSVERSION} < 500000
+	@${CP} ${FILESDIR}/wcrtomb.c ${FILESDIR}/mbrtowc.c \
+		${WRKSRC}/
+.endif
 
 post-install:
 	@${MKDIR} ${DATADIR}
