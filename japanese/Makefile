@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.17 1995/10/03 10:25:14 asami Exp $
+# $Id: Makefile,v 1.18 1995/10/13 09:20:51 asami Exp $
 #
 
     SUBDIR += Canna
     SUBDIR += Wnn
     SUBDIR += chimera
+    SUBDIR += elvis
     SUBDIR += gawk
     SUBDIR += grep
     SUBDIR += groff
