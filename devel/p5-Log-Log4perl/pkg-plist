@@ -1,41 +1,44 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Log/Log4perl/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/Appender.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/Appender/DBI.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/Appender/TestArrayBuffer.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/Appender/TestBuffer.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/Config.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/Config/DOMConfigurator.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/Config/PropertyConfigurator.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/DateFormat.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/FAQ.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/Filter.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/Filter/Boolean.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/Filter/LevelMatch.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/Filter/LevelRange.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/Filter/StringMatch.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/JavaMap.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/JavaMap/ConsoleAppender.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/JavaMap/FileAppender.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/JavaMap/JDBCAppender.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/JavaMap/NTEventLogAppender.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/JavaMap/RollingFileAppender.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/JavaMap/SyslogAppender.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/JavaMap/TestBuffer.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/Layout.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/Layout/NoopLayout.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/Layout/PatternLayout.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/Layout/SimpleLayout.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/Level.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/Logger.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/MDC.pm
-lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/NDC.pm
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/Appender
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/Config
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/Filter
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/JavaMap
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl/Layout
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Log/Log4perl 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Log 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Log/Log4perl 2>/dev/null || true
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Log 2>/dev/null || true
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Log4perl/.packlist
+%%SITE_PERL%%/Log/Log4perl.pm
+%%SITE_PERL%%/Log/Log4perl/Appender.pm
+%%SITE_PERL%%/Log/Log4perl/Appender/DBI.pm
+%%SITE_PERL%%/Log/Log4perl/Appender/File.pm
+%%SITE_PERL%%/Log/Log4perl/Appender/Screen.pm
+%%SITE_PERL%%/Log/Log4perl/Appender/TestArrayBuffer.pm
+%%SITE_PERL%%/Log/Log4perl/Appender/TestBuffer.pm
+%%SITE_PERL%%/Log/Log4perl/Config.pm
+%%SITE_PERL%%/Log/Log4perl/Config/DOMConfigurator.pm
+%%SITE_PERL%%/Log/Log4perl/Config/PropertyConfigurator.pm
+%%SITE_PERL%%/Log/Log4perl/Config/Watch.pm
+%%SITE_PERL%%/Log/Log4perl/DateFormat.pm
+%%SITE_PERL%%/Log/Log4perl/FAQ.pm
+%%SITE_PERL%%/Log/Log4perl/Filter.pm
+%%SITE_PERL%%/Log/Log4perl/Filter/Boolean.pm
+%%SITE_PERL%%/Log/Log4perl/Filter/LevelMatch.pm
+%%SITE_PERL%%/Log/Log4perl/Filter/LevelRange.pm
+%%SITE_PERL%%/Log/Log4perl/Filter/StringMatch.pm
+%%SITE_PERL%%/Log/Log4perl/JavaMap.pm
+%%SITE_PERL%%/Log/Log4perl/JavaMap/ConsoleAppender.pm
+%%SITE_PERL%%/Log/Log4perl/JavaMap/FileAppender.pm
+%%SITE_PERL%%/Log/Log4perl/JavaMap/JDBCAppender.pm
+%%SITE_PERL%%/Log/Log4perl/JavaMap/NTEventLogAppender.pm
+%%SITE_PERL%%/Log/Log4perl/JavaMap/RollingFileAppender.pm
+%%SITE_PERL%%/Log/Log4perl/JavaMap/SyslogAppender.pm
+%%SITE_PERL%%/Log/Log4perl/JavaMap/TestBuffer.pm
+%%SITE_PERL%%/Log/Log4perl/Layout.pm
+%%SITE_PERL%%/Log/Log4perl/Layout/NoopLayout.pm
+%%SITE_PERL%%/Log/Log4perl/Layout/PatternLayout.pm
+%%SITE_PERL%%/Log/Log4perl/Layout/SimpleLayout.pm
+%%SITE_PERL%%/Log/Log4perl/Level.pm
+%%SITE_PERL%%/Log/Log4perl/Logger.pm
+%%SITE_PERL%%/Log/Log4perl/MDC.pm
+%%SITE_PERL%%/Log/Log4perl/NDC.pm
+@dirrm %%SITE_PERL%%/Log/Log4perl/Appender
+@dirrm %%SITE_PERL%%/Log/Log4perl/Config
+@dirrm %%SITE_PERL%%/Log/Log4perl/Filter
+@dirrm %%SITE_PERL%%/Log/Log4perl/JavaMap
+@dirrm %%SITE_PERL%%/Log/Log4perl/Layout
+@unexec rmdir %D/%%SITE_PERL%%/Log/Log4perl 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/Log 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log/Log4perl 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Log 2>/dev/null || true
