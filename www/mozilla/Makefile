@@ -69,9 +69,16 @@ PLIST_SUB+=	CHATZILLA=""
 PLIST_SUB+=	CHATZILLA="@comment "
 .endif
 CONFIGURE_ENV=	MOZ_INTERNAL_LIBART_LGPL=1
+
+.include <bsd.port.pre.mk>
+
 MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin \
 		MOZ_INTERNAL_LIBART_LGPL=1
 ALL_TARGET=	default
+
+.if exists(${LOCALBASE}/include/freetype/freetype.h)
+BROKEN="You must upgrade your freetype port to 1.3.1_2 or higher before installing Mozilla.  If you have 1.3.1_2 installed, please remove ${LOCALBASE}/include/freetype, then build Mozilla"
+.endif
 
 post-build:
 	${SED} -e "s;@PREFIX@;${PREFIX};g" \
@@ -93,4 +100,4 @@ do-install:
 	${LN} -sf ${LOCALBASE}/jdk1.3.1/jre/plugin/i386/ns600/libjavaplugin_oji.so \
 		${PREFIX}/lib/mozilla/plugins/libjavaplugin_oji.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
