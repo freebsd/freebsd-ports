@@ -7,6 +7,7 @@
 
 PORTNAME=	ucspi-unix
 PORTVERSION=	0.36
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://untroubled.org/ucspi-unix/
 
@@ -17,9 +18,14 @@ BUILD_DEPENDS=	bglibs.1:${PORTSDIR}/devel/bglibs
 
 USE_REINPLACE=yes
 
-pre-build:
-	${ECHO_CMD} ${PREFIX}		> ${WRKSRC}/conf-home
-	${ECHO_CMD} ${CC} ${CFLAGS}	> ${WRKSRC}/conf-cc
+MAN1=	unixclient.1 unixserver.1
+
+post-patch:
+	${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-home
+	${ECHO_CMD} ${CC} ${CFLAGS} -I${LOCALBASE}/include/bglibs > ${WRKSRC}/conf-cc
+	${ECHO_CMD} ${CC} ${LDFLAGS} -s -L${LOCALBASE}/lib > ${WRKSRC}/conf-ld
+	${ECHO_CMD} ${PREFIX}/man > ${WRKSRC}/conf-man
+	
 
 do-install:
 	cd ${WRKSRC} && ./installer
