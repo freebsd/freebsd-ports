@@ -18,6 +18,10 @@ COMMENT=	An Apache module that provides DAV capabilities
 # This port will work with the following version of Apache and anything newer.
 APACHE_VERSION=	1.3.6
 
+PKGDEINSTALL=	${PKGINSTALL}
+PKGMESSAGE=	${WRKSRC}/pkg-message
+PLIST_FILES=	etc/apache/apache.conf.mod_dav libexec/apache/libdav.so
+
 USE_APACHE=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
@@ -43,16 +47,17 @@ pre-everything::
 	@/bin/sleep 5
 .endif
 
-post-install:
+do-install:
+	BINMODE=755 ${INSTALL_PROGRAM} ${WRKSRC}/libdav.so ${PREFIX}/libexec/apache
 	${INSTALL_DATA} ${FILESDIR}/apache.conf.mod_dav ${PREFIX}/etc/apache
-	@${ECHO_MSG} "*******************************************************"
-	@${ECHO_MSG} "* Please review the mod_dav configuration in the main"
-	@${ECHO_MSG} "* Apache configuration file."
-	@${ECHO_MSG} "* ${PREFIX}/etc/apache/httpd.conf"
-	@${ECHO_MSG} "*"
-	@${ECHO_MSG} "* Look at the file ${PREFIX}/etc/apache/apache.conf.mod_dav"
-	@${ECHO_MSG} "* for indications on what to do."
-	@${ECHO_MSG} "*"
-	@${ECHO_MSG} "*******************************************************"
+
+post-install:
+.if !defined(PACKAGE_BUILDING)
+	@${SETENV} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} PKG_PREFIX=${PREFIX} \
+	 ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.endif
+	@${SED} -e 's+%%PREFIX%%+${PREFIX}+' ${FILESDIR}/pkg-message.in \
+	 > ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
