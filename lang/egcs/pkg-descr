@@ -6,12 +6,10 @@ improvements and features not found in gcc-2.7 and even the soon to be
 released gcc-2.8 compilers.  C++ support, and in particular template
 support, is vastly improved over gcc-2.7.
 
-For more details, see <http://www.cygnus.com/egcs/>.
-
 Beware: This port installs new versions of "gcc", "g++", "c++" and
 so forth into the "${PREFIX}/bin" directory.  Mind your PATHs if you
 don't want to use this compiler by default.
 
 - John Polstra <jdp@polstra.com>
 
-WWW: http://egcs.cygnus.com/
+WWW: http://gcc.gnu.org/
