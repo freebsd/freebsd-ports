@@ -17,15 +17,3 @@
   		@./configuration.sh
   
   all:		maplay
-***************
-*** 47,52 ****
---- 47,55 ----
-  maplay:		$(OBJS)
-  		$(COMPILER) $(CFLAGS) $(OBJS) -o $@ $(LIBRARIES) -lm
-  		-strip $@
-+ 
-+ install: all
-+ 		${INSTALL} -s -c -m 755 maplay ${PREFIX}/bin
-  
-  .cc.o:
-  		$(COMPILER) -c $(CFLAGS) $(INCLUDEDIRS) $*.cc -o $@
