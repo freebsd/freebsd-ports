@@ -4,13 +4,7 @@
 #
 cd @PREFIX@/libexec/uvscan/
 ftp http://download.nai.com/products/datfiles/4.x/nai/readme.txt >/dev/null
-AVVER=`head -1 readme.txt | cut -d' ' -f11`
-if [ "x$AVVER" = "x" ] ; then
-  AVVER=`grep 'DAT [0-9]* Release Date' readme.txt | head -1 | sed -e 's/^.*DAT \([0-9]*\) Release Date.*$/\1/'`
-fi
-if [ "x$AVVER" = "x" ] ; then
-  AVVER=`head -5 readme.txt | grep ' 4[0-9][0-9][0-9] ' | head -1 | sed -e 's/^.* \([0-9]*\) .*$/\1/'`
-fi
+AVVER=`head -5 readme.txt | grep ' 4[0-9][0-9][0-9] ' | head -1 | sed -e 's/^.* \(4[0-9]*\) .*$/\1/'`
 if [ ! -f dat-$AVVER.tar ]; then
 	for i in *.tar ; do
 		mv $i $i.old
