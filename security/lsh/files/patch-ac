@@ -47,7 +47,7 @@
 +      if [ -z "$hash" ] ; then
 +	echo $0: File $1 not readable.
 +      else
-         $SEXP_CONV < $1 -o canonical --once > ~/.lsh/authorized_keys_sha1/$hash
+         $SEXP_CONV < $1 -f canonical --once > ~/.lsh/authorized_keys_sha1/$hash
 +      fi
 +    else
 +      echo $0: File $1 not found.
