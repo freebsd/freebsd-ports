@@ -19,6 +19,7 @@ actx-*			ports/games/actx	contains commercial
 						character data
 adom-*			ports/games/adom	Copy of CD must be sent to
 						author
+alephone-data		ports/games/alephone-data Don't sell for profit
 aswedit-*		ports/www/aswedit	Commercial software.
 atari800-*		ports/emulators/atari800 xf25 contains copyright ROMs
 						and cannot be distributed.
