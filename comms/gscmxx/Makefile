@@ -12,7 +12,7 @@ CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	svmohr@red-mercury.de
+MAINTAINER=	svmohr@rm6.net
 COMMENT=	A graphical frontend for scmxx
 
 RUN_DEPENDS=	${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
