@@ -11,7 +11,7 @@ PKGNAME=	powerpak-991203
 CATEGORIES= 	games
 MASTER_SITES=	http://www.angelfire.com/va/powerpakgsdk/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl \
 		ttf.4:${PORTSDIR}/print/freetype

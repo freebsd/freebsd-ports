@@ -11,7 +11,7 @@ PKGNAME=		frotz-2.32
 CATEGORIES=		games
 MASTER_SITES=		ftp://ftp.gmd.de/if-archive/infocom/interpreters/frotz/
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 ALL_TARGET=
 WRKSRC=			${WRKDIR}/frotz-2.32

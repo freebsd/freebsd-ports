@@ -10,7 +10,7 @@ DISTNAME=	Hermes-1.2.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://hermes.terminal.at/files/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes

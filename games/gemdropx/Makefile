@@ -11,7 +11,7 @@ PKGNAME=	gemdropx-0.4
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/gemdropx/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=	gemdropx
 MAKEFILE=	makefile

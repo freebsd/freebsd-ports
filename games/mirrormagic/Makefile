@@ -11,7 +11,7 @@ CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 LIB_DEPENDS=		Xpm.4:${PORTSDIR}/graphics/xpm
 

@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
 EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 BROKEN=			"Segmentation fault (core dumped)"
 WRKSRC=			${WRKDIR}/blocks

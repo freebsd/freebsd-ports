@@ -10,7 +10,7 @@ DISTNAME=	gedit-0.6.1
 CATEGORIES=	editors gnome
 MASTER_SITES=	http://gedit.pn.org/tar/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnomeui.3:${PORTSDIR}/x11/gnomelibs
 

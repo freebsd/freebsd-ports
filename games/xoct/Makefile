@@ -11,7 +11,7 @@ CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/xpuzzles
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 WRKSRC=			${WRKDIR}/xoct
 USE_IMAKE=		yes

@@ -10,7 +10,7 @@ DISTNAME=	xquarto-1.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.math.lsa.umich.edu/~mattiasj/games/xquarto/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 

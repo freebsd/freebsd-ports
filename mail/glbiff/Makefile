@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.eecg.utoronto.ca/~mac/projects/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	GL:${PORTSDIR}/graphics/Mesa3 \
 		GLU:${PORTSDIR}/graphics/Mesa3 \

@@ -10,7 +10,7 @@ DISTNAME=	columns-1.1
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.phreax.net/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl
 

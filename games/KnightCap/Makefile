@@ -11,7 +11,7 @@ PKGNAME=	knightcap-3.5
 CATEGORIES=	games
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/KnightCap/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3\
 		GLU.14:${PORTSDIR}/graphics/Mesa3 \

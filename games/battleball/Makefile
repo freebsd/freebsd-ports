@@ -11,7 +11,7 @@ PKGNAME=	battleball-2.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.cs.utexas.edu/users/pahardin/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/bb-2.0

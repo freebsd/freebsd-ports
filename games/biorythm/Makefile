@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE} \
 			http://home.sol.no/~sverrehu/pub-unix/files/
 MASTER_SITE_SUBDIR=	games/amusements
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 LIB_DEPENDS=		shhmsg.1:${PORTSDIR}/devel/libshhmsg \
 			shhopt.1:${PORTSDIR}/devel/libshhopt

@@ -10,7 +10,7 @@ DISTNAME=	sted-0.2.2
 CATEGORIES=	editors
 MASTER_SITES=	http://user.tninet.se/~uxm165t/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/sted
 

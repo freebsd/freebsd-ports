@@ -10,7 +10,7 @@ DISTNAME=	freesweep-0.86
 CATEGORIES=	games
 MASTER_SITES=	http://www.upl.cs.wisc.edu/~hartmann/sweep/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=
 GNU_CONFIGURE=	yes

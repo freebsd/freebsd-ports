@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.csd.uch.gr/pub/X11/games/ \
 		ftp://ftp.gwdg.de/pub/x11/x.org/R5contrib/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview \
 		olgx.3:${PORTSDIR}/x11-toolkits/xview

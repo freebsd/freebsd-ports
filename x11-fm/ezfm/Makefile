@@ -12,7 +12,7 @@ CATEGORIES=	x11-fm
 MASTER_SITES=	ftp://ftp.ma.utexas.edu/pub/mzou/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		EZ.1:${PORTSDIR}/graphics/EZWGL

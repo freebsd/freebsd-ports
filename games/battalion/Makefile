@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.evl.uic.edu/aej/
 DISTFILES=	battalionSource1.4.tar.Z battalionSUN4.tar.gz
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3 \
 		GLU.14:${PORTSDIR}/graphics/Mesa3

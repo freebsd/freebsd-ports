@@ -12,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SUNSITE} \
 			http://www-scf.usc.edu/~lerdsuwa/util/
 MASTER_SITE_SUBDIR=	utils/shell
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 LIB_DEPENDS=		ncurses.4:${PORTSDIR}/devel/ncurses
 

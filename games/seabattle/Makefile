@@ -11,7 +11,7 @@ CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/seabattle ${PREFIX}/bin/seabattle

@@ -11,7 +11,7 @@ PKGNAME=	omega-0.90.4
 CATEGORIES=	games
 MASTER_SITES=	http://dolphin.openprojects.net/Omega/Downloads/Prealphas/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=
 WRKSRC=		${WRKDIR}/omega

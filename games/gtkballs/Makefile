@@ -13,7 +13,7 @@ MASTER_SITES=		ftp://lucifer.dorms.spbu.ru/pub/Linux/games/ \
 			${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 LIB_DEPENDS=		gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 

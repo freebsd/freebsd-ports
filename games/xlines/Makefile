@@ -11,7 +11,7 @@ PKGNAME=	xlines-1.0
 CATEGORIES=	games
 MASTER_SITES=	ftp://risq.belcaf.minsk.by/pub/genie/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 USE_QT=		yes
 USE_X_PREFIX=	yes

@@ -11,7 +11,7 @@ PKGNAME=	xnibbles-1.0b3
 CATEGORIES=	games
 MASTER_SITES=	http://www.tjhsst.edu/xnibbles/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 

@@ -11,7 +11,7 @@ PKGNAME=	add-1.0
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.clark.net/pub/dickey/add/
 
-MAINTAINER=	andy@icc.surw.chel.su
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/add-970526
 

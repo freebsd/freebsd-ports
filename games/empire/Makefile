@@ -11,7 +11,7 @@ PKGNAME=		empire-1.1
 CATEGORIES=		games
 MASTER_SITES=		ftp://locke.ccil.org/pub/esr/
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 WRKSRC=			${WRKDIR}/empire-1.1
 MAN6=			empire.6

@@ -10,7 +10,7 @@ DISTNAME=		blue-2.4
 CATEGORIES=		games
 MASTER_SITES=		ftp://locke.ccil.org/pub/esr/
 
-MAINTAINER=		andy@icc.surw.chel.su
+MAINTAINER=		ports@FreeBSD.org
 
 ALL_TARGET=
 MAN6=			blue.6
