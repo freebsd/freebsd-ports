@@ -13,10 +13,11 @@ MASTER_SITES=  http://sites.inka.de/ms/python/web2ldap/download/ \
 
 MAINTAINER=    oddbjorn@tricknology.org
 
-RUN_DEPENDS=   ${LOCALBASE}/bin/python:${PORTSDIR}/lang/python \
-	       ${LOCALBASE}/lib/python1.5/site-packages/ldapmodule.so:${PORTSDIR}/net/ldapmodule
+RUN_DEPENDS=   ${PYTHON_SITELIBDIR}/_ldapmodule.so:${PORTSDIR}/net/ldapmodule
 
 NO_BUILD=      yes
+USE_PYTHON=    yes
+PYTHON_VERSION= python1.5
 
 do-install:
 	@${MKDIR} ${PREFIX}/${PORTNAME}
