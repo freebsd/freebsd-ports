@@ -14,6 +14,7 @@ DIST_SUBDIR=	hlatex
 EXTRACT_ONLY=
 
 MAINTAINER=	cjh@FreeBSD.org
+COMMENT?=	MF font collection of HLaTeX-wansung
 
 RUN_DEPENDS=	${LOCALBASE}/share/texmf/doc/latex/hlatex/wansung.ks:${PORTSDIR}/korean/hlatex-wansung
 

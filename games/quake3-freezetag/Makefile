@@ -11,6 +11,8 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	pat
 DISTNAME=	q3freeze${PORTVERSION:S/.//}
 
+COMMENT=	Quake III Arena Mod: Freeze Tag for Linux
+
 WRKSRC=		${WRKDIR}/freeze
 
 Q3_MOD_MASTER=	${.CURDIR}/../q3server-ra3

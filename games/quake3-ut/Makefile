@@ -16,6 +16,8 @@ MASTER_SITES=	http://houston.jeffs-place.org/urbanterror/ \
 DISTFILES=	beta26_full.zip \
 		beta26a_upgrade.zip
 
+COMMENT=	Quake III Arena Mod: Urban Terror for Linux
+
 NO_WRKSUBDIR=	yes
 EXTRACT_BEFORE_ARGS=	-o -qq
 

@@ -19,6 +19,7 @@ DISTFILES?=	${PORTNAME}${PORTVERSION:S/.//}cl_linuxmac.zip \
 .endif
 
 MAINTAINER?=	pat@FreeBSD.org
+COMMENT?=	Quake III Arena Mod: Rocket Arena 3 for Linux
 
 RUN_DEPENDS=	${LINUXBASE}/usr/games/quake3/q3ded:${Q3SERVER_PORT}
 

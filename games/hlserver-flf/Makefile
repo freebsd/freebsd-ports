@@ -20,6 +20,8 @@ WRKSRC=		${WRKDIR}/frontline
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-o -qq
 
+COMMENT=	Half-Life mod Frontline Force full server package for Linux
+
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 
 .include "${HALFLIFE_COUNTERSTRIKE_MASTER}/Makefile"

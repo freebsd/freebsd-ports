@@ -11,6 +11,8 @@ MASTER_SITES=	http://www.orangesmoothie.org/downloads/ \
 		http://aoh-www.hhhr.ision.net/files/osp/
 DISTNAME=	osp-Quake3-${PORTVERSION}_full
 
+COMMENT=	Quake III Arena Mod: OSP Tourney DM/CA/CTF for Linux
+
 Q3_MOD_MASTER=	${.CURDIR}/../q3server-ra3
 
 .include "${Q3_MOD_MASTER}/Makefile"

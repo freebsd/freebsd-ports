@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.redphive.org/files/ \
 		ftp://ftp.dodfrance.com/dod/dod/3.1/linux/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/.//}_full
 
+COMMENT=	Half-Life mod Day of Defeat full server package for Linux
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs

@@ -11,6 +11,8 @@ MASTER_SITES=	ftp://tdsfa.org/fafiles/ \
 		ftp://64.191.71.76/files/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}_linux_full
 
+COMMENT=	Half-Life mod Firearms full server package for Linux
+
 HALFLIFE_COUNTERSTRIKE_MASTER=	${.CURDIR}/../hlserver-cs
 
 .include "${HALFLIFE_COUNTERSTRIKE_MASTER}/Makefile"
