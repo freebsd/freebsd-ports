@@ -1,9 +1,10 @@
-bin/ogr2ogr
-bin/ogrinfo
-bin/gdalinfo
+bin/gdal-config
 bin/gdal_translate
 bin/gdaladdo
-bin/gdal-config
+bin/gdalinfo
+bin/ogr2ogr
+bin/ogrinfo
+bin/ogrtindex
 include/cpl_config.h
 include/cpl_conv.h
 include/cpl_csv.h
@@ -17,17 +18,17 @@ include/gdal_frmts.h
 include/gdal_priv.h
 include/ogr_core.h
 include/ogr_feature.h
+include/ogr_featurestyle.h
 include/ogr_geometry.h
 include/ogr_p.h
 include/ogr_spatialref.h
 include/ogr_srs_api.h
 include/ogrsf_frmts.h
-include/ogr_featurestyle.h
 lib/cpl.a
-lib/ogrsf_frmts.a
-lib/ogr.a
 lib/gdal.a
 lib/libgdal.1.1.so
+lib/ogr.a
+lib/ogrsf_frmts.a
 share/gdal/compd_cs.csv
 share/gdal/ellips_alias.csv
 share/gdal/ellipsoid.csv
@@ -39,6 +40,7 @@ share/gdal/p_meridian.csv
 share/gdal/s57attributes.csv
 share/gdal/s57expectedinput.csv
 share/gdal/s57objectclasses.csv
+share/gdal/stateplane.txt
 share/gdal/trf_method.csv
 share/gdal/trf_nonpolynomial.csv
 share/gdal/trf_path.csv
@@ -51,5 +53,4 @@ share/gdal/uom_scale.csv
 share/gdal/vert_cs.csv
 share/gdal/vert_datum.csv
 share/gdal/vert_offset.csv
-share/gdal/stateplane.txt
 @dirrm share/gdal/
