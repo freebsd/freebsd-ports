@@ -1,0 +1,27 @@
+# New ports collection makefile for:	wmnetload
+# Date created:		6 February 2003
+# Whom:		Hendrik Scholz <hendrik@scholz.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	wmnetload
+PORTVERSION=	1.3
+CATEGORIES=	net windowmaker afterstep
+MASTER_SITES=	ftp://truffula.com/pub/
+
+MAINTAINER=	hendrik@scholz.net
+COMMENT=	Network load monitor dockapp
+
+BUILD_DEPENDS=	${X11BASE}/include/dockapp.h:${PORTSDIR}/x11-wm/libdockapp
+
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/wmnetload
+	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/wmnetload/
+.endif
+
+.include <bsd.port.mk>
