@@ -1,0 +1,18 @@
+mBox is program intended to help you with organizing your music files. 
+
+The most important features are:
+
+- ability to reencode mp3/ogg/wma to mp3/ogg
+- contains utility 'convertor' which converts whole directories to desired 
+  format. Bitrate, etc. is automatically adjusted depending on settings 
+  and source audio.
+- reading/writing tags in MP3 ID3v1 and ID3v2, Ogg Vorbis
+- reading WMA tags
+- FreeDB, treates encoded files as if it was CD, so you can simply
+ select your files and - if found in database - write tags to them.
+- auto tagging - reads tag information from filename
+- batch tags editing
+- batch files renaming (can use tags)
+- directory renaming (can use tags)
+
+WWW:	http://www.mbox.wz.cz/
