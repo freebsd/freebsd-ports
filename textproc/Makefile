@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.32 1998/11/18 21:03:49 billf Exp $
+# $Id: Makefile,v 1.33 1998/11/22 22:41:52 billf Exp $
 #
 
     SUBDIR += agrep
@@ -20,6 +20,7 @@
     SUBDIR += latex2html
     SUBDIR += libxml
     SUBDIR += linuxdoc
+    SUBDIR += lv
     SUBDIR += man2html
     SUBDIR += mgdiff
     SUBDIR += mswordview
