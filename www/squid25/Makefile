@@ -29,7 +29,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -50,7 +50,8 @@ PATCHFILES=	squid-2.5.STABLE5-ntlm_assert.patch \
 		squid-2.5.STABLE5-CONNECT_timeout.patch \
 		squid-2.5.STABLE5-cache_swap_log.patch \
 		squid-2.5.STABLE5-ntlm_warning.patch \
-		squid-2.5.STABLE5-rfc1035NameUnpack.patch
+		squid-2.5.STABLE5-rfc1035NameUnpack.patch \
+		squid-2.5.STABLE5-digest_blank.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -90,8 +91,8 @@ OPTIONS=	SQUID_LDAP_AUTH "Install LDAP authentication helpers" off \
 		SQUID_ARP_ACL "Enable ACLs based on ethernet address" off \
 		SQUID_PF "Enable transp. proxy support using PF" off \
 		SQUID_FOLLOW_XFF "Follow X-Forwarded-For headers" off \
-		SQUID_AUFS "Enable the aufs store type" off \
-		SQUID_COSS "Enable the COSS store type" off \
+		SQUID_AUFS "Enable the aufs storage scheme" off \
+		SQUID_COSS "Enable the COSS storage scheme" off \
 		SQUID_STACKTRACES "Create backtraces on fatal errors" off
 
 PLIST_FILES=	etc/rc.d/squid.sh etc/squid/mib.txt etc/squid/mime.conf.default \
@@ -125,21 +126,21 @@ CONFIGURE_ARGS+=	--enable-auth="basic ntlm digest" \
 			--enable-external-acl-helpers="${external_acl}" \
 			--enable-ntlm-auth-helpers="SMB winbind"
 
-# Selection of store types:
+# Selection of storage schemes:
 
-store_types=	ufs diskd null
+storage_schemes=	ufs diskd null
 .if defined(WITH_SQUID_AUFS)
-store_types+=	aufs
+storage_schemes+=	aufs
 # Nil aufs threads is default, set any other value via SQUID_CONFIGURE_ARGS
 CONFIGURE_ARGS+=	--enable-async-io \
 			--with-pthreads
 CFLAGS+=	${PTHREAD_CFLAGS}
 .endif
 .if defined(WITH_SQUID_COSS)
-store_types+=	coss
+storage_schemes+=	coss
 CONFIGURE_ARGS+=	--with-aio
 .endif
-CONFIGURE_ARGS+=	--enable-storeio="${store_types}"
+CONFIGURE_ARGS+=	--enable-storeio="${storage_schemes}"
 
 # Other options set via 'make config':
 
@@ -156,7 +157,7 @@ CONFIGURE_ARGS+=	--enable-carp
 # we need to .include bsd.openssl.mk manually here because USE_OPENSSL only
 # works when it is defined before bsd.port{.pre}.mk is .included and this is
 # not possible when using OPTIONS
-.include "${PORTSDIR}/Mk/bsd.openssl.mk" 
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
 CONFIGURE_ARGS+=	--enable-ssl \
 			--with-openssl="${OPENSSLBASE}"
 CFLAGS+=	-I${OPENSSLINC}

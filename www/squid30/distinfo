@@ -18,3 +18,5 @@ MD5 (squid2.5/squid-2.5.STABLE5-ntlm_warning.patch) = 57ec2b3e27dcff757412d6d0a6
 SIZE (squid2.5/squid-2.5.STABLE5-ntlm_warning.patch) = 900
 MD5 (squid2.5/squid-2.5.STABLE5-rfc1035NameUnpack.patch) = e3640442452f77762df5b20380aeb334
 SIZE (squid2.5/squid-2.5.STABLE5-rfc1035NameUnpack.patch) = 685
+MD5 (squid2.5/squid-2.5.STABLE5-digest_blank.patch) = 9eec94b95e52f26aece4568af4a2e5ae
+SIZE (squid2.5/squid-2.5.STABLE5-digest_blank.patch) = 4598
