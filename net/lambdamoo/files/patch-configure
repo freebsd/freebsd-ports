@@ -1,0 +1,11 @@
+--- configure.orig	Mon Apr  8 22:32:10 2002
++++ configure	Mon Apr  8 22:51:13 2002
+@@ -1618,7 +1618,7 @@
+ do
+ echo "checking whether $func is declared in sys/ioctl.h"
+ 
+-pattern="[^_a-zA-Z0-9]$func *\("
++pattern="[^_a-zA-Z0-9]$func\)? *\("
+ cat > conftest.c <<EOF
+ #include "confdefs.h"
+ 
