@@ -20,7 +20,7 @@ MySQL		"MySQL map lookups" OFF \
 OpenLDAP	"OpenLDAP map lookups" OFF \
 Test		"SMTP/LMTP test server and generator" OFF \
 TLS		"Secure Sockets Layer and Transport Layer Security" OFF \
-IPv6		"IPv6 support" OFF \
+IPv6		"IPv6 support (CURRENTLY BROKEN)" OFF \
 2> $tempfile
 
 	retval=$?
@@ -46,25 +46,18 @@ exec > ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 
 echo "PREFIX=	${PREFIX}"
 
-SUB_PCRE="@comment "
-SUB_SASL="@comment "
 SUB_TLS="@comment "
-SUB_LDAP="@comment "
 SUB_TEST="@comment "
 
 while [ "$1" ]; do
 	case $1 in
 		\"PCRE\")
-			echo "CONF1+=		pcre_table"
-			echo "CONF2+=		sample-pcre-access.cf sample-pcre-body.cf sample-pcre-header.cf"
-			echo "MAN5+=		pcre_table.5"
 			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libpcre.a:\${PORTSDIR}/devel/pcre"
 			echo "POSTFIX_CCARGS+=	-DHAS_PCRE -I\${LOCALBASE}/include"
 			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/libpcre.a"
 			SUB_PCRE=""
 			;;
 		\"SASL\")
-			echo "CONF2+=		sample-auth.cf"
 			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libsasl.a:\${PORTSDIR}/security/cyrus-sasl"
 			echo "POSTFIX_CCARGS+=	-DUSE_SASL_AUTH -I\${LOCALBASE}/include"
 			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/libsasl.a -lpam -lcrypt"
@@ -83,12 +76,11 @@ while [ "$1" ]; do
 			SUB_SASL=""
 			;;
 		\"TLS\")
-			echo "CONF2+=		sample-tls.cf"
-			echo "BIN1+=		tlsmgr"
+			echo "MAN8+=		tlsmgr.8"
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I/usr/include/openssl"
 			echo "POSTFIX_AUXLIBS+=	-lssl -lcrypto"
-			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.7.14-snap20020107-0.9.6c.tar.gz"
-			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.7.14-snap20020107-0.9.6c/pfixtls.diff"
+			echo "DISTFILES+=	\${DISTNAME}.tar.gz pfixtls-0.7.15-1.1.0-0.9.6c.tar.gz"
+			echo "EXTRA_PATCHES+=	\${WRKDIR}/pfixtls-0.7.15-1.1.0-0.9.6c/pfixtls.diff"
 			echo "PATCH_STRIP=	-p1"
 			SUB_TLS=""
 			;;
@@ -103,14 +95,12 @@ while [ "$1" ]; do
 			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/mysql/libmysqlclient.a -lm -lz"
 			;;
 		\"OpenLDAP\")
-			echo "CONF2+=		sample-ldap.cf"
 			echo "BUILD_DEPENDS+=	\${LOCALBASE}/lib/libldap.a:\${PORTSDIR}/net/openldap"
 			echo "POSTFIX_CCARGS+=	-DHAS_LDAP -I\${LOCALBASE}/include"
 			echo "POSTFIX_AUXLIBS+=	\${LOCALBASE}/lib/libldap.a \${PREFIX}/lib/liblber.a"
-			SUB_LDAP=""
 			;;
 		\"Test\")
-			echo "BIN3=		smtp-sink smtp-source"
+			echo "BIN1=		smtp-sink smtp-source"
 			SUB_TEST=""
 			;;
 		\"IPv6\")
@@ -142,8 +132,5 @@ while [ "$1" ]; do
 	shift
 done
 
-echo "PLIST_SUB+=	SUB_PCRE=\"${SUB_PCRE}\""
-echo "PLIST_SUB+=	SUB_SASL=\"${SUB_SASL}\""
 echo "PLIST_SUB+=	SUB_TLS=\"${SUB_TLS}\""
-echo "PLIST_SUB+=	SUB_LDAP=\"${SUB_LDAP}\""
 echo "PLIST_SUB+=	SUB_TEST=\"${SUB_TEST}\""

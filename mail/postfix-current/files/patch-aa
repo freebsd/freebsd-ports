@@ -32,40 +32,6 @@
   # QUEUE AND PROCESS OWNERSHIP
   #
 ***************
-*** 56,62 ****
-  # These rights are used in the absence of a recipient user context.
-  # DO NOT SPECIFY A PRIVILEGED USER OR THE POSTFIX OWNER.
-  #
-! #default_privs = nobody
-  
-  # INTERNET HOST AND DOMAIN NAMES
-  # 
---- 56,62 ----
-  # These rights are used in the absence of a recipient user context.
-  # DO NOT SPECIFY A PRIVILEGED USER OR THE POSTFIX OWNER.
-  #
-! default_privs = nobody
-  
-  # INTERNET HOST AND DOMAIN NAMES
-  # 
-***************
-*** 306,312 ****
-  # tables that are not necessarily all under control by Postfix.
-  #
-  #alias_database = dbm:/etc/aliases
-! #alias_database = dbm:/etc/mail/aliases
-  #alias_database = hash:/etc/aliases
-  #alias_database = hash:/etc/aliases, hash:/opt/majordomo/aliases
-  
---- 306,312 ----
-  # tables that are not necessarily all under control by Postfix.
-  #
-  #alias_database = dbm:/etc/aliases
-! #alias_database = dbm:/etc/aliases
-  #alias_database = hash:/etc/aliases
-  #alias_database = hash:/etc/aliases, hash:/opt/majordomo/aliases
-  
-***************
 *** 325,332 ****
   #
   # The home_mailbox parameter specifies the optional pathname of a
@@ -85,23 +51,6 @@
   #home_mailbox = Mailbox
   #home_mailbox = Maildir/
 ***************
-*** 335,341 ****
-  # UNIX-style mailboxes are kept. The default setting depends on the
-  # system type.
-  #
-! #mail_spool_directory = /var/mail
-  #mail_spool_directory = /var/spool/mail
-  
-  # The mailbox_command parameter specifies the optional external
---- 335,341 ----
-  # UNIX-style mailboxes are kept. The default setting depends on the
-  # system type.
-  #
-! mail_spool_directory = /var/mail
-  #mail_spool_directory = /var/spool/mail
-  
-  # The mailbox_command parameter specifies the optional external
-***************
 *** 424,430 ****
   #
   # See also the body_checks example in the sample-filter.cf file.
@@ -117,27 +66,6 @@
 ! #header_checks = regexp:!!PREFIX!!/etc/postfix/header_checks
   
   # FAST ETRN SERVICE
-  #
-***************
-*** 498,506 ****
-  # the process marches on. If you use an X-based debugger, be sure to
-  # set up your XAUTHORITY environment variable before starting Postfix.
-  #
-! debugger_command =
-! 	 PATH=/usr/bin:/usr/X11R6/bin
-! 	 xxgdb $daemon_directory/$process_name $process_id & sleep 5
-  
-  # INSTALL-TIME CONFIGURATION INFORMATION
-  #
---- 498,506 ----
-  # the process marches on. If you use an X-based debugger, be sure to
-  # set up your XAUTHORITY environment variable before starting Postfix.
-  #
-! #debugger_command =
-! #	 PATH=/usr/bin:/usr/X11R6/bin
-! #	 xxgdb $daemon_directory/$process_name $process_id & sleep 5
-  
-  # INSTALL-TIME CONFIGURATION INFORMATION
   #
 ***************
 *** 525,531 ****
