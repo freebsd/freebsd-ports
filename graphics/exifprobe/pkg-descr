@@ -8,4 +8,4 @@ and TIFF/EP tags are expanded, including  EXIF2.2 sections and camera MakerNotes
 which are found to be in TIFF  IFD  format. Location, size, and format of image
 data is reported by default.
 
-WWW:	http://www.monroe.net/~dhh/exifprobe.d/exifprobe.html
+WWW:	http://www.virtual-cafe.com/~dhh/tools.d/exifprobe.d/exifprobe.html

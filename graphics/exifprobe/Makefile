@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	exifprobe
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.monroe.net/~dhh/exifprobe.d/
+MASTER_SITES=	http://www.virtual-cafe.com/~dhh/tools.d/exifprobe.d/
 
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Probes JPEG or TIFF images and reports contents and structure
