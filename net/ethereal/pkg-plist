@@ -25,6 +25,7 @@ lib/ethereal/plugins/%%PORTVERSION%%/gryphon.so
 lib/ethereal/plugins/%%PORTVERSION%%/mgcp.a
 lib/ethereal/plugins/%%PORTVERSION%%/mgcp.la
 lib/ethereal/plugins/%%PORTVERSION%%/mgcp.so
+@dirrm etc/diameter
 @dirrm lib/ethereal/plugins/%%PORTVERSION%%
 @dirrm lib/ethereal/plugins
 @dirrm lib/ethereal
