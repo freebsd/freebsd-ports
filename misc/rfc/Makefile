@@ -6,28 +6,24 @@
 #
 
 PORTNAME=	rfc
-PORTVERSION=	3.2
+PORTVERSION=	3.2.2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.dewn.com/rfc/
-EXTRACT_SUFX=
 
 MAINTAINER=	jedgar@FreeBSD.org
 
 RUN_DEPENDS=	w3m:${PORTSDIR}/www/w3m
 
-NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-
-do-extract:
-	@${MKDIR} ${WRKDIR}
-	@${CP} ${DISTDIR}/${DISTNAME} ${WRKDIR}/${DISTNAME}
+MAN1=		rfc.1
 
 do-configure:
 	@${PERL} -pi.orig -e 's|/usr/local/etc/rfc|${PREFIX}/etc/rfc| ; \
-		s|/usr/local/etc/nmap|${PREFIX}/share/misc/nmap| ; \
-		s|lynx|w3m|' ${WRKDIR}/${DISTNAME}
+		s|/usr/local/etc/nmap|${PREFIX}/share/misc/nmap|' \
+		${WRKSRC}/${PORTNAME}-${PORTVERSION}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME} ${PREFIX}/bin/${DISTNAME:S/-${PORTVERSION}//}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}-${PORTVERSION} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
