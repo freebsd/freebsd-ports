@@ -1,0 +1,12 @@
+LinCVS is a QT2-based frontend for the CVS-client supporting
+both CVS-versions 1.9 and 1.10, perhaps even older ones....
+It allows to check out a module from and import of a module to a
+repository, to update or retrieve the status of a working directory
+or single files and common operations like add, remove and commit,
+diff against the repository or view of the log messages in list
+form.
+
+WWW: http://ppprs1.phy.tu-dresden.de/~trogisch/lincvs/lincvsen.html
+
+- Chris D. Faulhaber
+jedgar@fxp.org
