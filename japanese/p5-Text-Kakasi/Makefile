@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-Kakasi
-PORTVERSION=	1.01
+PORTVERSION=	1.04
 CATEGORIES=	japanese perl5
 MASTER_SITES=	http://www.daionet.gr.jp/~knok/kakasi/
 
