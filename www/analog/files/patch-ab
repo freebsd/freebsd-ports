@@ -1,5 +1,5 @@
 *** analhead.h.orig	Fri Mar 14 20:33:09 1997
---- analhead.h	Sat May  3 02:37:26 1997
+--- analhead.h	Sat May  3 05:11:35 1997
 ***************
 *** 14,25 ****
   /* the name of your organisation or WWW host. This is used for printing
@@ -71,11 +71,11 @@
   #define CACHEFILE "none"
   /* The default file of cached time info. Use "none" for none. */
   
-! #define REFERRER_LOG "/var/log/httpd-referer.log"
+! #define REFERRER_LOG "none"
   /* The name of the default referrer log (= referer_log). Use "none" for none.
      Can be a list, separated by commas. */
   
-! #define BROWSER_LOG "/var/log/httpd-agent.log"
+! #define BROWSER_LOG "none"
   /* The name of the default browser log (= agent_log) similarly. */
   
 ! #define ERROR_LOG "/var/log/httpd-error.log"
