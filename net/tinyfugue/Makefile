@@ -9,11 +9,10 @@
 DISTNAME=	tf-40g2
 PKGNAME=	tf-4.0g2
 CATEGORIES=	net games
-MASTER_SITES=	ftp://tf.tcp.com/pub/tinyfugue/
+MASTER_SITES=	ftp://tf.tcp.com/pub/tinyfugue/ \
+		ftp://laurel.actlab.utexas.edu/pub/tinyfugue/
 
 MAINTAINER=	jseger@FreeBSD.org
-
-PLIST_SUB=	DISTNAME=${DISTNAME}
 
 MAKEFILE=	${WRKSRC}/unix/Makefile
 MAKE_ENV=	TFVER=${DISTNAME:S/^tf-//}
