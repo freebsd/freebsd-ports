@@ -1,0 +1,39 @@
+--- GNUmakefile.orig	Sat Feb 21 23:01:27 2004
++++ GNUmakefile	Sat Feb 21 23:06:27 2004
+@@ -4,20 +4,16 @@
+ # in /opt/diet, where they are in the default search path for my diet libc
+ # work but don't conflict with anything there.  YMMV.
+ 
+-prefix=/opt/diet
++prefix=${PREFIX}
+ LIBDIR=${prefix}/lib
+-INCLUDEDIR=${prefix}/include
+-MAN3DIR=${prefix}/man/man3
++INCLUDEDIR=${prefix}/include/libowfat
++MAN3DIR=${MAN3PREFIX}/man/man3
+ 
+ LIBS=byte.a fmt.a scan.a str.a uint.a open.a stralloc.a unix.a socket.a \
+ buffer.a mmap.a taia.a tai.a dns.a case.a mult.a array.a io.a textcode.a
+ 
+ all: t $(LIBS) libowfat.a libsocket
+ 
+-CC=gcc
+-CFLAGS=-pipe -Wall -O2 -fomit-frame-pointer
+-#CFLAGS=-pipe -Os -march=pentiumpro -mcpu=pentiumpro -fomit-frame-pointer -fschedule-insns2 -Wall
+-
+ # startrip
+ ifneq ($(DEBUG),)
+ CFLAGS=-pipe -Wall -g
+@@ -147,9 +143,9 @@
+ 
+ install: libowfat.a
+ 	install -d $(INCLUDEDIR) $(MAN3DIR) $(LIBDIR)
+-	install -m 644 $(INCLUDES) $(INCLUDEDIR)
+-	install -m 644 $(wildcard */*.3) $(MAN3DIR)
+-	install -m 644 libowfat.a $(LIBDIR)
++	install -m 444 $(INCLUDES) $(INCLUDEDIR)
++	install -m 444 $(wildcard */*.3) $(MAN3DIR)
++	install -m 444 libowfat.a $(LIBDIR)
+ 
+ uninstall:
+ 	rm -f $(patsubst %.h,$(INCLUDEDIR)/%.h,$(INCLUDES))
