@@ -122,7 +122,8 @@ do-build:
 .for i in libcxa.a libimf.a libirc.a libircmt.a libunwind.a \
 	libBINDF90.a libCEPCF90.a libF90.a libIEPCF90.a libPEPCF90.a \
 	libcprts.a libintrins.a libompstub.a
-	@${OBJCOPY} --redefine-sym stdin=__stdinp \
+	@${OBJCOPY} --redefine-sym __sigsetjmp=sigsetjmp \
+		--redefine-sym stdin=__stdinp \
 		--redefine-sym stdout=__stdoutp \
 		--redefine-sym stderr=__stderrp \
 		${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/lib/${i}

@@ -30,9 +30,6 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-static short unsigned int ctype_b[256] = { 0 };
-short unsigned int *__ctype_b = ctype_b;
-
 /* This matches struct stat64 in glibc2.1, hence the absolutely
  * insane amounts of padding around dev_t's.
  */

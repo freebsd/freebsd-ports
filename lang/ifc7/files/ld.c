@@ -28,7 +28,7 @@
  * Based on a shell-script written by Dan Nelson <dnelson@allantgroup.com>
  * with some modifications by Alexander Leidinger <netchild@FreeBSD.org>.
  *
- * $FreeBSD: /tmp/pcvs/ports/lang/ifc7/files/Attic/ld.c,v 1.2 2003-04-28 22:17:47 maho Exp $
+ * $FreeBSD: /tmp/pcvs/ports/lang/ifc7/files/Attic/ld.c,v 1.3 2003-10-08 00:04:36 maho Exp $
  */
 
 /* Uses code marked: */
@@ -206,6 +206,10 @@ main(int argc, char *argv[], char *envp[])
 			dynamic++;
 			continue;
 		}
+		if (ARGCMP("-shared")) {
+			dynamic++;
+			continue;
+		}
 
 		/*
 		 * Just link libstlport_icc* once when compiling the stlport
@@ -334,7 +338,11 @@ main(int argc, char *argv[], char *envp[])
 
 		/* Switch Linux stuff to FreeBSD counterparts. */
 		if (ARGCMP("/lib/ld-linux.so.2")) {
+#if __FreeBSD_version >= 501105
+			addarg(&al, "/libexec/ld-elf.so.1", 1);
+#else
 			addarg(&al, "/usr/libexec/ld-elf.so.1", 1);
+#endif
 			continue;
 		}
 		if (ARGCMP("-L/usr/lib")) {
