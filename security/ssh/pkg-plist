@@ -8,8 +8,6 @@ bin/ssh-add1
 bin/ssh-add
 bin/ssh-agent1
 bin/ssh-agent
-bin/ssh-askpass1
-bin/ssh-askpass
 bin/ssh-keygen1
 bin/ssh-keygen
 bin/make-ssh-known-hosts1
