@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:L}
 
 MAINTAINER=	lioux@FreeBSD.org
 
-BROKEN=		'Does not currently work'
+IGNORE=		'Does not currently work'
 
 GNU_CONFIGURE=	yes
 

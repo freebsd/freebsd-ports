@@ -18,7 +18,7 @@ LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20 \
 		popt.0:${PORTSDIR}/devel/popt \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-BROKEN= Needs help fixing scheduling code under FreeBSD
+IGNORE=		Needs help fixing scheduling code under FreeBSD
 
 USE_BISON=	yes
 USE_BZIP2=	yes

@@ -28,7 +28,7 @@ CFLAGS+=	-D_PATH_CONF='\"${PREFIX}/etc/diskcheckd.conf\"'
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=	"Not tested on anything less than 5.0, use at discretion"
+IGNORE=		"Not tested on anything less than 5.0, use at discretion"
 .endif
 
 do-extract:
