@@ -12,25 +12,26 @@ MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/
 
 MAINTAINER=	cordeiro@iqm.unicamp.br
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ALL_TARGET=	chkrootkit chklastlog chkwtmp ifpromisc
 
+DOCFILES=	COPYRIGHT README.chklastlog README.chkwtmp
+
 pre-patch:
-	@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.orig
-	@${SED} -e "s/^CC/#CC/g" -e "s/^CFLAGS/#CFLAGS/g" \
-		${WRKSRC}/Makefile.orig > ${WRKSRC}/Makefile
-	@${MV} ${WRKSRC}/chkrootkit ${WRKSRC}/chkrootkit.orig
-	@${SED} -e 's#\./chklastlog#${PREFIX}/sbin/chklastlog#' \
-		-e 's#\./chkwtmp#${PREFIX}/sbin/chkwtmp#' \
-		-e 's#\./ifpromisc#${PREFIX}/sbin/ifpromisc#' \
-		${WRKSRC}/chkrootkit.orig > ${WRKSRC}/chkrootkit
+	${PERL} -pi -e "s/^CC/#CC/; s/^CFLAGS/#CFLAGS/" ${WRKSRC}/Makefile
+	${PERL} -pi -e \
+		's#\./chklastlog#${PREFIX}/sbin/chklastlog#g; \
+		s#\./chkwtmp#${PREFIX}/sbin/chkwtmp#g; \
+		s#\./ifpromisc#${PREFIX}/sbin/ifpromisc#g; ' \
+		${WRKSRC}/chkrootkit
+
 do-install:
 	${INSTALL_SCRIPT}  ${WRKSRC}/chkrootkit ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/chklastlog ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/chkwtmp    ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/ifpromisc  ${PREFIX}/sbin
+.if	!defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/chkrootkit
-	${CP} -R ${WRKSRC}/COPY*   ${PREFIX}/share/doc/chkrootkit
-	${CP} -R ${WRKSRC}/README* ${PREFIX}/share/doc/chkrootkit
+	${INSTALL_DATA} ${DOCFILES:C,^,${WRKSRC}/,} ${PREFIX}/share/doc/chkrootkit
+.endif
 
 .include <bsd.port.mk>
