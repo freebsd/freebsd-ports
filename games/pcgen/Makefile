@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pcgen
-PORTVERSION=	5.7.7
+PORTVERSION=	5.7.8
 CATEGORIES=	games java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pcgen
@@ -22,7 +22,7 @@ NO_BUILD=	YES
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 DATAFILES=	characters data filepaths.ini lib outputsheets pcgen.jar plugins system
-PLIST_FILES+=	bin/pcgen.sh ${DATADIR:S,^${PREFIX}/,,}/pcgen.sh
+PLIST_FILES+=	bin/pcgen
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	acknowledgments faqpages gmgen greetings.html images \
@@ -42,9 +42,10 @@ do-install:
 	@${ECHO_MSG} -n ">> Installing in ${DATADIR}..."
 	@cd ${WRKSRC} && ${FIND} ${DATAFILES} -type d -exec ${MKDIR} ${DATADIR}/{} ";"
 	@cd ${WRKSRC} && ${FIND} ${DATAFILES} -type f -exec ${INSTALL_DATA} {} ${DATADIR}/{} ";"
-	@cd ${WRKSRC} && ${INSTALL_SCRIPT} pcgen.sh.bsd ${DATADIR}/pcgen.sh
 	@${ECHO_MSG} " [ DONE ]"
-	@${LN} -fs ${DATADIR}/pcgen.sh ${PREFIX}/bin/pcgen.sh
+	@${ECHO_MSG} -n ">> Installing script as ${PREFIX}/bin/pcgen..."
+	@cd ${WRKSRC} && ${INSTALL_SCRIPT} pcgen.sh.bsd ${PREFIX}/bin/pcgen
+	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation in ${DOCSDIR}..."
 	@cd ${WRKSRC}/docs && ${FIND} ${PORTDOCS} -type d -exec ${MKDIR} ${DOCSDIR}/{} ";"
