@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	pyDict
-PORTVERSION=	0.2.5
-PORTREVISION=	1
+PORTVERSION=	0.2.6.3
 CATEGORIES=	chinese
-MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/keith/
-DISTNAME=	pyDict-0.2.5.1
+MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/pyDict/
 
 MAINTAINER=	keith@FreeBSD.org
 COMMENT=	A Chinese <-> English dictionary, under both console and X11
@@ -25,8 +23,14 @@ NO_BUILD=	yes
 SHAREMODE=	644
 DICTDIR=	${PREFIX}/lib/X11/pyDict
 DOCDIR=		${PREFIX}/share/doc/pyDict
+USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
+
+do-patch:
+	${REINPLACE_CMD} -e 's,/bin/grep,${GREP},g' \
+		-e 's,--after-context=20,-A 20,g' \
+		-e 's,/usr/X11R6,${PREFIX},g' ${WRKSRC}/dict.py
 
 do-install:
 	@${MKDIR} ${DICTDIR}
