@@ -18,9 +18,9 @@
  	${CC} ${CFLAGS} -o dhcpc ${OBJ} ${LDFLAGS}
 +
 +install: dhcpc
-+	${INSTALL} -m 755 -s dhcpc ${SBIN}/dhcpc
++	${INSTALL} -c -m 755 -s dhcpc ${SBIN}/dhcpc
 +	cp dhcpc.8 ${MAN}/man8/dhcpc.8
-+	gzip ${MAN}/man8/dhcpc.8
++	gzip -9nf ${MAN}/man8/dhcpc.8
  
  clean:
  	rm -f *~ *.o *core* dhcpc
