@@ -1,0 +1,92 @@
+--- Makefile.orig	Mon Apr  3 10:55:32 1995
++++ Makefile	Thu Feb  4 22:08:18 1999
+@@ -11,8 +11,8 @@
+ # puts malloc.h in $INCDIR.
+ #
+ 
+-LIBDIR=$(HOME)/lib/$(ARCH)
+-INCDIR=$(HOME)/include
++LIBDIR=${PREFIX}/lib
++INCDIR=${PREFIX}/include
+ 
+ # neutralize SystemV genius
+ SHELL=/bin/sh
+@@ -46,7 +46,7 @@
+ # -DHAVE_MMAP can be defined for SunOS4.x and other systems
+ # that have a general purpose mmap call that allows memory-mapped files.
+ #
+-NORMALDEFS=-DHAVE_MMAP # -DSTDHEADERS -DSHORTNAMES -DUSESTDIO
++NORMALDEFS=-DHAVE_MMAP -DSTDHEADERS # -DSHORTNAMES -DUSESTDIO
+ 
+ # CC = gcc -ansi -Wall -O # -pedantic # add -pedantic if you fixed your includes.
+ # SGI needs cc -xansi -D__STDC__ on Irix4.0.5.
+@@ -62,11 +62,20 @@
+ RANLIB = ranlib
+ 
+ LDFLAGS=#-Bstatic
++.if (${PORTOBJFORMAT} == "elf")
++CFLAGS_SHARED=	-shared -Wl,-soname,${LIBSMALLOC}
++VERSION=1
++.else
++CFLAGS_SHARED=	-shared
++VERSION=1.18
++.endif
+ 
+ # only developers should have to change stuff below this line
+ 
+ EXT=_d
+ LIBMALLOC=libmalloc$(EXT).a
++LIBSMALLOC=libmalloc${EXT}.so.${VERSION}
++
+ PROGS=testmalloc$(EXT) simumalloc$(EXT) teststomp$(EXT) maltrace$(EXT)
+ 
+ DEFINES= $(NORMALDEFS) $(DEBUGDEFS)
+@@ -108,9 +117,16 @@
+ 
+ CFLAGS = $(CDEBUGFLAGS) $(INCLUDES) $(DEFINES)
+ 
+-all: pass clean libmalloc
++.c.o:
++	${CC} -c ${CFLAGS} $< -o $@
++	${CC} -c -fpic ${CFLAGS} $< -o shared/$@
++
++all: mkdir pass clean libmalloc
+ 
+-pass: $(LIBMALLOC) $(PROGS) out$(EXT)
++mkdir:
++	@mkdir -p shared
++
++pass: $(LIBMALLOC) ${LIBSMALLOC} $(PROGS) out$(EXT)
+ 
+ libmalloc:
+ 	$(MAKE) -f Makefile $(MFLAGS) CC="$(CC)" DEBUGDEFS="$(FASTDEFS)" \
+@@ -135,6 +151,12 @@
+ 	-$(RANLIB) $(LIBMALLOC)
+ 	touch .lib$(EXT)
+ 
++${LIBSMALLOC}: ${OBJS}
++	rm -f ${LIBSMALLOC} ${SPLAYOBJ}
++	cd splay; ${MAKE} ${MFLAGS} DEFINES="${DEFINES}" \
++		LIBMALLOC=../${LIBMALLOC} CC="${CC} -fpic"
++	(cd shared; ${CC} ${CFLAGS_SHARED} -o ../${LIBSMALLOC} ${OBJS} ../${SPLAYOBJ})
++
+ $(SPLAYOBJ): .foo
+ 	cd splay; $(MAKE) $(MFLAGS) DEFINES="$(DEFINES)" \
+ 		LIBMALLOC=../$(LIBMALLOC) CC="$(CC)"
+@@ -164,6 +186,7 @@
+ 
+ clean:
+ 	-rm -f *.o \#* *~ core a.out gmon.out mon.out onefile.c *.sL prof.out
++	-(cd shared; rm -f *.o \#* *~)
+ 	cd splay; $(MAKE) clean
+ 
+ veryclean: clean cleanprogs
+@@ -175,6 +198,8 @@
+ 	-$(RANLIB) $(LIBDIR)/libmalloc.a
+ 	install -c -m 644 libmalloc_d.a $(LIBDIR)
+ 	-$(RANLIB) $(LIBDIR)/libmalloc_d.a
++	install -c -m 644 ${LIBSMALLOC} ${LIBDIR}
++	ln -sf ${LIBDIR}/${LIBSMALLOC} ${LIBDIR}/libmalloc${EXT}.so
+ 	install -c -m 644 malloc.h $(INCDIR)
+ 	
+ .id: $(SRCS)

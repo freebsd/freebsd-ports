@@ -4,8 +4,9 @@ lib/libmalloc_d.a
 @exec ranlib %D/%F
 include/malloc.h
 include/libmalloc.h
+lib/libmalloc_d.so
 lib/libmalloc_d.so.1.18
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 share/doc/libmalloc/malloc.doc
 share/doc/libmalloc/NOTE
