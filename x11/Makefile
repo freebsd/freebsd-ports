@@ -14,6 +14,7 @@
     SUBDIR += XFree86-aoutlibs
     SUBDIR += XFree86-contrib
     SUBDIR += accessx
+    SUBDIR += apwal
     SUBDIR += aterm
     SUBDIR += bbrun
     SUBDIR += bgrot
