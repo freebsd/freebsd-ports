@@ -1,7 +1,6 @@
-diff -ruN ../squirm-1.0betaB.orig/Makefile.real ./Makefile.real
---- Makefile.real.orig	Wed Mar 11 10:23:51 1998
-+++ Makefile.real	Tue May 25 17:15:36 1999
-@@ -1,31 +1,30 @@
+--- Makefile.real.orig	Wed Mar 11 02:23:51 1998
++++ Makefile.real	Thu Jun 17 18:13:00 1999
+@@ -1,31 +1,31 @@
  # Makefile for Squirm
  #
  
@@ -12,17 +11,18 @@ diff -ruN ../squirm-1.0betaB.orig/Makefile.real ./Makefile.real
 +HFILES = squirm.h paths.h lists.h log.h #regex.h
  
 -CC=gcc
-+CC?=cc
++PREFIX?=	/usr/local
++CC?=		cc
  #CC=checkergcc
  
--#EXTRALIBS=-lregex
-+EXTRALIBS=-lgnuregex
- #EXTRALIBS=
+ #EXTRALIBS=-lregex
+-#EXTRALIBS=
++EXTRALIBS=	-lgnuregex
  
  BINARIES = squirm
  
 -CFLAGS = -O3 -Wall -funroll-loops
-+CFLAGS? = -O3 -Wall -funroll-loops
++CFLAGS?=	-O3 -Wall -funroll-loops
  #CFLAGS = -Wall -g
  
  all:	$(BINARIES)
@@ -30,17 +30,17 @@ diff -ruN ../squirm-1.0betaB.orig/Makefile.real ./Makefile.real
  install:	all
 -			install -m 755 -o root -g root -d /usr/local/squirm \
 -			/usr/local/squirm/bin
--			install -m 750 -o root -g squid -d /usr/local/squirm/etc
+-			install -m 770 -o root -g squid -d /usr/local/squirm/etc
 -			install -m 750 -o squid -g squid -d /usr/local/squirm/logs
 -			install -m 660 -o root -g squid squirm.local.dist squirm.patterns.dist \
 -			/usr/local/squirm/etc
 -			install -m 755 -o root -g root --strip squirm /usr/local/squirm/bin
-+	install -c -m 755 -o root -g wheel -d ${PREFIX}/squirm
-+	install -c -m 770 -o root -g wheel -d ${PREFIX}/etc/squirm
-+	install -c -m 750 -o nobody -g nogroup -d ${PREFIX}/squirm/logs
++	install -c -m 755 -o root -g wheel -d $(PREFIX)/squirm
++	install -c -m 770 -o root -g wheel -d $(PREFIX)/etc/squirm
++	install -c -m 750 -o nobody -g nogroup -d $(PREFIX)/squirm/logs
 +	install -c -m 660 -o root -g nogroup squirm.local.dist squirm.patterns.dist \
-+	${PREFIX}/etc/squirm
-+	install -c -m 755 -o root -g wheel --strip squirm ${PREFIX}/bin
++		$(PREFIX)/etc/squirm
++	install -c -m 755 -o root -g wheel --strip squirm $(PREFIX)/bin
  			
  squirm.o:	squirm.c $(HFILES)
  			$(CC) -c squirm.c 		$(CFLAGS)
