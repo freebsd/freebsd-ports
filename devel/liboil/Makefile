@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.schleef.org/liboil/download/
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Library of optimized inner loops
 
-USE_GNOME=	gnomeprefix glib20
+USE_GNOME=	glib20
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=15
 INSTALLS_SHLIB=	yes
