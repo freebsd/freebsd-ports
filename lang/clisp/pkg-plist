@@ -48,12 +48,13 @@ share/doc/clisp/doc/CLOS-guide.txt
 share/doc/clisp/doc/LISP-tutorial.txt
 share/doc/clisp/doc/clisp.1
 share/doc/clisp/doc/clisp.dvi
-share/doc/clisp/doc/clisp.gif
 share/doc/clisp/doc/clisp.html
+share/doc/clisp/doc/clisp.png
 share/doc/clisp/doc/clreadline.3
 share/doc/clisp/doc/clreadline.dvi
 share/doc/clisp/doc/clreadline.html
 share/doc/clisp/doc/editors.txt
+share/doc/clisp/doc/impnotes.css
 share/doc/clisp/doc/impnotes.html
 share/doc/clisp/doc/readline.dvi
 share/locale/de/LC_MESSAGES/clisp.mo

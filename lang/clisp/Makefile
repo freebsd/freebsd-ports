@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clisp
-PORTVERSION=	2.27
+PORTVERSION=	2.28
 CATEGORIES=	lang
 MASTER_SITES=	ftp://cvs2.cons.org/pub/lisp/clisp/source/${PORTVERSION}/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -16,6 +16,13 @@ MAINTAINER=	jabrown@caida.org
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+
+# In clisp-2.28, the build dies in the "regexp" module: the build target
+# invokes a configure script, which encounters a different CC variable than
+# the one the top-level configure cached.  We'll explicitly set CC to avoid
+# this.
+MAKE_ENV+= CC="${CC}"
+CONFIGURE_ENV+= CC="${CC}"
 
 # The build uses INSTALL_* to copy files around, but since the Ports
 # INSTALL_* try to set file permissions, using them breaks non-root builds.
@@ -27,7 +34,8 @@ CONFIGURE_ENV+=	INSTALL=${CP} INSTALL_DATA=${CP} INSTALL_PROGRAM=${CP} \
 # Build subdirectory
 BUILD_DIRNAME=${CONFIGURE_TARGET}
 
-# These came from clisp-2.27's "configure" on my 4.1.1-R system.
+# These came from clisp-2.28's "configure" on my 4.4-R system,
+# with "--with-module=regexp --with-export-syscalls" added in.
 MAKEMAKE_ARGS=--prefix=${PREFIX} --with-readline --with-gettext \
 	--with-dynamic-ffi --with-module=regexp --with-export-syscalls
 
