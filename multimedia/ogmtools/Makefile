@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ogmtools
-PORTVERSION=	0.9.60
-PORTREVISION=	1
+PORTVERSION=	0.9.72
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/ogmtools/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.{2})$/\1/}
@@ -31,6 +30,14 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f -name "Makefile.in" | ${XARGS} \
 		-n 10 ${REINPLACE_CMD} -E -e \
 		's!^(ACLOCAL|AUTOCONF|AUTOMAKE|AUTOHEADER).+$$!\1=${TRUE}!'
+# C{,XX}FLAGS safeness
+	@${REINPLACE_CMD} -E -e \
+		's|^(CFLAGS).*(-DLINUX)|\1=${CFLAGS} \2|' \
+		${WRKSRC}/avilib/Makefile.in
+	@${REINPLACE_CMD} -E -e \
+		's|^(CFLAGS[[:space:]]*)=|\1+=|; \
+		s|^(CXXFLAGS[[:space:]]*)=|\1+=|' \
+		${WRKSRC}/Makefile.in
 
 post-configure:
 # malloc.h -> stdlib.h
