@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_python
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.3
 CATEGORIES=	www python
 MASTER_SITES=	http://www.apache.org/dist/httpd/%SUBDIR%/ \
 		http://apache.mirrorcentral.com/dist/httpd/%SUBDIR%/ \
