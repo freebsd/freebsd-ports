@@ -1,0 +1,13 @@
+IceMC is a program for graphical configuration of your IceWM Menu
+Entries. It has been designed to be simple and stable.
+
+features
+
+ * configure your menu file with copy & paste or drag'n'drop
+ * simulates the behavior of IceWM so you can see which files will be
+   found by IceWM
+ * simple but nice Qt interface
+
+WWW: http://www.mittendorfer.com/gm/comp/icemc/icemc.htm
+
+- Adam Weinberger <monkey@crackula.com>

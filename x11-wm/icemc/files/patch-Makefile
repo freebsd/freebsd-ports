@@ -1,0 +1,31 @@
+--- Makefile.orig	Tue Dec  4 12:49:24 2001
++++ Makefile	Tue Jan  1 23:26:16 2002
+@@ -13,21 +13,18 @@
+ # QTDIR =       /usr/lib/qt
+ 
+ # DESTDIR (location for installing)
+-DESTDIR = /usr/local
++DESTDIR = ${PREFIX}/bin
+ 
+ ####### Compiler, tools and options
+ 
+-CC	=	gcc
+-CXX	=	g++
+-CFLAGS	=	-pipe -DNO_DEBUG
+-CXXFLAGS=	-pipe -DNO_DEBUG
+-INCPATH	=	-I$(QTDIR)/include
+-LINK	=	g++
++CFLAGS	+=	-DNO_DEBUG
++CXXFLAGS+=	-DNO_DEBUG
++INCPATH	=	${QTCPPFLAGS}
++LINK	=	$(CXX)
+ LFLAGS	=	
+ #LIBS	=	$(SUBLIBS) -L$(QTDIR)/lib -L/usr/X11R6/lib -lqt -lXext -lX11 -lm
+-LIBS    =       $(SUBLIBS) -lqt
+-MOC	=	$(QTDIR)/bin/moc
+-UIC	=	$(QTDIR)/bin/uic
++LIBS    =       ${QTCFGLIBS} ${LIBQT}
++UIC	=	${X11BASE}/uic
+ 
+ TAR	=	tar -cf
+ GZIP	=	gzip -9f
