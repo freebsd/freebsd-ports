@@ -1,9 +1,15 @@
-etc/nntpcache/access
-etc/nntpcache/config
-etc/nntpcache/servers
+etc/nntpcache/nntpcache.access-dist
+etc/nntpcache/nntpcache.config-dist
+etc/nntpcache/nntpcache.servers-dist
 etc/nntpcache/spam.filter
+etc/nntpcache/pubring.pgp
+etc/nntpcache/VERSION
+etc/nntpcache/newshound.conf
+@unexec rm -rf etc/nntpcache
 etc/rc.d/nntpcached.sh
+bin/confused
 sbin/nntpcached
+sbin/newshound
 man/man8/nntpcache.8.gz
-@dirrm etc/nntpcache
+man/man8/newshound.8.gz
 @unexec rm -rf /var/spool/nntpcache
