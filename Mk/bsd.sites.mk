@@ -734,14 +734,14 @@ MASTER_SITE_SAVANNAH+= \
 	http://savannah.nongnu.org/download/%SUBDIR%/ \
 	ftp://ftp.gnu.org/pub/savannah/files/%SUBDIR%/
 
-.for mirror in heanet aleron umn belnet
+.for mirror in heanet aleron umn belnet voxel optusnet # unc is slow
 MASTER_SITE_SOURCEFORGE+= \
 	http://${mirror}.dl.sourceforge.net/sourceforge/%SUBDIR%/
 .endfor
 
 # official sf.net mirrors that don't mirror all projects, check
 # http://prdownloads.sourceforge.net/%SUBDIR%/
-.for mirror in easynews cesnet switch voxel optusnet # keihanna twtelecom
+.for mirror in easynews cesnet switch puzzle
 MASTER_SITE_SOURCEFORGE_EXTENDED+= \
 	http://${mirror}.dl.sourceforge.net/sourceforge/%SUBDIR%/
 .endfor
