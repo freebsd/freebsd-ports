@@ -8,18 +8,21 @@
 PORTNAME=	gated
 PORTVERSION=	3.6.0
 CATEGORIES=	net
-MASTER_SITES=   http://www.gated.org/gated-web/code/source/gated/
-DISTNAME=	gated-pub
-WRKSRC=		${WRKDIR}/gated-public-3_6
+MASTER_SITES=	http://www.gated.org/gated-web/code/source/gated/
+DISTNAME=	${PORTNAME}-pub
 
 MAINTAINER=	dec@FreeBSD.org
 
-GNU_CONFIGURE= 	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-public-3_6
+
+GNU_CONFIGURE=	yes
 
 post-configure:
-	cd ${WRKSRC} && make depend
+	cd ${WRKSRC} && ${MAKE} depend
 
-post-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/gdc/gdc ${WRKSRC}/src/ospf_monitor/ospf_monitor ${WRKSRC}/src/ripquery/ripquery ${PREFIX}/sbin
+do-install:
+.for file in gated/gated gdc/gdc ospf_monitor/ospf_monitor ripquery/ripquery
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${file} ${PREFIX}/sbin
+.endfor
 
 .include <bsd.port.mk>
