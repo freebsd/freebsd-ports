@@ -29,9 +29,13 @@ DOCS_EN=	${RUBY_RD_FILES:M*.en.rd} \
 DOCS_JA=	${RUBY_RD_FILES:M*.ja.rd} \
 		${RUBY_RD_HTML_FILES:M*.ja.html}
 
-post-install: doc-install
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not install (cannot open Makefile)"
+.endif
+
+post-install: doc-install
 
 doc-install:
 .if !defined(NOPORTDOCS)
@@ -43,3 +47,5 @@ doc-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
 .endfor
 .endif
+
+.include <bsd.port.post.mk>
