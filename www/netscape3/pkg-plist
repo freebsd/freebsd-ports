@@ -5,7 +5,7 @@ lib/netscape/README
 lib/netscape/netscape.bin
 lib/netscape/mailcap
 lib/netscape/movemail
-lib/netscape/moz3_0.zip
+lib/netscape/java_30
 lib/netscape/Netscape.ad
 @cwd /usr/X11R6
 lib/X11/nls/C
