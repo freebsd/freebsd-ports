@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.asterisk.org/pub/telephony/asterisk/ \
 MAINTAINER=	sobomax@FreeBSD.org
 COMMENT=	An Open Source PBX and telephony toolkit
 
+BROKEN=		"Does not compile"
+
 ONLY_FOR_ARCHS=	i386
 
 BUILD_DEPENDS=  ${LOCALBASE}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql40-client \
