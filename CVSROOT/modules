@@ -943,6 +943,7 @@ cvsweb		ports/devel/cvsweb
 cvsweb-converters	ports/sysutils/cvsweb-converters
 cweb		ports/devel/cweb
 cwish		ports/misc/cwish
+cwtext		ports/textproc/cwtext
 cxconfig	src/sbin/i386/cxconfig
 cxref		ports/devel/cxref
 cxsc		ports/math/cxsc
