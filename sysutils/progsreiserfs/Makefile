@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 
-MAINTAINER=	flz@xbsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities and library to manipulate ReiserFS partitions
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
@@ -23,6 +23,7 @@ INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib -lgnugetopt"
+CONFIGURE_ARGS=	--disable-debug
 
 MAN8=		cpfs.reiserfs.8 mkfs.reiserfs.8 reiserfs.8 \
 		resizefs.reiserfs.8 tunefs.reiserfs.8
