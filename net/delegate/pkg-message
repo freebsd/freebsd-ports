@@ -1,0 +1,11 @@
+**********************************************************************
+Now, edit the sample script in /usr/local/share/examples/delegate directory
+and copy it into /usr/local/etc/rc.d.
+Especially, don't forget to specify correct value for the MANAGER.
+
+You can also run an interactive configuration session by executing 
+delegated with no argument.
+
+Consult /usr/local/share/doc/delegate/Manual.txt for configuration 
+information.
+**********************************************************************

@@ -1,0 +1,3 @@
+DeleGate is a general purpose protocol proxy system for protocols
+using TCP/IP.  This software includes support for HTTP, Gopher, FTP,
+SMTP, NNTP, POP, Telnet, Wais, Whois, etc.
