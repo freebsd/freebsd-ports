@@ -1,3 +1,4 @@
+%%EMACS_PACKAGESDIR%%/pkginfo/MANIFEST.flim
 %%EMACS_PACKAGESDIR%%/lisp/flim/ChangeLog
 %%EMACS_PACKAGESDIR%%/lisp/flim/NEWS
 %%EMACS_PACKAGESDIR%%/lisp/flim/README.en
