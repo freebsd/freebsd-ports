@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	nkf
-PORTVERSION=	1.71
+PORTVERSION=	1.92
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.ie.u-ryukyu.ac.jp/pub/software/kono/ \
-		ftp://ftp.win.ne.jp/pub/misc/ \
-		ftp://ftp.eos.hokudai.ac.jp/pub/tools/code-conv/nkf/
+MASTER_SITES=	ftp://ftp.ie.u-ryukyu.ac.jp/pub/software/kono/
 EXTRACT_SUFX=	.shar
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
@@ -23,5 +21,15 @@ EXTRACT_AFTER_ARGS=	> /dev/null
 NO_WRKSUBDIR=	yes
 MAN1=		nkf.1 ../ja/man1/nkf.1
 ALL_TARGET=	nkf
+
+do-extract:
+	@${RM} -rf ${WRKDIR}
+	@${MKDIR} ${WRKDIR}/NKF
+	@for file in ${EXTRACT_ONLY}; do \
+		if ! (cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS});\
+		then \
+			exit 1; \
+		fi \
+	done
 
 .include <bsd.port.mk>
