@@ -11,6 +11,7 @@ PKGNAMESUFFIX=		-nox11
 MAINTAINER=	dinoex@FreeBSD.org
 
 WITHOUT_X11=		yes
+WITHOUT_XPM=		yes
 MASTERDIR?=	${.CURDIR}/../gd2
 
 .if exists(${.CURDIR}/Makefile.local)
