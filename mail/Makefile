@@ -93,5 +93,6 @@
     SUBDIR += xpbiff
     SUBDIR += xpbiff-youbin
     SUBDIR += youbin
+    SUBDIR += zmailer
 
 .include <bsd.port.subdir.mk>
