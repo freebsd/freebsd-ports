@@ -2124,6 +2124,7 @@ gle		ports/graphics/gle
 glens		ports/science/glens
 gleyes		ports/games/gleyes
 glg		ports/devel/glg
+glgraph		ports/math/glgraph
 glib12		ports/devel/glib12
 glib20		ports/devel/glib20
 glibstdc++28	ports/lang/glibstdc++28
