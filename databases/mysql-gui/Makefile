@@ -43,8 +43,8 @@ NEW_FILES=	Fl_Editor.H editengine.h
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
-BROKEN=		Does not build
+.if ${OSVERSION} >= 500000 || ${ARCH} == "alpha"
+BROKEN=		Does not build except on i386 4.x
 .endif
 
 # Post-extract
