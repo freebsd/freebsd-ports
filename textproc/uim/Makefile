@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	uim
-PORTVERSION=	0.0.2.1
+PORTVERSION=	0.1.1
 CATEGORIES=	japanese x11
-MASTER_SITES=	http://downloads.sourceforge.jp/anthy/5771/
+MASTER_SITES=	http://downloads.sourceforge.jp/anthy/6318/
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Input method library
@@ -36,8 +36,8 @@ PLIST_SUB+=	GTK=""
 PLIST_SUB+=	GTK="@comment "
 .endif
 
-.if ${HAVE_GNOME:Mlibgnome}
-USE_GNOME+=	libgnome
+.if ${HAVE_GNOME:Mgnomepanel}
+USE_GNOME+=	gnomepanel
 PLIST_SUB+=	GNOME=""
 .else
 PLIST_SUB+=	GNOME="@comment "
