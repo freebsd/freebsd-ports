@@ -1,5 +1,7 @@
 #!/bin/sh
 ftp=0
+useworld=1
+chrootdir=/a/asami/chroot
 here=$(pwd)
 tmpdir=${here}/tmp
 rm -rf ${tmpdir}
@@ -13,14 +15,27 @@ if [ "${ftp}" != 0 ]; then
   cd ${here}
 fi
 cd ${tmpdir}
-cat ${here}/bindist/ftp/bin.?? | tar --unlink -xzpf -
-cat ${here}/bindist/ftp/dict.?? | tar --unlink -xzpf -
-cat ${here}/bindist/ftp/des.?? | tar --unlink -xzpf -
+if [ "${useworld}" = 1 ]; then
+  (cd ${chrootdir}; find -dx . | \
+    grep -v -E '^./usr/(X11R6|local|obj|opt|ports|src)' | \
+    grep -v '^./home' | \
+    grep -v '^./var/db/pkg' | \
+    cpio -dump ${tmpdir})
+else
+  cat ${here}/bindist/ftp/bin.?? | tar --unlink -xzpf -
+  cat ${here}/bindist/ftp/dict.?? | tar --unlink -xzpf -
+  cat ${here}/bindist/ftp/des.?? | tar --unlink -xzpf -
+fi
 rm -rf $(cat ${here}/bindist/delete)
 mkdir -p $(cat ${here}/bindist/dirlist)
-tar -C ${here}/bindist/files -cf - . | tar -xpf -
-mv kernel.GENERIC kernel
+(cd ${here}/bindist/files; find -dx . | cpio -dump ${tmpdir})
+echo "HAVE_MOTIF=t" >> etc/make.conf
+echo "MOTIF_STATIC=t" >> etc/make.conf
+if [ -f kernel.GENERIC -a ! -f kernel ]; then
+  mv kernel.GENERIC kernel
+fi
 rm -f /usr/lib/aout/lib*_p.a
+mkdir ${tmpdir}/var/run
 chroot $(pwd) /sbin/ldconfig /usr/lib
 chroot $(pwd) /sbin/ldconfig -aout /usr/lib/aout
 mkdir -p ${here}/tarballs

@@ -3,10 +3,12 @@
     Copy the following files from a running 3.0 system:
 
     /dev/{kmem,lkm,mem,null,stderr,stdin,stdout,tty,zero}
+    /dev/fd/[0-9]
     /etc/resolv.conf
 
     Copy the following files from a very recent 3.0 system:
 
+    /usr/libdata/perl/5.00502/ExtUtils/MM_Unix.pm
     /usr/libexec/elf/ld
     /usr/bin/{install-,make}info
     /usr/sbin/pkg_{add,create,delete,info}
