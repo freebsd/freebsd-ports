@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.21 1994/11/24 22:23:05 asami Exp $
+# $Id: Makefile,v 1.22 1994/11/25 20:29:58 ats Exp $
 #
 #
-SUBDIR= archie cern_httpd chimera dgd fspclient gn irc ircII lynx ncftp2 \
+SUBDIR= archie cern_httpd chimera dgd dgd-lpmud fspclient gn gopher irc \
+	ircII lynx ncftp2 \
 	pcnfsd pidentd pmf sup tcp_wrapper tcpblast tkWWW tintin++ wais \
 	wu-ftpd yale-tftpd
 
