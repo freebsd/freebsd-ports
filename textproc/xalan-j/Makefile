@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	xalan-j
-PORTVERSION=	2.0.1
+PORTVERSION=	2.1.0
 CATEGORIES=	java textproc
 MASTER_SITES=	http://xml.apache.org/dist/${PORTNAME}/ \
 		http://xml.apache.org/dist/old/${PORTNAME}/ \
 		http://www.jollem.com/~ernst/
-DISTNAME=	${PORTNAME}_2_0_1
+DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	ernst@jollem.com
 
@@ -21,6 +21,8 @@ JAVAVM?=        ${LOCALBASE}/bin/javavm
 
 NO_BUILD=	YES
 PORTDESTDIR=	${PREFIX}/${PORTNAME}${PORTVERSION}
+
+PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 do-install:
 	@${MKDIR} ${PORTDESTDIR}
