@@ -1,54 +1,34 @@
---- Imakefile.orig	Mon Feb 22 12:16:46 1999
-+++ Imakefile	Mon Feb 22 12:19:16 1999
-@@ -18,23 +18,23 @@
- XCOMM  (どうも通常にインストールしただけでは /usr/include/neXtaw に
- XCOMM   ヘッダがインストールされるみたい…→neXtaw-0.5.1)
- 
--#define NEXTAW
-+XCOMM #define NEXTAW
- 
- 
- XCOMM ------------------ C Compiler -----------------------------
- 
--CC = gcc
-+XCOMM CC = gcc
- 
+--- Imakefile.org       Fri Oct  8 00:41:34 1999
++++ Imakefile   Fri Oct  8 00:22:35 1999
+@@ -29,7 +29,7 @@
  
  XCOMM -------------- ActX 本体 Install先 Directory ---------------
  
--BINDIR = ${HOME}/bin
-+BINDIR = ${PREFIX}/bin
- XCOMM BINDIR = /usr/local/bin
+-PREFIX = /usr/local
++XCOMM PREFIX = /usr/local
+ XCOMM PREFIX = ${HOME}
  
+ BINDIR = ${PREFIX}/bin
+@@ -37,9 +37,11 @@
  
  XCOMM -------- ActX マスコットデータ Install先 Directory ----------
  
--#define MASCOTDIR ${HOME}/lib/One
+-#define MASCOTDIR ${PREFIX}/lib/X11/actx
 +#define MASCOTDIR ${PREFIX}/share/examples/actx
- XCOMM #define MASCOTDIR /usr/local/lib/ActX
++XCOMM #define MASCOTDIR ${PREFIX}/lib/X11/actx
+ 
+-DEFINES_MASCOTDIR = -DMASCOTDIR=\"${PREFIX}/lib/X11/actx\"
++DEFINES_MASCOTDIR = -DMASCOTDIR=\"${PREFIX}/share/examples/actx\"
++XCOMM DEFINES_MASCOTDIR = -DMASCOTDIR=\"${PREFIX}/lib/X11/actx\"
  
  
-@@ -48,9 +48,10 @@
- #endif
- OBJS = actx.o action.o menu.o
- SRCS =  $(OBJS:.o=.c)
--EXTRA_LIBRARIES = -lXpm
--ComplexProgramTarget(actx)
-+XPMLIB = -lXpm
  
-+AllTarget(actx)
+@@ -59,7 +61,7 @@
+ XPMLIB = -lXpm
+ 
+ AllTarget(actx)
+-NormalProgramTarget(actx,$(OBJS),,$(LOCAL_LIBRARIES),$(XPMLIB))
 +NormalProgramTarget(actx,$(OBJS),$(LOCAL_LIBRARIES),XawClientLibs,$(XPMLIB))
  
  #ifdef USE_I18N
  DEFINES_I18N = -DI18N
-@@ -117,7 +118,6 @@
- InstallNamedNonExec(mascots/mayu6.xpm,mayu6.xpm,MASCOTDIR/)
- InstallNamedNonExec(mascots/mayu7.xpm,mayu7.xpm,MASCOTDIR/)
- 
--
--
--
--
-+install:: actx
-+	MakeDir($(DESTDIR)$(BINDIR))
-+	$(INSTALL) -c $(INSTPGMFLAGS) actx $(DESTDIR)$(BINDIR)/actx
