@@ -24,9 +24,6 @@ MANN=		tcldot.n
 
 DOCDIR=		${PREFIX}/share/doc/graphviz
 
-post-extract:
-	@find ${WRKSRC} -name *.o -delete
-
 post-install:
 	@${MKDIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.htm* ${DOCDIR}
