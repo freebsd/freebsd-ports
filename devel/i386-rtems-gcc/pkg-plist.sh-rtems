@@ -3,6 +3,7 @@ bin/sh-rtems-c++
 bin/sh-rtems-cpp
 bin/sh-rtems-g++
 bin/sh-rtems-gcc
+bin/sh-rtems-gccbug
 include/c++/%%GCCVERSION%%/bits/basic_ios.h  
 include/c++/%%GCCVERSION%%/bits/basic_ios.tcc  
 include/c++/%%GCCVERSION%%/bits/basic_string.h        

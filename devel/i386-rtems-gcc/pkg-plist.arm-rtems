@@ -2,6 +2,7 @@ bin/arm-rtems-c++filt
 bin/arm-rtems-c++
 bin/arm-rtems-g++
 bin/arm-rtems-gcc
+bin/arm-rtems-gccbug
 bin/arm-rtems-cpp
 include/c++/%%GCCVERSION%%/bits/basic_ios.h
 include/c++/%%GCCVERSION%%/bits/basic_ios.tcc
