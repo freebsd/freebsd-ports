@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tpasm
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ct0.com/pub/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -23,7 +23,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
 	@${MKDIR} ${PREFIX}/libdata/${PORTNAME}
-.for file in 8051 80c390 p16c505 picmacros
+.for file in 8051 8052 80c390 avr p16c505 picmacros
 	${INSTALL_DATA} ${WRKSRC}/include/${file}.inc ${PREFIX}/libdata/${PORTNAME}
 .endfor
 
