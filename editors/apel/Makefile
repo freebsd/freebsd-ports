@@ -17,13 +17,6 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
 MAINTAINER?=	shige@FreeBSD.org
 
-# emacs port setup
-.if (${PORTCLASS} == "master")
-EMACS_PORT_NAME=	emacs21
-.endif
-
-EMACS_MASTERDIR_PKGFILES=YES
-
 # distfile version
 APEL_VER=	10.3
 # setupel filename
@@ -36,6 +29,13 @@ APEL_VERSION_SPECIFIC_LISPDIR?=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}
 
 # This is a master port.
 PORTCLASS?=	master
+
+# emacs port setup
+.if (${PORTCLASS} == "master")
+EMACS_PORT_NAME=	emacs21
+.endif
+
+EMACS_MASTERDIR_PKGFILES=YES
 
 # target name for make build
 ALL_TARGET?=	elc
