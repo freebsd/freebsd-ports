@@ -23,9 +23,9 @@
    elif test -x "`$WHICH automake-1.7 2>/dev/null`" ; then
      AUTOMAKE="`$WHICH automake-1.7`"
      ACLOCAL="`$WHICH aclocal-1.7`"
-+  elif test -x "`$WHICH automake18 2>/dev/null`" ; then
-+    AUTOMAKE="`$WHICH automake18`"
-+    ACLOCAL="`$WHICH aclocal18`"
++  elif test -x "`$WHICH automake19 2>/dev/null`" ; then
++    AUTOMAKE="`$WHICH automake19`"
++    ACLOCAL="`$WHICH aclocal19`"
    fi
    if test -n "$UNSERMAKE"; then 
       AUTOMAKE="$UNSERMAKE"
