@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id$
+# $Id: Makefile,v 1.32 1999/02/12 16:01:22 sada Exp $
 #
 
 DISTNAME=	netscape-${BROWSER}-${BROWSER_VER}
@@ -38,7 +38,7 @@ PLIST_SUB=	BROWSER=${BROWSER} BROWSER_VER=${BROWSER_VER} \
 .if defined(USE_128BIT)
 MASTER_SITES+=	ftp://ftp.fortify.net/pub/Fortify/ \
 		ftp://ftp.za.freebsd.org/pub/Fortify/
-DISTFILES+=	Fortify-1.3.2-unix-x86.tar.gz
+DISTFILES+=	Fortify-1.4.1-unix-x86.tar.gz
 RESTRICTED=     "Contains strong cryptography"
 .endif
 
@@ -81,7 +81,7 @@ do-install:
 	tar zxf ${DISTDIR}/${AUTOADMIN} -C ${NDIR}
 .endif
 .if defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO
-	cd ${WRKDIR}/Fortify-1.3.2-unix-x86 && \
+	cd ${WRKDIR}/Fortify-1.4.1-unix-x86 && \
 		(${ECHO} yes ; ${ECHO} no ; ${ECHO} no) \
 		| ./Fortify.sh ${NDIR}/${BROWSER}-${BROWSER_VER}.bin
 .endif
