@@ -3,7 +3,7 @@
 # Date created:				October 17th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.15 1998/09/15 21:31:31 asami Exp $
+# $Id: Makefile,v 1.16 1998/09/16 12:48:16 vanilla Exp $
 #
 
 DISTNAME=	DBI-1.02
@@ -17,6 +17,11 @@ MAINTAINER=	vanilla@FreeBSD.ORG
 BUILD_DEPENDS=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/RPC/pServer.pm:${PORTSDIR}/net/p5-pRPC
 
 USE_PERL5=	YES
+
+OSVERSION!=     sysctl -n kern.osreldate
+.if ${OSVERSION} >= 300000
+BROKEN=         perl
+.endif
 
 MAN1=		dbiproxy.1 \
 		dbish.1
