@@ -1,0 +1,3 @@
+bin/jruby
+share/java/classes/jruby.jar
+@unexec rmdir %D/share/java/classes 2> /dev/null || true
