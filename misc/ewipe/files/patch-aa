@@ -4,7 +4,7 @@
  #!/bin/sh
  # the next line restarts using wish \
 -exec wish "$0" "--" "$@"
-+exec wish4.2 "$0" "--" "$@"
++exec %%WISH%% "$0" "--" "$@"
  
  #                                                 #
  #     EWIPE : Extended WIPE (Editor for WIPE)     #
@@ -14,7 +14,7 @@
  
 -set PATH .
 +#set PATH .
-+set PATH /usr/local/lib/ewipe
++set PATH %%PREFIX%%/share/ewipe
  
  ###################################################
  

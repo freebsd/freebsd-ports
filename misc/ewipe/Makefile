@@ -6,39 +6,50 @@
 #
 
 PORTNAME=	ewipe
-PORTVERSION=	1.1.0
-CATEGORIES+=	misc tk42
-MASTER_SITES=	http://www.jnet-jp.to/~sekisita/ewipe/ \
-		http://freefall.freebsd.org/~itojun/distfiles/
+PORTVERSION=	1.2.0
+CATEGORIES+=	misc tk82
+MASTER_SITES=	http://www.jnet-jp.to/~sekisita/ewipe/
 
-MAINTAINER?=	ports@freebsd.org
+MAINTAINER?=	ports@FreeBSD.org
 
-#RUN_DEPENDS=	wish4.2:${PORTSDIR}/x11-toolkits/tk42
+.if defined(KANJI)
+RUN_DEPENDS=	wish8.0jp:${PORTSDIR}/japanese/tk80
+.else
+RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
+.endif
 
 NO_BUILD=	YES
 TCLLIBS=	definefont.tcl edittable.tcl setpointer.tcl viewer.tcl tclIndex
-DOCS=		README Changes.jp dot.ewipe
-SAMPLES=	a1.gif a2.gif a3.gif a4.gif blue1.gif sample.ewp test.ewp \
-		tutorial.ewp
+PORTDOCS=	Changes.jp README README.jp dot.ewipe
+EXAMPLES=	a1.gif a2.gif a3.gif a4.gif blue1.gif sample.ewp test.ewp \
+		tutorial.ewp tutorial-e.ewp
 
-KANJI?=		no
+.if defined(KANJI)
+WISH=		${LOCALBASE}/bin/wish8.0jp
+.else
+WISH=		${LOCALBASE}/bin/wish8.2
+.endif
+
+post-patch:
+	@${PERL} -pi \
+		-e "s|%%PREFIX%%|${PREFIX}|g;" \
+		-e "s|%%WISH%%|${WISH}|g;" ${WRKSRC}/ewipe
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/ewipe
+	@${MKDIR} ${PREFIX}/share/ewipe
 	${INSTALL_SCRIPT} ${WRKSRC}/ewipe ${PREFIX}/bin
-	for i in ${TCLLIBS}; do\
-		${INSTALL_DATA} ${WRKSRC}/$$i ${PREFIX}/lib/ewipe;\
-	done
+.for file in ${TCLLIBS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/ewipe
+.endfor
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ewipe
-	${MKDIR} ${PREFIX}/share/doc/ewipe/sample
-	for i in ${DOCS}; do\
-		${INSTALL_DATA} ${WRKSRC}/$$i ${PREFIX}/share/doc/ewipe;\
-	done
-	for i in ${SAMPLES}; do\
-		${INSTALL_DATA} ${WRKSRC}/sample/$$i \
-			${PREFIX}/share/doc/ewipe/sample;\
-	done
+	@${MKDIR} ${PREFIX}/share/doc/ewipe
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/ewipe
+.endfor
+	@${MKDIR} ${PREFIX}/share/examples/ewipe
+.for file in ${EXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/sample/${file} ${PREFIX}/share/examples/ewipe
+.endfor
 .endif
 
 .include <bsd.port.mk>
