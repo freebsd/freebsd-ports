@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Sat Jan 23 20:58:07 1999
++++ Makefile.in	Sat Jan 23 20:58:55 1999
+@@ -81,8 +81,8 @@
+ 	$(INSTALL_DATA) psgml-api.info $(infodir)
+ 	if $(SHELL) -c 'install-info --version' \
+ 		>/dev/null 2>&1; then \
+-		install-info --info-dir=$(infodir) psgml.info; \
+-		install-info --info-dir=$(infodir) psgml-api.info; \
++		install-info $(infodir)/psgml.info $(infodir)/dir; \
++		install-info $(infodir)/psgml-api.info $(infodir)/dir; \
+ 	else true; fi
+ 
+ 

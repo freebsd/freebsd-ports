@@ -1,0 +1,39 @@
+--- psgml-parse.el.orig	Mon Nov 16 06:45:04 1998
++++ psgml-parse.el	Sat Jan 23 20:28:15 1999
+@@ -1217,6 +1217,11 @@
+     (sgml-check-dtd-subset)
+     (sgml-pop-entity)
+     (erase-buffer)
++    ;; For Mule
++    (if (string-match "Emacs 20\." (emacs-version))
++	(set-buffer-file-coding-system 'binary)
++      (if (boundp 'MULE)
++	  (set-file-coding-system *noconv*)))
+     (sgml-write-dtd sgml-dtd-info to-file)
+     t))
+ 
+@@ -1244,6 +1249,10 @@
+   "Merge the binary coded dtd in the current buffer with the current dtd.
+ The current dtd is the variable sgml-dtd-info.  Return t if mereged
+ was successfull or nil if failed."
++  (if (string-match "Emacs 20\." (emacs-version))
++      (set-buffer-file-coding-system 'binary)
++    (if (boundp 'MULE)
++	(set-file-coding-system *noconv*)))
+   (goto-char (point-min))
+   (sgml-read-sexp)			; skip filev
+   (let ((dependencies (sgml-read-sexp))
+@@ -2461,7 +2470,12 @@
+     (set-buffer sgml-scratch-buffer)
+     ;; For MULE to not misinterpret binary data set the mc-flag
+     ;; (reported by Jeffrey Friedl <jfriedl@nff.ncl.omron.co.jp>)
+-    (set 'mc-flag nil)			
++    (set 'mc-flag nil)
++    ;; For MULE/Emacs 20 to not misinterpret binary data
++    (if (string-match "Emacs 20\." (emacs-version))
++	(set-buffer-file-coding-system 'binary)
++       (if (boundp 'MULE)
++	   (set-file-coding-system *noconv*)))
+     (when (eq sgml-scratch-buffer (default-value 'sgml-scratch-buffer))
+       (make-local-variable 'sgml-scratch-buffer)
+       (setq sgml-scratch-buffer nil))
