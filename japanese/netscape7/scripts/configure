@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/japanese/netscape7/scripts/Attic/configure,v 1.4 2003-07-03 09:55:02 trevor Exp $
+# $FreeBSD: /tmp/pcvs/ports/japanese/netscape7/scripts/Attic/configure,v 1.5 2003-07-19 18:26:19 trevor Exp $
 
 echo ${WRKSRC}/components.conf
 if [ -f ${WRKSRC}/components.conf ]; then
@@ -45,7 +45,7 @@ esac
 echo "$choice" \
 	| sed -e "s/\"//g" \
 	| sed -e "s/mail/mail browser/g" \
-	| sed -e "s/browser/AIM browser psm xpcom/g" \
+	| sed -e "s/browser/browser psm xpcom/g" \
 	| sort -u \
 	| sed -e "s/ /.xpi /g" \
 	| sed -e "s/$/.xpi/g" \
