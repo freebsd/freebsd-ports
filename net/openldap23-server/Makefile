@@ -255,7 +255,7 @@ post-patch:
 		${WRKSRC}/servers/slapd/slapd.conf
 
 pre-configure:
-	@if [ -n "`${PKG_INFO} -xI '^bind[0-9]*-base-[0-9]'`" ]; then \
+	@if [ -n "`${PKG_INFO} -xI '^bind\(84\)\{0,1\}-base-8\.'`" ]; then \
 		${ECHO_CMD} "${PKGNAME}: bind installed with PORT_REPLACES_BASE_BIND causes build problems."; \
 		${FALSE}; \
 	fi
