@@ -1,6 +1,16 @@
---- include/platform/acfreebsd.h.orig	Mon May 20 23:27:26 2002
-+++ include/platform/acfreebsd.h	Sat Jun  1 01:12:11 2002
-@@ -156,6 +156,7 @@
+--- include/platform/acfreebsd.h.orig	Sat Jul 27 03:19:45 2002
++++ include/platform/acfreebsd.h	Fri Aug  9 20:53:32 2002
+@@ -126,7 +126,9 @@
+ /* FreeBSD uses GCC */
+ 
+ #include "acgcc.h"
++#if 0
+ #include <machine/acpica_machdep.h>
++#endif
+ 
+ #ifdef _KERNEL
+ #include <sys/ctype.h>
+@@ -157,6 +159,7 @@
  
  #define __cli()
  #define __sti()
@@ -8,7 +18,7 @@
  
  #endif /* _KERNEL */
  
-@@ -195,5 +196,16 @@
+@@ -196,5 +199,16 @@
      return ((char *)s);
  }
  #endif /* _KERNEL */
