@@ -38,6 +38,10 @@ MAN8=		nessus-update-plugins.8
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "amd64"
+BROKEN=		"Does not compile on amd64 (libnet needs to provide a shared library)"
+.endif
+
 post-install:
 	@${ECHO} "================================================================================"
 	@${ECHO} "Use ${PREFIX}/sbin/nessus-update-plugins to update your plugin"
