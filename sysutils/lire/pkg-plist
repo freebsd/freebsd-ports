@@ -1,3 +1,4 @@
+bin/lire
 bin/lr_anondump
 bin/lr_anonymize
 bin/lr_cron
@@ -747,6 +748,8 @@ share/perl5/Lire/XMLParser.pm
 share/perl5/Lire/XMLSpecContainer.pm
 share/perl5/Lire/XMLSpecI18N.pm
 share/perl5/Lire/XMLSpecParser.pm
+share/perl5/LocaleData/fr/LC_MESSAGES/lire.mo
+share/perl5/LocaleData/nl/LC_MESSAGES/lire.mo
 
 @dirrm share/perl5/Lire/WWW/UserAgent
 @dirrm share/perl5/Lire/WWW/Filename
