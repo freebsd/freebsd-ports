@@ -22,7 +22,7 @@ do-build:
 do-install:
 	@${MKDIR} ${DATADIR}
 	(cd ${WRKSRC}; tar cf - .) | \
-		(cd ${DATADIR}; tar --unlink -xf -)
+		(cd ${DATADIR}; tar --exclude=\*.orig --unlink -xf -)
 	@printf "#!/bin/sh\ncd ${DATADIR} && \
 		exec ${PYTHON_CMD} ${DATADIR}/${PORTNAME}.py \"$$\@\"\n" > ${WRKDIR}/${PORTNAME}.sh
 	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME}.sh ${PREFIX}/bin/${PORTNAME}
