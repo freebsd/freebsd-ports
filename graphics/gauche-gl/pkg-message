@@ -1,0 +1,7 @@
+************************************************************************
+
+This port will require pthread-enabled gosh to run.  If you are not
+sure, add GAUCHE_THREADS=pthreads to /etc/make.conf and reinstall
+lang/gauche.
+
+************************************************************************
