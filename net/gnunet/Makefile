@@ -33,7 +33,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--disable-ltdl-install
-LDFLAGS+=	-L${LOCALBASE}/lib -lcipher
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 .if defined(WITH_GDBM)
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
