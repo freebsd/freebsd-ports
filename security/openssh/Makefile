@@ -21,6 +21,7 @@ RESTRICTED=	"Links with cryptographic code."
 CAT?=		/bin/cat
 DISTFILES!=	${CAT} ${FILESDIR}/distfiles
 
+CFLAGS+=	-DHAVE_OPENPTY
 CVS_CMD?=	cvs -z3
 CVS_DATE=	Fri Nov 19 20:25:38 EST 1999
 CVS_SITES=	anoncvs@anoncvs1.ca.openbsd.org:/cvs \
@@ -83,15 +84,14 @@ post-patch:
 	    ${WRKSRC}/*.[ch]
 
 pre-install:
-	@if [ ! -f ${PREFIX}/etc/sshd_config ]; then \
+	@if [ ! -f ${PREFIX}/etc/ssh_config -a \
+	      ! -f ${PREFIX}/etc/sshd_config ]; then \
 		cd ${WRKSRC} && ${MAKE} DESTDIR=${PREFIX} distribution; \
 	else \
-		${ECHO_MSG} ">> ${PREFIX}/etc/sshd_config exists, not being replaced!"; \
+		${ECHO_MSG} ">> ${PREFIX}/etc/ssh{,d}_config exists, not being replaced!"; \
 		${ECHO_MSG} ">> If this is left over from another version of SSH, you will"; \
 		${ECHO_MSG} ">> need to update it to work with OpenSSH."; \
 	fi
-
-post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/sshd.sh ]; then \
 		${ECHO_MSG} ">> Installing ${PREFIX}/etc/rc.d/sshd.sh startup file."; \
 		${MKDIR} ${PREFIX}/etc/rc.d; \
@@ -100,10 +100,5 @@ post-install:
 		${PERL} -pi -e 's:__PREFIX__:${PREFIX}:g' \
 		    ${PREFIX}/etc/rc.d/sshd.sh; \
 	fi
-	@if [ ! -f ${PREFIX}/etc/ssh_host_key ]; then \
-		${ECHO_MSG} "Generating a secret host key..."; \
-		${PREFIX}/bin/ssh-keygen -N "" -f ${PREFIX}/etc/ssh_host_key; \
-	fi
-
 
 .include <bsd.port.mk>
