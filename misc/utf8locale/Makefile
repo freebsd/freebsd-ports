@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	perky
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	UTF-8 locales support
 
+USE_REINPLACE=	yes
+
 LANGS=		af_ZA bg_BG ca_ES cs_CZ da_DK de_AT de_CH de_DE el_GR en_AU \
 		en_CA en_GB en_NZ en_US es_ES et_EE fi_FI fr_BE fr_CA fr_CH \
 		fr_FR hr_HR hu_HU is_IS it_CH it_IT ja_JP ko_KR lt_LT nl_BE \
@@ -31,9 +33,12 @@ _HAVE_SWIDTH!=	${GREP} _CTYPE_SW ${DESTDIR}/usr/include/ctype.h 2>/dev/null \
 		|| ${TRUE}
 .if empty(_HAVE_SWIDTH)
 PKGNAMESUFFIX=	-without-swidth
-USE_REINPLACE=	yes
+.endif
 
 post-patch:
+	${REINPLACE_CMD} -e 's,\(rm -rf.*/\)\*\(/LC_MESS\),\1*.UTF-8\2,g' \
+		${WRKSRC}/msgdef/Makefile
+.if empty(_HAVE_SWIDTH)
 	${REINPLACE_CMD} -e 's,^SWIDTH.*$$,,g' \
 		-e 's,UTF-8,UTF2,g' ${WRKSRC}/mklocale/la_LN.UTF-8.src
 .endif
