@@ -1,3 +1,4 @@
+bin/eazel-engine-capplet
 lib/gtk/themes/engines/libeazel-engine.so
 share/eazel-engine/arrow_down-spinner.png
 share/eazel-engine/arrow_down.png
@@ -19,6 +20,8 @@ share/eazel-engine/check-hilight.png
 share/eazel-engine/check-insensitive.png
 share/eazel-engine/check-pressed-focus.png
 share/eazel-engine/check-pressed.png
+share/eazel-engine/progressbar-left.png
+share/eazel-engine/progressbar-right.png
 share/eazel-engine/progressbar.png
 share/eazel-engine/progressbar_trough.png
 share/eazel-engine/radio-active-default-focus.png
@@ -68,8 +71,12 @@ share/eazel-engine/tab_left.png
 share/eazel-engine/tab_right.png
 share/eazel-engine/tab_sel-bottom.png
 share/eazel-engine/tab_sel.png
+share/eazel-engine/tab_usel-bottom-left.png
 share/eazel-engine/tab_usel-bottom.png
+share/eazel-engine/tab_usel-left.png
 share/eazel-engine/tab_usel.png
+share/gnome/apps/Settings/Desktop/eazel-engine-properties.desktop
+share/gnome/control-center/Desktop/eazel-engine-properties.desktop
 share/sawfish/themes/Eazel/Icon.bin
 share/sawfish/themes/Eazel/README
 share/sawfish/themes/Eazel/bottom-repeat.png
@@ -141,14 +148,8 @@ share/sawfish/themes/Ice/titlebar-textbg.png
 share/sawfish/themes/Ice/top-left-corner.png
 share/sawfish/themes/Ice/top-repeat.png
 share/sawfish/themes/Ice/top-right-corner.png
-share/themes/Eazel-Blue/README
-share/themes/Eazel-Blue/gtk/gtkrc
-share/themes/Eazel-Orange/README
-share/themes/Eazel-Orange/gtk/gtkrc
-share/themes/Eazel-Purple/README
-share/themes/Eazel-Purple/gtk/gtkrc
-share/themes/Eazel-Teal/README
-share/themes/Eazel-Teal/gtk/gtkrc
+share/themes/Crux/README
+share/themes/Crux/gtk/gtkrc
 share/themes/Eazel/README
 share/themes/Eazel/gtk/arrow_down-spinner.png
 share/themes/Eazel/gtk/arrow_down.png
@@ -246,15 +247,9 @@ share/themes/Eazel/gtk/toolbar.png
 share/themes/Eazel/gtk/vline.png
 share/themes/Eazel/gtk/vtrough.png
 @dirrm share/themes/Eazel/gtk
-@dirrm share/themes/Eazel-Teal/gtk
-@dirrm share/themes/Eazel-Teal
-@dirrm share/themes/Eazel-Purple/gtk
-@dirrm share/themes/Eazel-Purple
-@dirrm share/themes/Eazel-Orange/gtk
-@dirrm share/themes/Eazel-Orange
-@dirrm share/themes/Eazel-Blue/gtk
-@dirrm share/themes/Eazel-Blue
 @dirrm share/themes/Eazel
+@dirrm share/themes/Crux/gtk
+@dirrm share/themes/Crux
 @dirrm share/sawfish/themes/Ice
 @dirrm share/sawfish/themes/Eazel
 @dirrm share/sawfish/themes
