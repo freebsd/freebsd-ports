@@ -3,7 +3,7 @@
 # Date created:         Mon Aug 28 13:35:31 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.5 1996/10/08 07:06:27 pst Exp $
+# $Id: Makefile,v 1.6 1996/11/11 05:49:38 obrien Exp $
 #
 
 DISTNAME=	ical-2.1b2
@@ -18,10 +18,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tclsh=/usr/bin/tclsh \
 		--with-tclconfig=/usr/libdata/tcl \
 		--with-tkconfig=${PREFIX}/lib
-
-.if !defined(NOMANCOMPRESS)
-post-install:
-	@gzip -9nf ${PREFIX}/man/man1/ical.1
-.endif
+MAN1=		ical.1
 
 .include <bsd.port.mk>

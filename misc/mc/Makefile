@@ -3,7 +3,7 @@
 # Date created:		15 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.6 1996/10/20 19:23:42 max Exp $
+# $Id: Makefile,v 1.7 1996/11/11 05:49:48 obrien Exp $
 #
 
 DISTNAME=	mc-3.2.1
@@ -15,11 +15,10 @@ MAINTAINER=	torstenb@FreeBSD.ORG
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-ncurses
 STRIP=
+MAN1=		mc.1
+MAN8=		mcserv.8
 
 post-install:
 	@/usr/bin/strip ${PREFIX}/bin/mc ${PREFIX}/sbin/mcserv
-.if !defined(NOMANCOMPRESS)
-	@gzip -9nf ${PREFIX}/man/man1/mc.1 ${PREFIX}/man/man8/mcserv.8
-.endif
 
 .include <bsd.port.mk>

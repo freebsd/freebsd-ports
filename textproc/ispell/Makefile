@@ -3,7 +3,7 @@
 # Date created:         6 November 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.12 1995/11/26 10:47:42 asami Exp $
+# $Id: Makefile,v 1.13 1996/11/11 05:49:39 obrien Exp $
 #
 
 DISTNAME=	ispell-3.1
@@ -45,13 +45,9 @@ british:
 	@${MAKE} ${.MAKEFLAGS} LANG=british all 
 
 pre-install:
-	@mkdir -p ${PREFIX}/bin
-	@mkdir -p ${PREFIX}/lib
-	@mkdir -p ${PREFIX}/man/man1
-	@mkdir -p ${PREFIX}/man/man4
+	@${MKDIR} ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/lib
+	@${MKDIR} ${PREFIX}/man/man1
+	@${MKDIR} ${PREFIX}/man/man4
 
 .include <bsd.port.mk>
-
-
-
-

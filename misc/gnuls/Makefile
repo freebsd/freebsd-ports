@@ -3,7 +3,7 @@
 # Date created:				06 January 1996
 # Whom:					bmc@WillsCreek.COM
 #
-# $Id: Makefile,v 1.1.1.1 1996/01/15 10:37:17 asami Exp $
+# $Id: Makefile,v 1.2 1996/11/11 05:49:44 obrien Exp $
 #
 
 DISTNAME=	fileutils-3.12
@@ -20,11 +20,6 @@ MAINTAINER=	bmc@WillsCreek.COM
 
 PATCH_DIST_STRIP=	-p1
 GNU_CONFIGURE=	yes
-
-post-install:
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/linuxls.1
-	gzip -9nf ${PREFIX}/man/man1/dircolors.1
-.endif
+MAN1=		linuxls.1 dircolors.1
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:         8 May 1995
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.5 1996/10/16 08:55:30 asami Exp $
+# $Id: Makefile,v 1.6 1996/11/11 05:49:40 obrien Exp $
 #
 
 DISTNAME=       kp-0.96
@@ -15,10 +15,6 @@ MAINTAINER=	asami@FreeBSD.org
 RUN_DEPENDS=	wish4.1:${PORTSDIR}/x11/tk41
 
 USE_X11=	yes
-
-post-install:
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/kp.1
-.endif
+MAN1=		kp.1
 
 .include <bsd.port.mk>

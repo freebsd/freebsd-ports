@@ -3,7 +3,7 @@
 # Date created:         27 Dec 1994
 # Whom:                 thomas@ghpc8.ihf.rwth-aachen.de
 #
-# $Id: Makefile,v 1.18 1996/11/11 05:50:17 obrien Exp $
+# $Id: Makefile,v 1.19 1996/11/11 07:53:07 tg Exp $
 #
 
 DISTNAME=	tkman-1.8
@@ -18,10 +18,6 @@ RUN_DEPENDS=	rman:${PORTSDIR}/misc/rman \
 		glimpse:${PORTSDIR}/misc/glimpse
 
 NO_CDROM=	yes	# Don't sell for profit
-
-post-install:
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/tkman.1
-.endif
+MAN1=		tkman.1
 
 .include <bsd.port.mk>
