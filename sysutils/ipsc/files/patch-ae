@@ -1,0 +1,8 @@
+--- Makefile.orig	Tue Jan 11 21:56:04 2000
++++ Makefile	Tue Jan 11 21:56:08 2000
+@@ -1,5 +1,3 @@
+-CC = gcc
+-CFLAGS = -g -Wall -O2
+ LIBS = -lm
+ 
+ GNOMELIBS = `gnome-config --libs gnomeui`
