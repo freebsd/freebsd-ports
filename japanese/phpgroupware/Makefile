@@ -16,6 +16,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MAINTAINER=	tmutoh@mx10.freecom.ne.jp
 
+BROKEN=		"Incorrect pkg-plist"
+
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 
 NO_BUILD=	yes
