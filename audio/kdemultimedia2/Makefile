@@ -3,11 +3,11 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.20 1998/10/11 07:31:38 jseger Exp $
+# $Id: Makefile,v 1.21 1998/10/13 03:38:51 jseger Exp $
 #
 
 DISTNAME=	kdemultimedia-1.0
-CATEGORIES=	x11
+CATEGORIES=	audio kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
 MASTER_SITE_SUBDIR= stable/1.0/distribution/tar/generic/source
 
