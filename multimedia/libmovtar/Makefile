@@ -29,6 +29,8 @@ MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 
 SDL_CONFIG?=    ${LOCALBASE}/bin/sdl11-config
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' \
 		${WRKSRC}/rtjpeg/rtjshow.c \
@@ -36,5 +38,11 @@ post-patch:
 	@${REINPLACE_CMD} -E -e 's|^(LIBS="-ljpeg )|\1 -L${LOCALBASE}/lib|; \
 		s|(LIBS -ljpeg)"|\1 -L${LOCALBASE}/lib"|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+.if ${ARCH} != "i386"
+# emms opcode should be noop in non-i386 non-MMX ARCH
+		@${REINPLACE_CMD} -E \
+		-e 's|^.*"emms".*$$||' \
+		${WRKSRC}/movtar_play.c
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
