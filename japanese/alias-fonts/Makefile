@@ -5,19 +5,23 @@
 # $FreeBSD$
 #
 
-PORTNAME=	netscape-fonts
+PORTNAME=	alias-fonts
 PORTVERSION=	1.0
-CATEGORIES=	japanese www x11-fonts
+CATEGORIES=	japanese x11-fonts
 DISTFILES=	# empty
 
-MAINTAINER=	sada@freebsd.org
+MAINTAINER=	koma2@jiro.c.u-tokyo.ac.jp
 
-RUN_DEPENDS= \
-	${PREFIX}/lib/X11/fonts/local/jpnhn4-iso.pcf.gz:${PORTSDIR}/japanese/elisa8x8 \
-	${PREFIX}/lib/X11/fonts/local/5x10B.pcf.gz:${PORTSDIR}/japanese/k10 \
-	${PREFIX}/lib/X11/fonts/local/knmhn12x.pcf.gz:${PORTSDIR}/japanese/k12 \
-	${PREFIX}/lib/X11/fonts/local/k20b.pcf.gz:${PORTSDIR}/japanese/kappa20
+RUN_DEPENDS=	\
+	${FONTSDIR}/jpnhn4-iso.pcf.gz:${PORTSDIR}/japanese/elisa8x8 \
+	${FONTSDIR}/5x10B.pcf.gz:${PORTSDIR}/japanese/k10 \
+	${FONTSDIR}/shnmk12.pcf.gz:${PORTSDIR}/japanese/shinonome \
+	${FONTSDIR}/kanji18.pcf.gz:${PORTSDIR}/japanese/kanji18 \
+	${FONTSDIR}/k20b.pcf.gz:${PORTSDIR}/japanese/kappa20 \
+	${FONTSDIR}/kanji26.pcf.gz:${PORTSDIR}/japanese/kanji26 \
+	${FONTSDIR}/K12-1.pcf.gz:${PORTSDIR}/japanese/jisx0213-fonts
 
+NO_BUILD=	yes
 USE_X_PREFIX=	yes
 
 .include <bsd.port.pre.mk>
@@ -26,10 +30,10 @@ USE_X_PREFIX=	yes
 RUN_DEPENDS+=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
 .endif
 
-NO_BUILD=	yes
+FONTSDIR=	${X11BASE}/lib/X11/fonts/local
 
 do-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
-		/usr/bin/perl ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+		${PERL} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>
