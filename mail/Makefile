@@ -221,6 +221,7 @@
     SUBDIR += openwebmail
     SUBDIR += p3scan
     SUBDIR += p5-Email-Abstract
+    SUBDIR += p5-Email-Date
     SUBDIR += p5-Email-Filter
     SUBDIR += p5-Email-Find
     SUBDIR += p5-Email-Folder
