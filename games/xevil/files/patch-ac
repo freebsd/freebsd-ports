@@ -1,0 +1,11 @@
+--- cmn/intel.cpp~	Wed Jan 19 12:54:34 2000
++++ cmn/intel.cpp	Thu Dec 21 19:42:34 2000
+@@ -1606,7 +1606,7 @@
+ Boolean Machine::weapon_current_is_drop_liftable(PhysicalP p) {
+   // This is a HACK, we should really make Lifter override 
+   // get_weapon_current(), etc.
+-  char *dummy;
++  const char *dummy;
+   ClassId classId = p->get_weapon_string(dummy);
+   if (classId == A_DropLiftable) {
+     return True;

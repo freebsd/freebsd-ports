@@ -1,0 +1,14 @@
+--- Makefile~	Wed Jan 19 13:08:50 2000
++++ Makefile	Thu Dec 21 19:43:26 2000
+@@ -63,11 +63,6 @@
+ 
+ # Could also include serverping in the distribution
+ $(OBJ_DIR)/xevil$(VERSION).$(PCKG_NAME).tar.Z::
+-	cp readme.txt $(OBJ_DIR)
+-	cp gpl.txt $(OBJ_DIR)
+-	cp -r instructions $(OBJ_DIR)
+-	(cd $(OBJ_DIR); tar cf xevil$(VERSION).$(PCKG_NAME).tar xevil readme.txt gpl.txt instructions)
+-	(cd $(OBJ_DIR); compress -f xevil$(VERSION).$(PCKG_NAME).tar)
+ 
+ ## Make a distribution file.
+ dist:

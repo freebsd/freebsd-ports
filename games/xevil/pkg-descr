@@ -1,17 +1,14 @@
-INTRO:
-  Death, kill, maim.  XEvil is a side-view, fast-action, kill everything
-  type of game.  Play is against other human or computer players.  XEvil
-  is keyboard controlled with configurable controls.
+XEvil is a side-view, single or network-multiplayer, fast-action,
+kill-everything, game for Windows and UNIX.
 
-FEATURES:
-- Color/Black&White/Grey Scale
-- 0, 1, or 2 player.  A single player can play against machine players.
-  Multiple humans can play cooperatively against machine players or against
-  each other.  You can watch machine players kill each other.
-- Extreme violence.
-- Assortment of characters, weapons, and items.  E.g. ninja, alien, chainsaw,
-  flame-thrower, Altar-Of-Sin, and soul-swapper.
-- Keyboard controls can be configured with X resources or at runtime with the
-  graphical interface.
-- Game speed can be adjusted.
-- Different styles of game play: levels, kill-kill-kill, duel, training.
+You have sinned in life.  Now, you die and go to Hell.  XEvil is the
+contest that determines your fate in Hell for all eternity.  At the
+end of a game, you receive one of many possible rankings.  A poor
+player, for example, may spend the rest of time as "Satan's Earwax
+Remover", while a good one might achieve a prestigious title such as
+"VP of Hell Marketing" or even "Lead Software Engineer of Hell".
+
+The XEvil 2.X Instruction Manual is located in
+/usr/X11R6/share/doc/xevil/instructions
+
+WWW: http://www.xevil.com
