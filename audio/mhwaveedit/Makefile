@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mhwaveedit
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.3
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mtek.chalmers.se/~hjormagn/
 
@@ -19,13 +19,17 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		portaudio.0:${PORTSDIR}/audio/portaudio
 
 USE_GNOME=	gnomehack gnometarget gtk20
+WANT_GNOME=	yes
+WANT_SDL=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-optimization --without-alsalib --without-sdl
+CONFIGURE_ARGS=	--disable-optimization --without-alsalib
 
 PLIST_FILES=	bin/mhwaveedit
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_DOUBLE_SAMPLES)
 CONFIGURE_ARGS+=	--with-double-samples
@@ -35,6 +39,18 @@ CONFIGURE_ARGS+=	--with-double-samples
 LIB_DPENDS+=	jack:${PORTSDIR}/audio/jack
 .else
 CONFIGURE_ARGS+=	--without-jack
+.endif
+
+.if ${HAVE_SDL:Msdl}!=""
+USE_SDL+=	sdl
+.else
+CONFIGURE_ARGS+=	--without-sdl
+.endif
+
+.if ${HAVE_GNOME:Mesound}!=""
+USE_GNOME+=	esound
+.else
+CONFIGURE_ARGS+=	--without-esound
 .endif
 
 pre-everything::
@@ -49,8 +65,11 @@ pre-everything::
 	@${ECHO_MSG} "	WITH_JACK=yes"
 	@${ECHO_MSG} "		Support JACK driver"
 	@${ECHO_MSG} ""
+	@${ECHO_MSG} "	WITH_GNOME=esound"
+	@${ECHO_MSG} "		Support EsounD driver"
+	@${ECHO_MSG} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldl||g' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
