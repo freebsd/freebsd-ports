@@ -4,14 +4,12 @@
 # Date created:			  Mon Apr 14, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.2 1997/04/24 16:31:42 obrien Exp $
+# $Id: Makefile,v 1.3 1997/04/24 19:37:57 obrien Exp $
 #
 
 DISTNAME=	tcplist-2.2
 CATEGORIES=	sysutils net
-MASTER_SITES=	ftp://ftp.cdf.toronto.edu/pub/tcplist/  \
-		ftp://ftp.ece.uc.edu/pub/sun-faq/FAQs/mirrors/ftp.cdf.toronto.edu/tcplist/  \
-		ftp://ftp.informatik.uni-hamburg.de/pub/os/sun/sun-faq/FAQs/mirrors/ftp.cdf.toronto.edu/tcplist/
+MASTER_SITES=	ftp://ftp.cdf.toronto.edu/pub/jdd/tcplist/
 EXTRACT_SUFX=	.shar.gz
 
 MAINTAINER=     obrien@NUXI.com
