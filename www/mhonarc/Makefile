@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mhonarc
-PORTVERSION=	2.6.4
+PORTVERSION=	2.6.7
 CATEGORIES=	www mail
 MASTER_SITES=	http://www.mhonarc.org/tar/ \
 		http://www.oac.uci.edu/indiv/ehood/tar/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.mhonarc.org/tar/ \
 		ftp://ftp.redhat.com/pub/contrib/noarch/noarch/ \
 		ftp://ftp.plig.org/pub/CPAN/authors/id/EHOOD/ \
 		http://www.perl.com/CPAN-local/authors/id/EHOOD/
-DISTNAME=	MHonArc${PORTVERSION}
+DISTNAME=	MHonArc-${PORTVERSION}
 
 MAINTAINER=	max@FreeBSD.org
 COMMENT=	WWW front end for mail archives

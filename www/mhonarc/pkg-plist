@@ -272,6 +272,7 @@ share/MHonArc/readmail.pl
 %%PORTDOCS%%share/doc/MHonArc/resources/labelend.html
 %%PORTDOCS%%share/doc/MHonArc/resources/labelstyles.html
 %%PORTDOCS%%share/doc/MHonArc/resources/lastpglink.html
+%%PORTDOCS%%share/doc/MHonArc/resources/lang.html
 %%PORTDOCS%%share/doc/MHonArc/resources/listbegin.html
 %%PORTDOCS%%share/doc/MHonArc/resources/listend.html
 %%PORTDOCS%%share/doc/MHonArc/resources/litemplate.html
