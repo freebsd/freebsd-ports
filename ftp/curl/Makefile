@@ -10,8 +10,6 @@ PORTVERSION=	7.7.1
 CATEGORIES=	ftp www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		http://download.sourceforge.net/curl/ \
-		ftp://ftp.rhrz.uni-bonn.de/pub-koeln/net/inet/ \
-		ftp://ftp.win.or.jp/pub/network/www/misc/ \
 		ftp://ftp.sunet.se/pub/www/utilities/curl/ \
 		ftp://ftp.fu-berlin.de/pub/unix/network/curl/ \
 		ftp://crydee.sai.msu.ru/zeus/unix/WWW/tools/mirror/
