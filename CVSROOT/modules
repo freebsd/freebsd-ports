@@ -2718,6 +2718,7 @@ jftpgw		ports/ftp/jftpgw
 jgnat		ports/lang/jgnat
 jgraph		ports/graphics/jgraph
 jgv		ports/graphics/jgv
+jift		ports/net/jift
 jikes		ports/java/jikes
 jive		ports/misc/jive
 jlex		ports/java/jlex
