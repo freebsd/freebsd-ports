@@ -1,6 +1,15 @@
---- src/Makefile.in.orig	Fri Jan 17 06:36:43 2003
-+++ src/Makefile.in	Thu Jan 23 01:41:33 2003
-@@ -106,7 +106,7 @@
+--- src/Makefile.in.orig	Mon Sep 29 19:06:14 2003
++++ src/Makefile.in	Tue Sep 30 11:26:22 2003
+@@ -80,7 +80,7 @@
+ KRB4 = @KRB4@
+ LDFLAGS = @LDFLAGS@
+ LIBOBJS = @LIBOBJS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -lmd -lgnuregex -lz
+ LN_S = @LN_S@
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+@@ -146,7 +146,7 @@
  # some namespace hackery going on that maybe shouldn't be.  Long term fix is to
  # try and remove naming ocnflicts and fix Automake to allow particular includes
  # to be attached only to particular object files.  Short term fix is either or.
@@ -9,7 +18,7 @@
  
  bin_PROGRAMS = cvs
  bin_SCRIPTS = cvsbug
-@@ -147,6 +147,7 @@
+@@ -187,6 +187,7 @@
  	no_diff.c \
  	parseinfo.c \
  	patch.c \
@@ -17,7 +26,7 @@
  	rcs.c \
  	rcscmds.c \
  	recurse.c \
-@@ -184,8 +185,7 @@
+@@ -224,8 +225,7 @@
  
  cvs_LDADD = \
  	../diff/libdiff.a \
@@ -27,7 +36,7 @@
  
  
  # extra clean targets
-@@ -221,6 +221,7 @@
+@@ -262,6 +262,7 @@
  	main.$(OBJEXT) mkmodules.$(OBJEXT) modules.$(OBJEXT) \
  	myndbm.$(OBJEXT) no_diff.$(OBJEXT) parseinfo.$(OBJEXT) \
  	patch.$(OBJEXT) rcs.$(OBJEXT) rcscmds.$(OBJEXT) \
@@ -35,16 +44,7 @@
  	recurse.$(OBJEXT) release.$(OBJEXT) remove.$(OBJEXT) \
  	repos.$(OBJEXT) root.$(OBJEXT) run.$(OBJEXT) scramble.$(OBJEXT) \
  	server.$(OBJEXT) status.$(OBJEXT) subr.$(OBJEXT) tag.$(OBJEXT) \
-@@ -236,7 +237,7 @@
- DEFAULT_INCLUDES =  -I. -I$(srcdir) -I$(top_builddir)
- CPPFLAGS = @CPPFLAGS@
- LDFLAGS = @LDFLAGS@
--LIBS = @LIBS@
-+LIBS = @LIBS@ -lmd -lgnuregex -lz
- depcomp = $(SHELL) $(top_srcdir)/depcomp
- am__depfiles_maybe = depfiles
- @AMDEP_TRUE@DEP_FILES = ./$(DEPDIR)/add.Po ./$(DEPDIR)/admin.Po \
-@@ -256,7 +257,7 @@
+@@ -293,7 +294,7 @@
  @AMDEP_TRUE@	./$(DEPDIR)/main.Po ./$(DEPDIR)/mkmodules.Po \
  @AMDEP_TRUE@	./$(DEPDIR)/modules.Po ./$(DEPDIR)/myndbm.Po \
  @AMDEP_TRUE@	./$(DEPDIR)/no_diff.Po ./$(DEPDIR)/parseinfo.Po \
@@ -53,7 +53,7 @@
  @AMDEP_TRUE@	./$(DEPDIR)/rcscmds.Po ./$(DEPDIR)/recurse.Po \
  @AMDEP_TRUE@	./$(DEPDIR)/release.Po ./$(DEPDIR)/remove.Po \
  @AMDEP_TRUE@	./$(DEPDIR)/repos.Po ./$(DEPDIR)/root.Po \
-@@ -375,6 +376,7 @@
+@@ -411,6 +412,7 @@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/no_diff.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/parseinfo.Po@am__quote@
  @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/patch.Po@am__quote@
