@@ -1,0 +1,10 @@
+--- FILELIST.orig	Wed Mar 17 18:36:19 1999
++++ FILELIST	Wed Mar 17 18:36:49 1999
+@@ -4,6 +4,7 @@
+ bin:mha-dbrecover
+ lib:lib/base64.pl
+ lib:lib/ewhutil.pl
++lib:lib/iso2022.pl
+ lib:lib/iso8859.pl
+ lib:lib/mhamain.pl
+ lib:lib/mhdb.pl

@@ -1,0 +1,18 @@
+<DECODEHEADS>
+<MIMEARGS>
+text/plain:default=iso-2022-jp
+</MIMEARGS>
+<CHARSETCONVERTERS>
+iso-2022-jp;	iso_2022::str2sgml;	iso2022.pl
+plain;		iso_2022::str2sgml;	iso2022.pl
+</CHARSETCONVERTERS>
+
+<MsgPgBegin>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML//EN">
+<HTML>
+<HEAD>
+<TITLE>$SUBJECTNA$</TITLE>
+<LINK REV="made" HREF="mailto:$FROMADDR$">
+</HEAD>
+<BODY>
+</MsgPgBegin>
