@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mhonarc
-PORTVERSION=	2.5.12
+PORTVERSION=	2.5.13
 CATEGORIES=	www mail
 MASTER_SITES=	http://www.mhonarc.org/tar/ \
 		http://www.oac.uci.edu/indiv/ehood/tar/ \
@@ -38,6 +38,6 @@ INSTALL_ARGS+=	-nodoc
 .include <bsd.port.pre.mk>
 
 do-install:
-	cd ${WRKSRC} && ${PERL5} install.me ${INSTALL_ARGS} 
+	cd ${WRKSRC} && ${PERL5} install.me ${INSTALL_ARGS}
 
 .include <bsd.port.post.mk>
