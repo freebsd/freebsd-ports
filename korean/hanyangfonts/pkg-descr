@@ -1,0 +1,9 @@
+Hangul X11 fonts(Hanyang)
+-------------------------
+
+It is Korean fonts for X11. These fonts are copyrighted by 
+(C) Hanyang Systems, but it is in the public domain. It is good for
+using many i18ned X11 program.
+
+--
+Ports by Choi Jun Ho <junker@jazz.snu.ac.kr>
