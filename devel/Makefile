@@ -66,6 +66,7 @@
     SUBDIR += bicyclerepair
     SUBDIR += bin86
     SUBDIR += bison
+    SUBDIR += bison1875
     SUBDIR += boaconstructor
     SUBDIR += boehm-gc
     SUBDIR += bonobo
