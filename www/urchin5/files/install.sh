@@ -995,7 +995,7 @@ else
    "$GUNZIP" -c "$DIST" | (cd "$INSTALLDIR"; tar xf - bin doc etc htdocs lib util)
    "$GUNZIP" -c "$DIST" | (cd "$INSTALLERDIR/tmp.$NOW.$$"; tar xf - data var)
    cd "$INSTALLERDIR/tmp.$NOW.$$/data"
-   tar cf - cache conf geodata history logs reports session | (cd "$INSTALLERDIR"; cd "$INSTALLDATADIR"; tar xf -)
+   tar cf - admin cache conf geodata history logs reports session | (cd "$INSTALLERDIR"; cd "$INSTALLDATADIR"; tar xf -)
    cd "$INSTALLERDIR/tmp.$NOW.$$/var"
    tar cf - * | (cd "$INSTALLERDIR"; cd "$INSTALLVARDIR"; tar xf -)
    cd "$INSTALLERDIR"

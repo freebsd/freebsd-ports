@@ -1,4 +1,6 @@
 @unexec %D/urchin/bin/urchinctl stop > /dev/null 2>&1 || true
+@unexec rm -f %D/urchin/var/urchinwebd.conf.template.dist 2>/dev/null || true
+etc/rc.d/urchin5_daemons.sh
 urchin/bin/admin
 urchin/bin/auth
 urchin/bin/rollup.cgi
@@ -349,6 +351,7 @@ urchin/lib/admin/templates/form_aff2.tpl
 urchin/lib/admin/templates/form_auto1.tpl
 urchin/lib/admin/templates/form_auto2.tpl
 urchin/lib/admin/templates/form_browser.tpl
+urchin/lib/admin/templates/form_ctmpending.tpl
 urchin/lib/admin/templates/form_dbrowser.tpl
 urchin/lib/admin/templates/form_filter1.tpl
 urchin/lib/admin/templates/form_filter2.tpl
@@ -453,6 +456,7 @@ urchin/lib/admin/templates/wizard_profile1.tpl
 urchin/lib/admin/templates/wizard_profile2.tpl
 urchin/lib/admin/templates/wizard_profile3.tpl
 urchin/lib/admin/templates/wizard_profile4.tpl
+urchin/lib/admin/templates/wizard_profilectm.tpl
 urchin/lib/admin/templates/wizard_profiled1.tpl
 urchin/lib/admin/templates/wizard_profiled2.tpl
 urchin/lib/admin/templates/wizard_settings1.tpl
@@ -473,9 +477,11 @@ urchin/lib/admin/views/view_s1.vw
 urchin/lib/admin/views/view_s2.vw
 urchin/lib/custom/cobrands/cobrand_admin.tpl.sample
 urchin/lib/custom/cobrands/cobrand_report.tpl.sample
+urchin/lib/custom/cobrands/cobrand_session.tpl.sample
 urchin/lib/custom/languages/en.txt.sample
 urchin/lib/custom/logformats/custom.lf.sample
 urchin/lib/custom/logformats/fieldlist.txt.sample
+urchin/lib/custom/lookuptables/campaign.lt.sample
 urchin/lib/custom/profiletypes/Campaign_Website/All_Reports.rs.sample
 urchin/lib/custom/profiletypes/Campaign_with_E-Commerce_Website/All_Reports.rs.sample
 urchin/lib/custom/profiletypes/E-Commerce_Website/All_Reports.rs.sample
@@ -495,6 +501,7 @@ urchin/lib/reporting/languages/sp.txt
 urchin/lib/reporting/languages/sw.db
 urchin/lib/reporting/languages/sw.txt
 urchin/lib/reporting/logformats/auto.lf
+urchin/lib/reporting/logformats/campaign.lf
 urchin/lib/reporting/logformats/elf.lf
 urchin/lib/reporting/logformats/elf2.lf
 urchin/lib/reporting/logformats/fieldlist.txt
@@ -503,6 +510,7 @@ urchin/lib/reporting/logformats/ncsa.lf
 urchin/lib/reporting/logformats/netscape.lf
 urchin/lib/reporting/logformats/overture.lf
 urchin/lib/reporting/logformats/w3c.lf
+urchin/lib/reporting/lookuptables/phone_models.lt
 urchin/lib/reporting/profiletypes/Campaign_Website/Basic_All.rs
 urchin/lib/reporting/profiletypes/Campaign_Website/Basic_IT.rs
 urchin/lib/reporting/profiletypes/Campaign_Website/Basic_Lite.rs
@@ -612,6 +620,7 @@ urchin/var/server.key.sample
 urchin/var/urchinwebd.conf
 urchin/var/urchinwebd.conf.template
 @dirrm urchin/bin
+@unexec rmdir %D/urchin/data/admin 2>/dev/null || true
 @unexec rm -rf %D/urchin/data/cache 2>/dev/null
 @unexec rmdir %D/urchin/data/history 2>/dev/null || true
 @unexec rmdir %D/urchin/data/logs 2>/dev/null || true
@@ -634,6 +643,7 @@ urchin/var/urchinwebd.conf.template
 @unexec rmdir %D/urchin/lib/custom/cobrands 2>/dev/null || true
 @unexec rmdir %D/urchin/lib/custom/languages 2>/dev/null || true
 @unexec rmdir %D/urchin/lib/custom/logformats 2>/dev/null || true
+@unexec rmdir %D/urchin/lib/custom/lookuptables 2>/dev/null || true
 @unexec rmdir %D/urchin/lib/custom/profiletypes/Campaign_Website 2>/dev/null || true
 @unexec rmdir %D/urchin/lib/custom/profiletypes/Campaign_with_E-Commerce_Website 2>/dev/null || true
 @unexec rmdir %D/urchin/lib/custom/profiletypes/E-Commerce_Website 2>/dev/null || true
@@ -642,6 +652,7 @@ urchin/var/urchinwebd.conf.template
 @unexec rmdir %D/urchin/lib/custom 2>/dev/null || true
 @dirrm urchin/lib/reporting/languages
 @dirrm urchin/lib/reporting/logformats
+@dirrm urchin/lib/reporting/lookuptables
 @dirrm urchin/lib/reporting/profiletypes/Campaign_Website
 @dirrm urchin/lib/reporting/profiletypes/Campaign_with_E-Commerce_Website
 @dirrm urchin/lib/reporting/profiletypes/E-Commerce_Website
