@@ -18,7 +18,6 @@ COMMENT=	A SOAP (Simple Object Access Protocol) implementation in C
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_BZIP2=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack glib12 libxml
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes

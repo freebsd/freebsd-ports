@@ -17,7 +17,6 @@ COMMENT=	A Gomoku game for GNOME Desktop
 LIB_DEPENDS=	gnomemm-1.2.10:${PORTSDIR}/x11-toolkits/gnome--
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

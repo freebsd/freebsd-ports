@@ -21,7 +21,6 @@ LIB_DEPENDS=	gnomevfs-2.0:${PORTSDIR}/devel/gnomevfs2
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes

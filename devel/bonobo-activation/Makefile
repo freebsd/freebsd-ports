@@ -22,7 +22,6 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes

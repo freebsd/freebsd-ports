@@ -21,7 +21,6 @@ LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes

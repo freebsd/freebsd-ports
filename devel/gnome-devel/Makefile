@@ -21,7 +21,6 @@ LIB_DEPENDS=	gnomemm-1.2.10:${PORTSDIR}/x11-toolkits/gnome--
 IGNORE=		"Needs more work on the dependency chain"
 NO_BUILD=	yes
 
-USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs gal
 USE_PYTHON=	yes
 

@@ -25,7 +25,6 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix glib12 libxml gtk12 orbit gconf \
 		gnomemimedata gnomelibs
 GNU_CONFIGURE=	yes

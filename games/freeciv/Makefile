@@ -19,7 +19,6 @@ LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
 USE_XPM=	yes
 USE_BZIP2=	yes
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -17,7 +17,6 @@ COMMENT=	A small but powerful text editor for Gnome Desktop Environment
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomeprint libglade gnomevfs
 USE_REINPLACE=	yes
 USE_LIBTOOL=	yes

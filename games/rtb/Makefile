@@ -15,7 +15,6 @@ MAINTAINER=	draj@oceanfree.net
 COMMENT=	Robot programming game for UNIX
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--enable-debug

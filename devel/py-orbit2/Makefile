@@ -20,7 +20,6 @@ LIB_DEPENDS=	ORBit-2.0:${PORTSDIR}/devel/ORBit2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack
 USE_PYTHON=	yes
 USE_LIBTOOL=	yes

@@ -18,7 +18,6 @@ COMMENT=	A GNOME application for developing ".pot" files used with GNU Gettext
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gal gnomevfs
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

@@ -19,7 +19,6 @@ COMMENT=	A free, portable, Open Source 68k Mac emulator
 WRKSRC=		${WRKDIR}/BasiliskII-${PORTVERSION}/src/Unix
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	esound gtk12
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -21,7 +21,6 @@ LIB_DEPENDS=	gconf-gtk-1.1:${PORTSDIR}/devel/gconf
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 
 CONFIGURE_ARGS=	--with-gtk-config=${GTK_CONFIG}

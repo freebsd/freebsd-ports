@@ -19,7 +19,6 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomehack gnomeprefix oaf gnomehier gnomeprint
 GNOME_HTML_DIR=	${PREFIX}/share/doc/bonobo
 INSTALLS_SHLIB=	yes

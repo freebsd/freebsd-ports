@@ -17,7 +17,6 @@ COMMENT=	A 3D OpenGL based chess game
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
 USE_MESA=	yes

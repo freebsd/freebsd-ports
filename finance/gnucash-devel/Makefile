@@ -37,7 +37,6 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_XPM=	yes
 USE_PERL5=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomeprint libglade gtkhtml libghttp
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

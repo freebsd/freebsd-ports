@@ -20,7 +20,6 @@ COMMENT=	Python bindings for ORBit, a CORBA 2.2-compliant ORB
 LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit
 
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes

@@ -19,7 +19,6 @@ RUN_DEPENDS=	bochs:${PORTSDIR}/emulators/bochs
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 CONFIGURE_SCRIPT=	configure.sh
 WRKSRC=		${WRKDIR}/bfe2

@@ -18,7 +18,6 @@ MAINTAINER=	lo_gafet@users.sourceforge.net
 COMMENT=	Open Application Builder (code generator) for the GTK and/or GNOME
 
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
 

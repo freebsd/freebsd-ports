@@ -14,7 +14,6 @@ MAINTAINER=	nakai@FreeBSD.org
 COMMENT=	A lazy version of solitaire game
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	imlib
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

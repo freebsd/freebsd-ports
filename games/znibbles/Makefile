@@ -14,7 +14,6 @@ MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	A multi-player networked nibbles game
 
 USE_MOTIF=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-motif \

@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A cross-platform library for games and multimedia programming
 
 USE_XLIB=	yes
-USE_GNOMENG=	yes
 WANT_GNOME=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

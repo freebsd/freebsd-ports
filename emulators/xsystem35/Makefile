@@ -17,7 +17,6 @@ COMMENT=	AliceSoft System 3.5 on X Window System
 USE_REINPLACE=	yes
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 WANT_GNOME=	yes
 

@@ -14,7 +14,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A yet another little mind game
 
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes

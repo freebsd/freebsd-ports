@@ -20,7 +20,6 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 		xml.5:${PORTSDIR}/textproc/libxml
 
 USE_BISON=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	glib12 gtk12 libglade
 USE_AUTOCONF=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}" \

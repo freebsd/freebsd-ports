@@ -21,7 +21,6 @@ RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_PERL5=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs
 USE_BISON=	yes
 USE_REINPLACE=	yes

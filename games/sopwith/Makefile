@@ -18,7 +18,6 @@ COMMENT=	A classic WW1 biplane game
 BUILD_DEPENDS=	${LOCALBASE}/bin/sdl11-config:${PORTSDIR}/devel/sdl12
 
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDL_CONFIG=${LOCALBASE}/bin/sdl11-config

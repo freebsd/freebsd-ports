@@ -20,7 +20,6 @@ LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomelibs
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
