@@ -1,0 +1,8 @@
+bin/diction
+bin/style
+man/man1/diction.1.gz
+man/man1/style.1.gz
+share/diction/C
+share/diction/de
+share/diction/en
+@dirrm share/diction
