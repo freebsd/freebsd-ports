@@ -7,7 +7,7 @@
 
 PORTNAME=	orion
 PORTVERSION=	1.5.2
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	www java
 MASTER_SITES=	http://www.orionserver.com/distributions/ \
 		http://www.atlassian.com/software/orion/downloads/ \
@@ -48,7 +48,7 @@ REPLACE_FILES=	${PORTSDIR}/www/jakarta-tomcat/files/daemonctl.c \
 		${WRKSRC}/config/default-web-site.xml \
 		${WRKSRC}/config/rmi.xml
 JAR_FILE=	${APP_SHORTNAME}.jar
-WRKDIR?=	work
+WRKDIR?=	${.CURDIR}/work
 
 .include <bsd.port.pre.mk>
 
