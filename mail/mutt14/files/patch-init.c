@@ -1,16 +1,6 @@
 --- init.c.orig	Wed Jul 24 10:41:29 2002
-+++ init.c	Wed Apr 30 13:06:45 2003
-@@ -45,7 +45,9 @@
- #include <stdlib.h>
- #include <unistd.h>
- #include <string.h>
-+#if __FreeBSD_version >= 500000
- #include <sys/utsname.h>
-+#endif
- #include <errno.h>
- #include <sys/wait.h>
- 
-@@ -1707,7 +1709,11 @@
++++ init.c	Sat May  3 08:46:29 2003
+@@ -1707,7 +1707,11 @@
  void mutt_init (int skip_sys_rc, LIST *commands)
  {
    struct passwd *pw;
@@ -22,7 +12,7 @@
    char *p, buffer[STRING], error[STRING];
    int i, default_rc = 0, need_pause = 0;
    BUFFER err;
-@@ -1765,16 +1771,21 @@
+@@ -1765,16 +1769,21 @@
  #endif
  
    /* And about the host... */
