@@ -1,7 +1,13 @@
 bin/kill_mldonkey
 bin/mldonkey
 bin/mldonkey-real
-bin/mldonkey_gui
 bin/mldonkey_previewer
+%%PORTDOCS%%share/doc/mldonkey/AUTHORS
+%%PORTDOCS%%share/doc/mldonkey/BUGS
+%%PORTDOCS%%share/doc/mldonkey/ChangeLog
+%%PORTDOCS%%share/doc/mldonkey/Developers.txt
+%%PORTDOCS%%share/doc/mldonkey/FAQ.html
 %%PORTDOCS%%share/doc/mldonkey/Readme.txt
+%%PORTDOCS%%share/doc/mldonkey/TODO
+%%PORTDOCS%%share/doc/mldonkey/ed2k_links.txt
 %%PORTDOCS%%@dirrm share/doc/mldonkey

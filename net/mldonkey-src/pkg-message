@@ -1,5 +1,8 @@
 	ATTENTIONATTENTION:
 
+- If you want to know how to use mldonkey, read "Readme.txt" or
+  "FAQ.html" in the port docs (/usr/local/share/doc/mldonkey)
+
 - It is not a bad idea to install mplayer. You will be able
   to preview half-downloaded files (if you have the beginning).
 
@@ -7,14 +10,6 @@
   /usr/local/share/doc/mldonkey/Readme.txt.
   It contains important information about how to run mldonkey. 
 
-- If this is the first time you install mldonkey,
-  please go to the mldonkey ports dir as a user and enter:
-
-     make install-user
-
-  this will set up your user config and install an 
-  initial server list.
-
-- You can import the downloads started with eDonkey
+- You can import the downloads you started with eDonkey
   (try "import /home/directory/path/.edonkey2000-core"
   on the console), but you can NOT go back!
