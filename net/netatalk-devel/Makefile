@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netatalk
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3.1
 PORTEPOCH=	1
 CATEGORIES=	net print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -24,6 +24,7 @@ LIB_DEPENDS=	slp.1:${PORTSDIR}/net/openslp
 LIB_DEPENDS+=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 .endif
 
+USE_BZIP2=	yes
 CONFIGURE_ARGS+=	--with-tcp-wrappers \
 			--with-pkgconfdir=${PREFIX}/etc \
 #			--disable-ddp
@@ -49,7 +50,7 @@ CONFIGURE_ARGS+=		--with-flock-locks
 # This should hopefully allow aliases to work between restarts of afpd.
 # This has been tested on MacOS 9.2.x and OS X.
 CONFIGURE_ARGS+=		--with-did=cnid \
-				--with-db3=${LOCALBASE}
+						--with-db3=${LOCALBASE}
 PLIST_SUB+=				NETATALKCNID=""
 .else
 # This method of DID calculation is not persistent, but has been tested to
