@@ -1,150 +1,92 @@
-*** Makefile.orig	Sun May 26 13:26:46 1996
---- Makefile	Sun Nov 17 13:09:19 1996
-***************
-*** 24,45 ****
-  # But where to change without revealing my secret identity?
-  
-  ########### Compiler and flags.
-! CC = gcc
-! DEBUGFLAGS = -Wall -O2
-  
-  ########### Install.
-! INSTALL = /usr/bin/install
-  
-  # Where to install the executable
-! BIN_DIR = /usr/local/bin
-  
-  # Where to install the manual pages
-! MAN_DIR = /usr/local/man/man1
-  
-  # Where to install the patches, config files, and MIDI files.
-  # If you change this, it's a good idea to recompile the binary,
-  # or you'll need to invoke timidity with the -L option.
-! TIMID_DIR = /usr/local/lib/timidity
-  
-  # Where to install the Tcl code, if you use the Tcl code that is.
-  TCL_DIR = $(TIMID_DIR)
---- 24,45 ----
-  # But where to change without revealing my secret identity?
-  
-  ########### Compiler and flags.
-! #CC = gcc
-! DEBUGFLAGS = -Wall
-  
-  ########### Install.
-! #INSTALL = /usr/bin/install
-  
-  # Where to install the executable
-! BIN_DIR = ${PREFIX}/bin
-  
-  # Where to install the manual pages
-! MAN_DIR = ${PREFIX}/man/man1
-  
-  # Where to install the patches, config files, and MIDI files.
-  # If you change this, it's a good idea to recompile the binary,
-  # or you'll need to invoke timidity with the -L option.
-! TIMID_DIR = ${PREFIX}/lib/timidity
-  
-  # Where to install the Tcl code, if you use the Tcl code that is.
-  TCL_DIR = $(TIMID_DIR)
-***************
-*** 93,100 ****
-  # Select the ncurses full-screen interface
-  SYSTEM += -DIA_NCURSES
-  SYSEXTRAS += ncurs_c.c
-! EXTRAINCS += -I/usr/include/ncurses
-! EXTRALIBS += -lncurses
-  
-  ## Select the S-Lang full-screen interface
-  #SYSTEM += -DIA_SLANG
---- 93,100 ----
-  # Select the ncurses full-screen interface
-  SYSTEM += -DIA_NCURSES
-  SYSEXTRAS += ncurs_c.c
-! #EXTRAINCS += -I/usr/include/ncurses
-! EXTRALIBS += -lncurses -lmytinfo
-  
-  ## Select the S-Lang full-screen interface
-  #SYSTEM += -DIA_SLANG
-***************
-*** 112,120 ****
-  #EXTRALIBS += -lgen
-  
-  # Select the Tcl/Tk interface
-! SYSTEM += -DTCLTK -DWISH=\"wishx\" -DTKPROGPATH=\"$(TCL_DIR)/tkmidity.tcl\"
-! SYSEXTRAS += tk_c.c
-! INST_TK = install.tk
-  #EXTRAINCS +=
-  #EXTRALIBS +=
-  
---- 112,120 ----
-  #EXTRALIBS += -lgen
-  
-  # Select the Tcl/Tk interface
-! #SYSTEM += -DTCLTK -DWISH=\"wishx\" -DTKPROGPATH=\"$(TCL_DIR)/tkmidity.tcl\"
-! #SYSEXTRAS += tk_c.c
-! #INST_TK = install.tk
-  #EXTRAINCS +=
-  #EXTRALIBS +=
-  
-***************
-*** 136,142 ****
-  SDIST = timidity-lib-$(SUPPVERSION).tar.gz
-  SDISTZIP = tilib$(FNSUPPVERSION).zip
-  
-! CFLAGS= $(DEBUGFLAGS) -DDEFAULT_PATH=\"$(TIMID_DIR)\" \
-  	-DTIMID_VERSION=\"$(VERSION)\" $(SYSTEM) $(EXTRAINCS)
-  
-  ########### All relevant files.. Anybody know autoconf?
---- 136,142 ----
-  SDIST = timidity-lib-$(SUPPVERSION).tar.gz
-  SDISTZIP = tilib$(FNSUPPVERSION).zip
-  
-! CFLAGS+= $(DEBUGFLAGS) -DDEFAULT_PATH=\"$(TIMID_DIR)\" \
-  	-DTIMID_VERSION=\"$(VERSION)\" $(SYSTEM) $(EXTRAINCS)
-  
-  ########### All relevant files.. Anybody know autoconf?
-***************
-*** 228,237 ****
-  wav2pat: wav2pat.c
-  	$(CC) $(CFLAGS) -o wav2pat wav2pat.c
-  
-! depends depend dep:
-! 	$(CC) $(CFLAGS) -MM $(CSRCS) $(OPTSRCS) $(TOOLSRCS) > depends
-! 
-! include depends
-  
-  ########### Installation targets
-  
---- 228,237 ----
-  wav2pat: wav2pat.c
-  	$(CC) $(CFLAGS) -o wav2pat wav2pat.c
-  
-! #depends depend dep:
-! #        $(CC) $(CFLAGS) -MM $(CSRCS) $(OPTSRCS) $(TOOLSRCS) > depends
-! #
-! #include depends
-  
-  ########### Installation targets
-  
-***************
-*** 262,270 ****
-  	mkdir -p $(TIMID_DIR)
-  	$(INSTALL) -m 644 $(CONFIGF) $(TIMID_DIR)
-  
-! install.patch: $(PATCHF)
-  	mkdir -p $(TIMID_DIR)/patch
-! 	$(INSTALL) -m 644 $(PATCHF) $(TIMID_DIR)/patch
-  
-  install.tk: $(ALLTCLF)
-  	$(INSTALL) -m 644 $(ALLTCLF) $(TCL_DIR)
---- 262,270 ----
-  	mkdir -p $(TIMID_DIR)
-  	$(INSTALL) -m 644 $(CONFIGF) $(TIMID_DIR)
-  
-! install.patch: #$(PATCHF)
-  	mkdir -p $(TIMID_DIR)/patch
-! #        $(INSTALL) -m 644 $(PATCHF) $(TIMID_DIR)/patch
-  
-  install.tk: $(ALLTCLF)
-  	$(INSTALL) -m 644 $(ALLTCLF) $(TCL_DIR)
+--- Makefile.orig	Sun May 26 13:26:46 1996
++++ Makefile	Mon Jan  4 04:08:35 1999
+@@ -24,22 +24,22 @@
+ # But where to change without revealing my secret identity?
+ 
+ ########### Compiler and flags.
+-CC = gcc
+-DEBUGFLAGS = -Wall -O2
++#CC = gcc
++DEBUGFLAGS = -Wall
+ 
+ ########### Install.
+-INSTALL = /usr/bin/install
++#INSTALL = /usr/bin/install
+ 
+ # Where to install the executable
+-BIN_DIR = /usr/local/bin
++BIN_DIR = ${PREFIX}/bin
+ 
+ # Where to install the manual pages
+-MAN_DIR = /usr/local/man/man1
++MAN_DIR = ${PREFIX}/man/man1
+ 
+ # Where to install the patches, config files, and MIDI files.
+ # If you change this, it's a good idea to recompile the binary,
+ # or you'll need to invoke timidity with the -L option.
+-TIMID_DIR = /usr/local/lib/timidity
++TIMID_DIR = ${PREFIX}/lib/timidity
+ 
+ # Where to install the Tcl code, if you use the Tcl code that is.
+ TCL_DIR = $(TIMID_DIR)
+@@ -93,8 +93,8 @@
+ # Select the ncurses full-screen interface
+ SYSTEM += -DIA_NCURSES
+ SYSEXTRAS += ncurs_c.c
+-EXTRAINCS += -I/usr/include/ncurses
+-EXTRALIBS += -lncurses
++#EXTRAINCS += -I/usr/include/ncurses
++EXTRALIBS += -lncurses -lmytinfo
+ 
+ ## Select the S-Lang full-screen interface
+ #SYSTEM += -DIA_SLANG
+@@ -112,9 +112,9 @@
+ #EXTRALIBS += -lgen
+ 
+ # Select the Tcl/Tk interface
+-SYSTEM += -DTCLTK -DWISH=\"wishx\" -DTKPROGPATH=\"$(TCL_DIR)/tkmidity.tcl\"
+-SYSEXTRAS += tk_c.c
+-INST_TK = install.tk
++#SYSTEM += -DTCLTK -DWISH=\"wishx\" -DTKPROGPATH=\"$(TCL_DIR)/tkmidity.tcl\"
++#SYSEXTRAS += tk_c.c
++#INST_TK = install.tk
+ #EXTRAINCS +=
+ #EXTRALIBS +=
+ 
+@@ -136,7 +136,7 @@
+ SDIST = timidity-lib-$(SUPPVERSION).tar.gz
+ SDISTZIP = tilib$(FNSUPPVERSION).zip
+ 
+-CFLAGS= $(DEBUGFLAGS) -DDEFAULT_PATH=\"$(TIMID_DIR)\" \
++CFLAGS+= $(DEBUGFLAGS) -DDEFAULT_PATH=\"$(TIMID_DIR)\" \
+ 	-DTIMID_VERSION=\"$(VERSION)\" $(SYSTEM) $(EXTRAINCS)
+ 
+ ########### All relevant files.. Anybody know autoconf?
+@@ -228,10 +228,10 @@
+ wav2pat: wav2pat.c
+ 	$(CC) $(CFLAGS) -o wav2pat wav2pat.c
+ 
+-depends depend dep:
+-	$(CC) $(CFLAGS) -MM $(CSRCS) $(OPTSRCS) $(TOOLSRCS) > depends
+-
+-include depends
++#depends depend dep:
++#        $(CC) $(CFLAGS) -MM $(CSRCS) $(OPTSRCS) $(TOOLSRCS) > depends
++#
++#include depends
+ 
+ ########### Installation targets
+ 
+@@ -262,9 +262,9 @@
+ 	mkdir -p $(TIMID_DIR)
+ 	$(INSTALL) -m 644 $(CONFIGF) $(TIMID_DIR)
+ 
+-install.patch: $(PATCHF)
+-	mkdir -p $(TIMID_DIR)/patch
+-	$(INSTALL) -m 644 $(PATCHF) $(TIMID_DIR)/patch
++install.patch: #$(PATCHF)
++#        mkdir -p $(TIMID_DIR)/patch
++#        $(INSTALL) -m 644 $(PATCHF) $(TIMID_DIR)/patch
+ 
+ install.tk: $(ALLTCLF)
+ 	$(INSTALL) -m 644 $(ALLTCLF) $(TCL_DIR)
