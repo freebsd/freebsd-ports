@@ -1,0 +1,4 @@
+
+IMAP-SSL, APOP and CRAM-MD5 are not supported in this FreeBSD port
+because GNUtls and gcrypt are not available as FreeBSD ports.
+

@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	wmbiff
-PORTVERSION=	0.2
+PORTVERSION=	0.3.3
 CATEGORIES=	mail windowmaker afterstep
-MASTER_SITES=	http://ccat.elect.ru:8100/wmbiff/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	jim
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jim@FreeBSD.org
 
@@ -19,14 +18,15 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/wmbiff
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 
-pre-build:
-	@(cd ${WRKSRC} && ${GMAKE} clean)
+MAN1=		wmbiff.1
+MAN5=		wmbiffrc.5
 
 post-install:
-	@${ECHO} "===>   Installing sample.wmbiffrc to ${PREFIX}/share/examples/wmbiff"
+	@${ECHO} "===>   Installing sample.wmbiffrc to ${PREFIX}/share/wmbiff"
 	@${ECHO} "===>   Modify it to suit your needs and copy to ~/.wmbiffrc"
-	@${MKDIR} ${PREFIX}/share/examples/wmbiff && ${CHMOD} a+rx ${PREFIX}/share/examples/wmbiff
-	@${INSTALL_DATA} ${WRKSRC}/sample.wmbiffrc ${PREFIX}/share/examples/wmbiff
-	@${CHMOD} 644 ${PREFIX}/share/examples/wmbiff/sample.wmbiffrc
+	@${MKDIR} ${PREFIX}/share/wmbiff && ${CHMOD} a+rx ${PREFIX}/share/wmbiff
+	@${INSTALL_DATA} ${WRKSRC}/sample.wmbiffrc ${PREFIX}/share/wmbiff
+	@${CHMOD} 644 ${PREFIX}/share/wmbiff/sample.wmbiffrc
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
