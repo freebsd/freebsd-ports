@@ -10,11 +10,6 @@ PORTVERSION=	20020113
 PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://people.freebsd.org/~anholt/dri/files/
-.ifdef WITH_VOODOO3
-PKGNAMESUFFIX=	-v3
-.else
-PKGNAMESUFFIX=	-v5
-.endif
 DISTNAME=	Glide3-FreeBSD-${PORTVERSION}
 EXTRACT_SUFX=	.tar.bz2
 #The distfile is CVS Glide3-FreeBSD branch with */glide3/tests/* removed
@@ -41,20 +36,22 @@ ONLY_FOR_ARCHS=		i386
 # Glide3 DOES NOT work with CFLAGS greater than -O2
 CFLAGS+=	-O
 
+OPTIONS=	VOODOO3 "Enable this if you have a Voodoo3 or Banshee card" off
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500113
 BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
 .endif
 
-.ifdef WITH_VOODOO3
+.if defined(WITH_VOODOO3)
+PKGNAMESUFFIX=	-v3
 CONFIGURE_ARGS+=	--enable-fx-glide-hw=h3
 .else
-pre-everything::
-	@${ECHO_MSG} "Use make -DWITH_VOODOO3 if you have a Voodoo3 or Banshee card"
+PKGNAMESUFFIX=	-v5
 .endif
 
 pre-configure:
-	cd $(WRKSRC) && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal
+	cd ${WRKSRC} && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal
 
 .include <bsd.port.post.mk>
