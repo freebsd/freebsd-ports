@@ -1,0 +1,45 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RDFStore/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Data/MagicTie.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Literal.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Model.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/NodeFactory.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Parser/OpenHealth.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Parser/SiRPAC.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Parser/Styles/MagicTie.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/RDFNode.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Resource.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/SchemaModel.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/SetModel.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Stanford/Digest.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Stanford/Digest/Abstract.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Stanford/Digest/Digestable.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Stanford/Digest/Generic.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Stanford/Digest/MD5.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Stanford/Digest/SHA1.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Stanford/Digest/Util.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Stanford/Literal.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Stanford/Model.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Stanford/NodeFactory.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Stanford/RDFNode.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Stanford/Resource.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Stanford/SetModel.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Stanford/Statement.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Stanford/VirtualModel.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Stanford/Vocabulary/Generator.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Statement.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/VirtualModel.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Vocabulary/DAML.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Vocabulary/DC.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Vocabulary/DCQ.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Vocabulary/RDF.pm
+lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Vocabulary/RDFS.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Parser/Styles
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Parser
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Stanford/Digest
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Stanford/Vocabulary
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Stanford
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/RDFStore/Vocabulary
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/RDFStore
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/RDFStore
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Data 2>/dev/null || true
