@@ -1,0 +1,21 @@
+
+------------------ Flexbackup Configuration Information -----------------
+
+Flexbackup needs to have its configuration file placed in /etc. A template
+copy of this configuration file has been installed into
+
+  ${PREFIX}/share/flexbackup/flexbackup.conf.sample
+
+(where PREFIX nominally is /usr/local). Please copy this file as 
+
+  /etc/flexbackup.conf
+
+and edit appropriately for your site.
+
+ ** Changes have occurred in this file since previous versions **
+
+Also see ${PREFIX}/share/flexbackup/flexbackup.README for more information on
+how to use flexbackup (until the man pages are written :).
+
+-------------------------------------------------------------------------
+
