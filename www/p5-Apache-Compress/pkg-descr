@@ -1,0 +1,10 @@
+This module lets you send the content of an HTTP response as gzip-
+compressed data. Certain browsers (Netscape, IE) can request content
+compression via the `Content-Encoding' header. This can speed things up
+if you're sending large files to your users through slow connections.
+
+Browsers that don't request gzipped data will receive regular
+noncompressed data.
+
+This module is compatibile with Apache::Filter, so you can compress the
+output of other content-generators.
