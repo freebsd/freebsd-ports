@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	file
-PORTVERSION=	3.39
+PORTVERSION=	3.41
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.gw.com/mirrors/pub/unix/file/ \
