@@ -7,7 +7,7 @@
 
 PORTNAME=	kdeaddons
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -31,8 +31,9 @@ CONFIGURE_ENV+=	SDL_CONFIG="${LOCALBASE}/bin/${SDL_CONFIG}"
 .include "${.CURDIR}/../../x11/kde3/Makefile.kde"
 
 pre-configure:
-	${FIND} ${WRKSRC} -type f | ${XARGS} ${PERL} -pi -e \
-		"s@sdl-config@${SDL_CONFIG}@g"
+	${FIND} ${WRKSRC} -type f | ${XARGS} ${GREP} -l sdl-config \
+		| ${XARGS} ${PERL} -pi -e "s@sdl-config@${SDL_CONFIG}@g"
+	${FIND} ${WRKSRC} | ${XARGS} touch
 
 .include <bsd.port.pre.mk>
 
