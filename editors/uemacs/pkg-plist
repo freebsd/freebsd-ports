@@ -1,0 +1,6 @@
+@cd /usr/local
+@owner bin
+@mode 755
+bin/uemacs
+@mode 644
+lib/uemacs
