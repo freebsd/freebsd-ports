@@ -1,0 +1,45 @@
+--- lib/addrtoname.c	Fri Jan 12 17:42:37 1996
++++ lib/addrtoname.c	Thu Jul 25 07:37:56 1996
+@@ -294,8 +294,8 @@
+ #ifdef ETHER_SERVICE
+ 	if (!nflag) {
+-		cp = ETHER_ntohost(ep);
+-		if (cp) {
+-			tp->e_name = cp;
+-			return cp;
++		char buf[128];
++		if (ether_ntohost(buf, ep) == 0) {
++			tp->e_name =strdup(buf);
++			return tp->e_name;
+ 		}
+ 	}
+--- lib/gencode.c	Wed Jan 10 12:27:13 1996
++++ lib/gencode.c	Thu Jul 25 07:43:16 1996
+@@ -841,4 +841,5 @@
+ 	struct block *b, *tmp;
+ 	int port, real_proto;
++	static char wrk[6];
+ 
+ 	switch (q.addr) {
+@@ -854,6 +855,9 @@
+ 	case Q_HOST:
+ 		if (proto == Q_LINK) {
+ 			/* XXX Should lookup hw addr based on link layer */
+-			eaddr = ETHER_hostton(name);
++			if (ether_hostton(name, wrk) == 0)
++				eaddr = wrk;
++			else
++				eaddr = 0;
+ 			if (eaddr == 0)
+ 				error("unknown ether host '%s'", name);
+@@ -896,5 +901,9 @@
+ 
+ 	case Q_GATEWAY:
+-		eaddr = ETHER_hostton(name);
++		/* XXX Should lookup hw addr based on link layer */
++		if (ether_hostton(name, wrk) == 0)
++			eaddr = wrk;
++		else
++			eaddr = 0;
+ 		if (eaddr == 0)
+ 			error("unknown ether host: %s", name);
