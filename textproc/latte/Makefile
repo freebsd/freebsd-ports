@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.latte.org/ \
 		ftp://ftp.brasslantern.com/pub/zanshin/latte/
 
-MAINTAINER=	dr@domix.de
+MAINTAINER=	nc-rotherdo@netcologne.de
 
 USE_LIBTOOL=	yes
 MAKE_FLAGS=	CONF_ARGS="--prefix=${PREFIX}"

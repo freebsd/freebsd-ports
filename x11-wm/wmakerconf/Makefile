@@ -10,7 +10,7 @@ PORTVERSION=	2.8.1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://ulli.on.openave.net/wmakerconf/
 
-MAINTAINER=	dr@domix.de
+MAINTAINER=	nc-rotherdo@netcologne.de
 
 RUN_DEPENDS=	rpm:${PORTSDIR}/archivers/rpm
 .if !exists(/usr/bin/bzip2)
