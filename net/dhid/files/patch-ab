@@ -1,0 +1,24 @@
+--- Makefile.orig	Tue Jun 22 07:30:37 1999
++++ Makefile	Sat Aug 21 04:41:26 1999
+@@ -25,15 +25,10 @@
+ #
+ #      DHIS(c)  Dynamic Host Information System Release 3.0
+ 
+-CC=cc
+-CFLAGS=
+-LFLAGS=
+-LIBS=
+ RM=rm -f
+ 
+ dhid:	conf.o endian.o network.o crypt.o main.o
+ 	$(CC) $(LFLAGS) -o dhid conf.o endian.o network.o crypt.o main.o $(LIBS)
+-	strip dhid
+ 
+ main.o: dhid.h network.h conf.h main.c
+ 	$(CC) $(CFLAGS) -c main.c
+@@ -52,3 +47,5 @@
+ 
+ clean:
+ 	$(RM) *.core core dhid *.o
++
++all:	dhid

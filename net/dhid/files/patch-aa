@@ -1,0 +1,13 @@
+--- dhid.h.orig	Tue Jun 22 20:01:43 1999
++++ dhid.h	Sat Aug 21 05:28:10 1999
+@@ -63,8 +63,8 @@
+ 
+ #define	POLL_INTERVAL	60
+ 
+-#define	DHID_CONF	"/etc/dhid.conf"
+-#define	DHID_PID	"/etc/dhid.pid"
++#define	DHID_CONF	"__PREFIX__/etc/dhid.conf"
++#define	DHID_PID	"/var/run/dhid.pid"
+ 
+ #define	DEF_ISPORT	58800
+ #define	DEF_MXPORT	58801
