@@ -9,13 +9,12 @@ PORTNAME=	lame
 PORTVERSION=	3.89b
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://ftp.fu-berlin.de/unix/sound/%SUBDIR%/ \
-		ftp://ftp.zlurp.com/source/%SUBDIR%/
+		ftp://ftp.fu-berlin.de/unix/sound/%SUBDIR%/
 MASTER_SITE_SUBDIR=	lame
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME:S/-devel//}${PORTVERSION:S/b/beta/}
 
-MAINTAINER=	clefevre@citeweb.net
+MAINTAINER=	cyrille.lefevre@laposte.net
 
 BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 

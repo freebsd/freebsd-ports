@@ -12,10 +12,9 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	clefevre@citeweb.net
+MAINTAINER=	cyrille.lefevre@laposte.net
 
 GNU_CONFIGURE=	yes
-
 USE_GMAKE=	yes
 # PREFIX isn't honored. force it w/ prefix.
 MAKE_ARGS=	prefix="${PREFIX}"

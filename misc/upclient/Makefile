@@ -10,7 +10,7 @@ PORTVERSION=	4.2.1.23
 CATEGORIES=	misc
 MASTER_SITES=	http://uptimes.atomicvoid.net/files/
 
-MAINTAINER=	clefevre@citeweb.net
+MAINTAINER=	cyrille.lefevre@laposte.net
 
 # Global variables
 #
