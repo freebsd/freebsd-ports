@@ -1,9 +1,12 @@
 %%PEARDIR%%/HTML/Select.php
-%%PEARDIR%%/HTML/Select/Country.php
-%%PEARDIR%%/HTML/Select/UKCounty.php
-%%PEARDIR%%/HTML/Select/USState.php
+%%PEARDIR%%/HTML/Select/Common/Country.php
+%%PEARDIR%%/HTML/Select/Common/FRDepartements.php
+%%PEARDIR%%/HTML/Select/Common/UKCounty.php
+%%PEARDIR%%/HTML/Select/Common/USState.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/Country.php
+%%PORTDOCS%%%%EXAMPLESDIR%%/FRDepartements.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/UKCounty.php
 %%PORTDOCS%%%%EXAMPLESDIR%%/USState.php
+@dirrm %%PEARDIR%%/HTML/Select/Common
 @dirrm %%PEARDIR%%/HTML/Select
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

@@ -666,7 +666,7 @@
     SUBDIR += pear-Console_Getopt
     SUBDIR += pear-Date
     SUBDIR += pear-HTML_Common
-    SUBDIR += pear-HTML_Select
+    SUBDIR += pear-HTML_Select_Common
     SUBDIR += pear-I18N
     SUBDIR += pear-PEAR
     SUBDIR += pear-install
