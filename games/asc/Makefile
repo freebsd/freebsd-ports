@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	asc
-PORTVERSION=	1.10.2
+PORTVERSION=	1.13.5.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	asc-hq
 DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A turn based, multiplayer strategic game with very nice graphics
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
@@ -25,15 +25,13 @@ LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
 
-BROKEN=		"Configure fails"
-
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CPPFLAGS="`${SDL_CONFIG} --cflags`" \
 		LIBS="`${SDL_CONFIG} --libs` -lgnugetopt -lm"
@@ -42,6 +40,8 @@ pre-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@find ${WRKSRC} \( -name "*.cpp" -or -name "*.h" \) | xargs \
 		${REINPLACE_CMD} -e 's|malloc[.]h|stdlib.h|g'
+	@find ${WRKSRC} -type f -name Makefile.in | xargs \
+		${REINPLACE_CMD} -e 's|[(]datadir[)]/games|(datadir)|g'
 
 pre-configure:
 	@${RM} -f ${WRKSRC}/config.cache
