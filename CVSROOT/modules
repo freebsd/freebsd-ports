@@ -10742,6 +10742,7 @@ videotext	ports/misc/videotext
 view3ds		ports/graphics/view3ds
 viewcvs		ports/devel/viewcvs
 viewfax		ports/comms/viewfax
+viewglob	ports/shells/viewglob
 viewkit		ports/x11-toolkits/viewkit
 viewklass	ports/x11-toolkits/viewklass
 vifm		ports/misc/vifm
