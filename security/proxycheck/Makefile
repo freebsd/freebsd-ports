@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	proxycheck
-PORTVERSION=	0.45
-PORTREVISION=	1
+PORTVERSION=	0.45a
 CATEGORIES=	security
 MASTER_SITES=	http://www.corpit.ru/mjt/proxycheck/ \
 		http://www.it.ca/~paul/src/
