@@ -3547,7 +3547,6 @@ kp		ports/misc/kp
 kpacman		ports/games/kpacman
 kplayer		ports/multimedia/kplayer
 kpopup		ports/net/kpopup
-kpovmodeler	ports/graphics/kpovmodeler
 kprof		ports/devel/kprof
 kpsk		ports/comms/kpsk
 krb4		ports/security/krb4
