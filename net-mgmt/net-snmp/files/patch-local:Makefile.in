@@ -1,11 +1,11 @@
---- local/Makefile.in.orig	Thu Apr  4 15:04:11 2002
-+++ local/Makefile.in	Thu Apr  4 15:04:17 2002
-@@ -2,7 +2,7 @@
- 
+--- local/Makefile.in.orig	Sat Apr 20 16:30:13 2002
++++ local/Makefile.in	Wed Apr 24 01:45:55 2002
+@@ -12,7 +12,7 @@
+ # local info
+ #
  SNMPCONFPATH=@SNMPCONFPATH@
- 
--SCRIPTS=snmpcheck tkmib mib2c snmpconf
-+SCRIPTS=snmpcheck mib2c snmpconf
- PERLSCRIPTS=snmpcheck tkmib fixproc ipf-mod.pl rsnmp
+-PERLSCRIPTS=snmpcheck tkmib mib2c fixproc ipf-mod.pl snmpconf traptoemail
++PERLSCRIPTS=snmpcheck mib2c fixproc ipf-mod.pl snmpconf traptoemail
  SCRIPTSMADEFORPERL=snmpcheck.made tkmib.made mib2c.made fixproc.made \
- 	ipf-mod.pl.made rsnmp.made snmpconf.made
+ 	ipf-mod.pl.made snmpconf.made traptoemail.made
+ PERLPROG=@PERLPROG@
