@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	hylafax
-PORTVERSION=	4.1.5
+PORTVERSION=	4.1.6
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.hylafax.org/source/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tdv94ped@cs.umu.se
 COMMENT=	Fax software
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/afm/Courier:${PORTSDIR}/print/afm
+
 # no dependency on ghostscript because we don't know which
 # version the user prefers
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
@@ -27,16 +28,18 @@ CONFIGURE_ARGS=	--with-INSTALL="" \
 		--with-TIFFINC="${LOCALBASE}/include" \
 		--with-GCOPTS=" " --with-GCXXOPTS=" " \
 		--with-REGEX=no --with-LIBREGEX='' --with-REGEXINC=none \
-		--with-DIR_HTML="${LOCALBASE}/share/doc/hylafax"
+		--with-DIR_HTML="${DOCSDIR}"
+
 # Defaults to "North American Letter".  Use "ISO A4" for A4.
 .ifdef PAGESIZE
 CONFIGURE_ARGS+=--with-PAGESIZE="${PAGESIZE}"
 .endif
+
 .if defined(PACKAGE_BUILDING) || defined(BATCH)
 CONFIGURE_ARGS+=--nointeractive
 .endif
-MAKE_ARGS+=	OPTIMIZER="" -EOPTIMIZER
 
+MAKE_ARGS+=	OPTIMIZER="" -EOPTIMIZER
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	ENVOPTS="${CFLAGS}"
 
@@ -61,6 +64,9 @@ SUID_EXES=	${PREFIX}/sbin/faxgetty ${PREFIX}/sbin/faxq \
 
 post-extract:
 	${RM} -rf ${WRKSRC}/zlib ${WRKSRC}/regex
+
+pre-install:
+PLIST_SUB=	SPOOL="`${GREP} SPOOL ${WRKSRC}/defs | ${CUT} -c10-`"
 
 post-install:
 	${CHOWN} uucp ${SUID_EXES}
