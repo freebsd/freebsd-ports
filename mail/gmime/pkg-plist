@@ -1,4 +1,5 @@
 bin/gmime-config
+etc/gmimeConf.sh
 include/gmime/gmime.h
 include/gmime/gmime-content-type.h
 include/gmime/gmime-message.h
@@ -11,6 +12,5 @@ include/gmime/md5-utils.h
 lib/libgmime.so.5
 lib/libgmime.so
 lib/libgmime.a
-lib/gmimeConf.sh
 share/aclocal/gmime.m4
 @dirrm include/gmime
