@@ -1,0 +1,17 @@
+From the website:
+
+S-Jog is a program that uses the Sony Vaio laptop's Jog Wheel to do
+various things:
+
+    * Launch applications
+    * Adjust screen brightness
+    * Adjust volume
+    * Act like a mousewheel
+
+S-Jog pops up when you click the Jog Wheel then disappears after 3 seconds
+of idle time. The mousewheel feature is turned on when S-Jog is hidden.
+
+WWW: http://sjog.sourceforge.net/
+
+Bruce
+bms@spc.org
