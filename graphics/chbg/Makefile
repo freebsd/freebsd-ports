@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	p@dancris.com
 
+LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_IMLIB=	yes
