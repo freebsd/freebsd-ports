@@ -3,3 +3,9 @@ sbin/mrtd
 sbin/route_atob
 sbin/route_btoa
 sbin/sbgp
+share/examples/mrt/bgpsim.conf
+share/examples/mrt/bgpsim6.conf
+share/examples/mrt/mrtd.conf
+share/examples/mrt/mrtd.ripng.conf
+share/examples/mrt/solaris.ripng.conf
+@dirrm share/examples/mrt
