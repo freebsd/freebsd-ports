@@ -288,12 +288,14 @@ CONFIGURE_ARGS+=--enable-ftp
 
 .if defined(WITH_GD)
 LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	t1.5:${PORTSDIR}/devel/t1lib
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg
 CONFIGURE_ARGS+=--with-gd \
 		--enable-gd-native-ttf \
 		--enable-gd-jis-conv \
 		--with-freetype-dir=${LOCALBASE} \
+		--with-t1lib=${LOCALBASE} \
 		--with-jpeg-dir=${LOCALBASE} \
 		--with-png-dir=${LOCALBASE}
 .if !defined(WITHOUT_X11)
