@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cel
-PORTVERSION=	0.6
+PORTVERSION=	0.8.5
 CATEGORIES=	lang
 MASTER_SITES=	http://www.redwoodsoft.com/cel/
 EXTRACT_SUFX=	.tgz
@@ -18,21 +18,20 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_GMAKE=	yes
 
-DOCFILES=	CoreArchitecture.html DefaultProtos Linker.html \
+PORTDOCS=	CoreArchitecture.html DefaultProtos Linker.html \
 		Logs.html ProtoLanguage.html README SimpleDataFormat.html \
 		Threads activation.html stackframe structure.html todo.html
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500000
-BROKEN=		"Does not compile"
-.endif
+do-configure:
+	@cd ${WRKSRC}; ${SH} ./config.unix
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vm/cel ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/cel
-.for F in ${DOCFILES}
+.for F in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/$F ${PREFIX}/share/doc/cel
 .endfor
 .endif
