@@ -9,18 +9,17 @@ PORTNAME=	qt-gui
 PORTVERSION=	${QT_LICQ_VER}
 PORTREVISION=	2
 CATEGORIES=	net
-.if defined(WITH_KDE)
-PKGNAMESUFFIX=	-kde
-.endif
+PKGNAMESUFFIX?=	${KDE_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Qt plugin for licq
 
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" \
 		LIBS="${PTHREAD_LIBS}"
-LICQ_PORT?=	${PORTSDIR}/net/licq
+LICQ_PORT?=	net/licq
 
 .if defined(WITH_KDE)
+KDE_SUFFIX=	-kde
 USE_KDELIBS_VER=3
 CONFIGURE_ARGS+=--with-kde
 CONFIGURE_ENV+=	KDEDIR="${LOCALBASE}"
@@ -48,5 +47,5 @@ post-install:
 .endif
 
 .include <bsd.port.pre.mk>
-.include "${LICQ_PORT}/Makefile.inc"
+.include "${PORTSDIR}/${LICQ_PORT}/Makefile.inc"
 .include <bsd.port.post.mk>
