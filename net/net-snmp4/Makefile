@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ucd-snmp
-PORTVERSION=	4.2.1
+PORTVERSION=	4.2.3
 CATEGORIES=	net ipv6
 MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ucd-snmp.ucdavis.edu/ \
@@ -37,11 +37,14 @@ MAN3=		add_mibdir.3 add_module_replacement.3 default_store.3 \
 		print_description.3 print_mib.3 print_objid.3 print_value.3 \
 		print_variable.3 read_all_mibs.3 read_config.3 read_mib.3 \
 		read_module.3 read_module_node.3 read_objid.3 shutdown_mib.3 \
-		snmp_agent_api.3 snmp_alarm.3 snmp_api.3 snmp_close.3 \
-		snmp_free_pdu.3 snmp_open.3 snmp_read.3 snmp_select_info.3 \
+		snmp_agent_api.3 snmp_alarm.3 snmp_api.3 \
+		snmp_api_errstring.3 snmp_close.3 \
+		snmp_error.3 snmp_free_pdu.3 snmp_open.3 snmp_perror.3 \
+		snmp_read.3 snmp_select_info.3 \
 		snmp_send.3 snmp_sess_api.3 snmp_sess_async_send.3 \
 		snmp_sess_close.3 snmp_sess_error.3 snmp_sess_init.3 \
-		snmp_sess_open.3 snmp_sess_read.3 snmp_sess_select_info.3 \
+		snmp_sess_open.3 snmp_sess_perror.3 \
+		snmp_sess_read.3 snmp_sess_select_info.3 \
 		snmp_sess_send.3 snmp_sess_session.3 snmp_sess_timeout.3 \
 		snmp_set_mib_warnings.3 snmp_set_save_descriptions.3 \
 		snmp_timeout.3 snmp_trap_api.3
@@ -62,9 +65,6 @@ CONFIGURE_ARGS+= --enable-ipv6
 
 SHLIB_VERSION=	4
 PLIST_SUB+=	shlib=${SHLIB_VERSION}
-
-post-patch:
-	@${CP} ${FILESDIR}/freebsd4.h ${WRKSRC}/s
 
 post-install:
 	@( cd ${PREFIX}/bin && strip ${BIN} )
