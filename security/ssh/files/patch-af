@@ -1,5 +1,5 @@
---- sshd.c.orig	Mon Jul  3 10:07:35 2000
-+++ sshd.c	Fri Jun 21 17:57:21 2002
+--- sshd.c.orig	Mon Jul  3 19:07:35 2000
++++ sshd.c	Sat Jun 29 22:25:41 2002
 @@ -567,6 +567,19 @@
  /* Name of the server configuration file. */
  char *config_file_name = SERVER_CONFIG_FILE;
@@ -402,6 +402,15 @@
  
    /* Perform session preparation. */
    do_authenticated(pw);
+@@ -2962,7 +3074,7 @@
+ #ifdef UF_OPAQUE
+                                       UF_OPAQUE |
+ #endif /* UF_OPAQUE */
+-                                      0)) < 0)
++                                      0) < 0)
+                             {
+                               debug("chflags failed for %s, error: %s",
+                                     ttyname, strerror(errno));
 @@ -3383,15 +3495,16 @@
    char line[256];
    struct stat st;
