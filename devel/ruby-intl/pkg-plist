@@ -1,0 +1,9 @@
+lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/intl.so
+share/examples/ruby/intl/hello.rb
+share/examples/ruby/intl/po/ja.po
+@dirrm share/examples/ruby/intl/po
+@dirrm share/examples/ruby/intl
+share/doc/ruby/intl/README
+share/doc/ruby/intl/ja/README.jp
+@dirrm share/doc/ruby/intl/ja
+@dirrm share/doc/ruby/intl
