@@ -1,4 +1,5 @@
 bin/dfm
+share/dfm/dfmext
 share/dfm/backgrounds/background2.xpm
 share/dfm/backgrounds/blues.xpm
 share/dfm/backgrounds/flock.xpm
@@ -10,13 +11,17 @@ share/dfm/icons/icon_audio_midi.xpm
 share/dfm/icons/icon_binary.xpm
 share/dfm/icons/icon_binary_ms.xpm
 share/dfm/icons/icon_bitmap.xpm
+share/dfm/icons/icon_blitz.xpm
 share/dfm/icons/icon_c.xpm
 share/dfm/icons/icon_cc.xpm
 share/dfm/icons/icon_core.xpm
 share/dfm/icons/icon_document.xpm
 share/dfm/icons/icon_document_tex.xpm
+share/dfm/icons/icon_document_lout.xpm
 share/dfm/icons/icon_document_lyx.xpm
 share/dfm/icons/icon_document_print.xpm
+share/dfm/icons/icon_document_spreadsheet.xpm
+share/dfm/icons/icon_document_spreadsheet2.xpm
 share/dfm/icons/icon_editor.xpm
 share/dfm/icons/icon_file.xpm
 share/dfm/icons/icon_fig.xpm
@@ -31,6 +36,7 @@ share/dfm/icons/icon_makefile.xpm
 share/dfm/icons/icon_o.xpm
 share/dfm/icons/icon_pdf.xpm
 share/dfm/icons/icon_phone.xpm
+share/dfm/icons/icon_php3.xpm
 share/dfm/icons/icon_picture.xpm
 share/dfm/icons/icon_printer.xpm
 share/dfm/icons/icon_ps.xpm
@@ -45,6 +51,22 @@ share/dfm/icons/Appicons/netscape3.xpm
 share/dfm/icons/Appicons/x11amp-icon3.xpm
 share/dfm/icons/Appicons/xcalc.xpm
 share/dfm/icons/Appicons/xv.xpm
+share/dfm/icons/FileManagerIcons/file.bak.xpm
+share/dfm/icons/FileManagerIcons/file.c.xpm
+share/dfm/icons/FileManagerIcons/file.cc.xpm
+share/dfm/icons/FileManagerIcons/file.gimp5.xpm
+share/dfm/icons/FileManagerIcons/file.gz.xpm
+share/dfm/icons/FileManagerIcons/file.html3.xpm
+share/dfm/icons/FileManagerIcons/file.o.xpm
+share/dfm/icons/FileManagerIcons/file.picture.xpm
+share/dfm/icons/FileManagerIcons/file.picture2.xpm
+share/dfm/icons/FileManagerIcons/file.ps.xpm
+share/dfm/icons/FileManagerIcons/file.tar.xpm
+share/dfm/icons/FileManagerIcons/file.text.xpm
+share/dfm/icons/FileManagerIcons/file.tgz.xpm
+share/dfm/icons/FileManagerIcons/file.xpm
+share/dfm/icons/FileManagerIcons/folder.xpm
+share/dfm/icons/FileManagerIcons/trash.empty.xpm
 share/dfm/icons/Moreicons/ColoredCompactDisc.xpm
 share/dfm/icons/Moreicons/DiskFloppy.xpm
 share/dfm/icons/Moreicons/FilingCabinet.xpm
@@ -86,6 +108,8 @@ share/doc/dfm/BUGS
 share/doc/dfm/COPYING
 share/doc/dfm/COPYRIGHT
 share/doc/dfm/CREDITS
+share/doc/dfm/ChangeLog
+share/doc/dfm/DOWNLOAD
 share/doc/dfm/HELP.ERROR
 share/doc/dfm/NO_WARRANTY
 share/doc/dfm/README
@@ -97,6 +121,7 @@ share/examples/dfm/dfmext.sample.normal
 share/examples/dfm/dfmext.sample.user
 @dirrm share/dfm/backgrounds
 @dirrm share/dfm/icons/Appicons
+@dirrm share/dfm/icons/FileManagerIcons
 @dirrm share/dfm/icons/Moreicons
 @dirrm share/dfm/icons
 @dirrm share/dfm
