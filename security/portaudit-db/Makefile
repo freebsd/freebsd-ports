@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portaudit-db
-PORTVERSION=	0.1
+PORTVERSION=	0.1.1
 CATEGORIES=	security
 DISTFILES=
 
@@ -35,6 +35,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/packaudit.sh ${PREFIX}/bin/packaudit
 	@${INSTALL_DATA} ${WRKDIR}/packaudit.conf ${PREFIX}/etc/packaudit.conf.sample
 	@${MKDIR} ${DATADIR}
+	@${INSTALL_SCRIPT} ${FILESDIR}/portaudit2vuxml.awk ${DATADIR}
 	@${INSTALL_DATA} ${FILESDIR}/vuxml2html.xslt ${FILESDIR}/vuxml2portaudit.xslt ${DATADIR}
 	@${MKDIR} ${DATABASEDIR}
 

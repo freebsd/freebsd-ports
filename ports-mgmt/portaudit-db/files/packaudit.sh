@@ -55,24 +55,30 @@ PUBLIC_HTML="${PUBLIC_HTML:-$HOME/public_html/portaudit}"
 HTMLSHEET="%%DATADIR%%/vuxml2html.xslt"
 BASEURL="http://people.freebsd.org/~eik/portaudit/"
 
-[ -r "%%PREFIX%%/etc/packaudit.conf" ] && . "%%PREFIX%%/etc/packaudit.conf"
+PORTAUDIT2VUXML="%%DATADIR%%/portaudit2vuxml.awk"
+
+TMPNAME=`$BASENAME "$0"`
 
 VULVER=`$SED -En -e '/^.*\\$FreeBSD\: [^$ ]+,v ([0-9]+(\.[0-9]+)+) [^$]+\\$.*$/{s//\1/p;q;}' "$VUXMLDIR/vuln.xml"`
 VULURL="http://cvsweb.freebsd.org/ports/security/vuxml/vuln.xml?rev=$VULVER"
 
+[ -r "%%PREFIX%%/etc/packaudit.conf" ] && . "%%PREFIX%%/etc/packaudit.conf"
+
 if [ -d "$PUBLIC_HTML" ]; then
-  VULNMD5=`$CAT "$VUXMLDIR/vuln.xml" "$PORTAUDITDBDIR/database/portaudit.xml" | $MD5`
+  VULNMD5=`$CAT "$VUXMLDIR/vuln.xml" "$PORTAUDITDBDIR/database/portaudit.xml" "$PORTAUDITDBDIR/database/portaudit.txt" | $MD5`
   if [ -f "$PUBLIC_HTML/portaudit.md5" ]; then
     VULNMD5_OLD=`$CAT "$PUBLIC_HTML/portaudit.md5"`
   fi
   if [ "$VULNMD5" != "$VULNMD5_OLD" ]; then
     echo -n "$VULNMD5" > "$PUBLIC_HTML/portaudit.md5"
-    $XSLTPROC $XSLTPROC_EXTRA_ARGS --stringparam vulurl "$VULURL" --stringparam extradoc "$PORTAUDITDBDIR/database/portaudit.xml" \
+    TMPXML=`$MKTEMP -t "$TMPNAME.$$"` || exit 1
+    $PORTAUDIT2VUXML "$PORTAUDITDBDIR/database/portaudit.txt" "$PORTAUDITDBDIR/database/portaudit.xml" > "$TMPXML"
+    $XSLTPROC $XSLTPROC_EXTRA_ARGS --stringparam vulurl "$VULURL" --stringparam extradoc "$TMPXML" \
       -o "$PUBLIC_HTML/" "$HTMLSHEET" "$VUXMLDIR/vuln.xml"
+    $RM "$TMPXML"
   fi
 fi
 
-TMPNAME=`$BASENAME "$0"`
 TMPDIR=`$MKTEMP -d -t "$TMPNAME.$$"` || exit 1
 
 TESTPORT="vulnerability-test-port>=2000<`$DATE -u +%Y.%m.%d`"
