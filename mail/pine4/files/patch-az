@@ -9,26 +9,6 @@
  
  
  /*----------------------------------------------------------------------
---- pine/pine.c.orig	Wed Jul  5 22:16:28 2000
-+++ pine/pine.c	Mon Sep 20 16:17:58 1999
-@@ -40,7 +40,7 @@
-   ----------------------------------------------------------------------*/
- 
- #include "headers.h"
--#include "../c-client/imap4r1.h"
-+#include "c-client/imap4r1.h"
- 
- 
- /*
-@@ -299,7 +299,7 @@
- #endif
- 
-     /*------- Set up c-client drivers -------*/ 
--#include "../c-client/linkage.c"
-+#include "c-client/linkage.c"
- 
-     /*------- ... then tune the drivers just installed -------*/ 
- #ifdef	DOS
 --- pine/mailindx.c.orig	Wed Jul  5 22:19:38 2000
 +++ pine/mailindx.c	Wed Jul  5 22:19:49 2000
 @@ -50,7 +50,7 @@
@@ -40,16 +20,3 @@
  
  /*
   * Some common Command Bindings
---- pine/send.c.orig	Wed Jul  5 22:21:18 2000
-+++ pine/send.c	Wed Jul  5 22:21:37 2000
-@@ -47,8 +47,8 @@
-  ====*/
- 
- #include "headers.h"
--#include "../c-client/smtp.h"
--#include "../c-client/nntp.h"
-+#include "c-client/smtp.h"
-+#include "c-client/nntp.h"
- 
- 
- #ifndef TCPSTREAM

@@ -1,8 +1,8 @@
-*** imap/src/osdep/unix/os_bsi.h.orig	Thu Feb 13 07:25:33 1997
---- imap/src/osdep/unix/os_bsi.h	Fri Jul 10 00:12:36 1998
+*** imap/src/osdep/unix/os_bsi.h.orig	Tue Feb  6 14:29:32 2001
+--- imap/src/osdep/unix/os_bsi.h	Fri Sep 28 00:19:45 2001
 ***************
-*** 37,43 ****
---- 37,48 ----
+*** 22,28 ****
+--- 22,33 ----
   #include <unistd.h>
   #include <string.h>
   #include <sys/types.h>

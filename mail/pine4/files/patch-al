@@ -1,82 +1,135 @@
---- build.orig	Wed Nov  8 12:31:25 2000
-+++ build	Mon Dec 18 02:12:09 2000
-@@ -95,8 +95,9 @@
-  pine   The Pine mailer. Once compiled this should work just fine on
-         your system with no other files than this binary, and no
-         modifications to your system. Optionally you may create two
--        configuration files, /usr/local/lib/pine.conf and 
--        /usr/local/lib/pine.info. See the documentation for details.
-+        configuration files, /usr/local/etc/pine.conf and 
-+        /usr/local/etc/pine.info. See the documentation for details.
-+
+*** build.orig	Wed Aug  1 18:35:02 2001
+--- build	Thu Sep 27 23:55:58 2001
+***************
+*** 103,110 ****
+   pine   The Pine mailer. Once compiled this should work just fine on
+          your system with no other files than this binary, and no
+          modifications to your system. Optionally you may create two
+!         configuration files, /usr/local/lib/pine.conf and 
+!         /usr/local/lib/pine.info. See the documentation for details.
+   
+   pico   The standalone editor similar to the Pine message composer.
+          This is a very simple straight forward text editor.
+--- 103,111 ----
+   pine   The Pine mailer. Once compiled this should work just fine on
+          your system with no other files than this binary, and no
+          modifications to your system. Optionally you may create two
+!         configuration files, /usr/local/etc/pine.conf and 
+!         /usr/local/etc/pine.info. See the documentation for details.
+! 
+   
+   pico   The standalone editor similar to the Pine message composer.
+          This is a very simple straight forward text editor.
+***************
+*** 345,363 ****
+  	  echo "Including SSL functionality"
+  	fi
   
-  pico   The standalone editor similar to the Pine message composer.
-         This is a very simple straight forward text editor.
-@@ -304,17 +305,17 @@
- 	  echo "Including SSL functionality"
- 	fi
- 
--        if [ -s c-client ] ; then rm -f c-client ; fi
--        ln -s imap/c-client c-client
--        if [ -s mtest    ] ; then rm -f mtest    ; fi
--        ln -s imap/mtest mtest
--        if [ -s imapd    ] ; then rm -f imapd    ; fi
--        ln -s imap/imapd imapd
--        echo "Making c-client library, mtest and imapd"
--        eval echo make "$makeargs" "$SSL" "$K1" "$K2" $ccltarg
--        cd $PHOME/imap
--        eval make "$makeargs" "$SSL" "$K1" "$K2" $ccltarg
--        echo ''
-+#        if [ -s c-client ] ; then rm -f c-client ; fi
-+#        ln -s imap/c-client c-client
-+#        if [ -s mtest    ] ; then rm -f mtest    ; fi
-+#        ln -s imap/mtest mtest
-+#        if [ -s imapd    ] ; then rm -f imapd    ; fi
-+#        ln -s imap/imapd imapd
-+#        echo "Making c-client library, mtest and imapd"
-+#        eval echo make "$makeargs" "$SSL" "$K1" "$K2" $ccltarg
-+#        cd $PHOME/imap
-+#        eval make "$makeargs" "$SSL" "$K1" "$K2" $ccltarg
-+#        echo ''
- 
-         echo "Making Pico and Pilot"
-         cd $PHOME/pico
-@@ -331,14 +332,14 @@
-         cd $PHOME/bin
-         rm -f pine mtest imapd pico pilot
-         if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
--        if [ -s ../mtest/mtest ] ;    then ln ../mtest/mtest mtest ; fi
--        if [ -s ../imapd/imapd ] ;    then ln ../imapd/imapd imapd    ; fi
-+#        if [ -s ../mtest/mtest ] ;    then ln ../mtest/mtest mtest ; fi
-+#        if [ -s ../imapd/imapd ] ;    then ln ../imapd/imapd imapd    ; fi
-         if [ -s ../pico/pico ] ;      then ln ../pico/pico pico ; fi
-         if [ -s ../pico/pilot ] ;     then ln ../pico/pilot pilot ; fi
-         cd $PHOME
-         echo ''
-         echo "Links to executables are in bin directory:"
--        size bin/pine bin/mtest bin/imapd bin/pico bin/pilot
-+        size bin/pine bin/pico bin/pilot
- 	case $maketarg in
- 	    mnt)    echo "Fixing stacksizes ..."
- 		    fixstk 64K bin/pine bin/pico bin/imapd bin/mtest bin/pilot
-@@ -348,15 +349,15 @@
- 
- 
-     clean) # This only sort of works 
--        echo "Cleaning c-client and imapd"
--	cd $PHOME/imap
--	make clean
-+#        echo "Cleaning c-client and imapd"
-+#	cd $PHOME/imap
-+#	make clean
-         echo "Cleaning Pine"
-         cd $PHOME/pine
--        make -f makefile.ult clean
-+        make -f makefile.bsf clean
-         echo "Cleaning pico"
-         cd $PHOME/pico
--        make $makeargs -f makefile.ult clean
-+        make $makeargs -f makefile.bsf clean
-         echo "Done"
-         cd $PHOME
-         ;;
+!         if [ -s c-client ] ; then rm -f c-client ; fi
+!         ln -s imap/c-client c-client
+!         if [ -s mtest    ] ; then rm -f mtest    ; fi
+!         ln -s imap/mtest mtest
+!         if [ -s imapd    ] ; then rm -f imapd    ; fi
+!         ln -s imap/imapd imapd
+!         if [ -s ipopd    ] ; then rm -f ipopd    ; fi
+!         ln -s imap/ipopd ipopd
+!         echo "Making c-client library, mtest and imapd"
+!         eval echo make "$makeargs" "$SSL" "$K1" "$K2" $ccltarg
+!         cd $PHOME/imap
+!         eval make "$makeargs" "$SSL" "$K1" "$K2" $ccltarg
+!         echo ''
+  
+          echo "Making Pico and Pilot"
+          cd $PHOME/pico
+--- 346,364 ----
+  	  echo "Including SSL functionality"
+  	fi
+  
+! #        if [ -s c-client ] ; then rm -f c-client ; fi
+! #        ln -s imap/c-client c-client
+! #        if [ -s mtest    ] ; then rm -f mtest    ; fi
+! #        ln -s imap/mtest mtest
+! #        if [ -s imapd    ] ; then rm -f imapd    ; fi
+! #        ln -s imap/imapd imapd
+! #        if [ -s ipopd    ] ; then rm -f ipopd    ; fi
+! #        ln -s imap/ipopd ipopd
+! #        echo "Making c-client library, mtest and imapd"
+! #        eval echo make "$makeargs" "$SSL" "$K1" "$K2" $ccltarg
+! #        cd $PHOME/imap
+! #        eval make "$makeargs" "$SSL" "$K1" "$K2" $ccltarg
+! #        echo ''
+  
+          echo "Making Pico and Pilot"
+          cd $PHOME/pico
+***************
+*** 374,391 ****
+          cd $PHOME/bin
+          rm -f pine mtest imapd pico pilot rpload rpdump ipop2d ipop3d
+          if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
+!         if [ -s ../mtest/mtest ] ;    then ln ../mtest/mtest mtest    ; fi
+!         if [ -s ../imapd/imapd ] ;    then ln ../imapd/imapd imapd    ; fi
+!         if [ -s ../ipopd/ipop2d ] ;   then ln ../ipopd/ipop2d ipop2d  ; fi
+!         if [ -s ../ipopd/ipop3d ] ;   then ln ../ipopd/ipop3d ipop3d  ; fi
+          if [ -s ../pico/pico ] ;      then ln ../pico/pico pico       ; fi
+          if [ -s ../pico/pilot ] ;     then ln ../pico/pilot pilot     ; fi
+!         if [ -s ../pine/rpload ] ;    then ln ../pine/rpload rpload   ; fi
+!         if [ -s ../pine/rpdump ] ;    then ln ../pine/rpdump rpdump   ; fi
+          cd $PHOME
+          echo ''
+          echo "Links to executables are in bin directory:"
+!         size bin/pine bin/mtest bin/imapd bin/pico bin/pilot bin/rpdump bin/rpload bin/ipop2d bin/ipop3d
+  	case $maketarg in
+  	    mnt)    echo "Fixing stacksizes ..."
+  		    fixstk 64K bin/pine bin/pico bin/imapd bin/mtest bin/pilot
+--- 375,392 ----
+          cd $PHOME/bin
+          rm -f pine mtest imapd pico pilot rpload rpdump ipop2d ipop3d
+          if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
+! #        if [ -s ../mtest/mtest ] ;    then ln ../mtest/mtest mtest    ; fi
+! #        if [ -s ../imapd/imapd ] ;    then ln ../imapd/imapd imapd    ; fi
+! #        if [ -s ../ipopd/ipop2d ] ;   then ln ../ipopd/ipop2d ipop2d  ; fi
+! #        if [ -s ../ipopd/ipop3d ] ;   then ln ../ipopd/ipop3d ipop3d  ; fi
+          if [ -s ../pico/pico ] ;      then ln ../pico/pico pico       ; fi
+          if [ -s ../pico/pilot ] ;     then ln ../pico/pilot pilot     ; fi
+! #        if [ -s ../pine/rpload ] ;    then ln ../pine/rpload rpload   ; fi
+! #        if [ -s ../pine/rpdump ] ;    then ln ../pine/rpdump rpdump   ; fi
+          cd $PHOME
+          echo ''
+          echo "Links to executables are in bin directory:"
+!         size bin/pine bin/pico bin/pilot
+  	case $maketarg in
+  	    mnt)    echo "Fixing stacksizes ..."
+  		    fixstk 64K bin/pine bin/pico bin/imapd bin/mtest bin/pilot
+***************
+*** 421,435 ****
+  
+  
+      clean) # This only sort of works 
+!         echo "Cleaning c-client and imapd"
+! 	cd $PHOME/imap
+! 	make clean
+          echo "Cleaning Pine"
+          cd $PHOME/pine
+!         make -f makefile.ult clean
+          echo "Cleaning pico"
+          cd $PHOME/pico
+!         make $makeargs -f makefile.ult clean
+          echo "Done"
+          cd $PHOME
+          ;;
+--- 422,436 ----
+  
+  
+      clean) # This only sort of works 
+! #        echo "Cleaning c-client and imapd"
+! #	cd $PHOME/imap
+! #	make clean
+          echo "Cleaning Pine"
+          cd $PHOME/pine
+!         make -f makefile.bsf clean
+          echo "Cleaning pico"
+          cd $PHOME/pico
+!         make $makeargs -f makefile.bsf clean
+          echo "Done"
+          cd $PHOME
+          ;;

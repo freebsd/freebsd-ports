@@ -1,0 +1,11 @@
+--- pine/rpload.c.Dist	Thu Jul 26 16:21:57 2001
++++ pine/rpload.c	Fri Sep 28 01:40:12 2001
+@@ -117,7 +117,7 @@
+     char       *local = NULL, *remote = NULL, *special_hdr = NULL;
+     RemoteType  rt, type = NotSet;
+ 
+-#include "../c-client/linkage.c"
++#include "c-client/linkage.c"
+ 
+     if(parse_args(argc, argv, &force, &trimsize, &local, &remote, &type)){
+ 	fprintf(stderr, ustr, argv[0]);

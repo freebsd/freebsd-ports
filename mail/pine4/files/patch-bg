@@ -1,0 +1,11 @@
+--- pine/rpdump.c.Dist	Mon Jul 30 11:21:19 2001
++++ pine/rpdump.c	Fri Sep 28 01:46:43 2001
+@@ -114,7 +114,7 @@
+     RemoteType  rtype;
+     unsigned long i;
+ 
+-#include "../c-client/linkage.c"
++#include "c-client/linkage.c"
+ 
+     if(parse_args(argc, argv, &force, &local, &remote)){
+ 	fprintf(stderr, ustr, argv[0]);
