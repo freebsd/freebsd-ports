@@ -10,7 +10,7 @@ PORTVERSION=		1.0.3
 CATEGORIES=     	irc
 MASTER_SITES=		ftp://ftp.netsplit.com/pub/dircproxy/stable/
 
-MAINTAINER=		greid@FreeBSD.org
+MAINTAINER=		lester@mazpe.net
 
 GNU_CONFIGURE=		yes
 
