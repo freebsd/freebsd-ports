@@ -1,14 +1,14 @@
 # New ports collection makefile for:   rep-gtk
-# Version required:    0.6
+# Version required:    0.7
 # Date created:        06 October 1999
 # Whom:                Yukihiro Nakai <nakai@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rep-gtk-0.6
+DISTNAME=	rep-gtk-0.7
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.dcs.warwick.ac.uk/people/John.Harper/librep/
+MASTER_SITES=	ftp://rep-gtk.sourceforge.net/pub/rep-gtk/
 
 MAINTAINER=	nakai@FreeBSD.org
 
