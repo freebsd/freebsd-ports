@@ -180,6 +180,7 @@
     SUBDIR += pips780
     SUBDIR += pips800
     SUBDIR += pips820
+    SUBDIR += pips870
     SUBDIR += pips880
     SUBDIR += pips900
     SUBDIR += pips980
