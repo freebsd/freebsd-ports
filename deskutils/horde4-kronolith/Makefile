@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kronolith
-PORTVERSION=	1.0
-PORTREVISION=	3
+PORTVERSION=	1.1
 CATEGORIES=	deskutils www
 MASTER_SITES=	ftp://ftp.horde.org/pub/kronolith/			\
 		ftp://ftp.au.horde.org/pub/horde/kronolith/		\
@@ -28,9 +27,9 @@ NO_BUILD=	yes
 USE_REINPLACE=	yes
 
 REINPLACE_ARGS=	-i.beforeKronolith
-DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL docs/TODO
+DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL
 CONFFILE=	conf.php html.php keywords.php menu.php prefs.php
-SUB_DIRS=	config graphics lib locale po scripts templates
+SUB_DIRS=	config graphics lib locale po scripts templates util
 
 LHORDEDIR?=	www/horde
 LKRONOLITHDIR?=	${LHORDEDIR}/kronolith
