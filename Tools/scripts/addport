@@ -219,7 +219,6 @@ foreach my $thisdir (@dirs) {
 	if (!$autofill) {
 		if (-f $c) {
 			system("$mv $c $tmpdir/commitfile") or errx(1, "Oops, can't move commitfile!");
-			$commitfile = "EDITOR=\"cp $tmpdir/commitfile\"";
 			print "\nRemember, you asked to use a commit file to read for the commit log.\n";
 			print "This means you'll get a message saying the log message was unchanged or\n";
 			print "not specified.  Just tell it to continue and it will be committed.\n\n";
@@ -290,7 +289,6 @@ foreach my $thisdir (@dirs) {
 		print "\nRemember, you asked to use a commit file to read for the commit log.\n";
 		print "This means you'll get a message saying the log message was unchanged or\n";
 		print "not specified.  Just tell it to continue and it will be committed.\n\n";
-		$commitfile = "EDITOR=\"cp $tmpdir/commitfile\"";
 	}
 
 	print "We're ready to commit.\n";
@@ -341,7 +339,7 @@ foreach my $thisdir (@dirs) {
 
 	# commit the actual port.
 	chdir "$tmpdir/$category" or err(1, "$tmpdir/$category");
-	system("$commitfile $cvs $n ci Makefile $portname") && errx(1, "cvs commit failed, aborting.");
+	system("$cvs $n ci -F $tmpdir/commitfile Makefile $portname") && errx(1, "cvs commit failed, aborting.");
 	if (!$nomodules && ($n ne "-n")) {
 		system("$sshmod env CVSROOT=$repo $perl /usr/local/bin/modulesupdate $module ports/$category/$portname") && errx(1, "adding port to modules failed, aborting.");
 	}
