@@ -1,0 +1,10 @@
+--- tests/gpg/t-decrypt-verify.c.orig	Thu Nov 22 11:47:07 2001
++++ tests/gpg/t-decrypt-verify.c	Tue Jan 22 18:54:19 2002
+@@ -24,7 +24,6 @@
+ #include <string.h>
+ #include <assert.h>
+ #include <errno.h>
+-#include <mcheck.h>
+ 
+ #include <gpgme.h>
+ 
