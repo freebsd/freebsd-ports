@@ -160,6 +160,7 @@
     SUBDIR += qtk
     SUBDIR += re2c
     SUBDIR += rinfo
+    SUBDIR += robodoc
     SUBDIR += scogdb
     SUBDIR += sdcc
     SUBDIR += sdl
