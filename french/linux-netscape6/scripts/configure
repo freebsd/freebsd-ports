@@ -17,22 +17,22 @@ if [ "${BATCH}" ]; then
 	fi
 else
 
-/usr/bin/dialog --title "Netscape 6 component selection" --clear \
+/usr/bin/dialog --title "Netscape 6 Sélection composants" --clear \
 	--checklist "\n\
 
 Choisissez les composants que vous souhaitez télécharger et installer. \n\
 Appuyez sur la barre d'espace pour basculer entre les états \n\
 sélectionné et désélectionné." -1 -1 10 \
 "browser"	"navigateur (6576 ko)"					ON \
-"deflfrfr"	"défauts français de profil (26 ko)"		ON \
+"deflfrfr"	"profil français par défaut (26 ko)"		ON \
 "flash"		"plugin Flash (576 ko)"					ON \
 "jre"		"plugin Java (13808 ko)"				ON \
-"langfrfr"	"bloc linguistique française (592 ko)"		ON \
-"mail"		"lecteur d'E-mail et de nouvelles Usenet (1824 ko)"	ON \
-"regfr"		"configurations régionals pour la France (54 ko)"	ON \
-"regus"		"configurations régionals pour les Etats-Unis (56 ko)"	ON \
+"langfrfr"	"locale français (592 ko)"		ON \
+"mail"		"lecteur de courrier et de nouvelles (1824 ko)"	ON \
+"regfr"		"configurations régionales pour la France (54 ko)"	ON \
+"regus"		"configurations régionales pour les Etats-Unis (56 ko)"	ON \
 "spellchecker"	"vérificateur d'orthographe (832 ko)"		ON \
-"talkback"	"envoie rapports d'anomalie à Netscape (832 ko)"	ON \
+"talkback"	"analyseur de problèmes (envoi à Netscape) (832 ko)"	ON \
 2> /tmp/checklist.tmp.$$
 
 retval=$?
@@ -42,11 +42,11 @@ rm -f /tmp/checklist.tmp.$$
 
 case $retval in
 	0)	if [ -z "$choice" ]; then
-			echo "Nothing selected"
+			echo "Aucune sélection"
 			exit 1;
 	fi
 	;;
-	1)	echo "Cancel pressed."
+	1)	echo "Annulation demandée."
 		exit 1
 	;;
 esac
