@@ -31,6 +31,9 @@ PLIST=		${WRKDIR}/plist
 PREFIX=		${LINUXBASE}
 
 pre-install:
+	@kldstat -v | grep -E 'linux(aout|elf)' >/dev/null ||\
+		{ echo "Linux ABI compatibility must be enabled to install ${PORTNAME}-${PORTVERSION}"; \
+		  exit 1; }
 	@${RM} -rf ${WRKSRC}/tmp
 	@${MKDIR} ${WRKSRC}/tmp
 	cd ${WRKSRC}/tmp; \
