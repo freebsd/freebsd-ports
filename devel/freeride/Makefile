@@ -16,6 +16,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	alecn2002@yandex.ru
 COMMENT=	Ruby Integrated Developement Environment written in Ruby
 
+BROKEN=		Does not build
+
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/fox.so:${PORTSDIR}/x11-toolkits/ruby-fox \
 		${RUBY_SITELIBDIR}/freebase/freebase.rb:${PORTSDIR}/devel/freebase
 

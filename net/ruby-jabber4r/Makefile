@@ -15,6 +15,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby library to connect to an existing Jabber account
 
+BROKEN=		Does not build
+
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	rexml
 USE_RUBY_RDOC=		yes
