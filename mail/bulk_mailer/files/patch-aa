@@ -1,15 +1,12 @@
---- Makefile.in.ORIG	Thu Jan 29 22:26:50 1998
-+++ Makefile.in	Thu Jan 29 22:30:35 1998
-@@ -11,10 +11,10 @@
- 
- 
- #DEFINES = $(HASSTRDUP) $(HASSTRERROR) $(DEFAULT_DOMAIN)
+--- Makefile.in.orig	Tue Sep  1 12:37:34 1998
++++ Makefile.in	Fri Feb 12 17:36:11 1999
+@@ -1,7 +1,7 @@
 -DEFINES = @DEFS@
 +DEFINES = @DEFS@ -DDEFAULT_DOMAIN=1 -DPIPECOMMAND='"/usr/sbin/sendmail -bs %s"'
  LIBS = @LIBS@
  
 -CFLAGS = $(DEFINES)
-+CFLAGS = -O2 -Wall $(DEFINES)
++CFLAGS += -Wall $(DEFINES)
  
  FILES = bulk_mailer.README INSTALL bulk_mailer.c patchlevel.h Makefile
  

@@ -3,10 +3,10 @@
 # Date created:	20 March 1997
 # Whom:		dlowe
 #
-# $Id: Makefile,v 1.5 1998/10/12 18:33:55 jseger Exp $
+# $Id: Makefile,v 1.6 1998/10/13 01:32:55 jseger Exp $
 #
 
-DISTNAME=	bulk_mailer-1.11
+DISTNAME=	bulk_mailer-1.12
 CATEGORIES=	mail
 MASTER_SITES=	ftp://cs.utk.edu/pub/moore/bulk_mailer/
 
@@ -14,11 +14,13 @@ MAINTAINER=	dlowe@saturn5.com
 
 MAN1=		bulk_mailer.1
 
-WRKSRC=	${WRKDIR}/bulk_mailer
-
 HAS_CONFIGURE=	YES
+CONFIGURE_ARGS=--cache-file=/dev/null
 
 ALL_TARGET=	bulk_mailer
+
+pre-configure:
+	cd ${WRKSRC} ; make distclean
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/bulk_mailer ${PREFIX}/bin/bulk_mailer
