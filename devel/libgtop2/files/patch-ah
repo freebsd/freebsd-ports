@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- sysdeps/freebsd/procmap.c.orig	Tue Jun 11 00:34:42 2002
-+++ sysdeps/freebsd/procmap.c	Tue Oct  8 16:36:02 2002
+--- procmap.c.orig	Mon Jun 10 17:34:42 2002
++++ procmap.c	Sat Oct 26 01:20:26 2002
 @@ -33,7 +33,11 @@
  #include <sys/proc.h>
  #include <sys/resource.h>
@@ -15,15 +12,18 @@ $FreeBSD$
  #include <vm/vm_map.h>
  
  #include <sys/vnode.h>
-@@ -92,7 +96,6 @@
+@@ -91,8 +95,9 @@
+ 	glibtop_map_entry *maps;
  #if defined __FreeBSD__
  	struct vnode vnode;
++#if __FreeBSD_version < 500039
  	struct inode inode;
 -	struct mount mount;
++#endif
  #endif
  	int count, i = 0;
  	int update = 0;
-@@ -114,7 +117,11 @@
+@@ -114,7 +119,11 @@
  	/* Now we get the memory maps. */
  
  	if (kvm_read (server->machine.kd,
@@ -35,26 +35,34 @@ $FreeBSD$
  		      (char *) &vmspace, sizeof (vmspace)) != sizeof (vmspace))
  		glibtop_error_io_r (server, "kvm_read (vmspace)");
  
-@@ -244,18 +251,17 @@
+@@ -244,6 +253,15 @@
  			      &vnode, sizeof (vnode)) != sizeof (vnode))
  			glibtop_error_io_r (server, "kvm_read (vnode)");
  
 +#if __FreeBSD_version >= 500039
-+		if ((vnode.v_type != VREG) || strcmp("ufs", vnode.v_tag) ||
++		switch (vnode.v_type) {
++		    case VREG:
++		    	maps [i-1].inode = vnode.v_cachedid;
++			maps [i-1].device = vnode.v_cachedfs;
++		    default:
++		    	continue;
++		}
 +#else
  		if ((vnode.v_type != VREG) || (vnode.v_tag != VT_UFS) ||
-+#endif
  		    !vnode.v_data) continue;
  
- 		if (kvm_read (server->machine.kd,
- 			      (unsigned long) vnode.v_data,
+@@ -252,13 +270,9 @@
  			      &inode, sizeof (inode)) != sizeof (inode))
  			glibtop_error_io_r (server, "kvm_read (inode)");
--
+ 
 -		if (kvm_read (server->machine.kd,
 -			      (unsigned long) vnode.v_mount,
 -			      &mount, sizeof (mount)) != sizeof (mount))
 -			glibtop_error_io_r (server, "kvm_read (mount)");
- 
+-
  		maps [i-1].inode  = inode.i_number;
  		maps [i-1].device = inode.i_dev;
++#endif
+ #endif
+ 	} while (entry.next != first);
+ 
