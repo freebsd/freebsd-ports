@@ -17,6 +17,8 @@ COMMENT=	X11R6-based xterm hacked for managing Korean languages
 
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
 
+BROKEN=		Removes files installed by another port
+
 USE_ICONV=	yes
 USE_X_PREFIX=		yes
 GNU_CONFIGURE=		yes
