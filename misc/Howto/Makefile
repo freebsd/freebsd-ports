@@ -10,7 +10,8 @@ PORTVERSION=	1.0
 PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://metalab.unc.edu/pub/Linux/docs/HOWTO/other-formats/sgml/ \
-		ftp://metalab.unc.edu/pub/Linux/docs/HOWTO/mini/other-formats/sgml/
+		ftp://metalab.unc.edu/pub/Linux/docs/HOWTO/mini/other-formats/sgml/ \
+		ftp://metalab.unc.edu/pub/Linux/docs/HOWTO/other-formats/docbook/
 DISTFILES=	Linux+FreeBSD.sgml.gz  \
 		DNS-HOWTO.sgml.gz  \
 		NFS-HOWTO.sgml.gz  \
