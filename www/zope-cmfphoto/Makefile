@@ -19,10 +19,6 @@ COMMENT=	CMFPhoto product for Zope/CMF
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/lib/python/Products/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf \
 		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging
 
-BROKEN=		"Broken dependency"
-# Seems to be a problem in bsd.python.mk:
-#   <http://lists.freebsd.org/pipermail/freebsd-python/2004-February/000051.html>
-
 USE_PYTHON=	yes
 USE_ZOPE=	yes
 DIST_SUBDIR=	zope
@@ -35,7 +31,7 @@ WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${WRKSRC}/Extensions
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -l ${WRKSRC}
- 
+
 pre-install:
 	@${RM} -f ${PLIST}
 	@${TOUCH} ${PLIST}
