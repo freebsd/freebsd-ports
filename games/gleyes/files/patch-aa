@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Oct 14 01:16:35 1998
-+++ Makefile	Thu Dec 17 22:54:53 1998
-@@ -5,21 +5,23 @@
+--- Makefile.orig	Tue Oct 13 18:16:35 1998
++++ Makefile	Sat Jan  9 15:40:09 1999
+@@ -5,8 +5,8 @@
  #--------------------------------------------------------------------------
  
  # Where you want to have it installed
@@ -10,12 +10,8 @@
 +MANDIR	= /usr/X11R6/man/man1
  
  # Use these for Mesa
--#GL	= -lglut -lMesaGLU -lMesaGL
-+GL	= -lglut -lMesaGLU -lMesaGL
- 
- # Use these for OpenGL
--GL	= -lglut -lGLU -lGL
-+#GL	= -lglut -lGLU -lGL
+ #GL	= -lglut -lMesaGLU -lMesaGL
+@@ -16,10 +16,12 @@
  
  # Use these for gcc on Linux (may work in other systems as well)
  CC	= gcc
