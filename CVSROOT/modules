@@ -9232,6 +9232,7 @@ znibbles	ports/games/znibbles
 zodb		ports/databases/zodb
 zodb3		ports/databases/zodb3
 zombiezapper	ports/security/zombiezapper
+zonecheck	ports/dns/zonecheck
 zoo		ports/archivers/zoo
 zoom		ports/games/zoom
 zope		ports/www/zope
