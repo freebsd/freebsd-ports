@@ -1,13 +1,14 @@
---- Makefile.in.orig	Wed Aug  9 22:57:20 2000
-+++ Makefile.in	Thu Aug 10 11:05:08 2000
-@@ -436,8 +436,8 @@
- 	echo "**************"
+--- Makefile.in.orig	Mon May 14 13:07:48 2001
++++ Makefile.in	Mon May 14 15:43:44 2001
+@@ -399,3 +399,3 @@
  
+-install-data-am: install-pkgconfigDATA install-data-local
++install-data-am: install-data-local
+ install-data: install-data-recursive
+@@ -476,4 +476,4 @@
  install-data-local:
 -	-mkdir -p $(DESTDIR)$(datadir)/aclocal
 -	$(INSTALL_DATA) gconf.m4 $(DESTDIR)$(datadir)/aclocal/gconf-$(MAJOR_VERSION).m4
 +	-mkdir -p $(DESTDIR)$(prefix)/share/aclocal
 +	$(INSTALL_DATA) gconf.m4 $(DESTDIR)$(prefix)/share/aclocal/gconf-$(MAJOR_VERSION).m4
- 	echo "**** NOTE ****" && \
- 	echo $(WARNING_MESSAGE) && \
- 	echo "**************"
+ 	@echo "**** NOTE ****"
