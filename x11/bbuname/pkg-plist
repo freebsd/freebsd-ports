@@ -1,0 +1,5 @@
+bin/bbuname
+share/bbtools/bbuname.conf
+share/bbtools/bbuname.nobb
+share/bbtools/README.bbuname
+@unexec rmdir %D/share/bbtools 2>/dev/null || true

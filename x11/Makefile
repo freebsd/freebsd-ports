@@ -17,6 +17,7 @@
     SUBDIR += apwal
     SUBDIR += aterm
     SUBDIR += bbrun
+    SUBDIR += bbuname
     SUBDIR += bgrot
     SUBDIR += blast
     SUBDIR += bricons
