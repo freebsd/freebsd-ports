@@ -6,6 +6,7 @@
     SUBDIR += Mosaic         # requires Motif
     SUBDIR += WebMagick
     SUBDIR += abcache
+    SUBDIR += admuser
     SUBDIR += adzap
     SUBDIR += amaya
     SUBDIR += amyc
