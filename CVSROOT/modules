@@ -476,6 +476,7 @@ axpoint		ports/print/axpoint
 axyftp		ports/ftp/axyftp
 b2bua		ports/net/b2bua
 babel		ports/biology/babel
+babytrans	ports/deskutils/babytrans
 backfract	ports/graphics/backfract
 backgammon	src/games/backgammon
 bacon		ports/www/bacon
