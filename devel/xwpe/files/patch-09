@@ -1,6 +1,6 @@
---- we_fl_unix.c.orig	Fri May  7 22:34:29 1999
-+++ we_fl_unix.c	Fri May  7 22:38:00 1999
-@@ -14,6 +14,10 @@
+--- we_fl_unix.c.orig	Mon Dec 27 08:11:38 1999
++++ we_fl_unix.c	Sat Feb 26 05:55:53 2000
+@@ -13,6 +13,10 @@
  #include <sys/stat.h>
  #include <errno.h>
  
@@ -11,14 +11,14 @@
  struct dirfile *e_make_win_list(FENSTER * f);
  extern char    *e_tmp_dir;
  extern int      (*e_u_system) (char *exe);
-@@ -3549,7 +3553,13 @@
+@@ -3546,7 +3550,13 @@
    if(getenv("MANPATH"))
      strcpy(manpath, getenv("MANPATH"));
    if(manpath[0] == '\0')
 -    strcpy(manpath, "/usr/man:/usr/local/man");
 +    strcpy(manpath,
 +#if (defined(BSD) && (BSD >= 199306)) || (defined(sun) && defined(__svr4__))
-+		 "/usr/share/man:/usr/local/man");
++		 "/usr/share/man:%%LOCALBASE%%/man");
 +#else
 +		 "/usr/man:/usr/local/man");
 +#endif
