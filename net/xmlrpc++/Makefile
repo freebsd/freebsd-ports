@@ -18,8 +18,15 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ implementation of the XML-RPC protocol
 
 USE_REINPLACE=	yes
-USE_GCC=	3.1
+USE_GCC=	3.3
 USE_GMAKE=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 501103
+# Work around bsd.port.mk bug: Does not currently set up MAKE_ENV for gcc 3.2 and 3.3
+MAKE_ENV+=	CC="${CC}" CXX="${CXX}"
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|^CXX|#CXX|" -e "s|^CXXFLAGS|#CXXFLAGS|" \
@@ -30,4 +37,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/XmlRpc*.h ${PREFIX}/include/xmlrpc++
 	${INSTALL_PROGRAM} ${WRKSRC}/libXmlRpc.a ${PREFIX}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
