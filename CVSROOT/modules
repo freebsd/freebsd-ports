@@ -12277,6 +12277,7 @@ y2l		ports/textproc/y2l
 y4mscaler	ports/multimedia/y4mscaler
 ya-yasou-fpw	ports/japanese/yasou-fpw
 yabasic		ports/lang/yabasic
+yabm		ports/net-mgmt/yabm
 yacas		ports/math/yacas
 yacl		ports/devel/yacl
 yadda		ports/mail/yadda
