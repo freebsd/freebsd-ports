@@ -1,0 +1,51 @@
+General information:
+
+TransFig is a set of tools for creating TeX documents with graphics
+which are portable, in the sense that they can be printed in a wide
+variety of environments.
+
+The transfig directory contains the source for the transfig command
+which generates a Makefile which translates Fig code to various graphics
+description languages using the fig2dev program.  In previous releases,
+this command was implemented as a shell script.
+
+The fig2dev directory contains a general program for translating from
+Fig code to other graphics desciption languages.  The dev subdirectory
+contains a library of output drivers used by fig2dev.
+
+Drivers currently exist for the following graphics langauges:
+(E)EPIC macros, LaTeX picture environment, PIC, PiCTeX, PostScript, and TeXtyl.
+Fig2dev can be configured with a subset of these drivers
+
+The doc directory contains man pages for fig2dev and for the transfig command.
+The subdirectory doc/manual contains a manual for using TransFig to create
+documents with portable graphics.  The manual also contains a reference
+guide describing Fig code in detail, and a description of TFX, an extension to
+Fig code which is supported by the translators in this package.
+
+Micah Beck				
+Dept of Computer Science
+Cornell University
+
+1 May 1990
+----------
+Version 2.0 note: The PostScript translation implemented by fig2dev
+now supports both the TFX version of Fig code and the V2.0, the dialect
+used by XFig Version 2.0.  The other translations support only TFX.
+
+1 September 1990
+----------------
+Version 2.1 note: fig2dev now supports Fig code V2.1, which implements
+the features of both TFX and V2.0.  V2.1 has some options which are
+implemented only in the PS output mode, most notably the use of PS font
+names in specifying text objects.  However, unlike V2.0, this feature
+is optional in V2.1; TFX-style font specifiers are also supported and
+can be translated in all output modes.  TFX and V2.0 are still supported.
+
+********************************
+PROBLEMS and POSSIBLE SOLUTIONS:
+********************************
+
+Solaris 2.x users:
+
+You must use the /usr/ucb/cc compiler because gethosename() is used.

@@ -1,0 +1,8 @@
+*** fig2dev/read1_3.c.orig	Wed Nov 23 14:23:28 1994
+--- fig2dev/read1_3.c	Wed Nov 23 14:23:35 1994
+***************
+*** 50,52 ****
+  extern int		errno;
+- extern char		*sys_errlist[];
+  extern int		sys_nerr, errno;
+--- 50,51 ----
