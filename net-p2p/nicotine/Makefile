@@ -17,6 +17,10 @@ COMMENT=	GTK2 SoulSeek filesharing client
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/__init__.py:${PORTSDIR}/x11-toolkits/py-gtk2 \
 		${PYTHON_SITELIBDIR}/bsddb3/__init__.py:${PORTSDIR}/databases/py-bsddb
 
+BROKEN=		"Broken dependency"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-04-17
+
 USE_BZIP2=		yes
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes

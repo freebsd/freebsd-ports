@@ -19,6 +19,10 @@ COMMENT=	CMFPhoto product for Zope/CMF
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/lib/python/Products/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf \
 		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging
 
+BROKEN=		"Broken dependency"
+DEPRECATED=	${BROKEN}
+EXPIRATION_DATE=2004-04-17
+
 USE_PYTHON=	yes
 USE_ZOPE=	yes
 DIST_SUBDIR=	zope
