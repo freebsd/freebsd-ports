@@ -65,14 +65,17 @@ index:
 	@cd ${.CURDIR} && make ${.CURDIR}/INDEX
 
 ${.CURDIR}/INDEX:
-	@echo -n "Generating INDEX - please wait.."
-	@cd ${.CURDIR} && make describe ECHO_MSG="echo > /dev/null" | \
-		perl ${.CURDIR}/Tools/make_index > ${.CURDIR}/INDEX
+	@echo -n "Generating INDEX - please wait.."; \
+	export LOCALBASE=/nonexistentlocal; \
+	export X11BASE=/nonexistentx; \
+	cd ${.CURDIR} && make describe ECHO_MSG="echo > /dev/null" | \
+		perl ${.CURDIR}/Tools/make_index | \
+	sed -e 's/  */ /g' -e 's/|  */|/g' -e 's/  *|/|/g' -e "s,${LOCALBASE},/usr/local," -e "s,${X11BASE},/usr/X11R6," > INDEX
 .if !defined(INDEX_NOSORT)
 	@sed -e 's./..g' ${.CURDIR}/INDEX | \
 		sort -t '|' +1 -2 | \
-		sed -e 's../.g' > ${.CURDIR}/INDEX.tmp
-	@mv -f ${.CURDIR}/INDEX.tmp ${.CURDIR}/INDEX
+		sed -e 's../.g' > ${.CURDIR}/INDEX.tmp; \
+	mv -f ${.CURDIR}/INDEX.tmp ${.CURDIR}/INDEX
 .endif
 	@echo " Done."
 
