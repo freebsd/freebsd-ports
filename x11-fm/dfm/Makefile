@@ -1,12 +1,12 @@
 # New ports collection makefile for:	dfm
-# Version required:			0.9.8
+# Version required:			0.9.10
 # Date created:				25 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/08/07 22:33:11 asami Exp $
+# $Id: Makefile,v 1.4 1998/08/07 23:56:49 asami Exp $
 #
 
-DISTNAME=	dfm-0.9.8
+DISTNAME=	dfm-0.9.10
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www-c.informatik.uni-hannover.de/~kaiser/dfm/
 
