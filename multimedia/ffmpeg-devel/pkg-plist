@@ -14,3 +14,4 @@ lib/libavcodec.a
 %%PORTDOCS%%share/doc/ffmpeg/ffmpeg.txt
 %%PORTDOCS%%share/doc/ffmpeg/ffserver.txt
 %%PORTDOCS%%@dirrm share/doc/ffmpeg
+@dirrm include/libavcodec
