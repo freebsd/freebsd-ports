@@ -1,6 +1,6 @@
---- gkrellkam.c.orig	Sun Dec 16 20:23:11 2001
-+++ gkrellkam.c	Sun Dec 16 20:28:54 2001
-@@ -142,8 +142,7 @@
+--- gkrellkam.c.orig	Fri Feb  1 16:41:26 2002
++++ gkrellkam.c	Sat Feb  2 01:05:50 2002
+@@ -146,8 +146,7 @@
  "_full_ filename in the \"Image Source\" box. To watch a webcam\n",
  "or other online picture, or use an online list, just put its\n",
  "address (beginning with http:// or ftp://) in the \"Image Source\n",
@@ -10,7 +10,7 @@
  "Special case: when this field begins with \"-x\" followed by a\n",
  "space and some more text, the remaining text is assumed to be a\n",
  "script or other system commmand, and the whole path does not\n",
-@@ -181,7 +180,6 @@
+@@ -185,7 +184,6 @@
    ""
  };
  
@@ -18,7 +18,7 @@
  #define BUFLEN 256
  #define MIN_NUMPANELS 0
  #define MAX_NUMPANELS 5
-@@ -532,11 +530,11 @@
+@@ -691,11 +689,11 @@
  /*
    start_img_dl ()
  
@@ -32,7 +32,7 @@
    char tmpfile[] = TEMPTEMPLATE "XXXXXX";
    int tmpfd;
  
-@@ -552,16 +550,15 @@
+@@ -711,16 +709,15 @@
    }
    close (tmpfd);
  
@@ -54,7 +54,7 @@
      return;
    }
    
-@@ -661,7 +658,7 @@
+@@ -820,7 +817,7 @@
      p->cmd_pipe = NULL;
  
      /* pclose will return a -1 on a wait4 error. If that happens,
@@ -63,16 +63,16 @@
      if (ks->type == SOURCE_URL && code <= 0)
      {
        ks->next_dl = time (NULL) + ks->tlife;
-@@ -669,7 +666,7 @@
+@@ -828,7 +825,7 @@
        return 1;
      }
  
 -    report_error (p, _("Error: wget gave bad code or script died. code %d"),
 +    report_error (p, _("Error: fetch gave bad code or script died. code %d"),
                    code);
+     return -1;
    }
-   
-@@ -686,10 +683,10 @@
+@@ -849,10 +846,10 @@
    }
    else
    {
@@ -82,10 +82,10 @@
      
 -    report_error (p, _("wget said: \"%s\""), buf);
 +    report_error (p, _("fetch said: \"%s\""), buf);
-     pclose (p->cmd_pipe);
-     p->cmd_pipe = NULL;
      return -1;
-@@ -788,14 +785,14 @@
+   }
+ }
+@@ -950,14 +947,14 @@
      code = 256;
  
    /* pclose will return a -1 on a wait4 error. If that happens,
@@ -102,7 +102,7 @@
  
    unlink (p->listurl_file);
    g_free (p->listurl_file);
-@@ -1470,7 +1467,7 @@
+@@ -1631,7 +1628,7 @@
  
  static void kkam_read_listurl (KKamPanel *p, char *source)
  {
@@ -111,7 +111,7 @@
    char tmpfile[] = TEMPTEMPLATE "-urllistXXXXXX";
    int tmpfd;
  
-@@ -1486,15 +1483,15 @@
+@@ -1647,15 +1644,15 @@
    }
    close (tmpfd);
  
