@@ -11,3 +11,5 @@ block size for the values you wish to see.
 The default block size output is 1024 bytes per
 block. So if you want to get the size in bytes
 just take the block size and * it by 1024.
+
+WWW: http://search.cpan.org/~iguthrie/Filesys-Statvfs_Statfs_Df/
