@@ -7,7 +7,7 @@
 
 PORTNAME=	tei
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.tei-c.org/Stylesheets/
 PKGNAMESUFFIX=	-xsl-html
