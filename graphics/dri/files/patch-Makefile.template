@@ -1,0 +1,11 @@
+--- src/mesa/drivers/dri/Makefile.template.orig	Fri Dec 24 01:04:59 2004
++++ src/mesa/drivers/dri/Makefile.template	Fri Dec 24 01:05:16 2004
+@@ -75,7 +75,7 @@
+ 
+ 
+ $(LIB_DIR)/$(LIBNAME):  $(OBJECTS) $(MESA_MODULES) $(WINOBJ) Makefile $(TOP)/src/mesa/drivers/dri/Makefile.template
+-	rm -f $@ && gcc -o $@ -shared $(OBJECTS) $(MESA_MODULES) $(WINOBJ) $(GL_LIB_DEPS)
++	rm -f $@ && gcc -o $@ -shared $(OBJECTS) $(MESA_MODULES) $(WINOBJ) $(DRI_LIB_DEPS)
+ 
+ 
+ 
