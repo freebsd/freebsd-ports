@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tramp
-PORTVERSION=	2.0.24
+PORTVERSION=	2.0.28
 CATEGORIES=	net elisp
 MASTER_SITES=	http://savannah.nongnu.org/download/tramp/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -41,8 +41,10 @@ PLIST_SUB+=	EMACS20_ONLY="@comment "
 
 pre-build:
 .if ${EMACS_PORT_NAME} == emacs20
-	(cd ${WRKSRC}/contrib; ${GMAKE} EMACS=${EMACS_CMD} format-spec.elc)
-	(${CP} -p ${WRKSRC}/contrib/format-spec.el ${WRKSRC}/contrib/format-spec.elc ${BUILD_WRKSRC})
+.for i in format-spec md5
+	(cd ${WRKSRC}/contrib; ${EMACS_CMD} -batch -f batch-byte-compile ${i}.el)
+	(${CP} -p ${WRKSRC}/contrib/${i}.el ${WRKSRC}/contrib/${i}.elc ${BUILD_WRKSRC})
+.endfor
 .endif
 post-build:
 .if !defined(NOPORTDOCS)
