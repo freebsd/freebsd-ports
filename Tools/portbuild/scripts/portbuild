@@ -2,6 +2,38 @@
 
 # usage: $0 ARCH BRANCH [-noclean] [-norestr] [-plistcheck] [-nodummy] PKGNAME.tgz DIRNAME [DEPENDENCY.tgz ...]
 
+mount_fs()
+{
+    fs=$1
+    mntpt=$2
+    master=$3
+
+    if [ ${disconnected} = 1 ]; then 
+	mount -t nullfs -r ${fs} ${mntpt}
+    else
+	mount -o nfsv3,intr -r ${master}:${fs} ${mntpt}
+    fi
+}
+
+copypkg()
+{
+    pb=$1
+    host=$2
+    from=$3
+    to=$4
+    http_proxy=$5
+
+    if [ ${host} = $(hostname) ]; then
+	cp ${pb}/${arch}/${branch}/packages/All/${from} ${to}
+    else
+	if [ ! -z "${http_proxy}" ]; then
+		env HTTP_PROXY=${http_proxy} fetch -m -o ${to} http://${host}/errorlogs/${arch}-${branch}-packages-latest/All/${from}
+	else
+	    fetch -m -o ${to} http://${host}/errorlogs/${arch}-${branch}-packages-latest/All/${from}
+	fi
+    fi
+}
+
 cleanup()
 {
   chroot=$1
@@ -12,6 +44,7 @@ cleanup()
 
   #umount ${chroot}/proc
   
+  echo ARCH=${arch}
   if [ ${arch} = "i386" ]; then
     umount -f ${chroot}/compat/linux/proc
   fi
@@ -38,7 +71,7 @@ cleanup()
     rmdir ${chroot}/used
   fi
 
-  echo -n "$pkgname done on $(hostname -s) at "
+  echo -n "$pkgname done on $(hostname) at "
   date
 
   exit $error
@@ -54,13 +87,15 @@ shift
 nice=0
 
 . ${pb}/${arch}/portbuild.conf
+. ${pb}/${arch}/portbuild.$(hostname)
 . ${pb}/scripts/buildenv
 
 buildroot=${scratchdir}
 error=0
 
 branch=$1
-shift
+chroot=$2
+shift 2
 
 noclean=0
 if [ "x$1" = "x-noclean" ]; then
@@ -94,13 +129,25 @@ if [ "x$1" = "x-fetch-original" ]; then
   export FETCH_ORIGINAL=1
   shift
 fi
-args="$*"
+if [ "x$1" = "x-trybroken" ]; then
+  export TRYBROKEN=1
+  shift
+fi
+
+ED=$1
+PD=$2
+FD=$3
+BD=$4
+RD=$5
 
 buildenv ${pb} ${arch} ${branch}
 
-pkgname=$(basename $1 ${PKGSUFFIX})
-dirname=$2
+pkgname=$(basename $6 ${PKGSUFFIX})
+dirname=$7
 shift 2
+
+echo $pkgname
+echo $dirname
 
 export WRKDIRPREFIX=/tmp
 export DISTDIR=/tmp/distfiles
@@ -127,83 +174,72 @@ cleandirs="/usr/local /usr/X11R6 /compat /var/db/pkg"
 export FTP_TIMEOUT=900
 export HTTP_TIMEOUT=900
 
-export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/X11R6/bin:.
+export PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin:/usr/X11R6/bin
 
-echo "building $pkgname"
+echo "building $pkgname in $chroot"
 
-chrootdir=${buildroot}/${branch}/chroot
 bakdir=${pb}/${arch}/${branch}/tarballs
 bindist=${buildroot}/${branch}/tarballs/bindist.tar
+bindistlocal=${buildroot}/${branch}/tarballs/bindist-$(hostname).tar
 packages=${pb}/${arch}/${branch}/packages
 
-found=0
-for dir in ${chrootdir}/*; do
-  if [ -d ${dir}/tmp -a ! -e ${dir}/used ]; then
-    mkdir ${dir}/used 2>/dev/null
-    touch ${dir}/used/${pkgname}
-    if [ $(echo $(echo ${dir}/used/* | wc -w)) = 1 ]; then
-      found=1
-      chroot=${dir}
-      break
-    else
-      rm ${dir}/used/${pkgname}
-      rmdir ${dir}/used 2>/dev/null
-    fi
-  fi
-done
-
-if [ ${found} != 1 ]; then
-  chroot=${chrootdir}/$$
-  while [ -d ${chroot} ]; do
-    chroot=${chroot}-
-  done
-
-  mkdir -p ${chroot}/used
-  touch ${chroot}/used/${pkgname}
+if [ -f ${chroot}/.notready ]; then
   tar -C ${chroot} -xpf ${bindist}
+  if [ -f ${bindistlocal} ]; then
+    tar -C ${chroot} -xpf ${bindistlocal}
+  fi
 
   # to be able to run ps and killall inside chroot area
   if [ "${branch}" = "4" -o "${branch}" = "4-exp" ]; then
     mkdir -p ${chroot}/libexec
     mkdir -p ${chroot}/lib
+    if [ "${arch}" = "i386" ]; then
+      cp -p /sbin/mount_linprocfs /sbin/mount /sbin/umount ${chroot}/sbin
+      cp -p /lib/libufs.so.2 ${chroot}/lib
+    fi
     cp -p /libexec/ld-elf.so.1 ${chroot}/libexec
     cp -p /lib/libc.so.5 /lib/libkvm.so.2 /lib/libm.so.2 ${chroot}/lib
   fi
   cp -p /bin/ps ${chroot}/bin
   cp -p /usr/bin/killall ${chroot}/usr/bin
+  rm ${chroot}/.notready
+  touch ${chroot}/.ready
 fi
 
 # Figure out jail IP addr
-chrootpid=$(basename ${chroot})
-ip1=$(($chrootpid /(256*256)))
-ip2=$((($chrootpid - ($ip1*256*256)) /256))
-ip3=$((($chrootpid - ($ip1*256*256) - ($ip2*256))))
+#chrootpid=$(basename ${chroot})
+#ip1=$(($chrootpid /(256*256)))
+#ip2=$((($chrootpid - ($ip1*256*256)) /256))
+#ip3=$((($chrootpid - ($ip1*256*256) - ($ip2*256))))
 
 # Set up desired uname version
 echo ${OSREL}-${BRANCH} > ${chroot}/usr/bin/UNAME_VERSION
 
-trap "cleanup ${chroot} ${noclean} ${error} \"${cleandirs}\" ${pkgname}" 1 2 3 9 10 11 15 
+#trap "cleanup ${chroot} ${noclean} ${error} \"${cleandirs}\" ${pkgname}" 1 2 3 9 10 11 15
+trap "exit 255" 1 2 3 9 10 11 15
 
 rm -rf ${chroot}/tmp/*
 cd ${chroot}/tmp
 mkdir -p depends distfiles packages
 
-echo "building ${pkgname} on $(hostname -s)" | tee ${chroot}/tmp/${pkgname}.log
+echo "building ${pkgname} on $(hostname)" | tee ${chroot}/tmp/${pkgname}.log
 echo "in directory ${chroot}" | tee -a ${chroot}/tmp/${pkgname}.log
-echo "with arguments: ${args}" | tee -a ${chroot}/tmp/${pkgname}.log
 
 # intentionally set up ${PORTSDIR} with symlink to catch broken ports
 mkdir -p ${chroot}/a/ports
 rm -rf ${chroot}/usr/ports
-mount -o nfsv3,intr -r ${master}:${pb}/${arch}/${branch}/ports ${chroot}/a/ports
+
+mount_fs ${pb}/${arch}/${branch}/ports ${chroot}/a/ports ${master}
 ln -sf ../a/ports ${chroot}/usr/ports
 
 mkdir -p ${chroot}/usr/src ${chroot}/usr/opt/doc
 
-mount -o nfsv3,intr -r ${master}:${pb}/${arch}/${branch}/src ${chroot}/usr/src
-mount -o nfsv3,intr -r ${master}:${pb}/${arch}/${branch}/doc ${chroot}/usr/opt/doc
+mount_fs ${pb}/${arch}/${branch}/src ${chroot}/usr/src ${master}
+mount_fs ${pb}/${arch}/${branch}/doc ${chroot}/usr/opt/doc ${master}
 
 mount -t devfs foo ${chroot}/dev
+
+umount -f ${chroot}/compat/linux/dev > /dev/null 2>&1
 
 # just in case...
 for dir in ${cleandirs}; do
@@ -235,7 +271,7 @@ fi
 if [ ${arch} = "i386" ]; then
   # JDK ports need linprocfs :(
   mkdir -p ${chroot}/compat/linux/proc
-  mount -t linprocfs linprocfs ${chroot}/compat/linux/proc
+  chroot ${chroot} mount -t linprocfs linprocfs /compat/linux/proc
 fi
 
 _ldconfig_dirs="/lib /usr/lib /usr/lib/compat"
@@ -250,14 +286,12 @@ if [ ${arch} = "i386" ]; then
 	chroot ${chroot} /sbin/ldconfig -aout /usr/lib/aout /usr/lib/compat/aout
 fi
 
+set x $ED $FD $PD $BD $RD
+shift 1
 while [ $# -gt 0 ]; do
-  if [ -f ${packages}/All/$1 ]; then
-    if [ ! -f ${chroot}/tmp/depends/$1 ]; then
-      echo "copying package $1 for ${pkgname}"
-      cp -p ${packages}/All/$1 ${chroot}/tmp/depends
-    fi
-  else
-    echo "skipping package $1 for ${pkgname} since it is missing"
+  if [ ! -f ${chroot}/tmp/depends/$1 ]; then
+    echo "copying package $1 for ${pkgname}"
+    copypkg ${pb} ${master} $1 ${chroot}/tmp/depends "${http_proxy}"
   fi
   shift
 done
@@ -266,8 +300,8 @@ cp -p ${pb}/scripts/buildscript ${chroot}
 cp -p ${pb}/scripts/pnohang.${arch} ${chroot}/pnohang
 
 # phase 1, make checksum
-# Needs to be chroot so that port can be fetched
-chroot ${chroot} /buildscript ${dirname} 1 2>&1 | tee -a ${chroot}/tmp/${pkgname}.log
+# Needs to be chroot not jail so that port can be fetched
+chroot ${chroot} /buildscript ${dirname} 1 "$ED" "$PD" "$FD" "$BD" "$RD" 2>&1 | tee -a ${chroot}/tmp/${pkgname}.log
 if [ -f ${chroot}/tmp/status ]; then
   error=$(cat ${chroot}/tmp/status)
 else
@@ -276,47 +310,18 @@ fi
 
 if [ "${error}" = 0 ]; then
 # make checksum succeeded
-  ssh -a -x ${user}@$master mkdir -p ${pb}/${arch}/${branch}/distfiles/.pbtmp/${pkgname}
-  if [ "$nodistfiles" = "0" ]; then
-    tar -C ${chroot}/tmp/distfiles -cf - . | \
-      ssh -a -x ${user}@$master tar --unlink -C ${pb}/${arch}/${branch}/distfiles/.pbtmp/${pkgname} -xvf -
-    ssh -a -x ${user}@$master touch ${pb}/${arch}/${branch}/distfiles/.pbtmp/${pkgname}/.done
-  fi
-
 # phase 2, make package
   ln -sf ${pkgname}.log2 ${chroot}/tmp/make.log
 
 #  ifconfig lo0 alias 10.${ip1}.${ip2}.${ip3}/32
 #  jail ${chroot} jail-${chroot} 10.${ip1}.${ip2}.${ip3} /usr/bin/nice -n $nice /buildscript ${dirname} 2 > ${chroot}/tmp/${pkgname}.log2 2>&1
 #  ifconfig lo0 delete 10.${ip1}.${ip2}.${ip3}
-  chroot ${chroot} /usr/bin/nice -n $nice /buildscript ${dirname} 2 > ${chroot}/tmp/${pkgname}.log2 2>&1
+  chroot ${chroot} /usr/bin/nice -n $nice /buildscript ${dirname} 2 "$ED" "$PD" "$FD" "$BD" "$RD" > ${chroot}/tmp/${pkgname}.log2 2>&1
 
   grep pnohang ${chroot}/tmp/${pkgname}.log2
   cat ${chroot}/tmp/${pkgname}.log2 >> ${chroot}/tmp/${pkgname}.log
   rm ${chroot}/tmp/${pkgname}.log2
-###  chroot ${chroot} /buildscript ${dirname} 2 2>&1 | tee -a ${chroot}/tmp/${pkgname}.log
-  scp ${chroot}/tmp/${pkgname}.log ${user}@${master}:${pb}/${arch}/${branch}/logs/${pkgname}.log
   error=$(cat ${chroot}/tmp/status)
-
-  if [ -e ${chroot}/tmp/work.tbz ]; then
-	scp ${chroot}/tmp/work.tbz ${user}@${master}:${pb}/${arch}/${branch}/wrkdirs/${pkgname}.tbz
-  fi
-
-  if [ "${error}" = 0 ]; then
-    tar -C ${chroot}/tmp -cf - packages | \
-      ssh -a -x ${user}@$master tar --unlink -C ${pb}/${arch}/${branch} -xvf -
-    ssh -a -x ${user}@$master [ -f ${pb}/${arch}/${branch}/packages/All/${pkgname}${PKGSUFFIX} ] '&&' touch ${pb}/${arch}/${branch}/packages/All/${pkgname}${PKGSUFFIX}
-    ssh ${user}@$master rm -f ${pb}/${arch}/${branch}/errors/${pkgname}.log
-    ssh ${user}@$master lockf ${pb}/${arch}/${branch}/failure.lock ${pb}/scripts/buildsuccess ${arch} ${branch} ${pkgname}
-  else
-    scp ${chroot}/tmp/${pkgname}.log ${user}@${master}:${pb}/${arch}/${branch}/errors/${pkgname}.log
-    ssh ${user}@$master lockf ${pb}/${arch}/${branch}/failure.lock ${pb}/scripts/buildfailure ${arch} ${branch} ${pkgname}
-  fi
-
-else
-  scp ${chroot}/tmp/${pkgname}.log ${user}@${master}:${pb}/${arch}/${branch}/errors/${pkgname}.log
-  scp ${chroot}/tmp/${pkgname}.log ${user}@${master}:${pb}/${arch}/${branch}/logs/${pkgname}.log
-  ssh ${user}@$master lockf ${pb}/${arch}/${branch}/failure.lock ${pb}/scripts/buildfailure ${arch} ${branch} ${pkgname}
 fi
 
-cleanup ${chroot} ${noclean} ${error} "${cleandirs}" ${pkgname}
+exit $error
