@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnupod
-PORTVERSION=	0.26
+PORTVERSION=	0.27
 CATEGORIES=	audio perl5
 MASTER_SITES=	http://www.blinkenlights.ch/gnupod/
 DISTNAME=	${PORTNAME}-tools-${PORTVERSION}
@@ -29,12 +29,14 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-tools
 
 .ifndef(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-	@${CHMOD} 0755 ${PREFIX}/share/doc/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/CHANGES ${PREFIX}/share/doc/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/doc/logo.png ${PREFIX}/share/doc/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/doc/gnutunesdb.example ${PREFIX}/share/doc/${PORTNAME}
-	@${INSTALL_DATA} ${WRKSRC}/doc/ipod.svg ${PREFIX}/share/doc/${PORTNAME}
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/gnutunesdb.example ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/gnupod.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/gnupod.texi ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/fdl.texi ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/version.texi ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/ipod.svg ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
