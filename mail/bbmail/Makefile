@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	bbmail
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.3
 CATEGORIES=	mail
-MASTER_SITES=	http://bbtools.thelinuxcommunity.org/sources/
+MASTER_SITES=	http://easynews.dl.sourceforge.net/sourceforge/bbtools/ \
+		http://bbtools.thelinuxcommunity.org/sources/ \
+		http://www.esperance-linux.co.uk/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool intended for Blackbox that checks for new mail
