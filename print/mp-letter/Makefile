@@ -9,8 +9,10 @@
 PORTNAME=	mp-${PAPERSIZE}
 PORTVERSION=	3.0.1
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.NUXI.com/pub/misc/ \
-		ftp://ftp.win.tue.nl/pub/mail/
+MASTER_SITES=	ftp://relay.NUXI.org/pub/misc/ \
+		ftp://ftp.netsw.org/system/tools/print/ \
+#		ftp://ftp.fu-berlin.de/unix/tools/mp/
+#		ftp://ftp.inria.fr/system/user/
 DISTNAME=	mp-3.0.1
 
 MAINTAINER=	obrien@FreeBSD.org
