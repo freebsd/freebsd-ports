@@ -9,7 +9,7 @@ PORTNAME=	coldsync
 PORTVERSION=	2.1.3
 PORTREVISION=	2
 CATEGORIES=	palm comms
-MASTER_SITES=	http://www.ooblick.com/software/coldsync/
+MASTER_SITES=	http://www.coldsync.org/download/
 
 MAINTAINER=	arensb+freebsd-ports@ooblick.com
 
