@@ -1,0 +1,109 @@
+*** src/p2clib.c.orig	Wed Dec 15 14:38:38 1999
+--- src/p2clib.c	Wed Dec 15 14:42:12 1999
+***************
+*** 890,896 ****
+  {
+  #ifndef NO_TIME
+      struct tm *tm;
+!     long clock;
+  
+      time(&clock);
+      tm = localtime(&clock);
+--- 890,896 ----
+  {
+  #ifndef NO_TIME
+      struct tm *tm;
+!     time_t clock;
+  
+      time(&clock);
+      tm = localtime(&clock);
+***************
+*** 908,914 ****
+  Void VAXdate(s)
+  char *s;
+  {
+!     long clock;
+      char *c;
+      int i;
+      static int where[] = {8, 9, 0, 4, 5, 6, 0, 20, 21, 22, 23};
+--- 908,914 ----
+  Void VAXdate(s)
+  char *s;
+  {
+!     time_t clock;
+      char *c;
+      int i;
+      static int where[] = {8, 9, 0, 4, 5, 6, 0, 20, 21, 22, 23};
+***************
+*** 924,930 ****
+  Void VAXtime(s)
+  char *s;
+  {
+!     long clock;
+      char *c;
+      int i;
+  
+--- 924,930 ----
+  Void VAXtime(s)
+  char *s;
+  {
+!     time_t clock;
+      char *c;
+      int i;
+  
+*** src/trans.c.orig	Wed Dec 15 14:33:23 1999
+--- src/trans.c	Wed Dec 15 14:44:29 1999
+***************
+*** 575,581 ****
+  # endif
+  #endif
+  
+! Static long starting_time;
+  
+  Static void openlogfile()
+  {
+--- 575,581 ----
+  # endif
+  #endif
+  
+! Static time_t starting_time;
+  
+  Static void openlogfile()
+  {
+***************
+*** 608,614 ****
+  
+  void closelogfile()
+  {
+!     long ending_time;
+  
+      if (logf) {
+  	fprintf(logf, "\n\n");
+--- 608,614 ----
+  
+  void closelogfile()
+  {
+!     time_t ending_time;
+  
+      if (logf) {
+  	fprintf(logf, "\n\n");
+*** src/makeproto.c.orig	Wed Dec 15 15:00:46 1999
+--- src/makeproto.c	Wed Dec 15 15:01:58 1999
+***************
+*** 157,163 ****
+      char argdecls[MAXARGS][256], argnames[MAXARGS][80];
+      char *cp, *cp2, *cp3;
+      int i, j, pos, len, thistab, numstars, whichf, nargs, incomment, errors = 0;
+!     long li;
+      int typetab = 15, argtab = 30, width = 80, usenames = 0, usemacros = 0;
+      int useextern = 0, staticness = -1, hasheader = 0, useifdefs = 0;
+      int stupid = 1, firstdecl;
+--- 157,163 ----
+      char argdecls[MAXARGS][256], argnames[MAXARGS][80];
+      char *cp, *cp2, *cp3;
+      int i, j, pos, len, thistab, numstars, whichf, nargs, incomment, errors = 0;
+!     time_t li;
+      int typetab = 15, argtab = 30, width = 80, usenames = 0, usemacros = 0;
+      int useextern = 0, staticness = -1, hasheader = 0, useifdefs = 0;
+      int stupid = 1, firstdecl;
+
