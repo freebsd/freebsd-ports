@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	plotutils-2.2
+DISTNAME=	plotutils-2.3
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	plotutils
@@ -15,8 +15,9 @@ MAINTAINER=	chuckr@FreeBSD.org
 
 USE_XLIB=	yes
 USE_LIBTOOL=	yes
+USE_NEWGCC=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-libplotter
+CONFIGURE_ARGS=	--enable-libplotter --enable-libxmi
 
 .ifdef HAVE_MOTIF
 CONFIGURE_ARGS+=	--with-motif

@@ -6,6 +6,15 @@ bin/plot
 bin/plotfont
 bin/spline
 bin/tek2plot
+share/libplot/README
+share/libplot/colors.txt
+share/libplot/demo-page
+share/libplot/h-demo.c
+share/libplot/h-fonts.doc
+share/libplot/h-glyphs.doc
+share/libplot/hershey.bib
+share/libplot/kana.doc
+share/libplot/kanji.doc
 share/ode/README
 share/ode/atwoods.ode
 share/ode/bead.ode
@@ -23,15 +32,11 @@ share/ode/qcd.ode
 share/ode/rumor.ode
 share/ode/soliton.ode
 share/ode/viscous.ode
-share/libplot/README
-share/libplot/colors.txt
-share/libplot/demo-page
-share/libplot/h-demo.c
-share/libplot/h-fonts.doc
-share/libplot/h-glyphs.doc
-share/libplot/hershey.bib
-share/libplot/kana.doc
-share/libplot/kanji.doc
+share/pic2plot/README
+share/pic2plot/macros.pic
+share/pic2plot/pic0.ps
+share/pic2plot/pic1.ps
+share/pic2plot/picmacros.ps
 share/tek2plot/README
 share/tek2plot/aitest.tek
 share/tek2plot/dmerc.tek
@@ -43,19 +48,27 @@ share/tek2plot/scale.tek
 share/tek2plot/skymap.tek
 share/tek2plot/usmap.tek
 lib/libplot.so
-lib/libplot.so.2
+lib/libplot.so.3
 lib/libplot.a
 lib/libplotter.so
-lib/libplotter.so.2
+lib/libplotter.so.3
 lib/libplotter.a
+lib/libxmi.so
+lib/libxmi.so.1
+lib/libxmi.a
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 include/plot.h
 include/plotcompat.h
 include/plotter.h
-@unexec install-info --delete --info-dir=/usr/local/info /usr/local/info/plotutils.info
+include/xmi.h
+@unexec install-info --delete --info-dir=%D/info %D/info/libxmi.info
+@unexec install-info --delete --info-dir=%D/info %D/info/plotutils.info
+info/libxmi.info
 info/plotutils.info
-@exec install-info --info-dir=/usr/local/info /usr/local/info/plotutils.info
+@exec install-info --info-dir=%D/info %D/info/libxmi.info
+@exec install-info --info-dir=%D/info %D/info/plotutils.info
 @dirrm share/tek2plot
+@dirrm share/pic2plot
 @dirrm share/libplot
 @dirrm share/ode
