@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Tue Apr 18 19:05:53 2000
++++ Makefile.in	Sat Sep  2 04:04:58 2000
+@@ -422,8 +422,8 @@
+ install-data-local:
+ 	-$(mkinstalldirs) $(DESTDIR)$(scoredir)
+ 	-touch $(DESTDIR)$(scoredir)/gnome-breakout.scores
+-	-chown games.games $(DESTDIR)$(scoredir)/gnome-breakout.scores
+-	-chmod 0644 $(DESTDIR)$(scoredir)/gnome-breakout.scores
++	-chown root.games $(DESTDIR)$(scoredir)/gnome-breakout.scores
++	-chmod 0664 $(DESTDIR)$(scoredir)/gnome-breakout.scores
+ 	-chgrp games $(DESTDIR)$(bindir)/gnome-breakout && chmod 2111 $(DESTDIR)$(bindir)/gnome-breakout
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
