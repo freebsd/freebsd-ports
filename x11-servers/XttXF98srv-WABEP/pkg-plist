@@ -1,3 +1,0 @@
-bin/XF98_WABEP.xtt
-@exec /bin/ln -fs %D/%F %B/X
-@unexec ([ -x %B/XF98_WABEP ] && /bin/ln -fs %B/XF98_WABEP %B/X) || /bin/rm -f %B/X
