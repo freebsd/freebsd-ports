@@ -268,6 +268,7 @@ pgp*			ports/security/pgp*	Various locality restrictions
 pklin*			ports/archivers/pkzip	Shareware
 platon-*		ports/biology/platon	US$ 5000 for commercial users,
 						(free for academic)
+poseidonCE		ports/java/poseidon	Redistribution is not permitted
 ppsmall-*		ports/archivers/ppunpack	No commercial redistribution
 prodosemu.*		ports/emulators/prodosemu	Restrictive copyright on the ROM image
 punkbuster*		ports/net/punkbuster*	Restricted binary distribution
