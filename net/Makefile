@@ -73,7 +73,6 @@
     SUBDIR += gnomba
     SUBDIR += gnome-icu
     SUBDIR += gnome-vnc
-    SUBDIR += gnomenetwork
     SUBDIR += gnosamba
     SUBDIR += gnu-finger
     SUBDIR += gnut

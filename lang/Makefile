@@ -34,7 +34,6 @@
     SUBDIR += ghc
     SUBDIR += glibstdc++28
     SUBDIR += gnat
-    SUBDIR += gnomeobjc
     SUBDIR += gpc
     SUBDIR += guile
     SUBDIR += guileobjc
