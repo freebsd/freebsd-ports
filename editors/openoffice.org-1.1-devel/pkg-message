@@ -1,9 +1,9 @@
-OpenOffice.org Build 644 Beta Personal Install How-To
+OpenOffice.org Build 1.1RC4 Personal Install How-To
 
 Written by:	Martin Blapp <mbr@freebsd.org>
 
 OpenOffice.org 1.1Beta will soon been installed in
-${PREFIX}/OpenOffice.org-644
+${PREFIX}/OpenOffice.org-1.1.0
 
 1 User installation
 -------------------
@@ -12,7 +12,7 @@ Just type "openoffice" after you have successfully
 installed the package. If there is no installed
 OO.org dir in hour homedir, you'll be prompted to
 install some files and choose a installed JDK.
-The setup installs a "OpenOffice.org1.1Beta" folder
+The setup installs a "OpenOffice.org1.1.0" folder
 in your homedir.
 
 If the setup tells you there is already an installed
@@ -29,16 +29,16 @@ There are some wrappers installed for fast startup.
 Add "${PREFIX}/bin/" to your PATH and you will be able
 to use them.
 
-${PREFIX}/bin/openoffice_1.1
-${PREFIX}/bin/openoffice_1.1-sagenda
-${PREFIX}/bin/openoffice_1.1-scalc
-${PREFIX}/bin/openoffice_1.1-sdraw
-${PREFIX}/bin/openoffice_1.1-setup
-${PREFIX}/bin/openoffice_1.1-sfax
-${PREFIX}/bin/openoffice_1.1-simpress
-${PREFIX}/bin/openoffice_1.1-spadmin
-${PREFIX}/bin/openoffice_1.1-sweb
-${PREFIX}/bin/openoffice_1.1-swriter
+${PREFIX}/bin/openoffice-1.1
+${PREFIX}/bin/openoffice-1.1-sagenda
+${PREFIX}/bin/openoffice-1.1-scalc
+${PREFIX}/bin/openoffice-1.1-sdraw
+${PREFIX}/bin/openoffice-1.1-setup
+${PREFIX}/bin/openoffice-1.1-sfax
+${PREFIX}/bin/openoffice-1.1-simpress
+${PREFIX}/bin/openoffice-1.1-spadmin
+${PREFIX}/bin/openoffice-1.1-sweb
+${PREFIX}/bin/openoffice-1.1-swriter
 
 OO.org does need $LANG to be set to a suitable value.
 If it is not already set, a default value is chosen.

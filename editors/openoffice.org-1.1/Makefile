@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openoffice
-PORTVERSION=	645
+PORTVERSION=	1.1RC4
 SNAPDATE=	20030815
 CATEGORIES+=	editors
 MASTER_SITES+=	http://projects.imp.ch/openoffice/%SUBDIR%/ \
@@ -17,8 +17,8 @@ MASTER_SITES+=	http://projects.imp.ch/openoffice/%SUBDIR%/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help \
 		http://people.freebsd.org/~mbr/ooo/:moz
-MASTER_SITE_SUBDIR=	${PORTVERSION}
-DISTFILES+=	oo_${PORTVERSION}_src_${SNAPDATE}.tar.bz2 \
+MASTER_SITE_SUBDIR=	${BUILD_NR}
+DISTFILES+=	oo_${BUILD_NR}_src_${SNAPDATE}.tar.bz2 \
 		gpc231.tar.Z:gpc patch-openoffice-mozilla101-2002-10-14:moz \
 		mozilla-vendor-1.0.2a.tgz:moz
 .if defined(L10NHELP)
@@ -38,10 +38,10 @@ PASTE?=	/usr/bin/paste
 
 .include <bsd.port.pre.mk>
 
-BROKEN=			"Does not work yet, installation problems"
-BUILD_NR=		${PORTVERSION}
+BUILD_NR=		645
 RELEASE_NR=		1.1
-INSTALLATION_BASEDIR=	OpenOffice.org-${BUILD_NR}
+FRELEASE_NR=		1.1.0
+INSTALLATION_BASEDIR=	OpenOffice.org-${FRELEASE_NR}
 DIST_SUBDIR=		openoffice
 DICT_DIR=               ${PREFIX}/${INSTALLATION_BASEDIR}/share/dict/ooo/
 
@@ -96,7 +96,7 @@ CC=  gcc33
 CXX= g++33
 .endif
 
-EXTRACT_ONLY=	oo_${PORTVERSION}_src_${SNAPDATE}.tar.bz2
+EXTRACT_ONLY=	oo_${BUILD_NR}_src_${SNAPDATE}.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
 .if !defined(COMMENT)
@@ -141,9 +141,9 @@ GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
 WANT_AUTOCONF_VER= 253
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
-WRKSRC=		${WRKDIR}/oo_${PORTVERSION}_src/config_office
+WRKSRC=		${WRKDIR}/oo_${BUILD_NR}_src/config_office
 LD_PATH1=	${WRKSRC}/../vos/unxfbsd.pro/lib/:${WRKSRC}/../ucbhelper/unxfbsd.pro/lib/
-LD_PATH=	${LD_PATH1}:${WRKSRC}/../solver/${PORTVERSION}/unxfbsd.pro/lib/
+LD_PATH=	${LD_PATH1}:${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/lib/
 .if defined(WITH_DEBUG)
 CFLAGS+=	-g
 .if ${WITH_DEBUG} == 2
@@ -503,7 +503,7 @@ pre-install:
 	@${SED} -i orig -e 's#%%PREFIX%%#${PREFIX}#g' \
 	-e 's#%%PORTVERSION%%#${BUILD_NR}#g' \
 	${WRKSRC}/../instsetoo/unxfbsd.pro/${LANG_EXT}/normal/oo_setup.resp
-	@${MKDIR} -p ${WRKSRC}/../solver/${PORTVERSION}/unxfbsd.pro/bin/${LANG_EXT}/osl/
+	@${MKDIR} -p ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/bin/${LANG_EXT}/osl/
 
 do-install:
 .if !defined(DISPLAY)
@@ -533,19 +533,21 @@ post-install:
 	@${SED} -i orig -e 's#%%PREFIX%%#${PREFIX}#g' ${WRKDIR}/openoffice
 	@${SED} -i orig -e 's#%%LANG%%#${USE_LANG}#g' ${WRKDIR}/openoffice
 	@${SED} -i orig -e 's#%%BUILD_NR%%#${BUILD_NR}#g' ${WRKDIR}/openoffice
-	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice ${PREFIX}/bin/openoffice_${RELEASE_NR}
-	@${LN} -fs ${PREFIX}/bin/openoffice_${RELEASE_NR} ${PREFIX}/bin/openoffice_${RELEASE_NR}-sagenda
-	@${LN} -fs ${PREFIX}/bin/openoffice_${RELEASE_NR} ${PREFIX}/bin/openoffice_${RELEASE_NR}-scalc
-	@${LN} -fs ${PREFIX}/bin/openoffice_${RELEASE_NR} ${PREFIX}/bin/openoffice_${RELEASE_NR}-sdraw
-	@${LN} -fs ${PREFIX}/bin/openoffice_${RELEASE_NR} ${PREFIX}/bin/openoffice_${RELEASE_NR}-setup
-	@${LN} -fs ${PREFIX}/bin/openoffice_${RELEASE_NR} ${PREFIX}/bin/openoffice_${RELEASE_NR}-sfax
-	@${LN} -fs ${PREFIX}/bin/openoffice_${RELEASE_NR} ${PREFIX}/bin/openoffice_${RELEASE_NR}-smath
-	@${LN} -fs ${PREFIX}/bin/openoffice_${RELEASE_NR} ${PREFIX}/bin/openoffice_${RELEASE_NR}-simpress
-	@${LN} -fs ${PREFIX}/bin/openoffice_${RELEASE_NR} ${PREFIX}/bin/openoffice_${RELEASE_NR}-spadmin
-	@${LN} -fs ${PREFIX}/bin/openoffice_${RELEASE_NR} ${PREFIX}/bin/openoffice_${RELEASE_NR}-sweb
-	@${LN} -fs ${PREFIX}/bin/openoffice_${RELEASE_NR} ${PREFIX}/bin/openoffice_${RELEASE_NR}-swriter
-	@cd ${PREFIX} && ${FIND} -s bin -type f | ${GREP} openoffice_${RELEASE_NR} > ${TMPPLIST}
-	@cd ${PREFIX} && ${FIND} -s bin -type l | ${GREP} openoffice_${RELEASE_NR} >> ${TMPPLIST}
+	@${SED} -i orig -e 's#%%RELEASE_NR%%#${RELEASE_NR}#g' ${WRKDIR}/openoffice
+	@${SED} -i orig -e 's#%%FRELEASE_NR%%#${FRELEASE_NR}#g' ${WRKDIR}/openoffice
+	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice ${PREFIX}/bin/openoffice-${RELEASE_NR}
+	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-sagenda
+	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-scalc
+	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-sdraw
+	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-setup
+	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-sfax
+	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-smath
+	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-simpress
+	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-spadmin
+	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-sweb
+	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-swriter
+	@cd ${PREFIX} && ${FIND} -s bin -type f | ${GREP} openoffice-${RELEASE_NR} > ${TMPPLIST}
+	@cd ${PREFIX} && ${FIND} -s bin -type l | ${GREP} openoffice-${RELEASE_NR} >> ${TMPPLIST}
 	@cd ${PREFIX} && ${FIND} -s ${INSTALLATION_BASEDIR} -type f >> ${TMPPLIST}
 	@cd ${PREFIX} && ${FIND} -s ${INSTALLATION_BASEDIR} -type l >> ${TMPPLIST}
 	@cd ${PREFIX} && ${FIND} -s ${INSTALLATION_BASEDIR} -type d > ${WRKDIR}/dir.tmp
