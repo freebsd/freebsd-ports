@@ -1,7 +1,0 @@
-#!/bin/sh
-if [ -f /usr/local/include/kfm.h ]; then
-echo <<EOF
-You have KDE1 headers installed!  Installing this package
-will result in conflicts between KDE2 and KDE1.
-EOF
-fi
