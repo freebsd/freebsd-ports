@@ -1,0 +1,21 @@
+etc/im_palette-small.pal
+etc/im_palette-tiny.pal
+etc/im_palette.pal
+etc/imrc
+usr/doc/imlib-1.9.7/AUTHORS
+usr/doc/imlib-1.9.7/ChangeLog
+usr/doc/imlib-1.9.7/NEWS
+usr/doc/imlib-1.9.7/README
+usr/lib/libImlib.so.1
+usr/lib/libImlib.so.1.9.7
+usr/lib/libgdk_imlib.so.1
+usr/lib/libgdk_imlib.so.1.9.7
+usr/lib/libimlib-bmp.so
+usr/lib/libimlib-gif.so
+usr/lib/libimlib-jpeg.so
+usr/lib/libimlib-png.so
+usr/lib/libimlib-ppm.so
+usr/lib/libimlib-ps.so
+usr/lib/libimlib-tiff.so
+usr/lib/libimlib-xpm.so
+@dirrm usr/doc/imlib-1.9.7
