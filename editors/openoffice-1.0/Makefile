@@ -70,7 +70,7 @@ CONFIGURE_ARGS+=	--with-lang=${LANG_CONFIGURE_ARG},ENUS
 #
 # OO build is broken with the system gcc on STABLE.
 #
-USE_GCC=3.1
+USE_GCC=3.2
 .else
 .endif
 
