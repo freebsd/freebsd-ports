@@ -8,7 +8,7 @@
 PORTNAME=	wmmultipop3
 PORTVERSION=	0.8
 CATEGORIES=	mail windowmaker
-MASTER_SITES=	http://sumpan.campus.luth.se/software/wmmultipop3/
+MASTER_SITES=	http://bart.sm.luth.se/~dansun-8/software/wmMultiPop3/
 DISTNAME=	wmMultiPop3-${PORTVERSION}
 
 MAINTAINER=	pat@FreeBSD.org
@@ -16,9 +16,8 @@ MAINTAINER=	pat@FreeBSD.org
 BUILD_WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_GMAKE=	yes
 
-DOC_FILES=	ChangeLog INSTALL README 
+DOC_FILES=	ChangeLog INSTALL README
 
 do-install:
 	@${INSTALL_PROGRAM} ${BUILD_WRKSRC}/wmmultipop3 ${PREFIX}/bin
