@@ -7,6 +7,7 @@
 
 PORTNAME=	wwwoffle
 PORTVERSION=	2.8b
+PORTREVISION=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	http://www.gedanken.freeserve.co.uk/download-wwwoffle/
 EXTRACT_SUFX=	.tgz
@@ -16,6 +17,7 @@ COMMENT=	A caching proxy server for HTTP and FTP designed for dial-up hosts
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
+USE_RC_SUBR=	yes
 
 # $SPOOL seems like a common name which could be used for other things, so
 # use $WWWOFFLE_SPOOL as the overriding setting.
@@ -27,6 +29,8 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS=-lmd
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc --with-ipv6 \
 		--with-spooldir=${WWWOFFLE_SPOOL}
+
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 MAN1=		wwwoffle.1
 MAN5=		wwwoffle.conf.5
@@ -43,12 +47,15 @@ post-configure:
 
 .endif
 
+post-build:
+	@${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/smartd.sh > ${WRKDIR}/wwwoffled.sh
+
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/conf/upgrade-config-2.5-2.6.pl ${WWWOFFLE_SPOOL}
 	@${INSTALL_SCRIPT} ${WRKSRC}/conf/upgrade-config-2.x-2.5.pl ${WWWOFFLE_SPOOL}
 	@${INSTALL_SCRIPT} ${WRKSRC}/conf/upgrade-config.pl ${WWWOFFLE_SPOOL}
-	@${SED} 's@%PREFIX%@${LOCALBASE}@' ${FILESDIR}/wwwoffled.sh > ${PREFIX}/etc/rc.d/wwwoffled.sh
-	@${CHMOD} +x ${PREFIX}/etc/rc.d/wwwoffled.sh
+	@${INSTALL_SCRIPT} ${WRKDIR}/wwwoffled.sh ${PREFIX}/etc/rc.d/wwwoffled.sh
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

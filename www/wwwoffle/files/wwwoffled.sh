@@ -1,17 +1,33 @@
 #!/bin/sh
+# $FreeBSD$
 
-case $1 in
-start)
-	[ -x %PREFIX%/sbin/wwwoffled ] && \
-		%PREFIX%/sbin/wwwoffled >/dev/null 2>&1 && echo -n ' wwwoffled'
-	;;
-stop)
-	killall wwwoffled && echo -n ' wwwoffled'
-	;;
-*)
-	echo "Usage: `basename $0` {start|stop}" >&2
-	exit 64
-	;;
-esac
+# PROVIDE: wwwoffled
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: FreeBSD shutdown
 
-exit 0
+# Define these wwwoffled_* variables in one of these files:
+#	/etc/rc.conf
+#	/etc/rc.conf.local
+#	/etc/rc.conf.d/wwwoffled
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+wwwoffled_enable="NO"
+wwwoffled_flags=""
+wwwoffled_pidfile="/var/run/wwwoffled.pid"
+wwwoffled_conffile="%%PREFIX%%/etc/wwwoffle.conf"
+
+. %%RC_SUBR%%
+
+name="wwwoffled"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/sbin/wwwoffled"
+
+load_rc_config $name
+
+pidfile="${wwwoffled_pidfile}"
+command_args="-p > ${pidfile} 2> /dev/null"
+required_files="${wwwoffled_conffile}"
+
+run_rc_command "$1"
