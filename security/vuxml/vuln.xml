@@ -32,6 +32,39 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="fb03b1c6-8a8a-11d9-81f7-02023f003c9f">
+    <topic>uim -- privilege escalation vulnerability</topic>
+    <affects>
+      <package>
+	<name>ja-uim</name>
+	<range><lt>0.4.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The uim developers reports:</p>
+	<blockquote cite="http://lists.freedesktop.org/pipermail/uim/2005-February/000996.html">
+	  <p>Takumi ASAKI discovered that uim always trusts environment variables. 
+             But this is not correct behavior, sometimes environment variables 
+             shouldn't be trusted. This bug causes privilege escalation when libuim 
+             is linked against setuid/setgid application. Since GTK+ prohibits 
+             setuid/setgid applications, the bug appears only in 'immodule for Qt' 
+             enabled Qt. (Normal Qt is also safe.)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0503</cvename>
+      <mlist>http://lists.freedesktop.org/pipermail/uim/2005-February/000996.html</mlist>
+      <bid>12604</bid>
+      <url>http://secunia.com/advisories/13981</url>
+    </references>
+    <dates>
+      <discovery>2005-02-21</discovery>
+      <entry>2005-03-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bdad9ada-8a52-11d9-9e53-000a95bc6fae">
     <topic>lighttpd -- script source disclosure vulnerability</topic>
     <affects>
