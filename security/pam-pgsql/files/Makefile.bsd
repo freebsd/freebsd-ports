@@ -6,7 +6,7 @@ SHLIB_NAME=${LIB}.so
 
 LDADD=		-lpam -L${LOCALBASE}/pgsql/lib -lpq
 INCLUDE=	-I${LOCALBASE}/pgsql/include
-CFLAGS+=	-Wall -D_GNU_SOURCE -I/opt/pgsql/include
+CFLAGS+=	-Wall -D_GNU_SOURCE -I${LOCALBASE}/pgsql/include
 
 INTERNALLIB=	we don't need no stinking static lib
 
