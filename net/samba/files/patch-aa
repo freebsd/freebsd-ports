@@ -1,7 +1,7 @@
-*** Makefile.orig	Sun Apr  9 10:14:25 1995
---- Makefile	Sun Apr  9 17:57:32 1995
+*** Makefile.orig	Mon Jan 15 00:02:02 1996
+--- Makefile	Wed Jul 24 11:23:26 1996
 ***************
-*** 5,16 ****
+*** 5,19 ****
   
   # The base manpages directory to put the man pages in
   # Note: $(MANDIR)/man1, $(MANDIR)/man5 and $(MANDIR)/man8 must exist.
@@ -11,10 +11,13 @@
   # architectures or share the samba binaries across NFS then
   # you will probably want to change this layout.
 ! BASEDIR = /usr/local/samba
-  BINDIR = $(BASEDIR)/bin
-  LIBDIR = $(BASEDIR)/lib
-  VARDIR = $(BASEDIR)/var
---- 5,16 ----
+! BINDIR = $(BASEDIR)/bin
+! LIBDIR = $(BASEDIR)/lib
+! VARDIR = $(BASEDIR)/var
+  
+  # WARNING: If you are upgrading, make sure you put all the files
+  # in the right spot! The default positions have changed!
+--- 5,19 ----
   
   # The base manpages directory to put the man pages in
   # Note: $(MANDIR)/man1, $(MANDIR)/man5 and $(MANDIR)/man8 must exist.
@@ -23,12 +26,44 @@
   # The directories to put things in. If you use multiple
   # architectures or share the samba binaries across NFS then
   # you will probably want to change this layout.
-! BASEDIR = ${PREFIX}/samba
-  BINDIR = $(BASEDIR)/bin
-  LIBDIR = $(BASEDIR)/lib
-  VARDIR = $(BASEDIR)/var
+! BINDIR  = $(PREFIX)/bin
+! SBINDIR = $(PREFIX)/sbin
+! ETCDIR  = $(PREFIX)/etc
+! LOGDIR  = /var/log
+  
+  # WARNING: If you are upgrading, make sure you put all the files
+  # in the right spot! The default positions have changed!
 ***************
-*** 222,229 ****
+*** 41,53 ****
+  # set these to where to find various files
+  # These can be overridden by command line switches (see smbd(8))
+  # or in smb.conf (see smb.conf(5))
+! SMBLOGFILE = $(VARDIR)/log.smb
+! NMBLOGFILE = $(VARDIR)/log.nmb
+! CONFIGFILE = $(LIBDIR)/smb.conf
+! LMHOSTSFILE = $(LIBDIR)/lmhosts
+  
+  # the directory where lock files go
+! LOCKDIR = $(VARDIR)/locks
+  
+  # set this to the default group you want your machine to appear in
+  # for browsing. This can also be set in nmbd (see nmbd(8))
+--- 41,53 ----
+  # set these to where to find various files
+  # These can be overridden by command line switches (see smbd(8))
+  # or in smb.conf (see smb.conf(5))
+! SMBLOGFILE = $(LOGDIR)/smb
+! NMBLOGFILE = $(LOGDIR)/nmb
+! CONFIGFILE = $(ETCDIR)/smb.conf
+! LMHOSTSFILE = $(ETCDIR)/lmhosts
+  
+  # the directory where lock files go
+! LOCKDIR = /var/spool/lock
+  
+  # set this to the default group you want your machine to appear in
+  # for browsing. This can also be set in nmbd (see nmbd(8))
+***************
+*** 276,283 ****
   # This is for FreeBSD
   # contributed by kuku@acds.physik.rwth-aachen.de
   # NOTE: You may need to add -DBSD44 if you have password problems
@@ -36,8 +71,8 @@
 ! # LIBSM = -lcrypt 
   
   
-  # This is for NeXT. Note that versions of NeXT less than 3.2 
---- 222,229 ----
+  # This is for NEXTSTEP Release 2.X
+--- 276,283 ----
   # This is for FreeBSD
   # contributed by kuku@acds.physik.rwth-aachen.de
   # NOTE: You may need to add -DBSD44 if you have password problems
@@ -45,4 +80,59 @@
 ! LIBSM = -lcrypt 
   
   
-  # This is for NeXT. Note that versions of NeXT less than 3.2 
+  # This is for NEXTSTEP Release 2.X
+***************
+*** 452,462 ****
+  CFLAGS  = $(CFLAGS5) $(DCE_FLAGS) $(DES_FLAGS) $(PASSWD_FLAGS) $(VTP_FLAGS)
+  LIBS = $(LIBS1) $(LIBSM) $(DCE_LIBS) $(DES_LIB)
+  
+! PROGS1 = smbd smbclient nmbd testparm testprns smbrun smbstatus smbpasswd 
+  PROGS = $(PROGS1) nmblookup
+! SCRIPTS = smbtar addtosmbpass
+  
+! all : CHECK $(PROGS)
+  
+  CHECK :
+  	@$(SHELL) $(srcdir)/checkos.sh $(FLAGSM)
+--- 452,465 ----
+  CFLAGS  = $(CFLAGS5) $(DCE_FLAGS) $(DES_FLAGS) $(PASSWD_FLAGS) $(VTP_FLAGS)
+  LIBS = $(LIBS1) $(LIBSM) $(DCE_LIBS) $(DES_LIB)
+  
+! PROGS1 = smbclient smbrun smbstatus smbpasswd 
+  PROGS = $(PROGS1) nmblookup
+! SCRIPTS = smbtar
+! 
+! SPROGS = smbd nmbd testparm testprns
+! SSCRIPTS = addtosmbpass
+  
+! all : CHECK $(PROGS) $(SPROGS)
+  
+  CHECK :
+  	@$(SHELL) $(srcdir)/checkos.sh $(FLAGSM)
+***************
+*** 520,530 ****
+  install: installbin installman
+  
+  installbin: all
+! 	@$(SHELL) $(srcdir)/installbin.sh $(INSTALLPERMS) $(BASEDIR) $(BINDIR) $(LIBDIR) $(VARDIR) $(PROGS) $(SCRIPTS)
+  
+  # revert to the previously installed version
+  revert:
+  	@$(SHELL) $(srcdir)/revert.sh $(BINDIR) $(PROGS) $(SCRIPTS)
+  
+  installman:
+  	@$(SHELL) $(srcdir)/installman.sh $(MANDIR)
+--- 523,535 ----
+  install: installbin installman
+  
+  installbin: all
+! 	@$(SHELL) $(srcdir)/installbin.sh $(INSTALLPERMS) $(PREFIX) $(BINDIR) $(ETCDIR) $(LOGDIR) $(PROGS) $(SCRIPTS)
+! 	@$(SHELL) $(srcdir)/installbin.sh $(INSTALLPERMS) $(PREFIX) $(SBINDIR) $(ETCDIR) $(LOGDIR) $(SPROGS) $(SSCRIPTS)
+  
+  # revert to the previously installed version
+  revert:
+  	@$(SHELL) $(srcdir)/revert.sh $(BINDIR) $(PROGS) $(SCRIPTS)
++ 	@$(SHELL) $(srcdir)/revert.sh $(SBINDIR) $(SPROGS) $(SSCRIPTS)
+  
+  installman:
+  	@$(SHELL) $(srcdir)/installman.sh $(MANDIR)
