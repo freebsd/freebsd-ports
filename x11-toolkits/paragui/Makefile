@@ -15,7 +15,7 @@ MASTER_SITES=	http://savannah.nongnu.org/download/paragui/stable.pkg/${PORTVERSI
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform high-level application framework and GUI library
 
-LIB_DEPENDS=	physfs-0.1.8:${PORTSDIR}/devel/physfs \
+LIB_DEPENDS=	physfs-0.1.9:${PORTSDIR}/devel/physfs \
 		SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
 		SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf \
