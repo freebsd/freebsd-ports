@@ -42,6 +42,6 @@ do-install:
 	${MKDIR} ${PREFIX}/lib/mozilla-embedded
 	${CHMOD} 755 ${PREFIX}/lib/mozilla-embedded
 	cd ${WRKSRC}/dist/Embed && ${FIND} . | \
-		cpio -pdm -L -R ${INCOWN}:${INCGRP} ${PREFIX}/lib/mozilla-embedded
+		cpio -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/lib/mozilla-embedded
 
 .include <bsd.port.mk>
