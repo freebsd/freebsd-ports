@@ -1,0 +1,15 @@
+bin/vx68k
+include/vx68k/gtk.h
+include/vx68k/human.h
+include/vx68k/iocs.h
+include/vx68k/machine.h
+include/vx68k/memory.h
+include/vx68k/version.h
+@dirrm include/vx68k
+lib/libvx68k.a
+lib/libvx68k.la
+lib/libvx68kdos.a
+lib/libvx68kdos.la
+@unexec install-info --delete %D/info/vx68k.info %D/info/dir
+info/vx68k.info
+@exec install-info %D/info/vx68k.info %D/info/dir

@@ -1,0 +1,6 @@
+The Virtual X68000 Project is an effort to develop a virtual machine or
+emulator of Sharp X68000, as free (Open Source[TM]) software. Unlike other
+works, Virtual X68000 does not require any ROM image to run application
+programs for X68000.
+
+WWW: http://www.vx68k.org/vx68k/
