@@ -80,9 +80,9 @@ post-install:
 	@${CHMOD} 664 ${CFDIR}/lib/forbid
 	@${TOUCH} ${CFDIR}/lib/players/.keep_me
 	@${TOUCH} ${CFDIR}/lib/unique-items/.keep_me
-	@${CHOWN} -R root.games ${CFDIR}
+	@${CHOWN} -R root:games ${CFDIR}
 	@${CHMOD} 0664 ${CFDIR}/lib/highscore
-	@${CHOWN} root.games ${PREFIX}/bin/crossfire
+	@${CHOWN} root:games ${PREFIX}/bin/crossfire
 	@${CHMOD} 2555 ${PREFIX}/bin/crossfire
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/crossfire

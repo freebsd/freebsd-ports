@@ -47,13 +47,13 @@ do-install:
 		${INSTALL_DATA} ${DISTDIR}/980618.pdf ${PREFIX}/share/doc/ascend-radius
 .endif
 		@ ${MKDIR} ${PREFIX}/etc/raddb
-		@ ${CHOWN} root.wheel ${PREFIX}/etc/raddb
+		@ ${CHOWN} root:wheel ${PREFIX}/etc/raddb
 		@ ${CHMOD} 700 ${PREFIX}/etc/raddb
 		for file in clients.example dictionary users.example; do \
 			${INSTALL} -c -o root -g wheel -m 0400 ${WRKDIR}/${WRKPREFIX}/raddb/$$file ${PREFIX}/etc/raddb; \
 		done
 		@ ${MKDIR} /var/log/radacct
-		@ ${CHOWN} root.wheel /var/log/radacct
+		@ ${CHOWN} root:wheel /var/log/radacct
 		@ ${CHMOD} 700 /var/log/radacct
 
 .include <bsd.port.mk>

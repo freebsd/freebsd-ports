@@ -26,7 +26,7 @@ do-install:
 	cd ${WRKSRC}; \
 	${INSTALL_PROGRAM} xfedor ${PREFIX}/bin
 	-${MKDIR} ${XFHELP}
-	${CHOWN} ${SHAREOWN}.${SHAREGRP} ${XFHELP}
+	${CHOWN} ${SHAREOWN}:${SHAREGRP} ${XFHELP}
 	${CHMOD} 755 ${XFHELP}
 	cd ${WRKSRC}/help; \
 	${INSTALL_DATA} * ${XFHELP}

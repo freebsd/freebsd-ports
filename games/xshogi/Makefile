@@ -27,7 +27,7 @@ post-configure:
 post-install:
 	@strip ${PREFIX}/bin/xshogi
 	@${CHMOD} 755 ${PREFIX}/bin/xshogi
-	@${CHOWN} ${BINOWN}.${BINGRP} ${PREFIX}/bin/xshogi
+	@${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/bin/xshogi
 	${INSTALL_MAN} ${WRKSRC}/xshogi.man ${PREFIX}/man/man6/xshogi.6
 
 .include <bsd.port.mk>

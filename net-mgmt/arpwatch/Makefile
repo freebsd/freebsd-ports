@@ -24,7 +24,7 @@ post-install:
 	if [ ! -d ${PREFIX}/arpwatch ]; then				\
 		${MKDIR} ${PREFIX}/arpwatch;				\
 		${CHMOD} 775 ${PREFIX}/arpwatch;			\
-		${CHOWN} root.operator ${PREFIX}/arpwatch;		\
+		${CHOWN} root:operator ${PREFIX}/arpwatch;		\
 	fi
 	${TOUCH} ${PREFIX}/arpwatch/arp.dat
 	${CHMOD} 644 ${PREFIX}/arpwatch/arp.dat

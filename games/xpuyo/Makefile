@@ -20,7 +20,7 @@ RESTRICTED=	"The author\'s ashamed of the quality of this version"
 
 post-install:
 	@${CHMOD} 755 ${PREFIX}/bin/xpuyo
-	@${CHOWN} ${BINOWN}.${BINGRP} ${PREFIX}/bin/xpuyo
+	@${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/bin/xpuyo
 	@${MKDIR} ${PREFIX}/share/doc/xpuyo
 	${INSTALL_DATA} ${FILESDIR}/README ${PREFIX}/share/doc/xpuyo
 

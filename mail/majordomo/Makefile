@@ -46,11 +46,11 @@ post-install:
 		@ for dir in tmp lists/test-l.archive lists/test-l-digest.archive digests/test-l-digest doc; do \
 			${MKDIR} ${PREFIX}/majordomo/$$dir; \
 		done
-		@ ${CHOWN} majordom.majordom ${PREFIX}/majordomo/tmp
+		@ ${CHOWN} majordom:majordom ${PREFIX}/majordomo/tmp
 		@ ${CHMOD} 700 ${PREFIX}/majordomo/tmp
 		@ ${CHMOD} 755 ${PREFIX}/majordomo
 		@ for dir in digests lists lists/test-l.archive lists/test-l-digest.archive digests/test-l-digest doc; do \
-			${CHOWN} majordom.majordom ${PREFIX}/majordomo/$$dir; \
+			${CHOWN} majordom:majordom ${PREFIX}/majordomo/$$dir; \
 			${CHMOD} 775 ${PREFIX}/majordomo/$$dir; \
 		done
 .if !defined(NOPORTDOCS)
@@ -69,7 +69,7 @@ post-install:
 		@ ${LN} -sf test-l.info ${PREFIX}/majordomo/lists/test-l-digest.info
 		@ ${LN} -sf test-l.passwd ${PREFIX}/majordomo/lists/test-l-digest.passwd
 		@ ${CHMOD} 660 ${PREFIX}/majordomo/lists/test-l.passwd
-		@ ${CHOWN} -R majordom.majordom ${PREFIX}/majordomo/lists
+		@ ${CHOWN} -R majordom:majordom ${PREFIX}/majordomo/lists
 		@ ${CHMOD} -R 664 ${PREFIX}/majordomo/lists
 		@ ${CHMOD} 755 ${PREFIX}/majordomo/lists
 		@ ${CHMOD} 755 ${PREFIX}/majordomo/lists/test-l.archive

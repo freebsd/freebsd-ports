@@ -68,7 +68,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/${DISTNAME}/source/script/mksmbpasswd.sh ${PREFIX}/bin/make_smbpasswd
 	if [ ! -d ${SAMBA_PRIVATE} ] ; then				\
 		${MKDIR} ${SAMBA_PRIVATE} ;				\
-		${CHOWN} root.wheel ${SAMBA_PRIVATE} ;			\
+		${CHOWN} root:wheel ${SAMBA_PRIVATE} ;			\
 	fi
 	${CHMOD} 700 ${SAMBA_PRIVATE}
 	if [ ! -f ${SAMBA_PRIVATE}/smbpasswd ] ; then			\
@@ -76,7 +76,7 @@ post-install:
 		${CHMOD} 600 ${SAMBA_PRIVATE}/smbpasswd ;			\
 	fi
 	${CHMOD} 500 ${SAMBA_PRIVATE}
-	${CHOWN} root.wheel ${PREFIX}/bin/smbpasswd
+	${CHOWN} root:wheel ${PREFIX}/bin/smbpasswd
 	${CHMOD} 111 ${PREFIX}/bin/smbpasswd
 .if defined(PACKAGE_BUILDING)
 	${ECHO} "private/smbpasswd" >> ${TMPPLIST}

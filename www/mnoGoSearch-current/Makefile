@@ -64,7 +64,7 @@ pre-install:
 post-install:
 	cd ${WRKSRC} && ${TAR} --create --file - --exclude CVS create | (cd ${PREFIX}/share/mnogosearch && ${TAR} xf -)
 	${CHMOD} 700 /var/mnogosearch/cache
-	${CHOWN} -R nobody.nogroup /var/mnogosearch/
+	${CHOWN} -R nobody:nogroup /var/mnogosearch/
 	${INSTALL_DATA} ${WRKSRC}/INSTALL ${PREFIX}/share/doc/mnogosearch
 	${INSTALL_DATA} ${FILESDIR}/spelld.sh-dist ${PREFIX}/etc/rc.d/
 	@${ECHO}

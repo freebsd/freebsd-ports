@@ -141,7 +141,7 @@ do-install:
 		cpio -dump -R ${BINOWN}.${BINGRP} ${PREFIX}
 	@cd ${PREFIX}; \
 	    ${GREP} '^lib/m3/' ${PLIST}.real | xargs ${CHMOD} go=u-w; \
-	    find -X lib/m3 -type d | xargs ${CHOWN} ${BINOWN}.${BINGRP}; \
+	    find -X lib/m3 -type d | xargs ${CHOWN} ${BINOWN}:${BINGRP}; \
 	    find -X lib/m3 -type d | xargs ${CHMOD} 755
 	@${ECHO_MSG} "Installing copyright notice"
 	@if [ ! -d ${PREFIX}/share/modula-3-lib ]; then \

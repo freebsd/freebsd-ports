@@ -43,7 +43,7 @@ do-install:
 .endif
 	@cd ${WRKSRC} && (tar cf - dgdb reslib fd_data | \
 		(cd ${PREFIX}/share/nab; tar xf -))
-	@(cd ${PREFIX}/share; ${CHOWN} -R ${SHAREOWN}.${SHAREGRP} nab; \
+	@(cd ${PREFIX}/share; ${CHOWN} -R ${SHAREOWN}:${SHAREGRP} nab; \
 		${CHMOD} -R ugo+rX-w nab)
 	@-(cd ${PREFIX}/share/nab && ${LN} -sf ../NDB coords)
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/*     ${PREFIX}/bin

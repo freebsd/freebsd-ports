@@ -160,7 +160,7 @@ post-install:
 	@ ${SED} "s=!!PG_PATH!!=${PREFIX}/${INSTALL_DIR}=g ; s=!!PGSQL_UID!!=${PGSQL_UID}=g" \
 		< ${FILESDIR}/pgsql.sh.tmpl > ${PREFIX}/etc/rc.d/pgsql.sh
 	@ ${CHMOD} 554 ${PREFIX}/etc/rc.d/pgsql.sh
-	@ ${CHOWN} root.${PGSQL_GID} ${PREFIX}/etc/rc.d/pgsql.sh
+	@ ${CHOWN} root:${PGSQL_GID} ${PREFIX}/etc/rc.d/pgsql.sh
 	@ ${INSTALL_DATA} ${FILESDIR}/post-install-notes ${PREFIX}/${INSTALL_DIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/${INSTALL_DIR}

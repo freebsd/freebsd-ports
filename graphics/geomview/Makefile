@@ -77,26 +77,26 @@ post-install:
 	${RM} -rf ${PREFIX}/share/geomview/${i}
 	${MKDIR} ${PREFIX}/share/geomview/${i}
 	${CP} -pr ${WRKSRC}/${i} ${PREFIX}/share/geomview
-	${CHOWN} -R ${SHAREOWN}.${SHAREGRP} ${PREFIX}/share/geomview/${i}
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/geomview/${i}
 .endfor
 	${CHMOD} -R g-w ${WRKSRC}/modules
 .for i in ${SHARE_MODS}
 	${RM} -rf ${PREFIX}/share/geomview/modules/${i}
 	${MKDIR} ${PREFIX}/share/geomview/modules/${i}
 	${CP} -pr ${WRKSRC}/modules/${i} ${PREFIX}/share/geomview/modules
-	${CHOWN} -R ${SHAREOWN}.${SHAREGRP} ${PREFIX}/share/geomview/modules/${i}
+	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/geomview/modules/${i}
 .endfor
 .for i in ${LIBEXEC_DIRS}
 	${RM} -rf ${PREFIX}/libexec/geomview/${i}
 	${MKDIR} ${PREFIX}/libexec/geomview/${i}
 	${CP} -pr ${WRKSRC}/${i} ${PREFIX}/libexec/geomview/
-	${CHOWN} -R ${BINOWN}.${BINGRP} ${PREFIX}/libexec/geomview/${i}
+	${CHOWN} -R ${BINOWN}:${BINGRP} ${PREFIX}/libexec/geomview/${i}
 .endfor
 .for i in ${LIBEXEC_MODS}
 	${RM} -rf ${PREFIX}/libexec/geomview/modules/${i}
 	${MKDIR} ${PREFIX}/libexec/geomview/modules/${i}
 	${CP} -pr ${WRKSRC}/modules/${i} ${PREFIX}/libexec/geomview/modules
-	${CHOWN} -R ${BINOWN}.${BINGRP} ${PREFIX}/libexec/geomview/modules/${i}
+	${CHOWN} -R ${BINOWN}:${BINGRP} ${PREFIX}/libexec/geomview/modules/${i}
 .endfor
 
 .include <bsd.port.mk>

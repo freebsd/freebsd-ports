@@ -31,6 +31,6 @@ do-install:
 	${MKDIR} ${INCDIR} ${LIBDIR}
 	${CP} -Rp ${WRKSRC}/Incs/* ${INCDIR}
 	${CP} -Rp ${WRKSRC}/GCC\ Libraries/* ${LIBDIR}
-	${CHOWN} -R root.wheel ${INCDIR} ${LIBDIR}
+	${CHOWN} -R root:wheel ${INCDIR} ${LIBDIR}
 
 .include <bsd.port.post.mk>

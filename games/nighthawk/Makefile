@@ -22,7 +22,7 @@ CONFIGURE_ARGS=	--with-scores=/var/games/nighthawk.scores --enable-sound
 MAN6=		nighthawk.6
 
 post-install:
-	${CHOWN} root.games ${PREFIX}/bin/nighthawk
+	${CHOWN} root:games ${PREFIX}/bin/nighthawk
 	${CHMOD} g+s ${PREFIX}/bin/nighthawk
 	${SH} pkg-install ${PORTNAME} POST-INSTALL
 

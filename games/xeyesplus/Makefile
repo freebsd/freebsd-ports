@@ -19,6 +19,6 @@ USE_XPM=	yes
 
 post-install:
 	@${CHMOD} 755 ${PREFIX}/bin/xeyes+
-	@${CHOWN} ${BINOWN}.${BINGRP} ${PREFIX}/bin/xeyes+
+	@${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/bin/xeyes+
 
 .include <bsd.port.mk>

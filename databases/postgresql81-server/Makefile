@@ -142,7 +142,7 @@ post-install:
 		< ${FILESDIR}/pgsql.sh.tmpl \
 		> ${PREFIX}/etc/rc.d/010.pgsql.sh
 	@ ${CHMOD} 554 ${PREFIX}/etc/rc.d/010.pgsql.sh
-	@ ${CHOWN} root.pgsql ${PREFIX}/etc/rc.d/010.pgsql.sh
+	@ ${CHOWN} root:pgsql ${PREFIX}/etc/rc.d/010.pgsql.sh
 .if defined(WITH_TCL)
 # Preparing a loadable TCL-package (pkgIndex.tcl)
 	@${MKDIR} ${PREFIX}/lib/tcl${WITH_TCL}/Pgtcl1.3

@@ -30,15 +30,15 @@ post-install:
 
 	@${ECHO} "Creating spool directories..."
 	@${MKDIR} ${SPOOLBASE}
-	@${CHOWN} root.uucp ${SPOOLBASE}
+	@${CHOWN} root:uucp ${SPOOLBASE}
 	@${CHMOD} 0710 ${SPOOLBASE}
 
 	@${MKDIR} ${SPOOLBASE}/mqueue
-	@${CHOWN} uucp.uucp ${SPOOLBASE}/mqueue
+	@${CHOWN} uucp:uucp ${SPOOLBASE}/mqueue
 	@${CHMOD} 0700 ${SPOOLBASE}/mqueue
 
 	@${MKDIR} ${SPOOLBASE}/etc
-	@${CHOWN} root.uucp ${SPOOLBASE}/etc
+	@${CHOWN} root:uucp ${SPOOLBASE}/etc
 	@${CHMOD} 0710 ${SPOOLBASE}/etc
 .if !defined(BATCH)
 	@${CP} -p /etc/resolv.conf ${SPOOLBASE}/etc
@@ -61,7 +61,7 @@ post-install:
 		< ${FILESDIR}/smtpd.sh		\
 		> ${PREFIX}/etc/rc.d/smtpd.sh
 	@${CHMOD} 0700 ${PREFIX}/etc/rc.d/smtpd.sh
-	@${CHOWN} 0.0 ${PREFIX}/etc/rc.d/smtpd.sh
+	@${CHOWN} 0:0 ${PREFIX}/etc/rc.d/smtpd.sh
 
 	@${ECHO} "Done!"
 

@@ -35,8 +35,8 @@ post-install:
 	 ${TAR} -C ${WRKSRC}/doc -c -f - . | ${TAR} -C ${PREFIX}/share/doc/aolserver -x -f -
 
 # Permissions
-	${CHOWN} nobody.nogroup ${PREFIX}/aolserver/servers/server1/modules/nslog
-	${CHOWN} nobody.nogroup ${PREFIX}/aolserver/log
+	${CHOWN} nobody:nogroup ${PREFIX}/aolserver/servers/server1/modules/nslog
+	${CHOWN} nobody:nogroup ${PREFIX}/aolserver/log
 
 # Startup file
 	@if [ ! -f ${PREFIX}/etc/rc.d/aolserver.sh ]; then \
