@@ -1,0 +1,75 @@
+--- install.pl.orig	Thu Dec 14 17:17:23 1995
++++ install.pl	Fri May  2 20:13:32 1997
+@@ -12,7 +12,7 @@
+ 
+ # usage: install.pl [full_path_to_perl]
+ #
+-$ENV{'PATH'} = '/usr/ucb:/usr/bin:/bin:/usr/local/bin' ;
++$ENV{'PATH'} = '/usr/bin:/bin:/usr/local/bin' ;
+ $ENV{'IFS'} = '' if $ENV{'IFS'} ne '' ;
+ 
+ 
+@@ -21,8 +21,9 @@
+ ##
+        $PERL_LIB_DIR = "/usr/local/lib/perl" ;
+        $PERL_BIN_DIR = "/usr/local/bin" ;
+-     $SWATCH_BIN_DIR = "/usr/local/etc" ;
++     $SWATCH_BIN_DIR = "/usr/local/bin" ;
+      $SWATCH_MAN_DIR = "/usr/local/man" ;
++     $SWATCH_LIB_DIR = "/usr/local/lib" ;
+ $SWATCH_PROG_MAN_EXT = "8" ;
+ $SWATCH_CONF_MAN_EXT = "5" ;
+    $SWATCH_DATA_MODE = 444 ;
+@@ -30,14 +31,15 @@
+               $OWNER = "root" ;
+               $GROUP = "wheel" ;
+    $SWATCH_PROG_NAME = "swatch" ;
++   $SWATCH_CONF_NAME = "swatch.conf" ;
+     $SWATCH_PROG_MAN = "swatch.prog.man" ;
+     $SWATCH_CONF_MAN = "swatch.conf.man" ;
+   $SWATCH_ACTION_LIB = "sw_actions.pl" ;
+     $SWATCH_HIST_LIB = "sw_history.pl" ;
+ 
+                 $SED = "/usr/bin/sed" ; 
+-               $COPY = "/usr/bin/cp" ;
+-	      $CHMOD = "/usr/bin/chmod" ;
++               $COPY = "/bin/cp" ;
++	      $CHMOD = "/bin/chmod" ;
+ 
+ if ( ! -f $SED ) {
+     $SED = `which sed` ;
+@@ -60,7 +62,7 @@
+ }
+ $PERL_BIN_DIR = substr($PERL_BIN_DIR, 0, rindex($PERL_BIN_DIR, '/')) ;
+ 
+-$ready = 0 ;
++$ready = 1 ;
+ while (!$ready) {
+     &get_some_answers() ;
+     &print_values() ;
+@@ -69,14 +71,13 @@
+     $ready = 1 if ($ans eq 'y' || $ans eq 'Y') ;
+ }
+ 
+-print "\nAre you ready for me to start the installation (y or n)? " ;
+-$ans = <STDIN> ; chop $ans ;
+-&do_the_install() if ($ans eq 'y' || $ans eq 'Y') ;
++&do_the_install();
+ 
+ 
+ ##
+ ##
+ ##
++
+ sub get_some_answers {
+     local($question) ;
+ 
+@@ -139,7 +140,7 @@
+     &install_it($swatch_uid, $swatch_gid, $SWATCH_DATA_MODE,
+ 		$SWATCH_PROG_MAN, "$SWATCH_MAN_DIR/man$SWATCH_PROG_MAN_EXT/$SWATCH_PROG_NAME.$SWATCH_PROG_MAN_EXT") ;
+     &install_it($swatch_uid, $swatch_gid, $SWATCH_DATA_MODE,
+-		$SWATCH_CONF_MAN, "$SWATCH_MAN_DIR/man$SWATCH_CONF_MAN_EXT/$SWATCH_PROG_NAME.$SWATCH_CONF_MAN_EXT") ;
++		$SWATCH_CONF_MAN, "$SWATCH_MAN_DIR/man$SWATCH_CONF_MAN_EXT/$SWATCH_CONF_NAME.$SWATCH_CONF_MAN_EXT") ;
+ }
+ 
+ 
