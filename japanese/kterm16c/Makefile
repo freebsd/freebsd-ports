@@ -11,13 +11,20 @@ CATEGORIES=	japanese x11
 MASTER_SITES=	${MASTER_SITE_XCONTRIB} \
 		ftp://ftp.interface-business.de/pub/outgoing/ \
 		ftp://ftp.cs.bris.ac.uk/pub/users/hedley/
+MASTER_SITE_SUBDIR=	applications
 DISTNAME=	kterm-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		pcemu1.01alpha.tar.gz
+DIST_SUBDIR=	kterm
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MASTER_SITE_SUBDIR=	applications
+PATCH_SITES=	ftp://ftp.sra.co.jp/pub/x11/kterm/ \
+		http://www.asahi-net.or.jp/~hc3j-tkg/kterm/
+PATCHFILES=	${DISTNAME}.NFS-xauth.patch \
+		${DISTNAME}-wpr1.patch.gz
+PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	kiri@pis.toba-cmt.ac.jp
+MAINTAINER=	kiri@FreeBSD.org
 COMMENT=	An xterm that speaks Japanese with 16 colors like on a VGA
 
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
@@ -30,14 +37,6 @@ USE_XPM=	yes
 .if ${XFREE86_VERSION} == 4
 BUILD_DEPENDS+=	bdftopcf:${PORTSDIR}/x11/XFree86-4-clients
 .endif
-
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-DIST_SUBDIR=	kterm
-PATCH_SITES=	ftp://ftp.sra.co.jp/pub/x11/kterm/ \
-		http://www.asahi-net.or.jp/~hc3j-tkg/kterm/
-PATCHFILES=	${DISTNAME}.NFS-xauth.patch \
-		${DISTNAME}-wpr1.patch.gz
-PATCH_DIST_STRIP= -p1
 
 DOCDIR=		${PREFIX}/share/doc/kterm16c
 
