@@ -249,6 +249,7 @@
     SUBDIR += lire
     SUBDIR += livecd
     SUBDIR += lmmon
+    SUBDIR += lmon
     SUBDIR += log_analysis
     SUBDIR += logmon
     SUBDIR += logrotate
