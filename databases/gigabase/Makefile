@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gigabase
-PORTVERSION=	2.97
+PORTVERSION=	2.98
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.garret.ru/~knizhnik/
