@@ -2,4 +2,4 @@ bin/libnovaconfig
 include/libnova.h
 lib/libnova.a
 lib/libnova.so
-lib/libnova.so.0
+lib/libnova.so.1
