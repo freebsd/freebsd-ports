@@ -34,6 +34,14 @@ INSTALLS_SHLIB=	yes
 INSTALL_TARGET=	install install_docs
 .endif
 
+# the db install_docs target installs an empty directory, kill it
+# (it's not packaged and it's not needed):
+
+.if !defined(NOPORTDOCS)
+post-install:
+	@${RMDIR} ${PREFIX}/share/doc/db4/ref/splash
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}

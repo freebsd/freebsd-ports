@@ -860,7 +860,6 @@ lib/libdb4_cxx.so.0
 %%PORTDOCS%%@dirrm share/doc/db4/ref/transapp
 %%PORTDOCS%%@dirrm share/doc/db4/ref/test
 %%PORTDOCS%%@dirrm share/doc/db4/ref/tcl
-%%PORTDOCS%%@dirrm share/doc/db4/ref/splash
 %%PORTDOCS%%@dirrm share/doc/db4/ref/simple_tut
 %%PORTDOCS%%@dirrm share/doc/db4/ref/sendmail
 %%PORTDOCS%%@dirrm share/doc/db4/ref/rpc
