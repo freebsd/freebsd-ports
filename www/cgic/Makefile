@@ -6,32 +6,25 @@
 #
 
 PORTNAME=	cgic
-PORTVERSION=	1.06
+PORTVERSION=	1.07
 CATEGORIES=	www
 MASTER_SITES=	http://www.boutell.com/cgic/
-DISTNAME=	${PORTNAME}106
-EXTRACT_SUFX=	.tar.Z
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 
 MAINTAINER=	ports@FreeBSD.org
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
+MAKEFILE=	${FILESDIR}/Makefile.lib
 INSTALLS_SHLIB=	yes
-
-ALL_TARGET=	libcgic.so.1
-
-do-install:
-	@ ${INSTALL_DATA} ${WRKSRC}/cgic.h ${PREFIX}/include
-	@ ${INSTALL_DATA} ${WRKSRC}/libcgic.so.1 ${PREFIX}/lib
-	@ ${LN} -s ${PREFIX}/lib/libcgic.so.1 ${PREFIX}/lib/libcgic.so
-	@ ${MKDIR} ${PREFIX}/share/examples/cgic
-	@ ${INSTALL_DATA} ${WRKSRC}/capture.c ${PREFIX}/share/examples/cgic
-	@ ${INSTALL_DATA} ${WRKSRC}/cgictest.c ${PREFIX}/share/examples/cgic
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/cgic
-.for file in cgic.html cgic.txt license.txt readme.txt support.txt testform.html
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/cgic
-.endfor
+	@${MKDIR} ${PREFIX}/share/examples/cgic
+	${INSTALL_DATA} ${WRKSRC}/capture.c ${PREFIX}/share/examples/cgic
+	${INSTALL_DATA} ${WRKSRC}/cgictest.c ${PREFIX}/share/examples/cgic
+	@${MKDIR} ${PREFIX}/share/doc/cgic
+	${INSTALL_DATA} ${WRKSRC}/*.html ${PREFIX}/share/doc/cgic
+	${INSTALL_DATA} ${WRKSRC}/*.txt ${PREFIX}/share/doc/cgic
 .endif
 
 .include <bsd.port.mk>
