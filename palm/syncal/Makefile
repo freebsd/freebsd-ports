@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	syncal
-PORTVERSION=	0.8.7
+PORTVERSION=	0.8.9
 CATEGORIES=	palm comms deskutils
 MASTER_SITES=	http://hopf.math.nwu.edu/syncal/ \
 		ftp://ftp.Uni-Bielefeld.DE/pub/systems/FreeBSD/lkoeller/
