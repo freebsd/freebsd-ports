@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	ftp://cs.nott.ac.uk/nott-fp/languages/haskell/gofer/
 DISTNAME=	gofer230a
 
-MAINTAINER=	hsu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/src
 LIBDIR=		${PREFIX}/lib/Gofer
