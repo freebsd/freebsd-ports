@@ -1,4 +1,3 @@
 %%PORTDOCS%%share/doc/exim/filter.ps
-%%PORTDOCS%%share/doc/exim/oview.ps
 %%PORTDOCS%%share/doc/exim/spec.ps
 @unexec rmdir %D/share/doc/exim 2>/dev/null || true
