@@ -7,7 +7,7 @@
 
 PORTNAME=	http_ping
 PORTVERSION=	20010709
-CATEGORIES=	net
+CATEGORIES=	net www
 MASTER_SITES=	http://www.acme.com/software/http_ping/
 DISTNAME=	${PORTNAME}_09jul2001
 
