@@ -1,0 +1,41 @@
+#! /bin/sh
+#
+# $Id$
+
+if [ $# -ne 2 ]; then
+    echo "Usage: $0 oldpath newpath" >&2
+    exit 1
+fi
+
+oldpath=$1
+newpath=$2
+
+pkgdir=lib/m3/pkg
+
+t1=/tmp/fixpaths$$a
+trap "rm -f $t1" 0 1 2 3 15
+touch -f $t1
+chmod 600 $t1
+
+# Fix absolute pathnames in files.
+
+cd ${oldpath}/${pkgdir}
+find . -type f \( -name .M3IMPTAB -o -name FreeBSD2 \) >${t1}
+
+cd ${newpath}/${pkgdir}
+for i in `cat ${t1}`; do
+    test -f ${i}.bak || cp -p ${i} ${i}.bak
+    rm -f ${i}
+    sed -e "s|${oldpath}|${newpath}|g" ${i}.bak >${i} && rm -f ${i}.bak
+done
+
+# Fix absolute symbolic links.
+
+cd ${oldpath}
+find . -type l -ls | \
+    sed -e \
+    "s|^.* \([^ ][^ ]*\) -> ${oldpath}/\([^ ]*\)|ln -sf ${newpath}/\2 \1|" \
+    >${t1}
+
+cd ${newpath}
+. ${t1}

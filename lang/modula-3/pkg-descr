@@ -1,0 +1,39 @@
+This is a port of Modula-3 release 3.5.3, from DEC Systems Research
+Center.  Modula-3 is a modern compiled programming language designed
+for systems programming as well as large applications.  Some notable
+features include:
+
+    * A clean type system with good support for object-oriented
+      programming.
+    * A powerful module system.
+    * Lightweight threads, fully integrated into the language and all of
+      the libraries.
+    * Generics.
+    * Exceptions.
+    * Automatic storage management by a multithreaded, incremental,
+      generational garbage collector.
+    * Guaranteed type safety, plus the ability to confine unsafe code
+      behind safe interfaces.
+    * Elegance and simplicity, even compared with less powerful
+      languages such as C++ and Ada.
+    * Ease of integration with existing C libraries.
+    * A huge collection of runtime libraries, providing:
+	- Text manipulation.
+	- Generic containers (lists, sequences, tables, etc.).
+	- Atoms and symbolic expressions.
+	- An extensible stream I/O system.
+	- Persistent objects.
+	- Operating system interfaces.
+	- Networking.
+	- Very nice object-oriented graphics facilities, and some
+	  convenient tools for building GUIs.
+    * A convenient browser.
+
+A wealth of information about Modula-3 can be found at:
+
+    http://www.research.digital.com/SRC/modula-3/html/home.html
+
+This port includes patches for a number of bugs found since the release
+of DEC SRC's version 3.5.3.
+
+-- John Polstra <jdp@polstra.com>
