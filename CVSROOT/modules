@@ -9384,6 +9384,7 @@ yamt		ports/audio/yamt
 yank		ports/deskutils/yank
 yap		ports/lang/yap
 yape		ports/emulators/yape
+yaph		ports/net/yaph
 yaps		ports/comms/yaps
 yasm		ports/devel/yasm
 yatex		ports/print/yatex
