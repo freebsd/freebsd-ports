@@ -7,7 +7,7 @@
 
 PORTNAME=	tin
 PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTREVISION=   2
 CATEGORIES+=	news ipv6
 MASTER_SITES=	http://mirrors.rcn.net/pub/news/tin/v1.6/ \
 		ftp://mirrors.rcn.net/pub/news/tin/v1.6/ \
@@ -19,7 +19,8 @@ COMMENT=	Easy-to-use threaded newsreader with NOV/NNTP support
 
 LIB_DEPENDS=	uu.2:${PORTSDIR}/converters/uulib \
 		iconv.3:${PORTSDIR}/converters/libiconv \
-		intl.5:${PORTSDIR}/devel/gettext
+		intl.5:${PORTSDIR}/devel/gettext \
+		pcre.0:${PORTSDIR}/devel/pcre
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -33,6 +34,7 @@ CONFIGURE_ARGS=	--with-nntp-default-server=news \
 		--with-defaults-dir=${PREFIX}/etc \
 		--with-editor=/usr/bin/ee \
 		--enable-nls \
+		--with-pcre=yes \
 		--with-screen=ncurses \
 		--enable-break-long-lines \
 		--with-libiconv-prefix=${LOCALBASE} \
@@ -98,9 +100,6 @@ post-patch:
 .if defined(WITH_TIN_CANLOCK)
 	${PATCH} ${PATCH_ARGS} ${WRKSRC}/src/Makefile.in -i ${FILESDIR}/canlock.patch
 .endif
-
-pre-configure:
-	${CP} ${FILESDIR}/pcre.h ${WRKSRC}/pcre
 
 pre-build:
 .if defined(WITH_TIN_CANLOCK)
