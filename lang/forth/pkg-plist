@@ -5,3 +5,5 @@ share/pfe/help/helpidx
 share/pfe/help/index
 share/pfe/help/misc.hlp
 share/pfe/help/showhelp
+@dirrm share/pfe/help
+@dirrm share/pfe
