@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	qiv
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.klografx.net/qiv/download/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	trevor@FreeBSD.org
+
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -30,6 +32,7 @@ do-configure:
 	         -e 's#RANDOM GETOPT_LONG#RANDOM#' \
 	         -e 's#gcc#${CC}#' \
 	         -e 's#-O2#${CFLAGS}#' \
+	         -e 's#libs-gdk`#libs-gdk` -lgnugetopt#' \
 		${WRKSRC}/Makefile.pre_sed > ${WRKSRC}/Makefile
 
 do-install:
