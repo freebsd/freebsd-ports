@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	onyx
-PORTVERSION=	4.4.3
+PORTVERSION=	5.0.0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.canonware.com/download/onyx/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jasone@canonware.com
 COMMENT=	Embeddable stack-based threaded interpreted language
 
 BUILD_DEPENDS=	cook:${PORTSDIR}/devel/cook
@@ -22,8 +22,7 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--with-libedit-prefix=${LOCALBASE} \
-		--with-pcre-prefix=${LOCALBASE} \
-		--disable-slate
+		--with-pcre-prefix=${LOCALBASE}
 INSTALLS_SHLIB=	yes
 
 MAN1=		onyx.1 onyx_config.1
