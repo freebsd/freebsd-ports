@@ -129,6 +129,7 @@ do-extract:
 	unzip -qo ${DISTDIR}/${DIST_SUBDIR}/${i} -d ${WRKSRC}
 .endfor
 	- ${MV} ${WRKSRC}/jre-image-i386 ${WRKSRC}/bin/plugins/java2
+	- ${MV} ${WRKSRC}/jre1.3.1_02 ${WRKSRC}/bin/plugins/java2
 	cd ${WRKSRC}/bin/plugins && ${LN} -s java2/plugin/i386/ns600/libjavaplugin_oji.so;
 
 do-patch:
