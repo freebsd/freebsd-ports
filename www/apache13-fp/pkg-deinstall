@@ -65,7 +65,7 @@ remove_apache_doc_root ()
 
     if [ -d ${AP_DATA} ]; then
 	if [ -d ${AP_DATA}/images ] ; then
-	    for file in apache_pb.gif fplogo.gif powerlogo.gif
+	    for file in apache_pb.gif createdwFP.gif powerlogo.gif
 	    {
 		if remove_file ${IMAGES_DIR} ${AP_DATA}/images ${file}; then
 		    if [ -d ${IMAGES_VTI} -a -f ${IMAGES_VTI}/${file} ] ; then

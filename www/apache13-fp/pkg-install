@@ -85,7 +85,7 @@ create_apache_doc_root ()
 
     if [ ! -d ${AP_DATA} ]; then
 	/bin/mkdir -p ${AP_DATA}/images
-	for file in apache_pb.gif fplogo.gif powerlogo.gif
+	for file in apache_pb.gif createdwFP.gif powerlogo.gif
 	{
 	    /bin/cp -rp ${IMAGES_DIR}/${file} ${AP_DATA}/images
 	}
@@ -118,9 +118,9 @@ comment_files ()
 	   [ ! "`grep description ${IMAGES_VTI}/apache_pb.gif`" ] ; then
 	    /bin/echo "vti_description:SW|Apache Webserver" >> ${IMAGES_VTI}/apache_pb.gif
 	fi
-	if [ -f ${IMAGES_VTI}/fplogo.gif ] && \
-	   [ ! "`grep description ${IMAGES_VTI}/fplogo.gif`" ] ; then
-	    /bin/echo "vti_description:SW|Created with Microsoft FrontPage" >> ${IMAGES_VTI}/fplogo.gif
+	if [ -f ${IMAGES_VTI}/createdwFP.gif ] && \
+	   [ ! "`grep description ${IMAGES_VTI}/createdwFP.gif`" ] ; then
+	    /bin/echo "vti_description:SW|Created and Managed with Microsoft FrontPage" >> ${IMAGES_VTI}/createdwFP.gif
 	fi
 	if [ -f ${IMAGES_VTI}/powerlogo.gif ] && \
 	   [ ! "`grep description ${IMAGES_VTI}/powerlogo.gif`" ] ; then

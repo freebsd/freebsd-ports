@@ -9,31 +9,17 @@ PORTNAME=	apache
 PKGNAMESUFFIX=	_fp
 PORTVERSION=	1.3.27
 CATEGORIES=	www
-MASTER_SITES=	http://www.apache.org/dist/httpd/ \
-		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/httpd/ \
-		ftp://ftp.rge.com/pub/infosystems/apache/dist/httpd/ \
-		ftp://apache.compuex.com/pub/apache/dist/httpd/ \
-		ftp://apache.arctic.org/pub/apache/dist/httpd/ \
-		ftp://ftp.epix.net/pub/apache/dist/httpd/ \
-		ftp://ftp.ameth.org/pub/mirrors/ftp.apache.org/apache/dist/httpd/ \
-		ftp://ftp.connectnet.com/pub/www/apache/httpd/ \
-		ftp://apache.technomancer.com/mirrors/apache/dist/httpd/ \
-		ftp://ftp.raver.net/pub/ftp.apache.org/httpd/ \
-		ftp://www3.service.digital.com/apache/dist/httpd/ \
-		ftp://galileo.galilei.com/pub/apache/httpd/ \
-		ftp://ftp.mtnranch.net/pub/apache/dist/httpd/ \
-		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/httpd/ \
-		ftp://apache.nextpath.com/pub/apache/dist/httpd/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/apache/dist/httpd,} \
+MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		http://www.freebsd.org/gifs/:powerlogo \
-		http://officeupdate.microsoft.com/frontpage/wpp/serk/:fplogo
+		http://www.microsoft.com/frontpage/images/:fplogo
 DISTNAME=	${PORTNAME}_${PORTVERSION}
-DISTFILES=	${APACHE} powerlogo.gif:powerlogo fplogo.gif:fplogo
+DISTFILES=	${APACHE} powerlogo.gif:powerlogo createdwFP.gif:fplogo
 
 MAINTAINER=	hetzels@westbend.net
 COMMENT=	The Apache webserver with MS Frontpage Module
 
-#PATCH_SITES=	http://www.apache.org/dist/patches/apply_to_${PORTVERSION}/
+#PATCH_SITES=	${MASTER_SITE_APACHE_HTTPD}
+#PATCH_SITE_SUBDIR=	patches/apply_to_${PORTVERSION}/
 #PATCHFILES=
 
 APACHE=		${DISTNAME}${EXTRACT_SUFX}
@@ -149,7 +135,8 @@ post-install:
 		${CHMOD} 751 ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
 	@${INSTALL} -c -m 644 ${DISTDIR}/powerlogo.gif ${IMAGES_DIR}
-	@${INSTALL} -c -m 644 ${DISTDIR}/fplogo.gif ${IMAGES_DIR}
+	@${INSTALL} -c -m 644 ${DISTDIR}/createdwFP.gif ${IMAGES_DIR}
+	@${INSTALL_DATA} ${FILESDIR}/createdwFP.txt ${DOCSDIR}
 	@${INSTALL} -c -m 644 ${DOCSDIR}/apache_pb.gif ${IMAGES_DIR}
 	@( cd ${DOCSDIR} ; if [ -h images ] ; then ${RM} -f images ; fi ; ln -fs manual/images images)
 	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
