@@ -103,8 +103,6 @@ share/services/rtsp.protocol
 @unexec rmdir %D/share/locale/pt 2>/dev/null || true
 @unexec rmdir %D/share/locale/pl/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/pl 2>/dev/null || true
-@unexec rmdir %D/share/locale/mt/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/mt 2>/dev/null || true
 @unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/fi 2>/dev/null || true
 @unexec rmdir %D/share/locale/el/LC_MESSAGES 2>/dev/null || true
