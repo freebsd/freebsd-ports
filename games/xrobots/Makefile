@@ -8,10 +8,10 @@
 PORTNAME=	xrobots
 PORTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://hpux.csc.liv.ac.uk/hpux/Games/Arcade/xrobots-1.0/
+MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTNAME=	${PKGNAME}-ss-10.20
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	edwin@mavetju.org
 
 USE_IMAKE=	yes
 WRKSRC=		${WRKDIR}/xrobots-1.0
@@ -19,5 +19,8 @@ MAN6=		xrobots.6
 
 post-install:
 	${INSTALL} -c -g games -m 664 ${FILESDIR}/xrobotscores ${PREFIX}/lib/X11
+
+post-patch:
+	${PERL} -pi -e 's|__PREFIX__|${PREFIX}|g' ${WRKSRC}/xrobots.man ${WRKSRC}/Imakefile
 
 .include <bsd.port.mk>
