@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webunit
-PORTVERSION=	20011002
+PORTVERSION=	20011019
 CATEGORIES=	www textproc ruby
 MASTER_SITES=	http://xp.jbt.co.jp/download/webunit/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -18,7 +18,8 @@ MAINTAINER=	knu@FreeBSD.org
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/runit/assert.rb:${PORTSDIR}/devel/ruby-unit \
 		${RUBY_SITELIBDIR}/html-parser.rb:${PORTSDIR}/textproc/ruby-html-parser \
 		${RUBY_SITELIBDIR}/htmlrepair.rb:${PORTSDIR}/textproc/ruby-htmlrepair \
-		${RUBY_SITELIBDIR}/htmlsplit.rb:${PORTSDIR}/textproc/ruby-htmlsplit
+		${RUBY_SITELIBDIR}/htmlsplit.rb:${PORTSDIR}/textproc/ruby-htmlsplit \
+		${RUBY_SITELIBDIR}/nqxml/info.rb:${PORTSDIR}/textproc/ruby-nqxml
 
 USE_RUBY=	yes
 
