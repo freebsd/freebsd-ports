@@ -1,0 +1,3 @@
+APPENDDEF(`confLIBDIRS', `-L%%LOCALBASE%%/lib')
+APPENDDEF(`confINCDIRS', `-I%%LOCALBASE%%/include')
+APPENDDEF(`conf_sendmail_ENVDEF', `-DHASSRANDOMDEV')
