@@ -424,6 +424,7 @@
     SUBDIR += xisp
     SUBDIR += xmlrpc-c
     SUBDIR += xsmbrowser
+    SUBDIR += xprobe
     SUBDIR += xtraceroute
     SUBDIR += xtradius
     SUBDIR += xwhois

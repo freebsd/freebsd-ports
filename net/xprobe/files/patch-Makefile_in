@@ -1,0 +1,45 @@
+--- Makefile.in.orig	Wed Jul 25 18:55:30 2001
++++ Makefile.in	Wed Jul 25 18:59:54 2001
+@@ -21,12 +21,16 @@
+ # Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ 
+ 
++DESTDIR=
++
+ CC=@CC@
+ INSTALL=@INSTALL@
++INSTALL_PROGRAM=@INSTALL_PROGRAM@
++INSTALL_DATA=@INSTALL_DATA@
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+-bindir=@bindir@
+-mandir=@mandir@
++BINDIR=@bindir@
++MANDIR=@mandir@
+ PACKAGE=@PACKAGE@
+ VERSION=@VERSION@
+ CPPFLAGS=@CPPFLAGS@
+@@ -41,7 +45,9 @@ icmp_infr.o utils.o logic_tree.o pcap_if
+ FILES=$(SOURCES) $(INCLUDES) AUTHORS CREDITS Changelog LICENSE Makefile.in \
+ README TODO config.h.in configure configure.in cfg-scripts xprobe.1
+ 
+-x: $(OBJS)
++all:	xprobe
++
++xprobe: $(OBJS)
+ 	$(CC) $(CFLAGS) $(OBJS) -o $@ $(LDFLAGS) $(LIBS)
+ 
+ .c.o: $(INCLUDES)
+@@ -52,9 +58,9 @@ clean:
+ distclean: clean
+ 	rm -f config.h config.cache config.log config.status Makefile
+ 
+-install: x
+-	$(INSTALL) -m 0755 -g bin -o root x $(bindir)
+-	$(INSTALL) -m 0444  -g bin -o root xprobe.1 $(mandir)/man1
++install: xprobe
++	$(INSTALL_PROGRAM) -m 755 xprobe $(DESTDIR)$(BINDIR)
++	$(INSTALL_DATA) xprobe.1 $(DESTDIR)$(MANDIR)/man1
+ 
+ configure: configure.in
+ 	autoheader
