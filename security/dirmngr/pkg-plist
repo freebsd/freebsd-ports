@@ -1,3 +1,4 @@
 bin/dirmngr
+bin/dirmngr-client
+libexec/dirmngr_ldap
 %%NLS%%share/locale/de/LC_MESSAGES/dirmngr.mo
-%%NLS%%@dirrm share/locale/de/LC_MESSAGES
