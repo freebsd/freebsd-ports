@@ -1,0 +1,12 @@
+--- Makefile.in.orig	Sun Aug  6 14:05:13 2000
++++ Makefile.in	Sun Aug  6 14:05:48 2000
+@@ -3,6 +3,9 @@
+ DEFINES+=	-DHAVE_CONFIG_H #-DDEBUG
+ CFLAGS+=	-Wall @XPM_CFLAGS@ $(DEFINES)
+ LDFLAGS+=	-lXpm -lXext -lX11 @XPM_LIBS@
++.if ${ARCH} == "alpha"
++LDFLAGS+=	-lio
++.endif
+ 
+ HEADERS=	wmlmmon.h wmgeneral.h
+ SRCS=		wmlmmon.c wmgeneral.c

@@ -1,0 +1,12 @@
+--- Makefile.in.orig	Sun Aug  6 21:31:45 2000
++++ Makefile.in	Sun Aug  6 21:32:10 2000
+@@ -3,6 +3,9 @@
+ DEFINES+=	-DHAVE_CONFIG_H
+ CFLAGS+=	-Wall $(DEFINES)
+ LDFLAGS+=	-lcurses
++.if $(ARCH) == "alpha"
++LDFLAGS+=	-lio
++.endif
+ 
+ HEADERS=	lmmon.h
+ SRCS=		lmmon.c
