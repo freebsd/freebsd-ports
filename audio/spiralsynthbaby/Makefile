@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	spiralsynth
-PORTVERSION=	0.1.6
+PORTVERSION=	0.1.7
 CATEGORIES=	audio
-MASTER_SITES=	http://www.blueammonite.f9.co.uk/SpiralSynth/dload/ \
-		http://jpj.net/~trevor/freebsd/ports/
+MASTER_SITES=	http://www.pawfal.org/SpiralSynth/dload/
 DISTNAME=	SpiralSynth-${PORTVERSION}
 
 MAINTAINER=	trevor@FreeBSD.org

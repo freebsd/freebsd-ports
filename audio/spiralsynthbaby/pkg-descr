@@ -10,14 +10,14 @@ is to /dev/dsp or in Microsoft RIFF (.WAV) format to a file.  You
 can save and recall your sounds using the 100 patch save slots.
 
 The PC keyboard can be used to play the synth, "q" & "z" are C,
-and the keys progess from them, ie "2" is C#, "w" is D etc. These
+and the keys progress from them:  "2" is C#, "w" is D, etc.  These
 are just the defaults, and can be changed from the .Spiralrc file.
 The function keys change the octave.
 
 Sample output and a detailed list of features can be found on the
 home page.
 
-WWW:  http://www.blueammonite.f9.co.uk/SpiralSynth/
+WWW:  http://www.pawfal.org/SpiralSynth/
 
 Trevor Johnson
-trevor@jpj.net
+trevor@FreeBSD.org

@@ -1,0 +1,13 @@
+SpiralSound/Midi.C:54: `O_SYNC' undeclared (first use this function)
+
+--- SpiralSound/Midi.C.orig	Sun Nov 26 07:52:41 2000
++++ SpiralSound/Midi.C	Wed Dec  6 14:22:58 2000
+@@ -51,7 +51,7 @@
+ {
+ 	if (!SpiralInfo::WANTMIDI) return;
+ 	
+-	m_MidiFd = open(SpiralInfo::MIDIFILE.c_str(),O_RDONLY|O_SYNC);  
++	m_MidiFd = open(SpiralInfo::MIDIFILE.c_str(),O_RDONLY);  
+ 
+ 	pipe(m_Pipefd);
+ 	fcntl(m_Pipefd[0],F_SETFL,O_NONBLOCK);
