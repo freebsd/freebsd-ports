@@ -7709,6 +7709,7 @@ php4-interbase	ports/databases/php4-interbase
 php4-ldap	ports/net/php4-ldap
 php4-mbstring	ports/converters/php4-mbstring
 php4-mcal	ports/misc/php4-mcal
+php4-mcrypt	ports/security/php4-mcrypt
 php4-mcve	ports/devel/php4-mcve
 php4-ming	ports/graphics/php4-ming
 php4-mssql	ports/databases/php4-mssql
