@@ -75,6 +75,7 @@
     SUBDIR += tintin++
     SUBDIR += tk83
     SUBDIR += tocps
+    SUBDIR += ttf2pt1
     SUBDIR += ttfm
     SUBDIR += ve
     SUBDIR += vflib
