@@ -1,0 +1,42 @@
+--- misc/regex/Makefile.orig	Tue Jun 13 21:56:06 2000
++++ misc/regex/Makefile	Tue Jun 13 21:58:03 2000
+@@ -4,13 +4,13 @@
+ include ${JX_ROOT}/include/make/jx_config
+ CPPFLAGS=
+ 
+-# You probably want to take -DREDEBUG out of CFLAGS, and put something like
++# You probably want to take -DREDEBUG out of MYCFLAGS, and put something like
+ # -O in, *after* testing (-DREDEBUG strengthens testing by enabling a lot of
+ # internal assertion checking and some debugging facilities).
+ # Put -Dconst= in for a pre-ANSI compiler.
+ # Do not take -DPOSIX_MISTAKE out.
+ # REGCFLAGS isn't important to you (it's for my use in some special contexts).
+-CFLAGS=-I. -DREDEBUG $(REGCFLAGS) $(J_REGEX_USE_BCOPY) $(J_BUILD_SHARED_LIB) # -DPOSIX_MISTAKE
++MYCFLAGS=-I. -DREDEBUG $(REGCFLAGS) $(J_REGEX_USE_BCOPY) $(J_BUILD_SHARED_LIB) # -DPOSIX_MISTAKE
+ 
+ # If you have a pre-ANSI compiler, put -o into MKHFLAGS.  If you want
+ # the Berkeley __P macro, put -b in.
+@@ -35,10 +35,13 @@
+ JUNKLINT=possible pointer alignment|null effect
+ 
+ # arrangements to build forward-reference header files
+-.SUFFIXES:	.ih .h
++.SUFFIXES:	.ih .h .c .o
+ .c.ih:
+ 	sh ./mkh $(MKHFLAGS) -p $< >$@
+ 
++.c.o:
++	$(CC) $(MYCFLAGS) -fPIC -DPIC -o $@ -c $<
++
+ default:	r
+ 
+ # JAFL: this target builds the .o files for libjcore.*
+@@ -70,7 +73,7 @@
+ 
+ # tester
+ re:	$(OBJS)
+-	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJS) $(LIBS) -o $@
++	$(CC) $(MYCFLAGS) $(LDFLAGS) $(OBJS) $(LIBS) -o $@
+ 
+ # regression test
+ r:	re tests
