@@ -195,6 +195,7 @@
     SUBDIR += py-sgrep
     SUBDIR += py-trex
     SUBDIR += py-xml
+    SUBDIR += py-xmltools
     SUBDIR += py2html
     SUBDIR += rand
     SUBDIR += raptor
