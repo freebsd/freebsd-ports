@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	6.0.5.3
+PORTVERSION=	6.0.6.2
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/pub/graphics/%SUBDIR%/ \
