@@ -2095,6 +2095,7 @@ gkrellscore	ports/misc/gkrellscore
 gkrellshoot	ports/misc/gkrellshoot
 gkrellsun	ports/astro/gkrellsun
 gkrellweather	ports/misc/gkrellweather
+gkrellweather2	ports/misc/gkrellweather2
 gkx86info	ports/misc/gkx86info
 gl-117		ports/games/gl-117
 glabels		ports/deskutils/glabels
