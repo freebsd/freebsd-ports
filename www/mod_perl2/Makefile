@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_perl
 PORTVERSION=	1.99r18
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	http://perl.apache.org/dist/ \
 		http://perl.apache.org/dist/old/
