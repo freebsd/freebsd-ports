@@ -14,6 +14,8 @@ MASTER_SITES=	http://elektron.its.tudelft.nl/~hemmin98/rotix_releases/
 
 MAINTAINER=	lintux@debian.org
 
+BROKEN=		"Does not fetch"
+
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 USE_GMAKE=	yes
