@@ -3,7 +3,7 @@
 # Date created:		24 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.14 1998/09/17 00:32:58 asami Exp $
+# $Id: Makefile,v 1.15 1998/10/04 04:03:17 steve Exp $
 #
 
 DISTNAME=	piewm
@@ -23,7 +23,7 @@ MAN1=		piewm.1
 #  files plus an executable
 
 pre-configure:
-	@/bin/rm -rf ${WRKDIR}/xpm
+	@${RM} -rf ${WRKDIR}/xpm
 
 pre-build:
 	@(cd ${WRKSRC}; ${MAKE} clean)
