@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipcad
-PORTVERSION=	2.6
+PORTVERSION=	2.6.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.spelio.net.ru/soft/
 
