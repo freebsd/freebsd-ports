@@ -16,7 +16,7 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
 		pspell.2:${PORTSDIR}/textproc/pspell \
-		gnomeprint.12:${PORTSDIR}/print/gnomeprint
+		gnomeprint.13:${PORTSDIR}/print/gnomeprint
 
 USE_X_PREFIX=	yes
 USE_GNOME=	yes

@@ -16,7 +16,7 @@ MAINTAINER=	ade@FreeBSD.org
 LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml \
 		glade.4:${PORTSDIR}/devel/libglade \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
-		gnomeprint.12:${PORTSDIR}/print/gnomeprint \
+		gnomeprint.13:${PORTSDIR}/print/gnomeprint \
 		oaf.0:${PORTSDIR}/devel/oaf \
 		bonobo.2:${PORTSDIR}/devel/bonobo \
 		gnomevfs.0:${PORTSDIR}/devel/gnomevfs \
