@@ -1,0 +1,6 @@
+CGI::ArgChecker - An extensible CGI parameter validation module (allowing
+commonly used checks on parameters to be called more concisely and
+consistently) based on String::Checker.  This is really nothing more than
+a simple wrapper around String::Checker.
+
+--will
