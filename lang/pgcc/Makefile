@@ -26,18 +26,17 @@ PATCH_SITES=	http://www.gcc.ml.org/data/source/  \
 		ftp://ftp.hitachi-sk.co.jp/pub/pentium-gcc/source/  \
 		ftp://ftp.fu-berlin.de/unix/languages/pgcc/source/
 PATCHFILES=	egcs-1.1.2-pgcc-1.1.3.diff.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	obrien@FreeBSD.org
 
-BROKEN='waiting for new patches against gcc-2.95'
-
-USE_BZIP2=	yes
-
 BUILD_DEPENDS=  autoconf:${PORTSDIR}/devel/autoconf
 
-USE_BZIP2=	yes
+BROKEN='waiting for new patches against gcc-2.95.1'
 
 .include <bsd.port.pre.mk>
+
+USE_BZIP2=	yes
 
 EGCS_REV=	pgcc-2.91.66
 LIBSTDCPP_REV=	2.9.0
@@ -49,7 +48,6 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsdaout${OSREL}
 .endif
 
-PATCH_DIST_STRIP?=	-p1
 PLIST_SUB=	EGCS_REV=${EGCS_REV} GNU_HOST=${GNUHOST}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
