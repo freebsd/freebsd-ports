@@ -1,0 +1,28 @@
+@unexec env LANG=C perl -ni -e 'print if !m|sdocbook/catalog|;' %D/share/xml/docbook/catalog;if [ ! -s %D/share/xml/docbook/catalog ]; then rm -f %D/share/xml/docbook/catalog; fi
+@exec if [ ! -f %D/share/xml/docbook/catalog ]; then echo "CATALOG \"sdocbook/catalog\"" > %D/share/xml/docbook/catalog; else env LANG=C perl -ni -e 'print if !m|sdocbook/catalog|;print "CATALOG \"sdocbook/catalog\"\n" if eof;' %D/share/xml/docbook/catalog; fi
+share/xml/docbook/sdocbook/COPYRIGHT
+share/xml/docbook/sdocbook/ChangeLog
+share/xml/docbook/sdocbook/LostLog
+share/xml/docbook/sdocbook/README
+share/xml/docbook/sdocbook/VERSION
+share/xml/docbook/sdocbook/catalog
+share/xml/docbook/sdocbook/ent/iso-lat1.ent
+share/xml/docbook/sdocbook/ent/iso-num.ent
+share/xml/docbook/sdocbook/ent/iso-pub.ent
+share/xml/docbook/sdocbook/sdbcent.mod
+share/xml/docbook/sdocbook/sdbhier.mod
+share/xml/docbook/sdocbook/sdbpool.mod
+share/xml/docbook/sdocbook/sdocbook-custom.dtd
+share/xml/docbook/sdocbook/sdocbook.css
+share/xml/docbook/sdocbook/sdocbook.dtd
+share/xml/docbook/sdocbook/sdocbookref-custom.dtd
+share/xml/docbook/sdocbook/sdocbookref.dtd
+share/xml/docbook/sdocbook/sinclist.mod
+share/xml/docbook/sdocbook/test.xml
+share/xml/docbook/sdocbook/testcss.xml
+share/xml/docbook/sdocbook/testcust.xml
+share/xml/docbook/sdocbook/testrefcust.xml
+@dirrm share/xml/docbook/sdocbook/ent
+@dirrm share/xml/docbook/sdocbook
+@unexec rmdir %D/share/xml/docbook 2>/dev/null || true
+@unexec rmdir %D/share/xml 2>/dev/null || true
