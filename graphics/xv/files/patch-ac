@@ -1,0 +1,52 @@
+*** /tmp/T0a03151	Mon Feb 13 18:35:11 1995
+--- config.h	Mon Feb 13 18:34:49 1995
+***************
+*** 13,25 ****
+   * definition appropriately. (use 'which gunzip' to find if you have gunzip, 
+   * and where it lives)
+   */
+! #undef USE_GUNZIP
+  
+  #ifdef USE_GUNZIP
+  #  ifdef VMS
+  #    define GUNZIP "UNCOMPRESS"
+  #  else
+! #    define GUNZIP "/usr/local/bin/gunzip -q"
+  #  endif
+  #endif
+  
+--- 13,25 ----
+   * definition appropriately. (use 'which gunzip' to find if you have gunzip, 
+   * and where it lives)
+   */
+! #define USE_GUNZIP
+  
+  #ifdef USE_GUNZIP
+  #  ifdef VMS
+  #    define GUNZIP "UNCOMPRESS"
+  #  else
+! #    define GUNZIP "/usr/bin/gunzip -q"
+  #  endif
+  #endif
+  
+***************
+*** 88,96 ****
+   * should not need to be changed
+   */
+  
+! /* #define GS_PATH "/usr/local/bin/gs" */
+! /* #define GS_LIB  "."                 */
+! /* #define GS_DEV  "ppmraw"            */
+  
+  
+  /***************************************************************************
+--- 88,96 ----
+   * should not need to be changed
+   */
+  
+! #define GS_PATH "/usr/local/bin/gs"
+! #define GS_LIB  "/usr/local/lib/ghostscript"
+! #define GS_DEV  "ppmraw"
+  
+  
+  /***************************************************************************
