@@ -34,9 +34,9 @@ Patches to reflect file locations in man pages.
  .SH BUGS
  The node numbers should be automatically determined since they are
  fixed.  In addition, it would be nice if the zone name were picked up
---- man/atis.8.orig	Sat Nov  9 16:42:31 1996
-+++ man/atis.8	Sun Nov 10 08:13:31 1996
-@@ -91,7 +91,7 @@
+--- man/atis.8.orig	Sun Jan 26 00:25:04 1997
++++ man/atis.8	Sun Jan 26 00:32:44 1997
+@@ -91,19 +91,19 @@
  .I atis
  automatically disassociates itself from the controlling terminal
  unless debug options are set.  To allow some control over the
@@ -45,7 +45,35 @@ Patches to reflect file locations in man pages.
  following commands options have been added.
  .TP
  .B dump
-@@ -131,9 +131,9 @@
+ sends a SIGQUIT signal to the running atis.  This causes the running
+ atis to dump
+-its name table into /usr/tmp/nis.db.
++its name table into /var/tmp/nis.db.
+ .TP
+ .B reload
+ sends a SIGHUP signal to the running atis.  This 
+ causes the running
+ .I atis
+-to reload its name tables from /usr/tmp/nis.db.
++to reload its name tables from /var/tmp/nis.db.
+ .TP
+ .B exit
+ will stop the currently running copy of 
+@@ -112,11 +112,11 @@
+ .TP
+ .B debug
+ increments the debug level of the running server by sending it a
+-SIGIOT.  If no log file was defined, /usr/tmp/atis.run is created and used.
++SIGIOT.  If no log file was defined, /var/tmp/atis.run is created and used.
+ .TP
+ .B nodebug
+ turns off debugging in the running server by sending it a SIGEMT.  If
+-/usr/tmp/atis.run was created by
++/var/tmp/atis.run was created by
+ .I debug
+ then the file is closed.
+ .PP
+@@ -131,14 +131,14 @@
  to dump the database and exit.
  .PP
  .SH FILES
@@ -56,7 +84,14 @@ Patches to reflect file locations in man pages.
 +/usr/local/etc/cap/atalk.local is used to find the closest Ethernet/Appletalk bridge
  (directory location alterable at compile time).
  .br
- /usr/tmp/nis.db is used to hold the name data base when dumped
+-/usr/tmp/nis.db is used to hold the name data base when dumped
++/var/tmp/nis.db is used to hold the name data base when dumped
+ .br
+-/usr/tmp/atis.run is used for logging if debug is turned on without a
++/var/tmp/atis.run is used for logging if debug is turned on without a
+ log file via "atis debug".
+ .SH NOTES
+ The current copy of atis runs with Revisions 10/86, 9/87, 1/88 or 6/88 of the
 --- man/atprint.1.orig	Sun Mar  8 22:44:36 1992
 +++ man/atprint.1	Sun Nov 10 08:23:43 1996
 @@ -49,7 +49,7 @@
@@ -123,3 +158,32 @@ Patches to reflect file locations in man pages.
  .SH "SEE ALSO"
  CAP(8), atis(8), cap(3)
  .SH EXAMPLE
+--- man/UAB.8.orig	Sun Mar  8 22:43:56 1992
++++ man/UAB.8	Sun Jan 26 00:53:02 1997
+@@ -73,12 +73,12 @@
+ (SIGEMT), statistics (SIGUSR2), or exit (SIGTERM) will
+ send these signals.
+ tdump causes the running uab to dump its internal tables (rtmp, etc.) to
+-/usr/tmp/uab.dump.  (dump is
++/var/tmp/uab.dump.  (dump is
+ reserved for nbp if uab ever support nbp).  debug tells the running
+ uab to increment the debug level: if not log file was currently
+-active, the log will go to /usr/tmp/uab.run.
++active, the log will go to /var/tmp/uab.run.
+ nodebug turns off all debugging.
+-stat or statisitics dumps statistics to /usr/tmp/uab.stats.  exit
++stat or statisitics dumps statistics to /var/tmp/uab.stats.  exit
+ causes the running uab to stop.
+ .PP
+ The bridge description file is a list of the valid ports for a
+@@ -155,7 +155,7 @@
+ for Computing Activities, Columbia University
+ .SH FILES
+ .nf
+-/usr/tmp/uab.stats
+-/usr/tmp/uab.run
+-/usr/tmp/uab.dump
++/var/tmp/uab.stats
++/var/tmp/uab.run
++/var/tmp/uab.dump
+ .fi
