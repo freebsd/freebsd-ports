@@ -1,7 +1,7 @@
 #!/bin/sh -
 #
 #	pre-configure script for Elm port to FreeBSD 2.0
-#	$Id: pre-configure,v 1.6 1995/12/19 23:46:18 ache Exp $
+#	$Id: pre-configure,v 1.7 1996/01/12 01:49:09 ache Exp $
 
 PortsDir=$PORTSDIR
   CurDir=$CURDIR
@@ -272,7 +272,7 @@ huge=''
 optimize='-O2'
 ccflags=''
 cppflags=''
-ldflags=''
+ldflags='-s'
 cc='cc'
 libs=''
 nametype='bsd'
