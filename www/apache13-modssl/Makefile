@@ -1,13 +1,12 @@
 # New ports collection makefile for:	Apache + mod_ssl
-# Version required:	1.3.12 + 2.6.2
 # Date created:		Sat Aug 22 12:00:00 CDT 1998
 # Whom:			rse@engelschall.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	apache_${VERSION_APACHE}
-PKGNAME=	apache+mod_ssl-${VERSION_APACHE}+${VERSION_MODSSL}
+PORTNAME=	apache+mod_ssl
+PORTVERSION= 	${VERSION_APACHE}+${VERSION_MODSSL}	
 CATEGORIES=	www security
 MASTER_SITES=	http://www.apache.org/dist/ \
 		http://www.modssl.org/source/ \
@@ -36,6 +35,7 @@ MASTER_SITES=	http://www.apache.org/dist/ \
 		ftp://ftp.mtnranch.net/pub/apache/dist/ \
 		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/ \
 		ftp://apache.nextpath.com/pub/apache/dist/
+DISTNAME=	apache_1.3.12
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}
 

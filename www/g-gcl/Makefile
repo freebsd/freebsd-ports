@@ -1,12 +1,12 @@
 # New ports collection makefile for:	g-gcl
-# Version required:			1.10
 # Date created:				21 Jun 1999
 # Whom:					G. Adam Stanislav <adam@whizkidtech.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	g-gcl-1.10
+PORTNAME=	g-gcl
+PORTVERSION= 	1.10
 CATEGORIES=	www graphics
 MASTER_SITES=	ftp://ftp.whizkidtech.net/cgi/gcl/ \
 		http://www.whizkidtech.net/gcl/

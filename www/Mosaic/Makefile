@@ -1,15 +1,15 @@
 # New ports collection makefile for:    Mosaic browser
-# Version required:     2.7b5
 # Date created:         7 August 1995
 # Whom:                 torstenb
 #
 # $FreeBSD$
 #
 
-DISTNAME=       Mosaic-src-2.7b5
-PKGNAME=        mosaic-2.7b5
+PORTNAME=	mosaic
+PORTVERSION= 	2.7b5
 CATEGORIES=     www
 MASTER_SITES=	ftp://ftp.ncsa.uiuc.edu/Web/Mosaic/Unix/source/
+DISTNAME=	Mosaic-src-2.7b5
 
 MAINTAINER=	ports@FreeBSD.org
 

@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-HTML-Embperl
-# Version required:			1.3b2
 # Date created:				March 13, 2000
 # Whom:	      				Frank Mayhar <frank@exit.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	HTML-Embperl-1.3b2
-PKGNAME=	p5-HTML-Embperl-1.3b2
+PORTNAME=	p5-HTML-Embperl
+PORTVERSION= 	1.3b2
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	HTML
+DISTNAME=	p5-HTML-Embperl-1.3b2
 
 MAINTAINER=	ports@FreeBSD.org
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	smb_auth
-# Version required:	0.05
 # Date created:		13 January 2000
 # Whom:			Maxim Sobolev <sobomax@altavista.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	smb_auth-0.05
+PORTNAME=	smb_auth
+PORTVERSION= 	0.05
 CATEGORIES=	www
 MASTER_SITES=	http://www.hacom.nl/~richard/software/
 

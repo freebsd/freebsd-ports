@@ -1,12 +1,12 @@
 # New ports collection makefile for:	KDreamSite
-# Version required:	0.2
 # Date created:		12 Nov 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	kdreamsite-0.2
+PORTNAME=	kdreamsite
+PORTVERSION= 	0.2
 CATEGORIES=	www kde
 MASTER_SITES=	http://neptune.spaceports.com/%7Eatnet/files/
 

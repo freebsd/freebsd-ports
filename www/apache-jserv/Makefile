@@ -1,14 +1,15 @@
 # New ports collection makefile for:	apache mod_jserv
-# Version required:	1.1
 # Date created:         1999/05/29
 # Whom:			Kensaku Masuda <greg@greg.rim.or.jp>
 #
 # $FreeBSD$
+#
 
-DISTNAME=	ApacheJServ-1.1
-PKGNAME=	apache-jserv-1.1
+PORTNAME=	apache-jserv
+PORTVERSION= 	1.1
 CATEGORIES=	www java
 MASTER_SITES=	http://java.apache.org/jserv/dist/
+DISTNAME=	ApacheJServ-1.1
 
 MAINTAINER=	greg@greg.rim.or.jp
 

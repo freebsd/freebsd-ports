@@ -1,15 +1,15 @@
 # New ports collection makefile for:	libwww
-# Version required:	5.2.6
 # Date created:		18 Feb 1996
 # Whom:			torstenb
 #
 # $FreeBSD$
 #
 
-DISTNAME=	w3c-${PKGNAME}
-PKGNAME=	libwww-5.2.6
+PORTNAME=	libwww
+PORTVERSION= 	5.2.6
 CATEGORIES=	www devel
 MASTER_SITES=	http://www.w3.org/Library/Distribution/
+DISTNAME=	w3c-${PKGNAME}
 
 MAINTAINER=	jseger@FreeBSD.org
 

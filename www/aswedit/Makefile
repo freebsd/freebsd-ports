@@ -1,18 +1,18 @@
 # New ports collection makefile for:	 asWedit
-# Version required:	4.0
 # Date created:		25 June 1997
 # Whom:			brett@peloton.physics.montana.edu
 #
 # $FreeBSD$
 #
 
-DISTNAME=	asWedit-4.0-i386.linux
-PKGNAME=	asWedit-4.0.1
+PORTNAME=	asWedit
+PORTVERSION= 	4.0.1
 CATEGORIES=	editors www linux
 MASTER_SITES=	http://www.advasoft.com/asWedit/ \
 		ftp://sunsite.doc.ic.ac.uk/packages/www/asWedit/ \
 		ftp://sunsite.auc.dk/pub/infosystems/www/asWedit/ \
 		ftp://sunsite.icm.edu.pl/pub/www/asWedit/
+DISTNAME=	asWedit-4.0-i386.linux
 
 MAINTAINER=	brett@peloton.runet.edu
 

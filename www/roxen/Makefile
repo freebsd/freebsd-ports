@@ -1,15 +1,15 @@
 # New ports collection makefile for:	Roxen Challenger
-# Version required:	1.3.111-0.6-40bit
 # Date created:		26 February 1999
 # Whom:			Kai Voigt (k@123.org)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	roxen_1.3.111-0.6-40bit
-PKGNAME=	roxen-1.3.111
+PORTNAME=	roxen
+PORTVERSION= 	1.3.111
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.roxen.com/roxen/source/
+DISTNAME=	roxen_1.3.111-0.6-40bit
 
 MAINTAINER=	k@123.org
 

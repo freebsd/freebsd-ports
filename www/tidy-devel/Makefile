@@ -1,15 +1,15 @@
 # New ports collection makefile for:	tidy
-# Version required:	tidy13jan00
 # Date created:		27 Oct 1998
 # Whom:			Abel Chow <achow@transoft.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tidy13jan00
-PKGNAME=	tidy-20000113
+PORTNAME=	tidy
+PORTVERSION= 	20000113
 CATEGORIES=	www
 MASTER_SITES=	http://www.w3.org/People/Raggett/
+DISTNAME=	tidy13jan00
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	saken@hotel.rmta.org

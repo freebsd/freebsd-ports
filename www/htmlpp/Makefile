@@ -1,15 +1,15 @@
 # New ports collection makefile for:    htmlpp
-# Version required:     3.9d
 # Date created:         9 Nov 1997
 # Whom:                 Donald Burr <dburr@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	htmlp42a
-PKGNAME=	htmlpp-4.2a
+PORTNAME=	htmlpp
+PORTVERSION= 	4.2a
 CATEGORIES=	www
 MASTER_SITES=	http://www.imatix.com/pub/tools/
+DISTNAME=	htmlp42a
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dburr@FreeBSD.org

@@ -1,12 +1,12 @@
 # New ports collection makefile for:    gn
-# Version required:     2.24
 # Date created:         20 Sep 1994
 # Whom:                 adam
 #
 # $FreeBSD$
 #
 
-DISTNAME=       gn-2.24
+PORTNAME=	gn
+PORTVERSION= 	2.24
 CATEGORIES=	www net
 MASTER_SITES=	ftp://ftp.acns.nwu.edu/pub/gn/
 

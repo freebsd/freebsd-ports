@@ -1,15 +1,15 @@
 # New ports collection makefile for:	erwin
-# Version required:		0.3.1
 # Date created:			31 July 1999
 # Whom:				Jim Mock <jimFreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	erwin-0.3.1
-PKGNAME=	erwn-0.3.1
+PORTNAME=	erwn
+PORTVERSION= 	0.3.1
 CATEGORIES=	www editors
 MASTER_SITES=	http://www-stud.fht-esslingen.de/erwin/
+DISTNAME=	erwin-${PORTNAME}
 
 MAINTAINER=	jim@FreeBSD.org
 

@@ -1,13 +1,12 @@
 # New ports collection makefile for:    apache HTTPD
-# Version required:     1.3*
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 ache@freebsd.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=       apache_1.3.12
-PKGNAME=        apache-1.3.12
+PORTNAME=	apache
+PORTVERSION= 	1.3.12
 CATEGORIES=	www
 MASTER_SITES=   http://www.apache.org/dist/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
@@ -24,6 +23,7 @@ MASTER_SITES=   http://www.apache.org/dist/ \
 		ftp://ftp.mtnranch.net/pub/apache/dist/ \
 		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/ \
 		ftp://apache.nextpath.com/pub/apache/dist/
+DISTNAME=	${PORTNAME_${PORTVERSION}
 
 MAINTAINER=     ache@freebsd.org
 

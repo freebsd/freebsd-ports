@@ -1,13 +1,12 @@
 # New ports collection makefile for:    apache HTTPD
-# Version required:     1.3*
 # Date created:         Fri Feb 18 03:04:36 JST 2000
 # Whom:                 sumikawa
 #
 # $FreeBSD$
 #
 
-DISTNAME=       apache_1.3.11
-PKGNAME=        apache+ipv6-1.3.11
+PORTNAME=	apache+ipv6
+PORTVERSION=	1.3.11
 CATEGORIES=	www ipv6
 MASTER_SITES=   http://www.apache.org/dist/ \
 		ftp://ftp.ccs.neu.edu/net/mirrors/ftp.apache.org/apache/dist/ \
@@ -24,6 +23,7 @@ MASTER_SITES=   http://www.apache.org/dist/ \
 		ftp://ftp.mtnranch.net/pub/apache/dist/ \
 		ftp://ftp.iodynamics.com/pub/mirror/apache/dist/ \
 		ftp://apache.nextpath.com/pub/apache/dist/
+DISTNAME=	apache_1.3.11
 
 #put the below patch as patch-am
 #PATCH_SITES=    http://www.apache.org/info/css-security/

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	mod_dtcl
-# Version required:			0.6.4-2
 # Date created:				January 9, 1999
 # Whom:					Mikhail Teterin <mi@aldan.algebra.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	libapache-mod-dtcl_0.7.3-1
-PKGNAME=	mod_dtcl-0.7.3.1
+PORTNAME=	mod_dtcl
+PORTVERSION= 	0.7.3.1
 CATEGORIES=	www tcl82
 MASTER_SITES=	http://master.debian.org/~davidw/mod_dtcl/
+DISTNAME=	libapache-mod-dtcl_0.7.3-1
 
 MAINTAINER=	mi@aldan.algebra.com
 

@@ -1,16 +1,16 @@
 # New ports collection makefile for:	demoroniser
-# Version required:			1.0
 # Date created:				07 August 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	demoroniser
-PKGNAME=	demoroniser-1.0
+PORTNAME=	demoroniser
+PORTVERSION= 	1.0
 CATEGORIES=	www
 MASTER_SITES=	http://www.fourmilab.ch/webtools/demoroniser/ \
 		http://people.FreeBSD.org/~jedgar/distfiles/
+DISTNAME=	${PORTNAME}
 
 MAINTAINER=	jedgar@FreeBSD.org
 

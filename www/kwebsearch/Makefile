@@ -1,12 +1,12 @@
 # New ports collection makefile for:	kwebsearch
-# Version required:	1.2
 # Date created:		11 Dec 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	kwebsearch-1.2
+PORTNAME=	kwebsearch
+PORTVERSION= 	1.2
 CATEGORIES=	www kde
 MASTER_SITES=	http://www.bawue.de/~rgoetz/
 

@@ -1,18 +1,18 @@
 # New ports collection makefile for:   bacon
-# Version required:    1.1b
 # Date created:        9 September 1999
 # Whom:                Justin Robinson <jmrobins@samurai.ruin.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=      bacon-1.071999
-CATEGORIES=    www
-MASTER_SITES=  ftp://samurai.ruin.org/pub/All/
+PORTNAME=	bacon
+PORTVERSION= 	1.071999
+CATEGORIES=	www
+MASTER_SITES=	ftp://samurai.ruin.org/pub/All/
 
-MAINTAINER=    jmrobins@samurai.ruin.org
+MAINTAINER=	jmrobins@samurai.ruin.org
 
-USE_PERL5=     YES
+USE_PERL5=	YES
 
 DIST=		bacon.pl
 

@@ -1,19 +1,19 @@
 # New ports collection makefile for:	MHonArc
-# Version required:			2.1
 # Date created:				18 June 1997
 # Whom:					koshy@india.hp.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	MHonArc2.3.3
-PKGNAME=	mhonarc-2.3.3
+PORTNAME=	mhonarc
+PORTVERSION= 	2.3.3
 CATEGORIES=	www mail
 MASTER_SITES=	http://www.oac.uci.edu/indiv/ehood/tar/ \
 		ftp://hhobel.phl.univie.ac.at/MHonArc/ \
 		ftp://ftp.redhat.com/contrib/noarch/noarch/ \
 		ftp://ftp.plig.org/pub/CPAN/authors/id/EHOOD/ \
 		http://www.perl.com/CPAN/authors/id/EHOOD/
+DISTNAME=	MHonArc2.3.3
 
 MAINTAINER=	jkoshy@freebsd.org
 

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	boa
-# Version required:			0.92
 # Date created:				21 May 1998
 # Whom:					Andrey Zakhvatov
 #
 # $FreeBSD$
 #
 
-DISTNAME=	boa-0.92
+PORTNAME=	boa
+PORTVERSION= 	0.92
 CATEGORIES=	www
 MASTER_SITES=	http://www.boa.org/
 

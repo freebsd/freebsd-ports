@@ -1,17 +1,17 @@
 # New ports collection makefile for: dict
-# Version required:     1.00
 # Date created:         11 October 1997
 # Whom:                 wosch
 #
 # $FreeBSD$
 #
 
-DISTNAME=       MOMspider-1.00
-PKGNAME=        momspider-1.00
+PORTNAME=	momspider
+PORTVERSION= 	1.00
 CATEGORIES=	www
 MASTER_SITES=   ftp://www.ics.uci.edu/pub/websoft/libwww-perl/ \
 		ftp://www.ics.uci.edu/pub/websoft/MOMspider/ \
 		http://www.de.freebsd.org/~wosch/src/
+DISTNAME=	MOMspider-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} libwww-perl-0.40.tar.gz
 
 MAINTAINER=	wosch@FreeBSD.org

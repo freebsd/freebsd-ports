@@ -1,15 +1,16 @@
 # New ports collection makefile for:	webalizer
-# Version required:	1.30.*
 # Date created:		02.Jun 1998
 # Whom:			dirk.meyer@dinoex.sub.org
 #
 # $FreeBSD$
+#
 
-DISTNAME=	webalizer-1.30-04-src
-PKGNAME=	webalizer-1.30.4
+PORTNAME=	webalizer
+PORTVERSION= 	1.30.4
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.mrunix.net/pub/webalizer/ \
 		ftp://ftp.lan-ks.de/pub/approved/
+DISTNAME=	webalizer-1.30-04-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org

@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-Apache
-# Version required:			1.21
 # Date created:				April 26th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	mod_perl-1.21
-PKGNAME=	p5-Apache-1.21
+PORTNAME=	p5-Apache
+PORTVERSION=	1.21
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Apache
+DISTNAME=	mod_perl-1.21
 
 MAINTAINER=	jfitz@FreeBSD.org
 

@@ -1,13 +1,12 @@
 # New ports collection makefile for:    WebMagick
-# http://www.simplesystems.org/WebMagick/
-# Version required:                     1.4*
 # Date created:                         20 May 1998
 # Whom:                                 ache
 #
 # $FreeBSD$
 #
 
-DISTNAME=       WebMagick-1.46
+PORTNAME=	WebMagick
+PORTVERSION= 	1.46
 CATEGORIES=     www graphics
 MASTER_SITES=   ftp://ftp.simplesystems.org/pub/WebMagick/
 

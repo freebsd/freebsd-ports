@@ -1,14 +1,16 @@
 # New ports collection makefile for:	Zope
-# Version required:     2.0.1
 # Date created:         Sat 21 Aug 1999
 # Whom:                 Peter Cornelius <pcc@gmx.net>
 #
 # $FreeBSD$
+#
 
+PORTNAME=	zope
+PORTVERSION=	2.0.0b5
 DISTNAME=	Zope-${VERSION}-src
-PKGNAME=	zope-${VERSION}
 CATEGORIES=	www python
 MASTER_SITES=	http://www.zope.org/Products/Zope/${VERSION}/
+DISTNAME=	Zope-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,10 +26,9 @@ do-build:	# empty, but needs to be there for the python dependency.
 # then on, data, cgi-bin and such. Thus, I decided that Zope belongs
 # there, too. I don't know whether this still applies to current apache
 # releases, though. I still run 2.2.8-STABLE.
-VERSION=	2.0.0b5
-PLIST_SUB=	ZOPEBASEDIR=www/Zope-${VERSION} CGIBINDIR=share/apache/cgi-bin VERSION=${VERSION}
+PLIST_SUB=	ZOPEBASEDIR=www/Zope-${PORTVERSION} CGIBINDIR=share/apache/cgi-bin VERSION=${PORTVERSION}
 WEBBASEDIR?=	${PREFIX}/www
-ZOPEBASEDIR?=	${WEBBASEDIR}/Zope-${VERSION}
+ZOPEBASEDIR?=	${WEBBASEDIR}/Zope-${PORTVERSION}
 CGI_BIN_DIR?=	${PREFIX}/share/apache/cgi-bin
 APACHE_CONFDIR?=	${PREFIX}/etc/apache
 PYTHON15?=	${PREFIX}/bin/python1.5
@@ -55,11 +56,11 @@ do-install:	#
 		${CHMOD} ugo+rwt var ; \
 		${ECHO} "===>   Setting user/password to zopemaster/test..." ; \
 		${PYTHON15} zpasswd.py -u zopemaster -p test -e CLEARTEXT access ; \
-		${ECHO} "===>   Copying Apache config file changes to ${APACHE_CONFDIR}/apache.conf.Zope-${VERSION}-Changes." ; \
-		${CP} -p ${FILESDIR}/apache.conf.Zope-${VERSION}-Changes ${APACHE_CONFDIR}/ ; \
+		${ECHO} "===>   Copying Apache config file changes to ${APACHE_CONFDIR}/apache.conf.Zope-${PORTVERSION}-Changes." ; \
+		${CP} -p ${FILESDIR}/apache.conf.Zope-${PORTVERSION}-Changes ${APACHE_CONFDIR}/ ; \
 		${ECHO} "===>   Please have a look at this file and the instructions" ; \
 		${ECHO} "===>   therein and incorporate them to your apache.conf." ; \
-		${ECHO} "===>   Creating rc startup file for Zope-${VERSION}..." ; \
+		${ECHO} "===>   Creating rc startup file for Zope-${PORTVERSION}..." ; \
 		${ECHO} "#! /bin/sh" > ${PREFIX}/etc/rc.d/zope.sh ; \
 		${ECHO} "${ZOPEBASEDIR}/start -w '' -f '' -m '' -p ${CGI_BIN_DIR}/Zope.cgi &" >> ${PREFIX}/etc/rc.d/zope.sh ; \
 		${ECHO}	"echo -n \" Zope\"" >> ${PREFIX}/etc/rc.d/zope.sh ; \
@@ -68,7 +69,7 @@ do-install:	#
 		${CAT} ${FILESDIR}/Message ; \
 		${ECHO} "===>   Your Zope base directory is ${ZOPEBASEDIR}." ; \
 		${ECHO} "===>   The Zope license is in ${ZOPEBASEDIR}/LICENSE.txt." ; \
-		${ECHO} "===>   For Apache changes see ${APACHE_CONFDIR}/apache.conf.Zope-${VERSION}-Changes." ; \
+		${ECHO} "===>   For Apache changes see ${APACHE_CONFDIR}/apache.conf.Zope-${PORTVERSION}-Changes." ; \
 		${ECHO} "===>   Zope.cgi and pcgi-wrapper live in ${CGI_BIN_DIR}." )
 
 #pre-deinstall:	# Save Database contents. I expect /tmp to have sufficient

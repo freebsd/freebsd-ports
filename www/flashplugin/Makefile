@@ -1,16 +1,16 @@
 # New ports collection makefile for:   flashplugin
-# Version required:    0.4.3
 # Date created:        3 October 1999
 # Whom:                Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	flash-0.4.3
-PKGNAME=	flashplugin-0.4.3
+PORTNAME=	flashplugin
+PORTVERSION= 	0.4.3
 CATEGORIES=	www graphics
 MASTER_SITES=	http://www.geocities.com/TimesSquare/Labyrinth/5084/flash/Linux/ \
 		http://perso.club-internet.fr/odebon/flash/Linux/
+DISTNAME=	flash-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 PATCH_SITES=	http://leed.t.u-tokyo.ac.jp/~yamagata/flash/

@@ -1,16 +1,16 @@
 # Ports collection Makefile for:	HTMLgen
-# Version required:			2.1
 # Date created:				03/20/1999
 # Whom:					nectar@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=		HTMLgen
-PKGNAME=		py-HTMLgen-2.1
+PORTNAME=		py-HTMLgen
+PORTVERSION= 		2.1
 CATEGORIES=		www python
 MASTER_SITES=		http://starship.skyport.net/crew/friedrich/ \
 			http://www.nectar.cc/distfiles/
+DISTNAME=		HTMLgen
 
 MAINTAINER=		nectar@FreeBSD.org
 

@@ -1,13 +1,12 @@
 # New ports collection makefile for:	evg
-# Version required:	1.0.1
 # Date created:		19 April 1999
 # Whom:			Dima Sivachenko	<dima@chg.ru>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	evg-1.01
-PKGNAME=	evg-1.0.1
+PORTNAME=	evg
+PORTVERSION=	1.01
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.uni-klu.ac.at/pub/projects/evg/	\
 		http://www.chg.ru/~dima/

@@ -1,15 +1,15 @@
 # ex:ts=8
 # Ports collection makefile for:  netscape (full communicator version)
-# Version required: 0.0
 # Date created:			  14 Feb 1998
 # Whom:				  obrien@cs.ucdavis.edu
 #
 # $FreeBSD$
 #
 
-DISTNAME=	communicator-v407-us.x86-unknown-linux2.0_libc5
-PKGNAME=	netscape-communicator-4.07.us
+PORTNAME=	netscape-communicator
+PORTVERSION=	4.07.us
 CATEGORIES=	www linux
+DISTNAME=	communicator-v407-us.x86-unknown-linux2.0_libc5
 
 MAINTAINER=	obrien@FreeBSD.org
 
