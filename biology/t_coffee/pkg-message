@@ -1,0 +1,10 @@
+--------------------------------------------------------------------------
+
+The files required for the T-Coffee web front-end have been installed to:
+
+  %%DATADIR%%
+
+In order to use the web front-end, you will need to copy these files to
+your web server's cgi-bin directory, or a subdirectory thereof.
+
+--------------------------------------------------------------------------
