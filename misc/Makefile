@@ -144,6 +144,7 @@
     SUBDIR += qlas
     SUBDIR += quotes
     SUBDIR += quranref
+    SUBDIR += reed
     SUBDIR += rfc
     SUBDIR += rname
     SUBDIR += rtfm
