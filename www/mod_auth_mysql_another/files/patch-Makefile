@@ -5,12 +5,12 @@
 +APXSFLAGS =
 +DSO   = mod_auth_mysql.so
 +SRCS  = mod_auth_mysql.c
-+OPTS  = -I/usr/local/include -L/usr/local/lib/mysql -lmysqlclient
++OPTS  = -I%%PREFIX%%/include -L%%PREFIX%%/lib/mysql -lmysqlclient
 +
 +all: $(DSO)
 +
 +$(DSO): $(SRCS)
-+	$(APXS) $(APXSFLAGS) -o $(DSO) $(OPTS) -c $(SRCS)
++	$(APXS) $(APXSFLAGS) -o $(DSO) $(OPTS) -c $(SRCS) -rpath %%PREFIX%%/lib/mysql
 +
 +install: $(DSO)
 +	$(APXS) $(APXSFLAGS) $(NAME) -i -A $(DSO)
