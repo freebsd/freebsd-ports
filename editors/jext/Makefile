@@ -24,7 +24,7 @@ USE_XLIB=	yes
 NO_BUILD=	yes
 
 JDK_VERSION=	1.1.8
-JAVAVM=		${LOCALBASE}/jdk${JDK_VERSION}/bin/java
+JAVAVM?=	${LOCALBASE}/jdk${JDK_VERSION}/bin/java
 
 .if defined(USE_JIT)
 RUN_DEPENDS+=	${LOCALBASE}/jdk${JDK_VERSION}/lib/${ARCH}/green_threads/libshujit.so:${PORTSDIR}/java/shujit
