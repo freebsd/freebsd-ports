@@ -1,0 +1,53 @@
+*** src/Makefile.orig	Mon Apr  8 17:29:08 1996
+--- src/Makefile	Wed May 29 10:50:48 1996
+***************
+*** 32,38 ****
+  #   SONY_FSLIB = -L/usr/sony/lib -lFSlib
+  
+  # VFontcap file
+!         VFCAP = -DDEFAULT_VFCAP=\"/usr/local/TeX/lib/vfontcap\"
+  
+  # OS and Machine dependent compiling options
+  #  Define __MSDOS__ (e.g., CCOPT=-D__MSDOS__) if you compile VFlib on MS-DOS
+--- 32,38 ----
+  #   SONY_FSLIB = -L/usr/sony/lib -lFSlib
+  
+  # VFontcap file
+!         VFCAP = -DDEFAULT_VFCAP=\"/usr/local/lib/VFlib/vfontcap\"
+  
+  # OS and Machine dependent compiling options
+  #  Define __MSDOS__ (e.g., CCOPT=-D__MSDOS__) if you compile VFlib on MS-DOS
+***************
+*** 45,51 ****
+  # Compilers, compiling options, etc.
+  #-------------------------
+          CC = cc
+!     CFLAGS = $(CCOPT) $(DEBUGOPT) -O
+  
+     LDFLAGS = $(LDOPT)
+    SYS_LIBS = -lm
+--- 45,51 ----
+  # Compilers, compiling options, etc.
+  #-------------------------
+          CC = cc
+!     CFLAGS = $(CCOPT) $(DEBUGOPT) -O -m486
+  
+     LDFLAGS = $(LDOPT)
+    SYS_LIBS = -lm
+***************
+*** 62,68 ****
+  #-------------------------
+  INSTALL_LIBDIR=/usr/local/lib
+  INSTALL_INCDIR=/usr/local/include
+! INSTALL_BINDIR=/usr/local/etc
+  
+  
+  
+--- 62,68 ----
+  #-------------------------
+  INSTALL_LIBDIR=/usr/local/lib
+  INSTALL_INCDIR=/usr/local/include
+! INSTALL_BINDIR=/usr/local/lib/VFlib
+  
+  
+  
