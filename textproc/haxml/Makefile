@@ -6,6 +6,7 @@
 
 PORTNAME=	haxml
 PORTVERSION=	1.07a
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.haskell.org/HaXml/ \
 		ftp://ftp.cs.york.ac.uk/pub/haskell/HaXml/
