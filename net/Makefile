@@ -49,6 +49,7 @@
     SUBDIR += dhcpconf
     SUBDIR += dip
     SUBDIR += dlint
+    SUBDIR += dnscache
     SUBDIR += dnsutl
     SUBDIR += dnswalk
     SUBDIR += doc
