@@ -17,6 +17,8 @@ RUN_DEPENDS=	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
 		${SITE_PERL}/IO/Multiplex.pm:${PORTSDIR}/devel/p5-IO-Multiplex \
 		${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB
 
+BROKEN=		Unfetchable
+
 USE_PERL5=	yes
 USE_RC_SUBR=	yes
 NO_BUILD=	yes
