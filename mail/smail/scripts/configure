@@ -1,6 +1,10 @@
 #!/bin/sh
 #
-# $Id:$
+# $Id: configure,v 1.1.1.1 1994/10/23 01:22:35 torstenb Exp $
 
 sed <${FILESDIR}/EDITME >${WRKSRC}/conf/EDITME s+!!PREFIX!!+$PREFIX+g
 sed <${FILESDIR}/freebsd2.0 >${WRKSRC}/conf/os/freebsd2.0 s+!!PREFIX!!+$PREFIX+g
+
+if [ $USE_IDENT ]; then
+	echo >>${WRKSRC}/conf/os/freebsd2.0 HAVE=\$HAVE:RFC1413
+fi
