@@ -758,6 +758,7 @@
     SUBDIR += p5-Mac-FileSpec-Unixish
     SUBDIR += p5-Make
     SUBDIR += p5-Memoize
+    SUBDIR += p5-Memoize-ExpireLRU
     SUBDIR += p5-Module-Build
     SUBDIR += p5-Module-CoreList
     SUBDIR += p5-Module-Info
