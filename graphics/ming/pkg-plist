@@ -2,7 +2,6 @@ bin/gif2dbl
 bin/gif2mask
 bin/listfdb
 bin/listjpeg
-bin/listmp3
 bin/listswf
 bin/makefdb
 bin/png2dbl
@@ -17,6 +16,7 @@ include/ming/movie.h
 include/ming/movieclip.h
 include/ming/position.h
 include/ming/shape_util.h
+include/ming/text_util.h
 include/ming/blocks/swf.h
 include/ming/c++/ming.h
 @dirrm include/ming/blocks
