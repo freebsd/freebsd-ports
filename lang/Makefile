@@ -15,6 +15,7 @@
     SUBDIR += ccscript
     SUBDIR += cel
     SUBDIR += cim
+    SUBDIR += clips
     SUBDIR += clisp
     SUBDIR += cmucl
     SUBDIR += compaq-cc
