@@ -1,0 +1,8 @@
+--- ethercodes.dat.orig	Tue Mar 21 02:37:05 2000
++++ ethercodes.dat	Thu Sep 14 11:18:09 2000
+@@ -897,3 +897,5 @@
+ c0:0:0	Western Digital (may be reversed 00 00 C0?)
+ e2:c:f	Kingston Technologies
+ ec:10:0	Enance Source Co., Ltd.	PC clones(?)
++0:bd:11	VMWare Inc
++0:bd:fb	VMWare Inc
