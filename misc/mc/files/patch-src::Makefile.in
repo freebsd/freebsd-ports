@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	Mon Feb 10 02:00:05 2003
++++ src/Makefile.in	Mon Feb 10 02:00:19 2003
+@@ -700,7 +700,7 @@
+ 
+ install-data-am:
+ 
+-install-exec-am: install-binPROGRAMS install-pkglibPROGRAMS
++install-exec-am: install-binPROGRAMS
+ 	@$(NORMAL_INSTALL)
+ 	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
+ 
