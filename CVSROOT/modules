@@ -4614,6 +4614,7 @@ p5-CDB_File	ports/databases/p5-CDB_File
 p5-CDB_File-Generator	ports/databases/p5-CDB_File-Generator
 p5-CDDB		ports/audio/p5-CDDB
 p5-CDDB_get	ports/audio/p5-CDDB_get
+p5-CGI-Application	ports/www/p5-CGI-Application
 p5-CGI-Cache	ports/www/p5-CGI-Cache
 p5-Cache-Cache	ports/devel/p5-Cache-Cache
 p5-Carp-Assert	ports/devel/p5-Carp-Assert
