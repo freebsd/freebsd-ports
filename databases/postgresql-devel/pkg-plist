@@ -1,5 +1,6 @@
 %%SERVER%%bin/postmaster
 %%SERVER%%bin/postgres
+bin/clusterdb
 bin/ecpg
 bin/initdb
 bin/initlocation
@@ -9,7 +10,6 @@ bin/pg_dump
 bin/pg_restore
 bin/pg_dumpall
 bin/pg_id
-bin/pg_passwd
 bin/psql
 bin/createdb
 bin/dropdb
@@ -19,7 +19,9 @@ bin/droplang
 bin/vacuumdb
 bin/createlang
 bin/pg_config
-%%MULTIBYTE%%bin/pg_encoding
+bin/pg_controldata
+bin/pg_resetxlog
+bin/pg_encoding
 include/libpq/libpq-fs.h
 @dirrm include/libpq
 include/postgresql/internal/libpq/pqcomm.h
@@ -32,12 +34,6 @@ include/postgresql/internal/libpq-int.h
 include/postgresql/internal/pqexpbuffer.h
 @dirrm include/postgresql/internal
 @dirrm include/postgresql
-include/libpq++/pgconnection.h
-include/libpq++/pgdatabase.h
-include/libpq++/pgtransdb.h
-include/libpq++/pgcursordb.h
-include/libpq++/pglobject.h
-@dirrm include/libpq++
 include/postgres_ext.h
 include/pg_config.h
 include/pg_config_os.h
@@ -47,25 +43,42 @@ include/ecpglib.h
 include/ecpgtype.h
 include/sqlca.h
 include/sql3types.h
-include/libpgeasy.h
-include/libpq++.h
 lib/libpq.so
 lib/libpq.a
 lib/libpq.so.2
 lib/libecpg.so
 lib/libecpg.a
 lib/libecpg.so.3
-lib/libpgeasy.so
-lib/libpgeasy.a
-lib/libpgeasy.so.2
-lib/libpq++.so
-lib/libpq++.a
-lib/libpq++.so.4
 %%SERVER%%lib/postgresql/plpgsql.so
+%%SERVER%%lib/postgresql/ascii_and_mic.so
+%%SERVER%%lib/postgresql/cyrillic_and_mic.so
+%%SERVER%%lib/postgresql/euc_cn_and_mic.so
+%%SERVER%%lib/postgresql/euc_jp_and_sjis.so
+%%SERVER%%lib/postgresql/euc_kr_and_mic.so
+%%SERVER%%lib/postgresql/euc_tw_and_big5.so
+%%SERVER%%lib/postgresql/latin2_and_win1250.so
+%%SERVER%%lib/postgresql/latin_and_mic.so
+%%SERVER%%lib/postgresql/utf8_and_ascii.so
+%%SERVER%%lib/postgresql/utf8_and_big5.so
+%%SERVER%%lib/postgresql/utf8_and_cyrillic.so
+%%SERVER%%lib/postgresql/utf8_and_euc_cn.so
+%%SERVER%%lib/postgresql/utf8_and_euc_jp.so
+%%SERVER%%lib/postgresql/utf8_and_euc_kr.so
+%%SERVER%%lib/postgresql/utf8_and_euc_tw.so
+%%SERVER%%lib/postgresql/utf8_and_gb18030.so
+%%SERVER%%lib/postgresql/utf8_and_gbk.so
+%%SERVER%%lib/postgresql/utf8_and_iso8859.so
+%%SERVER%%lib/postgresql/utf8_and_iso8859_1.so
+%%SERVER%%lib/postgresql/utf8_and_johab.so
+%%SERVER%%lib/postgresql/utf8_and_sjis.so
+%%SERVER%%lib/postgresql/utf8_and_tcvn.so
+%%SERVER%%lib/postgresql/utf8_and_uhc.so
+%%SERVER%%lib/postgresql/utf8_and_win1250.so
+%%SERVER%%lib/postgresql/utf8_and_win1256.so
+%%SERVER%%lib/postgresql/utf8_and_win874.so
 @unexec rmdir %D/lib/postgresql 2>/dev/null || true
 %%SERVER%%share/postgresql/502.pgsql
-%%SERVER%%share/postgresql/odbc.sql
-%%SERVER%%share/postgresql/odbc-drop.sql
+%%SERVER%%share/postgresql/conversion_create.sql
 %%SERVER%%share/postgresql/postgres.bki
 %%SERVER%%share/postgresql/postgres.description
 %%SERVER%%share/postgresql/pg_hba.conf.sample

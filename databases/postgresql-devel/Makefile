@@ -6,7 +6,8 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.2.2
+PORTVERSION?=	7.3.b1
+PKGNAMESUFFIX=	-devel
 CATEGORIES?=	databases
 MASTER_SITES=	ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
 		ftp://ftp.se.postgresql.org/pub/database/relational/postgresql/%SUBDIR%/ \
@@ -18,47 +19,62 @@ MASTER_SITES=	ftp://ftp.postgresql.org/pub/%SUBDIR%/ \
 		ftp://ftp.jaist.ac.jp/pub/dbms/PostgreSQL/%SUBDIR%/ \
 		ftp://ftp.us.postgresql.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
-DISTFILES=	postgresql-base-${PORTVERSION}${EXTRACT_SUFX} \
-		postgresql-opt-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES=	postgresql-base-7.3b1${EXTRACT_SUFX} \
+		postgresql-opt-7.3b1${EXTRACT_SUFX}
 
-MAINTAINER?=	girgen@partitur.se
+MAINTAINER?=	seanc@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
+WRKSRC=		${WRKDIR}/postgresql-7.3b1
 DIST_SUBDIR=	postgresql
 
-USE_SUBMAKE=	yes
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 
 .if defined(POSTGRESQL_SUBPORT)
 ## the POSTGRESQL_SUBPORTS use this port's distinfo
-MD5_FILE=	${.CURDIR}/../postgresql7/distinfo
+MD5_FILE=	${.CURDIR}/../postgresql-devel/distinfo
 .else
 
 ## The rest of this file is for normal base installation
 INSTALLS_SHLIB=	YES
 
-CONFIGURE_ARGS=	--enable-locale --enable-syslog --with-CXX \
-		--docdir=${PREFIX}/share/doc --with-libdir=${LOCALBASE}/lib \
+CONFIGURE_ARGS=	--docdir=${PREFIX}/share/doc --with-libdir=${LOCALBASE}/lib \
 		--with-includes=${LOCALBASE}/include
 
 .if !defined(WITHOUT_GNUGETOPT)
-LDFLAGS+=	-L${LOCALBASE}/lib -lgnugetopt
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 .endif
 
 # if you want localized messages, make -DWITH_GETTEXT
 # WARNING: this seems to require relinking binaries depending on
 # libpq.so, including for example mod_php and tcl.
-.if defined(WITH_GETTEXT)
-CONFIGURE_ARGS+=--enable-nls
-CONFIGURE_ENV+=	"LIBS=-lintl"
-LDFLAGS+=	-L${LOCALBASE}/lib -lintl
-LIB_DEPENDS+=	intl.4:${PORTSDIR}/devel/gettext
+.if defined(WITHOUT_GETTEXT)
+CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	GETTEXT=""
 .else
+CONFIGURE_ENV+=	"LDFLAGS=-L${LOCALBASE}/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--enable-nls
+LIB_DEPENDS+=	intl.4:${PORTSDIR}/devel/gettext
 PLIST_SUB+=	GETTEXT="@comment "
+.endif
+
+.if defined(WITH_OPTIMIZED_CFLAGS)
+CFLAGS+=-O3
+.endif
+
+.if defined(WITH_DEBUG) && defined(WITH_STRIPBIN)
+	@${ECHO} "WITH_DEBUG and WITH_STRIPBIN are mutually exclusive tunables."
+	@${ECHO} "Please choose one or the other."
+	@exit ${FALSE}
+.endif
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug
+.endif
+
+.if defined(WITH_STRIPBIN)
+INSTALL_TARGET=	install-strip
 .endif
 
 .if !defined(WITHOUT_SSL)
@@ -66,41 +82,37 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+= "--with-openssl=${OPENSSLBASE}"
 .endif
 
-MAN1=		createdb.1 createlang.1 createuser.1 dropdb.1 droplang.1 \
-		dropuser.1 ecpg.1 initdb.1 initlocation.1 ipcclean.1 pg_config.1 \
-		pg_ctl.1 pg_dump.1 pg_dumpall.1 pg_passwd.1 pg_restore.1 \
-		pgaccess.1 pgtclsh.1 pgtksh.1 postgres.1 postmaster.1 psql.1 \
-		vacuumdb.1
-MAN7=		abort.7 alter_group.7 alter_table.7 alter_user.7 analyze.7 \
-		begin.7 checkpoint.7 close.7 cluster.7 comment.7 commit.7 copy.7 \
-		create_aggregate.7 create_constraint_trigger.7 \
-		create_database.7 create_function.7 create_group.7 \
-		create_index.7 create_language.7 create_operator.7 \
-		create_rule.7 create_sequence.7 create_table.7 \
-		create_table_as.7 create_trigger.7 create_type.7 \
-		create_user.7 create_view.7 declare.7 delete.7 \
-		drop_aggregate.7 drop_database.7 drop_function.7 \
-		drop_group.7 drop_index.7 drop_language.7 \
-		drop_operator.7 drop_rule.7 drop_sequence.7 \
-		drop_table.7 drop_trigger.7 drop_type.7 drop_user.7 \
-		drop_view.7 end.7 explain.7 fetch.7 grant.7 insert.7 \
-		listen.7 load.7 lock.7 move.7 notify.7 reindex.7 \
-		reset.7 revoke.7 rollback.7 select.7 select_into.7 \
-		set.7 set_constraints.7 set_transaction.7 show.7 \
-		set_session_authorization.7 \
-		truncate.7 unlisten.7 update.7 vacuum.7
+.if defined(WITH_MIT_KRB5) && defined(WITH_HEIMDAL_KRB5)
+	@${ECHO} "WITH_MIT_KRB5 and WITH_HEIMDAL_KRB5 are mutually exclusive."
+	@${ECHO} "Please choose one or the other."
+	@exit 1
+.endif
 
-SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
-		WRKDIR="${WRKDIR}" \
-		FILESDIR="${FILESDIR}" \
-		TOUCH="${TOUCH}" \
-		MKDIR="${MKDIR}" \
-		DISTNAME="${DISTNAME}"
+.if defined(WITH_MIT_KRB5)
+KRB5CONF=	${LOCALBASE}/bin/krb5-config
+.if !exists(${KRB5CONFIG})
+	@${ECHO} "Unable to find krb5-config in your local base, please verify that"
+	@${ECHO} "security/krb5 is installed or undefine the WITH_MIT_KRB5 tunable."
+	@exit 1
+.endif
+WITH_KRB5=	yes
+.endif
 
-# We must .include here because we need the Makefile.inc @ pre-install
-# to determine the correct plist.
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.if defined(WITH_HEIMDAL_KRB5)
+KRB5CONF=	/usr/bin/krb5-config
+.if !exists(${KRB5CONFIG})
+	@${ECHO} "Unable to find krb5-config in the base system.  Undefine"
+	@${ECHO} "WITH_HEIMDAL_KRB5 or add MAKE_KERBEROS5=yes to /etc/make.conf"
+	@${ECHO} "and remake world (or undefine the WITH_HEIMDAL_KRB5 tunable)."
+	@exit 1
+.endif
+LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
+WITH_KRB5=	yes
+.endif
+
+.if defined(WITH_KRB5)
+CONFIGURE_ARGS+=	--with-krb5="`${KRB5CONF} --prefix krb5`"
+LDFLAGS+=	`${KRB5CONF} --libs krb5`
 .endif
 
 .if defined(WITHOUT_SERVER)
@@ -110,15 +122,36 @@ PLIST_SUB+=	SERVER="@comment "
 PLIST_SUB+=	SERVER=""
 .endif
 
-.if defined(WITHOUT_MULTIBYTE)
-PLIST_SUB+=	MULTIBYTE="@comment "
-.else
-PLIST_SUB+=	MULTIBYTE=""
-CONFIGURE_ARGS+=--enable-multibyte=${MULTIBYTE_ENCODING}
-.endif
-
 pre-everything::
-	@ ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.postgresql
+	@${ECHO} ""
+	@${ECHO} "CAUTION!!!!!"
+	@${ECHO} ""
+	@${ECHO} "	This is a development port!  You may have to re-initdb between"
+	@${ECHO} "	upgrades as the system catalogs may change between snapshots."
+	@${ECHO} "	Running this version of the port implies a large degree of"
+	@${ECHO} "	familiarity with the PostgreSQL development cycle and process."
+	@${ECHO} "	You should _always_ backup your data using pg_dump(all) before"
+	@${ECHO} "	every upgrade.  If you have not backed up your data yet, exit"
+	@${ECHO} "	this installation and backup your data now!!!!"
+	@${ECHO} ""
+	@${ECHO} ""
+	@${ECHO} "${PORTNAME} has several tunables that used to configure PostgreSQL:"
+	@${ECHO} ""
+	@${ECHO} "	WITHOUT_GNUGETOPT=yes		Skips building with GNU getopt"
+	@${ECHO} "	WITHOUT_GETTEXT=yes		Skips building with support for"
+	@${ECHO} "					internationalized error messages"
+	@${ECHO} "	WITH_DEBUG=yes			Builds with debugging symbols"
+	@${ECHO} "	WITH_STRIPBIN=yes		Installs stripped binaries"
+	@${ECHO} "	WITHOUT_SSL=yes			Builds without OpenSSL support"
+	@${ECHO} "	WITHOUT_SERVER=yes		Installs the headers and libraries for"
+	@${ECHO} "					PostgreSQL clients"
+	@${ECHO} "	WITH_MIT_KRB5=yes		Builds with MIT's kerberos support"
+	@${ECHO} "	WITH_HEIMDAL_KRB5=yes		Builds with Heimdal's kerberos support"
+	@${ECHO} "	WITH_OPTIMIZED_CFLAGS=yes	Builds with compiler optimizations (-O3)"
+	@${ECHO} ""
+.if !defined(BATCH)
+	@sleep 3
+.endif
 
 pre-install:
 .if !defined(WITHOUT_SERVER)
@@ -126,16 +159,13 @@ pre-install:
 		${SH} ${PKGDIR}/pkg-install ${PORTNAME} PRE-INSTALL
 .endif
 
-post-build:
-	@ cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${GMAKE} -C src/interfaces/odbc odbc-drop.sql
-
 post-install:
 	@ ${MKDIR} ${PREFIX}/share/postgresql ;\
 	${CAT} ${FILESDIR}/post-install-notes ${PKGMESSAGE} |\
 		${SED} "s|/usr/local|${PREFIX}|g" |\
 		tee ${PREFIX}/share/postgresql/post-install-notes
 .if !defined(DEBUG_FLAGS)
-.for file in ecpg pg_dump pg_id pg_passwd pg_restore psql
+.for file in ecpg pg_dump pg_id pg_restore psql
 	@ strip ${PREFIX}/bin/${file}
 .endfor
 .endif
@@ -159,15 +189,13 @@ post-install:
 	${INSTALL_DATA} ${PREFIX}/share/postgresql/post-install-notes ~pgsql/. ;\
 	${CHOWN} -R pgsql:pgsql ~pgsql/. ;\
 	${INSTALL_DATA} ${FILESDIR}/502.pgsql \
-			${WRKSRC}/src/interfaces/odbc/odbc.sql \
-			${WRKSRC}/src/interfaces/odbc/odbc-drop.sql \
 			${PREFIX}/share/postgresql
 .else
 do-install:
 	@ cd ${WRKSRC}; \
-	${GMAKE} -C src/bin install ;\
-	${GMAKE} -C src/include install ;\
-	${GMAKE} -C src/interfaces install
+	${GMAKE} -C src/bin ${INSTALL_TARGET} ;\
+	${GMAKE} -C src/include ${INSTALL_TARGET} ;\
+	${GMAKE} -C src/interfaces ${INSTALL_TARGET}
 .endif
 
 post-clean:

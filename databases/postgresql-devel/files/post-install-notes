@@ -3,29 +3,20 @@ The PostgreSQL port has a collection of "side orders":
 postgresql-doc
   For all of the html documentation
 
-p5-Pg
-  A perl5 API for client access to PostgreSQL databases.
-
 postgresql-tcltk 
   If you want tcl/tk client support. You get a neat GUI, pgaccess, as
   a bonus!
 
-postgresql-jdbc
-  For Java JDBC support.
-
 postgresql-odbc
   For client access from unix applications using ODBC as access
-  method. Not needed to access unix PostgreSQL servers from Win32
-  using ODBC. See below.
+  method. 
 
-ruby-postgres, py-PyGreSQL
-  For client access to PostgreSQL databases using the ruby & python
-  languages.
+ruby-postgres, py-PyGreSQL, p5-Pg, p5-DBD-Pg, postgresql-jdbc
+  For client access to PostgreSQL databases using the languages: ruby,
+  python, perl, perl DBI, and jdbc.
 
 postgresql-plperl, postgresql-pltcl & postgresql-plruby
-  For using perl5, tcl & ruby as procedural languages.
-
-etc etc...
+  For using perl5, tcl, and ruby as procedural languages.
 
 Note that many files have moved around compared to previous versions
 of PostgreSQL. For example, plpgsql.so and all other language modules
@@ -52,6 +43,3 @@ postgresql.conf also needed, of course):
   options         SEMUME=40
   options         SEMMNU=120
 
-If you plan to access your PostgreSQL server using ODBC, please
-consider running the SQL script /usr/local/share/postgresql/odbc.sql
-to get the functions required for ODBC compliance.
