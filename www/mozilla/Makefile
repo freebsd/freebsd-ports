@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	mozilla
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4
 PORTEPOCH?=	2
 CATEGORIES?=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
@@ -62,6 +62,7 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - --exclude */CVS/* \
 			--exclude .cvsignore \
 			--exclude makefile.win \
 			--exclude MANIFEST
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
@@ -135,8 +136,7 @@ CONFIGURE_ARGS+=	--disable-composer
 .if defined(WITH_GTK2)
 CONFIGURE_ARGS+=	--enable-default-toolkit=gtk2
 PKGCONFIG_FILES=	mozilla-gtkmozembed.pc mozilla-js.pc mozilla-xpcom.pc \
-			mozilla-nspr.pc mozilla-nss.pc
-EXTRA_PATCHES=		${FILESDIR}/xim_dekita2.patch
+			mozilla-nspr.pc mozilla-nss.pc mozilla-plugin.pc
 .else
 CONFIGURE_ARGS+=	--enable-default-toolkit=gtk
 .endif
@@ -163,7 +163,7 @@ CONFIGURE_ARGS+=	--enable-optimize=-O2
 .endif
 
 .if ${ARCH} == "alpha" && ${OSVERSION} < 500035
-BROKEN=	"core dumps on alpha during post-build"
+IGNORE=	"core dumps on alpha during post-build"
 .endif
 
 .if exists(${LOCALBASE}/include/freetype/freetype.h)

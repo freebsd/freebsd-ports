@@ -1,23 +1,14 @@
---- configure.orig	Thu Feb  6 17:15:12 2003
-+++ configure	Tue Feb 11 22:52:48 2003
-@@ -10974,7 +10974,7 @@
-     fi
-     MOC=$HOST_MOC
- 
--    QT_CFLAGS="-I${QTDIR}${QTINCDIR} -DQT_GENUINE_STR -DQT_NO_STL"
-+    QT_CFLAGS="-I${QTDIR}/include/X11/qt -DQT_GENUINE_STR"
-     if test -z "$MOZ_DEBUG"; then
-       QT_CFLAGS="$QT_CFLAGS -DQT_NO_DEBUG -DNO_DEBUG"
-     fi
-@@ -11840,9 +11840,9 @@
+--- configure.orig	Mon Jun 16 15:15:10 2003
++++ configure	Mon Jun 30 23:21:49 2003
+@@ -11992,9 +11992,9 @@
  
  
  
--MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help pref transformiix venkman inspector irc universalchardet typeaheadfind"
-+MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help pref transformiix venkman inspector universalchardet typeaheadfind"
+-MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help p3p pref transformiix venkman inspector irc universalchardet typeaheadfind webservices"
++MOZ_EXTENSIONS_DEFAULT=" cookie wallet content-packs xml-rpc xmlextras help p3p pref transformiix venkman inspector universalchardet typeaheadfind webservices"
  
--MOZ_EXTENSIONS_ALL="$MOZ_EXTENSIONS_DEFAULT xmlterm access-builtin p3p interfaceinfo datetime finger cview" 
-+MOZ_EXTENSIONS_ALL="$MOZ_EXTENSIONS_DEFAULT irc xmlterm access-builtin p3p interfaceinfo datetime finger cview" 
+-MOZ_EXTENSIONS_ALL="$MOZ_EXTENSIONS_DEFAULT xmlterm access-builtin datetime finger cview" 
++MOZ_EXTENSIONS_ALL="$MOZ_EXTENSIONS_DEFAULT irc xmlterm access-builtin datetime finger cview" 
  
  # Check whether --enable-extensions or --disable-extensions was given.
  if test "${enable_extensions+set}" = set; then
