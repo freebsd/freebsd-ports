@@ -15,7 +15,7 @@ MAINTAINER=	shanee@augusta.de
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 NO_BUILD=	yes
-MAN=		tkcvs.n
+MANN=		tkcvs.n
 
 WISH=		wish8\.2
 TCLSH=		tclsh8\.2
