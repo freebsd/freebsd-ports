@@ -26,6 +26,11 @@ MAKE_ARGS= 	gp
 MAN1=		gp.1 gphelp.1
 MLINKS=		gp.1 pari.1
 
+HAVE_EMACS!=	which emacs || echo nope
+.if ${HAVE_EMACS} != "nope"
+PLIST=		${PKGDIR}/PLIST.emacs
+.endif
+
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
