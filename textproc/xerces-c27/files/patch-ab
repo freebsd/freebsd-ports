@@ -1,0 +1,28 @@
+--- src/xercesc/util/Transcoders/IconvFBSD/IconvFBSDTransService.hpp	2002/11/04 15:14:34	1.4
++++ src/xercesc/util/Transcoders/IconvFBSD/IconvFBSDTransService.hpp	2003/03/07 15:08:57	1.5
+@@ -56,6 +56,9 @@
+ 
+ /*
+  * $Log: IconvFBSDTransService.hpp,v $
++ * Revision 1.5  2003/03/07 15:08:57  tng
++ * [Bug 17571] fix building IconvFBSD (namespaces) .  Patch from Bjoern A. Zeeb.
++ *
+  * Revision 1.4  2002/11/04 15:14:34  tng
+  * C++ Namespace Support.
+  *
+@@ -85,11 +88,13 @@
+ 
+ #include <xercesc/util/TransService.hpp>
+ 
++#ifdef XML_USE_LIBICONV
++#  include <iconv.h>
++#endif
++
+ XERCES_CPP_NAMESPACE_BEGIN
+ 
+ #ifdef XML_USE_LIBICONV
+-
+-#  include <iconv.h>
+ 
+ // ---------------------------------------------------------------------------
+ //  Libiconv wrapper (low-level conversion utilities collection)
