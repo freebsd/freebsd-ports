@@ -139,6 +139,7 @@
     SUBDIR += p5-Math-Base85
     SUBDIR += p5-Math-BaseCalc
     SUBDIR += p5-Math-Bezier
+    SUBDIR += p5-Math-Bezier-Convert
     SUBDIR += p5-Math-BigInt
     SUBDIR += p5-Math-BigIntFast
     SUBDIR += p5-Math-Calc-Units

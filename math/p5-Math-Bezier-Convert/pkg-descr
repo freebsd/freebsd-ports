@@ -1,0 +1,5 @@
+Math::Bezier::Convert provides functions to convert quadratic bezier to
+cubic, to approximate cubic bezier to quadratic, and to approximate
+cubic and quadratic bezier to polyline.
+
+WWW: http://search.cpan.org/dist/Math-Bezier-Convert/
