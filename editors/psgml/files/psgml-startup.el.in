@@ -25,7 +25,7 @@
     ("HTML 3.2" "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 3.2//EN\">")
     ("HTML 4.0" "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\">")
     ("HTML 4.0 Transitional"
-     "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitioal//EN\">")
+     "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Transitional//EN\">")
     ("HTML 4.0 Frameset"
      "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0 Frameset//EN\">")
     ("DocBook V2.4.1"
