@@ -1,6 +1,6 @@
-diff -ur work.orig/sablevm-1.0.2/configure work/sablevm-1.0.2/configure
---- work.orig/sablevm-1.0.2/configure	Wed Aug 14 22:34:00 2002
-+++ work/sablevm-1.0.2/configure	Thu Aug 15 14:56:41 2002
+diff -ur work.orig/sablevm-1.0.3/configure work/sablevm-1.0.3/configure
+--- work.orig/sablevm-1.0.3/configure	Wed Aug 14 22:34:00 2002
++++ work/sablevm-1.0.3/configure	Sat Aug 17 21:14:52 2002
 @@ -7747,6 +7747,9 @@
  
  

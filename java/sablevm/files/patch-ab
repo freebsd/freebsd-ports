@@ -1,6 +1,6 @@
-diff -ur work.orig/sablevm-1.0.2/configure.ac work/sablevm-1.0.2/configure.ac
---- work.orig/sablevm-1.0.2/configure.ac	Wed Aug 14 22:29:54 2002
-+++ work/sablevm-1.0.2/configure.ac	Thu Aug 15 14:54:29 2002
+diff -ur work.orig/sablevm-1.0.3/configure.ac work/sablevm-1.0.3/configure.ac
+--- work.orig/sablevm-1.0.3/configure.ac	Wed Aug 14 22:29:54 2002
++++ work/sablevm-1.0.3/configure.ac	Sat Aug 17 21:14:51 2002
 @@ -114,12 +114,15 @@
  AC_LIBTOOL_DLOPEN
  AM_PROG_LIBTOOL
