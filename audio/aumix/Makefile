@@ -40,6 +40,13 @@ pre-extract:
 	@sleep 3
 .endif
 
+do-patch:
+.for ii in c h
+	${CP} -p ${WRKSRC}/src/common.${ii} ${WRKSRC}/src/common.${ii}.orig
+	${SED} -e "s:/etc:${PREFIX}/etc:" < ${WRKSRC}/src/common.${ii}.orig \
+		> ${WRKSRC}/src/common.${ii}
+.endfor
+
 .if (${HAVE_GNOME:Mgtk12}!="") && !defined(WITHOUT_ALL) && \
 	!defined(WITHOUT_GTK)&& !defined(WITH_GTK2)
 USE_GNOME=	gtk12
