@@ -1,17 +1,6 @@
---- configure.orig	Tue Sep 28 13:50:52 1999
-+++ configure	Tue Oct  5 16:16:32 1999
-@@ -2702,8 +2702,8 @@
- echo "configure:2703: checking whether to build gmodulized gdk-pixbuf" >&5
- oLIBS="$LIBS"
- oCFLAGS="$CFLAGS"
--LIBS="$LIBS `glib-config --libs gmodule`"
--CFLAGS="$CFLAGS `glib-config --cflags gmodule`"
-+LIBS="$LIBS `$GLIB_CONFIG --libs gmodule`"
-+CFLAGS="$CFLAGS `$GLIB_CONFIG --cflags gmodule`"
- if test "$cross_compiling" = yes; then
-     { echo "configure: error: can not run test program while cross compiling" 1>&2; exit 1; }
- else
-@@ -2752,8 +2752,8 @@
+--- configure.orig	Wed Oct 20 17:15:24 1999
++++ configure	Fri Oct 22 10:26:25 1999
+@@ -3028,8 +3028,8 @@
  #define USE_GMODULE 1
  EOF
  
@@ -22,23 +11,22 @@
     
     
     echo "$ac_t""yes" 1>&6
-@@ -3696,8 +3696,8 @@
- fi
+@@ -3561,8 +3561,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lgif echo "configure: warning: *** Native GIF support will not be built" 1>&2;
+-	gifok=no $LIBS"
++LIBS="-lgif $GTK_LIBS $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 3568 "configure"
+ #include "confdefs.h"
+--- Makefile.in.orig	Wed Oct 20 17:34:44 1999
++++ Makefile.in	Fri Oct 22 10:22:14 1999
+@@ -94,7 +94,7 @@
+ VERSION = @VERSION@
  
- GDK_PIXBUF_LIBDIR='-L${libdir}'
--GDK_PIXBUF_INCLUDEDIR="-I${includedir} `gnome-config --cflags glib libart` `glib-config --cflags gmodule`"
--GDK_PIXBUF_LIBS="$LIBS `gnome-config --libs glib libart` `glib-config --libs gmodule` -lgdk_pixbuf"
-+GDK_PIXBUF_INCLUDEDIR="-I${includedir} `gnome-config --cflags glib libart` `$GLIB_CONFIG --cflags gmodule`"
-+GDK_PIXBUF_LIBS="$LIBS `gnome-config --libs glib libart` `$GLIB_CONFIG --libs gmodule` -lgdk_pixbuf"
- 
- 
- 
---- Makefile.in.orig	Tue Sep 28 13:54:53 1999
-+++ Makefile.in	Tue Oct  5 16:23:16 1999
-@@ -101,7 +101,7 @@
- ZVT_LIBS = @ZVT_LIBS@
- 
- SUBDIRS = macros src
+ SUBDIRS = src
 -confexecdir = $(libdir)
 +confexecdir = $(sysconfdir)
  confexec_DATA = gdk_pixbufConf.sh
