@@ -38,6 +38,7 @@ cyrus/bin/pop3proxyd
 %%MURDER%%cyrus/bin/proxyd
 cyrus/bin/reconstruct
 cyrus/bin/sievec
+cyrus/bin/smmapd
 cyrus/bin/squatter
 cyrus/bin/timsieved
 cyrus/bin/tls_prune
