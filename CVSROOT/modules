@@ -4057,6 +4057,7 @@ mkptools	ports/Tools/scripts/mkptools
 mkstr		src/usr.bin/mkstr
 mksunbootcd	ports/sysutils/mksunbootcd
 mktemp		src/usr.bin/mktemp
+mktool		ports/sysutils/mktool
 ml		ports/mail/ml
 mlan		ports/comms/mlan
 mlan3		ports/comms/mlan3
