@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	perky
 PKGNAMESUFFIX=	${PYTHONSUFFIX}${TCLSUFFIX}${I18NSUFFIX}
 
 MAINTAINER=	perky@FreeBSD.org
-COMMENT=	Not Erik's Windowing Toolkit:  console I/O handling library
+COMMENT=	Not Erik's Windowing Toolkit:  console I/O handling library#'
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang \
 		popt.0:${PORTSDIR}/devel/popt
@@ -49,9 +49,9 @@ PLIST_SUB+=	TCLOPT=""
 PLIST_SUB+=	TCLOPT="@comment "
 .endif
 
-_HAVE_WCHAR_LIB!=	grep wcwidth ${DESTDIR}/usr/lib/libc.so 2>/dev/null \
-			|| true
-.if empty(_HAVE_WCHAR_LIB)
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} <= 500038
 PATCH_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~perky/distfiles/
 PATCH_SITE_SUBDIR=	perky
@@ -78,4 +78,4 @@ post-install:
 .endif
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
