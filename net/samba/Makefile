@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	2.2.2
-PORTREVISION=	3
+PORTVERSION=	2.2.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.samba.org/pub/samba/%SUBDIR%/ \
 		ftp://samba.anu.edu.au/pub/samba/%SUBDIR%/ \
@@ -65,7 +64,7 @@ CONFIGURE_ARGS+=	--with-acl-support
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
 MAN1=		findsmb.1 make_smbcodepage.1 rpcclient.1 make_unicodemap.1 \
-		nmblookup.1 smbcacls.1 smbclient.1 smbcontrol.1 smbrun.1 \
+		nmblookup.1 smbcacls.1 smbclient.1 smbcontrol.1 \
 		smbsh.1 smbstatus.1 smbtar.1 testparm.1 \
 		testprns.1 wbinfo.1
 MAN5=		lmhosts.5 smb.conf.5 smbpasswd.5

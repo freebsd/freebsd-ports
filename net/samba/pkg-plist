@@ -38,6 +38,7 @@ etc/codepages/unicode_map.932
 etc/codepages/unicode_map.936
 etc/codepages/unicode_map.949
 etc/codepages/unicode_map.950
+etc/codepages/unicode_map.1251
 etc/codepages/unicode_map.ISO8859-1
 etc/codepages/unicode_map.ISO8859-13
 etc/codepages/unicode_map.ISO8859-15
@@ -99,7 +100,9 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/htmldocs/NT_Security.html
 %%PORTDOCS%%share/doc/samba/htmldocs/OS2-Client-HOWTO.html
 %%PORTDOCS%%share/doc/samba/htmldocs/PAM-Authentication-And-Samba.html
+%%PORTDOCS%%share/doc/samba/htmldocs/Samba-BDC-HOWTO.html
 %%PORTDOCS%%share/doc/samba/htmldocs/Samba-HOWTO-Collection.html
+%%PORTDOCS%%share/doc/samba/htmldocs/Samba-LDAP-HOWTO.html
 %%PORTDOCS%%share/doc/samba/htmldocs/Samba-PDC-HOWTO.html
 %%PORTDOCS%%share/doc/samba/htmldocs/UNIX_INSTALL.html
 %%PORTDOCS%%share/doc/samba/htmldocs/findsmb.1.html
@@ -109,10 +112,9 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/htmldocs/msdfs_setup.html
 %%PORTDOCS%%share/doc/samba/htmldocs/nmbd.8.html
 %%PORTDOCS%%share/doc/samba/htmldocs/nmblookup.1.html
+%%PORTDOCS%%share/doc/samba/htmldocs/pdbedit.8.html
 %%PORTDOCS%%share/doc/samba/htmldocs/printer_driver2.html
 %%PORTDOCS%%share/doc/samba/htmldocs/rpcclient.1.html
-%%PORTDOCS%%share/doc/samba/htmldocs/samba-pdc-faq.html
-%%PORTDOCS%%share/doc/samba/htmldocs/samba-pdc-howto.html
 %%PORTDOCS%%share/doc/samba/htmldocs/samba.7.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smb.conf.5.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smbcacls.1.html
@@ -123,7 +125,6 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/htmldocs/smbmount.8.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smbpasswd.5.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smbpasswd.8.html
-%%PORTDOCS%%share/doc/samba/htmldocs/smbrun.1.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smbsh.1.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smbspool.8.html
 %%PORTDOCS%%share/doc/samba/htmldocs/smbstatus.1.html
@@ -154,6 +155,7 @@ sbin/swat
 %%PORTDOCS%%share/doc/samba/textdocs/Passwords.txt
 %%PORTDOCS%%share/doc/samba/textdocs/Printing.txt
 %%PORTDOCS%%share/doc/samba/textdocs/README.DCEDFS
+%%PORTDOCS%%share/doc/samba/textdocs/README.NOW
 %%PORTDOCS%%share/doc/samba/textdocs/README.jis
 %%PORTDOCS%%share/doc/samba/textdocs/README.sambatar
 %%PORTDOCS%%share/doc/samba/textdocs/Recent-FAQs.txt
@@ -214,6 +216,7 @@ share/examples/samba/printer-accounting/printcap
 share/examples/samba/printing/smbprint
 share/examples/samba/printing/smbprint.newer
 share/examples/samba/printing/smbprint.sysv
+share/examples/samba/printing/smbprint-new.sh
 share/examples/samba/simple/README
 share/examples/samba/simple/smb.conf
 share/examples/samba/smb.conf.default
@@ -238,7 +241,9 @@ share/swat/help/Integrating-with-Windows.html
 share/swat/help/NT_Security.html
 share/swat/help/OS2-Client-HOWTO.html
 share/swat/help/PAM-Authentication-And-Samba.html
+share/swat/help/Samba-BDC-HOWTO.html
 share/swat/help/Samba-HOWTO-Collection.html
+share/swat/help/Samba-LDAP-HOWTO.html
 share/swat/help/Samba-PDC-HOWTO.html
 share/swat/help/UNIX_INSTALL.html
 share/swat/help/findsmb.1.html
@@ -248,10 +253,9 @@ share/swat/help/make_unicodemap.1.html
 share/swat/help/msdfs_setup.html
 share/swat/help/nmbd.8.html
 share/swat/help/nmblookup.1.html
+share/swat/help/pdbedit.8.html
 share/swat/help/printer_driver2.html
 share/swat/help/rpcclient.1.html
-share/swat/help/samba-pdc-faq.html
-share/swat/help/samba-pdc-howto.html
 share/swat/help/samba.7.html
 share/swat/help/smb.conf.5.html
 share/swat/help/smbcacls.1.html
@@ -262,7 +266,6 @@ share/swat/help/smbmnt.8.html
 share/swat/help/smbmount.8.html
 share/swat/help/smbpasswd.5.html
 share/swat/help/smbpasswd.8.html
-share/swat/help/smbrun.1.html
 share/swat/help/smbsh.1.html
 share/swat/help/smbspool.8.html
 share/swat/help/smbstatus.1.html
