@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	Date
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	demon@FreeBSD.org
+COMMENT=	Perl5 module containing a better/faster date parser for absolute dates
 
 PERL_CONFIGURE=	YES
 
