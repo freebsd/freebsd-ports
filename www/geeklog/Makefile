@@ -6,28 +6,28 @@
 #
 
 PORTNAME=	geeklog
-PORTVERSION=	1.3.7.s.2
+PORTVERSION=	1.3.8.s.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.geeklog.net/filemgmt/upload_dir/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.s./sr/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.s./-1sr/}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GeekLog is a web content magagement system
 
-RUN_DEPENDS=	${LOCALBASE}/bin/mysql:${PORTSDIR}/databases/mysql323-client
+USE_MYSQL=	yes
 RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 
 NO_BUILD=	yes
-APACHEDIR=	${LOCALBASE}/www/data
+WWW_DIR=	${PREFIX}/www/data
 
 do-install:
-	${MKDIR} ${APACHEDIR}/geeklog
-	${CP} -R ${WRKSRC}/* ${APACHEDIR}/geeklog
-	${CHOWN} -R www:www ${APACHEDIR}/geeklog
-	${CHMOD} -R 775 ${APACHEDIR}/geeklog/logs
-	${CHMOD} -R 775 ${APACHEDIR}/geeklog/public_html/images/articles
-	${CHMOD} -R 775 ${APACHEDIR}/geeklog/public_html/images/userphotos
-	${CHMOD} -R 775 ${APACHEDIR}/geeklog/public_html/backend
+	${MKDIR} ${WWW_DIR}/geeklog
+	${CP} -R ${WRKSRC}/* ${WWW_DIR}/geeklog
+	${CHOWN} -R www:www ${WWW_DIR}/geeklog
+	${CHMOD} -R 775 ${WWW_DIR}/geeklog/logs
+	${CHMOD} -R 775 ${WWW_DIR}/geeklog/public_html/images/articles
+	${CHMOD} -R 775 ${WWW_DIR}/geeklog/public_html/images/userphotos
+	${CHMOD} -R 775 ${WWW_DIR}/geeklog/public_html/backend
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "***********************************************************************"
 	@${ECHO_MSG} "* You now need to create the database that you want GeekLog           *"
