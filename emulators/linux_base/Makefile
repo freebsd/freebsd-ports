@@ -156,6 +156,10 @@ do-install:
 		rpm -i ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
 #
+# Install yp.conf as a hint to NIS users
+#
+	${INSTALL} ${COPY} -m 644 ${FILESDIR}/yp.conf ${PREFIX}/etc
+#
 # Finish
 #
 .if defined(NEEDLOADLINK)
