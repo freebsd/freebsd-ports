@@ -18,13 +18,12 @@ MAINTAINER=	t.vanklaveren@student.utwente.nl
 LIB_DEPENDS=	ao.1:${PORTSDIR}/audio/libao \
 		ogg.1:${PORTSDIR}/audio/libogg \
 		vorbis.0:${PORTSDIR}/audio/libvorbis
-RUN_DEPENDS=	${X11BASE}/lib/xmms/Input/libvorbis.so:${PORTSDIR}/audio/vorbis-xmms \
-		ogg123:${PORTSDIR}/audio/vorbis-tools
+RUN_DEPENDS=	ogg123:${PORTSDIR}/audio/vorbis-tools
 
 MD5_FILE=	Makefile	# dummy
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/pkg-plist
-SUBPORTS=	libao libogg libvorbis vorbis-tools vorbis-xmms
+SUBPORTS=	libao libogg libvorbis vorbis-tools
 
 pre-install:
 		${ECHO} "@comment intentionally left empty" > ${PLIST}
