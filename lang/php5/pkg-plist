@@ -41,7 +41,9 @@ include/php/Zend/zend_indent.h
 include/php/Zend/zend_ini.h
 include/php/Zend/zend_ini_parser.h
 include/php/Zend/zend_ini_scanner.h
+include/php/Zend/zend_interfaces.h
 include/php/Zend/zend_istdiostream.h
+include/php/Zend/zend_iterators.h
 include/php/Zend/zend_language_parser.h
 include/php/Zend/zend_language_scanner.h
 include/php/Zend/zend_list.h
@@ -123,6 +125,7 @@ include/php/ext/standard/php_standard.h
 include/php/ext/standard/php_string.h
 include/php/ext/standard/php_sunfuncs.h
 include/php/ext/standard/php_type.h
+include/php/ext/standard/php_uuencode.h
 include/php/ext/standard/php_var.h
 include/php/ext/standard/php_versioning.h
 include/php/ext/standard/proc_open.h
