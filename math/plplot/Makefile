@@ -17,8 +17,6 @@ COMMENT=	A scientific plotting package
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
-BROKEN=		Broken pkg-plist
-
 USE_LIBLTDL=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -102,6 +100,8 @@ post-patch:
 		 s|-litcl$$|-litcl32|g ; \
 		 s|-ltcl$$|-ltcl83|g ; \
 		 s|-lpthread|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|tk octave java|tk|g' \
+		${WRKSRC}/bindings/Makefile.in
 	@${REINPLACE_CMD} -e 's| tclsh | ${LOCALBASE}/bin/tclsh8.3 |g' \
 		${WRKSRC}/scripts/mktclIndex
 
