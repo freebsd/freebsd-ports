@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	br-ispell
-PORTVERSION= 	2.4
+PORTVERSION=	2.4
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.ime.usp.br/pub/ueda/br.ispell/
 DISTNAME=	br.ispell-2.4

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sp
-PORTVERSION= 	1.3.4
+PORTVERSION=	1.3.4
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/sp/
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	txt2html
-PORTVERSION= 	1.28
+PORTVERSION=	1.28
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.aigeek.com/txt2html/
 

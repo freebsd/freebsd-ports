@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	isearch
-PORTVERSION= 	1.14
+PORTVERSION=	1.14
 CATEGORIES=	textproc databases
 MASTER_SITES=	ftp://ftp.cnidr.org/pub/NIDR.tools/Isearch/
 DISTNAME=	Isearch-${PORTVERSION}

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cole
-PORTVERSION= 	2.0.1
+PORTVERSION=	2.0.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://arturo.directmail.org/filters/archive/ \
 		http://homepages.go.com/~sobomax/filtersweb/

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cocoon
-PORTVERSION= 	1.8.2
+PORTVERSION=	1.8.2
 CATEGORIES=	textproc www java
 MASTER_SITES=	http://xml.apache.org/cocoon/dist/
 DISTNAME=	Cocoon-${PORTVERSION}

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	texi2html
-PORTVERSION= 	1.64
+PORTVERSION=	1.64
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.mathematik.uni-kl.de/~obachman/Texi2html/Distrib/
 

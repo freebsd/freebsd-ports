@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	nicetext
-PORTVERSION= 	0.9
+PORTVERSION=	0.9
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ctgi.net/pub/ctgi/nicetext/src/ \
 		ftp://nicetext.com/pub/nicetext/src/

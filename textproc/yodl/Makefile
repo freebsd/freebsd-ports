@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yodl
-PORTVERSION= 	1.22
+PORTVERSION=	1.22
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.sco.com/skunkware/src/textproc/ \
 		ftp://ftp.sunsite.org.uk/Mirrors/ftp.sco.com/skunkware/src/textproc/ \

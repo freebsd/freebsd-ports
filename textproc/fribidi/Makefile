@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fribidi
-PORTVERSION= 	0.1.12
+PORTVERSION=	0.1.12
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://imagic.weizmann.ac.il/~dov/freesw/FriBidi/
 

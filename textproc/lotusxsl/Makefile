@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lotusxsl
-PORTVERSION= 	0.18.4
+PORTVERSION=	0.18.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.alphaworks.ibm.com/formula/lotusxsl/
 #MASTER_SITES=	http://apps.alphaworks.ibm.com/technologies/lotusxsl/

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iso12083
-PORTVERSION= 	1993
+PORTVERSION=	1993
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://info.ex.ac.uk/pub/SGML/ISO-12083/
 DISTFILES=	article.dtd book.dtd maths.dtd serial.dtd

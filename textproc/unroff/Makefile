@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unroff
-PORTVERSION= 	1.0.2
+PORTVERSION=	1.0.2
 CATEGORIES=	textproc
 MASTER_SITES=	${UNROFF_SITE}/dist/ \
 		${UNROFF_SITE}/contrib/

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	py-mxTextTools
-PORTVERSION= 	1.1.1
+PORTVERSION=	1.1.1
 CATEGORIES=	textproc python
 MASTER_SITES=	http://starship.python.net/~lemburg/
 DISTNAME=	mxTextTools-1.1.1

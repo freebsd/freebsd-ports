@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xls2xml
-PORTVERSION= 	1.0.0
+PORTVERSION=	1.0.0
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://arturo.directmail.org/filters/archive/ \

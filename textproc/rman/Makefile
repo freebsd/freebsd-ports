@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rman
-PORTVERSION= 	3.0.9
+PORTVERSION=	3.0.9
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://polyglot.sourceforge.net/pub/polyglotman/
 

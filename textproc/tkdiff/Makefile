@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tkdiff
-PORTVERSION= 	3.05
+PORTVERSION=	3.05
 CATEGORIES=	textproc tk83
 MASTER_SITES=	http://people.freebsd.org/~kevlo/
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freegrep
-PORTVERSION= 	0.16
+PORTVERSION=	0.16
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.wam.umd.edu/pub/howardjp/software/grep/ \
 		http://www.wam.umd.edu/~howardjp/software/grep/ \

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xml4j
-PORTVERSION= 	3.0.1
+PORTVERSION=	3.0.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://apps.alphaworks.ibm.com/technologies/xml4j/
 DISTNAME=	XML4J-bin.${PORTVERSION}

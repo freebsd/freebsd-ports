@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gaspell
-PORTVERSION= 	0.30
+PORTVERSION=	0.30
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://aspell.sourceforge.net/
 DISTNAME=	${PORTNAME}-.30

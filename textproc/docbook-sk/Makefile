@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	docbook-xml
-PORTVERSION= 	4.1.2
+PORTVERSION=	4.1.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.docbook.org/xml/4.1.2/
 DISTNAME=	docbkx412

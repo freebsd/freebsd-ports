@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	htdig
-PORTVERSION= 	3.1.5
+PORTVERSION=	3.1.5
 CATEGORIES=	textproc www
 MASTER_SITES=	http://www.htdig.org/files/ \
 		${MASTER_SITE_SUNSITE} \

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sgmlformat
-PORTVERSION= 	1.7
+PORTVERSION=	1.7
 CATEGORIES=	textproc print
 MASTER_SITES=	http://fallout.campusview.indiana.edu/ports/distfiles/
 
