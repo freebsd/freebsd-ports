@@ -1,5 +1,5 @@
---- setup.py.orig	Fri Feb 20 22:34:09 2004
-+++ setup.py	Sat May  1 23:05:23 2004
+--- setup.py.orig	Sat Jun 26 22:57:07 2004
++++ setup.py	Thu Jan 27 02:27:30 2005
 @@ -103,10 +103,8 @@
  	from distutils.core import setup
  	try:
@@ -13,11 +13,11 @@
  		version = settings.sub["version"],
 @@ -132,8 +130,7 @@
  		[(mandir + "/man1",
- 			["doc/man-en/rubber.1", "doc/man-en/rubber-info.1"]),
+ 			["doc/man-en/rubber.1", "doc/man-en/rubber-info.1", "doc/man-en/rubber-pipe.1"]),
  		 (mandir + "/fr/man1",
--			["doc/man-fr/rubber.1", "doc/man-fr/rubber-info.1"]),
+-			["doc/man-fr/rubber.1", "doc/man-fr/rubber-info.1", "doc/man-fr/rubber-pipe.1"]),
 -		 (infodir, ["doc/rubber.info"])]
-+			["doc/man-fr/rubber.1", "doc/man-fr/rubber-info.1"])]
++			["doc/man-fr/rubber.1", "doc/man-fr/rubber-info.1", "doc/man-fr/rubber-pipe.1"])]
  		)
  
  
