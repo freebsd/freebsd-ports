@@ -13,8 +13,6 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	3D modeling/rendering/animation/gaming package
 
-BROKEN=		"Does not compile (different error on 4.x and 5.x)"
-
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		nspr4.1:${PORTSDIR}/devel/nspr \
 		openal.0:${PORTSDIR}/audio/openal \
@@ -25,6 +23,7 @@ USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_PYTHON=	yes
+PYTHON_VERSION=	python2.2
 USE_MESA=	yes
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
@@ -81,6 +80,10 @@ post-patch:
 		's|\$$(NAN_LIBDIR)/\$$(CONFIG_GUESS)|\$$(NAN_LIBDIR)|; \
 		s|\$$(NAN_OBJDIR)/\$$(CONFIG_GUESS)|\$$(NAN_OBJDIR)|' \
 		${WRKSRC}/source/nan_definitions.mk
+	@${REINPLACE_CMD} -e \
+		's,/usr/local,${LOCALBASE},g; \
+		s,/usr/X11R6,${X11BASE},g' \
+		${WRKSRC}/source/*.mk
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/obj/bin/blender ${PREFIX}/bin
