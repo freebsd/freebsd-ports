@@ -15,8 +15,7 @@ MAINTAINER=	roman@xpert.com
 
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--prefix=${PREFIX}
+USE_LIBTOOL=	yes
 
 post-extract:
 	${TOUCH} ${WRKSRC}/stamp-h.in
