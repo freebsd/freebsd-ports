@@ -164,6 +164,7 @@
     SUBDIR += gkrellmqst
     SUBDIR += gkrellmwireless
     SUBDIR += gnet
+    SUBDIR += gnet-glib2
     SUBDIR += gnewtellium
     SUBDIR += gnomba
     SUBDIR += gnome-vnc
