@@ -7,12 +7,9 @@ bin/gschcheck
 bin/gmk_sym
 bin/smash_megafile
 bin/convert_sym
-info/dir
 lib/libgeda.so.2
 lib/libgeda.so
 lib/libgeda.a
-man/man1/gschem.1
-man/man1/gnetlist.1
 share/gEDA/sym/local/4N29-1.sym
 share/gEDA/sym/local/bridge-1.sym
 share/gEDA/sym/local/dac08sm-1.sym
