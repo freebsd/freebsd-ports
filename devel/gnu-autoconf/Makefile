@@ -28,6 +28,7 @@ PREFIX?=	${LOCALBASE}/gnu-autotools
 
 GNU_CONFIGURE=	yes
 NO_MTREE=	yes
+INFO=		autoconf standards
 CONFIGURE_ENV+=	CONFIG_SHELL=${SH}
 CONFIGURE_ENV+=	M4=${LOCALBASE}/bin/gm4
 CONFIGURE_ARGS=	--without-lispdir
