@@ -1303,6 +1303,7 @@ doxygen		ports/devel/doxygen
 dpt		src/usr.sbin/dpt
 drac		ports/mail/drac
 drbl		ports/mail/drbl
+drift		ports/devel/drift
 driftnet	ports/net/driftnet
 drm		ports/games/drm
 drm-kmod	ports/graphics/drm-kmod
