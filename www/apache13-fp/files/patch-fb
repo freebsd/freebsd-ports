@@ -1,25 +1,25 @@
---- frontpage/version4.0/fp_install.sh.orig	Mon May 24 12:45:14 1999
-+++ frontpage/version4.0/fp_install.sh	Thu Feb 24 20:22:48 2000
-@@ -48,7 +48,7 @@
+--- frontpage/version4.0/fp_install.sh.orig	Tue May  2 15:41:43 2000
++++ frontpage/version4.0/fp_install.sh	Thu Jul  6 21:46:15 2000
+@@ -48,7 +48,8 @@
  {
    VERSION="4.0"
    PATH=".:/bin:/usr/bin:/sbin:/usr/sbin:/usr/ucb:/etc:/usr/bsd"
 -  INSTALLDIRDEFAULT="/usr/local/frontpage"
++  AP_TARGET=`PREFIX/sbin/apxs -q TARGET`
 +  INSTALLDIRDEFAULT="PREFIX/frontpage"
  
  case "`echo 'x\c'`" in
     'x\c')   echo="echo -n"    nnl= ;;      #BSD
-@@ -68,6 +68,9 @@
-     IRIX*)              machine="sgi" ;;
-     SunOS*5.*sun4*)     machine="solaris" ;;
+@@ -70,7 +71,7 @@
      SunOS*5.*i386*)     machine="solarisx86" ;;
-+    FreeBSD* | \
-+    NetBSD* | \
-+    OpenBSD* | \
      BSD/OS*)            machine="bsdi" ;;
      SCO_SV*)            machine="sco5" ;;
+-    FreeBSD*)		machine="freebsd" ;;
++    FreeBSD*)		machine="bsdi" ;;
      UnixWare\ *\ *\ 7*\ i*)   machine="uware7" ;;
-@@ -128,7 +131,7 @@
+     *)                  echo "ERROR:  Unsupported platform!  Uname is $system."
+                         return 1
+@@ -129,7 +130,7 @@
  checkuser()
  {
   #
@@ -28,7 +28,7 @@
   #
  
  whoami=`whoami 2>/dev/null` || whoami=`/usr/bin/id | sed -e ' s/).*//; s/^.*(//;'`
-@@ -321,27 +324,27 @@
+@@ -322,27 +323,27 @@
   
   retval=0
  
@@ -73,7 +73,7 @@
         if chmod "$prot" "$installdir"
         then 
            echo "Directory $installdir chmoded to $prot." 
-@@ -349,22 +352,22 @@
+@@ -350,22 +351,22 @@
            echo "ERROR:  Unable to chmod $installdir to $prot." 
            retval=1
         fi  
@@ -112,7 +112,7 @@
   
   if [ "$installdir" != "/usr/local/frontpage" ]
   then
-@@ -414,7 +417,7 @@
+@@ -415,7 +416,7 @@
   vtfile="fp40.$machine.tar"
   echo "Platform is $machine." 
   
@@ -121,7 +121,7 @@
  
   getextfilename $vtfilelocation $vtfile || return 1
  
-@@ -538,7 +541,7 @@
+@@ -539,7 +540,7 @@
          upgrade="no"
          echo "For details on how to upgrade servers manually, please see" 
          echo "the Server Extension Resource Kit (SERK), located in"
@@ -130,7 +130,7 @@
          echo
          return $retval
      else
-@@ -655,10 +658,15 @@
+@@ -656,10 +657,15 @@
        *pache*) getHttpDirective $configfile AccessConfig $port
                 if [ "$param" != "" ]
                 then
@@ -149,11 +149,11 @@
                 fi
  
                 if [ ! -f "$accessconffile" ]
-@@ -1105,18 +1113,29 @@
+@@ -1106,18 +1112,29 @@
  
   webname="/"
  
-+ defconfigfile="PREFIX/etc/apache/httpd.conf"
++ defconfigfile="PREFIX/etc/apache/${AP_TARGET}.conf"
 +
   configfile=""
   while ( [ "$configfile" = "" ] || [ ! -f $configfile ] )
@@ -182,7 +182,7 @@
   done
  
   getparam Port $configfile
-@@ -1131,6 +1150,39 @@
+@@ -1132,6 +1149,39 @@
   getparam User $configfile
   defwebowner=$param
  
@@ -222,7 +222,7 @@
   weconfigfile="${installdir}/we${port}.cnf"
  
   webowner=""
-@@ -1146,6 +1198,12 @@
+@@ -1147,6 +1197,12 @@
  
   getparam Group $configfile
   defgroup=$param
@@ -235,7 +235,7 @@
   webgroup=""
   until [ "$webgroup" != "" ]
   do
-@@ -1157,6 +1215,8 @@
+@@ -1158,6 +1214,8 @@
          webgroup=$defgroup
       fi
   done
@@ -244,7 +244,7 @@
   
   until [ "$servertype" != "" ]
   do
-@@ -1167,9 +1227,13 @@
+@@ -1168,9 +1226,13 @@
       echo "    4.  netscape-fasttrack" 
       echo "    5.  netscape-enterprise"
       echo "    6.  stronghold"
@@ -259,7 +259,7 @@
  
       case $servertypenum in
            "1") servertype="ncsa" ;;
-@@ -1545,6 +1609,8 @@
+@@ -1546,6 +1608,8 @@
          read admin
      done
  
@@ -268,7 +268,7 @@
      until [ "$servertype" != "" ]
      do
       echo 
-@@ -1554,9 +1620,13 @@
+@@ -1555,9 +1619,13 @@
       echo "    4.  netscape-fasttrack" 
       echo "    5.  netscape-enterprise" 
       echo "    6.  stronghold"
@@ -283,7 +283,7 @@
  
       case $servertypenum in
            "1") servertype="ncsa" ;;
-@@ -2023,7 +2093,6 @@
+@@ -2024,7 +2092,6 @@
   then
      getHttpRootDirective $configfile $directive
   fi 
@@ -291,7 +291,7 @@
  }
  
  getnetscapedocroot()
-@@ -2216,7 +2285,7 @@
+@@ -2217,7 +2284,7 @@
  
  initialize
  step1
