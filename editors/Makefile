@@ -7,7 +7,7 @@
     SUBDIR += apel-emacs20
     SUBDIR += apel-mule
     SUBDIR += apel-xemacs
-#    SUBDIR += apel-xemacs-mule
+    SUBDIR += apel-xemacs21-mule
     SUBDIR += apel-xemacs20
     SUBDIR += asedit
     SUBDIR += axe
@@ -35,8 +35,8 @@
     SUBDIR += flim-mule-current
     SUBDIR += flim-xemacs
     SUBDIR += flim-xemacs-current
-#    SUBDIR += flim-xemacs-mule
-#    SUBDIR += flim-xemacs-mule-current
+    SUBDIR += flim-xemacs21-mule
+    SUBDIR += flim-xemacs21-mule-current
     SUBDIR += flim-xemacs20
     SUBDIR += flim-xemacs20-current
     SUBDIR += gedit
@@ -71,8 +71,8 @@
     SUBDIR += semi-mule-current
     SUBDIR += semi-xemacs
     SUBDIR += semi-xemacs-current
-#    SUBDIR += semi-xemacs-mule
-#    SUBDIR += semi-xemacs-mule-current
+    SUBDIR += semi-xemacs21-mule
+    SUBDIR += semi-xemacs21-mule-current
     SUBDIR += semi-xemacs20
     SUBDIR += semi-xemacs20-current
     SUBDIR += staroffice
@@ -95,8 +95,8 @@
     SUBDIR += wemi-mule-current
     SUBDIR += wemi-xemacs
     SUBDIR += wemi-xemacs-current
-#    SUBDIR += wemi-xemacs-mule
-#    SUBDIR += wemi-xemacs-mule-current
+    SUBDIR += wemi-xemacs21-mule
+    SUBDIR += wemi-xemacs21-mule-current
     SUBDIR += wemi-xemacs20
     SUBDIR += wemi-xemacs20-current
     SUBDIR += wily
