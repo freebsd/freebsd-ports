@@ -8,7 +8,7 @@
 +identd \- TCP/IP IDENT protocol server
  .SH SYNOPSIS
 -.B xDESTDIRx/[in.]identd
-+.B !!PREFIX!!/identd
++.B !!PREFIX!!/sbin/identd
  .RB [ \-i | \-w | \-b ]
  .RB [ \-t<seconds> ]
  .RB [ \-u<uid> ]
