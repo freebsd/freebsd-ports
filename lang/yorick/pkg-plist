@@ -23,6 +23,8 @@ lib/yorick/include/hlevel.h
 lib/yorick/include/parse.h
 lib/yorick/include/phash.h
 lib/yorick/include/play.h
+lib/yorick/include/playgl.h
+lib/yorick/include/pmin.h
 lib/yorick/include/prmtyp.h
 lib/yorick/include/ps.h
 lib/yorick/include/pstdio.h
@@ -39,21 +41,6 @@ lib/yorick/lib/libhex.a
 lib/yorick/lib/libyor.a
 lib/yorick/lib/main.o
 lib/yorick/g
-%%PORTDOCS%%share/doc/yorick/FILE_FORMATS
-%%PORTDOCS%%share/doc/yorick/README
-%%PORTDOCS%%share/doc/yorick/drat.doc
-%%PORTDOCS%%share/doc/yorick/drat.tex
-%%PORTDOCS%%share/doc/yorick/graph.doc
-%%PORTDOCS%%share/doc/yorick/hex.doc
-%%PORTDOCS%%share/doc/yorick/library.doc
-%%PORTDOCS%%share/doc/yorick/math.doc
-%%PORTDOCS%%share/doc/yorick/refs.pdf
-%%PORTDOCS%%share/doc/yorick/refs.ps
-%%PORTDOCS%%share/doc/yorick/refs.tex
-%%PORTDOCS%%share/doc/yorick/std.doc
-%%PORTDOCS%%share/doc/yorick/yorick.pdf
-%%PORTDOCS%%share/doc/yorick/yorick.ps
-%%PORTDOCS%%share/doc/yorick/yorick.tex
 %%PORTDOCS%%share/yorick/doc
 share/yorick/g/README
 share/yorick/g/axes.gs
@@ -93,13 +80,18 @@ share/yorick/i/demo5.i
 share/yorick/i/digit2.i
 share/yorick/i/ellipse.i
 share/yorick/i/elliptic.i
+share/yorick/i/fermi.i
+share/yorick/i/fermii.i
 share/yorick/i/filter.i
 share/yorick/i/fitlsq.i
 share/yorick/i/fitrat.i
 share/yorick/i/fits.i
 share/yorick/i/gamma.i
+share/yorick/i/gammp.i
 share/yorick/i/gcd.i
 share/yorick/i/hydra.i
+share/yorick/i/idlsave.i
+share/yorick/i/ieee.i
 share/yorick/i/kepler.i
 share/yorick/i/legal.i
 share/yorick/i/legndr.i
@@ -150,6 +142,7 @@ share/yorick/i0/fft.i
 share/yorick/i0/graph.i
 share/yorick/i0/hex.i
 share/yorick/i0/matrix.i
+share/yorick/i0/mpy.i
 share/yorick/i0/paths.i
 share/yorick/i0/std.i
 share/yorick/i0/stdx.i
@@ -158,7 +151,6 @@ share/yorick/yorick.el
 @dirrm share/yorick/i
 @dirrm share/yorick/g
 @dirrm share/yorick
-%%PORTDOCS%%@dirrm share/doc/yorick
 @dirrm lib/yorick/lib
 @dirrm lib/yorick/include
 @dirrm lib/yorick/bin
