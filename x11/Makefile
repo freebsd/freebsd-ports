@@ -185,6 +185,7 @@
     SUBDIR += xwatchwin
     SUBDIR += xwit
     SUBDIR += xzoom
+    SUBDIR += yalias
     SUBDIR += yelp
 
 .include <bsd.port.subdir.mk>
