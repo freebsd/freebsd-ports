@@ -1271,3 +1271,4 @@ devel/automake18|devel/automake19|2004-10-15|automake18 replaced with automake19
 www/zope-cmftransforms|www/zope-portaltransforms|2004-10-16|renamed by authors
 dns/bind9-sdb-mysql||2004-10-17|No longer maintained
 www/phpnuke||2004-10-17|security vulnerabilities and no longer maintained
+misc/bookcase|misc/tellico|2004-10-17|renamed

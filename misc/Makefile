@@ -27,7 +27,6 @@
     SUBDIR += bidwatcher
     SUBDIR += birthday
     SUBDIR += bogosort
-    SUBDIR += bookcase
     SUBDIR += bottlerocket
     SUBDIR += boxes
     SUBDIR += brs
@@ -377,6 +376,7 @@
     SUBDIR += tcb
     SUBDIR += team
     SUBDIR += telbook
+    SUBDIR += tellico
     SUBDIR += tempcontrol
     SUBDIR += terraform
     SUBDIR += tet
