@@ -3,7 +3,7 @@
 # Date created:         Wed Feb  8 01:49:11  1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.6 1995/11/22 13:12:44 asami Exp $
+# $Id: Makefile,v 1.7 1996/11/12 02:18:17 obrien Exp $
 #
 
 DISTNAME=       gcl-2.0
@@ -13,6 +13,7 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Seems to depend on old version of tcl/tk"
 MAKEFILE=	makefile
 
 do-install:
