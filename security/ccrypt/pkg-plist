@@ -2,5 +2,7 @@ bin/ccat
 bin/ccdecrypt
 bin/ccencrypt
 bin/ccrypt
+%%PORTDOCS%%share/doc/ccrypt/README
 %%PORTDOCS%%share/doc/ccrypt/ccrypt.html
+%%PORTDOCS%%share/doc/ccrypt/cypfaq01.txt
 %%PORTDOCS%%@dirrm share/doc/ccrypt

@@ -7,14 +7,13 @@
 #
 
 PORTNAME=	ccrypt
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	1.3
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://quasar.mathstat.uottawa.ca/~selinger/ccrypt/download/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jim@corebsd.or.id
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
@@ -34,7 +33,9 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS) 
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/ccrypt.html ${DOCSDIR}
+.for i in README doc/ccrypt.html doc/cypfaq01.txt
+	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
