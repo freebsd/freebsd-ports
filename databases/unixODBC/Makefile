@@ -14,6 +14,12 @@ MASTER_SITES=	http://www.unixodbc.org/
 MAINTAINER=	nsayer@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+.if defined(WITH_X)
 USE_XLIB=	yes
+CONFIGURE_ARGS+=--enable-gui
+.else
+CONFIGURE_ARGS+=--disable-gui
+USE_XLIB=	yes
+.endif
 
 .include <bsd.port.mk>
