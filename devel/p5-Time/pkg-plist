@@ -5,3 +5,4 @@ lib/perl5/site_perl/%%PERL_VER%%/Time/ParseDate.pm
 lib/perl5/site_perl/%%PERL_VER%%/Time/Timezone.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time-modules/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Time-modules
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Time
