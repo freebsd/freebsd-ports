@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	bovynf@awe.be
 
-BROKEN=		"Internal compiler error in `instantiate_virtual_regs_1', at function.c:3883"
+BROKEN=		"Internal compiler error in \`instantiate_virtual_regs_1', at function.c:3883"
 
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
