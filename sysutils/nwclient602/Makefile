@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network backup client to NetWorker servers
 
+LATEST_LINK=	nwclient602
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000

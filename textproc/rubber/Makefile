@@ -21,6 +21,7 @@ USE_PYTHON=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --moddir=${PYTHON_SITELIBDIR}
 USE_GMAKE=	yes
+NO_LATEST_LINK=	yes
 
 MANLANG=	"" fr
 MAN1=	rubber.1 rubber-info.1

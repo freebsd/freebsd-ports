@@ -23,6 +23,7 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
+LATEST_LINK=	gkrellkam2
 
 MAN5=		gkrellkam-list.5
 PLIST_FILES=	libexec/gkrellm2/plugins/gkrellkam2.so

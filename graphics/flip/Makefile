@@ -25,6 +25,7 @@ PLIST_FILES=	bin/flip
 USE_QT_VER=	3
 USE_REINPLACE=	yes
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
+NO_LATEST_LINK=	YES
 
 post-patch:
 	@${REINPLACE_CMD} -e  's|warn_on release|warn_on thread release|g ; \

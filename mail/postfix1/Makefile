@@ -32,6 +32,7 @@ COMMENT=		An alternative to widely-used Sendmail
 CONFLICTS=	courier-0.* postfix-2.* sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 USE_SUBMAKE=	yes
 USE_REINPLACE=	yes
+LATEST_LINK=	postfix1
 
 MAN1=	mailq.1 newaliases.1 postalias.1 postcat.1 postconf.1 postdrop.1 \
 	postfix.1 postkick.1 postlock.1 postlog.1 postmap.1 postqueue.1 \
