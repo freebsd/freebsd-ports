@@ -1,0 +1,13 @@
+--- gnats/file-pr.c.orig	Sun May 28 09:06:22 2000
++++ gnats/file-pr.c	Sun May 28 09:09:35 2000
+@@ -613,6 +613,10 @@
+   fprintf (msg, "The individual assigned to look at your\nreport is: %s. \n",
+ 		field_value (RESPONSIBLE));
+ 
++  fprintf (msg, "\nYou can access the state of your problem report at any time\n"
++		"via this link:\n\nhttp://www.freebsd.org/cgi/query-pr.cgi?pr=%s\n",
++		field_value (NUMBER));
++
+   if (bad_enums != NULL)
+     {
+       /* Report the enums that were bad, separating them by an empty line.  */
