@@ -7,6 +7,7 @@
 
 PORTNAME=	jedit
 PORTVERSION=	3.0.1
+PORTREVISION=	1
 CATEGORIES=	editors java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://members.xoom.com/romainguy/
@@ -30,7 +31,7 @@ do-configure:
 
 do-install:
 	@${SED} "s|%%PREFIX%%|${PREFIX}| ; s|%%WRKDIR%%|${WRKDIR}|" ${FILESDIR}/instscript | \
-		${SETENV} CLASSPATH=${DISTDIR}/${PORTNAME}30install.jar:${DISTDIR}/swingall.jar \
+		${SETENV} CLASSPATH=${DISTDIR}/${PORTNAME}${PORTVERSION:S/.//g}install.jar:${DISTDIR}/swingall.jar \
 		${LOCALBASE}/bin/javavm installer.Install text
 	@${INSTALL_DATA} ${DISTDIR}/swingall.jar ${PREFIX}/share/java/jedit
 	@${INSTALL_SCRIPT} ${WRKDIR}/jedit.sh ${PREFIX}/bin/jedit

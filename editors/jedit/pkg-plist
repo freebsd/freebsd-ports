@@ -120,7 +120,6 @@ share/java/jedit/modes/tsql.xml
 share/java/jedit/modes/vbscript.xml
 share/java/jedit/modes/vhdl.xml
 share/java/jedit/modes/xml.xml
-share/java/jedit/modes/xmode.dtd
 share/java/jedit/modes/xsl.xml
 share/java/jedit/site-props/example.props
 share/java/jedit/swingall.jar
