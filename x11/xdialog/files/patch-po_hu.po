@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- po/hu.po.orig	Mon Jul 22 19:20:06 2002
++++ po/hu.po	Mon Jul 22 19:20:14 2002
+@@ -10,7 +10,7 @@
+ "Last-Translator: Lenart Janos <ocsi@debian.org>\n"
+ "Language-Team: Hungarian <hu@li.org>\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=ISO8859-2\n"
++"Content-Type: text/plain; charset=ISO-8859-2\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ 
+ #: src/interface.h:80

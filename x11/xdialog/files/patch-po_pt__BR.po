@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- po/pt_BR.po.orig	Mon Jul 22 19:20:26 2002
++++ po/pt_BR.po	Mon Jul 22 19:20:40 2002
+@@ -8,7 +8,7 @@
+ "Last-Translator: Lucas Brasilino <lucas@lbs.com.br>\n"
+ "Language-Team: LANGUAGE <LL@li.org>\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=CHARSET\n"
++"Content-Type: text/plain; charset=ISO-8859-1\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ 
+ #: src/interface.h:80

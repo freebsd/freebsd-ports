@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	xdialog
-PORTVERSION=	2.0.5
-PORTREVISION=	1
+PORTVERSION=	2.0.6
 CATEGORIES=	x11
-MASTER_SITES=	http://xdialog.free.fr/
+MASTER_SITES=	http://www.chez.com/godefroy/
 DISTNAME=	${PORTNAME:S/x/X/}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.Org
