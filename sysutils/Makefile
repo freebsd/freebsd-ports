@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.57 1999/01/05 13:13:04 vanilla Exp $
+# $Id: Makefile,v 1.58 1999/01/13 23:10:30 billf Exp $
 #
 
     SUBDIR += LPRng
@@ -30,6 +30,7 @@
     SUBDIR += mkhybrid12
     SUBDIR += mkisofs
     SUBDIR += no-login
+    SUBDIR += npadmin
     SUBDIR += pib
     SUBDIR += pkg_version
     SUBDIR += psmisc
