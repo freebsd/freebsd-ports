@@ -345,6 +345,7 @@
     SUBDIR += wmfortune
     SUBDIR += wmminichess
     SUBDIR += wmpuzzle
+    SUBDIR += wmqstat
     SUBDIR += wmshuffle
     SUBDIR += wmtictactoe
     SUBDIR += wmtimebomb
