@@ -1,9 +1,18 @@
 
 $FreeBSD$
 
---- configure.in	2001/10/02 06:56:47	1.1
-+++ configure.in	2001/10/02 06:57:13
-@@ -257,10 +257,10 @@
+--- configure.in.orig	Thu Nov 22 01:08:37 2001
++++ configure.in	Fri Nov 23 17:17:37 2001
+@@ -90,7 +90,7 @@
+ else
+ 	ICONV_INCLUDES=-I'$(top_srcdir)/../libiconv/include'
+ fi
+-AC_CHECK_FUNC(iconv,ICONV_LIBS="",ICONV_LIBS="-liconv")
++AC_CHECK_FUNC(iconv,ICONV_LIBS="",ICONV_LIBS="-lgiconv")
+ AC_SUBST(ICONV_INCLUDES)
+ AC_SUBST(ICONV_LIBS)
+ 
+@@ -317,10 +317,10 @@
  
  if test "$PLATFORM" = "unix"; then
  	if test "$gnome" = "true"; then

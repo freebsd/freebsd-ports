@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- src/pkg/common/unix/scripts/makewrapper.sh.orig	Mon Jun 11 02:14:43 2001
-+++ src/pkg/common/unix/scripts/makewrapper.sh	Wed Aug  8 13:38:34 2001
+--- src/pkg/common/unix/scripts/makewrapper.sh.orig	Tue Nov 13 07:59:56 2001
++++ src/pkg/common/unix/scripts/makewrapper.sh	Fri Nov 23 16:31:06 2001
 @@ -66,23 +66,31 @@
  if [ -z "\$locale" ]
  then
@@ -11,7 +11,7 @@ $FreeBSD$
 +then
 +    locale=\$LC_CTYPE
  fi
- 
+ #
  if [ ! -z "\$locale" ]
  then
 -    #now guess encoding
@@ -43,4 +43,4 @@ $FreeBSD$
 +	done
      fi
  fi
- 
+ #
