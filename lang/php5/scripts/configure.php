@@ -31,6 +31,7 @@ DOMXML		"DOM support" ${WITH_DOMXML:-OFF} \
 DOMXSLT		"DOM XSLT and EXSLT support (implies DOMXML)" ${WITH_DOMXSLT:-OFF} \
 EXIF		"EXIF support" ${WITH_EXIF:-OFF} \
 FILEPRO		"filePro support" ${WITH_FILEPRO:-OFF} \
+FRIBIDI		"FriBidi support" ${WITH_FRIBIDI:-OFF} \
 FTP		"FTP support" ${WITH_FTP:-OFF} \
 GD		"GD library support" ${WITH_GD:-OFF} \
 GDBM		"GDBM database support (dba)" ${WITH_GDBM:-OFF} \
