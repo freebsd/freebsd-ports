@@ -16,6 +16,8 @@ sbin/exipick
 sbin/exiqgrep
 sbin/exiqsumm
 sbin/exiwhat
+%%EXIMON%%sbin/eximon
+%%EXIMON%%sbin/eximon.bin
 %%PORTDOCS%%%%DOCSDIR%%/ACKNOWLEDGMENTS
 %%PORTDOCS%%%%DOCSDIR%%/NOTICE
 %%PORTDOCS%%%%DOCSDIR%%/README.UPDATING
