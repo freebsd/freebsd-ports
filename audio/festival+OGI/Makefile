@@ -45,9 +45,9 @@ EXTRA_PATCHES=	${FILESDIR}/patch-aa-ogi
 RESTRICTED=	no-commercial-use
 .endif
 
-PLIST=		${PKGDIR}/PLIST
+PLIST=		${PKGDIR}/pkg-plist
 .if defined (WITH_OGI)
-PLIST=		${PKGDIR}/PLIST-ogi
+PLIST=		${PKGDIR}/pkg-plist-ogi
 .endif
 
 WRKSRC=		${WRKDIR}
