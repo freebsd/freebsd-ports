@@ -1,8 +1,19 @@
---- configs/freebsd-g++-shared.orig	Thu Jul  9 21:24:33 1998
-+++ configs/freebsd-g++-shared	Sun Jul 19 13:31:29 1998
-@@ -39,7 +39,14 @@
+--- configs/freebsd-g++-shared.orig	Thu Jul  9 14:24:33 1998
++++ configs/freebsd-g++-shared	Sun Sep 27 11:46:29 1998
+@@ -38,8 +38,26 @@
+ #   - Usually needs to incorporate $(VER_MAJ) and $(VER_MIN)
  #
  SYSCONF_LINK_SHLIB	= ld
++ifeq ($(PORTOBJFORMAT),elf)
++SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.$(VER_MAJ)
++SYSCONF_LINK_LIB_SHARED	=  $(SYSCONF_LINK_SHLIB) -shared -soname \
++	$(SYSCONF_LINK_TARGET_SHARED) $(LFLAGS) -o $(SYSCONF_LINK_TARGET_SHARED) \
++	`lorder $(OBJECTS) $(OBJMOC) | tsort` $(LIBS); \
++	mv $(SYSCONF_LINK_TARGET_SHARED) $(DESTDIR); \
++	cd $(DESTDIR); \
++	rm -f lib$(TARGET).so; \
++	ln -s $(SYSCONF_LINK_TARGET_SHARED) lib$(TARGET).so;
++else
  SYSCONF_LINK_TARGET_SHARED	= lib$(TARGET).so.$(VER_MAJ).$(VER_MIN)
 -SYSCONF_LINK_LIB_SHARED	= $(LINK) -Bshareable $(LFLAGS) -o $(TARGETD) `lorder /usr/lib/c++rt0.o $(OBJECTS) $(OBJMOC) | tsort` $(LIBS)
 +SYSCONF_LINK_LIB_SHARED	=  $(SYSCONF_LINK_SHLIB) -Bshareable \
@@ -13,10 +24,11 @@
 +	rm -f lib$(TARGET).so lib$(TARGET).so.$(VER_MAJ); \
 +	ln -s $(SYSCONF_LINK_TARGET_SHARED) lib$(TARGET).so; \
 +	ln -s $(SYSCONF_LINK_TARGET_SHARED) lib$(TARGET).so.$(VER_MAJ)
++endif
  
  # Linking static libraries
  #   - Build the $(TARGET) library, eg. lib$(TARGET).a
-@@ -50,11 +57,11 @@
+@@ -50,11 +68,11 @@
  SYSCONF_LINK_LIB_STATIC	= rm -f $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC);  \
  				 $(SYSCONF_AR) $(DESTDIR)$(SYSCONF_LINK_TARGET_STATIC) $(OBJECTS) $(OBJMOC)
  # Compiling application source
