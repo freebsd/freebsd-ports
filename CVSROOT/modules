@@ -2424,6 +2424,7 @@ gtkspell2	ports/textproc/gtkspell2
 gtksql		ports/databases/gtksql
 gtkstep		ports/x11-toolkits/gtkstep
 gtkstep-pastel	ports/x11-toolkits/gtkstep-pastel
+gtksubtitler	ports/multimedia/gtksubtitler
 gtktalog	ports/misc/gtktalog
 gtktetcolor	ports/games/gtktetcolor
 gtkwave		ports/cad/gtkwave
