@@ -1,11 +1,11 @@
---- src/MainDialogData.cpp.orig	Fri Sep 15 22:51:57 2000
-+++ src/MainDialogData.cpp	Tue Sep 19 00:12:43 2000
-@@ -169,7 +169,7 @@
-     subSongSlider->setPageStep( 1 );
-     subSongSlider->setValue( 1 );
-     subSongSlider->setFocusPolicy( QSlider::TabFocus );
--    subSongSlider->setSizePolicy( QSizePolicy( (QSizePolicy::SizeType)7, (QSizePolicy::SizeType)0 ) );
-+    // subSongSlider->setSizePolicy( QSizePolicy( (QSizePolicy::SizeType)7, (QSizePolicy::SizeType)0 ) );
-     subSongSlider->setCursor( QCursor( 13 ) );
-     QToolTip::add(  subSongSlider, tr( "Quick song selection" ) );
+--- src/songlendb/Makefile.in.old	Sun Oct 22 22:36:00 2000
++++ src/songlendb/Makefile.in	Sun Oct 22 22:36:21 2000
+@@ -95,7 +95,7 @@
+ LIBRARIES =  $(noinst_LIBRARIES)
  
+ 
+-DEFS = @DEFS@ -I. -I$(srcdir) 
++DEFS = @DEFS@ -I. -I$(srcdir) -I$(LOCALBASE)/include
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
