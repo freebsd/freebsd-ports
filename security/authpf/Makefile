@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	authpf
-PORTVERSION=	1.0
-PORTREVISION=	6
+PORTVERSION=	1.65
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://pf4freebsd.love2party.net/
 .if defined(WITH_ALTQ) && (${WITH_ALTQ} == "yes")
 PKGNAMESUFFIX=	-altq
 .endif
-DISTNAME=	${PORTNAME}_${PORTVERSION}
-DISTFILES=	pf_freebsd_${PORTVERSION}${EXTRACT_SUFX}
+DISTNAME=	pf_freebsd_${PORTVERSION}
 
 MAINTAINER=	max@love2party.net
 COMMENT=	Authentification shell for pf gateways
 
-WRKSRC=		${WRKDIR}/pf_freebsd_${PORTVERSION}
-
 RUN_DEPENDS=	${LOCALBASE}/modules/pf.ko:${PORTSDIR}/security/pf
+.if defined(WITH_ALTQ) && (${WITH_ATLQ} == "yes")
+RUN_DEPENDS+=	${LOCALBASE}/modules/pfaltq.ko:${PORTSDIR}/security/pf
+.endif
+
+WRKSRC=		${WRKDIR}/pf_freebsd_${PORTVERSION}
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE= yes
@@ -57,11 +58,11 @@ IGNORE=		"Kernel source files required"
 pre-fetch:
 	@${ECHO_CMD} "======================================================="
 	@${ECHO_CMD} "* If you have ALTQ support from:                      *"
-	@${ECHO_CMD} "*   http://www.rofug.ro/projects/freebsd-altq/        *"
+	@${ECHO_CMD} "*   http://www.nipsi.de/altq/index.html               *"
 	@${ECHO_CMD} "* You can may define WITH_ALTQ=yes to make use of it  *"
 	@${ECHO_CMD} "* Please define SYS_ALTQ to point to the patched src  *"
 	@${ECHO_CMD} "*                                                     *"
-	@${ECHO_CMD} "* e.g.: make WITH_ALTQ=yes SYS_ALTQ=${SRC_BASE}/sys.altq *"
+	@${ECHO_CMD} "* e.g.: make WITH_ALTQ=yes SYS_ALTQ=/usr/src/sys.altq *"
 	@${ECHO_CMD} "*                                                     *"
 	@${ECHO_CMD} "======================================================="
 	@sleep 2
@@ -71,7 +72,7 @@ post-patch:
 	${SED} -e 's!%%PREFIX%%!${PREFIX}!' ${PATCHDIR}/pathnames.h.sed > \
 	${WRKSRC}/authpf/pathnames.h
 
-pre-install:
+pre-su-install:
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .endif
