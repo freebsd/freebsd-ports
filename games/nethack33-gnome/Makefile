@@ -8,8 +8,7 @@
 PORTNAME=	nethack
 PORTVERSION=	3.3.1
 CATEGORIES=	games gnome
-MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/nh331/src/ \
-		${MASTER_SITE_GNU}
+MASTER_SITES=	ftp://ftp.nethack.org/pub/nethack/nh331/src/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=	-gnome
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
