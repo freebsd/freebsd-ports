@@ -12,8 +12,10 @@ COMMENT=	Evolution synchronization plugin for Multisync
 RUN_DEPENDS=	multisync:${PORTSDIR}/deskutils/multisync \
 		evolution:${PORTSDIR}/mail/evolution
 
-MD5_FILE=	${.CURDIR}/../multisync/distinfo
+MD5_FILE=	${MASTERDIR}/distinfo
 
 WRKSRC=		${WRKDIR}/multisync-${PORTVERSION}/plugins/evolution_sync
 
-.include "${.CURDIR}/../multisync/Makefile"
+MASTERDIR=	${.CURDIR}/../multisync
+
+.include "${MASTERDIR}/Makefile"

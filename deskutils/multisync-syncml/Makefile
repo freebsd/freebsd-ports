@@ -11,8 +11,10 @@ COMMENT=	Multisync plugin for SyncML targets
 
 RUN_DEPENDS=	multisync:${PORTSDIR}/deskutils/multisync
 
-MD5_FILE=	${.CURDIR}/../multisync/distinfo
+MD5_FILE=	${MASTERDIR}/distinfo
 
 WRKSRC=		${WRKDIR}/multisync-${PORTVERSION}/plugins/syncml_plugin
 
-.include "${.CURDIR}/../multisync/Makefile"
+MASTERDIR=	${.CURDIR}/../multisync
+
+.include "${MASTERDIR}/Makefile"
