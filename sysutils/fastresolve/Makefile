@@ -32,4 +32,10 @@ MAN1=	dns-terror.1 btree-dump.1 convert-dom-db.1 convert-ip-db.1 \
 pre-configure:
 	@(cd ${WRKSRC} && aclocal14)
 
+post-install:
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "If you want to use the convert-ip-db script you must"
+	@${ECHO_MSG} "install the databases/p5-BerkeleyDB port"
+	@${ECHO_MSG} ""
+
 .include <bsd.port.post.mk>

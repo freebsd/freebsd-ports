@@ -1,0 +1,34 @@
+--- scripts/convert-ip-db.in.orig	Wed Sep 29 12:13:42 1999
++++ scripts/convert-ip-db.in	Wed Sep  4 02:31:43 2002
+@@ -13,6 +13,7 @@
+ # Written by Chris Ross <cross@eng.us.uu.net>
+ # and David MacKenzie <djm@web.us.uu.net>
+ # Please send comments and bug reports to fastresolve-bugs@web.us.uu.net.
++# Updated to use BerkeleyDB (db3) by Harold Paulson <haroldp@internal.org>
+ 
+ ##############################################################################
+ #   Copyright 1999 UUNET, an MCI WorldCom company.
+@@ -33,8 +34,7 @@
+ # 02111-1307, USA.
+ ##############################################################################
+ 
+-use DB_File;
+-use Fcntl;
++use BerkeleyDB;
+ 
+ main();
+ exit(0);
+@@ -45,8 +45,11 @@
+ 
+     $dbfile = shift @ARGV || "ip2host.db";
+ 
+-    tie(%input, "DB_File", $dbfile, O_RDONLY, 0640, $DB_BTREE)
+-	|| die "$0: Can't read $dbfile: $!\n";
++    tie(%input, 'BerkeleyDB::Btree', 
++        -Filename => $dbfile, 
++        -Flags    => DB_RDONLY, 
++        -Mode     => 0640)
++        || die "$0: Can't read $dbfile: $!\n";
+     
+     while (($ipaddr, $domain) = each(%input)) {
+ 	($timestamp, $domain) = unpack("IA*", $domain);
