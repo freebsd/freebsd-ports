@@ -1365,3 +1365,5 @@ print/acroread5|print/acroread|2004-12-23|last Acrobat Reader port remaining
 graphics/gimp-devel|graphics/gimp|2004-12-24|GIMP 2.2 is now stable
 x11-toolkits/xtermcontrol|x11/xtermcontrol|2004-12-25|new category
 multimedia/gstreamer-player||2004-12-26|Unmaintained by developers
+www/horde2|www/horde|2004-12-26|Resurrect www/horde
+mail/imp3|mail/imp|2004-12-26|Resurrect mail/imp
