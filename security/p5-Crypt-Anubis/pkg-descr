@@ -1,0 +1,8 @@
+Anubis is a variable-length key, 128-bit block cipher designed by
+Vincent Rijmen and Paulo S. L. M. Barreto. Anubis was submitted as
+a NESSIE candidate. Key length can be 128, 160, 192, 224, 256, 288,
+or 320 bits.
+
+The default key length in this implementation is 128 bits.
+
+WWW: http://search.cpan.org/perldoc?Crypt::Anubis
