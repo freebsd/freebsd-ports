@@ -1,5 +1,5 @@
-# $Id: Makefile,v 1.3 1994/10/04 15:01:05 jkh Exp $
+# $Id: Makefile,v 1.1 1994/10/06 01:37:42 jkh Exp $
 #
-SUBDIR=	tracker
+SUBDIR=	tracker sox
 
 .include <bsd.port.subdir.mk>
