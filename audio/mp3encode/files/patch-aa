@@ -1,5 +1,22 @@
-*** Makefile.in.orig	Wed May 20 22:00:23 1998
---- Makefile.in	Wed May 20 22:07:53 1998
+*** Makefile.in.orig	Wed Jan 22 18:43:12 1997
+--- Makefile.in	Wed Nov  8 05:12:34 2000
+***************
+*** 16,22 ****
+  ## Received from Mike Coleman
+  ############################################################################
+  
+! CC = gcc
+  
+  c_sources = \
+  	common.c \
+--- 16,22 ----
+  ## Received from Mike Coleman
+  ############################################################################
+  
+! CC = @CC@
+  
+  c_sources = \
+  	common.c \
 ***************
 *** 40,46 ****
   
@@ -13,7 +30,7 @@
   
   NINT_SWITCH = @NINTSW@
   
-! CC_SWITCHES = -g -O3 -DUNIX -DBS_FORMAT=BINARY $(NINT_SWITCH) -DNDEBUG
+! CC_SWITCHES = @CFLAGS@ -DUNIX -DBS_FORMAT=BINARY $(NINT_SWITCH) -DNDEBUG
   
   PGM = encode
   
