@@ -7,7 +7,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=  \
 	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -20,13 +20,80 @@ DISTNAME=	squid-2.5.STABLE1
 EXTRACT_SUFX=	.tar.gz
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
-PATCHFILES=
+PATCHFILES=	squid-2.5.STABLE1-disable-ident-lookups.patch \
+		squid-2.5.STABLE1-disable-http-violations.patch \
+		squid-2.5.STABLE1-proxy_auth.patch \
+		squid-2.5.STABLE1-max_user_ip.patch \
+		squid-2.5.STABLE1-cache_dir_docs.patch \
+		squid-2.5.STABLE1-load_icons.patch \
+		squid-2.5.STABLE1-referer_log.patch \
+		squid-2.5.STABLE1-ldap_auth.patch \
+		squid-2.5.STABLE1-addlang.patch \
+		squid-2.5.STABLE1-pthreads.patch \
+		squid-2.5.STABLE1-strwordtok.patch \
+		squid-2.5.STABLE1-wccp.patch \
+		squid-2.5.STABLE1-memstat.patch \
+		squid-2.5.STABLE1-aufs.patch \
+		squid-2.5.STABLE1-acl_leak.patch \
+		squid-2.5.STABLE1-ext_acl_comma.patch \
+		squid-2.5.STABLE1-request_entity.patch \
+		squid-2.5.STABLE1-ext_acl_exit.patch \
+		squid-2.5.STABLE1-uninstall.patch \
+		squid-2.5.STABLE1-cachemgr.patch \
+		squid-2.5.STABLE1-auth-proxy.patch \
+		squid-2.5.STABLE1-dnsserver.patch \
+		squid-2.5.STABLE1-spaces.patch \
+		squid-2.5.STABLE1-flags_open.patch \
+		squid-2.5.STABLE1-ldap_group-compile.patch \
+		squid-2.5.STABLE1-aufs_performance.patch \
+		squid-2.5.STABLE1-RunCache.patch \
+		squid-2.5.STABLE1-rebuild_assert.patch \
+		squid-2.5.STABLE1-offline_mode.patch \
+		squid-2.5.STABLE1-S.patch \
+		squid-2.5.STABLE1-chroot.patch \
+		squid-2.5.STABLE1-aufs_reentrant.patch\
+		squid-2.5.STABLE1-relnote11.patch \
+		squid-2.5.STABLE1-ldap_group.patch \
+		squid-2.5.STABLE1-offline_toggle.patch \
+		squid-2.5.STABLE1-failure_ratio.patch \
+		squid-2.5.STABLE1-hostnames.patch \
+		squid-2.5.STABLE1-sbrk.patch \
+		squid-2.5.STABLE1-log_mime_hdrs.patch \
+		squid-2.5.STABLE1-peer_select_alg.patch \
+		squid-2.5.STABLE1-mempoolstat.patch \
+		squid-2.5.STABLE1-copy_offset.patch \
+		squid-2.5.STABLE1-select_fds_hist.patch \
+		squid-2.5.STABLE1-select_stat.patch \
+		squid-2.5.STABLE1-pidfile.patch \
+		squid-2.5.STABLE1-http_reply_max_size.patch \
+		squid-2.5.STABLE1-cachemgr_non_get.patch \
+		squid-2.5.STABLE1-authsheme_realloc.patch \
+		squid-2.5.STABLE1-ftp_abort.patch \
+		squid-2.5.STABLE1-helper_stats.patch \
+		squid-2.5.STABLE1-delay_pools_docs.patch \
+		squid-2.5.STABLE1-auth_connection.patch \
+		squid-2.5.STABLE1-authenticate_program_docs.patch \
+		squid-2.5.STABLE1-with_aufs_threads_trap.patch \
+		squid-2.5.STABLE1-shutdown_assert.patch \
+		squid-2.5.STABLE1-cachemgr_passwd.patch \
+		squid-2.5.STABLE1-etc_hosts_fdleak.patch \
+		squid-2.5.STABLE1-openssl097.patch \
+		squid-2.5.STABLE1-HEAD_bad_headers.patch \
+		squid-2.5.STABLE1-time_acl_list.patch \
+		squid-2.5.STABLE1-CONNECT_pipeline.patch \
+		squid-2.5.STABLE1-winbind.patch \
+		squid-2.5.STABLE1-mib.patch \
+		squid-2.5.STABLE1-error-http-ident.patch \
+		squid-2.5.STABLE1-distclean_icons.patch \
+		squid-2.5.STABLE1-external_acl_auth_segfault.patch \
+		squid-2.5.STABLE1-auth_digest.patch \
+		squid-2.5.STABLE1-external_acl_user.patch
 
 MAINTAINER=	adrian@freebsd.org
 COMMENT=	The successful WWW proxy cache and accelerator
 
 DIST_SUBDIR=	squid2.5
-PATCH_DIST_STRIP= -p0
+PATCH_DIST_STRIP= -p1
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
@@ -104,7 +171,7 @@ MAKEFILE=	Makefile
 #  - Enable control of different heap replacement algorithms at runtime.
 #CONFIGURE_ARGS+= --enable-heap-replacement
 
-post-extract:
+post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 post-install:
