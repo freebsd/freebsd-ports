@@ -1,10 +1,17 @@
 bin/robocode
 share/java/robocode/battles/sample.battle
+share/java/robocode/compilers/CompilerTest.java
+share/java/robocode/compilers/buildJikes.sh
+share/java/robocode/compilers/jikes-1.15.src.jar
+share/java/robocode/compilers/jikes-1.15.win.jar
 share/java/robocode/javadoc/allclasses-frame.html
+share/java/robocode/javadoc/allclasses-noframe.html
+share/java/robocode/javadoc/constant-values.html
 share/java/robocode/javadoc/deprecated-list.html
 share/java/robocode/javadoc/help-doc.html
 share/java/robocode/javadoc/index-all.html
 share/java/robocode/javadoc/index.html
+share/java/robocode/javadoc/overview-summary.html
 share/java/robocode/javadoc/overview-tree.html
 share/java/robocode/javadoc/package-list
 share/java/robocode/javadoc/packages.html
@@ -21,6 +28,7 @@ share/java/robocode/javadoc/robocode/GunTurnCompleteCondition.html
 share/java/robocode/javadoc/robocode/HitByBulletEvent.html
 share/java/robocode/javadoc/robocode/HitRobotEvent.html
 share/java/robocode/javadoc/robocode/HitWallEvent.html
+share/java/robocode/javadoc/robocode/MessageEvent.html
 share/java/robocode/javadoc/robocode/MoveCompleteCondition.html
 share/java/robocode/javadoc/robocode/RadarTurnCompleteCondition.html
 share/java/robocode/javadoc/robocode/RobocodeFileOutputStream.html
@@ -29,17 +37,20 @@ share/java/robocode/javadoc/robocode/Robot.html
 share/java/robocode/javadoc/robocode/RobotDeathEvent.html
 share/java/robocode/javadoc/robocode/ScannedRobotEvent.html
 share/java/robocode/javadoc/robocode/SkippedTurnEvent.html
+share/java/robocode/javadoc/robocode/TeamRobot.html
 share/java/robocode/javadoc/robocode/TurnCompleteCondition.html
 share/java/robocode/javadoc/robocode/WinEvent.html
+share/java/robocode/javadoc/robocode/_AdvancedRadiansRobot.html
+share/java/robocode/javadoc/robocode/_AdvancedRobot.html
+share/java/robocode/javadoc/robocode/_Robot.html
+share/java/robocode/javadoc/robocode/package-frame.html
+share/java/robocode/javadoc/robocode/package-summary.html
+share/java/robocode/javadoc/robocode/package-tree.html
 share/java/robocode/javadoc/serialized-form.html
 share/java/robocode/javadoc/stylesheet.css
 share/java/robocode/license.html
-share/java/robocode/resources.jar
-share/java/robocode/robocode.bat
 share/java/robocode/robocode.ico
 share/java/robocode/robocode.jar
-share/java/robocode/robocode.properties
-share/java/robocode/robocode.sh
 share/java/robocode/robots/sample/Corners.class
 share/java/robocode/robots/sample/Corners.java
 share/java/robocode/robots/sample/Corners.properties
@@ -77,12 +88,12 @@ share/java/robocode/robots/sample/Walls.java
 share/java/robocode/robots/sample/Walls.properties
 share/java/robocode/templates/newjavafile.tpt
 share/java/robocode/templates/newrobot.tpt
-share/java/robocode/tools.jar
 share/java/robocode/versions.txt
 @dirrm share/java/robocode/templates
 @dirrm share/java/robocode/robots/sample
 @dirrm share/java/robocode/robots
 @dirrm share/java/robocode/javadoc/robocode
 @dirrm share/java/robocode/javadoc
+@dirrm share/java/robocode/compilers
 @dirrm share/java/robocode/battles
 @dirrm share/java/robocode
