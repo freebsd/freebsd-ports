@@ -1,0 +1,32 @@
+--- src/Makefile.in	2000/09/25 11:33:52	1.1
++++ src/Makefile.in	2000/09/25 11:39:21
+@@ -124,9 +124,9 @@
+ cxxflags_set = @cxxflags_set@
+ l = @l@
+ 
+-SUBDIRS = gtkeditor tools scanners
++SUBDIRS = #gtkeditor tools scanners
+ 
+-INCLUDES =  	-I$(top_srcdir)/intl 	$(GNOME_INCLUDEDIR) 	-I$(top_srcdir)/src/gtkeditor
++INCLUDES =  	$(GNOME_INCLUDEDIR) 	-I$(X11BASE)/include
+ 
+ 
+ EXTRA_DIST =  	run-tit 	xpm/save_all.xpm 	xpm/compile.xpm 	xpm/debug.xpm 	xpm/exec.xpm
+@@ -137,7 +137,7 @@
+ titano_SOURCES =  	main.cc 	support.c support.h 	interface.c interface.h 	callbacks.cc callbacks.h 	common.cc common.h 	highlight.h 	files.cc files.h 	projects.cc projects.h 	dialogs.cc dialogs.h 	util.cc util.h 	cproject.cc 	prefs.cc prefs.h
+ 
+ 
+-titano_LDADD = gtkeditor/libgtkeditor.la $(GNOME_LIBDIR) $(GNOMEUI_LIBS) $(INTLLIBS)
++titano_LDADD = -lgtkeditor $(GNOME_LIBDIR) $(GNOMEUI_LIBS) $(INTLLIBS)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h
+ CONFIG_CLEAN_FILES = 
+@@ -148,7 +148,7 @@
+ LIBS = @LIBS@
+ titano_OBJECTS =  main.o support.o interface.o callbacks.o common.o \
+ files.o projects.o dialogs.o util.o cproject.o prefs.o
+-titano_DEPENDENCIES =  gtkeditor/libgtkeditor.la
++titano_DEPENDENCIES =  # gtkeditor/libgtkeditor.la
+ titano_LDFLAGS = 
+ CXXFLAGS = @CXXFLAGS@
+ CXXCOMPILE = $(CXX) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)

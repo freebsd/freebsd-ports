@@ -1,0 +1,6 @@
+bin/titano
+share/gnome/pixmaps/titano/compile.xpm
+share/gnome/pixmaps/titano/debug.xpm
+share/gnome/pixmaps/titano/exec.xpm
+share/gnome/pixmaps/titano/save_all.xpm
+@dirrm share/gnome/pixmaps/titano

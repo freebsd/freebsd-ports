@@ -1,0 +1,14 @@
+--- src/prefs.cc	2000/09/25 12:01:34	1.1
++++ src/prefs.cc	2000/09/25 12:03:32
+@@ -8,6 +8,11 @@
+ 
+ Preferences::Preferences(void)
+ {
++	defaultdir=NULL;
++	lastname=NULL;
++	lastdir=NULL;
++	name=NULL;
++	mail=NULL;
+ 	file = g_strconcat(home,"/.titano/titano",NULL);
+ 	
+ 	if(Preferences::check())

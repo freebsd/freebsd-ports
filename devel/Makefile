@@ -323,6 +323,7 @@
     SUBDIR += tclreadline
     SUBDIR += tcltls
     SUBDIR += templ
+    SUBDIR += titano
     SUBDIR += tkcon
     SUBDIR += tkcvs
     SUBDIR += tkref
