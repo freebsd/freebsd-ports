@@ -80,6 +80,7 @@
     SUBDIR += glbiff
     SUBDIR += gmail
     SUBDIR += gmime
+    SUBDIR += gmime2
     SUBDIR += gnumail
     SUBDIR += gotmail
     SUBDIR += grepmail
