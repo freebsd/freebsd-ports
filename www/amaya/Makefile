@@ -1,17 +1,18 @@
 # New ports collection makefile for:	amaya
-# Version required:	2.1
+# Version required:	2.2
 # Date created:		26 Dec 1998
 # Whom:			Don Croyle <croyle@gelemna.ft-wayne.in.us>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	amaya-src-2.1
-PKGNAME=	amaya-2.1
+DISTNAME=	amaya-src-2.2
+PKGNAME=	amaya-2.2
 CATEGORIES= 	www
 MASTER_SITES=	http://www.w3.org/Amaya/Distribution/ \
 		ftp://ftp.w3.org/pub/amaya/ \
 		ftp://mirror.aarnet.edu.au/pub/amaya/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	croyle@gelemna.ft-wayne.in.us
 
