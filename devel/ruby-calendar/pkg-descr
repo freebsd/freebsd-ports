@@ -1,0 +1,21 @@
+Ruby-calendar includes the following modules.
+
+Calendrical Calculations module:
+  This module supports the following calendars:
+    Gregorian (current civil), Calendar week (ISO), Julian (old
+    civil), Islamic (Moslem), Hebrew (Jewish), Mayan, French
+    Revolutionary, Old Hindu, Achelis', Coptic, Ethiopian, Jalaali
+    (incomplete), Kyureki (Japanese traditional with CE) A "Getdate"
+    module
+
+Getdate module:
+  This module provides a method which creates a Time object reflecting
+  the given representation of dates and times.  An "Sdn" module
+
+Sdn module:
+  This is an interface to the Scott E. Lee's SDN package.
+  This module supports the following calendars:
+    Gregorian, Julian, French Republican, Jewish
+
+Author:	Tadayoshi Funaba <tadf@funaba.org>
+WWW:	http://www.funaba.org/en/calendar.html#calendar

@@ -1,0 +1,11 @@
+%%RUBY_SITEARCHLIBDIR%%/calendar.so
+%%RUBY_SITEARCHLIBDIR%%/getdate.so
+%%RUBY_SITEARCHLIBDIR%%/sdn.so
+%%RUBY_SITELIBDIR%%/calclass.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/calendar/cal.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/calendar
+%%PORTDOCS%%%%RUBY_DOCDIR%%/calendar/README.en
+%%PORTDOCS%%%%RUBY_DOCDIR%%/calendar/README.sdncal20
+%%PORTDOCS%%%%RUBY_DOCDIR%%/calendar/ja/README
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/calendar/ja
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/calendar

@@ -492,6 +492,7 @@
     SUBDIR += ruby-avl
     SUBDIR += ruby-bsearch
     SUBDIR += ruby-byaccr
+    SUBDIR += ruby-calendar
     SUBDIR += ruby-cvs
     SUBDIR += ruby-date2
     SUBDIR += ruby-dialogs
