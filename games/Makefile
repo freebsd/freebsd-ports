@@ -75,6 +75,7 @@
     SUBDIR += freeciv-gtk
     SUBDIR += freesweep
     SUBDIR += frotz
+    SUBDIR += fsgs
     SUBDIR += galaxis
     SUBDIR += garith
     SUBDIR += gcompris
