@@ -7,6 +7,7 @@
 
 PORTNAME=	holyshout
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	ftp://ftp.holywar.net/pub/FreeBSD/
 
@@ -21,6 +22,6 @@ USE_REINPLACE=	yes
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' \
 		${WRKSRC}/Makefile
-	${REINPLACE_CMD} -e 's,,\r,g' ${WRKSRC}/holyshout.c
+	${REINPLACE_CMD} -e 's,,\\r,g' ${WRKSRC}/holyshout.c
 
 .include <bsd.port.mk>
