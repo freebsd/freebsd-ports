@@ -1,0 +1,10 @@
+py-flowtools extension module gives you a simple python interface 
+to NetFlow data as stored by Mark Fullmer's flow-tools package.
+
+It contains a class FlowSet which reads the data from a given file
+(or from standard input). A FlowSet provides an iterator interface
+to access the individual flow records as instances of a second
+class called Flow. A Flow provides access to its data through
+attribute references.
+
+WWW:	http://mail.net.informatik.tu-muenchen.de/~robin/flowtools/

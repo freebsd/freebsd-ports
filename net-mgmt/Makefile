@@ -126,6 +126,7 @@
     SUBDIR += pixilate
     SUBDIR += pmacct
     SUBDIR += portmon
+    SUBDIR += py-flowtools
     SUBDIR += py-ipy
     SUBDIR += py-snmp
     SUBDIR += rancid
