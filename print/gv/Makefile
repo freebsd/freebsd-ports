@@ -21,6 +21,8 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PostScript and PDF previewer
 
+USE_GHOSTSCRIPT= yes
+
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
 USE_IMAKE=	yes
