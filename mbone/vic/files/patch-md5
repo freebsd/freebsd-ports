@@ -1,0 +1,21 @@
+--- net/crypt.cpp	Thu Sep  9 08:48:51 1999
++++ net/crypt.cpp	Tue Mar 22 13:08:25 2005
+@@ -42,5 +42,5 @@
+ #define PROTOTYPES 1 
+ #include "global.h"
+-#include "md5.h"
++#include <openssl/md5.h>
+ 
+ Crypt::Crypt() : badpktlen_(0), badpbit_(0)
+@@ -70,8 +70,8 @@
+ {
+ 	MD5_CTX context;
+-	MD5Init(&context);
+-	MD5Update(&context, (u_char*)key, strlen(key));
++	MD5_Init(&context);
++	MD5_Update(&context, (u_char*)key, strlen(key));
+ 	u_char hash[16];
+-	MD5Final((u_char *)hash, &context);
++	MD5_Final((u_char *)hash, &context);
+ 	return (install_key(hash));
+ }

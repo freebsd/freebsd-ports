@@ -1,0 +1,53 @@
+--- main.cpp	Tue Feb 25 12:55:08 2003
++++ main.cpp	Tue Mar 22 12:37:51 2005
+@@ -363,36 +363,4 @@
+ #endif
+ 
+-/*
+- * From the RTP spec.
+- */
+-u_int32_t
+-heuristic_random()
+-{
+-	struct {
+-		struct  timeval tv;
+-		clock_t cpu;
+-		pid_t   pid;
+-		u_long  hid;
+-		uid_t   uid;
+-		gid_t   gid;
+-		struct  utsname name;
+-	} s;
+-
+-	gettimeofday(&s.tv, 0);
+-	uname(&s.name);
+-	s.cpu  = clock();
+-	s.pid  = getpid();
+-	s.hid  = gethostid();
+-	s.uid  = getuid();
+-	s.gid  = getgid();
+-
+-	MD5_CTX context;
+-	MD5Init(&context);
+-	MD5Update(&context, (u_char*)&s, sizeof(s));
+-	u_int32_t out[4];
+-	MD5Final((u_char *)out, &context);
+-	return (out[0] ^ out[1] ^ out[2] ^ out[3]);
+-}
+-
+ void loadbitmaps(Tcl_Interp* tcl)
+ {
+@@ -407,5 +375,5 @@
+ }
+ 
+-extern "C" int Tk_StripchartCmd(ClientData, Tcl_Interp*, int ac, char** av);
++extern "C" int Tk_StripchartCmd(ClientData, Tcl_Interp*, int ac, const char** av);
+ #ifdef WIN32
+ extern "C" int WinPutsCmd(ClientData, Tcl_Interp*, int ac, char** av);
+@@ -433,5 +401,5 @@
+ main(int argc, const char** argv)
+ {
+-	srandom(heuristic_random());
++	srandomdev();
+ 
+ #ifdef SIGHUP

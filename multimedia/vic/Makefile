@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-2.8ucl1.1.6
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	MBONE video tool
 
-LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
+LIB_DEPENDS=	tk84:${PORTSDIR}/x11-toolkits/tk84 \
 		uclmmbase:${PORTSDIR}/devel/uclmmbase
 
 USE_AUTOCONF_VER=	213
@@ -27,6 +27,9 @@ CONFIGURE_ARGS= -x-libraries=${PREFIX}/lib \
 		-with-tk=${LOCALBASE} \
 		-enable-ipv6
 MAN1=		vic.1
+
+post-patch:
+	${RM} ${WRKSRC}/md5*
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/vic

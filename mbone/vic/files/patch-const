@@ -1,21 +1,62 @@
---- tkStripchart.c	Mon Jun 29 15:17:00 1998
-+++ tkStripchart.c	Thu Sep 23 18:50:39 2004
+--- tkStripchart.c.orig	Mon Jun 29 15:17:00 1998
++++ tkStripchart.c	Tue Mar 22 13:02:03 2005
+@@ -329,7 +329,7 @@
+  */
+ static void Callback(Stripchart* StripchartPtr);
+-static void ComputeStripchartGeometry(Stripchart* StripchartPtr);
++static void ComputeStripchartGeometry(const Stripchart* StripchartPtr);
+ static int ConfigureStripchart(Tcl_Interp* interp, Stripchart* StripchartPtr,
+-				int argc, char** argv, int flags);
++				int argc, const char** argv, int flags);
+ static void DestroyStripchart(char* clientData);
+ static void DisplayStripchart(ClientData clientData);
+@@ -337,9 +337,9 @@
+ static void EventuallyRedrawStripchart(Stripchart* StripchartPtr,
+ 				       int displaybits);
+-static void ReplaceColours(Stripchart* StripchartPtr, int argc, char** argv);
++static void ReplaceColours(Stripchart* StripchartPtr, int argc, const char** argv);
+ static void ScrollStrips(Stripchart* StripchartPtr);
+ static void StripchartEventProc(ClientData clientData, XEvent* eventPtr);
+ static int StripchartWidgetCmd(ClientData clientData, Tcl_Interp* interp,
+-				int argc, char** argv);
++				int argc, const char** argv);
+ static void SetStripchartValue(Stripchart* StripchartPtr, double value);
+ static void SwapColours(Stripchart* StripchartPtr);
 @@ -364,5 +364,5 @@
  int
  Tk_StripchartCmd(ClientData clientData, Tcl_Interp *interp, int argc,
 -		 char **argv)
-+		 CONST char **argv)
++		 const char **argv)
   {
  	Tk_Window tkwin = (Tk_Window) clientData;
---- main.cpp	Tue Feb 25 12:55:08 2003
-+++ main.cpp	Thu Sep 23 18:51:59 2004
-@@ -407,5 +407,5 @@
- }
- 
--extern "C" int Tk_StripchartCmd(ClientData, Tcl_Interp*, int ac, char** av);
-+extern "C" int Tk_StripchartCmd(ClientData, Tcl_Interp*, int ac, const char** av);
- #ifdef WIN32
- extern "C" int WinPutsCmd(ClientData, Tcl_Interp*, int ac, char** av);
+@@ -419,5 +419,5 @@
+ static int
+ StripchartWidgetCmd(ClientData clientData, Tcl_Interp *interp,
+-		    int argc, char **argv)
++		    int argc, const char **argv)
+ {
+ 	register Stripchart *StripchartPtr = (Stripchart*)clientData;
+@@ -629,5 +629,5 @@
+ static int
+ ConfigureStripchart(Tcl_Interp *interp, Stripchart *StripchartPtr,
+-		    int argc, char** argv, int flags)
++		    int argc, const char** argv, int flags)
+ {
+ 	XGCValues gcValues;
+@@ -699,5 +699,5 @@
+  */
+ static void
+-ComputeStripchartGeometry(Stripchart* StripchartPtr)
++ComputeStripchartGeometry(const Stripchart* StripchartPtr)
+  {
+ 	int tt = hasatitle(StripchartPtr);
+@@ -1040,5 +1040,5 @@
+  */
+ static void 
+-ReplaceColours(Stripchart* StripchartPtr, int argc, char** argv)
++ReplaceColours(Stripchart* StripchartPtr, int argc, const char** argv)
+ {
+ 	StripchartPtr->altborder =
 --- vic_tcl.h	Thu Sep  9 08:05:49 1999
 +++ vic_tcl.h	Thu Sep 23 19:00:33 2004
 @@ -74,6 +77,6 @@
