@@ -1,8 +1,7 @@
 # $FreeBSD$
 #
 
-#    SUBDIR += dir
-    SUBDIR += clhep
     SUBDIR += chemtool
+    SUBDIR += clhep
 
 .include <bsd.port.subdir.mk>
