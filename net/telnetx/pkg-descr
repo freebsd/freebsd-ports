@@ -1,0 +1,9 @@
+Telnetx was developed by WIDE/WPNC Working Group.  Telnetx supports
+several binary file transfer protocols which are provided by some of
+major commercial online services.  Zmodem, B plus, transit and kermit
+are supported by telnetx.  Telnetx calls external transfer programs to
+do the transfer and thus transfer functions are independent from
+telnetx itself.  The user can also specify other external programs to
+perform file transfer.
+
+- Masafumi
