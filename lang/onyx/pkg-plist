@@ -5,6 +5,7 @@ include/libonyx/libonyx.h
 include/libonyx/ch.h
 include/libonyx/dch.h
 include/libonyx/gcdict.h
+include/libonyx/mb.h
 include/libonyx/mem.h
 include/libonyx/nx.h
 include/libonyx/nxa.h
@@ -133,6 +134,7 @@ share/onyx-%%ONYX_VERSION%%/doc/html/node79.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node8.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node80.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node81.html
+share/onyx-%%ONYX_VERSION%%/doc/html/node82.html
 share/onyx-%%ONYX_VERSION%%/doc/html/node9.html
 share/onyx-%%ONYX_VERSION%%/doc/html/onyx.css
 share/onyx-%%ONYX_VERSION%%/doc/html/onyx.html
