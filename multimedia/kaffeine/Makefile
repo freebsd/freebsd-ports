@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	kaffeine
-PORTVERSION=	0.3.2
-PORTREVISION=	2
+PORTVERSION=	0.4
 CATEGORIES=	multimedia kde
-MASTER_SITES=	http://members.chello.at/kaffeine/download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	kaffeine
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A xine-base multimedia player

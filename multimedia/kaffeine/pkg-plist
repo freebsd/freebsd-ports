@@ -1,14 +1,19 @@
 bin/kaffeine
+lib/kaffeineplugin/kaffeineplugin.la
+lib/kaffeineplugin/kaffeineplugin.so
 share/applnk/Multimedia/kaffeine.desktop
 share/apps/kaffeine/kmp-playlist.png
 share/apps/kaffeine/logo.avi
+share/apps/profiles/kaffeine.profile.xml
 share/doc/HTML/en/kaffeine/playerwin.png
 share/doc/HTML/en/kaffeine/playlistwin.png
+share/doc/HTML/en/kaffeine/systemtray.png
 share/doc/HTML/en/kaffeine/index.docbook
 share/doc/HTML/en/kaffeine/index.cache.bz2
 share/doc/HTML/en/kaffeine/common
 share/doc/HTML/de/kaffeine/playerwin.png
 share/doc/HTML/de/kaffeine/playlistwin.png
+share/doc/HTML/de/kaffeine/systemtray.png
 share/doc/HTML/de/kaffeine/index.docbook
 share/doc/HTML/de/kaffeine/index.cache.bz2
 share/doc/HTML/de/kaffeine/common
@@ -19,7 +24,14 @@ share/icons/hicolor/32x32/apps/kaffeine.png
 share/icons/hicolor/48x48/apps/kaffeine.png
 share/icons/hicolor/64x64/apps/kaffeine.png
 share/locale/de/LC_MESSAGES/kaffeine.mo
+share/locale/cs/LC_MESSAGES/kaffeine.mo
+share/locale/el/LC_MESSAGES/kaffeine.mo
+share/locale/es/LC_MESSAGES/kaffeine.mo
+share/locale/fr/LC_MESSAGES/kaffeine.mo
+share/locale/it/LC_MESSAGES/kaffeine.mo
+share/locale/ms/LC_MESSAGES/kaffeine.mo
 share/locale/pl/LC_MESSAGES/kaffeine.mo
+@dirrm lib/kaffeineplugin/
 @dirrm share/apps/kaffeine
 @dirrm share/doc/HTML/en/kaffeine
 @dirrm share/doc/HTML/de/kaffeine
