@@ -1,0 +1,19 @@
+*** src/menu2.c.bak	Mon Aug 28 06:10:02 1995
+--- src/menu2.c	Sun Sep 24 21:18:52 1995
+***************
+*** 93,99 ****
+      default:
+        for (i = 0; i < max ; i++) {
+  	if (ch == items[i].key) {
+! 	  do_item (items[i]);
+  	  update = TRUE;
+  	  break;
+  	}
+--- 93,99 ----
+      default:
+        for (i = 0; i < max ; i++) {
+  	if (ch == items[i].key) {
+! 	  do_item (&items[i]);
+  	  update = TRUE;
+  	  break;
+  	}
