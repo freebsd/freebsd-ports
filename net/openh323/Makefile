@@ -7,7 +7,7 @@
 
 PORTNAME=	openh323
 PORTVERSION=	1.9.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
@@ -37,7 +37,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_BISON=	yes
 
 USE_GMAKE=	yes
-ALL_TARGET=	opt
+ALL_TARGET=	optnoshared
 MAKE_ENV=	PWLIBDIR=${WRKDIR}/pwlib \
 		OPENH323DIR=${WRKDIR}/openh323
 THE_MACHTYPE=	${ARCH:S/i386/x86/}
