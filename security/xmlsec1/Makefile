@@ -31,7 +31,7 @@ MAN1=	xmlsec1.1 xmlsec1-config.1
 
 .if defined(WITH_GNUTLS)
 CONFIGURE_ARGS+=	--with-gnutls="${LOCALBASE}"
-LIB_DEPENDS+=		gnutls.13:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gnutls.12:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--without-gnutls
 .endif

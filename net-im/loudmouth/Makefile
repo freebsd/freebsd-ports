@@ -31,7 +31,7 @@ WITH_GNUTLS=	yes
 .endif
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=		gnutls.13:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gnutls.12:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--without-ssl
 .endif
