@@ -24,4 +24,9 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Business::OnlinePayment::2CheckOut.3
 
+post-patch:
+	${PERL} -pi -e 's/^our\s+([\$$\@\%]\w+)/use vars qw($$1);$$1/;' \
+		-e '$$_="" if /use 5/;' \
+		${WRKSRC}/2CheckOut.pm
+
 .include <bsd.port.mk>
