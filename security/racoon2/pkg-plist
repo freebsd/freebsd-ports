@@ -1,5 +1,9 @@
-sbin/racoon
-etc/racoon/psk.txt.dist
-etc/racoon/racoon.conf.dist
-etc/rc.d/racoon.sh
-@unexec rmdir %D/etc/racoon 2>/dev/null || true
+sbin/spmd
+sbin/kinkd
+etc/racoon2.conf.sample
+etc/rc.d/spmd.sh
+etc/rc.d/kinkd.sh
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.jp
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.iked
