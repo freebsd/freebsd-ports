@@ -8,4 +8,5 @@ On patched gnuplot, the following are added.
 3. Saving histories of command-line-editing by GNU readline library.
 
 For more information, see /usr/local/share/doc/gnuplot+/README.plus 
-or http://www.ipc.chiba-u.ac.jp/~yamaga/gnuplot+/
+
+WWW: http://www.ipc.chiba-u.ac.jp/~yamaga/gnuplot+/
