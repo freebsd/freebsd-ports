@@ -119,6 +119,7 @@
     SUBDIR += mod_dtcl
     SUBDIR += mod_fastcgi
     SUBDIR += mod_gzip
+    SUBDIR += mod_hosts_access
     SUBDIR += mod_index_rss
     SUBDIR += mod_layout
     SUBDIR += mod_mp3

@@ -1,0 +1,6 @@
+mod_hosts_access allows you to use the hosts.allow and hosts.deny
+files to configure access to your Apache webserver. This is the
+stable version 1.0.0. Nothing has changed apart from the homepage
+and some documentation glitches.
+
+WWW: http://www.klomp.org/mod_hosts_access/
