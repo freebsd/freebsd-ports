@@ -1,10 +1,10 @@
---- configure.orig	Mon Feb 23 21:11:35 1998
-+++ configure	Sun Mar  1 19:43:04 1998
-@@ -871,14 +871,14 @@
+--- configure.orig	Fri Dec 11 18:38:40 1998
++++ configure	Sat Jan  2 16:03:14 1999
+@@ -854,14 +854,14 @@
    withval="$with_tcl"
    TCL_BIN_DIR=$withval
  else
--  TCL_BIN_DIR=`cd ../../tcl8.1a2/unix; pwd`
+-  TCL_BIN_DIR=`cd $TCL_BIN_DEFAULT; pwd`
 +  TCL_BIN_DIR=${prefix}/lib/tcl8.1
  fi
  
@@ -13,25 +13,25 @@
  fi
 -if test ! -f $TCL_BIN_DIR/Makefile; then
 -    { echo "configure: error: There's no Makefile in $TCL_BIN_DIR;  perhaps you didn't specify the Tcl *build* directory (not the toplevel Tcl directory) or you forgot to configure Tcl?" 1>&2; exit 1; }
-+if test ! -f $TCL_BIN_DIR/tclConfig.sh; then
++if test ! -f $TCL_BIN_DIR/tclConfig.sh; then 
 +    { echo "configure: error: There's no tclConfig.sh in $TCL_BIN_DIR;  perhaps you didn't specify the Tcl *build* directory (not the toplevel Tcl directory) or you forgot to configure Tcl?" 1>&2; exit 1; }
  fi
  
  #--------------------------------------------------------------------
-@@ -897,6 +897,8 @@
- DL_LIBS=$TCL_DL_LIBS
- LD_FLAGS=$TCL_LD_FLAGS
+@@ -902,6 +902,8 @@
+ CFLAGS_OPTIMIZE=$TCL_CFLAGS_OPTIMIZE
+ EXTRA_CFLAGS=$TCL_EXTRA_CFLAGS
  
 +TCL_SRC_DIR=${prefix}/include/tcl${TCL_VERSION}
 +
  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
  
  # If Tcl and Tk are installed in different places, adjust the library
-@@ -2571,6 +2573,7 @@
+@@ -2513,6 +2515,7 @@
  s%@SHLIB_VERSION@%$SHLIB_VERSION%g
  s%@TCL_BIN_DIR@%$TCL_BIN_DIR%g
  s%@TCL_BUILD_LIB_SPEC@%$TCL_BUILD_LIB_SPEC%g
 +s%@TCL_LIB_SPEC@%$TCL_LIB_SPEC%g
+ s%@TCL_DBGX@%$TCL_DBGX%g
+ s%@TCL_LIB_FLAG@%$TCL_LIB_FLAG%g
  s%@TCL_SRC_DIR@%$TCL_SRC_DIR%g
- s%@TCL_VERSION@%$TCL_VERSION%g
- s%@TK_BUILD_LIB_SPEC@%$TK_BUILD_LIB_SPEC%g

@@ -3,11 +3,11 @@
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.19 1998/12/01 03:06:48 asami Exp $
+# $Id: Makefile,v 1.20 1998/12/13 08:49:14 asami Exp $
 #
 
-DISTNAME=	tk8.1a2
-PKGNAME=	tk-8.1.a2
+DISTNAME=	tk8.1b1
+PKGNAME=	tk-8.1.b1
 CATEGORIES=	x11-toolkits tk81
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_1/
 
