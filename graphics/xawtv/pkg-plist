@@ -21,6 +21,13 @@ lib/xawtv/flt-invert.so
 lib/xawtv/snd-oss.so
 lib/xawtv/write-avi.so
 @dirrm lib/xawtv
+man/es/man1/fbtv.1
+man/es/man1/scantv.1
+man/es/man1/xawtv.1
+@dirrm man/es/man1
+man/es/man5/xawtvrc.5
+@dirrm man/es/man5
+@dirrm man/es
 @cwd %%X11BASE%%
 lib/X11/app-defaults/MoTV
 lib/X11/fonts/misc/led-iso8859-1.pcf.gz

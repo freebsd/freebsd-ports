@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xawtv
-PORTVERSION=	3.73
+PORTVERSION=	3.74
 CATEGORIES=	graphics
 MASTER_SITES=	http://bytesex.org/xawtv/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -30,10 +30,9 @@ FILES_CFLAGS=	. font i2c man src radio webcam oldstuff/vtx \
 FILES_X11BASE=	configure Make.config.in
 FILES_LOCALBASE=configure
 
-MAN1=		alevtd.1 dump-mixers.1 fbtv.1 motv.1 ntsc-cc.1 propwatch.1 record.1 \
-		rootv.1 scantv.1 showriff.1 \
-		streamer.1 subtitles.1 ttv.1 v4lctl.1 \
-		webcam.1 xawtv-remote.1 xawtv.1
+MAN1=		alevtd.1 dump-mixers.1 fbtv.1 motv.1 ntsc-cc.1 propwatch.1 \
+		radio.1 record.1 rootv.1 scantv.1 showriff.1 streamer.1 \
+		subtitles.1 ttv.1 v4lctl.1 webcam.1 xawtv-remote.1 xawtv.1
 MAN5=		xawtvrc.5
 MAN8=		v4l-conf.8
 
