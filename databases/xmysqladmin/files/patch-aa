@@ -1,0 +1,56 @@
+--- Makefile.orig	Mon Jul 28 03:25:41 1997
++++ Makefile	Tue Sep  2 16:45:25 1997
+@@ -1,5 +1,5 @@
+ #
+-# Makefile for xmysqladmin on Linux
++# Makefile for xmysqladmin on FreeBSD
+ #
+ 
+ ########################################################
+@@ -29,21 +29,21 @@
+ PROGRAM = 	xmysqladmin
+ 
+ # PROGRAM install path
+-INSTALLPATH = /usr/local/bin
++INSTALLPATH = ${X11BASE}/bin
+ 
+ # pixmap location
+-PIXMAPPATH = /usr/local/bin
++PIXMAPPATH = ${X11BASE}/include/X11/pixmaps
+ 
+ # Compilation Details
+-CC = gcc
+-STDCFLAGS = -g -c -O2 -Wall -DPIXMAPFILE=\"$(PIXMAPPATH)/mysql.xpm\" 
++# CC = gcc
++STDCFLAGS = $(CFLAGS) -c -DPIXMAPFILE=\"$(PIXMAPPATH)/xmysqladmin.xpm\" 
+ STDLFLAGS = 
+ MYSQLINC = -I/usr/local/include/mysql
+ MYSQLLOAD = -L/usr/local/lib/mysql -lmysqlclient -lmysys -ldbug -lmystrings
+-XFORMLIBDIR = -L/usr/lib
+-XFORMINCDIR = -I/usr/include
++XFORMLIBDIR = -L$(X11BASE)/lib
++XFORMINCDIR = -I$(X11BASE)/include
+ XINC = 
+-XLOAD = -L/usr/X11R6/lib  -lX11
++XLOAD = -L$(X11BASE)/lib  -lX11
+ ADMININC = xmysqladmin.h xmysqladmin2.h
+ 
+ # no change needed after this line...
+@@ -64,8 +64,7 @@
+ ${PROGRAM}: $(OBJS)
+ 	$(CC) -o ${PROGRAM} $(OBJS) $(MYSQLINC) $(XFORMINCDIR) \
+ 	$(XINC) $(STDLFLAGS) $(MYSQLLOAD) \
+-	$(XLOAD) $(XFORMLIBDIR) -lforms -lXpm -lm
+-	./$(PROGRAM)
++	$(XLOAD) $(XFORMLIBDIR) -lxforms -lXpm -lm
+ 
+ .c.o:
+ 	$(CC) $*.c $(STDCFLAGS) $(XFORMINCDIR) $(MYSQLINC) $(XINC) 
+@@ -74,5 +73,5 @@
+ 	rm -f ${PROGRAM} $(OBJS) 
+ 
+ install:
+-	install --mode=711 $(PROGRAM) $(INSTALLPATH)
+-	cp mysql.xpm $(PIXMAPPATH)
++	install -s -m 555 $(PROGRAM) $(INSTALLPATH)
++	install -m 444 mysql.xpm $(PIXMAPPATH)/xmysqladmin.xpm
