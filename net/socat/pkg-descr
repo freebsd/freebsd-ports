@@ -1,0 +1,13 @@
+socat is a relay for bidirectional data transfer between two independent
+data channels. Each of these data channels may be a file, pipe, device
+(terminal or modem etc.), socket (UNIX, IP4, IP6 - raw, UDP, TCP), a file
+descriptor (stdin etc.), a program, or an arbitrary combination of two of
+these.
+
+socat can be used, e.g., as TCP relay (one-shot or daemon), as an external
+socksifier, for attacking weak firewalls, as a shell interface to UNIX
+sockets, IP6 relay, for redirecting TCP oriented programs like brutus to a
+serial line, or to establish a relatively secure environment (su and chroot)
+for running client or server shell scripts with network connections.
+
+WWW: http://www.dest-unreach.org/socat/

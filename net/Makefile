@@ -457,6 +457,7 @@
     SUBDIR += smokeping
     SUBDIR += sniffit
     SUBDIR += sntop
+    SUBDIR += socat
     SUBDIR += socks5
     SUBDIR += spat
     SUBDIR += spread
