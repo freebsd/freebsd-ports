@@ -1,6 +1,15 @@
 --- webmagickrc.in.orig	Sun Oct 17 18:43:44 1999
-+++ webmagickrc.in	Thu Nov 25 23:48:03 1999
-@@ -41,6 +41,7 @@
++++ webmagickrc.in	Sat Nov 27 07:29:56 1999
+@@ -13,6 +13,8 @@
+ 				# Not used if local relative paths used
+ # $opt_iconpath	= '@ICONPATH@';
+ 				# Relative path under rootpath / prefixpath
++# $opt_iconbase = '';
++				# Global icons base URL, if not empty
+ 
+ #
+ # Server-side imagemap settings
+@@ -41,6 +43,7 @@
  # $opt_pageindexname	= '.index';	# Base name of secondary index files
  # $opt_dirindexname	= '.dirindex';	# Subdirectory Title cross-reference
  					#  dirname   Directory Title
@@ -8,7 +17,7 @@
  # $opt_imgindexname	= '.imgindex';	# Image name to label cross-reference file
  
  #
-@@ -83,6 +84,7 @@
+@@ -83,6 +86,7 @@
  # $opt_forcemontage	= 0;	# Force montage (default off)
  # $opt_forcegif		= 0;	# Force GIF imagemaps (default off)
  # $opt_forcejpeg          = 0;    # Force JPEG imagemaps (default off)
@@ -16,7 +25,7 @@
  # $opt_help		= 0;	# Display usage message
  # $opt_version		= 0;	# Display version info
  # $opt_htmlext            = '.html'; # Use .shtml for SSI
-@@ -93,6 +95,7 @@
+@@ -93,6 +97,7 @@
  # $opt_title		= '';	# Page title (blank provides default title)
  # $opt_address		= '';	# Additonal address info for bottom of
                                  #    imagemap page
