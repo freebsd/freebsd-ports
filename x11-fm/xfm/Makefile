@@ -6,17 +6,13 @@
 #
 
 PORTNAME=	xfm
-PORTVERSION=	1.4.2.4
+PORTVERSION=	1.4.3
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.musikwissenschaft.uni-mainz.de/~ag/xfm/
-MASTER_SITE_SUBDIR=	applications
-DISTNAME=	${PORTNAME}-1.4.2p4
 
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.4.2
 
 USE_IMAKE=	yes
 USE_XPM=	yes
