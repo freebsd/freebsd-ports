@@ -1,3 +1,4 @@
+bin/ggiteleserver
 bin/cube3d
 bin/monitest
 @unexec if cmp -s %D/etc/ggi/libggi.conf %D/etc/ggi/libggi.conf.dist; then rm -f %D/etc/ggi/libggi.conf; fi
@@ -83,6 +84,8 @@ lib/ggi/display/X_misc.la
 lib/ggi/display/X_misc.so
 lib/ggi/display/Xlib.la
 lib/ggi/display/Xlib.so
+%%WITH_AALIB%%lib/ggi/display/aa.la
+%%WITH_AALIB%%lib/ggi/display/aa.so
 lib/ggi/display/file.la
 lib/ggi/display/file.so
 lib/ggi/display/mansync.la
@@ -97,6 +100,10 @@ lib/ggi/display/palemu.la
 lib/ggi/display/palemu.so
 lib/ggi/display/sub.la
 lib/ggi/display/sub.so
+%%WITH_SVGALIB%%lib/ggi/display/svgalib.la
+%%WITH_SVGALIB%%lib/ggi/display/svgalib.so
+%%WITH_SVGALIB%%lib/ggi/display/svgalib_misc.la
+%%WITH_SVGALIB%%lib/ggi/display/svgalib_misc.so
 lib/ggi/display/tele.la
 lib/ggi/display/tele.so
 lib/ggi/display/terminfo.la
@@ -105,6 +112,8 @@ lib/ggi/display/tile.la
 lib/ggi/display/tile.so
 lib/ggi/display/trueemu.la
 lib/ggi/display/trueemu.so
+%%WITH_SVGALIB%%lib/ggi/display/vgagl.la
+%%WITH_SVGALIB%%lib/ggi/display/vgagl.so
 lib/ggi/display/vgl.la
 lib/ggi/display/vgl.so
 lib/libggi.la

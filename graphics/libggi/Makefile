@@ -69,8 +69,24 @@ MLINKS=		ggiDBGetBuffer.3ggi ggiDBGetNumBuffers.3ggi \
 		ggiSetOrigin.3ggi ggiGetOrigin.3ggi \
 		ggiSetPalette.3ggi ggiGetPalette.3ggi
 
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_AALIB) || exists(${LOCALBASE}/include/aalib.h)
+LIB_DEPENDS+=	aa.1:${PORTSDIR}/graphics/aalib
+PLIST_SUB+=	WITH_AALIB=""
+.else
+PLIST_SUB+=	WITH_AALIB="@comment "
+.endif
+
+.if defined(WITH_SVGALIB) || exists(${LOCALBASE}/include/vga.h)
+LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
+PLIST_SUB+=	WITH_SVGALIB=""
+.else
+PLIST_SUB+=	WITH_SVGALIB="@comment "
+.endif
+
 post-install:
 	@${CP} ${WRKSRC}/libggi.conf ${PREFIX}/etc/ggi/libggi.conf.dist
 	@${CP} ${WRKSRC}/extensions/misc/libggimisc.conf ${PREFIX}/etc/ggi/libggimisc.conf.dist
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
