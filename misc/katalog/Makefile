@@ -10,7 +10,7 @@ PORTVERSION=	0.1
 CATEGORIES=	misc kde
 MASTER_SITES=	http://salvaste.altervista.org/
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	CD organizer for KDE
 
 USE_KDELIBS_VER=3

@@ -10,7 +10,7 @@ PORTVERSION=	0.1.8
 CATEGORIES=	net
 MASTER_SITES=	http://joshbeam.com/files/
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Tunnel for TCP connections using an HTTP or SOCKS5 proxy
 
 USE_REINPLACE=	yes

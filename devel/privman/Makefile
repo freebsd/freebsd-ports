@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel security
 MASTER_SITES=	http://opensource.nailabs.com/privman/downloads/
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Library that makes it easy for programs to use privilege separation
 
 FORBIDDEN=	"tempnam() can cause race condition, should be fixed by the author soon"

@@ -10,7 +10,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.che.iitm.ac.in/~ch99057/software/
 DISTNAME=	ttt3d
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	This is a simple "3D" tic tac toe game
 
 WRKSRC=		${WRKDIR}/ttt3d

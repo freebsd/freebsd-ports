@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://savannah.nongnu.org/download/${PORTNAME}/smtpmail.pkg/0.4.2/ \
 		http://voodoo.oberon.net/
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Tool to send the mails over remote smtp server
 
 GNU_CONFIGURE=	yes

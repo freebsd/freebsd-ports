@@ -9,7 +9,7 @@ PORTVERSION=	1.0
 CATEGORIES=	graphics kde
 MASTER_SITES=	http://savannah.nongnu.org/download/kimagemap/
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	KDE-based editor for HTML image maps
 
 USE_BZIP2=	yes

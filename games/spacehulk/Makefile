@@ -9,7 +9,7 @@ PORTVERSION=	1.4.3
 CATEGORIES=	games kde
 MASTER_SITES=	http://savannah.nongnu.org/download/${PORTNAME}/main.pkg/${PORTVERSION}/
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Science-fiction board game in the world of Warhammer 40000
 
 GNU_CONFIGURE=	yes

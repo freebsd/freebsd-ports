@@ -10,7 +10,7 @@ PORTVERSION=	0.4.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.ba.cnr.it/~paolo/pmacct/
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Network tool to gather IP traffic information
 
 .if defined(WITH_MYSQL)

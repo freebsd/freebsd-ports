@@ -10,7 +10,7 @@ PORTVERSION=	0.2
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://www.8ung.at/tuxsoft/pwg/
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	A small tool to generate secure, random passwords
 
 USE_BZIP2=	yes

@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.virtualunlimited.com/download/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	BeeCrypt is an open source cryptography library
 
 USE_REINPLACE=	yes

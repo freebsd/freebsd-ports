@@ -10,7 +10,7 @@ PORTVERSION=	0.2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.stud.uni-hamburg.de/~lennart/projects/libnewmail/
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Generic mail checking library
 
 LIB_DEPENDS=	gnutls.8:${PORTSDIR}/security/gnutls \

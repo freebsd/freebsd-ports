@@ -10,7 +10,7 @@ PORTVERSION=	1.9
 CATEGORIES=	net
 MASTER_SITES=	http://www.aboleo.net/software/portmon/downloads/
 
-MAINTAINER=	ponomarew@oberon.net
+MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Daemon that monitor network services
 
 GNU_CONFIGURE=	yes
