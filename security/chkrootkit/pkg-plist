@@ -1,5 +1,6 @@
 sbin/chkrootkit
 sbin/chklastlog
+sbin/chkproc
 sbin/chkwtmp
 sbin/ifpromisc
 %%PORTDOCS%%share/doc/chkrootkit/COPYRIGHT
