@@ -6125,6 +6125,7 @@ porteasy	ports/misc/porteasy
 portell		ports/misc/portell
 portfwd		ports/net/portfwd
 portlint	ports/devel/portlint
+portmon		ports/net/portmon
 portoseguro	ports/x11/portoseguro
 ports		ports
 ports_Mk	ports/Mk
