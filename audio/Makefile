@@ -122,6 +122,7 @@
     SUBDIR += grip
     SUBDIR += gsi
     SUBDIR += gsm
+    SUBDIR += gspeakers
     SUBDIR += gtkgep
     SUBDIR += gtkpod
     SUBDIR += holyshout
