@@ -45,7 +45,7 @@ post-patch:
 
 pre-install:
 .if defined(WITH_OPENING_BOOK)
-	@scripts/create_opening_book.sh ${DISTDIR} ${WRKSRC}
+	@${SH} ${SCRIPTDIR}/create_opening_book.sh ${DISTDIR} ${WRKSRC}
 .endif
 
 post-install:
