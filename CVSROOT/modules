@@ -6347,6 +6347,7 @@ oregano		ports/cad/oregano
 orion		ports/x11-wm/orion
 oroborus	ports/x11-wm/oroborus
 orpie		ports/math/orpie
+orsa		ports/astro/orsa
 ortep3		ports/biology/ortep3
 ortp		ports/net/ortp
 orville-write	ports/misc/orville-write
