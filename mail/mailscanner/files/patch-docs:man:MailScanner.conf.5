@@ -1,8 +1,81 @@
---- ../MailScanner-install-4.32.5.orig/docs/man/MailScanner.conf.5	Mon Aug  2 12:40:19 2004
-+++ docs/man/MailScanner.conf.5	Mon Aug  2 12:40:58 2004
+--- ../MailScanner-install-4.34.8.orig/docs/man/MailScanner.conf.5	Fri Oct 15 16:50:11 2004
++++ docs/man/MailScanner.conf.5	Fri Oct 15 16:50:30 2004
 @@ -1,4 +1,4 @@
 -.TH "MailScanner.conf" "5" "4.32.4" "Julian Field" "Mail"
-+.TH "MailScanner.conf" "5" "4.32.5" "Julian Field" "Mail"
++.TH "MailScanner.conf" "5" "4.34.8" "Julian Field" "Mail"
  .SH "NAME"
  .LP 
  MailScanner.conf \- Main configuration for MailScanner
+@@ -485,7 +485,7 @@
+ .br 
+ 
+ .br 
+-Which Virus Scanning package to use. Possible choices are sophos, sophossavi, mcafee, command, bitdefender, kaspersky, kaspersky\-4.5, kavdaemonclient, inoculate, inoculan, nod32, nod32\-1.99, f\-secure, f\-prot, panda, rav, antivir, clamav, clamavmodule, css, trend, norman, avg, vexira, none (no virus scanning at all). This *cannot* be the filename of a ruleset.
++Which Virus Scanning package to use. Possible choices are sophos, sophossavi, mcafee, command, bitdefender, kaspersky, kaspersky\-4.5, kavdaemonclient, inoculate, inoculan, nod32, nod32\-1.99, f\-secure, f\-prot, panda, rav, antivir, clamav, clamavmodule, css, trend, norman, avg, vexira, symscanengine, generic, none (no virus scanning at all). This *cannot* be the filename of a ruleset.
+ .br 
+ 
+ .br 
+@@ -584,6 +584,14 @@
+ Setting this option to yes is \fBvery dangerous\fR as it can let viruses in from remote "message body servers". 
+ 
+ .TP 
++\fBFind Phishing Fraud\fR
++Default: no
++.br 
++
++.br 
++Do you want to check for "Phishing" attacks? These are attacks that look like a genuine email message from your bank, which contain a link to click on to take you to the web site where you will be asked to type in personal information such as your account number or credit card details. Except it is not the real bank's web site at all, it is a very good copy of it run by thieves who want to steal your personal information or credit card details. These can be spotted because the real address of the link in the message is not the same as the text that appears to be the link. Note: This does cause significant extra load, particularly on systems       receiving lots of spam such as secondary MX hosts. This *cannot* be the filename of a ruleset, it must be 'yes' or 'no'.
++
++.TP 
+ \fBAllow IFrame Tags\fR
+ Default: no
+ .br 
+@@ -1083,6 +1091,15 @@
+ This supplies the text that is placed in the "Mail Header" of messages that have not been scanned, if the option "Mark Unscanned Messages" is set. It is a useful place to advertise your MailScanner service to new customers/clients. 
+ 
+ .TP 
++\fBRemove These Headers\fR
++Default: 
++.br 
++
++.br 
++If any of these headers are included in a a message, they will be deleted. This is very useful for removing return\-receipt requests and any headers which mean special things to your email client application, such as # X\-Mozilla\-Status. Each header should end in a ":", but MailScanner will add it if you forget. Headers should be separated by commas or spaces. This can also be the filename of a ruleset.
++
++
++.TP 
+ \fBDeliver Cleaned Messages\fR
+ Default: yes
+ .br 
+@@ -1249,12 +1266,11 @@
+ 
+ .TP 
+ \fBAttachment Encoding Charset\fR
+-Default: us\-ascii
++Default: ISO\-8859\-1
+ .br 
+ 
+ .br 
+-This is the name of the encoding character set used for the contents of "VirusWarning.txt" attachments. If your users do not use English as their preferred language, you may want to set this to "ISO\-8859\-1". 
+-
++This is the name of the encoding character set used for the contents of "VirusWarning.txt" attachments. 
+ .SH "Mail archiving and monitoring"
+ .TP 
+ \fBArchive Mail\fR
+@@ -1709,7 +1725,7 @@
+ .br 
+ Log all the filenames that are allowed by the Filetype Rules, or just the filetypes that are denied? This can also be the filename of a ruleset.
+ .SH "Advanced SpamAssassin Settings"
+-If you are using Postfix you may well need to use some of the settings below, as the home directory for the "postfix" user cannot be written to by the "postfix" user. You may also need to use these if you have installed SpamAssassin somewhere other than the default location.
++If you are using Postfix you may well need to use some of the settings below, as the home directory for the "postfix" user cannot be written to by the "postfix" user. You may also need to use these if you have installed SpamAssassin somewhere other than the default location. 
+ 
+ .TP 
+ \fBSpamAssassin User State Dir\fR
+@@ -1717,7 +1733,7 @@
+ .br 
+ 
+ .br 
+-The per\-user files (bayes, auto\-whitelist, user_prefs) are looked for here and in ~/.spamassassin/. Note the files are mutable. If this is unset then no extra places are searched for. If using Postfix, you probably want to set this to /var/spool/MailScanner/spamassassin and do
++The per\-user files (bayes, auto\-whitelist, user_prefs) are looked for here and in ~/.spamassassin/. Note the files are mutable. If this is unset then no extra places are searched for. NOTE: SpamAssassin is always called from MailScanner as the same user, and that is the "Run As" user specified in MailScanner.conf. So you can only have 1 set of "per\-user" files, it's just that you might possibly need to modify this location. You should not normally need to set this at all. If using Postfix, you probably want to set this to /var/spool/MailScanner/spamassassin and do
+ 
+ .RS 10
+ mkdir /var/spool/MailScanner/spamassassin
