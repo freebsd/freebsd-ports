@@ -1,0 +1,11 @@
+--- Makefile.in~	Mon Jun  5 15:17:45 2000
++++ Makefile.in	Thu Jun 22 22:23:48 2000
+@@ -482,7 +482,7 @@
+ 
+ install-data-local:
+ 	-mkdir -p $(datadir)/ami/pix
+-	cp -a $(top_srcdir)/pix/* $(datadir)/ami/pix
++	cp -R $(top_srcdir)/pix/* $(datadir)/ami/pix
+ uninstall-local:
+ 	chmod -R a+w $(datadir)/ami
+ 	rm -rf $(datadir)/ami/pix
