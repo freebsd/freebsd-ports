@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	HLDS
-PORTVERSION=	3.1.0.1
+PORTVERSION=	3.1.0.4
 CATEGORIES=	games linux
 MASTER_SITES=
-DISTFILES=	hlds_l3101.tar.gz cs_beta66.tar.gz
+DISTFILES=	hlds_l3104.tar.gz cs_10.tar.gz
 EXTRACT_ONLY=
 
 MAINTAINER=	markm@FreeBSD.org
 
-FORBIDDEN=	"Remotely exploitable buffer overflows."
+#FORBIDDEN=	"Remotely exploitable buffer overflows."
 
 BUILD_DEPENDS=	/compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_base
 RUN_DEPENDS=    /compat/linux/usr/i486-linux-libc5/lib/libc.so.5:${PORTSDIR}/emulators/linux_base
@@ -23,16 +23,16 @@ NO_CDROM=	"Size; the data set is much too big"
 NO_BUILD=	yes
 PREFIX=		/compat/linux
 WRKSRC=		${WRKDIR}/hlds_l
-EXTRACT_ONLY_1=	hlds_l3101.tar.gz
-EXTRACT_ONLY_2=	cs_beta66.tar.gz
+EXTRACT_ONLY_1=	hlds_l3104.tar.gz
+EXTRACT_ONLY_2=	cs_10.tar.gz
 
 HLDSDIR=	/usr/games/hlds_l
 
 .include <bsd.port.pre.mk>
 
-.if !exists(${DISTDIR}/hlds_l3101.tar.gz) \
-	&& !exists(${DISTDIR}/cs_beta66.tar.gz)
-IGNORE='Please go to http://www.planethalflife.com for details of how to obtain the Half-Life Dedicated Server (Linux version 3.1.0.1) and http://www.counter-strike.net for details on how to obtain the Linux port of Counter-Strike Beta 6.6. Put the files hlds_l3101.tar.gz and cs_beta66.tar.gz into the directory ${DISTDIR} and run make again.'
+.if !exists(${DISTDIR}/hlds_l3104.tar.gz) \
+	&& !exists(${DISTDIR}/cs_10.tar.gz)
+IGNORE='Please go to http://www.planethalflife.com for details of how to obtain the Half-Life Dedicated Server (Linux version 3.1.0.4) and http://www.counter-strike.net for details on how to obtain the Linux port of Counter-Strike 1.0. Put the files hlds_l3104.tar.gz and cs_10.tar.gz into the directory ${DISTDIR} and run make again.'
 .endif
 
 do-install:
