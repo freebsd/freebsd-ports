@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nam
-PORTVERSION=	1.0a9
+PORTVERSION=	1.10
 CATEGORIES=	net
 MASTER_SITES=	http://www.isi.edu/nsnam/dist/
 DISTNAME=	nam-src-${PORTVERSION}
@@ -15,14 +15,14 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The UCB/LBNL Network Animator
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtclcl.a:${PORTSDIR}/devel/tclcl
-LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
+LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
 
 MAN1=		nam.1
 MANCOMPRESSED=	no
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3
+CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ALL_TARGET=	# empty
 
