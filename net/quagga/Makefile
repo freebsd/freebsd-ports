@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quagga
-PORTVERSION=	0.98.0
+PORTVERSION=	0.98.2
 PORTREVISION=	0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://quagga.net/download/
@@ -18,12 +18,13 @@ COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4, IS-IS route software
 
 CONFLICTS=	zebra-devel-[0-9]* zebra-0*
 
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_REINPLACE=	yes
-INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=15
-USE_PERL5_BUILD=yes
+GNU_CONFIGURE=		yes
+USE_GMAKE=		yes
+USE_REINPLACE=		yes
+INSTALLS_SHLIB=		yes
+USE_AUTOCONF_VER=	259
+USE_LIBTOOL_VER=	15
+USE_PERL5_BUILD=	yes
 
 MAN1=		vtysh.1
 MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
@@ -34,7 +35,8 @@ OPTIONS=	ISISD		"Enable experimental ISIS daemon"	off \
 		OSPF_OPAQUE_LSA	"OSPF Opaque-LSA support (RFC2370)" off \
 		RTADV		"IPv6 Router Advertisements"	off \
 		SNMP		"SNMP support"			off \
-		TCPSOCKETS	"Use TCP/IP sockets for protocol daemons" off
+		TCPSOCKETS	"Use TCP/IP sockets for protocol daemons" off \
+		TCPMD5		"Use experimental MD5 patch for BGP" off
 
 .if !defined(BATCH)
 SEL_OPTIONS=	yes
@@ -43,13 +45,12 @@ SEL_OPTIONS=	yes
 .include <bsd.port.pre.mk>
 
 CONFIGURE_ARGS+=--includedir=${PREFIX}/include --enable-exampledir=${PREFIX}/share/examples/quagga
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+
 SCRIPTS_ENV=	PREFIX=${PREFIX} \
 		SYSCONF_DIR=${SYSCONF_DIR} SYSSTATE_DIR=${SYSSTATE_DIR} \
 		ENABLE_USER=${ENABLE_USER} ENABLE_GROUP=${ENABLE_GROUP}
-
-.if ${OSVERSION} < 500000
-EXTRA_PATCHES+=${PATCHDIR}/extra-patch-zebra.h
-.endif
 
 .if defined(WITH_ISISD) && !defined(WITHOUT_ISISD)
 CONFIGURE_ARGS+=--enable-isisd
@@ -78,12 +79,12 @@ PLIST_SUB+=	OSPFAPI_LIBSO="lib/libospfapiclient.so"
 PLIST_SUB+=	OSPFAPI_LIBSO0="lib/libospfapiclient.so.0"
 PLIST_SUB+=	OSPFAPI_SBIN="sbin/ospfclient"
 .else
-PLIST_SUB+=	OSPFAPI_HEADER=
-PLIST_SUB+=	OSPFAPI_PATH=
-PLIST_SUB+=	OSPFAPI_LIBA=
-PLIST_SUB+=	OSPFAPI_LIBSO=
-PLIST_SUB+=	OSPFAPI_LIBSO0=
-PLIST_SUB+=	OSPFAPI_SBIN=
+PLIST_SUB+=	OSPFAPI_HEADER="@comment"
+PLIST_SUB+=	OSPFAPI_PATH="@comment"
+PLIST_SUB+=	OSPFAPI_LIBA="@comment"
+PLIST_SUB+=	OSPFAPI_LIBSO="@comment"
+PLIST_SUB+=	OSPFAPI_LIBSO0="@comment"
+PLIST_SUB+=	OSPFAPI_SBIN="@comment"
 .endif
 
 .if defined(WITH_RTADV) && !defined(WITHOUT_RTADV)
@@ -97,6 +98,14 @@ LIB_DEPENDS+=snmp.4:${PORTSDIR}/net-mgmt/net-snmp4:install
 .else
 LIB_DEPENDS+=netsnmp.7:${PORTSDIR}/net-mgmt/net-snmp:install
 .endif
+.endif
+
+.if defined(WITH_TCPMD5) && !defined(WITHOUT_TCPMD5)
+.if ${OSVERSION} < 491000
+BROKEN=	This version of FreeBSD does not have TCP MD5 signature support
+.endif
+CONFIGURE_ARGS+=--enable-tcp-signature
+EXTRA_PATCHES+=${PATCHDIR}/extra-tcpmd5-patch-bgpd::bgp_network.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd::bgp_vty.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd::bgpd.c ${PATCHDIR}/extra-tcpmd5-patch-bgpd::bgpd.h ${PATCHDIR}/extra-tcpmd5-patch-configure.ac ${PATCHDIR}/extra-tcpmd5-patch-lib::sockopt.c ${PATCHDIR}/extra-tcpmd5-patch-lib::sockopt.h
 .endif
 
 .if !defined(ENABLE_USER)
@@ -167,14 +176,7 @@ pre-everything::
 	@${ECHO} "   WITH_RTADV            IPv6 Router Advertisements"
 	@${ECHO} "   WITH_SNMP             SNMP support"
 	@${ECHO} "   WITH_TCPSOCKETS       Use TCP/IP sockets for protocol daemons"
-
-pre-configure:
-# disable AUTO* tools
-	@${FIND} -E ${WRKSRC} -type f \
-		-iregex ".*(Makefile.in|configure)" \
-		| ${XARGS} -x -n 10 \
-		${REINPLACE_CMD} -E \
-			-e 's!^(AUTOCONF|AUTOHEADER|AUTOMAKE|ACLOCAL).*$$!\1=${TRUE}!'
+	@${ECHO} "   WITH_TCPMD5           Use experimental MD5 patch for BGP"
 
 post-build:
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/quagga.sh > ${WRKDIR}/quagga.sh
@@ -205,6 +207,15 @@ post-install:
 	@${ECHO} "        if You had never do this before. Or run"
 	@${ECHO} "        make changeuser"
 	@${ECHO} ""
+.if defined(WITH_TCPMD5) && !defined(WITHOUT_TCPMD5)
+	@${ECHO} "Note!!! To use MD5 passwords on BGP sessions, your kernel must"
+	@${ECHO} "be built with the following options:"
+	@${ECHO} "  options TCP_SIGNATURE"
+	@${ECHO} "  options FAST_IPSEC"
+	@${ECHO} "  device crypto"
+	@${ECHO} "  device cryptodev"
+	@${ECHO} ""
+.endif
 
 .if !defined(BATCH)
 post-clean:
