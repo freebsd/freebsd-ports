@@ -1,0 +1,18 @@
+--- Makefile.in.orig	Fri Jan 16 17:06:13 2004
++++ Makefile.in	Fri Jan 16 17:07:39 2004
+@@ -20691,7 +20691,7 @@ install-libdir: lib/.mkdir.datadir lib/.
+ 	-chown root bin/aegis$(EXEEXT) && chmod 4755 bin/aegis$(EXEEXT)
+ 	-chown root bin/aeimport$(EXEEXT) && chmod 4755 bin/aeimport$(EXEEXT)
+ 
+-install-lib: $(LibFiles) $(DataFiles) .comdir
++install-lib: $(LibFiles) $(DataFiles)
+ 
+ install-po: install-po-$(HAVE_MSGFMT)
+ 
+@@ -20699,5 +20699,4 @@ install-man: install-man-$(HAVE_GROFF)
+ 
+ install-doc: install-doc-$(HAVE_GROFF)
+ 
+-install: install-bin install-lib install-po \
+-	install-man install-doc
++install: install-bin install-lib install-po install-man 
