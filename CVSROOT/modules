@@ -5284,6 +5284,7 @@ p5-Class-MakeMethods	ports/devel/p5-Class-MakeMethods
 p5-Class-MethodMaker	ports/devel/p5-Class-MethodMaker
 p5-Class-ObjectTemplate	ports/devel/p5-Class-ObjectTemplate
 p5-Class-ObjectTemplate-DB	ports/devel/p5-Class-ObjectTemplate-DB
+p5-Class-ReturnValue	ports/devel/p5-Class-ReturnValue
 p5-Class-Singleton	ports/devel/p5-Class-Singleton
 p5-Class-Tangram	ports/devel/p5-Class-Tangram
 p5-Class-Tom	ports/devel/p5-Class-Tom
