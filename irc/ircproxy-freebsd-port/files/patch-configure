@@ -1,0 +1,9 @@
+--- configure.orig	Mon Sep  8 00:59:36 2003
++++ configure	Mon Sep  8 00:59:44 2003
+@@ -6,5 +6,5 @@
+ 
+ cd config
+ chmod u+x configure
+-./configure
++./configure $*
+ cd ..
