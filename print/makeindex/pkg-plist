@@ -1,0 +1,20 @@
+@cd /usr/local
+@owner bin
+@mode 755
+bin/makeindex
+@mode 644
+lib/texmf/makeindx/din.ist
+lib/texmf/makeindx/icase.ist
+lib/texmf/makeindx/latex.ist
+lib/texmf/makeindx/math.ist
+lib/texmf/makeindx/mkind.ist
+lib/texmf/makeindx/puncts.ist
+lib/texmf/makeindx/tex.ist
+lib/texmf/makeindx/english/digit.ist
+lib/texmf/makeindx/english/letter.ist
+lib/texmf/makeindx/english/special.ist
+lib/texmf/makeindx/german/digit.ist
+lib/texmf/makeindx/german/special.ist
+lib/texmf/makeindx/german/umlaut.ist
+lib/texmf/makeindx/german/wb.ist
+man/man1/makeindex.1
