@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.59 1998/09/18 22:05:55 vanilla Exp $
+# $Id: Makefile,v 1.60 1998/12/07 22:02:16 kuriyama Exp $
 #
 
     SUBDIR += asedit
@@ -9,6 +9,7 @@
     SUBDIR += e93
     SUBDIR += emacs
     SUBDIR += emacs20
+    SUBDIR += emacs20-dl
     SUBDIR += gxedit
     SUBDIR += hexedit
     SUBDIR += jed
