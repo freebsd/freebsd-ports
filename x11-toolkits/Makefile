@@ -20,6 +20,7 @@
     SUBDIR += fltk-xunicode
     SUBDIR += flvw
     SUBDIR += fox
+    SUBDIR += fox-devel
     SUBDIR += fox-xunicode
     SUBDIR += gail
     SUBDIR += gal
