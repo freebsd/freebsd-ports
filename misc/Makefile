@@ -303,6 +303,7 @@
     SUBDIR += sword-modules
     SUBDIR += tcb
     SUBDIR += team
+    SUBDIR += telbook
     SUBDIR += terraform
     SUBDIR += tet
     SUBDIR += tkcron

@@ -1,0 +1,3 @@
+bin/telbook
+%%PORTDOCS%%share/doc/telbook/README
+%%PORTDOCS%%@dirrm share/doc/telbook
