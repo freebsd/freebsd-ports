@@ -817,7 +817,6 @@ compat		src/lib/compat
 compat22	ports/misc/compat22
 compat3x	ports/misc/compat3x
 compat4x	ports/misc/compat4x
-compface	ports/graphics/compface
 compile_et	src/usr.bin/compile_et
 compress	src/usr.bin/compress
 comsat		src/libexec/comsat
