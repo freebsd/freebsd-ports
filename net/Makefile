@@ -71,6 +71,7 @@
     SUBDIR += crescendo
     SUBDIR += cricket
     SUBDIR += cryptcat
+    SUBDIR += ct
     SUBDIR += ctrace
     SUBDIR += cvsup
     SUBDIR += cvsup-mirror
@@ -601,6 +602,7 @@
     SUBDIR += unison
     SUBDIR += urlendec
     SUBDIR += utftpd
+    SUBDIR += v6eval
     SUBDIR += vchat
     SUBDIR += vicq
     SUBDIR += vnc
