@@ -45,7 +45,8 @@ MAN8=		cnewsdo.8cn expire.8cn explode.8cn mergeactive.8 \
 		mkhistory.8cn newsaux.8cn newsbatch.8cn newsmail.8cn \
 		newsmaint.8cn newsoverview.8 relaynews.8cn report.8cn \
 		rnews.8cn
-PLIST=		${WRKDIR}/.PLIST.sed
+PLIST_SUB+=    	NEWSBIN=${NEWSBIN:S=${PREFIX}/==}
+PLIST_SUB+=    	NEWSCTL=${NEWSCTL:S=${PREFIX}/==}
 
 MODIFY=		conf/quiz.def \
 		conf/substitutions \
@@ -85,10 +86,6 @@ pre-configure:
 		-e "s=/usr/local/bin=${PREFIX}/bin=" \
 		${WRKSRC}/${i}.sed >${WRKSRC}/${i}
 .endfor
-	@${SED} \
-		-e "s=news/cnewsbin=${NEWSBIN:S=${PREFIX}/==}=" \
-		-e "s=news/lib=${NEWSCTL:S=${PREFIX}/==}=" \
-		${PKGDIR}/PLIST >${PLIST}
 
 do-install:
 	${RM} -f ${PREFIX}/bin/inews
