@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pips${PRTYPE}
-PORTVERSION=	1.2
-CATEGORIES=	print linux
-MASTER_SITES?=	http://www.epkowa.on.arena.ne.jp/pips/data/800/
+PORTVERSION?=	1.2
+CATEGORIES?=	print linux
+MASTER_SITES?=	http://www.epkowa.on.arena.ne.jp/pips/data/${PRTYPE}/
 DISTNAME?=	${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.i386.tgz
 
@@ -20,11 +20,20 @@ RUN_DEPENDS+=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
 
 ONLY_FOR_ARCHS= i386
 NO_WRKSUBDIR=	yes
-PLIST_SUB=	BASE_NAME=${BASE_NAME} PRTYPE=${PRTYPE}
+PLIST_SUB=	BASE_NAME=${BASE_NAME} PRTYPE=${PRTYPE} LIB_DIR_FILE=usr/lib/${LIB_FILE} LIB_README=${LIB_NAME}
 MD5_FILE=	${.CURDIR}/distinfo
-
+.if (${PORTVERSION} == 1.2)
+LIB_FILE=	libPrt${PRTYPE}.so
+LIB_NAME=	"@comment Readme of the Lib for only 1.3 or later"
+.else
+LIB_FILE=	libpm${PRTYPE}c.so
+LIB_NAME=	share/doc/${BASE_NAME}/libpm${PRTYPE}c.readme
+.endif
 BASE_NAME=	pips${PRTYPE}
 PAPERSIZE?=	a4
+# for slave ports
+COMMENT=	${.CURDIR}/pkg-comment
+DESCR=		${.CURDIR}/pkg-descr
 
 .include <bsd.port.pre.mk>
 PRTYPE?=	800
@@ -47,22 +56,30 @@ do-install:
 #	${INSTALL_SCRIPT} ${FILESDIR}/pips_filter ${PREFIX}/libexec/${BASE_NAME}
 	${INSTALL_DATA} ${WRKSRC}/gsconfig${PRTYPE} ${PREFIX}/libexec/${BASE_NAME}
 	chmod +x ${PREFIX}/libexec/${BASE_NAME}/gsconfig${PRTYPE}
-	${INSTALL_DATA} ${WRKSRC}/libPrt${PRTYPE}.so /compat/linux/usr/lib/
+	${INSTALL_DATA} ${WRKSRC}/${LIB_FILE} /compat/linux/usr/lib/
 	-/compat/linux/sbin/ldconfig
 	${INSTALL_DATA} ${WRKSRC}/pips${PRTYPE} ${PREFIX}/bin
 	${CHMOD} +x ${PREFIX}/bin/pips${PRTYPE}
 .if !defined(NOPORTSDOCS)
 	${MKDIR} ${PREFIX}/share/doc/${BASE_NAME}
 	${INSTALL_DATA} ${WRKSRC}/readme${PRTYPE} ${PREFIX}/share/doc/${BASE_NAME}
+.if (${PORTVERSION} != 1.2)
+	${INSTALL_DATA} ${WRKSRC}/libpm${PRTYPE}c.readme ${PREFIX}/share/doc/${BASE_NAME}
+.endif
 .endif
 
-# target for maintainer
+# a target for the maintainer
 _MAKE_COMMENT_DESCR:
 .if ${PRTYPE} != 800
 .for file in pkg-comment pkg-descr
 .if ${PRTYPE} == 820_3300
 	${SED}	-e 's/PM-800C/PM-820C PM-3300C/g' \
 		-e 's/pm800c/pm820c_3300c/g' \
+		-e 's/800/${PRTYPE}/g' \
+		${MASTERDIR}/${file} > ${.CURDIR}/${file}
+.elif ${PRTYPE} == 750_2000
+	${SED}	-e 's/PM-800C/PM-750C PM-2000C/g' \
+		-e 's/pm800c/pm750c_2000c/g' \
 		-e 's/800/${PRTYPE}/g' \
 		${MASTERDIR}/${file} > ${.CURDIR}/${file}
 .else
