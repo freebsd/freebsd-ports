@@ -10,7 +10,6 @@ If it does not work for you, you can always try the Linux version
 of this port available at /usr/ports/net/linux-edonkey-gui-gtk. It
 might work.
 
-Currently, this native version is restricted to the following FreeBSD
-platforms:
-
-- i386 FreeBSD 4.x-STABLE (post 4.6R Release); OSVERSION=450006
+However, before trying the Linux version, try removing old configuration
+files. The newer versions of the eDonkey GTK GUI are incompatible
+with older configuration files.
