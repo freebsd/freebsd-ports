@@ -233,7 +233,7 @@ do-install:
 	${MKDIR} ${PREFIX}/share/doc/${BASE_NAME}
 	${INSTALL_DATA} ${WRKSRC}/readme${PRTYPE} ${PREFIX}/share/doc/${BASE_NAME}
 	${INSTALL_DATA} ${WRKSRC}/${LIB_README:T} ${PREFIX}/share/doc/${BASE_NAME}
-.if ! (${PORTVERSION} == 1.3 || (${PORTVERSION} == 2.0 && !defined(INTERNATIONAL_PRODUCTS)))
+.if ! ( ${PORTVERSION} == 1.3 || ( ${PORTVERSION} == 2.0 && !defined(INTERNATIONAL_PRODUCTS) ) )
 	${INSTALL_DATA} ${FILESDIR}/readme_for_zh ${PREFIX}/share/doc/${BASE_NAME}
 .endif
 .endif
