@@ -3663,6 +3663,7 @@ libwrap		src/lib/libwrap
 libwww		ports/www/libwww
 libxalloc	ports/devel/libxalloc
 libxine		ports/graphics/libxine
+libxklavier	ports/x11/libxklavier
 libxml		ports/textproc/libxml
 libxml++	ports/textproc/libxml++
 libxml2		ports/textproc/libxml2
