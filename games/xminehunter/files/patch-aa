@@ -1,0 +1,15 @@
+--- Makefile.orig	Mon Jul 22 08:11:34 1996
++++ Makefile	Thu Jan  9 17:28:57 1997
+@@ -1,8 +1,8 @@
+-INSTALL_BIN_PATH = /usr/local/bin
+-INSTALL_SCORE_PATH = /usr/local/lib/xminehunter
++INSTALL_BIN_PATH = ${X11BASE}/bin
++INSTALL_SCORE_PATH = ${X11BASE}/lib/X11/xminehunter
+ 
+-INCLUDES = -I/usr/local/X11R5/include
+-LIBS = -L/usr/local/X11R5/lib -lXm -lXt -lXpm -lXext -lX11
++INCLUDES = -I${X11BASE}/include
++LIBS = -L${X11BASE}/lib ${MOTIFLIB} -lXt -lXpm -lXext -lX11
+ 
+ 
+ CC = g++

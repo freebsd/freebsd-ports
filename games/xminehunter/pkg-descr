@@ -1,0 +1,6 @@
+A Motif minesweeper game.
+
+Use left mouse button to uncover square; right to mark mine;
+middle to mark question if the square is covered, or quickturn if the square
+is uncovered. Menus are pretty straight forward, so no need further
+explanation here.
