@@ -32,9 +32,9 @@
  
  ipopd: ipop2d ipop3d
  
---- src/mtest/Makefile.orig	Wed Apr 15 07:42:04 1998
-+++ src/mtest/Makefile	Fri Feb  4 14:37:44 2000
-@@ -39,14 +39,16 @@
+--- src/mtest/Makefile.orig	Wed Apr 15 01:42:04 1998
++++ src/mtest/Makefile	Sat Oct 10 21:48:18 1998
+@@ -39,7 +39,7 @@
  
  CC = `cat $C/CCTYPE`
  CFLAGS = -I$C `cat $C/CFLAGS`
@@ -43,15 +43,3 @@
  
  all:	mtest
  
--mtest: $(CCLIENTLIB) mtest.o
--	$(CC) $(CFLAGS) -o mtest mtest.o $(LDFLAGS)
-+mtest: $(CCLIENTLIB) mtest.o safegets.o
-+	$(CC) $(CFLAGS) -o mtest mtest.o safegets.o $(LDFLAGS)
- 
--mtest.o: $C/mail.h $C/misc.h $C/osdep.h $C/rfc822.h $C/smtp.h $C/nntp.h
-+mtest.o:  safegets.h $C/mail.h $C/misc.h $C/osdep.h $C/rfc822.h $C/smtp.h $C/nntp.h
-+
-+safegets.o: safegets.h $C/mail.h
- 
- $(CCLIENTLIB):
- 	cd $C;make
