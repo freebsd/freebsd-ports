@@ -126,6 +126,7 @@
     SUBDIR += py-numarray
     SUBDIR += py-numeric
     SUBDIR += py-numeric17
+    SUBDIR += py-probstat
     SUBDIR += py-scientific
     SUBDIR += qscanplot
     SUBDIR += rascal
