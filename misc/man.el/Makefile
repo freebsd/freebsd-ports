@@ -3,13 +3,13 @@
 # Date created:		10 September 1998
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.4 1999/02/03 11:11:55 asami Exp $
+# $Id: Makefile,v 1.5 1999/04/26 12:44:47 kuriyama Exp $
 #
 
 DISTNAME=	i18n-man-1.1
 CATEGORIES=	misc elisp
 MASTER_SITES=	ftp://daemon.jp.freebsd.org/pub/FreeBSD-jp/man-jp/ \
-		ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
+		${MASTER_SITE_PORTS_JP}
 
 MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
 
