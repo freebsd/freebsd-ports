@@ -1,1 +1,1 @@
-A debugging malloc() that uses the VM hardware to detect buffer overruns
+debugging malloc() that uses the VM hardware to detect buffer overruns
