@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.138 1998/02/12 21:48:56 se Exp $
+# $Id: Makefile,v 1.139 1998/02/13 17:49:12 vanilla Exp $
 #
 
     SUBDIR += archie
@@ -36,7 +36,7 @@
     SUBDIR += isc-dhcp
     SUBDIR += isc-dhcp2
     SUBDIR += ivs
-#   SUBDIR += kdenetwork
+    SUBDIR += kdenetwork
     SUBDIR += kirc
     SUBDIR += ldap
     SUBDIR += lftp
