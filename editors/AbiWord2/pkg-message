@@ -1,11 +1,7 @@
 In order to use AbiWord, you may have to add one or more lines to your
-XF86Config file, usually located in /etc/X11/XF86Config.
+XF86Config file, usually located in /etc/X11/XF86Config or /etc/XF86Config.
 
-For any XFree86 version, add the following line to the "Files" section:
-
-	FontPath "${PREFIX}/share/AbiSuite/fonts"
-
-For XFree86 >= 4, add also the following line to the "Module" section:
+For XFree86 >= 4, add the following line to the "Module" section:
 
 	Load "type1"
 
@@ -14,6 +10,12 @@ For other X servers, please consult your documentation.
 Also, if you are going to display AbiWord on a remote X server, besides
 following the instructions above, please make sure that the files in the
 ${PREFIX}/share/AbiSuite/fonts directory are available to the remote X
-server.
+server and add the ${PREFIX}/share/AbiSuite/fonts into server's font
+path. For XFree86, add the following line to the "Files" section:
+
+	FontPath "${PREFIX}/share/AbiSuite/fonts"
+
+If you use a different X server, please see its documentation on how to
+do this.
 
 Finally, re-start your X server.
