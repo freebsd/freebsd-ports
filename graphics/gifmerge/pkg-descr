@@ -1,0 +1,23 @@
+GifMerge is a tool for making GIF animations.
+
+Usage:
+gifmerge [-<r>,<g>,<b>] [-<delay>] [-l<loops>] [-d<disp>] *.gif > anim.gif
+
+   -<r>,<g>,<b>   set transparency, ie -192,192,192, default: no transparency
+   -notransp      set transparency off (after you used -r,g,b before)
+   -<delay>       set delay of between images in 1/100th secs, ie -100
+                  default 50 (0.5secs)
+   -l<loops>      set loop counter, ie -l0 (ever) or -l1000, default no loops
+   -d<disposal>   set disposal 0 = no action, 1 = no dispose,
+                               2 = restore background (default)
+                               3 = restore previous
+   -pos<x>,<y>    set offset position for image
+   -nopos         reset offset position (default)
+
+   or look at http://err.ethz.ch/~kiwi/GIFMerge/
+
+Example:
+	gifmerge -l0 image001.gif image002.gif image003.gif > earthanim.gif
+
+
+Yukihiro Nakai<Naakai@Mlab.t.u-tokyo.ac.jp>
