@@ -1,0 +1,28 @@
+--- Makefile.in.orig	Tue Jul 18 09:47:28 2000
++++ Makefile.in	Tue Jul 18 09:48:50 2000
+@@ -36,14 +36,14 @@
+ install-lib : all force
+ 	cd src; $(MAKE) -r install-lib libdir='$(libdir)' includedir='$(includedir)'
+ 	if [ ! -d $(includedir) ] ; then mkdir $(includedir) ; fi
+-	$(INSTALL_DATA) include/iconv.h $(includedir)/iconv.h
++	$(INSTALL_DATA) include/iconv.h $(includedir)/giconv.h
+ 
+ install : force
+ 	cd src; $(MAKE) -r install prefix='$(prefix)' exec_prefix='$(exec_prefix)' libdir='$(libdir)'
+ 	if [ ! -d $(prefix) ] ; then mkdir $(prefix) ; fi
+ 	if [ ! -d $(exec_prefix) ] ; then mkdir $(exec_prefix) ; fi
+ 	if [ ! -d $(includedir) ] ; then mkdir $(includedir) ; fi
+-	$(INSTALL_DATA) include/iconv.h $(includedir)/iconv.h
++	$(INSTALL_DATA) include/iconv.h $(includedir)/giconv.h
+ 	cd man; $(MAKE) -r install prefix='$(prefix)' exec_prefix='$(exec_prefix)' mandir='$(mandir)'
+ 
+ installdirs : force
+@@ -55,7 +55,7 @@
+ 
+ uninstall : force
+ 	cd src; $(MAKE) -r uninstall prefix='$(prefix)' exec_prefix='$(exec_prefix)' libdir='$(libdir)'
+-	$(RM) $(includedir)/iconv.h
++	$(RM) $(includedir)/giconv.h
+ 	cd man; $(MAKE) -r uninstall prefix='$(prefix)' exec_prefix='$(exec_prefix)' mandir='$(mandir)'
+ 
+ check : force
