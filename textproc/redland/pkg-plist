@@ -29,3 +29,4 @@ include/redland.h
 lib/librdf.a
 lib/librdf.so
 lib/librdf.so.0
+@dirrm share/redland
