@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.22 1996/10/18 16:16:49 max Exp $
+# $Id: Makefile,v 1.23 1996/11/11 05:07:06 obrien Exp $
 #
 
 DISTNAME=	emacs-19.34
@@ -14,13 +14,9 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	i386--freebsd --with-x-toolkit
 STRIP=
+MAN1=		emacs.1 etags.1 ctags.1
 
 post-install:
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/emacs.1
-	gzip -9nf ${PREFIX}/man/man1/etags.1
-	gzip -9nf ${PREFIX}/man/man1/ctags.1
-.endif
 	for file in emacs-19.34 emacsclient etags ctags b2m; do \
 	  strip ${PREFIX}/bin/$$file; \
 	done

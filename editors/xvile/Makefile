@@ -3,7 +3,7 @@
 # Date created:         Fri Jun 21, 1996
 # Whom:                 pgf
 #
-# $Id: Makefile,v 1.8 1996/10/09 09:22:18 max Exp $
+# $Id: Makefile,v 1.9 1996/11/11 05:07:53 obrien Exp $
 #
 
 DISTNAME=       vile-6.1
@@ -16,10 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 MAKEFILE=	makefile
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-screen=x11
-
-post-install:
-.if !defined(NOMANCOMPRESS)
-	gzip -9nf ${PREFIX}/man/man1/xvile.1
-.endif
+MAN1=		xvile.1
 
 .include <bsd.port.mk>
