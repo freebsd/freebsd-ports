@@ -49,6 +49,7 @@
     SUBDIR += p5-Net-FTPServer
     SUBDIR += paraget
     SUBDIR += pavuk
+    SUBDIR += pftpd
     SUBDIR += proftpd
     SUBDIR += profxp
     SUBDIR += puf
