@@ -150,7 +150,7 @@ do-build:
 	@cd ${WRKSRC} ;	${SETENV} "DEFAULT_TO_ENGLISH_FOR_PACKING=yes" ${TCSH} -c 'source FreeBSDEnv.Set ; dmake -P${NUMOFPROCESSES}'
 
 OOOFILES1=	openofficeorg-calc.sw openofficeorg-core.sw openofficeorg-draw.sw openofficeorg-graphicfilter.sw
-OOOFILES2=	openofficeorg-impress.sw openofficeorg-javafilter.sw openofficeorg-mailcap.sw
+OOOFILES2=	openofficeorg-impress.sw openofficeorg-javafilter.sw
 OOOFILES3=	openofficeorg-math.sw openofficeorg-spellcheck.sw openofficeorg-testtool.sw
 OOOFILES4=	openofficeorg-writer.sw openofficeorg-xsltfilter.sw
 
