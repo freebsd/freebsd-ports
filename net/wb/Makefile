@@ -3,7 +3,7 @@
 # Date created:		2 Novermber 1996
 # Whom:			fenner
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/10 21:13:06 fenner Exp $
+# $Id: Makefile,v 1.2 1996/11/18 11:33:42 asami Exp $
 #
 
 DISTNAME=       wb-1.59
@@ -17,8 +17,8 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_X11=	yes
 
-# XXX ghostscript, ghostscript3 or ghostscript4 will all do.
-RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript4
+# XXX ghostscript, ghostscript3, ghostscript4 or ghostscript5 will all do.
+RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript5
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wb ${PREFIX}/bin
