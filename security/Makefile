@@ -64,6 +64,7 @@
     SUBDIR += rsaref
     SUBDIR += saint
     SUBDIR += skip
+    SUBDIR += slurpie
     SUBDIR += slush
     SUBDIR += smurflog
     SUBDIR += sniff
@@ -78,6 +79,7 @@
     SUBDIR += super
     SUBDIR += swatch
     SUBDIR += tcp_wrapper
+    SUBDIR += trinokiller
     SUBDIR += tripwire
     SUBDIR += vscan
     SUBDIR += whisker
