@@ -8,12 +8,13 @@
 PORTNAME=	ezmlm
 PORTVERSION=	0.53
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.ezmlm.org/pub/qmail/ \
-		ftp://ftp.ntnu.no/pub/unix/mail/qmail/ \
-		ftp://mirror.pipex.net/pub/qmail/ \
-		ftp://ftp.jp.qmail.org/qmail/ \
-		ftp://ftp.rifkin.technion.ac.il/pub/qmail/ \
-		ftp://ftp.mira.net.au/unix/mail/qmail/
+MASTER_SITES=	http://cr.yp.to/software/ \
+		ftp://ftp.fu-berlin.de/unix/mail/qmail/ \
+		ftp://ftp.st.ryukoku.ac.jp/pub/network/mail/qmail/ \
+		ftp://ftp.gbnet.net/pub/qmail/ \
+		ftp://ftp.iway.fr/pub/unix/mail/qmail/ \
+		ftp://ftp.nl.uu.net/pub/unix/mail/qmail/ \
+		ftp://ftp.archive.de.uu.net/pub/unix/mail/qmail/
 
 MAINTAINER=	tom@FreeBSD.org
 COMMENT=	An easy-to-use, high-speed mailing list manager for qmail
