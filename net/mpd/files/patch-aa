@@ -1,0 +1,17 @@
+Index: src/pppoe.c
+===================================================================
+RCS file: /cvsroot/mpd/mpd/src/pppoe.c,v
+retrieving revision 1.9
+diff -u -r1.9 pppoe.c
+--- src/pppoe.c	19 Dec 2003 14:34:57 -0000	1.9
++++ src/pppoe.c	12 Apr 2004 22:32:07 -0000
+@@ -222,6 +222,9 @@
+ 		return;
+ 	    };
+ 
++	    /* Create PPPOE node if necessary */
++	    PppoeNodeUpdate();
++
+ 	    /* Create a new netgraph node */
+ 	    if (NgMkSockNode(NULL, &pe->csock, &pe->dsock) < 0) {
+ 		Log(LG_ERR, ("[%s] PPPoE can't create ctrl socket: %s",
