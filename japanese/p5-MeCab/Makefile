@@ -16,6 +16,8 @@ COMMENT=	MeCab library module for Perl5
 
 LIB_DEPENDS=	mecab.0:${MECAB_PORTDIR}
 
+BROKEN=		Unfetchable
+
 PERL_CONFIGURE=	yes
 
 .include "${.CURDIR}/../mecab/Makefile.common"
