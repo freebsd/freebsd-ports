@@ -1,7 +1,0 @@
-%%PEARDIR%%/Header.php
-%%PEARDIR%%/Header/Cache.php
-%%PKGREGDIR%%/package.xml
-%%PORTDOCS%%%%DOCSDIR%%/Header_Cache.php
-@dirrm %%PEARDIR%%/Header
-@dirrm %%PKGREGDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

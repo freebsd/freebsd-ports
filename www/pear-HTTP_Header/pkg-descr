@@ -2,4 +2,4 @@ This class provides methods to set/modify HTTP-Headers.
 To abstract common things, like caching etc. some sub classes are
 provided that handle special cases (i.e. HTTP_Header_Cache).
 
-WWW: http://pear.php.net/package-info.php?package=HTTP_Header
+WWW: http://pear.php.net/package/HTTP_Header/
