@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	ocaml
-PORTVERSION=	3.08.1
-PORTREVISION=	1
+PORTVERSION=	3.08.2
 CATEGORIES=	lang
-MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME:S/.1$//}/ \
-		ftp://ftp.inria.fr/INRIA/caml-light/${DISTNAME:S/.1$//}/ \
-		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/${DISTNAME:S/.1$//}/
+MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME:R}/ \
+		ftp://ftp.inria.fr/INRIA/caml-light/${DISTNAME:R}/ \
+		ftp://ftp.kurims.kyoto-u.ac.jp/pub/lang/caml-light/${DISTNAME:R}/
 PKGNAMESUFFIX=	${SFX}
 
 MAINTAINER?=	eugos@gmx.net
@@ -39,6 +38,7 @@ LIB_DEPENDS+=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 .endif
 .endif
 
+USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 ALL_TARGET=	world.opt
 
@@ -88,7 +88,7 @@ PLIST_SUB+=	PROF="@comment "
 PLIST_SUB+=	PROF=""
 .endif
 
-.if ${ARCH} == "sparc64" && defined(WITHOUT_X11)
+.if ${ARCH} == "sparc64"
 BROKEN=		"Does not compile on sparc64"
 .endif
 
