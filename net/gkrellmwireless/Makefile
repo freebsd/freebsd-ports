@@ -17,6 +17,5 @@ RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
 USE_X_PREFIX=	yes
 USE_IMLIB=	yes
-USE_GMAKE=	yes
 
 .include <bsd.port.mk>
