@@ -25,7 +25,10 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	clement@FreeBSD.org
 COMMENT=	Apache-SSL: Apache secure webserver integrating OpenSSL
 
-CONFLICTS=	apache+ipv6-1.* apache+mod_ssl-1.* apache-1.* apache-2.* apache_fp-1.* \
+CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.* \
+		apache+mod_ssl+mod_snmp+ipv6-1.* apache+mod_ssl+mod_accel-1.* \
+		apache+mod_ssl+mod_snmp+mod_accel-1.* \
+		apache+ipv6-1.* apache-1.* apache-2.* apache_fp-1.* \
 		caudium-devel-1.* caudium10-1.* caudium12-* \
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.*
 

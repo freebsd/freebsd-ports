@@ -27,7 +27,10 @@ FORBIDDEN=	multiple vulnerabilities: http://www.apacheweek.com/features/security
 #PATCH_SITE_SUBDIR=	patches/apply_to_${PORTVERSION}/
 #PATCHFILES=
 
-CONFLICTS=	apache+ipv6-1.* apache+mod_ssl-1.* apache+ssl-1.* apache-1.* apache-2.* \
+CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.* \
+		apache+mod_ssl+mod_snmp+ipv6-1.* apache+mod_ssl+mod_accel-1.* \
+		apache+mod_ssl+mod_snmp+mod_accel-1. \
+		apache+ipv6-1.* apache+ssl-1.* apache-1.* apache-2.* \
 		caudium-devel-1.* caudium10-1.* caudium12-* \
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.*
 APACHE=		${DISTNAME}${EXTRACT_SUFX}
