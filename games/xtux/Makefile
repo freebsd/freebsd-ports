@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	xtux
-PORTVERSION=	2001.02.04
+PORTVERSION=	2001.03.24
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=xtux
-DISTNAME=	xtux-src-20010204
+DISTNAME=	xtux-src-20010324
 
 MAINTAINER=	goranrunfeldt@home.se
 
@@ -26,6 +26,7 @@ do-install:
 	@strip ${PREFIX}/bin/xtux ${PREFIX}/bin/tux_serv
 
 	@${MKDIR} ${PREFIX}/share/xtux/images/entities
+	@${MKDIR} ${PREFIX}/share/xtux/images/events
 	@${MKDIR} ${PREFIX}/share/xtux/images/items
 	@${MKDIR} ${PREFIX}/share/xtux/images/weapons
 	@${MKDIR} ${PREFIX}/share/xtux/images/tiles
@@ -35,7 +36,7 @@ do-install:
 .for file in ascii.txt bios entities weapons
 	${INSTALL_DATA} ${WRKSRC}/data/${file} ${PREFIX}/share/xtux
 .endfor
-.for dir in entities items weapons tiles .
+.for dir in entities events items weapons tiles .
 	${INSTALL_DATA} ${WRKSRC}/data/images/${dir}/*.xpm \
 	${PREFIX}/share/xtux/images/${dir}
 .endfor
