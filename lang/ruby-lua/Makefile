@@ -5,39 +5,29 @@
 # $FreeBSD$
 #
 
-PORTNAME=	lua
-PORTVERSION=	20010921
+PORTNAME=	lua5
+PORTVERSION=	0.2.2
+PORTEPOCH=	1
 CATEGORIES=	lang ruby
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	knu
+MASTER_SITES=	http://www.moonwolf.com/ruby/archive/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	ruby${PORTNAME}-${PORTVERSION}
+DISTNAME=	rub-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A Ruby extension to make Lua script language as a class
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/liblua.a:${PORTSDIR}/lang/lua4
-
-USE_ZIP=	yes
+BUILD_DEPENDS=	${LOCALBASE}/lib/liblua.a:${PORTSDIR}/lang/lua
 
 USE_RUBY=	yes
-USE_RUBY_EXTCONF=	yes
-RUBY_EXTCONF=	luaconf.rb
-
-NO_WRKSUBDIR=	yes
-INSTALL_TARGET=	site-install
-
-EXAMPLES=	html_ssi_lua.rb test_*
+USE_RUBY_SETUP=	yes
+RUBY_SETUP=	install.rb
+CONFIGURE_ARGS=	-- --with-lua-dir=${LOCALBASE}
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-.for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
-.endfor
 	${MKDIR} ${RUBY_MODDOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/rubylua.txt ${RUBY_MODDOCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_MODDOCDIR}/
 .endif
 
 .include <bsd.port.mk>
