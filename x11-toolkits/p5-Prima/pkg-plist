@@ -10,10 +10,12 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Config.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Const.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/DetailedList.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/DetailedOutline.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/DockManager.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Docks.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Edit.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/EditDialog.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/EventHook.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/ExtLists.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/FileDialog.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/FontDialog.pm
@@ -48,6 +50,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Terminals.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/TextView.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Themes.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/Tie.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Utils.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Widgets.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/noX11.pm
@@ -65,6 +68,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/themes/color.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/themes/round3d.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/themes/tabset.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/themes/sysimage.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/PS/Drawable.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/PS/Encodings.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/PS/Fonts.pm
@@ -139,7 +143,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/examples/buttons
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/examples/buttons2
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/examples/calendar
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/examples/canvas
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/examples/cv
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/examples/detailedoutline
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/examples/dock
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/examples/drivecombo
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/examples/e
@@ -211,6 +217,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/gencls.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/gp-problems.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/codecs.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Prima/faq.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/image-load.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/internals.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Prima/Clipboard.pod
@@ -238,10 +245,13 @@ lib/perl5/%%PERL_VERSION%%/man/man3/Prima::Object.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::Printer.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::Timer.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::Widget.3.gz
+lib/perl5/%%PERL_VERSION%%/man/man3/Prima::Widget::pack.3.gz
+lib/perl5/%%PERL_VERSION%%/man/man3/Prima::Widget::place.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::Window.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::codecs.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::gp-problems.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::image-load.3.gz
+lib/perl5/%%PERL_VERSION%%/man/man3/Prima::faq.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::internals.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::Image::TransparencyControl.3.gz
@@ -262,9 +272,11 @@ lib/perl5/%%PERL_VERSION%%/man/man3/Prima::Docks.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::EditDialog.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::ExtLists.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::FontDialog.3.gz
+lib/perl5/%%PERL_VERSION%%/man/man3/Prima::Grids.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::Lists.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::Header.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::DetailedList.3.gz
+lib/perl5/%%PERL_VERSION%%/man/man3/Prima::DetailedOutline.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::Edit.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::ImageViewer.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::IniFile.3.gz
@@ -285,6 +297,7 @@ lib/perl5/%%PERL_VERSION%%/man/man3/Prima::StartupWindow.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::StdBitmap.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::StdDlg.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::Stress.3.gz
+lib/perl5/%%PERL_VERSION%%/man/man3/Prima::Themes.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::Utils.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::Widgets.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::Classes.3.gz
@@ -293,12 +306,17 @@ lib/perl5/%%PERL_VERSION%%/man/man3/Prima::PodView.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::Sliders.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::FrameSet.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::TextView.3.gz
+lib/perl5/%%PERL_VERSION%%/man/man3/Prima::Tie.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::HelpViewer.3.gz
 lib/perl5/%%PERL_VERSION%%/man/man3/Prima::Calendar.3.gz
+lib/perl5/%%PERL_VERSION%%/man/man3/Prima::X11.3.gz
+lib/perl5/%%PERL_VERSION%%/man/man3/Prima::EventHook.3.gz
+lib/perl5/%%PERL_VERSION%%/man/man3/Prima::sys::win32::FileDialog.3.gz
 bin/gencls
 bin/tmlink
 bin/VB
 bin/cfgmaint
+bin/p-class
 bin/podview
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/CORE/unix
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Prima/CORE/generic
