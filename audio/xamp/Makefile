@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xamp
-PORTVERSION=	0.8-7
+PORTVERSION=	0.8.7
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.simcb.ru/pub/unix/x11/
-EXTRACT_SUFX=	.tgz
+DISTFILES=	xamp-0.8-7.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
