@@ -6,16 +6,24 @@
 #
 
 PORTNAME=	etherape
-PORTVERSION=	0.5.7
-PORTREVISION=	1
+PORTVERSION=	0.7.8
 CATEGORIES=	net gnome
-MASTER_SITES=	http://prdownloads.sourceforge.net/etherape/ \
-		ftp://etherape.sourceforge.net/pub/etherape/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	holger@eit.uni-kl.de
+MAINTAINER=	petef@databits.net
 
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
+		gdk_pixbuf.2:${PORTSDIR}/x11/gnome
+
+GNU_CONFIGURE=	yes
 USE_GNOME=	yes
+USE_X_PREFIX=	yes
 
-MAN8=		etherape.8
+MAN1=		etherape.1
+
+post-patch:
+	@${PERL} -pi -e 's!^confdir = .*!confdir = ${PREFIX}/share/etherape!' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

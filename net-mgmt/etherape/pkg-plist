@@ -1,11 +1,46 @@
+bin/etherape
+share/etherape/services
+share/gnome/etherape/glade/etherape.glade
+share/gnome/etherape/glade/etherape.png
+share/gnome/etherape/glade/pause.xpm
+share/gnome/etherape/glade/play.xpm
+share/gnome/etherape/glade/stop.xpm
+share/gnome/gnome/apps/Applications/etherape.desktop
+share/gnome/gnome/help/etherape/C/authors.html
+share/gnome/gnome/help/etherape/C/bugs.html
+share/gnome/gnome/help/etherape/C/docbook.css
+share/gnome/gnome/help/etherape/C/index.html
+share/gnome/gnome/help/etherape/C/license.html
+share/gnome/gnome/help/etherape/C/ln7.html
+share/gnome/gnome/help/etherape/C/prefs.html
+share/gnome/gnome/help/etherape/C/stylesheet-images/caution.gif
+share/gnome/gnome/help/etherape/C/stylesheet-images/home.gif
+share/gnome/gnome/help/etherape/C/stylesheet-images/important.gif
+share/gnome/gnome/help/etherape/C/stylesheet-images/next.gif
+share/gnome/gnome/help/etherape/C/stylesheet-images/note.gif
+share/gnome/gnome/help/etherape/C/stylesheet-images/prev.gif
+share/gnome/gnome/help/etherape/C/stylesheet-images/tip.gif
+share/gnome/gnome/help/etherape/C/stylesheet-images/toc-blank.gif
+share/gnome/gnome/help/etherape/C/stylesheet-images/toc-minus.gif
+share/gnome/gnome/help/etherape/C/stylesheet-images/toc-plus.gif
+share/gnome/gnome/help/etherape/C/stylesheet-images/up.gif
+share/gnome/gnome/help/etherape/C/stylesheet-images/warning.gif
+share/gnome/gnome/help/etherape/C/topic.dat
+share/gnome/gnome/help/etherape/C/usage.html
+share/gnome/pixmaps/etherape.png
 share/locale/es/LC_MESSAGES/etherape.mo
-share/locale/nl/LC_MESSAGES/etherape.mo
 share/locale/fr/LC_MESSAGES/etherape.mo
-share/gnome/apps/Applications/etherape.desktop
-share/etherape/glade/etherape.glade
-@dirrm share/etherape/glade
+share/locale/nl/LC_MESSAGES/etherape.mo
+@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/es 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/nl 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
+@dirrm share/gnome/gnome/help/etherape/C/stylesheet-images
+@dirrm share/gnome/gnome/help/etherape/C
+@dirrm share/gnome/gnome/help/etherape
+@dirrm share/gnome/etherape/glade
+@dirrm share/gnome/etherape
 @dirrm share/etherape
-share/pixmaps/etherape.png
-etc/etherape/services
-@dirrm etc/etherape
-sbin/etherape
