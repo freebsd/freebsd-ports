@@ -12,7 +12,7 @@ MASTER_SITES=   http://www.de.freebsd.org/~wosch/src/ \
 		ftp://ftp.Infodrom.North.DE/pub/Linux/Devel/manpages-de/
 DISTFILES=	${manpages}.tgz
 
-MAINTAINER=     wosch@FreeBSD.org
+MAINTAINER=	wosch@FreeBSD.org
 
 LANG=		de_DE.ISO_8859-1
 NO_WRKSUBDIR=	YES
