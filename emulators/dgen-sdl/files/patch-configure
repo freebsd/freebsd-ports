@@ -1,0 +1,23 @@
+
+$FreeBSD$
+
+--- configure	2001/02/23 11:37:15	1.1
++++ configure	2001/02/23 11:37:28
+@@ -1779,7 +1779,7 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-#include <SDL/SDL.h>
++#include <SDL.h>
+ 
+ char*
+ my_strdup (char *str)
+@@ -1872,7 +1872,7 @@
+ #include "confdefs.h"
+ 
+ #include <stdio.h>
+-#include <SDL/SDL.h>
++#include <SDL.h>
+ 
+ int main() {
+  return 0; 
