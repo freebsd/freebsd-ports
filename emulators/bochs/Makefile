@@ -126,7 +126,7 @@ pre-everything::
 # Post-configure
 #
 
-post-patch: patch-bochsrc patch-mans patch-wrapper patch-message
+post-patch: patch-bochsrc patch-mans patch-wrapper patch-pkgmessage
 
 patch-bochsrc:
 	@${REINPLACE_CMD} -E ' \
@@ -145,7 +145,7 @@ patch-wrapper:
 		 s|%%FONT_DIR%%|${FONT_DIR}| \
 		' ${FILESDIR}/bochs.sh > ${WRKDIR}/bochs.sh
 
-patch-message:
+patch-pkgmessage:
 	@${SED} 's|%%DATADIR%%|${DATADIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
 
 # Post-build
