@@ -13,6 +13,5 @@ share/xxkb/ua48.xpm
 share/doc/xxkb/LICENSE
 share/doc/xxkb/CHANGES.koi8
 share/doc/xxkb/README.koi8
-share/doc/xxkb/TODO.koi8
 @dirrm share/doc/xxkb
 @dirrm share/xxkb

@@ -1,5 +1,5 @@
---- Imakefile.orig	Sat Mar 31 15:30:22 2001
-+++ Imakefile	Sat Mar 31 15:30:55 2001
+--- Imakefile.orig	Wed Mar 19 07:56:21 2003
++++ Imakefile	Sun May 18 13:57:21 2003
 @@ -13,9 +13,7 @@
  
  DEFINES = -DAPPDEFDIR=\"$(DESTDIR)$(XAPPLOADDIR)\" \
@@ -7,8 +7,7 @@
 -CDEBUGFLAGS = -O2
 +CFLAGS ?= -Wall -O2
  
--ComplexProgramTarget(xxkb)
-+ComplexProgramTargetNoMan(xxkb)
+ ComplexProgramTarget(xxkb)
  
 -InstallAppDefaults(XXkb)
 -InstallMultiple	($(PIXMAPS),$(PIXMAPDIR))

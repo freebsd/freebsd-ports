@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	xxkb
-PORTVERSION=	1.6
+PORTVERSION=	1.10
 CATEGORIES=	russian ukrainian
 MASTER_SITES=	http://www.tsu.ru/~pascal/other/xxkb/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	matey@cis.ohio-state.edu
+MAINTAINER=	ports@matey.org
 COMMENT=	An XKB keyboard layout switcher and indicator
 
+MAN1=		xxkb.1
 USE_XPM=	yes
 USE_IMAKE=	yes
 
@@ -23,7 +24,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/*.xpm ${PREFIX}/share/xxkb
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/xxkb
-.for FILE in LICENSE CHANGES.koi8 README.koi8 TODO.koi8
+.for FILE in LICENSE CHANGES.koi8 README.koi8
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${PREFIX}/share/doc/xxkb
 .endfor
 .endif
