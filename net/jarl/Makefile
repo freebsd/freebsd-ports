@@ -28,7 +28,7 @@ makeplist:
 	${FIND} ${PREFIX}/share/jarl -type f -print | ${CUT} -d/ -f4- >> \
 		${PLIST}
 	${FIND} ${PREFIX}/share/jarl -type d -print | ${CUT} -d/ -f4- | \
-		sort -r | ${SED} 's/^/@dirrm /' >> ${PLIST}
+		${SORT} -r | ${SED} 's/^/@dirrm /' >> ${PLIST}
 
 post-patch:
 	${REINPLACE_CMD} -e "s:%%PREFIX%%:${PREFIX}:g" ${WRKSRC}/jarl

@@ -57,10 +57,11 @@ pre-install:
 	fi
 .else
 	@cd ${WRKSRC} && (${FIND} . -type f | \
-		${SED} -e 's,^\.,share/doc/${PYTHON_VERSION},' | sort > ${PLIST})
+		${SED} -e 's,^\.,share/doc/${PYTHON_VERSION},' | ${SORT} \
+			> ${PLIST})
 	@cd ${WRKSRC} && (${FIND} * -type d | \
 		${SED} -e 's,^,@dirrm share/doc/${PYTHON_VERSION}/,' | \
-			sort -r) >> ${PLIST}
+			${SORT} -r) >> ${PLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/share/doc/%%PYTHON_VERSION%% 2>/dev/null || true" >> ${PLIST}
 .endif
 

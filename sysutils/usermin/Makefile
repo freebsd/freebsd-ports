@@ -52,9 +52,9 @@ do-install:
 	@${CHMOD} 554 ${PREFIX}/etc/rc.d/usermin.sh-dist
 
 post-install:
-	@cd ${PREFIX} ; ${FIND} lib/usermin -type f -o -type l | sort \
+	@cd ${PREFIX} ; ${FIND} lib/usermin -type f -o -type l | ${SORT} \
 		> ${WRKDIR}/PLIST.lib-usermin
-	@cd ${PREFIX} ; ${FIND} lib/usermin -type d | sort -r \
+	@cd ${PREFIX} ; ${FIND} lib/usermin -type d | ${SORT} -r \
 		| ${SED} -e 's/^/@dirrm /g' \
 		>> ${WRKDIR}/PLIST.lib-usermin
 

@@ -74,7 +74,7 @@ post-build:
 			${ECHO_CMD} man/ja/man$$2/$$1.gz; shift 2; \
 		done; \
 	fi; \
-	done|sort|uniq >>${PLIST}
+	done|${SORT}|uniq >>${PLIST}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

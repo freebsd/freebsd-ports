@@ -122,25 +122,25 @@ post-install:
 	@cd ${PREFIX} ; ${FIND} lib/erlang/* -type f -o -type l \
 		| ${GREP} -v "^lib/erlang/man" \
 		| ${GREP} -v "^lib/erlang/lib" \
-		| sort \
+		| ${SORT} \
 		> ${WRKDIR}/PLIST.lib-erlang
 
 # Stock OTP libraries.
 
 	@for LIBRARY in ${OTP_LIBS}; do \
 		cd ${PREFIX} ; ${FIND} lib/erlang/lib/$${LIBRARY} -type f -o -type l; \
-	done | sort >> ${WRKDIR}/PLIST.lib-erlang
+	done | ${SORT} >> ${WRKDIR}/PLIST.lib-erlang
 
 # Stock OTP library directories.
 
 	@for LIBRARY in ${OTP_LIBS}; do \
 		cd ${PREFIX} ; ${FIND} lib/erlang/lib/$${LIBRARY} -type d \
 		    	| ${SED} -e 's/^/@dirrm /g'; \
-	done | sort -r >> ${WRKDIR}/PLIST.lib-erlang
+	done | ${SORT} -r >> ${WRKDIR}/PLIST.lib-erlang
 
 # Other directories.
 
-	@cd ${PREFIX} ; ${FIND} lib/erlang/* -type d | sort -r \
+	@cd ${PREFIX} ; ${FIND} lib/erlang/* -type d | ${SORT} -r \
 		| ${GREP} -v "^lib/erlang/man" \
 		| ${GREP} -v "^lib/erlang/lib" \
 	    	| ${SED} -e 's/^/@dirrm /g' \

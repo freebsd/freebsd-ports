@@ -44,8 +44,10 @@ do-install:
 
 post-install:
 	@cd ${WRKDIR} && \
-	${FIND} ${PACKAGES_SUBDIR} -type f|sort|${SED} 's:^:lib/xemacs/:' >> ${TMPPLIST}; \
-	${FIND} ${PACKAGES_SUBDIR}/*/* -type d|sort -r|${SED} 's:^:@dirrm lib/xemacs/:'>> ${TMPPLIST}
+	${FIND} ${PACKAGES_SUBDIR} -type f|${SORT}| \
+		${SED} 's:^:lib/xemacs/:' >> ${TMPPLIST}; \
+	${FIND} ${PACKAGES_SUBDIR}/*/* -type d|${SORT} -r| \
+		${SED} 's:^:@dirrm lib/xemacs/:'>> ${TMPPLIST}
 	@${ECHO_CMD} '@unexec rmdir %D/lib/xemacs/${PACKAGES_SUBDIR}/* 2>/dev/null || true' >> ${TMPPLIST}
 	@${ECHO_CMD} '@unexec rmdir %D/lib/xemacs/${PACKAGES_SUBDIR} 2>/dev/null || true' >> ${TMPPLIST}
 	@${ECHO_CMD} '@unexec rmdir %D/lib/xemacs 2>/dev/null || true' >> ${TMPPLIST}

@@ -23,7 +23,6 @@ USE_REINPLACE=	yes
 MAN1=	cscout.1 cswc.1
 
 CPIO=		/usr/bin/cpio
-SORT=		/usr/bin/sort
 
 post-patch:
 .if exists(/usr/include/g++/)

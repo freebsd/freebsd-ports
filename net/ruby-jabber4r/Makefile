@@ -54,8 +54,10 @@ do-install:
 	${CP} -R ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
 .endfor
 	cd ${WRKSRC} && \
-	${FIND} doc -type f|sort|${SED} 's:^:${PLIST_MODDOCDIR}/:' >> ${TMPPLIST}; \
-	${FIND} doc -type d|sort -r|${SED} 's:^:@dirrm ${PLIST_MODDOCDIR}/:'>> ${TMPPLIST}
+	${FIND} doc -type f|${SORT}| \
+		${SED} 's:^:${PLIST_MODDOCDIR}/:' >> ${TMPPLIST}; \
+	${FIND} doc -type d|${SORT} -r| \
+		${SED} 's:^:@dirrm ${PLIST_MODDOCDIR}/:'>> ${TMPPLIST}
 	${ECHO_CMD} '@dirrm ${PLIST_MODDOCDIR}'>> ${TMPPLIST}
 .endif
 

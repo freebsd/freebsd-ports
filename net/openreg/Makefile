@@ -34,7 +34,7 @@ post-install:
 	for file in `${FIND} ./ ! -type d` ; do \
 		printf "share/doc/${PORTNAME}/%s\n" $$file >> ${TMPPLIST} ;\
 	done ;\
-	for dir in `${FIND} ./ -type d -mindepth 1| sort -r` ; do \
+	for dir in `${FIND} ./ -type d -mindepth 1| ${SORT} -r` ; do \
 		printf "@dirrm share/doc/${PORTNAME}/%s\n" $$dir >> ${TMPPLIST} ;\
 	done
 	@${ECHO} "@dirrm share/doc/${PORTNAME}" >> ${TMPPLIST}

@@ -44,8 +44,6 @@ NOT_FOR_ARCHS=		amd64
 
 .include <bsd.port.pre.mk>
 
-SORT?=/usr/bin/sort
-
 .if ${ARCH} == "i386"
 CONFIGURE_ENV+=		WITH_REORDER=yes
 .endif # ${ARCH} == "i386"

@@ -97,7 +97,7 @@ pre-install:
 	${INSTALL_DATA} ${WRKSRC}/Lib/${platform}/*                    \
 		${PYTHONPREFIX_LIBDIR}/${platform}
 .endfor
-	@sort -r -o ${PLIST} ${PLIST_GMP} ${PLIST_TOOLS} ${PKGDIR}/pkg-plist
+	@${SORT} -r -o ${PLIST} ${PLIST_GMP} ${PLIST_TOOLS} ${PKGDIR}/pkg-plist
 
 post-install:
 	@${MKDIR} ${MANPREFIX}/man/man1

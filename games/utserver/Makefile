@@ -31,7 +31,6 @@ PLIST_SUB=	UTDIR="${UTDIR}"
 EXTRA_PATCHES=	${WRKDIR}/patch-ngstatsut
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
 INSTALL_MY_DATA=	${INSTALL} -o ${SHAREOWN} -g ${SHAREGRP} -m 644
-SORT?=		/usr/bin/sort
 
 # files which should be installed with executable perms
 EXECUTABLES=	ucc ucc-bin ngStatsUT ngStatsUT.exe ngWorldStats \

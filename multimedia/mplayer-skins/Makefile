@@ -51,7 +51,6 @@ PLIST=		${WRKSRC}/pkg-plist
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}"
 
 INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
-SORT?=		/usr/bin/sort
 
 myDATADIR=	share/${PORTNAME}/Skin
 # Used by other ports to detect if this is installed

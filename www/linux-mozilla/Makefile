@@ -115,7 +115,7 @@ pre-install:
 	${ECHO_CMD} bin/${STARTUP_CMD} > ${PLIST}
 	${ECHO_CMD} "@unexec ${FIND} ${PREFIX}/lib/linux-mozilla/plugins -type l \
 		-exec ${RM} {} \;" >> ${PLIST}
-	cd ${WRKSRC}/bin; for i in `${FIND} * \! -type d | sort`; do \
+	cd ${WRKSRC}/bin; for i in `${FIND} * \! -type d | ${SORT}`; do \
 		${ECHO_CMD} lib/linux-mozilla/$${i} >> ${PLIST}; \
 	done
 	cd ${WRKSRC}/bin; \

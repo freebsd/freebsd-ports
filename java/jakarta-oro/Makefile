@@ -49,7 +49,7 @@ do-install-apidocs:
 	@${CHOWN} -h -R ${SHAREOWN}:${SHAREGRP} ${APIDOCSDIR}
 	@${FIND} ${APIDOCSDIR} -type f -print | \
 		${SED} "s,${PREFIX}/*,," >> ${PLIST}
-	@${FIND} ${APIDOCSDIR} -type d -print | sort -r | \
+	@${FIND} ${APIDOCSDIR} -type d -print | ${SORT} -r | \
 		${SED} -e "s,${PREFIX}/*,," -e "s,^,@dirrm ,g" >> ${PLIST}
 .endif
 

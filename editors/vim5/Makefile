@@ -96,11 +96,11 @@ post-install:
 	${TEST} -e ${PREFIX}/bin/rgview || (cd ${PREFIX}/bin ; ${LN} -s vim rgview)
 	cd ${PREFIX} ;\
 	    ${FIND} share/vim/${DISTNAME:S/-//:S/.//}/ -type f -o -type l	\
-	    	| sort \
+	    	| ${SORT} \
 	    	>${WRKDIR}/PLIST.share-vim
 	cd ${PREFIX} ;\
 	    ${FIND} share/vim/${DISTNAME:S/-//:S/.//}/ -type d \
-	    	| sort -r | ${SED} -e 's/^/@dirrm /g' \
+	    	| ${SORT} -r | ${SED} -e 's/^/@dirrm /g' \
 		>>${WRKDIR}/PLIST.share-vim
 	${ECHO_CMD} "r ${TMPPLIST}"			> ${WRKDIR}/ex.script
 	${ECHO_CMD} "/Insert PLIST.share-vim"		>> ${WRKDIR}/ex.script

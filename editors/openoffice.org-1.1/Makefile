@@ -24,7 +24,6 @@ DISTFILES+=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z:gpc \
 DISTFILES+=	${L10NHELP:S/$/:help/}
 .endif
 
-SORT?=	/usr/bin/sort
 FIND?=	/usr/bin/find
 CUT?=	/usr/bin/cut
 AWK?=	/usr/bin/awk

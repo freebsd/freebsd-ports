@@ -83,7 +83,6 @@ pre-install:
 .endif
 
 DIRFILTER=	${SED} -En '\:^.*/[^/]*$$:s:^(.+)/[^/]*$$:\1:p' | ${SORT} -ru
-SORT?=		/usr/bin/sort
 
 .if !defined(USE_PHPIZE)
 do-generate-plist:

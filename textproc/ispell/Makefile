@@ -235,7 +235,7 @@ post-build:
 		abkuerz.txt imperat.txt latein.txt informatik.txt \
 		infoabk.txt elektronik.txt orgabk.txt marken.txt \
 		alphabeta.txt roemisch.txt zusammen.txt | \
-		sort -u > all.words && \
+		${SORT} -u > all.words && \
 		${BUILDHASH} all.words deutsch.aff deutsch.hash
 .endif
 .if defined(ISPELL_BR)

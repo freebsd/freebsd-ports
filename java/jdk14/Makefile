@@ -100,7 +100,6 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 JDKIMAGEDIR=	${WRKSRC}/../build/bsd-i586/j2sdk-image
 JDKIMAGEDIR_G=	${WRKSRC}/../build/bsd-i586/j2sdk-debug-image
 
-SORT?=		/usr/bin/sort
 CPIO?=		/usr/bin/cpio
 
 .if defined(WITH_DEBUG)

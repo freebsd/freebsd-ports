@@ -112,7 +112,7 @@ post-install:
 	cd ${PREFIX} ;\
 	    ${FIND} ${CCC_DIR}/alpha-freebsd -type d \
 	    | ${SED} -e 's/^/@dirrm /g' \
-	    | sort -r				>>${WRKDIR}/PLIST.alpha-freebsd
+	    | ${SORT} -r			>>${WRKDIR}/PLIST.alpha-freebsd
 	${ECHO_CMD} "r ${TMPPLIST}"			>  ${WRKDIR}/ex.script
 	${ECHO_CMD} "/Insert PLIST.alpha-freebsd"	>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "d"					>> ${WRKDIR}/ex.script
@@ -129,7 +129,7 @@ post-install:
 	cd ${PREFIX} ;\
 	    ${FIND} ${CCC_DIR}/alpha-linux -type d \
 	    | ${SED} -e 's/^/@dirrm /g' \
-	    | sort -r				>>${WRKDIR}/PLIST.alphalinux
+	    | ${SORT} -r			>>${WRKDIR}/PLIST.alphalinux
 	${ECHO_CMD} "r ${TMPPLIST}"			>  ${WRKDIR}/ex.script2
 	${ECHO_CMD} "/Insert PLIST.alphalinux"		>> ${WRKDIR}/ex.script2
 	${ECHO_CMD} "d"					>> ${WRKDIR}/ex.script2
@@ -144,7 +144,7 @@ post-install:
 	cd ${PREFIX} ;\
 	    ${FIND} usr/doc/${CCC_REV:C/-1$//} -type d \
 	    | ${SED} -e 's/^/@dirrm /g' \
-	    | sort -r				>>${WRKDIR}/PLIST.docs
+	    | ${SORT} -r				>>${WRKDIR}/PLIST.docs
 	${ECHO_CMD} "r ${TMPPLIST}"			>  ${WRKDIR}/ex.script3
 	${ECHO_CMD} "/Insert PLIST.docs"		>> ${WRKDIR}/ex.script3
 	${ECHO_CMD} "d"					>> ${WRKDIR}/ex.script3
