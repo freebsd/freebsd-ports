@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	emp
-PORTVERSION=	0.92
+PORTVERSION=	0.93
 CATEGORIES=	www
 MASTER_SITES=	http://www.blarg.net/~abowhill/
 
