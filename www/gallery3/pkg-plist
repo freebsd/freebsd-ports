@@ -132,6 +132,7 @@
 %%GALLERYDIR%%/setup/confirm.inc
 %%GALLERYDIR%%/setup/constants.inc
 %%GALLERYDIR%%/setup/defaults.inc
+%%GALLERYDIR%%/setup/diagnostics.php
 %%GALLERYDIR%%/setup/functions.inc
 %%GALLERYDIR%%/setup/gpl.txt
 %%GALLERYDIR%%/setup/index.php
