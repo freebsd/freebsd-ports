@@ -18,7 +18,7 @@ COMMENT=	RFC 822 mail message parsing library and rewriting utilities
 
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
 
-BROKEN=		"Changes ownership of system directories"
+BROKEN=		"Changes permissions of system directories"
 
 NO_PACKAGE=	Violates djb\'s license
 USE_REINPLACE=	yes
