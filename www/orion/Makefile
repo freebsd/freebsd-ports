@@ -8,7 +8,7 @@
 PORTNAME=	orion
 PORTVERSION=	1.4.5
 PORTREVISION=	6
-CATEGORIES=	java www
+CATEGORIES=	www java
 MASTER_SITES=	ftp://ftp.sunet.se/pub/database/utils/orionserver/ \
 		${MASTER_SITE_LOCAL} \
 		http://www.jollem.com/ \
