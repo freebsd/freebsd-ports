@@ -1,0 +1,11 @@
+--- html/Makefile.in.orig	Wed Jul 28 06:50:27 1999
++++ html/Makefile.in	Wed Nov 24 06:20:07 1999
+@@ -80,6 +80,8 @@
+ 	images/cat.gif		\
+ 	images/cover.jpg	\
+ 	images/cramps.gif	\
++	images/dave.gif		\
++	images/info.gif		\
+ 	images/jello.jpg	\
+ 	images/jim.gif		\
+ 	images/note.gif		\
