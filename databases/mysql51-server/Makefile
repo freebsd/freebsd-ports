@@ -85,7 +85,7 @@ RUN_DEPENDS=	mysql:${PORTSDIR}/databases/mysql323-client \
 
 PLIST_SUB=	MYSQL_VERSION=${PORTVERSION}
 
-ONLY_FOR_ARCHS=	i386 alpha
+ONLY_FOR_ARCHS=	i386 alpha sparc64
 
 pre-fetch:
 	@${ECHO} ""
