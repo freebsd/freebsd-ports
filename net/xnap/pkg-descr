@@ -1,0 +1,7 @@
+XNap is a pure java napster client. The XNap project is about
+enhancing JNapster to include other file sharing protocols. Currently
+Napster is supported for use with OpenNap servers. FastTrack
+(Morpheus, Kaaza) support is available through giFT.
+Gnutella support will be coming soon.
+
+WWW: http://xnap.sourceforge.net/
