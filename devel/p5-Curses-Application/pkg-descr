@@ -1,0 +1,7 @@
+Curses::Application is designed to provide a flexible framework for rapid
+application development of Curses-based console applications in Perl. Based
+on Curses::Widgets and Curses::Forms, Curses::Application provides a flexible
+OO framework to manage forms, widgets, and dialogs, without (hopefully) ever
+having to deal directly with Curses calls.
+
+WWW: http://www.digitalmages.com/perl/CursesApplication/
