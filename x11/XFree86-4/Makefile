@@ -37,6 +37,11 @@ FONTCYR=	${X11BASE}/lib/X11/fonts/cyrillic/crox1c.pcf.gz
 FONTDEFAULT=	${X11BASE}/lib/X11/fonts/misc/cursor.pcf.gz
 FONTSCALE=	${X11BASE}/lib/X11/fonts/PEX/Roman.phont
 
+.if make(package)
+DEPENDS_TARGET="package"
+.endif
+.undef NOCLEANDEPENDS
+
 do-install:	# empty
 
 .include <bsd.port.mk>

@@ -1,6 +1,85 @@
---- config/cf/FreeBSD.cf~	Tue Dec  5 10:16:28 2000
-+++ config/cf/FreeBSD.cf	Tue Dec  5 10:45:42 2000
-@@ -371,14 +371,14 @@
+--- config/cf/FreeBSD.cf.orig	Tue Sep 17 19:33:33 2002
++++ config/cf/FreeBSD.cf	Tue Sep 17 20:47:11 2002
+@@ -43,11 +43,15 @@
+ #define GccUsesGas		YES
+ #define UseGas			YES
+ #define GnuCpp			YES
++#define HasPoll			YES
+ #define HasNdbm			YES
+ #define HasPutenv		YES
+ #define HasSnprintf		YES
+ #define HasBSD44Sockets 	YES
+ #define HasDlopen		YES
++#if ((OSRelVersion >= 410002) && OSRelVersion < 500000) || (OSRelVersion >= 500012)
++#define HasSetProcTitle		YES
++#endif
+ #ifndef HasLibCrypt
+ # define HasLibCrypt		YES
+ #endif
+@@ -82,10 +86,6 @@
+ # define HasPosixThreads	YES
+ # define ThreadedX		YES
+ /*
+- * math.h uses _REENTRANT and stdio.h uses _THREAD_SAFE, so define both.
+- */
+-# define SystemMTDefines	-D_REENTRANT -D_THREAD_SAFE
+-/*
+  * FreeBSD has tread-safe api but no getpwnam_r yet.
+  */
+ # define HasThreadSafeAPI	YES
+@@ -95,8 +95,12 @@
+ # else
+ #  define BuildThreadStubLibrary  YES 
+ #  define NeedUIThrStubs          YES 
+-#  define ThreadsCompileFlags	-pthread
+-#  define ThreadsLibraries 	-pthread
++#  define SystemMTDefines	-D_REENTRANT -D_THREAD_SAFE
++#  if (OSRelVersion >= 500016)
++#   define ThreadsLibraries	-lc_r
++#  else
++#   define ThreadsLibraries	-pthread
++#  endif
+ #  define SharedX11Reqs		$(LDPRELIB) $(XTHRSTUBLIB)
+ #  define SharedXtReqs		$(LDPRELIB) $(XLIBONLY) $(SMLIB) $(ICELIB) $(XTHRSTUBLIB)
+ # endif
+@@ -149,11 +153,11 @@
+  *    ld: warning: libXThrStub.so.6, needed by libX11.so, not found
+  */
+ #if BuildThreadStubLibrary && !UseInstalled
+-# define CcCmd			$(CLIENTENVSETUP) cc
+-# define CplusplusCmd		$(CLIENTENVSETUP) c++
++# define CcCmd			$(CLIENTENVSETUP) ${FBSDCC}
++# define CplusplusCmd		$(CLIENTENVSETUP) ${FBSDCXX}
+ #else
+-# define CcCmd			cc
+-# define CplusplusCmd		c++
++# define CcCmd			${FBSDCC}
++# define CplusplusCmd		${FBSDCXX}
+ #endif
+ 
+ #define CppCmd			/usr/bin/cpp
+@@ -220,6 +224,20 @@
+ #endif
+ #endif
+ 
++/* Katmai (SSE) and 3DNow will be autodetected, so binutils is the only 
++ * requirement for enabling this.  By 4.2 they were all supported.
++ */
++#ifdef i386Architecture &&  \
++	(OSMajorVersion >= 5) || (OSMajorVersion == 4 && OSMinorVersion >= 2))
++# define HasMMXSupport		YES
++# define Has3DNowSupport	YES
++# define HasKatmaiSupport	YES
++#else
++# define HasMMXSupport		NO
++# define Has3DNowSupport	NO
++# define HasKatmaiSupport	NO
++#endif
++
+ /* 
+  * This doesn't work the way it does on every other system. On FreeBSD it's
+  * only a "hint, not a demand", whatever that means. Note that this is not 
+@@ -448,14 +466,14 @@
  /* The GCC strength-reduce bug is fixed for FreeBSD 2.1.5 and later */
  #ifndef DefaultGcc2i386Opt
  #if OSMajorVersion > 2 || (OSMajorVersion == 2 && OSMinorVersion > 1) || (OSMajorVersion == 2 && OSMinorVersion == 1 && OSTeenyVersion >= 5)

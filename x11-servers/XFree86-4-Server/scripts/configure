@@ -79,6 +79,8 @@ configure () {
     echo "#define XF86Server YES" >> $LOCALDEF
     echo "#define BuildServersOnly YES" >> $LOCALDEF
     echo "#define BuildXFree86ConfigTools YES" >> $LOCALDEF
+    echo "#define UseInstalledPrograms YES" >> $LOCALDEF
+    echo "#define StandardIncludes -I${PREFIX}/include" >> $LOCALDEF
     
     # More of the i386 drivers could probably move to XF86CardDrivers.
     # Is fbdev driver useful to us?

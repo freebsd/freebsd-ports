@@ -8,12 +8,10 @@
 PORTNAME=	FontServer
 PORTVERSION=	4.2.0
 CATEGORIES=	x11-servers x11-fonts
-MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
-		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	${PORTVERSION}/:x \
-			anholt/:local
+MASTER_SITES=	${MASTER_SITE_XFREE}
+MASTER_SITE_SUBDIR=	${PORTVERSION}/
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz:x Wraphelp.gz:local
+DISTFILES=	X${PORTVERSION:S/.//g}src-1.tgz
 EXTRACT_ONLY=	X${PORTVERSION:S/.//g}src-1.tgz
 
 MAINTAINER=	anholt@freebsd.org
@@ -23,17 +21,11 @@ USE_IMAKE=		YES
 DIST_SUBDIR=		xc
 WRKSRC=			${WRKDIR}/xc
 PATCHDIR=		${.CURDIR}/../../x11/XFree86-4-libraries/files
-MAKE_ENV=		MAN_INSTALL_TARGET=FreeBSDPortsInstall.man
-ALL_TARGET=		FreeBSDPortsBuild
-INSTALL_TARGET=		FreeBSDPortsInstall installXserver.man
 MAN1=			Xserver.1 xfs.1
+XBUILD_DIRS=		programs/xfs
+XINCLUDE_DIRS=		lib/xtrans programs/Xserver 
+XINSTALL_MAN_DIRS=	programs/Xserver programs/xfs
 
-post-extract:
-	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp.gz > \
-		${WRKSRC}/lib/Xdmcp/Wraphelp.c
 
-do-configure:
-	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
-	@cd ${WRKSRC}; ${MAKE} FreeBSDPortsConfigure
-
+.include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
 .include <bsd.port.mk>

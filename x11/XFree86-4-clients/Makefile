@@ -7,18 +7,17 @@
 
 PORTNAME=	clients
 PORTVERSION=	4.2.1
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
-		${MASTER_SITE_XFREE:S/source//g:S/$/:x421patch/} \
-		${MASTER_SITE_LOCAL:S/$/:local/}
+		${MASTER_SITE_XFREE:S/source//g:S/$/:x421patch/}
 MASTER_SITE_SUBDIR=	4.2.0/:x \
 			${PORTVERSION}/patches/:x421patch \
 			anholt/:local
 PKGNAMEPREFIX=	XFree86-
 DISTFILES=	X420src-1.tgz:x \
 		X420src-2.tgz:x \
-		4.2.0-4.2.1.diff.gz:x421patch \
-		Wraphelp.gz:local
+		4.2.0-4.2.1.diff.gz:x421patch
 EXTRACT_ONLY=	X420src-1.tgz
 
 PATCH_DIST_STRIP=	-p1
@@ -41,8 +40,9 @@ SCRIPTS_ENV=		InstallXdmConfig=${InstallXdmConfig} \
 MAKE_ENV=		PKGNAMEPREFIX=${PKGNAMEPREFIX} \
 			PORTNAME=${PORTNAME} \
 			PORTVERSION=${PORTVERSION}
-ALL_TARGET=		FreeBSDPortsBuild
-INSTALL_TARGET=		FreeBSDPortsInstall FreeBSDPortsInstall.man
+XBUILD_DIRS=		lib/xtrans lib/lbxutil programs fonts/util
+XINSTALL_DIRS=		programs fonts/util
+XINSTALL_MAN_DIRS=	programs
 
 # ---
 # XFree86 User Config:
@@ -67,8 +67,6 @@ post-extract:
 	 ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 	   ${DISTDIR}/${DIST_SUBDIR}/X420src-2.tgz \
 	    | ${TAR} -xf - xc/fonts/util )
-	${GUNZIP_CMD} -c ${DISTDIR}/${DIST_SUBDIR}/Wraphelp.gz > \
-		${WRKSRC}/lib/Xdmcp/Wraphelp.c
 pre-patch:
 	-@${GZCAT} ${DISTDIR}/${DIST_SUBDIR}/4.2.0-4.2.1.diff.gz \
 		| ${PATCH} ${PATCH_DIST_ARGS} --batch
@@ -79,10 +77,7 @@ post-patch:
 		${LN} -s zh_TW.big5 $$i/zh_TW.Big5; \
 	done
 
-do-configure:
-	cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
-	@cd ${WRKSRC}; ${MAKE} FreeBSDPortsConfigure
-
+.include "${.CURDIR}/../../x11/XFree86-4-libraries/Makefile.inc"
 .include <bsd.port.pre.mk>
 .include "${FILESDIR}/manpages"
 .include <bsd.port.post.mk>
