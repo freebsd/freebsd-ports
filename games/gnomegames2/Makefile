@@ -28,6 +28,8 @@ INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+CONFLICTS=	sol-1.0.*
+
 post-patch:
 	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
