@@ -7299,6 +7299,7 @@ secure_usrsbin	src/secure/usr.sbin
 securelib	src/secure/lib
 sed		src/usr.bin/sed
 sed_inplace	ports/textproc/sed_inplace
+sedsed		ports/devel/sedsed
 seejpeg		ports/graphics/seejpeg
 seizedesktop	ports/misc/seizedesktop
 semantic	ports/devel/semantic
