@@ -16,12 +16,20 @@ MAINTAINER=	trevor@FreeBSD.org
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 USE_X_PREFIX=	yes
-
+MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 GNU_CONFIGURE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 DOC_FILES=	CHANGES COPYING README
+
+post-patch:
+	${PERL} -pi -e 's|-O3|${PTHREAD_CFLAGS}|g ; \
+			s|CFLAGS =|CFLAGS +=|g ; \
+			s|CXXFLAGS=|CXXFLAGS+=|g ; \
+			s|-lm|${PTHREAD_LIBS} -lm|g ; \
+			s|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/SpiralSynth ${PREFIX}/bin
