@@ -51,12 +51,14 @@ share/doc/ntp/driver9.htm
 share/doc/ntp/exec.htm
 share/doc/ntp/extern.htm
 share/doc/ntp/gadget.htm
+share/doc/ntp/genkeys.htm
 share/doc/ntp/hints/a-ux
 share/doc/ntp/hints/aix
 share/doc/ntp/hints/bsdi
 share/doc/ntp/hints/changes
 share/doc/ntp/hints/decosf1
 share/doc/ntp/hints/decosf2
+share/doc/ntp/hints/freebsd
 share/doc/ntp/hints/hpux
 share/doc/ntp/hints/linux
 share/doc/ntp/hints/notes-xntp-v3
