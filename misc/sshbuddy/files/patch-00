@@ -1,0 +1,8 @@
+--- sshbuddy.expk.orig	Mon Aug 23 15:37:05 1999
++++ sshbuddy.expk	Mon Aug 23 15:37:15 1999
+@@ -1,4 +1,4 @@
+-#!/usr/bin/expectk
++#!/usr/local/bin/expectk
+ # EDIT THE ABOVE LINE TO POINT TO WHERE expectk LIVES
+ # 
+ # ALSO !!!!
