@@ -1,0 +1,6 @@
+This command turns the static output from one or more Unix
+commands into a dynamic, pageable, real-time display.  You
+specify the command(s) and the delay period between screen
+refreshes and Paint Changed Characters does the rest, including
+optimizations to minimize cursor movement and the number of
+transmitted characters.
