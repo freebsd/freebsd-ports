@@ -489,11 +489,12 @@ libdata/pkgconfig/Wand.pc
 share/ImageMagick/config/coder.mgk
 share/ImageMagick/config/log.mgk
 share/ImageMagick/config/magic.mgk
-share/ImageMagick-6.0.1/LICENSE
-share/ImageMagick-6.0.1/Magick.pdf
-share/ImageMagick-6.0.1/NOTICE
-share/ImageMagick-6.0.1/QuickStart.txt
+share/ImageMagick-%%PORTVERSION%%/LICENSE
+share/ImageMagick-%%PORTVERSION%%/Magick.pdf
+share/ImageMagick-%%PORTVERSION%%/NOTICE
+share/ImageMagick-%%PORTVERSION%%/QuickStart.txt
 %%PORTDOCS%%share/doc/ImageMagick/images/background.gif
+%%PORTDOCS%%share/doc/ImageMagick/images/devlib.gif
 %%PORTDOCS%%share/doc/ImageMagick/images/dogwaffle.png
 %%PORTDOCS%%share/doc/ImageMagick/images/examples.jpg
 %%PORTDOCS%%share/doc/ImageMagick/images/granite.png
@@ -694,7 +695,7 @@ share/ImageMagick-6.0.1/QuickStart.txt
 %%PORTDOCS%%@dirrm share/doc/ImageMagick/images/patterns
 %%PORTDOCS%%@dirrm share/doc/ImageMagick/images
 %%PORTDOCS%%@dirrm share/doc/ImageMagick
-@dirrm share/ImageMagick-6.0.1
+@dirrm share/ImageMagick-%%PORTVERSION%%
 @dirrm share/ImageMagick/config
 @dirrm share/ImageMagick
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick
