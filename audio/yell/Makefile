@@ -15,6 +15,8 @@ COMMENT=	A command line speaker bell using machine/speaker.h
 
 PLIST_FILES=	bin/yell
 
+ONLY_FOR_ARCHS=	i386
+
 pre-everything::
 .if !defined(WITH_SUID)
 	@${ECHO_CMD} ""
