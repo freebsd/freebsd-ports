@@ -1,5 +1,5 @@
 --- lib/krb5/os/an_to_ln.c.orig	Tue Sep  3 12:29:34 2002
-+++ lib/krb5/os/an_to_ln.c	Wed Jun  2 11:17:19 2004
++++ lib/krb5/os/an_to_ln.c	Fri Jun  4 09:19:24 2004
 @@ -270,9 +270,14 @@
   * If no regcomp() then just return the input string verbatim in the output
   * string.
@@ -40,7 +40,7 @@
  		strncpy(op, cp, MAX_FORMAT_BUFFER - 1 - (op - out));
  		matched = 0;
  	    }
-@@ -322,17 +332,21 @@
+@@ -322,17 +332,22 @@
  	    sdispl = (size_t) (loc1 - cp);
  	    edispl = (size_t) (loc2 - cp);
  	    if (sdispl) {
@@ -52,9 +52,11 @@
  	    strncpy(op, repl, MAX_FORMAT_BUFFER - 1 - (op - out));
  	    op += strlen(repl);
  	    cp += edispl;
- 	    if (!doall)
+-	    if (!doall)
++	    if (!doall) {
 +		use_bytes(strlen(cp));
  		strncpy(op, cp, MAX_FORMAT_BUFFER - 1 - (op - out));
++	    }
  	    matched = 1;
  	}
  	else {
@@ -62,7 +64,7 @@
  	    strncpy(op, cp, MAX_FORMAT_BUFFER - 1 - (op - out));
  	    matched = 0;
  	}
-@@ -340,7 +354,15 @@
+@@ -340,7 +355,15 @@
  #else	/* HAVE_REGEXP_H */
      memcpy(out, in, MAX_FORMAT_BUFFER);
  #endif	/* HAVE_REGCOMP */
@@ -78,7 +80,7 @@
  
  /*
   * aname_replacer()	- Perform the specified substitutions on the input
-@@ -412,7 +434,12 @@
+@@ -412,7 +435,12 @@
  
  		    /* Do the replacemenbt */
  		    memset(out, '\0', MAX_FORMAT_BUFFER);
@@ -92,7 +94,7 @@
  		    free(rule);
  		    free(repl);
  
-@@ -459,6 +486,7 @@
+@@ -459,6 +487,7 @@
      char		*fprincname;
      char		*selstring = 0;
      int			num_comps, compind;
@@ -100,7 +102,7 @@
      char		*cout;
      krb5_data		*datap;
      char		*outstring;
-@@ -479,6 +507,7 @@
+@@ -479,6 +508,7 @@
  		     */
  		    current = strchr(current, ':');
  		    selstring = (char *) malloc(MAX_FORMAT_BUFFER);
@@ -108,7 +110,7 @@
  		    if (current && selstring) {
  			current++;
  			cout = selstring;
-@@ -497,6 +526,14 @@
+@@ -497,6 +527,14 @@
  								  aname,
  								  compind-1))
  				    ) {
@@ -123,7 +125,7 @@
  				    strncpy(cout,
  					    datap->data,
  					    (unsigned) datap->length);
-@@ -527,7 +564,7 @@
+@@ -527,7 +565,7 @@
  			else
  			    kret = KRB5_CONFIG_BADFORMAT;
  
@@ -132,7 +134,7 @@
  			    free(selstring);
  		    }
  		}
-@@ -643,7 +680,7 @@
+@@ -643,7 +681,7 @@
      const char		*hierarchy[5];
      char		**mapping_values;
      int			i, nvalid;
@@ -141,7 +143,7 @@
      char		*typep, *argp;
      unsigned int        lnsize;
  
-@@ -677,11 +714,14 @@
+@@ -677,11 +715,14 @@
  
  		    /* Just use the last one. */
  		    /* Trim the value. */
