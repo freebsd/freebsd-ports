@@ -1,10 +1,9 @@
-Kopete is a flexible, extensible, plugin-based,
-multiple-protocol instant messaging system. Its
-goal is to provide (i) users with a standard and
-easy-to-use interface for all their instant
-messaging systems, and (ii) developers with a
-consistent and flexible framework for creating
-plugins for different protocols.
+Kopete is a flexible and extendable multiple protocol
+instant messaging system designed as a plugin-based system.
+
+All protocols are plugins and allow modular installation,
+configuration, and usage without the main application
+knowing anything about the plugin being loaded.
 
 WWW: http://kopete.kde.org
 
