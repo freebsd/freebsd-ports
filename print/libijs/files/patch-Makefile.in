@@ -1,0 +1,76 @@
+--- Makefile.in.orig	Tue Apr 23 06:51:55 2002
++++ Makefile.in	Sun Apr 28 13:09:35 2002
+@@ -1,14 +1,15 @@
+ # Unix
+ 
+ CC=@CC@
+-CFLAGS=-g -Wall -ansi -pedantic -Wmissing-prototypes
++CFLAGS=@CFLAGS@ -ansi -pedantic -Wmissing-prototypes
+ LDLIBS=
+ OBJ=.@OBJEXT@
+ EXE=@EXEEXT@
+ 
+ # todo: this needs to be .dylib on OS X - write a test
+-SHARED_LDFLAGS=-shared
+-SHARED_OBJ=.so
++SHARED_LDFLAGS=-shared -Wl,-soname,libijs$(SHARED_OBJ)
++SHARED_OBJ=.so.$(SHLIB_VER)
++SHLIB_VER?=0
+ #SHARED_LDFLAGS=-dylib
+ #SHARED_OBJ=.dylib
+ 
+@@ -28,11 +29,20 @@
+ 
+ pkgincludedir=$(includedir)/ijs
+ 
+-INSTALL = @INSTALL@
++INSTALL_PROGRAM = @INSTALL_PROGRAM@
++INSTALL_SCRIPT = @INSTALL_SCRIPT@
++INSTALL_DATA = @INSTALL_DATA@
+ 
+ IJS_COMMON_OBJ=ijs$(OBJ)
+ 
+-all:	libijs.a libijs$(SHARED_OBJ) ijs_client_example$(EXE) ijs_server_example$(EXE)
++.SUFFIXES: .c .lo .o
++
++.c.o:
++	$(CC) $(CFLAGS) -c -o $@ $<
++.c.lo:
++	$(CC) $(CFLAGS) -fPIC -DPIC -c -o $@ $<
++
++all:	libijs.a libijs$(SHARED_OBJ) ijs_client_example$(EXE)
+ 
+ LIB_OBJS=ijs$(OBJ) ijs_client$(OBJ) ijs_server$(OBJ) $(IJS_EXEC_SERVER)
+ 
+@@ -44,7 +54,7 @@
+ # Note: this builds both the server and client into a single library. Logically, it
+ # makes sense to separate them, but they're small enough to make this probably
+ # not worthwhile.
+-libijs$(SHARED_OBJ):	$(LIB_OBJS)
++libijs$(SHARED_OBJ):	$(LIB_OBJS:.o=.lo)
+ 	$(CC) $(SHARED_LDFLAGS) $^ -o $@
+ 
+ ijs_client_example$(EXE):	ijs_client_example$(OBJ) ijs_client$(OBJ) $(IJS_COMMON_OBJ) $(IJS_EXEC_SERVER)
+@@ -60,14 +70,15 @@
+ 	$(RM) *~ gmon.out core ijs_spec.log ijs_spec.tex ijs_spec.aux libijs.a libijs$(SHARED_OBJ) config.cache config.log config.status ijs-config
+ 
+ install:	all
+-	$(INSTALL) ijs_client_example$(EXE) -c $(bindir)/ijs_client_example$(EXE)
+-	$(INSTALL) ijs-config -c $(bindir)/ijs-config
+-	$(INSTALL) libijs.a $(libdir)/libijs.a
+-	$(INSTALL) libijs$(SHARED_OBJ) $(libdir)/libijs$(SHARED_OBJ)
++	$(INSTALL_PROGRAM) ijs_client_example$(EXE) $(bindir)/ijs_client_example$(EXE)
++	$(INSTALL_SCRIPT) ijs-config $(bindir)/ijs-config
++	$(INSTALL_DATA) libijs.a $(libdir)/libijs.a
++	$(INSTALL_DATA) libijs$(SHARED_OBJ) $(libdir)/libijs$(SHARED_OBJ)
++	-ln -sf libijs$(SHARED_OBJ) $(libdir)/libijs.so
+ 	-mkdir $(pkgincludedir)
+-	$(INSTALL) ijs.h $(pkgincludedir)/ijs.h
+-	$(INSTALL) ijs_client.h $(pkgincludedir)/ijs_client.h
+-	$(INSTALL) ijs_server.h $(pkgincludedir)/ijs_server.h
++	$(INSTALL_DATA) ijs.h $(pkgincludedir)/ijs.h
++	$(INSTALL_DATA) ijs_client.h $(pkgincludedir)/ijs_client.h
++	$(INSTALL_DATA) ijs_server.h $(pkgincludedir)/ijs_server.h
+ 
+ uninstall:
+ 	$(RM) $(bindir)/ijs_client_example$(EXE) $(bindir)/ijs-config $(libdir)/libijs.a $(libdir)/libijs$(SHARED_OBJ)
