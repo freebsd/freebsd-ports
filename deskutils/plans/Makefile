@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	plans
-PORTVERSION=	6.6.2
+PORTVERSION=	6.6.4
 CATEGORIES=	deskutils www
 MASTER_SITES=	http://www.planscalendar.com/release/:plans \
 		http://www.freebsd.org/gifs/:logo
