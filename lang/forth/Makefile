@@ -13,10 +13,10 @@ MASTER_SITES=	ftp://ftp.taygeta.com/pub/Forth/Compilers/native/unix/
 MAINTAINER=	ports@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
+HAS_CONFIGURE=	yes
+CONFIGURE_SCRIPT=	config.sh
+CONFIGURE_ARGS=	${OPSYS}
 MAN1=		pfe.1
-
-do-configure:
-	(cd ${WRKSRC}; ${SH} ./config.sh FreeBSD)
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pfe ${PREFIX}/bin
