@@ -7,7 +7,7 @@
 
 PORTNAME=	exim
 PORTVERSION=	4.24
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_EXIM}
 MASTER_SITE_SUBDIR=	exim4
@@ -386,7 +386,7 @@ pre-everything::
 do-configure:
 	@${MKDIR} ${WRKSRC}/Local
 	@${SED} ${SEDLIST} ${WRKSRC}/src/EDITME > ${WRKSRC}/Local/Makefile
-	@${REINPLACE_CMD} -e 's/"(Exim $$version_number)\\n\\t"/"(Exim $$version_number; ${OPSYS} ${OSREL})\\n\\t"/' \
+	@${REINPLACE_CMD} -e 's/"(Exim $$version_number)\\n\\t"/"(Exim $$version_number; ${OPSYS})\\n\\t"/' \
 		${WRKSRC}/src/globals.c
 	@${REINPLACE_CMD} -e 's/^#include "cnumber\.h"$$/${PORTREVISION}/' ${WRKSRC}/src/version.c
 
