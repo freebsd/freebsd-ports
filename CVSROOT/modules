@@ -9094,6 +9094,7 @@ xdino		ports/games/xdino
 xdiskusage	ports/x11-fm/xdiskusage
 xdl		ports/graphics/xdl
 xdms		ports/archivers/xdms
+xdoclet		ports/java/xdoclet
 xdrawchem	ports/biology/xdrawchem
 xdtm		ports/x11/xdtm
 xdu		ports/sysutils/xdu
