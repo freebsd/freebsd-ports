@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ethereal
-PORTVERSION=	0.8.10
+PORTVERSION=	0.8.12
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://alpha1.linuxberg.com/files/x11/network/ \
 		http://www.linuxberg.com/files/x11/network/ \
@@ -15,6 +15,7 @@ MASTER_SITES=	http://alpha1.linuxberg.com/files/x11/network/ \
 		http://ethereal.boehm.org/distribution/
 
 MAINTAINER=	billf@FreeBSD.org
+FORBIDDEN=	"Remotely exploitable buffer overflow; identical to Security Advisory 00:61"
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
