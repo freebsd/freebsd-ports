@@ -1,0 +1,44 @@
+bin/jm
+bin/jmlite
+bin/jmsearchserver
+share/gnome/apps/Internet/jm.desktop
+share/gnome/help/jm/C/authors.html
+share/gnome/help/jm/C/bugs.html
+share/gnome/help/jm/C/docbook.css
+share/gnome/help/jm/C/faq.html
+share/gnome/help/jm/C/images/channels.png
+share/gnome/help/jm/C/images/download.png
+share/gnome/help/jm/C/images/general.png
+share/gnome/help/jm/C/images/netpref.png
+share/gnome/help/jm/C/images/search.png
+share/gnome/help/jm/C/install.html
+share/gnome/help/jm/C/jm.html
+share/gnome/help/jm/C/license.html
+share/gnome/help/jm/C/lists.html
+share/gnome/help/jm/C/ln14.html
+share/gnome/help/jm/C/news.html
+share/gnome/help/jm/C/quickstart.html
+share/gnome/help/jm/C/stylesheet-images/caution.gif
+share/gnome/help/jm/C/stylesheet-images/home.gif
+share/gnome/help/jm/C/stylesheet-images/important.gif
+share/gnome/help/jm/C/stylesheet-images/next.gif
+share/gnome/help/jm/C/stylesheet-images/note.gif
+share/gnome/help/jm/C/stylesheet-images/prev.gif
+share/gnome/help/jm/C/stylesheet-images/tip.gif
+share/gnome/help/jm/C/stylesheet-images/toc-blank.gif
+share/gnome/help/jm/C/stylesheet-images/toc-minus.gif
+share/gnome/help/jm/C/stylesheet-images/toc-plus.gif
+share/gnome/help/jm/C/stylesheet-images/up.gif
+share/gnome/help/jm/C/stylesheet-images/warning.gif
+share/gnome/help/jm/C/topic.dat
+share/gnome/jm/glade/jm-gnome.glade
+share/gnome/jm/glade/jm.glade
+share/gnome/jm/glade/master_popup.glade
+share/gnome/jm/glade/properties_dialog.glade
+share/gnome/pixmaps/jm-logo.png
+@dirrm share/gnome/help/jm/C/stylesheet-images
+@dirrm share/gnome/help/jm/C/images
+@dirrm share/gnome/help/jm/C
+@dirrm share/gnome/help/jm
+@dirrm share/gnome/jm/glade
+@dirrm share/gnome/jm
