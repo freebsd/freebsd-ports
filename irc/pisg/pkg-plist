@@ -1,43 +1,44 @@
 @comment $FreeBSD$
 bin/pisg
 etc/pisg/pisg.cfg.sample
-lib/perl5/site_perl/%%PERL_VER%%/Pisg.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Common.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/HTMLGenerator.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/DCpp.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/bxlog.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/Template.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/Trillian.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/axur.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/zcbot.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/oer.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/dancer.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/eggdrop.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/energymech.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/irssi.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/mIRC.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/ircle.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/psybnc.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/virc98.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/infobot.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/grufti.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/mbot.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/muh.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/bobot.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/xchat.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/perlbot.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/pircbot.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/winbot.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/RacBot.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/kvirc.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/moobot.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/mIRC6.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/ircII.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/blootbot.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/dircproxy.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/sirc.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format/hydra.pm
-lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Logfile.pm
+%%SITE_PERL%%/Pisg.pm
+%%SITE_PERL%%/Pisg/Common.pm
+%%SITE_PERL%%/Pisg/HTMLGenerator.pm
+%%SITE_PERL%%/Pisg/Parser/Format/DCpp.pm
+%%SITE_PERL%%/Pisg/Parser/Format/bxlog.pm
+%%SITE_PERL%%/Pisg/Parser/Format/Template.pm
+%%SITE_PERL%%/Pisg/Parser/Format/Trillian.pm
+%%SITE_PERL%%/Pisg/Parser/Format/axur.pm
+%%SITE_PERL%%/Pisg/Parser/Format/zcbot.pm
+%%SITE_PERL%%/Pisg/Parser/Format/oer.pm
+%%SITE_PERL%%/Pisg/Parser/Format/dancer.pm
+%%SITE_PERL%%/Pisg/Parser/Format/eggdrop.pm
+%%SITE_PERL%%/Pisg/Parser/Format/energymech.pm
+%%SITE_PERL%%/Pisg/Parser/Format/irssi.pm
+%%SITE_PERL%%/Pisg/Parser/Format/mIRC.pm
+%%SITE_PERL%%/Pisg/Parser/Format/ircle.pm
+%%SITE_PERL%%/Pisg/Parser/Format/psybnc.pm
+%%SITE_PERL%%/Pisg/Parser/Format/virc98.pm
+%%SITE_PERL%%/Pisg/Parser/Format/infobot.pm
+%%SITE_PERL%%/Pisg/Parser/Format/grufti.pm
+%%SITE_PERL%%/Pisg/Parser/Format/mbot.pm
+%%SITE_PERL%%/Pisg/Parser/Format/muh.pm
+%%SITE_PERL%%/Pisg/Parser/Format/bobot.pm
+%%SITE_PERL%%/Pisg/Parser/Format/xchat.pm
+%%SITE_PERL%%/Pisg/Parser/Format/perlbot.pm
+%%SITE_PERL%%/Pisg/Parser/Format/pircbot.pm
+%%SITE_PERL%%/Pisg/Parser/Format/winbot.pm
+%%SITE_PERL%%/Pisg/Parser/Format/RacBot.pm
+%%SITE_PERL%%/Pisg/Parser/Format/kvirc.pm
+%%SITE_PERL%%/Pisg/Parser/Format/moobot.pm
+%%SITE_PERL%%/Pisg/Parser/Format/mIRC6.pm
+%%SITE_PERL%%/Pisg/Parser/Format/ircII.pm
+%%SITE_PERL%%/Pisg/Parser/Format/blootbot.pm
+%%SITE_PERL%%/Pisg/Parser/Format/dircproxy.pm
+%%SITE_PERL%%/Pisg/Parser/Format/sirc.pm
+%%SITE_PERL%%/Pisg/Parser/Format/hydra.pm
+%%SITE_PERL%%/Pisg/Parser/Format/muh2.pm
+%%SITE_PERL%%/Pisg/Parser/Logfile.pm
 share/pisg/layout/justgrey.css
 share/pisg/layout/darkgalaxy.css
 share/pisg/layout/softgreen.css
@@ -57,7 +58,7 @@ share/pisg/lang.txt
 @dirrm share/pisg/layout
 @dirrm share/pisg/gfx
 @dirrm share/pisg
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser/Format
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Pisg/Parser
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Pisg
+@dirrm %%SITE_PERL%%/Pisg/Parser/Format
+@dirrm %%SITE_PERL%%/Pisg/Parser
+@dirrm %%SITE_PERL%%/Pisg
 @dirrm etc/pisg

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pisg
-PORTVERSION=	0.48
+PORTVERSION=	0.49
 CATEGORIES=	irc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -28,26 +28,26 @@ do-install:
 	${MKDIR} ${PREFIX}/etc/pisg
 	${MKDIR} ${DATADIR}/layout
 	${MKDIR} ${DATADIR}/gfx
-	${MKDIR} ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Pisg/Parser/Format
+	${MKDIR} ${SITE_PERL}/Pisg/Parser/Format
 	${INSTALL_DATA} ${WRKSRC}/pisg.cfg ${PREFIX}/etc/pisg/pisg.cfg.sample
 	${INSTALL_DATA} ${WRKSRC}/gfx/* ${DATADIR}/gfx
 	${INSTALL_DATA} ${WRKSRC}/layout/* ${DATADIR}/layout
 	${INSTALL_DATA} ${WRKSRC}/lang.txt ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/modules/Pisg.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}
-	${INSTALL_DATA} ${WRKSRC}/modules/Pisg/*.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Pisg
-	${INSTALL_DATA} ${WRKSRC}/modules/Pisg/Parser/*.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Pisg/Parser
-	${INSTALL_DATA} ${WRKSRC}/modules/Pisg/Parser/Format/*.pm ${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Pisg/Parser/Format
+	${INSTALL_DATA} ${WRKSRC}/modules/Pisg.pm ${SITE_PERL}
+	${INSTALL_DATA} ${WRKSRC}/modules/Pisg/*.pm ${SITE_PERL}/Pisg
+	${INSTALL_DATA} ${WRKSRC}/modules/Pisg/Parser/*.pm ${SITE_PERL}/Pisg/Parser
+	${INSTALL_DATA} ${WRKSRC}/modules/Pisg/Parser/Format/*.pm ${SITE_PERL}/Pisg/Parser/Format
 	${INSTALL_SCRIPT} ${WRKSRC}/pisg ${PREFIX}/bin
 
 post-install:
 .if !defined(BATCH)
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "###############################################################################"
-	@${ECHO_CMD} "# Please create a pisg config file in ${PREFIX}/etc/pisg                     #"
-	@${ECHO_CMD} "# A sample configuration file is installed as pisg.cfg.sample                 #"
-	@${ECHO_CMD} "# Remember to move gfx (${DATADIR}/gfx/) to HTML file destination. #"
-	@${ECHO_CMD} "###############################################################################"
-	@${ECHO_CMD}
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "###############################################################################"
+	@${ECHO_MSG} "# Please create a pisg config file in ${PREFIX}/etc/pisg                     #"
+	@${ECHO_MSG} "# A sample configuration file is installed as pisg.cfg.sample                 #"
+	@${ECHO_MSG} "# Remember to move gfx (${DATADIR}/gfx/) to HTML file destination. #"
+	@${ECHO_MSG} "###############################################################################"
+	@${ECHO_MSG}
 .endif
 
 .include <bsd.port.mk>
