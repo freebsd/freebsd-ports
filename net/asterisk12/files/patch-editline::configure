@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- editline/configure	2003/10/17 09:02:33	1.1
-+++ editline/configure	2003/10/17 09:03:18
+--- editline/configure.orig	Sun Apr 27 21:13:11 2003
++++ editline/configure	Fri Jan 30 01:47:34 2004
 @@ -1906,7 +1906,7 @@
    CPPFLAGS="$CPPFLAGS -DDEBUG_TTY -DDEBUG_KEY -DDEBUG_READ -DDEBUG"
    CPPFLAGS="$CPPFLAGS -DDEBUG_REFRESH -DDEBUG_PASTE"

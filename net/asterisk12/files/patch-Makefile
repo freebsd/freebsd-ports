@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- Makefile.orig	Tue Sep  2 03:33:42 2003
-+++ Makefile	Sun Oct 19 10:02:05 2003
-@@ -39,10 +39,10 @@
+--- Makefile.orig	Wed Jan 14 08:48:38 2004
++++ Makefile	Fri Jan 30 02:25:09 2004
+@@ -43,10 +43,10 @@
  #K6OPT  = -DK6OPT
  
  #Tell gcc to optimize the asterisk's code
@@ -16,16 +16,16 @@ $FreeBSD$
  
  # New hangup routines for chan_zap.c
  # If this flag is uncommented then you need to have new libpri code in your system
-@@ -64,7 +64,7 @@
+@@ -68,7 +68,7 @@
  
  # Where to install asterisk after compiling
  # Default -> leave empty
 -INSTALL_PREFIX=
-+INSTALL_PREFIX=${PREFIX}
++INSTALL_PREFIX=$(PREFIX)
  
- # Original busydetect routine
- BUSYDETECT = #-DBUSYDETECT
-@@ -78,28 +78,28 @@
+ # Staging directory
+ # Files are copied here temporarily during the install process
+@@ -88,28 +88,26 @@
  # Don't use together with -DBUSYDETECT_TONEONLY
  BUSYDETECT+= #-DBUSYDETECT_COMPARE_TONE_AND_SILENCE
  
@@ -48,7 +48,6 @@ $FreeBSD$
 +ASTSBINDIR=$(INSTALL_PREFIX)/sbin
 +ASTVARRUNDIR=/var/run
  
- 
  MODULES_DIR=$(ASTLIBDIR)/modules
  AGI_DIR=$(ASTVARLIBDIR)/agi-bin
  
@@ -56,44 +55,45 @@ $FreeBSD$
 -CFLAGS=-pipe  -Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations $(DEBUG) $(INCLUDE) -D_REENTRANT -D_GNU_SOURCE #-DMAKE_VALGRIND_HAPPY
 +CFLAGS+=-Wall -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations $(DEBUG) $(INCLUDE) -D_REENTRANT -D_GNU_SOURCE #-DMAKE_VALGRIND_HAPPY
  CFLAGS+=$(OPTIMIZE)
- CFLAGS+=$(shell if $(CC) -march=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-march=$(PROC)"; fi)
+-CFLAGS+=$(shell if $(CC) -march=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-march=$(PROC)"; fi)
  CFLAGS+=$(shell if uname -m | grep -q ppc; then echo "-fsigned-char"; fi)
--ifeq (${OSARCH},OpenBSD)
+ ifeq (${OSARCH},FreeBSD)
 -CFLAGS+=-pthread
-+ifeq (${OSARCH},FreeBSD)
-+CFLAGS+=${PTHREAD_CFLAGS}
+-INCLUDE+=-I/usr/local/include
++CFLAGS+=$(PTHREAD_CFLAGS)
+ endif
+ ifeq (${OSARCH},OpenBSD)
+ CFLAGS+=-pthread
+@@ -151,7 +149,7 @@
+ LIBS=-pthread
+ else
+ ifeq (${OSARCH},FreeBSD)
+-LIBS=-pthread
++LIBS=$(PTHREAD_LIBS)
+ else
+ endif
+ endif
+@@ -179,7 +177,7 @@
+ SOLINK=-shared -Xlinker -x
  endif
  
- CFLAGS+=$(shell if [ -f /usr/include/linux/zaptel.h ]; then echo "-DZAPTEL_OPTIMIZATIONS"; fi)
-@@ -131,14 +131,14 @@
- ifeq (${OSARCH},Linux)
- LIBS=-ldl
- endif
--LIBS+=-lpthread -lncurses -lm -lresolv  #-lnjamd
-+LIBS+=${PTHREAD_LIBS} -lncurses -lm #-lnjamd
- OBJS=io.o sched.o logger.o frame.o loader.o config.o channel.o \
- 	translate.o file.o say.o pbx.o cli.o md5.o term.o \
- 	ulaw.o alaw.o callerid.o fskmodem.o image.o app.o \
- 	cdr.o tdd.o acl.o rtp.o manager.o asterisk.o ast_expr.o \
- 	dsp.o chanvars.o indications.o autoservice.o db.o privacy.o \
- 	astmm.o enum.o srv.o
 -CC=gcc
 +CC?=gcc
  INSTALL=install
  
  _all: all
-@@ -163,13 +163,13 @@
- editline/libedit.a: editline/config.h
+@@ -200,13 +198,13 @@
+ 	cd editline && unset CFLAGS LIBS && test -f config.h || ./configure
  	$(MAKE) -C editline libedit.a
  
--db1-ast/libdb1.a: 
+-db1-ast/libdb1.a: FORCE
 -	@if [ -d db1-ast ]; then \
 -		$(MAKE) -C db1-ast libdb1.a ; \
 -	else \
 -		echo "You need to do a cvs update -d not just cvs update"; \
 -		exit 1; \
 -	fi
-+#db1-ast/libdb1.a: 
++#db1-ast/libdb1.a: FORCE
 +#	@if [ -d db1-ast ]; then \
 +#		$(MAKE) -C db1-ast libdb1.a ; \
 +#	else \
@@ -103,98 +103,107 @@ $FreeBSD$
  
  ifneq ($(wildcard .depend),)
  include .depend
-@@ -199,8 +199,8 @@
- 	./make_build_h
- endif
+@@ -244,8 +242,8 @@
+ 		exit 1; \
+ 	fi
  
--asterisk: editline/libedit.a db1-ast/libdb1.a $(OBJS)
--	$(CC) $(DEBUG) -o asterisk -rdynamic $(OBJS) $(LIBS) $(LIBEDIT) db1-ast/libdb1.a
-+asterisk: editline/libedit.a $(OBJS)
-+	$(CC) $(DEBUG) -o asterisk -rdynamic $(OBJS) $(LIBS) $(LIBEDIT)
+-asterisk: editline/libedit.a db1-ast/libdb1.a stdtime/libtime.a $(OBJS)
+-	$(CC) $(DEBUG) -o asterisk $(ASTLINK) $(OBJS) $(LIBS) $(LIBEDIT) db1-ast/libdb1.a stdtime/libtime.a
++asterisk: editline/libedit.a stdtime/libtime.a $(OBJS)
++	$(CC) $(DEBUG) -o asterisk $(ASTLINK) $(OBJS) $(LIBS) $(LIBEDIT) stdtime/libtime.a
  
  subdirs: 
  	for x in $(SUBDIRS); do $(MAKE) -C $$x || exit 1 ; done
-@@ -214,10 +214,10 @@
- 	$(MAKE) -C db1-ast clean
+@@ -260,10 +258,10 @@
+ 	$(MAKE) -C stdtime clean
  
  datafiles: all
--	mkdir -p $(ASTVARLIBDIR)/sounds/digits
-+	$(MKDIR) $(ASTVARLIBDIR)/sounds/digits
+-	mkdir -p $(DESTDIR)$(ASTVARLIBDIR)/sounds/digits
++	$(MKDIR) $(DESTDIR)$(ASTVARLIBDIR)/sounds/digits
  	for x in sounds/digits/*.gsm; do \
  		if grep -q "^%`basename $$x`%" sounds.txt; then \
--			install $$x $(ASTVARLIBDIR)/sounds/digits ; \
-+			$(BSD_INSTALL_DATA) $$x $(ASTVARLIBDIR)/sounds/digits ; \
+-			install -m 644 $$x $(DESTDIR)$(ASTVARLIBDIR)/sounds/digits ; \
++			$(BSD_INSTALL_DATA) $$x $(DESTDIR)$(ASTVARLIBDIR)/sounds/digits ; \
  		else \
  			echo "No description for $$x"; \
  			exit 1; \
-@@ -225,18 +225,18 @@
+@@ -271,18 +269,18 @@
  	done
  	for x in sounds/vm-* sounds/transfer* sounds/pbx-* sounds/ss-* sounds/beep* sounds/dir-* sounds/conf-* sounds/agent-* sounds/invalid* sounds/tt-* sounds/auth-* sounds/privacy-*; do \
  		if grep -q "^%`basename $$x`%" sounds.txt; then \
--			install $$x $(ASTVARLIBDIR)/sounds ; \
-+			$(BSD_INSTALL_DATA) $$x $(ASTVARLIBDIR)/sounds ; \
+-			install -m 644 $$x $(DESTDIR)$(ASTVARLIBDIR)/sounds ; \
++			$(BSD_INSTALL_DATA) $$x $(DESTDIR)$(ASTVARLIBDIR)/sounds ; \
  		else \
  			echo "No description for $$x"; \
  			exit 1; \
  		fi; \
  	done
--	mkdir -p $(ASTVARLIBDIR)/mohmp3
--	mkdir -p $(ASTVARLIBDIR)/images
-+	$(MKDIR) $(ASTVARLIBDIR)/mohmp3
-+	$(MKDIR) $(ASTVARLIBDIR)/images
+-	mkdir -p $(DESTDIR)$(ASTVARLIBDIR)/mohmp3
+-	mkdir -p $(DESTDIR)$(ASTVARLIBDIR)/images
++	$(MKDIR) $(DESTDIR)$(ASTVARLIBDIR)/mohmp3
++	$(MKDIR) $(DESTDIR)$(ASTVARLIBDIR)/images
  	for x in images/*.jpg; do \
--		install $$x $(ASTVARLIBDIR)/images ; \
-+		$(BSD_INSTALL_DATA) $$x $(ASTVARLIBDIR)/images ; \
+-		install -m 644 $$x $(DESTDIR)$(ASTVARLIBDIR)/images ; \
++		$(BSD_INSTALL_DATA) $$x $(DESTDIR)$(ASTVARLIBDIR)/images ; \
  	done
--	mkdir -p $(AGI_DIR)
-+	$(MKDIR) $(AGI_DIR)
+-	mkdir -p $(DESTDIR)$(AGI_DIR)
++	$(MKDIR) $(DESTDIR)$(AGI_DIR)
  
  update: 
  	@if [ -d CVS ]; then \
-@@ -248,98 +248,73 @@
+@@ -294,105 +292,74 @@
  	fi
  
  bininstall: all
--	mkdir -p $(MODULES_DIR)
--	mkdir -p $(ASTSBINDIR)
--	mkdir -p $(ASTETCDIR)
--	mkdir -p $(ASTBINDIR)
--	mkdir -p $(ASTSBINDIR)
--	mkdir -p $(ASTVARRUNDIR)
--	mkdir -p $(ASTSPOOLDIR)/voicemail
--	install -m 755 asterisk $(ASTSBINDIR)/
--	install -m 755 astgenkey $(ASTSBINDIR)/
--	install -m 755 safe_asterisk $(ASTSBINDIR)/
-+	$(MKDIR) $(MODULES_DIR)
-+	$(MKDIR) $(ASTSBINDIR)
-+	$(MKDIR) $(ASTETCDIR)
-+	$(MKDIR) $(ASTBINDIR)
-+	$(MKDIR) $(ASTSBINDIR)
-+	$(MKDIR) $(ASTVARRUNDIR)
-+	$(MKDIR) $(ASTSPOOLDIR)/voicemail
-+	${BSD_INSTALL_PROGRAM} asterisk $(ASTSBINDIR)/
-+	${BSD_INSTALL_SCRIPT} astgenkey $(ASTSBINDIR)/
-+	${BSD_INSTALL_SCRIPT} safe_asterisk $(ASTSBINDIR)/
+-	mkdir -p $(DESTDIR)$(MODULES_DIR)
+-	mkdir -p $(DESTDIR)$(ASTSBINDIR)
+-	mkdir -p $(DESTDIR)$(ASTETCDIR)
+-	mkdir -p $(DESTDIR)$(ASTBINDIR)
+-	mkdir -p $(DESTDIR)$(ASTSBINDIR)
+-	mkdir -p $(DESTDIR)$(ASTVARRUNDIR)
+-	mkdir -p $(DESTDIR)$(ASTSPOOLDIR)/voicemail
+-	install -m 755 asterisk $(DESTDIR)$(ASTSBINDIR)/
+-	install -m 755 contrib/scripts/astgenkey $(DESTDIR)$(ASTSBINDIR)/
++	$(MKDIR) $(DESTDIR)$(MODULES_DIR)
++	$(MKDIR) $(DESTDIR)$(ASTSBINDIR)
++	$(MKDIR) $(DESTDIR)$(ASTETCDIR)
++	$(MKDIR) $(DESTDIR)$(ASTBINDIR)
++	$(MKDIR) $(DESTDIR)$(ASTSBINDIR)
++	$(MKDIR) $(DESTDIR)$(ASTVARRUNDIR)
++	$(MKDIR) $(DESTDIR)$(ASTSPOOLDIR)/voicemail
++	$(BSD_INSTALL_PROGRAM) asterisk $(DESTDIR)$(ASTSBINDIR)/
++	$(BSD_INSTALL_SCRIPT) contrib/scripts/astgenkey $(DESTDIR)$(ASTSBINDIR)/
+ 	if [ ! -f $(DESTDIR)$(ASTSBINDIR)/safe_asterisk ]; then \
+-		install -m 755 contrib/scripts/safe_asterisk $(DESTDIR)$(ASTSBINDIR)/ ;\
++		$(BSD_INSTALL_SCRIPT) contrib/scripts/safe_asterisk $(DESTDIR)$(ASTSBINDIR)/ ;\
+ 	fi
  	for x in $(SUBDIRS); do $(MAKE) -C $$x install || exit 1 ; done
--	install -d $(ASTHEADERDIR)
--	install include/asterisk/*.h $(ASTHEADERDIR)
--	rm -f $(ASTVARLIBDIR)/sounds/vm
--	rm -f $(ASTVARLIBDIR)/sounds/voicemail
--	if [ ! -h $(ASTSPOOLDIR)/vm ] && [ -d $(ASTSPOOLDIR)/vm ]; then \
--		mv $(ASTSPOOLDIR)/vm $(ASTSPOOLDIR)/voicemail/default; \
+-	install -d $(DESTDIR)$(ASTHEADERDIR)
+-	install -m 644 include/asterisk/*.h $(DESTDIR)$(ASTHEADERDIR)
++	$(MKDIR) $(DESTDIR)$(ASTHEADERDIR)
++	$(BSD_INSTALL_DATA) include/asterisk/*.h $(DESTDIR)$(ASTHEADERDIR)
+ 	rm -f $(DESTDIR)$(ASTVARLIBDIR)/sounds/vm
+-	rm -f $(DESTDIR)$(ASTVARLIBDIR)/sounds/voicemail
+-	if [ ! -h $(DESTDIR)$(ASTSPOOLDIR)/vm ] && [ -d $(DESTDIR)$(ASTSPOOLDIR)/vm ]; then \
+-		mv $(DESTDIR)$(ASTSPOOLDIR)/vm $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default; \
 -	else \
--		mkdir -p $(ASTSPOOLDIR)/voicemail/default; \
--		rm -f $(ASTSPOOLDIR)/vm; \
+-		mkdir -p $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default; \
+-		rm -f $(DESTDIR)$(ASTSPOOLDIR)/vm; \
 -	fi
--	ln -s $(ASTSPOOLDIR)/voicemail/default $(ASTSPOOLDIR)/vm
--	rm -f $(MODULES_DIR)/chan_ixj.so
--	rm -f $(MODULES_DIR)/chan_tor.so
--	mkdir -p $(ASTVARLIBDIR)/sounds
--	mkdir -p $(ASTLOGDIR)/cdr-csv
--	mkdir -p $(ASTVARLIBDIR)/keys
--	install -m 644 keys/iaxtel.pub $(ASTVARLIBDIR)/keys
--	( cd $(ASTVARLIBDIR)/sounds  ; ln -s $(ASTSPOOLDIR)/vm . )
--	( cd $(ASTVARLIBDIR)/sounds  ; ln -s $(ASTSPOOLDIR)/voicemail . )
+-	ln -s $(ASTSPOOLDIR)/voicemail/default $(DESTDIR)$(ASTSPOOLDIR)/vm
+-	rm -f $(DESTDIR)$(MODULES_DIR)/chan_ixj.so
+-	rm -f $(DESTDIR)$(MODULES_DIR)/chan_tor.so
+-	rm -f $(DESTDIR)$(MODULES_DIR)/cdr_mysql.so
+-	rm -f $(DESTDIR)$(MODULES_DIR)/cdr_unixodbc.so
+-	rm -f $(DESTDIR)$(MODULES_DIR)/codec_mp3_d.so
+-	rm -f $(DESTDIR)$(MODULES_DIR)/format_mp3.so
+-	rm -f $(DESTDIR)$(MODULES_DIR)/app_voicemail2.so
+-	mkdir -p $(DESTDIR)$(ASTVARLIBDIR)/sounds
+-	mkdir -p $(DESTDIR)$(ASTLOGDIR)/cdr-csv
+-	mkdir -p $(DESTDIR)$(ASTVARLIBDIR)/keys
+-	install -m 644 keys/iaxtel.pub $(DESTDIR)$(ASTVARLIBDIR)/keys
+-	( cd $(DESTDIR)$(ASTVARLIBDIR)/sounds  ; ln -s $(ASTSPOOLDIR)/vm . )
+-	( cd $(DESTDIR)$(ASTVARLIBDIR)/sounds  ; ln -s $(ASTSPOOLDIR)/voicemail . )
 -	@echo " +---- Asterisk Installation Complete -------+"  
 -	@echo " +                                           +"
 -	@echo " +    YOU MUST READ THE SECURITY DOCUMENT    +"
@@ -216,17 +225,13 @@ $FreeBSD$
 -	@echo " + **Note** This requires that you have      +"
 -	@echo " + doxygen installed on your local system    +"
 -	@echo " +-------------------------------------------+"
-+	$(MKDIR) $(ASTHEADERDIR)
-+	${BSD_INSTALL_DATA} include/asterisk/*.h $(ASTHEADERDIR)
-+	$(MKDIR) $(ASTSPOOLDIR)/voicemail/default
-+	rm -f $(ASTSPOOLDIR)/vm
-+	ln -sf $(ASTSPOOLDIR)/voicemail/default $(ASTSPOOLDIR)/vm
-+	$(MKDIR) $(ASTVARLIBDIR)/sounds
-+	$(MKDIR) $(ASTLOGDIR)/cdr-csv
-+	$(MKDIR) $(ASTVARLIBDIR)/keys
-+	${BSD_INSTALL_DATA} keys/iaxtel.pub $(ASTVARLIBDIR)/keys
-+	( cd $(ASTVARLIBDIR)/sounds; rm -f vm; ln -sf $(ASTSPOOLDIR)/vm . )
-+	( cd $(ASTVARLIBDIR)/sounds; rm -f voicemail; ln -sf $(ASTSPOOLDIR)/voicemail . )
++	ln -sf $(ASTSPOOLDIR)/voicemail/default $(DESTDIR)$(ASTSPOOLDIR)/vm
++	$(MKDIR) $(DESTDIR)$(ASTVARLIBDIR)/sounds
++	$(MKDIR) $(DESTDIR)$(ASTLOGDIR)/cdr-csv
++	$(MKDIR) $(DESTDIR)$(ASTVARLIBDIR)/keys
++	$(BSD_INSTALL_DATA) keys/iaxtel.pub $(DESTDIR)$(ASTVARLIBDIR)/keys
++	( cd $(DESTDIR)$(ASTVARLIBDIR)/sounds; ln -sf $(ASTSPOOLDIR)/vm . )
++	( cd $(DESTDIR)$(ASTVARLIBDIR)/sounds; ln -sf $(ASTSPOOLDIR)/voicemail . )
  
 -install: all datafiles bininstall
 +install: all datafiles bininstall samples
@@ -234,63 +239,63 @@ $FreeBSD$
  upgrade: all bininstall
  
  adsi: all
--	mkdir -p $(ASTETCDIR)
-+	$(MKDIR) $(ASTETCDIR)
+-	mkdir -p $(DESTDIR)$(ASTETCDIR)
++	$(MKDIR) $(DESTDIR)$(ASTETCDIR)
  	for x in configs/*.adsi; do \
-+		$(BSD_INSTALL_DATA) $$x $(ASTETCDIR)/`basename $$x`-dist; \
- 		if ! [ -f $(ASTETCDIRX)/$$x ]; then \
--			install -m 644 $$x $(ASTETCDIR)/`basename $$x` ; \
-+			$(BSD_INSTALL_DATA) $$x $(ASTETCDIR)/`basename $$x` ; \
++		$(BSD_INSTALL_DATA) $$x $(DESTDIR)$(ASTETCDIR)/`basename $$x`-dist; \
+ 		if ! [ -f $(DESTDIR)$(ASTETCDIRX)/$$x ]; then \
+-			install -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`basename $$x` ; \
++			$(BSD_INSTALL_DATA) $$x $(DESTDIR)$(ASTETCDIR)/`basename $$x` ; \
  		fi ; \
  	done
  
  samples: all datafiles adsi
--	mkdir -p $(ASTETCDIR)
+-	mkdir -p $(DESTDIR)$(ASTETCDIR)
 -	for x in configs/*.sample; do \
--		if [ -f $(ASTETCDIR)/`basename $$x .sample` ]; then \
--			mv -f $(ASTETCDIR)/`basename $$x .sample` $(ASTETCDIR)/`basename $$x .sample`.old ; \
-+	$(MKDIR) $(ASTETCDIR)
+-		if [ -f $(DESTDIR)$(ASTETCDIR)/`basename $$x .sample` ]; then \
+-			mv -f $(DESTDIR)$(ASTETCDIR)/`basename $$x .sample` $(DESTDIR)$(ASTETCDIR)/`basename $$x .sample`.old ; \
++	$(MKDIR) $(DESTDIR)$(ASTETCDIR)
 +	for x in configs/*.sample channels/h323/*.sample; do \
-+		$(BSD_INSTALL_DATA) $$x $(ASTETCDIR)/`basename $$x .sample`-dist ;\
-+		if ! [ -f $(ASTETCDIR)/`basename $$x .sample` ]; then \
-+			$(BSD_INSTALL_DATA) $$x $(ASTETCDIR)/`basename $$x .sample` ;\
++		$(BSD_INSTALL_DATA) $$x $(DESTDIR)$(ASTETCDIR)/`basename $$x .sample`-dist;\
++		if ! [ -f $(DESTDIR)$(ASTETCDIR)/`basename $$x .sample` ]; then \
++			$(BSD_INSTALL_DATA) $$x $(DESTDIR)$(ASTETCDIR)/`basename $$x .sample` ;\
  		fi ; \
--		install $$x $(ASTETCDIR)/`basename $$x .sample` ;\
+-		install -m 644 $$x $(DESTDIR)$(ASTETCDIR)/`basename $$x .sample` ;\
  	done
--	echo "[directories]" > $(ASTETCDIR)/asterisk.conf
--	echo "astetcdir => $(ASTETCDIR)" >> $(ASTETCDIR)/asterisk.conf
--	echo "astmoddir => $(MODULES_DIR)" >> $(ASTETCDIR)/asterisk.conf
--	echo "astvarlibdir => $(ASTVARLIBDIR)" >> $(ASTETCDIR)/asterisk.conf
--	echo "astagidir => $(AGI_DIR)" >> $(ASTETCDIR)/asterisk.conf
--	echo "astspooldir => $(ASTSPOOLDIR)" >> $(ASTETCDIR)/asterisk.conf
--	echo "astrundir => $(ASTVARRUNDIR)" >> $(ASTETCDIR)/asterisk.conf
--	echo "astlogdir => $(ASTLOGDIR)" >> $(ASTETCDIR)/asterisk.conf
-+	echo "[directories]" > $(ASTETCDIR)/asterisk.conf-dist
-+	echo "astetcdir => $(ASTETCDIR)" >> $(ASTETCDIR)/asterisk.conf-dist
-+	echo "astmoddir => $(MODULES_DIR)" >> $(ASTETCDIR)/asterisk.conf-dist
-+	echo "astvarlibdir => $(ASTVARLIBDIR)" >> $(ASTETCDIR)/asterisk.conf-dist
-+	echo "astagidir => $(AGI_DIR)" >> $(ASTETCDIR)/asterisk.conf-dist
-+	echo "astspooldir => $(ASTSPOOLDIR)" >> $(ASTETCDIR)/asterisk.conf-dist
-+	echo "astrundir => $(ASTVARRUNDIR)" >> $(ASTETCDIR)/asterisk.conf-dist
-+	echo "astlogdir => $(ASTLOGDIR)" >> $(ASTETCDIR)/asterisk.conf-dist
-+	if ! [ -f $(ASTETCDIR)/asterisk.conf ]; then \
-+		$(BSD_INSTALL_DATA) $(ASTETCDIR)/asterisk.conf-dist $(ASTETCDIR)/asterisk.conf; \
+-	echo "[directories]" > $(DESTDIR)$(ASTETCDIR)/asterisk.conf
+-	echo "astetcdir => $(ASTETCDIR)" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf
+-	echo "astmoddir => $(MODULES_DIR)" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf
+-	echo "astvarlibdir => $(ASTVARLIBDIR)" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf
+-	echo "astagidir => $(AGI_DIR)" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf
+-	echo "astspooldir => $(ASTSPOOLDIR)" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf
+-	echo "astrundir => $(ASTVARRUNDIR)" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf
+-	echo "astlogdir => $(ASTLOGDIR)" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf
++	echo "[directories]" > $(DESTDIR)$(ASTETCDIR)/asterisk.conf-dist
++	echo "astetcdir => $(ASTETCDIR)" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf-dist
++	echo "astmoddir => $(MODULES_DIR)" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf-dist
++	echo "astvarlibdir => $(ASTVARLIBDIR)" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf-dist
++	echo "astagidir => $(AGI_DIR)" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf-dist
++	echo "astspooldir => $(ASTSPOOLDIR)" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf-dist
++	echo "astrundir => $(ASTVARRUNDIR)" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf-dist
++	echo "astlogdir => $(ASTLOGDIR)" >> $(DESTDIR)$(ASTETCDIR)/asterisk.conf-dist
++	if ! [ -f $(DESTDIR)$(ASTETCDIR)/asterisk.conf ]; then \
++		$(BSD_INSTALL_DATA) $(DESTDIR)$(ASTETCDIR)/asterisk.conf-dist $(DESTDIR)$(ASTETCDIR)/asterisk.conf; \
 +	fi
  	for x in sounds/demo-*; do \
  		if grep -q "^%`basename $$x`%" sounds.txt; then \
--			install $$x $(ASTVARLIBDIR)/sounds ; \
-+			$(BSD_INSTALL_DATA) $$x $(ASTVARLIBDIR)/sounds ; \
+-			install -m 644 $$x $(DESTDIR)$(ASTVARLIBDIR)/sounds ; \
++			$(BSD_INSTALL_DATA) $$x $(DESTDIR)$(ASTVARLIBDIR)/sounds ; \
  		else \
  			echo "No description for $$x"; \
  			exit 1; \
  		fi; \
  	done
  	for x in sounds/*.mp3; do \
--		install $$x $(ASTVARLIBDIR)/mohmp3 ; \
-+		$(BSD_INSTALL_DATA) $$x $(ASTVARLIBDIR)/mohmp3 ; \
+-		install -m 644 $$x $(DESTDIR)$(ASTVARLIBDIR)/mohmp3 ; \
++		$(BSD_INSTALL_DATA) $$x $(DESTDIR)$(ASTVARLIBDIR)/mohmp3 ; \
  	done
--	mkdir -p $(ASTSPOOLDIR)/voicemail/default/1234/INBOX
-+	$(MKDIR) $(ASTSPOOLDIR)/voicemail/default/1234/INBOX
- 	:> $(ASTVARLIBDIR)/sounds/voicemail/default/1234/unavail.gsm
+-	mkdir -p $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/INBOX
++	$(MKDIR) $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/INBOX
+ 	:> $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/unavail.gsm
  	for x in vm-theperson digits/1 digits/2 digits/3 digits/4 vm-isunavail; do \
- 		cat $(ASTVARLIBDIR)/sounds/$$x.gsm >> $(ASTVARLIBDIR)/sounds/voicemail/default/1234/unavail.gsm ; \
+ 		cat $(DESTDIR)$(ASTVARLIBDIR)/sounds/$$x.gsm >> $(DESTDIR)$(ASTSPOOLDIR)/voicemail/default/1234/unavail.gsm ; \

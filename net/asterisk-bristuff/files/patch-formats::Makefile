@@ -1,14 +1,23 @@
 
 $FreeBSD$
 
---- formats/Makefile	2003/10/17 09:41:29	1.1
-+++ formats/Makefile	2003/10/17 09:41:43
+--- formats/Makefile.orig	Tue Nov  4 04:40:09 2003
++++ formats/Makefile	Fri Jan 30 01:47:34 2004
+@@ -18,7 +18,7 @@
+ #
+ # G723 simple frame is depricated
+ #
+-#FORMAT_LIBS+=format_g723.so
++FORMAT_LIBS+=format_g723_1.so
+ 
+ GSMLIB=../codecs/gsm/lib/libgsm.a
+ 
 @@ -40,7 +40,7 @@
- 	$(CC) -shared -Xlinker -x -o $@ $< -lm
+ 	$(CC) $(SOLINK) -o $@ $< -lm
  
  install: all
--	for x in $(FORMAT_LIBS); do $(INSTALL) -m 755 $$x $(MODULES_DIR) ; done
-+	for x in $(FORMAT_LIBS); do $(BSD_INSTALL_PROGRAM) $$x $(MODULES_DIR) ; done
+-	for x in $(FORMAT_LIBS); do $(INSTALL) -m 755 $$x $(DESTDIR)$(MODULES_DIR) ; done
++	for x in $(FORMAT_LIBS); do $(BSD_INSTALL_PROGRAM) $$x $(DESTDIR)$(MODULES_DIR) ; done
  
  depend: .depend
  

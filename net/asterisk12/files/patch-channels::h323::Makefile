@@ -1,18 +1,9 @@
 
 $FreeBSD$
 
---- channels/h323/Makefile.orig	Wed Aug 27 19:05:14 2003
-+++ channels/h323/Makefile	Sun Oct 19 10:49:58 2003
-@@ -16,6 +16,8 @@
- ASTETCDIR=/etc/asterisk
- endif
- 
-+CXX?=g++
-+
- # Uncomment if u want to attempt to include the G.729 stuff
- # This is a quick fix to work around the missing H323Capability
- # in Open H.323. As of Open H.323 1.12.0 the H323Capability for
-@@ -25,7 +27,7 @@
+--- channels/h323/Makefile.orig	Sun Jan 11 04:22:32 2004
++++ channels/h323/Makefile	Fri Jan 30 01:47:34 2004
+@@ -19,7 +19,7 @@
  #
  # This needs to be updated to deal with more than just little endian machines
  #
@@ -21,7 +12,7 @@ $FreeBSD$
  
  
  #############################################
-@@ -33,13 +35,13 @@
+@@ -27,38 +27,39 @@
  # Only change below if you know WTF your doing
  #
  CFLAGS += -DNDEBUG -DDO_CRASH -DDEBUG_THREADS
@@ -38,8 +29,6 @@ $FreeBSD$
  
  
  all:   	libchanh323.a
-@@ -61,26 +63,27 @@
-  
  
  samples: 
 -	if [ -f $(ASTETCDIR)/h323.conf ]; then \

@@ -1,32 +1,36 @@
 
 $FreeBSD$
 
---- apps/Makefile.orig	Thu Sep  4 07:40:37 2003
-+++ apps/Makefile	Fri Oct 17 12:40:46 2003
-@@ -15,15 +15,8 @@
- 
- MLFLAGS=
- ifeq ($(USE_MYSQL_VM_INTERFACE),1)
--CFLAGS+=-DUSEMYSQLVM
--CFLAGS+=$(shell if [ -d /usr/local/mysql/include ]; then echo "-I/usr/local/mysql/include"; fi)
--CFLAGS+=$(shell if [ -d /usr/include/mysql ]; then echo "-I/usr/include/mysql"; fi)
--CFLAGS+=$(shell if [ -d /usr/local/include/mysql ]; then echo "-I/usr/local/include/mysql"; fi)
--CFLAGS+=$(shell if [ -d /opt/mysql/include/mysql ]; then echo "-I/opt/mysql/include/mysql"; fi)
--MLFLAGS+=$(shell if [ -d /usr/lib/mysql ]; then echo "-L/usr/lib/mysql"; fi)
--MLFLAGS+=$(shell if [ -d /usr/local/mysql/lib ]; then echo "-L/usr/local/mysql/lib"; fi)
--MLFLAGS+=$(shell if [ -d /usr/local/lib/mysql ]; then echo "-L/usr/local/lib/mysql"; fi)
--MLFLAGS+=$(shell if [ -d /opt/mysql/lib/mysql ]; then echo "-L/opt/mysql/lib/mysql"; fi)
-+CFLAGS+=-DUSEMYSQLVM -I${LOCALBASE}/include/mysql
-+MLFLAGS+=-L${LOCALBASE}/lib/mysql
- endif
- 
- #APPS=app_dial.so app_playback.so app_directory.so app_intercom.so app_mp3.so 
-@@ -57,7 +50,7 @@
- 	$(CC) -shared -Xlinker -x -o $@ $< -ltonezone
+--- apps/Makefile.orig	Mon Jan 12 03:56:38 2004
++++ apps/Makefile	Fri Jan 30 01:47:34 2004
+@@ -59,17 +59,17 @@
+ 	$(CC) $(SOLINK) -o $@ $< -ltonezone
  
  install: all
--	for x in $(APPS); do $(INSTALL) -m 755 $$x $(MODULES_DIR) ; done
-+	for x in $(APPS); do $(BSD_INSTALL_PROGRAM) $$x $(MODULES_DIR) ; done
+-	for x in $(APPS); do $(INSTALL) -m 755 $$x $(DESTDIR)$(MODULES_DIR) ; done
++	for x in $(APPS); do $(BSD_INSTALL_PROGRAM) $$x $(DESTDIR)$(MODULES_DIR) ; done
  
  app_todd.o: app_todd.c
- 	gcc -pipe -O6 -g  -Iinclude -I../include -D_REENTRANT -march=i586 -DDO_CRASH -c -o  app_todd.o app_todd.c
+-	gcc -pipe -O6 -g  -Iinclude -I../include -D_REENTRANT -march=i586 -DDO_CRASH -c -o  app_todd.o app_todd.c
++	$(CC) $(CFLAGS) -Iinclude -I../include -D_REENTRANT -DDO_CRASH -c -o  app_todd.o app_todd.c
+ 
+ app_todd.so: app_todd.o
+-	$(CC) $(SOLINK) -o $@ $< -L/usr/local/ssl/lib -lssl -lcrypto
++	$(CC) $(SOLINK) -o $@ $< -lssl -lcrypto
+ 
+ app_voicemail.so : app_voicemail.o
+ ifeq ($(USE_MYSQL_VM_INTERFACE),1)
+-	$(CC) $(SOLINK) -o $@ $(MLFLAGS) $< -L/usr/lib/mysql -lmysqlclient -lz
++	$(CC) $(SOLINK) -o $@ $(MLFLAGS) $< -L$(LOCALBASE)/lib/mysql -lmysqlclient -lz
+ else
+ ifeq ($(USE_POSTGRES_VM_INTERFACE),1)
+ 	$(CC) $(SOLINK) -o $@ $(MLFLAGS) $< -lpq
+@@ -88,7 +88,7 @@
+ 	$(CC) $(SOLINK) -o $@ $< -lodbc
+ 
+ look:	look.c
+-	gcc -pipe -O6 -g look.c -o look -lncurses
++	$(CC) $(CFLAGS) look.c -o look -lncurses
+ 
+ ifneq ($(wildcard .depend),)
+ include .depend

@@ -1,10 +1,15 @@
 
 $FreeBSD$
 
---- channels/Makefile.orig	Tue Aug 19 19:42:30 2003
-+++ channels/Makefile	Sun Oct 19 11:08:13 2003
-@@ -25,7 +25,7 @@
+--- channels/Makefile.orig	Wed Dec 10 04:19:22 2003
++++ channels/Makefile	Fri Jan 30 01:47:34 2004
+@@ -26,12 +26,10 @@
+ #
  #CHANNEL_LIBS+=chan_vofr
+ 
+-ifneq (${OSARCH},Darwin)
+ CHANNEL_LIBS+=chan_oss.so
+-endif
  
  CHANNEL_LIBS+=$(shell [ -f /usr/include/linux/ixjuser.h ] && echo chan_phone.so)
 -CHANNEL_LIBS+=$(shell [ -f h323/libchanh323.a ] && echo chan_h323.so)
@@ -12,23 +17,26 @@ $FreeBSD$
  
  CFLAGS+=-Wno-missing-prototypes -Wno-missing-declarations
  CFLAGS+=$(shell [ ! -f /usr/include/linux/if_wanpipe.h ] && echo " -DOLD_SANGOMA_API")
-@@ -95,7 +95,7 @@
- ifeq (${OSARCH},Linux)
- 	$(CC) -shared -Xlinker -x -o $@ chan_iax2.o iax2-parser.o
- else
--	$(CC) -shared -Xlinker -x -o $@ chan_iax2.o iax2-parser.o -lossaudio
-+	$(CC) -shared -Xlinker -x -o $@ chan_iax2.o iax2-parser.o
- endif
+@@ -99,10 +97,8 @@
  
- chan_zap.o: $(CHANZAP)
-@@ -119,15 +119,17 @@
+ chan_oss.o: chan_oss.c  busy.h ringtone.h
+ 
+-ifeq (${OSARCH},OpenBSD)
+ chan_oss.so: chan_oss.o
+-	$(CC) $(SOLINK) -o $@ chan_oss.o -lossaudio
+-endif
++	$(CC) $(SOLINK) -o $@ chan_oss.o
+ 
+ chan_iax2.so: chan_iax2.o iax2-parser.o
+ ifeq ($(USE_MYSQL_FRIENDS),1)
+@@ -139,15 +135,17 @@
  chan_vpb.so: chan_vpb.o
- 	 $(CXX) -shared -Xlinker -x -o $@ $< -lvpb -lpthread -lm -ldl
+ 	 $(CXX) $(SOLINK) -o $@ $< -lvpb -lpthread -lm -ldl
  
 -chan_h323.so: chan_h323.o h323/libchanh323.a
--	$(CC) -shared -Xlinker -x -o $@ $< h323/libchanh323.a -L$(PWLIBDIR)/lib  -lpt_linux_x86_r -L$(OPENH323DIR)/lib -lh323_linux_x86_r -L/usr/lib -lpthread -ldl -lcrypto -lssl -lexpat
+-	$(CC) $(SOLINK) -o $@ $< h323/libchanh323.a -L$(PWLIBDIR)/lib  -lpt_linux_x86_r -L$(OPENH323DIR)/lib -lh323_linux_x86_r -L/usr/lib -lpthread -ldl -lcrypto -lssl -lexpat
 +chan_h323.so: chan_h323.o h323/ast_h323.o
-+	$(CXX) -shared -Xlinker -x -o $@ $< h323/ast_h323.o -L$(OPENH323DIR)/lib -lh323_FreeBSD_x86_r_s -L$(PWLIBDIR)/lib  -lpt_FreeBSD_x86_r_s -lcrypto -lssl -L$(LOCALBASE)/lib -lexpat -llber -lldap -lldap_r
++	$(CC) $(SOLINK) -o $@ $< h323/ast_h323.o -L$(OPENH323DIR)/lib -lh323_FreeBSD_x86_r_s -L$(PWLIBDIR)/lib  -lpt_FreeBSD_x86_r_s -lcrypto -lssl -L$(LOCALBASE)/lib -lexpat -llber -lldap -lldap_r
  
 +h323/ast_h323.o:
 +	$(MAKE) -C h323 ast_h323.o
@@ -37,8 +45,8 @@ $FreeBSD$
  #	$(CC) -rdynamic -shared -Xlinker -x -o $@ $<
  
  install: all
--	for x in $(CHANNEL_LIBS); do $(INSTALL) -m 755 $$x $(MODULES_DIR) ; done
-+	for x in $(CHANNEL_LIBS); do $(BSD_INSTALL_PROGRAM) $$x $(MODULES_DIR) ; done
+-	for x in $(CHANNEL_LIBS); do $(INSTALL) -m 755 $$x $(DESTDIR)$(MODULES_DIR) ; done
++	for x in $(CHANNEL_LIBS); do $(BSD_INSTALL_PROGRAM) $$x $(DESTDIR)$(MODULES_DIR) ; done
  
  depend: .depend
  
