@@ -3,7 +3,7 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.26 1997/01/23 03:35:37 jmz Exp $
+# $Id: Makefile,v 1.27 1997/02/10 02:08:44 jmz Exp $
 #
 VERSION=	96.12
 DISTNAME=	latex
@@ -19,7 +19,7 @@ RUN_DEPENDS=	tex:${PORTSDIR}/print/tex
 
 IGNOREFILES=	${DISTFILES}
 
-#other equivalent sites: ftp.shsu.edu ftp.dante.de
+#other equivalent sites: ftp.cdrom.com ftp.dante.de
 CTAN?=		ftp.tex.ac.uk
 
 
