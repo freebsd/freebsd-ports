@@ -35,4 +35,10 @@ LIB_DEPENDS+=		gnutls.8:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--without-ssl
 .endif
 
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "Loudmouth has the following tunable option(s):"
+	@${ECHO_MSG} "	WITH_GNUTLS	Enable SSL (via GnuTLS) support"
+	@${ECHO_MSG} ""
+
 .include <bsd.port.post.mk>
