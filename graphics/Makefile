@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.22 1996/07/10 05:45:31 asami Exp $
+# $Id: Makefile,v 1.23 1996/08/01 20:47:04 erich Exp $
 #
 
     SUBDIR += ImageMagick
@@ -13,6 +13,7 @@
     SUBDIR += mpegedit
     SUBDIR += mpeg_encode
     SUBDIR += mpeg_play
+    SUBDIR += mpeg_stat
     SUBDIR += mplex
     SUBDIR += netpbm
     SUBDIR += pixmap
