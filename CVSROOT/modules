@@ -2851,6 +2851,7 @@ kdoc		ports/textproc/kdoc
 kdreamsite	ports/www/kdreamsite
 kdump		src/usr.bin/kdump
 kelp		ports/devel/kelp
+kenny		ports/misc/kenny
 kenv		src/usr.bin/kenv
 kerberos	src/eBones/kerberos
 kerberosIV	src/kerberosIV
