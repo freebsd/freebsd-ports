@@ -1,6 +1,0 @@
-@comment $NetBSD: PLIST,v 1.2 1998/08/29 04:24:29 mycroft Exp $
-bin/xmess
-lib/xmess/spacewar.zip
-share/xmess/xmessrc
-@dirrm lib/xmess
-@dirrm share/xmess

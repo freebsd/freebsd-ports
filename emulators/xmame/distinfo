@@ -1,1 +1,6 @@
-MD5 (xmame-0.37b11.2.tar.bz2) = 723caaa67908860b952f9df6e3744b05
+MD5 (xmame/xmame-0.37b12.1.tgz) = 8f08ef945ec49872397862d99676690f
+MD5 (xmame/cheat.zip) = dc380436c04780950cee07d3e31bfb0b
+MD5 (xmame/history.zip) = 69da5c33e6a78092c6cd75cbeb737c6a
+MD5 (xmame/hsdat7.zip) = 9e4a7e36448895f13128a675327e34e4
+MD5 (xmame/xmame-0.37b12.1-cps2-20010309.patch.gz) = 140c5891d70be13aef79d6702ee171ae
+MD5 (xmame/xmame-0.37b12.1-wpcmame-6.0.patch.gz) = c1bab845806bb13a3e24375701cd4a05
