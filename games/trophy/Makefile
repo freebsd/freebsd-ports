@@ -25,6 +25,12 @@ BUILD_WRKSRC=		${WRKSRC}/trophy
 MAKE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 			PTHREAD_LIBS=${PTHREAD_LIBS}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=			"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-extract:
 	@${FIND} ${BUILD_WRKSRC}/resources -name .cvsignore -exec ${RM} -f {} \;
 
@@ -45,4 +51,4 @@ do-install:
 		${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

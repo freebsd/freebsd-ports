@@ -32,6 +32,12 @@ MLINKS=	tvp.6 xprez.6 - aprez.6 - prez.6
 
 DOCFILES=	aprez.txt libass.txt president.txt prez.txt xprez.txt
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/tvp
@@ -44,4 +50,4 @@ post-install:
 		${PREFIX}/man/man6/tvp.6
 	${STRIP_CMD} ${PREFIX}/bin/aprez ${PREFIX}/bin/prez ${PREFIX}/bin/xpwish
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

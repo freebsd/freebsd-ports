@@ -33,6 +33,12 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 CPPFLAGS=	-I${LOCALBASE}/include -I${X11BASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib -L${X11BASE}/lib ${PTHREAD_LIBS}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-extract:
 	@${FIND} ${WRKSRC} -type l -delete
 	@${FIND} ${WRKSRC} -name "*.o" -delete
@@ -44,4 +50,4 @@ post-install:
 		${TAR} -C ${PREFIX}/share/gnome/Truevision --unlink -xf -
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/gnome/Truevision
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
