@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	camediaplay
-PORTVERSION=	19991202
+PORTVERSION=	20010211
 CATEGORIES=	graphics
 MASTER_SITES=   ftp://ftp.itojun.org/pub/digi-cam/C-400L/unix/ \
 		ftp://ftp.digipri.co.jp/pub/free-software/Olympus/C-400L/unix/
@@ -18,11 +18,6 @@ HAS_CONFIGURE=	yes
 MAN1=	camediaplay.1
 
 DOC=	README.english README.japanese PROTOCOL
-
-pre-fetch:
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	${SH} pkg-install
-.endif
 
 post-install:
 	${MKDIR} ${PREFIX}/share/doc/camediaplay
