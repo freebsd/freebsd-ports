@@ -35,6 +35,7 @@
     SUBDIR += gkrellm
     SUBDIR += glload
     SUBDIR += gnomecontrolcenter
+    SUBDIR += gnomefind
     SUBDIR += gpart
     SUBDIR += gtar
     SUBDIR += gtop
