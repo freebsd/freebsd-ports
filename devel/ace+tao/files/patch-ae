@@ -1,14 +1,5 @@
 --- ace/OS_NS_time.h.orig	Thu Jun 11 23:14:04 1970
 +++ ace/OS_NS_time.h	Mon Dec  6 02:46:06 2004
-@@ -4,7 +4,7 @@
- /**
-  *  @file   OS_NS_time.h
-  *
-- *  OS_NS_time.h,v 1.8 2004/06/20 16:51:08 jtc Exp
-+ *  $Id: OS_NS_time.h,v 1.12 2004/11/12 00:03:08 gmaxey Exp $
-  *
-  *  @author Douglas C. Schmidt <schmidt@cs.wustl.edu>
-  *  @author Jesper S. M|ller<stophph@diku.dk>
 @@ -25,6 +25,7 @@
  #  pragma once
  # endif /* ACE_LACKS_PRAGMA_ONCE */
