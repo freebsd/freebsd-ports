@@ -3,12 +3,14 @@
 # Date created:			Oct 15 1998
 # Whom:				Vanilla Pooh Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/10/19 14:36:42 vanilla Exp $
+# $Id: Makefile,v 1.2 1998/10/20 17:49:14 vanilla Exp $
 #
 
 DISTNAME=	gtkicq-0.56
 CATEGORIES=	net
-MASTER_SITES=	ftp://ncis.ml.org/pub/gtkicq/
+MASTER_SITES=	ftp://ftp.bse.bg/pub/Unix/icq/ \
+		ftp://ftp.infodrom.north.de/pub/unix/gtk-etc/apps/gtkicq/ \	
+		ftp://ftp.rnd.runnet.ru/pub/unix/GUI_Toolkits/gtk/
 
 MAINTAINER=	Nakai@technologist.com
 
