@@ -5,6 +5,7 @@
     SUBDIR += dvdrip
     SUBDIR += ffmpeg
     SUBDIR += ffmpeg045
+    SUBDIR += goggles
     SUBDIR += gstreamer
     SUBDIR += gstreamer-player
     SUBDIR += gstreamer-plugins
