@@ -5,8 +5,6 @@ bin/hexgplc
 bin/ma2asm
 bin/pl2wam
 bin/wam2ma
-gprolog-%%GPROLOG_VER%%
-gprolog-%%GPROLOG_VER%%/bin
 gprolog-%%GPROLOG_VER%%/bin/gplc
 gprolog-%%GPROLOG_VER%%/bin/hexgplc
 gprolog-%%GPROLOG_VER%%/bin/gprolog
@@ -14,10 +12,8 @@ gprolog-%%GPROLOG_VER%%/bin/pl2wam
 gprolog-%%GPROLOG_VER%%/bin/wam2ma
 gprolog-%%GPROLOG_VER%%/bin/ma2asm
 gprolog-%%GPROLOG_VER%%/bin/fd2c
-gprolog-%%GPROLOG_VER%%/include
 gprolog-%%GPROLOG_VER%%/include/gprolog.h
 gprolog-%%GPROLOG_VER%%/include/fd_to_c.h
-gprolog-%%GPROLOG_VER%%/lib
 gprolog-%%GPROLOG_VER%%/lib/obj_begin.o
 gprolog-%%GPROLOG_VER%%/lib/obj_end.o
 gprolog-%%GPROLOG_VER%%/lib/top_level.o
@@ -32,7 +28,6 @@ gprolog-%%GPROLOG_VER%%/COPYING
 gprolog-%%GPROLOG_VER%%/VERSION
 gprolog-%%GPROLOG_VER%%/NEWS
 gprolog-%%GPROLOG_VER%%/ChangeLog
-gprolog-%%GPROLOG_VER%%/doc
 gprolog-%%GPROLOG_VER%%/doc/manual.dvi
 gprolog-%%GPROLOG_VER%%/doc/pl-bips.dvi
 gprolog-%%GPROLOG_VER%%/doc/manual.ps
@@ -40,7 +35,6 @@ gprolog-%%GPROLOG_VER%%/doc/compil-scheme.pdf
 gprolog-%%GPROLOG_VER%%/doc/debug-box.pdf
 gprolog-%%GPROLOG_VER%%/doc/manual.pdf
 gprolog-%%GPROLOG_VER%%/doc/manual.chm
-gprolog-%%GPROLOG_VER%%/doc/Html
 gprolog-%%GPROLOG_VER%%/doc/Html/index.html
 gprolog-%%GPROLOG_VER%%/doc/Html/manual-idx.html
 gprolog-%%GPROLOG_VER%%/doc/Html/manual001.html
@@ -119,7 +113,6 @@ gprolog-%%GPROLOG_VER%%/doc/Html/contents_motif.gif
 gprolog-%%GPROLOG_VER%%/doc/Html/debug-box.gif
 gprolog-%%GPROLOG_VER%%/doc/Html/next_motif.gif
 gprolog-%%GPROLOG_VER%%/doc/Html/previous_motif.gif
-gprolog-%%GPROLOG_VER%%/ExamplesPl
 gprolog-%%GPROLOG_VER%%/ExamplesPl/Makefile
 gprolog-%%GPROLOG_VER%%/ExamplesPl/README
 gprolog-%%GPROLOG_VER%%/ExamplesPl/PROGS
@@ -145,14 +138,12 @@ gprolog-%%GPROLOG_VER%%/ExamplesPl/sendmore.pl
 gprolog-%%GPROLOG_VER%%/ExamplesPl/tak.pl
 gprolog-%%GPROLOG_VER%%/ExamplesPl/tak_gvar.pl
 gprolog-%%GPROLOG_VER%%/ExamplesPl/zebra.pl
-gprolog-%%GPROLOG_VER%%/ExamplesC
 gprolog-%%GPROLOG_VER%%/ExamplesC/Makefile
 gprolog-%%GPROLOG_VER%%/ExamplesC/README
 gprolog-%%GPROLOG_VER%%/ExamplesC/examp.pl
 gprolog-%%GPROLOG_VER%%/ExamplesC/new_main.pl
 gprolog-%%GPROLOG_VER%%/ExamplesC/examp_c.c
 gprolog-%%GPROLOG_VER%%/ExamplesC/new_main_c.c
-gprolog-%%GPROLOG_VER%%/ExamplesFD
 gprolog-%%GPROLOG_VER%%/ExamplesFD/Makefile
 gprolog-%%GPROLOG_VER%%/ExamplesFD/alpha.pl
 gprolog-%%GPROLOG_VER%%/ExamplesFD/array.pl
