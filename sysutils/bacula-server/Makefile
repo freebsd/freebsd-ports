@@ -36,6 +36,11 @@ CONFIGURE_ARGS=	--with-tcp-wrappers=/usr/lib \
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
+OPTIONS=	CLIENT_ONLY "Build bacule file daemon only" off
+OPTIONS+=	MYSQL "Build for MySQL database instead of SqLite" off
+
+.include <bsd.port.pre.mk>
+
 # Default is full build with sqlite
 .if defined(WITH_CLIENT_ONLY)
 CONFIGURE_ARGS+=	--enable-client-only
@@ -54,8 +59,6 @@ PLIST_SUB+=	DBTYPE=${DBTYPE}
 PLIST_SUB+=	SERVER=""
 .endif
 
-.include <bsd.port.pre.mk>
-
 PORTDOCS=	bacula.pdf html-manual/*
 
 pre-everything::
@@ -65,7 +68,7 @@ pre-everything::
 	@${ECHO_MSG} "===> of data at the end of an tape. This is corrected in FreeBSD"
 	@${ECHO_MSG} "===> 4.9-RELEASE and 5.2-RELEASE or use the -stable or -current tree."
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "You may use the following build options:"
+	@${ECHO_MSG} "You may use the following build options (or make config):"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "  WITH_CLIENT_ONLY=yes		if you only want the file daemon."
 .if !defined(WITH_MYSQL)
