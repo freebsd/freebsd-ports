@@ -13,8 +13,7 @@ MASTER_SITES+=	http://sf1.mirror.openoffice.org/${PORTVERSION}/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/ \
 		http://people.freebsd.org/~mbr/distfiles/ \
 		http://dict.progbits.com/
-DISTFILES+=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z \
-		oo_moz_1.0_includes.tgz ${MOZILLADIST}
+DISTFILES+=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z
 
 SORT?=	/usr/bin/sort
 CUT?=	/usr/bin/cut
@@ -24,31 +23,36 @@ CUT?=	/usr/bin/cut
 INSTALLATION_BASEDIR=	OpenOffice.org1.0
 DIST_SUBDIR=		openoffice
 DICT_DIR=               ${PREFIX}/${INSTALLATION_BASEDIR}/share/dict/ooo/
+
 #
 # configuration for language specific slave ports
 #
 .if !defined(LANG_EXT)
 LANG_EXT=01
+.else
+#
+# Add pkg-comment and pkg-descr if available
+#
+.if exists(${.CURDIR}/pkg-comment)
+COMMENT=	${.CURDIR}/pkg-comment
 .endif
+.if exists(${.CURDIR}/pkg-descr)
+DESCR=	${.CURDIR}/pkg-descr
+.endif
+#
+# Set prefix and suffix
+#
 .if defined(LANG_PKGNAME)
 PKGNAMEPREFIX=	${LANG_PKGNAME}-
 .if defined(LANG_SUFFIX)
 PKGNAMESUFFIX=	-${LANG_SUFFIX}
 .endif
-
+.endif # if defined(LANG_PKGNAME)
 #
 # LANG_CONFIGURE_ARG is missing for the german port
 #
 .if defined(LANG_EXT) && ${LANG_EXT}!=49
 CONFIGURE_ARGS+=	--with-lang=${LANG_CONFIGURE_ARG},ENUS
-.endif
-
-.if exists(${.CURDIR}/pkg-comment)
-COMMENT=	${.CURDIR}/pkg-comment
-.endif
-
-.if exists(${.CURDIR}/pkg-descr)
-DESCR=	${.CURDIR}/pkg-descr
 .endif
 .endif
 
@@ -75,21 +79,6 @@ BUILD_DEPENDS+= gcc31:${PORTSDIR}/lang/gcc31
 CC=		gcc31
 CXX=		g++31
 .endif
-.if defined(USE_GCC) && ${USE_GCC} == 2.95
-MOZILLADIST=	oo_moz1.0RC3_${ARCH}_FreeBSD-5-gcc2.95-ports.tar.gz
-.else
-MOZILLADIST=	oo_moz1.0RC3_${ARCH}_FreeBSD-5-gcc3.1-system.tar.gz
-.endif
-.else
-.if defined(USE_GCC) && ${USE_GCC} == 3.1
-.if defined(WITH_DEBUG) && ${WITH_DEBUG} == 2
-MOZILLADIST=	oo_moz_1.0_i386_FreeBSD-4-gcc3.1-debug-ports.tar.gz
-.else
-MOZILLADIST=	oo_moz_1.0_i386_FreeBSD-4-gcc3.1-ports.tar.gz
-.endif
-.else
-MOZILLADIST=	oo_moz1.0RC3_${ARCH}_FreeBSD-4-gcc2.95-system.tar.gz
-.endif
 .endif
 
 EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.bz2
@@ -114,7 +103,7 @@ USE_GMAKE=	yes
 EXTRACT_BEFORE_ARGS_R= -dc
 EXTRACT_AFTER_ARGS_R= | ${TAR} -xf -
 EXTRACT_CMD_R= ${GZIP_CMD}
-EXTRACT_REST=	gpc231.tar.Z ${MOZILLADIST} oo_moz_1.0_includes.tgz
+EXTRACT_REST=	gpc231.tar.Z
 
 JDK13DIR?=      ${LOCALBASE}/jdk1.3.1
 JAVAVM=         ${JDK13DIR}/bin/java
@@ -125,6 +114,7 @@ WRKSRC=	${WRKDIR}/oo_1.0.1_src/config_office
 LD_PATH1=	${WRKSRC}/../vos/unxfbsd.pro/lib/:${WRKSRC}/../ucbhelper/unxfbsd.pro/lib/
 LD_PATH=	${LD_PATH1}:${WRKSRC}/../solver/641/unxfbsd.pro/lib/
 .if defined(WITH_DEBUG)
+CFLAGS+=	-g
 .if ${WITH_DEBUG} == 2
 DMAKE=		dmake debug="true"
 .else
@@ -225,7 +215,7 @@ pre-fetch:
 	@${ECHO} "datasize to build. Check your limit"
 	@${ECHO} "settings and and put this in /boot/loader.conf"
 	@${ECHO} "if neccessary:"
-	@${ECHO} 
+	@${ECHO}
 	@${ECHO} "kern.maxdsiz=\"1073741824\""
 	@${ECHO} "kern.maxssiz=\"268435456\""
 .endif
@@ -278,9 +268,6 @@ post-extract:
 	done
 	@${CP} ${WRKDIR}/gpc231/gpc.c ${WRKSRC}/../external/gpc/
 	@${CP} ${WRKDIR}/gpc231/gpc.h ${WRKSRC}/../external/gpc/
-	@${CP} ${WRKDIR}/FREEBSDGCCIinc.zip ${WRKSRC}/../moz/zipped/
-	@${CP} ${WRKDIR}/FREEBSDGCCIlib.zip ${WRKSRC}/../moz/zipped/
-	@${CP} ${WRKDIR}/FREEBSDGCCIruntime.zip ${WRKSRC}/../moz/zipped/
 
 post-patch:
 .if defined(WITH_TTF_BYTECODE_ENABLED)
@@ -323,7 +310,36 @@ post-patch:
 	@${FIND} ${WRKSRC}/.. | ${EGREP} "\.(cxx|h|c)$$" | ${XARGS} \
 		${PERL} -pi -e "s|<malloc.h>|<stdlib.h>|g"
 
+mozilla:
+.if ! exists(${WRKDIR}/FREEBSDGCCIinc.zip)
+.if ! exists(${WRKDIR}/mozilla/Makefile)
+	@${ECHO_MSG} "===>  Building mozilla sub project"
+	@${MKDIR} ${WRKDIR}/mozilla
+	@${CP} -r ${PORTSDIR}/www/mozilla/files ${WRKDIR}/mozilla
+	@${CP} ${PORTSDIR}/www/mozilla/Makefile ${WRKDIR}/mozilla
+	@${CP} ${PORTSDIR}/www/mozilla/distinfo ${WRKDIR}/mozilla
+	@${CP} ${PORTSDIR}/www/mozilla/pkg-comment ${WRKDIR}/mozilla
+	@${CP} ${PORTSDIR}/www/mozilla/pkg-descr ${WRKDIR}/mozilla
+	@${CP} ${PORTSDIR}/www/mozilla/pkg-plist ${WRKDIR}/mozilla
+.endif
+.if defined(WITH_DEBUG)
+	@${CP} ${WRKDIR}/mozilla/Makefile ${WRKDIR}/mozilla/Makefile.new
+	@${SED} -e 's|--disable-debug||' \
+		-e 's|--disable-cpp-rtti||' \
+		-e 's|--enable-strip||' \
+		< ${WRKDIR}/mozilla/Makefile.new > ${WRKDIR}/mozilla/Makefile
+.endif
+	@cd ${WRKDIR}/mozilla && ${MAKE} build
+	@${CP} ${FILESDIR}/zipmoz.sh ${WRKDIR}
+	@${CHMOD} 755 ${WRKDIR}/zipmoz.sh
+	@${WRKDIR}/zipmoz.sh ${WRKDIR}/mozilla/work/mozilla/dist FREEBSDGCCI ${WRKDIR}
+	@${CP} ${WRKDIR}/FREEBSDGCCIinc.zip ${WRKSRC}/../moz/zipped/
+	@${CP} ${WRKDIR}/FREEBSDGCCIlib.zip ${WRKSRC}/../moz/zipped/
+	@${CP} ${WRKDIR}/FREEBSDGCCIruntime.zip ${WRKSRC}/../moz/zipped/
+.endif
+
 do-build:
+	@${MAKE} mozilla
 .if exists(${WRKDIR}/.Xvfb.pid)
 	@${CAT} ${WRKDIR}/.Xvfb.pid | xargs kill
 	@${RM} -f ${WRKDIR}/.Xvfb.pid
