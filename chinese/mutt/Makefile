@@ -20,7 +20,9 @@ PATCH_DIST_ARGS=	-d ${WRKDIR} --quiet
 
 WITH_MUTT_LOCALES_FIX=	yes
 WITH_MUTT_NCURSES=	yes
+.if !defined(PACKAGE_BUILDING)
 WITHOUT_MUTT_SGMLFORMAT=	yes
+.endif
 
 MD5_FILE=	${.CURDIR}/distinfo
 PKGMESSAGE=	${.CURDIR}/pkg-message
