@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-sm
 MAINTAINER=	tiamat@comset.net
 COMMENT=	Solid modelling system
 
+BROKEN=		"Checksum mismatch"
+
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 USE_XLIB=	yes
