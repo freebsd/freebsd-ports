@@ -9,7 +9,8 @@
 PORTNAME=	slurpie
 PORTVERSION=	2.0b
 CATEGORIES=	security
-MASTER_SITES=	http://www.jps.net/coati/archives/
+MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/distfiles/ \
+		http://people.FreeBSD.org/~foxfair/distfiles/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
