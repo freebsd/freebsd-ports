@@ -3,7 +3,7 @@
 # Date created:         30 Jan 1999
 # Whom:                 bmc@WillsCreek.COM
 #
-# $Id: Makefile,v 1.16 1999/06/04 17:55:59 mharo Exp $
+# $Id: Makefile,v 1.17 1999/06/19 19:36:47 cpiazza Exp $
 #
 
 DISTNAME=	tgif-4.1.16
@@ -17,10 +17,20 @@ RUN_DEPENDS=	giftopnm:${PORTSDIR}/graphics/netpbm
 
 USE_IMAKE=	yes
 MAN1=		tgif.1
+TGIFDOC=	${PREFIX}/share/doc/tgif
+DEMO_FILES=	an-sr-flip-flop.obj launch-demo-1.obj \
+		fonts.obj launch-demo.obj keys.obj slide-demo.obj example.tex
+READMES=	Copyright HISTORY README
 
 post-extract:
 		${RM} -f ${WRKDIR}/${DISTNAME}/Tgif.tmpl
 		${CP} ${WRKDIR}/${DISTNAME}/Tgif.tmpl-freebsd \
 		      ${WRKDIR}/${DISTNAME}/Tgif.tmpl
+post-install:
+		${MKDIR} ${TGIFDOC}
+		(cd ${WRKSRC} ;\
+		  ${INSTALL_DATA} ${DEMO_FILES} ${TGIFDOC} ;\
+		  ${INSTALL_DATA} ${READMES} ${TGIFDOC} ;\
+		)
 
 .include <bsd.port.mk>
