@@ -1,0 +1,87 @@
+These patches force all the private libraries to be static, so that
+their shared libraries don't have to be installed.  That makes it
+possible to build everything without being root.
+
+Index: buildlectern/src/m3makefile
+--- buildlectern/src/m3makefile.orig	Wed May 29 14:19:51 1996
++++ buildlectern/src/m3makefile	Fri Nov  1 17:24:54 1996
+@@ -5,6 +5,9 @@
+ /*                                                             */
+ /* Makefile for BuildLectern                                   */
+ 
++override("ocr", path() & "/../..")
++override("lecterndoc", path() & "/../..")
++
+ import         ("libm3")
+ import         ("ocr")
+ import         ("lecterndoc")
+Index: editlectern/src/m3makefile
+--- editlectern/src/m3makefile.orig	Wed May 29 13:50:50 1996
++++ editlectern/src/m3makefile	Fri Nov  1 17:25:54 1996
+@@ -3,6 +3,9 @@
+ /* Last modified on Wed May 29 13:50:50 PDT 1996 by mcjones    */
+ /*      modified on Tue Mar 14 16:41:47 PST 1995 by birrell    */
+ 
++override("lecternclient", path() & "/../..")
++override("lecterndoc", path() & "/../..")
++
+ import("formsvbt")
+ import("lecternclient")
+ import("lecterndoc")
+Index: lectern/src/m3makefile
+--- lectern/src/m3makefile.orig	Mon Sep 30 12:07:34 1996
++++ lectern/src/m3makefile	Fri Nov  1 17:23:00 1996
+@@ -8,6 +8,9 @@
+ /*                                                             */
+ /* Makefile for Lectern                                        */
+ 
++override("lecterndoc", path() & "/../..")
++override("lecternclient", path() & "/../..")
++
+ if AT_SRC and equal (OS_TYPE, "POSIX")
+   import         ("cmon")
+ end
+Index: lecternclient/src/m3makefile
+--- lecternclient/src/m3makefile.orig	Wed May 29 13:52:36 1996
++++ lecternclient/src/m3makefile	Fri Nov  1 17:20:40 1996
+@@ -4,6 +4,11 @@
+ 
+ /* Last modified on Wed May 29 13:52:36 PDT 1996 by mcjones */
+ 
++% Override the standard definition of after_library_hooks, to prevent
++% building a shared library.
++proc after_library_hooks(x) is
++end
++
+ import("libm3")
+ import("mtex")
+ 
+Index: lecterndoc/src/m3makefile
+--- lecterndoc/src/m3makefile.orig	Thu Mar 10 15:29:55 1994
++++ lecterndoc/src/m3makefile	Fri Nov  1 17:21:44 1996
+@@ -4,6 +4,10 @@
+ /*                                                             */
+ /* Makefile for "LecternDoc" library                           */
+ 
++% Override the standard definition of after_library_hooks, to prevent
++% building a shared library.
++proc after_library_hooks(x) is
++end
+ 
+ import         (libm3)
+ 
+Index: ocr/src/Stub/m3makefile
+--- ocr/src/Stub/m3makefile.orig	Fri Sep 30 14:49:03 1994
++++ ocr/src/Stub/m3makefile	Fri Nov  1 17:24:08 1996
+@@ -4,6 +4,11 @@
+ 
+ /* Last modified on Fri Sep 30 14:49:02 PDT 1994 by mcjones */
+ 
++% Override the standard definition of after_library_hooks, to prevent
++% building a shared library.
++proc after_library_hooks(x) is
++end
++
+ import("libm3")
+ 
+ implementation("OCR_Stub")
