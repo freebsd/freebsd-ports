@@ -3,7 +3,7 @@
 # Date created:				6/5/1998
 # Whom:					n@nectar.com
 #
-# $Id: Makefile,v 1.5 1998/06/23 18:47:00 nectar Exp $
+# $Id: Makefile,v 1.1.1.1 1998/07/06 02:28:39 nectar Exp $
 #
 
 DISTNAME=		krb5-1.0.5
@@ -15,14 +15,18 @@ DISTFILES=		krb5-1.0.5.src.tar.gz       \
 
 MAINTAINER=		n@nectar.com
 
-BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4 \
-			gmake:${PORTSDIR}/devel/gmake
+BUILD_DEPENDS=		gm4:${PORTSDIR}/devel/m4
 
 DIST_SUBDIR=		krb5
 
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_ARGS=		--enable-shared
+CONFIGURE_ARGS?=	--enable-shared
+KRB5_KRB4_COMPAT?=	YES
+
+.if !defined(KRB5_KRB4_COMPAT) || ${KRB5_KRB4_COMPAT} == "NO"
+CONFIGURE_ARGS+=	--without-krb4
+.endif
 
 RESTRICTED=		"Crypto; export-controlled"
 # Set USA_RESIDENT appropriately in /etc/make.conf if you like
@@ -31,18 +35,24 @@ INFO_FILES=		krb425.info krb5-admin.info krb5-admin.info-1 \
 			krb5-admin.info-2 krb5-admin.info-3 krb5-install.info \
 			krb5-install.info-1 krb5-install.info-2 krb5-user.info
 
-fetch-depends:
+pre-fetch:
+.if !defined(KRB5_KRB4_COMPAT)
+	@${ECHO} "------------------------------------------------------"
+	@${ECHO} "Set KRB5_KRB4_COMPAT=NO if you do not want to build   "
+	@${ECHO} "the KerberosIV compatibility libraries.               "
+	@${ECHO} "------------------------------------------------------"
+.endif
 .if !defined(USA_RESIDENT) || ${USA_RESIDENT} != "YES"
-	@echo
-	@echo ">> You must set the variable USA_RESIDENT to YES if you are"
-	@echo "   a United States resident, otherwise NO."
-	@echo "   If you are a US resident, understand that this software"
-	@echo "   may be export restricted."
-	@echo "   If you are not a US resident, then you cannot obtain"
-	@echo "   Kerberos V source from a server within the United"
-	@echo "   States.  You will have to find the source elsewhere,"
-	@echo "   and put them in ${_DISTDIR}."
-	@false
+	@${ECHO}
+	@${ECHO} ">> You must set the variable USA_RESIDENT to YES if you are"
+	@${ECHO} "   a United States resident, otherwise NO."
+	@${ECHO} "   If you are a US resident, understand that this software"
+	@${ECHO} "   may be export restricted."
+	@${ECHO} "   If you are not a US resident, then you cannot obtain"
+	@${ECHO} "   Kerberos V source from a server within the United"
+	@${ECHO} "   States.  You will have to find the source elsewhere,"
+	@${ECHO} "   and put them in ${_DISTDIR}."
+	@${FALSE}
 .endif
 
 MAN1=			krb5-send-pr.1 kpasswd.1 v5passwd.1 klist.1 kinit.1 \
@@ -56,7 +66,7 @@ MAN8=			krb5kdc.8 kadmin.8 kadmin.local.8 kdb5_util.8 \
 WRKSRC=			${WRKDIR}/${DISTNAME}/src
 RECONF_COOKIE=		${WRKDIR}/.reconf_done
 README_KRB5=		README.KRB5-1.0.5
-AWK_SCRIPT=		'/1) Change into the directory/ { if (match($$0, "dist/[0-9]+")) print substr($$0, RSTART, RLENGTH) }'
+AWK_SCRIPT=		'(/1) Change into the directory/) { if (match($$0, "dist/[0-9]+")) print substr($$0, RSTART, RLENGTH) }'
 
 WANT_HTML?=		YES
 HTML_DOC_DIR=		${WRKDIR}/${DISTNAME}/doc
@@ -66,23 +76,26 @@ HTML_DOCS=		admin.html install_foot.html user-guide.html          \
 			install.html krb425_toc.html
 SETUID_EXE=		bin/ksu bin/v4rcp
 
-pre-fetch:
-	@${MKDIR} ${_DISTDIR}
-	@(cd ${_DISTDIR}; \
-	if [ ! -f ${README_KRB5} ]; then \
-	for site in ${MASTER_SITES}; do \
-		${ECHO_MSG} ">> Attempting to fetch ${README_KRB5} from $${site}."; \
-		if ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}/${README_KRB5} ${FETCH_AFTER_ARGS}; then \
-			break; \
-		fi \
-	done; fi); \
-	if [ ! -f ${_DISTDIR}/${README_KRB5} ]; then \
-		${ECHO_MSG} ">> Couldn't fetch it - please try to retrieve"; \
-		${ECHO_MSG} ">> this port manually into ${_DISTDIR} and try"; \
-		${ECHO_MSG} ">> again."; \
-	fi
+CHOWN?=		chown
+SUPERUSER?=	root
 
 do-fetch:
+	@${MKDIR} ${_DISTDIR}
+	@(cd ${_DISTDIR};                 \
+	if [ ! -f ${README_KRB5} ]; then  \
+	for site in ${MASTER_SITES}; do   \
+		${ECHO_MSG} ">> Attempting to fetch ${README_KRB5} from $${site}."; \
+		if ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${site}/${README_KRB5} \
+			${FETCH_AFTER_ARGS}; then \
+			break;                    \
+		fi                                \
+	done; fi; ${DO_NADA})
+	@(if [ ! -f ${_DISTDIR}/${README_KRB5} ]; then \
+		${ECHO_MSG} ">> Couldn't fetch it - please try to retrieve";  \
+		${ECHO_MSG} ">> this port manually into ${_DISTDIR} and try"; \
+		${ECHO_MSG} ">> again."; \
+		${FALSE};                \
+	fi)
 	@${MKDIR} ${_DISTDIR}
 	@(cd ${_DISTDIR}; \
 	 secret=`${AWK} ${AWK_SCRIPT} < ${_DISTDIR}/${README_KRB5}`; \
@@ -126,7 +139,7 @@ post-install:
 # shared libs
 	${LDCONFIG} -m ${PREFIX}/lib
 # html documentation
-.if defined(WANT_HTML) && ${WANT_HTML} == YES
+.if defined(WANT_HTML) && ${WANT_HTML} == "YES"
 	@${MKDIR} ${PREFIX}/share/doc/krb5
 .for html in ${HTML_DOCS}
 	${INSTALL_MAN} ${HTML_DOC_DIR}/${html} ${PREFIX}/share/doc/krb5
@@ -134,7 +147,7 @@ post-install:
 .endif
 # fixup setuid executables
 .for setuid in ${SETUID_EXE}
-	chown root ${PREFIX}/${setuid}
+	${CHOWN} ${SUPERUSER} ${PREFIX}/${setuid}
 .endfor
 # handle info files
 	if [ ! -f ${PREFIX}/info/dir ]; then \
