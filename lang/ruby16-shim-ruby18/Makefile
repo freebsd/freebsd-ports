@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shim-ruby18
-PORTVERSION=	1.7.3.2002.11.10
+PORTVERSION=	1.7.3.2002.12.11
 CATEGORIES=	lang devel ruby
 MASTER_SITES=	${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	shim
@@ -30,7 +30,25 @@ WRKSRC=		${WRKDIR}/shim/ruby16
 IGNORE=		is only for ruby 1.6, ruby ${RUBY_VER} does not need it
 .endif
 
+.if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
+IF_DEFAULT=	""
+.else
+IF_DEFAULT=	"@comment "
+.endif
+
+INSTALLED_SCRIPTS=	${PREFIX}/bin/erb
+
+PLIST_SUB+=	IF_DEFAULT=${IF_DEFAULT} \
+
 pre-install:
 	${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
+post-install:
+.if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
+	for f in ${INSTALLED_SCRIPTS}; do \
+		${LN} -f $${f}${RUBY_R} $${f}${_RUBY_SUFFIX}; \
+	done
+.endif
+
 
 .include <bsd.port.post.mk>

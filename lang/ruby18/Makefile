@@ -10,7 +10,7 @@ PORTVERSION=	${RUBY_PORTVERSION}
 CATEGORIES=	lang ruby ipv6
 MASTER_SITES=		${MASTER_SITE_RUBY} \
 			${ONIGURUMA_MASTER_SITES:S,$,:oniguruma,}
-MASTER_SITE_SUBDIR=	snapshots \
+MASTER_SITE_SUBDIR=	${MASTER_SITE_SUBDIR_RUBY} \
 			${ONIGURUMA_MASTER_SITE_SUBDIR:S,$,/:oniguruma,}
 DISTFILES=		${RUBY_DISTNAME}${EXTRACT_SUFX} \
 			${ONIGURUMA_DISTFILE:S,$,:oniguruma,}
@@ -115,34 +115,17 @@ post-patch:
 	${MV} ${WRKSRC}/ext/${d} ${WRKDIR}/
 .endfor
 
-pre-install:
-	${RM} -f ${RUBY_WITHOUT_SUFFIX}${RUBY_R} \
-		${PREFIX}/man/man1/ruby${RUBY_R}.1 \
-		${PREFIX}/man/man1/ruby${RUBY_R}.1.gz
-
 post-install:
 .if defined(STRIP) && ${STRIP} == -s
 	${STRIP_CMD} ${RUBY}
 .endif
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
-	${MV} -f ${RUBY_WITHOUT_SUFFIX}${RUBY_R} ${RUBY_WITH_SUFFIX}
-	${MV} -f ${PREFIX}/man/man1/ruby${RUBY_R}.1 ${PREFIX}/man/man1/ruby${_RUBY_SUFFIX}.1
-.endif
-	if [ -x ${RUBY_WITHOUT_SUFFIX}${RUBY_DEFAULT_SUFFIX}${RUBY_R} ]; then \
-		${LN} -fs ${RUBY_WITHOUT_SUFFIX}${RUBY_DEFAULT_SUFFIX}${RUBY_R} ${RUBY_WITHOUT_SUFFIX}${RUBY_R}; \
-		${LN} -fs ruby${RUBY_DEFAULT_SUFFIX}${RUBY_R}.1${MANEXT} ${PREFIX}/man/man1/ruby${RUBY_R}.1${MANEXT}; \
-	fi
-	if [ -x ${RUBY_WITHOUT_SUFFIX} ]; then \
-		for f in ${INSTALLED_SCRIPTS}; do \
-			${LN} -fs $${f}${RUBY_DEFAULT_SUFFIX} $${f}; \
-		done; \
-	fi
-.if !empty(RUBY_R)
-	if [ -x ${RUBY_WITHOUT_SUFFIX}${RUBY_R} ]; then \
-		for f in ${INSTALLED_SCRIPTS}; do \
-			${LN} -fs $${f}${_RUBY_SUFFIX} $${f}${RUBY_R}; \
-		done; \
-	fi
+# Link just installed "ruby" to "ruby17", etc.
+	${LN} -f ${RUBY_WITHOUT_SUFFIX}${RUBY_R} ${RUBY_WITH_SUFFIX}
+	${LN} -f ${PREFIX}/man/man1/ruby${RUBY_R}.1 ${PREFIX}/man/man1/ruby${_RUBY_SUFFIX}.1
+	for f in ${INSTALLED_SCRIPTS}; do \
+		${LN} -f $${f}${RUBY_R} $${f}${_RUBY_SUFFIX}; \
+	done
 .endif
 	${LDCONFIG} -m ${PREFIX}/lib
 	${MKDIR} ${RUBY_ELISPDIR}
