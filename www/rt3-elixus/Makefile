@@ -16,6 +16,7 @@ BUILD_DEPENDS=	${SITE_PERL}/Data/ShowTable.pm:${PORTSDIR}/devel/p5-Data-ShowTabl
 
 MASTERDIR=	${.CURDIR}/../../www/rt3
 MD5_FILE=	${.CURDIR}/distinfo
+DESCR=		${.CURDIR}/pkg-descr
 WRKSRC=		${WRKDIR}/rt
 
 .include "${MASTERDIR}/Makefile"
