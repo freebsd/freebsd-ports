@@ -1,0 +1,24 @@
+Understand for Ada is an IDE tool offering reverse engineering,
+automatic documentation, code navigation, metrics, maintenance and
+cross reference tool for Ada 83 and Ada 95 source code. It is
+designed to help engineers who have inherited large amounts of Ada
+legacy code, or whose Ada projects have grown to immense size or
+complexity. The tool offers incremental analysis (parsing) of only
+changed source code, detailed graphical reverse engineering, highly
+interactive cross referencing, and detailed automatic documentation
+via HTML output. All parsing is compiler independent - Understand
+for Ada uses it's own Ada parser designed for its kind of analysis.
+   
+Views include call (invocation) trees, callby trees, generic
+instantiation trees, with trees, with-by trees, Ada Structure Graphs
+(ASG), colorized source browsing/editing, quick and smart project
+wide string searching and detailed HTML/text documentation of
+analysis information. Additional custom reporting/documentation
+can be developed using the PERL interface to Understand for Ada's
+database.
+
+You need a limited time period license to run the product in
+evaluation mode or a purchased permanent license. Both can be
+obtained in the www site.
+
+WWW: http://www.scitools.com/

@@ -1,0 +1,25 @@
+Understand for Ada can't be used without a license code.
+
+You need a limited time period license to run the product in
+evaluation mode. One can be obtained in the www site.
+
+A permanent license can be purchased there, too.
+
+The Understand_ada program will try to write a license file under
+/usr/local/share/understand_ada/license when you register it.
+
+Registration instructions:
+
+1) Make sure that the user running Understand_ada when entering the
+registration code has proper permissions to create files under
+/usr/local/share/understand_ada/license when your register it.
+Understand_ada will try to create a file under this directory to save
+the registration information. This applies for both evaluation and
+permanent licenses.
+
+2) Verify that the files created under
+/usr/local/share/understand_ada/license are accessible by all users
+who will be using Understand_ada. Usually ''chmod -R a=r+X
+/usr/local/share/understand_ada/license'' will do.
+
+http://www.scitools.com/
