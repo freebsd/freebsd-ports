@@ -347,6 +347,7 @@
     SUBDIR += xbsql
     SUBDIR += xmbase-grok
     SUBDIR += xmysqladmin
+    SUBDIR += yasql
     SUBDIR += zodb
     SUBDIR += zodb3
 

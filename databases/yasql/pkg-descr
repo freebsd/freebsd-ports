@@ -1,0 +1,9 @@
+YASQL is an open source Oracle command line interface.
+
+YASQL features a much kinder alternative to SQL*Plus's user interface.
+This is meant to be a complete replacement for SQL*Plus when dealing with
+ad hoc queries and general database interfacing.
+
+Note: this is not a front-end to sqlplus!
+
+WWW: http://yasql.sourceforge.net/
