@@ -197,6 +197,7 @@
     SUBDIR += snowstar
     SUBDIR += songprint
     SUBDIR += sonice
+    SUBDIR += soribada
     SUBDIR += soundtracker
     SUBDIR += sox
     SUBDIR += sphinx
