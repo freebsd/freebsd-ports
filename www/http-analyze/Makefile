@@ -3,17 +3,17 @@
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	http-analyze
 PORTVERSION= 	2.01
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.rent-a-guru.de/pub/http-analyze2.01/
-DISTNAME=	http-analyze2.01
+DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	-src.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	todd@thisisa.com
 
+BUILD_DEPENDS=	gif2png:${PORTSDIR}/graphics/gif2png
 LIB_DEPENDS=	gd.1:${PORTSDIR}/graphics/gd
 
 MAN1=		http-analyze.1
