@@ -97,7 +97,12 @@ static struct cdevsw rtc_cdevsw = {
 	/* dump */	nodump,
 	/* psize */	nopsize,
 	/* flags */	0,
-	/* bmaj */	-1
+#if __FreeBSD_version <= 500018
+	/* bmaj */	-1,
+#endif
+#if __FreeBSD_version >= 500018 || __FreeBSD_version >= 430000
+	/* kqfilter */	nokqfilter,
+#endif
 };
 
 /* 
