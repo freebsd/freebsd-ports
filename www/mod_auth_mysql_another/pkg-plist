@@ -1,0 +1,7 @@
+libexec/apache/mod_auth_mysql.so
+@exec %D/sbin/apxs -e -a -n auth_mysql %f
+@unexec %D/sbin/apxs -e -A -n auth_mysql %f
+share/doc/%%AUTH_MYSQL_DOCS%%/USAGE
+@exec (cd %D/share/doc && ln -sf %%AUTH_MYSQL_DOCS%% mod_auth_mysql_another)
+@unexec rm -rf %D/share/doc/mod_auth_mysql_another
+@dirrm share/doc/%%AUTH_MYSQL_DOCS%%
