@@ -3,12 +3,12 @@
 # Date Created:		7 Sep 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.7 1998/03/21 02:25:03 asami Exp $
+# $Id: Makefile,v 1.8 1998/03/21 06:47:32 vanilla Exp $
 #
 
 DISTNAME=	hfsutils-3.2
 CATEGORIES=	emulators tk81
-MASTER_SITES=	ftp://ftp.ps.ucl.ac.uk/pub/mkhfs/ \
+MASTER_SITES=	ftp://ftp.mars.org/pub/hfs/ \
 		http://www.freebsd.org/~vanilla/
 
 MAINTAINER=	vanilla@FreeBSD.ORG
