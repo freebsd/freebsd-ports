@@ -19,17 +19,18 @@ RUN_DEPENDS=	xli:${PORTSDIR}/graphics/xli \
 		xloadimage:${PORTSDIR}/x11/xloadimage \
 		sapphire:${PORTSDIR}/x11-wm/sapphire
 
-USE_PERL5_BUILD=yes
+REINPLACE_ARGS=	-i '' -E
+USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 do-patch:
-	${PERL} -pi -e 's:~/\.:${X11BASE}/share/:g' \
+	${REINPLACE_CMD} 's:~/\.:${X11BASE}/share/:g' \
 		${WRKDIR}/menu/default \
 		${WRKDIR}/themes/*.theme
-	${PERL} -pi -e 's:-15-:-12-:g' ${WRKDIR}/themes/*.theme
+	${REINPLACE_CMD} 's:-15-:-12-:g' ${WRKDIR}/themes/*.theme
 
 do-install:
 	${MKDIR} ${X11BASE}/share/sapphire/themes/backgrounds/
