@@ -27,8 +27,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-D
 		${SITE_PERL}/Test/Simple.pm:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-BROKEN=		Incorrect pkg-plist
-
 .if defined(WITH_OURNET)
 CONFIGURE_ENV+=	PERL_EXTUTILS_AUTOINSTALL=--default
 MAKE_ENV+=	PERL_EXTUTILS_AUTOINSTALL=--default
