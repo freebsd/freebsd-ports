@@ -32,13 +32,13 @@
  		< "Unicode (UTF-7)"									; RTL_TEXTENCODING_UTF7				; > ;
  		< "Unicode (UTF-8)"									; RTL_TEXTENCODING_UTF8				; > ;
  		< "Eastern Europe (ISO-8859-10)"							; RTL_TEXTENCODING_ISO_8859_10		; > ;
-@@ -512,7 +516,8 @@
- 		< "Китайский традиционный (BIG5)"			; RTL_TEXTENCODING_GBK				; > ;
- 		< "Японский (EUC-JP)"					; RTL_TEXTENCODING_BIG5				; > ;
- 		< "Китайский упрощенный (EUC-CN)"								; RTL_TEXTENCODING_EUC_JP			; > ;
--		< "Кириллический (KOI8-R)"					; RTL_TEXTENCODING_EUC_CN			; > ;
-+		< "Кириллический (KOI8-R)"					; RTL_TEXTENCODING_KOI8_R			; > ;
-+		< "Кириллический (KOI8-U)"					; RTL_TEXTENCODING_KOI8_U			; > ;
-         < "Юникод (UTF-7)"                ; RTL_TEXTENCODING_EUC_TW           ; > ;
-         < "Юникод (UTF-8)"                         ; RTL_TEXTENCODING_ISO_2022_JP      ; > ;
-         < "Восточноевропейский (ISO-8859-10)"            ; RTL_TEXTENCODING_ISO_2022_CN      ; > ;
+@@ -1217,7 +1221,8 @@
+         < "з№ЃдЅ“е­—дё­е›ЅиЄћ (EUC-TW)"                ; RTL_TEXTENCODING_EUC_TW           ; > ;
+         < "ж—Ґжњ¬иЄћ (ISO-2022-JP)"                         ; RTL_TEXTENCODING_ISO_2022_JP      ; > ;
+         < "з°ЎдЅ“е­—дё­е›ЅиЄћ (ISO-2022-CN)"            ; RTL_TEXTENCODING_ISO_2022_CN      ; > ;
+-		< "г‚­гѓЄгѓ«иЄћ (KOI8-R)"								; RTL_TEXTENCODING_KOI8_R			; > ;
++		< "\xe3\x82\xad\xe3\x83\xaa\xe3\x83\xab\xe8\xaa\x9e (KOI8-R)"								; RTL_TEXTENCODING_KOI8_R			; > ;
++		< "\xe3\x82\xad\xe3\x83\xaa\xe3\x83\xab\xe8\xaa\x9e (KOI8-U)"								; RTL_TEXTENCODING_KOI8_U			; > ;
+ 		< "Unicode (UTF-7)"									; RTL_TEXTENCODING_UTF7				; > ;
+ 		< "Unicode (UTF-8)"									; RTL_TEXTENCODING_UTF8				; > ;
+ 		< "жќ±ж¬§ (ISO-8859-10)"							; RTL_TEXTENCODING_ISO_8859_10		; > ;

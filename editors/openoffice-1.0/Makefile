@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openoffice
-PORTVERSION=	1.0.2
-PORTREVISION=	2
+PORTVERSION=	1.0.3
 CATEGORIES+=	editors
 MASTER_SITES+=	http://ny1.mirror.openoffice.org/%SUBDIR%/ \
 		http://ftp.gwdg.de/pub/misc/openoffice/%SUBDIR%/ \
@@ -355,6 +354,8 @@ post-extract:
 	@${MAKE} extract-mozilla
 	@-${RM} ${WRKSRC}/../moz/zipped/*.zip
 	@${CHMOD} +x ${WRKSRC}/../solenv/bin/zipdep.pl
+	@${MKDIR} -p ${WRKSRC}/../bridges/source/cpp_uno/gcc2_freebsd_intel-sjlj
+	@${MKDIR} -p ${WRKSRC}/../bridges/source/cpp_uno/gcc3_freebsd_intel
 .if defined(L10NHELP)
 	@${ECHO_MSG} "===>  Extracting L10NHELP sub project"
 	@${MKDIR} ${WRKDIR}/L10NHELP
