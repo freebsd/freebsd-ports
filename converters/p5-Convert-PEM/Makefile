@@ -25,7 +25,7 @@ BUILD_DEPENDS=	${PERLBASE}/Convert/ASN1.pm:${PORTSDIR}/converters/p5-Convert-ASN
 
 PERL_CONFIGURE=	YES
 
-MAN3=		Convert::PEM.3 Convert::PEM::CBC.3 Crypt::DES_EDE3.3
+MAN3=		Convert::PEM.3 Convert::PEM::CBC.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
