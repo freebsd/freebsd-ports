@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	hypermail
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.4
 CATEGORIES=	www mail
 MASTER_SITES=	http://www.landfield.com/hypermail/dist/
 
 MAINTAINER=	petef@FreeBSD.org
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-htmldir=${PREFIX}/share/doc/hypermail
+LIB_DEPENDS+=	gdbm.2:${PORTSDIR}/databases/gdbm \
+		pcre.0:${PORTSDIR}/devel/pcre
 
-.if defined(WITH_GDBM)
-CONFIGURE_ARGS+=	--with-gdbm
-LIB_DEPENDS+=	gdbm.2:${PORTSDIR}/databases/gdbm
-.endif
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-htmldir=${PREFIX}/share/doc/hypermail \
+		--with-gdbm=${LOCALBASE}
+
+CFLAGS+=	-L${LOCALBASE}/lib
 
 MAN1=		hypermail.1
 MAN4=		hmrc.4
