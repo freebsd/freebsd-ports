@@ -1,0 +1,8 @@
+--- prokburn.orig	Sun Jan 25 11:25:18 2004
++++ prokburn	Sun Jan 25 11:25:41 2004
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/usr/local/bin/bash
+ ####################################################################################"
+ #  A small bash utility to burn CD from prokyon3.
+ #					PH FERME

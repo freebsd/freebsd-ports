@@ -1,0 +1,5 @@
+WARNING:
+prokyon-0.9.2 introduces rudimental burning-support, which needs to be
+enabled using WITH_BURN=yes when installing this port. This feature
+hasn't been tested at all. So you have been warned when anything weird
+happens using this feature.
