@@ -24,19 +24,19 @@ AUTHOR: ale@FreeBSD.org
   USE_PHP=	ext1 ext2 ext3 ...
 
   in the port Makefile. A list of all PHP extensions is included in bsd.php.mk.
-  If the requirement is a build dependency, too, the port should also define:
+  If the requirement is a build dependency too, the port should also define:
 
   USE_PHP_BUILD=yes
 
   Moreover, the new knob WANT_PHP_SCR has been added to indicate that the port
   requires the 'php' binary to run.
-  Last but not list, many common operations done to build/install/register a
-  PHP extension can now be omitted from the port Makefile, if it defines:
+  Last but not least, many common operations to build/install/register a
+  PHP extension can now be omitted from the port Makefile if it defines:
 
   USE_PHPEXT=	yes
 
-  For more information on this point and on additional variables, give a look
-  at bsd.php.mk.
+  For more information on this point and on additional variables, see
+  bsd.php.mk.
 
 20040717:
 AUTHOR: eik@FreeBSD.org
