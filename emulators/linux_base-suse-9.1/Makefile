@@ -3,7 +3,7 @@
 # Date created:         
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.19 1997/12/04 17:34:28 asami Exp $
+# $Id: Makefile,v 1.20 1998/10/08 10:07:46 jkh Exp $
 #
 
 DISTNAME=	linux_lib-2.5
@@ -17,6 +17,7 @@ NO_MTREE=	yes
 NO_BUILD=	yes
 EXTRACT_ONLY=	# empty
 NO_WRKSUBDIR=	yes
+NO_FILTER_SHLIBS=	yes
 
 pre-install:
 	@[ -d ${PREFIX} ] || ${MKDIR} ${PREFIX}
