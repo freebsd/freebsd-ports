@@ -3,10 +3,8 @@
 # Date created:		15 April 1997
 # Whom:			Kiriyama Kazuhiko<kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/02/14 18:13:08 andreas Exp $
+# $Id: Makefile,v 1.2 1998/02/16 12:13:04 asami Exp $
 #
-
-BROKEN=		package
 
 DISTNAME=	GP-2.5
 PKGNAME=	gp-2.5
