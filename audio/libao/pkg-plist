@@ -2,6 +2,7 @@
 include/ao/ao.h
 include/ao/os_types.h
 include/ao/plugin.h
+lib/libao.a
 lib/libao.so
 lib/libao.so.3
 %%ARTS%%lib/ao/plugins-2/libarts.so
