@@ -1,0 +1,23 @@
+#!/bin/sh
+
+extract_auditfile()
+{
+	tar -jxOf "${portaudit_file}" auditfile
+}
+
+checksum_auditfile()
+{
+	chksum1=`extract_auditfile |
+		sed -nEe '$s/^#CHECKSUM: *MD5 *([0-9a-f]{32})$/\1/p'`
+	chksum2=`extract_auditfile | sed -e '$d' | md5`
+	[ "${chksum1}" != "${chksum2}" ];
+}
+
+checkexpiry_auditfile()
+{
+	created=`extract_auditfile |
+		sed -nEe '1s/^#CREATED: *([0-9]{4})-?([0-9]{2})-?([0-9]{2}).*$/\1\2\3/p'`
+	expiry=`date -u -v-$1d '+%Y%m%d'`
+	[ "${created}" -lt "${expiry}" ];
+}
+

@@ -1,0 +1,27 @@
+#
+# auditfile.txt - FreeBSD ports vulnerabilities database
+#
+# $FreeBSD$
+#
+# MAINTAINER=ports@FreeBSD.org
+#
+# Each entry consists of a single line containing the following three
+# fields in the order named, separated with the pipe (`|') character:
+#
+#     Package:    A pattern that matches the name of the vulnurable
+#                 package, see `man -M /usr/local/man pkg_info'.
+#     Reference:  An URL where an advisory can be found
+#     Reason:     The type of vulnurability found
+#
+# Keep this list sorted in the chronological order.  New entries must
+# be added at the end, old entries shouldn't be removed; this should
+# document *all* known package vulnerabilities. 
+#
+# This file does not have any designated maintainer, so feel free to
+# commit to it yourself.  However, it is generally a good idea to
+# notify the maintainer of the affected package(s)
+#
+
+gnupg<1.2.3_4|http://lists.gnupg.org/pipermail/gnupg-devel/2003-November/020570.html|ElGamal signing keys compromised
+rsync<2.5.7|http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0962|Buffer overflow in server
+gaim<0.75_2|http://security.e-matters.de/advisories/012004.txt|12 vulnerabilities that allow remote compromise

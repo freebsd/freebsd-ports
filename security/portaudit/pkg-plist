@@ -1,0 +1,9 @@
+%%PERIODICDIR%%/security/910.portaudit
+%%PERIODICDIR%%/daily/330.fetchaudit
+%%DATADIR%%/portaudit.functions
+@unexec rmdir %D/%%PERIODICDIR%%/security 2>/dev/null || true
+@unexec rmdir %D/%%PERIODICDIR%%/daily 2>/dev/null || true
+@unexec rmdir %D/%%PERIODICDIR%% 2>/dev/null || true
+@dirrm %%DATADIR%%
+@exec mkdir -p %%DATABASEDIR%%
+@unexec rmdir %%DATABASEDIR%% 2>/dev/null || true
