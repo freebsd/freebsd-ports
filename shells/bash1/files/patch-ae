@@ -1,0 +1,17 @@
+*** documentation/builtins.1.bak	Sat Sep 18 00:06:53 1993
+--- documentation/builtins.1	Wed Oct  4 23:29:49 1995
+***************
+*** 10,15 ****
+  unset, until, wait, while \- bash built-in commands, see \fBbash\fR(1)
+  .SH BASH BUILTIN COMMANDS
+  .nr zZ 1
+! .so bash.1
+  .SH SEE ALSO
+  bash(1), sh(1)
+--- 10,15 ----
+  unset, until, wait, while \- bash built-in commands, see \fBbash\fR(1)
+  .SH BASH BUILTIN COMMANDS
+  .nr zZ 1
+! .so man1/bash.1
+  .SH SEE ALSO
+  bash(1), sh(1)
