@@ -1,7 +1,6 @@
-$FreeBSD$
---- configure.in.orig	Fri Feb 23 22:13:02 2001
-+++ configure.in	Mon Mar 26 02:57:28 2001
-@@ -22,17 +22,18 @@ AM_CONDITIONAL(DEBUG, test x$debug = xtr
+--- configure.in.orig	Tue Apr  3 13:07:35 2001
++++ configure.in	Tue Apr  3 13:09:06 2001
+@@ -22,11 +22,11 @@
  AM_PATH_XMMS(0.9.5.1, , AC_MSG_WARN([*** XMMS >= 0.9.5.1 not installed - xmms support will not be built]))
  AM_CONDITIONAL(XMMS, test x$XMMS_INPUT_PLUGIN_DIR != x)
  
@@ -9,17 +8,10 @@ $FreeBSD$
 +CFLAGS="$CFLAGS -I./include -I \$(top_srcdir)/include"
  if test x$debug = xtrue; then
 -  CFLAGS="$CFLAGS  -g -O0 -DDEBUG"
-+  CFLAGS="$CFLAGS -g -DDEBUG"
++  CFLAGS="$CFLAGS  -g -DDEBUG"
  else
 -  CFLAGS="$CFLAGS -O3 -fomit-frame-pointer -funroll-loops -ffast-math -finline-functions -DNDEBUG"
 +  CFLAGS="$CFLAGS -DNDEBUG"
  fi
  
  AC_OUTPUT(	Makefile	\
- 		src/Makefile	\
- 		src/libFLAC/Makefile	\
- 		src/flac/Makefile	\
-+		src/metaflac/Makefile	\
- 		src/plugin_xmms/Makefile	\
- 		src/test_streams/Makefile	\
- 		src/test_unit/Makefile	\
