@@ -4,13 +4,13 @@
  #   even if an old version is currently in use.  You can remove
  #   the old version manually later when it is no longer in use.
  
--# EXE="/usr/local/bin/tf-${TFVER}"
+-# TF="/usr/local/bin/tf-${TFVER}"
 -# LIBDIR="/usr/local/lib/tf-${TFVER}-lib"
 -# SYMLINK="/usr/local/bin/tf"
 +if [ -z "${PREFIX}" ]; then 
 +  PREFIX="/usr/local" 
 +fi
-+EXE="${PREFIX}/bin/tf-${TFVER}"
++TF="${PREFIX}/bin/tf-${TFVER}"
 +LIBDIR="${PREFIX}/lib/tf-${TFVER}-lib"
 +SYMLINK="${PREFIX}/bin/tf"
  
