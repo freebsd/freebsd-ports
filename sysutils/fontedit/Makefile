@@ -10,7 +10,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.scientia.demon.co.uk/users/ben/tarballs/ \
 		ftp://ukug.uk.freebsd.org/pub/mark/fontmake/
 
-MAINTAINER=	ben@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 do-install:
 	@cd ${WRKSRC} && \

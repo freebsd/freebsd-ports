@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.scientia.demon.co.uk/users/ben/software/mail/dists/
 DISTNAME=	mailutils-${PORTVERSION}
 
-MAINTAINER=	ben@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=	cvsmail
 MANCOMPRESSED=	no
