@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cvsync
-PORTVERSION=	0.19.4
+PORTVERSION=	0.19.5
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.daemon-systems.org/cvsync/ \
 		ftp://ftp.allbsd.org/pub/cvsync/
@@ -18,10 +18,6 @@ USE_GMAKE=	yes
 USE_REINPLACE=	yes
 
 MAN1=		cvscan.1 cvsync.1 cvsyncd.1 rcscan.1 rcscmp.1
-
-post-configure:
-	${REINPLACE_CMD} -e "s/^#	$${INSTALL}/	$${INSTALL}/" \
-	  ${WRKSRC}/mk/prog.mk
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
