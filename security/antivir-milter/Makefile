@@ -6,6 +6,7 @@
 
 PORTNAME=	antivir-milter
 PORTVERSION=	1.1.b
+PORTREVISION=	1
 CATEGORIES=	security mail
 #MASTER_SITES=	ftp://ftp.antivir.de/freebsd/ \
 #		http://www.antivir.de/dateien/antivir/release/
@@ -48,6 +49,8 @@ post-patch:
 		${WRKDIR}/pkg-message
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${FILESDIR}/antivirupdater.sh > \
 		${WRKDIR}/antivirupdater.sh
+	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${FILESDIR}/avqrm.sh > \
+		${WRKDIR}/avqrm.sh
 
 do-install:
 	@${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755 ${PREFIX}/AntiVir
@@ -73,6 +76,7 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/avmilter ${PREFIX}/sbin
 	@${INSTALL_SCRIPT} ${WRKDIR}/antivirupdater.sh \
 		${PREFIX}/sbin/antivirupdater
+	@${INSTALL_SCRIPT} ${WRKDIR}/avqrm.sh ${PREFIX}/bin/avqrm
 	@${INSTALL_SCRIPT} ${WRKSRC}/init/rc.avmilter \
 		${PREFIX}/etc/rc.d/antivir-milter.sh
 	@${INSTALL} -d -o smmsp -g smmsp -m 700 /var/spool/avmilter
