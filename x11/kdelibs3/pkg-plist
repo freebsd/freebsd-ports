@@ -563,6 +563,8 @@ lib/kde3/plugins/designer/kdewidgets.la
 lib/kde3/plugins/designer/kdewidgets.so
 lib/kde3/plugins/styles/highcolor.la
 lib/kde3/plugins/styles/highcolor.so
+%%KERAMIK%%lib/kde3/plugins/styles/keramik.la
+%%KERAMIK%%lib/kde3/plugins/styles/keramik.so
 lib/kde3/plugins/styles/kthemestyle.la
 lib/kde3/plugins/styles/kthemestyle.so
 lib/kde3/plugins/styles/light.la
@@ -3187,10 +3189,8 @@ share/servicetypes/ktexteditoreditor.desktop
 share/servicetypes/kurifilterplugin.desktop
 share/servicetypes/renamedlgplugin.desktop
 share/servicetypes/scriptinterface.desktop
-@comment empty directories
 @exec /bin/mkdir -p %D/share/icons/hicolor/22x22/actions/kde
 @exec /bin/mkdir -p %D/share/icons/hicolor/32x32/actions/kde
-@comment remove directories
 @dirrm share/servicetypes
 @dirrm share/services/kded
 @dirrm share/services
@@ -3368,7 +3368,6 @@ share/servicetypes/scriptinterface.desktop
 @dirrm lib/kde3/plugins/styles
 @dirrm lib/kde3/plugins/designer
 @dirrm lib/kde3/plugins
-@dirrm lib/kde3
 @dirrm include/libkmid
 @dirrm include/ktexteditor
 @dirrm include/kparts
@@ -3379,3 +3378,4 @@ share/servicetypes/scriptinterface.desktop
 @dirrm include/kate
 @dirrm include/kabc
 @dirrm include/dom
+@dirrm include/arts
