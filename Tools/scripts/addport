@@ -240,6 +240,7 @@ sub query {
 
 	print "$msg";
 	my $reply = <>;
+	chomp $reply;
 	return $reply;
 }
 
