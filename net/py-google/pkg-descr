@@ -1,0 +1,5 @@
+This module allows you to access Google's web APIs through SOAP,
+to do things like search Google and get the results programmatically.
+This API is described here: http://www.google.com/apis/
+
+WWW: http://diveintomark.org/projects/#pygoogle

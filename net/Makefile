@@ -385,6 +385,7 @@
     SUBDIR += pxe
     SUBDIR += py-adns
     SUBDIR += py-fngrab
+    SUBDIR += py-google
     SUBDIR += py-ipy
     SUBDIR += py-jabber
     SUBDIR += py-ldap1
