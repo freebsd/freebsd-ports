@@ -27,9 +27,9 @@ LDCONFIG_DIRS=	${SGE_ROOT}/lib/${SGE_ARCH}
 SGE_BASE?=	sge
 SGE_ROOT=	${PREFIX}/${SGE_BASE}
 SGE_ARCH=	fbsd-${ARCH}
-SGE_VERSION=	5.3.5
-SGE_SNAPDATE=	20040224
-SGE_RELEASE=	5.3p5-snap-20040120
+SGE_VERSION=	5.3.6
+SGE_SNAPDATE=	20040330
+SGE_RELEASE=	5.3p6-snap-${SGE_SNAPDATE}
 
 PLIST_SUB+=	SGE_ARCH=${SGE_ARCH}
 PLIST_SUB+=	SGE_BASE=${SGE_BASE}
@@ -90,7 +90,7 @@ pre-install:
 .if defined(MASTERDIR)
 	${SH} ${MASTERDIR}/pkg-install ${PKGNAME} PRE-INSTALL
 .else
-	${SH} pkg-install ${PKGNAME} PRE-INSTALL
+	${SH} ${.CURDIR}/pkg-install ${PKGNAME} PRE-INSTALL
 .endif
 
 do-install:
@@ -119,7 +119,7 @@ release-tar:
 	    ${TAR} cfvz ${.CURDIR}/sge-${SGE_RELEASE}-bin-${SGE_ARCH}.tar.gz \
 	    `find . -name ${SGE_ARCH}`
 
-# Produce a distfile for today.  This target exists for the use of the
+# Produce a distfile for today.  This target exists for use by the
 # port's maintainer.
 SGE_TAG=	V53_beta2_BRANCH
 TODAY!=		/bin/date +%Y%m%d
