@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_ruby
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.modruby.net/archive/
 DIST_SUBDIR=	ruby
@@ -14,7 +14,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 BUILD_DEPENDS=	${APXS}:${APACHE_PORT}
-LIB_DEPENDS=	eruby.09:${PORTSDIR}/textproc/eruby
+LIB_DEPENDS=	eruby.10:${PORTSDIR}/textproc/eruby
 RUN_DEPENDS=	${APXS}:${APACHE_PORT}
 
 USE_RUBY=	yes
@@ -33,11 +33,6 @@ RUBY_RD_FILES=	# empty
 
 DOCS_EN=	COPYING ChangeLog README.en doc/default.css doc/*.en.*
 DOCS_JA=	README.ja doc/default.css doc/*.ja.*
-
-post-patch:
-.if !defined(NOPORTDOCS)
-	${RUBY} -i -pe 'sub(/ruby /, "${RUBY} ")' ${WRKSRC}/doc/Makefile
-.endif
 
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} configure.rb ${CONFIGURE_ARGS}
