@@ -27,16 +27,16 @@ PKGNAMEPREFIX=	${PHP_LANG}-
 PLIST=		${PKGDIR}/pkg-plist.${PHP_LANG}
 PHPDOCDIR=	${PREFIX}/share/doc/${PHP_LANG}-php
 
-.if ${PHP_LANG} = de
+.if ${PHP_LANG} == de
 PORTVERSION=	1.20011221
 .endif
-.if ${PHP_LANG} = es
+.if ${PHP_LANG} == es
 PORTVERSION=	1.20011214
 .endif
-.if ${PHP_LANG} = fr
+.if ${PHP_LANG} == fr
 PORTVERSION=	1.20011214
 .endif
-.if ${PHP_LANG} = ja
+.if ${PHP_LANG} == ja
 PORTVERSION=	1.20011220
 .endif
 .endif
