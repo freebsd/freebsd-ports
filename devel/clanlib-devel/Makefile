@@ -8,14 +8,13 @@
 PORTNAME=	clanlib
 PORTVERSION=	0.7.8.1
 CATEGORIES=	devel
-MASTER_SITES=	http://clanlib.org/~sphair/download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMESUFFIX=  -devel
 DISTNAME=	ClanLib-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	bogorodskiy@inbox.ru
 COMMENT=	Cross-platform game SDK
-
-BROKEN=		Unfetchable
 
 LIB_DEPENDS=	Hermes.1:${PORTSDIR}/graphics/Hermes \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
