@@ -1,0 +1,5 @@
+ftplib is a set of routines that implement the FTP protocol. They allow
+applications to create and access remote files through function calls instead
+of needing to fork and exec an interactive ftp client program.
+
+WWW: http://nbpfaus.net/~pfau/ftplib/
