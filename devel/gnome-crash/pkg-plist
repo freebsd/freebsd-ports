@@ -1,0 +1,12 @@
+bin/gnome-crash
+share/gnome/apps/Utilities/gnome-crash.desktop
+share/gnome/gnome-crash/gdb/gdb-cmd
+share/gnome/gnome-crash/glade/about.glade
+share/gnome/gnome-crash/glade/gnome-crash.glade
+share/gnome/gnome-crash/gnome-crash-animation.png
+share/gnome/mime-info/gnome-crash.keys
+share/gnome/mime-info/gnome-crash.mime
+share/gnome/pixmaps/gnome-crash-icon.png
+@dirrm share/gnome/gnome-crash/glade
+@dirrm share/gnome/gnome-crash/gdb
+@dirrm share/gnome/gnome-crash

@@ -91,6 +91,7 @@
     SUBDIR += glib13
     SUBDIR += global
     SUBDIR += gmake
+    SUBDIR += gnomecrash
     SUBDIR += gnomedebug
     SUBDIR += gnomevfs
     SUBDIR += gnustep

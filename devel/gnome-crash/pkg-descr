@@ -1,0 +1,4 @@
+This is a small tool to use after a core dump. It can extract debugging
+information from a core file or crashed application (via gnome_segv).
+
+WWW: http://www.gnome.org/
