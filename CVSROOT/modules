@@ -5044,6 +5044,7 @@ plp		ports/comms/plp
 plplot		ports/math/plplot
 plucker		ports/palm/plucker
 plugger		ports/www/plugger
+plwm		ports/x11-wm/plwm
 ply		ports/devel/ply
 pm3-base	ports/lang/pm3-base
 pm3-forms	ports/lang/pm3-forms
