@@ -1,0 +1,51 @@
+Patch for utmp ut_host.
+
+	  GNU finger uses ut_host information in utmp.
+
+	  From src/usr.bin/login/login.c CVS log, after 2.2 source tree,
+	login.c write numerical address to ut_host.
+	(1.12 comment of login.c)
+
+	  So this patch is to translate numerical address to hostname.
+
+Special Thanks to Tung-Hui Hu <hhui@arcfour.com>.
+
+--- lib/os.c.orig	Mon Dec 30 00:54:57 1996
++++ lib/os.c	Mon Dec 30 10:51:30 1996
+@@ -26,6 +26,8 @@
+ #include <sys/acct.h>
+ #include <time.h>
+ #include <packet.h>
++#include <sys/socket.h>
++#include <netdb.h>
+ 
+ #ifdef HAVE_UTMPX_H
+ #include <utmpx.h>
+@@ -489,6 +491,7 @@
+ 
+   UTMP **result;
+   int result_size = 0;
++  struct hostent *hp; u_long l;
+ 
+ #ifndef HAVE_GETUTENT
+   file = open (UTMP_FILE, O_RDONLY);
+@@ -533,6 +536,19 @@
+ 	continue;
+ #endif /* sun */
+ 
++#ifdef __FreeBSD__
++      if (UT(entry, ut_host)[0]) {
++          if (isdigit(UT(entry, ut_host)[0]) && 
++              (long)(l = inet_addr(UT(entry, ut_host))) != -1 &&
++              (hp = gethostbyaddr((char *)&l, sizeof(l), AF_INET))) {
++              if (hp->h_name) {
++                  strncpy(UT(entry, ut_host), hp->h_name, UT_HOSTSIZE);
++                  UT(entry, ut_host)[UT_HOSTSIZE - 1] = '\0';
++              } /* valid hostname */
++          }  /* IP addr */
++      } /* UTMP */
++#endif
++
+       for (i = 0; result[i]; i++)
+ 	{
+ 	  /* If the same person is logged in more than once, we are
