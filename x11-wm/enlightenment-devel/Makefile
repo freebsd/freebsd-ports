@@ -1,24 +1,27 @@
 # New ports collection makefile for:   enlightenment
-# Version required:    0.9
+# Version required:    0.12
 # Date created:        10 June 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/06/03 23:53:31 asami Exp $
 #
 
-DISTNAME=	enl
-PKGNAME=	enlightenment-0.9
+DISTNAME=	enl_DR-0.12
+PKGNAME=	enlightenment-0.12
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.cse.unsw.edu.au/pub/users/s2154962/
-DISTFILES=	enl_DR-0.9.tar.gz
-
-MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp
-
-LIB_DEPENDS=	Im\\.1\\.:${PORTSDIR}/graphics/imlib
-RUN_DEPENDS=	djpeg:${PORTSDIR}/graphics/jpeg
+MASTER_SITES=	http://www.rasterman.com/ftp/ \
+		ftp://cthulhu.mandrake.net/pub/enlightenment/
+  
+MAINTAINER=	vanilla@MinJe.com.TW
+  
+LIB_DEPENDS=	Im\\.2\\.:${PORTSDIR}/graphics/imlib
+RUN_DEPENDS=	djpeg:${PORTSDIR}/graphics/jpeg \
+		tgatoppm:${PORTSDIR}/graphics/netpbm \
+		convert:${PORTSDIR}/graphics/ImageMagick
 
 USE_GMAKE=	yes
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
+WRKSRC=		${WRKDIR}/enl
 
 .include <bsd.port.mk>
