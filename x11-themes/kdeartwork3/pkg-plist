@@ -7,9 +7,6 @@ lib/kstephighcolor.la
 share/apps/kstyle/themes/b3.themerc
 share/apps/kstyle/themes/ksgistyle.themerc
 share/apps/kstyle/themes/kstep-highcolor.themerc
-share/apps/kthememgr/Themes/Eclipse.ktheme
-share/apps/kthememgr/Themes/Locolor.ktheme
-share/apps/kthememgr/Themes/Technical.ktheme
 share/apps/kwin/icewm-themes/Model/closeA.xpm
 share/apps/kwin/icewm-themes/Model/closeI.xpm
 share/apps/kwin/icewm-themes/Model/frameAB.xpm
