@@ -23,6 +23,7 @@ include/hovel.h
 include/odeum.h
 include/relic.h
 include/villa.h
+include/vista.h
 lib/libqdbm.a
 lib/libqdbm.so
 lib/libqdbm.so.1
