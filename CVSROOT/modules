@@ -5915,8 +5915,8 @@ pidentd		ports/security/pidentd
 piewm		ports/x11-wm/piewm
 pig		src/games/pig
 pike		ports/lang/pike
-pike		ports/lang/pike70
-pike		ports/lang/pike72
+pike70		ports/lang/pike70
+pike72		ports/lang/pike72
 pike-gtk	ports/x11-toolkits/pike-gtk
 pilot-link	ports/palm/pilot-link
 pilot_makedoc	ports/palm/pilot_makedoc
