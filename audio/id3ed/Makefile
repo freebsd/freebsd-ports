@@ -8,7 +8,7 @@
 PORTNAME=	id3ed
 PORTVERSION=	1.10.4
 CATEGORIES=	audio
-MASTER_SITES=	http://www.azstarnet.com/~donut/programs/id3ed/
+MASTER_SITES=	http://www.dakotacom.net/~donut/programs/id3ed/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An id3 tag editor for mp3 files
