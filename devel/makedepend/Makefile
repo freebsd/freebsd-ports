@@ -3,10 +3,10 @@
 # Date created:				August 15th 1997
 # Whom:					Ian Vaudrey <i.vaudrey@bigfoot.com>
 #
-# $Id: Makefile,v 1.1.1.1 1997/09/01 16:39:23 max Exp $
+# $Id: Makefile,v 1.2 1997/12/15 05:53:44 max Exp $
 #
 
-DISTNAME=	cyrus-imapd-v1.5.2
+DISTNAME=	cyrus-imapd-v1.5.14
 PKGNAME=	makedepend-95.07.05
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/
