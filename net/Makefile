@@ -106,6 +106,7 @@
     SUBDIR += kxicq
     SUBDIR += lambdamoo
     SUBDIR += ldap
+    SUBDIR += ldapmodule
     SUBDIR += ldapsdk
     SUBDIR += libetherx
     SUBDIR += libicq
