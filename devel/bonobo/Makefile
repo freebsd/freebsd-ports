@@ -7,7 +7,7 @@
 
 PORTNAME=	bonobo
 PORTVERSION=	1.0.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/bonobo
@@ -22,9 +22,11 @@ USE_X_PREFIX=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOMECTRL=	yes
-GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--disable-gtk-doc
+USE_LIBTOOL=	yes
+LIBTOOLFILES=	configure libefs/configure
+CONFIGURE_ARGS=	--disable-gtk-doc \
+		--with-html-dir=${PREFIX}/share/doc/bonobo
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
