@@ -32,7 +32,6 @@ bzip-*			ports/archivers/bzip	Some algorithms used may
 						to unfriendly legal action.
 cap60/*			ports/net/cap		Don't sell for profit
 cfs-*			ports/security/cfs	Crypto; export-controlled
-cku190.tar.gz		ports/comms/kermit	Restrictive copyright
 contool-*		ports/sysutils/contool	Don't incorporate the source
 						code into a product which is
 						subsequently sold.
