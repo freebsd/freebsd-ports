@@ -11,3 +11,4 @@ include/viet/vnkeys.h
 include/viet/vntype.h
 share/doc/libviet/README.lib
 @dirrm include/viet
+@dirrm share/doc/libviet
