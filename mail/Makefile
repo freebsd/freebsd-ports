@@ -208,6 +208,7 @@
     SUBDIR += p5-Mail-FilterXML
     SUBDIR += p5-Mail-Folder
     SUBDIR += p5-Mail-Freshmeat
+    SUBDIR += p5-Mail-GnuPG
     SUBDIR += p5-Mail-IMAPClient
     SUBDIR += p5-Mail-ListDetector
     SUBDIR += p5-Mail-MailStats
