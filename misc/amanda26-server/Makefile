@@ -187,7 +187,7 @@ post-install:
 		${PREFIX}/share/examples/amanda
 	${MKDIR} ${PREFIX}/var/amanda/gnutar-lists
 	${CHOWN} operator:operator ${PREFIX}/var/amanda/gnutar-lists
-	${MKDIR} /etc/amandates
+	${TOUCH} /etc/amandates
 	${CHOWN} operator:operator /etc/amandates
 
 .if defined (AMANDA_SERVER)
