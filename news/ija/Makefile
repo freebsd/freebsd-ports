@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ija
-PORTVERSION=	0.4.14
+PORTVERSION=	0.4.4
 CATEGORIES=	news
 MASTER_SITES=	http://wildspark.com/asher/ija/
 EXTRACT_SUFX=	.gz
