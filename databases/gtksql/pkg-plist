@@ -1,0 +1,5 @@
+bin/gtksql
+share/doc/gtksql/COPYING
+share/doc/gtksql/Changelog
+share/doc/gtksql/README
+@dirrm share/doc/gtksql
