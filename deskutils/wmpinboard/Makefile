@@ -1,12 +1,12 @@
 # New ports collection makefile for:	wmpinboard
-# Version required:		0.8.2
+# Version required:		0.8.3
 # Date created:			17 January 1999
 # Whom:				Jim Mock <jim@phrantic.phear.net>
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/26 03:55:45 steve Exp $
+# $Id: Makefile,v 1.2 1999/03/24 17:53:58 steve Exp $
 #
 
-DISTNAME=	wmpinboard-0.8.2
+DISTNAME=	wmpinboard-0.8.3
 CATEGORIES=	deskutils afterstep windowmaker
 MASTER_SITES=	http://www.tu-ilmenau.de/~gomar/stuff/wmpinboard/
 
