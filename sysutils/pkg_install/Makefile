@@ -7,6 +7,7 @@
 
 PORTNAME=		pkg_install
 PORTVERSION=		20030714
+PORTREVISION=		1
 CATEGORIES=		sysutils
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	marcus
@@ -15,14 +16,12 @@ MAINTAINER=		portmgr@freebsd.org
 COMMENT=		FreeBSD 5.x version of the package tools for older system releases
 
 USE_BZIP2=		yes
-USE_OPENSSL=		yes
 MANCOMPRESSED=		yes
 
 MAN1=			pkg_add.1 pkg_create.1 pkg_delete.1 \
-			pkg_info.1 pkg_sign.1 pkg_version.1
-MLINKS=			pkg_sign.1 pkg_check.1
+			pkg_info.1 pkg_version.1
 
-MAKE_ARGS=		-DNOOBJ
+MAKE_ARGS=		-DNOOBJ -DNOCRYPT -DNO_OPENSSL
 
 .include <bsd.port.pre.mk>
 
