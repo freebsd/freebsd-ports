@@ -1,13 +1,13 @@
 # New ports collection makefile for:	tya
-# Version required:	1.3v2
+# Version required:	1.4
 # Date created:		16 May 1999
 # Whom:			jake@checker.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tya13v2
-PKGNAME=	tya-1.3v2
+DISTNAME=	tya14
+PKGNAME=	tya-1.4
 CATEGORIES=	java
 MASTER_SITES=	ftp://gonzalez.cyberus.ca/pub/Linux/java/
 EXTRACT_SUFX=	.tgz
@@ -16,7 +16,7 @@ MAINTAINER=	jake@checker.org
 
 BUILD_DEPENDS=	${LOCALBASE}/${JAVADIR}/bin/java:${PORTSDIR}/java/jdk
 
-WRKSRC=		${WRKDIR}/tya1.3v2
+WRKSRC=		${WRKDIR}/tya1.4
 
 ONLY_FOR_ARCHS=	i386
 
