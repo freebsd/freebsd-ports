@@ -208,6 +208,7 @@
     SUBDIR += perf
     SUBDIR += personality
     SUBDIR += pib
+    SUBDIR += pkg_install
     SUBDIR += pkg_remove
     SUBDIR += pkg_tree
     SUBDIR += pkill

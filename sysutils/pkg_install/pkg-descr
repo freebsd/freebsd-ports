@@ -1,0 +1,9 @@
+FreeBSD 5.x version of the pkg_install suite of tools for doing
+maintainance of software packages.
+
+This is mainly useful on FreeBSD systems <= 4.6.
+
+WWW: http://www.freebsd.org/cgi/cvsweb.cgi/src/usr.sbin/pkg_install/
+
+-- Oliver Eikemeier
+eikemeier@fillmore-labs.com
