@@ -1,19 +1,18 @@
-Ups is a source level C debugger that runs under X11.
+Ups is a X based source level debugger for the C, C++ and Fortran
+programming languages.  It supports both run time debugging with
+breakpoints and post-mortem debugging from a core file.  On Suns you can
+attach ups to a running process. Ups runs in its own window, thus not
+interfering with the target program's I/O.  The ups window has two major
+areas - one showing a structured document representing the target state,
+the other showing the source that is being executed.
 
-It runs in a window with two major regions: one showing the
-current state of the target program data and the other showing
-the currently executing source code.  A key feature of ups is
-that the variables display is persistent: when you add a variable
-to the display it stays there as you step through the code.  The
-current stack trace (which function called which) is always visible.
+Ups makes heavy use of direct manipulation and feedback.  When you add a
+breakpoint it is shown as a pseudo C statement (#stop) in the source
+display.  The current point of execution is highlighted in the source
+display and you can watch it move as you step through loops and function
+calls.  You can edit in fragments of interpreted C code (including
+assignments to variables and calls to target functions).  There are
+powerful facilities for exploring linked data structures - you can
+recursively expand and collapse structures to follow links.
 
-Ups includes a C interpreter which allows you to add fragments
-of code simply by editing them into the source window (the source
-file itself is not modified).  This lets you add debugging printf
-calls without recompiling, relinking (or even restarting) the
-target program.  You can also add conditional breakpoints in a
-natural way - you just add a statement like "if (i == 73) #stop"
-at the appropriate place in the source window.
-
--- David
-   obrien@NUXI.com
+WWW:	http://www.concerto.demon.co.uk/UPS/
