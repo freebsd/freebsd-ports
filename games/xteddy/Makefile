@@ -8,7 +8,7 @@
 
 DISTNAME=	xteddy-1.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.leo.org:/pub/comp/usenet/comp.sources.x/xteddy/
+MASTER_SITES=	ftp://ftp.leo.org/pub/comp/usenet/comp.sources.x/xteddy/
 
 MAINTAINER=	Isegrim@Wunder-Nett.org
 
