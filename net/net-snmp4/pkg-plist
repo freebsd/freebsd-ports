@@ -143,4 +143,4 @@ share/snmp/snmpconf/snmptrapd.conf/traphandle
 @dirrm share/snmp/snmpconf/snmpd.conf
 @dirrm share/snmp/snmpconf/snmptrapd.conf
 @dirrm share/snmp/snmpconf
-@dirrm share/snmp
+@unexec rmdir %D/share/snmp 2>/dev/null || true
