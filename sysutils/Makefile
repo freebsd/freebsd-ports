@@ -138,6 +138,7 @@
     SUBDIR += logmon
     SUBDIR += logrotate
     SUBDIR += logtool
+    SUBDIR += lookat
     SUBDIR += lsmlib
     SUBDIR += lsof
     SUBDIR += ltrace
