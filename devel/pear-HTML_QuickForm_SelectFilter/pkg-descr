@@ -1,0 +1,5 @@
+The PEAR::HTML_QuickForm_SelectFilter package adds an element to the
+PEAR::HTML_QuickForm package that is used to define dynamic filters on
+the client side for select elements.
+
+WWW: http://pear.php.net/package/HTML_QuickForm_SelectFilter/
