@@ -23,6 +23,7 @@ CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 
 USE_GNOMENG=	yes
+USE_GNOME=	gnomehack
 WANT_GNOME=	yes
 
 .include <bsd.port.pre.mk>
@@ -34,9 +35,5 @@ PKGNAMESUFFIX=	-gtk
 .else
 PLIST_SUB=	WITH_GTK="@comment "
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's!\(datadir\)/locale!(prefix)/share/locale!' \
-		${WRKSRC}/po/Makefile.in.in
 
 .include <bsd.port.post.mk>
