@@ -6,44 +6,41 @@
 #
 
 PORTNAME=	webunit
-PORTVERSION=	20020410
+PORTVERSION=	20030121
 CATEGORIES=	www textproc ruby
 MASTER_SITES=	http://www.xpenguin.biz/download/webunit/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-alpha
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/runit/assert.rb:${PORTSDIR}/devel/ruby-unit \
+RUN_DEPENDS=	${RUBY_SITELIBDIR}/test/unit/testcase.rb:${PORTSDIR}/devel/ruby-testunit \
 		${RUBY_SITELIBDIR}/html-parser.rb:${PORTSDIR}/textproc/ruby-html-parser \
 		${RUBY_SITELIBDIR}/htmlrepair.rb:${PORTSDIR}/textproc/ruby-htmlrepair \
 		${RUBY_SITELIBDIR}/htmlsplit.rb:${PORTSDIR}/textproc/ruby-htmlsplit \
-		${RUBY_SITELIBDIR}/nqxml/info.rb:${PORTSDIR}/textproc/ruby-nqxml
+		${RUBY_SITELIBDIR}/rexml/rexml.rb:${PORTSDIR}/textproc/ruby-rexml
 
 USE_RUBY=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
-EXAMPLES_EN=	cgi test sample
-DOCS_EN=	index-en.html
-DOCS_JA=	index-ja.html TIPS-ja.html TODO-ja.sdf
+EXAMPLES=	sample/*
+DOCS=		*.html *.rd
 
 do-install:
-	cd ${WRKSRC}; ${RUBY} install.rb
+	${CP} -R ${WRKSRC}/lib/webunit* ${RUBY_SITELIBDIR}/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-.for f in ${EXAMPLES_EN}
+.for f in ${EXAMPLES}
 	${CP} -R ${WRKSRC}/${f} ${RUBY_MODEXAMPLESDIR}/
 .endfor
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
-.for f in ${DOCS_EN}
+.for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${RUBY_MODDOCDIR}/
 .endfor
-.for f in ${DOCS_JA}
-	${INSTALL_DATA} ${WRKSRC}/doc/${f} ${RUBY_MODDOCDIR}/ja/
-.endfor
+	${MV} ${RUBY_MODDOCDIR}/*-ja.* ${RUBY_MODDOCDIR}/ja/
 .endif
 
 .include <bsd.port.mk>

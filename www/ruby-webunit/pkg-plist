@@ -1,4 +1,5 @@
 %%RUBY_SITELIBDIR%%/webunit/assert.rb
+%%RUBY_SITELIBDIR%%/webunit/converter.rb
 %%RUBY_SITELIBDIR%%/webunit/cookie.rb
 %%RUBY_SITELIBDIR%%/webunit/domwalker.rb
 %%RUBY_SITELIBDIR%%/webunit/exception.rb
@@ -11,72 +12,38 @@
 %%RUBY_SITELIBDIR%%/webunit/params.rb
 %%RUBY_SITELIBDIR%%/webunit/parser.rb
 %%RUBY_SITELIBDIR%%/webunit/response.rb
+%%RUBY_SITELIBDIR%%/webunit/runtest.rb
 %%RUBY_SITELIBDIR%%/webunit/table.rb
 %%RUBY_SITELIBDIR%%/webunit/testcase.rb
+%%RUBY_SITELIBDIR%%/webunit/ui/cui/testrunner.rb
 %%RUBY_SITELIBDIR%%/webunit/utils.rb
 %%RUBY_SITELIBDIR%%/webunit/webunit.rb
+@dirrm %%RUBY_SITELIBDIR%%/webunit/ui/cui
+@dirrm %%RUBY_SITELIBDIR%%/webunit/ui
 @dirrm %%RUBY_SITELIBDIR%%/webunit
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/assert.html
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/auth/.htaccess
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/auth/.htpasswd
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/auth/index.html
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/badtags.html
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/cookie.cgi
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/document.xml
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/form.html
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/frame-0.html
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/frame-1.html
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/frame.html
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/image.html
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/images/x.gif
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/images/y.gif
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/jscript-0.html
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/jscript-1.html
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/jscript.html
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/link.html
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/params.html
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/redirect.cgi
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/response.html
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/simple.cgi
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/stock.cgi
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/cgi/table.html
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/conv/digit-0.cgi
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/conv/digit-0.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/conv/digit-1.cgi
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/conv/digit-1.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/conv/digit.cgi
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/conv/digit.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/conv/test_digit-0.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/conv/test_digit-1.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/conv/test_digit.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/conv/test_digit_view-0.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/conv/test_digit_view-1.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sample/conv/test_digit_view.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/test_assert.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/test_cookie.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/test_domwalker.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/test_form.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/test_frame.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/test_htmlelem.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/test_image.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/test_jscript.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/test_link.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/test_params.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/test_parser.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/test_response.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/test_table.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/test_utils.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/test/test_webunit.rb
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/test
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/sample/conv
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/sample
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/images
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi/auth
-%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/cgi
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv/digit-0.cgi
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv/digit-0.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv/digit-1.cgi
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv/digit-1.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv/digit.cgi
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv/digit.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv/test_digit-0.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv/test_digit-1.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv/test_digit.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv/test_digit_view-0.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv/test_digit_view-1.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv/test_digit_view.rb
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/conv
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/index-en.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/index-ja.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/index-en.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/changes.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/example.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/TIPS-ja.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/TODO-ja.sdf
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/TIPS-ja.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/TODO-ja.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/TODO-ja.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/index-ja.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/index-ja.rd
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/ja
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%
