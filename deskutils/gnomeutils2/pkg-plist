@@ -26,34 +26,67 @@ share/gnome/help/gdialog/C/figures/gdialog-msgbox.png
 share/gnome/help/gdialog/C/figures/gdialog-yesno.png
 share/gnome/help/gdialog/C/gdialog.xml
 share/gnome/help/gdialog/C/legal.xml
+share/gnome/help/gdialog/ja/figures/example-dialog.png
+share/gnome/help/gdialog/ja/figures/gdialog-msgbox.png
+share/gnome/help/gdialog/ja/figures/gdialog-yesno.png
+share/gnome/help/gdialog/ja/gdialog.xml
+share/gnome/help/gdialog/ja/legal.xml
 share/gnome/help/gnome-calculator/C/figures/gcalc_window.png
 share/gnome/help/gnome-calculator/C/gnome-calculator.xml
 share/gnome/help/gnome-calculator/C/legal.xml
+share/gnome/help/gnome-calculator/ja/figures/gcalc_window.png
+share/gnome/help/gnome-calculator/ja/gnome-calculator.xml
+share/gnome/help/gnome-calculator/ja/legal.xml
 share/gnome/help/gnome-character-map/C/figures/gnome-character-map.png
 share/gnome/help/gnome-character-map/C/gnome-character-map.xml
 share/gnome/help/gnome-character-map/C/legal.xml
+share/gnome/help/gnome-character-map/ja/figures/gnome-character-map.png
+share/gnome/help/gnome-character-map/ja/gnome-character-map.xml
+share/gnome/help/gnome-character-map/ja/legal.xml
 share/gnome/help/gnome-dictionary/C/figures/gdict_applet.png
 share/gnome/help/gnome-dictionary/C/figures/gdict_window.png
 share/gnome/help/gnome-dictionary/C/gnome-dictionary.xml
 share/gnome/help/gnome-dictionary/C/legal.xml
+share/gnome/help/gnome-dictionary/ja/figures/gdict_applet.png
+share/gnome/help/gnome-dictionary/ja/figures/gdict_window.png
+share/gnome/help/gnome-dictionary/ja/gnome-dictionary.xml
+share/gnome/help/gnome-dictionary/ja/legal.xml
 share/gnome/help/gnome-search-tool/C/figures/gnome-search-tool_window.png
 share/gnome/help/gnome-search-tool/C/gnome-search-tool.xml
 share/gnome/help/gnome-search-tool/C/legal.xml
+share/gnome/help/gnome-search-tool/ja/figures/gnome-search-tool_window.png
+share/gnome/help/gnome-search-tool/ja/gnome-search-tool.xml
+share/gnome/help/gnome-search-tool/ja/legal.xml
 share/gnome/help/gnome-system-log/C/figures/syslog_window.png
 share/gnome/help/gnome-system-log/C/gnome-system-log.xml
 share/gnome/help/gnome-system-log/C/legal.xml
+share/gnome/help/gnome-system-log/ja/figures/syslog_window.png
+share/gnome/help/gnome-system-log/ja/gnome-system-log.xml
+share/gnome/help/gnome-system-log/ja/legal.xml
 share/gnome/omf/gnome-utils/gdialog-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gdialog-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-utils/gdialog-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gdialog-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-calculator-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-calculator-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-utils/gnome-calculator-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-calculator-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-character-map-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-character-map-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-utils/gnome-character-map-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-character-map-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-dictionary-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-dictionary-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-utils/gnome-dictionary-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-dictionary-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-search-tool-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-utils/gnome-search-tool-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/omf/gnome-utils/gnome-system-log-C.omf
 @exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-system-log-C.omf 2>/dev/null || /usr/bin/true
+share/gnome/omf/gnome-utils/gnome-system-log-ja.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gnome-utils/gnome-system-log-ja.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gdict.png
 share/gnome/pixmaps/gnome-character-map.png
 share/gnome/pixmaps/gnome-searchtool.png
@@ -71,10 +104,12 @@ share/locale/en_GB/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/es/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/et/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/eu/LC_MESSAGES/gnome-utils-2.0.mo
+share/locale/fa/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/fi/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/fr/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/ga/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/gl/LC_MESSAGES/gnome-utils-2.0.mo
+share/locale/he/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/hi/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/hu/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/it/LC_MESSAGES/gnome-utils-2.0.mo
@@ -104,29 +139,47 @@ share/locale/wa/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-utils-2.0.mo
 @dirrm share/gnome/pixmaps/gnome-system-log
+@dirrm share/gnome/help/gnome-system-log/ja/figures
+@dirrm share/gnome/help/gnome-system-log/ja
 @dirrm share/gnome/help/gnome-system-log/C/figures
 @dirrm share/gnome/help/gnome-system-log/C
 @dirrm share/gnome/help/gnome-system-log
+@dirrm share/gnome/help/gnome-search-tool/ja/figures
+@dirrm share/gnome/help/gnome-search-tool/ja
 @dirrm share/gnome/help/gnome-search-tool/C/figures
 @dirrm share/gnome/help/gnome-search-tool/C
 @dirrm share/gnome/help/gnome-search-tool
+@dirrm share/gnome/help/gnome-dictionary/ja/figures
+@dirrm share/gnome/help/gnome-dictionary/ja
 @dirrm share/gnome/help/gnome-dictionary/C/figures
 @dirrm share/gnome/help/gnome-dictionary/C
 @dirrm share/gnome/help/gnome-dictionary
+@dirrm share/gnome/help/gnome-character-map/ja/figures
+@dirrm share/gnome/help/gnome-character-map/ja
 @dirrm share/gnome/help/gnome-character-map/C/figures
 @dirrm share/gnome/help/gnome-character-map/C
 @dirrm share/gnome/help/gnome-character-map
+@dirrm share/gnome/help/gnome-calculator/ja/figures
+@dirrm share/gnome/help/gnome-calculator/ja
 @dirrm share/gnome/help/gnome-calculator/C/figures
 @dirrm share/gnome/help/gnome-calculator/C
 @dirrm share/gnome/help/gnome-calculator
+@dirrm share/gnome/help/gdialog/ja/figures
+@dirrm share/gnome/help/gdialog/ja
 @dirrm share/gnome/help/gdialog/C/figures
 @dirrm share/gnome/help/gdialog/C
 @dirrm share/gnome/gnome-system-log
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-dictionary
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnome-dictionary
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gdialog-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gdialog-ja.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-calculator-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-calculator-ja.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-character-map-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-character-map-ja.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-dictionary-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-dictionary-ja.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-search-tool-ja.omf 2>/dev/null || /usr/bin/true
 @unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-system-log-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gnome-utils/gnome-system-log-ja.omf 2>/dev/null || /usr/bin/true
