@@ -2390,6 +2390,7 @@ gnokii		ports/comms/gnokii
 gnomba		ports/net/gnomba
 gnome--		ports/x11-toolkits/gnome--
 gnome-btdownload	ports/net/gnome-btdownload
+gnome-clipboard-daemon	ports/x11/gnome-clipboard-daemon
 gnome-commander	ports/x11-fm/gnome-commander
 gnome-cups-manager	ports/print/gnome-cups-manager
 gnome-icon-theme	ports/misc/gnome-icon-theme
