@@ -3,14 +3,14 @@
 # Date created:		30 April 1999
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.17 1998/12/14 17:02:13 tg Exp $
+# $Id: Makefile,v 1.18 1999/05/02 12:02:45 foxfair Exp $
 #
 
 DISTNAME=	rpm-2.5.5
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.rpm.org/pub/rpm/dist/rpm-2.5.x/
 
-MAINTAINER=	tg@FreeBSD.ORG
+MAINTAINER=	ports@FreeBSD.ORG
 
 BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
 
