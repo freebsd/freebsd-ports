@@ -50,10 +50,6 @@ CONFIGURE_ARGS+=--disable-video-opengl
 USE_MESA=	yes
 CONFIGURE_ARGS+=--enable-video-opengl
 .endif
-.if !defined(WITHOUT_SVGALIB)
-LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
-CONFIGURE_ARGS+=--enable-video-svga
-.endif
 .if exists(/usr/include/libusbhid.h)
 CONFIGURE_ENV+=	USB_LIBS=-lusbhid
 CFLAGS+=	-DHAVE_LIBUSBHID_H
@@ -64,6 +60,15 @@ CONFIGURE_ENV+=	USB_LIBS=-lusb
 .include <bsd.port.pre.mk>
 
 MAN3!=		${CAT} ${FILESDIR}/man3
+
+.if (${ARCH} != "i386")
+WITHOUT_SVGALIB=	yes
+.endif
+
+.if !defined(WITHOUT_SVGALIB)
+LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
+CONFIGURE_ARGS+=--enable-video-svga
+.endif
 
 pre-configure:
 	@${FIND} ${WRKSRC} -type f -name Makefile.in | ${XARGS} ${TOUCH}
