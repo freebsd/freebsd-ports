@@ -1,0 +1,11 @@
+--- lib/qale/Makefile.orig	Sun Apr 15 16:49:47 2001
++++ lib/qale/Makefile	Sun Apr 15 16:50:11 2001
+@@ -75,7 +75,7 @@
+ 
+ OUT        := ${OUT1}${OUT2}
+ INCLUDE    := -I${QTROOT}/include ${PLATFORM_INCLUDE}
+-CPPFLAGS   := -c ${WARN} ${OPTIMIZE} ${INCLUDE} ${EXTRA_FLAGS}
++CPPFLAGS   := -c ${WARN} ${OPTIMIZE} ${INCLUDE} ${EXTRA_FLAGS} ${QTCPPFLAGS}
+ LEX        := flex
+ LEXFLAGS   := -oqale.lex.c -Pqale_yy
+ YACC       := bison
