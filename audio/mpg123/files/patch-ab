@@ -51,15 +51,7 @@ $FreeBSD$
  			old_rate = ai.rate;
  			old_format = ai.format;
  			old_channels = ai.channels;
-@@ -652,7 +659,6 @@
- 					break;
- 			}
- 
--			init_output();
- 			if(ai.rate != old_rate || ai.channels != old_channels ||
- 			   ai.format != old_format || param.force_reopen) {
- 				if(param.force_mono < 0) {
-@@ -787,6 +793,10 @@
+@@ -787,6 +794,10 @@
          _wildcard(&argc,&argv);
  #endif
  
