@@ -6,7 +6,7 @@
 #
 
 ##################################################
-PORTNAME=		squeak3
+PORTNAME=		squeak
 PORTVERSION=		3.6
 CATEGORIES=		lang
 VMVERSION=		3.6-3
@@ -33,7 +33,7 @@ MAINTAINER=		chris@chrisburkert.de
 COMMENT=		Full Smalltalk 80 with portability to UNIX, Mac, and Windows.
 
 ##################################################
-ONLY_FOR_ARCHS= 	i386
+ONLY_FOR_ARCHS= 	i386 sparc64
 MAN1=			inisqueak.1 squeak.1
 USE_XLIB=		yes
 USE_GMAKE=		yes

@@ -1,0 +1,30 @@
+bin/inisqueak
+bin/squeak
+%%DOCSDIR%%/COPYING.gz
+%%DOCSDIR%%/COPYRIGHT.gz
+%%DOCSDIR%%/LICENSE.gz
+%%DOCSDIR%%/README.Contributing.gz
+%%DOCSDIR%%/README.Keyboard.gz
+%%DOCSDIR%%/README.Sound.gz
+share/nls/POSIX
+share/nls/en_US.US-ASCII
+%%PLIST_X%%share/squeak/%%VMVERSION%%/B3DAcceleratorPlugin
+share/squeak/%%VMVERSION%%/UnixOSProcessPlugin
+%%PLIST_X%%share/squeak/%%VMVERSION%%/XDisplayControlPlugin
+%%PLIST_NPSQUEAK%%share/squeak/%%VMVERSION%%/npsqueak.so
+%%PLIST_NPSQUEAK%%share/squeak/%%VMVERSION%%/npsqueakrun
+share/squeak/%%VMVERSION%%/squeak
+%%PLIST_X%%share/squeak/%%VMVERSION%%/vm-display-X11
+share/squeak/%%VMVERSION%%/vm-display-null
+share/squeak/%%VMVERSION%%/vm-sound-OSS
+share/squeak/%%VMVERSION%%/vm-sound-null
+share/squeak/ReadMe.txt
+share/squeak/Squeak%%IMAGEVERSION%%-%%PATCHNUMBER%%-basic.changes.gz
+share/squeak/Squeak%%IMAGEVERSION%%-%%PATCHNUMBER%%-basic.image.gz
+share/squeak/Squeak%%IMAGEVERSION%%-%%PATCHNUMBER%%-full.changes.gz
+share/squeak/Squeak%%IMAGEVERSION%%-%%PATCHNUMBER%%-full.image.gz
+share/squeak/SqueakV3.sources
+%%PLIST_NPSQUEAK%%share/squeak/npsqueakregister
+@dirrm share/squeak/%%VMVERSION%%
+@dirrm share/squeak
+@dirrm %%DOCSDIR%%

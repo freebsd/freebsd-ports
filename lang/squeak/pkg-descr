@@ -1,0 +1,24 @@
+Squeak is an open, highly-portable Smalltalk-80 implementation whose
+virtual machine is written entirely in Smalltalk, making it easy to
+debug, analyze, and change; it includes among other things:
+    * a rapid-turn-around Smalltalk-80 compiler,
+    * a caching-JIT run-time virtual machine (with full source in
+      Smalltalk),
+    * large class libraries with portable data and GUI models, and
+    * an integrated development environment with powerful coding
+      tools and GUI construction tools.
+
+Squeak was developed at Apple Labs, Walt Disney and has been ported
+to a variety of computers (including most flavors of UNIX and Windows).
+Compared to other Smalltalk systems, Squeak has 4 important features:
+    * Portability (to Mac, Windows, WinCE, and many flavors of UNIX);
+    * Speed (it uses native C for compute-intensive code);
+    * Price (free, including all source code and the right to distribute
+      applications!); and
+    * Sophistication (full Smalltalk-80 language, libraries, and tools).
+
+Squeak comes under an open source license, meaning that you can
+download and use it for free.
+
+WWW: http://www.squeak.org/ (Squeak project)
+     http://www-sor.inria.fr/~piumarta/squeak/ (Unix Squeak)
