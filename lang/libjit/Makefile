@@ -10,7 +10,7 @@ PORTVERSION=	0.0.4
 CATEGORIES=	lang
 MASTER_SITES=	http://www.southern-storm.com.au/download/
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libjit implements Just-In-Time compilation functionality
 
 USE_GMAKE=	yes

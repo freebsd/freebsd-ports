@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	${PNET_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PNET_MASTER_SITE_SUBDIR}
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Treecc is designed to assist in the development of compilers
 
 GNU_CONFIGURE=	yes

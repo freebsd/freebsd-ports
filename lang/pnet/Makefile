@@ -13,7 +13,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The "meta-port" for DotGNU Portable.NET
 
 BUILD_DEPENDS=	treecc:${PORTSDIR}/lang/treecc

@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Proc
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl interface to the unix process table
 
 PERL_CONFIGURE=	YES
