@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.kaffe.org/pub/kaffe/
 MAINTAINER=	xaa@xaa.iae.nl
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		gif.5:${PORTSDIR}/graphics/giflib \
+		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.3:${PORTSDIR}/graphics/png
 
 GNU_CONFIGURE=	yes
