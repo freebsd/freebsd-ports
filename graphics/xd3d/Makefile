@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xd3d
-PORTVERSION=	8.0.3
+PORTVERSION=	8.1.0
 CATEGORIES=	graphics math
 MASTER_SITES=	http://www.cmap.polytechnique.fr/~jouve/xd3d/
 
@@ -45,7 +45,7 @@ F77?=		f77
 FFLAGS?=	-O
 MEMORY_XD3D?=	64
 
-.if defined(LANG) && ${LANG:M${fr}*} != ""
+.if defined(LANG) && ${LANG:Mfr*} != ""
 XD3D_LANG=	FRANCAIS
 .else
 XD3D_LANG=	ENGLISH
@@ -63,7 +63,7 @@ do-fetch:
 .endif
 
 post-patch:
-	@${CP} ${FILESDIR}/RULES.FreeBSD ${WRKSRC}/RULES
+	@${CP} ${WRKSRC}/RULES.freeBSD ${WRKSRC}/RULES
 	@${REINPLACE_CMD} -e "s|%%WRKSRC%%|${WRKSRC}|"		\
 		-e "s|%%PREFIX%%|${PREFIX}|"			\
 		-e "s|%%X11BASE%%|${X11BASE}|"			\

@@ -39,7 +39,12 @@ bin/xgraphic
 %%PORTDOCS%%%%EXAMPLESDIR%%/example_cartesian.c3d
 %%PORTDOCS%%%%EXAMPLESDIR%%/example_cyl.c3d
 %%PORTDOCS%%%%EXAMPLESDIR%%/example_sph.c3d
+%%PORTDOCS%%%%EXAMPLESDIR%%/home.pgm
+%%PORTDOCS%%%%EXAMPLESDIR%%/mesh3.am
+%%PORTDOCS%%%%EXAMPLESDIR%%/mesh3.am_fmt
+%%PORTDOCS%%%%EXAMPLESDIR%%/mesh3.amdba
 %%PORTDOCS%%%%EXAMPLESDIR%%/mesh3.avoir2D
+%%PORTDOCS%%%%EXAMPLESDIR%%/mesh3.msh
 %%PORTDOCS%%%%EXAMPLESDIR%%/mesh3.nopo
 %%PORTDOCS%%%%EXAMPLESDIR%%/quadsd.avoir2D
 %%PORTDOCS%%%%EXAMPLESDIR%%/quadsd.depl
@@ -59,6 +64,7 @@ bin/xgraphic
 %%PORTDOCS%%%%EXAMPLESDIR%%/tower_006.mode
 %%PORTDOCS%%%%EXAMPLESDIR%%/tower_007.mode
 %%PORTDOCS%%%%EXAMPLESDIR%%/tower_008.mode
+%%PORTDOCS%%%%EXAMPLESDIR%%/tower.facext
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Xgraphic
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
