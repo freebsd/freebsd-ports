@@ -11,6 +11,7 @@ lib/cook/en/LC_MESSAGES/cook.mo
 lib/cook/en/LC_MESSAGES/cook_bom.mo
 lib/cook/en/LC_MESSAGES/cookfp.mo
 lib/cook/en/LC_MESSAGES/cooktime.mo
+lib/cook/en/LC_MESSAGES/file_check.mo
 lib/cook/en/LC_MESSAGES/find_libs.mo
 lib/cook/en/LC_MESSAGES/fstrcmp.mo
 lib/cook/en/LC_MESSAGES/make2cook.mo
