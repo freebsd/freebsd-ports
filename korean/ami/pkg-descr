@@ -1,0 +1,9 @@
+ami: An X11R6 Input Method Server for the Korean Language
+
+  - OverTheSpot, OffTheSpot
+  - 2-bul, 3-bul style Korean Keyboard
+
+  ami by Chi-duck, Hwang <cdhwang@sr.hei.co.kr>
+
+--
+CHOI Junho <cjh@kr.freebsd.org>
