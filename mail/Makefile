@@ -87,7 +87,6 @@
     SUBDIR += gnumail
     SUBDIR += gotmail
     SUBDIR += grepmail
-    SUBDIR += gtkgrepmail
     SUBDIR += gubby
     SUBDIR += hbiff
     SUBDIR += hotwayd

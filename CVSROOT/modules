@@ -2328,7 +2328,6 @@ gtkglareamm	ports/x11-toolkits/gtkglarea--
 gtkglext	ports/x11-toolkits/gtkglext
 gtkglextmm	ports/x11-toolkits/gtkglextmm
 gtkgraph	ports/graphics/gtkgraph
-gtkgrepmail	ports/mail/gtkgrepmail
 gtkhtml		ports/www/gtkhtml
 gtkhtml3	ports/www/gtkhtml3
 gtkhx		ports/net/gtkhx
