@@ -80,6 +80,7 @@
     SUBDIR += libbonoboui
     SUBDIR += libgail-gnome
     SUBDIR += libgnomeprintui
+    SUBDIR += libgnomeprintui20
     SUBDIR += libgnomeui
     SUBDIR += libgtkeditor
     SUBDIR += libj2dplot
