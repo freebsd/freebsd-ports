@@ -184,7 +184,7 @@ audit_file()
 			cmd="'"$pkg_version"' -T - \"" $1 "\" <\"'"$FILE"'\""
 			while((cmd | getline pkg) > 0) {
 				if ($2 !~ /'"$opt_restrict"'/)
-					next
+					continue
 				vul++
 				print_affected(pkg)
 			}
