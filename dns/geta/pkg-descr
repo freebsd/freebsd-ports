@@ -1,0 +1,14 @@
+geta(GET Address) - Simple IPv4/IPv6 address resolving tool
+This tool is made for pping(IPv6 ping statistics tool).
+
+Usage:
+  % geta www.kame.net
+  3ffe:501:4819:2000:5254:ff:fedc:50d2
+  203.178.141.212
+  % geta -r www.kame.net
+  3ffe:501:4819:2000:5254:ff:fedc:50d2
+  Reverse map:   3ffe:501:4819:2000:5254:ff:fedc:50d2
+  203.178.141.212
+  Reverse map:   kame212.kame.net
+  % geta -s -6 www.kame.net
+  3ffe:501:4819:2000:5254:ff:fedc:50d2
