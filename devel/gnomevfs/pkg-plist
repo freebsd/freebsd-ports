@@ -82,6 +82,7 @@ lib/vfs/modules/libftp.so
 lib/vfs/modules/libgconf.so
 lib/vfs/modules/libgzip.so
 lib/vfs/modules/libhttp.so
+lib/vfs/modules/libvefs.so
 lib/vfs/modules/libvfs-pipe.so
 lib/vfs/modules/libvfs-translate.so
 share/gnome/apps/Settings/nautilus-mime-type.desktop

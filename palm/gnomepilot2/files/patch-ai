@@ -1,14 +1,5 @@
 --- conduits/backup/Makefile.in.orig	Wed May 10 00:03:11 2000
 +++ conduits/backup/Makefile.in	Tue May 16 16:47:08 2000
-@@ -176,7 +176,7 @@
- ccenterConduitsdir = $(ccenterPalmPilotdir)/Conduits
- ccenterConduits_DATA = backup-conduit-control-applet.desktop
- 
--paneldir = $(datadir)/gnome/apps/Settings/Peripherals/Conduits
-+paneldir = $(datadir)/apps/Settings/Peripherals/Conduits
- panel_DATA = $(ccenterConduits_DATA)
- 
- Conduitdir = $(datadir)/gnome-pilot/conduits/
 @@ -192,7 +192,7 @@
  
  DEFS = @DEFS@ -I. -I$(srcdir) -I../..
@@ -20,15 +11,6 @@
  PROGRAMS =  $(bin_PROGRAMS)
 --- conduits/email/Makefile.in.orig	Wed May 10 00:03:11 2000
 +++ conduits/email/Makefile.in	Tue May 16 16:47:11 2000
-@@ -176,7 +176,7 @@
- ccenterConduitsdir = $(ccenterPalmPilotdir)/Conduits
- ccenterConduits_DATA = email-conduit-control-applet.desktop
- 
--paneldir = $(datadir)/gnome/apps/Settings/Peripherals/Conduits
-+paneldir = $(datadir)/apps/Settings/Peripherals/Conduits
- panel_DATA = $(ccenterConduits_DATA)
- 
- Conduitdir = $(datadir)/gnome-pilot/conduits/
 @@ -192,7 +192,7 @@
  
  DEFS = @DEFS@ -I. -I$(srcdir) -I../..
@@ -40,15 +22,6 @@
  PROGRAMS =  $(bin_PROGRAMS)
 --- conduits/expense/Makefile.in.orig	Wed May 10 00:03:13 2000
 +++ conduits/expense/Makefile.in	Tue May 16 16:47:14 2000
-@@ -176,7 +176,7 @@
- ccenterConduitsdir = $(ccenterPalmPilotdir)/Conduits
- ccenterConduits_DATA = expense-conduit-control-applet.desktop
- 
--paneldir = $(datadir)/gnome/apps/Settings/Peripherals/Conduits
-+paneldir = $(datadir)/apps/Settings/Peripherals/Conduits
- panel_DATA = $(ccenterConduits_DATA)
- 
- Conduitdir = $(datadir)/gnome-pilot/conduits/
 @@ -192,7 +192,7 @@
  
  DEFS = @DEFS@ -I. -I$(srcdir) -I../..
@@ -60,15 +33,6 @@
  PROGRAMS =  $(bin_PROGRAMS)
 --- conduits/file/Makefile.in.orig	Wed May 10 00:03:10 2000
 +++ conduits/file/Makefile.in	Tue May 16 16:47:17 2000
-@@ -181,7 +181,7 @@
- ccenterConduitsdir = $(ccenterPalmPilotdir)/Conduits
- ccenterConduits_DATA = file-conduit-control-applet.desktop
- 
--paneldir = $(datadir)/gnome/apps/Settings/Peripherals/Conduits
-+paneldir = $(datadir)/apps/Settings/Peripherals/Conduits
- panel_DATA = $(ccenterConduits_DATA)
- 
- Conduitdir = $(datadir)/gnome-pilot/conduits/
 @@ -202,7 +202,7 @@
  
  DEFS = @DEFS@ -I. -I$(srcdir) -I../..
@@ -80,15 +44,6 @@
  PROGRAMS =  $(bin_PROGRAMS)
 --- conduits/memo_file/Makefile.in.orig	Wed May 10 00:03:12 2000
 +++ conduits/memo_file/Makefile.in	Tue May 16 16:47:20 2000
-@@ -176,7 +176,7 @@
- ccenterConduitsdir = $(ccenterPalmPilotdir)/Conduits
- ccenterConduits_DATA = memo_file_capplet.desktop
- 
--paneldir = $(datadir)/gnome/apps/Settings/Peripherals/Conduits
-+paneldir = $(datadir)/apps/Settings/Peripherals/Conduits
- panel_DATA = $(ccenterConduits_DATA)
- 
- Conduitdir = $(datadir)/gnome-pilot/conduits/
 @@ -192,7 +192,7 @@
  
  DEFS = @DEFS@ -I. -I$(srcdir) -I../..

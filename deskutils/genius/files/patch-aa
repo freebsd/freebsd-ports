@@ -1,14 +1,5 @@
 --- configure.orig	Tue May 11 05:56:50 1999
 +++ configure	Sat May 22 21:23:18 1999
-@@ -3354,7 +3354,7 @@
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--  PTHREAD_LIB="-lc_r"
-+  PTHREAD_LIB=""
- else
-   echo "$ac_t""no" 1>&6
- echo $ac_n "checking for pthread_create""... $ac_c" 1>&6
 @@ -5556,15 +5556,15 @@
  fi
  
