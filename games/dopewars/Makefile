@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	dopewars
-PORTVERSION=	1.5.3
+PORTVERSION=	1.5.4
 CATEGORIES=	games
 MASTER_SITES=	http://dopewars.sourceforge.net/ \
 		http://bellatrix.pcl.ox.ac.uk/~ben/dopewars/
-
 MAINTAINER=	petef@FreeBSD.org
 
 USE_GMAKE=	yes
@@ -33,5 +32,8 @@ post-patch:
 		${WRKSRC}/src/Makefile.in
 	@${PERL} -pi -e 's!dopewars.sco!dopewars/dopewars.sco!g' \
 		${WRKSRC}/src/dopewars.c ${WRKSRC}/Makefile.in
+	@${PERL} -pi -e 's!^CFLAGS =!CFLAGS = \@GLIB_CFLAGS\@!' \
+		${WRKSRC}/src/gui_client/Makefile.in \
+		${WRKSRC}/src/curses_client/Makefile.in
 
 .include <bsd.port.mk>

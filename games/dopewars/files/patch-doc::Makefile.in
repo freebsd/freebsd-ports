@@ -1,12 +1,14 @@
---- doc/Makefile.in.orig	Sun Feb  3 22:53:46 2002
-+++ doc/Makefile.in	Mon Feb 18 21:34:47 2002
-@@ -253,8 +253,10 @@
+--- doc/Makefile.in.orig	Sat Mar  2 15:25:02 2002
++++ doc/Makefile.in	Mon Mar 25 09:33:45 2002
+@@ -246,10 +246,12 @@
  
  
  install-data-local:
 +ifndef NOPORTDOCS
  	${INSTALL} -d -m 0755 ${DOCPATH}
- 	${INSTALL} -m 0644 ${DOCS} ${DOCPATH}
+ 	for doc in ${DOCS}; do \
+ 	  ${INSTALL} -m 0644 ${srcdir}/$${doc} ${DOCPATH}; \
+ 	done
 +endif
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
