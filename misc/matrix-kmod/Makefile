@@ -23,6 +23,10 @@ KMODDIR=	${PREFIX}/modules
 BROKEN=		"Need FreeBSD 4.0 or above"
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 do-install:
 	@${MKDIR} ${KMODDIR}
 	${INSTALL_SCRIPT} ${FILESDIR}/matrix_saver.sh ${PREFIX}/etc/rc.d
