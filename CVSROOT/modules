@@ -2437,7 +2437,6 @@ gnuchess	ports/games/gnuchess
 gnugadu		ports/polish/gnugadu
 gnugo		ports/games/gnugo
 gnuinfo		ports/www/gnuinfo
-gnujsp		ports/www/gnujsp
 gnuls		ports/misc/gnuls
 gnumail		ports/mail/gnumail
 gnumeric	ports/math/gnumeric
