@@ -1,6 +1,8 @@
+
 To get MyDNS working you will need to do some configuration, first you
 will need to create %%%PREFIX%%%/etc/mydns.conf based on the
 installed sample file. Following that you will need to setup your
 database tables, you can use the output of
 %%%PREFIX%%%/sbin/mydns --create-tables
 as a template.
+
