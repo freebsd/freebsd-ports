@@ -159,7 +159,6 @@
     SUBDIR += linux-mozilla-devel
     SUBDIR += linux-mozillafirebird
     SUBDIR += linux-opera
-    SUBDIR += linux-opera7
     SUBDIR += ljdeps
     SUBDIR += logtools
     SUBDIR += lws
