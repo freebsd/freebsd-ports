@@ -5,17 +5,18 @@
 # $FreeBSD$
 
 PORTNAME=	Parallel-ForkManager
-PORTVERSION=	0.7.4
+PORTVERSION=	0.7.5
 CATEGORIES=	devel perl5
-MASTER_SITES=	http://hacks.dlux.hu/Parallel-ForkManager/download/
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
+		http://hacks.dlux.hu/Parallel-ForkManager/download/
+MASTER_SITE_SUBDIR=	Parallel
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	david@bushong.net
+MAINTAINER=	m@absolight.net
 COMMENT=	A simple parallel processing fork manager
 
 PERL_CONFIGURE=	YES
 
-MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Parallel::ForkManager.3
 
 EXAMPLES=	samples/*
@@ -25,9 +26,9 @@ post-extract:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/examples/perl5/${PORTNAME}
+	@${MKDIR} ${EXAMPLESDIR}
 .for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/share/examples/perl5/${PORTNAME}/
+	${INSTALL_DATA} ${WRKSRC}/${f} ${EXAMPLESDIR}
 .endfor
 .endif
 
