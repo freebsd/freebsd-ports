@@ -1,4 +1,5 @@
 lib/ogle/ogle_gui
+%%SHARE_DATADIR%%/locale/da/LC_MESSAGES/ogle_gui.mo
 %%SHARE_DATADIR%%/locale/de/LC_MESSAGES/ogle_gui.mo
 %%SHARE_DATADIR%%/locale/fr/LC_MESSAGES/ogle_gui.mo
 %%SHARE_DATADIR%%/locale/nl/LC_MESSAGES/ogle_gui.mo
@@ -34,6 +35,8 @@ lib/ogle/ogle_gui
 @unexec rmdir %D/%%SHARE_DATADIR%%/locale/nl 2>/dev/null || true
 @unexec rmdir %D/%%SHARE_DATADIR%%/locale/de/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/%%SHARE_DATADIR%%/locale/de 2>/dev/null || true
+@unexec rmdir %D/%%SHARE_DATADIR%%/locale/da/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/%%SHARE_DATADIR%%/locale/da 2>/dev/null || true
 @unexec rmdir %D/%%SHARE_DATADIR%%/locale 2>/dev/null || true
 @unexec rmdir %D/%%SHARE_DATADIR%% 2>/dev/null || true
 @dirrm lib/ogle
