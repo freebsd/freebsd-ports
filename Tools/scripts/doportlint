@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+indexfile=/usr/ports/INDEX
+tmpfile=/tmp/portlint.tmp
+#
+failures=0
+for i in `sed -e "s/ /_/g" ${indexfile}`; do
+  set $(echo $i | tr \| " ")
+  port=$2
+  cd ${port}
+  portlint > ${tmpfile} 2> /dev/null || failures=$((${failures}+1))
+  grep '^looks fine\.$' ${tmpfile} > /dev/null 2> /dev/null || \
+  { echo '--------------- portlint results for '${port}; \
+  grep -v '^OK:' ${tmpfile} |\
+  sed -e 's/^0 fatal errors and //'; }
+  rm -f ${tmpfile}
+done
+echo '---------------'
+echo 'number of ports with fatal errors in portlint: '${failures}
+exit ${failures}
