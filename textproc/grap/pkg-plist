@@ -2,7 +2,6 @@ bin/grap
 share/grap/CHANGES
 share/grap/COPYRIGHT
 share/grap/README
-share/grap/grap.defines
 share/grap/examples/400mpairs.d
 share/grap/examples/400mtimes.d
 share/grap/examples/400wpairs.d
@@ -16,5 +15,9 @@ share/grap/examples/states.d
 share/grap/examples/states2.d
 share/grap/examples/states3.d
 share/grap/examples/usapop.d
+share/grap/examples/result.SQ_MESH.Fail1.S3.R0.Global.Random1500.succ.result
+share/grap/examples/result.SQ_MESH.Fail1.S3.R0.Local.Random1500.succ.result
+share/grap/examples/result.SQ_MESH.Fail1.S3.R0.Hybrid.Random1500.succ.result
+share/grap/grap.defines
 @dirrm share/grap/examples
 @dirrm share/grap

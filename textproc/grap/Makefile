@@ -1,17 +1,18 @@
 # New ports collection makefile for:   grap
-# Version required:    0.8a
+# Version required:    0.95b
 # Date created:        14 Jan 1999
 # Whom:                faber@lunabase.org
 #
-# $Id: Makefile,v 1.2 1999/03/08 21:00:46 steve Exp $
+# $Id: Makefile,v 1.3 1999/03/31 15:13:49 steve Exp $
 #
 
-DISTNAME=	grap-0.91a
+DISTNAME=	grap-0.95b
 CATEGORIES=	textproc graphics
 MASTER_SITES=	http://www.lunabase.org/~faber/Vault/software/grap/
 
 MAINTAINER=	faber@lunabase.org
 
+HAS_CONFIGURE=yes
 GNU_CONFIGURE=yes
 
 MAN1=		grap.1
