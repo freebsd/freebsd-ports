@@ -7321,6 +7321,7 @@ p5-Text-Tmpl	ports/textproc/p5-Text-Tmpl
 p5-Text-VimColor	ports/textproc/p5-Text-VimColor
 p5-Text-WikiFormat	ports/textproc/p5-Text-WikiFormat
 p5-Text-Wrapper	ports/textproc/p5-Text-Wrapper
+p5-Tie-Array-Sorted	ports/devel/p5-Tie-Array-Sorted
 p5-Tie-Cache	ports/devel/p5-Tie-Cache
 p5-Tie-DBI	ports/databases/p5-Tie-DBI
 p5-Tie-DB_File-SplitHash	ports/devel/p5-Tie-DB_File-SplitHash
