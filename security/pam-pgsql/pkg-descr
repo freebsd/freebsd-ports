@@ -4,5 +4,4 @@ It also supports:
 	- Checking account information (pam_acct_expired,new_authtok_reqd)
 	- Updating auth token
 
-WWW: http://packages.debian.org/unstable/non-us/libpam-pgsql.html
-WWW: http://libpam-pgsql.codecastle.com/
+WWW: http://www.pgpkeys.net/html/pam-pgsql.html
