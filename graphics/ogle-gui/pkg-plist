@@ -1,0 +1,23 @@
+bin/ogle_gui
+share/pixmaps/ogle_gui/angle.xpm
+share/pixmaps/ogle_gui/enter.xpm
+share/pixmaps/ogle_gui/fastforward.xpm
+share/pixmaps/ogle_gui/go_up.xpm
+share/pixmaps/ogle_gui/menus.xpm
+share/pixmaps/ogle_gui/rewind.xpm
+share/pixmaps/ogle_gui/skip_backwards.xpm
+share/pixmaps/ogle_gui/skip_forwards.xpm
+share/pixmaps/ogle_gui/stock_down_arrow.xpm
+share/pixmaps/ogle_gui/stock_first.xpm
+share/pixmaps/ogle_gui/stock_last.xpm
+share/pixmaps/ogle_gui/stock_left_arrow.xpm
+share/pixmaps/ogle_gui/stock_pause.xpm
+share/pixmaps/ogle_gui/stock_right_arrow.xpm
+share/pixmaps/ogle_gui/stock_stop.xpm
+share/pixmaps/ogle_gui/stock_timer.xpm
+share/pixmaps/ogle_gui/stock_timer_stopped.xpm
+share/pixmaps/ogle_gui/stock_up_arrow.xpm
+share/pixmaps/ogle_gui/stock_volume.xpm
+share/pixmaps/ogle_gui/subpicture.xpm
+@dirrm share/pixmaps/ogle_gui
+@unexec rmdir share/pixmaps 2>/dev/null || true

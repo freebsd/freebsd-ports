@@ -1,0 +1,10 @@
+--- Makefile.am.orig	Mon Oct 22 16:42:37 2001
++++ Makefile.am	Mon Oct 22 16:42:40 2001
+@@ -1,6 +1,6 @@
+ ## Process this file with automake to produce Makefile.in
+ 
+-SUBDIRS = intl po macros src doc
++SUBDIRS = intl po src
+ 
+ install-data-local:
+ 	@$(NORMAL_INSTALL)
