@@ -1,0 +1,11 @@
+--- doc/Makefile.in.orig	Sun Dec 31 14:07:09 2000
++++ doc/Makefile.in	Mon Jan 15 04:52:47 2001
+@@ -22,7 +22,7 @@
+ SHELL = /bin/sh
+ 
+ # Program to format Texinfo source into Info files.
+-MAKEINFO = @MAKEINFO@
++MAKEINFO = @MAKEINFO@ --no-split
+ # Program to format Texinfo source into DVI files.
+ TEXI2DVI = texi2dvi
+ # Program to convert DVI files to PostScript
