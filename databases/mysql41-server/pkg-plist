@@ -22,6 +22,7 @@ bin/mysqlhotcopy
 bin/pack_isam
 bin/perror
 bin/replace
+bin/resolve_stack_dump
 bin/resolveip
 bin/safe_mysqld
 etc/rc.d/mysql-server.sh
