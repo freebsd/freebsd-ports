@@ -8,7 +8,9 @@
 PORTNAME=	dbench
 PORTVERSION=	1.3
 CATEGORIES=	benchmarks
-MASTER_SITES=	ftp://samba.org/pub/tridge/dbench/
+# ftp://samba.org/pub/tridge/dbench/ does not exist anymore. Asked
+# tridge@samba.org for a new site - edwin 20021228
+MASTER_SITES=	#
 
 MAINTAINER=	nyxo@dnuc.polyn.kiae.su
 
