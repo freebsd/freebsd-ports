@@ -1,0 +1,4 @@
+@exec ln -sf /bin/tcsh %D/bin/tcsh
+@unexec rm -f %D/bin/tcsh
+@exec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/bin/tcsh /etc/shells.bak; echo %D/bin/tcsh) >/etc/shells
+@unexec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/bin/tcsh /etc/shells.bak) >/etc/shells
