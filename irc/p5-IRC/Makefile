@@ -1,13 +1,13 @@
 # New ports collection makefile for:	p5-IRC
-# Version required:			0.59
+# Version required:			0.61
 # Date created:				07 August 1999
 # Whom:					Chris D. Faulhaber <jedgar@fxp.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       Net-IRC-0.59
-PKGNAME=        p5-IRC-0.59
+DISTNAME=       Net-IRC-0.61
+PKGNAME=        p5-IRC-0.61
 CATEGORIES=     irc perl5
 MASTER_SITES=   ${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
