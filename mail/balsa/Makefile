@@ -42,7 +42,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 
 MAN1=		balsa.1
 
-OPTIONS=	LDAP "Enable LDAP support" on
+OPTIONS=	LDAP "Enable LDAP support" on \
+		GPG "Enable GnuPG support" off
 
 .include <bsd.port.pre.mk>
 
