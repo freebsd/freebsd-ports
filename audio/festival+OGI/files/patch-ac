@@ -1,3 +1,4 @@
+$FreeBSD$
 $NetBSD: patch-ac,v 1.2 1999/10/11 14:13:49 proff Exp $
 
 --- festival/examples/benchmark	Thu Feb 27 00:47:45 1997
