@@ -6,70 +6,98 @@
 #
 
 PORTNAME=	nagios
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	russian net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}:main \
 		http://onix.opennet.ru/files/:ruspatch
 MASTER_SITE_SUBDIR=nagios
-DISTFILES=	nagios-1.1.tar.gz:main nagios_rus_1_1.tar.gz:ruspatch
+DISTFILES=	nagios-1.2.tar.gz:main nagios_rus_1_2.tar.gz:ruspatch
 
 MAINTAINER=	sam@brj.pp.ru
 COMMENT=	Extremely powerful network monitoring system with Russian language
 
-LIB_DEPENDS=    gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
 CONFLICTS=	nagios-1*
 
 USE_GETOPT_LONG=yes
 GNU_CONFIGURE=	yes
+USE_RC_SUBR=	yes
+USE_PERL5_BUILD=yes
 
-CPPFLAGS=	${INCGD} -I${LOCALBASE}/include
+PKGINSTALL=	${WRKDIR}/INSTALL
+PKGDEINSTALL=	${WRKDIR}/DEINSTALL
+PKGMESSAGE=	${WRKDIR}/MESSAGE
+
+NAGIOSUSER?=	nagios
+NAGIOSGROUP?=	nagios
+NAGIOSDIR?=	/var/spool/nagios
+
+OPTIONS=	MYSQL "MySQL suport" off \
+		PGSQL "PostgreSQL suport" off \
+		FILE_PERFDATA "Save performance data to files" off
+
+.include <bsd.port.pre.mk>
+
+CPPFLAGS=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \
-		CFLAGS="${CPPFLAGS} ${CFLAGS} ${INCGD}" \
-		LIBS="-L${LOCALBASE}/lib ${LIBGD}"
-CONFIGURE_ARGS+=	\
-		--with-command-user=nagios \
+		CFLAGS="${CPPFLAGS} ${CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib -lgd"
+CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \
 		--with-command-grp=www \
-		--with-nagios-user=nagios \
-		--with-nagios-grp=nagios \
+		--with-nagios-user=${NAGIOSUSER} \
+		--with-nagios-grp=${NAGIOSGROUP} \
 		--with-template-objects \
-		--with-template-extinfo \
-		--with-init-dir=${PREFIX}/etc/rc.d \
-		--with-gd-lib=${LOCALBASE}/lib \
 		--sbindir=${PREFIX}/share/nagios/cgi-bin \
 		--libexecdir=${PREFIX}/libexec/nagios \
 		--datadir=${PREFIX}/share/nagios \
 		--sysconfdir=${PREFIX}/etc/nagios \
-		--localstatedir=/var/spool/nagios \
+		--localstatedir=${NAGIOSDIR} \
+		--prefix=${PREFIX}
 
-.if defined(WITH_MYSQL)||defined(WITH_NAGMIN)
+.if defined(WITH_MYSQL)
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=	--with-mysql-lib=${LOCALBASE}/lib/mysql \
 		--with-mysql-inc=${LOCALBASE}/include/mysql \
 		--with-mysql-xdata
+.else
+CONFIGURE_ARGS+=	--with-template-extinfo
 .endif
 
-.if defined(NAGIOS_FILE_PERFDATA)
+.if defined(WITH_FILE_PERFDATA)
 CONFIGURE_ARGS+=--with-file-perfdata
 .endif
 
-.if defined(WITH_POSTGRES)
+.if defined(WITH_PGSQL)
 LIB_DEPENDS+=	pq.3:${PORTSDIR}/databases/postgresql7
 CONFIGURE_ARGS+=--with-pgsql-lib=${LOCALBASE}/pgsql \
 		--with-pgsql-inc=${LOCALBASE}/pgsql \
 		--with-pgsql-xdata
 .endif
 
-INSTALL_TARGET=	all install config install-config install-daemoninit install-commandmode
+SED_SCRIPT=	-e 's,%%NAGIOSUSER%%,${NAGIOSUSER},g' \
+		-e 's,%%NAGIOSGROUP%%,${NAGIOSGROUP},g' \
+		-e 's,%%NAGIOSDIR%%,${NAGIOSDIR},g' \
+		-e 's,%%PREFIX%%,${PREFIX},g' \
+		-e 's,%%RC_SUBR%%,${RC_SUBR},g'
+
+INSTALL_TARGET=	all install config install-config install-commandmode
 
 pre-patch:
-	${CP} -R ${WRKSRC}/../nagios_rus_1_1/cgi/* ${WRKSRC}/cgi/
-	${CP} -R ${WRKSRC}/../nagios_rus_1_1/html/* ${WRKSRC}/html/
-	${CP} -R ${WRKSRC}/../nagios_rus_1_1/html/images/* ${WRKSRC}/html/images/
+	cd ${WRKDIR} && ${PATCH} < ${WRKSRC}/../russian.cgi.patch
+
+pre-build:
+	for f in nagios.sh INSTALL DEINSTALL MESSAGE; do \
+		${SED} ${SED_SCRIPT} < ${FILESDIR}/$${f}.tmpl >${WRKDIR}/$${f}; \
+	done
 
 pre-install:
-	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
 
-.include <bsd.port.mk>
+post-install:
+	@${INSTALL_SCRIPT} ${WRKDIR}/nagios.sh ${PREFIX}/etc/rc.d/
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>

@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+#	$FreeBSD: /tmp/pcvs/ports/russian/nagios/files/Attic/DEINSTALL.tmpl,v 1.1 2004-08-15 18:54:32 sem Exp $
+#
+
+USER=%%NAGIOSUSER%%
+GROUP=%%NAGIOSGROUP%%
+DIR=%%NAGIOSDIR%%
+
+if [ "$2" = "POST-DEINSTALL" ]; then
+
+    if /usr/sbin/pw group show "${GROUP}" 2>&1 >/dev/null; then
+	echo "You should manually remove the \"${GROUP}\" group."
+    fi
+
+    if /usr/sbin/pw user show "${USER}" 2>&1 >/dev/null; then
+	echo "You should manually remove the \"${USER}\" user."
+    fi
+
+    if [ -e ${DIR} ]; then
+	echo "You should manually remove the \"${DIR}\" directory."
+    fi
+fi
