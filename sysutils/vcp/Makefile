@@ -7,16 +7,22 @@
 #
 
 PORTNAME=	vcp
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://members.optusnet.com.au/~dbbryan/vcp/
 
 MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Copy files in curses interface
 
+USE_REINPLACE=	yes
+
 MAN1=		${PORTNAME}.1
 
 LDFLAGS+=	-lncurses
+
+pre-build:
+	@${REINPLACE_CMD} -e 's|/etc/vcp.conf|${PREFIX}/etc/vcp.conf|' ${WRKSRC}/misc.c
+	@${REINPLACE_CMD} -e 's|/etc/vcp.conf|${PREFIX}/etc/vcp.conf|g' ${WRKSRC}/vcp.1
 
 do-build:
 	cd ${WRKSRC} && \
@@ -32,7 +38,7 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/.vcp.sample ${PREFIX}/etc/vcp.sample
+	${INSTALL_DATA} ${WRKSRC}/vcp.conf.sample ${PREFIX}/etc/vcp.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${PREFIX}/man/man1/
 
 .if !defined(NOPORTDOCS)
