@@ -1,0 +1,10 @@
+bin/kprof
+share/applnk/Development/kprof.desktop
+share/apps/kprof/kprofui.rc
+share/doc/HTML/en/kprof/common
+share/doc/HTML/en/kprof/index.docbook
+share/doc/HTML/en/kprof/redo.png
+share/icons/locolor/16x16/apps/kprof.png
+share/icons/locolor/32x32/apps/kprof.png
+@dirrm share/doc/HTML/en/kprof
+@dirrm share/apps/kprof
