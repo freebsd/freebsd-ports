@@ -7,7 +7,7 @@
 
 PORTNAME=	thunderbird
 PORTVERSION=	0.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}
@@ -21,6 +21,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		nspr4.1:${PORTSDIR}/devel/nspr
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+RUN_DEPENDS=	Xvfb:${X_VFBSERVER_PORT}
 
 USE_X_PREFIX=	yes
 
@@ -49,7 +50,7 @@ OPTIONS=	DEBUG "Build a debugging image" off \
 		LOGGING "Enable additional log messages" off \
 		OPTIMIZED_CFLAGS "Enable some additional optimizations" off \
 		XFT "Enable support for anti-aliased fonts" on \
-		NEW_ICON "Install the new Firefox branding icon" off
+		NEW_ICON "Install the new Thunderbird branding icon" off
 
 .include <bsd.port.pre.mk>
 
@@ -120,7 +121,8 @@ post-patch:
 		${WRKSRC}/js/src/Makefile.in
 	@${REINPLACE_CMD} -E -e 's|libesd\.so\.[0-9]+|${ESD_LIB}|g' \
 		${WRKSRC}/widget/src/gtk2/nsSound.cpp
-	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/' \
+	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/ ; \
+		/dom.disable_window_open_feature.toolbar/s/false/true/' \
 		${WRKSRC}/modules/libpref/src/init/all.js \
 		${WRKSRC}/extensions/sroaming/resources/content/prefs/all.js \
 		${WRKSRC}/modules/libpref/src/init/all.js
@@ -128,7 +130,8 @@ post-patch:
 		${WRKSRC}/configure \
 		${WRKSRC}/intl/uconv/native/nsNativeUConvService.cpp \
 		${WRKSRC}/xpcom/io/nsNativeCharsetUtils.cpp
-	@${SED} -e 's|%%MOZDIR%%|${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}|g' \
+	@${SED} -e 's|%%MOZDIR%%|${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}|g ; \
+		s|%%X11BASE%%|${X11BASE}|g' \
 		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
 	@${SED} -e 's|%%MOZDIR%%|${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}|g' \
 		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
