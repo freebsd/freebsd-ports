@@ -9,8 +9,6 @@ bin/gcjh
 bin/gcov
 bin/jv-scan
 bin/jcf-dump
-bin/protoize
-bin/unprotoize
 %%GNU_HOST%%/include/_G_config.h
 %%GNU_HOST%%/include/assert.h
 lib/gcc-lib/%%GNU_HOST%%/%%EGCS_REV%%/include/g++/PlotFile.h
