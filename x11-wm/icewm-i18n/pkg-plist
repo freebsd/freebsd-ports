@@ -195,6 +195,7 @@ share/icewm/winoptions
 share/locale/de/LC_MESSAGES/icewm.mo
 share/locale/ja/LC_MESSAGES/icewm.mo
 share/locale/ru/LC_MESSAGES/icewm.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/icewm.mo
 @dirrm share/icewm/icons
 @dirrm share/icewm/ledclock
 @dirrm share/icewm/mailbox
