@@ -6,4 +6,4 @@ memory. He also rewrote the original tests (which catch mainly
 memory bits which are stuck permanently high or low) so that they
 run approximately an order of magnitude faster.
 
-WWW: http://www.qcc.sk.ca/~charlesc/software/memtester/
+WWW: http://pyropus.ca/software/memtester/
