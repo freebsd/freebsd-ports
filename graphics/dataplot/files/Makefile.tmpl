@@ -1,4 +1,4 @@
-CFLAGS	     += -I%%LOCALBASE%%/include/gd -I%%X11BASE%%/include
+CFLAGS	     += -I%%LOCALBASE%%/include -I%%X11BASE%%/include
 
 DEST	      = ${PREFIX}/bin
 
@@ -19,7 +19,7 @@ LD	      = $(CC)
 
 LDFLAGS	      = -L%%LOCALBASE%%/lib -L%%X11BASE%%/lib
 
-LIBS	      = -lgd1 -lpng -ljpeg -lX11 -lz -lg2c -lm
+LIBS	      = -lgd -lpng -ljpeg -lX11 -lz -lg2c -lm
 
 MAKEFILE      = Makefile
 
