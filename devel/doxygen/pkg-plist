@@ -2,395 +2,441 @@ bin/doxygen
 bin/doxysearch
 bin/doxytag
 %%HAVE_DOXYWIZARD%%bin/doxywizard
-%%PORTDOCS%%%%HAVE_LATEX%%share/doc/doxygen/archoverview.eps
-%%PORTDOCS%%%%HAVE_LATEX%%share/doc/doxygen/doxygen_logo.eps
-%%PORTDOCS%%%%HAVE_LATEX%%share/doc/doxygen/doxygen_manual.dvi
-%%PORTDOCS%%%%HAVE_LATEX%%share/doc/doxygen/doxygen_manual.pdf
-%%PORTDOCS%%%%HAVE_LATEX%%share/doc/doxygen/doxygen_manual.ps
-%%PORTDOCS%%share/doc/doxygen/examples/afterdoc.cfg
-%%PORTDOCS%%share/doc/doxygen/examples/afterdoc.h
-%%PORTDOCS%%share/doc/doxygen/examples/afterdoc/html/afterdoc_8h-source.html
-%%PORTDOCS%%share/doc/doxygen/examples/afterdoc/html/annotated.html
-%%PORTDOCS%%share/doc/doxygen/examples/afterdoc/html/class_test-members.html
-%%PORTDOCS%%share/doc/doxygen/examples/afterdoc/html/class_test.html
-%%PORTDOCS%%share/doc/doxygen/examples/afterdoc/html/doxygen.css
-%%PORTDOCS%%share/doc/doxygen/examples/afterdoc/html/doxygen.png
-%%PORTDOCS%%share/doc/doxygen/examples/afterdoc/html/files.html
-%%PORTDOCS%%share/doc/doxygen/examples/afterdoc/html/functions.html
-%%PORTDOCS%%share/doc/doxygen/examples/afterdoc/html/index.html
-%%PORTDOCS%%share/doc/doxygen/examples/author.cfg
-%%PORTDOCS%%share/doc/doxygen/examples/author.cpp
-%%PORTDOCS%%share/doc/doxygen/examples/author/html/annotated.html
-%%PORTDOCS%%share/doc/doxygen/examples/author/html/bug.html
-%%PORTDOCS%%share/doc/doxygen/examples/author/html/class_windows_n_t.html
-%%PORTDOCS%%share/doc/doxygen/examples/author/html/doxygen.css
-%%PORTDOCS%%share/doc/doxygen/examples/author/html/doxygen.png
-%%PORTDOCS%%share/doc/doxygen/examples/author/html/index.html
-%%PORTDOCS%%share/doc/doxygen/examples/author/html/pages.html
-%%PORTDOCS%%share/doc/doxygen/examples/autolink.cfg
-%%PORTDOCS%%share/doc/doxygen/examples/autolink.cpp
-%%PORTDOCS%%share/doc/doxygen/examples/autolink/html/annotated.html
-%%PORTDOCS%%share/doc/doxygen/examples/autolink/html/autolink_8cpp.html
-%%PORTDOCS%%share/doc/doxygen/examples/autolink/html/class_test-members.html
-%%PORTDOCS%%share/doc/doxygen/examples/autolink/html/class_test.html
-%%PORTDOCS%%share/doc/doxygen/examples/autolink/html/doxygen.css
-%%PORTDOCS%%share/doc/doxygen/examples/autolink/html/doxygen.png
-%%PORTDOCS%%share/doc/doxygen/examples/autolink/html/files.html
-%%PORTDOCS%%share/doc/doxygen/examples/autolink/html/functions.html
-%%PORTDOCS%%share/doc/doxygen/examples/autolink/html/globals.html
-%%PORTDOCS%%share/doc/doxygen/examples/autolink/html/index.html
-%%PORTDOCS%%share/doc/doxygen/examples/class.cfg
-%%PORTDOCS%%share/doc/doxygen/examples/class.h
-%%PORTDOCS%%share/doc/doxygen/examples/class/html/annotated.html
-%%PORTDOCS%%share/doc/doxygen/examples/class/html/class_8h-source.html
-%%PORTDOCS%%share/doc/doxygen/examples/class/html/class_test.html
-%%PORTDOCS%%share/doc/doxygen/examples/class/html/doxygen.css
-%%PORTDOCS%%share/doc/doxygen/examples/class/html/doxygen.png
-%%PORTDOCS%%share/doc/doxygen/examples/class/html/files.html
-%%PORTDOCS%%share/doc/doxygen/examples/class/html/index.html
-%%PORTDOCS%%share/doc/doxygen/examples/define.cfg
-%%PORTDOCS%%share/doc/doxygen/examples/define.h
-%%PORTDOCS%%share/doc/doxygen/examples/define/html/define_8h-source.html
-%%PORTDOCS%%share/doc/doxygen/examples/define/html/define_8h.html
-%%PORTDOCS%%share/doc/doxygen/examples/define/html/doxygen.css
-%%PORTDOCS%%share/doc/doxygen/examples/define/html/doxygen.png
-%%PORTDOCS%%share/doc/doxygen/examples/define/html/files.html
-%%PORTDOCS%%share/doc/doxygen/examples/define/html/globals.html
-%%PORTDOCS%%share/doc/doxygen/examples/define/html/index.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams.cfg
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/annotated.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_a-members.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_a.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_a__coll__graph.png
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_a__inherit__graph.png
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_b-members.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_b.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_b__coll__graph.png
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_b__inherit__graph.png
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_c-members.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_c.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_c__coll__graph.png
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_c__inherit__graph.png
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_d-members.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_d.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_d__coll__graph.png
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_d__inherit__graph.png
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_e-members.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_e.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/class_e__inherit__graph.png
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__a_8h-source.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__a_8h.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__a_8h__dep__incl.png
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__b_8h-source.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__b_8h.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__b_8h__dep__incl.png
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__c_8h-source.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__c_8h.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__c_8h__dep__incl.png
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__c_8h__incl.png
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__d_8h-source.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__d_8h.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__d_8h__dep__incl.png
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__d_8h__incl.png
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__e_8h-source.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__e_8h.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/diagrams__e_8h__incl.png
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/doxygen.css
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/doxygen.png
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/files.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/functions.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/graph_legend.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/graph_legend.png
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/hierarchy.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/index.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/inherit__graph__0.png
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams/html/inherits.html
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams_a.h
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams_b.h
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams_c.h
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams_d.h
-%%PORTDOCS%%share/doc/doxygen/examples/diagrams_e.h
-%%PORTDOCS%%share/doc/doxygen/examples/enum.cfg
-%%PORTDOCS%%share/doc/doxygen/examples/enum.h
-%%PORTDOCS%%share/doc/doxygen/examples/enum/html/annotated.html
-%%PORTDOCS%%share/doc/doxygen/examples/enum/html/class_test-members.html
-%%PORTDOCS%%share/doc/doxygen/examples/enum/html/class_test.html
-%%PORTDOCS%%share/doc/doxygen/examples/enum/html/doxygen.css
-%%PORTDOCS%%share/doc/doxygen/examples/enum/html/doxygen.png
-%%PORTDOCS%%share/doc/doxygen/examples/enum/html/enum_8h-source.html
-%%PORTDOCS%%share/doc/doxygen/examples/enum/html/files.html
-%%PORTDOCS%%share/doc/doxygen/examples/enum/html/functions.html
-%%PORTDOCS%%share/doc/doxygen/examples/enum/html/index.html
-%%PORTDOCS%%share/doc/doxygen/examples/example.cfg
-%%PORTDOCS%%share/doc/doxygen/examples/example.cpp
-%%PORTDOCS%%share/doc/doxygen/examples/example.tag
-%%PORTDOCS%%share/doc/doxygen/examples/example/html/annotated.html
-%%PORTDOCS%%share/doc/doxygen/examples/example/html/class_test-members.html
-%%PORTDOCS%%share/doc/doxygen/examples/example/html/class_test.html
-%%PORTDOCS%%share/doc/doxygen/examples/example/html/doxygen.css
-%%PORTDOCS%%share/doc/doxygen/examples/example/html/doxygen.png
-%%PORTDOCS%%share/doc/doxygen/examples/example/html/example__test_8cpp-example.html
-%%PORTDOCS%%share/doc/doxygen/examples/example/html/examples.html
-%%PORTDOCS%%share/doc/doxygen/examples/example/html/functions.html
-%%PORTDOCS%%share/doc/doxygen/examples/example/html/index.html
-%%PORTDOCS%%share/doc/doxygen/examples/example_test.cpp
-%%PORTDOCS%%share/doc/doxygen/examples/file.cfg
-%%PORTDOCS%%share/doc/doxygen/examples/file.h
-%%PORTDOCS%%share/doc/doxygen/examples/file/html/doxygen.css
-%%PORTDOCS%%share/doc/doxygen/examples/file/html/doxygen.png
-%%PORTDOCS%%share/doc/doxygen/examples/file/html/file_8h-source.html
-%%PORTDOCS%%share/doc/doxygen/examples/file/html/file_8h.html
-%%PORTDOCS%%share/doc/doxygen/examples/file/html/files.html
-%%PORTDOCS%%share/doc/doxygen/examples/file/html/globals.html
-%%PORTDOCS%%share/doc/doxygen/examples/file/html/index.html
-%%PORTDOCS%%share/doc/doxygen/examples/func.cfg
-%%PORTDOCS%%share/doc/doxygen/examples/func.h
-%%PORTDOCS%%share/doc/doxygen/examples/func/html/annotated.html
-%%PORTDOCS%%share/doc/doxygen/examples/func/html/class_test-members.html
-%%PORTDOCS%%share/doc/doxygen/examples/func/html/class_test.html
-%%PORTDOCS%%share/doc/doxygen/examples/func/html/doxygen.css
-%%PORTDOCS%%share/doc/doxygen/examples/func/html/doxygen.png
-%%PORTDOCS%%share/doc/doxygen/examples/func/html/files.html
-%%PORTDOCS%%share/doc/doxygen/examples/func/html/func_8h-source.html
-%%PORTDOCS%%share/doc/doxygen/examples/func/html/functions.html
-%%PORTDOCS%%share/doc/doxygen/examples/func/html/index.html
-%%PORTDOCS%%share/doc/doxygen/examples/group.cfg
-%%PORTDOCS%%share/doc/doxygen/examples/group.cpp
-%%PORTDOCS%%share/doc/doxygen/examples/group/html/annotated.html
-%%PORTDOCS%%share/doc/doxygen/examples/group/html/class_c1.html
-%%PORTDOCS%%share/doc/doxygen/examples/group/html/class_c2.html
-%%PORTDOCS%%share/doc/doxygen/examples/group/html/class_c3.html
-%%PORTDOCS%%share/doc/doxygen/examples/group/html/class_c4.html
-%%PORTDOCS%%share/doc/doxygen/examples/group/html/class_c5.html
-%%PORTDOCS%%share/doc/doxygen/examples/group/html/doxygen.css
-%%PORTDOCS%%share/doc/doxygen/examples/group/html/doxygen.png
-%%PORTDOCS%%share/doc/doxygen/examples/group/html/files.html
-%%PORTDOCS%%share/doc/doxygen/examples/group/html/globals.html
-%%PORTDOCS%%share/doc/doxygen/examples/group/html/group_8cpp.html
-%%PORTDOCS%%share/doc/doxygen/examples/group/html/group__group1.html
-%%PORTDOCS%%share/doc/doxygen/examples/group/html/group__group2.html
-%%PORTDOCS%%share/doc/doxygen/examples/group/html/group__group3.html
-%%PORTDOCS%%share/doc/doxygen/examples/group/html/group__group4.html
-%%PORTDOCS%%share/doc/doxygen/examples/group/html/group__group5.html
-%%PORTDOCS%%share/doc/doxygen/examples/group/html/index.html
-%%PORTDOCS%%share/doc/doxygen/examples/group/html/modules.html
-%%PORTDOCS%%share/doc/doxygen/examples/group/html/namespace_n1.html
-%%PORTDOCS%%share/doc/doxygen/examples/group/html/namespaces.html
-%%PORTDOCS%%share/doc/doxygen/examples/include.cfg
-%%PORTDOCS%%share/doc/doxygen/examples/include.cpp
-%%PORTDOCS%%share/doc/doxygen/examples/include/html/annotated.html
-%%PORTDOCS%%share/doc/doxygen/examples/include/html/class_test-members.html
-%%PORTDOCS%%share/doc/doxygen/examples/include/html/class_test.html
-%%PORTDOCS%%share/doc/doxygen/examples/include/html/doxygen.css
-%%PORTDOCS%%share/doc/doxygen/examples/include/html/doxygen.png
-%%PORTDOCS%%share/doc/doxygen/examples/include/html/example.html
-%%PORTDOCS%%share/doc/doxygen/examples/include/html/functions.html
-%%PORTDOCS%%share/doc/doxygen/examples/include/html/index.html
-%%PORTDOCS%%share/doc/doxygen/examples/include/html/pages.html
-%%PORTDOCS%%share/doc/doxygen/examples/jdstyle.cfg
-%%PORTDOCS%%share/doc/doxygen/examples/jdstyle.cpp
-%%PORTDOCS%%share/doc/doxygen/examples/jdstyle/html/annotated.html
-%%PORTDOCS%%share/doc/doxygen/examples/jdstyle/html/class_test-members.html
-%%PORTDOCS%%share/doc/doxygen/examples/jdstyle/html/class_test.html
-%%PORTDOCS%%share/doc/doxygen/examples/jdstyle/html/doxygen.css
-%%PORTDOCS%%share/doc/doxygen/examples/jdstyle/html/doxygen.png
-%%PORTDOCS%%share/doc/doxygen/examples/jdstyle/html/functions.html
-%%PORTDOCS%%share/doc/doxygen/examples/jdstyle/html/index.html
-%%PORTDOCS%%share/doc/doxygen/examples/memgrp.cfg
-%%PORTDOCS%%share/doc/doxygen/examples/memgrp.cpp
-%%PORTDOCS%%share/doc/doxygen/examples/memgrp/html/annotated.html
-%%PORTDOCS%%share/doc/doxygen/examples/memgrp/html/class_test-members.html
-%%PORTDOCS%%share/doc/doxygen/examples/memgrp/html/class_test.html
-%%PORTDOCS%%share/doc/doxygen/examples/memgrp/html/doxygen.css
-%%PORTDOCS%%share/doc/doxygen/examples/memgrp/html/doxygen.png
-%%PORTDOCS%%share/doc/doxygen/examples/memgrp/html/files.html
-%%PORTDOCS%%share/doc/doxygen/examples/memgrp/html/functions.html
-%%PORTDOCS%%share/doc/doxygen/examples/memgrp/html/globals.html
-%%PORTDOCS%%share/doc/doxygen/examples/memgrp/html/index.html
-%%PORTDOCS%%share/doc/doxygen/examples/memgrp/html/memgrp_8cpp.html
-%%PORTDOCS%%share/doc/doxygen/examples/overload.cfg
-%%PORTDOCS%%share/doc/doxygen/examples/overload.cpp
-%%PORTDOCS%%share/doc/doxygen/examples/overload/html/annotated.html
-%%PORTDOCS%%share/doc/doxygen/examples/overload/html/class_test-members.html
-%%PORTDOCS%%share/doc/doxygen/examples/overload/html/class_test.html
-%%PORTDOCS%%share/doc/doxygen/examples/overload/html/doxygen.css
-%%PORTDOCS%%share/doc/doxygen/examples/overload/html/doxygen.png
-%%PORTDOCS%%share/doc/doxygen/examples/overload/html/functions.html
-%%PORTDOCS%%share/doc/doxygen/examples/overload/html/index.html
-%%PORTDOCS%%share/doc/doxygen/examples/page.cfg
-%%PORTDOCS%%share/doc/doxygen/examples/page.doc
-%%PORTDOCS%%share/doc/doxygen/examples/page/html/doxygen.css
-%%PORTDOCS%%share/doc/doxygen/examples/page/html/doxygen.png
-%%PORTDOCS%%share/doc/doxygen/examples/page/html/index.html
-%%PORTDOCS%%share/doc/doxygen/examples/page/html/page1.html
-%%PORTDOCS%%share/doc/doxygen/examples/page/html/page2.html
-%%PORTDOCS%%share/doc/doxygen/examples/page/html/pages.html
-%%PORTDOCS%%share/doc/doxygen/examples/par.cfg
-%%PORTDOCS%%share/doc/doxygen/examples/par.cpp
-%%PORTDOCS%%share/doc/doxygen/examples/par/html/annotated.html
-%%PORTDOCS%%share/doc/doxygen/examples/par/html/class_test.html
-%%PORTDOCS%%share/doc/doxygen/examples/par/html/doxygen.css
-%%PORTDOCS%%share/doc/doxygen/examples/par/html/doxygen.png
-%%PORTDOCS%%share/doc/doxygen/examples/par/html/index.html
-%%PORTDOCS%%share/doc/doxygen/examples/qtstyle.cfg
-%%PORTDOCS%%share/doc/doxygen/examples/qtstyle.cpp
-%%PORTDOCS%%share/doc/doxygen/examples/qtstyle/html/annotated.html
-%%PORTDOCS%%share/doc/doxygen/examples/qtstyle/html/class_test-members.html
-%%PORTDOCS%%share/doc/doxygen/examples/qtstyle/html/class_test.html
-%%PORTDOCS%%share/doc/doxygen/examples/qtstyle/html/doxygen.css
-%%PORTDOCS%%share/doc/doxygen/examples/qtstyle/html/doxygen.png
-%%PORTDOCS%%share/doc/doxygen/examples/qtstyle/html/functions.html
-%%PORTDOCS%%share/doc/doxygen/examples/qtstyle/html/index.html
-%%PORTDOCS%%share/doc/doxygen/examples/relates.cfg
-%%PORTDOCS%%share/doc/doxygen/examples/relates.cpp
-%%PORTDOCS%%share/doc/doxygen/examples/relates/html/annotated.html
-%%PORTDOCS%%share/doc/doxygen/examples/relates/html/class_string-members.html
-%%PORTDOCS%%share/doc/doxygen/examples/relates/html/class_string.html
-%%PORTDOCS%%share/doc/doxygen/examples/relates/html/doxygen.css
-%%PORTDOCS%%share/doc/doxygen/examples/relates/html/doxygen.png
-%%PORTDOCS%%share/doc/doxygen/examples/relates/html/functions.html
-%%PORTDOCS%%share/doc/doxygen/examples/relates/html/index.html
-%%PORTDOCS%%share/doc/doxygen/examples/restypedef.cfg
-%%PORTDOCS%%share/doc/doxygen/examples/restypedef.cpp
-%%PORTDOCS%%share/doc/doxygen/examples/restypedef/html/annotated.html
-%%PORTDOCS%%share/doc/doxygen/examples/restypedef/html/doxygen.css
-%%PORTDOCS%%share/doc/doxygen/examples/restypedef/html/doxygen.png
-%%PORTDOCS%%share/doc/doxygen/examples/restypedef/html/files.html
-%%PORTDOCS%%share/doc/doxygen/examples/restypedef/html/functions.html
-%%PORTDOCS%%share/doc/doxygen/examples/restypedef/html/globals.html
-%%PORTDOCS%%share/doc/doxygen/examples/restypedef/html/index.html
-%%PORTDOCS%%share/doc/doxygen/examples/restypedef/html/restypedef_8cpp.html
-%%PORTDOCS%%share/doc/doxygen/examples/restypedef/html/struct_coord_struct-members.html
-%%PORTDOCS%%share/doc/doxygen/examples/restypedef/html/struct_coord_struct.html
-%%PORTDOCS%%share/doc/doxygen/examples/structcmd.cfg
-%%PORTDOCS%%share/doc/doxygen/examples/structcmd.h
-%%PORTDOCS%%share/doc/doxygen/examples/structcmd/html/doxygen.css
-%%PORTDOCS%%share/doc/doxygen/examples/structcmd/html/doxygen.png
-%%PORTDOCS%%share/doc/doxygen/examples/structcmd/html/files.html
-%%PORTDOCS%%share/doc/doxygen/examples/structcmd/html/globals.html
-%%PORTDOCS%%share/doc/doxygen/examples/structcmd/html/index.html
-%%PORTDOCS%%share/doc/doxygen/examples/structcmd/html/structcmd_8h-source.html
-%%PORTDOCS%%share/doc/doxygen/examples/structcmd/html/structcmd_8h.html
-%%PORTDOCS%%share/doc/doxygen/examples/tag.cfg
-%%PORTDOCS%%share/doc/doxygen/examples/tag.cpp
-%%PORTDOCS%%share/doc/doxygen/examples/tag/html/annotated.html
-%%PORTDOCS%%share/doc/doxygen/examples/tag/html/class_tag-members.html
-%%PORTDOCS%%share/doc/doxygen/examples/tag/html/class_tag.html
-%%PORTDOCS%%share/doc/doxygen/examples/tag/html/class_tag.png
-%%PORTDOCS%%share/doc/doxygen/examples/tag/html/doxygen.css
-%%PORTDOCS%%share/doc/doxygen/examples/tag/html/doxygen.png
-%%PORTDOCS%%share/doc/doxygen/examples/tag/html/functions.html
-%%PORTDOCS%%share/doc/doxygen/examples/tag/html/hierarchy.html
-%%PORTDOCS%%share/doc/doxygen/examples/tag/html/index.html
-%%PORTDOCS%%share/doc/doxygen/examples/tag/html/installdox
-%%PORTDOCS%%share/doc/doxygen/examples/templ.cfg
-%%PORTDOCS%%share/doc/doxygen/examples/templ.cpp
-%%PORTDOCS%%share/doc/doxygen/examples/template/html/annotated.html
-%%PORTDOCS%%share/doc/doxygen/examples/template/html/class_test-members.html
-%%PORTDOCS%%share/doc/doxygen/examples/template/html/class_test.html
-%%PORTDOCS%%share/doc/doxygen/examples/template/html/class_test_3_01_t_01_5_01_4-members.html
-%%PORTDOCS%%share/doc/doxygen/examples/template/html/class_test_3_01_t_01_5_01_4.html
-%%PORTDOCS%%share/doc/doxygen/examples/template/html/class_test_3_01_t_01_5_01_4.png
-%%PORTDOCS%%share/doc/doxygen/examples/template/html/class_test_3_01void_01_5_00_01200_01_4-members.html
-%%PORTDOCS%%share/doc/doxygen/examples/template/html/class_test_3_01void_01_5_00_01200_01_4.html
-%%PORTDOCS%%share/doc/doxygen/examples/template/html/class_test_3_01void_01_5_00_01200_01_4.png
-%%PORTDOCS%%share/doc/doxygen/examples/template/html/doxygen.css
-%%PORTDOCS%%share/doc/doxygen/examples/template/html/doxygen.png
-%%PORTDOCS%%share/doc/doxygen/examples/template/html/functions.html
-%%PORTDOCS%%share/doc/doxygen/examples/template/html/hierarchy.html
-%%PORTDOCS%%share/doc/doxygen/examples/template/html/index.html
-%%PORTDOCS%%share/doc/doxygen/html/arch.html
-%%PORTDOCS%%share/doc/doxygen/html/archoverview.gif
-%%PORTDOCS%%share/doc/doxygen/html/autolink.html
-%%PORTDOCS%%share/doc/doxygen/html/commands.html
-%%PORTDOCS%%share/doc/doxygen/html/config.html
-%%PORTDOCS%%share/doc/doxygen/html/diagrams.html
-%%PORTDOCS%%share/doc/doxygen/html/docblocks.html
-%%PORTDOCS%%share/doc/doxygen/html/doxygen.css
-%%PORTDOCS%%share/doc/doxygen/html/doxygen.png
-%%PORTDOCS%%share/doc/doxygen/html/doxygen_logo.gif
-%%PORTDOCS%%share/doc/doxygen/html/doxygen_logo_low.gif
-%%PORTDOCS%%share/doc/doxygen/html/doxygen_usage.html
-%%PORTDOCS%%share/doc/doxygen/html/doxysearch_usage.html
-%%PORTDOCS%%share/doc/doxygen/html/doxytag_usage.html
-%%PORTDOCS%%share/doc/doxygen/html/doxywizard.gif
-%%PORTDOCS%%share/doc/doxygen/html/doxywizard_usage.html
-%%PORTDOCS%%share/doc/doxygen/html/external.html
-%%PORTDOCS%%share/doc/doxygen/html/faq.html
-%%PORTDOCS%%share/doc/doxygen/html/features.html
-%%PORTDOCS%%share/doc/doxygen/html/form_0.png
-%%PORTDOCS%%share/doc/doxygen/html/form_1.png
-%%PORTDOCS%%share/doc/doxygen/html/form_2.png
-%%PORTDOCS%%share/doc/doxygen/html/form_3.png
-%%PORTDOCS%%share/doc/doxygen/html/form_4.png
-%%PORTDOCS%%share/doc/doxygen/html/form_5.png
-%%PORTDOCS%%share/doc/doxygen/html/formula.repository
-%%PORTDOCS%%share/doc/doxygen/html/formulas.html
-%%PORTDOCS%%share/doc/doxygen/html/grouping.html
-%%PORTDOCS%%share/doc/doxygen/html/history.html
-%%PORTDOCS%%share/doc/doxygen/html/htmlcmds.html
-%%PORTDOCS%%share/doc/doxygen/html/index.hhc
-%%PORTDOCS%%share/doc/doxygen/html/index.hhk
-%%PORTDOCS%%share/doc/doxygen/html/index.hhp
-%%PORTDOCS%%share/doc/doxygen/html/index.html
-%%PORTDOCS%%share/doc/doxygen/html/infoflow.gif
-%%PORTDOCS%%share/doc/doxygen/html/install.html
-%%PORTDOCS%%share/doc/doxygen/html/installdox_usage.html
-%%PORTDOCS%%share/doc/doxygen/html/langhowto.html
-%%PORTDOCS%%share/doc/doxygen/html/lists.html
-%%PORTDOCS%%share/doc/doxygen/html/output.html
-%%PORTDOCS%%share/doc/doxygen/html/pages.html
-%%PORTDOCS%%share/doc/doxygen/html/perlmod.html
-%%PORTDOCS%%share/doc/doxygen/html/perlmod_tree.html
-%%PORTDOCS%%share/doc/doxygen/html/preprocessing.html
-%%PORTDOCS%%share/doc/doxygen/html/starting.html
-%%PORTDOCS%%share/doc/doxygen/html/trouble.html
-%%PORTDOCS%%@dirrm share/doc/doxygen/html
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/template/html
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/template
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/tag/html
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/tag
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/structcmd/html
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/structcmd
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/restypedef/html
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/restypedef
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/relates/html
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/relates
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/qtstyle/html
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/qtstyle
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/par/html
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/par
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/page/html
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/page
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/overload/html
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/overload
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/memgrp/html
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/memgrp
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/jdstyle/html
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/jdstyle
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/include/html
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/include
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/group/html
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/group
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/func/html
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/func
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/file/html
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/file
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/example/html
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/example
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/enum/html
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/enum
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/diagrams/html
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/diagrams
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/define/html
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/define
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/class/html
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/class
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/autolink/html
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/autolink
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/author/html
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/author
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/afterdoc/html
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples/afterdoc
-%%PORTDOCS%%@dirrm share/doc/doxygen/examples
-%%PORTDOCS%%@dirrm share/doc/doxygen
+%%PORTDOCS%%%%HAVE_LATEX%%%%DOCSDIR%%/archoverview.eps
+%%PORTDOCS%%%%HAVE_LATEX%%%%DOCSDIR%%/doxygen_logo.eps
+%%PORTDOCS%%%%HAVE_LATEX%%%%DOCSDIR%%/doxygen_manual.dvi
+%%PORTDOCS%%%%HAVE_LATEX%%%%DOCSDIR%%/doxygen_manual.pdf
+%%PORTDOCS%%%%HAVE_LATEX%%%%DOCSDIR%%/doxygen_manual.ps
+%%PORTDOCS%%%%DOCSDIR%%/examples/afterdoc.cfg
+%%PORTDOCS%%%%DOCSDIR%%/examples/afterdoc.h
+%%PORTDOCS%%%%DOCSDIR%%/examples/afterdoc/html/afterdoc_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/afterdoc/html/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/afterdoc/html/class_test-members.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/afterdoc/html/class_test.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/afterdoc/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/afterdoc/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/afterdoc/html/files.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/afterdoc/html/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/afterdoc/html/functions_enum.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/afterdoc/html/functions_eval.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/afterdoc/html/functions_func.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/afterdoc/html/functions_vars.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/afterdoc/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/author.cfg
+%%PORTDOCS%%%%DOCSDIR%%/examples/author.cpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/author/html/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/author/html/bug.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/author/html/class_windows_n_t.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/author/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/author/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/author/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/author/html/pages.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/autolink.cfg
+%%PORTDOCS%%%%DOCSDIR%%/examples/autolink.cpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/autolink_8cpp.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/class_test-members.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/class_test.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/files.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/functions_enum.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/functions_eval.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/functions_func.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/functions_vars.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/globals.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/globals_defs.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/globals_enum.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/globals_eval.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/globals_type.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/globals_vars.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/autolink/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/class.cfg
+%%PORTDOCS%%%%DOCSDIR%%/examples/class.h
+%%PORTDOCS%%%%DOCSDIR%%/examples/class/html/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/class/html/class_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/class/html/class_test.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/class/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/class/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/class/html/files.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/class/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/define.cfg
+%%PORTDOCS%%%%DOCSDIR%%/examples/define.h
+%%PORTDOCS%%%%DOCSDIR%%/examples/define/html/define_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/define/html/define_8h.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/define/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/define/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/define/html/files.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/define/html/globals.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/define/html/globals_defs.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/define/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams.cfg
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/class_a-members.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/class_a.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/class_a__coll__graph.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/class_a__inherit__graph.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/class_b-members.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/class_b.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/class_b__coll__graph.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/class_b__inherit__graph.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/class_c-members.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/class_c.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/class_c__coll__graph.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/class_c__inherit__graph.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/class_d-members.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/class_d.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/class_d__coll__graph.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/class_d__inherit__graph.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/class_e-members.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/class_e.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/class_e__coll__graph.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/class_e__inherit__graph.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/diagrams__a_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/diagrams__a_8h.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/diagrams__a_8h__dep__incl.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/diagrams__b_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/diagrams__b_8h.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/diagrams__b_8h__dep__incl.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/diagrams__c_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/diagrams__c_8h.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/diagrams__c_8h__dep__incl.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/diagrams__c_8h__incl.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/diagrams__d_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/diagrams__d_8h.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/diagrams__d_8h__dep__incl.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/diagrams__d_8h__incl.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/diagrams__e_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/diagrams__e_8h.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/diagrams__e_8h__incl.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/files.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/functions_vars.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/graph_legend.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/graph_legend.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/hierarchy.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/inherit__graph__0.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams/html/inherits.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams_a.h
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams_b.h
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams_c.h
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams_d.h
+%%PORTDOCS%%%%DOCSDIR%%/examples/diagrams_e.h
+%%PORTDOCS%%%%DOCSDIR%%/examples/enum.cfg
+%%PORTDOCS%%%%DOCSDIR%%/examples/enum.h
+%%PORTDOCS%%%%DOCSDIR%%/examples/enum/html/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/enum/html/class_test-members.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/enum/html/class_test.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/enum/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/enum/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/enum/html/enum_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/enum/html/files.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/enum/html/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/enum/html/functions_enum.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/enum/html/functions_eval.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/enum/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/example.cfg
+%%PORTDOCS%%%%DOCSDIR%%/examples/example.cpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/example.tag
+%%PORTDOCS%%%%DOCSDIR%%/examples/example/html/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/example/html/class_test-members.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/example/html/class_test.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/example/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/example/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/example/html/example__test_8cpp-example.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/example/html/examples.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/example/html/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/example/html/functions_func.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/example/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/example_test.cpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/file.cfg
+%%PORTDOCS%%%%DOCSDIR%%/examples/file.h
+%%PORTDOCS%%%%DOCSDIR%%/examples/file/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/file/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/file/html/file_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/file/html/file_8h.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/file/html/files.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/file/html/globals.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/file/html/globals_vars.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/file/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/func.cfg
+%%PORTDOCS%%%%DOCSDIR%%/examples/func.h
+%%PORTDOCS%%%%DOCSDIR%%/examples/func/html/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/func/html/class_test-members.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/func/html/class_test.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/func/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/func/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/func/html/files.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/func/html/func_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/func/html/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/func/html/functions_func.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/func/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/group.cfg
+%%PORTDOCS%%%%DOCSDIR%%/examples/group.cpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/group/html/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/group/html/class_c1.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/group/html/class_c2.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/group/html/class_c3.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/group/html/class_c4.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/group/html/class_c5.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/group/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/group/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/group/html/files.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/group/html/globals.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/group/html/globals_func.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/group/html/group_8cpp.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/group/html/group__group1.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/group/html/group__group2.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/group/html/group__group3.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/group/html/group__group4.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/group/html/group__group5.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/group/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/group/html/modules.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/group/html/namespace_n1.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/group/html/namespaces.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/include.cfg
+%%PORTDOCS%%%%DOCSDIR%%/examples/include.cpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/include/html/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/include/html/class_test-members.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/include/html/class_test.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/include/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/include/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/include/html/example.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/include/html/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/include/html/functions_func.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/include/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/include/html/pages.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/jdstyle.cfg
+%%PORTDOCS%%%%DOCSDIR%%/examples/jdstyle.cpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/jdstyle/html/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/jdstyle/html/class_test-members.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/jdstyle/html/class_test.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/jdstyle/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/jdstyle/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/jdstyle/html/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/jdstyle/html/functions_enum.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/jdstyle/html/functions_eval.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/jdstyle/html/functions_func.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/jdstyle/html/functions_vars.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/jdstyle/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/memgrp.cfg
+%%PORTDOCS%%%%DOCSDIR%%/examples/memgrp.cpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/memgrp/html/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/memgrp/html/class_test-members.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/memgrp/html/class_test.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/memgrp/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/memgrp/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/memgrp/html/files.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/memgrp/html/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/memgrp/html/functions_func.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/memgrp/html/globals.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/memgrp/html/globals_defs.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/memgrp/html/globals_func.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/memgrp/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/memgrp/html/memgrp_8cpp.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/overload.cfg
+%%PORTDOCS%%%%DOCSDIR%%/examples/overload.cpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/overload/html/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/overload/html/class_test-members.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/overload/html/class_test.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/overload/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/overload/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/overload/html/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/overload/html/functions_func.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/overload/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/page.cfg
+%%PORTDOCS%%%%DOCSDIR%%/examples/page.doc
+%%PORTDOCS%%%%DOCSDIR%%/examples/page/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/page/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/page/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/page/html/page1.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/page/html/page2.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/page/html/pages.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/par.cfg
+%%PORTDOCS%%%%DOCSDIR%%/examples/par.cpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/par/html/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/par/html/class_test.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/par/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/par/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/par/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/qtstyle.cfg
+%%PORTDOCS%%%%DOCSDIR%%/examples/qtstyle.cpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/qtstyle/html/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/qtstyle/html/class_test-members.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/qtstyle/html/class_test.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/qtstyle/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/qtstyle/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/qtstyle/html/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/qtstyle/html/functions_enum.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/qtstyle/html/functions_eval.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/qtstyle/html/functions_func.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/qtstyle/html/functions_vars.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/qtstyle/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/relates.cfg
+%%PORTDOCS%%%%DOCSDIR%%/examples/relates.cpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/relates/html/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/relates/html/class_string-members.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/relates/html/class_string.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/relates/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/relates/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/relates/html/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/relates/html/functions_func.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/relates/html/functions_rela.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/relates/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/restypedef.cfg
+%%PORTDOCS%%%%DOCSDIR%%/examples/restypedef.cpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/restypedef/html/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/restypedef/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/restypedef/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/restypedef/html/files.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/restypedef/html/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/restypedef/html/functions_vars.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/restypedef/html/globals.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/restypedef/html/globals_func.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/restypedef/html/globals_type.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/restypedef/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/restypedef/html/restypedef_8cpp.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/restypedef/html/struct_coord_struct-members.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/restypedef/html/struct_coord_struct.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/structcmd.cfg
+%%PORTDOCS%%%%DOCSDIR%%/examples/structcmd.h
+%%PORTDOCS%%%%DOCSDIR%%/examples/structcmd/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/structcmd/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/structcmd/html/files.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/structcmd/html/globals.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/structcmd/html/globals_defs.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/structcmd/html/globals_func.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/structcmd/html/globals_type.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/structcmd/html/globals_vars.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/structcmd/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/structcmd/html/structcmd_8h-source.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/structcmd/html/structcmd_8h.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/tag.cfg
+%%PORTDOCS%%%%DOCSDIR%%/examples/tag.cpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/tag/html/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/tag/html/class_tag-members.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/tag/html/class_tag.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/tag/html/class_tag.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/tag/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/tag/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/tag/html/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/tag/html/functions_func.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/tag/html/hierarchy.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/tag/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/tag/html/installdox
+%%PORTDOCS%%%%DOCSDIR%%/examples/templ.cfg
+%%PORTDOCS%%%%DOCSDIR%%/examples/templ.cpp
+%%PORTDOCS%%%%DOCSDIR%%/examples/template/html/annotated.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/template/html/class_test-members.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/template/html/class_test.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/template/html/class_test_3_01_t_01_5_01_4-members.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/template/html/class_test_3_01_t_01_5_01_4.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/template/html/class_test_3_01_t_01_5_01_4.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/template/html/class_test_3_01void_01_5_00_01200_01_4-members.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/template/html/class_test_3_01void_01_5_00_01200_01_4.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/template/html/class_test_3_01void_01_5_00_01200_01_4.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/template/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/examples/template/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/examples/template/html/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/template/html/functions_func.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/template/html/hierarchy.html
+%%PORTDOCS%%%%DOCSDIR%%/examples/template/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/arch.html
+%%PORTDOCS%%%%DOCSDIR%%/html/archoverview.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/autolink.html
+%%PORTDOCS%%%%DOCSDIR%%/html/commands.html
+%%PORTDOCS%%%%DOCSDIR%%/html/config.html
+%%PORTDOCS%%%%DOCSDIR%%/html/diagrams.html
+%%PORTDOCS%%%%DOCSDIR%%/html/docblocks.html
+%%PORTDOCS%%%%DOCSDIR%%/html/doxygen.css
+%%PORTDOCS%%%%DOCSDIR%%/html/doxygen.png
+%%PORTDOCS%%%%DOCSDIR%%/html/doxygen_logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/doxygen_logo_low.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/doxygen_usage.html
+%%PORTDOCS%%%%DOCSDIR%%/html/doxysearch_usage.html
+%%PORTDOCS%%%%DOCSDIR%%/html/doxytag_usage.html
+%%PORTDOCS%%%%DOCSDIR%%/html/doxywizard.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/doxywizard_usage.html
+%%PORTDOCS%%%%DOCSDIR%%/html/external.html
+%%PORTDOCS%%%%DOCSDIR%%/html/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/html/features.html
+%%PORTDOCS%%%%HAVE_LATEX%%%%DOCSDIR%%/html/form_0.png
+%%PORTDOCS%%%%HAVE_LATEX%%%%DOCSDIR%%/html/form_1.png
+%%PORTDOCS%%%%HAVE_LATEX%%%%DOCSDIR%%/html/form_2.png
+%%PORTDOCS%%%%HAVE_LATEX%%%%DOCSDIR%%/html/form_3.png
+%%PORTDOCS%%%%HAVE_LATEX%%%%DOCSDIR%%/html/form_4.png
+%%PORTDOCS%%%%HAVE_LATEX%%%%DOCSDIR%%/html/form_5.png
+%%PORTDOCS%%%%HAVE_LATEX%%%%DOCSDIR%%/html/formula.repository
+%%PORTDOCS%%%%DOCSDIR%%/html/formulas.html
+%%PORTDOCS%%%%DOCSDIR%%/html/grouping.html
+%%PORTDOCS%%%%DOCSDIR%%/html/history.html
+%%PORTDOCS%%%%DOCSDIR%%/html/htmlcmds.html
+%%PORTDOCS%%%%DOCSDIR%%/html/index.hhc
+%%PORTDOCS%%%%DOCSDIR%%/html/index.hhk
+%%PORTDOCS%%%%DOCSDIR%%/html/index.hhp
+%%PORTDOCS%%%%DOCSDIR%%/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/infoflow.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/install.html
+%%PORTDOCS%%%%DOCSDIR%%/html/installdox_usage.html
+%%PORTDOCS%%%%DOCSDIR%%/html/langhowto.html
+%%PORTDOCS%%%%DOCSDIR%%/html/lists.html
+%%PORTDOCS%%%%DOCSDIR%%/html/output.html
+%%PORTDOCS%%%%DOCSDIR%%/html/pages.html
+%%PORTDOCS%%%%DOCSDIR%%/html/perlmod.html
+%%PORTDOCS%%%%DOCSDIR%%/html/perlmod_tree.html
+%%PORTDOCS%%%%DOCSDIR%%/html/preprocessing.html
+%%PORTDOCS%%%%DOCSDIR%%/html/starting.html
+%%PORTDOCS%%%%DOCSDIR%%/html/trouble.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/template/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/template
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/tag/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/tag
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/structcmd/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/structcmd
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/restypedef/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/restypedef
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/relates/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/relates
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/qtstyle/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/qtstyle
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/par/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/par
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/page/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/page
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/overload/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/overload
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/memgrp/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/memgrp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/jdstyle/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/jdstyle
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/include/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/include
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/group/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/group
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/func/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/func
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/file/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/file
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/example/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/example
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/enum/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/enum
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/diagrams/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/diagrams
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/define/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/define
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/class/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/class
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/autolink/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/autolink
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/author/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/author
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/afterdoc/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples/afterdoc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

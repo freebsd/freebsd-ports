@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	doxygen
-PORTVERSION=	1.3.1
+PORTVERSION=	1.3.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.stack.nl/pub/users/dimitri/
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	kde@freebsd.org
 COMMENT=	A documentation system for C and C++
-
-BROKEN=		Broken pkg-plist
 
 ALL_TARGET=	all
 
@@ -25,14 +23,14 @@ BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 .undef HAVE_LATEX
 .endif # !defined(NOPORTDOCS)
 
-.if defined(HAVE_LATEX)
+.if !defined(WITHOUT_LATEX)
 ALL_TARGET+=	pdf
 PLIST_SUB+=	HAVE_LATEX=""
 BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX
 MAKE_ARGS+=	HAVE_LATEX=yes
-.else # !defined(HAVE_LATEX)
+.else # !defined(WITHOUT_LATEX)
 PLIST_SUB+=	HAVE_LATEX="@comment "
-.endif # !defined(HAVE_LATEX)
+.endif # !defined(WITHOUT_LATEX)
 
 .if !defined(WITHOUT_DOXYWIZARD)
 USE_QT_VER=	3
@@ -57,17 +55,6 @@ USE_GMAKE=	yes
 QT_NONSTANDARD=	yes	# non-standard configure arguments
 CONFIGURE_ARGS+=--prefix ${PREFIX} --perl ${PERL} --make ${GMAKE} \
 		--install "${INSTALL}"
-
-.if !defined(NOPORTDOCS) && !defined(HAVE_LATEX)
-pre-everything::
-	@${ECHO_MSG}
-	@${ECHO_MSG} "================================================="
-	@${ECHO_MSG} "If you want DVI, Postscript, and PDF documentation"
-	@${ECHO_MSG} "in addition to the HTML documentation,"
-	@${ECHO_MSG} "hit Ctrl-C right now and use \"make HAVE_LATEX=yes\""
-	@${ECHO_MSG} "================================================="
-	@${ECHO_MSG}
-.endif # !defined(NOPORTDOCS) && !defined(HAVE_LATEX)
 
 pre-configure:
 	@${PERL} -pi -e "s:gcc:${CC}:g;		\
@@ -105,14 +92,14 @@ do-install:
 	${TAR} -C ${WRKSRC} --exclude '*/Makefile*' --exclude '*.dot' \
 		-cf - examples \
 	    | ${TAR} -C ${PREFIX}/share/doc/doxygen --unlink -xf -
-.ifdef HAVE_LATEX
+.ifndef WITHOUT_LATEX
 	${INSTALL_DATA} ${WRKSRC}/latex/doxygen_manual.dvi \
 			${WRKSRC}/latex/doxygen_manual.pdf \
 			${WRKSRC}/latex/doxygen_manual.ps \
 			${WRKSRC}/latex/archoverview.eps \
 			${WRKSRC}/latex/doxygen_logo.eps \
 			${PREFIX}/share/doc/doxygen
-.endif # HAVE_LATEXT
+.endif # WITHOUT_LATEXT
 .endif # ! NOPORTDOCS
 
 .include <bsd.port.mk>
