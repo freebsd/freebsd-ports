@@ -43,13 +43,14 @@ ac_add_options --disable-ldap
 ac_add_options --disable-pedantic
 ac_add_options --disable-profilesharing
 ac_add_options --disable-installer
-ac_add_options --enable-extensions=cookie,xml-rpc,xmlextras,p3p,pref,transformiix,universalchardet,typeaheadfind,webservices
+ac_add_options --enable-extensions=cookie,xml-rpc,xmlextras,p3p,pref,transformiix,universalchardet,typeaheadfind,webservices,inspector
 ######################################################################
 # conditional from port Makefile
 if test -n "$WITH_DEBUG"; then
     ac_add_options --enable-debug
 else
     ac_add_options --disable-debug
+    ac_add_options --enable-optimize
 fi # test -n "$WITH_DEBUG"
 if test -n "$WITH_LOGGING"; then
     ac_add_options --enable-logging

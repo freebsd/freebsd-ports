@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- xpcom/reflect/xptcall/src/md/unix/Makefile.in.orig	Thu Aug 14 21:00:23 2003
 +++ xpcom/reflect/xptcall/src/md/unix/Makefile.in	Sun Feb  1 15:06:40 2004
 @@ -49,6 +49,9 @@

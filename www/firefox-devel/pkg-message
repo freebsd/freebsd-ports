@@ -6,14 +6,14 @@ bug reports to any other addresses.
 
 Please include the following information with any bug report:
 * Output from 'uname -a'.
-* Date/time stamp from www/mozilla-firebird/Makefile.
+* Date/time stamp from www/firefox/Makefile.
 * Perl version used (/usr/bin/perl --version or
 	/usr/local/bin/perl --version for -current).
 * Where/when did the problem occur: configuring, building, or
-	running mozilla-firebird?
+	running firefox
 * How can you reproduce the problem?
 
 Thank you for your help in testing and reporting bugs, and we hope you
-enjoy using Firebird.
+enjoy using Firefox.
 The Maintainers (gnome@)
 ======================================================================

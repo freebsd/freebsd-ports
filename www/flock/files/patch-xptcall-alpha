@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- xpcom/reflect/xptcall/src/md/unix/xptcinvoke_freebsd_alpha.cpp.orig	Tue May 27 01:37:25 2003
 +++ xpcom/reflect/xptcall/src/md/unix/xptcinvoke_freebsd_alpha.cpp	Tue May 27 01:37:00 2003
 @@ -0,0 +1,184 @@

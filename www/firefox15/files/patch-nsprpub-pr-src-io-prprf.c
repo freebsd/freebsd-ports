@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- nsprpub/pr/src/io/prprf.c	Wed Feb 26 15:53:42 2003
 +++ nsprpub/pr/src/io/prprf.c	Thu Oct 16 22:50:40 2003
 @@ -52,5 +52,8 @@

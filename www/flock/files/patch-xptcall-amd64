@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- /dev/null	Wed Dec 31 16:00:00 1969
 +++ xpcom/reflect/xptcall/src/md/unix/xptcinvoke_amd64_freebsd.cpp	Thu Oct 16 22:59:43 2003
 @@ -0,0 +1,174 @@
