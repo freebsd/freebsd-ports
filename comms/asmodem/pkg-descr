@@ -4,3 +4,5 @@ blinking lights that indicate when the modem is connected, transmitting,
 and receiving.  It is especially useful for internal modems.
 It can execute programs to dial, re-dial, and hang-up when clicked on.
 It only works on device ppp0.
+
+WWW: http://www.cmdrtaco.net/linux/mystuff.shtml
