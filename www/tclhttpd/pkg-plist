@@ -7,13 +7,18 @@ lib/tclhttpd%%PORTVERSION%%/%%SHLIB_NAME%%
 lib/tclhttpd%%PORTVERSION%%/admin.tcl
 lib/tclhttpd%%PORTVERSION%%/auth.tcl
 lib/tclhttpd%%PORTVERSION%%/cgi.tcl
+lib/tclhttpd%%PORTVERSION%%/compat.tcl
 lib/tclhttpd%%PORTVERSION%%/config.tcl
+lib/tclhttpd%%PORTVERSION%%/cookie.tcl
 lib/tclhttpd%%PORTVERSION%%/counter.tcl
 lib/tclhttpd%%PORTVERSION%%/debug.tcl
-lib/tclhttpd%%PORTVERSION%%/demo.tcl
+lib/tclhttpd%%PORTVERSION%%/digest.tcl
 lib/tclhttpd%%PORTVERSION%%/direct.tcl
 lib/tclhttpd%%PORTVERSION%%/dirlist.tcl
 lib/tclhttpd%%PORTVERSION%%/doc.tcl
+lib/tclhttpd%%PORTVERSION%%/doc_error.tcl
+lib/tclhttpd%%PORTVERSION%%/doctools.tcl
+lib/tclhttpd%%PORTVERSION%%/fallback.tcl
 lib/tclhttpd%%PORTVERSION%%/httpd.tcl
 lib/tclhttpd%%PORTVERSION%%/imagemap.tcl
 lib/tclhttpd%%PORTVERSION%%/include.tcl
@@ -25,17 +30,18 @@ lib/tclhttpd%%PORTVERSION%%/maptk.tcl
 lib/tclhttpd%%PORTVERSION%%/mtype.tcl
 lib/tclhttpd%%PORTVERSION%%/open.tcl
 lib/tclhttpd%%PORTVERSION%%/passcheck.tcl
+lib/tclhttpd%%PORTVERSION%%/passgen.tcl
 lib/tclhttpd%%PORTVERSION%%/pkgIndex.tcl
 lib/tclhttpd%%PORTVERSION%%/prodebug.tcl
 lib/tclhttpd%%PORTVERSION%%/redirect.tcl
 lib/tclhttpd%%PORTVERSION%%/safecgio.tcl
 lib/tclhttpd%%PORTVERSION%%/session.tcl
-lib/tclhttpd%%PORTVERSION%%/sendsock.tcl
-lib/tclhttpd%%PORTVERSION%%/snmp.tcl
 lib/tclhttpd%%PORTVERSION%%/srvui.tcl
 lib/tclhttpd%%PORTVERSION%%/status.tcl
 lib/tclhttpd%%PORTVERSION%%/stdin.tcl
-lib/tclhttpd%%PORTVERSION%%/telnet.tcl
+lib/tclhttpd%%PORTVERSION%%/subst.tcl
+lib/tclhttpd%%PORTVERSION%%/tclcrypt.tcl
+lib/tclhttpd%%PORTVERSION%%/template.tcl
 lib/tclhttpd%%PORTVERSION%%/thread.tcl
 lib/tclhttpd%%PORTVERSION%%/upload.tcl
 lib/tclhttpd%%PORTVERSION%%/url.tcl
@@ -43,35 +49,30 @@ lib/tclhttpd%%PORTVERSION%%/utils.tcl
 lib/tclhttpd%%PORTVERSION%%/version.tcl
 lib/tclhttpd%%PORTVERSION%%/mime.types
 @dirrm lib/tclhttpd%%PORTVERSION%%
-share/tclhttpd%%PORTVERSION%%/empty.html
-share/tclhttpd%%PORTVERSION%%/error.html
-share/tclhttpd%%PORTVERSION%%/hacks.tml
-share/tclhttpd%%PORTVERSION%%/include.shtml
-share/tclhttpd%%PORTVERSION%%/index.tml
-share/tclhttpd%%PORTVERSION%%/license.terms
-share/tclhttpd%%PORTVERSION%%/notfound.html
-share/tclhttpd%%PORTVERSION%%/redirect
-share/tclhttpd%%PORTVERSION%%/register.tml
-share/tclhttpd%%PORTVERSION%%/test.tml
+share/tclhttpd%%PORTVERSION%%/.tml
+share/tclhttpd%%PORTVERSION%%/access/.htaccess
 share/tclhttpd%%PORTVERSION%%/access/README.txt
-share/tclhttpd%%PORTVERSION%%/access/index.tml
+share/tclhttpd%%PORTVERSION%%/access/auth/.htaccess
 share/tclhttpd%%PORTVERSION%%/access/auth/hello.txt
 share/tclhttpd%%PORTVERSION%%/access/auth/test.cgi
-share/tclhttpd%%PORTVERSION%%/access/auth/.htaccess
+share/tclhttpd%%PORTVERSION%%/access/bydir/.htaccess
 share/tclhttpd%%PORTVERSION%%/access/bydir/README.txt
 share/tclhttpd%%PORTVERSION%%/access/bydir/user.cgi
-share/tclhttpd%%PORTVERSION%%/access/bydir/.htaccess
-share/tclhttpd%%PORTVERSION%%/access/bytcl/index.tml
 share/tclhttpd%%PORTVERSION%%/access/bytcl/.tclaccess
-share/tclhttpd%%PORTVERSION%%/access/multiple/index.tml
-share/tclhttpd%%PORTVERSION%%/access/multiple/.htaccess
-share/tclhttpd%%PORTVERSION%%/access/noawe/.htaccess
-share/tclhttpd%%PORTVERSION%%/access/null/index.tml
-share/tclhttpd%%PORTVERSION%%/access/null/.tclaccess
-share/tclhttpd%%PORTVERSION%%/access/session/page.auth
-share/tclhttpd%%PORTVERSION%%/access/session/.tclaccess
-share/tclhttpd%%PORTVERSION%%/access/.htaccess
+share/tclhttpd%%PORTVERSION%%/access/bytcl/index.tml
+share/tclhttpd%%PORTVERSION%%/access/digest/.htaccess
+share/tclhttpd%%PORTVERSION%%/access/digest/Readme.txt
 share/tclhttpd%%PORTVERSION%%/access/htaccess.tml
+share/tclhttpd%%PORTVERSION%%/access/htman.tml
+share/tclhttpd%%PORTVERSION%%/access/index.tml
+share/tclhttpd%%PORTVERSION%%/access/multiple/.htaccess
+share/tclhttpd%%PORTVERSION%%/access/multiple/index.tml
+share/tclhttpd%%PORTVERSION%%/access/noawe/.htaccess
+share/tclhttpd%%PORTVERSION%%/access/null/.tclaccess
+share/tclhttpd%%PORTVERSION%%/access/null/index.tml
+share/tclhttpd%%PORTVERSION%%/access/session/.tclaccess
+share/tclhttpd%%PORTVERSION%%/access/session/page.auth
+share/tclhttpd%%PORTVERSION%%/admin/.htaccess
 share/tclhttpd%%PORTVERSION%%/book/TCLHTTPD-1.gif
 share/tclhttpd%%PORTVERSION%%/book/TCLHTTPD-2.gif
 share/tclhttpd%%PORTVERSION%%/book/TCLHTTPD.css
@@ -96,22 +97,37 @@ share/tclhttpd%%PORTVERSION%%/cgi-bin/tclIndex
 share/tclhttpd%%PORTVERSION%%/cgi-bin/test.cgi
 share/tclhttpd%%PORTVERSION%%/cgi-bin/testupload.cgi
 share/tclhttpd%%PORTVERSION%%/cgi-bin/user.cgi
+share/tclhttpd%%PORTVERSION%%/cgi-bin/wiki.cgi
+share/tclhttpd%%PORTVERSION%%/debug/.htaccess
+share/tclhttpd%%PORTVERSION%%/debug/.tclaccess
+share/tclhttpd%%PORTVERSION%%/debug/README
+share/tclhttpd%%PORTVERSION%%/empty.html
+share/tclhttpd%%PORTVERSION%%/error.html
+share/tclhttpd%%PORTVERSION%%/forms/.tml
 share/tclhttpd%%PORTVERSION%%/forms/file.tml
 share/tclhttpd%%PORTVERSION%%/forms/form1.tml
 share/tclhttpd%%PORTVERSION%%/forms/formget.tml
 share/tclhttpd%%PORTVERSION%%/forms/headers.tml
 share/tclhttpd%%PORTVERSION%%/forms/headerspost.tml
 share/tclhttpd%%PORTVERSION%%/forms/index.tml
+share/tclhttpd%%PORTVERSION%%/forms/multi.tml
 share/tclhttpd%%PORTVERSION%%/forms/ncgiredirect.cgi
+share/tclhttpd%%PORTVERSION%%/forms/posttest.tml
 share/tclhttpd%%PORTVERSION%%/forms/redirect.tml
 share/tclhttpd%%PORTVERSION%%/forms/redirect2.tml
-share/tclhttpd%%PORTVERSION%%/forms/multi.tml
-share/tclhttpd%%PORTVERSION%%/forms/posttest.tml
 share/tclhttpd%%PORTVERSION%%/forms/testupload.tml
-share/tclhttpd%%PORTVERSION%%/forms/.tml
 share/tclhttpd%%PORTVERSION%%/guestbook/guestbook.cgi
 share/tclhttpd%%PORTVERSION%%/guestbook/newguest.cgi
 share/tclhttpd%%PORTVERSION%%/guestbook/newguest.html
+share/tclhttpd%%PORTVERSION%%/hacks.tml
+share/tclhttpd%%PORTVERSION%%/htaccess/.htaccess
+share/tclhttpd%%PORTVERSION%%/htaccess/.tml
+share/tclhttpd%%PORTVERSION%%/htaccess/group
+share/tclhttpd%%PORTVERSION%%/htaccess/group.tml
+share/tclhttpd%%PORTVERSION%%/htaccess/htaccess.org
+share/tclhttpd%%PORTVERSION%%/htaccess/index.tml
+share/tclhttpd%%PORTVERSION%%/htaccess/register.tml
+share/tclhttpd%%PORTVERSION%%/htaccess/user.tml
 share/tclhttpd%%PORTVERSION%%/images/AjubaLogo.gif
 share/tclhttpd%%PORTVERSION%%/images/Blue.gif
 share/tclhttpd%%PORTVERSION%%/images/Red.gif
@@ -134,7 +150,9 @@ share/tclhttpd%%PORTVERSION%%/images/pwrdLogo75.gif
 share/tclhttpd%%PORTVERSION%%/images/setup.gif
 share/tclhttpd%%PORTVERSION%%/images/tcl89.gif
 share/tclhttpd%%PORTVERSION%%/images/tclp.gif
+share/tclhttpd%%PORTVERSION%%/include.shtml
 share/tclhttpd%%PORTVERSION%%/include/footer.html
+share/tclhttpd%%PORTVERSION%%/index.tml
 share/tclhttpd%%PORTVERSION%%/java/Auth.class
 share/tclhttpd%%PORTVERSION%%/java/Getpass.class
 share/tclhttpd%%PORTVERSION%%/java/Helper.class
@@ -144,35 +162,75 @@ share/tclhttpd%%PORTVERSION%%/java/ServerDemo.class
 share/tclhttpd%%PORTVERSION%%/java/ServerDemo.html
 share/tclhttpd%%PORTVERSION%%/java/auth.js
 share/tclhttpd%%PORTVERSION%%/java/test.html
+share/tclhttpd%%PORTVERSION%%/learn/direct.tml
+share/tclhttpd%%PORTVERSION%%/learn/domain.tml
+share/tclhttpd%%PORTVERSION%%/learn/index.tml
+share/tclhttpd%%PORTVERSION%%/learn/security.tml
+share/tclhttpd%%PORTVERSION%%/learn/setup.tml
+share/tclhttpd%%PORTVERSION%%/license.terms
 share/tclhttpd%%PORTVERSION%%/links/INSTALL.txt
-share/tclhttpd%%PORTVERSION%%/links/README.txt
 share/tclhttpd%%PORTVERSION%%/links/README.ssl.txt
+share/tclhttpd%%PORTVERSION%%/links/README.txt
 share/tclhttpd%%PORTVERSION%%/links/WHATSNEW.txt
-share/tclhttpd%%PORTVERSION%%/libtml/Index
-share/tclhttpd%%PORTVERSION%%/libtml/faq.tcl
-share/tclhttpd%%PORTVERSION%%/libtml/htmlutils.tcl
-share/tclhttpd%%PORTVERSION%%/libtml/mypage.tcl
-share/tclhttpd%%PORTVERSION%%/libtml/pkgIndex.tcl
-share/tclhttpd%%PORTVERSION%%/libtml/ss_survey.tcl
-share/tclhttpd%%PORTVERSION%%/libtml/sunscript.tcl
+share/tclhttpd%%PORTVERSION%%/man/architecture.man
+share/tclhttpd%%PORTVERSION%%/man/base64.man
+share/tclhttpd%%PORTVERSION%%/man/cgi.man
+share/tclhttpd%%PORTVERSION%%/man/changelog.man
+share/tclhttpd%%PORTVERSION%%/man/cmdline.man
+share/tclhttpd%%PORTVERSION%%/man/config.man
+share/tclhttpd%%PORTVERSION%%/man/cookie.man
+share/tclhttpd%%PORTVERSION%%/man/counter.man
+share/tclhttpd%%PORTVERSION%%/man/cvs.man
+share/tclhttpd%%PORTVERSION%%/man/direct.man
+share/tclhttpd%%PORTVERSION%%/man/dirlist.man
+share/tclhttpd%%PORTVERSION%%/man/doc.man
+share/tclhttpd%%PORTVERSION%%/man/doc_error.man
+share/tclhttpd%%PORTVERSION%%/man/docidx.man
+share/tclhttpd%%PORTVERSION%%/man/docidx_api.man
+share/tclhttpd%%PORTVERSION%%/man/docidx_fmt.man
+share/tclhttpd%%PORTVERSION%%/man/doctoc.man
+share/tclhttpd%%PORTVERSION%%/man/doctoc_api.man
+share/tclhttpd%%PORTVERSION%%/man/doctoc_fmt.man
+share/tclhttpd%%PORTVERSION%%/man/doctools.man
+share/tclhttpd%%PORTVERSION%%/man/doctools_api.man
+share/tclhttpd%%PORTVERSION%%/man/doctools_fmt.man
+share/tclhttpd%%PORTVERSION%%/man/expander.man
+share/tclhttpd%%PORTVERSION%%/man/fileutil.man
+share/tclhttpd%%PORTVERSION%%/man/html.man
+share/tclhttpd%%PORTVERSION%%/man/httpd.man
+share/tclhttpd%%PORTVERSION%%/man/index.tml
+share/tclhttpd%%PORTVERSION%%/man/log.man
+share/tclhttpd%%PORTVERSION%%/man/logstd.man
+share/tclhttpd%%PORTVERSION%%/man/md5.man
+share/tclhttpd%%PORTVERSION%%/man/md5crypt.man
+share/tclhttpd%%PORTVERSION%%/man/mime.man
+share/tclhttpd%%PORTVERSION%%/man/mpexpand.man
+share/tclhttpd%%PORTVERSION%%/man/mtype.man
+share/tclhttpd%%PORTVERSION%%/man/ncgi.man
+share/tclhttpd%%PORTVERSION%%/man/session.man
+share/tclhttpd%%PORTVERSION%%/man/smtp.man
+share/tclhttpd%%PORTVERSION%%/man/subst.man
+share/tclhttpd%%PORTVERSION%%/man/tclhttpd.man
+share/tclhttpd%%PORTVERSION%%/man/textutil.man
+share/tclhttpd%%PORTVERSION%%/man/uri.man
+share/tclhttpd%%PORTVERSION%%/man/url.man
+share/tclhttpd%%PORTVERSION%%/man/uuencode.man
+share/tclhttpd%%PORTVERSION%%/man/version.man
+share/tclhttpd%%PORTVERSION%%/man/yencode.man
+share/tclhttpd%%PORTVERSION%%/manual/embedding.tml
 share/tclhttpd%%PORTVERSION%%/manual/htdig.html
-share/tclhttpd%%PORTVERSION%%/manual/reference.tml
+share/tclhttpd%%PORTVERSION%%/manual/intro.tml
 share/tclhttpd%%PORTVERSION%%/manual/stdin.html
-share/tclhttpd%%PORTVERSION%%/manual/technotes.tml
 share/tclhttpd%%PORTVERSION%%/map/bush.tml
 share/tclhttpd%%PORTVERSION%%/map/index.tml
 share/tclhttpd%%PORTVERSION%%/map/mapdefault.tml
 share/tclhttpd%%PORTVERSION%%/map/surfer.tml
+share/tclhttpd%%PORTVERSION%%/notfound.html
+share/tclhttpd%%PORTVERSION%%/redirect
+share/tclhttpd%%PORTVERSION%%/register.tml
+share/tclhttpd%%PORTVERSION%%/sampleapp/bugdb/.tml
+share/tclhttpd%%PORTVERSION%%/sampleapp/calendar.tml
 share/tclhttpd%%PORTVERSION%%/snmp/allport.snmp
-share/tclhttpd%%PORTVERSION%%/snmp/discover.snmp
-share/tclhttpd%%PORTVERSION%%/snmp/host.snmp
-share/tclhttpd%%PORTVERSION%%/snmp/index.html
-share/tclhttpd%%PORTVERSION%%/snmp/outdiscov.snmp
-share/tclhttpd%%PORTVERSION%%/snmp/portdetail.snmp
-share/tclhttpd%%PORTVERSION%%/snmp/repeat.snmp
-share/tclhttpd%%PORTVERSION%%/snmp/system.snmp
-share/tclhttpd%%PORTVERSION%%/snmp/telnet.snmp
-share/tclhttpd%%PORTVERSION%%/snmp/telnet_pass.snmp
 share/tclhttpd%%PORTVERSION%%/snmp/browser/README
 share/tclhttpd%%PORTVERSION%%/snmp/browser/browser.snmp
 share/tclhttpd%%PORTVERSION%%/snmp/browser/browser2.snmp
@@ -184,6 +242,15 @@ share/tclhttpd%%PORTVERSION%%/snmp/browser/title.html
 share/tclhttpd%%PORTVERSION%%/snmp/browser/title.snmp
 share/tclhttpd%%PORTVERSION%%/snmp/browser/walk.snmp
 share/tclhttpd%%PORTVERSION%%/snmp/browser/walker.snmp
+share/tclhttpd%%PORTVERSION%%/snmp/discover.snmp
+share/tclhttpd%%PORTVERSION%%/snmp/host.snmp
+share/tclhttpd%%PORTVERSION%%/snmp/index.html
+share/tclhttpd%%PORTVERSION%%/snmp/outdiscov.snmp
+share/tclhttpd%%PORTVERSION%%/snmp/portdetail.snmp
+share/tclhttpd%%PORTVERSION%%/snmp/repeat.snmp
+share/tclhttpd%%PORTVERSION%%/snmp/system.snmp
+share/tclhttpd%%PORTVERSION%%/snmp/telnet.snmp
+share/tclhttpd%%PORTVERSION%%/snmp/telnet_pass.snmp
 share/tclhttpd%%PORTVERSION%%/snmp/test_mibTable/README
 share/tclhttpd%%PORTVERSION%%/snmp/test_mibTable/index.html
 share/tclhttpd%%PORTVERSION%%/snmp/test_mibTable/table1.snmp
@@ -191,46 +258,61 @@ share/tclhttpd%%PORTVERSION%%/snmp/test_mibTable/table2.snmp
 share/tclhttpd%%PORTVERSION%%/snmp/test_mibTable/table3.snmp
 share/tclhttpd%%PORTVERSION%%/snmp/test_mibTable/table4.snmp
 share/tclhttpd%%PORTVERSION%%/snmp/test_mibTable/test2.snmp
+share/tclhttpd%%PORTVERSION%%/stats/.tml
 share/tclhttpd%%PORTVERSION%%/stats/doc.tml
 share/tclhttpd%%PORTVERSION%%/stats/index.tml
 share/tclhttpd%%PORTVERSION%%/stats/notfound.tml
-share/tclhttpd%%PORTVERSION%%/stats/.tml
+share/tclhttpd%%PORTVERSION%%/status/.htaccess
+share/tclhttpd%%PORTVERSION%%/status/.tclaccess
+share/tclhttpd%%PORTVERSION%%/templates/.tml
 share/tclhttpd%%PORTVERSION%%/templates/faqfaq.tml
 share/tclhttpd%%PORTVERSION%%/templates/form.tml
 share/tclhttpd%%PORTVERSION%%/templates/index.tml
+share/tclhttpd%%PORTVERSION%%/templates/self.tml
 share/tclhttpd%%PORTVERSION%%/templates/simple.subst
-share/tclhttpd%%PORTVERSION%%/templates/.tml
-share/tclhttpd%%PORTVERSION%%/.tml
-@dirrm share/tclhttpd%%PORTVERSION%%/access/auth
-@dirrm share/tclhttpd%%PORTVERSION%%/access/bydir
-@dirrm share/tclhttpd%%PORTVERSION%%/access/bytcl
-@dirrm share/tclhttpd%%PORTVERSION%%/access/multiple
-@dirrm share/tclhttpd%%PORTVERSION%%/access/noawe
-@dirrm share/tclhttpd%%PORTVERSION%%/access/null
-@dirrm share/tclhttpd%%PORTVERSION%%/access/session
-@dirrm share/tclhttpd%%PORTVERSION%%/access
-@dirrm share/tclhttpd%%PORTVERSION%%/book
-@dirrm share/tclhttpd%%PORTVERSION%%/cgi-bin
-@dirrm share/tclhttpd%%PORTVERSION%%/forms
-@dirrm share/tclhttpd%%PORTVERSION%%/guestbook
-@dirrm share/tclhttpd%%PORTVERSION%%/images
-@dirrm share/tclhttpd%%PORTVERSION%%/include
-@dirrm share/tclhttpd%%PORTVERSION%%/java
-@dirrm share/tclhttpd%%PORTVERSION%%/libtml
-@dirrm share/tclhttpd%%PORTVERSION%%/links
-@dirrm share/tclhttpd%%PORTVERSION%%/manual
-@dirrm share/tclhttpd%%PORTVERSION%%/map
-@dirrm share/tclhttpd%%PORTVERSION%%/snmp/browser
-@dirrm share/tclhttpd%%PORTVERSION%%/snmp/test_mibTable
-@dirrm share/tclhttpd%%PORTVERSION%%/snmp
-@dirrm share/tclhttpd%%PORTVERSION%%/stats
+share/tclhttpd%%PORTVERSION%%/test.tml
+share/tclhttpd%%PORTVERSION%%/tests/add_headers.tml
+share/tclhttpd%%PORTVERSION%%/tests/refresh.tml
+share/tclhttpd%%PORTVERSION%%/version_history.tml
+@dirrm share/tclhttpd%%PORTVERSION%%/tests
 @dirrm share/tclhttpd%%PORTVERSION%%/templates
+@dirrm share/tclhttpd%%PORTVERSION%%/status
+@dirrm share/tclhttpd%%PORTVERSION%%/stats
+@dirrm share/tclhttpd%%PORTVERSION%%/snmp/test_mibTable
+@dirrm share/tclhttpd%%PORTVERSION%%/snmp/browser
+@dirrm share/tclhttpd%%PORTVERSION%%/snmp
+@dirrm share/tclhttpd%%PORTVERSION%%/sampleapp/bugdb
+@dirrm share/tclhttpd%%PORTVERSION%%/sampleapp
+@dirrm share/tclhttpd%%PORTVERSION%%/map
+@dirrm share/tclhttpd%%PORTVERSION%%/manual
+@dirrm share/tclhttpd%%PORTVERSION%%/man
+@dirrm share/tclhttpd%%PORTVERSION%%/links
+@dirrm share/tclhttpd%%PORTVERSION%%/learn
+@dirrm share/tclhttpd%%PORTVERSION%%/java
+@dirrm share/tclhttpd%%PORTVERSION%%/include
+@dirrm share/tclhttpd%%PORTVERSION%%/images
+@dirrm share/tclhttpd%%PORTVERSION%%/htaccess
+@dirrm share/tclhttpd%%PORTVERSION%%/guestbook
+@dirrm share/tclhttpd%%PORTVERSION%%/forms
+@dirrm share/tclhttpd%%PORTVERSION%%/debug
+@dirrm share/tclhttpd%%PORTVERSION%%/cgi-bin
+@dirrm share/tclhttpd%%PORTVERSION%%/book
+@dirrm share/tclhttpd%%PORTVERSION%%/admin
+@dirrm share/tclhttpd%%PORTVERSION%%/access/session
+@dirrm share/tclhttpd%%PORTVERSION%%/access/null
+@dirrm share/tclhttpd%%PORTVERSION%%/access/noawe
+@dirrm share/tclhttpd%%PORTVERSION%%/access/multiple
+@dirrm share/tclhttpd%%PORTVERSION%%/access/digest
+@dirrm share/tclhttpd%%PORTVERSION%%/access/bytcl
+@dirrm share/tclhttpd%%PORTVERSION%%/access/bydir
+@dirrm share/tclhttpd%%PORTVERSION%%/access/auth
+@dirrm share/tclhttpd%%PORTVERSION%%/access
 @dirrm share/tclhttpd%%PORTVERSION%%
 tclhttpd/custom/README
-tclhttpd/custom/ddehack.tcl
+tclhttpd/custom/dodirs.tcl
+tclhttpd/custom/faq.tcl
 tclhttpd/custom/hello.tcl
-tclhttpd/custom/snmpinit.tcl
-tclhttpd/custom/tclpro.tcl
+tclhttpd/custom/mypage.tcl
 @dirrm tclhttpd/custom
 tclhttpd/README
 tclhttpd/README_custom

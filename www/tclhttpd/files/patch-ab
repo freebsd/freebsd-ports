@@ -5,11 +5,6 @@
 -htdocsdir = $(SERVER_ROOT)/htdocs
 +htdocsdir = $(prefix)/share/@PACKAGE@@VERSION@
  
-@@ -183,3 +183,3 @@
- TCL_GENERIC_DIR_NATIVE = @TCL_GENERIC_DIR_NATIVE@
--TCLSH_PROG = @TCLSH_PROG@
-+TCLSH_PROG ?= tclsh8.3
- SHARED_BUILD = @SHARED_BUILD@
 @@ -198,3 +198,3 @@
  CONFIGDIR = @CONFIGDIR@
 -mkinstalldirs = $(SHELL) $(CONFIGDIR)/mkinstalldirs
@@ -28,8 +23,10 @@
 @@ -330,1 +330,1 @@
 -	$(INSTALL_DATA) $(srcdir)/doc/httpd.1 $(mandir)/man1/httpd.1
 +	$(INSTALL_DATA) $(srcdir)/doc/httpd.1 $(mandir)/man1/tclhttpd.1
-@@ -335,3 +335,3 @@
- installdirs:
--	$(mkinstalldirs) $(pkglibdir) $(cryptlibdir) $(prefix)/bin $(htdocsdir) $(customdir)
-+	$(mkinstalldirs) $(pkglibdir) $(prefix)/bin $(htdocsdir) $(customdir)
+@@ -343,5 +343,5 @@
  
+ installdirs:
+-	$(mkinstalldirs) $(DESTDIR)$(pkglibdir) $(DESTDIR)$(cryptlibdir) $(DESTDIR)$(prefix)/bin $(DESTDIR)$(htdocsdir) $(DESTDIR)$(customdir)
++	$(mkinstalldirs) $(DESTDIR)$(pkglibdir) $(DESTDIR)$(prefix)/bin $(DESTDIR)$(htdocsdir) $(DESTDIR)$(customdir)
+ 
+ clean:  

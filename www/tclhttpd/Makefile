@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	tclhttpd
-PORTVERSION=	3.4.2
-CATEGORIES=	www tcl83
+PORTVERSION=	3.5.1
+CATEGORIES=	www tcl83 tcl84
 MASTER_SITES=	${MASTER_SITE_TCLTK}
 MASTER_SITE_SUBDIR=	httpd
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	An http-server implemented in TCL
 
-RUN_DEPENDS=	${LOCALBASE}/lib/tcllib1.6/pkgIndex.tcl:${PORTSDIR}/devel/tcllib
+RUN_DEPENDS=	${LOCALBASE}/lib/tcllib1.7/pkgIndex.tcl:${PORTSDIR}/devel/tcllib
 LIB_DEPENDS=	tcl${TCL_VER}:${PORTSDIR}/lang/tcl${TCL_VER}
 
 TCL_DVER?=	8.4
@@ -28,14 +28,20 @@ MAN1=	tclhttpd.1
 RCD=	${LOCALBASE}/etc/rc.d/tclhttpd.sh
 
 .include <bsd.port.pre.mk>
-SHLIB_NAME!=	${MAKE} -f "${FILESDIR}/Makefile.lib" ech
+SHLIB_NAME!=	${MAKE} -f "${FILESDIR}/Makefile.lib" -V SHLIB_NAME
 PLIST_SUB+=	TCL_VER=${TCL_VER} PORTVERSION=${PORTVERSION} \
 		SHLIB_NAME=${SHLIB_NAME}
 MAKE_ENV+=	TCLSH_PROG=tclsh${TCL_DVER}
+SCRIPTS_ENV+=	TCL_DVER=${TCL_DVER}
 
 do-build:
 	cd ${WRKSRC} && ${MAKE_ENV} ${MAKE} -j 2 TCL_DVER="${TCL_DVER}" \
 		FILESDIR="${FILESDIR}" -f "${FILESDIR}/Makefile.lib"
+	#
+	# Note, the ``utime'' command supplied by the tclhttpd's library
+	# (interface to utimes(2)) has been long obsoleted by TCL's own
+	# file(n) and is finally removed from this port
+	#
 
 pre-install:
 	${MKDIR} ${PREFIX}/tclhttpd/custom

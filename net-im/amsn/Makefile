@@ -19,7 +19,7 @@ LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
 BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 		convert:${PORTSDIR}/graphics/ImageMagick \
 		${LOCALBASE}/lib/tls/tls.tcl:${PORTSDIR}/devel/tcltls \
-		${LOCALBASE}/lib/tcllib1.6/base64/base64.tcl:${PORTSDIR}/devel/tcllib
+		${LOCALBASE}/lib/tcllib1.7/base64/base64.tcl:${PORTSDIR}/devel/tcllib
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_REINPLACE=	yes

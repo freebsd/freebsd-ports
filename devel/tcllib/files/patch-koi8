@@ -1,8 +1,0 @@
---- modules/mime/mime.tcl	Sun Feb 15 18:15:51 2004
-+++ modules/mime/mime.tcl	Wed Apr 28 16:52:53 2004
-@@ -166,4 +166,5 @@
-             jis0212 "" \
-             koi8-r KOI8-R \
-+            koi8-u KOI8-U \
-             ksc5601 "" \
-             macCentEuro "" \
