@@ -1,20 +1,20 @@
 # New ports collection makefile for:	sane
-# Version required:     0.73
+# Version required:     0.74
 # Date created:         Sat Jul 19 16:23:10 MET DST 1997
 # Whom:                 gary@hotlava.com
 #			obrien@FreeBSD.org
 #
-# $Id: Makefile,v 1.5 1998/07/12 22:31:09 steve Exp $
+# $Id: Makefile,v 1.6 1998/08/07 23:56:27 asami Exp $
 #
 
-DISTNAME=       sane-0.73
+DISTNAME=       sane-0.74
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/ \
 		ftp://ftp.lahn.de/pub/platforms/linux/libs/
 
 MAINTAINER=	gary@hotlava.com
 
-LIB_DEPENDS=	gtk\\.1\\.:${PORTSDIR}/x11-toolkits/gtk
+LIB_DEPENDS=	gtk11\\.1\\.:${PORTSDIR}/x11-toolkits/gtk11
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
