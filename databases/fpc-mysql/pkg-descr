@@ -1,0 +1,8 @@
+Mysql is part of the base packages of Free Pascal, a 32-bit
+Turbo Pascal/Delphi compatible compiler.  Mysql provides an
+interface to MySQL databases.
+
+WWW: http://www.freepascal.org/
+
+--
+John Merryweather Cooper <coop9211@uidaho.edu>

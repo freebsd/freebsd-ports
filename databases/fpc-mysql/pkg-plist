@@ -1,0 +1,12 @@
+%%INSTDIR%%/Package.fpc
+%%INSTDIR%%/mysql.o
+%%INSTDIR%%/mysql.ppu
+%%INSTDIR%%/mysql_com.o
+%%INSTDIR%%/mysql_com.ppu
+%%INSTDIR%%/mysql_version.o
+%%INSTDIR%%/mysql_version.ppu
+@dirrm %%INSTDIR%%
+@unexec rmdir %D/lib/fpc/%%PORTVERSION%%/units/freebsd 2>/dev/null || true
+@unexec rmdir %D/lib/fpc/%%PORTVERSION%%/units 2>/dev/null || true
+@unexec rmdir %D/lib/fpc/%%PORTVERSION%% 2>/dev/null || true
+@unexec rmdir %D/lib/fpc 2>/dev/null || true
