@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icc
-PORTVERSION=	8.0.058.p059
+PORTVERSION=	8.0.058.p060
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_cc_pc_${PORTVERSION:C/\.p.+$//}
@@ -31,7 +31,6 @@ CONFLICTS=		linux_devtools*
 
 USE_LINUX=		yes
 USE_REINPLACE=		yes
-USE_SIZE=		yes
 NO_FILTER_SHLIBS=	yes
 
 COMPILERDIR=	intel_cc_80
