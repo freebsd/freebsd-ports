@@ -26,8 +26,6 @@ INSTALLS_SHLIB=	yes
 DOCS=		AUTHORS ChangeLog HACKING NEWS README TODO
 MAN1=		mdb-ver.1 mdb-tables.1 mdb-schema.1 mdb-sql.1 mdb-export.1
 
-.include <bsd.port.pre.mk>
-
 .if defined(WITH_GNOME) || exists(${X11BASE}/libdata/pkgconfig/libgnomeui-2.0.pc)
 USE_X_PREFIX=	yes
 USE_GNOME+=	gnomeprefix gnomehack libgnomeui
@@ -36,6 +34,8 @@ PKGNAMESUFFIX=	-gnome
 .else
 PLIST_SUB+=	GNOME:="@comment "
 .endif
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(srcdir)/$$<|$$(srcdir)/$$>|g' ${WRKSRC}/doc/Makefile.in
