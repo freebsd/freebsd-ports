@@ -19,7 +19,7 @@
   	  all
   
   freebsd:
-+ .if defined(HAVE_MOTIF) && defined(FORCE_MOTIF)
++ .if defined(HAVE_MOTIF) && defined(FORCE_MOTIF) && ${FORCE_MOTIF} == "yes"
 + 	$(MAKE) \
 + 	  GRAF=MOTIF \
 + 	  GRAFLIBS='$$(MOTIFLIB) $$(MOTIFLIBS)' \
