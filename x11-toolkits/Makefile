@@ -177,6 +177,7 @@
     SUBDIR += wmapp
     SUBDIR += wxgtk
     SUBDIR += wxgtk-devel
+    SUBDIR += wxgtk-docs
     SUBDIR += xbae
     SUBDIR += xclasses
     SUBDIR += xenophilia
