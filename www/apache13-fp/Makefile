@@ -8,7 +8,7 @@
 PORTNAME=	apache
 PKGNAMESUFFIX=	_fp
 PORTVERSION=	1.3.26
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.apache.org/dist/httpd/ \
 		http://www.freebsd.org/gifs/ \
