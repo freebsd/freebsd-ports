@@ -32,7 +32,7 @@ pre-install:
 	${MKDIR} ${OPENSSLDIR}/certs
 
 post-install:
-	${STRIP_CMD} $(PREFIX)/bin/telnet
-	${STRIP_CMD} $(PREFIX)/libexec/telnetd
+	${STRIP_CMD} ${PREFIX}/bin/telnet
+	${STRIP_CMD} ${PREFIX}/libexec/telnetd
 
 .include <bsd.port.mk>
