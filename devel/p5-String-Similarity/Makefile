@@ -19,4 +19,10 @@ PERL_CONFIGURE=	yes
 
 MAN3=		String::Similarity.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=		This port requires perl 5.8.0 or later. Install lang/perl5.8 then try again
+.endif
+
+.include <bsd.port.post.mk>
