@@ -1,8 +1,17 @@
-This package contains the binary release of xperfmon++ V1.1 a X based
+This package contains the binary release of xperfmon++ V1.3 a X based
 system performance meter for several systems, ported to FreeBSD 2.X.
 
-The program monitors user-, system-, idle-cputime, free mem, disk io,
+The program monitors user-, system-, idle-cputime, free swap, disk io,
 number of interrupts, network-input, -output, -collision packets and
 NFS client and server activity.
 
 Please send BUGS and annotations to: lars.koeller@odie.physik2.uni-rostock.de
+
+Major changes in xperfmon++ V1.3 due to xperfmon++ V1.1:
+
+	- Clean fix of the -geometry option bug, now there is only
+	  a MIN_WIDTH of 185 pixels. The MIN_HEIGTH is calculated
+	  dynamically out of the number of active graphs.
+	- Display 'Free Swap' in percent without resizing of the graph
+	- Close some memory leaks
+	- Display unit of graph in label field.
