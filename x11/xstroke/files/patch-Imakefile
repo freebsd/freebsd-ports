@@ -1,6 +1,6 @@
---- Imakefile.orig	Mon Dec 10 14:17:11 2001
-+++ Imakefile	Mon May 12 14:55:25 2003
-@@ -1,9 +1,10 @@
+--- Imakefile.orig	Tue Dec 11 07:17:11 2001
++++ Imakefile	Sat Jul 12 08:41:37 2003
+@@ -1,21 +1,24 @@
  #define IHaveSubdirs
  SUBDIRS=etc
 -CDEBUGFLAGS=-g -ansi -ansi-error -Wall -pedantic
@@ -13,3 +13,19 @@
  OBJS=xstroke.o args.o backing.o bresenham.o brush.o control_win.o stroke.o matrix.o \
       action.o action_item.o feature.o gesture.o log.o option.o sprintf_alloc.o \
       rec.o rec_callback.o rec_history.o rec_lex.o rec_mode.o rec_parse.o \
+      rec_engine.o grid.o regex_feature.o fixed.o \
+      anchor_engine.o dir_engine.o grid_engine.o raw_engine.o \
+-     xlp.o xlp_callback.o xlp_color.o xlp_timeout.o xlp_win.o
++     xlp.o xlp_callback.o xlp_color.o xlp_timeout.o xlp_win.o \
++     getopt.o getopt1.o
+ SRCS=xstroke.c args.c backing.c bresenham.c brush.c control_win.c stroke.c matrix.c \
+      action.c action_item.c feature.c gesture.c log.c option.c sprintf_alloc.c \
+      rec.c rec_callback.c rec_history.c rec_mode.c \
+      rec_engine.c grid.c regex_feature.c fixed.c \
+      anchor_engine.c dir_engine.c grid_engine.c raw_engine.c \
+-     xlp.c xlp_callback.c xlp_color.c xlp_timeout.c xlp_win.c
++     xlp.c xlp_callback.c xlp_color.c xlp_timeout.c xlp_win.c \
++     getopt.c getopt1.c
+ 
+ ComplexProgramTarget(xstroke)
+ 
