@@ -3556,6 +3556,7 @@ libcabinet	ports/archivers/libcabinet
 libcache	ports/devel/libcache
 libcalendar	src/lib/libcalendar
 libcam		src/lib/libcam
+libcapplet	ports/x11/libcapplet
 libcapsinetwork	ports/devel/libcapsinetwork
 libcdaudio	ports/audio/libcdaudio
 libcii		ports/devel/libcii
