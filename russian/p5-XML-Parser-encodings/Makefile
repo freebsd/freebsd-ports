@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Parser-encodings
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	russian textproc perl5
 PKGNAMEPREFIX=	p5-
 DISTFILES=
@@ -20,13 +20,13 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		${NONEXISTENT}:${PORTSDIR}/converters/iconv-extra:extract
 
 NO_WRKSUBDIR=	YES
-
 RUSSIANENC=	windows-1251 koi8-r cp1251 cp866 mac-cyrillic
 
 post-extract:
 .for ICONVPORT in iconv iconv-extra
-	${LN} -sfh `find ${PORTSDIR}/converters/${ICONVPORT} -type d \
-		-name "ccs"` ${WRKSRC}/${ICONVPORT}
+	@${LN} -sfh \
+	`cd ${PORTSDIR}/converters/${ICONVPORT} && ${MAKE} -V WRKSRC`/ccs \
+	${WRKSRC}/${ICONVPORT}
 .endfor
 
 do-configure:
