@@ -25,6 +25,7 @@
     SUBDIR += lfpfonts-fix
     SUBDIR += lfpfonts-var
     SUBDIR += linux-fontconfig
+    SUBDIR += linux-urw-fonts
     SUBDIR += mkbold
     SUBDIR += mkfontalias
     SUBDIR += mkitalic
