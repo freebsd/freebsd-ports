@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libnasl
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.9
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
