@@ -37,6 +37,10 @@ IGNORE=		"requires perl 5.6.x or later. Install lang/perl5 and try again"
 FORBIDDEN=	"Does not respect PTHREAD_{CFLAGS,LIBS}"
 .endif
 
+BROKEN=		dependency problems: also does not work with xerces-2.5
+DEPRECATED=	${IGNORE}
+EXPIRATION_DATE=	"06/12/2004"
+
 post-patch:
 	@${PERL} -pi -e "s|-lpthread|${PTHREAD_LIBS}|" ${WRKSRC}/Makefile.PL
 
