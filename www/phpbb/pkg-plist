@@ -19,14 +19,6 @@
 %%PHPBBDIR%%/admin/page_header_admin.php
 %%PHPBBDIR%%/admin/pagestart.php
 %%PHPBBDIR%%/common.php
-%%PHPBBDIR%%/contrib/README.html
-%%PHPBBDIR%%/contrib/attachments.zip
-%%PHPBBDIR%%/contrib/card_ban_system.zip
-%%PHPBBDIR%%/contrib/guest_lang.zip
-%%PHPBBDIR%%/contrib/last_visit.zip
-%%PHPBBDIR%%/contrib/male_female.zip
-%%PHPBBDIR%%/contrib/template_db_cache.php
-%%PHPBBDIR%%/contrib/template_file_cache.php
 %%PHPBBDIR%%/db/db2.php
 %%PHPBBDIR%%/db/index.htm
 %%PHPBBDIR%%/db/msaccess.php
@@ -42,16 +34,11 @@
 %%PHPBBDIR%%/db/schemas/mssql_schema.sql
 %%PHPBBDIR%%/db/schemas/mysql_basic.sql
 %%PHPBBDIR%%/db/schemas/mysql_schema.sql
-%%PHPBBDIR%%/db/schemas/oracle_basic.sql
-%%PHPBBDIR%%/db/schemas/oracle_schema.sql
-%%PHPBBDIR%%/db/schemas/oracle_triggers.sql
 %%PHPBBDIR%%/db/schemas/postgres_basic.sql
 %%PHPBBDIR%%/db/schemas/postgres_schema.sql
 %%PHPBBDIR%%/extension.inc
 %%PHPBBDIR%%/faq.php
 %%PHPBBDIR%%/groupcp.php
-%%PHPBBDIR%%/images/avatars/index.htm
-%%PHPBBDIR%%/images/avatars/uploads/index.htm
 %%PHPBBDIR%%/images/index.htm
 %%PHPBBDIR%%/images/smiles/icon_arrow.gif
 %%PHPBBDIR%%/images/smiles/icon_biggrin.gif
@@ -77,6 +64,7 @@
 %%PHPBBDIR%%/images/smiles/icon_twisted.gif
 %%PHPBBDIR%%/images/smiles/icon_wink.gif
 %%PHPBBDIR%%/images/spacer.gif
+@exec mkdir -p %B/avatars/upload
 %%PHPBBDIR%%/includes/auth.php
 %%PHPBBDIR%%/includes/bbcode.php
 %%PHPBBDIR%%/includes/constants.php
@@ -292,22 +280,29 @@
 %%PHPBBDIR%%/viewforum.php
 %%PHPBBDIR%%/viewonline.php
 %%PHPBBDIR%%/viewtopic.php
-@exec touch %B/config.php && chown %%WWWOWN%% %B/config.php
+@exec touch %B/config.php
+@exec chown -R %%WWWOWN%%:%%WWWGRP%% %B
 %%PORTDOCS%%share/doc/phpbb/AUTHORS
+%%PORTDOCS%%share/doc/phpbb/CHANGELOG.html
 %%PORTDOCS%%share/doc/phpbb/FAQ.html
 %%PORTDOCS%%share/doc/phpbb/INSTALL.html
 %%PORTDOCS%%share/doc/phpbb/README.html
 %%PORTDOCS%%share/doc/phpbb/coding-guidelines.txt
 %%PORTDOCS%%share/doc/phpbb/codingstandards.htm
+share/phpbb/contrib/README.html
+share/phpbb/contrib/dbinformer.php
+share/phpbb/contrib/template_db_cache.php
+share/phpbb/contrib/template_file_cache.php
 share/phpbb/install.php
 @exec install -c -o %%WWWOWN%% %D/%F %D/%%PHPBBDIR%%
 @unexec rm -f %D/%%PHPBBDIR%%/%f 2>/dev/null || true
-share/phpbb/update_to_FINAL.php
+share/phpbb/update_to_203.php
 @exec install -c -o %%WWWOWN%% %D/%F %D/%%PHPBBDIR%%
 @unexec rm -f %D/%%PHPBBDIR%%/%f 2>/dev/null || true
 share/phpbb/upgrade.php
 @exec install -c -o %%WWWOWN%% %D/%F %D/%%PHPBBDIR%%
 @unexec rm -f %D/%%PHPBBDIR%%/%f 2>/dev/null || true
+@dirrm share/phpbb/contrib
 @dirrm share/phpbb
 @dirrm %%PHPBBDIR%%/templates/subSilver/images/lang_english
 @dirrm %%PHPBBDIR%%/templates/subSilver/images
@@ -319,12 +314,11 @@ share/phpbb/upgrade.php
 @dirrm %%PHPBBDIR%%/language
 @dirrm %%PHPBBDIR%%/includes
 @dirrm %%PHPBBDIR%%/images/smiles
-@dirrm %%PHPBBDIR%%/images/avatars/uploads
+@dirrm %%PHPBBDIR%%/images/avatars/upload
 @dirrm %%PHPBBDIR%%/images/avatars
 @dirrm %%PHPBBDIR%%/images
 @dirrm %%PHPBBDIR%%/db/schemas
 @dirrm %%PHPBBDIR%%/db
-@dirrm %%PHPBBDIR%%/contrib
 @dirrm %%PHPBBDIR%%/admin
 @unexec rmdir %D/%%PHPBBDIR%% 2>/dev/null || true
 %%PORTDOCS%%@dirrm share/doc/phpbb

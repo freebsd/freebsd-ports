@@ -17,9 +17,11 @@ configure your installation of phpBB2:
   http://localhost/%%PHPBBURL%%/
 
 After configuring phpBB2 and ensuring that it is operational, you MUST
-delete the following three files manually for security purposes:
+delete the following files manually for security purposes from
+%%PREFIX%%/%%PHPBBDIR%%:
 
-  %%PREFIX%%/%%PHPBBDIR%%/install.php
-  %%PREFIX%%/%%PHPBBDIR%%/upgrade.php
-  %%PREFIX%%/%%PHPBBDIR%%/update_to_FINAL.php
+  %%DELETEFILES%%
+
+Duplicates of these files have been installed to %%DATADIR%%.
+%%DATADIR%%/contrib contains contributed software for phpBB2.
 ----------------------------------------------------------------------------
