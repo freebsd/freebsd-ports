@@ -1,0 +1,11 @@
+--- magick/Makefile.in.orig	Fri Jun 30 11:05:56 2000
++++ magick/Makefile.in	Sat Jul 15 10:01:31 2000
+@@ -248,7 +248,7 @@
+ 
+ 
+ # Where modules are installed
+-pkgdir = $(libdir)/ImageMagick/modules/coders
++@WITH_MODULES_TRUE@pkgdir = $(libdir)/ImageMagick/modules/coders
+ 
+ # Architecture-dependent data files installed with modules
+ pkg_DATA = 
