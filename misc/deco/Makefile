@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	deco39
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	demon@FreeBSD.org
+MAINTAINER=	ru@FreeBSD.org
 COMMENT=	Demos Commander, a free Norton Commander clone
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
