@@ -16,22 +16,25 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Wget with "PRO" features
 
+USE_PERL5_BUILD=	yes
 USE_GETOPT_LONG=	yes
 USE_OPENSSL=	yes
-USE_GETTEXT=	yes
-USE_PERL5_BUILD=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lintl"
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
-PLIST_FILES=	bin/wpro
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+PLIST_SUB+=	NLS=""
+.endif
 
 post-patch:
-	@${TOUCH} ${WRKSRC}/configure
-
-post-install:
-	@${FIND} ${PREFIX}/share/locale -name "wpro.mo" | \
-		${SED} -e "s,^${PREFIX}/,," >> ${TMPPLIST}
+	@${PERL} -pi -e 's|^PACKAGE=.*$$|PACKAGE=wpro|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
