@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/ \
 		ftp://ftp.chg.ru/pub/X11/qt/source/
 DISTNAME=	qt-x11-${PORTVERSION}
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER?=	kde@FreeBSD.org
 
 LIB_DEPENDS=	mng.1:${PORTSDIR}/graphics/libmng \
 		png.4:${PORTSDIR}/graphics/png \
