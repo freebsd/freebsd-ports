@@ -1,0 +1,21 @@
+The YAZ Proxy is highly configurable and can be used in a number of different
+applications, ranging from debugging Z39.50-based applications and protecting
+overworked servers, to improving the performance of stateless WWW/Z39.50
+gateways.  Among other features, it includes:
+
+ * SRW/SRU server function, to allow any Z39.50 server to also
+   support the ZiNG protocols
+ * Load balancing across multiple backend servers
+ * Session-sharing and pre-initialization to improve performance in
+   servers with expensive session initialization
+ * Configurable request filtering, to keep bad requests from reaching
+   the server
+ * XML support -- MARC records can be converted to MARCXML, and
+   XSLT-transformations allow the proxy to support arbitrary
+   retrieval schemas in XML
+ * Load governor function limits requests from aggressive batch-mode clients
+ * Configurable logging
+ * Efficient multiplexing software enables small memory footprint and
+   very high performance
+
+WWW: http://www.indexdata.dk/yazproxy/

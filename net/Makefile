@@ -720,6 +720,7 @@
     SUBDIR += yaph
     SUBDIR += yaz
     SUBDIR += yaz++
+    SUBDIR += yazproxy
     SUBDIR += ymessenger
     SUBDIR += yptransitd
     SUBDIR += ysm
