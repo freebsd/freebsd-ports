@@ -1,3 +1,128 @@
+Headers/gnustep/AppKit/AppKit.h
+Headers/gnustep/AppKit/AppKitExceptions.h
+Headers/gnustep/AppKit/DPSOperators.h
+Headers/gnustep/AppKit/GMAppKit.h
+Headers/gnustep/AppKit/GMArchiver.h
+Headers/gnustep/AppKit/GSHbox.h
+Headers/gnustep/AppKit/GSHelpManagerPanel.h
+Headers/gnustep/AppKit/GSInfoPanel.h
+Headers/gnustep/AppKit/GSMethodTable.h
+Headers/gnustep/AppKit/GSPasteboardServer.h
+Headers/gnustep/AppKit/GSServicesManager.h
+Headers/gnustep/AppKit/GSTable.h
+Headers/gnustep/AppKit/GSTrackingRect.h
+Headers/gnustep/AppKit/GSVbox.h
+Headers/gnustep/AppKit/GSWraps.h
+Headers/gnustep/AppKit/IMConnectors.h
+Headers/gnustep/AppKit/IMCustomObject.h
+Headers/gnustep/AppKit/IMLoading.h
+Headers/gnustep/AppKit/NSActionCell.h
+Headers/gnustep/AppKit/NSAffineTransform.h
+Headers/gnustep/AppKit/NSApplication.h
+Headers/gnustep/AppKit/NSAttributedString.h
+Headers/gnustep/AppKit/NSBezierPath.h
+Headers/gnustep/AppKit/NSBitmapImageRep.h
+Headers/gnustep/AppKit/NSBox.h
+Headers/gnustep/AppKit/NSBrowser.h
+Headers/gnustep/AppKit/NSBrowserCell.h
+Headers/gnustep/AppKit/NSButton.h
+Headers/gnustep/AppKit/NSButtonCell.h
+Headers/gnustep/AppKit/NSCStringText.h
+Headers/gnustep/AppKit/NSCachedImageRep.h
+Headers/gnustep/AppKit/NSCell.h
+Headers/gnustep/AppKit/NSClipView.h
+Headers/gnustep/AppKit/NSColor.h
+Headers/gnustep/AppKit/NSColorList.h
+Headers/gnustep/AppKit/NSColorPanel.h
+Headers/gnustep/AppKit/NSColorPicker.h
+Headers/gnustep/AppKit/NSColorPicking.h
+Headers/gnustep/AppKit/NSColorPrivate.h
+Headers/gnustep/AppKit/NSColorWell.h
+Headers/gnustep/AppKit/NSComboBox.h
+Headers/gnustep/AppKit/NSComboBoxCell.h
+Headers/gnustep/AppKit/NSControl.h
+Headers/gnustep/AppKit/NSCursor.h
+Headers/gnustep/AppKit/NSCustomImageRep.h
+Headers/gnustep/AppKit/NSDataLink.h
+Headers/gnustep/AppKit/NSDataLinkManager.h
+Headers/gnustep/AppKit/NSDataLinkPanel.h
+Headers/gnustep/AppKit/NSDocument.h
+Headers/gnustep/AppKit/NSDocumentController.h
+Headers/gnustep/AppKit/NSDocumentFrameworkPrivate.h
+Headers/gnustep/AppKit/NSDragging.h
+Headers/gnustep/AppKit/NSEPSImageRep.h
+Headers/gnustep/AppKit/NSEvent.h
+Headers/gnustep/AppKit/NSFileWrapper.h
+Headers/gnustep/AppKit/NSFont.h
+Headers/gnustep/AppKit/NSFontManager.h
+Headers/gnustep/AppKit/NSFontPanel.h
+Headers/gnustep/AppKit/NSForm.h
+Headers/gnustep/AppKit/NSFormCell.h
+Headers/gnustep/AppKit/NSGraphics.h
+Headers/gnustep/AppKit/NSGraphicsContext.h
+Headers/gnustep/AppKit/NSHelpManager.h
+Headers/gnustep/AppKit/NSHelpPanel.h
+Headers/gnustep/AppKit/NSImage.h
+Headers/gnustep/AppKit/NSImageCell.h
+Headers/gnustep/AppKit/NSImageRep.h
+Headers/gnustep/AppKit/NSImageView.h
+Headers/gnustep/AppKit/NSInterfaceStyle.h
+Headers/gnustep/AppKit/NSLayoutManager.h
+Headers/gnustep/AppKit/NSMatrix.h
+Headers/gnustep/AppKit/NSMenu.h
+Headers/gnustep/AppKit/NSMenuItem.h
+Headers/gnustep/AppKit/NSMenuItemCell.h
+Headers/gnustep/AppKit/NSMenuView.h
+Headers/gnustep/AppKit/NSNibConnector.h
+Headers/gnustep/AppKit/NSNibDeclarations.h
+Headers/gnustep/AppKit/NSNibLoading.h
+Headers/gnustep/AppKit/NSOpenPanel.h
+Headers/gnustep/AppKit/NSPageLayout.h
+Headers/gnustep/AppKit/NSPanel.h
+Headers/gnustep/AppKit/NSParagraphStyle.h
+Headers/gnustep/AppKit/NSPasteboard.h
+Headers/gnustep/AppKit/NSPopUpButton.h
+Headers/gnustep/AppKit/NSPopUpButtonCell.h
+Headers/gnustep/AppKit/NSPrintInfo.h
+Headers/gnustep/AppKit/NSPrintOperation.h
+Headers/gnustep/AppKit/NSPrintPanel.h
+Headers/gnustep/AppKit/NSPrinter.h
+Headers/gnustep/AppKit/NSProgressIndicator.h
+Headers/gnustep/AppKit/NSResponder.h
+Headers/gnustep/AppKit/NSRulerMarker.h
+Headers/gnustep/AppKit/NSRulerView.h
+Headers/gnustep/AppKit/NSSavePanel.h
+Headers/gnustep/AppKit/NSScreen.h
+Headers/gnustep/AppKit/NSScrollView.h
+Headers/gnustep/AppKit/NSScroller.h
+Headers/gnustep/AppKit/NSSecureTextField.h
+Headers/gnustep/AppKit/NSSelection.h
+Headers/gnustep/AppKit/NSSlider.h
+Headers/gnustep/AppKit/NSSliderCell.h
+Headers/gnustep/AppKit/NSSpellChecker.h
+Headers/gnustep/AppKit/NSSpellProtocol.h
+Headers/gnustep/AppKit/NSSpellServer.h
+Headers/gnustep/AppKit/NSSplitView.h
+Headers/gnustep/AppKit/NSStringDrawing.h
+Headers/gnustep/AppKit/NSTabView.h
+Headers/gnustep/AppKit/NSTabViewItem.h
+Headers/gnustep/AppKit/NSTableColumn.h
+Headers/gnustep/AppKit/NSTableHeaderCell.h
+Headers/gnustep/AppKit/NSTableHeaderView.h
+Headers/gnustep/AppKit/NSTableView.h
+Headers/gnustep/AppKit/NSText.h
+Headers/gnustep/AppKit/NSTextAttachment.h
+Headers/gnustep/AppKit/NSTextContainer.h
+Headers/gnustep/AppKit/NSTextField.h
+Headers/gnustep/AppKit/NSTextFieldCell.h
+Headers/gnustep/AppKit/NSTextStorage.h
+Headers/gnustep/AppKit/NSTextView.h
+Headers/gnustep/AppKit/NSView.h
+Headers/gnustep/AppKit/NSWindow.h
+Headers/gnustep/AppKit/NSWindowController.h
+Headers/gnustep/AppKit/NSWorkspace.h
+Headers/gnustep/AppKit/PSOperators.h
+Headers/gnustep/AppKit/nsimage-tiff.h
 Headers/gnustep/Foundation/DistributedObjects.h
 Headers/gnustep/Foundation/Foundation.h
 Headers/gnustep/Foundation/NSArchiver.h
@@ -44,7 +169,6 @@ Headers/gnustep/Foundation/NSNotification.h
 Headers/gnustep/Foundation/NSNotificationQueue.h
 Headers/gnustep/Foundation/NSObjCRuntime.h
 Headers/gnustep/Foundation/NSObject.h
-Headers/gnustep/Foundation/NSPage.h
 Headers/gnustep/Foundation/NSPathUtilities.h
 Headers/gnustep/Foundation/NSPort.h
 Headers/gnustep/Foundation/NSPortCoder.h
@@ -155,122 +279,25 @@ Headers/gnustep/base/o_map_cbs.h
 Headers/gnustep/base/objc-gnu2next.h
 Headers/gnustep/base/ostream.h
 Headers/gnustep/base/preface.h
-Headers/gnustep/gui/AppKit/AppKit.h
-Headers/gnustep/gui/AppKit/DPSOperators.h
-Headers/gnustep/gui/AppKit/GMAppKit.h
-Headers/gnustep/gui/AppKit/GMArchiver.h
-Headers/gnustep/gui/AppKit/GSMethodTable.h
-Headers/gnustep/gui/AppKit/GSPasteboardServer.h
-Headers/gnustep/gui/AppKit/GSServicesManager.h
-Headers/gnustep/gui/AppKit/GSTrackingRect.h
-Headers/gnustep/gui/AppKit/GSWraps.h
-Headers/gnustep/gui/AppKit/IMConnectors.h
-Headers/gnustep/gui/AppKit/IMCustomObject.h
-Headers/gnustep/gui/AppKit/IMLoading.h
-Headers/gnustep/gui/AppKit/NSActionCell.h
-Headers/gnustep/gui/AppKit/NSAffineTransform.h
-Headers/gnustep/gui/AppKit/NSApplication.h
-Headers/gnustep/gui/AppKit/NSAttributedString.h
-Headers/gnustep/gui/AppKit/NSBitmapImageRep.h
-Headers/gnustep/gui/AppKit/NSBox.h
-Headers/gnustep/gui/AppKit/NSBrowser.h
-Headers/gnustep/gui/AppKit/NSBrowserCell.h
-Headers/gnustep/gui/AppKit/NSButton.h
-Headers/gnustep/gui/AppKit/NSButtonCell.h
-Headers/gnustep/gui/AppKit/NSCStringText.h
-Headers/gnustep/gui/AppKit/NSCachedImageRep.h
-Headers/gnustep/gui/AppKit/NSCell.h
-Headers/gnustep/gui/AppKit/NSClipView.h
-Headers/gnustep/gui/AppKit/NSColor.h
-Headers/gnustep/gui/AppKit/NSColorList.h
-Headers/gnustep/gui/AppKit/NSColorPanel.h
-Headers/gnustep/gui/AppKit/NSColorPicker.h
-Headers/gnustep/gui/AppKit/NSColorPicking.h
-Headers/gnustep/gui/AppKit/NSColorWell.h
-Headers/gnustep/gui/AppKit/NSControl.h
-Headers/gnustep/gui/AppKit/NSCursor.h
-Headers/gnustep/gui/AppKit/NSCustomImageRep.h
-Headers/gnustep/gui/AppKit/NSDataLink.h
-Headers/gnustep/gui/AppKit/NSDataLinkManager.h
-Headers/gnustep/gui/AppKit/NSDataLinkPanel.h
-Headers/gnustep/gui/AppKit/NSDragging.h
-Headers/gnustep/gui/AppKit/NSEPSImageRep.h
-Headers/gnustep/gui/AppKit/NSEvent.h
-Headers/gnustep/gui/AppKit/NSFileWrapper.h
-Headers/gnustep/gui/AppKit/NSFont.h
-Headers/gnustep/gui/AppKit/NSFontManager.h
-Headers/gnustep/gui/AppKit/NSFontPanel.h
-Headers/gnustep/gui/AppKit/NSForm.h
-Headers/gnustep/gui/AppKit/NSFormCell.h
-Headers/gnustep/gui/AppKit/NSGraphics.h
-Headers/gnustep/gui/AppKit/NSGraphicsContext.h
-Headers/gnustep/gui/AppKit/NSHelpPanel.h
-Headers/gnustep/gui/AppKit/NSImage.h
-Headers/gnustep/gui/AppKit/NSImageCell.h
-Headers/gnustep/gui/AppKit/NSImageRep.h
-Headers/gnustep/gui/AppKit/NSImageView.h
-Headers/gnustep/gui/AppKit/NSInterfaceStyle.h
-Headers/gnustep/gui/AppKit/NSLayoutManager.h
-Headers/gnustep/gui/AppKit/NSMatrix.h
-Headers/gnustep/gui/AppKit/NSMenu.h
-Headers/gnustep/gui/AppKit/NSMenuItem.h
-Headers/gnustep/gui/AppKit/NSMenuItemCell.h
-Headers/gnustep/gui/AppKit/NSMenuView.h
-Headers/gnustep/gui/AppKit/NSNibDeclarations.h
-Headers/gnustep/gui/AppKit/NSNibLoading.h
-Headers/gnustep/gui/AppKit/NSOpenPanel.h
-Headers/gnustep/gui/AppKit/NSPageLayout.h
-Headers/gnustep/gui/AppKit/NSPanel.h
-Headers/gnustep/gui/AppKit/NSParagraphStyle.h
-Headers/gnustep/gui/AppKit/NSPasteboard.h
-Headers/gnustep/gui/AppKit/NSPopUpButton.h
-Headers/gnustep/gui/AppKit/NSPopUpButtonCell.h
-Headers/gnustep/gui/AppKit/NSPrintInfo.h
-Headers/gnustep/gui/AppKit/NSPrintOperation.h
-Headers/gnustep/gui/AppKit/NSPrintPanel.h
-Headers/gnustep/gui/AppKit/NSPrinter.h
-Headers/gnustep/gui/AppKit/NSResponder.h
-Headers/gnustep/gui/AppKit/NSRulerMarker.h
-Headers/gnustep/gui/AppKit/NSRulerView.h
-Headers/gnustep/gui/AppKit/NSSavePanel.h
-Headers/gnustep/gui/AppKit/NSScreen.h
-Headers/gnustep/gui/AppKit/NSScrollView.h
-Headers/gnustep/gui/AppKit/NSScroller.h
-Headers/gnustep/gui/AppKit/NSSelection.h
-Headers/gnustep/gui/AppKit/NSSlider.h
-Headers/gnustep/gui/AppKit/NSSliderCell.h
-Headers/gnustep/gui/AppKit/NSSpellChecker.h
-Headers/gnustep/gui/AppKit/NSSpellProtocol.h
-Headers/gnustep/gui/AppKit/NSSpellServer.h
-Headers/gnustep/gui/AppKit/NSSplitView.h
-Headers/gnustep/gui/AppKit/NSStringDrawing.h
-Headers/gnustep/gui/AppKit/NSTabView.h
-Headers/gnustep/gui/AppKit/NSTabViewItem.h
-Headers/gnustep/gui/AppKit/NSTableColumn.h
-Headers/gnustep/gui/AppKit/NSTableHeaderCell.h
-Headers/gnustep/gui/AppKit/NSTableHeaderView.h
-Headers/gnustep/gui/AppKit/NSTableView.h
-Headers/gnustep/gui/AppKit/NSText.h
-Headers/gnustep/gui/AppKit/NSTextAttachment.h
-Headers/gnustep/gui/AppKit/NSTextContainer.h
-Headers/gnustep/gui/AppKit/NSTextField.h
-Headers/gnustep/gui/AppKit/NSTextFieldCell.h
-Headers/gnustep/gui/AppKit/NSTextStorage.h
-Headers/gnustep/gui/AppKit/NSTextView.h
-Headers/gnustep/gui/AppKit/NSView.h
-Headers/gnustep/gui/AppKit/NSWindow.h
-Headers/gnustep/gui/AppKit/NSWorkspace.h
-Headers/gnustep/gui/AppKit/PSOperators.h
-Headers/gnustep/gui/AppKit/nsimage-tiff.h
+Headers/gnustep/unicode/caseconv.h
+Headers/gnustep/unicode/cop.h
+Headers/gnustep/unicode/cyrillic.h
+Headers/gnustep/unicode/decomp.h
+Headers/gnustep/unicode/nextstep.h
 Headers/gnustep/xgps/XGContext.h
 Headers/gnustep/xgps/XGContextPrivate.h
+Headers/gnustep/xgps/XGContextWindow.h
 Headers/gnustep/xgps/XGDrawObject.h
 Headers/gnustep/xgps/XGGState.h
+Headers/gnustep/xgps/XGGStateOps.h
 Headers/%%GNU_ARCH%%/%%GNU_HOST%%/GSConfig.h
 Headers/%%GNU_ARCH%%/%%GNU_HOST%%/mframe.h
 Libraries/Resources/GNUstepSystemXFontList
 Libraries/Resources/Images/GNUstep.tiff
 Libraries/Resources/Images/GNUstep_Images_Copyright
+Libraries/Resources/Images/NSComboArrow.tiff
+Libraries/Resources/Images/common_2DCheckMark.tiff
+Libraries/Resources/Images/common_2DDash.tiff
 Libraries/Resources/Images/common_3DArrowDown.tiff
 Libraries/Resources/Images/common_3DArrowRight.tiff
 Libraries/Resources/Images/common_3DArrowRightH.tiff
@@ -285,6 +312,7 @@ Libraries/Resources/Images/common_ArrowUpH.tiff
 Libraries/Resources/Images/common_Close.tiff
 Libraries/Resources/Images/common_CloseBroken.tiff
 Libraries/Resources/Images/common_CloseH.tiff
+Libraries/Resources/Images/common_Diamond.tiff
 Libraries/Resources/Images/common_Dimple.tiff
 Libraries/Resources/Images/common_DownArrowSmall.tiff
 Libraries/Resources/Images/common_Folder.tiff
@@ -340,6 +368,8 @@ Libraries/Resources/NSCharacterSets/symbolAndOperatorCharSet.dat
 Libraries/Resources/NSCharacterSets/uppercaseLetterCharSet.dat
 Libraries/Resources/NSCharacterSets/whitespaceAndNlCharSet.dat
 Libraries/Resources/NSCharacterSets/whitespaceCharSet.dat
+Libraries/Resources/NSTimeZones/GNUmakefile
+Libraries/Resources/NSTimeZones/GNUstep_zones
 Libraries/Resources/NSTimeZones/README
 Libraries/Resources/NSTimeZones/abbreviations
 Libraries/Resources/NSTimeZones/create-abbrevs.m
@@ -409,9 +439,11 @@ Libraries/Resources/NSTimeZones/zones/America/Atka
 Libraries/Resources/NSTimeZones/zones/America/Barbados
 Libraries/Resources/NSTimeZones/zones/America/Belem
 Libraries/Resources/NSTimeZones/zones/America/Belize
+Libraries/Resources/NSTimeZones/zones/America/Boa_Vista
 Libraries/Resources/NSTimeZones/zones/America/Bogota
 Libraries/Resources/NSTimeZones/zones/America/Boise
 Libraries/Resources/NSTimeZones/zones/America/Buenos_Aires
+Libraries/Resources/NSTimeZones/zones/America/Cambridge_Bay
 Libraries/Resources/NSTimeZones/zones/America/Cancun
 Libraries/Resources/NSTimeZones/zones/America/Caracas
 Libraries/Resources/NSTimeZones/zones/America/Catamarca
@@ -518,6 +550,7 @@ Libraries/Resources/NSTimeZones/zones/Antarctica/Mawson
 Libraries/Resources/NSTimeZones/zones/Antarctica/McMurdo
 Libraries/Resources/NSTimeZones/zones/Antarctica/Palmer
 Libraries/Resources/NSTimeZones/zones/Antarctica/South_Pole
+Libraries/Resources/NSTimeZones/zones/Antarctica/Syowa
 Libraries/Resources/NSTimeZones/zones/Arctic/Longyearbyen
 Libraries/Resources/NSTimeZones/zones/Asia/Aden
 Libraries/Resources/NSTimeZones/zones/Asia/Almaty
@@ -538,6 +571,7 @@ Libraries/Resources/NSTimeZones/zones/Asia/Chungking
 Libraries/Resources/NSTimeZones/zones/Asia/Colombo
 Libraries/Resources/NSTimeZones/zones/Asia/Dacca
 Libraries/Resources/NSTimeZones/zones/Asia/Damascus
+Libraries/Resources/NSTimeZones/zones/Asia/Dili
 Libraries/Resources/NSTimeZones/zones/Asia/Dubai
 Libraries/Resources/NSTimeZones/zones/Asia/Dushanbe
 Libraries/Resources/NSTimeZones/zones/Asia/Gaza
@@ -723,17 +757,48 @@ Libraries/Resources/NSTimeZones/zones/Europe/Sofia
 Libraries/Resources/NSTimeZones/zones/Europe/Stockholm
 Libraries/Resources/NSTimeZones/zones/Europe/Tallinn
 Libraries/Resources/NSTimeZones/zones/Europe/Tirane
+Libraries/Resources/NSTimeZones/zones/Europe/Tiraspol
+Libraries/Resources/NSTimeZones/zones/Europe/Uzhgorod
 Libraries/Resources/NSTimeZones/zones/Europe/Vaduz
 Libraries/Resources/NSTimeZones/zones/Europe/Vatican
 Libraries/Resources/NSTimeZones/zones/Europe/Vienna
 Libraries/Resources/NSTimeZones/zones/Europe/Vilnius
 Libraries/Resources/NSTimeZones/zones/Europe/Warsaw
 Libraries/Resources/NSTimeZones/zones/Europe/Zagreb
+Libraries/Resources/NSTimeZones/zones/Europe/Zaporozhye
 Libraries/Resources/NSTimeZones/zones/Europe/Zurich
 Libraries/Resources/NSTimeZones/zones/GB
 Libraries/Resources/NSTimeZones/zones/GMT
 Libraries/Resources/NSTimeZones/zones/GMT+0
+Libraries/Resources/NSTimeZones/zones/GMT+1
+Libraries/Resources/NSTimeZones/zones/GMT+10
+Libraries/Resources/NSTimeZones/zones/GMT+11
+Libraries/Resources/NSTimeZones/zones/GMT+12
+Libraries/Resources/NSTimeZones/zones/GMT+13
+Libraries/Resources/NSTimeZones/zones/GMT+14
+Libraries/Resources/NSTimeZones/zones/GMT+2
+Libraries/Resources/NSTimeZones/zones/GMT+3
+Libraries/Resources/NSTimeZones/zones/GMT+4
+Libraries/Resources/NSTimeZones/zones/GMT+5
+Libraries/Resources/NSTimeZones/zones/GMT+6
+Libraries/Resources/NSTimeZones/zones/GMT+7
+Libraries/Resources/NSTimeZones/zones/GMT+8
+Libraries/Resources/NSTimeZones/zones/GMT+9
 Libraries/Resources/NSTimeZones/zones/GMT-0
+Libraries/Resources/NSTimeZones/zones/GMT-1
+Libraries/Resources/NSTimeZones/zones/GMT-10
+Libraries/Resources/NSTimeZones/zones/GMT-11
+Libraries/Resources/NSTimeZones/zones/GMT-12
+Libraries/Resources/NSTimeZones/zones/GMT-13
+Libraries/Resources/NSTimeZones/zones/GMT-14
+Libraries/Resources/NSTimeZones/zones/GMT-2
+Libraries/Resources/NSTimeZones/zones/GMT-3
+Libraries/Resources/NSTimeZones/zones/GMT-4
+Libraries/Resources/NSTimeZones/zones/GMT-5
+Libraries/Resources/NSTimeZones/zones/GMT-6
+Libraries/Resources/NSTimeZones/zones/GMT-7
+Libraries/Resources/NSTimeZones/zones/GMT-8
+Libraries/Resources/NSTimeZones/zones/GMT-9
 Libraries/Resources/NSTimeZones/zones/GMT0
 Libraries/Resources/NSTimeZones/zones/Greenwich
 Libraries/Resources/NSTimeZones/zones/HST
@@ -849,13 +914,13 @@ Libraries/Resources/NSTimeZones/zones/W-SU
 Libraries/Resources/NSTimeZones/zones/WET
 Libraries/Resources/NSTimeZones/zones/Zulu
 Libraries/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xgps/libgmodel.so
-Libraries/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xgps/libgmodel.so.0.6.0
+Libraries/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xgps/libgmodel.so.0.6.5
 Libraries/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xgps/libgnustep-base.so
-Libraries/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xgps/libgnustep-base.so.0.6.0
+Libraries/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xgps/libgnustep-base.so.0.6.5
 Libraries/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xgps/libgnustep-gui.so
-Libraries/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xgps/libgnustep-gui.so.0.6.0
+Libraries/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xgps/libgnustep-gui.so.0.6.5
 Libraries/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xgps/libgnustep-xgps.so
-Libraries/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xgps/libgnustep-xgps.so.0.6.0
+Libraries/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xgps/libgnustep-xgps.so.0.6.5
 Library/Model/SavePanel.gmodel
 Library/Services/example.service/Resources/Info-gnustep.plist
 Library/Services/example.service/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xgps/example
@@ -877,6 +942,8 @@ Makefiles/cpu.sh
 Makefiles/ctool.make
 Makefiles/documentation.make
 Makefiles/executable.template
+Makefiles/gswapp.make
+Makefiles/gswbundle.make
 Makefiles/install-sh
 Makefiles/%%GNU_ARCH%%/%%GNU_HOST%%/config.make
 Makefiles/%%GNU_ARCH%%/%%GNU_HOST%%/which_lib
@@ -885,6 +952,7 @@ Makefiles/ld_lib_path.sh
 Makefiles/library.make
 Makefiles/mkinstalldirs
 Makefiles/names.make
+Makefiles/palette.make
 Makefiles/objc.make
 Makefiles/os.sh
 Makefiles/rootinstall.sh
@@ -930,20 +998,25 @@ Tools/set_show_service
 Tools/sfparse
 share/config.site
 @exec mkdir -p %D/Apps
+@exec mkdir -p %D/Documentation/info
+@exec mkdir -p %D/Documentation/man
 @exec mkdir -p %D/Headers/gnustep/unicode
+@exec mkdir -p %D/Library/Colors
 @exec mkdir -p %D/Library/PostScript
-@exec mkdir -p %D/Library/man
-@exec mkdir -p %D/Library/info
+@exec mkdir -p %D/Local/Users/Administrator
+@exec mkdir -p %D/Network
 @dirrm share
 @dirrm Tools/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xgps
 @dirrm Tools/%%GNU_ARCH%%/%%GNU_HOST%%
 @dirrm Tools/%%GNU_ARCH%%
 @dirrm Tools
+@dirrm Network
 @dirrm Makefiles/%%GNU_ARCH%%/%%GNU_HOST%%
 @dirrm Makefiles/%%GNU_ARCH%%
 @dirrm Makefiles
-@dirrm Library/man
-@dirrm Library/info
+@dirrm Local/Users/Administrator
+@dirrm Local/Users
+@dirrm Local
 @dirrm Library/Services/example.service/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xgps
 @dirrm Library/Services/example.service/%%GNU_ARCH%%/%%GNU_HOST%%
 @dirrm Library/Services/example.service/%%GNU_ARCH%%
@@ -952,6 +1025,7 @@ share/config.site
 @dirrm Library/Services
 @dirrm Library/PostScript
 @dirrm Library/Model
+@dirrm Library/Colors
 @dirrm Library
 @dirrm Libraries/%%GNU_ARCH%%/%%GNU_HOST%%/gnu-gnu-gnu-xgps
 @dirrm Libraries/%%GNU_ARCH%%/%%GNU_HOST%%
@@ -985,12 +1059,14 @@ share/config.site
 @dirrm Headers/%%GNU_ARCH%%
 @dirrm Headers/gnustep/xgps
 @dirrm Headers/gnustep/unicode
-@dirrm Headers/gnustep/gui/AppKit
-@dirrm Headers/gnustep/gui
 @dirrm Headers/gnustep/base
 @dirrm Headers/gnustep/Foundation
+@dirrm Headers/gnustep/AppKit
 @dirrm Headers/gnustep
 @dirrm Headers
+@dirrm Documentation/man
+@dirrm Documentation/info
+@dirrm Documentation
 @dirrm Apps
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
