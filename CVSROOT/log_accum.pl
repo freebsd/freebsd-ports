@@ -682,7 +682,7 @@ if (-e "$LAST_FILE.$PID") {
 #
 # Produce the final compilation of the log messages
 #
-push @text, &build_header();
+@text = &build_header();
 for ($i = 0; ; $i++) {
     last if (! -e "$LOG_FILE.$i.$PID");
     @lines = &read_logfile("$CHANGED_FILE.$i.$PID", "");
