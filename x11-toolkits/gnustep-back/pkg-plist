@@ -10,6 +10,7 @@ System/Headers/gnustep/xlib/XGGeometry.h
 System/Headers/gnustep/xlib/XGPrivate.h
 System/Library/Bundles/libgnustep-back.bundle/Resources/Info-gnustep.plist
 System/Library/Bundles/libgnustep-back.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-back
+System/Library/Bundles/libgnustep-back.bundle/stamp.make
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/font_cacher
 System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/gpbs
 @dirrm System/Library/Bundles/libgnustep-back.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
