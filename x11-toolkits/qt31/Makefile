@@ -33,7 +33,7 @@ NO_FILTER_SHLIBS=yes
 CONFIGURE_ARGS=	-system-libpng -system-libjpeg -system-libmng	\
 		-qt-imgfmt-png -qt-imgfmt-jpeg -qt-imgfmt-mng	\
 		-system-zlib -no-nas-sound -sm -qt-gif -thread	\
-		-no-fas ${XINERAMA} -no-g++-exceptions -no-stl	\
+		-no-fast ${XINERAMA} -no-g++-exceptions -no-stl	\
 		${CUPS}	-shared -prefix ${PREFIX}
 
 .if defined(DEBUG)
