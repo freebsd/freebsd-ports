@@ -295,6 +295,7 @@
     SUBDIR += sshbuddy
     SUBDIR += stan
     SUBDIR += susv2
+    SUBDIR += susv3
     SUBDIR += sword
     SUBDIR += sword-modules
     SUBDIR += tcb
