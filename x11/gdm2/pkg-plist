@@ -91,9 +91,3 @@ share/locale/zh_TW/LC_MESSAGES/gdm-2.4.mo
 @dirrm share/gnome/gdm/themes/happygnome
 @dirrm share/gnome/gdm/themes/circles
 @dirrm share/gnome/gdm/themes
-@dirrm share/gnome/gdm
-@dirrm etc/gdm/Sessions
-@dirrm etc/gdm/PreSession
-@dirrm etc/gdm/PostSession
-@dirrm etc/gdm/Init
-@dirrm etc/gdm
