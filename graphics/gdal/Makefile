@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	gdal
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/gdal/
 
 MAINTAINER=	aa8vb@nc.rr.com
 
-BROKEN=		"Incorrect checksum"
-
-LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
+BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen
 
 USE_PYTHON=     yes
 GNU_CONFIGURE=	yes
