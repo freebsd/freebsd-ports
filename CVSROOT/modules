@@ -4444,6 +4444,7 @@ mldonkey-gui	ports/net/mldonkey-gui
 mldonkey-perlreactor	ports/net/mldonkey-perlreactor
 mldonkey-serverspy	ports/net/mldonkey-serverspy
 mldonkey-urlslave	ports/net/mldonkey-urlslave
+mls		ports/mail/mls
 mlterm		ports/x11/mlterm
 mlvwm		ports/x11-wm/mlvwm
 mm		ports/devel/mm
