@@ -16,8 +16,4 @@ computations and OpenGL rendering.
 Togl is copyrighted by Brian Paul (brian_paul@avid.com) and Benjamin
 Bederson (bederson@cs.umd.edu). See the LICENSE file for details.
 
-The Togl WWW page is available from: 
-     Wisconsin at http://www.mesa3d.org/brianp/Togl.html 
-     Maryland at http://www.cs.umd.edu/~bederson/Togl.html 
-
-WWW: http://www.mesa3d.org/brianp/Togl.html
+WWW: http://togl.sourceforge.net/

@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	togl
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	1.6
+PORTREVISION=	0
 CATEGORIES=	graphics tk84
-MASTER_SITES=	ftp://ftp.mesa3d.org/mesa/misc/ \
-		ftp://ftp.cs.umd.edu/pub/faculty/bederson/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	Togl-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,25 +19,26 @@ COMMENT=	A Tk OpenGL widget
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
 		tcl84.1:${PORTSDIR}/lang/tcl84
 
+USE_GL=		yes
 USE_MESA=	yes
-ALL_TARGET=	default
+USE_GMAKE=	yes
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 
 TOGL_INSTDIR=	${PREFIX}/lib/tk8.4/${DISTNAME}
+PLIST_SUB=	TOGL_INSTDIR=${TOGL_INSTDIR:S,^${PREFIX}/,,}
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=		"Does not compile on amd64 (missing -fPIC)"
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
 .endif
 
 do-install:
-	${MKDIR} ${TOGL_INSTDIR}
-	${INSTALL_DATA} ${WRKSRC}/libtogl.so.1.3 ${TOGL_INSTDIR}/Togl.so
-	${INSTALL_DATA} ${WRKSRC}/togl.h ${TOGL_INSTDIR}
-	${INSTALL_DATA} ${WRKSRC}/togl.o ${TOGL_INSTDIR}
-	${ECHO} 'package ifneeded Togl 1.5 [list load [file join $$dir Togl.so]]'\
-	  > ${PREFIX}/lib/tk8.4/${DISTNAME}/pkgIndex.tcl
+	@${MKDIR} ${TOGL_INSTDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.so ${TOGL_INSTDIR}
+	${INSTALL_DATA} ${WRKSRC}/togl.h ${WRKSRC}/pkgIndex.tcl ${TOGL_INSTDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Togl.html ${DOCSDIR}
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
