@@ -1,0 +1,3 @@
+lib/jabber/xdb_ldap.so
+etc/jabber-xdb.xml.sample
+etc/openldap/schema/jabber.schema.default
