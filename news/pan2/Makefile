@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	pan
-PORTVERSION=	0.11.0
+PORTVERSION=	0.11.1
 CATEGORIES=	news gnome
-MASTER_SITES=	http://pan.rebelbase.com/download/${PORTVERSION}/SOURCE/
+MASTER_SITES=	http://pan.rebelbase.com/download/${PORTVERSION}/SOURCE/ \
+		http://pan.rebelbase.com/download/obsolete/${PORTVERSION}/SOURCE/
 
 MAINTAINER=	gnome@FreeBSD.org
 
@@ -17,7 +18,7 @@ USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -lgnuregex -lcompat"
 CONFIGURE_ARGS=	--enable-html
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
