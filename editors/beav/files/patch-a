@@ -47,7 +47,7 @@ diff -c beav-140.orig/termio.c beav-140/termio.c
   #include    <signal.h>
   #ifdef BSD
   #include    <sys/ioctl.h>
-+ #ifdef __FreeBSD__
++ #if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__NetBSD__)
 + #include <sys/ioctl_compat.h>
 + #endif
   #else
