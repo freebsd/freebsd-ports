@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.59 1995/10/13 09:19:57 asami Exp $
+# $Id: Makefile,v 1.60 1995/10/20 07:54:54 asami Exp $
 #
 
 RESTRICTED += Mosaic         # requires Motif, Mosaic itself isn't
@@ -8,7 +8,7 @@ RESTRICTED += Mosaic         # requires Motif, Mosaic itself isn't
     SUBDIR += cern_linemode
     SUBDIR += chimera
     SUBDIR += dgd
-    BROKEN += dgd-lpmud
+    SUBDIR += dgd-lpmud
     SUBDIR += dip
     SUBDIR += fspclient
     SUBDIR += gated
