@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://home.worldonline.dk/~torsten/xpaint/ \
 		ftp://ftp.win.ne.jp/pub/graphics/
 
-MAINTAINER=	jseger@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		png.4:${PORTSDIR}/graphics/png
