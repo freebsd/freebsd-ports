@@ -1,6 +1,8 @@
 bin/kseg
 lib/X11/kseg/README
 lib/X11/kseg/examples/20cell.seg
+lib/X11/kseg/examples/bezier-cubic.sec
+lib/X11/kseg/examples/bezier-cubic.seg
 lib/X11/kseg/examples/circumcircle.sec
 lib/X11/kseg/examples/circumcircle.seg
 lib/X11/kseg/examples/conic5pt.sec
@@ -26,6 +28,7 @@ lib/X11/kseg/examples/prettylocusgenerator.sec
 lib/X11/kseg/examples/radicalaxis.sec
 lib/X11/kseg/examples/sierp.sec
 lib/X11/kseg/examples/sierp2.sec
+lib/X11/kseg/examples/sinus.seg
 lib/X11/kseg/examples/tractix.sec
 lib/X11/kseg/examples/tractix.seg
 lib/X11/kseg/kseg_de.qm
@@ -35,6 +38,9 @@ lib/X11/kseg/kseg_fr.qm
 lib/X11/kseg/kseg_hu.qm
 lib/X11/kseg/kseg_help_en.html
 lib/X11/kseg/kseg_help_es.html
+lib/X11/kseg/kseg_help_it.html
+lib/X11/kseg/kseg_it.qm
+lib/X11/kseg/kseg_ja.qm
 lib/X11/kseg/kseg_nb.qm
 lib/X11/kseg/kseg_nl.qm
 lib/X11/kseg/kseg_pt.qm
