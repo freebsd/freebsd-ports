@@ -127,6 +127,7 @@ jdk-tutorial-*		ports/java/jdk-tutorial	This software is under license and expor
 JRE-*			ports/java/jre		Put copyright on packaging!
 kaffe-*			ports/java/kaffe	Restrictive copyright
 ksh93			ports/shells/ksh93	User must agree to "regularly monitor the Website".
+linux-netscape6		ports/www/linux-netscape6	Java plugin is from Sun.
 linuxq3ademo-*		ports/games/linux-q3ademo	Restrictive license by Loki Software
 linux-ibm-*		ports/java/linux-ibm-jdk13	Redistribution of repackaged
 							binaries not permitted
