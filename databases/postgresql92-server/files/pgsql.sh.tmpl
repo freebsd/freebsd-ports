@@ -30,6 +30,7 @@ postgresql_enable=${postgresql_enable:-"NO"}
 postgresql_flags=${postgresql_flags:-"-w -s -m fast"}
 postgresql_user=pgsql
 eval postgresql_data=${postgresql_data:-"~${postgresql_user}/data"}
+postgresql_class=${postgresql_class:-"default"}
 
 name=postgresql
 rcvar=`set_rcvar`
@@ -47,12 +48,12 @@ initdb_cmd="postgresql_initdb"
 
 postgresql_command()
 {
-    su -m ${postgresql_user} -c "exec ${command} ${command_args}"
+    su -l ${postgresql_user} -c "exec ${command} ${command_args}"
 }
     
 postgresql_initdb()
 {
-    su -l ${postgresql_user} -c "exec ${prefix}/bin/initdb -D ${postgresql_data}"
+    su -l -c ${postgresql_class} ${postgresql_user} -c "exec ${prefix}/bin/initdb -D ${postgresql_data}"
 }
 
 run_rc_command "$1"
