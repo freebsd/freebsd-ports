@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pan2
-PORTVERSION=	0.14.0
+PORTVERSION=	0.14.0.90
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/SOURCE/ \
 		http://pan.rebelbase.com/download/obsolete/${PORTVERSION}/SOURCE/ \
 		${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/0.13
+MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/0.14
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -34,6 +34,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|gnet-config|gnet-glib2-config|g ; \
 		 s|gnet/gnet\.h|gnet-glib2/gnet.h|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|gnet/gnet\.h|gnet-glib2/gnet.h|g'
+		's|gnet/gnet\.h|gnet-glib2/gnet.h|g; s|<regex.h>|<gnuregex.h>|'
 
 .include <bsd.port.mk>
