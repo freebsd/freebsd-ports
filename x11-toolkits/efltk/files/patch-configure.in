@@ -1,0 +1,36 @@
+--- configure.in.orig	Fri May 30 12:48:30 2003
++++ configure.in	Sat Feb 28 04:37:19 2004
+@@ -36,7 +36,7 @@
+ FL_MAJOR_VERSION=2
+ FL_MINOR_VERSION=0
+ FL_PATCH_VERSION=3
+-FL_API_VERSION=${FL_MAJOR_VERSION}.${FL_MINOR_VERSION}
++FL_API_VERSION=${FL_MAJOR_VERSION}
+ 
+ AC_SUBST(FL_MAJOR_VERSION)
+ AC_SUBST(FL_MINOR_VERSION)
+@@ -135,7 +135,6 @@
+ DSOEXT=".so.$FL_API_VERSION"
+ DSOSHORTEXT=".so"
+ 
+-DEBUGFLAG=""
+ SYSTYPE="UNIX"
+ DSOCOMMAND=""
+ THEMECOMMAND=""
+@@ -430,10 +429,12 @@
+ AC_ARG_ENABLE(threads, [  --disable-threads       dont require mt libraries],,enable_threads=yes)
+ have_pthread=no
+ if test "$enable_threads" = yes; then
+-  AC_CHECK_LIB(c, pthread_create, \
+-     have_pthread=yes,
+-     AC_CHECK_LIB(pthread, pthread_create, \
+-        THREADSLIBS=-lpthread have_pthread=yes,,),
++  AC_CHECK_LIB(pthread, pthread_create, \
++     THREADSLIBS=-lpthread have_pthread=yes,
++     AC_CHECK_LIB(kse, pthread_create, \
++        THREADSLIBS=-lkse have_pthread=yes,
++        AC_CHECK_LIB(c_r, pthread_create, \
++           THREADSLIBS=-lc_r have_pthread=yes,),),
+   )
+ fi
+ 
