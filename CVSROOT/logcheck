@@ -25,11 +25,11 @@ use strict;
 # that is used to type-check the entered value.  If the match failed
 # then the commit is rejected.  (See rcstemplate).
 my %HEADERS = (
-	"Reviewed by"		=> "",
-	"Submitted by"		=> "",
-	"Obtained from"		=> "",
-	"Approved by"		=> "",
-	"PR"			=> "",
+	"Reviewed by"		=> '.*',
+	"Submitted by"		=> '.*',
+	"Obtained from"		=> '.*',
+	"Approved by"		=> '.*',
+	"PR"			=> '.*',
 	"MFC after"		=> '[\d]+( (days|weeks))?'
 );
 
