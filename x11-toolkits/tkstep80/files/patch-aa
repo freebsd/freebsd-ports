@@ -1,5 +1,5 @@
---- configure.orig	Mon Dec  1 12:56:45 1997
-+++ configure	Mon Dec  1 13:11:06 1997
+--- configure.orig	Tue Dec  2 10:36:23 1997
++++ configure	Tue Dec  2 11:23:24 1997
 @@ -877,14 +877,14 @@
    withval="$with_tcl"
    TCL_BIN_DIR=$withval
@@ -27,6 +27,15 @@
  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
  
  # If Tcl and Tk are installed in different places, adjust the library
+@@ -2423,7 +2425,7 @@
+ if test "$ok" = "yes" -a "${SHLIB_SUFFIX}" != ""; then
+     TK_SHARED_BUILD=1
+     TK_SHLIB_CFLAGS="${SHLIB_CFLAGS}"
+-    eval "TK_LIB_FILE=libtkstep${TCL_SHARED_LIB_SUFFIX}"
++    eval "TK_LIB_FILE=libtkstep`echo ${VERSION} | tr -d .`.so.1.2"
+     MAKE_LIB="\${SHLIB_LD} -o ${TK_LIB_FILE} \${OBJS} \$(TK_LD_SEARCH_FLAGS) ${SHLIB_LD_LIBS}"
+     RANLIB=":"
+ else
 @@ -2475,7 +2477,7 @@
  
  if test "$ok" = "yes" ; then
