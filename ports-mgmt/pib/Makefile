@@ -3,12 +3,12 @@
 # Date created:         30 December 1996
 # Whom:                 Mike Smith <msmith@freebsd.org>
 #
-# $Id: Makefile,v 1.9 1998/09/03 16:02:35 msmith Exp $
+# $Id: Makefile,v 1.10 1998/09/15 09:48:22 asami Exp $
 #
 
 DISTNAME=	pib-1.1
 CATEGORIES=	sysutils tk80
-MASTER_SITES=	ftp://gsoft.com.au/pub/pib/
+MASTER_SITES=	http://www.freebsd.org/~msmith/pib/
 
 MAINTAINER=	msmith@freebsd.org
 
