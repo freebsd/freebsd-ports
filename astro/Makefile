@@ -11,6 +11,7 @@
     SUBDIR += glunarclock
     SUBDIR += gpsman
     SUBDIR += jday
+    SUBDIR += ksetispy
     SUBDIR += ksetiwatch
     SUBDIR += kstars
     SUBDIR += luna
