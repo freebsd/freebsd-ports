@@ -46,7 +46,7 @@ MAN1=		gs.1 pdf2dsc.1 pdf2ps.1 ps2ascii.1 ps2epsi.1 ps2pdf.1 gs-hpdj.1
 GS_SOURCES=	ghostscript-5.10.tar.gz
 
 # Additional driver for HP PCL3 Printers
-PCL3_DRV=	hpdj-2.5.tar.gz
+PCL3_DRV=	hpdj-2.6.tar.gz
 
 # replacement for pdf_sec.ps, that allows you to read encrypted PDF files
 DECRYPT_PDF=	pdf_sec.ps
@@ -65,11 +65,11 @@ GS_CID_PATCH=   gs5.10-cid-bugfix.diff
 
 post-extract:
 	${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../../graphics/jpeg/work/jpeg-6b ${WRKSRC}/jpeg
-	${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../../graphics/png/work/libpng-1.0.3 ${WRKSRC}/libpng
+	${LN} -s ${WRKDIRPREFIX}${.CURDIR}/../../graphics/png/work/libpng-1.0.5 ${WRKSRC}/libpng
 	# additional PCL3  driver
-	$(TAR) -xvf ${WRKDIR}/hpdj-2.5/hpdj.tar -C $(WRKSRC)
-	${PATCH} --directory=${WRKSRC} <${WRKSRC}/devs.mak-5.10.diff
-	${PATCH} --directory=${WRKSRC} <${WRKSRC}/zmedia2.c-5.10.diff
+	$(TAR) -xvf ${WRKDIR}/hpdj-2.6/hpdj.tar -C $(WRKSRC)
+	@${CAT} ${WRKSRC}/devs.mak-5.10.add >> ${WRKSRC}/devs.mak
+	@${PATCH} -d ${WRKSRC} --forward --quiet -E < ${WRKSRC}/zmedia2.c-5.10.diff
 
 pre-patch:
 	cd ${WRKSRC} && tar -xzf ${DISTDIR}/${VFLIB_GS} && \
