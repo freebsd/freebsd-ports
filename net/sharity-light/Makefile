@@ -3,7 +3,7 @@
 # Date created:		14 June 1997
 # Whom:			Dmitrij Tejblum <dima@tejblum.dnttm.rssi.ru>
 #
-# $Id: Makefile,v 1.7 1998/10/14 00:26:49 jseger Exp $
+# $Id: Makefile,v 1.8 1998/10/16 00:55:28 jseger Exp $
 #
 
 DISTNAME=	Sharity-Light.1.0.s
@@ -18,9 +18,9 @@ MAINTAINER=	dt@FreeBSD.ORG
 MAN8=		smbmount.8
 
 post-extract:
-	@${MKDIR} work/unshlight
+	@${MKDIR} ${WRKDIR}/unshlight
 	@${CP} ${FILESDIR}/unshlight.c ${WRKDIR}/unshlight
-	@${CP} files/Makefile.unshlight ${WRKDIR}/unshlight/Makefile
+	@${CP} ${FILESDIR}/Makefile.unshlight ${WRKDIR}/unshlight/Makefile
 
 post-build:
 	cd ${WRKDIR}/unshlight && make
