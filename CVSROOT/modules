@@ -7189,6 +7189,7 @@ p5-File-Find-Rule	ports/devel/p5-File-Find-Rule
 p5-File-Flat	ports/devel/p5-File-Flat
 p5-File-Flock	ports/devel/p5-File-Flock
 p5-File-Grep	ports/devel/p5-File-Grep
+p5-File-HomeDir	ports/devel/p5-File-HomeDir
 p5-File-Lock	ports/devel/p5-File-Lock
 p5-File-MMagic	ports/devel/p5-File-MMagic
 p5-File-MimeInfo	ports/devel/p5-File-MimeInfo
