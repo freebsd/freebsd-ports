@@ -42,15 +42,14 @@ COMPAT3X_DISTFILES=	${PORTNAME}.aa \
 PLIST_SUB=		CURRENT_ONLY:=""
 .else
 COMPAT3X_OSVERSION=	4.4
-COMPAT3X_OSRELDATE=	20011011
+COMPAT3X_OSRELDATE=	20011227
 COMPAT3X_OSBRANCH=	STABLE
 COMPAT3X_MASTER_SITES=	ftp://stable.FreeBSD.org/pub/FreeBSD/%SUBDIR%/
 COMPAT3X_DISTFILES=	${PORTNAME}.aa \
 			${PORTNAME}.ab \
 			${PORTNAME}.ac \
 			${PORTNAME}.ad \
-			${PORTNAME}.ae \
-			${PORTNAME}.af
+			${PORTNAME}.ae
 PLIST_SUB=		CURRENT_ONLY:="@comment "
 .endif
 
@@ -65,7 +64,9 @@ COMPAT3X_MASTER_SITE_SUBDIR=	releases/${ARCH}/${COMPAT3X_OSVERSION}-RELEASE/${PO
 do-extract:
 	${MKDIR} ${WRKDIR}
 	cd ${_DISTDIR} && ${CAT} ${DISTFILES} | ${TAR} -xzf - -C ${WRKDIR}
-	${MV} ${WRKSRC}/libc_r.so.4 ${WRKSRC}/libc_r.so.4.compat3x
+	if [ -e ${WRKSRC}/libc_r.so.4 ]; then \
+		${MV} ${WRKSRC}/libc_r.so.4 ${WRKSRC}/libc_r.so.4.compat3x; \
+	fi
 
 do-build:
 	@( ${ECHO} '#!/bin/sh'; ${ECHO} '${LDCONFIG} -m ${LDCONFIG_RUNLIST}'; \
@@ -74,7 +75,7 @@ do-build:
 do-install:
 	${MKDIR} ${TARGET_DIR} ${PREFIX}/etc/rc.d
 	${INSTALL_DATA} ${WRKSRC}/* ${TARGET_DIR}/
-	if [ ! -e ${TARGET_DIR}/libc_r.so.4.compat4x ]; then \
+	if [ -e ${TARGET_DIR}/libc_r.so.4.compat3x -a ! -e ${TARGET_DIR}/libc_r.so.4.compat4x ]; then \
 		${LN} -sf ${TARGET_DIR}/libc_r.so.4.compat3x ${TARGET_DIR}/libc_r.so.4; \
 	fi
 	${INSTALL_SCRIPT} ${WRKDIR}/000.${PORTNAME}.sh ${PREFIX}/etc/rc.d/

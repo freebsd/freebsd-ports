@@ -2,9 +2,9 @@ etc/rc.d/000.compat3x.sh
 lib/compat/libalias.so.3
 lib/compat/libc.so.3
 lib/compat/libc_r.so.3
-@unexec if [ -e %B/libc_r.so.4.compat4x ]; then ln -sf %B/libc_r.so.4.compat4x %B/libc_r.so.4; else rm %B/libc_r.so.4; fi
-lib/compat/libc_r.so.4.compat3x
-@exec if [ ! -e %B/libc_r.so.4.compat4x ]; then ln -sf %B/%f %B/libc_r.so.4; fi
+%%CURRENT_ONLY:%%@unexec if [ -e %B/libc_r.so.4.compat4x ]; then ln -sf %B/libc_r.so.4.compat4x %B/libc_r.so.4; else rm %B/libc_r.so.4; fi
+%%CURRENT_ONLY:%%lib/compat/libc_r.so.4.compat3x
+%%CURRENT_ONLY:%%@exec if [ ! -e %B/libc_r.so.4.compat4x ]; then ln -sf %B/%f %B/libc_r.so.4; fi
 lib/compat/libcurses.so.2
 lib/compat/libdialog.so.3
 lib/compat/libedit.so.2
