@@ -13,8 +13,6 @@ BUILD_DEPENDS=	icc:${PORTSDIR}/lang/icc
 
 ONLY_FOR_ARCHS=	i386
 
-NO_PACKAGE=	Depends upon lang/icc which is restricted for legal reasons.
-
 MASTERDIR=	${.CURDIR}/../stlport
 COMPILER=	icc
 
