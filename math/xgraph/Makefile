@@ -3,12 +3,12 @@
 # Date created:		24 November 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.4 1995/04/11 01:19:12 asami Exp $
+# $Id: Makefile,v 1.5 1995/05/03 02:22:30 asami Exp $
 #
 
 DISTNAME=	xgraph-11
 PKGNAME=	xgraph-11.3.2
-CATEGORIES=	math printing
+CATEGORIES=	math print
 MASTER_SITES=	ftp://ftp.cs.orst.edu/pub/src/Xclients.local/
 EXTRACT_SUFX=	.tar.Z
 
