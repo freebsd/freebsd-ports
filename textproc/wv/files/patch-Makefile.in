@@ -1,6 +1,6 @@
---- Makefile.in.orig	Sat Nov 17 02:11:20 2001
-+++ Makefile.in	Sat Jan 26 04:53:33 2002
-@@ -62,6 +62,8 @@
+--- Makefile.in.orig	Wed Nov  6 03:01:41 2002
++++ Makefile.in	Wed Nov 20 17:44:12 2002
+@@ -64,6 +64,8 @@
  RM = rm
  
  INSTALL = @INSTALL@
@@ -9,16 +9,16 @@
  INSTALL_DATA = @INSTALL_DATA@
  
  @SET_MAKE@
-@@ -82,7 +84,7 @@
- VPATH = @srcdir@
+@@ -85,7 +87,7 @@
  
- DEFS = @DEFS@ -DVERSION=\"@VERSION@\" -DXMLCONFIG=\"$(datadir)/wv/wvConfig.xml\" -DHTMLCONFIG=\"$(datadir)/wv/wvHtml.xml\"
--CPPFLAGS = @ICONV_CFLAGS@ @WMF_CFLAGS@ @XML_CFLAGS@ @GLIB_CFLAGS@ @PNG_CFLAGS@ @ZLIB_CFLAGS@ @CPPFLAGS@
+ DEFS = @DEFS@ -DVERSION=\"@VERSION@\" -DXMLCONFIG=\"$(datadir)/wv/wvConfig.xml\" -DHTMLCONFIG=\"$(datadir)/wv/wvHtml.xml\" -DWVDATADIR=\"$(datadir)/wv\"
+ 
+-CPPFLAGS = @CPPFLAGS@ @ICONV_CFLAGS@ @WMF_CFLAGS@ @XML_CFLAGS@ @GLIB_CFLAGS@ @PNG_CFLAGS@ @ZLIB_CFLAGS@
 +CPPFLAGS = @WMF_CFLAGS@ @XML_CFLAGS@ @GLIB_CFLAGS@ @PNG_CFLAGS@ @ZLIB_CFLAGS@ @ICONV_CFLAGS@ @CPPFLAGS@
- CFLAGS = @CFLAGS@ -ansi -pedantic
- INCLUDES = -I. -I./ -I$(srcdir)/ -I$(srcdir)/magick/  -I$(srcdir)/libole2/ -I$(srcdir)/oledecod/
  
-@@ -420,30 +422,24 @@
+ ifeq ($(EPATH_DYLIB),1)
+ WVPICFLAGS = -fno-common -DPIC
+@@ -453,30 +455,24 @@
  	$(includedir)	
  
  install: installdirs all
