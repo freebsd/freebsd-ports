@@ -316,7 +316,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>mc</name>
-	<range><lt>4.6.1.p1</lt></range>
+	<range><lt>4.6.0_9</lt></range>
       </package>
     </affects>
     <description>
@@ -340,6 +340,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2003-09-19</discovery>
       <entry>2004-04-03</entry>
+      <modified>2004-14-04</modified>
     </dates>
   </vuln>
 
