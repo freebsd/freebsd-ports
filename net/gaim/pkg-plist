@@ -390,6 +390,7 @@ share/locale/ja/LC_MESSAGES/gaim.mo
 share/locale/ko/LC_MESSAGES/gaim.mo
 share/locale/lt/LC_MESSAGES/gaim.mo
 share/locale/mk/LC_MESSAGES/gaim.mo
+share/locale/my_MM/LC_MESSAGES/gaim.mo
 share/locale/nl/LC_MESSAGES/gaim.mo
 share/locale/no/LC_MESSAGES/gaim.mo
 share/locale/pl/LC_MESSAGES/gaim.mo
@@ -399,13 +400,17 @@ share/locale/ro/LC_MESSAGES/gaim.mo
 share/locale/ru/LC_MESSAGES/gaim.mo
 share/locale/sk/LC_MESSAGES/gaim.mo
 share/locale/sl/LC_MESSAGES/gaim.mo
+share/locale/sq/LC_MESSAGES/gaim.mo
 share/locale/sr/LC_MESSAGES/gaim.mo
 share/locale/sr@Latn/LC_MESSAGES/gaim.mo
 share/locale/sv/LC_MESSAGES/gaim.mo
 share/locale/tr/LC_MESSAGES/gaim.mo
+share/locale/uk/LC_MESSAGES/gaim.mo
 share/locale/vi/LC_MESSAGES/gaim.mo
 share/locale/zh_CN/LC_MESSAGES/gaim.mo
 share/locale/zh_TW/LC_MESSAGES/gaim.mo
+@unexec /bin/rmdir %D/share/locale/my_MM/LC_MESSAGES 2>/dev/null || /usr/bin/true
+@unexec /bin/rmdir %D/share/locale/my_MM 2>/dev/null || /usr/bin/true
 @dirrm share/gnome/sounds/gaim
 @dirrm share/gnome/pixmaps/gaim/status/default
 @dirrm share/gnome/pixmaps/gaim/status
