@@ -1,36 +1,36 @@
 @comment $FreeBSD$
 bin/poslib-config
-include/poslib-1.0/poslib/bits.h
-include/poslib-1.0/poslib/dnsdefs.h
-include/poslib-1.0/poslib/dnsmessage.h
-include/poslib-1.0/poslib/domainfn.h
-include/poslib-1.0/poslib/exception.h
-include/poslib-1.0/poslib/lexfn.h
-include/poslib-1.0/poslib/masterfile.h
-include/poslib-1.0/poslib/poslib.h
-include/poslib-1.0/poslib/postime.h
-include/poslib-1.0/poslib/random.h
-include/poslib-1.0/poslib/resolver.h
-include/poslib-1.0/poslib/rr.h
-include/poslib-1.0/poslib/server/configuration.h
-include/poslib-1.0/poslib/server/handlequery.h
-include/poslib-1.0/poslib/server/log.h
-include/poslib-1.0/poslib/server/pending.h
-include/poslib-1.0/poslib/server/posthreads.h
-include/poslib-1.0/poslib/server/requestid.h
-include/poslib-1.0/poslib/server/server.h
-include/poslib-1.0/poslib/server/serverthread.h
-include/poslib-1.0/poslib/server/srvresolver.h
-@dirrm include/poslib-1.0/poslib/server
-include/poslib-1.0/poslib/socket.h
-include/poslib-1.0/poslib/syssocket.h
-include/poslib-1.0/poslib/sysstl.h
-include/poslib-1.0/poslib/sysstring.h
-include/poslib-1.0/poslib/types.h
-include/poslib-1.0/poslib/vsnprintf.h
-include/poslib-1.0/poslib/w32poll.h
-@dirrm include/poslib-1.0/poslib
-@dirrm include/poslib-1.0
+include/poslib-%%VERSION%%/poslib/bits.h
+include/poslib-%%VERSION%%/poslib/dnsdefs.h
+include/poslib-%%VERSION%%/poslib/dnsmessage.h
+include/poslib-%%VERSION%%/poslib/domainfn.h
+include/poslib-%%VERSION%%/poslib/exception.h
+include/poslib-%%VERSION%%/poslib/lexfn.h
+include/poslib-%%VERSION%%/poslib/masterfile.h
+include/poslib-%%VERSION%%/poslib/poslib.h
+include/poslib-%%VERSION%%/poslib/postime.h
+include/poslib-%%VERSION%%/poslib/random.h
+include/poslib-%%VERSION%%/poslib/resolver.h
+include/poslib-%%VERSION%%/poslib/rr.h
+include/poslib-%%VERSION%%/poslib/server/configuration.h
+include/poslib-%%VERSION%%/poslib/server/handlequery.h
+include/poslib-%%VERSION%%/poslib/server/log.h
+include/poslib-%%VERSION%%/poslib/server/pending.h
+include/poslib-%%VERSION%%/poslib/server/posthreads.h
+include/poslib-%%VERSION%%/poslib/server/requestid.h
+include/poslib-%%VERSION%%/poslib/server/server.h
+include/poslib-%%VERSION%%/poslib/server/serverthread.h
+include/poslib-%%VERSION%%/poslib/server/srvresolver.h
+@dirrm include/poslib-%%VERSION%%/poslib/server
+include/poslib-%%VERSION%%/poslib/socket.h
+include/poslib-%%VERSION%%/poslib/syssocket.h
+include/poslib-%%VERSION%%/poslib/sysstl.h
+include/poslib-%%VERSION%%/poslib/sysstring.h
+include/poslib-%%VERSION%%/poslib/types.h
+include/poslib-%%VERSION%%/poslib/vsnprintf.h
+include/poslib-%%VERSION%%/poslib/w32poll.h
+@dirrm include/poslib-%%VERSION%%/poslib
+@dirrm include/poslib-%%VERSION%%
 lib/libposlib.a
 lib/libposlib.la
 lib/libposlib.so
@@ -39,12 +39,16 @@ lib/libposserver.a
 lib/libposserver.la
 lib/libposserver.so
 lib/libposserver.so.0
-lib/poslib-1.0/include/poslib-config.h
-@dirrm lib/poslib-1.0/include
-@dirrm lib/poslib-1.0
+lib/poslib-%%VERSION%%/include/poslib-config.h
+@dirrm lib/poslib-%%VERSION%%/include
+@dirrm lib/poslib-%%VERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/dnstimeago.cpp
+%%EXAMPLESDIR%%/host.cpp
+%%EXAMPLESDIR%%/server.cpp
+@dirrm %%EXAMPLESDIR%%
