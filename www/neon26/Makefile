@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	neon
-PORTVERSION=	0.19.4
+PORTVERSION=	0.21.2
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 
@@ -19,19 +19,34 @@ USE_OPENSSL=	yes
 .endif
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE} \
+CONFIGURE_ARGS=	--with-ssl \
 		--enable-xml \
 		--enable-shared \
 		--with-expat=${PREFIX}
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=	neon-config.1
-MAN3=	ne_close_connection.3 ne_session_create.3 \
-	ne_session_decide_proxy.3 ne_session_destroy.3 ne_session_proxy.3
+MAN3=	ne_add_request_header.3 ne_buffer.3 ne_buffer_altered.3 \
+	ne_buffer_append.3 ne_buffer_clear.3 ne_buffer_concat.3 \
+	ne_buffer_create.3 ne_buffer_destroy.3 ne_buffer_finish.3 \
+	ne_buffer_grow.3 ne_buffer_ncreate.3 ne_buffer_zappend.3 \
+	ne_calloc.3 ne_close_connection.3 ne_forget_auth.3 \
+	ne_get_error.3 ne_get_status.3 ne_malloc.3 ne_oom_callback.3 \
+	ne_print_request_header.3 ne_qtoken.3 ne_realloc.3 \
+	ne_request_create.3 ne_request_destroy.3 ne_request_dispatch.3 \
+	ne_session_create.3 ne_session_destroy.3 ne_session_proxy.3 \
+	ne_set_error.3 ne_set_expect100.3 ne_set_persist.3 \
+	ne_set_proxy_auth.3 ne_set_read_timeout.3 \
+	ne_set_request_body_buffer.3 ne_set_request_body_fd.3 \
+	ne_set_server_auth.3 ne_set_useragent.3 ne_shave.3 \
+	ne_ssl_certificate.3 ne_ssl_dname.3 ne_ssl_load_ca.3 \
+	ne_ssl_load_default_ca.3 ne_ssl_readable_dname.3 \
+	ne_ssl_set_verify.3 ne_status.3 ne_strdup.3 ne_strndup.3 \
+	ne_token.3
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/doc/*.3 ${PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/man/*.3 ${PREFIX}/man/man3
 .ifndef NOPORTDOCS
 	${MKDIR} ${PREFIX}/share/doc/neon
 	${INSTALL_DATA} ${WRKSRC}/doc/using-neon.txt ${PREFIX}/share/doc/neon
