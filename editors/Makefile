@@ -93,6 +93,7 @@
     SUBDIR += offix-editor
     SUBDIR += openoffice
     SUBDIR += openoffice-devel
+    SUBDIR += openoffice-dk
     SUBDIR += pico
     SUBDIR += poedit
     SUBDIR += psgml
