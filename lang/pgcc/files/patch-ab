@@ -1,0 +1,11 @@
+--- gcc/f/g77.texi.orig	Thu Jun  4 03:41:18 1998
++++ gcc/f/g77.texi	Tue Jun  9 17:52:16 1998
+@@ -150,7 +150,7 @@
+ 
+ @dircategory Programming
+ @direntry
+-* g77: (g77).                  The GNU Fortran compiler.
++* g77: (g77).                  The EGCS GNU Fortran compiler.
+ @end direntry
+ @node Top, Copying,, (DIR)
+ @top Introduction

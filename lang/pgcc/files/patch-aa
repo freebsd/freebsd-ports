@@ -1,0 +1,12 @@
+--- gcc/cpp.texi.orig	Mon Aug 11 08:57:05 1997
++++ gcc/cpp.texi	Sat Jan 10 11:59:15 1998
+@@ -1,5 +1,9 @@
+ \input texinfo
+ @setfilename cpp.info
++@dircategory The egcs enhanced GNU compiler suite
++@direntry
++* cpp: (cpp).			The egcs C/C++ preprocessor.
++@end direntry
+ @settitle The C Preprocessor
+ 
+ @ignore

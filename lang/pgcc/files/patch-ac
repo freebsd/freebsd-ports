@@ -1,0 +1,13 @@
+--- gcc/gcc.texi.orig	Fri Jan  2 15:38:11 1998
++++ gcc/gcc.texi	Sat Jan 10 11:56:49 1998
+@@ -1,6 +1,10 @@
+ >\input texinfo  @c -*-texinfo-*-
+ @c %**start of header
+ @setfilename gcc.info
++@dircategory The egcs enhanced GNU compiler suite
++@direntry
++* gcc: (gcc).			The egcs C/C++ compiler.
++@end direntry
+ @c @setfilename usegcc.info
+ @c @setfilename portgcc.info
+ @c To produce the full manual, use the "gcc.info" setfilename, and
