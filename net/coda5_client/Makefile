@@ -7,7 +7,7 @@
 
 PORTNAME=	coda
 PORTVERSION=	${CODA_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 
 MAINTAINER=	coda@cs.cmu.edu
 COMMENT=	Client programs for a replicated high-performance network file system

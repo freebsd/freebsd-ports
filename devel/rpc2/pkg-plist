@@ -6,18 +6,19 @@ include/rpc2/fail.h
 include/rpc2/fcon.h
 include/rpc2/multi.h
 include/rpc2/rpc2.h
+include/rpc2/rpc2_addrinfo.h
 include/rpc2/se.h
 include/rpc2/sftp.h
 lib/libfail.a
 lib/libfail.la
 lib/libfail.so
-lib/libfail.so.4
+lib/libfail.so.6
 lib/librpc2.a
 lib/librpc2.la
 lib/librpc2.so
-lib/librpc2.so.4
+lib/librpc2.so.6
 lib/libse.a
 lib/libse.la
 lib/libse.so
-lib/libse.so.4
+lib/libse.so.6
 @dirrm include/rpc2

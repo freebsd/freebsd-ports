@@ -6,7 +6,6 @@
 
 PORTNAME=	coda
 PORTVERSION=	${CODA_VERSION}
-PORTREVISION=	1
 
 COMMENT=	Client programs for a replicated high-performance network file system
 
