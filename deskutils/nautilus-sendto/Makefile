@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	nautilus-sendto
-DISTVERSION=	0.2-1
-PORTREVISION=	2
+PORTVERSION=	0.3
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.es.gnome.org/~telemaco/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/nautilus-sendto/0.3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Integration between nautilus, evolution, and gaim
@@ -18,17 +18,10 @@ BUILD_DEPENDS=	gaim:${PORTSDIR}/net/gaim \
 		evolution:${PORTSDIR}/mail/evolution
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_LIBTOOL_VER=15
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	intlhack gnomeprefix gnometarget nautilus2 gnomehack
-
-# Gnome 2.9 fix
-.if exists(${X11BASE}/libdata/pkgconfig/libebook-1.2.pc)
-post-patch:
-	@${REINPLACE_CMD} -e 's|libebook-1.0|libebook-1.2|' \
-		${WRKSRC}/configure
-.endif
 
 .include <bsd.port.mk>
