@@ -1,13 +1,14 @@
 bin/convertstyle
+bin/dockit
 bin/geticonset
 bin/getstyle
 bin/mkmenu
-bin/savews
 bin/seticons
 bin/setstyle
 bin/wdwrite
 bin/wmaker
 bin/wmaker.inst
+bin/wmsetbg
 bin/wxcopy
 bin/wxpaste
 lib/libwraster.a
@@ -16,42 +17,65 @@ lib/libWMaker.a
 @exec ranlib %D/%F
 include/wraster.h
 include/WMaker.h
+share/WindowMaker/Backgrounds/OpenStep
+share/WindowMaker/Copyright
 share/WindowMaker/Defaults/WMRootMenu
+share/WindowMaker/Defaults/WMState
 share/WindowMaker/Defaults/WMWindowAttributes
 share/WindowMaker/Defaults/WindowMaker
-share/WindowMaker/Style/Black.style
-share/WindowMaker/Style/Blue.style
-share/WindowMaker/Style/BlueAluminum.style
-share/WindowMaker/Style/Brown.style
-share/WindowMaker/Style/Chumbo.style
-share/WindowMaker/Style/Copper.style
-share/WindowMaker/Style/DarkBlue.style
-share/WindowMaker/Style/Food.style
-share/WindowMaker/Style/Golden.style
-share/WindowMaker/Style/Green.style
-share/WindowMaker/Style/LightBlue.style
-share/WindowMaker/Style/Pastel.style
-share/WindowMaker/Style/Pumpkin.style
-share/WindowMaker/Style/Purple.style
-share/WindowMaker/Style/Rainbow_.style
-share/WindowMaker/Style/Red.style
-share/WindowMaker/Style/RednBlue.style
-share/WindowMaker/Style/Traditional.style
-share/WindowMaker/Copyright
-share/WindowMaker/wmmacros
+share/WindowMaker/IconSets/Default
+share/WindowMaker/Pixmaps/Computer.tif
+share/WindowMaker/Pixmaps/Computer.xpm
+share/WindowMaker/Pixmaps/GNUstep.tif
+share/WindowMaker/Pixmaps/GNUstep.xpm
+share/WindowMaker/Pixmaps/GNUstep3D.tif
+share/WindowMaker/Pixmaps/GNUstep3D.xpm
+share/WindowMaker/Pixmaps/Sound.tif
+share/WindowMaker/Pixmaps/Sound.xpm
+share/WindowMaker/Pixmaps/clip.tif
+share/WindowMaker/Pixmaps/clip.xpm
+share/WindowMaker/Pixmaps/defaultAppIcon.tif
+share/WindowMaker/Pixmaps/defaultAppIcon.xpm
 share/WindowMaker/README
+share/WindowMaker/Styles/Black
+share/WindowMaker/Styles/Blue
+share/WindowMaker/Styles/BlueAluminum
+share/WindowMaker/Styles/Brown
+share/WindowMaker/Styles/Chumbo
+share/WindowMaker/Styles/Copper
+share/WindowMaker/Styles/DarkBlue
+share/WindowMaker/Styles/Fire
+share/WindowMaker/Styles/Food
+share/WindowMaker/Styles/Golden
+share/WindowMaker/Styles/Green
+share/WindowMaker/Styles/LightBlue
+share/WindowMaker/Styles/Pastel
+share/WindowMaker/Styles/Pumpkin
+share/WindowMaker/Styles/Purple
+share/WindowMaker/Styles/Rainbow
+share/WindowMaker/Styles/Red
+share/WindowMaker/Styles/RednBlue
+share/WindowMaker/Styles/Traditional
+share/WindowMaker/Themes/Default
+share/WindowMaker/Themes/OpenStep
+share/WindowMaker/autostart.sh
+share/WindowMaker/menu
 share/WindowMaker/menu.cz
 share/WindowMaker/menu.de
 share/WindowMaker/menu.fr
 share/WindowMaker/menu.gl
+share/WindowMaker/menu.it
 share/WindowMaker/menu.ja
 share/WindowMaker/menu.ko
 share/WindowMaker/menu.nl
+share/WindowMaker/menu.no
 share/WindowMaker/menu.pt
-share/WindowMaker/menu.it
-share/WindowMaker/menu
-share/WindowMaker/autostart.sh
-share/WindowMaker/styles.menu
+share/WindowMaker/wmmacros
+@dirrm share/WindowMaker/Themes
+@dirrm share/WindowMaker/Styles
+@dirrm share/WindowMaker/Sounds
+@dirrm share/WindowMaker/Pixmaps
+@dirrm share/WindowMaker/IconSets
 @dirrm share/WindowMaker/Defaults
-@dirrm share/WindowMaker/Style
+@dirrm share/WindowMaker/Backgrounds
 @dirrm share/WindowMaker
