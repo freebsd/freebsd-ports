@@ -27,7 +27,8 @@ USE_REINPLACE=	yes
 USE_GETOPT_LONG=yes
 USE_MYSQL=	yes
 CONFIGURE_ARGS+=--with-qtdir=${X11BASE} --with-id3-libs=${LOCALBASE}\
-	 	--with-ogg-libs=${LOCALBASE} --with-vorbis-libs=${LOCALBASE}
+	 	--with-ogg-libs=${LOCALBASE} --with-vorbis-libs=${LOCALBASE} \
+		--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
 
 .include <bsd.port.pre.mk>
 
