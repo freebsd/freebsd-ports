@@ -8,9 +8,11 @@
 PORTNAME=	glg
 PORTVERSION=	0.2.a
 CATEGORIES=	devel gnome
-MASTER_SITES=	http://glg.sourceforge.net/ \
-		${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	glg
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+#		http://glg.sourceforge.net/ \
+#		${MASTER_SITE_SOURCEFORGE}
+#MASTER_SITE_SUBDIR=	glg
+MASTER_SITE_SUBDIR=	kris
 
 MAINTAINER=	lo_gafet@users.sourceforge.net
 
