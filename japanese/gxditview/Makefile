@@ -12,11 +12,12 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	groff
 DISTNAME=	groff-1.15
 
-PATCH_SITES=	http://w3.mtci.ne.jp/~refactor/GNU/
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR= okazaki
 PATCHFILES=	${DISTNAME}-jgroff-${PORTVERSION}-pl1.diff.gz
 PATCH_DIST_ARGS=	-d ${WRKSRC}/.. --forward --quiet -E -p1
 
-MAINTAINER=	okazaki@be.to
+MAINTAINER=	okazaki@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/bin/groff:${PORTSDIR}/japanese/groff
 
