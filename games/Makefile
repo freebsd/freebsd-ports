@@ -84,6 +84,7 @@
     SUBDIR += kdegames11
     SUBDIR += kdegames11-i18n
     SUBDIR += klondike
+    SUBDIR += kmud
     SUBDIR += krogue
     SUBDIR += krubik
     SUBDIR += ktamaga
