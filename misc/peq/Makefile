@@ -9,9 +9,9 @@ PORTNAME=	peq
 PORTVERSION=	0.7.1
 CATEGORIES=	misc games
 MASTER_SITES=	http://silverstone.fortunecity.com/jaguar/37/ \
-		ftp://lost.iafrica.com/pub/peq/
+		http://www.shrubbery.org.za/peq/
 
-MAINTAINER=	gvg@uunet.co.za
+MAINTAINER=	gordon@shrubbery.org.za
 
 USE_QT_VER=	1
 
