@@ -33,7 +33,7 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.7.16";
+my $VERSION	= "2.7.17";
 my $COPYRIGHT	= "Copyright (c) 2000-2004 Dag-Erling Smørgrav. " .
 		  "All rights reserved.";
 
@@ -446,7 +446,7 @@ sub find_moved($) {
 	read_moved();
     }
     while (exists($moved{$port}) && $moved{$port}->[1] gt $date) {
-	if (!defined($moved{$port}->[0])) {
+	if (!$moved{$port}->[0]) {
 	    info("$port was removed" .
 		 " on $moved{$port}->[1]: $moved{$port}->[2]");
 	    return undef;
@@ -478,7 +478,9 @@ sub add_port($$) {
 	} else {
 	    $realport = find_port($port);
 	}
-	$realport = find_moved($realport);
+	if ($realport) {
+	    $realport = find_moved($realport);
+	}
     }
     if (!$realport) {
 	return 1;
