@@ -7,6 +7,7 @@
 
 PORTNAME=	gnome-industrial-theme
 PORTVERSION=	0.2.26
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.ximian.com/pub/xd2/redhat-9-i386/source/
 DISTNAME=	ximian-artwork-${PORTVERSION}-${XIMIAN_SUBVERSION}.ximian.${XIMIAN_DISTVERSION}.src
@@ -102,7 +103,7 @@ do-install:
 
 	@${MKDIR} ${PREFIX}/share/gnome/themes/Industrial/metacity-1
 	@${INSTALL_DATA} ${WRKSRC}/metacity/metacity-theme-1.xml ${PREFIX}/share/gnome/themes/Industrial/metacity-1
-	@${INSTALL_DATA} ${WRKSRC}/index.theme ${PREFIX}/share/gnome/themes/Industrial
+	@${INSTALL_DATA} ${WRKSRC}/index.theme ${PREFIX}/share/themes/Industrial
 
 .if defined(WITH_XMMS)
 	@${MKDIR} ${PREFIX}/share/xmms/Skins/Industrial
