@@ -84,6 +84,12 @@ pre-_includeinstall:
 
 beforeinstall:
 	${INSTALL} -C -o ${INCOWN} -g ${INCGRP} -m ${INCMODE} \
-		${.CURDIR}/blocks/swf.h ${INCDIR}/blocks/
+		${.CURDIR}/blocks/block.h ${.CURDIR}/blocks/cxform.h \
+		${.CURDIR}/blocks/matrix.h ${.CURDIR}/blocks/outputblock.h \
+		${.CURDIR}/blocks/sound.h ${.CURDIR}/blocks/sprite.h \
+		${.CURDIR}/blocks/swf.h ${.CURDIR}/blocks/blocktypes.h \
+		${.CURDIR}/blocks/character.h ${.CURDIR}/blocks/libswf.h \
+		${.CURDIR}/blocks/method.h ${.CURDIR}/blocks/output.h \
+		${.CURDIR}/blocks/rect.h  ${INCDIR}/blocks/
 	${INSTALL} -C -o ${INCOWN} -g ${INCGRP} -m ${INCMODE} \
 		${.CURDIR}/c++/ming.h ${INCDIR}/c++/
