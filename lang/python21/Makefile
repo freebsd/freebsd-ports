@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.python.org/ftp/python/${PORTVERSION}/ \
 MASTER_SITE_SUBDIR=	python
 DISTFILES=	${PYTHON_DISTFILE}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perky@FreeBSD.org
 COMMENT=	An interpreted object-oriented programming language
 
 DIST_SUBDIR=	python
