@@ -163,6 +163,7 @@
     SUBDIR += tclcheck
     SUBDIR += tclcl
     SUBDIR += tclgetopts
+    SUBDIR += tclreadline
     SUBDIR += templ
     SUBDIR += tkcon
     SUBDIR += tkcvs
