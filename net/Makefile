@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.239 1999/04/03 01:29:19 steve Exp $
+# $Id: Makefile,v 1.240 1999/04/03 01:39:04 steve Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -16,6 +16,7 @@
     SUBDIR += bnc
     SUBDIR += boclient
     SUBDIR += bounce
+    SUBDIR += bpft
     SUBDIR += cap
     SUBDIR += cftp
     SUBDIR += choparp
