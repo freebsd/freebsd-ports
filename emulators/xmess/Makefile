@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmess
-PORTVERSION=	0.67.2
+PORTVERSION=	0.76.1
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 emulator for game consoles
@@ -15,7 +15,5 @@ MASTERDIR=	${.CURDIR}/../xmame
 DESCR=		${.CURDIR}/pkg-descr
 
 MAMEMESS=	mess
-
-BROKEN=		"Missing from distinfo; will be removed after Feb 2"
 
 .include "${MASTERDIR}/Makefile"

@@ -78,14 +78,18 @@ GENERALDOCS=	changes.unix \
 		xmame-gdoc.html \
 		xmame.css
 XMAMEDOCS=
-XMESSDOCS=	changes.mess \
-		credits.mess \
-		gamelist.mess \
-		imgtool.txt \
-		messhelp.txt \
-		messroms.txt \
-		old-changes.mess \
-		readme.mess
+XMESSDOCS=	mess/cgafont.txt \
+		mess/compilewin.html \
+		mess/credits.htm \
+		mess/credits.txt \
+		mess/faq.htm \
+		mess/imgtool.txt \
+		mess/messhelp.txt \
+		mess/messnew.txt \
+		mess/messold.txt \
+		mess/messroms.txt \
+		mess/sysinfo.dat \
+		mess/windows.txt
 PINMAMEDOCS=	pinmame/simulation.txt \
 		pinmame/whatsnew.txt \
 		pinmame/pinmame.txt \
@@ -308,7 +312,7 @@ post-install:
 .endfor
 .endif
 .if ${MAMEMESS} == "mess"
-	${INSTALL_DATA} ${WRKSRC}/doc/sysinfo.dat \
+	${INSTALL_DATA} ${WRKSRC}/doc/mess/sysinfo.dat \
 				${PREFIX}/share/xmess/history.dat
 .endif
 .if ${MAMEMESS} == "mame" && defined(WITH_DATFILES) && ${WITH_DATFILES} == "yes"
