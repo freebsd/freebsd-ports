@@ -1,11 +1,8 @@
---- doc/Makefile.am.orig	Sun Oct 15 12:46:20 2000
-+++ doc/Makefile.am	Tue Feb 27 07:03:09 2001
-@@ -4,8 +4,6 @@
+--- doc/Makefile.am~	Tue Mar  6 13:57:54 2001
++++ doc/Makefile.am	Tue Mar  6 14:00:11 2001
+@@ -6,6 +6,4 @@
  
- # SUBDIRS = dot neato lefty dotty
- 
--DOCS = dotguide.ps dotty.ps gd.html lefty.ps neatoguide.ps tcldot.html
-+DOCS = dotguide.pdf dottyguide.pdf gd.html leftyguide.pdf neatoguide.pdf tcldot.html
+ DOCS = dotguide.pdf dottyguide.pdf gd.html leftyguide.pdf neatoguide.pdf tcldot.html Dot.ref
  
 -docdir = $(prefix)/doc
 -doc_DATA = $(DOCS)

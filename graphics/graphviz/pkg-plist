@@ -102,6 +102,7 @@ lib/graphviz/libtclpathplan.so.0
 lib/graphviz/libtkspline.so
 lib/graphviz/libtkspline.so.0
 lib/graphviz/pkgIndex.tcl
+%%PORTDOCS%%share/doc/graphviz/Dot.ref
 %%PORTDOCS%%share/doc/graphviz/dotguide.pdf
 %%PORTDOCS%%share/doc/graphviz/dottyguide.pdf
 %%PORTDOCS%%share/doc/graphviz/gd.html

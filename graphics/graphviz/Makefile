@@ -38,10 +38,14 @@ MAN3=		agraph.3 cdt.3 graph.3 pathplan.3
 MANN=		gdtclft.n tcldgl.n tcldgr.n tcldot.n tkspline.n
 
 PORTDOCS=	dotguide.pdf dottyguide.pdf gd.html leftyguide.pdf \
-		neatoguide.pdf tcldot.html
+		neatoguide.pdf tcldot.html Dot.ref
 
 post-patch:
 	@cd ${WRKSRC} && aclocal && autoheader && libtoolize --force
+
+# the tarball contains object files!
+post-configure:
+	@cd ${WRKSRC} && ${GMAKE} clean
 
 pre-build:
 	@cd ${WRKSRC}/cdt && ./iffe - set cc ${CC} ${CFLAGS} : run \
