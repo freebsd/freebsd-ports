@@ -3,7 +3,7 @@
 # Date created:				11th Feb 1995
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.35 1999/03/03 15:48:33 hosokawa Exp $
+# $Id: Makefile,v 1.36 1999/06/04 01:44:47 jseger Exp $
 #
 
 DISTNAME=	samba-2.0.4b
@@ -34,6 +34,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --libdir=${SAMBA_CONFDIR} \
 		--localstatedir=${VARDIR} --with-swatdir=${PREFIX}/share/swat \
 		--with-lockdir=${VARDIR}/spool/lock
+
+.if defined(KRB5_HOME) && exists(${KRB5_HOME})
+CONFIGURE_ARGS+=--with-krb5=${KRB5_HOME}
+.endif
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
