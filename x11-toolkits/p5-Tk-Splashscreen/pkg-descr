@@ -1,0 +1,8 @@
+For programs that require large load times, it's a common practice to
+display a Splashscreen that occupies the user's attention.  This
+Toplevel mega widget provides all the display, destroy and timing
+events.  All you do it create the Splashscreen mega widget, populate
+it as you see fit, then invoke Splash() to display it and Destroy() to
+tear it down.
+
+WWW: http://search.cpan.org/dist/Tk-Splashscreen
