@@ -6,57 +6,42 @@
 #
 
 PORTNAME=	generator
-PORTVERSION=	0.34
+PORTVERSION=	0.35
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.squish.net/generator/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SEGA Genesis emulator
 
-# apparently the configure script can't handle this
-NOT_FOR_ARCHS=	alpha
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 
-LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
-		SDL-1.1.5:${PORTSDIR}/devel/sdl12
-.if (${MACHINE_ARCH} == "i386")
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
-.endif
-
-SDL_CONFIG?=    ${LOCALBASE}/bin/sdl11-config
-GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
-
-USE_GMAKE=	yes
+USE_GNOME=	gtk12
+USE_SDL=	yes
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-gtk
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
 
-.if (${MACHINE_ARCH} == "i386")
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 CONFIGURE_ARGS+=	--with-raze
 .else
 CONFIGURE_ARGS+=	--with-cmz80
 .endif
 
-MAKE_ENV+=	GTK_CONFIG="${GTK_CONFIG}" \
-		SDL_CONFIG="${SDL_CONFIG}"
-CONFIGURE_ENV+=	GTK_CONFIG="${GTK_CONFIG}" \
-		SDL_CONFIG="${SDL_CONFIG}"
-
-.include <bsd.port.pre.mk>
-
 post-patch:
-.if ${OSVERSION} >= 500035
-	@${REINPLACE_CMD} -e \
-		's|-malign-loops|-falign-loops|g ; \
-		 s|-malign-jumps|-falign-jumps|g ; \
-		 s|-malign-functions|-falign-functions|g' ${WRKSRC}/configure.in
-	@${REINPLACE_CMD} -e \
-		's|-malign-loops|-falign-loops|g ; \
-		 s|-malign-jumps|-falign-jumps|g ; \
-		 s|-malign-functions|-falign-functions|g' ${WRKSRC}/configure
-.endif
-
-.if ${OSVERSION} >= 501102
-BROKEN=		"Fails to compile due to gcc3.3 preprocessor"
-.endif
+	@${REINPLACE_CMD} -e 's|-O3||g ; \
+		 s|-minline-all-stringops||g ; \
+		 s|-march=pentium||g ; \
+		 s|-malign-loops=5||g ; \
+		 s|-malign-jumps=5||g ; \
+		 s|-malign-functions=5||g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
