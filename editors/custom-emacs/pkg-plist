@@ -1,0 +1,17 @@
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/cus-edit.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/cus-edit.elc
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/cus-face.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/cus-face.elc
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/custom.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/custom.elc
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/wid-browse.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/wid-browse.elc
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/wid-edit.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/wid-edit.elc
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/widget-example.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/widget-example.elc
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/widget.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/widget.elc
+%%CUSTOMDOCDIR%%/ChangeLog
+%%CUSTOMDOCDIR%%/TODO
+@dirrm %%CUSTOMDOCDIR%%
