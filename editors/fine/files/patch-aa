@@ -18,7 +18,7 @@
  M	= moc_
  
 -OPTIONS	= -g -ansi -fguiding-decls
-+OPTIONS	= ${CFLAGS} -DFINEDIR=\""${PREFIX}/share/fine\""
++OPTIONS	= ${CFLAGS} -fguiding-decls -DFINEDIR=\""${PREFIX}/share/fine\""
  
  OBJ	= qsmartedit.o qcolormultilinedit.o undoredo.o qeditor.o qfontselect.o qcolordialog.o qcolorlistboxitem.o qkeyworddialog.o qhotkeydialog.o
  METAOBJ = qsmartedit.mo qcolormultilinedit.mo qeditor.mo qfontselect.mo qcolordialog.mo qkeyworddialog.mo qhotkeydialog.mo
