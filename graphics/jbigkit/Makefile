@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jbigkit
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.cl.cam.ac.uk/~mgk25/download/
 
