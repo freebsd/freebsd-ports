@@ -16,8 +16,8 @@ MASTER_SITES=  \
 DISTNAME=	squid-2.3.STABLE3
 EXTRACT_SUFX=	-src.tar.gz
 
-#PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.3/bugs/
-#PATCHFILES=	
+PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.3/bugs/
+PATCHFILES=	squid-2.3.stable3-storeExpiredReferenceAge.patch
 
 MAINTAINER=	peter@freebsd.org
 
