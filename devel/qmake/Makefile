@@ -7,6 +7,7 @@
 
 PORTNAME=	qmake
 PORTVERSION=	3.2.3
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/	\
 		ftp://ftp.silug.org/pub/qt/		\
@@ -50,7 +51,6 @@ post-patch:
 		-e  's,/usr/local,${LOCALBASE},' \
 		-e  's,/usr/X11R6,${X11BASE},' \
 		-e 's,release,release thread,' \
-		-e 's,-pthread,,g' \
 		-e 's,-pthread -D_THREAD_SAFE,${PTHREAD_CFLAGS},' \
 		-e 's,-pthread,${PTHREAD_LIBS},' \
 		${WRKSRC}/../mkspecs/freebsd-g++/qmake.conf
