@@ -9,8 +9,9 @@ MASTERDIR=	${.CURDIR}/../vim6
 
 CATEGORIES=	editors ruby
 PKGNAMESUFFIX=	+ruby
-PATCH_SITES=	http://www.ruby-lang.org/~shugo/vim-ruby/
-PATCHFILES=	${PORTNAME}-${PORTVERSION}-if_ruby-2.diff.gz
+PATCH_SITES=	${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	knu
+PATCHFILES=	${PORTNAME}-${PORTVERSION}-if_ruby-missing-1.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	knu@FreeBSD.org
@@ -22,16 +23,5 @@ USE_RUBY=	yes
 
 USE_AUTOCONF=	yes
 MAKE_ARGS=	CONF_OPT_RUBY="--enable-rubyinterp" RUBY="${RUBY}"
-
-post-install:	add-plist
-
-add-plist:
-	( \
-	${ECHO} "/if_python.txt$$/"; \
-	${ECHO}	"t"; \
-	${ECHO} "s/python/ruby/"; \
-	${ECHO} "w"; \
-	${ECHO} "q"; \
-	) | ed ${TMPPLIST}
 
 .include "${MASTERDIR}/Makefile"
