@@ -21,10 +21,4 @@ USE_IMAKE=	yes
 MAN1=		textedit.1
 PLIST_FILES=	bin/textedit
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
