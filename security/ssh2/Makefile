@@ -16,6 +16,7 @@ MASTER_SITES=   ftp://ftp.cs.hut.fi/pub/ssh/ \
 
 PATCHFILES=	patch-${DISTNAME}-bsd.tty.chown
 PATCH_SITES=	http://www.ssh.org/patches/
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	issei@jp.FreeBSD.org
 
