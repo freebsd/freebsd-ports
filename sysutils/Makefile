@@ -69,6 +69,7 @@
     SUBDIR += prips
     SUBDIR += procmap
     SUBDIR += psmisc
+    SUBDIR += pwgen
     SUBDIR += rdate
     SUBDIR += rtty
     SUBDIR += roottail
