@@ -23,10 +23,9 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	steve@FreeBSD.org
 
-.include <bsd.port.pre.mk>
+USE_IMAKE=	yes
 
-#xxx Hack alert!  For some reason USE_IMAKE is not enough to make this happen.
-PREFIX=		${X11BASE}
+.include <bsd.port.pre.mk>
 
 .if ${XFREE86_VERSION} >= 4
 RUN_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
@@ -37,7 +36,6 @@ MTREE_FILE=	/etc/mtree/BSD.x11.dist
 
 DIST_SUBDIR=	openmotif
 WRKSRC=		${WRKDIR}/motif
-USE_IMAKE=	yes
 MAKE_ENV+=	LANG=C
 XMKMF=		${MAKE} Makefile.boot
 ALL_TARGET=	VerifyOS Everything
