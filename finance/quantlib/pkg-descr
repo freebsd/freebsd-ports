@@ -1,0 +1,22 @@
+The QuantLib project is aimed to provide a comprehensive software framework
+for quantitative finance. The goal is to provide a standard free/open source
+library to quantitative analysts and developers for modeling, trading, and
+risk management in real-life.
+
+QuantLib plans to offer tools that are useful for both practical
+implementation, with features such as market conventions, solvers, PDEs,
+etc., and advanced modeling, e.g., exotic options and interest rate models.
+
+QuantLib is meant to be used by academics and practitioners alike, eventually
+promoting a stronger interaction between the two.
+
+Finance is one area where well-written open-source projects could make a
+tremendous difference. Almost every financial institution needs a solid,
+time-effective, operative implementation of leading-edge pricing models and
+hedging tools. However, to get there, currently one is forced to re-invent
+the wheel every time. Even decade-old models with no market value, such as
+Black-Scholes formula (1973), still lack a standard implementation. As a
+consequences many good quants are wasting their time writing C++ classes
+which have been already written thousands of times.
+
+WWW: http://www.quantlib.org/

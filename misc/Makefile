@@ -144,6 +144,7 @@
     SUBDIR += qbrew
     SUBDIR += qhacc
     SUBDIR += qlas
+    SUBDIR += quantlib
     SUBDIR += quotes
     SUBDIR += quranref
     SUBDIR += reed
