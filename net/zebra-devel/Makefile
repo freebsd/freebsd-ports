@@ -1,32 +1,77 @@
-# New ports collection makefile for:	zebra
-# Date created:		So  31 Mai 1998 11:00:30 CEST
-# Whom:			Andreas Klemm <andreas@klemm.gtn.com>
+# New ports collection makefile for:	zebra-devel
+# Date created:		Fri  20 Jun 2003 15:57:48 EEST
+# Whom:			Alexandr Kovalenko <never@nevermind.kiev.ua>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	zebra
-PORTVERSION=	0.93b
-PORTREVISION=	6
+PORTVERSION=	${ZEBRAVERSION}.${ZEBRADATE}
+PORTREVISION?=	0
 CATEGORIES=	net ipv6
-MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/ \
-		ftp://ftp.ripe.net/mirrors/sites/ftp.zebra.org/pub/zebra/ \
-		ftp://ftp.sunet.se/pub/network/zebra/ \
-		ftp://ftp.knowledge.com/pub/mirrors/zebra/ \
-		ftp://6bone.informatik.uni-leipzig.de/pub/ftp.zebra.org/pub/zebra/ \
-		ftp://ftp.crc.ca/pub/packages/network/zebra/ \
-		ftp://ftp.pop-pr.rnp.br/pub/GNU/ftp.zebra.org/zebra/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		ftp://ftp7.ua.freebsd.org/pub/local-distfiles/ \
+		http://uafug.org.ua/~never/zebra-devel/
+MASTER_SITE_SUBDIR=	osa
 
-MAINTAINER=	sumikawa@FreeBSD.org
+MAINTAINER=	never@nevermind.kiev.ua
 COMMENT=	Free RIPv1, RIPv2, OSPFv2, BGP4 route software (server/reflector)
 
+ZEBRAVERSION=	0.94
+ZEBRADATE=	20030620
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${ZEBRAVERSION}
+
 USE_SUBMAKE=	yes
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/zebra --enable-vtysh
+CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc/zebra
 SCRIPTS_ENV=	WRKDIRPREFIX=${WRKDIRPREFIX}
 
 MAN1=		vtysh.1
 MAN8=		bgpd.8 ospf6d.8 ospfd.8 ripd.8 ripngd.8 zebra.8
+
+.if defined (WITHOUT_IPV6)
+CONFIGURE_ARGS+=--disable-ipv6
+WITHOUT_OSPF6D=	yes
+WITHOUT_RIPNGD=	yes
+.endif
+
+.if !defined(WITHOUT_BGPD)
+PLIST_SUB+=     BGPD=""
+.else
+CONFIGURE_ARGS+=--disable-bgpd
+PLIST_SUB+=     BGPD="@comment "
+.endif
+
+.if !defined(WITHOUT_OSPF6D)
+PLIST_SUB+=     OSPF6D=""
+.else
+CONFIGURE_ARGS+=--disable-ospf6d
+PLIST_SUB+=     OSPF6D="@comment "
+.endif
+
+.if !defined(WITHOUT_OSPFD)
+PLIST_SUB+=     OSPF6D=""
+PLIST_SUB+=     OSPFD=""
+.else
+CONFIGURE_ARGS+=--disable-ospfd
+PLIST_SUB+=     OSPFD="@comment "
+.endif
+
+.if !defined(WITHOUT_RIPD)
+PLIST_SUB+=     RIPD=""
+.else
+CONFIGURE_ARGS+=--disable-ripd
+PLIST_SUB+=     RIPD="@comment "
+.endif
+
+.if !defined(WITHOUT_RIPNGD)
+PLIST_SUB+=     RIPNGD=""
+.else
+CONFIGURE_ARGS+=--disable-ripngd
+PLIST_SUB+=     RIPNGD="@comment "
+.endif
 
 .if !defined(BATCH)
 pre-configure:
@@ -41,7 +86,7 @@ post-clean:
 .endif
 
 post-install:
-	@( cd ${WRKSRC}/doc; rm -f zebra*info*; ${MAKE} zebra.info install )
+	@( cd ${WRKSRC}/doc; ${RM} -f zebra*info*; ${MAKE} zebra.info install )
 	@${ECHO} "===>     installing zebra startup file..."
 	@${SED} -e "s=!!PREFIX!!=${PREFIX}=" \
 		< ${FILESDIR}/zebractl.sh  \
