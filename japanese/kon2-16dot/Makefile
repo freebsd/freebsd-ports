@@ -3,7 +3,7 @@
 # Date created:         11 Apr 1997
 # Whom:                 Makoto Matsushita <matusita@jp.freebsd.org>
 #
-# $Id: Makefile,v 1.16 1998/10/09 05:31:56 kuriyama Exp $
+# $Id: Makefile,v 1.17 1998/11/07 14:30:29 kuriyama Exp $
 #
 
 DISTNAME=	kon2-0.3
@@ -19,6 +19,8 @@ DISTFILES=	kon2-0.3.tar.gz \
 
 MAINTAINER=	shige@kuis.kyoto-u.ac.jp
 
+LOOP_VAR=	KONFONT
+LOOP_OPTIONS=	14dot 16dot
 MAN1=		kon.1
 MANLANG=	ja
 EXTRACT_ONLY=	kon2-0.3.tar.gz
