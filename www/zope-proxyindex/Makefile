@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	proxyindex
-PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	www zope
-MASTER_SITES=	http://zope.org/Members/infrae/ProxyIndex/ProxyIndex-${PORTVERSION}/
+MASTER_SITES=	http://www.infrae.com/download/ProxyIndex/${PORTVERSION}/
 PKGNAMEPREFIX=	zope-
 DISTNAME=	ProxyIndex-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -24,17 +23,14 @@ DIST_SUBDIR=	zope
 ZOPEPRODUCTNAME=ProxyIndex
 
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTNAME}
-CPIO=		cpio --quiet -pdum -R
 
 do-build:
 	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
+	@ ${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}
 	@ ${CHMOD} -R og+rX ${WRKSRC}/
-	@ ${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
-	@ cd ${WRKSRC} && ${FIND} . \
-	  | ${CPIO} ${BINOWN}:${BINGRP} \
-	  ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
+	@${CP} -R ${WRKSRC} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/
 
 post-install:
 .if !defined(BATCH)
