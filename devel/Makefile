@@ -167,6 +167,7 @@
     SUBDIR += libsock
     SUBDIR += libstash
     SUBDIR += libtai
+    SUBDIR += libtecla
     SUBDIR += libtool
     SUBDIR += libunicode
     SUBDIR += libxalloc

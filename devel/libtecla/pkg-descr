@@ -1,0 +1,16 @@
+The tecla library provides UNIX and LINUX programs with interactive
+command line editing facilities, similar to those of the unix tcsh
+shell. In addition to simple command-line editing, it supports recall
+of previously entered command lines, TAB completion of file names or
+other tokens, and in-line wild-card expansion of filenames. The
+internal functions which perform file-name completion and wild-card
+expansion are also available externally for optional use by programs,
+along with a module for tab-completion and lookup of filenames in a
+list of directories. 
+
+Note that special care has been taken to allow the use of this library
+in threaded programs. The option to enable this is discussed in the
+Makefile, and specific discussions of thread safety are presented in
+the included man pages. 
+
+WWW: http://www.astro.caltech.edu/~mcs/tecla/
