@@ -1,0 +1,14 @@
+Xjewel is a droping block game akin to tetris. 
+
+It is played by controling the motion of blocks which continue to fall from
+the top of the screen.  One can move them left and right, as well as
+rotate the jewel segements.  The object is to get the most points before
+the grim reaper ends the fun.
+
+Death happens when the screen is no longer capable of holding any more
+blocks.  To make high scores more interesting, you are given but three
+attempts to get points -- use them wisely.
+
+As the game progresses, and more jewels are removed, the speed of the game
+will increase.  This is measured in seconds of delay between steps of
+block motion.
