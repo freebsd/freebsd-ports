@@ -1,22 +1,29 @@
 #!/bin/sh
-
-if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
-    echo "$0: Cannot determine the PREFIX" >&2
-    exit 1
-fi
-
-# It would really, really be a Good Thing(tm)
-# for you to enable some of the below
-# control variables and the apropriate ulimit.
-# These are only examples.
-# Furthermore, you should think about additional
-# limits you might need.
-# Or, check login.conf(5) for a suitable
-# alternative
 #
-# I really do suggest you use /var/service as your
-# service spool directory. Check hier(7) for
-# reasons.
+# $FreeBSD$
+#
+
+# PROVIDE: svscan
+# REQUIRE: LOGIN
+# KEYWORD: FreeBSD
+
+# Define these svscan_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/svscan
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+
+# It would really, really be a Good Thing(tm) for you to enable some
+# of the below control variables and the apropriate ulimit.
+# These are only examples.
+# Furthermore, you should think about additional limits you might need.
+# Or, check login.conf(5) for a suitable alternative.
+# If you want to use these examples, please place into /etc/rc.conf.d/svscan.
+#
+# I really do suggest you use /var/service as your service spool directory.
+# Check hier(7) for reasons.
 
 # 10 Mb
 #MINSEGMENT=10240
@@ -37,26 +44,29 @@ fi
 #ulimit -s ${MINSEGMENT}
 #ulimit -u ${MAXCHILD}
 
-KILLALL=/usr/bin/killall
-SVC=${PREFIX}/bin/svc
-SVPROC=svscan
-SVSCAN=$PREFIX/bin/svscan
-READPROCTITLE=$PREFIX/bin/readproctitle
-SVDIR=/var/service
+. %%RC_SUBR%%
 
-case "$1" in
-  start)
-	echo -n " svscan"
-	exec env PATH=$PREFIX/sbin:$PREFIX/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH /bin/csh -cf "$SVSCAN $SVDIR |& $READPROCTITLE service errors: ................................................................................................................................................................................................................................................................................................................................................................................................................ &" > /dev/null
-	;;
+name="svscan"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/bin/svscan"
+svscan_enable="NO"
+svscan_servicedir="%%SERVICEDIR%%"
 
-  stop)
-	echo -n " svscan: "
-	$KILLALL $SVPROC
-	$SVC -dx $SVDIR/* $SVDIR/*/log
-	;;
+start_cmd="svscan_start"
+stop_postcmd="svscan_stop_post"
 
-  *)
-  	echo "Usage: $0 start | stop"
-	;;
-esac
+load_rc_config $name
+
+required_dirs="${svscan_servicedir}"
+
+svscan_start () {
+	/usr/bin/env \
+	PATH=%%PREFIX%%/sbin:%%PREFIX%%/bin:/usr/sbin:/usr/bin:/sbin:/bin \
+	/bin/csh -cf "$command $svscan_servicedir |& %%PREFIX%%/bin/readproctitle service errors: ................................................................................................................................................................................................................................................................................................................................................................................................................ &" > /dev/null
+}
+
+svscan_stop_post () {
+	%%PREFIX%%/bin/svc -dx `/bin/ls -d $svscan_servicedir/* $svscan_servicedir/*/log 2>/dev/null`
+}
+
+run_rc_command "$1"

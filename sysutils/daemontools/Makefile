@@ -7,7 +7,7 @@
 
 PORTNAME=	daemontools
 PORTVERSION=	0.76
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cr.yp.to/daemontools/ \
 		ftp://cr.yp.to/daemontools/
@@ -28,6 +28,9 @@ MANCOMPRESSED=	no
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	"Service monitoring and logging utilities by djb"
 
+USE_RC_SUBR=	yes
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR} SERVICEDIR=${SERVICEDIR}
+
 WRKSRC=		${WRKDIR}/admin/${DISTNAME}/src
 NO_PACKAGE=	"Unsure of djb\'s license"
 
@@ -35,19 +38,19 @@ ALL_TARGET=	it
 INSTALL_TARGET=	setup check
 
 SAMPLERC=	svscan.sh.sample
-SERVICEDIR?=	/var/service/
+SERVICEDIR?=	/var/service
 
 post-patch:
-	@echo "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
-	@echo "${CC} ${STRIP}" > ${WRKSRC}/conf-ld
+	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
+	@${ECHO_CMD} "${CC} ${STRIP}" > ${WRKSRC}/conf-ld
 
 post-build:
-	@${SED} "s!/usr/local/!${PREFIX}/!;s!/var/service!${SERVICEDIR}!g" \
+	@${SED}  ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${FILESDIR}/${SAMPLERC} > ${WRKDIR}/${SAMPLERC}
 
 do-install:
 	(while read cmd; do \
-		if file ${WRKSRC}/$$cmd | ${GREP} -q "shell script"; then \
+		if ${FILE} ${WRKSRC}/$$cmd | ${GREP} -q "shell script"; then \
 			${INSTALL_SCRIPT} ${WRKSRC}/$$cmd ${PREFIX}/bin; \
 		else \
 			${INSTALL_PROGRAM} ${WRKSRC}/$$cmd ${PREFIX}/bin; \
@@ -55,7 +58,7 @@ do-install:
 	done) < ${WRKSRC}/../package/commands
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/${SAMPLERC} ${PREFIX}/etc/rc.d/
+	@${INSTALL_SCRIPT} ${WRKDIR}/${SAMPLERC} ${PREFIX}/etc/rc.d/${SAMPLERC:S/.sample//}
 .if !defined(WITHOUT_MAN)
 	@${INSTALL_MAN} ${WRKDIR}/daemontools-man/*.8 ${PREFIX}/man/man8/
 .endif
