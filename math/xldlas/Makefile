@@ -3,7 +3,7 @@
 # Date created:         20 Dec 97
 # Whom:                 Pedro Giffuni <giffunip@asme.org>
 #
-# $Id: Makefile,v 1.4 1998/08/07 23:56:35 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/26 23:18:07 steve Exp $
 #
 
 DISTNAME=	xldlas-0.85
@@ -11,12 +11,10 @@ CATEGORIES=	math
 MASTER_SITES=	http://a42.com/~thor/xldlas/			\
 		http://sunsite.math.klte.hu/mirrors/xldlas/	\
 		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	X11/xapps/math
+MASTER_SITE_SUBDIR=	apps/graphics/visualization
 EXTRACT_SUFX=	-source.tgz
 
 MAINTAINER=	giffunip@asme.org
-
-BROKEN_ELF=	xforms is a.out only
 
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms
 
