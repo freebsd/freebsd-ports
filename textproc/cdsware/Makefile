@@ -85,7 +85,7 @@ CONFIGURE_ARGS=		--prefix=${PREFIX}/cdsware		\
 USE_GMAKE=		yes
 USE_APACHE=		yes
 WITH_APACHE2=		yes
-USE_PHP=		yes
+USE_PHP=		zlib pcntl
 WANT_PHP_MOD=		yes
 WANT_PHP_CLI=		yes
 USE_MYSQL=		yes
@@ -111,12 +111,7 @@ ADMINEMAIL?=	cds.admin@${unamen}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 PLIST_SUB=	WEBDIR=${WEBDIR}
 
-LDD=		/usr/bin/ldd
-
-MOD_DIR=	libexec/apache2
 APACHE_CONF=	${LOCALBASE}/etc/apache2/httpd.conf
-PHPSO=		${LOCALBASE}/${MOD_DIR}/libphp4.so
-PHPBIN=		${LOCALBASE}/bin/php
 CDSWARE_INC=	${PREFIX}/etc/${PORTNAME}
 LCDSWARE_CNF=	config.wml
 CDSWARE_CNF=	${PREFIX}/${PORTNAME}/lib/wml/${PORTNAME}/${LCDSWARE_CNF}
@@ -180,24 +175,6 @@ post-configure:
 		-e "s|%%ADMINEMAIL%%|${ADMINEMAIL}|"			\
 		${WRKSRC}/config/${LCDSWARE_CNF}
 .endif
-
-pre-install:
-.if !defined(PACKAGE_BUILDING)
-	@if ! ${PHPBIN} -i | ${GREP} -q -e "pcntl support"; then	\
-	    ${ECHO_MSG} ; \
-	    ${ECHO_MSG} "Please configure PHP with PCNTL support." ;	\
-	    ${ECHO_MSG} ; \
-	    ${FALSE} ; \
-	fi
-.endif
-	@if (! ${LDD} ${PHPSO} | ${GREP} -q -e "libz.so")		\
-	|| (! ${LDD} ${PHPBIN} | ${GREP} -q -e "libz.so"); then		\
-	    ${ECHO_MSG} ; \
-	    ${ECHO_MSG} "Please configure PHP with ZLIB support." ;	\
-	    ${ECHO_MSG} ; \
-	    ${FALSE} ; \
-	 fi ; \
-	fi
 
 post-install:
 	@${CHMOD} go-rx ${CDSBIN}/dbexec

@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/kronolith/				\
 		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/kronolith/	\
 		http://ftp.horde.org/pub/kronolith/
 
-MAINTAINER=	thierry@pompo.net
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Kronolith is the Horde calendar application
 
 RUN_DEPENDS=	${LOCALBASE}/www/horde/imp/index.php:${PORTSDIR}/mail/imp3
@@ -26,6 +26,7 @@ RUN_DEPENDS=	${LOCALBASE}/www/horde/imp/index.php:${PORTSDIR}/mail/imp3
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 NO_BUILD=	yes
+USE_PHP=	mcal
 USE_REINPLACE=	yes
 
 .if defined(WITH_APACHE2)
@@ -54,14 +55,6 @@ HORDE_INC=	${LOCALBASE}/etc/horde
 
 post-patch:
 	@${RM} ${WRKSRC}/config/conf.php.dist.orig
-
-pre-install:
-	@if ! ${LDCONFIG} -r | ${GREP} -q -e "mcal.0" ; then \
-	  ${ECHO_MSG} "" ; \
-	  ${ECHO_MSG} "Please configure PHP and Horde with MCAL support enabled." ; \
-	  ${ECHO_MSG} "" ; \
-	  ${FALSE} ; \
-	fi
 
 do-install:
 	@${MKDIR}  ${KRONOLITHDIR}

@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.horde.org/pub/turba/				\
 		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/turba/	\
 		http://ftp.horde.org/pub/turba/
 
-MAINTAINER=	thierry@pompo.net
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	The Horde contact management application
 
 #-----------------------------------------------------------------------
@@ -28,7 +28,7 @@ COMMENT=	The Horde contact management application
 #
 #-----------------------------------------------------------------------
 
-RUN_DEPENDS=  ${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2
+RUN_DEPENDS=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2
 
 .if !defined(WITHOUT_LDAP)
 USE_OPENLDAP=	yes
@@ -36,8 +36,6 @@ USE_OPENLDAP=	yes
 
 NO_BUILD=	yes
 USE_REINPLACE=	yes
-
-LDD=		/usr/bin/ldd
 
 REINPLACE_ARGS=	-i.beforeTurba
 DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL	\
@@ -57,11 +55,6 @@ TURBADIR=	${PREFIX}/${LTURBADIR}
 CONFDIR=	${TURBADIR}/config
 
 HORDE_INC=	${LOCALBASE}/etc/horde
-.if defined(WITH_APACHE2)
-PHPSO=		${LOCALBASE}/libexec/apache2/libphp4.so
-.else
-PHPSO=		${LOCALBASE}/libexec/apache/libphp4.so
-.endif
 
 post-patch:
 	@${RM} ${WRKSRC}/config/conf.php.dist.orig	\
@@ -70,7 +63,7 @@ post-patch:
 
 pre-install:
 .if !defined(WITHOUT_LDAP)
-	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libldap"; then \
+	@if ! php -m | ${GREP} -q -e "ldap"; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with OpenLDAP support." ; \
 	    ${ECHO_MSG} "" ; \

@@ -16,6 +16,4 @@ To test your installation, you might type `make create-demo-site' and
 
 Don't miss mod_python's pkg-message about threads!
 
-To run this package, PHP CLI should be compiled with the process control
-support (WITH_PCNTL).
 =============================================================================

@@ -118,8 +118,6 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/aspell:${PORTSDIR}/textproc/aspell
 NO_BUILD=	yes
 USE_REINPLACE=	yes
 
-LDD=		/usr/bin/ldd
-
 REINPLACE_ARGS=	-i.beforeIMP
 DOCS=		COPYING README docs/CHANGES docs/CREDITS docs/INSTALL	\
 		docs/RELEASE_NOTES
@@ -141,11 +139,6 @@ CONFDIR=	${IMPDIR}/config
 HCONFDIR=	${HORDEDIR}/config
 
 HORDE_INC=	${LOCALBASE}/etc/horde
-.if defined(WITH_APACHE2)
-PHPSO=		${LOCALBASE}/libexec/apache2/libphp4.so
-.else
-PHPSO=		${LOCALBASE}/libexec/apache/libphp4.so
-.endif
 
 HOSTNAME?=	`/bin/hostname`
 SERVOS?=	${OPSYS}-${OSREL}
@@ -176,7 +169,7 @@ pre-install:
 	    ${ECHO_MSG} "" ; \
 	    ${FALSE} ; \
 	fi
-	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libc-client4"; then \
+	@if ! php -m | ${GREP} -q -e "imap"; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with IMAP or IMAP-SSL support." ; \
 	    ${ECHO_MSG} "" ; \
@@ -193,7 +186,7 @@ pre-install:
 .endif
 .endif
 .if !defined(WITHOUT_LDAP)
-	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libldap.so"; then \
+	@if ! php -m | ${GREP} -q -e "ldap"; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with OpenLDAP or OpenLDAP2 support." ; \
 	    ${ECHO_MSG} "" ; \
@@ -201,7 +194,7 @@ pre-install:
 	fi
 .endif
 .if !defined(NOCRYPT)
-	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libmcrypt.so"; then \
+	@if ! php -m | ${GREP} -q -e "mcrypt"; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with mcrypt support." ; \
 	    ${ECHO_MSG} "" ; \
@@ -209,10 +202,10 @@ pre-install:
 	fi
 .endif
 .if !defined(WITHOUT_SUPPORTED_DB)
-	@if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libmysqlclient.so"; then \
-	 if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libpq.so" ; then \
-	  if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libsybdb.so" ; then \
-	   if ! ${LDD} ${PHPSO} | ${GREP} -q -e "libct.so" ; then \
+	@if ! php -m | ${GREP} -q -e "mysql" ; then \
+	 if ! php -m | ${GREP} -q -e "pgsql" ; then \
+	  if ! php -m | ${GREP} -q -e "sybase" ; then \
+	   if ! php -m | ${GREP} -q -e "sybase_ct" ; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with a database support." ; \
 	    ${ECHO_MSG} "MySQL, PostgreSQL and Sybase (CTLIB or DBLIB)" ; \
