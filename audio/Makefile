@@ -104,6 +104,7 @@
     SUBDIR += xmixer
     SUBDIR += xmmix
     SUBDIR += xmms
+    SUBDIR += xmms-mikmod
     SUBDIR += xmp
     SUBDIR += xmpeg3
     SUBDIR += xmradio
