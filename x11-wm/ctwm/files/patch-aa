@@ -1,9 +1,17 @@
 $FreeBSD$
 
-*** Imakefile.orig	Mon May 15 21:47:10 2000
---- Imakefile	Sat Sep 22 11:50:14 2001
+*** Imakefile.orig	Wed Dec 12 00:38:52 2001
+--- Imakefile	Fri Aug  9 23:45:46 2002
 ***************
-*** 19,26 ****
+*** 11,26 ****
+  #undef  USE_SOUND
+  #define XPM
+  #define USEM4
+! #undef X11R6
+! #undef I18N
+  
+           YFLAGS = -d
+          DEPLIBS = $(DEPXMULIB) $(DEPEXTENSIONLIB) $(DEPXLIB)
          LINTLIBS = $(LINTXMU) $(LINTEXTENSIONLIB) $(LINTXLIB)
   
   #ifdef XPM
@@ -12,7 +20,15 @@ $FreeBSD$
   
        XPMDEFINES = -DXPM
            XPMLIB = $(XPMLIBDIR) -lXpm
---- 19,26 ----
+--- 11,26 ----
+  #undef  USE_SOUND
+  #define XPM
+  #define USEM4
+! #define X11R6
+! #define I18N
+  
+           YFLAGS = -d
+          DEPLIBS = $(DEPXMULIB) $(DEPEXTENSIONLIB) $(DEPXLIB)
          LINTLIBS = $(LINTXMU) $(LINTEXTENSIONLIB) $(LINTXLIB)
   
   #ifdef XPM
