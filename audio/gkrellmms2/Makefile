@@ -10,6 +10,9 @@ PORTVERSION=	0.5.5
 CATEGORIES=	audio
 MASTER_SITES=	http://gkrellm.luon.net/files/
 
+PATCH_SITES=	http://web.wt.net/~billw/gkrellm/Plugins/
+PATCHFILES=	gkrellmms-patch-0.5.5
+
 MAINTAINER=	ume@FreeBSD.org
 
 LIB_DEPENDS=	xmms.3:${PORTSDIR}/audio/xmms
