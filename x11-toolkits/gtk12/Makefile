@@ -3,7 +3,7 @@
 # Date Created:			28 Sep 1997
 # Whom:				Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.5 1997/12/03 21:17:18 vanilla Exp $
+# $Id: Makefile,v 1.7 1998/01/05 17:17:14 vanilla Exp $
 #
 
 DISTNAME=      gtk+-0.99.2
@@ -21,5 +21,8 @@ pre-install:
 	@if [ ! -f ${PREFIX}/info/dir ]; then \
 	${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	fi
+
+post-install:
+	${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

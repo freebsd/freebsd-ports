@@ -113,3 +113,5 @@ info/gtk.info
 @exec install-info %D/info/gdk.info %D/info/dir
 @dirrm include/gtk
 @dirrm include/gdk
+@exec /sbin/ldcoonfig -m %D/lib
+@unexec /sbin/ldcoonfig -R
