@@ -1,0 +1,11 @@
+pServ is a small, portable HTTP server. It is written in pure C for speed and
+portability. It runs as a standalone program and does not require inetd.
+It should be small enough to be used in a mobile computer or to be run on your
+obsolete workstation you have somewhere.
+
+This port contains a patched version to support the execution of php scripts.
+
+WWW: http://sourceforge.net/projects/pserv/
+
+- Alex Dupre
+sysadmin@alexdupre.com

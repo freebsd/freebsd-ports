@@ -1,0 +1,7 @@
+--- mime_types.dat.orig	Wed Oct 15 15:57:08 2003
++++ mime_types.dat	Wed Oct 15 15:57:22 2003
+@@ -14,3 +14,4 @@
+ tar	application/x-tar
+ lha	application/octet-stream
+ lzh	application/octet-stream
++php	application/x-httpd-php
