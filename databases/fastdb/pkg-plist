@@ -1,4 +1,5 @@
 bin/subsql
+bin/cleanupsem
 include/fastdb/array.h
 include/fastdb/class.h
 include/fastdb/cli.h
