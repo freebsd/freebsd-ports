@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.183 1999/01/07 12:05:27 asami Exp $
+# $Id: Makefile,v 1.184 1999/01/18 04:43:39 steve Exp $
 #
 
     SUBDIR += 221upgrade
@@ -57,6 +57,7 @@
     SUBDIR += p5-Search
     SUBDIR += pdmenu
     SUBDIR += qclock
+    SUBDIR += quotes
     SUBDIR += rc5des
     SUBDIR += rpm
     SUBDIR += screen
