@@ -34,7 +34,11 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 MAN1=		xlock.1
 
+.if ${MACHINE_ARCH} == "amd64"
+WITH_MESAGL=	no
+.else
 WITH_MESAGL?=	yes
+.endif
 .if ${WITH_MESAGL} == yes
 CONFIGURE_ARGS+=	--with-mesa
 MESALIB=${PTHREAD_LIBS}
