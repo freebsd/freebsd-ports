@@ -3,7 +3,7 @@
 # Date created:				14 Aug 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.23 1998/08/20 13:29:17 asami Exp $
+# $Id: Makefile,v 1.24 1998/09/01 15:27:36 thepish Exp $
 #
 
 DISTNAME=	mysql-3.21.33
@@ -15,9 +15,7 @@ MASTER_SITES=	http://www.buoy.com/mysql/Downloads/ \
 		http://www.fh-wolfenbuettel.de/ftp/pub/database/mysql/Downloads/MySQL-3.21/ \
 		http://www.tcx.se/Downloads/MySQL-3.21/
 
-MAINTAINER=	josh@ican.net
-
-BROKEN=		build
+MAINTAINER=	ibex@physik.TU-Berlin.DE
 
 MAN1=		mysql.1
 
