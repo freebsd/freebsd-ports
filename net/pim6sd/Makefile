@@ -7,14 +7,20 @@
 
 PORTNAME=	pim6sd
 PORTVERSION=	20010602a
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 
-MAINTAINER=	ume@freebsd.org
+MAINTAINER=	ume@FreeBSD.org
+
+NO_CDROM=	"Cannot be sold for profit"
 
 MAN5=		pim6sd.conf.5
 MAN8=		pim6sd.8
 MANCOMPRESSED=	yes
+
+DOCS=		BUGS.TODO BUGS.V6 LICENSE.mrouted LICENSE.pim6dd \
+		LICENSE.pim6sd LICENSE.pimd README README.first
 
 BUILD_WRKSRC=	${WRKSRC}/${PORTNAME}
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
@@ -23,5 +29,16 @@ post-patch:
 .for file in Makefile.inc pim6sd/pathnames.h pim6sd/pim6sd.8
 	@${PERL} -pi.orig -e 's./usr/local/v6.${PREFIX}.g' ${WRKSRC}/${file}
 .endfor
+
+post-install:
+	${INSTALL_DATA} ${FILESDIR}/pim6sd.conf ${PREFIX}/etc
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
+.for file in ${DOCS}
+	${INSTALL_DATA} ${BUILD_WRKSRC}/${file} ${PREFIX}/share/doc/${PORTNAME}
+	@${ECHO} share/doc/${PORTNAME}/${file} >>${TMPPLIST}
+.endfor
+	@${ECHO} "@dirrm share/doc/${PORTNAME}" >>${TMPPLIST}
+.endif
 
 .include <bsd.port.mk>
