@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtkglarea
-PORTVERSION= 	1.2.2
+PORTVERSION=	1.2.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.student.oulu.fi/~jlof/gtkglarea/download/
 

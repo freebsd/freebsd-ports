@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icegradient
-PORTVERSION= 	200012290259
+PORTVERSION=	200012290259
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.themes.org/pub/themes/gtk/ \
 		${MASTER_SITE_LOCAL}

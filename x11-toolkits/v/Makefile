@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	v
-PORTVERSION= 	1.19
+PORTVERSION=	1.19
 CATEGORIES=	x11-toolkits devel graphics
 MASTER_SITES=	ftp://ftp.ntua.gr/pub/X11/v/old/ \
 		ftp://ftp.dl.ac.uk/ccp14/ftp-mirror/programming/objectcentral/old/

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	buffy
-PORTVERSION= 	0.2
+PORTVERSION=	0.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://reality.sgi.com/offer/src/buffy/
 

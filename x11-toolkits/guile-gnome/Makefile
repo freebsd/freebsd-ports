@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	guile-gnome
-PORTVERSION= 	0.10
+PORTVERSION=	0.10
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gnome-guile

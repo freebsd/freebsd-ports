@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	open-motif-devel
-PORTVERSION= 	2.1.30
+PORTVERSION=	2.1.30
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://openmotif.opengroup.org/pub/openmotif/R2.1.30/binaries/metrolink/  \
 		ftp://ftp.opengroup.org/pub/openmotif/R2.1.30/binaries/metrolink/  \

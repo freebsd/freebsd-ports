@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	blt
-PORTVERSION= 	2.4u
+PORTVERSION=	2.4u
 CATEGORIES=	x11-toolkits tk83
 MASTER_SITES=	ftp://tcltk.sourceforge.net/pub/tcltk/blt/ \
 		ftp://ftp.csl.sony.co.jp/pub/kjc/ttt-libs/

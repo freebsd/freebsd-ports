@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	itk
-PORTVERSION= 	3.0.1
+PORTVERSION=	3.0.1
 CATEGORIES=	x11-toolkits tk82
 MASTER_SITES=	ftp://ftp.tcltk.com/pub/itcl/
 DISTNAME=	itcl${PORTVERSION}

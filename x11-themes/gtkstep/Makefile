@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gtkstep
-PORTVERSION= 	2.2
+PORTVERSION=	2.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ulli.linuxave.net/gtkstep/
 
