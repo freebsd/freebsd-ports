@@ -7,7 +7,7 @@
 
 PORTNAME=	op
 PORTVERSION=	1.11
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cerias.purdue.edu/pub/tools/%SUBDIR%/ \
 		ftp://ftp.rge.com/pub/security/cerias/tools/%SUBDIR%/ \
