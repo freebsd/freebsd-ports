@@ -1,13 +1,13 @@
 # New ports collection makefile for:	afterstep
-# Version required:	0.98b19
+# Version required:	0.98b23a
 # Date created:		17 July 96
 # Whom:			james@bdd.net
 #
-# $Id: Makefile,v 1.3 1996/08/07 02:29:48 asami Exp $
+# $Id: Makefile,v 1.4 1996/08/10 01:16:36 jfitz Exp $
 #
 
-DISTNAME=	as-b19
-PKGNAME=	afterstep-0.98b19
+DISTNAME=	as-b23a
+PKGNAME=	afterstep-0.98b23a
 CATEGORIES+=	x11
 MASTER_SITES=	ftp://oak.sfasu.edu/pub/AfterStep/
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 RUN_DEPENDS=	fvwm:${PORTSDIR}/x11/fvwm
 
 USE_X11=	yes
-WRKSRC=		${WRKDIR}/AfterStep-0.98aBETA19
+WRKSRC=		${WRKDIR}/AfterStep-0.98aBETA23a
 
 pre-build:
 		@cd ${WRKSRC}; sh MakeMakefiles
