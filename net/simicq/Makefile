@@ -11,7 +11,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/mi/m-i/}
 DISTNAME=	${PORTNAME:S/icq//}-${PORTVERSION}
 
-MAINTAINER=	j.el-rayes@daemon.li
+MAINTAINER=	brueffer@phoenix-systems.de
 COMMENT=	ICQ client which supports Version 8 of the ICQ protocol (ICQ 2001)
 
 USE_GMAKE=	yes
