@@ -1734,6 +1734,7 @@ lib/R/library/base/help/chickwts
 lib/R/library/base/help/chol
 lib/R/library/base/help/chol2inv
 lib/R/library/base/help/chull
+lib/R/library/base/help/citation
 lib/R/library/base/help/class
 lib/R/library/base/help/close.socket
 lib/R/library/base/help/co2
@@ -1873,7 +1874,6 @@ lib/R/library/base/help/gray
 lib/R/library/base/help/grep
 lib/R/library/base/help/grid
 lib/R/library/base/help/groupGeneric
-lib/R/library/base/help/gtk
 lib/R/library/base/help/gzcon
 lib/R/library/base/help/help
 lib/R/library/base/help/help.search
@@ -2101,6 +2101,7 @@ lib/R/library/base/help/recordplot
 lib/R/library/base/help/recover
 lib/R/library/base/help/rect
 lib/R/library/base/help/reg.finalizer
+lib/R/library/base/help/regex
 lib/R/library/base/help/relevel
 lib/R/library/base/help/remove.packages
 lib/R/library/base/help/rep
@@ -2426,6 +2427,7 @@ lib/R/library/base/html/chickwts.html
 lib/R/library/base/html/chol.html
 lib/R/library/base/html/chol2inv.html
 lib/R/library/base/html/chull.html
+lib/R/library/base/html/citation.html
 lib/R/library/base/html/class.html
 lib/R/library/base/html/close.socket.html
 lib/R/library/base/html/co2.html
@@ -2565,7 +2567,6 @@ lib/R/library/base/html/gray.html
 lib/R/library/base/html/grep.html
 lib/R/library/base/html/grid.html
 lib/R/library/base/html/groupGeneric.html
-lib/R/library/base/html/gtk.html
 lib/R/library/base/html/gzcon.html
 lib/R/library/base/html/help.html
 lib/R/library/base/html/help.search.html
@@ -2793,6 +2794,7 @@ lib/R/library/base/html/recordplot.html
 lib/R/library/base/html/recover.html
 lib/R/library/base/html/rect.html
 lib/R/library/base/html/reg.finalizer.html
+lib/R/library/base/html/regex.html
 lib/R/library/base/html/relevel.html
 lib/R/library/base/html/remove.packages.html
 lib/R/library/base/html/rep.html
@@ -3117,6 +3119,7 @@ lib/R/library/base/latex/chickwts.tex
 lib/R/library/base/latex/chol.tex
 lib/R/library/base/latex/chol2inv.tex
 lib/R/library/base/latex/chull.tex
+lib/R/library/base/latex/citation.tex
 lib/R/library/base/latex/class.tex
 lib/R/library/base/latex/close.socket.tex
 lib/R/library/base/latex/co2.tex
@@ -3256,7 +3259,6 @@ lib/R/library/base/latex/gray.tex
 lib/R/library/base/latex/grep.tex
 lib/R/library/base/latex/grid.tex
 lib/R/library/base/latex/groupGeneric.tex
-lib/R/library/base/latex/gtk.tex
 lib/R/library/base/latex/gzcon.tex
 lib/R/library/base/latex/help.search.tex
 lib/R/library/base/latex/help.start.tex
@@ -3484,6 +3486,7 @@ lib/R/library/base/latex/recordplot.tex
 lib/R/library/base/latex/recover.tex
 lib/R/library/base/latex/rect.tex
 lib/R/library/base/latex/reg.finalizer.tex
+lib/R/library/base/latex/regex.tex
 lib/R/library/base/latex/relevel.tex
 lib/R/library/base/latex/remove.packages.tex
 lib/R/library/base/latex/rep.tex
@@ -4486,6 +4489,7 @@ lib/R/library/grid/R-ex/grid.layout.R
 lib/R/library/grid/R-ex/grid.locator.R
 lib/R/library/grid/R-ex/grid.move.to.R
 lib/R/library/grid/R-ex/grid.plot.and.legend.R
+lib/R/library/grid/R-ex/grid.polygon.R
 lib/R/library/grid/R-ex/grid.show.layout.R
 lib/R/library/grid/R-ex/grid.show.viewport.R
 lib/R/library/grid/R-ex/grid.text.R
@@ -4890,6 +4894,7 @@ lib/R/library/methods/help/StructureClasses
 lib/R/library/methods/help/TraceClasses
 lib/R/library/methods/help/as
 lib/R/library/methods/help/classRepresentation-class
+lib/R/library/methods/help/fixPrevious
 lib/R/library/methods/help/genericFunction-class
 lib/R/library/methods/help/getClass
 lib/R/library/methods/help/getMethod
@@ -4943,6 +4948,7 @@ lib/R/library/methods/html/StructureClasses.html
 lib/R/library/methods/html/TraceClasses.html
 lib/R/library/methods/html/as.html
 lib/R/library/methods/html/classRepresentation-class.html
+lib/R/library/methods/html/fixPrevious.html
 lib/R/library/methods/html/genericFunction-class.html
 lib/R/library/methods/html/getClass.html
 lib/R/library/methods/html/getMethod.html
@@ -4995,6 +5001,7 @@ lib/R/library/methods/latex/StructureClasses.tex
 lib/R/library/methods/latex/TraceClasses.tex
 lib/R/library/methods/latex/as.tex
 lib/R/library/methods/latex/classRepresentation-class.tex
+lib/R/library/methods/latex/fixPrevious.tex
 lib/R/library/methods/latex/genericFunction-class.tex
 lib/R/library/methods/latex/getClass.tex
 lib/R/library/methods/latex/getMethod.tex
@@ -7405,6 +7412,7 @@ lib/R/library/tools/help/Rtangle
 lib/R/library/tools/help/RweaveLatex
 lib/R/library/tools/help/Sweave
 lib/R/library/tools/help/SweaveSyntConv
+lib/R/library/tools/help/buildVignettes
 lib/R/library/tools/help/checkFF
 lib/R/library/tools/help/checkMD5sums
 lib/R/library/tools/help/checkTnF
@@ -7413,6 +7421,7 @@ lib/R/library/tools/help/codoc
 lib/R/library/tools/help/delimMatch
 lib/R/library/tools/help/fileutils
 lib/R/library/tools/help/md5sum
+lib/R/library/tools/help/texi2dvi
 lib/R/library/tools/help/tools-internal
 lib/R/library/tools/help/undoc
 lib/R/library/tools/html/00Index.html
@@ -7422,6 +7431,7 @@ lib/R/library/tools/html/Rtangle.html
 lib/R/library/tools/html/RweaveLatex.html
 lib/R/library/tools/html/Sweave.html
 lib/R/library/tools/html/SweaveSyntConv.html
+lib/R/library/tools/html/buildVignettes.html
 lib/R/library/tools/html/checkFF.html
 lib/R/library/tools/html/checkMD5sums.html
 lib/R/library/tools/html/checkTnF.html
@@ -7430,6 +7440,7 @@ lib/R/library/tools/html/codoc.html
 lib/R/library/tools/html/delimMatch.html
 lib/R/library/tools/html/fileutils.html
 lib/R/library/tools/html/md5sum.html
+lib/R/library/tools/html/texi2dvi.html
 lib/R/library/tools/html/tools-internal.html
 lib/R/library/tools/html/undoc.html
 lib/R/library/tools/latex/QC.tex
@@ -7438,6 +7449,7 @@ lib/R/library/tools/latex/Rtangle.tex
 lib/R/library/tools/latex/RweaveLatex.tex
 lib/R/library/tools/latex/Sweave.tex
 lib/R/library/tools/latex/SweaveSyntConv.tex
+lib/R/library/tools/latex/buildVignettes.tex
 lib/R/library/tools/latex/checkFF.tex
 lib/R/library/tools/latex/checkMD5sums.tex
 lib/R/library/tools/latex/checkTnF.tex
@@ -7446,6 +7458,7 @@ lib/R/library/tools/latex/codoc.tex
 lib/R/library/tools/latex/delimMatch.tex
 lib/R/library/tools/latex/fileutils.tex
 lib/R/library/tools/latex/md5sum.tex
+lib/R/library/tools/latex/texi2dvi.tex
 lib/R/library/tools/latex/tools-internal.tex
 lib/R/library/tools/latex/undoc.tex
 lib/R/library/tools/libs/tools.so
