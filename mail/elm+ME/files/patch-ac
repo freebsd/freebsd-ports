@@ -1,19 +1,16 @@
-*** src/menu2.c.bak	Mon Aug 28 06:10:02 1995
---- src/menu2.c	Sun Sep 24 21:18:52 1995
+*** Configure.bak	Sun Nov 19 23:26:43 1995
+--- Configure	Sun Nov 19 23:29:18 1995
 ***************
-*** 93,99 ****
-      default:
-        for (i = 0; i < max ; i++) {
-  	if (ch == items[i].key) {
-! 	  do_item (items[i]);
-  	  update = TRUE;
-  	  break;
-  	}
---- 93,99 ----
-      default:
-        for (i = 0; i < max ; i++) {
-  	if (ch == items[i].key) {
-! 	  do_item (&items[i]);
-  	  update = TRUE;
-  	  break;
-  	}
+*** 18,28 ****
+  PATH=".:/bin:/usr/bin:/usr/local/bin:/usr/ucb:/usr/local:/usr/lbin:/etc:/usr/new:/usr/new/bin:/usr/nbin:$PATH"
+  export PATH || (echo "OOPS, this isn't sh.  Desperation time.  I will feed myself to sh."; sh $0; kill $$)
+  
+- if test ! -t 0; then
+-     echo "Say 'sh Configure', not 'sh <Configure'"
+-     exit 1
+- fi
+- 
+  (alias) >/dev/null 2>&1 && \
+      echo "(I see you are using the Korn shell.  Some ksh's blow up on Configure," && \
+      echo "especially on exotic machines.  If yours does, try the Bourne shell instead.)"
+--- 18,23 ----
