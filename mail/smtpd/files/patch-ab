@@ -1,0 +1,16 @@
+--- smtpfwdd.c.org	Wed Jun 17 21:21:10 1998
++++ smtpfwdd.c	Wed Jun 17 21:21:22 1998
+@@ -43,12 +43,12 @@
+ "Copyright 1996 - Obtuse Systems Corporation - All rights reserved.";
+ char *obtuse_rcsid = "$Id: smtpfwdd.c,v 1.35 1997/12/12 04:07:49 beck Exp $";
+ 
++#include <sys/types.h>
+ #include <stdio.h>
+ #include <signal.h>
+ #include <dirent.h>
+ #include <pwd.h>
+ #include <grp.h>
+-#include <sys/types.h>
+ #include <sys/stat.h>
+ #include <sys/wait.h>
+ #include <sys/stat.h>
