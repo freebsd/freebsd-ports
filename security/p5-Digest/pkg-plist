@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest/.packlist
 %%SITE_PERL%%/Digest.pm
 %%SITE_PERL%%/Digest/base.pm
+%%SITE_PERL%%/Digest/file.pm
 @unexec rmdir %D/%%SITE_PERL%%/Digest 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Digest 2>/dev/null || true

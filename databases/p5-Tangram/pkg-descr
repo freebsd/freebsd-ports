@@ -6,6 +6,3 @@ that is, it doesn't require your classes to implement support functions nor
 inherit from a utility class.
 
 WWW: http://search.cpan.org/dist/Tangram/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
