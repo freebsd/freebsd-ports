@@ -128,6 +128,7 @@ SoXt		ports/x11-toolkits/SoXt
 SpecTcl		ports/devel/SpecTcl
 Tee		ports/sysutils/Tee
 TenDRA		ports/lang/TenDRA
+TkTopNetFlows	ports/net-mgmt/TkTopNetFlows
 WWWdb		ports/databases/WWWdb
 WebMagick	ports/www/WebMagick
 XFree86		ports/x11/XFree86
