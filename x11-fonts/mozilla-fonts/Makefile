@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.myrddin.demon.co.uk/dist/
 
 MAINTAINER=	dom@happygiraffe.net
 
+BROKEN=		"Does not build"
+
 USE_X_PREFIX=	true
 
 post-install:
