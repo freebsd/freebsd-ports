@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mod_mp3
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	www audio
 MASTER_SITES=	http://media.tangent.org/ \
 		ftp://ftp.tangent.org/pub/apache/ \
