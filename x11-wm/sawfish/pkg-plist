@@ -9,14 +9,18 @@ info/sawmill.info-1
 info/sawmill.info-2
 info/sawmill.info-3
 @exec install-info --section="X11 window manager" --entry="* sawmill: (sawmill).           sawmill programming manual" %D/info/sawmill.info %D/info/dir
+libexec/sawmill/%%VERSION%%/%%GNUHOST%%/flippers.la
+libexec/sawmill/%%VERSION%%/%%GNUHOST%%/flippers.so
 libexec/sawmill/%%VERSION%%/%%GNUHOST%%/gtk-style
-libexec/sawmill/%%VERSION%%/%%GNUHOST%%/libflippers.la
-libexec/sawmill/%%VERSION%%/%%GNUHOST%%/libflippers.so
-libexec/sawmill/%%VERSION%%/%%GNUHOST%%/libgradient.la
-libexec/sawmill/%%VERSION%%/%%GNUHOST%%/libgradient.so
-libexec/sawmill/%%VERSION%%/%%GNUHOST%%/libx.la
-libexec/sawmill/%%VERSION%%/%%GNUHOST%%/libx.so
+libexec/sawmill/%%VERSION%%/%%GNUHOST%%/gradient.la
+libexec/sawmill/%%VERSION%%/%%GNUHOST%%/gradient.so
+libexec/sawmill/%%VERSION%%/%%GNUHOST%%/play-sample.la
+libexec/sawmill/%%VERSION%%/%%GNUHOST%%/play-sample.so
 libexec/sawmill/%%VERSION%%/%%GNUHOST%%/sawmill-menu
+libexec/sawmill/%%VERSION%%/%%GNUHOST%%/selection.la
+libexec/sawmill/%%VERSION%%/%%GNUHOST%%/selection.so
+libexec/sawmill/%%VERSION%%/%%GNUHOST%%/x.la
+libexec/sawmill/%%VERSION%%/%%GNUHOST%%/x.so
 share/gnome/apps/Settings/Sawmill/.directory
 share/gnome/apps/Settings/Sawmill/appearance-properties.desktop
 share/gnome/apps/Settings/Sawmill/bindings-properties.desktop
@@ -36,10 +40,17 @@ share/locale/fr/LC_MESSAGES/sawmill.mo
 share/locale/gl/LC_MESSAGES/sawmill.mo
 share/locale/ja/LC_MESSAGES/sawmill.mo
 share/locale/nl/LC_MESSAGES/sawmill.mo
+share/locale/pl/LC_MESSAGES/sawmill.mo
 share/locale/pt_PT/LC_MESSAGES/sawmill.mo
 share/locale/sv/LC_MESSAGES/sawmill.mo
 share/locale/tr/LC_MESSAGES/sawmill.mo
 share/sawmill/%%VERSION%%/DOC
+share/sawmill/%%VERSION%%/lisp/3d-hack.jl
+share/sawmill/%%VERSION%%/lisp/3d-hack.jlc
+share/sawmill/%%VERSION%%/lisp/anim-outline.jl
+share/sawmill/%%VERSION%%/lisp/anim-outline.jlc
+share/sawmill/%%VERSION%%/lisp/audio-events.jl
+share/sawmill/%%VERSION%%/lisp/audio-events.jlc
 share/sawmill/%%VERSION%%/lisp/auto-raise.jl
 share/sawmill/%%VERSION%%/lisp/auto-raise.jlc
 share/sawmill/%%VERSION%%/lisp/autoload.jl
@@ -117,8 +128,12 @@ share/sawmill/%%VERSION%%/lisp/open-look.jl
 share/sawmill/%%VERSION%%/lisp/open-look.jlc
 share/sawmill/%%VERSION%%/lisp/place-window.jl
 share/sawmill/%%VERSION%%/lisp/place-window.jlc
+share/sawmill/%%VERSION%%/lisp/play-audio.jl
+share/sawmill/%%VERSION%%/lisp/play-audio.jlc
 share/sawmill/%%VERSION%%/lisp/prompt-extras.jl
 share/sawmill/%%VERSION%%/lisp/prompt-extras.jlc
+share/sawmill/%%VERSION%%/lisp/prompt-wm.jl
+share/sawmill/%%VERSION%%/lisp/prompt-wm.jlc
 share/sawmill/%%VERSION%%/lisp/prompt.jl
 share/sawmill/%%VERSION%%/lisp/prompt.jlc
 share/sawmill/%%VERSION%%/lisp/raise-commands.jl
@@ -163,18 +178,28 @@ share/sawmill/%%VERSION%%/lisp/viewport-linear.jl
 share/sawmill/%%VERSION%%/lisp/viewport-linear.jlc
 share/sawmill/%%VERSION%%/lisp/viewport.jl
 share/sawmill/%%VERSION%%/lisp/viewport.jlc
+share/sawmill/%%VERSION%%/lisp/window-anim.jl
+share/sawmill/%%VERSION%%/lisp/window-anim.jlc
 share/sawmill/%%VERSION%%/lisp/window-order.jl
 share/sawmill/%%VERSION%%/lisp/window-order.jlc
+share/sawmill/%%VERSION%%/lisp/window-outline.jl
+share/sawmill/%%VERSION%%/lisp/window-outline.jlc
 share/sawmill/%%VERSION%%/lisp/with-output.jl
 share/sawmill/%%VERSION%%/lisp/with-output.jlc
 share/sawmill/%%VERSION%%/lisp/workspace.jl
 share/sawmill/%%VERSION%%/lisp/workspace.jlc
 share/sawmill/%%VERSION%%/lisp/x-cycle.jl
 share/sawmill/%%VERSION%%/lisp/x-cycle.jlc
+share/sawmill/%%VERSION%%/sounds/activate.wav
+share/sawmill/%%VERSION%%/sounds/clicked.wav
+share/sawmill/%%VERSION%%/sounds/gameover.wav
+share/sawmill/%%VERSION%%/sounds/slide.wav
+share/sawmill/%%VERSION%%/sounds/toggled.wav
 share/sawmill/%%VERSION%%/themer.glade
 share/sawmill/%%VERSION%%/themes/absolute-e/README
 share/sawmill/%%VERSION%%/themes/absolute-e/README.gl
 share/sawmill/%%VERSION%%/themes/absolute-e/README.ja
+share/sawmill/%%VERSION%%/themes/absolute-e/README.pl
 share/sawmill/%%VERSION%%/themes/absolute-e/bar_clicked_active.png
 share/sawmill/%%VERSION%%/themes/absolute-e/bar_hilited_active.png
 share/sawmill/%%VERSION%%/themes/absolute-e/bar_normal.png
@@ -183,6 +208,7 @@ share/sawmill/%%VERSION%%/themes/absolute-e/theme.jl
 share/sawmill/%%VERSION%%/themes/brushed-metal/README
 share/sawmill/%%VERSION%%/themes/brushed-metal/README.gl
 share/sawmill/%%VERSION%%/themes/brushed-metal/README.ja
+share/sawmill/%%VERSION%%/themes/brushed-metal/README.pl
 share/sawmill/%%VERSION%%/themes/brushed-metal/b1-.png
 share/sawmill/%%VERSION%%/themes/brushed-metal/b1.png
 share/sawmill/%%VERSION%%/themes/brushed-metal/b2-.png
@@ -219,6 +245,7 @@ share/sawmill/%%VERSION%%/themes/brushed-metal/theme.jl
 share/sawmill/%%VERSION%%/themes/gradient/README
 share/sawmill/%%VERSION%%/themes/gradient/README.gl
 share/sawmill/%%VERSION%%/themes/gradient/README.ja
+share/sawmill/%%VERSION%%/themes/gradient/README.pl
 share/sawmill/%%VERSION%%/themes/gradient/as_close-b.png
 share/sawmill/%%VERSION%%/themes/gradient/as_close.png
 share/sawmill/%%VERSION%%/themes/gradient/as_min-b.png
@@ -227,6 +254,7 @@ share/sawmill/%%VERSION%%/themes/gradient/theme.jl
 share/sawmill/%%VERSION%%/themes/gtk/README
 share/sawmill/%%VERSION%%/themes/gtk/README.gl
 share/sawmill/%%VERSION%%/themes/gtk/README.ja
+share/sawmill/%%VERSION%%/themes/gtk/README.pl
 share/sawmill/%%VERSION%%/themes/gtk/as_close-b.png
 share/sawmill/%%VERSION%%/themes/gtk/as_close.png
 share/sawmill/%%VERSION%%/themes/gtk/as_min-b.png
@@ -235,6 +263,7 @@ share/sawmill/%%VERSION%%/themes/gtk/theme.jl
 share/sawmill/%%VERSION%%/themes/microGUI/README
 share/sawmill/%%VERSION%%/themes/microGUI/README.gl
 share/sawmill/%%VERSION%%/themes/microGUI/README.ja
+share/sawmill/%%VERSION%%/themes/microGUI/README.pl
 share/sawmill/%%VERSION%%/themes/microGUI/TODO
 share/sawmill/%%VERSION%%/themes/microGUI/bl.png
 share/sawmill/%%VERSION%%/themes/microGUI/bottom.png
@@ -279,6 +308,7 @@ share/sawmill/%%VERSION%%/themes/microGUI/top_right_s.png
 share/sawmill/%%VERSION%%/themes/mono/README
 share/sawmill/%%VERSION%%/themes/mono/README.gl
 share/sawmill/%%VERSION%%/themes/mono/README.ja
+share/sawmill/%%VERSION%%/themes/mono/README.pl
 share/sawmill/%%VERSION%%/themes/mono/close-c.png
 share/sawmill/%%VERSION%%/themes/mono/close.png
 share/sawmill/%%VERSION%%/themes/mono/max-c.png
@@ -293,6 +323,7 @@ share/sawmill/%%VERSION%%/themes/mono/theme.jl
 share/sawmill/%%VERSION%%/themes/simple/README
 share/sawmill/%%VERSION%%/themes/simple/README.gl
 share/sawmill/%%VERSION%%/themes/simple/README.ja
+share/sawmill/%%VERSION%%/themes/simple/README.pl
 share/sawmill/%%VERSION%%/themes/simple/as_close-b.png
 share/sawmill/%%VERSION%%/themes/simple/as_close.png
 share/sawmill/%%VERSION%%/themes/simple/as_min-b.png
@@ -301,6 +332,7 @@ share/sawmill/%%VERSION%%/themes/simple/theme.jl
 share/sawmill/%%VERSION%%/themes/smaker/README
 share/sawmill/%%VERSION%%/themes/smaker/README.gl
 share/sawmill/%%VERSION%%/themes/smaker/README.ja
+share/sawmill/%%VERSION%%/themes/smaker/README.pl
 share/sawmill/%%VERSION%%/themes/smaker/bar_clicked_active.png
 share/sawmill/%%VERSION%%/themes/smaker/bar_hilited_active.png
 share/sawmill/%%VERSION%%/themes/smaker/bar_normal.png
@@ -324,6 +356,8 @@ share/sawmill/%%VERSION%%/themes/smaker/theme.jl
 @dirrm share/sawmill/%%VERSION%%/themes/simple
 @dirrm share/sawmill/%%VERSION%%/themes/smaker
 @dirrm share/sawmill/%%VERSION%%/themes
+@dirrm share/sawmill/%%VERSION%%/sounds
 @dirrm share/sawmill/%%VERSION%%
 @dirrm share/sawmill/themes
+@dirrm share/sawmill/sounds
 @dirrm share/sawmill
