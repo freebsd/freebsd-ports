@@ -1,0 +1,16 @@
+SpringGraph.pm is a rewrite of the springgraph.pl script, which provides 
+similar functionality to Neato and can read some/most dot files.
+ 
+The goal of this module is to provide a compatible interface to VCG
+and/or GraphViz perl modules on CPAN. This module will also provide some
+extra features to provide more flexibility and power.
+
+This module is still experimental and is moving quickly away from the
+original springgraph.pl code. It is likely to be rewritten from basic
+principles in the near future to remove some of the quirks inherent in
+the Autodia and springgraph.pl code used.
+
+WWW: http://search.cpan.org/search?dist=SpringGraph
+
+Fernan
+<fernan@iib.unsam.edu.ar>
