@@ -6298,7 +6298,6 @@ pengpong	ports/games/pengpong
 penguin-command	ports/games/penguin-command
 pentix		ports/games/pentix
 penv		ports/sysutils/penv
-peops-gpu-soft	ports/emulators/peops-gpu-soft
 peps		ports/graphics/peps
 peq		ports/misc/peq
 perdition	ports/mail/perdition
