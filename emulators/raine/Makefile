@@ -11,7 +11,7 @@ CATEGORIES=	emulators games
 MASTER_SITES=	http://www.rainemu.com/html/archive/
 DISTNAME=	${PORTNAME}s-${PORTVERSION}
 
-MAINTAINER=	flz@xbsd.org
+MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Arcade Emulator for M68000, M68020 and Z80 based hardware
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/nasm:${PORTSDIR}/devel/nasm

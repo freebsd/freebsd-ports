@@ -10,7 +10,7 @@ PORTVERSION=	0.4.9
 CATEGORIES=	net
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/
 
-MAINTAINER=	flz@xbsd.org
+MAINTAINER=	flz@FreeBSD.org
 COMMENT=	BitTorrent Library written in C++
 
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl \

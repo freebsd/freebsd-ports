@@ -10,7 +10,7 @@ PORTVERSION=	0.4a
 CATEGORIES=	www
 MASTER_SITES=	http://www.hping.org/visitors/
 
-MAINTAINER=	flz@xbsd.org
+MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Very fast and easy to use web log analyzer
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}

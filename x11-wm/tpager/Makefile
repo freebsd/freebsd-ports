@@ -10,7 +10,7 @@ PORTVERSION=	0.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://s1x.homelinux.net/files/
 
-MAINTAINER=	flz@xbsd.org
+MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Lightweight EMWH Compliant Pager
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

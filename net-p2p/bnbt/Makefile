@@ -13,7 +13,7 @@ MASTER_SITES=	http://bnbt.go-dedicated.com/ \
 		http://www.oook.cz/bsd/distfiles/
 DISTNAME=	bnbt81b-3
 
-MAINTAINER=	flz@xbsd.org
+MAINTAINER=	flz@FreeBSD.org
 COMMENT=	A C++ BitTorrent Tracker
 
 USE_ZIP=	yes

@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://samba.idealx.org/dist/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	flz@xbsd.org
+MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Useful package for managing users and groups in a LDAP directory
 
 BUILD_DEPENDS=	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \

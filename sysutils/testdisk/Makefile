@@ -10,7 +10,7 @@ PORTVERSION=	5.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 
-MAINTAINER=	flz@xbsd.org
+MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Tool to check and undelete partitions
 
 GNU_CONFIGURE=	yes

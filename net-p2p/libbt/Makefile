@@ -11,7 +11,7 @@ CATEGORIES=	net devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	flz@xbsd.org
+MAINTAINER=	flz@FreeBSD.org
 COMMENT=	C library implementing the core BitTorrent protocol
 
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl

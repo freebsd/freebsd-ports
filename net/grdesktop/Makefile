@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	flz@xbsd.org
+MAINTAINER=	flz@FreeBSD.org
 COMMENT=	GNOME frontend for the remote desktop client (rdesktop)
 
 RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop

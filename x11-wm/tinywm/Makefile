@@ -11,7 +11,7 @@ CATEGORIES=	x11-wm
 MASTER_SITES=	http://incise.org/files/dev/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	flz@xbsd.org
+MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Ridiculously tiny window manager
 
 USE_REINPLACE=	yes
