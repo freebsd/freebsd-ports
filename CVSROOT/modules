@@ -5873,7 +5873,6 @@ nessus-libraries-devel	ports/security/nessus-libraries-devel
 nessus-plugins	ports/security/nessus-plugins
 nessus-plugins-devel	ports/security/nessus-plugins-devel
 net-http	ports/net/net-http
-net-rhythmbox	ports/audio/net-rhythmbox
 net-snmp	ports/net-mgmt/net-snmp
 net-snmp-tkmib	ports/net-mgmt/net-snmp-tkmib
 net-snmp4	ports/net-mgmt/net-snmp4
