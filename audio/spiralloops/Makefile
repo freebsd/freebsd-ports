@@ -18,12 +18,19 @@ LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 DOCDIR=		share/doc/${PORTNAME}
 DOC_FILES=	CHANGES COPYING README
 GNU_CONFIGURE=	yes
+MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
+		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 PLIST=		${WRKDIR}/pkg-plist
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
-pre-patch:
+post-patch:
 	${PERL} -pi -e "s:-ldl::g" ${WRKSRC}/Makefile.in
+	${PERL} -pi -e 's|-O3|${PTHREAD_CFLAGS}|g ; \
+			s|CFLAGS =|CFLAGS +=|g ; \
+			s|CXXFLAGS=|CXXFLAGS+=|g ; \
+			s|-lm|${PTHREAD_LIBS} -lm|g ; \
+			s|/usr/X11R6|${X11BASE}|g' ${WRKSRC}/Makefile.in
 
 pre-install:
 	${ECHO} bin/SpiralLoops > ${PLIST}
