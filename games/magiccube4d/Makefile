@@ -6,28 +6,29 @@
 #
 
 PORTNAME=	magiccube4d
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	games
 MASTER_SITES=	http://www.superliminal.com/cube/
 DISTNAME=	mc4d-src-${PORTVERSION:S/./_/}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	karlj000@unbc.ca
-COMMENT=	MagicCube4D is a fully functional four-dimensional analog of Rubik's cube
+COMMENT=	MagicCube4D is a four-dimensional analog of Rubik's cube
 
 USE_X_PREFIX=	yes
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION:S/./_/}
+DOCS=		ChangeLog Intro.txt MagicCube4D-unix.txt \
+		ideas.txt readme-unix.txt
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/magiccube4d ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/doc/magiccube4d
-	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${PREFIX}/share/doc/magiccube4d
-	${INSTALL_DATA} ${WRKSRC}/Intro.txt ${PREFIX}/share/doc/magiccube4d
-	${INSTALL_DATA} ${WRKSRC}/MagicCube4D-unix.txt ${PREFIX}/share/doc/magiccube4d
-	${INSTALL_DATA} ${WRKSRC}/ideas.txt ${PREFIX}/share/doc/magiccube4d
-	${INSTALL_DATA} ${WRKSRC}/readme-unix.txt ${PREFIX}/share/doc/magiccube4d
+.if !defined(NOPORTDOCS)
+	@${INSTALL} -d -m 0755 ${DOCSDIR}
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
