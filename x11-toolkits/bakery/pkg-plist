@@ -1,0 +1,16 @@
+bin/bakery-config
+include/bakery/App/App.h
+include/bakery/App/App_WithDoc.h
+include/bakery/Document/Document.h
+include/bakery/View/View.h
+include/bakery/View/ViewBase.h
+include/bakery/View/View_Composite.h
+include/bakery/bakery.h
+lib/libbakery-0.3.so.1
+lib/libbakery.a
+lib/libbakery.so
+share/aclocal/bakery.m4
+@dirrm include/bakery/View
+@dirrm include/bakery/Document
+@dirrm include/bakery/App
+@dirrm include/bakery
