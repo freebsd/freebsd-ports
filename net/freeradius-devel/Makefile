@@ -13,6 +13,8 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=wollman
 DISTNAME=	freeradius-alpha-snapshot-${PORTVERSION}
 
+FORBIDDEN=	"Remotely exploitable buffer overflow"
+
 MAINTAINER=	wollman@lcs.mit.edu
 
 WRKSRC=		${WRKDIR}/freeradius-alpha-snapshot-${PORTVERSION}
