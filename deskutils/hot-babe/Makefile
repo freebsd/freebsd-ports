@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hot-babe
-PORTVERSION=	0.1.4
-PORTREVISION=	1
+PORTVERSION=	0.2.0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://dindinx.net/hotbabe/downloads/
 
@@ -17,10 +16,12 @@ COMMENT=	Small utility which displays the system activity in a very special way
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 MAKE_ARGS+=	PREFIX="${PREFIX}" CC="${CC}"
-USE_GNOME=	gdkpixbuf
+USE_GNOME=	gtk20
 USE_REINPLACE=	yes
 
 MAN1=	hot-babe.1
+
+PORTDOCS=	ChangeLog NEWS TODO LICENSE CONTRIBUTORS copyright
 
 pre-everything::
 	@${ECHO_MSG}
@@ -34,5 +35,11 @@ post-patch:
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/hot-babe.1 ${PREFIX}/man/man1
+.ifndef (NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for i in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
