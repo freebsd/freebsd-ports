@@ -1,0 +1,14 @@
+Trommler is a GTK based drum machine with the following
+features:
+
+- Use of 16 bit 44100kHz mono drum samples
+- Realtime audio output using the /dev/dsp device
+- Audio output to file
+- Variable number of beats per patter 
+- Volume adjustment of drum samples
+- Stereo panning of (mono) drum samples
+
+WWW: http://muth.org/Robert/Trommler/
+
+- David
+dyeske@yahoo.com
