@@ -1,0 +1,12 @@
+Open DC Hub is a Unix/Linux version of the Hub software for the
+Direct Connect network. Direct Connect is a file sharing network
+made up by hubs, to which clients can connect.
+
+Once connected to a hub, the user can search for files on the hub
+or the network, or browse files of other users connected to the
+hub.
+
+WWW: http://opendchub.sourceforge.net/
+
+- Munish Chopra
+mchopra@engmail.uwaterloo.ca
