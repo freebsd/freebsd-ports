@@ -3,7 +3,7 @@
 # Date created:         4 May 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1995/05/04 14:47:56 ache Exp $
+# $Id: Makefile,v 1.2 1995/05/12 09:43:57 asami Exp $
 #
 
 DISTNAME=       pgp26ru
@@ -13,6 +13,9 @@ MASTER_SITES=   ftp://ftp.kiae.su/unix/crypto/pgp/
 EXTRACT_SUFX=   .zip
 
 MAINTAINER=	ache@FreeBSD.ORG
+
+# depends on restricted stuff (pgp)
+NO_PACKAGE=	yes
 
 EXEC_DEPENDS=   unzip:${PORTSDIR}/archivers/unzip \
 		pgp:${PORTSDIR}/utils/pgp.non-usa_only
