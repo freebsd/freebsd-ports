@@ -6,13 +6,13 @@
 #
 
 PORTNAME?=	cdrtools
-PORTVERSION?=	1.10
-PORTREVISION?=	1
+PORTVERSION?=	1.11.a21
+PORTREVISION?=	0
 CATEGORIES?=	sysutils audio
-MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/ \
-		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/ \
-		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/
-DISTNAME=	cdrtools-1.10
+MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/alpha/ \
+		ftp://ftp.cs.tu-berlin.de/pub/misc/cdrecord/alpha/ \
+		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/alpha/
+DISTNAME=	cdrtools-1.11a21
 
 MAINTAINER=	dirk@FreeBSD.org
 
@@ -25,6 +25,7 @@ MAN1=		cdda2wav.1 cdrecord.1 readcd.1
 USE_GMAKE=	yes
 MAKE_ENV=	COPTX="-DBSD_SCSI_SENSE_BUG"
 SLAVEDIRS=	sysutils/mkisofs
+WRKSRC=		${WRKDIR}/cdrtools-1.11
 
 .if ${MACHINE_ARCH} == "alpha"
 post-extract:
@@ -55,11 +56,11 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/cdda2wav/OBJ/${ARCH}-freebsd-cc/cdda2wav \
 	 ${PREFIX}/bin
 	@${LN} -sf cdda2wav ${PREFIX}/bin/list_audio_tracks
-	@${INSTALL_PROGRAM} ${WRKSRC}/misc/OBJ/${ARCH}-freebsd-cc/readcd \
+	@${INSTALL_PROGRAM} ${WRKSRC}/readcd/OBJ/${ARCH}-freebsd-cc/readcd \
 	 ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/cdda2wav/cdda2wav.1 ${PREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/cdrecord/cdrecord.1 ${PREFIX}/man/man1
-	@${INSTALL_MAN} ${WRKSRC}/misc/readcd.1 ${PREFIX}/man/man1
+	@${INSTALL_MAN} ${WRKSRC}/readcd/readcd.1 ${PREFIX}/man/man1
 .endif
 
 .include <bsd.port.mk>

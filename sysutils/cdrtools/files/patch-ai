@@ -1,14 +1,14 @@
---- cdrecord/drv_philips.c.orig	Tue Feb 20 23:56:44 2001
-+++ cdrecord/drv_philips.c	Tue Sep 18 17:42:51 2001
-@@ -505,12 +505,15 @@
- 	 * READ BUFFER SCSI cmd which is meant to be used for
- 	 * something totally else, and which would only jam the
- 	 * Plasmon due to the incorrect parameters used.
-+	 *
-+	 * We need to return some !0 value, otherwise the upper
-+	 * layer would still issue a READ BUFFER, sigh.
+--- cdrecord/drv_philips.c.orig	Tue Nov 27 02:08:49 2001
++++ cdrecord/drv_philips.c	Sun Dec 16 13:05:46 2001
+@@ -542,10 +542,15 @@
+ 	 * expects different parameters.
  	 */
  
++	/*
++	 * We need to return some !0 value, otherwise the upper
++	 * layer would still issue a READ BUFFER, sigh.
++	 */
++
  	if (sp)
 -		*sp = 0L;
 +		*sp = 1L * 1024 * 1024;
