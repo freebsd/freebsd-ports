@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grace
-PORTVERSION=	5.1.5
+PORTVERSION=	5.1.6
 CATEGORIES=	math print
 #
 # You never know when and why it is moved to ../src/old/   :-)
@@ -38,7 +38,7 @@ USE_MOTIF=	YES
 HAS_CONFIGURE=	YES
 CONFIGURE_ARGS=	-prefix=${X11BASE} \
 	--with-extra-incpath=${X11BASE}/include/X11:${LOCALBASE}/include \
-	--with-extra-ldpath=${LOCALBASE}/lib \
+	--with-extra-ldpath=${LOCALBASE}/lib --without-bundled_xbae \
 	--enable-grace-home=${X11BASE}/lib/X11/grace
 
 ALL_TARGET=
