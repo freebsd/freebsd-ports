@@ -49,26 +49,22 @@ MASTER_SITE_QMAIL+= \
 	http://qmail.404-not-found.net/%SUBDIR%/ \
 	http://qmail.gremlins.com.hk/%SUBDIR%/ \
 	http://qmail.hostlink.com.hk/%SUBDIR%/ \
-	http://qmail.linuxphreakers.net/%SUBDIR%/ \
 	http://qmail.cbn.net.id/%SUBDIR%/ \
 	http://www9.jp.qmail.org/%SUBDIR%/ \
 	http://qmail.kita-q.com/www.qmail.org/%SUBDIR%/ \
 	http://qmailorg.data-hotel.net/%SUBDIR%/ \
 	http://qmail.manic.co.kr/%SUBDIR%/ \
 	http://qmail.psshee.com/%SUBDIR%/ \
-	http://mirror.bofh.info/qmail/%SUBDIR%/ \
 	http://qmail.soa.co.nz/%SUBDIR%/ \
 	http://d2.nctu.edu.tw/qmail/%SUBDIR%/ \
 	http://mirrors.kangaroot.net/qmail/%SUBDIR%/ \
 	http://qmail.ssi.bg/%SUBDIR%/ \
 	http://qmail.interbgc.com/%SUBDIR%/ \
 	http://mirrors.sunsite.dk/qmailwww/%SUBDIR%/ \
-	http://qmail.mirrors.fastnetxp.com/%SUBDIR%/ \
 	http://qmail.xinus.net/%SUBDIR%/ \
 	http://qmail.lightwerk.com/%SUBDIR%/ \
 	http://qmail.mirrors.Space.Net/%SUBDIR%/ \
 	http://qmail-mirror.hoermann-rawema.de/%SUBDIR%/ \
-	http://qmail.ebusiness4all.de/%SUBDIR%/ \
 	http://www.ntua.gr/qmail/%SUBDIR%/ \
 	http://www.agria.hu/qmail/%SUBDIR%/ \
 	http://qmail-mirror.naplopok.hu/%SUBDIR%/ \
@@ -76,12 +72,10 @@ MASTER_SITE_QMAIL+= \
 	http://qmail.rhnet.is/%SUBDIR%/ \
 	http://qmail.netsoc.ucd.ie/%SUBDIR%/ \
 	http://complanet.ath.cx/qmail/%SUBDIR%/ \
-	http://ice.dammit.lt/qmail/%SUBDIR%/ \
 	http://mirrors.dataloss.nl/www.qmail.org/%SUBDIR%/ \
 	http://qmail.basefreak.nl/%SUBDIR%/ \
 	http://www.math.ntnu.no/mirror/www.qmail.org/%SUBDIR%/ \
 	http://qmail.obeer.com/%SUBDIR%/ \
-	http://qmail.telenet.pt/%SUBDIR%/ \
 	http://qmail.konnekt.org/%SUBDIR%/ \
 	http://qmail.smux.net/%SUBDIR%/ \
 	http://qmail.netvisao.pt/%SUBDIR%/ \
@@ -96,7 +90,6 @@ MASTER_SITE_QMAIL+= \
 	http://qmail.humourengine.com/%SUBDIR%/ \
 	http://qmail.softflare.com/%SUBDIR%/ \
 	http://qmail.blueyonder.co.uk/%SUBDIR%/ \
-	http://qmail.sst.com.br/%SUBDIR%/ \
 	http://qmail.usp.br/%SUBDIR%/ \
 	http://qmail.matrix.com.br/%SUBDIR%/ \
 	http://madhaus.utcs.utoronto.ca/qmail/%SUBDIR%/ \
