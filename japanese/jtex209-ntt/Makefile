@@ -3,11 +3,14 @@
 # Date created:		4 Nov 1996
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/11 08:46:34 asami Exp $
+# $Id: Makefile,v 1.2 1997/09/24 06:43:50 max Exp $
 #
 
 DISTNAME=	ja-jlatex209-n152
 FILESDIR=	${.CURDIR}/../jtex209-both/files
 PATCHDIR=	${.CURDIR}/../jtex209-both/patches
 BATCH_TEX=	NTT
+
+MANUAL_PACKAGE_BUILD=	incompatible with other versions of jtex-*
+
 .include	<${.CURDIR}/../jtex209-both/Makefile>

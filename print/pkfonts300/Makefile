@@ -3,7 +3,7 @@
 # Date created:		16 Mar 1996
 # Whom:			Hideaki Ohmon <ohmon@tom.sfc.keio.ac.jp>
 #
-# $Id: Makefile,v 1.5 1996/11/17 08:45:02 obrien Exp $
+# $Id: Makefile,v 1.6 1996/12/03 04:07:33 asami Exp $
 #
 
 DISTNAME=	pkfonts
@@ -16,6 +16,7 @@ DISTFILES=	pk${RESOLUTION}.tar.gz
 
 MAINTAINER=	ohmon@tom.sfc.keio.ac.jp
 
+MANUAL_PACKAGE_BUILD=	RESOLUTION has to be set to 118 240 300 360 400 600
 DIST_SUBDIR=	pkfonts
 EXTRACT_CMD=	/usr/bin/true # extracted directly in install target
 NO_BUILD=	yes

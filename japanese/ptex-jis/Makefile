@@ -3,7 +3,7 @@
 # Date created:		05 Oct 1997
 # Whom:			max
 #
-# $Id: Makefile,v 1.1.1.1 1997/10/04 17:17:08 max Exp $
+# $Id: Makefile,v 1.2 1997/10/04 17:58:45 max Exp $
 #
 
 DISTNAME=	ptex215
@@ -45,5 +45,7 @@ post-install:
 
 pre-clean:
 	@${RM} -rf ${WRKSRC}
+
+MANUAL_PACKAGE_BUILD=	incompatible with other versions of ptex-*
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:         18 August 1997
 # Whom:                 Chuck Robey (chuckr@freebsd.org)
 #
-# $Id: Makefile,v 1.9 1997/08/19 03:43:55 chuckr Exp $
+# $Id: Makefile,v 1.10 1997/10/11 02:57:02 chuckr Exp $
 #
 
 DISTNAME=	a2ps
@@ -14,6 +14,7 @@ DISTFILES=	a2ps-4.9.8.tar.gz
 
 MAINTAINER=	chuckr@FreeBSD.org
 
+MANUAL_PACKAGE_BUILD=	PAPERSIZE has to be set to Letter A4
 WRKSRC=		$(WRKDIR)/$(DISTNAME)-4.9.8
 GNU_CONFIGURE=	yes
 MAN1=		a2ps.1 ogonkify.1

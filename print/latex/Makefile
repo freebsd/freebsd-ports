@@ -3,8 +3,9 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.30 1997/02/26 02:27:29 jmz Exp $
+# $Id: Makefile,v 1.31 1997/07/26 15:00:34 jmz Exp $
 #
+
 VERSION=	97.06
 DISTNAME=	latex
 PKGNAME=	latex2e-${VERSION}
@@ -17,6 +18,7 @@ MAINTAINER=	jmz@FreeBSD.org
 BUILD_DEPENDS=	tex:${PORTSDIR}/print/tex
 RUN_DEPENDS=	tex:${PORTSDIR}/print/tex
 
+MANUAL_PACKAGE_BUILD=	has to be built with tex port
 IGNOREFILES=	${DISTFILES}
 
 #other equivalent sites: ftp.cdrom.com ftp.dante.de
