@@ -99,7 +99,7 @@ post-patch:
 	${ECHO} "all: default" >> Makefile)
 
 pre-install:
-	${SH} ${PKGINSTALL} Postfix PRE-INSTALL
+	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} Postfix PRE-INSTALL
 
 do-install:
 	@${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 0755 \
@@ -163,10 +163,13 @@ do-install:
 	@${MKDIR} -m 755 /var/spool/postfix
 	@${CHOWN} root:wheel /var/spool/postfix
 
-	@${ECHO_MSG} "--------------------------------------------------"
-	@${ECHO_MSG} "- To replace your existing sendmail with postfix -"
-	@${ECHO_MSG} "- type \"make replace\"                          -"
-	@${ECHO_MSG} "--------------------------------------------------"
+	@${ECHO_MSG} '--------------------------------------------------'
+	@${ECHO_MSG} '- To replace your existing sendmail with postfix -'
+	@${ECHO_MSG} '- type "make replace"                          -'
+	@${ECHO_MSG} '--------------------------------------------------'
+
+post-install:
+	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.pre.mk>
 
