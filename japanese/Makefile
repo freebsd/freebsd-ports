@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.192 1999/03/20 05:43:00 taoka Exp $
+# $Id: Makefile,v 1.193 1999/03/31 11:54:46 flathill Exp $
 #
 
     SUBDIR += Canna
@@ -95,6 +95,7 @@
     SUBDIR += lesw
     SUBDIR += libicq
     SUBDIR += libslang
+    SUBDIR += libxpg4-ns
     SUBDIR += lipsf
     SUBDIR += lynx
     SUBDIR += lynx-current
