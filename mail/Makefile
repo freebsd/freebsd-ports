@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.52 1997/11/30 10:36:37 max Exp $
+# $Id: Makefile,v 1.53 1997/12/08 22:15:59 max Exp $
 #
 
     SUBDIR += adcomplain
@@ -42,6 +42,7 @@
     SUBDIR += xfaces
     SUBDIR += xfmail
     SUBDIR += xlbiff
+    SUBDIR += xmail
     SUBDIR += xpbiff
     SUBDIR += xpbiff-youbin
     SUBDIR += youbin
