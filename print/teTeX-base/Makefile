@@ -7,7 +7,7 @@
 
 PORTNAME=	teTeX-base
 PORTVERSION=	2.0.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	print
 MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/2.0/distrib/ \
 		${MASTER_SITE_TEX_CTAN}
@@ -18,10 +18,10 @@ DIST_SUBDIR=	teTeX
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Thomas Esser's distribution of TeX & friends (binaries)
 
-BUILD_DEPENDS=	${TEXMF_TREE}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
-		tetex-modesw:${PORTSDIR}/print/tex-texmflocal
-RUN_DEPENDS=	${TEXMF_TREE}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
-		tetex-modesw:${PORTSDIR}/print/tex-texmflocal
+BUILD_DEPENDS=	${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
+RUN_DEPENDS=	${LOCALBASE}/${TEXMF}/LICENSE.texmf:${PORTSDIR}/print/teTeX-texmf \
+		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		wwwcore.1:${PORTSDIR}/www/libwww \
 		t1.5:${PORTSDIR}/devel/t1lib
@@ -44,10 +44,9 @@ CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 PLIST_SUB=	MKTEXLSR=${MKTEXLSR} TEXMFCNF=${TEXMFCNF}
-PKGINSTALL=	${WRKDIR}/pkg-install.sh
-PKGDEINSTALL=	${WRKDIR}/pkg-install.sh
 PKGMESSAGE=	${WRKDIR}/pkg-message
-CONFLICTS=	ja-ptex-base* latex2e-[0-9]* tex-[0-9]* dvips-[0-9]* xdvi-[0-9]*
+CONFLICTS=	ja-ptex-base-[0-9]* latex2e-[0-9]* \
+		tex-[0-9]* dvips-[0-9]* xdvi-[0-9]*
 
 MAN1=		MakeTeXPK.1 access.1 allcm.1 allneeded.1 \
 		amstex.1 bibtex.1 cont-de.1 cont-en.1 cont-nl.1 dmp.1 \
@@ -125,32 +124,23 @@ LIBPNG_PREFIX?=	${LOCALBASE}
 LIBWWW_PREFIX?=	${LOCALBASE}
 LIBT1_PREFIX?=	${LOCALBASE}
 
-TEXMF_TREE=	${PREFIX}/share/texmf
+TEXMF=		share/texmf
+TEXMFLOCAL=	share/texmf-local
+TEXMFLOCAL_LSR=	${PREFIX}/${TEXMFLOCAL}/ls-R
 TEXMFVAR=	share/texmf-var
-TETEX_MODESW=	${LOCALBASE}/bin/tetex-modesw
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
 
-PLIST_SUB+=	TEXMF_TREE=${TEXMF_TREE:S,^${PREFIX}/,,} \
+PLIST_SUB+=	TEXMF=${TEXMF} \
 		TEXMFVAR=${TEXMFVAR}
-PKGINSTALL_SUB=	TETEX_MODESW=${TETEX_MODESW} \
-		MKTEXLSR=${MKTEXLSR}
-PKGMESSAGE_SUB=	TEXMF_TREE=${TEXMF_TREE}
-
-pre-configure:
-	@${ECHO_MSG}
-	@${ECHO_MSG} "It will be ok if configure will complain about a missing texmf tree!"
-	@${ECHO_MSG}
+PKGMESSAGE_SUB=	TEXMF=${TEXMF} \
+		PREFIX=${PREFIX}
 
 post-configure:
-	${SED} ${PKGINSTALL_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
-	${CHMOD} 0755 ${PKGINSTALL}
 	${SED} ${PKGMESSAGE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		< ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/utils/texinfo/util/texi2dvi ${PREFIX}/bin
-	@${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 

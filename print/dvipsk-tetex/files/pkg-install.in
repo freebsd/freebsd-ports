@@ -1,20 +1,34 @@
 #!/bin/sh
 # $FreeBSD$
 
-GREP=/usr/bin/grep
-SED=/usr/bin/sed
-MODE=default
-
+PAPERSIZE=%%PAPERSIZE%%
+DVIPSDIR=%%DVIPSDIR%%
+DVIPSVARDIR=%%DVIPSVARDIR%%
 MKTEXLSR=%%MKTEXLSR%%
-TETEX_MODESW=%%TETEX_MODESW%%
+TEXCONFIG=%%TEXCONFIG%%
+PATH=${PATH}:%%LOCALBASE%%/bin
 
 case $2 in
 POST-INSTALL)
-	${TETEX_MODESW} ${MODE} dvips force
-	${MKTEXLSR}
+	if [ -f ${DVIPSVARDIR}/config.ps ]; then
+		echo "======"
+		echo "NOTICE: you have to merge "\
+			"${DVIPSVARDIR}/config.ps from ${DVIPSDIR}/config.ps."
+		echo "======"
+	fi
+	case ${PAPERSIZE} in
+	letter)
+		${TEXCONFIG} dvips paper letter
 	;;
+	*)
+		${TEXCONFIG} dvips paper a4
+	;;
+	esac
+	${MKTEXLSR}
+;;
 DEINSTALL)
-	${TETEX_MODESW} uninstall dvips
+	rm -f ${DVIPSVARDIR}/config.ps
+	cp -v ${DVIPSDIR}/config.ps.tetex ${DVIPSDIR}/config.ps
 	${MKTEXLSR}
-	;;
+;;
 esac
