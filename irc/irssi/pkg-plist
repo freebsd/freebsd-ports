@@ -1,39 +1,54 @@
-bin/botti
 bin/irssi
-doc/irssi/botnet.txt
-doc/irssi/design.txt
-doc/irssi/formats.txt
-doc/irssi/manual.txt
-doc/irssi/perl.txt
-doc/irssi/signals.txt
-doc/irssi/special_vars.txt
+bin/botti
+share/doc/irssi/botnet.txt
+share/doc/irssi/design.txt
+share/doc/irssi/formats.txt
+share/doc/irssi/manual.txt
+share/doc/irssi/perl.txt
+share/doc/irssi/signals.txt
+share/doc/irssi/special_vars.txt
+share/doc/irssi/startup-HOWTO.txt
+etc/irssi/config.sample
+etc/irssi/default.theme
 etc/irssi/colorless.theme
 etc/irssi/config
-etc/irssi/split.theme
-i386-freebsd/auto/Irssi/.packlist
-i386-freebsd/auto/Irssi/Irssi.bs
-i386-freebsd/auto/Irssi/Irssi.so
-lib/irssi/plugins/libfe_common_irc_dcc.a
-lib/irssi/plugins/libfe_common_irc_dcc.so
-lib/irssi/plugins/libfe_common_irc_dcc.so.0
-lib/irssi/plugins/libfe_common_irc_flood.a
-lib/irssi/plugins/libfe_common_irc_flood.so
-lib/irssi/plugins/libfe_common_irc_flood.so.0
-lib/irssi/plugins/libfe_common_irc_notifylist.a
-lib/irssi/plugins/libfe_common_irc_notifylist.so
-lib/irssi/plugins/libfe_common_irc_notifylist.so.0
-lib/irssi/plugins/libirc_bot.a
-lib/irssi/plugins/libirc_bot.so
-lib/irssi/plugins/libirc_bot.so.0
-lib/irssi/plugins/libirc_dcc.a
-lib/irssi/plugins/libirc_dcc.so
-lib/irssi/plugins/libirc_dcc.so.0
-lib/irssi/plugins/libirc_flood.a
-lib/irssi/plugins/libirc_flood.so
-lib/irssi/plugins/libirc_flood.so.0
-lib/irssi/plugins/libirc_notifylist.a
-lib/irssi/plugins/libirc_notifylist.so
-lib/irssi/plugins/libirc_notifylist.so.0
+lib/perl5/site_perl/5.005/i386-freebsd/auto/Irssi/Irssi.so
+lib/perl5/site_perl/5.005/i386-freebsd/auto/Irssi/Irssi.bs
+lib/perl5/site_perl/5.005/i386-freebsd/auto/Irssi/.packlist
+lib/perl5/site_perl/5.005/i386-freebsd/auto/Irssi/Irc/Irc.so
+lib/perl5/site_perl/5.005/i386-freebsd/auto/Irssi/Irc/Irc.bs
+lib/perl5/site_perl/5.005/i386-freebsd/auto/Irssi/Irc/.packlist
+lib/perl5/site_perl/5.005/i386-freebsd/Irssi.pm
+lib/perl5/site_perl/5.005/i386-freebsd/perllocal.pod
+lib/perl5/site_perl/5.005/i386-freebsd/Irssi/Irc.pm
+lib/irssi/modules/libirc_bot.so
+lib/irssi/modules/libirc_bot.la
+lib/irssi/modules/libirc_bot.a
+lib/irssi/modules/libirc_dcc.so
+lib/irssi/modules/libirc_dcc.la
+lib/irssi/modules/libirc_dcc.a
+lib/irssi/modules/libirc_flood.so
+lib/irssi/modules/libirc_flood.la
+lib/irssi/modules/libirc_flood.a
+lib/irssi/modules/libirc_notifylist.so
+lib/irssi/modules/libirc_notifylist.la
+lib/irssi/modules/libirc_notifylist.a
+lib/irssi/modules/libfe_common_irc_dcc.so
+lib/irssi/modules/libfe_common_irc_dcc.la
+lib/irssi/modules/libfe_common_irc_dcc.a
+lib/irssi/modules/libfe_common_irc_flood.so
+lib/irssi/modules/libfe_common_irc_flood.la
+lib/irssi/modules/libfe_common_irc_flood.a
+lib/irssi/modules/libfe_common_irc_notifylist.so
+lib/irssi/modules/libfe_common_irc_notifylist.la
+lib/irssi/modules/libfe_common_irc_notifylist.a
+lib/irssi/modules/libperl.so
+lib/irssi/modules/libperl.la
+share/locale/pl/LC_MESSAGES/irssi.mo
+share/locale/pt_BR/LC_MESSAGES/irssi.mo
+share/locale/fr/LC_MESSAGES/irssi.mo
+share/locale/de/LC_MESSAGES/irssi.mo
+share/locale/sv/LC_MESSAGES/irssi.mo
 share/irssi/help/action
 share/irssi/help/admin
 share/irssi/help/alias
@@ -125,9 +140,10 @@ share/irssi/help/unban
 share/irssi/help/unignore
 share/irssi/help/unnotify
 share/irssi/help/unquery
+share/irssi/help/unsilence
 share/irssi/help/uping
-share/irssi/help/userhost
 share/irssi/help/ver
+share/irssi/help/userhost
 share/irssi/help/version
 share/irssi/help/voice
 share/irssi/help/wall
@@ -139,15 +155,12 @@ share/irssi/help/whowas
 share/irssi/help/window
 share/irssi/help/wjoin
 share/irssi/help/wquery
-share/locale/de/LC_MESSAGES/irssi.mo
-share/locale/fr/LC_MESSAGES/irssi.mo
-share/locale/pl/LC_MESSAGES/irssi.mo
-share/locale/pt_BR/LC_MESSAGES/irssi.mo
+@dirrm share/doc/irssi
+@dirrm etc/irssi
+@dirrm lib/perl5/site_perl/5.005/i386-freebsd/auto/Irssi/Irc
+@dirrm lib/perl5/site_perl/5.005/i386-freebsd/auto/Irssi
+@dirrm lib/perl5/site_perl/5.005/i386-freebsd/Irssi
+@dirrm lib/irssi/modules
+@dirrm lib/irssi
 @dirrm share/irssi/help
 @dirrm share/irssi
-@dirrm lib/irssi/plugins
-@dirrm lib/irssi
-@dirrm i386-freebsd/auto/Irssi
-@dirrm etc/irssi
-@dirrm doc/irssi
-@dirrm doc

@@ -1,0 +1,22 @@
+--- Makefile.in.orig	Sat Dec  2 23:24:11 2000
++++ Makefile.in	Sat Dec  9 14:00:49 2000
+@@ -121,7 +121,7 @@
+ SUBDIRS = po intl $(GLIB_DIR) src $(SERVERTEST) docs scripts
+ 
+ confdir = $(sysconfdir)/irssi
+-conf_DATA = config default.theme colorless.theme
++conf_DATA = config.sample default.theme colorless.theme
+ 
+ noinst_HEADERS = irssi-version.h
+ 
+@@ -439,8 +439,8 @@
+ 
+ config.h: default-config.h default-theme.h
+ 
+-default-config.h: $(srcdir)/config
+-	$(srcdir)/file2header.sh $(srcdir)/config default_config > default-config.h
++default-config.h: $(srcdir)/config.sample
++	$(srcdir)/file2header.sh $(srcdir)/config.sample default_config > default-config.h
+ default-theme.h: $(srcdir)/default.theme
+ 	$(srcdir)/file2header.sh $(srcdir)/default.theme default_theme > default-theme.h
+ 
