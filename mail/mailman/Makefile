@@ -7,7 +7,7 @@
 
 PORTNAME=	mailman
 PORTVERSION=	2.0b5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=   http://download.sourceforge.net/mailman/
 DISTNAME=       mailman-2.0beta5
@@ -29,7 +29,7 @@ MAILMANDIR=	${PREFIX}/mailman
 
 pre-configure:
 	# Add the username, uid, group amd gid
-	${SH} ${FILESDIR}/configure.sh ${UNAME} ${UID}
+	${SH} ${FILESDIR}/configure.sh ${UNAME} ${UID} ${MAILMANDIR}
 
 	# Create the dir and the correct permissions for it.
 	${MKDIR} ${MAILMANDIR}
