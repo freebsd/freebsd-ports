@@ -1475,8 +1475,6 @@
 %%T%%/man/ja_JP.eucJP/man1/rmic.1
 %%T%%/man/ja_JP.eucJP/man1/serialver.1
 %%T%%/man/ja_JP.eucJP/man1/idlj.1
-%%T%%/.systemPrefs/.system.lock
-%%T%%/.systemPrefs/.systemRootModFile
 @dirrm %%T%%/jre/bin
 @dirrm %%T%%/jre/lib/applet
 @dirrm %%T%%/jre/lib/i386/native_threads
@@ -1696,5 +1694,4 @@
 @dirrm %%T%%/man/ja_JP.eucJP/man1
 @dirrm %%T%%/man/ja_JP.eucJP
 @dirrm %%T%%/man
-@dirrm %%T%%/.systemPrefs
 @dirrm %%T%%
