@@ -34,13 +34,6 @@ use Sys::Hostname;	# get hostname() function
 # (these are gradually being migrated to cfg.pm)
 #
 ############################################################
-#
-# Where do you want the RCS ID and delta info?
-# 0 = none,
-# 1 = in mail only,
-# 2 = rcsids in both mail and logs.
-#
-my $RCSIDINFO = 2;
 
 # The command used to mail the log messages.  Usually something
 # like '/usr/sbin/sendmail'.  
@@ -677,19 +670,17 @@ foreach my $tag ( keys %removed_files ) {
 }
 &write_logfile("$LOG_FILE.$i.$PID", @log_lines);
 
-if ($RCSIDINFO) {
-	foreach my $tag ( keys %added_files ) {
-		&change_summary_added("$SUMMARY_FILE.$i.$PID",
-		    @{ $added_files{$tag} });
-	}
-	foreach my $tag ( keys %changed_files ) {
-		&change_summary_changed("$SUMMARY_FILE.$i.$PID",
-		    @{ $changed_files{$tag} });
-	}
-	foreach my $tag ( keys %removed_files ) {
-		&change_summary_removed("$SUMMARY_FILE.$i.$PID",
-		    @{ $removed_files{$tag} });
-	}
+foreach my $tag ( keys %added_files ) {
+	&change_summary_added("$SUMMARY_FILE.$i.$PID",
+	    @{ $added_files{$tag} });
+}
+foreach my $tag ( keys %changed_files ) {
+	&change_summary_changed("$SUMMARY_FILE.$i.$PID",
+	    @{ $changed_files{$tag} });
+}
+foreach my $tag ( keys %removed_files ) {
+	&change_summary_removed("$SUMMARY_FILE.$i.$PID",
+	    @{ $removed_files{$tag} });
 }
 
 #
@@ -731,11 +722,9 @@ for (my $i = 0; ; $i++) {
 	push @log_msg, "  Log:", (map { "  $_" } @msg_lines) if @msg_lines;
 
 
-	if ($RCSIDINFO == 2) {
-		if (-e "$SUMMARY_FILE.$i.$PID") {
-			push @log_msg, "  ", map {"  $_"}
-			    format_summaries("$SUMMARY_FILE.$i.$PID");
-		}
+	if (-e "$SUMMARY_FILE.$i.$PID") {
+		push @log_msg, "  ", map {"  $_"}
+		    format_summaries("$SUMMARY_FILE.$i.$PID");
 	}
 
 	push @log_msg, "", "";
@@ -744,19 +733,6 @@ for (my $i = 0; ; $i++) {
 # Put the log message at the beginning of the Changes file
 #
 &do_changes_file(@log_msg);
-
-#
-# Now generate the extra info for the mail message.
-#
-if ($RCSIDINFO == 1) {
-	my @summary_files;
-	for (my $i = 0; ; $i++) {
-		last unless -e "$LOG_FILE.$i.$PID";
-		push @summary_files, "$SUMMARY_FILE.$i.$PID";
-	}
-	push @log_msg, format_summaries(@summary_files);
-	push @log_msg, "";
-}
 
 #
 # Mail out the notification.
