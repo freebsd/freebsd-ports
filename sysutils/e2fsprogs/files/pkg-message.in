@@ -1,0 +1,6 @@
+To have your ext2 and ext3 filesystems fsck'ed correctly without explicitly
+invoking the fsck_ext2fs utility installed by this port you will need to
+create links for the fsck utilities installed by this port in /sbin, e.g.
+
+ln %%PREFIX%%/sbin/fsck_ext2fs /sbin/
+ln %%PREFIX%%/sbin/e2fsck.static /sbin/e2fsck
