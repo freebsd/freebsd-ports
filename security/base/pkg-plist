@@ -99,6 +99,7 @@ www/base/sql/acid2base_tbls_pgsql.sql
 www/base/sql/create_base_tbls_mssql.sql
 www/base/sql/create_base_tbls_mssql_extra.sql
 www/base/sql/create_base_tbls_mysql.sql
+www/base/sql/create_base_tbls_oracle.sql
 www/base/sql/create_base_tbls_pgsql.sql
 www/base/sql/create_base_tbls_pgsql_extra.sql
 www/base/sql/upgrade_0.9.x_to_1.0-mysql.sql
@@ -113,4 +114,4 @@ www/base/styles/base_style.css
 @dirrm www/base/images
 @dirrm www/base/help
 @dirrm www/base/admin
-@dirrm www/base
+@unexec rmdir %D/www/base 2>/dev/null || true
