@@ -2,13 +2,14 @@ bin/cim
 bin/cim2latex
 bin/cim2ps
 bin/cimindent
+include/cim.h
 lib/libcim-atr.a
 lib/libcim.a
 lib/libcim.la
-lib/libcim.so.1.0
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R
-include/cim.h
+lib/libcim.so
+lib/libcim.so.3
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @unexec install-info --delete %D/info/cim.info %D/info/dir
 info/cim.info
 @exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
