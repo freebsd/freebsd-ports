@@ -29,8 +29,10 @@ share/gnome/idl/oaf-factory.idl
 share/gnome/idl/oaf.idl
 share/gnome/oaf/OAF_naming-service.oaf
 share/gnome/oaf/empty.oafinfo
+share/locale/az/LC_MESSAGES/oaf.mo
 share/locale/da/LC_MESSAGES/oaf.mo
 share/locale/de/LC_MESSAGES/oaf.mo
+share/locale/el/LC_MESSAGES/oaf.mo
 share/locale/es/LC_MESSAGES/oaf.mo
 share/locale/fi/LC_MESSAGES/oaf.mo
 share/locale/fr/LC_MESSAGES/oaf.mo
@@ -40,9 +42,11 @@ share/locale/hu/LC_MESSAGES/oaf.mo
 share/locale/it/LC_MESSAGES/oaf.mo
 share/locale/ja/LC_MESSAGES/oaf.mo
 share/locale/ko/LC_MESSAGES/oaf.mo
+share/locale/nl/LC_MESSAGES/oaf.mo
 share/locale/nn/LC_MESSAGES/oaf.mo
 share/locale/no/LC_MESSAGES/oaf.mo
 share/locale/pl/LC_MESSAGES/oaf.mo
+share/locale/pt/LC_MESSAGES/oaf.mo
 share/locale/pt_BR/LC_MESSAGES/oaf.mo
 share/locale/ro/LC_MESSAGES/oaf.mo
 share/locale/ru/LC_MESSAGES/oaf.mo
@@ -52,9 +56,7 @@ share/locale/sv/LC_MESSAGES/oaf.mo
 share/locale/ta/LC_MESSAGES/oaf.mo
 share/locale/tr/LC_MESSAGES/oaf.mo
 share/locale/uk/LC_MESSAGES/oaf.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/oaf.mo
-@dirrm share/gnome/oaf/html/liboaf
-@dirrm share/gnome/oaf/html
+share/locale/zh_TW/LC_MESSAGES/oaf.mo
 @unexec rmdir %D/share/gnome/oaf 2>/dev/null || true
 @unexec rmdir %D/share/gnome/idl 2>/dev/null || true
 @unexec rmdir %D/share/gnome 2>/dev/null || true

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	oaf
-PORTVERSION=	0.6.6
+PORTVERSION=	0.6.7
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/oaf
@@ -25,6 +25,8 @@ CONFIGURE_ARGS= --enable-static --enable-shared \
 		--disable-more-warnings
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl"
+
+MAN1=		oafd.1
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
