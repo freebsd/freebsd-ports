@@ -24,6 +24,12 @@ CONFIGURE_ARGS=	--disable-float
 
 MAN1=		pfe.1
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386" && ${ARCH} != "sparc64"
+BROKEN=		"Does not compile on !i386 and !sparc64"
+.endif
+
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/../doc/pfe.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
@@ -31,4 +37,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/../doc/*.html ${PREFIX}/share/doc/pfe
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
