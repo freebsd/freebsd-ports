@@ -5,14 +5,22 @@ include/acc_user.h
 include/ivl_target.h
 include/veriuser.h
 include/vpi_user.h
+include/_pli_types.h
 lib/ivl/cadpli.vpl
+lib/ivl/fpga-s.conf
+lib/ivl/fpga.conf
 lib/ivl/fpga.tgt
-lib/ivl/iverilog.conf
 lib/ivl/ivl
 lib/ivl/ivlpp
+lib/ivl/null-s.conf
+lib/ivl/null.conf
 lib/ivl/null.tgt
 lib/ivl/system.vpi
+lib/ivl/vvp-s.conf
+lib/ivl/vvp.conf
 lib/ivl/vvp.tgt
+lib/ivl/xnf-s.conf
+lib/ivl/xnf.conf
 lib/libveriuser.a
 lib/libvpi.a
 @dirrm lib/ivl
