@@ -49,6 +49,7 @@
     SUBDIR += mlan3
     SUBDIR += mserver
     SUBDIR += mwavem
+    SUBDIR += nasawash
     SUBDIR += nokryptia
     SUBDIR += obexapp
     SUBDIR += openobex
