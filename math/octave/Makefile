@@ -1,12 +1,12 @@
 # New ports collection makefile for:	octave
-# Version required:	2.0.1
-# Date created:		12 Jan 1997
+# Version required:	2.0.8
+# Date created:		28 June 1997
 # Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.6 1996/12/12 08:03:38 tg Exp $
+# $Id: Makefile,v 1.7 1997/01/20 22:13:37 chuckr Exp $
 #
 
-DISTNAME=	octave-2.0.1
+DISTNAME=	octave-2.0.8
 CATEGORIES=	math 
 MASTER_SITES=	ftp://ftp.che.wisc.edu/pub/octave/
 
@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 MAN1=		octave.1
 
 post-configure:
-	(cd $(WRKDIR)/octave-2.0.1/scripts; ./configure)
+	(cd $(WRKDIR)/octave-2.0.8/scripts; ./configure)
 
 OCTAVE-INFO= octave.info octave.info-1 octave.info-10 octave.info-11 octave.info-12 octave.info-2 octave.info-3 octave.info-4 octave.info-5 octave.info-6 octave.info-7 octave.info-8 octave.info-9
 LIBOCTAVE-INFO= liboctave.info liboctave.info-1 liboctave.info-2 liboctave.info-3
@@ -31,6 +31,9 @@ post-install:
 	mv ${PREFIX}/lib/liboctave.so ${PREFIX}/lib/liboctave.so.2.0
 	mv ${PREFIX}/lib/liboctinterp.so ${PREFIX}/lib/liboctinterp.so.2.0
 	mv ${PREFIX}/lib/libtinst.so ${PREFIX}/lib/libtinst.so.2.0
+	mv ${PREFIX}/lib/libreadline.so ${PREFIX}/lib/libreadline.so.2.0
+	mv ${PREFIX}/lib/libhistory.so ${PREFIX}/lib/libhistory.so.2.0
+	mv ${PREFIX}/lib/libkpathsea.so ${PREFIX}/lib/libkpathsea.so.2.0
 	/sbin/ldconfig -m $(PREFIX)/lib
 .ifndef NOPORTDOCS
 .for file in $(OCTAVE-INFO)
