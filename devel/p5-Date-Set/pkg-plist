@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Date/Set/ICal.pm
+%%SITE_PERL%%/Date/Set.pm
+%%SITE_PERL%%/auto/Date/Set/ICal/autosplit.ix
+%%SITE_PERL%%/auto/Date/Set/autosplit.ix
+@dirrm %%SITE_PERL%%/Date/Set
+@dirrm %%SITE_PERL%%/auto/Date/Set/ICal
+@dirrm %%SITE_PERL%%/auto/Date/Set
