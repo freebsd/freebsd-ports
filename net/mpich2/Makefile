@@ -6,24 +6,24 @@
 #
 
 PORTNAME=	mpich
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/
 DIST_SUBDIR=	mpich
 
-PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/patch/${PORTVERSION}/
-PATCHFILES=	6589
-
 MAINTAINER=	dbader@eece.unm.edu
 
-BROKEN=		"Does not package correctly"
-
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
-BUILD_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
+PATCH_SITES=	ftp://ftp.mcs.anl.gov/pub/mpi/patch/${PORTVERSION}/
+RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
+		javavm:${PORTSDIR}/java/javavmwrapper \
+		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jdk13
+BUILD_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
+		javavm:${PORTSDIR}/java/javavmwrapper \
+		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jdk13
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-cflags="${CFLAGS}" -prefix=${PREFIX}/mpich \
-		-mpe_opts="--with-wishloc=wish8.0"
+		-mpe_opts="--with-wishloc=wish8.4"
 
 .include <bsd.port.pre.mk>
 
