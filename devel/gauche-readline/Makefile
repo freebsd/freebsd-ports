@@ -19,12 +19,10 @@ COMMENT=	A pure gauche/scheme implementation of the Readline library
 RUN_DEPENDS=	gosh:${PORTSDIR}/lang/gauche
 BUILD_DEPENDS=	gauche-config:${PORTSDIR}/lang/gauche
 
-.include <bsd.port.pre.mk>
-GAUCHE_CONFIG=	${LOCALBASE}/bin/gauche-config
-GAUCHE_LIBDIR=	${GAUCHE_CONFIG} --sitelibdir
-PLIST_SUB+=	GAUCHE_LIBDIR=${GAUCHE_LIBDIR:S/${LOCALBASE}\///}
+GAUCHE_LIBDIR=	share/gauche/site/lib
+PLIST_SUB+=	GAUCHE_LIBDIR=${GAUCHE_LIBDIR}
 
 do-install:
-	@${CP} -r ${WRKSRC}/readline* ${GAUCHE_LIBDIR}
+	${CP} -R ${WRKSRC}/readline* `gauche-config --sitelibdir`
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
