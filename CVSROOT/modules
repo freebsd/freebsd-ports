@@ -713,6 +713,7 @@ bmf		ports/mail/bmf
 bmon		ports/net/bmon
 bmp-extra-plugins	ports/multimedia/bmp-extra-plugins
 bmp-faad	ports/audio/bmp-faad
+bmp-rootvis	ports/graphics/bmp-rootvis
 bmp-wma		ports/audio/bmp-wma
 bn-aspell	ports/textproc/bn-aspell
 bnbt		ports/net/bnbt
