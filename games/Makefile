@@ -366,6 +366,7 @@
     SUBDIR += utserver-asu
     SUBDIR += utserver-to
     SUBDIR += vamos
+    SUBDIR += vectoroids
     SUBDIR += virt
     SUBDIR += wmeyes
     SUBDIR += wmfortune
