@@ -7,6 +7,7 @@
 
 PORTNAME=	virtualmin
 PORTVERSION=	1.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/download/modules/
 DISTNAME=	virtual-server-${PORTVERSION}
@@ -19,13 +20,17 @@ RUN_DEPENDS=	${LOCALBASE}/lib/webmin/webmin-init:${PORTSDIR}/sysutils/webmin
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/virtual-server
+USE_REINPLACE=	yes
 
 post-extract:
 	@${FIND} ${WRKSRC} -name .xvpics | ${XARGS} ${RM} -r
 	@${FIND} ${WRKSRC} -name *.swp | ${XARGS} ${RM}
+	@${FIND} ${WRKSRC} -name *.cgi | ${XARGS} ${REINPLACE_CMD} -e "s@/usr/local/bin/perl@${PERL}@"
+	@${FIND} ${WRKSRC} -name *.bak | ${XARGS} ${RM}
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/webmin
+	@${MKDIR} ${PREFIX}/etc/webmin/virtual-server
 	@${CP} -r ${WRKSRC} ${PREFIX}/lib/webmin
 
 post-install:
