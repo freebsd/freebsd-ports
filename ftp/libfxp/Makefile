@@ -12,6 +12,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://millweed.com/projects/libfxp/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An ftp client library
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

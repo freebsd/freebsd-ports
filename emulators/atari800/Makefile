@@ -15,6 +15,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Atari 8-bit computer emulator
 
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 

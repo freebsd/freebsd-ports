@@ -12,6 +12,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://savannah.nongnu.org/download/muddleftpd/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A new ftp server that can perform a variety of ftp tasks
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

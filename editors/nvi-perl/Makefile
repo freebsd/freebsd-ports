@@ -14,6 +14,7 @@ MASTER_SITES=	ftp://sleepy.vwh.net/pub/ \
 PKGNAMESUFFIX=	-perl
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	A clone of vi/ex, with perl5 linked into
 
 # can't say PATCH_DIST_STRIP=-p1 because contains files outside ${WRKSRC}
 PATCH_DIST_ARGS=-d ${WRKSRC}/.. --forward --quiet -E -p0

@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Assembler for Hennessy and Patterson's DLX architecture
 
 .if ${MACHINE_ARCH} == alpha
 BROKEN=		will not build on alpha

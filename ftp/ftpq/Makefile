@@ -13,6 +13,7 @@ CATEGORIES=	ftp
 MASTER_SITES=	http://www.tranchant.freeserve.co.uk/software/
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Upload queue manager for non-permanent connections
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

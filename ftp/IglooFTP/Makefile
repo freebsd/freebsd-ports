@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	system/network/file-transfer
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Easy to use FTP client for X Window System
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 

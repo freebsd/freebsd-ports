@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://ftp.willows.com/pub/twin/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Willows Toolkit for migrating and developing Windows applications
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

@@ -18,6 +18,7 @@ PATCHFILES=	cpm-0.2.1-glibc-rjm.patch.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Cpm emulator
 
 ONLY_FOR_ARCHS=	i386
 

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	system/emulators
 DISTFILES=	${DISTNAME}-src.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	An extensible hardware simulation framework with MC68K support
 
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 

@@ -14,6 +14,7 @@ MASTER_SITES=	# none for now
 DISTFILES=	# none for now
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Compatibility framework necessary for SVR4 emulation
 
 PREFIX=		/	# distfile tared as "/compat/svr4"
 NO_MTREE=	yes

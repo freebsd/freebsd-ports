@@ -13,6 +13,7 @@ MASTER_SITES=	http://www.cs.wisc.edu/~larus/SPIM/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
+COMMENT=	MIPS R2000 Simulator
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
