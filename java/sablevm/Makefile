@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sablevm
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	java
 MASTER_SITES=	http://unc.dl.sourceforge.net/sablevm/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
@@ -28,10 +28,38 @@ LIBTOOLFILES=	${SABLEVMDIR}/configure ${NATIVEDIR}/configure
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
+# Uncomment to force gnome dependency
+#USE_GNOMELIBS=	yes
 
+# Directories for the three SableVM source components
 SABLEVMDIR=	${PORTNAME}-${PORTVERSION}
 NATIVEDIR=	${PORTNAME}-native-library-${PORTVERSION}
 CLASSESDIR=	${PORTNAME}-class-library-${PORTVERSION}
+
+# Conditionally compile the gnome-dependent stuff
+.if !defined(USE_GNOMELIBS) && !exists(${X11BASE}/libart_lgpl/art_misc.h)
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-aa ${PATCHDIR}/extra-patch-ab
+pre-fetch:
+	@${ECHO} ''
+	@${ECHO} '***' '                 ' NOTICE
+	@${ECHO} '***'
+	@${ECHO} '***' You do not seem to have the Gnome libraries installed.
+	@${ECHO} '***' Therefore, SableVM will be built without graphics
+	@${ECHO} '***' support. If you would like to install the Gnome
+	@${ECHO} '***' libraries for include graphics support, hit Control-C
+	@${ECHO} '***' now and type \'make USE_GNOMELIBS=yes\'.
+	@${ECHO} ''
+	@sleep 3
+.endif
+
+# Repair make dependency damage caused by patching 'configure.ac' files
+post-patch:
+		@for dir in ${SABLEVMDIR}; do \
+		    for file in aclocal.m4 configure Makefile.in Makefile; do \
+			${ECHO} ${TOUCH} ${WRKDIR}/$${dir}/$${file}; \
+			touch ${WRKDIR}/$${dir}/$${file}; \
+		    done; \
+		done
 
 pre-configure:
 		@echo "===>    ${NATIVEDIR}"
