@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	msql
-PORTVERSION=	2.0.4.1
+PORTVERSION=    2.0.11
 CATEGORIES=	databases
 
 MAINTAINER=	ports@FreeBSD.org
@@ -21,21 +21,25 @@ MAKE_ENV+=	WRKSRC=${WRKSRC}
 # dumped your databases (or just build with -DOVERWRITE_DB)
 #OVERWRITE_DB=	YES
 
+post-patch:
+		cp ${FILESDIR}/sobject.mm ${WRKSRC}/src/makegen
+
 do-configure:
-		cd ${WRKSRC}; make target
+		cd ${WRKSRC}; ${MAKE} target
 		cd ${WRKSRC}/targets/freebsd; ${SETENV} ${MAKE_ENV} ./setup
-		@${SETENV} ${MAKE_ENV} /usr/bin/perl ${SCRIPTDIR}/customize_scripts
+		@${SETENV} ${MAKE_ENV} ${PERL} ${SCRIPTDIR}/customize_scripts
 
 pre-install:
-		@${SETENV} ${MAKE_ENV} /usr/bin/perl ${SCRIPTDIR}/check_old_version
-		@${SETENV} ${MAKE_ENV} /usr/bin/perl ${SCRIPTDIR}/createuser
+		@${SETENV} ${MAKE_ENV} ${PERL} ${SCRIPTDIR}/check_old_version
+		@${SETENV} ${MAKE_ENV} ${PERL} ${SCRIPTDIR}/createuser
 
 post-install:
 		@${INSTALL_SCRIPT} ${WRKSRC}/scripts/run_daemon ${PREFIX}/bin
 		@${INSTALL_DATA} ${FILESDIR}/post-install-notes ${PREFIX}/share/doc/msql
-		@for file in msql2d msqladmin msqlimport msqlexport; do\
+		@for file in msqladmin msqlimport msqlexport; do\
 			/usr/bin/chgrp msql ${PREFIX}/bin/$$file; \
 		done
+		/usr/bin/chgrp msql ${PREFIX}/sbin/msql2d
 		@for file in RELEASE_NOTES MSQL_BOOK INSTALL; do \
 			${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/share/doc/msql; \
 		done

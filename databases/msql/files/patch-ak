@@ -1,22 +1,11 @@
---- src/msql/index.c	Fri Feb  7 10:06:42 1997
-+++ src/msql/index.c	Fri Feb  7 10:17:04 1997
-@@ -105,8 +105,7 @@
-                 fd;
+--- src/w3-msql/Makefile.tmpl.bak	Thu Aug 19 07:33:22 1999
++++ src/w3-msql/Makefile.tmpl	Sat Jan 27 08:36:58 2001
+@@ -14,7 +14,7 @@
+ !object w3-msql.o w3-msql.c
+ !object w3-auth.o w3-auth.c
  
-         msqlTrace(TRACE_IN,"loadIndices()");
--        (void)snprintf(path,MAXPATHLEN,"%s/msqldb/%s/%s.idx",
--		msqlHomeDir,db,table);
-+        (void)snprintf(path,MAXPATHLEN,"/var/db/msqldb/%s/%s.idx",db,table);
- #ifdef OS2
-         fd = _sopen(path ,O_RDONLY | O_BINARY, SH_DENYNO, S_IREAD | S_IWRITE);
- #else
-@@ -163,8 +163,8 @@
- 				curIndex->next = NULL;
- 			}
-                 }
--		snprintf(path,MAXPATHLEN,"%s/msqldb/%s/%s.idx-%s",
--			msqlHomeDir,db,table, curIndex->name);
-+		snprintf(path,MAXPATHLEN,"/var/db/msqldb/%s/%s.idx-%s",
-+			db,table, curIndex->name);
- 		curIndex->tree = avlOpen(path);
- 		curIndex->buf = (char *)malloc(curIndex->length + 1);
+-!program w3-msql mod_w3msql.o,w3-msql.o,lexer.o,modules.o,auth.o,http.o,../lang-common/mod_std.o,../lang-common/mod_msql.o,../lang-common/liblite.a,../msql/libmsql.a,../regexp/libregexp.a
++!program w3-msql mod_w3msql.o,w3-msql.o,lexer.o,modules.o,auth.o,http.o,../lang-common/mod_std.o,../lang-common/mod_msql.o,../lang-common/liblite.a,../msql/libmsql.a,-lcompat
+ 
+ !program w3-auth w3-auth.o,http.o,../lang-common/fcrypt.o,../msql/libmsql.a
+ 

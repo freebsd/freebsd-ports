@@ -1,0 +1,20 @@
+--- src/lang-common/types.c.orig	Thu Aug 19 07:33:11 1999
++++ src/lang-common/types.c	Sat Jan 27 09:09:39 2001
+@@ -23,7 +23,7 @@
+ 
+ #include "lite.h"
+ #include "y.tab.h"
+-#include <regexp/regexp.h>
++#include <regexp.h>
+ 
+ extern	char	*errMsg;
+ 
+@@ -811,7 +811,7 @@
+ 
+ 
+ void regerror(msg)
+-	char	*msg;
++	const char    *msg;
+ {
+ 	char	buf[160];
+ 

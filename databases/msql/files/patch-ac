@@ -1,5 +1,5 @@
---- src/conf/site.mm.in.orig	Fri May 29 19:21:51 1998
-+++ src/conf/site.mm.in	Fri Aug 28 16:24:37 1998
+--- src/conf/site.mm.in.orig	Thu Aug 19 07:33:09 1999
++++ src/conf/site.mm.in	Sat Jan 27 08:26:29 2001
 @@ -3,8 +3,8 @@
  #
  
@@ -10,17 +10,11 @@
 +INST_DIR:= $(PREFIX)
  HAVE_DYNAMIC= -DHAVE_DYNAMIC
  CC_ONLY_FLAGS=
- LINK_ONLY_FLAGS=
-@@ -34,10 +34,10 @@
- EXTRA_LIB= @LIBS@
- 
- # Any other CFlags required
--EXTRA_CFLAGS= @DEFS@ $(SSIZE_T) $(U_INT) $(BITTYPES)
-+EXTRA_CFLAGS= @DEFS@ $(SSIZE_T) $(U_INT) $(BITTYPES) -fpic
- 
+ LINK_ONLY_FLAGS= @LINUX_DYNAMIC@
+@@ -44,5 +44,5 @@
  # Directory for pid file
  PID_DIR= @PID_DIR@
  
--CFLAGS= -O -I$(TOP)/ $(EXTRA_CFLAGS)
-+CFLAGS+= -I$(TOP)/ $(EXTRA_CFLAGS)
+-CFLAGS= -O -I$(TOP)/ $(EXTRA_CFLAGS) -D$(OS_TYPE)
++CFLAGS+= -I$(TOP)/ $(EXTRA_CFLAGS) -D$(OS_TYPE)
  LDLIBS= -L$(TOP)/lib $(EXTRA_LIB)

@@ -1,0 +1,11 @@
+--- src/w3-msql/mod_w3msql.c.bak	Thu Aug 19 07:33:23 1999
++++ src/w3-msql/mod_w3msql.c	Sat Jan 27 08:51:39 2001
+@@ -35,7 +35,7 @@
+ 
+ #include <common/portability.h>
+ #include "lite.h"
+-#include "regexp/regexp.h"
++#include <regexp.h>
+ 
+ #include <time.h>
+ 

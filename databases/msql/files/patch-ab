@@ -1,6 +1,6 @@
---- scripts/run_daemon.orig	Mon Dec 16 03:44:22 1996
-+++ scripts/run_daemon	Sun Dec 22 15:54:18 1996
-@@ -9,23 +9,25 @@
+--- scripts/run_daemon.orig	Thu Aug 19 07:33:07 1999
++++ scripts/run_daemon	Sat Jan 27 11:08:59 2001
+@@ -9,24 +9,26 @@
  #
  #					bambi@Bond.edu.au
  
@@ -29,10 +29,12 @@
  while :
  do
 -	cd ${INST_DIR}/debug/${PROG}
+-	${INST_DIR}/bin/${PROG} > output 2>&1
 +	cd /tmp/debug/${PROG}
- 	${INST_DIR}/bin/${PROG} > output 2>&1
++	${INST_DIR}/sbin/${PROG} > output 2>&1
  	echo "Program : ${PROG}
  Time : `date`
+ Program Output
 @@ -34,6 +36,6 @@
  
  " > mail.tmp

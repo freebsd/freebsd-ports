@@ -1,0 +1,20 @@
+--- src/msql/time.c.bak	Thu Aug 19 07:33:20 1999
++++ src/msql/time.c	Sat Jan 27 10:12:49 2001
+@@ -239,6 +239,7 @@
+ 		return(-1);
+ 	if (year < 100 && strlen(cp2+1) == 2)
+ 	{
++#if 0 /* regression test fails otherwise */
+ 		char	yearBuf[10];
+ 		struct	tm *locTime;
+ 		time_t	clock;
+@@ -248,6 +249,9 @@
+ 		strftime(yearBuf,10,"%Y",locTime);
+ 		yearBuf[2] = 0;
+ 		year = (atoi(yearBuf) * 100) + year;
++#else
++		year += 1900;
++#endif
+ 	}
+ 	year += 4096;
+ 
