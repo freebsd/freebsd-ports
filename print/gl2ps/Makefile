@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	gl2ps
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	print graphics
 MASTER_SITES=	http://www.geuz.org/gl2ps/src/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	A C library providing vector output for OpenGL application
@@ -35,7 +36,7 @@ do-install:
 
 .ifndef (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/gl2ps.ps ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/gl2ps.pdf ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
