@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hb
-PORTVERSION=	1.86
+PORTVERSION=	1.88
 CATEGORIES=	misc python
 MASTER_SITES=	http://www.tundraware.com/Software/hb/
 
