@@ -1,5 +1,5 @@
---- Makefile.dist	Thu Dec 19 21:58:15 1996
-+++ Makefile	Sun Apr 13 00:54:03 1997
+--- Makefile.orig	Mon Aug 31 22:57:28 1998
++++ Makefile	Fri Sep 11 14:14:35 1998
 @@ -1,5 +1,5 @@
  # Choose your C compiler
 -CC = gcc 
@@ -7,16 +7,16 @@
  #CC = cc 
  
  # Possible options:
-@@ -7,12 +7,12 @@
- # TTCP : supports the T/TCP protocol (few systems support it)
+@@ -9,12 +9,12 @@
+ # ICP : supports the ICP protocol (Web proxy/caches). Requires HTTP.
  # USE_SIGACTION: uses sigaction instead of signal. Necessary on pure BSD
  # machines because we need to change the semantic of signals.
--OPTIONS = -DHTTP -DUSE_SIGACTION
-+OPTIONS = -DHTTP -DUSE_SIGACTION -DTTCP
+-OPTIONS =  -DHTTP -DUSE_SIGACTION
++OPTIONS =  -DHTTP -DUSE_SIGACTION -DTTCP
  
  # Flags for gcc
--CFLAGS = -c -O3 $(OPTIONS) -Wall
-+#CFLAGS = -c -O3 $(OPTIONS) -Wall
+-CFLAGS = -c  -O3 $(OPTIONS) -Wall
++#CFLAGS = -c  -O3 $(OPTIONS) -Wall
  # Flags for cc
 -#CFLAGS = -c -O $(OPTIONS)
 +CFLAGS = -c -O $(OPTIONS)
