@@ -25,6 +25,9 @@ b)	Configure flowscan, see above mentioned docu !
 		"foo".sample ...
 c)	Customize and install crontab file, example see:
 		${PREFIX}/share/doc/flowscan/crontab.sample
-
 d)	Activate flowscan startscript by renaming it as usual, see example in:
 		${PREFIX}/etc/rc.d/flowscan.sh.sample
+e)	Create graphs using make by customizing the sample Makefile, see docu !
+		${PREFIX}/var/db/flows/graphs/Makefile.sample
+	Please note, that the Makefile has to be reconfigured if you add
+	or remove protocols in ${PREFIX}/var/db/flows/bin/CampusIO.cf !

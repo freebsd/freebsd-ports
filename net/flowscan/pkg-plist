@@ -1,3 +1,4 @@
+etc/rc.d/cflowd-base.sh.sample
 etc/rc.d/cflowd-flowscan.sh.sample
 var/db/flows/bin/flowscan
 var/db/flows/bin/FlowScan.pm
@@ -14,7 +15,7 @@ var/db/flows/bin/SubNetIO.cf.sample
 var/db/flows/bin/flowscan.cf.sample
 var/db/flows/bin/local_nets.boulder.sample
 var/db/flows/bin/our_subnets.boulder.sample
-var/db/flows/graphs/.keep_me
+var/db/flows/graphs/Makefile.sample
 share/doc/flowscan/README
 share/doc/flowscan/README.html
 share/doc/flowscan/INSTALL
