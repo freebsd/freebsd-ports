@@ -71,6 +71,9 @@ bin/xnsc
 %%PYTHON_SITELIBDIR%%/Pyro/util.py
 %%PYTHON_SITELIBDIR%%/Pyro/util.pyc
 %%PYTHON_SITELIBDIR%%/Pyro/util.pyo
+%%PYTHON_SITELIBDIR%%/Pyro/util2.py
+%%PYTHON_SITELIBDIR%%/Pyro/util2.pyc
+%%PYTHON_SITELIBDIR%%/Pyro/util2.pyo
 %%PYTHON_SITELIBDIR%%/Pyro/wxnsc.py
 %%PYTHON_SITELIBDIR%%/Pyro/wxnsc.pyc
 %%PYTHON_SITELIBDIR%%/Pyro/wxnsc.pyo
@@ -96,6 +99,9 @@ bin/xnsc
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/PyroManual.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%EXAMPLESDIR%%/AllInOne/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/AllInOne/allinone_ownloop.py
+%%PORTDOCS%%%%EXAMPLESDIR%%/AllInOne/allinone_threads.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/Bank2/BankServer.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/Bank2/Readme.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/Bank2/banks.py
@@ -189,6 +195,7 @@ bin/xnsc
 %%PORTDOCS%%%%EXAMPLESDIR%%/inheritance/inherit.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/inheritance/server.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/logging/Readme.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/logging/logging.cfg
 %%PORTDOCS%%%%EXAMPLESDIR%%/logging/testlogging.py
 %%PORTDOCS%%%%EXAMPLESDIR%%/maxclients/Readme.txt
 %%PORTDOCS%%%%EXAMPLESDIR%%/maxclients/client.py
@@ -264,5 +271,6 @@ bin/xnsc
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/NS_sec_plugins
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/BankExample
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/Bank2
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/AllInOne
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
