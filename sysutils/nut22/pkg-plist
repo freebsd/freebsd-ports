@@ -2,6 +2,8 @@ bin/upsc
 bin/upscmd
 bin/upslog
 bin/upsrw
+etc/nut/cmdvartab
+etc/nut/driver.list
 etc/nut/ups.conf.sample
 etc/nut/upsd.conf.sample
 etc/nut/upsd.users.sample
@@ -9,31 +11,27 @@ etc/nut/upsmon.conf.sample
 etc/nut/upssched.conf.sample
 etc/rc.d/nut.sh.sample
 libexec/nut/apcsmart
-libexec/nut/bcmxcp
 libexec/nut/belkin
-libexec/nut/bestfortress
+libexec/nut/belkinunv
 libexec/nut/bestuferrups
 libexec/nut/bestups
 libexec/nut/blazer
 libexec/nut/cyberpower
+libexec/nut/cyberpower1100
 libexec/nut/esupssmart
 libexec/nut/etapro
 libexec/nut/everups
 libexec/nut/fentonups
-libexec/nut/ferrups
 libexec/nut/genericups
-libexec/nut/hp
+libexec/nut/ippon
 libexec/nut/isbmex
 libexec/nut/liebert
 libexec/nut/masterguard
 libexec/nut/mge-shut
 libexec/nut/mge-utalk
-libexec/nut/microdowell
-libexec/nut/newapc
 libexec/nut/oneac
 libexec/nut/powercom
 libexec/nut/safenet
-libexec/nut/sec
 libexec/nut/sms
 libexec/nut/tripplite
 libexec/nut/tripplitesu
@@ -42,7 +40,6 @@ libexec/nut/victronups
 sbin/upsd
 sbin/upsmon
 sbin/upssched
-share/cmdvartab
 %%CGIFILES%%upsimage.cgi
 %%CGIFILES%%upsset.cgi
 %%CGIFILES%%upsstats.cgi
@@ -73,7 +70,7 @@ share/cmdvartab
 %%PORTDOCS%%%%DOCSDIR%%/data-room.txt
 %%PORTDOCS%%%%DOCSDIR%%/design.txt
 %%PORTDOCS%%%%DOCSDIR%%/developers.txt
-%%PORTDOCS%%%%DOCSDIR%%/driver.list
+%%PORTDOCS%%%%DOCSDIR%%/ideas.txt
 %%PORTDOCS%%%%DOCSDIR%%/new-drivers.txt
 %%PORTDOCS%%%%DOCSDIR%%/new-names.txt
 %%PORTDOCS%%%%DOCSDIR%%/osd-notify.txt
@@ -84,7 +81,6 @@ share/cmdvartab
 %%PORTDOCS%%%%DOCSDIR%%/snmp.txt
 %%PORTDOCS%%%%DOCSDIR%%/sock-protocol.txt
 %%PORTDOCS%%%%DOCSDIR%%/ssl.txt
-%%PORTDOCS%%%%DOCSDIR%%/todo.txt
 %%PORTDOCS%%%%DOCSDIR%%/upssched.txt
 @dirrm %%DOCSDIR%%/cables
 @dirrm %%DOCSDIR%%/drivers
