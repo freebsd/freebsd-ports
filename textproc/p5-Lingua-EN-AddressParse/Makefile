@@ -25,4 +25,10 @@ PERL_CONFIGURE=	yes
 MAN3=	Lingua::EN::AddressGrammar.3 \
 	Lingua::EN::AddressParse.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile"
+.endif
+
+.include <bsd.port.post.mk>
