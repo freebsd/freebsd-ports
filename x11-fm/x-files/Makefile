@@ -3,7 +3,7 @@
 # Date created:		14 April 1998
 # Whom:			Donald J. Maddox <dmaddox@scsn.net>
 #
-# $Id: Makefile,v 1.3 1998/08/07 23:56:41 asami Exp $
+# $Id: Makefile,v 1.4 1998/09/15 04:37:56 asami Exp $
 #
 
 DISTNAME=       X-Files-1.43
@@ -14,6 +14,8 @@ MASTER_SITES=   http://java.inf.tu-dresden.de/X-Files/data/
 MAINTAINER=     dmaddox@scsn.net
 
 BUILD_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
+
+BROKEN=		repository copy
 
 .if !defined(DISPLAY)
 BROKEN=		requires DISPLAY to install
