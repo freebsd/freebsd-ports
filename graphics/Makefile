@@ -404,7 +404,6 @@
     SUBDIR += robot
     SUBDIR += ruby-evas
     SUBDIR += ruby-gd
-    SUBDIR += ruby-gdchart
     SUBDIR += ruby-gdk_imlib
     SUBDIR += ruby-gdk_pixbuf
     SUBDIR += ruby-gdk_pixbuf2
