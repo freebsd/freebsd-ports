@@ -1,0 +1,20 @@
+--- ved/ved.1.orig	Sun Dec 31 18:53:00 2000
++++ ved/ved.1		Sun Dec 31 18:54:13 2000
+@@ -2614,15 +2614,8 @@
+ .B ved
+ shell command execute buffer.
+ .TP
+-.B .../man/help/ved.help
+-The on-line help file is assumed to be in the same
+-directory tree as the
+-.B ved
+-binary.
+-
+-.SH "SEE ALSO"
+-.BR change "(1),"
+-.BR match "(1)."
++.B %%PREFIX%%/share/ved.help
++The on-line help file is installed in %%PREFIX%%/share
+ .SH NOTES
+ To edit files greater than 2 GB, you need to compile
+ .B ved

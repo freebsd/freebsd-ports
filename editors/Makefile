@@ -99,6 +99,7 @@
     SUBDIR += thoteditor
     SUBDIR += uemacs
     SUBDIR += uzap
+    SUBDIR += ved
     SUBDIR += vigor
     SUBDIR += vile
     SUBDIR += vilearn

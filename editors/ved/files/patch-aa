@@ -1,0 +1,11 @@
+--- ved/ved.h.orig	Wed Dec 27 13:32:40 2000
++++ ved/ved.h		Sun Dec 31 18:41:11 2000
+@@ -134,7 +134,7 @@
+ #	define HELPFILE UC "/doc/cmds/ved.help"
+ #else
+ #	define DEFSHELL	"/bin/sh"
+-#	define HELPFILE UC "/opt/schily/man/help/ved.help"
++#	define HELPFILE UC "%%PREFIX%%/share/ved.help"
+ #endif
+ 
+ /*
