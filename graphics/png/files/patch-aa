@@ -1,5 +1,5 @@
-*** scripts/makefile.std.orig	Sat Mar  7 23:12:04 1998
---- scripts/makefile.std	Sat Mar 28 16:39:42 1998
+*** scripts/makefile.std.orig	Wed Apr  1 04:49:34 1998
+--- scripts/makefile.std	Fri Jul 10 03:34:22 1998
 ***************
 *** 5,33 ****
   # Where the zlib library and include files are located
@@ -9,7 +9,7 @@
 ! ZLIBINC=../zlib
   
 ! CC=cc
-! CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=1
+! CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=5
 ! LDFLAGS=-L. -L$(ZLIBLIB) -lpng -lz -lm
   
   #RANLIB=echo
@@ -31,21 +31,26 @@
   pngtest: pngtest.o libpng.a
   	$(CC) -o pngtest $(CFLAGS) pngtest.o $(LDFLAGS)
   
---- 5,42 ----
+--- 5,47 ----
   # Where the zlib library and include files are located
   #ZLIBLIB=/usr/local/lib
   #ZLIBINC=/usr/local/include
 ! #ZLIBLIB=../zlib
 ! #ZLIBINC=../zlib
   
-! VER=2.1
 ! #CC=cc
-! #CFLAGS=-I$(ZLIBINC) -O # -g -DPNG_DEBUG=1
-! LDFLAGS=-L. -lpng -lz -lm -static
+! CFLAGS+=-I.
+! LDFLAGS+=-L. -lpng -lz -lm -static
   
   #RANLIB=echo
   RANLIB=ranlib
   
++ # read libpng.txt or png.h to see why PNGMAJ is 2.  You should not
++ # have to change it.
++ PNGMAJ = 2
++ PNGMIN = 1
++ PNGVER = $(PNGMAJ).$(PNGMIN)
++ 
   # where make install puts libpng.a and png.h
 ! prefix=${PREFIX}
   
@@ -58,13 +63,13 @@
 ! .c.so:
 ! 	${CC} -fpic -DPIC ${CFLAGS} -c ${.IMPSRC} -o ${.TARGET}
 ! 
-! all: libpng.a libpng.so.${VER}
+! all: libpng.a libpng.so.${PNGVER}
   
   libpng.a: $(OBJS)
   	ar rc $@  $(OBJS)
   	$(RANLIB) $@
   
-+ libpng.so.${VER}: $(OBJS:S/o$/so/g)
++ libpng.so.${PNGVER}: $(OBJS:S/o$/so/g)
 + 	${CC} -shared -Wl,-x -Wl,-assert -Wl,pure-text -o $@ $(OBJS:S/o$/so/g) -lz -lm
 + 
   pngtest: pngtest.o libpng.a
@@ -84,12 +89,12 @@
   
   clean:
   	rm -f *.o libpng.a pngtest pngout.png
---- 46,56 ----
+--- 51,61 ----
   install: libpng.a
   	-@mkdir $(prefix)/include
   	-@mkdir $(prefix)/lib
 ! 	${INSTALL} -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} png.h pngconf.h $(prefix)/include
-! 	${INSTALL} -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} libpng.a libpng.so.${VER} $(prefix)/lib
+! 	${INSTALL} -c -m ${BINMODE} -o ${BINOWN} -g ${BINGRP} libpng.a libpng.so.${PNGVER} $(prefix)/lib
 ! 	ranlib $(prefix)/lib/libpng.a
 ! 	${INSTALL} -c -m ${MANMODE} -o ${MANOWN} -g ${MANGRP} libpng.3 libpngpf.3 $(prefix)/man/man3
 ! 	${INSTALL} -c -m ${MANMODE} -o ${MANOWN} -g ${MANGRP} png.5 $(prefix)/man/man5
