@@ -3,11 +3,11 @@
 # Date created:         1 May 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.1.1.1 1995/05/01 11:47:15 ache Exp $
+# $Id: Makefile,v 1.2 1995/11/16 03:13:00 asami Exp $
 #
 
 DISTNAME=       ru-d1489-1.2
-CATEGORIES+=    russian utilities
+CATEGORIES+=    russian utils
 MASTER_SITES=   ftp://ftp.kiae.su/unix/convert/char/
 EXTRACT_SUFX=   .tgz
 
