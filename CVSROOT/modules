@@ -1741,6 +1741,7 @@ gawk		ports/lang/gawk
 gbackground	ports/x11/gbackground
 gbase		ports/converters/gbase
 gbe		ports/emulators/gbe
+gbfs		ports/chinese/gbfs
 gbiff		ports/mail/gbiff
 gbuffy		ports/mail/gbuffy
 gcal		ports/deskutils/gcal
