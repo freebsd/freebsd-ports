@@ -7,6 +7,7 @@
 
 PORTNAME=	dnews
 PORTVERSION=	5.5h2
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.netwinsite.com/pub/dnews/
 DISTNAME=	dnews55h2_freebsd4
