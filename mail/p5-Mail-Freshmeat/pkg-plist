@@ -1,4 +1,5 @@
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Freshmeat.pm
+lib/perl5/site_perl/%%PERL_VER%%/Mail/Freshmeat/Article.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Freshmeat/Entry.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/Freshmeat/Utils.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/Freshmeat/.packlist
