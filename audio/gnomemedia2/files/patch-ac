@@ -1,0 +1,50 @@
+--- vu-meter/Makefile.in.orig	Wed Mar  3 12:35:57 1999
++++ vu-meter/Makefile.in	Wed Mar  3 12:36:25 1999
+@@ -116,9 +116,9 @@
+ ZVT_LIBS = @ZVT_LIBS@
+ l = @l@
+ 
+-Audiodir = $(datadir)/gnome/apps/Multimedia
++Audiodir = $(datadir)/apps/Multimedia
+ 
+-INCLUDES =  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	$(GNOME_INCLUDEDIR)
++INCLUDES =  	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" 	$(GNOME_INCLUDEDIR)
+ 
+ 
+ bin_PROGRAMS = vumeter
+--- gmix/Makefile.in.orig	Sat Feb 27 09:22:00 1999
++++ gmix/Makefile.in	Wed Mar  3 12:37:46 1999
+@@ -116,11 +116,11 @@
+ ZVT_LIBS = @ZVT_LIBS@
+ l = @l@
+ 
+-Audiodir = $(datadir)/gnome/apps/Multimedia
++Audiodir = $(datadir)/apps/Multimedia
+ 
+ EXTRA_DIST = README TODO NEWS gmix.desktop
+ 
+-INCLUDES =  	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"		$(GNOME_INCLUDEDIR)
++INCLUDES =  	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"		$(GNOME_INCLUDEDIR)
+ 
+ 
+ bin_PROGRAMS = gmix
+--- tcd/Makefile.in.orig	Sat Feb 27 09:22:02 1999
++++ tcd/Makefile.in	Wed Mar  3 12:38:28 1999
+@@ -116,7 +116,7 @@
+ ZVT_LIBS = @ZVT_LIBS@
+ l = @l@
+ 
+-Audiodir = $(datadir)/gnome/apps/Multimedia
++Audiodir = $(datadir)/apps/Multimedia
+ 
+ EXTRA_DIST = README TODO NEWS gtcd.desktop
+ 
+@@ -141,7 +141,7 @@
+ 
+ CLEANFILES = *~
+ 
+-INCLUDES = -I$(includedir) $(GNOME_INCLUDEDIR) $(CURSES_INCLUDEDIR) 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" $(USE_CD_CHANGER) -g
++INCLUDES = -I$(includedir) $(GNOME_INCLUDEDIR) $(CURSES_INCLUDEDIR) 	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" $(USE_CD_CHANGER) -g
+ 
+ 
+ Audio_DATA = gtcd.desktop
