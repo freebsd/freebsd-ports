@@ -25,7 +25,7 @@ USE_PERL5=	yes
 USE_RC_SUBR=	yes
 USE_REINPLACE=	yes
 
-USERMIN_MODULES=
+USERMIN_MODULES=quota-1.110-1.wbm.gz
 USERMIN_THEMES=
 
 post-extract:
