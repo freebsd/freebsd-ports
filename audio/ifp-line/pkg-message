@@ -1,0 +1,8 @@
+NOTE:
+ifp directly accesses the usb/ugen devices via libusb. So
+if you want to use this application as a non-root user, you
+have to make sure that the corresponding device nodes
+/dev/usb<somenumber> and /dev/ugen<somenumber> where
+<somenumber> is dependent on your personal usb environment
+are readable and writable by the user intended to use the
+tool.

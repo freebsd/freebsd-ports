@@ -1,0 +1,9 @@
+ifp-line is a simple command-line tool to provide basic
+functionality to manage files on iRiver music players
+which are using the "manager firmware".
+Using this tool, you can
+o add/remove files on the player
+o view information about the player, e.g. battery status
+o flash your firmware using an .hex file
+
+WWW: http://ifp-driver.sourceforge.net/

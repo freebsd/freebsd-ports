@@ -1,0 +1,31 @@
+--- Makefile.orig	Sun May 30 17:05:29 2004
++++ Makefile	Tue Sep 21 10:48:59 2004
+@@ -1,10 +1,5 @@
+-# $Id: Makefile,v 1.8 2004/05/30 15:05:29 yamajun Exp $
+-
+-CFLAGS	= `libusb-config --cflags` -Wall -g
+-LDFLAGS	= `libusb-config --libs`
+-PREFIX	?= /usr/local
+-MANDIR	?= ${PREFIX}/man/man1
+-INSTALL	?= /usr/bin/install
++CFLAGS+=	`libusb-config --cflags`
++LDFLAGS+=	`libusb-config --libs`
+ 
+ OBJS = ifp.o ifp_routines.o unicodehack.o
+ 
+@@ -12,12 +7,9 @@
+ ifp: $(OBJS)
+ 	$(CC) -o ifp $(OBJS) $(LDFLAGS)
+ 
+-$(MANDIR):
+-	mkdir -p $(MANDIR)
+-
+-install: ifp $(MANDIR)
+-	$(INSTALL) -c ifp $(PREFIX)/bin
+-	$(INSTALL) -c -m 644 ifp.1 $(MANDIR)
++install: ifp
++	@${BSD_INSTALL_PROGRAM} ifp $(PREFIX)/bin
++	@${BSD_INSTALL_MAN} ifp.1 $(PREFIX)/man/man1
+ 
+ ifp.o: ifp_routines.h
+ ifp_routines.o: ifp_routines.h unicodehack.h
