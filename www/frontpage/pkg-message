@@ -1,0 +1,9 @@
+For this port to be usefull you need to install an Apache-Frontpage
+enabled web server.  Only the following ports/packages qualifies:
+
+Ports:
+    www/apache13-fp     >=1.3.20_1
+
+Packages:
+    apache_fp           >=1.3.20_1
+
