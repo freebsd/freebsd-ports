@@ -44,6 +44,7 @@
     SUBDIR += mailcrypt
     SUBDIR += maildrop
     SUBDIR += mailfilter
+    SUBDIR += mailman
     SUBDIR += mailx
     SUBDIR += majorcool
     SUBDIR += majordomo
