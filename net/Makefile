@@ -138,7 +138,6 @@
     SUBDIR += ldapmodule
     SUBDIR += ldapsdk
     SUBDIR += libicq
-    SUBDIR += libjabber
     SUBDIR += libnet
     SUBDIR += libnids
     SUBDIR += libsmi
