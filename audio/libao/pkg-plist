@@ -9,7 +9,7 @@ lib/libao.so.3
 lib/ao/plugins-2/liboss.so
 %%ESOUND%%lib/ao/plugins-2/libesd.so
 %%NAS%%lib/ao/plugins-2/libnas.so
-lib/pkgconfig/ao.pc
+libdata/pkgconfig/ao.pc
 share/aclocal/ao.m4
 %%PORTDOCS%%%%DOCSDIR%%/ao_append_option.html
 %%PORTDOCS%%%%DOCSDIR%%/ao_close.html
