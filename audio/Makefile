@@ -180,6 +180,7 @@
     SUBDIR += xmixer
     SUBDIR += xmmix
     SUBDIR += xmms
+    SUBDIR += xmms-crossfade
     SUBDIR += xmms-liveice
     SUBDIR += xmms-quix3dn
     SUBDIR += xmms-shn
