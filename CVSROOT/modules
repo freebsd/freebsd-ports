@@ -850,6 +850,7 @@ cave		ports/misc/cave
 cbb		ports/finance/cbb
 cbedic		ports/textproc/cbedic
 cbrowser	ports/devel/cbrowser
+cbrpager	ports/graphics/cbrpager
 cbview		ports/graphics/cbview
 cc65		ports/devel/cc65
 ccache		ports/devel/ccache
