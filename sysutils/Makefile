@@ -226,6 +226,7 @@
     SUBDIR += webmin
     SUBDIR += whowatch
     SUBDIR += wmapm
+    SUBDIR += wmapmload
     SUBDIR += wmavgload
     SUBDIR += wmbattery
     SUBDIR += wmcpuload
