@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	qhacc
-PORTVERSION=	0.6.6
+PORTVERSION=	0.7
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.ostrich-emulators.cx/qhacc/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		ftp://ftp.ostrich-emulators.cx/qhacc/
 
 MAINTAINER=	ports@FreeBSD.org
 

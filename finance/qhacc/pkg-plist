@@ -1,9 +1,9 @@
 bin/qhacc
-share/doc/qhacc/index.html
-share/doc/qhacc/intro.html
-share/doc/qhacc/formats.html
-share/doc/qhacc/using.html
-share/doc/qhacc/primer.html
+%%PORTDOCS%%share/doc/qhacc/index.html
+%%PORTDOCS%%share/doc/qhacc/intro.html
+%%PORTDOCS%%share/doc/qhacc/formats.html
+%%PORTDOCS%%share/doc/qhacc/using.html
+%%PORTDOCS%%share/doc/qhacc/primer.html
 share/qhacc/config.sample
 @dirrm share/qhacc
-@dirrm share/doc/qhacc
+%%PORTDOCS%%@dirrm share/doc/qhacc
