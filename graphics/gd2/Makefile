@@ -22,7 +22,7 @@ MAINTAINER?=	ports@FreeBSD.org
 BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 .endif
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_FREETYPE2=	yes
 .ifndef WITHOUT_XPM
