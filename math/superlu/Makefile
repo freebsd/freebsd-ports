@@ -31,6 +31,14 @@ BLAS_LIBS=	${LOCALBASE}/lib/libf77blas.a ${LOCALBASE}/lib/libatlas.a
 post-patch:
 	@${REINPLACE_CMD} -e 's+%%BLAS_LIBS%%+${BLAS_LIBS}+' \
 	${WRKSRC}/make.inc
+	@${REINPLACE_CMD} -e 's+%%CC%%+${CC}+' \
+	${WRKSRC}/make.inc
+	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+' \
+	${WRKSRC}/make.inc
+	@${REINPLACE_CMD} -e 's+%%CFLAGS%%+${CFLAGS}+' \
+	${WRKSRC}/make.inc
+	@${REINPLACE_CMD} -e 's+%%FFLAGS%%+${FFLAGS}+' \
+	${WRKSRC}/make.inc
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libsuperlu.* ${PREFIX}/lib
