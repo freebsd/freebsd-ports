@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	ukrainian finance
 MASTER_SITES=	http://www.iceb.vinnitsa.com/download/
 
-MAINTAINER=	vchekan@softline.kiev.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ukrainian accounting system
 
 USE_MYSQL=	yes
