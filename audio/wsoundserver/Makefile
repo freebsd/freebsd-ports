@@ -23,6 +23,7 @@ USE_X_PREFIX=	yes
 WANT_ESOUND=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/WINGs"
 
 MAN1=		get-wsound-flags.1x getsoundset.1x setsoundset.1x \
 			wsoundplay.1x wsoundserver.1x
