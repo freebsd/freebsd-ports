@@ -8,11 +8,11 @@
 #
 
 PORTNAME=		phoenix
-PORTVERSION=		0.4
-PORTREVISION=		10
+PORTVERSION=		0.5
+PORTREVISION=		1
 CATEGORIES=		www # pita
-MASTER_SITES=		${MASTER_SITE_LOCAL} # ${BSD_WEBDIR}
-MASTER_SITE_SUBDIR=	trevor
+MASTER_SITES=		${MASTER_SITE_LOCAL} ${BSD_WEBDIR}
+MASTER_SITE_SUBDIR=	alane
 
 MAINTAINER=		phoenix@freebsd.org # alane@fbsd and trevor@fbsd
 
@@ -39,18 +39,12 @@ HAS_CONFIGURE=		yes
 USE_GNOMENG=		yes
 USE_GNOME=		gtk12 orbit
 
-CPPFLAGS+=		-I${X11BASE}/include
-CFLAGS+=		${PTHREAD_CFLAGS}
-LDFLAGS+=		-L${X11BASE}/lib
-LIBS+=			${PTHREAD_LIBS}
-
 NO_MTREE=		yes
 WRKSRC=			${WRKDIR}/mozilla
 LOCAL_SUBDIR=		lib/${PORTNAME}
 LOCAL_PREFIX=		${PREFIX}/${LOCAL_SUBDIR}
 JREDIR=			${LOCALBASE}/jdk1.3.1/jre
-MOZVER=			1.2b
-#MOZVER=		1.3a
+MOZVER=			1.3a
 PLUGINSDIR=		${LOCAL_PREFIX}/lib/mozilla-${MOZVER}/plugins/
 
 .include <bsd.port.pre.mk>
@@ -64,6 +58,21 @@ BROKEN+="please make sure you have issued the command 'use.perl port'"
 
 SORT?=/usr/bin/sort
 PLIST=${WRKDIR}/plist
+
+.if defined(WITH_DEBUG)
+WITHOUT_OPTIMIZE=	yes
+CONFIGURE_ENV+=		WITH_DEBUG=yes
+.endif # defined(WITH_DEBUG)
+
+.if !defined(WITHOUT_OPTIMIZE)
+CFLAGS+=		-O2
+.endif # defined(WITH_OPTIMIZE)
+
+
+CPPFLAGS+=		-I${X11BASE}/include
+CFLAGS+=		${PTHREAD_CFLAGS}
+LDFLAGS+=		-L${X11BASE}/lib
+LIBS+=			${PTHREAD_LIBS}
 
 pre-extract::
 	@${ECHO_MSG}
@@ -130,6 +139,12 @@ cons-plist:
 
 .include <bsd.port.post.mk>
 
-generate-plist: link-bins link-java cleanup-install cons-plist
+# <alane>
+# Under normal circumstances, you should not put anything after
+# the above line. However, this is the only way I can state the
+# dependency without trashing the actual code of the generate-plist
+# target. This is a limitation of the make(1) program itself. 
+# </alane>
+generate-plist: link-bins cleanup-install cons-plist
 
 #EOF
