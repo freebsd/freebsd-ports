@@ -18,14 +18,9 @@ COMMENT=	Auto Nice Daemon
 
 USE_GMAKE=	yes
 ALL_TARGET=	default
+NOPRECIOUSMAKEVARS=	yes
 
-MAN5=	and.conf.5 and.priorities.5
-MAN8=	and.8
+MAN5=		and.conf.5 and.priorities.5
+MAN8=		and.8
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
