@@ -1,6 +1,7 @@
 bin/jless
 bin/jlesskey
 bin/jlessecho
+share/doc/less/README.gtags
 share/doc/less/README.iso
 share/doc/less/README.iso.jp
 share/doc/less/README.regex
