@@ -3,6 +3,11 @@ It provides titlebars, and allows raising, lowering, resizing, and
 hiding (but not un-hiding) windows.  Placement of new windows
 depends on the position of the pointer.  It is partly based on 9wm.
 
+This port installs not only the window manager, but also the aemenu
+and aepanel applets.  These provide a list of windows by title
+(vertically for aemenu, horizontally for aepanel) and a menu from
+which programs may be run.
+
 WWW:  http://www.red-bean.com/~decklin/aewm/
 
 Trevor Johnson
