@@ -21,6 +21,8 @@ IMAP		"IMAP support" OFF \
 MySQL		"MySQL database support" ON \
 PostgreSQL	"PostgreSQL database support" OFF \
 mSQL		"mSQL database support" OFF \
+SybaseDB	"Sybase/MS-SQL database support (DB-lib)" OFF \
+SybaseCT	"Sybase/MS-SQL database support (CT-lib)" OFF \
 dBase		"dBase database support" OFF \
 OpenLDAP	"OpenLDAP support" OFF \
 SNMP		"SNMP support" OFF \
@@ -105,6 +107,26 @@ while [ "$1" ]; do
 		\"mSQL\")
 			echo "BUILD_DEPENDS+=	msql:\${PORTSDIR}/databases/msql"
 			echo "CONFIGURE_ARGS+=--with-msql=\${PREFIX}"
+			;;
+		\"SybaseDB\")
+			echo "LIB_DEPENDS+=	sybdb.0:\${PORTSDIR}/databases/freetds"
+			echo "CONFIGURE_ARGS+=--with-sybase=\${PREFIX}"
+			if [ "$SYBASECT" ]; then
+				echo "SybaseDB and SybaseCT are mutually exclusive." > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+				exit 1
+			fi
+			SYBASEDB=1
+			;;
+		\"SybaseCT\")
+			echo "LIB_DEPENDS+=	ct.0:\${PORTSDIR}/databases/freetds"
+			echo "CONFIGURE_ARGS+=--with-sybase-ct=\${PREFIX}"
+			if [ "$SYBASEDB" ]; then
+				echo "SybaseDB and SybaseCT are mutually exclusive." > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+				exit 1
+			fi
+			SYBASECT=1
 			;;
 		\"dBase\")
 			echo "CONFIGURE_ARGS+=--with-dbase"

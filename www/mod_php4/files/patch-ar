@@ -1,0 +1,29 @@
+--- ext/sybase/sybase.c.orig	Fri Jun  2 14:14:44 2000
++++ ext/sybase/sybase.c	Fri Jun  2 14:15:27 2000
+@@ -357,7 +357,7 @@
+ 				RETURN_FALSE;
+ 			}
+ 			/* create the link */
+-			if ((sybase.link=dbopen(sybase.login,host))==FAIL) {
++			if ((sybase.link=tdsdbopen(sybase.login,host))==FAIL) {
+ 				/*php_error(E_WARNING,"Sybase:  Unable to connect to server:  %s",sybase_error(sybase));*/
+ 				efree(hashed_details);
+ 				dbloginfree(sybase.login);
+@@ -393,7 +393,7 @@
+ 			sybase_ptr = (sybase_link *) le->ptr;
+ 			/* test that the link hasn't died */
+ 			if (DBDEAD(sybase_ptr->link)==TRUE) {
+-				if ((sybase_ptr->link=dbopen(sybase_ptr->login,host))==FAIL) {
++				if ((sybase_ptr->link=tdsdbopen(sybase_ptr->login,host))==FAIL) {
+ 					/*php_error(E_WARNING,"Sybase:  Link to server lost, unable to reconnect");*/
+ 					zend_hash_del(&EG(persistent_list), hashed_details, hashed_details_length+1);
+ 					efree(hashed_details);
+@@ -440,7 +440,7 @@
+ 			RETURN_FALSE;
+ 		}
+ 		
+-		if ((sybase.link=dbopen(sybase.login,host))==NULL) {
++		if ((sybase.link=tdsdbopen(sybase.login,host))==NULL) {
+ 			/*php_error(E_WARNING,"Sybase:  Unable to connect to server:  %s",sybase_error(sybase));*/
+ 			efree(hashed_details);
+ 			RETURN_FALSE;

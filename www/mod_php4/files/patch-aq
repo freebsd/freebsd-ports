@@ -1,0 +1,41 @@
+--- configure.old	Sat Jun  3 02:56:22 2000
++++ configure	Sat Jun  3 02:55:40 2000
+@@ -28966,7 +28966,6 @@
+     eval "LIBRARY$unique=set"
+     
+     if test "cs" != "c"; then
+-      LIBS="-lcs $LIBS"
+     fi
+   
+   fi
+@@ -28994,7 +28993,6 @@
+     eval "LIBRARY$unique=set"
+     
+     if test "comn" != "c"; then
+-      LIBS="-lcomn $LIBS"
+     fi
+   
+   fi
+@@ -29008,13 +29006,12 @@
+     eval "LIBRARY$unique=set"
+     
+     if test "intl" != "c"; then
+-      LIBS="-lintl $LIBS"
+     fi
+   
+   fi
+ 
+ 
+-	SYBASE_CT_LIBS="-lcs -lct -lcomn -lintl"
++	SYBASE_CT_LIBS="-lct"
+     old_LDFLAGS=$LDFLAGS
+     LDFLAGS="$LDFLAGS -L$SYBASE_CT_LIBDIR"
+     echo $ac_n "checking for netg_errstr in -ltcl""... $ac_c" 1>&6
+@@ -29076,7 +29073,6 @@
+     eval "LIBRARY$unique=set"
+     
+     if test "sybtcl" != "c"; then
+-      LIBS="-lsybtcl $LIBS"
+     fi
+   
+   fi
