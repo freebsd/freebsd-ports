@@ -1,0 +1,16 @@
+lib/kde3/libakregatorpart.la
+lib/kde3/libakregatorpart.so
+lib/kde3/libakregatorpart.so.1
+bin/akregator
+share/icons/hicolor/16x16/apps/akregator.png
+share/icons/hicolor/32x32/apps/akregator.png
+share/config.kcfg/akregator.kcfg
+share/services/akregator_part.desktop
+share/applnk/Internet/akregator.desktop
+share/apps/akregatorpart/akregator_part.rc
+share/apps/akregatorpart/welcome.html
+share/apps/akregator/akregator_shell.rc
+share/apps/akregator/kde.opml
+share/doc/HTML/en/akregator/index.cache.bz2
+share/doc/HTML/en/akregator/index.docbook
+share/doc/HTML/en/akregator/common
