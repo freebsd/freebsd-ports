@@ -32,6 +32,32 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4593cb09-4c81-11d9-983e-000c6e8f12ef">
+    <topic>konqueror -- Password Disclosure for SMB Shares</topic>
+    <affects>
+      <package>
+	<name>kdebase</name>
+	<name>kdelibs</name>
+	<range><ge>3.2.0</ge><le>3.3.1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>When browsing SMB shares with Konqueror, shares with
+	  authentication show up with hidden password in the browser
+	  bar.  It is possible to store the URL as a shortcut on the
+	  desktop where the password is then available in plain text.</p>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="ICEEJPLEDKODPNFKJEGAIEBJGFAA.df@sec-consult.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110178786809694</mlist>
+    </references>
+    <dates>
+      <discovery>2004-10-06</discovery>
+      <entry>2004-12-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="af747389-42ba-11d9-bd37-00065be4b5b6">
     <topic>mod_access_referer -- NULL pointer dereference vulnerability</topic>
     <affects>
