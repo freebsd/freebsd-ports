@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	tor
-PORTVERSION=	0.0.9.1
-CATEGORIES=	security
-MASTER_SITES=	http://tor.freehaven.net/dist/
+PORTVERSION=	0.0.9.2
+CATEGORIES=	security net
+MASTER_SITES=	http://tor.eff.org/dist/
 
 MAINTAINER=	freebsd-ports@rikrose.net
 COMMENT=	An anonymizing overlay network for TCP
@@ -28,6 +28,11 @@ post-patch:
 		${WRKSRC}/contrib/tor-tsocks.conf.sample
 	@${REINPLACE_CMD} -e "s|tor-tsocks.conf|tor-tsocks.conf.sample|g" \
 		${WRKSRC}/contrib/Makefile.in
+# uphold CFLAGS
+	@${FIND} ${WRKSRC} -type f | ${XARGS} \
+		-n 10 ${REINPLACE_CMD} -E \
+		-e 's!-g -O2!!' \
+		-e 's!-O2!!'
 
 post-install:
 	@${CP} ${WRKSRC}/contrib/tor.sh ${LOCALBASE}/etc/rc.d/tor.sh.sample
