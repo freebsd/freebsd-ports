@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lbdb
-PORTVERSION= 	0.19.4
+PORTVERSION= 	0.19.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spinnaker.de/debian/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

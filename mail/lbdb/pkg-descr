@@ -2,7 +2,7 @@ This package consists of a set of small tools, which collect mail addresses
 from mails you received and then offer these addresses as well as data
 received using the finger command using mutt's external query feature.
 
-WWW: http://www.rhein.de/~roland/lbdb/
+WWW: http://www.spinnaker.de/lbdb/
 
 --
 mwest@uct.ac.za
