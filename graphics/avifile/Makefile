@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	avifile
-PORTVERSION=	0.53.5
+PORTVERSION=	0.60.20010429
 CATEGORIES=	graphics
 MASTER_SITES=	http://ernie.eit.uni-kl.de/avifile/ \
 		http://divx.euro.ru/ \
@@ -23,14 +23,21 @@ USE_QT_VER=	2
 USE_XLIB=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.6
+LDCONFIG_DIRS=	%%PREFIX%%/lib/avifile
 
-USE_AUTOCONF=	yes
+USE_AUTOMAKE=	yes
 USE_LIBTOOL=	yes
-GNU_CONFIGURE=	yes
+LIBTOOLFILES=	acinclude.m4
+# GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-win32-path=${LOCALBASE}/lib/win32 \
-		--enable-release
+		--enable-release --with-gnu-ld
+.if defined(WITH_MGA)
+CONFIGURE_ARGS+=--enable-mga
+.endif
+
 PLIST_SUB=	LIB_VERSION="${LIB_VERSION}"
 
 FMT=	/usr/bin/fmt
@@ -44,13 +51,21 @@ LIB_VERSION=	0
 # qt is there but configure is not finding it
 # Therefore, it is avoiding this directories
 # At least, on lioux's homesystem with qt 2.2.3
-EXTRA_BUILD_DIR=	player samples/benchmark samples/qtrecompress
+EXTRA_BUILD_DIR=	player samples/misc samples/qtrecompress
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 DIFF?=		/usr/bin/diff
 
 .include <bsd.port.pre.mk>
 
+pre-extract:
+.if !defined(WITH_MGA)
+	@${ECHO_MSG} "You can enable special MGA support by building with -DWITH_MGA."
+.endif
+
+do-configure:
+	(cd ${WRKSRC} && aclocal && ./autogen.sh &&\
+	${CONFIGURE_ENV} ./configure ${CONFIGURE_ARGS})
 # Libtool fix code kindly provided by Mr. Maxim Sobolev <sobomax@FreeBSD.org>
 post-configure:
 	@${PERL} -pi -e \
@@ -65,7 +80,11 @@ post-build:
 post-install:
 	@${FMT} < ${PKGMESSAGE}
 	@${INSTALL_DATA} ${WRKSRC}/lib/libaviplay.la ${PREFIX}/lib
-	@${LN} -sf libaviplay.so.${LIB_VERSION} ${PREFIX}/lib/libaviplay.so
+	@${INSTALL_DATA} ${WRKSRC}/plugins/libaudiodec/libaudiodec.la ${PREFIX}/lib/avifile
+	@${INSTALL_DATA} ${WRKSRC}/plugins/libmp3lame_audioenc/libmp3lame_audioenc.la ${PREFIX}/lib/avifile
+	@${INSTALL_DATA} ${WRKSRC}/plugins/libmpeg_audiodec/libmpeg_audiodec.la ${PREFIX}/lib/avifile
+	@${INSTALL_DATA} ${WRKSRC}/plugins/libwin32/libwin32.la ${PREFIX}/lib/avifile
+#	@${LN} -sf libaviplay.so.${LIB_VERSION} ${PREFIX}/lib/libaviplay.so
 # Adhoc fix. Second part.
 # Install the missed applications.
 .if exists(${PREFIX}/bin/aviplay)
@@ -76,13 +95,13 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/player/.libs/aviplay ${PREFIX}/bin
 .endif
 .if exists(${PREFIX}/bin/benchmark)
-	${DIFF} ${WRKSRC}/samples/benchmark/.libs/benchmark \
+	${DIFF} ${WRKSRC}/samples/misc/.libs/benchmark \
 		${PREFIX}/bin > /dev/null || \
 			${INSTALL_PROGRAM} \
-				${WRKSRC}/samples/benchmark/.libs/benchmark \
+				${WRKSRC}/samples/misc/.libs/benchmark \
 					${PREFIX}/bin
 .else
-	${INSTALL_PROGRAM} ${WRKSRC}/samples/benchmark/.libs/benchmark \
+	${INSTALL_PROGRAM} ${WRKSRC}/samples/misc/.libs/benchmark \
 		${PREFIX}/bin
 .endif
 .if exists(${PREFIX}/bin/qtrecompress)
