@@ -18,7 +18,6 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 MAINTAINER=	ports@geeksrus.net
 
 USE_GMAKE=	yes
-USE_GCC295=	yes
 NO_PACKAGE=	'Neither CC nor CFLAGS safe.'
 WRKSRC=		${WRKDIR}/${PORTNAME}
 CYCBINDIR=	${PREFIX}/bin
