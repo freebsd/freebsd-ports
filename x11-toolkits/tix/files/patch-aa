@@ -70,7 +70,7 @@
      #
      VERSION=${BIN_VERSION}
 -    eval "TIX_SAM_FILE=libtixsam${TCL_SHARED_LIB_SUFFIX}"
-+    eval "TIX_SAM_FILE=libtixsam${LIB_VERSION}"
++    eval "TIX_SAM_FILE=libtixsam${LIB_VERSION}.so.1"
      TIX_MAKE_SAM="\${SHLIB_LD} -o ${TIX_SAM_FILE} \${TIX_SAM_OBJS} ${SHLIB_LD_LIBS}"
  
  else
