@@ -1,0 +1,21 @@
+*** include/ixjlid.h.orig	Tue Sep  2 17:32:20 2003
+--- include/ixjlid.h	Tue Sep  2 17:32:37 2003
+***************
+*** 253,260 ****
+  #include <linux/ixjuser.h>
+  #endif
+  #ifdef P_FREEBSD
+! #include <sys/telephony.h>
+! #include <sys/ixjuser.h>
+  #endif
+  #endif
+  
+--- 253,260 ----
+  #include <linux/ixjuser.h>
+  #endif
+  #ifdef P_FREEBSD
+! #include "sys/telephony.h"
+! #include "sys/ixjuser.h"
+  #endif
+  #endif
+  
