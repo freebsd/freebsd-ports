@@ -3,7 +3,7 @@
 # Date created:		17 January 1998
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.7 1998/04/22 02:52:48 itojun Exp $
+# $Id: Makefile,v 1.8 1998/05/11 03:44:49 itojun Exp $
 #
 
 DISTNAME=	smtpfeed-0.63
@@ -31,8 +31,8 @@ CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec
 # use bind8?
 #CONFIGURE_ARGS+=	--with-bind8
 
-DOCS=	COPYRIGHT FYI FYI.j INSTALL INSTALL.j OPTIONS OPTIONS.j \
-	README README.j RELEASE.NOTE SIGNAL SIGNAL.j TODO
+DOCS=	COPYRIGHT FEATURES FEATURES.j FYI FYI.j INSTALL INSTALL.j \
+	OPTIONS OPTIONS.j README README.j RELEASE.NOTE SIGNAL SIGNAL.j TODO
 DOCDIR=	${PREFIX}/share/doc/smtpfeed
 
 post-patch:
