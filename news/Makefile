@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.31 1997/11/09 10:16:01 asami Exp $
+# $Id: Makefile,v 1.32 1997/11/16 04:58:09 fenner Exp $
 #
 
     SUBDIR += aub
@@ -22,6 +22,7 @@
     SUBDIR += suck
     SUBDIR += tin
     SUBDIR += trn
+    SUBDIR += unpost
     SUBDIR += xvnews
 
 .include <bsd.port.subdir.mk>
