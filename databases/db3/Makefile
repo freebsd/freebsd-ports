@@ -31,7 +31,7 @@ CONFIGURE_ARGS=		--enable-compat185 \
 			--enable-dynamic \
 			--prefix=${PREFIX} \
 			--includedir=${PREFIX}/include/db3 \
-			--target=${ARCH}-unknown-freebsd${OSREL}
+			--target=${ARCH}-portbld-freebsd${OSREL}
 
 pre-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/${CONFIGURE_SCRIPT}
