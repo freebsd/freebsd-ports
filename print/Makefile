@@ -134,6 +134,7 @@
     SUBDIR += trueprint
     SUBDIR += ttftot42
     SUBDIR += virtualpaper
+    SUBDIR += wmlpq
     SUBDIR += xdvi
     SUBDIR += xdvik
     SUBDIR += xmbibtex

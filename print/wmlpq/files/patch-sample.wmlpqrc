@@ -1,0 +1,38 @@
+--- sample.wmlpqrc.orig	Thu Jul  5 20:49:27 2001
++++ sample.wmlpqrc	Thu Jul  5 20:51:29 2001
+@@ -1,20 +1,19 @@
+-
+-lptype		lpd                # Can be lpd or lpsched as appropriate.
+-queuecmd	/usr/local/bin/lpq # Only necessary if your queuecommand is
+-                                   # in a non-standard place, or if it needs
+-                                   # some funny options.
++lptype lpd			# Can be lpd or lpsched as appropriate.
++queuecmd /usr/bin/lpq		# Only necessary if your queuecommand is
++				# in a non-standard place, or if it needs
++				# some funny options.
+ # The above two options can also be specified on a per-queue basis if necessary.
+ 
+-label.0 	HP137              # The label which will appear in the dockapp.
+-queuename.0 	HP137              # The name of the printqueue. (May be of the
+-                                   # form queue@host if you're using pdq or
+-                                   # rlpr.)
+-interval.0	30                 # The checking interval in seconds.
++label.0 HP137			# The label which will appear in the dockapp.
++queuename.0 HP137		# The name of the printqueue. (May be of the
++				# form queue@host if you're using pdq or
++				# rlpr.)
++interval.0 30			# The checking interval in seconds.
+ 
+-label.1 	dj248
+-queuename.1 	hp2000
+-interval.1 	30
++label.1 dj248
++queuename.1 hp2000
++interval.1 30
+ 
+-label.2		roma
+-queuename.2	hproma
+-interval.2	30
++label.2 roma
++queuename.2 hproma
++interval.2 30
