@@ -2,6 +2,7 @@ bin/xcircuit
 lib/X11/app-defaults/XCircuit
 lib/X11/xcircuit/analog.lps
 lib/X11/xcircuit/analoglib2.lps
+lib/X11/xcircuit/app-defaults
 lib/X11/xcircuit/avlsi.lps
 lib/X11/xcircuit/digital.lps
 lib/X11/xcircuit/fonts/courier.lps
@@ -38,6 +39,7 @@ lib/X11/xcircuit/startup.script
 lib/X11/xcircuit/xcircps2.pro
 share/examples/xcircuit/.xcircuitrc
 share/examples/xcircuit/FlareLED.ps
+share/examples/xcircuit/FlareLEDtest.ps
 share/examples/xcircuit/USAflag.ps
 share/examples/xcircuit/analog1.ps
 share/examples/xcircuit/analog2.ps
@@ -46,6 +48,7 @@ share/examples/xcircuit/border.ps
 share/examples/xcircuit/diffamp_test.ps
 share/examples/xcircuit/envelope.ps
 share/examples/xcircuit/fourttest.ps
+share/examples/xcircuit/gettext.py
 share/examples/xcircuit/logic8.ps
 share/examples/xcircuit/prelude.ps
 share/examples/xcircuit/systemd1.lgf
