@@ -9,7 +9,7 @@ PORTREVISION=	1
 CATEGORIES=	databases tcl${TCLVERSION:S/.//}
 PKGNAMESUFFIX=	-tcltk
 
-MAINTAINER=	girgen@pingpong.net
+MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	An TCL interface to the database PostgreSQL, including a tk GUI
 
 POSTGRESQL_PORT?=	databases/postgresql7

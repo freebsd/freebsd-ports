@@ -9,7 +9,7 @@ MASTERDIR=	${.CURDIR}/../mod_jk
 WITH_APACHE2=	YES
 PORTEPOCH=	0
 
-MAINTAINER=	girgen@pingpong.net
+MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	Apache2 JK module for connecting to Tomcat using AJP1X
 
 .include "${MASTERDIR}/Makefile"

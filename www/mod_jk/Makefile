@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE_JAKARTA}
 MASTER_SITE_SUBDIR=	tomcat-connectors/jk/source
 DISTNAME=	jakarta-tomcat-connectors-jk-${PORTVERSION}-src
 
-MAINTAINER?=	girgen@pingpong.net
+MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	Apache JK module for connecting to Tomcat using AJP1X
 
 USE_APACHE=	YES

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	pgaccess
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	girgen@pingpong.net
+MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	A powerful GUI PostgreSQL database administration tool and toolkit
 
 LIB_DEPENDS=	pgtcl:${PORTSDIR}/databases/postgresql-tcltk

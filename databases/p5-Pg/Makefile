@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://gborg.postgresql.org/pub/pgperl/stable/
 PKGNAMEPREFIX=	p5-
 DIST_SUBDIR=	postgresql
 
-MAINTAINER=	girgen@pingpong.net
+MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	An interface for using perl5 to access PostgreSQL databases
 
 POSTGRESQL_PORT?=	databases/postgresql7

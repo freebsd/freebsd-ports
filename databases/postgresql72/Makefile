@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
 DISTFILES=	postgresql-base-${PORTVERSION}${EXTRACT_SUFX} \
 		postgresql-opt-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER?=	girgen@pingpong.net
+MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
 
 DEPRECATED=	Switch to postgresql 7.3.x/7.4.x, doing a full db dump/restore
