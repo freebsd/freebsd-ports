@@ -7773,6 +7773,7 @@ php5-pcntl	ports/devel/php5-pcntl
 php5-pcre	ports/devel/php5-pcre
 php5-pear	ports/devel/php5-pear
 php5-pgsql	ports/databases/php5-pgsql
+php5-readline	ports/devel/php5-readline
 php5-recode	ports/converters/php5-recode
 php5-sqlite	ports/databases/php5-sqlite
 php5-sybase	ports/databases/php5-sybase
