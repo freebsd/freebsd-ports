@@ -1,0 +1,18 @@
+******************************************************************************
+*                       Driver loading information                           *
+*                                                                            *
+* This package includes a device driver in a kernel module. While it is      *
+* installed in $PREFIX/share/mwave, this results in the initial device       *
+* probe not seeing the device and possibly reporting errors for the sio      *
+* device which may be ignored.                                               *
+*                                                                            *
+* It may also result in the serial device being probed at a 8250 instead of  *
+* a 16550A as the probe may occur before he device is fully initialized. If  *
+* this happens you must re-boot to get the modem to work.                    *
+*                                                                            *
+* You can eliminate this problem by copying $PREFIX/share/mwave/mwavedd.ko   *
+* into /modules. Then add the line 'mwavedd_load="YES"' to /boot/loader.conf.*
+* This will load the driver at the start of the bootstrap and it will probe  *
+* in a normal manner.                                                        *
+******************************************************************************
+

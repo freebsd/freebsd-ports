@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mwavem-fbsd
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	comms
-MASTER_SITES=	http://oss.software.ibm.com/developer/opensource/linux/projects/mwave/releases/ \
+MASTER_SITES=	http://www.escape.com/developer/~simonw/ \
 		${MASTER_SITE_LOCAL}
 EXTRACT_SUFX=	.tgz
 
@@ -18,27 +18,46 @@ LIB_DEPENDS=	lthread.2:${PORTSDIR}/devel/linuxthreads
 
 ONLY_FOR_ARCHS=	i386
 
-STARTUP=	mwave.sh
+STARTUP=	mwavem.sh
 USE_GMAKE=	yes
 SLEEP=		/bin/sleep
 
 .include <bsd.port.pre.mk>
 
 pre-build:
-	${PERL} -pi.orig -e "s@f /etc@f ${PREFIX}/etc@g" ${WRKSRC}/Makefile
+	${PERL} -pi.orig -e "s@f /etc@f ${PREFIX}/etc@g;s@install -c -m -755@install -s -c -m 755@g" ${WRKSRC}/Makefile
+	${PERL} -pi.orig -e "s@/etc/mwavem@${PREFIX}/etc/mwavem@g" ${WRKSRC}/modem.c
 	${PERL} -pi.orig -e "s@ko /modules@ko ${PREFIX}/share/mwave@g" ${WRKSRC}/drivers/Makefile
-	${PERL} -pi.orig -e "s@install -m@install -c -m@g" \
-		${WRKSRC}/manager/Makefile ${WRKSRC}/meio/Makefile ${WRKSRC}/mwmbl/Makefile \
-		${WRKSRC}/mwmlw32/Makefile ${WRKSRC}/mwmpw32/Makefile ${WRKSRC}/mwmutil/Makefile \
-		${WRKSRC}/mwwtt32/Makefile
 
 pre-install:
 	${MKDIR} ${PREFIX}/share/mwave
 
 post-install:
+	@${RM} -f /dev/mwave
+	@${ECHO} "Creating /dev/mwave"
+	mknod /dev/mwave c 96 0
 	@${ECHO} "Installing ${PREFIX}/etc/rc.d/${STARTUP} startup file."
 	@${INSTALL_SCRIPT} ${FILESDIR}/${STARTUP} ${PREFIX}/etc/rc.d/
-	strip ${PREFIX}/sbin/mwavem
+	@${ECHO} "******************************************************************************"; \
+	${ECHO} "*                       Driver loading information                           *"; \
+	${ECHO} "*                                                                            *"; \
+	${ECHO} "* This package includes a device driver in a kernel module. While it is      *"; \
+	${ECHO} "* installed in ${PREFIX}/share/mwave, this results in the initial device    *"; \
+	${ECHO} "* probe not seeing the device and possibly reporting errors for the sio      *"; \
+	${ECHO} "* device which may be ignored.                                               *"; \
+	${ECHO} "*                                                                            *"; \
+	${ECHO} "* It may also result in the serial device being probed at a 8250 instead of  *"; \
+	${ECHO} "* a 16550A as the probe may occur before he device is fully initialized. If  *"; \
+	${ECHO} "* this happens you must re-boot to get the modem to work.                    *"; \
+	${ECHO} "*                                                                            *"; \
+	${ECHO} "* You can eliminate this problem by copying ${PREFIX}/share/mwave/mwavedd.ko*"; \
+	${ECHO} "* into /modules. Then add the line:                                          *"; \
+	${ECHO} "* mwavedd_load=\"YES\"                                                         *"; \
+	${ECHO} "* to /boot/loader.conf. This will load the driver at the start of the        *"; \
+	${ECHO} "* bootstrap and it will probe in a normal manner.                            *"; \
+	${ECHO} "******************************************************************************"; \
+	${ECHO} " "
+	@${SLEEP} 5
 
 pre-fetch:
 .if !exists(${SRC_BASE}/sys/Makefile)

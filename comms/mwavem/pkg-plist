@@ -1,6 +1,6 @@
 sbin/mwavem
 etc/mwavem.conf
-etc/rc.d/mwave.sh
+etc/rc.d/mwavem.sh
 share/mwave/agc8.dsp
 share/mwave/agc9.dsp
 share/mwave/agc9wt.dsp
@@ -78,3 +78,6 @@ lib/libmwmlw32.a
 lib/libmwmpw32.a
 lib/libmwmbl.a
 @dirrm share/mwave
+@exec rm -f /dev/mwave
+@exec mknod /dev/mwave c 96 0
+@unexec rm -f /dev/mwave
