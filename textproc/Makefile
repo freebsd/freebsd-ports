@@ -370,6 +370,7 @@
     SUBDIR += ruby-libxslt
     SUBDIR += ruby-mwdom
     SUBDIR += ruby-nqxml
+    SUBDIR += ruby-quixml
     SUBDIR += ruby-raspell
     SUBDIR += ruby-rd-mode.el
     SUBDIR += ruby-rdoc
