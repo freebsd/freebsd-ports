@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	jit
-PORTVERSION=	1.1.6
+PORTVERSION=	1.1.7
 CATEGORIES=	net
-MASTER_SITES=	http://www.jabberstudio.org/files/jit/
+MASTER_SITES=	http://www.jabber.ru/files/jit/
 DIST_SUBDIR=	jabber
 
-MAINTAINER=	gonzo@univ.kiev.ua
+MAINTAINER=	alexander.timoshenko@gmail.com
 COMMENT=	Jabber ICQ Transport
 
 USE_GMAKE=	yes
-USE_REINPLACE=  yes
+USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
@@ -32,7 +32,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/lib/jabber/jit
 	@${INSTALL_DATA} ${WRKSRC}/jit/jit.so ${PREFIX}/lib/jabber/jit
 	@${INSTALL_DATA} ${WRKSRC}/xdb_file/xdb_file.so ${PREFIX}/lib/jabber/jit
-	@${INSTALL_PROGRAM} ${WRKSRC}/jabberd/jabberd  ${PREFIX}/sbin/jit
+	@${INSTALL_PROGRAM} ${WRKSRC}/jabberd/jabberd-jit  ${PREFIX}/sbin/jit
 	@${INSTALL_DATA} ${WRKSRC}/jit/jabber-icq.example ${PREFIX}/etc
 	@${INSTALL_SCRIPT} ${WRKSRC}/jit/jit.sh  ${PREFIX}/etc/rc.d
 
