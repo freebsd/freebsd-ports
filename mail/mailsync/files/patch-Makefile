@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Oct 24 16:03:07 2002
-+++ Makefile	Wed Feb 26 23:39:48 2003
+--- Makefile.orig	Thu Oct 24 17:03:07 2002
++++ Makefile	Wed Jul 14 04:02:48 2004
 @@ -1,32 +1,32 @@
  # compiling with g++-3 worked for me with the commented ## lines - tpo
  
@@ -22,7 +22,8 @@
  ##CC = g++-3.0
  
  # flags for your compiler
- CFLAGS = -g  -O2 -Wall -I$(C)
+-CFLAGS = -g  -O2 -Wall -I$(C)
++CFLAGS += -Wall -fno-operator-names -I$(C)
  
  # required libraries
 -LDFLAGS = -lm -lssl -lgssapi_krb5
