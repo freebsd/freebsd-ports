@@ -1,24 +1,28 @@
-bin/tpp.rb
 bin/tpp
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/THANKS
-%%PORTDOCS%%%%DOCSDIR%%/contrib/tpp.vim
-%%PORTDOCS%%%%DOCSDIR%%/examples/ac-am.tpp
-%%PORTDOCS%%%%DOCSDIR%%/examples/bold.tpp
-%%PORTDOCS%%%%DOCSDIR%%/examples/center-et-al.tpp
-%%PORTDOCS%%%%DOCSDIR%%/examples/colors.tpp
-%%PORTDOCS%%%%DOCSDIR%%/examples/colors2.tpp
-%%PORTDOCS%%%%DOCSDIR%%/examples/exec.tpp
-%%PORTDOCS%%%%DOCSDIR%%/examples/horline.tpp
-%%PORTDOCS%%%%DOCSDIR%%/examples/huge.tpp
-%%PORTDOCS%%%%DOCSDIR%%/examples/list.tpp
-%%PORTDOCS%%%%DOCSDIR%%/examples/manyslides.tpp
-%%PORTDOCS%%%%DOCSDIR%%/examples/shell.tpp
-%%PORTDOCS%%%%DOCSDIR%%/examples/slidein.tpp
-%%PORTDOCS%%%%DOCSDIR%%/examples/source.tpp
-%%PORTDOCS%%%%DOCSDIR%%/examples/test.tpp
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DOCSDIR%%/CHANGES
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/DESIGN
+%%DOCSDIR%%/README
+%%DOCSDIR%%/THANKS
+%%DOCSDIR%%/contrib/tpp-mode.el
+%%DOCSDIR%%/contrib/tpp.vim
+%%DOCSDIR%%/examples/ac-am.tpp
+%%DOCSDIR%%/examples/align-footer.tpp
+%%DOCSDIR%%/examples/bold.tpp
+%%DOCSDIR%%/examples/colors.tpp
+%%DOCSDIR%%/examples/colors2.tpp
+%%DOCSDIR%%/examples/debian-packaging.tpp
+%%DOCSDIR%%/examples/exec.tpp
+%%DOCSDIR%%/examples/horline.tpp
+%%DOCSDIR%%/examples/huge.tpp
+%%DOCSDIR%%/examples/list.tpp
+%%DOCSDIR%%/examples/manyslides.tpp
+%%DOCSDIR%%/examples/shell.tpp
+%%DOCSDIR%%/examples/slidein.tpp
+%%DOCSDIR%%/examples/source.tpp
+%%DOCSDIR%%/examples/test.tpp
+%%DOCSDIR%%/examples/tpp-features.tpp
+%%DOCSDIR%%/examples/wrap.tpp
+@dirrm %%DOCSDIR%%/contrib
+@dirrm %%DOCSDIR%%/examples
+@dirrm %%DOCSDIR%%
