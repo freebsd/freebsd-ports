@@ -1,10 +1,9 @@
 # New ports collection makefile for:	Internationalized fvwm2
 # Version required:	2.0.46
-# Date created:		02 Mar 1997
-# Whom:			Makoto Matsushita <matusita@jp.freebsd.org>,
-#			based on Hidekazu Kuroki's work of 2.0.43.
+# Date created:		20 Jan 1996
+# Whom:			peter
 #
-# $Id: Makefile,v 1.9 1997/06/09 21:57:41 max Exp $
+# $Id: Makefile,v 1.10 1997/10/11 02:01:47 max Exp $
 #
 
 DISTNAME=	fvwm-2.0.46
@@ -21,11 +20,16 @@ MAINTAINER=	matusita@jp.freebsd.org
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
+MAN1= 		FvwmAudio.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 
+		FvwmButtons.1 FvwmCascade.1 FvwmCpp.1 FvwmForm.1 
+		FvwmIconBox.1 FvwmIconMan.1 FvwmIdent.1 FvwmM4.1 FvwmPager.1
+		FvwmSave.1 FvwmSaveDesk.1 FvwmScroll.1 FvwmTalk.1 FvwmTile.1
+		FvwmWinList.1 fvwm2.1 xpmroot.1
+MANCOMPRESSED=	yes
 
 # filenames.
 PATCH_FIXIT=	kits/patch/fix-2.0.46
 PATCH_I18N=	kits/patch/PATCH.I18N
-
 USE_PATCHFILES=	${PATCH_FIXIT} ${PATCH_I18N}
 
 pre-patch:
