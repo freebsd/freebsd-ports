@@ -4241,6 +4241,7 @@ ladder		ports/games/ladder
 ladspa		ports/audio/ladspa
 lafontaine	ports/lang/lafontaine
 lamarc		ports/biology/lamarc
+lambda		ports/math/lambda
 lambdamoo	ports/net/lambdamoo
 lame		ports/audio/lame
 landscape	ports/graphics/landscape
