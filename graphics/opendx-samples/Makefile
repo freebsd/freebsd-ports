@@ -16,6 +16,8 @@ DISTNAME=	dxsamples-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Example files for IBM's OpenDX
 
+BROKEN=		"Installs a world-writable directory"
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SHELL=/bin/sh
 
