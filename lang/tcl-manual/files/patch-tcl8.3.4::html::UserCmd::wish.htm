@@ -1,0 +1,31 @@
+$FreeBSD$
+
+--- tcl8.3.4/html/UserCmd/wish.htm.orig	Mon Dec 17 01:02:23 2001
++++ tcl8.3.4/html/UserCmd/wish.htm	Mon Dec 17 01:03:12 2001
+@@ -35,7 +35,7 @@
+ <H3><A NAME="M2">NAME</A></H3>
+ wish - Simple windowing shell
+ <H3><A NAME="M3">SYNOPSIS</A></H3>
+-<B>wish</B> ?<I>fileName arg arg ...</I>?<BR>
++<B>wish8.3</B> ?<I>fileName arg arg ...</I>?<BR>
+ <H3><A NAME="M4">OPTIONS</A></H3>
+ <DL>
+ <P><DT><A NAME="M5"><B>-colormap </B><I>new</I></A><DD>
+@@ -143,7 +143,7 @@
+ <P></DL>
+ <H3><A NAME="M22">SCRIPT FILES</A></H3>
+ If you create a Tcl script in a file whose first line is
+-<PRE><B>#!/usr/local/bin/wish</B></PRE>
++<PRE><B>#!/usr/local/bin/wish8.3</B></PRE>
+ then you can invoke the script file directly from your shell if
+ you mark it as executable.
+ This assumes that <B>wish</B> has been installed in the default
+@@ -157,7 +157,7 @@
+ following three lines:
+ <PRE><B>#!/bin/sh
+ # the next line restarts using wish &#92;
+-exec wish &quot;$0&quot; &quot;$@&quot;</B></PRE>
++exec wish8.3 &quot;$0&quot; &quot;$@&quot;</B></PRE>
+ This approach has three advantages over the approach in the previous
+ paragraph.  First, the location of the <B>wish</B> binary doesn't have
+ to be hard-wired into the script:  it can be anywhere in your shell

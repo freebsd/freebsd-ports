@@ -184,6 +184,7 @@
     SUBDIR += swi-pl
     SUBDIR += sxm
     SUBDIR += t3x
+    SUBDIR += tcl-manual
     SUBDIR += tcl80
     SUBDIR += tcl81-thread
     SUBDIR += tcl82
