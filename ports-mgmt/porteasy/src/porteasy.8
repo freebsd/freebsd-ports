@@ -27,7 +27,7 @@
 .\"
 .\"	$FreeBSD$
 .\"
-.Dd September 19, 2000
+.Dd June 9, 2001
 .Dt PORTEASY 8
 .Os
 .Sh NAME
@@ -35,7 +35,7 @@
 .Nd fetch and build ports
 .Sh SYNOPSIS
 .Nm porteasy
-.Op Fl abCceFfhikLluVvw
+.Op Fl abCceFfhIikLlsuVvw
 .Op Fl D Ar date
 .Op Fl d Ar dir
 .Op Fl p Ar dir
@@ -73,6 +73,8 @@ installed.
 Fetch the selected ports.
 .It Fl h
 Show a summary of options and parameters.
+.It Fl I
+Select installed ports.
 .It Fl i
 Describe the selected ports.
 .It Fl k
@@ -86,6 +88,8 @@ Specify the ports directory (normally
 .Pa /usr/ports ) .
 .It Fl r Ar dir
 Specify the CVS root directory.
+.It Fl s
+List installed ports and their status.
 .It Fl t Ar tag
 Specify a tag to use for
 .Xr cvs 1
@@ -128,7 +132,10 @@ the command line, the index file is updated using
 .Xr cvs 1 .
 .It Select ports
 The selection list is initialized with the ports listed on the command
-line, marked as explicit dependencies.
+line (and, if the
+.Fl I
+option was specified, all installed ports) marked as explicit
+dependencies.
 Any unqualified names are looked up in the index, using simple
 heuristics to identify incompletely named ports.
 If a certain match is not found,
@@ -162,6 +169,12 @@ If the
 option was specified, the fully qualified name and package name of all
 selected ports are listed.
 Explicitly selected ports are indicated with a star.
+.It List installed ports
+If the
+.Fl s
+option was specified, all installed ports are listed with their status
+('<' for ports that are older than the version in the tree, '>' for
+those that are newer, '?' for those that could not be identified).
 .It Show packing lists
 If the
 .Fk L
@@ -174,11 +187,6 @@ option was specified,
 .Nm
 prints a description of each port that was specified on the command
 line.
-If no ports were specified,
-.Nm
-instead prints a list of all installed ports, with unknown ports (i.e.
-ports that are not in the index file, or are out of date) indicated
-with a question mark.
 .It Show the URLs of the selected ports' web sites
 If the
 .Fl w

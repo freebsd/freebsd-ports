@@ -33,7 +33,7 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.3";
+my $VERSION	= "2.4";
 my $COPYRIGHT	= "Copyright (c) 2000 Dag-Erling Smørgrav. All rights reserved.";
 
 # Constants
@@ -62,22 +62,26 @@ my $cvsroot   = 0;		# CVS root directory
 my $exclude   = 0;		# Do not list installed ports
 my $fetch     = 0;		# Fetch ports
 my $force     = 0;		# Force package registration
+my $installed = 0;		# Select installed ports
 my $info      = 0;		# Show port info
 my $dontclean = 0;		# Don't clean after build
 my $packages  = 0;		# Build packages
 my $list      = 0;		# List ports
 my $plist     = 0;		# Print packing list
 my $build     = 0;		# Build ports
+my $status    = 0;		# List installed ports and their status
 my $update    = 0;		# Update ports tree from CVS
 my $verbose   = 0;		# Verbose mode
 my $website   = 0;		# Show website URL
 
 # Global variables
+my $have_index;			# Index has been read
 my %ports;			# Maps ports to their directory.
 my %pkgname;			# Inverse of the above map
 my %masterport;			# Maps ports to their master ports
 my %reqd;			# Ports that need to be installed
-my %installed;			# Ports that are already installed
+my %have_dep;			# Dependencies that are already present
+my %installed;			# Installed ports
 my $suppressed;			# Suppress output
 
 #
@@ -322,6 +326,7 @@ sub read_index() {
     local *INDEX;		# File handle
     my $line;			# Line from file
 
+    return if ($have_index);
     info("Reading index file");
     sysopen(INDEX, $index, O_RDONLY)
 	or bsd::err(1, "can't open $index");
@@ -335,6 +340,7 @@ sub read_index() {
     }
     close(INDEX);
     info(keys(%ports) . " ports in index");
+    $have_index = 1;
 }
 
 #
@@ -370,6 +376,9 @@ sub add_port($$) {
     if ($port =~ m|^([^/]+/[^/]+)$|) {
 	$realport = $1;
     } else {
+	if (!$have_index) {
+	    read_index();
+	}
 	if (exists($ports{$port})) {
 	    $realport = $ports{$port};
 	} else {
@@ -384,6 +393,60 @@ sub add_port($$) {
     }
     $reqd{$realport} |= $req;
     return 0;
+}
+
+#
+# Get the ORIGIN line from a manifest
+#
+sub get_origin($) {
+    my $port = shift;		# Port to inspect
+
+    local *FILE;		# File handle
+    my $origin;			# Origin
+
+    if (!sysopen(FILE, "$dbdir/$port/+CONTENTS", O_RDONLY)) {
+        bsd::warn("can't read manifest for $port");
+	return undef;
+    }
+    while (<FILE>) {
+	if (m/^\@comment\s+ORIGIN:(.*)\s*$/) {
+	    $origin = $1;
+	    last;
+	}
+    }
+    close(FILE);
+    if ($origin) {
+	info("$port -> $origin\n");
+    }
+    return $origin;
+}
+
+#
+# Select installed ports
+#
+sub add_installed() {
+
+    local *DIR;			# Directory handle
+    my $port;			# Installed port
+    my $origin;			# Port's origin
+    
+    opendir(DIR, $dbdir)
+	or bsd::err(1, "can't read database directory");
+    foreach $port (readdir(DIR)) {
+	next if ($port eq "." || $port eq ".." || ! -d "$dbdir/$port");
+	if (!defined($origin = get_origin($port))) {
+	    if (!$have_index) {
+		read_index();
+	    }
+	    if (!defined($origin = $ports{$port})) {
+	        bsd::warnx("installed port %s is unknown", $port);
+	    }
+	}
+	if (defined($installed{$port} = $origin)) {
+	    add_port($origin, &REQ_EXPLICIT);
+	}
+    }
+    closedir(DIR);
 }
 
 #
@@ -492,7 +555,7 @@ sub find_dependencies($) {
 	}
 	($lhs, $rhs) = ($1, $2);
 	if ($exclude) {
-	    if ($installed{$rhs}) {
+	    if ($have_dep{$rhs}) {
 		next;
 	    }
 	    info("Verifying status of $rhs ($lhs)");
@@ -500,10 +563,10 @@ sub find_dependencies($) {
 		($lhs =~ m/\.\d+$/ && find_library($lhs)) ||
 		find_binary($lhs)) {
 		info("$rhs seems to be installed");
-		$installed{$rhs} = 1;
+		$have_dep{$rhs} = 1;
 		next;
 	    }
-	    $installed{$rhs} = -1;
+	    $have_dep{$rhs} = -1;
 	}
 	info("Adding $rhs as a dependency for $port");
 	$depends{$rhs} = 1;
@@ -719,24 +782,20 @@ sub show_port_plist($) {
 #
 sub list_installed() {
 
-    local *DIR;			# Directory handle
-    my $port;			# Port name
-    my $unknown;		# Unknown ports
+    my $port;			# Port
+    my $origin;			# Origin
 
-    opendir(DIR, $dbdir)
-	or bsd::err(1, "can't read database directory");
-    print("Installed ports:\n");
-    foreach $port (readdir(DIR)) {
-	next if ($port eq "." || $port eq ".." || ! -d "$dbdir/$port");
-	if (exists($ports{$port})) {
-	    print("   $port\n");
-	} else {
+    foreach $port (sort(keys(%installed))) {
+	$origin = $installed{$port};
+	if (!defined($origin) || !defined($pkgname{$origin})) {
 	    print(" ? $port\n");
-	    ++$unknown;
+	} elsif ($port lt $pkgname{$origin}) {
+	    print(" < $port ($pkgname{$origin})\n");
+	} elsif ($port gt $pkgname{$origin}) {
+	    print(" > $port ($pkgname{$origin})\n");
+	} else {
+	    print("   $port\n");
 	}
-    }
-    if ($unknown) {
-	print("Recommend you run pkg_version(1).\n");
     }
 }
 
@@ -805,7 +864,7 @@ sub build_port($) {
 #
 sub usage() {
 
-    stderr("Usage: porteasy [-abCceFfhikLluVvw] [-D date] [-d dir]\n" .
+    stderr("Usage: porteasy [-abCceFfhIikLlsuVvw] [-D date] [-d dir]\n" .
 	   "    [-p dir] [-r dir] [-t tag] [port ...]\n");
     exit(1);
 }
@@ -838,10 +897,12 @@ Options:
   -F, --force-pkg-register Force package registration
   -f, --fetch              Fetch distfiles
   -h, --help               Show this information
+  -I, --installed          Select installed ports
   -i, --info               Show info about specified ports
   -k, --packages           Build packages for the specified ports
   -L, --plist              Show the packing lists for the specified ports
   -l, --list               List required ports and their dependencies
+  -s, --status             List installed ports and their status
   -u, --update             Update relevant portions of the ports tree
   -V, --version            Show version number
   -v, --verbose            Verbose mode
@@ -862,7 +923,6 @@ Report bugs to <des\@freebsd.org>.
 MAIN:{
     my $port;			# Port name
     my $err = 0;		# Error count
-    my $need_index;		# Need the index
 
     # Show usage if no arguments were specified on the command line
     if (!@ARGV) {
@@ -889,12 +949,14 @@ MAIN:{
 	       "F|force-pkg-register"	=> \$force,
 	       "f|fetch"		=> \$fetch,
 	       "h|help"			=> \&help,
+	       "I|installed"		=> \$installed,
 	       "i|info"			=> \$info,
 	       "k|packages"		=> \$packages,
 	       "L|plist"		=> \$plist,
 	       "l|list"			=> \$list,
 	       "p|portsdir=s"		=> \$portsdir,
 	       "r|cvsroot=s"		=> \$cvsroot,
+	       "s|status"		=> \$status,
 	       "t|tag=s"		=> \$tag,
 	       "u|update"		=> \$update,
 	       "V|version"		=> \&version,
@@ -924,6 +986,11 @@ MAIN:{
     if ($packages) {
 	$build = 1;
     }
+
+    # 'status' implies 'installed'
+    if ($status) {
+	$installed = 1;
+    }
     
     # Set and check CVS root
     if ($anoncvs && !$cvsroot) {
@@ -939,21 +1006,8 @@ MAIN:{
 	bsd::errx(1, "No CVS root, please use the -r option or set \$CVSROOT");
     }
 
-    # Check if we need the index
-    if (!@ARGV && $info) {
-	$need_index = 1;
-    }
-    foreach $port (@ARGV) {
-	if ($port !~ m/\//) {
-	    $need_index = 1;
-	}
-    }
-    
-    # Step 1: read the ports index
+    # Step 1: update the ports index
     update_index();
-    if ($need_index) {
-	read_index();
-    }
 
     # Step 2: build list of explicitly required ports
     foreach $port (@ARGV) {
@@ -961,6 +1015,9 @@ MAIN:{
     }
     if ($err) {
 	bsd::errx(1, "some required ports were not found.");
+    }
+    if ($installed) {
+	add_installed();
     }
 
     # Step 3: update port directories and discover dependencies
@@ -986,20 +1043,21 @@ MAIN:{
 	}
     }
 
-    # Step 6: show info (or list installed packages)
+    # Step 6: list installed ports
+    if ($status) {
+	list_installed();
+    }
+    
+    # Step 7: show info
     if ($info) {
-	if (!@ARGV) {
-	    list_installed();
-	} else {
-	    foreach $port (keys(%reqd)) {
-		if ($reqd{$port} & &REQ_EXPLICIT) {
-		    show_port_info($port);
-		}
+	foreach $port (keys(%reqd)) {
+	    if ($reqd{$port} & &REQ_EXPLICIT) {
+		show_port_info($port);
 	    }
 	}
     }
 
-    # Step 7: show packing list
+    # Step 8: show packing list
     if ($plist) {
 	foreach $port (keys(%reqd)) {
 	    if ($reqd{$port} & &REQ_EXPLICIT) {
@@ -1008,7 +1066,7 @@ MAIN:{
 	}
     }
 
-    # Step 8: show website URL
+    # Step 9: show website URL
     if ($website) {
 	foreach $port (keys(%reqd)) {
 	    if ($reqd{$port} & &REQ_EXPLICIT) {
@@ -1017,7 +1075,7 @@ MAIN:{
 	}
     }
     
-    # Step 9: clean the ports directories (or the entire tree)
+    # Step A: clean the ports directories (or the entire tree)
     if ($clean) {
 	if (!@ARGV) {
 	    clean_tree();
@@ -1030,7 +1088,7 @@ MAIN:{
 	}
     }
     
-    # Step A: fetch distfiles
+    # Step B: fetch distfiles
     if ($fetch) {
 	foreach $port (keys(%reqd)) {
 	    if ($reqd{$port} != &REQ_MASTER) {
@@ -1039,7 +1097,7 @@ MAIN:{
 	}
     }
 
-    # Step B: build ports - only the explicitly required ones, since
+    # Step C: build ports - only the explicitly required ones, since
     # some dependencies (most commonly XFree86) may be bogus.
     if ($build || $packages) {
 	foreach $port (keys(%reqd)) {
