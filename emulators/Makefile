@@ -12,6 +12,7 @@
     SUBDIR += dgen-sdl
     SUBDIR += dlx
     SUBDIR += fmsx
+    SUBDIR += freesci
     SUBDIR += frodo
     SUBDIR += gsnes9x
     SUBDIR += hfs
