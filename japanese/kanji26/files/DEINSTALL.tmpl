@@ -9,4 +9,5 @@ if [ "x$2" = "xPOST-DEINSTALL" ]; then
 	 echo "to enable this update."
 	 echo "**********************************************************"
 	)
+	[ `wc -c ${PKG_PREFIX}/%%FONTSDIR%%/fonts.dir | awk '{print $1}'` = 2 ] && rm -f ${PKG_PREFIX}/%%FONTSDIR%%/fonts.dir
 fi

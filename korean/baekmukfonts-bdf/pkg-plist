@@ -42,3 +42,4 @@
 %%FONTSDIR%%/hline24.pcf.gz
 @exec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
 @unexec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
+@unexec if [ `wc -c %D/%%FONTSDIR%%/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/%%FONTSDIR%%/fonts.dir; fi

@@ -18,8 +18,10 @@ lib/X11/fonts/local/3270gt24b.pcf.gz
 lib/X11/fonts/local/3270gt32.pcf.gz
 lib/X11/fonts/local/3270gt32b.pcf.gz
 lib/X11/x3270/ibm_hosts
-@exec /bin/chmod u+w /usr/X11R6/lib/X11/fonts/local /usr/X11R6/lib/X11/fonts/local/fonts.dir
-@exec /usr/X11R6/bin/mkfontdir /usr/X11R6/lib/X11/fonts/local
-@exec /bin/chmod u=rwx,go=rx /usr/X11R6/lib/X11/fonts/local
-@exec /bin/chmod a=r /usr/X11R6/lib/X11/fonts/local/fonts.dir
+@exec /bin/chmod u+w %D/lib/X11/fonts/local %D/lib/X11/fonts/local/fonts.dir
+@exec %D/bin/mkfontdir %D/lib/X11/fonts/local
+@exec /bin/chmod u=rwx,go=rx %D/lib/X11/fonts/local
+@exec /bin/chmod a=r %D/lib/X11/fonts/local/fonts.dir
+@unexec %D/bin/mkfontdir %D/lib/X11/fonts/local
+@unexec if [ `wc -c %D/lib/X11/fonts/local/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/lib/X11/fonts/local/fonts.dir; fi
 @dirrm lib/X11/x3270

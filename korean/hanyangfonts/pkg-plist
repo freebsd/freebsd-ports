@@ -12,3 +12,4 @@ lib/X11/fonts/local/hgm18.pcf.gz
 lib/X11/fonts/local/hgm20.pcf.gz
 @exec cd %D/lib/X11/fonts/local ; %D/bin/mkfontdir
 @unexec cd %D/lib/X11/fonts/local ; %D/bin/mkfontdir
+@unexec if [ `wc -c %D/lib/X11/fonts/local/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/lib/X11/fonts/local/fonts.dir; fi
