@@ -6,7 +6,7 @@ bin/highlight
 %%PORTDOCS%%%%EXAMPLESDIR%%/cgi/perl/README_CGI
 %%PORTDOCS%%%%EXAMPLESDIR%%/cgi/perl/highlight.cgi
 %%PORTDOCS%%%%EXAMPLESDIR%%/cgi/php/CodeHighLight.php
-%%PORTDOCS%%%%EXAMPLESDIR%%/frontend/highlight-pyqt-GUI-0.1-3.tar.gz
+%%PORTDOCS%%%%EXAMPLESDIR%%/frontend/highlight-pyqt-GUI-0.1-4.tar.gz
 %%DATADIR%%/extensions.conf
 %%DATADIR%%/helpmsg/de.help
 %%DATADIR%%/helpmsg/en.help
@@ -110,6 +110,8 @@ bin/highlight
 %%DATADIR%%/themes/greenlcd.style
 %%DATADIR%%/themes/greyish.style
 %%DATADIR%%/themes/ide-anjuta.style
+%%DATADIR%%/themes/ide-codewarrior.style
+%%DATADIR%%/themes/vim-dark.style
 %%DATADIR%%/themes/ide-devcpp.style
 %%DATADIR%%/themes/ide-jbuilder4.style
 %%DATADIR%%/themes/ide-jcreator2.style
@@ -136,6 +138,7 @@ bin/highlight
 %%DATADIR%%/themes/untypical.style
 %%DATADIR%%/themes/usable.style
 %%DATADIR%%/themes/vampire.style
+%%DATADIR%%/themes/vim.style
 %%DATADIR%%/themes/website.style
 %%DATADIR%%/themes/website2-blue.style
 %%DATADIR%%/themes/website2.style
