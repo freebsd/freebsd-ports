@@ -1,0 +1,43 @@
+include/osb/NRCore/KWIQCGContext.h
+include/osb/NRCore/KWIQPageCache.h
+include/osb/NRCore/KWIQResponse.h
+include/osb/NRCore/WebCoreBridge.h
+include/osb/NRCore/WebCoreCache.h
+include/osb/NRCore/WebCoreFoundation.h
+include/osb/NRCore/WebCoreHistory.h
+include/osb/NRCore/WebCoreImageRenderer.h
+include/osb/NRCore/WebCoreImageRendererFactory.h
+include/osb/NRCore/WebCoreKeyboardAccess.h
+include/osb/NRCore/WebCoreResourceLoader.h
+include/osb/NRCore/WebCoreSettings.h
+include/osb/NRCore/WebCoreTextRenderer.h
+include/osb/NRCore/WebCoreTextRendererFactory.h
+include/osb/NRCore/WebCoreUnicode.h
+include/osb/NRCore/WebCoreViewFactory.h
+lib/libnrcore.a
+lib/libnrcore.la
+lib/libnrcore.so
+lib/libnrcore.so.0
+lib/libnrcore_kwiq_gtk.a
+lib/libnrcore_kwiq_gtk.la
+lib/libnrcore_kwiq_gtk.so
+lib/libnrcore_kwiq_gtk.so.0
+libdata/pkgconfig/osb-nrcore.pc
+%%DATADIR%%/eastResizeCursor.tiff
+%%DATADIR%%/helpCursor.tiff
+%%DATADIR%%/html4.css
+%%DATADIR%%/linkCursor.tiff
+%%DATADIR%%/moveCursor.tiff
+%%DATADIR%%/northEastResizeCursor.tiff
+%%DATADIR%%/northResizeCursor.tiff
+%%DATADIR%%/northWestResizeCursor.tiff
+%%DATADIR%%/quirks.css
+%%DATADIR%%/southEastResizeCursor.tiff
+%%DATADIR%%/southResizeCursor.tiff
+%%DATADIR%%/southWestResizeCursor.tiff
+%%DATADIR%%/user.css
+%%DATADIR%%/waitCursor.tiff
+%%DATADIR%%/westResizeCursor.tiff
+@dirrm %%DATADIR%%
+@dirrm include/osb/NRCore
+@dirrm include/osb

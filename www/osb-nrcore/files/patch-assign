@@ -1,0 +1,441 @@
+Index: kwiq/KWQDictImpl.cpp
+===================================================================
+--- kwiq/KWQDictImpl.cpp	2004/10/18 18:39:48	1.3
++++ kwiq/KWQDictImpl.cpp	2004/10/25 10:08:30
+@@ -30,26 +30,90 @@
+  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+  * OF THE POSSIBILITY OF SUCH DAMAGE.
+  */
++#include <string.h>
+ 
+ #include "KWQDictImpl.h"
++#include "KWQAssertions.h"
++#include "KWQMap.h"
+ #include <CoreFoundation/CoreFoundation.h>
++
++typedef void (* DeleteFunction) (void *);
++
++class KWQDictPrivate
++{
++public:
++    KWQDictPrivate(int size, bool caseSensitive, DeleteFunction);
++    KWQDictPrivate(const KWQDictPrivate &dp);
++    ~KWQDictPrivate();
++    
++    QMap<QString,void*> map;
++    DeleteFunction deleteFunc;
++    bool modifyCase;
++    KWQDictIteratorPrivate *iterators;    
++};
++
++class KWQDictIteratorPrivate
++{
++public:
++    KWQDictIteratorPrivate(KWQDictPrivate *);
++    ~KWQDictIteratorPrivate();
++    
++    void remove(const QString &key);
++    void dictDestroyed();
++    
++    uint count;
++    uint pos;
++    QString **keys;
++    void **values;
++    KWQDictPrivate *dict;
++    KWQDictIteratorPrivate *next;
++    KWQDictIteratorPrivate *prev;
++};
++
++KWQDictPrivate::KWQDictPrivate(int size, bool caseSensitive,
++                               DeleteFunction _deleteFunc)
++    : deleteFunc(_deleteFunc),
++      modifyCase(!caseSensitive),
++      iterators(0)
++{
++}
++
++KWQDictPrivate::KWQDictPrivate(const KWQDictPrivate &dp)
++    : map(dp.map),
++      deleteFunc(dp.deleteFunc),
++      modifyCase(dp.modifyCase),
++      iterators(0)
++{
++}
++
++KWQDictPrivate::~KWQDictPrivate()
++{
++    for (KWQDictIteratorPrivate *it = iterators; it; it = it->next) {
++        it->dictDestroyed();
++    }
++}
++
++
+ /*
+  * No KWQDictImpl::~KWQDictImpl() because QDict::~QDict calls KWQDictImpl::clear()
+  * on 
+  */
+ KWQDictImpl::KWQDictImpl(int size, bool caseSensitive, void (*deleteFunc_)(void *))
+-    : deleteFunc(deleteFunc_)
+-    , modifyCase(!caseSensitive)
++  : d(new KWQDictPrivate(size, caseSensitive, deleteFunc_))
+ {
++}
+ 
++KWQDictImpl::~KWQDictImpl()
++{
++    delete d;
+ }
+ 
+ void KWQDictImpl::insert(const QString &key, const void *value)
+ {
+-    if (modifyCase)
+-	map.insert(key.lower(), const_cast<void*>(value));
++    if (d->modifyCase)
++	d->map.insert(key.lower(), const_cast<void*>(value));
+     else
+-	map.insert(key, const_cast<void*>(value) );
++	d->map.insert(key, const_cast<void*>(value) );
+ }
+ 
+ bool KWQDictImpl::remove(const QString &key, bool deleteItem)
+@@ -57,21 +121,26 @@
+     QMapIterator<QString, void*> i;
+     void* data;
+ 
+-    if (modifyCase)
+-	i = map.find(key.lower());
++    if (d->modifyCase)
++	i = d->map.find(key.lower());
+     else
+-	i = map.find(key);
++	i = d->map.find(key);
+     
+-    if (i == map.end())
++    if (i == d->map.end())
+ 	return false;
+     
+     data = *i;
+ 
+-    map.remove(i);    
+-    if (deleteItem && deleteFunc) {
+-      deleteFunc(data);
++    d->map.remove(i);    
++    if (deleteItem && d->deleteFunc) {
++      d->deleteFunc(data);
+       return true;
+     }
++
++    for (KWQDictIteratorPrivate *it = d->iterators; it; it = it->next) {
++        it->remove(key);
++    }
++
+     return false;
+ }
+ 
+@@ -79,71 +148,159 @@
+ {
+     if (deleteItem)
+     {	
+-	QMapIterator<QString,void*> i = map.begin();
+-	QMapIterator<QString,void*> end = map.end();
++	QMapIterator<QString,void*> i = d->map.begin();
++	QMapIterator<QString,void*> end = d->map.end();
+ 	void *data;
+ 	while (i!=end)
+ 	{
+ 	    data=*i;
+-	    if (deleteFunc) deleteFunc(data);
++	    if (d->deleteFunc) d->deleteFunc(data);
+ 	    ++i;
+ 	}
+     }
+ 
+-    map.clear();
++    d->map.clear();
+ }
+ 
+ uint KWQDictImpl::count() const
+ {
+-    return map.count();
++    return d->map.count();
+ }
+     
+ void *KWQDictImpl::find(const QString &key) const
+ {
+     QMapConstIterator<QString,void*> i;
+-    if (modifyCase)
+-	i = map.find(key.lower());
++    if (d->modifyCase)
++	i = d->map.find(key.lower());
+     else
+-	i = map.find(key);
++	i = d->map.find(key);
+ 
+-    if (i == map.end())
++    if (i == d->map.end())
+ 	return 0;
+     return *i;
+ }
+ 
++void KWQDictImpl::swap(KWQDictImpl &di)
++{
++    KWQDictPrivate *tmp;
++
++    tmp = di.d;
++    di.d = d;
++    d = tmp;
++}
++
++KWQDictImpl &KWQDictImpl::assign(const KWQDictImpl &di, bool deleteItems)
++{
++    KWQDictImpl tmp(di);
++    
++    if (deleteItems) {
++	clear(true);
++    }
++
++    swap(tmp);
++
++    return *this;
++}
++
++
++KWQDictIteratorImpl::KWQDictIteratorImpl(const KWQDictImpl &di)
++    : d(new KWQDictIteratorPrivate(di.d))
++{
++}
++
+ uint KWQDictIteratorImpl::count() const
+ {
+-    return dict->map.count();
++    return d->count;
+ }
+ 
+ void* KWQDictIteratorImpl::current() const
+ {
+-    if (i == dict->map.end())
+-	return 0;
+-    return *i;
++    if (d->pos >= d->count) {
++	return NULL;
++    }
++    return d->values[d->pos];
+ }
+ 
+ void* KWQDictIteratorImpl::toFirst()
+ {
+-    i=dict->map.begin();
+-    if (i == dict->map.end())
+-	return 0;
+-    
+-    return *i;
++    d->pos = 0;
++    return current();
+ }
++
+ void* KWQDictIteratorImpl::operator++()
+ {
+-    ++i;
+-    if (i==dict->map.end())
+-	return 0;
+-    return *i;
++    ++d->pos;
++    return current();
+ }
+ 
+ QString KWQDictIteratorImpl::currentStringKey() const
++{
++    if (d->pos >= d->count) {
++        return QString();
++    }
++    return QString(*d->keys[d->pos]);
++}
++
++
++KWQDictIteratorPrivate::KWQDictIteratorPrivate(KWQDictPrivate *d) :
++    count(d->map.count()),
++    pos(0),
++    keys(new QString * [count]),
++    values(new void * [count]),
++    dict(d),
++    next(d->iterators),
++    prev(0)
++{
++    d->iterators = this;
++    if (next) {
++        next->prev = this;
++    }
++    
++    unsigned int i = 0;
++    QMap<QString,void*>::Iterator it = d->map.begin();
++    QMap<QString,void*>::Iterator end = d->map.end();    
++    while (it != end) {
++        keys[i] = new QString(it.key());
++	values[i] = it.data();
++	++i;
++	++it;
++    }
++    ASSERT(i==count);	
++}
++
++KWQDictIteratorPrivate::~KWQDictIteratorPrivate()
+ {
+-    if (i == dict->map.end() )
+-	return QString();
++    if (prev) {
++        prev->next = next;
++    } else if (dict) {
++        dict->iterators = next;
++    }
++    if (next) {
++        next->prev = prev;
++    }
++    
++    delete [] keys;
++    delete [] values;
++}
+ 
+-    return QString(i.key());
++void KWQDictIteratorPrivate::remove(const QString &key)
++{
++    for (uint i = 0; i < count; ) {
++      if (*keys[i] != key) {
++            ++i;
++        } else {
++            --count;
++            if (pos > i) {
++                --pos;
++            }
++            memmove(&keys[i], &keys[i+1], sizeof(keys[i]) * (count - i));
++            memmove(&values[i], &values[i+1], sizeof(values[i]) * (count - i));
++        }
++    }
+ }
+ 
++void KWQDictIteratorPrivate::dictDestroyed()
++{
++    count = 0;
++    dict = 0;
++}
+Index: kwiq/KWQDictImpl.h
+===================================================================
+--- kwiq/KWQDictImpl.h	2004/09/23 08:27:53	1.1.1.1
++++ kwiq/KWQDictImpl.h	2004/10/25 10:08:30
+@@ -29,36 +29,42 @@
+ #include "KWQMap.h"
+ #include "KWQString.h"
+ 
++class KWQDictPrivate;
++class KWQDictIteratorPrivate;
++
+ class KWQDictImpl {
+  public:
+     KWQDictImpl(int size, bool caseSensitive, void (*deleteFunc)(void *));
++    ~KWQDictImpl();
+     void insert(const QString &key, const void *value);
+     bool remove(const QString &key, bool deleteItems);
+     
+     void *find(const QString &key) const;
+     void clear(bool deleteItem);
+     uint count() const;
+- private:
+-    void (*deleteFunc)(void*);
+-    QMap<QString,void*> map;
+-    bool modifyCase;
++
++    KWQDictImpl &assign(const KWQDictImpl &pdi, bool deleteItems);
++private:
++    void swap(KWQDictImpl &di);
++    KWQDictPrivate *d;
+     friend class KWQDictIteratorImpl;
+ };
+ 
+ class KWQDictIteratorImpl {
+-    const KWQDictImpl *dict;
+-    QMapConstIterator<QString,void*> i;
+  public:
+-    KWQDictIteratorImpl(const KWQDictImpl &di) :dict(&di), i(di.map.begin()) { }
++    KWQDictIteratorImpl(const KWQDictImpl &di);
+     uint count() const ;
+     void *current() const;
++
++    void* toFirst();
+ 
+-    void* toFirst();
+-
+     void *operator++();
+ 
+ 
+     QString currentStringKey() const;
++private:
++    KWQDictIteratorPrivate *d;
++
+ };
+ 
+ #endif
+--- kwiq/KWQKDebug.h.orig	Mon Oct 11 03:20:49 2004
++++ kwiq/KWQKDebug.h	Tue Jan 21 19:12:34 2003
+@@ -32,20 +32,18 @@
+ class kdbgstream;
+ 
+ typedef kdbgstream & (*KDBGFUNC)(kdbgstream &);
+-#if NDEBUG
++
+ class kdbgstream {
+ public:
+     kdbgstream(unsigned int area = 0, unsigned int level = 0, bool print = true) { }
+-
++    
+     kdbgstream &operator<<(int) { return *this; }
+     kdbgstream &operator<<(unsigned int) { return *this; }
+-    kdbgstream &operator<<(long) { return *this; }
+     kdbgstream &operator<<(double) { return *this; }
+     kdbgstream &operator<<(const char *) { return *this; }
+     kdbgstream &operator<<(const void *) { return *this; }
+     kdbgstream &operator<<(const QString &) { return *this; }
+     kdbgstream &operator<<(const QCString &) { return *this; }
+-    kdbgstream &operator<<(const time_t&) { return *this; }
+     kdbgstream &operator<<(KDBGFUNC) { return *this; }
+ };
+ 
+@@ -59,40 +57,5 @@
+ inline kdbgstream kdFatal(int area = 0) { return kdbgstream(); }
+ inline kdbgstream kdFatal(bool cond, int area = 0) { return kdbgstream(); }
+ inline QString kdBacktrace() { return QString(); }
+-
+-#else
+-
+-
+-class kdbgstream {
+-public:
+-    kdbgstream(unsigned int area = 0, unsigned int level = 0, bool print = true) { }
+-#if KWIQ
+-    kdbgstream &operator<<(int a) { printf("%d",a); return *this; }
+-    kdbgstream &operator<<(unsigned int a) { printf("%d", a);return *this; }
+-    kdbgstream &operator<<(time_t&) {return *this; }
+-    kdbgstream &operator<<(double d) { printf("%f",(float) d);  return *this; }
+-    kdbgstream &operator<<(const char *str) { printf("%s", str);  return *this; }
+-    kdbgstream &operator<<(const void *) {  return *this; }
+-    kdbgstream &operator<<(const QString &qstr) { printf("%s",qstr.latin1());  return *this; }
+-    kdbgstream &operator<<(const QCString &qstr) { printf("%s",qstr.data());  return *this; }
+-    kdbgstream &operator<<(const time_t&t) { printf("%d", (int) t); return *this; }
+-    kdbgstream &operator<<(KDBGFUNC f) {  return f(*this); }
+-#endif
+-};
+-#if KWIQ
+-inline kdbgstream &endl(kdbgstream &s) { printf("\n"); return s; }
+-#else
+-inline kdbgstream &endl(kdbgstream &s) { return s; }
+-#endif
+-inline kdbgstream kdDebug(int area = 0) { return kdbgstream(); }
+-inline kdbgstream kdWarning(int area = 0) { return kdbgstream(); }
+-inline kdbgstream kdWarning(bool cond, int area = 0) { return kdbgstream(); }
+-inline kdbgstream kdError(int area = 0) { return kdbgstream(); }
+-inline kdbgstream kdError(bool cond, int area = 0) { return kdbgstream(); }
+-inline kdbgstream kdFatal(int area = 0) { return kdbgstream(); }
+-inline kdbgstream kdFatal(bool cond, int area = 0) { return kdbgstream(); }
+-inline QString kdBacktrace() { return QString(); }
+-
+-#endif
+ 
+ #endif
