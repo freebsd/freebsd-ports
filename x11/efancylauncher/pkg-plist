@@ -16,3 +16,4 @@ share/enlightenment/epplet_icons/E-FancyLauncher.icon
 @dirrm share/enlightenment/epplet_data/E-FancyLauncher/E-FancyLauncher.ABOUT
 @dirrm share/enlightenment/epplet_data/E-FancyLauncher
 @unexec rmdir %D/share/enlightenment/epplet_data 2>/dev/null || true
+@unexec rmdir %D/share/enlightenment 2>/dev/null || true
