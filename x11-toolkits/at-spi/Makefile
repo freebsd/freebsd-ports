@@ -7,6 +7,7 @@
 
 PORTNAME=	at-spi
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	2.0.0/releases/gnome-2.0-desktop-final
@@ -14,7 +15,7 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gailutil.16:${PORTSDIR}/x11-toolkits/gail \
+LIB_DEPENDS=	gailutil.17:${PORTSDIR}/x11-toolkits/gail \
 		bonobo-2.0:${PORTSDIR}/devel/libbonobo
 
 USE_BZIP2=	yes
