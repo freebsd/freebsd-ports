@@ -2026,6 +2026,7 @@ gdesklets-recentlyused	ports/deskutils/gdesklets-recentlyused
 gdesklets-seti	ports/astro/gdesklets-seti
 gdesklets-starterbar	ports/deskutils/gdesklets-starterbar
 gdesklets-sysinfo	ports/sysutils/gdesklets-sysinfo
+gdesklets-weather	ports/astro/gdesklets-weather
 gdict		ports/textproc/gdict
 gdis		ports/science/gdis
 gdk-pixbuf	ports/graphics/gdk-pixbuf
