@@ -3,11 +3,11 @@
 # Date created:         Sun Apr 14 09:23:59 MET DST 1996
 # Whom:                 Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.20 1998/09/17 00:50:50 asami Exp $
+# $Id: Makefile,v 1.21 1998/11/20 06:36:20 asami Exp $
 #
 
 DISTNAME=	knews-1.0b.0
-CATEGORIES=	x11 news
+CATEGORIES=	news
 MASTER_SITES=	http://www.matematik.su.se/~kjj/
 
 MAINTAINER=	andreas@FreeBSD.ORG

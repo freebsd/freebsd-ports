@@ -3,11 +3,11 @@
 # Date created:		Sun Sep  7 17:55:07 EDT 1997
 # Whom:			Randall Hopper <rhh@ct.picker.com>
 #
-# $Id: Makefile,v 1.10 1998/09/15 11:13:21 asami Exp $
+# $Id: Makefile,v 1.11 1998/09/17 00:32:41 asami Exp $
 #
 
 DISTNAME=	fxtv-0.47
-CATEGORIES=	graphics x11
+CATEGORIES=	graphics
 MASTER_SITES=	http://multiverse.com/~rhh/fxtv/
 EXTRACT_SUFX=	.tgz
 

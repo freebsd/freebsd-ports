@@ -3,12 +3,12 @@
 # Date created:         Thu Jun 11 22:38:52 PDT 1998
 # Whom:                 dburr@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/12 06:24:53 dburr Exp $
+# $Id: Makefile,v 1.2 1998/08/05 09:31:13 asami Exp $
 #
 
 DISTNAME=	netshow_linux
 PKGNAME=	netshow-2.00.251
-CATEGORIES=	graphics net x11
+CATEGORIES=	graphics net
 MASTER_SITES=	http://microsoft.com/netshow/download/en/beta/
 EXTRACT_SUFX=	.gz
 

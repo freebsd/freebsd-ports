@@ -3,11 +3,11 @@
 # Date created:		3 Apr 1998
 # Whom:			giffunip@asme.org
 #
-# $Id: Makefile,v 1.2 1998/05/25 21:03:03 fenner Exp $
+# $Id: Makefile,v 1.3 1998/09/16 02:24:58 steve Exp $
 #
 
 DISTNAME=	xcircuit-1.7
-CATEGORIES=	cad x11
+CATEGORIES=	cad
 MASTER_SITES=	ftp://bach.ece.jhu.edu/pub/tim/	\
 		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=apps/circuits

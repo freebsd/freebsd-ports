@@ -3,12 +3,12 @@
 # Date created:         Sat Nov 5 11:43:03 PST 1994
 # Whom:                 piero
 #
-# $Id: Makefile,v 1.15 1998/09/27 09:18:30 markm Exp $
+# $Id: Makefile,v 1.16 1998/11/11 05:37:22 asami Exp $
 #
 
 DISTNAME=       xanim27070
 PKGNAME=        xanim-2.70.7.0
-CATEGORIES=	graphics x11
+CATEGORIES=	graphics
 MASTER_SITES=	ftp://xanim.va.pubnix.com/ \
 		ftp://xanim.va.pubnix.com/modules/
 DISTFILES=	${EXTRACT_ONLY} ${EXTRA_FILES}

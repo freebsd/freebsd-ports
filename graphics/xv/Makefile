@@ -3,11 +3,11 @@
 # Date created:		30 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.27 1998/10/07 21:17:42 mph Exp $
+# $Id: Makefile,v 1.28 1998/10/25 15:24:40 kuriyama Exp $
 #
 
 DISTNAME=	xv-3.10a
-CATEGORIES?=	graphics x11
+CATEGORIES?=	graphics
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/ \
 		ftp://ftp.airlab.cs.ritsumei.ac.jp/pub/X/xv-jp-extension/working/ \
 		http://www.yuasa.kuis.kyoto-u.ac.jp/~shige/FreeBSD/ports/xv/

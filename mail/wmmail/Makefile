@@ -3,11 +3,11 @@
 # Date created:        7 Jun 1998
 # Whom:                rom
 #
-# $Id: Makefile,v 1.3 1998/09/17 00:32:45 asami Exp $
+# $Id: Makefile,v 1.4 1998/10/20 01:43:07 steve Exp $
 #
 
 DISTNAME=	wmmail-0.59
-CATEGORIES=	mail x11
+CATEGORIES=	mail
 MASTER_SITES=	http://earth.gaianet.net/~scorpio/
 
 MAINTAINER=	rom_glsa@ein-hashofet.co.il

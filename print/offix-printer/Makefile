@@ -3,12 +3,12 @@
 # Date created:      28 Jun 1997
 # Whom:              Ruslan Shevchenko <ruslan@shevchenko.kiev.ua>
 #
-# $Id: Makefile,v 1.4 1998/09/17 00:32:53 asami Exp $
+# $Id: Makefile,v 1.5 1998/09/27 03:16:05 steve Exp $
 #
 
 DISTNAME=	Printer-2.4
 PKGNAME=	offix-printer-2.4
-CATEGORIES=	print x11 offix
+CATEGORIES=	print offix
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	desktop_managers/OffiX
 

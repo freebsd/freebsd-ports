@@ -3,12 +3,12 @@
 # Date created:		12 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.11 1998/01/09 10:15:46 obrien Exp $
+# $Id: Makefile,v 1.12 1998/10/21 00:57:42 steve Exp $
 #
 
 DISTNAME=	xsysstats1.34
 PKGNAME=	xsysstats-1.34
-CATEGORIES=	sysutils x11
+CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	utilities
 
