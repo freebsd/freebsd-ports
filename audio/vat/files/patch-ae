@@ -55,7 +55,7 @@
  	int n = strlen(s);
 --- sitebox.cc.orig	1997/01/07 22:48:27
 +++ sitebox.cc	1997/01/07 23:27:35
-@@ -228,6 +228,10 @@
+@@ -230,6 +230,10 @@
  
  Site::~Site()
  {
@@ -66,4 +66,14 @@
  }
  
  int Site::command(int argc, const char*const* argv)
-
+@@ -638,8 +642,8 @@
+ 	need_sort_ = 0;
+ 
+ 	Tcl& tcl = Tcl::instance();
+-	Tk_Uid fg = mono()? "black" : (char*)tcl.attr("foreground");
+-	Tk_Uid bg = mono()? "white" : (char*)tcl.attr("background");
++	Tk_Uid fg = mono()? (char*)"black" : (char*)tcl.attr("foreground");
++	Tk_Uid bg = mono()? (char*)"white" : (char*)tcl.attr("background");
+ 	fg_ = lookup_gc(0, fg, bg);
+ 	bg_ = lookup_gc(0, bg, bg);
+ }
