@@ -1,0 +1,46 @@
+$FreeBSD$
+
+--- ../../deploy/make/Makefile.orig	Tue Jan 27 18:54:56 2004
++++ ../../deploy/make/Makefile	Tue Jan 27 18:58:08 2004
+@@ -24,17 +24,29 @@
+ DEPLOY_TOPDIR=..
+ include $(BUILDDIR)/common/Defs.gmk
+ 
++ifdef NO_PLUGIN
++BUILD_PLUGIN=	false
++else
++BUILD_PLUGIN=	true
++endif
++
++ifdef NO_JAVAWS
++BUILD_JAVAWS=	false
++else
++BUILD_JAVAWS=	true
++endif
++
+ all:: 
+ 	@$(ECHO) "$(PLATFORM) $(ARCH) $(RELEASE) deploy build started: $(shell $(DATE) '+%y-%m-%d %H:%M')"
+ 
+-BUILD_PLUGIN = true
+-
+ #
+ # Core.
+ #
+ JAVAWS_SUBDIR = javaws
+ PLUGIN_SUBDIR = plugin
++ifeq ($(BUILD_JAVAWS), true)
+ SUBDIRS = $(JAVAWS_SUBDIR)
++endif
+ ifeq ($(BUILD_PLUGIN), true)
+ SUBDIR += $(PLUGIN_SUBDIR)
+ endif
+@@ -47,7 +59,9 @@
+ 	done
+ 
+ javaws-all: sanity-javaws
++   ifeq ($(BUILD_JAVAWS), true)
+ 	$(CD) $(BUILDDIR)/javaws ; $(MAKE) installer-int dev-all doc aubundle
++   endif
+ 
+ plugin-all: sanity-plugin
+    ifeq ($(BUILD_PLUGIN), true)
