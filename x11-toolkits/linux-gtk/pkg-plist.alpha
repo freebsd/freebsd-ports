@@ -36,5 +36,29 @@ usr/share/locale/uk/LC_MESSAGES/gtk+.mo
 usr/share/locale/wa/LC_MESSAGES/gtk+.mo
 usr/share/locale/zh_TW.Big5/LC_MESSAGES/gtk+.mo
 usr/share/themes/Default/gtk/gtkrc
+etc/gtk/gtkrc
+etc/gtk/gtkrc.bg
+etc/gtk/gtkrc.el
+etc/gtk/gtkrc.eo
+etc/gtk/gtkrc.he
+etc/gtk/gtkrc.hy
+etc/gtk/gtkrc.iso-8859-13
+etc/gtk/gtkrc.iso-8859-14
+etc/gtk/gtkrc.iso-8859-15
+etc/gtk/gtkrc.iso-8859-2
+etc/gtk/gtkrc.iso-8859-5
+etc/gtk/gtkrc.ja
+etc/gtk/gtkrc.ka_GE.georgianacademy
+etc/gtk/gtkrc.ka_GE.georgianps
+etc/gtk/gtkrc.ko
+etc/gtk/gtkrc.ru
+etc/gtk/gtkrc.th
+etc/gtk/gtkrc.tr
+etc/gtk/gtkrc.uk
+etc/gtk/gtkrc.vi_VN.tcvn
+etc/gtk/gtkrc.vi_VN.viscii
+etc/gtk/gtkrc.zh_CN
+etc/gtk/gtkrc.zh_TW.Big5
 @dirrm usr/share/themes/Default/gtk
 @dirrm usr/doc/gtk+-1.2.6
+@dirrm usr/etc/gtk
