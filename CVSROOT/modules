@@ -1098,6 +1098,7 @@ crossgo32	ports/devel/crossgo32
 crossgo32-djgpp2	ports/devel/crossgo32-djgpp2
 crossgo32-djgpp2-pdcurses	ports/devel/crossgo32-djgpp2-pdcurses
 crossgo32-f77	ports/lang/crossgo32-f77
+crossip		ports/dns/crossip
 crosspad	ports/misc/crosspad
 crossword	ports/games/crossword
 crw		ports/graphics/crw
