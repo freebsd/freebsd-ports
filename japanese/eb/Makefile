@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	eb
-PORTVERSION=	4.1.1
+PORTVERSION=	4.1.3
 PORTREVISION=	0
 CATEGORIES=	japanese
-MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/ \
-		ftp://ftp.eos.hokudai.ac.jp/pub/net/ndtp/eb/
+MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/eb/
 DISTFILES=	${EBFILES} \
 		${LISTFILES} \
 		${APPENDIXFILES}
