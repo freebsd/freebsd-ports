@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/Tcl.pm:${PORTSDIR}/lang/p5-Tcl
+BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Tcl.pm:${PORTSDIR}/lang/p5-Tcl
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 PERL_CONFIGURE=	yes
