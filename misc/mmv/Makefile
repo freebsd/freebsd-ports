@@ -2,28 +2,21 @@
 # Version required:	1.01b
 # Date created:		2 Feb 1995
 # Whom:			Michael Elbel (me)
-# Responsible:		me@FreeBSD.org
 #
-# $Id: Makefile,v 1.2 1995/03/27 21:00:02 jkh Exp $
+# $Id: Makefile,v 1.3 1995/04/01 12:50:15 jkh Exp $
 #
 
-# MASTER_SITES=	ftp://gatekeeper.dec.com/archive/.b/usenet/comp.sources.unix/volume21/mmv
-CATEGORIES+=	utilities
-#	part01.Z
-#	part02.Z
-# ftp://gatekeeper.dec.com/archive/.b/usenet/comp.sources.unix/volume22/mmv.pch.Z
 
-
-DISTNAME=mmv
-DISTDIR=${PORTSDIR}/distfiles/${DISTNAME}
-# MASTER_SITES=ftp://dodo/usr/me/tmp/
+DISTNAME=	mmv
+PKGNAME=	mmv-1.01b
 CATEGORIES+=	utilities
-MASTER_SITES=ftp://gatekeeper.dec.com/archive/.b/usenet/comp.sources.unix/
-CATEGORIES+=	utilities
+MASTER_SITES=	ftp://gatekeeper.dec.com/archive/.b/usenet/comp.sources.unix/
+DISTFILES=	part01.Z part02.Z mmv.pch.Z
 
-DISTFILES= part01.Z part02.Z mmv.pch.Z
-SITE_DISTFILES= volume21/mmv/part01.Z volume21/mmv/part02.Z volume22/mmv.pch.Z
 MAINTAINER=	me@FreeBSD.org
+
+DISTDIR=${PORTSDIR}/distfiles/${DISTNAME}
+SITE_DISTFILES= volume21/mmv/part01.Z volume21/mmv/part02.Z volume22/mmv.pch.Z
 NO_WRKSUBDIR=true
 
 # targets shamelessly hacked from the bsd.ports.mk file
