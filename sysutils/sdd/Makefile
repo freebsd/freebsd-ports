@@ -3,7 +3,7 @@
 # Date created:		1999-05-05
 # Whom:			Christian Weisgerber <naddy@mips.rhein-neckar.de>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	sdd-1.22

@@ -3,7 +3,7 @@
 # Date created:				7/27/1998
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/03 06:28:04 nectar Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		doconfig-1.1

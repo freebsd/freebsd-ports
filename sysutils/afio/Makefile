@@ -3,7 +3,7 @@
 # Date created:         4 October 1995
 # Whom:                 Juergen Lock <nox@jelal.hb.north.de>
 #
-# $Id: Makefile,v 1.6 1997/04/01 22:09:19 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       afio-2.4.5

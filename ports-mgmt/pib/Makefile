@@ -3,7 +3,7 @@
 # Date created:         30 December 1996
 # Whom:                 Mike Smith <msmith@freebsd.org>
 #
-# $Id: Makefile,v 1.12 1999/01/10 17:58:47 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	pib-1.1

@@ -3,7 +3,7 @@
 # Date created:		Sa   6 Jun 1998 10:24:51 CEST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.4 1999/01/27 07:41:27 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tar-1.12

@@ -4,7 +4,7 @@
 # Date created:			  Mon Apr 14, 1997
 # Whom:				  David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.4 1997/07/21 00:37:11 fenner Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	tcplist-2.2

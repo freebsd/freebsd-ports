@@ -3,7 +3,7 @@
 # Date created:		11 Feb. 1995
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.8 1996/10/14 22:09:10 torstenb Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       tua-4.0

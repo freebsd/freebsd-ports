@@ -5,7 +5,7 @@
 #
 # Author:		Paul Vixie / Internet Software Consortium
 #
-# $Id: Makefile,v 1.2 1996/11/17 08:06:19 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       rtty-3.2

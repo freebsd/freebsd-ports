@@ -3,7 +3,7 @@
 # Date created:        4 May 1999
 # Whom:                jmg
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	ffsrecov

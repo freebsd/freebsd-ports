@@ -3,7 +3,7 @@
 # Date created:		4 June 1999
 # Whom:				jack
 #
-# $Id: Makefile,v 1.2 1999/08/21 18:45:56 fenner Exp $
+# $FreeBSD$
 
 DISTNAME=	asmem-1.3
 CATEGORIES=	sysutils afterstep

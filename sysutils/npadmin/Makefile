@@ -3,7 +3,7 @@
 # Date created:		13 Nov 1998
 # Whom:			Dom Mitchell <dom@myrddin.demon.co.uk>
 #
-# $Id$
+# $FreeBSD$
 #
 
 DISTNAME=	npadmin-0.7

@@ -3,7 +3,7 @@
 # Date created:         20 Oct 1998
 # Whom:                 Joao Carlos Mendes Luis <jonny@jonny.eng.br>
 #
-# $Id: Makefile,v 1.5 1999/01/18 02:58:54 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	skill-3.7@P6

@@ -3,7 +3,7 @@
 # Date created:         2 Dec 1996
 # Whom:                 nsayer@quack.kfu.com
 #
-# $Id: Makefile,v 1.7 1998/10/21 00:57:37 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	contool-3.3a

@@ -4,7 +4,7 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@FreeBSD.org)
 #
-# $Id: Makefile,v 1.47 1999/08/27 22:30:12 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	lsof_4.45_W

@@ -3,7 +3,7 @@
 # Date created:         18 February 1999
 # Whom:                 Dima Sivachenko <dima@chg.ru>
 #
-# $Id: Makefile,v 1.3 1999/05/01 02:09:34 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	ascpu-1.6

@@ -3,7 +3,7 @@
 # Date created:		12 Sep 1996
 # Whom:			gurney_j@efn.org
 #
-# $Id: Makefile,v 1.3 1998/10/27 07:52:30 obrien Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	su2-1.3

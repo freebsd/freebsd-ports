@@ -3,7 +3,7 @@
 # Date created:		Thu May  1 20:28:44 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.12 1999/07/19 20:36:40 andreas Exp $
+# $FreeBSD$
 #
 
 DISTNAME=		star-1.2

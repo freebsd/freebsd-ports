@@ -3,7 +3,7 @@
 # Date created:		2 Apr 1997
 # Whom:			desmo@bandwidth.org
 #
-# $Id: Makefile,v 1.7 1999/08/22 23:33:26 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	LPRng-3.5.1

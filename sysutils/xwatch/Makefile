@@ -3,7 +3,7 @@
 # Date created:				17 July 1998
 # Whom:					mph
 #
-# $Id: Makefile,v 1.6 1999/04/22 07:56:33 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xwatch-0.1.0

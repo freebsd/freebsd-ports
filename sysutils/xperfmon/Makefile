@@ -3,7 +3,7 @@
 # Date created:		14 March 97
 # Whom:			Lars Koeller <Lars.Koeller@Uni-Bielefeld.DE>
 #
-# $Id: Makefile,v 1.21 1998/11/21 07:27:41 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xperfmon++

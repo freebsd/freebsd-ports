@@ -3,7 +3,7 @@
 # Date Created:				24 Nov 1997
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.5 1998/11/21 07:27:41 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xfsm-1.99

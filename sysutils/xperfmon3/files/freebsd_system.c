@@ -5,7 +5,7 @@
  *
  * Work has started on 7th Sep 1998 on Northsea island Föhr.
  *
- *      $Id: freebsd_system.c,v 1.7 1999/02/04 05:10:53 gj Exp $
+ * $FreeBSD$
  */
 
 /*
@@ -105,7 +105,7 @@
  */
 
 #ifndef LINT
-static char rcsid[] = "$Id: freebsd_system.c,v 1.7 1999/02/04 05:10:53 gj Exp $";
+static char rcsid[] = "$FreeBSD$";
 #endif
 
 #include "fbsd_vers.h"

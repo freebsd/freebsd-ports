@@ -3,7 +3,7 @@
 # Date created:         19980128
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.2 1998/12/02 23:42:13 cracauer Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	rdate-1.0

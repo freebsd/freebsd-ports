@@ -3,7 +3,7 @@
 # Date created:         14 August 1996
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.6 1997/08/09 00:34:15 wosch Exp $
+# $FreeBSD$
 #
 
 DISTNAME=       socket-1.1

@@ -3,7 +3,7 @@
 # Date created:		19 Nov 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.2 1999/01/06 05:16:28 simokawa Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	libapm-linux-1.0beta5

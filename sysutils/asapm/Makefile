@@ -3,7 +3,7 @@
 # Date created:		6 Aug 1998
 # Whom:			Brian Handy <handy@physics.montana.edu>
 #
-# $Id: Makefile,v 1.9 1999/04/08 11:11:43 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	asapm-2.7

@@ -3,7 +3,7 @@
 # Date created:         2 November 1997
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.15 1999/05/31 06:22:06 mharo Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	cdrecord-1.8a22

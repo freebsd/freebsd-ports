@@ -3,7 +3,7 @@
 # Date created:		12 December 1994
 # Whom:			asami
 #
-# $Id: Makefile,v 1.12 1998/10/21 00:57:42 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	xsysstats1.34
