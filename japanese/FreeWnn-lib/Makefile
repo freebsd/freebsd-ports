@@ -7,7 +7,7 @@
 
 PORTNAME=	FreeWnn
 PORTVERSION=	${WMMVERSION:S/-/./}
-PORTREVISION=	1
+#PORTREVISION=	1
 CATEGORIES?=	japanese
 MASTER_SITES=	ftp://ftp.freewnn.org/pub/FreeWnn/alpha/
 PKGNAMESUFFIX?=	-lib
@@ -16,17 +16,17 @@ DISTNAME=	${PORTNAME}-${WMMVERSION}
 MAINTAINER=	taoka@FreeBSD.org
 COMMENT?=	A Japanese/Chinese/Korean input method (Japanese client libraries)
 
-#WRKSRC=	${WRKDIR}/${DISTNAME}/Xsi
-WRKSRC=	${WRKDIR}/FreeWnn-1.1.1-a017-pl4/Xsi
+WRKSRC=	${WRKDIR}/FreeWnn-1.10-pl020
 ALL_TARGET=	includes all
 INSTALL_TARGET=	install install.man
 GNU_CONFIGURE=	yes
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	213
 USE_LIBTOOL=	yes
+MAKE_ARGS=	CDEBUGFLAGS="${CFLAGS}"
 INSTALLS_SHLIB=	yes
 USE_BZIP2=	yes
 
-WMMVERSION=	1.1.1-a018
+WMMVERSION=	1.1.1-a020
 
 WNN?=		Wnn
 .if (${PKGNAMESUFFIX} == -lib)
@@ -112,11 +112,6 @@ LIB_DEPENDS=	kwnn.0:${PORTSDIR}/korean/FreeWnn-lib
 CONFIGURE_ARGS+= --with-libkwnn=-lkwnn --with-kwnn-libraries="${PREFIX}/lib"
 .endif
 .endif
-
-post-extract:
-	${CP} ${LIBTOOL_SHAREDIR}/libltdl/aclocal.m4 ${WRKSRC}
-	${CP} ${AUTOCONF_DIR}/config.sub ${WRKSRC}
-	${CP} ${AUTOCONF_DIR}/config.guess ${WRKSRC}
 
 .if (${PKGNAMESUFFIX} == -server)
 pre-install:
