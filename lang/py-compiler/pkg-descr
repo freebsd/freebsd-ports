@@ -1,0 +1,8 @@
+A Python source to bytecode compiler written in Python, including an
+interface for manipulating abstract syntax trees.
+
+Still under development.
+
+Author: Jeremy Hylton <jeremy@beopen.com>
+
+-- Johann Visagie <wjv@FreeBSD.org>
