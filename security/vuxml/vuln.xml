@@ -32,6 +32,44 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="5d425189-7a03-11d9-a9e7-0001020eed82">
+    <topic>postgresql -- privilege escalation vulnerability</topic>
+    <affects>
+      <package>
+	<name>postgresql</name>
+	<name>postgresql-server</name>
+	<name>ja-postgresql</name>
+	<range><lt>7.3.9</lt></range>
+	<range><gt>7.4.*</gt><lt>7.4.7</lt></range>
+	<range><gt>8.*</gt><lt>8.0.1</lt></range>
+      </package>
+      <package>
+	<name>postgresql-devel</name>
+	<range><le>8.0.1,1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>John Heasman and others disovered that non-privileged users
+	  could use the <q>LOAD</q> extension to load arbitrary
+	  libraries into the postgres server process space.  This
+	  could be used by non-privileged local users to execute
+	  arbitrary code with the privileges of the postgresql
+	  server.</p>
+      </body>
+    </description>
+    <references>
+      <bid>12411</bid>
+      <cvename>CAN-2005-0227</cvename>
+      <mlist>http://archives.postgresql.org/pgsql-announce/2005-02/msg00000.php</mlist>
+      <mlist>http://archives.postgresql.org/pgsql-bugs/2005-01/msg00269.php</mlist>
+    </references>
+    <dates>
+      <discovery>2005-01-21</discovery>
+      <entry>2005-02-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="831a6a66-79fa-11d9-a9e7-0001020eed82">
     <topic>ethereal -- multiple protocol dissectors vulnerabilities</topic>
     <affects>
