@@ -1,0 +1,7 @@
+bin/animabob
+bin/icol
+lib/X11/app-defaults/Bob
+lib/X11/app-defaults/Icol
+lib/X11/doc/html/animabob.1.html
+lib/X11/doc/html/icol.1.html
+lib/X11/doc/html/manindex1.html
