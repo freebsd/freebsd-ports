@@ -18,6 +18,7 @@ share/doc/wwwoffle/README.1st
 share/doc/wwwoffle/README.CONF
 share/doc/wwwoffle/README.PWD
 share/doc/wwwoffle/README.URL
+share/doc/wwwoffle/README.compress
 share/doc/wwwoffle/README.htdig
 share/doc/wwwoffle/README.lang
 share/doc/wwwoffle/README.udmsearch
@@ -25,9 +26,13 @@ share/doc/wwwoffle/README.win32
 @dirrm share/doc/wwwoffle
 @cwd %%SPOOL%%
 wwwoffle/html/FAQ.html
+wwwoffle/html/README.CONF.html
 wwwoffle/html/Welcome.html
 wwwoffle/html/index.html
-wwwoffle/html/local/images/trans-1x1.gif
+wwwoffle/html/local/index.html
+wwwoffle/html/local/dontget/replacement.gif
+wwwoffle/html/local/dontget/replacement.js
+wwwoffle/html/local/dontget/replacement.png
 wwwoffle/html/messages/AddCacheInfo.html
 wwwoffle/html/messages/AliasRedirect.html
 wwwoffle/html/messages/CantRefreshPosted.html
@@ -145,13 +150,15 @@ wwwoffle/html/search/udmsearch/scripts/wwwoffle-udmsearch
 wwwoffle/html/search/udmsearch/search.html
 wwwoffle/html/search/udmsearch/udm.gif
 wwwoffle/html/wwwoffle.pac
-wwwoffle/outgoing/Owwwoffle-browser
-wwwoffle/outgoing/Owwwoffle-user
-wwwoffle/outgoing/Uwwwoffle-browser
-wwwoffle/outgoing/Uwwwoffle-user
+wwwoffle/outgoing/O98hgItueyIbW8udnZuMjpg
+wwwoffle/outgoing/Oh-W1UuCia4-wLoZYEnRrXw
+wwwoffle/outgoing/Ox3oAN7UMcBN5bQi-qYGkoA
+wwwoffle/outgoing/U98hgItueyIbW8udnZuMjpg
+wwwoffle/outgoing/Uh-W1UuCia4-wLoZYEnRrXw
+wwwoffle/outgoing/Ux3oAN7UMcBN5bQi-qYGkoA
 wwwoffle/upgrade-config.pl
 wwwoffle/wwwoffle.conf.default
-@dirrm wwwoffle/html/local/images
+@dirrm wwwoffle/html/local/dontget
 @dirrm wwwoffle/html/local
 @dirrm wwwoffle/html/messages
 @dirrm wwwoffle/html/search/htdig/conf
