@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.126 1998/04/27 05:01:30 mph Exp $
+# $Id: Makefile,v 1.127 1998/04/27 14:34:29 mph Exp $
 #
 
     SUBDIR += 3dpong
@@ -32,6 +32,7 @@
     SUBDIR += klondike
     SUBDIR += ktamaga
     SUBDIR += ladder
+    SUBDIR += libshhcards
     SUBDIR += lincity
     SUBDIR += nethack
     SUBDIR += nethack-qt
