@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.80 1998/06/20 03:11:36 chuckr Exp $
+# $Id: Makefile,v 1.81 1998/06/24 16:19:54 vanilla Exp $
 #
 
     SUBDIR += EZWGL
@@ -89,5 +89,6 @@
     SUBDIR += xpdf
     SUBDIR += xpm
     SUBDIR += xv
+    SUBDIR += xwpick
 
 .include <bsd.port.subdir.mk>
