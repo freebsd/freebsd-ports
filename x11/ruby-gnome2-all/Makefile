@@ -17,7 +17,7 @@ MAINTAINER=	knu@FreeBSD.org
 
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gdk_pixbuf2.so:${PORTSDIR}/graphics/ruby-gdk_pixbuf
+RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gdk_pixbuf2.so:${PORTSDIR}/graphics/ruby-gdk_pixbuf2
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gnome2.so:${PORTSDIR}/x11/ruby-gnome2
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/gnomecanvas2.so:${PORTSDIR}/graphics/ruby-gnomecanvas2
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/libart2.so:${PORTSDIR}/graphics/ruby-libart2
