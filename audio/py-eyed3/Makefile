@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	eyed3
-PORTVERSION=	0.5.1
-PORTREVISION=	1
+PORTVERSION=	0.6.2
 CATEGORIES=	audio python
-MASTER_SITES=	http://www.travisshirk.net/eyeD3/releases/
+MASTER_SITES=	http://eyed3.nicfit.net/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	eyeD3-${PORTVERSION}
 
@@ -28,12 +27,15 @@ MAKE_ENV=	SETUP_ARGS_BUILD="${PYDISTUTILS_BUILDARGS}" \
 		SETUP_ARGS_INSTALL="${PYDISTUTILS_INSTALLARGS}"
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 
+MAN1=		eyeD3.1
+MANCOMPRESSED=	yes
+
 post-patch:
 	${REINPLACE_CMD} -e 's,PYTHON="",,g' -e 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/configure
 	${REINPLACE_CMD} -e 's,\(setup.py build\),\1 $${SETUP_ARGS_BUILD},g' \
 		-e 's,\(setup.py install\),\1 $${SETUP_ARGS_INSTALL} ,g' \
-		-e 's,^DOC_DIR.*,DOC_DIR=${DOCSDIR},g' \
+		-e 's,^docdir:=.*,docdir:=${DOCSDIR},g' \
 		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
