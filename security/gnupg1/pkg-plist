@@ -3,7 +3,7 @@ bin/gpgsplit
 bin/gpgv
 %%WITH_LDAP%%libexec/gnupg/gpgkeys_ldap
 libexec/gnupg/gpgkeys_mailto
-@dirrm libexex/gnupg
+@dirrm libexec/gnupg
 info/gpg.info
 info/gpgv.info
 share/gnupg/FAQ
