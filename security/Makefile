@@ -56,6 +56,7 @@
     SUBDIR += digest
     SUBDIR += dirmngr
     SUBDIR += donkey
+    SUBDIR += dropbear
     SUBDIR += drweb
     SUBDIR += drweb-postfix
     SUBDIR += drweb-qmail
