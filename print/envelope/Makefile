@@ -44,5 +44,3 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
-
-#EOF
