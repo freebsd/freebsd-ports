@@ -1,7 +1,3 @@
-lib/perl5/%%PERL_VERSION%%/man/man3/Apache::Language.3
-lib/perl5/%%PERL_VERSION%%/man/man3/Apache::Language::Constants.3
-lib/perl5/%%PERL_VERSION%%/man/man3/Apache::Language::DBI.3
-lib/perl5/%%PERL_VERSION%%/man/man3/Apache::Language::PlainFile.3
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Language.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Language.pod
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Apache/Language/Constants.pm

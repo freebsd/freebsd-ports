@@ -30,5 +30,6 @@ CONFIGURE_ENV+=	APACHE="${PREFIX}/sbin/apache" \
 		TESTPORT="${TESTPORT}"
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		Apache::AuthCookie.3
 
 .include <bsd.port.mk>

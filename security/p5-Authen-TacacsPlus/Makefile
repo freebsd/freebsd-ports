@@ -19,6 +19,7 @@ PERL_CONFIGURE=	yes
 MAKE_ENV+=	CCFLAGS="${CFLAGS}"
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+MAN3=		Authen::TacacsPlus.3
 
 pre-build:
 	${PERL} -pi -e "s:CCFLAGS =:CCFLAGS ?=:g" ${WRKSRC}/tacpluslib/Makefile
