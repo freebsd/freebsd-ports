@@ -387,3 +387,5 @@ graphics/kpovmodeler||2003-07-03|now part of kdegraphics
 www/linux-opera7|www/linux-opera|2003-07-09|move to www/linux-opera
 www/xswallow||2003-07-12|port is obsolete
 net/gnut||2003-07-12|security vulnerability, and no active development
+www/mod_log_mysql|www/mod_log_sql|2003-07-12|renamed by author in new version
+
