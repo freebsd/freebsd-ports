@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.dcs.gla.ac.uk/~meurig/TclHaskell/
 PKGNAMEPREFIX=	hs-
 DISTNAME=	TclHaskell1_2
 
-MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Tcl/Tk binding for Haskell
 
 .if defined(WITH_GHC5)

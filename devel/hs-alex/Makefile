@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.haskell.org/alex/dist/
 PKGNAMEPREFIX=	hs-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	stolz@i2.informatik.rwth-aachen.de
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Alex is a tool for generating lexical analysers in Haskell
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
