@@ -7,6 +7,7 @@ bin/manhole
 bin/mktap
 bin/t-im
 bin/tap2deb
+bin/tap2rpm
 bin/tapconvert
 bin/tkconch
 bin/tkmktap
@@ -40,9 +41,33 @@ bin/websetroot
 %%S%%/twisted/conch/authorizer.py
 %%S%%/twisted/conch/authorizer.pyc
 %%S%%/twisted/conch/authorizer.pyo
+%%S%%/twisted/conch/avatar.py
+%%S%%/twisted/conch/avatar.pyc
+%%S%%/twisted/conch/avatar.pyo
 %%S%%/twisted/conch/checkers.py
 %%S%%/twisted/conch/checkers.pyc
 %%S%%/twisted/conch/checkers.pyo
+%%S%%/twisted/conch/client/__init__.py
+%%S%%/twisted/conch/client/__init__.pyc
+%%S%%/twisted/conch/client/__init__.pyo
+%%S%%/twisted/conch/client/agent.py
+%%S%%/twisted/conch/client/agent.pyc
+%%S%%/twisted/conch/client/agent.pyo
+%%S%%/twisted/conch/client/connect.py
+%%S%%/twisted/conch/client/connect.pyc
+%%S%%/twisted/conch/client/connect.pyo
+%%S%%/twisted/conch/client/default.py
+%%S%%/twisted/conch/client/default.pyc
+%%S%%/twisted/conch/client/default.pyo
+%%S%%/twisted/conch/client/direct.py
+%%S%%/twisted/conch/client/direct.pyc
+%%S%%/twisted/conch/client/direct.pyo
+%%S%%/twisted/conch/client/options.py
+%%S%%/twisted/conch/client/options.pyc
+%%S%%/twisted/conch/client/options.pyo
+%%S%%/twisted/conch/client/unix.py
+%%S%%/twisted/conch/client/unix.pyc
+%%S%%/twisted/conch/client/unix.pyo
 %%S%%/twisted/conch/credentials.py
 %%S%%/twisted/conch/credentials.pyc
 %%S%%/twisted/conch/credentials.pyo
@@ -61,12 +86,21 @@ bin/websetroot
 %%S%%/twisted/conch/insults/colors.py
 %%S%%/twisted/conch/insults/colors.pyc
 %%S%%/twisted/conch/insults/colors.pyo
+%%S%%/twisted/conch/interfaces.py
+%%S%%/twisted/conch/interfaces.pyc
+%%S%%/twisted/conch/interfaces.pyo
+%%S%%/twisted/conch/openssh_compat/__init__.py
+%%S%%/twisted/conch/openssh_compat/__init__.pyc
+%%S%%/twisted/conch/openssh_compat/__init__.pyo
+%%S%%/twisted/conch/openssh_compat/factory.py
+%%S%%/twisted/conch/openssh_compat/factory.pyc
+%%S%%/twisted/conch/openssh_compat/factory.pyo
+%%S%%/twisted/conch/openssh_compat/primes.py
+%%S%%/twisted/conch/openssh_compat/primes.pyc
+%%S%%/twisted/conch/openssh_compat/primes.pyo
 %%S%%/twisted/conch/pamauth.py
 %%S%%/twisted/conch/pamauth.pyc
 %%S%%/twisted/conch/pamauth.pyo
-%%S%%/twisted/conch/realm.py
-%%S%%/twisted/conch/realm.pyc
-%%S%%/twisted/conch/realm.pyo
 %%S%%/twisted/conch/ssh/__init__.py
 %%S%%/twisted/conch/ssh/__init__.pyc
 %%S%%/twisted/conch/ssh/__init__.pyo
@@ -97,9 +131,6 @@ bin/websetroot
 %%S%%/twisted/conch/ssh/keys.py
 %%S%%/twisted/conch/ssh/keys.pyc
 %%S%%/twisted/conch/ssh/keys.pyo
-%%S%%/twisted/conch/ssh/primes.py
-%%S%%/twisted/conch/ssh/primes.pyc
-%%S%%/twisted/conch/ssh/primes.pyo
 %%S%%/twisted/conch/ssh/service.py
 %%S%%/twisted/conch/ssh/service.pyc
 %%S%%/twisted/conch/ssh/service.pyo
@@ -112,12 +143,12 @@ bin/websetroot
 %%S%%/twisted/conch/ssh/transport.py
 %%S%%/twisted/conch/ssh/transport.pyc
 %%S%%/twisted/conch/ssh/transport.pyo
-%%S%%/twisted/conch/ssh/ttymodes.py
-%%S%%/twisted/conch/ssh/ttymodes.pyc
-%%S%%/twisted/conch/ssh/ttymodes.pyo
 %%S%%/twisted/conch/ssh/userauth.py
 %%S%%/twisted/conch/ssh/userauth.pyc
 %%S%%/twisted/conch/ssh/userauth.pyo
+%%S%%/twisted/conch/ttymodes.py
+%%S%%/twisted/conch/ttymodes.pyc
+%%S%%/twisted/conch/ttymodes.pyo
 %%S%%/twisted/conch/ui/__init__.py
 %%S%%/twisted/conch/ui/__init__.pyc
 %%S%%/twisted/conch/ui/__init__.pyo
@@ -127,6 +158,9 @@ bin/websetroot
 %%S%%/twisted/conch/ui/tkvt100.py
 %%S%%/twisted/conch/ui/tkvt100.pyc
 %%S%%/twisted/conch/ui/tkvt100.pyo
+%%S%%/twisted/conch/unix.py
+%%S%%/twisted/conch/unix.pyc
+%%S%%/twisted/conch/unix.pyo
 %%S%%/twisted/copyright.py
 %%S%%/twisted/copyright.pyc
 %%S%%/twisted/copyright.pyo
@@ -272,6 +306,9 @@ bin/websetroot
 %%S%%/twisted/internet/abstract.py
 %%S%%/twisted/internet/abstract.pyc
 %%S%%/twisted/internet/abstract.pyo
+%%S%%/twisted/internet/address.py
+%%S%%/twisted/internet/address.pyc
+%%S%%/twisted/internet/address.pyo
 %%S%%/twisted/internet/app.py
 %%S%%/twisted/internet/app.pyc
 %%S%%/twisted/internet/app.pyo
@@ -302,6 +339,42 @@ bin/websetroot
 %%S%%/twisted/internet/interfaces.py
 %%S%%/twisted/internet/interfaces.pyc
 %%S%%/twisted/internet/interfaces.pyo
+%%S%%/twisted/internet/iocpreactor/__init__.py
+%%S%%/twisted/internet/iocpreactor/__init__.pyc
+%%S%%/twisted/internet/iocpreactor/__init__.pyo
+%%S%%/twisted/internet/iocpreactor/abstract.py
+%%S%%/twisted/internet/iocpreactor/abstract.pyc
+%%S%%/twisted/internet/iocpreactor/abstract.pyo
+%%S%%/twisted/internet/iocpreactor/address.py
+%%S%%/twisted/internet/iocpreactor/address.pyc
+%%S%%/twisted/internet/iocpreactor/address.pyo
+%%S%%/twisted/internet/iocpreactor/client.py
+%%S%%/twisted/internet/iocpreactor/client.pyc
+%%S%%/twisted/internet/iocpreactor/client.pyo
+%%S%%/twisted/internet/iocpreactor/error.py
+%%S%%/twisted/internet/iocpreactor/error.pyc
+%%S%%/twisted/internet/iocpreactor/error.pyo
+%%S%%/twisted/internet/iocpreactor/iocpdebug.py
+%%S%%/twisted/internet/iocpreactor/iocpdebug.pyc
+%%S%%/twisted/internet/iocpreactor/iocpdebug.pyo
+%%S%%/twisted/internet/iocpreactor/ops.py
+%%S%%/twisted/internet/iocpreactor/ops.pyc
+%%S%%/twisted/internet/iocpreactor/ops.pyo
+%%S%%/twisted/internet/iocpreactor/proactor.py
+%%S%%/twisted/internet/iocpreactor/proactor.pyc
+%%S%%/twisted/internet/iocpreactor/proactor.pyo
+%%S%%/twisted/internet/iocpreactor/server.py
+%%S%%/twisted/internet/iocpreactor/server.pyc
+%%S%%/twisted/internet/iocpreactor/server.pyo
+%%S%%/twisted/internet/iocpreactor/tcp.py
+%%S%%/twisted/internet/iocpreactor/tcp.pyc
+%%S%%/twisted/internet/iocpreactor/tcp.pyo
+%%S%%/twisted/internet/iocpreactor/udp.py
+%%S%%/twisted/internet/iocpreactor/udp.pyc
+%%S%%/twisted/internet/iocpreactor/udp.pyo
+%%S%%/twisted/internet/iocpreactor/util.py
+%%S%%/twisted/internet/iocpreactor/util.pyc
+%%S%%/twisted/internet/iocpreactor/util.pyo
 %%S%%/twisted/internet/javareactor.py
 %%S%%/twisted/internet/javareactor.pyc
 %%S%%/twisted/internet/javareactor.pyo
@@ -392,6 +465,12 @@ bin/websetroot
 %%S%%/twisted/lore/docbook.py
 %%S%%/twisted/lore/docbook.pyc
 %%S%%/twisted/lore/docbook.pyo
+%%S%%/twisted/lore/htmlbook.py
+%%S%%/twisted/lore/htmlbook.pyc
+%%S%%/twisted/lore/htmlbook.pyo
+%%S%%/twisted/lore/indexer.py
+%%S%%/twisted/lore/indexer.pyc
+%%S%%/twisted/lore/indexer.pyo
 %%S%%/twisted/lore/latex.py
 %%S%%/twisted/lore/latex.pyc
 %%S%%/twisted/lore/latex.pyo
@@ -404,6 +483,12 @@ bin/websetroot
 %%S%%/twisted/lore/man2lore.py
 %%S%%/twisted/lore/man2lore.pyc
 %%S%%/twisted/lore/man2lore.pyo
+%%S%%/twisted/lore/nevowlore.py
+%%S%%/twisted/lore/nevowlore.pyc
+%%S%%/twisted/lore/nevowlore.pyo
+%%S%%/twisted/lore/numberer.py
+%%S%%/twisted/lore/numberer.pyc
+%%S%%/twisted/lore/numberer.pyo
 %%S%%/twisted/lore/process.py
 %%S%%/twisted/lore/process.pyc
 %%S%%/twisted/lore/process.pyo
@@ -741,6 +826,9 @@ bin/websetroot
 %%S%%/twisted/python/htmlizer.py
 %%S%%/twisted/python/htmlizer.pyc
 %%S%%/twisted/python/htmlizer.pyo
+%%S%%/twisted/python/lockfile.py
+%%S%%/twisted/python/lockfile.pyc
+%%S%%/twisted/python/lockfile.pyo
 %%S%%/twisted/python/log.py
 %%S%%/twisted/python/log.pyc
 %%S%%/twisted/python/log.pyo
@@ -835,6 +923,9 @@ bin/websetroot
 %%S%%/twisted/scripts/conch.py
 %%S%%/twisted/scripts/conch.pyc
 %%S%%/twisted/scripts/conch.pyo
+%%S%%/twisted/scripts/htmlizer.py
+%%S%%/twisted/scripts/htmlizer.pyc
+%%S%%/twisted/scripts/htmlizer.pyo
 %%S%%/twisted/scripts/im.py
 %%S%%/twisted/scripts/im.pyc
 %%S%%/twisted/scripts/im.pyo
@@ -942,9 +1033,6 @@ bin/websetroot
 %%S%%/twisted/tap/manhole.py
 %%S%%/twisted/tap/manhole.pyc
 %%S%%/twisted/tap/manhole.pyo
-%%S%%/twisted/tap/news.py
-%%S%%/twisted/tap/news.pyc
-%%S%%/twisted/tap/news.pyo
 %%S%%/twisted/tap/portforward.py
 %%S%%/twisted/tap/portforward.pyc
 %%S%%/twisted/tap/portforward.pyo
@@ -981,6 +1069,12 @@ bin/websetroot
 %%S%%/twisted/test/process_fds.py
 %%S%%/twisted/test/process_fds.pyc
 %%S%%/twisted/test/process_fds.pyo
+%%S%%/twisted/test/process_linger.py
+%%S%%/twisted/test/process_linger.pyc
+%%S%%/twisted/test/process_linger.pyo
+%%S%%/twisted/test/process_pausing.py
+%%S%%/twisted/test/process_pausing.pyc
+%%S%%/twisted/test/process_pausing.pyo
 %%S%%/twisted/test/process_reader.py
 %%S%%/twisted/test/process_reader.pyc
 %%S%%/twisted/test/process_reader.pyo
@@ -1127,6 +1221,9 @@ bin/websetroot
 %%S%%/twisted/test/test_journal.py
 %%S%%/twisted/test/test_journal.pyc
 %%S%%/twisted/test/test_journal.pyo
+%%S%%/twisted/test/test_lockfile.py
+%%S%%/twisted/test/test_lockfile.pyc
+%%S%%/twisted/test/test_lockfile.pyo
 %%S%%/twisted/test/test_log.py
 %%S%%/twisted/test/test_log.pyc
 %%S%%/twisted/test/test_log.pyo
@@ -1136,6 +1233,9 @@ bin/websetroot
 %%S%%/twisted/test/test_loopback.py
 %%S%%/twisted/test/test_loopback.pyc
 %%S%%/twisted/test/test_loopback.pyo
+%%S%%/twisted/test/test_lore.py
+%%S%%/twisted/test/test_lore.pyc
+%%S%%/twisted/test/test_lore.pyo
 %%S%%/twisted/test/test_mail.py
 %%S%%/twisted/test/test_mail.pyc
 %%S%%/twisted/test/test_mail.pyo
@@ -1511,10 +1611,10 @@ bin/websetroot
 %%S%%/twisted/xish/xpathparser.py
 %%S%%/twisted/xish/xpathparser.pyc
 %%S%%/twisted/xish/xpathparser.pyo
-share/twisted/admin/accepttests
-share/twisted/admin/runtests
-@dirrm share/twisted/admin
-@dirrm share/twisted
+%%DATADIR%%/admin/accepttests
+%%DATADIR%%/admin/runtests
+@dirrm %%DATADIR%%/admin
+@dirrm %%DATADIR%%
 @dirrm %%S%%/twisted/xish
 @dirrm %%S%%/twisted/words
 @dirrm %%S%%/twisted/web/woven
@@ -1541,6 +1641,7 @@ share/twisted/admin/runtests
 @dirrm %%S%%/twisted/mail
 @dirrm %%S%%/twisted/lore
 @dirrm %%S%%/twisted/internet/serialport
+@dirrm %%S%%/twisted/internet/iocpreactor
 @dirrm %%S%%/twisted/internet
 @dirrm %%S%%/twisted/im
 @dirrm %%S%%/twisted/flow
@@ -1548,7 +1649,9 @@ share/twisted/admin/runtests
 @dirrm %%S%%/twisted/cred
 @dirrm %%S%%/twisted/conch/ui
 @dirrm %%S%%/twisted/conch/ssh
+@dirrm %%S%%/twisted/conch/openssh_compat
 @dirrm %%S%%/twisted/conch/insults
+@dirrm %%S%%/twisted/conch/client
 @dirrm %%S%%/twisted/conch
 @dirrm %%S%%/twisted/application
 @dirrm %%S%%/twisted
