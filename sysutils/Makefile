@@ -22,6 +22,7 @@
     SUBDIR += daemontools
     SUBDIR += doconfig
     SUBDIR += ffsrecov
+    SUBDIR += flexbackup
     SUBDIR += gcombust
     SUBDIR += gnomeadmin
     SUBDIR += gnomecontrolcenter
