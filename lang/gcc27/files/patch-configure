@@ -1,0 +1,44 @@
+--- configure.orig	Wed Aug 13 10:23:24 1997
++++ configure	Wed Mar 22 10:37:04 2000
+@@ -80,7 +80,7 @@
+ exec_prefix='$(prefix)'
+ #
+ # The default g++ include directory is $(libdir)/g++-include.
+-gxx_include_dir='$(libdir)/g++-include'
++gxx_include_dir='$(libsubdir)/g++-include'
+ 
+ # Default --program-transform-name to nothing.
+ program_transform_name=
+@@ -931,9 +931,31 @@
+ # Next line turned off because both 386BSD and BSD/386 use GNU ld.
+ #		use_collect2=yes
+ 		;;
+-	i[3456]86-*-freebsd*)
++	alpha-*-freebsd*)
++		cpu_type=alpha
++		tm_file=alpha/freebsd-elf.h
++		xm_file=alpha/xm-freebsd.h
++		# On FreeBSD, the headers are already ok.
++		fixincludes=Makefile.in
++		xmake_file=alpha/x-freebsd
++		gas=yes
++		gnu_ld=yes
++		stabs=yes
++		;;
++	i[345]86-*-freebsd*)
+ 		cpu_type=i386
+ 		tm_file=i386/freebsd.h
++		xm_file=i386/xm-freebsd.h
++		# On FreeBSD, the headers are already ok.
++		fixincludes=Makefile.in
++		xmake_file=i386/x-freebsd
++		gas=yes
++		gnu_ld=yes
++		stabs=yes
++		;;
++	i[3456]86-*-freebsdaout*)
++		cpu_type=i386
++		tm_file=i386/freebsd-aout.h
+ 		xm_file=i386/xm-freebsd.h
+ 		# On FreeBSD, the headers are already ok.
+ 		fixincludes=Makefile.in

@@ -1,0 +1,70 @@
+--- Makefile.in.orig	Fri Aug  8 08:58:17 1997
++++ Makefile.in	Wed Mar 22 10:36:29 2000
+@@ -196,6 +196,10 @@
+ # Directory in which the compiler finds executables, libraries, etc.
+ libsubdir = $(libdir)/gcc-lib/$(target)/$(version)
+ # Directory in which the compiler finds g++ includes.
++#
++#	XXX: Note that the below is blown away by ``configure''.
++#		 Great GNU idiots, just great documentaton.
++#
+ gxx_include_dir= $(libdir)/g++-include
+ # Directory to search for site-specific includes.
+ includedir = $(local_prefix)/include
+@@ -245,7 +249,7 @@
+ # -g1 causes output of debug info only for file-scope entities.
+ # we use this here because that should be enough, and also
+ # so that -g1 will be tested.
+-LIBGCC2_CFLAGS = -O2 $(LIBGCC2_INCLUDES) $(GCC_CFLAGS) $(TARGET_LIBGCC2_CFLAGS) -g1
++LIBGCC2_CFLAGS = -O2 $(LIBGCC2_INCLUDES) $(GCC_CFLAGS) $(TARGET_LIBGCC2_CFLAGS) -g1 -g0
+ 
+ # Additional options to use when compiling libgcc2.a.
+ # Some targets override this to -Iinclude
+@@ -746,6 +750,7 @@
+ libgcc1.null: $(GCC_PASSES)
+ 	echo "__foo () {}" > dummy.c
+ 	$(GCC_FOR_TARGET) $(GCC_CFLAGS) -c dummy.c
++	ld -r -x dummy$(objext); mv a.out dummy$(objext)
+ 	$(OLDAR) $(OLDAR_FLAGS) libgcc1.null dummy$(objext)
+ 	rm -f dummy$(objext) dummy.c
+ 
+@@ -777,6 +782,7 @@
+ 	  $(OLDCC) $(CCLIBFLAGS) $(INCLUDES) -c -DL$${name} $(srcdir)/libgcc1.c; \
+ 	  if [ $$? -eq 0 ] ; then true; else exit 1; fi; \
+ 	  mv libgcc1$(objext) $${name}$(objext); \
++	  ld -r -x $${name}$(objext); mv a.out $${name}$(objext); \
+ 	  $(OLDAR) $(OLDAR_FLAGS) tmplibgcc1.a $${name}$(objext); \
+ 	  rm -f $${name}$(objext); \
+ 	done
+@@ -796,6 +802,7 @@
+ 	    else true; fi; \
+ 	    $(OLDCC) $(CCLIBFLAGS) $(INCLUDES) -c $${file}; \
+ 	    if [ $$? -eq 0 ] ; then true; else exit 1; fi; \
++	    ld -r -x $${name}$(objext); mv a.out $${name}$(objext); \
+ 	    $(OLDAR) $(OLDAR_FLAGS) tmplibgcc1.a $${name}$(objext); \
+ 	    if [ $$? -eq 0 ] ; then true; else exit 1; fi; \
+ 	    rm -f $${name}.s $${name}$(objext); \
+@@ -825,6 +832,7 @@
+ 	  $(GCC_FOR_TARGET) $(LIBGCC2_CFLAGS) $(INCLUDES) -c -DL$${name} libgcc1.S; \
+ 	  if [ $$? -eq 0 ] ; then true; else exit 1; fi; \
+ 	  mv libgcc1$(objext) $${name}$(objext); \
++	  ld -r -x $${name}$(objext); mv a.out $${name}$(objext); \
+ 	  $(AR) $(AR_FLAGS) tmplibgcc1.a $${name}$(objext); \
+ 	  rm -f $${name}$(objext); \
+ 	done
+@@ -875,6 +883,7 @@
+ 	  $(GCC_FOR_TARGET) $(LIBGCC2_CFLAGS) $(INCLUDES) -c -DL$${name} \
+ 	      $(srcdir)/libgcc2.c -o $${name}$(objext); \
+ 	  if [ $$? -eq 0 ] ; then true; else exit 1; fi; \
++	  ld -r -x $${name}$(objext); mv a.out $${name}$(objext); \
+ 	  $(AR) $(AR_FLAGS) tmplibgcc2.a $${name}$(objext); \
+ 	  rm -f $${name}$(objext); \
+ 	done
+@@ -895,6 +904,7 @@
+ 	    else true; fi; \
+ 	    $(GCC_FOR_TARGET) $(LIBGCC2_CFLAGS) $(INCLUDES) -c $${file}; \
+ 	    if [ $$? -eq 0 ] ; then true; else exit 1; fi; \
++	    ld -r -x $${oname}$(objext); mv a.out $${oname}$(objext); \
+ 	    $(AR) $(AR_FLAGS) tmplibgcc2.a $${oname}$(objext); \
+ 	    rm -f $${name}.s $${oname}$(objext); \
+ 	  else true; \
