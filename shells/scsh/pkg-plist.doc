@@ -31,7 +31,6 @@ lib/scsh/doc/NEWS
 lib/scsh/doc/RELEASE
 lib/scsh/doc/README
 lib/scsh/doc/scsh-manual/awk.tex
-lib/scsh/doc/scsh-manual/changes.tex
 lib/scsh/doc/scsh-manual/decls.tex
 lib/scsh/doc/scsh-manual/front.tex
 lib/scsh/doc/scsh-manual/intro.tex
