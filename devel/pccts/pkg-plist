@@ -43,68 +43,68 @@ include/pccts/pccts_stdlib.h
 include/pccts/pccts_string.h
 include/pccts/pcctscfg.h
 include/pccts/slist.cpp
-%%PORTDOCS%%share/doc/pccts/CHANGES_FROM_131.txt
-%%PORTDOCS%%share/doc/pccts/CHANGES_FROM_133.txt
-%%PORTDOCS%%share/doc/pccts/CHANGES_FROM_133_BEFORE_MR13.txt
-%%PORTDOCS%%share/doc/pccts/KNOWN_PROBLEMS.txt
-%%PORTDOCS%%share/doc/pccts/README
-%%PORTDOCS%%share/doc/pccts/RIGHTS
-%%PORTDOCS%%share/doc/pccts/history.txt
-%%PORTDOCS%%share/doc/pccts/history.ps
-share/examples/pccts/makefile
-share/examples/pccts/1/makefile
-share/examples/pccts/1/test.g
-share/examples/pccts/2/makefile
-share/examples/pccts/2/test.g
-share/examples/pccts/2/MyLexer.h
-share/examples/pccts/2/MyLexer.cpp
-share/examples/pccts/3/test.g
-share/examples/pccts/3/mytokens.h
-share/examples/pccts/3/makefile
-share/examples/pccts/3/MyLexer.h
-share/examples/pccts/3/MyLexer.cpp
-share/examples/pccts/4/test.g
-share/examples/pccts/4/mytokens.h
-share/examples/pccts/4/makefile
-share/examples/pccts/5/test.g
-share/examples/pccts/5/makefile
-share/examples/pccts/5/input.h
-share/examples/pccts/6/test2.g
-share/examples/pccts/6/test.g
-share/examples/pccts/6/makefile2
-share/examples/pccts/6/makefile
-share/examples/pccts/6/main.cpp
-share/examples/pccts/6/file2
-share/examples/pccts/6/file1
-share/examples/pccts/7/test.g
-share/examples/pccts/7/makefile
-share/examples/pccts/8/test.g
-share/examples/pccts/8/makefile
-share/examples/pccts/8/main.cpp
-share/examples/pccts/9/test.g
-share/examples/pccts/9/makefile
-share/examples/pccts/10/test.g
-share/examples/pccts/10/makefile
-share/examples/pccts/11/test.g
-share/examples/pccts/11/makefile
-share/examples/pccts/11/input.h
-share/examples/pccts/12/makefile
-share/examples/pccts/12/test.g
-share/examples/pccts/13/makefile
-share/examples/pccts/13/test.g
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES_FROM_131.txt
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES_FROM_133.txt
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES_FROM_133_BEFORE_MR13.txt
+%%PORTDOCS%%%%DOCSDIR%%/KNOWN_PROBLEMS.txt
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RIGHTS
+%%PORTDOCS%%%%DOCSDIR%%/history.txt
+%%PORTDOCS%%%%DOCSDIR%%/history.ps
+%%EXAMPLESDIR%%/makefile
+%%EXAMPLESDIR%%/1/makefile
+%%EXAMPLESDIR%%/1/test.g
+%%EXAMPLESDIR%%/2/makefile
+%%EXAMPLESDIR%%/2/test.g
+%%EXAMPLESDIR%%/2/MyLexer.h
+%%EXAMPLESDIR%%/2/MyLexer.cpp
+%%EXAMPLESDIR%%/3/test.g
+%%EXAMPLESDIR%%/3/mytokens.h
+%%EXAMPLESDIR%%/3/makefile
+%%EXAMPLESDIR%%/3/MyLexer.h
+%%EXAMPLESDIR%%/3/MyLexer.cpp
+%%EXAMPLESDIR%%/4/test.g
+%%EXAMPLESDIR%%/4/mytokens.h
+%%EXAMPLESDIR%%/4/makefile
+%%EXAMPLESDIR%%/5/test.g
+%%EXAMPLESDIR%%/5/makefile
+%%EXAMPLESDIR%%/5/input.h
+%%EXAMPLESDIR%%/6/test2.g
+%%EXAMPLESDIR%%/6/test.g
+%%EXAMPLESDIR%%/6/makefile2
+%%EXAMPLESDIR%%/6/makefile
+%%EXAMPLESDIR%%/6/main.cpp
+%%EXAMPLESDIR%%/6/file2
+%%EXAMPLESDIR%%/6/file1
+%%EXAMPLESDIR%%/7/test.g
+%%EXAMPLESDIR%%/7/makefile
+%%EXAMPLESDIR%%/8/test.g
+%%EXAMPLESDIR%%/8/makefile
+%%EXAMPLESDIR%%/8/main.cpp
+%%EXAMPLESDIR%%/9/test.g
+%%EXAMPLESDIR%%/9/makefile
+%%EXAMPLESDIR%%/10/test.g
+%%EXAMPLESDIR%%/10/makefile
+%%EXAMPLESDIR%%/11/test.g
+%%EXAMPLESDIR%%/11/makefile
+%%EXAMPLESDIR%%/11/input.h
+%%EXAMPLESDIR%%/12/makefile
+%%EXAMPLESDIR%%/12/test.g
+%%EXAMPLESDIR%%/13/makefile
+%%EXAMPLESDIR%%/13/test.g
 @dirrm include/pccts
-%%PORTDOCS%%@dirrm share/doc/pccts
-@dirrm share/examples/pccts/1
-@dirrm share/examples/pccts/2
-@dirrm share/examples/pccts/3
-@dirrm share/examples/pccts/4
-@dirrm share/examples/pccts/5
-@dirrm share/examples/pccts/6
-@dirrm share/examples/pccts/7
-@dirrm share/examples/pccts/8
-@dirrm share/examples/pccts/9
-@dirrm share/examples/pccts/10
-@dirrm share/examples/pccts/11
-@dirrm share/examples/pccts/12
-@dirrm share/examples/pccts/13
-@dirrm share/examples/pccts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%EXAMPLESDIR%%/1
+@dirrm %%EXAMPLESDIR%%/2
+@dirrm %%EXAMPLESDIR%%/3
+@dirrm %%EXAMPLESDIR%%/4
+@dirrm %%EXAMPLESDIR%%/5
+@dirrm %%EXAMPLESDIR%%/6
+@dirrm %%EXAMPLESDIR%%/7
+@dirrm %%EXAMPLESDIR%%/8
+@dirrm %%EXAMPLESDIR%%/9
+@dirrm %%EXAMPLESDIR%%/10
+@dirrm %%EXAMPLESDIR%%/11
+@dirrm %%EXAMPLESDIR%%/12
+@dirrm %%EXAMPLESDIR%%/13
+@dirrm %%EXAMPLESDIR%%

@@ -20,8 +20,13 @@ WRKSRC=			${WRKDIR}/pccts
 ALL_TARGET=
 MAKEFILE=		makefile
 MAKE_ENV=		COPT="${CFLAGS}"
+USE_REINPLACE=		yes
 
 MAN1=			antlr.1 dlg.1
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "*.c" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|<varargs.h>|<stdarg.h>|g'
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/bin/antlr ${PREFIX}/bin
