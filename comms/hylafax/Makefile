@@ -3,7 +3,7 @@
 # Date created:		19 Apr 1997
 # Whom:			ports@freebsd.org
 #
-# $Id: Makefile,v 1.20 1998/11/25 09:01:16 asami Exp $
+# $Id: Makefile,v 1.21 1999/01/21 11:12:20 itojun Exp $
 #
 
 DISTNAME=	hylafax-v4.0pl2
@@ -15,6 +15,9 @@ MASTER_SITES=	ftp://ftp.sgi.com/sgi/fax/source/ \
 EXTRACT_SUFX=	-tar.gz
 
 MAINTAINER=	ports@freebsd.org
+
+Y2K=		http://www.hylafax.org/HylaFAQ/Q189.html
+WWW_SITE=	http://www.hylafax.org
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
 		${PREFIX}/lib/afm/Courier:${PORTSDIR}/print/afm
