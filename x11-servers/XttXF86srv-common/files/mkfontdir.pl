@@ -512,6 +512,7 @@ while (<DIR>) {
 	}
 }
 if ($count) {
+        $count = $#f + 1;
 	print "$count\n";
 	print @f;
 }else{

@@ -3,12 +3,16 @@
 # Date created:		15 April 1998
 # Whom:			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/11 14:43:35 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/09/01 13:41:04 asami Exp $
 #
 
 DISTNAME=	xc
 PKGNAME=	xtt-I128-1.0
 CATEGORIES=	x11
+
+MAINTAINER=	taguchi@tohoku.iij.ad.jp
+
+RUN_DEPENDS=	mkfontdir.pl:${.CURDIR}/../XttXF86srv-common
 
 SERVER=		XF86_I128
 
