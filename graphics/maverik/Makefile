@@ -15,15 +15,9 @@ MASTER_SITES=	http://aig.cs.man.ac.uk/maverik/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A publicly available virtual reality (VR) system
 
-LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
-
-BROKEN=		"Changes its PORTNAME at install-time (maverik -> maverik-gtk)"
-EXPIRATION_DATE=2004-08-20
-DEPRECATED=	Changes its PORTNAME at install-time (maverik -> maverik-gtk)
-
 USE_REINPLACE=	yes
 USE_SUBMAKE=	yes
-USE_MESA=	yes
+USE_GL=		yes
 WANT_GNOME=	yes
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		REALCURDIR="${.CURDIR}" \
@@ -44,8 +38,8 @@ CONFIGURE_ARGS+=	--PNGLIBS="-L${LOCALBASE}/lib -lpng" \
 .endif
 
 .if ${HAVE_GNOME:Mgtk12}!=""
+LIB_DEPENDS+=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 USE_GNOME+=	gtk12
-PKGNAMESUFFIX=	-gtk
 CONFIGURE_ARGS+=	--GTK
 PLIST_SUB+=	GTK=""
 .else
