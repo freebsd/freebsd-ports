@@ -11,28 +11,26 @@ CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sqlrelay
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A persistent DB connection pooling/proxying/load balancing system
 
 LIB_DEPENDS=	rudiments.0:${PORTSDIR}/devel/rudiments
 
-USE_ICONV=	yes
-USE_REINPLACE=	yes
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		PTHREADINCLUDES="${PTHREAD_CFLAGS}" \
-		PTHREADLIBS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	${SQLRELAY_CONFIGURE_ARGS} \
-		--disable-tcl \
-		--disable-java \
-		--disable-perl \
-		--disable-php \
-		--disable-python \
-		--disable-ruby \
-		--disable-zope
+USE_REINPLACE=		yes
+USE_GMAKE=		yes
+USE_AUTOCONF_VER=	259
+GNU_CONFIGURE=		yes
+CONFIGURE_ENV=		${SQLRELAY_CONFIGURE_ENV} \
+			CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ARGS=		${SQLRELAY_CONFIGURE_ARGS} \
+			--disable-tcl \
+			--disable-java \
+			--disable-perl \
+			--disable-php \
+			--disable-python \
+			--disable-ruby \
+			--disable-zope
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-MAKE_ARGS=	VERSION="${PORTVERSION:R}"
 INSTALLS_SHLIB=	yes
 
 POSTGRESQL_PORT?=	databases/postgresql7
@@ -143,7 +141,7 @@ post-patch:
 	${REINPLACE_CMD} -E \
 		-e 's,/usr/local[[:>:]],${PREFIX},g;' \
 		-e 's,[[:<:]]gtk-config[[:>:]],${GTK_CONFIG:T},g;' \
-			${WRKSRC}/configure
+			${WRKSRC}/acsite.m4
 	${FIND} ${WRKSRC} -name Makefile | ${XARGS} ${REINPLACE_CMD} -E \
 		-e 's#-release \$$\(SQLR_VERSION\)##g;'
 

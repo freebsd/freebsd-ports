@@ -1,0 +1,11 @@
+--- configure.in.orig	Thu Aug  5 09:58:10 2004
++++ configure.in	Sat Sep 11 21:58:57 2004
+@@ -671,7 +671,7 @@
+ dnl if interfaces added, removed, or changed, c:r:a -> c+1:0:a
+ dnl if interfaces added,                      c:r:a -> c:r:a+1
+ dnl if interfaces removed,                    c:r:a -> c:r:0
+-SONAME_VERSION_INFO="1:0:0"
++SONAME_VERSION_INFO="0:0:0"
+ AC_SUBST(SONAME_VERSION_INFO)
+ AC_SUBST(STATICLINK)
+ AC_PREFIX_DEFAULT(/usr/local/firstworks)
