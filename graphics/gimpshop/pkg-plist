@@ -162,6 +162,7 @@ libexec/gimp/1.3/environ/default.env
 libexec/gimp/1.3/modules/libcdisplay_colorblind.so
 libexec/gimp/1.3/modules/libcdisplay_gamma.so
 libexec/gimp/1.3/modules/libcdisplay_highcontrast.so
+libexec/gimp/1.3/modules/libcdisplay_proof.so
 libexec/gimp/1.3/modules/libcolorsel_cmyk.so
 libexec/gimp/1.3/modules/libcolorsel_triangle.so
 libexec/gimp/1.3/modules/libcolorsel_water.so
