@@ -5,23 +5,27 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xrender
+PORTNAME=	libXrender
 PORTVERSION=	0.8.3
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://fontconfig.org/release/
+MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
+DISTNAME=	xrender-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	x11@FreeBSD.org
 COMMENT=	XRender extension for XFree86
 
-BUILD_DEPENDS=	${X11BASE}/lib/pkgconfig/render.pc:${PORTSDIR}/x11-toolkits/render
+LIB_PC_DEPENDS=	${X11BASE}/libdata/pkgconfig/ice.pc:${PORTSDIR}/x11/xextensions
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig \
+		${X11BASE}/libdata/pkgconfig/render.pc:${PORTSDIR}/x11-toolkits/render \
+		${LIB_PC_DEPENDS}
+RUN_DEPENDS=	${LIB_PC_DEPENDS}
 
-USE_X_PREFIX=	yes
-CONFIGURE_ARGS=	--prefix=${X11BASE}
-CONFIGURE_ENV+=	PKG_CONFIG_PATH=${X11BASE}/lib/pkgconfig
+PREFIX?=	${X11BASE}
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_GMAKE=	yes
+CFLAGS+=	-DMALLOC_0_RETURNS_NULL
 
 INSTALLS_SHLIB=	yes
-
-pre-build:
-	@(cd ${WRKSRC}; ./configure ${CONFIGURE_ARGS} ${CONFIGURE_ENV})
 
 .include <bsd.port.mk>
