@@ -33,7 +33,7 @@
 -	$(INSTALL_DATA) po/pt_BR.mo /usr/share/locale/pt/LC_MESSAGES/fwlogwatch.mo
 -	$(INSTALL_DATA) po/zh.mo /usr/share/locale/zh/LC_MESSAGES/fwlogwatch.mo
 +	$(INSTALL_DATA) po/pt_BR.mo /usr/share/locale/pt_BR/LC_MESSAGES/fwlogwatch.mo
-+	$(INSTALL_DATA) po/zh.mo /usr/share/locale/zh_TW/LC_MESSAGES/fwlogwatch.mo
++	$(INSTALL_DATA) po/zh.mo /usr/share/locale/zh_TW.Big5/LC_MESSAGES/fwlogwatch.mo
  
  uninstall:
  	@rm -f /usr/local/sbin/fwlogwatch \
