@@ -1,0 +1,8 @@
+--- qemu/Makefile	Sat Jan 29 15:02:08 2005
++++ qemu/Makefile	Sun Jan 30 12:59:52 2005
+@@ -1,4 +1,4 @@
+-ALL: vdeq
++all: vdeq
+ 
+ vdeq.o: vdeq.c ../vde.h
+ 

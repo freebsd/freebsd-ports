@@ -1,0 +1,40 @@
+--- Makefile	Sat Jan 29 15:02:08 2005
++++ Makefile	Sun Jan 30 13:46:59 2005
+@@ -1,14 +1,15 @@
+-TUNTAP = $(shell [ -e /usr/include/linux/if_tun.h ] && echo -DTUNTAP)
++TUNTAP = $(shell [ -e /usr/include/net/if_tun.h ] && echo -DTUNTAP)
+ 
+ OBJSSW = hash.o port.o vde_switch.o tuntap.o
+ BINSW = vde_switch
+ BIN = $(BINSW) dpipe vde_plug
+ #CFLAGS = -g -Wall $(TUNTAP) -DINFO -O3
+-CFLAGS = -Wall $(TUNTAP) -O3
++CFLAGS += -Wall $(TUNTAP) -O
+ 
+-BIN_DIR ?= /usr/local/bin
+-LIB_DIR ?= /usr/local/lib
+-MAN_DIR ?= /usr/local/man
++PREFIX ?= /usr/local
++BIN_DIR ?= $(PREFIX)/bin
++LIB_DIR ?= $(PREFIX)/lib
++MAN_DIR ?= $(PREFIX)/man
+ 
+ ifneq ($(TUNTAP),)
+ 	OBJS += tuntap.o
+@@ -30,13 +31,13 @@
+ vde_switch.o: vde_switch.c vde.h switch.h hash.h port.h tuntap.h
+ 
+ $(BINSW) : $(OBJSSW)
+-	$(CC) $(CFLAGS) -o $(BINSW) $(OBJSSW)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o $(BINSW) $(OBJSSW)
+ 
+ dpipe: dpipe.o 
+-	$(CC) $(CFLAGS) -o dpipe dpipe.o	
++	$(CC) $(CFLAGS) $(LDFLAGS) -o dpipe dpipe.o	
+ 	
+ vde_plug: vde_plug.o
+-	$(CC) $(CFLAGS) -o vde_plug vde_plug.o
++	$(CC) $(CFLAGS) $(LDFLAGS) -o vde_plug vde_plug.o
+ 
+ clean : 
+ 	rm -f $(BIN) *.o *~ 

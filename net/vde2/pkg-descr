@@ -1,0 +1,7 @@
+Virtual Distributed Ethernet is a user-mode virtual network (layer
+2) infrastructure.  It can be used for network simulations, joining
+multiple qemu instances together in a shared virtual network, or
+tunneling over the Internet.  Physical hosts can be joined to the
+virtual network by means of the tap(4) driver.
+
+WWW: http://vde.sourceforge.net/

@@ -1,0 +1,8 @@
+bin/dpipe
+bin/slirpvde
+bin/vde_plug
+bin/vde_switch
+bin/vdeq
+bin/vdeqemu
+bin/vdetap
+lib/libvdetap.so

@@ -798,6 +798,7 @@
     SUBDIR += v6eval
     SUBDIR += valknut
     SUBDIR += vchat
+    SUBDIR += vde
     SUBDIR += verlihub
     SUBDIR += verlihub-plugins
     SUBDIR += vicq
