@@ -10,7 +10,7 @@
 
 PORTNAME=	quanta
 PORTVERSION= 	3.0
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	2	# dammit! I hate this kludge.
 CATEGORIES=	www kde
 
