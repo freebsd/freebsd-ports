@@ -54,19 +54,21 @@ post-patch:
 pre-build:
 	${GMAKE} -C ${WRKSRC}/FILTERS link_includes
 	${GMAKE} -C ${WRKSRC}/XRML link_includes
-	@${RM} -f ${WRKSRC}/PROGS/vrmldump/deps
+	${GMAKE} -C ${WRKSRC}/PROGS/vrmldump clean
 
 do-install:
-	@${MKDIR} ${PREFIX}/include/xrml
-	${INSTALL_DATA} ${WRKSRC}/include/*.[hH] ${PREFIX}/include/xrml
+	@${MKDIR} ${PREFIX}/include/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/include/*.[hH] ${PREFIX}/include/${PORTNAME}
 .for i in cso mgf nff vrml2_utf8
-	@${MKDIR} ${PREFIX}/include/xrml/${i}
-	${INSTALL_DATA} ${WRKSRC}/include/${i}/* ${PREFIX}/include/xrml/${i}
+	@${MKDIR} ${PREFIX}/include/${PORTNAME}/${i}
+	${INSTALL_DATA} ${WRKSRC}/include/${i}/* \
+		${PREFIX}/include/${PORTNAME}/${i}
 .endfor
 
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/libxrml.so.0.5 ${PREFIX}/lib/libxrml.so.0
-	${LN} -fs libxrml.so.0 ${PREFIX}/lib/libxrml.so
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/lib${PORTNAME}.so.0.5 \
+		${PREFIX}/lib/lib${PORTNAME}.so.0
+	${LN} -fs lib${PORTNAME}.so.0 ${PREFIX}/lib/lib${PORTNAME}.so
 	@${STRIP_CMD} ${WRKSRC}/lib/*.a
 	${INSTALL_DATA} ${WRKSRC}/lib/*.a ${PREFIX}/lib
 
