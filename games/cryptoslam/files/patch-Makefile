@@ -1,0 +1,17 @@
+--- Makefile.orig	Thu Aug 22 22:12:38 2002
++++ Makefile	Thu Aug 22 22:13:36 2002
+@@ -12,12 +12,12 @@
+ all: cryptoslam
+ 
+ cryptoslam: $(O_FILES)
+-	gcc -o cryptoslam $(LIB_FLAGS) $(O_FILES)
++	${CXX} -o cryptoslam $(LIB_FLAGS) $(O_FILES)
+ 
+ clean:
+ 	rm -f cryptoslam core tmp.tmp *.o
+ 
+ %.o: %.c
+-	gcc $(CFLAGS) $(INCLUDE_FLAGS) -c $<
++	${CXX} $(CXXFLAGS) $(INCLUDE_FLAGS) -c $<
+ 
+ 
