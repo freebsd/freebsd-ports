@@ -6,18 +6,22 @@
 #
 
 PORTNAME=	dvipsk
-PORTVERSION=	5.92b
-PORTREVISION=	1
+PORTVERSION=	5.94a
+PORTREVISION=	0
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/2.0/distrib/ \
 		${MASTER_SITE_TEX_CTAN} \
-		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
+		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:jpatch \
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/TeX/ptex-win32/utils,:S,$,:udvipspatch,}
 MASTER_SITE_SUBDIR=	systems/unix/teTeX/2.0/distrib/
 PKGNAMEPREFIX=	ja-
 PKGNAMESUFFIX=	-tetex
 DISTFILES=	tetex-src-${VER_TETEX}${EXTRACT_SUFX} \
-		dvipsk-jpatch-p${VER_JPATCH}${EXTRACT_SUFX}:1
+		dvipsk-jpatch-p${VER_JPATCH}${EXTRACT_SUFX}:jpatch \
+		udvips-5.94a-p1.6.patch:udvipspatch
 DIST_SUBDIR=	teTeX
+EXTRACT_ONLY=	tetex-src-${VER_TETEX}${EXTRACT_SUFX} \
+		dvipsk-jpatch-p${VER_JPATCH}${EXTRACT_SUFX}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	A DVI to PostScript translator + Japanese patch
@@ -35,7 +39,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		t1.5:${PORTSDIR}/devel/t1lib
 
 PATCH_WRKSRC=	${WRKDIR}/tetex-src-${VER_TETEX}/texk
-EXTRA_PATCHES=	${WRKDIR}/dvipsk-${PORTVERSION}-p${VER_JPATCH}.patch
+EXTRA_PATCHES=	${WRKDIR}/dvipsk-5.92b-p${VER_JPATCH}.patch \
+		${DISTDIR}/${DIST_SUBDIR}/udvips-5.94a-p1.6.patch
 CONFIGURE_WRKSRC=${WRKDIR}/tetex-src-${VER_TETEX}
 BUILD_WRKSRC=	${WRKDIR}/tetex-src-${VER_TETEX}/texk/dvipsk
 INSTALL_WRKSRC=	${WRKDIR}/tetex-src-${VER_TETEX}/texk/dvipsk
@@ -75,6 +80,29 @@ post-configure:
 	${SED} ${PKGINSTALL_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		< ${FILESDIR}/pkg-install.in > ${PKGINSTALL}
 	${CHMOD} 0755 ${PKGINSTALL}
+	cd ${PATCH_WRKSRC} && ${RM} -rf udvipsk && ${CP} -pr dvipsk udvipsk
+
+do-build:
+.for D in dvipsk odvipsk
+	cd ${WRKDIR}/tetex-src-${VER_TETEX}/texk/${D} &&\
+		${SETENV} ${MAKE_ENV} ${GMAKE} \
+		${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET}
+.endfor
+	cd ${WRKDIR}/tetex-src-${VER_TETEX}/texk/udvipsk &&\
+		${SETENV} ${MAKE_ENV} ${GMAKE} \
+		${MAKE_FLAGS} ${MAKEFILE} \
+		program=udvips XDEFS=-DUDVIPS \
+		${ALL_TARGET}
+
+do-install:
+.for D in dvipsk odvipsk
+	cd ${WRKDIR}/tetex-src-${VER_TETEX}/texk/${D} &&\
+		${SETENV} ${MAKE_ENV} ${GMAKE} \
+		${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET}
+.endfor
+	${INSTALL_PROGRAM} \
+		${PATCH_WRKSRC}/udvipsk/udvips \
+		${PREFIX}/bin
 
 post-install:
 	${INSTALL_DATA} \

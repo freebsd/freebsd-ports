@@ -3,15 +3,3 @@ a PostScript file. Missing fonts can be automatically generated if
 METAFONT exists on the system, or can be converted from `gf' to `pk'
 format on demand. Dvips also supports `tpic', `psfig', `emtex',
 and `METAPOST'.
-
-Configuration file is /usr/local/share/texmf/dvips/base/config.ps
-In this configuration, it is possible to do convert them to 
-PDF file through ghostscript, then read by Adobe Acrobat to perform
-`cut and paste' of English fonts.  If you don't like this behavior
-(i.e. You want to embed bitmap information of english fonts; cut and 
-      paste becomes impossible),  delete or comment following two lines:
-p +psfonts.cmz
-p +psfonts.amz
-
-- Makoto WATANABE
-watanabe@zlab.phys.nagoya-u.ac.jp

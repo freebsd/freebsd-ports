@@ -1,6 +1,8 @@
 @comment $FreeBSD$
 bin/afm2tfm
 bin/dvips
+bin/odvips
+bin/udvips
 %%TEXMF%%/dvips/base/tex.pro
 %%TEXMF%%/dvips/base/texps.pro
 %%TEXMF%%/dvips/base/texc.pro

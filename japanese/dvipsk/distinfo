@@ -2,3 +2,5 @@ MD5 (teTeX/tetex-src-2.0.2.tar.gz) = a16f6bba227d55e79aeee46fbbd82d28
 SIZE (teTeX/tetex-src-2.0.2.tar.gz) = 11745933
 MD5 (teTeX/dvipsk-jpatch-p1.6.tar.gz) = a072a2196015caa15834522728a91a78
 SIZE (teTeX/dvipsk-jpatch-p1.6.tar.gz) = 28637
+MD5 (teTeX/udvips-5.94a-p1.6.patch) = a41fd7b5532d72a133d8da4ff39eb45b
+SIZE (teTeX/udvips-5.94a-p1.6.patch) = 15975
