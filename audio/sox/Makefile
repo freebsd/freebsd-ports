@@ -3,11 +3,11 @@
 # Date created:		17 Oct 1994
 # Whom:			torstenb
 #
-# $Id:$
+# $Id: Makefile,v 1.1.1.1 1994/10/23 01:16:14 torstenb Exp $
 #
 
 DISTNAME=	sox10p11
-MASTER_SITES=	ftp://nic.switch.ch/software/sources/audio
+MASTER_SITES=	ftp://nic.switch.ch/software/sources/audio/
 EXTRACT_SUFX=	.tar.Z
 
 pre-install:
