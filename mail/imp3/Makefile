@@ -74,6 +74,7 @@ LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap20 \
 .endif
 .endif
 RUN_DEPENDS+=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2
+NOTURBA=	"@comment "
 .else
 RUN_DEPENDS+=	${LOCALBASE}/www/horde/turba/index.php:${PORTSDIR}/mail/turba
 .endif
@@ -138,7 +139,7 @@ LHORDEDIR?=	www/horde
 LIMPDIR?=	${LHORDEDIR}/imp
 HORDESBIN?=	${PREFIX}/sbin
 
-PLIST_SUB=	HORDEDIR=${LHORDEDIR} IMPDIR=${LIMPDIR}
+PLIST_SUB=	HORDEDIR=${LHORDEDIR} IMPDIR=${LIMPDIR} TURBA=${NOTURBA}
 
 HORDEDIR=	${PREFIX}/${LHORDEDIR}
 IMPDIR=		${PREFIX}/${LIMPDIR}
@@ -248,7 +249,9 @@ do-install:
 .endfor
 	@${CP} -p ${HCONFDIR}/mime_drivers.php ${HCONFDIR}/mime_drivers.php.beforeIMP3
 	@${CP} -p ${HCONFDIR}/registry.php ${HCONFDIR}/registry.php.beforeIMP3
+.if !defined(WITHOUT_TURBA)
 	@${CP} -p ${TURBADIR}/config/conf.php ${TURBADIR}/config/conf.php.beforeIMP3
+.endif
 	@${REINPLACE_CMD} -e "s:example.com:${HOSTNAME}:g" ${CONFDIR}/servers.php
 	@${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:g" ${CONFDIR}/mime_drivers.php
 	@${RM} ${CONFDIR}/mime_drivers.php.beforeIMP
@@ -319,10 +322,12 @@ do-install:
 	@${RM} ${CONFDIR}/conf.php.beforeIMP
 	@${MV} ${HCONFDIR}/mime_drivers.php.beforeIMP3 ${HCONFDIR}/mime_drivers.php.beforeIMP
 	@${MV} ${HCONFDIR}/registry.php.beforeIMP3 ${HCONFDIR}/registry.php.beforeIMP
-	@${MV} ${TURBADIR}/config/conf.php.beforeIMP3 ${TURBADIR}/config/conf.php.beforeIMP
 	@${CP} -p ${HCONFDIR}/mime_drivers.php ${HCONFDIR}/mime_drivers.php.afterIMP
 	@${CP} -p ${HCONFDIR}/registry.php ${HCONFDIR}/registry.php.afterIMP
+.if !defined(WITHOUT_TURBA)
+	@${MV} ${TURBADIR}/config/conf.php.beforeIMP3 ${TURBADIR}/config/conf.php.beforeIMP
 	@${CP} -p ${TURBADIR}/config/conf.php ${TURBADIR}/config/conf.php.afterIMP
+.endif
 
 post-install:
 	@${ECHO_MSG}
