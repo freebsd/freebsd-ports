@@ -7,6 +7,7 @@
 
 PORTNAME?=	ispell
 PORTVERSION?=	3.1.20c
+PORTREVISION=	1
 CATEGORIES+=	textproc elisp
 MASTER_SITES=	ftp://ftp.cs.ucla.edu/pub/ispell-3.1/ \
 		ftp://ftp.kiarchive.ru/pub/unix/text/ispell/
@@ -31,16 +32,16 @@ ALL_TARGET=
 BUILDHASH=	${WRKSRC}/buildhash
 DATADIR=	${PREFIX}/share/ispell
 
-.if (!defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DK) && !defined(ISPELL_ZA))
+.if (!defined(ISPELL_FR) && !defined(ISPELL_SE) && !defined(ISPELL_BR) && !defined(ISPELL_DENEU) && !defined(ISPELL_DEALT) && !defined(ISPELL_BRITISH) && !defined(ISPELL_NO) && !defined(ISPELL_NL) && !defined(ISPELL_DA) && !defined(ISPELL_AF))
 pre-everything:
 	@${ECHO_MSG} '*********************************************************'
 	@${ECHO_MSG} '* You can add further dictionaries:                     *'
 	@${ECHO_MSG} '*                              Use make-flag:           *'
-	@${ECHO_MSG} '*  - Afrikaans                 ISPELL_ZA=yes            *'
+	@${ECHO_MSG} '*  - Afrikaans                 ISPELL_AF=yes            *'
 	@${ECHO_MSG} '*  - British                   ISPELL_BRITISH=yes       *'
 	@${ECHO_MSG} '*    (replaces the American dictionary)                 *'
 	@${ECHO_MSG} '*  - Dutch                     ISPELL_NL=yes            *'
-	@${ECHO_MSG} '*  - Danish                    ISPELL_DK=yes            *'
+	@${ECHO_MSG} '*  - Danish                    ISPELL_DA=yes            *'
 	@${ECHO_MSG} '*  - French                    ISPELL_FR=yes            *'
 	@${ECHO_MSG} '*  - Brasilian                 ISPELL_BR=yes            *'
 	@${ECHO_MSG} '*  - German (old spelling)     ISPELL_DEALT=yes         *'
@@ -94,21 +95,21 @@ MASTER_SITE_SUBDIR=	asmodai
 EXTRA_DICT+=	${NLDISTFILE}
 EXTRACT_ONLY+=	${NLDISTFILE}
 .endif
-.if defined(ISPELL_DK)
-DKDISTFILE=	ispell-da-1.4.7.tar.gz
+.if defined(ISPELL_DA)
+DADISTFILE=	ispell-da-1.4.7.tar.gz
 MASTER_SITES+=	http://da.speling.org/filer/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	asmodai
-EXTRA_DICT+=	${DKDISTFILE}
-EXTRACT_ONLY+=	${DKDISTFILE}
+EXTRA_DICT+=	${DADISTFILE}
+EXTRACT_ONLY+=	${DADISTFILE}
 .endif
-.if defined(ISPELL_ZA)
-ZADISTFILE=	ispell-sa-1.0.0.tar.gz
+.if defined(ISPELL_AF)
+AFDISTFILE=	ispell-sa-1.0.0.tar.gz
 MASTER_SITES+=	${MASTER_SITE_LOCAL} \
 		http://www.ninth-circle.org/~asmodai/
 MASTER_SITE_SUBDIR=	asmodai
-EXTRA_DICT+=	${ZADISTFILE}
-EXTRACT_ONLY+=	${ZADISTFILE}
+EXTRA_DICT+=	${AFDISTFILE}
+EXTRACT_ONLY+=	${AFDISTFILE}
 .endif
 
 
@@ -148,11 +149,11 @@ post-patch:
 .if defined(ISPELL_NL)
 	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/NL.patch 2>/dev/null
 .endif
-.if defined(ISPELL_DK)
-	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/DK.patch 2>/dev/null
+.if defined(ISPELL_DA)
+	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/DA.patch 2>/dev/null
 .endif
-.if defined(ISPELL_ZA)
-	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/ZA.patch 2>/dev/null
+.if defined(ISPELL_AF)
+	@cd ${WRKDIR} && ${PATCH} < ${FILESDIR}/AF.patch 2>/dev/null
 .endif
 
 
@@ -200,12 +201,12 @@ post-build:
 	@cd ${WRKDIR}/${NLDISTFILE:S=.tar.gz==} && \
 		${MAKE} ${MAKEFLAGS} BUILDHASH=${BUILDHASH} all
 .endif
-.if defined(ISPELL_DK)
-	@cd ${WRKDIR}/${DKDISTFILE:S=.tar.gz==} && \
+.if defined(ISPELL_DA)
+	@cd ${WRKDIR}/${DADISTFILE:S=.tar.gz==} && \
 		${MAKE} ${MAKEFLAGS} BUILDHASH=${BUILDHASH} all
 .endif
-.if defined(ISPELL_ZA)
-	@cd ${WRKDIR}/${ZADISTFILE:S=.tar.gz==} && \
+.if defined(ISPELL_AF)
+	@cd ${WRKDIR}/${AFDISTFILE:S=.tar.gz==} && \
 		${MAKE} ${MAKEFLAGS} BUILDHASH=${BUILDHASH} all
 .endif
 
@@ -235,11 +236,11 @@ post-install:
 .if defined(ISPELL_NL)
 	@${CAT} ${MASTERDIR}/pkg-plist.nl >> ${TMPPLIST}
 .endif
-.if defined(ISPELL_DK)
-	@${CAT} ${MASTERDIR}/pkg-plist.dk >> ${TMPPLIST}
+.if defined(ISPELL_DA)
+	@${CAT} ${MASTERDIR}/pkg-plist.da >> ${TMPPLIST}
 .endif
-.if defined(ISPELL_ZA)
-	@${CAT} ${MASTERDIR}/pkg-plist.za >> ${TMPPLIST}
+.if defined(ISPELL_AF)
+	@${CAT} ${MASTERDIR}/pkg-plist.af >> ${TMPPLIST}
 .endif
 .if defined(ISPELL_BRITISH)
 	@${CAT} ${MASTERDIR}/pkg-plist.british >> ${TMPPLIST}
