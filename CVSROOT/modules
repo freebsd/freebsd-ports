@@ -8405,6 +8405,7 @@ varconf		ports/devel/varconf
 varkon		ports/cad/varkon
 vat		ports/mbone/vat
 vb2c		ports/devel/vb2c
+vba		ports/emulators/vba
 vbidecode	ports/misc/vbidecode
 vbsfilter	ports/mail/vbsfilter
 vcdgear		ports/multimedia/vcdgear
