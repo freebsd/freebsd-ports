@@ -78,7 +78,7 @@ USE_AUTOCONF_VER=253
 .endif
 
 .if ${ARCH} == "alpha" || ${ARCH} == "ia64" || ${ARCH} == "amd64"
-BROKEN="Dumps core on startup"
+IGNORE=	"Dumps core on startup"
 .endif
 
 .if defined(WITH_IPV6)
