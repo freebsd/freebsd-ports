@@ -360,6 +360,7 @@
     SUBDIR += openverse
     SUBDIR += oproute
     SUBDIR += osrtspproxy
+    SUBDIR += ossp-sa
     SUBDIR += p0f
     SUBDIR += p5-Archie
     SUBDIR += p5-BIND-Conf_Parser
