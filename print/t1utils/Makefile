@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	t1utils
-PORTVERSION=	1.25
+PORTVERSION=	1.29
 CATEGORIES=	print
-MASTER_SITES=	http://www.lcdf.org/~eddietwo/type/
+MASTER_SITES=	http://www.lcdf.org/type/
 
 MAINTAINER=	mwm@mired.org
 COMMENT=	Six utilities for manipulating t1 fonts
