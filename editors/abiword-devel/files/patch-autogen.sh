@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- autogen.sh.orig	Fri Sep 28 12:06:00 2001
-+++ autogen.sh	Fri Nov 23 16:33:29 2001
+--- autogen.sh.orig	Mon Mar 25 07:41:49 2002
++++ autogen.sh	Tue Apr  9 12:35:41 2002
 @@ -10,20 +10,20 @@
  
  set -e
@@ -34,13 +34,12 @@ $FreeBSD$
 -aclocal -I ac-helpers
 +aclocal14 -I ac-helpers
  
--# autoheader
-+# autoheader14
+ # autoheader
  
- # Produce all the `Makefile.in's, verbosely, and create neat missing things
- # like `libtool', `install-sh', etc.
--automake --add-missing --verbose --foreign
-+automake14 --add-missing --verbose --foreign
+ # Produce all the `GNUmakefile.in's and create neat missing things
+ # like `install-sh', etc.
+-automake --add-missing --copy --foreign
++automake14 --add-missing --copy --foreign
  
  # If there's a config.cache file, we may need to delete it.  
  # If we have an existing configure script, save a copy for comparison.

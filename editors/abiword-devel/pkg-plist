@@ -2,6 +2,7 @@ bin/AbiWord
 bin/AbiWord_d
 %%NOGNOME:%%bin/AbiWord_s
 bin/abiword
+bin/ttfadmin.sh
 bin/ttftool
 share/AbiSuite/AbiWord/help/de-DE/about.html
 share/AbiSuite/AbiWord/help/de-DE/aboutabi.html
@@ -580,6 +581,8 @@ share/AbiSuite/icons/abiword_48.tif
 share/AbiSuite/icons/abiword_48.xpm
 %%GNOME:%%share/AbiSuite/icons/abiword_logo.xpm
 share/AbiSuite/templates/2-columns.awt
+share/AbiSuite/templates/Employee-Directory.awt
+share/AbiSuite/templates/Fax-Coversheet.awt
 share/AbiSuite/templates/a4.awt
 share/AbiSuite/templates/normal.awt
 share/AbiSuite/templates/us-letter.awt
