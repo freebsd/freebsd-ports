@@ -56,6 +56,7 @@ include/apache2/modules/perl/modperl_util.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestCommonPost.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestConfig.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestConfigC.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestConfigPHP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestConfigParse.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestConfigPerl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestHandler.pm
@@ -67,6 +68,7 @@ include/apache2/modules/perl/modperl_util.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestReportPerl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestRequest.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestRun.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestRunPHP.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestRunPerl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestSSLCA.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestServer.pm
@@ -93,7 +95,6 @@ include/apache2/modules/perl/modperl_util.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/Socket.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/String.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/Table.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/ThreadMutex.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/URI.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/UUID.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/APR/Util.pm
@@ -120,9 +121,11 @@ include/apache2/modules/perl/modperl_util.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/RequestIO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/RequestRec.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/RequestUtil.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Resource.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Response.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/ServerRec.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/ServerUtil.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/SizeLimit.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/SourceTables.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/Status.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Apache/SubProcess.pm
@@ -250,8 +253,6 @@ include/apache2/modules/perl/modperl_util.h
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Global/Global.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Util/Util.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Util/Util.so
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/libaprext/libaprext.bs
-%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/libaprext/libaprext.so
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/mod_perl.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Bundle/Apache2.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Bundle/ApacheTest.pm
@@ -259,7 +260,6 @@ include/apache2/modules/perl/modperl_util.h
 libexec/apache2/mod_perl.so
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/mod_perl
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Bundle 2>/dev/null || true
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/libaprext
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Util
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Global
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/auto/ModPerl/Const
