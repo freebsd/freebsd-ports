@@ -1,4 +1,5 @@
 bin/sylpheed
+lib/charset.alias
 %%PORTDOCS%%share/doc/sylpheed/ChangeLog
 %%PORTDOCS%%share/doc/sylpheed/ChangeLog.jp
 %%PORTDOCS%%share/doc/sylpheed/INSTALL
@@ -11,11 +12,14 @@ share/locale/cs/LC_MESSAGES/sylpheed.mo
 share/locale/de/LC_MESSAGES/sylpheed.mo
 share/locale/el/LC_MESSAGES/sylpheed.mo
 share/locale/es/LC_MESSAGES/sylpheed.mo
+share/locale/et/LC_MESSAGES/sylpheed.mo
 share/locale/fr/LC_MESSAGES/sylpheed.mo
 share/locale/hr/LC_MESSAGES/sylpheed.mo
+share/locale/hu/LC_MESSAGES/sylpheed.mo
 share/locale/it/LC_MESSAGES/sylpheed.mo
 share/locale/ja/LC_MESSAGES/sylpheed.mo
 share/locale/ko/LC_MESSAGES/sylpheed.mo
+share/locale/locale.alias
 share/locale/nl/LC_MESSAGES/sylpheed.mo
 share/locale/pl/LC_MESSAGES/sylpheed.mo
 share/locale/pt_BR/LC_MESSAGES/sylpheed.mo
