@@ -57,6 +57,7 @@
     SUBDIR += p5-News-Newsrc
     SUBDIR += pan
     SUBDIR += pan2
+    SUBDIR += papercut
     SUBDIR += pgpmoose
     SUBDIR += plor
     SUBDIR += pyne
