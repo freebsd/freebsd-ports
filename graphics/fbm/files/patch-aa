@@ -1,0 +1,69 @@
+*** Makefile.orig	Thu Jun  3 11:30:50 1993
+--- Makefile	Tue Feb 17 14:37:50 1998
+***************
+*** 63,94 ****
+  #
+  ################################################################
+  
+! INSTALL= ln
+! BIN= /usr/mlm/bin/
+! MAN= /usr/mlm/man/
+! FTP= /usr/mlm/ftp/
+! TIFINC= ../tiff/libtiff/
+! TIFLIB= ../tiff/libtiff/
+  MANEXT= l
+  
+  # Make the C compiler behave on the NeXT
+! DBG= -g -D__STRICT_BSD__
+  
+  #----------------JPEG linkage----------------
+  # If you don't have the JPEG library, use these two lines
+! #JPEG=
+! #JLIB= 
+  # If you have the JPEG library, use the next lines instead
+! JPEG= -DDO_JPEG -I../jpeg
+! JLIB= -L../jpeg -ljpeg
+  
+  #----------------Utah RLE linkage----------------
+  # If you don't have the Utah RLE library, use these two lines
+  RLE=
+  RLIB= 
+  # If you have the Utah RLE library, use the next lines instead
+! #RLE= -DRLE -I/usr/mlm/include
+! #RLIB= -L. -lfbm -L/usr/mlm/lib -lrle
+  
+  LIB= -L. -lfbm $(JLIB) $(RLIB)
+  
+--- 63,94 ----
+  #
+  ################################################################
+  
+! INSTALL= install
+! BIN= $(PREFIX)/bin/
+  MANEXT= l
++ MAN= $(PREFIX)/man/man$(MANEXT)/
++ FTP= /usr/mlm/ftp/
++ TIFINC= $(LOCALBASE)/include/
++ TIFLIB= $(LOCALBASE)/lib/
+  
+  # Make the C compiler behave on the NeXT
+! # DBG= -g -D__STRICT_BSD__
+  
+  #----------------JPEG linkage----------------
+  # If you don't have the JPEG library, use these two lines
+! JPEG=
+! JLIB= 
+  # If you have the JPEG library, use the next lines instead
+! #JPEG= -DDO_JPEG -I$(LOCALBASE)/include
+! #JLIB= -L$(LOCALBASE)/lib -ljpeg
+  
+  #----------------Utah RLE linkage----------------
+  # If you don't have the Utah RLE library, use these two lines
+  RLE=
+  RLIB= 
+  # If you have the Utah RLE library, use the next lines instead
+! #RLE= -DRLE -I$(LOCALBASE)/include
+! #RLIB= -L. -lfbm -L$(LOCALBASE)/lib -lrle
+  
+  LIB= -L. -lfbm $(JLIB) $(RLIB)
+  
