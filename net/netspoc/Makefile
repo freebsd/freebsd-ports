@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	netspoc
-PORTVERSION=	1.5
+PORTVERSION=	1.7
 CATEGORIES=	net
 MASTER_SITES=	http://download.berlios.de/netspoc/
 
@@ -17,14 +17,22 @@ COMMENT=	A Network Security Policy Compiler
 USE_PERL5=	yes
 NO_BUILD=	yes
 
-MAN1=	netspoc.1
+MAN1=		netspoc.1
+DOCS=		*.html
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=		"This port needs Perl 5.6.0 or greater"
+.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/netspoc ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/Netspoc.pm ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/netspoc.man ${MANPREFIX}/man/man1/netspoc.1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

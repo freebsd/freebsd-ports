@@ -1,6 +1,9 @@
+@comment $FreeBSD$
 bin/netspoc
+bin/Netspoc.pm
 %%PORTDOCS%%%%DOCSDIR%%/CSPM.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/language.html
 %%PORTDOCS%%%%DOCSDIR%%/netspoc.html
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
