@@ -100,6 +100,7 @@
     SUBDIR += p5-Text-Filter
     SUBDIR += p5-Text-Filter-Chain
     SUBDIR += p5-Text-FixedLength
+    SUBDIR += p5-Text-FixedLength-Extra
     SUBDIR += p5-Text-Flowchart
     SUBDIR += p5-Text-Format
     SUBDIR += p5-Text-Graphics

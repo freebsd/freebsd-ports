@@ -1,0 +1,4 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/FixedLength/Extra/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Text/FixedLength/Extra.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Text/FixedLength/Extra
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Text/FixedLength 2>/dev/null || true
