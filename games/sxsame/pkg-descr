@@ -1,0 +1,5 @@
+sxsame -- a game of removing tiles,for X Window system 
+
+Goal of this game is removing more tiles as you can and
+get much score. You can remove two or more tiles with 
+same color,neibouring vertical or horizontal.
