@@ -1,0 +1,45 @@
+--- lib/Makefile.in.orig	Tue Apr  6 17:28:36 1999
++++ lib/Makefile.in	Tue Mar 30 20:20:55 2004
+@@ -100,9 +100,9 @@
+ EXTRA_DIST = alloca.c basename.c dirname.c error.c fnmatch.c memcpy.c 	memset.c obstack.c regex.c strcasecmp.c strcspn.c strdup.c 	strndup.c strpbrk.c strspn.c strstr.c strtok.c
+ 
+ 
+-libsys_a_SOURCES = xgetcwd.c xmalloc.c getopt.c getopt1.c
++libsys_a_SOURCES = xgetcwd.c xmalloc.c
+ 
+-noinst_HEADERS = ansidecl.h error.h fnmatch.h getopt.h obstack.h 	pathmax.h regex.h xalloca.h xdirent.h xfnmatch.h 	xmalloc.h xobstack.h xstddef.h xstdlib.h xstring.h xsysstat.h 	xunistd.h
++noinst_HEADERS = ansidecl.h error.h fnmatch.h obstack.h 	pathmax.h regex.h xalloca.h xdirent.h xfnmatch.h 	xmalloc.h xobstack.h xstddef.h xstdlib.h xstring.h xsysstat.h 	xunistd.h
+ 
+ 
+ INCLUDES = -I. -I$(srcdir) 	   -I../intl -I$(top_srcdir)/intl 	   -I.. -I$(top_srcdir)
+@@ -118,7 +118,7 @@
+ LIBS = @LIBS@
+ ANSI2KNR = ../src/ansi2knr
+ libsys_a_DEPENDENCIES =  @LIBOBJS@ @ALLOCA@
+-libsys_a_OBJECTS =  xgetcwd$U.o xmalloc$U.o getopt$U.o getopt1$U.o
++libsys_a_OBJECTS =  xgetcwd$U.o xmalloc$U.o
+ AR = ar
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+@@ -205,10 +205,6 @@
+ 	$(CPP) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) `if test -f $(srcdir)/error.c; then echo $(srcdir)/error.c; else echo error.c; fi` | sed 's/^# \([0-9]\)/#line \1/' | $(ANSI2KNR) > error_.c
+ fnmatch_.c: fnmatch.c $(ANSI2KNR)
+ 	$(CPP) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) `if test -f $(srcdir)/fnmatch.c; then echo $(srcdir)/fnmatch.c; else echo fnmatch.c; fi` | sed 's/^# \([0-9]\)/#line \1/' | $(ANSI2KNR) > fnmatch_.c
+-getopt_.c: getopt.c $(ANSI2KNR)
+-	$(CPP) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) `if test -f $(srcdir)/getopt.c; then echo $(srcdir)/getopt.c; else echo getopt.c; fi` | sed 's/^# \([0-9]\)/#line \1/' | $(ANSI2KNR) > getopt_.c
+-getopt1_.c: getopt1.c $(ANSI2KNR)
+-	$(CPP) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) `if test -f $(srcdir)/getopt1.c; then echo $(srcdir)/getopt1.c; else echo getopt1.c; fi` | sed 's/^# \([0-9]\)/#line \1/' | $(ANSI2KNR) > getopt1_.c
+ memcpy_.c: memcpy.c $(ANSI2KNR)
+ 	$(CPP) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) `if test -f $(srcdir)/memcpy.c; then echo $(srcdir)/memcpy.c; else echo memcpy.c; fi` | sed 's/^# \([0-9]\)/#line \1/' | $(ANSI2KNR) > memcpy_.c
+ memset_.c: memset.c $(ANSI2KNR)
+@@ -235,8 +231,8 @@
+ 	$(CPP) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) `if test -f $(srcdir)/xgetcwd.c; then echo $(srcdir)/xgetcwd.c; else echo xgetcwd.c; fi` | sed 's/^# \([0-9]\)/#line \1/' | $(ANSI2KNR) > xgetcwd_.c
+ xmalloc_.c: xmalloc.c $(ANSI2KNR)
+ 	$(CPP) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) `if test -f $(srcdir)/xmalloc.c; then echo $(srcdir)/xmalloc.c; else echo xmalloc.c; fi` | sed 's/^# \([0-9]\)/#line \1/' | $(ANSI2KNR) > xmalloc_.c
+-alloca_.o basename_.o dirname_.o error_.o fnmatch_.o getopt_.o \
+-getopt1_.o memcpy_.o memset_.o obstack_.o regex_.o strcspn_.o strdup_.o \
++alloca_.o basename_.o dirname_.o error_.o fnmatch_.o \
++memcpy_.o memset_.o obstack_.o regex_.o strcspn_.o strdup_.o \
+ strndup_.o strpbrk_.o strspn_.o strstr_.o strtok_.o xgetcwd_.o \
+ xmalloc_.o : $(ANSI2KNR)
+ 

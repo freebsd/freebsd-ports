@@ -7,7 +7,7 @@
 
 PORTNAME=	id-utils
 PORTVERSION=	3.2d
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU_ALPHA}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,13 +17,15 @@ COMMENT=	The classic Berkeley gid/lid tools for looking up variables in code
 
 CONFLICTS=	coreutils-* sh-utils-*
 
-USE_REINPLACE=	yes
+USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 INFO=		id-utils
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
@@ -33,16 +35,10 @@ USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
-.if exists(${LOCALBASE}/bin/emacs)
-PLIST_SUB+=	EMACS="" EMACSDIR=share/emacs
-.elif exists(${LOCALBASE}/bin/xemacs)
-PLIST_SUB+=	EMACS="" EMACSDIR=lib/xemacs
-.else
-PLIST_SUB+=	EMACS="@comment " EMACSDIR=""
-.endif
+post-extract:
+	@${RM} -f ${WRKSRC}/lib/getopt.h
 
-post-patch:
-	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|@EMACS@|no|g'
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/lisp/id-utils.el ${PREFIX}/share/emacs/site-lisp
 
 .include <bsd.port.mk>
