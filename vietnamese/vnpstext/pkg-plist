@@ -1,5 +1,5 @@
+@comment $Id$
 bin/vnpstext
-man/man1/vnpstext.1.gz
 share/vn-fonts/initcour.ps
 share/vn-fonts/initcourb.ps
 share/vn-fonts/cour10.pro
