@@ -1,0 +1,483 @@
+diff -ruN ../vMac-0.1.9.3.old/Hardware/Makefile.in ./Hardware/Makefile.in
+--- ../vMac-0.1.9.3.old/Hardware/Makefile.in	Sun Feb 15 07:55:19 1998
++++ ./Hardware/Makefile.in	Sun Jul 11 16:30:09 1999
+@@ -24,7 +24,7 @@
+ 
+ .SUFFIXES: .o .c .h .m .i .S
+ 
+-INCLUDES=-I@top_srcdir@/Includes -I$(X_CFLAGS) -I/usr/include -I../ -I.
++INCLUDES=-I@top_srcdir@/Includes $(X_CFLAGS) -I/usr/include -I../ -I.
+ 
+ OBJS =	IWM.o			\
+ 	Keyboard.o		\
+diff -ruN ../vMac-0.1.9.3.old/Includes/sysdeps.h ./Includes/sysdeps.h
+--- ../vMac-0.1.9.3.old/Includes/sysdeps.h	Sun Feb 15 22:34:51 1998
++++ ./Includes/sysdeps.h	Sun Jul 11 16:30:10 1999
+@@ -62,8 +62,9 @@
+ #endif
+ #endif
+ 
++#undef HAVE_SYS_STATFS_H
+ #ifdef HAVE_SYS_STATFS_H
+-#include <sys/statfs.h>
++#include <statfs.h>
+ #endif
+ 
+ #ifdef HAVE_SYS_STATVFS_H
+diff -ruN ../vMac-0.1.9.3.old/Makefile ./Makefile
+--- ../vMac-0.1.9.3.old/Makefile	Tue Apr 27 02:49:44 1999
++++ ./Makefile	Sun Jul 11 16:30:10 1999
+@@ -25,7 +25,7 @@
+ 
+ .SUFFIXES: .o .c .h .m .i .S
+ 
+-INCLUDES=-I./Hardware/ -I./Includes -I$(X_CFLAGS) -I/usr/local/include -I.
++INCLUDES=-I./Hardware/ -I./Includes $(X_CFLAGS) -I/usr/local/include -I.
+ 
+ OBJS =	custom.o main.o prefs.o	debug.o	gemulator.o \
+ 	$(GFXOBJS)
+diff -ruN ../vMac-0.1.9.3.old/Makefile.in ./Makefile.in
+--- ../vMac-0.1.9.3.old/Makefile.in	Tue Apr 27 02:49:34 1999
++++ ./Makefile.in	Sun Jul 11 18:04:53 1999
+@@ -24,12 +24,15 @@
+ 
+ .SUFFIXES: .o .c .h .m .i .S
+ 
+-INCLUDES=-I@top_srcdir@/Hardware/ -I@top_srcdir@/Includes -I$(X_CFLAGS) -I/usr/local/include -I.
++INCLUDES=-I@top_srcdir@/Hardware/ -I@top_srcdir@/Includes -I$(X_CFLAGS) -I/usr/local/include -I. -I/usr/X11R6/include/
+ 
+ OBJS =	custom.o main.o prefs.o	debug.o	gemulator.o \
+ 	$(GFXOBJS)
+ 
+ all: $(TARGET)
++
++install:
++	@echo Install target h4x0r3d.
+ 
+ x11: vMac
+ 
+diff -ruN ../vMac-0.1.9.3.old/configure ./configure
+--- ../vMac-0.1.9.3.old/configure	Mon Feb 16 23:29:26 1998
++++ ./configure	Sun Jul 11 16:30:10 1999
+@@ -2760,9 +2760,9 @@
+ 
+ WANT_MOTIFGUI=no
+ WANT_GTKGUI=no
+-WANT_NOGUI=yes
+-WANT_MITSHM=no
+-WANT_SCAN=no
++WANT_NOGUI=no
++WANT_MITSHM=yes
++WANT_SCAN=yes
+ WANT_SVGA=no
+ WANT_NEXTSTEP=no
+ 
+@@ -2810,7 +2810,7 @@
+ 
+ 
+ if [ "x$no_x" = "xyes" ]; then
+-  HAVE_MOTIF=no
++  HAVE_MOTIF=yes
+ else
+   TMP_SAVE_LIBS=$LIBS
+   TMP_SAVE_CFLAGS=$CFLAGS
+@@ -2949,8 +2949,8 @@
+ 
+ if [ "x$WANT_MOTIFGUI" = "xyes" ]; then
+   if [ "x$HAVE_MOTIF" = "xno" ]; then
+-    WANT_MOTIFGUI=no
+-    echo "Can't find Motif or LessTif libraries; Motif GUI disabled."
++    WANT_MOTIFGUI=yes
++    echo "Motif support hax0r3d in."
+   else
+     WANT_MOTIFGUI=yes
+     WANT_GTKGUI=no
+diff -ruN ../vMac-0.1.9.3.old/freebsd.patch ./freebsd.patch
+--- ../vMac-0.1.9.3.old/freebsd.patch	Thu Jan  1 00:00:00 1970
++++ ./freebsd.patch	Sun Jul 11 18:05:06 1999
+@@ -0,0 +1,94 @@
++diff -ruN ../vMac-0.1.9.3.old/Hardware/Makefile.in ./Hardware/Makefile.in
++--- ../vMac-0.1.9.3.old/Hardware/Makefile.in	Sun Feb 15 07:55:19 1998
+++++ ./Hardware/Makefile.in	Sun Jul 11 16:30:09 1999
++@@ -24,7 +24,7 @@
++ 
++ .SUFFIXES: .o .c .h .m .i .S
++ 
++-INCLUDES=-I@top_srcdir@/Includes -I$(X_CFLAGS) -I/usr/include -I../ -I.
+++INCLUDES=-I@top_srcdir@/Includes $(X_CFLAGS) -I/usr/include -I../ -I.
++ 
++ OBJS =	IWM.o			\
++ 	Keyboard.o		\
++diff -ruN ../vMac-0.1.9.3.old/Includes/sysdeps.h ./Includes/sysdeps.h
++--- ../vMac-0.1.9.3.old/Includes/sysdeps.h	Sun Feb 15 22:34:51 1998
+++++ ./Includes/sysdeps.h	Sun Jul 11 16:30:10 1999
++@@ -62,8 +62,9 @@
++ #endif
++ #endif
++ 
+++#undef HAVE_SYS_STATFS_H
++ #ifdef HAVE_SYS_STATFS_H
++-#include <sys/statfs.h>
+++#include <statfs.h>
++ #endif
++ 
++ #ifdef HAVE_SYS_STATVFS_H
++diff -ruN ../vMac-0.1.9.3.old/Makefile ./Makefile
++--- ../vMac-0.1.9.3.old/Makefile	Tue Apr 27 02:49:44 1999
+++++ ./Makefile	Sun Jul 11 16:30:10 1999
++@@ -25,7 +25,7 @@
++ 
++ .SUFFIXES: .o .c .h .m .i .S
++ 
++-INCLUDES=-I./Hardware/ -I./Includes -I$(X_CFLAGS) -I/usr/local/include -I.
+++INCLUDES=-I./Hardware/ -I./Includes $(X_CFLAGS) -I/usr/local/include -I.
++ 
++ OBJS =	custom.o main.o prefs.o	debug.o	gemulator.o \
++ 	$(GFXOBJS)
++diff -ruN ../vMac-0.1.9.3.old/Makefile.in ./Makefile.in
++--- ../vMac-0.1.9.3.old/Makefile.in	Tue Apr 27 02:49:34 1999
+++++ ./Makefile.in	Sun Jul 11 18:04:53 1999
++@@ -24,12 +24,15 @@
++ 
++ .SUFFIXES: .o .c .h .m .i .S
++ 
++-INCLUDES=-I@top_srcdir@/Hardware/ -I@top_srcdir@/Includes -I$(X_CFLAGS) -I/usr/local/include -I.
+++INCLUDES=-I@top_srcdir@/Hardware/ -I@top_srcdir@/Includes -I$(X_CFLAGS) -I/usr/local/include -I. -I/usr/X11R6/include/
++ 
++ OBJS =	custom.o main.o prefs.o	debug.o	gemulator.o \
++ 	$(GFXOBJS)
++ 
++ all: $(TARGET)
+++
+++install:
+++	@echo Install target h4x0r3d.
++ 
++ x11: vMac
++ 
++diff -ruN ../vMac-0.1.9.3.old/configure ./configure
++--- ../vMac-0.1.9.3.old/configure	Mon Feb 16 23:29:26 1998
+++++ ./configure	Sun Jul 11 16:30:10 1999
++@@ -2760,9 +2760,9 @@
++ 
++ WANT_MOTIFGUI=no
++ WANT_GTKGUI=no
++-WANT_NOGUI=yes
++-WANT_MITSHM=no
++-WANT_SCAN=no
+++WANT_NOGUI=no
+++WANT_MITSHM=yes
+++WANT_SCAN=yes
++ WANT_SVGA=no
++ WANT_NEXTSTEP=no
++ 
++@@ -2810,7 +2810,7 @@
++ 
++ 
++ if [ "x$no_x" = "xyes" ]; then
++-  HAVE_MOTIF=no
+++  HAVE_MOTIF=yes
++ else
++   TMP_SAVE_LIBS=$LIBS
++   TMP_SAVE_CFLAGS=$CFLAGS
++@@ -2949,8 +2949,8 @@
++ 
++ if [ "x$WANT_MOTIFGUI" = "xyes" ]; then
++   if [ "x$HAVE_MOTIF" = "xno" ]; then
++-    WANT_MOTIFGUI=no
++-    echo "Can't find Motif or LessTif libraries; Motif GUI disabled."
+++    WANT_MOTIFGUI=yes
+++    echo "Motif support hax0r3d in."
++   else
++     WANT_MOTIFGUI=yes
++     WANT_GTKGUI=no
+diff -ruN ../vMac-0.1.9.3.old/gemulator.c ./gemulator.c
+--- ../vMac-0.1.9.3.old/gemulator.c	Tue Apr 27 05:04:38 1999
++++ ./gemulator.c	Sun Jul 11 16:30:10 1999
+@@ -1,141 +1,152 @@
+-/* Support for Gemulator ROM Board */
+-
+-/*
+- * Much of this code was written by Darek Michocka,
+- * and adapted to work in vMac by Weston, and ported
+- * to Linux by Michael Samuel.
+- *
+- * If this code fails, try adding defining SLOW_IO, and see how that works.
+- */
++/* Support for Gemulator ROM Board */
++
++/*
++ * Much of this code was written by Darek Michocka,
++ * and adapted to work in vMac by Weston, and ported
++ * to Linux by Michael Samuel.
++ *
++ * If this code fails, try adding defining SLOW_IO, and see how that works.
++ */
++
++#define REMOVE_GEMULATOR_SUPPORT  // I'm not even trying to port this
++				  // support in, and most people don't use
++				  // it.  If you have gotten it to work,
++				  // send a diff to me
++				  // (troll@digitalspark.net)
+ 
+ #define SLOW_IO
+-
+-#include <stdio.h>
+-#include <asm/io.h>
+-#include <unistd.h>
+-#include <errno.h>
+-#include <string.h>
+-#include <sys/io.h>
+-
+-/* Define TEST to make a linkable ROM dumper */
+-#ifdef TEST
+-#define SOCKNUM 1
+-#define NUMSOCKS 2
+-
+-#include <sys/types.h>
+-#include <sys/stat.h>
+-#include <fcntl.h>
+-#endif
+-
++
++#include <stdio.h>
++#ifndef REMOVE_GEMULATOR_SUPPORT
++#include <asm/io.h>
++#endif
++#include <unistd.h>
++#include <errno.h>
++#include <string.h>
++#ifndef REMOVE_GEMULATOR_SUPPORT
++#include <sys/io.h>
++#endif
++
++/* Define TEST to make a linkable ROM dumper */
++#ifdef TEST
++#define SOCKNUM 1
++#define NUMSOCKS 2
++
++#include <sys/types.h>
++#include <sys/stat.h>
++#include <fcntl.h>
++#endif
++
+ #include "sysconfig.h"
+ #include "sysdeps.h"
+-#include "gemulator.h"
+-
+-/*
+- * Change this if your board is on a different I/O Port
+- * This is statically compiled into the binary *deliberately*
+- */
+-#define GEM_BASE 0x240
+-
+-/*
+- * Much of this code was written by Darek Michocka,
+- * and adapted to work in vMac by Weston, and ported
+- * to Linux, and thrown into BasiliskII by Michael Samuel
+- */
+-
+-/*
+- * Don't forget to drop root permissions after trying to load the ROM,
+- * especially before trying to read a ROM from a file...
+- */
+-
+-#define cbSocket (128*1024)
+-#define countSocket (8)
+-
+-unsigned char bigbuf[cbSocket*countSocket*2];
+-
+-int Gemulator_LoadROM(UBYTE * NewROM, UWORD Base, UBYTE Socket, UBYTE Length)
+-{
+-	int i;
+-	int rgsize[countSocket];
+-
++#include "gemulator.h"
++
++/*
++ * Change this if your board is on a different I/O Port
++ * This is statically compiled into the binary *deliberately*
++ */
++#define GEM_BASE 0x240
++
++/*
++ * Much of this code was written by Darek Michocka,
++ * and adapted to work in vMac by Weston, and ported
++ * to Linux, and thrown into BasiliskII by Michael Samuel
++ */
++
++/*
++ * Don't forget to drop root permissions after trying to load the ROM,
++ * especially before trying to read a ROM from a file...
++ */
++
++#define cbSocket (128*1024)
++#define countSocket (8)
++
++unsigned char bigbuf[cbSocket*countSocket*2];
++
++int Gemulator_LoadROM(UBYTE * NewROM, UWORD Base, UBYTE Socket, UBYTE Length)
++{
++#ifndef REMOVE_GEMULATOR_SUPPORT
++	int i;
++	int rgsize[countSocket];
++
+ 	--Socket; //Our socket 1 is really socket 0
+ 	
+-	/* Give I/O Permissions to the Base address */
+-	if(ioperm(GEM_BASE, 1, 1) == -1) {
+-		fprintf(stderr, "Cannot get IO permissions: %s\n", 
+-				strerror(errno));
+-		return 0;
+-	}
+-
+-#ifdef SLOW_IO
+-	if(ioperm(0x80, 1, 1) == -1) {
+-		fprintf(stderr, "Cannot get IO permissions: %s\n",
+-				strerror(errno));
+-		return 0;
+-	}
+-	outb_p(0, GEM_BASE);
+-#else
+-	outb(0, GEM_BASE);
+-#endif
+-	for (i = 0; i < (Socket+Length)*cbSocket; i++) {
+-#ifdef SLOW_IO
+-		bigbuf[i] = inb_p(GEM_BASE);
+-#else
+-		bigbuf[i] = inb(GEM_BASE);
+-#endif
+-	}
+-
+-	/* Drop I/O permissions, now that we're done */
+-	ioperm(GEM_BASE, 1, 0);
+-#ifdef SLOW_IO
+-	ioperm(0x80, 1, 0);
+-#endif
+-	for (i = 0; i < countSocket; i++) {
+-		unsigned char *pb = &bigbuf[i * cbSocket];
+-		int size = cbSocket/1024;
+-		while ((size > 32) && !memcmp(pb, pb+(size*512), size*512)) {
+-			size /= 2;
+-		}
+-		rgsize[i] = size;
+-	}
+-
+-	// scramble the bytes from socket order to byte order
+-	memmove(bigbuf + countSocket * cbSocket, bigbuf + Socket * cbSocket,
+-			Length * cbSocket);
+-
+-	for (i = 0; i < countSocket * cbSocket; i++) {
+-	        bigbuf[i] = bigbuf[(countSocket + (i%Length)) *
+-				cbSocket + (i/Length)];
+-	}
+-	memcpy(NewROM, bigbuf, 1024 * rgsize[Socket] * Length);
+-
+-	return(1024 * rgsize[Socket] * Length); //Return size
+-}
+-
+-#ifdef TEST
+-int main(int argc, char **argv)
+-{
+-	unsigned char rombuff[(1024*128*NUMSOCKS)];
+-	int fd;
+-	int size = Gemulator_LoadROM(rombuff, SOCKNUM, NUMSOCKS);
+-
+-	if(size == 0) {
+-		printf("ROM Loading Failed\n");
+-		exit(1);
+-	}
+-	printf("ROM Size: %d bytes\n", size);
+-	fd = open("Gemulator_dump", O_CREAT | O_WRONLY);
+-	if(fd == -1) {
+-		fprintf(stderr, "Cannot dump ROM file\n");
+-		exit(1);
+-	}
+-	if(write(fd, rombuff, (ssize_t)size) != (ssize_t)size) {
+-		fprintf(stderr, "error writing file\n");
+-		close(fd);
+-		exit(1);
+-	}
+-	close(fd);
+-	return 0;
+-}
+-#endif
+-	
++	/* Give I/O Permissions to the Base address */
++	if(ioperm(GEM_BASE, 1, 1) == -1) {
++		fprintf(stderr, "Cannot get IO permissions: %s\n", 
++				strerror(errno));
++		return 0;
++	}
++
++#ifdef SLOW_IO
++	if(ioperm(0x80, 1, 1) == -1) {
++		fprintf(stderr, "Cannot get IO permissions: %s\n",
++				strerror(errno));
++		return 0;
++	}
++	outb_p(0, GEM_BASE);
++#else
++	outb(0, GEM_BASE);
++#endif
++	for (i = 0; i < (Socket+Length)*cbSocket; i++) {
++#ifdef SLOW_IO
++		bigbuf[i] = inb_p(GEM_BASE);
++#else
++		bigbuf[i] = inb(GEM_BASE);
++#endif
++	}
++
++	/* Drop I/O permissions, now that we're done */
++	ioperm(GEM_BASE, 1, 0);
++#ifdef SLOW_IO
++	ioperm(0x80, 1, 0);
++#endif
++	for (i = 0; i < countSocket; i++) {
++		unsigned char *pb = &bigbuf[i * cbSocket];
++		int size = cbSocket/1024;
++		while ((size > 32) && !memcmp(pb, pb+(size*512), size*512)) {
++			size /= 2;
++		}
++		rgsize[i] = size;
++	}
++
++	// scramble the bytes from socket order to byte order
++	memmove(bigbuf + countSocket * cbSocket, bigbuf + Socket * cbSocket,
++			Length * cbSocket);
++
++	for (i = 0; i < countSocket * cbSocket; i++) {
++	        bigbuf[i] = bigbuf[(countSocket + (i%Length)) *
++				cbSocket + (i/Length)];
++	}
++	memcpy(NewROM, bigbuf, 1024 * rgsize[Socket] * Length);
++
++	return(1024 * rgsize[Socket] * Length); //Return size
++#endif
++}
++
++#ifdef TEST
++int main(int argc, char **argv)
++{
++	unsigned char rombuff[(1024*128*NUMSOCKS)];
++	int fd;
++	int size = Gemulator_LoadROM(rombuff, SOCKNUM, NUMSOCKS);
++
++	if(size == 0) {
++		printf("ROM Loading Failed\n");
++		exit(1);
++	}
++	printf("ROM Size: %d bytes\n", size);
++	fd = open("Gemulator_dump", O_CREAT | O_WRONLY);
++	if(fd == -1) {
++		fprintf(stderr, "Cannot dump ROM file\n");
++		exit(1);
++	}
++	if(write(fd, rombuff, (ssize_t)size) != (ssize_t)size) {
++		fprintf(stderr, "error writing file\n");
++		close(fd);
++		exit(1);
++	}
++	close(fd);
++	return 0;
++}
++#endif
