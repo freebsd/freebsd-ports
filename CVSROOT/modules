@@ -9519,6 +9519,7 @@ zenity		ports/x11/zenity
 zh-CJK		ports/chinese/CJK
 zh-FreeWnn-lib	ports/chinese/FreeWnn-lib
 zh-FreeWnn-server	ports/chinese/FreeWnn-server
+zh-MT		ports/chinese/MT
 zh-abiword		ports/chinese/abiword
 zh-acroread5-chsfont	ports/chinese/acroread5-chsfont
 zh-acroread5-chtfont	ports/chinese/acroread5-chtfont
