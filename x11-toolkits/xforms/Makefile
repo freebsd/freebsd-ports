@@ -3,7 +3,7 @@
 # Date created:		01 October 1995
 # Whom:			gena
 #
-# $Id: Makefile,v 1.1.1.1 1995/10/03 01:17:55 jkh Exp $
+# $Id: $
 #
 
 DISTNAME=	bxform-075
