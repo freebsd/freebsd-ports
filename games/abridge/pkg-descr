@@ -1,0 +1,12 @@
+Bridge is a bridge game that allows you to play bridge online with other
+real people. It is currently available for UNIX (including linux),
+Microsoft Windows and MacOS X. On all platforms, aBridge supports speech
+synthesis, allowing you to choose listen to the bids and chat conversation
+rather than simply gazing at the screen waiting for someone to play.
+aBridge also has some rudimentary bots, for when other players aren't
+online, but their AI is pretty pathetic, and they are in need of a
+complete rewrite.
+
+WWW: http://www.abridgegame.org/
+
+Janos.Mohacsi@bsd.hu
