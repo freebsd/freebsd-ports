@@ -15,15 +15,30 @@ MAINTAINER=	leeym@cae.ce.ntu.edu.tw
 
 SRCDIR=		/usr/src/usr.bin/telnet
 
+
+.include <bsd.port.pre.mk>
 do-extract:
 .if exists (${SRCDIR})
 	@${MKDIR} ${WRKDIR}
 	@${CP} -R ${SRCDIR} ${WRKSRC}
+.if ${OSVERSION} > 500000
+	@${MKDIR} ${WRKSRC}/lib
+	@${CP} -R /usr/src/lib/libtelnet ${WRKSRC}/lib
+.endif
 .else
 BROKEN=	"You need to build this port with ${SRCDIR}"
 .endif
 
 MAN1=		zh-telnet.1
+
+.if ${OSVERSION} > 500000
+pre-patch:
+	@${PERL} -pi -e 's,/../..,,' ${WRKSRC}/Makefile
+
+pre-build:
+	@cd ${WRKSRC}/lib/libtelnet; \
+	${MAKE}
+.endif
 
 do-install:
 	@cd ${WRKSRC}; \
@@ -31,4 +46,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/telnet ${PREFIX}/bin/zh-telnet; \
 	${INSTALL_MAN} ${MAN1} ${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
