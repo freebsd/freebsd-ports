@@ -1,5 +1,5 @@
---- Makefile.in.ORIG	Tue Jan  6 13:23:29 1998
-+++ Makefile.in	Tue Jan  6 13:25:40 1998
+--- Makefile.in.ORIG	Fri Sep 25 13:59:32 1998
++++ Makefile.in	Fri Sep 25 14:10:31 1998
 @@ -56,7 +56,9 @@
  BIN_DIR =		$(exec_prefix)/bin
  
@@ -21,16 +21,16 @@
  # The directory containing the Tcl sources and headers appropriate
  # for this version of Tk ("srcdir" will be replaced or has already
  # been replaced by the configure script):
-@@ -94,7 +99,7 @@
+@@ -112,7 +117,7 @@
  
  # Libraries to use when linking.  This definition is determined by the
  # configure script.
 -LIBS = @TCL_BUILD_LIB_SPEC@ @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
 +LIBS = @TCL_LIB_SPEC@ @LIBS@ $(X11_LIB_SWITCHES) @DL_LIBS@ @MATH_LIBS@ -lc
  
- # To change the compiler switches, for example to change from -O
- # to -g, change the following line:
-@@ -135,7 +140,7 @@
+ # To turn off the security checks that disallow incoming sends when
+ # the X server appears to be insecure, reverse the comments on the
+@@ -148,7 +153,7 @@
  # "install" around;  better to use the install-sh script that comes
  # with the distribution, which is slower but guaranteed to work.
  
@@ -39,7 +39,7 @@
  INSTALL_PROGRAM =	${INSTALL}
  INSTALL_DATA =		${INSTALL} -m 644
  
-@@ -148,6 +153,8 @@
+@@ -161,6 +166,8 @@
  TK_SHLIB_CFLAGS = @TK_SHLIB_CFLAGS@
  
  TK_LIB_FILE = @TK_LIB_FILE@
@@ -47,8 +47,8 @@
 +TK_STATIC_LIB_FILE = libtk80$(TCL_L10N).a
  #TK_LIB_FILE = libtk.a
  
- # The symbol below provides support for dynamic loading and shared
-@@ -300,6 +307,10 @@
+ TK_LIB_FLAG = @TK_LIB_FLAG@
+@@ -320,6 +327,10 @@
  
  DEMOPROGS = browse hello ixset rmt rolodex square tcolor timer widget
  
@@ -59,19 +59,22 @@
  all: wish
  
  # The following target is configured by autoconf to generate either
-@@ -309,6 +320,11 @@
+@@ -328,6 +339,14 @@
+ 	rm -f ${TK_LIB_FILE}
  	@MAKE_LIB@
- 	$(RANLIB) @TK_LIB_FILE@
- 
+ 	$(RANLIB) ${TK_LIB_FILE}
++.if ${PORTOBJFORMAT}X == elfX
++	ln -sf ${TK_LIB_FILE} `echo ${TK_LIB_FILE} | sed 's/\.so.*$$/.so/'`
++.endif
++
 +$(TK_STATIC_LIB_FILE): $(OBJS)
 +	rm -f $(TK_STATIC_LIB_FILE)
 +	ar cr $(TK_STATIC_LIB_FILE) $(OBJS)
 +	$(RANLIB) $(TK_STATIC_LIB_FILE)
-+
+ 
  # Make target which outputs the list of the .o contained in the Tk lib
  # usefull to build a single big shared library containing Tcl/Tk and other
- # extensions.  used for the Tcl Plugin.  -- dl
-@@ -353,13 +369,13 @@
+@@ -377,13 +396,13 @@
  	TK_LIBRARY=$(TOP_DIR)/library; export TK_LIBRARY; \
  	./tktest
  
@@ -87,10 +90,13 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -373,13 +389,19 @@
+@@ -397,13 +416,22 @@
  	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
  	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TK_LIB_FILE))
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
++.if ${PORTOBJFORMAT}X == elfX
++	@(cd $(LIB_INSTALL_DIR); ln -sf ${TK_LIB_FILE} `echo ${TK_LIB_FILE} | sed 's/\.so.*$$/.so/'`)
++.endif
 +	@echo "Installing $(TK_STATIC_LIB_FILE)"
 +	@$(INSTALL_DATA) $(TK_STATIC_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_STATIC_LIB_FILE)
 +	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TK_STATIC_LIB_FILE))
@@ -108,7 +114,7 @@
  		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -389,8 +411,18 @@
+@@ -413,8 +441,18 @@
  		else true; \
  		fi; \
  	    done;
@@ -129,7 +135,7 @@
  	for i in $(SRC_DIR)/library/*.tcl $(SRC_DIR)/library/tclIndex $(SRC_DIR)/library/prolog.ps $(UNIX_DIR)/tkAppInit.c; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -449,10 +481,10 @@
+@@ -473,10 +511,10 @@
  	@cd $(SRC_DIR)/doc; for i in *.1; \
  	    do \
  	    echo "Installing doc/$$i"; \
@@ -143,7 +149,7 @@
  	    done;
  	$(UNIX_DIR)/mkLinks $(MAN1_INSTALL_DIR)
  	@cd $(SRC_DIR)/doc; for i in *.3; \
-@@ -460,19 +492,26 @@
+@@ -484,19 +522,26 @@
  	    echo "Installing doc/$$i"; \
  	    rm -f $(MAN3_INSTALL_DIR)/$$i; \
  	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \

@@ -3,31 +3,31 @@
 # Date created:		26 Dec 1997
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
-# $Id: Makefile,v 1.5 1998/08/07 23:55:47 asami Exp $
+# $Id: Makefile,v 1.6 1998/09/28 10:31:26 asami Exp $
 #
 
-DISTNAME=	tk8.0p2
-PKGNAME=	ja-tk-8.0.2
+DISTNAME=	tk8.0.3
+PKGNAME=	ja-tk-8.0.3
 CATEGORIES=	japanese x11-toolkits tk80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 
 PATCH_SITES=	ftp://ftp.sra.co.jp/pub/lang/tcl/jp/
-PATCHFILES=	tk8.0p2jp1.1b0.patch.gz
+PATCHFILES=	tk8.0.3jp1.1.patch.gz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
 LIB_DEPENDS=	tcl80jp.1:${PORTSDIR}/japanese/tcl80
 
 VERSION=	8.0
-TOPDIR=		${WRKDIR}/tk${VERSION}
+TOPDIR=		${WRKDIR}/${DISTNAME}
 WRKSRC=		${TOPDIR}/unix
 .if defined(PATCH_DEBUG)
 PATCH_DIST_ARGS=-d ${TOPDIR} -E ${PATCH_DIST_STRIP}
 .else
 PATCH_DIST_ARGS=-d ${TOPDIR} --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
-GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
+USE_XLIB=	yes
 CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl${VERSION}jp
 
 .if !defined(NOPORTDOCS)
@@ -48,7 +48,10 @@ post-install:
 		Incompat80jp ${PREFIX}/share/doc/tk${VERSION}jp; \
 	 )
 .endif
-	@${LDCONFIG} -m ${PREFIX}/lib
+	@${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+	if [ "${PORTOBJFORMAT}" = "aout" ]; then \
+		${LN} -sf libtk80jp.so.1.2 ${PREFIX}/lib/libtk80jp.so; \
+	fi
 	@${CAT}	${PKGDIR}/MESSAGE
 
 test:
