@@ -1,22 +1,21 @@
-# New ports collection makefile for:	tkrat
-# Version required:	1.1
-# Date created:		24 October 1997
-# Whom:			Bruce Gingery <bgingery@gtcs.com>
+# New ports collection makefile for:	tkrat2
+# Version required:	2.0b7
+# Date created:		9 November 1999
+# Whom:			Stephen J. Roznowski <sjr@home.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tkrat-1.2
+DISTNAME=	tkrat-2.0b7
 CATEGORIES=	mail tk82
 MASTER_SITES=	ftp://ftp.md.chalmers.se/pub/tkrat/ \
 		ftp://ftp.sunet.se/pub/unix/mail/tkrat/
 
-MAINTAINER=	appleseed@his.com
+MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	tclsh8.2:${PORTSDIR}/lang/tcl82
-LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
-		tk82.1:${PORTSDIR}/x11-toolkits/tk82 \
-		c-client4.7:${PORTSDIR}/mail/imap-uw
+LIB_DEPENDS=	tcl82:${PORTSDIR}/lang/tcl82 \
+		tk82:${PORTSDIR}/x11-toolkits/tk82 \
+		c-client4.5:${PORTSDIR}/mail/imap-uw
 
 GNU_CONFIGURE=	yes
 
@@ -38,6 +37,5 @@ post-install:
 .endif
 	@${MKDIR} ${PREFIX}/lib/ratatosk
 	${INSTALL_DATA} ${FILESDIR}/ratatoskrc ${PREFIX}/lib/ratatosk
-	#${CHMOD} ugo+wt /var/mail
 
 .include <bsd.port.mk>
