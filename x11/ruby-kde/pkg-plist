@@ -9,17 +9,43 @@ share/examples/ruby/kde/kapp/kapp1.rb
 share/examples/ruby/kde/kredit/kredit_lib.pot
 share/examples/ruby/kde/kredit/kde2ps
 share/examples/ruby/kde/kredit/kredit.rb
+share/examples/ruby/kde/kredit/kredit.rb.po
+share/examples/ruby/kde/kredit/kredit.rb.pot
 share/examples/ruby/kde/kredit/kredit_lib.rb
 share/examples/ruby/kde/kredit/readme.txt
 share/examples/ruby/kde/kredit/kredit.po
 share/examples/ruby/kde/kredit/kredit.mo
 share/examples/ruby/kde/kredit/kredit.rb.mo
 share/examples/ruby/kde/kredit/make_pot
+share/examples/ruby/kde/ksc/pics/circle_fill.xpm
+share/examples/ruby/kde/ksc/pics/fileopen.xpm
+share/examples/ruby/kde/ksc/pics/filefloppy.xpm
+share/examples/ruby/kde/ksc/pics/fileprint.xpm
+share/examples/ruby/kde/ksc/pics/editcopy.xpm
+share/examples/ruby/kde/ksc/pics/editcut.xpm
+share/examples/ruby/kde/ksc/pics/editpaste.xpm
+share/examples/ruby/kde/ksc/pics/arrow.xpm
+share/examples/ruby/kde/ksc/pics/pen.xpm
+share/examples/ruby/kde/ksc/pics/line.xpm
+share/examples/ruby/kde/ksc/pics/circle.xpm
+share/examples/ruby/kde/ksc/pics/rectangle.xpm
+share/examples/ruby/kde/ksc/pics/erase.xpm
+share/examples/ruby/kde/ksc/pics/filenew.xpm
+share/examples/ruby/kde/ksc/scarea.rb
+share/examples/ruby/kde/ksc/scglobal.rb
+share/examples/ruby/kde/ksc/scwindow.rb
+share/examples/ruby/kde/ksc/ksc.rb.pot
+share/examples/ruby/kde/ksc/ksc.rb.po
+share/examples/ruby/kde/ksc/ksc.rb.mo
+share/examples/ruby/kde/ksc/ksc.rb
+share/examples/ruby/kde/ksc/make_pot
 share/examples/ruby/kde/kwidgets/kwid.rb
 share/examples/ruby/kde/slider/kslider3.rb
 @dirrm share/examples/ruby/kde/classbrows
 @dirrm share/examples/ruby/kde/kapp
 @dirrm share/examples/ruby/kde/kredit
+@dirrm share/examples/ruby/kde/ksc/pics
+@dirrm share/examples/ruby/kde/ksc
 @dirrm share/examples/ruby/kde/kwidgets
 @dirrm share/examples/ruby/kde/slider
 @dirrm share/examples/ruby/kde
