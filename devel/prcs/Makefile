@@ -26,6 +26,7 @@ PLIST_FILES=	bin/prcs
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/bin/emacs)
+MAN1+=		prcs-callback.1 prcs-ediff.1 prcs-emerge.1
 PLIST_FILES+=	bin/prcs-callback bin/prcs-ediff bin/prcs-emerge \
 		share/emacs/site-lisp/prcs.el \
 		share/emacs/site-lisp/prcs.elc \
