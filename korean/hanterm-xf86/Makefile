@@ -7,12 +7,17 @@
 
 PORTNAME=	hanterm
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	korean x11
 MASTER_SITES=	http://www.kr.FreeBSD.org/~hwang/hanterm/ \
 		http://hanterm.org/download/hanterm-xf/
 PKGNAMESUFFIX=	-xf
 DISTNAME=	hanterm${PKGNAMESUFFIX}-${PORTVERSION}
+
+PATCH_SITES=	ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
+PATCHFILES=	hanterm-xf-2.0.0-cutbuffer.patch
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	cjh@FreeBSD.org
 
