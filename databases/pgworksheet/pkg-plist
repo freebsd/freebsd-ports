@@ -1,0 +1,33 @@
+bin/pgworksheet
+%%PYTHON_SITELIBDIR%%/pgw/__init__.py
+%%PYTHON_SITELIBDIR%%/pgw/__init__.pyc
+%%PYTHON_SITELIBDIR%%/pgw/__init__.pyo
+%%PYTHON_SITELIBDIR%%/pgw/DBConnection.py
+%%PYTHON_SITELIBDIR%%/pgw/DBConnection.pyc
+%%PYTHON_SITELIBDIR%%/pgw/DBConnection.pyo
+%%PYTHON_SITELIBDIR%%/pgw/Execute.py
+%%PYTHON_SITELIBDIR%%/pgw/Execute.pyc
+%%PYTHON_SITELIBDIR%%/pgw/Execute.pyo
+%%PYTHON_SITELIBDIR%%/pgw/RunSQL.py
+%%PYTHON_SITELIBDIR%%/pgw/RunSQL.pyc
+%%PYTHON_SITELIBDIR%%/pgw/RunSQL.pyo
+%%PYTHON_SITELIBDIR%%/pgw/UI.py
+%%PYTHON_SITELIBDIR%%/pgw/UI.pyc
+%%PYTHON_SITELIBDIR%%/pgw/UI.pyo
+%%PYTHON_SITELIBDIR%%/pgw/MyPgSQL.py
+%%PYTHON_SITELIBDIR%%/pgw/MyPgSQL.pyc
+%%PYTHON_SITELIBDIR%%/pgw/MyPgSQL.pyo
+share/pixmaps/pgworksheet/connect.png
+share/pixmaps/pgworksheet/disconnect.png
+share/pixmaps/pgworksheet/about.png
+share/pixmaps/pgworksheet/pgworksheet.png
+share/pixmaps/pgworksheet/pgworksheet-32.png
+share/locale/fr/LC_MESSAGES/pgworksheet.mo
+@dirrm %%PYTHON_SITELIBDIR%%/pgw
+@unexec rmdir %D/%%PYTHON_SITELIBDIR%% 2> /dev/null || true
+@unexec rmdir %D/%%PYTHON_LIBDIR%% 2> /dev/null || true
+@dirrm share/pixmaps/pgworksheet
+@unexec rmdir %D/share/pixmaps 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true

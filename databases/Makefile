@@ -223,6 +223,7 @@
     SUBDIR += pgadmin3
     SUBDIR += pgbash
     SUBDIR += pgcluster
+    SUBDIR += pgworksheet
     SUBDIR += php-sqlrelay
     SUBDIR += php4-dba
     SUBDIR += php4-dbase
