@@ -9,15 +9,20 @@ bin/db3_recover
 bin/db3_stat
 bin/db3_upgrade
 bin/db3_verify
+include/db3/cxx_common.h
+include/db3/cxx_except.h
 include/db3/db.h
 include/db3/db_185.h
 include/db3/db_cxx.h
+lib/libdb3.a
 lib/libdb3.so
-lib/libdb3.so.2
+lib/libdb3.so.3
+lib/libdb3_cxx.a
 lib/libdb3_cxx.so
-lib/libdb3_cxx.so.2
+lib/libdb3_cxx.so.3
 share/doc/db3/api_c/c_index.html
 share/doc/db3/api_c/c_pindex.html
+share/doc/db3/api_c/db_associate.html
 share/doc/db3/api_c/db_close.html
 share/doc/db3/api_c/db_create.html
 share/doc/db3/api_c/db_cursor.html
@@ -34,6 +39,7 @@ share/doc/db3/api_c/db_open.html
 share/doc/db3/api_c/db_put.html
 share/doc/db3/api_c/db_remove.html
 share/doc/db3/api_c/db_rename.html
+share/doc/db3/api_c/db_set_alloc.html
 share/doc/db3/api_c/db_set_append_recno.html
 share/doc/db3/api_c/db_set_bt_compare.html
 share/doc/db3/api_c/db_set_bt_minkey.html
@@ -49,7 +55,6 @@ share/doc/db3/api_c/db_set_h_ffactor.html
 share/doc/db3/api_c/db_set_h_hash.html
 share/doc/db3/api_c/db_set_h_nelem.html
 share/doc/db3/api_c/db_set_lorder.html
-share/doc/db3/api_c/db_set_malloc.html
 share/doc/db3/api_c/db_set_pagesize.html
 share/doc/db3/api_c/db_set_paniccall.html
 share/doc/db3/api_c/db_set_q_extentsize.html
@@ -57,9 +62,9 @@ share/doc/db3/api_c/db_set_re_delim.html
 share/doc/db3/api_c/db_set_re_len.html
 share/doc/db3/api_c/db_set_re_pad.html
 share/doc/db3/api_c/db_set_re_source.html
-share/doc/db3/api_c/db_set_realloc.html
 share/doc/db3/api_c/db_stat.html
 share/doc/db3/api_c/db_sync.html
+share/doc/db3/api_c/db_truncate.html
 share/doc/db3/api_c/db_upgrade.html
 share/doc/db3/api_c/db_verify.html
 share/doc/db3/api_c/dbc_close.html
@@ -70,10 +75,13 @@ share/doc/db3/api_c/dbc_get.html
 share/doc/db3/api_c/dbc_put.html
 share/doc/db3/api_c/dbm.html
 share/doc/db3/api_c/dbt.html
+share/doc/db3/api_c/dbt_bulk.html
 share/doc/db3/api_c/env_close.html
 share/doc/db3/api_c/env_create.html
+share/doc/db3/api_c/env_err.html
 share/doc/db3/api_c/env_open.html
 share/doc/db3/api_c/env_remove.html
+share/doc/db3/api_c/env_set_alloc.html
 share/doc/db3/api_c/env_set_cachesize.html
 share/doc/db3/api_c/env_set_data_dir.html
 share/doc/db3/api_c/env_set_errcall.html
@@ -84,6 +92,7 @@ share/doc/db3/api_c/env_set_flags.html
 share/doc/db3/api_c/env_set_lg_bsize.html
 share/doc/db3/api_c/env_set_lg_dir.html
 share/doc/db3/api_c/env_set_lg_max.html
+share/doc/db3/api_c/env_set_lg_regionmax.html
 share/doc/db3/api_c/env_set_lk_conflicts.html
 share/doc/db3/api_c/env_set_lk_detect.html
 share/doc/db3/api_c/env_set_lk_max.html
@@ -97,7 +106,7 @@ share/doc/db3/api_c/env_set_paniccall.html
 share/doc/db3/api_c/env_set_panicstate.html
 share/doc/db3/api_c/env_set_rec_init.html
 share/doc/db3/api_c/env_set_region_init.html
-share/doc/db3/api_c/env_set_server.html
+share/doc/db3/api_c/env_set_rpc_server.html
 share/doc/db3/api_c/env_set_shm_key.html
 share/doc/db3/api_c/env_set_tas_spins.html
 share/doc/db3/api_c/env_set_tmp_dir.html
@@ -157,11 +166,14 @@ share/doc/db3/api_c/txn_abort.html
 share/doc/db3/api_c/txn_begin.html
 share/doc/db3/api_c/txn_checkpoint.html
 share/doc/db3/api_c/txn_commit.html
+share/doc/db3/api_c/txn_discard.html
 share/doc/db3/api_c/txn_id.html
 share/doc/db3/api_c/txn_prepare.html
+share/doc/db3/api_c/txn_recover.html
 share/doc/db3/api_c/txn_stat.html
 share/doc/db3/api_cxx/cxx_index.html
 share/doc/db3/api_cxx/cxx_pindex.html
+share/doc/db3/api_cxx/db_associate.html
 share/doc/db3/api_cxx/db_class.html
 share/doc/db3/api_cxx/db_close.html
 share/doc/db3/api_cxx/db_cursor.html
@@ -177,6 +189,7 @@ share/doc/db3/api_cxx/db_open.html
 share/doc/db3/api_cxx/db_put.html
 share/doc/db3/api_cxx/db_remove.html
 share/doc/db3/api_cxx/db_rename.html
+share/doc/db3/api_cxx/db_set_alloc.html
 share/doc/db3/api_cxx/db_set_append_recno.html
 share/doc/db3/api_cxx/db_set_bt_compare.html
 share/doc/db3/api_cxx/db_set_bt_minkey.html
@@ -192,7 +205,6 @@ share/doc/db3/api_cxx/db_set_h_ffactor.html
 share/doc/db3/api_cxx/db_set_h_hash.html
 share/doc/db3/api_cxx/db_set_h_nelem.html
 share/doc/db3/api_cxx/db_set_lorder.html
-share/doc/db3/api_cxx/db_set_malloc.html
 share/doc/db3/api_cxx/db_set_pagesize.html
 share/doc/db3/api_cxx/db_set_paniccall.html
 share/doc/db3/api_cxx/db_set_q_extentsize.html
@@ -200,9 +212,9 @@ share/doc/db3/api_cxx/db_set_re_delim.html
 share/doc/db3/api_cxx/db_set_re_len.html
 share/doc/db3/api_cxx/db_set_re_pad.html
 share/doc/db3/api_cxx/db_set_re_source.html
-share/doc/db3/api_cxx/db_set_realloc.html
 share/doc/db3/api_cxx/db_stat.html
 share/doc/db3/api_cxx/db_sync.html
+share/doc/db3/api_cxx/db_truncate.html
 share/doc/db3/api_cxx/db_upgrade.html
 share/doc/db3/api_cxx/db_verify.html
 share/doc/db3/api_cxx/dbc_class.html
@@ -213,10 +225,13 @@ share/doc/db3/api_cxx/dbc_dup.html
 share/doc/db3/api_cxx/dbc_get.html
 share/doc/db3/api_cxx/dbc_put.html
 share/doc/db3/api_cxx/dbenv_class.html
+share/doc/db3/api_cxx/dbt_bulk.html
 share/doc/db3/api_cxx/dbt_class.html
 share/doc/db3/api_cxx/env_close.html
+share/doc/db3/api_cxx/env_err.html
 share/doc/db3/api_cxx/env_open.html
 share/doc/db3/api_cxx/env_remove.html
+share/doc/db3/api_cxx/env_set_alloc.html
 share/doc/db3/api_cxx/env_set_cachesize.html
 share/doc/db3/api_cxx/env_set_data_dir.html
 share/doc/db3/api_cxx/env_set_errcall.html
@@ -228,11 +243,12 @@ share/doc/db3/api_cxx/env_set_flags.html
 share/doc/db3/api_cxx/env_set_lg_bsize.html
 share/doc/db3/api_cxx/env_set_lg_dir.html
 share/doc/db3/api_cxx/env_set_lg_max.html
+share/doc/db3/api_cxx/env_set_lg_regionmax.html
 share/doc/db3/api_cxx/env_set_lk_conflicts.html
 share/doc/db3/api_cxx/env_set_lk_detect.html
 share/doc/db3/api_cxx/env_set_lk_max.html
-share/doc/db3/api_cxx/env_set_lk_max_lockers.html     
-share/doc/db3/api_cxx/env_set_lk_max_locks.html       
+share/doc/db3/api_cxx/env_set_lk_max_lockers.html
+share/doc/db3/api_cxx/env_set_lk_max_locks.html
 share/doc/db3/api_cxx/env_set_lk_max_objects.html
 share/doc/db3/api_cxx/env_set_mp_mmapsize.html
 share/doc/db3/api_cxx/env_set_mutexlocks.html
@@ -241,7 +257,7 @@ share/doc/db3/api_cxx/env_set_paniccall.html
 share/doc/db3/api_cxx/env_set_panicstate.html
 share/doc/db3/api_cxx/env_set_rec_init.html
 share/doc/db3/api_cxx/env_set_region_init.html
-share/doc/db3/api_cxx/env_set_server.html
+share/doc/db3/api_cxx/env_set_rpc_server.html
 share/doc/db3/api_cxx/env_set_shm_key.html
 share/doc/db3/api_cxx/env_set_tas_spins.html
 share/doc/db3/api_cxx/env_set_tmp_dir.html
@@ -252,6 +268,7 @@ share/doc/db3/api_cxx/env_set_verbose.html
 share/doc/db3/api_cxx/env_strerror.html
 share/doc/db3/api_cxx/env_version.html
 share/doc/db3/api_cxx/except_class.html
+share/doc/db3/api_cxx/get_dbt.html
 share/doc/db3/api_cxx/get_errno.html
 share/doc/db3/api_cxx/lock_class.html
 share/doc/db3/api_cxx/lock_detect.html
@@ -270,6 +287,7 @@ share/doc/db3/api_cxx/log_register.html
 share/doc/db3/api_cxx/log_stat.html
 share/doc/db3/api_cxx/log_unregister.html
 share/doc/db3/api_cxx/lsn_class.html
+share/doc/db3/api_cxx/mem_class.html
 share/doc/db3/api_cxx/memp_fclose.html
 share/doc/db3/api_cxx/memp_fget.html
 share/doc/db3/api_cxx/memp_fopen.html
@@ -287,10 +305,13 @@ share/doc/db3/api_cxx/txn_begin.html
 share/doc/db3/api_cxx/txn_checkpoint.html
 share/doc/db3/api_cxx/txn_class.html
 share/doc/db3/api_cxx/txn_commit.html
+share/doc/db3/api_cxx/txn_discard.html
 share/doc/db3/api_cxx/txn_id.html
 share/doc/db3/api_cxx/txn_prepare.html
+share/doc/db3/api_cxx/txn_recover.html
 share/doc/db3/api_cxx/txn_stat.html
 share/doc/db3/api_cxx/what.html
+share/doc/db3/api_java/db_associate.html
 share/doc/db3/api_java/db_class.html
 share/doc/db3/api_java/db_close.html
 share/doc/db3/api_java/db_cursor.html
@@ -327,6 +348,7 @@ share/doc/db3/api_java/db_set_re_pad.html
 share/doc/db3/api_java/db_set_re_source.html
 share/doc/db3/api_java/db_stat.html
 share/doc/db3/api_java/db_sync.html
+share/doc/db3/api_java/db_truncate.html
 share/doc/db3/api_java/db_upgrade.html
 share/doc/db3/api_java/db_verify.html
 share/doc/db3/api_java/dbc_class.html
@@ -337,6 +359,7 @@ share/doc/db3/api_java/dbc_dup.html
 share/doc/db3/api_java/dbc_get.html
 share/doc/db3/api_java/dbc_put.html
 share/doc/db3/api_java/dbenv_class.html
+share/doc/db3/api_java/dbt_bulk_class.html
 share/doc/db3/api_java/dbt_class.html
 share/doc/db3/api_java/deadlock_class.html
 share/doc/db3/api_java/env_close.html
@@ -352,6 +375,7 @@ share/doc/db3/api_java/env_set_flags.html
 share/doc/db3/api_java/env_set_lg_bsize.html
 share/doc/db3/api_java/env_set_lg_dir.html
 share/doc/db3/api_java/env_set_lg_max.html
+share/doc/db3/api_java/env_set_lg_regionmax.html
 share/doc/db3/api_java/env_set_lk_conflicts.html
 share/doc/db3/api_java/env_set_lk_detect.html
 share/doc/db3/api_java/env_set_lk_max.html
@@ -364,7 +388,7 @@ share/doc/db3/api_java/env_set_pageyield.html
 share/doc/db3/api_java/env_set_panicstate.html
 share/doc/db3/api_java/env_set_rec_init.html
 share/doc/db3/api_java/env_set_region_init.html
-share/doc/db3/api_java/env_set_server.html
+share/doc/db3/api_java/env_set_rpc_server.html
 share/doc/db3/api_java/env_set_shm_key.html
 share/doc/db3/api_java/env_set_tas_spins.html
 share/doc/db3/api_java/env_set_tmp_dir.html
@@ -375,6 +399,7 @@ share/doc/db3/api_java/env_set_verbose.html
 share/doc/db3/api_java/env_strerror.html
 share/doc/db3/api_java/env_version.html
 share/doc/db3/api_java/except_class.html
+share/doc/db3/api_java/get_dbt.html
 share/doc/db3/api_java/get_errno.html
 share/doc/db3/api_java/java_index.html
 share/doc/db3/api_java/java_pindex.html
@@ -413,8 +438,10 @@ share/doc/db3/api_java/txn_begin.html
 share/doc/db3/api_java/txn_checkpoint.html
 share/doc/db3/api_java/txn_class.html
 share/doc/db3/api_java/txn_commit.html
+share/doc/db3/api_java/txn_discard.html
 share/doc/db3/api_java/txn_id.html
 share/doc/db3/api_java/txn_prepare.html
+share/doc/db3/api_java/txn_recover.html
 share/doc/db3/api_java/txn_stat.html
 share/doc/db3/api_tcl/db_close.html
 share/doc/db3/api_tcl/db_count.html
@@ -431,6 +458,7 @@ share/doc/db3/api_tcl/db_remove.html
 share/doc/db3/api_tcl/db_rename.html
 share/doc/db3/api_tcl/db_stat.html
 share/doc/db3/api_tcl/db_sync.html
+share/doc/db3/api_tcl/db_truncate.html
 share/doc/db3/api_tcl/dbc_close.html
 share/doc/db3/api_tcl/dbc_del.html
 share/doc/db3/api_tcl/dbc_dup.html
@@ -462,17 +490,16 @@ share/doc/db3/ref/am/curget.html
 share/doc/db3/ref/am/curput.html
 share/doc/db3/ref/am/cursor.html
 share/doc/db3/ref/am/delete.html
-share/doc/db3/ref/am/error.html
 share/doc/db3/ref/am/get.html
 share/doc/db3/ref/am/join.html
 share/doc/db3/ref/am/open.html
 share/doc/db3/ref/am/opensub.html
 share/doc/db3/ref/am/ops.html
-share/doc/db3/ref/am/partial.html
 share/doc/db3/ref/am/put.html
-share/doc/db3/ref/am/stability.html
+share/doc/db3/ref/am/second.html
 share/doc/db3/ref/am/stat.html
 share/doc/db3/ref/am/sync.html
+share/doc/db3/ref/am/truncate.html
 share/doc/db3/ref/am/upgrade.html
 share/doc/db3/ref/am/verify.html
 share/doc/db3/ref/am_conf/bt_compare.html
@@ -494,6 +521,16 @@ share/doc/db3/ref/am_conf/re_source.html
 share/doc/db3/ref/am_conf/recno.html
 share/doc/db3/ref/am_conf/renumber.html
 share/doc/db3/ref/am_conf/select.html
+share/doc/db3/ref/am_misc/align.html
+share/doc/db3/ref/am_misc/dbsizes.html
+share/doc/db3/ref/am_misc/diskspace.html
+share/doc/db3/ref/am_misc/error.html
+share/doc/db3/ref/am_misc/faq.html
+share/doc/db3/ref/am_misc/get_bulk.html
+share/doc/db3/ref/am_misc/partial.html
+share/doc/db3/ref/am_misc/perm.html
+share/doc/db3/ref/am_misc/stability.html
+share/doc/db3/ref/am_misc/tune.html
 share/doc/db3/ref/arch/apis.html
 share/doc/db3/ref/arch/bigpic.gif
 share/doc/db3/ref/arch/bigpic.html
@@ -503,6 +540,7 @@ share/doc/db3/ref/arch/smallpic.gif
 share/doc/db3/ref/arch/utilities.html
 share/doc/db3/ref/build_unix/aix.html
 share/doc/db3/ref/build_unix/conf.html
+share/doc/db3/ref/build_unix/embedix.html
 share/doc/db3/ref/build_unix/flags.html
 share/doc/db3/ref/build_unix/freebsd.html
 share/doc/db3/ref/build_unix/hpux.html
@@ -538,6 +576,7 @@ share/doc/db3/ref/dumpload/text.html
 share/doc/db3/ref/dumpload/utility.html
 share/doc/db3/ref/env/create.html
 share/doc/db3/ref/env/error.html
+share/doc/db3/ref/env/faq.html
 share/doc/db3/ref/env/intro.html
 share/doc/db3/ref/env/naming.html
 share/doc/db3/ref/env/open.html
@@ -548,6 +587,8 @@ share/doc/db3/ref/install/file.html
 share/doc/db3/ref/install/magic.s5.be.txt
 share/doc/db3/ref/install/magic.s5.le.txt
 share/doc/db3/ref/install/magic.txt
+share/doc/db3/ref/install/multiple.html
+share/doc/db3/ref/install/rpm.html
 share/doc/db3/ref/intro/data.html
 share/doc/db3/ref/intro/dbis.html
 share/doc/db3/ref/intro/dbisnot.html
@@ -580,11 +621,8 @@ share/doc/db3/ref/mp/intro.html
 share/doc/db3/ref/perl/intro.html
 share/doc/db3/ref/pindex.src
 share/doc/db3/ref/program/appsignals.html
-share/doc/db3/ref/program/byteorder.html
 share/doc/db3/ref/program/compatible.html
 share/doc/db3/ref/program/copy.html
-share/doc/db3/ref/program/dbsizes.html
-share/doc/db3/ref/program/diskspace.html
 share/doc/db3/ref/program/environ.html
 share/doc/db3/ref/program/errorret.html
 share/doc/db3/ref/program/extending.html
@@ -594,7 +632,6 @@ share/doc/db3/ref/program/recimp.html
 share/doc/db3/ref/program/runtime.html
 share/doc/db3/ref/program/scope.html
 share/doc/db3/ref/program/solaris.txt
-share/doc/db3/ref/program/version.html
 share/doc/db3/ref/refs/bdb_usenix.html
 share/doc/db3/ref/refs/bdb_usenix.ps
 share/doc/db3/ref/refs/embedded.html
@@ -609,7 +646,7 @@ share/doc/db3/ref/sendmail/intro.html
 share/doc/db3/ref/simple_tut/close.html
 share/doc/db3/ref/simple_tut/del.html
 share/doc/db3/ref/simple_tut/errors.html
-share/doc/db3/ref/simple_tut/example.txt
+share/doc/db3/ref/simple_tut/example.cs
 share/doc/db3/ref/simple_tut/get.html
 share/doc/db3/ref/simple_tut/handles.html
 share/doc/db3/ref/simple_tut/intro.html
@@ -623,7 +660,6 @@ share/doc/db3/ref/tcl/program.html
 share/doc/db3/ref/tcl/using.html
 share/doc/db3/ref/test/faq.html
 share/doc/db3/ref/test/run.html
-share/doc/db3/ref/toc.html
 share/doc/db3/ref/transapp/admin.html
 share/doc/db3/ref/transapp/app.html
 share/doc/db3/ref/transapp/archival.html
@@ -632,23 +668,25 @@ share/doc/db3/ref/transapp/cursor.html
 share/doc/db3/ref/transapp/data_open.html
 share/doc/db3/ref/transapp/deadlock.html
 share/doc/db3/ref/transapp/env_open.html
+share/doc/db3/ref/transapp/faq.html
 share/doc/db3/ref/transapp/filesys.html
 share/doc/db3/ref/transapp/inc.html
 share/doc/db3/ref/transapp/intro.html
 share/doc/db3/ref/transapp/logfile.html
+share/doc/db3/ref/transapp/nested.html
 share/doc/db3/ref/transapp/put.html
 share/doc/db3/ref/transapp/read.html
 share/doc/db3/ref/transapp/reclimit.html
 share/doc/db3/ref/transapp/recovery.html
 share/doc/db3/ref/transapp/term.html
 share/doc/db3/ref/transapp/throughput.html
-share/doc/db3/ref/transapp/transapp.txt
+share/doc/db3/ref/transapp/transapp.cs
+share/doc/db3/ref/transapp/tune.html
 share/doc/db3/ref/transapp/why.html
-share/doc/db3/ref/transapp/writetest.txt
+share/doc/db3/ref/transapp/writetest.cs
 share/doc/db3/ref/txn/config.html
 share/doc/db3/ref/txn/intro.html
 share/doc/db3/ref/txn/limits.html
-share/doc/db3/ref/txn/nested.html
 share/doc/db3/ref/txn/other.html
 share/doc/db3/ref/upgrade.2.0/convert.html
 share/doc/db3/ref/upgrade.2.0/disk.html
@@ -717,10 +755,26 @@ share/doc/db3/ref/upgrade.3.2/renumber.html
 share/doc/db3/ref/upgrade.3.2/set_flags.html
 share/doc/db3/ref/upgrade.3.2/toc.html
 share/doc/db3/ref/upgrade.3.2/tx_recover.html
+share/doc/db3/ref/upgrade.3.3/alloc.html
+share/doc/db3/ref/upgrade.3.3/bigfile.html
+share/doc/db3/ref/upgrade.3.3/conflict.html
+share/doc/db3/ref/upgrade.3.3/disk.html
+share/doc/db3/ref/upgrade.3.3/getswap.html
+share/doc/db3/ref/upgrade.3.3/gettype.html
+share/doc/db3/ref/upgrade.3.3/intro.html
+share/doc/db3/ref/upgrade.3.3/memp_fget.html
+share/doc/db3/ref/upgrade.3.3/rpc.html
+share/doc/db3/ref/upgrade.3.3/shared.html
+share/doc/db3/ref/upgrade.3.3/toc.html
+share/doc/db3/ref/upgrade.3.3/txn_prepare.html
 share/doc/db3/ref/upgrade/process.html
-share/doc/db3/ref/xa/config.html
+share/doc/db3/ref/upgrade/version.html
+share/doc/db3/ref/xa/build.html
 share/doc/db3/ref/xa/faq.html
 share/doc/db3/ref/xa/intro.html
+share/doc/db3/ref/xa/xa_config.html
+share/doc/db3/ref/xa/xa_intro.html
+share/doc/db3/reftoc.html
 share/doc/db3/sleepycat/contact.html
 share/doc/db3/sleepycat/legal.html
 share/doc/db3/sleepycat/license.html
@@ -736,46 +790,49 @@ share/doc/db3/utility/db_stat.html
 share/doc/db3/utility/db_upgrade.html
 share/doc/db3/utility/db_verify.html
 share/doc/db3/utility/index.html
-@dirrm include/db3
-@dirrm share/doc/db3/api_c
-@dirrm share/doc/db3/api_cxx
-@dirrm share/doc/db3/api_java
-@dirrm share/doc/db3/api_tcl
-@dirrm share/doc/db3/images
-@dirrm share/doc/db3/ref/am
-@dirrm share/doc/db3/ref/am_conf
-@dirrm share/doc/db3/ref/arch
-@dirrm share/doc/db3/ref/build_unix
-@dirrm share/doc/db3/ref/build_vxworks
-@dirrm share/doc/db3/ref/build_win
-@dirrm share/doc/db3/ref/cam
-@dirrm share/doc/db3/ref/debug
-@dirrm share/doc/db3/ref/distrib
-@dirrm share/doc/db3/ref/dumpload
-@dirrm share/doc/db3/ref/env
-@dirrm share/doc/db3/ref/install
-@dirrm share/doc/db3/ref/intro
-@dirrm share/doc/db3/ref/java
-@dirrm share/doc/db3/ref/lock
-@dirrm share/doc/db3/ref/log
-@dirrm share/doc/db3/ref/mp
-@dirrm share/doc/db3/ref/perl
-@dirrm share/doc/db3/ref/program
-@dirrm share/doc/db3/ref/refs
-@dirrm share/doc/db3/ref/rpc
-@dirrm share/doc/db3/ref/sendmail
-@dirrm share/doc/db3/ref/simple_tut
-@dirrm share/doc/db3/ref/tcl
-@dirrm share/doc/db3/ref/test
-@dirrm share/doc/db3/ref/transapp
-@dirrm share/doc/db3/ref/txn
-@dirrm share/doc/db3/ref/upgrade
-@dirrm share/doc/db3/ref/upgrade.2.0
-@dirrm share/doc/db3/ref/upgrade.3.0
-@dirrm share/doc/db3/ref/upgrade.3.1
-@dirrm share/doc/db3/ref/upgrade.3.2
-@dirrm share/doc/db3/ref/xa
-@dirrm share/doc/db3/ref
-@dirrm share/doc/db3/sleepycat
 @dirrm share/doc/db3/utility
+@dirrm share/doc/db3/sleepycat
+@dirrm share/doc/db3/ref/xa
+@dirrm share/doc/db3/ref/upgrade.3.3
+@dirrm share/doc/db3/ref/upgrade.3.2
+@dirrm share/doc/db3/ref/upgrade.3.1
+@dirrm share/doc/db3/ref/upgrade.3.0
+@dirrm share/doc/db3/ref/upgrade.2.0
+@dirrm share/doc/db3/ref/upgrade
+@dirrm share/doc/db3/ref/txn
+@dirrm share/doc/db3/ref/transapp
+@dirrm share/doc/db3/ref/test
+@dirrm share/doc/db3/ref/tcl
+@dirrm share/doc/db3/ref/splash
+@dirrm share/doc/db3/ref/simple_tut
+@dirrm share/doc/db3/ref/sendmail
+@dirrm share/doc/db3/ref/rpc
+@dirrm share/doc/db3/ref/refs
+@dirrm share/doc/db3/ref/program
+@dirrm share/doc/db3/ref/perl
+@dirrm share/doc/db3/ref/mp
+@dirrm share/doc/db3/ref/log
+@dirrm share/doc/db3/ref/lock
+@dirrm share/doc/db3/ref/java
+@dirrm share/doc/db3/ref/intro
+@dirrm share/doc/db3/ref/install
+@dirrm share/doc/db3/ref/env
+@dirrm share/doc/db3/ref/dumpload
+@dirrm share/doc/db3/ref/distrib
+@dirrm share/doc/db3/ref/debug
+@dirrm share/doc/db3/ref/cam
+@dirrm share/doc/db3/ref/build_win
+@dirrm share/doc/db3/ref/build_vxworks
+@dirrm share/doc/db3/ref/build_unix
+@dirrm share/doc/db3/ref/arch
+@dirrm share/doc/db3/ref/am_misc
+@dirrm share/doc/db3/ref/am_conf
+@dirrm share/doc/db3/ref/am
+@dirrm share/doc/db3/ref
+@dirrm share/doc/db3/images
+@dirrm share/doc/db3/api_tcl
+@dirrm share/doc/db3/api_java
+@dirrm share/doc/db3/api_cxx
+@dirrm share/doc/db3/api_c
 @dirrm share/doc/db3
+@dirrm include/db3

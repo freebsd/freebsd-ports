@@ -1,42 +1,6 @@
---- ../dist/Makefile.in.orig	Fri Dec  1 02:07:33 2000
-+++ ../dist/Makefile.in	Tue Dec 25 13:10:15 2001
-@@ -33,12 +33,12 @@
- 
- libdb=		libdb.a
- 
--libso_base=	libdb
--libso_linkname=	$(libso_base)-$(SOVERSION).la
--libso=		$(libso_base)-$(SOVERSION).@SOSUFFIX@
--libso_target=	$(libso_base)-$(SOVERSION).la
-+libso_base=	libdb$(SOMAJOR)
-+libso_linkname=	$(libso_base).la
-+libso=		$(libso_base).@SOSUFFIX@
-+libso_target=	$(libso_base).la
- libso_default=	$(libso_base).@SOSUFFIX@
--libso_major=	$(libso_base)-$(SOMAJOR).@SOSUFFIX@
-+libso_major=	$(libso_base).@SOSUFFIX@.2
- 
- ##################################################
- # C++
-@@ -47,12 +47,12 @@
- # You must configure it using:
- #	--enable-cxx
- ##################################################
--libcxx=		libdb_cxx.a
--libxso_base=	libdb_cxx
--libxso=		$(libxso_base)-$(SOVERSION).@SOSUFFIX@
--libxso_target=	$(libxso_base)-$(SOVERSION).la
-+libcxx=		libdb3_cxx.a
-+libxso_base=	libdb3_cxx
-+libxso=		$(libxso_base).@SOSUFFIX@
-+libxso_target=	$(libxso_base).la
- libxso_default=	$(libxso_base).@SOSUFFIX@
--libxso_major=	$(libxso_base)-$(SOMAJOR).@SOSUFFIX@
-+libxso_major=	$(libxso_base).@SOSUFFIX@.2
- 
- ##################################################
- # JAVA
-@@ -115,7 +115,7 @@
+--- ../dist/Makefile.in.orig	Fri Jul  6 15:53:16 2001
++++ ../dist/Makefile.in	Tue May 14 12:26:13 2002
+@@ -11,7 +11,7 @@
  bindir=	@bindir@
  includedir=@includedir@
  libdir=	@libdir@
@@ -45,42 +9,80 @@
  
  dmode=	755
  emode=	555
-@@ -192,8 +192,8 @@
- 	db_dump@o@ db_load@o@ db_printlog@o@ db_recover@o@ db_stat@o@ \
- 	db_upgrade@o@ db_verify@o@ util_log@o@ util_sig@o@ 
+@@ -61,12 +61,12 @@
+ LIBSO_LIBS=	@LIBSO_LIBS@
  
--PROGS=  @ADDITIONAL_PROGS@ db_archive db_checkpoint db_deadlock \
+ libdb=		libdb.a
+-libso_base=	libdb
+-libso=		$(libso_base)-$(SOVERSION).@SOSUFFIX@
+-libso_static=	$(libso_base)-$(SOVERSION).a
+-libso_target=	$(libso_base)-$(SOVERSION).la
++libso_base=	libdb$(SOMAJOR)
++libso=		$(libso_base).@SOSUFFIX@
++libso_static=	$(libso_base).a
++libso_target=	$(libso_base).la
+ libso_default=	$(libso_base).@SOSUFFIX@
+-libso_major=	$(libso_base)-$(SOMAJOR).@SOSUFFIX@
++libso_major=	$(libso_base).@SOSUFFIX@.3
+ 
+ ##################################################
+ # C++ API.
+@@ -78,13 +78,13 @@
+ CXXLINK=	@MAKEFILE_CXXLINK@
+ LIBXSO_LIBS=	@LIBXSO_LIBS@
+ 
+-libcxx=		libdb_cxx.a
+-libxso_base=	libdb_cxx
+-libxso=		$(libxso_base)-$(SOVERSION).@SOSUFFIX@
+-libxso_static=	$(libxso_base)-$(SOVERSION).a
+-libxso_target=	$(libxso_base)-$(SOVERSION).la
++libcxx=		libdb3_cxx.a
++libxso_base=	libdb3_cxx
++libxso=		$(libxso_base).@SOSUFFIX@
++libxso_static=	$(libxso_base).a
++libxso_target=	$(libxso_base).la
+ libxso_default=	$(libxso_base).@SOSUFFIX@
+-libxso_major=	$(libxso_base)-$(SOMAJOR).@SOSUFFIX@
++libxso_major=	$(libxso_base).@SOSUFFIX@.3
+ 
+ ##################################################
+ # Java API.
+@@ -239,8 +239,8 @@
+ 	perf_util@o@
+ 
+ UTIL_PROGS=\
+-	@ADDITIONAL_PROGS@ db_archive db_checkpoint db_deadlock \
 -	db_dump db_load db_printlog db_recover db_stat db_upgrade db_verify
-+PROGS=  @ADDITIONAL_PROGS@ db3_archive db3_checkpoint db3_deadlock \
++	@ADDITIONAL_PROGS@ db3_archive db3_checkpoint db3_deadlock \
 +	db3_dump db3_load db3_printlog db3_recover db3_stat db3_upgrade db3_verify
  
- JAVA_DBSRCS=\
- 	$(JAVA_DBDIR)/Db.java $(JAVA_DBDIR)/DbAppendRecno.java \
-@@ -279,53 +279,53 @@
- 	$(CCLINK) -o $@ $(LDFLAGS) $(RPC_SRV) util_log@o@ $(LIBDB_ARGS) $(LIBS)
+ ##################################################
+ # We're building a standard library or a RPM file hierarchy, potentially
+@@ -298,53 +298,53 @@
+ 	    $(RPC_SRV_OBJS) util_log@o@ $(DEF_LIB) $(LIBS)
  	$(POSTLINK) $@
  
--db_archive: db_archive@o@ util_sig@o@ @DEFAULT_LIB@
-+db3_archive: db_archive@o@ util_sig@o@ @DEFAULT_LIB@
+-db_archive: db_archive@o@ util_sig@o@ $(DEF_LIB)
++db3_archive: db_archive@o@ util_sig@o@ $(DEF_LIB)
  	$(CCLINK) -o $@ $(LDFLAGS) \
- 	    db_archive@o@ util_sig@o@ $(LIBDB_ARGS) $(LIBS)
+ 	    db_archive@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
  	$(POSTLINK) $@
  
--db_checkpoint: db_checkpoint@o@ util_log@o@ util_sig@o@ @DEFAULT_LIB@
-+db3_checkpoint: db_checkpoint@o@ util_log@o@ util_sig@o@ @DEFAULT_LIB@
+-db_checkpoint: db_checkpoint@o@ util_log@o@ util_sig@o@ $(DEF_LIB)
++db3_checkpoint: db_checkpoint@o@ util_log@o@ util_sig@o@ $(DEF_LIB)
  	$(CCLINK) -o $@ $(LDFLAGS) \
- 	    db_checkpoint@o@ util_log@o@ util_sig@o@ $(LIBDB_ARGS) $(LIBS)
+ 	    db_checkpoint@o@ util_log@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
  	$(POSTLINK) $@
  
--db_deadlock: db_deadlock@o@ util_log@o@ util_sig@o@ @DEFAULT_LIB@
-+db3_deadlock: db_deadlock@o@ util_log@o@ util_sig@o@ @DEFAULT_LIB@
+-db_deadlock: db_deadlock@o@ util_log@o@ util_sig@o@ $(DEF_LIB)
++db3_deadlock: db_deadlock@o@ util_log@o@ util_sig@o@ $(DEF_LIB)
  	$(CCLINK) -o $@ $(LDFLAGS) \
- 	    db_deadlock@o@ util_log@o@ util_sig@o@ $(LIBDB_ARGS) $(LIBS)
+ 	    db_deadlock@o@ util_log@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
  	$(POSTLINK) $@
  
--db_dump: db_dump@o@ util_sig@o@ @DEFAULT_LIB@
-+db3_dump: db_dump@o@ util_sig@o@ @DEFAULT_LIB@
- 	$(CCLINK) -o $@ $(LDFLAGS) db_dump@o@ util_sig@o@ $(LIBDB_ARGS) $(LIBS)
+-db_dump: db_dump@o@ util_sig@o@ $(DEF_LIB)
++db3_dump: db_dump@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) db_dump@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
  	$(POSTLINK) $@
  
 -db_dump185: db_dump185@o@ @LIBOBJS@
@@ -88,58 +90,61 @@
  	$(CCLINK) -o $@ $(LDFLAGS) db_dump185@o@ @LIBOBJS@ $(DB185LIB)
  	$(POSTLINK) $@
  
--db_load: db_load@o@ util_sig@o@ @DEFAULT_LIB@
-+db3_load: db_load@o@ util_sig@o@ @DEFAULT_LIB@
- 	$(CCLINK) -o $@ $(LDFLAGS) db_load@o@ util_sig@o@ $(LIBDB_ARGS) $(LIBS)
+-db_load: db_load@o@ util_sig@o@ $(DEF_LIB)
++db3_load: db_load@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) db_load@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
  	$(POSTLINK) $@
  
--db_printlog: db_printlog@o@ util_sig@o@ @DEFAULT_LIB@
-+db3_printlog: db_printlog@o@ util_sig@o@ @DEFAULT_LIB@
+-db_printlog: db_printlog@o@ util_sig@o@ $(DEF_LIB)
++db3_printlog: db_printlog@o@ util_sig@o@ $(DEF_LIB)
  	$(CCLINK) -o $@ $(LDFLAGS) \
- 	    db_printlog@o@ util_sig@o@ $(LIBDB_ARGS) $(LIBS)
+ 	    db_printlog@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
  	$(POSTLINK) $@
  
--db_recover: db_recover@o@ util_sig@o@ @DEFAULT_LIB@
-+db3_recover: db_recover@o@ util_sig@o@ @DEFAULT_LIB@
+-db_recover: db_recover@o@ util_sig@o@ $(DEF_LIB)
++db3_recover: db_recover@o@ util_sig@o@ $(DEF_LIB)
  	$(CCLINK) -o $@ $(LDFLAGS) \
- 	    db_recover@o@ util_sig@o@ $(LIBDB_ARGS) $(LIBS)
+ 	    db_recover@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
  	$(POSTLINK) $@
  
--db_stat: db_stat@o@ util_sig@o@ @DEFAULT_LIB@
-+db3_stat: db_stat@o@ util_sig@o@ @DEFAULT_LIB@
- 	$(CCLINK) -o $@ $(LDFLAGS) db_stat@o@ util_sig@o@ $(LIBDB_ARGS) $(LIBS)
+-db_stat: db_stat@o@ util_sig@o@ $(DEF_LIB)
++db3_stat: db_stat@o@ util_sig@o@ $(DEF_LIB)
+ 	$(CCLINK) -o $@ $(LDFLAGS) db_stat@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
  	$(POSTLINK) $@
  
--db_upgrade: db_upgrade@o@ util_sig@o@ @DEFAULT_LIB@
-+db3_upgrade: db_upgrade@o@ util_sig@o@ @DEFAULT_LIB@
+-db_upgrade: db_upgrade@o@ util_sig@o@ $(DEF_LIB)
++db3_upgrade: db_upgrade@o@ util_sig@o@ $(DEF_LIB)
  	$(CCLINK) -o $@ $(LDFLAGS) \
- 	    db_upgrade@o@ util_sig@o@ $(LIBDB_ARGS) $(LIBS)
+ 	    db_upgrade@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
  	$(POSTLINK) $@
  
--db_verify: db_verify@o@ util_sig@o@ @DEFAULT_LIB@
-+db3_verify: db_verify@o@ util_sig@o@ @DEFAULT_LIB@
+-db_verify: db_verify@o@ util_sig@o@ $(DEF_LIB)
++db3_verify: db_verify@o@ util_sig@o@ $(DEF_LIB)
  	$(CCLINK) -o $@ $(LDFLAGS) \
- 	    db_verify@o@ util_sig@o@ $(LIBDB_ARGS) $(LIBS)
+ 	    db_verify@o@ util_sig@o@ $(DEF_LIB) $(LIBS)
  	$(POSTLINK) $@
-@@ -452,8 +452,8 @@
+@@ -401,10 +401,9 @@
  	@cd $(libdir) && $(rm) -f \
- 	    $(libso_target) $(libso) $(libso_default) $(libso_major)
+ 	    $(libso) $(libso_target) $(libso_default) $(libso_major)
  	@$(INSTALLER) $(libso_target) $(libdir)
 -	@cd $(libdir) && $(ln) -s $(libso) $(libso_default)
 -	@cd $(libdir) && $(ln) -s $(libso) $(libso_major)
-+	@cd $(libdir) && $(chmod) $(fmode) $(libso_major)
-+#	@cd $(libdir) && $(ln) -s $(libso_major) $(libso_default)
  	@$(LIBTOOL) --mode=finish $(libdir)
+-	@cd $(libdir) && $(chmod) $(fmode) $(libso) $(libso_target)
++	@$(rm) -f $(libdir)/$(libso_target)
++	@cd $(libdir) && $(chmod) $(fmode) $(libso)
  
- install_dynamic_cxx:
-@@ -463,8 +463,8 @@
+ install_static_cxx:
+ 	@echo "Installing DB C++ static library: $(libdir) ..."
+@@ -421,9 +420,8 @@
  	@cd $(libdir) && $(rm) -f \
- 	    $(libxso_target) $(libxso) $(libxso_default) $(libxso_major)
+ 	    $(libxso) $(libxso_target) $(libxso_default) $(libxso_major)
  	@$(INSTALLER) $(libxso_target) $(libdir)
 -	@cd $(libdir) && $(ln) -s $(libxso) $(libxso_default)
 -	@cd $(libdir) && $(ln) -s $(libxso) $(libxso_major)
-+	@cd $(libdir) && $(chmod) $(fmode) $(libxso_major)
-+#	@cd $(libdir) && $(ln) -s $(libxso_major) $(libxso_default)
+-	@cd $(libdir) && $(chmod) $(fmode) $(libxso) $(libxso_target)
++	@$(rm) -f $(libdir)/$(libxso_target)
++	@cd $(libdir) && $(chmod) $(fmode) $(libxso)
  
  install_tcl:
  	@echo "Installing DB Tcl library: $(libdir) ..."
