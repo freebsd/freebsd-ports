@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	patchutils
-PORTVERSION=	0.1.1
+PORTVERSION=	0.2.8
 CATEGORIES=	misc
-MASTER_SITES=	http://people.redhat.com/twaugh/ftp/patchutils/devel/
+MASTER_SITES=	http://cyberelk.net/tim/data/patchutils/stable/
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -19,6 +19,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
 
-MAN1=	filterdiff.1 interdiff.1
+MAN1=	combinediff.1 filterdiff.1 fixcvsdiff.1 grepdiff.1 interdiff.1 \
+	lsdiff.1 rediff.1 splitdiff.1
 
 .include <bsd.port.mk>
