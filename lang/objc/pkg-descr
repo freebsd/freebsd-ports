@@ -6,21 +6,3 @@ Like the GNU compiler, the "objc" grammar is written in YACC.  The lexical
 ananlyzer is written in LEX, and the compiler itself in the Bourne
 shell and in Objective C.  (the optional Objective C link editor is
 written in AWK).
-
-Includes:
-        1. "objc", the actual compiler
-        2. "objcrt", the Objective C Runtime Library for "objc"
-        3. "objpak", the "Object Pak" Objective C Collection Classes
-        4. Source of compiler and "oclib", a set of Objective C classes for
-           parsing C (and the Objective C extensions to C)
-NICE FEATURES
-        1. Easy to install or to modify.
-        2. Works on many systems with the native cc, debugger, profiler etc.
-        3. Built-in possibility of tracing Objective C messages.
-        4. Straightforward "pure C" messenger; "inline cache" messenger.
-        5. All classes get a +initialize message at start-up, rather than
-           'each class receives a +initialize before it receives its first
-            message'.
-        6. Already partial support for C++ compilers (will soon be workable)
-        7. Great system for experimentation with your own additions/extensions
-           to Objective C ! [ but beware - we are likely to oppose them ]
