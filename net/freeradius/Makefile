@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freeradius
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 		ftp://ftp.Awfulhak.org/pub/radius/
@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} --quiet --with-logdir=${LOGDIR} \
 		--disable-ltdl-install \
 		--with-ltdl-include=${LOCALBASE}/include \
 		--with-ltdl-lib=${LOCALBASE}/lib
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .if defined(WITH_OPENLDAP)
 USE_OPENLDAP=	YES
