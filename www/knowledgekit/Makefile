@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.zope.org/Members/Bill/Products/KnowledgeKit/
 DISTNAME=	KnowledgeKit-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nbm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mechanism for the automatic creation and maintenance of Knowledge Bases
 
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/z2.py:${PORTSDIR}/www/zope

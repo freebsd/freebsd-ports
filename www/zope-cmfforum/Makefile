@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	collective
 DISTNAME=	CMFForum-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	nbm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A forum for ZOPE CMF with file attachments
 
 RUN_DEPENDS=	${LOCALBASE}/${SZOPEBASEDIR}/lib/python/Products/CMFDefault/__init__.py:${PORTSDIR}/www/zope-cmf

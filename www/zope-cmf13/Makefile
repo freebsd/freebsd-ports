@@ -11,13 +11,15 @@ CATEGORIES=	www zope
 MASTER_SITES=	http://cmf.zope.org/download/CMF-${PORTVERSION}/
 DISTNAME=	CMF-${PORTVERSION}
 
-MAINTAINER=	nbm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Zope Content Management Framework (CMF)
 
 USE_PYTHON=	yes
 USE_ZOPE=	yes
 DIST_SUBDIR=	zope
 CONFLICTS= zope-cmf-*
+
+NO_LATEST_LINK=	yes
 
 do-build:
 	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/CMF*
