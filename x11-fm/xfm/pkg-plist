@@ -1,8 +1,6 @@
 bin/xfm
 bin/xfm.install
 bin/xfmtype
-man/man1/xfm.1.gz
-man/man1/xfmtype.1.gz
 lib/X11/app-defaults/Xfm
 lib/X11/xfm/dot.xfm/Apps
 lib/X11/xfm/dot.xfm/Graphics
@@ -252,3 +250,7 @@ lib/X11/xfm/pixmaps/app.xpm
 lib/X11/xfm/pixmaps/bitmap.xpm
 lib/X11/xfm/pixmaps/mona_lisa.xpm
 lib/X11/xfm/pixmaps/app_uuencode.xpm
+@dirrm lib/X11/xfm/dot.xfm
+@dirrm lib/X11/xfm/bitmaps
+@dirrm lib/X11/xfm/pixmaps
+@dirrm lib/X11/xfm
