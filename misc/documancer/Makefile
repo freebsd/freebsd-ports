@@ -8,7 +8,7 @@
 
 PORTNAME=	documancer
 PORTVERSION=	0.2.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,6 +26,12 @@ USE_PYTHON=	2.3
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/share
-MAKE_ENV=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR}
+
+PLIST_FILES=	bin/documancer
+
+post-install:
+	@${FIND} ${DATADIR} -type f | ${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${DATADIR} -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
