@@ -1,0 +1,44 @@
+--- XuiPrefer.c.orig	Thu Feb 17 05:44:20 2000
++++ XuiPrefer.c	Tue Jul  4 02:17:27 2000
+@@ -63,10 +63,12 @@
+     FILE *fp;
+     char filename[BUFSIZ];
+     int found = 0;
+-    char *line, *optstart;
+-    int line_length;
++    /*char *line, *optstart;*/
++    char *optstart;
++    char line[BUFSIZ];
++    /*int line_length;*/
+     int name_length;
+-    size_t line_allocated;
++    /*size_t line_allocated;*/
+ 
+     strcpy(value, def);
+ 
+@@ -76,11 +78,11 @@
+ 	return;
+ 
+     /* Check each line to see if we have this entry already. */
+-    line = NULL;
+-    line_allocated = 0;
++    /*line = NULL;
++    line_allocated = 0;*/
+     name_length = strlen(name);
+ 
+-    while ((line_length = getline(&line, &line_allocated, fp)) >= 0)
++    while (fgets(line, BUFSIZ, fp))
+     {
+ 	/* skip over comment lines */
+ 	if (line[0] == '#')
+@@ -104,8 +106,8 @@
+ 	    strcpy(value, optstart);
+ 	}
+     }
+-    if (line != NULL)
+-	free(line);
++    /*if (line != NULL)
++	free(line);*/
+ 
+     return (Boolean)found;
+ }
