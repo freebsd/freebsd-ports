@@ -1,5 +1,7 @@
 MD5 (gcc-core-4.0-20041205.tar.bz2) = 436e5895296f777e6b59671b2c8d1f97
 SIZE (gcc-core-4.0-20041205.tar.bz2) = 12827743
+MD5 (gcc-fortran-4.0-20041205.tar.bz2) = 3bea4e983c34ac7b7deaed3ce01e25fa
+SIZE (gcc-fortran-4.0-20041205.tar.bz2) = 549290
 MD5 (gcc-g++-4.0-20041205.tar.bz2) = e7d5409d6f041b6ba26a3d52bc6bf293
 SIZE (gcc-g++-4.0-20041205.tar.bz2) = 2567216
 MD5 (gcc-java-4.0-20041205.tar.bz2) = abf489ad81b789f70863a6a57a95a945
