@@ -1,6 +1,6 @@
 # New ports collection makefile for:	wwwstat
 # Version required:		2.01
-# Date created:			So   2 Mär 1997 18:10:49 MET
+# Date created:			So   2 M-Aär 1997 18:10:49 MET$)B
 # Whom:				Andreas Klemm <andreas@klemm.gtn.com>
 #
 # $FreeBSD$
@@ -27,6 +27,9 @@ MAN1=		wwwstat.1 splitlog.1
 SITEPERL=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
 
 do-install:
+	@if [ ! -d ${SITEPERL} ]; then \
+		${MKDIR} ${SITEPERL}; \
+	fi
 	@${INSTALL_SCRIPT} ${WRKSRC}/wwwstat    ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/splitlog   ${PREFIX}/bin
 	@${INSTALL_SCRIPT} ${WRKSRC}/monthly    ${PREFIX}/bin
