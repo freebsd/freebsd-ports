@@ -1,4 +1,4 @@
-lib/mozilla/plugins/plugger.so
+lib/mozilla/plugins/npplugger.so
 @unexec if [ -f %D/etc/pluggerrc ]; then cmp -s %D/etc/pluggerrc.sample %D/etc/pluggerrc && rm -f %D/etc/pluggerrc || echo "If you are permanently removing this port, you should do a ``rm -f ${PKG_PREFIX}/etc/pluggerrc`` to remove configuration files left." | fmt ; fi
 @unexec if [ -f %D/etc/pluggerrc.old ]; then echo "If you are permanently removing this port, you should do a ``rm -f ${PKG_PREFIX}/etc/pluggerrc.old`` to remove backup configuration files left." | fmt ; fi
 etc/pluggerrc.sample

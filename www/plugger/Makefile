@@ -7,7 +7,7 @@
 
 PORTNAME=	plugger
 PORTVERSION=	3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www audio graphics
 MASTER_SITES=	http://fredrik.hubbe.net/plugger/ \
 		ftp://ftp.netscape.com/pub/sdk/plugin/unix/
@@ -39,7 +39,8 @@ post-patch:
 	  ${WRKSRC}/plugger.c.orig > ${WRKSRC}/plugger.c
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/plugger.so ${PREFIX}/lib/mozilla/plugins
+	@${INSTALL_PROGRAM} ${WRKSRC}/plugger.so \
+		${PREFIX}/lib/mozilla/plugins/npplugger.so
 	@${INSTALL_MAN} ${WRKSRC}/plugger.7 ${MANPREFIX}/man/man7
 	@${INSTALL_DATA} ${WRKSRC}/pluggerrc ${PREFIX}/etc/pluggerrc.sample
 	@${INSTALL_DATA} -b ${WRKSRC}/pluggerrc ${PREFIX}/etc
