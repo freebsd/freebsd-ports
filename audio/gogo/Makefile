@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.kurims.kyoto-u.ac.jp/~shigeo/soft/gogo2/src/
 MAINTAINER=	nakai@FreeBSD.org
 
 # More than version 0.98
-BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
+BUILD_DEPENDS=	nasm-0.98:${PORTSDIR}/devel/nasm
 
 USE_GMAKE=	yes
 MAKEFILE=	makefile.unx
