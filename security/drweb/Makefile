@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.drweb.ru/pub/unix/generic/ \
 		ftp://ftp.drweb.ru/pub/unix/archive/ \
 		ftp://ftp.drweb.ru/pub/unix/archive/${PORTNAME}-${PORTVERSION}/
 
-MAINTAINER=	petr@petrovich.kiev.ua
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DrWeb antivirus suite
 
 ONLY_FOR_ARCHS=	i386
