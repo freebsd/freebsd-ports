@@ -2,89 +2,51 @@
 #
 # $FreeBSD$
 #
-# Start or stop upclient.
+# PROVIDE: upclient
+# REQUIRE: DAEMON
+# KEYWORD: FreeBSD
+#
+# Add the following line to /etc/rc.conf to enable upclient:
+#
+# upclient_enable="YES"
 #
 
-rc_file=${0##*/}
-rc_arg=$1
-
-if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/${rc_file}\$"); then
-        echo "${rc_file}: Cannot determine PREFIX." >&2
-        echo "Please use the complete pathname." >&2
-        exit 64
-fi
-
-program_dir=${PREFIX}/sbin
-program_file=upclient
-program_path=${program_dir}/${program_file}
-
-config_dir=${PREFIX}/etc
-config_file=${program_file}.conf
-config_path=${config_dir}/${config_file}
-
-sample_path=${config_path}.sample
-
-pid_dir=/var/run
-pid_file=${program_file}.pid
-pid_path=${pid_dir}/${pid_file}
-
-syslog_facility=daemon.err
-
-case "$rc_arg" in
-start)
-        if [ ! -x ${program_path} ]; then
-                logger -sp ${syslog_facility} -t ${program_file} \
-                        "unable to start: ${program_path} is missing."
-                exit 72
-        fi
-        if [ ! -f ${config_path} ]; then
-                logger -sp ${syslog_facility} -t ${program_file} \
-                        "unable to start: ${config_path} is missing."
-                exit 72
-        fi
+upclient_precmd ()
+{
 	ws=" 	"
-	if ! grep -qs "^[$ws]*AuthKey[$ws]*=" ${config_path}; then
-		logger -sp ${syslog_facility} -t ${program_file} \
-			"unable to start: AuthKey is missing from" \
-			"${config_path}."
-                exit 72
-	fi
-	if grep -qs "^[$ws]*AuthKey[$ws]*=[$ws]*your_authkey" ${config_path}
-	then
-		logger -sp ${syslog_facility} -t ${program_file} \
-			"unable to start: AuthKey isn't configured in" \
-			"${config_path}."
-                exit 72
-	fi
-	kw="IdleTime|OS|(OS|CPU)Level"
-	if egrep -qs "^[$ws]*Send($kw)[$ws]*=" ${config_path}
-	then
-		logger -sp ${syslog_facility} -t ${program_file} \
-			"unable to start: ${config_path} needs to be updated" \
-			"from ${sample_path}."
-                exit 72
-	fi
-        ${program_path} 2> /dev/null &&
-        echo -n " ${program_file}"
-        ;;
-stop)
-        if [ -r ${pid_path} ]; then
-                kill $(cat ${pid_path}) 2> /dev/null
-        else
-                killall ${program_file} 2> /dev/null
-        fi
-        ;;
-restart)
-        $0 stop
-        $0 start
-        ;;
-status)
-        ps -auxww | egrep ${program_file} | egrep -v "($0|egrep)"
-        ;;
-*)
-        echo "usage: ${rc_file} {start|stop|restart|status}" >&2
-        exit 64
-        ;;
-esac
+	grep -qs "^[$ws]*AuthKey[$ws]*=" ${configfile} ||
+	err 1 "AuthKey is missing from ${configfile}."
+	grep -qs "^[$ws]*AuthKey[$ws]*=[$ws]*your_authkey" ${configfile} &&
+	err 1 "AuthKey isn't configured in ${configfile}."
 
-exit 0
+	hn=uptimes.wonko.com
+	egrep -qs "^[$ws]*UptimeServer[$ws]*=[$ws]*${hn}[$ws]*" ${configfile} &&
+	err 1 "${configfile} needs to be updated from ${samplefile}."
+
+	kw="IdleTime|OS|(OS|CPU)Level"
+	egrep -qs "^[$ws]*Send($kw)[$ws]*=" ${configfile} &&
+	err 1 "${configfile} needs to be updated from ${samplefile}."
+
+	:
+}
+
+upclient_enable=NO
+upclient_flags=
+
+. /etc/rc.subr
+
+name=upclient
+rcvar=$(set_rcvar)
+
+# private
+configfile=%%PREFIX%%/etc/${name}.conf
+samplefile=${configfile}.sample
+
+# public
+command=%%PREFIX%%/sbin/${name}
+pidfile=/var/run/${name}.pid
+required_files=${configfile}
+start_precmd=${name}_precmd
+
+load_rc_config ${name}
+run_rc_command "$1"

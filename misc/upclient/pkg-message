@@ -1,9 +1,9 @@
 Before running the client for the first time, be sure to:
 
  1. visit the Uptimes project's web site and register yourself
-	(WWW: http://uptimes.wonko.com/newuser.php).
- 2. log in (WWW: http://uptimes.wonko.com/).
- 3. Add your host (WWW: http://uptimes.wonko.com/hosts.php?op=add).
+	(WWW: http://uptimes.hostingwired.com/newuser.php).
+ 2. log in (WWW: http://uptimes.hostingwired.com/login.php).
+ 3. Add your host (WWW: http://uptimes.hostingwired.com/account.php).
 	It is very important that you do not lose the generated key
 	since, for instance, they are no way to get it back by any way.
 
@@ -14,10 +14,10 @@ You will also have to edit %%PREFIX%%/etc/upclient.conf:
 
   - AuthKey is the ID you've received when you added your host.
   - Interval is the amount of time between each update.
-	(WWW: http://uptimes.wonko.com/uptimes42.html).
+	(WWW: http://uptimes.hostingwired.com/protocol.html).
     Don't set this higher than 10 minutes, or else your host
     won't appear in the list.
   - UptimeServer is the Uptimes Project's data server, currently
-    uptimes.wonko.com (Since the official Uptimes Project's data
-    server has been terminated, data.uptimes.net must not be used
-    anymore.  So, please, take care about that).
+    uptimes.hostingwired.com (Since the official Uptimes Project's
+    server has been terminated, uptimes.wonko.com and data.uptimes.net
+    must not be used anymore.  So, please, take care about that).
