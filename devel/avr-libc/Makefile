@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	avr-libc
-PORTVERSION=	2003.09.09
-PORTREVISION=	1
+PORTVERSION=	1.0.3
+PORTEPOCH=	1
 CATEGORIES=	devel
-# Currently still snapshots, not yet officially released again.
-#MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-#MASTER_SITE_SUBDIR=	${PORTNAME}
-MASTER_SITES=	http://people.freebsd.org/~joerg/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	joerg@freebsd.org
 COMMENT=	A C and math library for the Atmel AVR controller family
