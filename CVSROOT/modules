@@ -8169,6 +8169,7 @@ py-supybot	ports/irc/py-supybot
 py-sybase	ports/databases/py-sybase
 py-tables	ports/devel/py-tables
 py-tarfile	ports/archivers/py-tarfile
+py-tconfpy	ports/devel/py-tconfpy
 py-tkinter	ports/x11-toolkits/py-tkinter
 py-twisted	ports/devel/py-twisted
 py-twofish	ports/security/py-twofish
