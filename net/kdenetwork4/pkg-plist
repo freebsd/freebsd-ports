@@ -28,6 +28,18 @@ share/applnk/Internet/ksirc.desktop
 share/applnk/Settings/Network/kcmktalkd.desktop
 share/apps/keystone/keystoneui.rc
 share/apps/kit/eventsrc
+share/apps/kit/icons/locolor/16x16/actions/kit_anonwarning.png
+share/apps/kit/icons/locolor/16x16/actions/kit_away.png
+share/apps/kit/icons/locolor/16x16/actions/kit_bold.png
+share/apps/kit/icons/locolor/16x16/actions/kit_group.png
+share/apps/kit/icons/locolor/16x16/actions/kit_info.png
+share/apps/kit/icons/locolor/16x16/actions/kit_logging.png
+share/apps/kit/icons/locolor/16x16/actions/kit_offline.png
+share/apps/kit/icons/locolor/16x16/actions/kit_online.png
+share/apps/kit/icons/locolor/16x16/actions/kit_sound.png
+share/apps/kit/icons/locolor/16x16/actions/kit_status.png
+share/apps/kit/icons/locolor/16x16/actions/kit_timestamping.png
+share/apps/kit/icons/locolor/16x16/actions/kit_warning.png
 share/apps/kmail/kmcomposerui.rc
 share/apps/kmail/kmmainwin.rc
 share/apps/kmail/pics/abdown.png
@@ -67,28 +79,18 @@ share/apps/knode/filters/8.fltr
 share/apps/knode/filters/filters.rc
 share/apps/knode/headers.rc
 share/apps/knode/icons/hicolor/22x22/actions/message_reply.png
-share/apps/knode/icons/hicolor/22x22/actions/signature.png
 share/apps/knode/icons/hicolor/32x32/actions/message_reply.png
-share/apps/knode/icons/hicolor/32x32/actions/signature.png
-share/apps/knode/icons/locolor/16x16/actions/signature.png
+share/apps/knode/icons/locolor/16x16/actions/message_reply.png
 share/apps/knode/kncomposerui.rc
 share/apps/knode/knodeui.rc
 share/apps/knode/knreaderui.rc
-share/apps/knode/pics/accmail.png
-share/apps/knode/pics/arrow_left.png
-share/apps/knode/pics/arrow_right.png
 share/apps/knode/pics/ctlart.png
 share/apps/knode/pics/eyes.png
-share/apps/knode/pics/fltrblue.png
-share/apps/knode/pics/fltrgrey.png
-share/apps/knode/pics/folder.png
 share/apps/knode/pics/greyball.png
 share/apps/knode/pics/greyballchk.png
 share/apps/knode/pics/group.png
-share/apps/knode/pics/groupkat.png
 share/apps/knode/pics/mail.png
 share/apps/knode/pics/newsubs.png
-share/apps/knode/pics/pen.png
 share/apps/knode/pics/posting.png
 share/apps/knode/pics/redball.png
 share/apps/knode/pics/redballchk.png
@@ -99,7 +101,6 @@ share/apps/knode/pics/stat_cncl.png
 share/apps/knode/pics/stat_edit.png
 share/apps/knode/pics/stat_saved.png
 share/apps/knode/pics/stat_sent.png
-share/apps/knode/toolbar/grpdlg.png
 share/apps/kppp/Provider/Austria/.directory
 share/apps/kppp/Provider/Austria/Simon%032Media
 share/apps/kppp/Provider/Denmark/.directory
@@ -107,12 +108,14 @@ share/apps/kppp/Provider/Denmark/Get2Net
 share/apps/kppp/Provider/Germany/.directory
 share/apps/kppp/Provider/Germany/CityWeb
 share/apps/kppp/Provider/Germany/FH%032Rhein%032Sieg%032%040Informatik%041
+share/apps/kppp/Provider/Germany/MUC%046DE
 share/apps/kppp/Provider/Germany/Netsurf
 share/apps/kppp/Provider/NewZealand/.directory
 share/apps/kppp/Provider/NewZealand/OrconInternet
 share/apps/kppp/Provider/NewZealand/Paradise
 share/apps/kppp/Provider/NewZealand/Voyager
 share/apps/kppp/Provider/NewZealand/XTRA
+share/apps/kppp/Provider/NewZealand/ihug
 share/apps/kppp/Provider/Norway/.directory
 share/apps/kppp/Provider/Norway/BGNett
 share/apps/kppp/Provider/Norway/Institutt%032for%032informatikk
@@ -120,6 +123,10 @@ share/apps/kppp/Provider/Portugal/.directory
 share/apps/kppp/Provider/Portugal/Clix
 share/apps/kppp/Provider/Portugal/Netc
 share/apps/kppp/Provider/Portugal/OniNet
+share/apps/kppp/Provider/Taiwan/.directory
+share/apps/kppp/Provider/Taiwan/EraNet
+share/apps/kppp/Provider/Taiwan/HiNet
+share/apps/kppp/Provider/Taiwan/SeedNet
 share/apps/kppp/Provider/United_Kingdom/.directory
 share/apps/kppp/Provider/United_Kingdom/Demon%032Green%0322120666
 share/apps/kppp/Provider/United_Kingdom/Demon%032Purple%0322121666
@@ -179,6 +186,7 @@ share/apps/kppp/Rules/England/BritishTelecom_Local.rst
 share/apps/kppp/Rules/England/BritishTelecom_National.rst
 share/apps/kppp/Rules/England/BritishTelecom_Regional.rst
 share/apps/kppp/Rules/France/France_Telecom_Local.rst
+share/apps/kppp/Rules/France/France_Telecom_Local_Area.rst
 share/apps/kppp/Rules/France/France_Telecom_Local_Primaliste_Internet.rst
 share/apps/kppp/Rules/France/France_Telecom_National.rst
 share/apps/kppp/Rules/Germany/AddCom_by_Call.rst
@@ -236,11 +244,15 @@ share/apps/kppp/Rules/Kazakhstan/Akparat_Sprint.rst
 share/apps/kppp/Rules/Luxembourg/Local.rst
 share/apps/kppp/Rules/Malaysia/TMNet_Jaring.rst
 share/apps/kppp/Rules/Malaysia/malaysia.rst
+share/apps/kppp/Rules/Netherlands/BelBasis_Buiten_Regio.rst
+share/apps/kppp/Rules/Netherlands/BelBasis_Buiten_Regio_Nummervoordeel.rst
 share/apps/kppp/Rules/Netherlands/BelBasis_Lokaal.rst
-share/apps/kppp/Rules/Netherlands/BelBasis_Lokaal_Nummervoordeel.rst
-share/apps/kppp/Rules/Netherlands/BelBudget_Lokaal.rst
-share/apps/kppp/Rules/Netherlands/BelPlus_Lokaal.rst
-share/apps/kppp/Rules/Netherlands/BelPlus_Lokaal_Nummervoordeel.rst
+share/apps/kppp/Rules/Netherlands/BelBasis_Regio_Nummervoordeel.rst
+share/apps/kppp/Rules/Netherlands/BelBudget_Buiten_Regio.rst
+share/apps/kppp/Rules/Netherlands/BelBudget_Regio.rst
+share/apps/kppp/Rules/Netherlands/BelPlus_Buiten_Regio.rst
+share/apps/kppp/Rules/Netherlands/BelPlus_Regio.rst
+share/apps/kppp/Rules/Netherlands/BelPlus_Regio_Nummervoordeel.rst
 share/apps/kppp/Rules/Netherlands/NedpointBasis_Lokaal.rst
 share/apps/kppp/Rules/Netherlands/NedpointBelBespaar_Lokaal.rst
 share/apps/kppp/Rules/Norway/Local_Area.rst
@@ -305,8 +317,8 @@ share/apps/kppp/Rules/Sweden/Transnet.rst
 share/apps/kppp/Rules/Sweden/Universal_Telecom.rst
 share/apps/kppp/Rules/Sweden/Utfors.rst
 share/apps/kppp/Rules/Sweden/Vattenfall.rst
-share/apps/kppp/Rules/Switzerland/Sunrise_Internet.rst
 share/apps/kppp/Rules/Switzerland/Sunrise_Local.rst
+share/apps/kppp/Rules/Switzerland/Sunrise_Select_Internet.rst
 share/apps/kppp/Rules/Switzerland/Swisscom_Local.rst
 share/apps/kppp/Rules/Switzerland/Swisscom_Remote.rst
 share/apps/kppp/Rules/Switzerland/Swisscom_Surf.rst
@@ -373,20 +385,18 @@ share/apps/ksirc/sirc.help.gz
 share/apps/ksirc/small.pl
 share/apps/ksirc/test.pl
 share/apps/ksirc/tester.pl
+share/config/ksircrc
 share/config/protocols/vnc.desktop
 share/doc/HTML/en/keystone/.anchors
-share/doc/HTML/en/keystone/common
 share/doc/HTML/en/keystone/index.docbook
 share/doc/HTML/en/keystone/index.html
 share/doc/HTML/en/keystone/introduction.html
 share/doc/HTML/en/kit/.anchors
-share/doc/HTML/en/kit/common
 share/doc/HTML/en/kit/index.docbook
 share/doc/HTML/en/kit/index.html
 share/doc/HTML/en/kit/introduction.html
 share/doc/HTML/en/kmail/.anchors
 share/doc/HTML/en/kmail/appearancetab.html
-share/doc/HTML/en/kmail/common
 share/doc/HTML/en/kmail/composertab.html
 share/doc/HTML/en/kmail/copyright.html
 share/doc/HTML/en/kmail/documentation.html
@@ -414,12 +424,55 @@ share/doc/HTML/en/kmail/theaddressbook.html
 share/doc/HTML/en/kmail/thecomposerwindow.html
 share/doc/HTML/en/kmail/thecomposerwindow2.html
 share/doc/HTML/en/knode/.anchors
-share/doc/HTML/en/knode/common
+share/doc/HTML/en/knode/commands.html
+share/doc/HTML/en/knode/compilation.html
+share/doc/HTML/en/knode/configuration.html
+share/doc/HTML/en/knode/credits.html
+share/doc/HTML/en/knode/eyes.png
+share/doc/HTML/en/knode/faq.html
+share/doc/HTML/en/knode/greyball.png
+share/doc/HTML/en/knode/greyballchk.png
 share/doc/HTML/en/knode/index.docbook
 share/doc/HTML/en/knode/index.html
+share/doc/HTML/en/knode/infos-technical.html
+share/doc/HTML/en/knode/infos-testgroups.html
+share/doc/HTML/en/knode/installation.html
 share/doc/HTML/en/knode/introduction.html
+share/doc/HTML/en/knode/knode-cleanup.png
+share/doc/HTML/en/knode/knode-colors-fonts.png
+share/doc/HTML/en/knode/knode-composer-attachments.png
+share/doc/HTML/en/knode/knode-composer-settings.png
+share/doc/HTML/en/knode/knode-edit-filter.png
+share/doc/HTML/en/knode/knode-edit-header1.png
+share/doc/HTML/en/knode/knode-edit-header2.png
+share/doc/HTML/en/knode/knode-editorwindow.html
+share/doc/HTML/en/knode/knode-filters.png
+share/doc/HTML/en/knode/knode-followup.png
+share/doc/HTML/en/knode/knode-header-settings.png
+share/doc/HTML/en/knode/knode-identity.png
+share/doc/HTML/en/knode/knode-journey.html
+share/doc/HTML/en/knode/knode-mail-account.png
+share/doc/HTML/en/knode/knode-more-info.html
+share/doc/HTML/en/knode/knode-new-article.png
+share/doc/HTML/en/knode/knode-news-account.png
+share/doc/HTML/en/knode/knode-post-settings.png
+share/doc/HTML/en/knode/knode-read-news-settings.png
+share/doc/HTML/en/knode/knode-reply.png
+share/doc/HTML/en/knode/knode-search.png
+share/doc/HTML/en/knode/knode-start.png
+share/doc/HTML/en/knode/knode-subscribe.png
+share/doc/HTML/en/knode/knode-views.png
+share/doc/HTML/en/knode/more-knode-features.html
+share/doc/HTML/en/knode/nettiquette.html
+share/doc/HTML/en/knode/newsubs.png
+share/doc/HTML/en/knode/redball.png
+share/doc/HTML/en/knode/redballchk.png
+share/doc/HTML/en/knode/requirements.html
+share/doc/HTML/en/knode/subscribing.html
+share/doc/HTML/en/knode/update-installation.html
+share/doc/HTML/en/knode/usenet-slang.html
+share/doc/HTML/en/knode/using-knode.html
 share/doc/HTML/en/korn/.anchors
-share/doc/HTML/en/korn/common
 share/doc/HTML/en/korn/index.docbook
 share/doc/HTML/en/korn/index.html
 share/doc/HTML/en/korn/introduction.html
@@ -433,7 +486,6 @@ share/doc/HTML/en/kppp/accounting.html
 share/doc/HTML/en/kppp/appendix.html
 share/doc/HTML/en/kppp/autoconfigurehostname.html
 share/doc/HTML/en/kppp/cb.html
-share/doc/HTML/en/kppp/common
 share/doc/HTML/en/kppp/compilationandinstallation.html
 share/doc/HTML/en/kppp/configuringanaccount.html
 share/doc/HTML/en/kppp/costsgraphs.fig
@@ -477,7 +529,6 @@ share/doc/HTML/en/ksirc/.anchors
 share/doc/HTML/en/ksirc/addingfilehandlestothemainselectloop.html
 share/doc/HTML/en/ksirc/bots.html
 share/doc/HTML/en/ksirc/colournumbers.html
-share/doc/HTML/en/ksirc/common
 share/doc/HTML/en/ksirc/examplesfilters.html
 share/doc/HTML/en/ksirc/examplessetcolors.html
 share/doc/HTML/en/ksirc/filters.html
@@ -496,7 +547,6 @@ share/doc/HTML/en/ksirc/setvariables.html
 share/doc/HTML/en/ksirc/timers.html
 share/doc/HTML/en/ksirc/userhostrequests.html
 share/doc/HTML/en/ktalkd/.anchors
-share/doc/HTML/en/ktalkd/common
 share/doc/HTML/en/ktalkd/compilationandinstallation.html
 share/doc/HTML/en/ktalkd/copyright.html
 share/doc/HTML/en/ktalkd/howdoigetdebugoutputfromktalkd.html
@@ -511,6 +561,7 @@ share/doc/HTML/en/ktalkd/supportedplatforms.html
 share/doc/HTML/en/ktalkd/usage.html
 share/doc/HTML/en/ktalkd/whydontiasanormaluserreceivekdeannouncements.html
 share/icons/hicolor/22x22/actions/message_get.png
+share/icons/hicolor/32x32/apps/keystone.png
 share/icons/hicolor/32x32/apps/kit.png
 share/icons/hicolor/32x32/apps/kmail.png
 share/icons/hicolor/32x32/apps/knode.png
@@ -518,6 +569,7 @@ share/icons/hicolor/32x32/apps/korn.png
 share/icons/hicolor/32x32/apps/kppp.png
 share/icons/hicolor/32x32/apps/ksirc.png
 share/icons/hicolor/32x32/apps/ktalkd.png
+share/icons/hicolor/48x48/apps/keystone.png
 share/icons/hicolor/48x48/apps/kit.png
 share/icons/hicolor/48x48/apps/kmail.png
 share/icons/hicolor/48x48/apps/knode.png
@@ -525,18 +577,7 @@ share/icons/hicolor/48x48/apps/korn.png
 share/icons/hicolor/48x48/apps/kppp.png
 share/icons/hicolor/48x48/apps/ksirc.png
 share/icons/hicolor/48x48/apps/ktalkd.png
-share/icons/locolor/16x16/actions/kit_anonwarning.png
-share/icons/locolor/16x16/actions/kit_away.png
-share/icons/locolor/16x16/actions/kit_bold.png
-share/icons/locolor/16x16/actions/kit_group.png
-share/icons/locolor/16x16/actions/kit_info.png
-share/icons/locolor/16x16/actions/kit_logging.png
-share/icons/locolor/16x16/actions/kit_offline.png
-share/icons/locolor/16x16/actions/kit_online.png
-share/icons/locolor/16x16/actions/kit_sound.png
-share/icons/locolor/16x16/actions/kit_status.png
-share/icons/locolor/16x16/actions/kit_timestamping.png
-share/icons/locolor/16x16/actions/kit_warning.png
+share/icons/locolor/16x16/apps/keystone.png
 share/icons/locolor/16x16/apps/kit.png
 share/icons/locolor/16x16/apps/kmail.png
 share/icons/locolor/16x16/apps/knode.png
@@ -544,6 +585,7 @@ share/icons/locolor/16x16/apps/korn.png
 share/icons/locolor/16x16/apps/kppp.png
 share/icons/locolor/16x16/apps/ksirc.png
 share/icons/locolor/16x16/apps/ktalkd.png
+share/icons/locolor/32x32/apps/keystone.png
 share/icons/locolor/32x32/apps/kit.png
 share/icons/locolor/32x32/apps/kmail.png
 share/icons/locolor/32x32/apps/knode.png
@@ -601,23 +643,37 @@ share/sounds/ktalkd.wav
 @dirrm share/apps/kppp/Rules/Austria/Minimum
 @dirrm share/apps/kppp/Rules/Austria/Business_2
 @dirrm share/apps/kppp/Rules/Austria/Business_1
+@dirrm share/apps/kppp/Rules/Austria
 @dirrm share/apps/kppp/Rules/Australia
 @dirrm share/apps/kppp/Rules/Argentina
 @dirrm share/apps/kppp/Rules
 @dirrm share/apps/kppp/Provider/United_Kingdom
+@dirrm share/apps/kppp/Provider/Taiwan
 @dirrm share/apps/kppp/Provider/Portugal
 @dirrm share/apps/kppp/Provider/Norway
 @dirrm share/apps/kppp/Provider/NewZealand
 @dirrm share/apps/kppp/Provider/Germany
 @dirrm share/apps/kppp/Provider/Denmark
 @dirrm share/apps/kppp/Provider/Austria
-@dirrm share/apps/knode/toolbar
+@dirrm share/apps/kppp/Provider
+@dirrm share/apps/kppp
 @dirrm share/apps/knode/pics
 @dirrm share/apps/knode/icons/locolor/16x16/actions
+@dirrm share/apps/knode/icons/locolor/16x16
+@dirrm share/apps/knode/icons/locolor
 @dirrm share/apps/knode/icons/hicolor/32x32/actions
+@dirrm share/apps/knode/icons/hicolor/32x32
 @dirrm share/apps/knode/icons/hicolor/22x22/actions
+@dirrm share/apps/knode/icons/hicolor/22x22
+@dirrm share/apps/knode/icons/hicolor
+@dirrm share/apps/knode/icons
 @dirrm share/apps/knode/filters
 @dirrm share/apps/knode
 @dirrm share/apps/kmail/pics
 @dirrm share/apps/kmail
+@dirrm share/apps/kit/icons/locolor/16x16/actions
+@dirrm share/apps/kit/icons/locolor/16x16
+@dirrm share/apps/kit/icons/locolor
+@dirrm share/apps/kit/icons
 @dirrm share/apps/kit
+@dirrm share/apps/keystone
