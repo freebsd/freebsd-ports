@@ -4,12 +4,12 @@
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #			NIIMI Satoshi <sa2c@and.or.jp>
 #
-# $Id: Makefile,v 1.11 1996/09/18 12:20:22 max Exp $
+# $Id: Makefile,v 1.12 1996/11/05 04:14:25 max Exp $
 #
 
 DISTNAME=	Canna32p2
 PKGNAME=	jp-Canna-3.2.2
-CATEGORIES+=	japanese
+CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.nec.co.jp/pub/packages/Canna32/ \
 		ftp://ftp.cdrom.com/pub/japanese/titech/Canna32/
 
@@ -53,10 +53,6 @@ post-install:
 		chmod 755 ${STARTUP_SCRIPT} ;				\
 		chown bin.bin ${STARTUP_SCRIPT};			\
 	fi
-	@(grep -v ^# /etc/services | grep canna >/dev/null) || \
-	(echo "Now, you need to add following entry to your /etc/services:" ;\
-	 echo ;\
-	 echo "	canna           5680/tcp" ;\
-	 echo )
+	@/bin/sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
