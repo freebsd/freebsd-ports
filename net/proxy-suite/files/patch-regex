@@ -1,0 +1,18 @@
+--- ftp-proxy/ftp-cmds.c.orig	Fri Feb 11 15:23:59 2000
++++ ftp-proxy/ftp-cmds.c	Fri Feb 11 15:25:33 2000
+@@ -371,6 +371,7 @@ static void cmds_user(CONTEXT *ctx, char
+ 	for (cmd = cmdlist; cmd->name != NULL; cmd++) {
+ 		if (strcasecmp("USER", cmd->name) != 0)
+ 			continue;
++#if defined(HAVE_REGEX)
+ 		if (cmd->regex == NULL)
+ 			break;
+ 		if ((p = cmds_reg_exec(cmd->regex, arg)) != NULL) {
+@@ -383,6 +384,7 @@ static void cmds_user(CONTEXT *ctx, char
+ 				ctx->cli_ctrl->peer, p);
+ 			return;
+ 		}
++#endif
+ 		break;
+ 	}
+ 

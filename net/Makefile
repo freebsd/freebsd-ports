@@ -262,6 +262,7 @@
     SUBDIR += ppxp
     SUBDIR += priss
     SUBDIR += proxy
+    SUBDIR += proxy-suite
     SUBDIR += pvm
     SUBDIR += pvm++
     SUBDIR += queso
