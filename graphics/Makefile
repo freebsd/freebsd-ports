@@ -33,6 +33,7 @@
     SUBDIR += fujiplay
     SUBDIR += fxtv
     SUBDIR += g2
+    SUBDIR += gcolor
     SUBDIR += gd
     SUBDIR += gdk-pixbuf
     SUBDIR += geomview
