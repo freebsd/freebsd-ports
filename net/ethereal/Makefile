@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ethereal
-PORTVERSION=	0.9.10
+PORTVERSION=	0.9.12
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.ethereal.com/pub/ethereal/%SUBDIR%/ \
 		ftp://gd.tuwien.ac.at/infosys/security/ethereal/%SUBDIR%/ \
