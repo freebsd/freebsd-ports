@@ -1,21 +1,12 @@
 bin/kino
+include/kino/audio_filters.h
+include/kino/audio_transitions.h
+include/kino/frame.h
 include/kino/image_create.h
 include/kino/image_filters.h
 include/kino/image_transitions.h
-include/kino/audio_filters.h
-include/kino/audio_transitions.h
-include/kino/playlist.h
-include/kino/frame.h
 include/kino/kino_extra.h
-share/gnome/help/kino/C/commands.html
-share/gnome/help/kino/C/fx.html
-share/gnome/help/kino/C/index.html
-share/gnome/help/kino/C/intro.html
-share/gnome/help/kino/C/kino_ui.png
-share/gnome/help/kino/C/prefs.html
-share/gnome/help/kino/C/terms.html
-share/gnome/help/kino/C/topic.dat
-share/gnome/help/kino/C/ui.html
+include/kino/playlist.h
 share/kino/editor_fast.xpm
 share/kino/editor_fast_i.xpm
 share/kino/editor_movie.xpm
@@ -29,20 +20,47 @@ share/kino/editor_scene_i.xpm
 share/kino/editor_step.xpm
 share/kino/editor_step_i.xpm
 share/kino/editor_stop.xpm
+share/kino/film.png
 share/kino/film.xpm
 share/kino/film_on.xpm
+share/kino/join.xpm
 share/kino/kino.glade
+share/kino/kino.jpeg
 share/kino/link.xpm
+share/kino/link_off.xpm
 share/kino/magick.glade
 share/kino/photo-camera.xpm
 share/kino/play_record.xpm
+share/kino/publish_project.png
+share/kino/publish_still.png
+share/kino/split.xpm
+share/kino/trim_in.xpm
+share/kino/trim_out.xpm
+share/kino/help/commands.html
+share/kino/help/edit.html
+share/kino/help/export.html
+share/kino/help/fx.html
+share/kino/help/index.html
+share/kino/help/intro.html
+share/kino/help/kino_ui.png
+share/kino/help/prefs.html
+share/kino/help/publish.html
+share/kino/help/terms.html
+share/kino/help/time.html
+share/kino/help/trim.html
+share/kino/help/ui.html
+share/kino/scripts/help.sh
+share/kino/scripts/exports/extract_chapters
 share/kino/scripts/exports/ffmpeg_divx.sh
+share/kino/scripts/exports/ffmpeg_dvd.sh
 share/kino/scripts/exports/ffmpeg_mp3.sh
 share/kino/scripts/exports/ffmpeg_vcd.sh
 share/kino/scripts/exports/rawplay.sh
-@dirrm share/gnome/help/kino/C
-@dirrm share/gnome/help/kino
+share/kino/scripts/publish/frame.sh
+share/kino/scripts/publish/project.sh
+@dirrm include/kino
+@dirrm share/kino/help
 @dirrm share/kino/scripts/exports
+@dirrm share/kino/scripts/publish
 @dirrm share/kino/scripts
 @dirrm share/kino
-@dirrm include/kino

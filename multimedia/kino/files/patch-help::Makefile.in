@@ -1,0 +1,11 @@
+--- help/Makefile.in.orig	Sat Apr 10 16:22:30 2004
++++ help/Makefile.in	Mon Apr 12 18:58:24 2004
+@@ -305,7 +305,7 @@
+ install-data-local:
+ 	  $(mkinstalldirs) $(DESTDIR)$(kino_helpdir); \
+ 	  $(mkinstalldirs) $(DESTDIR)$(kino_helpdir); \
+-	  for file in *.{html,png}; do \
++	  for file in *.html *.png; do \
+ 	    if test -f $$file; then \
+ 	      $(INSTALL_DATA) $$file $(DESTDIR)$(kino_helpdir); \
+ 	    fi \

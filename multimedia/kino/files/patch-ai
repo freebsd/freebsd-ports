@@ -1,5 +1,5 @@
---- src/ieee1394io.cc	Fri Dec 12 22:58:55 2003
-+++ src/ieee1394io.cc	Fri Apr  9 16:45:10 2004
+--- src/ieee1394io.cc.orig	Sun Mar 28 20:42:44 2004
++++ src/ieee1394io.cc	Sat Apr 10 23:49:25 2004
 @@ -61,11 +61,13 @@
  #include <sys/mman.h>
  #include <sys/poll.h>
@@ -28,7 +28,7 @@
  pthread_mutex_t AVC::avc_mutex;
  
  
-@@ -281,7 +285,7 @@
+@@ -283,7 +287,7 @@
  raw1394Reader::raw1394Reader( int p, int c, int bufSize ) :
  		IEEE1394Reader( c, bufSize ), port( p )
  {
@@ -37,7 +37,7 @@
  	cerr << ">>> Using raw1394 capture" << endl;
  }
  
-@@ -353,28 +357,32 @@
+@@ -362,28 +366,32 @@
  {
  	bool success;
  	int numcards;
@@ -76,7 +76,7 @@
  		success = true;
  	}
  	catch ( string exc )
-@@ -393,11 +401,13 @@
+@@ -402,11 +410,13 @@
  
  void raw1394Reader::Close()
  {
@@ -90,7 +90,7 @@
  }
  
  bool raw1394Reader::StartReceive()
-@@ -407,7 +417,7 @@
+@@ -416,7 +426,7 @@
  	/* Starting iso receive */
  	try
  	{
@@ -99,7 +99,7 @@
  		success = true;
  	}
  	catch ( string exc )
-@@ -421,8 +431,8 @@
+@@ -430,8 +440,8 @@
  
  void raw1394Reader::StopReceive()
  {
@@ -110,7 +110,7 @@
  }
  
  
-@@ -458,6 +468,7 @@
+@@ -467,6 +477,7 @@
   
  */
  
@@ -118,7 +118,7 @@
  int raw1394Reader::Handler( raw1394handle_t handle, int channel, size_t length,
                              quadlet_t *data )
  {
-@@ -564,6 +575,7 @@
+@@ -573,6 +584,7 @@
  
  	return 0;
  }
@@ -126,7 +126,7 @@
  
  
  /** The thread responsible for polling the raw1394 interface.
-@@ -574,6 +586,7 @@
+@@ -583,6 +595,7 @@
  */
  void* raw1394Reader::Thread( void* arg )
  {
@@ -134,7 +134,7 @@
  	raw1394Reader * theReader = ( raw1394Reader* ) arg;
  
  	while ( true )
-@@ -581,6 +594,7 @@
+@@ -590,6 +603,7 @@
  		raw1394_loop_iterate( theReader->handle );
  		pthread_testcancel();
  	}
@@ -142,7 +142,7 @@
  	return NULL;
  }
  
-@@ -666,6 +680,7 @@
+@@ -682,6 +696,7 @@
  
  bool dv1394Reader::Open()
  {
@@ -150,7 +150,7 @@
  	int n_frames = DV1394_MAX_FRAMES / 4;
  	struct dv1394_init init =
  	    {
-@@ -699,6 +714,8 @@
+@@ -715,6 +730,8 @@
  	}
  
  	return true;
@@ -159,7 +159,7 @@
  }
  
  
-@@ -707,6 +724,7 @@
+@@ -723,6 +740,7 @@
  */
  void dv1394Reader::Close()
  {
@@ -167,7 +167,7 @@
  	if ( m_dv1394_fd != -1 )
  	{
  		if ( m_dv1394_map != NULL )
-@@ -715,11 +733,13 @@
+@@ -731,11 +749,13 @@
  		m_dv1394_map = NULL;
  		m_dv1394_fd = -1;
  	}
@@ -181,7 +181,7 @@
  	/* Starting iso receive */
  	if ( ioctl( m_dv1394_fd, DV1394_START_RECEIVE, NULL ) )
  	{
-@@ -727,6 +747,8 @@
+@@ -743,6 +763,8 @@
  		return false;
  	}
  	return true;
@@ -190,7 +190,7 @@
  }
  
  
-@@ -735,6 +757,7 @@
+@@ -751,6 +773,7 @@
  
  bool dv1394Reader::Handler( int handle )
  {
@@ -198,7 +198,7 @@
  	struct dv1394_status dvst;
  
  	if ( ioctl( handle, DV1394_WAIT_FRAMES, 1 ) )
-@@ -812,6 +835,8 @@
+@@ -828,6 +851,8 @@
  
  	}
  	return true;
@@ -207,7 +207,7 @@
  }
  
  
-@@ -843,6 +868,7 @@
+@@ -859,6 +884,7 @@
  
  AVC::AVC( int p ) : port( p )
  {
@@ -215,7 +215,7 @@
  	pthread_mutex_init( &avc_mutex, NULL );
  	avc_handle = NULL;
  	int numcards;
-@@ -874,6 +900,7 @@
+@@ -890,6 +916,7 @@
  		cerr << exc << endl;
  	}
  	return ;
@@ -223,7 +223,7 @@
  }
  
  
-@@ -883,6 +910,7 @@
+@@ -899,6 +926,7 @@
  
  AVC::~AVC()
  {
@@ -231,7 +231,7 @@
  	if ( avc_handle != NULL )
  	{
  		pthread_mutex_lock( &avc_mutex );
-@@ -890,11 +918,13 @@
+@@ -906,11 +934,13 @@
  		avc_handle = NULL;
  		pthread_mutex_unlock( &avc_mutex );
  	}
@@ -245,7 +245,7 @@
  int AVC::ResetHandler( raw1394handle_t handle, unsigned int generation )
  {
  	cerr << "Reset Handler received" << endl;
-@@ -902,7 +932,7 @@
+@@ -918,7 +948,7 @@
  	common->getPageCapture() ->driver_locked = true;
  	return 0;
  }
@@ -254,7 +254,7 @@
  
  /** See if a node_id is still valid and pointing to an AV/C Recorder.
   
-@@ -918,6 +948,7 @@
+@@ -934,6 +964,7 @@
  int AVC::isPhyIDValid( int phyID )
  {
  	int value = -1;
@@ -262,7 +262,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -960,6 +991,7 @@
+@@ -976,6 +1007,7 @@
  		}
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -270,7 +270,7 @@
  	return value;
  }
  
-@@ -968,6 +1000,7 @@
+@@ -984,6 +1016,7 @@
  */
  void AVC::Noop( void )
  {
@@ -278,7 +278,7 @@
  	struct pollfd raw1394_poll;
  	raw1394_poll.fd = raw1394_get_fd( avc_handle );
  	raw1394_poll.events = POLLIN;
-@@ -978,11 +1011,13 @@
+@@ -994,11 +1027,13 @@
  		        || ( raw1394_poll.revents & POLLPRI ) )
  			raw1394_loop_iterate( avc_handle );
  	}
@@ -292,7 +292,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -994,12 +1029,14 @@
+@@ -1010,12 +1045,14 @@
  		}
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -307,7 +307,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1016,12 +1053,14 @@
+@@ -1032,12 +1069,14 @@
  	    };
  	nanosleep( &t, NULL );
  	pthread_mutex_unlock( &avc_mutex );
@@ -322,7 +322,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1034,12 +1073,14 @@
+@@ -1050,12 +1089,14 @@
  	    };
  	nanosleep( &t, NULL );
  	pthread_mutex_unlock( &avc_mutex );
@@ -337,7 +337,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1047,12 +1088,14 @@
+@@ -1063,12 +1104,14 @@
  			avc1394_vcr_rewind( avc_handle, phyID );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -352,7 +352,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1060,11 +1103,13 @@
+@@ -1076,11 +1119,13 @@
  			avc1394_vcr_forward( avc_handle, phyID );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -366,7 +366,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1072,11 +1117,13 @@
+@@ -1088,11 +1133,13 @@
  			avc1394_vcr_next( avc_handle, phyID );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -380,7 +380,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1084,11 +1131,13 @@
+@@ -1100,11 +1147,13 @@
  			avc1394_vcr_previous( avc_handle, phyID );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -394,7 +394,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1096,11 +1145,13 @@
+@@ -1112,11 +1161,13 @@
  			avc1394_vcr_next_index( avc_handle, phyID );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -408,7 +408,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1108,11 +1159,13 @@
+@@ -1124,11 +1175,13 @@
  			avc1394_vcr_previous_index( avc_handle, phyID );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -422,7 +422,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1120,11 +1173,13 @@
+@@ -1136,11 +1189,13 @@
  			avc1394_vcr_record( avc_handle, phyID );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -436,7 +436,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1132,12 +1187,14 @@
+@@ -1148,12 +1203,14 @@
  			avc1394_vcr_trick_play( avc_handle, phyID, speed );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -451,7 +451,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1145,11 +1202,13 @@
+@@ -1161,11 +1218,13 @@
  			val = avc1394_vcr_status( avc_handle, phyID );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -465,7 +465,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1178,10 +1237,13 @@
+@@ -1194,10 +1253,13 @@
  	}
  	pthread_mutex_unlock( &avc_mutex );
  	return true;
@@ -479,7 +479,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1204,6 +1266,7 @@
+@@ -1220,6 +1282,7 @@
  		}
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -487,65 +487,7 @@
  	return -1;
  }
  
-@@ -1213,6 +1276,7 @@
- video1394Writer::video1394Writer( string device, unsigned int channel, unsigned int nBuffers,
-                                   unsigned int cip_n, unsigned int cip_d, unsigned int syt_offset )
- {
-+#if 0
- 	m_fd = -1;
- 	m_deviceName = device;
- 	m_channel = channel;
-@@ -1271,12 +1335,13 @@
- 		          foo );
- 		modal_message( buf );
- 	}
--
-+#endif
- }
- 
- 
- video1394Writer::~video1394Writer()
- {
-+#if 0
- 	if ( m_fd >= 0 )
- 	{
- 		w.buffer = ( v.nb_buffers + w.buffer - 1 ) % v.nb_buffers;
-@@ -1294,11 +1359,13 @@
- 
- 		close( m_fd );
- 	}
-+#endif
- }
- 
- 
- int video1394Writer::FillBuffer( unsigned char *data, unsigned char* targetbuf, unsigned long targetbufsize, unsigned int * packet_sizes, int video_packets_per_frame, int min_out_packet_size )
- {
-+#if 0
- 	unsigned long frame_size = video_packets_per_frame * 480;
- 	unsigned long vdata = 0;
- 	unsigned long i;
-@@ -1354,12 +1421,14 @@
- 
- 	*packet_sizes++ = 0;
- 
-+#endif
- 	return 1;
- }
- 
- 
- void video1394Writer::SendFrame( Frame &frame )
- {
-+#if 0
- 	bool have_PAL = frame.IsPAL();
- 
- 	while ( unused_buffers-- )
-@@ -1386,11 +1455,13 @@
- 		perror( "1. VIDEO1394_TALK_WAIT_BUFFER" );
- 	}
- 	unused_buffers = 1;
-+#endif
- }
- 
+@@ -1227,6 +1290,7 @@
  dv1394Writer::dv1394Writer( string device, unsigned int channel, unsigned int nBuffers,
                              unsigned int cip_n, unsigned int cip_d, unsigned int syt_offset ) : isInitialised( false )
  {
@@ -553,7 +495,7 @@
  	m_fd = -1;
  	m_deviceName = device;
  	m_channel = channel;
-@@ -1400,6 +1471,7 @@
+@@ -1236,6 +1300,7 @@
  	m_syt_offset = syt_offset;
  
  	m_fd = open( m_deviceName.c_str(), O_RDWR );
@@ -561,7 +503,7 @@
  }
  
  
-@@ -1415,6 +1487,7 @@
+@@ -1251,6 +1316,7 @@
  
  void dv1394Writer::SendFrame( Frame &frame )
  {
@@ -569,7 +511,7 @@
  	bool isPAL = frame.IsPAL();
  
  	if ( !isInitialised )
-@@ -1439,4 +1512,5 @@
+@@ -1275,4 +1341,5 @@
  	}
  
  	write( m_fd, frame.data, ( isPAL ? DV1394_PAL_FRAME_SIZE : DV1394_NTSC_FRAME_SIZE ) );

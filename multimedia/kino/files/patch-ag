@@ -1,6 +1,15 @@
---- src/frame.cc	Tue Nov 25 21:51:15 2003
-+++ src/frame.cc	Fri Apr  9 16:24:36 2004
-@@ -1400,9 +1400,9 @@
+--- src/frame.cc.orig	Sun Mar 28 20:13:54 2004
++++ src/frame.cc	Mon Apr 12 17:56:45 2004
+@@ -728,7 +728,7 @@
+ {
+ 	bool normal_speed = true;
+ 
+-#ifdef HAVE_LIBDV
++#if 0
+ 	/* don't do audio if speed is not 1 */
+ 	return dv_is_normal_speed( decoder );
+ #endif
+@@ -1459,9 +1459,9 @@
  		if ( sample < -1.0 )
  			sample = -1.0;
  		if ( sample >= 0 )

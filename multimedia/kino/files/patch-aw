@@ -1,5 +1,5 @@
---- src/v4l.h	Mon Dec 15 05:08:35 2003
-+++ src/v4l.h	Sat Apr 10 12:19:48 2004
+--- src/v4l.h.orig	Tue Jan 20 02:22:02 2004
++++ src/v4l.h	Sun Apr 11 02:54:30 2004
 @@ -28,6 +28,7 @@
  #include <string>
  
@@ -8,16 +8,16 @@
  #include <unistd.h>
  #include <sys/mman.h>
  #include <sys/types.h>
-@@ -37,7 +38,7 @@
- #include <time.h>
- #include <sys/time.h>
+@@ -39,7 +40,7 @@
  
+ #define _DEVICE_H_
+ #define _LINUX_TIME_H
 -#include <linux/videodev.h>
 +//#include <linux/videodev.h>
  
  #include "displayer.h"
  
-@@ -67,7 +68,7 @@
+@@ -69,7 +70,7 @@
  class V4LCapability : public V4LStruct
  {
  private:
@@ -26,7 +26,7 @@
  
  public:
  	V4LCapability( V4LDevice *device );
-@@ -95,7 +96,7 @@
+@@ -97,7 +98,7 @@
  {
  private:
  	V4LDevice *device;
@@ -35,7 +35,7 @@
  
  public:
  	V4LTuner( V4LDevice *device, int index );
-@@ -116,7 +117,7 @@
+@@ -118,7 +119,7 @@
  {
  private:
  	V4LDevice *device;
@@ -44,7 +44,7 @@
  	vector <V4LTuner *> tuners;
  	V4LTuner *current;
  
-@@ -145,7 +146,7 @@
+@@ -147,7 +148,7 @@
  	int width;
  	int height;
  	void *map;
