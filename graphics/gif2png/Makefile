@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gif2png
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.tuxedo.org/~esr/gif2png/
 
