@@ -1,0 +1,17 @@
+bin/pom2
+bin/podlint
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Pod/POM/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Pod/POM.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pod/POM/Constants.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pod/POM/Node.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pod/POM/Nodes.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pod/POM/Test.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pod/POM/View.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pod/POM/View/HTML.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pod/POM/View/Pod.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pod/POM/View/Text.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Pod/POM/View
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Pod/POM
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Pod/POM
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Pod 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Pod 2>/dev/null || true
