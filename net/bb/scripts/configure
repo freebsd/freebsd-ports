@@ -1,0 +1,15 @@
+#!/bin/sh
+
+cd $WRKSRC || exit 1
+
+mv runbb.sh runbb.sh.orig
+sed -e "s:/home/sean/bb:$PREFIX/bb:g" \
+	< runbb.sh.orig \
+	> runbb.sh
+
+HOSTNAME=`hostname`
+
+mv $WRKSRC/etc/bp-hosts $WRKSRC/etc/bp-hosts.orig
+sed -e "s:@@IP@@:172.16.1.1:" -e "s:@@HOST@@:$HOSTNAME:g" \
+	< $FILESDIR/bb-hosts \
+	> $WRKSRC/etc/bb-hosts
