@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tar
-PORTVERSION=	1.13.18
-PORTREVISION=	3
+PORTVERSION=	1.13.19
 PKGNAMEPREFIX=	g
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	ftp://alpha.gnu.org/gnu/tar/ \
@@ -21,10 +20,12 @@ LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS='-I${LOCALBASE}/include' \
-		LDFLAGS='-L${LOCALBASE}/lib' \
-		DEFAULT_ARCHIVE='/dev/rsa0'
+		DEFAULT_ARCHIVE='/dev/sa0'
 
-post-extract:
-	@rm -f ${WRKSRC}/doc/tar.info*
+.if defined(WANT_STATIC)
+CONFIGURE_ENV+=	LDFLAGS='-L${LOCALBASE}/lib -static'
+.else
+CONFIGURE_ENV+=	LDFLAGS='-L${LOCALBASE}/lib'
+.endif
 
 .include <bsd.port.mk>

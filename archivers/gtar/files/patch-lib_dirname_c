@@ -1,0 +1,16 @@
+$FreeBSD$
+--- lib/dirname.c.orig	Wed Jan 31 02:08:57 2001
++++ lib/dirname.c	Wed Jan 31 02:10:31 2001
+@@ -19,6 +19,12 @@
+ # include <config.h>
+ #endif
+ 
++#if HAVE_STRING_H
++# include <string.h>
++#else
++# include <strings.h>
++#endif
++
+ #if HAVE_STDLIB_H
+ # include <stdlib.h>
+ #endif
