@@ -1,0 +1,12 @@
+GSwitchIt is just a simple keyboard state indicator and switcher for GNOME
+panel.
+
+Features:
+---------
+o Support up to 4 keyboard groups.
+o Customizable images for each group.
+o Switching using the applet menu or by double-click.
+o Audible bell on layout switching (BTW, it can be turned off!).
+o Support for "secondary" layouts (i.e. layouts reachable only from popup menu).
+
+WWW: http://gswitchit.sourceforge.net/
