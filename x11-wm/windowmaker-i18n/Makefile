@@ -1,16 +1,16 @@
 # New ports collection makefile for:	WindowMaker with i18n extention
-# Version required:	0.62.0
 # Date created:		24 Nov 1998
 # Whom:			mac@jp.freebsd.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	WindowMaker-0.62.0
-PKGNAME=	windowmaker-i18n-0.62.0
+PORTNAME=	windowmaker-i18n
+PORTVERSION= 	0.62.0
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	${MASTER_SITE_WINDOWMAKER}
 MASTER_SITE_SUBDIR=	beta/srcs
+DISTNAME=	WindowMaker-${PORTVERSION}
 
 MAINTAINER=	mac@jp.freebsd.org
 

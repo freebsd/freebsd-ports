@@ -1,12 +1,12 @@
 # New ports collection makefile for:    9menu
-# Version required:     1.5
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	9menu-1.5
+PORTNAME=	9menu
+PORTVERSION= 	1.5
 CATEGORIES=	x11-wm plan9
 MASTER_SITES=	ftp://ftp.mathcs.emory.edu/pub/arnold/
 EXTRACT_SUFX=	.shar.gz

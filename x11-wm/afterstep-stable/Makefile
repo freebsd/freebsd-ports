@@ -1,16 +1,16 @@
 # New ports collection makefile for:	afterstep-stable
-# Version required:	1.8.0
 # Date created:		1 May 1998
 # Whom:			Brett Taylor
 #
 # $FreeBSD$
 #
 
-DISTNAME=	AfterStep-1.8.0
-PKGNAME=	afterstep-1.8.0
+PORTNAME=	afterstep
+PORTVERSION= 	1.8.0
 CATEGORIES=	x11-wm afterstep
 MASTER_SITES=	${MASTER_SITE_AFTERSTEP}
 MASTER_SITE_SUBDIR=	stable
+DISTNAME=	AfterStep-${PORTVERSION}
 
 MAINTAINER=	dima@Chg.ru
 

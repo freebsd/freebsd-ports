@@ -1,18 +1,17 @@
 # New ports collection makefile for:	Internationalized fvwm2
-# Version required:	2.2
 # Date created:		20 Jan 1996
 # Whom:			peter
 #
 # $FreeBSD$
 #
 
-DISTNAME=	fvwm-${FVWM_DISTVER}
-PKGNAME=	fvwm-i18n-${FVWM_DISTVER}
+PORTNAME=	fvwm-i18n
+PORTVERSION= 	2.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/
 
 PATCH_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/CFAN/fvwm-users-jp/I18N_MB/
-PATCHFILES=	fvwm-${FVWM_DISTVER}-I18N_MB-${FVWM_PATCHVER}.patch
+PATCHFILES=	fvwm-${PORTVERSION}-I18N_MB-${FVWM_PATCHVER}.patch
 
 MAINTAINER=	matusita@jp.freebsd.org
 
@@ -32,16 +31,15 @@ MAN1=		fvwm2.1 xpmroot.1 FvwmAnimate.1 FvwmAudio.1 FvwmAuto.1 \
 		FvwmWharf.1 FvwmWinList.1
 MANCOMPRESSED=	no
 
-FVWM_DISTVER=	2.2
 FVWM_PATCHVER=	1999042001
 FVWM_DIR=	lib/X11/fvwm2
 RC_FILES=	decor_examples new-features system.fvwm2rc \
 		system.fvwm2rc-sample-1 system.fvwm2rc-sample-2
 
-PLIST_SUB=	FVWM_DISTVER=${FVWM_DISTVER} FVWM_DIR=${FVWM_DIR}
+PLIST_SUB=	FVWM_DISTVER=${PORTVERSION} FVWM_DIR=${FVWM_DIR}
 
 CONFIGURE_ARGS+= --enable-extras --enable-kanji
-CONFIGURE_ARGS+= --sysconfdir=${PREFIX}/${FVWM_DIR}/${FVWM_DISTVER}
+CONFIGURE_ARGS+= --sysconfdir=${PREFIX}/${FVWM_DIR}/${PORTVERSION}
 CONFIGURE_ARGS+= --with-iconpath=${PREFIX}/${FVWM_DIR}/pixmaps:/usr/include/X11/bitmaps:/usr/include/X11/pixmaps
 
 pre-configure:
@@ -50,10 +48,10 @@ pre-configure:
 	@find ${WRKSRC} -name Makefile.in -exec ${TOUCH} \{} \;
 
 post-install:
-	@${MKDIR} ${PREFIX}/${FVWM_DIR}/${FVWM_DISTVER}
+	@${MKDIR} ${PREFIX}/${FVWM_DIR}/${PORTVERSION}
 	@for i in ${RC_FILES}; do \
 		${INSTALL_DATA} ${WRKSRC}/sample.fvwmrc/$$i \
-				${PREFIX}/${FVWM_DIR}/${FVWM_DISTVER}/$$i; \
+				${PREFIX}/${FVWM_DIR}/${PORTVERSION}/$$i; \
 	done
 	@${MKDIR} ${PREFIX}/${FVWM_DIR}/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/icons/*.xpm ${WRKSRC}/icons/*.xbm \

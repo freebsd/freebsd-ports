@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xwmm
-# Version required:	0.7
 # Date created:		26 Nov 1999
 # Whom:			imura@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xwmm-0.7
+PORTNAME=	xwmm
+PORTVERSION= 	0.7
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://people.FreeBSD.org/~imura/distfiles/
 

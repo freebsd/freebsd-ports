@@ -1,12 +1,12 @@
 # New ports collection makefile for:	toolbox
-# Version required:   	0.4.6
 # Date created:		05 June 1999
 # Whom:			Chris Piazza <cpiazza@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	toolbox-0.4.6
+PORTNAME=	toolbox
+PORTVERSION=	0.4.6
 CATEGORIES= 	x11-wm
 MASTER_SITES=	http://www2.bc.edu/~kelleyry/toolbox/
 

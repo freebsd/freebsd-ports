@@ -1,15 +1,15 @@
 # New ports collection makefile for:	wm2
-# Version required:	4.0
 # Date created:		16 February 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wm2-4
-PKGNAME=	wm2-4.0
+PORTNAME=	wm2
+PORTVERSION= 	4.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.all-day-breakfast.com/wm2/
+DISTNAME=	${PORTNAME}-4
 
 MAINTAINER=	nakai@FreeBSD.org
 

@@ -1,16 +1,16 @@
 # New ports collection makefile for:	wmx
-# Version required:	4.0
 # Date created:		11. Jan 1998
 # Whom:			Stefan Zehl <sec@42.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	wmx-5sec6
-PKGNAME=	wmx-5.6
+PORTNAME=	wmx
+PORTVERSION= 	5.6
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.42.org/pub/wmx/ \
 		http://www.all-day-breakfast.com/wmx/
+DISTNAME=	${PORTNAME}-5sec6
 
 MAINTAINER=	sec@42.org
 
