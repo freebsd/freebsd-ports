@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.38 1999/03/01 11:55:45 shige Exp $
+# $Id: Makefile,v 1.39 1999/03/08 07:28:23 asami Exp $
 #
 
 DISTNAME=	emacs-20.3
@@ -12,6 +12,8 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
 
 MAINTAINER=	jseger@FreeBSD.org
+
+Y2K=            http://www.gnu.org/software/year2000.html
 
 USE_AUTOCONF=	yes
 USE_XLIB=	yes

@@ -4,7 +4,7 @@
 # Date created:         Sat June 29, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.32 1998/12/02 12:32:25 obrien Exp $
+# $Id: Makefile,v 1.33 1998/12/02 12:40:59 obrien Exp $
 #
 
 DISTNAME=	vim-5.3
@@ -18,6 +18,9 @@ MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} ${DISTNAME}-rt${EXTRACT_SUFX}
 
 MAINTAINER=     obrien@FreeBSD.org
+
+Y2K=		http://www.vim.org/y2k.html
+WWW_SITE=	http://www.vim.org
 
 .if defined(PACKAGE_BUILDING)
 BUILD_DEPENDS=	tclsh8.0:${PORTSDIR}/lang/tcl80 \

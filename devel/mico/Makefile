@@ -3,7 +3,7 @@
 # Date created:        11 July 1998
 # Whom:                Marc G. Fournier <scrappy@freebsd.org>
 #
-# $Id: Makefile,v 1.27 1999/01/22 21:08:15 nectar Exp $
+# $Id: Makefile,v 1.28 1999/01/22 21:58:56 nectar Exp $
 #
 
 DISTNAME=	mico-2.2.3
@@ -11,6 +11,8 @@ CATEGORIES=	devel
 MASTER_SITES=	http://diamant-atm.vsb.cs.uni-frankfurt.de/~mico/
 
 MAINTAINER=	scrappy@freebsd.org
+
+WWW_SITE=	http://diamant.vsb.cs.uni-frankfurt.de/~mico/
 
 .include <bsd.port.pre.mk>
 

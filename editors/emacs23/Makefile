@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.36 1999/01/27 07:41:10 fenner Exp $
+# $Id: Makefile,v 1.37 1999/03/08 07:28:22 asami Exp $
 #
 
 DISTNAME=	emacs-19.34b
@@ -12,6 +12,8 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
 
 MAINTAINER=	ports@FreeBSD.ORG
+
+Y2K=            http://www.gnu.org/software/year2000.html
 
 EMACS_VERSION=	19.34
 CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
