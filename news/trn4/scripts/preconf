@@ -1,7 +1,7 @@
 #!/bin/sh -
 #
 #	pre-configure script for Trn port to FreeBSD 2.0
-#	$Id: preconf,v 1.2 1994/10/21 00:00:00 smace Exp $
+#	$Id: preconf,v 1.1.1.1 1994/10/22 09:28:31 smace Exp $
 
 PortsDir=$1
   CurDir=$2
@@ -27,7 +27,8 @@ echo " 2) run Configure from scratch."
 echo ""
 echo "Due to a check done iside the Trn Configure script, I cannot run"
 echo "it automagically.  If you want to pick up the default configura-"
-echo "tion, simply press ENTER each time the script asks you anything."
+echo "tion, simply press ENTER each time the script asks you anything,"
+echo "EXPECT QUESTION ABOUT USING OLD CONFIG.SH"
 echo ""
 echo "With either choice, you will want to the the organization to match"
 echo "your site.  Also you will want to set your distribution codes"
@@ -139,20 +140,21 @@ d_getpwent='define'
 d_getcwd='undef'
 d_getwd='define'
 d_havetlib='define'
-termlib='-ltermcap'
+termlib='-ltermlib'
 d_ignoreorg='undef'
 d_internet='define'
 d_memcmp='define'
 d_memcpy='define'
 d_memset='define'
 d_mimeshow='undef'
-d_mimestore='undef'
+d_mimestore='define'
 mimeshow="none"
-mimestore="none"
+mimestore="/usr/local/bin/munpack"
 d_newsadm='undef'
 newsadmin='root'
 d_nntp='define'
 d_xdata='define'
+d_genauth='undef'
 servername='no default'
 d_nolnbuf='undef'
 d_normsig='define'
@@ -202,7 +204,7 @@ i_unistd='define'
 i_vfork='undef'
 ispell_options=''
 ispell_prg='none'
-libc='/usr/lib/libc.so.2.0'
+libc='/usr/lib/libc.so.2.1'
 plibpth='/usr/ccs/lib /usr/lib /usr/ucblib /usr/local/lib'
 xlibpth='/usr/lib/386 /lib/386'
 libs=' '
@@ -226,7 +228,7 @@ d_berknames='define'
 d_passnames='define'
 d_usgnames='undef'
 nametype='bsd'
-inewsloc='inews'
+inewsloc='/usr/local/lib/news/inews'
 newslib='/tmp'
 newslibexp='/tmp'
 newsspool='/tmp'
@@ -259,7 +261,7 @@ incpath=''
 mips=''
 mips_type=''
 usrinc='/usr/include'
-PATCHLEVEL="Version: 3.5"
+PATCHLEVEL="3.6 (20 Nov 1994)"
 CONFIG=true
 EOF
 
