@@ -51,9 +51,7 @@ CONFIGURE_ARGS=	--with-apxs=${PREFIX}/sbin/apxs \
 .endif
 
 CONFIGURE_ARGS+=--enable-versioning \
-		--with-system-regex \
-		--disable-debug \
-		--enable-track-vars \
+		--with-regex=system \
 		--without-gd \
 		--without-mysql
 
