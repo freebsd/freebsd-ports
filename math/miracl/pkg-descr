@@ -1,0 +1,20 @@
+[ excerpt from developer's web site ]
+
+MIRACL is a Big Number Library which implements all of the primitives
+necessary to design Big Number Cryptography into your real-world
+application. It is primarily a tool for cryptographic system
+implementors. RSA public key cryptography, Diffie-Hellman Key
+exchange, DSA digital signature, they are all just a few procedure
+calls away. Support is also included for even more esoteric Elliptic
+Curves and Lucas function based schemes. The latest version offers
+full support for Elliptic Curve Cryptography over GF(p) and GF(2m).
+Less well-known techniques can also be implemented as MIRACL allows
+you to work directly and efficiently with the big numbers that are
+the building blocks of number-theoretic cryptography. Although
+implemented as a C library, a well-thought out C++ wrapper is
+provided, which greatly simplifies program development. Most example
+programs (25+ of them) are provided in both C and C++ versions.
+
+WWW: http://indigo.ie/~mscott/
+
+-- lioux@FreeBSD.org
