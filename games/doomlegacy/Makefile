@@ -18,8 +18,8 @@ EXTRACT_ONLY=	${DIST}
 MAINTAINER=	bock@bock.nnov.ru
 COMMENT=	DooM Legacy: popular DooM clone!
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
-		nasm:${PORTSDIR}/devel/nasm
+EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
