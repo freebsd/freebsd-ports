@@ -5525,6 +5525,7 @@ pwd		src/bin/pwd
 pwd_mkdb	src/usr.sbin/pwd_mkdb
 pwgen		ports/sysutils/pwgen
 pwm		ports/x11-wm/pwm
+pxe		ports/net/pxe
 pxtools		ports/databases/pxtools
 py-4suite	ports/textproc/py-4suite
 py-HTMLgen	ports/www/py-HTMLgen
