@@ -1,5 +1,8 @@
 bin/netscript
 %%PORTDOCS%%share/doc/netscript/README
+%%PORTDOCS%%share/examples/netscript/gui/README
+%%PORTDOCS%%share/examples/netscript/gui/gdict.ruleset
+%%PORTDOCS%%share/examples/netscript/gui/gidentd.ruleset
 %%PORTDOCS%%share/examples/netscript/README
 %%PORTDOCS%%share/examples/netscript/dict.ruleset
 %%PORTDOCS%%share/examples/netscript/fingerd.ruleset
@@ -13,5 +16,6 @@ bin/netscript
 %%PORTDOCS%%share/examples/netscript/smtp.ruleset
 %%PORTDOCS%%share/examples/netscript/telnet.ruleset
 %%PORTDOCS%%share/examples/netscript/telnetd.ruleset
+%%PORTDOCS%%@dirrm share/examples/netscript/gui
 %%PORTDOCS%%@dirrm share/examples/netscript
 %%PORTDOCS%%@dirrm share/doc/netscript
