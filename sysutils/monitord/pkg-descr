@@ -1,0 +1,6 @@
+This port allows one to monitor other standalone services and automatically
+restart them if they are accidentally and unwittingly terminated, or crash
+either because of instability or a DoS attack.
+
+- Walt
+walt@erudition.net

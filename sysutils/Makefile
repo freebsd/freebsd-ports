@@ -52,6 +52,7 @@
     SUBDIR += manck
     SUBDIR += mei
     SUBDIR += mkisofs
+    SUBDIR += monitord
     SUBDIR += muse
     SUBDIR += no-login
     SUBDIR += npadmin
