@@ -3418,7 +3418,7 @@ fetch-list:
 # Generates patches.
 
 update-patches:
-	@toedit=`WRKSRC=${WRKSRC} PATCHDIR=${PATCHDIR} PATCH_LIST=${PATCHDIR}/patch-* \
+	@toedit=`PATCH_WRKSRC=${PATCH_WRKSRC} PATCHDIR=${PATCHDIR} PATCH_LIST=${PATCHDIR}/patch-* \
 		DIFF_ARGS=${DIFF_ARGS} DISTORIG=${DISTORIG} \
 		${SH} ${PORTSDIR}/Tools/scripts/update-patches`; \
 	case $$toedit in "");; \
