@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geda
-PORTVERSION=	20020209
+PORTVERSION=	20020825
 CATEGORIES=	cad
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -16,9 +16,12 @@ MAINTAINER=	bruno@tinkerbox.org
 
 BUILD_DEPENDS=	gesym-config:${PORTSDIR}/cad/geda-symbols \
 		gschem:${PORTSDIR}/cad/gschem \
-		gnetlist:${PORTSDIR}/cad/gnetlist
+		gnetlist:${PORTSDIR}/cad/gnetlist \
+		gmk_sym:${PORTSDIR}/cad/geda-utils \
+		gsymcheck:${PORTSDIR}/cad/geda-symcheck
+
 LIB_DEPENDS=	guile.10:${PORTSDIR}/lang/guile \
-		geda.15:${PORTSDIR}/cad/libgeda
+		geda.16:${PORTSDIR}/cad/libgeda
 
 NO_BUILD=	yes
 
