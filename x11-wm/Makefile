@@ -109,6 +109,7 @@
     SUBDIR += wmi
     SUBDIR += wmthemeinstall
     SUBDIR += wmx
+    SUBDIR += xcompmgr
     SUBDIR += xfce
     SUBDIR += xfce4
     SUBDIR += xfce4-desktop
