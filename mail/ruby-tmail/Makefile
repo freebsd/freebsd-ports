@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	tmail
-PORTVERSION=	0.10.6
-PORTREVISION=	1
+PORTVERSION=	0.10.7
 CATEGORIES=	mail ruby
 MASTER_SITES=	http://www.loveruby.net/archive/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-all
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -20,19 +18,24 @@ COMMENT=	A RFC2822/MIME compliant mail manipulating library for Ruby
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
+RUBY_SETUP=	install.rb
 USE_RUBY_FEATURES=	racc-runtime
 
-CONFIGURE_ARGS=	--with=tmail
-
-WRKDIR_TMAIL=	${WRKSRC}/packages/tmail
+DOCS_EN=	Incompatibilities	README.en	doc.en/*	\
+		*ChangeLog		BUGS		TODO
+DOCS_JA=	Incompatibilities.ja	README.ja	doc.ja/*
 
 do-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${CP} -R ${WRKDIR_TMAIL}/sample/ ${RUBY_MODEXAMPLESDIR}/
+	${CP} -R ${WRKSRC}/sample/ ${RUBY_MODEXAMPLESDIR}/
 	${MKDIR} ${RUBY_MODDOCDIR}/ja
-	${CP} -R ${WRKDIR_TMAIL}/Incompatibilities ${WRKDIR_TMAIL}/README.en ${WRKDIR_TMAIL}/doc.en/* ${RUBY_MODDOCDIR}/
-	${CP} -R ${WRKDIR_TMAIL}/Incompatibilities.ja ${WRKDIR_TMAIL}/README.ja ${WRKDIR_TMAIL}/doc.ja/* ${RUBY_MODDOCDIR}/ja/
+.for f in ${DOCS_EN}
+	${CP} -R ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+.endfor
+.for f in ${DOCS_JA}
+	${CP} -R ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/ja/
+.endfor
 .endif
 
 .include <bsd.port.mk>
