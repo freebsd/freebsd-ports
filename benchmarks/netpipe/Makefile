@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	netpipe
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	benchmarks net
 MASTER_SITES=	ftp://ftp.scl.ameslab.gov/pub/netpipe/ \
 		${MASTER_SITE_LOCAL}
