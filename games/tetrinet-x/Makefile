@@ -1,7 +1,7 @@
 # New ports collection makefile for:   tetrinet-x-1.13.16
 # Version required:    1.13.16
 # Date created:        11 Apr 1999
-# Whom:                gmarco@scotty.masternet.it
+# Whom:                gmarco@giovannelli.it
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES= http://www.giovannelli.it/~gmarco/files/ \
 	      ftp://ftp.dementia.nu/tetrinet/servers/tetrix/
 EXTRACT_SUFX= .tgz
 
-MAINTAINER= freebsd@scotty.masternet.it
+MAINTAINER= gmarco@giovannelli.it
 
 INSTALLDIR= ${PREFIX}/tetrinet-x
 

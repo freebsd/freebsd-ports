@@ -1,7 +1,7 @@
 # New ports collection makefile for:   games/pmars
 # Version required:    pmars v0.8
 # Date created:        15 Feb 1999
-# Whom:                gmarco@scotty.masternet.it
+# Whom:                gmarco@giovannelli.it
 #
 # $FreeBSD$
 #
@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.koth.org/pmars/ \
 		http://www.giovannelli.it/~gmarco/files/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	freebsd@scotty.masternet.it
+MAINTAINER=	gmarco@giovannelli.it
 
 USE_XLIB=	yes
 NO_WRKSUBDIR=	yes
