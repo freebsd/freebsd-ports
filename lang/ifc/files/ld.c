@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2002 Marius Strobl
+ * Copyright (c) 2002-2003 Marius Strobl
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -28,7 +28,7 @@
  * Based on a shell-script written by Dan Nelson <dnelson@allantgroup.com>
  * with some modifications by Alexander Leidinger <netchild@FreeBSD.org>.
  *
- * $FreeBSD: /tmp/pcvs/ports/lang/ifc/files/ld.c,v 1.1 2002-11-18 09:27:32 maho Exp $
+ * $FreeBSD: /tmp/pcvs/ports/lang/ifc/files/ld.c,v 1.2 2003-04-28 22:17:47 maho Exp $
  */
 
 /* Uses code marked: */
@@ -144,6 +144,7 @@ main(int argc, char *argv[], char *envp[])
 {
 	size_t i;
 	int bootstrap, cpp, dynamic, pic, gprof, stlinserted, threaded;
+	int f90 = 0;
 	char *libc, *libc_r, *prefix;
 	struct arglist al;
 
@@ -185,6 +186,11 @@ main(int argc, char *argv[], char *envp[])
 			continue;
 		}
 
+	 	if (ARGCMP("-MT")) {
+			threaded++;
+			continue;
+	    	}
+
 	 	if (ARGCMP("-PIC")) {
 			pic++;
 			continue;
@@ -215,24 +221,13 @@ main(int argc, char *argv[], char *envp[])
 		 * If IFC, do not use libstlport_icc.
 		 */
 		if (!strcmp(argv[i], "-lF90")) {
-			stlinserted++;
+			f90++;
 			continue;
 		}
 
 		/*
-		 * ICC links the thread safe libircmt instead of libirc when
-		 * told to generate threaded code by any of the compiler flags
-		 * "-mt", "-openmp" or "-parallel". We use this as an indicator
-		 * to link against libc_r.
-		 */
-		if (ARGCMP("-lircmt")) {
-			threaded++;
-			continue;
-		}
-
-		/*
-		 * Link against libc_p when "-pg" was given, "/usr/lib/gcrt1.o"
-		 * indicates this.
+		 * Link against libc_p when "-qp" or "-p" were given,
+		 * "/usr/lib/gcrt1.o" indicates this.
 		 */
 		if (ARGCMP("/usr/lib/gcrt1.o")) {
 			gprof++;
@@ -274,7 +269,7 @@ main(int argc, char *argv[], char *envp[])
 
 	for (i = 0; i < argc; i++) {
 	 	if (ARGCMP("-CPLUSPLUS") || ARGCMP("-BOOTSTRAPSTLPORT") ||
-		    ARGCMP("-PIC"))
+		    ARGCMP("-MT") || ARGCMP("-PIC"))
 			continue;
 
 		/* prepend "-melf_i386" to the commandline */
@@ -288,21 +283,12 @@ main(int argc, char *argv[], char *envp[])
 			continue;
 		}
 
-		/*
-		 * "-u ___pseudo_link" triggers linking of additional objects
-		 * from libcxa which seem to bloat the binaries, i.e. they
-		 * perfectly work without it. Intel Support promised to look
-		 * up what this servers for...
-		 */
-	 	if (ARGCMP("-u") || ARGCMP("___pseudo_link"))
-			continue;
-
 		/* Don't add obsolete flag "-Qy". */
 		if (ARGCMP("-Qy"))
 			continue;
 
 		/* Libunwind is only needed when compiling C++ source. */
-		if (!cpp && ARGCMP("-lunwind"))
+		if (!cpp && !f90 && ARGCMP("-lunwind"))
 			continue;
 
 		/*
@@ -330,10 +316,11 @@ main(int argc, char *argv[], char *envp[])
 			    strncmp(al.argv[al.argc - 1], "-B", strlen("-B")))
 				addarg(&al,
 				    dynamic ? "-Bdynamic" : "-Bstatic", 1);
-			if (cpp || threaded) {
 #if __FreeBSD_version < 500016
+			if (cpp || f90 || threaded) {
 				addarg(&al, libc_r, 0);
 #else
+			if (cpp || threaded) {
 				addarg(&al, libc, 0);
 				addarg(&al,
 				    dynamic ? "-Bdynamic" : "-Bstatic", 1);
@@ -368,23 +355,13 @@ main(int argc, char *argv[], char *envp[])
 		}
 
 		/*
-		 * Link and map files for C++ exception handling.
-		 */
-		if (!cpp &&
-		    (ARGCMP("--version-script") ||
-		    ARGCMPB(prefix, "/intel/compiler60/ia32/lib/icrt.link") ||
-		    ARGCMPB(prefix,
-			"/intel/compiler60/ia32/lib/icrt.internal.map")))
-			continue;
-
-		/*
 		 * Force libcxa and libunwind to static linkage, since the
 		 * dynamic versions have glibc dependencies.
 		 * Don't add superfluous -Bdynamic.
 		 */
 		if (ARGCMP("-Bdynamic") && i < argc - 1) {
 			if (!strcmp(argv[i + 1], "-lcxa") ||
-			    (cpp && !strcmp(argv[i + 1], "-lunwind"))) {
+			    ((cpp || f90) && !strcmp(argv[i + 1], "-lunwind"))) {
 				addarg(&al, "-Bstatic", 1);
 				continue;
 			}
@@ -397,7 +374,7 @@ main(int argc, char *argv[], char *envp[])
 		/* Don't add superfluous -Bstatic. */
 		if (ARGCMP("-Bstatic") && i < argc - 1 &&
 		    (!strcmp(argv[i + 1], "-lcprts") ||
-		    (!cpp && !strcmp(argv[i + 1], "-lunwind"))))
+		    (!cpp && !f90 && !strcmp(argv[i + 1], "-lunwind"))))
 			continue;
 
 		/*

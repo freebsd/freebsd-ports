@@ -1,0 +1,15 @@
+*/opt/intel/%%COMPILERDIR%%/docs/FortranReleaseNotes.htm
+*/opt/intel/%%COMPILERDIR%%/docs/asm_lan.pdf
+*/opt/intel/%%COMPILERDIR%%/docs/asm_ug*
+*/opt/intel/%%COMPILERDIR%%/docs/asm_ug.pdf
+*/opt/intel/%%COMPILERDIR%%/docs/f_ug*
+*/opt/intel/%%COMPILERDIR%%/docs/for_ug_lnx.pdf
+*/opt/intel/%%COMPILERDIR%%/docs/for_lib.pdf
+*/opt/intel/%%COMPILERDIR%%/docs/for_prg.pdf
+*/opt/intel/%%COMPILERDIR%%/docs/fcompindex.htm
+*/opt/intel/%%COMPILERDIR%%/docs/fredist.txt
+*/opt/intel/%%COMPILERDIR%%/docs/flex_ug.pdf
+*/opt/intel/%%COMPILERDIR%%/docs/icid.htm
+*/opt/intel/%%COMPILERDIR%%/docs/notes*
+*/opt/intel/%%COMPILERDIR%%/docs/ref*
+*/opt/intel/%%COMPILERDIR%%/training*

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2002 Marius Strobl
+ * Copyright (c) 2003  The FreeBSD Project
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,30 +23,39 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: /tmp/pcvs/ports/lang/ifc/files/cxa_atexit.c,v 1.2 2003-04-28 22:17:47 maho Exp $
+ * $FreeBSD$
  */
 
-#include <stdlib.h>
+#include <sys/types.h>
+#include <sys/mman.h>
 
-/*
- * The __cxa_atexit() function and friends are needed for full (IA64) C++ ABI
- * compatibility but FreeBSD doesn't have implemented them, yet. In addition
- * to the classic atexit() it is not only used to register functions to be
- * called at program exit but also to call them (C++ destructors in that case)
- * when a shared object is unloaded. For the later to work the dynamic linker
- * assigns a unique dynamic shared object handle to every shared object while
- * a handle of NULL represents a main program. When __cxa_finalize() is called
- * with a specific (non-NULL) handle as an argument all functions registered
- * via __cxa_atexit() and having the same handle are called.
- * The best we can do here to emulate that behaviour until FreeBSD supports
- * this is to register the functions via atexit(). While this certainly is a
- * bad hack it seems to work, even the current dynamic linker is assigning
- * the handles. I didn't see a function getting registered with an argument
- * so far.
- */
-int
-__cxa_atexit(void (*fn)(), void *arg, void *handle)
+typedef int32_t         l_long;
+typedef unsigned int    l_uint;
+typedef l_long          l_off_t;
+typedef l_uint          l_size_t;
+
+/* mmap options */
+#define LINUX_MAP_SHARED        0x0001
+#define LINUX_MAP_PRIVATE       0x0002
+#define LINUX_MAP_FIXED         0x0010
+#define LINUX_MAP_ANON          0x0020
+#define LINUX_MAP_GROWSDOWN     0x0100
+
+void *
+Mmap(void *addr, l_size_t len, int prot, int flags, int fd, l_off_t offset)
 {
+    int bsd_flags = 0;
 
-	return (handle ? atexit(fn) : 0);
+    if (flags & LINUX_MAP_SHARED )   bsd_flags |= MAP_SHARED;
+    if (flags & LINUX_MAP_PRIVATE)   bsd_flags |= MAP_PRIVATE;
+    if (flags & LINUX_MAP_FIXED  )   bsd_flags |= MAP_FIXED;
+    if (flags & LINUX_MAP_ANON   )   bsd_flags |= MAP_ANON;
+    else                             bsd_flags |= MAP_NOSYNC;
+    if (flags & LINUX_MAP_GROWSDOWN) bsd_flags |= MAP_STACK;
+
+    prot |= PROT_READ;	/* always required */
+    if (flags & LINUX_MAP_ANON)
+	fd = -1;
+
+    return mmap(addr, (size_t) len, prot, bsd_flags, fd, (off_t) offset);
 }

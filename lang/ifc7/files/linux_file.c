@@ -26,39 +26,12 @@
  * $FreeBSD$
  */
 
-short unsigned int *__ctype_b /* 0x0 */;
-
-#include <fcntl.h>
-#include <stdarg.h>
+#include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 
-typedef long long int __off64_t;
-
-int open64(const char *path, int flags, ...) {
-    int mode;
-    va_list args;
-
-    va_start (args, flags);
-    return open(path, flags, va_arg(args, int));
-    va_end (args);
-}
-
-
-int creat64(const char *path, unsigned int mode) {
-    return open(path, O_CREAT | O_TRUNC | O_WRONLY, mode);
-}
-
-
-__off64_t lseek64 (int __fd, __off64_t __offset, int __whence) {
-    return (__off64_t) lseek(__fd, (off_t) __offset, __whence);
-}                               
-
-
-int ftruncate64 (int __fd, __off64_t __length) {
-    return ftruncate(__fd, (off_t) __length);
-}
-
+static short unsigned int ctype_b[256] = { 0 };
+short unsigned int *__ctype_b = ctype_b;
 
 /* This matches struct stat64 in glibc2.1, hence the absolutely
  * insane amounts of padding around dev_t's.
@@ -155,9 +128,11 @@ void __lxstat64() {
     fprintf(stderr, __FILE__ ": __lxstat64() is dummy.\n");
 };
 
-int __xmknod (int vers /* 0x8 */, char *path /* 0xc */,
-	      unsigned int mode /* 0x10 */,
-	      long long unsigned int *dev /* 0x14 */)
+
+typedef int32_t         l_long;
+typedef l_long          l_off_t;
+
+l_off_t Lseek(int fildes, l_off_t offset, int whence)
 {
-    return mknod(path, mode, *dev);
-};
+    return (l_off_t) lseek(fildes, (off_t) offset, whence);
+}
