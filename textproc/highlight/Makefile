@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	highlight
-PORTVERSION=	2.0d10	#someday, people will stick to numbers and decimal points
+PORTVERSION=	2.0d11	#someday, people will stick to numbers and decimal points
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/d/-/}
@@ -32,13 +32,12 @@ post-patch:
 
 do-install:
 	cd ${WRKSRC} && ${GMAKE} ${INSTALL_TARGET}
-	${MKDIR} ${DATADIR} ${EXAMPLESDIR} ${DOCSDIR}
+	${MKDIR} ${DATADIR} ${DOCSDIR}
 	${MKDIR} ${DATADIR}/helpmsg ${DATADIR}/langDefs ${DATADIR}/themes
 	${INSTALL_DATA} ${WRKSRC}/helpmsg/* ${DATADIR}/helpmsg
 	${INSTALL_DATA} ${WRKSRC}/langDefs/*.lang ${DATADIR}/langDefs
 	${INSTALL_DATA} ${WRKSRC}/langDefs/extensions.conf ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/themes/* ${DATADIR}/themes
-	${INSTALL_DATA} ${WRKSRC}/cgi/* ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	${INSTALL_MAN} ${WRKSRC}/man/${MAN1}.gz ${MANPREFIX}/man/man1
 .for i in AUTHORS README ChangeLog COPYING INSTALL

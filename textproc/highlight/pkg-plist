@@ -4,8 +4,6 @@ bin/highlight
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%EXAMPLESDIR%%/README_CGI
-%%EXAMPLESDIR%%/highlight.cgi
 %%DATADIR%%/extensions.conf
 %%DATADIR%%/helpmsg/de.help
 %%DATADIR%%/helpmsg/en.help
@@ -49,6 +47,7 @@ bin/highlight
 %%DATADIR%%/langDefs/mel.lang
 %%DATADIR%%/langDefs/mo.lang
 %%DATADIR%%/langDefs/mod3.lang
+%%DATADIR%%/langDefs/nice.lang
 %%DATADIR%%/langDefs/nut.lang
 %%DATADIR%%/langDefs/pas.lang
 %%DATADIR%%/langDefs/php.lang
@@ -133,5 +132,4 @@ bin/highlight
 @dirrm %%DATADIR%%/langDefs
 @dirrm %%DATADIR%%/helpmsg
 @dirrm %%DATADIR%%
-@dirrm %%EXAMPLESDIR%%
 @dirrm %%DOCSDIR%%
