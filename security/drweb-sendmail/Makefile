@@ -7,6 +7,7 @@
 
 PORTNAME=	drweb_sendmail
 PORTVERSION=    4.27
+PORTREVISION=   1
 CATEGORIES=	security mail
 MASTER_SITES=	http://www.drweb.ru/ftp/web_pub/
 DISTNAME=	drwebd-${PORTVERSION}-freebsd4
@@ -56,18 +57,21 @@ post-extract:
 		clients/sendmail clients/drwebdc
 
 post-configure:
-	${MKDIR} ${WRKSRC}/libmilter ${WRKSRC}/libsmutil
+	${MKDIR} ${WRKSRC}/libmilter
+#        ${MKDIR} ${WRKSRC}/libsmutil
 	${CP} ${FILESDIR}/Makefile.libmilter ${WRKSRC}/libmilter/Makefile
-	${CP} ${FILESDIR}/Makefile.libsmutil ${WRKSRC}/libsmutil/Makefile
-.if defined(SENDMAIL_VERSION) && ${SENDMAIL_VERSION} == "8.11.1"
+#        ${CP} ${FILESDIR}/Makefile.libsmutil ${WRKSRC}/libsmutil/Makefile
+.if defined(SENDMAIL_VERSION)
+.if ${SENDMAIL_VERSION} == "8.11.1"
 	${CP} ${WITH_DRWEBSMF_SENDMAIL_DIR}/libmilter/listener.c ${WRKSRC}/libmilter
 	cd ${WRKSRC}/libmilter && ${PATCH} < ${WRKSRC}/../sendmail/listener-8.11.1.patch
-.elif defined(SENDMAIL_VERSION) && ${SENDMAIL_VERSION} == "8.12.0"
+.elif ${SENDMAIL_VERSION} == "8.12.0"
 	${CP} ${WITH_DRWEBSMF_SENDMAIL_DIR}/libmilter/listener.c ${WRKSRC}/libmilter
 	cd ${WRKSRC}/libmilter && ${PATCH} < ${WRKSRC}/../sendmail/listener-8.12.0.patch
 .endif
+.endif
 	cd ${WRKSRC}/libmilter && ${MAKE} clean && ${MAKE} SENDMAIL_DIR=${WITH_DRWEBSMF_SENDMAIL_DIR}
-	cd ${WRKSRC}/libsmutil && ${MAKE} clean && ${MAKE} SENDMAIL_DIR=${WITH_DRWEBSMF_SENDMAIL_DIR}
+#        cd ${WRKSRC}/libsmutil && ${MAKE} clean && ${MAKE} SENDMAIL_DIR=${WITH_DRWEBSMF_SENDMAIL_DIR}
 	cd ${WRKSRC} && { \
 		${ECHO_CMD} y; \
 		${ECHO_CMD} n; \

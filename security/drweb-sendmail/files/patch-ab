@@ -1,0 +1,11 @@
+--- src/Makefile.bsd.orig	Tue Oct 16 19:03:59 2001
++++ src/Makefile.bsd	Tue Feb 12 01:07:07 2002
+@@ -63,7 +63,7 @@
+ 
+ .c.o: 
+ 	$(CC) -c $(ADD_CFLAGS) -D__SIGNAL_BASED_DW $<
+-	$(CC) -c $(ADD_CFLAGS) -D__THREAD_BASED_DW $< -o ${.PREFIX}_r.o
++	$(CC) -c $(ADD_CFLAGS) -D__THREAD_BASED_DW -D_THREAD_SAFE $< -o ${.PREFIX}_r.o
+ 
+ clean:
+ 	rm -f *.bak *~ *.err *.o ../lib/libdwclient*.a ../include/*.h
