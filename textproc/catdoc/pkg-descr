@@ -1,0 +1,10 @@
+This is a program for viewing MS Word documents.  It produces plain
+text output, and can optionally convert non-standard characters into 
+TeX control sequences.
+
+There is also a cute little tk program included called wordview, which
+is basically a small GUI frontend to catdoc for viewing word documents.
+You'll need TK 4.2 (in /usr/ports/x11/tk42) to use this.
+
+- Brion
+brion@queeg.com
