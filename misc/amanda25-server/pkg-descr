@@ -1,0 +1,68 @@
+WHAT IS AMANDA?
+---------------
+
+This is an alpha-test release of Amanda, the Advanced Maryland Automatic
+Network Disk Archiver.  Amanda is a backup system designed to archive many
+computers on a network to a single large-capacity tape drive.  This release
+is currently in daily use at the University of Maryland at College Park
+Computer Science Department, backing up all the disks on all the
+workstations in the department: currently over 70 gigabytes of data across
+more than 400 filesystems on more than 146 workstations and servers, using
+a single 5 Gigabyte Exabyte EXB-8500.  Here are some features of Amanda:
+
+  * written in C, freely distributable.
+  * built on top of standard backup software: BSD Unix dump/restore, and
+    later GNU Tar and others.
+  * will back up multiple machines in parallel to a holding disk, blasting
+    finished dumps one by one to tape as fast as we can write files to
+    tape.  For example, a ~2 Gb 8mm tape on a ~240K/s interface to a host
+    with a large holding disk can be filled by Amanda in under 4 hours.
+  * does simple tape management: will not overwrite the wrong tape.
+  * supports tape changers via a generic interface.  Easily customizable to
+    any type of tape carousel, robot, or stacker that can be controlled via
+    the unix command line.
+  * supports Kerberos 4 security, including encrypted dumps.  The Kerberos
+    support is available as a separate add-on package, see the file
+    KERBEROS.HOW-TO-GET on the ftp site, and the file docs/KERBEROS in this
+    package, for more details.
+  * for a restore, tells you what tapes you need, and finds the proper
+    backup image on the tape for you.
+  * recovers gracefully from errors, including down or hung machines.
+  * reports results, including all errors in detail, in email to operators.
+  * will dynamically adjust backup schedule to keep within constraints: no
+    more juggling by hand when adding disks and computers to network.
+  * includes a pre-run checker program, that conducts sanity checks on both
+    the tape server host and all the client hosts (in parallel), and will
+    send an e-mail report of any problems that could cause the backups to
+    fail.
+  * can compress dumps before sending over net, with either compress or gzip.
+  * can optionally syncronize with external backups, for those large
+    timesharing computers where you want to do fu--------------------------------------------
+
+Amanda requires a host that is mostly idle at night, with a large capacity
+tape drive (e.g. an EXABYTE or DAT tape).  This becomes the "tape server
+host".  All the computers you are going to dump are the "backup client
+hosts".  The server host can also be a client host.
+
+Amanda works best with one or more large "holding disk" partition on the
+server host available to it for buffering dumps before writing to tape.
+The holding disk allows Amanda to run backups in parallel to the disk, only
+writing them to tape when the backup is finished.  Note that the holding
+disk is not required: without it Amanda will run backups sequentially to
+the tape drive.  Running it this way kills the great performance, but still
+allows you to take advantage of Amanda's other features.
+
+As a rule of thumb, for best performance the holding disk should be larger
+than the dump output from your largest disk partitions.  For example, if
+you are backing up some full gigabyte disks that compress down to 500 MB,
+then you'll want 500 MB on your holding disk.  On the other hand, if those
+gigabyte drives are partitioned into 500 MB filesystems, they'll probably
+compress down to 250 MB and you'll only need that much on your holding
+disk.  Amanda will perform better with larger holding disks.  We use 800 MB
+for our holding disk.
+
+Actually, Amanda will still work if you have full dumps that are larger
+than the holding disk: Amanda will send those dumps directly to tape one at
+a time.  If you have many such dumps you will be limited by the dump speed
+of those machines.
+
