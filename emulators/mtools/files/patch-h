@@ -1,0 +1,15 @@
+--- devices.c~	Fri Mar 30 01:50:14 2001
++++ devices.c	Fri Mar 30 01:54:49 2001
+@@ -789,9 +789,9 @@
+ #ifdef OS_freebsd
+ #define predefined_devices
+ struct device devices[] = {
+-	{"/dev/rfd0.1440", 'A', FHD312},
+-	{"/dev/rfd0.720",  'A', FDD312},
+-	{"/dev/rfd1.1200", 'B', MHD514},
++	{"/dev/fd0.1440", 'A', FHD312},
++	{"/dev/fd0.720",  'A', FDD312},
++	{"/dev/fd1.1200", 'B', MHD514},
+ 	{"/dev/sd0s1",     'C', GENHD},
+ 	REMOTE
+ };
