@@ -1,14 +1,11 @@
-
-$FreeBSD$
-
---- config.h.in	2001/07/30 12:43:27	1.1
-+++ config.h.in	2001/07/30 12:44:21
-@@ -1,5 +1,8 @@
- /* config.h.in.  Generated automatically from configure.in by autoheader.  */
- 
-+/* XXX */
-+#define HAVE_VFSCANF
+--- config.h.in.orig	Sun Nov  3 16:55:05 2002
++++ config.h.in	Tue Nov 19 00:06:05 2002
+@@ -1,4 +1,8 @@
+ /* config.h.in.  Generated from configure.in by autoheader.  */
 +
- /* Define if you have the strftime function.  */
- #undef HAVE_STRFTIME
- 
++/* XXX */
++#define GAVE_VFSCANF
++
+ #undef PACKAGE
+ #undef VERSION
+ #undef HAVE_LIBZ
