@@ -367,9 +367,6 @@
     SUBDIR += truetypefonts
     SUBDIR += typist
     SUBDIR += vera-fpw
-    SUBDIR += vfghostscript
-    SUBDIR += vfghostscript5
-    SUBDIR += vfghostscript55
     SUBDIR += vflib
     SUBDIR += vftool
     SUBDIR += vfxdvi118
