@@ -1,0 +1,9 @@
+@unexec install-info --delete %D/info/guile-www.info %D/info/dir
+info/guile-www.info
+@exec install-info %D/info/guile-www.info %D/info/dir
+share/guile/www/cgi.scm
+share/guile/www/http.scm
+share/guile/www/main.scm
+share/guile/www/url.scm
+@dirrm share/guile/www
+@unexec rmdir %D/share/guile 2>/dev/null || true
