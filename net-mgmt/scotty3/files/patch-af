@@ -1,0 +1,20 @@
+--- ../tnm/generic/tnmInt.h.orig	Tue Sep 21 14:17:18 1999
++++ ../tnm/generic/tnmInt.h	Tue Dec  9 00:06:26 2003
+@@ -54,11 +54,16 @@
+  */
+ 
+ #define TnmGetTime		TclpGetTime
++#if TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION == 4
++#define TnmCreateDirectory(p)	mkdir (p, 0777)
++#define TnmStat			stat
++#else
+ #define TnmCreateDirectory	TclpCreateDirectory
+-#if TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION == 8 && TCL_RELEASE_SERIAL > 2 
++#if TCL_MAJOR_VERSION == 8 && TCL_MINOR_VERSION == 3 && TCL_RELEASE_SERIAL > 2 
+ #define TnmStat			TclStat
+ #else
+ #define TnmStat			stat
++#endif
+ #endif
+ 
+ EXTERN void
