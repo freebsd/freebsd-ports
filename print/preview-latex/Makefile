@@ -7,6 +7,7 @@
 
 PORTNAME=	preview-latex
 PORTVERSION=	0.7.2b
+PORTREVISION=	1
 CATEGORIES=	print elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= ${PORTNAME}
@@ -17,7 +18,8 @@ MAINTAINER=	yoichi@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/auctex/latex.el:${PORTSDIR}/print/auctex \
 		gs:${PORTSDIR}/print/ghostscript-gnu
 RUN_DEPENDS=	${LOCALBASE}/${EMACS_SITE_LISPDIR}/auctex/latex.el:${PORTSDIR}/print/auctex \
-		gs:${PORTSDIR}/print/ghostscript-gnu
+		gs:${PORTSDIR}/print/ghostscript-gnu \
+		mktexlsr:${PORTSDIR}/print/teTeX
 
 EMACS_PORT_NAME?=	emacs21
 
@@ -30,6 +32,7 @@ CONFIGURE_ARGS+=	--disable-8bit-test
 DOCS=	ChangeLog INSTALL PROBLEMS README latex/README-preview RELEASE TODO
 
 post-install:
+	mktexlsr
 	${INSTALL_DATA} ${WRKSRC}/preview-latex.el ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/preview/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
