@@ -1,0 +1,56 @@
+--- extconf.rb.orig	Wed Feb 16 01:31:59 2000
++++ extconf.rb	Thu Aug 24 21:18:28 2000
+@@ -26,8 +26,8 @@
+   glu_libname = "glu32"
+   glut_libname = "glut"
+ else
+-  $CFLAGS="-I/usr/local/include -I. -I/usr/X11R6/include"
+-  $LDFLAGS="-L/usr/local/lib -L/usr/X11R6/lib"
++  dir_config("x11")
++  dir_config("ruby")
+   $libs = append_library($libs, "Xmu")
+   $libs = append_library($libs, "X11")
+   gl_libname = "GL"
+@@ -47,7 +47,7 @@
+         }
+     }
+     File.unlink("Makefile")
+-    modules = modules + "opengl.#{CONFIG[\"DLEXT\"]}" 
++    modules = modules + "opengl.#{CONFIG['DLEXT']}" 
+     ogl_flg = true
+ else
+     p "can't create OpenGL module!"
+@@ -67,7 +67,7 @@
+         }
+     }
+     File.unlink("Makefile")
+-    modules = "glut.#{CONFIG[\"DLEXT\"]} " + modules
++    modules = "glut.#{CONFIG['DLEXT']} " + modules
+     glut_flg = true
+ end
+ 
+@@ -76,11 +76,11 @@
+ SHELL = /bin/sh
+ all: #{modules}
+ 
+-opengl.#{CONFIG[\"DLEXT\"]}: rbogl.c ogl.c glu.c rbogl.h
++opengl.#{CONFIG['DLEXT']}: rbogl.c ogl.c glu.c rbogl.h
+ 	@echo Now Making opengl extend module
+ 	@$(MAKE) -f Makefile.ogl
+ 
+-glut.#{CONFIG[\"DLEXT\"]}: glut.c
++glut.#{CONFIG['DLEXT']}: glut.c
+ 	@echo Now Making glut extend module
+ 	@$(MAKE) -f Makefile.glut
+ 
+@@ -94,6 +94,10 @@
+ install: #{modules}
+ #{"\t@$(MAKE) -f Makefile.ogl install" if (ogl_flg)}
+ #{"\t@$(MAKE) -f Makefile.glut install" if (glut_flg)}
++
++site-install: #{modules}
++#{"\t@$(MAKE) -f Makefile.ogl site-install" if (ogl_flg)}
++#{"\t@$(MAKE) -f Makefile.glut site-install" if (glut_flg)}
+ MAKEFILE
+ }
+ 
