@@ -3,11 +3,11 @@
 # Date created:		19 Feb 1998
 # Whom:			eivind
 #
-# $Id: Makefile,v 1.3 1998/03/08 23:29:59 fenner Exp $
+# $Id: Makefile,v 1.4 1998/03/11 00:01:05 eivind Exp $
 #
 
-PKGNAME=	xscavenger-1.3.2
 DISTNAME=	xscavenger-132
+PKGNAME=	xscavenger-1.3.2
 CATEGORIES=	games
 MASTER_SITES=	http://epyx.com/dash/
 EXTRACT_SUFX=	.tgz
