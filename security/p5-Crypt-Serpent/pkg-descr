@@ -1,0 +1,17 @@
+Serpent was designed by Ross Anderson, Eli Biham and Lars Knudsen
+as a candidate for the Advanced Encryption Standard. It has been
+selected as one of the five finalists in the AES competition.
+Serpent is faster than DES and more secure than Triple DES. It
+provides users with a very high level of assurance that no shortcut
+attack will be found. To achieve this, the algorithm's designers
+limited themselves to well understood cryptography mechanisms, so
+that they could rely on the wide experience and proven techniques
+of block cipher cryptanalysis. The algorithm uses twice as many
+rounds as are necessary to block all currently known shortcut
+attacks. This means that Serpent should be safe against as yet
+unknown attacks that may be capable of breaking the standard 16
+rounds used in many types of encryption today. However, the fact
+that Serpent uses so many rounds means that it is the slowest of
+the five AES finalists. But this shouldn't be an issue because it
+still outperforms Triple DES. The algorithm's designers maintain
+that Serpent has a service life of at least a century.
