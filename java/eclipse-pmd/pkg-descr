@@ -1,0 +1,12 @@
+PMD scans Java source code and looks for potential problems like:
+
+    * Unused local variables
+    * Empty catch blocks
+    * Unused parameters
+    * Empty 'if' statements
+    * Duplicate import statements
+    * Unused private methods
+    * Classes which could be Singletons
+    * Short/long variable and method names
+
+WWW: http://pmd.sourceforge.net/
