@@ -7,7 +7,7 @@
 
 PORTNAME=	ImageMagick
 PORTVERSION=	5.5.7.11
-PORTREVISION=   0
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://gd.tuwien.ac.at/pub/graphics/%SUBDIR%/ \
@@ -27,16 +27,16 @@ MASTER_SITE_SUBDIR=	${PORTNAME:L} ${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Image processing tools (interactive optional--misc/display conflict)
+COMMENT=	Image processing tools
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_PERL5=	yes
 USE_BZIP2=	yes
+USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	# none
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shared
 INSTALLS_SHLIB=	yes
@@ -199,6 +199,7 @@ PKGNAMESUFFIX+=		-nox11
 CONFIGURE_ARGS+=	--without-x --without-mpeg2
 PLIST_SUB+=		X11='@comment '
 .else
+CONFLICTS+=		display
 CONFIGURE_ARGS+=	--with-x
 USE_XLIB=		yes
 MAN1+=			animate.1 display.1 import.1
@@ -228,11 +229,12 @@ INSTALL_TARGET=	install install-data-html
 .endif
 
 post-patch:
-# Do not use PTHREAD_LIBS here
-	@${PERL} -pi -e 's|-lpthread|-lc_r|g ; \
+# do not use "-pthread" here
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS:S/-pthread/-lc_r/}|g ; \
+		 s|-pthread|${PTHREAD_LIBS:S/-pthread/-lc_r/}|g ; \
 		 s|^tagnames=|#tagnames=|g ; \
 		 s|lcms/lcms.h|lcms.h|g ; \
-		 s|lcms_lcms_h|lcms_h|g' ${WRKSRC}/configure
+		 s|lcms_lcms_h|lcms_h|g' ${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 # version neither libraries nor directories
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${PERL} -pi -e \
 		's|pkgdocdir =.*$$|pkgdocdir = ${DOCSDIR}/|g ; \
