@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	BBBike
-PORTVERSION=	3.12
+PORTVERSION=	3.13
 CATEGORIES=	german
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=     bbbike
@@ -14,7 +14,10 @@ MASTER_SITE_SUBDIR=     bbbike
 MAINTAINER=	slaven@rezic.de
 COMMENT=	A route-finder for cyclists in Berlin and Brandenburg
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk
+BUILD_DEPENDS=	${SITE_PERL}/Inline.pm:${PORTSDIR}/devel/p5-Inline \
+		${SITE_PERL}/${PERL_ARCH}/CDB_File.pm:${PORTSDIR}/databases/p5-CDB_File
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Tk.pm:${PORTSDIR}/x11-toolkits/p5-Tk \
+		${BUILD_DEPENDS}
 
 USE_PERL5=	YES
 POD2MAN=	pod2man
@@ -28,8 +31,8 @@ PLIST=		${PKGDIR}/pkg-plist.5005
 .endif
 
 do-build:
-	cd ${WRKSRC}/ext/BBBikeXS; ${PERL5} Makefile.PL; make all install clean; ${RM} Makefile.old
-	cd ${WRKSRC}/ext/VirtArray; ${PERL5} Makefile.PL; make all install clean; ${RM} Makefile.old
+	cd ${WRKSRC}/ext && ${MAKE} PERL=${PERL5} all install
+	cd ${WRKSRC}/ext && ${MAKE} PERL=${PERL5} clean
 	cd ${WRKSRC}; ${POD2MAN} --lax bbbike.pod > bbbike.1
 	${MV} ${WRKSRC}/bbbike ${WRKSRC}/bbbike.tmp
 	${ECHO_CMD} "#! ${PERL}" > ${WRKSRC}/bbbike
@@ -37,10 +40,12 @@ do-build:
 	${RM} -f ${WRKSRC}/bbbike.tmp
 	${CHMOD} 0755 ${WRKSRC}/bbbike
 
-BBBIKEEXE=	bbbike cbbbike bbbikeclient cmdbbbike
+BBBIKEEXE=	bbbike cbbbike bbbikeclient cmdbbbike smsbbbike
 
 do-install:
 	-${RM} -rf ${MYDESTDIR}
+	${INSTALL_MAN} ${WRKSRC}/bbbike.1 ${PREFIX}/man/man1
+	${RM} -f ${WRKSRC}/bbbike.1
 	${CP} -r  ${WRKSRC} ${MYDESTDIR}
 	${FIND} ${MYDESTDIR} -exec ${CHMOD} ugo+r {} \;
 	${FIND} ${MYDESTDIR} -perm -u=x -exec ${CHMOD} go+x {} \;
@@ -48,6 +53,5 @@ do-install:
 	-${RM} -f ${PREFIX}/bin/$f
 	${LN} -s  ${MYDESTDIR}/$f ${PREFIX}/bin/$f
 .endfor
-	${INSTALL_MAN} ${WRKSRC}/bbbike.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
