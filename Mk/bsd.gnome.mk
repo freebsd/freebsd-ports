@@ -224,7 +224,7 @@ glib20_LIB_DEPENDS=	glib-2.0.200:${PORTSDIR}/devel/glib20
 glib20_DETECT=		${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc
 glib20_USE_GNOME_IMPL=gnometarget pkgconfig
 
-atk_LIB_DEPENDS=	atk-1.0.400:${PORTSDIR}/devel/atk
+atk_LIB_DEPENDS=	atk-1.0.400:${PORTSDIR}/accessibility/atk
 atk_DETECT=		${LOCALBASE}/libdata/pkgconfig/atk.pc
 atk_USE_GNOME_IMPL=	glib20
 
@@ -272,7 +272,7 @@ gnomevfs2_LIB_DEPENDS=	gnomevfs-2.400:${PORTSDIR}/devel/gnomevfs2
 gnomevfs2_DETECT=	${X11BASE}/libdata/pkgconfig/gnome-vfs-2.0.pc
 gnomevfs2_USE_GNOME_IMPL=gconf2 libbonobo gnomemimedata
 
-gail_LIB_DEPENDS=	gailutil.17:${PORTSDIR}/x11-toolkits/gail
+gail_LIB_DEPENDS=	gailutil.17:${PORTSDIR}/accessibility/gail
 gail_DETECT=		${X11BASE}/libdata/pkgconfig/gail.pc
 gail_USE_GNOME_IMPL=	libgnomecanvas
 
@@ -304,7 +304,7 @@ libgnomeui_LIB_DEPENDS=		gnomeui-2.400:${PORTSDIR}/x11-toolkits/libgnomeui
 libgnomeui_DETECT=		${X11BASE}/libdata/pkgconfig/libgnomeui-2.0.pc
 libgnomeui_USE_GNOME_IMPL=	libbonoboui
 
-atspi_LIB_DEPENDS=	spi.9:${PORTSDIR}/x11-toolkits/at-spi
+atspi_LIB_DEPENDS=	spi.9:${PORTSDIR}/accessibility/at-spi
 atspi_DETECT=		${X11BASE}/libdata/pkgconfig/cspi-1.0.pc
 atspi_USE_GNOME_IMPL=	gail libbonobo
 
