@@ -6,20 +6,22 @@
 #
 
 PORTNAME=		kqueue
-PORTVERSION=		1.3
+PORTVERSION=		1.4
 PORTREVISION=		1
 CATEGORIES=		devel python
-MASTER_SITES=		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	dwhite
+MASTER_SITES=		http://ox.eicat.ca/~dgilbert/files/
 PKGNAMEPREFIX=		py-
 DISTNAME=		PyKQueue-${PORTVERSION}
+EXTRACT_SUFX=		.tbz
 
-MAINTAINER=		dwhite@FreeBSD.org
+MAINTAINER=		ports@dclg.ca
 COMMENT=	Python interface to kqueue(2) and kevent(2) system calls
 
+USE_BZIP2=		yes
 USE_PYTHON=		yes
 USE_REINPLACE=		yes
-PLIST_SUB+=		PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S/^${LOCALBASE}\///g}
+FILES=			kqsyscallmodule.so KQueue.py KQueue.pyc
+PLIST_FILES=		${FILES:S+^+%%PYTHON_SITELIBDIR%%/+g}
 
 .include <bsd.port.pre.mk>
 
