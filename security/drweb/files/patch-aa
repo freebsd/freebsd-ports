@@ -1,92 +1,148 @@
---- etc/drweb/drweb32.ini.orig	Mon Jan  6 21:03:02 2003
-+++ etc/drweb/drweb32.ini	Sat Jun  7 12:32:31 2003
-@@ -1,11 +1,11 @@
- [Scanner]
--EnginePath = "/opt/drweb/lib/drweb32.dll"
--VirusBase = "/var/drweb/bases/*.vdb", "/var/drweb/bases/*.VDB"
--MoveFilesTo = "/var/drweb/infected"
--;LngFileName = "/opt/drweb/lib/russian.dwl"
+--- usr/local/etc/drweb/drweb32.ini.orig	Thu Oct  9 15:06:27 2003
++++ usr/local/etc/drweb/drweb32.ini	Thu Nov  6 18:49:39 2003
+@@ -7,23 +7,23 @@
+ ;        also used by the updating module to update the search module. You
+ ;        may specify relational path, but it is strongly recommended to make
+ ;        it absolute.
+-EnginePath = "/usr/local/drweb/lib/drweb32.dll"
 +EnginePath = "%INSTALL%/lib/drweb32.dll"
-+VirusBase = "%INSTALL%/bases/*.vdb", "%INSTALL%/bases/*.VDB"
-+MoveFilesTo = "%INSTALL%/infected"
+ 
+ ;VirusBase = { list of the paths (masks) to the files, usual extension is vdb }
+ ;        Masks for the loaded virus bases. This parameter is also used by
+ ;        the updating module to update antivirus' bases. A few masks can be
+ ;        enumerated.
+-VirusBase = "/var/drweb/bases/*.vdb"
++VirusBase = "%INSTALL%/bases/*.vdb"
+ 
+ ;LngFileName = { path to the language resource file, usual extension - dwl }
+ ;        Localization file location.
+-;LngFileName = "/usr/local/drweb/lib/russian.dwl"
 +;LngFileName = "%INSTALL%/lib/russian.dwl"
  
--Key = "/opt/drweb/drweb.key"
--LogFileName = "/var/drweb/log/drweb.log"
-+Key = "%INSTALL%/drweb.key"
-+LogFileName = "/dev/null"
- RenameFilesTo = #??
- FilesTypes = EXE,COM,SYS,OV?,BAT,BIN,DRV,PRG,BOO,SCR,CMD,VXD,386,DLL,FON,DO?
- FilesTypes = XL?,WIZ,RTF,CL*,HT*,VB*,JS*,INF,AR?,ZIP,R??,PP?,OBJ,LIB,HLP,MD?
-@@ -30,42 +30,42 @@
- ScanSubDirectories = Yes
- PromptOnAction = No
- LimitLog = No
--MaxLogSize = 512
-+;MaxLogSize = 512
- OutputMode = Terminal
- FollowLinks = No
- 
--UpdatePath = "/opt/drweb/updates"
-+UpdatePath = "%INSTALL%/updates"
- 
- RecodeNonprintable = Yes
- RecodeMode = QuotedPrintable
- RecodeChar = "?"
- 
- [Daemon]
--EnginePath = "/opt/drweb/lib/drweb32.dll"
--VirusBase = "/var/drweb/bases/*.vdb", "/var/drweb/bases/*.VDB"
--MoveFilesTo = "/var/drweb/infected"
--;LngFileName = "/opt/drweb/lib/russian.dwl"
-+EnginePath = "%INSTALL%/lib/drweb32.dll"
-+VirusBase = "%INSTALL%/bases/*.vdb", "%INSTALL%/bases/*.VDB"
-+MoveFilesTo = "%INSTALL%/infected"
-+;LngFileName = "%INSTALL%/lib/russian.dwl"
- 
--Key = "/opt/drweb/drwebd.key"
+ ;Key = {path to the file, usual extension is key }
+ ;        Location of the file with the registration key. You may specify
+ ;        relational path, but it is strongly recommended to make it
+ ;        absolute.
+-Key = "/usr/local/drweb/drwebd.key"
 +Key = "%INSTALL%/drwebd.key"
- LogTime = Yes
- LogFileName = "syslog"
--;LogFileName = "/var/drweb/log/drwebd.log"
--;BusyFile = "/var/drweb/run/drwebd.bsy"
--;PidFile = "/var/drweb/run/drwebd.pid"
-+;LogFileName = "/var/log/drwebd.log"
-+;BusyFile = "%INSTALL%/run/drwebd.bsy"
-+PidFile = "%INSTALL%/run/drwebd.pid"
  
--Socket 3000 127.0.0.1
--;Scket /var/drweb/run/drwebd.socket 666
+ ; --- Scanning settings: ---
+ 
+@@ -96,7 +96,7 @@
+ ;        of their importance, you can find out where the daemon's report will
+ ;        be written to, basing on these two parameters and the contents of
+ ;        the configuration file syslog (usually /etc/syslogd.conf).
+-LogFileName = "/var/drweb/log/drwebd.log"
++LogFileName = "%INSTALL%/log/drwebd.log"
+ ;LogFileName = "syslog"
+ ;SyslogFacility = "Daemon"
+ ;SyslogPriority = "Info"
+@@ -141,7 +141,7 @@
+ ;OutputMode = { Terminal | Quiet }
+ ;        Mode of output information on the console, Quiet cancels
+ ;        output.
+-OutputMode = Terminal
++OutputMode = Quiet
+ 
+ ;--- User settings: ---
+ 
+@@ -170,10 +170,11 @@
+ ;        Example: Socket 3000 127.0.0.1, 192.168.0.100
+ ;        The second form describes unix-socket, {file} - socket name,
+ ;        {access} - octal value of access rights.
+-;        Example: Socket /var/run/drwebd.socket 666 
++;        Example: Socket /var/run/drwebd.socket 666
+ ;        Number of socket keys is not limited, daemon will work with all
+ ;        correctly described sockets.
+-Socket = 3000 127.0.0.1
 +;Socket 3000 127.0.0.1
 +Socket = %INSTALL%/run/drwebd.sock 660
  
- SocketTimeout = 40
- SocketReuseAddr = Yes
- FileTimeout = 40
--OutputMode = Terminal
-+OutputMode = Quiet
- LimitLog = No
--MaxLogSize = 512
-+;MaxLogSize = 512
- LogScanned = Yes
- LogInfo = Yes
- LogPacked = Yes
--;User = drweb
-+User = drweb
- ;UserID = 
- ;GroupID = 
- ScanFiles = All
-@@ -75,10 +75,10 @@
- SyslogPriority = "Alert"
+ ;ListeningQueue = "value"
+ ;        Defines sockets queue maximum size. Value may vary from 0 to
+@@ -187,7 +188,7 @@
+ ;        Default value:
+ ;               "/var/run/drwebd.pid" (Attention!!! Only the programs executed
+ ;               with the root rights have write access to /var/run).
+-PidFile = "/var/drweb/run/drwebd.pid"
++PidFile = "%INSTALL%/run/drwebd.pid"
  
- FilterRule X-Mailer ".*Mass.*Sender.*" Reject
--FilterRule To ".*undisclosed.*recipient.*" Reject
--FilterRule Subject ".*free.*xxx.*" Reject
-+;FilterRule To ".*undisclosed.*recipient.*" Reject
-+;FilterRule Subject ".*free.*xxx.*" Reject
+ ;BusyFile = { path to file }
+ ;        Daemon's busy file name: it is created by the scanning "copy" of
+@@ -196,7 +197,7 @@
+ ;        every "copy" of the daemon gets expanded with a point and ASCIIZ
+ ;        representation of PID (e.g., /var/run/drwebd.bsy.123456).
+ ;        Default value: absent (file does not get created)
+-;BusyFile = "/var/drweb/run/drwebd.bsy"
++;BusyFile = "%INSTALL%/run/drwebd.bsy"
  
--UpdatePath = "/opt/drweb/updates"
+ ;MaxChildren = "value"
+ ;        Sets maximum amount of simultaneously working child (scanning)
+@@ -252,12 +253,12 @@
+ ;        MaxCompressionRatio switch). 
+ ;CompressionCheckThreshold = 1024
+ 
+-MoveFilesTo = "/var/drweb/infected"
++MoveFilesTo = "%INSTALL%/infected"
+ RenameFilesTo = #??
+ 
+ ;UpdatePath = path
+ ;       This parameter used bu update script.
+-UpdatePath = "/var/drweb/updates"
 +UpdatePath = "%INSTALL%/updates"
  
- RecodeNonprintable = Yes
- RecodeMode = QuotedPrintable
+ ;--- Filter settings: ---
+ ;
+@@ -318,23 +319,23 @@
+ ;        also used by the updating module to update the search module. You
+ ;        may specify relational path, but it is strongly recommended to make
+ ;        it absolute.
+-EnginePath = "/usr/local/drweb/lib/drweb32.dll"
++EnginePath = "%INSTALL%/lib/drweb32.dll"
+ 
+ ;VirusBase = { list of the paths (masks) to the files, usual extension is vdb }
+ ;        Masks for the loaded virus bases. This parameter is also used by
+ ;        the updating module to update antivirus' bases. A few masks can be
+ ;        enumerated.
+-VirusBase = "/var/drweb/bases/*.vdb", "/var/drweb/bases/*.VDB"
++VirusBase = "%INSTALL%/bases/*.vdb", "%INSTALL%/bases/*.VDB"
+ 
+ ;LngFileName = { path to the language resource file, usual extension - dwl }
+ ;        Localization file location.
+-;LngFileName = "/usr/local/drweb/lib/russian.dwl"
++;LngFileName = "%INSTALL%/lib/russian.dwl"
+ 
+ ;Key = {path to the file, usual extension is key }
+ ;        Location of the file with the registration key. You may specify
+ ;        relational path, but it is strongly recommended to make it
+ ;        absolute.
+-Key = "/usr/local/drweb/drweb.key"
++Key = "%INSTALL%/drweb.key"
+ 
+ ;FilesTypes = { extension list }
+ ;        Types of files that will get checked if by type scanning is
+@@ -410,7 +411,7 @@
+ ActionInfectedMail = Report
+ ActionInfectedContainer = Report
+ 
+-MoveFilesTo = "/var/drweb/infected"
++MoveFilesTo = "%INSTALL%/infected"
+ RenameFilesTo = #??
+ 
+ ;LogFileName = { file name }
+@@ -421,7 +422,7 @@
+ ;        of their importance, you can find out where the daemon's report will
+ ;        be written to, basing on these two parameters and the contents of
+ ;        the configuration file syslog (usually /etc/syslogd.conf).
+-LogFileName = "/var/drweb/log/drweb.log"
++LogFileName = "%INSTALL%/log/drweb.log"
+ 
+ ;LogScanned = { Yes | No }
+ ;        Should the information on all the checked objects independently
+@@ -467,5 +468,5 @@
+ 
+ ;UpdatePath = path
+ ;       This parameter used bu update script.
+-UpdatePath = /usr/local/drweb/updates
++UpdatePath = %INSTALL%/updates
+ 

@@ -6,29 +6,34 @@
 #
 
 PORTNAME=	drweb
-PORTVERSION=    4.29.5
-PORTREVISION=   1
+PORTVERSION=	4.30
 CATEGORIES=	security
-MASTER_SITES=   ftp://ftp.drweb.ru/pub/unix/${PORTVERSION}/
-DISTFILES=      ${MAIN_NAME}.tar.gz
+MASTER_SITES=	ftp://ftp.drweb.ru/pub/unix/
+DISTFILES=	${MAIN_NAME}.tar.gz
 
 MAINTAINER=	anton@chelcom.ru
 COMMENT=	DrWeb antivirus suite
 
 ONLY_FOR_ARCHS=	i386
-NO_BUILD=       yes
+NO_BUILD=	yes
 
-WRKSRC=         ${WRKDIR}/${MAIN_NAME}/install
+WRKSRC=		${WRKDIR}/${MAIN_NAME}
 
-LIB_DEPENDS+=   c.4:${PORTSDIR}/misc/compat4x
+.include <bsd.port.pre.mk>
 
-MAIN_NAME=      ${PORTNAME}-${PORTVERSION}-freebsd4
+.if ${OSVERSION} < 500000
+LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
+MAIN_NAME=	${PORTNAME}-${PORTVERSION}-freebsd4
+.else
+MAIN_NAME=	${PORTNAME}-${PORTVERSION}-freebsd5
+.endif
+
 DRWEB_PREFIX=	${PREFIX}/${PORTNAME}
 
 do-install:
 	-@install -dv -o ${BINOWN} -g ${BINGRP} ${DRWEB_PREFIX}
-	@cd ${DRWEB_PREFIX}; ${RM} -f drweb drwebd bases/* updates/*
-	${TAR} -cf - -C ${WRKSRC}/opt/drweb . | \
+	@cd ${DRWEB_PREFIX}; ${RM} -f drweb drwebd bases/* updates/*; ${MKDIR} updates
+	${TAR} -cf - -C ${WRKSRC}/usr/local/drweb . | \
 		${TAR} -xf - -C ${DRWEB_PREFIX} \
 		--exclude "*.key" \
 		--exclude "*.static" \
@@ -37,25 +42,25 @@ do-install:
 		${TAR} -xf - -C ${DRWEB_PREFIX}
 	chmod 755 ${DRWEB_PREFIX}/bases ${DRWEB_PREFIX}/doc \
 		${DRWEB_PREFIX}/lib ${DRWEB_PREFIX}/updates
-	${INSTALL_DATA} ${WRKSRC}/opt/drweb/drweb.key \
+	${INSTALL_DATA} ${WRKSRC}/usr/local/drweb/drweb.key \
 		${DRWEB_PREFIX}/drweb.key-dist
-	${INSTALL_DATA} ${WRKSRC}/opt/drweb/drwebd.key \
+	${INSTALL_DATA} ${WRKSRC}/usr/local/drweb/drwebd.key \
 		${DRWEB_PREFIX}/drwebd.key-dist
 	${SED} 's#%INSTALL%#${DRWEB_PREFIX}#g' \
-		< ${WRKSRC}/opt/drweb/update/update.pl \
+		< ${WRKSRC}/usr/local/drweb/update/update.pl \
 		> ${DRWEB_PREFIX}/update/update.pl
 	chmod 750 ${DRWEB_PREFIX}/update/update.pl
 	${SED} 's#%INSTALL%#${DRWEB_PREFIX}#g' \
-		< ${WRKSRC}/etc/drweb/drweb32.ini \
-		> ${DRWEB_PREFIX}/drweb32.ini-dist
+		< ${WRKSRC}/usr/local/etc/drweb/drweb32.ini \
+		> ${PREFIX}/drweb/drweb32.ini-dist
 	${RM} -f ${PREFIX}/bin/drweb
 	${SED} 's#%INSTALL%#${DRWEB_PREFIX}#g' \
-		< ${FILESDIR}/drweb.sh \
-		> ${PREFIX}/bin/drweb
-	chmod 755 ${PREFIX}/bin/drweb
-	if [ ! -f ${DRWEB_PREFIX}/drweb32.ini ] ; then \
-		${CP} ${DRWEB_PREFIX}/drweb32.ini-dist \
-		      ${DRWEB_PREFIX}/drweb32.ini; \
+		< ${WRKSRC}/usr/local/etc/rc.d/00drwebd.sh \
+		> ${PREFIX}/etc/rc.d/00drwebd.sh
+	chmod 755 ${PREFIX}/etc/rc.d/00drwebd.sh
+	if [ ! -f ${PREFIX}/drweb/drweb32.ini ] ; then \
+		${CP} ${PREFIX}/drweb/drweb32.ini-dist \
+		      ${PREFIX}/drweb/drweb32.ini; \
 	fi
 	if [ ! -f ${DRWEB_PREFIX}/drweb.key ] ; then \
 		${CP} ${DRWEB_PREFIX}/drweb.key-dist \
@@ -69,4 +74,4 @@ do-install:
 post-install:
 	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,18 +1,17 @@
 @comment $FreeBSD$
-bin/drweb
 drweb/ChangeLog
 drweb/README
 drweb/README.RUS
+drweb/bases/drw43001.vdb
+drweb/bases/drw43002.vdb
+drweb/bases/drw43003.vdb
+drweb/bases/drw43004.vdb
+drweb/bases/drw43005.vdb
+drweb/bases/drw43006.vdb
+drweb/bases/drw43007.vdb
+drweb/bases/drw43008.vdb
+drweb/bases/drw43009.vdb
 drweb/bases/drwebase.vdb
-drweb/clients/demo/drwebdc-demo.c
-drweb/clients/demo/drwebdc-demo.h
-drweb/clients/demo/drwebdc-ex1.c
-drweb/clients/demo/drwebdc-ex2.c
-drweb/clients/demo/drwebdc-ex3.c
-drweb/clients/demo/drwebdc-tools.c
-drweb/clients/demo/make-all.sh
-drweb/clients/drwebd-api
-drweb/clients/drwebdc
 drweb/doc/readme.daemon
 drweb/doc/readme.daemon.rus
 drweb/doc/readme.eicar
@@ -29,18 +28,18 @@ drweb/drwebd
 @unexec if [ -f %D/drweb/drwebd.key ] && cmp -s %D/drweb/drwebd.key %D/drweb/drwebd.key-dist; then rm -f %D/drweb/drwebd.key; fi
 drweb/drwebd.key-dist
 @exec if [ ! -f %D/drweb/drwebd.key ] ; then cp -p %D/%F %B/drwebd.key; fi
+drweb/drwebdc
 drweb/lib/drweb32.dll
 drweb/lib/russian.dwl
 drweb/update/readme.update
 drweb/update/readme.update.rus
 drweb/update/update.pl
-@dirrm drweb/bases
-@dirrm drweb/clients/demo
-@dirrm drweb/clients
-@dirrm drweb/doc
-@dirrm drweb/infected
-@dirrm drweb/lib
-@dirrm drweb/run
-@dirrm drweb/update
+etc/rc.d/00drwebd.sh
 @dirrm drweb/updates
+@dirrm drweb/update
+@dirrm drweb/run
+@dirrm drweb/lib
+@dirrm drweb/infected
+@dirrm drweb/doc
+@dirrm drweb/bases
 @dirrm drweb
