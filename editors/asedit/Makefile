@@ -4,11 +4,12 @@
 #
 # Whom:	Andreas Kohout <shanee@rabbit.augusta.de>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/08/08 15:01:56 jmz Exp $
 #
 DISTNAME=	asedit-1.3.2
 CATEGORIES=	editors x11
 MASTER_SITES=	ftp://ftp.x.org/contrib/editors/
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	shanee@rabbit.augusta.de
 
