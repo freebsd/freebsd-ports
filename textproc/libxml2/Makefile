@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libxml2
-PORTVERSION=	2.5.9
+PORTVERSION=	2.5.10
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.5
@@ -26,7 +26,7 @@ USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--with-iconv=${LOCALBASE} \
 		--with-html-dir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		xml2-config.1 xmllint.1 xmlcatalog.1
 MAN3=		libxml.3
@@ -34,6 +34,7 @@ MAN3=		libxml.3
 .if !defined(WITHOUT_PYTHON)
 USE_PYTHON=	yes
 PLIST_SUB+=	PYTHON:=""
+CONFIGURE_ARGS+=	--with-python=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-python
 PLIST_SUB+=	PYTHON:="@comment "
@@ -69,12 +70,13 @@ pre-everything::
 	@${ECHO_MSG} "		WITHOUT_PYTHON=yes	Turns off Python support"
 	@${ECHO_MSG} "		WITH_THREADS=yes	Turns on pthread support"
 	@${ECHO_MSG} "		WITH_SCHEMA=yes		Turns on XML Schema support"
-	@${ECHO_MSG} "		WITH_MEM_DEBUG=yes	Turns on memory debugging"
+	@${ECHO_MSG} "		WITH_MEM_DEBUG=yes	Turns on memory debugging (DEVELOPERS ONLY!)"
 	@${ECHO_MSG} "		WITH_XMLLINT_HIST=yes	Turns on history for xmllint"
-	@${ECHO_MSG} "		WITH_THREAD_ALLOC=yes	Turns on per-thread memory"
+	@${ECHO_MSG} "		WITH_THREAD_ALLOC=yes	Turns on per-thread memory (DEVELOPERS ONLY!)"
 	@${ECHO_MSG} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/catalog.c ${WRKSRC}/xmlcatalog.c
+
 .include <bsd.port.mk>

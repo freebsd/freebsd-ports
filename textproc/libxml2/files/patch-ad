@@ -1,11 +1,11 @@
---- doc/Makefile.in.orig	Sat Mar 31 17:53:38 2001
-+++ doc/Makefile.in	Sat Mar 31 17:54:08 2001
-@@ -112,7 +112,7 @@
- Z_CFLAGS = @Z_CFLAGS@
- Z_LIBS = @Z_LIBS@
+--- doc/Makefile.in.orig	Thu Aug 14 22:05:15 2003
++++ doc/Makefile.in	Thu Aug 14 22:05:46 2003
+@@ -153,7 +153,7 @@
+ pythondir = @pythondir@
  
+ # The name of the module.
 -DOC_MODULE = libxml2-$(VERSION)
 +DOC_MODULE = libxml2
  
  # The top-level SGML file.
- DOC_MAIN_SGML_FILE = gnome-xml.sgml
+ DOC_MAIN_XML_FILE = gnome-xml.xml
