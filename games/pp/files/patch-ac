@@ -1,0 +1,11 @@
+--- leiste.cpp	Thu Apr  3 14:44:26 1997
++++ leiste.cpp.new	Sat Jan 29 04:48:38 2000
+@@ -32,7 +32,7 @@
+ 
+   leiste::leiste(QWidget *parent=0, const char *name=0,
+                  QString picPfad="")
+-         :QWidget (parent, name)
++         :QWidget (parent, name), buttonHoehe(104), buttonBreite(140)
+   {
+     sci=0;
+     setMouseTracking (TRUE);

@@ -1,0 +1,11 @@
+--- lines.cpp.orig	Sat Jan 17 18:11:13 1998
++++ lines.cpp	Fri Feb 13 23:57:07 1998
+@@ -502,7 +502,7 @@
+    score->setGeometry(300,120,85,45);
+    curScore=0;
+    score->display(0);
+-   movie=new QMovie("trolltech.gif");
++   movie=new QMovie("%%PREFIX%%/share/xlines/trolltech.gif");
+    label=new QLabel(this,"label");
+    label->setFrameStyle(QFrame::Box|QFrame::Plain);
+    label->setMovie(*movie);

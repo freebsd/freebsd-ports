@@ -1,0 +1,31 @@
+--- Makefile.orig	Mon Apr 27 16:47:35 1998
++++ Makefile	Sun Jul 16 19:47:51 2000
+@@ -1,8 +1,8 @@
+-INCDIR=/usr/local/qt/include
+-CFLAGS=-O2 -I/usr/X11/include -DSHOW_NEXT_COLORS
+-LFLAGS=-L/usr/local/qt/lib -lqt -L/usr/X11/lib -lX11
+-CC=gcc
+-MOC=/usr/local/qt/bin/moc
++INCDIR=${X11BASE}/include/X11/qt1
++CXXFLAGS+=-I${X11BASE}/include -DSHOW_NEXT_COLORS
++LFLAGS=-L${X11BASE}/lib -lqt1 -lX11
++CC?=gcc
++MOC=${X11BASE}/bin/moc1
+ 
+ SRC=lines.cpp lines.moc
+ OBJECTS=lines.o 
+@@ -14,12 +14,12 @@
+ .SUFFIXES:	.cpp
+ 
+ .cpp.o:
+-	$(CC) -c $(CFLAGS) -I$(INCDIR) $<
++	$(CXX) -c $(CXXFLAGS) -I$(INCDIR) $<
+ 
+ all: $(TARGET)
+ 
+ $(TARGET): $(MOCFILES) $(OBJECTS) lines.h
+-	$(CC) $(OBJECTS) -o $(TARGET) $(LFLAGS) -I$(INCDIR)
++	$(CXX) $(OBJECTS) -o $(TARGET) $(LFLAGS) -I$(INCDIR)
+ 
+ lines.moc: lines.h
+ 	$(MOC) lines.h -o lines.moc
