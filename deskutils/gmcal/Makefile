@@ -24,12 +24,12 @@ post-extract:
 	${CHMOD} a-x ${WRKSRC}/*
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/gmcal ${PREFIX}/gmcal
+	${INSTALL_PROGRAM} ${WRKSRC}/gmcal ${PREFIX}/bin
 
 post-install:
 	@${ECHO} "*****************************************************************************"
 	@${ECHO} ""
-	@${ECHO} " gmcal has been installed in ${PREFIX}/gmcal."
+	@${ECHO} " gmcal has been installed as ${PREFIX}/bin/gmcal."
 	@${ECHO} ""
 	@${ECHO} "*****************************************************************************"
 
