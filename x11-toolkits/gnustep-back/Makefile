@@ -80,7 +80,7 @@ ADDITIONAL_LDFLAGS+=	-L/usr/lib -lcipher
 MAKE_ENV+=		ADDITIONAL_LDFLAGS="${ADDITIONAL_LDFLAGS}"
 .endif
 
-post-extract:
+pre-configure:
 .for file in config.guess config.sub install-sh
 	@${CP} ${PREFIX}/System/Makefiles/${file} ${WRKSRC}
 .endfor
