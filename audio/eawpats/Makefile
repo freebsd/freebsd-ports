@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.rar
 MAINTAINER=	lennox@cs.columbia.edu
 COMMENT=	Eric A. Welsh's collection of Gravis Ultrasound MIDI patches
 
+BROKEN=		Unfetchable
+
 EXTRACT_DEPENDS=unrar:${PORTSDIR}/archivers/unrar
 # Not useful without timidity.
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity++
