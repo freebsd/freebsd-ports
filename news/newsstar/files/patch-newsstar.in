@@ -1,6 +1,6 @@
---- newsstar.in.orig	Sun Jul  4 00:21:24 2004
-+++ newsstar.in	Fri Aug 13 13:21:10 2004
-@@ -29,7 +29,6 @@
+--- newsstar.in.orig	Tue Aug 17 22:33:53 2004
++++ newsstar.in	Thu Aug 19 19:18:38 2004
+@@ -30,7 +30,6 @@
  $NEWS_PATH = '@NEWS_PATH@';
  $prefix = "@prefix@";
  $exec_prefix = "@exec_prefix@";
@@ -8,26 +8,7 @@
  $NEWSSTAR_BIN = "@NEWSSTAR_BIN@";
  $MAINCF = $CONF_DIR . "/main.cf";
  $INCOMING_DIR = "@INCOMING_DIR@";
-@@ -199,7 +198,7 @@
- 
- if ($USE_SN)
- {
--    $SPOOL_DIR = "/var/spool/sn" if ($SPOOL_DIR eq "");
-+    $SPOOL_DIR = "/var/spool/news" if ($SPOOL_DIR eq "");
-     $OUTGOING_DIR = $SPOOL_DIR . "/.outgoing"  if ($OUTGOING_DIR eq "");
-     $OUTGOING_NEWSSTAR_DIR = $OUTGOING_DIR . "/.newsstar";
-     $ARTICLES_DIR = $SPOOL_DIR if ($ARTICLES_DIR eq "");
-@@ -209,7 +208,8 @@
-     $SPOOL_DIR = "/var/spool/news" if ($SPOOL_DIR eq "");
-     if ($USE_SNEWS)
-     {
--	$OUTGOING_DIR = "/var/lib/news/suck" if ($OUTGOING_DIR eq "");
-+	$ARTICLES_DIR = "/var/spool/s-news" if ($ARTICLES_DIR eq "");
-+	$OUTGOING_DIR = "${prefix}/etc/s-news/suck" if ($OUTGOING_DIR eq "");
-     }
-     elsif ($OUTGOING_DIR eq "")
-     {
-@@ -223,7 +223,17 @@
+@@ -261,7 +260,17 @@
  	}
      }
      $OUTGOING_NEWSSTAR_DIR = $OUTGOING_DIR . "/newsstar";
@@ -45,8 +26,8 @@
 +    }
      if ($ARTICLES_DIR eq "")
      {
- 	if (-d "$SPOOL_DIR/articles")
-@@ -243,21 +253,9 @@
+ 	if ($USE_SNEWS)
+@@ -292,21 +301,9 @@
  {
      if ($SNSTORE eq "")
      {
@@ -70,36 +51,27 @@
  	}
  	else
  	{
-@@ -274,21 +272,9 @@
+@@ -323,21 +320,9 @@
  {
      if ($OVERVIEW eq "")
      {
 -	if (-x "/usr/sbin/overview")
 -	{
--	    $overview = "/usr/sbin/overview"
+-	    $OVERVIEW = "/usr/sbin/overview"
 -	}
 -	elsif (-x "/usr/local/sbin/overview")
 -	{
--	    $overview = "/usr/local/sbin/overview"
+-	    $OVERVIEW = "/usr/local/sbin/overview"
 -	}
 -	elsif (-x "/usr/bin/overview")
 -	{
--	    $overview = "/usr/bin/overview"
+-	    $OVERVIEW = "/usr/bin/overview"
 -	}
 -	elsif (-x "/usr/local/bin/overview")
 +	if (-x "${prefix}/sbin/overview")
  	{
--	    $overview = "/usr/local/bin/overview"
+-	    $OVERVIEW = "/usr/local/bin/overview"
 +	    $OVERVIEW = "${prefix}/sbin/overview"
  	}
  	else
  	{
-@@ -908,7 +894,7 @@
-     # $NEWS_USER may also contain group
-     my $news_from = $NEWS_USER;
-     $news_from =~ s/\..*//;
--    if (!open(SENDMAIL, "|/usr/lib/sendmail -oi -t"))
-+    if (!open(SENDMAIL, "|/usr/sbin/sendmail -oi -t"))
-     {
- 	print STDERR "Can't run sendmail to bounce rejected posting\n";
- 	return;

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	newsstar
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.2
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,18 +14,25 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	anray@inet.ua
 COMMENT=	Transfer news between a local NNTP server (INN, sn, s-news)
 
-.if exists(${LOCALBASE}/news/bin/innd)
-WITH_INN=yes
-.endif
-
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=--disable-ssl
 .else
 USE_OPENSSL=	yes
 .endif
 
-.if defined(WITH_INN)
-CONFIGURE_ARGS+=--with-inn-path=${PREFIX}/news/bin
+.if exists(/var/spool/s-news)
+CONFIGURE_ARGS+=--with-spool-dir=/var/spool/s-news \
+		--with-snews-outgoing-dir=${LOCALBASE}/etc/s-news/suck
+.endif
+
+.if exists(${LOCALBASE}/sbin/snntpd)
+CONFIGURE_ARGS+=--with-sn-spool-dir=/var/spool/news \
+		--with-sn-articles-dir=/var/spool/news \
+		--with-outgoing-dir=/var/spool/news/.outgoing
+.endif
+
+.if exists(${LOCALBASE}/news/bin/innconfval)
+CONFIGURE_ARGS+=--with-inn-path=${LOCALBASE}/news/bin
 .endif
 
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
