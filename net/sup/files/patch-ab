@@ -246,7 +246,8 @@
   	(void) sprintf (tname,"%s.temp",fname);
   	scanF = fopen (tname,"w");
 --- 959,964 ----
---- supscan.c	Sun Dec 10 15:44:22 1995
+*** supscan.c.orig	Fri Aug 20 19:46:35 1993
+--- supscan.c	Sun May 30 22:17:04 1999
 ***************
 *** 25,40 ****
   /*
@@ -296,6 +297,17 @@
   long scantime;				/* time of this scan */
   int newonly = FALSE;			/* new files only */
 ***************
+*** 167,174 ****
+  TREE *listT;		/* final list of files in collection */
+  TREE *refuseT = NULL;	/* list of all files specified by <coll>.list */
+  
+- long time ();
+- 
+  /*************************************
+   ***    M A I N   R O U T I N E    ***
+   *************************************/
+--- 171,176 ----
+***************
 *** 190,196 ****
   			ctime (&scantime));
   		(void) fflush (stdout);
@@ -304,7 +316,7 @@
   			scantime = time ((long *)NULL);
   			printf ("SUP Scan for %s completed at %s",collname,
   				ctime (&scantime));
---- 194,201 ----
+--- 192,199 ----
   			ctime (&scantime));
   		(void) fflush (stdout);
   		if (!setjmp (sjbuf)) {
@@ -324,7 +336,7 @@
   	exit (1);
   }
   
---- 220,238 ----
+--- 218,236 ----
   
   usage ()
   {
@@ -346,7 +358,7 @@
   
 ***************
 *** 243,248 ****
---- 258,280 ----
+--- 256,278 ----
   			--argc;
   			argv++;
   			filename = argv[1];
