@@ -9,7 +9,7 @@
 PORTNAME=	ptypes
 PORTVERSION=	1.4.1
 CATEGORIES=	devel
-MASTER_SITES=	http://www.melikyan.com/ptypes/
+MASTER_SITES=	http://www.melikyan.com/ptypes/ \
 		http://ptypes.sourceforge.net/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
