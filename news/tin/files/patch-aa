@@ -1,0 +1,24 @@
+*** src/init.c.bak	Tue Mar  4 21:34:58 1997
+--- src/init.c	Wed Mar  5 07:35:05 1997
+***************
+*** 647,653 ****
+  	joinpath (msg_headers_file, rcdir, MSG_HEADERS_FILE);
+  	joinpath (mailgroups_file, rcdir, MAILGROUPS_FILE);
+  	joinpath (motd_file, libdir, MOTD_FILE);
+- 	joinpath (msg_headers_file, rcdir, MSG_HEADERS_FILE);
+  	joinpath (news_active_file, libdir, get_val ("TIN_ACTIVEFILE", ACTIVE_FILE));
+  	joinpath (newsgroups_file, libdir, NEWSGROUPS_FILE);
+  #ifdef WIN32
+--- 647,652 ----
+*** src/post.c.bak	Tue Mar  4 22:41:37 1997
+--- src/post.c	Wed Mar  5 07:57:27 1997
+***************
+*** 2545,2550 ****
+--- 2545,2551 ----
+  		if (*reply_to) {
+  			msg_add_header ("Reply-To", reply_to);
+  		}
++ 		msg_add_x_headers (msg_headers_file);
+  	}
+  	start_line_offset = msg_write_headers (fp);
+  	start_line_offset++;
