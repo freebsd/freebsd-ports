@@ -333,6 +333,7 @@
     SUBDIR += initutil
     SUBDIR += invitation_to_ruby
     SUBDIR += ipython
+    SUBDIR += itext
     SUBDIR += ixlib
     SUBDIR += jakelib2
     SUBDIR += jam
