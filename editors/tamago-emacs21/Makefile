@@ -19,11 +19,13 @@ RUN_DEPENDS=	emacs-${EMACS_VER}:${PORTSDIR}/editors/emacs20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-EMACS_VER=	20.7
-PLIST_SUB=	EMACS_VER=${EMACS_VER}
+EMACS_PORT_NAME?=	emacs20
+
+ELISPDIR=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp
+PLIST_SUB=	ELISPDIR="${EMACS_LIBDIR_WITH_VER}/site-lisp"
 
 pre-configure:
-	@${PERL} -pi -e 's|emacs/site-lisp|emacs/${EMACS_VER}/site-lisp|g' \
+	@${PERL} -pi -e 's|emacs/site-lisp|${EMACS_NAME}/${EMACS_VER}/site-lisp|g' \
 	    ${WRKSRC}/configure
 
 .include <bsd.port.mk>
