@@ -7,7 +7,6 @@
 
 PORTNAME=	gst
 PORTVERSION=	${RUBY_GNOME_PORTVERSION}
-PORTREVISION=	2
 CATEGORIES=	multimedia devel ruby
 MASTER_SITES=	${RUBY_GNOME_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${RUBY_GNOME_MASTER_SITE_SUBDIR}
@@ -15,10 +14,12 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${RUBY_GNOME_DISTNAME}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	mezz7@cox.net
 COMMENT=	Ruby bindings for the GStreamer framework
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
+
+BROKEN=		"Can't compile with gstreamer 0.8 due to API/ABI change"
 
 USE_RUBY=	yes
 USE_GNOME=	pkgconfig gstreamerplugins

@@ -1,4 +1,5 @@
 %%RUBY_SITEARCHLIBDIR%%/pango.so
+%%RUBY_SITEARCHLIBDIR%%/rbpango.h
 %%RUBY_SITELIBDIR%%/pango.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/attribute.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/gdk_layout.rb

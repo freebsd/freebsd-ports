@@ -1,6 +1,6 @@
 # $FreeBSD$
 
-RUBY_GNOME_VERSION=		0.8.0
+RUBY_GNOME_VERSION=		0.9.1
 #RUBY_GNOME_SNAPSHOTDATE=	20010224
 .if defined(RUBY_GNOME_SNAPSHOTDATE)
 RUBY_GNOME_PORTVERSION=		${RUBY_GNOME_VERSION}.${RUBY_GNOME_SNAPSHOTDATE}
@@ -21,7 +21,7 @@ RUBY_GNOME_PORTDIR=	${PORTSDIR}/x11/ruby-gnome2
 
 MD5_FILE=	${RUBY_GNOME_PORTDIR}/distinfo
 
-post-extract:	pre-post-extract
+#post-extract:	pre-post-extract
 
 pre-post-extract:
 	${FIND} ${WRKSRC} -name CVS -type d -print0 | ${XARGS} -0 ${RM} -rf
