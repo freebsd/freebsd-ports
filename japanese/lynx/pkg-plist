@@ -1,5 +1,4 @@
 bin/lynx
-etc/lynx.cfg
 lib/lynx_help/Lynx_users_guide.html
 lib/lynx_help/about_lynx.html
 lib/lynx_help/keystrokes/bookmark_help.html

@@ -1,6 +1,5 @@
 bin/lynx
 etc/lynx.cfg.sample
-@unexec rm -f %D/etc/lynx.cfg
 lib/lynx_help/Lynx_users_guide.html
 lib/lynx_help/about_lynx.html
 lib/lynx_help/keystrokes/alt_edit_help.html

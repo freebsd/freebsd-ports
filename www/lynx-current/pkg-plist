@@ -1,5 +1,4 @@
 bin/lynx
-etc/lynx.cfg
 share/lynx_help/Lynx_users_guide.html
 share/lynx_help/about_lynx.html
 share/lynx_help/keystrokes/alt_edit_help.html
