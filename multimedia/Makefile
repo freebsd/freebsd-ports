@@ -7,6 +7,7 @@
     SUBDIR += avifile
     SUBDIR += avinfo
     SUBDIR += beep-media-player
+    SUBDIR += bsdbktr_tvtune
     SUBDIR += camserv
     SUBDIR += dtv
     SUBDIR += dumpmpeg
