@@ -9,6 +9,7 @@
     SUBDIR += SpecTcl
     SUBDIR += a2dev
     SUBDIR += amulet
+    SUBDIR += asis
     SUBDIR += asl
     SUBDIR += astyle
     SUBDIR += autoconf
