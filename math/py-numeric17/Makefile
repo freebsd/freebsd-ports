@@ -3,7 +3,7 @@
 # Date created:		20 April 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.2 1997/05/05 12:27:10 tg Exp $
+# $Id: Makefile,v 1.3 1997/05/14 07:38:50 tg Exp $
 #
 
 DISTNAME=	NumPy
@@ -18,6 +18,8 @@ BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 LIB_DEPENDS=	lapack\\.2\\.:${PORTSDIR}/math/lapack \
 		ranlib\\.1\\.:${PORTSDIR}/math/libranlib
+
+BROKEN=		python upgrade
 
 ALL_TARGET=	sharedmods
 MAKE_FLAGS+=	'OPT=${CFLAGS}'
