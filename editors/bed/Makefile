@@ -34,12 +34,6 @@ USE_GMAKE=	yes
 MAN1=		bed.1 xbed.1
 MANCOMPRESSED=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
-
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--without-x
 PLIST_SUB+=		X11="@comment "
@@ -63,4 +57,4 @@ post-configure:
 	${ECHO_MSG} 'CONFIG_MMAP=y' >> ${WRKSRC}/config
 	${GMAKE} -C ${WRKSRC} dep
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
