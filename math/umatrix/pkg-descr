@@ -1,0 +1,7 @@
+uMatrix is a very simple package written in two days useful for matrices
+introduction in high schools.  It is able of compute the determinant of
+the matrix (of any order), compute the matrices product and some other
+minor operations.
+
+Sandro Sigala
+ssigala@globalnet.it
