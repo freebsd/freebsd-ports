@@ -1,0 +1,90 @@
+*** asfsm.c.orig	Sun Oct 18 06:02:09 1998
+--- asfsm.c	Fri Jun  4 11:10:15 1999
+***************
+*** 98,107 ****
+  	int	flag=0;
+  	
+  	/* figure out which "df -" command to use */
+! 	tempfile=popen("df -Bk","r");
+  	fscanf(tempfile,"%s",word);
+  	if (!strcmp(word,"Filesystem")) {
+! 		sprintf(dfcommand,"df -Bk");
+  	} else {
+  		tempfile=popen("df -a","r");
+  		fscanf(tempfile,"%s",word);
+--- 98,107 ----
+  	int	flag=0;
+  	
+  	/* figure out which "df -" command to use */
+! 	tempfile=popen("df -k","r");
+  	fscanf(tempfile,"%s",word);
+  	if (!strcmp(word,"Filesystem")) {
+! 		sprintf(dfcommand,"df -k");
+  	} else {
+  		tempfile=popen("df -a","r");
+  		fscanf(tempfile,"%s",word);
+***************
+*** 135,161 ****
+  	}
+  	fclose(tempfile);
+  
+- 	/* detect which user mount/unmount command to use */
+- 	/* by giving umnt a bum parameter (-h) and seeing if it */
+- 	/* returns anything about an illegal option or if it just says */
+- 	/* command not found.  Different shells have different messages */
+- 	/* for not finding a command, and which behaves differently too, */
+- 	/* so this seems a reasonable way to do it. */
+- 	tempfile=popen("umnt -h > /usr/tmp/testumnt 2> /usr/tmp/testumnt; cat /usr/tmp/testumnt; rm /usr/tmp/testumnt","r");
+- 	while(!feof(tempfile)) {
+- 		fscanf(tempfile,"%s",word);
+- 		if (!strcmp("option",word)) {
+- 			/* the response must have been 
+- 		 	umnt: ERROR: Illegal option -- h
+- 		 	or something like it, the command exists */
+- 			sprintf(mountcmd,"mnt ");
+- 			sprintf(umountcmd,"umnt ");
+- 			flag=1;
+- 			break;
+- 		}
+- 	}
+- 	pclose(tempfile);
+- 
+  	if (flag==0) {
+  		/* otherwise, the mount/unmount commands must be used */
+  		sprintf(mountcmd,"mount ");
+--- 135,140 ----
+***************
+*** 374,380 ****
+  				fs[counter].percent,
+  				fs[counter].mountdir);
+  			if (strlen(fs[counter].mountdir)>0 && counter<23) {	
+! 				if (atoi(fs[counter].blocks)>0 || showzero==1) {
+  					counter++;
+  				}
+  			} else {
+--- 353,360 ----
+  				fs[counter].percent,
+  				fs[counter].mountdir);
+  			if (strlen(fs[counter].mountdir)>0 && counter<23) {	
+! 				if ((atoi(fs[counter].blocks)>0 || showzero==1) &&
+! 									(strcmp(fs[counter].mountdir, "/proc"))){
+  					counter++;
+  				}
+  			} else {
+***************
+*** 721,727 ****
+  			};
+  
+  			if (!feof(fstabfile)) {
+! 				if (buffer[0]!='#') {
+  					strcpy(fstab[fstabcounter].filesystem,
+  						"");
+  					strcpy(fstab[fstabcounter].mountdir,"");
+--- 701,707 ----
+  			};
+  
+  			if (!feof(fstabfile)) {
+! 				if (buffer[0]!='#' && strncmp(buffer, "proc", 4)) {
+  					strcpy(fstab[fstabcounter].filesystem,
+  						"");
+  					strcpy(fstab[fstabcounter].mountdir,"");
