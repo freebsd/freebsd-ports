@@ -47,6 +47,7 @@
     SUBDIR += glabels
     SUBDIR += gmcal
     SUBDIR += gnochm
+    SUBDIR += gnome-menu-editor
     SUBDIR += gnomeblog
     SUBDIR += gnomepim
     SUBDIR += gnomeutils2
