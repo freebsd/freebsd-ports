@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	uds
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.5
 CATEGORIES=	devel
 MASTER_SITES=	http://frost.flewid.de/dist/
 
