@@ -1,3 +1,31 @@
 bin/jruby
-share/java/classes/jruby.jar
-@unexec rmdir %D/share/java/classes 2> /dev/null || true
+%%JRUBY_HOME%%/lib/LICENSE.ant
+%%JRUBY_HOME%%/lib/LICENSE.jakarta-oro
+%%JRUBY_HOME%%/lib/ant.jar
+%%JRUBY_HOME%%/lib/bsf.jar
+%%JRUBY_HOME%%/lib/gnu-regexp-1.1.4.jar
+%%JRUBY_HOME%%/lib/jakarta-oro-2.0.6.jar
+%%JRUBY_HOME%%/lib/jruby.jar
+%%JRUBY_HOME%%/lib/junit.jar
+%%JRUBY_HOME%%/lib/license.bsf.html
+@dirrm %%JRUBY_HOME%%/lib
+@dirrm %%JRUBY_HOME%%
+%%PORTDOCS%%share/doc/jruby/BeanScriptingFramework
+%%PORTDOCS%%share/doc/jruby/Glossary.txt
+%%PORTDOCS%%share/doc/jruby/Javasupport-highlevel.txt
+%%PORTDOCS%%share/doc/jruby/Javasupport-lowlevel.txt
+%%PORTDOCS%%share/doc/jruby/Javasupport-overview.txt
+%%PORTDOCS%%share/doc/jruby/README
+%%PORTDOCS%%share/doc/jruby/README.test
+%%PORTDOCS%%share/doc/jruby/TODO
+%%PORTDOCS%%share/doc/jruby/changelog.xml
+%%PORTDOCS%%@dirrm share/doc/jruby
+%%PORTDOCS%%share/examples/jruby/beer.rb
+%%PORTDOCS%%share/examples/jruby/error.rb
+%%PORTDOCS%%share/examples/jruby/eval.rb
+%%PORTDOCS%%share/examples/jruby/fib.rb
+%%PORTDOCS%%share/examples/jruby/java2.rb
+%%PORTDOCS%%share/examples/jruby/swing.rb
+%%PORTDOCS%%share/examples/jruby/swing2.rb
+%%PORTDOCS%%share/examples/jruby/thread.rb
+%%PORTDOCS%%@dirrm share/examples/jruby
