@@ -8,7 +8,7 @@ PORTNAME=	acroread5
 PORTVERSION=	2002.5
 PKGNAMESUFFIX=	-${DISTNAME}
 CATEGORIES+=	print linux
-MASTER_SITES=	ftp://ftp-pac.adobe.com/pub/adobe/acrobatreader/unix/5.x/
+MASTER_SITES=	http://download.adobe.com/pub/adobe/acrobatreader/unix/5.x/
 DISTNAME?=	commfont # dummy
 DIST_SUBDIR=	Acrobat5
 
