@@ -50,12 +50,11 @@ EXTRA_PATCHES+=		${FILESDIR}/batch.patch
 .endif
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
-BROKEN=		Need updated patches from Simon Wilkinson
 MASTER_SITES+=	${PATCH_SITES}
-DISTFILES=	${EXTRACT_ONLY} ${PORTNAME}-${PORTVERSION}-gssapi.patch
+DISTFILES=	${EXTRACT_ONLY} ${PORTNAME}-${PORTVERSION}-gssapi-20020321.diff
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 PATCH_SITES=	http://www.sxw.org.uk/computing/patches/
-PATCHFILES=	${PORTNAME}-${PORTVERSION}-krb5.patch
+PATCHFILES=	${PORTNAME}-mit-krb5-20020319.diff
 BUILD_DEPENDS=		autoconf:${PORTSDIR}/devel/autoconf
 # USE_AUTOCONF_VER=	252 # broken
 CONFIGURE_ARGS+=	--with-kerberos5=${KRB5_HOME}
@@ -65,7 +64,7 @@ AUTOHEADER=	autoheader
 post-patch:
 	@${ECHO_MSG} Applying extra patch for GSS-API key-exchange...
 	@${PATCH} ${PATCH_DIST_ARGS:S/-p0/-p1/} \
-		< ${DISTDIR}/${PORTNAME}-${PORTVERSION}-gssapi.patch
+		< ${DISTDIR}/${PORTNAME}-${PORTVERSION}-gssapi-20020321.diff
 
 pre-configure:
 	@${ECHO_MSG} !!!! Warning this option uses autoconf/autoheader !!!
