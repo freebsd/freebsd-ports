@@ -8,10 +8,10 @@ BINDIR=		${PREFIX}/bin
 MANDIR=		${PREFIX}/man/man
 PROG_CXX=	spamprobe
 CXXFLAGS+=	-Wall -I${PREFIX}/include/db4 -DNDEBUG \
-		-DPACKAGE=\"spamprobe\" -DVERSION=\"0.8a\" \
+		-DPACKAGE=\"spamprobe\" -DVERSION=\"0.8b\" \
 		-DHAVE_UNISTD_H=1 -DHAVE_REGEX_H=1 -DUSE_DB=1
 CFLAGS+=	-Wall -I${PREFIX}/include/db4 -DNDEBUG \
-		-DPACKAGE=\"spamprobe\" -DVERSION=\"0.8a\" \
+		-DPACKAGE=\"spamprobe\" -DVERSION=\"0.8b\" \
 		-DHAVE_UNISTD_H=1 -DHAVE_REGEX_H=1 -DUSE_DB=1
 LDFLAGS=	-L${PREFIX}/lib -ldb4
 SRCS=		File.cc FrequencyDB.cc FrequencyDBImpl_bdb.cc \
