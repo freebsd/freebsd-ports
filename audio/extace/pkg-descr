@@ -1,0 +1,7 @@
+eXtace is a Audio Visualization plugin for the X-Window System. It connects to
+ESD (Enlightened Sound Daemon) and displays the audio data as either a 3D
+textured landscape, 3d pointed landscape, 16-256 channel graphic EQ, a
+multi-mode Oscilloscope, or a Spectragram. All modes are fully scalable to
+nearly ANY resolution!
+
+WWW: http://eXtace.sourceforge.net/
