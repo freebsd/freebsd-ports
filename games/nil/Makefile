@@ -14,14 +14,12 @@ MASTER_SITE_SUBDIR=	sobomax
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multiplayer game that can be described as Quake in 2D or Worms done right
 
-LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
-
 WRKSRC=		${WRKDIR}/${PORTNAME}/${PORTNAME}
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
-USE_SDL=	yes
+USE_SDL=	mixer sdl
 
 pre-patch:
 	@${FIND} ${WRKSRC} \( -name "*.[ch]" -or -name "*.cpp" \) | \

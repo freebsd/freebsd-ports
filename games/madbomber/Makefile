@@ -13,10 +13,7 @@ MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/madbomber/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clone of Activision's classic Atari 2600 console game "Kaboom!"
 
-LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		SDL_image.10:${PORTSDIR}/graphics/sdl_image
-
-USE_SDL=	yes
+USE_SDL=	mixer image sdl
 
 CPPFLAGS=	`${SDL_CONFIG} --cflags` -DDATA_PREFIX=\"${DATADIR}/\"
 LDFLAGS=	`${SDL_CONFIG} --libs`

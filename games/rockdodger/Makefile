@@ -14,10 +14,7 @@ MASTER_SITE_SUBDIR=	spacerocks
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Addictive rock-dodging greeblie-killing platform game
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		SDL_image.10:${PORTSDIR}/graphics/sdl_image
-
+USE_SDL=	mixer image sdl
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 

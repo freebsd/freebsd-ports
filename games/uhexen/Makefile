@@ -18,19 +18,15 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another port of Hexen, popular game from Raven Softrware
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 .if !defined(WITHOUT_WAD)
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 .endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
+USE_SDL=	mixer sdl
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
 .if defined(WITHOUT_WAD)
 PLIST_SUB=	WAD:="@comment "

@@ -21,8 +21,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A game of yore similar to the "Tron" and "Nibbles"
 
-LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		iconv.3:${PORTSDIR}/converters/libiconv
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 DATAVERSION=	1.5
 SOUNDVERSION=	1.0
@@ -35,7 +34,7 @@ SOUNDSRC=	${WRKDIR}/${SOUNDISTNAME}
 MUSICSRC=	${WRKDIR}/${MUSICDISTNAME}
 
 USE_X_PREFIX=	yes
-USE_SDL=	yes
+USE_SDL=	mixer sdl
 USE_GETOPT_LONG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

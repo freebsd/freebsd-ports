@@ -14,11 +14,8 @@ MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/vectoroids/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A vector-based, pretty, Asteroids clone
 
-LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		SDL_image.10:${PORTSDIR}/graphics/sdl_image
-
 USE_X_PREFIX=	yes
-USE_SDL=	yes
+USE_SDL=	image mixer sdl
 USE_GMAKE=	yes
 
 do-install:
