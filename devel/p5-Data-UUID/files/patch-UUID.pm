@@ -36,8 +36,8 @@
 -our @EXPORT = qw(
 +@EXPORT = qw(
  );
--our $VERSION = '0.06';
-+$VERSION = '0.06';
+-our $VERSION = '0.09';
++$VERSION = '0.09';
  
  sub AUTOLOAD {
      # This AUTOLOAD is used to 'autoload' constants from the constant()

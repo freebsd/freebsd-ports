@@ -6,14 +6,14 @@ technologies rely on UUIDs to provide unique identity for various
 software components.
 
 The algorithm for UUID generation, used by this extension, is described
-in the Internet Draft "UUIDs and GUIDs" by Paul J.  Leach and Rich Salz.
+in the Internet Draft "UUIDs and GUIDs" by Paul J. Leach and Rich Salz.
 It provides reasonably efficient and reliable framework for generating
 UUIDs and supports fairly high allocation rates - 10 million per second
 per machine, and therefore, is suitable for identifying both - extremely
 short-lived and very persistent objects on a given system as well as
 across the network.
 
-WWW: http://search.cpan.org/search?dist=Data-UUID
+WWW: http://search.cpan.org/dist/Data-UUID/
 WWW: http://www.globecom.net/ietf/draft/draft-leach-uuids-guids-01.txt
 
 -- Sergey Skvortsov
