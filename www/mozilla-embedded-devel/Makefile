@@ -40,7 +40,7 @@ do-install:
 	${CHMOD} 755 ${PREFIX}/include/mozilla-embedded
 	cd ${WRKSRC}/dist/Embed && ${TAR} -chf - * | \
 		${TAR} -xf - -C ${PREFIX}/lib/mozilla-embedded
-	${INSTALL_DATA} ${WRKSRC}/dist/include/gtkmozembed.h \
-		${PREFIX}/include/mozilla-embedded
+	cd ${WRKSRC}/dist/include && ${TAR} -chf - . | \
+		${TAR} -xf - -C ${PREFIX}/include/mozilla-embedded
 
 .include <bsd.port.mk>
