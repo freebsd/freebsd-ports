@@ -1,0 +1,11 @@
+--- src/fingerd.c.orig	Sun Oct 29 00:12:52 1992
++++ src/fingerd.c	Sun Jan 15 19:19:46 1998
+@@ -145,7 +145,7 @@
+   default_error_handling (argv[0]);
+ 
+   /* Parse arguments. */
+-  while ((optc = getopt_long (argc, argv, "datfi", longopts, NULL)) >= 0)
++  while ((optc = getopt_long (argc, argv, "datfi:", longopts, NULL)) >= 0)
+     switch (optc)
+       {
+       case 'd':
