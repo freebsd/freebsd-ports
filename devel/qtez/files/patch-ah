@@ -1,8 +1,0 @@
---- src/plugins/bugreport/pix/Makefile.am.orig	Fri Mar 31 16:36:47 2000
-+++ src/plugins/bugreport/pix/Makefile.am	Fri Sep 15 10:08:30 2000
-@@ -2,4 +2,4 @@
- 
- EXTRA_DIST  = bwiz.png tm.png bugreport.xpm
- images_DATA = bwiz.png tm.png
--imagesdir   = $(prefix)/qtez/img
-+imagesdir   = $(QTEZ)/img

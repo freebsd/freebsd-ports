@@ -17,11 +17,9 @@ MAINTAINER=	ports@FreeBSD.org
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_QT_VER=	2
-USE_AUTOMAKE=	yes
-AUTOMAKE_ARGS=	-a -i && ${PERL} automoc
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	QTDIR="${X11BASE}" QTEZ="${PREFIX}/share/qtez"
-MAKE_ENV=	QTEZ="${PREFIX}/share/qtez"
+CONFIGURE_ENV=	QTDIR="${X11BASE}" QTEZ="${DATADIR}" MSG2QM="${MOC}"
+MAKE_ENV=	QTEZ="${DATADIR}"
 INSTALLS_SHLIB=	yes
 
 .include <bsd.port.pre.mk>
@@ -30,7 +28,18 @@ INSTALLS_SHLIB=	yes
 CFLAGS+=	-O0
 .endif
 
+post-patch:
+	@${PERL} -pi -e 's|-O2 |\$$CXXFLAGS |g ; \
+		 s|include/qaction.h|include/${QTNAME}/qaction.h|g ; \
+		 s|qtdir/include$$|qtdir/include/${QTNAME}|g ; \
+		 s|-lqt|-l${QTNAME}|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|doc po images|doc images|g ; \
+		 s|prefix\)/qtez/plugins|prefix\)/lib/qtez/plugins|g ; \
+		 s|prefix\)/qtez/img|QTEZ\)/img|g'
+
 pre-configure:
+	@cd ${WRKSRC} && ${PERL} automoc
 	@cd ${WRKSRC}/src && ${SH} ./autolinks.sh
 
 post-install:
