@@ -7,11 +7,9 @@
 #
 
 PORTNAME=	openbox
-PORTVERSION=	0.3.0.4
-PORTREVISION=	1
+PORTVERSION=	3.0
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://icculus.org/openbox/releases/
-DISTNAME=	openbox-3.0-rc4
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Derived from, and similar to, Blackbox
@@ -27,6 +25,7 @@ PLIST=		${WRKDIR}/pkg-plist
 USE_GMAKE=	yes
 USE_GNOME=	glib20 libxml2
 USE_X_PREFIX=	yes
+INSTALLS_SHLIB=	yes
 
 post-build:
 	${CP} -P ${WRKSRC}/data/rc.xml ${WRKSRC}/data/rc.xml.orig
@@ -63,15 +62,19 @@ pre-install:
 .for ii in menu rc
 	${ECHO_CMD} etc/openbox/xdg/openbox/${ii}.xml >> ${PLIST}
 .endfor
+.for ii in parse.h render.h theme.h version.h
+	${ECHO_CMD} include/openbox/${ii} >> ${PLIST}
+.endfor
 .for ii in openbox/xdg/openbox openbox/xdg openbox
-	 ${ECHO_CMD} @dirrm etc/${ii} >> ${PLIST}
+	${ECHO_CMD} @dirrm etc/${ii} >> ${PLIST}
 .endfor
-.for ii in include/openbox share/gnome/wm-properties
-	 ${ECHO_CMD} @dirrm ${ii} >> ${PLIST}
-.endfor
-.for ii in la lai so so.1
+.for ii in la lai so so.2
 	${ECHO_CMD} lib/libobparser.${ii} >> ${PLIST}
 	${ECHO_CMD} lib/libobrender.${ii} >> ${PLIST}
+.endfor
+.for ii in gnome/wm-properties gnome
+	${ECHO_CMD} "@unexec rmdir %D/share/${ii} 2>/dev/null || true" \
+		>> ${PLIST}
 .endfor
 .if !defined(NOPORTDOCS)
 .for ii in ${DOCS}
@@ -79,12 +82,15 @@ pre-install:
 .endfor
 	${ECHO_CMD} @dirrm share/doc/openbox >> ${PLIST}
 .endif
+.for ii in include share 
+	${ECHO_CMD} @dirrm ${ii}/openbox >> ${PLIST}
+.endfor
 
 do-install:
 	${MKDIR} ${DATADIR} ${PREFIX}/share/gnome/wm-properties \
 		${PREFIX}/etc/openbox/xdg/openbox ${PREFIX}/include/openbox
-.for ii in parser/parse render/theme render/render
-	${INSTALL_DATA} ${WRKSRC}/${ii}.h ${PREFIX}/include/openbox
+.for ii in parser/parse render/theme render/render version
+	${INSTALL_DATA} ${WRKSRC}/${ii}.h ${PREFIX}/include/openbox/
 .endfor
 .for ii in parser render
 	${INSTALL_DATA} ${WRKSRC}/${ii}/ob${ii}-3.0.pc \
@@ -104,7 +110,7 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} data/* ${PREFIX}/share/openbox/
 	cd ${WRKSRC} && ${INSTALL_DATA} data/openbox.desktop \
 		${PREFIX}/share/gnome/wm-properties/
-.for ii in la lai so so.1
+.for ii in la lai so so.2
 	cd ${WRKSRC} && \
 		${INSTALL_DATA} parser/.libs/libobparser.${ii} ${PREFIX}/lib \
 		&& ${INSTALL_DATA} render/.libs/libobrender.${ii} ${PREFIX}/lib
