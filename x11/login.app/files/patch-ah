@@ -1,0 +1,16 @@
+--- Scripts/Login.root.orig	Mon Jan 17 18:12:33 2000
++++ Scripts/Login.root	Mon Jan 17 18:13:18 2000
+@@ -5,11 +5,11 @@
+ #
+ # Make user the owner of /dev/console.
+ #
+-chown $USER /dev/console
++/usr/sbin/chown $USER /dev/console
+ 
+ #
+ # Add user to utmp/wtmp.
+ #
+-sessreg -a $USER
++/usr/X11R6/bin/sessreg -a $USER
+ 
+ # End of file

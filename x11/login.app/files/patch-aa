@@ -1,0 +1,49 @@
+--- Makefile.orig	Fri Oct 29 18:55:32 1999
++++ Makefile	Mon Jan 17 18:23:36 2000
+@@ -2,12 +2,12 @@
+ # Login.app Makefile
+ #
+ 
+-INSTALL_DIR = /usr/local/GNUstep/Apps/Login.app
++INSTALL_DIR = ${X11BASE}/GNUstep/Apps/Login.app
+ 
+-INSTALL = /usr/bin/install
++INSTALL = /usr/bin/install -c
+ CC = cc
+-CFLAGS += -g -Wall -pedantic -D_GNU_SOURCE `get-wraster-flags --cflags`
+-LDFLAGS += `get-wraster-flags --ldflags` `get-wraster-flags --libs` -lXmu -lPropList -lcrypt
++CFLAGS += -g -Wall -pedantic -D_GNU_SOURCE `${X11BASE}/bin/get-wraster-flags --cflags`
++LDFLAGS += `${X11BASE}/bin/get-wraster-flags --ldflags` `${X11BASE}/bin/get-wraster-flags --libs` -lXmu -lPropList -lcrypt
+ 
+ TARGET = Login
+ 
+@@ -19,8 +19,16 @@
+ 	graphics.o \
+ 	util.o
+ 
++SCRIPTS = Login.root \
++		Login.user \
++		Logout.root \
++		Restart \
++		Suspend \
++		PowerOff \
++		Startup
++
+ $(TARGET): $(OBJS)
+-	$(CC) -o $(TARGET) $^ $(LDFLAGS)
++	$(CC) -o $(TARGET) $(OBJS) $(LDFLAGS)
+ 
+ clean: 
+ 	rm -rf $(TARGET) $(OBJS) core `find -name \*~`
+@@ -31,9 +39,9 @@
+ 	$(INSTALL) -d $(INSTALL_DIR)/Themes
+ 	$(INSTALL) -d $(INSTALL_DIR)/Themes/Linux
+ 	$(INSTALL) -d $(INSTALL_DIR)/Themes/GNUstep
+-	$(INSTALL) $(TARGET) $(INSTALL_DIR)
++	$(INSTALL) -s $(TARGET) $(INSTALL_DIR)
+ 	$(INSTALL) -m 644 Preferences $(INSTALL_DIR)/Preferences
+-	$(INSTALL) Scripts/* $(INSTALL_DIR)/Scripts/
++	cd Scripts && $(INSTALL) $(SCRIPTS) $(INSTALL_DIR)/Scripts/
+ 	$(INSTALL) -m 644 Themes/Linux/* $(INSTALL_DIR)/Themes/Linux/
+ 	$(INSTALL) -m 644 Themes/GNUstep/* $(INSTALL_DIR)/Themes/GNUstep/
+ 

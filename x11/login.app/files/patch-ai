@@ -1,0 +1,24 @@
+--- Scripts/Logout.root.orig	Mon Jan 17 18:35:09 2000
++++ Scripts/Logout.root	Mon Jan 17 18:35:44 2000
+@@ -7,17 +7,17 @@
+ # window. This will prevent some Motif applications from
+ # crashing the next time they are started.
+ #
+-xprop -root -remove _MOTIF_DRAG_WINDOW
++/usr/X11R6/bin/xprop -root -remove _MOTIF_DRAG_WINDOW
+ 
+ #
+ # Remove user from utmp/wtmp.
+ #
+-sessreg -d $USER
++/usr/X11R6/bin/sessreg -d $USER
+ 
+ #
+ # Make root the owner of /dev/console. 
+ #
+-chmod 622 /dev/console
+-chown root /dev/console
++/bin/chmod 622 /dev/console
++/usr/sbin/chown root /dev/console
+ 
+ # End of file
