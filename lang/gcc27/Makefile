@@ -20,6 +20,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} libg++-2.7.2${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Base C/C++ compiler from FreeBSD 2.2.x & 3.x (for your old code)
 
+DEPRECATED=	"This port is no longer in use by anything in the ports collection and will be removed in the future.  Use a later release instead"
+
 NOT_FOR_ARCHS=	amd64 sparc64 ia64
 NO_CDROM=	'old version, not worth the cost in real estate'
 
