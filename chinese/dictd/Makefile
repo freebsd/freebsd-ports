@@ -12,8 +12,8 @@ MAINTAINER=	statue@freebsd.sinica.edu.tw
 MASTERDIR=	${.CURDIR}/../../net/dictd
 EXTRA_PATCHES=	${.CURDIR}/files/patch-index.c \
 		${.CURDIR}/files/patch-libmaa::arg.c \
-		${.CURDIR}/files/patch-dictfmt.c \
-		${.CURDIR}/files/patch-Makefile.in
+		${.CURDIR}/files/patch-dictfmt.c
+#		${.CURDIR}/files/patch-Makefile.in
 
 #pre-install:
 #	${ECHO_CMD} "bin/dictfmt" > ${PLIST}
