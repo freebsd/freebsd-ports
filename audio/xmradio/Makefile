@@ -3,10 +3,10 @@
 # Date created:		2 Feb 1999
 # Whom:			runge@rostock.zgdv.de
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/03 01:32:22 steve Exp $
 #
 
-DISTNAME=	xmradio-0.5
+DISTNAME=	xmradio-0.6
 CATEGORIES=	audio
 MASTER_SITES=	http://www.rostock.zgdv.de/~runge/radio/
 
