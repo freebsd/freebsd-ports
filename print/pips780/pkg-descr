@@ -1,12 +1,14 @@
-Photo Image Print System for Linux is the Printer filter for EPSON
-PM-780C. By using this driver you can print out as high quality as you
-use Windows driver.  See the below URL:
+This port is for a printer filter of EPSON PM-780C. The filter is
+called Photo Image Print System for Linux and there exist the filters
+for other EPSON bubble jet printers. By using this driver you can
+print out as high quality as you use the Windows driver. See the below
+URL:
 
 WWW: http://www.epkowa.co.jp/
 
-And this port has a modified filter "filter780.rev" when you print out
-more than one page useful.  For example, if you use it, you add the
-next entry into /etc/printcap.
+And then this port has a modified filter "filter780.rev" which is
+useful to print out more than one page. If you use it, you add the
+next entries into /etc/printcap.
 
 pm780c|EPSON PM-780C:\
         :lp=/dev/lpt0:\
