@@ -14,6 +14,7 @@
     SUBDIR += chipvault
     SUBDIR += cider
     SUBDIR += dinotrace
+    SUBDIR += dxf2fig
     SUBDIR += electric
     SUBDIR += fandango
     SUBDIR += geda
