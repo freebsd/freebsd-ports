@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	0.1.16
+PORTVERSION=	0.1.18
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 
@@ -22,7 +22,6 @@ HTTP_PORT?=	80
 USE_REINPLACE=	yes
 USE_RC_SUBR=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_ENV+=	LINK="${CC}"
 CONFIGURE_ARGS=	--prefix=${PREFIX}/etc/nginx \
 		--with-cc-opt="-I ${LOCALBASE}/include" \
 		--with-ld-opt="-L ${LOCALBASE}/lib" \
@@ -61,6 +60,8 @@ PLIST_SUB+=	START_AFTER_INSTALL=""
 .else
 PLIST_SUB+=	START_AFTER_INSTALL="@comment "
 .endif
+
+PLIST_SUB+=	TMPDIR=${TMPDIR} WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 RC_SCRIPTS_SUB=PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
