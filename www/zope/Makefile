@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zope
-PORTVERSION=	2.7.3
+PORTVERSION=	2.7.4
 CATEGORIES=	www python zope
 MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-0
