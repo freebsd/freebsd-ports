@@ -28,6 +28,12 @@ MAN3=		libjit.3
 BROKEN=		"Does not compile on amd64"
 .endif
 
+post-patch:
+.if ${OSVERSION} >=	502128
+	@${REINPLACE_CMD} -e 's|#undef HAVE_TGMATH_H||' \
+		${WRKSRC}/config.h.in
+.endif
+
 post-configure:
 .if ${OSVERSION} >=	502123
 	@${REINPLACE_CMD} -e 's|$$pic_flag -DPIC||' \
