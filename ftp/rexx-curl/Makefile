@@ -22,6 +22,8 @@ BUILD_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-regina
 LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	rexx:${PORTSDIR}/lang/rexx-regina
 
+BROKEN=		"Build fails"
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-rexx=regina
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
