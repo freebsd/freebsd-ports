@@ -31,7 +31,7 @@ NO_FILTER_SHLIBS=	yes
 MAN1=		fdesign.1 fd2ps.1
 
 post-patch:
-	${REINPLACE_CMD} -e 's|-O4|${CFLAGS}|' ${WRKSRC}/Imakefile
+	${REINPLACE_CMD} -e 's|-O4||' ${WRKSRC}/Imakefile
 .if defined(X11BASE)
 .	if ${X11BASE} != "/usr/X11R6"
 	${REINPLACE_CMD} -e 's|/usr/X11R6|${X11BASE}|g' \
