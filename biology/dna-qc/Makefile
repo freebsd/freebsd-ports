@@ -22,6 +22,12 @@ EXAMPLES=	README script.compare script.limits \
 		bact.all chromosomeIII.all human.all worm.all
 PROGRAMS=	counter hybridize normalize random_clip random_line
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} >= 502102
+BROKEN=		"Does not compile"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,^CFLAGS,#CFLAGS,' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's,malloc.h,stdlib.h,' ${WRKSRC}/normalize.c
@@ -44,4 +50,4 @@ do-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
