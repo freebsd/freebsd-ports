@@ -213,7 +213,6 @@ share/examples/smartdoc/sdoc-helper.el
 share/examples/smartdoc/sdoc-mode.el
 share/examples/smartdoc/sdoc2html.xsl
 share/java/classes/SmartDoc.jar
-share/xml/catalog
 share/xml/smartdoc/PureSmartDoc.dtd
 share/xml/smartdoc/catalog
 @dirrm share/xml/smartdoc
