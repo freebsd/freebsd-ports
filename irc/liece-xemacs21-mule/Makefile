@@ -9,4 +9,4 @@ MASTERDIR=	${.CURDIR}/../liece
 
 EMACS_PORT_NAME=	xemacs21-mule
 
-.include <${MASTERDIR}/Makefile>
+.include "${MASTERDIR}/Makefile"
