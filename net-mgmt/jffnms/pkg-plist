@@ -25,32 +25,32 @@
 %%JFFNMSDIR%%/docs/unix/tftp
 %%JFFNMSDIR%%/docs/unix/syslog-ng-example
 %%JFFNMSDIR%%/docs/upgrade/jffnms-%%LASTVER%%-to-%%VERSION%%.patch
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.app_perf
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.check_status
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.client_filter
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.ip_mask
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.nad
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.popups
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.sysdescr
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.temp
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.udp_ports
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.x1_alert_del
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.x2_minisla
+%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.x3_dhtml_profile
 %%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.x_fix_internal_ids
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.alarm_backend
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.backend
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.default_view
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.filters
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.internal
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.poll_interval
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.severity
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.storage
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.syslog
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.tools
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.triggers_or
-%%JFFNMSDIR%%/docs/upgrade/mysql/jffnms-%%LASTVER%%-to-%%VERSION%%.mysql.diff.alarm
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.app_perf
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.check_status
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.client_filter
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.ip_mask
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.nad
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.popups
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.sysdescr
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.temp
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.udp_ports
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.x1_alert_del
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.x2_minisla
+%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.x3_dhtml_profile
 %%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.x_fix_internal_ids
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.alarm_backend
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.backend
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.default_view
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.filters
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.internal
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.poll_interval
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.severity
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.storage
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.syslog
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.tools
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.triggers_or
-%%JFFNMSDIR%%/docs/upgrade/pgsql/jffnms-%%LASTVER%%-to-%%VERSION%%.pgsql.diff.alarm
 %%JFFNMSDIR%%/docs/utils/export_custom.php
 %%JFFNMSDIR%%/docs/utils/adjust_bw.php
 %%JFFNMSDIR%%/docs/utils/clean_auth.php
@@ -67,7 +67,6 @@
 %%JFFNMSDIR%%/docs/utils/sql_alter_pg.php
 %%JFFNMSDIR%%/docs/utils/sql_diff.php
 %%JFFNMSDIR%%/docs/utils/syslog_file_import.php
-%%JFFNMSDIR%%/docs/utils/test_export.php
 %%JFFNMSDIR%%/docs/utils/tftp_put_host_config.php
 %%JFFNMSDIR%%/docs/utils/satellite-client.php
 %%JFFNMSDIR%%/docs/utils/satellite_sync.php
@@ -78,7 +77,9 @@
 %%JFFNMSDIR%%/docs/windows/httpd.conf
 %%JFFNMSDIR%%/docs/windows/php.ini
 %%JFFNMSDIR%%/lib/api.tools.inc.php
+%%JFFNMSDIR%%/lib/api.nad.inc.php
 %%JFFNMSDIR%%/engine/poller_helper.php
+%%JFFNMSDIR%%/engine/autodiscovery_network.php
 %%JFFNMSDIR%%/engine/actions/email.inc.php
 %%JFFNMSDIR%%/engine/actions/none.inc.php
 %%JFFNMSDIR%%/engine/actions/smsclient.inc.php
@@ -121,6 +122,7 @@
 %%JFFNMSDIR%%/engine/exp_poller_child.php
 %%JFFNMSDIR%%/engine/exp_poller_master.php
 %%JFFNMSDIR%%/engine/graphs/apps_instances.inc.php
+%%JFFNMSDIR%%/engine/graphs/apps_memory.inc.php
 %%JFFNMSDIR%%/engine/graphs/tc_rate.inc.php
 %%JFFNMSDIR%%/engine/graphs/tc_rate_aggregation.inc.php
 %%JFFNMSDIR%%/engine/graphs/acct_bytes.inc.php
@@ -198,6 +200,9 @@
 %%JFFNMSDIR%%/engine/pollers/verify_tc_class_number.php
 %%JFFNMSDIR%%/engine/pollers/reachability_end.php
 %%JFFNMSDIR%%/engine/pollers/reachability_status.php
+%%JFFNMSDIR%%/engine/pollers/udp_status.php
+%%JFFNMSDIR%%/engine/pollers/snmp_status.php
+%%JFFNMSDIR%%/engine/pollers/hostmib_perf.php
 %%JFFNMSDIR%%/engine/rrd_analizer.php
 %%JFFNMSDIR%%/engine/satellite/distribution.inc.php
 %%JFFNMSDIR%%/engine/satellite/ping.inc.php
@@ -227,7 +232,7 @@
 %%JFFNMSDIR%%/htdocs/admin/adm/adm_hosts.php
 %%JFFNMSDIR%%/htdocs/admin/adm/adm_hosts_config.php
 %%JFFNMSDIR%%/htdocs/admin/adm/adm_interfaces.php
-%%JFFNMSDIR%%/htdocs/admin/adm/adm_logs.php
+%%JFFNMSDIR%%/htdocs/admin/adm/adm_nad.php
 %%JFFNMSDIR%%/htdocs/admin/adm/adm_profiles.php
 %%JFFNMSDIR%%/htdocs/admin/adm/adm_profiles_options.php
 %%JFFNMSDIR%%/htdocs/admin/adm/adm_satellites.php
@@ -236,6 +241,10 @@
 %%JFFNMSDIR%%/htdocs/admin/adm/structures.php
 %%JFFNMSDIR%%/htdocs/admin/adm/test.php
 %%JFFNMSDIR%%/htdocs/admin/calendar.php
+%%JFFNMSDIR%%/htdocs/admin/calendar/calendar_stripped.js
+%%JFFNMSDIR%%/htdocs/admin/calendar/calendar-setup_stripped.js
+%%JFFNMSDIR%%/htdocs/admin/calendar/calendar-en.js
+%%JFFNMSDIR%%/htdocs/admin/calendar/calendar-blue2.css
 %%JFFNMSDIR%%/htdocs/admin/color_select.php
 %%JFFNMSDIR%%/htdocs/admin/event_filter.php
 %%JFFNMSDIR%%/htdocs/admin/menu.php
@@ -265,6 +274,7 @@
 %%JFFNMSDIR%%/htdocs/images/at.png
 %%JFFNMSDIR%%/htdocs/images/au.png
 %%JFFNMSDIR%%/htdocs/images/be.png
+%%JFFNMSDIR%%/htdocs/images/br.png
 %%JFFNMSDIR%%/htdocs/images/bullet1.png
 %%JFFNMSDIR%%/htdocs/images/bullet2.png
 %%JFFNMSDIR%%/htdocs/images/bullet3.png
@@ -330,8 +340,6 @@
 %%JFFNMSDIR%%/htdocs/index.php
 %%JFFNMSDIR%%/htdocs/journal.php
 %%JFFNMSDIR%%/htdocs/logout.php
-%%JFFNMSDIR%%/htdocs/popups.php
-%%JFFNMSDIR%%/htdocs/popups/mini_sla.inc.php
 %%JFFNMSDIR%%/htdocs/sounds/18_16b.wav
 %%JFFNMSDIR%%/htdocs/sounds/boing.wav
 %%JFFNMSDIR%%/htdocs/sounds/down.wav
@@ -445,9 +453,9 @@
 @dirrm %%JFFNMSDIR%%/logs
 @dirrm %%JFFNMSDIR%%/lib
 @dirrm %%JFFNMSDIR%%/htdocs/admin/reports
+@dirrm %%JFFNMSDIR%%/htdocs/admin/calendar
 @dirrm %%JFFNMSDIR%%/htdocs/admin/adm
 @dirrm %%JFFNMSDIR%%/htdocs/admin
-@dirrm %%JFFNMSDIR%%/htdocs/popups
 @dirrm %%JFFNMSDIR%%/htdocs/images/temp
 @dirrm %%JFFNMSDIR%%/htdocs/images
 @dirrm %%JFFNMSDIR%%/htdocs/sounds
