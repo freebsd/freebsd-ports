@@ -2133,6 +2133,7 @@ fragroute	ports/security/fragroute
 fragrouter	ports/security/fragrouter
 freebase	ports/devel/freebase
 freebirth	ports/audio/freebirth
+freebooters	ports/games/freebooters
 freebsd-games	ports/games/freebsd-games
 freebsd-update	ports/security/freebsd-update
 freebsd-uucp	ports/net/freebsd-uucp
