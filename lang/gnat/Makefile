@@ -4,7 +4,7 @@
 # Porter (original):	nils@guru.ims.uni-stuttgart.de
 # Porter (version 3):	maurice@serc.rmit.edu.au
 #
-# $Id: Makefile,v 1.11 1997/08/11 18:02:08 fenner Exp $
+# $Id: Makefile,v 1.12 1997/09/25 08:47:35 asami Exp $
 
 # Note: 
 # - FreeBSD tasking libraries created by Dan Eischen have been incorportated
@@ -31,6 +31,8 @@ BROKEN=		"requires patched gcc compiler"
 # You need a compiler who calls an existing gnat compiler (3.08 or greater):
 # if you have one, if you have one put it here, otherwise,
 # you will need to install from a package first
+
+MAN1=		adagcc.1 cccp.1
 
 # Make sure we use the patched gcc compiler
 CC = /usr/local/bin/adagcc
