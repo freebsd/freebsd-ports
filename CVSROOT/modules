@@ -4214,7 +4214,6 @@ k3d		ports/graphics/k3d
 kaddressbook-plugins	ports/misc/kaddressbook-plugins
 kadu		ports/polish/kadu
 kaffe		ports/java/kaffe
-kaffe-devel	ports/java/kaffe-devel
 kaffeine	ports/multimedia/kaffeine
 kaffeine-mozilla	ports/multimedia/kaffeine-mozilla
 kahakai		ports/x11-wm/kahakai
