@@ -59,113 +59,117 @@ bin/startfluxbox
 %%DOCHTML:%%%%DOCSDIR%%/html/x817.html
 %%DOCHTML:%%%%DOCSDIR%%/html/x820.html
 %%DOCPDF:%%%%DOCSDIR%%/pdf/fluxbook.pdf
-share/fluxbox/init
-share/fluxbox/keys
-share/fluxbox/menu
-%%NLS:%%share/fluxbox/nls/C/fluxbox.cat
-%%NLS:%%share/fluxbox/nls/bg_BG/fluxbox.cat
-%%NLS:%%share/fluxbox/nls/da_DK/fluxbox.cat
-%%NLS:%%share/fluxbox/nls/de_DE/fluxbox.cat
-%%NLS:%%share/fluxbox/nls/es_ES/fluxbox.cat
-%%NLS:%%share/fluxbox/nls/et_EE/fluxbox.cat
-%%NLS:%%share/fluxbox/nls/fr_FR/fluxbox.cat
-%%NLS:%%share/fluxbox/nls/it_IT/fluxbox.cat
-%%NLS:%%share/fluxbox/nls/ja_JP/fluxbox.cat
-%%NLS:%%share/fluxbox/nls/lv_LV/fluxbox.cat
-%%NLS:%%share/fluxbox/nls/nl_NL/fluxbox.cat
-%%NLS:%%share/fluxbox/nls/pl_PL/fluxbox.cat
-%%NLS:%%share/fluxbox/nls/pt_BR/fluxbox.cat
-%%NLS:%%share/fluxbox/nls/pt_PT/fluxbox.cat
-%%NLS:%%share/fluxbox/nls/ru_RU/fluxbox.cat
-%%NLS:%%share/fluxbox/nls/sl_SI/fluxbox.cat
-%%NLS:%%share/fluxbox/nls/sv_SE/fluxbox.cat
-%%NLS:%%share/fluxbox/nls/tr_TR/fluxbox.cat
-share/fluxbox/styles/Artwiz
-share/fluxbox/styles/BlueFlux/pixmaps/button_close_active.xpm
-share/fluxbox/styles/BlueFlux/pixmaps/button_close_pressed.xpm
-share/fluxbox/styles/BlueFlux/pixmaps/button_close_unfocus.xpm
-share/fluxbox/styles/BlueFlux/pixmaps/button_max_active.xpm
-share/fluxbox/styles/BlueFlux/pixmaps/button_max_pressed.xpm
-share/fluxbox/styles/BlueFlux/pixmaps/button_max_unfocus.xpm
-share/fluxbox/styles/BlueFlux/pixmaps/button_min_active.xpm
-share/fluxbox/styles/BlueFlux/pixmaps/button_min_pressed.xpm
-share/fluxbox/styles/BlueFlux/pixmaps/button_min_unfocus.xpm
-share/fluxbox/styles/BlueFlux/pixmaps/button_stick_active.xpm
-share/fluxbox/styles/BlueFlux/pixmaps/button_stick_pressed.xpm
-share/fluxbox/styles/BlueFlux/pixmaps/button_stick_unfocus.xpm
-share/fluxbox/styles/BlueFlux/pixmaps/button_stuck.xpm
-share/fluxbox/styles/BlueFlux/pixmaps/button_stuck_unfocus.xpm
-share/fluxbox/styles/BlueFlux/pixmaps/button_toolbar.xpm
-share/fluxbox/styles/BlueFlux/pixmaps/button_toolbar_pressed.xpm
-share/fluxbox/styles/BlueFlux/pixmaps/menu_frame.xpm
-share/fluxbox/styles/BlueFlux/pixmaps/title_bar.xpm
-share/fluxbox/styles/BlueFlux/pixmaps/title_bar_unfocus.xpm
-share/fluxbox/styles/BlueFlux/pixmaps/toolbar.xpm
-share/fluxbox/styles/BlueFlux/pixmaps/toolbar_label.xpm
-share/fluxbox/styles/BlueFlux/theme.cfg
-share/fluxbox/styles/BlueNight
-share/fluxbox/styles/Carbondioxide
-share/fluxbox/styles/Clean
-share/fluxbox/styles/Cthulhain
-share/fluxbox/styles/Emerge/pixmaps/bullet.xpm
-share/fluxbox/styles/Emerge/pixmaps/close-pressed.xpm
-share/fluxbox/styles/Emerge/pixmaps/close-unfocus.xpm
-share/fluxbox/styles/Emerge/pixmaps/close.xpm
-share/fluxbox/styles/Emerge/pixmaps/icon-pressed.xpm
-share/fluxbox/styles/Emerge/pixmaps/icon-unfocus.xpm
-share/fluxbox/styles/Emerge/pixmaps/icon.xpm
-share/fluxbox/styles/Emerge/pixmaps/max-pressed.xpm
-share/fluxbox/styles/Emerge/pixmaps/max-unfocus.xpm
-share/fluxbox/styles/Emerge/pixmaps/max.xpm
-share/fluxbox/styles/Emerge/pixmaps/selected.xpm
-share/fluxbox/styles/Emerge/pixmaps/stick-pressed.xpm
-share/fluxbox/styles/Emerge/pixmaps/stick-unfocus.xpm
-share/fluxbox/styles/Emerge/pixmaps/stick.xpm
-share/fluxbox/styles/Emerge/pixmaps/stuck-pressed.xpm
-share/fluxbox/styles/Emerge/pixmaps/stuck-unfocus.xpm
-share/fluxbox/styles/Emerge/pixmaps/stuck.xpm
-share/fluxbox/styles/Emerge/pixmaps/unselected.xpm
-share/fluxbox/styles/Emerge/theme.cfg
-share/fluxbox/styles/Flux
-share/fluxbox/styles/LemonSpace
-share/fluxbox/styles/Makro
-share/fluxbox/styles/MerleyKay
-share/fluxbox/styles/Meta
-share/fluxbox/styles/Minimal
-share/fluxbox/styles/Nyz
-share/fluxbox/styles/Operation
-share/fluxbox/styles/Outcomes
-share/fluxbox/styles/Rampage
-share/fluxbox/styles/Results
-share/fluxbox/styles/Shade
-share/fluxbox/styles/Spiff
-share/fluxbox/styles/Twice
-share/fluxbox/styles/qnx-photon
-@dirrm share/fluxbox/styles/Emerge/pixmaps
-@dirrm share/fluxbox/styles/Emerge
-@dirrm share/fluxbox/styles/BlueFlux/pixmaps
-@dirrm share/fluxbox/styles/BlueFlux
-@dirrm share/fluxbox/styles
-%%NLS:%%@dirrm share/fluxbox/nls/tr_TR
-%%NLS:%%@dirrm share/fluxbox/nls/sv_SE
-%%NLS:%%@dirrm share/fluxbox/nls/sl_SI
-%%NLS:%%@dirrm share/fluxbox/nls/ru_RU
-%%NLS:%%@dirrm share/fluxbox/nls/pt_PT
-%%NLS:%%@dirrm share/fluxbox/nls/pt_BR
-%%NLS:%%@dirrm share/fluxbox/nls/pl_PL
-%%NLS:%%@dirrm share/fluxbox/nls/nl_NL
-%%NLS:%%@dirrm share/fluxbox/nls/lv_LV
-%%NLS:%%@dirrm share/fluxbox/nls/ja_JP
-%%NLS:%%@dirrm share/fluxbox/nls/it_IT
-%%NLS:%%@dirrm share/fluxbox/nls/fr_FR
-%%NLS:%%@dirrm share/fluxbox/nls/et_EE
-%%NLS:%%@dirrm share/fluxbox/nls/es_ES
-%%NLS:%%@dirrm share/fluxbox/nls/de_DE
-%%NLS:%%@dirrm share/fluxbox/nls/da_DK
-%%NLS:%%@dirrm share/fluxbox/nls/bg_BG
-%%NLS:%%@dirrm share/fluxbox/nls/C
-%%NLS:%%@dirrm share/fluxbox/nls
-@dirrm share/fluxbox
+%%DATADIR%%/init
+%%DATADIR%%/keys
+%%DATADIR%%/menu
+%%NLS:%%%%DATADIR%%/nls/C/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/bg_BG/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/da_DK/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/de_DE/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/es_ES/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/et_EE/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/fr_FR/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/it_IT/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/ja_JP/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/ko_KR/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/lv_LV/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/nl_NL/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/pl_PL/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/pt_BR/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/pt_PT/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/ru_RU/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/sl_SI/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/sv_SE/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/tr_TR/fluxbox.cat
+%%NLS:%%%%DATADIR%%/nls/vi_VN/fluxbox.cat
+%%DATADIR%%/styles/Artwiz
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_close_active.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_close_pressed.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_close_unfocus.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_max_active.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_max_pressed.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_max_unfocus.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_min_active.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_min_pressed.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_min_unfocus.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_stick_active.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_stick_pressed.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_stick_unfocus.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_stuck.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_stuck_unfocus.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_toolbar.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/button_toolbar_pressed.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/menu_frame.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/title_bar.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/title_bar_unfocus.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/toolbar.xpm
+%%DATADIR%%/styles/BlueFlux/pixmaps/toolbar_label.xpm
+%%DATADIR%%/styles/BlueFlux/theme.cfg
+%%DATADIR%%/styles/BlueNight
+%%DATADIR%%/styles/Carbondioxide
+%%DATADIR%%/styles/Clean
+%%DATADIR%%/styles/Cthulhain
+%%DATADIR%%/styles/Emerge/pixmaps/bullet.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/close-pressed.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/close-unfocus.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/close.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/icon-pressed.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/icon-unfocus.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/icon.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/max-pressed.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/max-unfocus.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/max.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/selected.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/stick-pressed.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/stick-unfocus.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/stick.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/stuck-pressed.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/stuck-unfocus.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/stuck.xpm
+%%DATADIR%%/styles/Emerge/pixmaps/unselected.xpm
+%%DATADIR%%/styles/Emerge/theme.cfg
+%%DATADIR%%/styles/Flux
+%%DATADIR%%/styles/LemonSpace
+%%DATADIR%%/styles/Makro
+%%DATADIR%%/styles/MerleyKay
+%%DATADIR%%/styles/Meta
+%%DATADIR%%/styles/Minimal
+%%DATADIR%%/styles/Nyz
+%%DATADIR%%/styles/Operation
+%%DATADIR%%/styles/Outcomes
+%%DATADIR%%/styles/Rampage
+%%DATADIR%%/styles/Results
+%%DATADIR%%/styles/Shade
+%%DATADIR%%/styles/Spiff
+%%DATADIR%%/styles/Twice
+%%DATADIR%%/styles/qnx-photon
+@dirrm %%DATADIR%%/styles/Emerge/pixmaps
+@dirrm %%DATADIR%%/styles/Emerge
+@dirrm %%DATADIR%%/styles/BlueFlux/pixmaps
+@dirrm %%DATADIR%%/styles/BlueFlux
+@dirrm %%DATADIR%%/styles
+%%NLS:%%@dirrm %%DATADIR%%/nls/vi_VN
+%%NLS:%%@dirrm %%DATADIR%%/nls/tr_TR
+%%NLS:%%@dirrm %%DATADIR%%/nls/sv_SE
+%%NLS:%%@dirrm %%DATADIR%%/nls/sl_SI
+%%NLS:%%@dirrm %%DATADIR%%/nls/ru_RU
+%%NLS:%%@dirrm %%DATADIR%%/nls/pt_PT
+%%NLS:%%@dirrm %%DATADIR%%/nls/pt_BR
+%%NLS:%%@dirrm %%DATADIR%%/nls/pl_PL
+%%NLS:%%@dirrm %%DATADIR%%/nls/nl_NL
+%%NLS:%%@dirrm %%DATADIR%%/nls/lv_LV
+%%NLS:%%@dirrm %%DATADIR%%/nls/ko_KR
+%%NLS:%%@dirrm %%DATADIR%%/nls/ja_JP
+%%NLS:%%@dirrm %%DATADIR%%/nls/it_IT
+%%NLS:%%@dirrm %%DATADIR%%/nls/fr_FR
+%%NLS:%%@dirrm %%DATADIR%%/nls/et_EE
+%%NLS:%%@dirrm %%DATADIR%%/nls/es_ES
+%%NLS:%%@dirrm %%DATADIR%%/nls/de_DE
+%%NLS:%%@dirrm %%DATADIR%%/nls/da_DK
+%%NLS:%%@dirrm %%DATADIR%%/nls/bg_BG
+%%NLS:%%@dirrm %%DATADIR%%/nls/C
+%%NLS:%%@dirrm %%DATADIR%%/nls
+@dirrm %%DATADIR%%
 %%DOCPDF:%%@dirrm %%DOCSDIR%%/pdf
 %%DOCHTML:%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

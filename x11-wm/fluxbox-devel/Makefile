@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fluxbox
-PORTVERSION=	0.9.11
+PORTVERSION=	0.9.12
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fluxbox
@@ -22,6 +22,7 @@ RUN_DEPENDS=	bsetroot:${PORTSDIR}/x11-wm/boxtools
 
 CONFLICTS=	fluxbox-0.1.*
 
+USE_GMAKE=	yes
 USE_GNOME=	gnometarget
 WANT_GNOME=	yes
 USE_X_PREFIX=	yes
@@ -50,6 +51,13 @@ DISTFILES+=		fluxbook.pdf:pdf
 PLIST_SUB+=		DOCPDF:=""
 .else
 PLIST_SUB+=		DOCPDF:="@comment "
+.endif
+
+.if defined(WITH_IMLIB2)
+LIB_DEPENDS+=		Imlib2.2:${PORTSDIR}/graphics/imlib2
+CONFIGURE_ARGS+=	--enable-imlib2
+.else
+CONFIGURE_ARGS+=	--disable-imlib2
 .endif
 
 .if defined(WITH_KDE) || defined(PACKAGE_BUILDING)
@@ -110,6 +118,9 @@ pre-everything::
 .endif
 .if !defined(WITH_GNOME)
 	@${ECHO_CMD} "WITH_GNOME=yes		Enable GNOME support"
+.endif
+.if !defined(WITH_IMLIB2)
+	@${ECHO_CMD} "WITH_IMLIB2=yes		Enable Imlib2 (pixmap themes) support"
 .endif
 .if !defined(WITH_KDE)
 	@${ECHO_CMD} "WITH_KDE=yes		Enable KDE slit support"
