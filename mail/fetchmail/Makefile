@@ -19,7 +19,7 @@ MAINTAINER=	ve@sci.fi
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 .if defined(WITH_X11)
-RUN_DEPENDS=	${LOCALBASE}/lib/python1.5/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
+RUN_DEPENDS=	${LOCALBASE}/lib/python2.0/site-packages/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 .endif
 
 GNU_CONFIGURE=	yes
