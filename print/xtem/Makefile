@@ -3,7 +3,7 @@
 # Date created:         01 June 1997
 # Whom:                 Peter Cornelius <pc@inr.fzk.de>
 #
-# $Id: Makefile,v 1.4 1998/05/25 07:34:12 tg Exp $
+# $Id: Makefile,v 1.5 1998/06/27 05:19:25 asami Exp $
 
 DISTNAME=	xtem_texmenu.6.18
 PKGNAME=	xtem-6.18
@@ -11,6 +11,8 @@ CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.iwd.uni-bremen.de/pub/tex/xtem/
 
 MAINTAINER=     ports@FreeBSD.ORG
+
+BROKEN_ELF=	patch
 
 RUN_DEPENDS=	wishx:${PORTSDIR}/lang/tclX80
 .if defined(BUILD_IT_ALL)
