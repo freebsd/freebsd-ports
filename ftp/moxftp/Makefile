@@ -3,7 +3,7 @@
 # Date created:		19 December 1994
 # Whom:			janek
 #
-# $Id: Makefile,v 1.16 1998/08/07 23:56:43 asami Exp $
+# $Id: Makefile,v 1.17 1998/08/18 23:23:02 hoek Exp $
 #
 
 DISTNAME=	moxftp-2.2
@@ -11,11 +11,13 @@ CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.pacbell.com/X11/contrib/applications/
 EXTRACT_SUFX=	.tar.Z
 
+MAINTAINER=	ports@FreeBSD.ORG
+
 HAS_CONFIGURE=	yes
 USE_X_PREFIX=	yes
-STRIP=
 MAN1=		${PROGRAM_NAME}.1
 PLIST_SUB=	PROGRAM_NAME=${PROGRAM_NAME} RESOURCE_NAME=${RESOURCE_NAME}
+STRIP=
 
 # CONFIGURE_ARGS set to :
 #	motif - for motif version, (not tested!!!)
