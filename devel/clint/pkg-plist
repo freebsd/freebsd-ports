@@ -1,17 +1,12 @@
 bin/clint
 include/clint/exceptions.h
 include/clint/python.h
-@dirrm include/clint
-@unexec install-info --delete %D/info/clint.info %D/info/dir
-info/clint.info
-@exec install-info %D/info/clint.info %D/info/dir
 lib/clint/python.a
 lib/clint/python.so
 lib/clint/python.so.0
 lib/libpython++.a
 lib/libpython++.so
 lib/libpython++.so.0
-@dirrm lib/clint
 share/clint/clint.py
 share/clint/python_rules/c_comments.py
 share/clint/python_rules/catch_exception.py
@@ -22,3 +17,5 @@ share/clint/python_rules/macros.py
 share/clint/python_rules/shortcut_if.py
 @dirrm share/clint/python_rules
 @dirrm share/clint
+@dirrm lib/clint
+@dirrm include/clint

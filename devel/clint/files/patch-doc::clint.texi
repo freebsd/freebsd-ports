@@ -1,0 +1,21 @@
+--- doc/clint.texinfo.orig	Tue Apr 17 04:52:44 2001
++++ doc/clint.texinfo	Sat Oct 18 21:02:43 2003
+@@ -2,6 +2,10 @@
+ @c %**start of header
+ @setfilename clint.info
+ @settitle Clint is a static source code checker for C++
++@dircategory Programming & development tools
++@direntry
++* Clint: (clint).		A static source code checker for C++
++@end direntry
+ @finalout
+ @setchapternewpage odd
+ @c %**end of header
+@@ -94,7 +98,6 @@
+ professional experience.)
+ 
+ @node Copying, Overview, Instructions, Top
+-@include gpl.texinfo
+ 
+ @node Overview, Sample, Copying, Top
+ @chapter Overview
