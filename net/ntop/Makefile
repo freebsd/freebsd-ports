@@ -3,7 +3,7 @@
 # Date created:        10 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.3 1998/09/05 21:43:26 hoek Exp $
+# $Id: Makefile,v 1.4 1998/11/12 00:01:32 billf Exp $
 #
 
 DISTNAME=	ntop-1.0.src
@@ -20,6 +20,11 @@ INSTALL_TARGET=	install
 CFLAGS+=	-D__dead=
 
 MAN8=		ntop.8
+
+post-extract:
+
+	${CP} ${FILESDIR}/ethertype.h ${WRKSRC}
+	${CP} ${FILESDIR}/gnuc.h ${WRKSRC}
 
 post-install:
 	strip ${PREFIX}/sbin/ntop
