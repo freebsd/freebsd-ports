@@ -1,12 +1,12 @@
 bin/Magick++-config
 bin/Magick-config
-bin/animate
+%%X11%%bin/animate
 bin/cgimagick
 bin/combine
 bin/convert
-bin/display
+%%X11%%bin/display
 bin/identify
-bin/import
+%%X11%%bin/import
 bin/iptcutil
 bin/mogrify
 bin/montage
