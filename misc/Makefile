@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.80 1996/07/30 02:17:16 chuckr Exp $
+# $Id: Makefile,v 1.81 1996/08/04 00:28:11 chuckr Exp $
 #
 
     SUBDIR += amanda
@@ -23,6 +23,7 @@
     SUBDIR += mc
     SUBDIR += mmv
     SUBDIR += mshell
+    SUBDIR += plan
     SUBDIR += recode
     SUBDIR += rman
     SUBDIR += sattrack
