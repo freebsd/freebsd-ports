@@ -6222,6 +6222,7 @@ ruby-webunit	ports/www/ruby-webunit
 ruby-xmlparser	ports/textproc/ruby-xmlparser
 ruby-xmlrpc	ports/net/ruby-xmlrpc
 ruby-xmlscan	ports/textproc/ruby-xmlscan
+ruby-xmms	ports/audio/ruby-xmms
 ruby-xslt	ports/textproc/ruby-xslt
 ruby-zip	ports/archivers/ruby-zip
 ruby-zlib	ports/archivers/ruby-zlib
