@@ -4,5 +4,5 @@ share/icb/icbserverdb
 share/icb/sample.icbrc
 share/icb/bartender
 share/icb/confuse
-share/icb/echofile
+share/icb/echofunctions
 @dirrm share/icb
