@@ -1,0 +1,11 @@
+This project stands for Medical Image Conversion and is released under the
+GNU's (L)GPL license. It bundles the C sourcecode, a library, a flexible
+command-line utility and a graphical front-end based on the amazing Gtk+
+toolkit.
+
+Its main purpose is image conversion, while preserving the most valuable
+medical study information. The currently supported formats are: Acr/Nema 2.0,
+Analyze (SPM), Concorde/uPET, DICOM 3.0, Ecat/Matrix 6.4, InterFile 3.3
+and PNG or animated Gif87a/89a towards desktop applications.
+
+WWW: http://xmedcon.sourceforge.net/
