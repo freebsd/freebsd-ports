@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/sm-client.sh,v 1.3 2002-04-06 08:17:34 dinoex Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/sendmail812/files/Attic/sm-client.sh,v 1.4 2003-12-04 03:24:09 dinoex Exp $
 # 
 if ! test -x %%PREFIX%%/sbin/sendmail
 then
@@ -25,7 +25,7 @@ restart)
 	fi
 	;;
 *)
-	echo "Usage: ${0##*/}: { start | stop | restart }" 2>&1
-	exit 65
+	echo "Usage: ${0##*/}: { start | stop | restart }" >&2
+	exit 64
 	;;
 esac
