@@ -1,0 +1,13 @@
+This package contains four programs for converting diffs. Diff files are
+created by GNU diff and accepted as input by GNU patch. The two most common
+forms are "context diffs" and "unidiffs".
+
+  ud2cd          converts a unidiff (input) to a context diff (output).
+  cd2ud          converts a context diff (input) to a unidiff (output).
+  cdiffreverse   reverses a context diff.
+  cdiffreverse   reverses a unidiff.
+
+cd2ud is decicated to David S. Miller "context diffs make my head spin".
+
+- George Reid
+greid@ukug.uk.freebsd.org
