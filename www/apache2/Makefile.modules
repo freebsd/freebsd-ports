@@ -12,10 +12,6 @@
 # $FreeBSD$
 #
 
-.if defined(SLAVE_DESIGNED_FOR) && ${PORTVERSION} != ${SLAVE_DESIGNED_FOR}
-IGNORE=		"Sorry, ${SLAVENAME} and ${PORTNAME} versions are out of sync"
-.endif
-
 # MPM section:
 # << TO BE WRITTEN >>
 .if defined (SLAVE_PORT_MPM)
@@ -127,11 +123,8 @@ SSL_MODULES=		ssl
 SUEXEC_MODULES=		suexec
 THREADS_MODULES=	cgid
 
-# Work in progress
-SLAVE_PORT_MODULES?=	# If you are porting a slave port for apache2 please define SLAVE_PORT_MODULES
-
 DEFAULT_MODULES_CATEGORIES= \
-			AUTH DAV MISC SLAVE_PORT
+			AUTH DAV MISC
 
 ALL_MODULES_CATEGORIES=	AUTH DAV EXPERIMENTAL LDAP MISC PROXY SSL \
-			SUEXEC THREADS SLAVE_PORT
+			SUEXEC THREADS
