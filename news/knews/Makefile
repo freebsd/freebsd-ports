@@ -1,12 +1,12 @@
 # New ports collection makefile for:	knews
-# Version required:     0.9.6
+# Version required:     0.9.7
 # Date created:         Sun Apr 14 09:23:59 MET DST 1996
 # Whom:                 Andreas Klemm <andreas@knobel.gun.de>
 #
-# $Id$
+# $Id: Makefile,v 1.3 1996/06/03 00:28:05 asami Exp $
 #
 
-DISTNAME=	knews-0.9.6
+DISTNAME=	knews-0.9.7
 CATEGORIES+=	x11 news
 MASTER_SITES=	ftp://ftp.nada.kth.se/home/su95-kjo/knews/ \
 	ftp://sunsite.unc.edu/pub/Linux/X11/xapps/networked/ \
