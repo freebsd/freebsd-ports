@@ -1,6 +1,6 @@
-diff -c -r FWF.orig/FWF.tmpl FWF/FWF.tmpl
+diff -r -c FWF.orig/FWF.tmpl FWF/FWF.tmpl
 *** FWF.orig/FWF.tmpl	Wed Apr 19 08:28:49 1995
---- FWF/FWF.tmpl	Sat Jul 15 04:32:23 1995
+--- FWF/FWF.tmpl	Sat Jul 15 11:59:41 1995
 ***************
 *** 26,32 ****
   	Set if you also want Motif versions of the widgets (if available)
@@ -19,6 +19,24 @@ diff -c -r FWF.orig/FWF.tmpl FWF/FWF.tmpl
   XCOMM MOTIFINC = -I/usr/include/Motif1.2
   XCOMM XMLIB = -L/usr/lib/Motif1.2 -lXm
 ***************
+*** 37,43 ****
+  
+  CC = gcc
+  /* CC = cc -Ae */
+! CDEBUGFLAGS = -g -Wall
+  /* CDEBUGFLAGS = -O -z +z -DNDEBUG */
+  
+  /*------------------------------------------------------------------------
+--- 37,44 ----
+  
+  CC = gcc
+  /* CC = cc -Ae */
+! CDEBUGFLAGS = -O
+! 
+  /* CDEBUGFLAGS = -O -z +z -DNDEBUG */
+  
+  /*------------------------------------------------------------------------
+***************
 *** 52,62 ****
   
   #define	HaveXpm		1
@@ -31,7 +49,7 @@ diff -c -r FWF.orig/FWF.tmpl FWF/FWF.tmpl
   
   /*------------------------------------------------------------------------
   	The following lines might be helpful for your system.  Uncomment
---- 52,59 ----
+--- 53,60 ----
   
   #define	HaveXpm		1
   
@@ -40,9 +58,36 @@ diff -c -r FWF.orig/FWF.tmpl FWF/FWF.tmpl
   
   /*------------------------------------------------------------------------
   	The following lines might be helpful for your system.  Uncomment
-diff -c -r FWF.orig/src/AnsiTerm/AnsiTermT.c FWF/src/AnsiTerm/AnsiTermT.c
+***************
+*** 66,71 ****
+--- 64,70 ----
+  /* MKDIRHIER = /bin/sh $(PROJECTDIR)/utils/mkdirhier.sh */
+  /* EXTRA_LOAD_FLAGS = /usr/lib/libdl.so.1.0 */
+  
++ 
+  /*------------------------------------------------------------------------
+  	These directories are the final installation locations for the
+  	files.  Once everything is built, a make install will move the
+***************
+*** 82,88 ****
+  	You probably won't need to edit these...
+  ------------------------------------------------------------------------*/
+  
+! ARMERGE = ar r
+  PROJECTDIR = $(TOP)
+  
+  FWF_LIBBASENAME = fwf
+--- 81,87 ----
+  	You probably won't need to edit these...
+  ------------------------------------------------------------------------*/
+  
+! ARMERGE = ar qc
+  PROJECTDIR = $(TOP)
+  
+  FWF_LIBBASENAME = fwf
+diff -r -c FWF.orig/src/AnsiTerm/AnsiTermT.c FWF/src/AnsiTerm/AnsiTermT.c
 *** FWF.orig/src/AnsiTerm/AnsiTermT.c	Tue Mar  7 08:48:56 1995
---- FWF/src/AnsiTerm/AnsiTermT.c	Sat Jul 15 04:32:24 1995
+--- FWF/src/AnsiTerm/AnsiTermT.c	Sat Jul 15 11:59:41 1995
 ***************
 *** 30,41 ****
   #include <signal.h>
@@ -74,52 +119,423 @@ diff -c -r FWF.orig/src/AnsiTerm/AnsiTermT.c FWF/src/AnsiTerm/AnsiTermT.c
   
   /*--------------------------------------------------------------------
    |  Provide rather strict fallback resources, to make the program work
-diff -c -r FWF.orig/src/Dir/RegExp.c FWF/src/Dir/RegExp.c
-*** FWF.orig/src/Dir/RegExp.c	Mon Apr 18 18:07:20 1994
---- FWF/src/Dir/RegExp.c	Sat Jul 15 04:32:24 1995
+diff -r -c FWF.orig/src/Dir/DirMgr.c FWF/src/Dir/DirMgr.c
+*** FWF.orig/src/Dir/DirMgr.c	Mon Apr 18 18:07:20 1994
+--- FWF/src/Dir/DirMgr.c	Sat Jul 15 11:59:41 1995
 ***************
-*** 10,15 ****
---- 10,19 ----
+*** 22,33 ****
+   */ 
   
-   ****************************************************************************/
+  #include <Xfwf/DirMgr.h>
+! 
+! #ifndef NO_REGEXP
+! #include <Xfwf/RegExp.h>
+! #endif
+! 
+! #define	DIR_MGR_FSM_SIZE 1024
   
-+ #if defined(__FreeBSD__)	/* This whole file needs converting */
-+ #define NO_REGEXP
-+ #endif
-+ 
-  /*
-   * Author:
-   * 	Brian Totty
+  /*---------------------------------------------------------------------------*
+  
+--- 22,28 ----
+   */ 
+  
+  #include <Xfwf/DirMgr.h>
+! #include <regex.h>
+  
+  /*---------------------------------------------------------------------------*
+  
 ***************
-*** 25,36 ****
-  #include <Xfwf/RegExp.h>
-  #include <regexp.h>
-  
-! void RegExpCompile(regexp,fsm_ptr,fsm_length)
-! char *regexp,*fsm_ptr;
-  int fsm_length;
+*** 42,60 ****
   {
-  #ifndef NO_REGEXP
-! 	compile(regexp,fsm_ptr,&(fsm_ptr[fsm_length]),'\0');
-  #endif
-  } /* End RegExpCompile */
+  	DirectoryMgr *dm;
+  	PFI f_func,s_func;
+! 	char *f_data;
   
---- 29,40 ----
-  #include <Xfwf/RegExp.h>
-  #include <regexp.h>
+  	if (pattern == NULL) pattern = "*";
+! 	if (!DirectoryMgrSimpleFilterFunc(pattern,&f_func,&f_data))
+  	{
+  		return(NULL);
+  	}
+! 	if (!DirectoryMgrSimpleSortingFunc(sort_type,&s_func))
+  	{
+  		free(f_data);
+  		return(NULL);
+  	}
+! 	dm = DirectoryMgrOpen(path,s_func,f_func,f_data,TRUE);
+  	return(dm);
+  } /* End DirectoryMgrSimpleOpen */
   
-! void RegExpCompile(regex,fsm_ptr,fsm_length)
-! char *regex,*fsm_ptr;
-  int fsm_length;
+--- 37,55 ----
   {
-  #ifndef NO_REGEXP
-! 	compile(regex,fsm_ptr,&(fsm_ptr[fsm_length]),'\0');
-  #endif
-  } /* End RegExpCompile */
+  	DirectoryMgr *dm;
+  	PFI f_func,s_func;
+! 	regex_t *f_data;
   
-diff -c -r FWF.orig/src/EzMenu/EzMenu.c FWF/src/EzMenu/EzMenu.c
+  	if (pattern == NULL) pattern = "*";
+! 	if (!DirectoryMgrSimpleFilterFunc(pattern, &f_func, &f_data))
+  	{
+  		return(NULL);
+  	}
+! 	if (!DirectoryMgrSimpleSortingFunc(sort_type, &s_func))
+  	{
+  		free(f_data);
+  		return(NULL);
+  	}
+! 	dm = DirectoryMgrOpen(path, s_func, f_func, f_data, TRUE);
+  	return(dm);
+  } /* End DirectoryMgrSimpleOpen */
+  
+***************
+*** 64,72 ****
+  char *pattern;
+  {
+  	PFI f_func;
+! 	char *f_data;
+  
+! 	if (!DirectoryMgrSimpleFilterFunc(pattern,&f_func,&f_data))
+  	{
+  		return(FALSE);
+  	}
+--- 59,67 ----
+  char *pattern;
+  {
+  	PFI f_func;
+! 	regex_t *f_data;
+  
+! 	if (!DirectoryMgrSimpleFilterFunc(pattern, &f_func, &f_data))
+  	{
+  		return(FALSE);
+  	}
+***************
+*** 108,117 ****
+  } /* End DirectoryMgrCanOpen */
+  
+  
+! DirectoryMgr *DirectoryMgrOpen(path,c_func,f_func,f_data,free_data)
+  char *path;
+  PFI c_func,f_func;
+! char *f_data;
+  int free_data;
+  {
+  	DirectoryMgr *dm;
+--- 103,112 ----
+  } /* End DirectoryMgrCanOpen */
+  
+  
+! DirectoryMgr *DirectoryMgrOpen(path, c_func, f_func, f_data, free_data)
+  char *path;
+  PFI c_func,f_func;
+! regex_t *f_data;
+  int free_data;
+  {
+  	DirectoryMgr *dm;
+***************
+*** 120,126 ****
+  	if (dm == NULL)
+  	{
+  		fprintf(stderr,"DirectoryMgrOpen: out of memory\n");
+! 		if (free_data && f_data) free(f_data);
+  		return(NULL);
+  	}
+  	if (DirectoryOpen(path,DirectoryMgrDir(dm)) == FALSE)
+--- 115,124 ----
+  	if (dm == NULL)
+  	{
+  		fprintf(stderr,"DirectoryMgrOpen: out of memory\n");
+! 		if (free_data && f_data) {
+! 		    regfree(f_data);
+! 		    free(f_data);
+! 		}
+  		return(NULL);
+  	}
+  	if (DirectoryOpen(path,DirectoryMgrDir(dm)) == FALSE)
+***************
+*** 128,134 ****
+  		fprintf(stderr,"DirectoryMgrOpen: can't open dir '%s'\n",
+  			DirectoryMgrDir(dm));
+  		free(dm);
+! 		if (free_data && f_data) free(f_data);
+  		return(NULL);
+  	}
+  	DirectoryMgrCompFunc(dm) = c_func;
+--- 126,135 ----
+  		fprintf(stderr,"DirectoryMgrOpen: can't open dir '%s'\n",
+  			DirectoryMgrDir(dm));
+  		free(dm);
+! 		if (free_data && f_data) {
+! 		    regfree(f_data);
+! 		    free(f_data);
+! 		}
+  		return(NULL);
+  	}
+  	DirectoryMgrCompFunc(dm) = c_func;
+***************
+*** 154,164 ****
+  int DirectoryMgrRefilter(dm,f_func,f_data,f_free)
+  DirectoryMgr *dm;
+  PFI f_func;
+! char *f_data;
+  int f_free;
+  {
+  	if (DirectoryMgrFilterData(dm) && DirectoryMgrFreeFilterData(dm))
+  	{
+  		free(DirectoryMgrFilterData(dm));
+  	}
+  	DirectoryMgrFilterFunc(dm) = f_func;
+--- 155,166 ----
+  int DirectoryMgrRefilter(dm,f_func,f_data,f_free)
+  DirectoryMgr *dm;
+  PFI f_func;
+! regex_t *f_data;
+  int f_free;
+  {
+  	if (DirectoryMgrFilterData(dm) && DirectoryMgrFreeFilterData(dm))
+  	{
++ 		regfree(DirectoryMgrFilterData(dm));
+  		free(DirectoryMgrFilterData(dm));
+  	}
+  	DirectoryMgrFilterFunc(dm) = f_func;
+***************
+*** 342,362 ****
+  
+   *---------------------------------------------------------------------------*/
+  
+! int DirectoryMgrSimpleFilterFunc(pattern,ff_ptr,fd_ptr)
+  char *pattern;
+  PFI *ff_ptr;
+! char **fd_ptr;
+  {
+- #ifndef	NO_REGEXP
+- 	char regexp[2048];
+  
+  	*ff_ptr = DirectoryMgrFilterName;
+! 	*fd_ptr = (char *)malloc(sizeof(char) * DIR_MGR_FSM_SIZE);
+! 	if (*fd_ptr == NULL) return(FALSE);
+! 	RegExpPatternToRegExp(pattern,regexp);
+! 	RegExpCompile(regexp,*fd_ptr,DIR_MGR_FSM_SIZE);
+! #endif
+! 	return(TRUE);
+  } /* End DirectoryMgrSimpleFilterFunc */
+  
+  
+--- 344,362 ----
+  
+   *---------------------------------------------------------------------------*/
+  
+! int DirectoryMgrSimpleFilterFunc(pattern, ff_ptr, fd_ptr)
+  char *pattern;
+  PFI *ff_ptr;
+! regex_t **fd_ptr;
+  {
+  
+  	*ff_ptr = DirectoryMgrFilterName;
+! 	*fd_ptr = (regex_t *)malloc(sizeof(regex_t));
+! 	if (!*fd_ptr)
+! 	    return FALSE;
+! 	if (!regcomp(*fd_ptr, pattern, REG_EXTENDED | REG_NOSUB))
+! 	    return TRUE;
+! 	return FALSE;
+  } /* End DirectoryMgrSimpleFilterFunc */
+  
+  
+***************
+*** 467,479 ****
+  
+   *---------------------------------------------------------------------------*/
+  
+! int DirectoryMgrFilterName(de,fsm)
+  DirEntry *de;
+! char *fsm;
+  {
+! #ifndef	NO_REGEXP
+! 	return(RegExpMatch(DirEntryFileName(de),fsm));
+! #else
+! 	return(TRUE);
+! #endif
+  } /* End DirectoryMgrFilterName */
+--- 467,475 ----
+  
+   *---------------------------------------------------------------------------*/
+  
+! int DirectoryMgrFilterName(de, fsm)
+  DirEntry *de;
+! regex_t *fsm;
+  {
+! 	return(regexec(fsm, DirEntryFileName(de), 0, NULL, 0));
+  } /* End DirectoryMgrFilterName */
+diff -r -c FWF.orig/src/Dir/DirMgr.h FWF/src/Dir/DirMgr.h
+*** FWF.orig/src/Dir/DirMgr.h	Tue Apr 26 09:27:39 1994
+--- FWF/src/Dir/DirMgr.h	Sat Jul 15 11:59:41 1995
+***************
+*** 26,31 ****
+--- 26,32 ----
+  #define	_FWF_DIRECTORY_MGR_H_
+  
+  #include <Xfwf/Directory.h>
++ #include <regex.h>
+  
+  /*---------------------------------------------------------------------------*
+  
+***************
+*** 101,107 ****
+  	int total_count;
+  	int filtered_count;
+  	PFI filter_func;
+! 	char *filter_data;
+  	int free_filter_data;
+  	PFI comp_func;
+  	int current_index;
+--- 102,108 ----
+  	int total_count;
+  	int filtered_count;
+  	PFI filter_func;
+! 	regex_t *filter_data;
+  	int free_filter_data;
+  	PFI comp_func;
+  	int current_index;
+***************
+*** 170,179 ****
+  
+  int		DirectoryMgrCanOpen(char *path);
+  DirectoryMgr *	DirectoryMgrOpen(char *path, PFI c_func, PFI f_func,
+! 			char *f_data, int free_data);
+  void		DirectoryMgrClose(DirectoryMgr *dm);
+  int		DirectoryMgrRefilter(DirectoryMgr *dm, PFI f_func,
+! 			char *f_data, int f_free);
+  int		DirectoryMgrRefresh(DirectoryMgr *dm);
+  void		DirectoryMgrResort(DirectoryMgr *dm, PFI c_func);
+  
+--- 171,180 ----
+  
+  int		DirectoryMgrCanOpen(char *path);
+  DirectoryMgr *	DirectoryMgrOpen(char *path, PFI c_func, PFI f_func,
+! 			regex_t *f_data, int free_data);
+  void		DirectoryMgrClose(DirectoryMgr *dm);
+  int		DirectoryMgrRefilter(DirectoryMgr *dm, PFI f_func,
+! 			regex_t *f_data, int f_free);
+  int		DirectoryMgrRefresh(DirectoryMgr *dm);
+  void		DirectoryMgrResort(DirectoryMgr *dm, PFI c_func);
+  
+diff -r -c FWF.orig/src/Dir/Directory.c FWF/src/Dir/Directory.c
+*** FWF.orig/src/Dir/Directory.c	Wed Mar  8 09:14:01 1995
+--- FWF/src/Dir/Directory.c	Sat Jul 15 11:59:43 1995
+***************
+*** 24,30 ****
+   */ 
+  
+  #include <Xfwf/Directory.h>
+- #include <Xfwf/RegExp.h>
+  
+  /*--------------------------------------------------------------------------*
+  
+--- 24,29 ----
+diff -r -c FWF.orig/src/Dir/Imakefile FWF/src/Dir/Imakefile
+*** FWF.orig/src/Dir/Imakefile	Wed Apr 19 08:15:12 1995
+--- FWF/src/Dir/Imakefile	Sat Jul 15 11:59:41 1995
+***************
+*** 4,18 ****
+  
+  CFLAGS = $(CDEBUGFLAGS) $(CCOPTIONS) $(STD_INCLUDES) $(STD_DEFINES) $(PROTO_DEFINES) $(DEFINES) $(COMPATFLAGS)
+  
+- REGH		=	RegExp.h
+- REGSRC		=	RegExp.c
+- REGOBJ		=	RegExp.o
+- REGTESTSRC	=	RegExpT.c
+- REGTESTOBJ	=	RegExpT.o
+- REGTEST		=	$(FWF_BINDIR)/RegExpT
+- REGOBJS		=	$(REGOBJ) $(REGTESTOBJ)
+- REGSRCS		=	$(REGSRC) $(REGTESTSRC)
+- 
+  DIRH		=	Directory.h
+  DIRSRC		=	Directory.c
+  DIROBJ		=	Directory.o
+--- 4,9 ----
+***************
+*** 33,64 ****
+  
+  DIR_LIBNAME	=	libDir.a
+  
+! PROGRAMS = $(REGTEST) $(DIRTEST) $(DIRMGRTEST)
+! LIB_OBJS = $(REGOBJ) $(DIROBJ) $(DIRMGROBJ)
+! EXT_OBJS = $(REGTESTOBJ) $(DIRTESTOBJ) $(DIRMGRTESTOBJ)
+  
+! INCS = $(FWF_INCDIR)/$(REGH) $(FWF_INCDIR)/$(DIRH) $(FWF_INCDIR)/$(DIRMGRH)
+  SRCS = $(REGSRCS) $(DIRSRCS) $(DIRMGRSRCS)
+  
+  LOCALLIBS = $(DIR_LIB)
+  DEPLIBS = $(DIR_LIB)
+  SYSLIBS =
+  
+- AddToLibraryTarget(archive,$(FWF_LIBDIR),$(DIR_LIBNAME),$(REGOBJ))
+  AddToLibraryTarget(archive,$(FWF_LIBDIR),$(DIR_LIBNAME),$(DIROBJ))
+  AddToLibraryTarget(archive,$(FWF_LIBDIR),$(DIR_LIBNAME),$(DIRMGROBJ))
+  
+  ObjectRuleWithFlags($(CFLAGS) -I$(XPM_INCDIR) -I$(FWF_INCBASE))
+  
+- RequireThisFileForInit($(FWF_INCDIR)/$(REGH))
+  RequireThisFileForInit($(FWF_INCDIR)/$(DIRH))
+  RequireThisFileForInit($(FWF_INCDIR)/$(DIRMGRH))
+  
+- FileCopyWhenNeeded(.,$(REGH),$(FWF_INCDIR),$(REGH))
+  FileCopyWhenNeeded(.,$(DIRH),$(FWF_INCDIR),$(DIRH))
+  FileCopyWhenNeeded(.,$(DIRMGRH),$(FWF_INCDIR),$(DIRMGRH))
+  
+- NormalProgramTarget($(REGTEST),$(REGOBJS),$(DEPLIBS),$(LOCALLIBS),$(SYSLIBS))
+  NormalProgramTarget($(DIRTEST),$(DIROBJS),$(DEPLIBS),$(LOCALLIBS),$(SYSLIBS))
+  NormalProgramTarget($(DIRMGRTEST),$(DIRMGROBJS),$(DEPLIBS),$(LOCALLIBS),$(SYSLIBS))
+  
+--- 24,51 ----
+  
+  DIR_LIBNAME	=	libDir.a
+  
+! PROGRAMS = $(DIRTEST) $(DIRMGRTEST)
+! LIB_OBJS = $(DIROBJ) $(DIRMGROBJ)
+! EXT_OBJS = $(DIRTESTOBJ) $(DIRMGRTESTOBJ)
+  
+! INCS = $(FWF_INCDIR)/$(DIRH) $(FWF_INCDIR)/$(DIRMGRH)
+  SRCS = $(REGSRCS) $(DIRSRCS) $(DIRMGRSRCS)
+  
+  LOCALLIBS = $(DIR_LIB)
+  DEPLIBS = $(DIR_LIB)
+  SYSLIBS =
+  
+  AddToLibraryTarget(archive,$(FWF_LIBDIR),$(DIR_LIBNAME),$(DIROBJ))
+  AddToLibraryTarget(archive,$(FWF_LIBDIR),$(DIR_LIBNAME),$(DIRMGROBJ))
+  
+  ObjectRuleWithFlags($(CFLAGS) -I$(XPM_INCDIR) -I$(FWF_INCBASE))
+  
+  RequireThisFileForInit($(FWF_INCDIR)/$(DIRH))
+  RequireThisFileForInit($(FWF_INCDIR)/$(DIRMGRH))
+  
+  FileCopyWhenNeeded(.,$(DIRH),$(FWF_INCDIR),$(DIRH))
+  FileCopyWhenNeeded(.,$(DIRMGRH),$(FWF_INCDIR),$(DIRMGRH))
+  
+  NormalProgramTarget($(DIRTEST),$(DIROBJS),$(DEPLIBS),$(LOCALLIBS),$(SYSLIBS))
+  NormalProgramTarget($(DIRMGRTEST),$(DIRMGROBJS),$(DEPLIBS),$(LOCALLIBS),$(SYSLIBS))
+  
+***************
+*** 81,97 ****
+  	         echo "#include <sys/dir.h>" >> dirent.h;	\ 
+  	         echo "#endif" >> dirent.h;			\ 
+  	         cp dirent.h $(FWF_INCDIR)/dirent.h;		\ 
+- 	    else echo "";					\ 
+- 	    fi; exit 0)
+- 	@rm -f regexp.h
+- 	@rm -f $(FWF_INCDIR)/regexp.h
+- 	@(if [ ! -f /usr/include/regexp.h ];			\ 
+- 	    then echo "Patching because no regexp.h";		\ 
+- 	         echo "#ifndef _BRIREGEXP_H_" > regexp.h;	\ 
+- 	         echo "#define _BRIREGEXP_H_" >> regexp.h;	\ 
+- 	         echo "#define NO_REGEXP 1" >> regexp.h;	\ 
+- 	         echo "#endif" >> regexp.h;			\ 
+- 	         cp regexp.h $(FWF_INCDIR)/regexp.h;		\ 
+  	    else echo "";					\ 
+  	    fi; exit 0)
+  
+--- 68,73 ----
+diff -r -c FWF.orig/src/EzMenu/EzMenu.c FWF/src/EzMenu/EzMenu.c
 *** FWF.orig/src/EzMenu/EzMenu.c	Fri May  6 12:59:31 1994
---- FWF/src/EzMenu/EzMenu.c	Sat Jul 15 04:32:24 1995
+--- FWF/src/EzMenu/EzMenu.c	Sat Jul 15 11:59:42 1995
 ***************
 *** 414,422 ****
 --- 414,424 ----
@@ -134,28 +550,314 @@ diff -c -r FWF.orig/src/EzMenu/EzMenu.c FWF/src/EzMenu/EzMenu.c
   
         XfwfEzMenuParseMenu(ez_new, ez_new -> ez_menu.menu, True);
         ret_val = TRUE;
-diff -c -r FWF.orig/src/FileComp/Imakefile FWF/src/FileComp/Imakefile
-*** FWF.orig/src/FileComp/Imakefile	Mon May  3 12:40:20 1993
---- FWF/src/FileComp/Imakefile	Sat Jul 15 04:32:24 1995
+diff -r -c FWF.orig/src/FileComp/FileComp.c FWF/src/FileComp/FileComp.c
+*** FWF.orig/src/FileComp/FileComp.c	Tue Feb 14 08:15:55 1995
+--- FWF/src/FileComp/FileComp.c	Sat Jul 15 12:16:27 1995
 ***************
-*** 4,10 ****
+*** 121,129 ****
+  #ifdef USEONELINE
+  #include "OneLineText.h"
+  #endif
+! #if defined(USE_REGEX) && defined(GNU_REGEX)
+  #include <regex.h>
+! #endif
+  #if defined(USE_GLOB)
+  #include <glob.h>
+  #endif
+--- 121,129 ----
+  #ifdef USEONELINE
+  #include "OneLineText.h"
+  #endif
+! 
+  #include <regex.h>
+! 
+  #if defined(USE_GLOB)
+  #include <glob.h>
+  #endif
+***************
+*** 294,302 ****
+  static void ChoosePrefix();
+  static void UpdateFilesList();
   
-  SRCS = $(WIDGET).c squish.c getod.c
-  EXT_OBJS = $(WIDGET)T.o squish.o getod.o
+! #if defined(USE_REGEX) && defined(GNU_REGEX)
+! static struct re_pattern_buffer compbuf;
+! #endif
   
-  #include "../StdImakefile"
+  static void
+  Initialize(request, new)
+--- 294,300 ----
+  static void ChoosePrefix();
+  static void UpdateFilesList();
+  
+! static regex_t *compbuf;
+  
+  static void
+  Initialize(request, new)
+***************
+*** 400,412 ****
+    } else
+      fcwp->cancel_button = NULL;
+  
+- #if defined(USE_REGEX) && defined(GNU_REGEX)
+-   /* this code initializes the compile buffer for the regex routines */
+-   compbuf.buffer = XtMalloc(256);
+-   compbuf.allocated = 256;
+-   compbuf.fastmap = compbuf.translate = NULL;
+- #endif
 - 
-- AddToLibraryTarget(archive,$(FWF_LIBDIR),$(FWF_LIBNAME),squish.o getod.o)
---- 4,9 ----
+    UpdateFilesList(new);
+    ChoosePrefix(new);
   
-  SRCS = $(WIDGET).c squish.c getod.c
-  EXT_OBJS = $(WIDGET)T.o squish.o getod.o
-+ LIB_OBJS = $(EXT_OBJS)
+--- 398,403 ----
+***************
+*** 446,457 ****
+      free(fcwp->candidates);
+    if (fcwp->candidx)
+      free(fcwp->candidx);
+! #if defined(USE_REGEX) && defined(GNU_REGEX)
+!   if (compbuf.buffer) {	  /* free the compile buffer from the regex routines */
+!     XtFree(compbuf.buffer);
+!     compbuf.buffer = NULL;
+    }
+- #endif
+  }
   
-  #include "../StdImakefile"
-diff -c -r FWF.orig/src/IconBox/IconBoxT.c FWF/src/IconBox/IconBoxT.c
+  /* this is used to detect a double-click.
+--- 437,446 ----
+      free(fcwp->candidates);
+    if (fcwp->candidx)
+      free(fcwp->candidx);
+!   if (compbuf) {	  /* free the compile buffer from the regex routines */
+!     regfree(compbuf);
+!     compbuf = NULL;
+    }
+  }
+  
+  /* this is used to detect a double-click.
+***************
+*** 1652,1685 ****
+  }
+  
+  
+! 
+! 
+! #if defined(USE_REGEX)
+! 
+! /* following regex routine was developed by reading Brian Totty's code
+!    and reading the man page.  Long live free source code! */
+! 
+! #if !defined(GNU_REGEX)
+! 
+! #define INIT		register char *sp = instring;
+! #define	GETC()		(*sp++)
+! #define	PEEKC()		(*sp)
+! #define	UNGETC(c)	-- sp
+! #define	RETURN(ptr)	return (ptr);
+! #define	ERROR(val)	{ regex_errno = (val); return NULL; }
+! static int	regex_errno;
+! static int	getrnge();
+! #include	<regexp.h>
+! 
+! #endif /* !GNU_REGEX */
+! 
+! /* This routine now uses either the regexp library or the GNU regex
+!    library based on the #define GNU_REGEX.  It can also be eliminated
+!    entirely by not #defining USE_REGEX 			EdW */
+! /* We don't want to completely eliminate it.  This would cause
+!    compatibility problems.  Instead we define some stub procedures
+!    that issue XtAppWarningMsgs.                         RF */
+! 
+  #if NeedFunctionPrototypes
+  Boolean XfwfFCRegexFiles (
+       char	*s,
+--- 1641,1647 ----
+  }
+  
+  
+! /* This routine now uses POSIX regex */
+  #if NeedFunctionPrototypes
+  Boolean XfwfFCRegexFiles (
+       char	*s,
+***************
+*** 1699,1747 ****
+  {
+    static char	*cache_regex = NULL,
+  		*busted_regex = NULL;
+! #if defined(GNU_REGEX)
+!   _Xconst char *	comp_result;
+! #else
+!   static char	compbuf[2048]; /* I should modify this to be a dynamically
+! 				  grown array.  sigh */
+! #endif
+    int	rval;
+  
+    if (busted_regex && 0==strcmp(regex,busted_regex))
+      return TRUE;
+  
+    if (!cache_regex || 0!=strcmp(cache_regex,regex)) {
+! #if defined(GNU_REGEX)
+!     if (!(comp_result = re_compile_pattern(regex, strlen(regex), &compbuf))) {
+! #else
+!     if (NULL != compile(regex, compbuf, compbuf+sizeof(compbuf), '\0')) {
+! #endif
+        XtFree(cache_regex);	/* safe for NULL */
+        cache_regex = XtNewString(regex);
+      } else {
+        String	params[2];
+        Cardinal	n;
+  
+! #if defined(GNU_REGEX)
+!       params[0] = comp_result;
+! #else
+!       switch (regex_errno) {
+!       case 11: params[0] = "Range endpoint too large."; break;
+!       case 16: params[0] = "Bad number"; break;
+!       case 25: params[0] = "`\\digit' out of range."; break;
+!       case 36: params[0] = "Illegal or missing delimiter."; break;
+!       case 41: params[0] = "No remembered search string."; break;
+!       case 42: params[0] = "\\( \\) imbalance."; break;
+!       case 43: params[0] = "Too many \\(."; break;
+!       case 44: params[0] = "More than 2 numbers given in \\{ \\}."; break;
+!       case 45: params[0] = "} expected after \\."; break;
+!       case 46: params[0] = "First number exceeds second in \\{ \\}."; break;
+!       case 49: params[0] = "[] imbalance."; break;
+!       case 50: params[0] = "Regular expression too long."; break;
+!       default: params[0] = "unknown regex compilation error."; break;
+!       }
+! #endif
+! 
+        params[1] = regex;
+        n = 2;
+        XtAppWarningMsg(app_con, "compileFailed", "xfwfFileCompRegex",
+--- 1661,1682 ----
+  {
+    static char	*cache_regex = NULL,
+  		*busted_regex = NULL;
+!   static regex_t *compbuf;
+    int	rval;
+  
+    if (busted_regex && 0==strcmp(regex,busted_regex))
+      return TRUE;
+  
+    if (!cache_regex || 0!=strcmp(cache_regex,regex)) {
+!     compbuf = (regex_t *)malloc(sizeof(regex_t));
+!     if (!regcomp(compbuf, regex, REG_EXTENDED | REG_NOSUB)) {
+        XtFree(cache_regex);	/* safe for NULL */
+        cache_regex = XtNewString(regex);
+      } else {
+        String	params[2];
+        Cardinal	n;
+  
+!       params[0] = "bogus regex";
+        params[1] = regex;
+        n = 2;
+        XtAppWarningMsg(app_con, "compileFailed", "xfwfFileCompRegex",
+***************
+*** 1753,1766 ****
+        return TRUE;
+      }
+    }
+! 
+! #if defined(GNU_REGEX)
+!   rval = re_match(&compbuf, s, strlen(s), 0, NULL);
+!   return ((rval >= 0) && (rval == strlen(s)));
+! #else
+!   rval = advance(s, compbuf);
+!   return rval && *loc2==0;
+! #endif
+  }
+  
+  
+--- 1688,1694 ----
+        return TRUE;
+      }
+    }
+!   return regexec(compbuf, s, 0, NULL, 0);
+  }
+  
+  
+***************
+*** 1778,1835 ****
+      XfwfFCRegexFiles(filename, regex, app_con) ;
+  }
+  
+- #else /* USE_REGEX */
+- 
+- #if NeedFunctionPrototypes
+- Boolean XfwfFCRegexFiles (
+-      char	*s,
+-      _Xconst XtPointer	regex,
+-      XtAppContext	app_con)
+- #else
+- Boolean XfwfFCRegexFiles (s, regex, app_con)
+-      char	*s;
+-      XtPointer	regex;
+-      XtAppContext	app_con;
+- #endif
+- {
+-   Cardinal	num_subs = 0;
+-   String	subs[1];
+-   static int	issued=0;
+- 
+-   if (issued)
+-     return;		/* they don't want to see this a million times */
+-   /* urgh, regex was not available at the time :( */
+-   XtAppWarningMsg(app_con, "packageUnavailable", "xfwfFileCompRegex",
+- 		  "XfwfLibraryError",
+- 		  "attempt to use regular expressions in a FileComplete widget (XfwfFCRegexFiles).  The FWF library was not compiled with that option.",
+- 		  subs, &num_subs);
+-   issued = 1;
+- }
+- 
+- Boolean XfwfFCDirsOrRegexFiles(filename, filestats, regex, app_con)
+-      char	*filename;
+-      struct stat *filestats;
+-      XtPointer	regex;
+-      XtAppContext	app_con;
+- {
+-   Cardinal	num_subs = 0;
+-   String	subs[1];
+-   static int	issued=0;
+- 
+-   if (issued)
+-     return;		/* they don't want to see this a million times */
+- 
+-   /* urgh, regex was not available at the time :( */
+-   XtAppWarningMsg(app_con, "packageUnavailable", "xfwfFileCompRegex",
+- 		  "XfwfLibraryError",
+- 		  "attempt to use regular expressions in a FileComplete widget (XfwfFCDirsOrRegexFiles).  The FWF library was not compiled with that option.",
+- 		  subs, &num_subs);
+-   issued = 1;
+- }
+- 
+- #endif /* USE_REGEX */
+- 
+- 
+  #ifdef USE_GLOB
+  
+  Boolean XfwfFCDirsOrGlobFiles(filename, filestats, regex, app_con)
+--- 1706,1711 ----
+***************
+*** 1944,1958 ****
+  enum xfwfFileCompleteRegexFlavor
+  XfwfFileCompleteRegexFlavor()
+  {
+- #ifdef USE_REGEX
+- #ifdef GNU_REGEX
+    return xfwfFC_Emacs;
+- #else
+-   return xfwfFC_ATT;
+- #endif
+- #else
+-   return xfwfFC_NoRegex;
+- #endif
+  }
+  
+  int XfwfFileCompleteHasGlob()
+--- 1820,1826 ----
+diff -r -c FWF.orig/src/IconBox/IconBoxT.c FWF/src/IconBox/IconBoxT.c
 *** FWF.orig/src/IconBox/IconBoxT.c	Fri May  6 08:53:22 1994
---- FWF/src/IconBox/IconBoxT.c	Sat Jul 15 04:32:24 1995
+--- FWF/src/IconBox/IconBoxT.c	Sat Jul 15 11:59:42 1995
 ***************
 *** 42,48 ****
   };
@@ -166,9 +868,9 @@ diff -c -r FWF.orig/src/IconBox/IconBoxT.c FWF/src/IconBox/IconBoxT.c
   static XtAppContext app_context;
   static int hlen, vlen;
 --- 42,47 ----
-diff -c -r FWF.orig/src/Imakefile FWF/src/Imakefile
+diff -r -c FWF.orig/src/Imakefile FWF/src/Imakefile
 *** FWF.orig/src/Imakefile	Wed Apr 19 08:31:04 1995
---- FWF/src/Imakefile	Sat Jul 15 05:05:02 1995
+--- FWF/src/Imakefile	Sat Jul 15 11:59:42 1995
 ***************
 *** 28,34 ****
   	OptButton VScrollb HScrollb Cmap Shistogram Hdial Canvas	\
@@ -203,9 +905,9 @@ diff -c -r FWF.orig/src/Imakefile FWF/src/Imakefile
   #endif
   
   
-diff -c -r FWF.orig/src/XmAnsiTerm/XmATermT.c FWF/src/XmAnsiTerm/XmATermT.c
+diff -r -c FWF.orig/src/XmAnsiTerm/XmATermT.c FWF/src/XmAnsiTerm/XmATermT.c
 *** FWF.orig/src/XmAnsiTerm/XmATermT.c	Tue Mar  7 08:48:56 1995
---- FWF/src/XmAnsiTerm/XmATermT.c	Sat Jul 15 04:32:24 1995
+--- FWF/src/XmAnsiTerm/XmATermT.c	Sat Jul 15 11:59:42 1995
 ***************
 *** 30,41 ****
   #include <signal.h>
