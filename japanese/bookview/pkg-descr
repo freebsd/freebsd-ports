@@ -1,0 +1,8 @@
+BookView is a NDTP (Network Dictionary Transfer Protocol) client
+written in Tcl/Tk.  It requires Tcl7.6jp and Tk4.2jp (Japanized
+version).  BookView can talk to the following servers:
+
+	NDTPD version 1.0beta2 and later
+	dserver version 2.2betapl2
+
+-- Motoyuki Kasahara <m-kasahr@sra.co.jp>
