@@ -1364,9 +1364,21 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <topic>web browsers -- window injection vulnerabilities</topic>
     <affects>
       <package>
+        <name>firefox</name>
+        <range><lt>1.0.1,1</lt></range>
+      </package>
+      <package>
+        <name>mozilla</name>
+        <range><lt>1.7.6,2</lt></range>
+      </package>
+      <package>
+        <name>linux-mozilla</name>
+        <name>linux-mozilla-devel</name>
+        <range><lt>1.7.6</lt></range>
+      </package>
+      <package>
         <name>de-linux-mozillafirebird</name>
 	<name>el-linux-mozillafirebird</name>
-        <name>firefox</name>
         <name>ja-linux-mozillafirebird-gtk1</name>
         <name>ja-mozillafirebird-gtk2</name>
         <name>linux-mozillafirebird</name>
@@ -1379,9 +1391,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <name>netscape7</name>
         <name>pt_BR-netscape7</name>
         <name>mozilla-gtk1</name>
-        <name>linux-mozilla</name>
-        <name>linux-mozilla-devel</name>
-	<name>mozilla</name>
 	<range><ge>0</ge></range>
       </package>
       <package>
@@ -1455,7 +1464,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-12-08</discovery>
       <entry>2005-01-24</entry>
-      <modified>2005-02-18</modified>
+      <modified>2005-02-26</modified>
     </dates>
   </vuln>
 
