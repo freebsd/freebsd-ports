@@ -7,7 +7,7 @@
 
 PORTNAME=	linux-realplayer
 PORTVERSION=	8.cs2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio linux
 MASTER_SITES=	http://docs.real.com/docs/playerpatch/unix/:update
 DISTFILES=	${MAINDIST} ${UPDATEDIST:S/$/:update/}
@@ -42,12 +42,17 @@ IGNORE=		may not be automatically fetched due to licensing\
 		${DISTDIR} and then restart this build.
 .endif
 
+USE_REINPLACE=	yes
 ONLY_FOR_ARCHS=	i386
 NO_CDROM=	"Redistribution not allowed"
 NO_BUILD=	yes
 
 post-extract:
 	cd ${WRKDIR}; rpm2cpio ${DISTDIR}/${MAINDIST} | cpio -id --quiet
+
+post-patch:
+	${REINPLACE_CMD} -e \
+		"s@/usr/lib@${PREFIX}/lib@" ${WRKSRC}/postinstall.sh
 
 do-install:
 	${MKDIR} ${RADIR}
