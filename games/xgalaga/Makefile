@@ -1,12 +1,12 @@
 # New ports collection makefile for:	xgalaga
-# Version required:	1.2
+# Version required:	1.6b
 # Date created:		27 August 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.5 1995/04/11 00:20:20 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1995/08/28 07:43:37 asami Exp $
 #
 
-DISTNAME=	xgalaga-1.6
+DISTNAME=	xgalaga-1.6b
 CATEGORIES+=	games
 MASTER_SITES=	ftp://crl.dec.com/pub/X11/contrib/games/
 
