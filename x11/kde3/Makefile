@@ -148,7 +148,6 @@ RUN_DEPENDS+=	kmatrix.kss:${PORTSDIR}/x11-wm/kdeartwork3
 DEPENDS_TARGET="package"
 .endif # .if make(package)
 
-USE_QT_VER=3
 USE_KDELIBS_VER=3
 USE_KDEBASE_VER=3
 
