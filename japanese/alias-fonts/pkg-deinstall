@@ -1,4 +1,6 @@
 #!/usr/bin/perl
+# $FreeBSD$
+
 $prefix = $ENV{'PKG_PREFIX'};
 $dir = "$prefix/lib/X11/fonts/local";
 $to =  "$dir/fonts.alias";
@@ -14,7 +16,7 @@ while (<IN>) {
 	else {
 		@line = split(/\s+/, $_);
 		@elm = split(/-+/, $line[0]);
-		if ($elm[1] ne 'netscape' && $elm[1] ne 'netscape.k10') {
+		if ($elm[1] ne 'alias') {
 			print OUT "$_\n";
 		}
 	}
