@@ -3,12 +3,12 @@
 # Date created:		18 Feb 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.4 1997/03/06 09:46:28 tg Exp $
+# $Id: Makefile,v 1.5 1997/03/06 12:24:49 wosch Exp $
 #
 
 DISTNAME=	unroff-1.0
 PKGNAME=	unroff-1.0.2
-CATEGORIES=	print
+CATEGORIES=	textproc
 MASTER_SITES=	${UNROFF_SITE}/dist/ \
 		${UNROFF_SITE}/contrib/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PATCH1} ${PATCH2}

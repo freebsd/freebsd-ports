@@ -3,12 +3,12 @@
 # Date created:         		22 October 1996
 # Whom:                 		andreas@marvin.robin.de
 #
-# $Id: Makefile,v 1.2 1996/11/17 09:06:15 obrien Exp $
+# $Id: Makefile,v 1.3 1997/04/11 09:39:54 obrien Exp $
 #
 
 DISTNAME=	mgdiff
 PKGNAME=	mgdiff-1.0
-CATEGORIES=	misc
+CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications
 

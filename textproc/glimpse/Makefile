@@ -3,12 +3,12 @@
 # Date created:		25 August 1996
 # Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.9 1997/01/11 05:30:15 chuckr Exp $
+# $Id: Makefile,v 1.10 1997/02/19 09:36:01 tg Exp $
 #
 
 DISTNAME=       glimpse-4.0.src
 PKGNAME=	glimpse-4.0
-CATEGORIES=	misc databases
+CATEGORIES=	textproc databases
 MASTER_SITES=   ftp://ftp.cs.arizona.edu/glimpse/
 EXTRACT_SUFX=	.tar.Z
 
