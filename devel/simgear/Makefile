@@ -7,6 +7,7 @@
 
 PORTNAME=	SimGear
 PORTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	devel games
 MASTER_SITES=	ftp://ftp.simgear.org/pub/simgear/Source/ \
 		ftp://ftp.de.flightgear.org/pub/simgear/
@@ -16,6 +17,8 @@ MAINTAINER=	des@FreeBSD.org
 # These should be LIB_DEPENDS, but it seems bsd.port.mk can't handle
 # versionless or static libraries.
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmk4.so:${PORTSDIR}/databases/metakit \
+		${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
+RUN_DEPENDS=	${LOCALBASE}/lib/libmk4.so:${PORTSDIR}/databases/metakit \
 		${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 
 USE_X_PREFIX=	yes
