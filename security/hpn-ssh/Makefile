@@ -8,13 +8,17 @@
 PORTNAME=	hpn-ssh
 PORTVERSION=	3.9.0.1
 PORTEPOCH=	1
+.if defined(WITH_NONE_CIPHER)
+PORTREVISON=	1
+.endif
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/%SUBDIR%/ \
 		ftp://carroll.cac.psu.edu/pub/OpenBSD/OpenSSH/portable/%SUBDIR%/
 PKGNAMESUFFIX?=	${GSSAPI_SUFFIX}${BASE_SUFFIX}
 DISTNAME=	openssh-${OPENSSHVERSION}
+
 .if defined(WITH_NONE_CIPHER)
-PATCHFILES=	openssh-${OPENSSHVERSION}-hpn-none.diff
+PATCHFILES=	openssh-${OPENSSHVERSION}-hpn-none-p2.diff
 .else
 PATCHFILES=	openssh-${OPENSSHVERSION}-hpn.diff
 .endif
