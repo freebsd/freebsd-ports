@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	holger@flatline.de
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAN1=		pgp4pine.1
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --with-docdir=${PREFIX}/share/doc
