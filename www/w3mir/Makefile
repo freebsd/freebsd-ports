@@ -26,7 +26,7 @@ post-install:
 		${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
 			${PREFIX}/share/doc/w3mir
 		cd ${WRKSRC} && ${INSTALL_DATA} \
-			README Artistic w3mir-HOWTO.html \
-			${PREFIX}/share/doc/w3mir
+			README Artistic w3mir-HOWTO.html example.cfg \
+			multiscope.cfg ${PREFIX}/share/doc/w3mir
 
 .include <bsd.port.mk>
