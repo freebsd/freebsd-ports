@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python
-RUN_DEPENDS=	${PREFIX}/sbin/apache:${PORTSDIR}/www/apache13-modssl
+RUN_DEPENDS=	${LOCALBASE}/sbin/apache:${PORTSDIR}/www/apache13-modssl
 
 # Build has to be done in the final location after installing the sources
 # there. It were a major action to fix all paths otherwise.
