@@ -7,6 +7,7 @@
 
 PORTNAME=	sudoscript
 PORTVERSION=	2.1.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://download.sourceforge.net/sudoscript/ \
 		http://egbok.com/sudoscript/
@@ -20,4 +21,6 @@ MAN8=		sudoscriptd.8 sudoscript.8
 MANCOMPRESSED=	no
 
 USE_GMAKE=	yes
+USE_PERL5=	yes
+
 .include <bsd.port.mk>
