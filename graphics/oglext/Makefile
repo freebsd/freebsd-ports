@@ -11,7 +11,7 @@ CATEGORIES=	graphics devel
 MASTER_SITES=	http://www.julius.caesar.de/oglext/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	tiamat@comset.net
+MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	A library for easier access to OpenGL extensions
 
 USE_ZIP=	yes

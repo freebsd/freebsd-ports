@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} Scenes${EXTRACT_SUFX}
 .endif
 DIST_SUBDIR=	${DISTNAME}
 
-MAINTAINER=	tiamat@comset.net
+MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	System for physically based photo-realistic image synthesis
 
 .ifdef (WITH_XRML)

@@ -12,7 +12,7 @@ MASTER_SITES=	http://nwdownloads.bioware.com/neverwinternights/linux/${PORTVERSI
 PKGNAMEPREFIX=	linux-
 DISTNAME=	linuxserver${PORTVERSION:S/.//}
 
-MAINTAINER=	tiamat@comset.net
+MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	Neverwinter Nights Linux (x86) Dedicated Server
 
 USE_LINUX=	yes

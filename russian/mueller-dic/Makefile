@@ -13,7 +13,7 @@ MASTER_SITES=	http://mueller-dic.chat.ru/
 DISTFILES=	Mueller7accentGPL.tgz yusupov_mf.tgz
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	tiamat@comset.net
+MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	Mueller English-Russian dictionary
 
 USE_GMAKE=	yes

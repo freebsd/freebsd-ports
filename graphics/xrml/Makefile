@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.cs.kuleuven.ac.be/pub/graphics/software/RenderPark/
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	RenderPark
 
-MAINTAINER=	tiamat@comset.net
+MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	Extensible scene graph library based on VRML'97
 
 WRKSRC=		${WRKDIR}/${PORTNAME:U}

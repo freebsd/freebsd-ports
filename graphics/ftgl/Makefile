@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://homepages.paradise.net.nz/henryj/code/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/([[:digit:]])$/.\1/}
 
-MAINTAINER=	tiamat@comset.net
+MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	An OpenGL FreeType fonts rendering library
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:${PORTSDIR}/devel/doxygen

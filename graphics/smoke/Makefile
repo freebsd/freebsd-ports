@@ -10,7 +10,7 @@ PORTVERSION=	0.5.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.chem.pwf.cam.ac.uk/~jdh30/programming/opengl/smoke/code/
 
-MAINTAINER=	tiamat@comset.net
+MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	Vector graphics OpenGL renderer
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/tmake:${PORTSDIR}/devel/tmake

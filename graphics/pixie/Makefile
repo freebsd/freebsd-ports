@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	Pixie-src-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	tiamat@comset.net
+MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	A photorealistic renderer with Pixar's RenderMan-like interface
 
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
