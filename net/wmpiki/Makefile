@@ -7,6 +7,7 @@
 
 PORTNAME=	wmpiki
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	net windowmaker
 MASTER_SITES=	http://clay.ll.pl/download/
 
@@ -24,6 +25,11 @@ post-patch:
 		-e 's|/include/X11|/include|g' \
 		-e 's|gcc|cc|g' \
 		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|ping_options\=-c 1 -w 1|ping_options\=-c 1 -i 1|g' \
+		-e 's|ping host -c 1 -w 1|ping host -c 1 -i 1|g' \
+		${WRKSRC}/README
+	@${REINPLACE_CMD} -e 's|ping_options\=-c 1 -w 1|ping_options\=-c 1 -i 1|g' \
+		${WRKSRC}/config.example
 
 do-install:
 
