@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure	2002/01/14 11:54:47	1.1
-+++ configure	2002/01/14 11:54:16
-@@ -12577,10 +12577,6 @@
+--- configure.orig	Mon Mar  4 22:57:01 2002
++++ configure	Tue Mar  5 11:16:25 2002
+@@ -12673,10 +12673,6 @@
        *) # Relative path.
          ac_sub_cache_file="$ac_dots$cache_file" ;;
        esac
