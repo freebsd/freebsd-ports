@@ -207,6 +207,7 @@
     SUBDIR += vscan
     SUBDIR += whisker
     SUBDIR += xinetd
+    SUBDIR += yafic
     SUBDIR += zebedee
     SUBDIR += zombiezapper
 

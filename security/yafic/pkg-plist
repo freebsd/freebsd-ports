@@ -1,0 +1,3 @@
+bin/yafic
+share/examples/yafic/yafic.conf.sample
+@dirrm share/examples/yafic
