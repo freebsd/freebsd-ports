@@ -1,6 +1,8 @@
+New in apsfilter 4.9.5: printing of HTML files !
+
 Have fun using apsfilter by saying:
 
-	lpr ascii.Z test.gif picture.tiff TeX.dvi.gz
+	lpr ascii.Z test.gif picture.tiff TeX.dvi.gz webpage.html
 
 That's what apsfilter is designed for ;-)
 
