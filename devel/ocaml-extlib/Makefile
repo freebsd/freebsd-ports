@@ -19,6 +19,8 @@ COMMENT=	A complete - yet small - standard library for OCaml
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
 		ocamlfind:${PORTSDIR}/devel/ocaml-findlib
 
+BROKEN=		Incomplete pkg-plist
+
 USE_GMAKE=	yes
 ALL_TARGET=	all opt
 ALL_TARGET=    all opt
