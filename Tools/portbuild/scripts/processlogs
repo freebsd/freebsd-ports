@@ -2,9 +2,18 @@
 
 of=index.html.new
 
+# delete .new file if it is more than a day old
+find $of -mtime 2 -delete 2>/dev/null
+
+if [ -f $of ]; then exit; fi
+
+if [ -e .stamp -a $(echo $(find . -newer .stamp -type f -name '*.log' 2>/dev/null | wc -l)) = "0" ]; then exit; fi
+
 echo "<html><head><title>Package building errors</title>" >$of
 echo "<h1>Package building errors</h1>" >>$of
 echo "</head><body>" >>$of
+
+touch .stamp
 
 set *.log
 
@@ -12,15 +21,21 @@ if [ $# = 1 -a "x$1" = "x*.log" ]; then
   echo "No errors (yet)" >>$of
 else
   num=$#
+  if [ -s cvsdone ]; then
+    echo "(cvs update finished at: $(cat cvsdone))<br>" >> $of
+  fi
   echo "(timestamp of newest log: $(ls -rtTl *.log | tail -1 | awk '{printf("%s %s %s %s\n",$6,$7,$8,$9)}'))<br><br>" >> $of
   echo "<table border=1>" >>$of
-  echo "<tr><th>Log</th><th>Size</th><th>Repository</th><th>Maintainer</th><th>Reason</th></tr>" >>$of
+  echo "<tr><th>Log</th><th>Aff.</th><th>Size</th><th>Repository</th><th>Maintainer</th><th>Reason</th></tr>" >>$of
   while [ $# -gt 0 ]; do
     echo -n "<tr><td>" >>$of
     echo -n "<a name=\"$1\"></a>" >> $of
     echo -n "<a href=\"$1\">" >>$of
     echo -n $(basename $1 .log) >>$of
     echo -n "</a>" >>$of
+    echo -n "</td><td align=right>" >>$of
+    affected=$(($(grep -cF $(basename $1 .log) < INDEX) - 1))
+    if [ $affected != 0 ]; then echo -n $affected >>$of; fi
     echo -n "</td><td align=right>" >>$of
     size=$(/bin/ls -sk $1 | awk '{print $1}')
     echo -n "$size KB" >>$of
@@ -32,9 +47,11 @@ else
     maints="$maints $maint"
     echo -n "<a href=\"mailto:$maint\">$maint</a>" >>$of
     echo -n "</td><td>" >>$of
-    if grep -q 'Checksum mismatch' $1; then
+    if grep -q 'list of extra files and directories' $1; then
+      reason="extra"; tag="extra"
+    elif grep -q 'Checksum mismatch' $1; then
       reason="checksum"; tag="checksum"
-    elif grep -q 'No checksum recorded for' $1; then
+    elif grep -qE '(No checksum recorded for|(Maybe|Either) .* is out of date, or)' $1; then
       reason="files/md5 update"; tag="md5"
     elif grep -qE '(configure: error:|script.*failed: here are the contents of)' $1; then
       reason="configure error"; tag="configure"
@@ -72,6 +89,8 @@ else
       fi
     elif grep -q "cd: can't cd to" $1; then
       reason="NFS"; tag="nfs"
+    elif grep -qE "pkg_add: (can't find enough temporary space|projected size of .* exceeds available free space)" $1; then
+      reason="disk full"; tag="df"
     elif grep -qE '(parse error|too (many|few) arguments to|argument.*doesn.*prototype|incompatible type for argument|conflicting types for|undeclared \(first use (in |)this function\)|incorrect number of parameters|has incomplete type and cannot be initialized)' $1; then
       reason="compiler error"; tag="cc"
     elif grep -qE '(ANSI C.. forbids|is a contravariance violation|changed for new ANSI .for. scoping|[0-9]: passing .* changes signedness|discards qualifiers|lacks a cast|redeclared as different kind of symbol|invalid type .* for default argument to|wrong type argument to unary exclamation mark|duplicate explicit instantiation of|incompatible types in assignment|assuming . on overloaded member function|call of overloaded .* is ambiguous|declaration of C function .* conflicts with|initialization of non-const reference type|using typedef-name .* after|[0-9]: implicit declaration of function|[0-9]: size of array .* is too large|fixed or forbidden register .* for class)' $1; then
