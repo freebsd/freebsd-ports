@@ -7,7 +7,7 @@
 
 PORTNAME=	NetRexx
 PORTVERSION=	2.02
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java lang
 MASTER_SITES=	http://www2.hursley.ibm.com/netrexx/
 DISTNAME=	NetRexx
