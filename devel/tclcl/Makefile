@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	tclcl
-PORTVERSION=	1.0b9
+PORTVERSION=	1.0b10
 CATEGORIES=	devel
-MASTER_SITES=	http://www-mash.cs.berkeley.edu/dist/
+MASTER_SITES=	http://www.isi.edu/nsnam/dist/
 DISTFILES=	tclcl-src-${PORTVERSION}.tar.gz
 
 MAINTAINER=	obonilla@fisicc-ufm.edu
