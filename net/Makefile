@@ -84,7 +84,6 @@
     SUBDIR += cvsup
     SUBDIR += cvsup-mirror
     SUBDIR += cvsup-without-gui
-    SUBDIR += cvsupit
     SUBDIR += cvsync
     SUBDIR += danamics
     SUBDIR += dante
