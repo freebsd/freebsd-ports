@@ -1,20 +1,17 @@
 # New ports collection makefile for:	acroread-commfont
-# Version required:	1999.5.24
+# Version required:	1999.7.20
 # Date created:		99/06/16
 # Whom:			Satoshi TAOKA <taoka@FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/17 09:35:56 taoka Exp $
+# $Id: Makefile,v 1.2 1999/07/09 13:17:16 foxfair Exp $
 #
 
 DISTNAME?=	commfont # dummy
-PKGNAME=	${PKG_PRE}acroread-${DISTNAME}-1999.5.24
+PKGNAME=	${PKG_PRE}acroread-${DISTNAME}-1999.7.20
 CATEGORIES?=	japanese print
-#MASTER_SITES=	ftp://ftp-pac.adobe.com/pub/adobe/acrobatreader/unix/4.x/
+MASTER_SITES=	ftp://ftp-pac.adobe.com/pub/adobe/acrobatreader/unix/4.x/
 
 MAINTAINER=	taoka@FreeBSD.ORG
-
-RESTRICTED=     "Be required to register with Adobe"
-IS_INTERACTIVE= "You should manual-fetch one of \"Asian Font Packs\" from http://www.adobe.com/prodindex/acrobat/readstep.html"
 
 NO_BUILD=	yes
 
@@ -35,9 +32,10 @@ WRKSRC=		${WRKDIR}/CHTKIT
 DISTFILES=	korfont.tar.gz
 WRKSRC=		${WRKDIR}/KORKIT
 .else
-IGNORE=": You should manual-fetch one of \"Asian Font Packs\" from http://www.adobe.com/prodindex/acrobat/readstep.html"
+DISTFILES=	korfont.tar.gz
+WRKSRC=		${WRKDIR}/KORKIT
 .endif
-NO_CHECKSUM=	yes
+#NO_CHECKSUM=	yes
 TAR_FILE=	${WRKSRC}/LANGCOM.TAR
 RUN_DEPENDS=	acroread4:${PORTSDIR}/print/acroread4
 .else
@@ -50,11 +48,12 @@ FILESDIR=	${.CURDIR}/files
 ##
 RUN_DEPENDS=	${PREFIX}/Acrobat4/Resource/CMap/H:${PORTSDIR}/print/acroread-commfont
 #
-.if !exists(${DISTDIR}/${DISTFILES})
-IGNORE=": You should manual-fetch ${DISTFILES} \(\"Asian Font Packs\"\) from http://www.adobe.com/prodindex/acrobat/readstep.html"
-.endif
-#
 .if ${DISTNAME} == "jpnfont"
+RESTRICTED=     "Be required to register with Adobe before downloading the Japanese font pack."
+IS_INTERACTIVE= "You should manual-fetch Japanese pack of \"Asian Font Packs\" from http://www.adobe.com/prodindex/acrobat/readstep.html"
+.if !exists(${DISTDIR}/jpnfont.tar.gz)
+IGNORE=		": ${RESTRICTED} ${IS_INTERACTIVE}"
+.endif
 WRKSRC=		${WRKDIR}/JPNKIT
 PKG_PRE=	ja-
 TAR_FILE=	${WRKSRC}/LANGJPN.TAR
@@ -78,7 +77,6 @@ do-install:
 	@${TAR} xf ${TAR_FILE} -C ${PREFIX}/Acrobat4/Resource
 
 post-install:
-	 @${ECHO_MSG} "Be sure to read the license agreement in"
-	 @${ECHO_MSG} "${PREFIX}/Acrobat4/Reader/License.pdf"
+	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.post.mk>
