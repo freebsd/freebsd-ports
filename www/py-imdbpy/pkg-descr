@@ -1,0 +1,11 @@
+IMDbPY is a Python package useful to retrieve and manage the data of the IMDb
+movie database.
+
+IMDbPY aims to provide an easy way to access the IMDb's database using a Python
+script. Platform-independent and written in pure Python, it's theoretically
+independent from the data source (since IMDb provides two or three different
+interfaces to their database). IMDbPY is mainly intended for programmers and
+developers who want to build their Python programs using the IMDbPY package, but
+some example scripts - useful for simple users - are included.
+
+WWW: http://imdbpy.sourceforge.net/
