@@ -3,7 +3,7 @@
 # Date created:			7 Feb 1997
 # Whom:				Kiroh HARADA <kiroh@jp.freebsd.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/12/15 20:25:45 max Exp $
 #
 
 DISTNAME=	mnews120
@@ -13,10 +13,10 @@ MASTER_SITES=	ftp://ftp.mei.co.jp/free/Network/news/readers/
 
 MAINTAINER=	kiroh@kh.rim.or.jp
 
-NO_PACKAGE=	"Redistribution of binary built from modified source is prohibited"
-
 RUN_DEPENDS=	gninews:${PORTSDIR}/japanese/gn-gnspool \
 		mnews:${PORTSDIR}/japanese/mnews
+
+NO_PACKAGE=	"Redistribution of binary built from modified source is prohibited"
 
 WRKSRC=		${WRKDIR}/mnews-1.20/build
 
