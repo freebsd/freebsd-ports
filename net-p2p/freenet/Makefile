@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	freenet
-PORTVERSION=	0.5.2.r1
+PORTVERSION=	0.5.2.1
 CATEGORIES=	net java security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=	lioux@FreeBSD.org
-COMMENT=	peer-to-peer network aiming at anonymity and freedom of speech
+COMMENT=	Peer-to-peer network aiming at anonymity and freedom of speech
 
-USE_JAVA=	1.3+
+USE_JAVA=	1.4+
 NO_BUILD=	yes
 NO_BUILD_DEPENDS_JAVA=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
