@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://oss.sgi.com/projects/fam/download/
 DISTNAME=	${PORTNAME}-oss-${PORTVERSION}
 
-MAINTAINER=	ishmael27@home.com
+MAINTAINER=	ports@geeksrus.net
 
 USE_AUTOMAKE_VER=14
 USE_LIBTOOL=	yes
