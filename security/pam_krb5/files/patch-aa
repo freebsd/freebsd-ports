@@ -1,6 +1,6 @@
 --- Makefile.orig	Tue Jan  4 19:08:51 2000
-+++ Makefile	Mon Nov  6 10:59:16 2000
-@@ -1,48 +1,51 @@
++++ Makefile	Mon Nov  6 13:44:54 2000
+@@ -1,46 +1,49 @@
  #
  # Makefile for pam_krb5
  #
@@ -68,22 +68,17 @@
 -	rm -f *.so.1 *.o
 +	rm -f *.so *.o
  
--pam_krb5_auth.o: pam_krb5_auth.c pam_krb5.h
-+pam_krb5_auth.o: pam_krb5_auth.c pam_krb5.h krb5compat.h
+ pam_krb5_auth.o: pam_krb5_auth.c pam_krb5.h
+ 	$(CC) -c $(CFLAGS) $(INC) $<
+@@ -55,5 +58,11 @@
  	$(CC) -c $(CFLAGS) $(INC) $<
  
- pam_krb5_pass.o: pam_krb5_pass.c pam_krb5.h
-@@ -54,6 +57,12 @@
- pam_krb5_sess.o: pam_krb5_sess.c pam_krb5.h
- 	$(CC) -c $(CFLAGS) $(INC) $<
- 
--support.o: support.c pam_krb5.h
-+support.o: support.c pam_krb5.h krb5compat.h
+ support.o: support.c pam_krb5.h
 +	$(CC) -c $(CFLAGS) $(INC) $<
 +
-+compat_heimdal.o: compat_heimdal.c krb5compat.h
++compat_heimdal.o: compat_heimdal.c
 +	$(CC) -c $(CFLAGS) $(INC) $<
 +
-+compat_mit.o: compat_mit.c krb5compat.h
++compat_mit.o: compat_mit.c
  	$(CC) -c $(CFLAGS) $(INC) $<
  
