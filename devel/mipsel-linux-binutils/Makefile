@@ -8,7 +8,7 @@
 PORTNAME=	binutils
 PORTVERSION=	2.10.91
 CATEGORIES=	devel
-MASTER_SITES=	http://lev.serebryakov.spb.ru/download/agenda
+MASTER_SITES=	http://lev.serebryakov.spb.ru/download/agenda/
 PKGNAMEPREFIX=	mipsel-linux-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-cvs
 
