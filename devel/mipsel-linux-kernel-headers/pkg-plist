@@ -1,4 +1,3 @@
-mipsel-linux/include/asm
 mipsel-linux/include/asm-mips/a.out.h
 mipsel-linux/include/asm-mips/addrspace.h
 mipsel-linux/include/asm-mips/arc/types.h
@@ -163,10 +162,10 @@ mipsel-linux/include/asm-mips/vr4181.h
 mipsel-linux/include/asm-mips/vr41xx-platdep.h
 mipsel-linux/include/asm-mips/vr41xx.h
 mipsel-linux/include/asm-mips/vrc4171.h
+mipsel-linux/include/asm-mips/vrc4172.h
 mipsel-linux/include/asm-mips/vrc4173.h
 mipsel-linux/include/asm-mips/watch.h
 mipsel-linux/include/asm-mips/wbflush.h
-mipsel-linux/include/asm-mips/xxx
 mipsel-linux/include/linux/802_11.h
 mipsel-linux/include/linux/a.out.h
 mipsel-linux/include/linux/ac97_codec.h
@@ -439,6 +438,7 @@ mipsel-linux/include/linux/mman.h
 mipsel-linux/include/linux/mmzone.h
 mipsel-linux/include/linux/modsetver.h
 mipsel-linux/include/linux/module.h
+mipsel-linux/include/linux/modversions.h
 mipsel-linux/include/linux/mount.h
 mipsel-linux/include/linux/mpp.h
 mipsel-linux/include/linux/mroute.h
@@ -457,7 +457,10 @@ mipsel-linux/include/linux/mtd/map.h
 mipsel-linux/include/linux/mtd/mapped.h
 mipsel-linux/include/linux/mtd/mtd.h
 mipsel-linux/include/linux/mtd/nand.h
+mipsel-linux/include/linux/mtd/nand_ecc.h
+mipsel-linux/include/linux/mtd/nand_ids.h
 mipsel-linux/include/linux/mtd/nftl.h
+mipsel-linux/include/linux/mtd/partitions.h
 mipsel-linux/include/linux/mtd/pmc551.h
 mipsel-linux/include/linux/mtio.h
 mipsel-linux/include/linux/n_r3964.h
@@ -736,7 +739,6 @@ mipsel-linux/include/linux/x25.h
 mipsel-linux/include/linux/yam.h
 mipsel-linux/include/linux/zftape.h
 mipsel-linux/include/linux/zorro.h
-@unexec rm -f mipsel-linux/include/asm
 @dirrm mipsel-linux/include/asm-mips/arc
 @dirrm mipsel-linux/include/asm-mips/baget
 @dirrm mipsel-linux/include/asm-mips/dec
@@ -744,8 +746,10 @@ mipsel-linux/include/linux/zorro.h
 @dirrm mipsel-linux/include/asm-mips/mips-boards
 @dirrm mipsel-linux/include/asm-mips/sgi
 @dirrm mipsel-linux/include/asm-mips
+mipsel-linux/include/asm
 @dirrm mipsel-linux/include/linux/byteorder
 @dirrm mipsel-linux/include/linux/lockd
+@dirrm mipsel-linux/include/linux/modules
 @dirrm mipsel-linux/include/linux/mtd
 @dirrm mipsel-linux/include/linux/netfilter_ipv4
 @dirrm mipsel-linux/include/linux/netfilter_ipv6
@@ -754,4 +758,4 @@ mipsel-linux/include/linux/zorro.h
 @dirrm mipsel-linux/include/linux/sunrpc
 @dirrm mipsel-linux/include/linux
 @dirrm mipsel-linux/include
-@dirrm mipsel-linux
+
