@@ -1,0 +1,67 @@
+bin/c_incl
+bin/cook
+bin/cook_bom
+bin/cookfp
+bin/cooktime
+bin/find_libs
+bin/make2cook
+bin/roffpp
+info/dir
+lib/cook/en/LC_MESSAGES/c_incl.mo
+lib/cook/en/LC_MESSAGES/cook.mo
+lib/cook/en/LC_MESSAGES/cook_bom.mo
+lib/cook/en/LC_MESSAGES/cookfp.mo
+lib/cook/en/LC_MESSAGES/cooktime.mo
+lib/cook/en/LC_MESSAGES/find_libs.mo
+lib/cook/en/LC_MESSAGES/fstrcmp.mo
+lib/cook/en/LC_MESSAGES/make2cook.mo
+lib/cook/en/LC_MESSAGES/roffpp.mo
+share/cook/en/building.ps
+share/cook/en/building.dvi
+share/cook/en/building.txt
+share/cook/en/lsm.ps
+share/cook/en/lsm.dvi
+share/cook/en/lsm.txt
+share/cook/en/man1/.not_empty
+share/cook/en/readme.ps
+share/cook/en/readme.dvi
+share/cook/en/readme.txt
+share/cook/en/refman.ps
+share/cook/en/refman.dvi
+share/cook/en/refman.txt
+share/cook/en/release.ps
+share/cook/en/release.dvi
+share/cook/en/release.txt
+share/cook/en/user-guide.ps
+share/cook/en/user-guide.dvi
+share/cook/en/user-guide.txt
+share/cook/as
+share/cook/bison
+share/cook/c
+share/cook/f77
+share/cook/functions
+share/cook/g77
+share/cook/gcc
+share/cook/home
+share/cook/lex
+share/cook/library
+share/cook/print
+share/cook/program
+share/cook/rcs
+share/cook/recursive
+share/cook/sccs
+share/cook/text
+share/cook/usr
+share/cook/usr.local
+share/cook/yacc
+share/cook/yacc_many
+@dirrm lib/cook/en/LC_MESSAGES
+@dirrm lib/cook/en
+@dirrm lib/cook
+@dirrm share/cook/man/en/man1
+@dirrm share/cook/man/en
+@dirrm share/cook/man/man1
+@dirrm share/cook/man
+@dirrm share/cook/en/man1
+@dirrm share/cook/en
+@dirrm share/cook

@@ -1,0 +1,6 @@
+'cook' serves the same purpose as make(1), but uses a much more sane syntax,
+and includes additional features that make it powerful enough to maintain a
+single dependency graph for large projects (as things should be done in an
+ideal world).  Don't be put off by 'cook' not being commonly available on
+target machines, since 'cook' can automatically generate shell scripts that
+make installing 'cook' on target machines unnecessary.

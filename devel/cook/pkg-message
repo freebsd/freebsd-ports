@@ -1,0 +1,2 @@
+Add ${PREFIX}/share/cook/man to your MANPATH in order to access the manual
+pages included with this port.
