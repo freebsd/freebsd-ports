@@ -1,7 +1,8 @@
-# $Id: Makefile,v 1.20 1998/12/06 12:22:02 flathill Exp $
+# $Id: Makefile,v 1.21 1999/02/12 14:41:43 kuriyama Exp $
 #
 
     SUBDIR += X.language
+    SUBDIR += apache13
     SUBDIR += cyrproxy
     SUBDIR += d1489
     SUBDIR += elm.language
