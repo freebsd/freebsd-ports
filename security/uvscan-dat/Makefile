@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	uvscan_dat
-PORTVERSION=	4163
-PORTREVISION=	1
+PORTVERSION=	4164
 CATEGORIES=	security
 MASTER_SITES=	http://download.nai.com/products/datfiles/4.x/nai/
 DISTNAME=	dat-${PORTVERSION}
