@@ -135,8 +135,8 @@ CONFIGURE_ARGS+=	--disable-composer
 
 .if defined(WITH_GTK2)
 CONFIGURE_ARGS+=	--enable-default-toolkit=gtk2
-PKGCONFIG_FILES=	mozilla-gtkmozembed.pc mozilla-js.pc mozilla-xpcom.pc \
-			mozilla-nspr.pc mozilla-nss.pc
+PKGCONFIG_FILES=	mozilla-gtkmozembed mozilla-js mozilla-xpcom \
+			mozilla-nspr mozilla-nss
 EXTRA_PATCHES=		${FILESDIR}/xim_dekita2.patch
 .else
 CONFIGURE_ARGS+=	--enable-default-toolkit=gtk
@@ -226,7 +226,7 @@ pre-install:
 	${ECHO_CMD} @dirrm lib/${MOZILLA} >> ${PLIST}
 .if defined(WITH_GTK2)
 	for pcfile in ${PKGCONFIG_FILES}; do \
-	    	${ECHO_CMD} libdata/pkgconfig/$$pcfile >> ${PLIST} ; \
+	    	${ECHO_CMD} libdata/pkgconfig/$${pcfile}-devel.pc >> ${PLIST} ; \
 	done
 .endif
 
@@ -248,8 +248,8 @@ do-install:
 	fi
 .if defined(WITH_GTK2)
 	for pcfile in ${PKGCONFIG_FILES}; do \
-	    	${INSTALL_DATA} ${WRKSRC}/build/unix/$$pcfile \
-			${PREFIX}/libdata/pkgconfig ; \
+	    	${INSTALL_DATA} ${WRKSRC}/build/unix/$${pcfile}.pc \
+			${PREFIX}/libdata/pkgconfig/$${pcfile}-devel.pc ; \
 	done
 .endif
 
