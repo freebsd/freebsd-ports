@@ -37,9 +37,12 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>gpdf</name>
-	<name>xpdf</name>
 	<name>cups-base</name>
 	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>xpdf</name>
+	<range><lt>3.00_4</lt></range>
       </package>
       <package>
 	<name>kdegraphics</name>
