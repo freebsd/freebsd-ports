@@ -1,0 +1,5 @@
+bin/baudline
+%%PORTDOCS%%share/doc/baudline/README
+%%PORTDOCS%%share/doc/baudline/mailcap.txt
+%%PORTDOCS%%share/doc/baudline/mime.types.txt
+%%PORTDOCS%%@dirrm share/doc/baudline
