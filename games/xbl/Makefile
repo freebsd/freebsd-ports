@@ -15,7 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CFLAGS+=	-I${PREFIX}/include
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
+		LIBS="-L${X11BASE}/lib"
 MANN=		xbl.n
 
 .include <bsd.port.mk>
