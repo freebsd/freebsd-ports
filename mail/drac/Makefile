@@ -7,6 +7,7 @@
 
 PORTNAME=	drac
 PORTVERSION= 	1.11
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cc.umanitoba.ca/src/ \
 		http://www.freenix.no/~anders/ \
@@ -29,8 +30,10 @@ MAKE_ARGS+=	-DWITH_TI_RPC
 post-patch:
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/rpc.dracd.1m
 	@${ECHO} "================================================================================"
-	@${ECHO} "Use make -DWITH_POSTFIX or -DWITH_EXIM with this port for databases compatible"
-	@${ECHO} "with those MTAs."
+	@${ECHO} "Define WITH_POSTFIX or WITH_EXIM for databases compatible with those MTAs."
+	@${ECHO}
+	@${ECHO} "Define WITH_FOREGROUND to make the rpc.dracd daemon stay in foreground instead"
+	@${ECHO} "of detaching itself. This breaks the startup script."
 	@${ECHO} "================================================================================"
 
 do-install:
@@ -41,5 +44,9 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/dracauth.3 ${PREFIX}/man/man3/
 	@${INSTALL_MAN} ${WRKSRC}/rpc.dracd.1m ${PREFIX}/man/man1/rpc.dracd.1
 .endif
+	@if [ ! -f ${PREFIX}/etc/rc.d/dracd.sh.sample ]; then \
+		${ECHO} "Installing ${PREFIX}/etc/rc.d/dracd.sh.sample startup file."; \
+		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/dracd.sh ${PREFIX}/etc/rc.d/dracd.sh.sample; \
+	fi
 
 .include <bsd.port.post.mk>

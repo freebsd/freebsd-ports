@@ -1,5 +1,5 @@
 --- Makefile.orig	Mon Nov 20 16:35:16 2000
-+++ Makefile	Sun Apr 29 20:38:47 2001
++++ Makefile	Mon Aug  6 00:28:52 2001
 @@ -5,9 +5,10 @@
  
  # Paths
@@ -14,7 +14,7 @@
  
  # OS-Dependant settings
  
-@@ -33,20 +34,32 @@
+@@ -33,20 +34,35 @@
  # -DCIDR_KEY	# keys in CIDR format
  # -DTERM_KD	# keys and data nul-terminated
  
@@ -31,6 +31,9 @@
 +DEFS=	$(RPCFLAGS) -DFLOCK_LOCK -DGETHOST -DDASH_C -DTERM_KD -DREQ_HASH -DCIDR_KEY
 +.else
 +DEFS=	$(RPCFLAGS) -DFLOCK_LOCK -DGETHOST -DDASH_C 
++.endif
++.if defined(WITH_FOREGROUND)
++DEFS+=	-DRPC_SVC_FG
 +.endif
  
  # Compiler flags 
@@ -49,7 +52,7 @@
 -#RPCGENFLAGS = -C
 +TSTLIBS = -L. -ldrac
 +#RPCGENFLAGS = 
-+RPCGENFLAGS = -C
++RPCGENFLAGS = -C -I
  
  # Man sections
  MANLIB = 3
