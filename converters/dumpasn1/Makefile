@@ -6,21 +6,17 @@
 #
 
 PORTNAME=	dumpasn1
-PORTVERSION=	20030222
+PORTVERSION=	20030329
 CATEGORIES=	converters security
 MASTER_SITES=	http://www.cs.auckland.ac.nz/~pgut001/
 DISTFILES=	dumpasn1.c dumpasn1.cfg
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=
 
-MAINTAINER=	kris@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dumps the contents of an ASN.1 encoded file, e.g. an SSL certificate
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"Needs wprintf(), which isn't available on FreeBSD <5"
-.endif
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
