@@ -1,0 +1,8 @@
+SmokePing is a latency logging and graphing system. It consists of a
+daemon process which organizes the latency measurements and a CGI
+which presents the graphs.
+
+WWW: http://ee-staff.ethz.ch/~oetiker/webtools/smokeping
+
+--lars
+lars@thegler.dk

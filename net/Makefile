@@ -453,6 +453,7 @@
     SUBDIR += smbfs
     SUBDIR += smbtcpdump
     SUBDIR += smm++
+    SUBDIR += smokeping
     SUBDIR += sniffit
     SUBDIR += sntop
     SUBDIR += socks5
