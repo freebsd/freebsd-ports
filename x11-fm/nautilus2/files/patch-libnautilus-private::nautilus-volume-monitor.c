@@ -1,8 +1,8 @@
 
 $FreeBSD$
 
---- libnautilus-private/nautilus-volume-monitor.c	2001/10/26 06:06:21	1.1
-+++ libnautilus-private/nautilus-volume-monitor.c	2001/10/26 07:39:01
+--- libnautilus-private/nautilus-volume-monitor.c.orig	Wed Oct 10 03:16:39 2001
++++ libnautilus-private/nautilus-volume-monitor.c	Wed Dec  5 23:58:45 2001
 @@ -60,6 +60,18 @@
  #include <sys/types.h>
  #include <unistd.h>
@@ -36,14 +36,14 @@ $FreeBSD$
  	}
  #endif
 +#ifdef __FreeBSD__
-+	if (eel_str_has_prefix (ent->f_mntonname, "/.amd_mnt/")) {
++	if (eel_str_has_prefix (ent->f_mntonname, "/mnt/")) {
 +		return TRUE;
 +	}
 +#endif
  	
  	return FALSE;
  }
-@@ -510,16 +527,18 @@
+@@ -510,35 +527,42 @@
  static GList *
  get_removable_volumes (NautilusVolumeMonitor *monitor)
  {
@@ -68,9 +68,13 @@ $FreeBSD$
  
  #ifdef HAVE_GETMNTINFO
  	int count, index;
-@@ -529,16 +548,20 @@
++	/*{static int b = 1; while (b);}*/
+ 	
+ 	count = getmntinfo (&ent, MNT_WAIT);
+ 	/* getmentinfo returns a pointer to static data. Do not free. */
  	for (index = 0; index < count; index++) {
- 		if (has_removable_mntent_options (ent + 1)) {
+-		if (has_removable_mntent_options (ent + 1)) {
++		if (has_removable_mntent_options (ent + index)) {
  			volume = create_volume (ent[index].f_mntfromname,
 -						ent[index].f_mntoname);
 +						ent[index].f_mntonname);
@@ -91,7 +95,7 @@ $FreeBSD$
  		return NULL;
  	}
  	
-@@ -560,9 +583,21 @@
+@@ -560,9 +584,21 @@
  				(monitor, volume, ent->mnt_type, volumes);
  		}
  	}
@@ -113,7 +117,7 @@ $FreeBSD$
  	
  #ifdef HAVE_CDDA
  	volume = create_volume (CD_AUDIO_PATH, CD_AUDIO_PATH);
-@@ -575,7 +610,7 @@
+@@ -575,7 +611,7 @@
  	return g_list_sort (g_list_reverse (volumes), (GCompareFunc) floppy_sort);
  }
  
@@ -122,7 +126,7 @@ $FreeBSD$
  
  static gboolean
  volume_is_removable (const NautilusVolume *volume)
-@@ -907,23 +942,33 @@
+@@ -907,23 +943,34 @@
  
  
  
@@ -142,6 +146,7 @@ $FreeBSD$
 +	struct fstab *ent;
 +#endif
          NautilusVolume *volume;
++        /*{static int b = 1; while (b);}*/
  
  	volumes = NULL;
          
@@ -158,12 +163,15 @@ $FreeBSD$
          while (! getmntent(fh, &ent)) {
                  volume = create_volume (ent.mnt_special, ent.mnt_mountp);
                  volume->is_removable = has_removable_mntent_options (&ent);
-@@ -932,6 +977,20 @@
+@@ -932,6 +979,23 @@
          }
  
  	fclose (fh);
 +#else
 +	while ((ent = getfsent ()) != NULL) {
++		{static int b = 1; while (b);}
++		if (strcmp(ent->fs_vfstype, "swap") == 0)
++			continue;
 +		volume = create_volume (ent->fs_spec, ent->fs_file);
 +		if (strstr (ent->fs_mntops, "noauto") == 0)
 +			volume->is_removable = TRUE;
@@ -179,7 +187,7 @@ $FreeBSD$
  
          return volumes;
  }
-@@ -1668,7 +1727,7 @@
+@@ -1668,7 +1732,7 @@
  	for (node = volume_list; node != NULL; node = node->next) {
  		volume = node->data;
  		
