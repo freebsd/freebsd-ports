@@ -6,4 +6,3 @@ etc/logcheck.violations.ignore.sample
 etc/logcheck.violations.sample
 @dirrm var/tmp
 @dirrm var
-@dirrm etc/tmp

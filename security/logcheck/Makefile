@@ -8,14 +8,18 @@
 PORTNAME=	logcheck
 PORTVERSION=	1.1.1
 CATEGORIES=	security
-MASTER_SITES=	http://www.psionic.com/tools/
+MASTER_SITES=	http://www.psionic.com/downloads/
+DISTNAME=	logsentry-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 PKGMESSAGE=	${WRKDIR}/MESSAGE
 
-pre-configure:                                        
-	${PERL} -pi -e "s@/usr/local/etc/tmp@${PREFIX}/var/tmp@g" ${WRKSRC}/Makefile ${WRKSRC}/systems/freebsd/logcheck.sh
+pre-configure:
+	${PERL} -pi -e "s@/usr/local/etc/tmp@${PREFIX}/var/tmp@g; \
+		s@/usr/local@${PREFIX}@" ${WRKSRC}/Makefile \
+		${WRKSRC}/systems/freebsd/logcheck.sh
 	${PERL} -pi -e "s@/bin/mkdir@${MKDIR}@g" ${WRKSRC}/Makefile
 
 post-build:
