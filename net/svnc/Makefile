@@ -8,10 +8,11 @@
 PORTNAME=	svnc
 PORTVERSION=	0.1
 CATEGORIES=	net
-MASTER_SITES=	http://www.uk.research.att.com/vnc/contrib/ \
-		http://www.uk.research.att.com/vnc/dist/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://www.uk.research.att.com/vnc/dist/:att
+MASTER_SITE_SUBDIR=	trevor
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tgz \
-		vnc-3.3.3r1_unixsrc.tgz
+		vnc-3.3.3r1_unixsrc.tgz:att
 
 MAINTAINER=	trevor@FreeBSD.org
 
