@@ -1,5 +1,5 @@
---- configure.in.orig	Sun Mar 21 09:55:41 2004
-+++ configure.in	Fri Apr  2 13:59:41 2004
+--- configure.in.orig	Sun Mar 21 07:55:41 2004
++++ configure.in	Sun Apr  4 15:36:24 2004
 @@ -21,9 +21,9 @@
  dnl ---------------------------------------------------
  dnl Check standard libraries
@@ -21,7 +21,8 @@
 +LIBS="$LIBS -lGL"
 +
  AC_CHECK_LIB(fltk,main,LIBFLTK="-lfltk")
- AC_CHECK_LIB(fltk_gl,main,[LIBFLTKGL="-lfltk_gl -lGL" FLTK_EXTRA=show])
+-AC_CHECK_LIB(fltk_gl,main,[LIBFLTKGL="-lfltk_gl -lGL" FLTK_EXTRA=show])
++AC_CHECK_LIB(fltk_gl,main,[LIBFLTKGL="-lfltk_gl -lGL -lstdc++" FLTK_EXTRA=show])
  
 +LIBS="${saved_LIBS}"
  
@@ -36,4 +37,3 @@
  AC_CHECK_LIB(tiff,TIFFOpen,,[AC_MSG_ERROR([libtiff not found])],)
  
  TIFF_LIBS="${LIBS}"
-
