@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	squid
-PORTVERSION=	2.5
-PORTREVISION=	4
+PORTVERSION=	2.5.4
 CATEGORIES=	www
 MASTER_SITES=	\
 	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -16,34 +15,12 @@ MASTER_SITES=	\
 	ftp://ftp.net.lut.ac.uk/squid/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid/&,}
 MASTER_SITE_SUBDIR=	squid-2/STABLE
-DISTNAME=	squid-2.5.STABLE3
+DISTNAME=	squid-2.5.STABLE4
 EXTRACT_SUFX=	.tar.bz2
 DIST_SUBDIR=	squid2.5
 
 PATCH_SITES=	http://www.squid-cache.org/Versions/v2/2.5/bugs/
-PATCHFILES=	squid-2.5.STABLE3-deny_info.patch \
-		squid-2.5.STABLE3-cache_dir_doc.patch \
-		squid-2.5.STABLE3-devnull.patch \
-		squid-2.5.STABLE3-log_quote.patch \
-		squid-2.5.STABLE3-rfc_reference.patch \
-		squid-2.5.STABLE3-external_acl_ident.patch \
-		squid-2.5.STABLE3-gcc-3_3.patch \
-		squid-2.5.STABLE3-carpfactor.patch \
-		squid-2.5.STABLE3-neighbor_type_domain.patch \
-		squid-2.5.STABLE3-header_access_peer.patch \
-		squid-2.5.STABLE3-memwarnsbrk.patch \
-		squid-2.5.STABLE3-hostscomments.patch \
-		squid-2.5.STABLE3-store_check_cachable_stats.patch \
-		squid-2.5.STABLE3-cachePeerPingsSentsnmp.patch \
-		squid-2.5.STABLE3-minimum_retry_timeout.patch \
-		squid-2.5.STABLE3-tcp_reset_leak.patch \
-		squid-2.5.STABLE3-hostheader.patch \
-		squid-2.5.STABLE3-reply_body_max_size.patch \
-		squid-2.5.STABLE3-ie_refresh.patch \
-		squid-2.5.STABLE3-http_reply_access-denied.patch \
-		squid-2.5.STABLE3-SENT_PASV.patch \
-		squid-2.5.STABLE3-peer_digest_not_found_assertion.patch \
-		squid-2.5.STABLE3-round_robin_max_size.patch
+PATCHFILES=
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	adrian@freebsd.org
