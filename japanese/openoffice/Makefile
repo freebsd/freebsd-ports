@@ -11,5 +11,6 @@ LANG_PKGNAME=	jp
 LANG_EXT=	81
 LANG_CONFIGURE_ARG=	JAPN
 MASTERDIR=	${.CURDIR}/../../editors/openoffice
+RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/TrueType/kochi-mincho.ttf:${PORTSDIR}/japanese/kochi-ttfonts
 
 .include "${.CURDIR}/../../editors/openoffice/Makefile"
