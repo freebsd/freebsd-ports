@@ -3,7 +3,7 @@
 # Date created:		14 Mar 1996
 # Whom:			se
 #
-# $Id: Makefile,v 1.1.1.1 1996/03/13 22:53:32 se Exp $
+# $Id: Makefile,v 1.2 1996/11/18 11:23:12 asami Exp $
 #
 
 DISTNAME=	mkmf
@@ -14,4 +14,3 @@ MASTER_SITES=	ftp://ftp.uni-koeln.de/util/
 MAINTAINER=	se@FreeBSD.org
 
 .include <bsd.port.mk>
-
