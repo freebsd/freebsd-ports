@@ -6950,7 +6950,6 @@ sparc-rtems-gcc	ports/devel/sparc-rtems-gcc
 sparc-rtems-gcj	ports/devel/sparc-rtems-gcj
 sparc-rtems-gdb	ports/devel/sparc-rtems-gdb
 sparc-rtems-objc	ports/devel/sparc-rtems-objc
-spat		ports/net/spat
 spdbv		ports/biology/spdbv
 speak		ports/games/speak
 speak_freely	ports/mbone/speak_freely

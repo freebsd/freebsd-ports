@@ -505,7 +505,6 @@
     SUBDIR += sntop
     SUBDIR += socat
     SUBDIR += socks5
-    SUBDIR += spat
     SUBDIR += spread
     SUBDIR += ssldump
     SUBDIR += staticcharge
