@@ -4,7 +4,7 @@
 # Date created:         Sat July 20, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.7 1998/01/17 11:50:48 obrien Exp $
+# $Id: Makefile,v 1.8 1999/03/15 05:06:25 obrien Exp $
 #
 
 DISTNAME=	figlet22
@@ -19,5 +19,15 @@ MASTER_SITES=	ftp://wuarchive.wustl.edu/graphics/graphics/misc/figlet/program/un
 MAINTAINER=     obrien@FreeBSD.org
 
 MAN6=		figlet.6
+
+do-install:
+	@ ${MKDIR} ${PREFIX}/share/figlet
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/figlet ${PREFIX}/bin
+	@ ${INSTALL_PROGRAM} ${WRKSRC}/chkfont ${PREFIX}/bin
+	@ ${INSTALL_SCRIPT} ${WRKSRC}/figlist ${PREFIX}/bin
+	@ ${INSTALL_SCRIPT} ${WRKSRC}/showfigfonts ${PREFIX}/bin
+	@ ${INSTALL_DATA} ${WRKSRC}/fonts/*.flf ${PREFIX}/share/figlet
+	@ ${INSTALL_DATA} ${WRKSRC}/fonts/*.flc ${PREFIX}/share/figlet
+	@ ${INSTALL_MAN} ${WRKSRC}/figlet.6 ${PREFIX}/man/man6
 
 .include <bsd.port.mk>
