@@ -14,7 +14,7 @@ if [ "${BATCH}" ]; then
 		set \"esd\"
 	fi
 else
-	/usr/bin/dialog --title "configuration options" --clear \
+	/usr/bin/dialog --title "gnugadu configuration options" --clear \
 		--checklist "\n\
 Please select desired options:" -1 -1 16 \
 esd		"esd support" ON \
