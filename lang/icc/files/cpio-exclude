@@ -37,6 +37,7 @@
 */opt/intel/%%COMPILERDIR%%/ia32/include/omp_lib.h
 */opt/intel/%%COMPILERDIR%%/ia32/include/ostream
 */opt/intel/%%COMPILERDIR%%/ia32/include/queue
+*/opt/intel/%%COMPILERDIR%%/ia32/include/queue.h
 */opt/intel/%%COMPILERDIR%%/ia32/include/regex.h
 */opt/intel/%%COMPILERDIR%%/ia32/include/set
 */opt/intel/%%COMPILERDIR%%/ia32/include/slist
