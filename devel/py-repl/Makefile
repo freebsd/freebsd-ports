@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	repl
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://starship.python.net/crew/mwh/hacks/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
