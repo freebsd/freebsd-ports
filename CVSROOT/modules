@@ -10363,6 +10363,7 @@ tpager		ports/x11-wm/tpager
 tpasm		ports/devel/tpasm
 tpg		ports/devel/tpg
 tpop3d		ports/mail/tpop3d
+tpp		ports/misc/tpp
 tptest		ports/net/tptest
 tr-aspell	ports/textproc/tr-aspell
 tr-ircd		ports/irc/tr-ircd
