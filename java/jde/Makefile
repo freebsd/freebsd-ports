@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	jde
-PORTVERSION=	2.2.9
-PORTREVISION=	1
+PORTVERSION=	2.3.3
+PORTREVISION=	0
 CATEGORIES=	java elisp
 MASTER_SITES=	http://jdee.sunsite.dk/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -52,6 +52,7 @@ do-install:
 
 post-install:
 	${LN} -sf ${JAVADIR} ${LISPDIR}/java
+	${LN} -sf ${JAVADIR} ${LISPDIR}/../java
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for i in ReleaseNotes.txt ChangeLog
