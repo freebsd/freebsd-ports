@@ -147,6 +147,7 @@
     SUBDIR += xine_artsplugin
     SUBDIR += xmms
     SUBDIR += xmms-avi
+    SUBDIR += xmms-skins
     SUBDIR += xmms-status-plugin
     SUBDIR += xmms-weasel
     SUBDIR += xmps
