@@ -25,7 +25,7 @@ DOCS_JA=	README.ja
 
 do-configure:
 	@cd ${WRKSRC}; \
-	${SETENV} ${CONFIGURE_ENV} ${RUBY} configure.rb
+	${SETENV} ${CONFIGURE_ENV} ${RUBY} configure.rb --with-swig=swig1.1
 
 post-install:
 .if !defined(NOPORTDOCS)
