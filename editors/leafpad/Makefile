@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	leafpad
-PORTVERSION=	0.7.3.1
-PORTREVISION=	1
+PORTVERSION=	0.7.4
 CATEGORIES=	editors
 MASTER_SITES=	http://tarot.freeshell.org/leafpad/
 
@@ -33,10 +32,8 @@ PLIST_SUB+=	NLS:="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/icons|/${PORTNAME}|g' \
-		${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|/share/icons/|/share/${PORTNAME}/|g' \
-		${WRKSRC}/src/callback.c ${WRKSRC}/src/window.c
+	@${REINPLACE_CMD} -e 's|/pixmaps|/${PORTNAME}|g' \
+		${WRKSRC}/Makefile.in ${WRKSRC}/src/Makefile.in
 
 .ifndef (NOPORTDOCS)
 post-install:
