@@ -14,6 +14,8 @@ MASTER_SITES=	http://ftp.gnqs.org/pub/gnqs/source/by-version-number/v3.50/
 
 MAINTAINER=		tony.maher@ebioinformatics.com
 
+FORBIDDEN=	"Local root compromise"
+
 Y2K=			http://www.gnqs.org/Year2000.htm
 
 IS_INTERACTIVE=	yes
