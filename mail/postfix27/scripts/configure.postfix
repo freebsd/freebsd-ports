@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix27/scripts/Attic/configure.postfix,v 1.41 2003-10-01 19:55:24 osa Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix27/scripts/Attic/configure.postfix,v 1.42 2004-01-30 19:28:45 eik Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -30,7 +30,8 @@ DB3		"Berkeley DB3 (required if SASL also built with DB3)" "$status_DB3" \
 DB40		"Berkeley DB4.0 (required if SASL also built with DB4.0)" "$status_DB40" \
 DB41		"Berkeley DB4.1 (required if SASL also built with DB4.1)" "$status_DB41" \
 MySQL		"MySQL map lookups" "$status_MySQL" \
-PgSQL		"PostgreSQL v7.3 map lookups" "$status_PgSQL" \
+PgSQL		"PostgreSQL v7.4 map lookups" "$status_PgSQL" \
+PgSQL73		"PostgreSQL v7.3 map lookups" "$status_PgSQL73" \
 PgSQL72		"PostgreSQL v7.2 map lookups" "$status_PgSQL72" \
 OpenLDAP12	"OpenLDAP 1.2 map lookups" "$status_OpenLDAP" \
 OpenLDAP20	"OpenLDAP 2.0 map lookups" "$status_OpenLDAP" \
@@ -164,6 +165,16 @@ while [ "$1" ]; do
 			echo "PATCH_DIST_STRIP= -p1"
 			echo "PGSQL_SUFFIX=	+pgsql"
 			;;
+		PgSQL73)
+			echo "POSTGRESQL_PORT?=	databases/postgresql73"
+			echo "LIB_DEPENDS+=	pq.3:\${PORTSDIR}/\${POSTGRESQL_PORT}"
+			echo "POSTFIX_CCARGS+=	-DHAS_PGSQL -I\${LOCALBASE}/include  -I\${LOCALBASE}/pgsql/include"
+			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
+			echo "PATCH_SITES+=	http://mat.cc/postfix/"
+			echo "PATCHFILES+=	postfix-pg.postfix-2.0.0.2.patch"
+			echo "PATCH_DIST_STRIP= -p1"
+			echo "PGSQL_SUFFIX=	+pgsql"
+			;;
 		PgSQL72)
 			echo "POSTGRESQL_PORT?=	databases/postgresql72"
 			echo "LIB_DEPENDS+=	pq.2:\${PORTSDIR}/\${POSTGRESQL_PORT}"
@@ -203,7 +214,7 @@ while [ "$1" ]; do
 				exit 1
 			fi
 			echo "PATCH_SITES+=	http://www.ipnet6.org/postfix/download/"
-			echo "PATCHFILES+=	ipv6-1.18a-pf-2.0.16.patch.gz"
+			echo "PATCHFILES+=	ipv6-1.21-pf-2.0.18.patch.gz"
 			echo "PATCH_DIST_STRIP=	-p1"
 			echo "IPv6_SUFFIX=	+ipv6"
 			echo ""
@@ -221,7 +232,7 @@ while [ "$1" ]; do
 			echo "POSTFIX_CCARGS+=	-DHAS_SSL -I\${OPENSSLINC}"
 			echo "POSTFIX_AUXLIBS+=	-L\${OPENSSLLIB} -lssl -lcrypto"
 			echo "PATCH_SITES+=	http://www.ipnet6.org/postfix/download/"
-			echo "PATCHFILES+=	tls+ipv6-1.18a-pf-2.0.16.patch.gz"
+			echo "PATCHFILES+=	tls+ipv6-1.21-pf-2.0.18.patch.gz"
 			echo "PATCH_DIST_STRIP=	-p1"
 			echo "TLS_SUFFIX=	+tls+ipv6"
 			SUB_TLS=""
