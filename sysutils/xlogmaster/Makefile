@@ -8,10 +8,7 @@
 PORTNAME=	xlogmaster
 PORTVERSION=	1.6.0
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://sunsite.doc.ic.ac.uk/packages/gnu/\
-		${MASTER_SITE_GNU}\
-		http://www.fusebox.hanse.de/xlogmaster/development/\
-		http://porter.desy.de/~greve/xlogmaster/development/
+MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	xlogmaster
 
 MAINTAINER=	aw1@stade.co.uk
