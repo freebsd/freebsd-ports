@@ -7,7 +7,7 @@
 
 PORTNAME=	${APP_TITLE:L}
 PORTVERSION=	4.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -52,7 +52,7 @@ JAVA_OPTS=
 JAVA_CP=	bin/run.jar:${JAVA_HOME}/lib/tools.jar
 JAVA_MAIN=	org.jboss.Main
 DAEMONCTL_DIR=	${FILESDIR}
-DAEMONCTL_FILES=daemonctl.c daemonctl.1 startup.sh
+DAEMONCTL_FILES=daemonctl.c daemonctl.1 startup.sh pkg-message
 MAN1=		${CONTROL_SCRIPT_NAME}.1
 
 JBOSSOUTPUT=	${WRKSRC}/build/output/${PORTNAME}-${PORTVERSION}
@@ -62,6 +62,8 @@ PLIST_FILES=	${CONTROL_SCRIPT:S,^${PREFIX}/,,} \
 		${STARTUP_SCRIPT:S,^${PREFIX}/,,} \
 		${STDOUT_LOG:S,^${PREFIX}/,,} \
 		${STDERR_LOG:S,^${PREFIX}/,,}
+
+PKGMESSAGE=	${WRKDIR}/pkg-message.fmt
 
 .include <bsd.port.pre.mk>
 
@@ -86,6 +88,7 @@ do-configure:
 		-e "s|%%JAR_FILE%%|${JAR_FILE}|g;" \
 		-e "s|%%LOG_DIR%%|${LOG_DIR}|g;" \
 		-e "s|%%PID_FILE%%|${PID_FILE}|g;" \
+		-e "s|%%PKGNAME%%|${PKGNAME}|g;" \
 		-e "s|%%PORTNAME%%|${PORTNAME}|g;" \
 		-e "s|%%PORTVERSION%%|${PORTVERSION}|g;" \
 		-e "s|%%PREFIX%%|${PREFIX}|g;" \
@@ -94,6 +97,7 @@ do-configure:
 		-e "s|%%STDOUT_LOG%%|${STDOUT_LOG}|g;" \
 		-e "s|%%STOP_TIMEOUT%%|${STOP_TIMEOUT}|g;" \
 		-e "s|%%USER%%|${USER}|g;" ${DAEMONCTL_FILES})
+	@${FMT} -s 80 ${WRKDIR}/pkg-message >${PKGMESSAGE}
 
 post-configure:
 	@${ECHO_MSG} "Installation settings:"
@@ -141,11 +145,11 @@ post-install:
 		${SED} -ne 's,^${JBOSSOUTPUT},@dirrm ${APP_HOME:S,${PREFIX}/,,},p' >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm ${APP_HOME:S,^${PREFIX}/,,}/log" >> ${TMPPLIST}
 	@${ECHO_CMD} "@dirrm ${APP_HOME:S,^${PREFIX}/,,}" >> ${TMPPLIST}
-	@${ECHO_MSG} "${PKGNAME} has been installed in ${APP_HOME}."
-	@${ECHO_MSG} "If a user should be able to use ${CONTROL_SCRIPT_NAME}, put it in the group ${GROUP}."
-	@${ECHO_MSG} "Use 'man ${CONTROL_SCRIPT_NAME}' for information about starting and stopping ${PORTNAME}."
 .if ${AUTO_START} == "YES"
 	@${CONTROL_SCRIPT} start || true
+.endif
+.if !defined(BATCH)
+	@${CAT} ${PKGMESSAGE}
 .endif
 
 .include <bsd.port.post.mk>
