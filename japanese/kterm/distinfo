@@ -10,3 +10,5 @@ MD5 (kterm/kterm-6.2.0-jisx0213.patch.gz) = c09953e2c8ea1bbb6dbd771ba969cd8b
 SIZE (kterm/kterm-6.2.0-jisx0213.patch.gz) = 15530
 MD5 (kterm/kterm-6.2.0-color16.patch.gz) = ecf0d363f2d1a253678b77cf41b392ce
 SIZE (kterm/kterm-6.2.0-color16.patch.gz) = 1398
+MD5 (kterm/kterm-6.2.0-termios-0.2.patch.gz) = 1af8ea8e6785b339fcc93f92fa783fe9
+SIZE (kterm/kterm-6.2.0-termios-0.2.patch.gz) = 3084
