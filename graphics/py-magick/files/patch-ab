@@ -1,0 +1,12 @@
+--- imageobject.c.orig	Sun Nov  2 20:12:40 2003
++++ imageobject.c	Sun Nov  2 20:12:52 2003
+@@ -6130,8 +6130,8 @@
+     switch(*attr) {
+     case 'a':
+ 	if (strcmp(attr, "affine")==0) {
+-	    CLEAR_ERR;
+ 	    AffineMatrix affine;
++	    CLEAR_ERR;
+ 	    if (!get_affine_matrix(&affine, val)) return -1;
+ 	    info->affine = affine;
+ 	    return 0;
