@@ -10,15 +10,17 @@ PORTVERSION=	3.10a
 PORTREVISION=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/ \
+		http://www.yuasa.kuis.kyoto-u.ac.jp/~shige/FreeBSD/ports/xv/ \
 		ftp://ftp.trilon.com/pub/xv/ \
 		ftp://ftp.trilon.com/pub/xv/patches/ \
 		ftp://ftp.airlab.cs.ritsumei.ac.jp/pub/X/xv-jp-extension/working/ \
-		${MASTER_SITE_LOCAL} \
-		http://www.yuasa.kuis.kyoto-u.ac.jp/~shige/FreeBSD/ports/xv/
+		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ports/xv
+# Workaround: pdf.patch and mp-tiff-patch must be fetched from my own site.
+#             These are modified for applying after jp-extension-patch.
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}${PORTVERSION:S/.//}-jp-extension-rev5.3.3.tar.gz \
-		jp-ext-bzip2.patch longname.patch pdf.patch \
+		jp-ext-bzip2.patch longname.patch pdf.patch mp-tiff-patch \
 		xv-png-1.2d.patch xvpng-1.2d-fix3.patch
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTFILES:N*patch}
@@ -27,7 +29,7 @@ PATCH_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/ \
 		ftp://ftp.trilon.com/pub/xv/patches/
 # Note: xpm.patch appears to already be in xvdir.c
 PATCHFILES=	${DISTNAME}.JPEG-patch ${DISTNAME}.TIFF-patch \
-		croppad.patch grabpatch vispatch mp-tiff-patch \
+		croppad.patch grabpatch vispatch \
 		deepcolor.patch gifpatch exceed_grab.patch \
 		tiff1200.patch gssafer.patch
 
@@ -50,6 +52,7 @@ pre-patch:
 post-patch:
 	${PATCH} ${PATCH_ARGS} -p1 < ${XVDIST}/longname.patch
 	${PATCH} ${PATCH_ARGS} -p1 < ${XVDIST}/pdf.patch
+	${PATCH} ${PATCH_ARGS} -p0 < ${XVDIST}/mp-tiff-patch
 	${PATCH} ${PATCH_ARGS} -p1 < ${XVDIST}/xv-png-1.2d.patch
 	${PATCH} ${PATCH_ARGS} -p0 < ${XVDIST}/xvpng-1.2d-fix3.patch
 	${PATCH} ${PATCH_ARGS} -p1 < ${XVDIST}/jp-ext-bzip2.patch
