@@ -1,12 +1,13 @@
+bin/gnome-vfs-config
 bin/gnome-vfs-gen-mimedb
 bin/gnome-vfs-slave
 bin/nautilus-mime-type-capplet
 etc/gnome-vfs-mime-magic
-etc/gnome-vfs-mime-magic.dat
 etc/vfs/modules/default-modules.conf
 etc/vfsConf.sh
 etc/vfscorbaConf.sh
 etc/vfspthreadConf.sh
+include/libgnomevfs/gnome-vfs-application-registry.h
 include/libgnomevfs/gnome-vfs-async-ops.h
 include/libgnomevfs/gnome-vfs-backend.h
 include/libgnomevfs/gnome-vfs-cancellable-ops.h
@@ -84,19 +85,22 @@ lib/vfs/modules/libftp.so
 lib/vfs/modules/libgconf.so
 lib/vfs/modules/libgzip.so
 lib/vfs/modules/libhttp.so
-lib/vfs/modules/libvefs.so
+lib/vfs/modules/libnfs.so
 lib/vfs/modules/libvfs-pipe.so
+lib/vfs/modules/libvfs-test.so
 lib/vfs/modules/libvfs-translate.so
+share/gnome/application-registry/gnome-vfs.applications
 share/gnome/apps/Settings/nautilus-mime-type.desktop
 share/gnome/control-center/nautilus-mime-type.desktop
-share/gnome/mime-info/application-registry-hack.keys
 share/gnome/mime-info/gnome-vfs.keys
 share/gnome/mime-info/gnome-vfs.mime
 share/locale/ca/LC_MESSAGES/gnome-vfs.mo
 share/locale/da/LC_MESSAGES/gnome-vfs.mo
 share/locale/de/LC_MESSAGES/gnome-vfs.mo
 share/locale/el/LC_MESSAGES/gnome-vfs.mo
+share/locale/fi/LC_MESSAGES/gnome-vfs.mo
 share/locale/fr/LC_MESSAGES/gnome-vfs.mo
+share/locale/ga/LC_MESSAGES/gnome-vfs.mo
 share/locale/gl/LC_MESSAGES/gnome-vfs.mo
 share/locale/hu/LC_MESSAGES/gnome-vfs.mo
 share/locale/it/LC_MESSAGES/gnome-vfs.mo
@@ -112,6 +116,7 @@ share/locale/sl/LC_MESSAGES/gnome-vfs.mo
 share/locale/sv/LC_MESSAGES/gnome-vfs.mo
 share/locale/tr/LC_MESSAGES/gnome-vfs.mo
 share/locale/uk/LC_MESSAGES/gnome-vfs.mo  
+@dirrm share/gnome/application-registry
 @dirrm lib/vfs/modules
 @dirrm lib/vfs/include
 @dirrm lib/vfs/extfs
