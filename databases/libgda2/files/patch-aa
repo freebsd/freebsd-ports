@@ -1,14 +1,11 @@
-
-$FreeBSD$
-
---- Makefile.in.orig	Wed Nov 21 10:29:52 2001
-+++ Makefile.in	Wed Nov 21 10:30:19 2001
-@@ -158,7 +158,7 @@
- YACC = @YACC@
- l = @l@
+--- Makefile.in.orig	Sun Jun  2 22:13:42 2002
++++ Makefile.in	Sun Jun  2 22:13:50 2002
+@@ -149,7 +149,7 @@
+ WARN_CFLAGS = @WARN_CFLAGS@
+ cxxflags_set = @cxxflags_set@
  
--SUBDIRS =  	po 	intl 	macros 	idl 	lib 	bindings 	providers 	tools 	testing 	doc
-+SUBDIRS =  	po 	intl 	macros 	idl 	lib 	bindings 	providers 	tools 	doc
+-SUBDIRS =  	po 	idl 	libgda 	providers 	report 	tools 	testing 	data 	doc
++SUBDIRS =  	po 	idl 	libgda 	providers 	report 	tools 	data 	doc
  
  
- EXTRA_DIST =  	COPYING 	libgda.spec.in 	xml-i18n-extract.in 	xml-i18n-merge.in 	xml-i18n-update.in
+ EXTRA_DIST =  	COPYING 	libgda.spec.in 	libgda.pc.in 	intltool-extract.in 	intltool-merge.in 	intltool-update.in

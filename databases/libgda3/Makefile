@@ -1,41 +1,65 @@
-# New ports collection makefile for:	libgda
-# Date created:				8th March 2001
-# Whom:					Ade Lovett <ade@FreeBSD.org>
+# New ports collection makefile for:	libgda2
+# Date created:				02 June 2002
+# Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	libgda
-PORTVERSION=	0.2.96
-PORTREVISION=	1
+PORTNAME=	libgda2
+PORTVERSION=	0.8.191
 CATEGORIES=	databases gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/${PORTNAME}
-DIST_SUBDIR=	gnome
+MASTER_SITE_SUBDIR=	pre-gnome2/sources/libgda
+DISTNAME=	libgda-${PORTVERSION}
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
-		bonobo.2:${PORTSDIR}/devel/bonobo
+LIB_DEPENDS=	glib-2.0.0:${PORTSDIR}/devel/glib20 \
+		xslt.1:${PORTSDIR}/textproc/libxslt
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOMECTRL=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--disable-gtk-doc
+CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
+		--datadir=${PREFIX}/share/gnome \
+		--disable-gtk-doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lintl -lgdbm"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
-PLIST_SUB=	VERSION=${PORTVERSION}
+
+.if defined(WITH_MYSQL)
+LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
+PLIST_SUB=	MYSQL=""
+.else
+PLIST_SUB=	MYSQL="@comment "
+.endif
+
+.if defined(WITH_POSTGRES)
+LIB_DEPENDS+=	pq.2:${PORTSDIR}/databases/postgres7
+CONFIGURE_ARGS+=	--with-postgres=${LOCALBASE}
+PLIST_SUB+=	POSTGRES=""
+.else
+PLIST_SUB+=	POSTGRES="@comment "
+.endif
+
+pre-extract:
+.if !defined(WITH_MYSQL)
+	@${ECHO_MSG} "You can enable support for MySQL databases by defining WITH_MYSQL."
+.endif
+.if !defined(WITH_POSTGRES)
+	@${ECHO_MSG} "You can enable support for Postgres databases by defining WITH_POSTGRES."
+.endif
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|share/idl|share/gnome/idl|g ; \
+		 s|\$\(libdir\)/pkgconfig|\$\(prefix\)/libdata/pkgconfig|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>

@@ -1912,6 +1912,7 @@ gkrellweather	ports/misc/gkrellweather
 glacier		ports/mail/glacier
 glade		ports/devel/glade
 glade--		ports/devel/glade--
+glade2		ports/devel/glade2
 glame		ports/audio/glame
 glass		ports/graphics/glass
 glasteroids	ports/games/glasteroids
@@ -1997,6 +1998,7 @@ gnomecontrolcenter2	ports/sysutils/gnomecontrolcenter2
 gnomecore	ports/x11/gnomecore
 gnomecrash	ports/devel/gnomecrash
 gnomedb		ports/databases/gnomedb
+gnomedb2	ports/databases/gnomedb2
 gnomedebug	ports/devel/gnomedebug
 gnomedesktop	ports/x11/gnomedesktop
 gnomefind	ports/sysutils/gnomefind
@@ -3538,6 +3540,7 @@ libfxp		ports/ftp/libfxp
 libg++		ports/devel/libg++
 libgail-gnome	ports/x11-toolkits/libgail-gnome
 libgda		ports/databases/libgda
+libgda2		ports/databases/libgda2
 libgdgeda	ports/graphics/libgdgeda
 libgeda		ports/cad/libgeda
 libgetline	ports/devel/libgetline

@@ -1,9 +1,6 @@
-
-$FreeBSD$
-
---- idl/Makefile.in	2001/07/26 14:06:24	1.1
-+++ idl/Makefile.in	2001/07/26 14:06:37
-@@ -153,7 +153,7 @@
+--- idl/Makefile.in.orig	Sun Jun  2 23:17:56 2002
++++ idl/Makefile.in	Sun Jun  2 23:17:42 2002
+@@ -137,7 +137,7 @@
  EXTRA_DIST =  	$(IDL_FILES)
  
  
