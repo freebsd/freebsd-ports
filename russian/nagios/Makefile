@@ -19,6 +19,8 @@ COMMENT=	Extremely powerful network monitoring system with Russian language
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
+BROKEN=		Changes permissions of installed directory
+
 CONFLICTS=	nagios-1*
 
 USE_GETOPT_LONG=yes
