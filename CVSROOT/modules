@@ -7139,13 +7139,6 @@ ruby-postgres	ports/databases/ruby-postgres
 ruby-programmingruby	ports/lang/ruby-programmingruby
 ruby-property	ports/devel/ruby-property
 ruby-python	ports/lang/ruby-python
-ruby-qt2	ports/x11-toolkits/ruby-qt2
-ruby-qt2canvas	ports/x11-toolkits/ruby-qt2canvas
-ruby-qt2gl	ports/graphics/ruby-qt2gl
-ruby-qt2iconview	ports/x11-toolkits/ruby-qt2iconview
-ruby-qt2sound	ports/audio/ruby-qt2sound
-ruby-qt2table	ports/x11-toolkits/ruby-qt2table
-ruby-qt2xml	ports/textproc/ruby-qt2xml
 ruby-quota	ports/sysutils/ruby-quota
 ruby-racc	ports/devel/ruby-racc
 ruby-radius	ports/net/ruby-radius
