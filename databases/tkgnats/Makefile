@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	tkgnats
-PORTVERSION=	3.0.14
+PORTVERSION=	3.0.16
 CATEGORIES=	databases tk82
 MASTER_SITES=	http://www.cuug.ab.ca/~macdonal/tkgnats/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jeremy@external.org
 
 BUILD_DEPENDS=	nedit-pr:${PORTSDIR}/databases/gnats
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
