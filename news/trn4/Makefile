@@ -21,10 +21,6 @@ MAN1=		trn.1 Pnews.1 Rnmail.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 pre-configure:
 	@${ECHO_MSG} "===>  Running pre-configure target for ${DISTNAME}"
 	@${SED} -e "s:__CC__:$(CC):" -e "s:__CFLAGS__:$(CFLAGS):" \
