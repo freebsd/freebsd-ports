@@ -3,7 +3,7 @@
 # Date created:         Mon Aug 28 13:35:31 CDT 1995
 # Whom:                 erich@rrnet.com
 #
-# $Id: Makefile,v 1.11 1998/09/15 11:13:20 asami Exp $
+# $Id: Makefile,v 1.12 1998/09/17 00:32:40 asami Exp $
 #
 
 DISTNAME=	aero_1.7.0_src
@@ -12,6 +12,8 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.ee.uwa.edu.au/users/braunl/aero/
 
 MAINTAINER=	erich@FreeBSD.org
+
+BROKEN_ELF=	depends on FWF which is BROKEN for ELF
 
 BUILD_DEPENDS=	${X11BASE}/lib/libfwf.a:${PORTSDIR}/x11-toolkits/FWF
 RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray
