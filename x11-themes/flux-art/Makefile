@@ -15,6 +15,8 @@ COMMENT=	Flux-art themes pack for fluxbox-devel
 
 RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox-devel
 
+CONFLICTS=	fluxbox-fluxmod-*
+
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
