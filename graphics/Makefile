@@ -235,6 +235,7 @@
     SUBDIR += xmountains
     SUBDIR += xmovie
     SUBDIR += xmps
+    SUBDIR += xmps-opendivx-plugin
     SUBDIR += xmrm
     SUBDIR += xpaint
     SUBDIR += xpdf
