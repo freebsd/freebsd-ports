@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	conserver
-PORTVERSION=	8.1.5
+PORTVERSION=	8.1.7
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.conserver.com/conserver/
 PKGNAMESUFFIX=	-com
@@ -16,7 +16,7 @@ COMMENT=	Application that allows multiple users to watch serial consoles
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-master=${DEFAULTHOST} --with-port=${DEFAULTPORT} \
-		--with-libwrap
+		--with-pam --with-libwrap
 USE_RC_SUBR=	yes
 
 MAN1=	console.1
