@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.47 1998/07/19 05:06:26 vanilla Exp $
+# $Id: Makefile,v 1.48 1998/07/20 03:58:46 steve Exp $
 #
 
     SUBDIR += amp
@@ -18,6 +18,7 @@
     SUBDIR += mxv
     SUBDIR += nas
     SUBDIR += nspmod
+    SUBDIR += play
     SUBDIR += playmidi
     SUBDIR += radio
     SUBDIR += rosegarden
