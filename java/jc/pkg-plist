@@ -1,6 +1,3 @@
-%%GNOME:%%jc/lib/classpath/libgtkpeer.la
-%%GNOME:%%jc/lib/classpath/libgtkpeer.so
-%%GNOME:%%jc/lib/classpath/libgtkpeer.so.0
 bin/jc
 jc/bin/cfdump
 jc/bin/genobj
@@ -68,6 +65,9 @@ jc/info/dir
 jc/info/hacking.info
 jc/info/vmintegration.info
 jc/lib/awt/font.properties
+jc/lib/classpath/libgtkpeer.la
+jc/lib/classpath/libgtkpeer.so
+jc/lib/classpath/libgtkpeer.so.0
 jc/lib/classpath/libjavaawt.la
 jc/lib/classpath/libjavaawt.so
 jc/lib/classpath/libjavaawt.so.0
