@@ -3,11 +3,11 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id$
+# $Id: Makefile,v 1.12 1995/04/15 04:34:07 asami Exp $
 #
 
 DISTNAME=	web2c-6.1
-PKGNAME=	tex-6.1
+PKGNAME=	tex-3.1415
 CATEGORIES+=	printing
 DISTFILES=	web2c.tar.gz web.tar.gz tex_base.tar.gz cm_tfm.tar.gz \
 		mf_lib.tar.gz cm_mf.tar.gz      modes.mf 
