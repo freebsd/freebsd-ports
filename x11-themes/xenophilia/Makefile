@@ -18,4 +18,7 @@ LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 USE_X_PREFIX=	yes
 ALL_TARGET=
 
+pre-install:
+		@${MKDIR} ${PREFIX}/lib/gtk/themes/engines
+
 .include <bsd.port.mk>
