@@ -14,7 +14,7 @@ MAINTAINER=	grog@lemis.com
 
 RUN_DEPENDS=	acroread:${PORTSDIR}/print/acroread4 \
 		bash:${PORTSDIR}/shells/bash2 \
-		cdrecord:${PORTSDIR}/sysutils/cdrecord \
+		cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		dos2unix:${PORTSDIR}/converters/unix2dos \
 		emacs:${PORTSDIR}/editors/emacs20 \
 		fetchmail:${PORTSDIR}/mail/fetchmail \

@@ -13,7 +13,7 @@ DISTNAME=	xcdroast-0.98alpha8
 
 MAINTAINER=	Kai_Allard_Liao@gmx.de
 
-RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrecord \
+RUN_DEPENDS=	cdrecord:${PORTSDIR}/sysutils/cdrtools \
 		mkisofs:${PORTSDIR}/sysutils/mkisofs
 
 USE_X_PREFIX=	yes
