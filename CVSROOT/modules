@@ -5402,6 +5402,7 @@ p4.el		ports/devel/p4.el
 p4api		ports/devel/p4api
 p4db		ports/devel/p4db
 p4delta		ports/devel/p4delta
+p5-AI-DecisionTree	ports/math/p5-AI-DecisionTree
 p5-AI-NeuralNet-BackProp	ports/math/p5-AI-NeuralNet-BackProp
 p5-AI-NeuralNet-Mesh	ports/math/p5-AI-NeuralNet-Mesh
 p5-AI-Perceptron	ports/math/p5-AI-Perceptron
