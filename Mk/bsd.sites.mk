@@ -429,7 +429,6 @@ MASTER_SITE_ISC+=	\
 	ftp://ftp.u-aizu.ac.jp/pub/net/isc/%SUBDIR%/ \
 	ftp://ftp.linux.lv/pub/software/isc/%SUBDIR%/ \
 	ftp://ftp.task.gda.pl/mirror/ftp.isc.org/isc/%SUBDIR%/ \
-	ftp://ftp.si.uniovi.es/mirror/isc/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/network/isc/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.isc.org/isc/%SUBDIR%/ \
 	ftp://ftp.epix.net/pub/isc/%SUBDIR%/ \
