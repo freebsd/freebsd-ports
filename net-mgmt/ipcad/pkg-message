@@ -1,0 +1,7 @@
+===========================================================================
+
+To configure this package, adjust ${PREFIX}/etc/ipcad.conf from
+${PREFIX}/etc/ipcad.conf.sample, then start "ipcad -rds"
+You should be able to "rsh localhost sh ip accounting" after that
+
+===========================================================================

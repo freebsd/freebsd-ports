@@ -1,0 +1,19 @@
+#!/bin/sh 
+# ipcad startup script example. 
+
+case "$1" in
+start)
+	if [ -x !!PREFIX!!/bin/ipcad -a -f !!PREFIX!!/etc/ipcad.conf ]; then 
+		!!PREFIX!!/bin/ipcad -rds && echo -n ' ipcad' 
+	fi
+	;;
+stop)
+	/usr/bin/killall ipcad && /bin/echo -n ' ipcad'
+	;;
+*)
+	/bin/echo "Usage: `basename $0` {start|stop}" >&2
+	exit 64
+	;;
+esac
+
+exit 0

@@ -6,20 +6,25 @@
 #
 
 PORTNAME=	ipcad
-PORTVERSION=	2.7.1
+PORTVERSION=	2.8.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.spelio.net.ru/soft/
 
 MAINTAINER=	vlm@spelio.net.ru
-COMMENT=	IP accounting daemon simulating Cisco ip accounting
+COMMENT=	IP accounting daemon with Cisco-like ip accounting export
 
 MANCOMPRESSED=	no
 MAN5=	ipcad.conf.5
 MAN8=	ipcad.8
 
 post-install:
-	strip ${PREFIX}/bin/ipcad
+	@${STRIP_CMD} ${PREFIX}/bin/ipcad
+	@${SED} -e "s=!!PREFIX!!=${PREFIX}=g" \
+		< ${FILESDIR}/ipcad.sh.tmpl \
+		> ${PREFIX}/etc/rc.d/ipcad.sh
+	@${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/etc/rc.d/ipcad.sh
 	${INSTALL_MAN} ${WRKSRC}/ipcad.8 ${PREFIX}/man/man8
 	${INSTALL_MAN} ${WRKSRC}/ipcad.conf.5 ${PREFIX}/man/man5
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
