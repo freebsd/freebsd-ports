@@ -23,7 +23,6 @@ CONFIGURE_ARGS=	--with-guile-prefix=${LOCALBASE} \
 		--enable-guile-build \
 		--enable-permissive
 USE_GMAKE=	yes
-USE_NEWGCC=	yes
 USE_BISON=	yes
 
 .include <bsd.port.mk>

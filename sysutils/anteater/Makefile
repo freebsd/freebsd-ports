@@ -13,7 +13,6 @@ MASTER_SITES=	ftp://ftp.profzone.ch/drzoom/anteater/
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_NEWGCC=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-strstream
 

@@ -13,7 +13,6 @@ MASTER_SITES=	http://frost.flewid.de/dist/
 
 MAINTAINER=	ijliao@FreeBSD.org
 
-USE_NEWGCC=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

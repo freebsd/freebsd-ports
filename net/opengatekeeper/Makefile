@@ -20,7 +20,6 @@ WRKSRC=		${WRKDIR}/opengate
 
 NOCLEANDEPENDS=	yes
 
-USE_NEWGCC=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	optnoshared

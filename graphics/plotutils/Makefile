@@ -15,7 +15,6 @@ MAINTAINER=	chuckr@FreeBSD.org
 
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
-USE_NEWGCC=	yes
 USE_MOTIF=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

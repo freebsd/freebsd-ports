@@ -23,7 +23,6 @@ BUILD_DEPENDS=  ${NONEXISTENT}:${PORTSDIR}/net/openh323:build
 # it all over again which can take several hours.
 NOCLEANDEPENDS= yes
 
-USE_NEWGCC=     yes
 USE_BISON=	yes
 USE_GNOME=	yes
 USE_AUTOCONF=	yes

@@ -14,7 +14,6 @@ MAINTAINER=	mi@aldan.algebra.com
 
 INSTALLS_SHLIB=	yes
 IS_INTERACTIVE=	some think, the AT&T license needs to be acked by the user
-USE_NEWGCC=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CXX=${CXX}
 CONFIGURE_ARGS=	--with-cxxflag="${CXXFLAGS}"

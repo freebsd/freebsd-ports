@@ -16,7 +16,6 @@ MAINTAINER=	lyngbol@wheel.dk
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_NEWGCC=	yes
 CONFIGURE_ARGS+=--enable-shared
 
 MANL=		artsportagg.l artsports.l artsprotos.l artsnets.l artsdump.l \

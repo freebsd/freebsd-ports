@@ -13,7 +13,6 @@ MASTER_SITE_SUBDIR=	vdkbuilder
 
 MAINTAINER=	nakai@FreeBSD.org
 
-USE_NEWGCC=	yes
 USE_X_PREFIX=	yes
 USE_GTK=	yes
 WANT_GNOME=	yes

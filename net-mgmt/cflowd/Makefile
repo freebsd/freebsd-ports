@@ -23,7 +23,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libArts.a:${PORTSDIR}/net/arts++
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_NEWGCC=	yes
 USE_BISON=	yes
 
 CONFIGURE_ARGS+=--enable-shared --with-artspp=${PREFIX}

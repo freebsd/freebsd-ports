@@ -17,7 +17,6 @@ MAINTAINER=	never@nevermind.kiev.ua
 LIB_DEPENDS=	icq0.1:${PORTSDIR}/net/icqlib0 \
 		guile.10:${PORTSDIR}/lang/guile
 
-USE_NEWGCC=	yes
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib" \

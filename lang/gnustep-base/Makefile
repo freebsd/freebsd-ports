@@ -29,7 +29,6 @@ BROKEN=		"Sorry, this port does not work on FreeBSD-2.2.x"
 PREFIX=		${LOCALBASE}/GNUstep
 PLIST_SUB+=	LOCALBASE=${LOCALBASE}
 USE_AUTOCONF=	yes
-USE_NEWGCC=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-procfs
 CONFIGURE_TARGET=

@@ -20,7 +20,6 @@ BUILD_DEPENDS=  	unzip:${PORTSDIR}/archivers/unzip
 EXTRACT_CMD=		unzip
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=
-USE_NEWGCC=		yes
 USE_XLIB=		yes
 
 ADDITIONAL_DOCS=	about.html \

@@ -19,7 +19,6 @@ LIB_DEPENDS=	cln.2:${PORTSDIR}/math/cln
 
 USE_REINPLACE=	yes
 USE_BZIP2=	yes
-USE_NEWGCC=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}

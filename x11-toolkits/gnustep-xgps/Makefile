@@ -26,7 +26,6 @@ BROKEN=		"Sorry, this port does not work on FreeBSD-2.2.x"
 .endif
 
 PREFIX=		${LOCALBASE}/GNUstep
-USE_NEWGCC=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jpeg-library=${LOCALBASE}/lib \
 		--with-jpeg-include=${LOCALBASE}/include \

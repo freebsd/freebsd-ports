@@ -27,7 +27,6 @@ BUILD_DEPENDS=  ${NONEXISTENT}:${PORTSDIR}/comms/ixj:patch
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_NEWGCC=	yes
 USE_BISON=	yes
 
 USE_GMAKE=	yes

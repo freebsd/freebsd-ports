@@ -22,7 +22,6 @@ MAINTAINER=	kris@FreeBSD.org
 LATEST_LINK=	qt1
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_NEWGCC=	yes
 .if defined(MAKE_JOBS)
 MAKE_ARGS+=	MAKE="${GMAKE} -j${MAKE_JOBS}"
 .else

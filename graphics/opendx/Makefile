@@ -26,7 +26,6 @@ USE_BISON=	yes
 USE_GMAKE=	yes
 USE_MESA=	yes
 USE_MOTIF=	yes
-USE_NEWGCC=	yes
 USE_XLIB=	yes
 AUTOMAKE_ARGS=	-a -i
 GNU_CONFIGURE=	yes

@@ -29,7 +29,6 @@ MOZILLA=	mozilla
 .endif
 
 USE_X_PREFIX=	yes
-USE_NEWGCC=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack bonobo libglade gnomevfs
 USE_LIBTOOL=	yes

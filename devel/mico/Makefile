@@ -32,7 +32,6 @@ CONFIGURE_ENV=	QTVER="2"
 
 BROKEN=		"Needs someone to test with Qt2 support as Qt1 is gone."
 INSTALLS_SHLIB=	yes
-USE_NEWGCC=	yes
 USE_GMAKE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gtk12

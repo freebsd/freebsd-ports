@@ -16,7 +16,6 @@ BUILD_DEPENDS=  ${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
 RUN_DEPENDS=    ${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base
 
 PREFIX=		${LOCALBASE}/GNUstep
-USE_NEWGCC=	yes
 USE_GMAKE=	yes
 USE_GTK=	yes
 GNU_CONFIGURE=	yes
