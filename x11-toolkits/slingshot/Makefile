@@ -3,7 +3,7 @@
 # Date created:        5 March 1997
 # Whom:                Pedro Giffuni
 #
-# $Id: Makefile,v 1.6 1998/09/21 22:15:59 steve Exp $
+# $Id: Makefile,v 1.7 1998/10/15 20:44:20 jseger Exp $
 #
 
 DISTNAME=	SlingShot2.1
@@ -12,11 +12,9 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.cdrom.com/pub/X11/R5contrib/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview-lib
-
-BROKEN_ELF=	yes
+LIB_DEPENDS=	xview.3:${PORTSDIR}/x11-toolkits/xview
 
 WRKSRC=		$(WRKDIR)/sspkg2.1
 USE_X_PREFIX=	yes
