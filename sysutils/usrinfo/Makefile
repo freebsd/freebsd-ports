@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	usrinfo
-PORTVERSION=	.04
+PORTVERSION=	.05
 CATEGORIES=	sysutils
 MASTER_SITES=	http://osdn.dl.sourceforge.net/sourceforge/${PORTNAME}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
