@@ -1,0 +1,7 @@
+bin/gplot
+bin/gtex
+lib/libcgm.a
+share/doc/Gplot/gplot.hlp.gz
+share/doc/Gplot/gplot.txt.gz
+share/doc/Gplot/gtex.doc.gz
+@dirrm share/doc/Gplot

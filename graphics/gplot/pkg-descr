@@ -1,0 +1,21 @@
+
+GPLOT is a graphics utility program, designed for the processing of CGM
+metafiles produced by DI3000, DISSPLA, DRAWCGM and NCARGKS.  Source code
+for GPLOT is avilable to other sites, so that graphics created at
+PSC can be processed locally.
+
+Note that the current version of GPLOT is able to recognize NCAR CGM
+metafiles created on the Cray, and automatically carry out the byte-swapping 
+necessary to properly interpret such files.  In other words, you should no 
+longer have to worry about running the NCARFIX program on your file before
+using GPLOT.
+
+Graphics images produced by GPLOT can be combined with TEX formatted
+text by the GTEX program.  See PSCDOC:GTEX.DOC and TEX.DOC.
+ 
+To report problems with GPLOT, or to request new output capabilities,
+please contact PSC User Services.
+ 
+COPYRIGHT
+     gplot is copyrighted by the Pittsburgh Supercomputing
+     Center.
