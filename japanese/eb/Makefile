@@ -20,8 +20,8 @@ PATCH_SITES=	${MASTER_SITES}
 MAINTAINER=	takamune@avrl.mei.co.jp
 
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
-LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext \
-		iconv.2:${PORTSDIR}/converters/iconv
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext-old \
+		iconv.3:${PORTSDIR}/converters/libiconv
 
 EBFILES=	${DISTNAME}${EXTRACT_SUFX}
 LISTFILES=	appendix/LIST \
