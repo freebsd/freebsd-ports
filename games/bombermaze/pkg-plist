@@ -1,30 +1,33 @@
 bin/bombermaze
 share/gnome/apps/Games/bombermaze.desktop
-share/gnome/bombermaze/maps/11x11.map
-share/gnome/bombermaze/maps/11x11random.map
-share/gnome/bombermaze/maps/15x13.map
-share/gnome/bombermaze/maps/15x13random.map
-share/gnome/bombermaze/maps/15x15.map
-share/gnome/bombermaze/maps/15x15random.map
-share/gnome/bombermaze/pixmaps/default/bomb.png
-share/gnome/bombermaze/pixmaps/default/brick.png
-share/gnome/bombermaze/pixmaps/default/fire.png
-share/gnome/bombermaze/pixmaps/default/floor.png
-share/gnome/bombermaze/pixmaps/default/player1.png
-share/gnome/bombermaze/pixmaps/default/player2.png
-share/gnome/bombermaze/pixmaps/default/player3.png
-share/gnome/bombermaze/pixmaps/default/player4.png
-share/gnome/bombermaze/pixmaps/default/powerup.png
-share/gnome/bombermaze/pixmaps/default/wall.png
+share/gnome/bombermaze/maps/11x11
+share/gnome/bombermaze/maps/11x11_random
+share/gnome/bombermaze/maps/15x13
+share/gnome/bombermaze/maps/15x13_random
+share/gnome/bombermaze/maps/15x15
+share/gnome/bombermaze/maps/15x15_random
 share/gnome/bombermaze/pixmaps/title.png
-share/gnome/help/bombermaze/C/advanced.html
+share/gnome/bombermaze/themes/default/bomb.png
+share/gnome/bombermaze/themes/default/brick.png
+share/gnome/bombermaze/themes/default/fire.png
+share/gnome/bombermaze/themes/default/floor.png
+share/gnome/bombermaze/themes/default/player1.png
+share/gnome/bombermaze/themes/default/player2.png
+share/gnome/bombermaze/themes/default/player3.png
+share/gnome/bombermaze/themes/default/player4.png
+share/gnome/bombermaze/themes/default/powerup.png
+share/gnome/bombermaze/themes/default/wall.png
+share/gnome/help/bombermaze/C/animation.html
 share/gnome/help/bombermaze/C/index.html
+share/gnome/help/bombermaze/C/numeric.html
 share/gnome/help/bombermaze/C/topic.dat
 share/gnome/pixmaps/bombermaze.png
 share/locale/fr/LC_MESSAGES/bombermaze.mo
+share/locale/pt_BR/LC_MESSAGES/bombermaze.mo
 @dirrm share/gnome/help/bombermaze/C
 @dirrm share/gnome/help/bombermaze
-@dirrm share/gnome/bombermaze/pixmaps/default
+@dirrm share/gnome/bombermaze/themes/default
+@dirrm share/gnome/bombermaze/themes
 @dirrm share/gnome/bombermaze/pixmaps
 @dirrm share/gnome/bombermaze/maps
 @dirrm share/gnome/bombermaze
