@@ -7,7 +7,7 @@
 
 PORTNAME=	base
 PORTVERSION=	${LICQ_VER}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 .if defined(WITH_SOCKS)
 PKGNAMESUFFIX=	-socks
@@ -46,17 +46,15 @@ pre-configure:
 		${WRKSRC}/src/licq.conf.h
 	@${ECHO_MSG} Ignoring existing libgnugetopt
 	${REINPLACE_CMD} -e 's=getopt.h==' \
+		-e 's=FLAGS -D_THREAD_SAFE=FLAGS ${PTHREAD_CFLAGS}=' \
 		-e 's=FLAGS -pthread=FLAGS ${PTHREAD_CFLAGS}=' \
+		-e "s=-lc_r=${PTHREAD_LIBS}=" \
+		-e 's=-lc *$$LIBS=$$LIBS=' \
 		${WRKSRC}/configure
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502102
-FORBIDDEN=	"Does not respect PTHREAD_{CFLAGS,LIBS}"
-.endif
-
 .include "${LICQ_PORT}/Makefile.inc"
 .include <bsd.port.post.mk>
