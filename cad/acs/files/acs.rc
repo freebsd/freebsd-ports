@@ -1,0 +1,93 @@
+Initializing system-wide startup configuration...
+
+' This is the system-wide acs(1) startup configuration file.
+' It should be installed as /usr/local/share/acs/acs.rc
+
+' Blank lines are ignored.
+' Comments are introduced with '\''.
+' The first line is echoed to the display.
+
+' The order in which acs(1) parses the configuration files is:
+'	/usr/local/lib/acs/acs.rc
+'	$HOME/.acsrc
+
+
+' Error levels (least to most tolerant):
+'	NAG, TRACE, LOG, DEBUG, PICKY, WARNING, ERROR, DISASTER
+' 
+'	BYPASS, NOBYPASS, VBYPASS
+' Integration methods:
+'	GEAR, TRAPEZOID
+' N.B.  300K = 26.85C
+
+
+.set noacct
+.set   bypass
+.set   cstray
+.set nodupcheck
+.set   incmode
+.set nolist
+.set   lubypass
+.set   mod
+.set nonode
+.set noopts
+.set nopage
+.set picky
+.set norstray
+.set noshowall
+
+.set abstol		1e-12
+.set chgtol		1e-14
+.set cptime		30000
+.set dampmax		1.
+.set dampmin		0.5
+.set defad		0.
+.set defas		0.
+.set defl		100e-6
+.set defw		100e-6
+.set diodeflags		0
+.set dtmin		1e-12
+.set dtratio		1e9
+.set floor		1e-20
+.set foooo		0
+.set gmin		1e-12
+.set harmonics		9
+.set inwidth		80
+.set itl1		100
+.set itl2		50
+.set itl3		4
+.set itl4		10
+.set itl5		5000
+.set itl6		0
+.set itl7		1
+.set itl8		99
+.set limit		1e10
+.set limpts		201
+.set limtim		2
+.set lvlcod		2
+.set lvltim		2
+.set maxord		2
+.set method		TRAPEZOID
+.set mode		MIXED
+.set mosflags		0
+.set numdgt		4
+.set order		AUTO
+.set outwidth		80
+.set pivrel		1e-3
+.set pivtol		1e-13
+.set reltol		.001
+.set seed		1
+.set short		10e-6
+.set tempamb		26.85
+.set tnom		26.85
+.set transits		2
+.set trreject		.5
+.set trstepgrow		2.
+.set trstepshrink	8.
+.set trtol		7.0
+.set vmax		1e10
+.set vmin		-1e10
+.set vntol		1e-6
+.set wczero		1e-9
+.set xdivisions		4.
+.set ydivisions		4.
