@@ -1,11 +1,11 @@
---- configure.orig	Tue Oct 10 07:57:35 2000
-+++ configure	Sat Oct 14 18:10:35 2000
-@@ -3566,7 +3566,7 @@
-     *) echo "$host is not currently supported by xine"; exit 1;;
-     esac
+--- configure.orig	Tue Oct 24 00:46:14 2000
++++ configure	Tue Oct 24 00:46:42 2000
+@@ -3539,7 +3539,7 @@
  
--        GLOBAL_CFLAGS="$GLOBAL_CFLAGS -Wall -O3 -fomit-frame-pointer -static -funroll-loops -finline-functions"
-+        GLOBAL_CFLAGS="$GLOBAL_CFLAGS $CFLAGS -Wall -fomit-frame-pointer -static -funroll-loops -finline-functions"
-     ;;
- esac
- 
+ case $host in
+   i386-*-freebsd*)
+-    GLOBAL_CFLAGS="$GLOBAL_CFLAGS $CFLAGS -Wall -static -fomit-frame-pointer -funroll-loops -finline-functions -O3 -D_REENTRANT -malign-double -funroll-all-loops"
++    GLOBAL_CFLAGS="$GLOBAL_CFLAGS $CFLAGS -Wall -static -fomit-frame-pointer -funroll-loops -finline-functions -D_REENTRANT -malign-double -funroll-all-loops"
+     cat >> confdefs.h <<\EOF
+ #define __i386__ 1
+ EOF

@@ -2,17 +2,19 @@ lib/xine/plugins/input_file.so
 lib/xine/plugins/input_file.la
 lib/xine/plugins/input_dvd.so
 lib/xine/plugins/input_dvd.la
+lib/xine/plugins/input_net.la
+lib/xine/plugins/input_net.so
 share/xine/skins/default/bg.png
-share/xine/skins/default/close.png
-share/xine/skins/default/exit.png
-share/xine/skins/default/next.png
-share/xine/skins/default/play.png
-share/xine/skins/default/stop.png
 share/xine/skins/default/button.png
+share/xine/skins/default/close.png
 share/xine/skins/default/eject.png
+share/xine/skins/default/exit.png
 share/xine/skins/default/letters.png
+share/xine/skins/default/next.png
 share/xine/skins/default/pause.png
+share/xine/skins/default/play.png
 share/xine/skins/default/prev.png
+share/xine/skins/default/stop.png
 share/xine/skins/xine_logo.png
 bin/xine
 @dirrm share/xine/skins/default
