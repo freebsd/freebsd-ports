@@ -1,0 +1,5 @@
+bin/vsound
+lib/vsound/libvsound.so
+share/doc/vsound/README
+@dirrm lib/vsound
+@dirrm share/doc/vsound

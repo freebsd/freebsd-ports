@@ -1,0 +1,26 @@
+# New ports collection makefile for:   linux-vsound
+# Date created:        28 January 2001
+# Whom:                Kris Kennaway <kris@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	linux-vsound
+PORTVERSION=	0.4
+CATEGORIES=	audio linux
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	kris
+DISTNAME=	vsound-${PORTVERSION}
+EXTRACT_ONLY=
+
+MAINTAINER=	kris@FreeBSD.org
+
+RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base/ \
+		sox:${PORTSDIR}/audio/sox/
+
+NO_BUILD=	yes
+
+do-install:
+	@cd ${PREFIX} && ${TAR} xfz ${DISTDIR}/${DISTFILES}
+
+.include <bsd.port.mk>

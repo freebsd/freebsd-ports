@@ -88,6 +88,7 @@
     SUBDIR += libvorbis
     SUBDIR += libworkman
     SUBDIR += linux-realplayer
+    SUBDIR += linux-vsound
     SUBDIR += litestream
     SUBDIR += lopster
     SUBDIR += mad

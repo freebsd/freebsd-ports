@@ -1,0 +1,18 @@
+This program allows you to record the output of any standard OSS
+program (one that uses /dev/dsp for sound) without having to modify or
+recompile the program.  It uses the same idea as the esddsp wrapper
+from the Enlightened Sound Daemon (in fact, vsound is based on
+esddsp).  That is, it preloads a library that intercepts calls to open
+/dev/dsp, and instead returns a handle to a normal file.  It also
+intercepts ioctl's on that file handle and logs them, to help convert
+the audio data from its raw form.  Vsound then uses sox to convert the
+raw data to the desired file format.
+
+The upshoot of this is that instead of playing sound to the sound card
+in your computer, the data is recorded to a file.  This is similar to
+if you connected a loopback cable to the line in and line out jacks on
+your sound card, but no DA or AD conversions take place, so quality is
+not lost.
+
+Erik de Castro Lopo  <erikd@zip.com.au>
+WWW:	http://www.zip.com.au/~erikd/vsound/
