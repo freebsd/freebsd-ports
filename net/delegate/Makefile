@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	delegate
-PORTVERSION=	7.9.4
+PORTVERSION=	7.9.10
 CATEGORIES=	net www
-MASTER_SITES=	ftp://ftp.delegate.org/pub/DeleGate/ \
-		http://www.delegate.org/pub/DeleGate/
+MASTER_SITES=	ftp://www.delegate.org/pub/DeleGate/ \
+		ftp://ftp.delegate.org/pub/DeleGate/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	max@FreeBSD.org
@@ -22,7 +22,7 @@ pre-fetch:
 .if !defined(FORCE_BUILD) || ${FORCE_BUILD}!="YES"
 	@${ECHO} "*********************************************************************"
 	@${ECHO} "*   WARNING!     WARNING!     WARNING!     WARNING!     WARNING!    *"
-	@${ECHO} "* This program has know security problems which may allow a remote  *"
+	@${ECHO} "* This program has known security problems which may allow a remote  *"
 	@${ECHO} "* attacker to take control of your machine.                         *"
 	@${ECHO} "* See FreeBSD security advisory 00:04 for more information.         *"
 	@${ECHO} "*                                                                   *"
@@ -37,14 +37,10 @@ pre-fetch:
 	@${ECHO} "*********************************************************************"
 	@${ECHO} "*   WARNING!     WARNING!     WARNING!     WARNING!     WARNING!    *"
 	@${ECHO} "* You have chosen to build an insecure program.                     *"
-	@${ECHO} "* This program has know security problems which may allow a remote  *"
+	@${ECHO} "* This program has known security problems which may allow a remote  *"
 	@${ECHO} "* attacker to take control of your machine.                         *"
 	@${ECHO} "* See FreeBSD security advisory 00:04 for more information.         *"
 	@${ECHO} "*********************************************************************"
-.endif
-.if defined(FTP_PASSIVE_MODE) && ${FTP_PASSIVE_MODE}=="YES"
-	@${ECHO} "Note: If you have trouble retrieving the distfile, try"
-	@${ECHO} "      \"unsetenv FTP_PASSIVE_MODE\" before running make."
 .endif
 
 do-install:
