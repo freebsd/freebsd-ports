@@ -20,6 +20,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		SDL-1.1.3:${PORTSDIR}/devel/sdl12
 RUN_DEPENDS=	${LOCALBASE}/share/mplayer/fonts:${PORTSDIR}/graphics/mplayer-fonts
 
+NO_PACKAGE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XLIB=	yes
