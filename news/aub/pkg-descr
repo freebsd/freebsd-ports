@@ -1,0 +1,23 @@
+More and more people are posting binary files to usenet these days.
+Because of limitations in the type data that usenet can accommodate,
+binaries must be encoded into text, and because binary files are
+commonly very large relative to text files usenet was designed to
+handle, they frequently must be broken up into pieces.
+
+aub, which stands for "assemble usenet binaries", automates the
+reassembly process for you.  aub determines whether or not any new
+binaries have appeared in selected newsgroups since the last time it was
+run, and if so, retrieves, organizes and decodes them, depositing them
+in a configurable location.  This process requires no human intervention
+once aub has been configured.  aub also keeps track of binaries which it
+has seen some, but not all, of the pieces of.  It remembers how to find
+these old pieces, so that when new, previously missing pieces arrive at
+your site, it will build the entire binary the next time it is run.  It
+also remembers which binaries it has already seen all of the pieces of
+already, so that it does not waste time rebuilding the same binaries
+over and over again.
+
+run:   ``aub -M | more'' for the long form documentation, or
+       ``aub -m | more'' for the short form.
+
+-- David (obrien@NUXI.com)
