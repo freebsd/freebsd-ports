@@ -1,0 +1,19 @@
+--- netadm/Makefile.orig	Wed May 15 15:37:44 1996
++++ netadm/Makefile	Thu Sep 18 20:10:32 2003
+@@ -28,6 +28,8 @@
+ #  REVISION:	$Revision: 1.24 $
+ #
+ 
++CFLAGS += -I../inc
++
+ OFILES = boot.o reset_all.o reset_line.o set_inet_add.o \
+ 	read_memory.o get_da_param.o set_da_param.o get_ln_param.o \
+ 	set_ln_param.o broadcast.o get_anx_rev.o get_anx_opt.o \
+@@ -73,6 +75,7 @@
+ netadm.a:	${OFILES}
+ 	${AR} ${ARFLAGS} netadm.a $(OFILES)
+ 	${RANLIB} netadm.a
++	cp netadm.a libnetadm.a
+ 
+ install:	all
+ 

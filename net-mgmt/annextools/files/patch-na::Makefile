@@ -1,0 +1,20 @@
+--- na/Makefile.orig	Mon Jun  3 15:45:07 1996
++++ na/Makefile	Thu Sep 18 20:10:32 2003
+@@ -50,7 +50,7 @@
+ 
+ OFILES	= main.o cmd.o parse.o do.o sub.o conv.o conv2.o pager.o
+ CFILES	= main.c cmd.c parse.c do.c sub.c conv.c conv2.c pager.c
+-AFILES	= ../netadm/netadm.a ../libannex/libannex.a
++AFILES	= ../libannex/libannex.a ../netadm/netadm.a
+ EFILES	= na
+ 
+ all:
+@@ -72,7 +72,7 @@
+ 	${RM} -f ${OFILES} ${EFILES}
+ 
+ na:		${OFILES} ${AFILES}
+-	${CC} ${NACFLAGS} -o na ${OFILES} ${AFILES} ${LIBFLAG}
++	${CC} ${NACFLAGS} -o na ${OFILES} -L../libannex -L../netadm -lnetadm -lannex
+ 
+ ../libannex/libannex.a:
+ 	cd ../libannex; $(MAKE)

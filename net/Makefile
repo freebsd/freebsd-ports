@@ -17,6 +17,7 @@
     SUBDIR += airport
     SUBDIR += amsn
     SUBDIR += angst
+    SUBDIR += annextools
     SUBDIR += ap-utils
     SUBDIR += apinger
     SUBDIR += archie
