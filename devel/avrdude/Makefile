@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	avrdude
-PORTVERSION=	4.1.0
+PORTVERSION=	4.2.0
 CATEGORIES=	devel
-MASTER_SITES=	http://savannah.nongnu.org/download/avrdude/stable.pkg/4.1.0/
+MASTER_SITES=	http://savannah.nongnu.org/download/avrdude/stable.pkg/4.2.0/
 
 MAINTAINER=	bsd@FreeBSD.org
 COMMENT=	Program for programming the on-chip memory of Atmel AVR CPUs
