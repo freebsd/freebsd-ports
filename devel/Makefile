@@ -280,7 +280,6 @@
     SUBDIR += p5-String-Checker
     SUBDIR += p5-String-Random
     SUBDIR += p5-String-RexxParse
-    SUBDIR += p5-String-Strip
     SUBDIR += p5-Term-ANSIColor
     SUBDIR += p5-Term-Query
     SUBDIR += p5-Term-ReadKey
