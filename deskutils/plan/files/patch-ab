@@ -100,9 +100,9 @@
   BSDIG_L2= -L/usr/X11/lib -lc
   NBSD_L1	= -L/usr/X11R6/lib -lXm -lXt -lX11
   NBSD_L2	= -L/usr/X11R6/lib -lc
-! FBSD_L1	= -L$(X11BASE)/lib ${MOTIFLIB} -lXt -lX11 -lXext -lc
+! FBSD_L1	= -L$(X11BASE)/lib ${MOTIFLIB} -lXt -lSM -lICE -lX11 -lXext -lc
 ! FBSD_L2	= -lc
-! OBSD_L1	= -L$(X11BASE)/lib ${MOTIFLIB} -lXt -lX11 -lXext -lc
+! OBSD_L1	= -L$(X11BASE)/lib ${MOTIFLIB} -lXt -lSM -lICE -lX11 -lXext -lc
 ! OBSD_L2	= -lc
   LINUX_L1= -L/usr/X11R6/lib -L/usr/lib/X11R6/lib -lSM -lXm -lXt -lX11 -lXpm -lc -lXext -lSM -lICE -lX11
   LINUX_L2= -lc
