@@ -1,0 +1,7 @@
+This module provides functions for expressing durations in rounded or
+exact terms.
+
+WWW: http://search.cpan.org/search?dist=Time-Duration
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
