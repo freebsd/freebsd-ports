@@ -7,16 +7,18 @@
 #
 
 PORTNAME=	tensile
-PORTVERSION=	0.9p5
+PORTVERSION=	0.9p7
 CATEGORIES=	lang
 MASTER_SITES=	http://savannah.gnu.org/download/nsl/ \
-		http://iling.nw.ru/~artem/downloads/
+		http://iling.nw.ru/~artem/downloads/ \
+		http://unixpages.org/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	chris@unixpages.org
 
 LIB_DEPENDS=	utils:${PORTSDIR}/lang/libutils
 
+INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \

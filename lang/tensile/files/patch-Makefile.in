@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue May  7 03:15:17 2002
-+++ Makefile.in	Tue May  7 03:18:52 2002
-@@ -86,9 +86,9 @@
+--- Makefile.in.orig	Wed Jul 24 06:21:39 2002
++++ Makefile.in	Thu Jul 25 13:56:49 2002
+@@ -105,9 +105,9 @@
  
  AUTOMAKE_OPTIONS = foreign no-installman
  
@@ -12,7 +12,16 @@
  moddir = $(nsldir)/modules
  autodir = $(nsldir)/automata
  scriptdir = $(nsldir)/scripts
-@@ -250,7 +250,7 @@
+@@ -186,7 +186,7 @@
+ 
+ EXTRA_libnslcore_la_SOURCES = gdbm_table.c
+ 
+-libnslcore_la_DEPENDENCIES = libnslsh.la libnslpdt.la @libdir@/libutils.la
++libnslcore_la_DEPENDENCIES = libnslsh.la libnslpdt.la ${LOCALBASE}/lib/libutils.la
+ 
+ libnslpdt_la_DEPENDENCIES = libnslsh.la
+ libnslpdt_la_LIBADD = libnslsh.la
+@@ -271,7 +271,7 @@
  	Makefile.in TODO acconfig.h aclocal.m4 config.guess config.h.in \
  	config.sub configure configure.in depcomp install-sh ltconfig \
  	ltmain.sh missing mkinstalldirs
