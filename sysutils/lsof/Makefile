@@ -32,7 +32,7 @@ MAN8=		lsof.8
 
 .if defined(PACKAGE_BUILDING)
 .if !exists(/usr/src/sys/miscfs/fdesc/fdesc.h)
-BROKEN=	'please install kernel source for offical package builds'
+BROKEN=	'please install kernel source for official package builds'
 .endif
 .endif
 
@@ -71,7 +71,7 @@ post-install:
 	@${ECHO} "*                      W a r n i n g                       *"
 	@${ECHO} "* A more capable version of LSOF is built if you have      *"
 	@${ECHO} "* kernel source installed and /sys exists.                 *"
-	@${ECHO} "* If this is the case, please ensure /sys is consistant    *"
+	@${ECHO} "* If this is the case, please ensure /sys is consistent    *"
 	@${ECHO} "* with respect to your running kernel (i.e. not new than). *"
 	@${ECHO} "************************************************************"
 .endif
