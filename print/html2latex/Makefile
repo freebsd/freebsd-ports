@@ -3,12 +3,12 @@
 # Date created:         29-March-1996
 # Whom:                 joerg
 #
-# $Id: Makefile,v 1.1.1.1 1996/04/12 22:30:49 joerg Exp $
+# $Id: Makefile,v 1.2 1996/07/06 09:37:17 asami Exp $
 #
 
 DISTNAME=	html2latex-0.9c
 PKGNAME=	html2latex-0.9
-CATEGORIES+=	printi
+CATEGORIES+=	print
 # i can't seem to find the original dist site
 MASTER_SITES=	ftp://ftp.germany.eu.net/pub/infosystems/www/ncsa/Web/Mosaic/Contrib/
 DISTFILES=	html2latex-0.9c.tar.Z
