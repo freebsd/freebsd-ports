@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $Id: configure,v 1.2 1996/09/10 05:25:09 jdp Exp $
+# $Id: configure,v 1.1.1.1 1996/10/29 23:01:55 jdp Exp $
 
 umask 022
 
@@ -8,8 +8,19 @@ files_to_patch="\
     ${WRKSRC}/m3/m3build/templates/FreeBSD2"
 temp_prefix=${WRKSRC}/installed
 
+if [ -f /usr/lib/crt0.o ]; then
+    crt=/usr/lib/crt0.o
+elif [ -f /usr/lib/aout/crt0.o ]; then
+    crt=/usr/lib/aout/crt0.o
+else
+    echo "Cannot find a \"crt0.o\" file" >&2
+    exit 1
+fi
+
 for i in ${files_to_patch}; do
     test -f ${i}.bak || cp -p ${i} ${i}.bak
     rm -f ${i}
-    sed -e "s|/usr/local/|${temp_prefix}/|g" ${i}.bak >${i}
+    sed -e "s|/usr/local/|${temp_prefix}/|g" \
+	-e "s|/usr/lib/crt0\.o|${crt}|g" \
+	${i}.bak >${i}
 done
