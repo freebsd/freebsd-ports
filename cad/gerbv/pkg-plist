@@ -1,5 +1,8 @@
 bin/gerbv
+%%PORTDOCS%%share/doc/gerbv/PNG-print/PNGPrintMiniHowto.txt
+%%PORTDOCS%%share/doc/gerbv/PNG-print/gimp-window.jpg
 %%PORTDOCS%%share/doc/gerbv/aperturemacro.txt
+%%PORTDOCS%%share/doc/gerbv/image2pixmap.fig
 %%PORTDOCS%%share/doc/gerbv/sources.txt
 %%PORTDOCS%%share/examples/gerbv/Mentor-BoardStation/README.txt
 %%PORTDOCS%%share/examples/gerbv/Mentor-BoardStation/artwork_1.grb
@@ -11,10 +14,6 @@ bin/gerbv
 %%PORTDOCS%%share/examples/gerbv/dan/top.gbx
 %%PORTDOCS%%share/examples/gerbv/eaglecad1/top-cop.gbx
 %%PORTDOCS%%share/examples/gerbv/eaglecad1/top-cop.pdf
-%%PORTDOCS%%share/examples/gerbv/ekf/README
-%%PORTDOCS%%share/examples/gerbv/ekf/ekf.gap
-%%PORTDOCS%%share/examples/gerbv/ekf/ekf_08.apt
-%%PORTDOCS%%share/examples/gerbv/ekf/l1.off
 %%PORTDOCS%%share/examples/gerbv/ekf2/README.txt
 %%PORTDOCS%%share/examples/gerbv/ekf2/d1.grb
 %%PORTDOCS%%share/examples/gerbv/ekf2/drill0.exc
@@ -35,6 +34,11 @@ bin/gerbv
 %%PORTDOCS%%share/examples/gerbv/ekf2/sieb1.grb
 %%PORTDOCS%%share/examples/gerbv/ekf2/stp0.grb
 %%PORTDOCS%%share/examples/gerbv/ekf2/stp1.grb
+%%PORTDOCS%%share/examples/gerbv/jj/README.txt
+%%PORTDOCS%%share/examples/gerbv/jj/l1-1.grb
+%%PORTDOCS%%share/examples/gerbv/jj/l1-2.grb
+%%PORTDOCS%%share/examples/gerbv/jj/l1-3.grb
+%%PORTDOCS%%share/examples/gerbv/jj/l1-orig.grb
 %%PORTDOCS%%share/examples/gerbv/nollezappare/AssemblyTop.gdo
 %%PORTDOCS%%share/examples/gerbv/nollezappare/EtchLayer2Bottom.gdo
 %%PORTDOCS%%share/examples/gerbv/nollezappare/ThruHolePlated.ncd
@@ -65,12 +69,13 @@ share/gerbv/scheme/gerb-ps.scm
 %%PORTDOCS%%@dirrm share/examples/gerbv/orcad
 %%PORTDOCS%%@dirrm share/examples/gerbv/numpres
 %%PORTDOCS%%@dirrm share/examples/gerbv/nollezappare
+%%PORTDOCS%%@dirrm share/examples/gerbv/jj
 %%PORTDOCS%%@dirrm share/examples/gerbv/ekf2
-%%PORTDOCS%%@dirrm share/examples/gerbv/ekf
 %%PORTDOCS%%@dirrm share/examples/gerbv/eaglecad1
 %%PORTDOCS%%@dirrm share/examples/gerbv/dan
 %%PORTDOCS%%@dirrm share/examples/gerbv/cslk
 %%PORTDOCS%%@dirrm share/examples/gerbv/am-test
 %%PORTDOCS%%@dirrm share/examples/gerbv/Mentor-BoardStation
 %%PORTDOCS%%@dirrm share/examples/gerbv
+%%PORTDOCS%%@dirrm share/doc/gerbv/PNG-print
 %%PORTDOCS%%@dirrm share/doc/gerbv

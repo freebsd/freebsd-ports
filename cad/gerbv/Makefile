@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gerbv
-PORTVERSION=	0.0.9
-#PORTREVISION=	1
+PORTVERSION=	0.11
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,9 +16,9 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
-USE_REINPLACE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gdkpixbuf
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
@@ -33,9 +32,11 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC}/doc && pax -rw . ${DOCSDIR}
+	cd ${WRKSRC}/doc && ${FIND} . | \
+		cpio -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 	@${MKDIR} ${EXAMPLESDIR}
-	cd ${WRKSRC}/example && pax -rw . ${EXAMPLESDIR}
+	cd ${WRKSRC}/example && ${FIND} . | \
+		cpio -pdm -L -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
