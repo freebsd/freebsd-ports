@@ -6,29 +6,33 @@
 #
 
 PORTNAME=	ptex
-PORTVERSION=	2.1.8
-PKGNAMESUFFIX=	-sjis
+PORTVERSION=	2.1.10
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/${DISTNAME}/
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
+MASTER_SITES=	ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/tetex/
+PKGNAMEPREFIX=	ja-
+PKGNAMESUFFIX=	-sjis
+DISTNAME=	ptex-src-2.1.9-1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		plib-1.4${PKGNAMESUFFIX:S/sjis/sj/}.tar.gz \
-		Makefile.in.patch.txt
+		  ${PTEX_PATCHFILES}
+DIST_SUBDIR=	teTeX/ptex
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	max@FreeBSD.org
 
-RUN_DEPENDS=	ptex-common:${PORTSDIR}/japanese/ptex-common
+BUILD_DEPENDS=	${LOCALBASE}/share/texmf/ptex/plain/base/ptex.tex:${PORTSDIR}/japanese/ptex-common
+RUN_DEPENDS=	${LOCALBASE}/share/texmf/ptex/plain/base/ptex.tex:${PORTSDIR}/japanese/ptex-common
 
 MANUAL_PACKAGE_BUILD=	incompatible with other versions of ptex-*
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-DIST_SUBDIR=	ptex
 CONFIGURE_ARGS=	sjis
-WRKSRC=	${WRKDIRPREFIX}${.CURDIR}/../ptex-common/work/web2c-7.2/web2c/${DISTNAME}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+WRKSRC=	${WRKDIRPREFIX}${.CURDIR}/../ptex-common/work/teTeX-1.0/texk/web2c/${SRCDIR}
 ALL_TARGET=	default
 
-BINARIES=	iniptex jbibtex pdvitype pltotf ptex tftopl virptex
+SRCDIR=		ptex-src-2.1.9
+PTEX_PATCHFILES=	ptex2.1.9-10.patch ptex2.1.9-10_2.patch \
+			pltotf1.3-4.patch
+BINARIES=	ptex pdvitype jbibtex pltotf tftopl
 
 pre-extract:
 .if !exists(${WRKDIRPREFIX}${.CURDIR}/../ptex-common/work/.build_done)
@@ -38,19 +42,23 @@ pre-extract:
 
 post-extract:
 	@${RM} -rf ${WRKSRC}
-	@${MV} ${WRKDIR}/${DISTNAME} ${WRKDIRPREFIX}${.CURDIR}/../ptex-common/work/web2c-7.2/web2c
+	@${MV} ${WRKDIR}/${SRCDIR} ${WRKDIRPREFIX}${.CURDIR}/../ptex-common/work/teTeX-1.0/texk/web2c
 
-pre-patch:
-	@/usr/bin/uudecode -p ${DISTDIR}/${DIST_SUBDIR}/Makefile.in.patch.txt | \
+do-patch:
+.for f in ${PTEX_PATCHFILES}
+	@/usr/bin/uudecode -p ${DISTDIR}/${DIST_SUBDIR}/$f | \
 	  ${PATCH} ${PATCH_DIST_ARGS}
+.endfor
 
 pre-install:
-	@${TAR} -C ${PREFIX}/share -zxf ${DISTDIR}/${DIST_SUBDIR}/plib-1.4${PKGNAMESUFFIX:S/sjis/sj/}.tar.gz
+	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 .for bin in ${BINARIES}
-	@strip ${PREFIX}/bin/${bin}
+	@/usr/bin/strip ${PREFIX}/bin/${bin}
 .endfor
+	@${LN} -sf ptex ${PREFIX}/bin/platex
+	@${PREFIX}/bin/mktexlsr ${PREFIX}/share/texmf
 
 pre-clean:
 	@${RM} -rf ${WRKSRC}

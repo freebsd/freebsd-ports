@@ -1,0 +1,13 @@
+Character code independent files have been installed.  Now, install
+either japanese/ptex-jis, japanese/ptex-euc or japanese/ptex-sjis.
+
+Note that name of these packages indicates the character code used for
+the output to the terminal and log files.  The following table shows
+which character code is used for different purposes.
+
+          ptex-euc   ptex-sjis  ptex-jis
+Internal  EUC        SJIS       EUC
+Input     EUC/JIS    SJIS/JIS   JIS/EUC
+Output    EUC        SJIS       JIS
+DVI       JIS        JIS        JIS
+

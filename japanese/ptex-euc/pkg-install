@@ -1,0 +1,14 @@
+#!/bin/sh
+# Preserve files installed by ptex-common, or other package/application.
+#
+files="${PKG_PREFIX}/bin/pltotf ${PKG_PREFIX}/bin/tftopl ${PKG_PREFIX}/share/texmf/web2c/texmf.cnf ${PKG_PREFIX}/share/texmf/ls-R"
+
+if [ "$2" != "PRE-INSTALL" ]; then
+  exit;
+fi
+
+for f in ${files}; do
+    if [ -f $f ]; then
+      mv $f $f.old
+      fi
+    done

@@ -1,7 +1,18 @@
 This is pTeX, TeX system with Japanese support.
 
-This system is based on TeX 3.14159.
+This system is based on teTeX 1.0.7 which contains TeX, LaTeX2e, and
+various other TeX related programs.  
 
-pTeX system installed using this package supports JIS code.
+By installing this package, pTeX uses JIS for output to terminal and
+log files.  JIS and EUC can be used in input files.
+
+Note: Some of the features provided by teTeX may not work with
+Japanese language, even though The TeX and LaTeX2e are able to handle
+Japanese.  Use ptex and platex respectively.)
+
+Note: xdvi and dvips, which are part of teTeX package, are not
+included in this packages since they are not localized for Japanese.
+Use corresponding ports/packages in the japanese category.
 
 - Max
+WWW: http://www.ascii.co.jp/pb/ptex/

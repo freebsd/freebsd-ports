@@ -1,3 +1,4 @@
-MD5 (ptex/ptex218.tar.gz) = f2cd2e3a0162b4bb8319562ec3331c65
-MD5 (ptex/plib-1.4-euc.tar.gz) = 8913238d89fd1d4a57e9853a91c76c4d
-MD5 (ptex/Makefile.in.patch.txt) = c2fc4ffad2a90eabf7a8f0c645b4cd77
+MD5 (teTeX/ptex/ptex-src-2.1.9-1.tar.gz) = 7f3f1b50648c7422d877e7c72274f1f2
+MD5 (teTeX/ptex/ptex2.1.9-10.patch) = b0cfe1fb0173ec26585152e94cd32c46
+MD5 (teTeX/ptex/ptex2.1.9-10_2.patch) = 013e47675a240cb65fec634adeb14e73
+MD5 (teTeX/ptex/pltotf1.3-4.patch) = 2a4cd574cdf5ec833f9fe94ea1149f43
