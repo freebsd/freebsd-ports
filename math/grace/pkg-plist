@@ -1,14 +1,13 @@
+bin/gracebat
+bin/xmgrace
+include/grace_np.h
 lib/X11/grace/auxiliary/README
 lib/X11/grace/auxiliary/convcal.c
 lib/X11/grace/auxiliary/magic.grace
+lib/X11/grace/bin/convcal
 lib/X11/grace/bin/gracebat
 lib/X11/grace/bin/grconvert
-lib/X11/grace/bin/convcal
 lib/X11/grace/bin/xmgrace
-lib/X11/grace/doc/CHANGES.html
-lib/X11/grace/doc/FAQ.html
-lib/X11/grace/doc/GPL.html
-lib/X11/grace/doc/nohelp.html
 lib/X11/grace/doc/10.1.dat
 lib/X11/grace/doc/10a.dat
 lib/X11/grace/doc/10b.dat
@@ -18,17 +17,21 @@ lib/X11/grace/doc/3.dat
 lib/X11/grace/doc/7.1.2.agr
 lib/X11/grace/doc/7.1.3.agr
 lib/X11/grace/doc/8.2.dat
+lib/X11/grace/doc/CHANGES.html
 lib/X11/grace/doc/FAQ.dvi
+lib/X11/grace/doc/FAQ.html
+lib/X11/grace/doc/GPL.html
 lib/X11/grace/doc/Tutorial.dvi
 lib/X11/grace/doc/Tutorial.html
 lib/X11/grace/doc/UsersGuide.dvi
 lib/X11/grace/doc/UsersGuide.html
-lib/X11/grace/doc/mygraph.gif
-lib/X11/grace/doc/shiftdata.sh
-lib/X11/grace/doc/philosophical-gnu-sm.jpg
 lib/X11/grace/doc/grace.1
 lib/X11/grace/doc/gracebat.1
 lib/X11/grace/doc/grconvert.1
+lib/X11/grace/doc/mygraph.gif
+lib/X11/grace/doc/nohelp.html
+lib/X11/grace/doc/philosophical-gnu-sm.jpg
+lib/X11/grace/doc/shiftdata.sh
 lib/X11/grace/doc/xmgrace.1
 lib/X11/grace/examples/altaxis.par
 lib/X11/grace/examples/arrows.agr
@@ -105,14 +108,12 @@ lib/X11/grace/fonts/type1/n022024l.afm
 lib/X11/grace/fonts/type1/n022024l.pfb
 lib/X11/grace/fonts/type1/s050000l.afm
 lib/X11/grace/fonts/type1/s050000l.pfb
-lib/X11/grace/include/grace_np.h
-lib/X11/grace/lib/libgrace_np.a
-lib/libgrace_np.a
-lib/X11/grace/templates/Default.agr
 lib/X11/grace/gracerc
 lib/X11/grace/gracerc.user
-bin/xmgrace
-bin/gracebat
+lib/X11/grace/include/grace_np.h
+lib/X11/grace/lib/libgrace_np.a
+lib/X11/grace/templates/Default.agr
+lib/libgrace_np.a
 @dirrm lib/X11/grace/auxiliary
 @dirrm lib/X11/grace/bin
 @dirrm lib/X11/grace/doc

@@ -29,7 +29,8 @@ LIB_DEPENDS=	Xbae.7:${PORTSDIR}/x11-toolkits/xbae 	\
 		pdf.2:${PORTSDIR}/print/pdflib		\
 		tiff.4:${PORTSDIR}/graphics/tiff	\
 		jpeg.9:${PORTSDIR}/graphics/jpeg	\
-		png.3:${PORTSDIR}/graphics/png
+		png.3:${PORTSDIR}/graphics/png		\
+		t1.1:${PORTSDIR}/devel/t1lib
 
 MAN1=		grace.1 xmgrace.1 gracebat.1 grconvert.1
 
