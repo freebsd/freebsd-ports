@@ -1,0 +1,15 @@
+--- GNUmakefile.in.orig	Thu Aug 31 17:40:17 2000
++++ GNUmakefile.in	Mon Sep 11 10:31:06 2000
+@@ -48,10 +48,9 @@
+ 
+ INCDIR = -I${J_INCDIR} -I${J_INCDIR}/genunix -I${J_INCDIR}/linux -I${J_INCDIR}/freebsd -I/usr/local/include
+ 
+-OPTFLAGS = -O2
+ CDEBUGFLAGS =# -g -DDEBUG -DCOMPILE_DEBUG# -DRUNTIME_DEBUG
+-NOOPTCFLAGS = -pipe -fPIC ${CDEBUGFLAGS} ${INCDIR}
+-CFLAGS = ${OPTFLAGS} ${NOOPTCFLAGS}
++NOOPTCFLAGS = -fPIC ${CDEBUGFLAGS} ${INCDIR}
++CFLAGS += ${OPTFLAGS} ${NOOPTCFLAGS}
+ LIBS =
+ 
+ ifeq (${METAVM}, yes)
