@@ -1,2 +1,1 @@
-@exec /bin/ln -sf ../../../perl/jcode.pl %D/lib/perl5/site_perl/%%PERL_VER%%
-@unexec /bin/rm -f %D/lib/perl5/site_perl/%%PERL_VER%%/jcode.pl
+%%INSTALL_BASE%%/jcode.pl
