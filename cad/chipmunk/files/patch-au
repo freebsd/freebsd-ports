@@ -1,16 +1,24 @@
---- view/Makefile.orig	Wed Mar 12 02:50:04 1997
-+++ view/Makefile	Mon Sep 20 07:19:44 1999
-@@ -41,7 +41,8 @@
+--- view/Makefile.orig	Sat May 18 12:02:28 2002
++++ view/Makefile	Sat May 18 12:59:50 2002
+@@ -40,7 +40,7 @@
  ## or some other directory, depending on your installation.
  ##
  
 -XINCLUDEDIR = .
-+XINCLUDEDIR = %%X11BASE%%/include
-+XLIBDIR = %%X11BASE%%/lib
++XINCLUDEDIR = ${X11BASE}/include
  
  ##
  ## If X isn't in the library path (the case for many MachTen and Linux 
-@@ -68,7 +69,7 @@
+@@ -55,7 +55,7 @@
+ ## depending on your installation. 
+ ##
+ 
+-LIBX11 = -lX11
++LIBX11 = -lX11 -L${X11BASE}/lib
+ 
+ LIBP2C = ../psys/src/libp2c.a
+ 
+@@ -67,7 +67,7 @@
  ##
  ## on Sun Solaris 2.X, -lsocket -lnsl must be added to OTHERLIBS
  
@@ -19,36 +27,35 @@
  
  ##
  ## (2) IEEE library directory
-@@ -115,7 +116,7 @@
+@@ -114,7 +114,7 @@
  
- CHIPMUNKCC = gcc -O2
+ CHIPMUNKCC = gcc -O3
  
 -CC = $(CHIPMUNKCC) 
 +CC ?= $(CHIPMUNKCC) 
  
  ##
  ## (4) Adding appropriate flags
-@@ -171,11 +172,11 @@
- ## in view rule
- ##
+@@ -172,11 +172,11 @@
+ 
+ CHIPMUNKFLAGS = 
    
--CFLAGS= -I$(LOCINC) -I$(XINCLUDEDIR) -DF_OK=0
+-CFLAGS= $(CHIPMUNKFLAGS) -I$(LOCINC) -I$(XINCLUDEDIR) -DF_OK=0
 +CFLAGS += -I$(LOCINC) -I$(XINCLUDEDIR) -DF_OK=0
  
--LDFLAGS= $(LIBP2C) $(LIBX11) $(OTHERLIBS) 
-+LDFLAGS += $(LIBP2C) $(LIBX11) $(OTHERLIBS) -L$(XLIBDIR)
+ LDFLAGS= $(LIBP2C) $(LIBX11) $(OTHERLIBS) 
  MYLDFLAGS= $(LIBP2C)  $(IEEEDIR) $(LIBX11)  $(OTHERLIBS)
 -BINDIR= ../bin
-+BINDIR = %%PREFIX%%/bin
++BINDIR = ${PREFIX}/bin
  
  OBJS =			\
  	viewfit.o	\
-@@ -243,7 +244,7 @@
+@@ -244,7 +244,7 @@
  	(chdir mt;	make; chdir ..; chdir tek2430; make; chdir ..; make mtlink)
  
  install: view
 -	cp view $(BINDIR)/vc
-+	install -c -s view $(BINDIR)/vc
++	${BSD_INSTALL_PROGRAM} view $(BINDIR)/vc
  
  myinstall: myview
  	cp view ../bin/myview

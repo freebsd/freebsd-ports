@@ -1,38 +1,38 @@
---- mosis/Makefile.orig	Wed Aug  3 03:31:44 1994
-+++ mosis/Makefile	Tue Sep 21 06:22:09 1999
+--- mosis/Makefile.orig	Tue Aug  7 09:25:31 2001
++++ mosis/Makefile	Sat May 18 15:59:51 2002
 @@ -23,6 +23,8 @@
  #
  #
  
-+BINDIR = %%PREFIX%%/bin
++BINDIR = ${PREFIX}/bin
 +
  ##
  ##  (1) Choosing your compiler
  ##  ---------------------------
-@@ -48,10 +50,11 @@
+@@ -48,10 +50,10 @@
  ##
  
  
 -CC = gcc
 +CC ?= gcc
  
- LIBX11 = -lX11
+-LIBX11 = -lX11
 -XINCLUDEDIR = .
-+XINCLUDEDIR = %%X11BASE%%/include
-+XLIBDIR = %%X11BASE%%/lib
++LIBX11 = -lX11 -L${X11BASE}/lib
++XINCLUDEDIR = ${X11BASE}/include
  
  ##
  ## (2) Adding appropriate flags
-@@ -91,7 +94,7 @@
- ## CFLAGS =  -ansi 
- ##
+@@ -88,7 +90,7 @@
  
--CFLAGS = -O -I../psys/include -I$(XINCLUDEDIR)
+ CHIPMUNKFLAGS = 
+ 
+-CFLAGS = $(CHIPMUNKFLAGS) -O -I../psys/include -I$(XINCLUDEDIR)
 +CFLAGS += -DBSD -DF_OK -I../psys/include -I$(XINCLUDEDIR)
  
  ##
  ## (3) Library additions
-@@ -99,20 +102,20 @@
+@@ -96,7 +98,7 @@
  ##
  ## on some systems, -ldl must be added to the following line
  
@@ -41,18 +41,12 @@
  
  ##
  ##
- ##
- 
- 
--LDFLAGS = ../psys/src/libp2c.a  $(OTHERLIBS) $(LIBX11)
-+LDFLAGS += ../psys/src/libp2c.a  $(OTHERLIBS) $(LIBX11) -L$(XLIBDIR)
- 
- mosis: mosis.o 
+@@ -109,7 +111,7 @@
  	$(CC) -o mosis mosis.o  $(LDFLAGS)
  
  install: mosis
 -	cp mosis ../bin/mosis
-+	install -c -s mosis $(BINDIR)
++	${BSD_INSTALL_PROGRAM} mosis $(BINDIR)
  
  clean:
  	rm -f *.o mosis

@@ -1,30 +1,38 @@
---- log/src/Makefile.orig	Tue Jul 20 16:10:36 1999
-+++ log/src/Makefile	Tue Feb 20 14:18:59 2001
+--- log/src/Makefile.orig	Tue May 14 03:08:21 2002
++++ log/src/Makefile	Sat May 18 15:49:22 2002
 @@ -45,8 +45,8 @@
  
  CD = cd
  
 -LOGLIBDIR = `$(CD) ../../log/lib; pwd`
 -LIBDIR = `$(CD) ../../lib; pwd`
-+LOGLIBDIR = %%PREFIX%%/share/chipmunk
-+LIBDIR = %%PREFIX%%/share/chipmunk
++LOGLIBDIR = ${PREFIX}/share/chipmunk
++LIBDIR = ${PREFIX}/share/chipmunk
  
  LOCINC = ../../psys/include
  
-@@ -63,9 +63,10 @@
+@@ -63,9 +63,9 @@
  ## or some other directory, depending on your installation.
  ##
  
 -XINCLUDEDIR = .
-+XINCLUDEDIR = %%X11BASE%%/include
-+XLIBDIR = %%X11BASE%%/lib
++XINCLUDEDIR = ${X11BASE}/include
  
 -BINDIR = ../../bin
-+BINDIR = %%PREFIX%%/bin
++BINDIR = ${PREFIX}/bin
  LIBP2C = ../../psys/src/libp2c.a
  
  ##
-@@ -91,7 +92,7 @@
+@@ -81,7 +81,7 @@
+ ## depending on your installation. 
+ ##
+ 
+-LIBX11 = -lX11
++LIBX11 = -lX11 -L${X11BASE}/lib
+ 
+ ##
+ ## (2) Library additions
+@@ -91,7 +91,7 @@
  ##
  ## on Sun Solaris 2.X, -lsocket -lnsl must be added to OTHERLIBS
  
@@ -33,42 +41,47 @@
  
  
  ##
-@@ -110,7 +111,7 @@
+@@ -110,7 +110,7 @@
    
- CHIPMUNKCC = gcc -O2
+ CHIPMUNKCC = gcc -O3
  
 -CC = $(CHIPMUNKCC) 
 +CC ?= $(CHIPMUNKCC) 
  
  ##
  ## (4) Adding appropriate flags
-@@ -145,7 +146,7 @@
- ##   -m68040              : for 68040 and 68060
- ## 
+@@ -147,7 +147,7 @@
  
--CFLAGS =  -I$(LOCINC) -I$(XINCLUDEDIR) -DLOGLIB=\"$(LOGLIBDIR)\" -DF_OK=0
-+CFLAGS +=  -DBSD -I$(LOCINC) -I$(XINCLUDEDIR) -DLOGLIB=\"$(LOGLIBDIR)\" -DF_OK=0 -L$(XLIBDIR)
+ CHIPMUNKFLAGS = 
+ 
+-CFLAGS =  $(CHIPMUNKFLAGS) -I$(LOCINC) -I$(XINCLUDEDIR) -DLOGLIB=\"$(LOGLIBDIR)\" -DF_OK=0
++CFLAGS +=  -DBSD -I$(LOCINC) -I$(XINCLUDEDIR) -DLOGLIB=\"$(LOGLIBDIR)\" -DF_OK=0
  
  DIGOBJ = logsim.o logdig.o logsimasm.o logsimed.o diggates.o \
           loghier.o logsimh.o swap.o
-@@ -178,11 +179,13 @@
+@@ -178,22 +178,24 @@
+ ##  older operating systems -- if problems arise, use a hard link.
  ##
  
++all:  makeana main
++
  install: all
 -	cp log $(BINDIR)/diglog
-+	install -c -s log $(BINDIR)/diglog
++	${BSD_INSTALL_PROGRAM} log $(BINDIR)/diglog
  	-rm -f $(BINDIR)/analog
- 	-ln $(BINDIR)/diglog $(BINDIR)/analog
+ 	-(cd $(BINDIR); ln -s diglog analog)
 -	cp loged $(BINDIR)/loged
 -	cp fixfet7 $(BINDIR)/fixfet7
-+	install -c -s loged $(BINDIR)
-+	install -c fixfet7 $(BINDIR)
++	${BSD_INSTALL_PROGRAM} loged $(BINDIR)/loged
++	${BSD_INSTALL_SCRIPT} fixfet7 $(BINDIR)/fixfet7
 +	cp -R ../lib/* $(LOGLIBDIR)
 +	chmod -R a=r+X $(LOGLIBDIR)
  
  clean:
  	-rm -f *.o ana/*.o log loged
-@@ -192,12 +195,12 @@
+ 
+-all:  makeana main
+-
  main: log loged
  
  makeana:
@@ -77,9 +90,3 @@
  
  
  LOGOBJ = log.o $(TOOLOBJ) logstuff.o logdef.o
- 
--log: $(LOGOBJ) tooldir.o $(LIBP2C) makeana
-+log: $(LOGOBJ) tooldir.o $(LIBP2C)
- 	$(CC) $(CFLAGS) tooldir.o $(LOGOBJ) $(LIBP2C) $(LIBX11)  \
- 	$(OTHERLIBS) -o log
- 

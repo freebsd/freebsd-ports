@@ -1,11 +1,11 @@
 --- util/spc-tools/ss/Makefile.orig	Wed Mar 12 02:47:27 1997
-+++ util/spc-tools/ss/Makefile	Tue Sep 21 03:40:50 1999
++++ util/spc-tools/ss/Makefile	Sat May 18 13:16:25 2002
 @@ -18,7 +18,7 @@
  #
  # ss makefile
  
 -BINDIR=	../../../bin
-+BINDIR=	%%PREFIX%%/bin
++BINDIR=	${PREFIX}/bin
  
  ##
  ##  (1) Choosing your compiler
@@ -31,8 +31,8 @@
  install:    ss
 -	cp ss $(BINDIR)  
 -	cp test/ucbsim $(BINDIR)
-+	install -c -s ss $(BINDIR)  
-+	install -c test/ucbsim $(BINDIR)
++	${BSD_INSTALL_PROGRAM} ss $(BINDIR)  
++	${BSD_INSTALL_SCRIPT} test/ucbsim $(BINDIR)
  
  clean:
  	-rm -f *.o ss
