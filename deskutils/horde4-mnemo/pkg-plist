@@ -1,11 +1,11 @@
-%%PORTDOCS%%share/doc/mnemo/LICENSE
-%%PORTDOCS%%share/doc/mnemo/README
-%%PORTDOCS%%share/doc/mnemo/CHANGES
-%%PORTDOCS%%share/doc/mnemo/CREDITS
-%%PORTDOCS%%share/doc/mnemo/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%MNEMODIR%%/config/conf.php
 %%MNEMODIR%%/config/conf.php.dist
-%%MNEMODIR%%/config/conf.php.dist.orig
 %%MNEMODIR%%/config/menu.php
 %%MNEMODIR%%/config/menu.php.dist
 %%MNEMODIR%%/config/prefs.php
@@ -43,12 +43,16 @@
 %%MNEMODIR%%/locale/fi_FI/help.xml
 %%MNEMODIR%%/locale/fr_FR/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/hu_HU/LC_MESSAGES/mnemo.mo
+%%MNEMODIR%%/locale/hu_HU/help.xml
+%%MNEMODIR%%/locale/it_IT/LC_MESSAGES/mnemo.mo
+%%MNEMODIR%%/locale/it_IT/help.xml
 %%MNEMODIR%%/locale/lt_LT/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/nb_NO/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/nl_NL/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/nn_NO/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/pt_BR/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/pt_PT/LC_MESSAGES/mnemo.mo
+%%MNEMODIR%%/locale/ro_RO/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/sk_SK/LC_MESSAGES/mnemo.mo
 %%MNEMODIR%%/locale/sk_SK/help.xml
 %%MNEMODIR%%/locale/sv_SE/LC_MESSAGES/mnemo.mo
@@ -68,6 +72,7 @@
 %%MNEMODIR%%/po/fi_FI.po
 %%MNEMODIR%%/po/fr_FR.po
 %%MNEMODIR%%/po/hu_HU.po
+%%MNEMODIR%%/po/it_IT.po
 %%MNEMODIR%%/po/lt_LT.po
 %%MNEMODIR%%/po/mnemo.pot
 %%MNEMODIR%%/po/nb_NO.po
@@ -75,6 +80,7 @@
 %%MNEMODIR%%/po/nn_NO.po
 %%MNEMODIR%%/po/pt_BR.po
 %%MNEMODIR%%/po/pt_PT.po
+%%MNEMODIR%%/po/ro_RO.po
 %%MNEMODIR%%/po/shtool
 %%MNEMODIR%%/po/sk_SK.po
 %%MNEMODIR%%/po/sv_SE.po
@@ -137,6 +143,8 @@
 @dirrm %%MNEMODIR%%/locale/lt_LT
 @dirrm %%MNEMODIR%%/locale/hu_HU/LC_MESSAGES
 @dirrm %%MNEMODIR%%/locale/hu_HU
+@dirrm %%MNEMODIR%%/locale/it_IT/LC_MESSAGES
+@dirrm %%MNEMODIR%%/locale/it_IT
 @dirrm %%MNEMODIR%%/locale/nb_NO/LC_MESSAGES
 @dirrm %%MNEMODIR%%/locale/nb_NO
 @dirrm %%MNEMODIR%%/locale/nl_NL/LC_MESSAGES
@@ -147,6 +155,8 @@
 @dirrm %%MNEMODIR%%/locale/pt_BR
 @dirrm %%MNEMODIR%%/locale/pt_PT/LC_MESSAGES
 @dirrm %%MNEMODIR%%/locale/pt_PT
+@dirrm %%MNEMODIR%%/locale/ro_RO/LC_MESSAGES
+@dirrm %%MNEMODIR%%/locale/ro_RO
 @dirrm %%MNEMODIR%%/locale/sk_SK/LC_MESSAGES
 @dirrm %%MNEMODIR%%/locale/sk_SK
 @dirrm %%MNEMODIR%%/locale/sv_SE/LC_MESSAGES
@@ -171,5 +181,5 @@
 @dirrm %%MNEMODIR%%/util
 @dirrm %%MNEMODIR%%
 etc/horde/httpd.conf.mnemo
-%%PORTDOCS%%@dirrm share/doc/mnemo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec if cmp -s %D/www/horde/config/registry.php %D/www/horde/config/registry.php.afterMnemo; then rm -f %D/www/horde/config/registry.php.afterMnemo; mv %D/www/horde/config/registry.php.beforeMnemo %D/www/horde/config/registry.php; fi
