@@ -10,6 +10,7 @@
     SUBDIR += aspell
     SUBDIR += bedic-data
     SUBDIR += bibtex2html
+    SUBDIR += bidiv
     SUBDIR += br-aspell
     SUBDIR += british-ispell
     SUBDIR += c2html
