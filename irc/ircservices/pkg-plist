@@ -52,6 +52,7 @@ lib/services/modules/operserv/sline.so
 lib/services/modules/protocol/bahamut.so
 lib/services/modules/protocol/dalnet.so
 lib/services/modules/protocol/dreamforge.so
+lib/services/modules/protocol/hybrid.so
 lib/services/modules/protocol/monkey.so
 lib/services/modules/protocol/ptlink.so
 lib/services/modules/protocol/rfc1459.so
@@ -78,6 +79,8 @@ sbin/ircservices-chk
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/upgrade.html
+%%PORTDOCS%%%%DOCSDIR%%/Changes
+%%PORTDOCS%%%%DOCSDIR%%/KnownBugs
 @dirrm lib/services/helpfiles
 @dirrm lib/services/languages
 @dirrm lib/services/modules/chanserv

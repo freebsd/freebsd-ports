@@ -8,17 +8,16 @@
 PORTNAME=	ircservices
 PORTVERSION=	5.0.${PATCHLEVEL}
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ftp.ircservices.za.net/pub/ircservices/ \
-		ftp://ftp.esper.net/ircservices/
+MASTER_SITES=	ftp://ftp.esper.net/ircservices/
 DISTNAME=	${PORTNAME}-5.0.0
 
-PATCHLEVEL=	23
 PATCH_SITES=	${MASTER_SITES}
+PATCHLEVEL=	45
 PATCHFILES!=	/usr/bin/jot -s " " -w ${DISTNAME:C/[0-9]*$//}%d.diff.gz  \
 			${PATCHLEVEL} 1 ${PATCHLEVEL}
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bu7cher@yandex.ru
 COMMENT=	A system of IRC services for IRC networks
 
 USE_PERL5_BUILD=yes
@@ -36,6 +35,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/docs/*.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/Changes ${WRKSRC}/KnownBugs ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
