@@ -80,6 +80,7 @@
     SUBDIR += erwn
     SUBDIR += evg
     SUBDIR += fcgi
+    SUBDIR += ffproxy
     SUBDIR += fhttpd
     SUBDIR += flashplugin
     SUBDIR += flashplugin-mozilla

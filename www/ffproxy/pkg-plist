@@ -1,0 +1,24 @@
+bin/ffproxy
+etc/ffproxy.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/db/access.dyndns
+%%PORTDOCS%%%%DOCSDIR%%/db/access.host
+%%PORTDOCS%%%%DOCSDIR%%/db/access.ip
+%%PORTDOCS%%%%DOCSDIR%%/db/filter.header.add
+%%PORTDOCS%%%%DOCSDIR%%/db/filter.header.drop
+%%PORTDOCS%%%%DOCSDIR%%/db/filter.header.entry
+%%PORTDOCS%%%%DOCSDIR%%/db/filter.header.match
+%%PORTDOCS%%%%DOCSDIR%%/db/filter.host.match
+%%PORTDOCS%%%%DOCSDIR%%/db/filter.rheader.drop
+%%PORTDOCS%%%%DOCSDIR%%/db/filter.rheader.entry
+%%PORTDOCS%%%%DOCSDIR%%/db/filter.rheader.match
+%%PORTDOCS%%%%DOCSDIR%%/db/filter.url.match
+%%PORTDOCS%%%%DOCSDIR%%/html/connect
+%%PORTDOCS%%%%DOCSDIR%%/html/filtered
+%%PORTDOCS%%%%DOCSDIR%%/html/invalid
+%%PORTDOCS%%%%DOCSDIR%%/html/notcached
+%%PORTDOCS%%%%DOCSDIR%%/html/post
+%%PORTDOCS%%%%DOCSDIR%%/html/resolve
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/db
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
