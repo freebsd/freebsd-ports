@@ -7,4 +7,4 @@ as86 object format, and a home-grown format called RDF.
 Also included is NDISASM, a prototype x86 binary-file disassembler
 which uses the same instruction table as NASM.    
 
-WWW: http://sourceforge.net/projects/nasm/
+WWW: http://nasm.sourceforge.net/
