@@ -8,6 +8,7 @@
 
 PORTNAME=	tdb
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,12 +16,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Trivial Database
 
-LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
-
-USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-INSTALLS_SHLIB=	yes
+USE_AUTOMAKE_VER=	14
+USE_AUTOCONF_VER=	213
+USE_LIBTOOL_VER=	13
+INSTALLS_SHLIB=		yes
 
 MAN3=	tdb.3 tdb_chainlock.3 tdb_close.3 tdb_delete.3 tdb_error.3 \
 	tdb_exists.3 tdb_fetch.3 tdb_firstkey.3 tdb_open.3 tdb_store.3 \
