@@ -1,0 +1,14 @@
+General Information
+===================
+
+gmysql is a graphical user interface to the mysqld SQL database
+server. gmysql uses GTK+ for its widgets.
+
+The gmysql web site is:
+  http://www.loth.demon.co.uk/gmysql/
+
+The GTK+ web site is:
+  http://www.gtk.org/
+
+The MySQL web site is:
+  http://www.tcx.se/
