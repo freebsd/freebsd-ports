@@ -634,3 +634,151 @@
   #define GetChar() wgetch(stdscr)
   #else /* everything but VMS and SNAKE */
   #define GetChar() getchar()  /* used to be "getc(stdin)" and "getch()" */
+*** src/LYStrings.h.bak	Thu Jun  9 16:02:14 1994
+--- src/LYStrings.h	Sat Jul  8 09:39:28 1995
+***************
+*** 23,43 ****
+  #define printable(c) (((c)>31 && (c)<=255) || (c)==9 || (c)==10 || (c)<0 )
+  
+  /* values for LYgetch */
+! #define UPARROW 128
+! #define DNARROW 129
+! #define RTARROW 130
+! #define LTARROW 131
+! #define PGDOWN  132
+! #define PGUP    133
+! #define HOME    134
+! #define END     135
+! #define F1      136
+! #define DO_KEY     137
+! #define FIND_KEY   138
+! #define SELECT_KEY 139
+! #define INSERT_KEY 140
+! #define REMOVE_KEY 141
+! #define DO_NOTHING 142
+  
+  #define VISIBLE 0
+  #define HIDDEN  1
+--- 23,43 ----
+  #define printable(c) (((c)>31 && (c)<=255) || (c)==9 || (c)==10 || (c)<0 )
+  
+  /* values for LYgetch */
+! #define UPARROW 256
+! #define DNARROW 257
+! #define RTARROW 258
+! #define LTARROW 259
+! #define PGDOWN  260
+! #define PGUP    261
+! #define HOME    262
+! #define END     263
+! #define F1      264
+! #define DO_KEY     265
+! #define FIND_KEY   266
+! #define SELECT_KEY 267
+! #define INSERT_KEY 268
+! #define REMOVE_KEY 269
+! #define DO_NOTHING 270
+  
+  #define VISIBLE 0
+  #define HIDDEN  1
+*** src/LYDownload.c.bak	Mon Jun  5 06:12:52 1995
+--- src/LYDownload.c	Sat Jul  8 09:46:22 1995
+***************
+*** 35,41 ****
+      char command[256];
+      char *cp;
+      lynx_html_item_type *download_command=0;
+!     char c;
+      FILE *fp;
+  #ifdef VMS
+      extern BOOLEAN HadVMSInterrupt;
+--- 35,41 ----
+      char command[256];
+      char *cp;
+      lynx_html_item_type *download_command=0;
+!     int c;
+      FILE *fp;
+  #ifdef VMS
+      extern BOOLEAN HadVMSInterrupt;
+*** src/LYForms.c.bak	Sat Apr  1 01:49:12 1995
+--- src/LYForms.c	Sat Jul  8 09:46:22 1995
+***************
+*** 312,318 ****
+  		    refresh();
+  
+  	       } else if(ch == LTARROW) {
+! 		   char c='n';
+  		   if(has_there_ever_been_data) {
+  			_statusline("Do you want to go back to the previous document? [n]");
+  			c=LYgetch();
+--- 312,318 ----
+  		    refresh();
+  
+  	       } else if(ch == LTARROW) {
+! 		   int c='n';
+  		   if(has_there_ever_been_data) {
+  			_statusline("Do you want to go back to the previous document? [n]");
+  			c=LYgetch();
+*** src/LYUpload.c.bak	Tue Mar  7 23:38:02 1995
+--- src/LYUpload.c	Sat Jul  8 09:46:22 1995
+***************
+*** 36,42 ****
+      char tmpbuf[256];
+      char buffer[256];
+      lynx_html_item_type *upload_command=0;
+!     char c;
+      char *cp;
+      FILE *fp;
+  #ifdef VMS
+--- 36,42 ----
+      char tmpbuf[256];
+      char buffer[256];
+      lynx_html_item_type *upload_command=0;
+!     int c;
+      char *cp;
+      FILE *fp;
+  #ifdef VMS
+*** src/LYKeymap.c.bak	Tue Mar  7 23:36:26 1995
+--- src/LYKeymap.c	Sat Jul  8 10:11:26 1995
+***************
+*** 156,161 ****
+--- 156,194 ----
+  LYK_PIPE,               0,              0,          LYK_HISTORY,
+  /* | */               /* } */         /* ~ */       /* del */
+  
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++    0,                  0,              0,             0,
++ 
+  LYK_PREV_LINK,    LYK_NEXT_LINK,    LYK_ACTIVATE,   LYK_PREV_DOC,
+  /* UPARROW */     /* DNARROW */     /* RTARROW */   /* LTARROW */
+  
