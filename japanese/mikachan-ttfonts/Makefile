@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mikachan-ttfonts
-PORTVERSION=	8.6
+PORTVERSION=	8.7
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://members.tripod.co.jp/mikachan_font/ \
 		${MASTER_SITE_PORTS_JP}
