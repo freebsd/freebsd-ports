@@ -1,5 +1,5 @@
 --- configure.in.orig	Thu Jul 20 21:35:01 2000
-+++ configure.in	Tue Sep 19 21:51:11 2000
++++ configure.in	Thu Nov 16 09:07:00 2000
 @@ -66,8 +66,9 @@
  dnl check for -R, etc. switch
  CMU_GUESS_RUNPATH_SWITCH
@@ -7,8 +7,8 @@
 -CPPFLAGS="-I/usr/local/include ${CPPFLAGS}"
 -CMU_ADD_LIBPATH("/usr/local/lib")
 +CPPFLAGS="-I${OPENSSLINC} -I${OPENSSLINC}/openssl ${CPPFLAGS}"
-+CMU_ADD_LIBPATH("${LOCALBASE}/lib")
 +CMU_ADD_LIBPATH("${OPENSSLLIB}")
++CMU_ADD_LIBPATH("${LOCALBASE}/lib")
  
  AM_DISABLE_STATIC
  
