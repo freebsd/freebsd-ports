@@ -68,6 +68,7 @@
     SUBDIR += mswordview
     SUBDIR += nfbtrans
     SUBDIR += nicetext
+    SUBDIR += nl-ispell
     SUBDIR += no-ispell
     SUBDIR += openjade
     SUBDIR += p5-DelimMatch
