@@ -1,0 +1,37 @@
+bin/krubik
+share/applnk/Games/krubik.kdelnk
+share/apps/krubik/example1.cube
+share/apps/krubik/example2.cube
+share/apps/krubik/example3.cube
+share/apps/krubik/example4.cube
+share/doc/HTML/en/krubik/devel/Cube.html
+share/doc/HTML/en/krubik/devel/KRubik.html
+share/doc/HTML/en/krubik/devel/Kleur.html
+share/doc/HTML/en/krubik/devel/Vector.html
+share/doc/HTML/en/krubik/devel/cube-h.html
+share/doc/HTML/en/krubik/devel/defines-h.html
+share/doc/HTML/en/krubik/devel/dialog-h.html
+share/doc/HTML/en/krubik/devel/heir.html
+share/doc/HTML/en/krubik/devel/includes-h.html
+share/doc/HTML/en/krubik/devel/index.html
+share/doc/HTML/en/krubik/devel/krubik-h.html
+share/doc/HTML/en/krubik/devel/vector-h.html
+share/doc/HTML/en/krubik/index-1.html
+share/doc/HTML/en/krubik/index-2.html
+share/doc/HTML/en/krubik/index-3.html
+share/doc/HTML/en/krubik/index-4.html
+share/doc/HTML/en/krubik/index-5.html
+share/doc/HTML/en/krubik/index.html
+share/doc/HTML/en/krubik/region.gif
+share/icons/krubik.xpm
+share/locale/de/LC_MESSAGES/krubik.mo
+share/locale/es/LC_MESSAGES/krubik.mo
+share/locale/hr/LC_MESSAGES/krubik.mo
+share/locale/it/LC_MESSAGES/krubik.mo
+share/locale/nl/LC_MESSAGES/krubik.mo
+share/locale/pt/LC_MESSAGES/krubik.mo
+share/locale/sk/LC_MESSAGES/krubik.mo
+@dirrm share/applnk/Games
+@dirrm share/apps/krubik
+@dirrm share/doc/HTML/en/krubik/devel
+@dirrm share/doc/HTML/en/krubik

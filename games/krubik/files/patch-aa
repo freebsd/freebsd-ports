@@ -1,0 +1,11 @@
+--- krubik/cube.cpp.orig	Sun Oct  4 14:07:13 1998
++++ krubik/cube.cpp	Sat Oct 23 23:04:56 1999
+@@ -34,6 +34,8 @@
+ 		srandom( time->msecsTo( QTime::currentTime() ) );
+ 	#elif sparc
+ 		srand( time->msecsTo( QTime::currentTime() ) );
++	#elif __FreeBSD__
++		srand( time->msecsTo( QTime::currentTime() ) );
+ 	#else
+ 		debug("Unsupported achitecture, please mail pte@ddsw.nl") ;
+ 		srand( time->msecsTo( QTime::currentTime() ) );
