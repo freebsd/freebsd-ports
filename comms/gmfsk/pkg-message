@@ -13,15 +13,11 @@ Under Settings->Preferences->Devices->Sound set your sound device to
 This will use the 16bit sound device rather than /dev/dsp0 which is
 the 8bit sound device.
 
-Then use the Gnome-volume-control to set your receive and transmit
-levels.  DO NOT OVERDRIVE YOUR RIG.  I recommend you head over to
+Then use the Gnome-volume-control or your favourite mixer program
+to set your receive and transmit levels.  DO NOT OVERDRIVE YOUR RIG.  
+I recommend you head over to
 http://www.w5bbr.com/
 which has links to useful info.
-
-The port currently has a minor bug that means error messages will be
-printed if the LANG environment variable is not set to something in
-/usr/share/locale.  You can either set the LANG environment variable
-or ignore the error.
 
 Enjoy!
 Carl, VK1KCM
