@@ -1,47 +1,21 @@
-
-$FreeBSD$
-
---- configure.orig	Thu May  3 14:34:45 2001
-+++ configure	Sun May  6 10:40:20 2001
-@@ -3536,7 +3536,7 @@
- 
- 
+--- configure.orig	Fri Jun  1 03:33:59 2001
++++ configure	Mon Jun 18 13:39:58 2001
+@@ -3545,3 +3545,3 @@
  XML_LIBDIR='-L${libdir}'
 -XML_INCLUDEDIR='-I${includedir}/libxml -I${includedir}'
 +XML_INCLUDEDIR='-I${includedir}/libxml2 -I${includedir}/libxml2/libxml'
- XML_LIBS="-lxml2 $Z_LIBS -lm $LIBS"
  
- XML_CFLAGS=""
-@@ -3819,7 +3819,7 @@
- fi
- 
- 
--if "${NEED_TRIO}" = "1"; then
-+if test "${NEED_TRIO}" = "1"; then
-   WITH_TRIO_SOURCES_TRUE=
-   WITH_TRIO_SOURCES_FALSE='#'
- else
-@@ -4003,7 +4003,7 @@
- /* Override any gcc2 internal prototype to avoid an error.  */
- /* We use char because int might match the return type of a gcc2
+@@ -4028,3 +4028,3 @@
      builtin and then its argument prototype would still apply.  */
 -char iconv();
 +char libiconv();
  
- int main() {
- 
-@@ -4013,7 +4013,7 @@
- #if defined (__stub_iconv) || defined (__stub___iconv)
- choke me
+@@ -4038,3 +4038,3 @@
  #else
 -iconv();
 +libiconv();
  #endif
- 
- ; return 0; }
-@@ -4049,10 +4049,10 @@
- /* Override any gcc2 internal prototype to avoid an error.  */
- /* We use char because int might match the return type of a gcc2
+@@ -4074,6 +4074,6 @@
      builtin and then its argument prototype would still apply.  */
 -char iconv();
 +char libiconv();
@@ -50,5 +24,3 @@ $FreeBSD$
 -iconv()
 +libiconv()
  ; return 0; }
- EOF
- if { (eval echo configure:4059: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
