@@ -34,7 +34,6 @@ MAINTAINER=	vangyzen@stat.duke.edu
 COMMENT=	The standalone math library from R
 
 INSTALLS_SHLIB=	yes
-USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	include/Rmath.h lib/libRmath.a lib/libRmath.so lib/libRmath.so.0
