@@ -6,47 +6,38 @@
 #
 
 PORTNAME=	giram
-PORTVERSION=	0.1.7
+PORTVERSION=	0.3.5
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.giram.org/pub/
-DISTNAME=	Giram-${PORTVERSION}
+MASTER_SITES=	http://www.giram.org/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Giram is Really A Modeller
+COMMENT=	A POV-Ray oriented modeller
 
-RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray31
-
-USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
-USE_MESA=	yes
+USE_PERL5_BUUID=	yes
+USE_GNOME=	gtk20
 USE_GMAKE=	yes
-USE_GNOME=	gtk12
-WANT_GNOME=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gl=${X11BASE}
+USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		NTLTOOL_PERL="${PERL}"
+CONFIGURE_ARGS=	--datadir="${PREFIX}/lib" \
+		--with-tutorial-path="${DOCSDIR}" \
+		--with-lib3ds-prefix="${LOCALBASE}"
+MAN1=		giram.1
 
-.include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mlibcapplet}!=""
-USE_GNOME+=	libcapplet
-PKGNAMESUFFIX=	-gnome
+.if defined(WITH_POVRAY31)
+BUILD_DEPENDS=	povray:${PORTSDIR}/graphics/povray31
+RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray31
 .else
-CONFIGURE_ARGS+=--disable-gnome
+BUILD_DEPENDS=	povray:${PORTSDIR}/graphics/povray
+RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-lpthread|${PTHREAD_LIBS:S/"//g}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g ; \
-		 s|USE_INCLUDED_LIBINTL=yes|#USE_INCLUDED_LIBINTL=yes|g ; \
-		 s|\$$(top_builddir)/intl/libintl.a|-lintl|g' \
-		 ${WRKSRC}/configure
-
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/giram/SampleScenes
-	${INSTALL_DATA} ${WRKSRC}/SampleScenes/* ${PREFIX}/share/doc/giram/SampleScenes/
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/samples/*.pov ${EXAMPLESDIR}
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
