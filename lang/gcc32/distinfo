@@ -4,3 +4,4 @@ MD5 (gcc-g++-3.2.2.tar.bz2) = 86b63f1375ce75c5df03cbf23731c3c1
 MD5 (gcc-g77-3.2.2.tar.bz2) = 0b220a0cd5dd471c34c080952265e91e
 MD5 (gcc-java-3.2.2.tar.bz2) = 05660a2dc4c874bbb361dec8363da852
 MD5 (gcc-objc-3.2.2.tar.bz2) = c2c99dca89281512403b9805c59ffd2d
+MD5 (bounds-checking-gcc-3.2.2-1.00.patch.bz2) = 44a7e5030fde6e0e9350aa5029eacbaf

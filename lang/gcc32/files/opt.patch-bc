@@ -1,0 +1,11 @@
+--- gcc/bounds/lib/malloc/Makefile.orig	Fri Sep 28 15:31:19 2001
++++ gcc/bounds/lib/malloc/Makefile	Mon Oct  1 13:58:20 2001
+@@ -52,7 +52,7 @@ VPATH = $(srcdir)/bounds/lib/malloc
+ SUBDIR_INCLUDES = -I$(srcdir)/bounds/lib/malloc -I../../.. -I$(srcdir) -I$(srcdir)/config -I../../../../include
+ 
+ # Use this on System V.
+-CPPFLAGS = -DUSG
++CPPFLAGS = -DBSD4_2
+ 
+ .c.o:
+ 	$(GCC_FOR_TARGET) -Wall $(OPTIMIZE) $(CPPFLAGS) \
