@@ -10,9 +10,7 @@
 PORTNAME=	festvox-mwm
 PORTVERSION=	2.0
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.leb.net/pub/blinux/festival/mirror.ogi-synth_home/ \
-		ftp://ftp.mayn.de/pub/linux/BLinux/festival/mirror.ogi-synth_home/ \
-		ftp://cslu.cse.ogi.edu/pub/tts/
+MASTER_SITES=	${MASTER_SITE_FESTIVAL_OGI}
 DISTNAME=	voice_mwm_di-2.0
 DIST_SUBDIR=	festival
 

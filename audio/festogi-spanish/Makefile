@@ -10,7 +10,7 @@
 PORTNAME=	festogi-spanish
 PORTVERSION=	2.0
 CATEGORIES=	audio
-MASTER_SITES=	ftp://cslu.cse.ogi.edu/pub/tts/
+MASTER_SITES=	${MASTER_SITE_FESTIVAL_OGI}
 DISTNAME=	OGIspanish-2.0
 DIST_SUBDIR=	festival
 

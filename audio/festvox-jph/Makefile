@@ -10,10 +10,7 @@
 PORTNAME=	festvox-jph
 PORTVERSION=	2.0
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.leb.net/pub/blinux/${SUB} \
-		ftp://ftp.mayn.de/pub/linux/BLinux/${SUB} \
-		ftp://cslu.cse.ogi.edu/pub/tts/
-SUB=		festival/mirror.ogi-synth_home/
+MASTER_SITES=	${MASTER_SITE_FESTIVAL_OGI}
 DISTNAME=	voice_jph_di-2.0
 DIST_SUBDIR=	festival
 

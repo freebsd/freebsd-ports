@@ -10,9 +10,8 @@
 PORTNAME=	festlex-cmu
 PORTVERSION=	1.4.1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.speech.cs.cmu.edu/festival/cstr/festival/1.4.1/ \
-		${MASTER_SITE_NETBSD} \
-		ftp://ftp.cstr.ed.ac.uk/pub/festival/1.4.1/
+MASTER_SITES=	${MASTER_SITE_FESTIVAL}
+MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTNAME=	festlex_CMU
 DIST_SUBDIR=	festival
 
