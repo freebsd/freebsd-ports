@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	libnasl-0.99.4
-PKGNAME=	nessus-libnasl-0.99.4
+DISTNAME=	libnasl-0.99.7
+PKGNAME=	nessus-libnasl-0.99.7
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/nessus-${NESSUS_REV}/ \
 		ftp://ftp.nessus.org/pub/nessus/nessus-${NESSUS_REV}/ \

@@ -10,7 +10,6 @@ lib/libpcap-nessus.so.99
 lib/libpeks.a
 lib/libpeks.so
 lib/libpeks.so.0
-lib/libpeksmp.a
 include/nessus/getopt.h
 include/nessus/pcap.h
 include/nessus/pcap-namedb.h
