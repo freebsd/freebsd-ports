@@ -9223,6 +9223,7 @@ xbone		ports/net/xbone
 xbubble		ports/games/xbubble
 xbuffy		ports/mail/xbuffy
 xc-mail		ports/mail/xc-mail
+xca		ports/security/xca
 xcalendar	ports/deskutils/xcalendar
 xcb		ports/x11/xcb
 xcd		ports/audio/xcd
