@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	jcommon
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.5
 CATEGORIES=	java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	jfreechart
@@ -17,8 +17,6 @@ COMMENT=	A collection of useful classes used by JFreeChart and JFreeReport
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.2+
-
-RUN_DEPENDS=	${JAVAJARDIR}/log4j.jar:${PORTSDIR}/java/jakarta-log4j
 
 .if !defined(WITHOUT_COMPILE) || !defined(NOPORTDOCS)
 BUILD_DEPENDS=	${ANT_CMD}:${PORTSDIR}/devel/apache-ant
@@ -38,7 +36,8 @@ ANT_TARGETS+=	javadoc
 PORTDOCS=	*
 .endif
 
-PLIST_FILES=	share/java/classes/jcommon.jar
+PLIST_SUB=	JAVAJARDIR=${JAVAJARDIR:S|^${PREFIX}/||}
+PLIST_FILES=	%%JAVAJARDIR%%/jcommon.jar
 
 pre-fetch:
 	@${ECHO_MSG} ""
