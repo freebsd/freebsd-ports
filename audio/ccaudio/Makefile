@@ -8,7 +8,11 @@
 PORTNAME=	ccaudio
 PORTVERSION=	0.2.4
 CATEGORIES=	audio
-MASTER_SITES=	ftp://www.voxilla.org/pub/ccaudio/
+# Mastersite is broken regarding anonymous FTP, mirror is unreachable.
+# I have informed the webmaster regarding this, hope to get an answer
+# soon - edwin@freebsd.org 20021226
+MASTER_SITES=	ftp://www.voxilla.org/pub/ccaudio/ \
+		ftp://ftp.teklab.com/voxilla/pub/ccaudio/
 
 MAINTAINER=	dyfet@gnu.org
 
