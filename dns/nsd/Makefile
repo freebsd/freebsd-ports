@@ -11,7 +11,7 @@ CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/nsd/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An authoratative only non-recursive high performance name server
+COMMENT=	An authoritative only non-recursive high performance name server
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-user=bind \
