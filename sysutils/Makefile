@@ -32,6 +32,7 @@
     SUBDIR += daemontools53
     SUBDIR += deleted
     SUBDIR += detach
+    SUBDIR += dim
     SUBDIR += diskusage
     SUBDIR += doconfig
     SUBDIR += dvdtape
