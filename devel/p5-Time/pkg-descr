@@ -3,5 +3,5 @@ This package contains the following perl5 modules:
 Time::CTime.pm		ctime, strftime, and asctime
 Time::JulianDay.pm	Julian Day conversions
 Time::ParseDate.pm	Reverses strftime and also understands relative times
-Time::Timezone.pm
-Time::DaysInMonth.pm
+Time::Timezone.pm	miscellaneous timezone manipulations routines
+Time::DaysInMonth.pm	simply report the number of days in a month
