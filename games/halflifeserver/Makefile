@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hlds
-PORTVERSION=	3.1.0.6
-PORTREVISION=	2
+PORTVERSION=	3.1.0.7
 CATEGORIES=	games linux
 MASTER_SITES=	http://games.velocity.net/files/Halflife/ \
 		ftp://ftp.gmd.de/people/cla/hl/hl-newest/linux/ \
@@ -15,7 +14,7 @@ MASTER_SITES=	http://games.velocity.net/files/Halflife/ \
 		http://ftp1download.gamespy.com/fileplanet/fpnew/action/half-life/official/ \
 		http://fileplanet.games-world.net/dl/ftp1.gamespy.com/fpnew/action/half-life/official/ \
 		ftp://ftp.fh-rosenheim.de/pub/games/halflife/servers/
-DISTNAME=	hlds_l3106
+DISTFILES=	hlds_l3106.tar.gz hlds_l3107_upgrade.tar.gz
 
 MAINTAINER=	pat@databits.net
 
@@ -31,45 +30,43 @@ INSTALL_DIR=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${BINMODE}
 LDCONFIG_LINUX=	${LINUXBASE}/sbin/ldconfig
 
 HLDSDIR=	/usr/games/hlds_l/
-HL_DIRS=	valve/maps valve/events valve/dlls valve/cl_dlls \
-		tfc/tfstats tfc/sound/weapons tfc/sound/vox \
-		tfc/sound/misc tfc/models/player/spy \
-		tfc/models/player/soldier tfc/models/player/sniper \
-		tfc/models/player/scout tfc/models/player/pyro \
-		tfc/models/player/medic tfc/models/player/hvyweapon \
-		tfc/models/player/engineer tfc/models/player/demo \
-		tfc/models/player/civilian tfc/maps tfc/manual \
-		tfc/events/wpn tfc/events/misc tfc/events/explode \
-		tfc/events/door tfc/dlls tfc/cl_dlls
 HL_PROGRAM=	hlds_run
+SORT?=		/usr/bin/sort
 
 pre-patch:
 # remove trailing ^M
-        @find -E ${WRKSRC} -type f \
-                -iregex ".*\.(bat|cfg|gam|htm|html|inf|ini|lst|sc|scr|txt)" \
-                -exec ${PERL} -pi -ne 's!\r\n!\n!' {} 1>/dev/null 2>&1 \;
+	@find -E ${WRKSRC} -type f \
+		-iregex ".*\.(bat|cfg|gam|htm|html|inf|ini|lst|sc|scr|txt)" \
+		-exec ${PERL} -pi -ne 's!\r\n!\n!' {} 1>/dev/null 2>&1 \;
 
-do-install: install-files scan-libs
+do-install: install-parse-plist install-run-scripts scan-libs
 
-install-files:
-# directories
-.for directory in ${HL_DIRS}
-	@${INSTALL_DIR} ${PREFIX}${HLDSDIR}${directory}
+# Contributed by <lioux@FreeBSD.org>
+install-parse-plist: generate-plist
+	@${PERL} -e 'open(FHANDLER,"${TMPPLIST}");' \
+		-e 'open(FDIR,">${WRKDIR}/dirs.sh.tmp");' \
+		-e 'open(FFILES,">${WRKDIR}/files.sh");' \
+		-e 'while (!eof(FHANDLER)) {' \
+			-e 'chop($$file = <FHANDLER>);' \
+			-e '$$dir = $$file_partial = $$file;' \
+			-e '$$file_partial =~ s!^${HLDSDIR:S!^/!!}!!;' \
+			-e 'print FDIR "${INSTALL_DIR}", \
+				" ", "\"${PREFIX}/$$dir\"", \
+				"\n" if $$dir =~ s!(^\@dirrm\s+)!!;' \
+			-e 'print FFILES "${INSTALL_DATA}", \
+				" ", "\"${WRKSRC}/$$file_partial\"", \
+				" ", "\"${PREFIX}/$$file\"", \
+				"\n" if ($$file !~ m!^\@!);' \
+		-e '}' \
+		-e 'close(FFILES);' \
+		-e 'close(FDIR);' \
+		-e 'close(FHANDLER);'
+	@${SORT} ${WRKDIR}/dirs.sh.tmp > ${WRKDIR}/dirs.sh
+
+install-run-scripts:
+.for script in dirs files
+	@${SH} ${WRKDIR}/${script}.sh
 .endfor
-# if you change the PLIST, please re-think the following
-# files
-	@for file in `${SED} -E -e "s!^\@.+!!" -e "s!%%HLDSDIR%%!!" ${PLIST}` ;\
-	do \
-		${INSTALL_DATA} ${WRKSRC}/$${file} ${PREFIX}${HLDSDIR}$${file} ;\
-	done
-# trim/set permissions
-	@${CHMOD} ${BINMODE} ${PREFIX}${HLDSDIR}${HL_PROGRAM}
-# libraries
-# this should go in a pkg-install, should be checked later
-	@if ! (${GREP} -E \"^${HLDSDIR}$$\" ${PREFIX}/etc/ld.so.conf >/dev/null 2>/dev/null) ;\
-	then \
-		${ECHO} ${HLDSDIR} >> ${PREFIX}/etc/ld.so.conf ;\
-	fi
 
 scan-libs:
 	@${LDCONFIG_LINUX}
