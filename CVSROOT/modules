@@ -3359,6 +3359,7 @@ knights		ports/games/knights
 knocker		ports/security/knocker
 knowit		ports/deskutils/knowit
 knowledgekit	ports/www/knowledgekit
+knutclient	ports/sysutils/knutclient
 ko-FreeWnn-lib	ports/korean/FreeWnn-lib
 ko-FreeWnn-server	ports/korean/FreeWnn-server
 ko-a2ps		ports/korean/a2ps
