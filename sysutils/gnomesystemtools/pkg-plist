@@ -8,24 +8,9 @@ etc/X11/sysconfig/network.desktop
 etc/X11/sysconfig/services.desktop
 etc/X11/sysconfig/time.desktop
 etc/X11/sysconfig/users.desktop
-etc/gconf/gconf.xml.defaults/apps/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-system-tools/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-system-tools/boot/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-system-tools/global/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-system-tools/network/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-system-tools/services/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-system-tools/time/%gconf.xml
-etc/gconf/gconf.xml.defaults/apps/gnome-system-tools/users/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-system-tools/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-system-tools/boot/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-system-tools/global/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-system-tools/network/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-system-tools/services/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-system-tools/time/%gconf.xml
-etc/gconf/gconf.xml.defaults/schemas/apps/gnome-system-tools/users/%gconf.xml
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/gnome-system-tools.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/gnome-system-tools.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/gnome-system-tools.schemas > /dev/null || /usr/bin/true
 libdata/pkgconfig/gnome-system-tools.pc
 libdata/pkgconfig/system-tools-backends.pc
 share/gnome-system-tools/interfaces/boot.glade
@@ -85,6 +70,7 @@ share/gnome/applications/time.desktop
 share/gnome/applications/users.desktop
 share/locale/am/LC_MESSAGES/gnome-system-tools.mo
 share/locale/az/LC_MESSAGES/gnome-system-tools.mo
+share/locale/az/LC_MESSAGES/setup-tools-backends.mo
 share/locale/bg/LC_MESSAGES/gnome-system-tools.mo
 share/locale/ca/LC_MESSAGES/gnome-system-tools.mo
 share/locale/cs/LC_MESSAGES/gnome-system-tools.mo
@@ -133,6 +119,7 @@ share/locale/pt_BR/LC_MESSAGES/gnome-system-tools.mo
 share/locale/pt_BR/LC_MESSAGES/setup-tools-backends.mo
 share/locale/ru/LC_MESSAGES/gnome-system-tools.mo
 share/locale/sk/LC_MESSAGES/gnome-system-tools.mo
+share/locale/sq/LC_MESSAGES/gnome-system-tools.mo
 share/locale/sr/LC_MESSAGES/gnome-system-tools.mo
 share/locale/sr/LC_MESSAGES/setup-tools-backends.mo
 share/locale/sr@Latn/LC_MESSAGES/gnome-system-tools.mo
@@ -195,18 +182,4 @@ share/setup-tool-backends/scripts/xml.pl
 @dirrm share/gnome-system-tools/pixmaps
 @dirrm share/gnome-system-tools/interfaces
 @dirrm share/gnome-system-tools
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-system-tools/users
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-system-tools/time
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-system-tools/services
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-system-tools/network
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-system-tools/global
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-system-tools/boot
-@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-system-tools/
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-system-tools/users
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-system-tools/time
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-system-tools/services
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-system-tools/network
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-system-tools/global
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-system-tools/boot
-@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-system-tools/
 @dirrm etc/X11/sysconfig

@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gnomesystemtools
-PORTVERSION=	0.33.0
+PORTVERSION=	0.34.0
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gnome-system-tools/0.33
+MASTER_SITE_SUBDIR=	sources/gnome-system-tools/0.34
 DISTNAME=	gnome-system-tools-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
