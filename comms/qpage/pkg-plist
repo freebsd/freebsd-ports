@@ -1,4 +1,3 @@
 bin/qpage
 etc/example-qpage.cf
 etc/rc.d/qpage.sh
-man/man1/qpage.1.gz

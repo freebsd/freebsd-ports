@@ -73,11 +73,4 @@ lib/pix/b7.gif
 lib/pix/case.gif
 lib/pix/case.xbm
 lib/pix/casemask.xbm
-man/man1/dlpsh.1.gz
-man/man1/ietf2datebook.1.gz
-man/man1/install-datebook.1.gz
-man/man1/install-memo.1.gz
-man/man1/install-user.1.gz
-man/man1/pilot-xfer.1.gz
-man/man1/read-ical.1.gz
 @dirrm lib/pix
