@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML_RPC
-DISTVERSION=	1.2.0RC5
+DISTVERSION=	1.2.0RC6
 CATEGORIES=	devel www pear
 
 MAINTAINER=	antonio@php.net
@@ -17,6 +17,7 @@ WANT_PHP_PEAR=	yes
 
 CATEGORY=	XML
 FILES=		RPC.php RPC/Server.php RPC/Dump.php
+TESTS=		protoport.php test_Dump.php
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/RPC
