@@ -1,0 +1,39 @@
+*** Makefile.in.original	Tue Nov 26 14:44:19 1996
+--- Makefile.in	Thu Nov 28 15:29:24 1996
+***************
+*** 137,143 ****
+  
+  # The following is the first rule and therefore the "make" command's
+  # default target.
+! enough: $(VM) $(IMAGE) script $(LIBCIG) scsh $(LIBSCSH) $(MANPAGE) .notify
+  
+  # The developers are curious to know.  Don't be concerned if this fails.
+  # You may comment these lines out if you wish to be discourteous.
+--- 137,143 ----
+  
+  # The following is the first rule and therefore the "make" command's
+  # default target.
+! enough: $(VM) $(IMAGE) script $(LIBCIG) scsh $(LIBSCSH) $(MANPAGE)
+  
+  # The developers are curious to know.  Don't be concerned if this fails.
+  # You may comment these lines out if you wish to be discourteous.
+***************
+*** 250,255 ****
+--- 250,256 ----
+  	$(RM) -r $(LIB).old
+  	if [ -d $(LIB) ] ; then mv $(LIB) $(LIB).old ; fi
+  	mkdir $(LIB)
++ 	mkdir $(LIB)/emacs
+  	mkdir $(LIB)/big
+  	mkdir $(LIB)/cig
+  	mkdir $(LIB)/doc
+***************
+*** 286,291 ****
+--- 287,293 ----
+  	      $(LIB)/misc $(LIB)/link $(LIB)/vm $(LIB)/doc
+  	for f in $(srcdir)/rts/*num.scm; \
+  	    do $(INSTALL_DATA) $$f $(LIB)/rts/; done
++ 	for f in $(srcdir)/emacs/*; do $(INSTALL_DATA) $$f $(LIB)/emacs/; done
+  	for f in $(srcdir)/env/*.scm; do $(INSTALL_DATA) $$f $(LIB)/env/; done
+  	for f in $(srcdir)/big/*.scm; do $(INSTALL_DATA) $$f $(LIB)/big/; done
+  	for f in $(srcdir)/opt/*.scm; do $(INSTALL_DATA) $$f $(LIB)/opt/; done
