@@ -28,6 +28,8 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
+BROKEN=		"Security hole (buffer overflow yielding setuid uucp)"
+
 DIST_SUBDIR=	hylafax
 
 Y2K=		http://www.hylafax.org/HylaFAQ/Q189.html
