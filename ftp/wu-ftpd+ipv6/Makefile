@@ -8,14 +8,14 @@
 # it is changed from previous versions
 
 PORTNAME=	wu-ftpd+ipv6
-PORTVERSION=    2.6.2
-PORTREVISION=   6
+PORTVERSION=	2.6.2
+PORTREVISION=	6
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	ftp://ftp.wu-ftpd.org/pub/wu-ftpd/
 DISTNAME=	wu-ftpd-${PORTVERSION}
 
-PATCH_SITES=    ftp://ftp.kame.net/pub/kame/misc/
-PATCHFILES=     wu-ftpd-262-v6-20040130.diff.gz
+PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
+PATCHFILES=	wu-ftpd-262-v6-20040130.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	sumikawa@FreeBSD.org
@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--enable-rfc931 --disable-pasvip --enable-opie \
 		--enable-ipv6 \
 		--prefix=${PREFIX} --with-etc-dir=${PREFIX}/etc
 
-MAKE_ENV+=      WARNINGS=-DSPT_TYPE=SPT_BUILTIN
+MAKE_ENV+=	WARNINGS=-DSPT_TYPE=SPT_BUILTIN
 
 MAN1=		ftpcount.1 ftpwho.1
 MAN5=		ftpaccess.5 ftphosts.5 ftpconversions.5 xferlog.5 \
