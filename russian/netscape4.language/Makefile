@@ -1,12 +1,12 @@
 # New ports collection makefile for: netscape.language
-# Version required:     3.0b5
+# Version required:     3.0b5a
 # Date created:         8 Apr 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.4 1996/06/15 01:04:45 asami Exp $
+# $Id: Makefile,v 1.5 1996/07/01 21:54:26 ache Exp $
 #
 
-PKGNAME=        ru-netscape-3.0b5
+PKGNAME=        ru-netscape-3.0b5a
 CATEGORIES+=    russian www x11
 
 MAINTAINER=	ache@FreeBSD.ORG
@@ -29,7 +29,7 @@ do-fetch:
 
 do-install:
 	if [ -f ${APPDEF}/Netscape ] ; then \
-		grep -q '\.version:.*3\.0b5$$' ${APPDEF}/Netscape || \
+		grep -q '\.version:.*3\.0b5a$$' ${APPDEF}/Netscape || \
 			rm ${APPDEF}/Netscape; \
 	fi
 	if [ ! -f ${APPDEF}/Netscape ] ; then \
