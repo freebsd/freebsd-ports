@@ -64,7 +64,7 @@ do-install:	#
 		${ECHO} "===>   therein and incorporate them to your apache.conf." ; \
 		${ECHO} "===>   Creating rc startup file for Zope-${PORTVERSION}..." ; \
 		${SED} -e "s|%%ZOPEBASEDIR%%|${ZOPEBASEDIR}|g" -e "s|%%CGI_BIN_DIR%%|${CGI_BIN_DIR}|g" \
-			< ${FILESDIR}/zope.sh.in > ${PREFIX}/etc.rc.d/zope.sh; \
+			< ${FILESDIR}/zope.sh.in > ${PREFIX}/etc/rc.d/zope.sh; \
 		${CHMOD} ug+x,o-rwx ${PREFIX}/etc/rc.d/zope.sh ; \
 		${ECHO} "===>  Done with ${PREFIX}/etc/rc.d/zope.sh." ; \
 		${CAT} ${FILESDIR}/Message ; \
