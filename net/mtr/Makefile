@@ -7,6 +7,7 @@
 
 PORTNAME=	mtr
 PORTVERSION=	0.45
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		ftp://ftp.netsw.org/net/ip/audit/packets/ \
@@ -17,14 +18,14 @@ MAINTAINER=	billf@FreeBSD.org
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 WANT_GTK=	yes
-#WANT_IPV6=	yes
+WANT_IPV6=	yes
 
 MAN8=	mtr.8
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400014 && defined(WANT_IPV6)
-PATCHFILES=	mtr-044-v6-20011212.diff.gz
+PATCHFILES=	mtr-045-v6-20020207.diff.gz
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 PATCH_DIST_STRIP=	-p1
 
@@ -39,6 +40,11 @@ USE_GTK=	yes
 .else
 CONFIGURE_ARGS+=--without-gtk
 .endif
+
+post-patch:
+	@${TOUCH} ${WRKSRC}/aclocal.m4
+	@${TOUCH} ${WRKSRC}/stamp-h.in
+	@${TOUCH} ${WRKSRC}/img/Makefile.in
 
 do-install:
 	${INSTALL} -c -s -m 4755 -o root -g wheel ${WRKSRC}/mtr ${PREFIX}/sbin
