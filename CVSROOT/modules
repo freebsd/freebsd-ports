@@ -9045,6 +9045,7 @@ xwpl		ports/math/xwpl
 xwrits		ports/deskutils/xwrits
 xxdiff		ports/textproc/xxdiff
 xxgdb		ports/devel/xxgdb
+xxl		ports/devel/xxl
 xzgv		ports/graphics/xzgv
 xzip		ports/games/xzip
 xzoom		ports/x11/xzoom
