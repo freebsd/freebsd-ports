@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sodipodi
-PORTVERSION=	0.18.2
+PORTVERSION=	0.19
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,10 +15,9 @@ MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		glade.4:${PORTSDIR}/devel/libglade \
-		gnomeprint.9:${PORTSDIR}/print/gnomeprint \
-		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.18
+		gnomeprint.12:${PORTSDIR}/print/gnomeprint \
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
+		bonobo.2:${PORTSDIR}/devel/bonobo
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
@@ -26,10 +25,16 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome \
-		--without-bonobo
+		--datadir=${PREFIX}/share/gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GTK_CONFIG="${GTK_CONFIG}" \
 		LIBS="-L${LOCALBASE}/lib"
+
+pre-patch:
+	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
+		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
+		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
 .include <bsd.port.mk>
