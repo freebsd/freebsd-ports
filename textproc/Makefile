@@ -140,6 +140,7 @@
     SUBDIR += py-csv
     SUBDIR += py-expat
     SUBDIR += py-martel
+    SUBDIR += py-sgrep
     SUBDIR += py-trex
     SUBDIR += py-xml
     SUBDIR += rand
