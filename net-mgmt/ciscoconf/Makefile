@@ -8,7 +8,8 @@
 PORTNAME=	ciscoconf
 PORTVERSION=	1.1
 CATEGORIES=	net
-MASTER_SITES=	http://www.automagic.org/~jabley/
+MASTER_SITES=	http://buffoon.automagic.org/dist/ \
+		http://maggie.automagic.org/dist/
 
 MAINTAINER=	jabley@automagic.org
 
