@@ -1,19 +1,19 @@
 # New ports collection makefile for:	SCREEM
-# Version required:	0.1.92
+# Version required:	0.2.1
 # Date created:		05 Nov 1999
 # Whom:			Will Andrews <andrews@technologist.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	screem-0.1.92
+DISTNAME=	screem-0.2.1
 CATEGORIES=	www
-MASTER_SITES=	http://www.screem.org/src/
+MASTER_SITES=	ftp://download.sourceforge.net/pub/sourceforge/screem/ \
+		http://www.screem.org/src/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
-LIB_DEPENDS=	glade.3:${PORTSDIR}/devel/libglade \
-		pthread.13:${PORTSDIR}/devel/pth-devel
+LIB_DEPENDS=	glade.3:${PORTSDIR}/devel/libglade
 
 LIBGLADE_CONFIG?=	${LOCALBASE}/bin/libglade-config
 GNU_CONFIGURE=	yes
