@@ -10,6 +10,17 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20050325:
+AUTHOR: jdp@FreeBSD.org
+  The CVSup port has been upgraded with a patch to correct the
+  handling of the "refuse" file for files that are in the CVS Attic.
+  This solves a problem some people were having, where CVSup would
+  delete their ports/INDEX* files even though the files were listed
+  in the "refuse" file.  The bug fix is in the cvsupd server, so
+  mirror sites  must upgrade their servers in order for this fix to
+  help.  Meanwhile, adding "ports/Attic/INDEX*" to the refuse file
+  serves as a work-around.
+
 20050321:
 AUTHOR: kwm@FreeBSD.org
   The gstreamer-plugins gconf dependencie moved to its own port in devel.
