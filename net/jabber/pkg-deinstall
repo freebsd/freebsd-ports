@@ -55,13 +55,13 @@ fi
 
 export PATH=/bin:/usr/bin:/usr/sbin
 
-user=jserver
-group=jserver
+user=jabber
+group=jabber
 
-if ps -axc | grep -q jserver; then
-    if yesno "There are some jserver processes running.  Shall I kill them" y
+if ps -axc | grep -q jabberd; then
+    if yesno "There are some jabberd processes running.  Shall I kill them" y
     then
-	killall jserver
+	killall jabberd
 	sleep 2
     else
 	echo "OK ... I hope you know what you are doing."

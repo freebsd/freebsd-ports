@@ -107,9 +107,9 @@ EOF
 	exit 1
     fi
 
-    user=jserver
-    group=jserver
-    spooldir="/var/jspool"
+    user=jabber
+    group=jabber
+    spooldir="/var/spool/jabber"
     etcdir=${PREFIX:-$PKG_PREFIX}/etc
 
     echo ""
@@ -124,33 +124,33 @@ EOF
     chown -R ${user}:${group} ${spooldir}
     chmod -R go= ${spooldir}
 
-    if [ ! -f ${etcdir}/jserver.xml ]; then
-	echo "Creating \"${etcdir}/jserver.xml\"."
-	cp -p ${etcdir}/jserver.xml.default ${etcdir}/jserver.xml
+    if [ ! -f ${etcdir}/jabber.xml ]; then
+	echo "Creating \"${etcdir}/jabber.xml\"."
+	cp -p ${etcdir}/jabber.xml.sample ${etcdir}/jabber.xml
     fi
 
     echo "Fixing config files ownerships and modes."
-    chown root:${group} ${etcdir}/jserver.xml ${etcdir}/jserver.xml.default
-    chmod 640 ${etcdir}/jserver.xml ${etcdir}/jserver.xml.default
+    chown root:${group} ${etcdir}/jabber.xml ${etcdir}/jabber.xml.sample
+    chmod 640 ${etcdir}/jabber.xml ${etcdir}/jabber.xml.sample
 
-    if [ ! -f /var/log/jserver.log ]; then
-	echo "Creating \"/var/log/jserver.log\"."
-	cp /dev/null /var/log/jserver.log
+    if [ ! -f /var/log/jabber.log ]; then
+	echo "Creating \"/var/log/jabber.log\"."
+	cp /dev/null /var/log/jabber.log
     fi
 
-    if [ ! -f /var/log/jserver.error ]; then
-	echo "Creating \"/var/log/jserver.error\"."
-	cp /dev/null /var/log/jserver.error
+    if [ ! -f /var/log/jabber.error ]; then
+	echo "Creating \"/var/log/jabber.error\"."
+	cp /dev/null /var/log/jabber.error
     fi
 
-    if [ ! -f /var/log/jserver_packet.log ]; then
-	echo "Creating \"/var/log/jserver_packet.log\"."
-	cp /dev/null /var/log/jserver_packet.log
+    if [ ! -f /var/log/jabber.record ]; then
+	echo "Creating \"/var/log/jabber.record\"."
+	cp /dev/null /var/log/jabber.record
     fi
 
     echo "Fixing log files ownerships and modes."
-    chown ${user}:${group} /var/log/jserver.log /var/log/jserver.error /var/log/jserver_packet.log
-    chmod 600 /var/log/jserver.log /var/log/jserver.error /var/log/jserver_packet.log
+    chown ${user}:${group} /var/log/jabber.log /var/log/jabber.error /var/log/jabber.record
+    chmod 640 /var/log/jabber.log /var/log/jabber.error /var/log/jabber.record
 
     ;;
 esac

@@ -1,27 +1,26 @@
 #! /bin/sh
 
-if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/jserver\.sh\$"); then
+if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/jabberd\.sh\$"); then
     echo "$0: Cannot determine the PREFIX" >&2
     exit 1
 fi
-user=jserver
+user=jabber
 rundir=/tmp
-out=${rundir}/jserver.out
+out=/var/log/jabber.log
+hostname=`/bin/hostname`
 
 export PATH=/bin:/usr/bin:${PREFIX}/bin
 umask 077
 
-test -x ${PREFIX}/bin/jserver || exit 1
-echo -n " jserver"
+test -x ${PREFIX}/bin/jabberd || exit 1
+echo -n " jabberd"
 cd ${rundir} || exit
 
 arg=${1:-start}
 case $arg in
 start)
-    su -f -m ${user} -c \
-	"jserver" \
-	>>${out} 2>&1 &;;
+    su -f -m ${user} -c "jabberd -h ${hostname} -c ${PREFIX}/etc/jabber.xml" >${out} 2>&1 &;;
 
 stop)
-    killall jserver;;
+    killall jabberd;;
 esac

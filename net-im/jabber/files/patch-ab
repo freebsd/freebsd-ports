@@ -1,19 +1,22 @@
---- src/Makefile.in.orig	Mon May  1 19:47:49 2000
-+++ src/Makefile.in	Wed May 17 17:05:17 2000
-@@ -442,14 +442,8 @@
+--- Makefile.orig	Sun Jan 21 05:32:48 2001
++++ Makefile	Sun Feb 11 17:03:13 2001
+@@ -14,7 +14,18 @@
+ single: single-recursive
  
+ install:
+-	printf "\n\nNo actual make install, you just run it out of the directory!\n"
++	install -c jabberd/jabberd ${PREFIX}/bin
++	install -c jabber.xml ${PREFIX}/etc/jabber.xml.sample
++	install -d ${PREFIX}/lib/jabber/jsm
++	install -c jsm/jsm.so ${PREFIX}/lib/jabber/jsm
++	install -d ${PREFIX}/lib/jabber/xdb_file
++	install -c xdb_file/xdb_file.so ${PREFIX}/lib/jabber/xdb_file
++	install -d ${PREFIX}/lib/jabber/pthsock
++	install -c pthsock/pthsock_client.so ${PREFIX}/lib/jabber/pthsock
++	install -d ${PREFIX}/lib/jabber/dnsrv
++	install -c dnsrv/dnsrv.so ${PREFIX}/lib/jabber/dnsrv
++	install -d ${PREFIX}/lib/jabber/dialback
++	install -c dialback/dialback.so ${PREFIX}/lib/jabber/dialback
  
- install-data-local:
--	$(SH) if test ! -f $(sysconfdir)/jserver.xml; then \
--	$(mkinstalldirs) $(sysconfdir); \
--	$(INSTALL_DATA) $(top_builddir)/src/jserver.xml $(sysconfdir)/jserver.xml; \
--	else \
--		echo "You already have a jserver.xml installed, not overwriting"; \
--	fi
--	$(mkinstalldirs) $(prefix)/var/jspool
--	$(mkinstalldirs) $(prefix)/var/log
-+	$(mkinstalldirs) $(sysconfdir);
-+	$(INSTALL_DATA) $(top_builddir)/src/jserver.xml $(sysconfdir)/jserver.xml.default
+ all-local:
  
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.

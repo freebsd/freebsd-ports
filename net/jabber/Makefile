@@ -1,25 +1,28 @@
-# New ports collection makefile for:	jabber-transport
-# Date created:			7 April 2000
-# Whom:				Kostya Lukin <lukin@okbmei.msk.su>
+# New ports collection makefile for:	jabber
+# Date created:			5 February 2001
+# Whom:				joe
 #
 # $FreeBSD$
 #
 
-PORTNAME=	jabber-transport
-PORTVERSION=	1.0
+PORTNAME=	jabber
+PORTVERSION=	1.4
 CATEGORIES=	net
-MASTER_SITES=	http://download.jabber.org/dists/1.0/final/
+MASTER_SITES=	http://download.jabber.org/dists/1.4/final/
 
-MAINTAINER=	lukin@okbmei.msk.su
+MAINTAINER=	joe@FreeBSD.org
 
-LIB_DEPENDS=	etherx.1:${PORTSDIR}/net/libetherx
+BUILD_DEPENDS=	pth:${PORTSDIR}/devel/pth \
+		libxode-config:${PORTSDIR}/textproc/libxode \
+		jabber-config:${PORTSDIR}/net/libjabber
 
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
 rc=${PREFIX}/etc/rc.d
 
 post-install:
 	@PREFIX=${PREFIX} ${PERL5} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${INSTALL_SCRIPT} ${FILESDIR}/jserver.sh ${rc}
+	@${INSTALL_SCRIPT} ${FILESDIR}/jabberd.sh ${rc}
 
 .include <bsd.port.mk>

@@ -1,11 +1,11 @@
---- configure.orig	Sun Apr 30 20:32:29 2000
-+++ configure	Sun Apr 30 20:33:08 2000
-@@ -2321,7 +2321,7 @@
- #define $ac_tr_lib 1
- EOF
+--- jabber.xml.orig	Sat Feb  3 22:46:56 2001
++++ jabber.xml	Sun Feb 11 01:19:01 2001
+@@ -576,7 +576,7 @@
+   <!--
+   This specifies the file to store the pid of the process in.
+   -->
+-  <pidfile>./jabber.pid</pidfile>
++  <pidfile>/var/tmp/jabber.pid</pidfile>
  
--  LIBS="-lpth $LIBS"
-+  LIBS="-L$prefix/lib -lpth $LIBS"
  
- else
-   echo "$ac_t""no" 1>&6
+ </jabber>
