@@ -3,8 +3,8 @@ enables the use of CJK scripts (Chinese/Japanese/Korean) in various
 encodings.
 
 =====
-This port installs full Chinese BIG5 support, including TTF fonts. For
+This port installs full Chinese BIG5/GB support, including TTF fonts. For
 other Asian languages, you have to supply those TTF fonts, then manually
 modify relative settings.
 
-J.T. Jang <jtjang@gcn.net.tw>
+Keith Jang <keith@freebsd.sinica.edu.tw>
