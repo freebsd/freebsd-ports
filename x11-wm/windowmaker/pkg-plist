@@ -271,6 +271,7 @@ share/WindowMaker/wmmacros
 share/WindowMaker/xtree.dat
 share/locale/bg/LC_MESSAGES/WPrefs.mo
 share/locale/bg/LC_MESSAGES/WindowMaker.mo
+share/locale/cs/LC_MESSAGES/WINGs.mo
 share/locale/cs/LC_MESSAGES/WPrefs.mo
 share/locale/cs/LC_MESSAGES/WindowMaker.mo
 share/locale/da/LC_MESSAGES/WindowMaker.mo
@@ -279,6 +280,7 @@ share/locale/de/LC_MESSAGES/WindowMaker.mo
 share/locale/el/LC_MESSAGES/WindowMaker.mo
 share/locale/es/LC_MESSAGES/WPrefs.mo
 share/locale/es/LC_MESSAGES/WindowMaker.mo
+share/locale/et/LC_MESSAGES/WPrefs.mo
 share/locale/et/LC_MESSAGES/WindowMaker.mo
 share/locale/fi/LC_MESSAGES/WPrefs.mo
 share/locale/fi/LC_MESSAGES/WindowMaker.mo
