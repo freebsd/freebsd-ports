@@ -1,22 +1,21 @@
 # New ports collection makefile for:    arpwatch
 # Version required:     2.0.2a1
 # Date created:         March 24 1997
-# Whom:                 Brian Somers <brian@awfulhak.org>
+# Whom:                 Brian Somers <brian@Awfulhak.org>
 #
-# $Id: Makefile,v 1.7 1997/08/01 05:34:03 obrien Exp $
+# $Id: Makefile,v 1.8 1998/07/02 10:45:35 vanilla Exp $
 #
 
-DISTNAME=	arpwatch-2.0.2
+DISTNAME=	arpwatch-2.1a4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ee.lbl.gov/ \
 		ftp://ftp.cso.uiuc.edu/pub/security/coast/unix/arpwatch/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	brian@awfulhak.org
+MAINTAINER=	brian@Awfulhak.org
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--quiet
-MAKE_FLAGS=	CCOPT="${CFLAGS} -DPATH_SENDMAIL=\\\"/usr/sbin/sendmail\\\""
 INSTALL_TARGET=	install install-man
 MAN8=		arpwatch.8 arpsnmp.8
 
