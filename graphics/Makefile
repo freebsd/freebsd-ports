@@ -363,17 +363,12 @@
     SUBDIR += tifmerge
     SUBDIR += tkxanim
     SUBDIR += togl
-    SUBDIR += tosvcd
     SUBDIR += totem
     SUBDIR += transcode
     SUBDIR += truevision
     SUBDIR += txtmerge
     SUBDIR += urt
     SUBDIR += utah-glx
-    SUBDIR += vcdgear
-    SUBDIR += vcdimager
-    SUBDIR += vcdpad
-    SUBDIR += vcdtools
     SUBDIR += vcg
     SUBDIR += vertex
     SUBDIR += vid
