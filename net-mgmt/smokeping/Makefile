@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smokeping
-PORTVERSION=	1.23
+PORTVERSION=	1.24
 CATEGORIES=	net www
 MASTER_SITES=	http://people.ee.ethz.ch/~oetiker/webtools/smokeping/pub/
 
@@ -24,7 +24,8 @@ RUN_DEPENDS=	rrdtool:${PORTSDIR}/net/rrdtool \
 
 USE_PERL5=	yes
 
-MAN1=		Curl.pm.1 DNS.pm.1 EchoPing.pm.1 EchoPingChargen.pm.1 EchoPingDiscard.pm.1 \
+MAN1=		CiscoRTTMonDNS.pm.1 CiscoRTTMonEchoICMP.pm.1 CiscoRTTMonTcpConnect.pm.1 \
+		Curl.pm.1 DNS.pm.1 EchoPing.pm.1 EchoPingChargen.pm.1 EchoPingDiscard.pm.1 \
 		EchoPingHttp.pm.1 EchoPingHttps.pm.1 EchoPingIcp.pm.1 EchoPingSmtp.pm.1 \
 		FPing.pm.1 FPing6.pm.1 IOSPing.pm.1 ParseConfig.pm.1 RemoteFPing.pm.1 \
 		Smokeping.pm.1 base.pm.1 basefork.pm.1 basevars.pm.1 smokeping.1 \
@@ -33,7 +34,8 @@ MAN1=		Curl.pm.1 DNS.pm.1 EchoPing.pm.1 EchoPingChargen.pm.1 EchoPingDiscard.pm.
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 DOC1=		CHANGES CONTRIBUTORS COPYING COPYRIGHT README TODO
-DOC2=		Curl.pm DNS.pm EchoPing.pm EchoPingChargen.pm EchoPingDiscard.pm \
+DOC2=		CiscoRTTMonDNS.pm CiscoRTTMonEchoICMP.pm CiscoRTTMonTcpConnect.pm \
+		Curl.pm DNS.pm EchoPing.pm EchoPingChargen.pm EchoPingDiscard.pm \
 		EchoPingHttp.pm EchoPingHttps.pm EchoPingIcp.pm EchoPingSmtp.pm \
 		FPing.pm FPing6.pm IOSPing.pm ParseConfig.pm RemoteFPing.pm Smokeping.pm \
 		base.pm basefork.pm basevars.pm smokeping.cgi \
@@ -57,6 +59,10 @@ pre-patch:
 		s|imgurl   = ../.simg|imgurl   = /smokeimg|; \
 		' \
 		${WRKSRC}/bin/smokeping ${WRKSRC}/htdocs/smokeping.cgi ${WRKSRC}/etc/config.dist
+	@${PERL} -pi -e ' \
+		s|/usr/bin|${PREFIX}/bin|g; \
+		' \
+		${WRKSRC}/lib/probes/*
 	@${PERL} -p -e ' \
 		s|%%PREFIX%%|${PREFIX}|g; \
 		' \
@@ -65,6 +71,7 @@ pre-patch:
 do-build:
 	@${RM} ${WRKSRC}/lib/BER.pm
 	@${RM} ${WRKSRC}/lib/SNMP_*.pm
+	@${RM} ${WRKSRC}/lib/probes/patch
 
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
@@ -72,23 +79,23 @@ pre-install:
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/smokeping ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-.for file in ${MAN1}
-	@${INSTALL_MAN} ${WRKSRC}/doc/${file} ${PREFIX}/man/man1
+.for FILE in ${MAN1}
+	@${INSTALL_MAN} ${WRKSRC}/doc/${FILE} ${PREFIX}/man/man1
 .endfor
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOC1}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for FILE in ${DOC1}
+	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
-.for file in ${DOC2}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${file}.txt  ${DOCSDIR}
+.for FILE in ${DOC2}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${FILE}.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${FILE}.txt  ${DOCSDIR}
 .endfor
 .endif
 	@${MKDIR} ${PREFIX}/etc/smokeping
-.for file in ${ETC1}
-	@${INSTALL_DATA} ${WRKSRC}/etc/${file}.dist ${PREFIX}/etc/smokeping
-	@if [ ! -f ${PREFIX}/etc/smokeping/${file} ]; then \
-		${INSTALL_DATA} ${WRKSRC}/etc/${file}.dist ${PREFIX}/etc/smokeping/${file} ; \
+.for FILE in ${ETC1}
+	@${INSTALL_DATA} ${WRKSRC}/etc/${FILE}.dist ${PREFIX}/etc/smokeping
+	@if [ ! -f ${PREFIX}/etc/smokeping/${FILE} ]; then \
+		${INSTALL_DATA} ${WRKSRC}/etc/${FILE}.dist ${PREFIX}/etc/smokeping/${FILE} ; \
 	fi
 .endfor
 	@${MKDIR} ${PREFIX}/smokeping

@@ -18,6 +18,12 @@ etc/smokeping/config-echoping.dist
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/CiscoRTTMonDNS.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/CiscoRTTMonDNS.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/CiscoRTTMonEchoICMP.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/CiscoRTTMonEchoICMP.pm.txt
+%%PORTDOCS%%%%DOCSDIR%%/CiscoRTTMonTcpConnect.pm.html
+%%PORTDOCS%%%%DOCSDIR%%/CiscoRTTMonTcpConnect.pm.txt
 %%PORTDOCS%%%%DOCSDIR%%/Curl.pm.html
 %%PORTDOCS%%%%DOCSDIR%%/Curl.pm.txt
 %%PORTDOCS%%%%DOCSDIR%%/DNS.pm.html
@@ -68,6 +74,10 @@ smokeping/htdocs/smokeping.cgi
 smokeping/lib/ISG/ParseConfig.pm
 smokeping/lib/ISG/VppGateway.pm
 smokeping/lib/Smokeping.pm
+smokeping/lib/ciscoRttMonMIB.pm
+smokeping/lib/probes/CiscoRTTMonDNS.pm
+smokeping/lib/probes/CiscoRTTMonEchoICMP.pm
+smokeping/lib/probes/CiscoRTTMonTcpConnect.pm
 smokeping/lib/probes/Curl.pm
 smokeping/lib/probes/DNS.pm
 smokeping/lib/probes/EchoPing.pm
