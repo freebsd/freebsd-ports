@@ -2,3 +2,4 @@ MD5 (djbdns-1.05.tar.gz) = 3147c5cd56832aa3b41955c7a51cbeb2
 MD5 (djbdns-1.05-man-20021211.tar.gz) = 0c927a369a38eac9c50f3d338aa2ed58
 MD5 (djbdns-1.05-test14.diff.bz2) = 52bec93d7ce6226281082367e49157d3
 MD5 (patch-dnscache-dumpcache-v4.txt) = 61441dec12dd627a7fea7c3059cc2542
+MD5 (libdjbdns-1.05-pre1.patch) = 81e179f52711dcc18390bb088311175d
