@@ -1,0 +1,11 @@
+dnstop is a libpcap application (ala tcpdump) that displays various
+tables of DNS traffic on your network. Currently dnstop displays
+tables of:
+
+    * Source IP addresses
+    * Destination IP addresses
+    * Query types
+    * Top level domains
+    * Second level domains 
+
+WWW: http://dnstop.measurement-factory.com/
