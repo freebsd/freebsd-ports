@@ -1,5 +1,5 @@
---- configure.in.orig	Tue Feb 19 16:42:08 2002
-+++ configure.in	Mon Mar 11 14:50:18 2002
+--- ../config_office/configure.in.orig	Tue Feb 19 16:42:08 2002
++++ ../config_office/configure.in	Wed Mar 13 20:26:19 2002
 @@ -121,6 +121,12 @@
  
                            Usage: --enable-check-only=yes
@@ -80,7 +80,7 @@
  # Executing the set_soenv script to setup the environment variables.
  if test -z "$enable_check_only"; then
 -   './set_soenv' $COMPATH $_gcc_include_path $_gxx_include_path $JAVA_HOME $TCSH $PERL $x_libraries $x_includes $_LOCAL_SOLENV $_LOCAL_SOLVER $upd $CYGWIN $STLPORT4 $enable_xprint $with_lang $with_asm_home $with_unzip_home $WITH_MINGWIN $USE_GCC3
-+   './set_soenv' $COMPATH $_gcc_include_path $_gxx_include_path $JAVA_HOME $TCSH $PERL $x_libraries $x_includes $_LOCAL_SOLENV $_LOCAL_SOLVER $upd $CYGWIN $STLPORT4 $enable_xprint $with_lang $with_asm_home $with_unzip_home $WITH_MINGWIN $USE_GCC3 $with_os_version $PTHREAD_CFLAGS $PTHREAD_LIBS
++   './set_soenv' $COMPATH $_gcc_include_path $_gxx_include_path $JAVA_HOME $TCSH $PERL $x_libraries $x_includes $_LOCAL_SOLENV $_LOCAL_SOLVER $upd $CYGWIN $STLPORT4 $enable_xprint $with_lang $with_asm_home $with_unzip_home $WITH_MINGWIN $USE_GCC3 $with_os_version $PTHREAD_CFLAGS $PTHREAD_LIBS $CC $CXX
  else
     echo
     echo Test Complete
