@@ -1124,18 +1124,26 @@ jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/BoxLayoutDemo-left2.gi
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/BoxLayoutDemo-right.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/BoxLayoutDemo-wacky.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/BoxLayoutDemo-wacky2.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/Form.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/GraphPaperTest.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/Grid.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/TabWindow.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/borderlayout.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/boxlayout.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/cardlayout.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/flowlayout.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/formHorizSprings.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/gridbagbig.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/gridbagbigA.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/gridbaglayout.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/gridbagnofill.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/gridbagnoweightx.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/gridlayout.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/sw1-initial.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/sw1-resized.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/sw2-initial.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/sw2-resized.gif
+jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/layout/sw3-initial.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/mini/10LunarPhases-open.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/mini/11multPanels.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/mini/12borders.gif
@@ -1246,7 +1254,6 @@ jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/start/ConverterWindows.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/start/HelloSwingApplet.gif
 jdk%%VERSION%%/docs/books/tutorial/figures/uiswing/start/SwingApplication.gif
 jdk%%VERSION%%/docs/books/tutorial/forms/sendusmail.html
-jdk%%VERSION%%/docs/books/tutorial/forms/survey.html
 jdk%%VERSION%%/docs/books/tutorial/getStarted/QandE-1dot1/FirstClass.java
 jdk%%VERSION%%/docs/books/tutorial/getStarted/QandE-1dot1/SecondClass.java
 jdk%%VERSION%%/docs/books/tutorial/getStarted/QandE-1dot1/Useless.java
@@ -2794,6 +2801,11 @@ jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/border.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/box.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/card.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/custom.html
+jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/example-1dot4/Form.java
+jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/example-1dot4/Grid.java
+jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/example-1dot4/SpringWindow1.java
+jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/example-1dot4/SpringWindow2.java
+jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/example-1dot4/SpringWindow3.java
 jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/example-swing/AlignmentDemo.java
 jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/example-swing/AppletButton.java
 jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/example-swing/BLDComponent.java
@@ -2823,6 +2835,7 @@ jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/gridbagExample.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/index.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/none.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/problems.html
+jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/spring.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/using.html
 jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/CelsiusConverter.java
 jdk%%VERSION%%/docs/books/tutorial/uiswing/mini/example-1dot3/CelsiusConverter2.java
@@ -3017,6 +3030,7 @@ jdk%%VERSION%%/docs/books/tutorial/uiswing/start/swingTour.html
 @dirrm jdk%%VERSION%%/docs/books/tutorial/uiswing/mini
 @dirrm jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/example-swing/images
 @dirrm jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/example-swing
+@dirrm jdk%%VERSION%%/docs/books/tutorial/uiswing/layout/example-1dot4
 @dirrm jdk%%VERSION%%/docs/books/tutorial/uiswing/layout
 @dirrm jdk%%VERSION%%/docs/books/tutorial/uiswing/events/example-swing/images
 @dirrm jdk%%VERSION%%/docs/books/tutorial/uiswing/events/example-swing
@@ -3329,3 +3343,4 @@ jdk%%VERSION%%/docs/books/tutorial/uiswing/start/swingTour.html
 @dirrm jdk%%VERSION%%/docs/books/tutorial
 @dirrm jdk%%VERSION%%/docs/books
 @dirrm jdk%%VERSION%%/docs
+@unexec rmdir %D/jdk%%VERSION%% 2>/dev/null || true
