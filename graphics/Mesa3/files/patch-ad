@@ -1,0 +1,20 @@
+--- Makefile.in	2000/08/22 07:27:14	1.1
++++ Makefile.in	2000/08/22 07:29:15
+@@ -92,7 +92,7 @@
+ 
+ @NEED_GLUT_TRUE@SUB_GLUT = src-glut
+ 
+-SUBDIRS = include src src-glu $(SUB_GLUT) $(DEMO_DIRS) util
++SUBDIRS = $(INCLUDE_GL) $(SUB_GL) src-glu $(SUB_GLUT) $(DEMO_DIRS) util
+ 
+ EXTRA_DIST = docs/INSTALL docs/INSTALL.GNU docs/CONFIG docs/IAFA-PACKAGE 	docs/RELNOTES docs/VERSIONS docs/CONFORM  docs/COPYING 	docs/COPYRIGHT docs/README docs/README.3DFX docs/README.BEOS 	docs/README.GGI docs/README.MINGW32 docs/README.MITS 	docs/README.QUAKE docs/README.THREADS docs/README.X11 	images/girl.rgb images/reflect.rgb images/tile.rgb
+ 
+@@ -110,7 +110,7 @@
+ 
+ TAR = gtar
+ GZIP_ENV = --best
+-DIST_SUBDIRS =  include src src-glu src-glut book demos samples xdemos \
++DIST_SUBDIRS =  $(INCLUDE_GL) $(SUB_GL) src-glu src-glut book demos samples xdemos \
+ util
+ all: all-redirect
+ .SUFFIXES:
