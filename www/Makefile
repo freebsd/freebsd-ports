@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.117 1999/01/28 23:37:11 billf Exp $
+# $Id: Makefile,v 1.118 1999/02/03 20:42:45 billf Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -80,6 +80,7 @@
     SUBDIR += swish-e
     SUBDIR += tidy
     SUBDIR += transproxy
+    SUBDIR += urlget
     SUBDIR += vrweb
     SUBDIR += w3
     SUBDIR += w3c-httpd
@@ -88,6 +89,7 @@
     SUBDIR += web500gw
     SUBDIR += webalizer
     SUBDIR += webcopy
+    SUBDIR += webcrawl
     SUBDIR += webglimpse
     SUBDIR += weblint
     SUBDIR += webstone
