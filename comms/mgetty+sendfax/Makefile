@@ -7,7 +7,7 @@
 
 PORTNAME=	mgetty
 PORTVERSION=	1.1.30.12.16
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms
 MASTER_SITES=	ftp://alpha.greenie.net/pub/mgetty/source/1.1/
 DISTNAME=	mgetty1.1.30-Dec16
@@ -86,6 +86,8 @@ post-install:
 		${PREFIX}/etc/mgetty+sendfax/faxrunq.config.dist
 	@${CP} ${PREFIX}/etc/mgetty+sendfax/login.config \
 		${PREFIX}/etc/mgetty+sendfax/login.config.dist
+	${INSTALL_DATA} -m 600 ${WRKSRC}/voice/voice.conf-dist \
+		${PREFIX}/etc/mgetty+sendfax/voice.conf.dist
 	@${TAR}  -cf - -C ${WRKSRC} samples | ${TAR}  -xf - -C ${PREFIX}/lib/mgetty+sendfax/
 	@install-info ${PREFIX}/info/mgetty.info ${PREFIX}/info/dir
 .if !defined(BATCH)

@@ -48,6 +48,9 @@ etc/mgetty+sendfax/faxspool.rules.sample
 @unexec if cmp -s %D/etc/mgetty+sendfax/login.config %D/etc/mgetty+sendfax/login.config.dist; then rm -f %D/etc/mgetty+sendfax/login.config; fi
 etc/mgetty+sendfax/login.config.dist
 @exec if [ ! -f %D/etc/mgetty+sendfax/login.config ]; then cp %B/%f %D/etc/mgetty+sendfax/login.config; fi
+@unexec if cmp -s %D/etc/mgetty+sendfax/voice.conf %D/etc/mgetty+sendfax/voice.conf.dist; then rm -f %D/etc/mgetty+sendfax/voice.conf; fi
+etc/mgetty+sendfax/voice.conf.dist
+@exec if [ ! -f %D/etc/mgetty+sendfax/voice.conf ]; then cp %B/%f %D/etc/mgetty+sendfax/voice.conf; fi
 @unexec install-info --delete %D/info/mgetty.info %D/info/dir
 info/mgetty.info
 @exec install-info %D/info/mgetty.info %D/info/dir
