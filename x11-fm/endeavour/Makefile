@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	endeavour
-PORTVERSION= 	1.07
+PORTVERSION= 	1.12
 CATEGORIES=	x11-fm
 MASTER_SITES=	ftp://fox.mit.edu/pub/xsw/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -17,10 +17,11 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib \
 		Xpm.4:${PORTSDIR}/graphics/xpm
 
-USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/endeavour
 
+USE_X_PREFIX=	yes
+
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/endeavour ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/endeavour ${PREFIX}/bin
 
 .include <bsd.port.mk>
