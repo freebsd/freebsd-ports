@@ -3,7 +3,7 @@
 # Date created:		10 June 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.15 1998/03/11 02:58:12 vanilla Exp $
+# $Id: Makefile,v 1.16 1998/03/12 01:27:59 vanilla Exp $
 #
 
 DISTNAME=	Imlib-1.1
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.enlightenment.org/pub/imlib/TAR/ \
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
-LIB_DEPENDS=	png\\.0\\.:${PORTSDIR}/graphics/png \
+LIB_DEPENDS=    png\\.2\\.:${PORTSDIR}/graphics/png \
 		jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg \
 		tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34 \
 		gif\\.3\\.:${PORTSDIR}/graphics/giflib
