@@ -36,6 +36,9 @@ bin/pyrexc
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/TypeSlots.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/TypeSlots.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/TypeSlots.pyo
+%%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Version.py
+%%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Version.pyc
+%%PYTHON_SITELIBDIR%%/Pyrex/Compiler/Version.pyo
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/__init__.py
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Pyrex/Compiler/__init__.pyo
