@@ -8,13 +8,11 @@
 
 DISTNAME=		ptoc-3.41
 CATEGORIES=		lang
-MASTER_SITES=		${MASTER_SITE_SUNSITE} \
-			http://www.ispras.ru/~knizhnik/
-MASTER_SITE_SUBDIR=	devel/lang/pascal
+MASTER_SITES=		ftp://ftp.netsw.org/netsw/SoftEng/Lang/Pascal/ \
+			ftp://ftp.u-aizu.ac.jp/pub/lang/netsw/Pascal/ \
+			ftp://ftp.ecrc.net/pub/netsw/SoftEng/Lang/Pascal/
 
 MAINTAINER=		andy@icc.surw.chel.su
-
-BROKEN= 'ptoc_3.34.tar.gz is all that is on the distsite'
 
 MAKEFILE=		makefile
 

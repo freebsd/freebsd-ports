@@ -1,0 +1,246 @@
+--- trnod.cxx.old	Sat Feb 12 17:13:58 2000
++++ trnod.cxx	Sat Feb 12 17:23:33 2000
+@@ -454,7 +454,7 @@
+     if (language_c) { 
+         if (params) { 
+             char* format = "";
+-	    char* newln = (t_read->tag == TKN_READLN) ? "\\n" : "";
++	    char* newln = (t_read->tag == TKN_READLN) ? (char *) "\\n" : (char *) "";
+ 	    expr_node *prm = params->expr; 
+ 
+ 	    l_tkn = params->rpar;
+@@ -612,7 +612,7 @@
+ 	    write_param_node *prm = params->vals; 
+ 
+ 	    l_tkn = params->rpar;
+-	    char* newln = (t_write->tag == TKN_WRITELN) ? "\\n" : "";
++	    char* newln = (t_write->tag == TKN_WRITELN) ? (char *) "\\n" : (char *) "";
+             write_format = NULL;
+ 	    if (prm->type->tag == tp_file) { 
+ 		prm->translate(ctx_value);
+@@ -994,7 +994,7 @@
+     from->translate(ctx_value);
+     from->l_tkn->append(";"); 
+     t_to->set_trans(t_ident->out_text); 
+-    t_to->append(t_to->name->tag == TKN_TO ? " <=" : " >=");  
++    t_to->append(t_to->name->tag == TKN_TO ? (char *) " <=" : (char *) " >=");  
+     till->translate(ctx_value);
+     till->l_tkn->append(";"); 
+     if (t_to->name->tag == TKN_TO) { 
+@@ -1063,11 +1063,11 @@
+     bool body_is_block = 
+ 	body != NULL && body->is_compound() && body->next == NULL;
+ 
+-    t_repeat->set_trans(body_is_block ? "do" : "do {"); 
++    t_repeat->set_trans(body_is_block ? (char *) "do" : (char *) "do {"); 
+     for (stmt_node *stmt = body; stmt != NULL; stmt = stmt->next) { 
+         stmt->translate(ctx); 
+     }
+-    t_until->set_trans(body_is_block ? "while" : "} while"); 
++    t_until->set_trans(body_is_block ? (char *) "while" : (char *) "} while"); 
+     expr->translate(ctx_condition);
+     f_tkn = t_repeat;
+     l_tkn = expr->l_tkn; 
+@@ -1258,7 +1258,7 @@
+ 
+         } else if (var->type->tag == tp_proc) { 
+ 	    if (turbo_pascal && tkn->name->tag == TKN_HALT) {
+-		tkn->set_trans(ctx == ctx_apply ? "exit" : "exit(0)");
++		tkn->set_trans(ctx == ctx_apply ? (char *) "exit" : (char *) "exit(0)");
+ 		return;
+ 	    }
+ 	    proc_tp* prc = (proc_tp*)var->type->get_typedef();
+@@ -1280,8 +1280,8 @@
+ 			if (prm->var->type->tag == tp_file 
+ 			    || prm->var->type->tag == tp_text)
+ 			{
+-			    t = t->append(strcmp(var->in_name->text, "page")
+-					  ? "input" : "output");
++			    t = t->append(strcmp(var->in_name->text, (char *) "page")
++					  ? (char *) "input" : (char *) "output");
+ 			} else { 
+ 			    t = t->append("0");
+ 			}
+@@ -1328,7 +1328,7 @@
+ 
+             if (with != NULL) { 
+ 		f_tkn = tkn->prepend(language_c && with->tag == symbol::s_ref 
+-				     ? "->" : ".")
++				     ? (char *) "->" : (char *) ".")
+ 		    ->prepend(with->out_name->text);
+ 	    }
+ 
+@@ -1744,7 +1744,7 @@
+ 	    t_lbr->set_trans("set::of("); 
+ 	}
+     }
+-    t_rbr->set_trans(items ? ", eos)" : "eos)"); 
++    t_rbr->set_trans(items ? (char *) ", eos)" : (char *) "eos)"); 
+ }
+ 
+ idx_expr_node::idx_expr_node(expr_node* arr, token* t_lbr, expr_node* indices, 
+@@ -2173,7 +2173,7 @@
+       case tn_and:
+         op->set_trans(((left->type && left->type->tag != tp_bool) || 
+ 	    (right->type && right->type->tag != tp_bool) || nological)
+-		      ? "&" : "&&");
++		      ? (char *) "&" : (char *) "&&");
+ 	if (parent_tag != tn_group && parent_tag != tn_and) { 
+ 	    f_tkn = left->f_tkn->prepend("(");
+ 	    l_tkn = right->l_tkn->append(")");
+@@ -2193,12 +2193,12 @@
+ 	if (parent_tag != tn_group) { 
+ 	    f_tkn = left->f_tkn->prepend(left->type && 
+ 			left->type->get_typedef() == &longint_type
+-			    ? "((unsigned long)" : "((cardinal)");
++			    ? (char *) "((unsigned long)" : (char *) "((cardinal)");
+ 	    l_tkn = right->l_tkn->append(")");
+ 	} else { 
+ 	    f_tkn = left->f_tkn->prepend(left->type && 
+ 			left->type->get_typedef() == &longint_type
+-			    ? "(unsigned long)" : "((cardinal)");
++			    ? (char *) "(unsigned long)" : (char *) "((cardinal)");
+ 	} 
+ 	op->set_trans(">>");
+ 	break;
+@@ -2216,14 +2216,14 @@
+ 	}
+ 	op->set_trans(((left->type && left->type->tag != tp_bool) || 
+ 		       (right->type && right->type->tag != tp_bool) || 
+-		       nological) ? "|" : "||");
++		       nological) ? (char *) "|" : (char *) "||");
+         break; 
+       case tn_in:
+         token::disable(left->l_tkn->next, right->f_tkn->prev);
+ 	if (language_c) { 
+             f_tkn = left->f_tkn->prepend(
+ 		        short_set && ((set_tp*)right->type)->is_short_set()
+-                        ? "INSET(" : "inset(");
++                        ? (char *) "INSET(" : (char *) "inset(");
+ 	    left->l_tkn->append(", ");
+ 	    l_tkn = right->l_tkn->append(")");
+ 	} else { 
+@@ -2245,14 +2245,14 @@
+ 	    if (language_c) { 
+ 		if (short_set && ((set_tp*)type)->is_short_set()) {
+ 		    f_tkn = left->f_tkn->prepend(tag == tn_add 
+-						 ? "JOIN(" : tag == tn_sub 
+-						 ? "DIFFERENCE(" 
+-						 : "INTERSECT(");
++						 ? (char *) "JOIN(" : tag == tn_sub 
++						 ? (char *) "DIFFERENCE(" 
++						 : (char *) "INTERSECT(");
+ 		} else { 		    
+ 		    f_tkn = left->f_tkn->prepend(tag == tn_add 
+-						 ? "join(" : tag == tn_sub 
+-						 ? "difference(" 
+-						 : "intersect(");
++						 ? (char *) "join(" : tag == tn_sub 
++						 ? (char *) "difference(" 
++						 : (char *) "intersect(");
+ 		}
+ 		l_tkn = right->l_tkn->append(")");
+ 		token::disable(left->l_tkn->next, right->f_tkn->prev);
+@@ -2290,9 +2290,9 @@
+ 		} 
+ 		else if (ltype->tag == tp_enum || rtype->size <= ltype->size)
+ 		{
+-		    right->f_tkn->prepend(rtype->size == 1 ? "(unsigned char)":
+-					  rtype->size == 2 ? "(unsigned short)"
+-					  : "(unsigned)"); 
++		    right->f_tkn->prepend(rtype->size == 1 ? (char *) "(unsigned char)":
++					  rtype->size == 2 ? (char *) "(unsigned short)"
++					  : (char *) "(unsigned)"); 
+ 		}
+ 	    } else if (((rtype->tag == tp_range && rtype->min_value >= 0) ||
+ 			rtype->tag == tp_enum) &&
+@@ -2305,9 +2305,9 @@
+                 else if (rtype->tag == tp_enum || ltype->size <= rtype->size)
+ 		{
+ 		    f_tkn = left->f_tkn->prepend(
+-					  ltype->size == 1 ? "(unsigned char)":
+-					  ltype->size == 2 ? "(unsigned short)"
+-					  : "(unsigned)"); 
++					  ltype->size == 1 ? (char *) "(unsigned char)":
++					  ltype->size == 2 ? (char *) "(unsigned short)"
++					  : (char *) "(unsigned)"); 
+ 		}
+ 	    }
+ 	}
+@@ -2431,7 +2431,7 @@
+ 	op->set_trans(CMP_OP(tag)); 
+         break; 
+       case tn_not:
+-        op->set_trans(right->type && right->type->tag == tp_bool ? "!" : "~"); 
++        op->set_trans(right->type && right->type->tag == tp_bool ? (char *) "!" : (char *) "~"); 
+         break; 
+     }
+     if ((unsigned(tag - tn_add) <= tn_div - tn_add) && type && type->tag == tp_longint)
+@@ -3388,7 +3388,7 @@
+ 	    }
+ 	}
+     } else { 
+-	f_tkn = ident->prepend(language_c ? "static const " : "const "); 
++	f_tkn = ident->prepend(language_c ? (char *) "static const " : (char *) "const "); 
+ 	enumeration = NULL;
+ 	if (constant->type->tag == tp_string) { 
+ 	    ident->prepend("char ");
+@@ -3731,16 +3731,16 @@
+ 			t = tkn->ident->copy(eltd->f_tkn, eltd->l_tkn);
+ 			if (tp->tag == tp_dynarray) { 
+ 			    tkn->ident->prepend(ctx == ctx_varpar 
+-						? "* " : " const* ");
++						? (char *) "* " : (char *) " const* ");
+ 			} else { 
+ 			    tkn->ident->prepend(ctx == ctx_varpar 
+-						? " " : "  const ");
++						? (char *) " " : (char *) "  const ");
+ 			    tkn->ident->next->copy(tpd->f_tkn, tpd->l_tkn); 
+ 			}
+ 		    } else { 
+ 			t = tkn->ident->prepend(ctx == ctx_varpar
+-						? tp->tag == tp_array || tp->tag == tp_string ? " " : "* "
+-						: tp->tag == tp_array ? " const " : " ")->
++						? tp->tag == tp_array || tp->tag == tp_string ? (char *) " " : (char *) "* "
++						: tp->tag == tp_array ? (char *) " const " : (char *) " ")->
+ 			    copy(tpd->f_tkn, tpd->l_tkn); 
+ 		    }
+ 		} else { 
+@@ -3805,7 +3805,7 @@
+ 		// initialize file structure
+ 		tkn->ident->append(
+ 		    (tp->tag == tp_file || tp->tag == tp_text)
+-		    ? " = VOID_FILE" : " = {0}");
++		    ? (char *) " = VOID_FILE" : (char *) " = {0}");
+ 	    }
+ 	    if (tkn->var->flags & symbol::f_static) { 
+ 		is_static = TRUE;
+@@ -3836,8 +3836,8 @@
+         { 
+ 	    f_tkn = f_tkn->prepend("EXTERN ");
+ 	} else if (scope != NULL) { 
+-	    f_tkn = f_tkn->prepend(scope->tag == TKN_EXTERNAL ? "extern " :
+-				   scope->tag == TKN_STATIC ? "static " : "");
++	    f_tkn = f_tkn->prepend(scope->tag == TKN_EXTERNAL ? (char *) "extern " :
++				   scope->tag == TKN_STATIC ? (char *) "static " : (char *) "");
+ 	}
+         force_semicolon();
+ 	if (is_static) { 
+@@ -4188,7 +4188,7 @@
+     if (qualifiers) { 
+ 	if (is_external) { 
+ 	    f_tkn = f_tkn->prepend(type->is_extern_c && !language_c 
+-				   ? "extern \"C\" " : "extern ");
++				   ? (char *) "extern \"C\" " : (char *) "extern ");
+ 	} else if (is_static) { 
+ 	    f_tkn = f_tkn->prepend("static ");
+ 	} else if (is_virtual) { 
+@@ -4801,7 +4801,7 @@
+ 		t_array->set_trans("conf_matrix");
+ 	    } else {  	
+ 		t_array->set_trans(indices->next == NULL 
+-				   ? "conf_array" : "conf_matrix");
++				   ? (char *) "conf_array" : (char *) "conf_matrix");
+ 	    }
+ 	    token::disable(t_array->next, eltd->f_tkn->prev);
+ 	    eltd->f_tkn->prepend("<");
