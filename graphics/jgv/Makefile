@@ -1,15 +1,15 @@
 # New ports collection makefile for:	JDE's JGV
-# Version required:	0.2a
 # Date created:		25 March 1999
 # Whom:			KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	JGV-0.2a
-PKGNAME=	${LANGPREFIX}jgv-0.2a
+PORTNAME=	jgv
+PORTVERSION=	0.2a
 CATEGORIES=	${CATEGORY_LIST}
 MASTER_SITES=	http://www.aaa-int.or.jp/~jfactory/JDE/dist/
+DISTNAME=	JGV-${PORTVERSION}
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
@@ -29,7 +29,6 @@ TKSTEPVERSION=	8.0
 PIXMAPPATH?=	${PREFIX}/share/WindowMaker/Pixmaps
 LANGUAGE?=
 .if (${LANGUAGE} == "Japanese")
-LANGPREFIX=	ja-
 CATEGORY_LIST=	graphics windowmaker tkstep80 japanese
 RUN_DEP_LIST=	${LOCALBASE}/lib/Img1.2/libimg12.so.1:${PORTSDIR}/japanese/libimg \
 		${LOCALBASE}/lib/tkstep8.0jp/tkstep.tcl:${PORTSDIR}/japanese/tkstep80
