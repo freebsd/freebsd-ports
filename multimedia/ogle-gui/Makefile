@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ogle
-PORTVERSION=	0.8.3
+PORTVERSION=	0.8.4
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 PKGNAMESUFFIX=	-gui
@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}_gui-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.6:${PORTSDIR}/graphics/ogle
+BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.7:${PORTSDIR}/graphics/ogle
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
 		glade.4:${PORTSDIR}/devel/libglade \
 		xml2.5:${PORTSDIR}/textproc/libxml2
