@@ -82,6 +82,7 @@
     SUBDIR += p5-Text-FixedLength
     SUBDIR += p5-Text-Flowchart
     SUBDIR += p5-Text-Format
+    SUBDIR += p5-Text-Graphics
     SUBDIR += p5-Text-Template
     SUBDIR += p5-Text-Wrapper
     SUBDIR += p5-XML-DOM
