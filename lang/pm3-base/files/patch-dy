@@ -1,5 +1,5 @@
---- src/PACKAGES.orig	Fri Oct  2 09:34:28 1998
-+++ src/PACKAGES	Sun Feb  6 15:19:23 2000
+--- src/PACKAGES.orig	Wed May 31 10:55:13 2000
++++ src/PACKAGES	Tue Jul 25 18:42:48 2000
 @@ -129,33 +129,6 @@
  PkgInfo("m3ship","language/modula3/m3compiler","","m3-base",tLib,"",3,[],
      ["ALL"],[],"Installs Modula-3 packages")
@@ -34,7 +34,7 @@
  PkgInfo("set","libs","","set",tLib,"T",3,[],["ALL"],[],
      "A simple, generic Set interface.")
  
-@@ -170,407 +143,3 @@
+@@ -170,408 +143,3 @@
  
  PkgInfo("parseparams","libs","","parseparams",tLib,"T",3,[],["ALL"],[],
      "A library that helps parse command line arguments.")
@@ -318,10 +318,11 @@
 -    "A little mh program used by Postcard")
 -
 -PkgInfo("postcard","network/mail","","postcard",tProg,"T",3,[],["ALL"],
--    ["POSIX"],"An integrated mail/news reader")
+-    ["POSIX","ST_SPARE"],"An integrated mail/news reader")
 -
 -PkgInfo("gnuemacs","language/modula3/m3tools","","gnuemacs",tProg,"T",3,[],
--    ["ALL"],["POSIX"],"A library of useful E-lisp code for Modual-3-mode in " &
+-    ["ALL"],["POSIX","GNUEMACS"],
+-    "A library of useful E-lisp code for Modual-3-mode in " &
 -    "gnuemacs, also a program to build Modula-3 tags")
 -
 -PkgInfo("webvbt","network/www","","webvbt",tLib,"T",3,[],["ALL"],[],
@@ -334,7 +335,7 @@
 -    "A web browser that uses a new metaphor: decks of web pages")
 -
 -PkgInfo("webcard","network/www","","webcard",tProg,"T",3,[],["ALL"],
--    ["POSIX"],"An integrated mail/news/web client")
+-    ["POSIX","ST_SPARE"],"An integrated mail/news/web client")
 -
 -PkgInfo("ocr","graphics/lecternpkg","","ocr",tLib,"T",3,[],["ALL"],[],
 -    "Interface to optical character recognition library (DECstation only)")
