@@ -1,6 +1,9 @@
 bin/Esetroot
+bin/Etbg
+bin/Etcolors.sh
 bin/Eterm
 @exec chmod 4711 %D/bin/Eterm
+bin/Etmenu.sh
 lib/libEterm.a
 lib/libEterm.so
 lib/libEterm.so.8
