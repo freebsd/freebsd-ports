@@ -1,0 +1,7 @@
+bin/bbmail
+share/bbtools/README.bbmail
+share/bbtools/bbmail.conf
+share/bbtools/bbmail.nobb
+share/bbtools/bbmail.style
+share/bbtools/bbtoolsrc.in
+@dirrm share/bbtools
