@@ -1,0 +1,9 @@
+--- routines/sound/sox.c.orig	Fri Jul 17 08:24:52 1998
++++ routines/sound/sox.c	Tue Jan 12 13:37:48 1999
+@@ -248,5 +248,5 @@
+  */
+ 
+-#if	defined(unix) || defined(AMIGA) || defined(ARM) || defined(aix)
++#if defined(netbsd) || defined(freebsd) || defined(unix) || defined(AMIGA) || defined(ARM) || defined(aix)
+ filetype(fd)
+ int fd;

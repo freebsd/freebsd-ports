@@ -1,15 +1,21 @@
-diff -c -r /usr/LOCAL/scilab2.3/work/scilab-2.3/routines/xsci/x_misc.c ./routines/xsci/x_misc.c
-*** /usr/LOCAL/scilab2.3/work/scilab-2.3/routines/xsci/x_misc.c	Mon May 12 16:34:23 1997
---- ./routines/xsci/x_misc.c	Fri May 16 20:29:07 1997
-***************
-*** 507,513 ****
---- 507,515 ----
-  char *SysErrorMsg(n)
-    int n;
-  {
-+ #ifndef __FreeBSD__
-    extern char *sys_errlist[];
-+ #endif
-    extern int sys_nerr;
-  
-    return ((n >= 0 && n < sys_nerr) ? sys_errlist[n] : "unknown error");
+--- ./config/Makefile.netbsd.orig	Sat Jul 18 22:31:54 1998
++++ ./config/Makefile.netbsd	Fri Jul 24 12:00:14 1998
+@@ -0,0 +1,18 @@
++# Copyright INRIA
++
++
++FFLAGS = $(FC_OPTIONS)
++
++bin/scilex: scilex-lib 
++	@x=1;if test -f $@; then  \
++		x=`find $(DEFAULTS) $(LIBR)  \( -name '*.a' -o -name '*.o' \) \
++		-newer $@ -print | wc -l `; \
++	fi;\
++	if test $$x -ne 0; then \
++		$(RM) $@; \
++		echo "linking"; \
++		$(FC) $(FFLAGS) -o $@ $(DEFAULTS) $(FC_LDFLAGS) $(LIBR)  \
++			$(TCLTK_LIBS) $(XLIBS) $(TERMCAPLIB); \
++	else \
++		echo bin/scilex is up to date ; \
++	fi

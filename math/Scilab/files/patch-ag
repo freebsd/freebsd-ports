@@ -1,26 +1,47 @@
-diff -c -r /usr/LOCAL/scilab2.3/work/scilab-2.3/routines/default/scimem.c ./routines/default/scimem.c
-*** /usr/LOCAL/scilab2.3/work/scilab-2.3/routines/default/scimem.c	Mon May 12 16:33:46 1997
---- ./routines/default/scimem.c	Wed May 21 00:47:34 1997
-***************
-*** 8,13 ****
---- 8,27 ----
-  
-  
-  #include "../machine.h"
-+ #if defined (__FreeBSD__)
-+ #include <floatingpoint.h>    /* This should be elsewhere but I had to
-+                                    put it somewhere :( */
-+  void C2F(nofpex)()
-+  {
-+        fpsetmask(0);   /* Don't dump core on FPE return Inf or NaN */
-+  }
-+ #else
-+  void C2F(nofpex)()
-+ {
-+        return;
-+  }
-+ #endif /*freebsd*/
-+ 
-  
-  char *the_p=NULL;
-  char *the_ps=NULL;
+--- routines/sun/link_SYSV.c.orig	Tue Oct 13 08:27:18 1998
++++ routines/sun/link_SYSV.c	Sat Dec 19 23:54:03 1998
+@@ -34,5 +34,5 @@
+ #endif
+ 
+-#ifdef linux 
++#if defined(linux) || defined(netbsd) || defined(freebsd)
+ #include <unistd.h>
+ #include <sys/wait.h>
+@@ -41,4 +41,5 @@
+ #ifndef linux
+ #ifndef hppa
++#if (!defined(netbsd) && !defined(freebsd))
+ #if (defined(sun) && ! defined(SYSV)) 
+ #else 
+@@ -47,6 +48,7 @@
+ #endif
+ #endif 
++#endif
+ 
+-#ifndef linux 
++#if  !defined(linux) && !defined(netbsd)
+ #ifdef __alpha
+ #include <c_asm.h>
+@@ -59,7 +61,9 @@
+ #endif
+ 
++#if !defined(netbsd)
+ #if defined  __alpha || defined sgi
+ #include <a.out.h>
+ #endif
++#endif
+ 
+ #include <string.h>
+@@ -264,8 +268,12 @@
+        "/usr/bin/ld", "-shared", "-o", 0, 0  
+ #else
++#if defined(netbsd) || defined(freebsd)
++	"/usr/bin/ld", "-Bshareable", "-o", 0, 0
++#else
+ #ifdef hppa
+        "/bin/ld", "-b", "-o", 0, 0
+ #else
+        "/bin/ld", "-shared", "-o", 0, 0  
++#endif
+ #endif
+ #endif

@@ -1,0 +1,17 @@
+--- routines/sun/zzledt.c.orig	Sun Dec 20 00:20:23 1998
++++ routines/sun/zzledt.c	Tue Jan 12 13:04:10 1999
+@@ -54,5 +54,5 @@
+ #define TERMCAP
+ #endif
+-#ifndef linux
++#if !defined(linux) && !defined(netbsd) && !defined(freebsd)
+ #ifdef  __alpha
+ #define B42UNIX
+@@ -61,4 +61,7 @@
+ #ifdef linux
+ #define ATTUNIX
++#define TERMCAP
++#endif
++#if defined(netbsd) || defined(freebsd)
+ #define TERMCAP
+ #endif

@@ -1,0 +1,9 @@
+--- examples/misc-examples/dassl1.sce.orig	Mon Aug 24 12:06:31 1998
++++ examples/misc-examples/dassl1.sce	Mon Aug 24 12:07:19 1998
+@@ -21,5 +21,5 @@
+ // fortran routine dres1 in dir. routines/default, without jocabian
+ yy2=dassl([y0,y0d],t0,t,'dres1',info);   //=yy0
+-if norm(dres1(yy2(1,:),yy2(2:3,:),yy2(4:5,:)),1)>1.d-6 then pause,end
++if norm(dres1(yy2(1,:),yy2(2:3,:),yy2(4:5,:)),1)>1.4d-6 then pause,end
+ // fortran routines dres1 and djac1 in dir. routines/default, with jacobian
+ yy3=dassl([y0,y0d],t0,t,'dres1','djac1',info);  //=yy1

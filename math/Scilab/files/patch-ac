@@ -1,27 +1,14 @@
-diff -c -r /usr/LOCAL/scilab2.3/work/scilab-2.3/geci/scruteur.c ./geci/scruteur.c
-*** /usr/LOCAL/scilab2.3/work/scilab-2.3/geci/scruteur.c	Mon May 12 16:34:55 1997
---- ./geci/scruteur.c	Wed May 21 00:58:59 1997
-***************
-*** 12,17 ****
---- 12,20 ----
-  #include <stdio.h>
-  #include <signal.h>
-  #include <netdb.h>
-+ #ifdef __FreeBSD__
-+ #include <floatingpoint.h>
-+ #endif
-  
-  #include "listes_chainees.h"
-  #include "utilitaires.h"
-***************
-*** 45,50 ****
---- 48,56 ----
-  #if defined (sun) && defined (SYSV)
-    sigset_t set,oset;
-  #endif  
-+ #ifdef __FreeBSD__
-+   fpsetmask(0);
-+ #endif
-    
-    signal(SIGTERM,signal_arret_scruteur);
-    signal(SIGQUIT,signal_arret_scruteur);
+--- ./routines/graphics/Plo3d.c.orig	Sun Dec 13 21:22:37 1998
++++ ./routines/graphics/Plo3d.c	Sun Dec 13 21:24:01 1998
+@@ -16,5 +16,11 @@
+ #define M_PI	3.14159265358979323846
+ #else
++#if defined(HAVE_VALUES_H)
+ #include <values.h>
++#else
++#ifndef M_PI
++#define M_PI    3.14159265358979323846 
++#endif
++#endif
+ #endif
+ 

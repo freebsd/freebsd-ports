@@ -1,0 +1,9 @@
+--- routines/xsci/wf_fig.h.orig	Sat Dec 19 22:46:40 1998
++++ routines/xsci/wf_fig.h	Sat Dec 19 22:51:34 1998
+@@ -52,5 +52,5 @@
+ extern int	errno;
+ extern int	sys_nerr;
+-#if (! (defined(BSD) && (BSD >= 199306)))
++#if (! (defined(BSD) && (BSD >= 199306))) && !defined(freebsd)
+ extern char    *sys_errlist[];
+ #endif

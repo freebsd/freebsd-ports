@@ -1,41 +1,22 @@
-diff -c -r /usr/LOCAL/scilab2.3/work/scilab-2.3/xmetanet/metanet.c ./xmetanet/metanet.c
-*** /usr/LOCAL/scilab2.3/work/scilab-2.3/xmetanet/metanet.c	Mon May 12 16:34:41 1997
---- ./xmetanet/metanet.c	Wed May 21 01:00:49 1997
-***************
-*** 6,12 ****
-  #include <X11/StringDefs.h>
-  #include <X11/Xaw/Form.h>
-  #include <X11/Xaw/Label.h>
-! 
-  #include "defs.h"
-  #include "color.h"
-  #include "list.h"
---- 6,14 ----
-  #include <X11/StringDefs.h>
-  #include <X11/Xaw/Form.h>
-  #include <X11/Xaw/Label.h>
-! #ifdef __FreeBSD__
-! #include <floatingpoint.h>    
-! #endif
-  #include "defs.h"
-  #include "color.h"
-  #include "list.h"
-***************
-*** 219,225 ****
-    XSizeHints sizehints;
-  
-    iniG = NULL;
-! 
-    /* Is xmetanet called by Scilab? */
-  
-    igeci = find("-pipes",argc,argv);
---- 221,229 ----
-    XSizeHints sizehints;
-  
-    iniG = NULL;
-! #ifdef __FreeBSD__
-! fpsetmask(0);
-! #endif
-    /* Is xmetanet called by Scilab? */
-  
-    igeci = find("-pipes",argc,argv);
+--- ./imp/Slpr.c.orig	Mon Jul 20 07:34:06 1998
++++ ./imp/Slpr.c	Sat Aug  8 13:11:59 1998
+@@ -9,4 +9,11 @@
+ #include <stdio.h>
+ 
++#if defined(netbsd)
++#include <ieeefp.h>
++#endif
++
++#if defined(freebsd)
++#include <floatingpoint.h>
++#endif
+ 
+ #ifdef __STDC__
+@@ -59,4 +66,7 @@
+   int i ;
+   FILE *fd;
++#if (defined(netbsd) || defined(freebsd)) && !defined(__alpha__)
++  fpsetmask(0);
++#endif
+   if (argc <= 2) { int i=0;
+ 		   while (strcmp(UsageStr[i],"fin")!=0)

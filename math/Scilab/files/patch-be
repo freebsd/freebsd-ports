@@ -1,0 +1,11 @@
+--- routines/sound/st.h.orig    Mon Dec 21 21:14:29 1998
++++ routines/sound/st.h Mon Dec 21 21:18:03 1998
+@@ -8,4 +8,8 @@
+  */
+ 
++#if (defined(netbsd) || defined(freebsd)) && !defined(unix) 
++#define unix
++#endif
++
+ #define IMPORT  extern
+ #define EXPORT 

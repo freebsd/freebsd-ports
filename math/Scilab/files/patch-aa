@@ -1,26 +1,172 @@
---- Makefile.in.orig	Mon May 12 17:30:43 1997
-+++ Makefile.in	Wed Jun 18 13:44:05 1997
-@@ -54,7 +54,8 @@
- distclean::
- 	$(RM) bin/scilex
- 
--SUBDIRS = scripts macros imp intersci @MANVIEWER@ @XMETANET@ tests demos @COMM@
-+# FreeBSD Has xless so we dont need it here
-+SUBDIRS = scripts macros imp intersci  @XMETANET@ tests demos @COMM@
- 
- SUBDIRS-DOC = man doc
- 
-@@ -135,3 +136,13 @@
- 	touch .binary
- 	cd .. ; tar cvf $(SCIDIR)/$(SCIBASE)-bin.tar $(BINDISTFILES)
- 	$(RM) .binary
+--- configure.in.orig	Thu Sep 17 07:44:35 1998
++++ configure.in	Mon Oct  4 21:52:54 1999
+@@ -684,4 +684,108 @@
+     MAKEFILE_TARGET=Makefile.gcwin32
+     ;;
++  *-*-freebsd*)
++     CC=gcc
++     CC_OPTIONS='-O2 -Dfreebsd'
++     CC_LDFLAGS=-lm
++     CC_PICFLAGS='-fPIC'
++     # script shell f77 have bugs, get ours
++     FC=f77
++     FC_OPTIONS='-O2 -Dfreebsd'
++     FC_LDFLAGS=-lm
++     FC_PICFLAGS='-fPIC'
++     LD=ld
++     LD_LDFLAGS=-lm
++     if test "$enable_debug" = yes; then 
++       CC_OPTIONS='-g -Dfreebsd'
++       FC_OPTIONS=-g
++     fi
++     if test "$G77" = yes; then
++       FC=g77
++     fi
++    DLDLIB='${SCIDIR}/libs/libdld.a'
++    DLD_SUBDIR=dld
++    MAKEFILE_TARGET=Makefile.freebsd
++    ;;
 +
-+install:
-+	touch .binary
-+	cd .. ; tar cvf - $(BINDISTFILES) | (cd ${PREFIX}/lib/X11; tar xf -)
-+	cd ${PREFIX}/lib/X11/scilab-2.3; make
-+	rm -f ${PREFIX}/bin/scilab
-+	ln -fs ${PREFIX}/lib/X11/scilab-2.3/bin/scilab ${PREFIX}/bin/scilab
-+	ln -fs ${PREFIX}/bin/xless ${PREFIX}/lib/X11/scilab-2.3/bin/xless
-+	cp ${PREFIX}/lib/X11/scilab-2.3/X11_defaults/Xscilab ${PREFIX}/lib/X11/app-defaults
-+	cp ${PREFIX}/lib/X11/scilab-2.3/X11_defaults/Metanet-color ${PREFIX}/lib/X11/app-defaults
++# NetBSD  systems (tested on NetBSD-1.3)
++  *-*-netbsd*)
++
++    #
++    # C Compiler
++    #
++    CC=cc
++    CC_OPTIONS='-O2 -Dnetbsd'
++    CC_LDFLAGS="-Wl,-R${X11BASE}/lib"
++    CC_PICFLAGS='-fPIC'
++ 
++    # check for --export-dynamic
++    ac_save_LDFLAGS="$LDFLAGS"
++    LDFLAGS='-Wl,--export-dynamic'
++    AC_MSG_CHECKING([if the linker accepts --export-dynamic])
++    AC_TRY_LINK(,,
++      AC_MSG_RESULT(yes)
++      CC_LDFLAGS=["$CC_LDFLAGS  -Wl,--export-dynamic"],
++      AC_MSG_RESULT(no))
++    LDFLAGS="$ac_save_LDFLAGS"
++
++   #
++   # Fortran Compiler
++   #
++   if test "$with_f2c" = yes; then
++     AC_CHECK_PROGS(F77,f2c-f77,no)
++     if test "$F77" = no; then
++       AC_MSG_ERROR([Unable to configure: Fortran compiler f2c-f77 not found])
++     fi
++   else         
++     AC_CHECK_PROGS(F77,f77 f2c-f77,no)
++     if test "$F77" = no; then
++       AC_MSG_ERROR([Unable to configure: Fortran, f77 or f2c-f77, compiler not found])
++     fi
++   fi
++ 
++   FC=$F77
++   FC_OPTIONS='-O2'
++   FC_LDFLAGS="-Wl,-R${X11BASE}/lib"
++   FC_PICFLAGS='-fPIC'
++
++
++   # check for --export-dynamic
++   ac_save_LDFLAGS="$LDFLAGS"
++   LDFLAGS='-Wl,--export-dynamic'
++   AC_MSG_CHECKING([if the linker accepts --export-dynamic])
++   AC_TRY_LINK(,,
++     AC_MSG_RESULT(yes)
++     FC_LDFLAGS=["$FC_LDFLAGS  -Wl,--export-dynamic"],
++     AC_MSG_RESULT(no))
++   LDFLAGS="$ac_save_LDFLAGS"
++
++
++   #
++   # Linker
++   #
++   LD=ld
++   LD_LDFLAGS="-R${X11BASE}/lib"
++   # check for --export-dynamic
++   ac_save_LDFLAGS="$LDFLAGS"
++   LDFLAGS='-Wl,--export-dynamic'
++   AC_MSG_CHECKING([if the linker accepts --export-dynamic])
++   AC_TRY_LINK(,,
++     AC_MSG_RESULT(yes)
++     LD_LDFLAGS=["$LD_LDFLAGS  --export-dynamic"],
++     AC_MSG_RESULT(no))
++   LDFLAGS="$ac_save_LDFLAGS"
++
++    
++   #
++   # Compiler Debug Flags
++   #
++   if test "$enable_debug" = yes; then 
++      CC_OPTIONS='-g -Dnetbsd -Wall'
++      FC_OPTIONS='-g -Wall'
++   fi
++
++   MAKEFILE_TARGET=Makefile.netbsd
++   ;;
++
+   *)
+     AC_MSG_ERROR("Unable to configure for host $host")
+@@ -849,4 +953,9 @@
+ AC_CHECK_FUNCS(usleep)
+ 
++########################
++## test for header files
++########################
++AC_CHECK_HEADERS(values.h) 
++
+ ##################
+ ## termcap library
+@@ -883,20 +992,38 @@
+ if test "$with_pvm" != no; then
+ 
+-AC_CACHE_CHECK("for PVM architecture",ac_cv_PVM_arch,
+-[
+-ac_cv_PVM_arch=`./pvm3/lib/pvmgetarch`
+-])
+-if test "$ac_cv_PVM_arch" = UNKNOWN; then
+-  AC_MSG_WARN("PVM unable to find architecture: I will not use PVM")
+-else
++case "$host" in
++  *-*-netbsd*)
++  ## with NetBSD, use the version of pvm3 which is part of the package collection
++  AC_MSG_CHECKING("for PVM architecture")
++  AC_MSG_RESULT("NETBSD")
+   AC_DEFINE(WITH_PVM)
+-  PVMARCH="$ac_cv_PVM_arch"
+-  PVMGLIB="\$(SCIDIR)/pvm3/lib/$ac_cv_PVM_arch/libgpvm3.a"
+-  PVMLIB="\$(SCIDIR)/pvm3/lib/$ac_cv_PVM_arch/libpvm3.a"
++  PVMARCH=NETBSD
++  PVMLIB=${LOCALBASE}/lib/libpvm3.a
++  PVMGLIB=${LOCALBASE}/lib/libgpvm3.a
+   PVMSCIDIR=pvm
+   PVMSCILIB=libs/pvm.a
+-  PVMTARGET=scilex-lib
+-fi
++  PVMTARGET=pvm-no-build
++  ;;
++
++  *)
+ 
++  AC_CACHE_CHECK("for PVM architecture",ac_cv_PVM_arch,
++  [
++  ac_cv_PVM_arch=`./pvm3/lib/pvmgetarch`
++  ])
++  if test "$ac_cv_PVM_arch" = UNKNOWN; then
++    AC_MSG_WARN("PVM unable to find architecture: I will not use PVM")
++  else
++    AC_DEFINE(WITH_PVM)
++    PVMARCH="$ac_cv_PVM_arch"
++    PVMGLIB="\$(SCIDIR)/pvm3/lib/$ac_cv_PVM_arch/libgpvm3.a"
++    PVMLIB="\$(SCIDIR)/pvm3/lib/$ac_cv_PVM_arch/libpvm3.a"
++    PVMSCIDIR=pvm
++    PVMSCILIB=libs/pvm.a
++    PVMTARGET=scilex-lib
++  fi
++  ;;
++
++esac
+ fi
+ 

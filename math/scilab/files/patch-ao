@@ -1,12 +1,23 @@
-diff -c -r /usr/LOCAL/scilab2.3/work/scilab-2.3/xmetanet/init.c ./xmetanet/init.c
-*** /usr/LOCAL/scilab2.3/work/scilab-2.3/xmetanet/init.c	Mon May 12 16:34:40 1997
---- ./xmetanet/init.c	Mon May 19 00:29:50 1997
-***************
-*** 1,3 ****
---- 1,6 ----
-+ #ifdef __FreeBSD__
-+ #include <sys/types.h>
-+ #endif
-  #include <dirent.h>
-  #include <stdlib.h>
-  #include <string.h>
+--- imp/Slatexpr2.c.orig	Fri Dec 18 23:25:51 1998
++++ imp/Slatexpr2.c	Fri Dec 18 23:28:00 1998
+@@ -9,4 +9,12 @@
+ #include <stdio.h>
+ 
++#if defined(netbsd)
++#include <ieeefp.h>
++#endif
++
++#if defined(freebsd)
++#include <floatingpoint.h>
++#endif
++
+ void readOneLine();
+ 
+@@ -163,4 +171,7 @@
+   FILE *fd;
+   FILE *fdo;
++#if (defined(netbsd) || defined(freebsd)) && !defined(__alpha__)
++  fpsetmask(0);
++#endif
+ #ifdef WIN32 
+   SciEnv();

@@ -1,0 +1,10 @@
+--- routines/xsci/wf_w_dir.c.orig	Sat Dec 19 22:43:24 1998
++++ routines/xsci/wf_w_dir.c	Sat Dec 19 22:45:42 1998
+@@ -56,5 +56,7 @@
+ #endif
+ 
++#ifndef __STDC__
+ #include <malloc.h>
++#endif
+ 
+ #include "../machine.h"

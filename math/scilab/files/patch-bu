@@ -1,0 +1,8 @@
+--- examples/misc-examples/dassl2.sce.orig	Wed Jun  3 03:35:36 1998
++++ examples/misc-examples/dassl2.sce	Fri Oct  8 17:47:12 1999
+@@ -29,4 +29,4 @@
+ x=dassl([x0,x0d],t0,t,g,info);
+ xn=dassl([x0,x0d],t0,t,g,j,info);
+-if norm(x-xn,1)  > Eps then pause,end
++if norm(x-xn,1)  > 2.0*Eps then pause,end
+ 

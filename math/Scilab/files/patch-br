@@ -1,0 +1,17 @@
+--- scripts/scilab.g.orig	Fri Sep 11 08:57:02 1998
++++ scripts/scilab.g	Thu Jan 14 14:01:58 1999
+@@ -38,6 +38,12 @@
+ fi
+ 
+-PVM_ROOT=$SCI/pvm3
+-PVM_DPATH=$PVM_ROOT/lib/pvmd
++if test "$PVM_ROOT" = ""; then
++  PVM_ROOT=$SCI/pvm3
++fi
++if test -x $PVM_ROOT/bin/pvmd; then
++  PVM_DPATH=$PVM_ROOT/bin/pvmd
++else
++  PVM_DPATH=$PVM_ROOT/lib/pvmd
++fi
+ export PVM_ROOT PVM_DPATH
+ 
