@@ -32,15 +32,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--enable-optimize
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 500000
-BROKEN=		"does not build with GCC 2.x"
-.endif
+BROKEN=		"does not build"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|OPTIMIZE_FLAGS=.*$$|OPTIMIZE_FLAGS=|g ; \
 		 s|<xmlversion.h>|<libxml/xmlversion.h>|g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
