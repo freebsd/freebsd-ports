@@ -14,7 +14,8 @@ MASTER_SITE_SUBDIR=	rolo
 MAINTAINER=	obraun@FreeBSD.org
 COMMENT=	A vCard query utility for mutt
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libvc.a:${PORTSDIR}/devel/libvc
+RUN_DEPENDS=	${LOCALBASE}/lib/libvc.so:${PORTSDIR}/devel/libvc
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
