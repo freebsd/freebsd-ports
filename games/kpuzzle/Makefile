@@ -11,7 +11,9 @@ CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	unstable/apps/games
 
-MAINTAINER=	trevor@FreeBSD.org
+MAINTAINER=	will@FreeBSD.org
+
+BROKEN=		"installation error"
 
 BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
 
