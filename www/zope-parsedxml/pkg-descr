@@ -1,0 +1,5 @@
+Parsed XML allows you to use XML objects in the Zope environment. You
+can create XML documents in Zope and leverage Zope to format, query,
+and manipulate XML, using the standard W3C DOM.
+
+WWW: http://www.zope.org/Members/faassen/ParsedXML
