@@ -15,8 +15,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Matrox Powerdesk for *nix
 
-BUILD_DEPENDS=	XFree86:${PORTSDIR}/x11/XFree86-4
-
 USE_X_PREFIX=	YES
 USE_GNOME=	gtk12
 
@@ -27,6 +25,10 @@ USE_AUTOCONF=	YES
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
+
+.if (${ARCH} == "alpha")
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -lio"
+.endif
 
 post-extract:
 		@${RM} -f ${WRKSRC}/config.cache
