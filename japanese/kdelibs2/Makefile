@@ -7,6 +7,7 @@
 
 # This port does not work with another version of master port.
 #PORTVERSION=	2.2.2
+PORTREVISION=	4
 CATEGORIES=	japanese x11 kde
 
 MASTERDIR=	${.CURDIR}/../../x11/kdelibs2
@@ -16,7 +17,7 @@ MAINTAINER=	sahiro@crest.ocn.ne.jp
 
 PATCH_SITES=	http://www.kde.gr.jp/patch/
 PATCHFILES=	kdelibs-2.2.2-keditcl-20011126.diff \
-		kdelibs-2.2.2-khtml-autoencode-ja-20011126.diff
+		kdelibs-2.2.2-khtml-autoencode-ja-20020218.diff
 PATCH_DIST_STRIP=	-p1
 
 .include "${MASTERDIR}/Makefile"

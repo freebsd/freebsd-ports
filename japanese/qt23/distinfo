@@ -4,3 +4,7 @@ MD5 (KDE/qt-2.3.1-qpsprinter-ja-20010620.diff) = 8062eac74e4b88f0b5d9c92a305f8bb
 MD5 (KDE/qt-2.3.1-qstring-toDouble-i18n-20010617.diff) = 2275288d894914cc0785b1553d17cfb7
 MD5 (KDE/qt-2.3.1-showFullScreen-fix-20010624.diff) = 388329bbe2e6aa9c1dc29342081f4da1
 MD5 (KDE/qt-2.3.1-xim-20010617.diff) = 28c02a3ec4cd430ba62773981854195b
+MD5 (KDE/qt-2.3.1-qtextcodec-20011222.diff) = dee871b7b6099ba51880de98ad9e4456
+MD5 (KDE/qt-2.3.2-xim-overflow-20020205.diff) = 8490ee6788d75e79b773134beac1cf97
+MD5 (KDE/qt-2.3.1-xicfontset.patch) = 26afc1a7382ecf3c84f18bdd416cb758
+MD5 (KDE/qt-2.3.1-ximbaseline.patch) = 4406ae4bf09143c02a370039aab0f11a
