@@ -6,54 +6,68 @@
 #
 
 PORTNAME=	tinymux
-PORTVERSION=	1.6p0
-PORTREVISION=	2
-CATEGORIES=	games
-MASTER_SITES=	http://www.moosh.net/pub/mush/servers/tinymux/TinyMUX-1.x/
+PORTVERSION=	2.3.3.${PATCHLEVEL}
+CATEGORIES=	games net
+MASTER_SITES=	ftp://ftp.tinymux.org/TinyMUX/tinymux-2.3/${PATCHLEVEL}/ \
+		http://www.tinymux.org/ \
+		http://www.moosh.net/pub/mush/servers/tinymux/TinyMUX-2.x/tinymux-2.3/${PATCHLEVEL}/
+DISTNAME=	mux-${PORTVERSION}.unix
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Multi-Player FreeForm adventure Program
 
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
-
-WRKSRC=		${WRKDIR}/src
-
-USE_AUTOCONF_VER=	213
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+USE_GETTEXT=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-post-extract:
-	@${RM} -f ${WRKSRC}/gdbm.h
-
-#
-# Distribution does not include an install target.  So here it is.
-do-install:
-	${MKDIR} ${PREFIX}/games/tinymux
-	${INSTALL_SCRIPT} ${WRKDIR}/game/Startmux ${PREFIX}/games/tinymux
-.for file in alias.conf compat.conf mtrace.awk mux.config netmux.conf
-	${INSTALL_DATA} ${WRKDIR}/game/${file} ${PREFIX}/games/tinymux
-.endfor
-	${MKDIR} ${PREFIX}/games/tinymux/data
-.for file in db_check db_load db_unload
-	${INSTALL_SCRIPT} ${WRKDIR}/game/data/${file} \
-		${PREFIX}/games/tinymux/data
-.endfor
-	${MKDIR} ${PREFIX}/games/tinymux/text
-.for file in badsite connect create_reg down full guest help motd \
-	news newuser plushelp quit register wizhelp wizmotd wiznews
-	${INSTALL_DATA} ${WRKDIR}/game/text/${file}.txt \
-		${PREFIX}/games/tinymux/text
-.endfor
-	${MKDIR} ${PREFIX}/games/tinymux/bin
-#	${INSTALL_PROGRAM} ${WRKSRC}/conc ${PREFIX}/games/tinymux/bin
-.for file in dbconvert mkindx netmux slave
-	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/games/tinymux/bin
-.endfor
+PATCHLEVEL=	22
+WRKSRC=		${WRKDIR}/mux2.3/src
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/tinymux
-.for file in README README.COMPRESSION README.GUESTS README.MEMORY \
-	README.TOOLS
-	${INSTALL_DATA} ${WRKDIR}/${file} ${PREFIX}/share/doc/tinymux
+PORTDOCS=	*
+.endif
+
+do-install:
+# Binaries
+.for file in netmux slave
+	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/sbin
+.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/../game/bin/dbconvert ${PREFIX}/bin
+# Configuration
+	${MKDIR} ${PREFIX}/etc/${PORTNAME}
+.for file in alias.conf compat.conf mux.config netmux.conf
+	${INSTALL_DATA} ${WRKSRC}/../game/${file} \
+		${PREFIX}/etc/${PORTNAME}/${file}.sample
+.endfor
+# Data
+	${MKDIR} ${DATADIR}/game/netmux
+.for file in Backup Startmux _backupflat.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/../game/${file} ${DATADIR}/game/netmux/
+.endfor
+	${MKDIR} ${DATADIR}/game/netmux/data
+.for file in db_check db_load db_unload
+	${INSTALL_SCRIPT} ${WRKSRC}/../game/data/${file} \
+		${DATADIR}/game/netmux/data
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/../game/data/netmux.db \
+		${DATADIR}/game/netmux/data
+	${MKDIR} ${DATADIR}/game/netmux/text
+.for file in badsite connect create_reg down full guest help motd \
+	news newuser plushelp quit register staffhelp wizhelp wizmotd wiznews
+	${INSTALL_DATA} ${WRKSRC}/../game/text/${file}.txt \
+		${DATADIR}/game/netmux/text
+.endfor
+# Docs
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for file in ATTACK CHANGES INSTALL NOTES README SGP
+	${INSTALL_DATA} ${WRKSRC}/../${file} ${DOCSDIR}
+.endfor
+.for file in BACKUPS CONFIGURATION CONVERSION CREDITS DISTRIBUTIONS GUESTS \
+	LIMITS MEMORY PATCHES REALMS muxman.pdf
+	${INSTALL_DATA} ${WRKSRC}/../docs/${file} ${DOCSDIR}
 .endfor
 .endif
 

@@ -1,7 +1,9 @@
-TinyMUX is a Multi-Player FreeForm adventure server.
+TinyMUX is a text-based game server in the MUSH family (which also
+includes PennMUSH, TinyMUSH, and RhostMUSH). It is a platform which
+allows potentially several thousand players to connect to a single
+text-driven environment, interact with each other and with the
+environment (which is maintain in a database). The rich programming
+environment can be used to build almost anything, limited only by
+your own imagination.
 
-Based on the popular TinyMUSH code (and PernMUSH) code,
-TinyMUX allows a group of players to build their own adventure
-style game.  As distributed, there is no pre-built database so
-you might want to explore some of the many MUSHs that already
-exists.
+WWW: http://www.tinymux.org/
