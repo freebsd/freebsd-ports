@@ -162,7 +162,6 @@
     SUBDIR += pm3-m3tk
     SUBDIR += pm3-net
     SUBDIR += pm3-netobj
-    SUBDIR += pnet
     SUBDIR += ptoc
     SUBDIR += py-compiler
     SUBDIR += py-mx-base
