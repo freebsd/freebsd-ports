@@ -13,7 +13,7 @@ echo dcc=${CC} >> ${WRKSRC}/config.param
 echo emacs_like_lineedit=y >> ${WRKSRC}/config.param
 echo use_bundled_gclib=n >> ${WRKSRC}/config.param
 
-if [ "x${USE_OPENSSL}" = "xyes" ] ; then
+if [ -n "${USE_OPENSSL}" ] ; then
     echo dcflags="\"${SSL_CFLAGS} -I${LOCALBASE}/include\"" >> ${WRKSRC}/config.param
     echo dldflags="\"${SSL_LIBS} ${EXTRA_SSL_LIBS} -L${LOCALBASE}/lib\"" >> ${WRKSRC}/config.param
 else
@@ -21,7 +21,7 @@ else
     echo dldflags=-L${LOCALBASE}/lib >> ${WRKSRC}/config.param
 fi
 
-if [ "x${JAPANESE}" = "xYes" ] ; then
+if [ -n "${JAPANESE}" ] ; then
     echo lang=JA >> ${WRKSRC}/config.param
     echo use_migemo=y >> ${WRKSRC}/config.param
 else
@@ -29,11 +29,11 @@ else
     echo use_migemo=n >> ${WRKSRC}/config.param
 fi
 
-if [ "x${INLINE_IMAGE}" = "xyes" ] ; then
+if [ -n "${INLINE_IMAGE}" ] ; then
     echo use_image=y >> ${WRKSRC}/config.param
 fi
 
-if [ "x${M17N}" = "xyes" ] ; then
+if [ -n "${M17N}" ] ; then
     echo charset=UTF-8 >> ${WRKSRC}/config.param
 else
     echo display_code=E >> ${WRKSRC}/config.param
