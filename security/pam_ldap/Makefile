@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	pam_ldap
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.8
 CATEGORIES=	security net
 MASTER_SITES=	http://www.padl.com/download/ \
 		ftp://ftp.padl.com/pub/
-DISTNAME=	pam_ldap
-EXTRACT_SUFX=	.tgz
+DISTNAME=      	pam_ldap-${PORTVERSION:S/.//g}
 
 MAINTAINER=	marcus@marcuscom.com
 
