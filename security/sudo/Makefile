@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	sudo
-PORTVERSION=	1.6.3.4
+PORTVERSION=	1.6.3.5
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cs.colorado.edu/pub/sysadmin/sudo/
-DISTNAME=	${PORTNAME}-1.6.3p4
+DISTNAME=	${PORTNAME}-1.6.3p5
 
 MAINTAINER=	mharo@FreeBSD.org
 
