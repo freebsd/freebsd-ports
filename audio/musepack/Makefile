@@ -8,7 +8,8 @@
 PORTNAME=	musepack
 PORTVERSION=	1.15r
 CATEGORIES=	audio
-MASTER_SITES=	http://corecodec.org/download.php/196/
+MASTER_SITES=	http://www.saunalahti.fi/cse/seed/downloads/ \
+		http://corecodec.org/download.php/196/
 DISTNAME=	mpcsv7-src-${PORTVERSION}
 
 MAINTAINER=	shoesoft@gmx.net
