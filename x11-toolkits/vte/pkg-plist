@@ -33,10 +33,12 @@ share/locale/nl/LC_MESSAGES/vte.mo
 share/locale/no/LC_MESSAGES/vte.mo
 share/locale/pl/LC_MESSAGES/vte.mo
 share/locale/pt_BR/LC_MESSAGES/vte.mo
+share/locale/ru/LC_MESSAGES/vte.mo
 share/locale/sk/LC_MESSAGES/vte.mo
 share/locale/sv/LC_MESSAGES/vte.mo
 share/locale/uk/LC_MESSAGES/vte.mo
 share/locale/vi/LC_MESSAGES/vte.mo
+share/locale/zh_TW/LC_MESSAGES/vte.mo
 @dirrm share/gnome/vte/termcap
 @dirrm share/gnome/vte
 @dirrm share/doc/vte
