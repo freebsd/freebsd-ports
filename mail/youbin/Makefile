@@ -4,7 +4,7 @@
 # Date created:			09 Aug 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.13 1998/09/15 11:13:29 asami Exp $
+# $Id: Makefile,v 1.14 1998/09/17 00:32:46 asami Exp $
 #
 
 DISTNAME=	youbin-2.13
@@ -19,6 +19,10 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 USE_IMAKE=	yes
 PREFIX=         ${LOCALBASE}
 MTREE_FILE=	/etc/mtree/BSD.local.dist
+
+MAN1=		youbin.1
+MAN3=		youbin_sub.3
+MAN8=		youbind.8
 
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/youbind.sh.sample
 

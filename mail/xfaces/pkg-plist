@@ -40,7 +40,6 @@ include/X11/pixmaps/www-shape.xpm
 include/X11/pixmaps/x.xpm
 include/X11/pixmaps/xconq.xpm
 bin/xfaces
-man/man1/xfaces.1.gz
 @cwd /usr/local
 share/sounds/bong.au
 share/sounds/busy.au

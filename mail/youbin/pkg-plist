@@ -2,7 +2,4 @@ bin/youbin
 bin/xyoubin
 bin/sendto
 sbin/youbind
-man/man1/youbin.1.gz
-man/man3/youbin_sub.3.gz
-man/man8/youbind.8.gz
 etc/rc.d/youbind.sh.sample

@@ -4,7 +4,7 @@
 # Date created:		23-Aug-1995
 # Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
 #
-# $Id: Makefile,v 1.4 1997/08/01 05:47:40 obrien Exp $
+# $Id: Makefile,v 1.5 1998/01/08 18:52:10 fenner Exp $
 
 DISTNAME=	xlbiff-3.0
 CATEGORIES=	mail x11
@@ -17,5 +17,6 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=     obrien@FreeBSD.org
 
 USE_IMAKE=	yes
+MAN1=		xlbiff.1
 
 .include <bsd.port.mk>
