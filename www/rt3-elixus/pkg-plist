@@ -227,6 +227,7 @@ rt3/local/po/Journal/zh_cn.po
 rt3/local/po/Journal/zh_tw.po
 rt3/local/po/Todo/zh_cn.po
 rt3/local/po/Todo/zh_tw.po
+rt3/sbin/rt-dump-database
 rt3/sbin/rt-setup-database
 rt3/sbin/rt-test-dependencies
 rt3/share/doc/README
