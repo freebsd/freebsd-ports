@@ -42,6 +42,7 @@ include/libxml2/libxml/xpointer.h
 lib/libxml2.a
 lib/libxml2.so
 lib/libxml2.so.5
+%%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/drv_libxml2.py
 %%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/libxml2.py
 %%PYTHON:%%lib/%%PYTHON_VERSION%%/site-packages/libxml2mod.so
 libdata/pkgconfig/libxml-2.0.pc
@@ -63,6 +64,7 @@ share/aclocal/libxml.m4
 %%PYTHON:%%share/doc/libxml2-python/examples/reader3.py
 %%PYTHON:%%share/doc/libxml2-python/examples/readererr.py
 %%PYTHON:%%share/doc/libxml2-python/examples/regexp.py
+%%PYTHON:%%share/doc/libxml2-python/examples/relaxng.py
 %%PYTHON:%%share/doc/libxml2-python/examples/resolver.py
 %%PYTHON:%%share/doc/libxml2-python/examples/serialize.py
 %%PYTHON:%%share/doc/libxml2-python/examples/tst.py
