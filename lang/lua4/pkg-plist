@@ -5,7 +5,11 @@ include/lua.h
 include/luadebug.h
 include/lualib.h
 lib/liblua.a
+lib/liblua.so
+lib/liblua.so.4
 lib/liblualib.a
+lib/liblualib.so
+lib/liblualib.so.4
 share/doc/lua/idx.html
 share/doc/lua/index.html
 share/doc/lua/luac.html
