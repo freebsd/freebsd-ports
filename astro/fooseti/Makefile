@@ -10,7 +10,7 @@ PORTVERSION=	0.6.5
 CATEGORIES=	astro
 MASTER_SITES=	http://www-personal.engin.umich.edu/~agorski/fooseti/
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	petef@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
