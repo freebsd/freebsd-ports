@@ -6,4 +6,4 @@ share/xml-i18n-tools/xml-i18n-extract
 share/xml-i18n-tools/xml-i18n-merge
 share/xml-i18n-tools/xml-i18n-tools.Makefile.patch
 share/xml-i18n-tools/xml-i18n-update
-@dirrm share/xml-i8n-tools
+@dirrm share/xml-i18n-tools
