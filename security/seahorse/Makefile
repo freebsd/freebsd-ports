@@ -18,6 +18,7 @@ COMMENT=	A front end for GnuPG
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 LIB_DEPENDS=	gpgme.9:${PORTSDIR}/security/gpgme
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix libgnomeui
