@@ -29,6 +29,7 @@
     SUBDIR += tkirc
     SUBDIR += trickyirc
     SUBDIR += xchat
+    SUBDIR += xchat-devel
     SUBDIR += yagirc
     SUBDIR += zircon
 
