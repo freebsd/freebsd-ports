@@ -1,0 +1,13 @@
+The ResourcePool provides a generic way to use connection caching for any
+kind of resources. The package includes classes to deal with DBI and
+Net::LDAP resources and is easily extensible. It has also a LoadBalancer
+class to spread load across different servers and is able to do fail over
+to increase the overall availability of the service.
+
+Use this package if you... 
+   ...want to use connection caching (persistent connections) for something
+      which is NOT DBI (e.g. Net::LDAP).
+   ...have more then one server which can handle your requests and need to
+      implement load balancing and/or fail over.
+
+WWW: http://www.fatalmind.com/projects/ResourcePool/

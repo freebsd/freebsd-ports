@@ -526,6 +526,7 @@
     SUBDIR += p5-ReadLine-Gnu
     SUBDIR += p5-ReadLine-Perl
     SUBDIR += p5-Religion
+    SUBDIR += p5-ResourcePool
     SUBDIR += p5-Resources
     SUBDIR += p5-SPOPS
     SUBDIR += p5-Search-Binary
