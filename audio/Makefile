@@ -94,6 +94,7 @@
     SUBDIR += fmio
     SUBDIR += freebirth
     SUBDIR += funktrackergold
+    SUBDIR += gdam
     SUBDIR += gdrdao
     SUBDIR += gkrellmms
     SUBDIR += gkrellmms2
