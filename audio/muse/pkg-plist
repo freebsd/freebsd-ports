@@ -1,10 +1,9 @@
 bin/muse
-share/doc/MuSE/AUTHORS
-share/doc/MuSE/COPYING
-share/doc/MuSE/ChangeLog
-share/doc/MuSE/KNOWN-BUGS
-share/doc/MuSE/NEWS
-share/doc/MuSE/README
-share/doc/MuSE/TODO
-share/doc/MuSE/USAGE
-@dirrm share/doc/MuSE
+%%PORTDOCS%%share/doc/muse/AUTHORS
+%%PORTDOCS%%share/doc/muse/ChangeLog
+%%PORTDOCS%%share/doc/muse/KNOWN-BUGS
+%%PORTDOCS%%share/doc/muse/NEWS
+%%PORTDOCS%%share/doc/muse/README
+%%PORTDOCS%%share/doc/muse/TODO
+%%PORTDOCS%%share/doc/muse/USAGE
+%%PORTDOCS%%@dirrm share/doc/muse
