@@ -1,0 +1,12 @@
+GOCR/JOCR is an OCR (Optical Character Recognition) program, developed
+under the GNU Public License.
+
+GOCR can be used with different front-ends, which makes it very
+easy to port to different OSes and architectures. It can open many
+different image formats, and its quality have been improving in a
+daily basis.
+
+WWW: http://jocr.sourceforge.net/
+
+- Lehmann
+kay_lehmann@web.de
