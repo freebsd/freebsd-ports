@@ -1,17 +1,6 @@
---- configure.in.orig	Sun Mar  4 10:24:10 2001
-+++ configure.in	Thu Mar 15 03:19:00 2001
-@@ -30,8 +30,8 @@
- 		])
- 
- AC_ARG_WITH(png,[  --with-png=DIR          location of png lib/inc],
--		[LDFLAGS="${LDFLAGS} -L${withval} -lpng"
--		CFLAGS="${CFLAGS} -I${withval}"
-+		[LDFLAGS="${LDFLAGS} -L${withval}/lib -lpng"
-+		CFLAGS="${CFLAGS} -I${withval}/include"
- 		])
- 
- AC_ARG_ENABLE(speed,[  --disable-speed         Turn off lex table optimization reducing speed and size of executable],
-@@ -90,7 +90,7 @@
+--- configure.in.orig	Mon Mar 12 11:50:22 2001
++++ configure.in	Tue Mar 27 02:00:54 2001
+@@ -102,7 +102,7 @@
  dnl Make sure the header is here
  AC_CHECK_HEADER( gd.h,[ have_gd_h="yes" ],[ have_gd_h="no" ])
  
