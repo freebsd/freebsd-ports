@@ -5,29 +5,33 @@
 # $FreeBSD$
 #
 
-PORTNAME=		cups
-PORTVERSION=		1.1.5
-CATEGORIES=		print
-MASTER_SITES=		ftp://ftp.easysw.com/pub/cups/${PORTVERSION}/ \
-			ftp://ftp2.easysw.com/pub/cups/${PORTVERSION}/ \
-			ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${PORTVERSION}/ \
-			ftp://ftp.mpg.goe.ni.schule.de/pub/internet/printing/cups/${PORTVERSION}/
-DISTNAME=		${PORTNAME}-${PORTVERSION}-2-source
+PORTNAME=	cups
+PORTVERSION=	1.1.5
+PORTREVESION=	1
+CATEGORIES=	print
+MASTER_SITES=	ftp://ftp.easysw.com/pub/cups/${PORTVERSION}/ \
+		ftp://ftp2.easysw.com/pub/cups/${PORTVERSION}/ \
+		ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${PORTVERSION}/ \
+		ftp://ftp.mpg.goe.ni.schule.de/pub/internet/printing/cups/${PORTVERSION}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-2-source
 
-MAINTAINER=		greid@ukug.uk.freebsd.org
+MAINTAINER=	greid@ukug.uk.freebsd.org
 
-USE_BZIP2=		yes
+USE_BZIP2=	yes
 
-WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-GNU_CONFIGURE=		yes
+GNU_CONFIGURE=	yes
 
-MAN1=			backend.1 cancel.1 filter.1 lp.1 lpoptions.1 lpq.1 \
-			lpr.1 lprm.1 lpstat.1
-MAN5=			classes.conf.5 cupsd.conf.5 mime.convs.5 mime.types.5 \
-			printers.conf.5
-MAN8=			accept.8 cups-lpd.8 cups-polld.8 cupsd.8 disable.8 \
-			enable.8 lpadmin.8 lpc.8 lpinfo.8 lpmove.8
-MLINKS=			accept.8 reject.8
+MAN1=		backend.1 cancel.1 filter.1 lp.1 lpoptions.1 lpq.1 \
+		lpr.1 lprm.1 lpstat.1
+MAN5=		classes.conf.5 cupsd.conf.5 mime.convs.5 mime.types.5 \
+		printers.conf.5
+MAN8=		accept.8 cups-lpd.8 cups-polld.8 cupsd.8 disable.8 \
+		enable.8 lpadmin.8 lpc.8 lpinfo.8 lpmove.8
+MLINKS=		accept.8 reject.8
+
+post-install:
+	@${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${PKGMESSAGE}
 
 .include <bsd.port.mk>
