@@ -1,5 +1,6 @@
 bin/gtkextra-config
 include/gtkextra/gtkbordercombo.h
+include/gtkextra/gtkcharsel.h
 include/gtkextra/gtkcheckitem.h
 include/gtkextra/gtkcolorcombo.h
 include/gtkextra/gtkcombobox.h
@@ -22,6 +23,7 @@ include/gtkextra/gtkplotdata.h
 include/gtkextra/gtkplotflux.h
 include/gtkextra/gtkplotgdk.h
 include/gtkextra/gtkplotpc.h
+include/gtkextra/gtkplotpixmap.h
 include/gtkextra/gtkplotpolar.h
 include/gtkextra/gtkplotprint.h
 include/gtkextra/gtkplotps.h
@@ -31,6 +33,6 @@ include/gtkextra/gtksheet.h
 include/gtkextra/gtktogglecombo.h
 lib/libgtkextra.a
 lib/libgtkextra.so
-lib/libgtkextra.so.14
+lib/libgtkextra.so.15
 share/aclocal/gtkextra.m4
 @dirrm include/gtkextra
