@@ -1,5 +1,5 @@
---- plugin/Makefile.in.orig	Thu Jul 11 00:20:39 2002
-+++ plugin/Makefile.in	Sat Jul 27 08:43:08 2002
+--- plugin/Makefile.in.orig	Mon Aug 26 02:32:01 2002
++++ plugin/Makefile.in	Wed Aug 28 00:45:07 2002
 @@ -2,6 +2,7 @@
  
  prefix = @prefix@
@@ -8,25 +8,25 @@
  CC = @CC@
  CFLAGS = @CFLAGS@
  MAKE = @MAKE@
-@@ -25,7 +26,7 @@
+@@ -26,7 +27,7 @@
  endif
  
  # Installation directory
 -share = $(prefix)/share/gretl
 +gretldir = $(libdir)/gretl
  
- LIBTOOL = $(topsrc)/libtool
- COMPILE = $(LIBTOOL) --mode=compile $(CC) -c $(CFLAGS) 
-@@ -45,7 +46,7 @@
-   query-ms-ole.lo=ms-ole.lo
-   vpath %.c libole2
-   vpath %.h libole2
--  LIBOLE2_CFLAGS = -I. `glib-config --cflags`
-+  LIBOLE2_CFLAGS = -I. `$(GLIB_CONFIG) --cflags`
- endif
+ override CFLAGS += -I.. -DHAVE_CONFIG_H
  
- all: $(PLUGINS)
-@@ -98,15 +99,15 @@
+@@ -48,7 +49,7 @@
+   PROGRESS_PLUGIN = progress_bar.so
+   GNUMERIC_PLUGIN = gnumeric_import.so
+   EXCEL_PLUGIN = excel_import.so
+-  GRETL_LIBOLE2_CFLAGS := -I. $(shell glib-config --cflags)
++  GRETL_LIBOLE2_CFLAGS := -I. $(shell $(GLIB_CONFIG) --cflags)
+ endif  
+ 
+ PLUGINS = stats_tables.so panel_data.so des_import.so \
+@@ -139,15 +140,15 @@
  .PHONY: 
  
  install: $(PLUGINS) installdirs
@@ -46,4 +46,4 @@
 +	$(topsrc)/tools/mkinstalldirs $(gretldir)/plugins
  
  clean:
- 	rm -f *.o *.lo $(PLUGINS) core 
+ 	rm -f *.o *.lo *.so core 

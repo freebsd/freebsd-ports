@@ -1,0 +1,15 @@
+--- gnome/Makefile.in.orig	Sun Aug 25 03:07:17 2002
++++ gnome/Makefile.in	Wed Aug 28 03:10:35 2002
+@@ -18,9 +18,9 @@
+   install_help = install-help-1
+ endif
+ 
+-desktopdir = $(gnome_prefix)/share/applications
+-mimedir = $(gnome_prefix)/share/mime-info
+-gpixmaps = $(gnome_prefix)/share/pixmaps
++desktopdir = $(gnome_prefix)/share/gnome/applications
++mimedir = $(gnome_prefix)/share/gnome/mime-info
++gpixmaps = $(gnome_prefix)/share/gnome/pixmaps
+ ghelpdir = $(gnome_prefix)/share/gnome/help/gretl
+ 
+ install: install-images install-misc install-help-dirs $(install_help)
