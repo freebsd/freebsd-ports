@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libyahoo2
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,5 +19,9 @@ USE_BZIP2=	yes
 USE_GNOME=	glib20 gnomehack gnometarget
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-Wall -ansi -pedantic||g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-g -Wall||g' ${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>
