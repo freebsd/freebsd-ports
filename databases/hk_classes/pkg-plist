@@ -40,6 +40,9 @@ include/hk_classes/hk_interpreter.h
 %%MYSQL%%lib/hk_classes/drivers/libhk_mysqldriver.so.3
 %%MYSQL%%lib/hk_classes/drivers/libhk_mysqldriver.so
 %%MYSQL%%lib/hk_classes/drivers/libhk_mysqldriver.la
+%%ODBC%%lib/hk_classes/drivers/libhk_odbcdriver.la
+%%ODBC%%lib/hk_classes/drivers/libhk_odbcdriver.so
+%%ODBC%%lib/hk_classes/drivers/libhk_odbcdriver.so.0
 %%POSTGRESQL%%lib/hk_classes/drivers/libhk_postgresdriver.so.0
 %%POSTGRESQL%%lib/hk_classes/drivers/libhk_postgresdriver.so
 %%POSTGRESQL%%lib/hk_classes/drivers/libhk_postgresdriver.la
