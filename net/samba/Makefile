@@ -82,7 +82,7 @@ CONFIGURE_ARGS+=	--with-msdfs
 
 .if defined(WITH_LDAP)
 LIB_DEPENDS+=  ldap.2:${PORTSDIR}/net/openldap2
-CONFIGURE_ARGS+=--with-ldapsam
+CONFIGURE_ARGS+=	--with-ldapsam
 CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
 .endif
