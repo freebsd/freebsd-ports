@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sword
-PORTVERSION=	1.5.1a
+PORTVERSION=	1.5.2
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.crosswire.org/pub/sword/source/v1.5/ \
 		http://www.crosswire.org/sword/download/ftpmirror/pub/sword/source/v1.5/ \
@@ -19,18 +19,19 @@ USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
 INCLUDES=	Greek2Greek.h GreekChars.h canon.h cipherfil.h defs.h \
-		echomod.h femain.h filemgr.h gbffootnotes.h gbfhtml.h \
-		gbfplain.h gbfrtf.h gbfstrongs.h gbfthml.h hrefcom.h \
-		listkey.h localemgr.h lzsscomprs.h plainfootnotes.h \
-		plainhtml.h rawcom.h rawfiles.h rawgbf.h rawld.h rawstr.h \
-		rawtext.h rawverse.h regex.h rtfhtml.h rwphtml.h rwprtf.h \
-		sapphire.h strkey.h swcipher.h swcom.h swcomprs.h \
-		swconfig.h swdisp.h swdisprtf.h swdisprtfchap.h swfilter.h \
-		swkey.h swld.h swlocale.h swlog.h swmacs.h swmgr.h \
-		swmodule.h swtext.h swwinlog.h tbdisp.h thmlgbf.h \
-		thmlhtml.h thmlplain.h thmlrtf.h unixstr.h utilconf.h \
-		utilfuns.h utilstr.h versekey.h zcom.h zipcomprs.h ztext.h \
-		zverse.h
+		echomod.h entriesblk.h femain.h filemgr.h gbffootnotes.h \
+		gbfheadings.h gbfhtml.h gbfmorph.h gbfplain.h gbfrtf.h \
+		gbfstrongs.h gbfthml.h hrefcom.h listkey.h localemgr.h \
+		lzsscomprs.h plainfootnotes.h plainhtml.h rawcom.h rawfiles.h \
+		rawgbf.h rawld.h rawld4.h rawstr.h rawstr4.h rawtext.h \
+		rawverse.h regex.h roman.h rtfhtml.h rwphtml.h rwprtf.h \
+		sapphire.h strkey.h swcipher.h swcom.h swcomprs.h swconfig.h \
+		swdisp.h swdisprtf.h swdisprtfchap.h swfilter.h swkey.h swld.h \
+		swlocale.h swlog.h swmacs.h swmgr.h swmodule.h swobject.h \
+		swtext.h swunicod.h swwinlog.h tbdisp.h thmlgbf.h thmlhtml.h \
+		thmlolb.h thmlplain.h thmlrtf.h unicodertf.h unixstr.h untgz.h \
+		utilconf.h utilfuns.h utilstr.h versekey.h zcom.h zconf.h \
+		zipcomprs.h zlib.h ztext.h zverse.h
 
 pre-build:
 	@${ECHO} "instdir:=	${PREFIX}" >${WRKSRC}/localport.cfg
@@ -38,8 +39,9 @@ pre-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/libsword.a ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/lib/libsword.so ${PREFIX}/lib/libsword.so.1
-	${LN} -s ${PREFIX}/lib/libsword.so.1 ${PREFIX}/lib/libsword.so
-	${INSTALL_DATA} ${FILESDIR}/sword.conf ${PREFIX}/etc
+	${LN} -sf ${PREFIX}/lib/libsword.so.1 ${PREFIX}/lib/libsword.so
+	@${ECHO} "[Install]" >${PREFIX}/etc/sword.conf
+	@${ECHO} "DataPath=${DATADIR}" >>${PREFIX}/etc/sword.conf
 	${MKDIR} ${DATADIR}
 	${MKDIR} ${PREFIX}/include/sword
 .for file in ${INCLUDES}
