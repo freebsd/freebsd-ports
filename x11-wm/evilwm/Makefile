@@ -19,8 +19,10 @@ DOCS=			Changes.kja3 README
 MAN1=			evilwm.1
 .endif
 PLIST=			${WRKDIR}/pkg-plist
-USE_GMAKE=		yes
 USE_X_PREFIX=		yes
+
+do-build:
+	cd ${WRKSRC} && ${CC} ${CFLAGS} -I${X11BASE}/include -L${X11BASE}/lib -o evilwm *.c -lX11
 
 pre-install:
 	${ECHO} bin/evilwm > ${PLIST}
@@ -31,14 +33,14 @@ pre-install:
 	${ECHO} @dirrm ${DOCDIR} >> ${PLIST}
 .endif
 
-post-install:
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/evilwm ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/${DOCDIR}
 	for i in ${DOCS}; \
 		do ${INSTALL_DATA} ${WRKSRC}/$${i} ${PREFIX}/${DOCDIR}; \
 	done
-	${GZIP_CMD} -c ${WRKSRC}/evilwm.man > ${WRKSRC}/evilwm.1.gz
-	${INSTALL_MAN} ${WRKSRC}/evilwm.1.gz ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/evilwm.man ${PREFIX}/man/man1/evilwm.1
 .endif
 
 .include <bsd.port.mk>
