@@ -1,55 +1,37 @@
-*** work/whois-4.6.13/Makefile	Tue Feb 10 17:24:29 2004
---- Makefile	Thu Apr 15 16:11:14 2004
-***************
-*** 9,24 ****
-  #LDFLAGS=-lintl
-  
-  # FreeBSD
-! #LDFLAGS=-L/usr/local/lib -lgnugetopt -lintl
-! #CFLAGS=-I/usr/local/include
-  
-  # OS/2 EMX
-  #LDFLAGS=-lsocket -Zexe -Dstrncasecmp=strnicmp
-  
-! ifdef HAVE_LIBIDN
-  LIBIDN += -lidn
-  CFLAGS += -DHAVE_LIBIDN
-! endif
-  
-  PERL=perl
-  
---- 9,24 ----
-  #LDFLAGS=-lintl
-  
-  # FreeBSD
-! LDFLAGS+=-L/usr/local/lib
-! CFLAGS+=-I/usr/local/include
-  
-  # OS/2 EMX
-  #LDFLAGS=-lsocket -Zexe -Dstrncasecmp=strnicmp
-  
-! .ifdef HAVE_LIBIDN
-  LIBIDN += -lidn
-  CFLAGS += -DHAVE_LIBIDN
-! .endif
-  
-  PERL=perl
-  
-***************
-*** 42,49 ****
-  install: whois
-  	install -m 0755 whois $(BASEDIR)$(prefix)/bin/
-  	strip $(BASEDIR)$(prefix)/bin/whois
-! 	install -m 0644 whois.1 $(BASEDIR)$(prefix)/share/man/man1/
-! 	cd po && $(MAKE) $@
-  
-  
-  distclean: clean
---- 42,48 ----
-  install: whois
-  	install -m 0755 whois $(BASEDIR)$(prefix)/bin/
-  	strip $(BASEDIR)$(prefix)/bin/whois
-! 	install -m 0644 whois.1 $(BASEDIR)$(prefix)/man/man1/
-  
-  
-  distclean: clean
+--- Makefile.orig	Tue Feb 10 17:24:29 2004
++++ Makefile	Fri May 21 08:09:06 2004
+@@ -9,16 +9,16 @@
+ #LDFLAGS=-lintl
+ 
+ # FreeBSD
+-#LDFLAGS=-L/usr/local/lib -lgnugetopt -lintl
+-#CFLAGS=-I/usr/local/include
++LDFLAGS+=-L/usr/local/lib
++CFLAGS+=-I/usr/local/include
+ 
+ # OS/2 EMX
+ #LDFLAGS=-lsocket -Zexe -Dstrncasecmp=strnicmp
+ 
+-ifdef HAVE_LIBIDN
++.ifdef HAVE_LIBIDN
+ LIBIDN += -lidn
+ CFLAGS += -DHAVE_LIBIDN
+-endif
++.endif
+ 
+ PERL=perl
+ 
+@@ -40,10 +40,9 @@
+ 	$(PERL) -w make_tld_serv.pl < tld_serv_list > tld_serv.h
+ 
+ install: whois
+-	install -m 0755 whois $(BASEDIR)$(prefix)/bin/
+-	strip $(BASEDIR)$(prefix)/bin/whois
+-	install -m 0644 whois.1 $(BASEDIR)$(prefix)/share/man/man1/
+-	cd po && $(MAKE) $@
++	install -m 0755 whois ${PREFIX}/bin/
++	strip ${PREFIX}/bin/whois
++	install -m 0644 whois.1 ${PREFIX}/man/man1/
+ 
+ 
+ distclean: clean
