@@ -380,6 +380,7 @@ archivemail	ports/mail/archivemail
 arena		ports/www/arena
 ares		ports/dns/ares
 argouml		ports/devel/argouml
+argp-standalone	ports/devel/argp-standalone
 argparse	ports/misc/argparse
 argtable	ports/devel/argtable
 argus		ports/net-mgmt/argus
