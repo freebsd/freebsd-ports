@@ -7,6 +7,7 @@
 
 PORTNAME=	pine
 PORTVERSION=	4.53
+PORTREVISION=	1
 CATEGORIES=	mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 		http://mirror.sit.wisc.edu/pub/net/mail/pine/ \
@@ -19,6 +20,9 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/ \
 DISTNAME=	pine${PORTVERSION}
 
 MAINTAINER=	DougB@FreeBSD.org
+COMMENT=	PINE(tm) -- a Program for Internet News & Email
+
+RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
 # Define "WITH_LDAP" to include ldap support.
 # If the ldap port is installed somewhere other than /usr/local, define
@@ -49,16 +53,16 @@ pre-fetch:
 .endif
 
 post-patch:
-.for file in doc/pine.1 pine/init.c pine/pine.hlp pine/mailcap.c \
-	pine/osdep/os-bsf.h
-	@${CP} ${WRKSRC}/${file} ${WRKSRC}/${file}.presed
-	@${SED} -e "s:@@PREFIX@@:${PREFIX}:g" ${WRKSRC}/${file}.presed > \
-		${WRKSRC}/${file}
-.endfor
-	@for i in ${WRKSRC}/doc/tech-notes.txt \
-		${WRKSRC}/doc/tech-notes/*.html ; do \
+	@for i in ${WRKSRC}/README ${WRKSRC}/doc/pine.1 \
+		${WRKSRC}/doc/tech-notes.txt ${WRKSRC}/doc/tech-notes/*.html \
+		${WRKSRC}/pico/osdep/os-bsf.h \
+		${WRKSRC}/pine/init.c ${WRKSRC}/pine/mailcap.c \
+		${WRKSRC}/pine/osdep/os-bsf.h ${WRKSRC}/pine/pine.hlp ; do \
 		${CP} $$i $$i.presed ; \
-		${SED} -e "s:/usr/local/lib/:${PREFIX}/etc/:g" \
+		${SED}	-e "s:/usr/local/etc/:${PREFIX}/etc/:g" \
+			-e "s:/usr/local/lib/:${PREFIX}/etc/:g" \
+			-e "s:@@PREFIX@@:${PREFIX}:g" \
+			-e "s:/usr/local/pine.conf:${PREFIX}/etc/pine.conf:g" \
 			$$i.presed > $$i ; \
 	done
 .if defined(WITH_LDAP)
@@ -80,6 +84,8 @@ do-install:
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} ${DOCSDIR} \
 		${DOCSDIR}/tech-notes
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CPYRIGHT ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/brochure.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/tech-notes.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/tech-notes/*.html ${DOCSDIR}/tech-notes
@@ -89,10 +95,6 @@ post-install:
 	${PREFIX}/bin/pine -P ${PREFIX}/etc/pine.conf -conf >${WRKSRC}/pine.conf
 	${INSTALL_DATA} ${WRKSRC}/pine.conf ${PREFIX}/etc/pine.conf
 
-	@${ECHO_MSG}
-	@${ECHO_MSG} "***************************************************************************"
-	@${ECHO_MSG} "*** To use pgp with Pine, take a look at the mail/pine-pgp-filters port ***"
-	@${ECHO_MSG} "***************************************************************************"
-	@${ECHO_MSG}
+	@${CAT} pkg-message
 
 .include <bsd.port.mk>

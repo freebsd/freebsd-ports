@@ -1,22 +1,5 @@
-*** pine/osdep/os-bsf.h.orig	Thu Oct  8 00:51:40 1998
---- pine/osdep/os-bsf.h	Tue Feb  9 20:15:18 1999
-***************
-*** 74,80 ****
-     default-composer-hdrs or customized-hdrs to get at it. Instead of
-     defining NEVER_ALLOW_CHANGING_FROM, an easier way of preventing From
-     changing is to put the feature "no-allow-changing-from" in the
-!    /usr/local/lib/pine.conf.fixed file.
-   ----*/
-  /* #define NEVER_ALLOW_CHANGING_FROM */
-  
---- 74,80 ----
-     default-composer-hdrs or customized-hdrs to get at it. Instead of
-     defining NEVER_ALLOW_CHANGING_FROM, an easier way of preventing From
-     changing is to put the feature "no-allow-changing-from" in the
-!    @@PREFIX@@/etc/pine.conf.fixed file.
-   ----*/
-  /* #define NEVER_ALLOW_CHANGING_FROM */
-  
+*** pine/osdep/os-bsf.h.orig	Tue Feb  6 17:30:45 2001
+--- pine/osdep/os-bsf.h	Wed Mar  5 05:30:16 2003
 ***************
 *** 87,93 ****
      NOTE: You'll also have to make sure the appropriate osdep/postreap.*
@@ -35,24 +18,16 @@
   
   
 ***************
-*** 160,167 ****
+*** 203,208 ****
+--- 203,210 ----
+  #define DF_KBLOCK_PASSWD_COUNT    "1"
+  #define DF_REMOTE_ABOOK_HISTORY   "3"
   
-  
-  /*----- System-wide config file ----------------------------------------*/
-! #define SYSTEM_PINERC             "/usr/local/lib/pine.conf"
-! #define SYSTEM_PINERC_FIXED       "/usr/local/lib/pine.conf.fixed"
-  
-  
-  
---- 160,167 ----
-  
-  
-  /*----- System-wide config file ----------------------------------------*/
-! #define SYSTEM_PINERC             "@@PREFIX@@/etc/pine.conf"
-! #define SYSTEM_PINERC_FIXED       "@@PREFIX@@/etc/pine.conf.fixed"
-  
-  
-  
++ #define DF_SPELLER                "@@PREFIX@@/bin/ispell"
++ 
+  /*----------------------------------------------------------------------
+     The default printer when pine starts up for the first time with no printer
+   ----*/
 ***************
 *** 268,274 ****
          8

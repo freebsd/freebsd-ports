@@ -1,7 +1,7 @@
 *** pico/osdep/os-bsf.h.orig	Wed Feb  7 14:53:26 2001
---- pico/osdep/os-bsf.h	Thu Sep 27 23:56:53 2001
+--- pico/osdep/os-bsf.h	Wed Mar  5 04:24:00 2003
 ***************
-*** 153,159 ****
+*** 153,165 ****
   /*
    * Place where mail gets delivered (for pico's new mail checking)
    */
@@ -9,7 +9,13 @@
   
   /*
    * What and where the tool that checks spelling is located.  If this is
---- 153,159 ----
+   * undefined, then the spelling checker is not compiled into pico.
+   */
+! #define SPELLER		"/usr/bin/spell"
+  
+  #ifdef	MOUSE
+  #define	XTERM_MOUSE_ON	"\033[?1000h"	/* DECSET with parm 1000 */
+--- 153,165 ----
   /*
    * Place where mail gets delivered (for pico's new mail checking)
    */
@@ -17,3 +23,9 @@
   
   /*
    * What and where the tool that checks spelling is located.  If this is
+   * undefined, then the spelling checker is not compiled into pico.
+   */
+! #define SPELLER		"@@PREFIX@@/bin/spell"
+  
+  #ifdef	MOUSE
+  #define	XTERM_MOUSE_ON	"\033[?1000h"	/* DECSET with parm 1000 */
