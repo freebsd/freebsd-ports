@@ -16,8 +16,6 @@ MAINTAINER=	anton@urc.ac.ru
 
 RUN_DEPENDS=	${LOCALBASE}/drweb/drwebd:${PORTSDIR}/security/drweb
 
-IS_INTERACTIVE= yes     # require sendmail rebuilding
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/clients/drwebdc
 MAKEFILE=	Makefile.unix
 
@@ -49,9 +47,6 @@ post-extract:
 	cd ${WRKDIR}/${DISTNAME} && ${TAR} -xzf ${WRKDIR}/${DISTNAME}/${DISTNAME}.tar.gz clients/drwebdc clients/sendmail
 
 pre-build:
-	@${CAT} pkg-message
-	@echo
-	@read -p "Press Enter to continue or ^C to abort: " x
 	${MKDIR} ${WRKSRC}/libmilter
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/libmilter
 .if ${SENDMAIL_VERSION} == "8.11.1"
@@ -73,7 +68,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/drweb-smf ${PREFIX}/sbin
 	${INSTALL_DATA} ${WRKSRC}/../sendmail/readme.sendmail ${DOC_DIR}
 	${INSTALL_DATA} ${WRKSRC}/../sendmail/readme.sendmail.rus ${DOC_DIR}
-	${SED} 's#!!PREFIX!!#${PREFIX}#' < ${FILESDIR}/drweb-smf.sh >${WRKSRC}/drweb-smf.sh
+	${SED} 's#!!PREFIX!!#${PREFIX}#' < ${FILESDIR}/drweb-smf.sh >${WRKSRC}/drwebsmf.sh
 	${INSTALL_SCRIPT} ${WRKSRC}/drweb-smf.sh ${PREFIX}/etc/rc.d
+	@${CAT} pkg-message
 
 .include <bsd.port.post.mk>
