@@ -22,6 +22,7 @@ MAN1=		xearth.1
 # Copy the list of FreeBSD sites
 post-install:
 	${MKDIR} ${PREFIX}/lib/X11/xearth
+	${CP} ${FILESDIR}/freebsd.core.markers ${PREFIX}/lib/X11/xearth
 	${CP} ${FILESDIR}/freebsd.committers.markers ${PREFIX}/lib/X11/xearth
 	${CP} ${FILESDIR}/freebsd.ftp.markers ${PREFIX}/lib/X11/xearth
 
