@@ -15,6 +15,7 @@
     SUBDIR += dap
     SUBDIR += esound
     SUBDIR += gmixer
+    SUBDIR += gnapster
     SUBDIR += gnomeaudio
     SUBDIR += gnomemedia
     SUBDIR += gogo
