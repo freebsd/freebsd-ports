@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ptl
-PORTVERSION=	2.1.8
-PORTREVISION=	1
+PORTVERSION=	2.1.9
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.media.osaka-cu.ac.jp/pub/%SUBDIR%/ \
 		ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/%SUBDIR%/
@@ -16,11 +15,11 @@ DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 
 MAINTAINER=	knu@FreeBSD.org
 
-BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213
+BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 
 PATCH_SITES=	${MASTER_SITES}
 PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
-PATCHFILES=	${DISTNAME}_readdir-patch
+#PATCHFILES=	${DISTNAME}_readdir-patch
 PATCH_DIST_STRIP=	-p1
 
 USE_PERL5=	yes
