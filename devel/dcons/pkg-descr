@@ -1,6 +1,0 @@
-For a replacement of the serial console, this framework exploits
-physical access faculty of the IEEE1394 OHCI chip(fwochi(4)).
-Please note dcons(4) is device(FireWire)-independent by itself
-(And almost platform independent).
-
-WWW:	http://people.freebsd.org/~simokawa/firewire/dcons-cbug-20030517/
