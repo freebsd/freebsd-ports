@@ -8,6 +8,7 @@
 
 PORTNAME=	xstroke
 PORTVERSION=	0.5.12
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.handhelds.org/pub/projects/xstroke/release-${PORTVERSION:R}/
 
@@ -27,5 +28,6 @@ post-patch:
 		s,%%CFLAGS%%,${CFLAGS},g ; \
 		s,%%LDFLAGS%%,${LDFLAGS},g" ${WRKSRC}/Imakefile
 	@${PERL} -pi -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/etc/Imakefile
+	@${PERL} -pi -e "s,etc/,${PREFIX}/etc/,g" ${WRKSRC}/args.h
 
 .include <bsd.port.mk>
