@@ -1,0 +1,19 @@
+@comment $FreeBSD$
+bin/maildirsync
+%%EXAMPLESDIR%%/sample.sh
+%%EXAMPLESDIR%%/mailbak/do_ms.sh
+%%EXAMPLESDIR%%/mailbak/scoop_users.pl
+%%EXAMPLESDIR%%/mailbak/wrapper.sh
+%%EXAMPLESDIR%%/mailbak/wrapper.sh.noloop
+%%EXAMPLESDIR%%/mailbalance/PREPPED.USERS.db
+%%EXAMPLESDIR%%/mailbalance/README
+%%EXAMPLESDIR%%/mailbalance/do_ms.sh
+%%EXAMPLESDIR%%/mailbalance/functions.inc
+%%EXAMPLESDIR%%/mailbalance/install.sh
+%%EXAMPLESDIR%%/mailbalance/mailbalance
+%%EXAMPLESDIR%%/mailbalance/mailbalance.conf
+%%EXAMPLESDIR%%/mailbalance/scoop_users.pl
+%%EXAMPLESDIR%%/mailbalance/todo.txt
+@dirrm %%EXAMPLESDIR%%/mailbalance
+@dirrm %%EXAMPLESDIR%%/mailbak
+@dirrm %%EXAMPLESDIR%%
