@@ -1,10 +1,10 @@
---- configure.orig	Fri Jan 23 11:48:42 1998
-+++ configure	Thu Feb 12 19:46:09 1998
-@@ -662,14 +662,14 @@
- if test -n "$withval"; then
+--- configure.orig	Mon Feb 23 21:11:35 1998
++++ configure	Sun Mar  1 19:43:04 1998
+@@ -871,14 +871,14 @@
+   withval="$with_tcl"
    TCL_BIN_DIR=$withval
  else
--  TCL_BIN_DIR=`cd ../../tcl8.1a1/unix; pwd`
+-  TCL_BIN_DIR=`cd ../../tcl8.1a2/unix; pwd`
 +  TCL_BIN_DIR=${prefix}/lib/tcl8.1
  fi
  
@@ -18,7 +18,7 @@
  fi
  
  #--------------------------------------------------------------------
-@@ -688,6 +688,8 @@
+@@ -897,6 +897,8 @@
  DL_LIBS=$TCL_DL_LIBS
  LD_FLAGS=$TCL_LD_FLAGS
  
@@ -27,7 +27,7 @@
  LIB_RUNTIME_DIR='${LIB_RUNTIME_DIR}'
  
  # If Tcl and Tk are installed in different places, adjust the library
-@@ -2222,6 +2224,7 @@
+@@ -2571,6 +2573,7 @@
  s%@SHLIB_VERSION@%$SHLIB_VERSION%g
  s%@TCL_BIN_DIR@%$TCL_BIN_DIR%g
  s%@TCL_BUILD_LIB_SPEC@%$TCL_BUILD_LIB_SPEC%g

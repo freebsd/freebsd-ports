@@ -1,13 +1,13 @@
 # New ports collection makefile for:	tk8.0
-# Version required:	8.1a1
+# Version required:	8.1a2
 # Date created:		19 August 1997
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.7 1997/12/01 16:50:58 pst Exp $
+# $Id: Makefile,v 1.8 1998/02/16 15:59:56 jseger Exp $
 #
 
-DISTNAME=	tk8.1a1
-PKGNAME=	tk-8.1.a1
+DISTNAME=	tk8.1a2
+PKGNAME=	tk-8.1.a2
 CATEGORIES=	x11 tk81
 MASTER_SITES=	ftp://ftp.sunlabs.com/pub/tcl/
 

@@ -8,8 +8,6 @@ include/tcl8.1/generic/tclInt.h
 include/tcl8.1/generic/tclMath.h
 include/tcl8.1/generic/tclPort.h
 include/tcl8.1/generic/tclRegexp.h
-include/tcl8.1/generic/wchar.h
-include/tcl8.1/generic/wctype.h
 include/tcl8.1/tcl.h
 include/tcl8.1/unix/tclUnixPort.h
 lib/libtcl81.a
@@ -167,6 +165,7 @@ man/man3/StaticPkg.3.gz
 man/man3/StrMatch.3.gz
 man/man3/StringObj.3.gz
 man/man3/Tcl_Main.3.gz
+man/man3/Thread.3.gz
 man/man3/ToUpper.3.gz
 man/man3/TraceVar.3.gz
 man/man3/Translate.3.gz

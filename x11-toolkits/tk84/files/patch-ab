@@ -1,5 +1,5 @@
---- Makefile.in.orig	Fri Aug 15 22:17:51 1997
-+++ Makefile.in	Wed Oct  1 10:07:16 1997
+--- Makefile.in.orig	Mon Feb 23 21:11:34 1998
++++ Makefile.in	Sun Mar  1 19:51:58 1998
 @@ -56,7 +56,9 @@
  BIN_DIR =		$(exec_prefix)/bin
  
@@ -11,7 +11,7 @@
  
  # Top-level directory for manual entries:
  MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man
-@@ -94,11 +96,11 @@
+@@ -95,11 +97,11 @@
  
  # Libraries to use when linking.  This definition is determined by the
  # configure script.
@@ -25,7 +25,7 @@
  
  # To turn off the security checks that disallow incoming sends when
  # the X server appears to be insecure, reverse the comments on the
-@@ -134,7 +136,7 @@
+@@ -141,7 +143,7 @@
  # "install" around;  better to use the install-sh script that comes
  # with the distribution, which is slower but guaranteed to work.
  
@@ -34,7 +34,7 @@
  INSTALL_PROGRAM =	${INSTALL}
  INSTALL_DATA =		${INSTALL} -m 644
  
-@@ -290,6 +292,11 @@
+@@ -301,6 +303,11 @@
  	@MAKE_LIB@
  	$(RANLIB) @TK_LIB_FILE@
  
@@ -46,7 +46,7 @@
  # Make target which outputs the list of the .o contained in the Tk lib
  # usefull to build a single big shared library containing Tcl/Tk and other
  # extensions.  used for the Tcl Plugin.  -- dl
-@@ -340,7 +347,7 @@
+@@ -355,7 +362,7 @@
  # some ranlibs write to current directory, and this might not always be
  # possible (e.g. if installing as root).
  
@@ -55,7 +55,7 @@
  	@for i in $(LIB_INSTALL_DIR) $(BIN_INSTALL_DIR) ; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -354,13 +361,19 @@
+@@ -369,13 +376,19 @@
  	@$(INSTALL_DATA) $(TK_LIB_FILE) $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
  	@(cd $(LIB_INSTALL_DIR); $(RANLIB) $(TK_LIB_FILE))
  	@chmod 555 $(LIB_INSTALL_DIR)/$(TK_LIB_FILE)
@@ -76,7 +76,7 @@
  		$(SCRIPT_INSTALL_DIR) $(SCRIPT_INSTALL_DIR)/images; \
  	    do \
  	    if [ ! -d $$i ] ; then \
-@@ -370,8 +383,18 @@
+@@ -385,8 +398,18 @@
  		else true; \
  		fi; \
  	    done;
@@ -94,10 +94,10 @@
 +	    $(INSTALL_DATA) $$i $(UNIX_INCLUDE_INSTALL_DIR); \
 +	    done;
 +	@ln -sf $(GENERIC_INCLUDE_INSTALL_DIR)/tk.h $(INCLUDE_INSTALL_DIR)/tk.h
- 	for i in $(SRC_DIR)/library/*.tcl $(SRC_DIR)/library/tclIndex $(SRC_DIR)/library/prolog.ps $(UNIX_DIR)/tkAppInit.c; \
+ 	for i in $(SRC_DIR)/library/*.tcl $(SRC_DIR)/library/tclIndex $(UNIX_DIR)/tkAppInit.c; \
  	    do \
  	    echo "Installing $$i"; \
-@@ -430,28 +453,28 @@
+@@ -445,28 +468,28 @@
  	@cd $(SRC_DIR)/doc; for i in *.1; \
  	    do \
  	    echo "Installing doc/$$i"; \
