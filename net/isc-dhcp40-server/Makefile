@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	isc-dhcp3
-PORTVERSION=	3.0.b2.16
+PORTVERSION=	3.0.b2.18
 CATEGORIES=	net
-MASTER_SITES=   ftp://ftp.isc.org/isc/dhcp/
+MASTER_SITES=	ftp://ftp.isc.org/isc/dhcp/
 DISTNAME=	${PORTNAME:S/isc-//:S/3/-/}${PORTVERSION:S/.b/b/:R}pl${PORTVERSION:E}
 
 MAINTAINER=	clefevre@poboxes.com
@@ -30,7 +30,7 @@ MAN8=		dhclient.8 dhclient-script.8 dhcpd.8 dhcrelay.8
 # Local variables
 #
 
-PATCH_SUBDIRS=	client common dhcpctl minires omapip relay server
+PATCH_SUBDIRS=	client common dhcpctl dst minires omapip relay server
 
 BIN_FILES=	dhclient dhcpd dhcrelay
 SAMP_FILES=	client/dhclient.conf server/dhcpd.conf
