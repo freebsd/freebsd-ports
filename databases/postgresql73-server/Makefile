@@ -75,7 +75,7 @@ CONFLICTS=	postgresql-7*
 .else
 PKGMESSAGE=	${FILESDIR}/pkg-message.server
 PKGMSG=		${PKGMESSAGE}
-CONFLICTS=	postgresql-client
+CONFLICTS=	postgresql-client*
 PLIST_SUB+=	SERVER=""
 INSTALL_TARGET+= install-all-headers
 MAKEFILE=	GNUmakefile
