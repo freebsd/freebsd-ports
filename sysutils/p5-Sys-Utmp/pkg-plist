@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Sys/Utmp.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Utmp/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Utmp/Utmp.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Utmp/Utmp.bs
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys/Utmp
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Sys 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/Sys 2>/dev/null || true
