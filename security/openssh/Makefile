@@ -41,7 +41,7 @@ PAM=no
 
 .include <bsd.port.pre.mk>
 
-.include <${PORTSDIR}/security/openssl/Makefile.ssl>
+.include "${PORTSDIR}/security/openssl/Makefile.ssl"
 
 CRYPTOLIBS=	-L${OPENSSLLIB} -lcrypto
 # Here, MANDIR is concetenated to DESTDIR which all forms the man install dir...
