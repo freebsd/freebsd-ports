@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cscout
-PORTVERSION=	1.13
+PORTVERSION=	1.15
 CATEGORIES=	devel
 MASTER_SITES=	http://www.spinellis.gr/cscout/ \
 		http://www.dmst.aueb.gr/dds/cscout/
