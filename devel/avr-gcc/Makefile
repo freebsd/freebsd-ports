@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	3.3-2002-08-12
+PORTVERSION=	3.3.2002.09.01
 CATEGORIES=	devel
 #MASTER_SITES=	${MASTER_SITE_GNU}
 #MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}-${PORTVERSION}
@@ -36,8 +36,7 @@ CONFIGURE_ARGS=	--target=avr
 
 MAKE_FLAGS=	LANGUAGES="c c++"
 
-# Only few man pages in this snapshot...
-#MAN1=		cpp.1 avr-gcc.1 avr-g++.1 gcov.1
-MAN1=		avr-g++.1
+MAN1=		cpp.1 avr-gcc.1 avr-g++.1 gcov.1
+MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
 .include <bsd.port.mk>

@@ -1,0 +1,13 @@
+--- gcc/config/avr/avr.c.orig	Mon Aug 12 15:13:56 2002
++++ gcc/config/avr/avr.c	Thu Aug 29 12:53:14 2002
+@@ -2711,8 +2711,8 @@
+             }
+         }
+       else
+-        return  *l=2, (AS2 (st ,%0,%A1)    CR_TAB
+-                       AS2 (std,%0+1,%B1));
++        return  *l=2, (AS2 (std,%0+1,%B1)  CR_TAB
++                       AS2 (st ,%0,%A1));
+     }
+   else if (GET_CODE (base) == PLUS)
+     {
