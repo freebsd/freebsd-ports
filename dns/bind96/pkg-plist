@@ -179,32 +179,32 @@ sbin/named-checkconf
 sbin/named-checkzone
 sbin/rndc
 sbin/rndc-confgen
-%%PORTDOCS%%share/doc/bind9/CHANGES
-%%PORTDOCS%%share/doc/bind9/COPYRIGHT
-%%PORTDOCS%%share/doc/bind9/FAQ
-%%PORTDOCS%%share/doc/bind9/README
-%%PORTDOCS%%share/doc/bind9/arm/Bv9ARM.ch01.html
-%%PORTDOCS%%share/doc/bind9/arm/Bv9ARM.ch02.html
-%%PORTDOCS%%share/doc/bind9/arm/Bv9ARM.ch03.html
-%%PORTDOCS%%share/doc/bind9/arm/Bv9ARM.ch04.html
-%%PORTDOCS%%share/doc/bind9/arm/Bv9ARM.ch05.html
-%%PORTDOCS%%share/doc/bind9/arm/Bv9ARM.ch06.html
-%%PORTDOCS%%share/doc/bind9/arm/Bv9ARM.ch07.html
-%%PORTDOCS%%share/doc/bind9/arm/Bv9ARM.ch08.html
-%%PORTDOCS%%share/doc/bind9/arm/Bv9ARM.ch09.html
-%%PORTDOCS%%share/doc/bind9/arm/Bv9ARM.html
-%%PORTDOCS%%share/doc/bind9/misc/dnssec
-%%PORTDOCS%%share/doc/bind9/misc/format-options.pl
-%%PORTDOCS%%share/doc/bind9/misc/ipv6
-%%PORTDOCS%%share/doc/bind9/misc/migration
-%%PORTDOCS%%share/doc/bind9/misc/migration-4to9
-%%PORTDOCS%%share/doc/bind9/misc/options
-%%PORTDOCS%%share/doc/bind9/misc/rfc-compliance
-%%PORTDOCS%%share/doc/bind9/misc/roadmap
-%%PORTDOCS%%share/doc/bind9/misc/sdb
-%%PORTDOCS%%@dirrm share/doc/bind9/arm
-%%PORTDOCS%%@dirrm share/doc/bind9/misc
-%%PORTDOCS%%@dirrm share/doc/bind9
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch01.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch02.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch03.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch04.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch05.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch06.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch07.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch08.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.ch09.html
+%%PORTDOCS%%%%DOCSDIR%%/arm/Bv9ARM.html
+%%PORTDOCS%%%%DOCSDIR%%/misc/dnssec
+%%PORTDOCS%%%%DOCSDIR%%/misc/format-options.pl
+%%PORTDOCS%%%%DOCSDIR%%/misc/ipv6
+%%PORTDOCS%%%%DOCSDIR%%/misc/migration
+%%PORTDOCS%%%%DOCSDIR%%/misc/migration-4to9
+%%PORTDOCS%%%%DOCSDIR%%/misc/options
+%%PORTDOCS%%%%DOCSDIR%%/misc/rfc-compliance
+%%PORTDOCS%%%%DOCSDIR%%/misc/roadmap
+%%PORTDOCS%%%%DOCSDIR%%/misc/sdb
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/arm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/misc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rm -f %%BIND_DESTETC%%/rndc.conf.sample
 @dirrm include/dns
 @dirrm include/dst
