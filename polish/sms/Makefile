@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sms
-PORTVERSION=	1.9.1i
+PORTVERSION=	1.9.2d
 CATEGORIES=	polish
 MASTER_SITES=	http://www.ceti.pl/~miki/komputery/download/sms/
 
