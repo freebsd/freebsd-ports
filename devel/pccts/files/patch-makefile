@@ -1,0 +1,44 @@
+--- makefile.orig	Fri May 21 12:06:12 2004
++++ makefile	Fri May 21 12:06:54 2004
+@@ -20,41 +20,11 @@
+ #COPT=-O2
+ 
+ pccts:
+-	@echo " "
+-	@echo "             Welcome to PCCTS 1.33MR33 installation"
+-	@echo " "
+-	@echo "             (Version 1.33 Maintenance Release #33)" # mrxxx
+-	@echo " "
+-	@echo "                  Released 19 April 2002"
+-	@echo " "
+-	@echo "                        Featuring"
+-	@echo "         ANTLR     -- ANother Tool for Language Recognition"
+-	@echo "         DLG       -- DFA-based Lexical Analyzer Generator"
+-	@echo "         SORCERER  -- Source-to-source translator (tree walker)" 
+-	@echo " "
+-	@echo "                  http://www.antlr.org"	
+-	@echo " "
+-	@echo "             Trouble reports to tmoog@polhode.com"
+-	@echo "             Additional PCCTS 1.33 information at"
+-	@echo "                  http://www.polhode.com"
+-	@echo
+-	@echo
+-	@echo "To substitute gcc for CC to invoke compiler: make CC=gcc"
+-	@echo "If there are problems with cr and lf try: unzip -a ..."
+-	@echo
+-#
+ 	@if [ ! -d $(BINDIR) ] ; then mkdir $(BINDIR) ; fi
+-	@echo Making executables...
+ 	(cd ./antlr; $(MAKE) CC="$(CC)" COPT="$(COPT)")
+-	@echo antlr executable now in $(BINDIR)
+ 	(cd ./dlg; $(MAKE) CC="$(CC)" COPT="$(COPT)")
+-	@echo dlg executable now in $(BINDIR)
+ 	(cd ./sorcerer; $(MAKE) CC="$(CC)" COPT="$(COPT)")
+-	@echo sorcerer executable now in $(BINDIR)
+ 	(cd ./support/genmk; $(MAKE) CC="$(CC)" COPT="$(COPT)"; mv genmk ../../$(BINDIR))
+-	@echo genmk executable now in $(BINDIR)
+-	@echo
+-	@echo "       PCCTS 1.33MR33 installation complete"  # MRXXX
+ 
+ clean:
+ 	(cd ./antlr; $(MAKE) -s clean)
