@@ -1838,6 +1838,7 @@ fold		src/usr.bin/fold
 font2svg	ports/print/font2svg
 fontconfig	ports/x11-fonts/fontconfig
 fontedit	ports/sysutils/fontedit
+fontilus	ports/x11-fonts/fontilus
 foobillard	ports/games/foobillard
 fooseti		ports/astro/fooseti
 fop		ports/textproc/fop
