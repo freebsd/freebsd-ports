@@ -18,4 +18,6 @@ lib/dict/wn.dict.dz
 lib/dict/wn.index
 lib/dict/world95.dict.dz
 lib/dict/world95.index
+lib/dict/vera.dict.dz
+lib/dict/vera.index
 @dirrm lib/dict
