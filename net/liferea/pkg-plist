@@ -1,8 +1,5 @@
 bin/liferea
 bin/liferea-bin
-@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/liferea.schemas > /dev/null || /usr/bin/true
-etc/gconf/schemas/liferea.schemas
-@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/liferea.schemas > /dev/null || /usr/bin/true
 lib/liferea/liblihtmlg.so
 %%MOZ%%lib/liferea/liblihtmlm.so
 share/gnome/applications/liferea.desktop
