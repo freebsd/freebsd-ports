@@ -47,7 +47,6 @@
     SUBDIR += ion
     SUBDIR += jewel
     SUBDIR += kappdock
-    SUBDIR += kde-icontheme-crystal
     SUBDIR += kdeartwork3
     SUBDIR += larswm
     SUBDIR += libdockapp
