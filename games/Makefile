@@ -412,6 +412,7 @@
     SUBDIR += tetrinet
     SUBDIR += tetrinet-x
     SUBDIR += textmaze
+    SUBDIR += thevalley
     SUBDIR += thudboard
     SUBDIR += tictactoe3d
     SUBDIR += tileworld
