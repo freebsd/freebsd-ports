@@ -12,7 +12,7 @@
 # release you can generally build it cleanly from the source - Doug
 
 PORTNAME=	bind9
-PORTVERSION=	9.2.3.4
+PORTVERSION=	9.2.3
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,dns/bind9/${ISCVERSION}/,}
@@ -23,7 +23,7 @@ MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	Completely new version of the BIND DNS server
 
 # ISC releases things like 9.2.2rc1, which our versioning doesn't like
-ISCVERSION=	9.2.3rc4
+ISCVERSION=	9.2.3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps --disable-threads \
