@@ -3,12 +3,13 @@
 # Date created:		17 October 1997
 # Whom:			itojun@itojun.org
 #
-# $Id: Makefile,v 1.13 1998/06/27 05:19:18 asami Exp $
+# $Id: Makefile,v 1.14 1998/08/07 23:56:40 asami Exp $
 #
 
 DISTNAME=	ewipe-1.0.0
 CATEGORIES=	misc tk42
-MASTER_SITES=	http://www.jnet-jp.to/~sekisita/ewipe/
+MASTER_SITES=	http://www.jnet-jp.to/~sekisita/ewipe/ \
+		http://freefall.freebsd.org/~itojun/distfiles/
 
 MAINTAINER=	itojun@itojun.org
 
