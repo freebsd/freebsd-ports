@@ -1,8 +1,17 @@
---- src/rateup.c.orig	Sat Oct 19 05:06:55 2002
-+++ src/rateup.c	Mon Feb 10 22:55:06 2003
-@@ -830,12 +830,14 @@
+--- src/rateup.c.orig	Sat Apr 12 15:41:20 2003
++++ src/rateup.c	Mon Jun  2 10:42:04 2003
+@@ -62,7 +62,7 @@
+ #ifdef __MINGW32_VERSION
+ #define LLD "%I64d"
+ #else
+-#define LLD "%lld"
++#define LLD "%qd"
+ #endif
+ 
+ /* WATCOM C/C++ 10.6 under Win95/NT */
+@@ -840,12 +840,14 @@ char *file;
      struct HISTORY *hist;
-     unsigned long rd[5];
+     long long rd[5];
      time_t cur;
 +    long lasttime;
  
