@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spambnc
-PORTVERSION=	20050302
+PORTVERSION=	20050404
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spambouncer.org/	\
 		ftp://ftp.spambouncer.org/
@@ -18,8 +18,6 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Set of procmail recipies which handle known/suspected spam
 
 RUN_DEPENDS=	procmail:${PORTSDIR}/mail/procmail
-
-BROKEN=		Size mismatch
 
 IGNOREFILES=	index.shtml
 NO_WRKSUBDIR=	yes
