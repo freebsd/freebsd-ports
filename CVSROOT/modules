@@ -2057,6 +2057,7 @@ g-wrap		ports/devel/g-wrap
 g2		ports/graphics/g2
 g2c		ports/devel/g2c
 g3dviewer	ports/graphics/g3dviewer
+g95		ports/lang/g95
 gaa		ports/devel/gaa
 gabber		ports/net/gabber
 gaddr		ports/deskutils/gaddr
