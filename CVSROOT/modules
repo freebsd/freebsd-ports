@@ -1833,7 +1833,7 @@ entitymib	ports/net/entitymib
 entropy		ports/math/entropy
 envelope	ports/print/envelope
 eo-aspell	ports/textproc/eo-aspell
-eog2		ports/graphics/eog2
+eog		ports/graphics/eog
 epeg		ports/graphics/epeg
 eperl		ports/lang/eperl
 ephem		ports/astro/ephem
