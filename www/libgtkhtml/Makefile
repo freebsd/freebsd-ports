@@ -16,7 +16,7 @@ MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	bonobo.2:${PORTSDIR}/devel/bonobo \
 		wwwzip.1:${PORTSDIR}/www/libwww \
-		gconf-1.0:${PORTSDIR}/devel/gconf \
+		gconf-1.1:${PORTSDIR}/devel/gconf \
 		pspell.2:${PORTSDIR}/textproc/pspell
 
 GLIB_CONFIG?=	${LOCALBASE}/bin/glib12-config

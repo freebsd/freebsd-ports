@@ -1,0 +1,69 @@
+--- libnautilus-extensions/nautilus-preferences.c.orig	Wed Jul 12 03:03:32 2000
++++ libnautilus-extensions/nautilus-preferences.c	Tue Oct  3 11:59:02 2000
+@@ -594,3 +594,3 @@
+ 	if (!gconf_is_initialized ()) {
+-		GConfError	  *error = NULL;
++		GError		  *error = NULL;
+ 		char		  *argv[] = { "nautilus", NULL };
+@@ -601,5 +601,5 @@
+ 			/* FIXME bugzilla.eazel.com 672: Need better error reporting here */
+-			g_warning ("GConf init failed:\n  %s", error->str);
++			g_warning ("GConf init failed:\n  %s", error->message);
+ 			
+-			gconf_error_destroy (error);
++			g_error_free (error);
+ 			
+--- libnautilus-extensions/nautilus-user-level-manager.c.orig	Wed Jul 12 03:03:32 2000
++++ libnautilus-extensions/nautilus-user-level-manager.c	Tue Oct  3 12:06:04 2000
+@@ -111,3 +111,3 @@
+ 	if (!gconf_is_initialized ()) {
+-		GConfError	  *error = NULL;
++		GError		  *error = NULL;
+ 		char		  *argv[] = { "nautilus", NULL };
+@@ -118,5 +118,5 @@
+ 			/* FIXME bugzilla.eazel.com 672: Need better error reporting here */
+-			g_warning ("GConf init failed:\n  %s", error->str);
++			g_warning ("GConf init failed:\n  %s", error->message);
+ 			
+-			gconf_error_destroy (error);
++			g_error_free (error);
+ 			
+@@ -245,3 +245,3 @@
+ 
+-	gconf_value_destroy (value);
++	gconf_value_free (value);
+ }
+@@ -460,3 +460,3 @@
+ 	if (value) {
+-		gconf_value_destroy (value);
++		gconf_value_free (value);
+ 	}
+@@ -499,5 +499,5 @@
+ 		case GCONF_VALUE_STRING:
+-			result = (gconf_value_string (value_a)
+-				  && gconf_value_string (value_b)
+-				  && (strcmp (gconf_value_string (value_a), gconf_value_string (value_b)) == 0));
++			result = (gconf_value_get_string (value_a)
++				  && gconf_value_get_string (value_b)
++				  && (strcmp (gconf_value_get_string (value_a), gconf_value_get_string (value_b)) == 0));
+ 			break;
+@@ -505,3 +505,3 @@
+ 		case GCONF_VALUE_INT:
+-			result = (gconf_value_int (value_a) == gconf_value_int (value_b));
++			result = (gconf_value_get_int (value_a) == gconf_value_get_int (value_b));
+ 			break;
+@@ -509,3 +509,3 @@
+ 		case GCONF_VALUE_BOOL:
+-			result = (gconf_value_bool (value_a) == gconf_value_bool (value_b));
++			result = (gconf_value_get_bool (value_a) == gconf_value_get_bool (value_b));
+ 			break;
+@@ -522,3 +522,3 @@
+ 	if (value_a) {
+-		gconf_value_destroy (value_a);
++		gconf_value_free (value_a);
+ 	}
+@@ -526,3 +526,3 @@
+ 	if (value_b) {
+-		gconf_value_destroy (value_b);
++		gconf_value_free (value_b);
+ 	}
