@@ -32,8 +32,8 @@ IS_INTERACTIVE=	yes
 RESTRICTED=	"Not sure if we can redistribute this."
 NO_PACKAGE=	${RESTRICTED}
 
-VMWARE_VER=	4.0.5
-BUILD_VER=	6030
+VMWARE_VER=	4.5.1
+BUILD_VER=	7568
 
 MOUNT_DEV?=	/dev/acd0
 MOUNT_PT?=	/mnt
