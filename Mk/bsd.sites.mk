@@ -76,6 +76,12 @@ MASTER_SITE_FREEBSD_ORG+=	\
 	ftp://ftp.dti.ad.jp/pub/FreeBSD/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,FreeBSD/&,}
 
+MASTER_SITE_GCC+=	\
+	${MASTER_SITE_SOURCEWARE:S,%SUBDIR%,gcc/&,}  \
+	ftp://gcc.gnu.org/pub/gcc/%SUBDIR%/ \
+	ftp://ftp.iij.ad.jp/pub/gcc/%SUBDIR%/ \
+	ftp://ftp.dti.ad.jp/pub/lang/gcc/%SUBDIR%/
+
 MASTER_SITE_GNOME+=	\
 	ftp://archive.progeny.com/GNOME/%SUBDIR%/ \
 	ftp://ftp.rpmfind.net/linux/gnome.org/%SUBDIR%/ \
