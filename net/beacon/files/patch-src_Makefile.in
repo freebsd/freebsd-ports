@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- src/Makefile.in.orig	Tue Jun  8 03:09:48 2004
++++ src/Makefile.in	Tue Jul  6 17:16:16 2004
+@@ -202,8 +202,8 @@
+ 	@list='$(dist_sysconf_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	  echo " $(dist_sysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sysconfdir)/$$f'"; \
+-	  $(dist_sysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sysconfdir)/$$f"; \
++	  echo " $(dist_sysconfDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(sysconfdir)/$$f.sample'"; \
++	  $(dist_sysconfDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(sysconfdir)/$$f.sample"; \
+ 	done
+ 
+ uninstall-dist_sysconfDATA:
