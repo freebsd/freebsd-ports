@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	spread-j
-PORTVERSION=	3.17.0
-PORTREVISION=	1
+PORTVERSION=	3.17.1
 CATEGORIES=	net java
-MASTER_SITES=	http://www.roughtrade.net/distfiles/
+MASTER_SITES=	http://www.cnds.jhu.edu/download/noformdown/
 DISTNAME=	spread-src-${PORTVERSION}
 
 MAINTAINER=	joshua@roughtrade.net
@@ -21,26 +20,30 @@ USE_JAVA=	1.2+
 JAVALIBDIR=	${PREFIX}/share/java/classes
 PKGMESSAGE=	${WRKSRC}/../license.txt
 
+ANT?=		${LOCALBASE}/bin/ant
 .if defined(NOPORTDOCS)
 PLIST_SUB+=	JAVALIB_DOCS='@comment '
+ANT_TARGET=	jar
 .else
 PLIST_SUB+=	JAVALIB_DOCS=''
+ANT_TARGET=	javadocs jar
+PORTDOCS+=	html readme.txt
 .endif
+ANT_PARAMS+=	-Dlib.dir=${JAVALIBDIR} -Djavadoc.destdir=docs -Dversion=${PORTVERSION}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/java
 PLIST_SUB+=	JAVALIBDIR=share/java/classes
-ANT?=		${LOCALBASE}/bin/ant
 
 do-build:
-	@cd ${WRKSRC} && ${ANT} javadocs jar -Dlib.dir=${JAVALIBDIR} -Djavadoc.destdir=docs
+	@cd ${WRKSRC} && ${ANT} ${ANT_TARGET} ${ANT_PARAMS}
 
 do-install:
-	@cd ${WRKSRC} && ${ANT} install -Dlib.dir=${JAVALIBDIR}
+	@cd ${WRKSRC} && ${ANT} install ${ANT_PARAMS}
+.if !defined(NOPORTDOCS)
 	${INSTALL} -d -o root -g wheel -m 0755 ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/recThread.java ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/Flooder.java ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/User.java ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
 	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
 	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}/html
