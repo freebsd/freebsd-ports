@@ -1,6 +1,6 @@
---- configure.orig	Sat Mar 31 12:50:28 2001
-+++ configure	Sun Jun 10 16:41:12 2001
-@@ -920,9 +920,9 @@
+--- configure.orig	Sat Sep 29 04:39:08 2001
++++ configure	Sat Nov 10 20:30:26 2001
+@@ -922,9 +922,9 @@
  
  
  if test "x$prefix" != xNONE; then
@@ -12,3 +12,44 @@
  fi
  cat >> confdefs.h <<EOF
  #define DOOMWADDIR "$DOOMWADDIR"
+@@ -1220,7 +1220,7 @@
+   echo '    the source to insert the relevant pragmas so structures are packed.'
+ fi
+ 
+-CFLAGS_OPT="-O2 -fomit-frame-pointer"
++CFLAGS_OPT="-fomit-frame-pointer"
+ # Check whether --enable-debug or --disable-debug was given.
+ if test "${enable_debug+set}" = set; then
+   enableval="$enable_debug"
+@@ -1250,30 +1250,8 @@
+ 
+ 
+ 
+-# Check whether --enable-cpu-opt or --disable-cpu-opt was given.
+-if test "${enable_cpu_opt+set}" = set; then
+-  enableval="$enable_cpu_opt"
+-  
+-CPU_CFLAGS=""
+-
+-else
+-  
+-case "$target" in
+-        # marginal gains from aligning code
+-i386-*) CPU_CFLAGS="-m386" ;;
+-i486-*) CPU_CFLAGS="-m486" ;;
+-        # nothing special for pentium  
+-        # CMOV op on ppro/II/686 can help us
+-i686-*) CPU_CFLAGS="-mcpu=i686 -march=i686" ;;
+-esac
+-
+-fi
+-
+-
+-
+-
+ NEW_CFLAGS="$CFLAGS"
+-for ac_flag in -Wall -Winline -Wwrite-strings -ffast-math $CFLAGS_OPT $CPU_CFLAGS
++for ac_flag in -Wall -Winline -Wwrite-strings -ffast-math $CFLAGS_OPT
+ do
+  echo $ac_n "checking whether compiler supports $ac_flag""... $ac_c" 1>&6
+ echo "configure:1280: checking whether compiler supports $ac_flag" >&5
