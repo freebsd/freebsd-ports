@@ -1,0 +1,16 @@
+--- textedit.c.orig	Tue Nov  4 22:36:32 1997
++++ textedit.c	Tue Nov  4 22:45:23 1997
+@@ -40,10 +40,13 @@
+  * The function is already defined in the XView libraries
+ long	textsw_store_file();
+ */
++#if (!defined(BSD) || (BSD < 199103))
+ char	*getwd(), *sprintf();
++#endif
+ void	frame_cmdline_help();
+ static int		off();
+ static Notify_value	mysigproc();
++static  die(char *, char *, char *);
+ /*
+ extern Notify_value	textedit_event_proc();
+ */
