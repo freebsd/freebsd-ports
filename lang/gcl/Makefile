@@ -15,6 +15,7 @@ MAINTAINER=	markm@freebsd.org
 COMMENT=	GNU Common Lisp
 
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
+LIB_DEPENDS+=	gmp.6:${PORTSDIR}/math/libgmp4
 
 ONLY_FOR_ARCHS=	i386 sparc64
 
