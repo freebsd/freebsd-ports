@@ -17,5 +17,7 @@ Tgif depends on the `netpbm' package, available from the `ports'
 collection. In order to native language support, `gettext' package is 
 required, and it's also available from the `ports' collection.
 
+WWW: http://bourbon.cs.umd.edu:8001/tgif/
+
 Tgif is written, maintained and enhanced by
 William Chia-Wei Cheng (william@cs.umd.edu)
