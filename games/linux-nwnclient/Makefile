@@ -46,7 +46,9 @@ do-install:
 	    ${CPIO} -pdmuv -R${SHAREOWN}:${SHAREGRP} ${DATADIR})
 	${LN} -s ${LINUXBASE}/usr/lib/libstdc++-2-libc6.1-1-2.9.0.so \
 		${DATADIR}/lib/libstdc++-libc6.1-2.so.3
-	${CHMOD} -R a+r ${DATADIR}
+	${FIND} ${DATADIR} -type d -print0 | ${XARGS} -0 chmod 0755
+	${FIND} ${DATADIR} -type f -print0 | ${XARGS} -0 chmod 0644
+	(cd ${DATADIR} && ${CHMOD} 0755 dmclient nwmain nwserver)
 	${INSTALL_SCRIPT} ${WRKDIR}/nwn ${PREFIX}/bin/
 
 .include <bsd.port.mk>
