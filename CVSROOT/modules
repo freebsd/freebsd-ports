@@ -1548,6 +1548,7 @@ ecore		ports/x11/ecore
 ecos-tools	ports/devel/ecos-tools
 ecu		ports/comms/ecu
 edb		ports/databases/edb
+ede		ports/x11-wm/ede
 edith		ports/editors/edith
 editss		ports/games/editss
 edonkey-gui-gtk	ports/net/edonkey-gui-gtk
