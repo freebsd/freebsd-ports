@@ -1,0 +1,72 @@
+*** conf/httpd.conf-dist.orig	Wed May  6 16:12:39 1998
+--- conf/httpd.conf-dist	Sat Jun  6 13:08:52 1998
+***************
+*** 50,56 ****
+  #  don't use Group #-1 on these systems!
+  
+  User nobody
+! Group #-1
+  
+  # ServerAdmin: Your address, where problems with the server should be
+  # e-mailed.
+--- 50,56 ----
+  #  don't use Group #-1 on these systems!
+  
+  User nobody
+! Group nogroup
+  
+  # ServerAdmin: Your address, where problems with the server should be
+  # e-mailed.
+***************
+*** 65,70 ****
+--- 65,80 ----
+  
+  ServerRoot @@ServerRoot@@
+  
++ # AccessConfig: The name and location of the Access Configuration file
++ #
++ 
++ AccessConfig @@ServerRoot@@/access.conf
++ 
++ # ResourceConfig: The name and location of the Resource Configuration file
++ #
++ 
++ ResourceConfig @@ServerRoot@@/srm.conf
++ 
+  # BindAddress: You can support virtual hosts with this option. This option
+  # is used to tell the server which IP address to listen to. It can either
+  # contain "*", an IP address, or a fully qualified Internet domain name.
+***************
+*** 94,100 ****
+  # The location of the access logfile (Common Logfile Format).
+  # If this does not start with /, ServerRoot is prepended to it.
+  
+! CustomLog logs/access_log common
+  
+  # If you would like to have an agent and referer logfile uncomment the
+  # following directives.
+--- 104,110 ----
+  # The location of the access logfile (Common Logfile Format).
+  # If this does not start with /, ServerRoot is prepended to it.
+  
+! #CustomLog logs/access_log common
+  
+  # If you would like to have an agent and referer logfile uncomment the
+  # following directives.
+***************
+*** 105,111 ****
+  # If you prefer a single logfile with access, agent and referer information
+  # (Combined Logfile Format) you can use the following directive.
+  
+! #CustomLog logs/access_log combined
+  
+  # PidFile: The file the server should log its pid to
+  PidFile logs/httpd.pid
+--- 115,121 ----
+  # If you prefer a single logfile with access, agent and referer information
+  # (Combined Logfile Format) you can use the following directive.
+  
+! CustomLog logs/access_log combined
+  
+  # PidFile: The file the server should log its pid to
+  PidFile logs/httpd.pid
