@@ -1,0 +1,19 @@
+*** src/prefs.c	Mon Mar  8 12:48:35 1999
+--- src/prefs.c	Mon Mar  8 12:48:56 1999
+***************
+*** 22,28 ****
+  #include <string.h>
+  #include <math.h>
+  #include <errno.h>
+! #include <values.h>
+  #include <fcntl.h>
+  #include <ctype.h>
+  #include <sys/stat.h>
+--- 22,28 ----
+  #include <string.h>
+  #include <math.h>
+  #include <errno.h>
+! #include <limits.h>
+  #include <fcntl.h>
+  #include <ctype.h>
+  #include <sys/stat.h>
