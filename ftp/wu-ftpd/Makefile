@@ -12,6 +12,9 @@ DISTNAME=       wu-ftpd-2.5.0
 CATEGORIES=	ftp
 MASTER_SITES=   ftp://ftp.vr.net/pub/wu-ftpd/wu-ftpd/
 
+PATCH_SITES=	ftp://ftp.wu-ftpd.org/pub/wu-ftpd/quickfixes/apply_to_2.5.0/
+PATCHFILES=	mapped.path.overrun.patch
+
 MAINTAINER=     ache@FreeBSD.org
 
 Y2K=		http://www.cetis.hvu.nl/~koos/wu-ftpd-faq.html#QA35
