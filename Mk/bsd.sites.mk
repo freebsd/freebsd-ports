@@ -51,7 +51,6 @@ MASTER_SITE_APACHE+=	\
 	ftp://ftp.gin.cz/pub/mirrors/www.apache.org/dist/%SUBDIR%/ \
 	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/ftp.apache.org/dist/%SUBDIR%/ \
 	ftp://ftp.apache.de/mirrors/dev.apache.org/dist/%SUBDIR%/ \
-	ftp://ftp.cs.tu-berlin.de/pub/net/www/apache/%SUBDIR%/ \
 	ftp://mir1.ovh.net/ftp.apache.org/dist/%SUBDIR%/ \
 	ftp://ftp.forthnet.gr/pub/www/apache/dist/%SUBDIR%/ \
 	ftp://sunsite.srce.hr/mirrors/ftp.apache.org/apache/dist/%SUBDIR%/ \
@@ -59,12 +58,10 @@ MASTER_SITE_APACHE+=	\
 	ftp://ftp.esat.net/mirrors/ftp.apache.org/%SUBDIR%/ \
 	ftp://ftp.heanet.ie/mirrors/www.apache.org/dist/%SUBDIR%/ \
 	ftp://ftp.rhnet.is/pub/apache/%SUBDIR%/ \
-	ftp://apache.theomnistore.com/mirror/apache/dist/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/apache/dist/&,} \
 	ftp://ftp.sogang.ac.kr/www/apache/dist/%SUBDIR%/ \
 	ftp://ftp.task.gda.pl/pub/www/apache/dist/%SUBDIR%/ \
 	ftp://sunsite.icm.edu.pl/pub/www/apache/dist/%SUBDIR%/ \
-	ftp://ftp.telepac.pt/pub/apache/dist/%SUBDIR%/ \
 	ftp://ftp.kappa.ro/pub/mirrors/ftp.apache.org/dist/%SUBDIR%/ \
 	ftp://apache.rinet.ru/pub/mirror/apache.org/dist/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/WWW/apache/dist/%SUBDIR%/ \
