@@ -1,0 +1,9 @@
+The Free Software Foundation's "find" utilities, including "find",
+"locate", and "xargs".
+
+These utilities exist in the FreeBSD base collection, but the GNU
+versions have added functionality that is sometimes useful.
+
+Note that this port will install these utilities with a `g' prefix,
+eg., glocate, gfind, gxargs, but the texinfo documentation will refer to
+these utilities without the `g' prefix.

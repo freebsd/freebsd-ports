@@ -45,6 +45,7 @@
     SUBDIR += fd
     SUBDIR += fep
     SUBDIR += figlet
+    SUBDIR += findutils
     SUBDIR += fortuneit
     SUBDIR += freedialog
     SUBDIR += geekcode

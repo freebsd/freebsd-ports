@@ -1,0 +1,15 @@
+--- locate/Makefile.in.orig    Sat Nov  5 09:44:08 1994
++++ locate/Makefile.in Wed Mar 29 19:49:11 2000
+@@ -96,8 +96,11 @@
+ 
+ install-programs: $(PROGRAMS) $(SCRIPTS)
+ 	$(top_srcdir)/mkinstalldirs $(bindir)
+-	for p in $(PROGRAMS) $(SCRIPTS); do \
++	for p in $(PROGRAMS); do \
+ 	  $(INSTALL_PROGRAM) $$p $(bindir)/`echo $$p|sed '$(transform)'`; \
++	done
++	for p in $(SCRIPTS); do \
++	  $(INSTALL_SCRIPT) -m 555 $$p $(bindir)/`echo $$p|sed '$(transform)'`; \
+ 	done
+ 
+ uninstall:: uninstall-programs
