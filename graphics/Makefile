@@ -54,6 +54,7 @@
     SUBDIR += g2
     SUBDIR += gcolor
     SUBDIR += gd
+    SUBDIR += gd2
     SUBDIR += gdal
     SUBDIR += gdchart
     SUBDIR += gdk-pixbuf
