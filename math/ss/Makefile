@@ -3,13 +3,13 @@
 # Date created:				5 January 1997
 # Whom:					pgiffuni@FPS.biblos.unal.edu.co
 #
-# $Id: porting.sgml,v 1.2.4.3 1997/11/16 01:59:13 pgs Exp $
+# $Id: Makefile,v 1.1.1.1 1997/01/24 11:45:39 max Exp $
 #
 
 DISTNAME=	ss_1.3.3
 PKGNAME=	ss-1.3.3
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.cs.ualberta.ca/pub/spreadsheet/
+MASTER_SITES=	http://www.ualberta.ca/~amulder/ss/
 
 MAINTAINER=	pgiffuni@FPS.biblos.unal.edu.co
 
