@@ -1,0 +1,16 @@
+The du2ps reads output of du(1), then generates a figure of 
+hierarchical structure and utilization of each directory.
+ 
+The du2ps is a similar program to xdu, but it produces result as
+a PostScript file.
+
+The default paper is ISO A4, but you can select Letter or ISO A3/B4/B5.
+You can also specify font name, font size, number of columns and other
+options.
+
+Author:	Takanori Nagae <nagae@an.ip.titech.ac.jp> and
+	Shigeru Makino <mac@research.co.jp>
+WWW:	http://www.shobi-u.ac.jp/~tnagae/
+
+-
+Yoshihiko Sarumaru <mistral@imasy.or.jp>

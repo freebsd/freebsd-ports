@@ -1,0 +1,21 @@
+--- getopt.c.orig	Wed Mar 16 11:41:27 1994
++++ getopt.c	Fri Jun  1 15:40:02 2001
+@@ -22,6 +22,7 @@
+ 	"du2ps [options] < infile > outfile",
+ 	"OPTIONS:",
+ 	"  -land       ... landscape",
++	"  -a3         ... A3",
+ 	"  -b4         ... B4",
+ 	"  -b5         ... B5",
+ 	"  -us         ... US letter",
+@@ -62,6 +63,10 @@
+ 			i++;
+ 		} else if(!strcmp("-sa", argv[i])){
+ 			cmp = cmp_alph;
++			i++;
++		} else if(!strcmp("-a3", argv[i])){
++			paper_width = A3_WIDTH;
++			paper_height = A3_HEIGHT;
+ 			i++;
+ 		} else if(!strcmp("-b4", argv[i])){
+ 			paper_width = B4_WIDTH;

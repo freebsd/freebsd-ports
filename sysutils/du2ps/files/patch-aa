@@ -1,0 +1,11 @@
+--- du2ps.h.orig	Tue Mar 15 18:17:00 1994
++++ du2ps.h	Fri Jun  1 15:39:04 2001
+@@ -51,6 +51,8 @@
+ #define FONT_FAMILY "Times-Roman"
+ #define LINE_WIDTH 0.5
+ #define HEAD_SEP 5.0
++#define A3_WIDTH 841.889764
++#define A3_HEIGHT 1190.55118
+ #define A4_WIDTH 595.275591
+ #define A4_HEIGHT 841.889764
+ #define B4_WIDTH 728.503937
