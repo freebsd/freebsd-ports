@@ -1,0 +1,13 @@
+--- Makefile.orig	Thu Apr 26 15:25:03 2001
++++ Makefile	Thu Apr 26 15:23:26 2001
+@@ -15,8 +15,8 @@
+ # -DOS2		OS/2 with EMX
+ # -DWINDOWS	Windows95/98/NT
+ 
+-SSL_FLAGS=	-DUSE_SSL -I/usr/local/ssl/include
+-SSL_LIBS=	-L/usr/local/ssl/lib -lssl -lcrypto
++SSL_FLAGS=	-DUSE_SSL
++SSL_LIBS=	-lssl -lcrypto
+ 
+ POP_FLAGS=	-DUSE_POP
+ POP_LIBS=	-lmd

@@ -1,0 +1,31 @@
+--- stone.c.orig	Sat Feb 24 17:32:01 2001
++++ stone.c	Tue May 15 14:27:54 2001
+@@ -87,6 +87,7 @@
+ #include <ctype.h>
+ #include <stdarg.h>
+ #include <signal.h>
++#include <sys/param.h>
+ typedef void (*FuncPtr)(void*);
+ 
+ #ifdef WINDOWS
+@@ -240,7 +241,6 @@
+ char *cipher_list = NULL;
+ #else
+ #ifdef USE_POP
+-#include "global.h"
+ #include "md5.h"
+ #endif
+ #endif
+@@ -2862,10 +2862,10 @@
+ 
+ FILE *openconfig() {
+     int pfd[2];
+-    char host[STRMAX];
++    char host[MAXHOSTNAMELEN];
+ #ifdef CPP
+     if (CppCommand != NULL && *CppCommand != '\0') {
+-	if (gethostname(host,STRMAX-1) < 0) {
++	if (gethostname(host,MAXHOSTNAMELEN-1) < 0) {
+ 	    message(LOG_ERR,"gethostname err=%d",errno);
+ 	    exit(1);
+ 	}
