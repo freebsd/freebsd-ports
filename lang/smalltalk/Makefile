@@ -34,6 +34,6 @@ pre-patch:
 		 s|\@MAKEINFO\@|\@MAKEINFO\@ --no-split|g'
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/libgst/libgst.a ${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/libgst/.libs/libgst.a ${PREFIX}/lib
 
 .include <bsd.port.mk>
