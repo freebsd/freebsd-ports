@@ -1,210 +1,105 @@
---- fping.c.orig	Mon Sep 20 13:10:23 1999
-+++ fping.c	Wed Jul 19 06:08:21 2000
-@@ -185,7 +185,11 @@
+--- fping.c.orig	Wed Jan  8 12:29:43 1997
++++ fping.c	Sat Aug 26 20:21:27 2000
+@@ -208,6 +208,10 @@
+ #include <arpa/inet.h>
+ #include <netdb.h>
+ 
++#if (defined(__unix__) || defined(unix)) && !defined(USG)
++#include <sys/param.h>
++#endif
++
+ /* RS6000 has sys/select.h */
+ #ifdef HAVE_SYS_SELECT_H
+ #include <sys/select.h>
+@@ -219,7 +223,9 @@
  
  extern char *optarg;
  extern int optind,opterr;
-+
-+/* #if !defined(BSD4_4) && !((BSD - 0) >= 199103) */
-+#if !defined(__FreeBSD__) && !defined(__OpenBSD__) && !defined(__NetBSD__)
++#if !(defined(BSD) && (BSD >= 199103))
  extern char *sys_errlist[];
 +#endif
- 
+ extern int h_errno;
  
  #ifdef __cplusplus
-@@ -195,15 +199,15 @@
- /* constants */
+@@ -321,13 +327,13 @@
+      struct timeval       last_send_time;     /* time of last packet sent */
+      int                  num_sent;           /* number of ping packets sent */
+      int                  num_recv;           /* number of pings received */
+-     int                  max_reply;          /* longest response time */
+-     int                  min_reply;          /* shortest response time */
++     long                 max_reply;          /* longest response time */
++     long                 min_reply;          /* shortest response time */
+      int                  total_time;         /* sum of response times */
+      int                  num_sent_i;         /* number of ping packets sent */
+      int                  num_recv_i;         /* number of pings received */
+-     int                  max_reply_i;        /* longest response time */
+-     int                  min_reply_i;        /* shortest response time */
++     long                 max_reply_i;        /* longest response time */
++     long                 min_reply_i;        /* shortest response time */
+      int                  total_time_i;       /* sum of response times */
+      int                  *resp_times;        /* individual response times */
+ #ifdef DEBUG
+@@ -475,7 +481,7 @@
  
- #ifndef DEFAULT_INTERVAL
--#define DEFAULT_INTERVAL 25        /* default time between packets (msec) */
-+#define DEFAULT_INTERVAL 25000			/* default time between packets (usec) */
- #endif
- 
- #ifndef DEFAULT_TIMEOUT
--#define DEFAULT_TIMEOUT 2500       /* individual host timeouts */
-+#define DEFAULT_TIMEOUT 2500000			/* individual host timeouts (usec) */
- #endif
- 
- #ifndef DEFAULT_RETRY 
--#define DEFAULT_RETRY 3            /* number of times to retry a host */
-+#define DEFAULT_RETRY	3			/* number of times to retry a host */
- #endif
- 
- 
-@@ -234,9 +238,9 @@
- int timeout = DEFAULT_TIMEOUT;
- int interval = DEFAULT_INTERVAL;
- 
--long max_reply=0;
--long min_reply=10000;
--int total_replies=0;
-+long max_reply=0;	/* usec */
-+long min_reply=(10*1000000);/* usec */
-+int total_replies=0;	/* usec */
- double sum_replies=0;
- 
- struct timeval timeout_timeval;
-@@ -326,7 +330,7 @@
- 
-   setuid(getuid());
+   /*seteuid(getuid());*/
  
 -  prog = argv[0];
 +  prog = (prog = strrchr(argv[0], '/')) ? prog + 1 : argv[0];
    ident = getpid() & 0xFFFF;
  
-   verbose_flag=1;
-@@ -347,8 +351,8 @@
- 	   case 'u': unreachable_flag = 1;                     break;
- 	   case 'a': alive_flag = 1;                           break;
+   verbose_flag = 1;
+@@ -524,8 +530,8 @@
+ 	               usage();                                   break;
+ #endif
             case 'v':
--                     printf("%s: $Revision: 1.20 $ $Date: 1993/02/23 00:16:38 $\n",argv[0]);
--                     printf("%s: comments to schemers@Stanford.EDU\n",argv[0]);
-+                     printf("%s: FreeBSD port based on Revision: 1.20 Date: 1993/02/23 00:16:38 \n",argv[0]);
-+                     printf("%s: comments to obrien@FreeBSD.org\n",argv[0]);
+-                     printf("%s: Version %s $Date: 1997/01/08 20:29:33 $\n",argv[0], VERSION);
+-                     printf("%s: comments to fping@networking.Stanford.EDU\n",argv[0]);
++                     printf("%s: FreeBSD port based on Version %s $Date: 1997/01/08 20:29:33 $\n",argv[0], VERSION);
++                     printf("%s: comments to obrien@FreeBSD.org or fping@networking.Stanford.EDU\n",argv[0]);
                       exit(0);
-            default : fprintf(stderr,"Unknown flag: %s\n",argv[0]); 
-                      usage(); break;
-@@ -359,9 +363,9 @@
-     usage();
-   }
- 
--  if ( (interval<10 || retry >20 || timeout <250) && getuid()) {
-+  if ( (interval<10000 || retry >20 || timeout <250000) && getuid()) {
-     fprintf(stderr,"%s: these options are too risky for mere mortals.\n",prog);
--    fprintf(stderr,"%s: You need i >=10, retry < 20, and t >= 250\n",prog);
-+    fprintf(stderr,"%s: You need i >=10000, retry < 20, and t >= 250000\n",prog);
-     exit(3);
-   }
- 
-@@ -385,6 +389,7 @@
+ 	   case 'f': 
+ #ifdef ENABLE_F_OPTION
+@@ -671,6 +677,7 @@
           }
           if (!ping_file) errno_crash_and_burn("fopen");
           while(fgets(line,132,ping_file)) {
 +           line[132-1] = '\0';
-            sscanf(line,"%s",host);
+            if (sscanf(line,"%s",host) != 1)
+ 	     continue;
                if ((!*host) || (host[0]=='#'))  /* magic to avoid comments */
-                 continue;
-@@ -411,8 +416,8 @@
-       cursor=cursor->next;
-   }
+@@ -1033,7 +1040,6 @@
+   memset(buffer, 0, ping_pkt_size * sizeof(char));
+   icp = (struct icmp *) buffer;
  
--  gettimeofday(&start_time,&tz);
-   cursor=rrlist;
-+  gettimeofday(&start_time,&tz);
-   while (num_waiting) {  /* while pings are outstanding */
-         if ( (timeval_diff(&current_time,&cursor->last_time)> timeout) ||
-                                                 cursor->num_packets_sent==0)  {
-@@ -455,11 +460,11 @@
-           min_reply=0; max_reply=0; total_replies=1; sum_replies=0;
- }
- 
--     fprintf(stderr," %8d msec (min round trip time)\n",min_reply);
--     fprintf(stderr," %8d msec (avg round trip time)\n",(int)sum_replies/total_replies);
--     fprintf(stderr," %8d msec (max round trip time)\n",max_reply);
-+     fprintf(stderr," %8.3f msec (min round trip time)\n",min_reply/1000.0);
-+     fprintf(stderr," %8.3f msec (avg round trip time)\n",sum_replies/total_replies/1000.0);
-+     fprintf(stderr," %8.3f msec (max round trip time)\n",max_reply/1000.0);
-      fprintf(stderr," %8.3f sec (elapsed real time)\n",
--	     timeval_diff( &end_time,&start_time)/1000.0);
-+	     timeval_diff( &end_time,&start_time)/1000000.0);
-      fprintf(stderr,"\n");
- 
-   }
-@@ -489,26 +494,32 @@
- void send_ping(int s,HOST_ENTRY *h)
- #endif
- {
--  static char buffer[32];
-+#define SIZE_ICMP_HDR	8
-+#define SIZE_DATA	56
-+#define SIZE_PACK_SENT	(sizeof(h->num_packets_sent))
-+#define SIZE_LAST_TIME	(sizeof(h->last_time))
-+#define SIZE_TOTAL	(SIZE_ICMP_HDR+SIZE_LAST_TIME+SIZE_PACK_SENT+SIZE_DATA)
-+  static char buffer[SIZE_TOTAL];
-   struct icmp *icp = (struct icmp *) buffer;
-   int n,len;
- 
--  gettimeofday(&h->last_time,&tz);
--
+-  gettimeofday(&h->last_send_time,&tz);
    icp->icmp_type = ICMP_ECHO;
    icp->icmp_code = 0;
    icp->icmp_cksum = 0;
-   icp->icmp_seq = h->i;
+@@ -1041,6 +1047,8 @@
    icp->icmp_id = ident;
--#define SIZE_ICMP_HDR 8
--#define SIZE_PACK_SENT (sizeof(h->num_packets_sent))
--#define SIZE_LAST_TIME (sizeof(h->last_time))
  
--  bcopy(&h->last_time,&buffer[SIZE_ICMP_HDR],SIZE_LAST_TIME);
-   bcopy(&h->num_packets_sent,
-              &buffer[SIZE_ICMP_HDR+SIZE_LAST_TIME], SIZE_PACK_SENT);
- 
--  len = SIZE_ICMP_HDR+SIZE_LAST_TIME+SIZE_PACK_SENT;
-+  bcopy("01234567890123456789012345678901234567890123456789 FPING",
-+             &buffer[SIZE_ICMP_HDR+SIZE_LAST_TIME+SIZE_PACK_SENT], SIZE_DATA);
-+
-+  len = sizeof(buffer);
-+
+   pdp = (PING_DATA *) (buffer + SIZE_ICMP_HDR);
 +  /* set the time at the very last possible point */
-+  gettimeofday(&h->last_time,&tz);
-+  bcopy(&h->last_time,&buffer[SIZE_ICMP_HDR],SIZE_LAST_TIME);
++  gettimeofday(&h->last_send_time,&tz);
+   pdp->ping_ts = h->last_send_time;
+   pdp->ping_count = h->num_sent;
  
-   icp->icmp_cksum = in_cksum( (u_short *)icp, len );
+@@ -1099,6 +1107,10 @@
  
-@@ -578,10 +589,12 @@
-        return 1; /* packet received, don't about it anymore */
-   }
- 
-+    /* get time of receipt as close to the real time as possible */
-+    gettimeofday(&current_time,&tz);
+   result=recvfrom_wto(s,buffer,4096,
+                      (struct sockaddr *)&response_addr,select_time);
 +
-     n=icp->icmp_seq;
-     h=table[n];
++  /* get time of receipt as close to the real time as possible */
++  gettimeofday(&current_time,&tz);
++
+   if (result<0) { return 0; } /* timeout */
+   
+ #ifdef DEBUG
+@@ -1144,7 +1156,6 @@
+   h=table[n];
  
--    gettimeofday(&current_time,&tz);
-     bcopy(&icp->icmp_data[0],&sent_time,sizeof(sent_time));
-     bcopy(&icp->icmp_data[SIZE_LAST_TIME],&the_index,  sizeof(the_index));
-     this_reply = timeval_diff(&current_time,&sent_time);
-@@ -594,7 +607,7 @@
-        if (dns_flag) printf("%s",get_host_by_address(response_addr.sin_addr));
-        else printf("%s",h->host);
-        if (verbose_flag) printf(" is alive");
--       if (elapsed_flag) printf(" (%d msec)",this_reply);
-+       if (elapsed_flag) printf(" (%.3f msec)",this_reply/1000.0);
-        printf("\n");
-     }
-     num_alive++;
-@@ -756,7 +769,7 @@
- 
- temp = 
-   (((a->tv_sec*1000000)+ a->tv_usec) - 
--     ((b->tv_sec*1000000)+ b->tv_usec))/1000;
-+     ((b->tv_sec*1000000)+ b->tv_usec));
- 
- return (long) temp;
- 
-@@ -781,8 +794,8 @@
-   struct timeval to;
-   fd_set readset,writeset;
- 
--  to.tv_sec  = timo/1000;
--  to.tv_usec = (timo - (to.tv_sec*1000))*1000;
-+  to.tv_sec  = timo/1000000;
-+  to.tv_usec = (timo - (to.tv_sec*1000000));
- 
-   FD_ZERO(&readset);
-   FD_ZERO(&writeset);
-@@ -808,11 +821,11 @@
-   fprintf(stderr,"   -d         use dns to lookup address for return ping packet\n");
-   fprintf(stderr,"   -e         show elapsed time on return packets\n");
-   fprintf(stderr,"   -f file    read list of systems from a file ( - means stdin)\n");
--  fprintf(stderr,"   -i n       interval (between ping packets) in milliseconds (default %d)\n",interval);
-+  fprintf(stderr,"   -i n       interval (between ping packets) in microseconds (default %d)\n",interval);
-   fprintf(stderr,"   -q         quiet (don't show per host results)\n");
-   fprintf(stderr,"   -r n       retry limit (default %d)\n",retry);
-   fprintf(stderr,"   -s         dump final stats\n");
--  fprintf(stderr,"   -t n       individual host timeout in milliseconds (default %d)\n",timeout);
-+  fprintf(stderr,"   -t n       individual host timeout in microseconds (default %d)\n",timeout);
-   fprintf(stderr,"   -u         show systems that are unreachable\n");
-   fprintf(stderr,"   -v         show version\n");
-   fprintf(stderr,"   systems    list of systems to check (if no -f specified)\n");
+   /* received ping is cool, so process it */
+-  gettimeofday(&current_time,&tz);
+   h->waiting = 0;
+   h->timeout = timeout;
+   h->num_recv++;  h->num_recv_i++;
