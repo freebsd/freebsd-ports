@@ -1,7 +1,7 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
 #
-#	$Id: bsd.port.mk,v 1.313 1999/05/10 23:11:07 asami Exp $
+#	$Id: bsd.port.mk,v 1.314 1999/06/11 11:59:10 asami Exp $
 #	$NetBSD: $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
@@ -17,17 +17,17 @@
 #
 # DO NOT COMMIT CHANGES TO THIS FILE BY YOURSELF!
 
-FreeBSD_MAINTAINER=	asami@FreeBSD.ORG
+FreeBSD_MAINTAINER=	asami@FreeBSD.org
 OpenBSD_MAINTAINER=	imp@OpenBSD.ORG
 
 # For each port, the MAINTAINER variable is what you should consult for
 # contact information on the person(s) to contact if you have questions/
 # suggestions about that specific port.  By default (if no MAINTAINER
-# is listed), a port is maintained by the subscribers of the ports@freebsd.org
+# is listed), a port is maintained by the subscribers of the ports@FreeBSD.org
 # mailing list, and any correspondece should be directed there.
 #
 # MAINTAINER	- The e-mail address of the contact person for this port
-#				  (default: ports@FreeBSD.ORG).
+#				  (default: ports@FreeBSD.org).
 #
 # These are meta-variables that are automatically set to the system
 # you are running on.
@@ -81,7 +81,7 @@ OpenBSD_MAINTAINER=	imp@OpenBSD.ORG
 # MASTER_SITE_BACKUP - Backup location(s) for distribution files and patch
 #				  files if not found locally and ${MASTER_SITES}/${PATCH_SITES}
 #				  (default:
-#				  ftp://ftp.freebsd.org/pub/FreeBSD/ports/distfiles/${DIST_SUBDIR}/)
+#				  ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/distfiles/${DIST_SUBDIR}/)
 # MASTER_SITE_OVERRIDE - If set, override the MASTER_SITES setting with this
 #				  value.
 # MASTER_SITE_FREEBSD - If set, only use ${MASTER_SITE_BACKUP} for
@@ -605,7 +605,7 @@ BUILD_DEPENDS+=		${X11BASE}/lib/libXm.a:${PORTSDIR}/x11-toolkits/Motif-dummy
 .endif
 .endif
 
-PKG_IGNORE_DEPENDS?=		'(XFree86-3\.3\.3\.1|Motif-2\.1\.10)'
+PKG_IGNORE_DEPENDS?=		'(XFree86-3\.3\.4|Motif-2\.1\.10)'
 
 .if ${OSVERSION} >= 300000
 PERL_VERSION=	5.00503
@@ -896,9 +896,10 @@ MASTER_SITE_COMP_SOURCES+=	\
 	ftp://rtfm.mit.edu/pub/usenet/comp.sources.%SUBDIR%/
 
 MASTER_SITE_GNOME+=	\
-	ftp://ftp.jimpick.com/pub/mirrors/gnome/%SUBDIR%/ \
 	ftp://ftp.geo.net/pub/gnome/%SUBDIR%/ \
 	ftp://gnomeftp.wgn.net/pub/gnome/%SUBDIR%/ \
+	ftp://server.ph.ucla.edu/pub/mirror/ftp.gnome.org/%SUBDIR%/ \
+	ftp://ftp.snoopy.net/pub/mirrors/GNOME/%SUBDIR%/ \
 	ftp://ftp.gnome.org/pub/GNOME/%SUBDIR%/
 
 MASTER_SITE_AFTERSTEP+=	\
@@ -922,8 +923,8 @@ MASTER_SITE_WINDOWMAKER+= \
 	ftp://ftp.ameth.org/pub/mirrors/ftp.windowmaker.org/%SUBDIR%/
 
 MASTER_SITE_PORTS_JP+=	\
-	ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/ \
-	ftp://ftp4.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/ \
+	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/ \
+	ftp://ftp4.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/ \
 	ftp://ftp.ics.es.osaka-u.ac.jp/pub/mirrors/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/ \
 	ftp://ftp.t-cnet.or.jp/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/%SUBDIR%/
 
@@ -960,12 +961,12 @@ PATCH_SITES:=	${PATCH_SITES_TMP}
 
 # The primary backup site.
 MASTER_SITE_BACKUP?=	\
-	ftp://ftp.freebsd.org/pub/FreeBSD/ports/distfiles/${DIST_SUBDIR}/
+	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/distfiles/${DIST_SUBDIR}/
 MASTER_SITE_BACKUP:=	${MASTER_SITE_BACKUP:S^\${DIST_SUBDIR}/^^}
 
 # Where to put distfiles that don't have any other master site
 MASTER_SITE_LOCAL?= \
-	ftp://ftp.freebsd.org/pub/FreeBSD/ports/distfiles/LOCAL_PORTS/
+	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/distfiles/LOCAL_PORTS/
 
 # If the user has MASTER_SITE_FREEBSD set, go to the FreeBSD repository
 # for everything, but don't search it twice by appending it to the end.
@@ -999,6 +1000,7 @@ PKGNAME?=		${DISTNAME}
 ALLFILES?=	${DISTFILES} ${PATCHFILES}
 
 .if defined(IGNOREFILES)
+.if !defined(CKSUMFILES)
 CKSUMFILES!=	\
 	for file in ${ALLFILES}; do \
 		ignore=0; \
@@ -1011,6 +1013,7 @@ CKSUMFILES!=	\
 			echo "$$file"; \
 		fi; \
 	done
+.endif
 .else
 CKSUMFILES=		${ALLFILES}
 .endif
@@ -1029,7 +1032,7 @@ _IGNOREFILES?=	${IGNOREFILES}
 EXTRACT_ONLY?=	${DISTFILES}
 
 # Documentation
-MAINTAINER?=	ports@FreeBSD.ORG
+MAINTAINER?=	ports@FreeBSD.org
 
 .if !target(maintainer)
 maintainer:
@@ -1054,7 +1057,9 @@ PKGFILE?=		${.CURDIR}/${PKGNAME}${PKG_SUFX}
 
 # The "latest version" link -- ${PKGNAME} minus everthing after the last '-'
 PKGLATESTREPOSITORY?=	${PACKAGES}/Latest
+.if !defined(PKGBASE)
 PKGBASE!=	${ECHO} ${PKGNAME} | ${SED} -e 's/-[^-]*$$//'
+.endif
 PKGLATESTFILE?=		${PKGLATESTREPOSITORY}/${PKGBASE}${PKG_SUFX}
 
 CONFIGURE_SCRIPT?=	configure
@@ -1091,7 +1096,7 @@ MANLANG?=	""	# english only by default
 MANEXT=	.gz
 .endif
 
-.if defined(MLINKS)
+.if (defined(MLINKS) || defined(_MLINKS_PREPEND)) && !defined(_MLINKS)
 __pmlinks!=	${ECHO} '${MLINKS:S/	/ /}' | ${AWK} \
  '{ if (NF % 2 != 0) { print "broken"; exit; } \
 	for (i=1; i<=NF; i++) { \
@@ -1102,12 +1107,20 @@ __pmlinks!=	${ECHO} '${MLINKS:S/	/ /}' | ${AWK} \
 		else \
 			{ print "broken"; exit; } \
 	} \
-  }' | ${SED} -e 's/ \/[^ ]*/ &x/g' -e 's/ [^/ ][^ ]*\.\(.\)[^. ]*/ &\1/g'
+  }' | ${SED} -e 's \([^/ ][^ ]*\.\(.\)[^. ]*\) $${MAN\2PREFIX}/man/$$$$$$$${__lang}/man\2/\1.gzg' -e 's/ //g' -e 's/MANlPREFIX/MANLPREFIX/g' -e 's/MANnPREFIX/MANNPREFIX/g'
 .if ${__pmlinks:Mbroken} == "broken"
 .BEGIN:
 	@${ECHO_MSG} "Error: Unable to parse MLINKS."
 	@${FALSE}
 .endif
+_MLINKS=	${_MLINKS_PREPEND}
+.for lang in ${MANLANG}
+.for ___pmlinks in ${__pmlinks}
+.for __lang in ${lang}
+_MLINKS+=	${___pmlinks:S// /g}
+.endfor
+.endfor
+.endfor
 .endif
 
 .for lang in ${MANLANG}
@@ -1126,22 +1139,13 @@ _MANPAGES+=	${MANL:S%^%${MANLPREFIX}/man/${lang}/manl/%}
 _MANPAGES+=	${MANN:S%^%${MANNPREFIX}/man/${lang}/mann/%}
 .endif
 
-.if defined(MLINKS)
-.for __page in ${__pmlinks}
-__name=	${__page:S// /:N[1-9lnx]}
-__sect=	${__page:S// /:M[1-9lnx]}
-.if ${__name:M/*}x == x
-_MLINKS+=	${MAN${__sect:S/l/L/:S/n/N/}PREFIX}/man/${lang}/man${__sect}/${__name}${MANEXT}
-.else
-_MLINKS+=	${__name}${MANEXT}
-.endif
-_MLINKS:=	${_MLINKS}
 .endfor
-.endif
 
-.endfor lang in ${MANLANG}
-
+.if defined(_MLINKS) && make(generate-plist)
 _TMLINKS!=	${ECHO} ${_MLINKS} | ${AWK} '{for (i=2; i<=NF; i+=2) print $$i}'
+.else
+_TMLINKS=
+.endif
 
 .if defined(_MANPAGES) && defined(NOMANCOMPRESS)
 __MANPAGES:=	${_MANPAGES:S^${PREFIX}/^^:S/""//:S^//^/^g}
@@ -1183,23 +1187,6 @@ _MANPAGES:=	${_MANPAGES:S/$/.gz/}
 # Don't build a port if the system is too old.
 ################################################################
 
-OLDSYSTCL!=	${ECHO} /usr/include/tcl.h /usr/lib/libtcl??.so.*.*
-OLDTCL=		${LOCALBASE}/include/tcl.h ${LOCALBASE}/lib/tclConfig.sh
-OLDTK=		${LOCALBASE}/include/tk.h ${LOCALBASE}/lib/tkConfig.sh
-
-.if !defined(NO_IGNORE)
-.for file in ${OLDSYSTCL} ${OLDTCL}
-.if exists(${file})
-IGNORE=	": You have an old file \(${file}\) that could cause problems for some ports to compile.  Please remove it and try again.  You may have to reinstall tcl from the ports tree afterwards"
-.endif
-.endfor
-.for file in ${OLDTK}
-.if exists(${file})
-IGNORE=	": You have an old file \(${file}\) that could cause problems for some ports to compile.  Please remove it and try again.  You may have to reinstall tk from the ports tree afterwards"
-.endif
-.endfor
-.endif
-
 .if ${OSVERSION} >= 300000
 # You need an upgrade kit or make world newer than this
 BSDPORTMKVERSION=	19990501
@@ -1209,12 +1196,14 @@ VERSIONFILE=	/var/db/port.mkversion
 VERSIONFILE=	${PKG_DBDIR}/.mkversion
 .endif
 .if exists(${VERSIONFILE})
+.if !defined(SYSTEMVERSION)
 SYSTEMVERSION!=	cat ${VERSIONFILE}
+.endif
 .else
 SYSTEMVERSION=	0
 .endif
 .if ${BSDPORTMKVERSION} > ${SYSTEMVERSION}
-IGNORE=	": Your system is too old to use this bsd.port.mk.  You need a fresh make world or an upgrade kit.  Please go to http://www.freebsd.org/ports/ or a mirror site and follow the instructions"
+IGNORE=	": Your system is too old to use this bsd.port.mk.  You need a fresh make world or an upgrade kit.  Please go to http://www.FreeBSD.org/ports/ or a mirror site and follow the instructions"
 .endif
 .endif
 
@@ -1600,12 +1589,13 @@ do-package: ${TMPPLIST}
 			fi; \
 		fi; \
 	fi
-	@if ${PKG_CMD} ${PKG_ARGS} ${PKGFILE}; then \
+	@__softMAKEFLAGS='${__softMAKEFLAGS:S/'/'\''/g}'; \
+	if ${PKG_CMD} ${PKG_ARGS} ${PKGFILE}; then \
 		if [ -d ${PACKAGES} ]; then \
-			${MAKE} ${.MAKEFLAGS} package-links; \
+			eval ${MAKE} $${__softMAKEFLAGS} package-links; \
 		fi; \
 	else \
-		${MAKE} ${.MAKEFLAGS} delete-package; \
+		eval ${MAKE} $${__softMAKEFLAGS} delete-package; \
 		exit 1; \
 	fi
 .endif
@@ -1614,7 +1604,7 @@ do-package: ${TMPPLIST}
 
 .if !target(package-links)
 package-links:
-	@${MAKE} ${.MAKEFLAGS} delete-package-links
+	@${MAKE} ${__softMAKEFLAGS} delete-package-links
 	@for cat in ${CATEGORIES}; do \
 		if [ ! -d ${PACKAGES}/$$cat ]; then \
 			if ! ${MKDIR} ${PACKAGES}/$$cat; then \
@@ -1645,7 +1635,7 @@ delete-package-links:
 
 .if !target(delete-package)
 delete-package:
-	@${MAKE} ${.MAKEFLAGS} delete-package-links
+	@${MAKE} ${__softMAKEFLAGS} delete-package-links
 	@${RM} -f ${PKGFILE}
 .endif
 
@@ -1659,7 +1649,7 @@ delete-package-links-list:
 
 .if !target(delete-package-list)
 delete-package-list:
-	@${MAKE} ${.MAKEFLAGS} delete-package-links-list
+	@${MAKE} ${__softMAKEFLAGS} delete-package-links-list
 	@${ECHO} ${RM} -f ${PKGFILE}
 .endif
 
@@ -1670,11 +1660,11 @@ delete-package-list:
 
 _PORT_USE: .USE
 .if make(real-fetch)
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} fetch-depends
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fetch-depends
 .endif
 .if make(real-extract)
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} checksum REAL_EXTRACT=yes
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} build-depends lib-depends misc-depends
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} checksum REAL_EXTRACT=yes
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} build-depends lib-depends misc-depends
 .endif
 .if make(real-install)
 .if !defined(NO_PKG_REGISTER) && !defined(FORCE_PKG_REGISTER)
@@ -1693,7 +1683,7 @@ _PORT_USE: .USE
 		${ECHO_MSG} "      If this is not desired, set it to an appropriate value"; \
 		${ECHO_MSG} "      and install this port again by \`\`make reinstall''."; \
 	fi
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} run-depends lib-depends
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} run-depends lib-depends
 .endif
 .if make(real-install)
 	@${MKDIR} ${PREFIX}
@@ -1723,29 +1713,29 @@ _PORT_USE: .USE
 	  ${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
 	 fi
 .endif
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} ${.TARGET:S/^real-/pre-/}
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} ${.TARGET:S/^real-/pre-/}
 	@if [ -f ${SCRIPTDIR}/${.TARGET:S/^real-/pre-/} ]; then \
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
 			${SCRIPTDIR}/${.TARGET:S/^real-/pre-/}; \
 	fi
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} ${.TARGET:S/^real-/do-/}
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} ${.TARGET:S/^real-/do-/}
 # put here so ports can change the contents of ${TMPPLIST} if necessary
 .if make(real-install)
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} generate-plist
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} generate-plist
 .endif
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} ${.TARGET:S/^real-/post-/}
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} ${.TARGET:S/^real-/post-/}
 	@if [ -f ${SCRIPTDIR}/${.TARGET:S/^real-/post-/} ]; then \
 		cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} \
 			${SCRIPTDIR}/${.TARGET:S/^real-/post-/}; \
 	fi
 .if make(real-patch) && defined(USE_LIBTOOL)
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} patch-libtool
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} patch-libtool
 .endif
 .if make(real-install) && (defined(_MANPAGES) || defined(_MLINKS))
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} compress-man
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} compress-man
 .endif
 .if make(real-install) && !defined(NO_PKG_REGISTER)
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} fake-pkg
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fake-pkg
 .endif
 .if !make(real-fetch) \
 	&& (!make(real-patch) || !defined(PATCH_CHECK_ONLY)) \
@@ -1764,7 +1754,7 @@ _PORT_USE: .USE
 
 .if !target(fetch)
 fetch:
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} real-fetch
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} real-fetch
 .endif
 
 .if !target(extract)
@@ -1792,23 +1782,23 @@ package: ${PACKAGE_COOKIE}
 .endif
 
 ${EXTRACT_COOKIE}:
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} fetch
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} real-extract
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fetch
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} real-extract
 ${PATCH_COOKIE}:
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} extract
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} real-patch
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} extract
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} real-patch
 ${CONFIGURE_COOKIE}:
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} patch
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} real-configure
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} patch
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} real-configure
 ${BUILD_COOKIE}:
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} configure
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} real-build
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} configure
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} real-build
 ${INSTALL_COOKIE}:
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} build
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} real-install
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} build
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} real-install
 ${PACKAGE_COOKIE}:
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} install
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} real-package
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} install
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} real-package
 
 # And call the macros
 
@@ -1863,7 +1853,7 @@ patch-libtool:
 
 .if !target(checkpatch)
 checkpatch:
-	@cd ${.CURDIR} && ${MAKE} PATCH_CHECK_ONLY=yes ${.MAKEFLAGS} patch
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} PATCH_CHECK_ONLY=yes patch
 .endif
 
 # Reinstall
@@ -1901,7 +1891,7 @@ pre-clean:
 .if !target(clean)
 clean: pre-clean
 .if !defined(NOCLEANDEPENDS)
-	@${MAKE} clean-depends
+	@${MAKE} ${__softMAKEFLAGS} clean-depends
 .endif
 	@${ECHO_MSG} "===>  Cleaning for ${PKGNAME}"
 	@if [ -d ${WRKDIR} ]; then \
@@ -2001,7 +1991,7 @@ makesum: fetch
 .if !target(checksum)
 checksum:
 .if !defined(REAL_EXTRACT)
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} fetch
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fetch
 .endif
 	@if [ ! -f ${MD5_FILE} ]; then \
 		${ECHO_MSG} ">> No MD5 checksum file."; \
@@ -2071,8 +2061,8 @@ pre-repackage:
 .if !target(package-noinstall)
 package-noinstall:
 	@${MKDIR} ${WRKDIR}
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} PACKAGE_NOINSTALL=yes real-package
-	@${RM} ${TMPPLIST}
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} PACKAGE_NOINSTALL=yes real-package
+	@${RM} -f ${TMPPLIST}
 	-@${RMDIR} ${WRKDIR}
 .endif
 
@@ -2082,9 +2072,9 @@ package-noinstall:
 
 .if !target(depends)
 depends: lib-depends misc-depends
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} fetch-depends
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} build-depends
-	@cd ${.CURDIR} && ${MAKE} ${.MAKEFLAGS} run-depends
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fetch-depends
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} build-depends
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} run-depends
 
 .if make(fetch-depends)
 DEPENDS_TMP+=	${FETCH_DEPENDS}
@@ -2148,7 +2138,7 @@ _DEPENDS_USE:	.USE
 			if [ ! -d "$$dir" ]; then \
 				${ECHO_MSG} "     >> No directory for $$prog.  Skipping.."; \
 			else \
-				(cd $$dir; ${MAKE} ${.MAKEFLAGS} $$target) ; \
+				(cd $$dir; ${MAKE} $$target) ; \
 				${ECHO_MSG} "===>   Returning to build of ${PKGNAME}"; \
 			fi; \
 		fi; \
@@ -2191,7 +2181,7 @@ lib-depends:
 			if [ ! -d "$$dir" ]; then \
 				${ECHO_MSG} "     >> No directory for $$lib.  Skipping.."; \
 			else \
-				(cd $$dir; ${MAKE} ${.MAKEFLAGS} $$target) ; \
+				(cd $$dir; ${MAKE} $$target) ; \
 				${ECHO_MSG} "===>   Returning to build of ${PKGNAME}"; \
 				if ${LDCONFIG} -r | ${GREP} -qwF -e "-l$$lib"; then \
 					${TRUE}; \
@@ -2222,7 +2212,7 @@ misc-depends:
 		if [ ! -d $$dir ]; then \
 			${ECHO_MSG} "     >> No directory for $$dir.  Skipping.."; \
 		else \
-			(cd $$dir; ${MAKE} ${.MAKEFLAGS} $$target) ; \
+			(cd $$dir; ${MAKE} $$target) ; \
 		fi \
 	done
 	@${ECHO_MSG} "===>   Returning to build of ${PKGNAME}"
@@ -2255,7 +2245,10 @@ clean-depends:
 # Dependency lists: build and runtime.  Print out directory names.
 
 build-depends-list:
-	@for dir in `${ECHO} "${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u` `${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u`; do \
+	@${BUILD-DEPENDS-LIST}
+
+BUILD-DEPENDS-LIST= \
+	for dir in $$(${ECHO} "${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u) $$(${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u); do \
 		if [ -d $$dir ]; then \
 			${ECHO} $$dir; \
 		else \
@@ -2264,7 +2257,10 @@ build-depends-list:
 	done | sort -u
 
 run-depends-list:
-	@for dir in `${ECHO} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u` `${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u`; do \
+	@${RUN-DEPENDS-LIST}
+
+RUN-DEPENDS-LIST= \
+	for dir in $$(${ECHO} "${LIB_DEPENDS} ${RUN_DEPENDS}" | ${TR} '\040' '\012' | ${SED} -e 's/^[^:]*://' -e 's/:.*//' | sort -u) $$(${ECHO} ${DEPENDS} | ${TR} '\040' '\012' | ${SED} -e 's/:.*//' | sort -u); do \
 		if [ -d $$dir ]; then \
 			${ECHO} $$dir; \
 		else \
@@ -2291,44 +2287,88 @@ package-depends:
 # a large index.  Format is:
 #
 # distribution-name|port-path|installation-prefix|comment| \
-#  description-file|maintainer|categories|build deps|run deps
+#  description-file|maintainer|categories|build deps|run deps|www site
 
 .if !target(describe)
 describe:
-	@${ECHO} -n "${PKGNAME}|${.CURDIR}|"; \
-	${ECHO} -n "${PREFIX}|"; \
-	if [ -f ${COMMENT} ]; then \
-		${ECHO} -n "`${CAT} ${COMMENT}`"; \
-	else \
-		${ECHO} -n "** No Description"; \
-	fi; \
-	if [ -f ${DESCR} ]; then \
-		${ECHO} -n "|${DESCR}"; \
-	else \
-		${ECHO} -n "|/dev/null"; \
-	fi; \
-	${ECHO} -n "|${MAINTAINER}|${CATEGORIES}|"; \
-	case "A${FETCH_DEPENDS}B${BUILD_DEPENDS}C${LIB_DEPENDS}D${DEPENDS}E" in \
-		ABCDE) ;; \
-		*) cd ${.CURDIR} && ${ECHO} -n `${MAKE} build-depends-list|sort -u`;; \
-	esac; \
-	${ECHO} -n "|"; \
-	case "A${RUN_DEPENDS}B${LIB_DEPENDS}C${DEPENDS}D" in \
-		ABCD) ;; \
-		*) cd ${.CURDIR} && ${ECHO} -n `${MAKE} run-depends-list|sort -u`;; \
-	esac; \
-	${ECHO} -n "|"; \
-	cd ${.CURDIR} && ${ECHO} -n `${MAKE} www-site`; \
-	${ECHO} ""
+	@perl -e ' \
+		print "${PKGNAME}|${.CURDIR}|${PREFIX}|"; \
+		if (open (COMMENT, "${COMMENT}")) { \
+			$$_ = <COMMENT>; \
+			chomp; \
+			print; \
+		} else { \
+			print "** No Description"; \
+		} \
+		if ( -f "${DESCR}" ) { \
+			print "|${DESCR}"; \
+		} else { \
+			print "|/dev/null"; \
+		} \
+		print q#|${MAINTAINER}|${CATEGORIES}|#; \
+		for (split /\s+/, "${FETCH_DEPENDS} ${BUILD_DEPENDS} ${LIB_DEPENDS}") { \
+			next if /^$$/; \
+			s/^[^:]*\://; \
+			s/\:.*//; \
+			if ( ! -d $$_ ) { \
+				print STDERR "${PKGNAME}: \"$$_\" non-existent -- dependency list incomplete"; \
+			} else { \
+				push @bdirs, $$_; \
+			} \
+		} \
+		for (split /\s+/, "${LIB_DEPENDS} ${RUN_DEPENDS}") { \
+			next if /^$$/; \
+			s/^[^:]*\://; \
+			s/\:.*//; \
+			if ( ! -d $$_ ) { \
+				print STDERR "${PKGNAME}: \"$$_\" non-existent -- dependency list incomplete"; \
+			} else { \
+				push @rdirs, $$_; \
+			} \
+		} \
+		for (split /\s+/, "${DEPENDS}") { \
+			next if /^$$/; \
+			s/\:.*//; \
+			if ( ! -d $$_ ) { \
+				print STDERR "${PKGNAME}: \"$$_\" non-existent -- dependency list incomplete"; \
+			} else { \
+				push @mdirs, $$_; \
+			} \
+		} \
+		for (sort (@bdirs, @mdirs)) { \
+			if ($$_ ne $$l) { \
+				$$a .= $$_ . " "; \
+				$$l = $$_; \
+			} \
+		} \
+		chop $$a; \
+		print "$$a|"; \
+		for (sort (@rdirs, @mdirs)) { \
+			if ($$_ ne $$m) { \
+				$$b .= $$_ . " "; \
+				$$m = $$_; \
+			} \
+		} \
+		chop $$b; \
+		print "$$b|"; \
+		if (open (DESCR, "${DESCR}")) { \
+			until (/^WWW\:\s/ or eof DESCR) { \
+				$$_ = <DESCR>; \
+			} \
+			if (/^WWW\:\s/) { \
+				chomp; \
+				split /\s+/; \
+				print $$_[1]; \
+			} \
+		} \
+		print "\n";'
 .endif
 
-.if !target(www-site)
 www-site:
 .if exists(${DESCR})
-	@${GREP} '^WWW: ' ${DESCR} | ${AWK} '{print $$2}' | head -1
+	@${GREP} '^WWW:[ 	]' ${DESCR} | ${AWK} '{print $$2}' | head -1
 .else
 	@${ECHO}
-.endif
 .endif
 
 .if !target(readmes)
@@ -2338,7 +2378,7 @@ readmes:	readme
 .if !target(readme)
 readme:
 	@rm -f README.html
-	@cd ${.CURDIR} && make README.html
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} README.html
 .endif
 
 README.html:
@@ -2348,8 +2388,8 @@ README.html:
 			-e 's%%PKG%%${PKGNAME}g' \
 			-e '/%%COMMENT%%/r${PKGDIR}/COMMENT' \
 			-e '/%%COMMENT%%/d' \
-			-e 's%%BUILD_DEPENDS%%'"`${MAKE} pretty-print-build-depends-list`"'' \
-			-e 's%%RUN_DEPENDS%%'"`${MAKE} pretty-print-run-depends-list`"'' \
+			-e 's%%BUILD_DEPENDS%%'"`${MAKE} ${__softMAKEFLAGS} pretty-print-build-depends-list`"'' \
+			-e 's%%RUN_DEPENDS%%'"`${MAKE} ${__softMAKEFLAGS} pretty-print-run-depends-list`"'' \
 		>> $@
 
 # The following two targets require an up-to-date INDEX in ${PORTSDIR}
@@ -2376,20 +2416,15 @@ pretty-print-run-depends-list:
 # Generate packing list.  Also tests to make sure all required package
 # files exist.
 
-.for sub in ${PLIST_SUB}
-_sedsubplist!=	sym=`${ECHO} "${sub}" | ${SED} -e 's/=.*//'`; \
-		val=`${ECHO} "${sub}" | ${SED} -e 's/^[^=][^=]*=//'`; \
-		echo "${_sedsubplist} -e s!%%$${sym}%%!$${val}!g"
-.endfor
-
 .if !target(generate-plist)
 generate-plist:
 	@${ECHO_MSG} "===>   Generating temporary packing list"
+	@${MKDIR} `dirname ${TMPPLIST}`
 	@if [ ! -f ${PLIST} -o ! -f ${COMMENT} -o ! -f ${DESCR} ]; then ${ECHO} "** Missing package files for ${PKGNAME}."; exit 1; fi
 	@>${TMPPLIST}
-.for man in ${__MANPAGES}
-	@${ECHO} ${man} >> ${TMPPLIST}
-.endfor
+	@for man in ${__MANPAGES}; do \
+		${ECHO} $${man} >> ${TMPPLIST}; \
+	done
 .for _PREFIX in ${PREFIX}
 .if ${_TMLINKS:M${_PREFIX}*}x != x
 	@for i in ${_TMLINKS:M${_PREFIX}*:S,^${_PREFIX}/,,}; do \
@@ -2404,7 +2439,7 @@ generate-plist:
 	@${ECHO} '@cwd ${PREFIX}' >> ${TMPPLIST}
 .endif
 .endfor
-	@${SED} ${_sedsubplist} ${PLIST} | \
+	@${SED} ${PLIST_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${PLIST} | \
 	 ${SED} -e "/\@exec install-info.*$$/h" \
 		-e "s^^\@exec [ -f %D/info/dir -o ! -f /usr/share/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir^g" \
 		-e "t fix" -e "b" -e ":fix" -e "G" >> ${TMPPLIST}
@@ -2419,21 +2454,17 @@ generate-plist:
 .endif
 
 ${TMPPLIST}:
-	@cd ${.CURDIR} && ${MAKE} generate-plist
+	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} generate-plist
 
 # Compress (or uncompress) and symlink manpages.
 .if !target(compress-man)
 compress-man:
 .if ${MANCOMPRESSED} == yes && defined(NOMANCOMPRESS)
 	@${ECHO_MSG} "===>   Uncompressing manual pages for ${PKGNAME}"
-.for manpage in ${_MANPAGES}
-	@${GUNZIP_CMD} ${manpage}
-.endfor
+	@[ "${_MANPAGES}" != "" ] && ${GUNZIP_CMD} ${_MANPAGES} || ${TRUE}
 .elif ${MANCOMPRESSED} == no && !defined(NOMANCOMPRESS)
 	@${ECHO_MSG} "===>   Compressing manual pages for ${PKGNAME}"
-.for manpage in ${_MANPAGES}
-	@${GZIP_CMD} ${manpage}
-.endfor
+	@[ "${_MANPAGES}" != "" ] && ${GZIP_CMD} ${_MANPAGES} || ${TRUE}
 .endif
 .if defined(_MLINKS)
 	@set ${_MLINKS:S,"",,g:S,//,/,g}; \
@@ -2478,7 +2509,7 @@ fake-pkg:
 		if [ -f ${PKGMESSAGE} ]; then \
 			${CP} ${PKGMESSAGE} ${PKG_DBDIR}/${PKGNAME}/+DISPLAY; \
 		fi; \
-		for dep in `${MAKE} package-depends ECHO_MSG=/usr/bin/true | sort -u`; do \
+		for dep in `${MAKE} ${__softMAKEFLAGS} package-depends ECHO_MSG=/usr/bin/true | sort -u`; do \
 			if [ -d ${PKG_DBDIR}/$$dep ]; then \
 				if ! ${GREP} ^${PKGNAME}$$ ${PKG_DBDIR}/$$dep/+REQUIRED_BY \
 					>/dev/null 2>&1; then \
@@ -2500,6 +2531,22 @@ depend:
 # Same goes for tags
 .if !target(tags)
 tags:
+.endif
+
+.if !defined(NOPRECIOUSMAKEVARS)
+.for softvar in CKSUMFILES _MLINKS PKGBASE
+.if defined(${softvar})
+__softMAKEFLAGS+=      '${softvar}+=${${softvar}:S/'/'\''/g}'
+.endif
+.endfor
+# These won't change, so we can pass them through the environment
+.MAKEFLAGS: \
+	ARCH="${ARCH:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
+	OPSYS="${OPSYS:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
+	OSREL="${OSREL:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
+	OSVERSION="${OSVERSION:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
+	PORTOBJFORMAT="${PORTOBJFORMAT:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}" \
+	SYSTEMVERSION="${SYSTEMVERSION:S/"/"'"'"/g:S/\$/\$\$/g:S/\\/\\\\/g}"
 .endif
 
 .endif
