@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	treeline
-PORTVERSION=	0.10.1
+PORTVERSION=	0.10.2
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://www.bellz.org/treeline/ \
 		http://depot.fsck.ch/mirror/distfiles/
@@ -33,7 +33,7 @@ LIB_DEPENDS+=	expat.5:${PORTSDIR}/textproc/expat2
 
 WRKSRC=		${WRKDIR}/TreeLine
 USE_QT_VER=	3
-USE_PYTHON=	2.3
+USE_PYTHON=	yes
 NO_BUILD=	yes
 
 pre-everything::
