@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	gnomemm
-PORTVERSION=	1.3.17
-PORTREVISION=	4
-CATEGORIES=	x11-toolkits gnome
+PORTVERSION=	2.6.2
+CATEGORIES=	x11-toolkits devel gnome
 MASTER_SITES=   # empty
 DISTFILES=      # empty
 EXTRACT_ONLY=   # empty
@@ -16,14 +15,12 @@ EXTRACT_ONLY=   # empty
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	The "meta-port" for the powerful C++ bindings to the GNOME2 libraries
 
-LIB_DEPENDS=	gconfmm-2.0:${PORTSDIR}/devel/gconfmm \
-		gnomevfsmm-1.3:${PORTSDIR}/devel/gnome-vfsmm \
-		bonobomm_servers-1.3:${PORTSDIR}/devel/libbonobomm \
-		bonobouimm_servers-1.3:${PORTSDIR}/x11-toolkits/libbonobouimm \
-		glademm-2.0:${PORTSDIR}/devel/libglademm \
-		gnomecanvasmm-2.0:${PORTSDIR}/graphics/libgnomecanvasmm \
-		gnomemm-2.0:${PORTSDIR}/x11/libgnomemm \
-		gnomeuimm-2.0:${PORTSDIR}/x11-toolkits/libgnomeuimm
+LIB_DEPENDS=	gconfmm-2.6.1:${PORTSDIR}/devel/gconfmm26 \
+		gnomevfsmm-2.6.1:${PORTSDIR}/devel/gnome-vfsmm \
+		glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
+		gnomecanvasmm-2.6.1:${PORTSDIR}/graphics/libgnomecanvasmm26 \
+		gnomemm-2.6.1:${PORTSDIR}/x11/libgnomemm26 \
+		gnomeuimm-2.6.1:${PORTSDIR}/x11-toolkits/libgnomeuimm26
 
 NO_BUILD=	yes
 LATEST_LINK=	gnomemm2
