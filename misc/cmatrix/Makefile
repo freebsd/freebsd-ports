@@ -6,21 +6,23 @@
 #
 
 PORTNAME=	cmatrix
-PORTVERSION=	1.0b
+PORTVERSION=	1.1b
 CATEGORIES=	misc
-MASTER_SITES=	${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	apps/graphics/hacks/curses
+MASTER_SITES=	http://www.asty.org/cmatrix/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 
-do-build:
-	cd ${WRKSRC}; ${CC} ${CFLAGS} cmatrix.c -lncurses -o cmatrix
+MAN1=		cmatrix.1
+
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cmatrix ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/cmatrix.1 ${PREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/cmatrix
-.for file in Changelog README TODO
+.for file in ChangeLog README TODO
 	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/cmatrix
 .endfor
 .endif
