@@ -6,15 +6,9 @@
 #
 
 PORTNAME=	avr-libc
-PORTVERSION=	20000514
+PORTVERSION=	20010331
 CATEGORIES=	devel
-# The canonical place for the distfile is:
-#MASTER_SITES=	http://www.amelek.gda.pl/avr/libc/
-# ... but until we could convert our avr-gcc to a
-# current version (which is by now only obtainable
-# directly from the gcc CVS repo), resort to the old
-# file here:
-MASTER_SITES=	ftp://ftp.ifbus.de/pub/outgoing/
+MASTER_SITES=	http://www.amelek.gda.pl/avr/libc/
 
 MAINTAINER=	joerg@freebsd.org
 
@@ -35,8 +29,11 @@ post-install:
 		${MKDIR} ${PREFIX}/share/doc/avr-libc
 		${MKDIR} ${PREFIX}/share/doc/avr-libc/examples
 		${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/README \
+			${WRKDIR}/${DISTNAME}/doc/LICENSE \
+			${WRKDIR}/${DISTNAME}/doc/register-usage.txt \
 			${PREFIX}/share/doc/avr-libc
-		@for f in avr-recv.c io.c prg progmem.c send_byte.s signal.c;\
+		@for f in avr-recv.c io.c prg printf.h progmem.c \
+			send_byte.s signal.c;\
 		do \
 			${INSTALL_DATA} ${WRKDIR}/${DISTNAME}/doc/examples/$$f \
 				${PREFIX}/share/doc/avr-libc/examples; \
