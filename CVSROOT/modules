@@ -3414,6 +3414,7 @@ ko-uniksc	ports/korean/uniksc
 kobodeluxe	ports/games/kobodeluxe
 koffice-kde3	ports/editors/koffice-kde3	
 konverse	ports/net/konverse
+konwert		ports/converters/konwert
 kopete		ports/net/kopete
 korelib		ports/devel/korelib
 kp		ports/misc/kp
