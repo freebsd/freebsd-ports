@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	. old-versions
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	POP3 mail retriever with reliable Maildir/command delivery
 
+BROKEN=		"Unfetchable"
+
 USE_PYTHON=	yes
 USE_REINPLACE=	yes
 
