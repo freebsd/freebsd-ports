@@ -7,10 +7,14 @@
 
 PORTNAME=	imp
 PORTVERSION=	3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail www
-MASTER_SITES=	ftp://ftp.horde.org/pub/imp/tarballs/%SUBDIR%/
-MASTER_SITE_SUBDIR=	. old
+MASTER_SITES=	ftp://ftp.horde.org/pub/imp/				\
+		ftp://ftp.au.horde.org/pub/horde/imp/			\
+		ftp://ftp.es.horde.org/pub/imp/				\
+		ftp://ftp.it.horde.org/pub/mirror/horde.org/imp/	\
+		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/imp/	\
+		ftp://ftp.pt.horde.org/pub/horde-ftp/imp/
 
 MAINTAINER=	thierry@pompo.net
 
