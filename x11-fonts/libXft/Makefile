@@ -8,13 +8,14 @@
 PORTNAME=	libXft
 PORTVERSION=	2.1.6
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
+MASTER_SITES=	http://freedesktop.org/~ajax/xlibs-release/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A client-sided font API for X applications
 
 LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
