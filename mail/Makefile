@@ -96,6 +96,7 @@
     SUBDIR += smail
     SUBDIR += smtpd
     SUBDIR += smtpfeed
+    SUBDIR += solidpop3d
     SUBDIR += spruce
     SUBDIR += sylpheed
     SUBDIR += tkrat
