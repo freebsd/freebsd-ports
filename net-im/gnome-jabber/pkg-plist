@@ -5,6 +5,7 @@ etc/gconf/gconf.xml.defaults/apps/gnome-jabber/preferences/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnome-jabber/preferences/chat/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnome-jabber/preferences/misc/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnome-jabber/preferences/notifications/%gconf.xml
+etc/gconf/gconf.xml.defaults/apps/gnome-jabber/preferences/presence/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gnome-jabber/preferences/roster/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/connection/%gconf.xml
@@ -12,50 +13,64 @@ etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/preferences/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/preferences/chat/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/preferences/misc/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/preferences/notifications/%gconf.xml
+etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/preferences/presence/%gconf.xml
 etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/preferences/roster/%gconf.xml
 etc/gconf/schemas/gnome-jabber.schemas
+share/gnome/applications/gnome-jabber.desktop
 share/gnome/gnome-jabber/contact.wav
-share/gnome/gnome-jabber/emote_biggrin.png
-share/gnome/gnome-jabber/emote_confused.png
-share/gnome/gnome-jabber/emote_cool.png
-share/gnome/gnome-jabber/emote_eek.png
-share/gnome/gnome-jabber/emote_frown.png
-share/gnome/gnome-jabber/emote_mad.png
-share/gnome/gnome-jabber/emote_redface.png
-share/gnome/gnome-jabber/emote_rolleyes.png
-share/gnome/gnome-jabber/emote_smile.png
-share/gnome/gnome-jabber/emote_tongue.png
-share/gnome/gnome-jabber/emote_wink.png
+share/gnome/gnome-jabber/gj_emote_biggrin.png
+share/gnome/gnome-jabber/gj_emote_confused.png
+share/gnome/gnome-jabber/gj_emote_cool.png
+share/gnome/gnome-jabber/gj_emote_eek.png
+share/gnome/gnome-jabber/gj_emote_frown.png
+share/gnome/gnome-jabber/gj_emote_mad.png
+share/gnome/gnome-jabber/gj_emote_redface.png
+share/gnome/gnome-jabber/gj_emote_rolleyes.png
+share/gnome/gnome-jabber/gj_emote_smile.png
+share/gnome/gnome-jabber/gj_emote_tongue.png
+share/gnome/gnome-jabber/gj_emote_wink.png
+share/gnome/gnome-jabber/gj_jsf.png
+share/gnome/gnome-jabber/gj_message_chat.png
+share/gnome/gnome-jabber/gj_message_error.png
+share/gnome/gnome-jabber/gj_message_groupchat.png
+share/gnome/gnome-jabber/gj_message_headline.png
+share/gnome/gnome-jabber/gj_message_normal.png
+share/gnome/gnome-jabber/gj_presence_available.png
+share/gnome/gnome-jabber/gj_presence_away.png
+share/gnome/gnome-jabber/gj_presence_chat.png
+share/gnome/gnome-jabber/gj_presence_dnd.png
+share/gnome/gnome-jabber/gj_presence_invisible.png
+share/gnome/gnome-jabber/gj_presence_none.png
+share/gnome/gnome-jabber/gj_presence_subscribe.png
+share/gnome/gnome-jabber/gj_presence_subscribed.png
+share/gnome/gnome-jabber/gj_presence_unavailable.png
+share/gnome/gnome-jabber/gj_presence_unsubscribe.png
+share/gnome/gnome-jabber/gj_presence_unsubscribed.png
+share/gnome/gnome-jabber/gj_presence_xa.png
 share/gnome/gnome-jabber/gnome-jabber.css
 share/gnome/gnome-jabber/gnome-jabber.glade
-share/gnome/gnome-jabber/groups.png
-share/gnome/gnome-jabber/jsf.png
 share/gnome/gnome-jabber/message.wav
-share/gnome/gnome-jabber/message_chat.png
-share/gnome/gnome-jabber/message_error.png
-share/gnome/gnome-jabber/message_groupchat.png
-share/gnome/gnome-jabber/message_headline.png
-share/gnome/gnome-jabber/message_normal.png
-share/gnome/gnome-jabber/presence_away.png
-share/gnome/gnome-jabber/presence_chat.png
-share/gnome/gnome-jabber/presence_dnd.png
-share/gnome/gnome-jabber/presence_none.png
-share/gnome/gnome-jabber/presence_offline.png
-share/gnome/gnome-jabber/presence_online.png
-share/gnome/gnome-jabber/presence_subscribe.png
-share/gnome/gnome-jabber/presence_subscribed.png
-share/gnome/gnome-jabber/presence_unsubscribe.png
-share/gnome/gnome-jabber/presence_unsubscribed.png
-share/gnome/gnome-jabber/presence_xa.png
+share/locale/ca/LC_MESSAGES/gnome-jabber.mo
 share/locale/cs/LC_MESSAGES/gnome-jabber.mo
 share/locale/de/LC_MESSAGES/gnome-jabber.mo
+share/locale/en_CA/LC_MESSAGES/gnome-jabber.mo
+share/locale/en_GB/LC_MESSAGES/gnome-jabber.mo
 share/locale/es/LC_MESSAGES/gnome-jabber.mo
 share/locale/fr/LC_MESSAGES/gnome-jabber.mo
+share/locale/ga/LC_MESSAGES/gnome-jabber.mo
+share/locale/hr/LC_MESSAGES/gnome-jabber.mo
 share/locale/lt/LC_MESSAGES/gnome-jabber.mo
 share/locale/nl/LC_MESSAGES/gnome-jabber.mo
+share/locale/no/LC_MESSAGES/gnome-jabber.mo
+share/locale/pt/LC_MESSAGES/gnome-jabber.mo
+share/locale/pt_BR/LC_MESSAGES/gnome-jabber.mo
 share/locale/ru/LC_MESSAGES/gnome-jabber.mo
+share/locale/sr/LC_MESSAGES/gnome-jabber.mo
+share/locale/sr@Latn/LC_MESSAGES/gnome-jabber.mo
+share/locale/sv/LC_MESSAGES/gnome-jabber.mo
 @dirrm share/gnome/gnome-jabber
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/preferences/roster
+@dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/preferences/presence
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/preferences/notifications
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/preferences/misc
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/preferences/chat
@@ -63,6 +78,7 @@ share/locale/ru/LC_MESSAGES/gnome-jabber.mo
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber/connection
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/gnome-jabber
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnome-jabber/preferences/roster
+@dirrm etc/gconf/gconf.xml.defaults/apps/gnome-jabber/preferences/presence
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnome-jabber/preferences/notifications
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnome-jabber/preferences/misc
 @dirrm etc/gconf/gconf.xml.defaults/apps/gnome-jabber/preferences/chat
