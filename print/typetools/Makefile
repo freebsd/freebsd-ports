@@ -22,4 +22,10 @@ DATADIR=	${PREFIX}/share/lcdf-${PORTNAME}
 
 MAN1=	cfftot1.1 mmafm.1 mmpfb.1 otfinfo.1 otftotfm.1 t1lint.1 t1testpage.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Configure fails"
+.endif
+
+.include <bsd.port.post.mk>
