@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	textbuf
-PORTVERSION=	0.3.7
+PORTVERSION=	0.3.8
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www1.u-netsurf.ne.jp/~brew/mine/soft/
 MASTER_SITE_SUBDIR=	knu
