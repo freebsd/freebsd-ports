@@ -2,5 +2,6 @@ include/parmetis/parmetis.h
 lib/parmetis/libmetis.a
 lib/parmetis/libparmetis.a
 share/doc/ParMETIS/manual.ps
+@dirrm include/parmetis
 @dirrm lib/parmetis
 @dirrm share/doc/ParMETIS
