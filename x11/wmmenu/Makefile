@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wmmenu
-PORTVERSION=	0.4
-PORTREVISION=	1
+PORTVERSION=	0.8
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.fcoutant.freesurf.fr/download/
 
@@ -27,11 +26,13 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wmmenu ${PREFIX}/bin
+.ifndef(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/wmmenu
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/wmmenu
 	${MKDIR} ${PREFIX}/share/doc/wmmenu/example
 	${INSTALL_DATA} ${WRKSRC}/example/apps ${PREFIX}/share/doc/wmmenu/example
 	${INSTALL_DATA} ${WRKSRC}/example/defaults ${PREFIX}/share/doc/wmmenu/example
+.endif
 
 post-install:
 	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' ${PKGMESSAGE}
