@@ -28,7 +28,7 @@ ALL_TARGET+=	pdf
 PLIST_SUB+=	HAVE_LATEX=""
 GSPORT?=	print/ghostscript-gnu
 BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX \
-		gs:${PORTSDIR}/${GSPORT}
+		gs:${PORTSDIR}/${GHOSTSCRIPT_PORT}
 MAKE_ARGS+=	HAVE_LATEX=yes
 .else # !defined(WITHOUT_LATEX)
 PLIST_SUB+=	HAVE_LATEX="@comment "

@@ -15,14 +15,9 @@ MASTER_SITES=	http://www.gdv.uni-hannover.de/~peinecke/font2svg/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	All font to svg-font converter
 
-.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
+USE_GHOSTSCRIPT_RUN=	yes
 
-RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2 \
-		gs:${PORTSDIR}/${GSPORT}
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
 USE_REINPLACE=	yes
 NO_BUILD=	yes

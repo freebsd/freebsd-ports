@@ -15,14 +15,6 @@ MASTER_SITES=	http://xcircuit.ece.jhu.edu/archive/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 drawing program [especially for circuit schematics]
 
-.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
-
-RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
@@ -33,6 +25,8 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
+
+USE_GHOSTSCRIPT_RUN=	yes
 
 WISH=		${LOCALBASE}/bin/wish8.4
 

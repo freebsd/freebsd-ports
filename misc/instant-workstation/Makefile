@@ -14,11 +14,7 @@ MASTER_SITES=	ftp://ftp.lemis.com/pub/
 MAINTAINER=	grog@lemis.com
 COMMENT=	Instant workstation installs a typical set of ports for a workstation
 
-.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
+USE_GHOSTSCRIPT_RUN=	yes
 
 RUN_DEPENDS=	acroread:${PORTSDIR}/print/acroread5 \
 		bash:${PORTSDIR}/shells/bash2 \
@@ -26,7 +22,6 @@ RUN_DEPENDS=	acroread:${PORTSDIR}/print/acroread5 \
 		dos2unix:${PORTSDIR}/converters/unix2dos \
 		emacs:${PORTSDIR}/editors/emacs20 \
 		fetchmail:${PORTSDIR}/mail/fetchmail \
-		gs:${PORTSDIR}/${GSPORT} \
 		grip:${PORTSDIR}/audio/grip \
 		gimp:${PORTSDIR}/graphics/gimp1 \
 		gv:${PORTSDIR}/print/gv \
@@ -50,7 +45,7 @@ NO_BUILD=	YES
 RUN_DEPENDS+=	mount_smbfs:${PORTSDIR}/net/smbfs
 .endif
 
-pre-fetch:
+pre-everything::
 .if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
 	@${ECHO} ""
 	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"

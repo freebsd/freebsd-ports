@@ -16,18 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 ghostscript viewer
 
-.if defined(WITH_GHOSTSCRIPT_AFPL)
-.if ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
-
-BUILD_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
-RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
+USE_GHOSTSCRIPT=	yes
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

@@ -20,14 +20,9 @@ BUILD_DEPENDS=  emacs:${PORTSDIR}/editors/emacs
 .endif
 .if defined(WITH_FULL_DOCS)
 .undef NOPORTDOCS
-.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
 
 BUILD_DEPENDS+= tex:${PORTSDIR}/print/teTeX \
-		ps2pdf:${PORTSDIR}/${GSPORT}
+		ps2pdf:${PORTSDIR}/${GHOSTSCRIPT_PORT}
 .endif
 
 USE_XLIB=	yes

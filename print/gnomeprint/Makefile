@@ -16,19 +16,10 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gnome print support library
 
-.if defined(WITH_GHOSTSCRIPT_AFPL)
-.if ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
+USE_GHOSTSCRIPT_RUN=	yes
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
-RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 

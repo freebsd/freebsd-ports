@@ -14,16 +14,11 @@ MASTER_SITE_SUBDIR=	dgs
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A display ghostscript system
 
-.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
+USE_GHOSTSCRIPT_RUN=	yes
 
 LIB_DEPENDS= 	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff
-RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
 
 USE_X_PREFIX=	yes
 USE_PERL5_BUILD=yes

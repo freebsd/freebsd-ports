@@ -155,7 +155,7 @@ CONFIGURE_ARGS+=	--without-lcms
 .if !defined(WITHOUT_IMAGEMAGICK_TTF)
 BUILD_DEPENDS+=		freetype-config:${PORTSDIR}/print/freetype2	# XXX
 LIB_DEPENDS+=		freetype.9:${PORTSDIR}/print/freetype2
-NEED_GS=                yes
+USE_GHOSTSCRIPT=	yes
 .else
 CONFIGURE_ARGS+=	--without-ttf
 .endif
@@ -188,7 +188,7 @@ CONFIGURE_ARGS+=	--without-dps
 # PDF (Adobe Portable Document Format) support
 .if !defined(WITHOUT_IMAGEMAGICK_PDF)
 CONFIGURE_ARGS+=	--with-gslib
-NEED_GS=                yes
+USE_GHOSTSCRIPT=	yes
 .else
 CONFIGURE_ARGS+=	--without-gslib
 .endif
@@ -208,22 +208,6 @@ CONFIGURE_ARGS+=	--with-mpeg2
 LIB_DEPENDS+=		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 .else
 CONFIGURE_ARGS+=	--without-mpeg2
-.endif
-.endif
-
-.if defined(NEED_GS)
-.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
-
-.if defined(WITHOUT_X11)
-BUILD_DEPENDS+=		gs:${PORTSDIR}/${GSPORT}-nox11
-RUN_DEPENDS+=		gs:${PORTSDIR}/${GSPORT}-nox11
-.else
-BUILD_DEPENDS+=		gs:${PORTSDIR}/${GSPORT}
-RUN_DEPENDS+=		gs:${PORTSDIR}/${GSPORT}
 .endif
 .endif
 

@@ -15,22 +15,16 @@ DISTNAME=	html2ps-1.0b3
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTML to PostScript converter
 
-.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
+USE_GHOSTSCRIPT_BUILD=	yes
 
 BUILD_DEPENDS=	mogrify:${PORTSDIR}/graphics/ImageMagick \
 		djpeg:${PORTSDIR}/graphics/jpeg \
 		giftopnm:${PORTSDIR}/graphics/netpbm \
-		gs:${PORTSDIR}/${GSPORT} \
 		tex:${PORTSDIR}/print/teTeX \
-		${site_perl}/LWP.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		weblint:${PORTSDIR}/www/weblint
 RUN_DEPENDS=	mogrify:${PORTSDIR}/graphics/ImageMagick
 
-site_perl=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 USE_PERL5=	YES
 NO_BUILD=	YES
 

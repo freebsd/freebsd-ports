@@ -27,17 +27,10 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 MAKEFILE=	GNUmakefile
 
-.ifdef WITHOUT_GHOSTSCRIPT
-PLIST_SUB+=	PDFVIEW="@comment "
-.else
-.if defined(WITH_GHOSTSCRIPT_AFP1)
-GSPORT?=	print/ghostscript-afp1
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
-BUILD_DEPENDS+=	gs:${PORTSDIR}/${GSPORT}
-RUN_DEPENDS+=	gs:${PORTSDIR}/${GSPORT}
+.ifdef USE_GHOSTSCRIPT
 PLIST_SUB+=	PDFVIEW=""
+.else
+PLIST_SUB+=	PDFVIEW="@comment "
 .endif
 
 .include <bsd.port.mk>

@@ -15,15 +15,9 @@ EXTRACT_SUFX=	-src.tar.gz
 MAINTAINER=	bremner@unb.ca
 COMMENT=	Extensible drawing editor
 
-RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT} \
-		latex:${PORTSDIR}/print/teTeX
+USE_GHOSTSCRIPT_RUN=	yes
 
-.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
-
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 USE_QT_VER=	3
 MAKE_ENV+=	QTDIR=${QTDIR}

@@ -13,13 +13,7 @@ MASTER_SITES=	ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/ghostgum/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create or extract preview bitmaps in EPS files
 
-.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
-GSPORT?=	print/ghostscript-afpl
-.else
-GSPORT?=	print/ghostscript-gnu
-.endif
-
-RUN_DEPENDS=	gs:${PORTSDIR}/${GSPORT}
+USE_GHOSTSCRIPT_RUN=	yes
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
