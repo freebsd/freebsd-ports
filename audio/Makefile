@@ -238,6 +238,7 @@
     SUBDIR += play
     SUBDIR += playmidi
     SUBDIR += portaudio
+    SUBDIR += prokyon3
     SUBDIR += py-ao
     SUBDIR += py-cddb
     SUBDIR += py-eyed3
