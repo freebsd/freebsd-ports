@@ -10068,6 +10068,7 @@ wesnoth		ports/games/wesnoth
 wfb2sql		ports/databases/wfb2sql
 wget		ports/ftp/wget
 wget-devel	ports/ftp/wget-devel
+wgetpro		ports/ftp/wgetpro
 whatmask	ports/net-mgmt/whatmask
 whatpix		ports/sysutils/whatpix
 whichman	ports/misc/whichman
