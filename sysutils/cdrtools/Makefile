@@ -32,5 +32,6 @@ do-install:
 	 ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/cdrecord/cdrecord.1 ${PREFIX}/man/man1
 	@${INSTALL_MAN} ${WRKSRC}/cdda2wav/cdda2wav.1 ${PREFIX}/man/man1
+	@${LN} -sf ${PREFIX}/bin/cdda2wav ${PREFIX}/bin/list_audio_tracks
 
 .include <bsd.port.mk>
