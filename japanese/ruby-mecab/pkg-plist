@@ -1,0 +1,2 @@
+%%RUBY_SITEARCHLIBDIR%%/MeCab.so
+%%PORTDOCS%%share/examples/mecab/test.rb

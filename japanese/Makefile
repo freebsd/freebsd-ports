@@ -315,6 +315,7 @@
     SUBDIR += ruby-gyokuro
     SUBDIR += ruby-kakasi
     SUBDIR += ruby-man
+    SUBDIR += ruby-mecab
     SUBDIR += ruby-refe
     SUBDIR += ruby-romkan
     SUBDIR += ruby-slang
