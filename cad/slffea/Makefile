@@ -8,6 +8,7 @@
 
 PORTNAME=	slffea
 PORTVERSION=	1.3
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,8 +17,6 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	San Le's Free Finite Element Analysis
-
-BROKEN=		"Checksum mismatch"
 
 CONFLICTS=	ploticus-* swi-pl-* TenDRA-*
 USE_REINPLACE=	yes
