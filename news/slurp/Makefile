@@ -3,7 +3,7 @@
 # Date created:		30 Jun 1996
 # Whom:			jraynard
 #
-# $Id: Makefile,v 1.3 1997/11/13 23:14:22 jraynard Exp $
+# $Id: Makefile,v 1.4 1997/11/15 10:55:21 asami Exp $
 #
 
 DISTNAME=	slurp-1.10
@@ -12,8 +12,6 @@ MASTER_SITES=	ftp://ftp.demon.co.uk/pub/news/slurp/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jraynard@FreeBSD.ORG
-
-BROKEN=		patch
 
 NO_WRKSUBDIR=	yes
 MAN1=		slurp.1
