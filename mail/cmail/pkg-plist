@@ -1,4 +1,20 @@
 bin/cmail
-share/examples/cmailrc.sample
+%%PORTDOCS%%share/doc/cmail/LICENSE
+%%PORTDOCS%%share/doc/cmail/README
+%%PORTDOCS%%@dirrm share/doc/cmail
+share/examples/cmail/cmail.rc
+@dirrm share/examples/cmail
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/cmail/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/cmail
+lib/perl5/site_perl/%%PERL_VER%%/CMail/In/Base.pm
+lib/perl5/site_perl/%%PERL_VER%%/CMail/In/file.pm
+lib/perl5/site_perl/%%PERL_VER%%/CMail/In/pop3.pm
+lib/perl5/site_perl/%%PERL_VER%%/CMail/In/maildir.pm
+lib/perl5/site_perl/%%PERL_VER%%/CMail/In/mbox.pm
+lib/perl5/site_perl/%%PERL_VER%%/CMail/In/imap.pm
+lib/perl5/site_perl/%%PERL_VER%%/CMail/Out/Base.pm
+lib/perl5/site_perl/%%PERL_VER%%/CMail/Out/color.pm
+lib/perl5/site_perl/%%PERL_VER%%/CMail/Out/plain.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/CMail/In
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/CMail/Out
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/CMail
