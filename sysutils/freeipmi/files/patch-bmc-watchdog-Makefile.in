@@ -1,0 +1,25 @@
+--- bmc-watchdog/Makefile.in.orig	Mon Oct 25 12:42:31 2004
++++ bmc-watchdog/Makefile.in	Mon Oct 25 20:58:48 2004
+@@ -436,7 +436,8 @@
+ all-am: Makefile $(MANS) $(DATA)
+ installdirs: installdirs-recursive
+ installdirs-am:
+-	$(mkinstalldirs) $(DESTDIR)$(man8dir) $(DESTDIR)$(DEFINITSCRIPTdir)
++	$(mkinstalldirs) $(DESTDIR)$(man8dir)
++#	$(mkinstalldirs) $(DESTDIR)$(man8dir) $(DESTDIR)$(DEFINITSCRIPTdir)
+ 
+ install: install-recursive
+ install-exec: install-exec-recursive
+@@ -481,9 +482,10 @@
+ 
+ info-am:
+ 
+-install-data-am: install-DEFINITSCRIPTDATA install-man
++#install-data-am: install-DEFINITSCRIPTDATA install-man
++install-data-am: install-man
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
++#	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ 
+ install-exec-am:
+ 

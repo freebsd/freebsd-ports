@@ -1,0 +1,13 @@
+--- fish/Makefile.in.orig	Sat Oct  9 11:24:50 2004
++++ fish/Makefile.in	Thu Oct 21 02:02:55 2004
+@@ -198,8 +198,8 @@
+ 	@list='$(Defconf_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	  echo " $(DefconfDATA_INSTALL) $$d$$p $(DESTDIR)$(Defconfdir)/$$f"; \
+-	  $(DefconfDATA_INSTALL) $$d$$p $(DESTDIR)$(Defconfdir)/$$f; \
++	  echo " $(DefconfDATA_INSTALL) $$d$$p $(DESTDIR)$(Defconfdir)/$$f-dist"; \
++	  $(DefconfDATA_INSTALL) $$d$$p $(DESTDIR)$(Defconfdir)/$$f-dist; \
+ 	done
+ 
+ uninstall-DefconfDATA:

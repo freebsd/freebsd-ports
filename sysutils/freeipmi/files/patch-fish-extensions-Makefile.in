@@ -1,0 +1,13 @@
+--- fish/extensions/Makefile.in.orig	Sat Oct  9 11:24:50 2004
++++ fish/extensions/Makefile.in	Thu Oct 21 02:06:48 2004
+@@ -212,8 +212,8 @@
+ 	@list='$(Extensionsconf_DATA)'; for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	  echo " $(ExtensionsconfDATA_INSTALL) $$d$$p $(DESTDIR)$(Extensionsconfdir)/$$f"; \
+-	  $(ExtensionsconfDATA_INSTALL) $$d$$p $(DESTDIR)$(Extensionsconfdir)/$$f; \
++	  echo " $(ExtensionsconfDATA_INSTALL) $$d$$p $(DESTDIR)$(Extensionsconfdir)/$$f-dist"; \
++	  $(ExtensionsconfDATA_INSTALL) $$d$$p $(DESTDIR)$(Extensionsconfdir)/$$f-dist; \
+ 	done
+ 
+ uninstall-ExtensionsconfDATA:

@@ -141,6 +141,7 @@
     SUBDIR += freebsd-sha1
     SUBDIR += freecolor
     SUBDIR += freedt
+    SUBDIR += freeipmi
     SUBDIR += freesbie
     SUBDIR += ftrace
     SUBDIR += fvcool
