@@ -7,37 +7,33 @@
 
 PORTNAME=	exim
 PORTVERSION=	${EXIM_VERSION}
-PORTREVISION=	4
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_EXIM} \
-		http://duncanthrax.net/%SUBDIR%/:exiscan,exiscan_acl
-MASTER_SITE_SUBDIR=	exim4 exiscan/:exiscan exiscan-acl/:exiscan_acl
+		http://duncanthrax.net/%SUBDIR%/:exiscan_acl
+MASTER_SITE_SUBDIR=	exim4 exiscan-acl/:exiscan_acl
 DISTFILES=	exim-${EXIM_VERSION}${EXTRACT_SUFX} \
 		exim-texinfo-${EXIM_DOCVERSION}${EXTRACT_SUFX}
-.if defined(WITH_EXISCAN_ACL)
+.if !defined(WITHOUT_EXISCAN)
 DISTFILES+=	exiscan-acl-${EXISCAN_ACL_VERSION}.patch.bz2:exiscan_acl
-.elif !defined(WITHOUT_EXISCAN)
-DISTFILES+=	exiscan-${EXISCAN_VERSION}${EXTRACT_SUFX}:exiscan
 .endif
 DIST_SUBDIR=	exim
 
 EXTRACT_ONLY=	exim-${EXIM_VERSION}${EXTRACT_SUFX} \
 		exim-texinfo-${EXIM_DOCVERSION}${EXTRACT_SUFX}
-.if !defined(WITH_EXISCAN_ACL) && !defined(WITHOUT_EXISCAN)
-EXTRACT_ONLY+=	exiscan-${EXISCAN_VERSION}${EXTRACT_SUFX}
-.endif
 
 MAINTAINER=	sheldonh@FreeBSD.org
 COMMENT=	High performance MTA for Unix systems on the Internet
+
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
 MAN8=		exim.8
 
-EXIM_VERSION=		4.20
+EXIM_VERSION=		4.21
 EXIM_DOCVERSION=	4.20
 EXISCAN_ACL_VERSION=	${EXIM_VERSION}-10
-EXISCAN_VERSION=	${EXIM_VERSION}-26
 
 PLIST_SUB+=     EXIM_VERSION="${EXIM_VERSION}"
 
@@ -45,7 +41,7 @@ PLIST_SUB+=     EXIM_VERSION="${EXIM_VERSION}"
 PKGMESSAGE=	${WRKDIR}/POST-INSTALL-NOTES
 .endif
 
-MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH}
+MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH} LOCALBASE=${LOCALBASE}
 
 POSTGRESQL_PORT?=	databases/postgresql7
 
@@ -54,10 +50,8 @@ POSTGRESQL_PORT?=	databases/postgresql7
 # XFree86 to be installed if it is not present.
 #WITH_EXIMON=	yes
 
-# If WITH_EXISCAN_ACL is defined, exim will be build with the newer
-# exiscan acl support. Otherwise if WITHOUT_EXISCAN is defined,
-# exim will be built without exiscan email content scanner support.
-#WITH_EXISCAN_ACL=	yes
+# If WITHOUT_EXISCAN is defined, exim will be built without exiscan
+# email content scanner support.
 #WITHOUT_EXISCAN=	yes
 
 # Define WITH_TCP_WRAPPERS, WITH_MYSQL, and WITH_PGSQL to link against
@@ -141,17 +135,11 @@ EXTRA_PATCHES+=	`${FIND} ${PATCHDIR} -name 'wishlist-*.patch'`
 PORTDOC_FILES=	Exim3.upgrade Exim4.upgrade OptionLists.txt README \
 		dbm.discuss.txt filter.txt pcrepattern.txt pcretest.txt \
 		spec.txt
-.if defined(WITH_EXISCAN_ACL)
+.if !defined(WITHOUT_EXISCAN)
 PORTDOC_FILES+=	exiscan-acl-examples.txt exiscan-acl-spec.txt
 PLIST_SUB+=             EXISCAN_ACL=""
-PLIST_SUB+=             EXISCAN="@comment "
-.elif !defined(WITHOUT_EXISCAN)
-PORTDOC_FILES+=	exiscan-readme.txt
-PLIST_SUB+=             EXISCAN_ACL="@comment "
-PLIST_SUB+=             EXISCAN=""
 .else
 PLIST_SUB+=             EXISCAN_ACL="@comment "
-PLIST_SUB+=             EXISCAN="@comment "
 .endif
 
 .if ${OSVERSION} < 400014
@@ -331,16 +319,10 @@ pre-everything::
 .endif
 
 post-patch:
-.if defined(WITH_EXISCAN_ACL)
+.if !defined(WITHOUT_EXISCAN)
 	${BZCAT} ${DISTDIR}/${DIST_SUBDIR}/exiscan-acl-${EXISCAN_ACL_VERSION}.patch.bz2 \
 	    | ${PATCH} -d ${WRKSRC} -p1 > ${WRKDIR}/patch-exiscan-acl.log 2>&1
 	@${CAT} ${FILESDIR}/POST-INSTALL-NOTES.exiscan-acl \
-	    ${FILESDIR}/POST-INSTALL-NOTES > ${WRKDIR}/POST-INSTALL-NOTES
-.elif !defined(WITHOUT_EXISCAN)
-	cd ${WRKSRC} && ${PATCH} -p1 \
-	    < ../exiscan-${EXISCAN_VERSION}/exiscan-${EXISCAN_VERSION}.patch \
-	    > ${WRKDIR}/patch-exiscan.log 2>&1
-	@${CAT} ${FILESDIR}/POST-INSTALL-NOTES.exiscan \
 	    ${FILESDIR}/POST-INSTALL-NOTES > ${WRKDIR}/POST-INSTALL-NOTES
 .else
 	@${CAT} ${FILESDIR}/POST-INSTALL-NOTES > ${WRKDIR}/POST-INSTALL-NOTES
