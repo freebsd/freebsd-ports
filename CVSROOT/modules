@@ -3968,6 +3968,7 @@ mbx2mbox	ports/mail/mbx2mbox
 mc		ports/misc/mc
 mcal		ports/deskutils/mcal
 mcrypt		ports/security/mcrypt
+mctoolame-decoder	ports/audio/mctoolame-decoder
 mdbconv		ports/palm/mdbconv
 mdbtools	ports/databases/mdbtools
 mdcrack		ports/security/mdcrack
