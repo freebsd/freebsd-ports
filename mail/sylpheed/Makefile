@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	0.6.6
+PORTVERSION=	0.7.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.good-day.net/sylpheed/
 
@@ -20,44 +20,71 @@ USE_LIBTOOL=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-compface --disable-gdk-pixbuf --enable-ipv6 --prefix=${PREFIX} --with-included-gettext
+CONFIGURE_ARGS=	--enable-ipv6 --prefix=${PREFIX} --with-included-gettext
 
+.if defined(WITH_PIXBUF)
+LIB_DEPENDS+=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+CONFIGURE_ARGS+=--disable-imlib
+.else
+USE_IMLIB=	yes
+CONFIGURE_ARGS+=--disable-gdk-pixbuf
+.endif
 .if defined(WITH_GPGME)
 LIB_DEPENDS+=	gpgme.4:${PORTSDIR}/security/gpgme
 RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
 CONFIGURE_ARGS+=--enable-gpgme
+.else
+CONFIGURE_ARGS+=--disable-gpgme
+.endif
+.if defined(WITH_COMPFACE)
+LIB_DEPENDS+=	compface.1:${PORTSDIR}/mail/faces
+CONFIGURE_ARGS+=--enable-compface
+.else
+CONFIGURE_ARGS+=--disable-compface
+.endif
+.if defined(WITH_JCONV)
+LIB_DEPENDS+=	jconv.0:${PORTSDIR}/japanese/libjconv
+CONFIGURE_ARGS+=--enable-jconv
+.else
+CONFIGURE_ARGS+=--disable-jconv
+.endif
+.if defined(WITH_JPILOT)
+LIB_DEPENDS+=	expense.1:${PORTSDIR}/palm/jpilot
+CONFIGURE_ARGS+=--enable-jpilot
+CFLAGS+=	-I${LOCALBASE}/pilot/include
+.else
+CONFIGURE_ARGS+=	--disable-jpilot
 .endif
 .if !defined(WITHOUT_SSL)
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--enable-ssl
-.endif
-
-PORTDOCS=	ChangeLog INSTALL README TODO
-
-pre-extract:
-.if defined(WITH_GPGME)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "WARNING: GnuPG support using GPGME is still experimental."
 .else
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You can enable GnuPG support using GPGME by defining WITH_GPGME."
-	@${ECHO_MSG} "WARNING: GnuPG support is still experimental."
+CONFIGURE_ARGS+=--disable-ssl
 .endif
-.if !defined(WITHOUT_SSL)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "You can disable OpenSSL support by defining WITHOUT_SSL."
-.endif
-	@${ECHO_MSG}
+
+pre-everything::
+	@${ECHO} ""
+	@${ECHO} "You may use the following build options:"
+	@${ECHO} ""
+	@${ECHO} "      WITH_PIXBUF=yes   Enable GDK Pixbuf support"
+	@${ECHO} "      WITH_GPGME=yes    Enable GnuPG support using GPGME."
+	@${ECHO} "      WITH_COMPFACE=yes Enable X-Face support."
+	@${ECHO} "      WITH_JCONV=yes    Enable Japanese charset conversion"
+	@${ECHO} "                        library libjconv."
+	@${ECHO} "      WITH_JPILOT=yes   Enable JPilot support."
+	@${ECHO} ""
+	@${ECHO} "      WITHOUT_SSL=yes   Disable OpenSSL support."
+	@${ECHO} ""
 
 pre-build:
 	${LN} -sf ${LOCALBASE}/bin/${LIBTOOL} ${WRKSRC}/libtool
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/sylpheed
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/sylpheed
-	${INSTALL_DATA} ${WRKSRC}/${i}.jp ${PREFIX}/share/doc/sylpheed
+	@${MKDIR} ${DOCSDIR}
+.for i in ChangeLog INSTALL README TODO
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${i}.jp ${DOCSDIR}
 .endfor
 .endif
 
