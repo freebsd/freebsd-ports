@@ -22,7 +22,7 @@ WEBSVNDIR?=	www/data/WebSVN
 PLIST=		${WRKDIR}/pkg-plist
 
 pre-install:
-	@${CP} ${WRKSRC}/include/distconfig.inc ${WRKSRC}/include/config.in
+	@${TR} -d '\r' < ${WRKSRC}/include/distconfig.inc > ${WRKSRC}/include/config.inc
 	cd ${WRKSRC} && ${FIND} -s * -type f | \
 		${SED} -e 's|^|${WEBSVNDIR}/|' > ${PLIST} \
 		&& ${FIND} -d * -type d | \
