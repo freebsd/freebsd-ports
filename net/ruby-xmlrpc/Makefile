@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmlrpc
-PORTVERSION=	1.7.11
+PORTVERSION=	1.7.12
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www.fantasy-coders.de/ruby/xmlrpc4r/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/xmlparser.so:${PORTSDIR}/textproc/ruby-xmlpa
 # Alternative to ruby-xmlparser:
 #     NQXML
 #		${RUBY_SITELIBDIR}/nqxml/info.rb:${PORTSDIR}/textproc/ruby-nqxml
-#     REXML (not fully supported yet)
+#     REXML
 #		${RUBY_SITELIBDIR}/rexml/rexml.rb:${PORTSDIR}/textproc/ruby-rexml
 
 USE_RUBY=	yes
