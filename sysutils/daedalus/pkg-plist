@@ -1,0 +1,3 @@
+bin/daedalus.rb
+etc/rc.d/daedalus.sh
+etc/daedalus.conf.sample
