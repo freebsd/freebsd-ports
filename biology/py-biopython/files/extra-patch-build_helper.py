@@ -3,7 +3,7 @@ happens only if Fnorb is chosen as CORBA ORB.  Since CORBA support itself
 is optional in this port, this patch is added to EXTRA_PATCHES only if
 necessary.
 
--- Johann Visagie <johann@egenetics.com>
+-- Johann Visagie <wjv@FreeBSD.org>
 
 
 --- ../biopython-corba-0.2.1/build_helper.py.orig	Sun Apr 15 15:19:31 2001

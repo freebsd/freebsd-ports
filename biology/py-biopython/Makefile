@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	biopython
-PORTVERSION=	1.00.a1
+PORTVERSION=	1.00.a2
 CATEGORIES=	biology python
 MASTER_SITES=	http://www.biopython.org/Download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -62,7 +62,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-build_helper.py
 PLIST_OMNIORB=	"@comment "
 PLIST_FNORB=	""
 .elif ${CORBA_ORB} == "orbit"
-RUN_DEPENDS+=	${PREFIX}/include/orbit-python/orbit-python.h:${PORTSDIR}/devel/py-orbit
+RUN_DEPENDS+=	${LOCALBASE}/include/orbit-python/orbit-python.h:${PORTSDIR}/devel/py-orbit
 CORBA_ORBNAME=	ORBit
 PLIST_OMNIORB=	"@comment "
 PLIST_FNORB=	"@comment "
