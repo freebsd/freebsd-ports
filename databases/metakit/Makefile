@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	metakit
-PORTVERSION=	2.4.3
-PORTREVISION=	33
+PORTVERSION=	2.4.5
+PORTREVISION=	35
 CATEGORIES=	databases
 MASTER_SITES=	http://www.equi4.com/pub/mk/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${PORTREVISION}
@@ -70,11 +70,11 @@ pre-patch:
 
 post-install:
 .if defined(METAKIT_WITH_PYTHON)
-	@${INSTALL_PROGRAM} ${WRKSRC}/Mk4py.so ${PYTHON_SITELIBDIR}/
+	@${INSTALL_PROGRAM} ${WRKSRC}/.libs/libmk4py.so ${PYTHON_SITELIBDIR}/
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${TAR} -C ${WRKSRC}/../doc -cf - . | \
+	${TAR} -C ${WRKSRC}/../doc --exclude "*CVS" -cf - . | \
 		${TAR} -C ${DOCSDIR} --unlink -xf -
 	${INSTALL_DATA} ${WRKSRC}/../MetaKit.html ${WRKSRC}/../CHANGES \
 		${WRKSRC}/../README ${WRKSRC}/../WHATSNEW ${DOCSDIR}/
