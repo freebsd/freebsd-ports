@@ -6,13 +6,9 @@
 # $FreeBSD$
 
 PORTNAME=	ipcalc
-PORTVERSION=	0.35
-PORTREVISION=	1
+PORTVERSION=	0.38
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://jodies.de/
-DISTNAME=	ipcalc.pl
-EXTRACT_SUFX=	# empty
-EXTRACT_ONLY=	# empty
+MASTER_SITES=	http://jodies.de/ipcalc-archive/
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	IP Calculator
@@ -22,6 +18,6 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 
 do-install:
-	${INSTALL_SCRIPT} ${DISTDIR}/${DISTFILES} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
