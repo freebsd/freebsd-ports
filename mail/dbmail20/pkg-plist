@@ -1,12 +1,11 @@
-@comment $FreeBSD$
-bin/dbmail-smtp
-bin/dbmail-pop3d
+bin/dbmail-adduser
 bin/dbmail-imapd
 bin/dbmail-maintenance
-bin/dbmail-adduser
-bin/dbmail-readvut
-bin/raw-convertor
 bin/dbmail-mini-injector
+bin/dbmail-pop3d
+bin/dbmail-readvut
+bin/dbmail-smtp
+bin/raw-convertor
 etc/dbmail.conf-dist
 %%MYSQL%%lib/libmysqldbmail.a
 %%PGSQL%%lib/libpgsqldbmail.a
@@ -29,10 +28,10 @@ etc/dbmail.conf-dist
 %%PGSQL%%%%DATADIR%%/sql/add_auto_reply.pgsql
 %%PGSQL%%%%DATADIR%%/sql/add_rfcsize.postgresql
 %%PGSQL%%%%DATADIR%%/sql/create_tables.pgsql
-%%PGSQL%%%%DATADIR%%/sql/no-constraint-tables.pgsql
-%%PGSQL%%%%DATADIR%%/sql/update_encryption.pgsql
 %%PGSQL%%%%DATADIR%%/sql/md5_alter_users.7.3-pgsql
 %%PGSQL%%%%DATADIR%%/sql/md5_alter_users.pre_7.3-pgsql
+%%PGSQL%%%%DATADIR%%/sql/no-constraint-tables.pgsql
 %%PGSQL%%%%DATADIR%%/sql/pop_before_smtp.pgsql
+%%PGSQL%%%%DATADIR%%/sql/update_encryption.pgsql
 @dirrm %%DATADIR%%/sql
 @dirrm %%DATADIR%%
