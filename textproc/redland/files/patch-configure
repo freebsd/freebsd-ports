@@ -1,10 +1,50 @@
---- configure.orig	Sun Jun  9 05:34:13 2002
-+++ configure	Tue Jul 16 04:47:28 2002
-@@ -5610,6 +5610,7 @@
+--- configure.orig	Thu Feb 13 11:00:47 2003
++++ configure	Fri Apr 18 21:32:50 2003
+@@ -6626,9 +6626,9 @@
  
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ fi
  
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+-CPPFLAGS="$LIBRDF_CPPFLAGS"
+-LDFLAGS="$LIBRDF_LDFLAGS"
+-LIBS="$LIBRDF_LIBS"
++CPPFLAGS="$LIBRDF_CPPFLAGS $CPPFLAGS"
++LDFLAGS="$LIBRDF_LDFLAGS $LDFLAGS"
++LIBS="$LIBRDF_LIBS $LIBS"
+ 
+ 
+ if test "$have_libdb" != yes; then
+@@ -7294,9 +7294,9 @@
+   echo "$ac_t""no" 1>&6
+ fi
+ 
+-CPPFLAGS="$LIBRDF_CPPFLAGS"
+-LDFLAGS="$LIBRDF_LDFLAGS"
+-LIBS="$LIBRDF_LIBS"
++CPPFLAGS="$LIBRDF_CPPFLAGS $CPPFLAGS"
++LDFLAGS="$LIBRDF_LDFLAGS $LDFLAGS"
++LIBS="$LIBRDF_LIBS $LIBS"
+ 
+ 
+ 
+@@ -7730,7 +7730,7 @@
+       have_libxml=0
+     fi
+ 
+-    CPPFLAGS="$LIBRDF_CPPFLAGS"
++    CPPFLAGS="$LIBRDF_CPPFLAGS $CPPFLAGS"
+ 
+   else
+     echo "$ac_t""no" 1>&6
+@@ -8328,9 +8328,9 @@
+   CFLAGS="$MAINTAINER_CFLAGS $CFLAGS"
+ fi
+ 
+-LIBS=
+-CPPFLAGS=
+-LDFLAGS=
++#LIBS=
++#CPPFLAGS=
++#LDFLAGS=
+ 
+ 
+ 
