@@ -8,7 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	4.0.0
-PORTREVISION=	20041205
+PORTREVISION=	20041219
 CATEGORIES=	lang java
 VERSIONSTRING=	4.0-${PORTREVISION}
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -78,6 +78,7 @@ MAN1=		cpp${SUFFIX}.1 \
 		gcc${SUFFIX}.1 \
 		gcov${SUFFIX}.1 \
 		gcj${SUFFIX}.1 \
+		gcj-dbtool${SUFFIX}.1 \
 		gcjh${SUFFIX}.1 \
 		gij${SUFFIX}.1 \
 		grmic${SUFFIX}.1 \
