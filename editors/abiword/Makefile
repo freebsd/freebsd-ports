@@ -57,7 +57,7 @@ CONFIGURE_ARGS+=--enable-gnome
 .endif
 
 post-patch:
-	@giconv -f cp1251 -t koi8-u ${WRKSRC}/user/wp/strings/uk-UA.strings > \
+	@iconv -f cp1251 -t koi8-u ${WRKSRC}/user/wp/strings/uk-UA.strings > \
 		${WRKDIR}/.uk-UA.strings
 	@${MV} ${WRKDIR}/.uk-UA.strings ${WRKSRC}/user/wp/strings/uk-UA.strings
 
