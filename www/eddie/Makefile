@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.aims.com.au/chris/
 DISTNAME=	eddie-1.5.1-20020619
 
-MAINTAINER=	chris@aims.com.au
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Tool for building fault-tolerant redundant WWW servers
 
 BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
