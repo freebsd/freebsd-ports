@@ -1,15 +1,6 @@
 bin/solfege
 bin/solfege%%VERSION%%
 etc/solfege2.0
-share/locale/da/LC_MESSAGES/solfege.mo
-share/locale/de/LC_MESSAGES/solfege.mo
-share/locale/es/LC_MESSAGES/solfege.mo
-share/locale/es_MX/LC_MESSAGES/solfege.mo
-share/locale/fr/LC_MESSAGES/solfege.mo
-share/locale/it/LC_MESSAGES/solfege.mo
-share/locale/nl/LC_MESSAGES/solfege.mo
-share/locale/no/LC_MESSAGES/solfege.mo
-share/locale/ru/LC_MESSAGES/solfege.mo
 share/gnome/apps/Applications/solfege.desktop
 share/gnome/pixmaps/solfege.png
 share/gnome/solfege/%%VERSION%%/default.config
@@ -183,8 +174,8 @@ share/gnome/solfege/%%VERSION%%/online-docs/C/chord-voicing-help.html
 share/gnome/solfege/%%VERSION%%/online-docs/C/compare-intervals-help.html
 share/gnome/solfege/%%VERSION%%/online-docs/C/copyright.html
 share/gnome/solfege/%%VERSION%%/online-docs/C/dictation-help.html
-share/gnome/solfege/%%VERSION%%/online-docs/C/fdl.html
-share/gnome/solfege/%%VERSION%%/online-docs/C/gpl.html
+share/gnome/solfege/%%VERSION%%/online-docs/C/fdl-appendix.html
+share/gnome/solfege/%%VERSION%%/online-docs/C/gpl-appendix.html
 share/gnome/solfege/%%VERSION%%/online-docs/C/harmonic-interval-help.html
 share/gnome/solfege/%%VERSION%%/online-docs/C/harmonic-progression-dictation-help.html
 share/gnome/solfege/%%VERSION%%/online-docs/C/helpfile-format.html
@@ -439,6 +430,15 @@ share/gnome/solfege/%%VERSION%%/src/utils.pyo
 share/gnome/solfege/%%VERSION%%/src/widgets.py
 share/gnome/solfege/%%VERSION%%/src/widgets.pyc
 share/gnome/solfege/%%VERSION%%/src/widgets.pyo
+share/locale/da/LC_MESSAGES/solfege.mo
+share/locale/de/LC_MESSAGES/solfege.mo
+share/locale/es/LC_MESSAGES/solfege.mo
+share/locale/es_MX/LC_MESSAGES/solfege.mo
+share/locale/fr/LC_MESSAGES/solfege.mo
+share/locale/it/LC_MESSAGES/solfege.mo
+share/locale/nl/LC_MESSAGES/solfege.mo
+share/locale/no/LC_MESSAGES/solfege.mo
+share/locale/ru/LC_MESSAGES/solfege.mo
 @dirrm share/gnome/solfege/%%VERSION%%/src
 @dirrm share/gnome/solfege/%%VERSION%%/soundcard
 @dirrm share/gnome/solfege/%%VERSION%%/online-docs/ru
