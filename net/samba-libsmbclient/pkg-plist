@@ -1,0 +1,3 @@
+include/libsmbclient.h
+lib/libsmbclient.so
+lib/libsmbclient.so.0
