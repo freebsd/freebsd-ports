@@ -1,0 +1,26 @@
+#!/bin/sh
+
+if [ "$2" != "DEINSTALL" ]; then
+  exit 0
+fi
+
+PKGNAME=$1
+PREFIX=${PKG_PREFIX}
+TTFM=${PKG_PREFIX}/bin/ttfm.sh
+
+# No default kai & ming for wangttf.
+FONTDIR=${PREFIX}/share/fonts/TrueType
+FONTS="wcl-01.ttf wcl-02.ttf wcl-03.ttf wcl-04.ttf wcl-05.ttf \
+       wcl-06.ttf wcl-07.ttf wcl-08.ttf wcl-09.ttf wcl-10.ttf"
+
+if [ -r $FONTDIR/$PKGNAME ]; then
+    for i in `cat $FONTDIR/$PKGNAME`; do
+        for f in $FONTS $DEFAULTMING $DEFAULTKAI; do
+            $TTFM --remove $i $f
+        done
+    done
+fi
+
+rm -f $FONTDIR/$PKGNAME
+
+exit 0
