@@ -11,9 +11,8 @@
 -	dvd_mount_point => {
  		label => "DVD mount point",
 -		type => 'dir',
--		value => "/cdrom",
 +		type => 'file',
-+		value => "/dev/cd0c",
+		value => "/cdrom",
  	},
  	writer_device => {
  		label => "Writer device file",
