@@ -7,6 +7,3 @@ end, which contains no file or data transfer code, and one of two back ends,
 which contain all the data transfer code.
 
 WWW: http://untroubled.org/twoftpd/
-
-- Gea-Suan Lin
-  gslin@ccca.nctu.edu.tw
