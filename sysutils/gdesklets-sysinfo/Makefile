@@ -7,6 +7,7 @@
 
 PORTNAME=	sysinfo
 PORTVERSION=	0.23
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
@@ -41,8 +42,8 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${NAME}/gfx/*.png ${DATADIR}/gdesklets/Sensors/${NAME}/gfx/
 .for ii in ${LANG}
 	@${MKDIR} ${DATADIR}/gdesklets/Sensors/${NAME}/locale/${ii}/LC_MESSAGES
-	@${INSTALL_DATA} ${WRKSRC}/${NAME}/locale/${ii}/LC_MESSAGES/*.mo \
-		${DATADIR}/gdesklets/Sensors/${NAME}/locale/${ii}/LC_MESSAGES/
+	@${INSTALL_DATA} ${WRKSRC}/${NAME}/locale/${ii}/LC_MESSAGES/gdesklets.mo \
+		${DATADIR}/gdesklets/Sensors/${NAME}/locale/${ii}/LC_MESSAGES/sysinfo-sensor.mo
 .endfor
 
 post-install:
