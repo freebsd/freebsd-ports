@@ -6,20 +6,29 @@
 #
 
 PORTNAME=	KSubeditor
-PORTVERSION=	0.13.r1
+PORTVERSION=	0.2
+PORTEPOCH=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:L}
-DISTNAME=	${PORTNAME:L}-${PORTVERSION:R}${PORTVERSION:E:S/^r/rc/}
+DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A video subtitle editor for KDE
 
-WRKSRC=	${WRKDIR}/${PORTNAME:L}-${PORTVERSION:R}
+WRKSRC=		${WRKDIR}/${PORTNAME:L}-${PORTVERSION}
 
 USE_KDELIBS_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--program-transform-name=''
+USE_REINPLACE=	yes
 
-.include <bsd.port.mk>
+post-extract:
+	@${TOUCH} ${WRKSRC}/stamp-h.in
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/-O2//g' ${WRKSRC}/${CONFIGURE_SCRIPT}
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/x11/kde3/Makefile.kde"
+.include <bsd.port.post.mk>
