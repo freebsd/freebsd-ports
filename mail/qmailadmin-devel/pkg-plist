@@ -48,6 +48,7 @@
 %%DATADIR%%/lang/sk
 %%DATADIR%%/lang/sv
 %%DATADIR%%/lang/tr
+%%DATADIR%%/lang/zh-cn
 %%CGIBINDIR%%/%%CGIBINSUBDIR%%/qmailadmin
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/delete.png
 %%WEBDATADIR%%/%%WEBDATASUBDIR%%/images/disabled.png
