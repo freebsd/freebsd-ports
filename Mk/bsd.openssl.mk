@@ -2,7 +2,7 @@
 # Date created:		31 May 2002
 # Whom:			dinoex
 #
-# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.6 2003-08-27 10:30:40 dinoex Exp $
+# $FreeBSD: /tmp/pcvs/ports/Mk/bsd.openssl.mk,v 1.7 2003-08-30 07:26:04 dinoex Exp $
 #
 # this substitutes USE_OPENSSL=yes
 # just include this makefile after bsd.ports.pre.mk
@@ -12,6 +12,9 @@
 # WITH_OPENSSL_BASE=yes	- Use the version in the base system.
 # WITH_OPENSSL_PORT=yes	- Use the port, even if base if up to date
 # WITH_OPENSSL_BETA=yes	- Use a snapshot of recent openssl
+#
+# USE_OPENSSL_RPATH=yes	- pass RFLAGS options in CFLAGS,
+#			  needed for ports who don't use LDFLAGS
 #
 # Overrideable defaults:
 #
@@ -23,8 +26,10 @@
 # OPENSSLDIR		- path to openssl
 # OPENSSLLIB		- path to the libs
 # OPENSSLINC		- path to the matching includes
+# OPENSSLRPATH		- rpath for dynamic linker
 #
 # MAKE_ENV		- extended with the variables above
+# CONFIGURE_ENV		- extended with LDFLAGS
 # LIB_DEPENDS		- are added if needed
 
 OpenSSL_Include_MAINTAINER=	dinoex@FreeBSD.org
@@ -92,8 +97,7 @@ OPENSSL_CFLAGS+=	-DNO_IDEA
 .endif
 MAKE_ARGS+=		OPENSSL_CFLAGS="${OPENSSL_CFLAGS}"
 .endif
-CFLAGS+=		-Wl,-rpath,/usr/lib:${LOCALBASE}/lib
-OPENSSL_LDFLAGS+=	-rpath=/usr/lib:${LOCALBASE}/lib
+OPENSSLRPATH=		/usr/lib:${LOCALBASE}/lib
 
 .else
 
@@ -107,21 +111,28 @@ OPENSSL_PORT?=		security/openssl
 .endif
 OPENSSLDIR=		${OPENSSLBASE}/openssl
 LIB_DEPENDS+=		crypto.${OPENSSL_SHLIBVER}:${PORTSDIR}/${OPENSSL_PORT}
-CFLAGS+=		-Wl,-rpath,${LOCALBASE}/lib
-OPENSSL_LDFLAGS+=	-rpath=${LOCALBASE}/lib
+OPENSSLRPATH=		${LOCALBASE}/lib
 
 .endif
 
 OPENSSLLIB=		${OPENSSLBASE}/lib
 OPENSSLINC=		${OPENSSLBASE}/include
-MAKE_ENV+=		OPENSSLLIB=${OPENSSLLIB} OPENSSLINC=${OPENSSLINC} \
-			OPENSSLBASE=${OPENSSLBASE} OPENSSLDIR=${OPENSSLDIR}
+
+.if defined(USE_OPENSSL_RPATH)
+CFLAGS+=		-Wl,-rpath,${OPENSSLRPATH}
+.endif
+OPENSSL_LDFLAGS+=	-rpath=${OPENSSLRPATH}
 
 .if defined(LDFLAGS) && !empty(LDFLAGS)
 LDFLAGS+=${OPENSSL_LDFLAGS}
 .else
 LDFLAGS=${OPENSSL_LDFLAGS}
 .endif
+
+CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
+MAKE_ENV+=		LDFLAGS="${LDFLAGS}"
+MAKE_ENV+=		OPENSSLLIB=${OPENSSLLIB} OPENSSLINC=${OPENSSLINC} \
+			OPENSSLBASE=${OPENSSLBASE} OPENSSLDIR=${OPENSSLDIR}
 
 ### crypto
 #RESTRICTED=		"Contains cryptography."
