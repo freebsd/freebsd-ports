@@ -1,92 +1,28 @@
---- lib/mc.ext.in.orig	Thu Jan 28 14:19:18 1999
-+++ lib/mc.ext.in	Thu Jan 28 14:21:05 1999
-@@ -367,57 +367,58 @@
- 	Icon=core.xpm
- 
- type/PostScript
--	Open=gv %f
-+	Open=ggv %f
- 	Icon=postscript.xpm
-+	View=ggv %f
- 	View with GhostView=gv %f
- 
- type/GIF\ image
--	Open=ee %f
-+	Open=ElectricEyes %f
- 	Icon=gif.xpm
- 	Include=image-options
- 	
- type/GIF\ picture
--	Open=ee %f
-+	Open=ElectricEyes %f
- 	Icon=gif.xpm
- 	Include=image-options
- 	
- type/JPEG\ picture
--	Open=ee %f
-+	Open=ElectricEyes %f
- 	Icon=jpeg.xpm
- 	Include=image-options
- 
- type/PC\ bitmap
--	Open=ee %f
-+	Open=ElectricEyes %f
- 	Icon=bitmap.xpm
- 	Include=image-options
- 
- type/PNG\ image
--	Open=ee %f
-+	Open=ElectricEyes %f
- 	Icon=gif.xpm
- 	Include=image-options
- 
- type/JPEG\ image
--	Open=ee %f
-+	Open=ElectricEyes %f
- 	Icon=jpeg.xpm
- 	Include=image-options
- 	
- type/TIFF\ file
--	Open=ee %f
-+	Open=ElectricEyes %f
- 	Icon=tiff.xpm
- 	Include=image-options
- 	
- type/PBM
--	Open=ee %f
-+	Open=ElectricEyes %f
- 	Icon=pbm.xpm
- 	Include=image-options
- 	
- type/PGM
--	Open=ee %f
-+	Open=ElectricEyes %f
- 	Icon=pgm.xpm
- 	Include=image-options
- 	
- type/PPM
--	Open=ee %f
-+	Open=ElectricEyes %f
- 	Icon=ppm.xpm
- 	Include=image-options
- 
-@@ -426,14 +427,14 @@
- 	Icon=xbm.xpm
- 
- shell/.xpm
--	Open=ee %f
-+	Open=ElectricEyes %f
- 	View=sxpm %f
- 	Include=image-options
+--- lib/mc.ext.in.orig	Wed May 10 17:58:01 2000
++++ lib/mc.ext.in	Tue May 16 13:31:33 2000
+@@ -318,11 +318,11 @@
  	Icon=xpm.xpm
  
  include/image-options
+-	Open=if [ "$DISPLAY" = "" ]; then zgv %f; else (ee %f &); fi
++	Open=if [ "$DISPLAY" = "" ]; then zgv %f; else (ElectricEyes %f &); fi
+ 	View=%view{ascii} identify %f
+ 	#View=%view{ascii} asciiview %f
  	Set root window to this image=background-properties --setwallpaper %f &
 -	Display this file=ee %f &
 +	Display this file=ElectricEyes %f &
  
- # Sound files
- shell/.mod
+ 
+ ### Sound files ###
+@@ -368,7 +368,7 @@
+ 
+ # Postscript
+ type/PostScript
+-	Open=gv %f&
++	Open=ggv %f&
+ 	Icon=postscript.xpm
+ 	View=%view{ascii} ps2ascii %f
+ 	View with GhostView=gv %f
 --- lib/mc-gnome.ext.in.orig	Thu Jan 28 14:21:23 1999
 +++ lib/mc-gnome.ext.in	Thu Jan 28 14:21:59 1999
 @@ -271,60 +271,60 @@

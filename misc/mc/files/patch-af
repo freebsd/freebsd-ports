@@ -1,12 +1,12 @@
---- Makefile.in.orig	Thu Sep 30 04:39:33 1999
-+++ Makefile.in	Sat Oct  9 15:23:23 1999
+--- Makefile.in.orig	Wed May 10 17:58:00 2000
++++ Makefile.in	Tue May 16 15:45:21 2000
 @@ -5,14 +5,15 @@
  @MCFGR@@MCF@
  
  foreigndirs=pc
 -codedirs=vfs lib doc slang gtkedit edit src gnome new_icons icons idl syntax
 -unixdirs=intl $(codedirs) doc-gnome @POSUB@
-+codedirs=vfs lib doc slang edit src syntax
++codedirs=vfs lib doc slang gtkedit edit src syntax
 +unixdirs=intl $(codedirs) @POSUB@
  alldirs=$(unixdirs) $(foreigndirs) 
  subdirs=$(alldirs)
@@ -27,7 +27,7 @@
  	chmod +x $(DESTDIR)$(suppbindir)/mcfn_install
  	@echo "Please verify that the configuration values are correctly"
  	@echo "set in the mc.ext file in $(mclibdir)"
-@@ -57,9 +58,9 @@
+@@ -57,9 +58,8 @@
  installdirs:
  	$(MKINSTALLDIRS) $(DESTDIR)$(bindir) $(DESTDIR)$(mclibdir)
  	$(MKINSTALLDIRS) $(DESTDIR)$(mandir) $(DESTDIR)$(man8dir)
@@ -35,12 +35,11 @@
 +	$(MKINSTALLDIRS) $(DESTDIR)$(suppbindir)
  	$(MKINSTALLDIRS) $(DESTDIR)$(tidir) $(DESTDIR)$(extfsdir)
 -	$(MKINSTALLDIRS) $(DESTDIR)$(idldir) $(DESTDIR)$(syntaxdir)
-+	$(MKINSTALLDIRS) $(DESTDIR)$(syntaxdir)
  
  mcfninstall:
  	-/bin/sh ./mcfn_install
---- src/Makefile.in.orig	Thu Sep 30 04:39:39 1999
-+++ src/Makefile.in	Sat Oct  9 15:03:45 1999
+--- src/Makefile.in.orig	Wed May 10 17:58:02 2000
++++ src/Makefile.in	Tue May 16 15:45:43 2000
 @@ -130,7 +130,7 @@
  	-$(RMF) $(srcdir)/Makefile
  
@@ -50,8 +49,8 @@
  	$(INSTALL_PROGRAM) mcmfmt $(DESTDIR)$(bindir)/$(binprefix)mcmfmt
  	$(SEDCMD2) < $(srcdir)/mc.hlp > $(DESTDIR)$(mclibdir)/$(libprefix)mc.hlp 
  
---- doc/Makefile.in.orig	Thu Sep 30 04:39:38 1999
-+++ doc/Makefile.in	Sat Oct  9 15:03:45 1999
+--- doc/Makefile.in.orig	Wed May 10 17:58:01 2000
++++ doc/Makefile.in	Tue May 16 15:47:12 2000
 @@ -17,7 +17,7 @@
  install:
  	$(MKINSTALLDIRS) $(DESTDIR)/$(man1dir)
@@ -61,8 +60,8 @@
  	-$(SEDCMD2) < mcedit.1 > $(DESTDIR)$(man1dir)/$(manprefix)mcedit.$(manext)
  	-$(SEDCMD2) < mcserv.8 > $(DESTDIR)$(man8dir)/$(manprefix)mcserv.$(man8ext)
  
---- lib/Makefile.in.orig	Sat Mar 18 07:43:44 2000
-+++ lib/Makefile.in	Mon Mar 20 10:46:31 2000
+--- lib/Makefile.in.orig	Wed May 10 17:58:01 2000
++++ lib/Makefile.in	Tue May 16 15:48:15 2000
 @@ -12,8 +12,8 @@
  # Distribution variables
  #
@@ -71,7 +70,7 @@
 -LIBFILES_OUT = mc.ext mc-gnome.ext mc.csh mc.sh
 +LIBFILES_IN = mc.ext.in
 +LIBFILES_OUT = mc.ext mc.csh mc.sh
- LIBFILES_CONST = mc.hint mc.hint.es mc.hint.cs mc.hint.ru mc.lib mc.menu
+ LIBFILES_CONST = mc.hint mc.hint.es mc.hint.cs mc.hint.ru mc.lib mc.menu cedit.menu edit.indent.rc
  SUPPBIN_IN = mc.csh.in mc.sh.in
  SUPPBIN_OUT =  mc.csh mc.sh
 @@ -62,7 +62,7 @@
@@ -83,8 +82,8 @@
  	for I in $(TIFILES); \
  	do $(INSTALL_DATA) $(srcdir)/$$I $(DESTDIR)$(tidir)/$$I; done
  	$(MKINSTALLDIRS) $(DESTDIR)$(confdir)
---- edit/Makefile.in.orig	Wed Jan  5 23:49:36 2000
-+++ edit/Makefile.in	Wed Jan  5 23:49:58 2000
+--- edit/Makefile.in.orig	Wed May 10 17:58:01 2000
++++ edit/Makefile.in	Tue May 16 15:48:47 2000
 @@ -58,7 +58,7 @@
  
  mcedit:

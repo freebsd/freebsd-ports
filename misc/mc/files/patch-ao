@@ -1,0 +1,10 @@
+--- syntax/Makefile.in.orig	Fri May 19 17:15:17 2000
++++ syntax/Makefile.in	Mon May 22 11:38:57 2000
+@@ -43,6 +43,7 @@
+ 
+ 
+ install: Makefile
++	mkdir -p $(DESTDIR)$(syntaxdir)
+ 	for I in $(ALLSYNTAX); \
+ 	do $(INSTALL_DATA) $(srcdir)/$$I $(DESTDIR)$(syntaxdir)/$$I; done
+ 

@@ -1,26 +1,6 @@
---- lib/mc.ext.in.orig	Fri Sep 24 01:01:11 1999
-+++ lib/mc.ext.in	Sat Oct  9 12:15:10 1999
-@@ -258,7 +258,7 @@
- # ar library
- regex/\.s?a$
- 	Open=%cd %p#uar
--	View=%view{ascii} nm %f
-+	View=%view{ascii} nm '%d/%p'
- 
- # C
- shell/.c
-@@ -320,8 +320,8 @@
- 
- # ar library
- regex/\.s?a$
--	Open=%view{ascii} ar tv %f
--	View=%view{ascii} nm %f
-+	Open=%view{ascii} ar tv '%d/%p'
-+	View=%view{ascii} nm '%d/%p'
- 	Icon=a.xpm
- 
- # .so libraries are not manual pages
-@@ -336,26 +336,26 @@
+--- lib/mc.ext.in.orig	Wed May 10 17:58:01 2000
++++ lib/mc.ext.in	Tue May 16 15:59:31 2000
+@@ -230,26 +230,26 @@
  
  # Manual page
  regex/(([^0-9]|^[^\.]*)\.([1-9][A-Za-z]*|n)|\.man)$
@@ -55,115 +35,72 @@
  	Icon=man.xpm
  
  regex/([^0-9]|^[^\.]*)\.([1-9][a-z]?|n)\.bz$
-@@ -380,52 +380,52 @@
- 	View with GhostView=gv %f
+@@ -258,8 +258,8 @@
+ 	Icon=man.xpm
  
- type/GIF\ image
--	Open=ee %f
-+	Open=ElectricEyes %f
- 	Icon=gif.xpm
- 	Include=image-options
- 	
- type/GIF\ picture
--	Open=ee %f
-+	Open=ElectricEyes %f
- 	Icon=gif.xpm
- 	Include=image-options
- 	
- type/JPEG\ picture
--	Open=ee %f
-+	Open=ElectricEyes %f
- 	Icon=jpeg.xpm
- 	Include=image-options
+ regex/([^0-9]|^[^\.]*)\.([1-9][a-z]?|n)\.bz2$
+-	Open=bzip2 -dc %f | nroff @TROFFASCII@ @MANDOC@ | %var{PAGER:more}
+-	View=%view{ascii,nroff} bzip2 -dc %f | nroff @TROFFASCII@ @MANDOC@
++	Open=bzip2 -dc '%d/%p' | nroff @TROFFASCII@ @MANDOC@ | %var{PAGER:more}
++	View=%view{ascii,nroff} bzip2 -dc '%d/%p' | nroff @TROFFASCII@ @MANDOC@
+ 	Icon=man.xpm
  
- type/PC\ bitmap
--	Open=ee %f
-+	Open=ElectricEyes %f
- 	Icon=bitmap.xpm
- 	Include=image-options
- 
- type/PNG\ image
--	Open=ee %f
-+	Open=ElectricEyes %f
- 	Icon=gif.xpm
- 	Include=image-options
- 
- type/JPEG\ image
--	Open=ee %f
-+	Open=ElectricEyes %f
- 	Icon=jpeg.xpm
- 	Include=image-options
- 	
- type/TIFF\ file
--	Open=ee %f
-+	Open=ElectricEyes %f
- 	Icon=tiff.xpm
- 	Include=image-options
- 	
- type/PBM
--	Open=ee %f
-+	Open=ElectricEyes %f
- 	Icon=pbm.xpm
- 	Include=image-options
- 	
- type/PGM
--	Open=ee %f
-+	Open=ElectricEyes %f
- 	Icon=pgm.xpm
- 	Include=image-options
- 	
- type/PPM
--	Open=ee %f
-+	Open=ElectricEyes %f
- 	Icon=ppm.xpm
- 	Include=image-options
- 
-@@ -434,14 +434,14 @@
- 	Icon=xbm.xpm
- 
- shell/.xpm
--	Open=ee %f
-+	Open=ElectricEyes %f
- 	View=sxpm %f
- 	Include=image-options
+ regex/(read\.?me$)|(README)
+@@ -318,11 +318,11 @@
  	Icon=xpm.xpm
  
  include/image-options
+-	Open=if [ "$DISPLAY" = "" ]; then zgv %f; else (ee %f &); fi
++	Open=if [ "$DISPLAY" = "" ]; then zgv %f; else (ElectricEyes %f &); fi
+ 	View=%view{ascii} identify %f
+ 	#View=%view{ascii} asciiview %f
  	Set root window to this image=background-properties --setwallpaper %f &
 -	Display this file=ee %f &
 +	Display this file=ElectricEyes %f &
  
- # Sound files
- shell/.mod
-@@ -525,21 +525,21 @@
-        Icon=rexx.xpm
+ 
+ ### Sound files ###
+@@ -390,14 +390,14 @@
+ 	View with @X11_WWW@=@X11_WWW@ file://%f
  
  # Microsoft Word Document
--regex/\.(doc|DOC)$
-+#regex/\.(doc|DOC)$
- #       View=%view{ascii} catdoc -w %f
--       View=%view{ascii} word2x -f text %f -
--       Icon=word.xpm
+-regex/\.([Dd]oc|DOC)$
+-	#View=%view{ascii} catdoc -w %f
+-	View=%view{ascii} word2x -f text %f -
+-	Icon=word.xpm
 -type/Microsoft Word Document
-+#       View=%view{ascii} word2x -f text %f -
-+#       Icon=word.xpm
-+#type/Microsoft Word Document
- #       View=%view{ascii} catdoc -w %f
--       View=%view{ascii} word2x -f text %f -
--       Icon=word.xpm
-+#       View=%view{ascii} word2x -f text %f -
-+#       Icon=word.xpm
+-	#View=%view{ascii} catdoc -w %f
+-	View=%view{ascii} word2x -f text %f -
+-	Icon=word.xpm
++# regex/\.([Dd]oc|DOC)$
++# 	#View=%view{ascii} catdoc -w %f
++# 	View=%view{ascii} word2x -f text %f -
++# 	Icon=word.xpm
++# type/Microsoft Word Document
++# 	#View=%view{ascii} catdoc -w %f
++# 	View=%view{ascii} word2x -f text %f -
++# 	Icon=word.xpm
   
- # cpio rules
- 
+ # Framemaker
+ type/FrameMaker
+@@ -542,7 +542,7 @@
  shell/.cpio.Z
  	Open=%cd %d/%p#ucpio/
  	View=%view{ascii} compress -dc '%f' | cpio -ictv
 -	Extract=compress -dc '%f' | cpio -ic
 +	Extract=compress -dc '%d/%p' | cpio -ic
  	Icon=compressed.xpm
- 
  shell/.cpio.gz
+ 	Open=%cd %d/%p#ucpio/
+@@ -590,7 +590,7 @@
+ regex/\.s?a$
+ 	Open=%cd %p#uar
+ 	#Open=%view{ascii} ar tv %f
+-	View=%view{ascii} nm %f
++	View=%view{ascii} nm '%d/%p'
+ 	Icon=a.xpm
+ 
+ # .so libraries are not manual pages
 --- lib/mc.csh.in.orig	Sat Oct  9 15:08:10 1999
 +++ lib/mc.csh.in	Sat Oct  9 15:08:28 1999
 @@ -1,2 +1,2 @@
