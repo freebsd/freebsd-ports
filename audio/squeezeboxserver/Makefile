@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	slimserver
-PORTVERSION=	5.1.5
+PORTVERSION=	5.2.1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.slimdevices.com/downloads/SlimServer_v${PORTVERSION}/
 DISTNAME=	SlimServer_v${PORTVERSION}
@@ -80,6 +80,7 @@ pre-install:
 
 do-install:
 	@${MKDIR} -m 0755 ${PREFIX}/${SLIMDIR}
+	@${LN} -s /var/db/slimserver/cache ${PREFIX}/${SLIMDIR}/Cache
 	@cd ${WRKSRC} && \
 	    ${FIND} . -name \*.orig ${EXCEPTFILES:S/^/-o -name /} \
 	    ${EXCEPTDIRS:S/$/\*/:S/^/-o -path .\//} -o -print | \
@@ -109,6 +110,7 @@ build-plist:
 	${FIND} ${PREFIX}/${SLIMDIR}/* -type f | \
 	    ${SED} -e 's|${PREFIX}/${SLIMDIR}|%%SLIMDIR%%|' | \
 	    ${SORT} >> pkg-plist
+	${ECHO} "${SLIMDIR}/Cache" >> pkg-plist
 	${FIND} ${PREFIX}/${SLIMDIR} -type d | \
 	    ${SED} -e 's|${PREFIX}/${SLIMDIR}|@dirrm %%SLIMDIR%%|' | \
 	    ${SORT} -r >> pkg-plist

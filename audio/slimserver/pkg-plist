@@ -1,7 +1,9 @@
 etc/rc.d/slimserver.sh
 %%PORTDOCS%%%%DOCSDIR%%/Changelog.html
 %%PORTDOCS%%%%DOCSDIR%%/Installation.txt
+%%SLIMDIR%%/CPAN/Audio/APETags.pm
 %%SLIMDIR%%/CPAN/Audio/FLAC.pm
+%%SLIMDIR%%/CPAN/Audio/Musepack.pm
 %%SLIMDIR%%/CPAN/Audio/WMA.pm
 %%SLIMDIR%%/CPAN/Ogg/Vorbis/Header/PurePerl.pm
 %%SLIMDIR%%/CPAN/QuickTime/Movie.pm
@@ -10,6 +12,14 @@ etc/rc.d/slimserver.sh
 %%SLIMDIR%%/Firmware/squeezebox_10.bin
 %%SLIMDIR%%/Firmware/squeezebox_20.bin
 %%SLIMDIR%%/Firmware/squeezebox_21.bin
+%%SLIMDIR%%/Firmware/squeezebox_22.bin
+%%SLIMDIR%%/Firmware/squeezebox_23.bin
+%%SLIMDIR%%/Firmware/squeezebox_24.bin
+%%SLIMDIR%%/Firmware/squeezebox_25.bin
+%%SLIMDIR%%/Firmware/squeezebox_26.bin
+%%SLIMDIR%%/Firmware/squeezebox_27.bin
+%%SLIMDIR%%/Firmware/squeezebox_28.bin
+%%SLIMDIR%%/Firmware/squeezebox_29.bin
 %%SLIMDIR%%/Firmware/squeezebox_8.bin
 %%SLIMDIR%%/HTML/Bagpuss/slimserver.css
 %%SLIMDIR%%/HTML/Dark/html/back.gif
@@ -216,6 +226,7 @@ etc/rc.d/slimserver.sh
 %%SLIMDIR%%/HTML/Default/html/images/nav_playlists.gif.fr
 %%SLIMDIR%%/HTML/Default/html/images/nav_playlists_sel.gif
 %%SLIMDIR%%/HTML/Default/html/images/nav_playlists_sel.gif.fr
+%%SLIMDIR%%/HTML/Default/html/images/nav_plugins.gif
 %%SLIMDIR%%/HTML/Default/html/images/nav_previous.gif
 %%SLIMDIR%%/HTML/Default/html/images/nav_previous.gif.fr
 %%SLIMDIR%%/HTML/Default/html/images/nav_previous_sel.gif
@@ -270,6 +281,7 @@ etc/rc.d/slimserver.sh
 %%SLIMDIR%%/HTML/Default/html/images/sub_h_browse_music.gif.fr
 %%SLIMDIR%%/HTML/Default/html/images/sub_h_help.gif
 %%SLIMDIR%%/HTML/Default/html/images/sub_h_help.gif.fr
+%%SLIMDIR%%/HTML/Default/html/images/sub_h_plugins.gif
 %%SLIMDIR%%/HTML/Default/html/images/sub_h_search_music.gif
 %%SLIMDIR%%/HTML/Default/html/images/sub_h_search_music.gif.fr
 %%SLIMDIR%%/HTML/Default/html/images/sub_h_settings.gif
@@ -392,11 +404,32 @@ etc/rc.d/slimserver.sh
 %%SLIMDIR%%/HTML/EN/html/images/squeezebox.gif
 %%SLIMDIR%%/HTML/EN/html/images/squeezebox_logo.gif
 %%SLIMDIR%%/HTML/EN/html/images/squeezebox_logo.small.gif
+%%SLIMDIR%%/HTML/EN/html/lbrsilence.mp3
 %%SLIMDIR%%/HTML/EN/html/mypage.ico
 %%SLIMDIR%%/HTML/EN/html/remote.html
 %%SLIMDIR%%/HTML/EN/html/setup.html
 %%SLIMDIR%%/HTML/EN/html/silence.mp3
 %%SLIMDIR%%/HTML/EN/html/silentpacket.mp3
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/LICENSE.txt
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/SoftSqueeze.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/applet.html
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/icons/checked.gif
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/icons/fwd.gif
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/icons/icon32.gif
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/icons/icon64.gif
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/icons/splash.gif
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/icons/unchecked.gif
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/lib/dtd-xercesImpl.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/lib/jl0.4.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/lib/jnlp.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/lib/jsch-20040429.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/lib/log4j-1.2.8.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/lib/ostermillerutils_1_03_00.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/lib/tritonus_mp3.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/lib/tritonus_share.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/lib/xml-apis.jar
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/softsqueeze.jnlp
+%%SLIMDIR%%/HTML/EN/html/softsqueeze/webstart.html
 %%SLIMDIR%%/HTML/EN/html/test.html
 %%SLIMDIR%%/HTML/EN/include.html
 %%SLIMDIR%%/HTML/EN/index.html
@@ -450,6 +483,7 @@ etc/rc.d/slimserver.sh
 %%SLIMDIR%%/HTML/Fishbone/browseid3.html
 %%SLIMDIR%%/HTML/Fishbone/browseid3_artwork.html
 %%SLIMDIR%%/HTML/Fishbone/browseid3_list.html
+%%SLIMDIR%%/HTML/Fishbone/edit_playlist.html
 %%SLIMDIR%%/HTML/Fishbone/hitlist.html
 %%SLIMDIR%%/HTML/Fishbone/hitlist_bar.html
 %%SLIMDIR%%/HTML/Fishbone/hitlist_list.html
@@ -494,7 +528,6 @@ etc/rc.d/slimserver.sh
 %%SLIMDIR%%/HTML/Fishbone/index.html
 %%SLIMDIR%%/HTML/Fishbone/instant_mix.html
 %%SLIMDIR%%/HTML/Fishbone/instant_mix_list.html
-%%SLIMDIR%%/HTML/Fishbone/linklist.html
 %%SLIMDIR%%/HTML/Fishbone/mood_wheel.html
 %%SLIMDIR%%/HTML/Fishbone/mood_wheel_list.html
 %%SLIMDIR%%/HTML/Fishbone/pagebarheader.html
@@ -510,12 +543,26 @@ etc/rc.d/slimserver.sh
 %%SLIMDIR%%/HTML/Fishbone/status_header.html
 %%SLIMDIR%%/HTML/Fishbone/status_list.html
 %%SLIMDIR%%/HTML/Fishbone/status_noclients.html
+%%SLIMDIR%%/HTML/Gordon/home.html
+%%SLIMDIR%%/HTML/Gordon/html/about.html
+%%SLIMDIR%%/HTML/Gordon/html/flash/includes/createRadioButtonGroup.as
+%%SLIMDIR%%/HTML/Gordon/html/flash/includes/slab.Anim.as
+%%SLIMDIR%%/HTML/Gordon/html/flash/includes/slab.GetXML.as
+%%SLIMDIR%%/HTML/Gordon/html/flash/includes/slab.ListAdaptor.as
+%%SLIMDIR%%/HTML/Gordon/html/flash/includes/slab.RegPlayer.as
+%%SLIMDIR%%/HTML/Gordon/html/flash/includes/slab.TreeAdaptor.as
+%%SLIMDIR%%/HTML/Gordon/html/flash/main.fla
+%%SLIMDIR%%/HTML/Gordon/html/flash/main.swf
+%%SLIMDIR%%/HTML/Gordon/html/help.html
+%%SLIMDIR%%/HTML/Gordon/index.html
+%%SLIMDIR%%/HTML/Gordon/slimserver.css
 %%SLIMDIR%%/HTML/Handheld/badpath.html
 %%SLIMDIR%%/HTML/Handheld/browse.html
 %%SLIMDIR%%/HTML/Handheld/browse_list.html
 %%SLIMDIR%%/HTML/Handheld/browse_playlist.html
 %%SLIMDIR%%/HTML/Handheld/browse_playlist_list.html
 %%SLIMDIR%%/HTML/Handheld/browseid3.html
+%%SLIMDIR%%/HTML/Handheld/browseid3_artwork.html
 %%SLIMDIR%%/HTML/Handheld/browseid3_list.html
 %%SLIMDIR%%/HTML/Handheld/hitlist.html
 %%SLIMDIR%%/HTML/Handheld/hitlist_bar.html
@@ -546,6 +593,7 @@ etc/rc.d/slimserver.sh
 %%SLIMDIR%%/HTML/Handheld/setup_group.html
 %%SLIMDIR%%/HTML/Handheld/setup_input_array_udr.html
 %%SLIMDIR%%/HTML/Handheld/setup_pref.html
+%%SLIMDIR%%/HTML/Handheld/slimserver.css
 %%SLIMDIR%%/HTML/Handheld/songinfo.html
 %%SLIMDIR%%/HTML/Handheld/status.html
 %%SLIMDIR%%/HTML/Handheld/status_header.html
@@ -624,10 +672,10 @@ etc/rc.d/slimserver.sh
 %%SLIMDIR%%/HTML/NBMU/status_list.html
 %%SLIMDIR%%/HTML/NBMU/status_noclients.html
 %%SLIMDIR%%/HTML/Olson/browse_list.html
+%%SLIMDIR%%/HTML/Olson/browseid3.html
 %%SLIMDIR%%/HTML/Olson/hitlist.html
 %%SLIMDIR%%/HTML/Olson/hitlist_bar.html
 %%SLIMDIR%%/HTML/Olson/hitlist_list.html
-%%SLIMDIR%%/HTML/Olson/home.html
 %%SLIMDIR%%/HTML/Olson/html/bar_small_empty.GIF
 %%SLIMDIR%%/HTML/Olson/html/bar_small_empty.JPG
 %%SLIMDIR%%/HTML/Olson/html/bar_small_empty.bmp
@@ -650,7 +698,6 @@ etc/rc.d/slimserver.sh
 %%SLIMDIR%%/HTML/Olson/status_noclients.html
 %%SLIMDIR%%/HTML/Purple/hitlist.html
 %%SLIMDIR%%/HTML/Purple/hitlist_list.html
-%%SLIMDIR%%/HTML/Purple/home.html
 %%SLIMDIR%%/HTML/Purple/slimserver.css
 %%SLIMDIR%%/HTML/Purple/status.html
 %%SLIMDIR%%/HTML/Ruttenberg/html/arrow-0065.gif
@@ -880,7 +927,6 @@ etc/rc.d/slimserver.sh
 %%SLIMDIR%%/HTML/WebPad/browse_playlist_list.html
 %%SLIMDIR%%/HTML/WebPad/browseid3.html
 %%SLIMDIR%%/HTML/WebPad/browseid3_list.html
-%%SLIMDIR%%/HTML/WebPad/home.html
 %%SLIMDIR%%/HTML/WebPad/include.html
 %%SLIMDIR%%/HTML/WebPad/songinfo.html
 %%SLIMDIR%%/HTML/WebPad/status_list.html
@@ -912,7 +958,9 @@ etc/rc.d/slimserver.sh
 %%SLIMDIR%%/IR/Slim_Devices_Remote.ir
 %%SLIMDIR%%/IR/jvc_dvd.ir
 %%SLIMDIR%%/License.txt
-%%SLIMDIR%%/Plugins/DateTime.pm
+%%SLIMDIR%%/Plugins/DateTime/HTML/EN/plugins/DateTime/enable.html
+%%SLIMDIR%%/Plugins/DateTime/HTML/EN/plugins/DateTime/index.html
+%%SLIMDIR%%/Plugins/DateTime/Plugin.pm
 %%SLIMDIR%%/Plugins/Rescan.pm
 %%SLIMDIR%%/Plugins/SavePlaylist.pm
 %%SLIMDIR%%/Plugins/Shooter.pm
@@ -940,6 +988,7 @@ etc/rc.d/slimserver.sh
 %%SLIMDIR%%/Slim/Buttons/Settings.pm
 %%SLIMDIR%%/Slim/Buttons/Synchronize.pm
 %%SLIMDIR%%/Slim/Buttons/TrackInfo.pm
+%%SLIMDIR%%/Slim/Buttons/VarietyCombo.pm
 %%SLIMDIR%%/Slim/Control/CLI.pm
 %%SLIMDIR%%/Slim/Control/Command.pm
 %%SLIMDIR%%/Slim/Control/Stdio.pm
@@ -950,6 +999,7 @@ etc/rc.d/slimserver.sh
 %%SLIMDIR%%/Slim/Formats/FLAC.pm
 %%SLIMDIR%%/Slim/Formats/MP3.pm
 %%SLIMDIR%%/Slim/Formats/Movie.pm
+%%SLIMDIR%%/Slim/Formats/Musepack.pm
 %%SLIMDIR%%/Slim/Formats/Ogg.pm
 %%SLIMDIR%%/Slim/Formats/Parse.pm
 %%SLIMDIR%%/Slim/Formats/Shorten.pm
@@ -960,6 +1010,7 @@ etc/rc.d/slimserver.sh
 %%SLIMDIR%%/Slim/Hardware/VFD.pm
 %%SLIMDIR%%/Slim/Hardware/mas3507d.pm
 %%SLIMDIR%%/Slim/Hardware/mas35x9.pm
+%%SLIMDIR%%/Slim/Music/Import.pm
 %%SLIMDIR%%/Slim/Music/Info.pm
 %%SLIMDIR%%/Slim/Music/MoodLogic.pm
 %%SLIMDIR%%/Slim/Music/MusicFolderScan.pm
@@ -975,6 +1026,7 @@ etc/rc.d/slimserver.sh
 %%SLIMDIR%%/Slim/Player/Player.pm
 %%SLIMDIR%%/Slim/Player/Playlist.pm
 %%SLIMDIR%%/Slim/Player/SLIMP3.pm
+%%SLIMDIR%%/Slim/Player/SoftSqueeze.pm
 %%SLIMDIR%%/Slim/Player/Source.pm
 %%SLIMDIR%%/Slim/Player/Squeezebox.pm
 %%SLIMDIR%%/Slim/Player/Sync.pm
@@ -999,6 +1051,7 @@ etc/rc.d/slimserver.sh
 %%SLIMDIR%%/slimserver.pl
 %%SLIMDIR%%/strings.txt
 %%SLIMDIR%%/types.conf
+slimserver/Cache
 @dirrm %%SLIMDIR%%/slimp3
 @dirrm %%SLIMDIR%%/Slim/Web
 @dirrm %%SLIMDIR%%/Slim/Utils
@@ -1012,6 +1065,11 @@ etc/rc.d/slimserver.sh
 @dirrm %%SLIMDIR%%/Slim/Buttons/Input
 @dirrm %%SLIMDIR%%/Slim/Buttons
 @dirrm %%SLIMDIR%%/Slim
+@dirrm %%SLIMDIR%%/Plugins/DateTime/HTML/EN/plugins/DateTime
+@dirrm %%SLIMDIR%%/Plugins/DateTime/HTML/EN/plugins
+@dirrm %%SLIMDIR%%/Plugins/DateTime/HTML/EN
+@dirrm %%SLIMDIR%%/Plugins/DateTime/HTML
+@dirrm %%SLIMDIR%%/Plugins/DateTime
 @dirrm %%SLIMDIR%%/Plugins
 @dirrm %%SLIMDIR%%/IR
 @dirrm %%SLIMDIR%%/HTML/xml/html
@@ -1036,10 +1094,17 @@ etc/rc.d/slimserver.sh
 @dirrm %%SLIMDIR%%/HTML/Handheld/html/images
 @dirrm %%SLIMDIR%%/HTML/Handheld/html
 @dirrm %%SLIMDIR%%/HTML/Handheld
+@dirrm %%SLIMDIR%%/HTML/Gordon/html/flash/includes
+@dirrm %%SLIMDIR%%/HTML/Gordon/html/flash
+@dirrm %%SLIMDIR%%/HTML/Gordon/html
+@dirrm %%SLIMDIR%%/HTML/Gordon
 @dirrm %%SLIMDIR%%/HTML/Fishbone/html/docs
 @dirrm %%SLIMDIR%%/HTML/Fishbone/html
 @dirrm %%SLIMDIR%%/HTML/Fishbone
 @dirrm %%SLIMDIR%%/HTML/Experimental
+@dirrm %%SLIMDIR%%/HTML/EN/html/softsqueeze/lib
+@dirrm %%SLIMDIR%%/HTML/EN/html/softsqueeze/icons
+@dirrm %%SLIMDIR%%/HTML/EN/html/softsqueeze
 @dirrm %%SLIMDIR%%/HTML/EN/html/images
 @dirrm %%SLIMDIR%%/HTML/EN/html/errors
 @dirrm %%SLIMDIR%%/HTML/EN/html/docs/vfdshots
