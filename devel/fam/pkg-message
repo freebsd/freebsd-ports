@@ -7,9 +7,8 @@ it is not already there:
 sgi_fam		391002
 ==8<====8<====8<====8<====8<====8<====8<====8<====8<====8<==
 
-2. If you wish to run fam from inetd (the recommended method), then
-please add the following lines to /etc/inetd.conf if they are not
-already there:
+2. To run fam from inetd (the recommended method), then please add the
+following lines to /etc/inetd.conf if they are not already there:
 
 ==8<====8<====8<====8<====8<====8<====8<====8<====8<====8<==
 # FAM: File Alteration Monitor [devel/fam]
@@ -19,12 +18,5 @@ sgi_fam/1-2	stream rpc/tcp wait root /usr/local/bin/fam	fam
 After modifying /etc/inetd.conf, you must (as root) run:
 
 	killall -HUP inetd
-
-3. If, instead, you wish to run fam as a system daemon, then (as root)
-do the following:
-
-	cd /usr/local/etc/rc.d
-	cp fam.sh.sample fam.sh
-	/usr/local/etc/rc.d/fam.sh start
 
 ************************************************************************
