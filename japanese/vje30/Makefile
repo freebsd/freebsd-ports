@@ -7,31 +7,39 @@
 
 PORTNAME=	vje
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	file:${MOUNT_PT}/freebsd/ \
-		ftp://ftp.vacs.co.jp/pub/unix/vje30/Update/FreeBSD-${DISTOBJFORMAT}/bin/
-DISTNAME=	${PORTNAME}-delta-${PORTVERSION}-${DISTOBJFORMAT}
-EXTRACT_SUFX=	.tgz
+		file:${MOUNT_PT}/source/delta/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	knu
 DISTFILES=	${MAINDIST} \
-		${UPDATEDIST}
-DIST_SUBDIR=	vje30-${DISTOBJFORMAT}
+		vje-delta-3.0-${DISTOBJFORMAT}-update.tgz \
+		delta.tgz \
+		vje-delta-3.0-source-update.tgz
+DIST_SUBDIR=	vje30
 
 MAINTAINER=	knu@FreeBSD.org
 
 #RUN_DEPENDS=	${LOCALBASE}/share/java/classes/jfc-1.1.1/swing.jar:${PORTSDIR}/java/jfc
 
-NO_BUILD=	yes
 RESTRICTED=	"You must purchase a licensed copy from VACS Corporation."
 NO_CDROM=	"You must purchase a licensed copy from VACS Corporation."
 NO_PACKAGE=	"You must purchase a licensed copy from VACS Corporation."
 
+# Specify this!
+MOUNT_PT?=	/cdrom
+
 ONLY_FOR_ARCHS=	i386
+
+USE_XLIB=	yes
 
 PLIST_SUB=	BINSTUFF="${BINSTUFF}"
 
 WRKSRC=		${WRKDIR}/usr/local
-
-MOUNT_PT?=	/cdrom
+PATCH_WRKSRC=	${WRKDIR}
+BUILD_WRKSRC=	${WRKDIR}/delta/newFrontend
+MAKEFILE=	Makefile.FreeBSD
 
 .include <bsd.port.pre.mk>
 
@@ -41,10 +49,7 @@ DISTOBJFORMAT=	AOUT
 DISTOBJFORMAT=	ELF
 .endif
 
-MAINDIST=	${DISTNAME}${EXTRACT_SUFX}
-.if !defined(WITHOUT_MINORUPDATE)
- UPDATEDIST=	update${EXTRACT_SUFX}
-.endif
+MAINDIST=	${PORTNAME}-delta-${PORTVERSION}-${DISTOBJFORMAT}.tgz
 
 BINSTUFF=	vje	\
 		vjed	\
@@ -72,20 +77,18 @@ pre-fetch:
 	${ECHO} "*****************************************************************";	\
 	${FALSE}									\
 	)
-.if !defined(WITHOUT_MINORUPDATE)
-	@${ECHO} "If you don't want to apply the buggy minor update from the vendor, define \"WITHOUT_MINORUPDATE\"."
-.endif
 
 post-extract:
-	@${RM} ${_DISTDIR}/${MAINDIST}
+	@${RM} ${_DISTDIR}/${MAINDIST} ${WRKDIR}/vje
 
 post-patch:
 	@cd ${WRKSRC}/vje30/bin && ${RM} swingall.jar
 	@find ${WRKSRC} -name '*.orig' -delete
 	@${CP} ${FILESDIR}/vje.sh ${WRKSRC}/etc/rc.d/
-.if !defined(WITHOUT_MINORUPDATE)
-	@${MV} ${WRKDIR}/vje ${WRKSRC}/vje30/bin/
-.endif
+	@${PERL} -i -pe 's,/usr/X11R6,${X11BASE},g' ${BUILD_WRKSRC}/${MAKEFILE}
+
+post-build:
+	@${CP} ${BUILD_WRKSRC}/vje ${WRKSRC}/vje30/bin/
 
 do-install:
 	@cd ${WRKSRC} && tar cf - . | tar xf - -C ${PREFIX}
@@ -95,11 +98,9 @@ do-install:
 	@${CHMOD} a+x ${PREFIX}/etc/rc.d/vje.sh
 	@${CHMOD} a+w ${PREFIX}/vje30/dic/vjed95m.dic
 	@[ X${PREFIX} = X"/usr/local" ] || (${LN} -s ${PREFIX}/vje30 /usr/local/; ${LN} -s ${PREFIX}/etc/vje30 /usr/local/etc/)
-.if !defined(WITHOUT_MINORUPDATE)
 	@${CP} ${WRKDIR}/vjed.bin /tmp/
 	@${ECHO} '' | ${WRKDIR}/vjesetup
 	@${RM} /tmp/vjed.bin
-.endif
 	@${CP} -Pp /etc/services /etc/services.bak
 	@${GREP} -qw '^vjed' /etc/services || ${ECHO} "vjed		11493/tcp		# VJE-Delta Server" >> /etc/services
 
