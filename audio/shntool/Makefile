@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	shntool
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.3
 CATEGORIES=	audio
-MASTER_SITES=	http://shnutils.freeshell.org/shntool/source/ \
+MASTER_SITES=	http://www.etree.org/shnutils/shntool/source/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	fenner
 
