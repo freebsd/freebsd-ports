@@ -33,6 +33,7 @@ SUBDIR += misc
 SUBDIR += net
 SUBDIR += news
 SUBDIR += palm
+SUBDIR += picobsd
 SUBDIR += print
 SUBDIR += russian
 SUBDIR += science

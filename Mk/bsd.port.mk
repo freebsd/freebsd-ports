@@ -245,7 +245,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # FILESDIR 		- A directory containing any miscellaneous additional files.
 #				  (default: ${MASTERDIR}/files)
 # PKGDIR 		- A direction containing any package creation files.
-#				  (default: ${MASTERDIR}/pkg)
+#				  (default: ${MASTERDIR})
 #
 # Variables that serve as convenient "aliases" for your *-install targets.
 # Use these like: "${INSTALL_PROGRAM} ${WRKSRC}/prog ${PREFIX}/bin".
@@ -415,7 +415,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # MTREE_FILE	- The name of the mtree file (default: /etc/mtree/BSD.x11.dist
 #				  if USE_X_PREFIX is set, /etc/mtree/BSD.local.dist
 #				  otherwise.)
-# PLIST			- Name of the `packing list' file (default: ${PKGDIR}/PLIST).
+# PLIST			- Name of the `packing list' file (default: ${PKGDIR}/pkg-plist).
 #				  Change this to ${WRKDIR}/PLIST or something if you
 #				  need to write to it.  (It is not a good idea for a port
 #				  to write to any file outside ${WRKDIR} during a normal
@@ -1220,7 +1220,7 @@ VALID_CATEGORIES+=	afterstep archivers astro audio benchmarks biology \
 	editors elisp emulators french ftp games german gnome graphics \
 	hebrew ipv6 irc japanese java kde korean lang linux \
 	mail math mbone misc net news \
-	offix palm perl5 plan9 print python ruby russian \
+	offix palm perl5 picobsd plan9 print python ruby russian \
 	science security shells sysutils \
 	tcl76 tcl80 tcl81 tcl82 tcl83 textproc \
 	tk42 tk80 tk82 tk83 tkstep80 \
