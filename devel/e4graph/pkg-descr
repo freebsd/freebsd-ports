@@ -1,0 +1,14 @@
+e4Graph is a C++ library that allows programs to store graph-like data
+persistently and to access and manipulate that data efficiently. With
+e4Graph, you can arrange your data in the most natural form that reflects
+the relationships between its parts, rather than having to force it into
+a table-like format. The e4Graph library allows you to concentrate on the
+relationships you want to represent, and not on how to store them in a
+database. You can modify data items, and add and remove connections and
+relationships between pieces of data on the fly. e4Graph allows you to
+represent an unlimited number of different connections between pieces of
+data, and your program can selectively manipulate the data according to
+the relationships it cares about, not having to know about other connections
+represented in the data set.
+
+WWW: http://e4graph.sourceforge.net/
