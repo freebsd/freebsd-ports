@@ -2,8 +2,23 @@ bin/tornado
 @unexec rmdir %D/share/games 2>/dev/null || true
 share/games/tornado.scores
 share/locale/de/LC_MESSAGES/tornado.mo
-share/locale/fr/LC_MESSAGES/tornado.mo
-share/locale/pt/LC_MESSAGES/tornado.mo
 share/locale/es/LC_MESSAGES/tornado.mo
+share/locale/fr/LC_MESSAGES/tornado.mo
 share/locale/it/LC_MESSAGES/tornado.mo
+share/locale/nl/LC_MESSAGES/tornado.mo
+share/locale/no/LC_MESSAGES/tornado.mo
 share/locale/ru/LC_MESSAGES/tornado.mo
+share/locale/pt/LC_MESSAGES/tornado.mo
+@dirrm share/games
+@dirrm man/de/man6
+@dirrm man/de
+@dirrm man/fr/man6
+@dirrm man/fr
+@dirrm man/it/man6
+@dirrm man/it
+@dirrm man/nl/man6
+@dirrm man/nl
+@dirrm man/no/man6
+@dirrm man/no
+@dirrm man/ru/man6
+@dirrm man/ru
