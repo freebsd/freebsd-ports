@@ -9,7 +9,7 @@
   # ----------------------------------------------------------------------
   #   AUTHOR:  Lindsay Marshall <lindsay.marshall@newcastle.ac.uk>
 --- 1,6 ----
-! #!/usr/local/bin/wish8.2
+! #!%%LOCALBASE%%/bin/wish8.2
   #
 ! # Version 1.1 Patch 8
   #

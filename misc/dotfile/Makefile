@@ -20,6 +20,9 @@ MAN1=		dotfile.1
 
 NO_BUILD=	yes
 
+post-patch:
+	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/dotfile
+
 post-configure:
 	@(cd ${WRKSRC}/Modules/procmail && CC="${CC}" ac_cv_path_CC="${CC}" CFLAGS="${CFLAGS}" \
 	INSTALL="${INSTALL} -c -o ${BINOWN} -g ${BINGRP}" \
@@ -41,6 +44,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/Doc/dotfile/* ${PREFIX}/share/doc/${DISTNAME}/dotfile
 	${INSTALL_DATA} ${WRKSRC}/Doc/tcsh/* ${PREFIX}/share/doc/${DISTNAME}/tcsh
 	${INSTALL_DATA} ${WRKSRC}/Doc/procmail/* ${PREFIX}/share/doc/${DISTNAME}/procmail
-	@${CAT} ${PKGDIR}/MESSAGE
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

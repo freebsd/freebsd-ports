@@ -8,7 +8,7 @@
 +PERL = ${PERL5}
  VERSION = 0.8.1
 -WISH = /usr/bin/wish
-+WISH = /usr/bin/wish8.2
++WISH = ${LOCALBASE}/bin/wish8.2
  language = english
  
  SUBDIRS = contrib demo docs graphs images languages reports

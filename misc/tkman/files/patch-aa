@@ -8,7 +8,7 @@
 +#WISH = /private/share/bin/wish
  #WISH = /private/share/bin/wish8.3
 -#WISH = /usr/local/bin/wish8.3
-+WISH = /usr/local/bin/wish8.3
++WISH = ${LOCALBASE}/bin/wish8.3
  
  # the executable `tkman' is placed in BINDIR
  # this should be a directory that's in your bin PATH

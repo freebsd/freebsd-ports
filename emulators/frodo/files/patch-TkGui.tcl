@@ -2,7 +2,7 @@
 +++ ../TkGui.tcl	Mon Apr 26 21:49:18 1999
 @@ -1,9 +1,9 @@
 -#!/usr/local/bin/X11/wish
-+#!/usr/local/bin/wish8.2 -f
++#!%%LOCALBASE%%/bin/wish8.2 -f
  
  # Frodo Tk GUI by Lutz Vieweg <lkv@mania.robin.de>
  # requires Tk >= 4.1
