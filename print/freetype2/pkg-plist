@@ -56,7 +56,7 @@ include/freetype2/freetype/tttags.h
 include/ft2build.h
 lib/libfreetype.a
 lib/libfreetype.so
-lib/libfreetype.so.8
+lib/libfreetype.so.9
 @dirrm include/freetype2/freetype/internal
 @dirrm include/freetype2/freetype/config
 @dirrm include/freetype2/freetype/cache
