@@ -6,9 +6,11 @@
 
 PORTNAME=	nhc98
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.cs.york.ac.uk/pub/haskell/${PORTNAME}/
 DISTNAME=	${PORTNAME}src-${PORTVERSION}
+DIST_SUBDIR=	nhc98
 
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	patch-1.10-IO \
@@ -42,7 +44,6 @@ MAKE_ENV+=	PATH=${PREFIX}/jdk1.1.8/bin:$$PATH
 
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
-DIST_SUBDIR=	nhc98
 
 .if !defined(NOPORTDOCS)
 CONFIGURE_ARGS+=	--docdir=${PREFIX}/share/doc/nhc98 +docs
@@ -62,6 +63,9 @@ pre-fetch:
 	@${ECHO} "	Building nhc98 with the tracer (requires JAVA)"
 	@${ECHO} ""
 .endif
+
+post-patch:
+	@${PERL} -pi.orig -e 's|-O3|${CFLAGS}|' ${WRKSRC}/Makefile.inc
 
 # We need this to ensure that the libs will be installed into
 # ${PREFIX}/lib/nhc98. Otherwise the libs will be installed
