@@ -3,7 +3,7 @@
 # Date created:		6 November 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.15 1998/04/15 21:32:49 jseger Exp $
+# $Id: Makefile,v 1.16 1998/09/14 19:36:37 markm Exp $
 #
 
 DISTNAME=       jpegsrc.v6b
@@ -20,5 +20,10 @@ MAN1=		cjpeg.1 djpeg.1 jpegtran.1 rdjpgcom.1 wrjpgcom.1
 
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/jpeg
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/jpeg
+	${INSTALL_DATA} ${WRKSRC}/*.doc ${PREFIX}/share/doc/jpeg
+.endif
 
 .include <bsd.port.mk>
