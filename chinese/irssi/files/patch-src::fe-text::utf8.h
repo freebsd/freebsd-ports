@@ -1,6 +1,6 @@
---- src/fe-text/utf8.h.orig	Sun Feb 17 23:10:09 2002
-+++ src/fe-text/utf8.h	Sun Mar  3 10:10:42 2002
-@@ -18,4 +18,11 @@
+--- src/fe-text/utf8.h.orig	Tue Oct 15 02:45:08 2002
++++ src/fe-text/utf8.h	Sat Nov 23 17:28:38 2002
+@@ -18,6 +18,13 @@
     Make sure out is at least 6 x length of str. */
  void utf16_to_utf8(const unichar *str, char *out);
  
@@ -11,4 +11,6 @@
 +#define is_big5_hi(hi)  (0x81 <= (hi) && (hi) <= 0xFE)
 +#define is_big5(hi,lo) (is_big5_hi(hi) && is_big5_lo(lo))
 +
- #endif
+ /* Returns width for character (0-2). */
+ int utf8_width(unichar c);
+ 

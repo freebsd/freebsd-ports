@@ -1,5 +1,5 @@
---- src/fe-text/gui-entry.c.orig	Tue Feb 26 02:10:10 2002
-+++ src/fe-text/gui-entry.c	Wed Mar 13 19:48:56 2002
+--- src/fe-text/gui-entry.c.orig	Tue Oct 15 02:45:08 2002
++++ src/fe-text/gui-entry.c	Sat Nov 23 17:28:31 2002
 @@ -68,6 +68,27 @@
          g_free(entry);
  }
@@ -37,7 +37,7 @@
  	if (old_scrstart != entry->scrstart)
                  entry->redraw_needed_from = 0;
  }
-@@ -196,7 +219,7 @@
+@@ -200,7 +223,7 @@
  	}
  }
  
@@ -46,7 +46,7 @@
  {
  	int oldlen;
  
-@@ -232,7 +255,7 @@
+@@ -236,7 +259,7 @@
          entry->utf8 = utf8;
  }
  
@@ -55,7 +55,7 @@
  {
  	g_return_if_fail(entry != NULL);
  	g_return_if_fail(str != NULL);
-@@ -261,7 +284,7 @@
+@@ -265,7 +288,7 @@
  	return buf;
  }
  
@@ -64,7 +64,7 @@
  {
          unichar chr;
  	int i, len;
-@@ -339,11 +362,18 @@
+@@ -343,11 +366,18 @@
  
  void gui_entry_erase(GUI_ENTRY_REC *entry, int size, int update_cutbuffer)
  {
@@ -83,7 +83,7 @@
  	if (update_cutbuffer) {
  		/* put erased text to cutbuffer */
  		if (entry->cutbuffer == NULL || entry->cutbuffer_len < size) {
-@@ -467,10 +497,24 @@
+@@ -471,10 +501,24 @@
  
  void gui_entry_move_pos(GUI_ENTRY_REC *entry, int pos)
  {

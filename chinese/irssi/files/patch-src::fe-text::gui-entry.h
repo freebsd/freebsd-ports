@@ -1,5 +1,5 @@
---- src/fe-text/gui-entry.h.orig	Sat Mar  9 00:22:21 2002
-+++ src/fe-text/gui-entry.h	Sat Mar  9 00:22:48 2002
+--- src/fe-text/gui-entry.h.orig	Wed Feb 20 20:46:45 2002
++++ src/fe-text/gui-entry.h	Sat Nov 23 17:28:32 2002
 @@ -28,14 +28,14 @@
  void gui_entry_move(GUI_ENTRY_REC *entry, int xpos, int ypos, int width);
  void gui_entry_set_active(GUI_ENTRY_REC *entry);

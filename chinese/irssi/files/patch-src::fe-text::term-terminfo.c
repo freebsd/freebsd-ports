@@ -1,6 +1,6 @@
---- src/fe-text/term-terminfo.c.orig	Sun Feb 17 23:48:32 2002
-+++ src/fe-text/term-terminfo.c	Sun Mar  3 10:10:42 2002
-@@ -549,12 +549,6 @@
+--- src/fe-text/term-terminfo.c.orig	Sun May 12 22:48:11 2002
++++ src/fe-text/term-terminfo.c	Sat Nov 23 17:28:36 2002
+@@ -564,12 +564,6 @@
  	}
  }
  
