@@ -37,6 +37,7 @@ INSTALLS_SHLIB=	yes
 .if defined(OPENSSL_OVERWRITE_BASE)
 PKGNAMESUFFIX=	-overwrite-base
 PREFIX=		/usr
+SHLIBVER=	2
 .endif
 
 MANPREFIX=	${PREFIX}/openssl
