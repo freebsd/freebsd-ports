@@ -167,6 +167,7 @@
     SUBDIR += snort
     SUBDIR += snort-rep
     SUBDIR += srm
+    SUBDIR += srp
     SUBDIR += ssh
     SUBDIR += ssh-multiadd
     SUBDIR += ssh2
