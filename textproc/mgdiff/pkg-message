@@ -1,0 +1,3 @@
+Mgdiff comes with .xbm and .xpm files for use as window
+manager icons. You will find them in ${PREFIX}/lib/X11/mgdiff.
+
