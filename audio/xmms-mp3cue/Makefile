@@ -23,7 +23,13 @@ USE_X_PREFIX=	yes
 
 PLIST_SUB=	PORTDOCS=${DISTNAME}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+CONFIGURE_ENV=	CFLAGS="-fPIC"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/*.c
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

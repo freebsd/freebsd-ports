@@ -1,0 +1,11 @@
+--- configure.orig	Fri Feb 20 15:59:26 2004
++++ configure	Fri Feb 20 15:59:57 2004
+@@ -882,7 +882,7 @@
+ echo $ac_n "checking "XMMS cflags"""... $ac_c" 1>&6
+ echo "configure:884: checking "XMMS cflags"" >&5
+ XMMS_CFLAGS=`xmms-config --cflags`
+-CFLAGS="$XMMS_CFLAGS"
++CFLAGS="$CFLAGS $XMMS_CFLAGS"
+ echo "$ac_t""yes" 1>&6
+ 
+ echo $ac_n "checking "XMMS installpath"""... $ac_c" 1>&6
