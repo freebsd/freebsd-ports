@@ -6,83 +6,53 @@
 #
 
 PORTNAME=	xplanet
-PORTVERSION=	0.84
-CATEGORIES=	astro x11
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.radcyberzine.com/xglobe/
+PORTVERSION=	0.94
+CATEGORIES=	astro
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} depths_800.jpg
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	will@FreeBSD.org
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS+=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+		freetype.9:${PORTSDIR}/print/freetype2 \
+		ungif.5:${PORTSDIR}/graphics/libungif \
+		png.5:${PORTSDIR}/graphics/png \
+		tiff.4:${PORTSDIR}/graphics/tiff \
+		pnm.1:${PORTSDIR}/graphics/netpbm
+
+RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 
 USE_X_PREFIX=	yes
 USE_MESA=	yes
 USE_GMAKE=	yes
-USE_IMLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-map-extension=jpg
+
+CONFIGURE_ARGS=	--with-map-extension=jpg --with-freetype --with-gif \
+		--with-png --with-pnm --with-tiff
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm"
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm" \
+		WISH=${LOCALBASE}/bin/wish8.3
+
 MAKE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm"
 
 MAN1=		xplanet.1 xplanetbg.1 tkxplanet.1 tzcoord.pl.1
+MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
 
-.if (!defined(WITH_TK80) && !defined(WITH_TK81) && !defined(WITH_TK82) && !defined(WITH_TK83))
-.if exists(${LOCALBASE}/bin/wish8.3)
-WITH_TK83=	yes
-.elif exists(${LOCALBASE}/bin/wish8.2)
-WITH_TK82=	yes
-.elif exists(${LOCALBASE}/bin/wish8.1)
-WITH_TK81=	yes
-.else
-WITH_TK80=	yes
-.endif
-.endif
-
-.if defined(WITH_TK80)
-RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
-WISH=		${LOCALBASE}/bin/wish8.0
-TKVERMSG=	"Using Tk 8.0"
-.endif
-
-.if defined(WITH_TK81)
-RUN_DEPENDS=	wish8.1:${PORTSDIR}/x11-toolkits/tk81
-WISH=		${LOCALBASE}/bin/wish8.1
-TKVERMSG=	"Using Tk 8.1"
-.endif
-
-.if defined(WITH_TK82)
-RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
-WISH=		${LOCALBASE}/bin/wish8.2
-TKVERMSG=	"Using Tk 8.2"
-.endif
-
-.if defined(WITH_TK83)
-RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
-WISH=		${LOCALBASE}/bin/wish8.3
-TKVERMSG=	"Using Tk 8.3"
-.endif
-
-CONFIGURE_ENV+=	WISH=${WISH}
-
-pre-fetch:
-	@${ECHO} ${TKVERMSG}
-	@${ECHO} "Define WITH_TK80, WITH_TK81, WITH_TK82, or WITH_TK83"
-	@${ECHO} "To use a different version of TK"
-
 pre-configure:
-	@${PERL} -pi -e 's|-O3|${CFLAGS}|' ${WRKSRC}/configure
+	@${PERL} -pi -e 's|-O3||' ${WRKSRC}/configure
 
 pre-build:
 	@${PERL} -pi -e "s:/usr/local:${PREFIX}:g" ${WRKSRC}/auxfiles.h
 
+# Install the list of FreeBSD sites & committers locations from astro/xearth
 post-install:
-	@${INSTALL_DATA} ${DISTDIR}/depths_800.jpg ${PREFIX}/share/xplanet/earth.jpg
+.for file in freebsd.committers.markers freebsd.ftp.markers
+	@${INSTALL_DATA} ${PORTSDIR}/astro/xearth/files/${file} \
+		${PREFIX}/share/xplanet/markers
+.endfor
 
 .include <bsd.port.post.mk>
