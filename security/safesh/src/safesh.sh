@@ -68,7 +68,7 @@ fi
 for i in $USER@${HOST}-22 `cat $HOSTDIR/extra_keys 2> /dev/null`; do
 	tmpuser=`echo $i | sed  -e "/^[^@]*\$/s/.*/$USER/" -e "/@/s/\\(.*\\)@.*/\\1/"`
 	tmpport=`echo $i | sed -e '/-\([0-9][0-9]*\)/!s/$/-22/' -e 's/.*-\([0-9][0-9]*\)/\1/'`
-	tmphost=`echo $1 | sed -e 's/.*@\(.*\)//' -e 's/-[0-9][0-9]*$//' | tr A-Z a-z`
+	tmphost=`echo $i | sed -e 's/.*@\(.*\)/\1/' -e 's/-[0-9][0-9]*$//' | tr A-Z a-z`
 	tmp=$USER@`normalizehost $tmphost`-$tmpport
 	if [ -f $HOSTDIR/$tmp ]; then
 		IDENTITY=$HOSTDIR/$tmp

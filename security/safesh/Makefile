@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	safesh
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	security
 MASTER_SITES=	# none
 DISTFILES=	# none
