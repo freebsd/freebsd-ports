@@ -51,6 +51,7 @@ share/gnome/pixmaps/peacock/table_th.xpm
 share/gnome/pixmaps/peacock/table_tr.xpm
 @dirrm share/gnome/pixmaps/peacock
 @dirrm share/gnome/peacock/glade
+@dirrm share/gnome/peacock
 @dirrm share/gnome/help/peacock/C/images
 @dirrm share/gnome/help/peacock/C
 @dirrm share/gnome/help/peacock
