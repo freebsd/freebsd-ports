@@ -3,7 +3,7 @@
 # Date created:		21 June 1995
 # Whom:			Satoshi Asami (asami)
 #
-# $Id: Makefile,v 1.3 1995/07/18 22:46:38 asami Exp $
+# $Id: Makefile,v 1.4 1995/09/12 22:47:20 asami Exp $
 #
 
 DISTNAME=	e93-1.2r5X
@@ -17,8 +17,7 @@ MAINTAINER=	asami@FreeBSD.ORG
 MAKEFILE=	makefile
 USE_X11=	yes
 WRKSRC=		${WRKDIR}/e93
-# The license is a little scary, so disable packaging for now
-NO_PACKAGE=	yes
+RESTRICTED=	"Restrictive license."
 
 do-install:
 	if ! [ -d ${PREFIX}/lib/e93 ]; then mkdir ${PREFIX}/lib/e93; fi
