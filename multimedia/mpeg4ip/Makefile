@@ -108,10 +108,13 @@ post-patch:
 	@${REINPLACE_CMD} -E -e \
 		's!SDL_(AudioDelayMsec|HasAudioDelayMsec).*;$$!0;!' \
 		${WRKSRC}/player/src/audio_sdl.cpp
+# -CURRENT after 500041 has getopt_long
 # use libgnugetopt
+.if ${OSVERSION} < 500041
 	@${REINPLACE_CMD} -E -e \
 		s'|(-lm)|\1 -lgnugetopt|' \
 		${WRKSRC}/util/iptv/Makefile.in
+.endif
 # do not install manm man pages
 	@${REINPLACE_CMD} -E \
 		-e 's|api.mpt||' \
