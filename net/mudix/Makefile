@@ -12,7 +12,7 @@ MASTER_SITES=	http://dwizardry.dhs.org/mudix/
 
 MAINTAINER=	will@FreeBSD.org
 
-LIB_DEPENDS+=	ncurses.4:${PORTSDIR}/devel/ncurses
+LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 ALL_TARGET=	mudix
