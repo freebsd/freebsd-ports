@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://xsu.freax.eu.org/files/
 
-MAINTAINER=	rael@vectorstar.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xsu runs commands as root after prompting for the root password
 
 USE_X_PREFIX=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	multimedia gnome
 MASTER_SITES=	http://quark.sunsite.dk/ \
 		http://demian.dyndns.org/src/
 
-MAINTAINER=	rael@vectorstar.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quark is an audio player, for geeks, by geeks
 
 LIB_DEPENDS=	xine.9:${PORTSDIR}/multimedia/libxine

@@ -11,7 +11,7 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}.pkg/${PORTVERSION}
 
-MAINTAINER=	rael@vectorstar.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTKtalog is a tool to make disk catalogs
 
 BUILD_DEPENDS=	plaympeg:${PORTSDIR}/multimedia/smpeg

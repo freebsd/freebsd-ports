@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	bubblemon
 DISTNAME=	bubblemon-${PORTVERSION}
 
-MAINTAINER=	rael@vectorstar.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bubblemon2 is a system CPU and memory load monitor for GNOME2
 
 LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop2

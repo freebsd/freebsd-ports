@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	http://prozilla.genesys.ro/downloads/prozilla/tarballs/
 
-MAINTAINER=	rael@vectorstar.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ProZilla is a fast download accelerator
 
 FORBIDDEN=	"http://www.vuxml.org/freebsd/1a32e8ee-3edb-11d9-8699-00065be4b5b6.html"
