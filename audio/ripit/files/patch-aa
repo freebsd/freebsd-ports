@@ -1,19 +1,196 @@
---- ripit.pl.orig	Fri Jun  2 23:17:16 2000
-+++ ripit.pl	Fri Jun  2 23:18:58 2000
-@@ -26,12 +26,12 @@
+--- ripit.pl.orig	Mon May 22 15:27:36 2000
++++ ripit.pl	Tue Jun 13 01:27:34 2000
+@@ -15,25 +15,32 @@
+ #	--bitrate [rate] 	- Encode MP3 at this bitrate 
+ #	--year [year]		- Tag MP3 with this year (included as CDDB
+ #				  does not store this information)
+-#       --device                - CDROM device to rip from
++#	--device                - CDROM device to rip from
++#	--numcpu		- Number of parrallel encoders to run
++#	--outputdir		- Directory in which to place MP3s
++#	--cdripper		- Which cdripper to use
++#	--encoder		- Which encoder to use
+ #
+ # Version 1.8 22/05/00 - Simon Quinn
+ #
+ # Usage: ripit.pl [--halt] [--bitrate rate] 
+-#                 [--year year] [--device cddevice] [start_track]
++#                 [--year year] [--device cddevice] [--numcpu cpus]
++#                 [--outputdir dir] [--cdripper ripper] [--encoder encoder]
++#                 [start_track]
+ ####################################################################
+ #
  # User configurable variables
  #
  
--$cddev 		= "/dev/cdrom";		# CD Audio device
+ $cddev 		= "/dev/cdrom";		# CD Audio device
 -$outputdir 	= "/dosc/cdrip/";	# Where the MP3s should go
-+$cddev 		= "/dev/rcd0c";		# CD Audio device
-+$outputdir 	= "/home/mp3/";		# Where the MP3s should go
++$outputdir 	= "/dosc/cdrip";	# Where the MP3s should go
  $bitrate	= 160;			# Bitrate for MP3s
--$encoder	= 1; 			# 0 - Bladeenc, 1 - Lame, 2 - Gogo
-+$encoder	= 2; 			# 0 - Bladeenc, 1 - Lame, 2 - Gogo
+ $encoder	= 1; 			# 0 - Bladeenc, 1 - Lame, 2 - Gogo
  $encopt		= "";			# options for mp3 encoder
--$cdripper	= 0;			# 0 - cdparanoia, 1 - cdda2wav,
-+$cdripper	= 2;			# 0 - cdparanoia, 1 - cdda2wav,
+ $cdripper	= 0;			# 0 - cdparanoia, 1 - cdda2wav,
  					# 2 - tosha, 3 - cdd
  $cdopt		= "";			# options for cdaudio ripper
++$numcpu		= 1;			# Number of parallel encoders to run
  
+ $use_underscore = 0;	# Use _ instead of spaces in filenames (1 yes, 0 no)
+ 
+@@ -53,6 +60,9 @@
+ require "flush.pl";
+ use Getopt::Long;
+ 
++$ripper_died = 0;
++$SIG{HUP} = \&catch_hup;
++
+ # Initialise global variables
+ #
+ $year		= "";	# Year of Audio CD - written to MP3 tag
+@@ -75,9 +85,19 @@
+ if ( ! &GetOptions("halt" => \$haltonfinish, 
+                   "bitrate=i" => \$bitrate,
+ 		  "year=i" => \$year,
+-		  "device=s" => \$cddev) ) {
++		  "device=s" => \$cddev,
++		  "numcpu=i" => \$numcpu,
++		  "outputdir=s" => \$outputdir,
++		  "cdripper=i" => \$cdripper,
++		  "cdopt=s" => \$cdopt,
++		  "encoder=i" => \$encoder,
++		  "encopt=s" => \$encopt) ) {
+    print "Usage: ripit.pl [--halt] [--bitrate rate] [--year year]
+-                [--device cddevice] [start_track]\n";
++                [--device cddevice] [--numcpu cpus] [--outputdir dir]
++                [--cdripper cdripper] [--encoder encoder] [start_track]
++                CD Rippers: 0 - cdparanoia, 1 - cdda2wav, 2 - tosha, 3 - cdd
++                Encoders:   0 - Bladeenc, 1 - Lame, 2 - Gogo\n";
++
+    exit 1;
+ }
+ 
+@@ -113,7 +133,7 @@
+ &rip_cd();				# Rip, Encode & Tag
+ 
+ print "Waiting for MP3 Encoder to finish...\n";
+-wait; 
++while (wait != -1) {}; 
+ 
+ &create_m3u();			# Create the M3U file for the MP3 files
+ 
+@@ -137,6 +157,10 @@
+ 
+ exit;
+ 
++sub catch_hup {
++  $ripper_died = 1;
++}
++
+ #
+ # Create the track selection from the parameters passed
+ # on the command line
+@@ -286,7 +310,7 @@
+   # Directory created will be: /outputdir/Artist - Album/
+   # The value must end in /
+ 
+-  $mp3dir = $outputdir.$artist." - ".$album."/";
++  $mp3dir = $outputdir."/".$artist." - ".$album."/";
+ 
+   if ($use_underscore == 1) { $mp3dir =~ s/ /_/g; }
+ 
+@@ -340,24 +364,29 @@
+     $riptrackname = &get_trackname($_, $tracklist[$_ - 1]);
+     $riptrackno = $_;
+ 
++    if ( ! -r "$riptrackname.wav" && ! -r "$riptrackname.mp3" ) {
++    print "Ripping track $tracklist[$_ - 1]...\n";
+     &printflush(RIPLOG,"Ripping $tracklist[$_ - 1]...\n");
+ 
+     # Choose the cdaudio ripper to use
+     if ($cdripper == 0) {
+       if (system("cdparanoia -d $cddev $cdopt $riptrackno \"$riptrackname.rip\"")) {
+          &printflush(RIPLOG,"cdparanoia failed on $tracklist[$_ - 1]\n");
++         kill 1, @encoders;
+          die "cdparanoia failed on $tracklist[$_ - 1]";
+       }
+     }
+     elsif ($cdripper == 1) {
+-      if (system("cdda2wav -D $cddev -Q -H $cdopt -t $riptrackno \"$riptrackname.rip\"")) {
++      if (system("cdda2wav -D $cddev -q -Q -H $cdopt -t $riptrackno - > \"$riptrackname.rip\"")) {
+          &printflush(RIPLOG,"cdda2wav failed on $tracklist[$_ - 1]\n");
++         kill 1, @encoders;
+          die "cdda2wav failed on $tracklist[$_ - 1]";
+       }
+     }
+     elsif ($cdripper == 2) {
+       if (system("tosha -d $cddev -f wav -t $riptrackno -o \"$riptrackname.rip\"")) {
+        &printflush(RIPLOG,"tosha failed on $tracklist[$_ - 1]\n");
++       kill 1, @encoders;
+        die "tosha failed on $tracklist[$_ - 1]";
+       }
+     }
+@@ -379,11 +408,13 @@
+     rename "$riptrackname.rip","$riptrackname.wav";
+ 
+     &printflush(RIPLOG,"Rip complete $tracklist[$_ - 1]\n");
++    }
+ 
+     # Start the Encoder in the background. but only once
+-    if ($startenc == 0) { 
+-      $startenc = 1;
+-      unless (fork) { &enc_cd(); }
++    if ($startenc < $numcpu) { 
++      sleep $startenc*5;
++      $startenc = $startenc + 1;
++      unless ($encoders[$startenc]=fork) { &enc_cd(); }
+     }
+ 
+   }
+@@ -399,24 +430,25 @@
+ sub enc_cd {
+   my($i,$x,$ncount,$enc);
+ 
+-
+   foreach (@seltrack) {
+ 
+     $riptrackname = &get_trackname($_, $tracklist[$_ - 1]);
+     $ncount++;
+  
+-    print "\nMP3 Encoding track ".$ncount." of ".($#seltrack + 1)."\n";
+-    &printflush(RIPLOG,"Encoding $tracklist[$_ - 1]...\n");
+-
+     # Keep looping until the file appears, ie wait for cdparanoia
+     # timeout after 30 minutes
+     $x=0;
+-    while( ! -r "$riptrackname.wav" ){ 
++    while( ! -r "$riptrackname.wav" && ! -r "$riptrackname.mp3" ){ 
+       $x++; 
+       if ($x > 179) { die "MP3 encoder waited 30 minutes before giving up"; } 
++      if ($ripper_died) { die "CD Ripper seems to have died - exiting"; } 
+       sleep 10;
+     }
+ 
++    if ( ! -r "$riptrackname.mp3" ) {
++    print "\nMP3 Encoding track ".$ncount." of ".($#seltrack + 1)."\n";
++    &printflush(RIPLOG,"Encoding $tracklist[$_ - 1]...\n");
++
+     # Set the encoder we are going to use
+     if ($encoder == 0) {
+       $enc = "bladeenc $encopt -QUIT -$bitrate \"$riptrackname.wav\" ";
+@@ -427,6 +459,9 @@
+     elsif ($encoder == 2) {
+       $enc = "gogo \"$riptrackname.wav\" \"$riptrackname.mp3\" $encopt -b $bitrate";
+     }
++    else {
++      die "No Encoder defined";
++    }
+ 
+     if ( ! system("$enc >$enclog 2>&1 </dev/null")) {
+  
+@@ -442,6 +477,7 @@
+     else {
+       &printflush(RIPLOG,"MP3 Encoder Failed on $tracklist[$_ - 1]\n");
+       die "MP3 Encoder Failed on $tracklist[$_ - 1]";
++    }
+     }
+ 
+   }
