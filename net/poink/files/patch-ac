@@ -1,0 +1,12 @@
+*** poink.c.orig	Fri Apr 12 11:07:14 2002
+--- poink.c	Fri Apr 12 11:07:28 2002
+***************
+*** 20,26 ****
+  #include <stdarg.h>
+  #include <errno.h>
+  #include <signal.h>
+- #include <getopt.h>
+  #include <stdlib.h>
+  #include <string.h>
+  
+--- 20,25 ----

@@ -1,0 +1,4 @@
+This is nosuid, so absolutely secure, ping like utility.
+It uses dirty trick - TCP linear syn/rst challenge instead of
+ICMP echo/echo reply. It won't allow any flood-pings, security
+compromises etc.

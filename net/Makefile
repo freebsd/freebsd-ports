@@ -446,6 +446,7 @@
     SUBDIR += pim6sd
     SUBDIR += pipsecd
     SUBDIR += pmf
+    SUBDIR += poink
     SUBDIR += poptop
     SUBDIR += portfwd
     SUBDIR += pppload
