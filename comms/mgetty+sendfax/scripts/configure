@@ -44,6 +44,8 @@ wn () {
   echo "---------------------------------------------------------------------" ; echo
 }
 
+# our PID files used to live under /var/run, do not bloat /etc
+ww MGETTY_PID_FILE \"/var/run/mgetty.%s.pid\"
 
 
 cat <<END
@@ -316,7 +318,7 @@ cat <<END
  multiple devices can be separated by ":", e.g. "tty1a:tty2a"
  (without (!) leading /dev/)
 END
-wq devices: cua01 FAX_MODEM_TTYS
+wq devices: cuaa1 FAX_MODEM_TTYS
 
 cat <<END
  some modems, notably some GVC modems and the german telecom approved
