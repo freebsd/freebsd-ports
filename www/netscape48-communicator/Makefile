@@ -11,6 +11,8 @@ CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_NETSCAPE}
 DISTFILES=	${BROWSER_NAME}-v${BROWSER_V}-us.${NETSCAPE_DIST_TAG}.tar.gz
 
+FORBIDDEN=      multiple vulnerabilities with no hope of fixes
+
 MAINTAINER=	sada@FreeBSD.org
 COMMENT?=	Netscape ver 4 communicator web-surfboard
 

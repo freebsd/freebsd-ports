@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/users/cjh/netscape-ko/ \
 		http://www.kr.freebsd.org/~cjh/freetime/mozilla/netscape-ko/
 DISTNAME=	${KOREAN_KIT}
 
+FORBIDDEN=      multiple vulnerabilities with no hope of fixes
+
 MAINTAINER?=	cjh@FreeBSD.org
 COMMENT=	Netscape web-surfboard with Korean resources
 
