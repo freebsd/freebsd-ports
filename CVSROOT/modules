@@ -6813,6 +6813,7 @@ quick-lounge-applet	ports/misc/quick-lounge-applet
 quickpics	ports/graphics/quickpics
 quintuple-agent	ports/security/quintuple-agent
 quirc		ports/irc/quirc
+quit		ports/games/quit
 quixote		ports/www/quixote
 quotes		ports/misc/quotes
 quranref	ports/misc/quranref
