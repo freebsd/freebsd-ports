@@ -1,0 +1,24 @@
+BIND version 9 is a major rewrite of nearly all aspects of the underlying BIND
+architecture.  Some of the important features of BIND 9 are:
+
+DNS Security
+     DNSSEC (signed zones)
+     TSIG (signed DNS requests)
+IP version 6
+     Answers DNS queries on IPv6 sockets
+     IPv6 resource records (AAAA)
+     Experimental IPv6 Resolver Library
+DNS Protocol Enhancements
+     IXFR, DDNS, Notify, EDNS0
+     Improved standards conformance
+Views
+     One server process can provide multiple "views" of
+          the DNS namespace, e.g. an "inside" view to certain
+          clients, and an "outside" view to others.
+Multiprocessor Support
+Improved Portability Architecture
+
+WWW: http://www.isc.org/index.pl?/sw/bind/bind9.3-beta.php
+
+- Doug Barton
+DougB@FreeBSD.org
