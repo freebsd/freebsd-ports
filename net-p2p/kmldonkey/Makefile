@@ -6,20 +6,22 @@
 #
 
 PORTNAME=	kmldonkey
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTVERSION=	0.10.pre2
 CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}/unstable.pkg/${PORTVERSION}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-0.10pre2
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	KDE integration for MLDonkey eDonkey P2P client
 
 USE_KDELIBS_VER=3
+USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name=''
 INSTALLS_SHLIB=	yes
+
+MAN1=	kmldonkey.1 kmldonkey_submit.1
 
 .include <bsd.port.mk>

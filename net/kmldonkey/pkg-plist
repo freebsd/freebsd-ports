@@ -1,26 +1,47 @@
 bin/kmldonkey
 bin/kmldonkey_submit
 include/kmldonkey/clientinfo.h
+include/kmldonkey/donkeyhost.h
+include/kmldonkey/donkeymessage.h
+include/kmldonkey/donkeyprotocol.h
+include/kmldonkey/donkeysocket.h
+include/kmldonkey/ed2kurl.h
 include/kmldonkey/fileinfo.h
+include/kmldonkey/giftdownload.h
+include/kmldonkey/gifthost.h
+include/kmldonkey/giftmessage.h
+include/kmldonkey/giftprotocol.h
+include/kmldonkey/giftsocket.h
+include/kmldonkey/hostiface.h
+include/kmldonkey/hostmanager.h
+include/kmldonkey/infoiface.h
+include/kmldonkey/kmldonkeyiface.h
+include/kmldonkey/mldonkeyappletiface.h
 include/kmldonkey/network.h
+include/kmldonkey/page.h
+include/kmldonkey/plugin.h
+include/kmldonkey/roominfo.h
 include/kmldonkey/searchinfo.h
 include/kmldonkey/searchquery.h
 include/kmldonkey/serverinfo.h
 include/kmldonkey/shareinfo.h
-include/kmldonkey/donkeymessage.h
-include/kmldonkey/donkeyprotocol.h
-include/kmldonkey/donkeysocket.h
-include/kmldonkey/hostmanager.h
-include/kmldonkeyiface.h
-include/mldonkeyappletiface.h
 lib/kde3/kcm_kcmdonkey.la
 lib/kde3/kcm_kcmdonkey.so
+lib/kde3/kded_mobilemule.la
+lib/kde3/kded_mobilemule.so
+lib/kde3/kio_mldonkey.la
+lib/kde3/kio_mldonkey.so
+lib/kde3/kmldonkey_debugpage.la
+lib/kde3/kmldonkey_debugpage.so
 lib/kde3/mldonkeyapplet.la
 lib/kde3/mldonkeyapplet.so
 lib/kde3/mldonkeyapplet.so.1
 lib/libkmldonkey.la
 lib/libkmldonkey.so
-lib/libkmldonkey.so.3
+lib/libkmldonkey.so.4
+lib/libkmldonkeytools.la
+lib/libkmldonkeytools.so
+lib/libkmldonkeytools.so.0
 share/applnk/Internet/kmldonkey.desktop
 share/applnk/Settings/Network/kcmdonkey.desktop
 share/apps/kicker/applets/mldonkeyapplet.desktop
@@ -29,9 +50,14 @@ share/apps/konqueror/servicemenus/ed2k_slurp.desktop
 share/apps/mldonkeyapplet/pics/mld-launchgui.png
 share/apps/mldonkeyapplet/pics/mld-mutedonkey.png
 share/apps/mldonkeyapplet/pics/mld-unmutedonkey.png
+share/doc/HTML/da/kmldonkey/common
+share/doc/HTML/da/kmldonkey/index.docbook
 share/doc/HTML/en/kmldonkey/common
-share/doc/HTML/en/kmldonkey/index.cache.bz2
 share/doc/HTML/en/kmldonkey/index.docbook
+share/doc/HTML/et/kmldonkey/common
+share/doc/HTML/et/kmldonkey/index.docbook
+share/doc/HTML/sv/kmldonkey/common
+share/doc/HTML/sv/kmldonkey/index.docbook
 share/icons/hicolor/128x128/apps/kmldonkey.png
 share/icons/hicolor/128x128/apps/mldonkey.png
 share/icons/hicolor/16x16/apps/kmldonkey.png
@@ -44,22 +70,16 @@ share/icons/hicolor/48x48/apps/kmldonkey.png
 share/icons/hicolor/48x48/apps/mldonkey.png
 share/icons/hicolor/64x64/apps/kmldonkey.png
 share/icons/hicolor/64x64/apps/mldonkey.png
-share/locale/de/LC_MESSAGES/kmldonkey.mo
-share/locale/es/LC_MESSAGES/kmldonkey.mo
-share/locale/no/LC_MESSAGES/kmldonkey.mo
-share/locale/se/LC_MESSAGES/kmldonkey.mo
-share/locale/fr/LC_MESSAGES/kmldonkey.mo
 share/services/ed2k.protocol
+share/services/kded/mobilemule.desktop
+share/services/kmldonkey_debugpage.desktop
+share/services/magnet.protocol
+share/services/mldonkey.protocol
+share/services/sig2dat.protocol
+share/servicetypes/kmldonkey_plugin.desktop
+@unexec rmdir %D/share/servicetypes 2>/dev/null || true
+@unexec rmdir %D/share/services/kded 2>/dev/null || true
 @unexec rmdir %D/share/services 2>/dev/null || true
-@unexec rmdir %D/share/locale/se/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/se 2>/dev/null || true
-@unexec rmdir %D/share/locale/no/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/no 2>/dev/null || true
-@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/es 2>/dev/null || true
-@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/de 2>/dev/null || true
-@unexec rmdir %D/share/locale 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/64x64/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/64x64 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
@@ -74,7 +94,14 @@ share/services/ed2k.protocol
 @unexec rmdir %D/share/icons/hicolor/128x128 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/sv/kmldonkey
+@unexec rmdir %D/share/doc/HTML/sv 2>/dev/null || true
+@dirrm share/doc/HTML/et/kmldonkey
+@unexec rmdir %D/share/doc/HTML/et 2>/dev/null || true
 @dirrm share/doc/HTML/en/kmldonkey
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@dirrm share/doc/HTML/da/kmldonkey
+@unexec rmdir %D/share/doc/HTML/da 2>/dev/null || true
 @unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
 @unexec rmdir %D/share/doc/HTML 2>/dev/null || true
 @dirrm share/apps/mldonkeyapplet/pics
@@ -90,3 +117,4 @@ share/services/ed2k.protocol
 @unexec rmdir %D/share/applnk/Internet 2>/dev/null || true
 @unexec rmdir %D/share/applnk 2>/dev/null || true
 @unexec rmdir %D/lib/kde3 2>/dev/null || true
+@dirrm include/kmldonkey
