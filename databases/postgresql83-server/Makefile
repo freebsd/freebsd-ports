@@ -6,14 +6,20 @@
 #
 
 PORTNAME=	postgresql
-PORTVERSION=	7.0.b5
+PORTVERSION=	7.0
 CATEGORIES=	databases
-MASTER_SITES=	ftp://ftp.de.postgresql.org/ \
-		ftp://ftp.postgresql.org/pub/ \
-		ftp://ftp.iodynamics.com/pub/mirror/postgresql/ \
-		ftp://ftp.digex.net/pub/packages/database/postgresql/ \
-		ftp://ftp.sunet.se/pub/unix/databases/relational/postgresql/
-DISTNAME=	${PORTNAME}-7.0beta5
+MASTER_SITES=	ftp://ftp.postgresql.org/pub/source/v7.0/ \
+		ftp://ftp.de.postgresql.org/source/v7.0/ \
+		ftp://ftp.iodynamics.com/pub/mirror/postgresql/source/v7.0/ \
+		ftp://ftp.digex.net/pub/packages/database/postgresql/source/v7.0/ \
+		ftp://ftp.sunet.se/pub/unix/databases/relational/postgresql/source/v7.0/
+DISTFILES=	$(PORTNAME)-$(PORTVERSION).base.tar.gz \
+		$(PORTNAME)-$(PORTVERSION).support.tar.gz
+#		$(PORTNAME)-$(PORTVERSION).test.tar.gz
+.if !defined(NOPORTDOCS)
+DISTFILES+=	$(PORTNAME)-$(PORTVERSION).docs.tar.gz
+.endif
+DIST_SUBDIR=	postgresql
 
 MAINTAINER=	andreas@FreeBSD.org
 
@@ -24,23 +30,22 @@ BROKEN=		doesn\'t build on the alpha yet
 Y2K=		http://www.postgresql.org/y2k.html
 
 # if you want to use the tcl/tk frontend pgaccess, then you need to build
-# postgresql with tcl support by typing: make WITH_TCL=yes
+# postgresql with tcl support by typing: make -DWITH_TCL
 .if defined(WITH_TCL)
-TCL_INCDIR=	${LOCALBASE}/include/tcl8.0
-TK_INCDIR=	${LOCALBASE}/include/tk8.0
-MAKE_ENV=	WITH_TCL=true TCL_INCDIR=${TCL_INCDIR}
-LIB_DEPENDS=	tcl80.1:${PORTSDIR}/lang/tcl80 \
-		tk80.1:${PORTSDIR}/x11-toolkits/tk80
-CONFIGURE_TCL=	--with-tcl --with-tclconfig="${LOCALBASE}/lib/tcl8.0 ${LOCALBASE}/lib/tk8.0"
+TCL_INCDIR=	${LOCALBASE}/include/tcl8.2
+TK_INCDIR=	${LOCALBASE}/include/tk8.2
+MAKE_ENV=	TCL_INCDIR=${TCL_INCDIR}
+CONFIGURE_ENV=	WISH=${LOCALBASE}/bin/wish8.2
+LIB_DEPENDS=	tcl82.1:${PORTSDIR}/lang/tcl82 \
+		tk82.1:${PORTSDIR}/x11-toolkits/tk82
+CONFIGURE_TCL=	--with-tcl --with-tclconfig="${LOCALBASE}/lib/tcl8.2 ${LOCALBASE}/lib/tk8.2"
 .endif
 
-# if you want jdbc, type make WITH_JDBC=yes
+# if you want jdbc, type make -DWITH_JDBC
 # Honors JAVA_HOME if you have it set, and don't want the dependency.
 .if defined(WITH_JDBC)
 JAVA_HOME?=	${LOCALBASE}/jdk1.1.8
 BUILD_DEPENDS=	${JAVA_HOME}/bin/javac:${PORTSDIR}/java/jdk
-#MAKE_ENV+=	JAVA_HOME=${JAVA_HOME}
-#CONFIGURE_ENV+=	JAVA_HOME=${JAVA_HOME}
 SCRIPTS_ENV+=	JAVA_HOME=${JAVA_HOME}
 .endif
 
@@ -57,22 +62,27 @@ CONFIGURE_ARGS=	--prefix=${PREFIX}/pgsql \
 		${CONFIGURE_TCL} \
 		--with-libraries=${PREFIX}/lib
 
-MAN1=		createdb.1 createlang.1 createuser.1 destroydb.1 destroylang.1 \
-		destroyuser.1 initdb.1 initlocation.1 ipcclean.1 pg_dump.1 \
-		pg_dumpall.1 pg_upgrade.1 pgaccess.1 pgadmin.1 pgtclsh.1 \
-		pgtksh.1 postgres.1 postmaster.1 psql.1 vacuumdb.1
-MANL=		abort.l alter_table.l alter_user.l begin.l close.l cluster.l \
-		commit.l copy.l create_aggregate.l create_database.l \
-		create_function.l create_index.l create_language.l \
-		create_operator.l create_rule.l create_sequence.l \
-		create_table.l create_table_as.l create_trigger.l \
-		create_type.l create_user.l create_view.l declare.l delete.l \
-		drop_aggregate.l drop_database.l drop_function.l drop_index.l \
-		drop_language.l drop_operator.l drop_rule.l drop_sequence.l \
+MAN1=		createdb.1 createlang.1 createuser.1 dropdb.1 droplang.1 \
+		dropuser.1 ecpg.1 initdb.1 initlocation.1 ipcclean.1 pg_ctl.1 \
+		pg_dump.1 pg_dumpall.1 pg_passwd.1 pg_upgrade.1 pgaccess.1 \
+		pgadmin.1 pgtclsh.1 pgtksh.1 postgres.1 postmaster.1 psql.1 \
+		vacuumdb.1
+MANL=		abort.l alter_group.l alter_table.l alter_user.l \
+		begin.l close.l cluster.l comment.l commit.l copy.l \
+		create_aggregate.l create_constraint_trigger.l \
+		create_database.l create_function.l create_group.l \
+		create_index.l create_language.l create_operator.l \
+		create_rule.l create_sequence.l create_table.l \
+		create_table_as.l create_trigger.l create_type.l \
+		create_user.l create_view.l declare.l delete.l \
+		drop_aggregate.l drop_database.l drop_function.l \
+		drop_group.l drop_index.l drop_language.l \
+		drop_operator.l drop_rule.l drop_sequence.l \
 		drop_table.l drop_trigger.l drop_type.l drop_user.l \
-		drop_view.l explain.l fetch.l grant.l insert.l listen.l load.l \
-		lock.l move.l notify.l reset.l revoke.l rollback.l select.l \
-		select_into.l set.l show.l unlisten.l update.l vacuum.l
+		drop_view.l end.l explain.l fetch.l grant.l insert.l \
+		listen.l load.l lock.l move.l notify.l reindex.l \
+		reset.l revoke.l rollback.l select.l select_into.l \
+		set.l show.l truncate.l unlisten.l update.l vacuum.l
 
 MANPREFIX=	${PREFIX}/pgsql
 
@@ -81,13 +91,13 @@ pre-fetch:
 	@${ECHO_MSG} "        options    \"SYSVSHM, SYSVSEM, SYSVMSG\""
 .if !defined(WITH_TCL)
 	@${ECHO_MSG} "To build the \"PostgreSQL to Tcl interface library\", libpgtcl, type:"
-	@${ECHO_MSG} "    make WITH_TCL=yes"
+	@${ECHO_MSG} "    make -DWITH_TCL"
 .else
 	@${ECHO_MSG} "Building PostgreSQL with \"libpgtcl\"."
 .endif
 .if !defined(WITH_JDBC)
 	@ ${ECHO_MSG} "To build Java (JDBC) support, type:"
-	@ ${ECHO_MSG} "   make WITH_JDBC=yes"
+	@ ${ECHO_MSG} "   make -DWITH_JDBC"
 .else
 	@ ${ECHO_MSG} "Building PostgreSQL with \"postgresql.jar\"."
 .endif
@@ -101,14 +111,6 @@ post-patch:
 	@ ${SED} -e 's=!!PREFIX!!=${PREFIX}=g' \
 		${WRKSRC}/Makefile.global.in.old \
 		>> ${WRKSRC}/Makefile.global.in
-# pgaccess (accidentally?) removed from distribution, so leave it for now
-#.if defined(WITH_TCL)
-#	@ ${MV} ${WRKSRC}/bin/pgaccess/pgaccess.tcl \
-#		${WRKSRC}/bin/pgaccess/pgaccess.tcl.orig
-#	@ ${SED} -e "s=/usr/bin/wish=`/usr/bin/which wish8.0`=" \
-#		${WRKSRC}/bin/pgaccess/pgaccess.tcl.orig \
-#		>> ${WRKSRC}/bin/pgaccess/pgaccess.tcl
-#.endif
 
 post-build:
 .if defined(WITH_JDBC)
@@ -175,12 +177,13 @@ post-install:
 .if defined(WITH_JDBC)
 	@ ${MKDIR} -m 0555 ${PREFIX}/share/java
 	@ ${INSTALL_DATA} ${WRKSRC}/interfaces/jdbc/postgresql.jar \
-			  ${PREFIX}/share/java/postgresql.jar
+			  ${PREFIX}/share/java/classes/postgresql.jar
 	@ ${ECHO_MSG} "---------------------------------------------------------"
-	@ ${ECHO_MSG} "Putting postgresql.jar in ${PREFIX}/share/java"
+	@ ${ECHO_MSG} "Putting postgresql.jar in"
+	@ ${ECHO_MSG} "${PREFIX}/share/java/classes/postgresql.jar"
 	@ ${ECHO_MSG} "Add this to your CLASSPATH!"
 	@ ${ECHO_MSG} "---------------------------------------------------------"
-	${CAT} ${PKGDIR}/PLIST.jdbc >> ${TMPPLIST}
+	@ ${CAT} ${PKGDIR}/PLIST.jdbc >> ${TMPPLIST}
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} -m 0555 ${PREFIX}/share/examples/pgsql/jdbc
 	@ ${INSTALL_DATA} ${WRKSRC}/interfaces/jdbc/example/*java \
@@ -190,6 +193,7 @@ post-install:
 	@ ${ECHO_MSG} "---------------------------------------------------------"
 	@ ${ECHO_MSG} "Putting jdbc examples into ${PREFIX}/share/examples/pgsql"
 	@ ${ECHO_MSG} "---------------------------------------------------------"
+	@ ${CAT} ${PKGDIR}/PLIST.doc >> ${TMPPLIST}
 .endif
 .endif
 .if !defined(NOPORTDOCS)
