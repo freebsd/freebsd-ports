@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipa
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://ipa-system.sourceforge.net/ \
 		http://www.mirrors.wiretapped.net/security/network-monitoring/ipa/ \
@@ -20,6 +20,12 @@ NO_PACKAGE=	"Needs to be built uniquely for each host"
 ALL_TARGET=
 .ifdef(NOPORTDOCS)
 MAKE_ENV=	NOPORTDOCS="${NOPORTDOCS}"
+.endif
+
+.ifdef WITH_PF
+DEPENDS=	${PORTSDIR}/security/pf
+PF_INCLUDE_DIR?=	${PREFIX}/include/pf
+MAKE_ARGS+=	PF_INCLUDE_DIR=${PF_INCLUDE_DIR}
 .endif
 
 MAN5=		ipa.5 ipa.conf.5
@@ -46,6 +52,9 @@ pre-everything::
 .endif
 .if !defined(IPFW2) && !defined(WITHOUT_IPFW) && ${OSVERSION} >= 460100 && ${OSVERSION} < 500038
 	@${ECHO_MSG} "o You can add IPFW2 support by defining IPFW2"
+.endif
+.if ${OSVERSION} >= 500000 && !defined(WITH_PF)
+	@${ECHO_MSG} "o You can add OpenBSD Packet Filter support by defining WITH_PF"
 .endif
 	@${ECHO_MSG} "-------------------------------------------------------------------"
 
