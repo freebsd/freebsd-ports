@@ -25,7 +25,6 @@ include/regexp.h
 lib/liblite.a
 lib/libmsql.a
 lib/libregexp.a
-lib/libtime.a
 lib/lite_lex.o
 lib/mod_lite.o
 lib/mod_msql.o
@@ -33,6 +32,7 @@ lib/mod_std.o
 share/doc/msql/License
 share/doc/msql/README
 share/doc/msql/HISTORY
+share/doc/msql/README.sco
 share/doc/msql/post-install-notes
 share/doc/msql/manual/add.gif
 share/doc/msql/manual/api.htm
