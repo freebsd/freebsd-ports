@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ORBit
-PORTVERSION=	0.5.1
+PORTVERSION=	0.5.2
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/ORBit
@@ -22,7 +22,10 @@ USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFILES=	configure libIDL/configure popt/configure
-CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}"
+CONFIGURE_ENV=	GLIB_CONFIG="${GLIB_CONFIG}" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
 CONFIGURE_ARGS= --disable-indent
 
 .include <bsd.port.mk>
