@@ -16,7 +16,7 @@
 +# This script can handle both CID and TrueType fonts.
 +
 +# Name & version
-+export NAME; NAME="Ghostscript 7.05 TTF Font Manager"
++export NAME; NAME="Ghostscript 7.06 TTF Font Manager"
 +export VERSION; VERSION=1.0
 +
 +# Global constants
@@ -30,7 +30,7 @@
 +export CJKCIDPath; CJKCIDPath="${GS6CJKPath}/CIDFont"
 +# Not used
 +# export CJKTTFPath; CJKTTFPath="${GS6CJKPath}/TrueType"
-+export GS6LibPath; GS6LibPath="${GS6Path}/7.05/lib"
++export GS6LibPath; GS6LibPath="${GS6Path}/7.06/lib"
 +export DefaultMing_Name; DefaultMing_Name="DEFAULT-MING"
 +export DefaultKai_Name; DefaultKai_Name="DEFAULT-KAI"
 +export TEMPFILE; TEMPFILE="`mktemp /tmp/ttfm.tmpXXXXXX`"
@@ -65,7 +65,7 @@
 +    echo
 +    echo "Usage: $NAME [option]"
 +    echo
-+    echo "       --check            check Ghostscript 7.05 settings"
++    echo "       --check            check Ghostscript 7.06 settings"
 +    echo "       --add <file>...                install CID font"
 +    echo "       --add [alias=]<file>...        install TTF font"
 +    echo "       --remove <file>... remove font from the system"
