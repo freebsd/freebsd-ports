@@ -1,12 +1,12 @@
 # New ports collection makefile for:    cd-write
-# Version required:     1.1
+# Version required:     1.2
 # Date created:         1 May 1997
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.1.1.1 1997/05/04 18:10:54 jmz Exp $
+# $Id: Makefile,v 1.2 1997/05/07 01:55:30 asami Exp $
 #
 
-DISTNAME=       cd-write-1.1
+DISTNAME=       cd-write-1.2
 CATEGORIES=     sysutils
 MASTER_SITES=   ftp://ftp.obs-besancon.fr/pub/outgoing/
 
