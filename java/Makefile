@@ -34,6 +34,7 @@
     SUBDIR += jakarta-commons-lang
     SUBDIR += jakarta-commons-logging
     SUBDIR += jakarta-commons-pool
+    SUBDIR += jakarta-commons-primitives
     SUBDIR += jakarta-log4j
     SUBDIR += jakarta-oro
     SUBDIR += jakarta-regexp
