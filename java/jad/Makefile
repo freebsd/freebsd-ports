@@ -8,10 +8,11 @@
 PORTNAME=	jad
 PORTVERSION=	1.5.8c
 CATEGORIES=	java
-MASTER_SITES=	http://www.geocities.com/SiliconValley/Bridge/8617/jad/freebsd/ \
-		http://www.metaverse.nl/~ernst/ \
+MASTER_SITES=	http://www.metaverse.nl/~ernst/ \
 		http://www.pensioenconsult.com/ \
-		http://www.schraven.nl/
+		http://www.schraven.nl/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	znerd
 DISTNAME=	jadfb158
 
 MAINTAINER=	znerd@FreeBSD.org
@@ -22,8 +23,8 @@ NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "alpha"
-BROKEN=		Not supported on FreeBSD/Alpha
+.if ${ARCH} != "i386"
+BROKEN=		Only supported on FreeBSD/i386
 .endif
 
 do-install:
