@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kvirc
-PORTVERSION=	2.0.0
+PORTVERSION=	2.1.0
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.kvirc.net/kvirc/${PORTVERSION}/source/ \
 		ftp://ftp.kvirc.bz.nu/pub/mirror/kvirc/${PORTVERSION}/source/ \
@@ -17,6 +17,7 @@ MAINTAINER=	trevor@FreeBSD.org
 BUILD_DEPENDS=	gettext:${PORTSDIR}/devel/gettext
 
 ALL_TARGET=	kvirc
+INSTALLS_SHLIB=	yes
 MAN1=		kvirc.1
 USE_LIBTOOL=	yes
 USE_AUTOMAKE=	yes
@@ -32,14 +33,9 @@ CONFIGURE_ARGS=	--x-includes=$(X11BASE)/include \
 		--with-qt-include-dir=${X11BASE}/include/qt2 \
 		--with-qt-library-dir=${X11BASE}/lib \
 		--without-kde-check \
-		--without-pthread-check \
-		--without-qt-check \
-		--without-plugin-support
-CONFIGURE_ENV+=	SS_X_EXTRA_LIBS=-lxpg4
+		--with-freebsd-pthread \
+		-with-qt-name=qt2
 
-pre-build:
-	@find ${WRKSRC} -name Makefile | xargs ${PERL} -pi -e \
-		"s@lqt @lqt2 @g ; \
-		 s@lpthread@pthread@g"
+CONFIGURE_ENV+=	SS_X_EXTRA_LIBS=-lxpg4
 
 .include <bsd.port.mk>

@@ -8,7 +8,25 @@ lib/libkvicore.so.2
 lib/libkvilib.so
 lib/libkvilib.so.2
 share/applnk/Internet/kvirc.desktop
-share/icons/hicolor/48x48/kvirc.png
+share/icons/hicolor/16x16/apps/kvirc.png
+share/icons/hicolor/32x32/apps/kvirc.png
+share/icons/hicolor/48x48/apps/kvirc.png
+share/kvirc/charmaps/DANISH
+share/kvirc/charmaps/DUTCH
+share/kvirc/charmaps/FINNISH
+share/kvirc/charmaps/GERMAN
+share/kvirc/charmaps/JIS
+share/kvirc/charmaps/NORWEGIAN_1
+share/kvirc/charmaps/NORWEGIAN_2
+share/kvirc/charmaps/POLISH
+share/kvirc/charmaps/PORTUGUESE
+share/kvirc/charmaps/RUSSIAN
+share/kvirc/charmaps/RUSSIAN_ALT
+share/kvirc/charmaps/RUSSIAN_WIN
+share/kvirc/charmaps/SPANISH
+share/kvirc/charmaps/SWEDISH
+share/kvirc/charmaps/SWEDISH_NAMES
+share/kvirc/charmaps/SWISS
 share/kvirc/config/kvi.alias.conf
 share/kvirc/config/kvi.mime.conf
 share/kvirc/config/kvi.popup.conf
@@ -16,6 +34,7 @@ share/kvirc/config/kvi.server.conf
 share/kvirc/config/kvi.tip_en.conf
 share/kvirc/config/kvi.tip_it.conf
 share/kvirc/config/kvi.view.conf
+share/kvirc/config/plugins/kvi.speak.conf
 share/kvirc/help/en/dalNetWatchList.kvihelp
 share/kvirc/help/en/index.kvihelp
 share/kvirc/help/en/introdIRC.kvihelp
@@ -35,9 +54,12 @@ share/kvirc/help/en/syntax_variables.kvihelp
 share/kvirc/locale/de.mo
 share/kvirc/locale/es.mo
 share/kvirc/locale/it.mo
+share/kvirc/locale/pl.mo
+share/kvirc/locale/pt_br.mo
 share/kvirc/msgcolors/all-black.kviclr
 share/kvirc/msgcolors/all-white.kviclr
 share/kvirc/msgcolors/default.kviclr
+share/kvirc/pics/kvi_about_bg.png
 share/kvirc/pics/kvi_browser_icons.png
 share/kvirc/pics/kvi_connect_state.png
 share/kvirc/pics/kvi_dock.png
@@ -76,14 +98,39 @@ share/kvirc/pics/kvirc_7_32x32.xpm
 share/kvirc/pics/kvirc_7_48x48.xpm
 share/kvirc/pics/kvirc_8_32x32.xpm
 share/kvirc/pics/kvirc_8_48x48.xpm
+share/kvirc/plugins/libkviabout.so
+share/kvirc/plugins/libkviaway.so
+share/kvirc/plugins/libkvibiff.so
+share/kvirc/plugins/libkvicharpicker.so
+share/kvirc/plugins/libkvicountry.so
+share/kvirc/plugins/libkvieditor.so
+share/kvirc/plugins/libkvifserve.so
+share/kvirc/plugins/libkvihello.so
+share/kvirc/plugins/libkviimage.so
+share/kvirc/plugins/libkvimydialog.so
+share/kvirc/plugins/libkvimyplugin.so
+share/kvirc/plugins/libkvispeak.so
+share/kvirc/plugins/libkvistat.so
+share/kvirc/plugins/libkvistyle.so
+share/kvirc/plugins/libkvitkjb.so
+share/kvirc/plugins/libkviurl.so
+share/kvirc/plugins/libkvixmms.so
+@dirrm share/kvirc/plugins
 @dirrm share/kvirc/pics
 @dirrm share/kvirc/msgcolors
 @dirrm share/kvirc/locale
 @dirrm share/kvirc/help/en
 @dirrm share/kvirc/help
+@dirrm share/kvirc/config/plugins
 @dirrm share/kvirc/config
+@dirrm share/kvirc/charmaps
 @dirrm share/kvirc
+@dirrm share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/16x16/apps
 @dirrm share/icons/hicolor/48x48
+@dirrm share/icons/hicolor/32x32
+@dirrm share/icons/hicolor/16x16
 @dirrm share/icons/hicolor
 @dirrm share/icons
 @dirrm share/applnk/Internet
