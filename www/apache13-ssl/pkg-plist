@@ -70,6 +70,7 @@ libexec/apache/mod_auth_db.so
 libexec/apache/mod_cern_meta.so
 libexec/apache/mod_digest.so
 libexec/apache/mod_expires.so
+libexec/apache/mod_log_forensic.so
 libexec/apache/mod_headers.so
 libexec/apache/mod_info.so
 libexec/apache/mod_mime_magic.so
@@ -100,6 +101,7 @@ www/data-dist/index.html.en
 www/data-dist/index.html.es
 www/data-dist/index.html.fr
 www/data-dist/index.html.he.iso8859-8
+www/data-dist/index.html.hu
 www/data-dist/index.html.it
 www/data-dist/index.html.ja.jis
 www/data-dist/index.html.kr.iso-kr
@@ -119,16 +121,11 @@ www/data-dist/index.html.ru.ucs4
 www/data-dist/index.html.ru.utf8
 www/data-dist/index.html.se
 www/data-dist/index.html.zh-tw.big5
-%%PORTDOCS%%%%DOCSDIR%%/FAQ.html
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/bind.html.en
 %%PORTDOCS%%%%DOCSDIR%%/bind.html.fr
 %%PORTDOCS%%%%DOCSDIR%%/bind.html.html
 %%PORTDOCS%%%%DOCSDIR%%/bind.html.ja.jis
-%%PORTDOCS%%%%DOCSDIR%%/cgi_path.html.en
-%%PORTDOCS%%%%DOCSDIR%%/cgi_path.html.fr
-%%PORTDOCS%%%%DOCSDIR%%/cgi_path.html.html
-%%PORTDOCS%%%%DOCSDIR%%/cgi_path.html.ja.jis
 %%PORTDOCS%%%%DOCSDIR%%/configuring.html.en
 %%PORTDOCS%%%%DOCSDIR%%/configuring.html.fr
 %%PORTDOCS%%%%DOCSDIR%%/configuring.html.html
@@ -144,6 +141,7 @@ www/data-dist/index.html.zh-tw.big5
 %%PORTDOCS%%%%DOCSDIR%%/dns-caveats.html.en
 %%PORTDOCS%%%%DOCSDIR%%/dns-caveats.html.fr
 %%PORTDOCS%%%%DOCSDIR%%/dns-caveats.html.html
+%%PORTDOCS%%%%DOCSDIR%%/dns-caveats.html.ja.jis
 %%PORTDOCS%%%%DOCSDIR%%/dso.html
 %%PORTDOCS%%%%DOCSDIR%%/ebcdic.html
 %%PORTDOCS%%%%DOCSDIR%%/env.html.en
@@ -186,11 +184,14 @@ www/data-dist/index.html.zh-tw.big5
 %%PORTDOCS%%%%DOCSDIR%%/install.html.ja.jis
 %%PORTDOCS%%%%DOCSDIR%%/invoking.html.en
 %%PORTDOCS%%%%DOCSDIR%%/invoking.html.fr
+%%PORTDOCS%%%%DOCSDIR%%/invoking.html.ja.jis
 %%PORTDOCS%%%%DOCSDIR%%/invoking.html.html
 %%PORTDOCS%%%%DOCSDIR%%/keepalive.html.en
 %%PORTDOCS%%%%DOCSDIR%%/keepalive.html.html
 %%PORTDOCS%%%%DOCSDIR%%/keepalive.html.ja.jis
-%%PORTDOCS%%%%DOCSDIR%%/location.html
+%%PORTDOCS%%%%DOCSDIR%%/location.html.en
+%%PORTDOCS%%%%DOCSDIR%%/location.html.html
+%%PORTDOCS%%%%DOCSDIR%%/location.html.ja.jis
 %%PORTDOCS%%%%DOCSDIR%%/logs.html
 %%PORTDOCS%%%%DOCSDIR%%/man-template.html
 %%PORTDOCS%%%%DOCSDIR%%/misc/API.html
@@ -259,7 +260,9 @@ www/data-dist/index.html.zh-tw.big5
 %%PORTDOCS%%%%DOCSDIR%%/mod/mod_auth_db.html
 %%PORTDOCS%%%%DOCSDIR%%/mod/mod_auth_dbm.html
 %%PORTDOCS%%%%DOCSDIR%%/mod/mod_auth_digest.html
-%%PORTDOCS%%%%DOCSDIR%%/mod/mod_autoindex.html
+%%PORTDOCS%%%%DOCSDIR%%/mod/mod_autoindex.html.en
+%%PORTDOCS%%%%DOCSDIR%%/mod/mod_autoindex.html.html
+%%PORTDOCS%%%%DOCSDIR%%/mod/mod_autoindex.html.ja.jis
 %%PORTDOCS%%%%DOCSDIR%%/mod/mod_browser.html
 %%PORTDOCS%%%%DOCSDIR%%/mod/mod_cern_meta.html
 %%PORTDOCS%%%%DOCSDIR%%/mod/mod_cgi.html.en
@@ -288,6 +291,8 @@ www/data-dist/index.html.zh-tw.big5
 %%PORTDOCS%%%%DOCSDIR%%/mod/mod_log_config.html.en
 %%PORTDOCS%%%%DOCSDIR%%/mod/mod_log_config.html.html
 %%PORTDOCS%%%%DOCSDIR%%/mod/mod_log_config.html.ja.jis
+%%PORTDOCS%%%%DOCSDIR%%/mod/mod_log_forensic.html.en
+%%PORTDOCS%%%%DOCSDIR%%/mod/mod_log_forensic.html.html
 %%PORTDOCS%%%%DOCSDIR%%/mod/mod_log_referer.html
 %%PORTDOCS%%%%DOCSDIR%%/mod/mod_mime.html.en
 %%PORTDOCS%%%%DOCSDIR%%/mod/mod_mime.html.html
@@ -331,7 +336,6 @@ www/data-dist/index.html.zh-tw.big5
 %%PORTDOCS%%%%DOCSDIR%%/new_features_1_3.html.en
 %%PORTDOCS%%%%DOCSDIR%%/new_features_1_3.html.html
 %%PORTDOCS%%%%DOCSDIR%%/new_features_1_3.html.ja.jis
-%%PORTDOCS%%%%DOCSDIR%%/new_features_2_0.html
 %%PORTDOCS%%%%DOCSDIR%%/process-model.html.en
 %%PORTDOCS%%%%DOCSDIR%%/process-model.html.html
 %%PORTDOCS%%%%DOCSDIR%%/process-model.html.ja.jis
@@ -360,7 +364,6 @@ www/data-dist/index.html.zh-tw.big5
 %%PORTDOCS%%%%DOCSDIR%%/programs/suexec.html.html
 %%PORTDOCS%%%%DOCSDIR%%/programs/suexec.html.ja.jis
 %%PORTDOCS%%%%DOCSDIR%%/readme-tpf.html
-%%PORTDOCS%%%%DOCSDIR%%/search/manual-index.cgi
 %%PORTDOCS%%%%DOCSDIR%%/sections.html.en
 %%PORTDOCS%%%%DOCSDIR%%/sections.html.html
 %%PORTDOCS%%%%DOCSDIR%%/sections.html.ja.jis
@@ -406,6 +409,7 @@ www/data-dist/index.html.zh-tw.big5
 %%PORTDOCS%%%%DOCSDIR%%/win_service.html.html
 %%PORTDOCS%%%%DOCSDIR%%/win_service.html.ja.jis
 %%PORTDOCS%%%%DOCSDIR%%/windows.html.en
+%%PORTDOCS%%%%DOCSDIR%%/windows.html.html
 %%PORTDOCS%%%%DOCSDIR%%/windows.html.ja.jis
 www/icons/README
 www/icons/a.gif
@@ -635,7 +639,6 @@ www/icons/world2.png
 @dirrm %%PORTDOCS%%%%DOCSDIR%%/misc
 @dirrm %%PORTDOCS%%%%DOCSDIR%%/mod
 @dirrm %%PORTDOCS%%%%DOCSDIR%%/programs
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/search
 @dirrm %%PORTDOCS%%%%DOCSDIR%%/vhosts
 @dirrm %%PORTDOCS%%%%DOCSDIR%%
 @unexec if [ -L %D/www/cgi-bin ]; then rm -f %D/www/cgi-bin; fi

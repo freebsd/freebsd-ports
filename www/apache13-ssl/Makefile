@@ -31,7 +31,7 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 		caudium-devel-1.* caudium10-1.* caudium12-* \
 		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.*
 
-APACHE_VERSION=		1.3.29
+APACHE_VERSION=		1.3.33
 APACHE_SSL_VERSION=	1.55
 USE_OPENSSL=		yes
 USE_PERL5=		yes
