@@ -2,6 +2,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/LDAP.schema
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README.banned
 %%PORTDOCS%%%%DOCSDIR%%/README.chroot
 %%PORTDOCS%%%%DOCSDIR%%/README.contributed
 %%PORTDOCS%%%%DOCSDIR%%/README.courier
@@ -21,6 +22,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/README.sendmail
 %%PORTDOCS%%%%DOCSDIR%%/README.sendmail-dual
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
+%%PORTDOCS%%%%DOCSDIR%%/amavisd-new-docs.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 etc/amavisd.conf-default
 @unexec if cmp -s %D/etc/amavisd.conf %D/etc/amavisd.conf-dist; then rm -f %D/etc/amavisd.conf; fi
