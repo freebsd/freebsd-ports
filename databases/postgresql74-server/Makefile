@@ -8,7 +8,7 @@
 PORTNAME?=	postgresql
 PKGNAMESUFFIX?=	-server
 PORTVERSION?=	7.4.7
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${PORTVERSION}
@@ -25,6 +25,9 @@ CONFLICTS?=	${PORTNAME}${PKGNAMESUFFIX}-7.[0-35-9]* \
 
 WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
 DIST_SUBDIR=	postgresql
+
+UNIQUENAME?=	${PORTNAME}74
+LATEST_LINK?=	${PKGNAMEPREFIX}${UNIQUENAME}${PKGNAMESUFFIX}
 
 PKGINSTALL?=	${PKGDIR}/pkg-install${PKGNAMESUFFIX}
 USE_BZIP2=	YES
@@ -71,20 +74,17 @@ CONFIGURE_ARGS+=--with-openssl
 
 .if !defined(SLAVE_ONLY)
 # gnugetopt will always be used if already installed
-.  if (${OSVERSION} < 500041) && !exists(${LOCALBASE}/include/getopt.h)
+.  if ( ${OSVERSION} < 500041 ) && !exists(${LOCALBASE}/include/getopt.h)
 OPTIONS+=	GNUGETOPT "Use GNU getopt" on
 .  endif
-.  if defined(SERVER_ONLY)
-OPTIONS+=	PAM "Build with PAM support" off
-.  endif
+# Note: server only options are no-ops for the client
+OPTIONS+=	PAM "Build with PAM support (server only)" off
 OPTIONS+=	MIT_KRB5 "Build with MIT's kerberos support" off
 OPTIONS+=	HEIMDAL_KRB5 "Builds with Heimdal kerberos support" off
 OPTIONS+=	OPTIMIZED_CFLAGS "Builds with compiler optimizations (-O3)" off
-.  if defined(SERVER_ONLY)
-OPTIONS+=	LIBC_R "Link with libc_r, needed by plpython" off
+OPTIONS+=	LIBC_R "Link w/ libc_r, used by plpython (server)" off
 #  to run regression tests:
-OPTIONS+=	TESTS "Allows the use of a \"check\" target" off
-.  endif
+OPTIONS+=	TESTS "Allows the use of a \"check\" target (server)" off
 OPTIONS+=	DEBUG "Builds with debugging symbols" off
 
 .  if defined(SERVER_ONLY) && defined(WITH_PAM)

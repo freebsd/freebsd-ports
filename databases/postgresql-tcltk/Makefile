@@ -22,6 +22,8 @@ MASTERDIR=	${.CURDIR}/../../databases/postgresql74-server
 
 CONFLICTS=	${PORTNAME}${PKGNAMESUFFIX}-7.[0-3]*
 
+LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
+
 # you can use "make TCLVERSION=8.4" or similar for your favourite tcl version
 TCLVERSION?=	8.4
 PLIST_SUB+=	TCLVERSION=${TCLVERSION}
