@@ -3,7 +3,7 @@
 # Date created:                         2 July 1998
 # Whom:                                 Brian Feldman
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/09 16:01:50 eivind Exp $
+# $Id: Makefile,v 1.3 1998/08/09 01:25:53 steve Exp $
 #
 
 DISTNAME=	licq-0.34
@@ -12,12 +12,10 @@ MASTER_SITES=	http://pages.infinit.net/fairoff/licq/
 
 MAINTAINER=	brianfeldman@hotmail.com
 
-LIB_DEPENDS=	qt\\.1\\.33:${PORTSDIR}/x11-toolkits/qt133
-
+USE_QT=		yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
 USE_GMAKE=	yes
-HAS_CONFIGURE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-qt-includes=${X11BASE}/include/X11/qt --with-qt-libs=${X11BASE}/lib
 

@@ -3,7 +3,7 @@
 # Date created:		23 February 1998
 # Whom:			Peter Mutsaers
 #
-# $Id: Makefile,v 1.3 1998/07/27 23:24:37 asami Exp $
+# $Id: Makefile,v 1.4 1998/08/07 23:56:19 asami Exp $
 #
 
 DISTNAME=	blackjack-1.1
@@ -13,9 +13,7 @@ MASTER_SITE_SUBDIR=	games/strategy
 
 MAINTAINER=	plm@xs4all.nl
 
-BUILD_DEPENDS=	moc:${PORTSDIR}/x11-toolkits/qt
-LIB_DEPENDS=	qt\\.1\\.3[0-9]:${PORTSDIR}/x11-toolkits/qt
-
+USE_QT=		yes
 WRKSRC=		${WRKDIR}/blackjack
 
 MAN1=		blackjack.1

@@ -3,7 +3,7 @@
 # Date created:				21 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/08/05 09:30:57 asami Exp $
+# $Id: Makefile,v 1.3 1998/08/07 23:56:21 asami Exp $
 #
 
 DISTNAME=	pp-0.01
@@ -14,9 +14,7 @@ DISTFILES=	ppinst-0.01.tar.gz ppsrc-0.01.tar.gz
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-LIB_DEPENDS=	qt\\.1\\.:${PORTSDIR}/x11-toolkits/qt
-BUILD_DEPENDS=	moc:${PORTSDIR}/x11-toolkits/qt
-
+USE_QT=		yes
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/ppsrc
 

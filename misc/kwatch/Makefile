@@ -3,7 +3,7 @@
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/12 08:50:57 tg Exp $
+# $Id: Makefile,v 1.2 1998/08/07 23:56:40 asami Exp $
 #
 
 DISTNAME=	kwatch-0.3
@@ -13,12 +13,11 @@ MASTER_SITE_SUBDIR= /stable/Beta4/apps/utils
 
 MAINTAINER=	hanspb@persbraten.vgs.no
 
-BUILD_DEPENDS=	moc:${PORTSDIR}/x11-toolkits/qt
-LIB_DEPENDS=	qt\\.1\\.3[1-9]:${PORTSDIR}/x11-toolkits/qt \
-		jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg\\.9\\.:${PORTSDIR}/graphics/jpeg \
 		kdecore\\.0\\.9[1-9]:${PORTSDIR}/x11/kdelibs \
 		kdeui\\.0\\.9[1-9]:${PORTSDIR}/x11/kdelibs
 
+USE_QT=		yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \

@@ -3,7 +3,7 @@
 # Date created:        24 March 1998
 # Whom:                Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.5 1998/08/05 09:31:30 asami Exp $
+# $Id: Makefile,v 1.6 1998/08/07 23:56:34 asami Exp $
 #
 
 DISTNAME=	xgfe-2.0
@@ -12,9 +12,9 @@ MASTER_SITES=	http://www2.msstate.edu/~dmi1/xgfe/download/
 
 MAINTAINER=	mph@freebsd.org
 
-LIB_DEPENDS=	qt\\.1\\.3:${PORTSDIR}/x11-toolkits/qt
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
+USE_QT=		yes
 USE_X_PREFIX=	yes
 
 MAKE_ENV=	X11BASE=$(X11BASE) PREFIX=$(PREFIX)
