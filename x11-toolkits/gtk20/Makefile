@@ -27,7 +27,7 @@ LIB_DEPENDS=	atk-1.0.0:${PORTSDIR}/devel/atk \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 USE_BZIP2=	yes
-NO_LATEST_LINK=	"Unstable, development version."
+NO_LATEST_LINK=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_PERL5=	yes

@@ -23,7 +23,7 @@ BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 
-NO_LATEST_LINK=	"Unstable, development version."
+NO_LATEST_LINK=	yes
 
 USE_BZIP2=	yes
 USE_LIBTOOL=	yes

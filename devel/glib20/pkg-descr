@@ -7,8 +7,7 @@ ftp://ftp.gtk.org/pub/gtk
 
 A mailing list is located at gtk-list@redhat.com for discussion.
 
-Warning: this library is unstable development version, incompatible with
-version 1.2, so it could not be used as a replacement for the older one.
+GLib-2.0 is a stable release that forms the basis of GTK+-2.0.
 
 - Vanilla
 vanilla@FreeBSD.ORG
