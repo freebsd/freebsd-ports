@@ -75,16 +75,6 @@ sbin/mgnokiidev
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/sample
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@exec mkdir -m 755 %D/%%DOCSDIR%%/sample/vCard
-share/locale/cs/LC_MESSAGES/gnokii.mo
-share/locale/de/LC_MESSAGES/gnokii.mo
-share/locale/et/LC_MESSAGES/gnokii.mo
-share/locale/fi/LC_MESSAGES/gnokii.mo
-share/locale/fr/LC_MESSAGES/gnokii.mo
-share/locale/it/LC_MESSAGES/gnokii.mo
-share/locale/nl/LC_MESSAGES/gnokii.mo
-share/locale/pl/LC_MESSAGES/gnokii.mo
-share/locale/sk/LC_MESSAGES/gnokii.mo
-share/locale/sl/LC_MESSAGES/gnokii.mo
 %%SMSD%%share/smsd/action
 %%SMSD%%share/smsd/README
 %%SMSD%%share/smsd/libfile.so
