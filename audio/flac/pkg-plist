@@ -10,6 +10,7 @@ include/FLAC/seek_table.h
 include/FLAC/stream_decoder.h
 include/FLAC/stream_encoder.h
 include/FLAC/utility.h
+@dirrm include/FLAC
 lib/libFLAC.a
 lib/libFLAC.so
 lib/libFLAC.so.1
