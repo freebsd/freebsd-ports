@@ -93,7 +93,7 @@ static int rtc_modeevent(module_t mod, int cmd, void *arg);
 
 static struct cdevsw rtc_cdevsw = {
 #if __FreeBSD_version >= 500104
-#if __FreeBSD_version >= 502104
+#if __FreeBSD_version >= 502103
 	.d_version =    D_VERSION,
 	.d_flags =      D_NEEDGIANT,
 #endif
