@@ -4319,6 +4319,7 @@ kf		ports/net/kf
 kfile-plugins	ports/misc/kfile-plugins
 kfreerings	ports/games/kfreerings
 kftpgrabber	ports/ftp/kftpgrabber
+kgeography	ports/games/kgeography
 kgpg		ports/security/kgpg
 khacc		ports/finance/khacc
 kicker-applets	ports/misc/kicker-applets
