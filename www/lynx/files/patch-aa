@@ -155,8 +155,8 @@
 + 0xfd    U+00a4  #CURRENCY SIGN
 + 0xfe    U+25a0  #BLACK SQUARE
 + 0xff    U+00a0  #NO-BREAK SPACE
-*** ./src/chrtrans/koi8r_uni.tbl.orig	Tue Apr  8 20:28:00 1997
---- ./src/chrtrans/koi8r_uni.tbl	Fri Aug  8 16:42:24 1997
+*** src/chrtrans/koi8r_uni.tbl.orig	Tue Apr  8 20:28:00 1997
+--- src/chrtrans/koi8r_uni.tbl	Fri Aug  8 21:43:11 1997
 ***************
 *** 1,11 ****
   
@@ -183,6 +183,16 @@
   # Based on a table received from "Glenn E. Thobe" <thobe@lafn.org>
   #hex unicode # description     
   #--- U+---- # ---------------     
+***************
+*** 137,139 ****
+--- 138,144 ----
+  0xFD U+0429 # CAP SHCHA    
+  0xFE U+0427 # CAP CHE    
+  0xFF U+042A # CAP HARD SIGN   
++ 
++ U+2018:`
++ U+2019-U+201b:'
++ U+201c-U+201f:"
 *** ./src/chrtrans/build-chrtrans.com.orig	Tue Jul 22 06:29:54 1997
 --- ./src/chrtrans/build-chrtrans.com	Fri Aug  8 16:48:20 1997
 ***************
