@@ -233,6 +233,7 @@
     SUBDIR += replaceit
     SUBDIR += resume
     SUBDIR += rman
+    SUBDIR += roap
     SUBDIR += rot
     SUBDIR += rotix
     SUBDIR += rtf2htm
