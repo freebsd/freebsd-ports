@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	pan
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1b3
 CATEGORIES=	news gnome
-MASTER_SITES=	ftp://source.rebelbase.com/pub/pan/${PORTVERSION}/
+MASTER_SITES=	http://download.superpimp.org/pan/${PORTVERSION}/
+DISTNAME=	pan-0.8.1beta3
 
 MAINTAINER=	ade@FreeBSD.org
 
