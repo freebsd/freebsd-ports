@@ -269,6 +269,7 @@
     SUBDIR += smb2www
     SUBDIR += smb_auth
     SUBDIR += snarf
+    SUBDIR += sqmgrlog
     SUBDIR += squid22
     SUBDIR += squid23
     SUBDIR += squid24
