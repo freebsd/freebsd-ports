@@ -1,0 +1,20 @@
+--- Makefile.orig	Fri Aug 25 05:26:16 2000
++++ Makefile	Fri Aug 25 05:26:20 2000
+@@ -210,7 +210,7 @@
+ 	@$(INSTALL_DATA) staticlib/libvgagl.a $(libdir)/libvgagl.a
+ 	@chmod a+r $(libdir)/libvgagl.a
+ 
+-installutils: textutils lrmi
++installutils: textutils
+ 	@if [ ! -d $(bindir) ]; then \
+ 		echo No $(bindir) directory, creating it.; \
+ 		mkdir $(bindir); \
+@@ -236,8 +236,6 @@
+ 	@cp utils/textmode $(bindir)
+ 	@echo "savetextmode:     Script that saves textmode information used by 'textmode'."
+ 	@cp utils/savetextmode $(bindir)
+-	@echo "mode3:       Restore textmode by setting VESA mode 3."
+-	@cp lrmi-0.6m/mode3 $(bindir)
+ 	@echo "Installing keymap utilities in $(bindir):"
+ 	@echo "svgakeymap:       Perl script that generates scancode conversion maps."
+ 	@cp utils/svgakeymap $(bindir)
