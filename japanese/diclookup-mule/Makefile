@@ -3,7 +3,7 @@
 # Date created:		31 Jan 1998
 # Whom:			Mita Yoshio <mita@jp.FreeBSD.org>
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/03 00:15:02 asami Exp $
+# $Id: Makefile,v 1.2 1998/08/07 22:43:07 asami Exp $
 #
 
 DISTNAME=	diclookup-mule-2.3.3
@@ -15,6 +15,8 @@ PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	diclookup-mule-2.3.3-wave-patch.gz
 
 MAINTAINER=	mita@jp.FreeBSD.org
+
+BROKEN_ELF=	yes
 
 RUN_DEPENDS=	${X11BASE}/lib/X11/fonts/non-cjk/fonts.dir:${PORTSDIR}/x11-fonts/etlfonts
 BUILD_DEPENDS=	mule:${PORTSDIR}/japanese/mule-wnn4
