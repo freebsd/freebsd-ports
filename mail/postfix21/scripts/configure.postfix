@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix21/scripts/Attic/configure.postfix,v 1.57 2004-11-27 02:15:57 edwin Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix21/scripts/Attic/configure.postfix,v 1.58 2005-02-08 13:51:16 leeym Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -33,9 +33,7 @@ DB40		"Berkeley DB4.0 (required if SASL also built with DB4.0)" "$status_DB40" \
 DB41		"Berkeley DB4.1 (required if SASL also built with DB4.1)" "$status_DB41" \
 DB42		"Berkeley DB4.2 (required if SASL also built with DB4.2)" "$status_DB42" \
 MySQL		"MySQL map lookups (choose version with WITH_MYSQL_VER)" "$status_MySQL" \
-PgSQL		"PostgreSQL v7.4 map lookups" "$status_PgSQL" \
-PgSQL73		"PostgreSQL v7.3 map lookups" "$status_PgSQL73" \
-PgSQL72		"PostgreSQL v7.2 map lookups" "$status_PgSQL72" \
+PgSQL		"PostgreSQL map lookups (choose with DEFAULT_PGSQL_VER)" "$status_PgSQL" \
 OpenLDAP	"OpenLDAP map lookups (choose ver. with WITH_OPENLDAP_VER)" "$status_OpenLDAP" \
 VDA		"VDA (Virtual Delivery Agent)" "$status_VDA" \
 Test		"SMTP/LMTP test server and generator" "$status_Test" \
@@ -176,22 +174,7 @@ while [ "$1" ]; do
 			echo "MYSQL_SUFFIX=	+mysql"
 			;;
 		PgSQL)
-			echo "POSTGRESQL_PORT?=	databases/postgresql7"
-			echo "LIB_DEPENDS+=	pq.3:\${PORTSDIR}/\${POSTGRESQL_PORT}"
-			echo "POSTFIX_CCARGS+=	-DHAS_PGSQL -I\${LOCALBASE}/include  -I\${LOCALBASE}/pgsql/include"
-			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
-			echo "PGSQL_SUFFIX=	+pgsql"
-			;;
-		PgSQL73)
-			echo "POSTGRESQL_PORT?=	databases/postgresql73"
-			echo "LIB_DEPENDS+=	pq.3:\${PORTSDIR}/\${POSTGRESQL_PORT}"
-			echo "POSTFIX_CCARGS+=	-DHAS_PGSQL -I\${LOCALBASE}/include  -I\${LOCALBASE}/pgsql/include"
-			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
-			echo "PGSQL_SUFFIX=	+pgsql"
-			;;
-		PgSQL72)
-			echo "POSTGRESQL_PORT?=	databases/postgresql72"
-			echo "LIB_DEPENDS+=	pq.2:\${PORTSDIR}/\${POSTGRESQL_PORT}"
+			echo "USE_PGSQL=YES"
 			echo "POSTFIX_CCARGS+=	-DHAS_PGSQL -I\${LOCALBASE}/include  -I\${LOCALBASE}/pgsql/include"
 			echo "POSTFIX_AUXLIBS+=	-L\${LOCALBASE}/lib -L\${LOCALBASE}/pgsql/lib -lpq -lcrypt"
 			echo "PGSQL_SUFFIX=	+pgsql"
