@@ -1,3 +1,39 @@
+bin/xpdfj.pl
+%%DOCSDIR%%/CHANGES
+%%DOCSDIR%%/CTK.txt
+%%DOCSDIR%%/PDFJ.jp.pdf
+%%DOCSDIR%%/PDFJ.jp.pod
+%%DOCSDIR%%/TODO
+%%DOCSDIR%%/XPDFJ.jp.pdf
+%%DOCSDIR%%/XPDFJ.jp.pod
+%%DOCSDIR%%/readme.txt
+%%DATADIR%%/macro/article.inc
+%%DATADIR%%/macro/index.inc
+%%DATADIR%%/macro/shape.inc
+%%DATADIR%%/macro/stddefs.inc
+%%DATADIR%%/macro/stdfontsH.inc
+%%DATADIR%%/macro/stdfontsV.inc
+%%DATADIR%%/macro/toc.inc
+%%EXAMPLESDIR%%/WinMacEnc.xp
+%%EXAMPLESDIR%%/WinMacEnc.xp.pdf
+%%EXAMPLESDIR%%/articledemo.pdf
+%%EXAMPLESDIR%%/articledemo.xp
+%%EXAMPLESDIR%%/barcode.pl
+%%EXAMPLESDIR%%/demo.pdf
+%%EXAMPLESDIR%%/demo.pl
+%%EXAMPLESDIR%%/demo.xp
+%%EXAMPLESDIR%%/frame.jpg
+%%EXAMPLESDIR%%/kof2002.inc
+%%EXAMPLESDIR%%/kof2002.xp
+%%EXAMPLESDIR%%/kof2002.xp.pdf
+%%EXAMPLESDIR%%/kof2004.xp
+%%EXAMPLESDIR%%/kof2004.xp.pdf
+%%EXAMPLESDIR%%/nouhinsho.dat
+%%EXAMPLESDIR%%/nouhinsho.pl
+%%EXAMPLESDIR%%/qrcode.pl
+%%EXAMPLESDIR%%/stdmacro.xp
+%%EXAMPLESDIR%%/stdmacro.xp.pdf
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PDFJ/.packlist
 %%SITE_PERL%%/PDFJ.pm
 %%SITE_PERL%%/PDFJ/E2U.pm
 %%SITE_PERL%%/PDFJ/Object.pm
@@ -8,6 +44,9 @@
 %%SITE_PERL%%/PDFJ/U2C.pm
 %%SITE_PERL%%/PDFJ/Unicode.pm
 %%SITE_PERL%%/XPDFJ.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/PDFJ/.packlist
 @dirrm %%SITE_PERL%%/PDFJ
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PDFJ
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/macro
+@dirrm %%DATADIR%%
