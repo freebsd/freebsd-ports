@@ -1,3 +1,4 @@
 lib/perl5/site_perl/%%PERL_VER%%/File/Copy.pm
 lib/perl5/site_perl/%%PERL_VER%%/File/Recurse.pm
 lib/perl5/site_perl/%%PERL_VER%%/File/Tools.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/File

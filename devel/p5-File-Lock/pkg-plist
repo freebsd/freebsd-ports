@@ -7,5 +7,6 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Lock/test.al
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Lock/Lock.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Lock/Lock.so
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Lock/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/File
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File/Lock
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/File 2>/dev/null || true
