@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	grdb
-PORTVERSION= 	0.2.1
+PORTVERSION= 	0.2.3
 CATEGORIES=	misc gnome
 MASTER_SITES=   http://bucket.pp.ualr.edu/~bit/download/
 
@@ -25,7 +25,7 @@ USE_X_PREFIX=	yes
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-GTK_CONFIG?=	${PREFIX}/bin/gtk12-config
+GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
