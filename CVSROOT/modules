@@ -8228,6 +8228,7 @@ sigslot		ports/devel/sigslot
 silc-client	ports/net/silc-client
 silc-server	ports/net/silc-server
 silkymail	ports/mail/silkymail
+silvercity	ports/textproc/silvercity
 sim		ports/emulators/sim
 sim4		ports/biology/sim4
 sim6811		ports/emulators/sim6811
