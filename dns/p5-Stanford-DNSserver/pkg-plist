@@ -1,0 +1,6 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Stanford/DNSserver/.packlist
+%%SITE_PERL%%/Stanford/DNS.pm
+%%SITE_PERL%%/Stanford/DNSserver.pm
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Stanford/DNSserver
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Stanford
+@dirrm %%SITE_PERL%%/Stanford
