@@ -552,10 +552,10 @@ barcode		ports/graphics/barcode
 barrage		ports/games/barrage
 barry		ports/sysutils/barry
 base64		ports/converters/base64
+bash		ports/shells/bash
 bash-completion	ports/shells/bash-completion
 bash1		ports/shells/bash1
 bash2		ports/shells/bash2
-bash3		ports/shells/bash3
 basiliskII	ports/emulators/basiliskII
 basket		ports/deskutils/basket
 bass		ports/games/bass
@@ -9774,6 +9774,7 @@ spruce		ports/mail/spruce
 sqlite		ports/databases/sqlite
 sqlrelay	ports/databases/sqlrelay
 sqsh		ports/databases/sqsh
+squall		ports/net/squall
 squash		ports/audio/squash
 squeak		ports/lang/squeak
 squeuer		ports/astro/squeuer
@@ -11709,4 +11710,3 @@ zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zu-aspell	ports/textproc/zu-aspell
 zziplib		ports/devel/zziplib
-squall		ports/net/squall
