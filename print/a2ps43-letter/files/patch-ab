@@ -1,6 +1,11 @@
 --- a2ps.c.orig	Tue Feb 15 01:14:59 1994
-+++ a2ps.c	Thu May 16 19:04:15 1996
-@@ -164,12 +164,17 @@
++++ a2ps.c	Sun May  9 13:46:38 1999
+@@ -1,4 +1,3 @@
+-/************************************************************************/
+ /*									*/
+ /* Description: Ascii to PostScript printer program.			*/
+ /* File: bounty:/archive/src/a2ps/Last/a2ps.c				*/
+@@ -164,12 +163,17 @@
  /*
   * Default page dimensions
   */
@@ -20,7 +25,16 @@
  #endif
  
  #ifndef MARGIN
-@@ -362,6 +367,8 @@
+@@ -311,7 +315,7 @@
+ int login_id = TRUE;		/* Print login ID at top of page */
+ #endif	
+ #if LPR_PRINT
+-int lpr_print = TRUE;		/* Fork a lpr process to do the printing */
++int lpr_print = FALSE;		/* Fork a lpr process to do the printing */
+ #ifdef RECTO_VERSO_PRINTING
+ int rectoverso = TWOSIDED_DFLT; /* Two-side printing */
+ #endif
+@@ -362,6 +366,8 @@
  /*
   * Sheet dimensions
   */
@@ -29,7 +43,7 @@
  double page_height = HEIGHT;	/* Paper height */
  double page_width = WIDTH;	/* Paper width */
  
-@@ -382,6 +389,11 @@
+@@ -382,6 +388,11 @@
      fprintf(stderr,"pos.   =  -#num\t\tnumber of copies to print\n");
      fprintf(stderr,"          -1\t\tone page per sheet\n");
      fprintf(stderr,"          -2\t\tTWIN PAGES per sheet\n");
@@ -41,7 +55,7 @@
      fprintf(stderr,"          -d\t-nd\tprint (DON'T PRINT) current date at the bottom\n");
      fprintf(stderr,"          -Fnum\t\tfont size, num is a float number\n");
      fprintf(stderr,"          -Hstr\t\tuse str like header title for subsequent files\n");
-@@ -464,6 +476,12 @@
+@@ -464,6 +475,12 @@
  	    usage(EXIT_FAILURE);
  	interpret = TRUE;
  	break;
@@ -54,7 +68,7 @@
      case 'n':
  	if (arg[2] == NUL)
  	    return;
-@@ -1471,8 +1489,8 @@
+@@ -1471,8 +1488,8 @@
      printf("\n%% Initialize page description variables.\n");
      printf("/x0 0 def\n");
      printf("/y0 0 def\n");
@@ -65,7 +79,7 @@
      printf("/margin %g inch def\n", (double)MARGIN);
      printf("/rm margin 3 div def\n");
      printf("/lm margin 2 mul 3 div def\n");
-@@ -1794,8 +1812,8 @@
+@@ -1794,8 +1811,8 @@
      /* Initialize variables not depending of positional options */
      landscape = twinpages = -1;	/* To force format switching */
      fontsize = -1.0;			/* To force fontsize switching */
