@@ -1362,3 +1362,4 @@ print/pxfonts||2004-12-19|already included in the teTeX distribution
 print/txfonts||2004-12-19|already included in the teTeX distribution
 audio/juk|multimedia/kdemultimedia3|2004-12-22|juk has been integrated into kdemultimedia3
 databases/sqlite|databases/sqlite2|2004-12-23|port renamed
+print/acroread5|print/acroread|2004-12-23|last Acrobat Reader port remaining
