@@ -7,7 +7,7 @@
 
 PORTNAME=	socks5
 PORTVERSION=	1.0.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net security
 DISTNAME=	socks5-v1.0r11
 
@@ -33,8 +33,16 @@ CONFIGURE_ARGS=	--with-libconffile=${PREFIX}/etc/libsocks5.conf \
 		--with-srvidtfile=/var/run/socks5.ident \
 		${EXTRA_CONFIGURE_ARGS}
 MAN1=		runsocks.1 socks5.1 stopsocks.1 socks5_clients.1
-MAN5=		libsocks5.conf.5 socks5.conf.5
+MAN5=		libsocks5.conf.5 socks5.conf.5 socks5.passwd.5
 CONFIGURE_ENV=	LIBS=-lcrypt
+
+.if !defined(NOPORTDOCS)
+post-install:
+	@${MKDIR} ${PREFIX}/share/examples/socks5
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/socks5
+	@${MKDIR} ${PREFIX}/share/doc/socks5
+	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/socks5
+.endif
 
 .include <bsd.port.pre.mk>
 
