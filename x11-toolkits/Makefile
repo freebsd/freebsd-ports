@@ -68,6 +68,7 @@
     SUBDIR += p5-Tk
     SUBDIR += p5-Tk-Autoscroll
     SUBDIR += p5-Tk-ColourChooser
+    SUBDIR += p5-Tk-Date
     SUBDIR += p5-Tk-GBARR
     SUBDIR += panel--
     SUBDIR += pango
