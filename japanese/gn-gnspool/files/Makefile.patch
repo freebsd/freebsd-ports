@@ -5,7 +5,7 @@
  
  BINDIR		= /usr/local/bin
 -MANDIR		= /usr/local/man/man1
-+MANDIR		= /usr/local/man/ja_JP.EUC/cat1
++MANDIR		= /usr/local/man/ja/cat1
  MANEXT		= .1
  
 -NEWSSPOOL	= /usr/spool/news
