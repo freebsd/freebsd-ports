@@ -4,16 +4,16 @@
 # Date created:			  Tue Feb 03, 1998
 # Whom:				  David O'Brien (obrien@NUXI.ucdavis.edu)
 #
-# $Id: Makefile,v 1.2 1997/01/25 18:08:40 obrien Exp $
+# $Id: Makefile,v 1.1.1.1 1998/05/25 23:23:30 obrien Exp $
 #
 
 DISTNAME=	icb-5.0.9
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.swcp.com/pub/icb/clients/unix/  \
-		ftp://ftp.swcp.com/pub/icb/clients/  \
-		ftp://ftp.swcp.com/pub/icb/server/  \
 		ftp://ftp.empire.net/pub/icb/clients/  \
-		ftp://ftp.cs.unm.edu/pub/armijo/icb.src/clients/
+		ftp://ftp.cs.unm.edu/pub/armijo/icb.src/clients/ \
+		ftp://ftp.dorje.com/pub/archive/ \
+		ftp://ftp.tu-clausthal.de/pub/unix.new/net/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=     obrien@FreeBSD.org
