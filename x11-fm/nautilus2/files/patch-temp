@@ -1,0 +1,121 @@
+
+Fixes problem with Nautilus not sensing available desktop space and therefore
+placing icons under the panel. Reverses rev.179-1.180 of
+src/file-manager/fm-desktop-icon-view.c. Will go away when gnomepanel is
+teached to set _NET_WORKAREA properly.
+
+--- src/file-manager/fm-desktop-icon-view.c.orig	Mon Jul 22 21:03:46 2002
++++ src/file-manager/fm-desktop-icon-view.c	Wed Jul 24 22:47:32 2002
+@@ -148,39 +148,9 @@
+ }
+ 
+ static void
+-icon_container_set_workarea (NautilusIconContainer *icon_container,
+-			     long                  *workareas,
+-			     int                    n_items)
+-{
+-	int left, right, top, bottom;
+-	int screen_width, screen_height;
+-	int i;
+-
+-	left = right = top = bottom = 0;
+-
+-	screen_width  = gdk_screen_width ();
+-	screen_height = gdk_screen_height ();
+-
+-	for (i = 0; i < n_items; i += 4) {
+-		int x      = workareas [i];
+-		int y      = workareas [i + 1];
+-		int width  = workareas [i + 2];
+-		int height = workareas [i + 3];
+-
+-		left   = MAX (left, x);
+-		right  = MAX (right, screen_width - width - x);
+-		top    = MAX (top, y);
+-		bottom = MAX (bottom, screen_height - height - y);
+-	}
+-
+-	nautilus_icon_container_set_margins (icon_container,
+-					     left, right, top, bottom);
+-}
+-
+-static void
+ net_workarea_changed (FMDesktopIconView *icon_view)
+ {
+-	long *workareas = NULL;
++	long *borders = NULL;
+ 	Atom type_returned;
+ 	int format_returned;
+ 	unsigned long items_returned;
+@@ -194,33 +164,38 @@
+ 	gdk_error_trap_push ();
+ 	if (XGetWindowProperty (GDK_DISPLAY (),
+ 				GDK_ROOT_WINDOW (),
+-				gdk_x11_get_xatom_by_name ("_NET_WORKAREA"),
+-				0, G_MAXLONG, False,
++				gdk_x11_get_xatom_by_name ("GNOME_PANEL_DESKTOP_AREA"),
++				0 /* long_offset */, 
++				4 /* long_length */,
++				False /* delete */,
+ 				XA_CARDINAL,
+ 				&type_returned,
+ 				&format_returned,
+ 				&items_returned,
+ 				&bytes_after_return,
+-				(unsigned char **)&workareas) != Success) {
+-		if (workareas != NULL)
+-			XFree (workareas);
+-		workareas = NULL;
++				(unsigned char **)&borders) != Success) {
++		if (borders != NULL)
++			XFree (borders);
++		borders = NULL;
+ 	}
+ 			    
+ 	if (gdk_error_trap_pop ()
+-	    || workareas == NULL
++	    || borders == NULL
+ 	    || type_returned != XA_CARDINAL
+-	    || (items_returned % 4) != 0
++	    || items_returned != 4
+ 	    || format_returned != 32) {
+ 		nautilus_icon_container_set_margins (icon_container,
+ 						     0, 0, 0, 0);
+ 	} else {
+-		icon_container_set_workarea (
+-				icon_container, workareas, items_returned);
++		nautilus_icon_container_set_margins (icon_container,
++						     borders[0 /* left */],
++						     borders[1 /* right */],
++						     borders[2 /* top */],
++						     borders[3 /* bottom */]);
+ 	}
+ 
+-	if (workareas != NULL)
+-		XFree (workareas);
++	if (borders != NULL)
++		XFree (borders);
+ }
+ 
+ static GdkFilterReturn
+@@ -235,8 +210,9 @@
+   
+ 	switch (xevent->type) {
+ 	case PropertyNotify:
+-		if (xevent->xproperty.atom == gdk_x11_get_xatom_by_name ("_NET_WORKAREA"))
++		if (xevent->xproperty.atom == gdk_x11_get_xatom_by_name ("GNOME_PANEL_DESKTOP_AREA")) {
+ 			net_workarea_changed (icon_view);
++		}
+ 		break;
+ 	default:
+ 		break;
+@@ -708,7 +684,8 @@
+ 	default_zoom_level_changed (desktop_icon_view);
+ 	fm_desktop_icon_view_update_icon_container_fonts (desktop_icon_view);
+ 
+-	/* Read out the workarea geometry and update the icon container accordingly */
++	/* Read out the panel desktop area and update the icon container
++	 * accordingly */
+ 	net_workarea_changed (desktop_icon_view);
+ 
+ 	/* Setup the property filter */
