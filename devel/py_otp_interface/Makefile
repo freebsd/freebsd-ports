@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	py_otp_interface
-PORTVERSION=	0.91
-PORTREVISION=	3
+PORTVERSION=	0.92
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.erlang.org/contrib/
+MASTER_SITES=	http://www.lysator.liu.se/~tab/erlang/py_interface/
 DISTNAME=	py_interface-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	erlang
 
 MAINTAINER=	olgeni@FreeBSD.org
