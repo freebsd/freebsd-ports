@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	swish++
-PORTVERSION=	5.6
+PORTVERSION=	5.7
 CATEGORIES=	www textproc
 MASTER_SITES=	http://homepage.mac.com/pauljlucas/software/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	obraun@informatik.unibw-muenchen.de
 
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 
@@ -31,7 +31,7 @@ post-patch:
 	  ${SED} '/^#error/d' config.h > config.h.tmp ; \
 	  ${MV} -f config.h.tmp config.h)
 .for file in searchd searchmonitor
-	@${PERL} -pi -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/${file}
+	@${PERL} -pi -e "s,%%PREFIX%%,${PREFIX},g" ${WRKSRC}/${file}.in
 .endfor
 
 post-install:
