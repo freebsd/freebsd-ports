@@ -1,0 +1,11 @@
+--- doc/hrc-ref/build.xml.orig	Tue Feb 10 15:25:37 2004
++++ doc/hrc-ref/build.xml	Tue Feb 10 15:25:44 2004
+@@ -14,7 +14,7 @@
+          location="../2003/catalog.dtd"/>
+   </xmlcatalog>
+ 
+-  <property name='docbook-dir-url' value='file:/${docbook-dir}'/>
++  <property name='docbook-dir-url' value='file://${docbook-dir}'/>
+ 
+   <target name="init">
+     <uptodate property="pdf.required" srcfile='hrc-ref.docbook' targetfile="hrc-ref.pdf"/>

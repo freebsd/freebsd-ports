@@ -1,0 +1,11 @@
+--- catalog.xml.orig	Wed Feb 11 10:11:34 2004
++++ catalog.xml	Wed Feb 11 10:11:39 2004
+@@ -7,7 +7,7 @@
+          xsi:schemaLocation="http://colorer.sf.net/2003/catalog
+                              http://colorer.sf.net/2003/catalog.xsd">
+ 
+-  <hrc-sets log-location="colorer.log">
++  <hrc-sets log-location="/tmp/colorer.log">
+     <location link="hrc/colorer.hrc"/>
+     <location link="hrc/auto"/>
+ <!--

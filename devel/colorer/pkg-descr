@@ -1,0 +1,8 @@
+Colorer take5 is a syntax highlighting and text parsing library, that provides
+services of text parsing in host editor systems in real-time and transforming
+results into colored text. Result information allows to search and build
+outlined lists of functions, structures, and to search and indent programming
+language constructions (brackets, paired tags). Colorer uses pure C++, XML, it
+is fully portable and works on either win32/unix/mac platforms. 
+
+WWW: http://colorer.sourceforge.net/
