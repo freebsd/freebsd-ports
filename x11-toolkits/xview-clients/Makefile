@@ -3,7 +3,7 @@
 # Date created:         22 November 1994
 # Whom:                 ljo
 #
-# $Id: Makefile,v 1.7 1995/04/25 04:47:41 asami Exp $
+# $Id: Makefile,v 1.8 1995/05/03 02:22:33 asami Exp $
 #
 
 DISTNAME=	xview-clients
@@ -14,8 +14,7 @@ DEPENDS=        ${PORTSDIR}/x11/xview-lib
 WRKSRC=      	${PORTSDIR}/x11/xview-config/work/xview3.2p1-X11R6/clients
 NO_WRKDIR=	yes
 NO_EXTRACT=     yes
-PREFIX=		${X11BASE}
-#USE_IMAKE=	yes
+USE_X11=	yes
 
 do-fetch:
 
