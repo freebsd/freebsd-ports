@@ -9,7 +9,7 @@ PORTNAME=	nikto
 PORTVERSION= 	1.32
 CATEGORIES= 	security www
 
-MAINTAINER=	jan@atstake.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web and CGI vulnerability scanner with SSL support
 
 MASTER_SITES=	http://www.cirt.net/nikto/ \
