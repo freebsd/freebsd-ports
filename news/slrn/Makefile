@@ -6,23 +6,25 @@
 #
 
 PORTNAME=	slrn
-PORTVERSION=	0.9.6.3
+PORTVERSION=	0.9.6.4
 CATEGORIES=	news
-MASTER_SITES=	ftp://space.mit.edu/pub/davis/slrn/ \
-		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/slrn/ \
-		ftp://ftp.fu-berlin.de/pub/unix/news/slrn/ \
-		ftp://ftp.ntua.gr/pub/lang/slang/ \
-		ftp://ftp.plig.org/pub/slrn/
-
+MASTER_SITES=	ftp://space.mit.edu/pub/davis/slrn/ssl/ \
+		ftp://ftp.uni-stuttgart.de/pub/unix/misc/slang/slrn/ssl/ \
+		ftp://ftp.ntua.gr/pub/lang/slang/ssl/ \
+		ftp://ftp.plig.org/pub/slrn/ssl/
 
 MAINTAINER=	xaa+ports@madison-gurkha.com
 
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 ALL_TARGET=	all slrnpull
 MAN1=		slrn.1
+
+.if defined(WITH_SSL)
+USE_OPENSSL=	YES
+CONFIGURE_ARGS=	--with-ssl
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${MACHINE_ARCH}objs/slrn ${PREFIX}/bin
