@@ -5549,6 +5549,7 @@ py-imaging-handbook	ports/graphics/py-imaging-handbook
 py-ipy		ports/net/py-ipy
 py-irclib	ports/irc/py-irclib
 py-jabber	ports/net/py-jabber
+py-jaxml	ports/textproc/py-jaxml
 py-kde		ports/x11-toolkits/py-kde
 py-kjbuckets	ports/devel/py-kjbuckets
 py-kqueue	ports/devel/py-kqueue
