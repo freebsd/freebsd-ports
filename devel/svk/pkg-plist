@@ -1,6 +1,5 @@
 bin/svk
 %%SITE_PERL%%/SVK.pm
-%%SITE_PERL%%/SVK/CombineEditor.pm
 %%SITE_PERL%%/SVK/Command.pm
 %%SITE_PERL%%/SVK/Command/Add.pm
 %%SITE_PERL%%/SVK/Command/Annotate.pm
@@ -12,7 +11,9 @@ bin/svk
 %%SITE_PERL%%/SVK/Command/Copy.pm
 %%SITE_PERL%%/SVK/Command/Delete.pm
 %%SITE_PERL%%/SVK/Command/Depotmap.pm
+%%SITE_PERL%%/SVK/Command/Describe.pm
 %%SITE_PERL%%/SVK/Command/Diff.pm
+%%SITE_PERL%%/SVK/Command/Help.pm
 %%SITE_PERL%%/SVK/Command/Import.pm
 %%SITE_PERL%%/SVK/Command/Info.pm
 %%SITE_PERL%%/SVK/Command/List.pm
@@ -20,6 +21,9 @@ bin/svk
 %%SITE_PERL%%/SVK/Command/Merge.pm
 %%SITE_PERL%%/SVK/Command/Mirror.pm
 %%SITE_PERL%%/SVK/Command/Mkdir.pm
+%%SITE_PERL%%/SVK/Command/Move.pm
+%%SITE_PERL%%/SVK/Command/Patch.pm
+%%SITE_PERL%%/SVK/Command/Propdel.pm
 %%SITE_PERL%%/SVK/Command/Propedit.pm
 %%SITE_PERL%%/SVK/Command/Proplist.pm
 %%SITE_PERL%%/SVK/Command/Propset.pm
@@ -30,15 +34,27 @@ bin/svk
 %%SITE_PERL%%/SVK/Command/Switch.pm
 %%SITE_PERL%%/SVK/Command/Sync.pm
 %%SITE_PERL%%/SVK/Command/Update.pm
-%%SITE_PERL%%/SVK/CommitStatusEditor.pm
-%%SITE_PERL%%/SVK/DeleteEditor.pm
-%%SITE_PERL%%/SVK/DiffEditor.pm
-%%SITE_PERL%%/SVK/MergeEditor.pm
-%%SITE_PERL%%/SVK/RevertEditor.pm
-%%SITE_PERL%%/SVK/SignEditor.pm
-%%SITE_PERL%%/SVK/StatusEditor.pm
+%%SITE_PERL%%/SVK/Command/Verify.pm
+%%SITE_PERL%%/SVK/Editor/Combine.pm
+%%SITE_PERL%%/SVK/Editor/Delay.pm
+%%SITE_PERL%%/SVK/Editor/Diff.pm
+%%SITE_PERL%%/SVK/Editor/Merge.pm
+%%SITE_PERL%%/SVK/Editor/Patch.pm
+%%SITE_PERL%%/SVK/Editor/Sign.pm
+%%SITE_PERL%%/SVK/Editor/Status.pm
+%%SITE_PERL%%/SVK/Editor/XD.pm
+%%SITE_PERL%%/SVK/I18N.pm
+%%SITE_PERL%%/SVK/I18N/i_default.po
+%%SITE_PERL%%/SVK/I18N/zh_cn.po
+%%SITE_PERL%%/SVK/I18N/zh_tw.po
+%%SITE_PERL%%/SVK/Merge.pm
+%%SITE_PERL%%/SVK/Notify.pm
+%%SITE_PERL%%/SVK/Patch.pm
+%%SITE_PERL%%/SVK/Target.pm
 %%SITE_PERL%%/SVK/Util.pm
 %%SITE_PERL%%/SVK/XD.pm
+@dirrm %%SITE_PERL%%/SVK/I18N
+@dirrm %%SITE_PERL%%/SVK/Editor
 @dirrm %%SITE_PERL%%/SVK/Command
 @dirrm %%SITE_PERL%%/SVK
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVK 2>/dev/null || true
