@@ -18,6 +18,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 
+CFLAGS+=	-fPIC
+
 MAN1=		udunits.1 \
 		udunitsperl.1
 MAN3=		udunits.3 \
