@@ -6,22 +6,33 @@
 #
 
 PORTNAME=	gq
-PORTVERSION=	0.4.0
+PORTVERSION=	0.6.0
 CATEGORIES=	net
-MASTER_SITES=	http://biot.com/gq/download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gqclient
 
 MAINTAINER=	roman@xpert.com
 
-.if defined(WITH_OPENLDAP2)
-LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
-.else
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
+
+.if defined(WITH_OPENLDAP1)
 LIB_DEPENDS+=	ldap.1:${PORTSDIR}/net/openldap
+.else
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
+.endif
+
+.if !defined(WITHOUT_JPEGPHOTO)
+USE_GNOME=	gdkpixbuf
 .endif
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
-USE_GNOME=	gtk12
+USE_GNOME+=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ldap=${LOCALBASE}
+
+pre-configure:
+	@${ECHO_MSG} "You can disable jpegPhoto attr. handling by defining WITHOUT_JPEGPHOTO=yes"
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
