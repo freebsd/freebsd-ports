@@ -157,25 +157,25 @@ lib/libstyle.a
 lib/libstyle.la
 lib/libstyle.so
 lib/libstyle.so.1.3
-share/doc/jade/archform.htm
-share/doc/jade/build.htm
-share/doc/jade/catalog.htm
-share/doc/jade/charset.htm
-share/doc/jade/features.htm
-share/doc/jade/generic.htm
-share/doc/jade/ideas.htm
-share/doc/jade/index.htm
-share/doc/jade/new.htm
-share/doc/jade/nsgmls.htm
-share/doc/jade/sgmldecl.htm
-share/doc/jade/sgmlnorm.htm
-share/doc/jade/sgmlsout.htm
-share/doc/jade/spam.htm
-share/doc/jade/spent.htm
-share/doc/jade/sx.htm
-share/doc/jade/sysdecl.htm
-share/doc/jade/sysid.htm
-share/doc/jade/xml.htm
+%%DOCSDIR%%/archform.htm
+%%DOCSDIR%%/build.htm
+%%DOCSDIR%%/catalog.htm
+%%DOCSDIR%%/charset.htm
+%%DOCSDIR%%/features.htm
+%%DOCSDIR%%/generic.htm
+%%DOCSDIR%%/ideas.htm
+%%DOCSDIR%%/index.htm
+%%DOCSDIR%%/new.htm
+%%DOCSDIR%%/nsgmls.htm
+%%DOCSDIR%%/sgmldecl.htm
+%%DOCSDIR%%/sgmlnorm.htm
+%%DOCSDIR%%/sgmlsout.htm
+%%DOCSDIR%%/spam.htm
+%%DOCSDIR%%/spent.htm
+%%DOCSDIR%%/sx.htm
+%%DOCSDIR%%/sysdecl.htm
+%%DOCSDIR%%/sysid.htm
+%%DOCSDIR%%/xml.htm
 share/sgml/jade/FOT.tex
 share/sgml/jade/Makefile.jadetex
 @unexec %%XMLCATMGR%% -sc %%CATALOG_PORTS_SGML%% remove jade/catalog
@@ -194,6 +194,6 @@ share/sgml/jade/style-sheet.dtd
 share/xml/jade/xml.soc
 share/xml/jade/xml.dcl
 @dirrm include/sp
-@dirrm share/doc/jade
+@dirrm %%DOCSDIR%%
 @dirrm share/sgml/jade
 @dirrm share/xml/jade
