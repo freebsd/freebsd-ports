@@ -1,0 +1,5 @@
+--- configure.orig	Tue Nov 16 23:16:57 1999
++++ configure	Thu May 11 07:47:08 2000
+@@ -1736 +1736 @@
+-freebsd[4]*) 
++freebsd[45]*) 
