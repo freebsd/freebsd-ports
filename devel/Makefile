@@ -769,6 +769,7 @@
     SUBDIR += p5-Set-Scalar
     SUBDIR += p5-Shape
     SUBDIR += p5-Sort-ArrayOfArrays
+    SUBDIR += p5-Sort-Tree
     SUBDIR += p5-Sort-Versions
     SUBDIR += p5-Storable
     SUBDIR += p5-String-Approx

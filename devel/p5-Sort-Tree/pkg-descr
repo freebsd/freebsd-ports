@@ -1,0 +1,19 @@
+Sort::Tree implements a mechanism for sorting a list of objects into a
+tree structure and flattening it back into a list.  Among other things,
+this is useful for displaying database queries in hierarchical views,
+such as nested categories, parent-child relationships, threaded
+discussions, and so forth.
+
+Trees have a lot to do with Graph theory, so if this module doesn't suit
+your fancy, have a look at the Graph:: Perl modules for an academically
+oriented implementation that employs vertex, edge, and node operations.
+
+For more information on how to use the perl module, see the
+pod documentation via the command
+  perldoc Sort::Tree
+or, after installation, view the man pages with
+  man Sort::Tree
+
+WWW: http://search.cpan.org/search?dist=Sort-Tree
+
+Author: Bryce Harrington <brycehar@bryceharrington.com>
