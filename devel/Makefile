@@ -606,7 +606,6 @@
     SUBDIR += veepee
     SUBDIR += viewcvs
     SUBDIR += vtcl
-    SUBDIR += wedit
     SUBDIR += xmake
     SUBDIR += xtl
     SUBDIR += xwpe
