@@ -12,7 +12,7 @@ do
 	install -c -o bin -g bin -m 444 $i.l ${PREFIX}/man/man1/$i.1
 done
 
-BINS="exmh-async exmh-bg exmh ftp.expect"
+BINS="exmh-async exmh-bg exmh ftp.expect inc.expect"
 
 echo "install -c -o bin -g bin -m 755 ${BINS} ${PREFIX}/bin"
 install -c -o bin -g bin -m 755 ${BINS} ${PREFIX}/bin
@@ -34,5 +34,16 @@ then
 	mkdir ${PREFIX}/lib/exmh-${VERSION}/html
 fi
 
-echo "install -c -o bin -g bin -m 444 lib/html/* ${PREFIX}/lib/exmh-${VERSION}/html"
+echo "install -c -o bin -g bin -m 444 lib/html/* lib/html/*.gif ${PREFIX}/lib/exmh-${VERSION}/html"
 install -c -o bin -g bin -m 444 lib/html/*.html lib/html/*.gif ${PREFIX}/lib/exmh-${VERSION}/html
+
+if [ ! -d ${PREFIX}/lib/exmh-${VERSION}/bitmaps ]
+then
+	echo "mkdir ${PREFIX}/lib/exmh-${VERSION}/bitmaps"
+	mkdir ${PREFIX}/lib/exmh-${VERSION}/bitmaps
+fi
+
+echo "install -c -o bin -g bin -m 444 lib/bitmaps/bitmaps.defaults lib/bitmaps/*.xbm ${PREFIX}/lib/exmh-${VERSION}/bitmaps"
+install -c -o bin -g bin -m 444 lib/bitmaps/bitmaps.defaults lib/bitmaps/*.xbm ${PREFIX}/lib/exmh-${VERSION}/bitmaps
+
+
