@@ -18,6 +18,8 @@ COMMENT=	PostgreSQL database adapter for Zope
 RUN_DEPENDS=	${ZOPEBASEDIR}/skel/bin/zopectl.in:${PORTSDIR}/www/zope
 LIB_DEPENDS=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 
+BROKEN=		Broken dependency
+
 POSTGRESQL_PORT?=	databases/postgresql7
 USE_PYTHON=	yes
 PYTHON_VERSION=	python1.5
