@@ -8,7 +8,8 @@ PORTNAME=	ldapmodule
 PORTVERSION=	1.10alpha3
 PORTREVISION=	3
 CATEGORIES=	net
-MASTER_SITES=	ftp://python-ldap.sourceforge.net/pub/python-ldap/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	python-ldap
 DISTNAME=	python-ldap-${PORTVERSION}-src
 
 MAINTAINER=	dinoex@FreeBSD.org
