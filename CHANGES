@@ -10,6 +10,15 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20040304:
+	New variable MASTER_SITE_SOURCEFORGE_EXTENDED. It has the
+	ten official sourceforge.net download mirrors, whereas
+	MASTER_SITE_SOURCEFORGE only has five. To check if your
+	port is mirrored there, go to
+	<http://prdownloads.sourceforge.net/${MASTER_SITE_SUBDIR}/>
+	click on ${DISTFILES} and you'll see five or ten mirrors,
+	corresponding to the variables above.
+
 20040226:
 	The default version of Ruby is now 1.8 on all platforms
 	including the i386.
