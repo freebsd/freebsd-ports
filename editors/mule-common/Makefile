@@ -3,7 +3,7 @@
 # Date created:		7 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.31 1998/10/07 08:11:31 asami Exp $
+# $Id: Makefile,v 1.32 1998/10/07 21:57:56 asami Exp $
 #
 
 DISTNAME=	mule-2.3
@@ -35,10 +35,10 @@ MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
 		japanese/mule-wnn4 \
 		japanese/mule-wnn6 \
 		korean/mule-wnn4
-.if exists(${.CURDIR}/../../${dir}/work/.install_done)
-WRKDIR=		${.CURDIR}/../../${dir}/work
-.elif exists(${.CURDIR}/../../${dir}/work/.build_done)
-WRKDIR?=	${.CURDIR}/../../${dir}/work
+.if exists(${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work/.install_done)
+WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work
+.elif exists(${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work/.build_done)
+WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work
 .endif
 .endfor
 WRKSRC= ${WRKDIR}/emacs-19.34
