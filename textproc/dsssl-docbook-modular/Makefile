@@ -3,7 +3,7 @@
 # Date created:		16 March 1998
 # Whom:			Jun Kuriyama <kuriyama@opt.phys.waseda.ac.jp>
 #
-# $Id: Makefile,v 1.4 1998/08/15 03:33:23 kuriyama Exp $
+# $Id: Makefile,v 1.5 1998/09/08 22:03:31 kuriyama Exp $
 #
 
 DISTNAME=	db113
@@ -11,6 +11,10 @@ PKGNAME=	dsssl-docbook-modular-1.13
 CATEGORIES=	textproc
 MASTER_SITES=	http://nwalsh.com/docbook/dsssl/
 EXTRACT_SUFX=	.zip
+
+PATCH_SITES=	http://www.freebsd.org/~kuriyama/distfiles/
+PATCHFILES=	db113jpja-980919.diff.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	kuriyama@FreeBSD.ORG
 
@@ -22,6 +26,7 @@ EXTRACT_CMD=	unzip
 EXTRACT_BEFORE_ARGS=	-a -q -L
 NO_MTREE=	yes
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/docbook
 
 INSTDIR=	${PREFIX}/share/sgml/docbook/dsssl/modular
 

@@ -10,6 +10,7 @@ share/sgml/docbook/dsssl/modular/common/dbl10n.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1bmno.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1dege.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1fr.dsl
+share/sgml/docbook/dsssl/modular/common/dbl1jpja.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1ru.dsl
 share/sgml/docbook/dsssl/modular/common/dbl1usen.dsl
 share/sgml/docbook/dsssl/modular/common/dbtable.dsl
@@ -274,6 +275,7 @@ share/sgml/docbook/dsssl/modular/html/dbl10n.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1bmno.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1dege.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1fr.dsl
+share/sgml/docbook/dsssl/modular/html/dbl1jpja.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1ru.dsl
 share/sgml/docbook/dsssl/modular/html/dbl1usen.dsl
 share/sgml/docbook/dsssl/modular/html/dblink.dsl
