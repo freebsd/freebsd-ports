@@ -3,7 +3,7 @@
 # Date created:		11 September 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.13 1996/11/18 13:57:23 asami Exp $
+# $Id: Makefile,v 1.14 1997/01/09 09:19:17 asami Exp $
 #
 
 DISTNAME=       make-3.75
@@ -18,5 +18,9 @@ MAN1=		gmake.1
 post-install:
 	/bin/chmod g-s ${PREFIX}/bin/gmake
 	/usr/bin/chgrp ${BINGRP} ${PREFIX}/bin/gmake
+	if [ ! -f ${PREFIX}/info/dir ]; then \
+	  sed -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	 fi
+	install-info ${PREFIX}/info/make.info ${PREFIX}/info/dir
 
 .include <bsd.port.mk>
