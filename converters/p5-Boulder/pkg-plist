@@ -1,0 +1,21 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Boulder/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Stone/Cursor.pm
+lib/perl5/site_perl/%%PERL_VER%%/Stone/GB_Sequence.pm
+lib/perl5/site_perl/%%PERL_VER%%/Boulder/Swissprot.pm
+lib/perl5/site_perl/%%PERL_VER%%/Boulder/Medline.pm
+lib/perl5/site_perl/%%PERL_VER%%/Boulder/Blast/NCBI.pm
+lib/perl5/site_perl/%%PERL_VER%%/Boulder/Blast/WU.pm
+lib/perl5/site_perl/%%PERL_VER%%/Boulder/Labbase.pm
+lib/perl5/site_perl/%%PERL_VER%%/Boulder/Unigene.pm
+lib/perl5/site_perl/%%PERL_VER%%/Boulder/Stream.pm
+lib/perl5/site_perl/%%PERL_VER%%/Boulder/Store.pm
+lib/perl5/site_perl/%%PERL_VER%%/Boulder/XML.pm
+lib/perl5/site_perl/%%PERL_VER%%/Boulder/Omim.pm
+lib/perl5/site_perl/%%PERL_VER%%/Boulder/Blast.pm
+lib/perl5/site_perl/%%PERL_VER%%/Boulder/Genbank.pm
+lib/perl5/site_perl/%%PERL_VER%%/Boulder/String.pm
+lib/perl5/site_perl/%%PERL_VER%%/Stone.pm
+lib/perl5/site_perl/%%PERL_VER%%/Boulder.pod
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Boulder
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Boulder
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Stone
