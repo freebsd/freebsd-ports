@@ -1,0 +1,4 @@
+bin/blender
+share/doc/blender/README
+share/doc/blender/copyright.txt
+@dirrm share/doc/blender
