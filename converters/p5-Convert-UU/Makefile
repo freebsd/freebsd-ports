@@ -3,7 +3,7 @@
 # Date created:				October 20th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.16 1998/10/12 02:59:12 jseger Exp $
+# $Id: Makefile,v 1.17 1998/11/11 05:37:06 asami Exp $
 #
 
 DISTNAME=	Convert-UU-0.20
@@ -18,15 +18,11 @@ USE_PERL5=	YES
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 300000
-BROKEN=         perl paths
-.endif
-
 MAN1=		puuencode.1 puudecode.1
 MAN3=		Convert::UU.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
-		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL
+		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PERL5} Makefile.PL PREFIX=${PREFIX}
 
 .include <bsd.port.post.mk>
