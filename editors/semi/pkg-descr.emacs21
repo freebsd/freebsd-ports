@@ -7,7 +7,6 @@ SEMI, Library of MIME feature for GNU Emacs for emacs20.
   SEMI has the following features:
 	- MIME message viewer   (mime-view-mode) (RFC 2045 .. 2049)
 	- MIME message composer (mime-edit-mode) (RFC 2045 .. 2049)
-
   MIME message viewer and composer also support following features:
 	- filename handling by Content-Disposition field (RFC 1806)
 	- PGP/MIME security Multiparts (RFC 2015)
