@@ -20,6 +20,9 @@ CONFIGURE_ARGS=	--with-libwrap
 
 ALL_TARGET=	all mkpasswd
 
+post-extract:
+	@( cd ${WRKSRC}; ${RM} -f shout/calibrate shout/stresstest )
+
 post-configure:
 	@${MAKE} WRKSRC=${WRKSRC}/liveice do-configure
 
