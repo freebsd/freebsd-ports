@@ -8,7 +8,8 @@
 PORTNAME=	mpegaudio
 PORTVERSION=	3.9
 CATEGORIES=	audio
-MASTER_SITES=	http://www.iuma.com/IUMA/ftp/audio_utils/converters/source/
+MASTER_SITES=	http://www.iuma.com/IUMA/ftp/audio_utils/converters/source/ \
+		ftp://ftp.fh-wolfenbuettel.de/pub/os/freebsd/ports/distfiles/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
