@@ -1,12 +1,12 @@
 # New ports collection makefile for:	squid
-# Version required:	1.1.17
+# Version required:	1.1.18
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.32 1997/09/07 13:08:51 peter Exp $
+# $Id: Makefile,v 1.33 1997/10/25 02:51:12 peter Exp $
 #
 
-DISTNAME=	squid-1.1.17
+DISTNAME=	squid-1.1.18
 CATEGORIES=	www
 MASTER_SITES=  \
 	ftp://squid.nlanr.net/pub/squid-1.1/ \
@@ -20,7 +20,7 @@ EXTRACT_SUFX=	-src.tar.gz
 
 MAINTAINER=	peter@freebsd.org
 
-DIST_SUBDIR=	squid1.1.17
+DIST_SUBDIR=	squid1.1.18
 GNU_CONFIGURE=	yes
 # Follow the apache port's lead...
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/squid --bindir=${PREFIX}/sbin \
@@ -42,6 +42,7 @@ MAKEFILE=	makefile
 #MAKE_ENV+=	USE_SPLAY_TREE="-DUSE_SPLAY_TREE"
 #MAKE_ENV+=	USE_BIN_TREE="-DUSE_BIN_TREE"
 #MAKE_ENV+=	RELOAD_INTO_IMS="-DRELOAD_INTO_IMS"
+#MAKE_ENV+=	UNDERSCORES_OPT="-DALLOW_HOSTNAME_UNDERSCORES"
 
 post-install:
 	cd ${WRKSRC}/src; make install-pinger
