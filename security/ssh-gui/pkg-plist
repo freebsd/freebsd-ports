@@ -1,0 +1,3 @@
+bin/ssh-gui
+%%PORTDOCS%%share/doc/ssh-gui/README
+%%PORTDOCS%%@dirrm share/doc/ssh-gui

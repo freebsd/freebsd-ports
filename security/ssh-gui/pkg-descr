@@ -1,0 +1,5 @@
+SSH-GUI is a front-end for ssh which can open multiple xterms with
+connections. Supports all ssh options and soon will support user-host
+config saving and xterm config.
+
+WWW: http://sourceforge.net/projects/ssh-gui/
