@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A high-level interface for RDF
 
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2 \
-		raptor.1:${PORTSDIR}/textproc/raptor
+		raptor.2:${PORTSDIR}/textproc/raptor
 
 USE_OPENSSL=	yes
 USE_GETOPT_LONG=	yes
