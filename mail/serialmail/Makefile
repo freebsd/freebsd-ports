@@ -7,6 +7,7 @@
 
 PORTNAME=	serialmail
 PORTVERSION=	0.75
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.gbnet.net/pub/qmail/ \
@@ -26,11 +27,21 @@ NO_PACKAGE=	Unsure of DJB license
 
 ALL_TARGET=	it
 
+OPTIONS=	AUTH "Add CRAM-MD5, PLAIN and LOGIN authentication" OFF
+
 PROGRAMS=	serialqmtp serialsmtp maildirserial setlock
 SCRIPTS=	maildirqmtp maildirsmtp
 MAN1=		maildirqmtp.1 maildirserial.1 maildirsmtp.1 serialqmtp.1 \
 		serialsmtp.1 setlock.1
 DOCS=		AUTOTURN BLURB CHANGES FROMISP README TODO TOISP THANKS
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_AUTH)
+PATCH_SITES=	http://www.ingorohloff.de/soft/
+PATCHFILES=	serialmail-auth.patch
+PATCH_DIST_STRIP=	-p1
+.endif
 
 post-configure:
 	@${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-home
@@ -48,4 +59,4 @@ do-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
