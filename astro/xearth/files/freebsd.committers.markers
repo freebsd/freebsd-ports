@@ -13,7 +13,7 @@
   37.32  -121.94 "                                      ,jmg" # San Jose, CA
   37.40  -121.94 "                                          ,alfred" # Santa Clara
   37.33  -121.96 "                                                 ,nsayer" # ??? CA
-  37.39, -122,06 "                                                        ,marcel" # Mountain View, CA
+  37.39, -122.06 "                                                        ,marcel" # Mountain View, CA
   39.2    -77.0  "   ,gpalmer"			# Silver Spring, MD
   34.13  -118.12 "mph"                          # Pasadena, CA
   49.05  -122.48 "cpiazza"                      # near Vancouver, BC
@@ -51,7 +51,8 @@
   51.67     0.61 "     ,joe"                    # Amersham, Bucks, UK
   43.71    10.40 "luigi"                        # Pisa, Italy
 
-  36.45   139.37 "dcs"				# ???
+  36.45   139.37 "dcs"				# ???, Japan
+  35.7    139.6  "     knu"			# Tokyo, Japan
 
  -34.14   138.77 "grog"                         # Echunga, SA Australia
  -34.53   138.35 "    ,newton,kris"             # Adelaide, SA Australia
