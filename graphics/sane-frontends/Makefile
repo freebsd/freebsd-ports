@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	sane-frontends
-PORTVERSION=	1.0.9
+PORTVERSION=	1.0.10
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.mostang.com/pub/sane/%SUBDIR%/ \
 		ftp://ftp.de.mostang.com/pub/sane/%SUBDIR%/ \
 		ftp://ftp.no.mostang.com/pub/sane/%SUBDIR%/
-MASTER_SITE_SUBDIR=	sane-${PORTVERSION}
+MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
