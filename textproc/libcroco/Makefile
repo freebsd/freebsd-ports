@@ -7,7 +7,7 @@
 
 PORTNAME=	libcroco
 PORTVERSION=	0.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.4
@@ -19,9 +19,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-USE_GNOME=	gnomehack libgnomeui
-CONFIGURE_ARGS=	--enable-layeng=yes \
-		--enable-seleng=yes
+USE_GNOME=	gnomehack gtk20 libxml2
 
 MAN1=		croco-config.1 csslint.1
 
