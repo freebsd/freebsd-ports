@@ -1,0 +1,41 @@
+*** Imakefile.orig	Thu Oct 12 13:18:39 1995
+--- Imakefile	Fri Jan 19 12:38:23 1996
+***************
+*** 44,52 ****
+  PROGRAMS	= tgif prtgif XCOMM frontend11.o testdrive
+  XCOMM CDEBUGFLAGS= -g
+  XCOMM INSTPGMFLAGS= -s
+! XCOMM BINDIR	= /u/multimedia/$(MACHINE)/bin
+! XCOMM MANPATH	= /u/multimedia/man
+! XCOMM TGIFDIR	= /u/multimedia/lib/X11/tgif
+  TGIFDIR		= $(LIBDIR)/tgif
+  DEFINES		= -DTGIF_PATH=\"$(TGIFDIR)\" -DPSFILE_MOD=0664 \@@\
+                    -DEPSF_FILE_EXT=\"eps\" -DPS_FILE_EXT=\"ps\" \@@\
+--- 44,52 ----
+  PROGRAMS	= tgif prtgif XCOMM frontend11.o testdrive
+  XCOMM CDEBUGFLAGS= -g
+  XCOMM INSTPGMFLAGS= -s
+! BINDIR		= /usr/X11R6/bin
+! MANPATH		= /usr/X11R6/man
+! TGIFDIR		= /usr/X11R6/lib/X11/tgif
+  TGIFDIR		= $(LIBDIR)/tgif
+  DEFINES		= -DTGIF_PATH=\"$(TGIFDIR)\" -DPSFILE_MOD=0664 \@@\
+                    -DEPSF_FILE_EXT=\"eps\" -DPS_FILE_EXT=\"ps\" \@@\
+***************
+*** 54,60 ****
+                    -DOBJ_FILE_EXT=\"obj\" -DSYM_FILE_EXT=\"sym\" \@@\
+                    -DTEXT_FILE_EXT=\"txt\" \@@\
+                    -DTELEPORT_ATTR=\"warp_to=\" -DTMP_DIR=\"/tmp/\" \@@\
+!                   -DLAUNCH_ATTR=\"launch=\" -DEXEC_ATTR=\"exec=\"
+  
+  XCOMM Things to try to add to the DEFINES line above:
+  XCOMM
+--- 54,61 ----
+                    -DOBJ_FILE_EXT=\"obj\" -DSYM_FILE_EXT=\"sym\" \@@\
+                    -DTEXT_FILE_EXT=\"txt\" \@@\
+                    -DTELEPORT_ATTR=\"warp_to=\" -DTMP_DIR=\"/tmp/\" \@@\
+!                   -DLAUNCH_ATTR=\"launch=\" -DEXEC_ATTR=\"exec=\" -D_BSD \@@\
+! 		  -D_USE_XDRAWPOINT_TO_PUT_A_POINT
+  
+  XCOMM Things to try to add to the DEFINES line above:
+  XCOMM
