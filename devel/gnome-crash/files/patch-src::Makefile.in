@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/Makefile.in	2001/12/19 10:18:12	1.1
++++ src/Makefile.in	2001/12/19 10:20:11
+@@ -129,7 +129,7 @@
+ gdb_DATA = gdb-cmd
+ 
+ #CFLAGS+=-Werror
+-INCLUDES =  	-I$(top_srcdir)/intl						-I$(top_builddir)/intl						-I$(includedir) $(EXTRA_GNOME_CFLAGS)				-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"			-DGNOME_CRASH_GLADE_DIR=\""$(gladedir)"\"			-DGNOME_CRASH_GDB_DIR=\""$(gdbdir)"\"				-DGNOME_CRASH_ICON_DIR=\""$(datadir)/pixmaps"\"			-DGNOME_CRASH_DATA_DIR=\""$(datadir)/gnome-crash"\"
++INCLUDES =  	$(GNOME_PRINT_CFLAGS)	-I$(top_srcdir)/intl						-I$(top_builddir)/intl						-I$(includedir) $(EXTRA_GNOME_CFLAGS)				-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"			-DGNOME_CRASH_GLADE_DIR=\""$(gladedir)"\"			-DGNOME_CRASH_GDB_DIR=\""$(gdbdir)"\"				-DGNOME_CRASH_ICON_DIR=\""$(datadir)/pixmaps"\"			-DGNOME_CRASH_DATA_DIR=\""$(datadir)/gnome-crash"\"
+ 
+ 
+ bin_PROGRAMS = gnome-crash
