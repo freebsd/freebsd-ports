@@ -7,13 +7,13 @@
 
 PORTNAME=	jdk
 PORTVERSION=	1.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	java devel
 MASTER_SITES=	ftp://ftp.tux.org/pub/java/JDK-${PORTVERSION}/${ARCH}/FCS/ \
 		http://www.metaverse.nl/~ernst/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	znerd
-PKGNAMEPREFIX=	linux-
+PKGNAMEPREFIX=	linux-blackdown-
 DISTNAME=	j2sdk-${PORTVERSION}-FCS-linux-${ARCH}-glibc-2.1.3
 
 MAINTAINER=	znerd@FreeBSD.org
