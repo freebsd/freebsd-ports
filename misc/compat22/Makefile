@@ -35,6 +35,10 @@ INSTALLS_SHLIB=	yes
 LDCONFIG=	/sbin/ldconfig -aout
 LDCONFIG_DIRS=	%%PREFIX%%/lib/compat/aout
 
+.if defined(BATCH) || defined(PACKAGE_BUILDING)
+IGNORE=		"does damage to bento cluster"
+.endif
+
 do-extract:
 	${MKDIR} ${WRKDIR}
 	cd ${_DISTDIR} && ${CAT} ${DISTFILES} | ${TAR} -xzf - -C ${WRKDIR}

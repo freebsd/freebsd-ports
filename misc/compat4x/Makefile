@@ -26,6 +26,10 @@ TARGET_DIR=	${PREFIX}/lib/compat
 INSTALLS_SHLIB=	yes
 LDCONFIG_DIRS=	%%PREFIX%%/lib/compat
 
+.if defined(BATCH) || defined(PACKAGE_BUILDING)
+IGNORE=		"does damage to bento cluster"
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 500000
