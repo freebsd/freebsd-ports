@@ -35,6 +35,7 @@
     SUBDIR += nightfall
     SUBDIR += nova
     SUBDIR += openuniverse
+    SUBDIR += orsa
     SUBDIR += p5-Astro-ADS
     SUBDIR += p5-Astro-Catalog
     SUBDIR += p5-Astro-DSS

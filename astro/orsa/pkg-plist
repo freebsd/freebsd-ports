@@ -1,0 +1,26 @@
+bin/xorsa
+include/orsa/orsa_analysis.h
+include/orsa/orsa_body.h
+include/orsa/orsa_common.h
+include/orsa/orsa_config.h
+include/orsa/orsa_coord.h
+include/orsa/orsa_error.h
+include/orsa/orsa_fft.h
+include/orsa/orsa_file.h
+include/orsa/orsa_file_jpl.h
+include/orsa/orsa_frame.h
+include/orsa/orsa_integrator.h
+include/orsa/orsa_interaction.h
+include/orsa/orsa_orbit.h
+include/orsa/orsa_orbit_gsl.h
+include/orsa/orsa_secure_math.h
+include/orsa/orsa_units.h
+include/orsa/orsa_universe.h
+include/orsa/orsa_version.h
+@dirrm include/orsa
+lib/liborsa.a
+lib/liborsa.so
+lib/liborsa.so.0
+lib/libxorsa.a
+lib/libxorsa.so
+lib/libxorsa.so.0
