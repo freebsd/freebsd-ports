@@ -14,10 +14,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	tlp@liquidx.org
 COMMENT=	GXmame is a GTK frontend for xmame
 
-#RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame \
-RUN_DEPENDS=	\
-		${LOCALBASE}/lib/libiconv.so.3:${PORTSDIR}/converters/libiconv \
-		${LOCALBASE}/lib/libintl.so.5:${PORTSDIR}/devel/gettext
+RUN_DEPENDS=	xmame:${PORTSDIR}/emulators/xmame
+LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
+		intl.5:${PORTSDIR}/devel/gettext
 
 USE_GZIP=	yes
 USE_XLIB=	yes
