@@ -3,7 +3,7 @@
 # Date created:         7 Jul 98
 # Whom:                 Jerry Hicks <jhicks@glenatl.glenayre.com>
 #
-# $Id: Makefile,v 1.4 1998/08/17 00:22:25 steve Exp $
+# $Id: Makefile,v 1.5 1998/11/21 17:55:47 steve Exp $
 #
 
 DISTNAME=	gdb-4.17
@@ -13,7 +13,6 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 
 MAINTAINER=	Jerry.Hicks@Glenayre.com
 
-NO_PACKAGE=	limited audience
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS= --target=m68k-coff

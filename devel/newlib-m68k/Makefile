@@ -3,7 +3,7 @@
 # Date created:		7 July 1998
 # Whom:			Jerry Hicks <jhicks@glenatl.glenayre.com>
 #
-# $Id: Makefile,v 1.2 1998/08/17 00:23:06 steve Exp $
+# $Id: Makefile,v 1.3 1998/11/21 17:55:47 steve Exp $
 #
 
 DISTNAME=	newlib-1.8.1
@@ -15,7 +15,6 @@ MAINTAINER=	Jerry.Hicks@Glenayre.com
 
 BUILD_DEPENDS=	m68k-coff-gcc:${PORTSDIR}/devel/m68kgcc
 
-NO_PACKAGE=	limited audience
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
