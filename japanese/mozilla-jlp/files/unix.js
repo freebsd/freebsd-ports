@@ -72,6 +72,9 @@ pref("browser.urlbar.clickSelectsAll", false);
 // Leave this at the default, 7, to match mozilla1.0-era user expectations.
 // pref("accessibility.tabfocus", 1);
 
+// Beep instead of playing sound in Linux, at least until nsISound is fixed:
+pref("accessibility.typeaheadfind.soundURL", "beep");
+
 // override double-click word selection behavior.
 pref("layout.word_select.stop_at_punctuation", false);
 
@@ -240,9 +243,10 @@ pref("font.embedded_bitmaps.max", 1000000);
 pref("font.scale.tt_bitmap.dark_text.min", 64);
 pref("font.scale.tt_bitmap.dark_text.gain", "0.8");
 // sample prefs for TrueType font dirs
-//pref("font.directory.truetype.1", "/u/sam/tt_font");
+//pref("font.directory.truetype.1", "/u/sam/tt_font1");
 //pref("font.directory.truetype.2", "/u/sam/tt_font2");
 //pref("font.directory.truetype.3", "/u/sam/tt_font3");
+pref("font.FreeType2.printing", true);
 
 // below a certian pixel size anti-aliased bitmat scaled fonts 
 // produce poor results
