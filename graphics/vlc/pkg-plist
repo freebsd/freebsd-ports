@@ -1,10 +1,5 @@
 bin/vlc
 bin/gvlc
-include/videolan/dvdcss.h
-lib/libdvdcss.a
-lib/libdvdcss.so
-lib/libdvdcss.so.1
-lib/libdvdcss.so.1.0.1_%%LIB_DATE%%
 lib/videolan/vlc/ac3_spdif.so
 lib/videolan/vlc/dsp.so
 lib/videolan/vlc/gtk.so
@@ -25,5 +20,4 @@ share/videolan/qvlc.xpm
 share/videolan/vlc.xpm
 @dirrm lib/videolan/vlc
 @dirrm lib/videolan
-@dirrm include/videolan
 @dirrm share/videolan
