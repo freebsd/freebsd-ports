@@ -177,8 +177,8 @@ include/Xfwf/icon.h
 include/Xfwf/long.h
 include/Xfwf/scroll.h
 include/Xfwf/strarray.h
-lib/libDir.a  
-lib/libfwf.a  
+lib/libDir.a
+lib/libfwf.a
 man/man1/Alert.1.gz
 man/man1/AlertT.1.gz
 man/man1/Animator.1.gz

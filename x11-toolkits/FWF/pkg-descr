@@ -21,25 +21,3 @@ goals, that is the improvement of the quality and quantity of
 freely-redistributable public software, this organization is in no way related
 to the Free Software Foundation or the GNU projects.  In fact, we aren't even
 a "foundation" in the legal meaning of the word.
-
-See the file README.BUILD for information on building the FWF widgets.
-
-Please also fill out and return the user-feedback survey enclosed in the
-file SURVEY, to help us improve future releases.
-
-The following files may be of interest in describing other parts of the
-system:
-
-	README			This file
-	README.FWF		Information about the Free Widget Foundation
-	README.BUILD		How to build the free widgets
-	README.INDEX		Index of widgets contained in this release
-	README.IMAKE		Details about the imake structure
-	README.NOTES		Assorted notes about the state of the release
-	README.OBTAIN		How to obtain the latest FWF widgets
-	README.TODO		Bugs, inadequacies, planned changes, requests
-	README.SUBMISSION	How to submit your widgets to the FWF
-	BUGREPORT		Template for issuing bug reports
-	SURVEY			A short survey for user feedback
-	VERSION			Current FWF release version
-
