@@ -1,7 +1,14 @@
-Spreadsheet::WriteExcel - Write formatted text and numbers to a 
-cross-platform Excel binary file.
+The Spreadsheet::WriteExcel module can be used to create
+a cross-platform Excel binary file.  Multiple worksheets can be added
+to a workbook and formatting can be applied to cells.  Text, numbers,
+formulas, hyperlinks and images can be written to the cells.
 
-WWW: http://search.cpan.org/search?module=Spreadsheet::WriteExcel
+The Excel file produced by this module is compatible with Excel 5, 95,
+97, 2000 and 2002, also Gnumeric and OpenOffice.
+
+This module cannot be used to write to an existing Excel file.
+
+WWW: http://search.cpan.org/search?dist=Spreadsheet-WriteExcel
 
 -- Sergey Skvortsov
 skv@FreeBSD.org
