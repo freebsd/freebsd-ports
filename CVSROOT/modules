@@ -533,6 +533,7 @@ blt		ports/x11-toolkits/blt
 blue		ports/games/blue
 bluefish	ports/www/bluefish
 bluej		ports/java/bluej
+blwm		ports/x11-wm/blwm
 bmsync		ports/www/bmsync
 bnc		ports/irc/bnc
 bnetd		ports/games/bnetd
