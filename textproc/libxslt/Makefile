@@ -7,6 +7,7 @@
 
 PORTNAME=	libxslt
 PORTVERSION=	1.1.12
+PORTREVISION=	1
 CATEGORIES?=	textproc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.1
@@ -47,7 +48,7 @@ WITH_GCRYPT=	yes
 .endif
 
 .if defined(WITH_GCRYPT)
-LIB_DEPENDS+=	gcrypt.12:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	gcrypt.13:${PORTSDIR}/security/libgcrypt
 .endif
 
 pre-everything::
