@@ -15,8 +15,7 @@ DISTNAME=	${PORTNAME:S/gnome/gnome-/}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A nice frontend to the telnet, ssh, and rlogin clients for GNOME
 
-BUILD_DEPENDS=	${LOCALBASE}/share/automake/install-sh:${PORTSDIR}/devel/automake
-
+WANT_AUTOMAKE_VER=15
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomelibs gnomeprefix
@@ -26,7 +25,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-configure:
-	@${LN} -sf ${LOCALBASE}/share/automake/install-sh ${WRKSRC}
+	@${LN} -sf ${AUTOMAKE_DIR}/install-sh ${WRKSRC}
 	@${RM} -f ${WRKSRC}/config.cache
 .for file in config.guess config.sub
 	@${RM} -f ${WRKSRC}/${file} && ${TOUCH} ${WRKSRC}/${file}

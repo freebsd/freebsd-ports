@@ -19,8 +19,7 @@ COMMENT=	C++ class library of common digital signal processing functions
 
 WRKSRC=		${WRKDIR}/libdsp-src/${PORTNAME:S/dsp/DSP/}-${PORTVERSION}
 
-USE_LIBTOOL_VER=	13
-LIBTOOLFILES=	# none
+WANT_LIBTOOL_VER=13
 USE_GMAKE=	yes
 MAKE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" MKDIR="${MKDIR}" \
 		INLINE_VER="${INLINE_VER}"
@@ -29,7 +28,6 @@ INSTALLS_SHLIB=	yes
 
 INLINE_VER=	1.2.5
 
-# There's no configure script, but we need libtool to build
 do-configure:
 	@${DO_NADA}
 

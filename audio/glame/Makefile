@@ -15,9 +15,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful, fast, stable, and easily extensible sound editor for GNOME
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
-LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis \
-		ltdl.4:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
 
+USE_LIBLTDL=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget libglade lthack
 USE_GMAKE=	yes

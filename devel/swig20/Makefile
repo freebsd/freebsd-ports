@@ -14,8 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Simplified Wrapper and Interface Generator
 
-BUILD_DEPENDS=		autoconf:${PORTSDIR}/devel/autoconf
-
+WANT_AUTOCONF_VER=253
 VER=		${PORTVERSION:R}
 
 # Supported languages: guile perl php4 python ruby tcl ocaml pike java

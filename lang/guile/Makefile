@@ -15,8 +15,7 @@ MASTER_SITE_SUBDIR=	guile
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNU Ubiquitous Intelligent Language for Extension
 
-LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl
-
+USE_LIBLTDL=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

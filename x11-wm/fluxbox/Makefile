@@ -26,7 +26,7 @@ RUN_DEPENDS=	bsetbg:${PORTSDIR}/x11-wm/boxtools \
 		xterm:${PORTSDIR}/x11/XFree86-4-clients
 BUILD_DEPENDS=	xterm:${PORTSDIR}/x11/XFree86-4-clients
 .if defined(WITH_REMEMBER)
-BUILD_DEPENDS+=	automake14:${PORTSDIR}/devel/automake14
+WANT_AUTOMAKE_VER=14
 .endif
 
 USE_X_PREFIX=	yes

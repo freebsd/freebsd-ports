@@ -17,9 +17,8 @@ COMMENT=	UML Modeller
 
 CONFLICTS=	kdesdk-3.[2-].*
 
-BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
-		automake14:${PORTSDIR}/devel/automake14
-
+WANT_AUTOMAKE_VER=14
+WANT_AUTOCONF_VER=213
 USE_KDELIBS_VER=3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

@@ -20,8 +20,8 @@ COMMENT=	A color vt102 terminal emulator with transparency support
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
-BUILD_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf
 
+WANT_AUTOCONF_VER=253
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 GNU_CONFIGURE=	yes
@@ -38,8 +38,9 @@ MAN1=		aterm.1
 
 pre-configure:
 	@(cd ${WRKSRC}; \
-	autoheader --localdir=autoconf autoconf/configure.in > autoconf/config.h.in; \
-	autoconf --localdir=autoconf autoconf/configure.in > configure)
+	${AUTOHEADER} --localdir=autoconf autoconf/configure.in > autoconf/config.h.in; \
+	${AUTOCONF} --localdir=autoconf autoconf/configure.in > configure)
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/aterm ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/aterm.1 ${PREFIX}/man/man1/

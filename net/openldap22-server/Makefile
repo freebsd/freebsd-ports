@@ -218,7 +218,7 @@ LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
 .endif
 
 .if defined(WITH_SLAPI)
-LIB_DEPENDS+=		ltdl.4:${PORTSDIR}/devel/libltdl
+USE_LIBLTDL=		yes
 CONFIGURE_ARGS+=	--enable-slapi \
 			--enable-modules
 PLIST_SUB+=		SLAPI=""

@@ -16,9 +16,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An open-source COBOL compiler
 
-LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl \
-		gmp.6:${PORTSDIR}/math/libgmp4
+LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
 
+USE_LIBLTDL=	yes
 USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

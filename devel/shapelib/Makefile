@@ -13,12 +13,10 @@ MASTER_SITES=	http://shapelib.maptools.org/dl/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C API for reading and writing ArcView Shapefiles
 
-USE_LIBTOOL_VER=	13
-LIBTOOLFILES=	# none
+WANT_LIBTOOL_VER=13
 ALL_TARGET=	lib
 INSTALLS_SHLIB=	yes
 
-# no configure script, but we need the libtool environment
 do-configure:
 	@${CP} ${LIBTOOL} ${WRKSRC}
 

@@ -16,11 +16,10 @@ MASTER_SITE_SUBDIR=		dict
 MAINTAINER?=	dd@FreeBSD.org
 COMMENT=	Dict protocol (RFC 2229) server
 
-LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl
-
 MAN1=		dictzip.1
 MAN8=		dictd.8
 
+USE_LIBLTDL=	yes
 USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_LIBTOOL_VER=13

@@ -14,10 +14,9 @@ MASTER_SITE_SUBDIR=	lesstif
 MAINTAINER=	dinoex@freebsd.org
 COMMENT=	API compatible clone of the Motif toolkit
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/automake:${PORTSDIR}/devel/automake
-
 CONFLICTS?=	open-motif-*
 MANUAL_PACKAGE_BUILD=	do not want to install during interactive build
+WANT_AUTOMAKE_VER=	15
 USE_AUTOCONF_VER=	257
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes

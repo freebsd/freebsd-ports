@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/xmms-jack
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12 gnometarget
 USE_GMAKE=	yes
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 
 PLIST_FILES=	lib/xmms/Output/libjackout.so

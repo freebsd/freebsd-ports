@@ -19,6 +19,7 @@ COMMENT=	GNU Ada distributed systems annex
 BUILD_DEPENDS=	adagcc:${PORTSDIR}/lang/gnat
 
 USE_AUTOMAKE_VER=14
+USE_AUTOCONF_VER=213
 CONFIGURE_ENV=	ADA=adagcc
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes

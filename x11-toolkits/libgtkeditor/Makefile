@@ -16,9 +16,10 @@ DISTNAME=	${PORTNAME:S/lib//}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A source code editor widget for GTK+
 
-BUILD_DEPENDS=	${LOCALBASE}/share/automake/install-sh:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode
 
+WANT_AUTOMAKE_VER=15
+WANT_AUTOCONF_VER=253
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes
@@ -33,7 +34,7 @@ CONFIGURE_TARGET=	${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 pre-configure:
 .for file in install-sh mkinstalldirs
-	@${LN} -sf ${LOCALBASE}/share/automake/${file} ${WRKSRC}/${file}
+	@${LN} -sf ${AUTOMAKE_DIR}/${file} ${WRKSRC}/${file}
 .endfor
 	@${RM} ${WRKSRC}/config.guess ${WRKSRC}/config.sub
 	@${TOUCH} ${WRKSRC}/config.sub

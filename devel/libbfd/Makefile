@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--enable-install-libbfd \
 CONFIGURE_ARGS+=	--host=x86_64-portbld-freebsd${OSREL}
 .endif
 
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 
 INFO=		bfd
 

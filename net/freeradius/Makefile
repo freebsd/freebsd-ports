@@ -15,12 +15,13 @@ MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free RADIUS server implementation
 
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
-		ltdl.4:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
 LOGDIR?=	/var/log
 
 CONFLICTS=	gnu-radius-1.* openradius-0.* radiusd-cistron-1.*
+
+USE_LIBLTDL=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_LIBTOOL_VER=13

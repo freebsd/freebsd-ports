@@ -370,7 +370,7 @@ CONFIGURE_ARGS+=--with-mcve=${LOCALBASE}
 
 .if defined(WITH_MCRYPT)
 LIB_DEPENDS+=	mcrypt.8:${PORTSDIR}/security/libmcrypt
-LIB_DEPENDS+=	ltdl.4:${PORTSDIR}/devel/libltdl
+USE_LIBLTDL=	yes
 CONFIGURE_ARGS+=--with-mcrypt=${LOCALBASE}
 .endif
 

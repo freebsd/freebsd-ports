@@ -17,8 +17,7 @@ DISTNAME=	GNUnet-${PORTVERSION}
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	An anonymous, distributed, reputation-based network
 
-LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl
-
+USE_LIBLTDL=	yes
 USE_BZIP2=	yes
 USE_GETOPT_LONG=	yes
 USE_GETTEXT=	yes

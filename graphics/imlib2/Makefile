@@ -14,13 +14,13 @@ MASTER_SITE_SUBDIR=	enlightenment
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The next generation graphic library for enlightenment package
 
-LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl \
-		jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.9:${PORTSDIR}/print/freetype2
 
+USE_LIBLTDL=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_REINPLACE=	yes

@@ -15,12 +15,10 @@ MASTER_SITES=	http://gtk.php.net/distributions/ \
 MAINTAINER=	kiesel@schlund.de
 COMMENT=	An extension to use gtk in PHP-applications
 
-# Don't call autoconf directly, ./buildconf does this
-GNU_CONFIGURE=	yes
-USE_LIBTOOL_VER=	13
 WANT_AUTOMAKE_VER=	15
-WANT_AUTOCONF_VER=	253
-LIBTOOLFILES=	# none
+USE_AUTOCONF_VER=	253
+WANT_LIBTOOL_VER=	13
+GNU_CONFIGURE=	yes
 USE_PHP=	yes
 USE_PHPIZE=	yes
 WANT_PHP_CLI=	yes

@@ -17,12 +17,12 @@ DIST_SUBDIR=	mod_webapp
 MAINTAINER=	asachs@uunet.co.za
 COMMENT=	Apache module mounts Tomcat web applications
 
-BUILD_DEPENDS=	${NONEXISTANT}:${PORTSDIR}/devel/apr:extract \
-		${AUTOCONF}:${PORTSDIR}/devel/autoconf
+BUILD_DEPENDS=	${NONEXISTANT}:${PORTSDIR}/devel/apr:extract
 
 USE_APACHE=	yes
-USE_LIBTOOL_VER=13
-LIBTOOLFILES=	# none
+WANT_AUTOCONF_VER=253
+WANT_LIBTOOL_VER=13
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 

@@ -13,8 +13,8 @@ MASTER_SITES=	ftp://www.alobbs.com/cherokee/
 MAINTAINER=	oksala@videotron.ca
 COMMENT=	Cherokee is an extremely fast and tiny web server
 
-#USE_AUTOCONF=	yes
-#USE_AUTOMAKE=	yes
+#USE_AUTOCONF_VER=213
+#USE_AUTOMAKE_VER=14
 HAS_CONFIGURE=  yes
 CONFIGURE_ARGS= --prefix=${PREFIX}
 INSTALLS_SHLIB=	yes

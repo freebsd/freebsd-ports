@@ -18,10 +18,9 @@ DISTNAME=	Mird-${PORTVERSION}
 MAINTAINER=	kiwi@oav.net
 COMMENT=	A free database library with transaction support
 
-BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
-
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+WANT_AUTOCONF_VER=253
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

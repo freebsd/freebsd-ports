@@ -24,6 +24,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 RUN_DEPENDS=	${LOCALBASE}/include/boost/any.hpp:${PORTSDIR}/devel/boost
 
 USE_AUTOMAKE_VER=	14
+USE_AUTOCONF_VER=	213
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes

@@ -17,10 +17,10 @@ COMMENT=	NewsCache is a free cache server for USENET News
 
 LIB_DEPENDS=	socket[+][+].1:${PORTSDIR}/net/libsocket++
 
-USE_AUTOHEADER=		yes
 USE_AUTOMAKE_VER=	15
+USE_AUTOHEADER_VER=	253
 USE_GETOPT_LONG=	yes
-USE_REINPLACE=	yes
+USE_REINPLACE=		yes
 AUTOMAKE_ARGS=		--add-missing
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"

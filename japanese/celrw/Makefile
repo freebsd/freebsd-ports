@@ -13,17 +13,16 @@ MASTER_SITES=	http://www.nurs.or.jp/~kurati/celrw/
 MAINTAINER=	shuna@pop16.odn.ne.jp
 COMMENT=	Cellular phone-number read/write tool (in Japan only)
 
-BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake
-
+WANT_AUTOMAKE_VER=15
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 ALL_TARGET=
 
 pre-configure:
 	${RM} -f ${WRKSRC}/install.sh
-	${LN} -sf ${PREFIX}/share/automake/install-sh ${WRKSRC}/install-sh
-	${LN} -sf ${PREFIX}/share/automake/config.guess ${WRKSRC}/config.guess
-	${LN} -sf ${PREFIX}/share/automake/config.sub ${WRKSRC}/config.sub
+	${LN} -sf ${AUTOMAKE_DIR}/install-sh ${WRKSRC}/install-sh
+	${LN} -sf ${AUTOMAKE_DIR}/config.guess ${WRKSRC}/config.guess
+	${LN} -sf ${AUTOMAKE_DIR}/config.sub ${WRKSRC}/config.sub
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/celrw ${PREFIX}/bin

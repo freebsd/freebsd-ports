@@ -21,6 +21,7 @@ LIB_DEPENDS=    eb.7:${PORTSDIR}/japanese/eb
 
 GNU_CONFIGURE=	yes
 USE_AUTOMAKE_VER=	14
+USE_AUTOCONF_VER=	213
 CONFIGURE_ARGS=	--with-eb-includes=${PREFIX}/include \
 		--with-eb-libraries=${PREFIX}/lib
 

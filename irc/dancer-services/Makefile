@@ -15,11 +15,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	The IRC services (nickserv, chanserv, etc.) for dancer-ircd
 
-BUILD_DEPENDS+=		${LOCALBASE}/bin/autoconf:${PORTSDIR}/devel/autoconf \
-			${LOCALBASE}/bin/automake:${PORTSDIR}/devel/automake
-
+WANT_AUTOMAKE_VER=15
+WANT_AUTOCONF_VER=253
 USE_RC_SUBR=	yes
-
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -39,7 +37,7 @@ post-patch:
 		${WRKSRC}/bin/settings.conf.in
 
 pre-configure:
-	cd ${WRKSRC}; ${SH} ./autogen.sh
+	cd ${WRKSRC}; ${SETENV} ${SCRIPTS_ENV} ${SH} ./autogen.sh
 
 pre-build:
 	cd ${WRKSRC}; ${MAKE} depend

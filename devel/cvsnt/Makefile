@@ -14,8 +14,7 @@ MASTER_SITES=	http://www.cvsnt.org/archive/ \
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	CVS clone
 
-LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl
-
+USE_LIBLTDL=	yes
 USE_LIBTOOL_VER=	13
 CONFIGURE_ARGS=	--enable-fork
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

@@ -16,6 +16,7 @@ MAINTAINER=	asaddi@philosophysw.com
 COMMENT=	Batch USENET news reader with filter capabilities
 
 USE_AUTOMAKE_VER=	14
+USE_AUTOCONF_VER=	213
 USE_GMAKE=	yes
 
 MAN1=		newsfish.1

@@ -15,9 +15,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scientific plotting package
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
-LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl \
-		gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
+USE_LIBLTDL=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

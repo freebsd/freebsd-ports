@@ -15,8 +15,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	"Domain Name Server (DNS) implementation"
 
-LIB_DEPENDS=	poslib.0:${PORTSDIR}/devel/poslib \
-		ltdl.4:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	poslib.0:${PORTSDIR}/devel/poslib
+
+USE_LIBLTDL=	yes
 
 .if defined(WITH_FAM) || exists(${LOCALBASE}/lib/libfam.so)
 CONFIGURE_ARGS=	--enable-fam

@@ -18,6 +18,7 @@ USE_REINPLACE=	yes
 WANT_GNOME=	yes
 USE_GMAKE=	yes
 USE_AUTOMAKE_VER=	14
+USE_AUTOCONF_VER=	213
 
 .include <bsd.port.pre.mk>
 

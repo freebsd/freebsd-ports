@@ -15,19 +15,16 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An alternative to the OpenGL Utility Toolkit (GLUT) library
 
 USE_AUTOMAKE_VER=	14
-USE_AUTOHEADER=	yes
+USE_AUTOCONF_VER=	213
+USE_AUTOHEADER_VER=	213
+USE_LIBTOOL_VER=	13
 HAS_CONFIGURE=	yes
-USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
 USE_XLIB=	yes
 CONFIGURE_ARGS=	--x-includes=${X11BASE}/include			\
 		--x-libraries=${X11BASE}/lib			\
 		--enable-replace-glut
-CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"			\
-		ACLOCAL="${ACLOCAL}"				\
-		AUTOCONF="${AUTOCONF}"				\
-		AUTOMAKE="${AUTOMAKE}"				\
-		AUTOHEADER="${AUTOHEADER}"
+CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"
 
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""

@@ -35,6 +35,7 @@ USE_ICONV=	yes
 USE_GNOME=	libglade2
 USE_MYSQL=	yes
 BROKEN_WITH_MYSQL=	323
+GNU_CONFIGURE=	yes
 
 LIB_DEPENDS+=	gtkmm-2.0:${PORTSDIR}/x11-toolkits/gtk--2 \
 		pcre.0:${PORTSDIR}/devel/pcre

@@ -27,7 +27,7 @@ USE_GNOME=	gstreamerplugins \
 		gnomehack \
 		pkgconfig \
 		lthack
-USE_LIBTOOL=	yes
+USE_LIBTOOL_VER=13
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}"
 DOCS=		README.html README.txt

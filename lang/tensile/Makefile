@@ -18,9 +18,9 @@ MASTER_SITES=	http://savannah.gnu.org/download/nsl/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Programming language designed for especially complex processing texts
 
-LIB_DEPENDS=	utils.1:${PORTSDIR}/lang/libutils \
-		ltdl.4:${PORTSDIR}/devel/libltdl
+LIB_DEPENDS=	utils.1:${PORTSDIR}/lang/libutils
 
+USE_LIBLTDL=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13

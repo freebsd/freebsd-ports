@@ -21,7 +21,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The gcc-2.95.2 cross-compiler for the 6811
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/m6811-elf-as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils
-BUILD_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf
 
 # Configuration alpha-unknown-freebsdelf not supported
 # Configuration sparc64-unknown-freebsdelf not supported
@@ -29,6 +28,7 @@ BUILD_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf
 ONLY_FOR_ARCHS=	i386
 MANUAL_PACKAGE_BUILD=	Path problem to autoheader on bento
 
+WANT_AUTOCONF_VER=253
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 .if defined(_CPUCFLAGS) && !empty(_CPUCFLAGS)

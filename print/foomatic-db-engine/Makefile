@@ -14,13 +14,13 @@ MASTER_SITES=	#
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Foomatic database engine
 
-BUILD_DEPENDS=	aclocal:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		curl.3:${PORTSDIR}/ftp/curl
 
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_BZIP2=	yes
+WANT_AUTOMAKE_VER=	15
 USE_AUTOCONF_VER=	213
 GNU_CONFIGURE=	yes
 NO_CHECKSUM=	yes	# the tarball is created on the fly from CVS

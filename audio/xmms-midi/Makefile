@@ -19,6 +19,7 @@ RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 USE_GNOME=	gtk12
 USE_X_PREFIX=	yes
 USE_AUTOMAKE_VER=	14
+USE_AUTOCONF_VER=	213
 USE_LIBTOOL_VER=	13
 
 .include <bsd.port.mk>

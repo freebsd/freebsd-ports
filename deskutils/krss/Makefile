@@ -16,9 +16,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE Rich Site Summary viewer
 
-BUILD_DEPENDS=	autoconf213:${PORTSDIR}/devel/autoconf213 \
-		automake14:${PORTSDIR}/devel/automake14
-
+WANT_AUTOMAKE_VER=14
+WANT_AUTOCONF_VER=213
 USE_KDEBASE_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -29,12 +28,10 @@ QTCFGLIBS+=	${PTHREAD_LIBS}
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/auto-bin
-.for AC in autoconf autoheader
-	${LN} -sf ${LOCALBASE}/bin/${AC}213 ${WRKSRC}/auto-bin/${AC}
-.endfor
-.for AM in automake aclocal
-	${LN} -sf ${LOCALBASE}/bin/${AM}14 ${WRKSRC}/auto-bin/${AM}
-.endfor
+	${LN} -sf ${AUTOCONF} ${WRKSRC}/auto-bin/autoconf
+	${LN} -sf ${AUTOHEADER} ${WRKSRC}/auto-bin/autoheader
+	${LN} -sf ${AUTOMAKE} ${WRKSRC}/auto-bin/automake
+	${LN} -sf ${ACLOCAL} ${WRKSRC}/auto-bin/aclocal
 	cd ${WRKSRC} && env PATH=${WRKSRC}/auto-bin:$$PATH \
 		${GMAKE} -f Makefile.dist
 

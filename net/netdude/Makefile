@@ -15,9 +15,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	yb@sainte-barbe.org
 COMMENT=	NETwork DUmp data Displayer and Editor for tcpdump tracefiles
 
-LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl \
-		netdude.0:${PORTSDIR}/net/libnetdude
+LIB_DEPENDS=	netdude.0:${PORTSDIR}/net/libnetdude
 
+USE_LIBLTDL=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_LIBTOOL_VER=	13

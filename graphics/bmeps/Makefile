@@ -18,7 +18,7 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		netpbm.1:${PORTSDIR}/graphics/netpbm
 
-USE_AUTOCONF=	213
+USE_AUTOCONF_VER=213
 USE_BZIP2=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include"

@@ -1,0 +1,14 @@
+--- Makefile.in.orig	Wed Oct  1 11:17:31 2003
++++ Makefile.in	Fri May 28 20:00:09 2004
+@@ -164,7 +164,7 @@
+ 	  if test -f $$p; then \
+-	    echo " $(INSTALL_SCRIPT) $$p $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`"; \
+-	    $(INSTALL_SCRIPT) $$p $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`; \
++	    echo " $(INSTALL_SCRIPT) $$p $(DESTDIR)$(bindir)"; \
++	    $(INSTALL_SCRIPT) $$p $(DESTDIR)$(bindir); \
+ 	  else if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_SCRIPT) $(srcdir)/$$p $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`"; \
+-	    $(INSTALL_SCRIPT) $(srcdir)/$$p $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)'`; \
++	    echo " $(INSTALL_SCRIPT) $(srcdir)/$$p $(DESTDIR)$(bindir)"; \
++	    $(INSTALL_SCRIPT) $(srcdir)/$$p $(DESTDIR)$(bindir); \
+ 	  else :; fi; fi; \

@@ -20,10 +20,10 @@ MASTER_SITE_SUBDIR=	mcrypt
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Replacement for crypt(1)
 
-BUILD_DEPENDS=	autoconf257:${PORTSDIR}/devel/autoconf257
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt/ \
 		mhash.2:${PORTSDIR}/security/mhash/
 
+WANT_AUTOCONF_VER=	257
 USE_GETTEXT=		yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--enable-static --with-catgets
@@ -38,7 +38,7 @@ PLIST=			${WRKDIR}/pkg-plist
 
 # to avoid having to read the configure script
 pre-configure:
-	cd ${WRKSRC} && ${RM} configure && autoconf257
+	cd ${WRKSRC} && ${RM} configure && ${AUTOCONF}
 
 pre-install:
 	${ECHO_CMD} bin/${PORTNAME} > ${PLIST}
