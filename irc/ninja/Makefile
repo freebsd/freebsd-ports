@@ -6,21 +6,30 @@
 #
 
 PORTNAME=	ninja
-PORTVERSION=	1.2
+PORTVERSION=	1.5.1
 CATEGORIES=	irc
-MASTER_SITES=	ftp://ninja.qoop.org/ninja/unstable/
-DISTFILES= 	${DISTNAME}-src.tar.gz
+MASTER_SITES=	ftp://ninja.qoop.org/ninja/sources/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 GNU_CONFIGURE=	yes
-PLIST_SUB=	VERSION="${PORTVERSION}"
+CONFIGURE_ENV=	IRCLIB="${IRCLIB}"
+
+IRCLIB=		${PREFIX}/share/ninja
 
 pre-patch:
 	@${CP} ${WRKSRC}/config/configure ${WRKSRC}
 
 post-patch:
-	@${SED} -e s#__PREFIX__#$(PREFIX)#g $(WRKSRC)/include/config.h.dist > $(WRKSRC)/include/config.h.dist.new
-	@${MV} $(WRKSRC)/include/config.h.dist.new $(WRKSRC)/include/config.h.dist
+	@${PERL} -e "s|%%IRCLIB%%|${IRCLIB}|g" ${WRKSRC}/include/config.h.dist
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/source/ninja ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/source/wserv ${PREFIX}/bin
+	@${MKDIR} ${IRCLIB}/translation
+	${INSTALL_DATA} ${WRKSRC}/translation/* ${IRCLIB}/translation
 
 .include <bsd.port.mk>
