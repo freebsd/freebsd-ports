@@ -1,10 +1,12 @@
 --- check_tmp.c.orig	Fri Sep 24 13:33:35 1999
-+++ check_tmp.c	Tue Apr 25 00:57:56 2000
-@@ -38,6 +38,13 @@
++++ check_tmp.c	Mon May 22 23:49:21 2000
+@@ -37,7 +37,14 @@
+   char error_buffer[256];
  #endif
  #endif
-   
-+#if __FreeBSD_version >= 500001
+-  
++
++#if (__FreeBSD_version >= 500001) || (__FreeBSD_version >= 400019 && __FreeBSD_version < 500000)
 +  struct kevent ev;
 +  struct kevent *evp;
 +  int fd;
@@ -18,7 +20,7 @@
      exit(1);
    }
  
-+#if __FreeBSD_version >= 500001
++#if (__FreeBSD_version >= 500001) || (__FreeBSD_version >= 400019 && __FreeBSD_version < 500000)
 +  /* Set up the KQ on the target directory */
 +  fd = dirfd(dirp);
 +
@@ -42,7 +44,7 @@
  
    while (1){
 +
-+#if __FreeBSD_version >= 500001
++#if (__FreeBSD_version >= 500001) || (__FreeBSD_version >= 400019 && __FreeBSD_version < 500000)
 +    if (ev.fflags & NOTE_WRITE) {
 +#endif
      while ((dp = readdir(dirp)) != NULL){
@@ -59,7 +61,7 @@
      list = prunelist(list); 
      rewinddir(dirp);
 +
-+#if __FreeBSD_version >= 500001
++#if (__FreeBSD_version >= 500001) || (__FreeBSD_version >= 400019 && __FreeBSD_version < 500000)
 +    /* Reset event so we don't trigger on the rewinddir */
 +    kevent(kq, 1, &evp, 0, NULL, &ts);
 +
