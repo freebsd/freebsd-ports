@@ -1,0 +1,31 @@
+--- g-os_lib.adb.orig	Tue Apr  4 20:32:52 2000
++++ g-os_lib.adb	Tue Apr  4 20:33:38 2000
+@@ -173,25 +173,11 @@
+      (FD   : out File_Descriptor;
+       Name : out Temp_File_Name)
+    is
+-      function Get_Temp_Name (T : Address) return Address;
+-      pragma Import (C, Get_Temp_Name, "mktemp");
+-
+-      function Open_New_Temp
+-        (Name  : System.Address;
+-         Fmode : Mode)
+-         return  File_Descriptor;
+-      pragma Import (C, Open_New_Temp, "open_new_temp");
+-
++      function Get_Temp_Name (T : Address) return File_Descriptor;
++      pragma Import (C, Get_Temp_Name, "mkstemp");
+    begin
+       Name := "GNAT-XXXXXX" & ASCII.NUL;
+-
+-      --  Check for NULL pointer returned by C
+-
+-      if Get_Temp_Name (Name'Address) = Null_Address then
+-         FD := -1;
+-      else
+-         FD := Open_New_Temp (Name'Address, Binary);
+-      end if;
++      FD := Get_Temp_Name (Name'Address);
+    end Create_Temp_File;
+ 
+    -----------------

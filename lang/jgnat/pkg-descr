@@ -1,0 +1,5 @@
+This is a port of jgnat, an Ada to Java-Byte-Code compiler.  jgnat allows
+you to develop applets or applications in full Ada, and execute them on
+any Java virtual machine.
+
+- Samuel Tardieu <sam@inf.enst.fr>

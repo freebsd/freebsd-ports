@@ -50,6 +50,7 @@
     SUBDIR += intel2gas
     SUBDIR += intercal
     SUBDIR += itcl
+    SUBDIR += jgnat
     SUBDIR += lcc
     SUBDIR += libobjects
     SUBDIR += librep
