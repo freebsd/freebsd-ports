@@ -17,6 +17,7 @@ COMMENT=	A set of IRC services for IRC networks
 USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
+USE_PERL_BUILD=	yes
 
 # OPTIONS --{{{
 OPTIONS=	MYSQL "Use mysql" ON \
