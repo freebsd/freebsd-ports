@@ -20,6 +20,8 @@ COMMENT=	Tool for viewing molecular/crystallographic structures
 # There is a charge of US$ 5000 for commercial users.
 RESTRICTED=	"free for academic, US$ 5000 for commercial users"
 
+BROKEN=		"Broken pkg-plist"
+
 USE_XLIB=	yes
 
 # This port only has snapshot archive
