@@ -8,7 +8,8 @@
 PORTNAME=	vrflash
 PORTVERSION=	0.20
 CATEGORIES=	comms
-MASTER_SITES=	ftp://ftp.agendacomputing.com/agenda/utils/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=dinoex
 
 MAINTAINER=	dinoex@FreeBSD.org
 
