@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.27 1996/11/26 09:10:11 asami Exp $
+# $Id: Makefile,v 1.28 1996/12/03 10:43:51 asami Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -30,13 +30,11 @@
     SUBDIR += slang-lynx
     SUBDIR += squid
     SUBDIR += squid11
-    SUBDIR += tkHTML
     SUBDIR += w3-msql
     SUBDIR += w3c_httpd
     SUBDIR += webcopy
     SUBDIR += weblint
     SUBDIR += wn
     SUBDIR += wwwcount
-    SUBDIR += wwwish
 
 .include <bsd.port.subdir.mk>
