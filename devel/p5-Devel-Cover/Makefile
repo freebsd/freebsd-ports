@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Devel-Cover
-PORTVERSION=	0.50
+PORTVERSION=	0.51
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Devel
@@ -50,6 +50,15 @@ MAN3=		Devel::Cover.3 \
 		Devel::Cover::Truth_Table.3 \
 		Devel::Cover::Tutorial.3
 MAN1=		cover.1 gcov2perl.1
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	BUGS CHANGES README TODO
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.pre.mk>
 
