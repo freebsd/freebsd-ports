@@ -11,6 +11,6 @@ MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	The wxWindows GUI toolkit contributed libraries (common files)
 
 WXGTK_FLAVOR=	gtk-contrib-common
-MASTERDIR=	${.CURDIR}/../wxgtk-devel
+MASTERDIR=	${.CURDIR}/../wxgtk
 
 .include "${MASTERDIR}/Makefile"
