@@ -17,6 +17,12 @@ COMMENT=	Small, Lisp-like interpreted language
 
 WRKSRC=		${WRKDIR}/Klone
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
+
 do-configure:
 	@${SED} -e 's:%%PREFIX%%:${PREFIX}:' \
 		-e 's:%%CC%%:${CC}:' \
@@ -37,4 +43,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
