@@ -7,10 +7,11 @@
 
 PORTNAME=	shujit
 PORTVERSION=	0.7.14
+PORTREVISION=	1
 CATEGORIES=	java
 MASTER_SITES=	http://www.shudo.net/jit/dist/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	des@FreeBSD.org
 COMMENT=	A Just In Time java bytecode compiler
 
 LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
@@ -31,10 +32,6 @@ CONFIGURE_ARGS=	--with-jdk="${JAVA_HOME}"
 MAKE_ENV=	JAVADIR="${JAVA_HOME}"
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/README
