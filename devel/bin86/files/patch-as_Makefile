@@ -1,0 +1,20 @@
+--- as/Makefile.orig	Sat Jan  6 01:52:28 2001
++++ as/Makefile	Fri Jul 31 01:53:43 1998
+@@ -12,13 +12,13 @@
+ all: as86 as86_encap
+ 
+ as86: $(OBJS)
+-	$(CC) $(LDFLAGS) $(OBJS) -o $@
++	$(CC) $(LDFLAGS) $(OBJS) -o as86
+ 
+ as86_encap: as86_encap.sh
+ 	sed -e "s:%%LIBDIR%%:$(LIBDIR):" -e "s:%%BINDIR%%:$(BINDIR):" \
+-		< $^ > tmp
+-	@mv -f tmp $@
+-	chmod +x $@
++		< as86_encap.sh > tmp
++	@mv -f tmp as86_encap
++	chmod +x as86_encap
+ 	
+ install: all
+ 	install -d $(LIBDIR)
