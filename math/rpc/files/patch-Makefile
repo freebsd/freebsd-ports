@@ -1,8 +1,9 @@
---- Makefile.orig	Wed Mar 21 21:02:32 2001
-+++ Makefile	Wed Mar 21 21:03:58 2001
+--- Makefile.orig	Mon Jun 11 07:59:05 2001
++++ Makefile	Wed Jun 13 17:57:18 2001
 @@ -1,5 +1,5 @@
- CXXFLAGS = -c -O2 -Wall
+-CXXFLAGS = -c -O2 -Wall
 -LDFLAGS = -lm -lccm -lcurses
++CXXFLAGS += -c
 +LDFLAGS = -lm -lccm -lcurses -L${LOCALBASE}/lib
  
  all: rpc
