@@ -1,4 +1,3 @@
-bin/dsirc
 bin/karchie
 bin/kbiff
 bin/kcmktalkd
@@ -11,62 +10,10 @@ bin/kotalkd
 bin/kppp
 bin/kppplogview
 bin/krn
-bin/ksirc
-bin/ksticker
 bin/ktalkd
 bin/ktalkdlg
 bin/mail.local
-bin/mathpod
 bin/newkrn
-lib/ksirc/libksirclistbox.a
-lib/ksirc/libksirclistbox.la
-lib/ksirc/libksirclistbox.so.0
-lib/ksirc/libpalistbox.a
-lib/ksirc/libpalistbox.la
-lib/ksirc/libpalistbox.so.0
-lib/ksirc/libpbutton.a
-lib/ksirc/libpbutton.la
-lib/ksirc/libpbutton.so.0
-lib/ksirc/libpframe.a
-lib/ksirc/libpframe.la
-lib/ksirc/libpframe.so.0
-lib/ksirc/libpkfiledialog.a
-lib/ksirc/libpkfiledialog.la
-lib/ksirc/libpkfiledialog.so.0
-lib/ksirc/libplabel.a
-lib/ksirc/libplabel.la
-lib/ksirc/libplabel.so.0
-lib/ksirc/libplined.a
-lib/ksirc/libplined.la
-lib/ksirc/libplined.so.0
-lib/ksirc/libplistbox.a
-lib/ksirc/libplistbox.la
-lib/ksirc/libplistbox.so.0
-lib/ksirc/libpmenudta.a
-lib/ksirc/libpmenudta.la
-lib/ksirc/libpmenudta.so.0
-lib/ksirc/libpobjfinder.a
-lib/ksirc/libpobjfinder.la
-lib/ksirc/libpobjfinder.so.0
-lib/ksirc/libppopmenu.a
-lib/ksirc/libppopmenu.la
-lib/ksirc/libppopmenu.so.0
-lib/ksirc/libpprogress.a
-lib/ksirc/libpprogress.la
-lib/ksirc/libpprogress.so.0
-lib/ksirc/libppushbt.a
-lib/ksirc/libppushbt.la
-lib/ksirc/libppushbt.so.0
-lib/ksirc/libptabdialog.a
-lib/ksirc/libptabdialog.la
-lib/ksirc/libptabdialog.so.0
-lib/ksirc/libptablevw.a
-lib/ksirc/libptablevw.la
-lib/ksirc/libptablevw.so.0
-lib/libkplunger.a
-lib/libpuke.a
-lib/libpuke.la
-lib/libpuke.so.0
 share/applnk/Internet/KMail.kdelnk
 share/applnk/Internet/KOrn.kdelnk
 share/applnk/Internet/Kppp.kdelnk
@@ -76,7 +23,6 @@ share/applnk/Internet/kbiff.kdelnk
 share/applnk/Internet/kfinger.kdelnk
 share/applnk/Internet/knu.kdelnk
 share/applnk/Internet/kppplogview.kdelnk
-share/applnk/Internet/ksirc.kdelnk
 share/applnk/Settings/Network/kcmktalkd.kdelnk
 share/apps/kbiff/pics/delete.xpm
 share/apps/kbiff/pics/mailbox.xpm
@@ -305,59 +251,6 @@ share/apps/krn/toolbar/send.xpm
 share/apps/krn/toolbar/subscr.xpm
 share/apps/krn/toolbar/tagged.xpm
 share/apps/krn/toolbar/thumb_up.xpm
-share/apps/ksirc/commands-handler.pl
-share/apps/ksirc/commands-perl.pl
-share/apps/ksirc/convert_commands.pl
-share/apps/ksirc/dcc_progress.pm
-share/apps/ksirc/dcc_status.pm
-share/apps/ksirc/filters.pl
-share/apps/ksirc/icons/arrow.gif
-share/apps/ksirc/icons/blueball.gif
-share/apps/ksirc/icons/bluepin.gif
-share/apps/ksirc/icons/channel.xpm
-share/apps/ksirc/icons/channels.xpm
-share/apps/ksirc/icons/greenpin.gif
-share/apps/ksirc/icons/info.gif
-share/apps/ksirc/icons/info1.gif
-share/apps/ksirc/icons/ksirc.gif
-share/apps/ksirc/icons/ksirc_a.xpm
-share/apps/ksirc/icons/ksirc_b.xpm
-share/apps/ksirc/icons/ksirc_dock.xpm
-share/apps/ksirc/icons/madsmiley.gif
-share/apps/ksirc/icons/mini-run.gif
-share/apps/ksirc/icons/server.xpm
-share/apps/ksirc/icons/smiley.gif
-share/apps/ksirc/icons/star.gif
-share/apps/ksirc/ksirc.pl
-share/apps/ksirc/ksirclistbox.pm
-share/apps/ksirc/load_all.pm
-share/apps/ksirc/palistbox.pm
-share/apps/ksirc/pbase.pm
-share/apps/ksirc/pboxlayout.pm
-share/apps/ksirc/pbutton.pm
-share/apps/ksirc/pframe.pm
-share/apps/ksirc/pics/pws_general.xpm
-share/apps/ksirc/pics/pws_www.xpm
-share/apps/ksirc/pkfiledialog.pm
-share/apps/ksirc/plabel.pm
-share/apps/ksirc/plined.pm
-share/apps/ksirc/plistbox.pm
-share/apps/ksirc/pmenudta.pm
-share/apps/ksirc/pobjfinder.pm
-share/apps/ksirc/ppopmenu.pm
-share/apps/ksirc/pprogress.pm
-share/apps/ksirc/ppushbt.pm
-share/apps/ksirc/ptabdialog.pm
-share/apps/ksirc/ptablevw.pm
-share/apps/ksirc/puke.pl
-share/apps/ksirc/pwidget.pm
-share/apps/ksirc/relnotes
-share/apps/ksirc/servers.ini
-share/apps/ksirc/servers.txt
-share/apps/ksirc/sirc.help.gz
-share/apps/ksirc/small.pl
-share/apps/ksirc/test.pl
-share/apps/ksirc/tester.pl
 share/config/karchierc
 share/config/kfingerrc
 share/config/ktalkdrc
@@ -433,12 +326,6 @@ share/doc/HTML/en/krn/groups.html
 share/doc/HTML/en/krn/index.html
 share/doc/HTML/en/krn/offline.html
 share/doc/HTML/en/krn/overview.html
-share/doc/HTML/en/ksirc/PROGRAMMING
-share/doc/HTML/en/ksirc/colours.html
-share/doc/HTML/en/ksirc/filters.html
-share/doc/HTML/en/ksirc/index.html
-share/doc/HTML/en/ksirc/keys.html
-share/doc/HTML/en/ksirc/ksirc.gif
 share/doc/HTML/en/ktalkd/ktalkd-1.html
 share/doc/HTML/en/ktalkd/ktalkd-2.html
 share/doc/HTML/en/ktalkd/ktalkd-3.html
@@ -447,10 +334,6 @@ share/doc/HTML/en/ktalkd/ktalkd-5.html
 share/doc/HTML/en/ktalkd/ktalkd-6.html
 share/doc/HTML/en/ktalkd/ktalkd.html
 share/doc/HTML/en/ktalkd/logotp3.gif
-share/doc/HTML/en/pws/pws-1.html
-share/doc/HTML/en/pws/pws-2.html
-share/doc/HTML/en/pws/pws.gif
-share/doc/HTML/en/pws/pws.html
 share/doc/HTML/fr/ktalkd/ktalkd-1.html
 share/doc/HTML/fr/ktalkd/ktalkd-2.html
 share/doc/HTML/fr/ktalkd/ktalkd-3.html
@@ -474,7 +357,6 @@ share/icons/knu.xpm
 share/icons/korn.xpm
 share/icons/kppp.xpm
 share/icons/krn.xpm
-share/icons/ksirc.gif
 share/icons/large/kmail.xpm
 share/icons/large/korn.xpm
 share/icons/large/kppp.xpm
@@ -485,8 +367,6 @@ share/icons/mini/knu.xpm
 share/icons/mini/korn.xpm
 share/icons/mini/kppp.xpm
 share/icons/mini/krn.xpm
-share/icons/mini/pws.xpm
-share/icons/pws.xpm
 share/locale/br/LC_MESSAGES/karchie.mo
 share/locale/br/LC_MESSAGES/kbiff.mo
 share/locale/br/LC_MESSAGES/kcmktalkd.mo
@@ -752,29 +632,11 @@ share/toolbar/kcontrol.xpm
 share/toolbar/mini-clock.xpm
 share/toolbar/mini-connect.xpm
 share/toolbar/mini-ktalk.xpm
-@exec ln -sf libpuke.so.0 %D/lib/libpuke.so
-@exec ln -sf libptablevw.so.0 %D/lib/ksirc/libptablevw.so
-@exec ln -sf libptabdialog.so.0 %D/lib/ksirc/libptabdialog.so
-@exec ln -sf libppushbt.so.0 %D/lib/ksirc/libppushbt.so
-@exec ln -sf libpprogress.so.0 %D/lib/ksirc/libpprogress.so
-@exec ln -sf libppopmenu.so.0 %D/lib/ksirc/libppopmenu.so
-@exec ln -sf libpobjfinder.so.0 %D/lib/ksirc/libpobjfinder.so
-@exec ln -sf libpmenudta.so.0 %D/lib/ksirc/libpmenudta.so
-@exec ln -sf libplistbox.so.0 %D/lib/ksirc/libplistbox.so
-@exec ln -sf libplined.so.0 %D/lib/ksirc/libplined.so
-@exec ln -sf libplabel.so.0 %D/lib/ksirc/libplabel.so
-@exec ln -sf libpkfiledialog.so.0 %D/lib/ksirc/libpkfiledialog.so
-@exec ln -sf libpframe.so.0 %D/lib/ksirc/libpframe.so
-@exec ln -sf libpbutton.so.0 %D/lib/ksirc/libpbutton.so
-@exec ln -sf libpalistbox.so.0 %D/lib/ksirc/libpalistbox.so
-@exec ln -sf libksirclistbox.so.0 %D/lib/ksirc/libksirclistbox.so
 @exec ln -sf kppp.html %D/share/doc/HTML/en/kppp/index.html
 @unexec rm -f %D/share/doc/HTML/en/kppp/index.html
 @dirrm share/doc/HTML/it/ktalkd
 @dirrm share/doc/HTML/fr/ktalkd
-@dirrm share/doc/HTML/en/pws
 @dirrm share/doc/HTML/en/ktalkd
-@dirrm share/doc/HTML/en/ksirc
 @dirrm share/doc/HTML/en/krn
 @dirrm share/doc/HTML/en/kppp
 @dirrm share/doc/HTML/en/korn
@@ -784,9 +646,6 @@ share/toolbar/mini-ktalk.xpm
 @dirrm share/doc/HTML/en/kbiff
 @dirrm share/doc/HTML/en/karchie
 @dirrm share/doc/HTML/el/ktalkd
-@dirrm share/apps/ksirc/pics
-@dirrm share/apps/ksirc/icons
-@dirrm share/apps/ksirc
 @dirrm share/apps/krn/toolbar
 @dirrm share/apps/krn
 @dirrm share/apps/kppp/pics
@@ -833,21 +692,3 @@ share/toolbar/mini-ktalk.xpm
 @dirrm share/apps/kmail
 @dirrm share/apps/kbiff/pics
 @dirrm share/apps/kbiff
-@dirrm share/applnk/Settings/Network
-@unexec rm -f %D/lib/ksirc/libksirclistbox.so
-@unexec rm -f %D/lib/ksirc/libpalistbox.so
-@unexec rm -f %D/lib/ksirc/libpbutton.so
-@unexec rm -f %D/lib/ksirc/libpframe.so
-@unexec rm -f %D/lib/ksirc/libpkfiledialog.so
-@unexec rm -f %D/lib/ksirc/libplabel.so
-@unexec rm -f %D/lib/ksirc/libplined.so
-@unexec rm -f %D/lib/ksirc/libplistbox.so
-@unexec rm -f %D/lib/ksirc/libpmenudta.so
-@unexec rm -f %D/lib/ksirc/libpobjfinder.so
-@unexec rm -f %D/lib/ksirc/libppopmenu.so
-@unexec rm -f %D/lib/ksirc/libpprogress.so
-@unexec rm -f %D/lib/ksirc/libppushbt.so
-@unexec rm -f %D/lib/ksirc/libptabdialog.so
-@unexec rm -f %D/lib/ksirc/libptablevw.so
-@dirrm lib/ksirc
-@unexec rm -f %D/lib/libpuke.so

@@ -33,7 +33,8 @@ CONFIGURE_ARGS=	"--with-qt-includes=${QTDIR}/include/X11/qt" \
 		"--with-extra-includes=${LOCALBASE}/include" \
 		"--with-extra-libs=${LOCALBASE}/lib"
 CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" INSTALL_SCRIPT="install -c -m 555" \
-		QTDIR=${QTDIR}
+		QTDIR=${QTDIR} \
+		DO_NOT_COMPILE=ksirc
 USE_GMAKE=	yes
 CFLAGS+=	"-I${PREFIX}/include"
 
