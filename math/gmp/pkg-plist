@@ -10,6 +10,7 @@ info/gmp.info-5
 info/gmp.info-6
 info/gmp.info-7
 info/gmp.info-8
+info/gmp.info-9
 @exec install-info %D/info/gmp %D/info/dir
 lib/libgmp.a
 lib/libgmp.so
