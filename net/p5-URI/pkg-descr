@@ -1,0 +1,35 @@
+This package contains the URI.pm module with friends.  The module
+implements the URI class.  Objects of this class represent Uniform
+Resource Identifier (URI) references as specified in RFC 2396.
+
+URI objects can be used to access and manipulate the various
+components that make up these strings.  There are also methods to
+combine URIs in various ways.
+
+The URI class replaces the URI::URL class that used to be distributed
+with libwww-perl.  This package contains an emulation of the old
+URI::URL interface.  The emulated URI::URL implements both the old and
+the new interface.
+
+Some tests require an Internet connection to work and are skipped
+if one is not active.
+
+You need perl5.004 or better to install this package.  You should also
+have the MIME::Base64 module installed.  Installation is otherwise as
+usual:
+
+  perl Makefile.PL
+  make
+  make test
+  make install
+
+Questions about how to use this library should be directed to the
+comp.lang.perl.modules USENET Newsgroup.  Bug reports and suggestions
+for improvements can be sent to the <libwww-perl@ics.uci.edu> mailing
+list.
+
+Copyright 1998-1999 Gisle Aas.
+Copyright 1998 Graham Barr.
+
+This library is free software; you can redistribute it and/or
+modify it under the same terms as Perl itself.
