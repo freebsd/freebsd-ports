@@ -1,0 +1,25 @@
+bin/htmlpp
+bin/contents.def
+bin/filetype.def
+bin/guru.def
+bin/macros.def
+bin/prelude.def
+bin/guru.fmt
+bin/htmlpp.l
+lib/perl5/site_perl/htmlpp.d
+lib/perl5/site_perl/findfile.pl
+lib/perl5/site_perl/sflcvdp.pl
+lib/perl5/site_perl/sfldate.pl
+lib/perl5/site_perl/shellwd.pl
+share/doc/htmlpp/index.html
+share/doc/htmlpp/index1.html
+share/doc/htmlpp/index2.html
+share/doc/htmlpp/index3.html
+share/doc/htmlpp/index4.html
+share/doc/htmlpp/index5.html
+share/doc/htmlpp/htmlpp1.gif
+share/doc/htmlpp/im0096c.gif
+share/doc/htmlpp/newstone.gif
+share/doc/htmlpp/gurutst.txt
+share/doc/htmlpp/htmlpp.txt
+@dirrm share/doc/htmlpp
