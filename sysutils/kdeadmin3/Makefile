@@ -7,7 +7,7 @@
 
 PORTNAME=	kdeadmin
 PORTVERSION=	3.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
@@ -28,5 +28,10 @@ CONFIGURE_ARGS+=--enable-final
 .if defined(PARALLEL_PACKAGE_BUILD) || defined(WANT_KDE_NDEBUG)
 CONFIGURE_ARGS+=--disable-debug
 .endif
+
+post-patch:
+	@cd ${WRKSRC}/kpackage; \
+	${PERL} -pi -e 's@^typedef[ \t]+__off64.*\n@@' \
+		rpm*.h rpm*.c rpm*.cpp
 
 .include <bsd.port.mk>
