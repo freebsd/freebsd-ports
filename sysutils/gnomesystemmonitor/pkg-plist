@@ -26,6 +26,7 @@ share/gnome/help/gnome-system-monitor/C/legal.xml
 share/gnome/omf/gnome-system-monitor/gnome-system-monitor-C.omf
 share/gnome/pixmaps/procman.png
 share/locale/az/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/bg/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ca/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/da/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/de/LC_MESSAGES/gnome-system-monitor.mo
