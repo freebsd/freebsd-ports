@@ -150,6 +150,7 @@
     SUBDIR += prom-wl
     SUBDIR += pronto
     SUBDIR += pygmy
+    SUBDIR += qmHandle
     SUBDIR += qmail
     SUBDIR += qmail-contrib
     SUBDIR += qmail-ldap
