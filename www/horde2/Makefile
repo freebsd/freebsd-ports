@@ -27,11 +27,7 @@ LIB_DEPENDS+=	intl.4:${PORTSDIR}/devel/gettext
 .if !defined(WITHOUT_MCAL)
 LIB_DEPENDS+=	mcal.0:${PORTSDIR}/misc/libmcal
 .endif
-.if !defined(WITHOUT_SSL)
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libssl.so:${PORTSDIR}/www/apache13-modssl
-.endif
-#RUN_DEPENDS+=	${LOCALBASE}/lib/php/Cache/DB.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS+=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
+RUN_DEPENDS=	${LOCALBASE}/lib/php/Log.php:${PORTSDIR}/sysutils/pear-Log
 
 NO_BUILD=	yes
 USE_REINPLACE=	yes
