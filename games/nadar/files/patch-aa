@@ -1,5 +1,5 @@
---- Makefile.mk~	Sat Apr  7 09:27:20 2001
-+++ Makefile.mk	Sat Apr  7 09:29:34 2001
+--- Makefile.mk~	Mon Jan 27 17:00:47 2003
++++ Makefile.mk	Mon Jan 27 17:01:02 2003
 @@ -8,17 +8,17 @@
  # operate it, and destroy other tanks to survive!
  ###############################################################################
@@ -10,8 +10,8 @@
 +#X11BASE = /usr/X11R6
  BINDIR = ${PREFIX}/bin
  MANDIR = ${PREFIX}/man/man1
- PKGNAME = nadar-1.0
- VERSION = NADAR-1.0
+ PKGNAME = nadar-2.0
+ VERSION = NADAR-2.0
  
 -CC = cc
 +#CC = cc
