@@ -14,7 +14,7 @@ PKGNAMESUFFIX?=	-devel
 .endif
 DISTNAME=	ProjectCenter-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 PORTCOMMENT=	A development environment for GNUstep
 
