@@ -7,6 +7,7 @@ lib/ROX-Lib2/Help/README
 lib/ROX-Lib2/Help/findrox.py
 lib/ROX-Lib2/Help/findrox.pyc
 lib/ROX-Lib2/Help/findrox.pyo
+lib/ROX-Lib2/Help/python/rox.AppInfo.html
 lib/ROX-Lib2/Help/python/rox.InfoWin.html
 lib/ROX-Lib2/Help/python/rox.Menu.html
 lib/ROX-Lib2/Help/python/rox.OptionsBox.html
@@ -21,16 +22,22 @@ lib/ROX-Lib2/Help/python/rox.i18n.html
 lib/ROX-Lib2/Help/python/rox.icon_theme.html
 lib/ROX-Lib2/Help/python/rox.loading.html
 lib/ROX-Lib2/Help/python/rox.mime.html
+lib/ROX-Lib2/Help/python/rox.mime_handler.html
 lib/ROX-Lib2/Help/python/rox.options.html
 lib/ROX-Lib2/Help/python/rox.processes.html
 lib/ROX-Lib2/Help/python/rox.saving.html
+lib/ROX-Lib2/Help/python/rox.tasks.html
 lib/ROX-Lib2/MakeDist
 lib/ROX-Lib2/Messages/dist
+lib/ROX-Lib2/Messages/it.gmo
 lib/ROX-Lib2/Messages/it.po
 lib/ROX-Lib2/Messages/update-po
 lib/ROX-Lib2/python/make_docs.py
 lib/ROX-Lib2/python/make_docs.pyc
 lib/ROX-Lib2/python/make_docs.pyo
+lib/ROX-Lib2/python/rox/AppInfo.py
+lib/ROX-Lib2/python/rox/AppInfo.pyc
+lib/ROX-Lib2/python/rox/AppInfo.pyo
 lib/ROX-Lib2/python/rox/InfoWin.py
 lib/ROX-Lib2/python/rox/InfoWin.pyc
 lib/ROX-Lib2/python/rox/InfoWin.pyo
@@ -73,6 +80,9 @@ lib/ROX-Lib2/python/rox/loading.pyo
 lib/ROX-Lib2/python/rox/mime.py
 lib/ROX-Lib2/python/rox/mime.pyc
 lib/ROX-Lib2/python/rox/mime.pyo
+lib/ROX-Lib2/python/rox/mime_handler.py
+lib/ROX-Lib2/python/rox/mime_handler.pyc
+lib/ROX-Lib2/python/rox/mime_handler.pyo
 lib/ROX-Lib2/python/rox/options.py
 lib/ROX-Lib2/python/rox/options.pyc
 lib/ROX-Lib2/python/rox/options.pyo
@@ -82,6 +92,9 @@ lib/ROX-Lib2/python/rox/processes.pyo
 lib/ROX-Lib2/python/rox/saving.py
 lib/ROX-Lib2/python/rox/saving.pyc
 lib/ROX-Lib2/python/rox/saving.pyo
+lib/ROX-Lib2/python/rox/tasks.py
+lib/ROX-Lib2/python/rox/tasks.pyc
+lib/ROX-Lib2/python/rox/tasks.pyo
 @dirrm lib/ROX-Lib2/python/rox
 @dirrm lib/ROX-Lib2/python
 @dirrm lib/ROX-Lib2/Messages
