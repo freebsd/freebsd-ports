@@ -1,35 +1,38 @@
---- Makefile.orig	Thu Nov 28 16:11:25 2002
-+++ Makefile	Thu Nov 28 16:14:44 2002
-@@ -13,22 +13,22 @@
+--- Makefile.orig	Mon Jun  9 18:24:33 2003
++++ Makefile	Mon Jun  9 18:29:03 2003
+@@ -13,25 +13,25 @@
  # QTDIR =       /usr/lib/qt
  
- # DESTDIR (location for installing)
+ # DESTDIR (location (base without ..."/bin") for installing)
 -DESTDIR = /usr/local
-+DESTDIR = ${PREFIX}/bin
++DESTDIR = ${PREFIX}
  
  ####### Compiler, tools and options
+ 
+ # INCPATH specify where the includefiles are
+-INCPATH	=	-I$(QTDIR)/include
++INCPATH	=	${QTCPPFLAGS}
+ # LFLAGS specify where the (qt) libraries are
+ LFLAGS	=	-L$(QTDIR)/lib
  
 -CC	=	gcc
 -CXX	=	g++
 -CFLAGS	=	-pipe -DNO_DEBUG
 -CXXFLAGS=	-pipe -DNO_DEBUG -Wall -ansi
--INCPATH	=	-I$(QTDIR)/include
 -LINK	=	g++
+-LIBS    =       $(SUBLIBS) -lqt
 +#CC	=	gcc
 +#CXX	=	g++
 +CFLAGS	+=	-pipe -DNO_DEBUG
 +CXXFLAGS+=	-pipe -DNO_DEBUG -Wall -ansi
-+INCPATH	=	${QTCPPFLAGS}
 +LINK	=	${CXX}
- LFLAGS	=	
--LIBS    =       $(SUBLIBS) -lqt
 +LIBS    =       ${QTCFGLIBS} ${LIBQT}
- # you might try this if icemc segfaults when starting up:
+ # you might try this if icemc won't link or segfaults when starting up:
  #LIBS	=	$(SUBLIBS) -lqt-mt
 -MOC	=	$(QTDIR)/bin/moc
 -UIC	=	$(QTDIR)/bin/uic
 +#MOC	=	$(QTDIR)/bin/moc
-+UIC	=	${X11BASE}/bin/uic
++UIC	=	$(X11BASE)/bin/uic
  
  TAR	=	tar -cf
  GZIP	=	gzip -9f
