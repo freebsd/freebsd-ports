@@ -1,9 +1,9 @@
 # New ports collection makefile for:	egcs
-# Version required:	1998-02-05
+# Version required:	1998-02-21
 # Date created:		9 Jan 1998
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.10 1998/03/08 12:54:00 obrien Exp $
+# $Id: Makefile,v 1.11 1998/03/10 06:23:50 obrien Exp $
 #
 
 #	1998-03-08
