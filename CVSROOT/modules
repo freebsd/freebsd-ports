@@ -7709,6 +7709,7 @@ stvef-paks	ports/games/stvef-paks
 stvef-server	ports/games/stvef-server
 styx		ports/devel/styx
 su2		ports/sysutils/su2
+subcalc		ports/net/subcalc
 subconv		ports/multimedia/subconv
 subversion	ports/devel/subversion
 subweb		ports/security/subweb
