@@ -3,4 +3,4 @@ hash database. Perl compatible regular expressions are supported both for
 storing and retrieving of data. It's main advantages are the ability to
 maintain huge amounts of data and speed. 
 
-WWW: http://www.daemon.de/en/software/dbtool/
+WWW: http://www.daemon.de/DBTOOL
