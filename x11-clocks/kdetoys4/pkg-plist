@@ -1,25 +1,27 @@
+@comment files/links
 bin/amor
+bin/kaphorism
 bin/kmoon
 bin/kodo
-bin/kscore_excite.pl
 bin/kteatime
 bin/ktux
 bin/kworldclock
 include/AmorIface.h
-lib/libkeyesapplet.la
-lib/libkeyesapplet.so
-lib/libkeyesapplet.so.1
-lib/libkfifteenapplet.la
-lib/libkfifteenapplet.so
-lib/libkfifteenapplet.so.1
-lib/libkscoreapplet.la
-lib/libkscoreapplet.so
-lib/libkscoreapplet.so.1
-lib/libkwwapplet.la
-lib/libkwwapplet.so
-lib/libkwwapplet.so.1
+lib/kde3/eyes_panelapplet.la
+lib/kde3/eyes_panelapplet.so
+lib/kde3/eyes_panelapplet.so.1
+lib/kde3/fifteen_panelapplet.la
+lib/kde3/fifteen_panelapplet.so
+lib/kde3/fifteen_panelapplet.so.1
+lib/kde3/weather_panelapplet.la
+lib/kde3/weather_panelapplet.so
+lib/kde3/weather_panelapplet.so.1
+lib/kde3/ww_panelapplet.la
+lib/kde3/ww_panelapplet.so
+lib/kde3/ww_panelapplet.so.1
 share/applnk/System/ScreenSavers/ktux.desktop
 share/applnk/Toys/amor.desktop
+share/applnk/Toys/kaphorism.desktop
 share/applnk/Toys/kmoon.desktop
 share/applnk/Toys/kodo.desktop
 share/applnk/Toys/kteatime.desktop
@@ -411,10 +413,14 @@ share/apps/amor/worm/w-wl2.xpm
 share/apps/amor/worm/w-wr1.xpm
 share/apps/amor/worm/w-wr2.xpm
 share/apps/amor/wormrc
+share/apps/kaphorism/aphorisms/Seelenkalender
+share/apps/kaphorism/aphorisms/Seelenkalender.png
+share/apps/kaphorism/aphorisms/kaphorism.rc
+share/apps/kaphorism/kaphorism.rc
 share/apps/kdesktop/programs/kdeworld.desktop
 share/apps/kicker/applets/eyesapplet.desktop
 share/apps/kicker/applets/kfifteenapplet.desktop
-share/apps/kicker/applets/kscoreapplet.desktop
+share/apps/kicker/applets/kweather.desktop
 share/apps/kicker/applets/kwwapplet.desktop
 share/apps/kmoon/pics/moon1.png
 share/apps/kmoon/pics/moon10.png
@@ -462,6 +468,41 @@ share/apps/ktux/sprites/flare0002.png
 share/apps/ktux/sprites/spriterc
 share/apps/ktux/sprites/star0001.png
 share/apps/ktux/sprites/star0002.png
+share/apps/kweather/cloudy1.png
+share/apps/kweather/cloudy2.png
+share/apps/kweather/cloudy3.png
+share/apps/kweather/cloudy4.png
+share/apps/kweather/cloudy5.png
+share/apps/kweather/dunno.png
+share/apps/kweather/fog.png
+share/apps/kweather/hail.png
+share/apps/kweather/light_rain.png
+share/apps/kweather/mcloudy.png
+share/apps/kweather/mist.png
+share/apps/kweather/overcast.png
+share/apps/kweather/part-cloud.png
+share/apps/kweather/pcloudy.png
+share/apps/kweather/rain.png
+share/apps/kweather/rainy.png
+share/apps/kweather/shower1.png
+share/apps/kweather/shower2.png
+share/apps/kweather/shower3.png
+share/apps/kweather/sleet.png
+share/apps/kweather/slop.png
+share/apps/kweather/snow.png
+share/apps/kweather/snow1.png
+share/apps/kweather/snow2.png
+share/apps/kweather/snow3.png
+share/apps/kweather/snow4.png
+share/apps/kweather/snow5.png
+share/apps/kweather/snowshowers.png
+share/apps/kweather/sunny.png
+share/apps/kweather/thunderstorm.png
+share/apps/kweather/tstorm.png
+share/apps/kweather/tstorm1.png
+share/apps/kweather/tstorm2.png
+share/apps/kweather/tstorm3.png
+share/apps/kweather/wind.png
 share/apps/kworldclock/maps/depths/400.jpg
 share/apps/kworldclock/maps/depths/800.jpg
 share/apps/kworldclock/maps/depths/depths.desktop
@@ -507,40 +548,57 @@ share/doc/HTML/en/kteatime/common
 share/doc/HTML/en/kteatime/config.png
 share/doc/HTML/en/kteatime/index.cache.bz2
 share/doc/HTML/en/kteatime/index.docbook
+share/doc/HTML/en/kweather/common
+share/doc/HTML/en/kweather/index.cache.bz2
+share/doc/HTML/en/kweather/index.docbook
 share/doc/HTML/en/kworldclock/common
 share/doc/HTML/en/kworldclock/index.cache.bz2
 share/doc/HTML/en/kworldclock/index.docbook
 share/icons/hicolor/16x16/apps/amor.png
+share/icons/hicolor/16x16/apps/kaphorism.png
 share/icons/hicolor/16x16/apps/kmoon.png
 share/icons/hicolor/16x16/apps/kodo.png
+share/icons/hicolor/16x16/apps/kteatime.png
 share/icons/hicolor/16x16/apps/kworldclock.png
 share/icons/hicolor/32x32/apps/amor.png
+share/icons/hicolor/32x32/apps/kaphorism.png
 share/icons/hicolor/32x32/apps/kmoon.png
 share/icons/hicolor/32x32/apps/kodo.png
 share/icons/hicolor/32x32/apps/kworldclock.png
+share/icons/hicolor/48x48/apps/kaphorism.png
 share/icons/hicolor/48x48/apps/kmoon.png
 share/icons/hicolor/48x48/apps/kodo.png
 share/icons/hicolor/48x48/apps/kworldclock.png
 share/icons/locolor/16x16/apps/kteatime.png
 share/icons/locolor/16x16/apps/ktux.png
 share/icons/locolor/32x32/apps/ktux.png
+@comment directories
 @dirrm share/icons/locolor/32x32/apps
 @dirrm share/icons/locolor/32x32
 @dirrm share/icons/locolor/16x16/apps
 @dirrm share/icons/locolor/16x16
 @dirrm share/icons/locolor
 @dirrm share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/48x48
 @dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/32x32
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16
+@dirrm share/icons/hicolor
 @dirrm share/doc/HTML/en/kworldclock
+@dirrm share/doc/HTML/en/kweather
 @dirrm share/doc/HTML/en/kteatime
 @dirrm share/doc/HTML/en/kscore
 @dirrm share/doc/HTML/en/kodo
 @dirrm share/doc/HTML/en/kmoon
 @dirrm share/doc/HTML/en/amor
+@dirrm share/doc/HTML/en
+@dirrm share/doc/HTML
 @dirrm share/apps/kworldclock/pics
 @dirrm share/apps/kworldclock/maps/depths
 @dirrm share/apps/kworldclock/maps
 @dirrm share/apps/kworldclock
+@dirrm share/apps/kweather
 @dirrm share/apps/ktux/sprites
 @dirrm share/apps/ktux
 @dirrm share/apps/kodo
@@ -550,6 +608,8 @@ share/icons/locolor/32x32/apps/ktux.png
 @dirrm share/apps/kicker
 @dirrm share/apps/kdesktop/programs
 @dirrm share/apps/kdesktop
+@dirrm share/apps/kaphorism/aphorisms
+@dirrm share/apps/kaphorism
 @dirrm share/apps/amor/worm
 @dirrm share/apps/amor/tao
 @dirrm share/apps/amor/static
@@ -563,4 +623,3 @@ share/icons/locolor/32x32/apps/ktux.png
 @dirrm share/applnk/Toys
 @dirrm share/applnk/System/ScreenSavers
 @dirrm share/applnk/System
-@dirrm share/applnk
