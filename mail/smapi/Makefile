@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	smapi
-PORTVERSION=	010108
+PORTVERSION=	010218
 CATEGORIES=	mail
 MASTER_SITES=	http://cvs.physcip.uni-stuttgart.de/cvs2/
 
