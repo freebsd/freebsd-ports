@@ -1,9 +1,5 @@
-Migemo is a Japanese incremental search tool for Emacs.
-You can search Japanese words on Emacs without Kanji conversion.
-
-To use Migemo, you must set following elisp to your own .emacs file.
-
-(load-library "migemo")
+Migemo is a Japanese incremental search tool.
+You can search a text for Japanese words without having to input kanji.
 
 WWW: http://migemo.namazu.org/
 

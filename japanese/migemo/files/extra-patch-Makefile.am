@@ -1,0 +1,19 @@
+--- Makefile.am.orig	Mon Sep 17 18:40:23 2001
++++ Makefile.am	Mon Sep 17 18:41:59 2001
+@@ -1,6 +1,5 @@
+ SUBDIRS      = 	tests
+ bin_SCRIPTS  =  migemo migemo-grep migemo-server migemo-client
+-lisp_LISP    = 	migemo.el
+ ruby_DATA    =  migemo.rb migemo-dict.rb migemo-regex.rb\
+ 		migemo-convert.rb migemo-index.rb migemo-cache.rb 
+ pkgdata_DATA = 	migemo-dict migemo-dict.idx\
+@@ -9,9 +8,6 @@
+ 		migemo.ja.rd migemo.ja.html
+ EXTRA_DIST   =	$(bin_SCRIPTS) $(ruby_DATA) migemo.el.in \
+ 		genchars.sh ngram.sh frequent-chars $(pkgdata_DATA)
+-
+-migemo.el: migemo.el.in
+-	sed -e 's!@pkgdatadir@!$(pkgdatadir)!g' migemo.el.in > $@
+ 
+ migemo-dict: # SKK-JISYO.L
+ 	ruby -I. migemo-convert.rb SKK-JISYO.L > $@
