@@ -1,4 +1,5 @@
 bin/gedit
+bin/gnome-text-editor
 etc/gconf/gconf.xml.defaults/apps/gedit-2/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/%gconf.xml
 etc/gconf/gconf.xml.defaults/apps/gedit-2/preferences/editor/%gconf.xml
