@@ -1,9 +1,0 @@
-Digit@lway MPIO MP3 player device driver KMOD
-
-It is actually a patch to FreeBSD standard urio
-driver, which adds MPIO support to it, and
-fixes some issues
-
-This driver is designed to be used with MPIO
-for Linux software, ported to FreeBSD as
-audio/mpiosh
