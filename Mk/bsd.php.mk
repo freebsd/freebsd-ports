@@ -255,8 +255,8 @@ _USE_PHP_ALL=	bcmath bz2 calendar crack ctype curl dba dbase dbx dio \
 		iconv imagick imap interbase ldap mbstring mcal mcrypt mcve \
 		mhash ming mnogosearch mssql mysql mysqli ncurses odbc \
 		openssl oracle overload panda pcntl pcre pdf pgsql posix \
-		pspell readline recode session shmop simplexml snmp soap \
-		sockets sqlite sybase_ct sysvmsg sysvsem sysvshm \
+		pspell radius readline recode session shmop simplexml snmp \
+		soap sockets sqlite sybase_ct sysvmsg sysvsem sysvshm \
 		tidy tokenizer wddx xml xmlrpc xsl xslt yaz yp zip zlib
 
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
@@ -306,6 +306,7 @@ pdf_DEPENDS=	print/pecl-pdflib
 pgsql_DEPENDS=	databases/php${PHP_VER}-pgsql
 posix_DEPENDS=	sysutils/php${PHP_VER}-posix
 pspell_DEPENDS=	textproc/php${PHP_VER}-pspell
+radius_DEPENDS=	net/pecl-radius
 readline_DEPENDS=	devel/php${PHP_VER}-readline
 recode_DEPENDS=	converters/php${PHP_VER}-recode
 session_DEPENDS=www/php${PHP_VER}-session
