@@ -1,0 +1,20 @@
+--- Makefile.in.orig	Sun Dec 23 20:03:25 2001
++++ Makefile.in	Sun Sep 15 14:00:00 2002
+@@ -24,7 +24,7 @@
+ LIBS=@LIBS@
+ HEADERS=common.h prototypes.h client.h
+ OBJS=client.o stunnel.o ssl.o protocol.o sthreads.o pty.o log.o options.o
+-DESTFILES=$(sbindir)/stunnel $(libdir)/stunnel.so $(man8dir)/stunnel.8  $(PEM_DIR)/stunnel.pem
++DESTFILES=$(sbindir)/stunnel $(libdir)/stunnel.so $(man8dir)/stunnel.8
+ 
+ WINGCC=i386-mingw32msvc-gcc 
+ WINCFLAGS=-O2 -Wall -DUSE_WIN32=1 -DHAVE_OPENSSL=1 -DFD_SETSIZE=4096 -DVERSION=\"@VERSION@\" -I../openssl-0.9.6b/outinc
+@@ -33,7 +33,7 @@
+ 
+ # standard external rules
+ 
+-all: stunnel stunnel.8 stunnel.html stunnel.so stunnel.pem
++all: stunnel stunnel.8 stunnel.html stunnel.so
+ 
+ install: all installdirs $(DESTFILES)
+ 
