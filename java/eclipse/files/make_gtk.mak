@@ -77,17 +77,17 @@ MOZILLACFLAGS = -O \
 	-I$(JAVA_HOME)/include	\
 	-I$(JAVA_HOME)/include/bsd	\
 	-I$(JAVA_HOME)/include/freebsd \
-	-include $(MOZILLA_HOME)/lib/$(BROWSER)/include/$(BROWSER)-$(BROWSER_VER)/mozilla-config.h \
-	-I$(MOZILLA_HOME)/lib/$(BROWSER)/include/$(BROWSER)-$(BROWSER_VER) \
-	-I$(MOZILLA_HOME)/lib/$(BROWSER)/include/$(BROWSER)-$(BROWSER_VER)/xpcom \
-	-I$(MOZILLA_HOME)/lib/$(BROWSER)/include/$(BROWSER)-$(BROWSER_VER)/string \
-	-I$(MOZILLA_HOME)/lib/$(BROWSER)/include/$(BROWSER)-$(BROWSER_VER)/nspr \
-	-I$(MOZILLA_HOME)/lib/$(BROWSER)/include/$(BROWSER)-$(BROWSER_VER)/embed_base \
-	-I$(MOZILLA_HOME)/lib/$(BROWSER)/include/$(BROWSER)-$(BROWSER_VER)/gfx
+	-include $(MOZILLA_HOME)/include/$(BROWSER)/mozilla-config.h \
+	-I$(MOZILLA_HOME)/include/$(BROWSER) \
+	-I$(MOZILLA_HOME)/include/$(BROWSER)/xpcom \
+	-I$(MOZILLA_HOME)/include/$(BROWSER)/string \
+	-I$(MOZILLA_HOME)/include/$(BROWSER)/nspr \
+	-I$(MOZILLA_HOME)/include/$(BROWSER)/embed_base \
+	-I$(MOZILLA_HOME)/include/$(BROWSER)/gfx
 endif
 
 MOZILLALIBS = -L$(MOZILLA_HOME)/lib/$(BROWSER) \
-	-L$(MOZILLA_HOME)/lib/$(BROWSER)/lib/$(BROWSER)-$(BROWSER_VER) \
+	-L$(MOZILLA_HOME)/lib/$(BROWSER) \
 	-lgtkembedmoz -lxpcom
 MOZILLALDFLAGS = -s
 
