@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spamass-milter
-PORTVERSION=	0.1.3a
+PORTVERSION=	0.2.0
 CATEGORIES=	mail
 MASTER_SITES=	http://savannah.nongnu.org/download/spamass-milt/
 
