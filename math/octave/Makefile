@@ -3,7 +3,7 @@
 # Date created:		19 April 1998
 # Whom:			chuckr@freebsd.org
 #
-# $Id: Makefile,v 1.13 1998/05/05 20:37:57 chuckr Exp $
+# $Id: Makefile,v 1.14 1998/05/15 18:44:53 chuckr Exp $
 #
 
 DISTNAME=	octave-2.0.12
@@ -16,13 +16,14 @@ RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	${SETENV} "INSTALL_DATA=$(INSTALL_DATA)" "INSTALL_PROGRAM=$(INSTALL_SCRIPT)"
-CONFIGURE_ARGS=	--prefix=${PREFIX} --exec-prefix=${PREFIX} --with-f2c --enable-shared --host=i386-unknown-freebsd
+CONFIGURE_ARGS=	--prefix=${PREFIX} --exec-prefix=${PREFIX} --with-f2c --disable-shared --host=i386-unknown-freebsd
 USE_GMAKE=	yes
 MAN1=		octave.1
 
-BROKEN=		"core dump problem on startup, working on it."
-
 LIBOCTAVE-INFO= liboctave.info liboctave.info-1 liboctave.info-2 liboctave.info-3
+
+post-build:
+	/usr/bin/strip $(WRKSRC)/src/octave
 
 post-install:
 .ifndef NOPORTDOCS
@@ -43,6 +44,5 @@ post-install:
 	$(RM) -rf $(PREFIX)/libexec/octave/site/oct/i386-unknown-freebsd?
 	$(RM) -rf $(PREFIX)/libexec/octave/site/exec/i386-unknown-freebsd?
 .endif
-	${LDCONFIG} -m $(PREFIX)/lib
 
 .include <bsd.port.mk>

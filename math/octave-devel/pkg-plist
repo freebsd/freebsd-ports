@@ -4,13 +4,8 @@ include/octave-2.0.12/config.h
 include/octave-2.0.12/f77-fcn.h
 include/octave-2.0.12/lo-error.h
 lib/libcruft.a
-lib/libcruft.so.2.0
 lib/liboctave.a
-lib/liboctave.so.2.0
 lib/liboctinterp.a
-lib/liboctinterp.so.2.0
-@exec /sbin/ldconfig -m %B
-@unexec /sbin/ldconfig -R %B
 include/octave-2.0.12/Bounds.h
 include/octave-2.0.12/CollocWt.h
 include/octave-2.0.12/DAE.h
