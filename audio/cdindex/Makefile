@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	cdindex
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.cdindex.org/pub/cdindex/
+MASTER_SITES=	ftp://ftp.cdindex.org/pub/cdindex/ \
+		ftp://ftp.musicbrainz.org/pub/cdindex/
 
-MAINTAINER=	van.woerkom@netcologne.de
+MAINTAINER=	ports@freebsd.org
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
