@@ -190,6 +190,11 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/metricsmenu.html
 %%PORTDOCS%%share/doc/pfaedit/metricsview.html
 %%PORTDOCS%%share/doc/pfaedit/newfont.png
+%%PORTDOCS%%share/doc/pfaedit/o-baddir.png
+%%PORTDOCS%%share/doc/pfaedit/o1.png
+%%PORTDOCS%%share/doc/pfaedit/o2.png
+%%PORTDOCS%%share/doc/pfaedit/o3.png
+%%PORTDOCS%%share/doc/pfaedit/o4.png
 %%PORTDOCS%%share/doc/pfaedit/oldchangelog.html
 %%PORTDOCS%%share/doc/pfaedit/otherlinks.html
 %%PORTDOCS%%share/doc/pfaedit/outlinechar.png
