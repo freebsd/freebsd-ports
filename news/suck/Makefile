@@ -18,6 +18,9 @@ GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 .endif
 MAN1=		suck.1 rpost.1 testhost.1 lmove.1
+EX_SCRIPTS=	get.news.generic get.news.inn perl_kill.pl perl_xover.pl \
+		post_filter.pl put.news put.news.pl put.news.sm put.news.sm.pl
+EX_DATA=	suckkillfile.sample sucknewsrc.sample suckothermsgs.sample
 
 .if defined(NEWSBIN)
 PKGNAMESUFFIX=	-cnews
@@ -51,13 +54,15 @@ post-patch:
 	@${PERL5} -pi -e "s=/usr/local/news/lib=${LOCALBASE}/news/lib=" \
 		${WRKSRC}/suck_config.h
 
-post-install:
 .if !defined(NOPORTDOCS)
+post-install:
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/sample/get.news.inn ${EXAMPLESDIR}/
-	${INSTALL_SCRIPT} ${WRKSRC}/sample/get.news.generic ${EXAMPLESDIR}/
-	${INSTALL_SCRIPT} ${WRKSRC}/sample/put.news ${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/sample/*.sample ${EXAMPLESDIR}/
+.for i in ${EX_SCRIPTS}
+	${INSTALL_SCRIPT} ${WRKSRC}/sample/${i} ${EXAMPLESDIR}/
+.endfor
+.for i in ${EX_DATA}
+	${INSTALL_DATA} ${WRKSRC}/sample/${i} ${EXAMPLESDIR}/
+.endfor
 .endif
 
 .include <bsd.port.post.mk>
