@@ -1,1 +1,4 @@
+bin/pauseme
 bin/vide
+share/vide/vide%%VERSION%%.txt
+@dirrm share/vide

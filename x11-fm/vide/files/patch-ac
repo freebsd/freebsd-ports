@@ -1,15 +1,16 @@
---- src/vide.c.orig	Sun Jun 11 19:04:56 2000
-+++ src/vide.c	Sun Jun 11 19:06:53 2000
-@@ -224,6 +224,8 @@
+--- src/vide.c.orig	Thu May 11 03:04:39 2000
++++ src/vide.c	Sat Jun 17 15:19:25 2000
+@@ -224,6 +224,9 @@
  
  	getcwd(current_dir, sizeof(current_dir));
  
 +  /* i18n support */
 +  gtk_set_locale();
++
    /* Set up handler for sigchild so that we don't get zombies */
    new_action.sa_handler = received_sigchild;
    sigemptyset (&new_action.sa_mask);
-@@ -243,7 +245,7 @@
+@@ -243,7 +246,7 @@
    gdk_color_parse ("yellow", &TAG_COLOR);
    gdk_color_parse ("wheat", &DRAG_HILIGHT);
    COMMAND_TEXT_FONT =
@@ -18,3 +19,55 @@
  
    cfg.filetypes = NULL;
    cfg.bookmarks = NULL;
+@@ -259,7 +262,7 @@
+       cfg.confirm_delete = TRUE; // not used
+       cfg.confirm_overwrite = TRUE; // not used
+       cfg.start_with_cwd = FALSE; 
+-      strncpy (cfg.viewer_command, "rxvt -e vim",
++      strncpy (cfg.viewer_command, "xterm -e vi",
+ 	       sizeof (cfg.viewer_command));
+       cfg.window_width = 640;
+       cfg.window_height = 480;
+@@ -268,7 +271,7 @@
+       cfg.divide_popup_menu = FALSE; // not used
+       cfg.dir_history_max_length = 15; 
+       cfg.command_history_max_length = 10;
+-      strncpy (cfg.xterm_command, "rxvt", sizeof (cfg.xterm_command));
++      strncpy (cfg.xterm_command, "xterm", sizeof (cfg.xterm_command));
+       chdir (getenv ("HOME"));
+       getcwd (app.left_view.dir, PATH_MAX);
+       strncpy (app.right_view.dir, app.left_view.dir, PATH_MAX);
+@@ -280,9 +283,9 @@
+     {
+       /* Setup some default filetypes */
+       add_filetype ("jpeg,jpg,png,xpm,gif", "xv,gimp", "Image Files");
+-      add_filetype ("c,cpp,h,pl,java, py", "x vim", "Source Code Files");
++      add_filetype ("c,cpp,h,pl,java, py", "x vi", "Source Code Files");
+       add_filetype ("o,so,a", "x nm %f | less", "Object Files");
+-      add_filetype ("htm,html,php", "netscape,x vim", "HTML Documents");
++      add_filetype ("htm,html,php", "netscape,x vi", "HTML Documents");
+       add_filetype ("tar.gz,tgz", "x tar xzvf %f ,x tar tzvf %f | less",
+ 		    "Gzipped Tarballs");
+ 			add_filetype("zip, Z", "x unzip %f", "Zip");
+@@ -310,7 +313,7 @@
+       gchar trash_com[128];
+ 			gchar memo_com[128];
+       g_snprintf (trash_com, 128, "mv %%f %s", cfg.trash);
+-			g_snprintf (memo_com, 128, "rxvt -e vim %s/memo", cfg.config_dir);
++			g_snprintf (memo_com, 128, "xterm -e vi %s/memo", cfg.config_dir);
+ 
+       add_user_command (" ", "NULL");
+ 			add_user_command ("Memo", memo_com);
+@@ -332,9 +335,9 @@
+ 	}
+ 	if(!read_command_mode_file())
+ 	{
+-		add_command("mutt", "exe rxvt -e mutt");
+-		add_command("ps", "exe rxvt -e top");
+-		add_command("vi", "exe rxvt -e vim");
++		add_command("mutt", "exe xterm -e mutt");
++		add_command("ps", "exe xterm -e top");
++		add_command("vi", "exe xterm -e vi");
+ 		add_command("Backup", "/~$");
+ 	  add_command("touch", "exe touch %{Name of new file.}");
+ 	}

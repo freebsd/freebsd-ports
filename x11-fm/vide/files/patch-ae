@@ -1,0 +1,11 @@
+--- src/config_files.c.orig	Thu Apr 27 04:12:22 2000
++++ src/config_files.c	Sat Jun 17 14:26:55 2000
+@@ -60,7 +60,7 @@
+ {
+ 	gchar command[PATH_MAX];
+ 
+-	g_snprintf(command, sizeof(command), "cp /usr/local/share/vide/vide%s.txt %s",
++	g_snprintf(command, sizeof(command), "cp %%PREFIX%%/share/vide/vide%s.txt %s",
+ 			VERSION, help_file);
+ 	file_exec(command);
+ 

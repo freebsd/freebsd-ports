@@ -1,0 +1,11 @@
+--- src/main_menu.c.orig	Sat Jun 17 15:24:20 2000
++++ src/main_menu.c	Sat Jun 17 15:56:55 2000
+@@ -27,7 +27,7 @@
+ help_cb(GtkWidget *widget, gpointer data)
+ {
+ 	gchar help_command[NAME_MAX];
+-	g_snprintf(help_command, sizeof(help_command), "%s -e vim %s/vide%s.txt",
++	g_snprintf(help_command, sizeof(help_command), "%s -e vi %s/vide%s.txt",
+ 			cfg.xterm_command, cfg.config_dir, VERSION); 
+ 	file_exec(help_command);
+ 
