@@ -8,8 +8,9 @@
 PORTNAME=	ipsorc
 PORTVERSION=	1.7.5
 CATEGORIES=	net security
-MASTER_SITES=	http://www.informony.com/ipsorc/
-#MASTER_SITE_SUBDIR=     ${PORTNAME}
+MASTER_SITES=	http://www.informony.com/ipsorc/ \
+		http://sorcerer.mirrors.pair.com/sources/ipsorcery/${PORTVERSION}/ \
+		http://www.l0t3k.net/tools/PacketGenerator/
 
 MAINTAINER=	ecu@ipv42.net
 COMMENT=	A tool to create and send IP packets with a graphical GTK front-end
