@@ -3772,6 +3772,7 @@ linux-mozilla	ports/www/linux-mozilla
 linux-nwserver	ports/games/linux-nwserver
 linux-openmotif	ports/x11-toolkits/linux-openmotif
 linux-opera	ports/www/linux-opera
+linux-opera7	ports/www/linux-opera7
 linux-peops-softgpu	ports/emulators/linux-peops-softgpu
 linux-peops-spu	ports/emulators/linux-peops-spu
 linux-pete-mesagpu	ports/emulators/linux-pete-mesagpu
