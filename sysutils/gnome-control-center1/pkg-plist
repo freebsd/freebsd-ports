@@ -17,7 +17,7 @@ etc/cappletConf.sh
 include/capplet-widget.h
 lib/libcapplet.a
 lib/libcapplet.so
-lib/libcapplet.so.1.0
+lib/libcapplet.so.1
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/gnome/apps/Settings/Desktop/.directory
@@ -165,6 +165,7 @@ share/gnome/control-center/.data/munch.png
 share/gnome/control-center/.data/pedal.png
 share/gnome/control-center/.data/qix.png
 share/gnome/control-center/.data/sierpinski.png
+share/gnome/control-center/.data/spiral.png
 share/gnome/control-center/.data/starfish.png
 share/gnome/control-center/.data/vines.png
 share/gnome/control-center/.data/xroger.png
@@ -200,6 +201,7 @@ share/locale/da/LC_MESSAGES/control-center.mo
 share/locale/de/LC_MESSAGES/control-center.mo
 share/locale/en_GB/LC_MESSAGES/control-center.mo
 share/locale/es/LC_MESSAGES/control-center.mo
+share/locale/et/LC_MESSAGES/control-center.mo
 share/locale/fi/LC_MESSAGES/control-center.mo
 share/locale/fr/LC_MESSAGES/control-center.mo
 share/locale/ga/LC_MESSAGES/control-center.mo
@@ -207,9 +209,12 @@ share/locale/hu/LC_MESSAGES/control-center.mo
 share/locale/it/LC_MESSAGES/control-center.mo
 share/locale/ja/LC_MESSAGES/control-center.mo
 share/locale/ko/LC_MESSAGES/control-center.mo
+share/locale/nl/LC_MESSAGES/control-center.mo
 share/locale/no/LC_MESSAGES/control-center.mo
 share/locale/pl/LC_MESSAGES/control-center.mo
 share/locale/pt/LC_MESSAGES/control-center.mo
+share/locale/pt_BR/LC_MESSAGES/control-center.mo
+share/locale/ro/LC_MESSAGES/control-center.mo
 share/locale/ru/LC_MESSAGES/control-center.mo
 share/locale/sv/LC_MESSAGES/control-center.mo
 @dirrm share/gnome/wm-properties

@@ -1,13 +1,13 @@
 # New ports collection makefile for:	control-center
-# Version required:			1.0.6
+# Version required:			1.0.51
 # Date created:				29 Dec 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	control-center-1.0.6
-PKGNAME=	gnomecontrolcenter-1.0.6
+DISTNAME=	control-center-1.0.51
+PKGNAME=	gnomecontrolcenter-1.0.51
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/control-center
