@@ -15,6 +15,7 @@ bin/estxlshtml
 bin/estxview
 libexec/estmerge.cgi
 libexec/estsearch.cgi
+libexec/estspellen
 share/estraier/COPYING
 share/estraier/ChangeLog
 share/estraier/estmerge.conf
