@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.220 1999/01/29 21:26:22 mph Exp $
+# $Id: Makefile,v 1.221 1999/01/29 23:59:05 billf Exp $
 #
 
     SUBDIR += SSLtelnet
@@ -90,6 +90,7 @@
     SUBDIR += mrt
     SUBDIR += mrtg
     SUBDIR += mtr
+    SUBDIR += muh
     SUBDIR += ncftp
     SUBDIR += ncftp2
     SUBDIR += ncftp3
