@@ -49,7 +49,6 @@
     SUBDIR += ftnchek
     SUBDIR += gaa
     SUBDIR += gcc11
-    SUBDIR += gdbtk
     SUBDIR += gettext
     SUBDIR += gide
     SUBDIR += gindent
@@ -62,6 +61,7 @@
     SUBDIR += gtksheet
     SUBDIR += id-utils
     SUBDIR += ilu
+    SUBDIR += insight
     SUBDIR += jam
     SUBDIR += ktranslator
     SUBDIR += lclint
