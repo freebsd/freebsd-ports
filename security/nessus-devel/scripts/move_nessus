@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/security/nessus-devel/scripts/Attic/move_nessus,v 1.2 2004-08-13 14:15:25 vs Exp $
+# $FreeBSD: /tmp/pcvs/ports/security/nessus-devel/scripts/Attic/move_nessus,v 1.3 2004-12-12 21:37:53 sem Exp $
 #
 # set -x
 
@@ -19,10 +19,12 @@ PATH=/bin:/usr/bin
 
 
 if [ -f $PREFIX/etc/nessus/nessusd.conf ]; then
-  mv $PREFIX/etc/nessus/nessusd.conf $PREFIX/etc/nessus/nessusd.conf.bak
-  sed	-e "s,/usr/local/etc/nessus/var,/usr/local/var,g" \
-	-e "s,/usr/local/etc/nessus/com,/usr/local/com,g" \
+  if grep -q "$PREFIX/etc/nessus/var" $PREFIX/etc/nessus/nessusd.conf; then
+    mv $PREFIX/etc/nessus/nessusd.conf $PREFIX/etc/nessus/nessusd.conf.bak
+    sed	-e "s,$PREFIX/etc/nessus/var,$PREFIX/var,g" \
+	-e "s,$PREFIX/etc/nessus/com,$PREFIX/com,g" \
 	$PREFIX/etc/nessus/nessusd.conf.bak > $PREFIX/etc/nessus/nessusd.conf
+  fi
 fi
 if [ -d $PREFIX/etc/nessus/var/nessus/users ]; then
   rmdir $PREFIX/etc/nessus/var/nessus/users > /dev/null 2>/dev/null
