@@ -1,0 +1,8 @@
+sbin/elsa
+etc/elsa.cfg
+etc/rc.d/elsa.sh
+share/elsa/LICENSE
+share/elsa/README
+share/elsa/content/elsa-test.mov
+@dirrm share/elsa/content
+@dirrm share/elsa
