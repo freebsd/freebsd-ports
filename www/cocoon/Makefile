@@ -14,9 +14,9 @@ EXTRACT_SUFX=	.jar
 
 MAINTAINER=	kuriyama@FreeBSD.org
 
-RUN_DEPENDS=	${PREFIX}/libexec/apache/mod_jserv.so:${PORTSDIR}/www/apache-jserv
-#		${PREFIX}/share/java/classes/lotusxsl.jar:${PORTSDIR}/textproc/lotusxsl
-#		${PREFIX}/share/java/classes/xml4j.jar:${PORTSDIR}/textproc/xml4j
+RUN_DEPENDS=	${LOCALBASE}/libexec/apache/mod_jserv.so:${PORTSDIR}/www/apache-jserv
+#		${LOCALBASE}/share/java/classes/lotusxsl.jar:${PORTSDIR}/textproc/lotusxsl
+#		${LOCALBASE}/share/java/classes/xml4j.jar:${PORTSDIR}/textproc/xml4j
 
 EXTRACT_CMD=	${PREFIX}/${JAVASUBDIR}/bin/jar
 EXTRACT_BEFORE_ARGS=	xf

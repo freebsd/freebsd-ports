@@ -3,4 +3,3 @@ To activate Cocoon:
 o Copy ${PREFIX}/etc/apache/cocoon.properties.default to cocoon.properties.
 o Uncomment lines near "Uncomment if you use Cocoon." in jserv.conf,
   jserv.properties and zone.properties.
-
