@@ -1,30 +1,37 @@
---- Makefile.in.orig	Mon Jul  1 13:55:06 2002
-+++ Makefile.in	Wed Jul 17 18:43:13 2002
-@@ -151,7 +151,7 @@
+--- Makefile.in.orig	Thu Dec  5 19:43:42 2002
++++ Makefile.in	Tue Dec 31 18:26:52 2002
+@@ -231,7 +231,7 @@
  
  AUTOMAKE_OPTIONS = 1.0 no-dependencies foreign
  
 -COMMONDIRS = lib irssi silc silcd doc includes
-+COMMONDIRS = lib irssi silcd includes
++COMMONDIRS = lib irssi silcd doc includes
  
  # Sub directories defined by "distributions" file, and can be overridden
  # with ./configure, which substitutes these variables.
-@@ -531,9 +531,6 @@
- 
+@@ -700,7 +700,6 @@
  install-dirs:
  	-mkdir -p $(etcdir)
--	-mkdir -p $(modulesdir)
--	-mkdir -p $(helpdir)
+ 	-mkdir -p $(modulesdir)
 -	-mkdir -p $(docdir)
- 	-mkdir -p $(logsdir)
  
- generate-server-key:
-@@ -568,21 +565,17 @@
- 	$(INSTALL_DATA) $(srcdir)/doc/examples/cell* $(docdir)/examples/
+ install-dirs-client: install-dirs
+ 	-mkdir -p $(helpdir)
+@@ -728,8 +727,7 @@
+ 	 $(INSTALL_DATA) $(srcdir)/doc/silc.1 $(mandir)/man1; \
+ 	fi
  
- etc-install:
+-doc-install-server: doc-install
+-	-$(INSTALL_DATA) $(srcdir)/doc/example_silcd.conf $(docdir)/
++doc-install-server:
+ 	-@if test -f $(srcdir)/doc/silcd.8 ; then \
+ 	 $(INSTALL_DATA) $(srcdir)/doc/silcd.8 $(mandir)/man8; \
+ 	fi
+@@ -746,13 +744,11 @@
+ 	fi
+ 
+ etc-install-server:
 -	-@if test '!' -f $(etcdir)/silcd.conf ; then \
-+	-@if test '!' -f $(etcdir)/silcd.conf.sample ; then \
  	  $(INSTALL_DATA) $(srcdir)/doc/example_silcd.conf \
 -		$(etcdir)/silcd.conf; \
 +		$(etcdir)/silcd.conf.sample; \
@@ -32,19 +39,30 @@
 -		$(etcdir)/silcalgs.conf; \
 -          chmod go= $(etcdir)/silcd.conf; \
 -	fi
--	-@if test '!' -f $(etcdir)/silc.conf ; then \
--	  $(INSTALL_DATA) $(srcdir)/irssi/silc.conf \
--	  $(etcdir)/silc.conf; \
 +		$(etcdir)/silcalgs.conf.sample; \
-+          chmod go= $(etcdir)/silcd.conf.sample; \
- 	fi
++          chmod go= $(etcdir)/silcd.conf.sample
  
--@SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs sim-install doc-install etc-install
--@SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_TRUE@install-data-hook: install-dirs generate-server-key sim-install doc-install toolkit-install examples-install etc-install
--@SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_FALSE@install-data-hook: install-dirs generate-server-key sim-install doc-install examples-install etc-install
-+@SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs etc-install
-+@SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_TRUE@install-data-hook: install-dirs etc-install
-+@SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_FALSE@install-data-hook: install-dirs etc-install
+ sim-install:
+ 	-$(INSTALL_DATA) $(srcdir)/lib/silcsim/*.so $(modulesdir)/
+@@ -764,9 +760,9 @@
+ 	-cp -R $(srcdir)/tutorial $(prefix)
+ 
+ examples-install:
+-	-mkdir -p $(docdir)/examples/
+-	-$(INSTALL_DATA) $(srcdir)/doc/examples/README $(docdir)/examples/
+-	-$(INSTALL_DATA) $(srcdir)/doc/examples/silc* $(docdir)/examples/
++	-mkdir -p $(prefix)/share/examples/silc
++	-$(INSTALL_DATA) $(srcdir)/doc/examples/README $(prefix)/share/examples/silc
++	-$(INSTALL_DATA) $(srcdir)/doc/examples/silc* $(prefix)/share/examples/silc
+ 
+ generate-server-key:
+ 	-@if test '!' -f $(etcdir)/silcd.pub ; then \
+@@ -775,7 +771,7 @@
+ 
+ @SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs-client sim-install doc-install-client etc-install-client
+ @SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_TRUE@install-data-hook: install-dirs-client install-dirs-server sim-install doc-install-client doc-install-server toolkit-install examples-install etc-install-client etc-install-server generate-server-key
+-@SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_FALSE@install-data-hook: install-dirs-server sim-install doc-install-server examples-install etc-install-server generate-server-key
++@SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_FALSE@install-data-hook: install-dirs-server sim-install doc-install-server examples-install etc-install-server
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
  .NOEXPORT:

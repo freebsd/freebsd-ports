@@ -1,13 +1,22 @@
---- silcd/Makefile.in.orig	Wed Jul 17 18:20:09 2002
-+++ silcd/Makefile.in	Wed Jul 17 18:20:33 2002
-@@ -259,8 +259,8 @@
+--- silcd/Makefile.in.orig	Thu Dec  5 19:43:48 2002
++++ silcd/Makefile.in	Tue Dec 31 18:08:15 2002
+@@ -130,7 +130,7 @@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+ LDFLAGS = @LDFLAGS@
+ 
+-LIBS = $(SILC_COMMON_LIBS) -lsilc
++LIBS = -L$(top_srcdir)/lib/.libs $(SILC_COMMON_LIBS) -lsilc
+ LIBSILCCLIENT_AGE = @LIBSILCCLIENT_AGE@
+ LIBSILCCLIENT_CURRENT = @LIBSILCCLIENT_CURRENT@
+ LIBSILCCLIENT_REVISION = @LIBSILCCLIENT_REVISION@
+@@ -326,8 +326,8 @@
  	     || test -f $$p1 \
  	  ; then \
- 	    f=`echo $$p1|sed '$(transform);s/$$/$(EXEEXT)/'`; \
--	   echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(sbindir)/$$f"; \
--	   $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(sbindir)/$$f; \
-+	   echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(sbindir)/$$p"; \
-+	   $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(INSTALL_PROGRAM) $$p $(DESTDIR)$(sbindir)/$$p; \
+ 	    f=`echo "$$p1" | sed 's,^.*/,,;$(transform);s/$$/$(EXEEXT)/'`; \
+-	   echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(sbinPROGRAMS_INSTALL) $$p $(DESTDIR)$(sbindir)/$$f"; \
+-	   $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(sbinPROGRAMS_INSTALL) $$p $(DESTDIR)$(sbindir)/$$f || exit 1; \
++	   echo " $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(sbinPROGRAMS_INSTALL) $$p $(DESTDIR)$(sbindir)/$$p"; \
++	   $(INSTALL_PROGRAM_ENV) $(LIBTOOL) --mode=install $(sbinPROGRAMS_INSTALL) $$p $(DESTDIR)$(sbindir)/$$p || exit 1; \
  	  else :; fi; \
  	done
  

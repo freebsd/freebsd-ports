@@ -1,6 +1,6 @@
---- Makefile.in.orig	Wed Jul 10 16:54:28 2002
-+++ Makefile.in	Wed Jul 10 18:02:37 2002
-@@ -151,7 +151,7 @@
+--- Makefile.in.orig	Thu Dec  5 19:38:34 2002
++++ Makefile.in	Sun Dec 29 15:27:21 2002
+@@ -231,7 +231,7 @@
  
  AUTOMAKE_OPTIONS = 1.0 no-dependencies foreign
  
@@ -9,36 +9,38 @@
  
  # Sub directories defined by "distributions" file, and can be overridden
  # with ./configure, which substitutes these variables.
-@@ -531,10 +531,7 @@
- 
+@@ -700,11 +700,9 @@
  install-dirs:
  	-mkdir -p $(etcdir)
--	-mkdir -p $(modulesdir)
- 	-mkdir -p $(helpdir)
+ 	-mkdir -p $(modulesdir)
 -	-mkdir -p $(docdir)
--	-mkdir -p $(logsdir)
  
- generate-server-key:
- 	-@if test '!' -f $(etcdir)/silcd.pub ; then \
-@@ -568,19 +565,12 @@
- 	$(INSTALL_DATA) $(srcdir)/doc/examples/cell* $(docdir)/examples/
+ install-dirs-client: install-dirs
+ 	-mkdir -p $(helpdir)
+-	-mkdir -p $(mandir)/man1
  
- etc-install:
--	-@if test '!' -f $(etcdir)/silcd.conf ; then \
--	  $(INSTALL_DATA) $(srcdir)/doc/example_silcd.conf \
--		$(etcdir)/silcd.conf; \
--	  $(INSTALL_DATA) $(srcdir)/doc/silcalgs.conf \
--		$(etcdir)/silcalgs.conf; \
--          chmod go= $(etcdir)/silcd.conf; \
--	fi
- 	-@if test '!' -f $(etcdir)/silc.conf ; then \
- 	  $(INSTALL_DATA) $(srcdir)/irssi/silc.conf \
--	  $(etcdir)/silc.conf; \
-+	  $(etcdir)/silc.conf.sample; \
+ install-dirs-server: install-dirs
+ 	-mkdir -p $(logsdir)
+@@ -738,12 +736,8 @@
  	fi
  
--@SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs sim-install doc-install etc-install
-+@SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs etc-install
- @SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_TRUE@install-data-hook: install-dirs generate-server-key sim-install doc-install toolkit-install examples-install etc-install
- @SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_FALSE@install-data-hook: install-dirs generate-server-key sim-install doc-install examples-install etc-install
+ etc-install-client:
+-	-@if test '!' -d $(srcdir)/irssi ; then \
+-	  if test '!' -f $(etcdir)/silc.conf ; then \
+ 	    $(INSTALL_DATA) $(srcdir)/irssi/silc.conf \
+-	    	$(etcdir)/silc.conf; \
+-	  fi; \
+-	fi
++	    	$(etcdir)/silc.conf.sample
+ 
+ etc-install-server:
+ 	-@if test '!' -f $(etcdir)/silcd.conf ; then \
+@@ -773,7 +767,7 @@
+ 	  $(sbindir)/silcd -C $(etcdir); \
+ 	fi
+ 
+-@SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs-client sim-install doc-install-client etc-install-client
++@SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs-client sim-install etc-install-client
+ @SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_TRUE@install-data-hook: install-dirs-client install-dirs-server sim-install doc-install-client doc-install-server toolkit-install examples-install etc-install-client etc-install-server generate-server-key
+ @SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_FALSE@install-data-hook: install-dirs-server sim-install doc-install-server examples-install etc-install-server generate-server-key
  # Tell versions [3.59,3.63) of GNU make to not export all variables.

@@ -6,15 +6,23 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.10.1
 CATEGORIES=	net security
-MASTER_SITES=	http://www.silcnet.org/download/server/sources/ \
-		ftp://ftp.silcnet.org/silc/server/sources/ \
-		http://public.www.planetmirror.com/pub/silcnet/server/sources/ \
-		ftp://ftp.au.silcnet.org/pub/silcnet/server/sources/ \
-		http://www.mirrors.wiretapped.net/security/network-security/silc/server/sources/ \
-		ftp://ftp.mirrors.wiretapped.net/pub/security/network-security/silc/server/sources/ \
-		ftp://ftp.no.silcnet.org/pub/silc/server/sources/
+MASTER_SITES=	http://www.silcnet.org/download/%SUBDIR%/ \
+		http://ftp.silcnet.org/%SUBDIR%/ \
+		http://www.planetmirror.com/pub/silcnet/%SUBDIR%/ \
+		http://www.nic.funet.fi/pub/mirrors/ftp.silcnet.org/silc/%SUBDIR%/ \
+		http://www.fi.silcnet.org/download/%SUBDIR%/ \
+		http://munitions.vipul.net/software/mirrors/silc/%SUBDIR%/ \
+		http://www.pl.silcnet.org/download/%SUBDIR%/ \
+		http://ftp.sunet.se/pub/network/silc/%SUBDIR%/ \
+		ftp://ftp.silcnet.org/silc/%SUBDIR%/ \
+		ftp://ftp.au.silcnet.org/pub/silcnet/%SUBDIR%/ \
+		ftp://ftp.funet.fi/pub/mirrors/ftp.silcnet.org/silc/%SUBDIR%/ \
+		ftp://ftp.pl.silcnet.org/pub/silc/%SUBDIR%/ \
+		ftp://ftp.sunet.se/pub/network/silc/%SUBDIR%/ \
+		ftp://ftp.uk.silcnet.org/pub/silc/%SUBDIR%/
+MASTER_SITE_SUBDIR=	server/sources
 PKGNAMESUFFIX=	-doc
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
 

@@ -1,6 +1,6 @@
---- Makefile.in.orig	Wed Jul 17 18:55:04 2002
-+++ Makefile.in	Wed Jul 17 18:56:13 2002
-@@ -151,7 +151,7 @@
+--- Makefile.in.orig	Tue Dec 31 17:07:00 2002
++++ Makefile.in	Tue Dec 31 17:10:23 2002
+@@ -231,7 +231,7 @@
  
  AUTOMAKE_OPTIONS = 1.0 no-dependencies foreign
  
@@ -9,27 +9,20 @@
  
  # Sub directories defined by "distributions" file, and can be overridden
  # with ./configure, which substitutes these variables.
-@@ -530,11 +530,7 @@
+@@ -698,8 +698,6 @@
  	-rm -rf $(distdir)
  
  install-dirs:
 -	-mkdir -p $(etcdir)
 -	-mkdir -p $(modulesdir)
--	-mkdir -p $(helpdir)
  	-mkdir -p $(docdir)
--	-mkdir -p $(logsdir)
  
- generate-server-key:
- 	-@if test '!' -f $(etcdir)/silcd.pub ; then \
-@@ -580,9 +576,9 @@
- 	  $(etcdir)/silc.conf; \
- 	fi
+ install-dirs-client: install-dirs
+@@ -775,7 +773,7 @@
  
--@SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs sim-install doc-install etc-install
--@SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_TRUE@install-data-hook: install-dirs generate-server-key sim-install doc-install toolkit-install examples-install etc-install
--@SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_FALSE@install-data-hook: install-dirs generate-server-key sim-install doc-install examples-install etc-install
-+@SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs doc-install
-+@SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_TRUE@install-data-hook: install-dirs doc-install
+ @SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs-client sim-install doc-install-client etc-install-client
+ @SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_TRUE@install-data-hook: install-dirs-client install-dirs-server sim-install doc-install-client doc-install-server toolkit-install examples-install etc-install-client etc-install-server generate-server-key
+-@SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_FALSE@install-data-hook: install-dirs-server sim-install doc-install-server examples-install etc-install-server generate-server-key
 +@SILC_DIST_CLIENT_FALSE@@SILC_DIST_TOOLKIT_FALSE@install-data-hook: install-dirs doc-install
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -1,11 +1,11 @@
---- configure.orig	Wed Jul 17 18:56:57 2002
-+++ configure	Wed Jul 17 18:57:09 2002
-@@ -2623,7 +2623,7 @@
- # Distribution definition. ./prepare will automatically add here a correct
+--- configure.orig	Tue Dec 31 17:10:45 2002
++++ configure	Tue Dec 31 17:10:58 2002
+@@ -3052,7 +3052,7 @@
  # value. Do not edit!
+ #
  silc_dist=silc-server
 -SILC_DIST_SUBDIRS="lib silcd doc includes"
 +SILC_DIST_SUBDIRS="doc"
- cat >>confdefs.h <<\EOF
+ cat >>confdefs.h <<\_ACEOF
  #define SILC_DIST_SERVER 1
- EOF
+ _ACEOF

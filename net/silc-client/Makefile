@@ -6,14 +6,23 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	0.9.5.1
+PORTVERSION=	0.9.10.1
 CATEGORIES=	net ipv6 security
-MASTER_SITES=	http://www.silcnet.org/download/client/sources/ \
-		ftp://ftp.silcnet.org/silc/client/sources/ \
-		ftp://ftp.au.silcnet.org/pub/silcnet/client/sources/ \
-		http://www.mirrors.wiretapped.net/security/network-security/silc/client/sources/ \
-		ftp://ftp.mirrors.wiretapped.net/pub/security/network-security/silc/client/sources/ \
-		ftp://ftp.no.silcnet.org/pub/silc/client/sources/
+MASTER_SITES=	http://www.silcnet.org/download/%SUBDIR%/ \
+		http://ftp.silcnet.org/%SUBDIR%/ \
+		http://www.planetmirror.com/pub/silcnet/%SUBDIR%/ \
+		http://www.nic.funet.fi/pub/mirrors/ftp.silcnet.org/silc/%SUBDIR%/ \
+		http://www.fi.silcnet.org/download/%SUBDIR%/ \
+		http://munitions.vipul.net/software/mirrors/silc/%SUBDIR%/ \
+		http://www.pl.silcnet.org/download/%SUBDIR%/ \
+		http://ftp.sunet.se/pub/network/silc/%SUBDIR%/ \
+		ftp://ftp.silcnet.org/silc/%SUBDIR%/ \
+		ftp://ftp.au.silcnet.org/pub/silcnet/%SUBDIR%/ \
+		ftp://ftp.funet.fi/pub/mirrors/ftp.silcnet.org/silc/%SUBDIR%/ \
+		ftp://ftp.pl.silcnet.org/pub/silc/%SUBDIR%/ \
+		ftp://ftp.sunet.se/pub/network/silc/%SUBDIR%/ \
+		ftp://ftp.uk.silcnet.org/pub/silc/%SUBDIR%/
+MASTER_SITE_SUBDIR=	client/sources
 PKGNAMESUFFIX=	-client
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
@@ -28,8 +37,11 @@ USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	glib12
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc/${PORTNAME} \
+		--with-simdir=${PREFIX}/lib/silcsim/client \
 		--with-helpdir=${PREFIX}/share/${PORTNAME}/help
+INSTALLS_SHLIB=	yes
 PLIST_SUB=	INSTALL_DIR="${INSTALL_DIR}"
 PKGDEINSTALL=	${PKGINSTALL}
 
@@ -70,9 +82,11 @@ post-patch:
 		${WRKSRC}/irssi/docs/Makefile.in
 	@${PERL} -pi -e 's/^(install-data-am:) install-moduleLTLIBRARIES$$/\1/' \
 		${WRKSRC}/irssi/src/perl/Makefile.in
-	@${PERL} -pi -e 's/^(install-data-am: )install-confDATA /\1/' \
-		${WRKSRC}/irssi/Makefile.in
-	@${PERL} -pi -e 's/silcsim//' ${WRKSRC}/lib/Makefile.in
+	@${PERL} -pi -e 's/--libtool-enable-shared//' \
+		${WRKSRC}/lib/silccrypt/Makefile.in
+
+post-configure:
+	@${CP} ${LOCALBASE}/bin/libtool ${WRKSRC}
 
 post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \

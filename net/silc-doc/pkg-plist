@@ -6,12 +6,10 @@ share/doc/silc/FAQ
 share/doc/silc/INSTALL
 share/doc/silc/README
 share/doc/silc/TODO
-share/doc/silc/draft-riikonen-presence-attrs-00.txt
-share/doc/silc/draft-riikonen-silc-commands-03.txt
-share/doc/silc/draft-riikonen-silc-flags-payloads-00.txt
-share/doc/silc/draft-riikonen-silc-ke-auth-05.txt
-share/doc/silc/draft-riikonen-silc-pp-05.txt
-share/doc/silc/draft-riikonen-silc-spec-05.txt
-share/doc/silc/example_silcd.conf
-share/doc/silc/example_silcd.conf.in
-@dirrm share/doc/silc
+share/doc/silc/draft-riikonen-presence-attrs-01.txt
+share/doc/silc/draft-riikonen-silc-commands-04.txt
+share/doc/silc/draft-riikonen-silc-flags-payloads-02.txt
+share/doc/silc/draft-riikonen-silc-ke-auth-06.txt
+share/doc/silc/draft-riikonen-silc-pp-06.txt
+share/doc/silc/draft-riikonen-silc-spec-06.txt
+@unexec %D/share/doc/silc 2>/dev/null || true
