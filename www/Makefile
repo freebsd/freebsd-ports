@@ -715,6 +715,7 @@
     SUBDIR += zope-guf
     SUBDIR += zope-i18nlayer
     SUBDIR += zope-mindmapbbs
+    SUBDIR += zope-mysqluserfolder
     SUBDIR += zope-parsedxml
     SUBDIR += zope-placelesstranslationservice
     SUBDIR += zope-plonelanguagetool
