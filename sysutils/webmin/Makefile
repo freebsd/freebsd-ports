@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	0.990
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://telia.dl.sourceforge.net/sourceforge/webadmin/ \
 		http://www.webmin.com/updates/
@@ -26,7 +26,8 @@ SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
 WEBMIN_MODULES=	apache-0.990-2.wbm.gz postgresql-0.990-6.wbm.gz \
 		cron-0.990-2.wbm.gz acl-0.990-2.wbm.gz \
-		lpadmin-0.990-5.wbm.gz majordomo-0.990-6.wbm.gz
+		lpadmin-0.990-5.wbm.gz majordomo-0.990-6.wbm.gz \
+		useradmin-0.990-7.wbm.gz
 
 WEBMIN_THEMES=
 
