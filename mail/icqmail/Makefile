@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	icq.1:${PORTSDIR}/net/icqlib \
 		mimelib.3:${PORTSDIR}/converters/kdesupport2 \
-		guile.6:${PORTSDIR}/lang/guile
+		guile.9:${PORTSDIR}/lang/guile
 
 USE_NEW_GCC=	yes
 GNU_CONFIGURE=	yes
