@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	centericq
-PORTVERSION=	4.7.2
+PORTVERSION=	4.7.7
 PORTREVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	http://konst.org.ua/download/
@@ -16,10 +16,14 @@ MAINTAINER=	ijliao@FreeBSD.org
 
 LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext \
 		iconv.3:${PORTSDIR}/converters/libiconv \
-		sigc.1:${PORTSDIR}/devel/libsigc++
+		sigc.1:${PORTSDIR}/devel/libsigc++ \
+		fribidi.0:${PORTSDIR}/converters/fribidi
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-fribidi
 
 MAN1=	centericq.1
 
@@ -29,6 +33,13 @@ MAN1=	centericq.1
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 .endif
 
+post-patch:
+.for file in kkconsui-0.1/include/conf.h kkstrtext-0.1/conf.h kksystr-0.1/include/conf.h
+	@(cd ${WRKSRC} ; \
+	  ${MV} -f ${file} ${file}.orig ; \
+	  ${GREP} -v "_G_config.h" ${file}.orig > ${file})
+.endfor
+		
 .if !defined(NOPORTDOCS)
 post-install:
 	@${MKDIR} ${DOCSDIR}
