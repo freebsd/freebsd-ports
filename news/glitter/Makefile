@@ -16,16 +16,11 @@ DISTNAME=	${PORTNAME}-1.0beta1
 MAINTAINER=	greg@gregnet.net
 
 USE_X_PREFIX=	yes
-USE_GTK=	yes
-WANT_GNOME=	yes
-USE_GNOMELIBS=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomelibs gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
-
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
-.endif
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
