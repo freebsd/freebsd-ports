@@ -15,7 +15,7 @@ MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf \
-		gnomeprint.9:${PORTSDIR}/print/gnomeprint \
+		gnomeprint.12:${PORTSDIR}/print/gnomeprint \
 		bonobo.2:${PORTSDIR}/devel/bonobo
 RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
 
