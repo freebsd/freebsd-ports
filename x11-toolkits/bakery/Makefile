@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	bakery
-PORTVERSION=	0.4.0
+PORTVERSION=	0.6.0
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	gnomemm.3:${PORTSDIR}/x11-toolkits/gnome--
+LIB_DEPENDS=	gnomemm.4:${PORTSDIR}/x11-toolkits/gnome--
 
 USE_X_PREFIX=	yes
 USE_PERL5=	yes

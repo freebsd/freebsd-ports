@@ -3,15 +3,17 @@ include/bakery/App/App.h
 include/bakery/App/App_WithDoc.h
 include/bakery/App/Dialog_OfferSave.h
 include/bakery/Document/Document.h
+include/bakery/FileSelection/FileSelection.h
 include/bakery/View/View.h
 include/bakery/View/ViewBase.h
 include/bakery/View/View_Composite.h
 include/bakery/bakery.h
-lib/libbakery-0.4.so.1
+lib/libbakery-0.6.so.3
 lib/libbakery.a
 lib/libbakery.so
 share/aclocal/bakery.m4
 @dirrm include/bakery/View
+@dirrm include/bakery/FileSelection
 @dirrm include/bakery/Document
 @dirrm include/bakery/App
 @dirrm include/bakery
