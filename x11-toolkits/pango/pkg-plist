@@ -37,6 +37,7 @@ lib/pango/modules/pango-devanagari-x.so
 lib/pango/modules/pango-gujarati-x.so
 lib/pango/modules/pango-gurmukhi-x.so
 lib/pango/modules/pango-hangul-x.so
+lib/pango/modules/pango-hebrew-x.so
 lib/pango/modules/pango-myanmar-x.so
 lib/pango/modules/pango-tamil-x.so
 lib/pango/modules/pango-thai-x.so
