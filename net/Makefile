@@ -341,6 +341,7 @@
     SUBDIR += p5-Net-SCP
     SUBDIR += p5-Net-SMPP
     SUBDIR += p5-Net-SNMP
+    SUBDIR += p5-Net-SNPP
     SUBDIR += p5-Net-SSH
     SUBDIR += p5-Net-SSH-Perl
     SUBDIR += p5-Net-Server
