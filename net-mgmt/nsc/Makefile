@@ -8,7 +8,8 @@
 PORTNAME=	nsc
 PORTVERSION=	0.50c
 CATEGORIES=	net
-MASTER_SITES=	http://www.goth.dk/~goth/nsc/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dirk
 
 MAINTAINER=	dirk@FreeBSD.org
 
