@@ -3,6 +3,8 @@ parts of a file in Emacs source buffers.
 
 To use preview-latex, put the expression below into your ~/.emacs
 
-(require 'preview-latex)
+(require 'tex-site) 
+(load "preview-latex")
+
 
 WWW: http://preview-latex.sourceforge.net/ 
