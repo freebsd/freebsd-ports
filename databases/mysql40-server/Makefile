@@ -3,7 +3,7 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.59 1999/07/05 18:11:36 dirk Exp $
+# $Id: Makefile,v 1.60 1999/08/11 20:56:02 dirk Exp $
 #
 
 DISTNAME=	mysql-3.22.24
@@ -66,7 +66,7 @@ pre-fetch:
 pre-fetch:
 	@${ECHO}
 	@${ECHO} "Sorry, native FreeBSD threads (libc_r) in 2.2-branch"
-	@${ECHO} "are still to buggy to use with mysql."
+	@${ECHO} "are still too buggy to use with mysql."
 	@${ECHO} "Using mit-pthreads."
 	@${ECHO}
 .endif
