@@ -1,5 +1,5 @@
---- memcached.c.orig	Mon Jul 21 22:56:55 2003
-+++ memcached.c	Mon Jul 21 22:58:46 2003
+--- memcached.c.orig	Tue Jul 29 22:43:57 2003
++++ memcached.c	Thu Aug 21 11:18:45 2003
 @@ -34,7 +34,6 @@
  #include <errno.h>
  #include <time.h>
@@ -8,7 +8,7 @@
  #include <assert.h>
  
  #include "memcached.h"
-@@ -293,26 +292,6 @@
+@@ -314,26 +313,6 @@
          return;
      }
  
@@ -35,7 +35,7 @@
      if (strcmp(command, "stats maps") == 0) {
          char *wbuf;
          int wsize = 8192; /* should be enough */
-@@ -1089,7 +1068,6 @@
+@@ -1114,7 +1093,6 @@
      printf("-d            run as a daemon\n");
      printf("-m <num>      max memory to use for items in megabytes, default is 64 MB\n");
      printf("-c <num>      max simultaneous connections, default is 1024\n");
@@ -43,7 +43,25 @@
      printf("-v            verbose (print errors/warnings while in event loop)\n");
      printf("-h            print this help and exit\n");
      printf("-i            print memcached and libevent license\n");
-@@ -1236,11 +1214,6 @@
+@@ -1198,7 +1176,6 @@
+     int c;
+     conn *l_conn;
+     struct in_addr addr;
+-    int lock_memory = 0;
+     int daemonize = 0;
+ 
+     /* init settings */
+@@ -1222,9 +1199,6 @@
+         case 'i':
+             usage_license();
+             exit(0);
+-        case 'k':
+-            lock_memory = 1;
+-            break;
+         case 'v':
+             settings.verbose = 1;
+             break;
+@@ -1261,11 +1235,6 @@
              fprintf(stderr, "failed to daemon() in order to daemonize\n");
              return 1;
          }
