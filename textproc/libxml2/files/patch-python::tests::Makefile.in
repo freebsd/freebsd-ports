@@ -1,11 +1,11 @@
---- python/tests/Makefile.in.orig	Thu Aug 14 22:07:15 2003
-+++ python/tests/Makefile.in	Thu Aug 14 22:07:43 2003
-@@ -150,7 +150,7 @@
- am__quote = @am__quote@
- install_sh = @install_sh@
- pythondir = @pythondir@
+--- python/tests/Makefile.in.orig	Tue Mar 23 09:22:07 2004
++++ python/tests/Makefile.in	Tue Mar 23 09:22:39 2004
+@@ -241,7 +241,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
 -EXAMPLE_DIR = $(datadir)/doc/libxml2-python-$(LIBXML_VERSION)/examples
 +EXAMPLE_DIR = $(datadir)/doc/libxml2-python/examples
- 
  PYTESTS = \
      build.py	\
+     attribs.py	\
