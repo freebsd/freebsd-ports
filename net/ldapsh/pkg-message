@@ -1,0 +1,6 @@
+Before you can run the command:
+
+- Create the configuration file (an example is in
+  /usr/local/etc/LdapConfig.pl.sample)
+- See the file COMMANDS in the DOCSDIR (most likely
+  /usr/local/share/doc/ldapsh) for an overview of the commands.
