@@ -1,0 +1,11 @@
+--- drivers/Makefile.in.orig	Mon Feb  2 20:41:02 2004
++++ drivers/Makefile.in	Tue Feb 10 01:44:02 2004
+@@ -2069,7 +2069,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-docDATA install-driversDATA \
++install-data-am: install-driversDATA \
+ 	install-driversLTLIBRARIES
+ 	@$(NORMAL_INSTALL)
+ 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook

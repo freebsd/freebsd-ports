@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	plplot
-PORTVERSION=	5.2.1
-PORTREVISION=	2
+PORTVERSION=	5.3.0
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,9 +15,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scientific plotting package
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
-LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
+LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl \
+		gd.4:${PORTSDIR}/graphics/gd
 
-USE_GNOME=	gnomehack pkgconfig
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
@@ -27,7 +26,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		GDINCDIR="${LOCALBASE}/include" \
 		GDLIBDIR="${LOCALBASE}/lib" \
 		M4="${LOCALBASE}/bin/gm4"
-CONFIGURE_ARGS=	--disable-python --disable-octave --without-qhull
+CONFIGURE_ARGS=	--disable-cgm --disable-java --disable-octave \
+		--with-ltdlsystem --without-qhull
 INSTALLS_SHLIB=	yes
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
@@ -40,6 +40,18 @@ PLIST_SUB+=	X11="@comment "
 .else
 USE_XLIB=	yes
 PLIST_SUB+=	X11=""
+.endif
+
+.if !defined(WITHOUT_PTHREAD)
+CONFIGURE_ARGS+=	--with-pthreads
+.endif
+
+.if defined(WITH_PYTHON)
+USE_PYTHON=	yes
+PLIST_SUB+=	PYTHON=""
+.else
+CONFIGURE_ARGS+=	--disable-python
+PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if defined(WITH_TCLTK)
@@ -63,12 +75,37 @@ CONFIGURE_ARGS+=	--disable-itcl --disable-tcl --disable-tk
 PLIST_SUB+=	TCLTK="@comment "
 .endif
 
+pre-everything::
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "PLplot has the following tunable options:"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "	WITHOUT_X11=yes		Turns off X11 support"
+	@${ECHO_MSG} "	WITHOUT_PTHREAD=yes	Turns off pthread support"
+	@${ECHO_MSG} "	WITH_PYTHON=yes		Turns on Python support"
+	@${ECHO_MSG} "	WITH_TCLTK=yes		Turns on Tcl/Tk support"
+	@${ECHO_MSG} ""
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-litk$$|-litk32|g ; \
 		 s|-ltk$$|-ltk83|g ; \
 		 s|-litcl$$|-litcl32|g ; \
-		 s|-ltcl$$|-ltcl83|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|tclsh|${LOCALBASE}/bin/tclsh8.3|g' \
+		 s|-ltcl$$|-ltcl83|g ; \
+		 s|-lpthread|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's| tclsh | ${LOCALBASE}/bin/tclsh8.3 |g' \
 		${WRKSRC}/scripts/mktclIndex
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in AUTHORS ChangeLog Copyright FAQ NEWS PROBLEMS README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/drivers/README.drivers \
+		${DOCSDIR}/README.drivers
+	${INSTALL_DATA} ${WRKSRC}/lib/csa/README \
+		${DOCSDIR}/README.csa
+	${INSTALL_DATA} ${WRKSRC}/lib/csa/README.1st \
+		${DOCSDIR}/README.1st.csa
+.endif
 
 .include <bsd.port.mk>

@@ -1,11 +1,11 @@
---- bindings/tcl/Makefile.in.orig	Mon Apr 21 21:36:35 2003
-+++ bindings/tcl/Makefile.in	Wed Apr 23 18:39:49 2003
-@@ -341,7 +341,7 @@
- with_rpath_FALSE = @with_rpath_FALSE@
- with_rpath_TRUE = @with_rpath_TRUE@
+--- bindings/tcl/Makefile.in.orig	Mon Feb  2 20:40:59 2004
++++ bindings/tcl/Makefile.in	Tue Feb 10 01:10:30 2004
+@@ -932,7 +932,7 @@
  
--tcldir = ${prefix}/$(DATA_DIR)/../tcl
-+@enable_tcl_TRUE@tcldir = ${prefix}/$(DATA_DIR)/../tcl
+ info-am:
  
- libplplot = ../../src/libplplot$(LIB_TAG).la
- libmatrix = libtclmatrix$(LIB_TAG).la
+-install-data-am: install-pkgincludeHEADERS install-tclDATA
++install-data-am: @enable_tcl_TRUE@install-pkgincludeHEADERS install-tclDATA
+ 
+ install-exec-am: install-libLTLIBRARIES
+ 

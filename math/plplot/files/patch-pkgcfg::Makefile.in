@@ -1,0 +1,11 @@
+--- pkgcfg/Makefile.in.orig	Mon Feb  2 20:41:08 2004
++++ pkgcfg/Makefile.in	Tue Feb 10 01:42:00 2004
+@@ -519,7 +519,7 @@
+ 
+ info-am:
+ 
+-install-data-am: install-pkgconfigDATA
++install-data-am: @with_pkg_config_TRUE@install-pkgconfigDATA
+ 	@$(NORMAL_INSTALL)
+ 	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ 

@@ -1,0 +1,11 @@
+--- lib/csa/Makefile.in.orig	Mon Feb  2 20:41:08 2004
++++ lib/csa/Makefile.in	Tue Feb 10 01:53:21 2004
+@@ -635,8 +635,6 @@
+ info-am:
+ 
+ install-data-am:
+-	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ 
+ install-exec-am: install-libLTLIBRARIES
+ 
