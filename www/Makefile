@@ -15,6 +15,7 @@
     SUBDIR += arena
     SUBDIR += ashe           # requires Motif
     SUBDIR += aswedit
+    SUBDIR += bacon
     SUBDIR += bluefish
     SUBDIR += boa
     SUBDIR += cgihtml
