@@ -8990,9 +8990,15 @@ wwwoffle	ports/www/wwwoffle
 wwwstat		ports/www/wwwstat
 wxGlade		ports/devel/wxGlade
 wxgtk		ports/x11-toolkits/wxgtk
+wxgtk-common	ports/x11-toolkits/wxgtk-common
 wxgtk-contrib	ports/x11-toolkits/wxgtk-contrib
+wxgtk-contrib-common	ports/x11-toolkits/wxgtk-contrib-common
 wxgtk-devel	ports/x11-toolkits/wxgtk-devel
 wxgtk-docs	ports/x11-toolkits/wxgtk-docs
+wxgtk2		ports/x11-toolkits/wxgtk2
+wxgtk2-contrib	ports/x11-toolkits/wxgtk2-contrib
+wxgtk2-unicode	ports/x11-toolkits/wxgtk2-unicode
+wxgtk2-unicode-contrib	ports/x11-toolkits/wxgtk2-unicode-contrib
 wy60		ports/comms/wy60
 wyvern		ports/www/wyvern
 wzip		ports/archivers/wzip
