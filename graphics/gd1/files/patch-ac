@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Oct 13 17:20:11 1999
-+++ Makefile	Wed Feb  2 21:43:18 2000
-@@ -3,22 +3,24 @@
+--- Makefile.orig	Wed Mar  8 14:54:37 2000
++++ Makefile	Fri Mar 10 21:09:49 2000
+@@ -3,35 +3,45 @@
  #If you do not have gcc, change the setting for COMPILER, but you must
  #use an ANSI standard C compiler (NOT the old SunOS 4.1.3 cc
  #compiler; get gcc if you are still using it). 
@@ -17,39 +17,43 @@
 -INSTALL=install
 +#INSTALL=install
  
- #If you don't have FreeType and/or Xpm installed, including the
+ #If you don't have FreeType, libjpeg and/or Xpm installed, including the
  #header files, uncomment this (default).
--CFLAGS=-O
-+#CFLAGS=-O
- #If you do have FreeType and/or Xpm fully installed, uncomment a
+ #CFLAGS=-O
+ #If you do have FreeType, libjpeg and/or Xpm fully installed, uncomment a
  #variation of this and comment out the line above. See also LIBS below.
--#CFLAGS=-O -DHAVE_XPM -DHAVE_LIBTTF
+-CFLAGS=-O -DHAVE_XPM -DHAVE_JPEG -DHAVE_LIBTTF
+-
 +.if defined(WANT_X11)
-+CFLAGS+=-DHAVE_XPM -DHAVE_LIBTTF
++CFLAGS+=-DHAVE_XPM -DHAVE_JPEG -DHAVE_LIBTTF
++.else
++CFLAGS+=-DHAVE_JPEG
 +.endif
- 
++ 
  #If you don't have FreeType and/or Xpm fully installed, uncomment this
  #(default).
-@@ -27,11 +29,16 @@
- #If you do have FreeType and/or Xpm fully installed, uncomment a 
+-#LIBS=-lm -lgd -lpng -lz
++LIBS=-lm -lgd -lpng -lz -ljpeg
+ 
+ #If you do have FreeType, JPEG and/or Xpm fully installed, uncomment a 
  #variation of this and comment out the line above. Note that
  #Xpm requires X11. See also CFLAGS above.
--#LIBS=-lm -lgd -lpng -lz -lttf -lXpm -lX11
 +.if defined(WANT_X11)
-+LIBS=-lm -lgd -lpng -lz -lttf -lXpm -lX11
+ LIBS=-lm -lgd -lpng -lz -ljpeg -lttf -lXpm -lX11
 +.endif
  
- #Typical install locations for freetype, zlib, xpm and libpng header files.
+ #Typical install locations for freetype, zlib, xpm, libjpeg and libpng header files.
  #If yours are somewhere else, change this. 
 -INCLUDEDIRS=-I/usr/local/include -I/usr/include/X11 -I/usr/X11R6/include/X11
 +CFLAGS+=-I$(LOCALBASE)/include
 +.if defined(WANT_X11)
 +CFLAGS+=-I$(LOCALBASE)/include/freetype -I$(X11BASE)/include -I$(X11BASE)/include/X11
 +.endif
++
  
  #Typical install locations for freetype, zlib, xpm and libpng libraries.
  #If yours are somewhere else, other than a standard location
-@@ -39,16 +46,19 @@
+@@ -39,16 +49,19 @@
  #-L. as this allows the gd library itself to be found.
  #Put -L. first so that old versions of the gd library elsewhere
  #on your system can't cause conflicts while building a new one.
@@ -73,7 +77,7 @@
  
  #
  #
-@@ -58,34 +68,41 @@
+@@ -58,34 +71,41 @@
  
  VERSION=1.7
  
@@ -135,22 +139,22 @@
  
  gddemo: gddemo.o libgd.a
  	$(CC) gddemo.o -o gddemo	$(LIBDIRS) $(LIBS)
-@@ -120,16 +137,19 @@
+@@ -120,16 +140,19 @@
  gdtestttf: gdtestttf.o libgd.a
  	$(CC) gdtestttf.o -o gdtestttf	$(LIBDIRS) $(LIBS)
  
 -libgd.a: gd.o gd_gd.o gd_gd2.o gd_io.o gd_io_dp.o gd_io_file.o gd_ss.o \
-+OBJS=gd.o gd_gd.o gd_gd2.o gd_io.o gd_io_dp.o gd_io_file.o gd_ss.o \
- 	gd_io_ss.o gd_png.o gdxpm.o gdfontt.o gdfonts.o gdfontmb.o gdfontl.o \
++OBJS= gd.o gd_gd.o gd_gd2.o gd_io.o gd_io_dp.o gd_io_file.o gd_ss.o \
+ 	gd_io_ss.o gd_png.o gd_jpeg.o gdxpm.o gdfontt.o gdfonts.o gdfontmb.o gdfontl.o \
 -	gdfontg.o gdtables.o gdttf.o gdcache.o gdkanji.o \
 -	gd.h gdfontt.h gdfonts.h gdfontmb.h gdfontl.h gdfontg.h
 +	gdfontg.o gdtables.o gdttf.o gdcache.o gdkanji.o
-+INCS=gd.h gdfontt.h gdfonts.h gdfontmb.h gdfontl.h gdfontg.h
++INCS=	gd.h gdfontt.h gdfonts.h gdfontmb.h gdfontl.h gdfontg.h
 +
 +libgd.a:	$(INCS) $(OBJS)
  	rm -f libgd.a
 -	$(AR) rc libgd.a gd.o gd_gd.o gd_gd2.o gd_io.o gd_io_dp.o \
--		gd_io_file.o gd_ss.o gd_io_ss.o gd_png.o gdxpm.o \
+-		gd_io_file.o gd_ss.o gd_io_ss.o gd_png.o gd_jpeg.o gdxpm.o \
 -		gdfontt.o gdfonts.o gdfontmb.o gdfontl.o gdfontg.o \
 -		gdtables.o gdttf.o gdcache.o gdkanji.o
 +	$(AR) rc libgd.a $(OBJS)
