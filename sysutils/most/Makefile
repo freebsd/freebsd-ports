@@ -3,7 +3,7 @@
 # Date created:		31 May 1997
 # Whom:			rhwang@bigpanda.com
 #
-# $Id: Makefile,v 1.2 1997/06/03 21:52:01 asami Exp $
+# $Id: Makefile,v 1.3 1998/05/17 22:55:15 mph Exp $
 #
 
 DISTNAME=	most4.8.1
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://space.mit.edu/pub/davis/most/ \
 
 MAINTAINER=	rhwang@bigpanda.com
 
-LIB_DEPENDS=	slang\\.1:${PORTSDIR}/devel/libslang
+LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/most
