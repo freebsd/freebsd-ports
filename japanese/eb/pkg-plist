@@ -33,7 +33,6 @@ info/ebrefile-ja.info
 info/ebrefile.info
 info/ebzip-ja.info
 info/ebzip.info
-@exec [ -f %D/info/dir ] || cp -p /usr/share/info/dir-tmpl %D/info/dir
 @exec install-info %D/info/eb-ja.info %D/info/dir
 @exec install-info %D/info/eb.info %D/info/dir
 @exec install-info %D/info/ebfont-ja.info %D/info/dir
