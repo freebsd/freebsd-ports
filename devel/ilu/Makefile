@@ -3,7 +3,7 @@
 # Date created:         29.9.1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.4 1997/10/03 13:09:43 cracauer Exp $
+# $Id: Makefile,v 1.5 1997/10/07 15:06:37 cracauer Exp $
 #
 
 DISTNAME=       ilu-2.0alpha11
@@ -15,11 +15,10 @@ MAINTAINER=	cracauer@cons.org
 
 NO_WRKSUBDIR=   yes
 HAS_CONFIGURE=	yes
-# ILU 2.0alpha11 doesn't compile with FreeBSD jdk-1.1 port
-# The guile port is outdated. If you have 1.2 installed, remove
-# --disable-guile-support
-CONFIGURE_ARGS= --disable-java-support --enable-http-protocol \
-		--disable-guile-support
+
+# The official guile port is outdated. If you have 1.2 installed, remove
+#   --disable-guile-support
+CONFIGURE_ARGS= --disable-guile-support --enable-http-protocol
 
 INSTALL_TARGET=	Install
 NOMANCOMPRESS=
@@ -31,6 +30,9 @@ startup_script= ${startup_dir}/50.ilu.sh
 
 post-install:
 	# Empty dirs
+.if exists(${PREFIX}/ilu/examples/javatest1/javastubs)
+	${RMDIR} ${PREFIX}/ilu/examples/javatest1/javastubs
+.endif
 	${RMDIR} ${PREFIX}/ilu/man/man[358]
 	${RMDIR} ${PREFIX}/ilu/lisp
 	(cd ${PREFIX} ; find ilu -type f) > ${PLIST}
