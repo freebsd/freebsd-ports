@@ -18,7 +18,7 @@ invokes bmf as a filter:
 	# Invoke bmf as a filter
 	exception {
 		xfilter "bmf -p"
-		if (/^X-Stam-Status: Yes/)
+		if (/^X-Spam-Status: Yes/)
 			to $MAILDIR/spam
 	}
 
