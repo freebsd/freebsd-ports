@@ -1,0 +1,38 @@
+# New ports collection makefile for:    unix-connect
+# Date created:         01.May 1999
+# Whom:                 dirk.meyer@dinoex.sub.org
+#
+# $FreeBSD$
+
+PORTNAME=	unix-connect
+PORTVERSION=	0.92
+CATEGORIES=	german comms news mail
+MASTER_SITES=	ftp://ftp.dinoex.org/pub/unix-connect/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=     dinoex@freebsd.org
+
+WRKSRC=		${WRKDIR}/${PKGNAME}
+#USE_GMAKE=     yes
+GNU_CONFIGURE=	YES
+CONFIGURE_ARGS+=--with-user=news
+CONFIGURE_ARGS+=--with-group=dialer
+CONFIGURE_ARGS+=--with-execdir=${PREFIX}/libexec/uconnect
+CONFIGURE_ARGS+=--with-confdir=/etc/uconnect
+CONFIGURE_ARGS+=--with-spooldir=/var/spool/uconnect
+CONFIGURE_ARGS+=--with-mail=sendmail
+CONFIGURE_ARGS+=--with-news=cnews
+CONFIGURE_ARGS+=--enable-testing
+CFLAGS+=-g
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/unix-connect
+.for i in README INSTALL TODO ChangeLog ChangeLog.configure
+	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/unix-connect
+.endfor
+	@cd ${WRKSRC}/docs; tar cf - . | (cd ${PREFIX}/share/doc/unix-connect; tar xf -)
+.endif
+
+.include <bsd.port.mk>
