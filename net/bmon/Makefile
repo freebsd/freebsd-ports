@@ -7,7 +7,7 @@
 
 PORTNAME=	bmon
 PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://trash.net/~reeler/bmon/files/
 
@@ -21,7 +21,7 @@ MAN1=		bmon.1
 PLIST_FILES=	sbin/bmon
 
 do-install:
-	${INSTALL} ${STRIP} ${COPY} ${_BINOWNGRP} -m 4755 ${WRKSRC}/bmon ${PREFIX}/sbin
+	${INSTALL} ${STRIP} ${COPY} ${_BINOWNGRP} -m 755 ${WRKSRC}/bmon ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/bmon.1 ${PREFIX}/man/man1/bmon.1
 
 .include <bsd.port.mk>
