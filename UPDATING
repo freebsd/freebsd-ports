@@ -6,6 +6,16 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040828:
+  AFFECTS: users of security/samba-vscan
+  AUTHOR: jmelo@freebsdbrasil.com.br
+
+  The default location of the configuration files has been changed
+  from /etc/ to /usr/local/etc and from /etc/samba/ to
+  /usr/local/etc/samba-vscan/; the default location of the data files
+  has been changed from /var/run/clamd to /var/run/clamav/clamd and
+  from /var/opt/f-secure/fsav/databases to /var/db/fsav/databases.
+
 20040820:
   AFFECTS: users of japanese/ptex-tetex, japanese/xdvik, and japanese/dvipsk
   AUTHOR: hrs@FreeBSD.org
