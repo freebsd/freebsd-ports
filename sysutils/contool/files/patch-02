@@ -1,0 +1,28 @@
+--- contool.c.orig	Thu Feb 24 09:55:30 1994
++++ contool.c	Sun Jan  5 13:48:41 1997
+@@ -284,6 +284,9 @@
+ EXPORT	acquire_console()
+ 
+ {	int	console;
++#if (defined(BSD) && (BSD >= 199306))
++	int	i;
++#endif
+ 
+ #ifdef	SVR4
+ 	if (slave > 0) {
+@@ -293,8 +296,15 @@
+ 	      abend("%s: could not attach to /dev/console: %s", program, sys_errlist[errno]);
+ 	   }
+ #else
++#if (defined(BSD) && (BSD >= 199306))
++	i=1;
++#endif
+ 	if (slave > 0)
++#if (defined(BSD) && (BSD >= 199306))
++	   if (ioctl(slave, TIOCCONS, &i) == -1)
++#else
+ 	   if (ioctl(slave, TIOCCONS, NULL) == -1)
++#endif
+ 	      abend("%s: could not attach to /dev/console: %s", program, sys_errlist[errno]);
+ #endif
+ }

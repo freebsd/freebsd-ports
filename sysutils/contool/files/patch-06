@@ -1,0 +1,122 @@
+--- regexp.c.orig	Thu Feb 24 09:55:47 1994
++++ regexp.c	Sun Jan  5 12:25:10 1997
+@@ -17,22 +17,14 @@
+ /*	without prior permission from Harris Corporation. 		*/
+ /************************************************************************/
+ 
++#include	<sys/types.h>
+ #include	<stdio.h>
+ #include	<string.h>
+ 
+ #include	"manifest.h"
+ #include	"contool.h"
+ 
+-PRIVATE	regexp_error();
+-
+-#define		INIT			register char *expbuf = ep, *sp = instring;
+-#define		GETC()			(*sp++)
+-#define		PEEKC()			(*sp)
+-#define		UNGETC(c)		(--sp)
+-#define		RETURN(p)		{memcpy(sp = (char *) malloc(p - expbuf), expbuf, p - expbuf); return(sp);}
+-#define		ERROR(val)		{regexp_error(val, instring); return(NULL);}
+-
+-#include	<regexp.h>
++#include	<regex.h>
+ 
+ PRIVATE	char	error_message[512];
+ 
+@@ -49,37 +41,10 @@
+ 	p = str + strlen(str) - 1;
+ 	if (p >= str && *p == '\n')
+ 	   *p = '\0';
+-	circf = circ;
+-	result = step(str, exp);
++	result = regexec((regex_t*)exp, str, 0, NULL, 0);
+ 	if (p >= str && *p == '\0')
+ 	   *p = '\n';
+-	return(result);
+-}
+-
+-/************************************************************************/
+-PRIVATE	regexp_error(val, string)
+-
+-int	val;
+-char	*string;
+-
+-{	char	*msg;
+-
+-	switch (val) {
+-	   case 11 : msg = "range endpoint too large";
+-	   case 16 : msg = "bad number";
+-	   case 25 : msg = "\"\\digit\" out of range";
+-	   case 36 : msg = "illegal or missing delimiter";
+-	   case 41 : msg = "no remembered search string";
+-	   case 42 : msg = "\\(\\) imbalance";
+-	   case 43 : msg = "too many \\(";
+-	   case 44 : msg = "more than 2 numbers given in \\{\\}";
+-	   case 45 : msg = "} expected after \\";
+-	   case 46 : msg = "first number exceeds second in \\{\\}";
+-	   case 49 : msg = "[] imbalance";
+-	   case 50 : msg = "regular expression overflow";
+-	   default : msg = "regular expression error";
+-	   }
+-	sprintf(error_message, "%s in %s", msg, string);
++	return(!result);
+ }
+ 
+ /************************************************************************/
+@@ -109,34 +74,40 @@
+ char	*start;
+ char	*stop;
+ 
+-{	char	rbuf[1024], *sre, *ere;
+-	int	sc, ec;
++{
+ 
+-	sre = ere = NULL;
++	int	errcod;
++	regex_t	*sre, *ere;
++
++	sre = (regex_t*) malloc(sizeof(regex_t));
++	ere = (regex_t*) malloc(sizeof(regex_t));
+ 	if (start) {
+-	   if ((sre = compile(fix_control_chars(start), rbuf, rbuf+1024, '\0')) == NULL)
++	   if (errcod = regcomp(sre, fix_control_chars(start), REG_NOSUB)) {
++              regerror(errcod, sre, error_message, 512);
++              strcat(error_message, " in ");
++              strcat(error_message,fix_control_chars(start));
+ 	      return(error_message);
+-	   sc = circf;
++	      }
+ 	   }
+ 	if (stop) {
+-	   if ((ere = compile(fix_control_chars(stop), rbuf, rbuf+1024, '\0')) == NULL) {
+-	      cond_free(sre);
++	   if (errcod = regcomp(ere, fix_control_chars(stop), REG_NOSUB)) {
++              regerror(errcod, ere, error_message, 512);
++              strcat(error_message," in ");
++              strcat(error_message,fix_control_chars(stop));
+ 	      return(error_message);
+ 	      }
+-	   ec = circf;
+ 	   }
+ 	if (filter) {
+ 	   filter->start = start;
+ 	   filter->stop = stop;
+-	   filter->start_re = sre;
+-	   filter->stop_re = ere;
+-	   filter->start_circf = sc;
+-	   filter->stop_circf = ec;
++	   filter->start_re = (char *) sre;
++	   filter->stop_re = (char *) ere;
+ 	   }
+ 	else {
++	   regfree(sre);
++	   regfree(ere);
+ 	   cond_free(sre);
+-	   if (ere)
+-	      cond_free(ere);
++	   cond_free(ere);
+ 	   }
+ 	return(NULL);
+ }
