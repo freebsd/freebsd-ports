@@ -33,6 +33,10 @@ LATEST_LINK=	pgp6
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 # the distfile is actually a tar of three compressed tars and their
 # signatures
 post-extract:
