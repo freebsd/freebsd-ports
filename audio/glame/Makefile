@@ -7,6 +7,7 @@
 
 PORTNAME=	glame
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,30 +15,28 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful, fast, stable, and easily extensible sound editor for GNOME
 
-LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl
+BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
+LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis \
+		ltdl.4:${PORTSDIR}/devel/libltdl
 
-USE_GNOME=	gnomeprefix gnomehack libglade
 USE_X_PREFIX=	yes
+USE_GNOME=	gnomehack gnomeprefix gnometarget libglade
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lltdl ${PTHREAD_LIBS}"
+		LDFLAGS="-L${LOCALBASE}/lib -lltdl ${PTHREAD_LIBS}" \
+		MAKEINFO="makeinfo --no-split"
+INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
+INFO=		glame glame-dev
+
+post-extract:
+	@cd ${WRKSRC}/doc && ${RM} -f *.info*
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${REINPLACE_CMD} -e \
+	@${FIND} ${WRKSRC} -name "Makefile.in*" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-lpthread|${PTHREAD_LIBS}|g'
-	@find ${WRKSRC} -name "*.[ch]" | xargs ${REINPLACE_CMD} -e \
-		's|<values[.]h>|<limits.h>|'
+	@${GREP} -lR "<values\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|<values\.h>|<limits.h>|'
 
-post-install:
-	@install-info ${PREFIX}/info/glame.info \
-		--section="Audio Processing" \
-		--entry="* glame: (glame).           audio processing tool for GNOME" \
-		${PREFIX}/info/dir
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

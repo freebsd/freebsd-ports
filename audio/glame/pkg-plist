@@ -1,15 +1,6 @@
 bin/cglame
 bin/glame
 bin/glame-convert.sh
-info/dir
-info/glame-dev.info
-info/glame-dev.info-1
-info/glame-dev.info-2
-info/glame-dev.info-3
-info/glame.info
-info/glame.info-1
-info/glame.info-2
-info/glame.info-3
 lib/glame/audio_io_esd.so
 lib/glame/audio_io_oss.so
 lib/glame/debug.so
