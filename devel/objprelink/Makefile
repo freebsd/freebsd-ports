@@ -7,6 +7,7 @@
 
 PORTNAME=	objprelink
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	http://www.research.att.com/~leonb/objprelink/ \
 		${MASTER_SITE_SOURCEWARE}
