@@ -1,0 +1,8 @@
+bin/sidplug
+lib/mozilla/plugins/npsidplug.so
+@unexec rmdir %D/lib/mozilla/plugins 2>/dev/null || true
+@unexec rmdir %D/lib/mozilla 2>/dev/null || true
+%%PORTDOCS%%share/examples/sidplug/Lazy_Fast.sid
+%%PORTDOCS%%share/examples/sidplug/README.html
+%%PORTDOCS%%share/examples/sidplug/sidplug.png
+%%PORTDOCS%%@dirrm share/examples/sidplug
