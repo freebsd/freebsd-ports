@@ -1,0 +1,11 @@
+--- console/xppxp/Makefile.in.orig	Thu Dec 24 04:51:34 1998
++++ console/xppxp/Makefile.in	Thu Dec 24 04:51:43 1998
+@@ -16,7 +16,7 @@
+ #SIGVOID = -DHasVoidSignalReturn
+ #
+ CC       = @CC@
+-XLIB     = @X_LIBS@ -lXaw -lXmu -lXt -lX11 -lXpm
++XLIB     = @X_LIBS@ -lXaw -lXmu -lXt -lXext -lX11 @X_PRE_LIBS@ -lXpm
+ CFLAGS   = @CFLAGS@ -I$(PPXPINC) -DXPPXPDIR=\"$(XPPXPDIR)\" @X_CFLAGS@
+ LDFLAGS  = @LDFLAGS@ $(PPXPLIB) $(XLIB)
+ #

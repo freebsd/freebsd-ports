@@ -1,0 +1,8 @@
+--- console/forms/fip.c.orig	Sat Dec 26 00:48:38 1998
++++ console/forms/fip.c	Sat Dec 26 00:48:41 1998
+@@ -1,4 +1,5 @@
+ #include <stdio.h>
++#include <sys/types.h>
+ #include <netinet/in.h>
+ 
+ #include "fppxp.h"
