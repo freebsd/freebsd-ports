@@ -1,22 +1,34 @@
---- Makefile.orig	Fri Jan 24 09:16:39 1997
-+++ Makefile	Mon Feb 23 12:35:50 1998
-@@ -2,8 +2,8 @@
+--- Makefile.orig	Wed Feb 11 21:42:00 1998
++++ Makefile	Sun Sep 27 18:38:34 1998
+@@ -2,8 +2,11 @@
  CC=gcc
  CXX=g++
  CFLAGS=
 -INCLUDES=-I$(QTDIR)/include
 -LDFLAGS=-L$(QTDIR)/lib -lqt
-+INCLUDES=-I/usr/X11R6/include/X11/qt
-+LDFLAGS=-L/usr/X11R6/lib -lqt
++INCLUDES=-I$(X11BASE)/include/X11/qt
++LDFLAGS=-L$(X11BASE)/lib -lqt
++.if $(PORTOBJFORMAT) == "elf"
++LDFLAGS+=-Wl,-rpath,$(X11BASE)/lib
++.endif
  VERSION=1.1
  
  # For systems that don't have install, use this
-@@ -24,12 +24,14 @@
+@@ -25,7 +28,7 @@
+ 	blackjack/*.cpp			\
+ 	blackjack/*.bm
+ 
+-INSTALL=install
++INSTALL=install -c
+ INSTALL_BIN_FLAGS=-s
+ 
+ INSTALL_ROOT=/usr/local
+@@ -39,12 +42,14 @@
       user_input.o dollar_scroll_bar.o bet_option.o table_option.o \
       insurance_window.o $(METAOBJS)
  
 -MOC=$(QTDIR)/bin/moc
-+MOC=/usr/X11R6/bin/moc
++MOC=$(X11BASE)/bin/moc
  
  .SUFFIXES: .cpp
  
