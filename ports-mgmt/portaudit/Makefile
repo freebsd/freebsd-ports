@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portaudit
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5
 CATEGORIES=	security
 DISTFILES=
 
@@ -29,7 +29,8 @@ REQPKGVER=	20040623
 
 SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g' \
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		-e "s|%%DATADIR%%|${DATADIR}|g" \
+		-e "s|%%PORTSDIR%%|${PORTSDIR}|g" \
+		-e "s|%%INDEXFILE%%|${INDEXFILE}|g" \
 		-e "s|%%DATABASEDIR%%|${DATABASEDIR}|g" \
 		-e "s|%%PORTVERSION%%|${PORTVERSION}|g" \
 		-e "s|%%REQPKGVER%%|${REQPKGVER}|g" \
@@ -49,40 +50,28 @@ RUN_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 .endif
 
 do-build:
-.for f in portaudit-cmd.sh portaudit.sh fetchaudit.sh portaudit.functions portaudit.1 portaudit.conf
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/${f} > ${WRKDIR}/${f}
+.for f in portaudit-cmd.sh portaudit.sh portaudit.1 portaudit.conf
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/${f} >${WRKDIR}/${f}
 .endfor
 
 post-build:
-.for text in pkg-req pkg-install pkg-deinstall
-	@if [ -f ${PKGDIR}/${text} ]; then \
-		${SED} ${SED_SCRIPT} ${PKGDIR}/${text} >${WRKDIR}/${text}; \
-	fi
+.for f in pkg-req pkg-install pkg-deinstall
+	@${SED} ${SED_SCRIPT} ${PKGDIR}/${f} >${WRKDIR}/${f}
 .endfor
 
 pre-install:
-	@if [ -f ${PKGREQ} ]; then \
-		${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGREQ} ${PKGNAME} INSTALL; \
-	fi
-	@if [ -f ${PKGINSTALL} ]; then \
-		${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL; \
-	fi
+	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGREQ} ${PKGNAME} INSTALL
+	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKDIR}/portaudit-cmd.sh ${PREFIX}/bin/portaudit
+	@${INSTALL_SCRIPT} ${WRKDIR}/portaudit-cmd.sh ${PREFIX}/sbin/portaudit
+	@${INSTALL_DATA} ${WRKDIR}/portaudit.conf ${PREFIX}/etc/portaudit.conf.sample
 	@${INSTALL_MAN} ${WRKDIR}/portaudit.1 ${MAN1PREFIX}/man/man1
 	@${MKDIR} ${PERIODICDIR}/security
-	@${INSTALL_SCRIPT} ${WRKDIR}/portaudit.sh ${PERIODICDIR}/security/910.portaudit
-	@${MKDIR} ${PERIODICDIR}/daily
-	@${INSTALL_SCRIPT} ${WRKDIR}/fetchaudit.sh ${PERIODICDIR}/daily/330.fetchaudit
-	@${MKDIR} ${DATADIR}
-	@${INSTALL_DATA} ${WRKDIR}/portaudit.functions ${DATADIR}
-	@${INSTALL_DATA} ${WRKDIR}/portaudit.conf ${PREFIX}/etc/portaudit.conf.sample
+	@${INSTALL_SCRIPT} ${WRKDIR}/portaudit.sh ${PERIODICDIR}/security/410.portaudit
 	@${MKDIR} ${DATABASEDIR}
 
 post-install:
-	@if [ -f ${PKGINSTALL} ]; then \
-		${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL; \
-	fi
+	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.post.mk>

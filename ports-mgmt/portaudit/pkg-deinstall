@@ -7,11 +7,13 @@ case $2 in
 POST-DEINSTALL)
   echo
   echo "The portaudit package has been deleted."
-  echo "If you're *not* upgrading and won't be using"
-  echo "it any longer, you may want to remove the"
-  echo "portaudit database:"
-  echo
-  echo "  rm -Rf %%DATABASEDIR%%"
+  if [ -f "%%DATABASEDIR%%/auditfile.tbz" ]; then
+    echo "If you're *not* upgrading and won't be using"
+    echo "it any longer, you may want to remove the"
+    echo "portaudit database:"
+    echo
+    echo "  rm -Rf %%DATABASEDIR%%"
+  fi
   echo
   ;;
 esac

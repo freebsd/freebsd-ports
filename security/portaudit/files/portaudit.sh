@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -f
 #
 # Copyright (c) 2004 Oliver Eikemeier. All rights reserved.
 #
@@ -6,8 +6,8 @@
 # modification, are permitted provided that the following conditions are
 # met:
 #
-#  1. Redistributions of source code must retain the above copyright notice
-#     this list of conditions and the following disclaimer.
+# 1. Redistributions of source code must retain the above copyright notice
+#    this list of conditions and the following disclaimer.
 #
 # 2. Redistributions in binary form must reproduce the above copyright
 #    notice, this list of conditions and the following disclaimer in the
@@ -31,34 +31,30 @@
 # $FreeBSD$
 #
 
-# defaults
-daily_status_portaudit_enable="YES"
-
 # If there is a global system configuration file, suck it in.
 #
-if [ -r /etc/defaults/periodic.conf ]
-then
+if [ -r /etc/defaults/periodic.conf ]; then
     . /etc/defaults/periodic.conf
     source_periodic_confs
 fi
 
-. %%DATADIR%%/portaudit.functions
-portaudit_confs
-
 rc=0
-case "$daily_status_portaudit_enable" in
-	""|[Yy][Ee][Ss])
-		echo ""
-		echo "Checking for packages with security vulnerabilities:"
-		echo ""
-
-		if portaudit_prerequisites; then
-			audit_installed || rc=1
-		else
-			rc=2
-		fi
+case "${daily_status_security_portaudit_enable:-YES}" in
+	[Nn][Oo])
 		;;
 	*)
+		echo
+		echo "Checking for a current audit database:"
+		echo
+		%%PREFIX%%/sbin/portaudit -X "${daily_status_security_portaudit_expiry:-2}" || rc=$?
+		if [ $rc -lt 2 ]; then
+			%%PREFIX%%/sbin/portaudit -d
+			echo
+			echo "Checking for packages with security vulnerabilities:"
+			echo
+			echo %%PREFIX%%/sbin/portaudit -a |
+				su -fm "${daily_status_security_portaudit_user:-nobody}" || rc=$?
+		fi
 		;;
 esac
 
