@@ -1,0 +1,12 @@
+LibStroke is a stroke translation library. Strokes are motions of
+the mouse that can be interpreted by a program as a command. Strokes
+are used extensively in CAD programs. I fell in love with them when
+I was using the CAD tools that use a stroke interface to select
+tools or perform actions. I wrote this library so that others can
+see how useful strokes can be and so that more programs take
+advantage of this extremely natural human-computer interface.
+
+WWW: http://www.etla.net/libstroke/
+
+-Jerry
+jerry@thehutt.org

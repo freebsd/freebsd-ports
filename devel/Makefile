@@ -250,6 +250,7 @@
     SUBDIR += libslang
     SUBDIR += libstocks
     SUBDIR += libstrfunc
+    SUBDIR += libstroke
     SUBDIR += libtai
     SUBDIR += libtar
     SUBDIR += libtecla
