@@ -19,6 +19,7 @@
     SUBDIR += bacon
     SUBDIR += bluefish
     SUBDIR += boa
+    SUBDIR += cadaver
     SUBDIR += calamaris
     SUBDIR += cgic
     SUBDIR += cgihtml

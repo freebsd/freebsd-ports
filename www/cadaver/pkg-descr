@@ -1,0 +1,16 @@
+cadaver: command-line DAV client.
+
+Like the original ubiquitous command-line FTP client except for WebDAV
+instead.  Uses the sitecopy (http://www.lyra.org/sitecopy/) WebDAV
+code.
+
+Commands: open, close, cd, ls, get, put, mkcol, delete, copy, move,
+cat, less.
+
+Please send in bug reports, feature requests or any questions to 
+the discussion list, cadaver@webdav.org.
+
+Discussion list: subscribe via <mailto:cadaver-request@webdav.org>
+        or <http://mailman.lyra.org/mailman/listinfo/cadaver>
+
+Joe Orton
