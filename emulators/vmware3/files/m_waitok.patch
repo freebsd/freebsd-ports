@@ -1,0 +1,25 @@
+--- vmmon-only/freebsd/driver.c.orig	Tue Feb 11 22:12:39 2003
++++ vmmon-only/freebsd/driver.c	Tue Feb 11 22:22:35 2003
+@@ -91,6 +92,10 @@
+ typedef void driver_intr_t(void*);
+ #endif
+ 
++#ifndef M_WAITOK
++#define M_WAITOK	0x0000
++#endif
++
+ #ifdef SUPPORT_PASSTHROUGH
+ #include "passthrough.h"	// _driver_ version of passthrough.h 
+ #endif
+--- vmmon-only/freebsd/hostif.c.orig	Tue Feb 11 22:12:40 2003
++++ vmmon-only/freebsd/hostif.c	Tue Feb 11 22:22:15 2003
+@@ -100,6 +100,9 @@
+ 
+ #define HOST_ISTRACKED_PFN(_vm, _pfn, _vpn) (PhysTrack_Test(_vm->physTracker, _pfn))
+ 
++#ifndef M_WAITOK
++#define M_WAITOK	0x0000
++#endif
+ 
+ static
+ int host_lock_ppn(PPN ppn)
