@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtktalog
-PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTVERSION=	1.0.4
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}.pkg/${PORTVERSION}
@@ -15,9 +14,10 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}.pkg/${PORTVERSION}
 MAINTAINER=	rael@vectorstar.net
 COMMENT=	GTKtalog is a tool to make disk catalogs
 
-BROKEN=		Broken pkg-plist
+BUILD_DEPENDS=	plaympeg:${PORTSDIR}/multimedia/smpeg
+RUN_DEPENDS=	plaympeg:${PORTSDIR}/multimedia/smpeg
 
-USE_GNOME=	gnomeprefix gnomelibs
+USE_GNOME=	gnomeprefix gnomelibs gnometarget
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
