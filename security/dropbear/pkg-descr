@@ -1,0 +1,10 @@
+Dropbear is an SSH 2 server, designed to be usable in small memory environments.
+It supports: 
+
+	* Main features of SSH 2 protocol
+	* Implements X11 forwarding, and authentication-agent forwarding 
+	for OpenSSH clients
+	* Compatible with OpenSSH ~/.ssh/authorized_keys public key 
+	authentication
+
+WWW: http://matt.ucc.asn.au/dropbear/dropbear.html

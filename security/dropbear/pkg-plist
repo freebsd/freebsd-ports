@@ -1,0 +1,5 @@
+bin/dropbear
+bin/dropbearkey
+bin/dropbearconvert
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
