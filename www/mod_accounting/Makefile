@@ -7,9 +7,14 @@
 
 PORTNAME=	mod_accounting
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	mod-acct
+
+PATCH_SITES=	http://www.cultdeadsheep.org/FreeBSD/ports/download/distfiles/
+PATCHFILES=	mod_accounting-patch-0.5_to_0.6-cvs.gz
+PATCH_DIST_STRIP=-p1
 
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	An Apache module that records traffic statistics into a database
@@ -38,7 +43,6 @@ MYSQL_VER=	41
 MYSQL_VER=	323
 .endif
 
-
 .if defined(WITHOUT_PGSQL)
 MAKE_ARGS+=	WITHOUT_PGSQL=YES
 .else
@@ -51,7 +55,7 @@ MAKE_ARGS+=	WITHOUT_MYSQL=YES
 LIB_DEPENDS+=	mysqlclient.${MYSQL${MYSQL_VER}_LIBVER}:${PORTSDIR}/databases/mysql${MYSQL_VER}-client
 .endif
 
-DOCS=		README FAQ.txt LICENSE
+DOCS=		README docs/FAQ.txt LICENSE
 
 pre-everything::
 	@${ECHO} ""
@@ -63,11 +67,12 @@ pre-everything::
 	@${ECHO} ""
 	@${ECHO} "      WITHOUT_MYSQL        Disable MySQL support"
 	@${ECHO} "      WITHOUT_PGSQL        Disable PostgreSQL support"
+	@${ECHO} "      WITHOUT_PLAINTEXT    Disable file (plain text) support"
 	@${ECHO} ""
 
 post-install:
 	@${MKDIR} ${PREFIX}/share/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/schema.sql ${PREFIX}/share/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/docs/schema.sql ${PREFIX}/share/${PORTNAME}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for doc in ${DOCS}
