@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bash-completion
-PORTVERSION=	20030527
+PORTVERSION=	20030929
 CATEGORIES=	shells
 MASTER_SITES=	http://www.caliban.org/files/bash/
 
@@ -18,7 +18,7 @@ RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 WRKSRC=		${WRKDIR}/bash_completion
 NO_BUILD=	yes
 
-PKGMESSAGE=     ${WRKDIR}/pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 pre-patch:
 	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${PKGDIR}/pkg-message >${PKGMESSAGE}
