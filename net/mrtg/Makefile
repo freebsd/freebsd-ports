@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mrtg
-PORTVERSION=	2.9.6
+PORTVERSION=	2.9.7
 CATEGORIES=	net
 MASTER_SITES=	http://ee-staff.ethz.ch/~oetiker/webtools/mrtg/pub/ \
 		${MASTER_SITE_RINGSERVER}
