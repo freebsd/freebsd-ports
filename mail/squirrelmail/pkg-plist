@@ -46,6 +46,7 @@ squirrelmail/doc/ReleaseNotes/1.2/Notes-1.2.6.txt
 squirrelmail/doc/ReleaseNotes/1.3/Notes-1.3.0.txt
 squirrelmail/doc/ReleaseNotes/1.3/Notes-1.3.1.txt
 squirrelmail/doc/ReleaseNotes/1.3/Notes-1.3.2.txt
+squirrelmail/doc/ReleaseNotes/1.4/Notes-1.4.0.txt
 squirrelmail/doc/addressbook.txt
 squirrelmail/doc/authentication.txt
 squirrelmail/doc/compose.txt
@@ -79,7 +80,6 @@ squirrelmail/functions/imap.php
 squirrelmail/functions/imap_general.php
 squirrelmail/functions/imap_mailbox.php
 squirrelmail/functions/imap_messages.php
-squirrelmail/functions/imap_parse.php
 squirrelmail/functions/imap_search.php
 squirrelmail/functions/imap_utf7_local.php
 squirrelmail/functions/index.php
@@ -119,6 +119,15 @@ squirrelmail/help/cs_CZ/main_folder.hlp
 squirrelmail/help/cs_CZ/options.hlp
 squirrelmail/help/cs_CZ/read_mail.hlp
 squirrelmail/help/cs_CZ/search.hlp
+squirrelmail/help/cy_GB/search.hlp
+squirrelmail/help/cy_GB/FAQ.hlp
+squirrelmail/help/cy_GB/addresses.hlp
+squirrelmail/help/cy_GB/compose.hlp
+squirrelmail/help/cy_GB/folders.hlp
+squirrelmail/help/cy_GB/main_folder.hlp
+squirrelmail/help/cy_GB/options.hlp
+squirrelmail/help/cy_GB/read_mail.hlp
+squirrelmail/help/cy_GB/basic.hlp
 squirrelmail/help/da_DK/FAQ.hlp
 squirrelmail/help/da_DK/addresses.hlp
 squirrelmail/help/da_DK/basic.hlp
@@ -334,6 +343,8 @@ squirrelmail/locale/ca_ES/LC_MESSAGES/squirrelmail.mo
 squirrelmail/locale/ca_ES/LC_MESSAGES/squirrelmail.po
 squirrelmail/locale/cs_CZ/LC_MESSAGES/squirrelmail.mo
 squirrelmail/locale/cs_CZ/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/cy_GB/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/cy_GB/LC_MESSAGES/squirrelmail.po
 squirrelmail/locale/da_DK/LC_MESSAGES/squirrelmail.mo
 squirrelmail/locale/da_DK/LC_MESSAGES/squirrelmail.po
 squirrelmail/locale/de_DE/LC_MESSAGES/squirrelmail.mo
@@ -346,9 +357,10 @@ squirrelmail/locale/et_EE/LC_MESSAGES/squirrelmail.mo
 squirrelmail/locale/et_EE/LC_MESSAGES/squirrelmail.po
 squirrelmail/locale/fi_FI/LC_MESSAGES/squirrelmail.mo
 squirrelmail/locale/fi_FI/LC_MESSAGES/squirrelmail.po
+squirrelmail/locale/fo_FO/LC_MESSAGES/squirrelmail.mo
+squirrelmail/locale/fo_FO/LC_MESSAGES/squirrelmail.po
 squirrelmail/locale/fr_FR/LC_MESSAGES/squirrelmail.mo
 squirrelmail/locale/fr_FR/LC_MESSAGES/squirrelmail.po
-squirrelmail/locale/he_HE/LC_MESSAGES/squirrelmail.po
 squirrelmail/locale/he_IL/LC_MESSAGES/squirrelmail.mo
 squirrelmail/locale/he_IL/LC_MESSAGES/squirrelmail.po
 squirrelmail/locale/hr_HR/LC_MESSAGES/squirrelmail.mo
@@ -690,8 +702,8 @@ squirrelmail/themes/spice_of_life_lite.php
 @dirrm squirrelmail/locale/hr_HR
 @dirrm squirrelmail/locale/he_IL/LC_MESSAGES
 @dirrm squirrelmail/locale/he_IL
-@dirrm squirrelmail/locale/he_HE/LC_MESSAGES
-@dirrm squirrelmail/locale/he_HE
+@dirrm squirrelmail/locale/fo_FO/LC_MESSAGES
+@dirrm squirrelmail/locale/fo_FO
 @dirrm squirrelmail/locale/fr_FR/LC_MESSAGES
 @dirrm squirrelmail/locale/fr_FR
 @dirrm squirrelmail/locale/fi_FI/LC_MESSAGES
@@ -706,6 +718,8 @@ squirrelmail/themes/spice_of_life_lite.php
 @dirrm squirrelmail/locale/de_DE
 @dirrm squirrelmail/locale/da_DK/LC_MESSAGES
 @dirrm squirrelmail/locale/da_DK
+@dirrm squirrelmail/locale/cy_GB/LC_MESSAGES
+@dirrm squirrelmail/locale/cy_GB
 @dirrm squirrelmail/locale/cs_CZ/LC_MESSAGES
 @dirrm squirrelmail/locale/cs_CZ
 @dirrm squirrelmail/locale/ca_ES/LC_MESSAGES
@@ -738,11 +752,13 @@ squirrelmail/themes/spice_of_life_lite.php
 @dirrm squirrelmail/help/en_US
 @dirrm squirrelmail/help/de_DE
 @dirrm squirrelmail/help/da_DK
+@dirrm squirrelmail/help/cy_GB
 @dirrm squirrelmail/help/cs_CZ
 @dirrm squirrelmail/help/ca_ES
 @dirrm squirrelmail/help/bg_BG
 @dirrm squirrelmail/help
 @dirrm squirrelmail/functions
+@dirrm squirrelmail/doc/ReleaseNotes/1.4
 @dirrm squirrelmail/doc/ReleaseNotes/1.3
 @dirrm squirrelmail/doc/ReleaseNotes/1.2
 @dirrm squirrelmail/doc/ReleaseNotes
