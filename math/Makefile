@@ -139,7 +139,6 @@
     SUBDIR += rcalc
     SUBDIR += rpc
     SUBDIR += ruby-algebra
-    SUBDIR += ruby-bigfloat
     SUBDIR += ruby-bitvector
     SUBDIR += ruby-gnuplot
     SUBDIR += ruby-gsl
