@@ -2092,6 +2092,7 @@ gif2png		ports/graphics/gif2png
 gifmerge	ports/graphics/gifmerge
 gifsicle	ports/graphics/gifsicle
 gift	ports/net/gift
+gift-gnutella	ports/net/gift-gnutella
 gift-openft	ports/net/gift-openft
 giftcurs	ports/net/giftcurs
 giftool		ports/graphics/giftool
