@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	daapd
-PORTVERSION=	0.2.1c
-PORTREVISION=	1
+PORTVERSION=	0.2.1d
 CATEGORIES=	audio
 MASTER_SITES=	http://www.deleet.de/projekte/daap/daapd/
 EXTRACT_SUFX=	.tgz
@@ -17,7 +16,7 @@ COMMENT=	Server for Digital Audio Access Protocol
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libid3tag.a:${PORTSDIR}/audio/mad \
 		${LOCALBASE}/lib/libdaaplib.a:${PORTSDIR}/audio/daaplib \
-		${LOCALBASE}/lib/libhttpd.a:${PORTSDIR}/www/libhttpd-persistent
+		${LOCALBASE}/lib/libhttpd-persistent.a:${PORTSDIR}/www/libhttpd-persistent
 
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
