@@ -33,6 +33,9 @@ bzip-*			ports/archivers/bzip	Some algorithms used may
 						to unfriendly legal action.
 cap60/*			ports/net/cap		Don't sell for profit
 cfs-*			ports/security/cfs	Crypto; export-controlled
+classes111_01.zip	ports/databases/jdbc-oracle816  This software is 
+						under license and export 
+						controls.
 clibpdf*		ports/print/clibpdf	License required for bundling
 						with other products.  Only
 						free for non-profit personal
