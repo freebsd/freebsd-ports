@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	mjpeg
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	Set of tools to record/playback/edit videos in MPEG format
 
-LIB_DEPENDS=	aviplay.0:${PORTSDIR}/multimedia/avifile
+LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 CONFLICTS=	mplex-*
@@ -56,6 +56,12 @@ post-install:
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+.if !defined(WITHOUT_AVIFILE) && !defined(PACKAGE_BUILDING)
+LIB_DEPENDS+=	aviplay.0:${PORTSDIR}/multimedia/avifile
+.endif
+.endif
 
 .if ${ARCH} == "i386"
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
@@ -156,6 +162,11 @@ pre-everything::
 .endif
 .ifndef(WITH_SDL)
 	@${ECHO_MSG} "====> You can enable SDL support by defining WITH_SDL"
+.endif
+.if ${ARCH} == "i386" || ${ARCH} == "amd64"
+.ifndef(WITHOUT_AVIFILE)
+	@${ECHO_MSG} "====> You can disable AVIFILE support by defining WITHOUT_AVIFILE"
+.endif
 .endif
 
 post-patch:
