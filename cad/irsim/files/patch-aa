@@ -54,3 +54,22 @@
       fprintf( out, "\n};\n" );
 +     return 0;
     }
+*** src/ana11/Makefile.ORIG	Fri Jan 15 20:47:47 1993
+--- src/ana11/Makefile	Sun Jan 22 13:57:51 1995
+***************
+*** 19,25 ****
+  
+  LIBS =
+  
+! CDIRS =	-I../include
+  
+  CSW =	-O
+  
+--- 19,25 ----
+  
+  LIBS =
+  
+! CDIRS =	-I../include -I/usr/X11R6/include
+  
+  CSW =	-O
+  
