@@ -3826,6 +3826,7 @@ libnet		ports/net/libnet
 libnetgraph	src/lib/libnetgraph
 libneural	ports/math/libneural
 libnids		ports/net/libnids
+libnova		ports/astro/libnova
 libobjects	ports/lang/libobjects
 libodbc++	ports/databases/libodbc++
 liboe		ports/mail/liboe
