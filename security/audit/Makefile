@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.corest.com/download/audit/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}beta-src
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for remote and centralized audit data collection
 
 .if defined(WITH_MYSQL)
