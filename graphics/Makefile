@@ -247,6 +247,7 @@
     SUBDIR += qiv
     SUBDIR += quickpics
     SUBDIR += qvplay
+    SUBDIR += ray++
     SUBDIR += rayshade
     SUBDIR += ruby-gd
     SUBDIR += ruby-gdchart

@@ -1,0 +1,101 @@
+include/ray++/cameras/stereo_camera.h
+include/ray++/cameras/std_camera.h
+include/ray++/config/config.h
+include/ray++/config/sizecalc.h
+include/ray++/kernel/interval.h
+include/ray++/kernel/constants.h
+include/ray++/kernel/transformable.h
+include/ray++/kernel/ray.h
+include/ray++/kernel/bstream.h
+include/ray++/kernel/renderer.h
+include/ray++/kernel/geom_ray.h
+include/ray++/kernel/full_shading_info.h
+include/ray++/kernel/light.h
+include/ray++/kernel/shape.h
+include/ray++/kernel/initable.h
+include/ray++/kernel/object_queue.h
+include/ray++/kernel/vector.h
+include/ray++/kernel/msg_stream.h
+include/ray++/kernel/error.h
+include/ray++/kernel/intersect_info.h
+include/ray++/kernel/handle.h
+include/ray++/kernel/camera.h
+include/ray++/kernel/colour.h
+include/ray++/kernel/output.h
+include/ray++/kernel/byteswap.h
+include/ray++/kernel/surface.h
+include/ray++/kernel/countable_new.h
+include/ray++/kernel/object.h
+include/ray++/kernel/transform.h
+include/ray++/kernel/globals.h
+include/ray++/kernel/inside_info.h
+include/ray++/kernel/kernel.h
+include/ray++/kernel/shading_info.h
+include/ray++/kernel/volume.h
+include/ray++/kernel/light_array.h
+include/ray++/kernel/world.h
+include/ray++/kernel/axisbox.h
+include/ray++/lights/fuzprojector.h
+include/ray++/lights/spotlight.h
+include/ray++/lights/projector.h
+include/ray++/lights/ambient_light.h
+include/ray++/lights/pointlight.h
+include/ray++/objects/bounding_slab.h
+include/ray++/objects/simple_object.h
+include/ray++/outputs/tga_output.h
+include/ray++/outputs/ppm_output.h
+include/ray++/outputs/mem_output.h
+include/ray++/outputs/bmp_output.h
+include/ray++/renderers/raytracer.h
+include/ray++/shapes/quadric.h
+include/ray++/shapes/box.h
+include/ray++/shapes/sphere.h
+include/ray++/shapes/parametric.h
+include/ray++/shapes/clip.h
+include/ray++/shapes/cone.h
+include/ray++/shapes/solid_shape.h
+include/ray++/shapes/cylinder.h
+include/ray++/shapes/tube.h
+include/ray++/shapes/flat_shape.h
+include/ray++/shapes/plane.h
+include/ray++/shapes/triangle.h
+include/ray++/shapes/csg_shape.h
+include/ray++/shapes/implicit.h
+include/ray++/surfaces/matte.h
+include/ray++/surfaces/pigments/pure_colour.h
+include/ray++/surfaces/pigments/pigment.h
+include/ray++/surfaces/pigments/std_pigments.h
+include/ray++/surfaces/pigments/generic_pigment.h
+include/ray++/surfaces/pigments/solid_pigment.h
+include/ray++/surfaces/lambert.h
+include/ray++/surfaces/phong.h
+include/ray++/utils/vector_math.h
+include/ray++/utils/twister.h
+include/ray++/utils/math.h
+include/ray++/utils/noise.h
+include/ray++/utils/utils.h
+include/ray++/utils/colourmap.h
+include/ray++/utils/converter.h
+include/ray++/volumes/gas.h
+include/ray++/volumes/fog.h
+include/ray++/volumes/clear_glass.h
+include/ray++/volumes/gas2.h
+include/ray++/worlds/scene.h
+include/ray++/worlds/hmakers/hmaker.h
+include/ray++/worlds/hmakers/pov_hmaker.h
+include/ray++/worlds/hmakers/sort_entry.h
+@dirrm include/ray++/cameras
+@dirrm include/ray++/config
+@dirrm include/ray++/kernel
+@dirrm include/ray++/lights
+@dirrm include/ray++/objects
+@dirrm include/ray++/outputs
+@dirrm include/ray++/renderers
+@dirrm include/ray++/shapes
+@dirrm include/ray++/surfaces/pigments
+@dirrm include/ray++/surfaces
+@dirrm include/ray++/utils
+@dirrm include/ray++/volumes
+@dirrm include/ray++/worlds/hmakers
+@dirrm include/ray++/worlds
+@dirrm include/ray++
