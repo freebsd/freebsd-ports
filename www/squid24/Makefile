@@ -80,7 +80,7 @@ MAKEFILE=	makefile
 #CONFIGURE_ARGS+= --disable-http-violations
 #  - Enable Transparent Proxy support for IP-Filter systems (incl 3.0)
 #CONFIGURE_ARGS+= --enable-ipf-transparent
-# (--enable-leakfinfer is a developer support tool only)
+# (--enable-leakfinder is a developer support tool only)
 #  - Compile out code that does optional Ident (RFC931) lookups
 #CONFIGURE_ARGS+= --disable-ident-lookups
 #  - Disable squid's internal async DNS lookup code.
