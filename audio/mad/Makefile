@@ -16,7 +16,6 @@ MAINTAINER=	asa@gascom.ru
 COMMENT=	The "meta-port" for the MAD sound playback system
 
 RUN_DEPENDS=	madplay:${PORTSDIR}/audio/madplay
-LIB_DEPENDS=	id3tag.2:${PORTSDIR}/audio/libid3tag
 
 NO_BUILD=	yes
 
