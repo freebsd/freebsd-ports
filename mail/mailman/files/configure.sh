@@ -2,11 +2,12 @@
 
 USER=$1
 UID=$2
+MAILMANDIR=$3
 GROUP=${USER}
 GID=${UID}
 
-if [ -z "$USER" -o -z "$UID" ]; then
-	echo "Syntax: $0 <username> <uid>"
+if [ -z "$USER" -o -z "$UID" -o -z "$MAILMANDIR" ]; then
+	echo "Syntax: $0 <username> <uid> <homedir>"
 	exit 1
 fi
 
@@ -25,7 +26,7 @@ if pw user show "${USER}" 2>/dev/null; then
 	echo "You already have a user \"${USER}\", so I will use it."
 else
 	if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
-		-d ${DB_DIR} -s /sbin/nologin -c "Mailman User"
+		-d ${MAILMANDIR} -s /sbin/nologin -c "Mailman User"
 	then
 		echo "Added user \"${USER}\"."
 	else
