@@ -13,7 +13,6 @@ MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/
 MAINTAINER=	will@FreeBSD.org
 
 USE_GMAKE=	yes
-INSTALLS_SHLIB=	yes
 USE_X_PREFIX=	yes
 USE_NEWGCC=	yes
 MAKE_ENV+=	QTDIR=${WRKSRC} CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" CC="${CC}"
@@ -28,17 +27,29 @@ PLIST_SUB+=	VERSION="${VER_MAJ}"
 MAN1=	moc.1
 .include "${.CURDIR}/files/man3"
 
+.if defined(WANT_STATIC)
+STATIC=		static
+.else
+STATIC=		shared
+INSTALLS_SHLIB=	yes
+.endif
+
 post-configure:
-	@${PERL} -pi -e "s:g\+\+:${CXX}:g" ${WRKSRC}/configs/freebsd-g++-shared
-	@${PERL} -pi -e "s:/usr/X11R6:${PREFIX}:g" ${WRKSRC}/configs/freebsd-g++-shared
-	@${PERL} -pi -e "s:%%CXXFLAGS%%:${CXXFLAGS}:g" ${WRKSRC}/configs/freebsd-g++-shared
-	@${PERL} -pi -e "s:%%VERSION%%:${VERSION}:g" ${WRKSRC}/configs/freebsd-g++-shared
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} freebsd-g++-shared)
+	@${PERL} -pi -e "s:g\+\+:${CXX}:g" ${WRKSRC}/configs/freebsd-g++-${STATIC}
+	@${PERL} -pi -e "s:/usr/X11R6:${PREFIX}:g" ${WRKSRC}/configs/freebsd-g++-${STATIC}
+	@${PERL} -pi -e "s:%%CXXFLAGS%%:${CXXFLAGS}:g" ${WRKSRC}/configs/freebsd-g++-${STATIC}
+	@${PERL} -pi -e "s:%%VERSION%%:${VERSION}:g" ${WRKSRC}/configs/freebsd-g++-${STATIC}
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} freebsd-g++-${STATIC})
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/moc $(PREFIX)/bin
+.if !defined(WANT_STATIC)
 	@${INSTALL_DATA} ${WRKSRC}/lib/libqt.so.${VERSION} $(PREFIX)/lib
 	@${LN} -sf $(PREFIX)/lib/libqt.so.$(VERSION) $(PREFIX)/lib/libqt.so
+.else
+	@${INSTALL_DATA} ${WRKSRC}/lib/libqt.a $(PREFIX)/lib/libqt.a.$(VERSION)
+	@${LN} -sf $(PREFIX)/lib/libqt.a.$(VERSION) $(PREFIX)/lib/libqt.a
+.endif
 	@${MKDIR} $(PREFIX)/include/X11/qt
 	@${INSTALL_DATA} ${WRKSRC}/include/* $(PREFIX)/include/X11/qt
 	@${INSTALL_MAN} ${WRKSRC}/man/man1/* $(PREFIX)/man/man1
@@ -47,5 +58,10 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/qt
 	@${INSTALL_DATA} ${WRKSRC}/README.QT ${PREFIX}/share/doc/qt
 	@${INSTALL_DATA} ${WRKSRC}/html/* ${PREFIX}/share/doc/qt/html
+
+.if defined(WANT_STATIC)
+post-install:
+	@${PERL} -pi -e 's/libqt\.so/libqt.a/' ${TMPPLIST}
+.endif
 
 .include <bsd.port.mk>
