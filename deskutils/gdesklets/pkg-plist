@@ -83,4 +83,6 @@ share/gnome/pixmaps/gdesklets.png
 @dirrm share/gnome/gdesklets/desktop
 @dirrm share/gnome/gdesklets/data
 @dirrm share/gnome/gdesklets/config
+@dirrm share/gnome/gdesklets/Sensors
+@dirrm share/gnome/gdesklets/Displays
 @dirrm share/gnome/gdesklets

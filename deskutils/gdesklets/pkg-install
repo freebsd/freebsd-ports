@@ -1,0 +1,6 @@
+#!/bin/sh
+
+if [ "$2" = "POST-INSTALL" ]; then
+	mkdir -p ${PKG_PREFIX}/share/gnome/gdesklets/Sensors
+	mkdir -p ${PKG_PREFIX}/share/gnome/gdesklets/Displays
+fi
