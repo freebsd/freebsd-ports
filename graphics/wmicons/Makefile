@@ -14,13 +14,8 @@ MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
 		http://www.itlb.te.noda.sut.ac.jp/~manome/wmaker/archive/ \
 		http://www.slip.net/~seto/images/ \
 		http://www.lab06.ee.u-tokai.ac.jp/~7jeem005/WindowMaker/Archives/
-MASTER_SITE_SUBDIR=. contrib/icons beta/srcs
-DISTFILES=	DWiconpack1.tar.gz DWiconpack2.tar.gz IconFest-1.2.tgz \
-		NeXT_XEmacs_tar.gz  wm_icons_png.tar.gz wm_icons_tif.tar.gz \
-		isiconpack4.tgz \
-		japanese-step-icons1.1.tar.gz \
-		KTermIcons-1.0.tar.gz \
-		WindowMaker-extra-0.1.tar.gz
+MASTER_SITE_SUBDIR=	. contrib/icons beta/srcs
+DISTFILES=	${EXTRACT_ONLY} isiconpack4.tgz
 
 MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
@@ -47,7 +42,7 @@ pre-install:
 	${MKDIR} ${WMDOCDIR}
 	${MKDIR} ${WMICONDIR}
 	cd ${WRKDIR}/IconFest-1.2; \
-	${INSTALL_DATA} .README.swp ${WMDOCDIR}; \
+	${INSTALL_DATA} README ${WMDOCDIR}/README.IconFest; \
 	${INSTALL_DATA} *.xpm *.tif ${WMICONDIR}
 	cd ${WRKDIR}/Icons; \
 	${INSTALL_DATA} *.xpm ${WMICONDIR}
@@ -55,10 +50,10 @@ pre-install:
 	${INSTALL_DATA} README.NeXT.XEmacs ${WMDOCDIR}; \
 	${INSTALL_DATA} ./*/*.xpm ${WMICONDIR}
 	cd ${WRKDIR}/dwiconpack1; \
-	${INSTALL_DATA} dwiconpack1.README ${WMDOCDIR}; \
+	${INSTALL_DATA} dwiconpack1.README ${WMDOCDIR}/README.dwiconpack1; \
 	${INSTALL_DATA} *.tif ${WMICONDIR}
 	cd ${WRKDIR}/dwiconpack2; \
-	${INSTALL_DATA} dwiconpack2.README ${WMDOCDIR}; \
+	${INSTALL_DATA} dwiconpack2.README ${WMDOCDIR}/README.dwiconpack2; \
 	${INSTALL_DATA} *.tif ${WMICONDIR}
 	cd ${WRKDIR}/isiconpack4; \
 	${INSTALL_DATA} CREDITS ${WMDOCDIR}; \
