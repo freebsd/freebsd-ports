@@ -3,7 +3,7 @@
 # Date created:         Dec 4 1997
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/12/21 21:57:36 vanilla Exp $
 #
 
 DISTNAME=	babel-1.6
@@ -14,6 +14,6 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=     frankch@waru.life.nthu.edu.tw
 
 post-install:
-		@ ${CAT} ${PKGDIR}/INSTALL
+		@ ${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
