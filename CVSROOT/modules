@@ -1005,6 +1005,7 @@ cvs		src/gnu/usr.bin/cvs
 cvs2cl		ports/devel/cvs2cl
 cvs2html	ports/devel/cvs2html
 cvs2p4		ports/devel/cvs2p4
+cvsadmin	ports/devel/cvsadmin
 cvsbook		ports/devel/cvsbook
 cvsd		ports/devel/cvsd
 cvsgraph	ports/devel/cvsgraph
