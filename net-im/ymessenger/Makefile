@@ -8,7 +8,7 @@
 
 PORTNAME=	ymessenger
 PORTVERSION=	1.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	20020902
 CATEGORIES=	net
 MASTER_SITES=	http://public.yahoo.com/~mmk/
@@ -31,6 +31,8 @@ LIB_DEPENDS+=    c.4:${PORTSDIR}/misc/compat4x
 
 ONLY_FOR_ARCHS=	i386
 
+GETTEXT_MAJOR=	6
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/bin/ymessenger ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/libexec/ymessenger
@@ -47,5 +49,8 @@ do-install:
 
 post-patch:
 	${REINPLACE_CMD} -e 's:%%PREFIX%%:${PREFIX}:g' ${WRKDIR}/bin/ymessenger
+	@${CHMOD} +w ${WRKDIR}/bin/ymessenger.bin
+	${ECHO} ${GETTEXT_MAJOR} | dd bs=1 count=1 conv=notrunc seek=43202 \
+		of=${WRKDIR}/bin/ymessenger.bin
 
 .include <bsd.port.post.mk>
