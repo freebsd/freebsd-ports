@@ -69,6 +69,7 @@
     SUBDIR += py-adns
     SUBDIR += py-dns
     SUBDIR += rbldnsd
+    SUBDIR += rbllookup
     SUBDIR += sheerdns
     SUBDIR += skadns
     SUBDIR += sleuth
