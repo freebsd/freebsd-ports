@@ -1,0 +1,16 @@
+	ATTENTIONATTENTION:
+
+This port is an attempt to distribute a FreeBSD native version of
+the eDonkey GTK GUI written by Tim-Philipp Müller.
+
+It might not work at all. As always, there are no implied guarantees.
+You try this at your own risk. Be warned. :-)
+
+If it does not work for you, you can always try the Linux version
+of this port available at /usr/ports/net/linux-edonkey-gui-gtk. It
+might work.
+
+Currently, this native version is restricted to the following FreeBSD
+platforms:
+
+- i386 FreeBSD 4.x-STABLE (post 4.6R Release); OSVERSION=450006

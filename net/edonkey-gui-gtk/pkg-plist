@@ -1,1 +1,5 @@
 bin/ed2k_gui
+bin/edonkey-gui-gtk
+%%PORTDOCS%%share/doc/edonkey-gui-gtk/faq.html
+%%PORTDOCS%%share/doc/edonkey-gui-gtk/faq_german.html
+%%PORTDOCS%%@dirrm share/doc/edonkey-gui-gtk
