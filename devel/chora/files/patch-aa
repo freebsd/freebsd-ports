@@ -1,0 +1,25 @@
+--- config/cvsroots.php.dist.orig	Fri Jun  8 22:59:42 2001
++++ config/cvsroots.php.dist	Tue Nov 27 22:42:41 2001
+@@ -27,6 +27,15 @@
+ 
+ $cvsroots = array();
+ 
++$cvsroots['myprojects'] = array(
++    'name' => 'Here',
++    'location' => '%%CVSROOT%%',
++    'title' => 'To be configured in %%CONFDIR%%/cvsroots.php',
++    'intro' => 'longIntro.txt',
++    'default' => true
++);
++
++/*
+ $cvsroots['php4'] = array(
+     'name' => 'PHP4',
+     'location' => '/home/cvs/php4',
+@@ -48,5 +57,6 @@
+     'location' => '/home/cvs/openbsd',
+     'title' => 'OpenBSD CVS Repository'
+ );
++*/
+ 
+ ?>

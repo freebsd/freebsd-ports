@@ -76,6 +76,7 @@
     SUBDIR += cdk
     SUBDIR += cervisia
     SUBDIR += cflow
+    SUBDIR += chora
     SUBDIR += clanlib
     SUBDIR += clig
     SUBDIR += clint

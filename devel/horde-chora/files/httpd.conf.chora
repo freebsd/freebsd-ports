@@ -1,0 +1,27 @@
+# This is included in Apache's httpd.conf for Chora
+#
+# For security, don't serve pages from the Chora configuration and
+# library directories.
+#
+<Directory "/home/httpd/html/horde/chora/config">
+    order deny,allow
+    deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/chora/lib">
+    order deny,allow
+    deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/chora/locale">
+    order deny,allow
+    deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/chora/po">
+    order deny,allow
+    deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/chora/templates">
+    order deny,allow
+    deny from all
+</Directory>
+# End of Chora configuration ================
+
