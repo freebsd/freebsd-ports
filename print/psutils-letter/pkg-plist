@@ -1,0 +1,42 @@
+@cd /usr/local
+@owner bin
+@mode 755
+bin/psbook
+bin/psselect
+bin/pstops
+bin/epsffit
+bin/psnup
+bin/psresize
+bin/getafm
+bin/fixfmps 
+bin/fixmacps 
+bin/fixpsditps 
+bin/fixpspps 
+bin/fixtpps 
+bin/fixwfwps 
+bin/fixwpps 
+bin/fixwwps 
+bin/fixdlsrps 
+bin/extractres 
+bin/includeres
+@mode 644
+man/man1/psbook.1 
+man/man1/psselect.1 
+man/man1/pstops.1 
+man/man1/epsffit.1 
+man/man1/psnup.1 
+man/man1/psresize.1 
+man/man1/getafm.1 
+man/man1/fixdlsrps.1 
+man/man1/fixfmps.1
+man/man1/fixmacps.1 
+man/man1/fixpsditps.1 
+man/man1/fixpspps.1 
+man/man1/fixtpps.1 
+man/man1/fixwfwps.1 
+man/man1/fixwpps.1
+man/man1/fixwwps.1 
+man/man1/extractres.1 
+man/man1/includeres.1
+share/psutils/md68_0.ps 
+share/psutils/md71_0.ps
