@@ -1,7 +1,6 @@
 bin/gmziq
 bin/jukebox
 bin/mziq
-%%PORTDOCS%%share/doc/mziq/LASTLOG
 %%PORTDOCS%%share/doc/mziq/README
 %%PORTDOCS%%share/doc/mziq/TODO
 %%PORTDOCS%%share/doc/mziq/rcfile
