@@ -31,7 +31,7 @@
  */
 
 #include <sys/cdefs.h>
-__FBSDID("$FreeBSD: /tmp/pcvs/ports/lang/ifc/files/ld.c,v 1.4 2004-01-19 13:44:47 maho Exp $");
+__FBSDID("$FreeBSD: /tmp/pcvs/ports/lang/ifc/files/ld.c,v 1.5 2004-01-31 23:32:41 maho Exp $");
 
 #include <err.h>
 #include <stdio.h>

@@ -1,5 +1,5 @@
---- ia32/bin/ifc.orig	Sun Jan 18 17:29:47 2004
-+++ ia32/bin/ifc	Sun Jan 18 17:34:08 2004
+--- bin/ifort.orig	Tue Dec  9 19:55:12 2003
++++ bin/ifort	Tue Dec  9 20:12:01 2003
 @@ -1,6 +1,9 @@
  #!/bin/sh
  
@@ -18,7 +18,7 @@
 -if [ -z LD_LIBRARY_PATH ]
 +if [ -z "$LD_LIBRARY_PATH" ]
  then 
-  LD_LIBRARY_PATH=<INSTALLDIR>/compiler70/ia32/lib;
+  LD_LIBRARY_PATH=<INSTALLDIR>/lib;
  else
 @@ -16,7 +19,7 @@
  fi
@@ -27,7 +27,7 @@
 -if [ -z PATH ]
 +if [ -z "$PATH" ]
  then
-  PATH=<INSTALLDIR>/compiler70/ia32/bin;
+  PATH=<INSTALLDIR>/bin;
  else
 @@ -24,11 +27,31 @@
  fi
@@ -37,7 +37,7 @@
 -
  if [ $# != 0 ]
  then
-- exec -a "<INSTALLDIR>/compiler70/ia32/bin/ifc" <INSTALLDIR>/compiler70/ia32/bin/ifcbin "$@";
+- exec -a "<INSTALLDIR>/bin/ifort" <INSTALLDIR>/bin/ifortbin "$@";
 + i=0
 + argc=$#
 + while [ $i -lt $argc ] ; do
@@ -60,8 +60,8 @@
 +  set -- "$@" "$val1"
 +  i=$(($i+1))
 + done
-+ exec <INSTALLDIR>/compiler70/ia32/bin/ifcbin "$@";
++ exec <INSTALLDIR>/bin/ifortbin "$@";
  else
-- exec -a "<INSTALLDIR>/compiler70/ia32/bin/ifc" <INSTALLDIR>/compiler70/ia32/bin/ifcbin;
-+ exec <INSTALLDIR>/compiler70/ia32/bin/ifcbin;
+- exec -a "<INSTALLDIR>/bin/ifort" <INSTALLDIR>/bin/ifortbin;
++ exec <INSTALLDIR>/bin/ifortbin;
  fi

@@ -23,7 +23,7 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
- * $FreeBSD: /tmp/pcvs/ports/lang/ifc/files/stdin.c,v 1.1 2003-04-28 22:17:47 maho Exp $
+ * $FreeBSD: /tmp/pcvs/ports/lang/ifc/files/stdin.c,v 1.2 2004-01-31 23:32:41 maho Exp $
  */
 
 #include <stdio.h>

@@ -25,7 +25,7 @@
  *
  * copied over from: FreeBSD: ports/lang/compaq-cc/files/errno_location.c,v 1.1 2000/12/08 13:27:29 obrien Exp
  *
- * $FreeBSD: /tmp/pcvs/ports/lang/ifc/files/errno_location.c,v 1.2 2003-04-28 22:17:47 maho Exp $
+ * $FreeBSD: /tmp/pcvs/ports/lang/ifc/files/errno_location.c,v 1.3 2004-01-31 23:32:41 maho Exp $
  */
 
 #include <errno.h>
