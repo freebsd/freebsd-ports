@@ -1,5 +1,5 @@
---- lib/freebsd-g++/tmake.conf	Fri Aug  4 15:22:35 2000
-+++ lib/freebsd-g++/tmake.conf.new	Wed Aug  9 10:55:59 2000
+--- lib/freebsd-g++/tmake.conf	Wed Aug 23 18:03:32 2000
++++ lib/freebsd-g++/tmake.conf.new	Fri Sep  1 17:09:54 2000
 @@ -31,7 +31,7 @@
  TMAKE_LIBDIR		= /usr/local/lib
  TMAKE_INCDIR_X11	= /usr/X11R6/include

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmake
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	devel perl5
 MASTER_SITES=	ftp://ftp.trolltech.com/freebies/tmake/
 
