@@ -1,0 +1,11 @@
+@cwd /usr/local
+bin/scm
+man/man1/scm.1
+lib/scm
+lib/slib
+@cwd /usr/gnu/info
+slib.info
+slib.info-1
+slib.info-2
+slib.info-3
+slib.info-4
