@@ -1,10 +1,11 @@
-# $Id: Makefile,v 1.186 1999/02/20 00:52:11 flathill Exp $
+# $Id: Makefile,v 1.187 1999/02/25 06:56:45 dburr Exp $
 #
 
     SUBDIR += 3dc
     SUBDIR += 3dpong
     SUBDIR += KnightCap
     SUBDIR += acm
+    SUBDIR += actx
     SUBDIR += affenspiel
     SUBDIR += agm
     SUBDIR += an
@@ -61,6 +62,7 @@
     SUBDIR += maelstrom
     SUBDIR += mangband
     SUBDIR += merlin
+    SUBDIR += mindfocus
     SUBDIR += mirrormagic
     SUBDIR += nethack
     SUBDIR += nethack-qt
