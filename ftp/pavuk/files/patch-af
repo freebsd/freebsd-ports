@@ -1,0 +1,8 @@
+--- icons/Makefile.am.orig	Thu Mar  2 07:03:32 2000
++++ icons/Makefile.am	Wed Nov 29 05:22:50 2000
+@@ -1,4 +1,4 @@
+-iconsdir = $(datadir)/icons
++iconsdir = $(pkgdatadir)/icons
+ 
+ icons_DATA = pavuk_16x16.xpm pavuk_32x32.xpm pavuk_64x64.xpm \
+ 	pavuk_as_icon.xpm pavuk_prg_icon.xpm

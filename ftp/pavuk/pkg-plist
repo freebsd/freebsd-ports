@@ -1,20 +1,25 @@
 bin/pavuk
-etc/pavukrc.sample
 etc/pavuk_authinfo.sample
+etc/pavukrc.sample
 share/doc/pavuk/AUTHORS
 share/doc/pavuk/BUGS
+share/doc/pavuk/CREDITS
 share/doc/pavuk/ChangeLog
 share/doc/pavuk/FAQ
+share/doc/pavuk/MAILINGLIST
+share/doc/pavuk/NEWS
 share/doc/pavuk/README
-share/doc/pavuk/THANK_TO
-share/doc/pavuk/TODO
-share/icons/pavuk_16x16.xpm
-share/icons/pavuk_32x32.xpm
-share/icons/pavuk_64x64.xpm
-share/icons/pavuk_as_icon.xpm
-share/icons/pavuk_prg_icon.xpm
+share/pavuk/icons/pavuk_16x16.xpm
+share/pavuk/icons/pavuk_32x32.xpm
+share/pavuk/icons/pavuk_64x64.xpm
+share/pavuk/icons/pavuk_as_icon.xpm
+share/pavuk/icons/pavuk_prg_icon.xpm
 share/locale/cs/LC_MESSAGES/pavuk.mo
 share/locale/de/LC_MESSAGES/pavuk.mo
+share/locale/es/LC_MESSAGES/pavuk.mo
+share/locale/fr/LC_MESSAGES/pavuk.mo
+share/locale/it/LC_MESSAGES/pavuk.mo
 share/locale/sk/LC_MESSAGES/pavuk.mo
+@dirrm share/pavuk/icons
+@dirrm share/pavuk
 @dirrm share/doc/pavuk
-@unexec rmdir %D/share/icons > /dev/null 2>&1 || true

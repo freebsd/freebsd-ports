@@ -1,18 +1,41 @@
---- configure.in.orig	Sun Jul 25 15:18:07 1999
-+++ configure.in	Thu Feb 10 16:30:46 2000
-@@ -197,14 +197,14 @@
- fi
- 
- if eval "test x$WITH_SSL = xyes"; then
+--- configure.in.orig	Thu Aug 31 08:37:36 2000
++++ configure.in	Thu Nov 30 00:56:41 2000
+@@ -233,15 +233,15 @@
+ 		CFLAGS="$CFLAGS -I$WITH_SSL_PFX/include"
+ 		LDFLAGS="$LDFLAGS -L$WITH_SSL_PFX/lib"
+ 	fi
 -	AC_CHECK_LIB(ssl, SSLv23_client_method, SSL_LIBS="-lssl", ,"-lcrypto")
 +	AC_CHECK_LIB(ssl, SSLv23_client_method, SSL_LIBS="-lssl", ,-lcrypto $EXTRA_SSL_LIBS)
  	if test -n "$SSL_LIBS"; then
+-		AC_CHECK_LIB(ssl, TLSv1_client_method, TLS1=yes, TLS1=no, "-lcrypto")
++		AC_CHECK_LIB(ssl, TLSv1_client_method, TLS1=yes, TLS1=no, "-lcrypto $EXTRA_SLL_LIBS")
  		AC_CHECK_HEADER(ssl.h, SSLEAY=yes, SSLEAY=no)
  		AC_CHECK_HEADER(openssl/ssl.h, OPENSSL=yes, OPENSSL=no)
  		if eval "test x$SSLEAY = xno -a  x$OPENSSL = xno"; then
- 			AC_WARN("SSLeay headers not found --\> use --disable-ssl option or set --with-ssl-includes to apropriate location")
+ 			AC_MSG_WARN("SSLeay or OpenSSL headers not found --\> use --disable-ssl option or set --with-ssl-includes to apropriate location")
  		fi
 -		AC_CHECK_LIB(crypto, SSLeay, SSL_LIBS="$SSL_LIBS -lcrypto", SSL_LIBS='')
 +		AC_CHECK_LIB(crypto, SSLeay, SSL_LIBS="$SSL_LIBS -lcrypto $EXTRA_SSL_LIBS", SSL_LIBS='', $EXTRA_SSL_LIBS)
  	fi
  fi
+ 
+@@ -250,7 +250,7 @@
+ 	echo 'void f(){}' > conftest.c
+ 	if test -z "`${CC-cc} -pthread -c conftest.c 2>&1`"; then
+ 		ac_ccpthread_opt=yes
+-		x_cflags="$x_cflags -pthread -DHAVE_MT"
++		x_cflags="$x_cflags -D_THREAD_SAFE -DHAVE_MT"
+ 		x_libs="-pthread $x_libs"
+ 		HAVE_MT="yes"
+ 	else
+@@ -297,8 +297,8 @@
+ 
+ 	dnl Test for gtk
+ 	if eval "test x$WITH_GTK = xyes"; then
+-		AC_CHECK_PROG(GTK_CONFIG, $WITH_GTK_CONFIG, "yes", "no")
+-		if eval "test x$GTK_CONFIG = xyes"; then
++		AC_CHECK_PROG(GTK_CONFIG_SCRIPT, $WITH_GTK_CONFIG, "yes", "no")
++		if eval "test x$GTK_CONFIG_SCRIPT = xyes"; then
+ 			AC_MSG_RESULT("checking for gtk configuration using gtk-config script ...")
+ 			if eval "test x$HAVE_MT = xyes"; then
+ 				GTK_LIBS=`$WITH_GTK_CONFIG --libs gtk gthread`
