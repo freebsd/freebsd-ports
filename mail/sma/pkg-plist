@@ -1,0 +1,10 @@
+bin/sma
+%%PORTDOCS%%share/doc/sma/BUGS
+%%PORTDOCS%%share/doc/sma/COPYRIGHT
+%%PORTDOCS%%share/doc/sma/HISTORY
+%%PORTDOCS%%share/doc/sma/README
+%%PORTDOCS%%share/doc/sma/TODO
+%%PORTDOCS%%@dirrm share/doc/sma
+%%PORTDOCS%%share/examples/sma/sma.conf
+%%PORTDOCS%%@dirrm share/examples/sma
+

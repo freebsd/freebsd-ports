@@ -206,6 +206,7 @@
     SUBDIR += serialmail
     SUBDIR += sigit
     SUBDIR += sigrot
+    SUBDIR += sma
     SUBDIR += smail
     SUBDIR += smapi
     SUBDIR += smtpclient

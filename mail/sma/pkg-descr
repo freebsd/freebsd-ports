@@ -1,0 +1,14 @@
+SMA is a program that analyses sendmail log entries.
+The key features of SMA are 
+      Fast (written in C) 
+      Portable 
+      Free (BSD-style licensing) 
+      output as HTML or ASCII. 
+
+SMA features 
+      Support for all recent sendmail versions (UNIX/NT) 
+      Flexible output formatting - HTML, ASCII and Custom Log 
+      Regular expression filtering of messages 
+      Multiple hosts in a same report 
+
+WWW: http://www.klake.org/sma/
