@@ -4,16 +4,17 @@
 # Date created:         Thur July 25, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/11/10 09:37:23 obrien Exp $
 
 DISTNAME=	${PKGNAME}-export
 PKGNAME=	mutt-0.49
-CATEGORIES+=	mail
+CATEGORIES=	mail
 MASTER_SITES=	ftp://cs.hmc.edu/pub/me/mutt/  \
 		ftp://ftp.ibp.fr/pub/unix/mail/mutt/  \
 		ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/  \
 		ftp://ftp.teuto.de/pub/user/lmb/  \
-		ftp://ftp.funet.fi/pub/unix/mail/mutt/ \
+		ftp://ftp.funet.fi/pub/unix/mail/mutt/
+
 PATCH_SITES=	ftp://nuxi.cs.ucdavis.edu/pub/mutt/${PKGNAME:S/^mutt-//}/  \
 		http://www.frmug.org/mutt/mutt/${PKGNAME:S/^mutt-//}/  \
 		http://www.math.fu-berlin.fr/~leitner/mutt/${PKGNAME:S/^mutt-//}/  \
@@ -26,10 +27,10 @@ PATCHFILES=	03.typo.PATCH  \
 		07.pop.PATCH  \
 		09.search.PATCH  \
 		10.mimefwd.PATCH
-DIST_SUBDIR=	Mutt_${PKGNAME:S/^mutt-//}
 
 MAINTAINER=     obrien@cs.ucdavis.edu
 
+DIST_SUBDIR=	Mutt_${PKGNAME:S/^mutt-//}
 WRKSRC=		${WRKDIR}/${PKGNAME}
 PATCH_DIST_STRIP=	
 GNU_CONFIGURE=	yes
