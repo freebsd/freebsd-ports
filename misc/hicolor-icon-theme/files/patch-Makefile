@@ -1,7 +1,7 @@
 --- Makefile.orig	Mon Dec  2 06:49:53 2002
 +++ Makefile	Sun Feb  1 17:15:01 2004
 @@ -1,8 +1,7 @@
- VERSION=0.2
+ VERSION=0.3
 -PREFIX=/usr/local
  DATADIR=$(PREFIX)/share
  DESTDIR=

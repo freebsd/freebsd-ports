@@ -5,13 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	hicolor-icon-theme
-PORTVERSION=	0.2
-PORTREVISION=	1
+PORTVERSION=	0.3
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://www.freedesktop.org/Software/icon-theme/releases/
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	A set of high-color desktop icons from the FreeDesktop project
+COMMENT=	A high-color icon theme shell from the FreeDesktop project
 
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
