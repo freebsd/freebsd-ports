@@ -44,6 +44,7 @@
     SUBDIR += unrar
     SUBDIR += unzip
     SUBDIR += xdms
+    SUBDIR += xpk
     SUBDIR += zip
     SUBDIR += zoo
 
