@@ -1,0 +1,9 @@
+Sendmail::Milter provides users with the ability to write mail filters in Perl
+that tightly integrate with sendmail's mail filter API.
+
+With this module, you can define and register Perl callbacks with the Milter
+engine. This module calls your perl callbacks using interpreters from a
+threaded persistent interpreter pool. Milter contexts are presented using an
+object-oriented style interface for performing operations on a Milter context.
+
+WWW: http://sourceforge.net/projects/sendmail-milter/
