@@ -7,8 +7,7 @@
 
 PORTNAME=	svencoop
 PORTVERSION=	1.19.1
-MASTER_SITES=	ftp://ftp.ioerror.com/pub2/halflife/mods/svencoop/ \
-		http://www.svencoop.com/files/
+MASTER_SITES=	http://www.svencoop.com/files/
 DISTFILES=	svencoop19.tar.gz svencoop19_patch.tar.gz
 
 MAINTAINER=	lioux@FreeBSD.org
