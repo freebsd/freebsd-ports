@@ -35,3 +35,12 @@ share/chasen/mkchadic/sortdic
 @dirrm share/chasen/mkchadic
 @dirrm share/chasen/dic
 @dirrm share/chasen
+%%PORTDOCS%%share/doc/chasen/README
+%%PORTDOCS%%share/doc/chasen/manual.pdf
+%%PORTDOCS%%share/doc/chasen/manual.tex
+%%PORTDOCS%%share/doc/chasen/ja/CHANGES
+%%PORTDOCS%%share/doc/chasen/ja/README.ja
+%%PORTDOCS%%share/doc/chasen/ja/manual-j.pdf
+%%PORTDOCS%%share/doc/chasen/ja/manual-j.tex
+%%PORTDOCS%%@dirrm share/doc/chasen/ja
+%%PORTDOCS%%@dirrm share/doc/chasen
