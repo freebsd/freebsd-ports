@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.wibble.net/pub/licq/srcs/ \
 		ftp://ftp.fanfic.org/pub/licq/srcs/ \
 		ftp://ftp.inter-i.uni-mainz.de/pub/licq/srcs/
 
-MAINTAINER=	green@unixhelp.org
+MAINTAINER=	green@FreeBSD.org
 
 USE_QT=		yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
