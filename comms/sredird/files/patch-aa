@@ -1,0 +1,54 @@
+--- sredird.c.orig	Mon Sep 20 15:26:54 1999
++++ sredird.c	Tue Dec 21 11:02:48 1999
+@@ -43,7 +43,12 @@
+ #include <fcntl.h>
+ #include <syslog.h>
+ #include <termios.h>
+-#include <termio.h>
++#ifndef __FreeBSD__ /* FreeBSD */
++#include <termio.h> /* Doesn't exist on FreeBSD */
++#else
++#include <netdb.h> /* Necessary for getprotobyname(3) function */
++#include <netinet/in_systm.h> /* Reqired for netinet/ip.h */
++#endif /* FreeBSD */
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <netinet/ip.h>
+@@ -129,6 +134,14 @@
+ /* Default modem state polling in milliseconds (100 msec should be enough) */
+ #define ModemStatePolling 100
+ 
++/* FreeBSD specific definitions */
++#ifdef __FreeBSD__ /* FreeBSD */
++struct tms mytms;
++#define times(NULL) times(&mytms) /* Coz times(NULL) coredumps on FreeBSD */
++#define SOL_TCP getprotobyname("TCP")->p_proto /* SOL_TCP and SOL_IP undefined */
++#define SOL_IP getprotobyname("IP")->p_proto   /* on FreeBSD                   */
++#endif /* FreeBSD */
++
+ /* Standard boolean definition */
+ typedef enum { False, True } Boolean;
+ 
+@@ -571,8 +584,10 @@
+           return(115200UL);
+         case B230400:
+           return(230400UL);
++#ifndef __FreeBSD__ /* Sadly, but FreeBSD doesn't support rates > 230K */
+         case B460800:
+           return(460800UL);
++#endif
+         default:
+           return(0UL);
+       }
+@@ -954,9 +969,11 @@
+         case 230400UL:
+           Speed = B230400;
+         break;
++#ifndef __FreeBSD__
+         case 460800UL:
+           Speed = B460800;
+         break;
++#endif
+         default:
+           LogMsg(LOG_WARNING,"Unknwon baud rate requested. Setting to 38400");
+           Speed = B38400;

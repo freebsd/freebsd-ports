@@ -16,6 +16,7 @@
     SUBDIR += rzsz
     SUBDIR += seyon
     SUBDIR += snooper
+    SUBDIR += sredird
     SUBDIR += tkhylafax
     SUBDIR += viewfax
     SUBDIR += xcept

@@ -1,0 +1,4 @@
+libexec/sredird
+share/doc/sredird/README
+share/doc/sredird/COPYING
+@dirrm share/doc/sredird
