@@ -3580,6 +3580,7 @@ libforms	src/lib/libforms
 libfpx		ports/graphics/libfpx
 libfreenet	ports/net/libfreenet
 libftpio	src/lib/libftpio
+libfwbuilder	ports/security/libfwbuilder
 libfxp		ports/ftp/libfxp
 libg++		ports/devel/libg++
 libgail-gnome	ports/x11-toolkits/libgail-gnome
