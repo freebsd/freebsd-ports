@@ -15,6 +15,24 @@ MAINTAINER=	hsn@netmag.cz
 COMMENT=	Simple forking web benchmark
 
 USE_GETOPT_LONG=yes
+
+.if !defined(NO_INSTALL_MANPAGES)
 MAN1=		webbench.1
+.endif
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	copyright changelog
+.endif
+
+do-install:
+		${INSTALL_PROGRAM} ${WRKSRC}/webbench ${PREFIX}/bin
+.if !defined(NO_INSTALL_MANPAGES)
+		${INSTALL_MAN} ${WRKSRC}/webbench.1 ${MAN1PREFIX}/man/man1
+.endif
+.if !defined(NOPORTDOCS)
+		${MKDIR} ${DOCSDIR}
+		${INSTALL_DATA} ${WRKSRC}/debian/copyright ${DOCSDIR}
+		${INSTALL_DATA} ${WRKSRC}/debian/changelog ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>

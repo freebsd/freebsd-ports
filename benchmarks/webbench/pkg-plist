@@ -1,4 +1,1 @@
 bin/webbench
-%%PORTDOCS%%%%DOCSDIR%%/copyright
-%%PORTDOCS%%%%DOCSDIR%%/changelog
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
