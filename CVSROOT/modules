@@ -4763,6 +4763,7 @@ lr		ports/misc/lr
 lrzsz		ports/comms/lrzsz
 lsdb		ports/databases/lsdb
 lsdb-emacs20	ports/databases/lsdb-emacs20
+lsdvd		ports/multimedia/lsdvd
 lsh		ports/security/lsh
 lsmlib		ports/sysutils/lsmlib
 lsof		ports/sysutils/lsof
