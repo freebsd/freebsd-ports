@@ -8,10 +8,13 @@
 PORTNAME=	libslang
 PORTVERSION=	${VERSION}.j${JP_VERSION}
 CATEGORIES=	japanese devel
-MASTER_SITES=	http://www.actweb.ne.jp/k-yosino/
+MASTER_SITES=	http://www.emaillab.org/mutt/tools/ \
+		http://my.reset.jp/~iwashita/mutt/distfiles/ \
+		http://www.actweb.ne.jp/k-yosino/
+
 DISTNAME=	slang-${VERSION}jp${JP_VERSION}
 
-MAINTAINER=	shuna@pop16.odn.ne.jp
+MAINTAINER=	iwashita@cqmail.net
 
 VERSION=	1.4.5
 JP_VERSION=	2
