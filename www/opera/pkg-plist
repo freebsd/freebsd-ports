@@ -114,8 +114,8 @@ bin/opera
 %%DATADIR%%/styles/user/textonly.css
 %%DATADIR%%/styles/user/userstyle.ini
 %%DATADIR%%/styles/wml.css
-%%GNOME%%share/gnome/apps/Internet/linux-opera.desktop
-%%GNOME%%share/gnome/pixmaps/linux-opera.xpm
+%%GNOME%%share/gnome/apps/Internet/opera.desktop
+%%GNOME%%share/gnome/pixmaps/opera.xpm
 @dirrm %%DATADIR%%/styles/user
 @dirrm %%DATADIR%%/styles
 @dirrm %%DATADIR%%/skin
