@@ -21,7 +21,7 @@ $(RSAREFLIB) : desc.$(O) digit.$(O) md2c.$(O) md5c.$(O) nn.$(O) prime.$(O)\
 $(SORSAREFLIB) : desc.$(SO) digit.$(SO) md2c.$(SO) md5c.$(SO) nn.$(SO) prime.$(SO)\
   rsa.$(SO) r_encode.$(SO) r_dh.$(SO) r_enhanc.$(SO) r_keygen.$(SO) r_random.$(SO)\
   r_stdlib.$(SO)
-.if defined(PORTOBJFORMAT) && PORTOBJFORMAT == elf
+.if defined(PORTOBJFORMAT) && ${PORTOBJFORMAT} == elf
 	${CC} -o $@ -shared -Wl,-soname,$@ $>
 .else
 	ld -Bshareable -x -o $@ $>
