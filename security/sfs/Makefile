@@ -8,7 +8,7 @@
 
 PORTNAME=	sfs
 PORTVERSION=	0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 MASTER_SITES=	http://www.fs.net/sfs/new-york.lcs.mit.edu:85xq6pznt4mgfvj4mb23x6b8adak55ue/pub/sfswww/dist/
 
@@ -18,6 +18,7 @@ MAINTAINER=	handler@grendel.net
 
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
+USE_BISON=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-sfsuser=sfs \
