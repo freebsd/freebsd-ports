@@ -21,6 +21,8 @@ include/ming/blocks/block.h
 include/ming/blocks/blocktypes.h
 include/ming/blocks/character.h
 include/ming/blocks/cxform.h
+include/ming/blocks/error.h
+include/ming/blocks/input.h
 include/ming/blocks/libswf.h
 include/ming/blocks/matrix.h
 include/ming/blocks/method.h
