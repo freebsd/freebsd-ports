@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	4.1.0
 PKGNAMEPREFIX=	XFree86-
 DISTFILES=	X410src-1.tgz
+EXTRACT_ONLY=	X410src-1.tgz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
@@ -142,6 +143,7 @@ HaveMatroxHal=		YES
 MGA_DRIVER_VERSION=	133_143
 MASTER_SITES+=		ftp://ftp.matrox.com/pub/mga/archive/linux/2001/beta_${MGA_DRIVER_VERSION}/
 DISTFILES+=		mga-${MGA_DRIVER_VERSION}-source.tgz
+EXTRACT_ONLY+=		mga-${MGA_DRIVER_VERSION}-source.tgz
 PLIST_SUB+=		MATROX=""
 post-patch::
 	@(cd ${WRKSRC}; \
@@ -165,7 +167,6 @@ pre-fetch::
 MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
 		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
 		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/
-EXTRACT_ONLY=	X410src-1.tgz
 DISTFILES+=	Wraphelp.c
 IGNOREFILES=	Wraphelp.c
 .endif
