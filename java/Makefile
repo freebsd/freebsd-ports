@@ -3,6 +3,7 @@
 
     SUBDIR += collections
     SUBDIR += cos
+    SUBDIR += cryptix-jce
     SUBDIR += guavac
     SUBDIR += infobus
     SUBDIR += jaf
