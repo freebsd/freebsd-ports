@@ -8,7 +8,8 @@
 PORTNAME=	py-wxPython
 PORTVERSION=	2.1.15
 CATEGORIES=	x11-toolkits python
-MASTER_SITES=	http://alldunn.com/wxPython/dist/
+MASTER_SITES=	http://alldunn.com/wxPython/dist/ \
+		http://www.nectar.com/distfiles/
 DISTNAME=	wxPython-${PORTVERSION}
 
 MAINTAINER=	nectar@FreeBSD.ORG
