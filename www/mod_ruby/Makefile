@@ -6,41 +6,35 @@
 #
 
 PORTNAME=	mod_ruby
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.modruby.net/archive/
 DIST_SUBDIR=	ruby
 
-PATCH_SITES=	http://www.ruby-lang.org/~knu/
-PATCHFILES=	${DISTNAME}-2001.05.24.patch.gz
-PATCH_DIST_STRIP=	-p1
-
 MAINTAINER=	knu@FreeBSD.org
 
 BUILD_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
-LIB_DEPENDS=	eruby.9:${PORTSDIR}/textproc/eruby
+LIB_DEPENDS=	eruby.09:${PORTSDIR}/textproc/eruby
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 
 USE_RUBY=	yes
 
 APXS=		${LOCALBASE}/sbin/apxs
 
-CONFIGURE_ARGS=	--apxs="${APXS}" \
+CONFIGURE_ARGS=	--with-apxs="${APXS}" \
 		--enable-eruby=yes \
-		--eruby-includes="${LOCALBASE}/include" \
-		--eruby-libraries="${LOCALBASE}/lib"
+		--with-eruby-includes="${LOCALBASE}/include" \
+		--with-eruby-libraries="${LOCALBASE}/lib"
+INSTALL_TARGET=	site-install
 
-DOCS_EN=	ChangeLog README.en
+DOCS_EN=	COPYING ChangeLog README.en
 DOCS_JA=	README.ja
 
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} configure.rb ${CONFIGURE_ARGS}
 
-do-install:
-	${APXS} -i -n ruby ${WRKSRC}/mod_ruby.so
-	${INSTALL_DATA} ${FILESDIR}/httpd.conf.${PORTNAME} ${PREFIX}/etc/apache/
-	${MKDIR} ${RUBY_SITELIBDIR}/apache
-	${INSTALL_DATA} ${WRKSRC}/ruby/apache/*.rb ${RUBY_SITELIBDIR}/apache/
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/examples/httpd.conf ${PREFIX}/etc/apache/httpd.conf.${PORTNAME}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
 .for f in ${DOCS_EN}
