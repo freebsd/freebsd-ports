@@ -1,0 +1,77 @@
+--- Makefile.orig	Tue Nov 30 19:37:50 1999
++++ Makefile	Sun Jun 13 01:07:58 2004
+@@ -18,10 +18,10 @@
+ 	  rmlvs:tmin:monokan-v gbmvs:tgoth:monokan-v
+ #
+ # where you can find ASCII Nihongo TeX jfm files: min10.tfm ...
+-JFM = /usr/local/share/texmf.local/fonts/tfm/ptex
++JFM = ${PTEXTFMDIR}
+ #
+ # where you can find NTT JTeX tfm files: dmjsy10.tfm ...
+-SUBTFM = /usr/local/share/texmf.local/fonts/tfm/muling/nttsub
++SUBTFM = ${JTEXTFMDIR}
+ #
+ # where you can tind dmjsy10.300pk ...
+ PK = /usr/local/share/texmf.local/fonts/pk/modeless/muling/nttsub/300
+@@ -43,47 +43,47 @@
+ all: n2a a2n a2bk
+ 
+ n2a: mkn2a${j}vf
+-	-mkdir vf
+-	-mkdir vf/n2a
++	-mkdir -p vf
++	-mkdir -p vf/n2a
+ 	./MKNTT2ASC ./mkn2a${j}vf dm min ${SUBTFM} ${JFM} vf/n2a
+ 	./MKNTT2ASC ./mkn2a${j}vf dg goth ${SUBTFM} ${JFM} vf/n2a
+ 
+ a2n: mka2n${j}vf
+-	-mkdir vf
+-	-mkdir vf/a2n
++	-mkdir -p vf
++	-mkdir -p vf/a2n
+ 	./MKASC2NTT ./mka2n${j}vf dm min ${SUBTFM} ${JFM} vf/a2n
+ 	./MKASC2NTT ./mka2n${j}vf dg goth ${SUBTFM} ${JFM} vf/a2n
+ 
+ a2bk: mka2bk${j}vf
+-	-mkdir jfm
+-	-mkdir vf
++	-mkdir -p jfm
++	-mkdir -p vf
+ 	for bk in ${bkfonts}; do\
+ 	  ./MKASC2BKall ./mka2bk${j}vf data ${JFM} jfm/ vf/ $${bk};\
+ 	done
+ 
+ p2pn: mkp2n${j}vf
+-	-mkdir vf
+-	-mkdir vf/p2pn
++	-mkdir -p vf
++	-mkdir -p vf/p2pn
+ 	./MKPTEX2PNTT ./mkp2n${j}vf dm tmin ${SUBTFM} ${JFM} data/vshiftdnp data/vrotdnp vf/p2pn
+ 	./MKPTEX2PNTT ./mkp2n${j}vf dg tgoth ${SUBTFM} ${JFM} data/vshiftdnp data/vrotdnp vf/p2pn
+ 
+ tjsy: mktjsyvf
+-	-mkdir vf
+-	-mkdir vf/tjsy
++	-mkdir -p vf
++	-mkdir -p vf/tjsy
+ 	./MKTJSY vrotdnp dm tdm ${SUBTFM} vf/tjsy
+ 	./MKTJSY vrotdnp dg tdg ${SUBTFM} vf/tjsy
+ 
+ tjsypk: mktjsypk
+-	-mkdir pk
+-	-mkdir pk/tjsy
++	-mkdir -p pk
++	-mkdir -p pk/tjsy
+ 	./MKTJSYPK dmjsy ${PK} pk/tjsy
+ 	./MKTJSYPK dgjsy ${PK} pk/tjsy
+ 
+ rot: mkrotvf mkrotpk
+ 
+ n2bk: mkn2bkvf
+-	-mkdir vf
+-	-mkdir vf/n2bk
++	-mkdir -p vf
++	-mkdir -p vf/n2bk
+ 	./MKNTT2BK ./mkn2bkvf dm rml ${SUBTFM} jfm vf/n2bk
+ 	./MKNTT2BK ./mkn2bkvf dg gbm ${SUBTFM} jfm vf/n2bk
+ 
