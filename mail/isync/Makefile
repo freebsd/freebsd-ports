@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.sigpipe.org:8080/isync/
 MAINTAINER=	eivind@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+USE_OPENSSL=	yes
 
 MAN1=		isync.1
 
