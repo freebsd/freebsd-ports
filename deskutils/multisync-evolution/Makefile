@@ -13,6 +13,7 @@ RUN_DEPENDS=	multisync:${PORTSDIR}/deskutils/multisync \
 		evolution:${PORTSDIR}/mail/evolution
 
 MD5_FILE=	${MASTERDIR}/distinfo
+PATCHDIR=	${.CURDIR}/files
 
 WRKSRC=		${WRKDIR}/multisync-${PORTVERSION}/plugins/evolution_sync
 
