@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnupg-idea
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/%SUBDIR%/ \
 		http://www.gnupg.dk/contrib-dk/ \
@@ -67,12 +67,12 @@ do-patch:
 do-build:
 .for i in ${CONTRIB}
 	${CC} ${CFLAGS} -o ${WRKSRC}/${i} ${WRKSRC}/${i}.c
-	${ECHO_CMD} "lib/gnupg/${i}" >>${PLIST}
+	${ECHO_CMD} "libexec/gnupg/${i}" >>${PLIST}
 .endfor
 
 do-install:
 .for i in ${CONTRIB}
-	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/lib/gnupg/${i}
+	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/libexec/gnupg/${i}
 .endfor
 
 .include <bsd.port.post.mk>
