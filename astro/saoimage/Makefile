@@ -8,7 +8,8 @@
 PORTNAME=	saoimage
 PORTVERSION=	1.27.2
 CATEGORIES=	astro
-MASTER_SITES=	ftp://cfa-ftp.harvard.edu/pub/gsc/SAOimage/
+MASTER_SITES=	ftp://cfa-ftp.harvard.edu/pub/gsc/SAOimage/ \
+		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/SAO/SAOimage/
 
 MAINTAINER=	ports@FreeBSD.org
 
