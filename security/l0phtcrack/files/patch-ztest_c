@@ -1,0 +1,11 @@
+--- ztest.c.orig	Sat Nov  4 15:24:32 2000
++++ ztest.c	Sat Nov  4 15:25:05 2000
+@@ -144,7 +144,7 @@
+ 
+ char str_to_crypt[] = "\x4b\x47\x53\x21\x40\x23\x24\x25";
+ 
+-void main(int argc, char **argv) {
++int main(int argc, char **argv) {
+ 	FILE *pwlist, *wordlist, *outlist;
+ 	char dict_word[MAX_WORD];
+ 	char *pwfile, *wordfile, *outfile;
