@@ -1,16 +1,11 @@
---- src/util/filesys.cc.orig	Thu Oct 30 22:42:31 2003
-+++ src/util/filesys.cc	Fri Nov 21 16:31:15 2003
-@@ -6,11 +6,13 @@
+--- src/util/filesys.cc.orig	Sat Jan 17 23:18:22 2004
++++ src/util/filesys.cc	Sat Jan 17 23:19:26 2004
+@@ -4,6 +4,8 @@
+ #include "filesys.h"
+ #include "stringutil.h"
  #include "os.h"
++#include <errno.h>
++#include <memory>
  #include <unistd.h>
  #include <stdexcept>
-+#include <memory>
  #include "defines.h"
- #ifndef HAVE_MKDTEMP
- #include <sys/types.h>
- #include <sys/stat.h>
- #endif
-+#include <errno.h>
- 
- using std::string;
- 
