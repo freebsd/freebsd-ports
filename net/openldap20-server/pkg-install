@@ -2,10 +2,42 @@
 #
 # $FreeBSD$
 #
-if [ X"$2" != X"POST-INSTALL" ]; then
-    exit 0;
-fi
 
-mkdir -p "%%LDAP_RUN_DIR%%"
-mkdir -p -m 700 "%%LOCALSTATEDIR%%/openldap-ldbm"
-mkdir -p -m 700 "%%LOCALSTATEDIR%%/openldap-slurp"
+CHOWN=/usr/sbin/chown
+ECHO_CMD=echo
+GREP=/usr/bin/grep
+PW=/usr/sbin/pw
+
+FTPUSERS=/etc/ftpusers
+
+case $2 in
+PRE-INSTALL)
+  if ! ${PW} usershow -n ldap >/dev/null 2>&1; then
+    if ! ${PW} groupshow -n ldap >/dev/null 2>&1; then
+      if ! ${PW} groupadd -n ldap -g 389; then
+        ${ECHO_CMD}
+        ${ECHO_CMD} "*** Failed to add a group ldap with id 389."
+        ${ECHO_CMD}
+        ${ECHO_CMD} "Please add the ldap user manually with"
+        ${ECHO_CMD} "  ${PW} useradd -n ldap -g ldap -c 'OpenLDAP server' \\"
+        ${ECHO_CMD} "  -d /nonexistent -s /sbin/nologin -h -"        
+        ${ECHO_CMD} "and retry installing this package."
+        exit 1
+      fi
+    fi
+    if ${PW} useradd -n ldap -u 389 -g ldap -c 'OpenLDAP Server' \
+        -d /nonexistent -s /sbin/nologin -h -; then
+      ${GREP} -qs '^ldap$' ${FTPUSERS} || ${ECHO_CMD} ldap >> ${FTPUSERS}
+    else
+      ${ECHO_CMD}
+      ${ECHO_CMD} "*** Failed to add an user ldap with id 389."
+      ${ECHO_CMD}
+      ${ECHO_CMD} "Please add the ldap user manually with"
+      ${ECHO_CMD} "  ${PW} useradd -n ldap -g ldap -c 'OpenLDAP server' \\"
+      ${ECHO_CMD} "  -d /nonexistent -s /sbin/nologin -h -"        
+      ${ECHO_CMD} "and retry installing this package."
+      exit 1
+    fi
+  fi
+  ;;
+esac

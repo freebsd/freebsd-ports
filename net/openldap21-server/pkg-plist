@@ -1,6 +1,6 @@
 @comment $FreeBSD$
-@unexec %D/etc/rc.d/slapd.sh stop 2>/dev/null || true
-@unexec %D/etc/rc.d/slurpd.sh stop 2>/dev/null || true
+@unexec %%RC_DIR%%/slapd%%RC_SUFX%% stop 2>/dev/null || true
+@unexec %%RC_DIR%%/slurpd%%RC_SUFX%% stop 2>/dev/null || true
 etc/openldap/schema/README
 @unexec if cmp -s %D/etc/openldap/schema/corba.schema %D/etc/openldap/schema/corba.schema.default; then rm -f %D/etc/openldap/schema/corba.schema; fi
 etc/openldap/schema/corba.schema.default
@@ -31,14 +31,18 @@ etc/openldap/slapd.conf.default
 @exec [ -f %B/slapd.conf ] || cp %B/%f %B/slapd.conf
 @unexec rmdir %D/etc/openldap/schema 2>/dev/null || true
 @unexec rmdir %D/etc/openldap 2>/dev/null || true
-etc/rc.d/slapd.sh
-etc/rc.d/slurpd.sh
 libexec/slapd
 libexec/slurpd
 sbin/slapadd
 sbin/slapcat
 sbin/slapindex
 sbin/slappasswd
+@exec mkdir -p %%LOCALSTATEDIR%%/openldap-slurp
 @unexec rmdir %%LOCALSTATEDIR%%/openldap-slurp 2>/dev/null || true
+@exec mkdir -p %%LOCALSTATEDIR%%/openldap-data
 @unexec rmdir %%LOCALSTATEDIR%%/openldap-data 2>/dev/null || true
+@exec mkdir -p %%LDAP_RUN_DIR%%
 @unexec rmdir %%LDAP_RUN_DIR%% 2>/dev/null || true
+@cwd %%RC_DIR%%
+slapd%%RC_SUFX%%
+slurpd%%RC_SUFX%%

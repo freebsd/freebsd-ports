@@ -4,25 +4,25 @@ The OpenLDAP server package has been successfully installed.
 
 In order to run the LDAP server, you need to edit
   %%PREFIX%%/etc/openldap/slapd.conf
-to suit your needs and add the next lines to /etc/rc.conf:
+to suit your needs and add the following lines to /etc/rc.conf:
   slapd_enable="YES"
-  slapd_args='-h "ldapi://%2fvar%2frun%2fopenldap%2fldapi/ ldap://0.0.0.0/"'
+  slapd_flags='-h "ldapi://%2fvar%2frun%2fopenldap%2fldapi/ ldap://0.0.0.0/"'
+  slapd_sockets="/var/run/openldap/ldapi"
 
-Then add a link to %%PREFIX%%/etc/rc.d/slapd.sh.sample:
-  ln -s %%PREFIX%%/etc/rc.d/slapd.sh.sample %%PREFIX%%/etc/rc.d/slapd.sh
-and start the server with
-  %%PREFIX%%/etc/rc.d/slapd.sh start
+Then start the server with
+  %%RC_DIR%%/slapd%%RC_SUFX%% start
 or reboot.
 
-NOTE: There is no real reason to run slapd as root. Add
-  '-u ldap -g ldap'
-to slapd_args, create a user "ldap" with
-  pw add group ldap -g 389
-  pw add user ldap -u 389 -g 389 -d /nonexistent \
-    -c "OpenLDAP Server" -s /sbin/nologin -p "*"
-and do
-  chown -R ldap:ldap %%LDAP_RUN_DIR%% \
-    %%LOCALSTATEDIR%%/openldap-ldbm %%PREFIX%%/etc/openldap/slapd.conf
-and your server runs with a non-privileged user id.
+Try `man slapd' and the online manual at
+  http://www.OpenLDAP.org/doc/admin20/
+for more information.
+  
+NOTE: Some variable names have been changed to conform with rc.subr(8)
+
+If you are upgrading, you may want to check your configuration with
+  grep ^slapd_ /etc/rc.conf
+
+slapd runs under a non-privileged user id (by default `ldap'),
+see %%RC_DIR%%/slapd%%RC_SUFX%% for more information.
 
 ************************************************************

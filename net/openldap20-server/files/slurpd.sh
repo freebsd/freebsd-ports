@@ -1,50 +1,31 @@
 #!/bin/sh
 #
 # $FreeBSD$
+#
 
-slurpd_program=%%PREFIX%%/libexec/slurpd
-
-slurpd_enable="YES"
-
-slurpd_args=
+# PROVIDE: slurpd
+# REQUIRE: slapd
+# BEFORE:
+# KEYWORD: FreeBSD shutdown
 
 # Add the following line to /etc/rc.conf to enable slurpd:
 #
 #slurpd_enable="YES"
 #
-# See slurpd(8) for details
+# See slurpd(8) for more flags
 #
 
-# Suck in the configuration variables.
-if [ -r /etc/defaults/rc.conf ]; then
-    . /etc/defaults/rc.conf
-    source_rc_confs
-elif [ -r /etc/rc.conf ]; then
-    . /etc/rc.conf
-fi
+. %%RC_SUBR%%
 
-case "$slurpd_enable" in
-[Yy][Ee][Ss])
-    case "$1" in
-    start)
-        if [ -x ${slurpd_program} ]; then
-            echo -n ' slurpd'
-            ${slurpd_program} ${slurpd_args} 
-        fi
-        ;;
-    stop)
-        if ! killall `basename ${slurpd_program}`; then
-            echo ' slurpd: not running'
-        fi
-        ;;
-    *)
-        echo "Usage: `basename $0` {start|stop}" >&2
-        exit 64
-        ;;
-    esac
-    ;;
-*)
-    ;;
-esac
+name=slurpd
+rcvar=`set_rcvar`
 
-exit 0
+command=%%PREFIX%%/libexec/slurpd
+required_files=%%PREFIX%%/etc/openldap/slapd.conf
+
+
+slurpd_enable="NO"
+slurpd_args=
+
+load_rc_config $name
+run_rc_command "$1"

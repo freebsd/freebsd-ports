@@ -34,7 +34,8 @@ COMMENT?=		Open source LDAP server implementation
 OPENLDAP_VERSION=	2.0.27
 
 LATEST_LINK=		${PKGNAMEPREFIX}openldap20${PKGNAMESUFFIX}
-CONFLICTS=		${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}-*
+CONFLICTS=		openldap12-* \
+			${PKGNAMEPREFIX}${PORTNAME}-client-2.[1-9].*
 
 WANT_OPENLDAP_VER?=	20
 .if ${WANT_OPENLDAP_VER} != 20
@@ -45,15 +46,20 @@ BROKEN=			"incompatible OpenLDAP version: ${WANT_OPENLDAP_VER}"
 OPENLDAP_PORTVERSION=	0
 OPENLDAP_PKGNAMESUFFIX?=-client
 OPENLDAP_PKGFILESUFX?=	.client
+
+.if defined(USE_OPENLDAP)
+.error You have `USE_OPENLDAP' defined either in your environment or in make(1) arguments.
+.endif
 .else
-OPENLDAP_PORTVERSION=	0
+OPENLDAP_PORTVERSION=	1
 OPENLDAP_PKGNAMESUFFIX?=-server
 OPENLDAP_PKGFILESUFX?=
 
-LIB_DEPENDS+=		ldap.2:${PORTSDIR}/net/openldap20-client
+USE_OPENLDAP=		yes
+CONFLICTS+=		${PKGNAMEPREFIX}${PORTNAME}-server-2.[1-9].*
 .endif
 
-USE_OPENSSL=		yes
+#USE_OPENSSL=		yes
 USE_REINPLACE=		yes
 USE_LIBTOOL_VER=	13
 
@@ -89,7 +95,7 @@ CONFIGURE_ARGS+=	--without-cyrus-sasl
 
 CONFIGURE_ARGS+=	--disable-slapd
 
-INSTALLS_SHLIB=	yes
+INSTALLS_SHLIB=		yes
 
 .else
 # server specific configuration
@@ -124,8 +130,18 @@ CONFIGURE_ARGS+=	--enable-spasswd
 .endif
 
 .if defined(WITH_ODBC)
+WITH_ODBC_TYPE?=	iODBC
+.endif
+.if defined(WITH_ODBC_TYPE)
+.if ${WITH_ODBC_TYPE:L} == iodbc
 LIB_DEPENDS+=		iodbc.3:${PORTSDIR}/databases/libiodbc
 CONFIGURE_ARGS+=	--enable-sql
+.elif ${WITH_ODBC_TYPE:L} == unixodbc
+LIB_DEPENDS+=		odbc.1:${PORTSDIR}/databases/unixODBC
+CONFIGURE_ARGS+=	--enable-sql
+.else
+.error WITH_ODBC_TYPE must be iODBC or unixODBC
+.endif
 .endif
 
 # Include tcp-wrapper support
@@ -150,6 +166,22 @@ CONFIGURE_ENV=		CPPFLAGS="${CPPFLAGS}" \
 
 .if defined(CLIENT_ONLY)
 .include "${FILESDIR}/manpages"
+.else
+.if ${OSVERSION} >= 500038
+RC_SUBR?=	${DESTDIR}/etc/rc.subr
+RC_DIR=		${DESTDIR}/etc/rc.d
+RC_SUFX=
+.else
+USE_RC_SUBR=	yes
+RC_DIR=		${PREFIX}/etc/rc.d
+RC_SUFX=	.sh
+.endif
+
+SED_SCRIPT+=	-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
+		-e 's,%%RC_DIR%%,${RC_DIR},g' \
+		-e 's,%%RC_SUFX%%,${RC_SUFX},g'
+PLIST_SUB+=	RC_DIR=${RC_DIR} \
+		RC_SUFX=${RC_SUFX}
 .endif
 
 pre-everything::
@@ -164,6 +196,7 @@ pre-everything::
 	@${ECHO} "WITH_SASL             with (Cyrus) SASL1 password verification"
 	@${ECHO} "WITH_SHELL            with Shell backend"
 	@${ECHO} "WITH_ODBC             with SQL backend"
+	@${ECHO} "WITH_ODBC_TYPE        select ODBC interface (iODBC or unixODBC)"
 	@${ECHO} "WITHOUT_TCP_WRAPPERS  without tcp wrapper support"
 .endif
 	@${ECHO}
@@ -179,8 +212,8 @@ pre-configure:
 		${WRKSRC}/configure
 
 post-build:
-.for script in slapd.sh slurpd.sh
-	@${SED} ${SED_SCRIPT} ${FILESDIR}/${script} >${WRKDIR}/${script}
+.for script in slapd slurpd
+	@${SED} ${SED_SCRIPT} ${FILESDIR}/${script}.sh >${WRKDIR}/${script}.sh
 .endfor
 .for text in pkg-install pkg-message
 	@if [ -f ${MASTERDIR}/${text}${OPENLDAP_PKGFILESUFX} ]; then \
@@ -208,6 +241,9 @@ pre-install:
 	@${ECHO_CMD} "@dirrm %%DOCSDIR%%" >>${PLIST}
 .endif
 .endif
+	@if [ -f ${PKGINSTALL} ]; then \
+		${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL; \
+	fi
 
 post-install:
 .if defined(CLIENT_ONLY)
@@ -220,12 +256,11 @@ post-install:
 	done
 .endif
 .else
-.for script in slapd.sh slurpd.sh
-	@${INSTALL_SCRIPT} ${WRKDIR}/${script} ${PREFIX}/etc/rc.d/${script}.sample
+.for script in slapd slurpd
+	@${INSTALL_SCRIPT} ${WRKDIR}/${script}.sh ${RC_DIR}/${script}${RC_SUFX}
 .endfor
 	@${MKDIR} ${LDAP_RUN_DIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include "${.CURDIR}/../openldap20-server/bsd.openldap.mk"
 .include <bsd.port.post.mk>
