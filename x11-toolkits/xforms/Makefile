@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	xforms
-PORTVERSION=	0.89
+PORTVERSION=	0.88
+PORTEPOCH=	1
 CATEGORIES=	x11-toolkits graphics
 MASTER_SITES=	ftp://ncmir.ucsd.edu/pub/xforms/${MASTER_SITE_SUBDIR}/
 EXTRACT_SUFX=	.tgz
@@ -15,27 +16,24 @@ MAINTAINER=	gena@NetVision.net.il
 
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
+NO_FILTER_SHLIBS=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN1=		fdesign.1 fd2ps.1
-MAN5=		xforms.5
+MAN5=		xforms.5 forms.5
 
 .include <bsd.port.pre.mk>
 
 .if ${MACHINE_ARCH} == "alpha"
-PORTVERSION=	0.88
-DISTNAME=	bxform-${PORTVERSION:S/.//}
 MASTER_SITE_SUBDIR=	freeBSD-alpha
-PATCHDIR=	${MASTERDIR}/patches.alpha
+DISTNAME=	bxform-${PORTVERSION:S/.//}
 .else
-DISTNAME=	bxform-${PORTVERSION:S/.//}-elf
 MASTER_SITE_SUBDIR=	freeBSD
-PATCHDIR=	${MASTERDIR}/patches.i386
-MAN1+=		iconvert.1
+DISTNAME=	bxform-${PORTVERSION:S/.//}-elf
 .endif
 
 post-install:
-	@${LN} -sf ${PREFIX}/lib/libxforms.so.0 ${PREFIX}/lib/libforms.so
+	@${LN} -sf ${PREFIX}/lib/libforms.so.0.88 ${PREFIX}/lib/libforms.so.0
 
 .include <bsd.port.post.mk>

@@ -1,0 +1,20 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Mon Oct 26 05:04:54 1998
++++ Makefile	Fri Mar  2 20:32:52 2001
+@@ -41,9 +41,13 @@
+ 	cp DESIGN/fdesign.1 $(MAN1_DIR); chmod $(MANMODE) $(MAN1_DIR)/fdesign.1
+ 	cp fd2ps/fd2ps.1 $(MAN1_DIR); chmod $(MANMODE) $(MAN1_DIR)/fd2ps.1
+ 	@if [ ! -f $(MAN5_DIR)/forms.5 ]; then\
+-          ln -s $(MAN5_DIR)/xforms.5 $(MAN5_DIR)/forms.5;\
++          cp $(MAN5_DIR)/xforms.5 $(MAN5_DIR)/forms.5;\
+         fi
+ clean:
+ 	(cd  DEMOS; make $@)
+ empty:
+ 	(cd  DEMOS; make $@)
++
++# add blank all target
++all:
++	
