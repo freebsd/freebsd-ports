@@ -3,7 +3,7 @@
 # Date created:         November, 1997
 # Whom:                 Paul Traina <pst@freebsd.org>
 #
-# $Id: Makefile,v 1.8 1998/05/27 00:17:45 dburr Exp $
+# $Id: Makefile,v 1.9 1998/10/12 20:42:33 jseger Exp $
 #
 # *WARNING* write access to ${PREFIX} is required DURING build because the
 # make "all" target actually installs the gnu tools before building the
@@ -12,7 +12,7 @@
 
 DISTNAME=       prc-tools.0.5.0
 PKGNAME=	prc-tools-0.5.0
-CATEGORIES=     devel pilot
+CATEGORIES=     palm devel
 MASTER_SITES=   ftp://ryeham.ee.ryerson.ca/pub/PalmOS/ \
 		${MASTER_SITE_GNU}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \

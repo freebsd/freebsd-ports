@@ -3,11 +3,11 @@
 # Date created:				May 10th 1997
 # Whom:					jfitz@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.3 1997/06/08 11:50:31 asami Exp $
+# $Id: Makefile,v 1.4 1998/01/01 17:29:11 asami Exp $
 #
 
 PKGNAME=	pilot_makedoc-0.7
-CATEGORIES=	textproc pilot
+CATEGORIES=	palm textproc
 MASTER_SITES=	http://www.concentric.net/~rbram/
 DISTFILES=	makedoc7.cpp
 

@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.41 1998/12/28 12:35:10 asami Exp $
+# $Id: Makefile,v 1.42 1999/01/09 03:19:17 asami Exp $
 #
 
 SUBDIR += archivers
@@ -27,6 +27,7 @@ SUBDIR += mbone
 SUBDIR += misc
 SUBDIR += net
 SUBDIR += news
+SUBDIR += palm
 SUBDIR += print
 SUBDIR += russian
 SUBDIR += security

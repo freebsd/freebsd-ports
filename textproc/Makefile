@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.35 1998/11/24 04:38:12 itojun Exp $
+# $Id: Makefile,v 1.36 1998/12/24 16:29:48 flathill Exp $
 #
 
     SUBDIR += agrep
@@ -27,7 +27,6 @@
     SUBDIR += nfbtrans
     SUBDIR += p5-XML-Parser
     SUBDIR += par
-    SUBDIR += pilot_makedoc
     SUBDIR += rman
     SUBDIR += sgmlformat
     SUBDIR += sgrep
