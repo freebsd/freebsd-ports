@@ -1,11 +1,10 @@
 --- Makefile.in.orig	Tue Aug 28 05:43:05 2001
-+++ Makefile.in	Tue Sep  4 02:18:09 2001
-@@ -12,9 +12,10 @@
++++ Makefile.in	Wed Sep 19 19:39:43 2001
+@@ -12,9 +12,9 @@
  
  DEFS=-DHAVE_CONFIG_H
  
 -LIBDIR=/usr/X11R6/lib
-+X11BASE?=/usr/X11R6
 +LIBDIR=$(X11BASE)/lib
  INCDIR=.
 -XINCDIR=/usr/X11R6/include
@@ -13,7 +12,7 @@
  XLIB=-lXaw -lXmu
  EXTENSIONLIB=-lXext
  INCLUDES=-I$(INCDIR)
-@@ -22,9 +23,9 @@
+@@ -22,9 +22,9 @@
  LIBS=-L$(LIBDIR) -lXaw $(XLIB) -lXt $(EXTENSIONLIB) -lX11 -lm
  
  #CC=/compat/linux/usr/bin/gcc
@@ -26,16 +25,41 @@
  LDFLAGS=-s
  
  LINT=lint
-@@ -33,9 +34,9 @@
+@@ -33,14 +33,16 @@
  RM=rm -f
  INSTALL=install
  
 -INST_DIR=/usr/local/bin
 -INST_XDIR=/usr/X11R6/bin
 -INST_XRDIR=/usr/X11R6/lib/X11/app-defaults
-+INST_DIR=$(X11BASE)/bin
-+INST_XDIR=$(X11BASE)/bin
++INST_DIR=$(PREFIX)/bin
++INST_XDIR=$(PREFIX)/bin
 +INST_XRDIR=$(X11BASE)/lib/X11/app-defaults
   
  .c.o:
  	$(CC) -c $(CFLAGS) $*.c
+ 
+-PROGRAM = mbmon xmbmon testpci testsmb testhwm testfan
++PROGRAM = mbmon testpci testsmb testhwm testfan
++DOCS=	__DOCS__
++PROGRAM+= xmbmon
+ 
+ all: $(PROGRAM)
+ 
+@@ -69,8 +71,14 @@
+ 	$(RM) Makefile config.cache config.log config.h config.status
+ 
+ install: $(PROGRAM)
+-	$(INSTALL) -o root -g wheel -m 4555 -c -p mbmon $(INST_DIR)
+-	$(INSTALL) -o root -g wheel -m 4555 -c -p xmbmon $(INST_XDIR)
++	@for i in $(PROGRAM); do \
++		$(INSTALL) -o root -g wheel -m 4555 -c -p $$i $(INST_DIR); \
++	done
+ 
+ lint:
+ 	$(LINT) $(INCLUDES) $(DEFS) $(FONTDEFINES) $(SRCS) -lm
++
++install-doc: $(DOCS)
++	@for f in $(DOCS); do \
++		$(INSTALL_DATA) $$f $(DOCSDIR)/; \
++	done
