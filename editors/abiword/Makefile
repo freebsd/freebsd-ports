@@ -98,7 +98,7 @@ post-install:
 		${X11BASE}/libdata/bonobo/servers/GNOME_AbiWord_Control_${ABIVERSION:S/./_/}.server
 	@${LN} -sf ${PREFIX}/share/AbiSuite-${ABIVERSION}/abi-nautilus-view-file.xml \
 		${X11BASE}/share/gnome/gnome-2.0/ui/abi-nautilus-view-file.xml
-	@${X11BASE}/bin/update-desktop-database
+	@-update-desktop-database
 .endif
 
 .include <bsd.port.post.mk>
