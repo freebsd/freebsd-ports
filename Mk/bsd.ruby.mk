@@ -361,7 +361,7 @@ BUILD_DEPENDS+=		${DEPEND_RUBY_AMSTD}
 RUN_DEPENDS+=		${DEPEND_RUBY_AMSTD}
 .endif
 
-.if ${ARCH} == alpha && defined(USE_RUBY_RD)
+.if ${ARCH} == alpha && ${RUBY_VER} <= 1.6 && defined(USE_RUBY_RD)
 NOPORTDOCS=	yes
 .endif
 
