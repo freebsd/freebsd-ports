@@ -4,7 +4,7 @@
 # Whom:			Richard Hwang <rhwang@bigpanda.com>
 #			Mikhail Teterin <mi@aldan.ziplink.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/01/09 10:48:52 max Exp $
 #
 
 DISTNAME=	tiff-v3.4beta035
@@ -16,6 +16,7 @@ EXTRACT_SUFX=	-tar.gz
 
 LIB_DEPENDS=    jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg
 
+BROKEN=		"Libtiff might be incompatible with older library"
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ZIP --with-JPEG --with-DIR_BIN=${PREFIX}/bin \
 		--with-DIR_LIB=${PREFIX}/lib --with-DIR_INC=${PREFIX}/include \
