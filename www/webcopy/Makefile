@@ -8,7 +8,7 @@
 PORTNAME=	webcopy
 PORTVERSION=	0.98b7
 CATEGORIES=	www
-MASTER_SITES=	http://people.freebsd.org/~steve/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL:S^%SUBDIR%^steve^}
 
 MAINTAINER=	ports@FreeBSD.org
 

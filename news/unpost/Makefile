@@ -8,7 +8,7 @@
 PORTNAME=	unpost
 PORTVERSION=	2.3.4
 CATEGORIES=	news
-MASTER_SITES=	http://people.FreeBSD.org/~steve/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL:S^%SUBDIR%^steve^}
 
 MAINTAINER=	volf@oasis.IAEhv.nl
 
