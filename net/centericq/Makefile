@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	centericq
-PORTVERSION=	4.1.0
+PORTVERSION=	4.2.0
 CATEGORIES=	net
 MASTER_SITES=	http://konst.org.ua/download/
 
@@ -29,8 +29,5 @@ LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 CFLAGS+=	-nostdinc -I${LOCALBASE}/include/ncurses \
 		-I${LOCALBASE}/include -I/usr/include
 .endif
-
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
 
 .include <bsd.port.post.mk>
