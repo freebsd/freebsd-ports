@@ -20,7 +20,8 @@ lib/libdspam.a
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%MYSQL%%%%EXAMPLESDIR%%/README
 %%MYSQL%%%%EXAMPLESDIR%%/mysql.data
-%%MYSQL%%%%EXAMPLESDIR%%/mysql_objects.sql
+%%MYSQL%%%%EXAMPLESDIR%%/mysql_objects.sql.space.optimized
+%%MYSQL%%%%EXAMPLESDIR%%/mysql_objects.sql.speed.optimized
 %%MYSQL%%%%EXAMPLESDIR%%/purge.sql
 %%MYSQL%%%%EXAMPLESDIR%%/virtual_users.sql
 %%MYSQL%%@dirrm %%EXAMPLESDIR%%
