@@ -13,7 +13,9 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 
+.if defined(BATCH)
 NO_PACKAGE=	"sendmail included in base system"
+.endif
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WCONF=		${WRKSRC}/devtools/Site
@@ -25,6 +27,7 @@ PLIST=		${WRKDIR}/.PLIST.more
 # SENDMAIL_WITH_SASL=YES
 # SENDMAIL_WITH_SFIO=YES
 # SENDMAIL_WITH_MILTER=YES
+# SENDMAIL_WITH_LDAP=YES
 
 .if defined(SENDMAIL_WITH_TLS)
 USE_OPENSSL=	yes
@@ -34,6 +37,10 @@ BUILD_DEPENDS=	${LOCALBASE}/sbin/pwcheck:${PORTSDIR}/security/cyrus-sasl
 .endif
 .if defined(SENDMAIL_WITH_SFIO)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsfio.a:${PORTSDIR}/devel/sfio
+.endif
+.if defined(SENDMAIL_WITH_LDAP)
+LIB_DEPENDS+=	ldap.2:${PORTSDIR}/net/openldap2
+LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap2
 .endif
 
 .if exists(${DESTDIR}/etc/mail/mailer.conf)
@@ -58,6 +65,10 @@ pre-configure:
 .if defined(SENDMAIL_WITH_TLS)
 	${SED} -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
 		${FILESDIR}/site.config.m4.ssl >> ${WCONF}/site.config.m4
+.endif
+.if defined(SENDMAIL_WITH_LDAP)
+	${SED} -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
+		${FILESDIR}/site.config.m4.ldap >> ${WCONF}/site.config.m4
 .endif
 .if exists(${FILESDIR}/site.config.m4.local)
 	${SED} -e "s=%%LOCALBASE%%=${LOCALBASE}=" \
@@ -141,14 +152,6 @@ mailer.conf:
 	-e "s=^newaliases[ 	]*/.*$$=newaliases	${SENDMAIL}=" \
 	 ${DESTDIR}/etc/mail/mailer.conf > ${DESTDIR}/etc/mail/mailer.conf.new
 	${MV} ${DESTDIR}/etc/mail/mailer.conf.new ${DESTDIR}/etc/mail/mailer.conf
-.endif
-
-.if defined(SENDMAIL_WITH_MILTER)
-post-configure:
-	${CAT} ${FILESDIR}/site.config.m4.milter >>${WCONF}/site.config.m4
-
-post-build:
-	( cd ${WRKSRC}/libmilter && ${MAKE} )
 .endif
 
 .include <bsd.port.mk>
