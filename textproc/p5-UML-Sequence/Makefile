@@ -32,4 +32,10 @@ MAN3=		UML::Sequence.3 \
 		UML::Sequence::Svg.3 \
 		Devel::CallSeq.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
+IGNORE=		This port requires perl 5.8.0 or later. Install lang/perl5.8 then try again
+.endif
+
+.include <bsd.port.post.mk>
