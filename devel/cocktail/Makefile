@@ -23,4 +23,4 @@ post-extract:
 		${RM} -f ${WRKSRC}/mtc/m2c/SYSTEM_.h
 		${RM} -f ${WRKSRC}/mtc/m2c/SYSTEM_.c
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
