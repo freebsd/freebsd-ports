@@ -133,6 +133,7 @@ www/data.default/bugzilla/quips.cgi
 www/data.default/bugzilla/relogin.cgi
 www/data.default/bugzilla/reports.cgi
 www/data.default/bugzilla/robots.txt
+www/data.default/bugzilla/runtests.sh
 www/data.default/bugzilla/sanitycheck.cgi
 www/data.default/bugzilla/show_activity.cgi
 www/data.default/bugzilla/show_bug.cgi
