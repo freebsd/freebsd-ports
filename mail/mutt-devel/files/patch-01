@@ -1,0 +1,10 @@
+--- charsets/charsets.alias.orig	Mon Jan  4 15:55:56 1999
++++ charsets/charsets.alias	Sat Jan  9 10:45:04 1999
+@@ -21,6 +21,7 @@
+ iso-ir-47 bs-viewdata
+ ms-ee cp1250
+ ms-cyrl cp1251
++windows-1251 cp1251
+ ms-ansi cp1252
+ ms-greek cp1253
+ ms-turk cp1254
