@@ -1,5 +1,14 @@
---- muttprint.orig	Fri Jan  4 15:04:45 2002
-+++ muttprint	Fri Jan  4 15:05:31 2002
+--- muttprint.orig	Sat Dec 15 08:49:39 2001
++++ muttprint	Tue Feb 12 01:48:40 2002
+@@ -34,7 +34,7 @@
+ # Deklaration erzwingen
+ use strict;
+ # for developing and testing only
+-use warnings;
++#use warnings;
+ # Deklaration nach Perl-5.005-Art
+ use vars qw($VERSION %String $LPack $charset);
+ use sigtrap qw(die INT QUIT);
 @@ -158,8 +158,8 @@
  
  if ($Config{'PENGUIN'} eq "on") {
