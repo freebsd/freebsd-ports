@@ -7,12 +7,12 @@
 #
 
 PORTNAME=	glark
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mich@freebsdcluster.org
 COMMENT=	Search text files for complex regular expressions
 
 USE_RUBY=	yes
