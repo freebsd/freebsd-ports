@@ -1,8 +1,15 @@
-bin/nmixer
+@comment $FreeBSD$
 bin/mp3blaster
 bin/mp3tag
+bin/nmixer
 bin/splay
+share/mp3blaster/README
+share/mp3blaster/chargen.c
 share/mp3blaster/commands.txt
-share/mp3blaster/sample.mp3blasterrc_for_x
+share/mp3blaster/koi8-r
+share/mp3blaster/makefile
+share/mp3blaster/maketbl.c
 share/mp3blaster/sample.mp3blasterrc
+share/mp3blaster/win1251
+share/mp3blaster/win2koi.tbl
 @dirrm share/mp3blaster
