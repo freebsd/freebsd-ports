@@ -42,7 +42,7 @@ CONFIGURE_ARGS+=--without-freetype
 MAN1=		ggiterm.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-lggi|-lggi ${PTHREAD_LIBS}|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lggi |-lggi ${PTHREAD_LIBS} |' ${WRKSRC}/configure
 
 post-install:
 .if !defined(NOPORTDOCS)
