@@ -1,5 +1,6 @@
 bin/vls
 bin/vlsd
+etc/rc.d/vlsd.sh
 etc/videolan/vls/vls.cfg-dist
 @dirrm lib/videolan/vls
 @dirrm lib/videolan
