@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	evolution
-PORTVERSION=	1.2.3
+PORTVERSION=	1.2.4
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://people.FreeBSD.org/~sobomax/:local
@@ -37,7 +37,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 USE_X_PREFIX=	yes
-USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gal gtkhtml
 USE_REINPLACE=	yes
 USE_OPENSSL=	yes
@@ -82,7 +81,7 @@ DB3_CONFIGURE_ARGS=	--enable-compat185 \
 			--disable-dynamic \
 			--prefix=${PREFIX} \
 			--includedir=${PREFIX}/include/db3 \
-			--target=${ARCH}-unknown-freebsd${OSREL}
+			--build=${ARCH}-unknown-freebsd${OSREL}
 
 pre-configure:
 	@(cd ${DB3_WRKSRC} && \
