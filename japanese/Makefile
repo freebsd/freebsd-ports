@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.184 1999/01/26 03:04:30 steve Exp $
+# $Id: Makefile,v 1.185 1999/01/26 03:36:23 steve Exp $
 #
 
     SUBDIR += Canna
@@ -86,6 +86,7 @@
     SUBDIR += kon2-14dot
     SUBDIR += kon2-16dot
     SUBDIR += kterm
+    SUBDIR += kterm16c
     SUBDIR += less
     SUBDIR += libicq
     SUBDIR += libslang
