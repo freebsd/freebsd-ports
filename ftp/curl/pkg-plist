@@ -63,6 +63,7 @@ share/curl/curl-ca-bundle.crt
 %%PORTDOCS%%share/doc/curl/examples/simple.c
 %%PORTDOCS%%share/doc/curl/examples/simplepost.c
 %%PORTDOCS%%share/doc/curl/examples/simplessl.c
+%%PORTDOCS%%share/doc/curl/index.html
 %%PORTDOCS%%share/doc/curl/libcurl-the-guide
 %%PORTDOCS%%share/doc/curl/libcurl/Makefile
 %%PORTDOCS%%share/doc/curl/libcurl/Makefile.am
