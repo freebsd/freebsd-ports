@@ -1,25 +1,30 @@
-*** doc/Makefile.in.orig	Wed Dec 18 23:27:36 1996
---- doc/Makefile.in	Fri Dec 27 14:23:37 1996
+*** documentation/Makefile.orig	Sun Jun 11 22:45:55 1995
+--- documentation/Makefile	Wed Jul 19 20:35:38 1995
 ***************
-*** 145,154 ****
-  	-test -d $(man3dir) || $(SHELL) ${MKDIRS} $(man3dir)
-  	-test -d $(infodir) || $(SHELL) ${MKDIRS} $(infodir)
-  	
-! install: info installdirs
-  	-$(INSTALL_DATA) $(srcdir)/bash.1 $(man1dir)/bash.${man1ext}
-  	-$(INSTALL_DATA) $(srcdir)/bashbug.1 $(man1dir)/bashbug.${man1ext}
-! 	-$(INSTALL_DATA) $(srcdir)/readline.3 $(man3dir)/readline.${man3ext}
-  	-$(INSTALL_DATA) $(srcdir)/bashref.info $(infodir)/bash.info
-  # uncomment the next line to install the builtins man page
-  #	$(INSTALL_DATA) builtins.1 $(man1dir)/bash_builtins.${man1ext}
---- 145,154 ----
-  	-test -d $(man3dir) || $(SHELL) ${MKDIRS} $(man3dir)
-  	-test -d $(infodir) || $(SHELL) ${MKDIRS} $(infodir)
-  	
-! install: info #installdirs
-  	-$(INSTALL_DATA) $(srcdir)/bash.1 $(man1dir)/bash.${man1ext}
-  	-$(INSTALL_DATA) $(srcdir)/bashbug.1 $(man1dir)/bashbug.${man1ext}
-! #       -$(INSTALL_DATA) $(srcdir)/readline.3 $(man3dir)/readline.${man3ext}
-  	-$(INSTALL_DATA) $(srcdir)/bashref.info $(infodir)/bash.info
-  # uncomment the next line to install the builtins man page
-  #	$(INSTALL_DATA) builtins.1 $(man1dir)/bash_builtins.${man1ext}
+*** 90,101 ****
+  
+  installdirs:
+  	-[ -d $(mandir) ] || mkdir $(mandir)
+! 	-[ -d $(man3dir) ] || mkdir $(man3dir)
+  	-[ -d $(infodir) ] || mkdir $(infodir)
+  
+  install: all installdirs
+  	$(INSTALL_DATA) bash.1 $(mandir)
+! 	$(INSTALL_DATA) readline.3 $(man3dir)
+  	$(INSTALL_DATA) features.info $(infodir)/bash.info
+  
+  uninstall:
+--- 90,102 ----
+  
+  installdirs:
+  	-[ -d $(mandir) ] || mkdir $(mandir)
+! #       -[ -d $(man3dir) ] || mkdir $(man3dir)
+  	-[ -d $(infodir) ] || mkdir $(infodir)
+  
+  install: all installdirs
+  	$(INSTALL_DATA) bash.1 $(mandir)
+! 	$(INSTALL_DATA) builtins.1 $(mandir)/bash_builtins.1
+! #       $(INSTALL_DATA) readline.3 $(man3dir)
+  	$(INSTALL_DATA) features.info $(infodir)/bash.info
+  
+  uninstall:
