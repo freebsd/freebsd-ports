@@ -23,15 +23,10 @@ DISTFILES+=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z:gpc \
 DISTFILES+=	${L10NHELP:S/$/:help/}
 .endif
 
-FIND?=	/usr/bin/find
-CUT?=	/usr/bin/cut
-AWK?=	/usr/bin/awk
-GREP?=	/usr/bin/grep
 ZIP?=	${PREFIX}/bin/zip
 UNZIP?=	${PREFIX}/bin/unzip
 ANT?=	${LOCALBASE}/bin/ant
 TCSH?=	/bin/tcsh
-PASTE?=	/usr/bin/paste
 
 IGNORE=	"Work In Progress for 1.1.1"
 
