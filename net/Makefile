@@ -478,7 +478,6 @@
     SUBDIR += rinetd
     SUBDIR += ripetools
     SUBDIR += rmsg
-    SUBDIR += rp-pppoe
     SUBDIR += rrdtool
     SUBDIR += rshell
     SUBDIR += rsync
