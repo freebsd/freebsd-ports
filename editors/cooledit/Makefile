@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	cooledit
-PORTVERSION=	3.17.2
+PORTVERSION=	3.17.4
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.netins.net/showcase/Comput-IT/cooledit/src/
 MASTER_SITE_SUBDIR=	apps/editors/X/cooledit
 
 MAINTAINER=	brett@peloton.runet.edu
+
+BROKEN=		"linker failure"
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 
