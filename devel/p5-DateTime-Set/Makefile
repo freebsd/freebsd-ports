@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-Set
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DateTime
@@ -24,5 +24,14 @@ PERL_MODBUILD=	yes
 
 MAN3=		DateTime::Set.3 DateTime::Span.3 \
 		DateTime::SpanSet.3 Set::Infinite::_recurrence.3
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	Changes README TODO
+
+post-install:
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
 
 .include <bsd.port.mk>
