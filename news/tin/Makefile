@@ -41,7 +41,7 @@ CONFIGURE_ENV=  CFLAGS='${CFLAGS} -DNNTP_SERVER_FILE="\"${PREFIX}/etc/nntpserver
 ALL_TARGET=	build
 MAN1=		tin.1
 
-.if defined(NNTP_ONLY)
+.if defined(WITH_TIN_NNTP_ONLY)
 CONFIGURE_ARGS+=	--enable-nntp-only
 .endif
 
