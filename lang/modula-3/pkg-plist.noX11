@@ -478,5 +478,6 @@ lib/m3/pkg/web/FreeBSD2/libweb.m3x
 lib/m3/pkg/web/src/Web.i3
 lib/m3/www/m3tohtml.1.html
 share/modula-3/COPYRIGHT
+@dirrm share/modula-3
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib/m3/FreeBSD2
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
