@@ -1,54 +1,31 @@
 #!/bin/sh
 #
-# Resin startup script.
-#
-# Borrowed from jakarta-tomcat41
-#
 # $FreeBSD$
 #
 
-# Determine PREFIX
-if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/${0##*/}\$"); then
-    echo "$0: Cannot determine the PREFIX" >&2
-    exit 1
-fi
+# PROVIDE: %%APP_NAME%%
 
-# Set some variables
-MYSELF=`basename $0`
-ARGS="-conf $PREFIX/etc/%%APP_NAME%%.xml \
--chdir \
--name %%APP_NAME%% \
--class com.caucho.server.http.HttpServer \
--pid %%PID_FILE%%"
-PATH=/usr/sbin:/usr/bin:/bin
+#
+# Add the following line to /etc/rc.conf to enable %%APP_NAME%%:
+#
+# %%APP_NAME%%_enable="YES"
+#
 
-unset CLASSPATH
-export JAVA_HOME=%%JAVA_HOME%%
-export RESIN_HOME=$PREFIX/%%APP_NAME%%
+. /etc/rc.subr
 
-set -e
+name=%%APP_NAME%%
+rcvar=`set_rcvar`
 
-case "$1" in
-    start)
-        echo -n ' '
-        truncate -s 0 %%PID_FILE%%
-        chown %%RUNASUSER%%:%%GROUP%% %%PID_FILE%%
-        chmod 600 %%PID_FILE%%
-        su -f -m %%RUNASUSER%% -c "exec $PREFIX/sbin/%%APP_NAME%%ctl $ARGS start" \
-            >/dev/null && echo -n '%%APP_NAME%%'
-        ;;
+command=%%PREFIX%%/sbin/%%APP_NAME%%ctl
+command_args="$1"
+pidfile=%%PID_FILE%%
+procname=%%JAVA%%
 
-    stop)
-        echo -n ' '
-        chown %%RUNASUSER%%:%%GROUP%% %%PID_FILE%%
-        chmod 600 %%PID_FILE%%
-        su -f -m %%RUNASUSER%% -c "exec $PREFIX/sbin/%%APP_NAME%%ctl $ARGS stop" \
-            >/dev/null 2>&1 ; echo -n '%%APP_NAME%%'
-        ;;
-    *)
-        echo ""
-        echo "Usage: ${MYSELF} { start | stop }"
-        echo ""
-        exit 64
-        ;;
-esac
+# set defaults
+
+%%APP_NAME%%_enable=${%%APP_NAME%%_enable:-"NO"}
+%%APP_NAME%%_user=${%%APP_NAME%%_user:-"www"}
+%%APP_NAME%%_group=${%%APP_NAME%%_group:-"www"}
+
+load_rc_config ${name}
+run_rc_command "$1"

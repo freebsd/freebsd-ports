@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%APP_NAME%%/doc/beta.xtp
 %%APP_NAME%%/doc/changes-1.xtp
 %%APP_NAME%%/doc/changes.xtp
@@ -195,6 +196,7 @@
 %%APP_NAME%%/doc/java_tut/javadoc/package-list
 %%APP_NAME%%/doc/java_tut/javadoc/resources/inherit.gif
 %%APP_NAME%%/doc/java_tut/javadoc/stylesheet.css
+%%APP_NAME%%/doc/java_tut/jndi-appconfig.xtp
 %%APP_NAME%%/doc/java_tut/linux-boot.xtp
 %%APP_NAME%%/doc/java_tut/linux-init.xtp
 %%APP_NAME%%/doc/java_tut/mail_form.xtp

@@ -1,3 +1,5 @@
+$FreeBSD$
+
 --- src/c/plugin/apache2/mod_caucho.c.orig	Tue Apr 15 23:28:46 2003
 +++ src/c/plugin/apache2/mod_caucho.c	Fri Jun  6 01:37:29 2003
 @@ -52,7 +52,7 @@
