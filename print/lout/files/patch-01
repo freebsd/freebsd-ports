@@ -1,22 +1,21 @@
---- makefile.orig	Sat Nov 30 20:33:10 1996
-+++ makefile	Sat Sep  6 00:13:42 1997
-@@ -216,10 +216,11 @@
- USESTAT = 1
- SAFEDFT = 0
+--- makefile.orig	Sun Nov 16 20:01:34 1997
++++ makefile	Sat Feb 21 11:40:17 1998
+@@ -241,10 +241,10 @@
  
--BINDIR	= /external/users/jhk/bin
--LIBDIR	= /external/users/jhk/lout.lib
--DOCDIR	= /external/users/jhk/lout.doc
--MANDIR	= /external/users/jhk/lout.man
-+PREFIX?= /usr/local
-+BINDIR	= $(PREFIX)/bin
-+LIBDIR	= $(PREFIX)/share/lout
-+DOCDIR	= $(PREFIX)/share/doc/lout
-+MANDIR	= $(PREFIX)/man/man1
+ COLLATE	= 1
+ 
+-BINDIR	= /usr/staff/jeff/bin
+-LIBDIR	= /usr/staff/jeff/lout.lib
+-DOCDIR	= /usr/staff/jeff/lout.doc
+-MANDIR	= /usr/staff/jeff/lout.man
++BINDIR	= ${PREFIX}/bin
++LIBDIR	= ${PREFIX}/share/lout
++DOCDIR	= ${PREFIX}/share/doc/lout
++MANDIR	= ${PREFIX}/man/man1
  
  LIBFONT = font
  LIBMAPS = maps
-@@ -231,7 +232,7 @@
+@@ -256,7 +256,7 @@
  CHARIN	= 1
  CHAROUT	= 0
  
@@ -25,7 +24,7 @@
  LOC_FR	= fr
  LOC_DE	= de
  
-@@ -281,40 +282,42 @@
+@@ -310,40 +310,42 @@
  	@echo "(a) Installing lout and c2lout binaries into BINDIR $(BINDIR)"
  	cp lout $(BINDIR)/lout
  	chmod 755 $(BINDIR)/lout
@@ -75,7 +74,7 @@
  	chmod 755 $(LIBDIR)/$(LIBLOCA)
  	@echo ""
  	@echo "(c) Initializing run (should be silent, no errors expected)"
-@@ -323,6 +326,7 @@
+@@ -352,6 +354,7 @@
  	@echo "(d) Changing mode of files just created by initializing run"
  	chmod 644 $(LIBDIR)/$(LIBDATA)/*
  	chmod 644 $(LIBDIR)/$(LIBHYPH)/*
@@ -83,7 +82,7 @@
  
  installman:
  	@echo ""
-@@ -331,23 +335,27 @@
+@@ -360,23 +363,27 @@
  	    -e "s@<DOCDIR>@$(DOCDIR)@" -e "s@<MANDIR>@$(MANDIR)@"	\
  	man/lout.1 > $(MANDIR)/lout.1
  	chmod 644 $(MANDIR)/lout.1
@@ -95,9 +94,9 @@
  installdoc:
  	@echo ""
  	@echo "Creating DOCDIR $(DOCDIR) and copying documentation into it"
--	cp -r doc $(DOCDIR)
-+	-mkdir $(DOCDIR)
-+	cp -r doc/* $(DOCDIR)
+-	$(RCOPY) doc $(DOCDIR)
++	-mkdir -p $(DOCDIR)
++	$(RCOPY) doc/* $(DOCDIR)
  	chmod 755 $(DOCDIR)
  	chmod 755 $(DOCDIR)/*
  	chmod 644 $(DOCDIR)/*/*
@@ -114,7 +113,7 @@
  	chmod 755 $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES
  	cp locale/msgs.fr $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES/msgs.$(LOC_FR)
  	gencat $(LIBDIR)/$(LIBLOCA)/$(LOC_FR)/LC_MESSAGES/errors.$(LOC_FR)	\
-@@ -357,9 +365,9 @@
+@@ -386,9 +393,9 @@
  installde:
  	@echo ""
  	@echo "Putting German error messages into $(LIBDIR)/$(LIBLOCA)/$(LOC_DE)"
