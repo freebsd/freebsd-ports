@@ -20,8 +20,14 @@ BUILD_DEPENDS=  emacs:${PORTSDIR}/editors/emacs
 .endif
 .if defined(WITH_FULL_DOCS)
 .undef NOPORTDOCS
+.if defined(WITH_GHOSTSCRIPT_AFPL) && ${WITH_GHOSTSCRIPT_AFPL} == yes
+GSPORT?=	print/ghostscript-afpl
+.else
+GSPORT?=	print/ghostscript-gnu
+.endif
+
 BUILD_DEPENDS+= tex:${PORTSDIR}/print/teTeX \
-		ps2pdf:${PORTSDIR}/print/ghostscript-gnu
+		ps2pdf:${PORTSDIR}/${GSPORT}
 .endif
 
 USE_XLIB=	yes
@@ -59,6 +65,10 @@ pre-fetch:
 	@${ECHO} ""
 	@${ECHO} "      Define WITH_FULL_DOCS to build ps, pdf and html docs"
 	@${ECHO} "      This requires teTeX and ghostscript !"
+.if !defined(WITH_GHOSTSCRIPT_AFPL) || ${WITH_GHOSTSCRIPT_AFPL} != yes
+	@${ECHO} "      Define WITH_GHOSTSCRIPT_AFPL=yes to use"
+	@${ECHO} "      AFPL Postscript interpreter instead of GNU one"
+.endif
 	@${ECHO} ""
 .endif
 
