@@ -1,0 +1,10 @@
+Preferences.app is, functionally, a clone of NeXTstep/OPENSTEP tool of
+the same name. Just like the original program, it's a simple application
+for setting preferences for the GNUstep system, with a friendly interface.
+The program is simple, but powerful -- people can create new modules,
+called "bundles", that add new things to the program that its original
+developers did not think of or even intend -- that don't require
+recompiling the main program. For more information on what bundles can do,
+see StepWise. They are a very powerful tool.
+
+WWW: http://prefsapp.sourceforge.net/about.php
