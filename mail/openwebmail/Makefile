@@ -20,6 +20,12 @@ RUN_DEPENDS=	${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
 		${SITE_PERL}/${PERL_ARCH}/Text/Iconv.pm:${PORTSDIR}/converters/p5-Text-Iconv \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=         "Segfault during install"
+.endif
+
 USE_PERL5=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
@@ -96,4 +102,4 @@ do-install:
 	@cd ${PREFIX} && ${FIND} ${OWCGIDIR:S,${PREFIX}/,,} ${OWDATADIR:S,${PREFIX}/,,} -type d | sort -ur | ${SED} -e 's,^,@dirrm ,g' >> ${PLIST}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
