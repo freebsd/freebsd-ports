@@ -1,11 +1,11 @@
 bin/pdnmesh
-bin/d2m
+share/pdnmesh/README
+share/pdnmesh/COPYING
+share/pdnmesh/ChangeLog
 share/pdnmesh/tutorial/README
-share/pdnmesh/tutorial/tutorial.tex
-share/pdnmesh/tutorial/tutorial.dvi
-share/pdnmesh/tutorial/ex1.eps
-share/pdnmesh/tutorial/ex2.eps
-share/pdnmesh/tutorial/exdraw.eps
+share/pdnmesh/tutorial/tutorial.sgml.gz
+share/pdnmesh/tutorial/tutorial.pdf.gz
+share/pdnmesh/tutorial/tutorial.html.tgz
 share/pdnmesh/examples/README
 share/pdnmesh/examples/coords.1
 share/pdnmesh/examples/coords.10
