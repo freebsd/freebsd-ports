@@ -180,6 +180,7 @@ nntpcache-*		ports/news/nntpcache	Commercial or government use
 						requires licence
 nte-1.*			ports/mbone/nte		Crypto; export-controlled
 openssl-*		ports/security/openssl	Crypto; export/import-controlled
+otojiro*.txt		ports/japanese/otojiro-fpw The original dictionary is not free
 Crypt-*			ports/security/p5-Crypt-*	Crypto; export-controlled
 perforce-*		ports/devel/perforce	Restricted distribution
 perltools		ports/java/perltools	No redistribution
@@ -251,6 +252,7 @@ vice-*			ports/emulators/vice	ROMs are copyrighted by
 visualworks-*		ports/lang/visualworks	Don't redistribute
 vmware*			ports/emulators/vmware*	Commercial software
 vje30/vje-delta-3.0-*	ports/japanese/vje30	Commercial software
+waeiji*.txt		ports/japanese/waeijiro-fpw The original dictionary is not free
 webcopy.tgz		ports/www/webcopy	Don't sell for profit
 webfonts-*		ports/x11-fonts/webfonts Restrictive copyright
 win32-codecs		ports/graphics/win32-codecs Licensing status of the
