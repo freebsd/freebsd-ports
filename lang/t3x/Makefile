@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	t3x
-PORTVERSION=	7.2.2
+PORTVERSION=	8.0.1
 CATEGORIES=	lang devel
-MASTER_SITES= 	http://www.not-compatible.org/files/ \
+MASTER_SITES=	http://t3x.dyndns.org/files/ \
 		http://www.t3x.org/files/
 DISTNAME=	t3x-${PORTVERSION:S/.//g}
 

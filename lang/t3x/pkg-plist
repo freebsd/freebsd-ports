@@ -8,79 +8,77 @@ bin/txprint
 bin/txsum
 bin/txx
 include/txx.h
-t3x/r7/bin/s86
-t3x/r7/bin/tx
-t3x/r7/bin/txcg386
-t3x/r7/bin/txcg386e
-t3x/r7/bin/txcg86
-t3x/r7/bin/txcgexe
-t3x/r7/bin/txcgl
-t3x/r7/bin/txcm
-t3x/r7/bin/txdpf
-t3x/r7/bin/txdump
-t3x/r7/bin/txhelp
-t3x/r7/bin/txld
-t3x/r7/bin/txmake
-t3x/r7/bin/txopt
-t3x/r7/bin/txprint
-t3x/r7/bin/txsum
-t3x/r7/bin/txtrn
-t3x/r7/bin/txx
-t3x/r7/classes/CLASSNDX
-t3x/r7/classes/char.cls
-t3x/r7/classes/char.dir
-t3x/r7/classes/iostream.cls
-t3x/r7/classes/iostream.dir
-t3x/r7/classes/memory.cls
-t3x/r7/classes/memory.dir
-t3x/r7/classes/string.cls
-t3x/r7/classes/string.dir
-t3x/r7/classes/system.cls
-t3x/r7/classes/system.dir
-t3x/r7/classes/t3x.cls
-t3x/r7/classes/t3x.dir
-t3x/r7/classes/tcode.cls
-t3x/r7/classes/tcode.dir
-t3x/r7/classes/ttyctl.cls
-t3x/r7/classes/ttyctl.dir
-t3x/r7/classes/util.cls
-t3x/r7/classes/util.dir
-t3x/r7/classes/xmem.cls
-t3x/r7/classes/xmem.dir
-t3x/r7/doc/.sdtoc
-t3x/r7/doc/Booting.sd
-t3x/r7/doc/Bugs.sd
-t3x/r7/doc/Changes.sd
-t3x/r7/doc/FAQ.sd
-t3x/r7/doc/LICENSE
-t3x/r7/doc/README.sd
-t3x/r7/doc/T3X.html
-t3x/r7/doc/classes.sd
-t3x/r7/doc/compiler.sd
-t3x/r7/doc/extensions.sd
-t3x/r7/doc/formats.sd
-t3x/r7/doc/mdesc.sd
-t3x/r7/doc/s86.sd
-t3x/r7/doc/sd.sd
-t3x/r7/doc/t3xref.sd
-t3x/r7/doc/utilities.sd
-t3x/r7/dos.txrc
-t3x/r7/lib/system.o
-t3x/r7/lib/system.x
-t3x/r7/lib/t3x.o
-t3x/r7/lib/t3x.x
-t3x/r7/lib/ttyctl.o
-t3x/r7/lib/ttyctl.x
-t3x/r7/lib/xmem.o
-t3x/r7/lib/xmem.x
-t3x/r7/static.txrc
-t3x/r7/system.txrc
-t3x/r7/txprint.rules
-@unexec rm -f %D/t3x/r7/classes/CLASSND-
-@unexec rm -f %D/t3x/r7/classes/CLASSNDX
-@dirrm t3x/r7/bin
-@dirrm t3x/r7/classes
-@dirrm t3x/r7/lib
-@dirrm t3x/r7/doc
-@dirrm t3x/r7
+t3x/r8/bin/s86
+t3x/r8/bin/tx
+t3x/r8/bin/txcg386
+t3x/r8/bin/txcg386e
+t3x/r8/bin/txcg86
+t3x/r8/bin/txcgexe
+t3x/r8/bin/txcgl
+t3x/r8/bin/txcm
+t3x/r8/bin/txdpf
+t3x/r8/bin/txdump
+t3x/r8/bin/txhelp
+t3x/r8/bin/txld
+t3x/r8/bin/txmake
+t3x/r8/bin/txopt
+t3x/r8/bin/txprint
+t3x/r8/bin/txsum
+t3x/r8/bin/txtrn
+t3x/r8/bin/txx
+t3x/r8/classes/CLASSNDX
+t3x/r8/classes/char.cls
+t3x/r8/classes/char.dir
+t3x/r8/classes/iostream.cls
+t3x/r8/classes/iostream.dir
+t3x/r8/classes/memory.cls
+t3x/r8/classes/memory.dir
+t3x/r8/classes/rtcode.cls
+t3x/r8/classes/rtcode.dir
+t3x/r8/classes/string.cls
+t3x/r8/classes/string.dir
+t3x/r8/classes/system.cls
+t3x/r8/classes/system.dir
+t3x/r8/classes/t3x.cls
+t3x/r8/classes/t3x.dir
+t3x/r8/classes/tcode.cls
+t3x/r8/classes/tcode.dir
+t3x/r8/classes/ttyctl.cls
+t3x/r8/classes/ttyctl.dir
+t3x/r8/classes/util.cls
+t3x/r8/classes/util.dir
+t3x/r8/doc/.sdtoc
+t3x/r8/doc/Booting.sd
+t3x/r8/doc/Bugs.sd
+t3x/r8/doc/Changes.sd
+t3x/r8/doc/FAQ.sd
+t3x/r8/doc/LICENSE
+t3x/r8/doc/README.sd
+t3x/r8/doc/T3X.html
+t3x/r8/doc/classes.sd
+t3x/r8/doc/compiler.sd
+t3x/r8/doc/extensions.sd
+t3x/r8/doc/formats.sd
+t3x/r8/doc/mdesc.sd
+t3x/r8/doc/s86.sd
+t3x/r8/doc/sd.sd
+t3x/r8/doc/t3xref.sd
+t3x/r8/doc/utilities.sd
+t3x/r8/dos.txrc
+t3x/r8/lib/system.o
+t3x/r8/lib/system.x
+t3x/r8/lib/t3x.o
+t3x/r8/lib/t3x.x
+t3x/r8/lib/ttyctl.o
+t3x/r8/lib/ttyctl.x
+t3x/r8/static.txrc
+t3x/r8/system.txrc
+t3x/r8/txprint.rules
+@unexec rm -f %D/t3x/r8/classes/CLASSND-
+@unexec rm -f %D/t3x/r8/classes/CLASSNDX
+@dirrm t3x/r8/bin
+@dirrm t3x/r8/classes
+@dirrm t3x/r8/lib
+@dirrm t3x/r8/doc
+@dirrm t3x/r8
 @dirrm t3x
