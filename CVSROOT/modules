@@ -4606,6 +4606,7 @@ p5-POE-Component-Client-Ping	ports/devel/p5-POE-Component-Client-Ping
 p5-POE-Component-Client-UserAgent	ports/devel/p5-POE-Component-Client-UserAgent
 p5-POE-Component-DBIAgent	ports/devel/p5-POE-Component-DBIAgent
 p5-POE-Component-IKC	ports/devel/p5-POE-Component-IKC
+p5-POE-Component-IKC-ReallySimple	ports/devel/p5-POE-Component-IKC-ReallySimple
 p5-POE-Component-IRC	ports/irc/p5-POE-Component-IRC
 p5-POE-Component-JobQueue	ports/devel/p5-POE-Component-JobQueue
 p5-POE-Component-Pcap	ports/devel/p5-POE-Component-Pcap
