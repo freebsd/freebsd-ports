@@ -261,6 +261,7 @@
     SUBDIR += p5-CGI-Cache
     SUBDIR += p5-CGI-FastTemplate
     SUBDIR += p5-CGI-Minimal
+    SUBDIR += p5-CGI-Session
     SUBDIR += p5-CGI-SpeedyCGI
     SUBDIR += p5-CGI-XMLApplication
     SUBDIR += p5-CGI-modules

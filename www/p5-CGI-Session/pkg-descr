@@ -1,0 +1,14 @@
+    "CGI::Session" is Perl5 library that provides an easy persistent session
+    management system across HTTP requests. Session persistence is a very
+    important issue in web applications. Shopping carts, user-recognition
+    features, login and authentication methods and etc. all require
+    persistent session management mechanism, which is both secure and
+    reliable. "CGI::Session" provides with just that. You can read the whole
+    documentation as a tutorial on session management. But if you are
+    already familiar with "CGI::Session" go to the methods section for the
+    list of all the methods available.
+
+WWW: http://search.cpan.org/search?dist=CGI-Session
+
+- Erwin Lansing
+erwin@lansing.dk
