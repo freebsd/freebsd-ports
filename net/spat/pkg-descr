@@ -1,0 +1,19 @@
+Spat. The Gnome messaging system
+--------------------------------
+
+Spat is a lightweight, GNOME compliant Intranet Messaging Application designed
+and distributed by Codehost.com, Inc. This Intranet Messaging System was
+developed to easily install and run on a TCP/IP network.
+
+Until now, an easy to configure - easy to use, Messaging system has not existed
+for Unix since write(1). 
+
+Easy to use - Easy to configure
+-------------------------------
+
+Spat was designed with the User in mind. Geared for the user friendly GNOME
+Desktop, this messaging system needs little or no configuration whatsoever. Use
+is simple too. Just run the application and select the user you want to send a
+message to. With Spat there is no need to remember IP Addresses. 
+
+WWW: http://spat.codehost.com/

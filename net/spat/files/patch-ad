@@ -1,0 +1,11 @@
+--- spatd/Makefile.in	2000/10/31 11:38:24	1.1
++++ spatd/Makefile.in	2000/10/31 11:39:48
+@@ -124,7 +124,7 @@
+ 
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I..
+-CPPFLAGS = @CPPFLAGS@
++CPPFLAGS = @CPPFLAGS@ -DPREFIX=\"@prefix@\"
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+ spatd_OBJECTS =  main.o support.o interface.o callbacks.o prefs.o

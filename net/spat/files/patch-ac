@@ -1,0 +1,20 @@
+--- spat/callbacks.c	2000/10/31 11:30:56	1.1
++++ spat/callbacks.c	2000/10/31 11:31:13
+@@ -52,7 +52,7 @@
+    printf("Failure to create config. ARG!\n");
+    exit(0);
+   }
+-  fprintf(fp, "spatrc -> interface: eth0\n");
++  fprintf(fp, "spatrc -> interface: ed0\n");
+   fclose(fp);
+   printf("Wrote ~/.spat/spatrc\n");
+   fp = fopen(dir, "r");
+@@ -104,7 +104,7 @@
+ {
+  struct ifreq ifi;
+  int sock, iftype = 0;
+- char *bcast_addy, *interface = "eth0";
++ char *bcast_addy, *interface = "ed0";
+ 
+  sock = socket(AF_INET, SOCK_DGRAM, 0);
+  if (sock < 0)

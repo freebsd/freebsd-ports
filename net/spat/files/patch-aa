@@ -1,0 +1,20 @@
+--- spatd/main.c	2000/10/31 11:17:27	1.1
++++ spatd/main.c	2000/10/31 11:33:07
+@@ -48,8 +48,16 @@
+ void
+ launch_spat()
+ {
+- system("/usr/local/bin/spat &");
++ system(PREFIX "/bin/spat &");
++}
++
++#ifdef __FreeBSD__
++char *gcvt(double value, int ndigit, char *buf)
++{
++ sprintf(buf, "%.*g", ndigit, value);
++ return buf;
+ }
++#endif
+ 
+ void
+ show_back()
