@@ -8,7 +8,8 @@
 PORTNAME=	sawfish
 PORTVERSION= 	0.28
 CATEGORIES=	x11-wm
-MASTER_SITES=	ftp://sawmill.sourceforge.net/pub/sawmill/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	sawmill
 
 MAINTAINER=	nakai@FreeBSD.org
 

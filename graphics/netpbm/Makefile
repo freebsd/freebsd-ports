@@ -8,7 +8,8 @@
 PORTNAME=	netpbm
 PORTVERSION=	9.4
 CATEGORIES=	graphics
-MASTER_SITES=	http://download.sourceforge.net/netpbm/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org

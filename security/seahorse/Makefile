@@ -8,8 +8,9 @@
 PORTNAME=	seahorse
 PORTVERSION=	0.4.5
 CATEGORIES=	security
-MASTER_SITES=	http://seahorse.sourceforge.net/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.mu.org/~dave/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dave@mu.org
 

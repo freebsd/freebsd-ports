@@ -8,9 +8,10 @@
 PORTNAME=	etherboot
 PORTVERSION=	4.6.1
 CATEGORIES=	net
-MASTER_SITES=	http://etherboot.sourceforge.net/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.us.kernel.org/pub/linux/devel/gcc/ \
 		http://www.ambrisko.com/doug/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}.tar.gz ${BINUTILS_VER}.tar.gz
 
 MAINTAINER=	ambrisko@whistle.com

@@ -8,7 +8,8 @@
 PORTNAME=	powershell
 PORTVERSION=	0.8
 CATEGORIES=	x11 gnome
-MASTER_SITES=	http://powershell.sourceforge.net/download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	smoberly@xavier.dyndns.org
 

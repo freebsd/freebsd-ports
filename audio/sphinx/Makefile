@@ -8,7 +8,8 @@
 PORTNAME=	sphinx
 PORTVERSION=	2.0.2
 CATEGORIES=	audio
-MASTER_SITES=	http://download.sourceforge.net/cmusphinx/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	cmusphinx
 DISTNAME=	sphinx2-0.2
 
 MAINTAINER=	trevor@jpj.net

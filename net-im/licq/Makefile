@@ -8,11 +8,12 @@
 PORTNAME=	licq
 PORTVERSION=	0.81
 CATEGORIES=	net
-MASTER_SITES=	http://download.sourceforge.net/licq/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.wibble.net/pub/licq/srcs/ \
 		ftp://licq.darkorb.net/srcs/ \
 		ftp://ftp.fanfic.org/pub/licq/srcs/ \
 		ftp://ftp.inter-i.uni-mainz.de/pub/licq/srcs/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
 
 MAINTAINER=	green@FreeBSD.org

@@ -8,7 +8,8 @@
 PORTNAME=	fastjar
 PORTVERSION=	0.90
 CATEGORIES=	archivers java
-MASTER_SITES=	http://download.sourceforge.net/fastjar/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	knu@FreeBSD.org

@@ -8,7 +8,8 @@
 PORTNAME=	librep
 PORTVERSION=	0.11.3
 CATEGORIES=	lang
-MASTER_SITES=	ftp://librep.sourceforge.net/pub/librep/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	nakai@FreeBSD.org
 

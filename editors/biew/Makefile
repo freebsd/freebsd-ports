@@ -8,8 +8,8 @@
 PORTNAME=	biew
 PORTVERSION=    5.1.0
 CATEGORIES=	editors
-MASTER_SITES=	ftp://biew.sourceforge.net/pub/biew/5.x/src/ \
-		http://download.sourceforge.net/biew/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=       ${PORTNAME}-510
 
 MAINTAINER=	ports@FreeBSD.org

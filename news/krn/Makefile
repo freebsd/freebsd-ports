@@ -8,8 +8,8 @@
 PORTNAME=	krn
 PORTVERSION=	0.6.11
 CATEGORIES=	news kde
-MASTER_SITES=	ftp://ftp.sourceforge.net/pub/sourceforge/krn/ \
-		http://download.sourceforge.net/krn/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	adsharma@sharmas.dhs.org
 

@@ -8,7 +8,8 @@
 PORTNAME=	gnomefind
 PORTVERSION= 	0.4
 CATEGORIES=	sysutils gnome
-MASTER_SITES=	http://download.sourceforge.net/gnome-find/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gnome-find
 DISTNAME=	gnome-find-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org

@@ -8,7 +8,8 @@
 PORTNAME=	sketch
 PORTVERSION=	0.6.7
 CATEGORIES=	graphics
-MASTER_SITES=	http://download.sourceforge.net/sketch/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 

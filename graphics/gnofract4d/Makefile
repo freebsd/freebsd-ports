@@ -8,7 +8,8 @@
 PORTNAME=	gnofract4d
 PORTVERSION=	1.2
 CATEGORIES=	graphics gnome
-MASTER_SITES=	http://download.sourceforge.net/gnofract4d/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	will@FreeBSD.org
 

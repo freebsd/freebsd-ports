@@ -8,8 +8,9 @@
 PORTNAME=	icewm
 PORTVERSION=	1.0.3
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://download.sourceforge.net/icewm/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.src.tar.gz
 
 MAINTAINER=	nakai@FreeBSD.org

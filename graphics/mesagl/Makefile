@@ -8,9 +8,10 @@
 PORTNAME=	Mesa
 PORTVERSION=	3.2
 CATEGORIES=	graphics
-MASTER_SITES= 	http://download.sourceforge.net/mesa3d/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://iris.ssec.wisc.edu/pub/Mesa/ \
 		ftp://ftp.fu-berlin.de/pub/unix/X11/graphics/Mesa/
+MASTER_SITE_SUBDIR=	mesa3d
 DISTFILES=	MesaLib-${PORTVERSION}${EXTRACT_SUFX} \
 		MesaDemos-${PORTVERSION}${EXTRACT_SUFX}
 

@@ -8,7 +8,8 @@
 PORTNAME=	cbb
 PORTVERSION=	0.8.1
 CATEGORIES=	deskutils
-MASTER_SITES=	http://download.sourceforge.net/cbb/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kline@thought.org
 

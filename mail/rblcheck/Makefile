@@ -8,8 +8,9 @@
 PORTNAME=	rblcheck
 PORTVERSION= 	1.4
 CATEGORIES=	mail
-MASTER_SITES=	http://download.sourceforge.net/rblcheck/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.xnet.com/%7Eemarshal/rblcheck/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	itojun@itojun.org
 HOMEPAGE=	http://rblcheck.sourceforge.net/

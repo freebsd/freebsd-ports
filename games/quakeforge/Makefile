@@ -8,7 +8,8 @@
 PORTNAME=	QuakeForge
 PORTVERSION=	0.1.1
 CATEGORIES=	games
-MASTER_SITES=	http://download.sourceforge.net/quake/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	quake
 DISTNAME=	quakeforge-${PORTVERSION}
 .if !defined(NO_WAD)
 MASTER_SITES+=	http://www.devolution.com/~slouken/SDL/projects/quake/data/

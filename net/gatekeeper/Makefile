@@ -8,7 +8,8 @@
 PORTNAME=	gatekeeper
 PORTVERSION=	0.12p
 CATEGORIES=	net
-MASTER_SITES=	http://download.sourceforge.net/openh323gk/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	openh323gk
 DISTNAME=	gk012pre4
 
 MAINTAINER=	roger@FreeBSD.org

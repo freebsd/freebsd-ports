@@ -8,7 +8,8 @@
 PORTNAME=	metakit
 PORTVERSION=	2.0
 CATEGORIES=	databases
-MASTER_SITES=	http://download.sourceforge.net/metakit/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	rcarter@pinyon.org
 

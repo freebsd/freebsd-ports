@@ -8,7 +8,8 @@
 PORTNAME=	rep-gtk
 PORTVERSION=	0.10
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://rep-gtk.sourceforge.net/pub/rep-gtk/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	nakai@FreeBSD.org
 

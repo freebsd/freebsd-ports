@@ -8,8 +8,9 @@
 PORTNAME=	screem
 PORTVERSION= 	0.2.1
 CATEGORIES=	www
-MASTER_SITES=	ftp://download.sourceforge.net/pub/sourceforge/screem/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.screem.org/src/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	will@FreeBSD.org
 

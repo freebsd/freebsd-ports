@@ -8,8 +8,9 @@
 PORTNAME=	gaim
 PORTVERSION=	0.9.19
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.marko.net/pub/gaim/ \
-		http://download.sourceforge.net/gaim/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		ftp://ftp.marko.net/pub/gaim/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jim@FreeBSD.org
 

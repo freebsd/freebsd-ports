@@ -8,8 +8,9 @@
 PORTNAME=	xplanet
 PORTVERSION=	0.60
 CATEGORIES=	astro x11
-MASTER_SITES=	ftp://ftp.sourceforge.net/pub/sourceforge/xplanet/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.radcyberzine.com/xglobe/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} depths_800.jpg
 
 MAINTAINER=	will@FreeBSD.org

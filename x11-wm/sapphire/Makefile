@@ -8,8 +8,9 @@
 PORTNAME=	sapphire
 PORTVERSION=	0.14.2
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://download.sourceforge.net/sapphire/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://sapphire.sourceforge.net/themes/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${THEMES_SRC}
 
 MAINTAINER=	trevor@jpj.net

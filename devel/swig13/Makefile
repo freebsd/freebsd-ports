@@ -8,11 +8,11 @@
 PORTNAME=	swig
 PORTVERSION=	1.3a2
 CATEGORIES=	devel python tcl82
-MASTER_SITES=   ftp://ftp.sourceforge.net/pub/sourceforge/swig/ \
-		http://download.sourceforge.net/swig/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.rge.com/pub/languages/swig/ \
 		ftp://ftp.python.org/pub/python/contrib/System/ \
 		ftp://ftp.mcc.ac.uk/pub/mvc/swig/
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

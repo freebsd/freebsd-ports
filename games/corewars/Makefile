@@ -8,7 +8,8 @@
 PORTNAME=	corewars
 PORTVERSION=	0.9.11
 CATEGORIES=	games
-MASTER_SITES=	http://download.sourceforge.net/corewars/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jim@FreeBSD.org
 
