@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../devel/pear-PEAR/Makefile.common"
+.include "${PORTSDIR}/devel/pear-PEAR/Makefile.common"
 
 LIB_FILES=	NNTP/Realtime.php NNTP/Protocol.php NNTP/Header.php NNTP/Message.php
 PORTDOCS=	README
