@@ -18,6 +18,7 @@
     SUBDIR += gdeskcal
     SUBDIR += gdeskcal-skins
     SUBDIR += gdesklets
+    SUBDIR += gdesklets-psi_themes
     SUBDIR += gdesklets-recentlyused
     SUBDIR += gdesklets-sensor-psi_iconbutton
     SUBDIR += gdesklets-sensor-psi_variableborder
