@@ -1,15 +1,15 @@
---- config/servers.php.dist.orig	Sun Apr 14 14:34:20 2002
-+++ config/servers.php.dist	Sat May 18 23:18:53 2002
-@@ -31,7 +31,7 @@
+--- config/servers.php.dist.orig	Sun May 30 11:35:13 2004
++++ config/servers.php.dist	Fri Jun  4 22:01:32 2004
+@@ -33,7 +33,7 @@
   * is on.
   *
   * folders: The folder path for the IMAP server. i.e. UW IMAP
 - * generally looks to "mail/" while Cyrus and Courier put folders
 + * generally looks to "Mail/" while Cyrus and Courier put folders
-  * under "INBOX." (not the trailing dot. IMPORTANT: Use this only if
+  * under "INBOX." (note the trailing dot. IMPORTANT: Use this only if
   * you want to restrict users to this subfolder. If you set this to
   * 'INBOX.' with Cyrus or Courier-IMAPd, then users will not be able
-@@ -83,14 +83,17 @@
+@@ -87,14 +87,17 @@
  
  $servers['imap'] = array(
      'name' => 'IMAP Server',

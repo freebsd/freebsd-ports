@@ -6,19 +6,16 @@
 #
 
 PORTNAME=	imp
-PORTVERSION=	3.2.3
+PORTVERSION=	3.2.4
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/imp/				\
 		ftp://ftp.planetmirror.com/pub/horde/imp/		\
 		ftp://ftp.au.horde.org/pub/horde/imp/			\
 		ftp://ftp.be.horde.org/imp/				\
 		ftp://ftp.es.horde.org/pub/imp/				\
-		ftp://ftp.it.horde.org/pub/mirror/horde.org/imp/	\
-		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/imp/	\
-		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/imp/	\
 		http://ftp.horde.org/pub/imp/
 
-MAINTAINER=	thierry@pompo.net
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	A webmail system which accesses mail over IMAP
 
 #-----------------------------------------------------------------------
