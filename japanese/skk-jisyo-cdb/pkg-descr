@@ -2,4 +2,4 @@ SKK (Simple Kana Kanji Convertor) is a very fast and efficient Japanese
 input method system, written in emacs-lisp. This package provides CDB
 jisyo files (kana-kanji conversion dictionaries). 
 
-WWW: http://openlab.ring.gr.jp/skk/
+WWW: http://openlab.jp/skk/
