@@ -1,0 +1,11 @@
+--- Makefile.orig	Wed Aug  6 16:47:51 2003
++++ Makefile	Wed Aug  6 16:49:15 2003
+@@ -3,7 +3,7 @@
+ CFLAGS	   = -DTHREADING -g
+ INCLUDE	   = -I/usr/local/include -I.
+ LIBS       = -L/usr/local/lib -lssl -lcrypto
+-PYVER      = 2.2
++PYVER      = 2.3
+ PYINCLUDE  = -DHAVE_CONFIG_H -I/usr/local/include/python$(PYVER) \
+ 	-I/usr/local/lib/python$(PYVER)/config
+ PYLIB      = /usr/local/lib/python$(PYVER)/config
