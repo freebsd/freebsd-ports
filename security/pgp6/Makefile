@@ -28,6 +28,8 @@ RESTRICTED=	"Crypto"
 
 MAN1=		pgp.1
 
+LATEST_LINK=	pgp6
+
 # the distfile is actually a tar of three compressed tars and their
 # signatures
 post-extract:
