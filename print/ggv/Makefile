@@ -1,12 +1,12 @@
 # New ports collection makefile for:	ggv
-# Version required:			0.30
+# Version required:			0.40
 # Date created:				21 August 1998
 # Whom:					Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.7 1999/04/26 21:18:18 mharo Exp $
+# $Id: Makefile,v 1.8 1999/05/30 03:43:39 steve Exp $
 #
 
-DISTNAME=	ggv-0.30
+DISTNAME=	ggv-0.40
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/ggv
