@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- speex/doc/Makefile.in	2003/02/28 09:50:28	1.1
++++ speex/doc/Makefile.in	2003/02/28 09:50:44
+@@ -92,7 +92,7 @@
+ am__quote = @am__quote@
+ install_sh = @install_sh@
+ src = @src@
+-docdir = $(prefix)/share/doc
++docdir = $(prefix)/share/doc/speex
+ 
+ doc_DATA = manual.pdf
+ 
