@@ -300,6 +300,7 @@
     SUBDIR += ticker.app
     SUBDIR += timelimit
     SUBDIR += tmpwatch
+    SUBDIR += toshctl
     SUBDIR += tree
     SUBDIR += ttyload
     SUBDIR += tua

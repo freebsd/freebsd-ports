@@ -1,0 +1,8 @@
+Toshctl is a command-line tool to allow access to much of the
+Toshiba hardware interface developed by Jonathan Buzzard and
+Linux toshset by Charles D. Schwieters.
+
+It can do things linke set the LCD brightness, set CPU speed and set
+fan speed.
+
+WWW: http://freebie.miraclenet.co.th/notebook/toshctl/
