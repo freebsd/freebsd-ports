@@ -55,7 +55,7 @@ pre-everything::
 	@${ECHO_MSG} "upgrade X.Org.  If you simply type 'make install' it may use over 2GB to build"
 	@${ECHO_MSG} "all of the subports.  You can install the ports singly if you are low on space."
 
-.if make(package)
+.if make(package) && empty(DEPENDS_TARGET:Mpackage)
 DEPENDS_TARGET="package"
 .endif
 
