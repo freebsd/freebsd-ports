@@ -19,6 +19,8 @@ DISTFILES=	${PORTNAME}-core-${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	rob@debank.tv
 COMMENT=	A web based GroupWare system
 
+BROKEN=		Checksum mismatch
+
 .if defined(WITH_APACHE2)
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache2/libphp4.so:${PORTSDIR}/www/mod_php4
 .else
