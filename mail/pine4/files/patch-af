@@ -1,8 +1,21 @@
-*** imap/ANSI/c-client/Makefile.orig	Wed May 29 22:33:17 1996
---- imap/ANSI/c-client/Makefile	Fri Jun 14 00:10:52 1996
+*** imap/ANSI/c-client/Makefile.orig	Sat Jun 22 01:25:45 1996
+--- imap/ANSI/c-client/Makefile	Tue Dec  3 16:30:45 1996
 ***************
-*** 33,40 ****
---- 33,42 ----
+*** 32,43 ****
+  
+  
+  ARCHIVE=c-client.a
+  ARRC=ar rc
+  BINARIES=mail.o bezerk.o mtx.o tenex2.o mbox.o mh.o mmdf.o imap2.o pop3.o \
+  	news.o nntpcunx.o phile.o dummy.o smtp.o nntp.o rfc822.o misc.o \
+  	osdep.o sm_unix.o newsrc.o
+  CC=cc
+! CFLAGS=$(EXTRACFLAGS)
+  DEFAULTDRIVERS=imap nntp pop3 mh tenex mtx mmdf bezerk news phile dummy
+  LN=ln -s
+  MAKE=make
+--- 32,45 ----
+  
   
   ARCHIVE=c-client.a
 + SHLIB=libc-client.so.1.3
@@ -12,10 +25,14 @@
   	osdep.o sm_unix.o newsrc.o
 + SOFILES=	${BINARIES:.o=.so}
   CC=cc
-  CFLAGS=$(EXTRACFLAGS)
+! #CFLAGS=$(EXTRACFLAGS)
+  DEFAULTDRIVERS=imap nntp pop3 mh tenex mtx mmdf bezerk news phile dummy
+  LN=ln -s
+  MAKE=make
 ***************
-*** 49,52 ****
---- 51,57 ----
+*** 48,53 ****
+--- 50,58 ----
+  RSHPATH=/usr/ucb/rsh
   SHELL=/bin/sh
   
 + # Need this for the shared library rule to work correctly
@@ -23,9 +40,11 @@
 + 
   missing:
   	@echo "You must specify what type of system"
+  	@false
 ***************
-*** 120,123 ****
---- 125,135 ----
+*** 119,124 ****
+--- 124,136 ----
+  		ACTIVEFILE=/usr/lib/news/active NEWSSPOOL=/usr/spool/news \
   		RSHPATH=/usr/bin/rsh CFLAGS="-g -O -pipe -DNFSKLUDGE $(EXTRACFLAGS)"
   
 + bsf:	# FreeBSD
@@ -37,8 +56,10 @@
 + 
   cvx:	# Convex
   	$(MAKE) mtest OS=$@ EXTRADRIVERS="$(EXTRADRIVERS)" \
+  		STDPROTO=bezerkproto MAILSPOOL=/usr/spool/mail \
 ***************
-*** 395,401 ****
+*** 394,402 ****
+  # From here on down is OS-independent
   
   clean:
 ! 	$(RM) *.o linkage.[ch] mtest $(ARCHIVE) osdep.* CCTYPE CFLAGS LDFLAGS
@@ -46,7 +67,9 @@
 ! mtest: $(ARCHIVE) mtest.o
   	$(CC) $(CFLAGS) -o mtest mtest.o $(ARCHIVE) $(LDFLAGS)
   
---- 407,413 ----
+  $(ARCHIVE): $(BINARIES)
+--- 406,414 ----
+  # From here on down is OS-independent
   
   clean:
 ! 	$(RM) *.o *.so linkage.[ch] mtest $(SHLIB) $(ARCHIVE) osdep.* CCTYPE CFLAGS LDFLAGS
@@ -54,9 +77,11 @@
 ! mtest: $(ARCHIVE) $(SHLIB) mtest.o
   	$(CC) $(CFLAGS) -o mtest mtest.o $(ARCHIVE) $(LDFLAGS)
   
+  $(ARCHIVE): $(BINARIES)
 ***************
-*** 405,408 ****
---- 417,427 ----
+*** 404,409 ****
+--- 416,428 ----
+  	$(ARRC) $(ARCHIVE) $(BINARIES)
   	$(RANLIB) $(ARCHIVE)
   
 + $(SHLIB):	$(SOFILES)
@@ -68,9 +93,11 @@
 + 
   # Dependencies
   
+  bezerk.o: mail.h bezerk.h rfc822.h misc.h osdep.h
 ***************
-*** 445,448 ****
---- 464,483 ----
+*** 444,449 ****
+--- 463,484 ----
+  	-DRSH=\"$(RSH)\" -DRSHPATH=\"$(RSHPATH)\" \
   	$(EXTRAOSDEFS) -c os_$(OS).c
   	$(MV) os_$(OS).o osdep.o
 + 
@@ -91,3 +118,4 @@
 + 	$(MV) os_$(OS).so osdep.so
   
   osdep.h: os_$(OS).h linkage
+  	$(RM) CCTYPE CFLAGS LDFLAGS osdep.h
