@@ -9,7 +9,7 @@ A) You need to read the installation instructions closely, see:
 	${PREFIX}/share/doc/flowscan/INSTALL
 
 B) You need to configure your Cisco Router, to enable Netflow Switching
-   and Netflow data export.
+   and Netflow data export (version 5 flow export format).
 
 PLEASE NOTE, YOU HAVE TO KNOW EXACTLY, IF YOU REALLY WANT TO ENABLE NETFLOW
 SWITCHING ON YOUR CISCO CORE OR DISTRIBUTION ROUTERS, WHAT PERFORMANCE IMPACT
