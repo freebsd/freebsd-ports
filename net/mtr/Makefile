@@ -7,6 +7,7 @@
 
 PORTNAME=	mtr
 PORTVERSION=	0.54
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/ \
 		ftp://ftp.netsw.org/net/ip/audit/packets/ \
@@ -25,7 +26,7 @@ MAN8=	mtr.8
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 400014 && defined(WANT_IPV6)
-PATCHFILES=	mtr-054-v6-20030624.diff.gz
+PATCHFILES=	mtr-054-v6-20040130.diff.gz
 PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/
 PATCH_DIST_STRIP=	-p1
 
