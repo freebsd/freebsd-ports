@@ -41,6 +41,10 @@ STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/ircd.sh
 CONFIGURE_ARGS+= --enable-ip6
 .endif
 
+pre-build:
+	@${RM} -f ${WRKDIR}/ircd.sh
+	@${SED} -e "s;%%PREFIX%%;${PREFIX};g" ${FILESDIR}/ircd.sh > ${WRKDIR}/ircd.sh
+
 do-build:
 	@(cd ${WRKSRC}/${MACHINE_ARCH}-unknown-freebsd${OSREL}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
 
@@ -50,7 +54,7 @@ do-install:
 post-install:
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then				\
 		${ECHO} "Installing ${STARTUP_SCRIPT} startup file.";	\
-		${INSTALL_SCRIPT} ${FILESDIR}/ircd.sh ${STARTUP_SCRIPT};\
+		${INSTALL_SCRIPT} ${WRKDIR}/ircd.sh ${STARTUP_SCRIPT};\
 	fi
 
 .include <bsd.port.post.mk>
