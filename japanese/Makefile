@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.188 1999/02/12 16:43:18 flathill Exp $
+# $Id: Makefile,v 1.189 1999/02/28 15:40:07 itojun Exp $
 #
 
     SUBDIR += Canna
@@ -30,6 +30,7 @@
     SUBDIR += elvis
     SUBDIR += emacs20-dl-canna
     SUBDIR += emacs20-dl-wnn6
+    SUBDIR += epwutil
     SUBDIR += escpf
     SUBDIR += eterm
     SUBDIR += ewipe
@@ -211,7 +212,6 @@
     SUBDIR += vfxdvi400
     SUBDIR += vfxdvi600
     SUBDIR += vfxdvik
-    SUBDIR += vje-trial
     SUBDIR += w3
     SUBDIR += weblint97
     SUBDIR += wine
