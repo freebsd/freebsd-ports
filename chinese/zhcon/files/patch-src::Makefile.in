@@ -5,11 +5,11 @@
  install-data-local:
  	$(mkinstalldirs) $(libdir)/zhcon/
 -	$(INSTALL_DATA) $(srcdir)/zhcon.conf /etc/zhcon.conf
-+	$(INSTALL_DATA) $(srcdir)/zhcon.conf $(PREFIX)/etc/zhcon.conf.sample
++	$(INSTALL_DATA) $(srcdir)/zhcon.conf $(PREFIX)/etc/zhcon.conf
  
  uninstall-local:
 -	-rm -f /etc/zhcon.conf
-+	-rm -f $(PREFIX)/etc/zhcon.conf.sample
++	-rm -f $(PREFIX)/etc/zhcon.conf
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
