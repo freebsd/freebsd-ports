@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	FCGI
 
 MAINTAINER=	kbyanc@posi.net
 
-BUILD_DEPENDS=	${PREFIX}/lib/libfcgi.a:${PORTSDIR}/www/fcgi
+BUILD_DEPENDS=	${LOCALBASE}/lib/libfcgi.a:${PORTSDIR}/www/fcgi
 
 USE_PERL5=	YES
 
