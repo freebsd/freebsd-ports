@@ -74,7 +74,7 @@ while [ "$1" ]; do
 		\"GD\")
 			echo "LIB_DEPENDS+=	gd.2:\${PORTSDIR}/graphics/gd"
 			echo "LIB_DEPENDS+=	freetype.7:\${PORTSDIR}/print/freetype2"
-			echo "LIB_DEPENDS+=	png.4:\${PORTSDIR}/graphics/png"
+			echo "LIB_DEPENDS+=	png.5:\${PORTSDIR}/graphics/png"
 			echo "LIB_DEPENDS+=	jpeg.9:\${PORTSDIR}/graphics/jpeg"
 			echo "CONFIGURE_ARGS+=--with-gd=\${PREFIX} \\"
 			echo "		--with-freetype-dir=\${PREFIX} \\"
