@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.152 1998/10/09 04:22:12 asami Exp $
+# $Id: Makefile,v 1.153 1998/10/20 15:52:38 kuriyama Exp $
 #
 
     SUBDIR += Canna
@@ -11,6 +11,7 @@
     SUBDIR += bookview
     SUBDIR += camltk41
     SUBDIR += cdrom2
+    SUBDIR += chasen
     SUBDIR += chimera
     SUBDIR += diclookup-mule
     SUBDIR += dserver
