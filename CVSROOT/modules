@@ -3987,6 +3987,7 @@ linux-phoenix	ports/www/linux-phoenix
 linux-png	ports/graphics/linux-png
 linux-q3ademo	ports/games/linux-q3ademo
 linux-realplayer	ports/audio/linux-realplayer
+linux-relview	ports/math/linux-relview
 linux-sdl12	ports/devel/linux-sdl12
 linux-setiathome	ports/astro/linux-setiathome
 linux-sun-jdk12	ports/java/linux-sun-jdk12
