@@ -1,5 +1,4 @@
 bin/pharmacy
-info/dir
 share/locale/fr/LC_MESSAGES/pharmacy.mo
 share/locale/ko/LC_MESSAGES/pharmacy.mo
 share/locale/de/LC_MESSAGES/pharmacy.mo
