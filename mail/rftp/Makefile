@@ -8,7 +8,7 @@
 PORTNAME=	rftp
 PORTVERSION=	1.2
 CATEGORIES=	mail
-MASTER_SITES=	ftp://toxic.magnesium.net/pub/FreeBSD/rftp/
+MASTER_SITES=	http://muuz.deadbbs.com/FreeBSD/rftp/
 
 MAINTAINER=	kline@thought.org
 
