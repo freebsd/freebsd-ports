@@ -1,0 +1,577 @@
+--- XMotif/Makefile.orig	Tue Mar 15 16:18:24 1994
++++ XMotif/Makefile	Sun Nov 24 03:12:03 1996
+@@ -33,573 +33,5 @@
+ 
+ # make dependencies
+ depend:	${SRCS}
+-	for i in ${SRCS}; do \
+-	    cc -M ${CFLAGS} $$i | sort | uniq |\
+-	    awk ' { if ($$1 != prev) \
+-		{ if (rec != "") print rec; rec = $$0; prev = $$1; } \
+-		else { if (length(rec $$2) > 78) { print rec; rec = $$0; } \
+-		else rec = rec " " $$2 } } \
+-		END { print rec } ' >> makedep; done
+-	echo '/^# DO NOT DELETE THIS LINE/+1,$$d' >eddep
+-	echo '$$r makedep' >>eddep
+-	echo 'w' >>eddep
+-	cp Makefile Makefile.bak
+-	ed - Makefile < eddep
+-	rm eddep makedep
+-	echo '# DEPENDENCIES MUST END AT END OF FILE' >> Makefile
+-	echo '# IF YOU PUT STUFF HERE IT WILL GO AWAY' >> Makefile
+-	echo '# see make depend above' >> Makefile
++	mkdep $(CFLAGS) ${SRCS}
+ 
+-# DO NOT DELETE THIS LINE
+-xinit.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-xinit.o: ./include/eventdefs.h ./include/heap.h ./include/list.h
+-xinit.o: ./include/log.h ./include/mempool.h ./include/packet.h ./include/q.h
+-xinit.o: ./include/sim.h ./include/simx.h ./include/simx1.h
+-xinit.o: ./include/xm-comp_trans.h ./include/xm-edit.h ./include/xm-info_w.h
+-xinit.o: ./include/xm-lines.h ./include/xm-main_w.h ./include/xm-meters.h
+-xinit.o: ./include/xm-mfile.h ./include/xm-network.h ./include/xm-param_w.h
+-xinit.o: ./include/xm-util.h /usr/imports/include/X11R5/X11/Composite.h
+-xinit.o: /usr/imports/include/X11R5/X11/Constraint.h
+-xinit.o: /usr/imports/include/X11R5/X11/Core.h
+-xinit.o: /usr/imports/include/X11R5/X11/Intrinsic.h
+-xinit.o: /usr/imports/include/X11R5/X11/Object.h
+-xinit.o: /usr/imports/include/X11R5/X11/RectObj.h
+-xinit.o: /usr/imports/include/X11R5/X11/Shell.h
+-xinit.o: /usr/imports/include/X11R5/X11/StringDefs.h
+-xinit.o: /usr/imports/include/X11R5/X11/X.h
+-xinit.o: /usr/imports/include/X11R5/X11/Xatom.h
+-xinit.o: /usr/imports/include/X11R5/X11/Xfuncproto.h
+-xinit.o: /usr/imports/include/X11R5/X11/Xlib.h
+-xinit.o: /usr/imports/include/X11R5/X11/Xosdefs.h
+-xinit.o: /usr/imports/include/X11R5/X11/Xresource.h
+-xinit.o: /usr/imports/include/X11R5/X11/Xutil.h
+-xinit.o: /usr/imports/include/X11R5/Xm/PushB.h
+-xinit.o: /usr/imports/include/X11R5/Xm/Text.h
+-xinit.o: /usr/imports/include/X11R5/Xm/VendorS.h
+-xinit.o: /usr/imports/include/X11R5/Xm/VirtKeys.h
+-xinit.o: /usr/imports/include/X11R5/Xm/Xm.h
+-xinit.o: /usr/imports/include/X11R5/Xm/XmStrDefs.h /usr/include/floatingpoint.h
+-xinit.o: /usr/include/math.h /usr/include/stddef.h /usr/include/stdio.h
+-xinit.o: /usr/include/string.h /usr/include/strings.h /usr/include/sys/ieeefp.h
+-xinit.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-xinit.o: /usr/include/sys/types.h xinit.c
+-io.o: ./include/component.h ./include/event.h ./include/eventdefs.h
+-io.o: ./include/heap.h ./include/list.h ./include/log.h ./include/mempool.h
+-io.o: ./include/packet.h ./include/q.h ./include/sim.h ./include/simx.h
+-io.o: ./include/simx1.h ./include/xm-info_w.h ./include/xm-io.h
+-io.o: ./include/xm-main_w.h ./include/xm-meters.h ./include/xm-network.h
+-io.o: ./include/xm-param_w.h ./include/xm-util.h
+-io.o: /usr/imports/include/X11R5/X11/Composite.h
+-io.o: /usr/imports/include/X11R5/X11/Constraint.h
+-io.o: /usr/imports/include/X11R5/X11/Core.h
+-io.o: /usr/imports/include/X11R5/X11/Intrinsic.h
+-io.o: /usr/imports/include/X11R5/X11/Object.h
+-io.o: /usr/imports/include/X11R5/X11/RectObj.h
+-io.o: /usr/imports/include/X11R5/X11/Shell.h
+-io.o: /usr/imports/include/X11R5/X11/StringDefs.h
+-io.o: /usr/imports/include/X11R5/X11/X.h /usr/imports/include/X11R5/X11/Xatom.h
+-io.o: /usr/imports/include/X11R5/X11/Xfuncproto.h
+-io.o: /usr/imports/include/X11R5/X11/Xlib.h
+-io.o: /usr/imports/include/X11R5/X11/Xosdefs.h
+-io.o: /usr/imports/include/X11R5/X11/Xresource.h
+-io.o: /usr/imports/include/X11R5/X11/Xutil.h
+-io.o: /usr/imports/include/X11R5/Xm/PushB.h
+-io.o: /usr/imports/include/X11R5/Xm/Text.h
+-io.o: /usr/imports/include/X11R5/Xm/VendorS.h
+-io.o: /usr/imports/include/X11R5/Xm/VirtKeys.h
+-io.o: /usr/imports/include/X11R5/Xm/Xm.h
+-io.o: /usr/imports/include/X11R5/Xm/XmStrDefs.h /usr/include/floatingpoint.h
+-io.o: /usr/include/math.h /usr/include/stddef.h /usr/include/stdio.h
+-io.o: /usr/include/string.h /usr/include/strings.h /usr/include/sys/ieeefp.h
+-io.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-io.o: /usr/include/sys/types.h io.c
+-main_w.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-main_w.o: ./include/eventdefs.h ./include/heap.h ./include/list.h
+-main_w.o: ./include/log.h ./include/mempool.h ./include/packet.h ./include/q.h
+-main_w.o: ./include/sim.h ./include/simx.h ./include/simx1.h
+-main_w.o: ./include/xm-comp_trans.h ./include/xm-edit.h ./include/xm-info_w.h
+-main_w.o: ./include/xm-lines.h ./include/xm-main_w.h ./include/xm-meters.h
+-main_w.o: ./include/xm-mfile.h ./include/xm-network.h ./include/xm-options.h
+-main_w.o: ./include/xm-util.h ./include/xm-view.h
+-main_w.o: /usr/imports/include/X11R5/X11/Composite.h
+-main_w.o: /usr/imports/include/X11R5/X11/Constraint.h
+-main_w.o: /usr/imports/include/X11R5/X11/Core.h
+-main_w.o: /usr/imports/include/X11R5/X11/Intrinsic.h
+-main_w.o: /usr/imports/include/X11R5/X11/Object.h
+-main_w.o: /usr/imports/include/X11R5/X11/RectObj.h
+-main_w.o: /usr/imports/include/X11R5/X11/Shell.h
+-main_w.o: /usr/imports/include/X11R5/X11/StringDefs.h
+-main_w.o: /usr/imports/include/X11R5/X11/X.h
+-main_w.o: /usr/imports/include/X11R5/X11/Xatom.h
+-main_w.o: /usr/imports/include/X11R5/X11/Xfuncproto.h
+-main_w.o: /usr/imports/include/X11R5/X11/Xlib.h
+-main_w.o: /usr/imports/include/X11R5/X11/Xosdefs.h
+-main_w.o: /usr/imports/include/X11R5/X11/Xresource.h
+-main_w.o: /usr/imports/include/X11R5/X11/Xutil.h
+-main_w.o: /usr/imports/include/X11R5/Xm/BulletinB.h
+-main_w.o: /usr/imports/include/X11R5/Xm/DrawingA.h
+-main_w.o: /usr/imports/include/X11R5/Xm/Form.h
+-main_w.o: /usr/imports/include/X11R5/Xm/Label.h
+-main_w.o: /usr/imports/include/X11R5/Xm/MessageB.h
+-main_w.o: /usr/imports/include/X11R5/Xm/PushB.h
+-main_w.o: /usr/imports/include/X11R5/Xm/RowColumn.h
+-main_w.o: /usr/imports/include/X11R5/Xm/ScrolledW.h
+-main_w.o: /usr/imports/include/X11R5/Xm/SeparatoG.h
+-main_w.o: /usr/imports/include/X11R5/Xm/Text.h
+-main_w.o: /usr/imports/include/X11R5/Xm/TextF.h
+-main_w.o: /usr/imports/include/X11R5/Xm/VendorS.h
+-main_w.o: /usr/imports/include/X11R5/Xm/VirtKeys.h
+-main_w.o: /usr/imports/include/X11R5/Xm/Xm.h
+-main_w.o: /usr/imports/include/X11R5/Xm/XmStrDefs.h
+-main_w.o: /usr/include/floatingpoint.h /usr/include/math.h
+-main_w.o: /usr/include/stddef.h /usr/include/stdio.h /usr/include/string.h
+-main_w.o: /usr/include/strings.h /usr/include/sys/ieeefp.h
+-main_w.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-main_w.o: /usr/include/sys/types.h main_w.c
+-util.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-util.o: ./include/eventdefs.h ./include/heap.h ./include/list.h ./include/log.h
+-util.o: ./include/mempool.h ./include/packet.h ./include/q.h ./include/sim.h
+-util.o: ./include/simx.h ./include/simx1.h ./include/xm-util.h
+-util.o: /usr/imports/include/X11R5/X11/Composite.h
+-util.o: /usr/imports/include/X11R5/X11/Constraint.h
+-util.o: /usr/imports/include/X11R5/X11/Core.h
+-util.o: /usr/imports/include/X11R5/X11/Intrinsic.h
+-util.o: /usr/imports/include/X11R5/X11/Object.h
+-util.o: /usr/imports/include/X11R5/X11/RectObj.h
+-util.o: /usr/imports/include/X11R5/X11/Shell.h
+-util.o: /usr/imports/include/X11R5/X11/StringDefs.h
+-util.o: /usr/imports/include/X11R5/X11/X.h
+-util.o: /usr/imports/include/X11R5/X11/Xatom.h
+-util.o: /usr/imports/include/X11R5/X11/Xfuncproto.h
+-util.o: /usr/imports/include/X11R5/X11/Xlib.h
+-util.o: /usr/imports/include/X11R5/X11/Xosdefs.h
+-util.o: /usr/imports/include/X11R5/X11/Xresource.h
+-util.o: /usr/imports/include/X11R5/X11/Xutil.h
+-util.o: /usr/imports/include/X11R5/Xm/BulletinB.h
+-util.o: /usr/imports/include/X11R5/Xm/CascadeBG.h
+-util.o: /usr/imports/include/X11R5/Xm/Form.h
+-util.o: /usr/imports/include/X11R5/Xm/Label.h
+-util.o: /usr/imports/include/X11R5/Xm/PushB.h
+-util.o: /usr/imports/include/X11R5/Xm/PushBG.h
+-util.o: /usr/imports/include/X11R5/Xm/RowColumn.h
+-util.o: /usr/imports/include/X11R5/Xm/TextF.h
+-util.o: /usr/imports/include/X11R5/Xm/ToggleBG.h
+-util.o: /usr/imports/include/X11R5/Xm/VendorS.h
+-util.o: /usr/imports/include/X11R5/Xm/VirtKeys.h
+-util.o: /usr/imports/include/X11R5/Xm/Xm.h
+-util.o: /usr/imports/include/X11R5/Xm/XmStrDefs.h /usr/include/floatingpoint.h
+-util.o: /usr/include/math.h /usr/include/stddef.h /usr/include/stdio.h
+-util.o: /usr/include/string.h /usr/include/strings.h /usr/include/sys/ieeefp.h
+-util.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-util.o: /usr/include/sys/types.h util.c
+-edit.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-edit.o: ./include/eventdefs.h ./include/heap.h ./include/list.h ./include/log.h
+-edit.o: ./include/mempool.h ./include/packet.h ./include/q.h ./include/sim.h
+-edit.o: ./include/simx.h ./include/simx1.h ./include/xm-comp_trans.h
+-edit.o: ./include/xm-edit.h ./include/xm-icon.h ./include/xm-info_w.h
+-edit.o: ./include/xm-main_w.h ./include/xm-meters.h ./include/xm-network.h
+-edit.o: ./include/xm-util.h /usr/imports/include/X11R5/X11/Composite.h
+-edit.o: /usr/imports/include/X11R5/X11/Constraint.h
+-edit.o: /usr/imports/include/X11R5/X11/Core.h
+-edit.o: /usr/imports/include/X11R5/X11/Intrinsic.h
+-edit.o: /usr/imports/include/X11R5/X11/Object.h
+-edit.o: /usr/imports/include/X11R5/X11/RectObj.h
+-edit.o: /usr/imports/include/X11R5/X11/Shell.h
+-edit.o: /usr/imports/include/X11R5/X11/StringDefs.h
+-edit.o: /usr/imports/include/X11R5/X11/X.h
+-edit.o: /usr/imports/include/X11R5/X11/Xatom.h
+-edit.o: /usr/imports/include/X11R5/X11/Xfuncproto.h
+-edit.o: /usr/imports/include/X11R5/X11/Xlib.h
+-edit.o: /usr/imports/include/X11R5/X11/Xosdefs.h
+-edit.o: /usr/imports/include/X11R5/X11/Xresource.h
+-edit.o: /usr/imports/include/X11R5/X11/Xutil.h
+-edit.o: /usr/imports/include/X11R5/Xm/BulletinB.h
+-edit.o: /usr/imports/include/X11R5/Xm/DrawingA.h
+-edit.o: /usr/imports/include/X11R5/Xm/Form.h
+-edit.o: /usr/imports/include/X11R5/Xm/Label.h
+-edit.o: /usr/imports/include/X11R5/Xm/MessageB.h
+-edit.o: /usr/imports/include/X11R5/Xm/PushB.h
+-edit.o: /usr/imports/include/X11R5/Xm/PushBG.h
+-edit.o: /usr/imports/include/X11R5/Xm/RowColumn.h
+-edit.o: /usr/imports/include/X11R5/Xm/SeparatoG.h
+-edit.o: /usr/imports/include/X11R5/Xm/Text.h
+-edit.o: /usr/imports/include/X11R5/Xm/VendorS.h
+-edit.o: /usr/imports/include/X11R5/Xm/VirtKeys.h
+-edit.o: /usr/imports/include/X11R5/Xm/Xm.h
+-edit.o: /usr/imports/include/X11R5/Xm/XmStrDefs.h /usr/include/floatingpoint.h
+-edit.o: /usr/include/math.h /usr/include/stddef.h /usr/include/stdio.h
+-edit.o: /usr/include/string.h /usr/include/strings.h /usr/include/sys/ieeefp.h
+-edit.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-edit.o: /usr/include/sys/types.h edit.c
+-mfile.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-mfile.o: ./include/eventdefs.h ./include/heap.h ./include/list.h
+-mfile.o: ./include/log.h ./include/mempool.h ./include/packet.h ./include/q.h
+-mfile.o: ./include/sim.h ./include/simx.h ./include/simx1.h
+-mfile.o: ./include/xm-info_w.h ./include/xm-main_w.h ./include/xm-meters.h
+-mfile.o: ./include/xm-mfile.h ./include/xm-network.h ./include/xm-util.h
+-mfile.o: /usr/imports/include/X11R5/X11/Composite.h
+-mfile.o: /usr/imports/include/X11R5/X11/Constraint.h
+-mfile.o: /usr/imports/include/X11R5/X11/Core.h
+-mfile.o: /usr/imports/include/X11R5/X11/Intrinsic.h
+-mfile.o: /usr/imports/include/X11R5/X11/Object.h
+-mfile.o: /usr/imports/include/X11R5/X11/RectObj.h
+-mfile.o: /usr/imports/include/X11R5/X11/Shell.h
+-mfile.o: /usr/imports/include/X11R5/X11/StringDefs.h
+-mfile.o: /usr/imports/include/X11R5/X11/X.h
+-mfile.o: /usr/imports/include/X11R5/X11/Xatom.h
+-mfile.o: /usr/imports/include/X11R5/X11/Xfuncproto.h
+-mfile.o: /usr/imports/include/X11R5/X11/Xlib.h
+-mfile.o: /usr/imports/include/X11R5/X11/Xosdefs.h
+-mfile.o: /usr/imports/include/X11R5/X11/Xresource.h
+-mfile.o: /usr/imports/include/X11R5/X11/Xutil.h
+-mfile.o: /usr/imports/include/X11R5/Xm/BulletinB.h
+-mfile.o: /usr/imports/include/X11R5/Xm/FileSB.h
+-mfile.o: /usr/imports/include/X11R5/Xm/Form.h
+-mfile.o: /usr/imports/include/X11R5/Xm/Label.h
+-mfile.o: /usr/imports/include/X11R5/Xm/MessageB.h
+-mfile.o: /usr/imports/include/X11R5/Xm/PushB.h
+-mfile.o: /usr/imports/include/X11R5/Xm/PushBG.h
+-mfile.o: /usr/imports/include/X11R5/Xm/SeparatoG.h
+-mfile.o: /usr/imports/include/X11R5/Xm/Separator.h
+-mfile.o: /usr/imports/include/X11R5/Xm/Text.h
+-mfile.o: /usr/imports/include/X11R5/Xm/VendorS.h
+-mfile.o: /usr/imports/include/X11R5/Xm/VirtKeys.h
+-mfile.o: /usr/imports/include/X11R5/Xm/Xm.h
+-mfile.o: /usr/imports/include/X11R5/Xm/XmStrDefs.h /usr/include/floatingpoint.h
+-mfile.o: /usr/include/math.h /usr/include/stddef.h /usr/include/stdio.h
+-mfile.o: /usr/include/string.h /usr/include/strings.h /usr/include/sys/ieeefp.h
+-mfile.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-mfile.o: /usr/include/sys/types.h /usr/include/unistd.h mfile.c
+-view.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-view.o: ./include/eventdefs.h ./include/heap.h ./include/list.h ./include/log.h
+-view.o: ./include/mempool.h ./include/packet.h ./include/q.h ./include/sim.h
+-view.o: ./include/simx.h ./include/simx1.h ./include/xm-comp_trans.h
+-view.o: ./include/xm-info_w.h ./include/xm-main_w.h ./include/xm-meters.h
+-view.o: ./include/xm-network.h ./include/xm-param_w.h ./include/xm-util.h
+-view.o: ./include/xm-view.h /usr/imports/include/X11R5/X11/Composite.h
+-view.o: /usr/imports/include/X11R5/X11/Constraint.h
+-view.o: /usr/imports/include/X11R5/X11/Core.h
+-view.o: /usr/imports/include/X11R5/X11/Intrinsic.h
+-view.o: /usr/imports/include/X11R5/X11/Object.h
+-view.o: /usr/imports/include/X11R5/X11/RectObj.h
+-view.o: /usr/imports/include/X11R5/X11/Shell.h
+-view.o: /usr/imports/include/X11R5/X11/StringDefs.h
+-view.o: /usr/imports/include/X11R5/X11/X.h
+-view.o: /usr/imports/include/X11R5/X11/Xatom.h
+-view.o: /usr/imports/include/X11R5/X11/Xfuncproto.h
+-view.o: /usr/imports/include/X11R5/X11/Xlib.h
+-view.o: /usr/imports/include/X11R5/X11/Xosdefs.h
+-view.o: /usr/imports/include/X11R5/X11/Xresource.h
+-view.o: /usr/imports/include/X11R5/X11/Xutil.h
+-view.o: /usr/imports/include/X11R5/Xm/BulletinB.h
+-view.o: /usr/imports/include/X11R5/Xm/Form.h
+-view.o: /usr/imports/include/X11R5/Xm/Label.h
+-view.o: /usr/imports/include/X11R5/Xm/PushB.h
+-view.o: /usr/imports/include/X11R5/Xm/PushBG.h
+-view.o: /usr/imports/include/X11R5/Xm/RowColumn.h
+-view.o: /usr/imports/include/X11R5/Xm/SeparatoG.h
+-view.o: /usr/imports/include/X11R5/Xm/Separator.h
+-view.o: /usr/imports/include/X11R5/Xm/Text.h
+-view.o: /usr/imports/include/X11R5/Xm/ToggleB.h
+-view.o: /usr/imports/include/X11R5/Xm/ToggleBG.h
+-view.o: /usr/imports/include/X11R5/Xm/VendorS.h
+-view.o: /usr/imports/include/X11R5/Xm/VirtKeys.h
+-view.o: /usr/imports/include/X11R5/Xm/Xm.h
+-view.o: /usr/imports/include/X11R5/Xm/XmStrDefs.h /usr/include/floatingpoint.h
+-view.o: /usr/include/math.h /usr/include/stddef.h /usr/include/stdio.h
+-view.o: /usr/include/string.h /usr/include/strings.h /usr/include/sys/ieeefp.h
+-view.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-view.o: /usr/include/sys/types.h view.c
+-options.o: ./include/component.h ./include/event.h ./include/eventdefs.h
+-options.o: ./include/heap.h ./include/list.h ./include/log.h
+-options.o: ./include/mempool.h ./include/packet.h ./include/q.h ./include/sim.h
+-options.o: ./include/simx.h ./include/simx1.h ./include/xm-main_w.h
+-options.o: ./include/xm-network.h ./include/xm-options.h ./include/xm-util.h
+-options.o: /usr/imports/include/X11R5/X11/Composite.h
+-options.o: /usr/imports/include/X11R5/X11/Constraint.h
+-options.o: /usr/imports/include/X11R5/X11/Core.h
+-options.o: /usr/imports/include/X11R5/X11/Intrinsic.h
+-options.o: /usr/imports/include/X11R5/X11/Object.h
+-options.o: /usr/imports/include/X11R5/X11/RectObj.h
+-options.o: /usr/imports/include/X11R5/X11/Shell.h
+-options.o: /usr/imports/include/X11R5/X11/StringDefs.h
+-options.o: /usr/imports/include/X11R5/X11/X.h
+-options.o: /usr/imports/include/X11R5/X11/Xatom.h
+-options.o: /usr/imports/include/X11R5/X11/Xfuncproto.h
+-options.o: /usr/imports/include/X11R5/X11/Xlib.h
+-options.o: /usr/imports/include/X11R5/X11/Xosdefs.h
+-options.o: /usr/imports/include/X11R5/X11/Xresource.h
+-options.o: /usr/imports/include/X11R5/X11/Xutil.h
+-options.o: /usr/imports/include/X11R5/Xm/BulletinB.h
+-options.o: /usr/imports/include/X11R5/Xm/CascadeBG.h
+-options.o: /usr/imports/include/X11R5/Xm/Form.h
+-options.o: /usr/imports/include/X11R5/Xm/Frame.h
+-options.o: /usr/imports/include/X11R5/Xm/Label.h
+-options.o: /usr/imports/include/X11R5/Xm/PushB.h
+-options.o: /usr/imports/include/X11R5/Xm/PushBG.h
+-options.o: /usr/imports/include/X11R5/Xm/RowColumn.h
+-options.o: /usr/imports/include/X11R5/Xm/SeparatoG.h
+-options.o: /usr/imports/include/X11R5/Xm/Text.h
+-options.o: /usr/imports/include/X11R5/Xm/TextF.h
+-options.o: /usr/imports/include/X11R5/Xm/ToggleBG.h
+-options.o: /usr/imports/include/X11R5/Xm/VendorS.h
+-options.o: /usr/imports/include/X11R5/Xm/VirtKeys.h
+-options.o: /usr/imports/include/X11R5/Xm/Xm.h
+-options.o: /usr/imports/include/X11R5/Xm/XmStrDefs.h
+-options.o: /usr/include/floatingpoint.h /usr/include/math.h
+-options.o: /usr/include/stddef.h /usr/include/stdio.h /usr/include/string.h
+-options.o: /usr/include/strings.h /usr/include/sys/ieeefp.h
+-options.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-options.o: /usr/include/sys/types.h options.c
+-info_w.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-info_w.o: ./include/eventdefs.h ./include/heap.h ./include/list.h
+-info_w.o: ./include/log.h ./include/mempool.h ./include/packet.h ./include/q.h
+-info_w.o: ./include/sim.h ./include/simx.h ./include/simx1.h
+-info_w.o: ./include/xm-comp_trans.h ./include/xm-info_w.h ./include/xm-main_w.h
+-info_w.o: ./include/xm-network.h ./include/xm-param_w.h ./include/xm-util.h
+-info_w.o: /usr/imports/include/X11R5/X11/Composite.h
+-info_w.o: /usr/imports/include/X11R5/X11/Constraint.h
+-info_w.o: /usr/imports/include/X11R5/X11/Core.h
+-info_w.o: /usr/imports/include/X11R5/X11/Intrinsic.h
+-info_w.o: /usr/imports/include/X11R5/X11/Object.h
+-info_w.o: /usr/imports/include/X11R5/X11/RectObj.h
+-info_w.o: /usr/imports/include/X11R5/X11/Shell.h
+-info_w.o: /usr/imports/include/X11R5/X11/StringDefs.h
+-info_w.o: /usr/imports/include/X11R5/X11/X.h
+-info_w.o: /usr/imports/include/X11R5/X11/Xatom.h
+-info_w.o: /usr/imports/include/X11R5/X11/Xfuncproto.h
+-info_w.o: /usr/imports/include/X11R5/X11/Xlib.h
+-info_w.o: /usr/imports/include/X11R5/X11/Xosdefs.h
+-info_w.o: /usr/imports/include/X11R5/X11/Xresource.h
+-info_w.o: /usr/imports/include/X11R5/X11/Xutil.h
+-info_w.o: /usr/imports/include/X11R5/Xm/BulletinB.h
+-info_w.o: /usr/imports/include/X11R5/Xm/Form.h
+-info_w.o: /usr/imports/include/X11R5/Xm/Frame.h
+-info_w.o: /usr/imports/include/X11R5/Xm/Label.h
+-info_w.o: /usr/imports/include/X11R5/Xm/LabelG.h
+-info_w.o: /usr/imports/include/X11R5/Xm/MessageB.h
+-info_w.o: /usr/imports/include/X11R5/Xm/PushB.h
+-info_w.o: /usr/imports/include/X11R5/Xm/RowColumn.h
+-info_w.o: /usr/imports/include/X11R5/Xm/SeparatoG.h
+-info_w.o: /usr/imports/include/X11R5/Xm/Text.h
+-info_w.o: /usr/imports/include/X11R5/Xm/TextF.h
+-info_w.o: /usr/imports/include/X11R5/Xm/ToggleB.h
+-info_w.o: /usr/imports/include/X11R5/Xm/VendorS.h
+-info_w.o: /usr/imports/include/X11R5/Xm/VirtKeys.h
+-info_w.o: /usr/imports/include/X11R5/Xm/Xm.h
+-info_w.o: /usr/imports/include/X11R5/Xm/XmStrDefs.h
+-info_w.o: /usr/include/floatingpoint.h /usr/include/math.h
+-info_w.o: /usr/include/stddef.h /usr/include/stdio.h /usr/include/string.h
+-info_w.o: /usr/include/strings.h /usr/include/sys/ieeefp.h
+-info_w.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-info_w.o: /usr/include/sys/types.h info_w.c
+-param_w.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-param_w.o: ./include/eventdefs.h ./include/heap.h ./include/list.h
+-param_w.o: ./include/log.h ./include/mempool.h ./include/packet.h ./include/q.h
+-param_w.o: ./include/sim.h ./include/simx.h ./include/simx1.h
+-param_w.o: ./include/xm-comp_trans.h ./include/xm-info_w.h
+-param_w.o: ./include/xm-main_w.h ./include/xm-meters.h ./include/xm-network.h
+-param_w.o: ./include/xm-param_w.h ./include/xm-util.h
+-param_w.o: /usr/imports/include/X11R5/X11/Composite.h
+-param_w.o: /usr/imports/include/X11R5/X11/Constraint.h
+-param_w.o: /usr/imports/include/X11R5/X11/Core.h
+-param_w.o: /usr/imports/include/X11R5/X11/Intrinsic.h
+-param_w.o: /usr/imports/include/X11R5/X11/Object.h
+-param_w.o: /usr/imports/include/X11R5/X11/RectObj.h
+-param_w.o: /usr/imports/include/X11R5/X11/Shell.h
+-param_w.o: /usr/imports/include/X11R5/X11/StringDefs.h
+-param_w.o: /usr/imports/include/X11R5/X11/X.h
+-param_w.o: /usr/imports/include/X11R5/X11/Xatom.h
+-param_w.o: /usr/imports/include/X11R5/X11/Xfuncproto.h
+-param_w.o: /usr/imports/include/X11R5/X11/Xlib.h
+-param_w.o: /usr/imports/include/X11R5/X11/Xosdefs.h
+-param_w.o: /usr/imports/include/X11R5/X11/Xresource.h
+-param_w.o: /usr/imports/include/X11R5/X11/Xutil.h
+-param_w.o: /usr/imports/include/X11R5/Xm/BulletinB.h
+-param_w.o: /usr/imports/include/X11R5/Xm/Form.h
+-param_w.o: /usr/imports/include/X11R5/Xm/Frame.h
+-param_w.o: /usr/imports/include/X11R5/Xm/Label.h
+-param_w.o: /usr/imports/include/X11R5/Xm/PushB.h
+-param_w.o: /usr/imports/include/X11R5/Xm/RowColumn.h
+-param_w.o: /usr/imports/include/X11R5/Xm/SeparatoG.h
+-param_w.o: /usr/imports/include/X11R5/Xm/Text.h
+-param_w.o: /usr/imports/include/X11R5/Xm/TextF.h
+-param_w.o: /usr/imports/include/X11R5/Xm/ToggleB.h
+-param_w.o: /usr/imports/include/X11R5/Xm/VendorS.h
+-param_w.o: /usr/imports/include/X11R5/Xm/VirtKeys.h
+-param_w.o: /usr/imports/include/X11R5/Xm/Xm.h
+-param_w.o: /usr/imports/include/X11R5/Xm/XmStrDefs.h
+-param_w.o: /usr/include/floatingpoint.h /usr/include/math.h
+-param_w.o: /usr/include/stddef.h /usr/include/stdio.h /usr/include/string.h
+-param_w.o: /usr/include/strings.h /usr/include/sys/ieeefp.h
+-param_w.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-param_w.o: /usr/include/sys/types.h param_w.c
+-comp_trans.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-comp_trans.o: ./include/eventdefs.h ./include/heap.h ./include/list.h
+-comp_trans.o: ./include/log.h ./include/mempool.h ./include/packet.h
+-comp_trans.o: ./include/q.h ./include/sim.h ./include/simx.h ./include/simx1.h
+-comp_trans.o: ./include/xm-comp_trans.h ./include/xm-icon.h
+-comp_trans.o: ./include/xm-info_w.h ./include/xm-lines.h ./include/xm-main_w.h
+-comp_trans.o: ./include/xm-network.h ./include/xm-param_w.h ./include/xm-util.h
+-comp_trans.o: /usr/imports/include/X11R5/X11/Composite.h
+-comp_trans.o: /usr/imports/include/X11R5/X11/Constraint.h
+-comp_trans.o: /usr/imports/include/X11R5/X11/Core.h
+-comp_trans.o: /usr/imports/include/X11R5/X11/Intrinsic.h
+-comp_trans.o: /usr/imports/include/X11R5/X11/Object.h
+-comp_trans.o: /usr/imports/include/X11R5/X11/RectObj.h
+-comp_trans.o: /usr/imports/include/X11R5/X11/Shell.h
+-comp_trans.o: /usr/imports/include/X11R5/X11/StringDefs.h
+-comp_trans.o: /usr/imports/include/X11R5/X11/X.h
+-comp_trans.o: /usr/imports/include/X11R5/X11/Xatom.h
+-comp_trans.o: /usr/imports/include/X11R5/X11/Xfuncproto.h
+-comp_trans.o: /usr/imports/include/X11R5/X11/Xlib.h
+-comp_trans.o: /usr/imports/include/X11R5/X11/Xosdefs.h
+-comp_trans.o: /usr/imports/include/X11R5/X11/Xresource.h
+-comp_trans.o: /usr/imports/include/X11R5/X11/Xutil.h
+-comp_trans.o: /usr/imports/include/X11R5/Xm/PushB.h
+-comp_trans.o: /usr/imports/include/X11R5/Xm/Text.h
+-comp_trans.o: /usr/imports/include/X11R5/Xm/VendorS.h
+-comp_trans.o: /usr/imports/include/X11R5/Xm/VirtKeys.h
+-comp_trans.o: /usr/imports/include/X11R5/Xm/Xm.h
+-comp_trans.o: /usr/imports/include/X11R5/Xm/XmStrDefs.h
+-comp_trans.o: /usr/include/floatingpoint.h /usr/include/math.h
+-comp_trans.o: /usr/include/stddef.h /usr/include/stdio.h /usr/include/string.h
+-comp_trans.o: /usr/include/strings.h /usr/include/sys/ieeefp.h
+-comp_trans.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-comp_trans.o: /usr/include/sys/types.h comp_trans.c
+-network.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-network.o: ./include/eventdefs.h ./include/heap.h ./include/list.h
+-network.o: ./include/log.h ./include/mempool.h ./include/packet.h ./include/q.h
+-network.o: ./include/sim.h ./include/simx.h ./include/simx1.h
+-network.o: ./include/xm-comp_trans.h ./include/xm-icon.h ./include/xm-info_w.h
+-network.o: ./include/xm-lines.h ./include/xm-main_w.h ./include/xm-meters.h
+-network.o: ./include/xm-network.h ./include/xm-param_w.h ./include/xm-util.h
+-network.o: /usr/imports/include/X11R5/X11/Composite.h
+-network.o: /usr/imports/include/X11R5/X11/Constraint.h
+-network.o: /usr/imports/include/X11R5/X11/Core.h
+-network.o: /usr/imports/include/X11R5/X11/Intrinsic.h
+-network.o: /usr/imports/include/X11R5/X11/Object.h
+-network.o: /usr/imports/include/X11R5/X11/RectObj.h
+-network.o: /usr/imports/include/X11R5/X11/Shell.h
+-network.o: /usr/imports/include/X11R5/X11/StringDefs.h
+-network.o: /usr/imports/include/X11R5/X11/X.h
+-network.o: /usr/imports/include/X11R5/X11/Xatom.h
+-network.o: /usr/imports/include/X11R5/X11/Xfuncproto.h
+-network.o: /usr/imports/include/X11R5/X11/Xlib.h
+-network.o: /usr/imports/include/X11R5/X11/Xosdefs.h
+-network.o: /usr/imports/include/X11R5/X11/Xresource.h
+-network.o: /usr/imports/include/X11R5/X11/Xutil.h
+-network.o: /usr/imports/include/X11R5/Xm/DrawingA.h
+-network.o: /usr/imports/include/X11R5/Xm/PushB.h
+-network.o: /usr/imports/include/X11R5/Xm/Text.h
+-network.o: /usr/imports/include/X11R5/Xm/VendorS.h
+-network.o: /usr/imports/include/X11R5/Xm/VirtKeys.h
+-network.o: /usr/imports/include/X11R5/Xm/Xm.h
+-network.o: /usr/imports/include/X11R5/Xm/XmStrDefs.h
+-network.o: /usr/include/floatingpoint.h /usr/include/math.h
+-network.o: /usr/include/stddef.h /usr/include/stdio.h /usr/include/string.h
+-network.o: /usr/include/strings.h /usr/include/sys/ieeefp.h
+-network.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-network.o: /usr/include/sys/types.h network.c
+-icon.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-icon.o: ./include/eventdefs.h ./include/heap.h ./include/list.h ./include/log.h
+-icon.o: ./include/mempool.h ./include/packet.h ./include/q.h ./include/sim.h
+-icon.o: ./include/simx.h ./include/simx1.h ./include/xm-icon.h
+-icon.o: ./include/xm-network.h ./include/xm-util.h
+-icon.o: /usr/imports/include/X11R5/X11/Composite.h
+-icon.o: /usr/imports/include/X11R5/X11/Constraint.h
+-icon.o: /usr/imports/include/X11R5/X11/Core.h
+-icon.o: /usr/imports/include/X11R5/X11/Intrinsic.h
+-icon.o: /usr/imports/include/X11R5/X11/Object.h
+-icon.o: /usr/imports/include/X11R5/X11/RectObj.h
+-icon.o: /usr/imports/include/X11R5/X11/Shell.h
+-icon.o: /usr/imports/include/X11R5/X11/StringDefs.h
+-icon.o: /usr/imports/include/X11R5/X11/X.h
+-icon.o: /usr/imports/include/X11R5/X11/Xatom.h
+-icon.o: /usr/imports/include/X11R5/X11/Xfuncproto.h
+-icon.o: /usr/imports/include/X11R5/X11/Xlib.h
+-icon.o: /usr/imports/include/X11R5/X11/Xosdefs.h
+-icon.o: /usr/imports/include/X11R5/X11/Xresource.h
+-icon.o: /usr/imports/include/X11R5/X11/Xutil.h
+-icon.o: /usr/imports/include/X11R5/Xm/Label.h
+-icon.o: /usr/imports/include/X11R5/Xm/VendorS.h
+-icon.o: /usr/imports/include/X11R5/Xm/VirtKeys.h
+-icon.o: /usr/imports/include/X11R5/Xm/Xm.h
+-icon.o: /usr/imports/include/X11R5/Xm/XmStrDefs.h /usr/include/floatingpoint.h
+-icon.o: /usr/include/math.h /usr/include/stddef.h /usr/include/stdio.h
+-icon.o: /usr/include/string.h /usr/include/strings.h /usr/include/sys/ieeefp.h
+-icon.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-icon.o: /usr/include/sys/types.h icon.c
+-meters.o: ./include/component.h ./include/event.h ./include/eventdefs.h
+-meters.o: ./include/heap.h ./include/list.h ./include/log.h ./include/mempool.h
+-meters.o: ./include/packet.h ./include/q.h ./include/sim.h ./include/simx.h
+-meters.o: ./include/simx1.h ./include/xm-comp_trans.h ./include/xm-info_w.h
+-meters.o: ./include/xm-main_w.h ./include/xm-meters.h ./include/xm-network.h
+-meters.o: ./include/xm-util.h ./include/xm-view.h ./include/xtables.h
+-meters.o: /usr/imports/include/X11R5/X11/Composite.h
+-meters.o: /usr/imports/include/X11R5/X11/Constraint.h
+-meters.o: /usr/imports/include/X11R5/X11/Core.h
+-meters.o: /usr/imports/include/X11R5/X11/Intrinsic.h
+-meters.o: /usr/imports/include/X11R5/X11/Object.h
+-meters.o: /usr/imports/include/X11R5/X11/RectObj.h
+-meters.o: /usr/imports/include/X11R5/X11/Shell.h
+-meters.o: /usr/imports/include/X11R5/X11/StringDefs.h
+-meters.o: /usr/imports/include/X11R5/X11/X.h
+-meters.o: /usr/imports/include/X11R5/X11/Xatom.h
+-meters.o: /usr/imports/include/X11R5/X11/Xfuncproto.h
+-meters.o: /usr/imports/include/X11R5/X11/Xlib.h
+-meters.o: /usr/imports/include/X11R5/X11/Xosdefs.h
+-meters.o: /usr/imports/include/X11R5/X11/Xresource.h
+-meters.o: /usr/imports/include/X11R5/X11/Xutil.h
+-meters.o: /usr/imports/include/X11R5/Xm/BulletinB.h
+-meters.o: /usr/imports/include/X11R5/Xm/CascadeB.h
+-meters.o: /usr/imports/include/X11R5/Xm/DrawingA.h
+-meters.o: /usr/imports/include/X11R5/Xm/Form.h
+-meters.o: /usr/imports/include/X11R5/Xm/Label.h
+-meters.o: /usr/imports/include/X11R5/Xm/LabelG.h
+-meters.o: /usr/imports/include/X11R5/Xm/PushB.h
+-meters.o: /usr/imports/include/X11R5/Xm/PushBG.h
+-meters.o: /usr/imports/include/X11R5/Xm/RowColumn.h
+-meters.o: /usr/imports/include/X11R5/Xm/SeparatoG.h
+-meters.o: /usr/imports/include/X11R5/Xm/Text.h
+-meters.o: /usr/imports/include/X11R5/Xm/TextF.h
+-meters.o: /usr/imports/include/X11R5/Xm/ToggleBG.h
+-meters.o: /usr/imports/include/X11R5/Xm/VendorS.h
+-meters.o: /usr/imports/include/X11R5/Xm/VirtKeys.h
+-meters.o: /usr/imports/include/X11R5/Xm/Xm.h
+-meters.o: /usr/imports/include/X11R5/Xm/XmStrDefs.h
+-meters.o: /usr/include/floatingpoint.h /usr/include/math.h
+-meters.o: /usr/include/stddef.h /usr/include/stdio.h /usr/include/string.h
+-meters.o: /usr/include/strings.h /usr/include/sys/ieeefp.h
+-meters.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-meters.o: /usr/include/sys/types.h meters.c
+-lines.o: ./include/component.h ./include/event.h ./include/eventdefs.h
+-lines.o: ./include/heap.h ./include/list.h ./include/log.h ./include/mempool.h
+-lines.o: ./include/packet.h ./include/q.h ./include/sim.h ./include/simx.h
+-lines.o: ./include/simx1.h ./include/xm-lines.h ./include/xm-network.h
+-lines.o: /usr/imports/include/X11R5/X11/Composite.h
+-lines.o: /usr/imports/include/X11R5/X11/Constraint.h
+-lines.o: /usr/imports/include/X11R5/X11/Core.h
+-lines.o: /usr/imports/include/X11R5/X11/Intrinsic.h
+-lines.o: /usr/imports/include/X11R5/X11/Object.h
+-lines.o: /usr/imports/include/X11R5/X11/RectObj.h
+-lines.o: /usr/imports/include/X11R5/X11/Shell.h
+-lines.o: /usr/imports/include/X11R5/X11/StringDefs.h
+-lines.o: /usr/imports/include/X11R5/X11/X.h
+-lines.o: /usr/imports/include/X11R5/X11/Xatom.h
+-lines.o: /usr/imports/include/X11R5/X11/Xfuncproto.h
+-lines.o: /usr/imports/include/X11R5/X11/Xlib.h
+-lines.o: /usr/imports/include/X11R5/X11/Xosdefs.h
+-lines.o: /usr/imports/include/X11R5/X11/Xresource.h
+-lines.o: /usr/imports/include/X11R5/X11/Xutil.h
+-lines.o: /usr/imports/include/X11R5/Xm/VendorS.h
+-lines.o: /usr/imports/include/X11R5/Xm/VirtKeys.h
+-lines.o: /usr/imports/include/X11R5/Xm/Xm.h
+-lines.o: /usr/imports/include/X11R5/Xm/XmStrDefs.h /usr/include/floatingpoint.h
+-lines.o: /usr/include/math.h /usr/include/stddef.h /usr/include/stdio.h
+-lines.o: /usr/include/string.h /usr/include/strings.h /usr/include/sys/ieeefp.h
+-lines.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-lines.o: /usr/include/sys/types.h lines.c
+-# DEPENDENCIES MUST END AT END OF FILE
+-# IF YOU PUT STUFF HERE IT WILL GO AWAY
+-# see make depend above

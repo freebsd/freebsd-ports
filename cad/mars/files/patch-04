@@ -1,0 +1,139 @@
+--- comps/Makefile.orig	Tue Mar 15 16:38:05 1994
++++ comps/Makefile	Mon Nov 18 21:12:26 1996
+@@ -37,135 +37,5 @@
+ 
+ # make dependencies
+ depend:	${SRCS}
+-	for i in ${SRCS}; do \
+-	    cc -M ${CFLAGS} $$i | sort | uniq |\
+-	    awk ' { if ($$1 != prev) \
+-		{ if (rec != "") print rec; rec = $$0; prev = $$1; } \
+-		else { if (length(rec $$2) > 78) { print rec; rec = $$0; } \
+-		else rec = rec " " $$2 } } \
+-		END { print rec } ' >> makedep; done
+-	echo '/^# DO NOT DELETE THIS LINE/+1,$$d' >eddep
+-	echo '$$r makedep' >>eddep
+-	echo 'w' >>eddep
+-	cp Makefile Makefile.bak
+-	ed - Makefile < eddep
+-	rm eddep makedep
+-	echo '# DEPENDENCIES MUST END AT END OF FILE' >> Makefile
+-	echo '# IF YOU PUT STUFF HERE IT WILL GO AWAY' >> Makefile
+-	echo '# see make depend above' >> Makefile
++	mkdep $(CFLAGS) ${SRCS}
+ 
+-# DO NOT DELETE THIS LINE
+-stopper.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-stopper.o: ./include/eventdefs.h ./include/heap.h ./include/list.h
+-stopper.o: ./include/log.h ./include/mempool.h ./include/packet.h
+-stopper.o: ./include/perf.h ./include/q.h ./include/sim.h ./include/simx.h
+-stopper.o: ./include/simx1.h ./include/stopper.h /usr/include/floatingpoint.h
+-stopper.o: /usr/include/math.h /usr/include/stdio.h /usr/include/strings.h
+-stopper.o: /usr/include/sys/ieeefp.h /usr/include/sys/stdtypes.h
+-stopper.o: /usr/include/sys/sysmacros.h /usr/include/sys/types.h stopper.c
+-perf.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-perf.o: ./include/eventdefs.h ./include/heap.h ./include/lcostfcn.h
+-perf.o: ./include/link.h ./include/list.h ./include/log.h ./include/mempool.h
+-perf.o: ./include/node.h ./include/packet.h ./include/perf.h ./include/q.h
+-perf.o: ./include/route.h ./include/sim.h ./include/simx.h ./include/simx1.h
+-perf.o: /usr/include/floatingpoint.h /usr/include/math.h /usr/include/stdio.h
+-perf.o: /usr/include/strings.h /usr/include/sys/ieeefp.h
+-perf.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-perf.o: /usr/include/sys/types.h perf.c
+-segal.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-segal.o: ./include/eventdefs.h ./include/heap.h ./include/lcostfcn.h
+-segal.o: ./include/link.h ./include/list.h ./include/log.h ./include/mempool.h
+-segal.o: ./include/node.h ./include/packet.h ./include/perf.h ./include/q.h
+-segal.o: ./include/route.h ./include/segal.h ./include/sim.h ./include/simx1.h
+-segal.o: /usr/include/floatingpoint.h /usr/include/math.h /usr/include/stdio.h
+-segal.o: /usr/include/strings.h /usr/include/sys/ieeefp.h
+-segal.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-segal.o: /usr/include/sys/types.h segal.c
+-spf.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-spf.o: ./include/eventdefs.h ./include/heap.h ./include/lcostfcn.h
+-spf.o: ./include/list.h ./include/log.h ./include/mempool.h ./include/node.h
+-spf.o: ./include/packet.h ./include/perf.h ./include/q.h ./include/route.h
+-spf.o: ./include/sim.h ./include/simx1.h ./include/spf.h
+-spf.o: /usr/include/floatingpoint.h /usr/include/math.h /usr/include/stdio.h
+-spf.o: /usr/include/strings.h /usr/include/sys/ieeefp.h
+-spf.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-spf.o: /usr/include/sys/types.h spf.c
+-exBF.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-exBF.o: ./include/eventdefs.h ./include/exBF.h ./include/heap.h
+-exBF.o: ./include/lcostfcn.h ./include/link.h ./include/list.h ./include/log.h
+-exBF.o: ./include/mempool.h ./include/node.h ./include/packet.h
+-exBF.o: ./include/perf.h ./include/q.h ./include/route.h ./include/sim.h
+-exBF.o: ./include/simx1.h /usr/include/floatingpoint.h /usr/include/math.h
+-exBF.o: /usr/include/stdio.h /usr/include/strings.h /usr/include/sys/ieeefp.h
+-exBF.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-exBF.o: /usr/include/sys/types.h exBF.c
+-exBF_ack.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-exBF_ack.o: ./include/eventdefs.h ./include/exBF_ack.h ./include/heap.h
+-exBF_ack.o: ./include/lcostfcn.h ./include/link.h ./include/list.h
+-exBF_ack.o: ./include/log.h ./include/mempool.h ./include/node.h
+-exBF_ack.o: ./include/packet.h ./include/perf.h ./include/q.h ./include/route.h
+-exBF_ack.o: ./include/sim.h ./include/simx1.h /usr/include/floatingpoint.h
+-exBF_ack.o: /usr/include/math.h /usr/include/stdio.h /usr/include/strings.h
+-exBF_ack.o: /usr/include/sys/ieeefp.h /usr/include/sys/stdtypes.h
+-exBF_ack.o: /usr/include/sys/sysmacros.h /usr/include/sys/types.h exBF_ack.c
+-link.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-link.o: ./include/eventdefs.h ./include/heap.h ./include/link.h
+-link.o: ./include/list.h ./include/log.h ./include/mempool.h ./include/packet.h
+-link.o: ./include/perf.h ./include/q.h ./include/sim.h ./include/simx1.h
+-link.o: /usr/include/floatingpoint.h /usr/include/math.h /usr/include/stdio.h
+-link.o: /usr/include/string.h /usr/include/strings.h /usr/include/sys/ieeefp.h
+-link.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-link.o: /usr/include/sys/types.h link.c
+-node.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-node.o: ./include/eventdefs.h ./include/heap.h ./include/lcostfcn.h
+-node.o: ./include/link.h ./include/list.h ./include/log.h ./include/mempool.h
+-node.o: ./include/node.h ./include/packet.h ./include/q.h ./include/route.h
+-node.o: ./include/sim.h ./include/simx1.h /usr/include/floatingpoint.h
+-node.o: /usr/include/math.h /usr/include/stdio.h /usr/include/strings.h
+-node.o: /usr/include/sys/ieeefp.h /usr/include/sys/stdtypes.h
+-node.o: /usr/include/sys/sysmacros.h /usr/include/sys/types.h node.c
+-ftp.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-ftp.o: ./include/eventdefs.h ./include/ftp.h ./include/heap.h ./include/list.h
+-ftp.o: ./include/log.h ./include/mempool.h ./include/packet.h ./include/perf.h
+-ftp.o: ./include/q.h ./include/sim.h ./include/simx1.h
+-ftp.o: /usr/include/floatingpoint.h /usr/include/math.h /usr/include/stdio.h
+-ftp.o: /usr/include/strings.h /usr/include/sys/ieeefp.h
+-ftp.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-ftp.o: /usr/include/sys/types.h ftp.c
+-telnet.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-telnet.o: ./include/eventdefs.h ./include/heap.h ./include/list.h
+-telnet.o: ./include/log.h ./include/mempool.h ./include/packet.h
+-telnet.o: ./include/perf.h ./include/q.h ./include/sim.h ./include/simx1.h
+-telnet.o: ./include/telnet.h /usr/include/floatingpoint.h /usr/include/math.h
+-telnet.o: /usr/include/stdio.h /usr/include/strings.h /usr/include/sys/ieeefp.h
+-telnet.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-telnet.o: /usr/include/sys/types.h telnet.c
+-simple_traffic.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-simple_traffic.o: ./include/eventdefs.h ./include/heap.h ./include/list.h
+-simple_traffic.o: ./include/log.h ./include/mempool.h ./include/packet.h
+-simple_traffic.o: ./include/perf.h ./include/q.h ./include/sim.h
+-simple_traffic.o: ./include/simple_traffic.h ./include/simx1.h
+-simple_traffic.o: /usr/include/floatingpoint.h /usr/include/math.h
+-simple_traffic.o: /usr/include/stdio.h /usr/include/strings.h
+-simple_traffic.o: /usr/include/sys/ieeefp.h /usr/include/sys/stdtypes.h
+-simple_traffic.o: /usr/include/sys/sysmacros.h /usr/include/sys/types.h
+-simple_traffic.o: simple_traffic.c
+-route.o: ./include/component.h ./include/event.h ./include/eventdefs.h
+-route.o: ./include/heap.h ./include/lcostfcn.h ./include/list.h ./include/log.h
+-route.o: ./include/mempool.h ./include/node.h ./include/packet.h ./include/q.h
+-route.o: ./include/route.h ./include/sim.h ./include/simx1.h
+-route.o: /usr/include/floatingpoint.h /usr/include/math.h /usr/include/stdio.h
+-route.o: /usr/include/strings.h /usr/include/sys/ieeefp.h
+-route.o: /usr/include/sys/stdtypes.h /usr/include/sys/sysmacros.h
+-route.o: /usr/include/sys/types.h route.c
+-lcostfcn.o: ./include/component.h ./include/comptypes.h ./include/event.h
+-lcostfcn.o: ./include/eventdefs.h ./include/heap.h ./include/lcostfcn.h
+-lcostfcn.o: ./include/list.h ./include/log.h ./include/mempool.h
+-lcostfcn.o: ./include/packet.h ./include/q.h ./include/sim.h ./include/simx.h
+-lcostfcn.o: ./include/simx1.h /usr/include/floatingpoint.h /usr/include/math.h
+-lcostfcn.o: /usr/include/stdio.h /usr/include/strings.h
+-lcostfcn.o: /usr/include/sys/ieeefp.h /usr/include/sys/stdtypes.h
+-lcostfcn.o: /usr/include/sys/sysmacros.h /usr/include/sys/types.h lcostfcn.c
+-# DEPENDENCIES MUST END AT END OF FILE
+-# IF YOU PUT STUFF HERE IT WILL GO AWAY
+-# see make depend above
