@@ -235,6 +235,7 @@
     SUBDIR += opengl-man
     SUBDIR += openrm
     SUBDIR += ophoto
+    SUBDIR += optipng
     SUBDIR += osg
     SUBDIR += osgedit
     SUBDIR += p5-Chart-PNGgraph

@@ -1,0 +1,7 @@
+OptiPNG is a PNG optimizer that recompresses the image files to a
+smaller size, without losing any information.
+
+WWW: http://www.cs.toronto.edu/~cosmin/pngtech/optipng/
+
+- Thomas Hurst
+ <freaky@aagh.net>
