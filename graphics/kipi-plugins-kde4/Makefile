@@ -45,6 +45,10 @@ CONFIGURE_ARGS+=--program-prefix=''
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
 .if !defined(WITHOUT_ACQUIREIMAGES)
 PLIST_SUB+=	ACQUIREIMAGES:=""
 SUBDIRS+=	acquireimages
