@@ -13,6 +13,7 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/constants.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/cursors.py
 lib/%%PYTHON_VERSION%%/site-packages/pygame/cursors.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pygame/display.so
+lib/%%PYTHON_VERSION%%/site-packages/pygame/draw.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/event.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/font.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/ignore.pth
@@ -28,6 +29,9 @@ lib/%%PYTHON_VERSION%%/site-packages/pygame/rect.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/rwobject.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/surface.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/surfarray.so
+lib/%%PYTHON_VERSION%%/site-packages/pygame/surflock.so
 lib/%%PYTHON_VERSION%%/site-packages/pygame/time.so
+lib/%%PYTHON_VERSION%%/site-packages/pygame/version.py
+lib/%%PYTHON_VERSION%%/site-packages/pygame/version.pyc
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/pygame
 @dirrm include/%%PYTHON_VERSION%%/pygame
