@@ -1,0 +1,45 @@
+--- build.properties.orig	Sat Sep 13 04:46:11 2003
++++ build.properties	Tue Feb 10 17:15:47 2004
+@@ -6,7 +6,7 @@
+ # gcc           - *nix
+ # macos         - MacOSX
+ #
+-platform=cygwin
++platform=gcc
+ 
+ #
+ # Target version of Colorer
+@@ -37,19 +37,19 @@
+ # Paths for the documentation generation process
+ #
+ doxygen=e:/programs/devel/doxygen/bin/doxygen.exe
+-docbook-dir=e:/programs/xml/docbook-xsl
+-fop-dir=e:/programs/xml/fop-0.20.5rc2
++docbook-dir=/usr/local/share/xsl/docbook
++fop-dir=/usr/local/share/fop
+ 
+ #
+ # Paths for the XSD2HRC working process
+ #
+-docbook-xsd=e:/programs/xml/docbook-xsd-1.0b1/docbook.xsd
++docbook-xsd=/usr/local/share/docbook-xsd/docbook.xsd
+ #
+-mathml-xsd=g:/install/devel/documentation/other/w3.org/REC/MathML/mathml2/mathml2.xsd
++mathml-xsd=/usr/local/share/mathml-xsd/mathml2.xsd
+ #
+ # directory with xhtml1-strict.xsd, xhtml1-transitional.xsd, xhtml1-frameset.xsd
+ #
+-xhtml-xsd-dir=g:/install/devel/documentation/other/w3.org/src
++xhtml-xsd-dir=/usr/local/share/xhtml1-xsd
+ 
+ 
+ #
+@@ -73,7 +73,7 @@
+ cygwin.makefile=-f makefile.cygwin
+ 
+ # GNU GCC Compiler (*nix)
+-gcc.make=make
++gcc.make=gmake
+ gcc.makefile=-f makefile.gcc
+ 
+ # GCC (macos)
