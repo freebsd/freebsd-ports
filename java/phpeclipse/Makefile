@@ -16,6 +16,8 @@ DISTNAME=	net.sourceforge.phpeclipse_${PORTVERSION}a
 MAINTAINER=	rtdean@cytherianage.net
 COMMENT=	PHP Eclipse adds PHP support to the Eclipse IDE Framework
 
+BROKEN=		fix me
+
 RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:${PORTSDIR}/java/eclipse
 
 NO_BUILD=	yes

@@ -16,6 +16,8 @@ DISTNAME=	phpeclipse.sql_${PORTVERSION}beta
 MAINTAINER=	rtdean@cytherianage.net
 COMMENT=	PHP Eclipse SQL Utility plugin for Eclipse IDE Framework
 
+BROKEN=		fix me
+
 RUN_DEPENDS+=	${LOCALBASE}/eclipse/plugins/net.sourceforge.phpeclipse/plugin.xml:${PORTSDIR}/java/phpeclipse
 
 NO_BUILD=	yes

@@ -16,6 +16,8 @@ DISTNAME=	net.sourceforge.phpeclipse.phphelp_${PORTVERSION}
 MAINTAINER=	rtdean@cytherianage.net
 COMMENT=	PHP Eclipse Help for the Eclipse IDE Framework
 
+BROKEN=		fix me
+
 RUN_DEPENDS=	${LOCALBASE}/eclipse/plugins/net.sourceforge.phpeclipse/plugin.xml:${PORTSDIR}/java/phpeclipse
 
 NO_BUILD=	yes
