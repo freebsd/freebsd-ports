@@ -1,6 +1,6 @@
---- Makefile.orig	Sat Mar  8 15:17:03 2003
-+++ Makefile	Wed Apr  2 03:07:35 2003
-@@ -14,7 +14,7 @@
+--- Makefile.orig	Thu May  8 13:16:35 2003
++++ Makefile	Thu May  8 13:17:36 2003
+@@ -14,10 +14,10 @@
  
  # build and installation paths
  DESTDIR =
@@ -8,9 +8,13 @@
 +PREFIX ?= /usr/local
  BIN = $(PREFIX)/bin
  SHARE = $(PREFIX)/share/hspell
- LIBEXEC = $(PREFIX)/lib/hspell
-@@ -42,8 +42,8 @@
- 	sed 's+^my @dictionaries=.*$$+my @dictionaries=("zcat $(SHARE)/wordlist.wgz|$(LIBEXEC)/wunzip|");+; s+my @likelyerror.*$$+my @likelyerror_dictionaries=("$(SHARE)/likelyerrors");+; s+@spellinghints_dictionaries=("spellinghints")+@spellinghints_dictionaries=("$(SHARE)/spellinghints")+' < hspell.pl > $@
+-LIBEXEC = $(PREFIX)/lib/hspell
++LIBEXEC = $(PREFIX)/libexec/hspell
+ MAN1 = $(PREFIX)/man/man1
+ 
+ 
+@@ -51,8 +51,8 @@
+ 	sed 's+^my @dictionaries=.*$$+my @dictionaries=("gzip -dc $(SHARE)/wordlist.wgz|$(LIBEXEC)/wunzip|");+; s+my @likelyerror.*$$+my @likelyerror_dictionaries=("$(SHARE)/likelyerrors");+; s+@spellinghints_dictionaries=("spellinghints")+@spellinghints_dictionaries=("$(SHARE)/spellinghints")+' < hspell.pl > $@
  	chmod 755 $@
  
 -CFLAGS=-O
