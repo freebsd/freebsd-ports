@@ -10758,6 +10758,7 @@ xorg-fonts-75dpi	ports/x11/xorg-fonts-75dpi
 xorg-fonts-cyrillic	ports/x11/xorg-fonts-cyrillic
 xorg-fonts-encodings	ports/x11/xorg-fonts-encodings
 xorg-fonts-miscbitmaps	ports/x11/xorg-fonts-miscbitmaps
+xorg-fonts-truetype	ports/x11/xorg-fonts-truetype
 xorg-libraries	ports/x11/xorg-libraries
 xorg-manpages	ports/x11/xorg-manpages
 xorg-server	ports/x11-servers/xorg-server
