@@ -34,6 +34,10 @@ SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.netams
 
