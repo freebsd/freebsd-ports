@@ -7,7 +7,7 @@
 
 PORTNAME=	exim
 PORTVERSION=	${EXIM_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/exim4/ \
 		http://www.exim.org/ftp/exim4/ \
@@ -97,8 +97,11 @@ DB_LIB_VERSION?=1
 #WITHOUT_MAILSTORE=	yes
 #WITHOUT_MBX=		yes
 #
-# Disable support for CDB-style lookups.
+# Define WITHOUT_CDB, WITHOUT_DSEARCH and WITHOUT_NIS to disable support for
+# CDB-style, directory-list and NIS lookups respectively.
 #WITHOUT_CDB=		yes
+#WITHOUT_DSEARCH=	yes
+#WITHOUT_NIS=		yes
 #
 # Disable support for the LMTP (RFC 2033 "SMTP over command pipe")
 # transport.
@@ -235,6 +238,14 @@ SEDLIST+=	-e 's,^\# SUPPORT_MBX=,SUPPORT_MBX=,'
 
 .if !defined(WITHOUT_CDB)
 SEDLIST+=	-e 's,^\# LOOKUP_CDB=,LOOKUP_CDB=,'
+.endif
+
+.if !defined(WITHOUT_DSEARCH)
+SEDLIST+=	-e 's,^\# LOOKUP_DSEARCH=,LOOKUP_DSEARCH=,'
+.endif
+
+.if !defined(WITHOUT_NIS)
+SEDLIST+=	-e 's,^\# LOOKUP_NIS=,LOOKUP_NIS=,'
 .endif
 
 .if !defined(WITHOUT_LMTP)
