@@ -3769,6 +3769,7 @@ ksig		ports/mail/ksig
 ksmp3play	ports/audio/ksmp3play
 kssh		ports/security/kssh
 ksubeditor	ports/multimedia/ksubeditor
+ktagebuch	ports/deskutils/ktagebuch
 ktextdecode	ports/converters/ktextdecode
 ktnef		ports/converters/ktnef
 ktritoc		ports/games/ktritoc
