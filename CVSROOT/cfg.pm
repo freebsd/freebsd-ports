@@ -19,8 +19,9 @@ use vars qw(
 	$FILE_PREFIX $IDHEADER $LAST_FILE @LOG_FILE_MAP $MAILADDRS $MAILBANNER
 	$MAILCMD $MAIL_BRANCH_HDR $MAIL_ON_DIR_CREATION $MAIL_TRANSFORM
 	$MINCVSVERSION $MAX_DIFF_SIZE $NO_DOS_LINEBREAKS $PID $PROG_CVS
-	$PROG_MV %TEMPLATE_HEADERS $TMPDIR $UNEXPAND_RCSID $WARN_HEADERS
+	$PROG_MV %TEMPLATE_HEADERS $TMPDIR $TZ $UNEXPAND_RCSID $WARN_HEADERS
 );
+use POSIX qw(tzset);
 
 my $CVSROOT = $ENV{'CVSROOT'} || die "Can't determine \$CVSROOT!";
 
@@ -55,6 +56,8 @@ $PROG_MV =	'/bin/mv';		# mv(1)
 $COMMITTER = $ENV{"LOGNAME"} || $ENV{'USER'} || getlogin
 		|| (getpwuid($<))[0] || sprintf("uid#%d",$<);
 
+# Time zone
+$TZ = undef;
 
 ###################
 ### commitcheck ###
@@ -278,6 +281,13 @@ sub add_cvsweb_entry {
 eval { require "$CVSROOT/CVSROOT/cfg_local.pm" }
     if -e "$CVSROOT/CVSROOT/cfg_local.pm";
 warn $@ if $@;
+
+if (defined $TZ) {
+	$ENV{'TZ'} = $TZ;
+} else {
+	delete $ENV{'TZ'};
+}
+tzset;
 
 1; # Perl requires all modules to return true.  Don't delete!!!!
 #end
