@@ -288,6 +288,7 @@
     SUBDIR += ruby-property
     SUBDIR += ruby-racc
     SUBDIR += ruby-racc-runtime
+    SUBDIR += ruby-rbison
     SUBDIR += ruby-runit
     SUBDIR += ruby-slang
     SUBDIR += ruby-strscan
