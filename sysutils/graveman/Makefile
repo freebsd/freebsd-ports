@@ -19,11 +19,9 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
-WANT_GNOME=	yes
-GNU_CONFIGURE=	yes
 USE_GNOME=	libglade2 intlhack gnomehack gnomeprefix
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 OPTIONS=	MP3 "MP3 Support" off \
 		OGG "OGG Support" off
