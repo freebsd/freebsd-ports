@@ -1,7 +1,14 @@
+share/doc/leafnode/COPYING
+share/doc/leafnode/INSTALL
+share/doc/leafnode/README
 lib/leafnode/config.example
-man/man8/fetch.8.gz
+man/man8/fetch-news.8.gz
 man/man8/leafnode.8.gz
 man/man8/texpire.8.gz
-sbin/fetch
+man/man8/checkgroups.8.gz
+sbin/fetch-news
 sbin/leafnode
 sbin/texpire
+sbin/checkgroups
+@dirrm share/doc/leafnode
+@unexec rm -rf /var/run/news
