@@ -54,6 +54,10 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc	\
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
+.if defined(BATCH) || defined(PACKAGE_BUILDING)
+CONFIGURE_ARGS+=	--enable-all
+.endif
+
 .if defined(WITH_POSTFIX)
 CONFIGURE_ARGS+=	--enable-postfix
 MTA?=		postfix
