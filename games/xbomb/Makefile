@@ -21,6 +21,9 @@ post-install:
 	@${TOUCH} ${PREFIX}/lib/X11/xbomb/xbomb3.hi
 	@${TOUCH} ${PREFIX}/lib/X11/xbomb/xbomb4.hi
 	@${TOUCH} ${PREFIX}/lib/X11/xbomb/xbomb6.hi
-	@${CHMOD} 666 ${PREFIX}/lib/X11/xbomb/xbomb?.hi
+	@${CHOWN} root:games ${PREFIX}/lib/X11/xbomb/xbomb?.hi
+	@${CHMOD} 664 ${PREFIX}/lib/X11/xbomb/xbomb?.hi
+	@${CHOWN} root:games ${PREFIX}/bin/xbomb
+	@${CHMOD} 2755 ${PREFIX}/bin/xbomb
 
 .include <bsd.port.mk>
