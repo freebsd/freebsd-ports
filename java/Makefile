@@ -44,6 +44,7 @@
     SUBDIR += java-cup
     SUBDIR += java-getopt
     SUBDIR += java-tutorial
+    SUBDIR += java3d
     SUBDIR += javamail
     SUBDIR += javavmwrapper
     SUBDIR += javel
