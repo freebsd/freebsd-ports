@@ -1,12 +1,12 @@
 # New ports collection makefile for:    PySol
-# Version required:     1.00
+# Version required:     1.01
 # Date created:         11 September 1998
 # Whom:                 Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/09/11 09:10:39 tg Exp $
 #
 
-DISTNAME=       pysol-1.00
+DISTNAME=       pysol-1.01
 CATEGORIES=	games
 MASTER_SITES=	http://wildsau.idv.uni-linz.ac.at/mfx/download/
 
