@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	quick-lounge-applet
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.1.1
 CATEGORIES=	misc gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.0
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.1
 DIST_SUBDIR=	gnome2
 
 MAINTAINER=	marcus@FreeBSD.org
@@ -19,14 +18,9 @@ COMMENT=	Applet to orginize your preferred applications on the GNOME Panel
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomepanel
+USE_GNOME=	gnomeprefix gnomehack intlhack lthack gnomepanel
 USE_LIBTOOL_VER=13
-INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-post-patch:
-	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
-		"s/-D.*_DISABLE_DEPRECATED//g"
 
 .include <bsd.port.mk>
