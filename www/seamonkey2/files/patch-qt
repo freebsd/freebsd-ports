@@ -1,19 +1,21 @@
---- configure.orig	Tue Jan 18 04:16:15 2000
-+++ configure	Fri Jan 28 23:28:19 2000
-@@ -5403,7 +5403,7 @@
+--- configure.orig	Thu Apr 13 19:18:25 2000
++++ configure	Thu Apr 20 09:07:57 2000
+@@ -5618,7 +5618,7 @@
  	echo $ac_n "checking for Qt insanity""... $ac_c" 1>&6
- echo "configure:5405: checking for Qt insanity" >&5
+ echo "configure:5620: checking for Qt insanity" >&5
  
 -    QT_CFLAGS="-I${QTDIR}/include/qt"
 +    QT_CFLAGS="-I${QTDIR}/include/X11/qt"
      QT_LIBS="-L/usr/X11R6/lib -L${QTDIR}/lib -lqt -lXext -lX11"
  
      # Check whether --with-static-qt or --without-static-qt was given.
-@@ -6683,6 +6683,7 @@
-   echo "$ac_t""no" 1>&6
- fi
- 
-+CPPFLAGS="${CPPFLAGS} ${X_CFLAGS}"
+@@ -7108,6 +7108,9 @@
+ case "$target_os" in
+ os2*)
+     LIBS=
++    ;;
++freebsd*)
++    CPPFLAGS="${CPPFLAGS} ${X_CFLAGS}"
+     ;;
+ esac
  for ac_hdr in sys/byteorder.h compat.h getopt.h
- do
- ac_safe=`echo "$ac_hdr" | sed 'y%./+-%__p_%'`

@@ -1,7 +1,11 @@
 bin/mozilla
 lib/mozilla/CvtURL
+lib/mozilla/DocStream
 lib/mozilla/DumpColors
 lib/mozilla/FilesTest
+lib/mozilla/HelloWorld
+lib/mozilla/INSTALL.xmlterm
+lib/mozilla/OutTestData/doctype.xif
 lib/mozilla/OutTestData/entityxif.out
 lib/mozilla/OutTestData/entityxif.xif
 lib/mozilla/OutTestData/htmltable.html
@@ -14,6 +18,8 @@ lib/mozilla/OutTestData/plainwrap.out
 lib/mozilla/OutTestData/simple.html
 lib/mozilla/OutTestData/simplecopy.out
 lib/mozilla/OutTestData/simplefmt.out
+lib/mozilla/OutTestData/xifdthtml.out
+lib/mozilla/OutTestData/xifdtplain.out
 lib/mozilla/OutTestData/xifstuff.out
 lib/mozilla/OutTestData/xifstuff.xif
 lib/mozilla/PrimitiveTest
@@ -38,6 +44,7 @@ lib/mozilla/TestLineBreak
 lib/mozilla/TestMSGCompose
 lib/mozilla/TestObserverService
 lib/mozilla/TestOutSinks
+lib/mozilla/TestOutSinks.pl
 lib/mozilla/TestOutput
 lib/mozilla/TestPipes
 lib/mozilla/TestProtocols
@@ -96,10 +103,12 @@ lib/mozilla/chrome/bookmarks/content/default/bm-props.js
 lib/mozilla/chrome/bookmarks/content/default/bm-props.xul
 lib/mozilla/chrome/bookmarks/content/default/bookmarks.js
 lib/mozilla/chrome/bookmarks/content/default/bookmarks.xul
+lib/mozilla/chrome/bookmarks/content/default/bookmarksDD.js
 lib/mozilla/chrome/bookmarks/locale/en-US/bm-props.dtd
 lib/mozilla/chrome/bookmarks/locale/en-US/bookmark.properties
 lib/mozilla/chrome/bookmarks/locale/en-US/bookmarks.dtd
 lib/mozilla/chrome/bookmarks/skin/default/bm-panel.css
+lib/mozilla/chrome/bookmarks/skin/default/bm-props.css
 lib/mozilla/chrome/bookmarks/skin/default/bookmark-folder-closed.gif
 lib/mozilla/chrome/bookmarks/skin/default/bookmark-folder-open.gif
 lib/mozilla/chrome/bookmarks/skin/default/bookmark-item.gif
@@ -122,12 +131,20 @@ lib/mozilla/chrome/editor/content/default/EdAEHTMLAttributes.js
 lib/mozilla/chrome/editor/content/default/EdAEJSEAttributes.js
 lib/mozilla/chrome/editor/content/default/EdAdvancedEdit.js
 lib/mozilla/chrome/editor/content/default/EdAdvancedEdit.xul
+lib/mozilla/chrome/editor/content/default/EdColorProps.js
+lib/mozilla/chrome/editor/content/default/EdColorProps.xul
 lib/mozilla/chrome/editor/content/default/EdDialogCommon.js
 lib/mozilla/chrome/editor/content/default/EdDialogOverlay.xul
 lib/mozilla/chrome/editor/content/default/EdDictionary.js
 lib/mozilla/chrome/editor/content/default/EdDictionary.xul
 lib/mozilla/chrome/editor/content/default/EdHLineProps.js
 lib/mozilla/chrome/editor/content/default/EdHLineProps.xul
+lib/mozilla/chrome/editor/content/default/EdImageMap.js
+lib/mozilla/chrome/editor/content/default/EdImageMap.xul
+lib/mozilla/chrome/editor/content/default/EdImageMapHotSpot.js
+lib/mozilla/chrome/editor/content/default/EdImageMapHotSpot.xul
+lib/mozilla/chrome/editor/content/default/EdImageMapPage.html
+lib/mozilla/chrome/editor/content/default/EdImageMapShapes.js
 lib/mozilla/chrome/editor/content/default/EdImageProps.js
 lib/mozilla/chrome/editor/content/default/EdImageProps.xul
 lib/mozilla/chrome/editor/content/default/EdInsSrc.js
@@ -149,10 +166,12 @@ lib/mozilla/chrome/editor/content/default/EdSpellCheck.xul
 lib/mozilla/chrome/editor/content/default/EdTableProps.js
 lib/mozilla/chrome/editor/content/default/EdTableProps.xul
 lib/mozilla/chrome/editor/content/default/EditorCommands.js
+lib/mozilla/chrome/editor/content/default/EditorCommandsDebug.js
 lib/mozilla/chrome/editor/content/default/EditorContent.css
 lib/mozilla/chrome/editor/content/default/EditorInitPage.html
 lib/mozilla/chrome/editor/content/default/EditorInitPagePlain.html
 lib/mozilla/chrome/editor/content/default/EditorOverride.css
+lib/mozilla/chrome/editor/content/default/EditorParagraphMarks.css
 lib/mozilla/chrome/editor/content/default/EditorStyles1.css
 lib/mozilla/chrome/editor/content/default/TextEditorAppShell.xul
 lib/mozilla/chrome/editor/content/default/editor.xul
@@ -166,12 +185,13 @@ lib/mozilla/chrome/editor/content/default/sb-file-panel.js
 lib/mozilla/chrome/editor/content/default/sb-file-panel.xul
 lib/mozilla/chrome/editor/content/default/sidebar-editor.rdf
 lib/mozilla/chrome/editor/content/default/sidebar-editor.xul
-lib/mozilla/chrome/editor/content/default/viewsource.js
-lib/mozilla/chrome/editor/content/default/viewsource.xul
 lib/mozilla/chrome/editor/locale/en-US/EdAdvancedEdit.dtd
 lib/mozilla/chrome/editor/locale/en-US/EdDialogOverlay.dtd
 lib/mozilla/chrome/editor/locale/en-US/EdNamedAnchorProperties.dtd
+lib/mozilla/chrome/editor/locale/en-US/EditorColorProperties.dtd
 lib/mozilla/chrome/editor/locale/en-US/EditorHLineProperties.dtd
+lib/mozilla/chrome/editor/locale/en-US/EditorImageMap.dtd
+lib/mozilla/chrome/editor/locale/en-US/EditorImageMapHotSpot.dtd
 lib/mozilla/chrome/editor/locale/en-US/EditorImageProperties.dtd
 lib/mozilla/chrome/editor/locale/en-US/EditorInsertSource.dtd
 lib/mozilla/chrome/editor/locale/en-US/EditorInsertTable.dtd
@@ -188,8 +208,21 @@ lib/mozilla/chrome/editor/locale/en-US/sidebar-editor-rdf.dtd
 lib/mozilla/chrome/editor/locale/en-US/sidebar-editor.dtd
 lib/mozilla/chrome/editor/locale/en-US/viewSource.dtd
 lib/mozilla/chrome/editor/skin/default/EdImageMap.css
+lib/mozilla/chrome/editor/skin/default/EdImageMapPage.css
 lib/mozilla/chrome/editor/skin/default/EditorDialog.css
+lib/mozilla/chrome/editor/skin/default/EditorToolbars.css
 lib/mozilla/chrome/editor/skin/default/editor.css
+lib/mozilla/chrome/editor/skin/default/images/Map_Copy.gif
+lib/mozilla/chrome/editor/skin/default/images/Map_Cut.gif
+lib/mozilla/chrome/editor/skin/default/images/Map_Paste.gif
+lib/mozilla/chrome/editor/skin/default/images/Map_checker.gif
+lib/mozilla/chrome/editor/skin/default/images/Map_circleTool.gif
+lib/mozilla/chrome/editor/skin/default/images/Map_contrast.gif
+lib/mozilla/chrome/editor/skin/default/images/Map_pointerTool.gif
+lib/mozilla/chrome/editor/skin/default/images/Map_polygonTool.gif
+lib/mozilla/chrome/editor/skin/default/images/Map_rectangleTool.gif
+lib/mozilla/chrome/editor/skin/default/images/Map_zoomIn.gif
+lib/mozilla/chrome/editor/skin/default/images/Map_zoomOut.gif
 lib/mozilla/chrome/editor/skin/default/images/align.gif
 lib/mozilla/chrome/editor/skin/default/images/anchor-in-doc.gif
 lib/mozilla/chrome/editor/skin/default/images/anchor-white.gif
@@ -197,16 +230,13 @@ lib/mozilla/chrome/editor/skin/default/images/anchor.gif
 lib/mozilla/chrome/editor/skin/default/images/bold.gif
 lib/mozilla/chrome/editor/skin/default/images/bullets.gif
 lib/mozilla/chrome/editor/skin/default/images/center.gif
-lib/mozilla/chrome/editor/skin/default/images/checker.gif
-lib/mozilla/chrome/editor/skin/default/images/circletool.gif
 lib/mozilla/chrome/editor/skin/default/images/color.gif
-lib/mozilla/chrome/editor/skin/default/images/contrast.gif
-lib/mozilla/chrome/editor/skin/default/images/copy.gif
-lib/mozilla/chrome/editor/skin/default/images/cut.gif
 lib/mozilla/chrome/editor/skin/default/images/dec-font-size.gif
+lib/mozilla/chrome/editor/skin/default/images/div.gif
 lib/mozilla/chrome/editor/skin/default/images/find.gif
 lib/mozilla/chrome/editor/skin/default/images/hline-white.gif
 lib/mozilla/chrome/editor/skin/default/images/hline.gif
+lib/mozilla/chrome/editor/skin/default/images/hover-teal.gif
 lib/mozilla/chrome/editor/skin/default/images/image-white.gif
 lib/mozilla/chrome/editor/skin/default/images/image.gif
 lib/mozilla/chrome/editor/skin/default/images/img-align-bottom.gif
@@ -226,25 +256,20 @@ lib/mozilla/chrome/editor/skin/default/images/numbers.gif
 lib/mozilla/chrome/editor/skin/default/images/object-popup.gif
 lib/mozilla/chrome/editor/skin/default/images/openfile.gif
 lib/mozilla/chrome/editor/skin/default/images/outdent.gif
-lib/mozilla/chrome/editor/skin/default/images/paste.gif
-lib/mozilla/chrome/editor/skin/default/images/pointertool.gif
-lib/mozilla/chrome/editor/skin/default/images/polygontool.gif
 lib/mozilla/chrome/editor/skin/default/images/preview.gif
 lib/mozilla/chrome/editor/skin/default/images/print.gif
 lib/mozilla/chrome/editor/skin/default/images/publish.gif
-lib/mozilla/chrome/editor/skin/default/images/rectangletool.gif
-lib/mozilla/chrome/editor/skin/default/images/redo.gif
 lib/mozilla/chrome/editor/skin/default/images/right.gif
 lib/mozilla/chrome/editor/skin/default/images/savefile.gif
 lib/mozilla/chrome/editor/skin/default/images/savemod.gif
+lib/mozilla/chrome/editor/skin/default/images/span.gif
 lib/mozilla/chrome/editor/skin/default/images/spell.gif
 lib/mozilla/chrome/editor/skin/default/images/table-white.gif
 lib/mozilla/chrome/editor/skin/default/images/table.gif
 lib/mozilla/chrome/editor/skin/default/images/underline.gif
-lib/mozilla/chrome/editor/skin/default/images/undo.gif
-lib/mozilla/chrome/editor/skin/default/images/zoomin.gif
-lib/mozilla/chrome/editor/skin/default/images/zoomout.gif
+lib/mozilla/chrome/global/content/default/PSMTaskMenu.xul
 lib/mozilla/chrome/global/content/default/about.html
+lib/mozilla/chrome/global/content/default/about.xul
 lib/mozilla/chrome/global/content/default/browserBindings.xul
 lib/mozilla/chrome/global/content/default/charsetDetectorsOverlay.js
 lib/mozilla/chrome/global/content/default/charsetDetectorsOverlay.xul
@@ -252,17 +277,26 @@ lib/mozilla/chrome/global/content/default/charsetOverlay.js
 lib/mozilla/chrome/global/content/default/charsetOverlay.xul
 lib/mozilla/chrome/global/content/default/commonDialog.js
 lib/mozilla/chrome/global/content/default/commonDialog.xul
+lib/mozilla/chrome/global/content/default/console.js
+lib/mozilla/chrome/global/content/default/console.xul
+lib/mozilla/chrome/global/content/default/credits.html
+lib/mozilla/chrome/global/content/default/dialogBindings.xml
 lib/mozilla/chrome/global/content/default/dialogOverlay.js
 lib/mozilla/chrome/global/content/default/dialogOverlay.xul
 lib/mozilla/chrome/global/content/default/downloadProgress.js
 lib/mozilla/chrome/global/content/default/downloadProgress.xul
 lib/mozilla/chrome/global/content/default/editorBindings.xul
+lib/mozilla/chrome/global/content/default/filepicker.js
+lib/mozilla/chrome/global/content/default/filepicker.xul
 lib/mozilla/chrome/global/content/default/finddialog.js
 lib/mozilla/chrome/global/content/default/finddialog.xul
+lib/mozilla/chrome/global/content/default/globalBindings.xml
 lib/mozilla/chrome/global/content/default/globalOverlay.js
 lib/mozilla/chrome/global/content/default/globalOverlay.xul
 lib/mozilla/chrome/global/content/default/hiddenWindow.xul
 lib/mozilla/chrome/global/content/default/inputBindings.xul
+lib/mozilla/chrome/global/content/default/logo.gif
+lib/mozilla/chrome/global/content/default/mozilla.html
 lib/mozilla/chrome/global/content/default/platformBrowserBindings.xul
 lib/mozilla/chrome/global/content/default/platformDialogOverlay.xul
 lib/mozilla/chrome/global/content/default/platformEditorBindings.xul
@@ -272,8 +306,10 @@ lib/mozilla/chrome/global/content/default/platformTextAreaBindings.xul
 lib/mozilla/chrome/global/content/default/selectDialog.js
 lib/mozilla/chrome/global/content/default/selectDialog.xul
 lib/mozilla/chrome/global/content/default/strres.js
+lib/mozilla/chrome/global/content/default/taskbarOverlay.xul
 lib/mozilla/chrome/global/content/default/tasksOverlay.js
 lib/mozilla/chrome/global/content/default/tasksOverlay.xul
+lib/mozilla/chrome/global/content/default/tasksOverlay.xul.bak
 lib/mozilla/chrome/global/content/default/textAreaBindings.xul
 lib/mozilla/chrome/global/content/default/treePopups.js
 lib/mozilla/chrome/global/content/default/unknownContent.js
@@ -283,16 +319,24 @@ lib/mozilla/chrome/global/content/default/wizardHandlerSet.js
 lib/mozilla/chrome/global/content/default/wizardManager.js
 lib/mozilla/chrome/global/content/default/wizardOverlay.js
 lib/mozilla/chrome/global/content/default/wizardOverlay.xul
+lib/mozilla/chrome/global/locale/en-US/PSMTaskMenu.dtd
+lib/mozilla/chrome/global/locale/en-US/about.dtd
 lib/mozilla/chrome/global/locale/en-US/appstrings.properties
+lib/mozilla/chrome/global/locale/en-US/brand.dtd
+lib/mozilla/chrome/global/locale/en-US/brand.properties
 lib/mozilla/chrome/global/locale/en-US/charsetDetectorsOverlay.dtd
 lib/mozilla/chrome/global/locale/en-US/charsetOverlay.dtd
 lib/mozilla/chrome/global/locale/en-US/commonDialog.dtd
+lib/mozilla/chrome/global/locale/en-US/console.dtd
 lib/mozilla/chrome/global/locale/en-US/dialogOverlay.dtd
 lib/mozilla/chrome/global/locale/en-US/downloadProgress.dtd
+lib/mozilla/chrome/global/locale/en-US/downloadProgress.properties
+lib/mozilla/chrome/global/locale/en-US/filepicker.properties
 lib/mozilla/chrome/global/locale/en-US/finddialog.dtd
 lib/mozilla/chrome/global/locale/en-US/globalOverlay.dtd
 lib/mozilla/chrome/global/locale/en-US/platformDialogOverlay.dtd
 lib/mozilla/chrome/global/locale/en-US/platformGlobalOverlay.dtd
+lib/mozilla/chrome/global/locale/en-US/taskbarOverlay.dtd
 lib/mozilla/chrome/global/locale/en-US/tasksOverlay.dtd
 lib/mozilla/chrome/global/locale/en-US/unknownContent.dtd
 lib/mozilla/chrome/global/locale/en-US/unknownContent.properties
@@ -301,6 +345,8 @@ lib/mozilla/chrome/global/locale/en-US/wizardOverlay.dtd
 lib/mozilla/chrome/global/skin/default/alert-icon.gif
 lib/mozilla/chrome/global/skin/default/animthrob.gif
 lib/mozilla/chrome/global/skin/default/animthrob_single.gif
+lib/mozilla/chrome/global/skin/default/blank.gif
+lib/mozilla/chrome/global/skin/default/button.css
 lib/mozilla/chrome/global/skin/default/button28-bg-active.gif
 lib/mozilla/chrome/global/skin/default/button28-bg-disabled.gif
 lib/mozilla/chrome/global/skin/default/button28-bg-hover.gif
@@ -309,8 +355,20 @@ lib/mozilla/chrome/global/skin/default/button32-bg-active.gif
 lib/mozilla/chrome/global/skin/default/button32-bg-disabled.gif
 lib/mozilla/chrome/global/skin/default/button32-bg-hover.gif
 lib/mozilla/chrome/global/skin/default/button32-bg.gif
+lib/mozilla/chrome/global/skin/default/check-check-disabled.gif
+lib/mozilla/chrome/global/skin/default/check-check.gif
+lib/mozilla/chrome/global/skin/default/check-radio-disabled.gif
+lib/mozilla/chrome/global/skin/default/check-radio.gif
+lib/mozilla/chrome/global/skin/default/checkbox.css
+lib/mozilla/chrome/global/skin/default/closedtwisty-selected.gif
 lib/mozilla/chrome/global/skin/default/closedtwisty.gif
+lib/mozilla/chrome/global/skin/default/colors.css
+lib/mozilla/chrome/global/skin/default/commonDialog.css
+lib/mozilla/chrome/global/skin/default/dialogOverlay.css
+lib/mozilla/chrome/global/skin/default/dir-closed.gif
+lib/mozilla/chrome/global/skin/default/dir-open.gif
 lib/mozilla/chrome/global/skin/default/error-icon.gif
+lib/mozilla/chrome/global/skin/default/filepicker.css
 lib/mozilla/chrome/global/skin/default/global.css
 lib/mozilla/chrome/global/skin/default/gray-bottomleft.gif
 lib/mozilla/chrome/global/skin/default/gray-bottomright.gif
@@ -328,6 +386,8 @@ lib/mozilla/chrome/global/skin/default/menu-arrow.gif
 lib/mozilla/chrome/global/skin/default/menu-check-disabled.gif
 lib/mozilla/chrome/global/skin/default/menu-check-hover.gif
 lib/mozilla/chrome/global/skin/default/menu-check.gif
+lib/mozilla/chrome/global/skin/default/menubutton.css
+lib/mozilla/chrome/global/skin/default/menulist.css
 lib/mozilla/chrome/global/skin/default/message-icon.gif
 lib/mozilla/chrome/global/skin/default/moreCols.gif
 lib/mozilla/chrome/global/skin/default/moreCols_dis.gif
@@ -337,11 +397,15 @@ lib/mozilla/chrome/global/skin/default/n-box.gif
 lib/mozilla/chrome/global/skin/default/navbar-bg-begincap.gif
 lib/mozilla/chrome/global/skin/default/navbar-bg.gif
 lib/mozilla/chrome/global/skin/default/navbar-endcap.gif
+lib/mozilla/chrome/global/skin/default/opentwisty-selected.gif
 lib/mozilla/chrome/global/skin/default/opentwisty.gif
 lib/mozilla/chrome/global/skin/default/otherbutton28-bg-active.gif
 lib/mozilla/chrome/global/skin/default/otherbutton28-bg-hover.gif
 lib/mozilla/chrome/global/skin/default/print.gif
+lib/mozilla/chrome/global/skin/default/progressmeter-busy.gif
 lib/mozilla/chrome/global/skin/default/question-icon.gif
+lib/mozilla/chrome/global/skin/default/radio.css
+lib/mozilla/chrome/global/skin/default/return-disabled.gif
 lib/mozilla/chrome/global/skin/default/return.gif
 lib/mozilla/chrome/global/skin/default/scroll-down-disabled.gif
 lib/mozilla/chrome/global/skin/default/scroll-down-hover.gif
@@ -361,8 +425,15 @@ lib/mozilla/chrome/global/skin/default/scroll-thumb-vert.gif
 lib/mozilla/chrome/global/skin/default/scroll-up-disabled.gif
 lib/mozilla/chrome/global/skin/default/scroll-up-hover.gif
 lib/mozilla/chrome/global/skin/default/scroll-up.gif
+lib/mozilla/chrome/global/skin/default/scrollbars.css
 lib/mozilla/chrome/global/skin/default/search.gif
+lib/mozilla/chrome/global/skin/default/seltab-leftedge.gif
+lib/mozilla/chrome/global/skin/default/seltab-rightedge.gif
+lib/mozilla/chrome/global/skin/default/sortAscending.gif
+lib/mozilla/chrome/global/skin/default/sortDescending.gif
 lib/mozilla/chrome/global/skin/default/stop.gif
+lib/mozilla/chrome/global/skin/default/tab-leftedge.gif
+lib/mozilla/chrome/global/skin/default/tab-rightedge.gif
 lib/mozilla/chrome/global/skin/default/taskbar-addressbook.gif
 lib/mozilla/chrome/global/skin/default/taskbar-composer.gif
 lib/mozilla/chrome/global/skin/default/taskbar-mail.gif
@@ -372,9 +443,15 @@ lib/mozilla/chrome/global/skin/default/taskbar-tab-hover.gif
 lib/mozilla/chrome/global/skin/default/taskbar-tab-minimized.gif
 lib/mozilla/chrome/global/skin/default/taskbar-tab.gif
 lib/mozilla/chrome/global/skin/default/tasksOverlay.css
+lib/mozilla/chrome/global/skin/default/textfield.css
 lib/mozilla/chrome/global/skin/default/toolbar-begincap.gif
+lib/mozilla/chrome/global/skin/default/toolbar-dropdown-hover.gif
 lib/mozilla/chrome/global/skin/default/toolbar-dropdown.gif
 lib/mozilla/chrome/global/skin/default/toolbar-endcap.gif
+lib/mozilla/chrome/global/skin/default/toolbar-menu-arrow-disabled.gif
+lib/mozilla/chrome/global/skin/default/toolbar-menu-arrow-hover.gif
+lib/mozilla/chrome/global/skin/default/toolbar-menu-arrow.gif
+lib/mozilla/chrome/global/skin/default/tree.css
 lib/mozilla/chrome/global/skin/default/wizardOverlay.css
 lib/mozilla/chrome/history/content/default/history-test.js
 lib/mozilla/chrome/history/content/default/history-test.xul
@@ -382,6 +459,8 @@ lib/mozilla/chrome/history/content/default/history.js
 lib/mozilla/chrome/history/content/default/history.xul
 lib/mozilla/chrome/history/locale/en-US/history.dtd
 lib/mozilla/chrome/history/skin/default/history.css
+lib/mozilla/chrome/htmlBindings.xml
+lib/mozilla/chrome/layout/locale/en-US/HtmlForm.properties
 lib/mozilla/chrome/messenger/content/default/AccountManager.js
 lib/mozilla/chrome/messenger/content/default/AccountManager.xul
 lib/mozilla/chrome/messenger/content/default/AccountWizard.js
@@ -393,17 +472,30 @@ lib/mozilla/chrome/messenger/content/default/FilterListDialog.xul
 lib/mozilla/chrome/messenger/content/default/SearchDialog.js
 lib/mozilla/chrome/messenger/content/default/SearchDialog.xul
 lib/mozilla/chrome/messenger/content/default/SearchOptions.xul
+lib/mozilla/chrome/messenger/content/default/SmtpServerEdit.js
+lib/mozilla/chrome/messenger/content/default/SmtpServerEdit.xul
+lib/mozilla/chrome/messenger/content/default/SmtpServerList.js
+lib/mozilla/chrome/messenger/content/default/SmtpServerList.xul
+lib/mozilla/chrome/messenger/content/default/accountUtils.js
 lib/mozilla/chrome/messenger/content/default/am-advanced.xul
 lib/mozilla/chrome/messenger/content/default/am-copies.js
 lib/mozilla/chrome/messenger/content/default/am-copies.xul
+lib/mozilla/chrome/messenger/content/default/am-identity-advanced.js
+lib/mozilla/chrome/messenger/content/default/am-identity-advanced.xul
+lib/mozilla/chrome/messenger/content/default/am-imap-advanced.js
+lib/mozilla/chrome/messenger/content/default/am-imap-advanced.xul
 lib/mozilla/chrome/messenger/content/default/am-main.xul
 lib/mozilla/chrome/messenger/content/default/am-server-top.xul
 lib/mozilla/chrome/messenger/content/default/am-server.js
 lib/mozilla/chrome/messenger/content/default/am-server.xul
+lib/mozilla/chrome/messenger/content/default/am-serverwithnoidentities.js
+lib/mozilla/chrome/messenger/content/default/am-serverwithnoidentities.xul
+lib/mozilla/chrome/messenger/content/default/am-smtp.js
 lib/mozilla/chrome/messenger/content/default/am-smtp.xul
 lib/mozilla/chrome/messenger/content/default/attach.js
 lib/mozilla/chrome/messenger/content/default/aw-accname.js
 lib/mozilla/chrome/messenger/content/default/aw-accname.xul
+lib/mozilla/chrome/messenger/content/default/aw-accounttype.js
 lib/mozilla/chrome/messenger/content/default/aw-accounttype.xul
 lib/mozilla/chrome/messenger/content/default/aw-done.js
 lib/mozilla/chrome/messenger/content/default/aw-done.xul
@@ -411,6 +503,7 @@ lib/mozilla/chrome/messenger/content/default/aw-identity.js
 lib/mozilla/chrome/messenger/content/default/aw-identity.xul
 lib/mozilla/chrome/messenger/content/default/aw-login.js
 lib/mozilla/chrome/messenger/content/default/aw-login.xul
+lib/mozilla/chrome/messenger/content/default/aw-newsserver.xul
 lib/mozilla/chrome/messenger/content/default/aw-overlay.xul
 lib/mozilla/chrome/messenger/content/default/aw-server.js
 lib/mozilla/chrome/messenger/content/default/aw-server.xul
@@ -418,19 +511,32 @@ lib/mozilla/chrome/messenger/content/default/commandglue.js
 lib/mozilla/chrome/messenger/content/default/custreceipt.xul
 lib/mozilla/chrome/messenger/content/default/downloadheaders.js
 lib/mozilla/chrome/messenger/content/default/downloadheaders.xul
+lib/mozilla/chrome/messenger/content/default/fieldMapExport.js
+lib/mozilla/chrome/messenger/content/default/fieldMapExport.xul
+lib/mozilla/chrome/messenger/content/default/fieldMapImport.js
+lib/mozilla/chrome/messenger/content/default/fieldMapImport.xul
 lib/mozilla/chrome/messenger/content/default/folderPane.xul
+lib/mozilla/chrome/messenger/content/default/importDialog.js
+lib/mozilla/chrome/messenger/content/default/importDialog.xul
+lib/mozilla/chrome/messenger/content/default/importProgress.js
+lib/mozilla/chrome/messenger/content/default/importProgress.xul
+lib/mozilla/chrome/messenger/content/default/ispUtils.js
 lib/mozilla/chrome/messenger/content/default/mailContextMenus.js
 lib/mozilla/chrome/messenger/content/default/messenger.xul
 lib/mozilla/chrome/messenger/content/default/messengerdnd.js
 lib/mozilla/chrome/messenger/content/default/mime.js
 lib/mozilla/chrome/messenger/content/default/msgFolderPickerOverlay.js
 lib/mozilla/chrome/messenger/content/default/msgFolderPickerOverlay.xul
+lib/mozilla/chrome/messenger/content/default/msgHdrViewAddresses.js
 lib/mozilla/chrome/messenger/content/default/msgHdrViewOverlay.js
 lib/mozilla/chrome/messenger/content/default/msgHdrViewOverlay.xul
 lib/mozilla/chrome/messenger/content/default/msgMail3PaneWindow.js
+lib/mozilla/chrome/messenger/content/default/msgPrintEngine.js
+lib/mozilla/chrome/messenger/content/default/msgPrintEngine.xul
 lib/mozilla/chrome/messenger/content/default/msgViewNavigation.js
 lib/mozilla/chrome/messenger/content/default/newFolderNameDialog.js
 lib/mozilla/chrome/messenger/content/default/newFolderNameDialog.xul
+lib/mozilla/chrome/messenger/content/default/platformMailnewsOverlay.xul
 lib/mozilla/chrome/messenger/content/default/pref-diskspace.xul
 lib/mozilla/chrome/messenger/content/default/pref-mailnews.js
 lib/mozilla/chrome/messenger/content/default/pref-mailnews.xul
@@ -440,6 +546,10 @@ lib/mozilla/chrome/messenger/content/default/renameFolderNameDialog.xul
 lib/mozilla/chrome/messenger/content/default/shareglue.js
 lib/mozilla/chrome/messenger/content/default/sidebar-messenger.rdf
 lib/mozilla/chrome/messenger/content/default/sidebar-messenger.xul
+lib/mozilla/chrome/messenger/content/default/smtpEditOverlay.js
+lib/mozilla/chrome/messenger/content/default/smtpEditOverlay.xul
+lib/mozilla/chrome/messenger/content/default/subscribe.js
+lib/mozilla/chrome/messenger/content/default/subscribe.xul
 lib/mozilla/chrome/messenger/content/default/subscribeDialog.xul
 lib/mozilla/chrome/messenger/content/default/threadPane.xul
 lib/mozilla/chrome/messenger/content/default/widgetglue.js
@@ -449,23 +559,29 @@ lib/mozilla/chrome/messenger/locale/en-US/FilterEditor.dtd
 lib/mozilla/chrome/messenger/locale/en-US/FilterListDialog.dtd
 lib/mozilla/chrome/messenger/locale/en-US/SearchDialog.dtd
 lib/mozilla/chrome/messenger/locale/en-US/SearchOptions.dtd
+lib/mozilla/chrome/messenger/locale/en-US/SmtpServerList.dtd
 lib/mozilla/chrome/messenger/locale/en-US/am-advanced.dtd
 lib/mozilla/chrome/messenger/locale/en-US/am-copies.dtd
+lib/mozilla/chrome/messenger/locale/en-US/am-identity-advanced.dtd
+lib/mozilla/chrome/messenger/locale/en-US/am-imap-advanced.dtd
 lib/mozilla/chrome/messenger/locale/en-US/am-main.dtd
 lib/mozilla/chrome/messenger/locale/en-US/am-server-top.dtd
+lib/mozilla/chrome/messenger/locale/en-US/am-serverwithnoidentities.dtd
 lib/mozilla/chrome/messenger/locale/en-US/aw-accname.dtd
 lib/mozilla/chrome/messenger/locale/en-US/aw-accounttype.dtd
 lib/mozilla/chrome/messenger/locale/en-US/aw-done.dtd
 lib/mozilla/chrome/messenger/locale/en-US/aw-email.dtd
-lib/mozilla/chrome/messenger/locale/en-US/aw-fullname.dtd
 lib/mozilla/chrome/messenger/locale/en-US/aw-identity.dtd
 lib/mozilla/chrome/messenger/locale/en-US/aw-login.dtd
 lib/mozilla/chrome/messenger/locale/en-US/aw-mailtype.dtd
 lib/mozilla/chrome/messenger/locale/en-US/aw-server.dtd
 lib/mozilla/chrome/messenger/locale/en-US/custreceipt.dtd
 lib/mozilla/chrome/messenger/locale/en-US/downloadheaders.dtd
+lib/mozilla/chrome/messenger/locale/en-US/fieldMapImport.dtd
 lib/mozilla/chrome/messenger/locale/en-US/folderpane.dtd
 lib/mozilla/chrome/messenger/locale/en-US/imapMsgs.properties
+lib/mozilla/chrome/messenger/locale/en-US/importDialog.dtd
+lib/mozilla/chrome/messenger/locale/en-US/importMsgs.properties
 lib/mozilla/chrome/messenger/locale/en-US/localMsgs.properties
 lib/mozilla/chrome/messenger/locale/en-US/messenger.dtd
 lib/mozilla/chrome/messenger/locale/en-US/messenger.properties
@@ -482,17 +598,22 @@ lib/mozilla/chrome/messenger/locale/en-US/pref-winsetting.dtd
 lib/mozilla/chrome/messenger/locale/en-US/prefs.properties
 lib/mozilla/chrome/messenger/locale/en-US/sidebar-messenger-rdf.dtd
 lib/mozilla/chrome/messenger/locale/en-US/sidebar-messenger.dtd
+lib/mozilla/chrome/messenger/locale/en-US/smtpEditOverlay.dtd
+lib/mozilla/chrome/messenger/locale/en-US/subscribe.dtd
 lib/mozilla/chrome/messenger/locale/en-US/subscribeDialog.dtd
+lib/mozilla/chrome/messenger/locale/en-US/textImportMsgs.properties
 lib/mozilla/chrome/messenger/locale/en-US/threadpane.dtd
 lib/mozilla/chrome/messenger/locale/en-US/vcard.properties
 lib/mozilla/chrome/messenger/skin/default/AccountManager.css
-lib/mozilla/chrome/messenger/skin/default/Folder.gif
-lib/mozilla/chrome/messenger/skin/default/addcard.gif
+lib/mozilla/chrome/messenger/skin/default/addtoab.gif
 lib/mozilla/chrome/messenger/skin/default/attach.gif
 lib/mozilla/chrome/messenger/skin/default/check.gif
 lib/mozilla/chrome/messenger/skin/default/dot.gif
+lib/mozilla/chrome/messenger/skin/default/fieldMapImport.css
+lib/mozilla/chrome/messenger/skin/default/file.gif
 lib/mozilla/chrome/messenger/skin/default/flagcol.gif
 lib/mozilla/chrome/messenger/skin/default/flaggedmail.gif
+lib/mozilla/chrome/messenger/skin/default/folder-closed.gif
 lib/mozilla/chrome/messenger/skin/default/folder-draft-open.gif
 lib/mozilla/chrome/messenger/skin/default/folder-draft-share-open.gif
 lib/mozilla/chrome/messenger/skin/default/folder-draft-share.gif
@@ -506,6 +627,7 @@ lib/mozilla/chrome/messenger/skin/default/folder-inbox-share-open.gif
 lib/mozilla/chrome/messenger/skin/default/folder-inbox-share.gif
 lib/mozilla/chrome/messenger/skin/default/folder-inbox.gif
 lib/mozilla/chrome/messenger/skin/default/folder-mailserver.gif
+lib/mozilla/chrome/messenger/skin/default/folder-new-closed.gif
 lib/mozilla/chrome/messenger/skin/default/folder-new-open.gif
 lib/mozilla/chrome/messenger/skin/default/folder-new.gif
 lib/mozilla/chrome/messenger/skin/default/folder-newsgroup-new.gif
@@ -536,9 +658,14 @@ lib/mozilla/chrome/messenger/skin/default/getmsg.gif
 lib/mozilla/chrome/messenger/skin/default/inbox.gif
 lib/mozilla/chrome/messenger/skin/default/less.gif
 lib/mozilla/chrome/messenger/skin/default/local-mailhost.gif
-lib/mozilla/chrome/messenger/skin/default/mail-message.gif
 lib/mozilla/chrome/messenger/skin/default/mailfolder.gif
 lib/mozilla/chrome/messenger/skin/default/mailheader.css
+lib/mozilla/chrome/messenger/skin/default/message-mail-attach.gif
+lib/mozilla/chrome/messenger/skin/default/message-mail-imapdelete.gif
+lib/mozilla/chrome/messenger/skin/default/message-mail-new.gif
+lib/mozilla/chrome/messenger/skin/default/message-mail.gif
+lib/mozilla/chrome/messenger/skin/default/message-news-new.gif
+lib/mozilla/chrome/messenger/skin/default/message-news.gif
 lib/mozilla/chrome/messenger/skin/default/messenger.css
 lib/mozilla/chrome/messenger/skin/default/more.gif
 lib/mozilla/chrome/messenger/skin/default/msgHdrViewOverlay.css
@@ -551,10 +678,15 @@ lib/mozilla/chrome/messenger/skin/default/readcol.gif
 lib/mozilla/chrome/messenger/skin/default/readmail.gif
 lib/mozilla/chrome/messenger/skin/default/reply.gif
 lib/mozilla/chrome/messenger/skin/default/replyall.gif
+lib/mozilla/chrome/messenger/skin/default/server-local-new.gif
+lib/mozilla/chrome/messenger/skin/default/server-local.gif
+lib/mozilla/chrome/messenger/skin/default/server-mail-new.gif
+lib/mozilla/chrome/messenger/skin/default/server-mail.gif
 lib/mozilla/chrome/messenger/skin/default/server-news-lock.gif
+lib/mozilla/chrome/messenger/skin/default/server-news-new.gif
 lib/mozilla/chrome/messenger/skin/default/server-news.gif
+lib/mozilla/chrome/messenger/skin/default/server-remote-lock.gif
 lib/mozilla/chrome/messenger/skin/default/server-remote.gif
-lib/mozilla/chrome/messenger/skin/default/server.gif
 lib/mozilla/chrome/messenger/skin/default/sick.gif
 lib/mozilla/chrome/messenger/skin/default/smile.gif
 lib/mozilla/chrome/messenger/skin/default/subscribe.css
@@ -573,11 +705,14 @@ lib/mozilla/chrome/messengercompose/content/default/MsgComposeCommands.js
 lib/mozilla/chrome/messengercompose/content/default/addressAutoComplete.js
 lib/mozilla/chrome/messengercompose/content/default/addressingWidgetOverlay.js
 lib/mozilla/chrome/messengercompose/content/default/addressingWidgetOverlay.xul
+lib/mozilla/chrome/messengercompose/content/default/askSendFormat.js
+lib/mozilla/chrome/messengercompose/content/default/askSendFormat.xul
 lib/mozilla/chrome/messengercompose/content/default/messengercompose.xul
 lib/mozilla/chrome/messengercompose/content/default/pref-formatting.xul
 lib/mozilla/chrome/messengercompose/content/default/pref-messages.xul
 lib/mozilla/chrome/messengercompose/locale/en-US/MsgAttachPage.dtd
 lib/mozilla/chrome/messengercompose/locale/en-US/addressingWidgetOverlay.dtd
+lib/mozilla/chrome/messengercompose/locale/en-US/askSendFormat.dtd
 lib/mozilla/chrome/messengercompose/locale/en-US/composeMsgs.properties
 lib/mozilla/chrome/messengercompose/locale/en-US/messengercompose.dtd
 lib/mozilla/chrome/messengercompose/locale/en-US/pref-formatting.dtd
@@ -590,10 +725,13 @@ lib/mozilla/chrome/messengercompose/skin/default/save.gif
 lib/mozilla/chrome/messengercompose/skin/default/send.gif
 lib/mozilla/chrome/messengercompose/skin/default/spelling.gif
 lib/mozilla/chrome/messengercompose/skin/default/stop.gif
+lib/mozilla/chrome/navigator/content/default/NavSecurityOverlay.xul
+lib/mozilla/chrome/navigator/content/default/NavSecurityUI.js
 lib/mozilla/chrome/navigator/content/default/NetSupportConfirmCheckYN.xul
 lib/mozilla/chrome/navigator/content/default/NetSupportConfirmYN.xul
 lib/mozilla/chrome/navigator/content/default/navigator.js
 lib/mozilla/chrome/navigator/content/default/navigator.xul
+lib/mozilla/chrome/navigator/content/default/navigatorDD.js
 lib/mozilla/chrome/navigator/content/default/navigatorOverlay.xul
 lib/mozilla/chrome/navigator/content/default/nsContextMenu.js
 lib/mozilla/chrome/navigator/content/default/openLocation.js
@@ -603,15 +741,21 @@ lib/mozilla/chrome/navigator/content/default/viewSource.xul
 lib/mozilla/chrome/navigator/content/default/viewsource.js
 lib/mozilla/chrome/navigator/locale/en-US/NetSupportConfirmCheckYN.dtd
 lib/mozilla/chrome/navigator/locale/en-US/navigator.dtd
+lib/mozilla/chrome/navigator/locale/en-US/navigator.properties
 lib/mozilla/chrome/navigator/locale/en-US/openLocation.dtd
+lib/mozilla/chrome/navigator/locale/en-US/openLocation.properties
+lib/mozilla/chrome/navigator/locale/en-US/security.properties
 lib/mozilla/chrome/navigator/locale/en-US/viewSource.dtd
+lib/mozilla/chrome/navigator/skin/default/NavSecurityOverlay.css
 lib/mozilla/chrome/navigator/skin/default/alertl.gif
 lib/mozilla/chrome/navigator/skin/default/back.gif
+lib/mozilla/chrome/navigator/skin/default/broken.gif
 lib/mozilla/chrome/navigator/skin/default/errorl.gif
 lib/mozilla/chrome/navigator/skin/default/forward.gif
 lib/mozilla/chrome/navigator/skin/default/home.gif
 lib/mozilla/chrome/navigator/skin/default/location-hover.gif
 lib/mozilla/chrome/navigator/skin/default/location.gif
+lib/mozilla/chrome/navigator/skin/default/lock.gif
 lib/mozilla/chrome/navigator/skin/default/messagel.gif
 lib/mozilla/chrome/navigator/skin/default/mynetscape.gif
 lib/mozilla/chrome/navigator/skin/default/n-box-persbar.gif
@@ -621,6 +765,8 @@ lib/mozilla/chrome/navigator/skin/default/questionl.gif
 lib/mozilla/chrome/navigator/skin/default/reload.gif
 lib/mozilla/chrome/navigator/skin/default/search.gif
 lib/mozilla/chrome/navigator/skin/default/stop.gif
+lib/mozilla/chrome/navigator/skin/default/unlock.gif
+lib/mozilla/chrome/platformHTMLBindings.xml
 lib/mozilla/chrome/pref/content/default/PrefsWindow.js
 lib/mozilla/chrome/pref/content/default/fontScalingOverlay.xul
 lib/mozilla/chrome/pref/content/default/pref-advanced.xul
@@ -628,6 +774,8 @@ lib/mozilla/chrome/pref/content/default/pref-appearance.xul
 lib/mozilla/chrome/pref/content/default/pref-applications.xul
 lib/mozilla/chrome/pref/content/default/pref-cache.js
 lib/mozilla/chrome/pref/content/default/pref-cache.xul
+lib/mozilla/chrome/pref/content/default/pref-charset.js
+lib/mozilla/chrome/pref/content/default/pref-charset.xul
 lib/mozilla/chrome/pref/content/default/pref-colors.js
 lib/mozilla/chrome/pref/content/default/pref-colors.xul
 lib/mozilla/chrome/pref/content/default/pref-composer.js
@@ -635,9 +783,11 @@ lib/mozilla/chrome/pref/content/default/pref-composer.xul
 lib/mozilla/chrome/pref/content/default/pref-cookies.xul
 lib/mozilla/chrome/pref/content/default/pref-debug.xul
 lib/mozilla/chrome/pref/content/default/pref-download.xul
+lib/mozilla/chrome/pref/content/default/pref-editing.xul
 lib/mozilla/chrome/pref/content/default/pref-fonts.js
 lib/mozilla/chrome/pref/content/default/pref-fonts.xul
 lib/mozilla/chrome/pref/content/default/pref-languages.xul
+lib/mozilla/chrome/pref/content/default/pref-mousewheel.js
 lib/mozilla/chrome/pref/content/default/pref-mousewheel.xul
 lib/mozilla/chrome/pref/content/default/pref-navigator.js
 lib/mozilla/chrome/pref/content/default/pref-navigator.xul
@@ -661,6 +811,7 @@ lib/mozilla/chrome/pref/locale/en-US/pref-advanced.dtd
 lib/mozilla/chrome/pref/locale/en-US/pref-appearance.dtd
 lib/mozilla/chrome/pref/locale/en-US/pref-applications.dtd
 lib/mozilla/chrome/pref/locale/en-US/pref-cache.dtd
+lib/mozilla/chrome/pref/locale/en-US/pref-charset.dtd
 lib/mozilla/chrome/pref/locale/en-US/pref-colors.dtd
 lib/mozilla/chrome/pref/locale/en-US/pref-composer.dtd
 lib/mozilla/chrome/pref/locale/en-US/pref-cookies.dtd
@@ -684,6 +835,8 @@ lib/mozilla/chrome/pref/locale/en-US/preftree.dtd
 lib/mozilla/chrome/pref/locale/en-US/prefutilities.properties
 lib/mozilla/chrome/pref/skin/default/pref.css
 lib/mozilla/chrome/pref/skin/default/preftree.css
+lib/mozilla/chrome/profile/content/default/activation.xul
+lib/mozilla/chrome/profile/content/default/activationFrame.xul
 lib/mozilla/chrome/profile/content/default/confirmMigration.js
 lib/mozilla/chrome/profile/content/default/confirmMigration.xul
 lib/mozilla/chrome/profile/content/default/createProfileWizard.js
@@ -700,9 +853,11 @@ lib/mozilla/chrome/profile/content/default/profileMigrationProgress.js
 lib/mozilla/chrome/profile/content/default/profileMigrationProgress.xul
 lib/mozilla/chrome/profile/content/default/profileSelection.js
 lib/mozilla/chrome/profile/content/default/profileSelection.xul
+lib/mozilla/chrome/profile/locale/en-US/activation.dtd
 lib/mozilla/chrome/profile/locale/en-US/confirmMigration.dtd
 lib/mozilla/chrome/profile/locale/en-US/createProfileWizard.dtd
 lib/mozilla/chrome/profile/locale/en-US/createProfileWizard.properties
+lib/mozilla/chrome/profile/locale/en-US/migration.properties
 lib/mozilla/chrome/profile/locale/en-US/newProfile1_1.dtd
 lib/mozilla/chrome/profile/locale/en-US/newProfile1_2.dtd
 lib/mozilla/chrome/profile/locale/en-US/newProfile1_2.properties
@@ -743,12 +898,16 @@ lib/mozilla/chrome/search/locale/en-US/findresults.dtd
 lib/mozilla/chrome/search/locale/en-US/internet.dtd
 lib/mozilla/chrome/search/locale/en-US/internetresults.dtd
 lib/mozilla/chrome/search/locale/en-US/search-panel.dtd
+lib/mozilla/chrome/search/locale/en-US/search-panel.properties
 lib/mozilla/chrome/search/locale/en-US/search.dtd
+lib/mozilla/chrome/search/skin/default/category.gif
 lib/mozilla/chrome/search/skin/default/findresults.css
 lib/mozilla/chrome/search/skin/default/icons.css
 lib/mozilla/chrome/search/skin/default/internet.css
 lib/mozilla/chrome/search/skin/default/internetresults.css
+lib/mozilla/chrome/search/skin/default/result.gif
 lib/mozilla/chrome/search/skin/default/search.css
+lib/mozilla/chrome/security/locale/en-US/security.properties
 lib/mozilla/chrome/sidebar/content/default/customize-panel.js
 lib/mozilla/chrome/sidebar/content/default/customize-panel.xul
 lib/mozilla/chrome/sidebar/content/default/customize.js
@@ -756,16 +915,12 @@ lib/mozilla/chrome/sidebar/content/default/customize.xul
 lib/mozilla/chrome/sidebar/content/default/local-panels.rdf
 lib/mozilla/chrome/sidebar/content/default/preview.js
 lib/mozilla/chrome/sidebar/content/default/preview.xul
-lib/mozilla/chrome/sidebar/content/default/remote-panels.rdf
 lib/mozilla/chrome/sidebar/content/default/sidebarOverlay.js
 lib/mozilla/chrome/sidebar/content/default/sidebarOverlay.xul
-lib/mozilla/chrome/sidebar/locale/en-US/customize-panel.dtd
 lib/mozilla/chrome/sidebar/locale/en-US/customize.dtd
+lib/mozilla/chrome/sidebar/locale/en-US/local-panels.dtd
 lib/mozilla/chrome/sidebar/locale/en-US/preview.dtd
-lib/mozilla/chrome/sidebar/locale/en-US/sidebar-rdf.dtd
-lib/mozilla/chrome/sidebar/locale/en-US/sidebar-registry-rdf.dtd
 lib/mozilla/chrome/sidebar/locale/en-US/sidebarOverlay.dtd
-lib/mozilla/chrome/sidebar/skin/default/customize-panel.css
 lib/mozilla/chrome/sidebar/skin/default/customize.css
 lib/mozilla/chrome/sidebar/skin/default/list-down-dis.gif
 lib/mozilla/chrome/sidebar/skin/default/list-down.gif
@@ -773,9 +928,13 @@ lib/mozilla/chrome/sidebar/skin/default/list-up-dis.gif
 lib/mozilla/chrome/sidebar/skin/default/list-up.gif
 lib/mozilla/chrome/sidebar/skin/default/preview.css
 lib/mozilla/chrome/sidebar/skin/default/sidebar-bottomright-cap.gif
+lib/mozilla/chrome/sidebar/skin/default/sidebar-icon.gif
 lib/mozilla/chrome/sidebar/skin/default/sidebar-topright-cap.gif
 lib/mozilla/chrome/sidebar/skin/default/sidebar.css
 lib/mozilla/chrome/sidebar/skin/default/sidebarOverlay.css
+lib/mozilla/chrome/timebomb/content/default/expireText.xul
+lib/mozilla/chrome/timebomb/content/default/warn.xul
+lib/mozilla/chrome/timebomb/locale/en-US/timebomb.dtd
 lib/mozilla/chrome/wallet/content/default/CookieViewer.js
 lib/mozilla/chrome/wallet/content/default/CookieViewer.xul
 lib/mozilla/chrome/wallet/content/default/SignonViewer.js
@@ -784,18 +943,31 @@ lib/mozilla/chrome/wallet/content/default/WalletEditor.js
 lib/mozilla/chrome/wallet/content/default/WalletEditor.xul
 lib/mozilla/chrome/wallet/content/default/WalletPreview.js
 lib/mozilla/chrome/wallet/content/default/WalletPreview.xul
-lib/mozilla/chrome/wallet/content/default/wallet.css
 lib/mozilla/chrome/wallet/locale/en-US/CookieViewer.dtd
 lib/mozilla/chrome/wallet/locale/en-US/CookieViewer.properties
 lib/mozilla/chrome/wallet/locale/en-US/SignonViewer.dtd
 lib/mozilla/chrome/wallet/locale/en-US/SignonViewer.properties
+lib/mozilla/chrome/wallet/locale/en-US/WalletEditor.dtd
 lib/mozilla/chrome/wallet/locale/en-US/WalletEditor.properties
 lib/mozilla/chrome/wallet/locale/en-US/WalletPreview.properties
 lib/mozilla/chrome/wallet/locale/en-US/cookie.properties
 lib/mozilla/chrome/wallet/locale/en-US/wallet.properties
 lib/mozilla/chrome/wallet/skin/default/CookieViewer.css
 lib/mozilla/chrome/wallet/skin/default/SignonViewer.css
+lib/mozilla/chrome/wallet/skin/default/WalletEditor.css
 lib/mozilla/chrome/wallet/skin/default/wallet.css
+lib/mozilla/chrome/xmlterm/content/default/XMLTermChrome.js
+lib/mozilla/chrome/xmlterm/content/default/XMLTermCommands.js
+lib/mozilla/chrome/xmlterm/content/default/xmltblank.html
+lib/mozilla/chrome/xmlterm/content/default/xmlterm.html
+lib/mozilla/chrome/xmlterm/content/default/xmlterm.xul
+lib/mozilla/chrome/xmlterm/content/default/xmlterm2.xul
+lib/mozilla/chrome/xmlterm/content/default/xmltermAbout.html
+lib/mozilla/chrome/xmlterm/content/default/xmltermTips.html
+lib/mozilla/chrome/xmlterm/skin/default/images/ficon.gif
+lib/mozilla/chrome/xmlterm/skin/default/images/wheel.gif
+lib/mozilla/chrome/xmlterm/skin/default/xmlterm.css
+lib/mozilla/chrome/xmlterm/skin/default/xmltpage.css
 lib/mozilla/chrome/xpinstall/content/default/institems.js
 lib/mozilla/chrome/xpinstall/content/default/institems.xul
 lib/mozilla/chrome/xpinstall/content/default/xpistatus.js
@@ -809,11 +981,11 @@ lib/mozilla/chrome/xul.css
 lib/mozilla/chrome/xulBindings.xml
 lib/mozilla/component.reg
 lib/mozilla/components/addrbook.xpt
-lib/mozilla/components/appcores.xpt
 lib/mozilla/components/appshell.xpt
 lib/mozilla/components/bookmarks.xpt
 lib/mozilla/components/caps.xpt
 lib/mozilla/components/chrome.xpt
+lib/mozilla/components/consoleservice.xpt
 lib/mozilla/components/cookieviewer.xpt
 lib/mozilla/components/directory.xpt
 lib/mozilla/components/docshell.xpt
@@ -821,21 +993,26 @@ lib/mozilla/components/dom.xpt
 lib/mozilla/components/editor.xpt
 lib/mozilla/components/gfx.xpt
 lib/mozilla/components/history.xpt
+lib/mozilla/components/import.xpt
 lib/mozilla/components/intl.xpt
 lib/mozilla/components/jar.xpt
 lib/mozilla/components/jsurl.xpt
 lib/mozilla/components/layout.xpt
+lib/mozilla/components/libMyService.so
 lib/mozilla/components/libaddrbook.so
 lib/mozilla/components/libbookmarks.so
 lib/mozilla/components/libcaps.so
 lib/mozilla/components/libchardet.so
 lib/mozilla/components/libchrome.so
+lib/mozilla/components/libconsoleservice.so
 lib/mozilla/components/libconverters.so
 lib/mozilla/components/libcookie.so
 lib/mozilla/components/libdirectory.so
 lib/mozilla/components/libender.so
 lib/mozilla/components/libgfxps.so
 lib/mozilla/components/libhistory.so
+lib/mozilla/components/libimpText.so
+lib/mozilla/components/libimport.so
 lib/mozilla/components/libjar50.so
 lib/mozilla/components/libjsloader.so
 lib/mozilla/components/libjsurl.so
@@ -860,12 +1037,13 @@ lib/mozilla/components/libnecko_cache.so
 lib/mozilla/components/libnecko_data.so
 lib/mozilla/components/libnecko_datetime.so
 lib/mozilla/components/libnecko_file.so
+lib/mozilla/components/libnecko_finger.so
 lib/mozilla/components/libnecko_ftp.so
 lib/mozilla/components/libnecko_http.so
 lib/mozilla/components/libnecko_jar.so
 lib/mozilla/components/libnecko_res.so
-lib/mozilla/components/libnecko_resource.so
-lib/mozilla/components/libnkkeyword.so
+lib/mozilla/components/libnkkyword.so
+lib/mozilla/components/libnsappshell.so
 lib/mozilla/components/libnsgif.so
 lib/mozilla/components/libnsjpg.so
 lib/mozilla/components/libnslocale.so
@@ -874,6 +1052,7 @@ lib/mozilla/components/libnsprefm.so
 lib/mozilla/components/liboji.so
 lib/mozilla/components/libpref.so
 lib/mozilla/components/libprofile.so
+lib/mozilla/components/libpsmglue.so
 lib/mozilla/components/libraptorhtml.so
 lib/mozilla/components/libraptorhtmlpars.so
 lib/mozilla/components/libraptorview.so
@@ -888,6 +1067,7 @@ lib/mozilla/components/libsigned.so
 lib/mozilla/components/libsmime.so
 lib/mozilla/components/libstreamconv.so
 lib/mozilla/components/libstrres.so
+lib/mozilla/components/libtbmb.so
 lib/mozilla/components/libtimer_gtk.so
 lib/mozilla/components/libtoolkit_service.so
 lib/mozilla/components/libtxmgr.so
@@ -898,6 +1078,7 @@ lib/mozilla/components/libucvibm.so
 lib/mozilla/components/libucvja.so
 lib/mozilla/components/libucvko.so
 lib/mozilla/components/libucvlatin.so
+lib/mozilla/components/libucvmath.so
 lib/mozilla/components/libucvtw.so
 lib/mozilla/components/libucvtw2.so
 lib/mozilla/components/libunicharutil.so
@@ -905,13 +1086,15 @@ lib/mozilla/components/liburiloader.so
 lib/mozilla/components/libvcard.so
 lib/mozilla/components/libwallet.so
 lib/mozilla/components/libwalletviewers.so
+lib/mozilla/components/libwebbrwsr.so
+lib/mozilla/components/libxmlterm.so
 lib/mozilla/components/libxpconnect.so
 lib/mozilla/components/libxpctest.so
-lib/mozilla/components/libxpiflash.so
 lib/mozilla/components/libxpinstall.so
 lib/mozilla/components/locale.xpt
 lib/mozilla/components/mailnews.xpt
 lib/mozilla/components/mime.xpt
+lib/mozilla/components/mimetype.xpt
 lib/mozilla/components/mozbrwsr.xpt
 lib/mozilla/components/mozcomps.xpt
 lib/mozilla/components/mozfind.xpt
@@ -928,7 +1111,6 @@ lib/mozilla/components/necko_about.xpt
 lib/mozilla/components/necko_base.xpt
 lib/mozilla/components/necko_data.xpt
 lib/mozilla/components/necko_dns.xpt
-lib/mozilla/components/necko_file.xpt
 lib/mozilla/components/necko_ftp.xpt
 lib/mozilla/components/necko_http.xpt
 lib/mozilla/components/necko_jar.xpt
@@ -936,7 +1118,7 @@ lib/mozilla/components/necko_res.xpt
 lib/mozilla/components/necko_socket.xpt
 lib/mozilla/components/necko_stream_converter.xpt
 lib/mozilla/components/nkcache.xpt
-lib/mozilla/components/nsCategoryManager.js
+lib/mozilla/components/nsFilePicker.js
 lib/mozilla/components/nsSample.js
 lib/mozilla/components/nsSidebar.js
 lib/mozilla/components/oji.xpt
@@ -945,23 +1127,31 @@ lib/mozilla/components/prefmigr.xpt
 lib/mozilla/components/profile.xpt
 lib/mozilla/components/proxyObjInst.xpt
 lib/mozilla/components/proxytest.xpt
+lib/mozilla/components/psmglue.xpt
 lib/mozilla/components/rdf.xpt
 lib/mozilla/components/rdfdomds.xpt
 lib/mozilla/components/regviewer.xpt
 lib/mozilla/components/related.xpt
+lib/mozilla/components/remote.xpt
+lib/mozilla/components/remoteControl.js
 lib/mozilla/components/sample.xpt
 lib/mozilla/components/search.xpt
 lib/mozilla/components/shistory.xpt
 lib/mozilla/components/sidebar.xpt
 lib/mozilla/components/signonviewer.xpt
+lib/mozilla/components/tbmb.xpt
 lib/mozilla/components/txmgr.xpt
 lib/mozilla/components/uconv.xpt
 lib/mozilla/components/unicharutil.xpt
 lib/mozilla/components/uriloader.xpt
 lib/mozilla/components/util.xpt
+lib/mozilla/components/wallet.xpt
 lib/mozilla/components/walleteditor.xpt
 lib/mozilla/components/walletpreview.xpt
+lib/mozilla/components/webBrowser_core.xpt
+lib/mozilla/components/webBrowser_setup.xpt
 lib/mozilla/components/widget.xpt
+lib/mozilla/components/xmlterm.xpt
 lib/mozilla/components/xpcom_base.xpt
 lib/mozilla/components/xpcom_components.xpt
 lib/mozilla/components/xpcom_ds.xpt
@@ -975,16 +1165,19 @@ lib/mozilla/defaults/pref/config.js
 lib/mozilla/defaults/pref/editor.js
 lib/mozilla/defaults/pref/initpref.js
 lib/mozilla/defaults/pref/mailnews.js
+lib/mozilla/defaults/pref/psm-glue.js
 lib/mozilla/defaults/pref/unix.js
 lib/mozilla/defaults/pref/xpinstall.js
 lib/mozilla/defaults/profile/bookmarks.html
 lib/mozilla/defaults/profile/panels.rdf
 lib/mozilla/dtd/mathml.dtd
+lib/mozilla/escape
 lib/mozilla/geturl
 lib/mozilla/htmlrobot
+lib/mozilla/icons/mozicon16.xpm
+lib/mozilla/icons/mozicon50.xpm
 lib/mozilla/libDebugRobot.so
-lib/mozilla/libMyService.so
-lib/mozilla/libappcores.so
+lib/mozilla/libcmt.so
 lib/mozilla/libdocshell.so
 lib/mozilla/libgfx_gtk.so
 lib/mozilla/libgtksuperwin.so
@@ -992,25 +1185,26 @@ lib/mozilla/libjsdom.so
 lib/mozilla/libjsj.so
 lib/mozilla/libmozjs.so
 lib/mozilla/libmsgbaseutil.so
-lib/mozilla/libnsappshell.so
-lib/mozilla/libnspr3.so
-lib/mozilla/libplc3.so
-lib/mozilla/libplds3.so
+lib/mozilla/libnspr4.so
+lib/mozilla/libplc4.so
+lib/mozilla/libplds4.so
+lib/mozilla/libprotocol.so
 lib/mozilla/libraptorgfx.so
 lib/mozilla/libraptorplugin.so
 lib/mozilla/libraptorwebwidget.so
 lib/mozilla/libtestdynamic.so
 lib/mozilla/libwidget_gtk.so
-lib/mozilla/libxlibrgb.so
 lib/mozilla/libxpcom.so
 lib/mozilla/libxpistub.so
 lib/mozilla/lots
+lib/mozilla/menuhack
 lib/mozilla/mozilla
 lib/mozilla/mozilla-bin
 lib/mozilla/mozilla-config
 lib/mozilla/mozilla-viewer.sh
 lib/mozilla/msgcomposetest2
 lib/mozilla/netscape.cfg
+lib/mozilla/nsIFileTest
 lib/mozilla/nsinstall
 lib/mozilla/pop3Test
 lib/mozilla/proxytests
@@ -1018,6 +1212,7 @@ lib/mozilla/rdfcat
 lib/mozilla/rdfpoll
 lib/mozilla/regExport
 lib/mozilla/regxpcom
+lib/mozilla/res/DistinguishedSchema.tbl
 lib/mozilla/res/FieldSchema.tbl
 lib/mozilla/res/SchemaConcat.tbl
 lib/mozilla/res/URLFieldSchema.tbl
@@ -1029,6 +1224,7 @@ lib/mozilla/res/entityTables/html40Latin1.properties
 lib/mozilla/res/entityTables/html40Special.properties
 lib/mozilla/res/entityTables/html40Symbols.properties
 lib/mozilla/res/entityTables/htmlEntityVersions.properties
+lib/mozilla/res/entityTables/transliterate.properties
 lib/mozilla/res/html.css
 lib/mozilla/res/html/broken-image.gif
 lib/mozilla/res/html/gopher-audio.gif
@@ -1045,25 +1241,21 @@ lib/mozilla/res/mailnews/tests/AccountManagerTest.xul
 lib/mozilla/res/rdf/article.gif
 lib/mozilla/res/rdf/datasets/AOLSearch.gif
 lib/mozilla/res/rdf/datasets/AOLSearch.src
-lib/mozilla/res/rdf/datasets/Excite.gif
-lib/mozilla/res/rdf/datasets/Excite.src
-lib/mozilla/res/rdf/datasets/GoTo.com.gif
-lib/mozilla/res/rdf/datasets/GoTo.com.src
-lib/mozilla/res/rdf/datasets/Google.gif
-lib/mozilla/res/rdf/datasets/Google.src
-lib/mozilla/res/rdf/datasets/HotBot.gif
-lib/mozilla/res/rdf/datasets/HotBot.src
-lib/mozilla/res/rdf/datasets/LookSmart.gif
-lib/mozilla/res/rdf/datasets/LookSmart.src
-lib/mozilla/res/rdf/datasets/Lycos.gif
-lib/mozilla/res/rdf/datasets/Lycos.src
-lib/mozilla/res/rdf/datasets/Netscape_Open_Directory.gif
-lib/mozilla/res/rdf/datasets/Netscape_Open_Directory.src
-lib/mozilla/res/rdf/datasets/Snap.com.gif
-lib/mozilla/res/rdf/datasets/Snap.com.src
+lib/mozilla/res/rdf/datasets/CompuServe.jpg
+lib/mozilla/res/rdf/datasets/CompuServe.src
+lib/mozilla/res/rdf/datasets/ICQ.gif
+lib/mozilla/res/rdf/datasets/ICQ.src
+lib/mozilla/res/rdf/datasets/Jobs.gif
+lib/mozilla/res/rdf/datasets/Jobs.src
+lib/mozilla/res/rdf/datasets/Music_Artist.gif
+lib/mozilla/res/rdf/datasets/Music_Artist.src
+lib/mozilla/res/rdf/datasets/NetscapeSearch.gif
+lib/mozilla/res/rdf/datasets/NetscapeSearch.src
+lib/mozilla/res/rdf/datasets/Shareware.gif
+lib/mozilla/res/rdf/datasets/Shareware.src
+lib/mozilla/res/rdf/datasets/Tech_News.gif
+lib/mozilla/res/rdf/datasets/Tech_News.src
 lib/mozilla/res/rdf/datasets/category.rdf
-lib/mozilla/res/rdf/datasets/eBay.gif
-lib/mozilla/res/rdf/datasets/eBay.src
 lib/mozilla/res/rdf/document.gif
 lib/mozilla/res/rdf/dom-test-1.xul
 lib/mozilla/res/rdf/dom-test-2.xul
@@ -1149,6 +1341,7 @@ lib/mozilla/res/samples/test_weight.html
 lib/mozilla/res/samples/toolbarTest1.xul
 lib/mozilla/res/samples/treeTest1.css
 lib/mozilla/res/samples/treeTest1.xul
+lib/mozilla/res/samples/widgets.xul
 lib/mozilla/res/samples/xpconnect-sample.html
 lib/mozilla/res/samples/xpmenu.xul
 lib/mozilla/res/samples/xulTest.css
@@ -1189,102 +1382,32 @@ lib/mozilla/res/throbber/anims26.gif
 lib/mozilla/res/throbber/anims27.gif
 lib/mozilla/res/throbber/anims28.gif
 lib/mozilla/res/throbber/anims29.gif
-lib/mozilla/res/throbber/throbbingN.gif
-lib/mozilla/res/toolbar/DialogAddrIcon.gif
-lib/mozilla/res/toolbar/DialogAddrIcon_mo.gif
-lib/mozilla/res/toolbar/DialogCompIcon.gif
-lib/mozilla/res/toolbar/DialogCompIcon_mo.gif
-lib/mozilla/res/toolbar/DialogMailIcon.gif
-lib/mozilla/res/toolbar/DialogMailIcon_mo.gif
-lib/mozilla/res/toolbar/DialogNavIcon.gif
-lib/mozilla/res/toolbar/DialogNavIcon_mo.gif
-lib/mozilla/res/toolbar/Mail_Forward.gif
-lib/mozilla/res/toolbar/Mail_GetMsg.gif
-lib/mozilla/res/toolbar/Mail_NewMsg.gif
-lib/mozilla/res/toolbar/Mail_Reply.gif
-lib/mozilla/res/toolbar/Mail_SendMsg.gif
-lib/mozilla/res/toolbar/StatusBar-insecure.gif
-lib/mozilla/res/toolbar/StatusBar-secure.gif
-lib/mozilla/res/toolbar/TB_Back.gif
-lib/mozilla/res/toolbar/TB_Back_dis.gif
-lib/mozilla/res/toolbar/TB_Back_mo.gif
-lib/mozilla/res/toolbar/TB_Bookmarks.gif
-lib/mozilla/res/toolbar/TB_Bookmarks_mo.gif
-lib/mozilla/res/toolbar/TB_Edit.gif
-lib/mozilla/res/toolbar/TB_Forward.gif
-lib/mozilla/res/toolbar/TB_Forward_dis.gif
-lib/mozilla/res/toolbar/TB_Forward_mo.gif
-lib/mozilla/res/toolbar/TB_HTab.gif
-lib/mozilla/res/toolbar/TB_HTab_mo.gif
-lib/mozilla/res/toolbar/TB_Home.gif
-lib/mozilla/res/toolbar/TB_Home_mo.gif
-lib/mozilla/res/toolbar/TB_LoadImages.gif
-lib/mozilla/res/toolbar/TB_Location.gif
-lib/mozilla/res/toolbar/TB_Location_mo.gif
-lib/mozilla/res/toolbar/TB_MiniAddr.gif
-lib/mozilla/res/toolbar/TB_MiniComp.gif
-lib/mozilla/res/toolbar/TB_MiniMail.gif
-lib/mozilla/res/toolbar/TB_MiniNav.gif
-lib/mozilla/res/toolbar/TB_MiniTab.gif
-lib/mozilla/res/toolbar/TB_MixSecurity.gif
-lib/mozilla/res/toolbar/TB_Netscape.gif
-lib/mozilla/res/toolbar/TB_Netscape_mo.gif
-lib/mozilla/res/toolbar/TB_NewBack.gif
-lib/mozilla/res/toolbar/TB_NewForward.gif
-lib/mozilla/res/toolbar/TB_NewHome.gif
-lib/mozilla/res/toolbar/TB_NewPrint.gif
-lib/mozilla/res/toolbar/TB_NewReload.gif
-lib/mozilla/res/toolbar/TB_NewStop.gif
-lib/mozilla/res/toolbar/TB_PersonalIcon.gif
-lib/mozilla/res/toolbar/TB_Places.gif
-lib/mozilla/res/toolbar/TB_Places_mo.gif
-lib/mozilla/res/toolbar/TB_Print.gif
-lib/mozilla/res/toolbar/TB_Print_mo.gif
-lib/mozilla/res/toolbar/TB_Reload.gif
-lib/mozilla/res/toolbar/TB_Reload_mo.gif
-lib/mozilla/res/toolbar/TB_Search.gif
-lib/mozilla/res/toolbar/TB_Search_mo.gif
-lib/mozilla/res/toolbar/TB_Secure.gif
-lib/mozilla/res/toolbar/TB_Secure_mo.gif
-lib/mozilla/res/toolbar/TB_Stop.gif
-lib/mozilla/res/toolbar/TB_Stop_dis.gif
-lib/mozilla/res/toolbar/TB_Stop_mo.gif
-lib/mozilla/res/toolbar/TB_Tab.gif
-lib/mozilla/res/toolbar/TB_TabSmall.gif
-lib/mozilla/res/toolbar/TB_TabSmall_mo.gif
-lib/mozilla/res/toolbar/TB_Tab_mo.gif
-lib/mozilla/res/toolbar/TB_Unsecure.gif
-lib/mozilla/res/toolbar/TB_WhatsRelated.gif
-lib/mozilla/res/toolbar/TB_WhatsRelated_mo.gif
-lib/mozilla/res/toolbar/TB_popup.gif
-lib/mozilla/res/toolbar/grippy-horizontal-after.gif
-lib/mozilla/res/toolbar/grippy-horizontal-before.gif
-lib/mozilla/res/toolbar/grippy-vertical-after.gif
-lib/mozilla/res/toolbar/grippy-vertical-before.gif
 lib/mozilla/res/ua.css
 lib/mozilla/res/unixcharset.properties
 lib/mozilla/res/viewer.properties
-lib/mozilla/res/xpinstall/SoftwareUpdate-Source-1.rdf
-lib/mozilla/res/xpinstall/SoftwareUpdates.rdf
-lib/mozilla/res/xpinstall/notification.gif
 lib/mozilla/res/xpinstall/progress.css
 lib/mozilla/res/xpinstall/progress.html
 lib/mozilla/res/xpinstall/progress.xul
 lib/mozilla/run-mozilla.sh
 lib/mozilla/sendlatertest
 lib/mozilla/sendpage
+lib/mozilla/splash.xpm
 lib/mozilla/testimap
 lib/mozilla/testmailnews
+lib/mozilla/teststream
+lib/mozilla/timebombgen
 lib/mozilla/urltest
 lib/mozilla/viewer
 lib/mozilla/viewer_gtk
 lib/mozilla/vreg
+lib/mozilla/xcat
+lib/mozilla/xls
+lib/mozilla/xmlterm
 lib/mozilla/xpcshell
 lib/mozilla/xpidl
 lib/mozilla/xpt_dump
 lib/mozilla/xpt_link
 @dirrm lib/mozilla/res/xpinstall
-@dirrm lib/mozilla/res/toolbar
 @dirrm lib/mozilla/res/throbber
 @dirrm lib/mozilla/res/samples/sampleimages
 @dirrm lib/mozilla/res/samples
@@ -1296,6 +1419,7 @@ lib/mozilla/xpt_link
 @dirrm lib/mozilla/res/entityTables
 @dirrm lib/mozilla/res
 @dirrm lib/mozilla/plugins
+@dirrm lib/mozilla/icons
 @dirrm lib/mozilla/dtd
 @dirrm lib/mozilla/defaults/profile
 @dirrm lib/mozilla/defaults/pref
@@ -1308,6 +1432,12 @@ lib/mozilla/xpt_link
 @dirrm lib/mozilla/chrome/xpinstall/content/default
 @dirrm lib/mozilla/chrome/xpinstall/content
 @dirrm lib/mozilla/chrome/xpinstall
+@dirrm lib/mozilla/chrome/xmlterm/skin/default/images
+@dirrm lib/mozilla/chrome/xmlterm/skin/default
+@dirrm lib/mozilla/chrome/xmlterm/skin
+@dirrm lib/mozilla/chrome/xmlterm/content/default
+@dirrm lib/mozilla/chrome/xmlterm/content
+@dirrm lib/mozilla/chrome/xmlterm
 @dirrm lib/mozilla/chrome/wallet/skin/default
 @dirrm lib/mozilla/chrome/wallet/skin
 @dirrm lib/mozilla/chrome/wallet/locale/en-US
@@ -1315,6 +1445,11 @@ lib/mozilla/xpt_link
 @dirrm lib/mozilla/chrome/wallet/content/default
 @dirrm lib/mozilla/chrome/wallet/content
 @dirrm lib/mozilla/chrome/wallet
+@dirrm lib/mozilla/chrome/timebomb/locale/en-US
+@dirrm lib/mozilla/chrome/timebomb/locale
+@dirrm lib/mozilla/chrome/timebomb/content/default
+@dirrm lib/mozilla/chrome/timebomb/content
+@dirrm lib/mozilla/chrome/timebomb
 @dirrm lib/mozilla/chrome/sidebar/skin/default
 @dirrm lib/mozilla/chrome/sidebar/skin
 @dirrm lib/mozilla/chrome/sidebar/locale/en-US
@@ -1322,6 +1457,9 @@ lib/mozilla/xpt_link
 @dirrm lib/mozilla/chrome/sidebar/content/default
 @dirrm lib/mozilla/chrome/sidebar/content
 @dirrm lib/mozilla/chrome/sidebar
+@dirrm lib/mozilla/chrome/security/locale/en-US
+@dirrm lib/mozilla/chrome/security/locale
+@dirrm lib/mozilla/chrome/security
 @dirrm lib/mozilla/chrome/search/skin/default
 @dirrm lib/mozilla/chrome/search/skin
 @dirrm lib/mozilla/chrome/search/locale/en-US
@@ -1378,6 +1516,9 @@ lib/mozilla/xpt_link
 @dirrm lib/mozilla/chrome/messenger/content/default
 @dirrm lib/mozilla/chrome/messenger/content
 @dirrm lib/mozilla/chrome/messenger
+@dirrm lib/mozilla/chrome/layout/locale/en-US
+@dirrm lib/mozilla/chrome/layout/locale
+@dirrm lib/mozilla/chrome/layout
 @dirrm lib/mozilla/chrome/history/skin/default
 @dirrm lib/mozilla/chrome/history/skin
 @dirrm lib/mozilla/chrome/history/locale/en-US
