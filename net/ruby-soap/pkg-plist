@@ -1,3 +1,4 @@
+bin/wsdl2ruby.rb
 %%RUBY_SITELIBDIR%%/soap/XMLSchemaDatatypes.rb
 %%RUBY_SITELIBDIR%%/soap/XMLSchemaDatatypes1999.rb
 %%RUBY_SITELIBDIR%%/soap/baseData.rb
@@ -11,10 +12,10 @@
 %%RUBY_SITELIBDIR%%/soap/encodingStyleHandlerLiteral.rb
 %%RUBY_SITELIBDIR%%/soap/generator.rb
 %%RUBY_SITELIBDIR%%/soap/headerHandler.rb
+%%RUBY_SITELIBDIR%%/soap/httpserver.rb
 %%RUBY_SITELIBDIR%%/soap/mappingRegistry.rb
 %%RUBY_SITELIBDIR%%/soap/marshal.rb
 %%RUBY_SITELIBDIR%%/soap/namespace.rb
-%%RUBY_SITELIBDIR%%/soap/nqxmlDocument.rb
 %%RUBY_SITELIBDIR%%/soap/nqxmlparser.rb
 %%RUBY_SITELIBDIR%%/soap/parser.rb
 %%RUBY_SITELIBDIR%%/soap/processor.rb
@@ -28,6 +29,50 @@
 %%RUBY_SITELIBDIR%%/soap/standaloneServer.rb
 %%RUBY_SITELIBDIR%%/soap/streamHandler.rb
 %%RUBY_SITELIBDIR%%/soap/xmlparser.rb
+%%RUBY_SITELIBDIR%%/wsdl/binding.rb
+%%RUBY_SITELIBDIR%%/wsdl/data.rb
+%%RUBY_SITELIBDIR%%/wsdl/definitions.rb
+%%RUBY_SITELIBDIR%%/wsdl/import.rb
+%%RUBY_SITELIBDIR%%/wsdl/info.rb
+%%RUBY_SITELIBDIR%%/wsdl/message.rb
+%%RUBY_SITELIBDIR%%/wsdl/name.rb
+%%RUBY_SITELIBDIR%%/wsdl/namedElements.rb
+%%RUBY_SITELIBDIR%%/wsdl/operation.rb
+%%RUBY_SITELIBDIR%%/wsdl/operationBinding.rb
+%%RUBY_SITELIBDIR%%/wsdl/param.rb
+%%RUBY_SITELIBDIR%%/wsdl/parser.rb
+%%RUBY_SITELIBDIR%%/wsdl/part.rb
+%%RUBY_SITELIBDIR%%/wsdl/port.rb
+%%RUBY_SITELIBDIR%%/wsdl/portType.rb
+%%RUBY_SITELIBDIR%%/wsdl/service.rb
+%%RUBY_SITELIBDIR%%/wsdl/soap/address.rb
+%%RUBY_SITELIBDIR%%/wsdl/soap/binding.rb
+%%RUBY_SITELIBDIR%%/wsdl/soap/body.rb
+%%RUBY_SITELIBDIR%%/wsdl/soap/cgiStubCreator.rb
+%%RUBY_SITELIBDIR%%/wsdl/soap/classDefCreator.rb
+%%RUBY_SITELIBDIR%%/wsdl/soap/clientSkeltonCreator.rb
+%%RUBY_SITELIBDIR%%/wsdl/soap/data.rb
+%%RUBY_SITELIBDIR%%/wsdl/soap/driverCreator.rb
+%%RUBY_SITELIBDIR%%/wsdl/soap/mappingRegistryCreator.rb
+%%RUBY_SITELIBDIR%%/wsdl/soap/methodDefCreator.rb
+%%RUBY_SITELIBDIR%%/wsdl/soap/methodDefCreatorSupport.rb
+%%RUBY_SITELIBDIR%%/wsdl/soap/operation.rb
+%%RUBY_SITELIBDIR%%/wsdl/soap/servantSkeltonCreator.rb
+%%RUBY_SITELIBDIR%%/wsdl/soap/standaloneServerStubCreator.rb
+%%RUBY_SITELIBDIR%%/wsdl/soap/webrickStubCreator.rb
+%%RUBY_SITELIBDIR%%/wsdl/types.rb
+%%RUBY_SITELIBDIR%%/wsdl/wsdl.rb
+%%RUBY_SITELIBDIR%%/wsdl/xmlSchema/attribute.rb
+%%RUBY_SITELIBDIR%%/wsdl/xmlSchema/complexContent.rb
+%%RUBY_SITELIBDIR%%/wsdl/xmlSchema/complexType.rb
+%%RUBY_SITELIBDIR%%/wsdl/xmlSchema/content.rb
+%%RUBY_SITELIBDIR%%/wsdl/xmlSchema/data.rb
+%%RUBY_SITELIBDIR%%/wsdl/xmlSchema/element.rb
+%%RUBY_SITELIBDIR%%/wsdl/xmlSchema/schema.rb
+%%RUBY_SITELIBDIR%%/wsdl/xmlparser.rb
+@dirrm %%RUBY_SITELIBDIR%%/wsdl/soap
+@dirrm %%RUBY_SITELIBDIR%%/wsdl/xmlSchema
+@dirrm %%RUBY_SITELIBDIR%%/wsdl
 @dirrm %%RUBY_SITELIBDIR%%/soap
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Calc/calc.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Calc/calc2.rb
@@ -42,6 +87,14 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Exchange/iExchange.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Exchange/server.cgi
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/Exchange/server.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/GoogleSearch/GoogleSearch.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/GoogleSearch/GoogleSearchDriver.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/GoogleSearch/GoogleSearchServant.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/GoogleSearch/GoogleSearchService.cgi
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/GoogleSearch/GoogleSearchService.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/GoogleSearch/GoogleSearchServiceClient.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/GoogleSearch/README
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/GoogleSearch/httpd.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ICD/IICD.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/ICD/icd.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/RAA/RAA.rb
@@ -68,7 +121,6 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/hippo5tq.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/hippo5tq2.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/hippoClient.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/httpserver.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/exchange.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/exchangeClient.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/httpd.rb
@@ -77,6 +129,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/sampleStruct.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/sampleStructClient.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/soaplet.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/webrick/webrick.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/whois.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/baseType_ut.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/README.txt
@@ -96,6 +149,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientFrontier.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientGLUE.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientHP.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientJAX-RPC.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientJSOAP.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientMSSOAPToolkit2.0.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientMSSOAPToolkit3.0.rb
@@ -114,6 +168,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientVWOpentalkSoap.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientWASP.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientWASPC.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientWebMethods.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientWhiteMesa.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientXMLBus.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/clientXMLRPC-EPI.rb
@@ -127,10 +182,16 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/server.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/simonReg.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/interopR2/test.sh
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/sm11/classDef.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/sm11/client.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/sm11/driver.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/sm11/servant.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/sm11/server.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/struct.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/soap/test/xsd_ut.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/Calc
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/Exchange
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/GoogleSearch
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/ICD
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/RAA
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/RWiki
@@ -138,6 +199,7 @@
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/WSDemo
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/webrick
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/test/interopR2
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/test/sm11
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap/test
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/soap
 %%PORTDOCS%%%%RUBY_DOCDIR%%/soap/RELEASE_en.html
