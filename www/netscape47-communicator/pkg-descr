@@ -6,6 +6,3 @@ Note: If Java applets fail to display.  Type this as root:
 		/usr/X11R6/bin/mkfontdir
 		chmod 444 fonts.dir
       And then exit and restart your X server.
-
-This port can install either the regular or "gold" version.
-For the latter, add "GOLD=yes" to your "make" command line.
