@@ -8,7 +8,7 @@
 PORTNAME=	mastergear
 PORTVERSION=	1.3
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.komkon.org/fms/MG/
+MASTER_SITES=	http://fms.komkon.org/MG/
 DISTNAME=	MG13-FreeBSD-80x86-bin
 EXTRACT_SUFX=	.tar.Z
 
