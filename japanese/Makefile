@@ -328,7 +328,6 @@
     SUBDIR += seizedesktop
     SUBDIR += shinonome
     SUBDIR += sj3
-    SUBDIR += sjxa
     SUBDIR += skk
     SUBDIR += skk-elisp
     SUBDIR += skk-jisyo
