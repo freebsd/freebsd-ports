@@ -1,0 +1,16 @@
+Horde is both a piece of software and a project.
+
+The Horde Project comprises a set of Web-based productivity, messaging,
+and project-management applications.
+
+The Horde Framework is a common code-base used by Horde applications,
+including libraries and a common user interface. Horde and its components
+are written in PHP <URL:http://www.php.net/>.
+
+Horde alone won't do you much good, though; the real functionality is
+in Horde's components, and mostly IMP, the well-known webmail (see the
+port mail/imp).
+
+WWW: http://www.horde.org/
+
+- Thierry Thomas <thierry@thomas.as>.

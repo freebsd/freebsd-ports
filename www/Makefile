@@ -76,6 +76,7 @@
     SUBDIR += grail
     SUBDIR += gtkhtml
     SUBDIR += harvest
+    SUBDIR += horde
     SUBDIR += hotjava
     SUBDIR += htdump
     SUBDIR += html2wml
