@@ -2,6 +2,7 @@ bin/spamassassin
 bin/spamc
 bin/spamd
 bin/spamproxyd
+etc/rc.d/spamd.sh-dist
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/SMTP/SmartHost.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/EvalTests.pm
@@ -21,6 +22,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/Reporter.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/PersistentAddrList.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/AutoWhitelist.pm
 lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/NoMailAudit.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/SpamAssassin/SMTP/SmartHost/autosplit.ix
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin/.packlist
 %%PORTDOCS%%share/doc/Mail-SpamAssassin/README
 %%PORTDOCS%%share/doc/Mail-SpamAssassin/sample-nonspam.txt
@@ -47,5 +49,9 @@ share/spamassassin/user_prefs.template
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin/SMTP
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/Mail/SpamAssassin
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/SpamAssassin
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/SpamAssassin/SMTP/SmartHost
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/SpamAssassin/SMTP
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/SpamAssassin
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Mail 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Mail 2>/dev/null || true
