@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hanzim
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	chinese tk83
 MASTER_SITES=	ftp://kommos.ucsd.edu/pub/arobert/Chinese/%SUBDIR%/
 EXTRACT_SUFX=	.tgz
