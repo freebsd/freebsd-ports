@@ -1,6 +1,14 @@
---- fsck_ext2fs/setup.c.orig	Thu Apr 27 02:26:06 2000
-+++ fsck_ext2fs/setup.c	Sat Jul 15 11:06:00 2000
-@@ -69,6 +69,7 @@
+--- fsck_ext2fs/setup.c.orig	Wed Apr 26 16:26:06 2000
++++ fsck_ext2fs/setup.c	Sun Oct 20 17:38:55 2002
+@@ -48,6 +48,7 @@
+ #endif /* not lint */
+ 
+ #define DKTYPENAMES
++#define FSTYPENAMES
+ #include <sys/param.h>
+ #include <sys/time.h>
+ #include <ufs/ext2fs/ext2fs_dinode.h>
+@@ -69,6 +70,7 @@
  #include "fsutil.h"
  
  #define POWEROF2(num)	(((num) & ((num) - 1)) == 0)
