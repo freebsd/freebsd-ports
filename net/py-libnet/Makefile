@@ -21,6 +21,8 @@ COMMENT=	Python module for the libnet packet construction library
 BUILD_DEPENDS=	${LOCALBASE}/bin/swig1.1:${PORTSDIR}/devel/swig11 \
 		${LOCALBASE}/lib/libnet.a:${PORTSDIR}/net/libnet
 
+BROKEN=		Does not compile after python 2.4 update
+
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
