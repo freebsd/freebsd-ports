@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tr-ircd
-PORTVERSION=	5.1.5
+PORTVERSION=	5.1.7
 CATEGORIES=	irc ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -40,7 +40,7 @@ CONFIGURE_ARGS+=--enable-small-nets
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 400014
+.if ${OSVERSION} >= 400014 && !defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=--enable-ipv6
 .endif
 
