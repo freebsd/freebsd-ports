@@ -1,22 +1,23 @@
---- man/procmail.man.bak	Fri Nov  5 02:26:14 1999
-+++ man/procmail.man	Wed Aug 16 05:08:06 2000
-@@ -690,17 +690,8 @@
+--- man/procmail.man.orig	Fri Nov  5 02:26:14 1999
++++ man/procmail.man	Wed Aug 16 07:57:55 2000
+@@ -690,17 +690,13 @@
  .RE
  .PP
  @CF_procmail@
 -In this case your $HOME/@DOT_FORWARD@ (beware, it
 -.B has
--to be world readable) file should contain the line below.  Be sure to include
++In this case your $HOME/@DOT_FORWARD@
+ to be world readable) file should contain the line below.  Be sure to include
 -the single and double quotes, and it
--.I must
--be an
--.I absolute
++the double quotes, and it
+ .I must
+ be an
+ .I absolute
 -path.  The \fB#\fP\fIYOUR_USERNAME\fP is not actually a parameter that is
 -required by procmail, in fact, it will be discarded by sh before procmail ever
 -sees it; it is however a necessary kludge against overoptimising sendmail
 -programs:
-+In this case your $HOME/@DOT_FORWARD@
-+file should contain the line below:
++path:
  .PP
  .na
  .nf
