@@ -1,23 +1,6 @@
---- ltmain.sh.orig	Thu Nov 22 23:00:08 2001
-+++ ltmain.sh	Fri Dec  7 23:34:47 2001
-@@ -1043,14 +1043,14 @@
- 	    # These systems don't actually have a C library (as such)
- 	    test "X$arg" = "X-lc" && continue
- 	    ;;
--	  *-*-openbsd*)
-+	  *-*-openbsd* | *-*-freebsd*)
- 	    # Do not include libc due to us having libc/libc_r.
- 	    test "X$arg" = "X-lc" && continue
- 	    ;;
- 	  esac
- 	 elif test "X$arg" = "X-lc_r"; then
- 	  case $host in
--	  *-*-openbsd*)
-+	  *-*-openbsd* | *-*-freebsd*)
- 	    # Do not include libc_r directly, use -pthread flag.
- 	    continue
- 	    ;;
-@@ -4210,10 +4210,12 @@
+--- ltmain.sh.orig	Mon Jan 28 22:14:22 2002
++++ ltmain.sh	Mon Jan 28 22:15:39 2002
+@@ -4247,10 +4247,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.
