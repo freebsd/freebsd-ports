@@ -12,7 +12,7 @@ CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/unix/ \
 		ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/unix/image/ \
 		http://www.nectar.com/distfiles/squeak/
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} image/${SQUEAK_SRC}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${SQUEAK_SRC}
 
 MAINTAINER=	jesse@cs.uni-magdeburg.de
 
@@ -25,7 +25,13 @@ SQUEAK_SRC=	SqueakV2.sources
 MAKEFILE=	GNUmakefile
 VMBUILD=	freebsd
 MAKE_ARGS=	VMBUILD=${VMBUILD}
-PORTMAKE=	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+.ifdef (CC)
+MAKE_ARGS+=	CC=${CC}
+.endif
+.ifdef (CFLAGS)
+MAKE_ARGS+=	CCFLAGS="${CFLAGS}"
+.endif
+PORTMAKE=	${SETENV} ${MAKE_ENV} ${GMAKE} -e ${MAKE_FLAGS} \
 		${MAKEFILE} ${MAKE_ARGS}
 
 do-build:
@@ -39,7 +45,7 @@ do-install:
 .for f in Squeak2.4.changes Squeak2.4.image
 	(cd ${WRKSRC}/image && ${INSTALL_DATA} $f ${PREFIX}/share/squeak/$f)
 .endfor
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/image/${SQUEAK_SRC} \
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${SQUEAK_SRC} \
 		${PREFIX}/share/squeak/${SQUEAK_SRC}
 
 .include <bsd.port.mk>
