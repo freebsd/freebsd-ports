@@ -3,7 +3,7 @@
 # Date created:         22 November 1997
 # Whom:                 Peter Wemm <peter@netplex.com.au>
 #
-# $Id: Makefile,v 1.1 1997/11/22 14:56:02 peter Exp $
+# $Id: Makefile,v 1.2 1997/11/22 15:25:01 peter Exp $
 #
 
 DISTNAME=	conserver-5.21-Beta
@@ -30,5 +30,15 @@ MAKE_ENV+=	DEFAULTHOST="${DEFAULTHOST}"
 
 post-extract:
 	cp ${FILESDIR}/Makefile ${WRKSRC}
+
+post-install:
+	@if [ ! -f ${PREFIX}/etc/rc.d/conserver.sh ]; then \
+		echo "Installing ${PREFIX}/etc/rc.d/conserver.sh startup file."; \
+		echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/conserver.sh; \
+		echo "if [ -x /usr/local/sbin/conserver -a -f /usr/local/etc/conserver.cf ]; then" >> ${PREFIX}/etc/rc.d/conserver.sh; \
+		echo "	/usr/local/sbin/conserver -d -n ; echo -n ' conserver'" >> ${PREFIX}/etc/rc.d/conserver.sh; \
+		echo "fi" >> ${PREFIX}/etc/rc.d/conserver.sh; \
+		chmod 751 ${PREFIX}/etc/rc.d/conserver.sh; \
+	fi
 
 .include <bsd.port.mk>
