@@ -290,7 +290,7 @@ www/icons/world2.gif
 @dirrm www/proxy
 @dirrm www/icons
 @dirrm www
-@unexec rm -f %D/etc/apache/ssl.crt/*.0
+@unexec rm -f %D/etc/apache/ssl.crt/[0-9a-fA-F]*.[0-9]*
 @dirrm etc/apache/ssl.crt
 @dirrm etc/apache/ssl.csr
 @dirrm etc/apache/ssl.key
