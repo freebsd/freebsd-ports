@@ -1,4 +1,7 @@
 bin/doscmd
+%%DOCSDIR%%/PROBLEMS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/README.booting_dos
 share/doscmd/emsdriv.sys
 %%X11%%share/doscmd/fonts/cp437-8x14.pcf.gz
 %%X11%%share/doscmd/fonts/cp437-8x16.pcf.gz
