@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Sep 27 10:48:20 1996
++++ Makefile.in	Mon Feb 24 01:09:28 1997
+@@ -7,7 +7,7 @@
+ first_rule: all
+ dummy:
+ 
+-subdirs = src doc rclock src/graphics
++subdirs = rclock # src doc rclock src/graphics
+ 
+ DIST_ETC = etc/XTerm.ad etc/color etc/termcap etc/terminfo etc/xmkdir
+ 
