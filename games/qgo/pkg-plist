@@ -1,0 +1,25 @@
+bin/qgo
+share/qgo/sounds/stone.au
+share/qgo/sounds/stone.wav
+share/qgo/translations/qgo_de.qm
+@dirrm share/qgo/sounds
+@dirrm share/qgo/translations
+@dirrm share/qgo
+share/doc/qgo/html/images/note.png
+share/doc/qgo/html/images/tip.png
+share/doc/qgo/html/images/warning.png
+share/doc/qgo/html/ch01.html
+share/doc/qgo/html/ch01s04.html
+share/doc/qgo/html/ch02.html
+share/doc/qgo/html/ch02s02.html
+share/doc/qgo/html/ch02s03.html
+share/doc/qgo/html/ch03.html
+share/doc/qgo/html/ch03s02.html
+share/doc/qgo/html/ch03s23.html
+share/doc/qgo/html/ch03s28.html
+share/doc/qgo/html/ch03s31.html
+share/doc/qgo/html/index.html
+share/doc/qgo/html/pr01.html
+@dirrm share/doc/qgo/html/images
+@dirrm share/doc/qgo/html
+@dirrm share/doc/qgo

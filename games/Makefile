@@ -224,6 +224,7 @@
     SUBDIR += q3server-ut
     SUBDIR += q3server-wfa
     SUBDIR += qcc
+    SUBDIR += qgo
     SUBDIR += qix
     SUBDIR += qkmj
     SUBDIR += qstat
