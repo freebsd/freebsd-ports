@@ -3,12 +3,11 @@
 # Date Created:		04 Aug 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/08/23 06:45:08 tg Exp $
 #
 
 DISTNAME=	uudeview-0.5.4
-CATEGORIES+=	archivers
-CATEGORIES+=	mail
+CATEGORIES+=	archivers mail
 MASTER_SITES=	http://www.uni-frankfurt.de/~fp/uudeview/Apps/frank/
 
 MAINTAINER=	ac199@freenet.hamilton.on.ca
@@ -22,7 +21,7 @@ GNU_CONFIGURE=	Yes
 # NOTE further that all you'll really do is cause uudeview to install
 # its own minews do-hicky.
 CONFIGURE_ARGS=		--disable-minews
-CONFIGURE_ARGS+=	--prefix=${PREFIX} --disable-tcl
+CONFIGURE_ARGS+=	--disable-tcl
 
 EXTRAFILES+=	porting.notes
 
