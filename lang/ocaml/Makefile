@@ -7,6 +7,7 @@
 
 PORTNAME=	ocaml
 PORTVERSION=	3.07
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/distrib/${DISTNAME}/ \
 		ftp://ftp.inria.fr/INRIA/caml-light/${DISTNAME}/ \
@@ -82,9 +83,7 @@ MLINKS=		ocamlc.1 ocamlc.opt.1 ocamlopt.1 ocamlopt.opt.1 \
 CONFIGURE_ARGS=	-prefix ${PREFIX} \
 		-with-pthread
 
-.if defined(WITHOUT_X11)
-CONFIGURE_ARGS+=	-tk-no-x11 -no-tk
-.else
+.if !defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	-x11include ${X11BASE}/include \
 			-x11lib ${X11BASE}/lib
 .if defined(WITHOUT_TK)
