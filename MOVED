@@ -1244,3 +1244,7 @@ www/apache13-fp||2004-08-20|Obsolete and unfixed security vulnerabilities
 www/mod_csacek||2004-08-20|Obsolete and broken
 archivers/linux-unace||2004-08-20|Segfaults on startup
 misc/cheatah||2004-08-20|Abandoned by the upstream authors
+japanese/platex209-euc|japanese/platex209|2004-08-20|renamed
+japanese/platex209-jis|japanese/platex209|2004-08-20|renamed
+japanese/platex209-sjis|japanese/platex209|2004-08-20|renamed
+japanese/xdvik-vflib|japanese/xdvik|2004-08-20|renamed
