@@ -2056,6 +2056,7 @@ gnat-glade	ports/lang/gnat-glade
 gnats		ports/databases/gnats
 gnet		ports/net/gnet
 gnet-glib2	ports/net/gnet-glib2
+gnet2		ports/net/gnet2
 gnetlist	ports/cad/gnetlist
 gnewtellium	ports/net/gnewtellium
 gngb		ports/emulators/gngb
