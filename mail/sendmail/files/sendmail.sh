@@ -21,8 +21,8 @@ start)
 	# Flags to sendmail (as a server)
 	sendmail_flags="${sendmail_flags--L sm-mta -bd -q30m}"
 	# Flags for sendmail_msp_queue daemon.
-	sendmail_msp_queue_flags=\
-		"${sendmail_msp_queue_flags--L sm-msp-queue -Ac -q30m}"
+	sendmail_msp_queue_flags="
+		${sendmail_msp_queue_flags--L sm-msp-queue -Ac -q30m}"
 	#
         %%PREFIX%%/sbin/sendmail ${sendmail_flags} &&
         echo -n ' sendmail'
