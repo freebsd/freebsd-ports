@@ -15,6 +15,5 @@ MAINTAINER=	sumikawa@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/xwipower
 USE_IMAKE=	yes
-NO_INSTALL_MANPAGES=	yes
 
 .include <bsd.port.mk>
