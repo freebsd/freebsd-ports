@@ -47,10 +47,12 @@
     SUBDIR += autobook
     SUBDIR += autoconf
     SUBDIR += autoconf213
+    SUBDIR += autoconf254
     SUBDIR += autodia
     SUBDIR += autogen
     SUBDIR += automake
     SUBDIR += automake14
+    SUBDIR += automake17
     SUBDIR += avltree
     SUBDIR += avr-binutils
     SUBDIR += avr-gcc
