@@ -1,0 +1,9 @@
+Lindele is a simple music player for the GNOME Desktop. It has basic
+playlist support, random, repeat, searching, sorting, and a
+notification area icon. It can edit ID3, Vorbis and FLAC tags via
+MusicBox.
+
+WWW: http://projects.subpop.net/lindele/
+
+- Jean-Yves Lefort
+jylefort@brutele.be
