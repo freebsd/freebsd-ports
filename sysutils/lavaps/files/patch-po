@@ -1,0 +1,12 @@
+We fix this Makefile and install the .gmo even though lavaps does
+not use them yet -- not without Gnome, anyway. May be, this will
+change...
+--- po/Makefile.in.in	Sun Jun  6 22:19:05 2004
++++ po/Makefile.in.in	Sat Nov 20 08:46:31 2004
+@@ -60,5 +60,5 @@
+ POTFILES = \
+ 
+-CATALOGS = @CATALOGS@
++CATALOGS != echo *.gmo
+ 
+ # Makevars gets inserted here. (Don't remove this line!)
