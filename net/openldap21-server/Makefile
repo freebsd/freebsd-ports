@@ -62,7 +62,7 @@ CONFLICTS+=		${PKGNAMEPREFIX}${PORTNAME}-server-2.[02-9].*
 
 USE_OPENSSL=		yes
 USE_REINPLACE=		yes
-USE_LIBTOOL_VER=	15
+GNU_CONFIGURE=		yes
 
 DESCR=			${PKGDIR}/pkg-descr${OPENLDAP_PKGFILESUFX}
 PLIST=			${PKGDIR}/pkg-plist${OPENLDAP_PKGFILESUFX}
@@ -245,12 +245,10 @@ post-patch:
 		${WRKSRC}/servers/slapd/slapd.conf
 
 pre-configure:
-	@if [ -n "`${PKG_INFO} -xI '^bind\(84\)\{0,1\}-base-8\.'`" ]; then \
+	@if [ -n "`${PKG_INFO} -xI '^bind\(84\)\{0,1\}-base-8\.' 2>/dev/null`" ]; then \
 		${ECHO_CMD} "${PKGNAME}: bind installed with PORT_REPLACES_BASE_BIND causes build problems."; \
 		${FALSE}; \
 	fi
-	@${REINPLACE_CMD} -e '/^LIBTOOL=/s,\$$(top_builddir)/libtool,${LIBTOOL},g' \
-		${WRKSRC}/configure
 
 post-build:
 .for script in slapd slurpd
