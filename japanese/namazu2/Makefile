@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	namazu-2.0.1
-PKGNAME=	ja-namazu-2.0.1
+PKGNAME=	ja-namazu2-2.0.1
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://www.namazu.org/stable/
 
