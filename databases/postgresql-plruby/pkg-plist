@@ -1,41 +1,69 @@
 %%RUBY_SITEARCHLIBDIR%%/plruby.so
+%%RUBY_SITEARCHLIBDIR%%/plruby/plruby_basic.so
+%%RUBY_SITEARCHLIBDIR%%/plruby/plruby_bitstring.so
+%%RUBY_SITEARCHLIBDIR%%/plruby/plruby_datetime.so
+%%RUBY_SITEARCHLIBDIR%%/plruby/plruby_geometry.so
+%%RUBY_SITEARCHLIBDIR%%/plruby/plruby_network.so
+@dirrm %%RUBY_SITEARCHLIBDIR%%/plruby
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_bitstring/b.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_bitstring/runtest
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_bitstring/test.expected.73
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_bitstring/test.expected.74
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_bitstring/test.expected.80
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_bitstring/test.out
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_bitstring/test_mklang.sql
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_bitstring/test_queries.orig
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_bitstring/test_queries.sql
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_geometry/b.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_geometry/runtest
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_geometry/test.expected.73
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_geometry/test.expected.74
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_geometry/test.expected.80
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_geometry/test.out
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_geometry/test_mklang.sql
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_geometry/test_queries.orig
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_geometry/test_queries.sql
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_network/b.rb
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_network/runtest
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_network/test.expected.73
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_network/test.expected.74
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_network/test.expected.80
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_network/test.out
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_network/test_mklang.sql
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_network/test_queries.orig
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/conv_network/test_queries.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/createlang.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/b.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/runtest
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test.expected.65
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test.expected.70
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test.expected.71
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test.expected.72
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test.expected.73
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test.expected.74
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test.expected.75
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test.expected.80
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test.out
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test_mklang.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test_queries.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test_setup.sql
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test_setup_new.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plp/test_setup_new_trigger.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/b.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/runtest
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.expected.65
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.expected.70
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.expected.71
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.expected.72
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.expected.73
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.expected.74
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.expected.75
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.expected.80
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test.out
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test_mklang.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test_queries.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test_setup.sql
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test_setup_new.sql
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test_setup_new_trigger.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test_setup_new_trigger_array.sql
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/plt/test_setup_old.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/b.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/runtest
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/test.expected.73
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/test.expected.73.orig
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/test.expected.74
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/test.expected.74.orig
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/test.expected.75
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/test.expected.75.orig
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/test.expected.80
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/test.out
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/test_mklang.sql
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/range/test_queries.orig
@@ -43,14 +71,16 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/range
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/plt
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/plp
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/conv_network
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/conv_geometry
+%%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%/conv_bitstring
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/Changes
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README.en
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby.src/M000001.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby.src/M000002.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/BitString.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/BitString.src/M000127.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/BitString.src/M000128.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/BitString.src/M000129.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/BitString.src/M000130.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/BitString.src/M000131.html
@@ -70,9 +100,9 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/BitString.src/M000145.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/BitString.src/M000146.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/BitString.src/M000147.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/BitString.src/M000148.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/BitString.src/M000149.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Box.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Box.src/M000033.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Box.src/M000034.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Box.src/M000035.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Box.src/M000036.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Box.src/M000037.html
@@ -102,9 +132,9 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Box.src/M000061.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Box.src/M000062.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Box.src/M000063.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Box.src/M000064.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Box.src/M000065.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Circle.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Circle.src/M000148.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Circle.src/M000149.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Circle.src/M000150.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Circle.src/M000151.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Circle.src/M000152.html
@@ -126,6 +156,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Circle.src/M000168.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Circle.src/M000169.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Circle.src/M000170.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Circle.src/M000171.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Circle.src/M000172.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Description.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Description/Conversion.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Description/Function.html
@@ -134,14 +166,12 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Description/Singleton_method.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Description/Trigger.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/MacAddr.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/MacAddr.src/M000064.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/MacAddr.src/M000065.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/MacAddr.src/M000066.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/MacAddr.src/M000067.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/MacAddr.src/M000068.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/MacAddr.src/M000069.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/MacAddr.src/M000070.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/NetAddr.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/NetAddr.src/M000108.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/NetAddr.src/M000109.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/NetAddr.src/M000110.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/NetAddr.src/M000111.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/NetAddr.src/M000112.html
@@ -159,6 +189,8 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/NetAddr.src/M000124.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/NetAddr.src/M000125.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/NetAddr.src/M000126.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/NetAddr.src/M000127.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/NetAddr.src/M000128.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL.src/M000003.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL.src/M000004.html
@@ -175,15 +207,13 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL.src/M000015.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL.src/M000016.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Cursor.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Cursor.src/M000027.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Cursor.src/M000028.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Cursor.src/M000029.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Cursor.src/M000030.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Cursor.src/M000031.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Cursor.src/M000032.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Cursor.src/M000033.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Cursor.src/M000034.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Plan.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Plan.src/M000017.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Plan.src/M000018.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Plan.src/M000019.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Plan.src/M000020.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Plan.src/M000021.html
@@ -192,9 +222,12 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Plan.src/M000024.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Plan.src/M000025.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Plan.src/M000026.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Plan.src/M000027.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Plan.src/M000028.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Transaction.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Transaction.src/M000017.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Transaction.src/M000018.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Path.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Path.src/M000193.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Path.src/M000194.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Path.src/M000195.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Path.src/M000196.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Path.src/M000197.html
@@ -208,9 +241,9 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Path.src/M000205.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Path.src/M000206.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Path.src/M000207.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Path.src/M000208.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Path.src/M000209.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Point.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Point.src/M000171.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Point.src/M000172.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Point.src/M000173.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Point.src/M000174.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Point.src/M000175.html
@@ -231,9 +264,9 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Point.src/M000190.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Point.src/M000191.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Point.src/M000192.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Point.src/M000193.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Point.src/M000194.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Polygon.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Polygon.src/M000083.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Polygon.src/M000084.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Polygon.src/M000085.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Polygon.src/M000086.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Polygon.src/M000087.html
@@ -250,9 +283,9 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Polygon.src/M000098.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Polygon.src/M000099.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Polygon.src/M000100.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Polygon.src/M000101.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Polygon.src/M000102.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Segment.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Segment.src/M000069.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Segment.src/M000070.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Segment.src/M000071.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Segment.src/M000072.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Segment.src/M000073.html
@@ -265,17 +298,18 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Segment.src/M000080.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Segment.src/M000081.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Segment.src/M000082.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Segment.src/M000083.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Segment.src/M000084.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Tinterval.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Tinterval.src/M000101.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Tinterval.src/M000102.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Tinterval.src/M000103.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Tinterval.src/M000104.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Tinterval.src/M000105.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Tinterval.src/M000106.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Tinterval.src/M000107.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Tinterval.src/M000108.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Tinterval.src/M000109.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/created.rid
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/plruby_rb.html
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/files/plruby_rb.src/M000001.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_class_index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_file_index.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/fr_method_index.html
@@ -283,13 +317,13 @@
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/doc/rdoc-style.css
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/plruby.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/plruby.rd
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files/plruby_rb.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/files
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Tinterval.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Segment.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Polygon.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Point.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/PLRuby/Path.src
+%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Transaction.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Plan.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL/Cursor.src
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%/doc/classes/PLRuby/PL.src
