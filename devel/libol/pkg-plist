@@ -30,6 +30,7 @@ include/libol/stream_buffer.h
 include/libol/werror.h
 include/libol/xalloc.h
 lib/libol.a
+lib/libol.la
 lib/libol.so
 lib/libol.so.0
 @dirrm include/libol

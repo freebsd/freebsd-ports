@@ -1,7 +1,7 @@
---- configure.orig	Fri May 19 13:37:53 2000
-+++ configure	Fri May 19 13:38:07 2000
-@@ -2704,7 +2704,7 @@
- if test $with_debug = "yes"; then
+--- configure.orig	Mon Mar  3 14:54:16 2003
++++ configure	Mon Mar  3 14:54:37 2003
+@@ -6438,7 +6438,7 @@
+ if test $enable_debug = "yes"; then
  	CFLAGS="-Wall -g"
  else
 -	CFLAGS="-Wall -O2"
