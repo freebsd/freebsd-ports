@@ -20,8 +20,12 @@ USE_INC_LIBTOOL_VER=	13
 USE_GNOME=	pkgconfig
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-debugging \
-		--enable-sso \
-		--enable-accuracy
+		--enable-sso
+.if defined(WITH_SPEED)
+CONFIGURE_ARGS+=	--enable-speed
+.else
+CONFIGURE_ARGS+=	--enable-accuracy
+.endif
 
 post-patch:
 	@${SED} -e 's|%PREFIX%|${PREFIX}|g ; s|%VERSION%|${PORTVERSION}|g' \
