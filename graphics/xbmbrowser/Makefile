@@ -23,4 +23,3 @@ MAN1=		xbmbrowser.1
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>
-
