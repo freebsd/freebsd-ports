@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libsvm
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	science math
 MASTER_SITES=	http://www.csie.ntu.edu.tw/~cjlin/libsvm/
 
@@ -22,7 +22,7 @@ MAKE_ARGS+=	PYTHON_INCLUDEDIR=${PYTHON_INCLUDEDIR}
 
 .if defined(WITH_PYTHON)
 pre-install:
-	@cat ${PKGDIR}/pkg-plist.python ${PKGDIR}/pkg-plist > ${PLIST}
+	@${CAT} ${PKGDIR}/pkg-plist.python ${PKGDIR}/pkg-plist > ${PLIST}
 .endif
 
 pre-everything::
@@ -40,8 +40,8 @@ do-install:
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/libsvm
-	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${PREFIX}/share/doc/libsvm
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
