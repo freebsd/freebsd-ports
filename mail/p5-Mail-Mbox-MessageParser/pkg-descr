@@ -1,0 +1,7 @@
+Mail::Mbox::MessageParser is a feature-poor but very fast mbox parser. It uses
+the best of three strategies for parsing a mailbox: either using cached folder
+information, GNU grep, or highly optimized Perl.
+
+WWW: http://m-m-msgparser.sourceforge.net/
+
+Author: David Coppit <david@coppit.org>
