@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	${PNET_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PNET_MASTER_SITE_SUBDIR}
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mono's upper-level libraries
 
 BUILD_DEPENDS=	cscc:${PORTSDIR}/lang/pnet-base \

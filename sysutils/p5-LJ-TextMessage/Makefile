@@ -12,7 +12,7 @@ MASTER_SITES=	http://livejournal.com/files/code/textmessage/ \
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-1.4.1
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 interface to send text messages to phones/pagers
 
 BUILD_DEPENDS=	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
