@@ -10,7 +10,7 @@ PORTVERSION=	0.7.6
 PORTREVISION=	0
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://healthd.thehousleys.net/ \
-		http://www.pr-comm.ca/healthd/
+		http://healthd1.thehousleys.net/
 
 MAINTAINER=	jeh@FreeBSD.org
 COMMENT=	A daemon to monitor vital motherboard parameters
