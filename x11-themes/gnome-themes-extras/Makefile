@@ -18,7 +18,7 @@ COMMENT=	More themes for the GNOME 2 desktop environment
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=15
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack libgnomeui lthack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
