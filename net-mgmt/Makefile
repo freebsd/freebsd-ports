@@ -110,6 +110,7 @@
     SUBDIR += p5-Net-SNMP3
     SUBDIR += p5-NetAddr-IP
     SUBDIR += p5-SNMP
+    SUBDIR += p5-SNMP-Info
     SUBDIR += p5-SNMP-MIB-Compiler
     SUBDIR += p5-SNMP-Util
     SUBDIR += p5-SNMP_Session

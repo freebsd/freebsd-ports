@@ -1,0 +1,32 @@
+%%SITE_PERL%%/SNMP/Info.pm
+%%SITE_PERL%%/SNMP/Info/CiscoVTP.pm
+%%SITE_PERL%%/SNMP/Info/MAU.pm
+%%SITE_PERL%%/SNMP/Info/Bridge.pm
+%%SITE_PERL%%/SNMP/Info/EtherLike.pm
+%%SITE_PERL%%/SNMP/Info/CiscoStats.pm
+%%SITE_PERL%%/SNMP/Info/Layer1.pm
+%%SITE_PERL%%/SNMP/Info/Layer2.pm
+%%SITE_PERL%%/SNMP/Info/Layer3.pm
+%%SITE_PERL%%/SNMP/Info/CiscoStack.pm
+%%SITE_PERL%%/SNMP/Info/CDP.pm
+%%SITE_PERL%%/SNMP/Info/Entity.pm
+%%SITE_PERL%%/SNMP/Info/Layer1/Asante.pm
+%%SITE_PERL%%/SNMP/Info/Layer1/Allied.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/Aironet.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/C6500.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/C3550.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/Foundry.pm
+%%SITE_PERL%%/SNMP/Info/Layer2/C2900.pm
+%%SITE_PERL%%/SNMP/Info/Layer2/Catalyst.pm
+%%SITE_PERL%%/SNMP/Info/Layer2/Bay.pm
+%%SITE_PERL%%/SNMP/Info/Layer2/ZyXEL_DSLAM.pm
+%%SITE_PERL%%/SNMP/Info/Layer2/Aironet.pm
+%%SITE_PERL%%/SNMP/Info/Layer2/C1900.pm
+%%SITE_PERL%%/SNMP/Info/Layer2/HP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/Info/.packlist
+@dirrm %%SITE_PERL%%/SNMP/Info/Layer3
+@dirrm %%SITE_PERL%%/SNMP/Info/Layer2
+@dirrm %%SITE_PERL%%/SNMP/Info/Layer1
+@dirrm %%SITE_PERL%%/SNMP/Info
+@dirrm %%SITE_PERL%%/SNMP
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SNMP/Info
