@@ -18,9 +18,15 @@ USE_LIBTOOL=	yes
 MAKE_FLAGS=	CONF_ARGS="--prefix=${PREFIX}"
 CONFIGURE_ARGS+=	--enable-shared
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+BROKEN=		"Configure fails"
+.endif
+
 post-install:
 	${LN} -sf ${PREFIX}/bin/latte-html ${PREFIX}/bin/latte
 	${CP} -Rp ${WRKSRC}/tests ${PREFIX}/share/latte/
 	${INSTALL_DATA} ${WRKSRC}/latte.el ${PREFIX}/share/emacs/site-lisp
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
