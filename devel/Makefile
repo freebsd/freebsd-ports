@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.207 1999/08/02 23:17:23 cpiazza Exp $
+# $Id: Makefile,v 1.208 1999/08/13 05:18:49 cpiazza Exp $
 #
 
     SUBDIR += ElectricFence
@@ -146,6 +146,7 @@
     SUBDIR += py-mxTools
     SUBDIR += qtarch
     SUBDIR += qtez
+    SUBDIR += qtk
     SUBDIR += re2c
     SUBDIR += rinfo
     SUBDIR += sawt
