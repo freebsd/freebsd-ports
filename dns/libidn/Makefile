@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libidn
-PORTVERSION=	0.5.12
+PORTVERSION=	0.5.13
 CATEGORIES=	devel
 MASTER_SITES=	http://josefsson.org/libidn/releases/ \
 		${MASTER_SITE_GNU_ALPHA}
@@ -20,12 +20,14 @@ BUILD_DEPENDS=	gengetopt:${PORTSDIR}/devel/gengetopt
 USE_GETOPT_LONG=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
 USE_ICONV=	yes
+USE_LIBTOOL_VER=15
 USE_PERL5_BUILD=	yes
 USE_REINPLACE=	yes
-INSTALLS_SHLIB=	yes
-USE_LIBTOOL_VER=	15
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+
+INSTALLS_SHLIB=	yes
 
 INFO=	libidn
 
