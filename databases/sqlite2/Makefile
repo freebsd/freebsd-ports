@@ -7,59 +7,51 @@
 #
 
 PORTNAME=	sqlite
-PORTVERSION=	1.0.32
+PORTVERSION=	2.7.1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.hwaci.com/sw/sqlite/
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gerhard.haering@gmx.de
 
-LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
-		tcl${TCL_VER:S/.//}:${PORTSDIR}/lang/tcl${TCL_VER:S/.//}
-BUILD_DEPENDS=	lemon:${PORTSDIR}/devel/lemon
+LIB_DEPENDS=	tcl${TCL_VER:S/.//}:${PORTSDIR}/lang/tcl${TCL_VER:S/.//}
 
-MAKEFILE=	${FILESDIR}/Makefile.bsd
-MAKE_ARGS+=	-j2
+USE_GMAKE=	YES
+GNU_CONFIGURE=	YES
+USE_REINPLACE=  YES
+CONFIGURE_ARGS= --prefix=${PREFIX} --with-hints=freebsd.hints
+INSTALLS_SHLIB=	YES
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+MAKE_ARGS+=	TCLSH=tclsh${TCL_VER}
 MAKE_ENV+=	TCL_VER=${TCL_VER}
 TCL_VER?=	8.3
 
-GDBM_TOOLS=	gdbmdump gdbmstat
+DOCFILES=	arch.html arch.png c_interface.html changes.html \
+		crosscompile.html download.html faq.html index.html \
+		lang.html lemon.html mingw.html opcode.html report1.txt \
+		speed.html sqlite.html tclsqlite.html vdbe.html
 
-post-build:	test
-.for p in ${GDBM_TOOLS}
-	cd ${WRKSRC}/tool && ${MAKE} CFLAGS="${CFLAGS} -I${PREFIX}/include" \
-		LDADD="-L${PREFIX}/lib -lgdbm" PROG=$p NOMAN=1 \
-		-f bsd.prog.mk
-.endfor
-	cd ${WRKSRC} && ${MAKE} VPATH=${WRKSRC}/src \
-		CFLAGS="${CFLAGS} -I${WRKSRC} -I${WRKSRC}/src" \
-		LDADD="-L${WRKSRC} -lsqlite" PROG=sqlite SRCS=shell.c NOMAN=1 \
-		-f bsd.prog.mk
-.ifndef NOPORTDOCS
-	cd ${WRKSRC}/www && ${SETENV} ${MAKE_ENV} \
-		${MAKE} ${MAKE_ARGS} -f ${FILESDIR}/Makefile.docs
-.endif
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}
+
+post-patch:
+	${REINPLACE_CMD} -e "s/tclsh \$$(TOP)/\$$(TCLSH) \$$(TOP)/g" ${WRKSRC}/Makefile.in
+	${ECHO} "config_TARGET_TCL_INC=\"-I${PREFIX}/include/tcl${TCL_VER}\"" >${WRKSRC}/freebsd.hints
+	${ECHO} "config_TARGET_TCL_LIBS=\"-L${PREFIX}/lib -ltcl${TCL_VER:S/.//}\"" >>${WRKSRC}/freebsd.hints
+	#${ECHO} "config_TARGET_CFLAGS=\"-DTHREADSAFE=1 -pthread\"" >>${WRKSRC}/freebsd.hints
+
+post-build:
+	# Build the docs
+	cd ${WRKSRC} && ${MAKE} ${MAKE_ARGS} doc
 
 post-install:
-.for p in ${GDBM_TOOLS}
-	cd ${WRKSRC}/tool && ${MAKE} BINDIR="${PREFIX}/bin" \
-		PROG=$p NOMAN=1 -f bsd.prog.mk install
+	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+#	@${INSTALL_DATA} ${FILESDIR}/example.tcl ${DOCSDIR}
+.for file in ${DOCFILES}
+	@${INSTALL_DATA} ${WRKSRC}/doc//${file} ${DOCSDIR}
 .endfor
-	cd ${WRKSRC} && ${MAKE} PROG=sqlite NOMAN=1 BINDIR="${PREFIX}/bin" \
-		-f bsd.prog.mk install
-	${MKDIR} ${PREFIX}/lib/sqlite
-	${INSTALL_DATA} ${FILESDIR}/pkgIndex.tcl ${PREFIX}/lib/sqlite/
-.ifndef NOPORTDOCS
-	${MKDIR} ${PREFIX}/share/doc/sqlite
-	${INSTALL_DATA} ${WRKSRC}/www/*.html ${WRKSRC}/www/*.png \
-		${PREFIX}/share/doc/sqlite
 .endif
-
-test:
-	# -------------------------------------------------------
-	# Running the vendor's tests -- there should be 0 errors.
-	# -------------------------------------------------------
-	cd ${WRKSRC} && ${PREFIX}/bin/tclsh${TCL_VER} ${WRKSRC}/test/all.test \
-		${WRKSRC}/libsqlite.so
-	# -------------------------------------------------------
 
 .include <bsd.port.mk>

@@ -1,1 +1,1 @@
-SQL library that uses GDBM as its underlying file storage mechanism
+An SQL database engine in a C library, including a Tcl wrapper

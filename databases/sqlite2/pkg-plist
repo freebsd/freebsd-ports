@@ -1,25 +1,31 @@
 bin/sqlite
-bin/gdbmdump
-bin/gdbmstat
-lib/libsqlite.a
-lib/libsqlite_p.a
-lib/libsqlite.so
-lib/libsqlite.so.1.0
-lib/sqlite/pkgIndex.tcl
-@dirrm lib/sqlite
 include/sqlite.h
+lib/libsqlite.a
+lib/libsqlite.la
+lib/libsqlite.so
+lib/libsqlite.so.0
+@comment lib/sqlite/libtclsqlite.so.0
+@comment lib/sqlite/libtclsqlite.so
+@comment lib/sqlite/libtclsqlite.la
+@comment lib/sqlite/libtclsqlite.a
+@comment lib/sqlite/pkgIndex.tcl
+@comment @dirrm lib/sqlite
 %%PORTDOCS%%share/doc/sqlite/arch.html
 %%PORTDOCS%%share/doc/sqlite/arch.png
 %%PORTDOCS%%share/doc/sqlite/c_interface.html
 %%PORTDOCS%%share/doc/sqlite/changes.html
 %%PORTDOCS%%share/doc/sqlite/crosscompile.html
-%%PORTDOCS%%share/doc/sqlite/dynload.html
-%%PORTDOCS%%share/doc/sqlite/fileformat.html
+%%PORTDOCS%%share/doc/sqlite/download.html
+%%PORTDOCS%%share/doc/sqlite/faq.html
 %%PORTDOCS%%share/doc/sqlite/index.html
 %%PORTDOCS%%share/doc/sqlite/lang.html
+%%PORTDOCS%%share/doc/sqlite/lemon.html
 %%PORTDOCS%%share/doc/sqlite/mingw.html
 %%PORTDOCS%%share/doc/sqlite/opcode.html
+%%PORTDOCS%%share/doc/sqlite/report1.txt
+%%PORTDOCS%%share/doc/sqlite/speed.html
 %%PORTDOCS%%share/doc/sqlite/sqlite.html
 %%PORTDOCS%%share/doc/sqlite/tclsqlite.html
 %%PORTDOCS%%share/doc/sqlite/vdbe.html
+@comment %%PORTDOCS%%share/doc/sqlite/example.tcl
 %%PORTDOCS%%@dirrm share/doc/sqlite
