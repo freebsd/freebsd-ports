@@ -16,6 +16,8 @@ MAINTAINER=	dglo@SSEC.WISC.EDU
 BUILD_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/javac:${PORTSDIR}/java/jdk
 RUN_DEPENDS=	${LOCALBASE}/jdk1.1.8/bin/java:${PORTSDIR}/java/jdk
 
+MAKE_ENV+=	JAVAC=${LOCALBASE}/jdk1.1.8/bin/javac
+
 ALL_TARGET=	jar
 
 do-install:
