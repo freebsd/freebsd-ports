@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=u	coda-doc
+PORTNAME=	coda-doc
 PORTVERSION=	4.6.5.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/coda/doc/
