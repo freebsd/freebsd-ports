@@ -9,7 +9,8 @@ PORTNAME=	tcl-sql
 PORTVERSION=	20000114
 PORTREVISION=	2
 CATEGORIES=	databases ${TCL_NODOT}
-MASTER_SITES=	http://www.binevolve.com/~tdarugar/tcl-sql/download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mi@aldan.algebra.com
