@@ -2,10 +2,12 @@ bin/phex
 %%PORTDOCS%%%%DOCSDIR%%/Phex_other.htm
 %%PORTDOCS%%%%DOCSDIR%%/Phex_win.htm
 %%JAR_DIR%%/crimson-rt.jar
+%%JAR_DIR%%/forms-1.0.4.jar
 %%JAR_DIR%%/jaxb-api.jar
 %%JAR_DIR%%/jaxb-libs-rt.jar
 %%JAR_DIR%%/jaxb-ri-rt.jar
 %%JAR_DIR%%/jaxp.jar
+%%JAR_DIR%%/looks-1.2.2.jar
 %%JAR_DIR%%/phex.jar
 %%PORTDOCS%%@dirrm share/doc/phex
 @dirrm %%JAR_DIR%%

@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	phex
-PORTVERSION=	0.8.0.34
-PORTREVISION=	1
+PORTVERSION=	2.0.0.76
 CATEGORIES=	net java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}_${PORTVERSION}_j2se1.3
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	A Java multi platform and spyware free gnutella client
 
-USE_JAVA=	1.3+
+USE_JAVA=	1.4+
 USE_PERL5_BUILD=yes
 USE_SIZE=	yes
 USE_ZIP=	yes
@@ -25,18 +24,21 @@ NO_BUILD_DEPENDS_JAVA=	yes
 PLIST_SUB=	JAR_DIR=${JAR_DIR} \
 		JAR_FILE=${JAR_FILE}
 
-JAVAVM=		${LOCALBASE}/bin/javavm
+JAVAVM=		${LOCALBASE}/bin/java
 JAR_DIR=	share/java/jar/${PORTNAME}/
 JAR_MANIFEST=	${FILESDIR}/manifest
 
 DOC_FILES=	Phex_other.htm Phex_win.htm
 JAR_FILES=	crimson-rt.jar jaxb-api.jar jaxb-libs-rt.jar \
+		forms-1.0.4.jar \
+		looks-1.2.2.jar \
 		jaxb-ri-rt.jar jaxp.jar phex.jar
 
 post-patch:
 # remove trailing ^M
 	@${PERL} -pi -ne 's!\r\n!\n!' ${WRKSRC}/docs/readme/*
 	@${SED} -e "s|%%JAR_DIR%%|${JAR_DIR}|;s|%%JAR_FILE%%|${JAR_FILE}|; \
+		s|%%JAVA_VERSION%%|${USE_JAVA}|; \
 		s|%%JAVAVM%%|${JAVAVM}|;s|%%PREFIX%%|${PREFIX}|" \
 		${FILESDIR}/wrapper.sh > ${WRKDIR}/wrapper.sh
 
