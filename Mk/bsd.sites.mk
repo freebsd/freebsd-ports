@@ -434,7 +434,7 @@ MASTER_SITE_MOZILLA+= \
 	ftp://ftp2.sinica.edu.tw/pub3/www/mozilla/%SUBDIR%/ \
 	ftp://ftp.is.co.za/networking/info-service/www/clients/netscape/mozilla/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/mozilla/&,} \
-	ftp://ftp.rediris.es/mirror/mozilla/%SUBDIR%/ \
+	ftp://ftp.rediris.es/mirror/mozilla/mozilla.org/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/WWW/mozilla/%SUBDIR%/
 
 MASTER_SITE_NETBSD+=	\
