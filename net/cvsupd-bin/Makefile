@@ -3,7 +3,7 @@
 # Date created:		17 August 1998
 # Whom:			Sheldon Hearn <axl@iafrica.com>
 #
-# $Id: Makefile,v 1.6 1999/07/04 20:50:37 steve Exp $
+# $Id: Makefile,v 1.7 1999/07/05 04:22:36 cpiazza Exp $
 #
 
 DISTNAME=	cvsupd-bin-16.0
@@ -27,6 +27,6 @@ STRIP=
 do-install:
 	cd ${WRKSRC}; \
 	    ${INSTALL_PROGRAM} cvsupd ${PREFIX}/sbin; \
-	    ${INSTALL_MAN} ${MAN8} ${PREFIX}/man/man8
+	    ${INSTALL_MAN} ${MAN8}.gz ${PREFIX}/man/man8
 
 .include <bsd.port.mk>
