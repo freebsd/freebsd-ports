@@ -1,0 +1,15 @@
+man/man1/wmconfig.1x
+bin/wmconfig
+etc/wmconfig/xterm
+etc/wmconfig/xmms
+etc/wmconfig/xearth
+etc/wmconfig/vim
+etc/wmconfig/sylpheed
+etc/wmconfig/rxvt
+etc/wmconfig/pine
+etc/wmconfig/mozilla
+etc/wmconfig/lynx
+etc/wmconfig/gv
+etc/wmconfig/gimp
+etc/wmconfig/eterm
+@dirrm etc/wmconfig
