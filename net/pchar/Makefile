@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.ca.sandia.gov/~bmah/Software/pchar/
 MAINTAINER=     obrien@FreeBSD.org
 
 GNU_CONFIGURE=	yes
+.if defined(USE_INET6)
+CONFIGURE_ARGS= --with-ipv6
+.endif
 MAN8=		pchar.8
 
 do-install:
