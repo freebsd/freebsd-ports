@@ -1139,6 +1139,7 @@
     SUBDIR += php5-sysvsem
     SUBDIR += php5-sysvshm
     SUBDIR += php5-tokenizer
+    SUBDIR += phpbt
     SUBDIR += phptags
     SUBDIR += physfs
     SUBDIR += picasm

@@ -1,0 +1,9 @@
+phpBugTracker is a web-based bug reporting and tracking system. It
+helps development teams to manage the testing and debugging segments
+of the development cycle.
+
+A PHP replacement for bugzilla, focusing on separating the presentation,
+application, and database layers by using templates and a database
+abstraction layer.
+
+WWW: http://sourceforge.net/projects/phpbt/

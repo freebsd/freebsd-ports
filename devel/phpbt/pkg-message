@@ -1,0 +1,22 @@
+==========================================================================
+
+FreeBSD phpBugTracker installation instructions:
+
+Optional: Install JpGraph (http://www.aditus.nu/jpgraph/) if you
+wish to use it.
+	 
+1. The phpBugTracker distribution has been installed in:
+
+	%%PREFIX%%/%%PHPBT%%
+
+2. With your web browser, surf to this location.  You will be
+   presented with a web page that will help you configure and install
+   the application.
+
+3. After completing the installation, login and start reporting bugs.
+
+* Note: You must have magic_quotes_gpc set to On either in php.ini
+or in .htaccess (see http://www.php.net/manual/en/configuration.php
+for more info).
+
+==========================================================================
