@@ -1,0 +1,16 @@
+|STAT is a set of about 30 data manipulation and analysis programs
+developed by Gary Perlman at the University of California, San Diego
+and at the Wang Institute. The manipulation programs are general
+utilities that work with other standard programs like sort. The
+analysis programs compute most widely used statistics. |STAT programs
+are designed with the philosophy that individual programs should be
+designed as tools that do one task well and produce output suitable
+for input via pipes to |STAT and other programs.  Interactive use is
+supported in the command line interpreter/editor while batch files or
+shell scripts provide a programming language for complex
+analyses. Typical usage involves a pipeline of transformations of data
+followed by input to an analysis program, summarized schematically by:
+
+	INPUT DATA | TRANSFORM | ANALYSIS | OUTPUT RESULTS 
+
+WWW: http://www.acm.org/~perlman/stat/
