@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	patchutils
-PORTVERSION=	0.2.25
+PORTVERSION=	0.2.26
 CATEGORIES=	misc
 MASTER_SITES=	http://cyberelk.net/tim/data/patchutils/stable/
 
@@ -16,7 +16,7 @@ COMMENT=	A small collection of programs that operate on patch files
 
 USE_BZIP2=	yes
 USE_PERL5=	yes
-USE_GETOPT_LONG=yes
+USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
