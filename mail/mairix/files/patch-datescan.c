@@ -1,5 +1,5 @@
---- datescan.c.orig	Sun Jul 27 11:53:28 2003
-+++ datescan.c	Sun Jul 27 11:52:28 2003
+--- /dev/null	Mon Feb 16 12:56:01 2004
++++ datescan.c	Mon Feb 16 12:55:18 2004
 @@ -0,0 +1,88 @@
 +#include "dates.h"
 +enum DATESCAN_TYPE datescan_exitval[] = {
