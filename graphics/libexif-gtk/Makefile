@@ -16,7 +16,6 @@ COMMENT=	GTK+ widgets to display/edit EXIF tags
 
 LIB_DEPENDS=	exif.10:${PORTSDIR}/graphics/libexif
 
-USE_REINPLACE=	yes
 USE_GNOME=	gnomehack gtk20
 USE_LIBTOOL=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

@@ -18,7 +18,6 @@ COMMENT=	A utility for displaying AVI header information
 WRKSRC=		${WRKDIR}/src
 
 USE_ZIP=	yes
-USE_REINPLACE=	yes
 
 post-patch:
 	@(cd ${WRKSRC} && ${CP} messages.c temp ; \

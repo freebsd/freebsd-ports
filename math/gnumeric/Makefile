@@ -27,7 +27,6 @@ USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs bonobo libglade gal
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--with-evolution --without-guile

@@ -21,7 +21,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libiconv.so.3:${PORTSDIR}/converters/libiconv \
 		arial.ttf:${PORTSDIR}/x11-fonts/webfonts:build
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${SUBFONT_DISTNAME}
 PLIST_SUB+=	MF=${MPLAYER_FONTDIR:S,${LOCALBASE}/,,g}
 

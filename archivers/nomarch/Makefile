@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracts files from the old `.arc' archive format
 
 USE_GETOPT_LONG=yes
-USE_REINPLACE=	yes
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 

@@ -19,7 +19,6 @@ BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 #IS_INTERACTIVE=	YES	# Has to create an app-defaults file
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir="${X11BASE}/lib/X11" \
 		--enable-japanese=euc	#Japanese char set euc, jis sjis

@@ -14,7 +14,6 @@ MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	SendIP is a commandline tool to allow sending arbitrary IP packets
 
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_PERL5=	yes
 INSTALLS_SHLIB=	yes
 

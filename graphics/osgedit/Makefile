@@ -22,7 +22,6 @@ LIB_DEPENDS=	gtkgl-2.0.1:${PORTSDIR}/x11-toolkits/gtkglarea2 \
 RUN_DEPENDS=	${X11BASE}/lib/libosg.so:${PORTSDIR}/graphics/osg
 
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	libgnomeui
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \

@@ -15,7 +15,6 @@ COMMENT=	A yet another little mind game
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

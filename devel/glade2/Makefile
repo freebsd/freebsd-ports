@@ -18,7 +18,6 @@ COMMENT=	A user interface builder for GTK+/GNOME
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomedb libgnomeui
 USE_GMAKE=	yes

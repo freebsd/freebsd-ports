@@ -19,7 +19,6 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 USE_GNOME=	gnomehack glib20
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc

@@ -17,7 +17,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME text-to-speech API
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack libbonobo
 GNU_CONFIGURE=	yes

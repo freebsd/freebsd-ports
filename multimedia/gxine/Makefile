@@ -19,7 +19,6 @@ LIB_DEPENDS=	xine.8:${PORTSDIR}/multimedia/libxine
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gtk20
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -I${X11BASE}/lib"

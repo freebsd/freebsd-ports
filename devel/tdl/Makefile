@@ -14,7 +14,6 @@ MAINTAINER=	petef@FreeBSD.org
 COMMENT=	To-do list manager
 
 HAS_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 CONFIGURE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"

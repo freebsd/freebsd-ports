@@ -20,7 +20,6 @@ LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer	\
 
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 USE_SDL=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes

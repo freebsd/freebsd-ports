@@ -18,7 +18,6 @@ COMMENT=	Converts files between character sets and usages
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
 USE_LIBTOOL=	yes
-USE_REINPLACE=	yes
 USE_PERL5=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--without-included-gettext

@@ -14,7 +14,6 @@ MAINTAINER=	sf@FreeBSD.org
 COMMENT=	The famous jargon file
 
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 
 DATADIR=	${PREFIX}/share/jargon
 

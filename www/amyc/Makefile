@@ -16,7 +16,6 @@ COMMENT=	Display the contents of your Netscape cache
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext
 
-USE_REINPLACE=	yes
 USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

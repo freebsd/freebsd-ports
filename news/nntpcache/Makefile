@@ -36,7 +36,6 @@ LIB_DEPENDS+=	lber.2:${PORTSDIR}/net/openldap${LDAP_VER}-client
 SPOOLDIR?=	/var/spool
 
 NO_CDROM=	Free for individuals and non-military, non-profit organisations only
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=${SPOOLDIR}

@@ -18,7 +18,6 @@ LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 
 USE_BZIP2=	yes
 USE_MOTIF=	yes
-USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=	# none
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

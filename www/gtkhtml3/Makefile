@@ -21,7 +21,6 @@ LIB_DEPENDS=	soup-2.0.0:${PORTSDIR}/devel/libsoup
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack gal2 gail
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes

@@ -23,7 +23,6 @@ LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer	\
 
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 CONFIGURE_ARGS=	--target=""

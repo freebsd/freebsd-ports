@@ -19,7 +19,6 @@ RUN_DEPENDS=	${X11BASE}/bin/sawfish:${PORTSDIR}/x11-wm/sawfish2
 
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 
 SAWFISH_VERSION=	`${X11BASE}/bin/sawfish --version 2>&1 | \

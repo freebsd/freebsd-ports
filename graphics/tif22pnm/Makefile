@@ -17,7 +17,6 @@ COMMENT=	Converts TIFF- sampled images to PNM image
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libtiff-ldir=${LOCALBASE}/lib \
 		--with-libtiff-idir=${LOCALBASE}/include

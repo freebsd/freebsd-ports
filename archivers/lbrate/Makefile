@@ -15,7 +15,6 @@ MAINTAINER=	gslin@ccca.nctu.edu.tw
 COMMENT=	Extract/decompress CP/M LBR archives
 
 USE_GETOPT_LONG=yes
-USE_REINPLACE=	yes
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 

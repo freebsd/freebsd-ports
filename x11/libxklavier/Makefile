@@ -16,7 +16,6 @@ COMMENT=	An utility library to make XKB stuff easier
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnometarget gnomehack libxml2
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes

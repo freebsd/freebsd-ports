@@ -19,7 +19,6 @@ COMMENT=	The Automated Program Generator
 LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 USE_GNOME=	gnometarget libxml2
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libguile=yes --with-libxml2=yes

@@ -20,7 +20,6 @@ LIB_DEPENDS=	osip2.2:${PORTSDIR}/net/libosip2 \
 		gdbm.3:${PORTSDIR}/databases/gdbm
 RUN_DEPENDS=	pthread-config:${PORTSDIR}/devel/pth
 
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"

@@ -20,7 +20,6 @@ IGNORE=		requires Sendmail 8.12; upgrade the base system
 
 USE_BZIP2=	yes
 USE_GETOPT_LONG=yes
-USE_REINPLACE=	yes
 
 MAN5=		kavmilter.5
 MAN8=		kavmilter.8

@@ -18,7 +18,6 @@ COMMENT=	C++ SOAP Library based on expat
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 
 USE_OPENSSL=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

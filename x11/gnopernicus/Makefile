@@ -20,7 +20,6 @@ LIB_DEPENDS=	gnome-mag.1:${PORTSDIR}/x11/gnomemag \
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeui atspi
 USE_LIBTOOL=	yes

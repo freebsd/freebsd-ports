@@ -17,7 +17,6 @@ MAINTAINER=	ijliao@FreeBSD.org
 COMMENT=	A shell calculator
 
 USE_GETOPT_LONG=yes
-USE_REINPLACE=	yes
 MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}"
 

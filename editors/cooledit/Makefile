@@ -19,7 +19,6 @@ LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \
 
 USE_XPM=	yes
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}

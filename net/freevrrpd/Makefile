@@ -18,7 +18,6 @@ MAN8=		freevrrpd.8
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-USE_REINPLACE=	yes
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/freevrrpd ${PREFIX}/sbin

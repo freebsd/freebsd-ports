@@ -21,7 +21,6 @@ LIB_DEPENDS=	sqlite.2:${PORTSDIR}/databases/sqlite
 
 WRKSRC=		${WRKDIR}/pysqlite-${PORTVERSION}
 USE_PYTHON=	yes
-USE_REINPLACE=	yes
 USE_PYDISTUTILS=	yes
 
 DOCS=		README

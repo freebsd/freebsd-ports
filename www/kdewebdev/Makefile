@@ -25,7 +25,6 @@ PREFIX=		${KDE_PREFIX}
 USE_BZIP2=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include \

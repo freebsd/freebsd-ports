@@ -21,7 +21,6 @@ USE_GMAKE=	yes
 PREFIX?=	${X11BASE}
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomehack pkgconfig
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
 		--with-expat-includes=${LOCALBASE}/include \

@@ -20,7 +20,6 @@ COMMENT=	Callback Framework for C++
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomehack
 
 post-install:

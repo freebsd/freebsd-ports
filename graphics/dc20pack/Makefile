@@ -16,7 +16,6 @@ MAINTAINER=		maurice@serc.rmit.edu.au
 COMMENT=	Digital camera control and download tool for Kodak DC20/25 camera
 
 WRKSRC=			${WRKDIR}
-USE_REINPLACE=		yes
 
 post-extract:
 	for file in `${FIND} ${WRKSRC} -type f`; do \

@@ -20,7 +20,6 @@ LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier gconf2 libglade2
 INSTALLS_SHLIB=	yes

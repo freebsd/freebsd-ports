@@ -18,7 +18,6 @@ COMMENT=	GUI frontend to the libbonobo component of GNOME 2
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomecanvas libgnome
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

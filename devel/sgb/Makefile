@@ -17,7 +17,6 @@ COMMENT=	The Stanford GraphBase: A Platform for Combinatorial Computing
 
 BUILD_DEPENDS=	ctangle:${PORTSDIR}/devel/cweb
 
-USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	lib tests
 

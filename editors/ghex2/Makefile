@@ -19,7 +19,6 @@ COMMENT=	GNOME 2 hex editor
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack gail libgnomeprintui libgnomeui
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

@@ -20,7 +20,6 @@ RUN_DEPENDS=	${LOCALBASE}/bin/rexx:${PORTSDIR}/lang/rexx-imc
 NO_BUILD=	yes
 USE_ZIP=	yes
 USE_JAVA=	1.1+
-USE_REINPLACE=	yes
 
 pre-patch:
 	for file in ${WRKSRC}/bin/NetRexxC.sh ${WRKSRC}/read.me.first; do \

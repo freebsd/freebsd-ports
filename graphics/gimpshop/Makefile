@@ -36,7 +36,6 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack gtk20 libartlgpl2 librsvg2
 WANT_GNOME=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 PLIST_SUB=	SHLIBVER="${SHLIBVER}"
 CONFIGURE_ARGS=	--disable-perl \
