@@ -32,6 +32,7 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 INSTALLS_SHLIB=	yes
 
 MAN1=	serveez.1 serveez-config.1
+INFO=	serveez serveez-api
 
 CPPFLAGS=	`${GUILE_CONFIG} compile`
 LDFLAGS=	`${GUILE_CONFIG} link`
