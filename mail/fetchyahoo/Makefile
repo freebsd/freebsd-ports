@@ -21,8 +21,8 @@ RUN_DEPENDS=	\
 	${SITE_PERL}/Net/Cmd.pm:${PORTSDIR}/net/p5-Net \
 	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
 	${SITE_PERL}/mach/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
-	${LOCALBASE}/include/w3c-libwww/HTANSI.h:${PORTSDIR}/www/libwww \
-	${SITE_PERL}/mach/HTML/Filter.pm:${PORTSDIR}/www/p5-HTML-Parser
+	${SITE_PERL}/mach/HTML/Filter.pm:${PORTSDIR}/www/p5-HTML-Parser \
+	${SITE_PERL}/HTTP/Request/Common.pm:${PORTSDIR}/www/p5-libwww
 
 DOCS=		COPYING ChangeLog Credits INSTALL TODO index.html
 MAN1=		fetchyahoo.1
@@ -38,7 +38,7 @@ do-patch:
 	${PERL} -pi -e "s:myhost.com:example:g" ${WRKSRC}/fetchyahoorc
 
 pre-install:
-	${ECHO_CMD} bin/fetchyahoo.pl > ${PLIST}
+	${ECHO_CMD} bin/fetchyahoo > ${PLIST}
 .if !defined(NOPORTDOCS)
 	${ECHO_CMD} share/examples/fetchyahoo/fetchyahoorc >> ${PLIST}
 .for ii in ${DOCS}
@@ -47,7 +47,7 @@ pre-install:
 .endif
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/fetchyahoo.pl ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/fetchyahoo.pl ${PREFIX}/bin/fetchyahoo
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${EXAMPLESDIR} ${DOCSDIR}
