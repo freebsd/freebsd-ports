@@ -1,0 +1,11 @@
+You need to add your reader to %%PREFIX%%/etc/readers.conf.  The
+following is an example of a suitable entry:
+
+FRIENDLYNAME		"GemPC410"
+DEVICENAME		GEMCORE
+LIBPATH			%%PREFIX%%/lib/libGemPC410.so
+CHANNELID		1
+
+You will have to adjust the CHANNELID to match the actual port that your
+reader is connected to (0 for /dev/cuaa0, 1 for /dev/cuaa1 etc.)
+

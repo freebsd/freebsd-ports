@@ -97,6 +97,7 @@
     SUBDIR += ident2
     SUBDIR += identify
     SUBDIR += ifd-devkit
+    SUBDIR += ifd-gempc410
     SUBDIR += ifd-gpr400
     SUBDIR += ike-scan
     SUBDIR += inflex
