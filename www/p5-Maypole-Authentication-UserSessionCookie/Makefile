@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	scrappy@FreeBSD.org
 COMMENT=	Track sessions and, optionally, users
 
+BROKEN=		Incomplete pkg-plist
+
 PERL_CONFIGURE=	yes
 
 .include <bsd.port.mk>

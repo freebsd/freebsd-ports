@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	    sethk@meowfishies.com
 COMMENT=	Make a hole to the original main compartment in the Safe compartment
 
+BROKEN=		Incomplete pkg-plist
+
 PERL_CONFIGURE=	    yes
 
 MAN3=	Safe::Hole.3

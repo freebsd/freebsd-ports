@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	scrappy@FreeBSD.org
 COMMENT=	Run Maypole sub-requests as components
 
+BROKEN=		Incomplete pkg-plist
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Maypole::Component.3
