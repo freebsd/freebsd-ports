@@ -1,0 +1,58 @@
+--- configure.in.orig	Tue Oct 26 02:52:28 1999
++++ configure.in	Fri Mar 19 01:37:24 2004
+@@ -122,7 +122,7 @@
+ AC_CACHE_CHECK([for two-iterator string constructor],
+ 	       latte_cv_lib_two_iterator_string_ctor,
+ 	       AC_TRY_COMPILE([#include <string>],
+-			      [string s; string t(s.begin(), s.end());],
++			      [std::string s; std::string t(s.begin(), s.end());],
+ 			      [latte_cv_lib_two_iterator_string_ctor=yes],
+ 			      [latte_cv_lib_two_iterator_string_ctor=no]))
+ if test "x$latte_cv_lib_two_iterator_string_ctor" = xyes
+@@ -133,8 +133,8 @@
+ AC_CACHE_CHECK([for November 96 deque],
+ 	       latte_cv_lib_nov96deque,
+ 	       AC_TRY_COMPILE([#include <deque>],
+-			      [deque<int> d;
+-			       deque<int> e(d.begin(), d.end());],
++			      [std::deque<int> d;
++			       std::deque<int> e(d.begin(), d.end());],
+ 			      [latte_cv_lib_nov96deque=yes],
+ 			      [latte_cv_lib_nov96deque=no]))
+ if test "x$latte_cv_lib_nov96deque" = xyes
+@@ -145,7 +145,7 @@
+ AC_CACHE_CHECK([for November 96 stack template],
+ 	       latte_cv_lib_nov96stack,
+ 	       AC_TRY_COMPILE([#include <stack>],
+-			      [stack<int> s; s.push(7);],
++			      [std::stack<int> s; s.push(7);],
+ 			      [latte_cv_lib_nov96stack=yes],
+ 			      [latte_cv_lib_nov96stack=no]))
+ if test "x$latte_cv_lib_nov96stack" = xyes
+@@ -156,7 +156,7 @@
+ AC_CACHE_CHECK([for vector::resize],
+ 	       latte_cv_func_vector_resize,
+ 	       AC_TRY_COMPILE([#include <vector>],
+-			      [vector<char *> v; v.resize(8, "foo");],
++			      [std::vector<char *> v; v.resize(8, "foo");],
+ 			      [latte_cv_func_vector_resize=yes],
+ 			      [latte_cv_func_vector_resize=no]))
+ if test "x$latte_cv_func_vector_resize" = xyes
+@@ -167,7 +167,7 @@
+ AC_CACHE_CHECK([for string::erase],
+ 	       latte_cv_func_string_erase,
+ 	       AC_TRY_COMPILE([#include <string>],
+-			      [string s; s.erase(1);],
++			      [std::string s; s.erase(1);],
+ 			      [latte_cv_func_string_erase=yes],
+ 			      [latte_cv_func_string_erase=no]))
+ if test "x$latte_cv_func_string_erase" = xno
+@@ -175,7 +175,7 @@
+   AC_CACHE_CHECK([for string::remove],
+ 		 latte_cv_func_string_remove,
+ 		 AC_TRY_COMPILE([#include <string>],
+-				[string s; s.remove(1);],
++				[std::string s; s.remove(1);],
+ 				[latte_cv_func_string_remove=yes],
+ 				[latte_cv_func_string_remove=no]))
+   if test "x$latte_cv_func_string_remove" = xyes

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	latte
-PORTVERSION=	1.1
+PORTVERSION=	2.1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.latte.org/ \
 		ftp://ftp.brasslantern.com/pub/zanshin/latte/
@@ -14,19 +14,31 @@ MASTER_SITES=	http://www.latte.org/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple language for marking up text in a very expressive way
 
-USE_LIBTOOL_VER=13
-MAKE_FLAGS=	CONF_ARGS="--prefix=${PREFIX}"
-CONFIGURE_ARGS+=	--enable-shared
+USE_GETOPT_LONG=	yes
+USE_GMAKE=	yes
+USE_AUTOCONF_VER=	213
+USE_LIBTOOL_VER=	13
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--enable-shared
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
 
-.include <bsd.port.pre.mk>
+INFO=		latte liblatte
 
-.if ${OSVERSION} >= 502102
-BROKEN=		"Configure fails"
-.endif
+CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
+LDFLAGS=	-L${LOCALBASE}/lib
+
+post-extract:
+	-@${RM} ${WRKSRC}/getopt*
 
 post-install:
-	${LN} -sf ${PREFIX}/bin/latte-html ${PREFIX}/bin/latte
-	${CP} -Rp ${WRKSRC}/tests ${PREFIX}/share/latte/
+	@${LN} -sf latte-html ${PREFIX}/bin/latte
 	${INSTALL_DATA} ${WRKSRC}/latte.el ${PREFIX}/share/emacs/site-lisp
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${EXAMPLESDIR}
+	${TAR} -C ${WRKSRC} --exclude "*Makefile*" -cf - tests | \
+		${TAR} -C ${EXAMPLESDIR} --unlink -xf -
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
