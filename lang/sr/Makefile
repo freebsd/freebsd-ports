@@ -23,6 +23,14 @@ MAN1 =		sr.1 srl.1 srm.1 srprof.1 srtex.1 srlatex.1 srgrind.1 \
 MAN3 =		sranimator.3 srgetopt.3 srwin.3
 MAN5 =		srmap.5 srtrace.5
 
+.include	<bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"fails to package due to missing lib/sr/srwin.o"
+.endif
+.if ${OSVERSION} >= 500000
+BROKEN=		"fails to build; bad C++ code"
+.endif
 pre-install:
 	@${MKDIR} ${PREFIX}/lib/sr
 
@@ -36,4 +44,4 @@ post-install:
 	${CP} -pR ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
-.include<bsd.port.mk>
+.include	<bsd.port.post.mk>
