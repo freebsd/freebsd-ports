@@ -1,0 +1,11 @@
+--- bakery/Makefile.in.orig	Fri Nov 28 11:44:02 2003
++++ bakery/Makefile.in	Fri Nov 28 11:44:17 2003
+@@ -192,7 +192,7 @@
+                       View/libbakery_view.la \
+                       $(BAKERY_LIBS)
+ 
+-libbakery_1_3_la_LDFLAGS = -version-info $(GENERIC_LIBRARY_VERSION) -release $(GENERIC_RELEASE)
++libbakery_1_3_la_LDFLAGS = -version-info $(GENERIC_LIBRARY_VERSION)
+ subdir = bakery
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
