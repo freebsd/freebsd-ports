@@ -7170,6 +7170,7 @@ pop3lite	ports/mail/pop3lite
 pop3vscan	ports/mail/pop3vscan
 popa3d		ports/mail/popa3d
 popa3d-before-sendmail	ports/mail/popa3d-before-sendmail
+popcheck	ports/mail/popcheck
 popd		ports/mail/popd
 poppassd	ports/mail/poppassd
 popper		ports/mail/popper
