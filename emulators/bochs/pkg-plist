@@ -1,6 +1,6 @@
 bin/bochs
 lib/bochs/bios/VGABIOS-elpin-2.20
-lib/bochs/bios/BIOS-bochs-990907a
+lib/bochs/bios/BIOS-bochs-990925a
 lib/bochs/bochsrc.sample
 share/doc/bochs/3rdparty.license.html
 share/doc/bochs/DOS.html
@@ -10,7 +10,6 @@ share/doc/bochs/Minix.html
 share/doc/bochs/OldWindows95.html
 share/doc/bochs/Windows31.html
 share/doc/bochs/Windows95.html
-share/doc/bochs/bugreports.html
 share/doc/bochs/changelog.html
 share/doc/bochs/construction.html
 share/doc/bochs/cosimulation.html
@@ -18,6 +17,7 @@ share/doc/bochs/debugger.html
 share/doc/bochs/developers.html
 share/doc/bochs/faq.html
 share/doc/bochs/features.html
+share/doc/bochs/fpu.html
 share/doc/bochs/index.html
 share/doc/bochs/install.html
 share/doc/bochs/instrumentation.html
