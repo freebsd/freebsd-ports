@@ -20,7 +20,7 @@ MAN1=		screen.1
 post-install:
 	@${CP} ${WRKSRC}/etc/etcscreenrc ${PREFIX}/etc/screenrc.sample
 	@if [ ! -f ${PREFIX}/etc/screenrc ]; then \
-		cp ${PREFIX}/etc/screenrc.sample ${PREFIX}/etc/screenrc ; \
+		${CP} ${PREFIX}/etc/screenrc.sample ${PREFIX}/etc/screenrc ; \
 	fi
 
 .include <bsd.port.mk>
