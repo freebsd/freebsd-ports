@@ -1,0 +1,21 @@
+The Ada 95 version of the components will contain the same key abstractions
+as the C++ form (Structs, Tools and Support). However, the organization will
+be slightly different, particularly in the Support domain. This is because
+Ada 95 provides several special forms of memory management that are quite
+different from C++.
+
+The Structs category provides an array of structural abstractions (Bags,
+Collections, Deques, Graphs, Lists, Maps, Queues, Rings, Sets, Stacks, and
+Trees). The Tools category provides algorithmic abstractions (Searching,
+Sorting, etc.). The Support category contains all the "concrete" forms, plus
+structures to create the components.
+
+Some of the structures permit structural sharing (graphs, lists, and trees).
+Some structures may also be ordered (collections, dequeues, and queues). There
+are also multiple forms for some structures: single and double linked lists,
+directed and undirected graphs, and binary, multiway, and AVL trees.
+
+WWW: http://www.adapower.net/booch/
+
+- David Holm
+david@realityrift.com

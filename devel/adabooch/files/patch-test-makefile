@@ -1,0 +1,11 @@
+--- test/makefile.orig	Sun Jun  2 16:49:53 2002
++++ test/makefile	Sat Dec 21 19:20:33 2002
+@@ -28,7 +28,7 @@
+ ########
+ # Tests
+ 
+-GNATMAKE_FLAGS = -I.. -O2 -g -gnatafy -gnatwlu
++GNATMAKE_FLAGS = -I/usr/local/lib/booch -O2 -g -gnatafy -gnatwlu
+ 
+ test: testable
+ 	for t in $(TESTABLE); do \
