@@ -1,0 +1,15 @@
+
+$FreeBSD$
+
+--- po/Makefile.in	2002/07/02 13:39:31	1.1
++++ po/Makefile.in	2002/07/02 13:42:52
+@@ -219,6 +219,9 @@
+ .po.mo: 
+ 	msgfmt -o $@ $<
+ 
++zh_TW.Big5.mo: zh_TW.Big5.po
++	OLD_PO_FILE_INPUT=1 msgfmt -o $@ $<
++
+ WindowMaker.pot: $(POTFILES)
+ 	xgettext --default-domain=WindowMaker \
+ 	--add-comments --keyword=_ $(POTFILES)

@@ -1,0 +1,15 @@
+
+$FreeBSD$
+
+--- WPrefs.app/po/Makefile.in	2002/07/02 13:43:18	1.1
++++ WPrefs.app/po/Makefile.in	2002/07/02 13:43:38
+@@ -218,6 +218,9 @@
+ .po.mo: 
+ 	msgfmt -o $@ $<
+ 
++zh_TW.Big5.mo: zh_TW.Big5.po
++	OLD_PO_FILE_INPUT=1 msgfmt -o $@ $<
++
+ WPrefs.pot: $(POTFILES)
+ 	xgettext --default-domain=WPrefs \
+ 	--add-comments --keyword=_ $(POTFILES)
