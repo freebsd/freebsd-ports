@@ -8,7 +8,6 @@
 PORTNAME=	gcc
 PORTVERSION=	${GCCVERSION}.${PATCHVERSION}
 PORTEPOCH=	1
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${PORTNAME}-${GCCVERSION}
@@ -17,24 +16,27 @@ DISTFILES=	${PORTNAME}-core-${GCCVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-g++-${GCCVERSION}${EXTRACT_SUFX}  \
 		${PORTNAME}-objc-${GCCVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-g77-${GCCVERSION}${EXTRACT_SUFX} \
-		${PORTNAME}-ada-${GCCVERSION}${EXTRACT_SUFX}
+		${PORTNAME}-ada-${GCCVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}-java-${GCCVERSION}${EXTRACT_SUFX} \
+		${PORTNAME}-testsuite-${GCCVERSION}${EXTRACT_SUFX}
 
 PATCH_SITES=	${MASTER_SITE_SOURCEFORGE}
 # Special hack: I don't use SITE_SUBDIR & DIST_SUBDIR, and only pathces
 #               will be placed to subdirectory
 #               It allows to use main gcc sources from other ports.
 PATCHFILES=	mingw/${PORTNAME}-${GCCVERSION}-${PATCHVERSION:S/./-/}-src.diff.gz
-PATCH_DIST_STRIP=	-p1
+# Skip patching of bohem-gc, it is bug of patch's authors
+PATCH_DIST_STRIP=	-p1 -S + -S +
 
 MAINTAINER=	lev@FreeBSD.org
-COMMENT=	FSF gcc-3.2 for Windows cross-development
+COMMENT=	FSF gcc-3.3 for Windows cross-development
 
 BUILD_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils \
 		mingwm10.dll:${PORTSDIR}/devel/mingw32-bin-msvcrt
 RUN_DEPENDS=	${PKGNAMEPREFIX}as:${PORTSDIR}/devel/${PKGNAMEPREFIX}binutils
 
-GCCVERSION=	3.2.3
-PATCHVERSION=	20030504.1
+GCCVERSION=	3.3.1
+PATCHVERSION=	20030804.1
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${GCCVERSION}
 
@@ -43,21 +45,27 @@ USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
-		--enable-languages=c,c++,f77,objc \
+		--enable-languages=c,c++,f77,objc,java \
 		--with-gcc --with-gnu-ld --with-gnu-as \
 		--enable-threads --disable-nls \
 		--disable-win32-registry --disable-shared \
-		--enable-sjlj-exceptions
+		--enable-sjlj-exceptions --enable-libgcj \
+		--disable-java-awt --without-x \
+		--enable-java-gc=boehm --disable-libgcj-debug \
+		--enable-interpreter --enable-hash-synchronization \
+		--without-newlib
 MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
 LIBTOOLFILES=	configure gcc/configure
+INFO=		fastjar
 MAN1=		${PKGNAMEPREFIX}gcc.1 ${PKGNAMEPREFIX}g++.1 ${PKGNAMEPREFIX}g77.1  \
-		cpp.1 gcov.1
+		cpp.1 gcov.1 ${PKGNAMEPREFIX}gcj.1 gcjh.1 gij.1 grepjar.1 jar.1 \
+		jcf-dump.1 jv-convert.1 jv-scan.1 rmic.1 rmiregistry.1
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} GCC_TARG=${PKGNAMEPREFIX:S/-$//} \
 		GCC_REV=${GCCVERSION}
 
-BINARIES=	gcc cpp g++ g77 gcov
+BINARIES=	gcc cpp g++ g77 gcov gcj gcjh jcf-dump jv-scan
 
 post-configure:
 	@${PERL} -pi.bak -e 's,^(TARGET_CONFIGDIRS\s*=\s*).+$$,\1libstdc++-v3 libf2c libobjc mingw,' ${WRKSRC}/Makefile
