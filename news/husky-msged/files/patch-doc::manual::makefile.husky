@@ -1,5 +1,5 @@
 --- doc/manual/makefile.husky.orig	Wed Apr 11 04:50:01 2001
-+++ doc/manual/makefile.husky	Mon Jan  6 00:22:15 2003
++++ doc/manual/makefile.husky	Thu Jan  9 04:09:02 2003
 @@ -7,8 +7,8 @@
  ifdef HTMLDIR
  
@@ -11,3 +11,18 @@
  else
  all: html
  install: install-html
+@@ -90,12 +90,12 @@
+ 
+ install-info: info
+ 	-$(MKDIR) $(MKDIROPT) $(INFODIR)
+-	$(INSTALL) msged.info $(INFODIR)
++	$(INSTALL) $(IMOPT) msged.info $(INFODIR)
+ 	-install-info --info-dir=$(INFODIR)  $(INFODIR)$(DIRSEP)msged.info
+ 
+ install-html: html
+ 	-$(MKDIR) $(MKDIROPT) $(HTMLDIR)
+-	$(INSTALL) msged_*.html $(HTMLDIR)
++	$(INSTALL) $(IMOPT) msged_*.html $(HTMLDIR)
+ 
+ uninstall:
+ 	-install-info --remove --info-dir=$(INFODIR) $(INFODIR)$(DIRSEP)msged.info

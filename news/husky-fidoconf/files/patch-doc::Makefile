@@ -1,0 +1,22 @@
+--- doc/Makefile.orig	Tue Sep 17 16:35:51 2002
++++ doc/Makefile	Thu Jan  9 03:45:08 2003
+@@ -71,16 +71,16 @@
+ 	@echo .
+ ifdef INFODIR
+ 	-$(MKDIR) $(MKDIROPT) $(INFODIR)
+-	$(INSTALL)  fidoconfig.info $(INFODIR)
++	$(INSTALL) $(IMOPT) fidoconfig.info $(INFODIR)
+ 	-install-info --info-dir=$(INFODIR)  $(INFODIR)$(DIRSEP)fidoconfig.info
+ endif
+ ifdef HTMLDIR
+ 	-$(MKDIR) $(MKDIROPT) $(HTMLDIR)
+-	$(INSTALL)  fidoconfig*html $(HTMLDIR)
++	$(INSTALL) $(IMOPT) fidoconfig*html $(HTMLDIR)
+ endif
+ ifdef DVIDIR
+ 	-$(MKDIR) $(MKDIROPT) $(DVIDIR)
+-	$(INSTALL)  fidoconfig.dvi $(DVIDIR)
++	$(INSTALL) $(IMOPT) fidoconfig.dvi $(DVIDIR)
+ endif
+ 
+ uninstall:
