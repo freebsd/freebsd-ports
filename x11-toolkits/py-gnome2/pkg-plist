@@ -1,90 +1,61 @@
-%%PYTHON_SITELIBDIR%%/gtk-1.2/_appletmodule.so
-%%PYTHON_SITELIBDIR%%/gtk-1.2/_cappletmodule.so
-%%PYTHON_SITELIBDIR%%/gtk-1.2/_gladegnomemodule.so
-%%PYTHON_SITELIBDIR%%/gtk-1.2/_gnomemodule.so
-%%PYTHON_SITELIBDIR%%/gtk-1.2/_gnomeuimodule.so
-%%PYTHON_SITELIBDIR%%/gtk-1.2/_gtkhtmlmodule.so
-%%PYTHON_SITELIBDIR%%/gtk-1.2/_gtkxmhtmlmodule.so
-%%PYTHON_SITELIBDIR%%/gtk-1.2/_zvtmodule.so
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/__init__.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/__init__.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/affine.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/affine.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/affine.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/applet.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/applet.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/applet.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/capplet.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/capplet.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/capplet.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/config.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/config.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/config.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/file.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/file.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/file.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/help.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/help.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/help.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/history.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/history.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/history.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/metadata.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/metadata.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/metadata.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/mime.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/mime.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/mime.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/score.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/score.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/score.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/triggers.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/triggers.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/triggers.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/ui.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/ui.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/ui.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/uiconsts.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/uiconsts.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/uiconsts.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/url.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/url.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/url.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/util.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/util.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/util.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/xmhtml.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/xmhtml.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/xmhtml.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/zvt.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/zvt.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gnome/zvt.pyo
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gtkhtml.py
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gtkhtml.pyc
-%%PYTHON_SITELIBDIR%%/gtk-1.2/gtkhtml.pyo
-share/examples/py-gnome/about.py
-share/examples/py-gnome/bookmarks-applet.py
-share/examples/py-gnome/calculator.py
-share/examples/py-gnome/canvas-example.py
-share/examples/py-gnome/canvas.py
-share/examples/py-gnome/clock-applet.py
-share/examples/py-gnome/colorpicker.py
-share/examples/py-gnome/dial.py
-share/examples/py-gnome/fifteen.py
-share/examples/py-gnome/gtkhtml_demo.py
-share/examples/py-gnome/html_demo.py
-share/examples/py-gnome/stock_demo.py
-share/examples/py-gnome/ted_demo.py
-share/examples/py-gnome/uiinfo_demo.py
-share/examples/py-gnome/zterm.py
-share/pygtk/1.2/defs/applet.defs
-share/pygtk/1.2/defs/capplet.defs
-share/pygtk/1.2/defs/gnome-enums.defs
-share/pygtk/1.2/defs/gnome.defs
-share/pygtk/1.2/defs/gnomeui.defs
-share/pygtk/1.2/defs/gtkhtml.defs
-share/pygtk/1.2/defs/xmhtml.defs
-share/pygtk/1.2/defs/zvt.defs
-@dirrm share/examples/py-gnome
-@dirrm %%PYTHON_SITELIBDIR%%/gtk-1.2/gnome
+%%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo/__init__.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gconfmodule.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/__init__.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/_gnomemodule.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/appletmodule.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/canvasmodule.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/vfsmodule.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnome/zvtmodule.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/__init__.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/_printmodule.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint/printuimodule.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gtkhtml2module.so
+libdata/pkgconfig/gnome-python-2.0.pc
+%%PORTDOCS%%share/examples/py-gnome/bonobo/bonoboui/Bonobo_Sample_Hello.xml
+%%PORTDOCS%%share/examples/py-gnome/bonobo/bonoboui/hello.py
+%%PORTDOCS%%share/examples/py-gnome/bonobo/echo/README
+%%PORTDOCS%%share/examples/py-gnome/bonobo/echo/echo-client.py
+%%PORTDOCS%%share/examples/py-gnome/canvas/canvas-example.py
+%%PORTDOCS%%share/examples/py-gnome/gconf/basic-gconf-app.py
+%%PORTDOCS%%share/examples/py-gnome/gconf/simple-controller.py
+%%PORTDOCS%%share/examples/py-gnome/gconf/simple-view.py
+%%PORTDOCS%%share/examples/py-gnome/gtkhtml2/simple-browser.py
+%%PORTDOCS%%share/examples/py-gnome/nautilus/Nautilus_View_pysample.server
+%%PORTDOCS%%share/examples/py-gnome/nautilus/README
+%%PORTDOCS%%share/examples/py-gnome/nautilus/sample.py
+%%PORTDOCS%%share/examples/py-gnome/vfs/shell.py
+%%PORTDOCS%%share/examples/py-gnome/zvt/zvt-demo.py
+share/pygtk/2.0/defs/applet.defs
+share/pygtk/2.0/defs/art.defs
+share/pygtk/2.0/defs/bonobo-types.defs
+share/pygtk/2.0/defs/bonobo.defs
+share/pygtk/2.0/defs/bonoboui-types.defs
+share/pygtk/2.0/defs/bonoboui.defs
+share/pygtk/2.0/defs/canvas.defs
+share/pygtk/2.0/defs/gconf.defs
+share/pygtk/2.0/defs/gnome.defs
+share/pygtk/2.0/defs/gtkhtml2.defs
+share/pygtk/2.0/defs/nautilus.defs
+share/pygtk/2.0/defs/print.defs
+share/pygtk/2.0/defs/printui.defs
+share/pygtk/2.0/defs/ui.defs
+share/pygtk/2.0/defs/zvt.defs
+@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gnomeprint
+@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gnome
+@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/bonobo
+@dirrm %%PORTDOCS%%share/examples/py-gnome/zvt
+@dirrm %%PORTDOCS%%share/examples/py-gnome/vfs
+@dirrm %%PORTDOCS%%share/examples/py-gnome/nautilus
+@dirrm %%PORTDOCS%%share/examples/py-gnome/gtkhtml2
+@dirrm %%PORTDOCS%%share/examples/py-gnome/gconf
+@dirrm %%PORTDOCS%%share/examples/py-gnome/canvas
+@dirrm %%PORTDOCS%%share/examples/py-gnome/bonobo/echo
+@dirrm %%PORTDOCS%%share/examples/py-gnome/bonobo/bonoboui
+@dirrm %%PORTDOCS%%share/examples/py-gnome/bonobo
+@dirrm %%PORTDOCS%%share/examples/py-gnome
