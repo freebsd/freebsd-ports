@@ -3,6 +3,7 @@
 
     SUBDIR += 9menu
     SUBDIR += 9wm
+    SUBDIR += aewm
     SUBDIR += afterstep
     SUBDIR += afterstep-i18n
     SUBDIR += afterstep-stable
