@@ -1,0 +1,65 @@
+--- config/Makefile.SH.orig	Wed Apr 18 08:40:57 2001
++++ config/Makefile.SH	Tue Jun 26 12:26:00 2001
+@@ -167,7 +167,7 @@
+ LIBDIR = \$(DESTDIR)$libdir
+ BINDIR = \$(DESTDIR)$bindir
+ DATADIR= \$(DESTDIR)$datadir
+-MANDIR = \$(DESTDIR)$mandir
++MANDIR = \$(DESTDIR)\${PREFIX}/man/man1
+ ALLDIR = \$(DESTDIR)$miscdir
+ DOCDIR  = \$(ALLDIR)/doc
+ EMACSDIR= \$(ALLDIR)/emacs
+@@ -327,7 +327,7 @@
+ 
+ install-doc::
+ 	-mkdir -p \$(ALLDIR) \$(BINDIR) \$(DOCDIR)
+-	-cd $doc; \$(MAKE) all
++#	-cd $doc; \$(MAKE) all
+ 	-\$(INSTALL_PROGRAM) $doc/gphelp    \$(BINDIR)
+ 	-\$(INSTALL_DATA) $doc/Makefile     \$(DOCDIR)
+ 	-\$(INSTALL_DATA) $doc/translations \$(DOCDIR)
+@@ -345,10 +345,10 @@
+ 	-\$(INSTALL_DATA) $doc/usersch3.tex \$(DOCDIR)
+ 	-\$(INSTALL_DATA) $doc/usersch4.tex \$(DOCDIR)
+ 	-\$(INSTALL_DATA) $doc/usersch5.tex \$(DOCDIR)
+-	-\$(INSTALL_DATA) $doc/users.dvi    \$(DOCDIR)
+-	-\$(INSTALL_DATA) $doc/tutorial.dvi \$(DOCDIR)
+-	-\$(INSTALL_DATA) $doc/refcard.dvi  \$(DOCDIR)
+-	-\$(INSTALL_DATA) $doc/refcard.ps   \$(DOCDIR)
++#	-\$(INSTALL_DATA) $doc/users.dvi    \$(DOCDIR)
++#	-\$(INSTALL_DATA) $doc/tutorial.dvi \$(DOCDIR)
++#	-\$(INSTALL_DATA) $doc/refcard.dvi  \$(DOCDIR)
++#	-\$(INSTALL_DATA) $doc/refcard.ps   \$(DOCDIR)
+ 
+ install-examples:
+ 	-mkdir -p \$(EXDIR)
+@@ -366,8 +366,8 @@
+ 	-\$(INSTALL_DATA) $ex/taylor.gp   \$(EXDIR)
+ 
+ install-data:
+-	-mkdir -p \$(DATADIR)
+-	-for f in $data/*; do \$(INSTALL_DATA)  \$\$f \$(DATADIR); done 2>/dev/null
++#	-mkdir -p \$(DATADIR)
++#	-for f in $data/*; do \$(INSTALL_DATA)  \$\$f \$(DATADIR); done 2>/dev/null
+ 
+ install-lib-sta: \$(LIBPARI_STA)
+ 	-mkdir -p \$(LIBDIR)
+@@ -435,13 +435,13 @@
+ 
+ if test -n "$emacs"; then
+   cat >> $file << EOT
+-$pari_elc: $emx/pari.el
+-	@echo "Byte-Compiling pari.el..."
+-	-cd $emx; $emacs -batch -l compile
++#$pari_elc: $emx/pari.el
++#	@echo "Byte-Compiling pari.el..."
++#	-cd $emx; $emacs -batch -l compile
+ 
+-$install_emacs_files: $pari_elc
++$install_emacs_files: # $pari_elc
+ 	-mkdir -p \$(EMACSDIR)
+-	-\$(INSTALL_DATA)   $pari_elc           \$(EMACSDIR)
++#	-\$(INSTALL_DATA)   $pari_elc           \$(EMACSDIR)
+ 	\$(INSTALL_DATA)    $emx/pari.el        \$(EMACSDIR)
+ 	\$(INSTALL_DATA)    $emx/pariemacs.txt  \$(EMACSDIR)
+ 	\$(INSTALL_DATA)    $emx/with-syntax.el     \$(EMACSDIR)
