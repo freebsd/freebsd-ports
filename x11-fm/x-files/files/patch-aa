@@ -4,7 +4,7 @@
 +#!/bin/sh
 +# The main file for the X-Files
 +# The next line is executed by /bin/sh, but not Tcl \
-+exec wish8.2 $0 ${1+"$@"}
++exec wish8.3 $0 ${1+"$@"}
 +set xf(xf_home) "@X11BASE@/lib/X11/X-Files/"
  proc MAIN {argc argv} {
  global xf xf_image env menu tk_version
