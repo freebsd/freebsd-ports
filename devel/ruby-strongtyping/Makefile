@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	strongtyping
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.3
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www.nwlink.com/~rpav/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
