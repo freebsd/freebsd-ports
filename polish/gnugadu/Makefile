@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnugadu
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.slackware.pl/gg/
 DISTNAME=	gg-${PORTVERSION}
@@ -27,6 +27,20 @@ USE_GNOME+=	esound
 PKGNAMESUFFIX=	-esound
 .else
 CONFIGURE_ARGS+=	--disable-esd
+.endif
+
+pre-everything::
+.if defined(WITH_GNOME)
+CONFIGURE_ARGS+=	--enable-gnome
+USE_GNOME=	yes
+.else
+	@${ECHO_MSG}	"Define WITH_GNOME to include GNOME support"
+.endif
+
+.if defined(WITH_DOCKAPP)
+CONFIGURE_ARGS+=	--enable-dockapp
+.else
+	@${ECHO_MSG}	"Define WITH_DOCKAPP to include WindowMaker support"
 .endif
 
 post-patch:
