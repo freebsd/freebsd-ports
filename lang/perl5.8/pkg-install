@@ -4,6 +4,7 @@ if [ "$2" != POST-INSTALL ] ; then
 	exit 0
 fi
 
+install -d ${PREFIX:-/usr/local}/lib/perl5/site_perl/5.005/i386-freebsd
 cd /usr/include && ${PREFIX:-/usr/local}/bin/h2ph *.h machine/*.h sys/*.h
 
 
