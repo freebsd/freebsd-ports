@@ -1,8 +1,0 @@
-The Apache Portable Runtime is a library of C data structures and routines, 
-forming a system portability layer that covers as many operating systems as 
-possible, including Unices, Win32, BeOS, and OS/2.
-
-This port also includes the APR-Util package, which contains some useful 
-utilities built on top of APR.
-
-WWW: http://apr.apache.org/
