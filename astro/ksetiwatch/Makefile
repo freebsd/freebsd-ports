@@ -12,6 +12,7 @@ MASTER_SITE_SUBDIR= ksetiwatch
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	sverrir@hem.passagen.se
+COMMENT=	A monitoring tool for the seti@home client
 
 BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf
 

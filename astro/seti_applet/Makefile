@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/_/-/}
 
 MAINTAINER=	cyrille.lefevre@laposte.net
+COMMENT=	An applet that displays current status of seti@home client
 
 # Global variables
 #

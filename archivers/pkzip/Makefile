@@ -13,6 +13,7 @@ DISTNAME=	pklin251
 EXTRACT_SUFX=	.exe
 
 MAINTAINER=	dbader@eece.unm.edu
+COMMENT=	Create/update/list/test/extract pkzip ZIP files
 
 FORBIDDEN=	"security bug--see <URL:http://www.security.nnov.ru/advisories/archdt.asp> and <URL:http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2001-1270>"
 

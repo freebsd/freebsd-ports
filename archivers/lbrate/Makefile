@@ -11,6 +11,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.ibiblio.org/pub/Linux/utils/compress/
 
 MAINTAINER=	gslin@ccca.nctu.edu.tw
+COMMENT=	Extract/decompress CP/M LBR archives
 
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 

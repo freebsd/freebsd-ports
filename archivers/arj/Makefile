@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	keramida
 
 MAINTAINER=	kot@premierbank.dp.ua
+COMMENT=	Open-source ARJ
 
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes

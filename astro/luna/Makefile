@@ -13,6 +13,7 @@ DISTNAME=	luna19s
 EXTRACT_SUFX=	.lzh
 
 MAINTAINER=	rewsirow@ff.iij4u.or.jp
+COMMENT=	Display the moon's phase
 
 BUILD_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 

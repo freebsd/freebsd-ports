@@ -15,6 +15,7 @@ MASTER_SITE_SUBDIR=	science/cartography
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	david@catwhisker.org
+COMMENT=	A Tcl/Tk-based GPS management utility
 
 RUN_DEPENDS=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
 

@@ -8,6 +8,7 @@ CATEGORIES=	astro linux
 PKGNAMEPREFIX=	linux-
 
 MAINTAINER=	cyrille.lefevre@laposte.net
+COMMENT=	Donate idle cycles to the search for space aliens - Linux i686 version
 
 # Global variables
 #

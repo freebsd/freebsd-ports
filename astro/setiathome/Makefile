@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.${PORT_HOST}
 EXTRACT_SUFX=	.tar
 
 MAINTAINER?=	cyrille.lefevre@laposte.net
+COMMENT?=	Donate idle cycles to the search for space aliens
 
 .include <bsd.port.pre.mk>
 
@@ -72,7 +73,6 @@ MD5_FILE=	${MASTERDIR}/distinfo.${ARCH}
 PKGNAMEPREFIX=	${PORT_OSNAME}-
 PKGNAMESUFFIX=	-${PORT_CPU}
 MD5_FILE=	${.CURDIR}/distinfo
-COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 .if ${PORT_OSNAME} == linux
 .if !exists(${LINUXBASE}/usr/X11R6/lib/libXaw.so.7)

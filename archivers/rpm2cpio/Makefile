@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.iagora.com/~espel/
 DISTFILES=	${PORTNAME}
 
 MAINTAINER=	nox@jelal.kn-bremen.de
+COMMENT=	Convert .rpm files for extraction with /usr/bin/cpio, needs just perl
 
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}

@@ -14,6 +14,7 @@ EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
 MAINTAINER=	gibbon@cocoa.freemail.ne.jp
+COMMENT=	JAVA application that shows current state of seti@home client
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jre \

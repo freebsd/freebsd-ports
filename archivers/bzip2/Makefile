@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
 MASTER_SITE_SUBDIR=	bzip2/v102
 
 MAINTAINER=	jharris@widomaker.com
+COMMENT=	A block-sorting file compressor
 
 .if exists(/usr/bin/bzip2)
 IGNORE=		bzip2 is in the base system

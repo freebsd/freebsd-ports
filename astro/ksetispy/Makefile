@@ -13,6 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	hmendes@brturbo.com
+COMMENT=	Monitors the progress of the SETI@home client
 
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3

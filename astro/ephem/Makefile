@@ -13,6 +13,7 @@ MASTER_SITE_SUBDIR=	asami/LOCAL_PORTS
 DISTNAME=	${PORTNAME}_${PORTVERSION}_unix
 
 MAINTAINER=	eserte@cs.tu-berlin.de
+COMMENT=	An interactive terminal-based astronomical ephemeris program
 
 NO_WRKSUBDIR=	yes
 ALL_TARGET=

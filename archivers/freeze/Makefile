@@ -12,6 +12,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	ftp://ftp.warwick.ac.uk/pub/compression/
 
 MAINTAINER=	lukin@okbmei.msk.su
+COMMENT=	Compression program - often used in QNX
 
 GNU_CONFIGURE=	yes
 ALL_TARGET=	prog
