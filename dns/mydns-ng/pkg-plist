@@ -47,6 +47,7 @@ sbin/mydns
 %%PORTDOCS%%share/doc/mydns/html/mydns_31.html
 %%PORTDOCS%%share/doc/mydns/html/mydns_32.html
 %%PORTDOCS%%share/doc/mydns/html/mydns_33.html
+%%PORTDOCS%%share/doc/mydns/html/mydns_34.html
 %%PORTDOCS%%share/doc/mydns/html/mydns_4.html
 %%PORTDOCS%%share/doc/mydns/html/mydns_5.html
 %%PORTDOCS%%share/doc/mydns/html/mydns_6.html
