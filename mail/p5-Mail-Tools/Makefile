@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Mail-Tools
-PORTVERSION= 	1.1401
+PORTVERSION= 	1.15
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Mail
 DISTNAME=	MailTools-${PORTVERSION}
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	jfitz@FreeBSD.org
+MAINTAINER=	kuriyama@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/Domain.pm:${PORTSDIR}/net/p5-Net
@@ -23,7 +23,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Net/SMTP.pm:${PORTSDIR
 USE_PERL5=	yes
 
 MAN3=		Mail::Address.3 \
-		Mail::Alias.3 \
 		Mail::Cap.3 \
 		Mail::Field.3 \
 		Mail::Field::AddrList.3 \
