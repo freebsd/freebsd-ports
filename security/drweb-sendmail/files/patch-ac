@@ -1,5 +1,5 @@
 --- ../sendmail/configure.orig	Wed Sep 26 01:02:29 2001
-+++ ../sendmail/configure	Wed Oct  3 11:27:50 2001
++++ ../sendmail/configure	Sat Oct  6 08:20:13 2001
 @@ -22,6 +22,7 @@
  ___T_MILTER_LOGLEVEL___="-- ERROR ---"
  ___T_MILTER_TIMEOUT_1___="-- ERROR ---"
@@ -8,7 +8,14 @@
  ___T_COMMENT_LOG___="-- ERROR --"
  ___T_COMMENT_FFR___="-- ERROR --"
  
-@@ -106,7 +107,7 @@
+@@ -100,13 +101,13 @@
+ 
+ CACHE_ADDR="n"
+ POS=`$GREP PidFile $DAEMON_INI | $GREP -v ";"`
+-if [ "x$POS" = "x" ] ; then
++if [ "x" = "x" ] ; then
+     echo
+     echo -n "Daemon pidfile not defined in ini-file ..."
      POS=`$GREP SocketMode $DAEMON_INI | $GREP -v ";" | $AWK '{ print match( $0, /[Tt][Cc][Pp]/ ) }'`
      if [ $POS -eq 0 ] ; then
          echo " but defined UNIX sockets"
