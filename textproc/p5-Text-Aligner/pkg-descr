@@ -1,0 +1,2 @@
+Text::Aligner exports a single function, align(), which is used to
+justify strings to various alignment styles.
