@@ -1,7 +1,6 @@
-GIF loading and saving shared library.  (Saving uses an uncompressed gif
-algorithm that does not use LZW compression.)
+A library for reading and writing gif images.  The save functionality
+uses an uncompressed gif algorithm to avoid the Unisys LZW patent.
+This library is based on Eric Raymond's giflib and implements a
+superset of that library's API.
 
-See /usr/local/share/doc/libungif directory for more information
-on libungif's capabilities.
-
-WWW: http://prtr-13.ucsc.edu/~badger/software/libungif/
+WWW: http://sourceforge.net/projects/libungif/
