@@ -1,0 +1,53 @@
+--- configure.orig	Thu May  3 17:44:18 2001
++++ configure	Thu May  3 16:33:56 2001
+@@ -11,6 +11,10 @@
+ ac_help=
+ ac_default_prefix=/usr/local
+ # Any additions from configure.in:
++ac_help="$ac_help
++  --with-libnet-prefix=PATH  path for libnet-config"
++ac_help="$ac_help
++  --with-libpcap-prefix=PATH  path for libpcap"
+ 
+ # Initialize some variables set by options.
+ # The variables have the same names as the options, with
+@@ -526,8 +530,23 @@
+ 
+ 
+ 
+-libpcapdir=libpcap-0.4
+-libnetdir=Libnet-1.0.1b
++# Check whether --with-libnet-prefix or --without-libnet-prefix was given.
++if test "${with_libnet_prefix+set}" = set; then
++  withval="$with_libnet_prefix/bin"
++  libnetdir="$withval"
++else
++  libnetdir="Libnet-1.0.1b"
++fi
++
++
++# Check whether --with-libpcap-prefix or --without-libpcap-prefix was given.
++if test "${with_libpcap_prefix+set}" = set; then
++  withval="$with_libpcap_prefix"
++  libpcapdir="$withval"
++else
++  libpcapdir="libpcap-0.4"
++fi
++
+ 
+ 
+ 
+@@ -1097,12 +1116,9 @@
+   fi
+ fi
+ 
+-if test -n "$GCC"; then
+-      CFLAGS="-O3 -Wall"
+-fi
+ 
+ echo $ac_n "checking how to run the C preprocessor""... $ac_c" 1>&6
+-echo "configure:1106: checking how to run the C preprocessor" >&5
++echo "configure:1122: checking how to run the C preprocessor" >&5
+ # On Suns, sometimes $CPP names a directory.
+ if test -n "$CPP" && test -d "$CPP"; then
+   CPP=

@@ -1,24 +1,24 @@
---- Makefile.in.orig	Sat Sep 16 13:03:43 2000
-+++ Makefile.in	Fri Oct  6 01:17:29 2000
-@@ -72,7 +72,7 @@
- getopt_SOURCES = @getopt_SOURCES@
+--- Makefile.in.orig	Wed Apr 18 14:11:06 2001
++++ Makefile.in	Thu May  3 16:01:19 2001
+@@ -76,7 +76,7 @@
+ libnetdir = @libnetdir@
  libpcapdir = @libpcapdir@
  
--INCLUDES = -I$(includedir) -I$(libpcapdir)
-+INCLUDES = -I$(includedir) # -I$(libpcapdir)
+-INCLUDES = -I$(includedir) -I$(libpcapdir) -I$(libnetdir)/include
++INCLUDES = -I$(includedir) #-I$(libpcapdir) -I$(libnetdir)/include
  
- LIBS = @LIBS@ -lpcap
+ LIBS = @LIBS@ -lpcap -lnet
  
-@@ -108,7 +108,7 @@
+@@ -111,7 +111,7 @@
  SOURCES = $(sing_SOURCES)
  OBJECTS = $(sing_OBJECTS)
  
--all: libpcap all-redirect
+-all: libpcap libnet all-redirect
 +all: all-redirect
  .SUFFIXES:
  .SUFFIXES: .S .c .o .s
  
-@@ -149,11 +149,11 @@
+@@ -152,11 +152,11 @@
  
  install-binPROGRAMS: $(bin_PROGRAMS)
  	@$(NORMAL_INSTALL)
@@ -33,7 +33,7 @@
  	  else :; fi; \
  	done
  
-@@ -223,8 +223,7 @@
+@@ -226,8 +226,7 @@
  
  
  help.o: help.c config.h
