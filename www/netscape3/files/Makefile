@@ -4,7 +4,7 @@ LIBDIR=		/usr/local/lib/netscape
 BINDIR=		${PREFIX}/bin
 NLSDIR=		${X11BASE}/lib/X11/nls
 
-FILES=          LICENSE README Netscape.ad java_30 movemail
+FILES=          LICENSE README Netscape.ad java_301 movemail
 
 all:
 	@true
