@@ -74,6 +74,7 @@ pre-patch:
 	(cd ${WRKSRC}; ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/charmaps-0.0.tar.gz)
 
 post-patch:
+	cd ${WRKSRC}/charmaps/maps; ln CP1251 WINDOWS-1251
 	cd ${WRKSRC}/charmaps/maps; rm -f *.orig
 
 .if !defined(NOPORTDOCS)
