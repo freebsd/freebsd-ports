@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	Gtk
 
 MAINTAINER=	vanilla@FreeBSD.org
 
-LIB_DEPENDS=	gdk_imlib.4:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	gdk_imlib.5:${PORTSDIR}/graphics/imlib
 
 USE_PERL5=	YES
 

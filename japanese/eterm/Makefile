@@ -17,7 +17,7 @@ MASTER_SITES=	http://www.eterm.org/download/ \
 
 MAINTAINER=	nobutaka@nobutaka.com
 
-LIB_DEPENDS=	Imlib.4:${PORTSDIR}/graphics/imlib
+LIB_DEPENDS=	Imlib.5:${PORTSDIR}/graphics/imlib
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
