@@ -7,8 +7,7 @@
 # Based on amavisd ports makefile.
 
 PORTNAME=	amavisd-new
-PORTVERSION=	20030314.p2
-PORTREVISION=	1
+PORTVERSION=	20030616.p2
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/-p/}
@@ -29,7 +28,9 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/UNIX.pm:${PORTSDIR}/devel/p5-IO
 		${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
 		${SITE_PERL}/Mail/SpamAssassin.pm:${PORTSDIR}/mail/p5-Mail-SpamAssassin \
 		${LOCALBASE}/bin/arc:${PORTSDIR}/archivers/arc \
+		${LOCALBASE}/bin/unfreeze:${PORTSDIR}/archivers/freeze \
 		${LOCALBASE}/bin/lha:${PORTSDIR}/archivers/lha \
+		${LOCALBASE}/bin/lzop:${PORTSDIR}/archivers/lzop \
 		${LOCALBASE}/bin/unarj:${PORTSDIR}/archivers/unarj \
 		${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar \
 		${LOCALBASE}/bin/zoo:${PORTSDIR}/archivers/zoo
