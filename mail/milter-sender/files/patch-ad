@@ -1,0 +1,15 @@
+--- milter-sender/install.sh.bak	Mon Aug 25 14:36:47 2003
++++ milter-sender/install.sh	Sun Sep  7 12:12:40 2003
+@@ -26,10 +26,10 @@
+ 
+ case `uname -s` in
+ *BSD*)
+-	RC="/usr/local/etc/rc.d/${MILTER}.sh"
++	RC="/usr/local/etc/rc.d/${MILTER}.sh-dist"
+ 	if [ ! -f $RC ]; then
+ 		cp ${MILTER}.sh $RC
+-		chmod 540 $RC
++		chmod 640 $RC
+ 	fi
+ 	;;
+ Linux*)

@@ -1,0 +1,20 @@
+etc/rc.d/milter-sender.sh-dist
+sbin/milter-sender
+@exec install -d -o smmsp -g smmsp -m 755 lib/milter-sender
+share/doc/milter-sender/index.shtml
+share/doc/milter-sender/license-body.html
+share/doc/milter-sender/milter-sender.mc
+share/doc/milter-sender/mailto.js
+share/doc/milter-sender/style.css
+share/doc/milter-sender/CHANGES.TXT
+share/doc/milter-sender/LICENSE.TXT
+share/doc/milter-sender/Img/bg.gif
+share/doc/milter-sender/Img/dilbert2003071742312.gif
+share/doc/milter-sender/Img/dilbert2003228690821.gif
+share/doc/milter-sender/Img/mrpixel.gif
+share/doc/milter-sender/Img/sendmail-bat-left-142x38.png
+share/doc/milter-sender/Img/sendmail-bat-right-142x38.png
+share/doc/milter-sender/Img/sun.gif
+@dirrm share/doc/milter-sender/Img
+@dirrm share/doc/milter-sender
+@dirrm lib/milter-sender
