@@ -10,6 +10,7 @@
 
 PORTNAME=	atlas
 PORTVERSION=	3.5.2
+PORTREVISION=   1
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	math-atlas
@@ -27,6 +28,17 @@ USE_REINPLACE=  yes
 
 .if (${MACHINE_ARCH} == "alpha")
 USE_GCC=	3.1
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's+%%PTHREAD_CFLAGS%%+ ${PTHREAD_CFLAGS}+' \
+      	${WRKSRC}/config.c
+	@${REINPLACE_CMD} -e 's+%%PTHREAD_LIBS%%+ ${PTHREAD_LIBS}+' \
+       	${WRKSRC}/config.c
+.if !defined(USE_THREADS)
+	@${ECHO_MSG} "make USE_THREADS=yes for threaded version"
+.else
+	@(cd ${WRKSRC}; ${PATCH} < ${FILESDIR}/thread-patch)
 .endif
 
 do-configure:

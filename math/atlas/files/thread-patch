@@ -1,0 +1,11 @@
+--- config.c~	Wed Jun 11 11:25:09 2003
++++ config.c	Wed Jun 11 11:35:08 2003
+@@ -79,7 +79,7 @@
+ char *usermmnam[2] = {"", "GOTO"};
+ enum USERGEMM {UG_None=0, UG_GOTO};
+ 
+-int XCOMP=0, THREADS=0, USEWINF77=0, NLINES=0, ISWIN=0;
++int XCOMP=0, THREADS=1, USEWINF77=0, NLINES=0, ISWIN=0; //force threading
+ char TARGNAM[512];
+ enum MACHTYPE mach=MACHOther;
+ 
