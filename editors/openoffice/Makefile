@@ -127,7 +127,9 @@ WRKSRC=	${WRKDIR}/oo_1.0.1_src/config_office
 LD_PATH1=	${WRKSRC}/../vos/unxfbsd.pro/lib/:${WRKSRC}/../ucbhelper/unxfbsd.pro/lib/
 LD_PATH=	${LD_PATH1}:${WRKSRC}/../solver/641/unxfbsd.pro/lib/
 .if defined(WITH_DEBUG)
+.if ${WITH_DEBUG} == 2
 DMAKE=		dmake debug="true"
+.endif
 .else
 DMAKE=		dmake strip="true"
 .endif
@@ -147,7 +149,9 @@ CONFIGURE_ARGS+=	--with-stlport4-home=${PREFIX}
 .endif
 
 .if defined(WITH_DEBUG)
+.if ${WITH_DEBUG} == 2
 CONFIGURE_ARGS+=	--enable-debug
+.endif
 .endif
 
 .if defined(USE_GCC) && (${USE_GCC} == 3.1 || ${USE_GCC} == 3.2)
@@ -175,7 +179,12 @@ pre-fetch:
 .if !defined(WITH_DEBUG)
 	@${ECHO}
 	@${ECHO} "You can compile OO with debug symbols"
-	@${ECHO} "if you call make with WITH_DEBUG=YES"
+	@${ECHO} "if you call make with WITH_DEBUG=1"
+	@${ECHO}
+	@${ECHO} "If you set WITH_DEBUG=2, you add internal"
+	@${ECHO} "OO.org debug support. This is currently"
+	@${ECHO} "broken."
+	@${ECHO}
 .endif
 .if ${OSVERSION} < 450002
 	@${ECHO}
