@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.83 1999/01/18 03:52:48 steve Exp $
+# $Id: Makefile,v 1.84 1999/01/26 03:23:00 steve Exp $
 #
 
     SUBDIR += adcomplain
@@ -57,6 +57,7 @@
     SUBDIR += procmail
     SUBDIR += qmail
     SUBDIR += rblcheck
+    SUBDIR += rblsmtpd
     SUBDIR += rftp
     SUBDIR += rlytest
     SUBDIR += serialmail
