@@ -6,7 +6,7 @@
 #
 
 # This port does not work with another version of master port.
-#PORTVERSION=	0.71
+#PORTVERSION=	1.0.4
 CATEGORIES=	japanese math gnome
 
 MASTERDIR=	${.CURDIR}/../../math/gnumeric
