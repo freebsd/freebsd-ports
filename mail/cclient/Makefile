@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cclient
-PORTVERSION=	2001
+PORTVERSION=	2001a
 PORTEPOCH=	1
 CATEGORIES=	mail devel
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/ \
 		http://mirror.nucba.ac.jp/mirror/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
 MASTER_SITE_SUBDIR=	. old
-DISTNAME=	imap-2001.FINAL
+DISTNAME=	imap-2001a
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	anders@fix.no
@@ -27,7 +27,7 @@ MAKE_ARGS+=	SSLTYPE=unix
 USE_OPENSSL=	yes
 .endif
 
-WRKSRC=		${WRKDIR}/imap-2001.RELEASE-CANDIDATE.1
+WRKSRC=		${WRKDIR}/imap-2001a
 
 SHLIBBASE=	c-client4
 SHLIBMAJ=	8
