@@ -28,8 +28,6 @@ MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}" SCRIPTDIR=${SCRIPTDIR} PERL=${PERL}
 post-extract:
 	@${CP} ${FILESDIR}/Makefile ${WRKDIR}
 
-.include <bsd.port.mk>
-
 # for maintainance.
 fetch1:
 	fetch http://post.ah-tech.co.jp/zipcode/dl/kogaki/lzh/ken_all.lzh
@@ -40,3 +38,5 @@ fetch2:
 	mv ken_all.lzh `date -r $${m} +ken_all-%Y%m%d.lzh`
 	m=`stat -f %m jigyosyo.lzh`; \
 	mv jigyosyo.lzh `date -r $${m} +jigyosyo-%Y%m%d.lzh`
+
+.include <bsd.port.mk>
