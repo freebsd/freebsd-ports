@@ -1,19 +1,21 @@
-# ex:ts=8 New ports collection makefile for:	egcs Version required:
-# 1998-02-28 Date created:		9 Jan 1998
-# Whom:			John Polstra <jdp@polstra.com>
+# ex:ts=8 
+# Ports collection makefile for:	egcs 
+# Version required: 			1998-02-28 
+# Date created:				9 Jan 1998
+# Whom:					John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.20 1998/06/10 05:29:12 obrien Exp $
+# $Id: Makefile,v 1.21 1998/07/06 10:17:09 obrien Exp $
 #
 
-DISTNAME=	egcs-19980628
+DISTNAME=	egcs-19980715
 CATEGORIES=	lang
-MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/1998-06-28/ \
-		ftp://cambridge.cygnus.com/pub/egcs/snapshots/1998-06-28/ \
-		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/1998-06-28/
+MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/1998-07-15/ \
+		ftp://cambridge.cygnus.com/pub/egcs/snapshots/1998-07-15/ \
+		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/1998-07-15/
 
 MAINTAINER=	obrien@FreeBSD.org
 
-EGCS_REV=	egcs-2.91.43
+EGCS_REV=	egcs-2.91.50
 GNUHOST=	i386-unknown-freebsd${GNUOSREL}
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
