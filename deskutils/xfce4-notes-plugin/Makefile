@@ -1,12 +1,12 @@
-# New ports collection makefile for:	xfce4-notes
+# New ports collection makefile for:	xfce4-notes-plugin
 # Date created:		06 October 2003
 # Whom:			Thorsten Greiner <thorsten.greiner@web.de>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	xfce4-notes
-PORTVERSION=	0.9.5
+PORTNAME=	xfce4-notes-plugin
+PORTVERSION=	0.9.6
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	http://www.lysator.liu.se/~b0kaj/
 DIST_SUBDIR=	xfce4
