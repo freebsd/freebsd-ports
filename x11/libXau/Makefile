@@ -16,6 +16,8 @@ COMMENT=	Authentication Protocol library for X11
 
 BUILD_DEPENDS=	${X11BASE}/libdata/pkgconfig/xproto.pc:${PORTSDIR}/x11/xproto
 
+CONFLICTS=	XFree86-libraries-*
+
 USE_BZIP2=	yes
 PREFIX?=	${X11BASE}
 GNU_CONFIGURE=	yes

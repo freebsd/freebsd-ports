@@ -28,6 +28,11 @@ COMMENT=	XFree86-4 libraries and headers
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
 
+CONFLICTS=	libICE-* libSM-* libX11-* libXau-* libXcursor-* libXdmcp-* \
+		libXext-* libXfont-* libXi-* libXpm-* libXrandr-* \
+		libXrender-* libXres-* libXv-* randrext-* renderext-* \
+		resourceext-* xextensions-* xproto-*
+
 USE_X_PREFIX=		no
 PREFIX?=		${X11BASE}
 MTREE_FILE=		/etc/mtree/BSD.x11-4.dist
