@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Apr 18 08:37:44 2000
-+++ Makefile	Fri May  5 23:55:16 2000
+--- Makefile.orig	Wed Apr 19 00:37:44 2000
++++ Makefile	Tue Jul 11 03:58:32 2000
 @@ -4,24 +4,24 @@
  OS=$(shell uname -s)
  
@@ -16,26 +16,18 @@
  
  # Location to store auxilliary files
 -AUXDIR= $(PREFIX)/lib/grip
-+AUXDIR= $(PREFIX)/lib
++AUXDIR= $(PREFIX)/etc
  
  
  # Compiler flags
 -CFLAGS=	-Wall `gtk-config --cflags` -DAUXDIR=\"$(AUXDIR)\" \
-+CFLAGS=	-Wall `gtk12-config --cflags` -DAUXDIR=\"$(AUXDIR)\" \
- 	-DINSTALLDIR=\"$(INSTALLDIR)\" -D_REENTRANT
+-	-DINSTALLDIR=\"$(INSTALLDIR)\" -D_REENTRANT
++CFLAGS+=	`$(GTK_CONFIG) --cflags` -DAUXDIR=\"$(AUXDIR)\" \
++	-DINSTALLDIR=\"$(INSTALLDIR)\" -D_REENTRANT -D_THREAD_SAFE
  
  # Link libraries
 -LIBS=	`gtk-config --libs`
-+LIBS=	`gtk12-config --libs`
++LIBS=	`$(GTK_CONFIG) --libs`
  ifeq ($(OS), Linux)
  LIBS+=	-lpthread
  endif
-@@ -34,7 +34,7 @@
- # This is needed for "make install"
- OWNER  = root
- GROUP  = root
--INSTALL  = /usr/bin/install -o $(OWNER) -g $(GROUP)
-+INSTALL  ?= /usr/bin/install -o $(OWNER) -g $(GROUP)
- 
- 
- # ----------- You shouldn't need to make changes below here. -------------
