@@ -1,0 +1,12 @@
+bin/esd
+bin/esdcat
+bin/esdctl
+bin/esdloop
+bin/esdmon
+bin/esdrec
+bin/esdsample
+include/esd.h
+lib/libesd.a
+lib/libesd.la
+lib/libesd.so
+lib/libesd.so.0.0
