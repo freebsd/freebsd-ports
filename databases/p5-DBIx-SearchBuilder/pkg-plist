@@ -5,6 +5,7 @@ lib/perl5/site_perl/%%PERL_VER%%/DBIx/SearchBuilder/Record.pm
 lib/perl5/site_perl/%%PERL_VER%%/DBIx/SearchBuilder/Record/Cachable.pm
 lib/perl5/site_perl/%%PERL_VER%%/DBIx/SearchBuilder/Handle/Pg.pm
 lib/perl5/site_perl/%%PERL_VER%%/DBIx/SearchBuilder/Handle/mysql.pm
+lib/perl5/site_perl/%%PERL_VER%%/DBIx/SearchBuilder/Handle/mysqlPP.pm
 lib/perl5/site_perl/%%PERL_VER%%/DBIx/SearchBuilder/Handle/Oracle.pm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBIx/SearchBuilder
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/DBIx/SearchBuilder/Record
