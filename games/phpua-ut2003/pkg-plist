@@ -1,0 +1,15 @@
+%%PHPUA%%/plugins/plugin_ut2003/plugin_ut2003.inc
+%%PHPUA%%/plugins/plugin_ut2003/plugin_ut2003_mode_info.inc
+%%PHPUA%%/plugins/plugin_ut2003/plugin_ut2003_mode_rules.inc
+%%PHPUA%%/plugins/plugin_ut2003/plugin_ut2003_mode_watch.inc
+%%PHPUA%%/templates/default/plugin_ut2003/info.tpl
+%%PHPUA%%/templates/default/plugin_ut2003/rules.tpl
+%%PHPUA%%/templates/default/plugin_ut2003/watch.js
+%%PHPUA%%/templates/default/plugin_ut2003/watch.tpl
+%%PHPUA%%/templates/default/plugin_ut2003/x.js
+%%PHPUA%%/templates/javascript/plugin_ut2003/info.tpl
+%%PHPUA%%/templates/wap/plugin_ut2003/info.tpl
+@dirrm %%PHPUA%%/templates/wap/plugin_ut2003
+@dirrm %%PHPUA%%/templates/javascript/plugin_ut2003
+@dirrm %%PHPUA%%/templates/default/plugin_ut2003
+@dirrm %%PHPUA%%/plugins/plugin_ut2003
