@@ -6,19 +6,24 @@
 #
 
 PORTNAME=	wmblob
-PORTVERSION=	0.0.2
+PORTVERSION=	1.0.3
 CATEGORIES=	x11 windowmaker
-MASTER_SITES=	http://dockapps.org/files/155/205/
+MASTER_SITES=	http://dockapps.org/files/155/541/
 
 MAINTAINER=	pat@FreeBSD.org
 COMMENT=	Showing moving blobs
 
-PLIST_FILES=	bin/wmblob
 USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_BZIP2=	yes
+USE_GNOME=	gtk20
+GNU_CONFIGURE=	yes
+
+MAN1=		wmblob.1
+PLIST_FILES=	bin/wmblob
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/wmblob ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/wmblob ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/doc/wmblob.1 ${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
