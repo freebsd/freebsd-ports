@@ -6,37 +6,39 @@
 # $FreeBSD$
 #
 
-SNAPDATE=	2002-05-18
+SNAPDATE=	2002-10-07
 SNAPVER=	${SNAPDATE:S/-//g}
+#CVS_DATE=	${SNAPDATE} 18:53:04 EDT
 
 PORTNAME=	gcc
-PORTVERSION=	3.2
+PORTVERSION=	3.3
 PORTREVISION=	${SNAPVER}
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}  \
-		ftp://egcs.cygnus.com/pub/egcs/snapshots/${SNAPDATE}/
+		ftp://gcc.gnu.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	gcc/snapshots/${SNAPDATE}
-#DISTFILES=	\
-#		gcc-core-${SNAPVER}${EXTRACT_SUFX} \
-#		gcc-g++-${SNAPVER}${EXTRACT_SUFX} \
-#		gcc-g77-${SNAPVER}${EXTRACT_SUFX} \
-#		gcc-java-${SNAPVER}${EXTRACT_SUFX} \
-#		gcc-objc-${SNAPVER}${EXTRACT_SUFX}
-#		gcc-ss-3.2-0_${SNAPVER}.src.rpm
+.if !defined(CVS_DATE)
+DISTFILES=	\
+		gcc-core-${SNAPVER}${EXTRACT_SUFX} \
+		gcc-g++-${SNAPVER}${EXTRACT_SUFX} \
+		gcc-g77-${SNAPVER}${EXTRACT_SUFX} \
+		gcc-java-${SNAPVER}${EXTRACT_SUFX} \
+		gcc-objc-${SNAPVER}${EXTRACT_SUFX}
+.endif
 
 PATCH_SITES=	ftp://relay.nuxi.com/obrien/
-PATCHFILES=	port_gcc32_${SNAPDATE}.diff
+PATCHFILES=	port_gcc33_${SNAPDATE}.diff
 
 MAINTAINER=	obrien@FreeBSD.org
 
 NO_CDROM=	'dated material'
-LATEST_LINK=	gcc32
+LATEST_LINK=	gcc33
 
 USE_BZIP2=	yes
 
-CVS_DATE=	${SNAPDATE} 04:27:07 EDT
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:C/${WRKDIR}//}/configure
+#NOMANCOMPRESS=	yes	# to hard to deal with differences on 5-cur and releng4
 
 .include <bsd.port.pre.mk>
 
@@ -47,7 +49,7 @@ CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 .endif
 
 #GCC_REV=	${PORTVERSION:C/\.0$//}
-GCC_REV=	3.2
+GCC_REV=	3.3
 #SRCDIR=		${WRKDIR}/gcc-${GCC_REV}
 SRCDIR=		${WRKDIR}/gcc-${SNAPVER}
 WRKSRC=		${WRKDIR}/build
@@ -58,9 +60,13 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
 CONFIGURE_ARGS=	--disable-nls --with-gnu-as --with-gnu-ld \
-		--with-gxx-include-dir=${TARGLIB}/include/g++
-#CONFIGURE_ARGS+=	--program-prefix=e
+		--with-gxx-include-dir=${TARGLIB}/include/g++-v3
+#CONFIGURE_ARGS+=	--program-suffix=33
+#	Java
+CONFIGURE_ARGS+=	--with-system-zlib #--includedir=${TARGLIB}/include/Java -libdir=${TARGLIB}
+#CONFIGURE_ARGS+=	--disable-libgcj	# does not bootstrap now
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
+MAKE_ARGS+=	MAKEINFOFLAGS="--no-split"
 .if defined(WANT_SHAREDLIBS)
 CONFIGURE_ARGS+= --enable-shared
 .else
@@ -72,11 +78,13 @@ CONFIGURE_ARGS+= --enable-threads
 CONFIGURE_ARGS+= --enable-threads=posix
 .endif
 ALL_TARGET=	bootstrap
-#MAN1=		cpp32.1 g++32.1 g77-32.1 gcc32.1 gcov32.1
-MAN1=		g++32.1
+MAN1=		cpp33.1 g++33.1 g77-33.1 gcc33.1 gcov33.1 \
+		gcj33.1 gcjh33.1 gij.1 \
+		jcf-dump33.1 jv-scan33.1 jv-convert.1
+MAN7=		fsf-funding.7 gfdl.7 gpl.7
 
 pre-fetch:
-	@${ECHO} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${ARCH}-portbld-freebsd${OSREL}"
+	@${ECHO} "Making GCC ${DISTNAME:S/^gcc-//} for ${OPSYS} ${OSREL} ${PORTOBJFORMAT}	target ${CONFIGURE_TARGET}"
 
 .if defined(CVS_DATE)
 NO_CHECKSUM=	yes
@@ -107,7 +115,7 @@ do-fetch:
 do-extract:
 	${MKDIR} ${SRCDIR}
 	cd ${DISTDIR}/${DIST_SUBDIR}/gcc ; pax -pe -rwt . ${SRCDIR}
-.endif
+.endif	# CVS_DATE
 
 pre-configure:
 	@# Keep from running `autoconf' and `autoheader' since we modified
@@ -125,36 +133,44 @@ pre-install:
 
 post-install:
 	@${RM} -f ${PREFIX}/bin/c++ ${PREFIX}/bin/${CONFIGURE_TARGET}-c++
-	@${MV} -f ${PREFIX}/bin/c++filt ${PREFIX}/bin/g++filt
 	@(for prog in ${PREFIX}/bin/gcc ${PREFIX}/bin/g++ \
-		${PREFIX}/bin/g++filt ${PREFIX}/bin/g77 ${PREFIX}/bin/gcov \
+		${PREFIX}/bin/g77 ${PREFIX}/bin/gcov \
 		${PREFIX}/bin/${CONFIGURE_TARGET}-gcc \
 		${TARGLIB}/cc1 ${TARGLIB}/cc1obj ${TARGLIB}/cc1plus \
 		${TARGLIB}/collect2 ${TARGLIB}/f771 ; \
 	do \
 		strip $$prog ; \
 	done )
-.for file in gcc g++ cpp g++filt gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh jv-scan jcf-dump jar grepjar
-	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}32
-	-( ${TEST} -e ${PREFIX}/man/man1/${file}.1 \
-		&& ${MV} -f ${PREFIX}/man/man1/${file}.1 \
-		${PREFIX}/man/man1/${file}32.1 )
+.for file in gcc g++ cpp gcov ${CONFIGURE_TARGET}-gcc ${CONFIGURE_TARGET}-g++ gcj gcjh jv-scan jcf-dump jar grepjar
+	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}33
+	( ${TEST} ! -e ${PREFIX}/man/man1/${file}.1 \
+		|| ${MV} -f ${PREFIX}/man/man1/${file}.1 \
+		${PREFIX}/man/man1/${file}33.1 )
 .endfor
 .for file in g77
-	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}-32
-	#${MV} -f ${PREFIX}/man/man1/${file}.1 ${PREFIX}/man/man1/${file}-32.1
+	${MV} -f ${PREFIX}/bin/${file} ${PREFIX}/bin/${file}-33
+	( ${TEST} ! -e ${PREFIX}/man/man1/${file}.1 \
+		|| ${MV} -f ${PREFIX}/man/man1/${file}.1 \
+		${PREFIX}/man/man1/${file}-33.1 )
 .endfor
-	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${SNAPVER}
+	${MV} -f ${PREFIX}/bin/gccbug ${PREFIX}/bin/gccbug-${PORTVERSION}
 	# These 3 libraries are moved from PREFIX/lib to avoid conflicts
 	# 	with the stock compiler.
 .for file in libstdc++ libsupc++ libg2c libfrtbegin libobjc
 	${MV} -f ${PREFIX}/lib/${file}.* ${TARGLIB}
 .endfor
 	-${MV} -f ${PREFIX}/lib/ieee ${TARGLIB}
+	# Java
+	-${MV} -f ${PREFIX}/lib/libgcj.* ${TARGLIB}
 	${RM} -f ${PREFIX}/lib/libiberty.a
 	${RM} -f ${TARGLIB}/*.la
 .for info in cpp cppinternals g77 gcc gcj
 	install-info ${PREFIX}/info/${info}.info ${PREFIX}/info/dir
+.endfor
+# I am sick and tired of the anonyance that man pages can only be generated if
+# perl 5.6 is installed.  This is becoming a royal PITA on non-5-CURRENT systems
+.for mp in ${_MANPAGES}
+	( ${TEST} -e ${mp} && ${TOUCH} ${TOUCH_FLAGS} ${mp} )
 .endfor
 	cd ${PREFIX} ;\
 	    ${FIND} ${TARGLIB:S/^${PREFIX}\///} -type f -o -type l	\
@@ -170,5 +186,10 @@ post-install:
 	${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
 	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre-gcc-lib
 	cd ${WRKDIR} ; ex < ex.script
+
+cklatest:
+.for SITE in ftp://mirrors.rcn.net/mirrors/sources.redhat.com/gcc/snapshots/	ftp://sources.redhat.com/pub/gcc/snapshots/
+	@-ncftpls ${SITE} | grep LATEST
+.endfor
 
 .include <bsd.port.post.mk>

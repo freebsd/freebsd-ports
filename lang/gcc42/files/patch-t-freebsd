@@ -1,0 +1,10 @@
+--- gcc/config/t-freebsd.orig	Tue Oct  1 20:37:02 2002
++++ gcc/config/t-freebsd	Tue Oct  1 20:36:10 2002
+@@ -2,4 +2,7 @@
+ STMP_FIXPROTO =
+ 
++# We don't need GCC's own include files.
++USER_H =
++
+ # Compile crtbeginS.o and crtendS.o with pic.
+ CRTSTUFF_T_CFLAGS_S = -fPIC
