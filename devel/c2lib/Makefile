@@ -7,9 +7,9 @@
 
 PORTNAME=	c2lib
 PORTVERSION=	1.4.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.annexia.org/freeware/${PORTNAME}/
+MASTER_SITES=	http://www.annexia.org/_file/
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Library of basic structures and memory allocators for C
@@ -22,6 +22,9 @@ INSTALLS_SHLIB=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 PLIST_SUB=	VERSION=${PORTVERSION}
+CONFIGURE_ENV=	MAKEPLUS_HOME=${MAKEPLUS_HOME}
+MAKE_ENV=	MAKEPLUS_HOME=${MAKEPLUS_HOME}
+MAKEPLUS_HOME=	${LOCALBASE}/share/makeplus
 
 .include "${.CURDIR}/files/manpages.mk"
 
