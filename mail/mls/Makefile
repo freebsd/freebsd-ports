@@ -20,8 +20,7 @@ MAN1=		mls.1
 MANCOMPRESSED=	yes
 PLIST_FILES=	bin/mls
 
-MAKE_ARGS+=	DESTDIR=${PREFIX}
-USE_GMAKE=	yes
+MAKE_ARGS+=	DESTDIR="${PREFIX}" CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	mls
 
 .include <bsd.port.mk>
