@@ -435,6 +435,14 @@ share/kadu/translations/qt_pl.qm
 share/icons/hicolor/16x16/apps/kadu.png
 share/icons/hicolor/32x32/apps/kadu.png
 share/icons/hicolor/48x48/apps/kadu.png
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/48x48 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
 @dirrm share/kadu/translations
 @dirrm share/kadu/themes/sounds/default
 @dirrm share/kadu/themes/sounds
@@ -451,7 +459,7 @@ share/icons/hicolor/48x48/apps/kadu.png
 @dirrm share/kadu
 @dirrm include/kadu/modules
 @dirrm include/kadu
-%%KDE:%%@cwd %%LOCALBASE%%
-%%KDE:%%share/applnk/Internet/kadu.desktop
+@cwd %%LOCALBASE%%
+share/applnk/Internet/kadu.desktop
 %%GNOME:%%@cwd %%X11BASE%%
 %%GNOME:%%share/gnome/apps/Internet/kadu.desktop

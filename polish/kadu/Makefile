@@ -7,6 +7,7 @@
 
 PORTNAME=		kadu
 PORTVERSION=		0.3.9
+PORTREVISION=		1
 PORTEPOCH=		1
 CATEGORIES=		polish net
 MASTER_SITES=		http://www.kadu.net/download/stable/
@@ -42,11 +43,6 @@ PLIST_SUB+=	GNOME:=""
 .else
 PLIST_SUB+=	GNOME:="@comment "
 .endif
-.if exists(${LOCALBASE}/lib/libkdecore.so)
-PLIST_SUB+=	KDE:=""
-.else
-PLIST_SUB+=	KDE:="@comment "
-.endif
 
 pre-everything::
 	@${ECHO_MSG}
@@ -60,8 +56,6 @@ post-install:
 .if ${HAVE_GNOME:Mgnomehier}!=""
 	${INSTALL_DATA} ${WRKSRC}/kadu/kadu.desktop ${X11BASE}/share/gnome/apps/Internet
 .endif
-.if exists(${LOCALBASE}/lib/libkdecore.so)
 	${INSTALL_DATA} ${WRKSRC}/kadu/kadu.desktop ${LOCALBASE}/share/applnk/Internet
-.endif
 
 .include <bsd.port.post.mk>
