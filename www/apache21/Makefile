@@ -51,8 +51,7 @@ USE_PERL5=		yes
 USE_RC_SUBR=		yes
 USE_REINPLACE=		yes
 LIBTOOLFILES=		configure
-INSTALLS_SHILB=		yes
-LDCONFIG_DIRS=		${PREFIX}/lib/apache21
+INSTALLS_SHLIB=		yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--enable-layout=FreeBSD \
