@@ -3,6 +3,7 @@
 
     SUBDIR += chemtool
     SUBDIR += clhep
+    SUBDIR += euler
     SUBDIR += gdis
     SUBDIR += libsvm
     SUBDIR += mayavi

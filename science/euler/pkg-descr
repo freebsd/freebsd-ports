@@ -1,0 +1,25 @@
+EULER is a program for quickly and interactively computing with real and
+complex numbers and matrices, or with intervals, in the style of MatLab,
+Octave,... It can draw and animate your functions in two and three dimensions.
+
+Euler features :
+   - real, complex and interval scalars and matrices, 
+   - a programming language, with local variables, default values for
+     parameters, variable parameter number, passing of functions,
+   - two and three dimensional graphs,
+   - marker plots,
+   - density and contour plots,
+   - animations,
+   - numerical integration and differentiation,
+   - statistical functions and tests,
+   - differential equations,
+   - interval methods with guaranteed inclusions,
+   - function minimizers (Brent, Nelder-Mean),
+   - Simplex algorithm,
+   - interpolation and approximation,
+   - finding roots of polynomials,
+   - Fast Fourier transform (FFT),
+   - An exact scalar product using a long accumulator,
+   - Postscript graphics export
+
+WWW: http://euler.sourceforge.net/
