@@ -1,0 +1,48 @@
+Index: jadetex.dtx
+===================================================================
+RCS file: /home/cvs/private/hrs/jadetex-ptex/jadetex.dtx,v
+retrieving revision 1.1.1.1
+retrieving revision 1.3
+diff -d -u -I\$FreeBSD: /tmp/pcvs/ports/japanese/jadetex-ptex/files/patch-jadetex.dtx,v 1.1 2003-07-03 14:17:20 kuriyama Exp $ -I\$Id:.*\$ -I\$hrs:.*\$ -r1.1.1.1 -r1.3
+--- jadetex.dtx	10 Jun 2003 15:24:06 -0000	1.1.1.1
++++ jadetex.dtx	10 Jun 2003 18:20:49 -0000	1.3
+@@ -2232,6 +2233,7 @@
+ \let\current@f@series\f@series
+ \let\current@f@shape\f@shape
+ \let\current@f@family\f@family
++\let\current@k@family\k@family
+ \let\current@f@size\f@size
+ \edef\LaTeXshape{\csname Width@\fProportionateWidth\endcsname
+       \csname Weight@\fWeight\endcsname}%
+@@ -2246,10 +2248,20 @@
+     \else
+      \csname Family@\fFamName\endcsname
+     \fi}}%
++% -- pjadetex --
++% XXX: check jt1<family>.fd?
++  \edef\k@family{%
++    \expandafter\ifx\csname KanjiFamily@\fFamName\endcsname\relax
++     \csname KanjiFamily@\DefaultfFamName\endcsname
++    \else
++     \csname KanjiFamily@\fFamName\endcsname
++    \fi}
++% -- end --
+ \set@fontsize\baselinestretch{\fSize}{\LineSpacing}%
+ %\NeedsSelecttrue
+ %\ifx\f@size\current@f@size\relax\NeedsSelectfalse\fi
+ %\ifx\f@family\current@f@family\relax\NeedsSelectfalse\fi
++%\ifx\k@family\current@k@family\relax\NeedsSelectfalse\fi
+ %\ifx\f@shape\current@f@shape\relax\NeedsSelectfalse\fi
+ %\ifx\f@series\current@f@series\relax\NeedsSelectfalse\fi
+ %\ifNeedsSelect
+@@ -2405,6 +2417,10 @@
+  \fancyhf{}%
+  \def\familydefault{ptm}%
+  \fontfamily{\familydefault}\selectfont
++ % -- pjadetex --
++ \def\kanjifamilydefault{\mcdefault}%
++ \kanjifamily{\kanjifamilydefault}\selectfont
++ % -- end --
+  \pagenumbering{arabic}%
+  \nonstopmode
+  \Mathcount0

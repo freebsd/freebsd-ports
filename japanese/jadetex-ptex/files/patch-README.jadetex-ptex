@@ -1,0 +1,107 @@
+Index: README.jadetex-ptex
+===================================================================
+RCS file: README.jadetex-ptex
+diff -N README.jadetex-ptex
+--- /dev/null	1 Jan 1970 00:00:00 -0000
++++ README.jadetex-ptex	28 Jun 2003 15:45:46 -0000	1.2
+@@ -0,0 +1,100 @@
++$hrs: jadetex-ptex/README.jadetex-ptex,v 1.2 2003/06/28 15:45:46 hrs Exp $
++
++               pTeX+JadeTeX (JadeTeX-pTeX) パッチについて
++
++                                                  佐藤 広生 <hrs@allbsd.org>
++
++
++0. 改訂履歴
++
++  2003.06.10    初版公開
++  2003.06.29    名前を pjadetex から jadetex-ptex に変更。
++
++
++1. はじめに
++
++  このパッチは JadeTeX 3.13 を pTeX で利用できるようにするための
++  ものです。ライセンスについては文末をご覧ください。
++
++
++2. 動作環境
++
++  動作を確認した環境はつぎのとおりです。3.1 以前の pTeX は、
++  内部マクロ用のメモリ領域が少ないため正常に動きません。
++  必ず 3.1 以降を利用してください。
++
++   FreeBSD 4.8-RELEASE
++   pTeX Version 3.14159-p3.1.2 (euc) (Web2C 7.4.5)
++
++
++3. 使い方
++
++  JadeTeX 3.13 のソースをダウンロードし、パッチを
++  適用してください。Makefile をご覧になると分かると思いますが、
++  make install でインストールされるのは
++
++   ${PREFIX}/bin/jadetex-ptex (${PREFIX}/bin/ptex への symlink)
++   ${TEXMFMAIN}/web2c/jadetex-ptex.fmt
++   ${TEXMFMAIN}/tex/jadetex-ptex.ltx
++   ${TEXMFMAIN}/tex/dsssl-ptex.def
++
++ の 4 個のファイルです。環境によっては、インストール後に
++ mktexlsr を実行する必要があるかもしれません。
++ タイプセットには jadetex-ptex を実行してください。
++
++
++4. 技術情報
++
++ このパッチでは、
++
++  1) ファイル名を jadetex-ptex に変更
++  2) hyphenation 機能を制限
++  3) 日本語フォントの対応を追加
++
++ の点に手を入れてあります。
++
++ 1) は、JadeTeX との共存を可能にするための処置です。dsssl.def
++ -> dsssl-ptex.def のように、ファイル名の末尾に -ptex が追加してあります。
++
++ 2) は、pTeX が構造的に babel package に対応できない (使えることは
++ 使えますが) ことに対する修正です。
++ JadeTeX が pTeX で処理できない一番大きな問題点がこの部分でした。
++
++ 3) は、Jade の TeX backend や JadeTeX が日本語フォントに関してまったく
++ ケアしていないため、すべて明朝体 (mc ファミリ) で出力されてしまう問題を
++ 修正したものです。欧文フォントに応じて和文フォントを切り替えるための
++ マッピングテーブルを mlnames.sty に追加してあります。
++ ちょっと適当に mc と gt を割り振っただけなので、改善案がありましたら
++ お知らせいただけるとありがたいです。
++
++
++5. 作者の連絡先
++
++ このパッチに関する質問や提案は、佐藤 <hrs@allbsd.org> までお願いします。
++
++
++6. ライセンス
++
++  Copyright 2003 Hiroki Sato <hrs@allbsd.org>,
++  All rights reserved.
++
++  Redistribution and use in source and binary forms, with or without
++  modification, are permitted provided that the following conditions
++  are met:
++  1. Redistributions of source code must retain the above copyright
++     notice, this list of conditions and the following disclaimer.
++  2. Redistributions in binary form must reproduce the above copyright
++     notice, this list of conditions and the following disclaimer in the
++     documentation and/or other materials provided with the distribution.
++
++  THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND
++  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
++  IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
++  ARE DISCLAIMED.  IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE
++  FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
++  DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
++  OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
++  HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
++  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
++  OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
++  SUCH DAMAGE.
