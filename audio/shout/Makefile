@@ -7,6 +7,7 @@
 
 PORTNAME=	shout
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	audio net
 MASTER_SITES=	http://www.icecast.org/releases/
 
