@@ -18,6 +18,7 @@ USE_QT_VER=	2
 USE_PYTHON=	yes
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes
+LIBTOOLFLAGS=	--disable-ltlibs --disable-static
 CONFIGURE_ENV=	LDFLAGS=-lgcc \
 		SIP_MOC="${X11BASE}/bin/moc2"
 
