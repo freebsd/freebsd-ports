@@ -1,5 +1,5 @@
---- premail.old	Thu Oct 31 06:25:10 1996
-+++ premail	Sat Feb 14 05:44:15 1998
+--- premail.orig	Thu Oct 31 06:25:10 1996
++++ premail	Sat Feb 14 16:34:31 1998
 @@ -1,4 +1,4 @@
 -#!/usr/local/bin/perl
 +#!/usr/local/bin/perl -w
@@ -377,6 +377,22 @@
  #    print STDERR "+ $invoc\n";
      if (system ($invoc)) {
  	print STDERR "Edit failed.\n";
+@@ -5495,6 +5517,7 @@
+ 	    }
+ 	}
+     }
++    $signsend = 'n' unless $signsend;
+     if ($#args >= 1) {
+ 	$to = $args[1];
+     } elsif ($#args < 0) {
+@@ -5609,7 +5632,6 @@
+ 		$fullname = &query ('Full name of pseudonym (not just '
+ 				    . 'E-mail address)', $fullname);
+ 		$fullname =~ s/[\'\^\n]//g;  # kludge for secrets file
+-		$signsend = 'n' unless $signsend;
+ 		$signsend = &query ('Sign mail with (R)emailer key, '
+ 				    . '(P)seudonym key or (N)o key?',
+ 				    $signsend);
 @@ -5771,6 +5793,7 @@
      if (!open (IN, $body)) {
  	&error ("Internal error opening replyblock\n");
