@@ -1,5 +1,5 @@
+$FreeBSD$
 MD5 (gcc-core-2.95.3.tar.bz2) = 56dc4de966a54e4c511f65e525f9c0fe
+SIZE (gcc-core-2.95.3.tar.bz2) = 6798053
 MD5 (gcc-g++-2.95.3.tar.bz2) = ce600888f39443a25ad325cc886e7d16
-MD5 (gcc-g77-2.95.3.tar.bz2) = 8ef7cb21c145fc5d4adff7f3f356ad38
-MD5 (gcc-java-2.95.3.tar.bz2) = 2bbd15fe5888e5baf39a269ab62f49f9
-MD5 (gcc-objc-2.95.3.tar.bz2) = be118925cd045d0d6d294c27ddb09647
+SIZE (gcc-g++-2.95.3.tar.bz2) = 1248880
