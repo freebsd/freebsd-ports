@@ -1,13 +1,28 @@
---- xfstt.cpp.orig	Fri Nov  5 00:49:57 1999
-+++ xfstt.cpp	Mon Dec  6 17:01:54 1999
+--- xfstt.cpp.orig	Thu Jul  6 18:14:25 2000
++++ xfstt.cpp	Thu Jul  6 18:15:31 2000
 @@ -11,8 +11,8 @@
  #define UNSTRAPLIMIT	10500U
  
  // Change these if you don't lie being FHS complient
 -#define TTFONTDIR	"/usr/share/fonts/truetype"
 -#define TTCACHEDIR      "/var/cache/xfstt"
-+#define TTFONTDIR	"/usr/X11R6/lib/X11/fonts/TrueType"
++#define TTFONTDIR       "/usr/X11R6/lib/X11/fonts/TrueType"
 +#define TTCACHEDIR      "/usr/X11R6/lib/X11/fonts/TrueType"
  
  #define TTINFO_LEAF     "ttinfo.dir"
  #define TTNAME_LEAF     "ttname.dir"
+@@ -470,10 +470,12 @@
+ 	raster->getFontExtent( &xfs->fe);
+ 
+ 	int used = (xfs->fe.bitmaps + xfs->fe.bmplen) - xfs->fe.buffer;
++	int bmpoff = xfs->fe.bitmaps - xfs->fe.buffer;
+ 	xfs->fe.buffer = (U8*)shrinkMem( xfs->fe.buffer, used);
+-	if( xfs->fe.buffer)
++	if( xfs->fe.buffer) {
+ 		xfs->fe.buflen = used;
+-	else {
++		xfs->fe.bitmaps = xfs->fe.buffer + bmpoff;
++	} else {
+ 		xfs->fid = 0;	//###
+ 		xfs = 0;
+ 	}
