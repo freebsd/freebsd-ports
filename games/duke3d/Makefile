@@ -28,14 +28,12 @@ DATA_FILES=	defs.con game.con user.con
 PROG_FILES=	${WRKSRC}/source/${PORTNAME} ${WRKSRC}/source/buildengine/build
 DOC_FILES=	README BUILDLIC.TXT CONTRIB TODO CHANGELOG ../../readme.txt ../../gnu.txt
 
-pre-everything::
-.ifndef(WITHOUT_DOSBOX)
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Define WITHOUT_DOSBOX to disable the dependency on dosbox."
-	@${ECHO_MSG} "Then however you will not be able to change the Duke3D config."
-	@${ECHO_MSG} ""
+OPTIONS=	DOSBOX "Dependency on dosbox (config editor use it)" on
 
-RUN_DEPENDS=	${LOCALBASE}/bin/dosbox:${PORTSDIR}/emulators/dosbox
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_DOSBOX)
+RUN_DEPENDS+=	dosbox:${PORTSDIR}/emulators/dosbox
 .endif
 
 post-patch:
@@ -78,4 +76,4 @@ post-install:
 .endif
 	@${SED} -e 's|%%DOCSDIR%%|${DOCSDIR}|' ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
