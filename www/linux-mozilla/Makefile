@@ -119,7 +119,7 @@ do-configure:
 	${ECHO_CMD} "#!/bin/sh"		>${WRKDIR}/${STARTUP_CMD}
 	${ECHO_CMD} -n "cd "		>>${WRKDIR}/${STARTUP_CMD}
 	${ECHO_CMD} ${INSTALL_DIR}		>>${WRKDIR}/${STARTUP_CMD}
-	${ECHO_CMD} "exec ./mozilla"	>>${WRKDIR}/${STARTUP_CMD}
+	${ECHO_CMD} 'exec ./mozilla $$@'	>>${WRKDIR}/${STARTUP_CMD}
 	${ECHO_CMD} "#!/bin/sh"					>${WRKDIR}/linkfarm
 	${ECHO_CMD} "# Run this after installing Netscape plugins."	>>${WRKDIR}/linkfarm
 	${ECHO_CMD} "cd ${PREFIX}/lib/linux-mozilla/plugins"	>>${WRKDIR}/linkfarm
