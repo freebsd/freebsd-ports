@@ -16,6 +16,8 @@ DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}_${PORTREVISION}
 MAINTAINER=	ports@henrik-motakef.de
 COMMENT=	XSLT Stylesheets to convert TEI to XSL Formatting Objects
 
+BROKEN=		"Checksum mismatch"
+
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
