@@ -1,0 +1,15 @@
+Using Net::MovableType you can post new entries, edit existing
+entries, browse entries and users blogs, and perform most of the
+features you can perform through accessing your MovableType account.
+
+Since Net::MovableType uses MT's remote procedure call gateway, you
+can do it from any computer with Internet connection.
+
+Net::MovableType promises an intuitive, user friendly, Object Oriented
+interface for managing your web sites published through MovableType.
+Most of the method names correspond to those documented in MovableType's
+Programming Interface Manual.
+
+WWW: http://search.cpan.org/search?dist=Net-MovableType
+
+Author: Sherzod Ruzmetov <sherzodr AT cpan.org>
