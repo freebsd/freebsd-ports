@@ -1,5 +1,5 @@
 --- gdc_py.c.orig	Mon Feb 25 19:36:07 2002
-+++ gdc_py.c	Thu Jul 18 14:52:48 2002
++++ gdc_py.c	Sat Aug 14 14:16:15 2004
 @@ -26,6 +26,9 @@
  #include <stdio.h>
  #include <string.h>
@@ -10,3 +10,12 @@
  
  #include "Python.h"
  #include "cStringIO.h"
+@@ -1327,8 +1330,6 @@
+ 		}
+ 		break;
+ 	    }
+-
+-	    default:
+ 
+ 	} // switch
+ 	opt++;
