@@ -49,9 +49,11 @@ include/libart_lgpl/art_rgb_rgba_affine.h
 include/libart_lgpl/art_rgb_svp.h
 include/libart_lgpl/art_svp.h
 include/libart_lgpl/art_svp_ops.h
+include/libart_lgpl/art_svp_point.h
 include/libart_lgpl/art_svp_render_aa.h
 include/libart_lgpl/art_svp_vpath.h
 include/libart_lgpl/art_svp_vpath_stroke.h
+include/libart_lgpl/art_svp_wind.h
 include/libart_lgpl/art_uta.h
 include/libart_lgpl/art_uta_ops.h
 include/libart_lgpl/art_uta_rect.h
@@ -59,6 +61,7 @@ include/libart_lgpl/art_uta_svp.h
 include/libart_lgpl/art_uta_vpath.h
 include/libart_lgpl/art_vpath.h
 include/libart_lgpl/art_vpath_bpath.h
+include/libart_lgpl/art_vpath_dash.h
 include/libart_lgpl/art_vpath_svp.h
 include/libgnome/gnome-config.h
 include/libgnome/gnome-defs.h
@@ -110,6 +113,11 @@ include/libgnomeui/gnome-dock-band.h
 include/libgnomeui/gnome-dock-item.h
 include/libgnomeui/gnome-dock-layout.h
 include/libgnomeui/gnome-dock.h
+include/libgnomeui/gnome-druid.h
+include/libgnomeui/gnome-druid-page.h
+include/libgnomeui/gnome-druid-page-start.h
+include/libgnomeui/gnome-druid-page-standard.h
+include/libgnomeui/gnome-druid-page-finish.h
 include/libgnomeui/gnome-entry.h
 include/libgnomeui/gnome-file-entry.h
 include/libgnomeui/gnome-font-picker.h
@@ -155,9 +163,9 @@ include/libgnomeui/gtkcauldron.h
 include/libgnomeui/gtkdial.h
 include/libgnomeui/gtkpixmapmenuitem.h
 include/libgnomeui/libgnomeui.h
-include/libgnorba/GnomeObject.h
 include/libgnorba/Table.h
 include/libgnorba/gnome-factory.h
+include/libgnorba/gnome-unknown.h
 include/libgnorba/gnorba.h
 include/popt-gnome.h
 include/zvt/lists.h
@@ -192,14 +200,30 @@ lib/libzvt.so.2
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/aclocal/libart.m4
 share/gnome/gtkrc
+share/gnome/gtkrc.el
+share/gnome/gtkrc.eo
+share/gnome/gtkrc.he
+share/gnome/gtkrc.hy
 share/gnome/gtkrc.ja
 share/gnome/gtkrc.ko
 share/gnome/gtkrc.ru
+share/gnome/gtkrc.tr
+share/gnome/gtkrc.th
+share/gnome/gtkrc.uk
+share/gnome/gtkrc.iso88592
+share/gnome/gtkrc.iso88595
+share/gnome/gtkrc.zh_CN
+share/gnome/gtkrc.zh_TW.Big5
+share/gnome/gtkrc.ka_GE.georgianacademy
+share/gnome/gtkrc.ka_GE.georgianps
+share/gnome/gtkrc.vi_VN.tcvn
+share/gnome/gtkrc.vi_VN.viscii
 share/gnome/idl/GnomeObject.idl
 share/gnome/idl/Table.idl
-share/gnome/idl/gnome-editor.idl
+share/gnome/idl/desktop-editor.idl
+share/gnome/idl/desktop-textviewer.idl
 share/gnome/idl/gnome-factory.idl
-share/gnome/idl/gnome-file.idl
+share/gnome/idl/gnome-unknown.idl
 share/gnome/idl/name-service.idl
 share/gnome/mime-info/gnome.mime
 share/gnome/pixmaps/calculator-font.png
@@ -217,11 +241,14 @@ share/locale/ca/LC_MESSAGES/gnome-libs.mo
 share/locale/cs/LC_MESSAGES/gnome-libs.mo
 share/locale/da/LC_MESSAGES/gnome-libs.mo
 share/locale/de/LC_MESSAGES/gnome-libs.mo
+share/locale/el/LC_MESSAGES/gnome-libs.mo
+share/locale/en_GB/LC_MESSAGES/gnome-libs.mo
 share/locale/es/LC_MESSAGES/gnome-libs.mo
 share/locale/eu/LC_MESSAGES/gnome-libs.mo
 share/locale/fi/LC_MESSAGES/gnome-libs.mo
 share/locale/fr/LC_MESSAGES/gnome-libs.mo
 share/locale/ga/LC_MESSAGES/gnome-libs.mo
+share/locale/hr/LC_MESSAGES/gnome-libs.mo
 share/locale/hu/LC_MESSAGES/gnome-libs.mo
 share/locale/it/LC_MESSAGES/gnome-libs.mo
 share/locale/ja/LC_MESSAGES/gnome-libs.mo
@@ -231,8 +258,10 @@ share/locale/no/LC_MESSAGES/gnome-libs.mo
 share/locale/pl/LC_MESSAGES/gnome-libs.mo
 share/locale/pt/LC_MESSAGES/gnome-libs.mo
 share/locale/ru/LC_MESSAGES/gnome-libs.mo
+share/locale/sk/LC_MESSAGES/gnome-libs.mo
 share/locale/sv/LC_MESSAGES/gnome-libs.mo
 share/locale/wa/LC_MESSAGES/gnome-libs.mo
+share/locale/zh_TW.Big5/LC_MESSAGES/gnome-libs.mo
 @exec mkdir -p %D/share/gnome/games
 @dirrm etc/sound/events
 @dirrm etc/sound
