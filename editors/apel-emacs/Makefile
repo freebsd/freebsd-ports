@@ -3,7 +3,7 @@
 # Date created:		23 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1999/01/02 13:26:51 kuriyama Exp $
+# $Id: Makefile,v 1.2 1999/01/11 10:27:46 asami Exp $
 #
 
 DISTNAME=	apel-${APEL_VER}
@@ -30,15 +30,18 @@ REQUIRE_SETUPEL=  YES
 # target name for make build
 ALL_TARGET?=	elc
 
-.if defined(EMACS_PORT)
-PKGNAME=	apel-${EMACS_PORT}-${APEL_VER}
-EMACS_CMD=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
+# if RUN_DEPENDS emacs port name has the suffix `-common'
 .if !defined(HAVE_COMMON_PORT)
 HAVE_COMMON_PORT=	NO
 .endif
+# if RUN_DEPENDS emacs needs setup elisp
 .if !defined(REQUIRE_SETUPEL)
 REQUIRE_SETUPEL=	NO
 .endif
+
+.if defined(EMACS_PORT)
+PKGNAME=	apel-${EMACS_PORT}-${APEL_VER}
+EMACS_CMD=	${PREFIX}/bin/${EMACS_NAME}-${EMACS_VER}
 BUILD_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}
 .if defined(HAVE_COMMON_PORT) && (${HAVE_COMMON_PORT} == "YES")
 RUN_DEPENDS=	${EMACS_CMD}:${PORTSDIR}/editors/${EMACS_PORT}-common
