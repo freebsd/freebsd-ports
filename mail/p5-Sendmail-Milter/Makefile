@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A module to write mail filters in Perl using sendmail's mail filter API
 
-BROKEN=		"Does not compile"
+IGNORE=		"Requires perl compiled manually with threads."
 
 PERL_CONFIGURE=	yes
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
