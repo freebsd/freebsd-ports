@@ -38,6 +38,7 @@
     SUBDIR += detach
     SUBDIR += dim
     SUBDIR += dirdiff
+    SUBDIR += diskcheckd
     SUBDIR += diskusage
     SUBDIR += doconfig
     SUBDIR += du2ps
