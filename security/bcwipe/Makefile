@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	bcwipe
-PORTVERSION=	0.2.4
+PORTVERSION=	1.2.1
 CATEGORIES=	security
 MASTER_SITES=	http://www.jetico.com/linux/ \
-		http://www.edunet.hu/~crow/
+		http://www.underworld.hu/~crow/distfiles/
 DISTNAME=	BCWipe-${PORTVERSION:S/./-/g:S/-/./}
 
 MAINTAINER=	crow@nektor.hu
