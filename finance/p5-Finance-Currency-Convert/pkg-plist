@@ -1,0 +1,11 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Finance/Currency/Convert/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Finance/Currency/Convert.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/Finance/Currency/Convert/autosplit.ix
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Finance/Currency/Convert 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Finance/Currency 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/auto/Finance 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Finance/Currency 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Finance 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Finance/Currency/Convert 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Finance/Currency 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Finance 2>/dev/null || true
