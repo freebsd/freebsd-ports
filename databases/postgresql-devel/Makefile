@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-PORTVERSION?=	7.3.rc1
+PORTVERSION?=	7.3
 PKGNAMESUFFIX=	-devel
 CATEGORIES?=	databases
 MASTER_SITES=	ftp://ftp9.us.postgresql.org/pub/mirrors/postgresql/%SUBDIR%/ \
@@ -23,14 +23,14 @@ MASTER_SITES=	ftp://ftp9.us.postgresql.org/pub/mirrors/postgresql/%SUBDIR%/ \
 		ftp://ftp.jaist.ac.jp/pub/dbms/PostgreSQL/%SUBDIR%/ \
 		ftp://ftp.us.postgresql.org/%SUBDIR%/ \
 		ftp://ftp.postgresql.org/pub/%SUBDIR%/
-MASTER_SITE_SUBDIR=	source/v7.3beta
-DISTFILES=	postgresql-base-7.3rc1${EXTRACT_SUFX} \
-		postgresql-opt-7.3rc1${EXTRACT_SUFX} \
-		postgresql-test-7.3rc1${EXTRACT_SUFX}
+MASTER_SITE_SUBDIR=	source/v7.3
+DISTFILES=	postgresql-base-7.3${EXTRACT_SUFX} \
+		postgresql-opt-7.3${EXTRACT_SUFX} \
+		postgresql-test-7.3${EXTRACT_SUFX}
 
 MAINTAINER?=	seanc@FreeBSD.org
 
-WRKSRC=		${WRKDIR}/postgresql-7.3rc1
+WRKSRC=		${WRKDIR}/postgresql-7.3
 DIST_SUBDIR=	postgresql
 
 USE_GMAKE=	YES
