@@ -2842,6 +2842,7 @@ it-openoffice	ports/editors/openoffice-it
 itcl		ports/lang/itcl
 ithought	ports/deskutils/ithought
 itk		ports/x11-toolkits/itk
+its		ports/emulators/its
 its4		ports/security/its4
 iv		ports/x11-toolkits/iv
 iverilog	ports/cad/iverilog
