@@ -351,6 +351,7 @@
     SUBDIR += ruby-amstd
     SUBDIR += ruby-byaccr
     SUBDIR += ruby-date2
+    SUBDIR += ruby-dialogs
     SUBDIR += ruby-filelock
     SUBDIR += ruby-gemfinder
     SUBDIR += ruby-intl

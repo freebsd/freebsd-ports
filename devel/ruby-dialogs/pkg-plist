@@ -1,0 +1,3 @@
+%%RUBY_SITELIBDIR%%/dialogs.rb
+%%PORTDOCS%%%%RUBY_DOCDIR%%/dialogs/dialogs.html
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/dialogs
