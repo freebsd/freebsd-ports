@@ -8,7 +8,10 @@
 PORTNAME=	spread
 PORTVERSION=	3.16.2
 CATEGORIES=	net perl5 java
-MASTER_SITES=	http://www.roughtrade.net/distfiles/
+MASTER_SITES=	http://www.roughtrade.net/distfiles/ \
+		http://www.metaverse.nl/~ernst/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	znerd
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	joshua@roughtrade.net
