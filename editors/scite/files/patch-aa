@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- makefile.orig	Mon Feb 11 12:01:37 2002
-+++ makefile	Mon Feb 11 12:06:45 2002
+--- makefile.orig	Tue Nov  5 17:36:21 2002
++++ makefile	Tue Nov  5 17:39:53 2002
 @@ -10,34 +10,34 @@
  
  # For the Gnome desktop stuff to work, prefix must point to where Gnome thinks it is.
@@ -36,24 +33,32 @@ $FreeBSD$
 -CXXFLAGS=-DDEBUG -g $(CXXBASEFLAGS)
 +CXXFLAGS+=-DDEBUG -g $(CXXBASEFLAGS)
  else
--CXXFLAGS=-DNDEBUG $(CXXBASEFLAGS)
+-CXXFLAGS=-DNDEBUG -Os $(CXXBASEFLAGS)
 +CXXFLAGS+=-DNDEBUG $(CXXBASEFLAGS)
  endif
  
  .cxx.o:
 -	$(CC) `gtk-config --cflags` $(CXXFLAGS) -c $< -o $@
-+	$(CC) $(shell $(GTK_CONFIG) --cflags) $(CXXFLAGS) -c $< -o $@
++	$(CC) $(shell $(GTK_CONFIG) --cflags) $(shell $(GLIB_CONFIG) --libs gthread) $(CXXFLAGS) -c $< -o $@
  
  all: $(PROG)
  
-@@ -51,8 +51,8 @@
+@@ -45,14 +45,14 @@
+ 	rm -f *.o $(PROG)
+ 
+ deps:
+-	$(CC) -MM `gtk-config --cflags` $(CXXFLAGS) *.cxx ../src/*.cxx >deps.mak
++	$(CC) -MM `$(GTK_CONFIG) --cflags` `$(GLIB_CONFIG) --libs gthread)` $(CXXFLAGS) *.cxx ../src/*.cxx >deps.mak
+ 
+ # make should be run in ../../scintilla/gtk to compile all the lexers.
  LEXEROBJS=$(wildcard ../../scintilla/gtk/Lex*.o)
  
- $(PROG): SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o DirectorExtension.o \
--SciTEProps.o $(LEXEROBJS) ../../scintilla/bin/scintilla.a
--	$(CC) `gtk-config --libs` -DGTK $^ -o $@
+-$(PROG): SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o DirectorExtension.o \
+-SciTEProps.o Utf8_16.o $(LEXEROBJS) ../../scintilla/bin/scintilla.a
+-	$(CC) `gtk-config --libs` `glib-config --libs gthread` -DGTK $^ -o $@
++$(PROG): SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o DirectorExtension.o Utf8_16.o \
 +SciTEProps.o # $(LEXEROBJS) ../../scintilla/bin/scintilla.a
-+	$(CC) $(shell $(GTK_CONFIG) --libs) -DGTK $^ -L$(X11BASE)/lib -lscintilla -lscintilla_lexers -o $@
++	$(CC) $(shell $(GTK_CONFIG) --libs) $(shell $(GLIB_CONFIG) --libs gthread) -DGTK $^ -L$(X11BASE)/lib -lscintilla -lscintilla_lexers -o $@
  
  # SciTE-static no longer builds. Kept here in case of later need.
  SciTE-static: SciTEGTK.o SciTEBase.o SciTEBuffers.o SciTEIO.o Exporters.o SciTEProps.o \
@@ -63,7 +68,7 @@ $FreeBSD$
  install:
 -	install -s $(PROG) $(bindir)
 -	install -d $(SYSCONF_PATH)
--	install -D ../src/*.properties $(SYSCONF_PATH)
+-	install ../src/*.properties $(SYSCONF_PATH)
 -	install ../doc/*.html $(SYSCONF_PATH)
 -	install ../doc/SciTEIco.png $(SYSCONF_PATH)
 -	install ../doc/PrintHi.png $(SYSCONF_PATH)

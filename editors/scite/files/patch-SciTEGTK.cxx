@@ -1,14 +1,11 @@
-
-$FreeBSD$
-
---- SciTEGTK.cxx	2002/08/19 16:01:39	1.1
-+++ SciTEGTK.cxx	2002/08/19 16:02:02
-@@ -1882,7 +1882,7 @@
+--- SciTEGTK.cxx.orig	Tue Nov  5 17:24:05 2002
++++ SciTEGTK.cxx	Tue Nov  5 17:24:42 2002
+@@ -1910,7 +1910,7 @@
  	return 0;
  }
  
--void SciTEGTK::AddToPopUp(const char *label, int cmd=0, bool enabled=true) {
-+void SciTEGTK::AddToPopUp(const char *label, int cmd, bool enabled) {
+-void SciTEGTK::AddToPopUp(const char *label, int cmd, bool enabled) {
++void SciTEGTK::AddToPopUp(const char *label, int cmd=0, bool enabled=true) {
  	SString localised = LocaliseString(label);
  	localised.insert(0, "/");
  	GtkItemFactoryEntry itemEntry = {
