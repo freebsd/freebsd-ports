@@ -1,3 +1,6 @@
+@cwd /usr/local
+etc/rc.d/pilot-link.sh
+@cwd /usr/local/pilot
 bin/addresses
 bin/ccexample
 bin/debugsh
