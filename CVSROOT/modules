@@ -4248,7 +4248,6 @@ kicker-applets	ports/misc/kicker-applets
 kickpim		ports/deskutils/kickpim
 kile		ports/editors/kile
 kiltdown	ports/mail/kiltdown
-kimagemapeditor	ports/graphics/kimagemapeditor
 kimdaba		ports/graphics/kimdaba
 kimwitu		ports/devel/kimwitu
 kimwitu++	ports/devel/kimwitu++
