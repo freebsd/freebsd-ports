@@ -27,7 +27,7 @@ MAN3=	SP_connect.3 SP_disconnect.3 SP_equal_group_ids.3 SP_error.3 \
 
 USE_PERL5=	yes
 NO_CDROM=	"See the license: http://www.spread.org/license/"
-#NO_PACKAGE=	"User and group needs to be created"
+NO_PACKAGE=	"User and group needs to be created"
 RESTRICTED=	"See the license: http://www.spread.org/license/"
 INSTALLS_SHLIB=	yes
 
