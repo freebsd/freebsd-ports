@@ -15,7 +15,7 @@ MASTER_SITES=	http://josefsson.org/${PORTNAME}/releases/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free implementation of the Kerberos 5 network security system
 
-LIB_DEPENDS=	idn.12:${PORTSDIR}/devel/libidn \
+LIB_DEPENDS=	idn.13:${PORTSDIR}/devel/libidn \
 		tasn1.2:${PORTSDIR}/security/libtasn1
 
 USE_PERL5_BUILD=	yes
