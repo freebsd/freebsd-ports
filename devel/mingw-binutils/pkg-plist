@@ -27,6 +27,9 @@ i386-mingw32msvc/lib/ldscripts/i386pe.xbn
 i386-mingw32msvc/lib/ldscripts/i386pe.xn
 i386-mingw32msvc/lib/ldscripts/i386pe.xr
 i386-mingw32msvc/lib/ldscripts/i386pe.xu
+@dirrm i386-mingw32msvc/bin
+@dirrm i386-mingw32msvc/lib/ldscripts
+@unexec rmdir -p %D/i386-mingw32msvc/lib 2>/dev/null || true
 include/ansidecl.h
 include/bfd.h
 include/bfdlink.h
@@ -45,7 +48,3 @@ share/locale/sv/LC_MESSAGES/ld.mo
 share/locale/sv/LC_MESSAGES/opcodes.mo
 share/locale/tr/LC_MESSAGES/binutils.mo
 share/locale/tr/LC_MESSAGES/opcodes.mo
-@dirrm i386-mingw32msvc/lib/ldscripts
-@dirrm i386-mingw32msvc/lib
-@dirrm i386-mingw32msvc/bin
-@dirrm i386-mingw32msvc
