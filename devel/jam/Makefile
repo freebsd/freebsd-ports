@@ -7,6 +7,7 @@
 
 PORTNAME=	jam
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.perforce.com/pub/jam/
 
@@ -18,6 +19,7 @@ ONLY_FOR_ARCHS=	alpha i386
 USE_ZIP=	yes
 USE_REINPLACE=	yes
 EXTRACT_BEFORE_ARGS=	-q -aa
+NO_WRKSUBDIR=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/jam
 
