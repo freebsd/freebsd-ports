@@ -3,7 +3,7 @@
 # Date created:				October 24th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.9 1998/03/16 03:15:59 steve Exp $
+# $Id: Makefile,v 1.10 1998/05/07 16:16:53 vanilla Exp $
 #
 
 DISTNAME=	MailFolder-0.07
@@ -25,7 +25,7 @@ USE_PERL5=	YES
 
 MAN3=		Mail::Folder.3 Mail::Folder::Emaul.3 Mail::Folder::Mbox.3 \
 		Mail::Folder::NNTP.3 Mail::Folder::Maildir.3
-MANPREFIX=	${PREFIX}/lib/perl5
+MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 do-configure:
 		@ cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${PREFIX}/bin/perl Makefile.PL
