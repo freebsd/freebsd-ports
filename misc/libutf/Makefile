@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.cs.yorku.ca/pub/wily/misc/ \
 		http://www.westley.demon.co.uk/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gagnon_s@sympatico.ca
 COMMENT=	UTF-8 character set support library, including regular expressions
 
 GNU_CONFIGURE=	YES

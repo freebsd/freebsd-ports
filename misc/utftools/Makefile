@@ -10,7 +10,7 @@ PORTVERSION=	1.6
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.cs.yorku.ca/pub/wily/misc/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gagnon_s@sympatico.ca
 COMMENT=	UTF-aware wc, fmt, expand, and unexpand
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libutf.a:${PORTSDIR}/misc/libutf

@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	x11-toolkits plan9
 MASTER_SITES=	ftp://ftp.cs.yorku.ca/pub/wily/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gagnon_s@sympatico.ca
 COMMENT=	Plan9 compatibility libraries
 
 USE_XLIB=	YES
