@@ -6347,6 +6347,7 @@ py-twisted	ports/devel/py-twisted
 py-twofish	ports/security/py-twofish
 py-unit		ports/devel/py-unit
 py-vmaps	ports/devel/py-vmaps
+py-vorbis	ports/audio/py-vorbis
 py-websvcs	ports/www/py-websvcs
 py-wordnet	ports/textproc/py-wordnet
 py-wxPython	ports/x11-toolkits/py-wxPython
