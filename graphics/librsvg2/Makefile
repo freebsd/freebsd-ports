@@ -7,6 +7,7 @@
 
 PORTNAME=	librsvg2
 PORTVERSION=	2.2.5
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.2
@@ -19,7 +20,7 @@ COMMENT=	Library for parsing and rendering SVG vector-graphic files
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		popt.0:${PORTSDIR}/devel/popt \
-		gsf-1.8:${PORTSDIR}/devel/libgsf
+		gsf-1.9:${PORTSDIR}/devel/libgsf
 RUN_DEPENDS=	${X11BASE}/lib/gtk-2.0/2.2.0/engines/libmetal.so:${PORTSDIR}/x11-toolkits/gtk-engines2
 
 USE_BZIP2=	yes

@@ -7,14 +7,14 @@
 
 PORTNAME=	libmrproject
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	ftp://ftp.codefactory.se/pub/software/mrproject/source/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Library backend for MrProject project management application
 
-LIB_DEPENDS=	gsf-1.8:${PORTSDIR}/devel/libgsf
+LIB_DEPENDS=	gsf-1.9:${PORTSDIR}/devel/libgsf
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
