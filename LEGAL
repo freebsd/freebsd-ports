@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.41 1996/09/26 05:49:21 max Exp $
+# $Id: LEGAL,v 1.42 1996/10/08 20:33:22 andreas Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -48,3 +48,4 @@ webcopy.tgz		ports/www/webcopy	Don't sell for profit
 xrisk-2.13.tar.Z	ports/games/xrisk	Copyright/trademark violation?
 xtetris-2.5.2.tar.gz	ports/games/xtetris	Possible trademark violation
 xinvaders-*		ports/games/xinvaders	Don't sell for profit
+vfrb101e.taz		ports/security/vscan	Commercial software
