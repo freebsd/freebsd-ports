@@ -3,7 +3,7 @@
 # Date created:		20 November 1994
 # Whom:			pst
 #
-# $Id: Makefile,v 1.12 1996/11/12 02:18:08 obrien Exp $
+# $Id: Makefile,v 1.13 1996/11/18 14:02:23 asami Exp $
 #
 
 DISTNAME=	expect-5.21
@@ -14,7 +14,6 @@ DISTFILES=	expect.tar.gz
 
 LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
 
-HAS_CONFIGURE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= --enable-shared --with-tclconfig=/usr/libdata/tcl \
 		--with-tclinclude=/usr/include/tcl
