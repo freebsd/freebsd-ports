@@ -1,0 +1,15 @@
+libQGLViewer is a GPL-free software C++ library which lets you quickly start
+the development of a new 3D application. It is designed for 3D developers, who
+can display and move around a 3D scene by simply providing the openGL orders
+that define their 3D geometry. The viewer is designed to be as general as
+possible and is not designed for a specific 3D application. It provides some
+useful classical functionalities such as a camera trackball, screenshot saving,
+mouse manipulated frames, stereo display, keyFrames and more. It hence has a
+strong pedagogical interest and is well suited for openGL assignements.
+
+libQGLViewer is not a 3D viewer that can be used directly to view 3D scenes in
+various formats (well, there is a 3dsViewer example, but it is just a proof of
+concept). It is more likely to be the starting point for the coding of such a
+viewer.
+
+WWW: http://artis.imag.fr/Members/Gilles.Debunne/QGLViewer/

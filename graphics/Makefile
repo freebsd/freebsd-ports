@@ -224,6 +224,7 @@
     SUBDIR += liblug
     SUBDIR += libmng
     SUBDIR += libmorph
+    SUBDIR += libqglviewer
     SUBDIR += librsvg
     SUBDIR += librsvg2
     SUBDIR += libtheora
