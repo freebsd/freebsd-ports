@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://innominate.org/kurth/masqmail/download/
 DISTNAME=	MasqMail-${PORTVERSION}
 
-MAINTAINER=	anray@inet.ua
+MAINTAINER=	anrays@gmail.com
 COMMENT=	Mail server for hosts, not permanently connected to the internet
 
 CONFLICTS=	masqmail-0.2*

@@ -11,7 +11,7 @@ CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	anray@inet.ua
+MAINTAINER=	anrays@gmail.com
 COMMENT=	Transfer news between a local NNTP server (INN, sn, s-news)
 
 .if defined(WITHOUT_SSL)

@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.habazie.rams.pl/kf/files/ \
 		http://www.jabberstudio.org/projects/kf/releases/
 
-MAINTAINER=	anray@inet.ua
+MAINTAINER=	anrays@gmail.com
 COMMENT=	A simple Jabber client using the GTK+ 2.0 toolkit
 
 LIB_DEPENDS=	loudmouth-1.0:${PORTSDIR}/net/loudmouth

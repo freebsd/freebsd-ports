@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://dl.bytesex.org/releases/fbida/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	anray@inet.ua
+MAINTAINER=	anrays@gmail.com
 COMMENT=	Small and fast motif-based image viewer and editor
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \

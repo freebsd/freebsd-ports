@@ -21,7 +21,7 @@ DISTFILES=	\
 		skk-1.23-pkg.tar.gz
 DIST_SUBDIR=	xemacs
 
-MAINTAINER=	anray@inet.ua
+MAINTAINER=	anrays@gmail.com
 COMMENT=	XEmacs elisp packages for Mule(mule-packages)
 
 NO_BUILD=	yes
