@@ -6283,6 +6283,7 @@ p5-XML-Parser	ports/textproc/p5-XML-Parser
 p5-XML-Parser-EasyTree	ports/textproc/p5-XML-Parser-EasyTree
 p5-XML-Quote	ports/textproc/p5-XML-Quote
 p5-XML-RSS	ports/textproc/p5-XML-RSS
+p5-XML-RSS-JavaScript	ports/textproc/p5-XML-RSS-JavaScript
 p5-XML-RSS-Parser	ports/textproc/p5-XML-RSS-Parser
 p5-XML-RegExp	ports/textproc/p5-XML-RegExp
 p5-XML-SAX	ports/textproc/p5-XML-SAX
