@@ -3,7 +3,7 @@
 # Date created:		27 August 1995
 # Whom:			asami
 #
-# $Id: Makefile,v 1.3 1996/11/18 09:53:22 asami Exp $
+# $Id: Makefile,v 1.4 1996/11/30 00:12:17 torstenb Exp $
 #
 
 DISTNAME=	xgalaga-1.6c
@@ -12,6 +12,8 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games
 
 MAINTAINER=	asami@FreeBSD.ORG
+
+LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
