@@ -14,8 +14,12 @@ lib/%%PYTHON_VERSION%%/site-packages/happydoc/happydoc_class.py
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/happydoc_class.pyc
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/happyformatter.py
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/happyformatter.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdpathmanagement.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdpathmanagement.pyc
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/indentstring.py
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/indentstring.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/optiontools.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/optiontools.pyc
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/parseinfo.py
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/parseinfo.pyc
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/pluginloader.py
@@ -36,6 +40,8 @@ lib/%%PYTHON_VERSION%%/site-packages/happydoc/docset/docset_stdout.py
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/docset/docset_stdout.pyc
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdformatter/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdformatter/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdformatter/hdformatter_docbook.py
+lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdformatter/hdformatter_docbook.pyc
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdformatter/hdformatter_file.py
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdformatter/hdformatter_file.pyc
 lib/%%PYTHON_VERSION%%/site-packages/happydoc/hdformatter/hdformatter_htmlfile.py
