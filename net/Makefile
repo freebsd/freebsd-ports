@@ -93,7 +93,6 @@
     SUBDIR += ipw
     SUBDIR += isc-dhcp2
     SUBDIR += isic
-    SUBDIR += ivs
     SUBDIR += jabber-transport
     SUBDIR += kdenetwork11
     SUBDIR += kdenetwork11-i18n
