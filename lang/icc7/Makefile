@@ -33,7 +33,7 @@ ICC_SITE=	http://www.intel.com/software/products/compilers/
 
 ICCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
 
-.if !exists(${DISTDIR}/${DISTFILES})
+.if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
 IGNORE=	"Please manually download ${DISTFILES} from ${ICC_SITE}, e.g. from ${ICC_SITE}c60l/noncom.htm. Put it into ${DISTDIR} and run make again."
 .endif
 
