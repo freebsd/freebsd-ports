@@ -233,6 +233,8 @@ share/smalltalk/web/recent.jpg
 share/smalltalk/web/rename.jpg
 share/smalltalk/web/test.st
 share/smalltalk/web/top.jpg
+share/smalltalk/xml/Id-DOM.st
+share/smalltalk/xml/Id-XWalker.st
 share/smalltalk/xml/XML.st
 @dirrm share/smalltalk/xml
 @dirrm share/smalltalk/web
