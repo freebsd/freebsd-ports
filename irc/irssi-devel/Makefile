@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	irssi
-PORTVERSION=	0.7.94
+PORTVERSION=	0.7.95
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://irssi.org/files/
 
