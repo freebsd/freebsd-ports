@@ -3034,6 +3034,7 @@ ko-pycodec	ports/korean/pycodec
 ko-texinfo	ports/korean/texinfo
 ko-uniksc	ports/korean/uniksc
 ko-w3m		ports/korean/w3m
+kochi-ttfonts	ports/japanese/kochi-ttfonts
 koffice	ports/editors/koffice
 koffice-i18n	ports/misc/koffice-i18n
 koi8r-ps	ports/russian/koi8r-ps
