@@ -1,0 +1,117 @@
+#!/bin/sh
+#
+# standard format startup script for unreal tournament
+#
+# written by abfackeln@abfackeln.com
+# 2001-02-19
+#
+# modified (FreeBSD) by matuska@wu-wien.ac.at
+# 2001-10-20
+#
+######################################################
+
+MYNAME="ucc-DM"
+
+MYGAME="Botpack.DeathMatchPlus"
+MYMAP="DM-Barricade"
+MYUSERID="nobody"
+MYDIR="/usr/games/ut-server"
+MYPORT="7777"
+MYIP=""
+MYMODS=""
+MYINI="UnrealTournament.ini"
+
+MYLOGFILE="$MYDIR/System/$MYNAME.log"
+MYLOCKFILE="$MYDIR/System/$MYNAME.lock"
+
+
+# no user servicable parts beyond this point
+
+
+if [ -z "$MYMODS" ]; then
+   TMP="$MYMAP""\?game=$MYGAME"
+else
+   TMP="$MYMAP""\?game=$MYGAME""\?mutator=$MYMODS"
+fi
+if [ -n "$MYIP" ]; then
+   TMP="$TMP multihome=$MYIP"
+fi
+
+MYEXECMD="./ucc server $TMP -nohomedir ini=$MYINI log=$MYLOGFILE"
+if [ `whoami` = "root" ]; then
+   SUID="/usr/bin/su $MYUSERID -c"
+else
+   SUID=
+fi
+
+ulimit -c 0
+
+case "$1" in
+   start)
+      echo -n "Starting Unreal Tournament: "
+      if [ -f $MYLOCKFILE ]; then
+         echo "already running according to $MYLOCKFILE. Not started."
+      else
+         cd $MYDIR
+         if [ -n "$SUID" ]; then
+	     $SUID "$MYEXECMD > /dev/null & echo \$! > $MYLOCKFILE" > /dev/null &
+         else
+             /bin/sh -c "$MYEXECMD & echo \$! > $MYLOCKFILE" > /dev/null &
+         fi
+         echo "$MYNAME"
+      fi
+      ;;
+   stop)
+      echo -n "Stopping Unreal Tournament: "
+      if [ ! -f $MYLOCKFILE ]; then
+         echo "not found"
+         exit 2
+      fi
+      kill -TERM `cat $MYLOCKFILE`
+      rm -f $MYLOCKFILE
+      echo "$MYNAME"
+      ;;
+   restart)
+      if [ -f $MYLOCKFILE ]; then
+         $0 stop
+      fi
+      $0 start
+      ;;
+   check)
+      ## the next condition was devised by Chris Weiss for his ut-check script
+      ## ftp://xplug.sourceforge.net/pub/xplug/ut-check.tar.gz
+      ## i have slightly modified it and integrated it here
+
+      ## usage: call "ucc.init check" from a cron task every 5 minutes or so
+      ## output will be nothing if it was running
+      ## else output will be a start message and the server will restart
+
+      if [ -z "$(ps --no-headers -p $(cat $MYLOCKFILE 2>/dev/null) 2>/dev/null)" ]; then
+         $0 restart
+      fi
+      ;;
+   infinity)
+      ## infinite loop to ensure that server is always up without use of cron
+
+      echo $$ > $MYLOCKFILE.8
+      ## the number 8 is the infinity symbol sideways ;)  -abf.
+
+      while [ 1 ]; do
+         $0 check
+         sleep 60
+      done
+      ;;
+   die)
+      $0 stop
+
+      ## break infinity
+      kill -TERM `cat $MYLOCKFILE.8`
+      rm -f $MYLOCKFILE.8
+      ;;
+   *)
+      echo "Usage: $0 {start|stop|restart|check|infinity|die}"
+      exit 1
+esac
+
+exit 0
+
