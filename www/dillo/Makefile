@@ -8,7 +8,7 @@
 PORTNAME=       dillo
 PORTVERSION=	0.7.2
 CATEGORIES=     www
-MASTER_SITES=	http://dillo.auriga.wearlab.de/download/
+MASTER_SITES=	http://www.dillo.org/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast, small graphical Web browser built upon GTK+
