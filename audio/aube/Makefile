@@ -18,16 +18,10 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehier gnomehack gtk12 imlib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=		aube.1
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's|-lpthread|${PTHREAD_LIBS}|g' \
-		${WRKSRC}/configure
 
 .include <bsd.port.mk>
