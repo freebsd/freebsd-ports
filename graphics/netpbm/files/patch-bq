@@ -1,14 +1,6 @@
---- ppm/ximtoppm.c.orig	Tue Apr  4 03:09:06 2000
-+++ ppm/ximtoppm.c	Sat Apr 15 08:00:00 2000
-@@ -11,6 +11,7 @@
- */
- 
- #include <string.h>
-+#include "shhopt.h"
- #include "ppm.h"
- #include "xim.h"
- 
-@@ -418,13 +419,23 @@
+--- ppm/ximtoppm.c.orig	Sun Apr  9 07:44:31 2000
++++ ppm/ximtoppm.c	Mon May  8 00:00:00 2000
+@@ -419,13 +419,23 @@
           */
      unsigned int option_def_index;
  

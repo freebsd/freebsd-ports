@@ -1,8 +1,16 @@
---- ppm/tgatoppm.c.orig	Sun Apr  9 09:10:36 2000
-+++ ppm/tgatoppm.c	Mon May  8 00:00:00 2000
-@@ -426,16 +426,26 @@
-          */
+--- ppm/ppmntsc.c.orig	Sat Apr 22 08:44:59 2000
++++ ppm/ppmntsc.c	Mon May  8 00:00:00 2000
+@@ -42,6 +42,7 @@
+ #include <math.h>
+ #include <string.h>
+ #include "ppm.h"
++#include "shhopt.h"
+ 
+ #define TRUE 1
+ #define FALSE 0
+@@ -440,6 +441,15 @@
      unsigned int option_def_index;
+     int legalonly, illegalonly, correctedonly;
  
 +    /* Create the OptStruct structure describing our options */
 +    #define OPTENTRY(shortvalue,longvalue,typevalue,outputvalue,flagvalue) {\
@@ -14,14 +22,19 @@
 +      option_def_index++; \
 +      }
      option_def_index = 0;   /* incremented by OPTENTRY */
-     OPTENTRY(0,   "headerdump", OPT_FLAG,   &cmdline_p->headerdump,     0);
-     OPTENTRY('d', "debug",      OPT_FLAG,   &cmdline_p->headerdump,     0);
-     OPTENTRY(0,   "alphaout",   OPT_STRING, &cmdline_p->alpha_filename, 0);
+     OPTENTRY('v', "verbose",        OPT_FLAG,   &cmdline_p->verbose,        0);
+     OPTENTRY('V', "debug",          OPT_FLAG,   &cmdline_p->debug,          0);
+@@ -447,6 +457,7 @@
+     OPTENTRY('l', "legalonly",      OPT_FLAG,   &legalonly,                 0);
+     OPTENTRY('i', "illegalonly",    OPT_FLAG,   &illegalonly,               0);
+     OPTENTRY('c', "correctedonly",  OPT_FLAG,   &correctedonly,             0);
 +    option_def[option_def_index].type = OPT_END;
  
      /* Set the defaults */
-     cmdline_p->headerdump = 0;
-     cmdline_p->alpha_filename = NULL;
+     cmdline_p->verbose = FALSE;
+@@ -454,7 +465,7 @@
+     cmdline_p->pal = FALSE;
+     legalonly = illegalonly = correctedonly = FALSE;
  
 -    pm_optParseOptions(&argc, argv, option_def, 0);
 +    optParseOptions(&argc, argv, option_def, 0);

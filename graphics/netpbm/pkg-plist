@@ -10,6 +10,7 @@ bin/fitstopnm
 bin/fstopgm
 bin/g3topbm
 bin/gemtopbm
+bin/gemtopnm
 bin/giftopnm
 bin/gouldtoppm
 bin/hipstopgm
@@ -20,6 +21,7 @@ bin/imgtoppm
 bin/jpegtopnm
 bin/lispmtopgm
 bin/macptopbm
+bin/mdatopbm
 bin/mgrtopbm
 bin/mtvtoppm
 bin/pbmclean
@@ -27,6 +29,7 @@ bin/pbmlife
 bin/pbmmake
 bin/pbmmask
 bin/pbmmerge
+bin/pbmpage
 bin/pbmpscale
 bin/pbmreduce
 bin/pbmtext
@@ -46,6 +49,7 @@ bin/pbmtolj
 bin/pbmtoln03
 bin/pbmtolps
 bin/pbmtomacp
+bin/pbmtomda
 bin/pbmtomgr
 bin/pbmtopgm
 bin/pbmtopi3
@@ -122,6 +126,7 @@ bin/ppm3d
 bin/ppmbrighten
 bin/ppmchange
 bin/ppmcie
+bin/ppmcolormask
 bin/ppmdim
 bin/ppmdist
 bin/ppmdither
@@ -166,6 +171,7 @@ bin/ppmtouil
 bin/ppmtoxpm
 bin/ppmtoyuv
 bin/ppmtoyuvsplit
+bin/ppmtv
 bin/psidtopgm
 bin/pstopnm
 bin/qrttoppm

@@ -1,11 +1,16 @@
---- pgm/Makefile.orig	Fri Mar 24 07:43:44 2000
-+++ pgm/Makefile	Sat Apr  1 12:00:00 2000
-@@ -10,9 +10,10 @@
- INCLUDEPBM = -I$(PBMDIR)
- LIBPBM = libpbm.so
+--- pgm/Makefile.orig	Sat May  6 12:01:47 2000
++++ pgm/Makefile	Mon May  8 00:00:00 2000
+@@ -3,7 +3,7 @@
  
--INCLUDE = -I$(SRCDIR) $(INCLUDEPBM)
-+INCLUDE = -I$(SRCDIR) $(INCLUDEPBM) -I$(SRCDIR)/shhopt 
+ LIBROOT = pgm
+ LIBPGM = lib$(LIBROOT).$(NETPBMLIBSUFFIX)
+-MAJ = 9
++MAJ = 1
+ MIN = 0
+ 
+ PBMDIR = $(SRCDIR)/pbm
+@@ -13,6 +13,7 @@
+ INCLUDE = -I$(SRCDIR) $(INCLUDEPBM) -I$(SRCDIR)/shhopt
  
  NETPBMLIBS = $(LIBPGM) $(PBMDIR)/$(LIBPBM)
 +NETPBMLD = -L. -lpgm -L$(PBMDIR) -lpbm
@@ -20,7 +25,7 @@
  
  MANUALS1 =	$(BINARIES)
  MANUALS3 =	libpgm
-@@ -42,22 +44,25 @@
+@@ -42,11 +44,11 @@
  
  # Rules for plain programs.
  $(PORTBINARIES): %: %.o $(NETPBMLIBS)
@@ -32,20 +37,5 @@
 -	$(LD) $(LDFLAGS) -o $@ $@.o -lm $(NETPBMLIBS) $(CDEBUG)
 +	$(LD) $(LDFLAGS) -o $@ $@.o -lm $(NETPBMLD) $(CDEBUG)
  
- # Rule for objects.
- $(OBJECTS) $(LIBOBJECTS): %.o: %.c
- 	$(CC) -c $(CFLAGS) $(INCLUDE) -o $@ $<
- 
-+$(LIBSOBJECTS): %.so: %.c
-+	$(CC) -c -fpic -DPIC $(CFLAGS) $(INCLUDE) -o $@ $<
-+
- $(MERGE_OBJECTS): %.o2: %.c
- 	$(CC) -c $(CFLAGS) $(INCLUDE) "-Dmain=$*_main" -o $@ $<
- 
  # And libraries.
  $(PBMDIR)/$(LIBPBM): FORCE
--	cd $(PBMDIR) ; make $(LIBPBM)
-+	cd $(PBMDIR) ; $(MAKE) $(LIBPBM)
- 
- .PHONY: install.bin
- install.bin: install.bin.common

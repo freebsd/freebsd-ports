@@ -1,6 +1,14 @@
---- ppm/tgatoppm.c.orig	Sun Apr  9 09:10:36 2000
-+++ ppm/tgatoppm.c	Mon May  8 00:00:00 2000
-@@ -426,16 +426,26 @@
+--- ppm/ppmcolormask.c.orig	Fri Apr 14 16:06:33 2000
++++ ppm/ppmcolormask.c	Mon May  8 00:00:00 2000
+@@ -4,6 +4,7 @@
+ #include <string.h>
+ #include "ppm.h"
+ #include "pbm.h"
++#include "shhopt.h"
+ 
+ static struct cmdline_info {
+     /* All the information the user supplied in the command line,
+@@ -84,13 +85,23 @@
           */
      unsigned int option_def_index;
  
@@ -14,14 +22,11 @@
 +      option_def_index++; \
 +      }
      option_def_index = 0;   /* incremented by OPTENTRY */
-     OPTENTRY(0,   "headerdump", OPT_FLAG,   &cmdline_p->headerdump,     0);
-     OPTENTRY('d', "debug",      OPT_FLAG,   &cmdline_p->headerdump,     0);
-     OPTENTRY(0,   "alphaout",   OPT_STRING, &cmdline_p->alpha_filename, 0);
+     OPTENTRY('v', "verbose",    OPT_FLAG,   &cmdline_p->verbose,        0);
 +    option_def[option_def_index].type = OPT_END;
  
      /* Set the defaults */
-     cmdline_p->headerdump = 0;
-     cmdline_p->alpha_filename = NULL;
+     cmdline_p->verbose = 0;
  
 -    pm_optParseOptions(&argc, argv, option_def, 0);
 +    optParseOptions(&argc, argv, option_def, 0);

@@ -1,39 +1,58 @@
---- Makefile.orig	Sat Mar 25 02:47:02 2000
-+++ Makefile	Sat Apr  1 12:00:00 2000
+--- GNUmakefile.orig	Sat May  6 19:14:26 2000
++++ GNUmakefile	Mon May  8 00:00:00 2000
 @@ -30,7 +30,7 @@
  SRCDIR = .
  include $(SRCDIR)/Makefile.config
  
--SUBDIRS =	pbm pgm ppm pnm ppmtompeg
+-SUBDIRS =	pbm pgm ppm pnm ppmtompeg pbmtoppa
 +SUBDIRS =	pbm pgm ppm pnm
  
  # Note that the Tiff library, from the libtiff subdirectory, only gets built
  # if you specify the homegrown libtiff as $(TIFFLIB), in which case it is
-@@ -57,7 +57,10 @@
- 	./stamp-date
+@@ -57,8 +57,8 @@
+ 	$(SRCDIR)/stamp-date
  
  .PHONY: install
 -install: install.bin install.lib install.man 
+-install-merge: install.merge install.lib install.man
 +install: install.bin install.lib install.man install.hdr
-+
-+.PHONY: install-merge
 +install-merge: install.merge install.lib install.man install.hdr
  
  .PHONY: merge
  merge:  compile.h
-@@ -72,8 +75,8 @@
+@@ -68,21 +68,21 @@
+ 
+ .PHONY: install.bin
+ install.bin:
+-	$(INSTALL) -d -mu=rwx,go=rx $(INSTALLBINARIES)
++	-mkdir -p $(INSTALLBINARIES)
+ 	for i in $(SUBDIRS) ; do \
  	    ( echo install.bin.$$i ; cd $$i ; $(MAKE) install.bin ); \
  	done
  
 -.PHONY: install-merge
--install-merge:
 +.PHONY: install.merge
-+install.merge:
- 	-mkdir -p $(INSTALLBINARIES)
+ install.merge:
+-	$(INSTALL) -d -mu=rwx,go=rx $(INSTALLBINARIES)
++	-mkdir -p $(INSTALLBINARIES)
  	for i in $(SUBDIRS) ; do \
  	    ( echo install.merge.$$i ; cd $$i ; $(MAKE) install.merge ); \
-@@ -97,6 +100,13 @@
- 	-mkdir -p $(INSTALLMANUALS5)
+ 	done
+ 
+ .PHONY: install.lib
+ install.lib:
+-	$(INSTALL) -d -mu=rwx,go=rx $(INSTALLLIBS)
++	-mkdir -p $(INSTALLLIBS)
+ 	for i in $(SUBDIRS) ; do \
+ 	    ( echo install.lib.$$i ; cd $$i ; $(MAKE) install.lib ); \
+ 	done
+@@ -93,10 +93,17 @@
+ 
+ .PHONY: install.man
+ install.man:
+-	$(INSTALL) -d -mu=rwx,go=rx \
++	-mkdir -p \
+ 	    $(INSTALLMANUALS1) $(INSTALLMANUALS3) $(INSTALLMANUALS5)
  	for i in $(SUBDIRS) ; do \
  	    ( echo install.man.$$i ; cd $$i ; $(MAKE) install.man ); \
 +	done
