@@ -7,7 +7,7 @@
 -INSTALL_BIN = /usr/local/bin
 -INSTALL_DOC = /usr/local/doc/xgfe-$(VERSION)
 +INSTALL_BIN = $(PREFIX)/bin
-+INSTALL_DOC = $(PREFIX)/share/doc/xgfe
++INSTALL_DOC = $(DOCSDIR)
  STATIC_TARGET = xgfe-static
  
  # end modifications
