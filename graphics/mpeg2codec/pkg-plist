@@ -6,3 +6,4 @@ share/mpeg2/NTSC.par
 share/mpeg2/PAL.par
 share/mpeg2/inter.mat
 share/mpeg2/intra.mat
+@dirrm share/mpeg2

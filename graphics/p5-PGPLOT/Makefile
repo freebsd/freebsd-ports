@@ -3,7 +3,7 @@
 # Date created:		22 December 1996
 # Whom:			jmz
 #
-# $Id: Makefile,v 1.8 1998/08/23 13:54:06 jseger Exp $
+# $Id: Makefile,v 1.9 1998/09/15 21:31:45 asami Exp $
 #
 
 DISTNAME=       PGPLOT-2.08
@@ -13,7 +13,7 @@ MASTER_SITES=   ftp://ftp.ast.cam.ac.uk/pgperl/
 
 MAINTAINER=	jmz@FreeBSD.org
 
-LIB_DEPENDS=    pgplot\\.5\\.:${PORTSDIR}/graphics/pgplot
+LIB_DEPENDS=    pgplot.5:${PORTSDIR}/graphics/pgplot
 
 USE_PERL5=	yes
 ALL_TARGET=	dynamic

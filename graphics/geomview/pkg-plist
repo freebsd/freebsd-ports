@@ -411,3 +411,35 @@ share/geomview/maple/remotegv
 share/geomview/mathematica/BezierPlot.m
 share/geomview/mathematica/Geomview.m
 share/geomview/mathematica/OOGL.m
+@dirrm libexec/geomview/bin/x11
+@dirrm libexec/geomview/bin
+@dirrm libexec/geomview
+@dirrm libexec/geomview/modules/tcl
+@dirrm libexec/geomview/modules/x11
+@dirrm libexec/geomview/modules
+@dirrm libexec/geomview
+@dirrm share/doc/geomview
+@dirrm share/examples/geomview
+@dirrm share/geomview/data/NDview/cplxview/geom
+@dirrm share/geomview/data/NDview/cplxview/scripts
+@dirrm share/geomview/data/NDview/cplxview/text
+@dirrm share/geomview/data/NDview/cplxview
+@dirrm share/geomview/data/NDview/geom/demo
+@dirrm share/geomview/data/NDview/geom
+@dirrm share/geomview/data/NDview/scripts
+@dirrm share/geomview/data/NDview/text
+@dirrm share/geomview/data/NDview
+@dirrm share/geomview/data/geom/4d
+@dirrm share/geomview/data/geom/pieces
+@dirrm share/geomview/data/geom/polyhedra
+@dirrm share/geomview/data/geom/spherical
+@dirrm share/geomview/data/geom/textured
+@dirrm share/geomview/data/geom
+@dirrm share/geomview/data/groups
+@dirrm share/geomview/data/shaders
+@dirrm share/geomview/data/speedtests
+@dirrm share/geomview/data/things
+@dirrm share/geomview/data
+@dirrm share/geomview/maple
+@dirrm share/geomview/mathematica
+@dirrm share/geomview
