@@ -341,7 +341,6 @@
     SUBDIR += samba
     SUBDIR += sazanami-ttf
     SUBDIR += scim-tables
-    SUBDIR += sdic
     SUBDIR += sed
     SUBDIR += seizedesktop
     SUBDIR += shinonome
