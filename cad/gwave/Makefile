@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	gwave
-PORTVERSION=	20020122
+PORTVERSION=	20030804
 CATEGORIES=	cad
-MASTER_SITES=	http://geda.seul.org/dist/
+MASTER_SITES=	http://www.cs.unc.edu/~tell/dist/ \
+		http://geda.seul.org/dist/
 
 MAINTAINER=	dmlb@dmlb.org
 COMMENT=	Waveform viewer for analogue electronic simulation tools
@@ -18,9 +19,7 @@ LIB_DEPENDS=	geda.18:${PORTSDIR}/cad/libgeda \
 		guile.15:${PORTSDIR}/lang/guile \
 		guilegtk-1.2.0:${PORTSDIR}/x11-toolkits/guile-gtk
 
-BROKEN=         "Does not compile"
-
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=	253
 USE_GNOME=	gtk12
 #CONFIGURE_ARGS=	--enable-gdgeda
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

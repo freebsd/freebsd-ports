@@ -13,5 +13,10 @@ share/guile/app/gwave/std-toolbar.scm
 share/guile/app/gwave/extra-menus.scm
 share/guile/app/gwave/visiblewave-ops.scm
 share/guile/app/gwave/gwave-startup.scm
+share/guile/app/gwave/export-gnugraph.scm
+share/guile/app/gwave/export-gnuplot.scm
+share/guile/app/gwave/export.scm
+share/guile/app/gwave/gtk-helpers.scm
+share/guile/app/gwave/utils.scm
 @dirrm share/guile/app/gwave
 @unexec rmdir %D/share/guile/app 2>/dev/null || true
