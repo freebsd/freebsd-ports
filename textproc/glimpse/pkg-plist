@@ -6,3 +6,5 @@ man/man1/glimpse.1.gz
 man/man1/glimpseindex.1.gz
 man/man1/glimpseserver.1.gz
 man/man1/agrep.1.gz
+share/doc/glimpse/COPYRIGHT
+share/doc/glimpse/README
