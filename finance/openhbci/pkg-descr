@@ -1,0 +1,13 @@
+OpenHBCI -- the first free client-side implementation of the HBCI
+specification.
+
+HBCI is a bank-independent homebanking standard used by many German
+banks. This publicly available protocol describes communication,
+authentification, encryption, and business transactions taking place
+between a homebanking applications and a bank's server. OpenHBCI
+provides an object oriented library implementing the current
+client-side HBCI specification. The library is written in C++, with C
+wrappers also available. OpenHBCI provides the application programmer
+with a high-level abstraction of almost all business transactions, so
+that all HBCI details are totally encapsulated and do not need to be
+bothered with.
