@@ -7074,6 +7074,7 @@ xchat-devel	ports/irc/xchat-devel
 xchomp		ports/games/xchomp
 xcircuit	ports/cad/xcircuit
 xclasses	ports/x11-toolkits/xclasses
+xclip		ports/x11/xclip
 xcmd		ports/x11/xcmd
 xco		ports/x11/xco
 xcogitate	ports/games/xcogitate
