@@ -6,10 +6,11 @@
 #
 
 PORTNAME=		gnats
-PORTVERSION=		4.0
-PORTREVISION=		2
+PORTVERSION=		4.0.1
+PORTREVISION=		0
 CATEGORIES=		databases devel
-MASTER_SITES=		${MASTER_SITE_GNU}
+MASTER_SITES=		http://savannah.gnu.org/download/%SUBDIR%/ \
+			${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnats
 
 MAINTAINER=		eik@FreeBSD.org
