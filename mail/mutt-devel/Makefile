@@ -2,12 +2,12 @@
 # New ports collection makefile for:    mutt
 # Version required:     0.xy
 # Date created:         Thur July 25, 1996
-# Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
+# Whom:                 David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.26 1997/04/01 17:51:52 obrien Exp $
+# $Id: Makefile,v 1.27 1997/04/05 17:27:37 obrien Exp $
 
 DISTNAME=	${PKGNAME}e
-PKGNAME=	mutt-0.69
+PKGNAME=	mutt-0.74
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cs.hmc.edu/pub/me/mutt/  \
 		ftp://ftp.ibp.fr/pub/unix/mail/mutt/  \
