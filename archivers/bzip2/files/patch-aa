@@ -1,11 +1,14 @@
---- Makefile.orig	Tue May 16 14:31:04 2000
-+++ Makefile	Thu May 18 17:31:44 2000
-@@ -2,5 +2,6 @@
+--- Makefile.orig	Tue May 16 16:31:04 2000
++++ Makefile	Sat May 27 16:54:49 2000
+@@ -1,8 +1,9 @@
+ 
  SHELL=/bin/sh
 -CC=gcc
 +CC?=gcc
  BIGFILES=-D_FILE_OFFSET_BITS=64
 -CFLAGS=-Wall -Winline -O2 -fomit-frame-pointer -fno-strength-reduce $(BIGFILES)
 +CFLAGS?=-O2
-+CFLAGS+=-Wall -Winline -O2 -fomit-frame-pointer -fno-strength-reduce $(BIGFILES)
++CFLAGS+=-Wall -Winline -fomit-frame-pointer -fno-strength-reduce $(BIGFILES)
  
+ OBJS= blocksort.o  \
+       huffman.o    \
