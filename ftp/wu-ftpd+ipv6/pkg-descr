@@ -18,3 +18,5 @@ a basic working configuration.  The config files are:
 
 You will also need to change /etc/inetd.conf to point to the new server 
 located at /usr/local/libexec/ftpd
+
+WWW: http://www.wu-ftpd.org/

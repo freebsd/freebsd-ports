@@ -1,6 +1,6 @@
---- src/ftpd.c.old	Sat Jun 24 15:03:05 2000
-+++ src/ftpd.c	Sat Jun 24 15:04:01 2000
-@@ -1602,9 +1602,9 @@
+--- src/ftpd.c	Sat Jul  1 14:17:39 2000
++++ src/ftpd.c.new	Sat Jul  8 21:48:05 2000
+@@ -1662,9 +1662,9 @@
      /* Display s/key challenge where appropriate. */
  
      if (pwd == NULL || skeychallenge(&skey, pwd->pw_name, sbuf))
@@ -12,19 +12,7 @@
  		pwok ? "allowed" : "required", name);
      return (buf);
  }
-@@ -2008,9 +2008,9 @@
- 	    s = strsep(&cp, "\n");
- 	    if (cp == NULL || *cp == '\0')
- 		break;
--	    lreply(331, s);
-+	    lreply(331, "%s", s);
- 	}
--	reply(331, s);
-+	reply(331, "%s", s);
-     }
-     else {
- #endif
-@@ -2491,7 +2491,7 @@
+@@ -2572,7 +2572,7 @@
  #ifdef BSD_AUTH
  	if (ext_auth) {
  	    if ((salt = check_auth(the_user, passwd))) {
@@ -33,25 +21,7 @@
  #ifdef LOG_FAILED		/* 27-Apr-93      EHK/BM          */
  		syslog(LOG_INFO, "failed login from %s",
  		       remoteident);
-@@ -3156,7 +3156,7 @@
- 	reply(230, "User %s logged in.%s", pw->pw_name, guest ?
- 	      "  Access restrictions apply." : "");
- 	sprintf(proctitle, "%s: %s", remotehost, pw->pw_name);
--	setproctitle(proctitle);
-+	setproctitle("%s", proctitle);
- 	if (logging)
- 	    syslog(LOG_INFO, "FTP LOGIN FROM %s, %s", remoteident, pw->pw_name);
- /* H* mod: if non-anonymous user, copy it to "authuser" so everyone can
-@@ -5888,7 +5888,7 @@
- 
-     remotehost[sizeof(remotehost) - 1] = '\0';
-     sprintf(proctitle, "%s: connected", remotehost);
--    setproctitle(proctitle);
-+    setproctitle("%s", proctitle);
- 
-     wu_authenticate();
- /* Create a composite source identification string, to improve the logging
-@@ -6298,7 +6298,7 @@
+@@ -6435,7 +6435,7 @@
  	dirlist = ftpglob(whichfiles);
  	sdirlist = dirlist;	/* save to free later */
  	if (globerr != NULL) {
@@ -60,7 +30,7 @@
  	    goto globfree;
  	}
  	else if (dirlist == NULL) {
-@@ -6346,7 +6346,6 @@
+@@ -6486,7 +6486,6 @@
  	    }
  	    goto globfree;
  	}
@@ -68,7 +38,7 @@
  	    if (dout == NULL) {
  		dout = dataconn("file list", (off_t) - 1, "w");
  		if (dout == NULL)
-@@ -6369,7 +6368,6 @@
+@@ -6509,7 +6508,6 @@
  		byte_count_out++;
  	    }
  #endif
