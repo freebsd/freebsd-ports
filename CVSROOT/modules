@@ -6006,6 +6006,7 @@ p5-Shout	ports/audio/p5-Shout
 p5-Sledge	ports/www/p5-Sledge
 p5-Sledge-Plugin-Download	ports/www/p5-Sledge-Plugin-Download
 p5-Sledge-Plugin-Dumper	ports/www/p5-Sledge-Plugin-Dumper
+p5-Sledge-Plugin-HTML2HDML	ports/www/p5-Sledge-Plugin-HTML2HDML
 p5-Sledge-Plugin-Log	ports/www/p5-Sledge-Plugin-Log
 p5-Sledge-Plugin-NoCache	ports/www/p5-Sledge-Plugin-NoCache
 p5-Sledge-Plugin-SaveUpload	ports/www/p5-Sledge-Plugin-SaveUpload
