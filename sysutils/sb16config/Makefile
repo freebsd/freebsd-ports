@@ -1,6 +1,6 @@
-# New ports collection makefile for:	smbfs
-# Date created:				2th Dec 2000
-# Whom:					Jaedoc Lee <tokky@fdns.org>
+# New ports collection makefile for:	sb16config
+# Date created:				13 Apr 2003
+# Whom:					Max Khon <fjoe@FreeBSD.org>
 #
 # $FreeBSD$
 #
