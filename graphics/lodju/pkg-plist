@@ -1,0 +1,23 @@
+bin/lodju
+bin/lodju-create
+bin/lodju-gallery
+share/lodju/lodju.glade
+share/lodju/lodju.css
+share/lodju/gallery.xsl
+share/lodju/layout.xsl
+share/lodju/clear.gif
+share/lodju/fade.gif
+share/lodju/fade_bg.gif
+share/lodju/footerfade.gif
+share/lodju/footerfill.gif
+share/lodju/image_folder.gif
+share/lodju/logo_bottom.gif
+share/lodju/logo_middle.gif
+share/lodju/logo_top.gif
+share/lodju/no_thumb.gif
+share/lodju/graphics/folder.png
+share/lodju/graphics/header.png
+share/lodju/style/lodju.css
+@dirrm share/lodju/graphics
+@dirrm share/lodju/style
+@dirrm share/lodju

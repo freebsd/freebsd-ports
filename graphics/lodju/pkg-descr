@@ -1,0 +1,5 @@
+Lodju provides a graphical interface to a database for managing large
+collections of digital images. In addition, the package provides tools
+for creating a database from an existing image archives, as well as
+the ability to create web galleries from existing database
+collections.

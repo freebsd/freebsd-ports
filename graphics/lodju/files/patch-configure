@@ -1,0 +1,13 @@
+--- configure	2002/02/08 17:42:43	1.1
++++ configure	2002/02/08 17:43:06
+@@ -1614,8 +1614,8 @@
+ ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
+ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+-CFLAGS="$CFLAGS `gtk-config --cflags` `libglade-config --cflags` `gdk-pixbuf-config --cflags`"
+-LIBS="$CFLAGS `gtk-config --libs` `libglade-config --libs` `gdk-pixbuf-config --libs`"
++CFLAGS="$CFLAGS `gtk12-config --cflags` `libglade-config --cflags` `gdk-pixbuf-config --cflags`"
++LIBS="$CFLAGS `gtk12-config --libs` `libglade-config --libs` `gdk-pixbuf-config --libs`"
+ 
+ ac_ext=c
+ ac_cpp='$CPP $CPPFLAGS'
