@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kochi-ttfonts
-PORTVERSION=	20020117
+PORTVERSION=	20020124
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://www.on.cs.keio.ac.jp/~yasu/linux/fonts/
 DISTFILES=	kochi-mincho-0.2.${PORTVERSION}.tar.bz2 \
