@@ -130,6 +130,7 @@
     SUBDIR += sendip
     SUBDIR += sing
     SUBDIR += sipcalc
+    SUBDIR += snmptt
     SUBDIR += sting
     SUBDIR += subcalc
     SUBDIR += sysmon
