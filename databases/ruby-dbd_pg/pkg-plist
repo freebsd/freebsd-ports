@@ -1,0 +1,4 @@
+%%RUBY_SITELIBDIR%%/DBD/Pg/Pg.rb
+@dirrm %%RUBY_SITELIBDIR%%/DBD/Pg
+%%PORTDOCS%%%%RUBY_DOCDIR%%/dbi/dbd_pg/README
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/dbi/dbd_pg
