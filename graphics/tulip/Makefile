@@ -40,7 +40,7 @@ LDFLAGS=	-Wl,-export-dynamic -L${LOCALBASE}/lib -L${X11BASE}/lib \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-BROKEN=		"Does not compile on amd64 or ia64 (missing -fPIC from shared library objects)"
+CFLAGS+=	-fPIC
 .endif
 
 post-extract:
