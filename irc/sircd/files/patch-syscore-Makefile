@@ -1,0 +1,11 @@
+--- syscore/Makefile.orig	Sat Feb  2 18:44:49 2002
++++ syscore/Makefile	Mon Mar 22 15:15:57 2004
+@@ -69,7 +70,7 @@
+ #############################################################################
+ 
+ .c.o:
+-	$(CC) $(CFLAGS) $(INCLUDE) -o $*.o -c $*.c
++	$(CC) $(CFLAGS) $(SHFLAGS) $(INCLUDE) -o $*.o -c $*.c
+ 
+ clean:
+ 	@rm -f $(OBJ)
