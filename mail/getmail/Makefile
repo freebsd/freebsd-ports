@@ -17,6 +17,8 @@ USE_PYTHON=	yes
 USE_REINPLACE=	yes
 NO_BUILD=	yes
 
+DOCS=		CHANGELOG docs.txt faq.txt getmail.txt
+
 post-patch:
 	@${REINPLACE_CMD} -e 's!/usr/lib/getmail!${DATADIR}!' \
 		-e 's!`which python`!${PYTHON_CMD}!' ${WRKSRC}/getmail
@@ -25,12 +27,11 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/getmail ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/*.py ${DATADIR}
-	@${MKDIR} ${PREFIX}/share/examples/getmail
-	${INSTALL_DATA} ${WRKSRC}/getmailrc-example \
-		${PREFIX}/share/examples/getmail
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/getmailrc-example ${EXAMPLESDIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in CHANGELOG docs.txt faq.txt getmail.txt
+.for file in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
