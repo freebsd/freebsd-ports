@@ -7,7 +7,7 @@
 
 PORTNAME?=	${MASTERPORTNAME}
 PORTVERSION=	2.4.4
-PORTREVISION?=	6
+PORTREVISION?=	7
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -28,10 +28,6 @@ USE_GMAKE=	yes
 PATCH_STRIP=
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386" && ${ARCH} != "amd64"
-BROKEN=		"Broken pkg-plist on !i386 and !amd64"
-.endif
 
 .if exists(/usr/include/sys/scsiio.h)
 .error You have the file /usr/include/sys/scsiio.h on your system.  This was removed after FreeBSD 3.5 and will break the build of this port.  Please remove it.
@@ -144,7 +140,7 @@ PLIST_SUB+=	SCSICHG=''
 .elif ${OSVERSION} >= 480000
 .if ${MACHINE_ARCH} == "amd64"
 PLIST_SUB+=	SCSICHG='@comment '
-.elif ${OSVERSION} >= 502000 && ${MACHINE_ARCH} == "i386"
+.elif ${OSVERSION} >= 502000
 PLIST_SUB+=	SCSICHG='@comment '
 .else
 PLIST_SUB+=	SCSICHG=''
