@@ -16,7 +16,6 @@
     SUBDIR += bwbasic
     SUBDIR += caml-light
     SUBDIR += ccscript
-    SUBDIR += cel
     SUBDIR += chameleon
     SUBDIR += chicken
     SUBDIR += cim
@@ -27,7 +26,6 @@
     SUBDIR += cmucl-extra
     SUBDIR += cocor
     SUBDIR += compaq-cc
-    SUBDIR += crossgo32-f77
     SUBDIR += cu-prolog
     SUBDIR += cyclone
     SUBDIR += dice
