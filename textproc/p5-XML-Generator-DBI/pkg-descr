@@ -1,0 +1,14 @@
+This module generates SAX events from SQL queries against a DBI
+connection.
+
+It is a replacement for the outdated DBIx::XML_RDB module.  Unlike
+DBIx::XML_RDB, it does not create a string directly, instead you have to
+use some sort of SAX handler module.  If you wish to create a string or
+write to a file, use YAWriter.  Alternatively you might want to generate
+a DOM tree or XML::XPath tree, which you can do with either of those
+module's SAX handlers (known as Builders in those distributions).
+
+WWW: http://search.cpan.org/search?dist=XML-Generator-DBI
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
