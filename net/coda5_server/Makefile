@@ -7,7 +7,7 @@
 
 PORTNAME=	coda
 PORTVERSION=	${CODA_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/coda/src/
 PKGNAMESUFFIX=	-${CODA_SUITE}
@@ -18,7 +18,7 @@ COMMENT?=	Server programs for a replicated high-performance network file system
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 		lwp.2:${PORTSDIR}/devel/lwp \
-		rpc2.4:${PORTSDIR}/devel/rpc2 \
+		rpc2.6:${PORTSDIR}/devel/rpc2 \
 		rvm.2:${PORTSDIR}/devel/rvm
 
 ALL_TARGET=	coda

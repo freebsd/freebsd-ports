@@ -3,6 +3,7 @@ bin/norton-reinit
 bin/reinit
 bin/getvolinfo
 bin/rpc2ping
+bin/rvmsizer
 bin/smon2
 etc/coda/server.conf.ex
 @dirrm etc/coda
