@@ -1,0 +1,36 @@
+#!/bin/sh
+
+PKGNAME=$1
+
+case $2 in
+    PRE-INSTALL)
+	;;
+    POST-INSTALL)
+	echo "==> Post-installation configuration of ${PKGNAME}"
+	echo ""
+	echo "    o you DO need running nameservice to start and run ${PKGNAME}"
+	echo "    o add the following line to /etc/rc.local to start"
+	echo "      ${PKGNAME} automatically:"
+	echo ""
+	echo "		(cd /tmp; exec ${PREFIX:-/usr/local}/bin/RunCache) &"
+	echo ""
+	echo "    o use the ${PKGNAME} proxy and caching WWW Server by"
+	echo "      configuring your WWW Navigator (Netscape, Mosaic,...)"
+	echo "      to use it as a proxy server."
+	echo ""
+	echo "==> Press Enter to edit the ${PKGNAME} config file."
+	echo "    (The defaults are reasonable; and the file is well commented)"
+	echo "    You'd probably like to pay attention to the"
+	echo "    ACTUAL locations of BOTH cache \"spool\" AND logfiles."
+	read skip
+	chown root:wheel ${PREFIX:-/usr/local}/etc/squid.conf*
+	chmod 644 ${PREFIX:-/usr/local}/etc/squid.conf*
+	${EDITOR:-vi} ${PREFIX:-/usr/local}/etc/squid.conf
+	;;
+    *)
+	echo "Unexpected Argument $2!!!"
+	exit 1
+	;;
+esac
+exit 0
+
