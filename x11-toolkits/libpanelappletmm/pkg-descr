@@ -1,0 +1,5 @@
+libpanelappletmm provides a C++ binding for the panel applet API.
+This API is simpler and more object oriented than
+the underlying C API.
+
+WWW: http://www.gtkmm.org/
