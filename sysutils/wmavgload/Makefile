@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmavgload
-PORTVERSION= 	0.7.0
+PORTVERSION=	0.7.0
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	ftp://ftp.windowmaker.org/pub/contrib/srcs/utils/
 

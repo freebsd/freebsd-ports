@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nut
-PORTVERSION= 	0.43.1
+PORTVERSION=	0.43.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.exploits.org/nut/release/
 

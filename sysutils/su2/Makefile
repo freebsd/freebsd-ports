@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	su2
-PORTVERSION= 	1.3
+PORTVERSION=	1.3
 CATEGORIES=	sysutils security
 MASTER_SITES=	ftp://ftp.ccs.neu.edu/pub/sysadmin/
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		star
-PORTVERSION= 		1.2
+PORTVERSION=		1.2
 CATEGORIES=		sysutils
 MASTER_SITES=		ftp://ftp.fokus.gmd.de/pub/unix/star/ \
 			${MASTER_SITE_SUNSITE}

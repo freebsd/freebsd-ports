@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asmon
-PORTVERSION= 	0.60
+PORTVERSION=	0.60
 CATEGORIES=	sysutils afterstep
 MASTER_SITES=	ftp://ftp.afterstep.org/apps/asmon/ \
 		http://www.tigr.net/afterstep/as-apps/download/asmon/

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmmount
-PORTVERSION= 	1.0b1
+PORTVERSION=	1.0b1
 CATEGORIES=	sysutils windowmaker afterstep
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Vista/2471/files/
 DISTNAME=	wmmount-1.0-beta1

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	detach
-PORTVERSION= 	1.3
+PORTVERSION=	1.3
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.ntnu.no/pub/unix/utils/
 

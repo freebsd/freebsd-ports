@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	obliterate
-PORTVERSION= 	0.4
+PORTVERSION=	0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.xmission.com/pub/users/s/softweyr/pub/
 

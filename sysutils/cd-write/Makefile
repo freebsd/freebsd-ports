@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	cd-write
-PORTVERSION= 	1.4.1
-CATEGORIES=     sysutils
-MASTER_SITES=   http://people.FreeBSD.org/~jmz/
+PORTVERSION=	1.4.1
+CATEGORIES=	sysutils
+MASTER_SITES=	http://people.FreeBSD.org/~jmz/
 
-MAINTAINER=     jmz@FreeBSD.org
+MAINTAINER=	jmz@FreeBSD.org
 
 LIB_DEPENDS=	tixsam4182.1:${PORTSDIR}/x11-toolkits/tix
 

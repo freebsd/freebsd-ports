@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdd
-PORTVERSION= 	1.22
+PORTVERSION=	1.22
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/sdd/
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asapm
-PORTVERSION= 	2.7
+PORTVERSION=	2.7
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.afterstep.org/apps/asapm/ \
 		http://www.tigr.net/afterstep/as-apps/download/asapm/

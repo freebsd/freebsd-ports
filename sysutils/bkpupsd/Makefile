@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bkpupsd
-PORTVERSION= 	1.0a
+PORTVERSION=	1.0a
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://edu1.tokyo-med.ac.jp/pub/contrib/bkpupsd/
 

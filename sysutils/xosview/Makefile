@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xosview
-PORTVERSION= 	1.7.3
+PORTVERSION=	1.7.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lore.ece.utexas.edu/~bgrayson/xosview/ \
 		${MASTER_SITE_SUNSITE}

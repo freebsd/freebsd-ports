@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glload
-PORTVERSION= 	0.4.0
+PORTVERSION=	0.4.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://glload.netpedia.net/source/ \
 		http://people.FreeBSD.org/~vanilla/

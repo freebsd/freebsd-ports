@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	socket
-PORTVERSION= 	1.1
+PORTVERSION=	1.1
 CATEGORIES=	sysutils net
 MASTER_SITES=   http://www.de.freebsd.org/~wosch/src/
 

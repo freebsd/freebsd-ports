@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asrpages
-PORTVERSION= 	0.1
+PORTVERSION=	0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.winternet.com/users/eric/
 DISTNAME=	asr.pages

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	contool
-PORTVERSION= 	3.3a
+PORTVERSION=	3.3a
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.kfu.com/pub/
 

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	lsof
-PORTVERSION= 	4.49
+PORTVERSION=	4.49
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://vic.cc.purdue.edu/pub/tools/unix/lsof/NEW/ \
@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/${SRCBALL_NAME}
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	-n freebsd
-CONFIGURE_ENV= LSOF_CC=${CC}
+CONFIGURE_ENV=	LSOF_CC=${CC}
 MAN8=		lsof.8
 
 .if defined(PACKAGE_BUILDING)

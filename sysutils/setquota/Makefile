@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	setquota
-PORTVERSION= 	0.1
+PORTVERSION=	0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.jurai.net/users/winter/
 
-MAINTAINER=     winter@jurai.net
+MAINTAINER=	winter@jurai.net
 
 WRKSRC=		${WRKDIR}/setquota/
 

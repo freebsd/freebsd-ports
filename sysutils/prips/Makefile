@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	prips
-PORTVERSION= 	0.9.4
+PORTVERSION=	0.9.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.interloper.net/~dan/software/dist/prips/
 DISTNAME=	${PKGNAME}-src

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ascpu
-PORTVERSION= 	1.8
+PORTVERSION=	1.8
 CATEGORIES=	sysutils afterstep
 MASTER_SITES=	http://bewoner.dma.be/Albert/software/ \
 		http://www.tigr.net/afterstep/as-apps/download/ascpu/	\

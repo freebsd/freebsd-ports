@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pib
-PORTVERSION= 	1.1
+PORTVERSION=	1.1
 CATEGORIES=	sysutils tk82
 MASTER_SITES=	http://people.FreeBSD.org/~msmith/pib/
 

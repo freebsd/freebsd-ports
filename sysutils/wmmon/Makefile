@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmmon
-PORTVERSION= 	1.0b2
+PORTVERSION=	1.0b2
 CATEGORIES=	sysutils windowmaker
 MASTER_SITES=	ftp://ftp.tecnogi.com/pub/linux/WindowMaker/ \
 		http://www.physics.adelaide.edu.au/~kkennawa/ \
@@ -16,7 +16,7 @@ MAINTAINER=	sk-ports@vegamuse.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
-USE_X_PREFIX=   yes
+USE_X_PREFIX=	yes
 
 WRKSRC=		${WRKDIR}/wmmon.app/wmmon
 

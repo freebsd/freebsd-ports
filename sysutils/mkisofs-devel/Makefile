@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mkisofs
-PORTVERSION= 	1.12
+PORTVERSION=	1.12
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/ \

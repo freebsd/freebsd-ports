@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gkrellm
-PORTVERSION= 	0.9.8
+PORTVERSION=	0.9.8
 CATEGORIES=	sysutils ipv6
 MASTER_SITES=	http://web.wt.net/~billw/gkrellm/ \
 		http://people.FreeBSD.org/~ume/gkrellm/

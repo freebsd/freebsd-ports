@@ -9,11 +9,11 @@
 PORTNAME=	setcdboot
 PORTVERSION=	1.0
 CATEGORIES=	sysutils
-MASTER_SITES=	'part of port'
+MASTER_SITES=	# part of port
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.c
 
-MAINTAINER=     obrien@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 DISTDIR=	${FILESDIR}

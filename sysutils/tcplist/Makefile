@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	tcplist
-PORTVERSION= 	2.2
+PORTVERSION=	2.2
 CATEGORIES=	sysutils net
 MASTER_SITES=	ftp://ftp.cdf.toronto.edu/pub/jdd/tcplist/
 EXTRACT_SUFX=	.shar

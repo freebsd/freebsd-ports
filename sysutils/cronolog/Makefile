@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cronolog
-PORTVERSION= 	1.6.1
+PORTVERSION=	1.6.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ford-mason.co.uk/resources/cronolog/
 

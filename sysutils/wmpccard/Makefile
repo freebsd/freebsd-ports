@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmpccard
-PORTVERSION= 	1.3
+PORTVERSION=	1.3
 CATEGORIES=	misc windowmaker
 MASTER_SITES=	http://www.sra.co.jp/people/m-kasahr/wmpccard/src/
 
