@@ -19,6 +19,7 @@ MASTER_SITE_SUBDIR=	. old-versions old
 MAINTAINER=	dwcjr@FreeBSD.org
 
 USE_BZIP2=	YES
+USE_SUBMAKE=	YES
 
 .if defined(WITH_AUDIT) || defined(WITH_RECYCLE)
 USE_GMAKE=	YES
@@ -39,8 +40,23 @@ LIBSAMBA=	""
 .endif
 
 # directories
+.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
+IS_INTERACTIVE=	yes
+.endif
+
+.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
+.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.endif
+
 VARDIR=		/var
 SAMBA_SPOOL=	${VARDIR}/spool/samba
+SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
+		TOUCH="${TOUCH}" \
+		MKDIR="${MKDIR}" \
+		CAT="${CAT}" \
+		SAMBA_OPTIONS="${SAMBA_OPTIONS}" \
+		REALCURDIR="${.CURDIR}"
+
 SAMBA_LOGDIR=	${VARDIR}/log
 SAMBA_PRIVATE=	${PREFIX}/private
 SAMBA_CONFDIR=	${PREFIX}/etc
@@ -90,6 +106,12 @@ CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 .if !defined(WITHOUT_CUPS)
 WITH_CUPS=	yes
 .endif
+
+pre-fetch:
+	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.samba
+
+post-clean:
+	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
 .if defined(WITH_CUPS)
 LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
