@@ -6,7 +6,7 @@
 
 PORTNAME=	sagasu
 PORTVERSION=	2.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc gnome
 MASTER_SITES=	http://www3.sympatico.ca/sarrazip/dev/ \
 		http://demian.dyndns.org/src/
@@ -24,6 +24,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		sagasu.1
 
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
+post-patch:
+	@${REINPLACE_CMD} -e 's|[(]datadir[)]/doc/$$(PACKAGE)-$$(VERSION)|(prefix)/share/doc/$$(PACKAGE)|g' \
+		${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
