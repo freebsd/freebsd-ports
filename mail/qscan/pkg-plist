@@ -1,0 +1,9 @@
+bin/qscan
+@exec mkdir -p %%QSCAN_VAR%%
+@exec chmod 750 %%QSCAN_VAR%%
+@exec chown qmaild:clamav %%QSCAN_VAR%%
+@exec ln -f %%QMAIL_QUEUE%% %%QMAIL_QUEUE%%-old
+@exec ln -sf %D/bin/qscan %%QMAIL_QUEUE%%
+@unexec ln -f %%QMAIL_QUEUE%%-old %%QMAIL_QUEUE%%
+@unexec rm -f %%QMAIL_QUEUE%%-old
+@unexec echo "You may safely remove %%QSCAN_VAR%% if you don't want to use qscan anymore."

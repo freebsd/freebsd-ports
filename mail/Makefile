@@ -320,6 +320,7 @@
     SUBDIR += qmailadmin-devel
     SUBDIR += qmailanalog
     SUBDIR += qpopper
+    SUBDIR += qscan
     SUBDIR += qsf
     SUBDIR += qtools
     SUBDIR += queue-repair

@@ -1,0 +1,15 @@
+The Qmail virus scanner (QScan) is a mail filter for Qmail that scans
+incoming messages using the Clam Antivirus engine, immediately rejecting
+infected content.
+
+It is designed to be minimalistic, yet extremely fast and secure, and uses
+multiple pipes instead of the traditional temporary files and privilege
+separation.
+
+Originally developed for the Sophos Antivirus, this port is patched to
+work in conjunction with the ClamAV daemon.
+
+WWW:	http://www.jedi.claranet.fr/
+
+- Alex Dupre
+ale@FreeBSD.org
