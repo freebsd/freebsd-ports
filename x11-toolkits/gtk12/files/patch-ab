@@ -1,5 +1,5 @@
 --- gtk-config.in.orig	Mon Nov  2 16:41:19 1998
-+++ gtk-config.in	Fri Dec 11 21:42:44 1998
++++ gtk-config.in	Sun Dec 27 00:28:06 1998
 @@ -8,7 +8,7 @@
  exec_prefix_set=no
  
@@ -14,7 +14,7 @@
          fi
        done
 -      echo $libdirs @x_ldflags@ -lgtk -lgdk $my_glib_libs @x_libs@ @GDK_WLIBS@ -lm
-+      echo $libdirs @x_ldflags@ -lgtk11d -lgdk11d $my_glib_libs @x_libs@ @GDK_WLIBS@ -lm
++      echo $libdirs @x_ldflags@ -lgtk11d -lgdk11d $my_glib_libs @x_libs@ @GDK_WLIBS@ -lintl -lm
        ;;
      *)
        echo "${usage}" 1>&2

@@ -35,7 +35,6 @@ include/gtk11d/gtk/gtkdebug.h
 include/gtk11d/gtk/gtkdialog.h
 include/gtk11d/gtk/gtkdnd.h
 include/gtk11d/gtk/gtkdrawingarea.h
-include/gtk11d/gtk/gtkdrawwindow.h
 include/gtk11d/gtk/gtkeditable.h
 include/gtk11d/gtk/gtkentry.h
 include/gtk11d/gtk/gtkenums.h
@@ -58,6 +57,7 @@ include/gtk11d/gtk/gtkhseparator.h
 include/gtk11d/gtk/gtkimage.h
 include/gtk11d/gtk/gtkinputdialog.h
 include/gtk11d/gtk/gtkinvisible.h
+include/gtk11d/gtk/gtkintl.h
 include/gtk11d/gtk/gtkitem.h
 include/gtk11d/gtk/gtkitemfactory.h
 include/gtk11d/gtk/gtklabel.h
@@ -123,11 +123,11 @@ include/gtk11d/gtk/gtkwindow.h
 lib/libgdk11d.a
 lib/libgdk11d.la
 lib/libgdk11d.so
-lib/libgdk11d.so.1
+lib/libgdk11d.so.1.1
 lib/libgtk11d.a
 lib/libgtk11d.la
 lib/libgtk11d.so
-lib/libgtk11d.so.1
+lib/libgtk11d.so.1.1
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/themes/Default/gtk/gtkrc
