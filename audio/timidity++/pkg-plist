@@ -6,3 +6,5 @@ share/doc/timidity/ja/README.sf
 @dirrm share/doc/timidity/C
 @dirrm share/doc/timidity/ja
 @dirrm share/doc/timidity
+@exec mkdir %D/lib/timidity
+@dirrm lib/timidity

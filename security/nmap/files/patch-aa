@@ -25,3 +25,12 @@
  	@echo Compiling nmap
  	rm -f $@
  	$(CC) $(LDFLAGS) -o $@ $(OBJS) $(LIBS)
+@@ -128,7 +128,7 @@
+ 	$(MAKEDEPEND) $(INCLS) -s "# DO NOT DELETE" -- $(DEFS) -- $(SRCS)
+ 
+ install: all
+-	$(SHTOOL) mkdir -f -p -m 755 $(bindir) $(mandir)/man1 $(libdir) $(deskdir)
++	$(SHTOOL) mkdir -f -p -m 755 $(bindir) $(mandir)/man1 $(libdir)
+ 	$(INSTALL) -c -m 755 nmap $(bindir)/nmap
+ 	@echo "If the next command failes -- you cannot use the X front end"
+ 	-test -f nmapfe/nmapfe && $(INSTALL) -c -m 755 nmapfe/nmapfe $(bindir)/nmapfe && $(SHTOOL) mkln -f -s $(bindir)/nmapfe $(bindir)/xnmap && $(INSTALL) -c -m 644 nmapfe.desktop $(deskdir)/nmapfe.desktop
