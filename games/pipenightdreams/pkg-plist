@@ -1,85 +1,154 @@
 bin/pipenightdreams
+share/pipenightdreams/images/alllevelsdone.png
+share/pipenightdreams/images/arrows_grey/arrow_e.png
+share/pipenightdreams/images/arrows_grey/arrow_n.png
+share/pipenightdreams/images/arrows_grey/arrow_s.png
+share/pipenightdreams/images/arrows_grey/arrow_w.png
+share/pipenightdreams/images/arrows_yellow/arrow_e.png
+share/pipenightdreams/images/arrows_yellow/arrow_n.png
+share/pipenightdreams/images/arrows_yellow/arrow_s.png
+share/pipenightdreams/images/arrows_yellow/arrow_w.png
+share/pipenightdreams/images/default/0.png
+share/pipenightdreams/images/default/1.png
+share/pipenightdreams/images/default/2.png
+share/pipenightdreams/images/default/3.png
+share/pipenightdreams/images/default/4.png
+share/pipenightdreams/images/default/5.png
+share/pipenightdreams/images/default/6.png
+share/pipenightdreams/images/default/7.png
+share/pipenightdreams/images/default/8.png
+share/pipenightdreams/images/default/9.png
+share/pipenightdreams/images/default/board_back.jpg
+share/pipenightdreams/images/default/bowl_h.png
+share/pipenightdreams/images/default/bowl_hb.png
+share/pipenightdreams/images/default/bowl_v.png
+share/pipenightdreams/images/default/bowl_vb.png
+share/pipenightdreams/images/default/cross.png
+share/pipenightdreams/images/default/cross_b.png
+share/pipenightdreams/images/default/elbow_ne.png
+share/pipenightdreams/images/default/elbow_neb.png
+share/pipenightdreams/images/default/elbow_nw.png
+share/pipenightdreams/images/default/elbow_nwb.png
+share/pipenightdreams/images/default/elbow_se.png
+share/pipenightdreams/images/default/elbow_seb.png
+share/pipenightdreams/images/default/elbow_sw.png
+share/pipenightdreams/images/default/elbow_swb.png
+share/pipenightdreams/images/default/elbow_vb.png
+share/pipenightdreams/images/default/entry_h.png
+share/pipenightdreams/images/default/entry_v.png
+share/pipenightdreams/images/default/exit_h.png
+share/pipenightdreams/images/default/exit_v.png
+share/pipenightdreams/images/default/horizontal.png
+share/pipenightdreams/images/default/horizontal_b.png
+share/pipenightdreams/images/default/hyper_bonus.png
+share/pipenightdreams/images/default/life_bonus.png
+share/pipenightdreams/images/default/lives_one.png
+share/pipenightdreams/images/default/panel.png
+share/pipenightdreams/images/default/pbowl_h.png
+share/pipenightdreams/images/default/pbowl_v.png
+share/pipenightdreams/images/default/pcross.png
+share/pipenightdreams/images/default/pelbow_ne.png
+share/pipenightdreams/images/default/pelbow_nw.png
+share/pipenightdreams/images/default/pelbow_se.png
+share/pipenightdreams/images/default/pelbow_sw.png
+share/pipenightdreams/images/default/phorizontal.png
+share/pipenightdreams/images/default/pvertical.png
+share/pipenightdreams/images/default/queue_one.png
+share/pipenightdreams/images/default/score_one.png
+share/pipenightdreams/images/default/splash.png
+share/pipenightdreams/images/default/super_bonus.png
+share/pipenightdreams/images/default/tank.png
+share/pipenightdreams/images/default/ultra_bonus.png
+share/pipenightdreams/images/default/vertical.png
+share/pipenightdreams/images/default/vertical_b.png
+share/pipenightdreams/images/entertostart.png
+share/pipenightdreams/images/flow_blue/flow.png
+share/pipenightdreams/images/flow_blue/flow_big.png
+share/pipenightdreams/images/flow_blue/splash.png
+share/pipenightdreams/images/flow_green/flow.png
+share/pipenightdreams/images/flow_green/flow_big.png
+share/pipenightdreams/images/flow_green/splash.png
+share/pipenightdreams/images/flow_light/flow.png
+share/pipenightdreams/images/flow_light/flow_big.png
+share/pipenightdreams/images/flow_light/splash.png
 share/pipenightdreams/images/gameover.png
 share/pipenightdreams/images/loading.png
 share/pipenightdreams/images/nextlevel.png
-share/pipenightdreams/images/tryagain.png
+share/pipenightdreams/images/pipes_cables/board_back.jpg
+share/pipenightdreams/images/pipes_cables/bowl_h.png
+share/pipenightdreams/images/pipes_cables/bowl_v.png
+share/pipenightdreams/images/pipes_cables/cross.png
+share/pipenightdreams/images/pipes_cables/elbow_ne.png
+share/pipenightdreams/images/pipes_cables/elbow_nw.png
+share/pipenightdreams/images/pipes_cables/elbow_se.png
+share/pipenightdreams/images/pipes_cables/elbow_sw.png
+share/pipenightdreams/images/pipes_cables/entry_h.png
+share/pipenightdreams/images/pipes_cables/entry_v.png
+share/pipenightdreams/images/pipes_cables/exit_h.png
+share/pipenightdreams/images/pipes_cables/exit_v.png
+share/pipenightdreams/images/pipes_cables/horizontal.png
+share/pipenightdreams/images/pipes_cables/vertical.png
+share/pipenightdreams/images/pipes_metal/board_back.jpg
+share/pipenightdreams/images/pipes_metal/bowl_h.png
+share/pipenightdreams/images/pipes_metal/bowl_v.png
+share/pipenightdreams/images/pipes_metal/cross.png
+share/pipenightdreams/images/pipes_metal/elbow_ne.png
+share/pipenightdreams/images/pipes_metal/elbow_nw.png
+share/pipenightdreams/images/pipes_metal/elbow_se.png
+share/pipenightdreams/images/pipes_metal/elbow_sw.png
+share/pipenightdreams/images/pipes_metal/entry_h.png
+share/pipenightdreams/images/pipes_metal/entry_v.png
+share/pipenightdreams/images/pipes_metal/exit_h.png
+share/pipenightdreams/images/pipes_metal/exit_v.png
+share/pipenightdreams/images/pipes_metal/horizontal.png
+share/pipenightdreams/images/pipes_metal/vertical.png
+share/pipenightdreams/images/pipes_space/back01/board_back.jpg
+share/pipenightdreams/images/pipes_space/back02/board_back.jpg
+share/pipenightdreams/images/pipes_space/back03/board_back.jpg
+share/pipenightdreams/images/pipes_space/back04/board_back.jpg
+share/pipenightdreams/images/pipes_space/back05/board_back.jpg
+share/pipenightdreams/images/pipes_space/bowl_h.png
+share/pipenightdreams/images/pipes_space/bowl_v.png
+share/pipenightdreams/images/pipes_space/cross.png
+share/pipenightdreams/images/pipes_space/elbow_ne.png
+share/pipenightdreams/images/pipes_space/elbow_nw.png
+share/pipenightdreams/images/pipes_space/elbow_se.png
+share/pipenightdreams/images/pipes_space/elbow_sw.png
+share/pipenightdreams/images/pipes_space/entry_h.png
+share/pipenightdreams/images/pipes_space/entry_v.png
+share/pipenightdreams/images/pipes_space/exit_h.png
+share/pipenightdreams/images/pipes_space/exit_v.png
+share/pipenightdreams/images/pipes_space/horizontal.png
+share/pipenightdreams/images/pipes_space/vertical.png
+share/pipenightdreams/images/pipes_toys/board_back.jpg
+share/pipenightdreams/images/pipes_toys/bowl_h.png
+share/pipenightdreams/images/pipes_toys/bowl_v.png
+share/pipenightdreams/images/pipes_toys/cross.png
+share/pipenightdreams/images/pipes_toys/elbow_ne.png
+share/pipenightdreams/images/pipes_toys/elbow_nw.png
+share/pipenightdreams/images/pipes_toys/elbow_se.png
+share/pipenightdreams/images/pipes_toys/elbow_sw.png
+share/pipenightdreams/images/pipes_toys/entry_h.png
+share/pipenightdreams/images/pipes_toys/entry_v.png
+share/pipenightdreams/images/pipes_toys/exit_h.png
+share/pipenightdreams/images/pipes_toys/exit_v.png
+share/pipenightdreams/images/pipes_toys/horizontal.png
+share/pipenightdreams/images/pipes_toys/vertical.png
+share/pipenightdreams/images/pipes_wire/bowl_h.png
+share/pipenightdreams/images/pipes_wire/bowl_v.png
+share/pipenightdreams/images/pipes_wire/cross.png
+share/pipenightdreams/images/pipes_wire/elbow_ne.png
+share/pipenightdreams/images/pipes_wire/elbow_nw.png
+share/pipenightdreams/images/pipes_wire/elbow_se.png
+share/pipenightdreams/images/pipes_wire/elbow_sw.png
+share/pipenightdreams/images/pipes_wire/entry_h.png
+share/pipenightdreams/images/pipes_wire/entry_v.png
+share/pipenightdreams/images/pipes_wire/exit_h.png
+share/pipenightdreams/images/pipes_wire/exit_v.png
+share/pipenightdreams/images/pipes_wire/horizontal.png
+share/pipenightdreams/images/pipes_wire/vertical.png
 share/pipenightdreams/images/start.jpg
-share/pipenightdreams/images/images0/arrow_e.png
-share/pipenightdreams/images/images0/arrow_n.png
-share/pipenightdreams/images/images0/arrow_s.png
-share/pipenightdreams/images/images0/arrow_w.png
-share/pipenightdreams/images/images0/bowl_h.png
-share/pipenightdreams/images/images0/bowl_hb.png
-share/pipenightdreams/images/images0/bowl_v.png
-share/pipenightdreams/images/images0/bowl_vb.png
-share/pipenightdreams/images/images0/cross.png
-share/pipenightdreams/images/images0/cross_b.png
-share/pipenightdreams/images/images0/elbow_ne.png
-share/pipenightdreams/images/images0/elbow_neb.png
-share/pipenightdreams/images/images0/elbow_nw.png
-share/pipenightdreams/images/images0/elbow_nwb.png
-share/pipenightdreams/images/images0/elbow_se.png
-share/pipenightdreams/images/images0/elbow_seb.png
-share/pipenightdreams/images/images0/elbow_sw.png
-share/pipenightdreams/images/images0/elbow_swb.png
-share/pipenightdreams/images/images0/elbow_vb.png
-share/pipenightdreams/images/images0/entry_h.png
-share/pipenightdreams/images/images0/entry_v.png
-share/pipenightdreams/images/images0/exit_h.png
-share/pipenightdreams/images/images0/exit_v.png
-share/pipenightdreams/images/images0/flow.png
-share/pipenightdreams/images/images0/flow_big.png
-share/pipenightdreams/images/images0/horizontal.png
-share/pipenightdreams/images/images0/horizontal_b.png
-share/pipenightdreams/images/images0/nextlevel.png
-share/pipenightdreams/images/images0/none.png
-share/pipenightdreams/images/images0/panel.png
-share/pipenightdreams/images/images0/pbowl_h.png
-share/pipenightdreams/images/images0/pbowl_v.png
-share/pipenightdreams/images/images0/pcross.png
-share/pipenightdreams/images/images0/pelbow_ne.png
-share/pipenightdreams/images/images0/pelbow_nw.png
-share/pipenightdreams/images/images0/pelbow_se.png
-share/pipenightdreams/images/images0/pelbow_sw.png
-share/pipenightdreams/images/images0/phorizontal.png
-share/pipenightdreams/images/images0/pipequeue_back.png
-share/pipenightdreams/images/images0/pnone.png
-share/pipenightdreams/images/images0/pvertical.png
-share/pipenightdreams/images/images0/splash.png
-share/pipenightdreams/images/images0/tank.png
-share/pipenightdreams/images/images0/vertical.png
-share/pipenightdreams/images/images0/vertical_b.png
-share/pipenightdreams/images/images1/bowl_h.png
-share/pipenightdreams/images/images1/bowl_v.png
-share/pipenightdreams/images/images1/cross.png
-share/pipenightdreams/images/images1/elbow_ne.png
-share/pipenightdreams/images/images1/elbow_nw.png
-share/pipenightdreams/images/images1/elbow_se.png
-share/pipenightdreams/images/images1/elbow_sw.png
-share/pipenightdreams/images/images1/entry_h.png
-share/pipenightdreams/images/images1/entry_v.png
-share/pipenightdreams/images/images1/exit_h.png
-share/pipenightdreams/images/images1/exit_v.png
-share/pipenightdreams/images/images1/horizontal.png
-share/pipenightdreams/images/images1/none.png
-share/pipenightdreams/images/images1/vertical.png
-share/pipenightdreams/images/images2/bowl_h.png
-share/pipenightdreams/images/images2/bowl_v.png
-share/pipenightdreams/images/images2/cross.png
-share/pipenightdreams/images/images2/elbow_ne.png
-share/pipenightdreams/images/images2/elbow_nw.png
-share/pipenightdreams/images/images2/elbow_se.png
-share/pipenightdreams/images/images2/elbow_sw.png
-share/pipenightdreams/images/images2/entry_h.png
-share/pipenightdreams/images/images2/entry_v.png
-share/pipenightdreams/images/images2/exit_h.png
-share/pipenightdreams/images/images2/exit_v.png
-share/pipenightdreams/images/images2/horizontal.png
-share/pipenightdreams/images/images2/none.png
-share/pipenightdreams/images/images2/vertical.png
-share/pipenightdreams/images/images3/none.png
-share/pipenightdreams/images/images4/none.png
-share/pipenightdreams/images/images5/none.png
+share/pipenightdreams/images/tryagain.png
 share/pipenightdreams/levels/1.level
 share/pipenightdreams/levels/10.level
 share/pipenightdreams/levels/11.level
@@ -93,6 +162,11 @@ share/pipenightdreams/levels/18.level
 share/pipenightdreams/levels/19.level
 share/pipenightdreams/levels/2.level
 share/pipenightdreams/levels/20.level
+share/pipenightdreams/levels/21.level
+share/pipenightdreams/levels/22.level
+share/pipenightdreams/levels/23.level
+share/pipenightdreams/levels/24.level
+share/pipenightdreams/levels/25.level
 share/pipenightdreams/levels/3.level
 share/pipenightdreams/levels/4.level
 share/pipenightdreams/levels/5.level
@@ -100,12 +174,22 @@ share/pipenightdreams/levels/6.level
 share/pipenightdreams/levels/7.level
 share/pipenightdreams/levels/8.level
 share/pipenightdreams/levels/9.level
-@dirrm share/pipenightdreams/images/images0
-@dirrm share/pipenightdreams/images/images1
-@dirrm share/pipenightdreams/images/images2
-@dirrm share/pipenightdreams/images/images3
-@dirrm share/pipenightdreams/images/images4
-@dirrm share/pipenightdreams/images/images5
+@dirrm share/pipenightdreams/images/arrows_grey
+@dirrm share/pipenightdreams/images/arrows_yellow
+@dirrm share/pipenightdreams/images/default
+@dirrm share/pipenightdreams/images/flow_blue
+@dirrm share/pipenightdreams/images/flow_green
+@dirrm share/pipenightdreams/images/flow_light
+@dirrm share/pipenightdreams/images/pipes_cables
+@dirrm share/pipenightdreams/images/pipes_metal
+@dirrm share/pipenightdreams/images/pipes_space/back01
+@dirrm share/pipenightdreams/images/pipes_space/back02
+@dirrm share/pipenightdreams/images/pipes_space/back03
+@dirrm share/pipenightdreams/images/pipes_space/back04
+@dirrm share/pipenightdreams/images/pipes_space/back05
+@dirrm share/pipenightdreams/images/pipes_space
+@dirrm share/pipenightdreams/images/pipes_toys
+@dirrm share/pipenightdreams/images/pipes_wire
 @dirrm share/pipenightdreams/images
 @dirrm share/pipenightdreams/levels
 @dirrm share/pipenightdreams
