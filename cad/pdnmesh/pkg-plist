@@ -3,9 +3,8 @@ bin/pdnmesh
 %%DATADIR%%/COPYING
 %%DATADIR%%/ChangeLog
 %%DATADIR%%/tutorial/README
-%%DATADIR%%/tutorial/tutorial.sgml.gz
-%%DATADIR%%/tutorial/tutorial.pdf.gz
-%%DATADIR%%/tutorial/tutorial.html.tgz
+%%DATADIR%%/tutorial/tutorial.sgml.bz2
+%%DATADIR%%/tutorial/tutorial.html.bz2
 %%DATADIR%%/examples/README
 %%DATADIR%%/examples/coords.1
 %%DATADIR%%/examples/coords.10

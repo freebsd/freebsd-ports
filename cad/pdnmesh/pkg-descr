@@ -12,7 +12,7 @@ The features of the program are as follows.
     * Automatic mesh generation according to given boundaries.
     * Adaptive and Interactive mesh refinement.
     * Problem solution using Cholesky Decomposition or Conjugate Gradient 
-     Method with profile storage (in progress).
+     Method with sparse storage.
     * Eigenvalue solution using LAPACK.
     * (Optionally) Eigenvalue solution using QR iteration with shifts.
     * Generating plots of contours, mesh and gradient on screen.
