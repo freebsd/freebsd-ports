@@ -1,8 +1,5 @@
-
-$FreeBSD$
-
---- esdlib.c.orig	Sun Sep  9 21:56:36 2001
-+++ esdlib.c	Mon Feb 18 12:00:57 2002
+--- esdlib.c.orig	Mon Jul 15 05:28:26 2002
++++ esdlib.c	Tue Aug 27 13:06:16 2002
 @@ -20,6 +20,8 @@
  #include <arpa/inet.h>
  #include <errno.h>
@@ -12,47 +9,48 @@ $FreeBSD$
  
  #include <sys/un.h>
  
-@@ -651,7 +653,7 @@
+@@ -660,8 +662,7 @@
  		setsid();
- 		cmd = malloc(sizeof("esd ") + esd_spawn_options?strlen(esd_spawn_options):0);
+ 		cmd = malloc(strlen(SERVERDIR"/esd  -spawnfd 999999") + (esd_spawn_options?strlen(esd_spawn_options):0));
  
--		sprintf(cmd, "esd %s -spawnfd %d", esd_spawn_options?esd_spawn_options:"", esd_pipe[1]);
+-		sprintf(cmd, "%s/esd %s -spawnfd %d", SERVERDIR, esd_spawn_options?esd_spawn_options:"", esd_pipe[1]);
+-
 +		sprintf(cmd, "exec esd %s -spawnfd %d", esd_spawn_options?esd_spawn_options:"", esd_pipe[1]);
- 
  		execl("/bin/sh", "/bin/sh", "-c", cmd, NULL);
  		perror("execl");
-@@ -1411,4 +1413,34 @@
-     */
+ 		_exit(1);
+@@ -1421,3 +1422,34 @@
  
      return close( esd );
-+}
+ }
 +
 +char *
 +esd_unix_socket_dir(void) {
-+	static char *sockdir = NULL, sockdirbuf[PATH_MAX];
-+	struct passwd *pw;
++       static char *sockdir = NULL, sockdirbuf[PATH_MAX];
++       struct passwd *pw;
 +
-+	if (sockdir != NULL)
-+		return (sockdir);
-+	pw = getpwuid(getuid());
-+	if (pw == NULL || pw->pw_dir == NULL) {
-+		fprintf(stderr, "esd: could not find home directory\n");
-+		exit(1);
-+	}
-+	snprintf(sockdirbuf, sizeof(sockdirbuf), "%s/.esd", pw->pw_dir);
-+	endpwent();
-+	sockdir = sockdirbuf;
-+	return (sockdir);
++       if (sockdir != NULL)
++               return (sockdir);
++       pw = getpwuid(getuid());
++       if (pw == NULL || pw->pw_dir == NULL) {
++               fprintf(stderr, "esd: could not find home directory\n");
++               exit(1);
++       }
++       snprintf(sockdirbuf, sizeof(sockdirbuf), "%s/.esd", pw->pw_dir);
++       endpwent();
++       sockdir = sockdirbuf;
++       return (sockdir);
 +}
 +
 +char *
 +esd_unix_socket_name(void) {
-+	static char *sockname = NULL, socknamebuf[PATH_MAX];
++       static char *sockname = NULL, socknamebuf[PATH_MAX];
 +
-+	if (sockname != NULL)
-+		return (sockname);
-+	snprintf(socknamebuf, sizeof(socknamebuf), "%s/socket",
-+	    esd_unix_socket_dir());
-+	sockname = socknamebuf;
-+	return (sockname);
- }
++       if (sockname != NULL)
++               return (sockname);
++       snprintf(socknamebuf, sizeof(socknamebuf), "%s/socket",
++           esd_unix_socket_dir());
++       sockname = socknamebuf;
++       return (sockname);
++ }
++
