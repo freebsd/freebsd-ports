@@ -7294,6 +7294,7 @@ ruby-postgres	ports/databases/ruby-postgres
 ruby-programmingruby	ports/lang/ruby-programmingruby
 ruby-property	ports/devel/ruby-property
 ruby-python	ports/lang/ruby-python
+ruby-quixml	ports/textproc/ruby-quixml
 ruby-quota	ports/sysutils/ruby-quota
 ruby-racc	ports/devel/ruby-racc
 ruby-radius	ports/net/ruby-radius
