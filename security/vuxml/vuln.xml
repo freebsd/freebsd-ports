@@ -32,6 +32,44 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7884d56f-f7a1-11d8-9837-000c41e2cdad">
+    <topic>gnomevfs --- unsafe URI handling</topic>
+    <affects>
+      <package>
+	<name>gnomevfs2</name>
+	<range><le>2.6.2</le></range>
+      </package>
+      <package>
+	<name>gnomevfs</name>
+	<range><le>1.0.5_5</le></range>
+      </package>
+      <package>
+	<name>mc</name>
+	<range><le>4.6.0_12</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Alexander Larsson reports that some versions of gnome-vfs and
+	  MidnightCommander contain a number of `extfs' scripts that do not
+	  properly validate user input.  If an attacker can cause her
+	  victim to process a specially-crafted URI, arbitrary commands
+	  can be executed with the privileges of the victim.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0494</cvename>
+      <bid>10864</bid>
+      <url>http://www.ciac.org/ciac/bulletins/o-194.shtml</url>
+      <url>http://xforce.iss.net/xforce/xfdb/16897</url>
+      <url>https://bugzilla.redhat.com/bugzilla/show_bug.cgi?id=127263</url>
+    </references>
+    <dates>
+      <discovery>2004-08-04</discovery>
+      <entry>2004-08-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3e4ffe76-e0d4-11d8-9b0a-000347a4fa7d">
     <topic>SoX buffer overflows when handling .WAV files</topic>
     <affects>
