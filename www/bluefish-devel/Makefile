@@ -23,6 +23,7 @@ LIB_DEPENDS=	gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20 \
 RUN_DEPENDS=	weblint:${PORTSDIR}/www/weblint
 
 WRKSRC=		${WRKDIR}/bluefish-gtk2
+NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 USE_X_PREFIX=	yes
