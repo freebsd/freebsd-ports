@@ -6,7 +6,7 @@
 
 PORTNAME=	SAVI-Perl
 PORTVERSION=	0.30
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security perl5
 MASTER_SITES=	http://www.csupomona.edu/~henson/www/projects/SAVI-Perl/dist/
 MASTER_SITE_SUBDIR=	security
