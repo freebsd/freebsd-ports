@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gaim
-PORTVERSION=	0.55
+PORTVERSION=	0.56
 CATEGORIES?=	net
 MASTER_SITES=	ftp://ftp.marko.net/pub/gaim/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -29,6 +29,10 @@ MAN1=		gaim.1
 
 .include <bsd.port.pre.mk>
 
+.if !defined(WITHOUT_GDK_PIXBUF)
+# Note, gdk-pixbuf is needed for buddy icon support.
+LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
+.endif
 .if defined(HAVE_GNOME)
 USE_GNOME=	yes
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
