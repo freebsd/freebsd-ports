@@ -5,8 +5,6 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	2
-
 GST_PLUGIN=	dvd
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
