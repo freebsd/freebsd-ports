@@ -31,6 +31,11 @@ USE_REINPLACE=	yes
 MAKE_ARGS=	NOPORTDOCS=${NOPORTDOCS}
 INSTALLS_SHLIB=	yes
 
+# Does not link without at least -O
+.if !defined(CFLAGS) || ${CFLAGS:M-O*} == ""
+CFLAGS+=	-O
+.endif
+
 WRKSRC=		${WRKDIR}/aspell-${PORTVERSION}	# needed for slave ports / options
 DOCSDIR=	${PREFIX}/share/doc/aspell
 DATADIR=	${PREFIX}/share/aspell
