@@ -1,0 +1,11 @@
+--- Makefile.orig	Mon Sep 14 15:49:45 1992
++++ Makefile	Wed Dec  4 02:54:53 1996
+@@ -6,7 +6,7 @@
+ CC	= cc
+ VNLIBDIR= ../lib
+ VNINCDIR= ../include
+-BINDIR	= /local/usr/bin
++BINDIR	= ${PREFIX}/bin
+ LIBS	= $(VNLIBDIR)/libviqr.a $(VNLIBDIR)/libvntype.a
+ 
+ INC	= -I$(VNINCDIR)
