@@ -1832,6 +1832,7 @@ fcptools	ports/net/fcptools
 fcron		ports/sysutils/fcron
 fd		ports/shells/fd
 fdp-tools	ports/textproc/fdp-tools
+feedonfeeds	ports/www/feedonfeeds
 feh		ports/graphics/feh
 felis		ports/misc/felis
 felt		ports/science/felt
