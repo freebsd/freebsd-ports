@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xsidplay
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.2
 CATEGORIES=	audio emulators
 MASTER_SITES=	http://www.geocities.com/SiliconValley/Lakes/5147/sidplay/packages/ \
 		http://www.freenix.no/~anders/
