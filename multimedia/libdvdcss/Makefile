@@ -7,13 +7,14 @@
 #
 
 PORTNAME=	libdvdcss
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.videolan.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	lioux@FreeBSD.org
 
+USE_BZIP2=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
