@@ -17,7 +17,7 @@ lib/bmp/Input/libmpg123.so
 lib/bmp/Output/libOSS.so
 %%ESDPLUGIN:%%lib/bmp/Output/libesdout.so
 lib/bmp/Visualization/libbscope.so
-lib/pkgconfig/beep.pc
+libdata/pkgconfig/beep.pc
 share/aclocal/beep.m4
 share/bmp/Skins/Default/Avs.bmp
 share/bmp/Skins/Default/Balance.bmp
