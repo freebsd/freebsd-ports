@@ -3,7 +3,7 @@
 # Date created:         
 # Whom:                 erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.4 1995/11/08 15:05:22 erich Exp $
+# $Id: Makefile,v 1.5 1995/11/14 13:03:13 asami Exp $
 #
 
 DISTNAME=	linux_lib
@@ -14,6 +14,7 @@ MAINTAINER=	erich@FreeBSD.org
 
 PREFIX=		/compat/linux/
 WRKSRC=		${WRKDIR}
+NO_MTREE=	yes
 
 pre-install:
 	@[ -d ${PREFIX} ] || mkdir -p ${PREFIX}
