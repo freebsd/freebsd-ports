@@ -1,13 +1,13 @@
-# New ports collection makefile for:   cryptlib
-# Date created:        17 Jun, 2003
-# Whom:                Foxfair Hu <foxfair@FreeBSD.org>
+# New ports collection makefile for:	cryptlib
+# Date created:				17 Jun 2003
+# Whom:					Foxfair Hu <foxfair@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=		cryptlib
 PORTVERSION=		3.1
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		security
 MASTER_SITES=		ftp://ftp.franken.de/pub/crypt/cryptlib/
 DISTNAME=		cl31
@@ -15,8 +15,6 @@ EXTRACT_SUFX=		.zip
 
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A powerful security programming toolkit
-
-BROKEN=			Size mismatch
 
 ONLY_FOR_ARCHS=		i386
 
