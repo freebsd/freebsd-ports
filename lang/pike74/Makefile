@@ -7,7 +7,7 @@
 
 PORTNAME=	pike74
 PORTVERSION=	7.4.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://pike.ida.liu.se/pub/pike/all/${PORTVERSION}/ \
 		ftp://ftp.oav.net/pkg_freebsd/distfiles/ \
@@ -115,7 +115,7 @@ WITH_PDF=	yes
 WITH_SVG2=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libct.so.0)
+.if exists(${LOCALBASE}/lib/libct.so.1)
 WITH_TDS=	yes
 .endif
 
@@ -228,7 +228,7 @@ CONFIGURE_ARGS+= --without-svg
 .endif
 
 .if defined(WITH_TDS)
-LIB_DEPENDS+=	ct.0:${PORTSDIR}/databases/freetds
+LIB_DEPENDS+=	ct.1:${PORTSDIR}/databases/freetds
 CONFIGURE_ARGS+= --with-sybase
 PLIST_SUB+=	SYBASE:=""
 .else
