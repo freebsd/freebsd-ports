@@ -1,4 +1,5 @@
 bin/goRua.rb
+bin/goRua_cache_clean.rb
 bin/new_2ch_bbsmenu.rb
 %%RUBY_SITELIBDIR%%/color_table.rb
 %%RUBY_SITELIBDIR%%/connect2ch.rb
