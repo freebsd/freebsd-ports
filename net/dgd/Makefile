@@ -43,4 +43,9 @@ bundle: extract
 	tar -C ${WRKDIR} -cf - dgd | gzip -9 \
 		>${DISTDIR}/${DISTNAME}.${PATCHLEVEL}${EXTRACT_SUFX}
 
+install: all
+	@chown -R mud.mud ${WRKDIR}/dgd
+	@tar -C ${WRKDIR} -cf - `grep '^dgd/' pkg/PLIST` \
+		| tar -C /usr/local -xpf -
+
 .include <bsd.port.mk>
