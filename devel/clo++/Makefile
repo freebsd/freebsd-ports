@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clo++
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	devel
 MASTER_SITES=	http://pmade.org/~pjones/software/clo++/download/
 
@@ -28,8 +28,8 @@ pre-configure:
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/clo++
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/clo++
-	@${INSTALL_DATA} ${WRKSRC}/docs/manual.txt ${PREFIX}/share/doc/clo++
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/manual.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
