@@ -59,7 +59,6 @@
     SUBDIR += p5-Text-Query-SQL
     SUBDIR += p5-Tie-DBI
     SUBDIR += p5-hp200lx-db
-    SUBDIR += pgaccess
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
     SUBDIR += postgresql7
