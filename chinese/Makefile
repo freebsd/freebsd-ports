@@ -24,6 +24,7 @@
     SUBDIR += chinput
     SUBDIR += chinput2
     SUBDIR += chinput3
+    SUBDIR += chm2html
     SUBDIR += cle_base
     SUBDIR += cless
     SUBDIR += cmexfonts
