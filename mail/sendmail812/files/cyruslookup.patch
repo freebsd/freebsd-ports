@@ -17,7 +17,7 @@
 @@ -0,0 +1,25 @@
 +divert(-1)
 +dnl
-+dnl Updates: http://anfi.webhop.net/sendmail/mrs.html
++dnl Updates: http://anfi.homeunix.net/sendmail/mrs.html
 +dnl
 +dnl By using this file, you agree to the terms and conditions set
 +dnl forth in the LICENSE file which can be found at the top level of
@@ -45,7 +45,7 @@
 @@ -0,0 +1,74 @@
 +divert(-1)
 +dnl
-+dnl Updates: http://anfi.webhop.net/sendmail/rtcyrus2.html
++dnl Updates: http://anfi.homeunix.net/sendmail/rtcyrus2.html
 +dnl
 +dnl By using this file, you agree to the terms and conditions set
 +dnl forth in the LICENSE file which can be found at the top level of
