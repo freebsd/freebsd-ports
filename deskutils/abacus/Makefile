@@ -57,4 +57,10 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/examples/abacus
 	${INSTALL_DATA} ${WRKSRC}/regressive/* ${PREFIX}/share/examples/abacus
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 501101
+BROKEN=		not compatible with gcc33
+.endif
+
+.include <bsd.port.post.mk>
