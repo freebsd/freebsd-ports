@@ -53,6 +53,7 @@
     SUBDIR += pear-Archive_Tar
     SUBDIR += pecl-zip
     SUBDIR += php4-bz2
+    SUBDIR += php4-zlib
     SUBDIR += ppunpack
     SUBDIR += py-bzip2
     SUBDIR += py-lzma
