@@ -1,5 +1,5 @@
-# $Id: Makefile,v 1.8 1995/01/05 21:42:45 jkh Exp $
+# $Id: Makefile,v 1.1.1.1 1995/01/13 11:10:43 jkh Exp $
 #
-SUBDIR=	irsim magic acs pcb
+SUBDIR=	acs irsim magic pcb
 
 .include <bsd.port.subdir.mk>
