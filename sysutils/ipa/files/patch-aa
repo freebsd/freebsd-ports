@@ -1,11 +1,11 @@
---- Makefile.orig	Tue Jul 31 15:20:30 2001
-+++ Makefile	Tue Jul 31 15:29:30 2001
+--- Makefile.orig	Wed Oct  3 14:27:19 2001
++++ Makefile	Thu Oct  4 20:46:16 2001
 @@ -38,7 +38,7 @@
- #	-O3   - optimize (it seems that -O3 also help to find out some errors);
+ #	-Ox   - optimize (it seems that -O3 also help to find out some errors);
  #	-g    - produce debugging information.
  #
--CFLAGS=		-Wall -O2 -g
-+#CFLAGS=		-Wall -O2 -g
+-CFLAGS=		-Wall -O -g
++#CFLAGS=		-Wall -O -g
  
  #
  # DSTBINDIR - where to install binaries
