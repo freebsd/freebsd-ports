@@ -1,28 +1,27 @@
 bin/neon-config
-bin/nget
-bin/nserver
-%%GUI%%bin/nbrowse
-lib/libneon.so.7
-lib/libneon.so
-lib/libneon.a
-include/neon/http_request.h
-include/neon/http_utils.h
-include/neon/uri.h
-include/neon/nsocket.h
-include/neon/http_basic.h
-include/neon/dav_basic.h
+include/neon/dates.h
 include/neon/dav_207.h
+include/neon/dav_basic.h
+include/neon/dav_locks.h
 include/neon/dav_props.h
 include/neon/hip_xml.h
-include/neon/dates.h
-include/neon/string_utils.h
+include/neon/http_basic.h
 include/neon/http_cookies.h
-include/neon/neon_defs.h
-include/neon/neon_config.h
-include/neon/dav_locks.h
+include/neon/http_redirect.h
+include/neon/http_request.h
+include/neon/http_utils.h
 include/neon/ne_alloc.h
-include/neon/neon_md5.h
+include/neon/neon_config.h
+include/neon/neon_defs.h
 include/neon/neon_i18n.h
-%%DOCS%%share/doc/neon/using-neon.txt
-%%DOCS%%@dirrm share/doc/neon
+include/neon/neon_md5.h
+include/neon/nsocket.h
+include/neon/string_utils.h
+include/neon/uri.h
+lib/libneon.a
+lib/libneon.la
+lib/libneon.so
+lib/libneon.so.9
+%%PORTDOCS%%share/doc/neon/using-neon.txt
+%%PORTDOCS%%@dirrm share/doc/neon
 @dirrm include/neon
