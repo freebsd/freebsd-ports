@@ -1,0 +1,9 @@
+--- lib/system-gedarc.in.orig	Fri Dec  4 09:13:34 1998
++++ lib/system-gedarc.in	Fri Dec  4 09:13:45 1998
+@@ -21,5 +21,5 @@
+ ; Specifies where the projects filename lives
+ ; You should have read access to this file 
+ ;
+-(projects-filename "@HOME@/.gEDA/geda.projects")
++(projects-filename "~/.gEDA/geda.projects")
+ 
