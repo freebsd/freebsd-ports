@@ -1,6 +1,6 @@
 #!/usr/local/bin/perl
 #
-# $Id: log_accum.pl,v 1.28 1998/07/27 12:54:29 wosch Exp $
+# $Id: log_accum.pl,v 1.29 1998/07/27 13:01:39 wosch Exp $
 #
 # Perl filter to handle the log messages from the checkin of files in
 # a directory.  This script will group the lists of files by log
@@ -12,7 +12,7 @@
 #
 # Originally by David Hampton <hampton@cisco.com>
 #
-# Extensively hacked for FreeBSD by Peter Wemm <peter@dialix.com.au>,
+# Extensively hacked for FreeBSD by Peter Wemm <peter@netplex.com.au>,
 #  with parts stolen from Greg Woods <woods@most.wierd.com> version.
 #
 
@@ -268,7 +268,7 @@ sub build_header {
     $header = sprintf("%-8s    %s", $login, $datestr);
 }
 
-# !!! Mailing-list and history file mappings here !!!
+# !!! Mailing-list and commitlog history file mappings here !!!
 sub mlist_map {
     local($dir) = @_;		# perl warns about this....
    
@@ -353,14 +353,13 @@ sub mail_notification {
     }
 
     print(MAIL 'To: cvs-committers' . $dom . ", cvs-all" . $dom);
-    if (0) {
-    foreach $line (@mailaddrs) {
-	next if ($unique{$line});
-	$unique{$line} = 1;
-	next if /^cvs-/;
-	print(MAIL ", " . $line . $dom);
-    }
-    }
+# This is turned off since the To: lines go overboard.
+#    foreach $line (@mailaddrs) {
+#	next if ($unique{$line});
+#	$unique{$line} = 1;
+#	next if /^cvs-/;
+#	print(MAIL ", " . $line . $dom);
+#    }
     print(MAIL "\n");
 
     $subject = 'Subject: cvs commit:';
@@ -430,6 +429,7 @@ if ($debug) {
   print("id    - ", $id, "\n");
 }
 
+# Was used for To: lines, still used for commitlogs naming.
 &append_line("$MAIL_FILE.$id", &mlist_map($files[0] . "/"));
 &append_line("$SUBJ_FILE.$id", $ARGV[0]);
 
