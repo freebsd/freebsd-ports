@@ -1,4 +1,5 @@
 %%DIR%%/us_english.pl
+%%DIR%%/theme/upcoming_events.css
 %%DIR%%/theme/plans.template
 %%DIR%%/theme/plans.css
 %%DIR%%/theme/icons/tree_50x50.gif
@@ -305,7 +306,10 @@
 %%DIR%%/theme/graphics/color_select_icon.gif
 %%DIR%%/theme/color_select.js
 %%DIR%%/theme/color_select.css
+%%DIR%%/upcoming_events.config
+%%DIR%%/upcoming_events.cgi
 %%DIR%%/plans_lib.pl
+%%DIR%%/plans_discovery.xml
 %%DIR%%/plans_config.pl
 %%DIR%%/plans.cgi
 %%DIR%%/new_calendars.xml
