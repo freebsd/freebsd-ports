@@ -1,0 +1,21 @@
+diff -arcN ../sjxa-1.5.11.old/sj3libP.h ./sj3libP.h
+*** ../sjxa-1.5.11.old/sj3libP.h	Tue Apr 11 21:12:23 1995
+--- ./sj3libP.h	Wed Aug 21 14:04:10 1996
+***************
+*** 48,54 ****
+--- 48,62 ----
+  #define ProtoName		"tcp"
+  #define	PortNumber		"3000"
+  #else
++ /*
++  * Change the default Port number of sj3 for FreeBSD.
++  * Patched by Hidekazu Kuroki(hidekazu@cs.titech.ac.jp)		1996/8/20
++  */
++ #ifdef __FreeBSD__
++ #define	PortNumber		3086
++ #else /* ! __FreeBSD__ */
+  #define	PortNumber		3000
++ #endif /* ! __FreeBSD__ */
+  #endif
+  #define	SocketName		"/tmp/sj3sock"
+  
