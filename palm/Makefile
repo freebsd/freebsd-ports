@@ -33,6 +33,7 @@
     SUBDIR += synce-gnomevfs
     SUBDIR += synce-librapi2
     SUBDIR += synce-libsynce
+    SUBDIR += synce-rra
     SUBDIR += synce-serial
     SUBDIR += synce-trayicon
     SUBDIR += syncmal
