@@ -1,0 +1,41 @@
+--- Xpat.tmpl.orig	Mon Mar 12 12:14:02 2001
++++ Xpat.tmpl	Mon Mar 12 12:16:19 2001
+@@ -40,9 +40,9 @@
+ 
+ XCOMM 1. Specify User Interface (_exactly_ one of the interfaces below)
+ #undef useXlib		/* similar to xpat version 1.x, not all features */
+-#undef useXaw		/* the classic Athena based interface for xpat2 */
++#define useXaw		/* the classic Athena based interface for xpat2 */
+ #undef useXview		/* Xview / OpenLook interface */
+-#define useXQt		/* Qt widgets, playable, but NOT YET FINISHED */
++#undef useXQt		/* Qt widgets, playable, but NOT YET FINISHED */
+ 			/* advice on Qt improvements from experienced
+ 			   programmers welcome at Michael.Bischoff@gmx.net */
+ #undef useXm1		/* Motif based interface (first variant) */
+@@ -57,7 +57,7 @@
+ 
+ XCOMM 4. Specify, if you want sound (must copy the appropriate sound module).
+ XCOMM	 Doesn't harm if you don't have a sound card.
+-#define USE_SOUND
++#undef USE_SOUND
+ XCOMM    SOUNDOBJ must be one module of X-sound_*.o.
+ XCOMM    Ignored if USE_SOUND is OFF.
+ XCOMM    Note:  The default is to copy an .au-file to /dev/audio,
+@@ -74,7 +74,7 @@
+ XCOMM 4.) Specify, if you want sound (must copy the appropriate sound module)
+ XCOMM     SOUNDOBJ should be one module of X-sound_*.o if USE_SOUND is on, else empty
+ XCOMM     Note: for X-sound_SUN.o, /dev/audio must have 666 permissions */
+-#define USE_SOUND	/* doesn't harm if you don't have a sound card */
++#undef USE_SOUND	/* doesn't harm if you don't have a sound card */
+ XCOMM the default is to copy an .au-file to /dev/audio
+ SOUNDOBJ 	= X-sound_SUN.o
+ 
+@@ -161,7 +161,7 @@
+ XCOMM #########################################################################
+ 
+ XCOMM Root directory of xpat2 installation
+-XPATROOT	= /usr/games/lib/xpat
++XPATROOT	= $(PREFIX)/lib/xpat
+ XCOMM XPATROOT	= /usr/local/lib/xpat
+ XCOMM XPATROOT	= /opt/XPat2
+ 

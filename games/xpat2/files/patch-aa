@@ -1,90 +1,11 @@
-*** src/Imakefile.orig	Sat May 15 12:02:56 1999
---- src/Imakefile	Mon Jun  7 13:03:04 1999
-***************
-*** 26,34 ****
-  # 4.) specify, if you want sound (must copy the appropriate sound module)
-  #     SOUNDOBJ should be one module of X-sound_*.o if USE_SOUND is on, else empty
-  #     Note: for X-sound_SUN.o, /dev/audio must have 666 permissions */
-! #define USE_SOUND	/* doesn't harm if you don't have a sound card */
-  # the default is to copy an .au-file to /dev/audio
-! SOUNDOBJ = X-sound_SUN.o
-  SOUNDLIB =
-  # uncomment this if you're using the NAS audio system:
-  # SOUNDOBJ = X-sound_NAS.o
---- 26,34 ----
-  # 4.) specify, if you want sound (must copy the appropriate sound module)
-  #     SOUNDOBJ should be one module of X-sound_*.o if USE_SOUND is on, else empty
-  #     Note: for X-sound_SUN.o, /dev/audio must have 666 permissions */
-! #undef USE_SOUND	/* doesn't harm if you don't have a sound card */
-  # the default is to copy an .au-file to /dev/audio
-! SOUNDOBJ =
-  SOUNDLIB =
-  # uncomment this if you're using the NAS audio system:
-  # SOUNDOBJ = X-sound_NAS.o
-***************
-*** 49,61 ****
-  # BINDIR and LIBDIR should be predefined by the templates
-  # BINDIR = /usr/bin/X11
-  # LIBDIR = /usr/lib/X11
-! XPATLIBDIR = /usr/games/lib/xpat
-  APPDEFSDIR = $(LIBDIR)
-! XPATMANDIR = /usr/man/man6
-  
-  # This is the name of the log-file, where solved games are stored:
-  # an alternative path would be $(XPATLIBDIR)/xpat.log
-! SCOREFILE = /var/games/xpat.log
-  
-  
-  # paths for installation in user's home-directory.
---- 49,61 ----
-  # BINDIR and LIBDIR should be predefined by the templates
-  # BINDIR = /usr/bin/X11
-  # LIBDIR = /usr/lib/X11
-! XPATLIBDIR = $(LIBDIR)/xpat
-  APPDEFSDIR = $(LIBDIR)
-! XPATMANDIR = $(PREFIX)/man/man6
-  
-  # This is the name of the log-file, where solved games are stored:
-  # an alternative path would be $(XPATLIBDIR)/xpat.log
-! SCOREFILE = $(XPATLIBDIR)/xpat.log
-  
-  
-  # paths for installation in user's home-directory.
-***************
-*** 65,71 ****
-  
-  # xpat2 needs to know where the xpm library resides (if needed)
-  XPMLIB 			= -L$(USRLIBDIR) -lXpm
-! XPMINCLUDE		= -I $(INCDIR)
-  
-  # for the Qt interface, the following paths are needed
-  QTDIR			= /usr/local/qt
---- 65,73 ----
-  
-  # xpat2 needs to know where the xpm library resides (if needed)
-  XPMLIB 			= -L$(USRLIBDIR) -lXpm
-! XPMINCLUDE		= -I$(INCDIR)/X11
-! 
-! CFLAGS += -DNO_CUSERID
-  
-  # for the Qt interface, the following paths are needed
-  QTDIR			= /usr/local/qt
-***************
-*** 217,224 ****
-  	    chmod 755 $(XPATLIBDIR)/$$f; \
-  	done
-  	mkdirhier $(XPATMANDIR)
-! 	cp xpat2.man $(XPATMANDIR)/xpat2.6x
-! 	chmod 644 $(XPATMANDIR)/xpat2.6x
-  
-  ComplexProgramTarget($(MYPROG))
-  InstallAppDefaults(XPat)
---- 219,226 ----
-  	    chmod 755 $(XPATLIBDIR)/$$f; \
-  	done
-  	mkdirhier $(XPATMANDIR)
-! 	cp xpat2.man $(XPATMANDIR)/xpat2.6
-! 	chmod 644 $(XPATMANDIR)/xpat2.6
-  
-  ComplexProgramTarget($(MYPROG))
-  InstallAppDefaults(XPat)
+--- Imakefile.orig	Mon Mar 12 12:22:10 2001
++++ Imakefile	Mon Mar 12 12:22:25 2001
+@@ -188,7 +188,7 @@
+ 		  r_Calculatio.o r_Michaels.o r_Royal.o r_Canfield.o \
+ 		  r_mdCanfield.o r_Bakers.o r_Oonsoo.o r_BlueMoon.o
+ 
+-OBJS		= $(STDOBJS) $(XOBJS) $(KIT_OBJS)
++OBJS		= $(STDOBJS) $(XOBJS) $(KIT_OBJS) -lcompat
+ 
+ 
+ MYPROG		= xpat2
