@@ -29,7 +29,7 @@ NO_BUILD=	yes
 USE_LINUX=	yes
 USE_REINPLACE=	yes
 JDK_VERSION=	1.4.2
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 APP_HOME?=	${PREFIX}/${PKGBASE}${PORTVERSION}
 
 NO_CDROM=	"License does not allow distribution with fee"
