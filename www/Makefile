@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.70 1998/03/17 01:23:31 vanilla Exp $
+# $Id: Makefile,v 1.71 1998/03/21 13:54:17 asami Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -47,6 +47,7 @@
     SUBDIR += squid11
     SUBDIR += squid11-novm
     SUBDIR += squid12
+    SUBDIR += transproxy
     SUBDIR += vrweb
     SUBDIR += w3
     SUBDIR += w3c-httpd
