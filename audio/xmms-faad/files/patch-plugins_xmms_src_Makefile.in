@@ -1,0 +1,12 @@
+--- plugins/xmms/src/Makefile.am.orig	Wed Sep 29 13:33:13 2004
++++ plugins/xmms/src/Makefile.am	Wed Sep 29 13:34:27 2004
+@@ -5,8 +5,7 @@
+        `$(GTK_CONFIG) --cflags` -DHAVE_GLIB_H=1 \
+        -I$(top_srcdir)/include -I$(top_srcdir)/common/mp4v2
+ 
+-libmp4_la_LIBADD = $(top_builddir)/libfaad/libfaad.la \
+-       $(top_builddir)/common/mp4v2/libmp4v2.la
++LIBS=	-lfaad -lmp4v2
+ 
+ libmp4_la_LDFLAGS = -module -avoid-version `$(XMMS_CONFIG) --libs` \
+        `$(GTK_CONFIG) --libs` -lpthread -lstdc++
