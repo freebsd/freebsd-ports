@@ -1,0 +1,430 @@
+@comment $FreeBSD$
+@exec [ -f %D/lib/X11/config/host.orig ] || mv %D/lib/X11/config/host.def %D/lib/X11/config/host.def.orig
+lib/X11/config/host.def
+@unexec [ -f %D/%F.orig ] && mv %D/%F.orig %D/%F || :
+bin/DNDDemo
+bin/airport
+bin/autopopups
+bin/dainput
+bin/draw
+bin/dogs
+bin/earth
+bin/exm_in_c
+bin/exm_in_uil
+bin/filemanager
+bin/fileview
+bin/getsubres
+bin/helloint
+bin/hellomotif
+bin/i18ninput
+bin/motifshell
+bin/mwm
+bin/onHelp
+bin/periodic
+bin/piano
+bin/sampler2_0
+bin/setDate
+bin/simpleDemo
+bin/simpledrop
+bin/todo
+bin/uil
+bin/uilsymdump
+bin/xmapdef
+bin/xmbind
+bin/xmfonts
+bin/xmforc
+bin/xmform
+include/Mrm/MrmAppl.h
+include/Mrm/MrmDecls.h
+include/Mrm/MrmPublic.h
+include/Mrm/MrmosI.h
+include/Xm/AccColorT.h
+include/Xm/AccTextT.h
+include/Xm/ActivatableT.h
+include/Xm/ArrowB.h
+include/Xm/ArrowBG.h
+include/Xm/ArrowBGP.h
+include/Xm/ArrowBP.h
+include/Xm/AtomMgr.h
+include/Xm/BaseClassP.h
+include/Xm/BulletinB.h
+include/Xm/BulletinBP.h
+include/Xm/CacheP.h
+include/Xm/CareVisualT.h
+include/Xm/CascadeB.h
+include/Xm/CascadeBG.h
+include/Xm/CascadeBGP.h
+include/Xm/CascadeBP.h
+include/Xm/ClipWindowP.h
+include/Xm/ColorObjP.h
+include/Xm/ColorP.h
+include/Xm/ComboBox.h
+include/Xm/ComboBoxP.h
+include/Xm/Command.h
+include/Xm/CommandP.h
+include/Xm/ContItemT.h
+include/Xm/Container.h
+include/Xm/ContainerP.h
+include/Xm/ContainerT.h
+include/Xm/CutPaste.h
+include/Xm/DesktopP.h
+include/Xm/DialogS.h
+include/Xm/DialogSEP.h
+include/Xm/DialogSP.h
+include/Xm/DialogSavvyT.h
+include/Xm/Display.h
+include/Xm/DisplayP.h
+include/Xm/DragC.h
+include/Xm/DragCP.h
+include/Xm/DragDrop.h
+include/Xm/DragIcon.h
+include/Xm/DragIconP.h
+include/Xm/DragOverS.h
+include/Xm/DragOverSP.h
+include/Xm/DrawP.h
+include/Xm/DrawingA.h
+include/Xm/DrawingAP.h
+include/Xm/DrawnB.h
+include/Xm/DrawnBP.h
+include/Xm/DropSMgr.h
+include/Xm/DropSMgrP.h
+include/Xm/DropTrans.h
+include/Xm/DropTransP.h
+include/Xm/ExtObjectP.h
+include/Xm/FileSB.h
+include/Xm/FileSBP.h
+include/Xm/Form.h
+include/Xm/FormP.h
+include/Xm/Frame.h
+include/Xm/FrameP.h
+include/Xm/Gadget.h
+include/Xm/GadgetP.h
+include/Xm/GrabShell.h
+include/Xm/GrabShellP.h
+include/Xm/IconFile.h
+include/Xm/IconFileP.h
+include/Xm/IconG.h
+include/Xm/IconGP.h
+include/Xm/IconH.h
+include/Xm/IconHP.h
+include/Xm/JoinSideT.h
+include/Xm/Label.h
+include/Xm/LabelG.h
+include/Xm/LabelGP.h
+include/Xm/LabelP.h
+include/Xm/LayoutT.h
+include/Xm/List.h
+include/Xm/ListP.h
+include/Xm/MainW.h
+include/Xm/MainWP.h
+include/Xm/Manager.h
+include/Xm/ManagerP.h
+include/Xm/MenuProcP.h
+include/Xm/MenuShell.h
+include/Xm/MenuShellP.h
+include/Xm/MenuStateP.h
+include/Xm/MenuT.h
+include/Xm/MenuUtilP.h
+include/Xm/MessageB.h
+include/Xm/MessageBP.h
+include/Xm/MwmUtil.h
+include/Xm/NavigatorT.h
+include/Xm/Notebook.h
+include/Xm/NotebookP.h
+include/Xm/PanedW.h
+include/Xm/PanedWP.h
+include/Xm/PointInT.h
+include/Xm/Primitive.h
+include/Xm/PrimitiveP.h
+include/Xm/Print.h
+include/Xm/PrintSP.h
+include/Xm/Protocols.h
+include/Xm/ProtocolsP.h
+include/Xm/PushB.h
+include/Xm/PushBG.h
+include/Xm/PushBGP.h
+include/Xm/PushBP.h
+include/Xm/RCLayoutP.h
+include/Xm/RCMenuP.h
+include/Xm/RepType.h
+include/Xm/RowColumn.h
+include/Xm/RowColumnP.h
+include/Xm/SSpinB.h
+include/Xm/SSpinBP.h
+include/Xm/SashP.h
+include/Xm/Scale.h
+include/Xm/ScaleP.h
+include/Xm/Screen.h
+include/Xm/ScreenP.h
+include/Xm/ScrollBar.h
+include/Xm/ScrollBarP.h
+include/Xm/ScrollFrameT.h
+include/Xm/ScrolledW.h
+include/Xm/ScrolledWP.h
+include/Xm/SelectioB.h
+include/Xm/SelectioBP.h
+include/Xm/SeparatoG.h
+include/Xm/SeparatoGP.h
+include/Xm/Separator.h
+include/Xm/SeparatorP.h
+include/Xm/ShellEP.h
+include/Xm/SpecRenderT.h
+include/Xm/SpinB.h
+include/Xm/SpinBP.h
+include/Xm/TakesDefT.h
+include/Xm/TearOffBP.h
+include/Xm/TearOffP.h
+include/Xm/Text.h
+include/Xm/TextF.h
+include/Xm/TextFP.h
+include/Xm/TextFSelP.h
+include/Xm/TextInP.h
+include/Xm/TextOutP.h
+include/Xm/TextP.h
+include/Xm/TextSelP.h
+include/Xm/TextStrSoP.h
+include/Xm/ToggleB.h
+include/Xm/ToggleBG.h
+include/Xm/ToggleBGP.h
+include/Xm/ToggleBP.h
+include/Xm/TraitP.h
+include/Xm/Transfer.h
+include/Xm/TransferP.h
+include/Xm/TransferT.h
+include/Xm/TransltnsP.h
+include/Xm/TravConT.h
+include/Xm/TxtPropCv.h
+include/Xm/UnhighlightT.h
+include/Xm/UnitTypeT.h
+include/Xm/VaSimpleP.h
+include/Xm/VendorS.h
+include/Xm/VendorSEP.h
+include/Xm/VendorSP.h
+include/Xm/VirtKeys.h
+include/Xm/VirtKeysP.h
+include/Xm/Xm.h
+include/Xm/XmAll.h
+include/Xm/XmIm.h
+include/Xm/XmP.h
+include/Xm/XmStrDefs.h
+include/Xm/Xmfuncs.h
+include/Xm/XmosP.h
+include/Xm/XpmP.h
+include/X11/bitmaps/xm_error
+include/X11/bitmaps/xm_hour16
+include/X11/bitmaps/xm_hour16m
+include/X11/bitmaps/xm_hour32
+include/X11/bitmaps/xm_hour32m
+include/X11/bitmaps/xm_information
+include/X11/bitmaps/xm_noenter16
+include/X11/bitmaps/xm_noenter16m
+include/X11/bitmaps/xm_noenter32
+include/X11/bitmaps/xm_noenter32m
+include/X11/bitmaps/xm_question
+include/X11/bitmaps/xm_warning
+include/X11/bitmaps/xm_working
+include/uil/Uil.h
+include/uil/UilDBDef.h
+include/uil/UilDef.h
+include/uil/UilSymDef.h
+include/uil/UilSymGl.h
+include/uil/XmAppl.uil
+lib/X11/app-defaults/Fileview
+lib/X11/app-defaults/Mwm
+lib/X11/app-defaults/XmdAirport
+lib/X11/app-defaults/XmdAnimate
+lib/X11/app-defaults/XmdDraw
+lib/X11/app-defaults/XmdFilemanager
+lib/X11/app-defaults/XmdI18nInput
+lib/X11/app-defaults/XmdPeriodic
+lib/X11/app-defaults/XmdSampler2_0
+lib/X11/app-defaults/XmdSetDate
+lib/X11/app-defaults/XmdTodo
+lib/X11/bindings/CDE
+lib/X11/bindings/acorn
+lib/X11/bindings/apollo
+lib/X11/bindings/dec
+lib/X11/bindings/dg_AViiON
+lib/X11/bindings/doubleclick
+lib/X11/bindings/hal
+lib/X11/bindings/hitachi
+lib/X11/bindings/hp
+lib/X11/bindings/ibm
+lib/X11/bindings/intergraph
+lib/X11/bindings/intergraph17
+lib/X11/bindings/megatek
+lib/X11/bindings/motorola
+lib/X11/bindings/ncr_at
+lib/X11/bindings/ncr_vt
+lib/X11/bindings/pc
+lib/X11/bindings/sgi
+lib/X11/bindings/siemens_9733
+lib/X11/bindings/siemens_wx200
+lib/X11/bindings/sni
+lib/X11/bindings/sni_97801
+lib/X11/bindings/sony
+lib/X11/bindings/sun
+lib/X11/bindings/sun_at
+lib/X11/bindings/tek
+lib/X11/bindings/xmbind.alias
+lib/X11/config/Motif.rules
+lib/X11/config/Motif.tmpl
+lib/X11/system.mwmrc
+lib/X11/uid/C/uid/l_strings.uid
+lib/X11/uid/English.uid
+lib/X11/uid/French.uid
+lib/X11/uid/German.uid
+lib/X11/uid/dog.uid
+lib/X11/uid/dogs.uid
+lib/X11/uid/english/uid/l_strings.uid
+lib/X11/uid/exm_in_uil.uid
+lib/X11/uid/french/uid/l_strings.uid
+lib/X11/uid/hebrew/uid/l_strings.uid
+lib/X11/uid/helloint.uid
+lib/X11/uid/hellomotif.uid
+lib/X11/uid/japanese/uid/l_strings.uid
+lib/X11/uid/periodic.uid
+lib/X11/uid/plane.uid
+lib/X11/uid/superman.uid
+lib/X11/uid/swedish/uid/l_strings.uid
+lib/X11/uid/xmanimate.uid
+lib/libMrm.a
+lib/libMrm.so
+lib/libMrm.so.2
+lib/libUil.a
+lib/libUil.so
+lib/libUil.so.2
+lib/libXm.a
+lib/libXm.so
+lib/libXm.so.2
+share/doc/openmotif/BUGREPORT
+share/doc/openmotif/CLOSEDBUGS.gz
+share/doc/openmotif/COPYRIGHT.MOTIF
+share/doc/openmotif/OPENBUGS.gz
+share/doc/openmotif/README
+share/doc/openmotif/RELNOTES
+share/doc/openmotif/guides/README
+share/doc/openmotif/guides/mot-cdesgr.ps.Z
+share/doc/openmotif/guides/mot-csgcc.ps.Z
+share/doc/openmotif/guides/mot-gloss.ps.Z
+share/doc/openmotif/guides/mot-mcsg.ps.Z
+share/doc/openmotif/guides/mot-pg/ch01.ps.Z
+share/doc/openmotif/guides/mot-pg/ch02.ps.Z
+share/doc/openmotif/guides/mot-pg/ch03.ps.Z
+share/doc/openmotif/guides/mot-pg/ch04.ps.Z
+share/doc/openmotif/guides/mot-pg/ch05.ps.Z
+share/doc/openmotif/guides/mot-pg/ch06.ps.Z
+share/doc/openmotif/guides/mot-pg/ch07.ps.Z
+share/doc/openmotif/guides/mot-pg/ch08.ps.Z
+share/doc/openmotif/guides/mot-pg/ch09.ps.Z
+share/doc/openmotif/guides/mot-pg/ch10.ps.Z
+share/doc/openmotif/guides/mot-pg/ch11.ps.Z
+share/doc/openmotif/guides/mot-pg/ch12.ps.Z
+share/doc/openmotif/guides/mot-pg/ch13.ps.Z
+share/doc/openmotif/guides/mot-pg/ch14.ps.Z
+share/doc/openmotif/guides/mot-pg/ch15.ps.Z
+share/doc/openmotif/guides/mot-pg/ch16.ps.Z
+share/doc/openmotif/guides/mot-pg/ch17.ps.Z
+share/doc/openmotif/guides/mot-pg/ch18.ps.Z
+share/doc/openmotif/guides/mot-pg/ch19.ps.Z
+share/doc/openmotif/guides/mot-pg/ch20.ps.Z
+share/doc/openmotif/guides/mot-pg/ch21.ps.Z
+share/doc/openmotif/guides/mot-pg/ch22.ps.Z
+share/doc/openmotif/guides/mot-pg/ch23.ps.Z
+share/doc/openmotif/guides/mot-ref/ch01.ps.Z
+share/doc/openmotif/guides/mot-ref/ch02.ps.Z
+share/doc/openmotif/guides/mot-ref/ch03.ps.Z
+share/doc/openmotif/guides/mot-ref/ch04.ps.Z
+share/doc/openmotif/guides/mot-ref/ch05.ps.Z
+share/doc/openmotif/guides/mot-ref/ch06.ps.Z
+share/doc/openmotif/guides/mot-ref/ch07.ps.Z
+share/doc/openmotif/guides/mot-ref/ch08.ps.Z
+share/doc/openmotif/guides/mot-ref/ch09.ps.Z
+share/doc/openmotif/guides/mot-ref/ch11.ps.Z
+share/doc/openmotif/guides/mot-ref/ch12.ps.Z
+share/doc/openmotif/guides/mot-ref/ch14.ps.Z
+share/doc/openmotif/guides/mot-ug/ch01.ps.Z
+share/doc/openmotif/guides/mot-ug/ch02.ps.Z
+share/doc/openmotif/guides/mot-ug/ch03.ps.Z
+share/doc/openmotif/guides/mot-ug/ch04.ps.Z
+share/doc/openmotif/guides/mot-ug/ch05.ps.Z
+share/doc/openmotif/guides/mot-ug/ch06.ps.Z
+share/doc/openmotif/guides/mot-ug/ch07.ps.Z
+share/doc/openmotif/guides/mot-ug/ch08.ps.Z
+share/doc/openmotif/guides/mot-ug/ch10.ps.Z
+share/doc/openmotif/guides/mot-wwg.ps.Z
+@comment	share/examples/openmotif/demos/ch05/Scale/Imakefile
+@comment	share/examples/openmotif/demos/ch05/Scale/README
+@comment	share/examples/openmotif/demos/ch05/Scale/interface.c
+@comment	share/examples/openmotif/demos/ch05/Scale/tic_mark.c
+@comment	share/examples/openmotif/demos/ch05/Scale/tic_mark.man
+@comment	share/examples/openmotif/demos/ch06/combo_box/Imakefile
+@comment	share/examples/openmotif/demos/ch06/combo_box/README
+@comment	share/examples/openmotif/demos/ch06/combo_box/combo_box.c
+@comment	share/examples/openmotif/demos/ch06/combo_box/combo_box.man
+@comment	share/examples/openmotif/demos/ch06/combo_box/interface.c
+@comment	share/examples/openmotif/demos/ch06/spin_box/Imakefile
+@comment	share/examples/openmotif/demos/ch06/spin_box/README
+@comment	share/examples/openmotif/demos/ch06/spin_box/interface.c
+@comment	share/examples/openmotif/demos/ch06/spin_box/spin_box.c
+@comment	share/examples/openmotif/demos/ch06/spin_box/spin_box.man
+@comment	share/examples/openmotif/demos/ch08/Container/Imakefile
+@comment	share/examples/openmotif/demos/ch08/Container/README
+@comment	share/examples/openmotif/demos/ch08/Container/container.c
+@comment	share/examples/openmotif/demos/ch08/Container/container.man
+@comment	share/examples/openmotif/demos/ch08/Container/interface.c
+@comment	share/examples/openmotif/demos/ch08/Notebook/Imakefile
+@comment	share/examples/openmotif/demos/ch08/Notebook/README
+@comment	share/examples/openmotif/demos/ch08/Notebook/interface.c
+@comment	share/examples/openmotif/demos/ch08/Notebook/notebook.c
+@comment	share/examples/openmotif/demos/ch08/Notebook/notebook.man
+@comment	share/examples/openmotif/demos/ch16/Imakefile
+@comment	share/examples/openmotif/demos/ch16/README
+@comment	share/examples/openmotif/demos/ch16/UTMXmText.c
+@comment	share/examples/openmotif/demos/ch16/UTMXmText.man
+@comment	share/examples/openmotif/demos/ch17/simple_drag/Imakefile
+@comment	share/examples/openmotif/demos/ch17/simple_drag/README
+@comment	share/examples/openmotif/demos/ch17/simple_drag/simple_drag.c
+@comment	share/examples/openmotif/demos/ch17/simple_drag/simple_drag.man
+@comment	share/examples/openmotif/demos/ch17/simple_drop/Imakefile
+@comment	share/examples/openmotif/demos/ch17/simple_drop/README
+@comment	share/examples/openmotif/demos/ch17/simple_drop/simple_drop.c
+@comment	share/examples/openmotif/demos/ch17/simple_drop/simple_drop.man
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@dirrm share/doc/openmotif/guides/mot-pg
+@dirrm share/doc/openmotif/guides/mot-ref
+@dirrm share/doc/openmotif/guides/mot-ug
+@dirrm share/doc/openmotif/guides
+@dirrm share/doc/openmotif
+@comment	@dirrm share/examples/openmotif/demos/ch05/Scale
+@comment	@dirrm share/examples/openmotif/demos/ch05
+@comment	@dirrm share/examples/openmotif/demos/ch06/combo_box
+@comment	@dirrm share/examples/openmotif/demos/ch06/spin_box
+@comment	@dirrm share/examples/openmotif/demos/ch06
+@comment	@dirrm share/examples/openmotif/demos/ch08/Container
+@comment	@dirrm share/examples/openmotif/demos/ch08/Notebook
+@comment	@dirrm share/examples/openmotif/demos/ch08
+@comment	@dirrm share/examples/openmotif/demos/ch16
+@comment	@dirrm share/examples/openmotif/demos/ch17/simple_drag
+@comment	@dirrm share/examples/openmotif/demos/ch17/simple_drop
+@comment	@dirrm share/examples/openmotif/demos/ch17
+@comment	@dirrm share/examples/openmotif/demos
+@dirrm share/examples/openmotif
+@dirrm include/Xm
+@dirrm include/Mrm
+@dirrm include/uil
+@dirrm lib/X11/bindings
+@dirrm lib/X11/uid/C/uid
+@dirrm lib/X11/uid/C
+@dirrm lib/X11/uid/french/uid
+@dirrm lib/X11/uid/french
+@dirrm lib/X11/uid/english/uid
+@dirrm lib/X11/uid/english
+@dirrm lib/X11/uid/hebrew/uid
+@dirrm lib/X11/uid/hebrew
+@dirrm lib/X11/uid/japanese/uid
+@dirrm lib/X11/uid/japanese
+@dirrm lib/X11/uid/swedish/uid
+@dirrm lib/X11/uid/swedish
+@dirrm lib/X11/uid

@@ -1,0 +1,7 @@
+--- doc/man/Imakefile.dist	Wed Jul 19 04:17:33 2000
++++ doc/man/Imakefile	Wed Jul 19 04:38:47 2000
+@@ -5,3 +5,3 @@
+ 
+-SUBDIRS = man1 man3 man4 man5
++SUBDIRS = man1 man3 man5
+ 

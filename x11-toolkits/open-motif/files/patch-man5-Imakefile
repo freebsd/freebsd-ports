@@ -1,0 +1,12 @@
+--- doc/man/man5/Imakefile.orig	Wed Jul 19 04:40:11 2000
++++ doc/man/man5/Imakefile	Wed Jul 19 05:10:00 2000
+@@ -2,4 +2,4 @@
+ 
+-MANDIR = $(MISCMANDIR)
+-MANSUFFIX = $(MISCMANSUFFIX)
++MANDIR = $(FILEMANDIR)
++MANSUFFIX = $(FILEMANSUFFIX)
+ 
+@@ -10 +10,2 @@
+ InstallMotifManPage(WML,5)
++InstallMotifManPage(mwmrc,5)

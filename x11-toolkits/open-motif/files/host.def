@@ -1,0 +1,43 @@
+XCOMM site:  $FreeBSD$ host.def
+
+#include <host.def.orig>
+
+#ifdef BeforeVendorCF
+# ifndef HostDEFBefore
+#  define HostDEFBefore
+
+#  ifndef MotifDEFBefore
+#   define MotifDEFBefore
+#   include <motif.def>
+#  endif
+
+#  define LocalConfigFiles host.def motif.def
+
+
+# endif
+#endif
+
+#ifdef AfterVendorCF
+# ifndef HostDEFAfter
+#  define HostDEFAfter
+
+#  undef ProjectRoot
+
+#  ifndef MotifDEFAfter
+#   define MotifDEFAfter
+#   include <motif.def>
+#  endif
+
+#  undef X11ProjectRoot
+
+#  undef ProjectRoot
+#  define ProjectRoot /usr/X11R6
+
+#  undef VirtualBindingsPath
+#  define VirtualBindingsPath Concat(UsrLibDir,/X11/bindings)
+
+#  undef DefaultUserPath
+#  define DefaultUserPath /bin:/usr/bin:/sbin:/usr/sbin:$(BINDIR):/usr/gnu/bin:/usr/local/bin 
+
+# endif
+#endif
