@@ -8974,6 +8974,7 @@ xnc		ports/x11-fm/xnc
 xnee		ports/x11/xnee
 xneko		ports/games/xneko
 xnibbles	ports/games/xnibbles
+xnodecor	ports/x11/xnodecor
 xnview		ports/graphics/xnview
 xoct		ports/games/xoct
 xoids		ports/games/xoids
