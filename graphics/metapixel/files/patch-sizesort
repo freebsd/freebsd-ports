@@ -1,0 +1,11 @@
+--- sizesort.orig	Thu Jan 15 20:56:03 2004
++++ sizesort	Wed Feb 11 17:44:32 2004
+@@ -31,7 +31,7 @@
+ 
+ foreach my $filename (glob("$srcdir/*")) {
+     if (-f $filename && -r $filename) {
+-	my ($w, $h) = split /\s+/, `imagesize $filename`;
++	my ($w, $h) = split /\s+/, `metapixel-imagesize $filename`;
+ 	print "$filename $w $h\n";
+ 	my $dir = sprintf "$destdir/%dx%d", $w, $h;
+ 	`mkdir $dir` if (!-d $dir);
