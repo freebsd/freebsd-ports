@@ -1,5 +1,14 @@
 --- configure.orig	Mon Oct  7 03:53:55 2002
 +++ configure	Sat Oct 12 18:06:18 2002
+@@ -5640,7 +5640,7 @@
+ echo "${ECHO_T}no" >&6
+ fi
+ 
+-  min_gtkmm_version=1.2.9
++  min_gtkmm_version=1.2.8
+ 
+   echo "$as_me:5645: checking for GTK-- - version >= $min_gtkmm_version" >&5
+ echo $ECHO_N "checking for GTK-- - version >= $min_gtkmm_version... $ECHO_C" >&6
 @@ -6107,7 +6107,7 @@
    scsi_if_src=ScsiIf-lib.cc
  

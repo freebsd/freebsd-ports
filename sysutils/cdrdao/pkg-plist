@@ -1,6 +1,7 @@
 bin/cdrdao
 bin/toc2cue
 %%TOC2MP3%%bin/toc2mp3
+%%GNOME%%bin/gcdmaster
 share/cdrdao/drivers
 %%PORTDOCS%%share/doc/cdrdao/CREDITS
 %%PORTDOCS%%share/doc/cdrdao/INSTALL 
@@ -13,5 +14,26 @@ share/cdrdao/drivers
 %%PORTDOCS%%share/doc/cdrdao/Release-1.1.5
 %%PORTDOCS%%share/doc/cdrdao/Release-1.1.6
 %%PORTDOCS%%share/doc/cdrdao/Release-1.1.7
+%%GNOME%%@cwd %%X11BASE%%
+%%GNOME%%share/gnome/pixmaps/gcdmaster/gcdmaster.png
+%%GNOME%%share/gnome/pixmaps/gcdmaster/pixmap_audiocd.png
+%%GNOME%%share/gnome/pixmaps/gcdmaster/pixmap_copycd.png
+%%GNOME%%share/gnome/pixmaps/gcdmaster/pixmap_cursor-tool.xpm
+%%GNOME%%share/gnome/pixmaps/gcdmaster/pixmap_datacd.png
+%%GNOME%%share/gnome/pixmaps/gcdmaster/pixmap_dumpcd.png
+%%GNOME%%share/gnome/pixmaps/gcdmaster/pixmap_help.png
+%%GNOME%%share/gnome/pixmaps/gcdmaster/pixmap_mixedcd.png
+%%GNOME%%share/gnome/pixmaps/gcdmaster/pixmap_open.png
+%%GNOME%%share/gnome/pixmaps/gcdmaster/pixmap_play-pause.xpm
+%%GNOME%%share/gnome/pixmaps/gcdmaster/pixmap_play-start.xpm
+%%GNOME%%share/gnome/pixmaps/gcdmaster/pixmap_play-stop.xpm
+%%GNOME%%share/gnome/pixmaps/gcdmaster/pixmap_zoom-fit.xpm
+%%GNOME%%share/gnome/pixmaps/gcdmaster/pixmap_zoom-in.xpm
+%%GNOME%%share/gnome/pixmaps/gcdmaster/pixmap_zoom-out.xpm
+%%GNOME%%share/gnome/pixmaps/gcdmaster/pixmap_zoom-selection.xpm
+%%GNOME%%share/gnome/pixmaps/gcdmaster/pixmap_zoom-tool.xpm
+%%GNOME%%share/gnome/apps/Applications/gcdmaster.desktop
+%%GNOME%%@dirrm share/gnome/pixmaps/gcdmaster
+%%GNOME%%@cwd %%LOCALBASE%%
 %%PORTDOCS%%@dirrm share/doc/cdrdao
 @dirrm share/cdrdao
