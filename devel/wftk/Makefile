@@ -38,7 +38,7 @@ WITH_SDL_MIXER=	yes
 .endif
 
 .if defined(WITH_SDL_MIXER)
-LIB_DEPENDS+=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
+USE_SDL=	mixer sdl
 .endif
 
 pre-everything::

@@ -17,14 +17,11 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby extension library to use SDL library
 
 BUILD_DEPENDS=	${NONEXISTENT}:${RUBY_OPENGL_PORTDIR}:patch
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer
 
 RUBY_OPENGL_PORTDIR=	${.CURDIR}/../../graphics/ruby-opengl
 RUBY_OPENGL_WRKSRC_CMD=	cd ${RUBY_OPENGL_PORTDIR}; ${MAKE} -V WRKSRC
 
+USE_SDL=	mixer image ttf sdl
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 RUBY_WITH_PTHREAD=	yes

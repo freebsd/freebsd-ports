@@ -15,17 +15,12 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A module designed to write games in Python
 
 BUILD_DEPENDS=	${PYNUMERIC}
-LIB_DEPENDS=	SDL_ttf.3:${PORTSDIR}/graphics/sdl_ttf \
-		SDL_image.10:${PORTSDIR}/graphics/sdl_image \
-		SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
-		smpeg.1:${PORTSDIR}/multimedia/smpeg
+LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
 RUN_DEPENDS=	${PYNUMERIC}
 
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
+USE_SDL=	ttf image mixer sdl
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-MAKE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} config.py
