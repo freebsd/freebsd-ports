@@ -32,6 +32,39 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2d8cf857-81ea-11d9-a9e7-0001020eed82">
+    <topic>gftp -- directory traversal vulnerability</topic>
+    <affects>
+      <package>
+	<name>gftp</name>
+	<range><lt>2.0.18</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Debian Security Advisory reports:</p>
+	<blockquote cite="http://www.debian.org/security/2005/dsa-686">
+	  <p>Albert Puigsech Galicia discovered a directory traversal
+	    vulnerability in a proprietary FTP client (CAN-2004-1376)
+	    which is also present in gftp, a GTK+ FTP client.  A
+	    malicious server could provide a specially crafted
+	    filename that could cause arbitrary files to be
+	    overwritten or created by the client.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>12539</bid>
+      <cvename>CAN-2005-0372</cvename>
+      <url>http://www.debian.org/security/2005/dsa-686</url>
+      <url>http://www.gftp.org/changelog.html</url>
+    </references>
+    <dates>
+      <discovery>2005-02-04</discovery>
+      <entry>2005-02-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="20c9bb14-81e6-11d9-a9e7-0001020eed82">
     <topic>opera -- "data:" URI handler spoofing vulnerability</topic>
     <affects>
