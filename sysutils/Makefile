@@ -72,6 +72,7 @@
     SUBDIR += pkg_remove
     SUBDIR += prips
     SUBDIR += procmap
+    SUBDIR += pslist
     SUBDIR += psmisc
     SUBDIR += pwgen
     SUBDIR += rdate
