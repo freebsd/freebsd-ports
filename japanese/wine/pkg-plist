@@ -1,0 +1,4 @@
+bin/wine
+etc/wine.conf
+etc/wine.sym
+man/man1/wine.1.gz
