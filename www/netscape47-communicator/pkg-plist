@@ -1,4 +1,6 @@
-bin/netscape
+bin/communicator-4.04         
+@exec ln -sf %f bin/netscape
+@unexec rm -f bin/netscape
 lib/netscape/README
 lib/netscape/LICENSE
 lib/netscape/Netscape.ad
@@ -118,5 +120,5 @@ lib/netscape/spell/pen4s324.dat
 lib/netscape/spell/netscape.dic
 lib/netscape/vreg
 lib/netscape/registry
-lib/netscape/netscape.bin
+lib/netscape/communicator-4.04.bin
 lib/netscape/mailcap
