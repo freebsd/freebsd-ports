@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.40 1998/04/26 03:55:41 mph Exp $
+# $Id: Makefile,v 1.41 1998/04/27 05:28:13 mph Exp $
 #
 
     SUBDIR += Scilab
@@ -33,6 +33,7 @@
     SUBDIR += xgraph
     SUBDIR += xldlas
     SUBDIR += xlispstat
+    SUBDIR += xmgr
     SUBDIR += xplot
     SUBDIR += xspread
 
