@@ -7,6 +7,7 @@
 
 PORTNAME=	avidemux2
 PORTVERSION=	2.0.18
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://fixounet.free.fr/avidemux/
 DISTNAME=	avidemux-2.0.18
@@ -15,7 +16,7 @@ MAINTAINER=	amistry@am-productions.biz
 COMMENT=	Simple GUI based video editor
 
 LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
-		mad.1:${PORTSDIR}/audio/mad
+		mad.2:${PORTSDIR}/audio/mad
 BUILD_DEPENDS=	\
 	${X11BASE}/include/X11/extensions/Xvlib.h:${PORTSDIR}/graphics/xv
 

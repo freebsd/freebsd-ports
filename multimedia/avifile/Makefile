@@ -108,7 +108,7 @@ PLIST_SUB+=	A52="@comment "
 
 # libmad
 .if !defined(WITHOUT_MAD)
-LIB_DEPENDS+=	mad.1:${PORTSDIR}/audio/mad
+LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/mad
 
 CONFIGURE_ARGS+=	--enable-mad \
 			--enable-libmad

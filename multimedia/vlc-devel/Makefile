@@ -7,6 +7,7 @@
 
 PORTNAME=	vlc
 PORTVERSION=	0.6.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.videolan.org/pub/videolan/vlc/${PORTVERSION}/
 
@@ -15,7 +16,7 @@ COMMENT=	An X11 video streaming client/server solution
 
 LIB_DEPENDS=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss \
 		dvdread.3:${PORTSDIR}/multimedia/libdvdread \
-		mad.1:${PORTSDIR}/audio/mad \
+		mad.2:${PORTSDIR}/audio/mad \
 		avcodec.0:${PORTSDIR}/multimedia/ffmpeg \
 		a52.0:${PORTSDIR}/audio/liba52 \
 		intl.5:${PORTSDIR}/devel/gettext \

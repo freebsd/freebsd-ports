@@ -7,6 +7,7 @@
 
 PORTNAME=	alsaplayer
 PORTVERSION=	0.99.75
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ftp.alsa-project.org/pub/people/andy/ \
 		http://www.alsaplayer.org/
@@ -14,7 +15,7 @@ MASTER_SITES=	ftp://ftp.alsa-project.org/pub/people/andy/ \
 MAINTAINER=	co9@xs4all.nl
 COMMENT=	Audio player with pitch control and a GNOME GUI
 
-LIB_DEPENDS=	mad.1:${PORTSDIR}/audio/mad \
+LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/mad \
 		sndfile.1:${PORTSDIR}/audio/libsndfile
 
 USE_REINPLACE=	yes

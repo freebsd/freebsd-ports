@@ -25,7 +25,7 @@ GNU_CONFIGURE=		yes
 WITH_LAME=	YES
 .endif
 
-.if exists(${LOCALBASE}/lib/libmad.so.1)
+.if exists(${LOCALBASE}/lib/libmad.so.2)
 WITH_MAD=	YES
 .endif
 
@@ -54,7 +54,7 @@ CONFIGURE_ARGS+=	--disable-lame
 
 .if defined(WITH_MAD)
 CONFIGURE_ARGS+=	--enable-mad
-LIB_DEPENDS+=		mad.1:${PORTSDIR}/audio/mad
+LIB_DEPENDS+=		mad.2:${PORTSDIR}/audio/mad
 .else
 CONFIGURE_ARGS+=	--disable-mad
 .endif

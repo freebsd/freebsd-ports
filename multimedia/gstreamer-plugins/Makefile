@@ -541,7 +541,8 @@ PLIST_SUB+=	LIBSIDPLAY=""
 CONFIGURE_ARGS+=	--disable-mad
 PLIST_SUB+=	LIBMAD="@comment "
 .else
-LIB_DEPENDS+=	mad.1:${PORTSDIR}/audio/mad
+LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad \
+		id3tag.2:${PORTSDIR}/audio/libid3tag
 
 PLIST_SUB+=	LIBMAD=""
 .endif

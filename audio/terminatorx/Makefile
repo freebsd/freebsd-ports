@@ -53,7 +53,7 @@ CONFIGURE_ARGS+=	--disable-vorbis
 .endif
 
 .if !defined(WITHOUT_MAD)
-LIB_DEPENDS+=	mad.1:${PORTSDIR}/audio/mad
+LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/mad
 .else
 CONFIGURE_ARGS+=	--disable-mad
 .endif

@@ -257,7 +257,7 @@ WITH_LIBDVDNAV=	yes
 WITH_LIBUNGIF=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libmad.so.1)
+.if exists(${LOCALBASE}/lib/libmad.so.2)
 WITH_MAD=	yes
 .endif
 
@@ -399,7 +399,7 @@ CONFIGURE_ARGS+=	--disable-libdv
 .endif
 
 .if defined(WITH_MAD)
-LIB_DEPENDS+=	mad.1:${PORTSDIR}/audio/mad
+LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/mad
 
 CONFIGURE_ARGS+=	--enable-mad \
 			--with-madlibdir=${LOCALBASE}/lib

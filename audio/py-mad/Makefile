@@ -6,6 +6,7 @@
 
 PORTNAME=	mad
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	audio python
 MASTER_SITES=	http://spacepants.org/src/pymad/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ DISTNAME=	pymad-${PORTVERSION}
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Python module that provides the MPEG Audio Decoder interface
 
-LIB_DEPENDS=	mad.1:${PORTSDIR}/audio/mad
+LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/mad
 
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
