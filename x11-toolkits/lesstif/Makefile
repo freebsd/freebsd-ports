@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lesstif
 
-MAINTAINER=	dinoex@freebsd.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	API compatible clone of the Motif toolkit
 
 CONFLICTS?=	open-motif-*
