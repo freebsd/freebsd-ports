@@ -43,5 +43,6 @@ pre-configure:
 
 post-install:
 	${TOUCH} ${ELISPDIR}/egg/egg/.nosearch
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
