@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hexcurse
-PORTVERSION=	1.54
+PORTVERSION=	1.55
 CATEGORIES=	editors
 MASTER_SITES=	http://jewfish.net/downloads/
 
@@ -15,6 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A versatile ncurses-based hex editor
 
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 MAN1=	hexcurse.1
 
