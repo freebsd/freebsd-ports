@@ -7,7 +7,7 @@
 
 PORTNAME=	boehm-gc
 PORTVERSION=	6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/
 DISTNAME=	gc${PORTVERSION:S/.a/alpha/}
@@ -16,33 +16,35 @@ MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	Garbage collection and memory leak detection for C and C++
 
 USE_LIBTOOL_VER=	13
+USE_GNOME=	lthack
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --enable-cplusplus
-OPTIONS=	REDIRECT "Define malloc(3)-family replacements" no \
-		FULLDEBUG "full-debug support (see documentation)" no \
-		THREADING "POSIX thread support" no \
-		PARALLEL_MARK "Parallel-thread marking (faster for SMP)" yes
+OPTIONS=	REDIRECT "Define malloc(3)-family replacements" off \
+		FULLDEBUG "full-debug support (see documentation)" off \
+		THREADING "POSIX thread support" off \
+		PARALLEL_MARK "Parallel-thread marking (faster for SMP)" on
 
 .include <bsd.port.pre.mk>
 
-.ifdef WITH_THREADING
+.if defined(WITH_THREADING) && !defined(WITHOUT_THREADING)
 CONFIGURE_ARGS+=	--enable-threads=posix --enable-thread-local-alloc
-.ifdef WITH_PARALLEL_MARK
+.if defined(WITH_PARALLEL_MARK) && !defined(WITHOUT_PARALLEL_MARK)
 CONFIGURE_ARGS+=	--enable-parallel-mark
 .endif
-PKGNAMESUFFIX=	+threaded
+PKGNAMESUFFIX=		+threaded
 .else
 CONFIGURE_ARGS+=	--disable-threads
+PKGNAMESUFFIX=		# empty
 .endif
-.ifdef WITH_REDIRECT
+.if defined(WITH_REDIRECT) && !defined(WITHOUT_REDIRECT)
 CONFIGURE_ARGS+=	--enable-redirect-malloc
-PKGNAMESUFFIX:=${PKGNAMESUFFIX}+redirect
+PKGNAMESUFFIX:=		${PKGNAMESUFFIX}+redirect
 .endif
-.ifdef WITH_FULLDEBUG
+.if defined(WITH_FULLDEBUG) && !defined(WITHOUT_FULLDEBUG)
 CONFIGURE_ARGS+=	--enable-full-debug
-PKGNAMESUFFIX:=${PKGNAMESUFFIX}+fulldebug
+PKGNAMESUFFIX:=		${PKGNAMESUFFIX}+fulldebug
 .endif
 
 MAN3=		gc.3
