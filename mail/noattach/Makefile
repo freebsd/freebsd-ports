@@ -16,9 +16,10 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	An attachment filter for Sendmail
 
 .if !defined(SENDMAIL_MILTER_IN_BASE)
-BUILD_DEPENDS=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_PORT}
 .endif
 
+SENDMAIL_PORT?=	sendmail812
 CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes

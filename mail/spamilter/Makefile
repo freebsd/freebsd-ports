@@ -16,9 +16,10 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A Sendmail LibMilter filter to block spam
 
 .if !defined(SENDMAIL_MILTER_IN_BASE)
-BUILD_DEPENDS=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/${SENDMAIL_PORT}
 .endif
 
+SENDMAIL_PORT?=	sendmail
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
