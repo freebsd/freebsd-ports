@@ -7,8 +7,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=       tinpre-1.4-19990927
-PKGNAME=        tinpre-1.4.19990927
+DISTNAME=       tin-1.4.0
 CATEGORIES=	news
 MASTER_SITES=   ftp://ftp.tin.org/pub/news/clients/tin/current/ \
 		ftp://nuxi.ucdavis.edu/pub/tin/current/ \
