@@ -21,7 +21,8 @@ rm -f $F
 
 # Tk detection
 tkversion=
-for v in 1 2; do
+###### only tk 4.2/tcl 7.6 is known to work
+for v in 2; do
   if [ -f /usr/local/lib/libtk4$v.a ]; then
     tkversion=$v
   fi
@@ -46,9 +47,9 @@ if [ X$tkversion != X ]; then
   echo "#define TclLibName		tcl7$tclversion" >>$F
 else
 cat <<EOF
-*** I don't see the static library for tk version 4 in /usr/local/lib.
+*** I don't see the static library for tk version 4.2 in /usr/local/lib.
 *** XF86Setup will not be installed. If you want to build this program
-*** install tk first.
+*** install tk 4.2 first.
 
 EOF
 fi
