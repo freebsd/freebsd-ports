@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	net windowmaker
 MASTER_SITES=	ftp://ftp.enteract.com/users/rneswold/
 
-MAINTAINER=	rneswold@enteract.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A network bandwidth monitor intended for the WindowMaker dock
 
 USE_XPM=	yes

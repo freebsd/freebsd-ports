@@ -10,7 +10,7 @@ PORTVERSION=	1.0b2
 CATEGORIES=	x11-clocks windowmaker
 MASTER_SITES=	ftp://ftp.enteract.com/users/rneswold/
 
-MAINTAINER=	rneswold@enteract.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Time/Date applet for WindowMaker
 
 PLIST_FILES=	bin/wmtime
