@@ -14,6 +14,7 @@ bin/razor-revoke
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Preproc/Manager.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Preproc/deBase64.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Preproc/deHTML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Preproc/deHTML_comment.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Preproc/deHTMLxs.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Preproc/deNewline.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Razor2/Preproc/deQP.pm
