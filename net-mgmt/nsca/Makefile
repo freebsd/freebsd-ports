@@ -17,9 +17,8 @@ COMMENT=	Nagios Service Check Acceptor
 RUN_DEPENDS=	nagios:${PORTSDIR}/net-mgmt/nagios
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt
 
-BROKEN=		"Install fails"
-
 GNU_CONFIGURE=	yes
+USE_PERL5=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --localstatedir=/var/spool/nagios
 
 NAGIOS_DIR=	${LOCALBASE}/libexec/nagios
