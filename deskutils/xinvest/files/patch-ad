@@ -1,0 +1,11 @@
+--- color.c.orig	Sat Feb  5 07:59:05 2000
++++ color.c	Sun Nov 12 15:09:23 2000
+@@ -25,7 +25,7 @@
+ 
+ #include <stdio.h>
+ 
+-#if !defined(__NetBSD__)
++#if !defined(__NetBSD__) && !defined(__FreeBSD__)
+ #include <values.h>
+ #endif
+ 

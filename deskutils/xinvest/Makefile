@@ -6,22 +6,19 @@
 #
 
 PORTNAME=	xinvest
-PORTVERSION=	2.5.1
+PORTVERSION=	2.6
 CATEGORIES=	deskutils
-MASTER_SITES=	http://sunsite.auc.dk/xinvest/	\
-		${MASTER_SITE_XCONTRIB}
-MASTER_SITE_SUBDIR= applications
+MASTER_SITES=	http://sunsite.dk/xinvest/
 
 MAINTAINER=	ports@FreeBSD.org
 
 USE_MOTIF=	yes
 USE_IMAKE=	yes
-USE_XPM=	yes
 NO_INSTALL_MANPAGES=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/examples/Xinvest
+	@${MKDIR} ${PREFIX}/share/examples/Xinvest
 	${INSTALL_DATA} ${WRKSRC}/samples/*.inv ${PREFIX}/share/examples/Xinvest
 .endif
 
