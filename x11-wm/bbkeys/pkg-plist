@@ -1,7 +1,10 @@
 bin/bbkeys
 bin/bbkeysConfigC
-bin/bbkeysconf
 share/bbtools/bbkeys.bb
 share/bbtools/bbkeys.nobb
 share/bbtools/README.bbkeys
+%%PORTDOCS%%share/doc/bbkeys/README
+%%PORTDOCS%%share/doc/bbkeys/AUTHORS
+%%PORTDOCS%%share/doc/bbkeys/ChangeLog
+%%PORTDOCS%%@dirrm share/doc/bbkeys
 @dirrm share/bbtools
