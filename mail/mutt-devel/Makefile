@@ -76,7 +76,7 @@
 PORTNAME=	mutt-devel
 PORTVERSION=	1.5.4
 PORTREVISION?=	2
-CATEGORIES+=	mail
+CATEGORIES+=	mail ipv6
 .if defined(WITH_MUTT_NNTP)
 CATEGORIES+=	news
 .endif
