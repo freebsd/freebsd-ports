@@ -127,6 +127,7 @@
     SUBDIR += peeper
     SUBDIR += portoseguro
     SUBDIR += powershell
+    SUBDIR += printext
     SUBDIR += props
     SUBDIR += qrash
     SUBDIR += randrext
