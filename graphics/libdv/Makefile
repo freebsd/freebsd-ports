@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libdv
-PORTVERSION=	0.9
-PORTREVISION=	1
+PORTVERSION=	0.9.5
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,6 +17,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		popt.0:${PORTSDIR}/devel/popt
 
 USE_GNOMELIBS=	yes
+USE_GTK=	yes
 USE_XLIB=	yes
 XFREE86_VERSION=	4
 GNU_CONFIGURE=	yes
@@ -27,7 +27,8 @@ MAN1=	encodedv.1 playdv.1
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
-DOC_FILES=	ChangeLog README.dvconnect README.encoder
+DOC_FILES=      AUTHORS COPYING COPYRIGHT ChangeLog NEWS README \
+		README.dvconnect README.encoder TODO
 
 .ifndef(WITHOUT_SDL)
 LIB_DEPENDS+=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
@@ -35,6 +36,8 @@ LIB_DEPENDS+=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
 CONFIGURE_ARGS+= --enable-sdl
 CONFIGURE_ENV+=	SDL_CONFIG="${SDL_CONFIG}"
 .endif
+
+CONFIGURE_ARGS+=	--with-x
 
 pre-everything::
 	@${ECHO_MSG} '===>'
@@ -48,9 +51,23 @@ pre-everything::
 .endif
 	@${ECHO_MSG} '===>'
 
-post-configure:
-	@find ${WRKSRC} -type f -name Makefile -exec \
-		${PERL} -pi.orig -ne 's!-l(gdk|glib|gtk) !!g' {} \;
+post-patch:
+	@${PERL} -pi -e 's|(pkgconfigdir =).+?(/pkgconfig)|\1 ${LOCALBASE}/libdata\2|' \
+		${WRKSRC}/Makefile.in
+	@${PERL} -pi -e 's|(-lXv)|\1 -lXext -L${X11BASE}/lib|; \
+		s@(PKG_CONFIG --(cflags|libs) )"\$$REQUIRES"@\1 gtk@' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
+	@${PERL} -pi -e 's|stdint.h|sys/types.h|' \
+		${WRKSRC}/libdv/dv_types.h \
+		${WRKSRC}/libdv/encode.c
+	@${PERL} -pi -e 's|void\s+swab.+||' ${WRKSRC}/libdv/encode.c
+	@${PERL} -pi -e 's|SDL/|SDL11/|' ${WRKSRC}/playdv/display.h
+	@${PERL} -pi -e 's|malloc.h|stdlib.h|' ${WRKSRC}/encodedv/dvavi.c \
+		${WRKSRC}/encodedv/dvconnect.c
+	@${PERL} -pi -e 's|(^.+?<sys/mman.h>)|#include <sys/types.h>\n\1|' \
+		${WRKSRC}/encodedv/dvconnect.c
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|' \
+		${WRKSRC}/encodedv/Makefile.in
 
 post-install:
 .ifndef(NOPORTDOCS)
