@@ -6,35 +6,31 @@
 #
 
 PORTNAME=	rblcheck
-PORTVERSION=	1.4
-PORTREVISION=	2
+PORTVERSION=	1.5
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	leeym@leeym.com
+MAINTAINER=	moro@remus.dti.ne.jp
 
-post-configure:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.rbl
-.if !defined(BATCH)
-	@${ECHO} "NOTE: You can pre-compile your own sites into rblcheck by"
-	@${ECHO} "      creating ${WRKDIRPREFIX}${.CURDIR}/local.sites.  The"
-	@${ECHO} "      format of this file is:"
-	@${ECHO}
-	@${ECHO} "             SITE(\"my.rbl.site\")"
-	@${ECHO} "             SITE(\"another.rbl.site\")"
-.endif
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
-pre-build:
-.if exists(${WRKDIRPREFIX}${.CURDIR}/local.sites)
-	${CAT} ${WRKDIRPREFIX}${.CURDIR}/local.sites >> ${WRKSRC}/rblsites.h
-.endif
+post-build:
+	@${PERL} -pi -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/rbl
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/rblcheck ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/rbl ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/rblcheck ${PREFIX}/bin
+	@${INSTALL_DATA} ${FILESDIR}/rblcheckrc.sample ${PREFIX}/etc
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/rblcheck
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${PREFIX}/share/doc/rblcheck
+	@${MKDIR} ${DOCSDIR}
+.for file in AUTHORS COPYING ChangeLog INSTALL NEWS README
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

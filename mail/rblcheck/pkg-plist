@@ -1,8 +1,10 @@
+bin/rbl
 bin/rblcheck
-%%PORTDOCS%%share/doc/rblcheck/BUGS
-%%PORTDOCS%%share/doc/rblcheck/CHANGES
-%%PORTDOCS%%share/doc/rblcheck/CREDITS
+etc/rblcheckrc.sample
+%%PORTDOCS%%share/doc/rblcheck/AUTHORS
+%%PORTDOCS%%share/doc/rblcheck/COPYING
+%%PORTDOCS%%share/doc/rblcheck/ChangeLog
 %%PORTDOCS%%share/doc/rblcheck/INSTALL
-%%PORTDOCS%%share/doc/rblcheck/PLATFORMS
-%%PORTDOCS%%share/doc/rblcheck/TODO
+%%PORTDOCS%%share/doc/rblcheck/NEWS
+%%PORTDOCS%%share/doc/rblcheck/README
 %%PORTDOCS%%@dirrm share/doc/rblcheck
