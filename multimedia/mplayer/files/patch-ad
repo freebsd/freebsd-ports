@@ -1,5 +1,5 @@
---- configure.orig	Mon Apr 26 11:44:06 2004
-+++ configure	Wed Apr 28 16:09:47 2004
+--- configure.orig	Mon Apr 26 05:44:06 2004
++++ configure	Sun Jun 27 03:30:21 2004
 @@ -339,7 +339,7 @@
  
  
@@ -123,7 +123,26 @@
  int main(void) { return RTC_IRQP_READ; }
  EOF
      _rtc=no
-@@ -5772,7 +5722,7 @@
+@@ -5736,7 +5686,7 @@
+   _stripbinaries=no
+ elif test -z "$CFLAGS" ; then
+   if test "$host_arch" != "mips" ; then
+-    CFLAGS="-O4 $_march $_mcpu -pipe -ffast-math -fomit-frame-pointer"
++    CFLAGS="-O"
+   else
+     CFLAGS="-O4 $_march $_mcpu -ffast-math -fomit-frame-pointer"
+   fi
+@@ -5746,6 +5696,9 @@
+     _stripbinaries=no
+   fi
+ else
++  if test "$_runtime_cpudetection" = no ; then
++    CFLAGS="$CFLAGS $_march $_mcpu"
++  fi
+   cat <<EOF
+ 
+ MPlayer compilation will use the CFLAGS set by you, but:
+@@ -5772,7 +5725,7 @@
    CFLAGS="$CFLAGS -D_REENTRANT"
  elif bsd ; then
    # FIXME bsd needs this so maybe other OS'es

@@ -642,11 +642,9 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|libxmms.so.1|libxmms.so|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-	@${REINPLACE_CMD} -Ee 's#-pthread|-lc_r#${PTHREAD_LIBS}#g' \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|; \
 		s|/dev/cdrom|${DEFAULT_CDROM_DEVICE}|' \
-		${WRKSRC}/configure
+		${WRKSRC}/${CONFIGURE_SCRIPT}
 .if defined(WITH_RTC)
 	@${REINPLACE_CMD} -e \
 		's|<linux/rtc.h>|<rtc.h>|' \
