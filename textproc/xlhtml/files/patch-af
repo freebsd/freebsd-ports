@@ -1,0 +1,94 @@
+--- Makefile.in.orig	Wed Oct 27 18:47:25 1999
++++ Makefile.in	Mon Jul 24 11:36:03 2000
+@@ -84,9 +84,9 @@
+ 
+ AUTOMAKE_OPTIONS = gnu 1.4
+ 
+-lib_LTLIBRARIES = libcole.la
+-libcole_la_LDFLAGS = -version-info @VERSION_INFO@
+-libcole_la_SOURCES =  		cole.c      		cole.h      		version.c   		oledecod.c  		support.c                   support.h   		internal.c  		internal.h
++#lib_LTLIBRARIES = libcole.la
++#libcole_la_LDFLAGS = -version-info @VERSION_INFO@
++#libcole_la_SOURCES =  		cole.c      		cole.h      		version.c   		oledecod.c  		support.c                   support.h   		internal.c  		internal.h
+ 
+ 
+ ###		olecod.c  \
+@@ -98,9 +98,9 @@
+ coleaclocal_DATA = cole.m4
+ 
+ coleincdir = $(includedir)/cole
+-coleinc_HEADERS = cole.h
++#coleinc_HEADERS = cole.h
+ 
+-SUBDIRS = . xlHtml pptHtml utils examples doc
++SUBDIRS = . xlHtml pptHtml
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = config.h
+@@ -112,9 +112,9 @@
+ CPPFLAGS = @CPPFLAGS@
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@
+-libcole_la_LIBADD = 
+-libcole_la_OBJECTS =  cole.lo version.lo oledecod.lo support.lo \
+-internal.lo
++#libcole_la_LIBADD = 
++#libcole_la_OBJECTS =  cole.lo version.lo oledecod.lo support.lo \
++#internal.lo
+ SCRIPTS =  $(bin_SCRIPTS)
+ 
+ CFLAGS = @CFLAGS@
+@@ -137,14 +137,14 @@
+ 
+ TAR = gtar
+ GZIP_ENV = --best
+-SOURCES = $(libcole_la_SOURCES)
+-OBJECTS = $(libcole_la_OBJECTS)
++#SOURCES = $(libcole_la_SOURCES)
++#OBJECTS = $(libcole_la_OBJECTS)
+ 
+ all: all-redirect
+ .SUFFIXES:
+ .SUFFIXES: .S .c .lo .o .s
+-$(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
+-	cd $(top_srcdir) && $(AUTOMAKE) --gnu --include-deps Makefile
++#$(srcdir)/Makefile.in: Makefile.am $(top_srcdir)/configure.in $(ACLOCAL_M4) 
++#	cd $(top_srcdir) && $(AUTOMAKE) --gnu --include-deps Makefile
+ 
+ Makefile: $(srcdir)/Makefile.in  $(top_builddir)/config.status
+ 	cd $(top_builddir) \
+@@ -155,8 +155,8 @@
+ 
+ config.status: $(srcdir)/configure $(CONFIG_STATUS_DEPENDENCIES)
+ 	$(SHELL) ./config.status --recheck
+-$(srcdir)/configure: $(srcdir)/configure.in $(ACLOCAL_M4) $(CONFIGURE_DEPENDENCIES)
+-	cd $(srcdir) && $(AUTOCONF)
++#$(srcdir)/configure: $(srcdir)/configure.in $(ACLOCAL_M4) $(CONFIGURE_DEPENDENCIES)
++#	cd $(srcdir) && $(AUTOCONF)
+ 
+ config.h: stamp-h
+ 	@if test ! -f $@; then \
+@@ -173,9 +173,9 @@
+ 		rm -f $(srcdir)/stamp-h.in; \
+ 		$(MAKE) $(srcdir)/stamp-h.in; \
+ 	else :; fi
+-$(srcdir)/stamp-h.in: $(top_srcdir)/configure.in $(ACLOCAL_M4) 
+-	cd $(top_srcdir) && $(AUTOHEADER)
+-	@echo timestamp > $(srcdir)/stamp-h.in 2> /dev/null
++#$(srcdir)/stamp-h.in: $(top_srcdir)/configure.in $(ACLOCAL_M4) 
++#	cd $(top_srcdir) && $(AUTOHEADER)
++#	@echo timestamp > $(srcdir)/stamp-h.in 2> /dev/null
+ 
+ mostlyclean-hdr:
+ 
+@@ -185,8 +185,8 @@
+ 	-rm -f config.h
+ 
+ maintainer-clean-hdr:
+-cole.h: $(top_builddir)/config.status cole.h.in
+-	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
++#cole.h: $(top_builddir)/config.status cole.h.in
++#	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
+ version.c: $(top_builddir)/config.status version.c.in
+ 	cd $(top_builddir) && CONFIG_FILES=$@ CONFIG_HEADERS= $(SHELL) ./config.status
+ cole.spec: $(top_builddir)/config.status cole.spec.in
