@@ -7,7 +7,7 @@
 
 PORTNAME=	gimp
 PORTVERSION=	1.2.3
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -35,14 +35,14 @@ USE_GTK=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
-LIBTOOLFILES=	aclocal.m4
 PLIST_SUB=	SHLIBVER="${SHLIBVER}"
 CONFIGURE_ARGS=	--disable-perl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
-MAN1=		escputil.1 gimp.1 gimptool.1 gimp-remote.1
-MAN5=		gimprc.5
+MAN1=		escputil.1 gimp.1 gimptool.1 gimp-remote.1 \
+		escputil-1.2.1 gimp-1.2.1 gimp-remote-1.2.1 gimptool-1.2.1
+MAN5=		gimprc.5 gimprc-1.2.5
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/gimp.setfont ${PREFIX}/bin
