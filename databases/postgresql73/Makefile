@@ -193,6 +193,7 @@ post-install:
 			>> ${PREFIX}/pgsql/.profile; \
 	fi
 	@ ${CHOWN} -R pgsql:pgsql ${PREFIX}/pgsql
+	@ ${CHOWN} root:pgsql ${PREFIX}/pgsql/lib
 	@ ${ECHO} 'Initializing PostgreSQL Databases - this may take a few minutes...'
 	@ ${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/pgsql/lib
 	@ su -l pgsql -c 'PATH=${PREFIX}/pgsql/bin:${PATH} LD_LIBRARY_PATH=${PREFIX}/pgsql/lib ${PREFIX}/pgsql/bin/initdb --pglib=${PREFIX}/pgsql/lib --pgdata=${PREFIX}/pgsql/data'
