@@ -193,6 +193,20 @@ share/gnome/evolution/glade/mail-config-druid.glade
 share/gnome/evolution/glade/mail-config.glade
 share/gnome/evolution/glade/select-names.glade
 share/gnome/evolution/glade/task-editor-dialog.glade
+share/gnome/help/evolution/C/aboutbook.html
+share/gnome/help/evolution/C/apx-gloss.html
+share/gnome/help/evolution/C/authors.html
+share/gnome/help/evolution/C/bugs.html
+share/gnome/help/evolution/C/commontasks.html
+share/gnome/help/evolution/C/config-prefs-cal.html
+share/gnome/help/evolution/C/config-prefs-contact.html
+share/gnome/help/evolution/C/config-prefs-general.html
+share/gnome/help/evolution/C/config-prefs.html
+share/gnome/help/evolution/C/config-setupassist.html
+share/gnome/help/evolution/C/config-sync.html
+share/gnome/help/evolution/C/config.html
+share/gnome/help/evolution/C/docbook.css
+share/gnome/help/evolution/C/fdl.html
 share/gnome/help/evolution/C/fig/calendar.png
 share/gnome/help/evolution/C/fig/config-cal.png
 share/gnome/help/evolution/C/fig/config-mail.png
@@ -205,6 +219,44 @@ share/gnome/help/evolution/C/fig/mail-druid-pic.png
 share/gnome/help/evolution/C/fig/mail-inbox.png
 share/gnome/help/evolution/C/fig/mainwindow-pic.png
 share/gnome/help/evolution/C/fig/vfolder-createrule-fig.png
+share/gnome/help/evolution/C/gpl.html
+share/gnome/help/evolution/C/index.html
+share/gnome/help/evolution/C/introduction.html
+share/gnome/help/evolution/C/ln15.html
+share/gnome/help/evolution/C/menuref-cal-editor.html
+share/gnome/help/evolution/C/menuref-cal.html
+share/gnome/help/evolution/C/menuref-contact-editor.html
+share/gnome/help/evolution/C/menuref-mail-context.html
+share/gnome/help/evolution/C/menuref-mail-editor.html
+share/gnome/help/evolution/C/menuref-mail.html
+share/gnome/help/evolution/C/menuref.html
+share/gnome/help/evolution/C/p1827.html
+share/gnome/help/evolution/C/stylesheet-images/caution.png
+share/gnome/help/evolution/C/stylesheet-images/important.png
+share/gnome/help/evolution/C/stylesheet-images/note.png
+share/gnome/help/evolution/C/stylesheet-images/tip.png
+share/gnome/help/evolution/C/stylesheet-images/warning.png
+share/gnome/help/evolution/C/usage-calendar-apts.html
+share/gnome/help/evolution/C/usage-calendar-multiple.html
+share/gnome/help/evolution/C/usage-calendar-todo.html
+share/gnome/help/evolution/C/usage-calendar.html
+share/gnome/help/evolution/C/usage-contact-automate.html
+share/gnome/help/evolution/C/usage-contact-cards.html
+share/gnome/help/evolution/C/usage-contact-organize.html
+share/gnome/help/evolution/C/usage-contact-sharing.html
+share/gnome/help/evolution/C/usage-contact.html
+share/gnome/help/evolution/C/usage-mail-organize.html
+share/gnome/help/evolution/C/usage-mail.html
+share/gnome/help/evolution/C/usage-mainwindow-folderbar.html
+share/gnome/help/evolution/C/usage-mainwindow-menubar.html
+share/gnome/help/evolution/C/usage-mainwindow.html
+share/gnome/help/evolution/C/usage-notes.html
+share/gnome/help/evolution/C/usage-sync.html
+share/gnome/help/evolution/C/usage.html
+share/gnome/help/evolution/C/x2520.html
+share/gnome/help/evolution/C/x3043.html
+share/gnome/help/evolution/C/x3073.html
+share/gnome/help/evolution/C/x3078.html
 share/gnome/html/evolution-cal-client-decl.txt
 share/gnome/html/evolution-cal-client-sections.txt
 share/gnome/html/evolution-cal-client.hierarchy
@@ -213,6 +265,13 @@ share/gnome/html/evolution-cal-util-decl.txt
 share/gnome/html/evolution-cal-util-sections.txt
 share/gnome/html/evolution-cal-util.hierarchy
 share/gnome/html/evolution-cal-util.types
+share/gnome/html/evolution-devel-guide.html
+share/gnome/html/evolution-devel-guide/book1.html
+share/gnome/html/evolution-devel-guide/calendar-architecture.html
+share/gnome/html/evolution-devel-guide/p51.html
+share/gnome/html/evolution-devel-guide/p9.html
+share/gnome/html/evolution-devel-guide/r55.html
+share/gnome/html/evolution-devel-guide/x34.html
 share/gnome/idl/addressbook.idl
 share/gnome/idl/evolution-calendar.idl
 share/gnome/images/evolution/briefcase.png
@@ -272,6 +331,7 @@ share/locale/uk/LC_MESSAGES/evolution.mo
 @dirrm share/gnome/images/evolution
 @dirrm share/gnome/images
 @dirrm share/gnome/html/evolution-devel-guide
+@dirrm share/gnome/help/evolution/C/stylesheet-images
 @dirrm share/gnome/help/evolution/C/fig
 @dirrm share/gnome/help/evolution/C
 @dirrm share/gnome/help/evolution
