@@ -6,12 +6,13 @@
 #
 
 PORTNAME=       ldapdiff
-PORTVERSION=    0.8.3
+PORTVERSION=    0.9.0
 CATEGORIES=     net
 MASTER_SITES=   http://webtomware.rhoen.de/ \
 		http://unixpages.org/distfiles/
 
 MAINTAINER=     chris@unixpages.org
+COMMENT=	A utility for patching LDAP directories using LDIF files
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
