@@ -1,0 +1,11 @@
+--- LeakCheck.orig	Wed Feb  4 16:49:49 2004
++++ LeakCheck	Wed Feb  4 16:50:09 2004
+@@ -7,7 +7,7 @@
+ # this looks in the same directory, this
+ # LeakCheck script resides; modify to your
+ # needs:
+-SHLIB=`dirname $0`/LeakTracer.so
++SHLIB=`dirname $0`/../lib/LeakTracer.so
+ if [ ! -x $SHLIB ] ; then
+     echo "$SHLIB not found"
+     exit 1

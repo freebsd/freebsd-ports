@@ -333,6 +333,7 @@
     SUBDIR += kprof
     SUBDIR += kyra
     SUBDIR += lbpp
+    SUBDIR += leaktracer
     SUBDIR += lemon
     SUBDIR += leoarg
     SUBDIR += libIDL
