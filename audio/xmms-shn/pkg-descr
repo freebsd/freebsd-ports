@@ -15,5 +15,4 @@ The current implementation creates a seek table entry once every
 this provides a granularity of 1 seek table entry per 25600/44100
 = 0.58 seconds, more than what is needed by either XMMS or WinAmp.
 
-WWW: http://shnutils.freeshell.org/xmms-shn/
-Author: Jason Jordan <shnutils@freeshell.org>
+WWW: http://www.etree.org/shnutils/xmms-shn/
