@@ -1,0 +1,9 @@
+The PNGwriter library, which requires libpng, allows you to plot to a 48-bit
+PNG file, saving it directly to disk. Plotting is as easy as specifying the
+red, green, and blue values and the x, y coordinates of the pixel. It includes
+functions for plotting simple geometric shapes (circle, rect, line), reading
+the colour of a pixel, reading in a whole PNG file (great for image analysis),
+plotting and reading in HSV colourspace, and many others that might come in
+handy.
+
+WWW: http://pngwriter.sourceforge.net/
