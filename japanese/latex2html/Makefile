@@ -21,7 +21,7 @@ MAINTAINER=	ixtl@utmc.or.jp
 
 RUN_DEPENDS=	platex:${PORTSDIR}/japanese/ptex-euc \
 		dvips:${PORTSDIR}/japanese/dvipsk-vflib \
-		gs:${PORTSDIR}/japanese/vfghostscript55 \
+		gs:${PORTSDIR}/japanese/ghostscript-gnu-jpnfont \
 		anytopnm:${PORTSDIR}/graphics/netpbm \
 		nkf:${PORTSDIR}/japanese/nkf
 
