@@ -18,9 +18,7 @@ WRKSRC=	${WRKDIR}/ed2k_slist
 USE_REINPLACE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|\r\n|\n|' ${WRKSRC}/*.[ch]
-	@${REINPLACE_CMD} -e 's|(#include <unistd.h>)|\1\n#include\
-		<sys/time.h>|' ${WRKSRC}/linux_net.c
+	@${REINPLACE_CMD} -e 's|||' ${WRKSRC}/*.[ch]
 
 # I could have written a Makefile but I would rather
 # not waste inodes
