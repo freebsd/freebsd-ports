@@ -23,6 +23,7 @@ do-build:
 do-install:
 	${MKDIR} ${PREFIX}/share/threeDS
 	${MKDIR} ${PREFIX}/lib/${PYTHON_VERSION}/site-packages
+	${RM} -f ${WRKSRC}/*.orig
 	${INSTALL_DATA} ${WRKSRC}/threeDS.py* ${PREFIX}/lib/${PYTHON_VERSION}/site-packages
 	${INSTALL_SCRIPT} ${WRKSRC}/view3ds.py* ${PREFIX}/share/threeDS
 	${LN} -sf ${PREFIX}/share/threeDS/view3ds.py ${PREFIX}/bin/view3ds
