@@ -1,119 +1,24 @@
-*** Makefile.orig	Sat Sep 25 18:29:52 1993
---- Makefile	Sun Mar  3 16:53:56 1996
+*** src/main.c.bak	Tue Oct 15 00:50:08 1996
+--- src/main.c	Sun Oct 20 01:06:24 1996
 ***************
-*** 2,8 ****
-  #
-  # Options that may need changing. For advanced options read the INSTALL file.
-  # 
-- CC	= cc
-  COPTS	= -c -O
-  #CC	= gcc
-  #COPTS	= -c -g
---- 2,7 ----
+*** 612,617 ****
+--- 612,620 ----
+  					create_index_lock_file (lock_file);
+  					process_id = getpid ();
+  #ifdef BSD
++ #ifdef __FreeBSD__
++ 					setsid();
++ #else
+  #	ifdef __osf__
+  					setpgid (0, 0);
+  #	else
 ***************
-*** 12,27 ****
-  #YACC = bison -y
-  #DEBUG	=
-  DEBUG	= -g -DDEBUG
-  
-  # Where are your news libdir & spooldir?
-! LIBDIR	= /usr/lib/news
-! SPOOLDIR= /usr/spool/news
-! NOVROOTDIR= $(SPOOLDIR)
-  
-  # Where do you want the binary & manual page installed?
-! INS_BINARY_DIR	= /usr/local/bin
-  INS_DAEMON_DIR	= $(LIBDIR)
-! INS_MANUAL_DIR	= /usr/local/man/man
-  INS_MANUAL_EXT	= 1
-  
-  # From: address in posted articles (don't use both - read the INSTALL file)
---- 11,28 ----
-  #YACC = bison -y
-  #DEBUG	=
-  DEBUG	= -g -DDEBUG
-+ PREFIX  = /usr/local
-  
-  # Where are your news libdir & spooldir?
-! LIBDIR  = ${PREFIX}/lib/news
-! SPOOLDIR= /var/news
-! NOVROOTDIR= $(SPOOLDIR)/over.view
-! NNTP_SERVER_FILE=${PREFIX}/etc/nntpserver
-  
-  # Where do you want the binary & manual page installed?
-! INS_BINARY_DIR  = ${PREFIX}/bin
-  INS_DAEMON_DIR	= $(LIBDIR)
-! INS_MANUAL_DIR  = ${PREFIX}/man/man
-  INS_MANUAL_EXT	= 1
-  
-  # From: address in posted articles (don't use both - read the INSTALL file)
-***************
-*** 45,52 ****
-  SHELL	= /bin/sh
-  STRIP	= strip
-  STRIP2	= mcs -d
-! #ROFF	= nroff -man 
-! ROFF	= groff -Tascii -man 
-  #BASE_VER= 1.21/tin-1.21
-  BASE_VER= 170993
-  VER = 1.22
---- 46,53 ----
-  SHELL	= /bin/sh
-  STRIP	= strip
-  STRIP2	= mcs -d
-! ROFF   = nroff -man
-! #ROFF    = groff -Tascii -man
-  #BASE_VER= 1.21/tin-1.21
-  BASE_VER= 170993
-  VER = 1.22
-***************
-*** 100,115 ****
-  	@echo "  make qnx     [ QNX 4.1 ]                 make sco       [ SCO Unix ]"
-  	@echo "  make sinix   [ SNI Sinix ]               make tower     [ NCR Tower]"
-  	@echo "  make xenix   [ SCO Xenix 386 ]"
-  	@echo " "
-  	@echo "Note that targets marked with '(nntp)' have -DNNTP_ABLE defined automatically."
-  	@echo " "
-  
-! .c.o:
-! 	$(CC) $(CFLAGS) $*.c
-  
-  # Uncomment for COHERENT os
-  #.c.y:
-  #	$(YACC) $*.y
-  
-  # For IBM AIX
-  aix:
---- 101,132 ----
-  	@echo "  make qnx     [ QNX 4.1 ]                 make sco       [ SCO Unix ]"
-  	@echo "  make sinix   [ SNI Sinix ]               make tower     [ NCR Tower]"
-  	@echo "  make xenix   [ SCO Xenix 386 ]"
-+ 	@echo "  make freebsd [ FreeBSD ]"
-  	@echo " "
-  	@echo "Note that targets marked with '(nntp)' have -DNNTP_ABLE defined automatically."
-  	@echo " "
-  
-! #.c.o:
-! #        $(CC) $(CFLAGS) $*.c
-  
-  # Uncomment for COHERENT os
-  #.c.y:
-  #	$(YACC) $*.y
-+ 
-+ # For FreeBSD systems
-+ freebsd:
-+ 	@echo "Compiling $(EXE) v$(VER) for FreeBSD..."
-+ 	@$(MAKE) CFLAGS='$(CFLAGS) \
-+ 			-DHAVE_ISPELL \
-+ 			-DNNTP_INEWS_GATEWAY=\"$(NNTP_INEWS_GATEWAY)\" \
-+ 			-DNNTP_INEWS_DOMAIN=\"$(NNTP_INEWS_DOMAIN)\" \
-+ 			-DNNTP_DEFAULT_SERVER=\"$(NNTP_DEFAULT_SERVER)\" \
-+ 			-DLIBDIR=\"$(LIBDIR)\" \
-+ 			-DSPOOLDIR=\"$(SPOOLDIR)\" \
-+ 			-DNNTP_SERVER_FILE=\"$(NNTP_SERVER_FILE)\" \
-+ 			-DNOVROOTDIR=\"$(NOVROOTDIR)\"' \
-+ 			LIBS="-ltermcap $(INN_NNTPLIB)" \
-+ 			EXE=tin linkit
-  
-  # For IBM AIX
-  aix:
+*** 627,632 ****
+--- 630,636 ----
+  						}
+  					}
+  #	endif
++ #endif
+  #else
+  #	if HAVE_SETPGRP
+  					setpgrp ();
