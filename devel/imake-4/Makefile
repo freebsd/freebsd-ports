@@ -28,7 +28,6 @@ EXTRACT_AFTER_ARGS=	| ${TAR} -xf - xc/Imakefile \
 			xc/config \
 			xc/include \
 			xc/extras
-.if !defined(NO_INSTALL_MANPAGES)
 MAN1=		imake.1 \
 		lndir.1 \
 		makedepend.1 \
@@ -41,9 +40,6 @@ MAN1=		imake.1 \
 		xmkmf.1
 MANCOMPRESSED=	yes
 INSTALL_TARGET=	install install.man
-.else
-INSTALL_TARGET=	install
-.endif
 # Followings are configration variables for XFree86 Systems.
 HasSecureRPC?=	YES
 HasXdmAuth?=	YES
