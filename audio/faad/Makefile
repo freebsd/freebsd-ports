@@ -9,19 +9,20 @@ PORTNAME=	faad2
 PORTVERSION=	1.1
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://faac.sourceforge.net/files/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	faac
 
 MAINTAINER=	sean@sfarc.net
 COMMENT=	A LC, MAIN and LTP profile, MPEG2 and MPEG-4 AAC decoder
 
-LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
-		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_AUTOMAKE_VER= 15
 AUTOMAKE_ARGS=	--add-missing
 
+USE_GETOPT_LONG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
