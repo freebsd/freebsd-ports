@@ -19,7 +19,7 @@ DISTFILES=	labdoc.css index.htm overview.htm concepts.htm \
 		pildriver.htm pilfile.htm pilfont.htm pilprint.htm \
 		formats.htm decoder.htm
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	john@coastalgeology.org
 
 DIST_SUBDIR=	pil
 EXTRACT_ONLY=
