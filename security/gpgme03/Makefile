@@ -18,8 +18,6 @@ COMMENT=	A library to make access to GnuPG easier
 BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth
 
-CONFLICTS=	gpgme-1.*
-
 LATEST_LINK=	gpgme03
 
 USE_INC_LIBTOOL_VER=13
