@@ -27,10 +27,16 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/apps/X11/cheatah
 
 .include "${.CURDIR}/../sword/Makefile.common"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500113
+BROKEN=		"Does not compile on FreeBSD ${OSVERSION}"
+.endif
+
 post-patch:
 	@${CHMOD} a+x ${WRKSRC}/configure
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/cheatah
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
