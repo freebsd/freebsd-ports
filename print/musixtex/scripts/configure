@@ -2,17 +2,26 @@
 set +x
 cd $WRKSRC || exit 1
 
-examples="angescao.tex angescax.tex avemaria.tex avemario.tex avemarix.tex \
-         canticor.tex canticox.tex fantaisc.tex fantaisd.tex fantaisi.tex \
-         gloriab.tex glorias.tex gloriax.tex gymnoman.tex ilestne.tex \
-         ilestnex.tex marcello.tex onuitbri.tex parnasum.tex souvenir.tex \
-         souvenix.tex traeumer.tex widor.tex widor_16.tex widor_20.tex"
+examples="adagio.tex albinoni.tex angescam.tex angescao.tex angescax.tex \
+         avemaria.tex avemarid.tex avemaril.tex avemario.tex avemarix.tex \
+         avemaroo.tex aveverch.tex aveverdd.tex aveveruc.tex aveverud.tex \
+         aveverum.tex chanson.tex dissonan.tex fantaisc.tex fantaisd.tex \
+         fantaisi.tex fantcmol.tex fantfuga.tex fstsaens.tex fugcmoll.tex \
+         fugue.tex gloriab.tex glorias.tex gloriax.tex gymnoman.tex \
+         ilestne.tex ilestnex.tex ilfaitda.tex ilfaitdx.tex kv315.tex \
+         kv315f.tex kv315h.tex kv315o.tex kv315org.tex marcello.tex \
+         marcon1.tex marcon2.tex marcon3.tex marconf.tex marconh.tex \
+         marcono.tex onuitbri.tex onuitbrr.tex onuitbrx.tex ostinato.tex \
+         pacifiqb.tex pacifiqn.tex pacifiqt.tex parnasum.tex prelfug.tex \
+         prelude.tex racine.tex recit.tex recueil.tex reves.tex romances.tex \
+         souvenir.tex souvenix.tex tierce.tex traeumer.tex widor.tex \
+         widor_16.tex widor_20.tex"
               
 cat > Makefile <<END
 all:
-	(cd systems/c-source; cc -O2 -o ../../musixflx musixflx.c)
+	(cd system/c-source; cc -O2 -o ../../musixflx musixflx.c)
 	(cd tex; export TEXFONTS=${WRKSRC}/tfm:; \\
-		initex '&tex musixtex.ins \dump')
+		initex '&tex ../system/dos/musixtex.ins \dump')
 
 install:
 	install -c -s -o bin -g bin musixflx $PREFIX/bin/
@@ -21,7 +30,7 @@ install:
 	install -c -o bin -g bin tfm/*.tfm $PREFIX/share/texmf/fonts/tfm/
 	install -c -o bin -g bin tex/musixtex.fmt $PREFIX/share/texmf/web2c/
 	install -c -o bin -g bin tex/*.tex tex/*.sty $PREFIX/share/texmf/tex/
-	install -c -o bin -g bin doc/musixdoc.tex  doc/musixdoc.sty doc/backgrnd.sty \\
+	install -c -o bin -g bin tex/musixdoc.tex  tex/musixdoc.sty tex/backgrnd.sty \\
 		$PREFIX/share/texmf/documentation/
 	mkdir -p $PREFIX/share/texmf/documentation/musixtex.examples
 	for f in $examples; do install -c -o bin -g bin  examples/\$\$f \\

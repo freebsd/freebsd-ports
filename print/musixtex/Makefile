@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	musixtex
-PORTVERSION=	T98
+PORTVERSION=	T112
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.tex.ac.uk/tex-archive/macros/musixtex/taupin/
-DISTFILES=	musixtex-T98.tar.gz musixexa-T90.tar.gz
+DISTFILES=	musixtex-${PORTVERSION}.tar.gz
 
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	A set of TeX macros to typeset music
@@ -17,7 +17,12 @@ COMMENT=	A set of TeX macros to typeset music
 BUILD_DEPENDS=	tex:${PORTSDIR}/print/tex
 RUN_DEPENDS=	tex:${PORTSDIR}/print/tex
 
-NO_WRKSUBDIR=	yes
+EXAMPLE_VERSION=    T112
+DISTFILES+=         musixexa-${EXAMPLE_VERSION}.tar.gz
+
+post-extract:
+	@${MKDIR} ${WRKDIR}/musixtex-${PORTVERSION}/examples
+	@${CP} ${WRKDIR}/musixexa-${EXAMPLE_VERSION}/* ${WRKDIR}/musixtex-${PORTVERSION}/examples/
 
 pre-install:
 	${MKDIR} ${PREFIX}/share/texmf/documentation
