@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	devel-logger
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.2
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	http://rrr.jin.gr.jp/download/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
