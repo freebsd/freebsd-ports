@@ -1,29 +1,49 @@
 #!/bin/sh
+#
+# $FreeBSD$
+#
 
-if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
-    echo "$0: Cannot determine the PREFIX" >&2
-    exit 1
-fi
+# PROVIDE: vmware-guestd
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: FreeBSD
 
-case "$1" in
-start)
-	exec 2>/dev/null
-	ulimit -c 0
-	if ${PREFIX}/sbin/vmware-checkvm >/dev/null; then
-		${PREFIX}/sbin/vmware-guestd &
-		echo -n ' vmware-guestd'
-	fi
-	;;
-stop)
-	exec 2>/dev/null
-	ulimit -c 0
-	if ${PREFIX}/sbin/vmware-checkvm >/dev/null; then
-		killall vmware-guestd && echo -n ' vmware-guestd'
-	fi
-	;;
-*)
-	echo "Usage: `basename $0` {start|stop}" >&2
-	;;
-esac
+PREFIX=%%PREFIX%%
+. %%RC_SUBR%%
 
-exit 0
+# Global
+checkvm_cmd="${PREFIX}/sbin/vmware-checkvm > /dev/null"
+
+# Functions
+vmware_guest_kmod_start()
+{
+	echo 'Loading vmmemctl kernel module.'
+	kldload ${PREFIX}/lib/vmware-tools/modules/vmmemctl.ko >/dev/null 2>&1
+}
+
+# VMware kernel modules
+name="vmware_guest_kmod"
+rcvar=`set_rcvar`
+start_precmd="${checkvm_cmd}"
+start_cmd="vmware_guest_kmod_start"
+stop_precmd="${checkvm_cmd}"
+stop_cmd=":"
+
+load_rc_config $name
+[ -z "$vmware_guest_kmod_enable" ] && vmware_guest_kmod_enable="NO"
+run_rc_command "$1"
+
+# VMware guest daemon
+name="vmware_guestd"
+rcvar=`set_rcvar`
+start_precmd="${checkvm_cmd}"
+unset start_cmd
+stop_precmd="${checkvm_cmd}"
+unset stop_cmd
+command="${PREFIX}/sbin/vmware-guestd"
+pidfile="/var/run/${name}.pid"
+
+load_rc_config $name
+[ -z "$vmware_guestd_enable" ] && vmware_guestd_enable="YES"
+[ -z "$vmware_guestd_flags" ] && vmware_guestd_flags="--background ${pidfile}"
+run_rc_command "$1"

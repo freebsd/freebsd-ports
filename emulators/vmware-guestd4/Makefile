@@ -24,6 +24,10 @@ IGNOREFILES=	${DISTFILES}
 WRKSRC=		${WRKDIR}/vmware-tools-distrib
 
 ONLY_FOR_ARCHS=	i386
+USE_REINPLACE=	yes
+USE_RC_SUBR=	yes
+RC_SCRIPT=	${PREFIX}/etc/rc.d/vmware-guestd.sh
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 .if !defined(BATCH)
 IS_INTERACTIVE=	yes
 .endif
@@ -35,8 +39,8 @@ NO_BUILD=	yes
 RESTRICTED=	"Not sure if we can redistribute this."
 NO_PACKAGE=	${RESTRICTED}
 
-VMWARE_VER=	4.0.5
-BUILD_VER=	6030
+VMWARE_VER=	4.5.1
+BUILD_VER=	7568
 
 MOUNT_DEV?=	/dev/acd0
 MOUNT_PT?=	/mnt
@@ -58,7 +62,9 @@ PLIST_SUB+=	INSTALLXSERVER4:=""
 .else
 
 .if !defined(WITHOUT_VMWARE_VMMEMCTL)
+.if exists(/usr/src/sys/Makefile)
 WITH_VMWARE_VMMEMCTL=YES
+.endif
 .endif
 VMWARE_KMODDIR=	${PREFIX}/lib/vmware-tools/modules
 .if defined(WITH_VMWARE_VMMEMCTL)
@@ -77,7 +83,7 @@ fetch-list:
 do-fetch:
 	@${ECHO} ""
 	@${ECHO} "========================================================================"
-	@${ECHO} "Choose \"File\" -> \"Install VMware Tools...\" from the Workstation menu"
+	@${ECHO} "Choose \"VM\" -> \"Install VMware Tools...\" from the Workstation menu"
 	@${ECHO} "to connect the VM's CD-ROM drive temporarily to installation CD image."
 	@${ECHO} "========================================================================"
 	@${ECHO} ""
@@ -100,8 +106,14 @@ do-fetch:
 
 post-extract:
 	${UMOUNT} ${MOUNT_PT}
-.if !defined(VMWARE_X_PORTS)
+.if defined(WITH_VMWARE_VMMEMCTL)
 	(cd ${WRKDIR}; ${TAR} xf ${WRKSRC}/lib/modules/source/vmmemctl.tar)
+.endif
+
+post-patch:
+.if defined(WITH_VMWARE_VMMEMCTL)
+	${REINPLACE_CMD} -e 's|vmmemctl1.o||' ${WRKDIR}/vmmemctl-only/Makefile
+	${ECHO_CMD} "OBJS=vmmemctl1.o" >> ${WRKDIR}/vmmemctl-only/Makefile
 .endif
 
 .if defined(VMWARE_X_PORTS)
@@ -109,7 +121,7 @@ post-extract:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/vmware-toolbox ${X11BASE}/bin
 .if ${XFREE86_VERSION} == 3
-	${INSTALL_PROGRAM} ${WRKSRC}/lib/configurator/XFree86-3/XF86_VMware ${X11BASE}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/lib/configurator/XFree86-3/XF86_VMware_4.5 ${X11BASE}/bin/XF86_VMware
 	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-3/XF86Config ${X11BASE}/etc/XF86Config_VMware
 	@${ECHO} ""
 	@${ECHO} "You have installed XFree86 3.x X Server for VMware."
@@ -117,6 +129,8 @@ do-install:
 	@${ECHO} "Copy this file to /etc/XF86Config before starting X."
 .else
 	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/XF86Config-4 ${X11BASE}/etc/XF86Config-4_VMware
+	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/4.3.x/vmware_drv.o ${X11BASE}/lib/modules/drivers/vmware_drv.o_VMware
+	${INSTALL_DATA} ${WRKSRC}/lib/configurator/XFree86-4/4.2.x/vmmouse_drv.o ${X11BASE}/lib/modules/input/vmmouse_drv.o_VMware
 .endif
 	-${LOCALBASE}/sbin/vmware-guestd --cmd toolinstall.end
 
@@ -130,14 +144,13 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sbin/vmware-guestd ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/sbin/vmware-checkvm ${PREFIX}/sbin
-	${INSTALL_SCRIPT} -m 755 ${FILESDIR}/vmware-guestd.sh \
-				${PREFIX}/etc/rc.d/vmware-guestd.sh.sample
 .if defined(WITH_VMWARE_VMMEMCTL)
 	${MKDIR} ${VMWARE_KMODDIR}
 	${INSTALL_PROGRAM} ${WRKDIR}/vmmemctl-only/vmmemctl.ko ${VMWARE_KMODDIR}
-	${INSTALL_SCRIPT} -m 755 ${FILESDIR}/vmware-guest_kmod.sh \
-				${PREFIX}/etc/rc.d/vmware-guest_kmod.sh.sample
 .endif
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
+		${FILESDIR}/vmware-guestd.sh > ${WRKDIR}/vmware-guestd.sh
+	@${INSTALL_SCRIPT} ${WRKDIR}/vmware-guestd.sh ${RC_SCRIPT}
 	-${LOCALBASE}/sbin/vmware-guestd --cmd toolinstall.end
 
 .endif
