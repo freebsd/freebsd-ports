@@ -2,8 +2,6 @@ bin/linphone
 bin/linphonec
 bin/osipua_tester
 bin/sipomatic
-bin/speexdec
-bin/speexenc
 bin/test_sdphandler
 include/ortp/ortp-config.h
 include/ortp/ortp.h
