@@ -7,7 +7,7 @@
 
 PORTNAME=	tk
 PORTVERSION=	8.0.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese x11-toolkits tk80
 MASTER_SITES=	ftp://ftp.scriptics.com/pub/tcl/tcl8_0/
 DISTNAME=	${PORTNAME}${PORTVERSION}
