@@ -6,7 +6,7 @@
 
 PORTNAME=	teTeX-texmf
 PORTVERSION=	3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
@@ -58,8 +58,8 @@ EXCLUDE_LIST=	fonts/type1/bluesky/cm/\* \
 		fonts/type1/bluesky/symbols/\* \
 		fonts/type1/bluesky/cyrillic/\*
 
-CMPSFONTDIR=	${LOCALBASE}/share/fonts/cmpsfont/pfb
-AMSPSFONTDIR=	${LOCALBASE}/share/fonts/amspsfont/pfb
+CMPSFONTDIR=	${LOCALBASE}/share/fonts/cmpsfont
+AMSPSFONTDIR=	${LOCALBASE}/share/fonts/amspsfont
 
 CMFONTS=	cmb10.pfb cmbsy10.pfb cmbx10.pfb cmbx12.pfb cmbx5.pfb \
 		cmbx6.pfb cmbx7.pfb cmbx8.pfb cmbx9.pfb cmbxsl10.pfb \
