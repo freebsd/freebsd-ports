@@ -4,9 +4,8 @@
 # Whom:			torstenb
 #
 # $FreeBSD$
-#
 
-DISTNAME=	inn-STABLE_2_2-1999-07-24_03-02
+DISTNAME=	inn-STABLE_2_2-1999-12-26_03-02
 PKGNAME=	inn-stable-v22
 CATEGORIES=	news
 MASTER_SITES=	http://www.FreeBSD.org/~andreas/download/ \
@@ -115,6 +114,12 @@ post-install:
 	${CHOWN} news:news ${NEWSSPOOL}/uniover
 	${SED} <${FILESDIR}/innd.sh >${PREFIX}/etc/rc.d/innd.sh \
 		s+!!PREFIX!!+${PREFIX}+g && ${CHMOD} +x ${PREFIX}/etc/rc.d/innd.sh
+	# create log and run subdir with a .keep_me file to make sure 
+	# packaging works. The mkdir might be unnecessary, but to be sure ...
+.for dir in log run
+	${MKDIR} -p ${NEWSLIB}/${dir}
+	touch ${NEWSLIB}/${dir}/.keep_me
+.endfor
 	# make rnews work when getting news via uucp !
 	${CHMOD} 4555 ${NEWSLIB}/bin/rnews
 
