@@ -5,11 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=		gambas
-PORTVERSION=		0.99
-PORTREVISION=		6
+PORTVERSION=		1.0.1
 CATEGORIES=		lang
 MASTER_SITES=		http://gambas.sourceforge.net/
-DISTNAME=		${PORTNAME}-${PORTVERSION}.RC6
 
 MAINTAINER=		thierry@FreeBSD.org
 COMMENT=		Gambas Almost Means BASic
