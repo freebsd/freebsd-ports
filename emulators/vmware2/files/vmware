@@ -17,4 +17,10 @@ fi
 LANG=C
 PATH=/bin:$PATH
 
-@@PREFIX@@/lib/vmware/bin/vmware "$@"
+if [ _$TMPDIR = _ ]; then 
+    TMPDIR=/var/tmp
+    echo Setting TMPDIR="$TMPDIR".
+    export TMPDIR
+fi
+
+exec @@PREFIX@@/lib/vmware/bin/vmware "$@"

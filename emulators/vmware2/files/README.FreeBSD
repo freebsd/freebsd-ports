@@ -5,10 +5,7 @@ $FreeBSD$
 Introduction.
 
 This piece of software provides some basic support for running
-the VMware 2.0 for Linux on FreeBSD.
-
-I'm using FreeBSD 4.0 -current system and don't know whether
-this software will work on the 3.X branch.
+the VMware 2.0 for Linux on FreeBSD 4.0 and better ;) systems.
 
 ===
 

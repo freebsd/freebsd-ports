@@ -23,11 +23,16 @@ case $1 in
 start)
     kldload ${vmware_dir}/lib/modules/vmmon_${suffix}.ko
     if [ $networking -eq 1 ]; then
-	kldload ${vmware_dir}/lib/modules/vmnet.ko
-	echo -n >/dev/vmnet1
+	sysctl net.link.ether.bridge_refresh && bridge="_bridge"
+	kldload if_tap.ko
+	echo -n >@@LINUX_DIR@@/dev/vmnet1
 	ifconfig vmnet1 $host_ip netmask $netmask
+	if [ _$bridge != _ ]; then
+	    sysctl -w net.link.ether.bridge_refresh=1
+	    sysctl -w net.link.ether.bridge=1
+	fi
     fi
-    echo -n " VMware" >/dev/tty
+    echo -n " VMware${bridge}" >&2
     ;;
 
 stop)
@@ -35,7 +40,8 @@ stop)
     if [ $networking -eq 1 ]; then
 	ifconfig vmnet1 down
 	ifconfig vmnet1 delete $host_ip
-	kldunload vmnet
+	sysctl net.link.ether.bridge_refresh && bridge="_bridge"
+	[ _$bridge != _ ] && sysctl -w net.link.ether.bridge_refresh=1
     fi
     ;;
 
