@@ -1,0 +1,33 @@
+--- Imakefile.orig	Fri Feb 27 10:08:37 2004
++++ Imakefile	Fri Feb 27 10:09:01 2004
+@@ -1,19 +1,19 @@
+-/**/# @(#)Imakefile	1.16 04 Jun 1995
++# @(#)Imakefile	1.16 04 Jun 1995
+ 
+-/**/# Set this to the manual section where you want to install workmandb.man
++# Set this to the manual section where you want to install workmandb.man
+ DBMANSECTION = 5
+ 
+-/**/#
+-/**/# Uncomment the following if you want fast database lookups using the
+-/**/# Berkeley libdb code.  You can find libdb on ftp.cs.berkeley.edu in the
+-/**/# /ucb/4bsd directory.  Make sure you adjust the last part of DBCFLAGS
+-/**/# to match your system type as listed in libdb's PORT directory.
+-/**/#
++#
++# Uncomment the following if you want fast database lookups using the
++# Berkeley libdb code.  You can find libdb on ftp.cs.berkeley.edu in the
++# /ucb/4bsd directory.  Make sure you adjust the last part of DBCFLAGS
++# to match your system type as listed in libdb's PORT directory.
++#
+ 
+-/**/#DBCFLAGS = -DLIBDB -Idb.1.85/PORT/include -Idb.1.85/PORT/sunos.5.2
+-/**/#DBLIB = db.1.85/PORT/sunos.5.2/libdb.a
++#DBCFLAGS = -DLIBDB -Idb.1.85/PORT/include -Idb.1.85/PORT/sunos.5.2
++#DBLIB = db.1.85/PORT/sunos.5.2/libdb.a
+ 
+-/**/# And you shouldn't need to touch anything below this.
++# And you shouldn't need to touch anything below this.
+ 
+ 
+ #include <XView.tmpl>

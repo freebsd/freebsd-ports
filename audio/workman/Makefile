@@ -7,6 +7,7 @@
 
 PORTNAME=	workman
 PORTVERSION=	1.3a
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	applications/WorkMan
@@ -24,10 +25,6 @@ MAN5=		workmandb.5
 XFREE86_HTML_MAN=no
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502000
-BROKEN=		"Does not compile"
-.endif
 
 post-install:
 	${GZIP_CMD} ${X11BASE}/man/man5/workmandb.5
