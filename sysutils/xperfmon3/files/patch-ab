@@ -1,0 +1,90 @@
+diff -u ../xperfmon++.orig/StripCharP.h ./StripCharP.h
+--- ../xperfmon++.orig/StripCharP.h	Wed Jul 27 22:29:30 1994
++++ ./StripCharP.h	Sun Nov 12 00:07:24 1995
+@@ -62,10 +62,12 @@
+ #define HIGHLIGHT  1 << 1
+ #define ALL_GCS (FOREGROUND | HIGHLIGHT)
+ 
++#define NUM_VALUES 2048
++
+ /* New fields for the PerfChart widget instance record */
+ 
+ typedef struct {
+-    double valuedata[2048];	/* record of data points */
++    double valuedata[NUM_VALUES]; /* record of data points */
+     Pixel	fgpixel;	/* color index for graph */
+     Pixel	hipixel;	/* color index for lines */
+     Pixel       warnColor;
+diff -u ../xperfmon++.orig/StripChart.c ./StripChart.c
+--- ../xperfmon++.orig/StripChart.c	Wed Jul 27 22:29:30 1994
++++ ./StripChart.c	Sun Nov 12 00:07:24 1995
+@@ -215,8 +215,23 @@
+ static void Initialize (greq, gnew)
+     Widget greq, gnew;
+ {
++    int i;
++
+     PerfChartWidget w = (PerfChartWidget)gnew;
+ 
++    /*
++     * XXX The missing initializations have been made obvious by FreeBSD 2.2's
++     * new (`phk') malloc that doesn't initialize the malloc'ed areas to 0.
++     * Perhaps more bogons will lurk around, but the floating arithmetic ones
++     * have been the most annoying ones since they most likely cause a trap
++     * at startup time.
++     *
++     * Strange that people in the 90's still rely on malloc()
++     * returning an initialized region.
++     */
++    for ( i = 0; i < NUM_VALUES; i++ )
++        w->strip_chart.valuedata[i] = 0.0;
++
+ /* if we are working with a mono screen then turn off all warnings and alarms */
+ 
+     if ( mono_screen ) {
+@@ -343,19 +358,19 @@
+ 
+ 	   if ( checkValue >= w->strip_chart.highAlarm ) { /* check for high alarm */
+ 	       if ( w->strip_chart.currentBG != w->strip_chart.alarmColor ) {
+-		   XtVaSetValues(w, XtNbackground, w->strip_chart.alarmColor, NULL );
++		   XtVaSetValues((Widget)w, XtNbackground, w->strip_chart.alarmColor, NULL );
+ 		   w->strip_chart.currentBG = w->strip_chart.alarmColor;
+ 	       }
+ 	   }
+ 	   else if ( checkValue >= w->strip_chart.highWarn ) { /* check for high warning */
+ 	       if ( w->strip_chart.currentBG != w->strip_chart.warnColor ) {
+-		   XtVaSetValues(w, XtNbackground, w->strip_chart.warnColor, NULL );
++		   XtVaSetValues((Widget)w, XtNbackground, w->strip_chart.warnColor, NULL );
+ 		   w->strip_chart.currentBG = w->strip_chart.warnColor;
+ 	       }
+ 	   }
+ 	   else {
+ 	       if ( w->strip_chart.currentBG != w->strip_chart.okColor ) { /* reset to okColor? */
+-		   XtVaSetValues(w, XtNbackground, w->strip_chart.okColor, NULL );
++		   XtVaSetValues((Widget)w, XtNbackground, w->strip_chart.okColor, NULL );
+ 		   w->strip_chart.currentBG = w->strip_chart.okColor;
+ 	       }
+ 	   }
+@@ -373,19 +388,19 @@
+ 
+ 	   if ( checkValue <= w->strip_chart.lowAlarm ) { /* check for low alarm */
+ 	       if ( w->strip_chart.currentBG != w->strip_chart.alarmColor ) {
+-		   XtVaSetValues(w, XtNbackground, w->strip_chart.alarmColor, NULL );
++		   XtVaSetValues((Widget)w, XtNbackground, w->strip_chart.alarmColor, NULL );
+ 		   w->strip_chart.currentBG = w->strip_chart.alarmColor;
+ 	       }
+ 	   }
+ 	   else if ( checkValue <= w->strip_chart.lowWarn ) { /* check for low warning */
+ 	       if ( w->strip_chart.currentBG != w->strip_chart.warnColor ) {
+-		   XtVaSetValues(w, XtNbackground, w->strip_chart.warnColor, NULL );
++		   XtVaSetValues((Widget)w, XtNbackground, w->strip_chart.warnColor, NULL );
+ 		   w->strip_chart.currentBG = w->strip_chart.warnColor;
+ 	       }
+ 	   }
+ 	   else {
+ 	       if ( w->strip_chart.currentBG != w->strip_chart.okColor ) { /* reset to okColor? */
+-		   XtVaSetValues(w, XtNbackground, w->strip_chart.okColor, NULL );
++		   XtVaSetValues((Widget)w, XtNbackground, w->strip_chart.okColor, NULL );
+ 		   w->strip_chart.currentBG = w->strip_chart.okColor;
+ 	       }
+ 	   }
