@@ -1,0 +1,330 @@
+--- mfhdf/libsrc/Makefile.in.orig	Wed Feb  9 18:35:08 2005
++++ mfhdf/libsrc/Makefile.in	Wed Mar 16 12:05:19 2005
+@@ -82,6 +82,7 @@
+ LEX_OUTPUT_ROOT = @LEX_OUTPUT_ROOT@
+ LIBOBJS = @LIBOBJS@
+ LIBS = @LIBS@
++LIBTOOL = %%LOCALBASE%%/bin/libtool15
+ LN_S = @LN_S@
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+@@ -89,7 +90,7 @@
+ MAINTAINER_MODE_TRUE = @MAINTAINER_MODE_TRUE@
+ MAKEINFO = @MAKEINFO@
+ NEQN = @NEQN@
+-OBJEXT = @OBJEXT@
++OBJEXT = lo
+ PACKAGE = @PACKAGE@
+ PACKAGE_BUGREPORT = @PACKAGE_BUGREPORT@
+ PACKAGE_NAME = @PACKAGE_NAME@
+@@ -104,6 +105,7 @@
+ TBL = @TBL@
+ VERSION = @VERSION@
+ YACC = @YACC@
++ac_ct_AR = @ac_ct_AR@
+ ac_ct_CC = @ac_ct_CC@
+ ac_ct_CXX = @ac_ct_CXX@
+ ac_ct_F77 = @ac_ct_F77@
+@@ -154,7 +156,7 @@
+ 
+ #############################################################################
+ #############################################################################
+-lib_LIBRARIES = libmfhdf.a
++lib_LTLIBRARIES = libmfhdf.la
+ 
+ CSOURCES = array.c attr.c cdf.c dim.c file.c hdfsds.c iarray.c error.c    \
+          globdef.c mfsd.c nssdc.c putget.c putgetg.c sharray.c string.c \
+@@ -162,14 +164,15 @@
+ 
+ FSOURCES = ../fortran/jackets.c ../fortran/mfsdf.c ../fortran/mfsdff.f
+ XDRSOURCES = ../xdr/xdr.c ../xdr/xdrfloat.c ../xdr/xdrstdio.c ../xdr/xdrarray.c
+-@HDF_BUILD_FORTRAN_FALSE@@HDF_BUILD_XDR_FALSE@libmfhdf_a_SOURCES = $(CSOURCES)
+-@HDF_BUILD_FORTRAN_TRUE@@HDF_BUILD_XDR_FALSE@libmfhdf_a_SOURCES = $(CSOURCES) $(FSOURCES)
++@HDF_BUILD_FORTRAN_FALSE@@HDF_BUILD_XDR_FALSE@libmfhdf_la_SOURCES = $(CSOURCES)
++@HDF_BUILD_FORTRAN_TRUE@@HDF_BUILD_XDR_FALSE@libmfhdf_la_SOURCES = $(CSOURCES) $(FSOURCES)
+ 
+-@HDF_BUILD_FORTRAN_TRUE@@HDF_BUILD_XDR_TRUE@libmfhdf_a_SOURCES = $(CSOURCES) $(FSOURCES) $(XDRSOURCES)
++@HDF_BUILD_FORTRAN_TRUE@@HDF_BUILD_XDR_TRUE@libmfhdf_la_SOURCES = $(CSOURCES) $(FSOURCES) $(XDRSOURCES)
+ 
+-@HDF_BUILD_FORTRAN_FALSE@@HDF_BUILD_XDR_TRUE@libmfhdf_a_SOURCES = $(CSOURCES) $(XDRSOURCES)
++@HDF_BUILD_FORTRAN_FALSE@@HDF_BUILD_XDR_TRUE@libmfhdf_la_SOURCES = $(CSOURCES) $(XDRSOURCES)
++libmfhdf_la_LDFLAGS = -version-info 2:0:0
+ 
+-include_HEADERS = hdf2netcdf.h local_nc.h mfhdf.h netcdf.h 
++include_HEADERS = hdf2netcdf.h local_nc.h mfhdf.h netcdf.h
+ 
+ 
+ #############################################################################
+@@ -193,11 +196,11 @@
+ mkinstalldirs = $(SHELL) $(top_srcdir)/bin/mkinstalldirs
+ CONFIG_HEADER = $(top_builddir)/hdf/src/h4config.h
+ CONFIG_CLEAN_FILES =
+-LIBRARIES = $(lib_LIBRARIES)
++LTLIBRARIES = $(lib_LTLIBRARIES)
+ 
+-libmfhdf_a_AR = $(AR) cru
+-libmfhdf_a_LIBADD =
+-am__libmfhdf_a_SOURCES_DIST = array.c attr.c cdf.c dim.c file.c hdfsds.c \
++libmfhdf_la_AR = $(AR) cru
++libmfhdf_la_LIBADD =
++am__libmfhdf_la_SOURCES_DIST = array.c attr.c cdf.c dim.c file.c hdfsds.c \
+ 	iarray.c error.c globdef.c mfsd.c nssdc.c putget.c putgetg.c \
+ 	sharray.c string.c var.c xdrposix.c ../fortran/jackets.c \
+ 	../fortran/mfsdf.c ../fortran/mfsdff.f ../xdr/xdr.c \
+@@ -211,19 +214,19 @@
+ am__objects_2 = xdr.$(OBJEXT) xdrfloat.$(OBJEXT) xdrstdio.$(OBJEXT) \
+ 	xdrarray.$(OBJEXT)
+ am__objects_3 = jackets.$(OBJEXT) mfsdf.$(OBJEXT) mfsdff.$(OBJEXT)
+-@HDF_BUILD_FORTRAN_FALSE@@HDF_BUILD_XDR_TRUE@am_libmfhdf_a_OBJECTS = \
++@HDF_BUILD_FORTRAN_FALSE@@HDF_BUILD_XDR_TRUE@am_libmfhdf_la_OBJECTS = \
+ @HDF_BUILD_FORTRAN_FALSE@@HDF_BUILD_XDR_TRUE@	$(am__objects_1) \
+ @HDF_BUILD_FORTRAN_FALSE@@HDF_BUILD_XDR_TRUE@	$(am__objects_2)
+-@HDF_BUILD_FORTRAN_FALSE@@HDF_BUILD_XDR_FALSE@am_libmfhdf_a_OBJECTS = \
++@HDF_BUILD_FORTRAN_FALSE@@HDF_BUILD_XDR_FALSE@am_libmfhdf_la_OBJECTS = \
+ @HDF_BUILD_FORTRAN_FALSE@@HDF_BUILD_XDR_FALSE@	$(am__objects_1)
+-@HDF_BUILD_FORTRAN_TRUE@@HDF_BUILD_XDR_TRUE@am_libmfhdf_a_OBJECTS = \
++@HDF_BUILD_FORTRAN_TRUE@@HDF_BUILD_XDR_TRUE@am_libmfhdf_la_OBJECTS = \
+ @HDF_BUILD_FORTRAN_TRUE@@HDF_BUILD_XDR_TRUE@	$(am__objects_1) \
+ @HDF_BUILD_FORTRAN_TRUE@@HDF_BUILD_XDR_TRUE@	$(am__objects_3) \
+ @HDF_BUILD_FORTRAN_TRUE@@HDF_BUILD_XDR_TRUE@	$(am__objects_2)
+-@HDF_BUILD_FORTRAN_TRUE@@HDF_BUILD_XDR_FALSE@am_libmfhdf_a_OBJECTS = \
++@HDF_BUILD_FORTRAN_TRUE@@HDF_BUILD_XDR_FALSE@am_libmfhdf_la_OBJECTS = \
+ @HDF_BUILD_FORTRAN_TRUE@@HDF_BUILD_XDR_FALSE@	$(am__objects_1) \
+ @HDF_BUILD_FORTRAN_TRUE@@HDF_BUILD_XDR_FALSE@	$(am__objects_3)
+-libmfhdf_a_OBJECTS = $(am_libmfhdf_a_OBJECTS)
++libmfhdf_la_OBJECTS = $(am_libmfhdf_la_OBJECTS)
+ check_PROGRAMS = cdftest$(EXEEXT) hdftest$(EXEEXT)
+ am_cdftest_OBJECTS = cdftest.$(OBJEXT)
+ cdftest_OBJECTS = $(am_cdftest_OBJECTS)
+@@ -256,62 +259,64 @@
+ @AMDEP_TRUE@	./$(DEPDIR)/xdrposix.Po ./$(DEPDIR)/xdrstdio.Po
+ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
+ 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
++LTCOMPILE = $(LIBTOOL) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) \
++	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+-LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
++LINK = $(LIBTOOL) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
++	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+ F77COMPILE = $(F77) $(AM_FFLAGS) $(FFLAGS)
++LTF77COMPILE = $(LIBTOOL) --mode=compile $(F77) $(AM_FFLAGS) $(FFLAGS)
+ F77LD = $(F77)
+-F77LINK = $(F77LD) $(AM_FFLAGS) $(FFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+-DIST_SOURCES = $(am__libmfhdf_a_SOURCES_DIST) $(cdftest_SOURCES) \
++F77LINK = $(LIBTOOL) --mode=link $(F77LD) $(AM_FFLAGS) $(FFLAGS) \
++	$(AM_LDFLAGS) $(LDFLAGS) -o $@
++DIST_SOURCES = $(am__libmfhdf_la_SOURCES_DIST) $(cdftest_SOURCES) \
+ 	$(hdftest_SOURCES)
+ HEADERS = $(include_HEADERS)
+ 
+ DIST_COMMON = README $(include_HEADERS) $(srcdir)/Makefile.in \
+ 	Makefile.am
+-SOURCES = $(libmfhdf_a_SOURCES) $(cdftest_SOURCES) $(hdftest_SOURCES)
++SOURCES = $(libmfhdf_la_SOURCES) $(cdftest_SOURCES) $(hdftest_SOURCES)
+ 
+ all: all-am
+ 
+ .SUFFIXES:
+-.SUFFIXES: .c .f .o .obj
++.SUFFIXES: .c .f .lo .o .obj
+ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ Makefile.am  $(top_srcdir)/configure.ac $(ACLOCAL_M4)
+ 	cd $(top_srcdir) && \
+ 	  $(AUTOMAKE) --foreign  mfhdf/libsrc/Makefile
+ Makefile: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.in  $(top_builddir)/config.status
+ 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@ $(am__depfiles_maybe)
+-libLIBRARIES_INSTALL = $(INSTALL_DATA)
+-install-libLIBRARIES: $(lib_LIBRARIES)
++libLTLIBRARIES_INSTALL = $(INSTALL)
++install-libLTLIBRARIES: $(lib_LTLIBRARIES)
+ 	@$(NORMAL_INSTALL)
+ 	$(mkinstalldirs) $(DESTDIR)$(libdir)
+-	@list='$(lib_LIBRARIES)'; for p in $$list; do \
++	@list='$(lib_LTLIBRARIES)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+ 	    f="`echo $$p | sed -e 's|^.*/||'`"; \
+-	    echo " $(libLIBRARIES_INSTALL) $$p $(DESTDIR)$(libdir)/$$f"; \
+-	    $(libLIBRARIES_INSTALL) $$p $(DESTDIR)$(libdir)/$$f; \
+-	  else :; fi; \
+-	done
+-	@$(POST_INSTALL)
+-	@list='$(lib_LIBRARIES)'; for p in $$list; do \
+-	  if test -f $$p; then \
+-	    p="`echo $$p | sed -e 's|^.*/||'`"; \
+-	    echo " $(RANLIB) $(DESTDIR)$(libdir)/$$p"; \
+-	    $(RANLIB) $(DESTDIR)$(libdir)/$$p; \
++	    echo " $(LIBTOOL) --mode=install $(libLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(libdir)/$$f"; \
++	    $(LIBTOOL) --mode=install $(libLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) $$p $(DESTDIR)$(libdir)/$$f; \
+ 	  else :; fi; \
+ 	done
+ 
+-uninstall-libLIBRARIES:
++uninstall-libLTLIBRARIES:
+ 	@$(NORMAL_UNINSTALL)
+-	@list='$(lib_LIBRARIES)'; for p in $$list; do \
++	@list='$(lib_LTLIBRARIES)'; for p in $$list; do \
+ 	  p="`echo $$p | sed -e 's|^.*/||'`"; \
+-	  echo " rm -f $(DESTDIR)$(libdir)/$$p"; \
+-	  rm -f $(DESTDIR)$(libdir)/$$p; \
++	  echo " $(LIBTOOL) --mode=uninstall rm -f $(DESTDIR)$(libdir)/$$p"; \
++	  $(LIBTOOL) --mode=uninstall rm -f $(DESTDIR)$(libdir)/$$p; \
+ 	done
+ 
+-clean-libLIBRARIES:
++clean-libLTLIBRARIES:
+ 	-test -z "$(lib_LIBRARIES)" || rm -f $(lib_LIBRARIES)
+-libmfhdf.a: $(libmfhdf_a_OBJECTS) $(libmfhdf_a_DEPENDENCIES) 
+-	-rm -f libmfhdf.a
+-	$(libmfhdf_a_AR) libmfhdf.a $(libmfhdf_a_OBJECTS) $(libmfhdf_a_LIBADD)
+-	$(RANLIB) libmfhdf.a
++	@list='$(lib_LTLIBRARIES)'; for p in $$list; do \
++	  dir="`echo $$p | sed -e 's|/[^/]*$$||'`"; \
++	  test "$$dir" = "$$p" && dir=.; \
++	  echo "rm -f \"$${dir}/so_locations\""; \
++	  rm -f "$${dir}/so_locations"; \
++	done
++libmfhdf.la: $(libmfhdf_la_OBJECTS) $(libmfhdf_la_DEPENDENCIES)
++	$(LINK) -rpath $(libdir) $(libmfhdf_la_LDFLAGS) $(libmfhdf_la_OBJECTS) $(libmfhdf_la_LIBADD) $(LIBS)
++	$(LN_S) .libs/libmfhdf.a libmfhdf.a
+ 
+ clean-checkPROGRAMS:
+ 	-test -z "$(check_PROGRAMS)" || rm -f $(check_PROGRAMS)
+@@ -381,6 +386,17 @@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(COMPILE) -c `if test -f '$<'; then $(CYGPATH_W) '$<'; else $(CYGPATH_W) '$(srcdir)/$<'; fi`
+ 
++.c.lo:
++@am__fastdepCC_TRUE@	if $(LTCOMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" \
++@am__fastdepCC_TRUE@	  -c -o $@ `test -f '$<' || echo '$(srcdir)/'`$<; \
++@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/$*.Tpo" "$(DEPDIR)/$*.Plo"; \
++@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/$*.Tpo"; exit 1; \
++@am__fastdepCC_TRUE@	fi
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/$*.Plo' tmpdepfile='$(DEPDIR)/$*.TPlo' @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(LTCOMPILE) -c -o $@ `test -f '$<' || echo '$(srcdir)/'`$<
++
+ xdr.o: ../xdr/xdr.c
+ @am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT xdr.o -MD -MP -MF "$(DEPDIR)/xdr.Tpo" \
+ @am__fastdepCC_TRUE@	  -c -o xdr.o `test -f '../xdr/xdr.c' || echo '$(srcdir)/'`../xdr/xdr.c; \
+@@ -491,6 +507,17 @@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o jackets.obj `if test -f '../fortran/jackets.c'; then $(CYGPATH_W) '../fortran/jackets.c'; else $(CYGPATH_W) '$(srcdir)/../fortran/jackets.c'; fi`
+ 
++jackets.lo: ../fortran/jackets.c
++@am__fastdepCC_TRUE@	if $(LTCOMPILE) -MT jackets.lo -MD -MP -MF "$(DEPDIR)/jackets.Tpo" \
++@am__fastdepCC_TRUE@	  -c -o jackets.lo `test -f '../fortran/jackets.c' || echo '$(srcdir)/'`../fortran/jackets.c; \
++@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/jackets.Tpo" "$(DEPDIR)/jackets.Po"; \
++@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/jackets.Tpo"; exit 1; \
++@am__fastdepCC_TRUE@	fi
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../fortran/jackets.c' object='jackets.lo' libtool=yes @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/jackets.Po' tmpdepfile='$(DEPDIR)/jackets.TPo' @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(LTCOMPILE) -c -o jackets.lo `test -f '../fortran/jackets.c' || echo '$(srcdir)/'`../fortran/jackets.c
++
+ mfsdf.o: ../fortran/mfsdf.c
+ @am__fastdepCC_TRUE@	if $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT mfsdf.o -MD -MP -MF "$(DEPDIR)/mfsdf.Tpo" \
+ @am__fastdepCC_TRUE@	  -c -o mfsdf.o `test -f '../fortran/mfsdf.c' || echo '$(srcdir)/'`../fortran/mfsdf.c; \
+@@ -513,17 +540,41 @@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o mfsdf.obj `if test -f '../fortran/mfsdf.c'; then $(CYGPATH_W) '../fortran/mfsdf.c'; else $(CYGPATH_W) '$(srcdir)/../fortran/mfsdf.c'; fi`
+ 
++mfsdf.lo: ../fortran/mfsdf.c
++@am__fastdepCC_TRUE@	if $(LTCOMPILE) -MT mfsdf.lo -MD -MP -MF "$(DEPDIR)/mfsdf.Tpo" \
++@am__fastdepCC_TRUE@	  -c -o mfsdf.lo `test -f '../fortran/mfsdf.c' || echo '$(srcdir)/'`../fortran/mfsdf.c; \
++@am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/mfsdf.Tpo" "$(DEPDIR)/mfsdf.Po"; \
++@am__fastdepCC_TRUE@	else rm -f "$(DEPDIR)/mfsdf.Tpo"; exit 1; \
++@am__fastdepCC_TRUE@	fi
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='../fortran/mfsdf.c' object='mfsdf.lo' libtool=yes @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	depfile='$(DEPDIR)/mfsdf.Po' tmpdepfile='$(DEPDIR)/mfsdf.TPo' @AMDEPBACKSLASH@
++@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
++@am__fastdepCC_FALSE@	$(LTCOMPILE) -c -o mfsdf.lo `test -f '../fortran/mfsdf.c' || echo '$(srcdir)/'`../fortran/mfsdf.c
++
+ .f.o:
+ 	$(F77COMPILE) -c -o $@ `test -f '$<' || echo '$(srcdir)/'`$<
+ 
+ .f.obj:
+ 	$(F77COMPILE) -c -o $@ `if test -f '$<'; then $(CYGPATH_W) '$<'; else $(CYGPATH_W) '$(srcdir)/$<'; fi`
+ 
++.f.lo:
++	$(LTF77COMPILE) -c -o $@ `if test -f '$<'; then $(CYGPATH_W) '$<'; else $(CYGPATH_W) '$(srcdir)/$<'; fi`
++
+ mfsdff.o: ../fortran/mfsdff.f
+ 	$(F77) $(AM_FFLAGS) $(FFLAGS) -c -o mfsdff.o `test -f '../fortran/mfsdff.f' || echo '$(srcdir)/'`../fortran/mfsdff.f
+ 
+ mfsdff.obj: ../fortran/mfsdff.f
+ 	$(F77) $(AM_FFLAGS) $(FFLAGS) -c -o mfsdff.obj `if test -f '../fortran/mfsdff.f'; then $(CYGPATH_W) '../fortran/mfsdff.f'; else $(CYGPATH_W) '$(srcdir)/../fortran/mfsdff.f'; fi`
++
++mfsdff.lo: ../fortran/mfsdff.f
++	$(LTF77COMPILE) -c -o mfsdff.lo `test -f '../fortran/mfsdff.f' || echo '$(srcdir)/'`../fortran/mfsdff.f
++
++mostlyclean-libtool:
++	-rm -f *.lo
++
++clean-libtool:
++	-rm -rf .libs _libs
++
+ uninstall-info-am:
+ includeHEADERS_INSTALL = $(INSTALL_HEADER)
+ install-includeHEADERS: $(include_HEADERS)
+@@ -632,7 +683,7 @@
+ check-am: all-am
+ 	$(MAKE) $(AM_MAKEFLAGS) $(check_PROGRAMS)
+ check: check-am
+-all-am: Makefile $(LIBRARIES) $(HEADERS)
++all-am: Makefile $(LTLIBRARIES) $(HEADERS)
+ 
+ installdirs:
+ 	$(mkinstalldirs) $(DESTDIR)$(libdir) $(DESTDIR)$(includedir)
+@@ -663,7 +714,7 @@
+ 	@echo "it deletes files that may require special tools to rebuild."
+ clean: clean-am
+ 
+-clean-am: clean-checkPROGRAMS clean-generic clean-libLIBRARIES \
++clean-am: clean-checkPROGRAMS clean-generic clean-libLTLIBRARIES clean-libtool \
+ 	mostlyclean-am
+ 
+ distclean: distclean-am
+@@ -683,7 +734,7 @@
+ 
+ install-data-am: install-includeHEADERS
+ 
+-install-exec-am: install-libLIBRARIES
++install-exec-am: install-libLTLIBRARIES
+ 
+ install-info: install-info-am
+ 
+@@ -699,7 +750,7 @@
+ 
+ mostlyclean: mostlyclean-am
+ 
+-mostlyclean-am: mostlyclean-compile mostlyclean-generic
++mostlyclean-am: mostlyclean-compile mostlyclean-generic mostlyclean-libtool
+ 
+ pdf: pdf-am
+ 
+@@ -710,20 +761,20 @@
+ ps-am:
+ 
+ uninstall-am: uninstall-includeHEADERS uninstall-info-am \
+-	uninstall-libLIBRARIES
++	uninstall-libLTLIBRARIES
+ 
+ .PHONY: CTAGS GTAGS all all-am check check-am clean clean-checkPROGRAMS \
+-	clean-generic clean-libLIBRARIES ctags distclean \
++	clean-generic clean-libLTLIBRARIES clean-libtool ctags distclean \
+ 	distclean-compile distclean-generic distclean-tags distdir dvi \
+ 	dvi-am info info-am install install-am install-data \
+ 	install-data-am install-exec install-exec-am \
+ 	install-includeHEADERS install-info install-info-am \
+-	install-libLIBRARIES install-man install-strip installcheck \
++	install-libLTLIBRARIES install-man install-strip installcheck \
+ 	installcheck-am installdirs maintainer-clean \
+ 	maintainer-clean-generic mostlyclean mostlyclean-compile \
+-	mostlyclean-generic pdf pdf-am ps ps-am tags uninstall \
++	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am tags uninstall \
+ 	uninstall-am uninstall-includeHEADERS uninstall-info-am \
+-	uninstall-libLIBRARIES
++	uninstall-libLTLIBRARIES
+ 
+ 
+ check:
