@@ -1,0 +1,11 @@
+--- ./kterm.h.org	Thu Jul 11 22:01:37 1996
++++ ./kterm.h	Fri Nov  1 05:22:15 1996
+@@ -36,6 +36,7 @@
+ #define KTERM_KINPUT2	/* Kinput2 protocol */
+ #define KTERM_COLOR	/* color sequence */
+ #define KTERM_NOTEK	/* disables Tektronix emulation */
+-#undef  KTERM_XAW3D	/* Xaw3d -DARROW_SCROLLBAR support */
++#define KTERM_XAW3D	/* Xaw3d -DARROW_SCROLLBAR support */
++#define USE_XAW3DLIB
+ 
+ #endif /* !_KTERM_H_ */
