@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	jikes-1.06
+DISTNAME=	jikes-1.11
 CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.whistle.com/pub/archie/misc/
 
