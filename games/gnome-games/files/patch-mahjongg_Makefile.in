@@ -9,8 +9,8 @@
 -	-chmod 664 $(DESTDIR)$(scoredir)/mahjongg.{easy,difficult}.scores
 +	touch $(DESTDIR)$(scoredir)/mahjongg.easy.scores
 +	touch $(DESTDIR)$(scoredir)/mahjongg.difficult.scores
-+	-chown games.games $(DESTDIR)$(scoredir)/mahjongg.easy.scores
-+	-chown games.games $(DESTDIR)$(scoredir)/mahjongg.difficult.scores
++	-chown games:games $(DESTDIR)$(scoredir)/mahjongg.easy.scores
++	-chown games:games $(DESTDIR)$(scoredir)/mahjongg.difficult.scores
 +	-chmod 664 $(DESTDIR)$(scoredir)/mahjongg.easy.scores
 +	-chmod 664 $(DESTDIR)$(scoredir)/mahjongg.difficult.scores
  	-chgrp games $(DESTDIR)$(bindir)/mahjongg && chmod 2555 $(DESTDIR)$(bindir)/mahjongg
