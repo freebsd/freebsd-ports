@@ -35,4 +35,10 @@ MAN3=		Graph.3 \
 		Graph::Traversal::DFS.3 \
 		Graph::UnionFind.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500601
+IGNORE=		This port requires perl 5.6.x or later version
+.endif
+
+.include <bsd.port.post.mk>
