@@ -1,0 +1,6 @@
+SynCE is a project for connecting to devices running Windows CE or Pocket PC.
+Synce-serial is a set of wrappers around pppd to initiate communications
+with a Windows CE device. Once a connection is established, synce-dccm is
+able to accept connections.
+
+WWW: http://synce.sourceforge.net/
