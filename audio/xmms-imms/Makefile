@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imms
-PORTVERSION=	1.1
+PORTVERSION=	1.2a
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= ${PORTNAME}
@@ -15,11 +15,12 @@ PKGNAMEPREFIX=	xmms-
 MAINTAINER=	green@FreeBSD.org
 COMMENT=	Automatic, weight-based playlist ordering plugin for XMMS
 
+BUILD_DEPENDS=	sox:${PORTSDIR}/audio/sox
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
-		sqlite.2:${PORTSDIR}/databases/sqlite \
+		sqlite3:${PORTSDIR}/databases/sqlite3 \
 		pcre.0:${PORTSDIR}/devel/pcre \
-		id3:${PORTSDIR}/audio/id3lib \
-		vorbis.3:${PORTSDIR}/audio/libvorbis
+		fftw3.3:${PORTSDIR}/math/fftw3 \
+		tag.3:${PORTSDIR}/audio/taglib
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
