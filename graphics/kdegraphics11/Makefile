@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.21 1999/02/06 23:22:02 se Exp $
+# $Id: Makefile,v 1.22 1999/02/08 22:25:48 se Exp $
 #
 
 DISTNAME=	kdegraphics-1.1
@@ -27,5 +27,3 @@ CFLAGS+=	"-I${PREFIX}/include"
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>
-
-#CONFIGURE_ARGS+="--with-install-root=/data/kde"

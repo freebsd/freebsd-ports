@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.26 1999/02/06 23:22:00 se Exp $
+# $Id: Makefile,v 1.27 1999/02/08 22:25:47 se Exp $
 #
 
 DISTNAME=	kdegames-1.1
@@ -28,5 +28,3 @@ CONFIGURE_ENV= CXXFLAGS="$(CFLAGS)" \
 		INSTALL_SCRIPT="install -c -m 555"
 
 .include <bsd.port.mk>
-
-#CONFIGURE_ARGS+="--with-install-root=/data/kde"

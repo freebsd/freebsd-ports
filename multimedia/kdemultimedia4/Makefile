@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.28 1999/02/06 23:21:58 se Exp $
+# $Id: Makefile,v 1.29 1999/02/08 22:25:45 se Exp $
 #
 
 DISTNAME=	kdemultimedia-1.1
@@ -26,5 +26,3 @@ CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \
 USE_GMAKE=	yes
 
 .include <bsd.port.mk>
-
-#CONFIGURE_ARGS+="--with-install-root=/data/kde"
