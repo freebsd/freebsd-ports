@@ -1,9 +1,12 @@
+bin/amon
 bin/arlad
+bin/bos
 bin/fs
 bin/klog
 bin/mk_cmds
 bin/mount_xfs
 bin/pts
+bin/rxdebug
 bin/startarla
 bin/tokens
 bin/udebug
@@ -14,13 +17,15 @@ bin/vos
 bin/xfs.ko
 bin/xfs_makedev
 bin/ydr
-etc/CellServDB
+@unexec if cmp -s %D/etc/CellServDB %D/etc/CellServDB.default; then rm -f %D/etc/CellServDB; fi
 etc/CellServDB.default
-etc/SuidCells
-etc/ThisCell
+@unexec if cmp -s %D/etc/SuidCells %D/etc/SuidCells.default; then rm -f %D/etc/SuidCells; fi
+etc/SuidCells.default
+@unexec if cmp -s %D/etc/ThisCell %D/etc/ThisCell.default; then rm -f %D/etc/ThisCell; fi
 etc/ThisCell.default
-etc/arla.conf
+@unexec if cmp -s %D/etc/arla.conf %D/etc/arla.conf.default; then rm -f %D/etc/arla.conf; fi
 etc/arla.conf.default
+include/afs/cmd.h
 include/atypes.h
 include/auth.h
 include/base64.h
@@ -40,7 +45,7 @@ include/heap.h
 include/list.h
 include/lock.h
 include/log.h
-include/lwp_asm.h
+include/lwp.h
 include/parse_bytes.h
 include/parse_time.h
 include/parse_units.h
@@ -62,6 +67,8 @@ include/rx/rx_pkt.h
 include/rx/rx_queue.h
 include/rx/rx_trace.h
 include/rx/rx_user.h
+include/rx/rxgencon.h
+include/rx/rxkad.h
 include/ss/ss.h
 include/timer.h
 include/ubik.cs.h
@@ -69,11 +76,13 @@ include/ubik.ss.h
 include/vldb.cs.h
 include/vldb.h
 include/vldb.ss.h
+info/arla.info
 lib/libacl.a
 lib/libarlalib.a
 lib/libbosclient.a
 lib/libbosserver.a
 lib/libbufdir.a
+lib/libcmd.a
 lib/libkaclient.a
 lib/libkaserver.a
 lib/libko.a
@@ -90,3 +99,8 @@ lib/librxvolserver.a
 lib/libsl.a
 lib/libss.a
 lib/libutil.a
+sbin/rxperf
+@dirrm include/afs
+@dirrm include/rx
+@dirrm include/ss
+
