@@ -1,0 +1,16 @@
+This is the netscape web-surfboard.  Please read the file
+"/usr/local/lib/netscape/LICENSE" for the licensing terms.
+
+You could build the port as
+ % make [ NAVIGATOR=yes ] [ ENGLISH=yes ]
+and could install as
+ % make [ NAVIGATOR=yes ] [ ENGLISH=yes ] install
+
+options:
+ NAVIGATOR	build the browser ``Navigator-4.04''
+ ENGLISH	use English messages and menues
+
+Please read `/usr/local/share/examples/ja-*-4.04/setup.doc'.
+
+- SADA Kenji
+sada@e-mail.ne.jp
