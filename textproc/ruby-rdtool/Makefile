@@ -19,6 +19,7 @@ BUILD_DEPENDS=	ruby:${PORTSDIR}/lang/ruby \
 		${RUBY_SITEARCHLIBDIR}/strscan.so:${PORTSDIR}/devel/ruby-strscan \
 		${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse
 RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby \
+		${RUBY_SITELIBDIR}/racc/parser.rb:${PORTSDIR}/devel/ruby-racc-runtime \
 		${RUBY_SITEARCHLIBDIR}/strscan.so:${PORTSDIR}/devel/ruby-strscan \
 		${RUBY_SITELIBDIR}/optparse.rb:${PORTSDIR}/devel/ruby-optparse
 
