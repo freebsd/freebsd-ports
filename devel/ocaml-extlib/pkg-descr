@@ -1,0 +1,12 @@
+ExtLib is a project aiming at providing a complete - yet small -
+standard library for the OCaml programming langage. The purpose of
+this library is to add new functions to OCaml Standard Library
+modules, to modify some functions in order to get better performances
+or more safety (tail-recursive) but also to provide new modules which
+should be useful for the average OCaml programmer.
+
+ExtLib is not directly related to OCaml authors (INRIA) although this
+library can be seen as a proposal for inclusion in the official
+distribution.
+
+WWW: http://ocaml-lib.sourceforge.net/
