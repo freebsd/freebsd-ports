@@ -7,6 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -109,8 +110,8 @@ PLIST_SUB+=	WITH_XVMC=""
 PLIST_SUB+=	WITH_XVMC="@comment "
 .endif
 
-.if exists(${LOCALBASE}/lib/libtheora.so.0) || defined (WITH_LIBTHEORA)
-LIB_DEPENDS+=	theora.0:${PORTSDIR}/graphics/libtheora
+.if exists(${LOCALBASE}/lib/libtheora.so.1) || defined (WITH_LIBTHEORA)
+LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
 PLIST_SUB+=	WITH_LIBTHEORA=""
 .else
 PLIST_SUB+=	WITH_LIBTHEORA="@comment "
@@ -142,7 +143,7 @@ pre-everything::
 .else
 	@${ECHO_MSG} "===> WITH_ESOUND (esound support, enabled)"
 .endif
-.if !exists(${LOCALBASE}/lib/libtheora.so.0) && !defined(WITH_LIBTHEORA)
+.if !exists(${LOCALBASE}/lib/libtheora.so.1) && !defined(WITH_LIBTHEORA)
 	@${ECHO_MSG} "===> WITH_LIBTHEORA (libtheora support)"
 .else
 	@${ECHO_MSG} "===> WITH_LIBTHEORA (libtheora support, enabled)"

@@ -176,7 +176,7 @@
 
 PORTNAME=	vlc
 PORTVERSION=	0.8.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${PORTVERSION}/ \
 		http://ftp.snt.utwente.nl/pub/software/videolan/vlc/${PORTVERSION}/ \
@@ -275,7 +275,7 @@ WITH_FRIBIDI=	yes
 WITH_GGI=	yes
 .endif
 
-.if exists(${LOCALBASE}/lib/libtheora.so.0) && !defined(WITHOUT_LIBTHEORA)
+.if exists(${LOCALBASE}/lib/libtheora.so.1) && !defined(WITHOUT_LIBTHEORA)
 WITH_LIBTHEORA=	yes
 .endif
 
@@ -501,7 +501,7 @@ CONFIGURE_ARGS+=--disable-libmpeg2
 .endif
 
 .if defined(WITH_LIBTHEORA) && !defined(WITHOUT_LIBTHEORA)
-LIB_DEPENDS+=	theora.0:${PORTSDIR}/graphics/libtheora
+LIB_DEPENDS+=	theora.1:${PORTSDIR}/multimedia/libtheora
 CONFIGURE_ARGS+=--enable-theora
 .else
 CONFIGURE_ARGS+=--disable-theora
