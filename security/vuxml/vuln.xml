@@ -32,6 +32,33 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="77420ebb-0cf4-11d9-8a8a-000c41e2cdad">
+    <topic>mysql -- heap buffer overflow with prepared statements</topic>
+    <affects>
+      <package>
+	<name>mysql-server</name>
+	<name>mysql-client</name>
+	<range><ge>4.1.0</ge><le>4.1.4</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>There is a buffer overflow in the prepared statements API
+          (libmysqlclient) when a statement containing thousands of
+          placeholders is executed.</p>
+      </body>
+    </description>
+    <references>
+      <url>http://bugs.mysql.com/bug.php?id=5194</url>
+      <url>http://dev.mysql.com/doc/mysql/en/News-4.1.5.html</url>
+      <url>http://mysql.bkbits.net:8080/mysql-4.1/cset@1.1932.152.4</url>
+    </references>
+    <dates>
+      <discovery>2004-09-08</discovery>
+      <entry>2004-09-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e9f9d232-0cb2-11d9-8a8a-000c41e2cdad">
     <topic>mozilla --- security icon spoofing</topic>
     <affects>
