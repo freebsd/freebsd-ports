@@ -3,17 +3,16 @@
 # Date created:		02 Aug 1997
 # Whom:			joes@seaport.net
 #
-# $Id: Makefile,v 1.5 1998/08/30 15:41:25 steve Exp $
+# $Id: Makefile,v 1.6 1998/08/31 05:30:20 asami Exp $
 #
 
 DISTNAME=	qpage-3.2
 CATEGORIES=	comms
-MASTER_SITES=	http://www.qpage.org/download/
+#MASTER_SITES=	http://www.qpage.org/download/
+MASTER_SITES=	http://www.freebsd.org/~fenner/
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	joes@seaport.net
-
-BROKEN=		corrupted distfile
 
 MAN1=		qpage.1
 
