@@ -8,6 +8,7 @@
     SUBDIR += cal
     SUBDIR += cbb
     SUBDIR += gaddr
+    SUBDIR += gcal
     SUBDIR += genius
     SUBDIR += gnofin
     SUBDIR += gnomepim
