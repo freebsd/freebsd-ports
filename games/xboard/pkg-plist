@@ -2,6 +2,3 @@ bin/xboard
 bin/cmail
 bin/pxboard
 bin/zic2xpm
-@unexec install-info --delete %D/info/xboard.info %D/info/dir
-info/xboard.info
-@exec install-info %D/info/xboard.info %D/info/dir

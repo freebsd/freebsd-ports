@@ -6,23 +6,26 @@
 #
 
 PORTNAME=	xboard
-PORTVERSION=	4.2.6
+PORTVERSION=	4.2.7
 CATEGORIES=	games
 MASTER_SITES=	http://www.tim-mann.org/xboard/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	xboard
 
 MAINTAINER=	xaa+ports@timewasters.nl
-COMMENT=	X frontend for Crafty, GNUChess, Internet Chess Servers, or e-mail chess
+COMMENT=	X frontend for Crafty, GNUChess, Chess Servers, or e-mail chess
+
+BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
 
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 STRIP=
-MAN6=		xboard.6 cmail.6 zic2xpm.6
+MAN6=		xboard.6 zic2xpm.6
+INFO=		xboard
 
 .if defined(WITH_XAW3D)
-ONFIGURE_ARGS+= "--with-Xaw3d"
+CONFIGURE_ARGS+=	"--with-Xaw3d"
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 .endif
 
