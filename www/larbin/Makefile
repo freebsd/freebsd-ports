@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	larbin
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.sourceforge.net/pub/sourceforge/larbin/
 
 MAINTAINER=	hiten@uk.FreeBSD.org
 
-BROKEN=		"Does not compile"
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-
+USE_REINPLACE=	yes
 PATCH_WRKSRC=	${WRKSRC}/src
 MAKE_ARGS=	CXX=${CXX}
 
@@ -24,6 +24,9 @@ post-patch:
 	@${SED} -e 's,CC=,CC?=,' -e 's,CFLAGS=-O3,CFLAGS+=,' < \
 		${WRKSRC}/adns/Makefile > ${WRKSRC}/adns/Makefile.new
 	@${MV} ${WRKSRC}/adns/Makefile.new ${WRKSRC}/adns/Makefile
+	${REINPLACE_CMD} -e 's,/bin/bash,${LOCALBASE}/bin/bash,' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's,CFLAGS:=-O3,CFLAGS+=,g ; s,CXXFLAGS:=-Wall -O3,CXXFLAGS+=,g' \
+		${WRKSRC}/src/larbin.make
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/larbin ${PREFIX}/bin/
