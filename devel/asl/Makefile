@@ -3,7 +3,7 @@
 # Date created:         18 June 1997
 # Whom:                 Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.2 1997/07/14 07:45:30 tg Exp $
+# $Id: Makefile,v 1.3 1998/06/25 14:06:51 tg Exp $
 #
 
 DISTNAME=       asl-1.41r7
@@ -13,6 +13,8 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 MASTER_SITE_SUBDIR=	devel/lang/assemblers
 
 MAINTAINER=	ports@FreeBSD.org
+
+BROKEN=		manpages
 
 MAN1=	asl.1 p2bin.1 p2hex.1 pbind.1 plist.1
 
