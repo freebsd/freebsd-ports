@@ -9,16 +9,16 @@ PORTNAME?=	bjfiltercom
 PORTVERSION?=	1.0
 CATEGORIES=	print linux
 MASTER_SITES=	ftp://www.canon-sales.co.jp/pub/driver/printer/BJ/linux/
-DISTFILES=	${RPMFILES}
+DISTFILES=	${RPMFILE}
 .if !defined(SLAVE_PORT)
 DISTFILES+=	${DOC_DISTFILES}
 .endif
+EXTRACT_ONLY=	${RPMFILE}
 
 MAINTAINER=	taoka@FreeBSD.org
 
-BUILD_DEPENDS=  rpm:${PORTSDIR}/misc/rpm
+BUILD_DEPENDS=  rpm2cpio:${PORTSDIR}/misc/rpm2cpio
 .if defined(SLAVE_PORT)
-BIN_FILES=	bjpsprn
 RUN_DEPENDS=	stsmon:${PORTSDIR}/print/bjfiltercom \
 		pstops:${PORTSDIR}/print/psutils-${PAPERSIZE}
 .else
@@ -30,47 +30,38 @@ RUN_DEPENDS=	/compat/linux/lib/libc.so.6:${PORTSDIR}/emulators/linux_base \
 BIN_FILES=	bjprn stsmon printui lgmon bjfilter
 .endif
 
+EXTRACT_CMD=	rpm2cpio
+EXTRACT_BEFORE_ARGS=
+EXTRACT_AFTER_ARGS=	| cpio -id --quiet
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 DIST_SUBDIR=	bjfilter
 PLIST=		${.CURDIR}/pkg-plist
 COMMENT=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 MD5_FILE=	${.CURDIR}/distinfo
-EXTRACT_ONLY=
 ONLY_FOR_ARCHS=	i386
-.if !defined(SLAVE_PORT)
-NO_BUILD=	yes
-.endif
 NO_FILTER_SHLIBS=	yes
 NO_MTREE=	yes
-
-RPMFILES=	${PORTNAME}-${PORTVERSION}-0.i386.rpm
+RPMFILE=	${PORTNAME}-${PORTVERSION}-0.i386.rpm
 .if defined(SLAVE_PORT)
+BIN_FILES=	bjpsprn
 FILTER=		${FILESDIR}/filter
 PAPERSIZE?=	a4
+.else
+NO_BUILD=	yes
 .endif
 DOC_DIR=	${PREFIX}/share/doc/bjfiltercom-${PORTVERSION}
 HTML_DIR=	${DOC_DIR}/html
 DOC_DISTFILES=	readme.tar.gz instruction.tar.gz faq.tar.gz
-DBPATH=		/var/lib/rpm
-
-# For "rpm -U"
-RPMFLAGS=	--noscripts \
-		--ignoreos --root /compat/linux --dbpath ${DBPATH} \
-		--nodeps --replacepkgs --replacefiles -vv
-# For "rpm -e"
-RM_RPMFLAGS=	--noscripts --root /compat/linux --dbpath ${DBPATH} \
-		--nodeps
-RPMDIR=		${DISTDIR}/${DIST_SUBDIR}
-PLIST_SUB=	PORTVERSION=${PORTVERSION} RM_RPMFLAGS="${RM_RPMFLAGS}"
 
 do-build:
 	${SED}	-e 's,%%PRTYPE%%,${PRTYPE},' \
 		${FILTER} > ${WRKDIR}/filter${PRTYPE}
 
 do-install:
-	for R in ${RPMFILES}; do \
-		rpm -U ${RPMFLAGS} ${RPMDIR}/$$R; \
-	done
+	cd ${WRKDIR}; \
+	${TAR} cf - usr | ${TAR} xfp - -C /compat/linux
 .for i in ${BIN_FILES}
 	${MV} /compat/linux/usr/local/bin/$i ${PREFIX}/bin
 .endfor
