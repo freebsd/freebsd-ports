@@ -1,0 +1,8 @@
+--- devtools/OS/FreeBSD	Wed Jan 10 21:44:08 2001
++++ devtools/OS/FreeBSD	Thu Feb 14 08:59:38 2002
+@@ -5,4 +5,5 @@
+ define(`confLD', `cc')
+ define(`confMTLDOPTS', `-pthread')
++define(`confMTCCOPTS', `-pthread')
+ define(`confLDOPTS_SO', `-shared')
+ define(`confCCOPTS_SO', `-fPIC')
