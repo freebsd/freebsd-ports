@@ -22,7 +22,6 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd \
 		freetype.9:${PORTSDIR}/print/freetype2
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
-CONFLICTS=	slffea-* TenDRA-*
 
 FREETYPE_CONFIG?=	${LOCALBASE}/bin/freetype-config
 
