@@ -1,5 +1,6 @@
 streamtuner-local is a streamtuner plugin providing access to your
-local music repository. It supports ID3 and Vorbis tags.
+local music collection. It can read and modify ID3 and Vorbis
+metadata.
 
 WWW: http://www.nongnu.org/streamtuner/
 
