@@ -10,3 +10,4 @@ share/doscmd/emsdriv.sys
 share/doscmd/redir.com
 %%X11%%@dirrm share/doscmd/fonts
 @dirrm share/doscmd
+@dirrm %%DOCSDIR%%
