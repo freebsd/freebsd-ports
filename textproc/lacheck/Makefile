@@ -9,7 +9,7 @@ PORTNAME=	lacheck
 PORTVERSION=	1.26
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.dina.kvl.dk/pub/Staff/Per.Abrahamsen/mirror/ftp/lacheck/ \
-		ftp://ftp.sunsite.dk/pub/text/lacheck/
+		http://ftp.agh.edu.pl/pub/tex/support/lacheck/
 
 MAINTAINER=	uwe.pierau@tu-clausthal.de
 COMMENT=	A tool for finding common mistakes in LaTeX documents
