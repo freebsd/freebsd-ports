@@ -3,7 +3,7 @@
 # Date created:		24 April 1999
 # Whom:			Jun Kuriyama <kuriyama@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/25 00:37:57 kuriyama Exp $
 #
 
 DISTNAME=	asclock-xlib-2.0.10
@@ -11,6 +11,8 @@ CATEGORIES=	x11-clocks afterstep windowmaker
 MASTER_SITES=	http://www.asclock.org/tar/
 
 MAINTAINER=	kuriyama@FreeBSD.ORG
+
+LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 HAS_CONFIGURE=	YES
 WRKSRC=		${WRKDIR}/asclock-xlib
