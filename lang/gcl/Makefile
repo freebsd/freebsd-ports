@@ -3,13 +3,14 @@
 # Date created:         Wed Feb  8 01:49:11  1995
 # Whom:                 hsu
 #
-# $Id: Makefile,v 1.1.1.1 1995/02/12 21:10:01 hsu Exp $
+# $Id: Makefile,v 1.2 1995/04/01 12:46:51 jkh Exp $
 #
 
 DISTNAME=       gcl-1.1
-MASTER_SITES=   ftp://ftp.cli.com/pub/gcl/ ftp://math.utexas.edu/pub/gcl/
 CATEGORIES+=	languages
+MASTER_SITES=   ftp://ftp.cli.com/pub/gcl/ ftp://math.utexas.edu/pub/gcl/
 EXTRACT_SUFX=	.tgz
+
 MAKEFILE=	makefile
 
 INSTALL_COOKIE=	${WRKDIR}/.install_done

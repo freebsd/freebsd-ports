@@ -1,7 +1,17 @@
+# New ports collection makefile for:    p2c
+# Version required:     1.21alpha-07.Dec.93
+# Date created:         4 October 1994
+# Whom:                 jmz
+#
+# $Id$
+#
+
 DISTNAME=	p2c-1.21alpha-07.Dec.93
-DISTFILES=	p2c-1.21alpha2.tar.gz
-MASTER_SITES=	ftp://src.doc.ic.ac.uk/gnu/hurd/
+PKGNAME=	p2c-1.21a
 CATEGORIES+=	languages
+MASTER_SITES=	ftp://src.doc.ic.ac.uk/gnu/hurd/
+DISTFILES=	p2c-1.21alpha2.tar.gz
+
 MAINTAINER=	jmz@FreeBSD.org
 
 pre-install:

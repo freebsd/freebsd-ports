@@ -5,9 +5,11 @@
 #
 
 DISTNAME=       mit-scheme
-MASTER_SITES=   ftp://freefall.cdrom.com/pub/FreeBSD/LOCAL_PORTS/
+PKGNAME=	mit-scheme-7.3
 CATEGORIES+=	languages
+MASTER_SITES=   ftp://freefall.cdrom.com/pub/FreeBSD/LOCAL_PORTS/
 DISTFILES=	scheme-microcode+dist-7.3-freebsd.tgz
+
 MAINTAINER= 	jmacd@uclink.berkeley.edu
 
 .include <bsd.port.mk>

@@ -1,9 +1,18 @@
+# New ports collection makefile for:    pfe
+# Version required:     0.9.9
+# Date created:         23 November 1994
+# Whom:                 mr
+#
+# $Id$
+#
+
 #This is pfe Version 0.9.9
 #By mr
 DISTNAME=	pfe099
+PKGNAME=	pfe-0.9.9
 DISTFILES=	pfe-0.9.9.tar.gz
-MASTER_SITES=	ftp://sunsite.unc.edu/pub/languages/forth/
 CATEGORIES+=	languages
+MASTER_SITES=	ftp://sunsite.unc.edu/pub/languages/forth/
 
 pre-install:
 	@mkdir -p ${PREFIX}/bin
