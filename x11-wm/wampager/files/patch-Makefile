@@ -1,0 +1,24 @@
+--- Makefile.orig	Sat Jan 11 20:20:42 2003
++++ Makefile	Sat Jan 11 20:21:36 2003
+@@ -1,17 +1,13 @@
+ CC	=	gcc
+-INC	=	
++INC	=	-I/usr/X11R6/include
+ LIBS	=	-L/usr/X11R6/lib -lX11 -lXpm -lXext
+ SRCS	=	wampager.c
+ OBJS	=	wampager.o
+-CFLAGS	=	-Wall
+ 
+ all: wampager
+ 
+ clean:
+-	rm -f $(OBJS) wampager
++	rm -f ${OBJS} wampager
+ 
+-wampager : $(SRCS)
+-		$(CC) $(CFLAGS) $(SRCS) $(INC) -o wampager $(LIBS)
+-
+-install : all
+-		install -c -s wampager /usr/local/bin
++wampager : ${SRCS}
++		${CC} ${CFLAGS} ${SRCS} ${INC} -o wampager ${LIBS}

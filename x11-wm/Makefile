@@ -89,6 +89,7 @@
     SUBDIR += vtwm
     SUBDIR += w9wm
     SUBDIR += waimea
+    SUBDIR += wampager
     SUBDIR += windowmaker
     SUBDIR += wm2
     SUBDIR += wmakerconf
