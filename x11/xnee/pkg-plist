@@ -1,2 +1,5 @@
 bin/xnee
 lib/libxnee.a
+@unexec install-info --delete %D/info/xnee.info %D/info/dir
+info/xnee.info
+@exec install-info %D/info/xnee.info %D/info/dir

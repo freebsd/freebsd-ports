@@ -1,0 +1,13 @@
+--- doc/xnee.texi.rig	Fri Oct 25 05:08:09 2002
++++ doc/xnee.texi	Sat Oct 26 08:57:08 2002
+@@ -2,6 +2,10 @@
+ @c %**start of header
+ @setfilename xnee.info
+ @settitle Xnee Manual 0.1
++@dircategory Miscellaneous
++@direntry
++* Xnee: (xnee).		X events recorder and player
++@end direntry
+ @setchapternewpage odd
+ @c %**end o
+ 
