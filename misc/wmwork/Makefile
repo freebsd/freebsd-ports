@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmwork
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	misc windowmaker afterstep
 MASTER_SITES=	http://www.godisch.de/debian/wmwork/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
