@@ -84,6 +84,7 @@
     SUBDIR += epstool
     SUBDIR += eterm-bg
     SUBDIR += evas
+    SUBDIR += evince
     SUBDIR += evolvotron
     SUBDIR += exifprobe
     SUBDIR += exiftags
