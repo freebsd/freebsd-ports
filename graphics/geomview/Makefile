@@ -4,7 +4,7 @@
 # Whom:					fenner
 
 DISTNAME=	geomview-1.6.1
-CATEGORIES+=	graphics
+CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.geom.umn.edu/pub/software/geomview/	\
 		ftp://ftp-sfb288.math.tu-berlin.de/pub/geomview/
 DISTFILES=	geomview-1.6.1-src.tar.gz
