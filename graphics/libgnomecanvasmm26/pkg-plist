@@ -1,0 +1,50 @@
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/affinetrans.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/bpath.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/canvas.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/ellipse.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/group.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/init.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/item.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/line.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/path-def.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/pixbuf.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/point.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/polygon.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/private/bpath_p.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/private/canvas_p.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/private/ellipse_p.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/private/group_p.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/private/item_p.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/private/line_p.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/private/path-def_p.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/private/pixbuf_p.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/private/polygon_p.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/private/rect-ellipse_p.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/private/rect_p.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/private/rich-text_p.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/private/shape_p.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/private/text_p.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/private/widget_p.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/properties.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/rect-ellipse.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/rect.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/rich-text.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/shape.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/text.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/widget.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm/wrap_init.h
+include/libgnomecanvasmm-2.0/libgnomecanvasmm.h
+lib/libgnomecanvasmm-2.0/include/libgnomecanvasmmconfig.h
+lib/libgnomecanvasmm-2.0/proc/m4/convert.m4
+lib/libgnomecanvasmm-2.0/proc/m4/convert_libgnomecanvasmm.m4
+lib/libgnomecanvasmm-2.0.a
+lib/libgnomecanvasmm-2.0.so
+lib/libgnomecanvasmm-2.0.so.1
+libdata/pkgconfig/libgnomecanvasmm-2.0.pc
+@dirrm lib/libgnomecanvasmm-2.0/include
+@dirrm lib/libgnomecanvasmm-2.0/proc/m4
+@dirrm lib/libgnomecanvasmm-2.0/proc
+@dirrm lib/libgnomecanvasmm-2.0
+@dirrm include/libgnomecanvasmm-2.0/libgnomecanvasmm/private
+@dirrm include/libgnomecanvasmm-2.0/libgnomecanvasmm
+@dirrm include/libgnomecanvasmm-2.0
