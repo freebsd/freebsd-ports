@@ -1,0 +1,12 @@
+diff -ur libtemplate/util/strerror.c libtemplate/util/strerror.c
+--- libtemplate/util/strerror.c	Tue Oct 10 19:16:19 1995
++++ libtemplate/util/strerror.c	Thu Dec 21 10:49:13 1995
+@@ -60,7 +60,7 @@
+ int n;
+ {
+ 	extern int sys_nerr;
+-	extern char *sys_errlist[];
++	extern __const char *__const sys_errlist[];
+ 
+ 	if (n < 0 || n >= sys_nerr)
+ 		return (NULL);
