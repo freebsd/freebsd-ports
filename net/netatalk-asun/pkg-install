@@ -1,0 +1,42 @@
+#!/bin/sh
+
+# Check whether config files exist already, and copy the distribution ones
+# if not. Warn the user if the existing ones differ from the distribution,
+# so changes in the distribution can be merged.
+
+checkfile() {
+	diff -bBqw $1 $1.dist >/dev/null 2>&1
+	case $? in
+		0)	# config file exists, but is the same
+			;;
+		1)	# config file exists and differs
+			echo "** Make sure $1 is in sync with this version"; 
+			echo "   of the port.  See $1.dist for details."; 
+			;;
+		*)	# no config file exists, copy it
+			install -c -m 644 $1.dist $1
+			;;
+	esac
+}
+
+case $2 in
+	POST-INSTALL)
+		cd ${PKG_PREFIX}
+		checkfile ${PKG_PREFIX}/etc/AppleVolumes.default
+		checkfile ${PKG_PREFIX}/etc/AppleVolumes.system
+		checkfile ${PKG_PREFIX}/etc/afpd.conf
+
+		# install man page aliases
+		cd man
+		if [ -f man1/megatron.1.gz ]; then
+			MANEXT=.gz
+		fi
+		for i in hqx2bin macbinary single2bin unbin unhex unsingle; do
+			ln -f man1/megatron.1${MANEXT} man1/$i.1${MANEXT}
+		done
+		for i in nbplkup nbprgstr nbpunrgstr; do
+			ln -f man1/nbp.1${MANEXT} man1/$i.1${MANEXT}
+		done
+		ln -f man1/pap.1${MANEXT} man1/papstatus.1${MANEXT}
+		;;
+esac

@@ -1,0 +1,41 @@
+--- sys/freebsd/Makefile.orig	Fri Sep 18 05:19:27 1998
++++ sys/freebsd/Makefile	Tue Nov 24 01:22:24 1998
+@@ -23,7 +23,8 @@
+ FRC:
+ 
+ install :
+-	-mkdir ${DESTDIR} ${SBINDIR} ${BINDIR} ${ETCDIR} ${LIBDIR}
++	mkdir -p ${DESTDIR} ${SBINDIR} ${BINDIR} ${ETCDIR} ${LIBDIR} \
++		${RESDIR}/examples/netatalk ${ETCDIR}/rc.d
+ 	for i in ${ALL}; \
+ 	    do (cd $$i; ${MAKE} ${MFLAGS} CC="${CC}" \
+ 		ADDLIBS="${ADDLIBS}" DEFS="${DEFS}" OPTOPTS="${OPTOPTS}" \
+@@ -32,17 +33,21 @@
+ 		AFSDIR="${AFSDIR}" KRBDIR="${KRBDIR}" AFPLIBS="${AFPLIBS}" \
+ 		INSTALL="${INSTALL}" $@); \
+ 	done
+-	rm -f ${ETCDIR}/rc.atalk
+ 	sed -e s@:DESTDIR:@${DESTDIR}@ -e s@:SBINDIR:@${SBINDIR}@ \
+ 		-e s@:BINDIR:@${BINDIR}@ -e s@:RESDIR:@${RESDIR}@ \
+ 		-e s@:ETCDIR:@${ETCDIR}@ -e s@:LIBDIR:@${LIBDIR}@ \
+ 		-e s@:INCDIR:@${INCDIR}@ \
+-	    < ../../rc.atalk.bsd > ${ETCDIR}/rc.atalk
+-	@echo
+-	@echo "Install is done.  Don't forget to add lines from"
+-	@echo "services.atalk to /etc/services and to call rc.atalk"
+-	@echo "in /etc/rc.  See README and README.FREEBSD for more"
+-	@echo "information."
++	    < ../../rc.atalk.freebsd > ${ETCDIR}/rc.d/netatalk.sh
++	chmod +x ${ETCDIR}/rc.d/netatalk.sh
++	cp ../../config/AppleVolumes.default ${ETCDIR}/AppleVolumes.default.dist
++	cp ../../config/AppleVolumes.system ${ETCDIR}/AppleVolumes.system.dist
++	sed -e s@:DESTDIR:@${DESTDIR}@ -e s@:SBINDIR:@${SBINDIR}@ \
++		-e s@:BINDIR:@${BINDIR}@ -e s@:RESDIR:@${RESDIR}@ \
++		-e s@:ETCDIR:@${ETCDIR}@ -e s@:LIBDIR:@${LIBDIR}@ \
++		-e s@:INCDIR:@${INCDIR}@ \
++	    <../../config/afpd.conf >${ETCDIR}/afpd.conf.dist
++	cp ../../config/atalkd.conf ../../config/papd.conf \
++		${RESDIR}/examples/netatalk
+ 
+ clean :
+ 	for i in ${ALL}; \

@@ -1,0 +1,41 @@
+--- Makefile.orig	Mon Oct 13 08:41:56 1997
++++ Makefile	Tue Sep  8 01:44:22 1998
+@@ -1,15 +1,15 @@
+ # Root of installation. Subdirectories will be ${DESTDIR}/etc,
+ # ${DESTDIR}/bin, and ${DESTDIR}/lib.
+-DESTDIR=/usr/local/atalk
++DESTDIR=${PREFIX}
+ 
+ # for system-level binaries
+-SBINDIR=$(DESTDIR)/etc
++SBINDIR=$(DESTDIR)/libexec
+ # for user-level binaries
+ BINDIR=$(DESTDIR)/bin
+ # for program libraries (*.a)
+ LIBDIR=$(DESTDIR)/lib
+ # for machine-independent resources (pagecount.ps, etc.)
+-RESDIR=$(DESTDIR)/etc
++RESDIR=$(DESTDIR)/share
+ # for configuration files (AppleVolumes.system, etc.)
+ ETCDIR=$(DESTDIR)/etc
+ # for include files
+@@ -29,16 +29,16 @@
+ # Location of the DES library and include files. Comment this out if you
+ # don't want Randnum Exchange and 2-Way Randnum Exchange as allowable UAMs 
+ # for afpd. We expect libdes.a in $DESDIR/lib and des.h in $DESDIR/include.
+-DESDIR=/usr/local
++DESDIR=/usr
+ 
+ # Location of the tcp wrapper library and include files. Comment this out
+ # if you don't want tcp wrapper support. having tcp wrapper support is
+ # highly recommended.
+-TCPWRAPDIR=/usr
++TCPWRAPDIR=${PREFIX}
+ 
+ # Location of PAM support library and include files. Comment this out
+ # if you don't want to enable PAM support
+-PAMDIR=/usr
++#PAMDIR=/usr
+ 
+  
+ # Location of the AFS and Kerberos libraries and include files.  Uncomment

@@ -1,0 +1,94 @@
+--- config/afpd.conf.orig	Sat May  2 05:01:11 1998
++++ config/afpd.conf	Tue Nov 24 04:05:13 1998
+@@ -1,33 +1,59 @@
+ #
+-# Format of lines in this file:
++# CONFIGURATION FOR AFPD
+ #
+-#    server [ -tcp ] [ -ddp ] [ -guest ] [ -loginmesg message ] ...
+-#
+-# To specify a line with the default server name, use a "-" as the
+-# server name.
+-#
+-# There are a whole plethora of options available. Here they are for
+-# your edification:
+-#	toggles (-no<option> turns that option off; -<option> turns
+-#		it on):
+-#		transports: tcp, ddp, transall
+-#		debug: nodebug (can only turn off debug)
+-#		auth: cleartxt, afskrb, krbiv, guest, randnum, rand2num, 
+-#                     authall (doesn't include randnum/rand2num)
+-#               passwd: savepassword, setpassword
+-#		user volumes: uservolfirst, 
+-#		   	      nouservol (don't look for ~/.AppleVolumes)
+-#		
+-#
+-#	options w/ arguments (-<option> <argument>):
+-#	        defaultvol, systemvol, loginmesg, guestname 
+-#	        address (binds a server to a specific address)
+-#		port (has to be specified if more than one tcp server
+-#                    is to be served)
+-#		
+-# Order of precedence:
+-#	options in afpd.conf > command-line options > built-in options
++# Each line defines a virtual server that should be available.
++# Empty lines and lines beginning with `#' are ignored.
++# Options in this file will override both compiled-in defaults
++# and command line options.
++#
++# Format:
++#  - [options]	              to specify options for the default server
++#  "Server name" [options]   to specify an additional server
++#
++# The following options are available:
++#   Transport Protocols:
++#     -[no]tcp       Make AFP-over-TCP [not] available
++#     -[no]ddp       Make AFP over AppleTalk [not] available
++#     -transall      Make both available (default)
++#
++#   Authentication Methods:
++#     -[no]cleartxt  [Don't] Allow logins with password transmitted 
++#                    in the clear (same as -C on command line)
++#     -[no]guest     [Don't] Allow guest logins (will run as nobody/nogroup)
++#                    (same as -G on command line on command line)
++#     -[no]randnum
++#     -[no]rand2num  [Don't] Allow Random Number or Two-Way Random Number
++#                    exchange for transmitting the password (see below)
++#     -authall       Allow all of the above
++#
++#   Password Options:
++#     -[no]savepassword   [Don't] Allow clients to save password locally
++#
++#   AppleVolumes files:
++#     -defaultvol         Specifies path to AppleVolumes.default file
++#                         (default /usr/local/etc/AppleVolumes.default,
++#                         same as -f on command line)
++#     -systemvol          Specifies path to AppleVolumes.system file
++#                         (default /usr/local/etc/AppleVolumes.system,
++#                         same as -s on command line)
++#     -[no]uservolfirst   [Don't] read the user's ~/AppleVolumes or
++#                         ~/.AppleVolumes before reading
++#                         /usr/local/etc/AppleVolumes.default
++#                         (same as -u on command line)
++#     -[no]uservol        [Don't] Read the user's volume file
++#
++#   Miscellaneous:
++#     -guestname "user"   Specifies the user name for the guest login
++#                         (default "nobody", same as -g on command line)
++#     -loginmesg "Message"  Client will display "Message" upon logging in
++#                         (no default, same as -l "Message" on command line)
++#     -address            Specifies the IP address the server should respond
++#                         to (default is the first IP address of the system)
++#     -port               Specifies the TCP port the server should respond
++#                         to (default is 548)
++#     -nodebug            Switch off debugging
+ #
++
+ # Some examples:
+ #
+ #	The simplest case is to not have an afpd.conf.
+@@ -45,4 +71,3 @@
+ #		"Guest Volume" -nocleartxt -loginmesg "Welcome guest!"
+ #		"User Volume" -noguest -port 12000
+ #		"special" -notcp -defaultvol <path> -systemvol <path>
+-#

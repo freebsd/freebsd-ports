@@ -1,0 +1,11 @@
+--- man/man8/papd.8.orig	Mon Sep  7 23:26:29 1998
++++ man/man8/papd.8	Mon Sep  7 23:26:47 1998
+@@ -30,7 +30,7 @@
+ .LP
+ .B papd
+ is typically started at boot time, out of
+-.B /etc/rc.
++.B :ETCDIR:/etc/rc.d/netatalk.sh .
+ It first reads from its configuration file,
+ .BR :ETCDIR:/papd.conf .
+ The file is in the same format as

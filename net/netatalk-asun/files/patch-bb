@@ -1,0 +1,11 @@
+--- man/man8/atalkd.8.orig	Mon Sep  7 23:25:57 1998
++++ man/man8/atalkd.8	Mon Sep  7 23:26:21 1998
+@@ -19,7 +19,7 @@
+ .BR ping (8)).
+ .B atalkd
+ is typically started at boot time, out of
+-.B /etc/rc.
++.B :ETCDIR:/rc.d/netatalk.sh .
+ It first reads from it's configuration file,
+ .BR :ETCDIR:/atalkd.conf .
+ If there is no configuration file,
