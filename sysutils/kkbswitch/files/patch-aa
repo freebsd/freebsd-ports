@@ -1,8 +1,0 @@
---- kkbswitch.upd/kkbswitch_update_14_icons.old	Tue May 18 13:40:41 2004
-+++ kkbswitch.upd/kkbswitch_update_14_icons	Thu May 20 15:43:17 2004
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/bin/sh
-
- # update Icons section
- if [ -z "$DISPLAY" ]; then
