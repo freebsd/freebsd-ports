@@ -8534,7 +8534,6 @@ uisp		ports/devel/uisp
 uk-aspell	ports/ukrainian/aspell
 uk-gd		ports/ukrainian/gd
 uk-kde3-i18n	ports/ukrainian/kde3-i18n
-uk-kde3-i18n-uk	ports/ukrainian/kde3-i18n-uk
 uk-monacofonts	ports/ukrainian/monacofonts
 uk-phone	ports/misc/uk-phone
 uk-pine.language	ports/ukrainian/pine.language
