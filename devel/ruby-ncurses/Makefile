@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ncurses
-PORTVERSION=	0.4
+PORTVERSION=	0.6
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://download.berlios.de/ncurses-ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
