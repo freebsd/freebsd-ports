@@ -1,9 +1,17 @@
 
 $FreeBSD$
 
---- aprez/aprez.c.orig	Sun Feb  1 22:31:50 2004
-+++ aprez/aprez.c	Sun Feb  1 22:31:21 2004
-@@ -484,18 +484,18 @@
+--- aprez/aprez.c.orig
++++ aprez/aprez.c
+@@ -266,6 +266,7 @@
+ 			    SGBtot[3][0], SGBtot[3][1], SGBtot[3][2],
+ 			    SGBtot[3][3]);
+ dontdothis:
++			1;
+ 		}  /* if (!ass_turn (game)) */
+ 
+ 		/* Take someone's turn... */
+@@ -484,18 +485,18 @@
  		tcsetattr (fileno(stdin), TCSANOW, &term);
  	}
  	if (i == 'h') {

@@ -35,10 +35,6 @@ DOCFILES=	aprez.txt libass.txt president.txt prez.txt xprez.txt
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/tvp
