@@ -21,6 +21,7 @@
     SUBDIR += p5-Business-OnlinePayment-LinkPoint
     SUBDIR += p5-Business-OnlinePayment-MerchantCommerce
     SUBDIR += p5-Business-OnlinePayment-Network1Financial
+    SUBDIR += p5-Business-OnlinePayment-OCV
     SUBDIR += p5-Business-OnlinePayment-PayConnect
     SUBDIR += p5-Business-OnlinePayment-PaymentsGateway
     SUBDIR += p5-Business-OnlinePayment-SurePay
