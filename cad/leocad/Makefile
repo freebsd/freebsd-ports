@@ -8,9 +8,9 @@
 PORTNAME=	leocad
 PORTVERSION=	0.73
 CATEGORIES=	cad
-MASTER_SITES=	http://www.leocad.org/files/ \
-		http://people.freebsd.org/~scottl/
-DISTFILES=	leocad-${PORTVERSION:S/.p/pre/}.tgz pieces.zip
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	arved
+DISTFILES=	leocad-${PORTVERSION:S/.p/pre/}.tgz leocad-pieces-20030330.zip
 EXTRACT_ONLY=	leocad-${PORTVERSION:S/.p/pre/}.tgz
 
 MAINTAINER=	dyeske@yahoo.com
@@ -20,20 +20,23 @@ BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
+USE_X_PREFIX=	yes
+USE_MESA=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
-USE_MESA=	yes
-USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 
 MAKE_ENV+=	CXX=${CXX}
 
 post-extract:
-	@unzip -q -o ${DISTDIR}/pieces.zip -d ${WRKDIR}/pieces
+	@unzip -q -o ${DISTDIR}/leocad-pieces-20030330.zip -d ${WRKDIR}/pieces
 
 post-patch:
-	@${PERL} -pi -e 's,%%LOCALBASE%%,${LOCALBASE},g; \
-		s,%%PTHREAD_CFLAGS%%,${PTHREAD_CFLAGS},; \
-		s,%%PTHREAD_LIBS%%,${PTHREAD_LIBS},' ${WRKSRC}/config.mk
+	@${REINPLACE_CMD} -e \
+		's|%%LOCALBASE%%|${LOCALBASE}|g; \
+		s|%%PTHREAD_CFLAGS%%|${PTHREAD_CFLAGS}|; \
+		s|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
+		${WRKSRC}/config.mk
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/leocad ${PREFIX}/bin
