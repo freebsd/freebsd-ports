@@ -6,10 +6,12 @@ share/doc/ssystem/LICENSE
 share/doc/ssystem/README
 share/doc/ssystem/README.3D
 share/doc/ssystem/TODO
+share/ssystem/asteroid.jpg
 share/ssystem/callisto.jpg
 share/ssystem/charon.jpg
 share/ssystem/dione.jpg
 share/ssystem/earth.jpg
+share/ssystem/earthcld.jpg
 share/ssystem/europa.jpg
 share/ssystem/ganymede.jpg
 share/ssystem/io.jpg
@@ -22,6 +24,7 @@ share/ssystem/pluto.jpg
 share/ssystem/rhea.jpg
 share/ssystem/satrings.jpg
 share/ssystem/saturn.jpg
+share/ssystem/splash.jpg
 share/ssystem/stars.dat
 share/ssystem/sun.jpg
 share/ssystem/tethys.jpg
