@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	Pg
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.1.1
 PORTEPOCH=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	ftp://gborg.postgresql.org/pub/pgperl/stable/
 PKGNAMEPREFIX=	p5-
-DISTFILES=	pgperl-${PORTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	postgresql
 
 MAINTAINER=	girgen@pingpong.net
