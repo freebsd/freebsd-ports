@@ -37,7 +37,8 @@ PREFIX?=	${X11BASE}
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} > 500023
-LIB_DEPENDS+=	gmp.3:${PORTSDIR}/math/libgmp-freebsd
+BUILD_DEPENDS+=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp-freebsd
+RUN_DEPENDS+=	${LOCALBASE}/include/gmp.h:${PORTSDIR}/math/libgmp-freebsd
 .endif
 
 .if ${XFREE86_VERSION} == 3
