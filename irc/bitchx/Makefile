@@ -14,7 +14,6 @@ MASTER_SITES=	ftp://ftp.bitchx.com/pub/BitchX/source/ \
 MAINTAINER=	cj@vallcom.net
 
 WRKSRC=		${WRKDIR}/BitchX
-FORBIDDEN=	"Buffer overflow in bugtraq"
 
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes
