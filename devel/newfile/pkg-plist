@@ -1,73 +1,74 @@
-%%PORTDOCS%%share/doc/newfile/newfile.html
-%%PORTDOCS%%share/doc/newfile/rdoc/classes/Cond.html
-%%PORTDOCS%%share/doc/newfile/rdoc/classes/FileFinder.html
-%%PORTDOCS%%share/doc/newfile/rdoc/classes/FileProcessor.html
-%%PORTDOCS%%share/doc/newfile/rdoc/classes/Installed.html
-%%PORTDOCS%%share/doc/newfile/rdoc/classes/NewfileOpts.html
-%%PORTDOCS%%share/doc/newfile/rdoc/classes/OptionError.html
-%%PORTDOCS%%share/doc/newfile/rdoc/classes/ParseError.html
-%%PORTDOCS%%share/doc/newfile/rdoc/classes/ParseMsg.html
-%%PORTDOCS%%share/doc/newfile/rdoc/classes/ParseWarning.html
-%%PORTDOCS%%share/doc/newfile/rdoc/classes/SyTab.html
-%%PORTDOCS%%share/doc/newfile/rdoc/created.rid
-%%PORTDOCS%%share/doc/newfile/rdoc/files/fileproc_rb.html
-%%PORTDOCS%%share/doc/newfile/rdoc/files/newfile_rb.html
-%%PORTDOCS%%share/doc/newfile/rdoc/files/sytab_rb.html
-%%PORTDOCS%%share/doc/newfile/rdoc/fr_class_index.html
-%%PORTDOCS%%share/doc/newfile/rdoc/fr_file_index.html
-%%PORTDOCS%%share/doc/newfile/rdoc/fr_method_index.html
-%%PORTDOCS%%share/doc/newfile/rdoc/index.html
-%%PORTDOCS%%share/doc/newfile/rdoc/rdoc-style.css
-share/newfile/fileproc.rb
-share/newfile/licenses/Artistic@Artistic
-share/newfile/licenses/Artistic@README
-share/newfile/licenses/Artistic@license.inc
-share/newfile/licenses/BSD@LICENSE
-share/newfile/licenses/BSD@README
-share/newfile/licenses/BSD@license.inc
-share/newfile/licenses/GPL@COPYING
-share/newfile/licenses/GPL@README
-share/newfile/licenses/GPL@license.inc
-share/newfile/licenses/default@license.inc
-share/newfile/licenses/minimal@LICENSE
-share/newfile/licenses/minimal@README
-share/newfile/licenses/minimal@license.inc
-share/newfile/licenses/no@license.inc
-share/newfile/newfile.rb
-share/newfile/projects/auto@Makefile.am
-share/newfile/projects/auto@Makefile.cvs
-share/newfile/projects/auto@Mk^alane.pod.mk
-share/newfile/projects/auto@Mk^alane.rd.mk
-share/newfile/projects/auto@Mk^alane.tex.mk
-share/newfile/projects/auto@acinclude.m4
-share/newfile/projects/auto@configure.ac
-share/newfile/projects/auto@doc^Makefile.am
-share/newfile/projects/auto@src^Makefile.am
-share/newfile/projects/port@Makefile
-share/newfile/projects/port@distinfo
-share/newfile/projects/port@pkg-comment
-share/newfile/projects/port@pkg-descr
-share/newfile/projects/port@pkg-plist
-share/newfile/sytab.rb
-share/newfile/templates/body.inc@sh
-share/newfile/templates/tmpl@c
-share/newfile/templates/tmpl@c++
-share/newfile/templates/tmpl@generic
-share/newfile/templates/tmpl@h
-share/newfile/templates/tmpl@h++
-share/newfile/templates/tmpl@mgp
-share/newfile/templates/tmpl@mk
-share/newfile/templates/tmpl@pl
-share/newfile/templates/tmpl@pod
-share/newfile/templates/tmpl@py
-share/newfile/templates/tmpl@rb
-share/newfile/templates/tmpl@rd
-share/newfile/templates/tmpl@sh
-@dirrm share/newfile/templates
-@dirrm share/newfile/projects
-@dirrm share/newfile/licenses
-@dirrm share/newfile
-%%PORTDOCS%%@dirrm share/doc/newfile/rdoc/files
-%%PORTDOCS%%@dirrm share/doc/newfile/rdoc/classes
-%%PORTDOCS%%@dirrm share/doc/newfile/rdoc
-%%PORTDOCS%%@dirrm share/doc/newfile
+bin/newfile
+%%PORTDOCS%%%%DOCSDIR%%/newfile.html
+%%PORTDOCS%%%%DOCSDIR%%/rdoc/classes/Cond.html
+%%PORTDOCS%%%%DOCSDIR%%/rdoc/classes/FileFinder.html
+%%PORTDOCS%%%%DOCSDIR%%/rdoc/classes/FileProcessor.html
+%%PORTDOCS%%%%DOCSDIR%%/rdoc/classes/Installed.html
+%%PORTDOCS%%%%DOCSDIR%%/rdoc/classes/NewfileOpts.html
+%%PORTDOCS%%%%DOCSDIR%%/rdoc/classes/OptionError.html
+%%PORTDOCS%%%%DOCSDIR%%/rdoc/classes/ParseError.html
+%%PORTDOCS%%%%DOCSDIR%%/rdoc/classes/ParseMsg.html
+%%PORTDOCS%%%%DOCSDIR%%/rdoc/classes/ParseWarning.html
+%%PORTDOCS%%%%DOCSDIR%%/rdoc/classes/SyTab.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/rdoc/classes
+%%PORTDOCS%%%%DOCSDIR%%/rdoc/created.rid
+%%PORTDOCS%%%%DOCSDIR%%/rdoc/files/fileproc_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/rdoc/files/newfile_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/rdoc/files/sytab_rb.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/rdoc/files
+%%PORTDOCS%%%%DOCSDIR%%/rdoc/fr_class_index.html
+%%PORTDOCS%%%%DOCSDIR%%/rdoc/fr_file_index.html
+%%PORTDOCS%%%%DOCSDIR%%/rdoc/fr_method_index.html
+%%PORTDOCS%%%%DOCSDIR%%/rdoc/index.html
+%%PORTDOCS%%%%DOCSDIR%%/rdoc/rdoc-style.css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/rdoc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%DATADIR%%/fileproc.rb
+%%DATADIR%%/licenses/Artistic@Artistic
+%%DATADIR%%/licenses/Artistic@README
+%%DATADIR%%/licenses/Artistic@license.inc
+%%DATADIR%%/licenses/BSD@LICENSE
+%%DATADIR%%/licenses/BSD@README
+%%DATADIR%%/licenses/BSD@license.inc
+%%DATADIR%%/licenses/GPL@COPYING
+%%DATADIR%%/licenses/GPL@README
+%%DATADIR%%/licenses/GPL@license.inc
+%%DATADIR%%/licenses/default@license.inc
+%%DATADIR%%/licenses/minimal@LICENSE
+%%DATADIR%%/licenses/minimal@README
+%%DATADIR%%/licenses/minimal@license.inc
+%%DATADIR%%/licenses/no@license.inc
+@dirrm %%DATADIR%%/licenses
+%%DATADIR%%/newfile.rb
+%%DATADIR%%/projects/auto@Makefile.am
+%%DATADIR%%/projects/auto@Makefile.cvs
+%%DATADIR%%/projects/auto@Mk^alane.pod.mk
+%%DATADIR%%/projects/auto@Mk^alane.rd.mk
+%%DATADIR%%/projects/auto@Mk^alane.tex.mk
+%%DATADIR%%/projects/auto@acinclude.m4
+%%DATADIR%%/projects/auto@configure.ac
+%%DATADIR%%/projects/auto@doc^Makefile.am
+%%DATADIR%%/projects/auto@src^Makefile.am
+%%DATADIR%%/projects/port@Makefile
+%%DATADIR%%/projects/port@distinfo
+%%DATADIR%%/projects/port@pkg-comment
+%%DATADIR%%/projects/port@pkg-descr
+%%DATADIR%%/projects/port@pkg-plist
+@dirrm %%DATADIR%%/projects
+%%DATADIR%%/sytab.rb
+%%DATADIR%%/templates/body.inc@sh
+%%DATADIR%%/templates/tmpl@c
+%%DATADIR%%/templates/tmpl@c++
+%%DATADIR%%/templates/tmpl@generic
+%%DATADIR%%/templates/tmpl@h
+%%DATADIR%%/templates/tmpl@h++
+%%DATADIR%%/templates/tmpl@mgp
+%%DATADIR%%/templates/tmpl@mk
+%%DATADIR%%/templates/tmpl@pl
+%%DATADIR%%/templates/tmpl@pod
+%%DATADIR%%/templates/tmpl@py
+%%DATADIR%%/templates/tmpl@rb
+%%DATADIR%%/templates/tmpl@rd
+%%DATADIR%%/templates/tmpl@sh
+@dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%

@@ -7,28 +7,26 @@
 
 PORTNAME=	newfile
 PORTVERSION=	1.0.13
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sergei@kolobov.com
 COMMENT=	A tool for creating starter files in various languages
 
-BUILD_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
-BUILD_DEPENDS+=	rdoc:${PORTSDIR}/textproc/ruby-rdoc
-BUILD_DEPENDS+= /usr/local/bin/perl:${PORTSDIR}/lang/perl5
+BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \
+		rdoc:${PORTSDIR}/textproc/ruby-rdoc \
+		pod2man:${PORTSDIR}/lang/perl5
 
 USE_RUBY=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
-USE_PERL=	yes
 
 .if !defined(NOPORTDOCS)
 MAN1=		newfile.1
-.endif
-
+.else
 pre-configure:
-.if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's@SUBDIRS = src doc data doc-src www@SUBDIRS = src data@g' \
 	${WRKSRC}/Makefile.in
 .endif
