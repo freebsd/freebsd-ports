@@ -3,18 +3,17 @@
 # Date created:		30 July 1996
 # Whom:			Sander Vesik <sander@haldjas.folklore.ee>
 #
-# $Id: Makefile,v 1.3 1997/04/20 13:19:33 wosch Exp $
+# $Id: Makefile,v 1.4 1997/07/21 19:28:44 max Exp $
 #
 
 DISTNAME=	tkcron-2.12
-DISTFILES=	tkcron-2.12.tcl.gz
-CATEGORIES=	misc tk41
+CATEGORIES=	misc tk80
 MASTER_SITES=	ftp://ftp.neosoft.com/languages/tcl/alcatel/code/
 EXTRACT_SUFX=	.tcl.gz
 
 MAINTAINER=	sander@haldjas.folklore.ee
 
-RUN_DEPENDS=	wish4\.1:${PORTSDIR}/x11/tk41
+RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11/tk80
 
 EXTRACT_CMD=	${GZIP_CMD}
 EXTRACT_BEFORE_ARGS= -cd
