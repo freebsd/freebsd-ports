@@ -1,0 +1,6 @@
+What Is omi?
+============
+
+   It is a software to "mirror" subtrees of FTP servers.  It
+   can be used to make a one-time mirror, and it can be used
+   to update a mirror regularly (for example using cron).
