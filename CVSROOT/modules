@@ -5531,6 +5531,7 @@ msql		ports/databases/msql
 msrc0		ports/devel/msrc0
 msyslog		ports/sysutils/msyslog
 mt-aspell	ports/textproc/mt-aspell
+mt-daapd	ports/audio/mt-daapd
 mt_dolphin_ia	ports/games/mt_dolphin_ia
 mt_gtk_client	ports/games/mt_gtk_client
 mtf		ports/archivers/mtf
