@@ -64,6 +64,7 @@
     SUBDIR += p5-hp200lx-db
     SUBDIR += phpmyadmin
     SUBDIR += phppgadmin
+    SUBDIR += postgresql-plruby
     SUBDIR += postgresql7
     SUBDIR += pxtools
     SUBDIR += py-MySQL
