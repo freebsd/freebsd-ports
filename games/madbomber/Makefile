@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	madbomber
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.4
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.sonic.net/pub/users/nbs/unix/x/madbomber/
 
