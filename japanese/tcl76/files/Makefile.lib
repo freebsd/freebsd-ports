@@ -1,6 +1,4 @@
 NOPROFILE=	yes
-
-VERSION=	7.6jp
 LIB=		tcl${VERSION}
 TCL_LIBRARY=	${PREFIX}/lib/tcl${VERSION}
 CFLAGS+=	-I. -I./../generic \

@@ -1,4 +1,3 @@
-VERSION=	4.2jp
 NOPROFILE=	yes
 LIB=		tk${VERSION}
 TK_LIBRARY=	${PREFIX}/lib/tk${VERSION}
