@@ -1,0 +1,46 @@
+--- lib/sshsession/sshunixuser.c.orig	Fri Jan 29 12:06:07 1999
++++ lib/sshsession/sshunixuser.c	Sat Feb  6 03:00:28 1999
+@@ -55,6 +55,10 @@
+ #include "tcbc2.h"
+ #endif /* HAVE_OSF1_C2_SECURITY */
+ 
++#ifdef HAVE_LOGIN_CAP_H
++#include <login_cap.h>
++#endif /* HAVE_LOGIN_CAP_H */
++
+ extern char *crypt(const char *key, const char *salt);
+ 
+ /* Data type to hold machine-specific user data. */
+@@ -713,6 +717,24 @@
+   /* Set uid, gid, and groups. */
+   if (getuid() == UID_ROOT || geteuid() == UID_ROOT)
+     { 
++#ifdef HAVE_LOGIN_CAP_H
++    struct passwd *pwd;
++
++    pwd = getpwnam(ssh_user_name(uc));
++    if (!pwd)
++      {
++	ssh_debug("ssh_user_become: getpwnam: %s", strerror(errno));
++	return FALSE;
++      }
++    if (setusercontext(NULL, pwd, ssh_user_uid(uc),
++	LOGIN_SETALL & ~(LOGIN_SETLOGIN|LOGIN_SETPATH|LOGIN_SETENV)) != 0)
++      {
++	    ssh_debug("ssh_user_become: setusercontext: %s", strerror(errno));
++	    return FALSE;
++      }
++    endpwent();
++    endgrent();
++#else
+       if (setgid(ssh_user_gid(uc)) < 0)
+         {
+           ssh_debug("ssh_user_become: setgid: %s", strerror(errno));
+@@ -745,6 +767,7 @@
+                     (int)ssh_user_uid(uc), strerror(errno));
+           return FALSE;
+         }
++#endif /* HAVE_LOGIN_CAP_H */
+     }
+   
+   if (getuid() != ssh_user_uid(uc) || geteuid() != ssh_user_uid(uc))
