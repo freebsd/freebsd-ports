@@ -492,6 +492,7 @@
     SUBDIR += sodipodi
     SUBDIR += springgraph
     SUBDIR += stamp
+    SUBDIR += svg2png
     SUBDIR += svg2swf
     SUBDIR += svgalib
     SUBDIR += swfdec
