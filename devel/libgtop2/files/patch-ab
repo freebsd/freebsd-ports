@@ -1,14 +1,3 @@
---- src/daemon/Makefile.in.orig	Tue Mar  2 18:48:38 1999
-+++ src/daemon/Makefile.in	Tue Mar  2 18:49:07 1999
-@@ -191,7 +191,7 @@
- 
- 
- libgtop_server_SOURCES = server.c slave.c io.c version.c daemon.h
--libgtop_server_LDADD = $(top_builddir)/sysdeps/@sysdeps_dir@/libgtop_sysdeps_suid.la 				  $(top_builddir)/sysdeps/common/libgtop_suid_common.la 				  @LIBSUPPORT@
-+libgtop_server_LDADD = $(top_builddir)/sysdeps/@sysdeps_dir@/libgtop_sysdeps_suid.la 				  $(top_builddir)/sysdeps/common/libgtop_suid_common.la 				  @LIBSUPPORT@ @INTLLIBS@ @libs_xauth@
- 
- 
- EXTRA_DIST = server_config.h.in server_config.pl
 --- Makefile.in.orig	Tue Oct 19 06:04:23 1999
 +++ Makefile.in	Tue Oct 26 11:42:07 1999
 @@ -187,7 +187,7 @@
