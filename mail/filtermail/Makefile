@@ -43,7 +43,13 @@ MAN5=		filtermailex.5 filtermailrc.5
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502103
+BROKEN=		"Build fails on FreeBSD >= 5.x"
+.endif
+
 post-extract:
 	@${RM} -f ${WRKSRC}/src/getopt.h
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
