@@ -1,0 +1,14 @@
+include/ctpp/ctpp/ctpp.hpp
+include/ctpp/ctpp/param_data.hpp
+include/ctpp/ctpp/udf_fn.hpp
+include/ctpp/functions/htmlescape.hpp
+include/ctpp/functions/num_format.hpp
+include/ctpp/functions/std_fn_list.hpp
+include/ctpp/functions/urlescape.hpp
+include/ctpp/functions/value_in_set.hpp
+include/ctpp/util/d2str.hpp
+lib/libctpp.so
+@dirrm include/ctpp/util
+@dirrm include/ctpp/functions
+@dirrm include/ctpp/ctpp
+@dirrm include/ctpp
