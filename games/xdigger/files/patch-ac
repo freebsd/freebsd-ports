@@ -5,7 +5,7 @@
    Fill_TonBuffer(TON_AUDIO_LOW, TON_AUDIO_HIGH, TON_AUDIO_RATE, True);
  
 +#ifdef __FreeBSD__
-+  fd = open("/usr/X11R6/share/xdigger/diamond.au", O_CREAT | O_WRONLY);
++  fd = open(XDIGGER_LIB_DIR "/diamond.au", O_CREAT | O_WRONLY);
 +#else
    fd = open("audio/diamond.au", O_CREAT | O_WRONLY);
 +#endif
@@ -14,7 +14,7 @@
    close(fd);
  
 +#ifdef __FreeBSD__
-+  fd = open("/usr/X11R6/share/xdigger/stone.au", O_CREAT | O_WRONLY);
++  fd = open(XDIGGER_LIB_DIR "/stone.au", O_CREAT | O_WRONLY);
 +#else
    fd = open("audio/stone.au", O_CREAT | O_WRONLY);
 +#endif
@@ -23,7 +23,7 @@
    close(fd);
  
 +#ifdef __FreeBSD__
-+  fd = open("/usr/X11R6/share/xdigger/step.au", O_CREAT | O_WRONLY);
++  fd = open(XDIGGER_LIB_DIR "/step.au", O_CREAT | O_WRONLY);
 +#else
    fd = open("audio/step.au", O_CREAT | O_WRONLY);
 +#endif
