@@ -227,6 +227,7 @@ MASTER_SITE_SOURCEWARE+= \
 	ftp://sunsite.org.uk/Mirrors/sourceware.cygnus.com/pub/%SUBDIR%/
 
 MASTER_SITE_SOURCEFORGE+= \
+	http://telia.dl.sourceforge.net/%SUBDIR%/ \
 	http://prdownloads.sourceforge.net/%SUBDIR%/ \
 	ftp://ftp3.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
 	http://ftp3.sourceforge.net/%SUBDIR%/ \
@@ -234,8 +235,6 @@ MASTER_SITE_SOURCEFORGE+= \
 	http://ftp1.sourceforge.net/%SUBDIR%/ \
 	ftp://ftp2.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
 	http://ftp2.sourceforge.net/%SUBDIR%/ \
-	ftp://prdownload.sourceforge.net/pub/%SUBDIR%/ \
-	ftp://projects.sourceforge.net/pub/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/sourceforge/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/sourceforge/%SUBDIR%/
 
