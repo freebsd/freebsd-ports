@@ -16,8 +16,7 @@ COMMENT=	Jonah is a portal and content collection system
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-RUN_DEPENDS=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2 \
-		${LOCALBASE}/bin/php:${PORTSDIR}/lang/php4-horde
+RUN_DEPENDS=	${LOCALBASE}/www/horde/index.php:${PORTSDIR}/www/horde2
 
 IGNORE=		Does not run with Horde 2.x
 EXPIRATION_DATE=2004-08-20
