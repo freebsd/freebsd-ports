@@ -177,6 +177,7 @@
     SUBDIR += xmmix
     SUBDIR += xmms
     SUBDIR += xmms-liveice
+    SUBDIR += xmms-shn
     SUBDIR += xmms-tfmx
     SUBDIR += xmp
     SUBDIR += xmpeg3
