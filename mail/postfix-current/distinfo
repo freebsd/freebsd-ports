@@ -1,4 +1,4 @@
-MD5 (postfix/postfix-2.0.16-20031113.tar.gz) = ad9c62aae19505763861ce38f1d8687c
+MD5 (postfix/postfix-2.0.16-20031223.tar.gz) = 4b23a66020c5a84636b7253f336a9ac8
 MD5 (postfix/ipv6-1.18b-pf-2.0.16-20030921.patch.gz) = cf5be9e0fefa4dbaafeeec5687b87265
 MD5 (postfix/tls+ipv6-1.18b-pf-2.0.16-20030921.patch.gz) = d744dbc5f3fe71d634a36573cee5f2b4
 MD5 (postfix/pfixtls-0.8.16-2.0.16-20031113-0.9.7c.tar.gz) = 1bf33c20f3513227fb61e5a240b42812
