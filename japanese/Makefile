@@ -216,6 +216,7 @@
     SUBDIR += p5-mkres
     SUBDIR += p5-nkf
     SUBDIR += paledit
+    SUBDIR += pejv-fpw
     SUBDIR += perl5
     SUBDIR += pgp.language
     SUBDIR += pine
