@@ -9799,6 +9799,7 @@ unshield	ports/archivers/unshield
 untar		ports/archivers/untar
 unzip		ports/archivers/unzip
 uox3		ports/games/uox3
+up-imapproxy	ports/mail/up-imapproxy
 upclient	ports/misc/upclient
 updatedd	ports/dns/updatedd
 uplog		ports/net/uplog
