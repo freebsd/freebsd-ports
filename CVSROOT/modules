@@ -1595,6 +1595,7 @@ eps2png		ports/graphics/eps2png
 epsmerge	ports/print/epsmerge
 epsonepl	ports/print/epsonepl
 epstool		ports/graphics/epstool
+epydoc		ports/devel/epydoc
 erlang		ports/lang/erlang
 erlang-doc	ports/lang/erlang-doc
 erlang_xmlrpc	ports/net/erlang_xmlrpc
