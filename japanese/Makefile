@@ -215,6 +215,7 @@
     SUBDIR += slrn
     SUBDIR += tcl76
     SUBDIR += tcl80
+    SUBDIR += tcl82
     SUBDIR += tcsh
     SUBDIR += tcsh-nls-asuka
     SUBDIR += tcsh-nls-ayanami
@@ -233,6 +234,7 @@
     SUBDIR += timidity++-tcltk
     SUBDIR += tk42
     SUBDIR += tk80
+    SUBDIR += tk82
     SUBDIR += tkdesk
     SUBDIR += tkstep80
     SUBDIR += today
