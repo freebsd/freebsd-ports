@@ -32,6 +32,7 @@
     SUBDIR += axis
     SUBDIR += bins
     SUBDIR += bk2site
+    SUBDIR += bk_edit
     SUBDIR += bkmrkconv
     SUBDIR += bluefish
     SUBDIR += bluefish-devel

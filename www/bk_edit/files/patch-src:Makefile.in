@@ -1,0 +1,27 @@
+--- src/Makefile.in.orig	Sat Nov 29 21:14:14 2003
++++ src/Makefile.in	Fri Dec 26 14:08:00 2003
+@@ -1,10 +1,10 @@
+ PROG = bkedit#
+ 
+-CC = gcc
++#CC = gcc
+ LD = gcc
+ 
+-CFLAGS  = -Wall `@GTK_CONFIG@ --cflags` `@XML2_CONFIG@ --cflags`#-ggdb -pg -a
+-LDFLAGS = @LIB@ `@GTK_CONFIG@ --libs` `@XML2_CONFIG@ --libs` -Wl,-export-dynamic# -rdynamic 'reverse dependencies' # -pg
++CFLAGS += -Wall `@GTK_CONFIG@ --cflags` `@XML2_CONFIG@ --cflags`#-ggdb -pg -a
++LDFLAGS += @LIB@ `@GTK_CONFIG@ --libs` `@XML2_CONFIG@ --libs` -Wl,-export-dynamic# -rdynamic 'reverse dependencies' # -pg
+ 
+ OBJS = bk_edit.o bk_edit_menu.o bk_edit_tree.o bk_edit_edit.o bk_edit_file.o \
+ 	bk_edit_ccp.o bk_edit_data.o bk_edit_undo.o bk_edit_dnd.o bk_edit_misc.o \
+@@ -31,8 +31,8 @@
+ install:
+ 	$(INSTALL) -d -m 755 @PREFIX@/bin/
+ 	$(INSTALL) -m 755 $(PROG) @PREFIX@/bin/
+-	$(INSTALL) -d -m 755 @PREFIX@/share/bkedit/
+-	$(INSTALL) -m 755 ./plugins/*.so @PREFIX@/share/bkedit/
++	$(INSTALL) -d -m 755 @PREFIX@/lib/bkedit/
++	$(INSTALL) -m 755 ./plugins/*.so @PREFIX@/lib/bkedit/
+ 
+ uninstall:
+ 	$(RM) @PREFIX@/bin/$(PROG)
