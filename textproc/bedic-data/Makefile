@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=kbedic
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	todorov_bg@gmx.net
+MAINTAINER=	todorov@freebsd-bg.org
 
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/pkg-plist

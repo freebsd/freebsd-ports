@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 MASTER_SITE_SUBDIR=kbedic
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
-MAINTAINER=	todorov_bg@gmx.net
+MAINTAINER=	todorov@freebsd-bg.org
 
 RUN_DEPENDS=	${DICT_DIR}/${DICT_CHECK}:${PORTSDIR}/textproc/bedic-data
 
