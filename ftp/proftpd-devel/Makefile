@@ -7,6 +7,7 @@
 
 PORTNAME=	proftpd
 PORTVERSION=	1.2.9
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.net/distrib/source/ \
 		ftp://ftp.stikman.com/pub/proftpd/ \
@@ -30,6 +31,11 @@ COMMENT=	Highly configurable ftp daemon
 MAN1=	ftpcount.1 ftpwho.1 ftptop.1
 MAN5=	xferlog.5
 MAN8=	proftpd.8 ftpshut.8
+
+PORTDOCSdoc=	Configuration.html faq.html
+PORTDOCScontrib=mod_ifsession.html mod_radius.html mod_rewrite.html \
+		mod_tls.html mod_wrap.html ftpasswd.html
+PORTDOCS=	${PORTDOCSdoc} ${PORTDOCScontrib}
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -154,10 +160,15 @@ do-install:
 		${WRKSRC}/sample-configurations/basic.conf ${PREFIX}/etc/proftpd.conf; \
 	fi
 	@${INSTALL_SCRIPT} ${WRKSRC}/proftpd.sh ${PREFIX}/etc/rc.d/proftpd${RC_SUFX}
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/proftpd
-	@${INSTALL_DATA} ${WRKSRC}/doc/Configuration.html ${PREFIX}/share/doc/proftpd
-	@${INSTALL_DATA} ${WRKSRC}/doc/faq.html ${PREFIX}/share/doc/proftpd
+.for f in ${PORTDOCSdoc}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${f} ${PREFIX}/share/doc/proftpd
+.endfor
+.for f in ${PORTDOCScontrib}
+	@${INSTALL_DATA} ${WRKSRC}/contrib/${f} ${PREFIX}/share/doc/proftpd
+.endfor
 .endif
 
 .if !defined(WITHOUT_PAM)
