@@ -44,7 +44,6 @@ ADDPATCHES=	${MASTERDIR}/patches.tools/disable-tools
 USE_AUTOCONF_VER=213
 .endif
 
-USE_NEWGCC=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	\
 	LDFLAGS="${LDFLAGS} -L${X11BASE}/lib -lGLU -lGL -lglut ${PTHREAD_LIBS}"

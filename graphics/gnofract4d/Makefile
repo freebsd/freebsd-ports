@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_NEWGCC=	yes
 USE_GNOMENG=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs
 GNU_CONFIGURE=	yes

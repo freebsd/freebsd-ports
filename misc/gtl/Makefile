@@ -15,6 +15,5 @@ MAINTAINER=	nakai@FreeBSD.org
 
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-USE_NEWGCC=	yes
 
 .include <bsd.port.mk>

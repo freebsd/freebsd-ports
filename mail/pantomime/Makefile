@@ -20,7 +20,6 @@ RUN_DEPENDS=	${XGPSBUNDLEDIR}/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-x
 
 PREFIX=		${LOCALBASE}/GNUstep
 WRKSRC=		${WRKDIR}/Pantomime
-USE_NEWGCC=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=

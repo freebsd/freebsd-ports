@@ -22,7 +22,6 @@ LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
 
 PLIST_SUB=	GNUHOST=${ARCH}-pc-freebsd${OSREL:C/\..*//} VERSION=${PORTVERSION}
 
-USE_NEWGCC=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes

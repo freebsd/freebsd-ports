@@ -23,7 +23,6 @@ BROKEN=		Changes to process info structs returned by kernel renders \
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--with-tcl-ver=8.3 --with-tk-ver=8.3
-USE_NEWGCC=	yes
 MAN1=		lavaps.1
 
 .include <bsd.port.post.mk>

@@ -18,7 +18,6 @@ RUN_DEPENDS=	${XGPSBUNDLEDIR}/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-x
 
 PREFIX=		${LOCALBASE}/GNUstep
 WRKSRC=		${WRKDIR}/ProjectCenter
-USE_NEWGCC=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 MAKE_ENV=	ADDITIONAL_INCLUDE_DIRS="-I${WRKSRC}" \

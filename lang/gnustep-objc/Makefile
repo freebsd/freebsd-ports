@@ -25,7 +25,6 @@ BROKEN=		"Sorry, this port does not work on FreeBSD-2.2.x"
 .endif
 
 PREFIX=		${LOCALBASE}/GNUstep
-USE_NEWGCC=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=

@@ -16,7 +16,6 @@ MAINTAINER=	ejc@bazzle.com
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
 HAS_CONFIGURE=	yes
-USE_NEWGCC=	yes
 CONFIGURE_ENV=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
 MAN1=		idl.1
 MLINKS=		idl.1 hidl.1	- irdel.1	- irfeed.1 \

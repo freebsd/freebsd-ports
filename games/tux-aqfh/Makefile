@@ -16,7 +16,6 @@ BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
-USE_NEWGCC=	yes
 USE_MESA=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -27,7 +27,6 @@ MAINTAINER=	ports@FreeBSD.org
 
 CONFIGURE_TARGET=	${ARCH}-portbld-freebsd${OSREL}
 PLIST_SUB=	GCC28SUBDIR=${GCC28DIR}
-USE_NEWGCC=	yes
 
 pre-configure:
 	@${CP} -p ${FILESDIR}/Makefile.libg++ ${WRKSRC}/Makefile

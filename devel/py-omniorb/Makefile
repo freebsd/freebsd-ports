@@ -23,7 +23,6 @@ RUN_DEPENDS=	omniidl:${PORTSDIR}/devel/omniORB
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/omniORB:build
 
 USE_PYTHON=	yes
-USE_NEWGCC=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	export

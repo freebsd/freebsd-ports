@@ -20,7 +20,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-ope
 WX_CONFIG=	${X11BASE}/bin/wx-config
 
 USE_GMAKE=	yes
-USE_NEWGCC=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_GTK=	yes

@@ -14,7 +14,6 @@ MAINTAINER=	nakai@FreeBSD.org
 
 LIB_DEPENDS=	vdk.3:${PORTSDIR}/x11-toolkits/vdk
 
-USE_NEWGCC=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GTK=	yes

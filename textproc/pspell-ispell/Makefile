@@ -18,7 +18,6 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 LIB_DEPENDS=	pspell.4:${PORTSDIR}/textproc/pspell
 
-USE_NEWGCC=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

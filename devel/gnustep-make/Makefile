@@ -20,7 +20,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 BROKEN=		"Sorry, this port does not work on FreeBSD-2.2.x"
 .endif
 
-USE_NEWGCC=	yes
 PREFIX=		${LOCALBASE}/GNUstep
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL} -c" INSTALL_DATA="${INSTALL} -c" \

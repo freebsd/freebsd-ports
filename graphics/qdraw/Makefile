@@ -22,8 +22,6 @@ LIB_DEPENDS+=	aa:${PORTSDIR}/graphics/aalib
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
 ONLY_FOR_ARCHS=	i386
-# GCC 2.95 or later
-USE_NEWGCC=	yes
 
 MAKEFILE=	makefile
 

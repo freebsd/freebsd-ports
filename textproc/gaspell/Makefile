@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	aspell.11:${PORTSDIR}/textproc/aspell
 
 USE_X_PREFIX=	yes
-USE_NEWGCC=	yes
 USE_GNOME=	yes
 
 do-install:
