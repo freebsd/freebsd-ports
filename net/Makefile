@@ -251,6 +251,7 @@
     SUBDIR += net-snmp
     SUBDIR += netatalk
     SUBDIR += netcat
+    SUBDIR += netmap
     SUBDIR += netmask
     SUBDIR += netpipes
     SUBDIR += netqc
