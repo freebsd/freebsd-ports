@@ -1,4 +1,4 @@
-This is the AMbicious STanDard library, available under GPL2.
+This is the AMbitious STanDard library, available under LGPL.
 
 It is a collection of miscellaneous Ruby modules by Minero Aoki.
 Several modules of his are using those modules.
@@ -7,12 +7,12 @@ bench.rb: very simple benchmark		packing.rb: makes package (.tar.gz)
 bug.rb: 'bug!' method			pipeline.rb: filter file       
 dispatch.rb: "event handler" method	rbparams.rb: parameters related ruby
 errutil.rb: protects exception		recycle.rb: recycles objects   
-extmod.rb: abstract/property methods	rubyemu.rb: ruby emuration     
+extmod.rb: abstract/property methods	rubyemu.rb: ruby emulation     
 futils.rb: file utilities		strquote.rb: String#quoted     
 gconst.rb: defines global constant	timer.rb: timer class          
 getdep.rb: gets file dependency		to_s.rb: _name2str, _type2str  
 inst.rb: helps installation		version.rb: VersionNumber class
 must.rb: must/must_have/must_be methods
 
-Author:	Minero Aoki <aamine@cd.xdsl.ne.jp>
-WWW:	http://www.xdsl.ne.jp/Cd/aamine/en/index.html
+Author:	Minero Aoki <aamine@loveruby.net>
+WWW:	http://www.loveruby.net/en/amstd.html
