@@ -34,7 +34,7 @@ RUN_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla \
 		gnucash:${PORTSDIR}/deskutils/gnucash \
 		AbiWord:${PORTSDIR}/editors/AbiWord \
 		anjuta:${PORTSDIR}/devel/anjuta \
-		guppi:${PORTSDIR}/math/guppi \
+		guppi-gnumeric:${PORTSDIR}/math/guppi \
 		gnomoku:${PORTSDIR}/games/gnomoku
 
 # We're still missing a few things from the "official" distribution
