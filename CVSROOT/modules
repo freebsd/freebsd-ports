@@ -9541,7 +9541,6 @@ ruby-fcgi	ports/www/ruby-fcgi
 ruby-fftw3	ports/math/ruby-fftw3
 ruby-filelock	ports/devel/ruby-filelock
 ruby-filemagic	ports/devel/ruby-filemagic
-ruby-flex_rb	ports/devel/ruby-flex_rb
 ruby-format	ports/textproc/ruby-format
 ruby-formvalidator	ports/textproc/ruby-formvalidator
 ruby-fox	ports/x11-toolkits/ruby-fox
