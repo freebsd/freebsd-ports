@@ -12,6 +12,7 @@
     SUBDIR += IPA
     SUBDIR += ImageMagick
     SUBDIR += OpenEXR
+    SUBDIR += SciPlot
     SUBDIR += aalib
     SUBDIR += acidwarp
     SUBDIR += ale
