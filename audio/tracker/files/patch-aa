@@ -1,7 +1,7 @@
-*** Makefile.old	Sat Jan 28 12:51:48 1995
---- Makefile	Sat Jan 28 14:24:11 1995
+*** Makefile.orig	Wed Feb  1 23:08:49 1995
+--- Makefile	Thu Feb  2 12:40:50 1995
 ***************
-*** 11,17 ****
+*** 11,21 ****
   #  hpalib, hplow, hp3, dec, solaris, sparc, linux, freebsd, sgi, 
   #  soundblaster, aix.
   # gmake needed to handle this file in FreeBSD
@@ -9,7 +9,11 @@
   
   # The name of your C compiler. For most machines this will be
   # either 'cc' or 'gcc'.
---- 11,17 ----
+! CC = gcc
+  
+  OPTS=-c
+  
+--- 11,21 ----
   #  hpalib, hplow, hp3, dec, solaris, sparc, linux, freebsd, sgi, 
   #  soundblaster, aix.
   # gmake needed to handle this file in FreeBSD
@@ -17,8 +21,12 @@
   
   # The name of your C compiler. For most machines this will be
   # either 'cc' or 'gcc'.
+! CC = cc
+  
+  OPTS=-c
+  
 ***************
-*** 30,40 ****
+*** 26,36 ****
   #
   # If you don't wish to use the 'make install' and 'make install.man'
   # commands, you can ignore these.
@@ -30,7 +38,7 @@
   
   # How to install the binaries and manpage. If you have a unix system,
   # use the GNU install program if you have it, otherwise try 'cp'. For
---- 30,44 ----
+--- 26,40 ----
   #
   # If you don't wish to use the 'make install' and 'make install.man'
   # commands, you can ignore these.
@@ -47,116 +55,38 @@
   # How to install the binaries and manpage. If you have a unix system,
   # use the GNU install program if you have it, otherwise try 'cp'. For
 ***************
-*** 55,62 ****
+*** 51,58 ****
   #
   # If you don't wish to use the 'make install' and 'make install.man'
   # commands, you can ignore these.
-! INST_BIN_OPT = -s -m 755 -o root -g root
-! INST_MAN_OPT = -m 644 -o root -g root
+! INST_BIN_OPT = -c -s -m 755 -o root -g root
+! INST_MAN_OPT = -c -m 644 -o root -g root
   ###############################################################################
   #
   # C compiler flags and libraries for each machine.
---- 59,68 ----
+--- 55,64 ----
   #
   # If you don't wish to use the 'make install' and 'make install.man'
   # commands, you can ignore these.
-! #INST_BIN_OPT = -s -m 755 -o root -g root
-! #INST_MAN_OPT = -m 644 -o root -g root
+! #INST_BIN_OPT = -c -s -m 755 -o root -g root
+! #INST_MAN_OPT = -c -m 644 -o root -g root
 ! INST_BIN_OPT = -c -s -m 555 -o bin -g bin
 ! INST_MAN_OPT = -c -m 644 -o bin -g bin
   ###############################################################################
   #
   # C compiler flags and libraries for each machine.
+*** Unix/ui.c.old	Wed Feb  1 23:33:08 1995
+--- Unix/ui.c	Thu Feb  2 12:36:44 1995
 ***************
-*** 154,159 ****
---- 160,168 ----
-  	$(INSTALL) $(INST_BIN_OPT) tracker $(BIN_DIR)
-  	$(INSTALL) $(INST_BIN_OPT) randomize $(BIN_DIR)
-  	$(INSTALL) $(INST_BIN_OPT) analyzer $(BIN_DIR)
-+ 	$(INSTALL) $(INST_BIN_OPT) splitmod $(BIN_DIR)
-+ 	[ -f ${COMPRESSION_FILE} ] || \
-+ 	   $(INSTALL) $(INST_MAN_OPT) compression_methods ${COMPRESSION_FILE}
-  
-  install.man:
-  	$(INSTALL) $(INST_MAN_OPT) man/tracker.1 $(MAN_DIR)/man1/tracker.1
-*** Unix/ui.c.old	Sat Jan 28 12:57:02 1995
---- Unix/ui.c	Sat Jan 28 14:41:15 1995
-***************
-*** 148,153 ****
---- 148,162 ----
-        return FALSE;
-     }
-  
-+ /* if_fg_sane_tty():
-+  * restore tty modes, _only_ if running in foreground
-+  */
-+ LOCAL void if_fg_sane_tty()
-+    {
-+    if (run_in_fg())
-+        sane_tty();
-+    }
-+ 
-  LOCAL void switch_mode()
-     {
-  #ifdef __NeXT__
-***************
-*** 200,206 ****
-  #endif
-        zap.c_lflag &= ~(ICANON | ECHO);
-  #ifdef __FreeBSD__
-!       tcsetattr(fileno(stdin), TCSANOW, &zap);
-  #else
-        ioctl(fileno(stdin), TCSETA, &zap);
-  #endif
---- 209,215 ----
-  #endif
-        zap.c_lflag &= ~(ICANON | ECHO);
-  #ifdef __FreeBSD__
-!       tcsetattr(fileno(stdin), TCSADRAIN, &zap);
-  #else
-        ioctl(fileno(stdin), TCSETA, &zap);
-  #endif
-***************
-*** 227,240 ****
-        ioctl(fileno(stdin), TIOCGETP, psanity);
-  #else /* __NeXT__ */
-  #ifdef __FreeBSD__
-!       tcgetattr(fileno(stdin), &sanity);
-  #else
-        ioctl(fileno(stdin), TCGETA, psanity);
-  #endif
-  #endif /* __NeXT__ */
-        }
-     switch_mode();
-!    at_end(sane_tty);
-     }
-  
-  
---- 236,249 ----
-        ioctl(fileno(stdin), TIOCGETP, psanity);
-  #else /* __NeXT__ */
-  #ifdef __FreeBSD__
-!       tcgetattr(fileno(stdin), psanity);
-  #else
-        ioctl(fileno(stdin), TCGETA, psanity);
-  #endif
-  #endif /* __NeXT__ */
-        }
-     switch_mode();
-!    at_end(if_fg_sane_tty);
-     }
-  
-  
-***************
-*** 246,252 ****
+*** 259,265 ****
         ioctl(fileno(stdin), TIOCSETP, psanity);
   #else /* __NeXT__ */
   #ifdef __FreeBSD__
-!       tcsetattr(fileno(stdin), &sanity);
+!       tcsetattr(fileno(stdin), psanity);
   #else
         ioctl(fileno(stdin), TCSETA, psanity);
   #endif
---- 255,261 ----
+--- 259,265 ----
         ioctl(fileno(stdin), TIOCSETP, psanity);
   #else /* __NeXT__ */
   #ifdef __FreeBSD__
