@@ -1,4 +1,5 @@
-/* $FreeBSD: /tmp/pcvs/ports/lang/compaq-cc/files/include/machine/Attic/alpha_cpu.h,v 1.1 2001-01-11 02:55:55 obrien Exp $ */
+/* $FreeBSD: /tmp/pcvs/ports/lang/compaq-cc/files/include/machine/Attic/alpha_cpu.h,v 1.2 2001-03-21 00:34:59 obrien Exp $ */
+/* From: FreeBSD: src/sys/alpha/include/alpha_cpu.h,v 1.7 1999/11/29 19:57:51 dfr */
 /* From: NetBSD: alpha_cpu.h,v 1.15 1997/09/20 19:02:34 mjacob Exp */
 
 /*
@@ -290,13 +291,15 @@ typedef unsigned long alpha_pt_entry_t;
 /*
  * Inlines for Alpha instructions normally inaccessible from C.
  */
+
+/*	include Compaq Tru64 ASM macros	*/
 #include <c_asm.h>
 
 static __inline u_int64_t
 alpha_amask(u_int64_t mask)
 {
 	u_int64_t result;
-        result = asm("amask %a0, %v0", mask);
+	result = asm("amask %a0, %v0", mask);
 	return result;
 }
 
@@ -311,30 +314,32 @@ alpha_implver(void)
 static __inline unsigned long
 alpha_rpcc(void)
 {
-        u_int64_t result;
+	u_int64_t result;
 	result = asm("rpcc %v0");
-        return result;
+	return result;
 }
 
 static __inline void
 alpha_mb(void)
 {
-       asm("mb");
+	asm("mb");
 }
 
 static __inline void
 alpha_wmb(void)
 {
-        /*
-         * XXX dfr: NetBSD originally had mb instead of wmb for
-         * alpha_wmb(). I'm not sure why so I'm leaving it alone. I
-         * think it should be safe to use wmb though.
-         */
-        asm("mb");
+	/*
+	 * XXX dfr: NetBSD originally had mb instead of wmb for
+	 * alpha_wmb(). I'm not sure why so I'm leaving it alone. I
+	 * think it should be safe to use wmb though.
+	 */
+	asm("mb");
 }
+
 /*
  * Inlines for OSF/1 PALcode operations.
  */
+
 #ifdef notyet
 static __inline void
 alpha_pal_halt(void)
