@@ -3,7 +3,7 @@
 # Date created:         2 October 1994
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.3 1995/04/15 04:34:09 asami Exp $
+# $Id: Makefile,v 1.4 1995/04/15 22:36:51 jmz Exp $
 #
 
 DISTNAME=	texinfo
@@ -42,7 +42,7 @@ build: configure
 	@echo "===>  Building for ${DISTNAME}"
 	@(cd ${WRKDIR}; initex '&tex texinfo @dump')
 
-install:
+install: build
 	@echo "===>  Installing for ${DISTNAME}"
 	@/usr/bin/install -c -m 644 ${WRKDIR}/texinfo.fmt \
 				${PREFIX}/lib/texmf/ini/

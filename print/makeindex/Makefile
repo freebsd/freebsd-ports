@@ -3,7 +3,7 @@
 # Date created:         12 October 1994
 # Whom:                 jmz
 #
-# $Id$
+# $Id: Makefile,v 1.4 1995/04/15 04:33:58 asami Exp $
 #
 
 DISTNAME=	makeindex
@@ -19,7 +19,7 @@ build: configure pre-build
 	@(cd ${WRKSRC}/src-3.0/regexp; make)
 	@(cd ${WRKSRC}/src-3.0; make)
 
-install:
+install: build
 	@echo "===>  Installing for ${DISTNAME}"
 	@mkdir -p ${PREFIX}/lib/texmf/makeindx
 	@mkdir -p ${PREFIX}/bin

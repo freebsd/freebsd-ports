@@ -3,7 +3,7 @@
 # Date created:         29 September 1994
 # Whom:                 jmz
 #
-# $Id$
+# $Id: Makefile,v 1.12 1995/04/15 04:33:53 asami Exp $
 #
 
 DISTNAME=	latex
@@ -34,7 +34,7 @@ latex_tools.tar.gz:
 	@${FTPGET} ${CTAN} /tex-archive/macros latex/packages/tools.tar.gz ${DISTDIR}/$@
 
 
-build: ${BUILD_COOKIE}
+build: configure ${BUILD_COOKIE}
 
 ${BUILD_COOKIE}:
 	@echo "===>  Building for ${DISTNAME}"
@@ -46,7 +46,7 @@ ${BUILD_COOKIE}:
 		 ln -sf /usr/local/bin/virtex latex; yes | ./latex tools.ins)
 	@touch -f ${BUILD_COOKIE}
 
-install:
+install: build
 	@echo "===>  Installing for ${DISTNAME}"
 	@(/usr/bin/install -c -m 644 ${WRKSRC}/base/latex.fmt \
 				${PREFIX}/lib/texmf/ini/)
