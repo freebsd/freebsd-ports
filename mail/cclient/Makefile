@@ -18,11 +18,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@freebsd.org
 
 INSTALLS_SHLIB=	yes
-.if defined(WITH_SSL)
-ALL_TARGET=	bsf SSLTYPE=unix
-.else
 ALL_TARGET=	bsf
-
+.if defined(WITH_SSL)
+MAKE_ARGS+=	SSLTYPE=unix
 USE_OPENSSL=	yes
 .endif
 
