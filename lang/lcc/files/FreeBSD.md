@@ -1,5 +1,5 @@
 %{
-#define FREEBSDMD_RCSID	"$Id$"
+#define FREEBSDMD_RCSID	"$FreeBSD$"
 
 enum { EAX=0, ECX=1, EDX=2, EBX=3, ESI=6, EDI=7 };
 #include "c.h"
