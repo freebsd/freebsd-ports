@@ -6,19 +6,15 @@
 #
 
 PORTNAME=	jdom
-PORTVERSION=	1.0b8
-PORTREVISION=	2
+PORTVERSION=	1.0b9
 CATEGORIES=	java
-MASTER_SITES=	http://www.jdom.org/dist/source/ \
-		http://www.metaverse.nl/~ernst/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	znerd
+MASTER_SITES=	http://www.jdom.org/dist/source/
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/[0-9]*\.[0-9]*//}
 
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Java library for accessing and manipulating XML documents
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant
+BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
 
 USE_JAVA=	1.2+
 

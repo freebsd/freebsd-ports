@@ -124,7 +124,7 @@ BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk13
 #.endif
 BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
-BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/jakarta-ant
+BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/apache-ant
 BUILD_DEPENDS+= ${X11BASE}/lib/libX11.so:${PORTSDIR}/x11/XFree86-4-libraries
 .if !defined(DISPLAY)
 BUILD_DEPENDS+= Xvfb:${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer

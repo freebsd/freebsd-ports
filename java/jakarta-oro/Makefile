@@ -13,7 +13,7 @@ MASTER_SITES=	http://jakarta.apache.org/builds/${PORTNAME}/release/v${PORTVERSIO
 MAINTAINER=	dglo@ssec.wisc.edu
 COMMENT=	Perl/awk/sh regular expressions for Java
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/jakarta-ant
+BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
 
 USE_JAVA=	1.2+
 NEED_JAVAC=	YES

@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	jump-math
 MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Java library for arbitrary precision computations
 
-BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant
+BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
 
 USE_JAVA=	1.2+
 
