@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmime
-PORTVERSION=	2.1.4
+PORTVERSION=	2.1.5
 CATEGORIES=	mail
 MASTER_SITES=	http://spruce.sourceforge.net/gmime/sources/v2.1/
 
@@ -26,14 +26,5 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 INSTALLS_SHLIB=		yes
 
 LATEST_LINK=	gmime2
-
-pre-configure:
-.if exists(${X11BASE}/lib/libgmime.so)
-	@${ECHO} ""
-	@${ECHO} "You have gmime-1.x installed"
-	@${ECHO} "Please deinstall gmime-1.x before installing this port"
-	@${ECHO} ""
-	@${FALSE}
-.endif
 
 .include <bsd.port.mk>
