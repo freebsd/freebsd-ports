@@ -1,0 +1,19 @@
+*** makefile	Tue Nov 28 03:47:05 1995
+--- /home/andy/tmp/wrk/Makefile	Sat May 10 20:47:07 1997
+***************
+*** 13,19 ****
+  
+  #makes the game - this is default (has colors and keyboard flushing) 
+  block  : block.c
+! 	$(CC) $(INCLUDE) -DUCOL -DNEW -s -o block block.c $(LL)
+  
+  #make the editor
+  bed    : bed.c
+--- 13,19 ----
+  
+  #makes the game - this is default (has colors and keyboard flushing) 
+  block  : block.c
+! 	$(CC) $(INCLUDE) -DUCOL -DNEW -DPREFIX=\"$(PREFIX)\" -s -o block block.c $(LL)
+  
+  #make the editor
+  bed    : bed.c
