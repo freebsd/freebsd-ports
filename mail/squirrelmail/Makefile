@@ -26,7 +26,7 @@ WANT_PHP_PEAR=	yes
 .endif
 
 .ifdef WITH_LDAP
-USE_PHP=	${USE_PHP} ldap
+USE_PHP+=	ldap
 .endif
 
 .ifndef WITHOUT_WWWDIR
