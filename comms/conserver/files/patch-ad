@@ -1,0 +1,34 @@
+--- ./conserver/consent.c	Sat Nov 22 20:21:46 1997
++++ ./conserver/consent.c	Sat Aug 23 18:05:11 1997
+@@ -206,5 +206,5 @@
+ 	 * Don't bother with the control characters as they are not used
+ 	 */
+-	termp.c_cc[VMIN] = 128;
++	termp.c_cc[VMIN] = 1;
+ 	termp.c_cc[VTIME] = 1;
+ 
+@@ -425,13 +425,13 @@
+ 
+ #if USE_TERMIOS
+-	if (0 != ioctl(0, TCGETS, & n_tio)) {
++	if (0 != tcgetattr(0, & n_tio)) {
+ 		fprintf(stderr, "%s: iotcl: getsw: %s\n", progname, strerror(errno));
+ 		exit(1);
+ 	}
+-	n_tio.c_iflag &= ~(IGNCR|IUCLC);
++
++	n_tio.c_iflag &= ~(IGNCR);
+ 	n_tio.c_iflag |= ICRNL|IXON|IXANY;
+-	n_tio.c_oflag &= ~(OLCUC|ONOCR|ONLRET|OFILL|NLDLY|CRDLY|TABDLY|BSDLY);
+ 	n_tio.c_oflag |= OPOST|ONLCR;
+-	n_tio.c_lflag &= ~(XCASE|NOFLSH|ECHOK|ECHONL);
++	n_tio.c_lflag &= ~(NOFLSH|ECHOK|ECHONL);
+ 	n_tio.c_lflag |= ISIG|ICANON|ECHO;
+ 	n_tio.c_cc[VEOF] = '\004';
+@@ -445,5 +445,5 @@
+ 	n_tio.c_cc[VSTOP] = '\023';
+ 	n_tio.c_cc[VSUSP] = '\032';
+-	if (0 != ioctl(0, TCSETS, & n_tio)) {
++	if (0 != tcsetattr(0, TCSANOW, & n_tio)) {
+ 		fprintf(stderr, "%s: getarrt: %s\n", progname, strerror(errno));
+ 		exit(1);

@@ -1,0 +1,28 @@
+--- ./console/console.c	Sat Nov 22 20:11:48 1997
++++ ./console/console.c	Sat Aug 23 17:40:44 1997
+@@ -367,15 +367,15 @@
+ 
+ #if USE_TERMIOS
+-	if (0 != ioctl(0, TCGETS, & o_tios)) {
++	if (0 != tcgetattr(0, & o_tios)) {
+ 		fprintf(stderr, "%s: iotcl: getsw: %s\n", progname, strerror(errno));
+ 		exit(10);
+ 	}
+ 	n_tios = o_tios;
+-	n_tios.c_iflag &= ~(INLCR|IGNCR|ICRNL|IUCLC|IXON);
++	n_tios.c_iflag &= ~(INLCR|IGNCR|ICRNL|IXON);
+ 	n_tios.c_oflag &= ~OPOST;
+ 	n_tios.c_lflag &= ~(ICANON|ISIG|ECHO);
+ 	n_tios.c_cc[VMIN] = 1;
+ 	n_tios.c_cc[VTIME] = 0;
+-	if (0 != ioctl(0, TCSETS, & n_tios)) {
++	if (0 != tcsetattr(0, TCSANOW, & n_tios)) {
+ 		fprintf(stderr, "%s: getarrt: %s\n", progname, strerror(errno));
+ 		exit(10);
+@@ -453,5 +453,5 @@
+ 		return;
+ #if USE_TERMIOS
+-	(void)ioctl(0, TCSETS, (char *)&o_tios);
++	(void)tcsetattr(0, TCSANOW, &o_tios);
+ #else
+ #if USE_TERMIO

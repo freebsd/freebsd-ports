@@ -1,0 +1,36 @@
+--- conserver.cf/Makefile.orig	Sat Nov 22 22:25:19 1997
++++ conserver.cf/Makefile	Sat Nov 22 22:29:15 1997
+@@ -4,18 +4,19 @@
+ #
+ 
+ # if you edit LIB below you have to change cons.hs default config define.
+-PROG=	conserver.cf
+-LIB=	${DESTDIR}/usr/local/lib
+-DOC=	${DESTDIR}/usr/man
++PROG=	conserver.cf.eg
++LIB=	${DESTDIR}/usr/local/etc
++DOC=	${DESTDIR}/usr/local/man/man5
+ 
+ SRCs=	conserver.cf
+ MAN=	conserver.cf.5l
+ OTHER=	README
+ SOURCE=	Makefile ${OTHER} ${MAN} ${SRCl} ${SRCs}
+ 
+-all: ${SRCl} ${PROG}
++all: ${PROG}
+ 
+ ${PROG}: ${SRCs}
++	sed -e '/^[^#]/s/^/#/' < ${SRCs} > ${PROG}
+ 
+ clean: FRC
+ 	rm -f Makefile.bak a.out core errs lint.out tags
+@@ -29,7 +30,8 @@
+ dirs: ${LIB} ${DOC}
+ 
+ install: all dirs FRC
+-	install -c ${PROG} ${LIB}/${PROG}
++	install -c -o bin -g bin -m 444 ${PROG} ${LIB}
++	install -c -o bin -g bin -m 444 ${MAN} ${DOC}/conserver.cf.5
+ 
+ lint: FRC
+ 
