@@ -8,7 +8,7 @@
 PORTNAME=	mdw
 PORTVERSION=	1.0
 CATEGORIES=	www
-MASTER_SITES=	http://redbrick.dcu.ie/~colmmacc/mdw/
+MASTER_SITES=	http://www.redbrick.dcu.ie/~colmmacc/mdw/
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	A utility to check the MD5 sum of a webpage

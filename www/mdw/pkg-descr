@@ -3,7 +3,7 @@ take a list of URLs, md5 each of them, and optionally compare this
 to a previous checksum.  There is a also a quiet mode which is
 useful for inclusion in scripts.
 
-WWW: http://redbrick.dcu.ie/~colmmacc/mdw/
+WWW: http://www.redbrick.dcu.ie/~colmmacc/mdw/
 
 - Pete
 petef@databits.net
