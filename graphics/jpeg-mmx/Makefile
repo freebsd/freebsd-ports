@@ -17,6 +17,7 @@ WRKSRC=         ${WRKDIR}/jpeg-6b
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static
 MAN1=		cjpeg.1 djpeg.1 jpegtran.1 rdjpgcom.1 wrjpgcom.1
+USE_LIBTOOL=	yes
 
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
