@@ -8,7 +8,7 @@
 PORTNAME=	gdcd
 PORTVERSION=	0.2.1
 CATEGORIES=	audio
-MASTER_SITES=	http://cdcd.undergrid.net/gdcd/source_archive/
+MASTER_SITES=	http://gdcd.undergrid.net/source_archive/
 
 MAINTAINER=	ports@FreeBSD.org
 
