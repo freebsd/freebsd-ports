@@ -1,0 +1,13 @@
+--- info/gcl-si.texi.orig	Sun Sep 14 12:13:24 2003
++++ info/gcl-si.texi	Sun Sep 14 12:14:28 2003
+@@ -19,6 +19,10 @@
+ 
+ @setchapternewpage odd
+ @ifinfo
++@dircategory GNU Common Lisp
++@direntry
++* GCL Systems Internals: (gcl-si).	GCL SYSTEM INTERNALS Manual
++@end direntry
+ This is a Texinfo GCL SYSTEM INTERNALS Manual
+ 
+ Copyright 1994 William F. Schelter

@@ -1,0 +1,24 @@
+--- makedefc.in.orig	Sun Sep 14 12:02:18 2003
++++ makedefc.in	Sun Sep 14 12:10:34 2003
+@@ -16,13 +16,18 @@
+ prefix=@prefix@
+ 
+ # where to place the info files
+-INFO_DIR=@INFO_DIR@
++INFO_DIR=@prefix@/info
++
++# configure has a clever process for figuring out where Emacs
++# really expects to find site-lisp and default.el.  We use
++# these values instead to ensure that building with --prefix=PREFIX
++# will not make changes outside the specified tree. -twp
+ 
+ # where to put emacs lisp files.
+-EMACS_SITE_LISP=@EMACS_SITE_LISP@
++EMACS_SITE_LISP=@prefix@/share/emacs/site-lisp
+ 
+ # the default.el file
+-EMACS_DEFAULT_EL=@EMACS_DEFAULT_EL@
++EMACS_DEFAULT_EL=@prefix@/share/emacs/site-lisp/default.el
+ 
+ # numerous TCL/TK variables culled from the tkConfig.sh and tclConfig.sh
+ # if these are found.

@@ -7,8 +7,6 @@ license.
 
 WWW: http://www.gnu.org/software/gcl/
 
-NOTE: GCL 2.4.0 supports Tk bindings with Tcl 8.0 and Tk 8.0.  This
-port of GCL does not insist on Tcl/Tk, but will attempt to build with
-Tcl/Tk support if the libraries are found at build time.
+NOTE: GCL supports Tk bindings with Tcl 8 and Tk 8.
 
 Tim Pierce <twp@unchi.org>

@@ -1,0 +1,15 @@
+--- makefile.orig	Sun Sep 14 13:48:53 2003
++++ makefile	Sun Sep 14 13:50:15 2003
+@@ -162,10 +162,11 @@
+ 	mkdir -p $(DESTDIR)$(prefix)/lib 
+ 	mkdir -p $(DESTDIR)$(prefix)/bin
+ 	mkdir -p $(DESTDIR)$(INSTALL_LIB_DIR)
++	mkdir -p $(DESTDIR)$(prefix)/info
+ 	MINSTALL_LIB_DIR=`echo $(INSTALL_LIB_DIR) | sed -e 'sX^\([a-z]\):X/\1Xg'` ; \
+ 	$(MAKE) install-command "INSTALL_LIB_DIR=$(INSTALL_LIB_DIR)" "prefix=$(prefix)" "DESTDIR=$(DESTDIR)" "BINDIR=$$MINSTALL_LIB_DIR/unixport"
+ 	rm -f $(DESTDIR)$(prefix)/bin/gcl.exe
+-	tar cf - $(PORTDIR)/$(FLISP)$(EXE) info/*.info* $(LISP_LIB) \
++	tar cf - $(PORTDIR)/$(FLISP)$(EXE) $(LISP_LIB) \
+ 	$(TCL_EXES)  |  (cd $(DESTDIR)$(INSTALL_LIB_DIR) ;tar xf -)
+ 	if [ -e "unixport/rsym$(EXE)" ] ; then cp unixport/rsym$(EXE) $(DESTDIR)$(INSTALL_LIB_DIR)/unixport/ ; fi
+ #	ln $(SYMB) $(INSTALL_LIB_DIR)/$(PORTDIR)/$(FLISP)$(EXE) \
