@@ -1,0 +1,32 @@
+--- vfontcap.orig	Mon Jan 14 06:14:01 2002
++++ vfontcap	Mon Jan 14 06:16:41 2002
+@@ -33,9 +33,9 @@
+ ####
+ 
+ min:\
+-	:fc=watanabe-mincho:
++	:fc=kochi-mincho:
+ goth:\
+-	:fc=watanabe-mincho:
++	:fc=kochi-gothic:
+ #min:\
+ #	:ft=freetype:\
+ #	:ff=/usr/local/share/fonts/DynaFont-Premium30/win95/futt/dfhsmw3.ttc:
+@@ -46,6 +46,17 @@
+ ###--------------------------
+ #### PRIMITIVE  FONTS
+ ####
++### Kochi fonts
++kochi-mincho:\
++	:fc=r-kochi-mincho:
++kochi-gothic:\
++	:fc=r-kochi-gothic:
++r-kochi-mincho|Kochi Mincho:\
++	:ft=freetype:\
++	:ff=/usr/X11R6/lib/X11/fonts/TrueType/kochi-mincho.ttf:
++r-kochi-gothic|Kochi Gothic:\
++	:ft=freetype:\
++	:ff=/usr/X11R6/lib/X11/fonts/TrueType/kochi-gothic.ttf:
+ 
+ ### SONY VECTOR FONTS
+ r-sony-mincho|Sony Vector Font (Mincho):\
