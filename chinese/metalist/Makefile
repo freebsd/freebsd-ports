@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	metalist
-PORTVERSION=	2.2.5
+PORTVERSION=	2.2.6
 CATEGORIES=	chinese www
-MASTER_SITES=	http://www.autrijus.org/
+MASTER_SITES=	http://p4.elixus.org/dist/
 DISTNAME=	metalist-${PORTVERSION}
 
 MAINTAINER=	autrijus@autrijus.org
