@@ -327,6 +327,7 @@
     SUBDIR += xmfract
     SUBDIR += xmms-avi
     SUBDIR += xmms-gforce
+    SUBDIR += xmms-xvs
     SUBDIR += xmorph
     SUBDIR += xmountains
     SUBDIR += xmovie
