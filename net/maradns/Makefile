@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	maradns
-PORTVERSION=	0.8.35
+PORTVERSION=	0.8.99
 CATEGORIES=	net
 MASTER_SITES=	http://www.maradns.org/download/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
