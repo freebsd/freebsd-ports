@@ -2082,6 +2082,7 @@ gonvert		ports/misc/gonvert
 googolplex	ports/net/googolplex
 gopchop		ports/graphics/gopchop
 gopher		ports/net/gopher
+gorm		ports/devel/gorm
 gotmail		ports/mail/gotmail
 gozer		ports/graphics/gozer
 gp		ports/print/gp
