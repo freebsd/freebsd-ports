@@ -1,7 +1,7 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4
 #
-#	$Id: bsd.port.mk,v 1.303 1999/01/26 03:58:58 asami Exp $
+#	$Id: bsd.port.mk,v 1.304 1999/02/03 11:06:19 asami Exp $
 #	$NetBSD: $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
@@ -566,9 +566,14 @@ GNU_CONFIGURE=	yes
 BUILD_DEPENDS+=		autoconf:${PORTSDIR}/devel/autoconf
 .endif
 
-.if defined(REQUIRES_MOTIF) && defined(PARALLEL_PACKAGE_BUILD)
+.if defined(REQUIRES_MOTIF)
+LIB_DEPENDS+=		Xpm.4:${PORTSDIR}/graphics/xpm
+.if defined(PARALLEL_PACKAGE_BUILD)
 BUILD_DEPENDS+=		${X11BASE}/lib/libXm.a:${PORTSDIR}/x11-toolkits/Motif-dummy
 .endif
+.endif
+
+PKG_IGNORE_DEPENDS?=		'(XFree86-3\.3\.3\.1|Motif-2\.1\.10)'
 
 PERL_VERSION=	5.00502
 PERL_VER=		5.005
@@ -732,7 +737,7 @@ PKGMESSAGE?=		${PKGDIR}/MESSAGE
 PKG_CMD?=		/usr/sbin/pkg_create
 PKG_DELETE?=	/usr/sbin/pkg_delete
 .if !defined(PKG_ARGS)
-PKG_ARGS=		-v -c ${COMMENT} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`${MAKE} package-depends|sort -u`" ${EXTRA_PKG_ARGS}
+PKG_ARGS=		-v -c ${COMMENT} -d ${DESCR} -f ${TMPPLIST} -p ${PREFIX} -P "`${MAKE} package-depends | grep -v -E ${PKG_IGNORE_DEPENDS} | sort -u`" ${EXTRA_PKG_ARGS}
 .if exists(${PKGINSTALL})
 PKG_ARGS+=		-i ${PKGINSTALL}
 .endif
@@ -760,9 +765,9 @@ PKG_DBDIR?=		/var/db/pkg
 # shared/dynamic motif libs
 .if defined(HAVE_MOTIF)
 .if defined(MOTIF_STATIC)
-MOTIFLIB?=	${X11BASE}/lib/libXm.a
+MOTIFLIB?=	${X11BASE}/lib/libXm.a -L${X11BASE}/lib -lXp
 .else
-MOTIFLIB?=	-L${X11BASE}/lib -lXm
+MOTIFLIB?=	-L${X11BASE}/lib -lXm -lXp
 .endif
 .endif
 
@@ -851,6 +856,26 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.geo.net/pub/gnome/sources/%SUBDIR%/ \
 	ftp://gnomeftp.wgn.net/pub/gnome/sources/%SUBDIR%/ \
 	ftp://ftp.gnome.org/pub/GNOME/sources/%SUBDIR%/
+
+MASTER_SITE_AFTERSTEP+=	\
+	ftp://ftp.afterstep.org/%SUBDIR%/ \
+	ftp://ftp.digex.net/pub/os/wm/AfterStep/%SUBDIR%/ \
+	ftp://ftp.alpha1.net/pub/mirrors/ftp.afterstep.org/%SUBDIR%/ \
+	ftp://ftp.math.uni-bonn.de/pub/mirror/ftp.afterstep.org/%SUBDIR%/ \
+	ftp://ftp.bse.bg/pub/Unix/X11/wm/afterstep/%SUBDIR%/ \
+	ftp://ftp.dti.ad.jp/pub/X/AfterStep/%SUBDIR%/ \
+	ftp://ftp.lbi.ro/mirrors/ftp.afterstep.org/pub/%SUBDIR%/ \
+	ftp://casper.yz.yamagata-u.ac.jp/pub/X11/apps/afterstep/%SUBDIR%/ \
+
+MASTER_SITE_WINDOWMAKER+= \
+	ftp://ftp.windowmaker.org/pub/%SUBDIR%/ \
+	ftp://ftp.goldweb.com.au/pub/WindowMaker/%SUBDIR%/ \
+	ftp://ftp.io.com/pub/mirror/windowmaker/%SUBDIR%/ \
+	ftp://ftp.ensm-ales.fr/pub/mirrors/ftp.windowmaker.org/%SUBDIR/ \
+	ftp://ftp.freenews.de/pub/windowmaker/%SUBDIR%/ \
+	http://jgo.local.net/cool_downloads/wm/%SUBDIR%/ \
+	ftp://ftp.cybertrails.com/pub/windowmaker/%SUBDIR%/ \
+	ftp://ftp.ameth.org/pub/mirrors/ftp.windowmaker.org/%SUBDIR%/
 
 # Empty declaration to avoid "variable MASTER_SITES recursive" error
 MASTER_SITES?=
@@ -1154,7 +1179,7 @@ IGNORE=	"defines NO_CONFIGURE, which is obsoleted"
 IGNORE=	"defines NO_PATCH, which is obsoleted"
 .elif (defined(BROKEN_ELF) && (${PORTOBJFORMAT} == "elf"))
 IGNORE=	"is broken for ELF: ${BROKEN_ELF}"
-.elif defined(BROKEN)
+.elif defined(BROKEN) && !defined(PARALLEL_PACKAGE_BUILD)
 IGNORE=	"is marked as broken: ${BROKEN}"
 .endif
 
