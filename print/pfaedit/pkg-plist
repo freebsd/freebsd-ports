@@ -6,3 +6,5 @@ share/pfaedit/Adobe-GB1-4.cidmap
 share/pfaedit/Adobe-Japan1-4.cidmap
 share/pfaedit/Adobe-Korea1-2.cidmap
 @dirrm share/pfaedit
+share/doc/pfaedit/LICENSE
+@dirrm share/doc/pfaedit

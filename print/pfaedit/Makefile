@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	pfaedit
-PORTVERSION=	20011219
+PORTVERSION=	20${DIST_VER}
 CATEGORIES=	print
 MASTER_SITES=	http://pfaedit.sourceforge.net/
-DISTFILES=	${PORTNAME}_src-${DIST_VER}.tgz \
-		libgunicode-${LIBGUNI_VER}.tgz libgdraw-${LIBGDRAW_VER}.tgz \
-		cidmaps.tgz
+DISTFILES=	${PORTNAME}_full-${DIST_VER}.tgz cidmaps.tgz
 
 MAINTAINER=	kanou@mil.allnet.ne.jp
 
@@ -30,9 +28,7 @@ ALL_TARGET=	pfaedit
 
 MAN1=		pfaedit.1
 
-DIST_VER=	011219
-LIBGDRAW_VER=	011219
-LIBGUNI_VER=	011219
+DIST_VER=	020122
 
 post-patch:
 	${PERL} -pi.orig -e 's,/usr/share/,${PREFIX}/share/,g' \
@@ -44,6 +40,8 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pfaedit/pfaedit ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/share/pfaedit
 	${INSTALL_DATA} ${WRKDIR}/*.cidmap ${PREFIX}/share/pfaedit
+	${MKDIR} ${PREFIX}/share/doc/pfaedit
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/pfaedit
 	${INSTALL_MAN} ${WRKSRC}/pfaedit/pfaedit.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
