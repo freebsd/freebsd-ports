@@ -1,0 +1,25 @@
+# Ports collection makefile for: Japanese Font Setup for math/ngraph
+# Version required:	1.0
+# Date created:		6 December 1999
+# Whom:			Yoshiro MIHIRA <sanpei@jp.FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+DISTNAME=	ja-ngraph-fonts-1.0
+CATEGORIES=	japanese math x11-fonts
+MASTER_SITES=	# empty
+DISTFILES=	# empty
+
+MAINTAINER=     sanpei@jp.FreeBSD.org
+
+RUN_DEPENDS= \
+	${X11BASE}/lib/X11/fonts/local/kanji18.pcf.gz:${PORTSDIR}/japanese/kanji18 \
+	${X11BASE}/lib/X11/fonts/local/kanji26.pcf.gz:${PORTSDIR}/japanese/kanji26
+
+USE_X_PREFIX=	yes
+NO_BUILD=	yes
+
+do-install:	# empty
+
+.include <bsd.port.mk>
