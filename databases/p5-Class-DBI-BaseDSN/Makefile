@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-DBI-BaseDSN
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Class
@@ -23,4 +23,5 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Class::DBI::BaseDSN.3
 
+.include "../../devel/p5-Module-Build/inc.build.mk"
 .include <bsd.port.mk>
