@@ -1,5 +1,8 @@
 bin/nicotine
 bin/nicotine-import-winconfig
+%%PYTHON_SITELIBDIR%%/pynicotine/ConfigParser.py
+%%PYTHON_SITELIBDIR%%/pynicotine/ConfigParser.pyc
+%%PYTHON_SITELIBDIR%%/pynicotine/ConfigParser.pyo
 %%PYTHON_SITELIBDIR%%/pynicotine/__init__.py
 %%PYTHON_SITELIBDIR%%/pynicotine/__init__.pyc
 %%PYTHON_SITELIBDIR%%/pynicotine/__init__.pyo
@@ -57,6 +60,9 @@ bin/nicotine-import-winconfig
 %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/transferlist.py
 %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/transferlist.pyc
 %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/transferlist.pyo
+%%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/translux.py
+%%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/translux.pyc
+%%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/translux.pyo
 %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/uploads.py
 %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/uploads.pyc
 %%PYTHON_SITELIBDIR%%/pynicotine/gtkgui/uploads.pyo
