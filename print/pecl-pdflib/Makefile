@@ -7,6 +7,7 @@
 
 PORTNAME=	pdflib
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	print pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -18,17 +19,11 @@ COMMENT=	A PECL extension to create PDF on the fly
 
 LIB_DEPENDS=	pdf.7:${PORTSDIR}/print/pdflib
 
-USE_PHP=	yes
-USE_PHPIZE=	yes
+USE_PHP=	gd
+USE_PHP_BUILD=	yes
+USE_PHPEXT=	yes
+PHP_MODNAME=	pdf
 
 CONFIGURE_ARGS=	--with-pdflib=${LOCALBASE}
-
-do-install:
-	@${MKDIR} ${PREFIX}/lib/php/${PHP_EXT_DIR}
-	@${INSTALL_DATA} ${WRKSRC}/modules/pdf.so \
-	       ${PREFIX}/lib/php/${PHP_EXT_DIR}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
