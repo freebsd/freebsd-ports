@@ -584,6 +584,7 @@
     SUBDIR += xmlto
     SUBDIR += xmlwrapp
     SUBDIR += xp
+    SUBDIR += xpp3
     SUBDIR += xslide.el
     SUBDIR += xslint
     SUBDIR += xt

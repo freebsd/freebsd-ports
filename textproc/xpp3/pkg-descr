@@ -1,0 +1,15 @@
+MXP1 is a new XmlPull parsing engine that is based on ideas from XPP and in
+particular XPP2 but completely revised and rewritten to take best advantage of
+latest Java JIT JVMs such as Hotspot in JDK 1.4.
+
+MXP1 has following features:
+
+  - fast - let me say it again it is fast :-)
+  - small - lot of performance packed in JAR file that is less than 20KB!
+  - easy to use - the parser implements common XML pull parsing API (XMLPULL)
+    described at http://www.xmlpull.org
+
+Performance tests that compare MXP1 to other leading XML parsers are available
+at http://www.extreme.indiana.edu/~aslom/xpp_sax2bench/
+
+WWW:	http://www.extreme.indiana.edu/soap/xpp/mxp1/
