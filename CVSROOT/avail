@@ -6,7 +6,7 @@
 unavail
 avail||CVSROOT
 avail||distrib
-avail||doc
+avail|nik|doc
 avail||ports
 avail||src
 avail||www
