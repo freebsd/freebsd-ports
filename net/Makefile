@@ -347,6 +347,7 @@
     SUBDIR += punkbuster-data
     SUBDIR += pvm
     SUBDIR += pvm++
+    SUBDIR += py-pcap
     SUBDIR += py-soap
     SUBDIR += py-xmlrpc
     SUBDIR += py-xmlrpclib
