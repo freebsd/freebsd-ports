@@ -46,7 +46,7 @@
 + 	(cd source; make -f Makefile.freebsd install)
 + 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m 644 nedit.man ${PREFIX}/man/man1/nedit.1
 + 	${INSTALL} ${COPY} -o ${BINOWN} -g ${BINGRP} -m 644 nc.man ${PREFIX}/man/man1/nc.1
-+ 	${INSTALL} ${COPY} -m 644 NEdit.ad ${X11BASE}/lib/X11/app-defaults/NEdit.ad
++ 	${INSTALL} ${COPY} -m 644 NEdit.ad ${X11BASE}/lib/X11/app-defaults/NEdit
   linux_nedit:
   	(cd util; $(MAKE) -f Makefile.linux libNUtil.a)
   	(cd source; $(MAKE) -f Makefile.linux nedit nc)
@@ -63,25 +63,6 @@
 + LIBS= ${MOTIFLIB} -L${PREFIX}/lib -lm -lXpm -lXext -lXt -lSM -lICE -lX11
 + 
 + include Makefile.common
-*** util/Makefile.common.orig	Sun Apr  7 17:33:24 1996
---- util/Makefile.common	Sun Apr  7 17:33:42 1996
-***************
-*** 10,16 ****
-  all: libNUtil.a
-  
-  libNUtil.a: $(OBJS)
-! 	$(AR) -urs libNUtil.a $(OBJS)
-  
-  printUtils.o: printUtils.c
-  	$(CC) -c $(CFLAGS) $(PRINTFLAGS) printUtils.c
---- 10,16 ----
-  all: libNUtil.a
-  
-  libNUtil.a: $(OBJS)
-! 	$(AR) -ur libNUtil.a $(OBJS)
-  
-  printUtils.o: printUtils.c
-  	$(CC) -c $(CFLAGS) $(PRINTFLAGS) printUtils.c
 *** source/Makefile.freebsd.orig	Sun Apr  7 18:10:29 1996
 --- source/Makefile.freebsd	Sun Apr  7 17:38:04 1996
 ***************
@@ -110,21 +91,3 @@
   help.o: help.c
   	$(CC) $(CFLAGS) $(BIGGER_STRINGS) -c help.c -o $@
   
-*** source/preferences.c.orig	Wed Oct 22 15:42:14 1997
---- source/preferences.c	Thu Oct 30 17:22:14 1997
-***************
-*** 206,211 ****
---- 206,218 ----
-  	sort::o:EX:\nsort\nnumber lines::n:AW:\nnl -ba\nmake:Alt+Z:m:W:\nmake\n\
-  	expand::p:EX:\nexpand\nunexpand::u:EX:\nunexpand\n",
-      	&TempStringPrefs.shellCmds, NULL, True},
-+ #elif __FreeBSD__
-+     {"shellCommands", "ShellCommands", PREF_ALLOC_STRING, "spell:Alt+B:s:EX:\n\
-+ 	cat>spellTmp; xterm -e ispell -x spellTmp; cat spellTmp; rm spellTmp\n\
-+ 	wc::w:ED:\nset wc=`wc`; echo $wc[1] \"words,\" $wc[2] \"lines,\" $wc[3] \"characters\"\n\
-+ 	sort::o:EX:\nsort\nnumber lines::n:AW:\npr -tn\nmake:Alt+Z:m:W:\nmake\n\
-+ 	expand::p:EX:\nexpand\nunexpand::u:EX:\nunexpand\n",
-+     	&TempStringPrefs.shellCmds, NULL, True},
-  #else
-      {"shellCommands", "ShellCommands", PREF_ALLOC_STRING, "spell:Alt+B:s:ED:\n\
-      	(cat;echo \"\") | spell\nwc::w:ED:\nset wc=`wc`; echo $wc[1] \"lines,\" $wc[2] \"words,\" $wc[3] \"characters\"\n\
