@@ -5,12 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=       tits
-PORTVERSION=	1.0.2
+PORTNAME=	tits
+PORTVERSION=	1.0.3
 CATEGORIES=	comms
-MASTER_SITES=   http://www.mctavish.co.uk/tits/
+MASTER_SITES=	http://www.mctavish.co.uk/tits/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mich@freebsdcluster.org
 
 USE_REINPLACE=	yes
 MAKE_ENV=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
