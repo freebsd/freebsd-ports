@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tmda
-PORTVERSION=	0.61
+PORTVERSION=	0.62
 CATEGORIES=	mail python
 MASTER_SITES=	http://tmda.net/releases/%SUBDIR%/
-MASTER_SITE_SUBDIR= . old
+MASTER_SITE_SUBDIR=	. old
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mwm@mired.org

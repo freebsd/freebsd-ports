@@ -6,4 +6,4 @@ TMDA combines a "whitelist" (for known/trusted senders), a "blacklist"
 (for undesired senders), and a cryptographically enhanced confirmation
 system (for unknown, but legitimate senders).
 
-WWW: http://tmda.sourceforge.net/
+WWW: http://tmda.net/
