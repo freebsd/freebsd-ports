@@ -1,3 +1,12 @@
-Twin - a Textmode WINdow environment
+Twin is a text-mode window environment. It turns a text terminal 
+into a X11-style display with window manager, terminal windows, and 
+can also serve as display for remote applications. Each terminal 
+window provides the functions of a text-mode Linux console. Twin 
+runs on X11, libggi, itself, the Linux console, and any 
+termcap/ncurses-compatible tty. It supports multiple simultaneous 
+displays, and can attach/detach each display on the fly.
 
 WWW: http://linuz.sns.it/~max/twin/
+
+- Samy Al Bahra
+samy@kerneled.com

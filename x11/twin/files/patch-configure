@@ -1,0 +1,10 @@
+--- configure   Thu Mar 27 11:29:47 2003
++++ configure.patch     Tue May 13 11:43:10 2003
+@@ -1236,5 +1236,5 @@
+ make_is_good=no
+ if test "${MAKE-make}"; then
+-  ${MAKE-make} -v | head -1 | cut -d' ' -f1-4 | cut -d, -f1 | \
++  gmake -v | head -1 | cut -d' ' -f1-4 | cut -d, -f1 | \
+   while read make_GNU make_Make make_version make_numbers
+   do
+
