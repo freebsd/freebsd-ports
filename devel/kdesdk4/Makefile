@@ -9,7 +9,7 @@ PORTNAME=	kdesdk
 PORTVERSION=	2.1.1
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/src
 
 MAINTAINER=	demon@FreeBSD.org
 
