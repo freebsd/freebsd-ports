@@ -1,0 +1,8 @@
+cd-discid is a backend utility to get CDDB discid information from a CD-ROM
+disc. It was originally designed for abcde (AKA cdgrab), but can be used for
+any purpose requiring CDDB data.
+
+WWW: http://lly.org/~rcw/cd-discid
+
+- Munish Chopra 
+<mchopra@engmail.uwaterloo.ca>
