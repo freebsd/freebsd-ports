@@ -3738,6 +3738,7 @@ libgringotts	ports/security/libgringotts
 libgsf		ports/devel/libgsf
 libgtkeditor	ports/x11-toolkits/libgtkeditor
 libgtkhtml	ports/www/libgtkhtml
+libgtop		ports/devel/libgtop
 libgtop2	ports/devel/libgtop2
 libh		ports/misc/libh
 libhash		ports/devel/libhash
