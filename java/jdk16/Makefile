@@ -60,6 +60,7 @@ MAKE_ENV=	ALT_BOOTDIR="${JDK14DIR}" \
 		LD_LIBRARY_PATH=""
 ALL_TARGET=	all
 PLIST_SUB+=	JDK_VERSION=${JDK_VERSION}
+PKGINSTALL=	${WRKDIR}/pkg-install
 
 JDKIMAGEDIR=	${WRKSRC}/../build/bsd-i586/j2sdk-image
 JDKIMAGEDIR_G=	${WRKSRC}/../build/bsd-i586/j2sdk-debug-image
