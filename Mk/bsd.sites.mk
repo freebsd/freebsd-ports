@@ -555,21 +555,22 @@ MASTER_SITE_GENTOO+=	\
 	ftp://gentoo.kems.net/pub/mirrors/gentoo/%SUBDIR%/
 
 MASTER_SITE_GNOME+=	\
-	ftp://ftp.mirrorservice.org/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
-	http://ftp.linux.org.uk/mirrors/ftp.gnome.org/%SUBDIR%/ \
-	http://www.gtlib.cc.gatech.edu/pub/gnome/%SUBDIR%/ \
-	http://public.planetmirror.com/pub/gnome/%SUBDIR%/ \
-	ftp://ftp.cse.buffalo.edu/pub/Gnome/%SUBDIR%/ \
-	ftp://ftp.dit.upm.es/linux/gnome/%SUBDIR%/ \
-	ftp://ftp.dataplus.se/pub/linux/gnome/%SUBDIR%/ \
-	http://ftp.unina.it/pub/linux/GNOME/%SUBDIR%/ \
-	ftp://ftp.kddlabs.co.jp/pub/GNOME/%SUBDIR%/ \
-	ftp://ftp.dti.ad.jp/pub/X/gnome/%SUBDIR%/ \
 	ftp://ftp.belnet.be/mirror/ftp.gnome.org/%SUBDIR%/ \
+	http://ftp.linux.org.uk/mirrors/ftp.gnome.org/%SUBDIR%/ \
 	ftp://ftp.no.gnome.org/pub/GNOME/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/gnome/&,} \
+	ftp://ftp.dit.upm.es/linux/gnome/%SUBDIR%/ \
+	http://ftp.rpmfind.net/linux/gnome.org/%SUBDIR%/ \
+	ftp://ftp.dataplus.se/pub/linux/gnome/%SUBDIR%/ \
+	ftp://ftp.cse.buffalo.edu/pub/Gnome/%SUBDIR%/ \
+	http://ftp.unina.it/pub/linux/GNOME/%SUBDIR%/ \
+	http://www.gtlib.cc.gatech.edu/pub/gnome/%SUBDIR%/ \
 	http://archive.progeny.com/GNOME/%SUBDIR%/ \
-	http://farbror.acc.umu.se/pub/GNOME/%SUBDIR%/ \
+	http://www.zentek-international.com/mirrors/gnome/%SUBDIR%/ \
+	ftp://ftp.dti.ad.jp/pub/X/gnome/%SUBDIR%/ \
+	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/gnome/&,} \
+	ftp://ftp.kddlabs.co.jp/pub/GNOME/%SUBDIR%/ \
+	http://public.planetmirror.com/pub/gnome/%SUBDIR%/ \
+	ftp://ftp.mirrorservice.org/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
 	http://ftp.gnome.org/pub/GNOME/%SUBDIR%/
 
 MASTER_SITE_GNU+=	\
