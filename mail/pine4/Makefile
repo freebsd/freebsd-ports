@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pine
-PORTVERSION=	4.50
+PORTVERSION=	4.51
 CATEGORIES=	mail news
 MASTER_SITES=	ftp://ftp.cac.washington.edu/pine/
 DISTNAME=	${PORTNAME}${PORTVERSION}
@@ -38,7 +38,7 @@ pre-fetch:
 .endif
 
 post-patch:
-	for i in ${WRKSRC}/doc/pine.1 \
+	@for i in ${WRKSRC}/doc/pine.1 \
 		${WRKSRC}/pine/init.c \
 		${WRKSRC}/pine/pine.hlp \
 		${WRKSRC}/pine/mailcap.c \
@@ -48,7 +48,7 @@ post-patch:
 			$$i.sed >$$i ; \
 		${RM} $$i.sed ; \
 	done
-	for i in ${WRKSRC}/doc/tech-notes.txt \
+	@for i in ${WRKSRC}/doc/tech-notes.txt \
 		${WRKSRC}/doc/tech-notes/*.html ; do \
 		${MV} $$i $$i.sed ; \
 		${SED} -e "s:/usr/local/lib/:${PREFIX}/etc/:g" \
