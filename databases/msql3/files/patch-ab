@@ -1,0 +1,19 @@
+*** src/setup.orig	Wed Feb 22 18:16:06 1995
+--- src/setup	Wed Feb 22 18:16:20 1995
+***************
+*** 47,53 ****
+  fi
+  
+  
+! PID_DIRS="/var/adm /var/log /usr/adm /private/adm"
+  PID_DIR=""
+  for dir in $PID_DIRS
+  do
+--- 47,53 ----
+  fi
+  
+  
+! PID_DIRS="/var/run /var/adm /var/log /usr/adm /private/adm"
+  PID_DIR=""
+  for dir in $PID_DIRS
+  do
