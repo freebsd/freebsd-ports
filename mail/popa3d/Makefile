@@ -10,12 +10,7 @@ PORTVERSION=	0.6.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.openwall.com/popa3d/ \
 		ftp://ftp.openwall.com/pub/projects/popa3d/
-.if defined(SMTP_AFTER_POP3)
-PKGNAMESUFFIX?=	-before-sendmail
-.endif
-.if defined(STANDALONE_POP3)
-PKGNAMESUFFIX?=	-standalone
-.endif
+PKGNAMESUFFIX?=	${SMTP_AFTER_POP3_SUFFIX}${STANDALONE_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Secure, performance, tiny POP3 daemon
@@ -26,6 +21,7 @@ MAN8=		popa3d.8
 PLIST=		${WRKDIR}/.PLIST.more
 CFLAGS+=	-DPREFIX=${PREFIX}
 .if defined(STANDALONE_POP3)
+STANDALONE_SUFFIX=	-standalone
 PLIST_SUB+=	STANDALONE_POP3=""
 CONFLICTS?=	popa3d-0.* popa3d-before-sendmail-0.*
 PKGMESSAGE=	${NONEXISTENT}
@@ -34,6 +30,7 @@ PKGDEINSTALL=	${NONEXISTENT}
 PLIST_SUB+=	STANDALONE_POP3="@comment "
 .endif
 .if defined(SMTP_AFTER_POP3)
+SMTP_AFTER_POP3_SUFFIX=	-before-sendmail
 EXTRA_PATCHES+=	${FILESDIR}/pop-before-sendmail.patch
 PLIST_SUB+=	SMTP_AFTER_POP3=""
 CONFLICTS?=	popa3d-0.* popa3d-standalone-0.*
