@@ -8,8 +8,7 @@
 
 DISTNAME=	wterm-6.2.6
 CATEGORIES=	x11
-MASTER_SITES=	ftp://beer.dct.com/pub/Applications/ \
-		http://wm.current.nu/files/
+MASTER_SITES= 	http://wm.current.nu/files/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
