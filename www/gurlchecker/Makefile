@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gurlchecker
-PORTVERSION=	0.4.0
+PORTVERSION=	0.4.1
 CATEGORIES=	www gnome
 MASTER_SITES=	http://savannah.nongnu.org/download/gurlchecker/stable/0.4/
 
