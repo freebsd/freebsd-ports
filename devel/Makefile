@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.72 1997/07/21 16:10:50 max Exp $
+# $Id: Makefile,v 1.73 1997/08/13 09:42:38 tg Exp $
 #
 
     SUBDIR += SWIG
@@ -22,6 +22,7 @@
     SUBDIR += gcc11
     SUBDIR += gdb
     SUBDIR += gdbtk
+    SUBDIR += gindent
     SUBDIR += gmake
     SUBDIR += id-utils
     SUBDIR += lclint
