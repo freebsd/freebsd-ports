@@ -649,7 +649,7 @@ share/locale/zh_TW.Big5/LC_MESSAGES/gnumeric.mo
 @dirrm share/gnome/help/gnumeric/C/images
 @dirrm share/gnome/help/gnumeric/C
 @dirrm share/gnome/help/gnumeric
-@dirrm share/gnome/oaf
+@unexec rmdir %D/share/gnome/oaf 2>/dev/null || true
 @dirrm share/gnome/pixmaps/gnumeric
 @dirrm lib/gnumeric/%%VERSION%%/plugins
 @dirrm lib/gnumeric/%%VERSION%%
