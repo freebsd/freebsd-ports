@@ -7,7 +7,6 @@
     SUBDIR += acroread-chsfont
     SUBDIR += acroread-chtfont
     SUBDIR += arphicttf
-    SUBDIR += aterm
     SUBDIR += auto-tw-l10n
     SUBDIR += autoconvert
     SUBDIR += bg5ps
@@ -64,8 +63,6 @@
     SUBDIR += ve
     SUBDIR += vflib
     SUBDIR += wangttf
-    SUBDIR += xa+cv
-    SUBDIR += xcin
     SUBDIR += xcin25
     SUBDIR += xemacs
     SUBDIR += xemacs21
