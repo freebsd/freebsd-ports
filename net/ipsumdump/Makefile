@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ipsumdump
-PORTVERSION=	1.42
+PORTVERSION=	1.43
 CATEGORIES=	net
-MASTER_SITES=	http://www.icir.org/kohler/ipsumdump/
+MASTER_SITES=	http://www.cs.ucla.edu/~kohler/ipsumdump/
 
 MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Produce ASCII summary of network traffic or tcpdump(1) file
