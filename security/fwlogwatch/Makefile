@@ -7,27 +7,22 @@
 #
 
 PORTNAME=	fwlogwatch
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	security
-MASTER_SITES=	http://www.kyb.uni-stuttgart.de/boris/sw/
+MASTER_SITES=	http://www.kybs.de/boris/sw/
 
 MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
+USE_BZIP2=	yes
 USE_REINPLACE=	yes
-INSTALL_TARGET=	install install-config install-i18n
-MANCOMPRESSES=	no
-MAN8=	fwlogwatch.8
 MAKE_ENV=	MKDIR="${MKDIR}"
+INSTALL_TARGET=	install install-config install-i18n
+
+MAN8=	fwlogwatch.8
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}/etc,g; \
-		s,/usr/local,${PREFIX},g; \
-		s,/usr/share,${PREFIX}/share,g; \
-		s,%%LOCALBASE%%,${LOCALBASE},g' \
-		${WRKSRC}/Makefile ${WRKSRC}/main.h
 	@${REINPLACE_CMD} -e "s,/etc,${PREFIX}/etc,g" ${WRKSRC}/${MAN8}
 
 post-install:
