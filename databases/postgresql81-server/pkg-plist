@@ -1,5 +1,7 @@
+@unexec if cmp -s %D/pgsql/.profile %D/pgsql/dot.profile.dist; then rm -f %D/pgsql/.profile; fi
 etc/rc.d/pgsql.sh
-pgsql/.profile
+pgsql/dot.profile.dist
+@exec [ -f %D/pgsql/.profile ] || (cp %D/pgsql/dot.profile.dist %D/pgsql/.profile && chown pgsql:pgsql %D/pgsql/.profile)
 pgsql/bin/createdb
 pgsql/bin/createlang
 pgsql/bin/createuser
