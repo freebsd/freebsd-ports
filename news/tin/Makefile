@@ -4,7 +4,7 @@
 # Date created:		25 July 1996
 # Whom:			obrien@cs.ucdavis.edu
 #
-# $Id: Makefile,v 1.47 1997/11/05 08:15:14 asami Exp $
+# $Id: Makefile,v 1.48 1997/11/26 14:35:23 obrien Exp $
 #
 
 DISTNAME=       tinpre-1.4-971123
@@ -19,7 +19,7 @@ MAINTAINER=     ache@FreeBSD.org
 
 WRKSRC=         ${WRKDIR}/${DISTNAME:S/pre-1.4//}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+= --with-nntp-default-server=news  \
+CONFIGURE_ARGS=  --with-nntp-default-server=news  \
 		 --with-spooldir=/var/news  \
 		 --with-libdir=${PREFIX}/news/lib \
 		 --with-mime-default-charset=US-ASCII \
@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=	--enable-nntp-only
 .endif
 
 post-configure:
-	echo '#define NNTP_SERVER_FILE "${PREFIX}/etc/nntpserver"' >>${WRKSRC}/include/autoconf.h
-	echo '#define SMTP_SERVER_FILE "${PREFIX}/etc/smtpserver"' >>${WRKSRC}/include/autoconf.h
+	${ECHO} '#define NNTP_SERVER_FILE "${PREFIX}/etc/nntpserver"' >>${WRKSRC}/include/autoconf.h
+	${ECHO} '#define SMTP_SERVER_FILE "${PREFIX}/etc/smtpserver"' >>${WRKSRC}/include/autoconf.h
 
 .include <bsd.port.mk>
