@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	histring
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	misc
 MASTER_SITES=	http://www.gusnet.cx/proj/histring/
 
 MAINTAINER=	roam@FreeBSD.org
 
 GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 
 .include <bsd.port.mk>
