@@ -15,6 +15,7 @@
     SUBDIR += analog
     SUBDIR += aolserver
     SUBDIR += apache-contrib
+    SUBDIR += apache-forrest
     SUBDIR += apache-jserv
     SUBDIR += apache13
     SUBDIR += apache13+ipv6
