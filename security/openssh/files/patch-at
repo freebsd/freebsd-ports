@@ -1,10 +1,18 @@
-diff -ru /home/green/ssh/ssh-keygen/Makefile ./ssh-keygen/Makefile
---- /home/green/ssh/ssh-keygen/Makefile	Thu Oct 28 03:32:00 1999
-+++ ./ssh-keygen/Makefile	Mon Nov  8 00:13:47 1999
-@@ -10,12 +10,12 @@
- BINMODE?=555
- .endif
+--- ssh-keygen/Makefile.orig	Thu Oct 28 03:32:00 1999
++++ ssh-keygen/Makefile	Tue Nov  9 06:42:34 1999
+@@ -2,20 +2,14 @@
  
+ PROG=	ssh-keygen
+ BINOWN=	root
++BINMODE=555
+ 
+-.if (${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "powerpc" || \
+-	${MACHINE_ARCH} == "hppa")
+-BINMODE=0000
+-.else
+-BINMODE?=555
+-.endif
+-
 -BINDIR=	/usr/bin
 -MAN=	ssh-keygen.1
 +BINDIR=	/bin
