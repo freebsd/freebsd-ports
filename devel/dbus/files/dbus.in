@@ -19,6 +19,13 @@ rcvar=`set_rcvar`
 command="%%PREFIX%%/bin/dbus-daemon-1"
 pidfile="/var/run/${name}.pid"
 
+stop_postcmd=stop_postcmd
+
+stop_postcmd()
+{
+    rm -f $pidfile
+}
+
 [ -z "$dbus_enable" ]	&& dbus_enable="NO"
 [ -z "$dbus_flags" ]	&& dbus_flags="--system"
 

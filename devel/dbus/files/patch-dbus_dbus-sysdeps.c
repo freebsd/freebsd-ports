@@ -1,5 +1,5 @@
 --- dbus/dbus-sysdeps.c.orig	Wed Mar 17 17:08:09 2004
-+++ dbus/dbus-sysdeps.c	Tue Jun 22 15:41:42 2004
++++ dbus/dbus-sysdeps.c	Thu Jul 22 01:25:51 2004
 @@ -740,12 +740,38 @@
  {
    int bytes_written;
@@ -49,3 +49,30 @@
        _dbus_verbose ("Message from recvmsg() was not SCM_CREDS\n");
        return FALSE;
      }
+@@ -3421,21 +3448,21 @@
+       exit (1);
+     }
+ 
+-  _dbus_string_init_const (&str, "0xff");
++  _dbus_string_init_const (&str, "255");
+   if (!_dbus_string_parse_double (&str,
+ 				  0, &val, &pos))
+     {
+       _dbus_warn ("Failed to parse double");
+       exit (1);
+     }
+-  if (val != 0xff)
++  if (val != 255)
+     {
+-      _dbus_warn ("Failed to parse 0xff correctly, got: %f", val);
++      _dbus_warn ("Failed to parse 255 correctly, got: %f", val);
+       exit (1);
+     }
+-  if (pos != 4)
++  if (pos != 3)
+     {
+-      _dbus_warn ("_dbus_string_parse_double of \"0xff\" returned wrong position %d", pos);
++      _dbus_warn ("_dbus_string_parse_double of \"255\" returned wrong position %d", pos);
+       exit (1);
+     }
+   
