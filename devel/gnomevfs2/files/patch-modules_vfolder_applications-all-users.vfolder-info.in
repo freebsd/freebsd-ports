@@ -1,0 +1,11 @@
+--- modules/vfolder/applications-all-users.vfolder-info.in.orig	Sat Oct 18 19:04:37 2003
++++ modules/vfolder/applications-all-users.vfolder-info.in	Sat Oct 18 19:05:18 2003
+@@ -19,7 +19,7 @@
+   <MergeDir>/usr/share/gnome/apps/</MergeDir>
+ 
+   <!-- Merge dirs optional -->
+-  <MergeDir>/etc/X11/applnk/</MergeDir>
++  <MergeDir>%%LOCALBASE%%/share/applnk/</MergeDir>
+ 
+   <!-- Root folder -->
+   <Folder>

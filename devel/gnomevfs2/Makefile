@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomevfs2
 PORTVERSION=	2.4.1
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-vfs/2.4
@@ -50,7 +51,8 @@ post-patch:
 	@${FIND} ${WRKSRC} -name "*info.in" | xargs ${REINPLACE_CMD} -e \
 		's|\@datadir\@/gnome|\@datadir\@|g'
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		${WRKSRC}/libgnomevfs/Makefile.in
+		${WRKSRC}/libgnomevfs/Makefile.in \
+		${WRKSRC}/modules/vfolder/applications-all-users.vfolder-info.in
 	@${REINPLACE_CMD} -e "/^SUBDIRS =/s/test//" \
 		${WRKSRC}/Makefile.in
 
