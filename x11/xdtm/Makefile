@@ -3,7 +3,7 @@
 # Date created:         		26th April 1995
 # Whom:                 		gpalmer
 #
-# $Id: Makefile,v 1.5 1998/09/15 11:13:39 asami Exp $
+# $Id: Makefile,v 1.6 1998/09/17 00:33:00 asami Exp $
 #
 
 DISTNAME=		xdtm-2.5.8
@@ -17,5 +17,6 @@ LIB_DEPENDS=		Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=		yes
 WRKSRC=			${WRKDIR}/xdtm
+MAN1=			xdtm.1
 
 .include <bsd.port.mk>
