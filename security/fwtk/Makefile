@@ -3,12 +3,12 @@
 # Date created:                         15th June 1996
 # Whom:                                 gpalmer
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/06/15 06:55:51 gpalmer Exp $
 #
 
 DISTNAME=       fwtk-1.3
 CATEGORIES+=    security net
-MASTER_SITES=   ftp://ftp.tis.com/pub/firewalls/toolkit
+MASTER_SITES=   ftp://ftp.tis.com/pub/firewalls/toolkit/
 DISTFILES=	fwtk-v1.3.tar.Z fwtk-doc-only.tar.Z
 
 MAINTAINER=     gpalmer@FreeBSD.ORG
