@@ -9,7 +9,7 @@
 PORTNAME=	mshell
 PORTVERSION=	1.0
 CATEGORIES=	misc
-MASTER_SITES=	ftp://src.doc.ic.ac.uk/usenet/alt.sources/articles/07000-07999/
+MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/jmz/
 DISTFILES=	7432.Z
 
 MAINTAINER=	jmz@FreeBSD.org
