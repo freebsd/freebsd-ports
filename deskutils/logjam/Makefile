@@ -7,7 +7,7 @@
 
 PORTNAME=	logjam
 PORTVERSION=	4.4.0
-PORTREVISION?=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils
 MASTER_SITES=	http://logjam.danga.com/download/
 
@@ -24,6 +24,7 @@ LIB_DEPENDS=	curl.3:${PORTSDIR}/ftp/curl
 
 MAN1=		logjam.1
 
+USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes
@@ -68,5 +69,8 @@ pre-everything::
 	@${ECHO_MSG} "		WITHOUT_GTKSPELL	Disable spell checking"
 	@${ECHO_MSG} "		WITH_XMMS		Enable XMMS music detection"
 	@${ECHO_MSG} ""
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|libgtkhtml-3.0|libgtkhtml-3.1|g' ${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
