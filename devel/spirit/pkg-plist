@@ -1371,3 +1371,4 @@ libdata/pkgconfig/spirit.pc
 @dirrm %%DOCSDIR%%/spirit
 @dirrm %%DOCSDIR%%/phoenix
 @dirrm %%DOCSDIR%%
+@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true

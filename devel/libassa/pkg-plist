@@ -62,3 +62,4 @@ lib/libassa.so
 lib/libassa.so.3
 libdata/pkgconfig/assa.pc
 share/aclocal/assa.m4
+@unexec rmdir %D/libdata/pkgconfig 2>/dev/null || true
