@@ -30,16 +30,15 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 USE_GMAKE=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_SCRIPT=	configure.static
+#CONFIGURE_SCRIPT=	configure.static
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2"
 WRKSRC=		${WRKDIR}/${PORTNAME}
-ALL_TARGET=	pfaedit
 INSTALLS_SHLIB=	yes
 
 MAN1=		pfaedit.1 sfddiff.1
 
-DIST_VER=	030404
+DIST_VER=	030429
 LIBUNINAMESLIST_VER=	030116
 
 .if !defined(NOPORTDOCS)
@@ -52,6 +51,9 @@ post-extract:
 	${MKDIR} ${WRKDIR}/html ${WRKSRC}/cidmap
 	${TAR} -xzC ${WRKDIR}/html -f ${DISTDIR}/${DOCFILE}
 	${RM} ${WRKDIR}/html/cidmaps.tgz
+	${MV} ${WRKDIR}/*.cidmap ${WRKSRC}/cidmap
+.else
+	${MKDIR} ${WRKSRC}/cidmap
 	${MV} ${WRKDIR}/*.cidmap ${WRKSRC}/cidmap
 .endif
 

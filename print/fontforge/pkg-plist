@@ -86,6 +86,8 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/TTStack.png
 %%PORTDOCS%%share/doc/pfaedit/TTStorage.png
 %%PORTDOCS%%share/doc/pfaedit/TilePath.png
+%%PORTDOCS%%share/doc/pfaedit/To-kerned.png
+%%PORTDOCS%%share/doc/pfaedit/To-unkerned.png
 %%PORTDOCS%%share/doc/pfaedit/TrueOpenTables.html
 %%PORTDOCS%%share/doc/pfaedit/a_dieresis_macron.png
 %%PORTDOCS%%share/doc/pfaedit/a_with_anchor.png
@@ -103,6 +105,7 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/autowidthmenu.png
 %%PORTDOCS%%share/doc/pfaedit/bezier.gif
 %%PORTDOCS%%share/doc/pfaedit/bezier.html
+%%PORTDOCS%%share/doc/pfaedit/bibliography.html
 %%PORTDOCS%%share/doc/pfaedit/bitmapchar.png
 %%PORTDOCS%%share/doc/pfaedit/bitmapsavail.png
 %%PORTDOCS%%share/doc/pfaedit/bitmapview.html
@@ -219,6 +222,7 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/langdlg.png
 %%PORTDOCS%%share/doc/pfaedit/layers.png
 %%PORTDOCS%%share/doc/pfaedit/lcani.gif
+%%PORTDOCS%%share/doc/pfaedit/lcdigits.png
 %%PORTDOCS%%share/doc/pfaedit/license.html
 %%PORTDOCS%%share/doc/pfaedit/locale.html
 %%PORTDOCS%%share/doc/pfaedit/logo3.gif
@@ -281,6 +285,9 @@ lib/libuninameslist.so.0
 %%PORTDOCS%%share/doc/pfaedit/sfd.html
 %%PORTDOCS%%share/doc/pfaedit/sfddiff.html
 %%PORTDOCS%%share/doc/pfaedit/sfdformat.html
+%%PORTDOCS%%share/doc/pfaedit/sidebearings.png
+%%PORTDOCS%%share/doc/pfaedit/showatt.html
+%%PORTDOCS%%share/doc/pfaedit/showatt.png
 %%PORTDOCS%%share/doc/pfaedit/splash.png
 %%PORTDOCS%%share/doc/pfaedit/splinefont.html
 %%PORTDOCS%%share/doc/pfaedit/splines.gif
