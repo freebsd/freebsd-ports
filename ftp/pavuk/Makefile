@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pavuk
-PORTVERSION=	0.9.31
+PORTVERSION=	0.9.32
 CATEGORIES=	ftp www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-locale-dir=${PREFIX}/share/locale \
 		--disable-debug --disable-gnome --disable-gtk2 --disable-js \
-		--enable-threads
+		--enable-utf-8 --enable-threads
 
 MAN1=		pavuk.1
 
@@ -71,13 +71,6 @@ pre-patch:
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pavuk_authinfo.sample ${PREFIX}/etc
 	${INSTALL_DATA} ${WRKSRC}/pavukrc.sample ${PREFIX}/etc
-.if !defined(WITHOUT_NLS)
-.for l in cs de es fr it pl ja sk uk
-	@${MKDIR} ${PREFIX}/share/locale/${l}/LC_MESSAGES
-	${INSTALL_DATA} ${WRKSRC}/po/${l}.mo \
-		${PREFIX}/share/locale/${l}/LC_MESSAGES/pavuk.mo
-.endfor
-.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for f in AUTHORS BUGS CREDITS ChangeLog FAQ MAILINGLIST NEWS README \
