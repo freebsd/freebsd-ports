@@ -68,6 +68,7 @@
     SUBDIR += kickpim
     SUBDIR += kluje
     SUBDIR += knowit
+    SUBDIR += kompose
     SUBDIR += krefty
     SUBDIR += kronolith
     SUBDIR += krss
