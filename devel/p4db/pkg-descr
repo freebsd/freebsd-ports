@@ -1,0 +1,7 @@
+P4DB - Web/Perforce Browser
+
+P4DB allows you to browse Perforce depots via the web as CVSweb does
+for CVS.
+
+WWW:	http://www.perforce.com/perforce/loadsupp.html
+Author:	Fredric Fredricson <fredric@mydata.se>

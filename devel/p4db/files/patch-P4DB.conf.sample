@@ -1,0 +1,44 @@
+--- P4DB.conf.sample.orig	Wed Dec 13 08:08:37 2000
++++ P4DB.conf.sample	Sun Sep  2 04:22:55 2001
+@@ -16,7 +16,7 @@
+ ###                            ###
+ 
+   ### Specify path to p4 program 
+-  P4PATH: /home/fredric/bin/p4
++  P4PATH: !!PREFIX!!/bin/p4
+  
+   ### Specify path to icons (well, icon for 2.0)
+    # If this is modified, be sure to move image as well
+@@ -30,8 +30,7 @@
+   ### Set administrator(s) for P4DB.
+     #  Data Format: <email address> <full name>
+     #  One or more administrators can be specified. 
+-  P4DB_ADMIN: MrDDuck@disney.com  Donald Duck
+-  P4DB_ADMIN: MrMMouse@disney.com  M. Mouse
++  P4DB_ADMIN: !!PERFORCE_USER!!@!!FQDN!!  P4 admin
+ 
+ ###                                        ###
+ ###     Variables to facilitate ports      ###
+@@ -71,8 +70,8 @@
+ # See README.html for details about shortcut files
+ 
+   SHORTCUT_FILE:                   ; No shortcuts
+-  SHORTCUT_FILE: ./P4DB.shortcuts.txt ; Sample shortcuts
+-  SHORTCUT_FILE: ./P4DB.shortcuts2.txt; Sample shortcuts 2
++  SHORTCUT_FILE: ../P4DB.shortcuts.txt ; Sample shortcuts
++  SHORTCUT_FILE: ../P4DB.shortcuts2.txt; Sample shortcuts 2
+ 
+ ###                        ###
+ ###     Specify depots     ###
+@@ -82,10 +81,8 @@
+   # (no spaces in password, user or client).
+   #         For password: '*' equals no password
+   # One depot per line
+-  DEPOT: localhost:1666           fredric fredric_client  *          ; My local depot
+-  DEPOT: p4:1666                  fredric fredric_client1 passwrd    ; At work
++  DEPOT: localhost:!!PERFORCE_PORT!!           fredric fredric_client  *          ; My local depot
+   DEPOT: public.perforce.com:1666 fredric none            *          ; Perforce Public Depot
+-  DEPOT: NoSuch:1666              Anyuser anyClient       aPassword  ; Nonexisting, for test
+ 
+ ###                       ###
+ ###     Color schemes     ###
