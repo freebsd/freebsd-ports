@@ -3,7 +3,7 @@
 # Date created:		15 Aug 1997
 # Whom:			markm@freebsd.org
 #
-# $Id: Makefile,v 1.21 1998/09/25 10:20:20 asami Exp $
+# $Id: Makefile,v 1.22 1998/10/26 05:52:02 obrien Exp $
 #
 
 DISTNAME=		SSLeay-0.9.0b
@@ -15,6 +15,8 @@ MASTER_SITES=		ftp://psych.psy.uq.oz.au/pub/Crypto/SSL/  \
 
 
 MAINTAINER=		markm@FreeBSD.ORG
+
+BROKEN=			upgrade
 
 RESTRICTED=		"Cryptography"
 HAS_CONFIGURE=		yes
