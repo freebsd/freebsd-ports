@@ -1,5 +1,5 @@
-*** ../elisp-manual-19-2.4.2/elisp.texi.orig	Mon Dec 16 17:37:22 1996
---- ../elisp-manual-19-2.4.2/elisp.texi	Tue Nov 18 19:33:09 1997
+*** elisp.texi.orig	Mon Dec 16 17:37:22 1996
+--- elisp.texi	Tue Nov 18 19:33:09 1997
 ***************
 *** 3,8 ****
 --- 3,12 ----
