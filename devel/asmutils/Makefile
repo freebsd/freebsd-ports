@@ -37,6 +37,8 @@ PORTDOCS=	Asmutils-HOWTO.html acknowledgements.html endorsements.html \
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%KERNEL%%,${OSREL:S/.//g},g' ${WRKSRC}/MCONFIG
 	@${REINPLACE_CMD} -e 's,m386,march=i386,' ${WRKSRC}/lib/Makefile
+	@${REINPLACE_CMD} -E 's,(^all:[[:space:]]+)check[[:space:]]*,\1,' \
+		${WRKSRC}/lib/Makefile ${WRKSRC}/src/Makefile
 
 # Stripping binaries will break install
 .undef STRIP
