@@ -8,7 +8,7 @@
 
 PORTNAME=	pyne
 PORTVERSION=	0.6.7
-CATEGORIES=	news python
+CATEGORIES=	news python mail
 MASTER_SITES=	http://www.yikesstation.freeserve.co.uk/pyne/
 
 MAINTAINER=	ports@FreeBSD.org
