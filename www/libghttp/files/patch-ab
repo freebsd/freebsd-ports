@@ -1,0 +1,7 @@
+--- Makefile.in.orig	Mon Aug 14 18:36:20 2000
++++ Makefile.in	Tue Aug 15 09:25:32 2000
+@@ -98,3 +98,3 @@
+ 
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = ghttpConf.sh

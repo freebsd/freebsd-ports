@@ -1,3 +1,4 @@
+etc/ghttpConf.sh
 include/ghttp.h
 include/ghttp_constants.h
 lib/libghttp.a
