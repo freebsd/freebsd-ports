@@ -1,0 +1,11 @@
+--- mdidentd/Makefile.in.orig	Sun May  2 10:14:43 1999
++++ mdidentd/Makefile.in	Sun May  2 10:14:51 1999
+@@ -5,7 +5,7 @@
+ 
+ CXX                = @CXX@
+ CXX_OPTS           = -Wall @NO_EXCEPTIONS@ @NO_RTTI@ -I../lib
+-CXX_OPTIMIZATIONS  = -O2
++CXX_OPTIMIZATIONS  = @CXXFLAGS@ 
+ CXX_LIBS           = @CXX_LINKER_LIBS@
+ CXX_LINKER	   = @CXX_LINKER@ 
+ 

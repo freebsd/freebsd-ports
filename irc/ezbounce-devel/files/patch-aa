@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun May  2 10:12:22 1999
++++ Makefile.in	Sun May  2 10:12:39 1999
+@@ -11,7 +11,7 @@
+ 
+ CXX                = @CXX@
+ CXX_OPTS           = -Wall -D_ezbounce_ @NO_EXCEPTIONS@ @NO_RTTI@
+-CXX_OPTIMIZATIONS  = -O2 @OMIT_FRAME_POINTER@
++CXX_OPTIMIZATIONS  = @CXXFLAGS@ @OMIT_FRAME_POINTER@
+ CXX_LIBS           = -lstdc++
+ SUBDIRS		   = lib src mdidentd
+ 
