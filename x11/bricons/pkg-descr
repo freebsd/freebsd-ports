@@ -5,4 +5,3 @@
        menu button can launch an application or pop-up a sub menu
        containing more buttons. The buttons can be represented as
        a bitmap, text or a colour icon (i.e Pixmap).
-
