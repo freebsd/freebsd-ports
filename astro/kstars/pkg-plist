@@ -1,6 +1,9 @@
 bin/kstars
-share/applnk/Applications/kstars.desktop
+include/kstarsinterface.h
+include/simclockinterface.h
+share/applnk/Edutainment/kstars.desktop
 share/apps/kstars/Cities.dat
+share/apps/kstars/TZrules.dat
 share/apps/kstars/chart.colors
 share/apps/kstars/clines.dat
 share/apps/kstars/cnames.dat
@@ -47,6 +50,7 @@ share/apps/kstars/jupiter.R4.vsop
 share/apps/kstars/jupiter.R5.vsop
 share/apps/kstars/jupiter.png
 share/apps/kstars/kstars.png
+share/apps/kstars/kstarsui.rc
 share/apps/kstars/m1.png
 share/apps/kstars/m10.png
 share/apps/kstars/m100.png
@@ -228,7 +232,7 @@ share/apps/kstars/neptune.R2.vsop
 share/apps/kstars/neptune.R3.vsop
 share/apps/kstars/neptune.R4.vsop
 share/apps/kstars/neptune.png
-share/apps/kstars/ngc2000.dat
+share/apps/kstars/ngcic.dat
 share/apps/kstars/night.colors
 share/apps/kstars/pluto.freq
 share/apps/kstars/pluto.png
@@ -255,7 +259,16 @@ share/apps/kstars/saturn.R3.vsop
 share/apps/kstars/saturn.R4.vsop
 share/apps/kstars/saturn.R5.vsop
 share/apps/kstars/saturn.png
+share/apps/kstars/show_clines.png
+share/apps/kstars/show_cnames.png
+share/apps/kstars/show_deepsky.png
+share/apps/kstars/show_grid.png
+share/apps/kstars/show_horiz.png
+share/apps/kstars/show_mw.png
+share/apps/kstars/show_planets.png
+share/apps/kstars/show_stars.png
 share/apps/kstars/sun.png
+share/apps/kstars/tips
 share/apps/kstars/uranus.B0.vsop
 share/apps/kstars/uranus.B1.vsop
 share/apps/kstars/uranus.B2.vsop
@@ -295,6 +308,7 @@ share/apps/kstars/venus.png
 share/doc/HTML/en/kstars/ai-contents.docbook
 share/doc/HTML/en/kstars/astroinfo.docbook
 share/doc/HTML/en/kstars/commands.docbook
+share/doc/HTML/en/kstars/common
 share/doc/HTML/en/kstars/config.docbook
 share/doc/HTML/en/kstars/cpoles.docbook
 share/doc/HTML/en/kstars/credits.docbook
@@ -306,10 +320,12 @@ share/doc/HTML/en/kstars/geocoords.docbook
 share/doc/HTML/en/kstars/greatcircle.docbook
 share/doc/HTML/en/kstars/horizon.docbook
 share/doc/HTML/en/kstars/hourangle.docbook
+share/doc/HTML/en/kstars/index.cache.bz2
 share/doc/HTML/en/kstars/index.docbook
 share/doc/HTML/en/kstars/install.docbook
 share/doc/HTML/en/kstars/julianday.docbook
 share/doc/HTML/en/kstars/leapyear.docbook
+share/doc/HTML/en/kstars/magnitude.docbook
 share/doc/HTML/en/kstars/meridian.docbook
 share/doc/HTML/en/kstars/precession.docbook
 share/doc/HTML/en/kstars/quicktour.docbook
@@ -317,24 +333,47 @@ share/doc/HTML/en/kstars/retrograde.docbook
 share/doc/HTML/en/kstars/screen1.png
 share/doc/HTML/en/kstars/screen2.png
 share/doc/HTML/en/kstars/screen3.png
-share/doc/HTML/en/kstars/screen4.png
 share/doc/HTML/en/kstars/sidereal.docbook
 share/doc/HTML/en/kstars/skycoords.docbook
 share/doc/HTML/en/kstars/timezones.docbook
 share/doc/HTML/en/kstars/utime.docbook
 share/doc/HTML/en/kstars/zenith.docbook
+share/doc/HTML/kstars/ai-contents.dockbook
+share/doc/HTML/kstars/astroinfo.docbook
+share/doc/HTML/kstars/commands.docbook
+share/doc/HTML/kstars/config.docbook
+share/doc/HTML/kstars/cpoles.docbook
+share/doc/HTML/kstars/credits.docbook
+share/doc/HTML/kstars/csphere.docbook
+share/doc/HTML/kstars/ecliptic.docbook
+share/doc/HTML/kstars/equinox.docbook
+share/doc/HTML/kstars/faq.docbook
+share/doc/HTML/kstars/geocoords.docbook
+share/doc/HTML/kstars/greatcircle.docbook
+share/doc/HTML/kstars/horizon.docbook
+share/doc/HTML/kstars/hourangle.docbook
+share/doc/HTML/kstars/index.docbook
+share/doc/HTML/kstars/install.docbook
+share/doc/HTML/kstars/julianday.docbook
+share/doc/HTML/kstars/leapyear.docbook
+share/doc/HTML/kstars/meridian.docbook
+share/doc/HTML/kstars/precession.docbook
+share/doc/HTML/kstars/quicktour.docbook
+share/doc/HTML/kstars/retrograde.docbook
+share/doc/HTML/kstars/screen1.png
+share/doc/HTML/kstars/screen2.png
+share/doc/HTML/kstars/screen3.png
+share/doc/HTML/kstars/sidereal.docbook
+share/doc/HTML/kstars/skycoords.docbook
+share/doc/HTML/kstars/timezones.docbook
+share/doc/HTML/kstars/utime.docbook
+share/doc/HTML/kstars/zenith.docbook
 share/icons/hicolor/16x16/apps/kstars.png
 share/icons/hicolor/32x32/apps/kstars.png
 share/icons/hicolor/48x48/apps/kstars.png
 share/icons/locolor/16x16/apps/kstars.png
 share/icons/locolor/32x32/apps/kstars.png
 share/icons/locolor/48x48/apps/kstars.png
-share/locale/de/LC_MESSAGES/kstars-0.8.5.mo
-share/locale/fr/LC_MESSAGES/kstars-0.8.5.mo
-@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/fr 2>/dev/null || true
-@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/de 2>/dev/null || true
 @unexec rmdir %D/share/icons/locolor/48x48/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/locolor/48x48 2>/dev/null || true
 @unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
@@ -350,10 +389,11 @@ share/locale/fr/LC_MESSAGES/kstars-0.8.5.mo
 @unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
 @unexec rmdir %D/share/icons 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML/kstars 2>/dev/null || true
 @unexec rmdir %D/share/doc/HTML/en/kstars 2>/dev/null || true
 @unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
 @unexec rmdir %D/share/doc/HTML 2>/dev/null || true
-@dirrm share/apps/kstars
+@unexec rmdir %D/share/apps/kstars 2>/dev/null || true
 @unexec rmdir %D/share/apps 2>/dev/null || true
-@unexec rmdir %D/share/applnk/Applications 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Edutainment 2>/dev/null || true
 @unexec rmdir %D/share/applnk 2>/dev/null || true
