@@ -1,9 +1,9 @@
-*** adcomplain.pl.old	Tue Mar  3 03:20:37 1998
---- adcomplain.pl	Tue Mar  3 03:23:52 1998
+*** adcomplain.pl.orig	Tue Sep 15 21:12:13 1998
+--- adcomplain.pl	Tue Sep 15 21:14:56 1998
 ***************
 *** 1,3 ****
 --- 1,4 ----
-+ #!/usr/bin/perl
++ #!/usr/local/bin/perl
   #! /bin/sh -- # -*- perl -*-
   # first line invokes sh.  Some systems may need to refer to perl directly, i.e.:
   
@@ -15,8 +15,8 @@
 ! eval 'exec perl $0 ${1+"$@"}'
 ! if 0;  # tee hee! This is on a separate line, so /bin/sh never sees it.
   
-  #-----------------------------------------------
-  # DESCRIPTION
+  # use strict;
+  
 --- 8,15 ----
   # allows perl to be _anywhere_ in the user's path.  The intent is to reduce
   # the need to edit this file.
@@ -24,5 +24,5 @@
 ! #eval 'exec perl $0 ${1+"$@"}'
 ! #if 0;  # tee hee! This is on a separate line, so /bin/sh never sees it.
   
-  #-----------------------------------------------
-  # DESCRIPTION
+  # use strict;
+  
