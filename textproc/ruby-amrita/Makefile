@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amrita
-PORTVERSION=	0.9.5
+PORTVERSION=	0.9.6
 CATEGORIES=	textproc www ruby
 MASTER_SITES=	http://www.brain-tokyo.jp/research/amrita/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ USE_RUBY_FEATURES=	strscan
 RUBY_SHEBANG_FILES=	${BINS}
 
 BINS=		${WRKSRC}/bin/*
-DOCS=		ChangeLog README docs/*
+DOCS=		ChangeLog README* docs/*
 
 do-install:
 	cd ${WRKSRC}; ${RUBY} install.rb
