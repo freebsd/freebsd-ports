@@ -1,0 +1,10 @@
+--- guile-readline/configure.orig	Wed Jun 19 13:58:18 2002
++++ guile-readline/configure	Wed Jun 19 13:58:31 2002
+@@ -7316,6 +7316,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
