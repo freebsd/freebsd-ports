@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.1.1.1 1998/08/07 22:08:20 asami Exp $
+# $Id: Makefile,v 1.2 1998/08/10 00:24:57 steve Exp $
 #
 
     SUBDIR += asfiles
     SUBDIR += dfm
     SUBDIR += explorer
+    SUBDIR += ezfm
     SUBDIR += filerunner
     SUBDIR += jafm
     SUBDIR += offix-files
