@@ -3,11 +3,11 @@
 # Date created:        11 May 1998
 # Whom:                Sean Cole <scole@aracnet.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/03/18 05:51:46 taoka Exp $
 #
 
 DISTNAME=       asmodem-0.6
-CATEGORIES=     comms x11
+CATEGORIES=     comms
 MASTER_SITES=   ftp://afterstep.foo.net/pub/AfterStep/apps/asmodem/ \
 		ftp://ftp.cs.tu-berlin.de/pub/X/afterstep/apps/asmodem/
 
