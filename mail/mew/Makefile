@@ -1,44 +1,29 @@
 # New ports collection makefile for: Mew
-# Version required:	1.54
+# Version required:	1.70
 # Date created:		30 December 1996
 # Whom:			Kiriyama Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
 # $Id: Makefile,v 1.3 1997/01/03 16:52:53 max Exp $
 #
 
-DISTNAME=	mew-1.54
+PKGNAME=	mew-1.70
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.aist-nara.ac.jp/pub/elisp/Mew/ \
-		ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
-
-MAINTAINER=	kiri@kiri.toba-cmt.ac.jp
+FILESDIR=	${.CURDIR}/../../japanese/mew/files
+PATCHDIR=	${.CURDIR}/../../japanese/mew/patches
 
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs \
 		mhmail:${PORTSDIR}/mail/mh
 
-RESTRICTED=	"USA ITAR export restrictions (has PGP hooks)"
-
-DOCDIR=		${PREFIX}/share/doc/mew
+EMACSCMD=	emacs
+EMACSEL=	mew-mule0.el
+PORTSDOCDIR=	${PREFIX}/share/doc/mew
 SAMPLEDIR=	${PREFIX}/share/examples/mew
+ELISPDIR=	${PREFIX}/share/emacs/site-lisp
+INFOFILE=	mew.info
+MHPOSTPROC=	MH-postproc
+SCANFORM=	scan.form
+DOTEMACS=	dot.emacs
+DOTMHPROFILE=	dot.mh_profile
 
-post-install:
-	@strip ${PREFIX}/bin/mewencode
-.for f in mewencode mew-refile uumerge vscan
-	@chown bin:bin ${PREFIX}/bin/${f}
-	@chmod 555 ${PREFIX}/bin/${f}
-.endfor
-	@${INSTALL_DATA} ${WRKSRC}/info/mew.info* ${PREFIX}/info
-	@${INSTALL_SCRIPT} ${FILESDIR}/MH-postproc ${PREFIX}/bin
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCDIR}
-	@${INSTALL_DATA} ${WRKSRC}/info/*.texi ${DOCDIR}
-	@${MKDIR} ${SAMPLEDIR}
-.for f in dot.emacs aliases dot.mh_profile scan.form
-	@${INSTALL_DATA}  ${FILESDIR}/${f} ${SAMPLEDIR}
-.endfor
-	@${INSTALL_SCRIPT} ${FILESDIR}/user-install ${SAMPLEDIR}
-.endif
-	@${SETENV} PKG_PREFIX=${PREFIX} /bin/sh ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
-
-.include <bsd.port.mk>
+.include "${.CURDIR}/../../japanese/mew/Makefile"
