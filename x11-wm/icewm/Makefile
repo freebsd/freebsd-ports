@@ -3,7 +3,7 @@
 # Date created:        10 August 1997
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.19 1998/11/11 13:24:53 vanilla Exp $
+# $Id: Makefile,v 1.20 1998/11/15 14:21:55 vanilla Exp $
 #
 
 DISTNAME=	icewm-0.9.16
@@ -19,6 +19,8 @@ BUILD_DEPENDS+=	imlib-config:${PORTSDIR}/graphics/imlib
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libintl.a:${PORTSDIR}/devel/gettext
 .endif
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+
+BROKEN=		fetch
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
