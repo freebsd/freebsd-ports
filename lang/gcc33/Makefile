@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-SNAPDATE=2003-12-22
+SNAPDATE=2004-01-05
 
 PORTNAME=	gcc
 PORTVERSION=	3.3.3
@@ -164,29 +164,20 @@ post-install:
 	for mp in ${_MANPAGES} ; do \
 	    ${TEST} -e $${mp} || ${TOUCH} ${TOUCH_FLAGS} $${mp} ;\
 	    done
-	cd ${PREFIX} ;\
-	    ${FIND} ${TARGLIB:S/^${PREFIX}\///} -type f -o -type l	\
-	    	>${WRKDIR}/PLIST.lib
-	cd ${PREFIX} ;\
-	    ${FIND} ${TARGLIB:S/^${PREFIX}\///} -type d \
-	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib
-	(${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib 2>&1 || true") >> ${WRKDIR}/PLIST.lib
-	# Handle GCJ include files.
-	${RM} -f ${WRKDIR}/PLIST.gcj-inc
-.for inc in ${PREFIX}/include/gcj ${PREFIX}/include/gnu ${PREFIX}/include/java ${PREFIX}/include/javax
+	# Handle target libraries and GCJ include files.
+	${RM} -f ${WRKDIR}/PLIST.lib
+.for inc in ${TARGLIB} include/gcj include/gnu include/java include/javax
 	cd ${PREFIX} ;\
 	    ${FIND} ${inc:S/^${PREFIX}\///} -type f -o -type l	\
-	    	>>${WRKDIR}/PLIST.gcj-inc ;\
+	    	>>${WRKDIR}/PLIST.lib ;\
 	    ${FIND} ${inc:S/^${PREFIX}\///} -type d \
-	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.gcj-inc
+	    	| sort -r | ${SED} -e 's/^/@dirrm /g' >>${WRKDIR}/PLIST.lib
 .endfor
+	(${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib/${CONFIGURE_TARGET} 2>&1 || true" ; ${ECHO_CMD} "@unexec rmdir %D/lib/gcc-lib 2>&1 || true") >> ${WRKDIR}/PLIST.lib
 	${ECHO_CMD} "r ${TMPPLIST}"		> ${WRKDIR}/ex.script
 	${ECHO_CMD} "/Insert PLIST.lib"		>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "r ${WRKDIR}/PLIST.lib"	>> ${WRKDIR}/ex.script
-	${ECHO_CMD} "/Insert PLIST.gcj-inc"	>> ${WRKDIR}/ex.script
-	${ECHO_CMD} "d"				>> ${WRKDIR}/ex.script
-	${ECHO_CMD} "r ${WRKDIR}/PLIST.gcj-inc"	>> ${WRKDIR}/ex.script
 	${ECHO_CMD} "x!"			>> ${WRKDIR}/ex.script
 	${CP} -p ${TMPPLIST} ${TMPPLIST}.pre
 	cd ${WRKDIR} ; ex < ex.script
