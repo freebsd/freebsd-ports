@@ -11,7 +11,7 @@ CATEGORIES=		audio
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/sound/players
 
-MAINTAINER=		brett@peloton.physics.montana.edu
+MAINTAINER=		brett@peloton.runet.edu
 
 RUN_DEPENDS=	splay:${PORTSDIR}/audio/splay \
 		wish8.0:${PORTSDIR}/x11-toolkits/tk80

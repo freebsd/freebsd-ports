@@ -11,7 +11,7 @@ CATEGORIES=     x11-fonts tk80
 MASTER_SITES=	ftp://ftp.cdrom.com/pub/linux/tsx-11/sources/usr.bin.X11/ \
 		http://www.FreeBSD.org/~billf/
 
-MAINTAINER=     brett@peloton.physics.montana.edu
+MAINTAINER=     brett@peloton.runet.edu
 
 RUN_DEPENDS=	wish8.0:${PORTSDIR}/x11-toolkits/tk80
 

@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	ftp://manual.gimp.org/pub/manual/ \
 		ftp://peloton.physics.montana.edu/pub/distfiles/
 
-MAINTAINER=	brett@peloton.physics.montana.edu
+MAINTAINER=	brett@peloton.runet.edu
 
 .if !defined(DOCFORMAT)
 DOCFORMAT=HTML
