@@ -1,4 +1,4 @@
-lib/libMagick.so.3.12
+lib/libMagick.so.3.13
 @exec ldconfig -m %D/lib
 lib/libMagick.a
 man/man5/quantize.5.gz
