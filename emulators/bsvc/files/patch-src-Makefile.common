@@ -1,5 +1,5 @@
---- Makefile.common.orig	Sun Nov  8 22:39:28 1998
-+++ Makefile.common	Mon Sep  6 21:43:02 1999
+--- Makefile.common.orig	Mon Nov  9 04:39:28 1998
++++ Makefile.common	Sun Nov  3 12:07:21 2002
 @@ -12,14 +12,14 @@
  ###############################################################################
  
@@ -26,3 +26,30 @@
  	LIBS='$(SYS_LIBS)' INSTALL_DIR='$(INSTALL_DIR)' \
  	WWW_BROWSER='$(WWW_BROWSER)' WWW_HOME_PAGE='$(WWW_HOME_PAGE)'
  
+@@ -51,7 +51,7 @@
+ 		echo ""; \
+ 		echo "------ Building: $$dir"; \
+ 		cd $$dir; \
+-		make $(MAKEPARMS) MAKEPARMS="$(MAKEPARMS)" all; \
++		$(MAKE) $(MAKEPARMS) MAKEPARMS="$(MAKEPARMS)" all; \
+ 		if [ $$? -eq 0 ] ; \
+ 		then \
+ 			cd ..; \
+@@ -67,7 +67,7 @@
+ 		echo ""; \
+ 		echo "------ Installing: $$dir"; \
+ 		cd $$dir; \
+-		make $(MAKEPARMS) MAKEPARMS="$(MAKEPARMS)" install; \
++		$(MAKE) $(MAKEPARMS) MAKEPARMS="$(MAKEPARMS)" install; \
+ 		if [ $$? -eq 0 ] ; \
+ 		then \
+ 			cd ..; \
+@@ -82,7 +82,7 @@
+ 		echo ""; \
+ 		echo "------ Cleaning: $$dir"; \
+ 		cd $$dir; \
+-		make $(MAKEPARMS) MAKEPARMS="$(MAKEPARMS)" clean; \
++		$(MAKE) $(MAKEPARMS) MAKEPARMS="$(MAKEPARMS)" clean; \
+ 		if [ $$? -eq 0 ] ; \
+ 		then \
+ 			cd ..; \

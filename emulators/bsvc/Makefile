@@ -19,9 +19,16 @@ RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
+USE_REINPLACE=	yes
+
 MAKE_ENV=	PROJECT_BASE=${PREFIX} WRKSRC=${WRKSRC}
 
+pre-patch:
+	${CP} ${WRKSRC}/Makefile.Linux ${WRKSRC}/Makefile
 post-patch:
-	${CP} ${WRKSRC}/Makefile.ULTRIX ${WRKSRC}/Makefile
+	${FIND} ${WRKSRC} -name "*.[ch]xx" -exec \
+	  ${REINPLACE_CMD} -e 's/iostream\.h/iostream/; s/fstream\.h/fstream/' \{\} \;
+	${FIND} ${WRKSRC} -name Makefile -exec \
+	  ${REINPLACE_CMD} -e 's/make/$(MAKE)/' \{\} \;
 
 .include <bsd.port.mk>
