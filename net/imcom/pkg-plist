@@ -1,0 +1,35 @@
+bin/imcom
+share/doc/imcom/AutoStatus.API
+share/doc/imcom/CONTRIBUTORS
+share/doc/imcom/LICENSE
+share/doc/imcom/README
+share/doc/imcom/README.autostatus
+share/doc/imcom/TODO
+share/doc/imcom/WHATSNEW
+share/doc/imcom/CHANGELOG
+share/doc/imcom/advanced.html
+share/doc/imcom/commands.html
+share/doc/imcom/download.html
+share/doc/imcom/imcomrc.html
+share/doc/imcom/index.html
+share/doc/imcom/news.html
+share/doc/imcom/rosterlist.jpg
+share/doc/imcom/statuschange.jpg
+share/doc/imcom/style.css
+share/doc/imcom/template.html
+share/doc/imcom/whatis.html
+share/imcom/AccountCreator.py
+share/imcom/SocketWrapper.py
+share/imcom/Preferences.py
+share/imcom/LogHandler.py
+share/imcom/JabberTags.py
+share/imcom/JabberHandler.py
+share/imcom/IMCom.py
+share/imcom/IHTTPServer.py
+share/imcom/Colors.py
+share/imcom/CLI.py
+share/imcom/CICommands.py
+share/imcom/AutoStatus.py
+share/imcom/VCardTags.py
+@dirrm share/doc/imcom
+@dirrm share/imcom

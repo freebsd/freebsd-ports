@@ -1,0 +1,7 @@
+IMCom is a command-line Jabber client written in Python.
+
+Its original goal was to replace mICQ as my instant messenger. To that end it
+looks very similar to mICQ, though the actual command interpreter is a bit
+different. Commands are issued to IMCom in a style similar to IRC.
+
+WWW: http://imcom.floobin.cx/

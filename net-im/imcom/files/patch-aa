@@ -1,0 +1,25 @@
+--- Makefile.orig	Wed May 22 02:45:56 2002
++++ Makefile	Wed May 22 02:47:12 2002
+@@ -1,13 +1,13 @@
+ all:
+ 
+ install:
+-	mkdir -p /usr/local/share/imcom
+-	mkdir -p /usr/local/share/imcom/docs
+-	cp AutoStatus.API CONTRIBUTORS LICENSE README README.autostatus TODO WHATSNEW /usr/local/share/imcom/docs
+-	cp docs/* /usr/local/share/imcom/docs
+-	cp *.py /usr/local/share/imcom
+-	cp imcom /usr/local/bin
++	mkdir -p ${LOCALBASE}/share/imcom
++	mkdir -p ${LOCALBASE}/share/doc/imcom
++	${BSD_INSTALL_DATA} AutoStatus.API CONTRIBUTORS LICENSE README README.autostatus TODO WHATSNEW ${LOCALBASE}/share/doc/imcom
++	${BSD_INSTALL_DATA} docs/* ${LOCALBASE}/share/doc/imcom
++	${BSD_INSTALL_SCRIPT} *.py ${LOCALBASE}/share/imcom
++	${BSD_INSTALL_SCRIPT} imcom ${LOCALBASE}/bin
+ 
+ uninstall:
+-	rm -rf /usr/local/share/imcom
+-	rm -f /usr/local/bin/imcom
++	rm -rf ${LOCALBASE}/share/imcom
++	rm -rf ${LOCALBASE}/share/doc/imcom
++	rm -f ${LOCALBASE}/bin/imcom
