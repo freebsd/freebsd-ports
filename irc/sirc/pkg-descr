@@ -1,13 +1,14 @@
 	An Internet Relay Chat client written in perl, that uses a 
-perl-based scripting language. It is small (150k or less), fast, and
+perl-based scripting language.  It is small (150k or less), fast, and
 gives you a good chance to practice your perl skills. :)
 
 	It has an interface that closely emulates ircII and comes with
-some useful sample scripts that will get you started on IRC quickly. No
+some useful sample scripts that will get you started on IRC quickly.  No
 knowledge of perl is necessary to run the client although it is helpful
 if you plan to do any scripting.
 
 - Author of software: Roger Espel Llima (aka orabidoo)
+- Homepage: http://www.eleves.ens.fr:8080/home/espel/sirc/
 
 - Author of port: Doug
 - Studded@dal.net
