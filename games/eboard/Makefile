@@ -7,9 +7,12 @@
 
 PORTNAME=	eboard
 PORTVERSION=	0.3.1
+PORTREVISION=	1
+EXTRASVERSION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} eboard-extras-${EXTRASVERSION}.tar.gz
 
 MAINTAINER=	petef@databits.net
 
@@ -37,5 +40,11 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/Documentation/${file} ${DOCSDIR}
 .endfor
 .endif
+	${INSTALL_DATA} ${WRKDIR}/eboard-extras-pack${EXTRASVERSION}/*.png \
+		${PREFIX}/share/eboard
+	${INSTALL_DATA} ${WRKDIR}/eboard-extras-pack${EXTRASVERSION}/*.wav \
+		${PREFIX}/share/eboard
+	@${CAT} ${WRKDIR}/eboard-extras-pack${EXTRASVERSION}/extras1.conf >> \
+		${PREFIX}/share/eboard/eboard_themes.conf
 
 .include <bsd.port.mk>
