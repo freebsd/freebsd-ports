@@ -5,4 +5,4 @@ ChangeLog for CVS-controlled sources, by running "cvs log" and parsing
 the output. Duplicate log messages get unified in the Right Way.
 
 Author:	Karl Fogel <kfogel@red-bean.com>
-WWW:	http://www.red-bean.com/~kfogel/cvs2cl.shtml
+WWW:	http://www.red-bean.com/cvs2cl/
