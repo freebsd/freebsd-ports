@@ -1,7 +1,10 @@
 bin/pstoedit
-lib/latex2e.fmp
-lib/mpost.fmp
-share/doc/pstoedit/changelog.htm
-share/doc/pstoedit/index.htm
-share/doc/pstoedit/pstoedit.htm
-@dirrm share/doc/pstoedit
+%%PORTDOCS%%share/doc/pstoedit/changelog.htm
+%%PORTDOCS%%share/doc/pstoedit/index.htm
+%%PORTDOCS%%share/doc/pstoedit/pstoedit.htm
+share/pstoedit/latex2e.fmp
+share/pstoedit/mpost.fmp
+share/pstoedit/swffonts/default.fdb
+@dirrm share/pstoedit/swffonts
+@dirrm share/pstoedit
+%%PORTDOCS%%@dirrm share/doc/pstoedit

@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pstoedit
-PORTVERSION=	3.21
+PORTVERSION=	3.30
 CATEGORIES=	graphics print
-MASTER_SITES=	http://www.geocities.com/SiliconValley/Network/1958/pstoedit/
+MASTER_SITES=	http://home.t-online.de/home/helga.glunz/wglunz/pstoedit/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,24 +17,22 @@ RUN_DEPENDS=	gs:${PORTSDIR}/print/ghostscript-gnu
 LIB_DEPENDS=	plot.4:${PORTSDIR}/graphics/plotutils \
 		plotter.4:${PORTSDIR}/graphics/plotutils
 
+WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}/src
+
 USE_ZIP=		yes
-WRKSRC=		${WRKDIR}/pstoedit_${PORTVERSION}/src
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${PREFIX}/include -I${X11BASE}/include" \
-		CXXFLAGS="${CFLAGS} -I${PREFIX}/include -I${X11BASE}/include" \
-		LDLIBS="-L${PREFIX}/lib -L${X11BASE}/lib" \
-		LIBS="-L${PREFIX}/lib -L${X11BASE}/lib"
+CONFIGURE_SCRIPT=	../config/configure
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+CONFIGURE_ARGS=	--libdir=${DATADIR}
 ALL_TARGET=	default
 
 MAN1=	pstoedit.1
 
-post-extract:
-	${CP} ${WRKSRC}/../config/* ${WRKSRC}
-
-.if !defined(NOPORTDOCS)
 post-install:
-	@${MKDIR} ${PREFIX}/share/doc/pstoedit
-	${INSTALL_DATA} ${WRKSRC}/../*.htm ${PREFIX}/share/doc/pstoedit
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/../*.htm ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
