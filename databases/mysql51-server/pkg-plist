@@ -30,7 +30,7 @@ include/mysql/mysql_com.h
 include/mysql/mysql_version.h
 @unexec install-info --delete %D/info/mysql.info %D/info/dir
 info/mysql.info
-@exec [ ! -f %D/info/dir -a -f /usr/share/info/dir ] && sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec [ -f %D/info/dir -o ! -f /usr/share/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/mysql.info %D/info/dir
 lib/mysql/libdbug.a
 lib/mysql/libheap.a
