@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	teg
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.4
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,18 +15,16 @@ MAINTAINER=	sobomax@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomeprefix gnomehack gnomelibs
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
-		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
-		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
-	@find ${WRKSRC} -name "*.[ch]" -type f | xargs ${PERL} -pi -e \
+	@find ${WRKSRC} -name "*.[ch]" -type f | xargs ${REINPLACE_CMD} -e \
 		's|LIST_NEXT|TEG_LIST_NEXT|g'
 
 .include <bsd.port.mk>
