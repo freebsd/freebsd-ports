@@ -7,6 +7,7 @@
 
 PORTNAME=	ImageMagick
 PORTVERSION=	5.4.7.4
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://imagemagick.sourceforge.net/http/ \
 		ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/%SUBDIR%/ \
@@ -32,6 +33,7 @@ MAINTAINER=	ports@FreeBSD.org
 
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
 LIB_DEPENDS=	fpx.1:${PORTSDIR}/graphics/libfpx \
+		jasper.4:${PORTSDIR}/graphics/jasper \
 		jbig.1:${PORTSDIR}/graphics/jbigkit \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		lcms.1:${PORTSDIR}/graphics/lcms \
@@ -53,7 +55,7 @@ LIBTOOLFLAGS=	# none
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shared --with-perl=${PERL5} \
-		--without-gslib --without-hdf --without-jp2
+		--without-gslib
 INSTALLS_SHLIB=	yes
 
 MAN1=		ImageMagick.1 Magick++-config.1 Magick-config.1 \
@@ -89,11 +91,15 @@ CONFIGURE_ARGS+=	--enable-lzw
 # Loadable coders, smaller executable, but PerlMagick not really works
 # ('make test' there works)
 .if defined(WITH_IMAGEMAGICK_MODULES)
-LIB_DEPENDS+=	ltdl.1:${PORTSDIR}/devel/libtool
 CONFIGURE_ARGS+=	--with-modules
 PLIST_SUB+=	MODULES=''
 .else
 PLIST_SUB+=	MODULES='@comment '
+.endif
+
+.if defined(WITH_HDF)
+LIB_DEPENDS=	df.1:${PORTSDIR}/graphics/hdf
+CONFIGURE_ARGS+=	--with-hdf
 .endif
 
 .if defined(WITHOUT_X11)
@@ -121,15 +127,11 @@ INSTALL_TARGET=	install install-data-html
 post-patch:
 # Do not use PTHREAD_LIBS here
 	@${REINPLACE_CMD} -e 's|-lpthread|-lc_r|g ; \
-		s|^tagnames=|#tagnames=|g ; \
-		s|LIBLTDL=.*$$|LIBLTDL="-lltdl"|g ; \
-		s|INCLTDL=.*$$|INCLTDL=|g ; \
-		s|lcms/lcms.h|lcms.h|g ; \
-		s|lcms_lcms_h|lcms_h|g' ${WRKSRC}/configure
+		 s|^tagnames=|#tagnames=|g ; \
+		 s|lcms/lcms.h|lcms.h|g ; \
+		 s|lcms_lcms_h|lcms_h|g' ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|top_builddir)/ltdl/libltdlc.la|LIBLTDL)|g ; \
-		s|ltdl magick|magick|g ; \
-		 s|pkgdocdir =.*$$|pkgdocdir = ${DOCSDIR}/|g ; \
+		's|pkgdocdir =.*$$|pkgdocdir = ${DOCSDIR}/|g ; \
 		 s| install-data-html||g'
 	@${REINPLACE_CMD} -e 's|lcms/lcms.h|lcms.h|g' ${WRKSRC}/magick/transform.c
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/ltdl/ltdl.c
