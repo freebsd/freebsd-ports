@@ -1,26 +1,28 @@
-# ex:ts=8
 # Ports collection makefile for:	twin
-# Date created:			Jul 7, 2002
-# Whom:				ijliao
+# Date created:				Jul 7, 2002
+# Whom:					ijliao
 #
 # $FreeBSD$
 #
 
 PORTNAME=	twin
-PORTVERSION=	0.4.5
+PORTVERSION=	0.4.6
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://linuz.sns.it/~max/twin/
 MASTER_SITE_SUBDIR=	twin
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A Textmode WINdow environment
+MAINTAINER=	samy@kerneled.com
+COMMENT=	A text-mode window manager and terminal emulator
+
+RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+NO_FILTER_SHLIBS=yes
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 MAN1=	twin.1
