@@ -1,0 +1,8 @@
+A library for creating, reading and manipulating Web Service Definition
+Language (WSDL) files using Python. Requires PyXML and 4Suite.
+
+License: IBM Public License
+WWW:    http://www-124.ibm.com/developerworks/projects/wsdl4py
+WWW:	http://www.w3.org/TR/wsdl
+
+-- Mikhail Teterin <mi@aldan.algebra.com>

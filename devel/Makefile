@@ -852,6 +852,7 @@
     SUBDIR += py-ui
     SUBDIR += py-unit
     SUBDIR += py-vmaps
+    SUBDIR += py-wsdllib
     SUBDIR += py-xoltar-toolkit
     SUBDIR += py-yaml
     SUBDIR += py_otp_interface
