@@ -44,6 +44,7 @@
     SUBDIR += ctags
     SUBDIR += cutils
     SUBDIR += cvs2cl
+    SUBDIR += cvs2html
     SUBDIR += cvsmapfs
     SUBDIR += cvsutils
     SUBDIR += cvsweb
