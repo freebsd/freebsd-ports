@@ -41,6 +41,7 @@
     SUBDIR += dejagnu
     SUBDIR += delay
     SUBDIR += diction
+    SUBDIR += dirtree
     SUBDIR += display
     SUBDIR += dnetc
     SUBDIR += dog
