@@ -34,4 +34,4 @@ f-prot/tools/check-updates.pl
 %%PORTDOCS%%%%DOCSDIR%%/updt_signature.gif
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm f-prot/tools
-@unexec rmdir f-prot 2> /dev/null || true
+@unexec rmdir %D/f-prot 2>/dev/null || true
