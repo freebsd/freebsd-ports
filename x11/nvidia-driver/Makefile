@@ -26,6 +26,10 @@ NVVERSION=	4365
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502117
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 # XXX Should use ${PKG_INFO} XXX
 #
 XSERVVERSION!=	/usr/sbin/pkg_info -O x11-servers/XFree86-4-Server 2>/dev/null | ${GREP} Server- || true
