@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	INET6
-PORTVERSION=	1.28
+PORTVERSION=	2.01
 CATEGORIES=	net perl5 ipv6
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	IO
@@ -22,4 +22,10 @@ MAN3=		IO::Socket::INET6.3
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+EXTRA_PATCHES=	${PATCHDIR}/5.005_03.diff
+.endif
+
+.include <bsd.port.post.mk>
