@@ -1,7 +1,6 @@
-diff -ur a2dev-1.2.orig/objx/Makefile a2dev-1.2/objx/Makefile
---- a2dev-1.2.orig/objx/Makefile	Sun Mar 26 03:52:54 1995
-+++ a2dev-1.2/objx/Makefile	Wed Jul  1 18:23:27 1998
-@@ -16,7 +16,7 @@
+--- a2dev-1.2/objx/Makefile.orig	Sat Mar 25 21:52:54 1995
++++ a2dev-1.2/objx/Makefile	Tue Oct 13 21:29:51 1998
+@@ -16,15 +16,15 @@
  ### Abstract rules
  ###
  
@@ -10,3 +9,13 @@ diff -ur a2dev-1.2.orig/objx/Makefile a2dev-1.2/objx/Makefile
  
  install:	installbin installman
  
+ installbin:	$(PROG)
+-	$(INSTALL) -m 0755 $(PROG) $(INSTBIN)
++	$(INSTALL) -c -m 0755 $(PROG) $(INSTBIN)
+ 
+ installman:	$(PROG).1
+-	$(INSTALL) -m 0644 $(PROG).1 $(INSTMAN)/man1
++	$(INSTALL) -c -m 0644 $(PROG).1 $(INSTMAN)/man1
+ 
+ clean:
+ 	$(RM) core *.o
