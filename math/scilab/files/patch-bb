@@ -1,11 +1,11 @@
---- macros/util/scipad.sci.orig	Fri Feb  7 07:22:29 2003
-+++ macros/util/scipad.sci
-@@ -14,7 +14,7 @@ if with_tk() then
-   else
-     if TK_GetVar("isscipadinterp")=='0' then   
-       TK_EvalStr("interp create scipad")
--      TK_EvalStr("load {libtk8.3.so} Tk scipad")
-+      TK_EvalStr("load {libtk84.so} Tk scipad")
-       TK_EvalStr("scipad eval {wm withdraw .}")
-       TK_EvalStr("scipad alias ScilabEval ScilabEval")
-     end
+--- configure.orig	Sat Jul 24 11:16:25 2004
++++ configure	Sat Jul 24 11:16:34 2004
+@@ -26503,7 +26503,7 @@
+     ;;
+ esac
+ 
+-GETLIBTK=libtk$TK_MAJOR_VERSION.$TK_MINOR_VERSION.so
++GETLIBTK=libtk$TK_MAJOR_VERSION$TK_MINOR_VERSION.so
+ 
+ case "$host" in
+   *-*-darwin*)
