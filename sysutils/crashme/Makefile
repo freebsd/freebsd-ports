@@ -14,6 +14,7 @@ DISTNAME=	crashme
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	markp@FreeBSD.org
+COMMENT=	A tool to test an operating system's robustness
 
 USE_GMAKE=	yes
 NO_WRKSUBDIR=	yes
