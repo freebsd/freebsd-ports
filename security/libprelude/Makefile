@@ -16,8 +16,8 @@ USE_REINPLACE=		yes
 USE_GMAKE=		yes
 USE_LIBTOOL_VER=	13
 INSTALLS_SHLIB=		yes
-CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc \
-			--program-prefix="" --localstatedir=/var
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} 
+CONFIGURE_ARGS=		--with-html-dir=${PREFIX}/share/doc --localstatedir=/var
 
 .if defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=	--disable-openssl

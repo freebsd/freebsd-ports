@@ -18,7 +18,7 @@ LIB_DEPENDS+=	prelude.1:${PORTSDIR}/security/libprelude \
 
 USE_GMAKE=		yes
 USE_LIBTOOL_VER=	13
-CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc \
-			--program-prefix=""
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS+=	--with-html-dir=${PREFIX}/share/doc
 
 .include <bsd.port.mk>
