@@ -1,0 +1,16 @@
+@unexec install-info --delete %D/info/sml-mode.info %D/info/dir
+info/sml-mode.info
+share/doc/sml-mode/sml-mode.html
+share/doc/sml-mode/sml-mode.ps
+share/emacs/site-lisp/sml-mode/sml-font.el
+share/emacs/site-lisp/sml-mode/sml-hilite.el
+share/emacs/site-lisp/sml-mode/sml-menus.el
+share/emacs/site-lisp/sml-mode/sml-mode.el
+share/emacs/site-lisp/sml-mode/sml-mosml.el
+share/emacs/site-lisp/sml-mode/sml-poly-ml.el
+share/emacs/site-lisp/sml-mode/sml-proc.el
+share/emacs/site-lisp/sml-mode/sml-site.el
+share/emacs/site-lisp/sml-site.el
+@exec install-info --section="The Emacs editor and associated tools" --entry="* SML-mode: (sml-mode).         A mode for editing Standard ML programs." %D/info/sml-mode.info %D/info/dir
+@dirrm share/emacs/site-lisp/sml-mode
+@dirrm share/doc/sml-mode
