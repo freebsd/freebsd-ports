@@ -1,0 +1,21 @@
+hTeXp, an implementation of TeX for hangul
+==========================================
+
+hTeXp is a replacement of a TeX complier in the sense that hTeXp compiles a
+text file created by any text editor into a dvi file for further processing
+such as previewing or printing.
+
+There are many reasons using hTeXp but the most important one is that it
+handles hangul nicely. A non-localized version of TeX has serious problems
+in displaying hangul messages on a terminal screen and writing hangul 
+textual information onto the auxiliary files such as log or index.
+
+hTeXp has solved such problems, therefore, the use of hTeXp is strongly
+recommanded when using hLaTeXp, a version of hangul LaTeX2e created by
+the same author.
+
+Copyright (C) 1995-1996 Jae Choon Cha. All Rights are reserved.
+
+--
+Ports by CHOI Junho <cjh@FreeBSD.org>
+WWW: http://knot.kaist.ac.kr/htex/

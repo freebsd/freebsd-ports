@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# hTeXp running script
+#
+# Modified by CHOI Junho <cjh@FreeBSD.org>
+# Original from http://knot.kaist.ac.kr/htex/install-unix.htm
+#
+export TEXINPUTS=%%TEXMF%%/tex//
+export TEXFORMATS=%%TEXMF%%/htexpformats
+export TEXFONTS=%%TEXMF%%/fonts/tfm//
+export TEXPOOL=%%TEXMF%%/htexpformats
+exec htexp $*
