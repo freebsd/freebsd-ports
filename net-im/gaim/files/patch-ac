@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	Wed Oct 10 16:34:51 2001
-+++ src/Makefile.in	Wed Oct 10 16:50:23 2001
-@@ -154,72 +154,72 @@
+--- src/Makefile.in.orig	Fri Dec 14 22:38:10 2001
++++ src/Makefile.in	Fri Dec 14 22:46:20 2001
+@@ -155,74 +155,74 @@
  
  SUBDIRS = protocols
  
@@ -24,6 +24,7 @@
 -@GNOMEAPPLET_TRUE@			html.c \
 -@GNOMEAPPLET_TRUE@			idle.c \
 -@GNOMEAPPLET_TRUE@			list.c \
+-@GNOMEAPPLET_TRUE@			md5.c \
 -@GNOMEAPPLET_TRUE@			module.c \
 -@GNOMEAPPLET_TRUE@			multi.c \
 -@GNOMEAPPLET_TRUE@			perl.c \
@@ -56,6 +57,7 @@
 -@GNOMEAPPLET_FALSE@		html.c \
 -@GNOMEAPPLET_FALSE@		idle.c \
 -@GNOMEAPPLET_FALSE@		list.c \
+-@GNOMEAPPLET_FALSE@		md5.c \
 -@GNOMEAPPLET_FALSE@		module.c \
 -@GNOMEAPPLET_FALSE@		multi.c \
 -@GNOMEAPPLET_FALSE@		perl.c \
@@ -88,6 +90,7 @@
 +			html.c \
 +			idle.c \
 +			list.c \
++			md5.c \
 +			module.c \
 +			multi.c \
 +			perl.c \
@@ -120,6 +123,7 @@
 +		html.c \
 +		idle.c \
 +		list.c \
++		md5.c \
 +		module.c \
 +		multi.c \
 +		perl.c \
@@ -138,7 +142,7 @@
  
  EXTRA_DIST = applet.h \
  		convo.h \
-@@ -240,44 +240,41 @@
+@@ -244,44 +244,41 @@
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =
@@ -156,12 +160,12 @@
 -@GNOMEAPPLET_FALSE@	gaimrc.$(OBJEXT) gtkimhtml.$(OBJEXT) \
 -@GNOMEAPPLET_FALSE@	gtkspell.$(OBJEXT) gtkticker.$(OBJEXT) \
 -@GNOMEAPPLET_FALSE@	html.$(OBJEXT) idle.$(OBJEXT) list.$(OBJEXT) \
--@GNOMEAPPLET_FALSE@	module.$(OBJEXT) multi.$(OBJEXT) \
--@GNOMEAPPLET_FALSE@	perl.$(OBJEXT) plugins.$(OBJEXT) \
--@GNOMEAPPLET_FALSE@	prefs.$(OBJEXT) proxy.$(OBJEXT) \
--@GNOMEAPPLET_FALSE@	prpl.$(OBJEXT) server.$(OBJEXT) \
--@GNOMEAPPLET_FALSE@	sound.$(OBJEXT) ticker.$(OBJEXT) \
--@GNOMEAPPLET_FALSE@	util.$(OBJEXT)
+-@GNOMEAPPLET_FALSE@	md5.$(OBJEXT) module.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@	multi.$(OBJEXT) perl.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@	plugins.$(OBJEXT) prefs.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@	proxy.$(OBJEXT) prpl.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@	server.$(OBJEXT) sound.$(OBJEXT) \
+-@GNOMEAPPLET_FALSE@	ticker.$(OBJEXT) util.$(OBJEXT)
 +am_gaim_OBJECTS = about.$(OBJEXT) aim.$(OBJEXT) \
 +	applet.$(OBJEXT) away.$(OBJEXT) \
 +	browser.$(OBJEXT) buddy.$(OBJEXT) \
@@ -170,12 +174,12 @@
 +	gaimrc.$(OBJEXT) gtkimhtml.$(OBJEXT) \
 +	gtkspell.$(OBJEXT) gtkticker.$(OBJEXT) \
 +	html.$(OBJEXT) idle.$(OBJEXT) list.$(OBJEXT) \
-+	module.$(OBJEXT) multi.$(OBJEXT) \
-+	perl.$(OBJEXT) plugins.$(OBJEXT) \
-+	prefs.$(OBJEXT) proxy.$(OBJEXT) \
-+	prpl.$(OBJEXT) server.$(OBJEXT) \
-+	sound.$(OBJEXT) ticker.$(OBJEXT) \
-+	util.$(OBJEXT)
++	md5.$(OBJEXT) module.$(OBJEXT) \
++	multi.$(OBJEXT) perl.$(OBJEXT) \
++	plugins.$(OBJEXT) prefs.$(OBJEXT) \
++	proxy.$(OBJEXT) prpl.$(OBJEXT) \
++	server.$(OBJEXT) sound.$(OBJEXT) \
++	ticker.$(OBJEXT) util.$(OBJEXT)
  gaim_OBJECTS = $(am_gaim_OBJECTS)
 -@GNOMEAPPLET_TRUE@gaim_DEPENDENCIES =
 -@GNOMEAPPLET_TRUE@am_gaim_applet_OBJECTS = about.$(OBJEXT) aim.$(OBJEXT) \
@@ -186,14 +190,13 @@
 -@GNOMEAPPLET_TRUE@	gaimrc.$(OBJEXT) gtkimhtml.$(OBJEXT) \
 -@GNOMEAPPLET_TRUE@	gtkspell.$(OBJEXT) gtkticker.$(OBJEXT) \
 -@GNOMEAPPLET_TRUE@	html.$(OBJEXT) idle.$(OBJEXT) list.$(OBJEXT) \
--@GNOMEAPPLET_TRUE@	module.$(OBJEXT) multi.$(OBJEXT) \
--@GNOMEAPPLET_TRUE@	perl.$(OBJEXT) plugins.$(OBJEXT) \
--@GNOMEAPPLET_TRUE@	prefs.$(OBJEXT) proxy.$(OBJEXT) \
--@GNOMEAPPLET_TRUE@	prpl.$(OBJEXT) server.$(OBJEXT) \
--@GNOMEAPPLET_TRUE@	sound.$(OBJEXT) ticker.$(OBJEXT) \
--@GNOMEAPPLET_TRUE@	util.$(OBJEXT)
+-@GNOMEAPPLET_TRUE@	md5.$(OBJEXT) module.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@	multi.$(OBJEXT) perl.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@	plugins.$(OBJEXT) prefs.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@	proxy.$(OBJEXT) prpl.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@	server.$(OBJEXT) sound.$(OBJEXT) \
+-@GNOMEAPPLET_TRUE@	ticker.$(OBJEXT) util.$(OBJEXT)
 -@GNOMEAPPLET_FALSE@am_gaim_applet_OBJECTS =
-+
 +am_gaim_applet_OBJECTS = about.$(OBJEXT) aim.$(OBJEXT) \
 +	applet.$(OBJEXT) away.$(OBJEXT) \
 +	browser.$(OBJEXT) buddy.$(OBJEXT) \
@@ -202,12 +205,13 @@
 +	gaimrc.$(OBJEXT) gtkimhtml.$(OBJEXT) \
 +	gtkspell.$(OBJEXT) gtkticker.$(OBJEXT) \
 +	html.$(OBJEXT) idle.$(OBJEXT) list.$(OBJEXT) \
-+	module.$(OBJEXT) multi.$(OBJEXT) \
-+	perl.$(OBJEXT) plugins.$(OBJEXT) \
-+	prefs.$(OBJEXT) proxy.$(OBJEXT) \
-+	prpl.$(OBJEXT) server.$(OBJEXT) \
-+	sound.$(OBJEXT) ticker.$(OBJEXT) \
-+	util.$(OBJEXT)
++	md5.$(OBJEXT) module.$(OBJEXT) \
++	multi.$(OBJEXT) perl.$(OBJEXT) \
++	plugins.$(OBJEXT) prefs.$(OBJEXT) \
++	proxy.$(OBJEXT) prpl.$(OBJEXT) \
++	server.$(OBJEXT) sound.$(OBJEXT) \
++	ticker.$(OBJEXT) util.$(OBJEXT)
++
  gaim_applet_OBJECTS = $(am_gaim_applet_OBJECTS)
 -@GNOMEAPPLET_FALSE@gaim_applet_DEPENDENCIES =
  
