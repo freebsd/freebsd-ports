@@ -82,6 +82,7 @@
     SUBDIR += radiusniff
     SUBDIR += rid
     SUBDIR += rsaref
+    SUBDIR += ruby-libwrap
     SUBDIR += saint
     SUBDIR += seahorse
     SUBDIR += siphon

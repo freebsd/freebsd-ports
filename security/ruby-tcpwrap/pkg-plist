@@ -1,0 +1,9 @@
+lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/tcpd.so
+share/examples/ruby/tcpd/echod.rb
+@dirrm share/examples/ruby/tcpd
+share/doc/ruby/tcpd/README.en
+share/doc/ruby/tcpd/tcpd.html
+share/doc/ruby/tcpd/ja/README.ja
+share/doc/ruby/tcpd/ja/tcpd.html
+@dirrm share/doc/ruby/tcpd/ja
+@dirrm share/doc/ruby/tcpd

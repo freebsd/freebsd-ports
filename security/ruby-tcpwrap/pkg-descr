@@ -1,0 +1,7 @@
+libwrap-ruby -- TCP wrappers library for Ruby.
+
+Note that the actual module name for this library is `tcpd'.
+
+
+Author:	Shugo Maeda <shugo@ruby-lang.org>
+WWW:	http://www.ruby-lang.org/en/raa-list.rhtml?name=libwrap-ruby
