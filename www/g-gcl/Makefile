@@ -1,0 +1,40 @@
+# New ports collection makefile for:	g-gcl
+# Version required:			1.10
+# Date created:				21 Jun 1999
+# Whom:					G. Adam Stanislav <adam@whizkidtech.net>
+#
+# $Id$
+#
+
+DISTNAME=	g-gcl-1.10
+CATEGORIES=	www graphics
+MASTER_SITES=	ftp://ftp.whizkidtech.net/cgi/gcl/ \
+		http://www.whizkidtech.net/gcl/
+
+MAINTAINER=	adam@whizkidtech.net
+
+RUN_DEPENDS=	gracula:${PORTSDIR}/graphics/gracula
+
+NO_BUILD=
+
+do-install:
+	${MKDIR} ${PREFIX}/share/gracula
+	${MKDIR} ${PREFIX}/share/gracula/pix
+	${MKDIR} ${PREFIX}/share/examples/gracula
+	${INSTALL_DATA} ${WRKSRC}/g.gd ${PREFIX}/share/gracula/pix
+	${INSTALL_DATA} ${WRKSRC}/owl.gd ${PREFIX}/share/gracula/pix
+	${INSTALL_DATA} ${WRKSRC}/read.gd ${PREFIX}/share/gracula/pix
+	${INSTALL_DATA} ${WRKSRC}/space.gd ${PREFIX}/share/gracula/pix
+	${INSTALL_SCRIPT} ${WRKSRC}/g.gcl.sample ${PREFIX}/share/examples/gracula
+	${INSTALL_SCRIPT} ${WRKSRC}/owl.gcl.sample ${PREFIX}/share/examples/gracula
+	${INSTALL_SCRIPT} ${WRKSRC}/read.gcl.sample ${PREFIX}/share/examples/gracula
+	${INSTALL_SCRIPT} ${WRKSRC}/space.gcl.sample ${PREFIX}/share/examples/gracula
+	${INSTALL_SCRIPT} ${WRKSRC}/sec2000.gcl.sample ${PREFIX}/share/examples/gracula
+	${INSTALL_SCRIPT} ${WRKSRC}/tri.gcl.sample ${PREFIX}/share/examples/gracula
+	@echo
+	@echo "    Sample scripts installed in the"
+	@echo "    ${PREFIX}/share/examples/gracula/"
+	@echo "    directory."
+	@echo
+
+.include <bsd.port.mk>
