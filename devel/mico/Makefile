@@ -3,7 +3,7 @@
 # Date created:        11 July 1998
 # Whom:                Marc G. Fournier <scrappy@freebsd.org>
 #
-# $Id: Makefile,v 1.30 1999/04/22 00:16:53 scrappy Exp $
+# $Id: Makefile,v 1.31 1999/05/02 21:21:57 mharo Exp $
 #
 
 DISTNAME=	mico-2.2.3
@@ -14,21 +14,14 @@ MAINTAINER=	scrappy@freebsd.org
 
 .include <bsd.port.pre.mk>
 
-.if ${PORTOBJFORMAT} == "elf"
-LIBSTDC=	${PREFIX}/lib/gcc-lib/i386-unknown-freebsdelf${OSREL}/2.8.1/libstdc++.a
-.else
-LIBSTDC=	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd${OSREL}/2.8.1/libstdc++.a
+.if ${OSVERSION} < 400004
+CC=		egcc
+CXX=		eg++
+BUILD_DEPENDS=	egcc:${PORTSDIR}/lang/egcs
 .endif
 
-LIB_DEPENDS=	gtk10.1:${PORTSDIR}/x11-toolkits/gtk10 \
+LIB_DEPENDS=	gtk12.1:${PORTSDIR}/x11-toolkits/gtk12 \
 		tcl80.1:${PORTSDIR}/lang/tcl80
-BUILD_DEPENDS=	g++28:${PORTSDIR}/lang/gcc28 \
-		${LIBSTDC}:${PORTSDIR}/lang/glibstdc++28
-
-BROKEN=		Cannot find a working cpp
-
-CC=		gcc28
-CXX=		g++28
 
 USE_QT=		yes
 USE_AUTOCONF=	yes
@@ -38,7 +31,7 @@ WRKSRC=		${WRKDIR}/mico
 
 CONFIGURE_ARGS=	--with-qt --with-gtk --with-tcl \
 		--disable-optimize --disable-mini-stl
-CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk10-config"
+CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk12-config"
 
 MAN1=		idl.1 imr.1 nsadmin.1
 MAN5=		micorc.5

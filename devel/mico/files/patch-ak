@@ -1,5 +1,5 @@
---- configure.in.orig	Wed Oct 21 10:29:16 1998
-+++ configure.in	Sun Nov 15 15:20:10 1998
+--- configure.in.orig	Wed Oct 21 15:29:16 1998
++++ configure.in	Wed May 12 16:48:24 1999
 @@ -102,7 +102,7 @@
  # extra dirs
  #
@@ -23,3 +23,18 @@
      ;;
    *cygwin32*)
      have_cdk=yes;
+@@ -486,14 +491,6 @@
+ if test X"$JAVAC" = Xno -o X"$JAVACUPDIR" = Xno; then
+   AC_MSG_WARN(you have not installed JDK 1.1 and JavaCUP. java parts disabled.)
+   HAVE_JDK=no
+-fi
+-
+-AC_PATH_PROG(GENERIC_CPP, cpp, none, `echo $PATH | tr : ' '` /lib /usr/lib /usr/ccs/lib)
+-if test X"$GENERIC_CPP" = Xnone; then
+-  AC_MSG_WARN(Cannot find a working cpp.)
+-  AC_MSG_WARN(please set the environment variable PATH to include)
+-  AC_MSG_WARN(the path where cpp is located and rerun configure.)
+-  exit 1
+ fi
+ 
+ AC_SUBST(HAVE_QT)
