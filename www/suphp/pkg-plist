@@ -2,19 +2,22 @@ sbin/suphp
 libexec/apache/mod_suphp.so
 @exec %D/sbin/apxs -e -a -n suphp %D/%f
 @unexec echo "===>  If you do not plan on reinstalling suphp, you must manually remove"; echo "===>  references to it in httpd.conf."
-%%PORTDOCS%%share/doc/suphp/apache/CONFIG
-%%PORTDOCS%%share/doc/suphp/apache/README
-%%PORTDOCS%%share/doc/suphp/apache/INSTALL
-%%PORTDOCS%%share/doc/suphp/apache/LICENSE
-%%PORTDOCS%%share/doc/suphp/de-doc/apache/README.de
-%%PORTDOCS%%share/doc/suphp/de-doc/apache/INSTALL.de
-%%PORTDOCS%%share/doc/suphp/de-doc/apache/CONFIG.de
-%%PORTDOCS%%share/doc/suphp/de-doc/README.de
-%%PORTDOCS%%share/doc/suphp/de-doc/INSTALL.de
-%%PORTDOCS%%share/doc/suphp/README
-%%PORTDOCS%%share/doc/suphp/INSTALL
-%%PORTDOCS%%share/doc/suphp/LICENSE
-%%PORTDOCS%%@dirrm share/doc/suphp/de-doc/apache
-%%PORTDOCS%%@dirrm share/doc/suphp/de-doc
-%%PORTDOCS%%@dirrm share/doc/suphp/apache
-%%PORTDOCS%%@dirrm share/doc/suphp/
+%%PORTDOCS%%%%DOCSDIR%%/en/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/en/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/en/README
+%%PORTDOCS%%%%DOCSDIR%%/en/apache/CONFIG
+%%PORTDOCS%%%%DOCSDIR%%/en/apache/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/en/apache/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/en/apache/README
+%%PORTDOCS%%%%DOCSDIR%%/de/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/de/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/de/README
+%%PORTDOCS%%%%DOCSDIR%%/de/apache/CONFIG
+%%PORTDOCS%%%%DOCSDIR%%/de/apache/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/de/apache/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/de/apache/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/de/apache
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en/apache
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/de
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

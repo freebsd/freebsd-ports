@@ -1,0 +1,13 @@
+--- src/apache/Makefile.in.orig	Mon Aug 25 11:40:47 2003
++++ src/apache/Makefile.in	Mon Aug 25 11:41:02 2003
+@@ -29,7 +29,9 @@
+ all: suphp.mod
+ 
+ suphp.mod: mod_suphp.c
+-	$(APXS) -c $(DEFS) $(EXTRADEFS) $(INCLUDES) -Wc,"$(CFLAGS)" mod_suphp.c
++	@if [ ! -f mod_suphp.o ]; then \
++	$(APXS) -c $(DEFS) $(EXTRADEFS) $(INCLUDES) -Wc,"$(CFLAGS)" mod_suphp.c ;\
++	fi;
+ 
+ install: suphp.mod
+ 	$(APXS) -i -a mod_suphp.so

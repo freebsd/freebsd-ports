@@ -1,0 +1,10 @@
+--- src/Makefile.in.orig	Mon Aug 25 11:50:48 2003
++++ src/Makefile.in	Mon Aug 25 11:50:55 2003
+@@ -39,7 +39,6 @@
+ 	fi
+ 
+ install: suphp suphp.mod
+-	$(INSTALL_PROGRAM) -d $(DESTDIR)$(sbindir)
+ 	$(INSTALL_PROGRAM) -m 4755 suphp $(DESTDIR)$(sbindir)/suphp
+ 	@$(MAKE) $(MAKEDEFS) -C apache install
+ 
