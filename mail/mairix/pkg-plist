@@ -1,3 +1,5 @@
 bin/mairix
-%%PORTDOCS%%share/doc/mairix/mairix.txt
-%%PORTDOCS%%@dirrm share/doc/mairix
+%%EXAMPLESDIR%%/dotmairixrc.eg
+%%PORTDOCS%%%%DOCSDIR%%/mairix.txt
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
