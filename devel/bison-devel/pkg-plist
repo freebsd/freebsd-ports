@@ -1,6 +1,6 @@
 @comment $FreeBSD$
 bin/bison
-bin/bison1875
+bin/bison-devel
 bin/yacc
 lib/liby.a
 %%DATADIR%%/c.m4
@@ -9,19 +9,38 @@ lib/liby.a
 %%DATADIR%%/m4sugar/m4sugar.m4
 %%DATADIR%%/README
 %%DATADIR%%/yacc.c
-%%NLS%%share/locale/da/LC_MESSAGES/bison.mo
-%%NLS%%share/locale/de/LC_MESSAGES/bison.mo
-%%NLS%%share/locale/es/LC_MESSAGES/bison.mo
-%%NLS%%share/locale/et/LC_MESSAGES/bison.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/bison.mo
-%%NLS%%share/locale/hr/LC_MESSAGES/bison.mo
-%%NLS%%share/locale/id/LC_MESSAGES/bison.mo
-%%NLS%%share/locale/it/LC_MESSAGES/bison.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/bison.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/bison.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/bison.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/bison.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/bison.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/bison.mo
+share/locale/da/LC_MESSAGES/bison.mo
+share/locale/de/LC_MESSAGES/bison.mo
+share/locale/es/LC_MESSAGES/bison.mo
+share/locale/et/LC_MESSAGES/bison.mo
+share/locale/fr/LC_MESSAGES/bison.mo
+share/locale/hr/LC_MESSAGES/bison.mo
+share/locale/id/LC_MESSAGES/bison.mo
+share/locale/it/LC_MESSAGES/bison.mo
+share/locale/ja/LC_MESSAGES/bison.mo
+share/locale/ms/LC_MESSAGES/bison.mo
+share/locale/nl/LC_MESSAGES/bison.mo
+share/locale/pt_BR/LC_MESSAGES/bison.mo
+share/locale/ro/LC_MESSAGES/bison.mo
+share/locale/ru/LC_MESSAGES/bison.mo
+share/locale/sv/LC_MESSAGES/bison.mo
+share/locale/tr/LC_MESSAGES/bison.mo
+@dirrm share/locale/tr/LC_MESSAGES
+@dirrm share/locale/sv/LC_MESSAGES
+@dirrm share/locale/ru/LC_MESSAGES
+@dirrm share/locale/ro/LC_MESSAGES
+@dirrm share/locale/ro
+@dirrm share/locale/pt_BR/LC_MESSAGES
+@dirrm share/locale/nl/LC_MESSAGES
+@dirrm share/locale/ms/LC_MESSAGES
+@dirrm share/locale/ja/LC_MESSAGES
+@dirrm share/locale/it/LC_MESSAGES
+@dirrm share/locale/id/LC_MESSAGES
+@dirrm share/locale/hr/LC_MESSAGES
+@dirrm share/locale/fr/LC_MESSAGES
+@dirrm share/locale/et/LC_MESSAGES
+@dirrm share/locale/es/LC_MESSAGES
+@dirrm share/locale/de/LC_MESSAGES
+@dirrm share/locale/da/LC_MESSAGES
 @dirrm %%DATADIR%%/m4sugar
 @dirrm %%DATADIR%%
