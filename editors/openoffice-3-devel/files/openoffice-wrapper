@@ -2,7 +2,7 @@
 #
 # $FreeBSD$
 
-oopath=%%PREFIX%%/OpenOffice.org1.0/program/
+oopath=%%PREFIX%%/OpenOffice.org-643/program/
 program=`echo $0 | sed -e 's|.*-||'`
 
 case $program in
