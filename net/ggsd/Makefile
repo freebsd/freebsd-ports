@@ -8,9 +8,7 @@
 PORTNAME=	ggsd
 PORTVERSION=	0.1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
-MASTER_SITE_SUBDIR=	billf
+MASTER_SITES=	ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
 DISTNAME=	ggsd
 EXTRACT_SUFX=	.tar
 
