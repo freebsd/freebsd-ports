@@ -10305,6 +10305,7 @@ sec		ports/sysutils/sec
 secpanel	ports/security/secpanel
 sectar		ports/archivers/sectar
 sectok		ports/security/sectok
+secure_delete	ports/security/secure_delete
 security_hydra	ports/security/hydra
 sed_inplace	ports/textproc/sed_inplace
 seda		ports/net/seda
