@@ -86,12 +86,16 @@ WANT_MYSQL_VER=	323
 .if defined(WITH_MYSQL)
 USE_MYSQL=	YES
 CONFIGURE_ARGS+=--with-mysql=${PREFIX}
+.else
+CONFIGURE_ARGS+=--without-mysql
 .endif
 
 .if defined(WITH_PGSQL)
 POSTGRESQL_PORT?=	databases/postgresql-client
 LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 CONFIGURE_ARGS+=--with-pgsql=${PREFIX}
+.else
+CONFIGURE_ARGS+=--without-pgsql
 .endif
 
 .if defined(WITH_MYSQL) || defined(WITH_PGSQL)
