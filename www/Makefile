@@ -218,6 +218,7 @@
     SUBDIR += mapedit
     SUBDIR += mathopd
     SUBDIR += mdw
+    SUBDIR += mediawiki
     SUBDIR += mergelog
     SUBDIR += mgstat
     SUBDIR += mhonarc
