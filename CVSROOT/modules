@@ -1369,6 +1369,7 @@ entice		ports/graphics/entice
 entity		ports/devel/entity
 env		src/usr.bin/env
 eog		ports/graphics/eog
+eog2		ports/graphics/eog2
 eperl		ports/lang/eperl
 epfe		src/tools/tools/epfe
 ephem		ports/astro/ephem
