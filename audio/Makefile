@@ -109,6 +109,7 @@
     SUBDIR += libsndfile
     SUBDIR += libvorbis
     SUBDIR += libworkman
+    SUBDIR += linux-esound
     SUBDIR += linux-realplayer
     SUBDIR += linux-vsound
     SUBDIR += litestream
