@@ -16,7 +16,7 @@ www/phpnuke/html/admin/case/case.content.php
 www/phpnuke/html/admin/case/case.download.php
 www/phpnuke/html/admin/case/case.encyclopedia.php
 www/phpnuke/html/admin/case/case.ephemerids.php
-www/phpnuke/html/admin/case/case.forum.php
+www/phpnuke/html/admin/case/case.forums.php
 www/phpnuke/html/admin/case/case.links.php
 www/phpnuke/html/admin/case/case.messages.php
 www/phpnuke/html/admin/case/case.modules.php
@@ -71,7 +71,7 @@ www/phpnuke/html/admin/links/links.editusers.php
 www/phpnuke/html/admin/links/links.encyclopedia.php
 www/phpnuke/html/admin/links/links.ephemerids.php
 www/phpnuke/html/admin/links/links.faq.php
-www/phpnuke/html/admin/links/links.forum.php
+www/phpnuke/html/admin/links/links.forums.php
 www/phpnuke/html/admin/links/links.httpreferers.php
 www/phpnuke/html/admin/links/links.messages.php
 www/phpnuke/html/admin/links/links.modules.php
@@ -95,7 +95,7 @@ www/phpnuke/html/admin/modules/content.php
 www/phpnuke/html/admin/modules/download.php
 www/phpnuke/html/admin/modules/encyclopedia.php
 www/phpnuke/html/admin/modules/ephemerids.php
-www/phpnuke/html/admin/modules/forum.php
+www/phpnuke/html/admin/modules/forums.php
 www/phpnuke/html/admin/modules/index.html
 www/phpnuke/html/admin/modules/links.php
 www/phpnuke/html/admin/modules/messages.php
@@ -113,6 +113,8 @@ www/phpnuke/html/admin/modules/users.php
 www/phpnuke/html/auth.php
 www/phpnuke/html/backend.php
 www/phpnuke/html/banners.php
+www/phpnuke/html/blocks/block-Advertising.php
+www/phpnuke/html/blocks/block-Amazon.php
 www/phpnuke/html/blocks/block-Big_Story_of_Today.php
 www/phpnuke/html/blocks/block-Categories.php
 www/phpnuke/html/blocks/block-Content.php
@@ -149,6 +151,7 @@ www/phpnuke/html/images/admin/encyclopedia.gif
 www/phpnuke/html/images/admin/ephem.gif
 www/phpnuke/html/images/admin/exit.gif
 www/phpnuke/html/images/admin/faq.gif
+www/phpnuke/html/images/admin/foru.gif
 www/phpnuke/html/images/admin/forum.gif
 www/phpnuke/html/images/admin/index.html
 www/phpnuke/html/images/admin/links.gif
@@ -166,12 +169,90 @@ www/phpnuke/html/images/admin/sections.gif
 www/phpnuke/html/images/admin/submissions.gif
 www/phpnuke/html/images/admin/topicsman.gif
 www/phpnuke/html/images/admin/users.gif
+www/phpnuke/html/images/amazon/0072127317.jpg
+www/phpnuke/html/images/amazon/0072133716.jpg
+www/phpnuke/html/images/amazon/0072170743.jpg
+www/phpnuke/html/images/amazon/0130191140.jpg
+www/phpnuke/html/images/amazon/0130661902.jpg
+www/phpnuke/html/images/amazon/0130889032.jpg
+www/phpnuke/html/images/amazon/0130893986.jpg
+www/phpnuke/html/images/amazon/0201702533.jpg
+www/phpnuke/html/images/amazon/0672317842.jpg
+www/phpnuke/html/images/amazon/0672323257.jpg
+www/phpnuke/html/images/amazon/0735611858.jpg
+www/phpnuke/html/images/amazon/0735709211.jpg
+www/phpnuke/html/images/amazon/0735709246.jpg
+www/phpnuke/html/images/amazon/073570970X.jpg
+www/phpnuke/html/images/amazon/0735710546.jpg
+www/phpnuke/html/images/amazon/076152407X.jpg
+www/phpnuke/html/images/amazon/076152729X.jpg
+www/phpnuke/html/images/amazon/0764533428.jpg
+www/phpnuke/html/images/amazon/0764533983.jpg
+www/phpnuke/html/images/amazon/0764534734.jpg
+www/phpnuke/html/images/amazon/0764535374.jpg
+www/phpnuke/html/images/amazon/076454716X.jpg
+www/phpnuke/html/images/amazon/0767025520.jpg
+www/phpnuke/html/images/amazon/0780631315.jpg
+www/phpnuke/html/images/amazon/0780631323.jpg
+www/phpnuke/html/images/amazon/0782129242.jpg
+www/phpnuke/html/images/amazon/0783225814.jpg
+www/phpnuke/html/images/amazon/0789724405.jpg
+www/phpnuke/html/images/amazon/0790733226.jpg
+www/phpnuke/html/images/amazon/1565924940.jpg
+www/phpnuke/html/images/amazon/1578310113.jpg
+www/phpnuke/html/images/amazon/1588800539.jpg
+www/phpnuke/html/images/amazon/1861002963.jpg
+www/phpnuke/html/images/amazon/1861003730.jpg
+www/phpnuke/html/images/amazon/1861005598.jpg
+www/phpnuke/html/images/amazon/1861006918.jpg
+www/phpnuke/html/images/amazon/1930110065.jpg
+www/phpnuke/html/images/amazon/6304981635.gif
+www/phpnuke/html/images/amazon/6305519471.gif
+www/phpnuke/html/images/amazon/6305879974.jpg
+www/phpnuke/html/images/amazon/B00000ID1X.jpg
+www/phpnuke/html/images/amazon/B00000K19E.jpg
+www/phpnuke/html/images/amazon/B00003CX5P.jpg
+www/phpnuke/html/images/amazon/B00003CX8J.jpg
+www/phpnuke/html/images/amazon/B00003CX95.jpg
+www/phpnuke/html/images/amazon/B00003CXB1.jpg
+www/phpnuke/html/images/amazon/B00003CXE7.jpg
+www/phpnuke/html/images/amazon/B00003CXQM.jpg
+www/phpnuke/html/images/amazon/B00003CXTA.jpg
+www/phpnuke/html/images/amazon/B00003CXTG.jpg
+www/phpnuke/html/images/amazon/B00003CXXJ.jpg
+www/phpnuke/html/images/amazon/B00003CXXS.jpg
+www/phpnuke/html/images/amazon/B00003CXXV.jpg
+www/phpnuke/html/images/amazon/B00003CXZ1.jpg
+www/phpnuke/html/images/amazon/B00003CY5D.jpg
+www/phpnuke/html/images/amazon/B00003Q43A.jpg
+www/phpnuke/html/images/amazon/B00003RQND.jpg
+www/phpnuke/html/images/amazon/B00004TS0N.jpg
+www/phpnuke/html/images/amazon/B00004U8H2.jpg
+www/phpnuke/html/images/amazon/B00004U8JU.jpg
+www/phpnuke/html/images/amazon/B00004U8JV.jpg
+www/phpnuke/html/images/amazon/B00004Z4SU.jpg
+www/phpnuke/html/images/amazon/B000055ZOB.jpg
+www/phpnuke/html/images/amazon/B000059H6O.jpg
+www/phpnuke/html/images/amazon/B000059H6U.jpg
+www/phpnuke/html/images/amazon/B000059TQ9.jpg
+www/phpnuke/html/images/amazon/B00005AUDW.jpg
+www/phpnuke/html/images/amazon/B00005BIFZ.jpg
+www/phpnuke/html/images/amazon/B00005MKL5.jpg
+www/phpnuke/html/images/amazon/B00005ML6Y.jpg
+www/phpnuke/html/images/amazon/B00005NC6H.jpg
+www/phpnuke/html/images/amazon/B00005OAZZ.jpg
+www/phpnuke/html/images/amazon/B00005QCYC.jpg
+www/phpnuke/html/images/amazon/B00005U2KN.jpg
+www/phpnuke/html/images/amazon/book.gif
+www/phpnuke/html/images/amazon/dvd.gif
+www/phpnuke/html/images/amazon/music.gif
 www/phpnuke/html/images/articles/index.html
 www/phpnuke/html/images/articles/stars-1.gif
 www/phpnuke/html/images/articles/stars-2.gif
 www/phpnuke/html/images/articles/stars-3.gif
 www/phpnuke/html/images/articles/stars-4.gif
 www/phpnuke/html/images/articles/stars-5.gif
+www/phpnuke/html/images/banners/DB.jpg
 www/phpnuke/html/images/banners/index.html
 www/phpnuke/html/images/blackpixel.gif
 www/phpnuke/html/images/blue.gif
@@ -334,6 +415,7 @@ www/phpnuke/html/images/forum/b_listitem.gif
 www/phpnuke/html/images/forum/b_listopen.gif
 www/phpnuke/html/images/forum/b_quote.gif
 www/phpnuke/html/images/forum/b_url.gif
+www/phpnuke/html/images/forum/door_exit.gif
 www/phpnuke/html/images/forum/download.gif
 www/phpnuke/html/images/forum/email.gif
 www/phpnuke/html/images/forum/flags/Afghanistan.gif
@@ -529,6 +611,8 @@ www/phpnuke/html/images/forum/flags/Zaire.gif
 www/phpnuke/html/images/forum/flags/Zambia.gif
 www/phpnuke/html/images/forum/flags/Zimbabwe.gif
 www/phpnuke/html/images/forum/flags/blank.gif
+www/phpnuke/html/images/forum/forumbanner.gif
+www/phpnuke/html/images/forum/forumlogo11.gif
 www/phpnuke/html/images/forum/house.gif
 www/phpnuke/html/images/forum/icons/aim.gif
 www/phpnuke/html/images/forum/icons/del_topic.gif
@@ -539,6 +623,9 @@ www/phpnuke/html/images/forum/icons/email.gif
 www/phpnuke/html/images/forum/icons/folder.gif
 www/phpnuke/html/images/forum/icons/hot_folder.gif
 www/phpnuke/html/images/forum/icons/hot_red_folder.gif
+www/phpnuke/html/images/forum/icons/icon21.gif
+www/phpnuke/html/images/forum/icons/icon24.gif
+www/phpnuke/html/images/forum/icons/icon27.gif
 www/phpnuke/html/images/forum/icons/icon_biggrin.gif
 www/phpnuke/html/images/forum/icons/icon_confused.gif
 www/phpnuke/html/images/forum/icons/icon_cool.gif
@@ -550,6 +637,7 @@ www/phpnuke/html/images/forum/icons/icon_razz.gif
 www/phpnuke/html/images/forum/icons/icon_redface.gif
 www/phpnuke/html/images/forum/icons/icon_rolleyes.gif
 www/phpnuke/html/images/forum/icons/icon_smile.gif
+www/phpnuke/html/images/forum/icons/icon_ultima.gif
 www/phpnuke/html/images/forum/icons/icon_wink.gif
 www/phpnuke/html/images/forum/icons/icq_add.gif
 www/phpnuke/html/images/forum/icons/icq_off.gif
@@ -572,13 +660,27 @@ www/phpnuke/html/images/forum/icons/reply.jpg
 www/phpnuke/html/images/forum/icons/reply_locked-dark.jpg
 www/phpnuke/html/images/forum/icons/search.gif
 www/phpnuke/html/images/forum/icons/send.gif
+www/phpnuke/html/images/forum/icons/status_del.gif
+www/phpnuke/html/images/forum/icons/status_del1.gif
 www/phpnuke/html/images/forum/icons/unlock_topic.gif
 www/phpnuke/html/images/forum/icons/www_icon.gif
 www/phpnuke/html/images/forum/icons/yim.gif
 www/phpnuke/html/images/forum/icq_add.gif
 www/phpnuke/html/images/forum/index.html
+www/phpnuke/html/images/forum/keys.gif
 www/phpnuke/html/images/forum/msnm.gif
+www/phpnuke/html/images/forum/nuovomess-english.gif
+www/phpnuke/html/images/forum/nuovomess-french.gif
+www/phpnuke/html/images/forum/nuovomess-german.gif
+www/phpnuke/html/images/forum/nuovomess.gif
+www/phpnuke/html/images/forum/pips_admin.gif
+www/phpnuke/html/images/forum/pips_member.gif
+www/phpnuke/html/images/forum/pips_moderator.gif
 www/phpnuke/html/images/forum/read.gif
+www/phpnuke/html/images/forum/rispondimess-english.gif
+www/phpnuke/html/images/forum/rispondimess-french.gif
+www/phpnuke/html/images/forum/rispondimess-german.gif
+www/phpnuke/html/images/forum/rispondimess.gif
 www/phpnuke/html/images/forum/smilies/blank.gif
 www/phpnuke/html/images/forum/smilies/icon_biggrin.gif
 www/phpnuke/html/images/forum/smilies/icon_confused.gif
@@ -603,6 +705,21 @@ www/phpnuke/html/images/forum/special/5stars.gif
 www/phpnuke/html/images/forum/special/6stars.gif
 www/phpnuke/html/images/forum/special/blank.gif
 www/phpnuke/html/images/forum/special/index.html
+www/phpnuke/html/images/forum/special/stars-1.gif
+www/phpnuke/html/images/forum/special/stars-2.gif
+www/phpnuke/html/images/forum/special/stars-3.gif
+www/phpnuke/html/images/forum/special/stars-4.gif
+www/phpnuke/html/images/forum/special/stars-5.gif
+www/phpnuke/html/images/forum/special/stars_1.gif
+www/phpnuke/html/images/forum/special/stars_2.gif
+www/phpnuke/html/images/forum/special/stars_3.gif
+www/phpnuke/html/images/forum/special/stars_4.gif
+www/phpnuke/html/images/forum/special/stars_5.gif
+www/phpnuke/html/images/forum/subject/bowwow.gif
+www/phpnuke/html/images/forum/subject/cake.gif
+www/phpnuke/html/images/forum/subject/clock.gif
+www/phpnuke/html/images/forum/subject/coffee.gif
+www/phpnuke/html/images/forum/subject/heart.gif
 www/phpnuke/html/images/forum/subject/icon1.gif
 www/phpnuke/html/images/forum/subject/icon11.gif
 www/phpnuke/html/images/forum/subject/icon12.gif
@@ -642,6 +759,10 @@ www/phpnuke/html/images/forum/subject/icon6.gif
 www/phpnuke/html/images/forum/subject/icon7.gif
 www/phpnuke/html/images/forum/subject/icon8.gif
 www/phpnuke/html/images/forum/subject/icon9.gif
+www/phpnuke/html/images/forum/subject/kiss.gif
+www/phpnuke/html/images/forum/subject/martini_shaken.gif
+www/phpnuke/html/images/forum/subject/present.gif
+www/phpnuke/html/images/forum/subject/rose.gif
 www/phpnuke/html/images/forum/www_icon.gif
 www/phpnuke/html/images/forum/yim.gif
 www/phpnuke/html/images/friend.gif
@@ -983,46 +1104,34 @@ www/phpnuke/html/modules/Feedback/language/lang-swedish.php
 www/phpnuke/html/modules/Feedback/language/lang-thai.php
 www/phpnuke/html/modules/Feedback/language/lang-turkish.php
 www/phpnuke/html/modules/Feedback/language/lang-ukrainian.php
-www/phpnuke/html/modules/Forum/auth.php
-www/phpnuke/html/modules/Forum/bbconfig.php
-www/phpnuke/html/modules/Forum/editpost.php
-www/phpnuke/html/modules/Forum/faq.php
-www/phpnuke/html/modules/Forum/functions.php
-www/phpnuke/html/modules/Forum/index.php
-www/phpnuke/html/modules/Forum/language/.htaccess
-www/phpnuke/html/modules/Forum/language/index.html
-www/phpnuke/html/modules/Forum/language/lang-arabic.php
-www/phpnuke/html/modules/Forum/language/lang-brazilian.php
-www/phpnuke/html/modules/Forum/language/lang-chinese.php
-www/phpnuke/html/modules/Forum/language/lang-czech.php
-www/phpnuke/html/modules/Forum/language/lang-danish.php
-www/phpnuke/html/modules/Forum/language/lang-dutch.php
-www/phpnuke/html/modules/Forum/language/lang-english.php
-www/phpnuke/html/modules/Forum/language/lang-euskara.php
-www/phpnuke/html/modules/Forum/language/lang-finnish.php
-www/phpnuke/html/modules/Forum/language/lang-french.php
-www/phpnuke/html/modules/Forum/language/lang-galego.php
-www/phpnuke/html/modules/Forum/language/lang-german.php
-www/phpnuke/html/modules/Forum/language/lang-greek.php
-www/phpnuke/html/modules/Forum/language/lang-hungarian.php
-www/phpnuke/html/modules/Forum/language/lang-icelandic.php
-www/phpnuke/html/modules/Forum/language/lang-italian.php
-www/phpnuke/html/modules/Forum/language/lang-polish.php
-www/phpnuke/html/modules/Forum/language/lang-portuguese.php
-www/phpnuke/html/modules/Forum/language/lang-russian.php
-www/phpnuke/html/modules/Forum/language/lang-slovenian.php
-www/phpnuke/html/modules/Forum/language/lang-spanish.php
-www/phpnuke/html/modules/Forum/language/lang-swedish.php
-www/phpnuke/html/modules/Forum/language/lang-thai.php
-www/phpnuke/html/modules/Forum/language/lang-turkish.php
-www/phpnuke/html/modules/Forum/language/lang-ukrainian.php
-www/phpnuke/html/modules/Forum/newtopic.php
-www/phpnuke/html/modules/Forum/page_header.php
-www/phpnuke/html/modules/Forum/reply.php
-www/phpnuke/html/modules/Forum/search.php
-www/phpnuke/html/modules/Forum/topicadmin.php
-www/phpnuke/html/modules/Forum/viewforum.php
-www/phpnuke/html/modules/Forum/viewtopic.php
+www/phpnuke/html/modules/Forums/attachment.php
+www/phpnuke/html/modules/Forums/attachment/index.html
+www/phpnuke/html/modules/Forums/auth.php
+www/phpnuke/html/modules/Forums/bb_smilies.php
+www/phpnuke/html/modules/Forums/bbcode_ref.php
+www/phpnuke/html/modules/Forums/downloadtemp/index.html
+www/phpnuke/html/modules/Forums/editpost.php
+www/phpnuke/html/modules/Forums/functions.php
+www/phpnuke/html/modules/Forums/index.php
+www/phpnuke/html/modules/Forums/language/lang-albanian.php
+www/phpnuke/html/modules/Forums/language/lang-danish.php
+www/phpnuke/html/modules/Forums/language/lang-dutch.php
+www/phpnuke/html/modules/Forums/language/lang-english.php
+www/phpnuke/html/modules/Forums/language/lang-french.php
+www/phpnuke/html/modules/Forums/language/lang-german.php
+www/phpnuke/html/modules/Forums/language/lang-italian.php
+www/phpnuke/html/modules/Forums/language/lang-norwegian.php
+www/phpnuke/html/modules/Forums/language/lang-russian.php
+www/phpnuke/html/modules/Forums/language/lang-slovak.php
+www/phpnuke/html/modules/Forums/language/lang-spanish.php
+www/phpnuke/html/modules/Forums/mime.inc.php
+www/phpnuke/html/modules/Forums/mimetype.txt
+www/phpnuke/html/modules/Forums/newtopic.php
+www/phpnuke/html/modules/Forums/reply.php
+www/phpnuke/html/modules/Forums/searchbb.php
+www/phpnuke/html/modules/Forums/topicadmin.php
+www/phpnuke/html/modules/Forums/viewforum.php
+www/phpnuke/html/modules/Forums/viewtopic.php
 www/phpnuke/html/modules/Members_List/index.php
 www/phpnuke/html/modules/Members_List/language/.htaccess
 www/phpnuke/html/modules/Members_List/language/index.html
@@ -1653,6 +1762,7 @@ www/phpnuke/html/upgrades/upgrade52-53.php
 www/phpnuke/html/upgrades/upgrade53-531.php
 www/phpnuke/html/upgrades/upgrade531-54.php
 www/phpnuke/html/upgrades/upgrade54-55.php
+www/phpnuke/html/upgrades/upgrade55-56.php
 www/phpnuke/sql/nuke.sql
 @dirrm www/phpnuke/sql
 @dirrm www/phpnuke/html/upgrades
@@ -1711,8 +1821,10 @@ www/phpnuke/sql/nuke.sql
 @dirrm www/phpnuke/html/modules/News
 @dirrm www/phpnuke/html/modules/Members_List/language
 @dirrm www/phpnuke/html/modules/Members_List
-@dirrm www/phpnuke/html/modules/Forum/language
-@dirrm www/phpnuke/html/modules/Forum
+@dirrm www/phpnuke/html/modules/Forums/language
+@dirrm www/phpnuke/html/modules/Forums/downloadtemp
+@dirrm www/phpnuke/html/modules/Forums/attachment
+@dirrm www/phpnuke/html/modules/Forums
 @dirrm www/phpnuke/html/modules/Feedback/language
 @dirrm www/phpnuke/html/modules/Feedback
 @dirrm www/phpnuke/html/modules/FAQ/language
@@ -1747,6 +1859,7 @@ www/phpnuke/sql/nuke.sql
 @dirrm www/phpnuke/html/images/download
 @dirrm www/phpnuke/html/images/banners
 @dirrm www/phpnuke/html/images/articles
+@dirrm www/phpnuke/html/images/amazon
 @dirrm www/phpnuke/html/images/admin
 @dirrm www/phpnuke/html/images
 @dirrm www/phpnuke/html/blocks
