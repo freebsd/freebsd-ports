@@ -4,7 +4,6 @@ include/glib12/glibconfig.h
 include/glib12/gmodule.h
 @unexec install-info --delete %D/info/glib.info %D/info/dir
 info/glib.info
-@exec [ -f %D/info/dir ] || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
 @exec install-info %D/info/glib.info %D/info/dir
 lib/libglib12.a
 lib/libglib12.la
