@@ -1,3 +1,4 @@
 @cwd /usr/X11R6
 bin/xearth
 man/man1/xearth.1.gz
+lib/X11/freebsd.markers
