@@ -1,17 +1,17 @@
 # Ports collection makefile for:	Poseidon
 # Date created:			February 28, 2004
-# Whom:				gerrit@beine-computer.de
+# Whom:				Gerrit Beine (<tux@pinguru.net>)
 #
 # $FreeBSD$
 #
 
 PORTNAME=	poseidonCE
-PORTVERSION=	2.2.1
+PORTVERSION=	2.4.1
 CATEGORIES=	java
 MASTER_SITES=	# http://www.gentleware.com/products/download.php4
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}	# Required to print the message
 
-MAINTAINER=	gerrit@beine-computer.de
+MAINTAINER=	tux@pinguru.net
 COMMENT=	A popular UML CASE tool
 
 USE_ZIP=	yes
