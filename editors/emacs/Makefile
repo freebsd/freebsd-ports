@@ -3,7 +3,7 @@
 # Date created:		29 October 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.38 1999/03/11 21:47:10 scrappy Exp $
+# $Id: Makefile,v 1.39 1999/06/05 22:29:14 mharo Exp $
 #
 
 DISTNAME=	emacs-19.34b
@@ -21,9 +21,13 @@ PLIST_SUB=	EMACS_VERSION=${EMACS_VERSION} EMACS_ARCH=${CONFIGURE_TARGET}
 NO_LATEST_LINK=	yes
 WRKSRC=		${WRKDIR}/emacs-19.34
 GNU_CONFIGURE=	yes
-USE_XLIB=	yes
 USE_GMAKE=	yes
+.if !defined(NO_X11)
 CONFIGURE_ARGS=	--with-x-toolkit --sharedstatedir=/var/run
+USE_XLIB=	yes
+.else
+CONFIGURE_ARGS=	--with-x=no --sharedstatedir=/var/run
+.endif
 
 STRIP=
 MAN1=		emacs.1 etags.1 ctags.1
