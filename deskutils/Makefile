@@ -11,6 +11,7 @@
     SUBDIR += gnomepim
     SUBDIR += gnucash
     SUBDIR += gtimer
+    SUBDIR += gvid
     SUBDIR += ical
     SUBDIR += korganizer
     SUBDIR += korganizer11-i18n
