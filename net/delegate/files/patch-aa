@@ -1,0 +1,47 @@
+--- src/lock.c.orig	Tue Aug  4 09:13:18 1998
++++ src/lock.c	Thu Nov 19 18:17:09 1998
+@@ -18,6 +18,7 @@
+ History:
+ 	970403	extracted from cache.c
+ //////////////////////////////////////////////////////////////////////#*/
++#include <errno.h>
+ #include <stdio.h>
+ #include <sys/types.h>
+ extern double Time();
+@@ -112,6 +113,22 @@
+ 			rcode = 0;
+ 			break;
+ 		}
++#ifdef EWOULDBLOCK
++		/*
++		 * Only retry the lock if it was busy.  Other
++		 * possible sources for the lock to fail are:
++		 * invalid argument, bad filedescriptor, and
++		 * operation not supported by device.  The latter
++		 * happens if you start DeleGateD with -v, so it
++		 * logs to stderr (which usually doesn't support
++		 * locking at all).
++		 */
++		if (rcode == -1 && errno != EWOULDBLOCK) {
++			/* pretend lock succeeded */
++			rcode = 0;
++			break;
++		}
++#endif
+ 		remain = timeout - elapsed;
+ 		if( remain <= 0 )
+ 			break;
+@@ -122,6 +139,13 @@
+ 
+ 			start = Time();
+ 			rcode = callFuncTimeout(remain/1000,-1,func,fd);
++#ifdef EWOULDBLOCK
++			if (rcode == -1 && errno != EWOULDBLOCK) {
++				/* pretend lock succeeded */
++				rcode = 0;
++				break;
++			}
++#endif
+ 			elapse1 = (Time() - start) * 1000; 
+ /*{
+ static int n;
