@@ -2,10 +2,7 @@ lwm is a window manager for X that tries to keep out of your
 face.  There are no icons, no button bars, no icon docks, no root
 menus, no nothing...
 
-It's a tiny (less than 30k shared binary) and fast window manager.  The
-web page is also one-page user manual.  See 9menu(1) for root menu.
-
-WWW: http://www.boognish.org.uk/enh/lwm/
+It's a tiny (less than 30k shared binary) and fast window manager.
 
 - J Han	
 hjh@photino.com
