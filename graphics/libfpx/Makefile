@@ -31,12 +31,15 @@ MAINTAINER=	mi@aldan.algebra.com
 
 LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 MAKE_ARGS+=	-j2
+#CFLAGS+=	-DHAVE_WCHAR_H=1 -DHAVE_DLFCN_H=1
+USE_REINPLACE=	yes
+REINPLACE_ARGS=	-i ""
 
 post-patch:
 	# Replacing references to <malloc.h> with <stdlib.h>
 	# Ignore the /dev/stderr warning below. (What a hack!)
-	${PERL} -pi -e 's/<malloc.h>/<stdlib.h>/' \
-		`find ${WRKSRC} -type f | xargs ${GREP} -l '<malloc.h>'` /dev/stderr
+	${REINPLACE_CMD} -e 's,<malloc\.h>,<stdlib\.h>,' \
+		${WRKSRC}/oless/h/ref.hxx ${WRKSRC}/oless/h/vect.hxx
 
 INSTALLS_SHLIB=	yes
 MAKEFILE=	${FILESDIR}/Makefile.bsd

@@ -7,6 +7,7 @@ LIBDIR	=	${LOCALBASE}/lib
 INCDIR	=	${LOCALBASE}/include
 
 NOPROFILE=	Don't want it
+CFLAGS+=	-DHAVE_WCHAR_H=1 -DHAVE_DLFCN_H=1 -Werror
 
 CPPS	!=	find ${.CURDIR} -name \*.cpp -print
 # Some of the .cxx files are #include-ed into others, so can't use `find' here:
