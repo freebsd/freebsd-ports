@@ -2889,6 +2889,7 @@ gpgme03		ports/security/gpgme03
 gphoto2		ports/graphics/gphoto2
 gpkgdep		ports/sysutils/gpkgdep
 gplbp		ports/misc/gplbp
+gplink		ports/misc/gplink
 gplot		ports/graphics/gplot
 gpp		ports/textproc/gpp
 gpredict	ports/comms/gpredict
