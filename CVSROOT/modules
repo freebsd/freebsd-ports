@@ -1351,6 +1351,7 @@ epplets		ports/x11-wm/epplets
 eps2png		ports/graphics/eps2png
 epstool		ports/graphics/epstool
 erlang		ports/lang/erlang
+erlang-doc	ports/lang/erlang-doc
 errata		src/release/texts ERRATA.TXT
 error		ports/devel/error
 eruby		ports/textproc/eruby
