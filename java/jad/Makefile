@@ -8,7 +8,8 @@
 PORTNAME=	jad
 PORTVERSION=	1.5.7f
 CATEGORIES=	java
-MASTER_SITES=	http://www.geocities.com/SiliconValley/Bridge/8617/jad/freebsd/
+MASTER_SITES=	http://www.geocities.com/SiliconValley/Bridge/8617/jad/freebsd/ \
+		ftp://freebsd.ntu.edu.tw/FreeBSD/taiwan/NTU/leeym/distfiles/
 DISTNAME=	jadfb157
 
 MAINTAINER=	leeym@cae.ce.ntu.edu.tw
