@@ -3,7 +3,7 @@
 # Date created:         3 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.10 1997/01/03 09:37:15 obrien Exp $
+# $Id: Makefile,v 1.11 1997/05/29 02:34:01 fenner Exp $
 #
 
 DISTNAME=       xinvaders
@@ -16,6 +16,6 @@ MAINTAINER=	swallace@FreeBSD.org
 
 NO_CDROM=	"don't sell for profit"
 USE_IMAKE=	yes
-
+MAN6=		xinvaders.6
 
 .include <bsd.port.mk>
