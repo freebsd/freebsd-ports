@@ -133,6 +133,7 @@
 %%T%%/jre/lib/zi/Africa/Dar_es_Salaam
 %%T%%/jre/lib/zi/Africa/Bangui
 %%T%%/jre/lib/zi/Africa/Ceuta
+%%T%%/jre/lib/zi/America/Danmarkshavn
 %%T%%/jre/lib/zi/America/Scoresbysund
 %%T%%/jre/lib/zi/America/Godthab
 %%T%%/jre/lib/zi/America/Thule
@@ -178,6 +179,7 @@
 %%T%%/jre/lib/zi/America/Nome
 %%T%%/jre/lib/zi/America/Glace_Bay
 %%T%%/jre/lib/zi/America/Menominee
+%%T%%/jre/lib/zi/America/North_Dakota/Center
 %%T%%/jre/lib/zi/America/Port-au-Prince
 %%T%%/jre/lib/zi/America/Louisville
 %%T%%/jre/lib/zi/America/Dawson_Creek
@@ -257,7 +259,6 @@
 %%T%%/jre/lib/zi/Antarctica/Mawson
 %%T%%/jre/lib/zi/Asia/Phnom_Penh
 %%T%%/jre/lib/zi/Asia/Dushanbe
-%%T%%/jre/lib/zi/Asia/Chungking
 %%T%%/jre/lib/zi/Asia/Pyongyang
 %%T%%/jre/lib/zi/Asia/Aqtau
 %%T%%/jre/lib/zi/Asia/Katmandu
@@ -329,6 +330,9 @@
 %%T%%/jre/lib/zi/Asia/Riyadh87
 %%T%%/jre/lib/zi/Asia/Riyadh88
 %%T%%/jre/lib/zi/Asia/Riyadh89
+%%T%%/jre/lib/zi/Asia/Choibalsan
+%%T%%/jre/lib/zi/Asia/Chongqing
+%%T%%/jre/lib/zi/Asia/Sakhalin
 %%T%%/jre/lib/zi/Atlantic/Cape_Verde
 %%T%%/jre/lib/zi/Atlantic/St_Helena
 %%T%%/jre/lib/zi/Atlantic/Madeira
@@ -509,11 +513,11 @@
 %%T%%/jre/Welcome.html
 %%T%%/jre/README
 %%T%%/jre/LICENSE
+%%T%%/jre/javaws-1_0_1_02-linux-int.zip
 %%T%%/jre/plugin/i386/ns4/javaplugin140.so
 %%T%%/jre/plugin/i386/ns600/libjavaplugin_oji140.so
 %%T%%/jre/plugin/i386/ns610/libjavaplugin_oji140.so
 %%T%%/jre/ControlPanel.html
-%%T%%/jre/javaws-1_0_1_01-linux-int.zip
 %%T%%/lib/htmlconverter.jar
 %%T%%/lib/tools.jar
 %%T%%/lib/orb.idl
@@ -1478,6 +1482,7 @@
 @dirrm %%T%%/jre/lib/zi/Africa
 @dirrm %%T%%/jre/lib/zi/America/Indiana
 @dirrm %%T%%/jre/lib/zi/America/Kentucky
+@dirrm %%T%%/jre/lib/zi/America/North_Dakota
 @dirrm %%T%%/jre/lib/zi/America
 @dirrm %%T%%/jre/lib/zi/Antarctica
 @dirrm %%T%%/jre/lib/zi/Asia
