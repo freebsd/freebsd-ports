@@ -9,18 +9,23 @@ PORTNAME=	slrnface
 PORTVERSION=	2.1.1
 PORTREVISION=	1
 CATEGORIES=	news
-MASTER_SITES=	http://dave.willfork.com/slrnface/
+MASTER_SITES=	${MASTER_SITE_DEBIAN}
+MASTER_SITE_SUBDIR=	pool/main/s/${PORTNAME}
+DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	vs@FreeBSD.org
 COMMENT=	Shows X-Faces from slrn in X11 terminal emulator
 
 LIB_DEPENDS=	compface:${PORTSDIR}/mail/faces
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ALL_TARGET=	slrnface
 
 USE_XLIB=	yes
 
 MAN1=		slrnface.1
+PLIST_FILES=	bin/slrnface share/examples/slrnface/slrnface.sl
+PLIST_DIRS=	share/examples/slrnface
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/slrnface ${PREFIX}/bin
