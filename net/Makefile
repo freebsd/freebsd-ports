@@ -622,6 +622,7 @@
     SUBDIR += ruby-spread
     SUBDIR += ruby-tcpsocketpipe
     SUBDIR += ruby-tserver
+    SUBDIR += rude
     SUBDIR += rwhois
     SUBDIR += samba
     SUBDIR += samba-devel

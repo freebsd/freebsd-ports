@@ -1,0 +1,11 @@
+--- rude/Makefile.in.orig	Thu Jun 13 14:15:21 2002
++++ rude/Makefile.in	Tue Jun 24 11:26:06 2003
+@@ -19,7 +19,7 @@
+ sbindir       = @sbindir@
+ srcdir        = @srcdir@
+ 
+-INSTALL  = @INSTALL@ -o root -g root -m 0755
++INSTALL  = @INSTALL@ -o root -g wheel -m 0755
+ VPATH    = @srcdir@
+ 
+ CC       = @CC@
