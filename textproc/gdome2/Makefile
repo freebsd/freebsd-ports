@@ -14,7 +14,7 @@ MAINTAINER=	knu@FreeBSD.org
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
-WANT_GLIB=	yes
+USE_GLIB=	yes
 
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
