@@ -1,0 +1,10 @@
+bin/xroads
+share/doc/xroads/BUGS
+share/doc/xroads/CHANGELOG
+share/doc/xroads/README
+share/xroads/map0.xrm
+share/xroads/map1.xrm
+share/xroads/map2.xrm
+share/xroads/map3.xrm
+@dirrm share/doc/xroads
+@dirrm share/xroads
