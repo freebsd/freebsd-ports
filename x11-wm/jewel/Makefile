@@ -7,16 +7,14 @@
 #
 
 PORTNAME=	jewel
-PORTVERSION=	0.12.31
+PORTVERSION=	0.12.40
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.mjr.dsl.pipex.com/comp/
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Window manager based on aewm++
 
-BROKEN=		"Does not fetch"
-
-ALL_TARGET=	aewm++
+ALL_TARGET=	jewel
 DOCDIR=		share/doc/${PORTNAME}
 DOCS=		Changelog Changelog.DLR Changelog.jewel INSTALL LICENSE README
 PLIST=		${WRKDIR}/pkg-plist
@@ -38,7 +36,7 @@ pre-install:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/aewm++ ${PREFIX}/bin/jewel
+	${INSTALL_PROGRAM} ${WRKSRC}/jewel ${PREFIX}/bin/jewel
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/${DOCDIR}
 .for ii in ${DOCS}
