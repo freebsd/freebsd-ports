@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040311:
+  AFFECTS: users of databases/postgresql7
+
+  PostgreSQL 7.4.2 Released and release notes available at
+  http://www.postgresql.org/news/173.html
+
+  NOTICE: unlike most minor versions, this version does require some
+  updates to the pg_* system tables. Full instructions for how to do
+  this are included in the full HISTORY file.
+
+  DO NOT UPGRADE WITHOUT READING THESE INSTRUCTIONS.
+
 20040309:
   AFFECTS: users of x11/kdelibs and x11/kdebase
 
