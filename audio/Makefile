@@ -11,6 +11,7 @@
     SUBDIR += ac3dec
     SUBDIR += adpcm
     SUBDIR += afsp
+    SUBDIR += alac
     SUBDIR += alienwah
     SUBDIR += alsaplayer
     SUBDIR += amarok
