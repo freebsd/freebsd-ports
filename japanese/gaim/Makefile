@@ -8,7 +8,7 @@
 CATEGORIES=	japanese net
 
 PATCH_SITES=		http://www.cc.rim.or.jp/~yaz/:jp_patch
-PATCHFILES=		gaim-0.71_jp.patch.gz:jp_patch
+PATCHFILES=		gaim-0.72_jp2.patch.gz:jp_patch
 PATCH_DIST_STRIP=	-p1:jp_patch
 
 MAINTAINER=	morishita@skywing.org
@@ -17,7 +17,5 @@ MASTERDIR=	${.CURDIR}/../../net/gaim
 MD5_FILE=	${.CURDIR}/distinfo
 
 CONFLICTS=	gaim-*
-
-BROKEN=		"Checksum mismatch; will be removed after Feb 2"
 
 .include "${MASTERDIR}/Makefile"
