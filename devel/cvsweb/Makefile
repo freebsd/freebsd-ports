@@ -10,7 +10,7 @@ PORTVERSION=	1.80
 CATEGORIES=	devel www
 MASTER_SITES=	http://stud.fh-heilbronn.de/~zeller/download/
 
-MAINTAINER=	knu@idaemons.org
+MAINTAINER=	knu@FreeBSD.org
 
 NO_BUILD=	yes
 

@@ -11,7 +11,7 @@ CATEGORIES=	japanese textproc
 MASTER_SITES=	http://www.namazu.org/stable/
 DISTNAME=	namazu-${PORTVERSION}
 
-MAINTAINER=	knu@idaemons.org
+MAINTAINER=	knu@FreeBSD.org
 
 LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 BUILD_DEPENDS=	${PM_BASE}/File/MMagic.pm:${PORTSDIR}/devel/p5-File-MMagic \

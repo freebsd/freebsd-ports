@@ -12,7 +12,7 @@ MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
 		http://people.FreeBSD.org/~knu/ports/distfiles/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	knu@idaemons.org
+MAINTAINER=	knu@FreeBSD.org
 
 USE_AUTOCONF=	yes
 USE_GMAKE=	yes

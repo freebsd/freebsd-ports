@@ -11,7 +11,7 @@ CATEGORIES=	www graphics
 MASTER_SITES=	http://www.geocities.com/TimesSquare/Labyrinth/5084/flash/Linux/ \
 		http://perso.club-internet.fr/odebon/flash/Linux/
 
-MAINTAINER=	knu@idaemons.org
+MAINTAINER=	knu@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 

@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.vacs.co.jp/pub/unix/vje30/FreeBSD/	\
 EXTRACT_SUFX=	.tgz
 DISTNAME=	${PORTNAME}-delta-${PORTVERSION}t-${DISTOBJFORMAT}
 
-MAINTAINER=	knu@idaemons.org
+MAINTAINER=	knu@FreeBSD.org
 
 #RUN_DEPENDS=	${LOCALBASE}/share/java/classes/jfc-1.1.1/swing.jar:${PORTSDIR}/java/jfc
 

@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 PATCH_SITES=   http://leed.t.u-tokyo.ac.jp/~yamagata/flash/
 PATCHFILES=    flash-0.4.3-fbsd-19990512.patch
 
-MAINTAINER=	knu@idaemons.org
+MAINTAINER=	knu@FreeBSD.org
 
 USE_X_PREFIX=	yes
 
