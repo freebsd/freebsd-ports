@@ -6,6 +6,7 @@
 
 PORTNAME=	expect
 PORTVERSION=	5.38.0
+PORTREVISION=	1
 CATEGORIES=	lang tcl83 tk83
 MASTER_SITES=	http://expect.nist.gov/src/
 
