@@ -18,8 +18,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/tricks.html
 %%PORTDOCS%%%%DOCSDIR%%/y2k.html
 www/cgi-bin/cgiwrap
-www/cgi-bin/cgiwrapd
+%%CGIWRAPDFLAG%%www/cgi-bin/cgiwrapd
 www/cgi-bin/nph-cgiwrap
-www/cgi-bin/nph-cgiwrapd
+%%CGIWRAPDFLAG%%www/cgi-bin/nph-cgiwrapd
 @unexec rmdir %D/www/cgi-bin 2>/dev/null || true
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

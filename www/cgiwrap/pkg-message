@@ -6,14 +6,10 @@ a depend.  If you are unsure of which webserver to use, it is
 recommended to try the Apache web server package.
 
 The cgiwrap scripts have been installed in:
-    ${PREFIX}/www/cgi-bin
+    %%PREFIX%%/www/cgi-bin
 ...the default location for Apache's cgi-bin directory.
 
-The cgiwrapd and nph-cgiwrapd scripts are disabled by default, as they
-may give away sensitive information about the CGI environment.  To
-enable them, you must chmod 4755 ${PREFIX}/www/cgi-bin/cgiwrapd
-
-Access control enabled, you must create either
-${PREFIX}/etc/cgiwrap.allow or ${PREFIX}/etc/cgiwrap.deny before
-cgiwrap will function.
+If cgiwrap's allow/deny control is enabled, you must create either
+%%PREFIX%%/etc/cgiwrap.allow and/or %%PREFIX%%/etc/cgiwrap.deny
+before cgiwrap will function.
 -----------------------------------------------------------------
