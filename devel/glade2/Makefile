@@ -8,7 +8,8 @@
 PORTNAME=	glade
 PORTVERSION=	0.5.11
 CATEGORIES=	devel gnome
-MASTER_SITES=   http://glade.pn.org/
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	stable/sources/glade
 
 MAINTAINER=     ade@FreeBSD.org
 
