@@ -3,11 +3,11 @@
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.46 1998/08/18 09:27:37 asami Exp $
+# $Id: Makefile,v 1.47 1998/08/19 02:26:37 jseger Exp $
 #
 
 DISTNAME=       ImageMagick-4.0.9
-CATEGORIES=	graphics
+CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.freebsd.org/~jseger/ \
 		ftp://ftp.wizards.dupont.com/pub/ImageMagick/ \
 		ftp://ftp.cci.fr/pub/unix/gfx/ImageMagick/ \
@@ -30,8 +30,11 @@ BUILD_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig \
 		gs:${PORTSDIR}/print/ghostscript5
 
 MAN1=	ImageMagick.1 animate.1 combine.1 convert.1 display.1 identify.1 import.1 mogrify.1 montage.1 xtp.1
+MAN3=	Image::Magick.3
 MAN4=	miff.4
 MAN5=	quantize.5
+
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--enable-lzw --enable-shared --with-perl=${PREFIX}/bin/perl5
 USE_PERL5=	YES
