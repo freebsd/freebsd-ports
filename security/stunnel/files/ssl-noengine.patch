@@ -1,0 +1,11 @@
+--- src/ssl.c.orig	Thu Sep  2 18:02:59 2004
++++ src/ssl.c	Thu Sep  2 18:03:26 2004
+@@ -70,7 +70,7 @@
+ void context_init(void) { /* init SSL */
+     int i;
+ 
+-#if SSLEAY_VERSION_NUMBER >= 0x00907000L
++#if 0
+     /* Load all bundled ENGINEs into memory and make them visible */
+     ENGINE_load_builtin_engines();
+     /* Register all of them for every algorithm they collectively implement */
