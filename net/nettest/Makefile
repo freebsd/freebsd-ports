@@ -1,19 +1,21 @@
 # New ports collection makefile for:    nettest
+# Version required:			92/11/09
 # Date created:         Mon Oct 20 14:30:06 CDT 1997
 # Whom:                 proot@iaces.com
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/10/30 11:21:20 jseger Exp $
 #
 
 DISTNAME=       nettest.92.11.09
 PKGNAME=	nettest-92.11.09
-EXTRACT_SUFX=	.tar.Z
 CATEGORIES=	net
-NO_WRKSUBDIR=	1
 MASTER_SITES=   ftp://ftp.cray.com/src/nettest/
-MAN8=		nettest.8
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	proot@iaces.com
+
+NO_WRKSUBDIR=	yes
+MAN8=		nettest.8
 
 do-install:
 	$(INSTALL_PROGRAM) -s  $(WRKSRC)/nettest $(PREFIX)/bin/nettest
