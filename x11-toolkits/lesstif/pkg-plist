@@ -2,6 +2,7 @@ bin/mwm
 bin/mxmkmf
 bin/uil
 bin/xmbind
+include/Mrm/MrmAppl.h
 include/Mrm/MrmDecls.h
 include/Mrm/MrmPrivate.h
 include/Mrm/MrmPublic.h
