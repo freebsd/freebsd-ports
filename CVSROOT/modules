@@ -5596,6 +5596,7 @@ py-snmp		ports/net/py-snmp
 py-soap		ports/net/py-soap
 py-spark	ports/devel/py-spark
 py-sqlrelay	ports/databases/py-sqlrelay
+py-tarfile	ports/archivers/py-tarfile
 py-tkinter	ports/x11-toolkits/py-tkinter
 py-trex		ports/textproc/py-trex
 py-twisted	ports/devel/py-twisted
