@@ -22,7 +22,9 @@
     SUBDIR += c2t
     SUBDIR += cce
     SUBDIR += cdict5
-    SUBDIR += cdrtools
+# Temporarily disconnected to resolve some issues with
+# sysutils/cdrools
+#   SUBDIR += cdrtools
     SUBDIR += celvis
     SUBDIR += chinput
     SUBDIR += chinput2
