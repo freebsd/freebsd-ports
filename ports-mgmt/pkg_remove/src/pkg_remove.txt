@@ -1,0 +1,34 @@
+#!/usr/bin/perl
+# $Id: pkg_remove,v 1.3 1999/11/06 15:47:49 sada Exp $
+use Getopt::Std;
+getopts('n');
+die("usage: x [-n] ALL | <package-name> [, <package-name> [..]]\n -n : only tell what will take place.\n") if (@ARGV < 1);
+$pkg_dbdir = "/var/db/pkg";
+opendir(PKG_DBDIR, $pkg_dbdir);
+while ($pkg = readdir(PKG_DBDIR)) {
+	next if $pkg =~ m/^\./;
+	$req_by{$pkg} = '';
+	if (-f "$pkg_dbdir/$pkg/+REQUIRED_BY") {
+		open(REQ_B, "$pkg_dbdir/$pkg/+REQUIRED_BY");
+		$req_by{$pkg} = join('', <REQ_B>);
+	}
+}
+while ($a = shift) {
+	while (($key, $val) = each(%req_by)) {
+		if ($a eq 'ALL' || $key =~ m/$a/) {
+			&remove_package($key);
+		}
+	}
+}
+
+sub remove_package
+{
+	my ($pkg) = @_;
+	return if ($pkg_removed{$pkg});
+	my @r = split(/\n/, $req_by{$pkg});
+	my $p;
+	&remove_package($p) while $p = shift(@r);
+	print "remove: $pkg\n";
+	system "pkg_delete $pkg" unless ($opt_n);
+	$pkg_removed{$pkg} = 'YES';
+}
