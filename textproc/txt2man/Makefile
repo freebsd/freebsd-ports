@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	txt2man
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://mvertes.free.fr/download/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 ALL_TARGET=	txt2man.1
 INSTALL_TARGET=	install prefix=${PREFIX}
