@@ -1,0 +1,25 @@
+--- makefiles/Makefile.FreeBSD.orig	Fri Oct 22 00:20:20 1999
++++ makefiles/Makefile.FreeBSD	Fri Oct 22 18:36:19 1999
+@@ -6,18 +6,18 @@
+ 
+ include makefiles/Makefile.common
+ 
+-CC = c++
++CC = $(CXX)
+ #CC = /usr/local/bin/c++
+ 
+-OPTIMIZER = -O2
++#OPTIMIZER = -O2
+ 
+ #ARCH = -b i586-pc-linux-gnulibc1
+ ARCH = 
+ 
+ # For making a dso, add -fPIC
+-CCFLAGS = $(OPTIMIZER) -pipe -Wall -fno-exceptions
++CCFLAGS = $(CXXFLAGS)
+ 
+-INCLUDES = -I$(XEINC)
++INCLUDES = -I$(XEINC) -I/usr/X11R6/include
+ LIBS = -L/usr/X11R6/lib -lXpm -lX11
+ 
+ backup:
