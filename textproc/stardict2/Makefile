@@ -19,21 +19,13 @@ DISTFILES=	stardict-${PORTVERSION}.tar.gz \
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 COMMENT=	English-Chinese dictionary
 
-LIB_DEPENDS=	gnome-2.200:${PORTSDIR}/x11/libgnome \
-		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
-		bonobo-2.0:${PORTSDIR}/devel/libbonobo \
-		bonobo-activation.4:${PORTSDIR}/devel/bonobo-activation
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Configure fails"
-.endif
-
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_BZIP2=	yes
+USE_GNOME=	libgnome libgnomeui libbonobo bonoboactivation gconf2
 WRKSRC=		${WRKDIR}/stardict-${PORTVERSION}
 
 MAN1=		stardict.1
@@ -53,4 +45,4 @@ post-install:
 		${INSTALL_DATA} ${WRKDIR}/stardict-xdict-big5-2.0.0/* ${PREFIX}/share/stardict/dic/
 		${INSTALL_DATA} ${WRKDIR}/stardict-xdict-ce-big5-2.0.0/* ${PREFIX}/share/stardict/dic/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -25,7 +25,11 @@ share/gnome/help/stardict/zh_CN/figures/stardict_float_window.png
 share/gnome/help/stardict/zh_CN/figures/stardict_main_window.png
 share/gnome/help/stardict/zh_CN/figures/stardict_notification_area.png
 share/omf/stardict/stardict-C.omf
+@exec scrollkeeper-install -q %D/share/omf/stardict/stardict-C.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/omf/stardict/stardict-C.omf 2>/dev/null || /usr/bin/true
 share/omf/stardict/stardict-zh_CN.omf
+@exec scrollkeeper-install -q %D/share/omf/stardict/stardict-zh_CN.omf 2>/dev/null || /usr/bin/true
+@unexec scrollkeeper-uninstall -q %D/share/omf/stardict/stardict-zh_CN.omf 2>/dev/null || /usr/bin/true
 share/applications/stardict.desktop
 etc/gconf/schemas/stardict.schemas
 lib/bonobo/servers/GNOME_Stardict.server
