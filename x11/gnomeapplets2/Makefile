@@ -29,6 +29,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+PLIST_SUB=      BATTERY="@comment "
+.else
+PLIST_SUB=      BATTERY=""
+.endif
+
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
@@ -39,4 +47,4 @@ pre-patch:
 		 s|\$\(prefix\)/lib/bonobo/servers|\$\(prefix\)/libdata/bonobo/servers|g ; \
 		 s|\$\(libdir\)/bonobo/servers|\$\(prefix\)/libdata/bonobo/servers|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
