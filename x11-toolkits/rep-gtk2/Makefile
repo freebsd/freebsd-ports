@@ -5,44 +5,29 @@
 # $FreeBSD$
 #
 
-PORTNAME=	rep-gtk
-PORTVERSION=	0.15
-PORTREVISION=	1
+PORTNAME=	rep-gtk2
+PORTVERSION=	2002.05.02
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/rep-gtk
-#DIST_SUBDIR=	gnome
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020509
+DISTNAME=	rep-gtk-${PORTVERSION:S/./-/g}
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	rep.11:${PORTSDIR}/lang/librep
+LIB_DEPENDS=	rep.11:${PORTSDIR}/lang/librep2 \
+		gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
 
 PLIST_SUB=	GNUHOST=${ARCH}-pc-freebsd${OSREL:C/\..*//}
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GTK=	yes
-WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-libglade \
+		--with-gnome
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 
-.if defined(PACKAGE_BUILDING) || defined(PARALLEL_PACKAGE_BUILD)
-.undef WITHOUT_GNOME
-.undef WITHOUT_ALL
-WITH_GNOME=	yes
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if defined(HAVE_GNOME)
-USE_GNOME=	yes
-CONFIGURE_ARGS=	--with-gnome --with-libglade --with-gdk-pixbuf \
-		--with-gnome-canvas-pixbuf
-.else
-CONFIGURE_ARGS=	--without-libglade --without-gnome --without-gdk-pixbuf \
-		--without-gnome-canvas-pixbuf
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

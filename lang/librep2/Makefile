@@ -5,27 +5,29 @@
 # $FreeBSD$
 #
 
-PORTNAME=	librep
-PORTVERSION=	0.15.2
-PORTREVISION=	1
+PORTNAME=	librep2
+PORTVERSION=	2002.05.02
 CATEGORIES=	lang gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	stable/sources/librep
-#DIST_SUBDIR=	gnome
+MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-20020509
+DISTNAME=	librep-${PORTVERSION:S/./-/g}
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
 		intl.2:${PORTSDIR}/devel/gettext
 
-PLIST_SUB=	GNUHOST=${ARCH}-pc-freebsd${OSREL:C/\..*//} VERSION=${PORTVERSION}
+PLIST_SUB=	GNUHOST=${ARCH}-pc-freebsd${OSREL:C/\..*//} \
+		VERSION=0.15.2
 
-USE_NEWGCC=	yes
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -lxpg4 -lintl"
+		LIBS="-L${LOCALBASE}/lib -lxpg4 -lintl" \
+		LOCALBASE="${LOCALBASE}"
 CONFIGURE_ARGS=	--with-aclocaldir=${PREFIX}/share/aclocal
 CONFIGURE_TARGET=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 

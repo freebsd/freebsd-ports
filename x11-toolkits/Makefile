@@ -114,6 +114,7 @@
     SUBDIR += qt30
     SUBDIR += qwt
     SUBDIR += rep-gtk
+    SUBDIR += rep-gtk2
     SUBDIR += ruby-fltk
     SUBDIR += ruby-fox
     SUBDIR += ruby-gtk

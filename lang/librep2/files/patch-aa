@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig	Mon Oct 29 06:19:47 2001
-+++ configure	Thu Jan 24 17:54:12 2002
-@@ -4659,7 +4659,7 @@
+--- configure.orig	Sat Apr 20 00:42:14 2002
++++ configure	Mon Apr 29 20:51:22 2002
+@@ -5622,7 +5622,7 @@
      ;;
    esac
  fi
@@ -12,12 +12,12 @@ $FreeBSD$
  
  # The second clause should only fire when bootstrapping the
  # libtool distribution, otherwise you forgot to ship ltmain.sh
-@@ -6136,7 +6136,7 @@
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
+@@ -7359,7 +7359,7 @@
+ echo "$as_me:7359: result: $ac_cv_lib_gdbm_gdbm_open" >&5
+ echo "${ECHO_T}$ac_cv_lib_gdbm_gdbm_open" >&6
+ if test $ac_cv_lib_gdbm_gdbm_open = yes; then
 -  GDBM_LIBS="-lgdbm"
-+  GDBM_LIBS="-lgdbm $LIBS"
++  GDBM_LIBS="-L$LOCALBASE/lib -lgdbm"
  else
-   echo "$ac_t""no" 1>&6
- { echo "configure: error: Cannot find GDBM library" 1>&2; exit 1; }
+   { { echo "$as_me:7364: error: Cannot find GDBM library" >&5
+ echo "$as_me: error: Cannot find GDBM library" >&2;}
