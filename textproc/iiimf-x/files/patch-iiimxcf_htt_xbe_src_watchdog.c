@@ -1,39 +1,38 @@
---- iiimxcf/htt_xbe/src/watchdog.c.orig	Sat Dec  6 05:54:41 2003
-+++ iiimxcf/htt_xbe/src/watchdog.c	Sat Dec  6 06:01:13 2003
-@@ -187,7 +187,11 @@
+--- iiimxcf/htt_xbe/src/watchdog.c.orig	Tue Jul 13 07:25:40 2004
++++ iiimxcf/htt_xbe/src/watchdog.c	Sun Sep  5 05:43:59 2004
+@@ -187,11 +187,15 @@
     * Setup the signal handlers to monitor htt_server, htt_props
     * abnormal termination
     */
 +#if defined(__FreeBSD__)
 +  setsid();
 +#else
+ #ifdef SETPGRP_VOID
    grpid = setpgrp();
+ #else
+   grpid = setpgrp(0, 0);
+ #endif
 +#endif
  
  #ifdef SunOS
    sigset(SIGTERM, clean_up);
-@@ -309,7 +313,7 @@
-   XChangeProperty(display, httw_id, class_atom, XA_STRING, 8,
- 		  PropModeReplace, "htt", strlen("htt"));
- 
--  XSetWMProtocols(display, httw_id, &htt_save_atom, 3);
-+  XSetWMProtocols(display, httw_id, htt_save_atom, 3);
- 
-   XSelectInput(display, httw_id, PropertyChangeMask | StructureNotifyMask);
-   XSetSelectionOwner(display, htt_atom, httw_id, CurrentTime);
-@@ -703,7 +707,11 @@
-      * most of the cases
+@@ -708,11 +712,15 @@
       */
      sleep(1);
+ 
 +#if defined(__FreeBSD__)
 +    setsid();
 +#else
+ #ifdef SETPGRP_VOID
      setpgrp();
+ #else
+     setpgrp(0, 0);
+ #endif
 +#endif
+ 
  #ifdef SunOS
      if (flag == OPENWIN_PATH) {
-       putenv(OPENWIN_MOTIF_PRELOAD_ENV);
-@@ -734,7 +742,11 @@
+@@ -744,7 +752,11 @@
      perror("watchdog:fork\n");
      exit(errno);
    case 0:
