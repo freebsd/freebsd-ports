@@ -1,20 +1,20 @@
---- Makefile.orig	Fri Oct 29 06:05:39 2004
-+++ Makefile	Thu Jan 20 01:42:05 2005
-@@ -20,10 +20,11 @@
- SRCS= $(SRCS_COMMON) core/i386/mc-c.c core/i386/dct-c.c core/i386/predict.c
- ASMSRC= core/i386/dct.asm core/i386/cpu.asm core/i386/pixel.asm  core/i386/mc.asm
+--- Makefile.orig	Tue Jan 25 16:36:54 2005
++++ Makefile	Tue Jan 25 20:52:45 2005
+@@ -22,8 +22,11 @@
  OBJASM= $(ASMSRC:%.asm=%.o)
-+SHARED_LIB=	libx264.so
-+SHARED_LIB_VER=	$(SHARED_LIB).%%SHLIB_VER%%
  endif
  
 -CC=gcc
--CFLAGS=-g -Wall -I. -DDEBUG -O4 -funroll-loops -D__X264__ $(PFLAGS)
+-CFLAGS=-Wall -I. -O4 -funroll-loops -D__X264__ $(PFLAGS)
++SHARED_LIB=		libx264.so
++SHARED_LIB_VER=		$(SHARED_LIB).%%SHLIB_VER%%
++  
 +CFLAGS=-I. -D__X264__ %%CFLAGS%% -fPIC
- 
- AS= nasm
- # for linux
-@@ -34,7 +35,7 @@
++
+ ifdef NDEBUG
+ CFLAGS+=-s -DNDEBUG
+ else
+@@ -39,14 +42,17 @@
  OBJS = $(SRCS:%.c=%.o)
  DEP  = depend
  
@@ -23,13 +23,24 @@
  
  libx264.a: $(OBJS) $(OBJASM)
  	ar rc libx264.a $(OBJS) $(OBJASM)
-@@ -42,6 +43,9 @@
+ 	ranlib libx264.a
  
- x264: libx264.a x264.o
- 	$(CC) $(CFLAGS) -o x264 x264.o libx264.a -lm
+-x264: libx264.a x264.o
+-	$(CC) $(CFLAGS) -o x264 x264.o libx264.a -lm
++x264: $(SHARED_LIB_VER) x264.o
++	$(CC) $(CFLAGS) -o x264 x264.o $(SHARED_LIB_VER) -lm
 +
-+$(SHARED_LIB_VER): $(OBJS) x264
++$(SHARED_LIB_VER): $(OBJS) libx264.a
 +	$(CC) $(CFLAGS) -shared -Wl,-soname,$(SHARED_LIB_VER) -o $(SHARED_LIB_VER) $(OBJS) $(OBJASM) -lm
  
  checkasm: testing/checkasm.c libx264.a
  	$(CC) $(CFLAGS) -o checkasm $< libx264.a -lm
+@@ -56,7 +62,7 @@
+ 
+ .depend: $(SRCS) x264.c
+ 	rm -f .depend
+-	$(foreach SRC, $(SRCS) x264.c, $(CC) $(CFLAGS) $(SRC) -MM -MT $(SRC:%.c=%.o) 1>> .depend;)
++	 $(CC) -MM $(CFLAGS) $(SRCS) x264.c 1> .depend
+ 
+ depend: .depend
+ ifneq ($(wildcard .depend),)

@@ -1,4 +1,5 @@
-x264 is a free library for encoding H.264/AVC video streams.
+x264 is a free library for encoding H.264/AVC (aka MPEG-4 Part 10)
+video streams.
 
 Encoder features
  * CAVLC/CABAC
