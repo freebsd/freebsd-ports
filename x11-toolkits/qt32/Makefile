@@ -34,7 +34,11 @@ CONFIGURE_ARGS=	-system-zlib -system-libpng -system-jpeg -sm -gif \
 		-system-libmng -thread -no-opengl \
 		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 CONFIGURE_ENV=	${YES} yes | QTDIR=${WRKSRC}
+.if defined(MAKE_JOBS)
+MAKE_ARGS+=	MAKE="${GMAKE} -j${MAKE_JOBS}"
+.else
 MAKE_ARGS+=	MAKE="${GMAKE} -j2"
+.endif
 MAKE_ENV=	QTDIR=${WRKSRC} LD_LIBRARY_PATH=${WRKSRC}/lib
 
 CONFIG=		${WRKSRC}/configs/freebsd-g++-${STATIC}
@@ -66,7 +70,7 @@ pre-fetch:
 pre-configure:
 	@${CP} ${CONFIG} ${CONFIG}.new
 	${SED} -e "s,gcc,${CC},g" -e "s,g\+\+,${CXX},g" -e "s,/usr/X11R6,${X11BASE},g" \
-		-e "s,-pipe -O2,${CXXFLAGS},g" ${CONFIG}.new > ${CONFIG}
+		-e "s,-pipe -O2,${CXXFLAGS} -frerun-cse-after-loop,g" ${CONFIG}.new > ${CONFIG}
 .if exists(${X11BASE}/lib/libXft.so) && !defined(NO_AA)
 	@${CP} ${CONFIG} ${CONFIG}.new
 	${SED} -e "s,= -lXext,= -lXft -lXext,g" -e "s,QT= -I,QT= -DQT_XFT -I,g" \
