@@ -1,5 +1,5 @@
---- reportlab/rl_config.py.orig	Thu Jul 25 04:56:34 2002
-+++ reportlab/rl_config.py	Sat Aug 17 18:56:07 2002
+--- rl_config.py.orig	Thu Jul 25 04:56:34 2002
++++ rl_config.py	Sat Aug 17 18:56:07 2002
 @@ -18,29 +18,21 @@
  emptyTableAction=           'error'                 # one of 'error', 'indicate', 'ignore'
  
