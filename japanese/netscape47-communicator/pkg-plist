@@ -1,0 +1,128 @@
+bin/ja-%%BROWSER%%
+@exec ln -sf %f %B/netscape
+%%NSUBDIR%%/%%LANG%%/Netscape
+%%NSUBDIR%%/%%LANG%%/about
+%%NSUBDIR%%/%%LANG%%/mail.msg
+%%NSUBDIR%%/%%LANG%%/netscape.cfg
+%%NSUBDIR%%/%%LANG%%/plugins
+%%NSUBDIR%%/%%LANG%%/splash
+@exec mkdir -p %D/%%NSUBDIR%%/locale
+@exec ln -sf /usr/share/locale/en_US.ISO_8859-1 %D/%%NSUBDIR%%/locale/%%LANG%%
+@unexec rm -f %D/%%NSUBDIR%%/locale/%%LANG%%
+@dirrm %%NSUBDIR%%/locale
+%%NSUBDIR%%/%%LANG%%/nethelp/Back_dep.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Back_dis.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Back_sel.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Back_up.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Blank.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/Button.js
+%%NSUBDIR%%/%%LANG%%/nethelp/CntData.js
+%%NSUBDIR%%/%%LANG%%/nethelp/CntTool.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/CntTool.js
+%%NSUBDIR%%/%%LANG%%/nethelp/Exit_dep.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Exit_sel.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Exit_up.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Forw_dep.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Forw_dis.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Forw_sel.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Forw_up.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Header.js
+%%NSUBDIR%%/%%LANG%%/nethelp/IdxData.js
+%%NSUBDIR%%/%%LANG%%/nethelp/IdxFill.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/IdxKey.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/IdxTool.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/IdxTopic.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/Local-1.js
+%%NSUBDIR%%/%%LANG%%/nethelp/NSHIfrm.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/NavUI.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/NoJSerr.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/Prnt_dep.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Prnt_sel.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Prnt_up.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Stack.js
+%%NSUBDIR%%/%%LANG%%/nethelp/Status.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/System.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/System.js
+%%NSUBDIR%%/%%LANG%%/nethelp/ToolUI.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/Tool_dep.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Tool_sel.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Tool_up.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/Topic.js
+%%NSUBDIR%%/%%LANG%%/nethelp/Utility.js
+%%NSUBDIR%%/%%LANG%%/nethelp/Wait.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/fftp
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/collabra/coll.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/collabra/collHdr.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/collabra/collabra.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/collabra/discgrps.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/collabra/help.hpf
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/composer/comp.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/composer/compHdr.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/composer/composer.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/composer/comtlbr2.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/composer/fmtlbr3.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/composer/help.hpf
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/composer/tagicon2.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/confernc/brws2.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/confernc/chat2.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/confernc/circle2.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/confernc/conf.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/confernc/confHdr.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/confernc/confernc.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/confernc/eraser2.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/confernc/fhndtl2.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/confernc/filex2.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/confernc/help.hpf
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/confernc/horline2.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/confernc/line2.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/confernc/pointer2.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/confernc/rect2.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/confernc/txttool2.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/confernc/whtbd2.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/home/help.hpf
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/home/home.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/home/home.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/home/homeHdr.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/messengr/help.hpf
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/messengr/mailbox.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/messengr/mess.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/messengr/messHdr.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/messengr/messengr.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/messengr/mpctrl.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/navigatr/help.hpf
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/navigatr/nav.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/navigatr/navHdr.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/navigatr/navigatr.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/netcastr/help.hpf
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/netcastr/net.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/netcastr/netHdr.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/netcastr/netcastr.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/nscal/index.html
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/Contents.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/NetHelp1.css
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/admnIcon.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/calIcon.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/collIcon.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/commIcon.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/compIcon.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/confIcon.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/ibmIcon.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/messIcon.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/navIcon.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared/netIcon.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/netwatch.gif
+%%NSUBDIR%%/%%LANG%%/nethelp/picsfail.htm
+%%NSUBDIR%%/%%LANG%%/nethelp/picsfail.jar
+@dirrm %%NSUBDIR%%/%%LANG%%/nethelp/netscape/shared
+@dirrm %%NSUBDIR%%/%%LANG%%/nethelp/netscape/nscal
+@dirrm %%NSUBDIR%%/%%LANG%%/nethelp/netscape/netcastr
+@dirrm %%NSUBDIR%%/%%LANG%%/nethelp/netscape/navigatr
+@dirrm %%NSUBDIR%%/%%LANG%%/nethelp/netscape/messengr
+@dirrm %%NSUBDIR%%/%%LANG%%/nethelp/netscape/home
+@dirrm %%NSUBDIR%%/%%LANG%%/nethelp/netscape/confernc
+@dirrm %%NSUBDIR%%/%%LANG%%/nethelp/netscape/composer
+@dirrm %%NSUBDIR%%/%%LANG%%/nethelp/netscape/collabra
+@dirrm %%NSUBDIR%%/%%LANG%%/nethelp/netscape
+@dirrm %%NSUBDIR%%/%%LANG%%/nethelp
+@dirrm %%NSUBDIR%%/%%LANG%%
+%%NSUBDIR%%/preferences.js
