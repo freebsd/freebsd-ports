@@ -1,0 +1,35 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Rcs/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/Rcs.pm
+share/examples/p5-Rcs/project/RCS/Rcs.pm,v
+share/examples/p5-Rcs/project/RCS/testfile,v
+share/examples/p5-Rcs/project/src/Rcs.pm
+share/examples/p5-Rcs/project/src/testfile
+share/examples/p5-Rcs/access.pl
+share/examples/p5-Rcs/ci-tree.pl
+share/examples/p5-Rcs/ci.pl
+share/examples/p5-Rcs/co-tree.pl
+share/examples/p5-Rcs/co.pl
+share/examples/p5-Rcs/comments.pl
+share/examples/p5-Rcs/comments2.pl
+share/examples/p5-Rcs/daterev.pl
+share/examples/p5-Rcs/dates.pl
+share/examples/p5-Rcs/green.txt
+share/examples/p5-Rcs/mark.pl
+share/examples/p5-Rcs/parse.pl
+share/examples/p5-Rcs/pause
+share/examples/p5-Rcs/rcsclean.pl
+share/examples/p5-Rcs/rcsdiff.pl
+share/examples/p5-Rcs/revdate.pl
+share/examples/p5-Rcs/rlog.pl
+share/examples/p5-Rcs/symbols.pl
+share/examples/p5-Rcs/symrev.pl
+share/examples/p5-Rcs/test1.pl
+share/examples/p5-Rcs/test2.pl
+share/examples/p5-Rcs/test3.pl
+share/examples/p5-Rcs/type
+share/examples/p5-Rcs/unlock.pl
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Rcs 2>/dev/null || true
+@dirrm share/examples/p5-Rcs/project/RCS
+@dirrm share/examples/p5-Rcs/project/src
+@dirrm share/examples/p5-Rcs/project
+@dirrm share/examples/p5-Rcs

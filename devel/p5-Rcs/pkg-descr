@@ -1,0 +1,9 @@
+This Perl module provides an object oriented interface to access
+Revision Control System (RCS) utilities.  RCS must be installed on the
+system prior to using this module.  This module should simplify the
+creation of an RCS front-end.
+
+WWW: http://search.cpan.org/search?dist=Rcs
+
+-Anton
+<tobez@FreeBSD.org>
