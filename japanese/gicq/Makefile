@@ -3,7 +3,7 @@
 # Date Created:			31 Oct 1998
 # Whom:				Seiichirou Hiraoka
 #
-# $Id: Makefile,v 1.2 1998/11/23 06:38:19 asami Exp $
+# $Id: Makefile,v 1.3 1998/11/25 22:31:28 sada Exp $
 #
 
 DISTNAME=	gicq-0.22
@@ -17,14 +17,13 @@ PATCH_DIST_STRIP= -p1
 
 MAINTAINER=	flathill@FreeBSD.ORG
 
-LIB_DEPENDS=	icq.0:${PORTSDIR}/japanese/libicq \
-		gtkjp.1:${PORTSDIR}/japanese/gtk
-# sada: Libname 'licq' seems to cause conflict (^^;
+LIB_DEPENDS=	gtkjp.1:${PORTSDIR}/japanese/gtk \
+		icq.0:${PORTSDIR}/japanese/libicq
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-gnome --disable-nls
-CONFIGURE_ENV=	LIBS=-lxpg4
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib" LIBS=-lxpg4
 
 post-configure:
 	@${SED} -e "s;@PREFIX@;${PREFIX};g" ${FILESDIR}/wrapper \
