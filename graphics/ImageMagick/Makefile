@@ -85,6 +85,10 @@ PLIST_SUB+=		Q16=''
 CONFIGURE_ARGS+=	--enable-lzw
 .endif
 
+.if defined(WITH_WINDOWS_FONT_DIR)
+CONFIGURE_ARGS+=	--with-windows-font-dir=${WITH_WINDOWS_FONT_DIR}
+.endif
+
 # Loadable coders, smaller executable, but PerlMagick not really works
 # ('make test' there works)
 .if defined(WITH_IMAGEMAGICK_MODULES)
