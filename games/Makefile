@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.183 1999/01/15 02:57:39 jmz Exp $
+# $Id: Makefile,v 1.184 1999/01/28 19:02:01 sada Exp $
 #
 
     SUBDIR += 3dc
@@ -61,6 +61,7 @@
     SUBDIR += maelstrom
     SUBDIR += mangband
     SUBDIR += merlin
+    SUBDIR += mirrormagic
     SUBDIR += nethack
     SUBDIR += nethack-qt
     SUBDIR += netris
