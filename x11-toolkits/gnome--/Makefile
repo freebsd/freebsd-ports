@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	gnomemm
-PORTVERSION=	1.1.12
+PORTVERSION=	1.1.15
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	http://download.sourceforge.net/gtkmm/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gtkmm
 
 MAINTAINER=	erich@tacni.net
 
