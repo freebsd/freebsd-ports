@@ -1,0 +1,4 @@
+@cwd /usr/local
+bin/tin
+bin/rtin
+man/man1/tin.1.gz
