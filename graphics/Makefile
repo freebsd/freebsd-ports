@@ -145,6 +145,7 @@
     SUBDIR += liblug
     SUBDIR += libmng
     SUBDIR += libmorph
+    SUBDIR += libmpeg2
     SUBDIR += librsvg
     SUBDIR += libungif
     SUBDIR += libwmf
