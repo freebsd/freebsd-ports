@@ -5433,6 +5433,7 @@ py-kqueue	ports/devel/py-kqueue
 py-libnet	ports/net/py-libnet
 py-m2crypto	ports/security/py-m2crypto
 py-martel	ports/textproc/py-martel
+py-mhash	ports/security/py-mhash
 py-ming		ports/graphics/py-ming
 py-mpz		ports/math/py-mpz
 py-mx-base	ports/lang/py-mx-base
