@@ -6935,6 +6935,7 @@ p5-Class-DBI-Oracle	ports/databases/p5-Class-DBI-Oracle
 p5-Class-DBI-Pager	ports/databases/p5-Class-DBI-Pager
 p5-Class-DBI-Pg		ports/databases/p5-Class-DBI-Pg
 p5-Class-DBI-Plugin	ports/databases/p5-Class-DBI-Plugin
+p5-Class-DBI-Plugin-AbstractCount	ports/databases/p5-Class-DBI-Plugin-AbstractCount
 p5-Class-DBI-Plugin-RetrieveAll	ports/databases/p5-Class-DBI-Plugin-RetrieveAll
 p5-Class-DBI-Plugin-Type	ports/databases/p5-Class-DBI-Plugin-Type
 p5-Class-DBI-Replication	ports/databases/p5-Class-DBI-Replication
