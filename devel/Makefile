@@ -545,6 +545,7 @@
     SUBDIR += ucpp
     SUBDIR += uds
     SUBDIR += uisp
+    SUBDIR += understand_ada
     SUBDIR += understand_c
     SUBDIR += ups-debug
     SUBDIR += varconf
