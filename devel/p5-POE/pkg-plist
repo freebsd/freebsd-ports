@@ -1,5 +1,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/.packlist
 %%SITE_PERL%%/POE.pm
+%%SITE_PERL%%/POE/API/Ctl.pm
 %%SITE_PERL%%/POE/API/ResLoader.pm
 %%SITE_PERL%%/POE/Component.pm
 %%SITE_PERL%%/POE/Component/Client/TCP.pm
@@ -36,6 +37,7 @@
 %%SITE_PERL%%/POE/Queue/Array.pm
 %%SITE_PERL%%/POE/Resource.pm
 %%SITE_PERL%%/POE/Resource/Aliases.pm
+%%SITE_PERL%%/POE/Resource/Controls.pm
 %%SITE_PERL%%/POE/Resource/Events.pm
 %%SITE_PERL%%/POE/Resource/Extrefs.pm
 %%SITE_PERL%%/POE/Resource/FileHandles.pm
@@ -67,33 +69,21 @@
 @dirrm %%SITE_PERL%%/POE/Wheel
 @unexec rmdir %D/%%SITE_PERL%%/POE 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/POE 2>/dev/null || true
+%%PORTDOCS%%%%EXAMPLESDIR%%/README.samples
 %%PORTDOCS%%%%EXAMPLESDIR%%/create.perl
 %%PORTDOCS%%%%EXAMPLESDIR%%/fakelogin.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/filterchange.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/followtail.perl
 %%PORTDOCS%%%%EXAMPLESDIR%%/forkbomb.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/httpd.perl
 %%PORTDOCS%%%%EXAMPLESDIR%%/names.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/neural-net.perl
 %%PORTDOCS%%%%EXAMPLESDIR%%/objmaps.perl
 %%PORTDOCS%%%%EXAMPLESDIR%%/objsessions.perl
 %%PORTDOCS%%%%EXAMPLESDIR%%/packagesessions.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/preforkedserver.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/proxy.perl
 %%PORTDOCS%%%%EXAMPLESDIR%%/queue.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/readline.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/ref-type.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/refsender.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/refserver.perl
 %%PORTDOCS%%%%EXAMPLESDIR%%/selects.perl
 %%PORTDOCS%%%%EXAMPLESDIR%%/sessions.perl
 %%PORTDOCS%%%%EXAMPLESDIR%%/signals.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/socketfactory.perl
 %%PORTDOCS%%%%EXAMPLESDIR%%/tcp_watermarks.perl
 %%PORTDOCS%%%%EXAMPLESDIR%%/thrash.perl
 %%PORTDOCS%%%%EXAMPLESDIR%%/tk.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/tutorial-chat.perl
-%%PORTDOCS%%%%EXAMPLESDIR%%/udp.perl
 %%PORTDOCS%%%%EXAMPLESDIR%%/watermarks.perl
 %%PORTDOCS%%%%EXAMPLESDIR%%/wheels.perl
 %%PORTDOCS%%%%EXAMPLESDIR%%/wheels2.perl
