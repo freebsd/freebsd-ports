@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fox
-PORTVERSION=	1.1.22
+PORTVERSION=	1.1.25
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 		ftp://ftp.fox-toolkit.org/pub/ \
@@ -15,8 +15,6 @@ MASTER_SITES=	http://www.fox-toolkit.org/ftp/ \
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Fast and extensive C++ GUI toolkit
-
-BROKEN=		"Does not configure"
 
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
@@ -143,8 +141,8 @@ pre-everything::
 ##
 .if exists(${LOCALBASE}/lib/libFOX-1.0.so)
 IGNORE= Conflict management: you have port fox-devel installed. The\
-        fox port is incompatible with fox-devel one. You have to\
-        uninstall fox-devel port if you really need the fox one 
+       fox port is incompatible with fox-devel one. You have to\
+       uninstall fox-devel port if you really need the fox one
 .endif
 
 .include <bsd.port.post.mk>

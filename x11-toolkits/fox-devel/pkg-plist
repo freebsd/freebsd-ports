@@ -192,14 +192,16 @@ include/fox/fxkeys.h
 include/fox/fxver.h
 include/fox/xincs.h
 lib/libFOX-1.1.so
-lib/libFOX-1.1.so.22
+lib/libFOX-1.1.so.25
 lib/libFOX.a
 lib/libFOX.la
 lib/libFOX.so
-man/man1/reswrap.1.gz
+%%PORTDOCS%%share/doc/fox/html/SbSScreen1.jpg
+%%PORTDOCS%%share/doc/fox/html/SbSScreen1_small.jpg
 %%PORTDOCS%%share/doc/fox/html/adie.html
 %%PORTDOCS%%share/doc/fox/html/adie.jpg
 %%PORTDOCS%%share/doc/fox/html/adie_colors.jpg
+%%PORTDOCS%%share/doc/fox/html/adie_del.jpg
 %%PORTDOCS%%share/doc/fox/html/adie_edit.jpg
 %%PORTDOCS%%share/doc/fox/html/adie_font.jpg
 %%PORTDOCS%%share/doc/fox/html/adie_lang.jpg
@@ -207,6 +209,8 @@ man/man1/reswrap.1.gz
 %%PORTDOCS%%share/doc/fox/html/adie_style.jpg
 %%PORTDOCS%%share/doc/fox/html/adie_syntax.jpg
 %%PORTDOCS%%share/doc/fox/html/app.html
+%%PORTDOCS%%share/doc/fox/html/arithmedrill-screenshot.png
+%%PORTDOCS%%share/doc/fox/html/arithmedrill-screenshot_small.png
 %%PORTDOCS%%share/doc/fox/html/bigpenguin.png
 %%PORTDOCS%%share/doc/fox/html/calc.html
 %%PORTDOCS%%share/doc/fox/html/colordialog.png
@@ -220,7 +224,6 @@ man/man1/reswrap.1.gz
 %%PORTDOCS%%share/doc/fox/html/fifthplanet.jpg
 %%PORTDOCS%%share/doc/fox/html/filedialog.png
 %%PORTDOCS%%share/doc/fox/html/filefuncs.html
-%%PORTDOCS%%share/doc/fox/html/filter.pl
 %%PORTDOCS%%share/doc/fox/html/focus.html
 %%PORTDOCS%%share/doc/fox/html/fontdialog.png
 %%PORTDOCS%%share/doc/fox/html/fonts.html
@@ -238,8 +241,10 @@ man/man1/reswrap.1.gz
 %%PORTDOCS%%share/doc/fox/html/freespeach.gif
 %%PORTDOCS%%share/doc/fox/html/glview.png
 %%PORTDOCS%%share/doc/fox/html/goals.html
+%%PORTDOCS%%share/doc/fox/html/goggles.png
 %%PORTDOCS%%share/doc/fox/html/guiupdate.html
 %%PORTDOCS%%share/doc/fox/html/header.html
+%%PORTDOCS%%share/doc/fox/html/home.html
 %%PORTDOCS%%share/doc/fox/html/icons.html
 %%PORTDOCS%%share/doc/fox/html/ill.gif
 %%PORTDOCS%%share/doc/fox/html/ilr.gif
@@ -250,6 +255,8 @@ man/man1/reswrap.1.gz
 %%PORTDOCS%%share/doc/fox/html/layout.html
 %%PORTDOCS%%share/doc/fox/html/license.html
 %%PORTDOCS%%share/doc/fox/html/line.gif
+%%PORTDOCS%%share/doc/fox/html/menu.css
+%%PORTDOCS%%share/doc/fox/html/menu.html
 %%PORTDOCS%%share/doc/fox/html/messages.html
 %%PORTDOCS%%share/doc/fox/html/mouse.gif
 %%PORTDOCS%%share/doc/fox/html/nerd_inside.gif
@@ -277,9 +284,22 @@ man/man1/reswrap.1.gz
 %%PORTDOCS%%share/doc/fox/html/serialization.html
 %%PORTDOCS%%share/doc/fox/html/sgitextedit.png
 %%PORTDOCS%%share/doc/fox/html/slingerzbutton1.gif
+%%PORTDOCS%%share/doc/fox/html/ss1.png
+%%PORTDOCS%%share/doc/fox/html/ss1_small.png
+%%PORTDOCS%%share/doc/fox/html/ss2.png
+%%PORTDOCS%%share/doc/fox/html/ss2_small.png
+%%PORTDOCS%%share/doc/fox/html/ss3.png
+%%PORTDOCS%%share/doc/fox/html/ss3_small.png
 %%PORTDOCS%%share/doc/fox/html/styles.css
 %%PORTDOCS%%share/doc/fox/html/table.png
 %%PORTDOCS%%share/doc/fox/html/timers.html
+%%PORTDOCS%%share/doc/fox/html/top.html
+%%PORTDOCS%%share/doc/fox/html/tux.jpg
+%%PORTDOCS%%share/doc/fox/html/tux_small.jpg
+%%PORTDOCS%%share/doc/fox/html/vorhour1.jpg
+%%PORTDOCS%%share/doc/fox/html/vorhour1_small.jpg
+%%PORTDOCS%%share/doc/fox/html/vorhour2.jpg
+%%PORTDOCS%%share/doc/fox/html/vorhour2_small.jpg
 %%PORTDOCS%%share/doc/fox/html/widgets.html
 %%PORTDOCS%%share/doc/fox/html/win32-libraries.png
 %%PORTDOCS%%share/doc/fox/html/win32-linkoutput.png
@@ -290,6 +310,8 @@ man/man1/reswrap.1.gz
 %%PORTDOCS%%share/doc/fox/html/win32.html
 %%PORTDOCS%%share/doc/fox/html/window.html
 %%PORTDOCS%%share/doc/fox/html/wintextedit.png
+%%PORTDOCS%%share/doc/fox/html/xfe.png
+%%PORTDOCS%%share/doc/fox/html/xfe_small.png
 %%PORTDOCS%%share/doc/fox/html/xml.html
 %%PORTDOCS%%@dirrm share/doc/fox/html
 %%PORTDOCS%%@dirrm share/doc/fox
