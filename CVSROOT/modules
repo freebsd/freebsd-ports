@@ -34,6 +34,7 @@
 world		-a .
 
 # CVSROOT support
+BillardGL	ports/games/BillardGL
 CVSROOT		CVSROOT
 access		CVSROOT access
 avail		CVSROOT avail
