@@ -19,7 +19,7 @@ LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext
 CONFIGURE_ARGS=	--with-includes="${JAVA_HOME}/include ${LOCALBASE}/include"
 
 .if defined(WITHOUT_X11)
-CONFIGURE_ARGS=	--enable-noui
+CONFIGURE_ARGS+=--enable-noui
 .else
 USE_XLIB=	yes
 LIB_DEPENDS+=	gtk-x11-2.0:${PORTSDIR}/x11-toolkits/gtk20
