@@ -3,7 +3,7 @@
 # Date created:		5 Dec 1997
 # Whom:			Kazuyuki IENAGA <ienaga@jsys.co.jp>
 #
-# $Id: Makefile,v 1.11 1998/11/11 12:55:23 asami Exp $
+# $Id: Makefile,v 1.12 1998/12/26 03:47:19 kuriyama Exp $
 #
 
 DISTNAME=	xemacs-20.4
@@ -26,7 +26,7 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		png.2:${PORTSDIR}/graphics/png \
 		compface.1:${PORTSDIR}/mail/faces \
 		${LIB_INPUT_METHOD}
-RUN_DEPENDS=	${PREFIX}/lib/${XEMACS_DIR}/etc/BABYL:${PORTSDIR}/editors/xemacs-mule-common
+RUN_DEPENDS=	${PREFIX}/lib/${XEMACS_DIR}/lisp/x11/x-win-xfree86.elc:${PORTSDIR}/editors/xemacs-mule-common
 
 EXTRACT_ONLY=	xemacs-20.4.tar.gz xemacs-20.4-elc.tar.gz \
 		xemacs-20.4-info.tar.gz xemacs-20.4-mule.tar.gz
@@ -101,6 +101,12 @@ pre-build:
 		${RM} -f ${WRKSRC}/lisp/packages/ps-print.elc; \
 	fi
 	@${GZCAT} ${DISTDIR}/ps-print-jp.el.gz > ${WRKSRC}/lisp/packages/ps-print.el
+.endif
+
+# for xemacs-mule-common in defining ${WRKDIRPREFIX}
+.if !exists(${WRKDIRPREFIX}${.CURDIR}/../../editors/xemacs-mule-common)
+post-build:
+	@${MKDIR} ${WRKDIRPREFIX}${.CURDIR}/../../editors/xemacs-mule-common
 .endif
 
 post-install::
