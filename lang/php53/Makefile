@@ -8,7 +8,7 @@
 # in interactive mode or in batch mode.
 #
 # By default, the enabled extensions are: CTYPE, DOM, PCRE, POSIX, SESSION,
-# SIMPLEXML, SQLITE, TOKENIZER and XML. This behaviour can be changed
+# SIMPLEXML, SPL, SQLITE, TOKENIZER and XML. This behaviour can be changed
 # overriding the PHP5_OPTIONS variable (e.g. PHP5_OPTIONS="EXT1 EXT2 EXT3").
 #
 # Another way is to use the WITH_<EXT> and WITHOUT_<EXT> knobs, for additional
@@ -20,8 +20,8 @@
 #
 
 PORTNAME=	php5
-PORTVERSION=	5.0.0.a4
-PORTREVISION=	3
+PORTVERSION=	5.0.0.a5
+PORTREVISION=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	http://www.php.net/distributions/:release \
 		http://it.php.net/distributions/:release \
@@ -135,7 +135,7 @@ ALL_OPTIONS=	BCMATH BZIP2 CALENDAR CDB CRACK CTYPE CURL DB4 DBASE DBX DIO \
 		INIFILE MBSTRING MCVE MCRYPT MHASH MIME MING MNOGOSEARCH MSSQL \
 		MYSQL NCURSES OPENLDAP OPENSSL ORACLE PCNTL PCRE PDFLIB POSIX \
 		POSTGRESQL PSPELL READLINE RECODE SESSION SHMOP SIMPLEXML SNMP \
-		SOCKETS SQLITE SYBASEDB SYBASECT SYSVSEM SYSVSHM TIDY \
+		SOAP SOCKETS SPL SQLITE SYBASEDB SYBASECT SYSVSEM SYSVSHM TIDY \
 		TOKENIZER UNIXODBC WDDX XML XMLRPC XSL YAZ YP ZLIB
 
 .for opt in ${ALL_OPTIONS}
@@ -151,7 +151,7 @@ IS_INTERACTIVE=	yes
 WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/work
 PHP5_OPTFILE?=	${HOME}/php5_options
 
-PHP5_OPTIONS?=	CTYPE DOM PCRE POSIX SESSION SIMPLEXML SQLITE TOKENIZER XML
+PHP5_OPTIONS?=	CTYPE DOM PCRE POSIX SESSION SIMPLEXML SPL SQLITE TOKENIZER XML
 
 .for opt in ${ALL_OPTIONS}
 .if defined(WITH_${opt})
@@ -199,7 +199,7 @@ WITH_ICONV_DEP=	yes
 WITH_OPENSSL_DEP=	yes
 .endif
 
-.if defined(WITH_DOM) || defined(WITH_SIMPLEXML)
+.if defined(WITH_DOM) || defined(WITH_SIMPLEXML) || defined(WITH_SOAP)
 WITH_XML_DEP=	yes
 .endif
 
@@ -453,8 +453,16 @@ CONFIGURE_ARGS+=--enable-shmop
 CONFIGURE_ARGS+=--enable-simplexml
 .endif
 
+.if defined(WITH_SOAP)
+CONFIGURE_ARGS+=--enable-soap
+.endif
+
 .if defined(WITH_SOCKETS)
 CONFIGURE_ARGS+=--enable-sockets
+.endif
+
+.if defined(WITH_SPL)
+CONFIGURE_ARGS+=--enable-spl
 .endif
 
 .if defined(WITH_SQLITE)

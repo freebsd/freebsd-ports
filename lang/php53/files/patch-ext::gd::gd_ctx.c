@@ -1,8 +1,8 @@
---- ext/gd/gd_ctx.c.orig	Mon Jun 23 20:07:47 2003
-+++ ext/gd/gd_ctx.c	Tue Jul 15 01:54:58 2003
-@@ -44,23 +44,29 @@
- /* {{{ _php_image_output_ctx */	
- static void _php_image_output_ctx(INTERNAL_FUNCTION_PARAMETERS, int image_type, char *tn, void (*func_p)()) 
+--- ext/gd/gd_ctx.c.orig	Wed Jan 28 18:10:05 2004
++++ ext/gd/gd_ctx.c	Fri Feb 13 12:12:00 2004
+@@ -49,23 +49,29 @@
+ /* {{{ _php_image_output_ctx */
+ static void _php_image_output_ctx(INTERNAL_FUNCTION_PARAMETERS, int image_type, char *tn, void (*func_p)())
  {
 -	zval **imgind, **file, **quality;
 +	zval **imgind, **file, **quality, **lo, **to, **del, **dis;
@@ -23,16 +23,16 @@
 +	 * local/global colormap.
 +	 * The fourth (LeftOfs) parameter for GIF animation begin stands for NETSCAPE2.0 Loop count extension.
  	 */
- 	
+ 
  	if (argc < 2 && image_type == PHP_GDIMG_TYPE_XBM) {
  		WRONG_PARAM_COUNT;
  	}
--	if (argc < 1 || argc > 3 || zend_get_parameters_ex(argc, &imgind, &file, &quality) == FAILURE) 
+-	if (argc < 1 || argc > 3 || zend_get_parameters_ex(argc, &imgind, &file, &quality) == FAILURE)
 +	if (argc < 1 || argc > 7 || zend_get_parameters_ex(argc, &imgind, &file, &quality, &lo, &to, &del, &dis) == FAILURE)
  	{
  		WRONG_PARAM_COUNT;
  	}
-@@ -70,11 +76,29 @@
+@@ -75,11 +81,29 @@
  	if (argc > 1) {
  		convert_to_string_ex(file);
  		fn = Z_STRVAL_PP(file);
@@ -66,7 +66,7 @@
  
  	if ((argc == 2) || (argc > 2 && Z_STRLEN_PP(file))) {
  		if (!fn || fn == empty_string || php_check_open_basedir(fn TSRMLS_CC)) {
-@@ -82,7 +106,7 @@
+@@ -87,7 +111,7 @@
  			RETURN_FALSE;
  		}
  
@@ -75,7 +75,7 @@
  		if (!fp) {
  			php_error_docref(NULL TSRMLS_CC, E_WARNING, "Unable to open '%s' for writing", fn);
  			RETURN_FALSE;
-@@ -128,6 +152,14 @@
+@@ -133,6 +157,14 @@
  				(*func_p)(im, q, ctx);
  			}
  			break;
@@ -90,8 +90,8 @@
  		default:
  			(*func_p)(im, ctx);
  			break;
-@@ -146,6 +178,75 @@
- 	
+@@ -151,6 +183,75 @@
+ 
      RETURN_TRUE;
  }
 +
