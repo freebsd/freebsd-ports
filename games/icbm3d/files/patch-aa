@@ -1,20 +1,22 @@
---- makefile	Thu Mar 19 02:54:27 1998
-+++ /home/andy/tmp/wrk/makefile	Sat Mar 21 16:32:42 1998
-@@ -9,7 +9,7 @@
+--- makefile	Fri Jul 31 04:41:20 1998
++++ /home/andy/tmp/wrk/makefile	Mon Aug 10 18:40:01 1998
+@@ -9,14 +9,16 @@
  
  # Makefile user-definable variables------------------------------------------
  
 -CC=gcc
-+CC=gcc ${CFLAGS} -I/usr/X11R6/include
++CC?=gcc
++PREFIX?=/usr/X11R6
++X11BASE?=/usr/X11R6
  MATHLIB=-lm
  
+ INSTALLROOT=$(PREFIX)
+ LANGUAGE=english
  
-@@ -36,7 +36,7 @@
- ### uncomment for FreeBSD ###
- ### --------------------- ###
- 
--# XLIB=-L /usr/X11R6/lib -lX11 -lcompat
-+XLIB=-L/usr/X11R6/lib -lX11
- # CFLAGS=-I/usr/X11/include
+-XLIB=-L$(PREFIX)/lib -lX11 #-lcompat
+-CFLAGS=-I$(PREFIX)/include -O2
++XLIB=-L$(X11BASE)/lib -lX11 #-lcompat
++CFLAGS+=-I$(X11BASE)/include
  
  
+ # End of makefile user-definable variables-----------------------------------
