@@ -1,5 +1,14 @@
---- client_util.c.orig	Wed Mar 28 19:27:38 2001
-+++ client_util.c	Sat Mar 31 15:07:59 2001
+--- client_util.c.orig	Wed Mar 28 03:27:38 2001
++++ client_util.c	Fri Mar 15 07:54:32 2002
+@@ -37,7 +37,7 @@
+ #endif
+ 
+ 
+-long blstr2time(char *baseline);
++time_t blstr2time(char *baseline);
+ int timediff();
+ 
+ 
 @@ -60,13 +60,14 @@
  
  int timediff ()
