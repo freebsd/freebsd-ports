@@ -21,6 +21,8 @@ MAKE_ENV=	MOC="${MOC}" \
 		QTCPPFLAGS="${QTCPPFLAGS} ${PTHREAD_CFLAGS}" \
 		QTCFGLIBS="${QTCFGLIBS} ${PTHREAD_LIBS}"
 
+CFLAGS+=	-fpermissive
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mview ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
