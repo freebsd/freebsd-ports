@@ -415,6 +415,7 @@
     SUBDIR += uschedule
     SUBDIR += userinfo
     SUBDIR += userlist
+    SUBDIR += usermatic
     SUBDIR += usermin
     SUBDIR += userneu
     SUBDIR += userneu-devel

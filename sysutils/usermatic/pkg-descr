@@ -1,0 +1,19 @@
+usermatic
+
+is a collection of Perl scripts to automate maintenance of the
+user database on Linux and FreeBSD. Originally it was developed for
+FreeBSD, but it should work on Linux as well. These scripts compare the
+passwd database to the current list of employees/students/etc. which has
+to be supplied in a suitable format. This package was designed to work
+together with userneu.pl (sysutils/userneu/) and contains no facilities 
+to do the actual account creation work, instead it outputs a list suitable 
+for processing with userneu. Stale accounts can be deleted using the reaper.pl
+script.
+
+These scripts are experimental but they should work ok. 
+Please report bugs to me if you find them.
+
+WWW: http://btmdx8.mat.uni-bayreuth.de/~johannes/usermatic/usermatic.html
+
+-Andreas Fehlner
+fehlner@gmx.de

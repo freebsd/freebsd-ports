@@ -1,0 +1,16 @@
+sbin/digestion.pl
+sbin/hunter-seeker.pl
+sbin/reaper.pl
+sbin/newusers.pl
+%%PORTDOCS%%%%DOCSDIR%%/Artistic
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/digestion.pl.pod
+%%PORTDOCS%%%%DOCSDIR%%/hunter-seeker.pl.pod
+%%PORTDOCS%%%%DOCSDIR%%/reaper.pl.pod
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/list_digested
+%%EXAMPLESDIR%%/list_raw
+%%EXAMPLESDIR%%/sums_to_ignore
+@dirrm %%EXAMPLESDIR%%
