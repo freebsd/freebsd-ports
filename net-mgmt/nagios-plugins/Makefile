@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	nagios-plugins
-PORTVERSION=	1.3.0.b2
+PORTVERSION=	1.3.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	nagiosplug
-DISTNAME=	nagios-plugins-1.3.0-beta2
 
 MAINTAINER=	blaz@si.FreeBSD.org
 COMMENT=	Plugins for nagios
 
 USE_SUBMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--sbindir=${PREFIX}/share/nagios/sbin \
+CONFIGURE_ARGS=	--sbindir=${PREFIX}/share/nagios/cgi-bin \
 		--libexecdir=${PREFIX}/libexec/nagios \
 		--datadir=${PREFIX}/share/nagios \
 		--sysconfdir=${PREFIX}/etc/nagios \
-		--localstatedir=${PREFIX}/var/nagios \
+		--localstatedir=/var/spool/nagios \
 		--with-df-command="/bin/df -Pkt noprocfs"
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
