@@ -34,6 +34,12 @@ MANCOMPRESSED=	yes
 XMKMF=		xmkmf
 ALL_TARGET=	xrelease Makefiles includes all
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64"
+BROKEN=		"Coredump during build on ia64"
+.endif
+
 post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/CXterm.sh  \
 			${PREFIX}/bin/CXterm
@@ -49,4 +55,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/Doc/input.doc ${PREFIX}/share/doc/cxterm
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
