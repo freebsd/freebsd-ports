@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	iconv
-PORTVERSION=	0.5
+PORTVERSION=	${REAL_PORTVERSION}
 CATEGORIES=	converters ruby
-MASTER_SITES=	http://member.nifty.ne.jp/nokada/archive/
+MASTER_SITES=	${REAL_MASTER_SITES}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	An iconv wrapper class for Ruby
@@ -22,6 +21,26 @@ USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
 
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} >= 1.7
+REAL_PORTVERSION=	${RUBY_PORTVERSION}
+DISTNAME=		${PORTNAME}
+DISTFILES=		# empty
+
+MAKE_ARGS+=	      sitelibdir='$$(rubylibdir)'
+
+BUILD_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch
+
+do-extract:
+	${MKDIR} ${WRKDIR}
+	${LN} -sf `cd ${PORTSDIR}/${RUBY_PORT}; ${MAKE} -V WRKDIR`/${PORTNAME} ${WRKDIR}/
+
+.else
+REAL_PORTVERSION=	0.5
+REAL_MASTER_SITES=	http://member.nifty.ne.jp/nokada/archive/
+DIST_SUBDIR=		ruby
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
@@ -29,5 +48,6 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
