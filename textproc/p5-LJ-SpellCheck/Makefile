@@ -12,7 +12,7 @@ MASTER_SITES=	http://livejournal.com/files/code/spellcheck/ \
 		ftp://ftp.livejournal.com/code/spellcheck/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ahze@ahze.net
+MAINTAINER=	ahze@rgv.net
 
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
