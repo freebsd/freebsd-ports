@@ -1,6 +1,7 @@
---- ./src/gsint.h.orig	Thu Jun 25 15:18:32 1998
-+++ ./src/gsint.h	Mon Nov 27 22:18:18 2000
-@@ -188,7 +188,9 @@
+diff -ruN src.orib/gsint.h src/gsint.h
+--- src.orib/gsint.h	Thu May 13 12:41:04 2004
++++ src/gsint.h	Thu May 13 12:58:29 2004
+@@ -190,7 +190,9 @@
    ENC_VMS,
    ENC_HP8,
    ENC_KOI8,
@@ -10,22 +11,23 @@
 +  ENC_UNICNS_UTF8,
  } InputEncoding;
  
- typedef enum
---- ./src/main.c.orig	Thu Jun 25 16:26:00 1998
-+++ ./src/main.c	Mon Nov 27 22:18:18 2000
-@@ -864,7 +864,8 @@
-     {{"koi8", NULL, NULL},		ENC_KOI8,		'\n', 8},
-     {{"ps", "PS", NULL},		ENC_PS, 		'\n', 8},
-     {{"pslatin1", "ISOLatin1Encoding", NULL},	ENC_ISO_8859_1,	'\n', 8},
--
-+    {{"big5", "Formal Chinese", NULL},  ENC_BIG5,               '\n', 8},
-+    {{"UniCNS-UTF8", "Formal Chinese", NULL}, ENC_UNICNS_UTF8,  '\n', 8},      
-     {{NULL, NULL, NULL}, 0, 0, 0},
-   };
+ struct encoding_registry_st
+diff -ruN src.orib/main.c src/main.c
+--- src.orib/main.c	Thu May 13 12:41:04 2004
++++ src/main.c	Thu May 13 12:42:28 2004
+@@ -817,6 +817,8 @@
+   {{"koi8", NULL, NULL},		ENC_KOI8,		'\n', 8},
+   {{"ps", "PS", NULL},			ENC_PS, 		'\n', 8},
+   {{"pslatin1", "ISOLatin1Encoding", NULL},	ENC_ISO_8859_1,	'\n', 8},
++  {{"big5", "Formal Chinese", NULL},	ENC_BIG5,		'\n', 8},
++  {{"UniCNS-UTF8", "Formal Chinese", NULL},	ENC_UNICNS_UTF8,	'\n', 8},
  
---- ./src/psgen.c.orig	Thu Jun 25 15:18:54 1998
-+++ ./src/psgen.c	Mon Nov 27 22:18:18 2000
-@@ -303,15 +303,22 @@
+   {{NULL, NULL, NULL}, 0, 0, 0},
+ };
+diff -ruN src.orib/psgen.c src/psgen.c
+--- src.orib/psgen.c	Thu May 13 12:41:04 2004
++++ src/psgen.c	Thu May 13 12:53:07 2004
+@@ -323,15 +323,21 @@
    if (!paste_file ("enscript", ".pro"))
      FATAL ((stderr, _("couldn't find prolog \"%s\": %s\n"), "enscript.pro",
  	    strerror (errno)));
@@ -49,34 +51,25 @@
 +      FATAL ((stderr, _("couldn't find encoding file \"%s.enc\": %s\n"),
 +	      encoding_name, strerror (errno)));
 +    OUTPUT ((cofp, "%%%%EndResource\n"));
-+  } 
-+    
++  }
  
    OUTPUT ((cofp, "%%%%EndProlog\n"));
  
-@@ -339,6 +346,7 @@
-   /* Select our fonts. */
- 
-   /* Header font HF. */
-+  
-   OUTPUT ((cofp, "/%s /HF-gs-font MF\n", HFname));
-   OUTPUT ((cofp,
- 	   "/HF /HF-gs-font findfont [HFpt_w 0 0 HFpt_h 0 0] makefont def\n"));
-@@ -1033,7 +1041,12 @@
+@@ -1129,7 +1135,12 @@
  /* Help macros. */
  
  /* Check if character <ch> fits to current line. */
 -#define FITS_ON_LINE(ch) ((linepos + CHAR_WIDTH (ch) < linew) || col == 0)
-+/* NO wraping for CJK at this moment. Added by C.S. Chin Sept.1 */ 
++/* NO wraping for CJK at this moment. Added by C.S. Chin Sept.1 */
 +
 +#define FITS_ON_LINE(ch) ( ( (encoding == ENC_BIG5 && b5firstc) ||\
-+                             (encoding == ENC_UNICNS_UTF8 && u8firstc) ) ?\
-+                             (linepos + 2 * CHAR_WIDTH (ch) < linew) :\
-+                             (linepos + CHAR_WIDTH (ch) < linew || in_u8) )
++			     (encoding == ENC_UNICNS_UTF8 && u8firstc) ) ?\
++			     (linepos + 2 * CHAR_WIDTH (ch) < linew) :\
++			     (linepos + CHAR_WIDTH (ch) < linew || in_u8) )
  
  /* Is line buffer empty? */
  #define BUFFER_EMPTY() (bufpos == 0)
-@@ -1473,8 +1486,12 @@
+@@ -1594,8 +1605,12 @@
    static unsigned int buflen = 0; /* output buffer's length */
    unsigned int bufpos = 0;	/* current position in output buffer */
    int ch = 0;
@@ -89,7 +82,7 @@
    static int pending_token = tNONE;
    unsigned int original_col = col;
  
-@@ -1624,6 +1641,39 @@
+@@ -1745,6 +1760,39 @@
  	      break;
  	    }
  
@@ -129,26 +122,10 @@
  	  /* Check normal characters. */
  	  if (EXISTS (ch))
  	    {
-@@ -1741,7 +1791,7 @@
-   /* Got a string. */
- 
-   /* Check for wrapped line. */
--  if (done == DONE_WRAP)
-+  if (done == DONE_WRAP) 
-     {
-       /* This line is too long. */
-       ch = nl;
---- ./src/util.c.orig	Wed Jun 24 14:48:21 1998
-+++ ./src/util.c	Mon Nov 27 22:18:18 2000
-@@ -774,6 +774,7 @@
-       if (!strhash_get (afm_cache, Fname, strlen (Fname), (void **) &font))
- 	{
- 	  /* AFM file was not cached, open it from disk. */
-+	  
- 	  error = afm_open_font (afm, AFM_I_COMPOSITES, Fname, &font);
- 	  if (error != AFM_SUCCESS)
- 	    {
-@@ -782,11 +783,18 @@
+diff -ruN src.orib/util.c src/util.c
+--- src.orib/util.c	Thu May 13 12:41:04 2004
++++ src/util.c	Thu May 13 12:56:31 2004
+@@ -890,11 +890,18 @@
  	       * Do not report failures for "Courier*" fonts because
  	       * AFM library's default font will fix them.
  	       */
@@ -172,16 +149,7 @@
  	      error = afm_open_default_font (afm, &font);
  	      if (error != AFM_SUCCESS)
  		{
-@@ -796,7 +804,7 @@
- 			  buf));
- 		}
- 	    }
--
-+	    
- 	  /* Apply encoding. */
- 	  switch (encoding)
- 	    {
-@@ -879,6 +887,12 @@
+@@ -997,6 +1004,12 @@
  	    case ENC_PS:
  	      /* Let's use font's default encoding -- nothing here. */
  	      break;
@@ -194,7 +162,7 @@
  	    }
  
  	  /* Put it to the AFM cache. */
-@@ -888,20 +902,57 @@
+@@ -1006,20 +1019,56 @@
  
        font_info = (CachedFontInfo *) xcalloc (1, sizeof (*font_info));
        /* Read character widths and types. */
@@ -227,7 +195,7 @@
 +	    else
 +	      font_info->font_ctype[i] = '*';
 +	  }
-+      } else {
++       } else {
 +	if (encoding == ENC_BIG5) 
 +	  {
 +	    for (i = 0; i < 256; i++)
@@ -261,8 +229,7 @@
 +		  }
 +	      }
 +	  }
-+      }
-+
++       }
  
        font_info->font_is_fixed
  	= font->writing_direction_metrics[0].IsFixedPitch;
