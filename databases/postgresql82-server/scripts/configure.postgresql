@@ -149,8 +149,8 @@ if [ "${KRB5}" ]; then
 				.if exists($KRB5CONF)
 				LIB_DEPENDS+=	krb5.3:${PORTSDIR}/security/krb5
 				CONFIGURE_ARGS+=	--with-krb5="`${KRB5CONF} --prefix krb5`"
-				CFLAGS+=	"`${KRB5CONF} --cflags krb5`"
-				LDFLAGS+=	"`${KRB5CONF} --libs krb5`"
+				CFLAGS+=	"'`${KRB5CONF} --cflags krb5`'"
+				LDFLAGS+=	"'`${KRB5CONF} --libs krb5`'"
 				.endif
 				EOF
 		else
