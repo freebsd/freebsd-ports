@@ -287,6 +287,7 @@
     SUBDIR += unclutter
     SUBDIR += upclient
     SUBDIR += us-zipcodes
+    SUBDIR += utf8locale
     SUBDIR += vbidecode
     SUBDIR += vera
     SUBDIR += videotext
