@@ -1,0 +1,4 @@
+This is a compatability package for the XFree86 a.out format libraries.
+
+It is only needed for ports which use X and are compiled in a.out format,
+such as Nescape.  Long live Mozilla...

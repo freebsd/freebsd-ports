@@ -1,0 +1,15 @@
+lib/aout/libX11.so.6.1
+lib/aout/liboldX.so.6.0
+lib/aout/libICE.so.6.3
+lib/aout/libSM.so.6.0
+lib/aout/libXext.so.6.3
+lib/aout/libXt.so.6.0
+lib/aout/libXmu.so.6.0
+lib/aout/libXaw.so.6.1
+lib/aout/libXIE.so.6.0
+lib/aout/libXi.so.6.0
+lib/aout/libXtst.so.6.1
+lib/aout/libPEX5.so.6.0
+lib/aout/libXp.so.6.2
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
