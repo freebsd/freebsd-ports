@@ -1,9 +1,9 @@
 etc/rc.d/apache.sh
 @exec mkdir -p %D/www/cgi-bin %D/www/data
-etc/apache/httpd.conf
-etc/apache/srm.conf
-etc/apache/access.conf
-etc/apache/mime.types
+etc/apache/httpd.conf-dist
+etc/apache/srm.conf-dist
+etc/apache/access.conf-dist
+etc/apache/mime.types-dist
 sbin/httpd
 www/icons/README
 www/icons/a.gif
