@@ -15,9 +15,6 @@ MAINTAINER=	horance@freera.net
 COMMENT=	The Swarm Simulation System
 
 BUILD_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
-.if defined(WITH_HDF5)
-LIB_DEPENDS+=	hdf5.0:${PORTSDIR}/science/hdf5
-.endif
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 		BLT24.3:${PORTSDIR}/x11-toolkits/blt
 
@@ -38,6 +35,14 @@ CONFIGURE_ARGS=	--with-defaultdir=${PREFIX} \
 		--with-jdkdir=${JAVA_HOME} \
 		--enable-subdirs
 
+OPTIONS=	HDF5 "HDF5 support" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_HDF5)
+LIB_DEPENDS+=	hdf5.0:${PORTSDIR}/science/hdf5
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|%%LTCONFIG%%|${LTCONFIG}|g' \
@@ -52,16 +57,7 @@ post-patch:
 		-e 's|%%LTMAIN%%|${LIBTOOL_SHAREDIR}/ltmain.sh|g' \
 		${WRKSRC}/avcall/configure
 
-pre-everything::
-.if !defined(WITH_HDF5)
-	@${ECHO_MSG} "===>"
-	@${ECHO_MSG} "===> To enable hdf5 support , please define WITH_HDF5"
-	@${ECHO_MSG} "===>"
-.endif
-
-post-patch:
-
 post-install:
 	${CAT} ${PKGMESSAGE} | ${SED} -e "s:%%PREFIX%%:${PREFIX}:g"
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
