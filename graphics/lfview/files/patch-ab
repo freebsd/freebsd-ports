@@ -1,0 +1,8 @@
+--- Imakefile.old	Sat Aug 12 23:36:44 2000
++++ Imakefile	Tue Apr 10 08:50:47 2001
+@@ -19,4 +19,4 @@
+ MakeSubdirs($(SUBDIRS))
+ XCOMM DependSubdirs($(SUBDIRS))
+ 
+-ComplexProgramTarget(lfview)
++ComplexProgramTargetNoMan(lfview)
