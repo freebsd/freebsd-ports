@@ -1,24 +1,7 @@
-From: Espen Sand <espen@opera.com>
-Newsgroups: opera.linux,opera.beta
-Subject: Preview 3 of Opera 7.10 for Linux available
-Date: 2003-04-03 03:12:15 PST
+Changelogs for 7.11 Final: http://www.opera.com/linux/changelogs/711/
 
-This is the first release ever that is synchronized with an Opera for windows
-release. Windows is released as 7.10 Beta 1 today and since we share the user
-interface and most of the other components we have jumped to the 7.10 tag as
-well (thus skipping 7.0). We have not has as much time to test this release
-compared with the windows version and we lack some linux specific features so
-we still name it a Technology Preview.
-
-Please discuss this release in the opera.linux newsgroup or opera-linux mail
-list before submitting bugs to our BTS (Bug Tracking System). We recommend that
-you not install it over a current version of Opera.
-
-Changelogs for 7.11 TP5:
-http://snapshot.opera.com/unix/intel-linux/395-20030429-7.11-TP5/changelog.txt
-
-Before you run Opera7:
-   Since this is a beta it might be a good idea to backup your personal
-   "~/.opera" directory and remove it. This can be done from the command line
-   using "cp -Rp ~/.opera ~/.opera-mybackup" and "rm -rf ~/.opera".
+If you are upgrade from version 6 final or 7 development, it might be a good
+idea to backup your personal "~/.opera" directory and remove it. This can be
+done from the command line using "cp -Rp ~/.opera ~/.opera-mybackup" and
+"rm -rf ~/.opera".
 
