@@ -26,7 +26,10 @@ USE_GMAKE=	yes
 
 INCLUDES=	gkrellm.h gkrellm_public_proto.h
 MAN1=		gkrellm.1
-DOCS=		COPYRIGHT README Themes.html
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	COPYRIGHT README Themes.html
+.endif
 
 # If you want to support LM78/79 feature, set this to `yes'.  You
 # should aware that GKrellM must be setuid root to obtain
@@ -61,18 +64,18 @@ do-install:
 		${GMAKE} install enable_nls=1 LOCALEDIR=${PREFIX}/share/locale
 
 	@${MKDIR} ${PREFIX}/include/gkrellm
-.for file in ${INCLUDES}
-	${INSTALL_DATA} ${WRKSRC}/src/${file} ${PREFIX}/include/gkrellm
+.for f in ${INCLUDES}
+	${INSTALL_DATA} ${WRKSRC}/src/${f} ${PREFIX}/include/gkrellm
 .endfor
 	@${MKDIR} ${PREFIX}/libexec/gkrellm/plugins
 	@${MKDIR} ${PREFIX}/share/gkrellm/themes
-.for file in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/${file} ${MANPREFIX}/man/man1/${file}
+.for f in ${MAN1}
+	${INSTALL_MAN} ${WRKSRC}/${f} ${MANPREFIX}/man/man1/${f}
 .endfor
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/gkrellm
-.for file in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/gkrellm
+	@${MKDIR} ${DOCSDIR}
+.for f in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
 .endif
 .if !defined(WITH_SENSOR)
