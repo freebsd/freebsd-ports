@@ -11,10 +11,13 @@ lib/libpdf.so.5
 %%PORTDOCS%%share/doc/pdflib/PDFlib-manual.pdf
 %%PORTDOCS%%share/doc/pdflib/PDFlib-purchase-order.pdf
 %%PORTDOCS%%share/doc/pdflib/changes.txt
+%%PORTDOCS%%share/doc/pdflib/changes4.txt
 %%PORTDOCS%%share/doc/pdflib/compatibility.txt
+%%PORTDOCS%%share/doc/pdflib/readme-binary.txt
 %%PORTDOCS%%share/doc/pdflib/readme-source-mac.txt
 %%PORTDOCS%%share/doc/pdflib/readme-source-unix.txt
 %%PORTDOCS%%share/doc/pdflib/readme-source-windows.txt
+%%PORTDOCS%%share/doc/pdflib/readme.txt
 share/pdflib/fonts/pdflib.upr
 share/pdflib/fonts/print_glyphs.ps
 %%PORTDOCS%%@dirrm share/doc/pdflib

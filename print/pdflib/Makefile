@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pdflib
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.1
 CATEGORIES=	print
 MASTER_SITES=	http://www.pdflib.com/products/pdflib/download/
-DISTNAME=	PDFlib-Lite-5.0.0-Unix-src
+DISTNAME=	PDFlib-Lite-${PORTVERSION}-Unix-src
 
 MAINTAINER=	sysadmin@alexdupre.com
 COMMENT=	A C library for dynamically generating PDF
@@ -40,7 +40,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/fonts/* ${DATADIR}/fonts
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/pdflib/* ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
