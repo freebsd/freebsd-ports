@@ -33,14 +33,14 @@ ZOPEPRODUCTDIR=		lib/python/Products
 
 PLIST_SUB=	ZOPEBASEDIR=${SZOPEBASEDIR}
 WRKSRC=		${WRKDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
-CPIO=		cpio --quiet -pdum -R
+CPIO_OPTIONS=	--quiet -pdum -R
 
 do-build:
 	@ ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}
 
 do-install:
 	@ ${MKDIR} ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
-	@ cd ${WRKSRC} && ${FIND} * | ${CPIO} ${BINOWN}:${BINGRP} \
+	@ cd ${WRKSRC} && ${FIND} * | ${CPIO} ${CPIO_OPTIONS} ${BINOWN}:${BINGRP} \
 	  ${ZOPEBASEDIR}/${ZOPEPRODUCTDIR}/${ZOPEPRODUCTNAME}
 
 post-install:
