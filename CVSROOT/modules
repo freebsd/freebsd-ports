@@ -5355,6 +5355,7 @@ milter-greylist	ports/mail/milter-greylist
 milter-regex	ports/mail/milter-regex
 milter-sender	ports/mail/milter-sender
 milter-skem	ports/mail/milter-skem
+milter-spamc	ports/mail/milter-spamc
 mime		ports/devel/mime
 mime-support	ports/misc/mime-support
 mimedefang	ports/mail/mimedefang
