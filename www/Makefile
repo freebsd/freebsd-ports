@@ -275,7 +275,6 @@
     SUBDIR += nd
     SUBDIR += neon
     SUBDIR += neowebscript
-    SUBDIR += netraider
     SUBDIR += netrik
     SUBDIR += netscape-remote
     SUBDIR += netscape-wrapper
