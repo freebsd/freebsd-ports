@@ -1,0 +1,75 @@
+--- Makefile~	Mon Mar  8 12:17:03 2004
++++ Makefile	Wed Jun  2 19:50:26 2004
+@@ -43,33 +43,33 @@
+ directories : always
+ ifeq ($(SHELLTYPE), sh)
+ 	for d in $(DIRECTORIES); do \
+-	  make -C "$$d" || exit; \
++	  $(MAKE) -C "$$d" || exit; \
+ 	done;
+ endif
+ ifeq ($(SHELLTYPE), COMMAND.COM)
+-	make -C player
+-	make -C party
+-	make -C game
+-	make -C card
+-	make -C misc
+-	make -C ui
+-	make -C os
+-	make -C class
+-	make -C utils
++	$(MAKE) -C player
++	$(MAKE) -C party
++	$(MAKE) -C game
++	$(MAKE) -C card
++	$(MAKE) -C misc
++	$(MAKE) -C ui
++	$(MAKE) -C os
++	$(MAKE) -C class
++	$(MAKE) -C utils
+ endif
+ 
+ ifeq ($(SHELLTYPE), sh)
+ fast : always
+-	nice make -k -C ui &
+-	( nice make -k -C party; \
+-	  nice make -k -C game; \
+-	  nice make -k -C card ) &
+-	nice make -k -C player
+-	nice make -k objects
+-	nice make -k -C misc
+-	nice make -k -C os
+-	nice make -k -C class
+-	nice make -k -C utils
++	nice $(MAKE) -k -C ui &
++	( nice $(MAKE) -k -C party; \
++	  nice $(MAKE) -k -C game; \
++	  nice $(MAKE) -k -C card ) &
++	nice $(MAKE) -k -C player
++	nice $(MAKE) -k objects
++	nice $(MAKE) -k -C misc
++	nice $(MAKE) -k -C os
++	nice $(MAKE) -k -C class
++	nice $(MAKE) -k -C utils
+ endif
+ 
+ objects : $(OBJECTS)
+@@ -77,14 +77,14 @@
+ include Makefile.dependencies
+ 
+ dir_text :
+-	make -C text
++	$(MAKE) -C text
+ 
+ dir_utils :
+-	make -C utils/ file.$(OBJ_SUFFIX) string.$(OBJ_SUFFIX)
++	$(MAKE) -C utils/ file.$(OBJ_SUFFIX) string.$(OBJ_SUFFIX)
+ 
+ dir_class :
+-	make -C class/getopt/ getopt.$(OBJ_SUFFIX) option.$(OBJ_SUFFIX)
+-	make -C class/readconfig/ readconfig.$(OBJ_SUFFIX)
++	$(MAKE) -C class/getopt/ getopt.$(OBJ_SUFFIX) option.$(OBJ_SUFFIX)
++	$(MAKE) -C class/readconfig/ readconfig.$(OBJ_SUFFIX)
+ 
+ ifeq ($(OPERATING_SYSTEM), Linux)
+ doc :
