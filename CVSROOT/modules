@@ -5241,6 +5241,7 @@ mysql40-client	ports/databases/mysql40-client
 mysql40-scripts	ports/databases/mysql40-scripts
 mysql40-server	ports/databases/mysql40-server
 mysql41-client	ports/databases/mysql41-client
+mysql41-scripts	ports/databases/mysql41-scripts
 mysql41-server	ports/databases/mysql41-server
 mysql50-client	ports/databases/mysql50-client
 mysql50-server	ports/databases/mysql50-server
