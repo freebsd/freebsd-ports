@@ -34,6 +34,7 @@ share/gnome/help/gtranslator/C/legal.xml
 share/gnome/mime-info/gtranslator.keys
 share/gnome/mime-info/gtranslator.mime
 share/gnome/omf/gtranslator/gtranslator-C.omf
+@exec scrollkeeper-install -q %D/share/gnome/omf/gtranslator/gtranslator-C.omf 2>/dev/null || /usr/bin/true
 share/gnome/pixmaps/gnome-application-x-gmo.png
 share/gnome/pixmaps/gnome-application-x-po.png
 share/gnome/pixmaps/gtranslator.png
@@ -45,6 +46,7 @@ share/locale/am/LC_MESSAGES/gtranslator.mo
 share/locale/az/LC_MESSAGES/gtranslator.mo
 share/locale/be/LC_MESSAGES/gtranslator.mo
 share/locale/ca/LC_MESSAGES/gtranslator.mo
+share/locale/cs/LC_MESSAGES/gtranslator.mo
 share/locale/da/LC_MESSAGES/gtranslator.mo
 share/locale/de/LC_MESSAGES/gtranslator.mo
 share/locale/el/LC_MESSAGES/gtranslator.mo
@@ -52,6 +54,7 @@ share/locale/en_GB/LC_MESSAGES/gtranslator.mo
 share/locale/es/LC_MESSAGES/gtranslator.mo
 share/locale/et/LC_MESSAGES/gtranslator.mo
 share/locale/eu/LC_MESSAGES/gtranslator.mo
+share/locale/fa/LC_MESSAGES/gtranslator.mo
 share/locale/fi/LC_MESSAGES/gtranslator.mo
 share/locale/fr/LC_MESSAGES/gtranslator.mo
 share/locale/ga/LC_MESSAGES/gtranslator.mo
@@ -76,6 +79,7 @@ share/locale/sr/LC_MESSAGES/gtranslator.mo
 share/locale/sr@Latn/LC_MESSAGES/gtranslator.mo
 share/locale/sv/LC_MESSAGES/gtranslator.mo
 share/locale/ta/LC_MESSAGES/gtranslator.mo
+share/locale/th/LC_MESSAGES/gtranslator.mo
 share/locale/tr/LC_MESSAGES/gtranslator.mo
 share/locale/uk/LC_MESSAGES/gtranslator.mo
 share/locale/vi/LC_MESSAGES/gtranslator.mo
@@ -91,3 +95,4 @@ share/locale/zh_TW/LC_MESSAGES/gtranslator.mo
 @dirrm share/gnome/gtranslator/dtd
 @dirrm share/gnome/gtranslator/colorschemes
 @dirrm share/gnome/gtranslator
+@unexec scrollkeeper-uninstall -q %D/share/gnome/omf/gtranslator/gtranslator-C.omf 2>/dev/null || /usr/bin/true
