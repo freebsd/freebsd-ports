@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gal
-PORTVERSION=	0.7
+PORTVERSION=	0.8
 CATEGORIES?=	x11-toolkits gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gal
@@ -34,5 +34,7 @@ pre-patch:
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
+	@find ${WRKSRC}/gal/widgets -name '*.[ch]' | xargs ${PERL} -pi -e \
+		's|<iconv.h>|<giconv.h>|'
 
 .include <bsd.port.mk>
