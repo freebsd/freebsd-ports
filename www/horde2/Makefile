@@ -6,15 +6,17 @@
 #
 
 PORTNAME=	horde
-PORTVERSION=	2.2.4
-PORTREVISION=	2
+PORTVERSION=	2.2.5
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/				\
-		ftp://ftp.au.horde.org/pub/horde/			\
+		ftp://ftp.planetmirror.com/pub/horde/horde/		\
+		ftp://ftp.au.horde.org/pub/horde/horde/			\
+		ftp://ftp.be.horde.org/horde/				\
 		ftp://ftp.es.horde.org/pub/horde/			\
 		ftp://ftp.it.horde.org/pub/mirror/horde.org/horde/	\
 		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/horde/	\
-		ftp://ftp.pt.horde.org/pub/horde-ftp/horde/
+		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/horde/	\
+		http://ftp.horde.org/pub/horde/
 
 MAINTAINER=	thierry@pompo.net
 COMMENT=	A common code-base used by Horde applications, written in PHP
@@ -29,7 +31,6 @@ COMMENT=	A common code-base used by Horde applications, written in PHP
 #-----------------------------------------------------------------------
 
 BUILD_DEPENDS=	pear:${PORTSDIR}/lang/php4-horde
-# Remark: pear-XML_sql2xml is included, but never used.
 RUN_DEPENDS=	${BUILD_DEPENDS}						\
 		${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date			\
 		${PEARDIR}/HTML/Common.php:${PORTSDIR}/devel/pear-HTML_Common	\
@@ -44,7 +45,7 @@ LDD=		/usr/bin/ldd
 REINPLACE_ARGS=	-i.beforeHorde
 DOCS=		COPYING README docs/CHANGES docs/CODING_STANDARDS \
 		docs/CONTRIBUTING docs/CREDITS docs/HACKING docs/INSTALL \
-		docs/TRANSLATIONS docs/SECURITY
+		docs/RELEASE_NOTES docs/SECURITY docs/TRANSLATIONS
 CONFFILE=	horde.php html.php lang.php mime_drivers.php mime_mapping.php \
 		motd.php prefs.php registry.php
 SUB_DIRS=	config graphics lib locale po scripts templates util
@@ -182,8 +183,8 @@ do-install:
 
 post-install:
 	@${ECHO}
-	@${CAT} ${PKGMESSAGE} | ${SED} -e \
-	"s:%%HORDEDIR%%:${HORDEDIR}:g;s:%%APACHE_CONF%%:${APACHE_CONF}:g;s:%%HORDESBIN%%:${HORDESBIN}:g"
+	@${SED} -e "s:%%HORDEDIR%%:${HORDEDIR}:g;s:%%APACHE_CONF%%:${APACHE_CONF}:g"	\
+		-e "s:%%HORDESBIN%%:${HORDESBIN}:g" ${PKGMESSAGE}
 	@${ECHO}
 
 .include <bsd.port.mk>

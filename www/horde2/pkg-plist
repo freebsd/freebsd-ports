@@ -138,6 +138,7 @@
 %%HORDEDIR%%/lib/Perms.php
 %%HORDEDIR%%/lib/Prefs.php
 %%HORDEDIR%%/lib/PrefsUI.php
+%%HORDEDIR%%/lib/Prefs/UI.php
 %%HORDEDIR%%/lib/Prefs/ldap.php
 %%HORDEDIR%%/lib/Prefs/session.php
 %%HORDEDIR%%/lib/Prefs/sql.php
@@ -180,7 +181,9 @@
 %%HORDEDIR%%/locale/fi_FI/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/fi_FI/help.xml
 %%HORDEDIR%%/locale/fr_FR/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/gl_ES/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/hu_HU/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/id_ID/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/it_IT/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/ja_JP/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/ko_KR/LC_MESSAGES/horde.mo
@@ -223,7 +226,9 @@
 %%HORDEDIR%%/po/extract.pl
 %%HORDEDIR%%/po/fi_FI.po
 %%HORDEDIR%%/po/fr_FR.po
+%%HORDEDIR%%/po/gl_ES.po
 %%HORDEDIR%%/po/hu_HU.po
+%%HORDEDIR%%/po/id_ID.po
 %%HORDEDIR%%/po/it_IT.po
 %%HORDEDIR%%/po/horde.pot
 %%HORDEDIR%%/po/ja_JP.po
@@ -323,17 +328,18 @@
 %%HORDEDIR%%/util/special_characters.php
 %%HORDESBIN%%/horde_set_perms.sh
 etc/horde/httpd.conf.horde
-%%PORTDOCS%%share/doc/horde/CHANGES
-%%PORTDOCS%%share/doc/horde/CODING_STANDARDS
-%%PORTDOCS%%share/doc/horde/CONTRIBUTING
-%%PORTDOCS%%share/doc/horde/COPYING
-%%PORTDOCS%%share/doc/horde/CREDITS
-%%PORTDOCS%%share/doc/horde/HACKING
-%%PORTDOCS%%share/doc/horde/INSTALL
-%%PORTDOCS%%share/doc/horde/README
-%%PORTDOCS%%share/doc/horde/SECURITY
-%%PORTDOCS%%share/doc/horde/TRANSLATIONS
-%%PORTDOCS%%@dirrm share/doc/horde
+%%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/CODING_STANDARDS
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTING
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/CREDITS
+%%PORTDOCS%%%%DOCSDIR%%/HACKING
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
+%%PORTDOCS%%%%DOCSDIR%%/SECURITY
+%%PORTDOCS%%%%DOCSDIR%%/TRANSLATIONS
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%HORDEDIR%%/graphics/alerts
 @dirrm %%HORDEDIR%%/graphics/mime
 @dirrm %%HORDEDIR%%/graphics/tree
@@ -374,8 +380,12 @@ etc/horde/httpd.conf.horde
 @dirrm %%HORDEDIR%%/locale/fi_FI
 @dirrm %%HORDEDIR%%/locale/fr_FR/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/fr_FR
+@dirrm %%HORDEDIR%%/locale/gl_ES/LC_MESSAGES
+@dirrm %%HORDEDIR%%/locale/gl_ES
 @dirrm %%HORDEDIR%%/locale/hu_HU/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/hu_HU
+@dirrm %%HORDEDIR%%/locale/id_ID/LC_MESSAGES
+@dirrm %%HORDEDIR%%/locale/id_ID
 @dirrm %%HORDEDIR%%/locale/it_IT/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/it_IT
 @dirrm %%HORDEDIR%%/locale/ja_JP/LC_MESSAGES
