@@ -3,44 +3,20 @@
 # Date created:         09 December 1998
 # Whom:                 Matthew Dillon <dillon@backplane.com>
 #
-# UNOFFICIAL PATCH SOURCES:
-#	ftp://ftp.crocodile.org/pub/jikes/
-#		maintained by Vadim Zaliva
-#
-# PATCH INFO:	(note: patches had to be regenerated, the patch files in
-#		patches/ are not exactly the same as the ftp source)
-#
-#	patches/patch-aa
-#	    patch to compile under FreeBSD (local)
-#
-#	patches/patch-ab
-#	    ftp://ftp.crocodile.org/pub/jikes/divide0.patch
-#
-#	patches/patch-ac
-#	    ftp://ftp.crocodile.org/pub/jikes/jikes-0.41-warnings1.patch
-#
-#	patches/patch-ad
-#	    ftp://ftp.crocodile.org/pub/jikes/jikes-array-clone.patch
-#
-#	(solaris compiler patch not required)
-#	    ftp://ftp.crocodile.org/pub/jikes/jikes-solaris2.6-gcc2.8.1.patch
-#
-#	patches/patch-ae
-#	    ftp://ftp.crocodile.org/pub/jikes/jikes.makedepend.patch
-#
-# $Id: Makefile,v 1.6 1998/12/22 08:05:33 asami Exp $
+# $Id: Makefile,v 1.7 1998/12/23 13:13:21 asami Exp $
 #
 
-DISTNAME=	jikes-0.41
+DISTNAME=	jikes-0.45
 CATEGORIES=	lang
-MASTER_SITES=	http://www.backplane.com/FreeBSDPorts/
+MASTER_SITES=	ftp://ftp.whistle.com/pub/archie/misc/
 
 MAINTAINER=	dillon@backplane.com
 
-WRKSRC=		${WRKDIR}/jikesos
+WRKSRC=		${WRKDIR}/jikes
 MAN1=		jikes.1
 MAKE_ENV=	FILESDIR=${FILESDIR}
 SCRIPTS_ENV=	FILESDIR=${FILESDIR} PKGDIR=${PKGDIR}
+PATCH_STRIP=	-p1
 
 # 	(sufficiently handled by pkg/MESSAGE, but if IBM has an issue then
 #	uncomment this section)
