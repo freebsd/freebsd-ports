@@ -2378,6 +2378,7 @@ gqview-devel	ports/graphics/gqview-devel
 gr-openoffice	ports/editors/openoffice-gr
 grace		ports/math/grace
 gracer		ports/games/gracer
+gracetmpl	ports/math/gracetmpl
 gracula		ports/graphics/gracula
 grail		ports/www/grail
 gramofile	ports/audio/gramofile
