@@ -296,6 +296,7 @@
     SUBDIR += odsclient
     SUBDIR += ohphone
     SUBDIR += openam
+    SUBDIR += opendchub
     SUBDIR += opengatekeeper
     SUBDIR += opengk
     SUBDIR += openh323

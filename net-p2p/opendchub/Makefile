@@ -1,0 +1,29 @@
+# New ports collection makefile for:	opendchub
+# Date created:			May 29, 2002
+# Whom:				Munish Chopra <mchopra@engmail.uwaterloo.ca>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	opendchub
+PORTVERSION=	0.6.5
+CATEGORIES=	net
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	mchopra@engmail.uwaterloo.ca
+
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
+
+DOC_FILES=	COPYING README
+
+post-install:
+.ifndef(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in ${DOC_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
+
+.include <bsd.port.mk>
