@@ -1121,6 +1121,7 @@ dopewars	ports/games/dopewars
 dore		ports/graphics/dore
 dosboot		src/sys/i386/boot/dosboot
 doscmd		src/usr.bin/doscmd
+dosunix		ports/converters/dosunix
 dotconf		ports/devel/dotconf
 dotfile		ports/misc/dotfile
 downloader	ports/ftp/downloader
