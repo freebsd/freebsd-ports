@@ -951,6 +951,7 @@ cvs		src/gnu/usr.bin/cvs
 cvs2cl		ports/devel/cvs2cl
 cvs2html	ports/devel/cvs2html
 cvsgraph	ports/devel/cvsgraph
+cvslines	ports/devel/cvslines
 cvsmail		ports/mail/cvsmail
 cvsmapfs	ports/devel/cvsmapfs
 cvspadm		ports/devel/cvspadm

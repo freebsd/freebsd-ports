@@ -100,6 +100,7 @@
     SUBDIR += cvs2p4
     SUBDIR += cvsd
     SUBDIR += cvsgraph
+    SUBDIR += cvslines
     SUBDIR += cvsmapfs
     SUBDIR += cvspadm
     SUBDIR += cvsstat
