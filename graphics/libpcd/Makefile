@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://dl.bytesex.org/releases/libpcd/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	anray@inet.ua
+MAINTAINER=	anrays@gmail.com
 COMMENT=	A library for reading PhotoCD images
 
 USE_GMAKE=	yes

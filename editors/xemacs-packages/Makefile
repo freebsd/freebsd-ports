@@ -121,7 +121,7 @@ DISTFILES=	\
 		zenirc-1.15-pkg.tar.gz
 DIST_SUBDIR=	xemacs
 
-MAINTAINER=	anray@inet.ua
+MAINTAINER=	anrays@gmail.com
 COMMENT=	Basic XEmacs elisp packages(xemacs-packages)
 
 NO_BUILD=	yes
