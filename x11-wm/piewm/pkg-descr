@@ -1,0 +1,11 @@
+This is piewm, a tvtwm with "pie" (i.e., round) menus.  You can change
+"f.menu" and "menu" in your .tvtwmrc into "f.piemenu" "piemenu" in
+.piewmrc and you will suddenly seeing lovely round menus.
+
+It also has virtual desktops that you can "pull" things out, i.e.,
+move the mouse into the virtual desktop window, grab a window with the 
+middle button, and move the mouse out, and then the window will appear 
+in the current screen.  This feature is exactly the same as tvtwm.
+
+- Satoshi
+asami@cs.berkeley.edu
