@@ -48,6 +48,7 @@
     SUBDIR += gxedit
     SUBDIR += hexedit
     SUBDIR += jed
+    SUBDIR += jedit
     SUBDIR += jext
     SUBDIR += joe
     SUBDIR += jove
