@@ -1,0 +1,9 @@
+include/libpq++.h
+include/libpq++/pgconnection.h
+include/libpq++/pgdatabase.h
+include/libpq++/pgtransdb.h
+include/libpq++/pgcursordb.h
+include/libpq++/pglobject.h
+lib/libpq++.so.4
+lib/libpq++.so
+@dirrm include/libpq++
