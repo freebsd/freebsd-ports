@@ -3,7 +3,7 @@
 # Date created:         4 May 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.16 1997/08/10 22:31:25 fenner Exp $
+# $Id: Makefile,v 1.17 1998/06/27 05:19:30 asami Exp $
 #
 
 DISTNAME=       pgp26ru
@@ -13,6 +13,8 @@ MASTER_SITES=   ftp://ftp.kiarchive.ru/pub/unix/crypto/pgp/
 EXTRACT_SUFX=   .zip
 
 MAINTAINER=	ache@FreeBSD.ORG
+
+BROKEN_ELF=	yes
 
 BUILD_DEPENDS += unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS += pgp:${PORTSDIR}/security/pgp
