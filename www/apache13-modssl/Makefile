@@ -1,9 +1,9 @@
 # New ports collection makefile for:	Apache + mod_ssl
-# Version required:	1.3.2 + 2.0.12
+# Version required:	1.3.3 + 2.0.15
 # Date created:		Sat Aug 22 12:00:00 CDT 1998
 # Whom:			rse@engelschall.com
 #
-# $Id: Makefile,v 1.7 1998/09/23 12:20:00 rse Exp $
+# $Id: Makefile,v 1.8 1998/10/02 10:11:11 rse Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -12,8 +12,15 @@ CATEGORIES=	www security
 MASTER_SITES=	ftp://www.apache.org/apache/dist/ \
 		http://www.engelschall.com/sw/mod_ssl/distrib/ \
 		ftp://ftp.engelschall.com/sw/mod_ssl/ \
+		ftp://ftp.nvg.ntnu.no/pub/unix/mod_ssl/ \
 		ftp://ftp.ulpgc.es/pub/mod_ssl/ \
-		ftp://glock.missouri.edu/pub/mod_ssl/
+		ftp://glock.missouri.edu/pub/mod_ssl/ \
+		ftp://ftp.infoscience.co.jp/pub/Crypto/SSL/mod_ssl/ \
+		ftp://ftp.uni-trier.de/pub/unix/security/mod_ssl/ \
+		ftp://ftp.blatzheim.com/pub/mod_ssl/ \
+		ftp://ftp.fu-berlin.de/unix/security/mod_ssl/ \
+		ftp://ftp.ntrl.net/pub/mirror/ralfsw/mod_ssl/
+
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}
 
@@ -24,8 +31,8 @@ BUILD_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay \
 		${PREFIX}/lib/libcrypto.a:${PORTSDIR}/security/SSLeay
 RUN_DEPENDS=	ssleay:${PORTSDIR}/security/SSLeay
 
-VERSION_APACHE=	1.3.2
-VERSION_MODSSL=	2.0.12
+VERSION_APACHE=	1.3.3
+VERSION_MODSSL=	2.0.15
 
 RESTRICTED=	"Contains cryptography"
 
@@ -40,6 +47,8 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/apache \
 		--without-confadjust \
 		--enable-shared=remain \
 		--enable-module=most \
+		--enable-module=auth_db \
+		--disable-module=auth_dbm \
 		--enable-module=ssl
 
 OPTIM=\
@@ -48,9 +57,8 @@ OPTIM=\
 -DDEFAULT_PATH=\\"/bin:/usr/bin:${PREFIX}/bin\\"
 
 .if defined(APACHE_PERF_TUNING) && ${APACHE_PERF_TUNING} == YES
-CONFIGURE_ARGS+= --disable-rule=STATUS
-OPTIM+= -DBUFFERED_LOGS
-CFLAGS+= -O6 -fomit-frame-pointer -fexpensive-optimizations
+OPTIM+= -DBUFFERED_LOGS -DFD_SETSIZE=1024
+CFLAGS+= -O6 -funroll-loops -fstrength-reduce -fomit-frame-pointer -fexpensive-optimizations -ffast-math
 .endif
 
 CONFIGURE_ENV=	OPTIM='${OPTIM}' SSL_BASE='SYSTEM' PATH="${PREFIX}/bin:${PATH}"

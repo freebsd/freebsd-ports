@@ -14,13 +14,13 @@ etc/apache/srm.conf.default
 etc/apache/ssl.crt/README.CRT
 etc/apache/ssl.crt/Makefile
 etc/apache/ssl.crt/ca-bundle.crt
-etc/apache/ssl.crt/snakeoil.crt
+etc/apache/ssl.crt/snakeoil-ca.crt
 etc/apache/ssl.crt/server.crt
 etc/apache/ssl.csr/README.CSR
 etc/apache/ssl.csr/server.csr
 etc/apache/ssl.key/README.KEY
+etc/apache/ssl.key/snakeoil-ca.key
 etc/apache/ssl.key/server.key
-etc/apache/ssl.key/snakeoil.key
 etc/rc.d/apache.sh
 include/apache/alloc.h
 include/apache/ap.h
@@ -54,7 +54,7 @@ include/apache/util_md5.h
 include/apache/util_script.h
 include/apache/util_uri.h
 libexec/apache/mod_auth_anon.so
-libexec/apache/mod_auth_dbm.so
+libexec/apache/mod_auth_db.so
 libexec/apache/mod_cern_meta.so
 libexec/apache/mod_digest.so
 libexec/apache/mod_expires.so
