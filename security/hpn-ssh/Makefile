@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openssh
-PORTREVISION=	1
+PORTREVISION=	2
 PORTVERSION=	3.2.3p1
 CATEGORIES=	security ipv6
 MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/ \
@@ -34,6 +34,10 @@ CONFIGURE_ARGS+=	--with-pam
 
 .if exists(/usr/include/tcpd.h)
 CONFIGURE_ARGS+=	--with-tcp-wrappers
+.endif
+
+.if !defined(ENABLE_SUID_SSH)
+CONFIGURE_ARGS+=	--disable-suid-ssh
 .endif
 
 .if defined(OPENSSH_OVERWRITE_BASE)
