@@ -67,6 +67,7 @@
     SUBDIR += leim20
     SUBDIR += lpe
     SUBDIR += manedit
+    SUBDIR += mg
     SUBDIR += moleskine
     SUBDIR += mp
     SUBDIR += muggy

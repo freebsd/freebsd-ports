@@ -1,0 +1,4 @@
+bin/mg
+share/doc/mg/README
+share/doc/mg/tutorial
+@dirrm share/doc/mg
