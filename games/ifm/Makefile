@@ -26,9 +26,15 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	WISH=${LOCALBASE}/bin/wish8.4
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502112
+BROKEN=		Install fails
+.endif
+
 post-install:
 	install-info ${PREFIX}/info/ifm.info ${PREFIX}/info/dir
 	install-info ${PREFIX}/info/scr2ifm.info ${PREFIX}/info/dir
 	install-info ${PREFIX}/info/tkifm.info ${PREFIX}/info/dir
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
