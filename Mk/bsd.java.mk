@@ -41,6 +41,13 @@ Java_Include_MAINTAINER=	znerd@FreeBSD.org
 #
 # USE_JIKES			Whether the port should or should not use jikes(1) to build.
 #
+# USE_ANT			Should be defined when the port uses Apache Ant. Ant is thus
+#					considered to be the sub-make command. When no 'do-build'
+#					target is defined by the port, a default one will be set
+#					that simply runs Ant according to MAKE_ENV, MAKE_ARGS and
+#					ALL_TARGETS. Read the documentation in bsd.port.mk for more
+#					information.
+#
 #-------------------------------------------------------------------------------
 # Variables defined for the port:
 #
@@ -381,6 +388,11 @@ JAVA_PORT_OS_DESCRIPTION:=		${JAVA_PORT_OS:S/^/\${_JAVA_OS_/:S/$/}/}
 # Stage 6: Add any dependencies if necessary
 #
 
+# Ant Support: USE_ANT --> JAVA_BUILD=jdk
+.		if defined(USE_ANT)
+JAVA_BUILD=		jdk
+.		endif
+
 # Add the JDK port to the dependencies
 DEPEND_JAVA=	${JAVA}:${PORTSDIR}/${JAVA_PORT}
 # When nothing is set, assume JAVA_BUILD=jdk and JAVA_RUN=jre
@@ -406,6 +418,18 @@ BUILD_DEPENDS+=		${DEPEND_JAVA}
 RUN_DEPENDS+=		${DEPEND_JAVA}
 .		endif
 
+# Ant support: default do-build target
+.		if defined(USE_ANT)
+ANT?=				${LOCALBASE}/bin/ant
+MAKE_ENV+=			JAVA_HOME=${JAVA_HOME}
+BUILD_DEPENDS+=		${ANT}:${PORTSDIR}/devel/apache-ant
+ALL_TARGET?=
+.			if !target(do-build)
+do-build:
+					@(cd ${BUILD_WRKSRC}; \
+						${SETENV} ${MAKE_ENV} ${ANT} ${MAKE_ARGS} ${ALL_TARGET})
+.			endif
+.		endif
 
 #-----------------------------------------------------------------------------
 # Stage 7: Define all settings for the port to use
