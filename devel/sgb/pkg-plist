@@ -1,0 +1,35 @@
+include/gb_flip.h
+include/gb_save.h
+include/gb_dijk.h
+include/gb_words.h
+include/gb_roget.h
+include/gb_rand.h
+include/gb_raman.h
+include/gb_plane.h
+include/gb_miles.h
+include/gb_lisa.h
+include/gb_gates.h
+include/gb_games.h
+include/gb_econ.h
+include/gb_books.h
+include/gb_basic.h
+include/gb_sort.h
+include/gb_io.h
+include/gb_graph.h
+include/Makefile
+lib/libgb.a
+lib/cweb/gb_types.w
+lib/cweb/boilerplate.w
+lib/sgb/anna.dat
+lib/sgb/david.dat
+lib/sgb/econ.dat
+lib/sgb/games.dat
+lib/sgb/homer.dat
+lib/sgb/huck.dat
+lib/sgb/jean.dat
+lib/sgb/lisa.dat
+lib/sgb/miles.dat
+lib/sgb/roget.dat
+lib/sgb/words.dat
+@dirrm lib/cweb
+@dirrm lib/sgb

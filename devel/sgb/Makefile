@@ -1,0 +1,23 @@
+# New ports collection makefile for:    sgb
+# Date created:         2003-02-05
+# Whom:			Gerald Pfeifer <gerald@freebsd.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	sgb
+PORTVERSION=	20020425
+CATEGORIES=	devel
+MASTER_SITES=	ftp://labrea.stanford.edu/pub/sgb/
+DISTNAME=	sgb
+
+MAINTAINER=	gerald@FreeBSD.org
+COMMENT=	The Stanford GraphBase: A Platform for Combinatorial Computing
+
+BUILD_DEPENDS=	ctangle:${PORTSDIR}/devel/cweb
+
+USE_REINPLACE=	yes
+NO_WRKSUBDIR=	yes
+ALL_TARGET=	lib tests
+
+.include <bsd.port.mk>
