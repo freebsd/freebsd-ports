@@ -32,8 +32,45 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="85e19dff-e606-11d8-9b0a-000347a4fa7d">
+    <topic>ripMIME -- decoding bug allowing content filter bypass</topic>
+    <affects>
+      <package>
+        <name>ripmime</name>
+        <range><lt>1.3.2.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ripMIME may prematurely terminate decoding Base64 encoded
+	  messages when it encounters multiple blank lines or other
+	  non-standard Base64 constructs.  Virus scanning and content
+	  filtering tools that use ripMIME may therefore be
+	  bypassed.</p>
+	<p>The ripMIME CHANGELOG file says:</p>
+	<blockquote cite="http://www.pldaniels.com/ripmime/CHANGELOG">
+          <p>There's viruses going around exploiting the ability to
+            hide the majority of their data in an attachment by using
+            blank lines and other tricks to make scanning systems
+	    prematurely terminate their base64 decoding.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>10848</bid>
+      <url>http://www.osvdb.org/8287</url>
+      <url>http://www.pldaniels.com/ripmime/CHANGELOG</url>
+      <url>http://secunia.com/advisories/12201</url>
+      <url>http://xforce.iss.net/xforce/xfdb/16867</url>
+    </references>
+    <dates>
+      <discovery>2004-07-30</discovery>
+      <entry>2004-08-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1ecf4ca1-f7ad-11d8-96c9-00061bc2ad93">
-    <topic>moinmoin ACL group bypass (and lack thereof bypass)</topic>
+    <topic>moinmoin -- ACL group bypass</topic>
     <affects>
       <package>
         <name>moinmoin</name>
