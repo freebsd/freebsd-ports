@@ -8,10 +8,11 @@
 
 PORTNAME=	kdelibs
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
+PKGNAMESUFFIX?=	# empty
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
@@ -23,7 +24,6 @@ LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 		art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl2 \
 		artsc.0:${PORTSDIR}/audio/arts \
 		aspell:${PORTSDIR}/textproc/aspell \
-		cups.2:${PORTSDIR}/print/cups-base \
 		fam.0:${PORTSDIR}/devel/fam \
 		idn:${PORTSDIR}/devel/libidn \
 		jasper:${PORTSDIR}/graphics/jasper \
@@ -34,7 +34,12 @@ LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \
 RUN_DEPENDS=	${FONTSCALE}:${X_FONTS_TTF_PORT} \
 		${FONTENCOD}:${X_FONTS_ENCODINGS_PORT}
 
-CONFLICTS=	kdebase-3.[0-1] kdebase-3.0.* kdebase-3.1.* kdepim-3.2.*
+.if ${PKGNAMESUFFIX} == -nocups
+CONFLICTS+=	kdebase-3.[0-1] kdebase-3.0.* kdebase-3.1.* kdepim-3.2.*
+.else
+CONFLICTS+=	kdebase-3.[0-1] kdebase-3.0.* kdebase-3.1.* kdelibs-nocups-[0-9]* kdepim-3.2.*
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+.endif
 
 USE_GETTEXT=	yes
 USE_QT_VER=	3
@@ -70,8 +75,7 @@ LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif # !exists(/usr/bin/bzip2)
 
 pre-configure:
-	${REINPLACE_CMD} "s, kspell,,g" ${WRKSRC}/doc/Makefile.in
-	${REINPLACE_CMD} "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/kdecore/kidna.cpp
+	${REINPLACE_CMD} "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/kdeprint/cups/kmcupsmanager.cpp
 
 post-configure:
 	${TOUCH} ${WRKSRC}/dcop/dcop-path.h.in
