@@ -1,4 +1,3 @@
-@cwd ${PREFIX}
 bin/jless
 bin/jlesskey
 share/jless.hlp
