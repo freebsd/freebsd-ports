@@ -91,7 +91,9 @@ case $retval in
 	;;
 esac
 
-echo $choice | tr ' ' '\012' | tr -d \" > ${WRKDIR}/voices.conf
+echo $choice | tr ' ' '\012' | tr -d \" | \
+	awk -F\- '{ print $0 ":" $1 }' | sed -e 's/\.zip$//' \
+	> ${WRKDIR}/voices.conf
 cut -c1-3 < ${WRKDIR}/voices.conf > ${WRKDIR}/fetchdirs.conf
 
 echo "* Your choices are saved.  You must run the \"make\" command again to"
