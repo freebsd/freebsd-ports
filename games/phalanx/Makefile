@@ -23,6 +23,10 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} ${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 ALL_TARGET=	# empty
 MAKEFILE=	makefile
 
+PORTDOCS=	README
+PLIST_FILES=	bin/phalanx %%DATADIR%%/pbook.phalanx %%DATADIR%%/sbook.phalanx
+PLIST_DIRS=	%%DATADIR%%
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/phalanx ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
