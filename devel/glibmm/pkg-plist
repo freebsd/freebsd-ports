@@ -23,6 +23,9 @@ include/glibmm-%%API_VERSION%%/glibmm/miscutils.h
 include/glibmm-%%API_VERSION%%/glibmm/module.h
 include/glibmm-%%API_VERSION%%/glibmm/object.h
 include/glibmm-%%API_VERSION%%/glibmm/objectbase.h
+include/glibmm-%%API_VERSION%%/glibmm/optioncontext.h
+include/glibmm-%%API_VERSION%%/glibmm/optionentry.h
+include/glibmm-%%API_VERSION%%/glibmm/optiongroup.h
 include/glibmm-%%API_VERSION%%/glibmm/pattern.h
 include/glibmm-%%API_VERSION%%/glibmm/private/convert_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/date_p.h
@@ -32,6 +35,9 @@ include/glibmm-%%API_VERSION%%/glibmm/private/iochannel_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/markup_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/module_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/object_p.h
+include/glibmm-%%API_VERSION%%/glibmm/private/optioncontext_p.h
+include/glibmm-%%API_VERSION%%/glibmm/private/optionentry_p.h
+include/glibmm-%%API_VERSION%%/glibmm/private/optiongroup_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/shell_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/spawn_p.h
 include/glibmm-%%API_VERSION%%/glibmm/private/thread_p.h
@@ -64,7 +70,7 @@ include/glibmm-%%API_VERSION%%/glibmm/wrap.h
 include/glibmm-%%API_VERSION%%/glibmm/wrap_init.h
 include/glibmm-%%API_VERSION%%/glibmm_generate_extra_defs/generate_extra_defs.h
 lib/glibmm-%%API_VERSION%%/include/glibmmconfig.h
-%%PORTDOCS%%lib/glibmm-%%API_VERSION%%/proc/beautify_docs.pl
+lib/glibmm-%%API_VERSION%%/proc/beautify_docs.pl
 lib/glibmm-%%API_VERSION%%/proc/generate_wrap_init.pl
 lib/glibmm-%%API_VERSION%%/proc/gmmproc
 lib/glibmm-%%API_VERSION%%/proc/m4/base.m4
@@ -196,6 +202,17 @@ share/aclocal/glibmm_check_perl.m4
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1ObjectBase.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1ObjectBase__inherit__graph.png
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1Object__inherit__graph.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1OptionContext-members.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1OptionContext.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1OptionEntry-members.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1OptionEntry.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1OptionError-members.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1OptionError.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1OptionError__inherit__graph.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1OptionGroup-members.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1OptionGroup.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1OptionGroup_1_1CppOptionEntry-members.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1OptionGroup_1_1CppOptionEntry.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1PatternSpec-members.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1PatternSpec.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classGlib_1_1PollFD-members.html
@@ -397,11 +414,20 @@ share/aclocal/glibmm_check_perl.m4
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classes.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classsigc_1_1trackable.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classsigc_1_1trackable__inherit__graph.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classstd_1_1basic__filebuf.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classstd_1_1basic__filebuf__inherit__graph.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classstd_1_1char__traits.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/classstd_1_1char__traits__inherit__graph.png
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/containerhandle__shared_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/containers_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/convert_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/date_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/debug_8h.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/dir_000000.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/dir_000000_dep.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/dir_000001.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/dir_000001_dep.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/dirs.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/dispatcher_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/doxygen.css
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/doxygen.png
@@ -420,12 +446,17 @@ share/aclocal/glibmm_check_perl.m4
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/functions_vars.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/globals.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/globals_defs.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/globals_enum.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/globals_eval.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/globals_func.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/globals_type.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/graph_legend.dot
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/graph_legend.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/graph_legend.png
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/group__CharsetConv.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/group__ContHandles.dot
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/group__ContHandles.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/group__ContHelpers.dot
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/group__ContHelpers.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/group__FileUtils.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/group__MainLoop.html
@@ -497,9 +528,43 @@ share/aclocal/glibmm_check_perl.m4
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__52.png
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__53.png
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__54.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__55.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__56.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__57.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__58.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__59.png
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__6.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__60.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__61.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__62.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__63.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__64.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__65.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__66.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__67.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__68.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__69.png
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__7.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__70.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__71.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__72.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__73.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__74.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__75.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__76.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__77.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__78.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__79.png
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__8.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__80.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__81.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__82.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__83.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__84.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__85.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__86.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__87.png
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__88.png
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherit__graph__9.png
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/inherits.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/init_8h.html
@@ -524,6 +589,9 @@ share/aclocal/glibmm_check_perl.m4
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/namespaces.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/object_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/objectbase_8h.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/optioncontext_8h.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/optionentry_8h.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/optiongroup_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/pattern_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/property_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/propertyproxy_8h.html
@@ -567,13 +635,19 @@ share/aclocal/glibmm_check_perl.m4
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/value__basictypes_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/value__custom_8h.html
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/docs/reference/html/wrap_8h.html
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/examples/iochannel_stream/fdstream.cc
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/examples/iochannel_stream/fdstream.h
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/examples/iochannel_stream/main.cc
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/examples/markup/parser.cc
+%%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/examples/options/main.cc
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/examples/thread/dispatcher.cc
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/examples/thread/dispatcher2.cc
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/examples/thread/thread.cc
 %%PORTDOCS%%share/doc/glibmm-%%API_VERSION%%/examples/thread/threadpool.cc
 %%PORTDOCS%%@dirrm share/doc/glibmm-%%API_VERSION%%/examples/thread
+%%PORTDOCS%%@dirrm share/doc/glibmm-%%API_VERSION%%/examples/options
 %%PORTDOCS%%@dirrm share/doc/glibmm-%%API_VERSION%%/examples/markup
+%%PORTDOCS%%@dirrm share/doc/glibmm-%%API_VERSION%%/examples/iochannel_stream
 %%PORTDOCS%%@dirrm share/doc/glibmm-%%API_VERSION%%/examples
 %%PORTDOCS%%@dirrm share/doc/glibmm-%%API_VERSION%%/docs/reference/html
 %%PORTDOCS%%@dirrm share/doc/glibmm-%%API_VERSION%%/docs/reference
