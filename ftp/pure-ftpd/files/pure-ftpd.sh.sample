@@ -16,6 +16,8 @@
 name=pureftpd
 rcvar=`set_rcvar`
 
+load_rc_config $name
+
 command=%%PREFIX%%/sbin/pure-config.pl
 pureftpd_config=${pureftpd_config:-"%%PREFIX%%/etc/pure-ftpd.conf"}
 required_files=${pureftpd_config}
@@ -25,5 +27,4 @@ procname=pure-ftpd
 pureftpd_enable=${pureftpd_enable:-"NO"}
 command_args=${pureftpd_config}
 
-load_rc_config $name
 run_rc_command "$1"
