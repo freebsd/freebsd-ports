@@ -7,11 +7,9 @@ PATH=/bin:/usr/sbin
 DB_DIR=${PKG_PREFIX}/pgsql
 
 backupwarning() { echo "
-NOTICE: unlike most minor versions, this upgrade from 7.4.1 to 7.4.2
-*does require* some updates to the pg_* system tables.  Full
-instructions for how to do this are included in the full HISTORY file.
-
-DO NOT UPGRADE WITHOUT READING THESE INSTRUCTIONS.
+NOTICE: unlike most minor versions, upgrading from 7.4.1 to 7.4.x
+*recommends* some updates to the pg_* system tables.  Full
+instructions for how to do this are included in the HISTORY file.
 
   =========== BACKUP YOUR DATA! =============
   As always, backup your data before
