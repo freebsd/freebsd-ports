@@ -3,7 +3,7 @@
 # Date created:		27 Jan 1998
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/02/28 03:38:32 itojun Exp $
 #
 
 DISTNAME=	siag-2.65
@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.edu.stockholm.se/pub/siag/
 
 MAINTAINER=	itojun@itojun.org
 
+BROKEN=		fetch
 USE_X11=	yes
 WRKSRC=		${WRKDIR}/siag
 CONF=	siag/data.scm siag/find.scm siag/keytable.scm siag/menu.scm \
