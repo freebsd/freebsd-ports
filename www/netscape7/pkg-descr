@@ -9,5 +9,7 @@ ports/net/aim).  Only the U.S. English locale is installed.  Plugins
 do not work.  Messenger can be started by going to a mailto: or
 news: URL.
 
+WWW: http://browsers.netscape.com/browsers/6/
+
 Trevor Johnson
 trevor@FreeBSD.org
