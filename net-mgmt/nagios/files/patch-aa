@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sun Oct 29 14:43:54 2000
-+++ Makefile.in	Fri Jan 12 14:54:45 2001
+--- Makefile.in.orig	Thu Mar  1 04:49:19 2001
++++ Makefile.in	Thu Mar  1 21:59:03 2001
 @@ -27,7 +27,7 @@
  INSTALL_OPTS=@INSTALL_OPTS@
  COMMAND_OPTS=@COMMAND_OPTS@
@@ -7,10 +7,10 @@
 -INIT_OPTS=-o root -g root
 +INIT_OPTS=-o root -g wheel
  CGICFGDIR=$(CGIDIR)
+ PERLDIR=@PERLDIR@
  
- CGIEXTRAS=@CGIEXTRAS@
-@@ -109,7 +109,7 @@
- 	$(INSTALL) -m 774 $(INIT_OPTS) init-script $(DESTDIR)$(INIT_DIR)/netsaint
+@@ -108,7 +108,7 @@
+ install-init: install-daemoninit
  
  install-daemoninit:
 -	$(INSTALL) -m 774 $(INIT_OPTS) daemon-init $(DESTDIR)$(INIT_DIR)/netsaint

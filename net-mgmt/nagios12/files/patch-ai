@@ -1,22 +1,27 @@
---- init-script.in	Fri Apr  7 11:11:37 2000
-+++ init-script.in.new	Mon Jun 12 19:28:55 2000
-@@ -26,11 +26,8 @@
- #
-   
+--- daemon-init.in.orig	Sun Feb 18 22:33:21 2001
++++ daemon-init.in	Thu Mar  1 22:00:37 2001
+@@ -68,12 +68,9 @@
+ 
+ 
  # Source function library
 -# Solaris doesn't have an rc.d directory, so do a test first
--if [ -f /etc/rc.d/init.d/functions ]; then
--. /etc/rc.d/init.d/functions
--elif [ -f /etc/init.d/functions ]; then
--. /etc/init.d/functions
+-#if [ -f /etc/rc.d/init.d/functions ]; then
+-#. /etc/rc.d/init.d/functions
+-#elif [ -f /etc/init.d/functions ]; then
+-#. /etc/init.d/functions
+-#fi
 +if [ -f /usr/local/etc/netsaint/functions ]; then
 +. /usr/local/etc/netsaint/functions
- fi
++fi
  
  prefix=@prefix@
-@@ -92,4 +89,4 @@
-   
- # End of this script
-         
--        
+ exec_prefix=@exec_prefix@
+@@ -92,7 +89,7 @@
+ 
+ # Check that netsaint exists.
+ test -f $NetsaintBin || exit 0
+-
 +        
+ # Check that netsaint.cfg exists.
+ test -f $NetsaintCfg || exit 0
+           

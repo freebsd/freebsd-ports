@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	netsaint
-PORTVERSION=	0.0.6
-PORTREVISION=	1
+PORTVERSION=	0.0.7b2
 CATEGORIES=	net
 MASTER_SITES=	http://netsaint.sourceforge.net/download/
 

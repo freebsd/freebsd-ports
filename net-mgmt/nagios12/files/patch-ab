@@ -1,7 +1,7 @@
---- base/Makefile.in.orig	Sun Jan  7 21:53:15 2001
-+++ base/Makefile.in	Sun Jan  7 21:53:27 2001
-@@ -83,7 +83,6 @@
- 	rm -f *~
+--- base/Makefile.in.orig	Sun Feb 18 22:33:22 2001
++++ base/Makefile.in	Thu Mar  1 21:58:39 2001
+@@ -86,7 +86,6 @@
+ devclean: clean
  
  install:
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(BINDIR)
