@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	gnump3d
-PORTVERSION=	0.9.9.9.2
-PORTREVISION=	2
+PORTVERSION=	1.0.p1
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
+DISTNAME=	${PORTNAME}-1.0-pre1
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -48,11 +48,13 @@ post-patch:
 		 s|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/aclocal.m4
 # Avoid triggering automake
 	@${TOUCH} -r ${WRKSRC}/aclocal.m4.bak ${WRKSRC}/aclocal.m4
-	@${TOUCH} -r ${WRKSRC}/configure.in.orig ${WRKSRC}/configure.in
 
 pre-configure:
 .for dir in . mplib libltdl
 	@cd ${WRKSRC}/${dir} && ${LOCALBASE}/bin/autoconf
 .endfor
+
+post-install:
+	@${MKDIR} /var/log/gnump3d
 
 .include <bsd.port.mk>

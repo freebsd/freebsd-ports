@@ -1,20 +1,20 @@
 
 $FreeBSD$
 
---- scripts/Makefile.in.orig	Wed Aug 14 02:16:56 2002
-+++ scripts/Makefile.in	Wed Aug 14 02:18:25 2002
+--- scripts/Makefile.in.orig	Sun Aug 18 13:47:54 2002
++++ scripts/Makefile.in	Tue Aug 20 17:07:07 2002
 @@ -195,11 +195,9 @@
  
  
  install:
--	mkdir -p $(bindir)
--	cp gnump3d-config $(bindir)
--	cp gnump3d-top $(bindir)
--	chmod 755 $(bindir)/gnump3d-config
--	chmod 755 $(bindir)/gnump3d-top
+-	mkdir -p $(DESTDIR)$(bindir)
+-	cp gnump3d-config $(DESTDIR)$(bindir)
+-	cp gnump3d-top $(DESTDIR)$(bindir)
+-	chmod 755 $(DESTDIR)$(bindir)/gnump3d-config
+-	chmod 755 $(DESTDIR)$(bindir)/gnump3d-top
 +	$(mkinstalldirs) $(DESTDIR)$(bindir)
 +#	$(INSTALL_SCRIPT) gnump3d-config $(DESTDIR)$(bindir)
 +	$(INSTALL_SCRIPT) gnump3d-top $(DESTDIR)$(bindir)
  
  uninstall:
- 	rm -f $(bindir)/gnump3d-config
+ 	rm -f $(DESTDIR)$(bindir)/gnump3d-config
