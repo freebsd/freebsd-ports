@@ -53,5 +53,6 @@ share/icons/locolor/32x32/apps/anthem.xpm
 @dirrm share/apps/anthem/toolbar
 @dirrm share/apps/anthem
 @dirrm share/applnk/Multimedia
+@dirrm share/applnk
 @dirrm include/anthem/kde
 @dirrm include/anthem
