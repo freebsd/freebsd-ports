@@ -1,0 +1,27 @@
+--- Makefile.orig	Thu Jul 29 03:04:24 2004
++++ Makefile	Fri Jul 30 09:45:19 2004
+@@ -1,13 +1,10 @@
+-CC=         gcc
+-MAKE=       make
+ INSTALL=    install
+-PREFIX=     /usr/local
+ DATAPATH=   $(PREFIX)/share
+ LOCALEPATH= $(DATAPATH)/locale
+ DOCPATH=    $(DATAPATH)/doc
+ 
+-CFLAGS=		-Wall -O2 -I/usr/local/include -DDATAPATH="\"$(DATAPATH)\"" -DVERSION=\"$(VERSION)\"
+-LDFLAGS=	-L/usr/local/lib -lncurses -lpcre
++CFLAGS+=		-Wall -O2 -I$(LOCALBASE)/include -DDATAPATH="\"$(DATAPATH)\"" -DVERSION=\"$(VERSION)\"
++LDFLAGS=	-L$(LOCALBASE)/lib -lncurses -lpcre
+ 
+ OBJFILES=	main.o loadlog.o internals.o interface.o snowtk.o regexp.o filters.o setup.o
+ 
+@@ -27,7 +24,7 @@
+ 	sed s#DATAPATH#$(DATAPATH)# | sed s#VERSION#$(VERSION)# \
+ 	> doc/man/snowlog.1
+ 
+-install: install-bin install-data install-man install-doc
++install: install-bin install-man
+ 
+ install-bin: snowlog
+ 	if [ ! -d "$(PREFIX)/bin" ]; then \
