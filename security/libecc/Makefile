@@ -15,8 +15,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ Elliptic Curve Library
 
-USE_GCC=	3.1
+USE_GCC=	3.3
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 501103
+# Work around bsd.port.mk bug: Does not currently set up MAKE_ENV for gcc 3.2 and 3.3
+MAKE_ENV+=	CC="${CC}" CXX="${CXX}"
+.endif
+
+.include <bsd.port.post.mk>
