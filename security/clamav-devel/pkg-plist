@@ -1,10 +1,9 @@
-@exec mkdir -p share/clamav
 bin/clamscan
 bin/clamdscan
 bin/freshclam
 bin/sigtool
-etc/rc.d/clamav-clamd.sh.sample
-%%CLAMAV-MILTER:%%etc/rc.d/clamav-milter.sh.sample
+etc/rc.d/clamav-clamd%%RC_SUFX%%
+%%CLAMAV-MILTER:%%etc/rc.d/clamav-milter%%RC_SUFX%%
 %%CLAMAV-MILTER:%%sbin/clamav-milter
 sbin/clamd
 include/clamav.h
@@ -21,10 +20,3 @@ etc/clamav.conf.default
 @dirrm %%DATADIR%%
 @unexec rmdir /var/run/clamav 2>/dev/null || true
 @unexec rmdir /var/log/clamav 2>/dev/null || true
-@unexec echo ""
-@unexec echo "========================================================="
-@unexec echo " If you want to deinstall this package permanently then"
-@unexec echo "               \"rmuser -y %%CLAMAVUSER%%\" "
-@unexec echo " This will remove clamav's spool-directory and user "
-@unexec echo "========================================================="
-@unexec echo ""
