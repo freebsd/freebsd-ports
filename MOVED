@@ -312,3 +312,4 @@ x11-fm/jafm||2003-05-05|port was broken with no sign of a fix
 x11-servers/Xatm||2003-05-05|port was broken with no sign of a fix
 audio/gdcd||2003-05-05|port was broken with no sign of a fix
 devel/SN|devel/sourcenav|2003-05-07|renamed by upstream
+www/orion-devel|www/orion|2003-05-08|stable version caught up with development version
