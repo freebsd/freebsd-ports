@@ -1,9 +1,9 @@
 # New ports collection makefile for:	bjorb
-# Version required:	0.5.4p4
+# Version required:	0.5.5p1
 # Date created:		May 16, 1998
 # Whom:			issei@jp.FreeBSD.ORG
 #
-# $Id: Makefile,v 1.4 1999/01/10 14:11:17 dirk Exp $
+# $Id: Makefile,v 1.5 1999/03/26 08:51:51 dirk Exp $
 #
 
 DISTNAME=	bjorb-0.5.5p1
@@ -34,6 +34,7 @@ INSTALL_TARGET=		install certificate
 .endif
 
 HAS_CONFIGURE=	yes
+CFLAGS+=	-I${PREFIX}/include/openssl
 CONFIGURE_ARGS=	--with-ssltop=${PREFIX}
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 DOCSRC=		${WRKDIR}/${DISTNAME}
