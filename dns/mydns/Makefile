@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mydns
-PORTVERSION=	0.11.0
+PORTVERSION=	1.0.0
 CATEGORIES=	dns databases
 MASTER_SITES=	http://mydns.bboy.net/download/
 
@@ -16,8 +16,13 @@ COMMENT=	DNS server designed to utilize the MySQL database
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc
 USE_ICONV=	yes
-USE_LIBTOOL_VER=	13
+USE_LIBTOOL_VER=	15
 USE_BZIP2=	yes
+
+USE_RC_SUBR=	mydns.sh
+
+SUB_FILES=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 INFO=		mydns
 MAN5=		mydns.conf.5
@@ -68,8 +73,6 @@ pre-fetch:
 	@${ECHO} ""
 
 post-install:
-	@${SED} 's|%%%PREFIX%%%|${PREFIX}|g' < ${FILESDIR}/mydns.sh > ${WRKSRC}/mydns.sh
-	@${INSTALL_SCRIPT} ${WRKSRC}/mydns.sh ${PREFIX}/etc/rc.d/mydns.sh.sample
 	@install-info ${PREFIX}/info/mydns.info ${PREFIX}/info/dir
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/contrib
@@ -81,6 +84,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/contrib/README ${DOCSDIR}/contrib/
 .endif
 	@${PREFIX}/sbin/mydns --dump-config >${PREFIX}/etc/mydns.conf.sample
-	@${SED} -e 's,%%%PREFIX%%%,${PREFIX},g' ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: mydns
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following line to /etc/rc.conf to enable mydns:
+# mydns_enable (bool):	Set to "NO" by default.
+#			Set it to "YES" to enable MyDNS.
+#
+
+. %%RC_SUBR%%
+
+name="mydns"
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${mydns_enable="NO"}
+
+command="%%PREFIX%%/sbin/mydns"
+command_args="-b"
+pidfile="/var/run/mydns.pid"
+required_files="%%PREFIX%%/etc/mydns.conf"
+
+run_rc_command "$1"
