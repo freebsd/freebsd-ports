@@ -1,0 +1,2 @@
+@exec %%MKTEXLSR%%
+@unexec %%MKTEXLSR%%
