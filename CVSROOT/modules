@@ -447,6 +447,7 @@ asmixer		ports/audio/asmixer
 asmodem		ports/comms/asmodem
 asmon		ports/sysutils/asmon
 asmutils	ports/devel/asmutils
+asn1c		ports/lang/asn1c
 asp2php		ports/www/asp2php
 aspathtree	ports/net-mgmt/aspathtree
 aspell		ports/textproc/aspell
