@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	imap
-PORTVERSION=	2002
-PORTREVISION=	1
+PORTVERSION=	2002c1
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
 		ftp://ftp.nuug.no/pub/anders/distfiles/%SUBDIR%/ \
 		http://atreides.freenix.no/~anders/%SUBDIR%/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/mail/%SUBDIR%/
+MASTER_SITE_SUBDIR=	. old
 PKGNAMESUFFIX=	-uw
 DISTNAME=	imap-${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
@@ -55,10 +55,8 @@ MAKE_ARGS+=	WITH_ENTOURAGE_BRAIN_DAMAGE=yes
 
 .include <bsd.port.pre.mk>
 
-pre-extract:
-	@${SH} ${PKGREQ}.rev ${LOCALBASE}/include/c-client/portrevision.h ${PORTVERSION}
-
 pre-build:
+	@${SH} ${PKGREQ}.rev ${LOCALBASE}/include/c-client/portrevision.h ${PORTVERSION}
 .if !defined(WITHOUT_SSL)
 	@${SH} ${PKGREQ}.ssl ${LOCALBASE}/include/c-client/portrevision.h yes
 .else
