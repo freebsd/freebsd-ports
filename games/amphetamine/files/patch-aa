@@ -1,5 +1,8 @@
+
+$FreeBSD$
+
 --- Makefile.orig	Sun Feb 27 15:45:57 2000
-+++ Makefile	Mon Jun  5 14:43:04 2000
++++ Makefile	Mon Jan 22 23:14:32 2001
 @@ -5,14 +5,14 @@
  # User settings
  #===============
@@ -14,7 +17,7 @@
  
  USE_LIB_XPM := TRUE
 -SDL_HEADERS := `sdl-config --cflags`
-+SDL_HEADERS := `${LOCALBASE}/bin/sdl-config --cflags`
++SDL_HEADERS := `$(SDL_CONFIG) --cflags`
  # For framerate dislpay (doesn't work yet)
  USE_LIB_SGE := FLASE
  
@@ -47,7 +50,7 @@
  # linker
  
 -LOADLIBES := -lm `sdl-config --libs`
-+LOADLIBES := -lm `${LOCALBASE}/bin/sdl-config --libs`
++LOADLIBES := -lm `$(SDL_CONFIG) --libs`
  
  ifeq ($(USE_LIB_XPM),TRUE)
      LOADLIBES := $(LOADLIBES) -lXpm -lXt
@@ -56,7 +59,7 @@
  endif
  
 -LDFLAGS   = -L/usr/lib -L/usr/local/lib -L/usr/X11R6/lib 
-+LDFLAGS   = -L${X11BASE}/lib
++LDFLAGS   = -L$(X11BASE)/lib
  
  .PHONY : default
  default : amph
