@@ -205,6 +205,10 @@ main(int argc, char *argv[], char *envp[])
 			dynamic++;
 			continue;
 		}
+		if (ARGCMP("-shared")) {
+			dynamic++;
+			continue;
+		}
 
 		/*
 		 * Just link libstlport_icc* once when compiling the stlport
