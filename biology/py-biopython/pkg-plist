@@ -201,73 +201,74 @@
 %%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/ensembl_idl.py
 %%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/ensembl_idl.pyc
 %%PLIST_OMNIORB%%lib/%%PYTHON_VERSION%%/site-packages/BioCorba/ensembl_idl.pyo
-%%PORTDOCS%%%%PLIST_CORBA%%share/doc/py-biopython/BioCorba/IntroPythonClient.pdf
-%%PORTDOCS%%%%PLIST_CORBA%%share/doc/py-biopython/BioCorba/IntroPythonClient.tex
-%%PORTDOCS%%%%PLIST_CORBA%%share/doc/py-biopython/BioCorba/README.pdf
-%%PORTDOCS%%%%PLIST_CORBA%%share/doc/py-biopython/BioCorba/README.tex
-%%PORTDOCS%%%%PLIST_CORBA%%share/doc/py-biopython/BioCorba/biocorbahowto.pdf
-%%PORTDOCS%%%%PLIST_CORBA%%share/doc/py-biopython/BioCorba/biocorbahowto.tex
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/IntroClient/MyFirstClient/messenger/__init__.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/IntroClient/MyFirstClient/messenger__POA/__init__.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/IntroClient/MyFirstClient/secret_message_client.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/IntroClient/MyFirstClient/secret_message_idl.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/IntroClient/MySecondClient/biosequence_client.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/IntroClient/MySecondClient/biosequence_idl.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/IntroClient/MySecondClient/servers/__init__.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/IntroClient/MySecondClient/servers__POA/__init__.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/IntroClient/MyThirdClient/idl_demo/__init__.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/IntroClient/MyThirdClient/idl_demo__POA/__init__.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/IntroClient/MyThirdClient/idl_demo_client.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/IntroClient/MyThirdClient/idl_demo_idl.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/Scripts/bioenv_server.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/a_drought.fasta
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/a_drought.gb
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/embl_biocorba.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/fasta_bioenv.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/fasta_biopy.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/fasta_pseqit.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/fasta_server.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/gb_bioenv.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/gbclient.py
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/gbsrv.pl
-%%PORTDOCS%%%%PLIST_CORBA%%share/examples/py-biopython/BioCorba/genbank_db_server.py
-%%PORTDOCS%%share/doc/py-biopython/Blast.txt
-%%PORTDOCS%%share/doc/py-biopython/Enzyme.txt
-%%PORTDOCS%%share/doc/py-biopython/Fasta.txt
-%%PORTDOCS%%share/doc/py-biopython/Medline.txt
-%%PORTDOCS%%share/doc/py-biopython/Parser.txt
-%%PORTDOCS%%share/doc/py-biopython/Prosite.txt
-%%PORTDOCS%%share/doc/py-biopython/References.txt
-%%PORTDOCS%%share/doc/py-biopython/SCOP.txt
-%%PORTDOCS%%share/doc/py-biopython/SwissProt.txt
-%%PORTDOCS%%share/doc/py-biopython/Tutorial.tex
-%%PORTDOCS%%share/doc/py-biopython/Tutorial.txt
-%%PORTDOCS%%share/doc/py-biopython/make_api_docs.py
-%%PORTDOCS%%share/examples/py-biopython/Scripts/SeqGui/SeqGui.py
-%%PORTDOCS%%share/examples/py-biopython/Scripts/query_pubmed.py
-%%PORTDOCS%%share/examples/py-biopython/Scripts/xbbtools/README
-%%PORTDOCS%%share/examples/py-biopython/Scripts/xbbtools/nextorf.py
-%%PORTDOCS%%share/examples/py-biopython/Scripts/xbbtools/test.fas
-%%PORTDOCS%%share/examples/py-biopython/Scripts/xbbtools/testrp.fas
-%%PORTDOCS%%share/examples/py-biopython/Scripts/xbbtools/xbb_blast.py
-%%PORTDOCS%%share/examples/py-biopython/Scripts/xbbtools/xbb_blastbg.py
-%%PORTDOCS%%share/examples/py-biopython/Scripts/xbbtools/xbb_io.py
-%%PORTDOCS%%share/examples/py-biopython/Scripts/xbbtools/xbb_sequence.py
-%%PORTDOCS%%share/examples/py-biopython/Scripts/xbbtools/xbb_translations.py
-%%PORTDOCS%%share/examples/py-biopython/Scripts/xbbtools/xbb_utils.py
-%%PORTDOCS%%share/examples/py-biopython/Scripts/xbbtools/xbb_widget.py
-%%PORTDOCS%%share/examples/py-biopython/Scripts/xbbtools/xbbtools.py
-%%PORTDOCS%%share/examples/py-biopython/clustal_run.py
-%%PORTDOCS%%share/examples/py-biopython/fasta_consumer.py
-%%PORTDOCS%%share/examples/py-biopython/fasta_dictionary.py
-%%PORTDOCS%%share/examples/py-biopython/fasta_iterator.py
-%%PORTDOCS%%share/examples/py-biopython/getgene.py
-%%PORTDOCS%%share/examples/py-biopython/local_blast.py
-%%PORTDOCS%%share/examples/py-biopython/make_subsmat.py
-%%PORTDOCS%%share/examples/py-biopython/pubmed_search.py
-%%PORTDOCS%%share/examples/py-biopython/query_entrez.py
-%%PORTDOCS%%share/examples/py-biopython/swissprot.py
-%%PORTDOCS%%share/examples/py-biopython/www_blast.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/IntroPythonClient.pdf
+%%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/IntroPythonClient.tex
+%%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/README.pdf
+%%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/README.tex
+%%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/biocorbahowto.pdf
+%%PORTDOCS%%%%PLIST_CORBA%%share/doc/biopython/BioCorba/biocorbahowto.tex
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/IntroClient/MyFirstClient/messenger/__init__.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/IntroClient/MyFirstClient/messenger__POA/__init__.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/IntroClient/MyFirstClient/secret_message_client.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/IntroClient/MyFirstClient/secret_message_idl.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/IntroClient/MySecondClient/biosequence_client.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/IntroClient/MySecondClient/biosequence_idl.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/IntroClient/MySecondClient/servers/__init__.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/IntroClient/MySecondClient/servers__POA/__init__.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/IntroClient/MyThirdClient/idl_demo/__init__.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/IntroClient/MyThirdClient/idl_demo__POA/__init__.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/IntroClient/MyThirdClient/idl_demo_client.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/IntroClient/MyThirdClient/idl_demo_idl.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/Scripts/bioenv_server.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/a_drought.fasta
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/a_drought.gb
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/embl_biocorba.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/fasta_bioenv.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/fasta_biopy.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/fasta_pseqit.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/fasta_server.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/gb_bioenv.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/gbclient.py
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/gbsrv.pl
+%%PORTDOCS%%%%PLIST_CORBA%%share/examples/biopython/BioCorba/genbank_db_server.py
+%%PORTDOCS%%share/doc/biopython/Blast.txt
+%%PORTDOCS%%share/doc/biopython/Enzyme.txt
+%%PORTDOCS%%share/doc/biopython/Fasta.txt
+%%PORTDOCS%%share/doc/biopython/KEGG.txt
+%%PORTDOCS%%share/doc/biopython/Medline.txt
+%%PORTDOCS%%share/doc/biopython/Parser.txt
+%%PORTDOCS%%share/doc/biopython/Prosite.txt
+%%PORTDOCS%%share/doc/biopython/References.txt
+%%PORTDOCS%%share/doc/biopython/SCOP.txt
+%%PORTDOCS%%share/doc/biopython/SwissProt.txt
+%%PORTDOCS%%share/doc/biopython/Tutorial.tex
+%%PORTDOCS%%share/doc/biopython/Tutorial.txt
+%%PORTDOCS%%share/doc/biopython/make_api_docs.py
+%%PORTDOCS%%share/examples/biopython/Scripts/SeqGui/SeqGui.py
+%%PORTDOCS%%share/examples/biopython/Scripts/query_pubmed.py
+%%PORTDOCS%%share/examples/biopython/Scripts/xbbtools/README
+%%PORTDOCS%%share/examples/biopython/Scripts/xbbtools/nextorf.py
+%%PORTDOCS%%share/examples/biopython/Scripts/xbbtools/test.fas
+%%PORTDOCS%%share/examples/biopython/Scripts/xbbtools/testrp.fas
+%%PORTDOCS%%share/examples/biopython/Scripts/xbbtools/xbb_blast.py
+%%PORTDOCS%%share/examples/biopython/Scripts/xbbtools/xbb_blastbg.py
+%%PORTDOCS%%share/examples/biopython/Scripts/xbbtools/xbb_io.py
+%%PORTDOCS%%share/examples/biopython/Scripts/xbbtools/xbb_sequence.py
+%%PORTDOCS%%share/examples/biopython/Scripts/xbbtools/xbb_translations.py
+%%PORTDOCS%%share/examples/biopython/Scripts/xbbtools/xbb_utils.py
+%%PORTDOCS%%share/examples/biopython/Scripts/xbbtools/xbb_widget.py
+%%PORTDOCS%%share/examples/biopython/Scripts/xbbtools/xbbtools.py
+%%PORTDOCS%%share/examples/biopython/clustal_run.py
+%%PORTDOCS%%share/examples/biopython/fasta_consumer.py
+%%PORTDOCS%%share/examples/biopython/fasta_dictionary.py
+%%PORTDOCS%%share/examples/biopython/fasta_iterator.py
+%%PORTDOCS%%share/examples/biopython/getgene.py
+%%PORTDOCS%%share/examples/biopython/local_blast.py
+%%PORTDOCS%%share/examples/biopython/make_subsmat.py
+%%PORTDOCS%%share/examples/biopython/pubmed_search.py
+%%PORTDOCS%%share/examples/biopython/query_entrez.py
+%%PORTDOCS%%share/examples/biopython/swissprot.py
+%%PORTDOCS%%share/examples/biopython/www_blast.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/AlignInfo.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/AlignInfo.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/AlignInfo.pyo
@@ -280,6 +281,15 @@ lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/Generic.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/fastpairwise.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/fastpairwise.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/fastpairwise.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/pairwise.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/pairwise.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/pairwise.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/support.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/support.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Align/support.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Alphabet/IUPAC.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Alphabet/IUPAC.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Alphabet/IUPAC.pyo
@@ -358,6 +368,24 @@ lib/%%PYTHON_VERSION%%/site-packages/Bio/Gobase/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Index.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Index.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Index.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/InterPro/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/InterPro/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/InterPro/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Compound/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Compound/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Compound/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Compound/compound_format.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Compound/compound_format.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Compound/compound_format.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Enzyme/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Enzyme/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Enzyme/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Enzyme/enzyme_format.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Enzyme/enzyme_format.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Enzyme/enzyme_format.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Kabat/Record.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Kabat/Record.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Kabat/Record.pyo
@@ -445,6 +473,9 @@ lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/SProt.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/SwissProt/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/MaxEntropy.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/MaxEntropy.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/MaxEntropy.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/NaiveBayes.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/NaiveBayes.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Classification/NaiveBayes.pyo
@@ -464,6 +495,9 @@ lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Clustering/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Clustering/kMeans.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Clustering/kMeans.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Clustering/kMeans.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Clustering/xkMeans.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Clustering/xkMeans.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/Clustering/xkMeans.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/MultiProc/Scheduler.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/MultiProc/Scheduler.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/Tools/MultiProc/Scheduler.pyo
@@ -521,6 +555,9 @@ lib/%%PYTHON_VERSION%%/site-packages/Bio/WWW/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/Bio/sequtils.py
+lib/%%PYTHON_VERSION%%/site-packages/Bio/sequtils.pyc
+lib/%%PYTHON_VERSION%%/site-packages/Bio/sequtils.pyo
 lib/%%PYTHON_VERSION%%/site-packages/Bio/utils.py
 lib/%%PYTHON_VERSION%%/site-packages/Bio/utils.pyc
 lib/%%PYTHON_VERSION%%/site-packages/Bio/utils.pyo
@@ -540,6 +577,10 @@ lib/%%PYTHON_VERSION%%/site-packages/Bio/utils.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/PDB
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Medline
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Kabat
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Enzyme
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG/Compound
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/KEGG
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/InterPro
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Gobase
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/GenBank
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Fasta
@@ -552,24 +593,24 @@ lib/%%PYTHON_VERSION%%/site-packages/Bio/utils.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Alphabet
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio/Align
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/Bio
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/py-biopython/BioCorba/Scripts
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/py-biopython/BioCorba/IntroClient/MyThirdClient/idl_demo__POA
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/py-biopython/BioCorba/IntroClient/MyThirdClient/idl_demo
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/py-biopython/BioCorba/IntroClient/MyThirdClient
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/py-biopython/BioCorba/IntroClient/MySecondClient/servers__POA
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/py-biopython/BioCorba/IntroClient/MySecondClient/servers
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/py-biopython/BioCorba/IntroClient/MySecondClient
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/py-biopython/BioCorba/IntroClient/MyFirstClient/messenger__POA
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/py-biopython/BioCorba/IntroClient/MyFirstClient/messenger
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/py-biopython/BioCorba/IntroClient/MyFirstClient
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/py-biopython/BioCorba/IntroClient
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/py-biopython/BioCorba
-%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/doc/py-biopython/BioCorba
-%%PORTDOCS%%@dirrm share/examples/py-biopython/Scripts/xbbtools
-%%PORTDOCS%%@dirrm share/examples/py-biopython/Scripts/SeqGui
-%%PORTDOCS%%@dirrm share/examples/py-biopython/Scripts
-%%PORTDOCS%%@dirrm share/examples/py-biopython
-%%PORTDOCS%%@dirrm share/doc/py-biopython
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba/Scripts
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba/IntroClient/MyThirdClient/idl_demo__POA
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba/IntroClient/MyThirdClient/idl_demo
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba/IntroClient/MyThirdClient
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba/IntroClient/MySecondClient/servers__POA
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba/IntroClient/MySecondClient/servers
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba/IntroClient/MySecondClient
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba/IntroClient/MyFirstClient/messenger__POA
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba/IntroClient/MyFirstClient/messenger
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba/IntroClient/MyFirstClient
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba/IntroClient
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/examples/biopython/BioCorba
+%%PORTDOCS%%%%PLIST_CORBA%%@dirrm share/doc/biopython/BioCorba
+%%PORTDOCS%%@dirrm share/examples/biopython/Scripts/xbbtools
+%%PORTDOCS%%@dirrm share/examples/biopython/Scripts/SeqGui
+%%PORTDOCS%%@dirrm share/examples/biopython/Scripts
+%%PORTDOCS%%@dirrm share/examples/biopython
+%%PORTDOCS%%@dirrm share/doc/biopython
 %%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/ensembl_skel
 %%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/biocorba_skel/seqcore_skel
 %%PLIST_FNORB%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/org_skel/biocorba_skel
@@ -597,3 +638,4 @@ lib/%%PYTHON_VERSION%%/site-packages/Bio/utils.pyo
 %%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Bio
 %%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba/Adapters
 %%PLIST_CORBA%%@dirrm lib/%%PYTHON_VERSION%%/site-packages/BioCorba
+
