@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${PORTVERSION}/linux-xpi
@@ -22,7 +21,6 @@ PATCHFILES=	linux-mozilla-${PORTVERSION}-generated-files.tar.gz
 
 MAINTAINER=	trevor@FreeBSD.org
 
-FORBIDDEN=	"see http://bugzilla.mozilla.org/show_bug.cgi?id=150339 "
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0.5.0:${PORTSDIR}/x11-toolkits/linux-gtk
 

@@ -17,10 +17,10 @@ Choose which components of Mozilla to download and install. \n\
 Press the space bar to toggle selections." -1 -1 7 \
 "deflenus"	"American English profile defaults (8 kB)"		ON \
 "inspector"	"DOM inspector (240 kB)"				ON \
-"mail"		"Mozilla Mail and News (1856 kB)"			ON \
-"psm"		"Personal Security Manager--recommended (784 kB)"	ON \
+"mail"		"Mozilla Mail and News (1824 kB)"			ON \
+"psm"		"Personal Security Manager--recommended (768 kB)"	ON \
 "talkback"	"sends crash logs to Mozilla staff (832 kB)"		ON \
-"venkman"	"JavaScript debugger (150 kB)"				ON \
+"venkman"	"JavaScript debugger (256 kB)"				ON \
 2>> /tmp/checklist.tmp.$$
 
 retval=$?
