@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	kphone
-PORTVERSION=	4.0.5
+PORTVERSION=	4.1.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.wirlab.net/kphone/
 
@@ -19,11 +19,12 @@ USE_OPENSSL=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	QTDIR="${QT_PREFIX}"
+CONFIGURE_ENV=	QTDIR="${QT_PREFIX}" CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,-O3,,g ; \
-		 s,-Wall,$$CFLAGS,g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|-O3||g ; \
+		 s|-Wall|${CFLAGS}|g;s|-L/usr/X11R6/lib64|${PTHREAD_LIBS}|g; \
+		 s|-lssl|-lssl -lcrypto|g" ${WRKSRC}/configure
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
 		's,make -C,$$(MAKE) -C,g ; \
 		 s,/apps/,/,g ; \
