@@ -4405,6 +4405,7 @@ mod_ticket	ports/www/mod_ticket
 mod_trigger	ports/www/mod_trigger
 mod_tsunami	ports/www/mod_tsunami
 mod_watch	ports/www/mod_watch
+mod_webapp-apache2	ports/www/mod_webapp-apache2
 mod_zap		ports/www/mod_zap
 mode-info	ports/editors/mode-info
 modload		src/sbin/modload
