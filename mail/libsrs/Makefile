@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.libsrs.org/files/
 DISTNAME=	${PORTNAME}.${PORTVERSION}eta
 
-MAINTAINER=	daniel@roe.ch
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sender Rewriting Scheme (SRS) library and client
 
 USE_BZIP2=	yes
