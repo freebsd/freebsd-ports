@@ -109,7 +109,7 @@ share/doc/ruby/readline/README
 @dirrm share/doc/ruby/md5
 @dirrm share/doc/ruby/pty
 @dirrm share/doc/ruby/readline
-@dirrm share/doc/ruby
+@unexec rmdir %D/share/doc/ruby 2>/dev/null || true
 share/examples/ruby/README
 share/examples/ruby/biorhythm.rb
 share/examples/ruby/cal.rb

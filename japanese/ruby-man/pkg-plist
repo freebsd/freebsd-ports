@@ -53,3 +53,4 @@ share/doc/ruby/ruby-man-%%RUBY_VER%%%%LANGSUFFIX%%/thread.html
 share/doc/ruby/ruby-man-%%RUBY_VER%%%%LANGSUFFIX%%/variable.html
 share/doc/ruby/ruby-man-%%RUBY_VER%%%%LANGSUFFIX%%/yacc.html
 @dirrm share/doc/ruby/ruby-man-%%RUBY_VER%%%%LANGSUFFIX%%
+@unexec rmdir %D/share/doc/ruby 2>/dev/null || true

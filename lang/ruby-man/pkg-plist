@@ -48,3 +48,4 @@ share/doc/ruby/ruby-man-%%RUBY_VER%%/thread.html
 share/doc/ruby/ruby-man-%%RUBY_VER%%/variable.html
 share/doc/ruby/ruby-man-%%RUBY_VER%%/yacc.html
 @dirrm share/doc/ruby/ruby-man-%%RUBY_VER%%
+@unexec rmdir %D/share/doc/ruby 2>/dev/null || true
