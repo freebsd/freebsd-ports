@@ -120,7 +120,6 @@ include/kwizard.h
 include/kwm.h
 include/kwmmapp.h
 include/mediatool.h
-include/nkf.h
 include/sections.h
 include/stl_headers.h
 include/xview.h
