@@ -1,63 +1,90 @@
---- pam_mysql.c.old	Sun Sep 24 02:26:17 2000
-+++ pam_mysql.c	Sun Sep 24 02:42:23 2000
-@@ -14,7 +14,6 @@
- #include <unistd.h>
- #include <syslog.h>
- #include <stdarg.h>
--#include <alloca.h>
- #include <string.h>
+--- pam_mysql.c.orig	Sun Sep 15 10:28:58 2002
++++ pam_mysql.c	Thu Feb 13 14:58:21 2003
+@@ -23,6 +23,7 @@
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>
++#include <time.h>
  
- #include <mysql/mysql.h>
-@@ -332,40 +331,40 @@
- 		}
- 		strcpy (junk, argv[i]);
- 		if ((strchr (junk, (int) '=') != NULL)) {
--			strncpy (mybuf, strtok (junk, "="), 255);
--			strncpy (myval, strtok (NULL, "="), 255);
-+			strlcpy (mybuf, strtok (junk, "="), 255);
-+			strlcpy (myval, strtok (NULL, "="), 255);
- 			free (junk);
- 			if (!strcasecmp ("host", mybuf)) {
--				strncpy (options.host, myval, 255);
-+				strlcpy (options.host, myval, 255);
- 				D (("host changed."));
- 			} else if (!strcasecmp ("where", mybuf)) {
- 				while ( (mj = strtok(NULL,"=")) != NULL )
- 				{
--					strcat(myval, "=");
--					strcat(myval, mj);
-+					strlcat(myval, "=", 255);
-+					strlcat(myval, mj, 255);
- 				}
--				strncpy (options.where, myval, 256);
-+				strlcpy (options.where, myval, 256);
- 				D (("where changed."));
- #ifdef DEBUG
- 				syslog(LOG_ERR, "pam_mysql: where now is %s", options.where);
- #endif
- 			} else if (!strcasecmp ("db", mybuf)) {
--				strncpy (options.database, myval, 16);
-+				strlcpy (options.database, myval, 16);
- 				D (("database changed."));
- 			} else if (!strcasecmp ("user", mybuf)) {
--				strncpy (options.dbuser, myval, 16);
-+				strlcpy (options.dbuser, myval, 16);
- 				D (("dbuser changed."));
- 			} else if (!strcasecmp ("passwd", mybuf)) {
--				strncpy (options.dbpasswd, myval, 16);
-+				strlcpy (options.dbpasswd, myval, 16);
- 				D (("dbpasswd changed."));
- 			} else if (!strcasecmp ("table", mybuf)) {
--				strncpy (options.table, myval, 16);
-+				strlcpy (options.table, myval, 16);
- 				D (("table changed."));
- 			} else if (!strcasecmp ("usercolumn", mybuf)) {
--				strncpy (options.usercolumn, myval, 16);
-+				strlcpy (options.usercolumn, myval, 16);
- 				D (("usercolumn changed."));
- 			} else if (!strcasecmp ("passwdcolumn", mybuf)) {
--				strncpy (options.passwdcolumn, myval, 16);
-+				strlcpy (options.passwdcolumn, myval, 16);
- 				D (("passwdcolumn changed."));
- 			} else if (!strcasecmp ("crypt", mybuf)) {
- 				if ((!strcmp (myval, "1")) ||
+ 
+ /* AFAIK, only FreeBSD has MD5Data() defined in md5.h
+@@ -54,7 +55,53 @@
+ #define DEBUG 
+ 
+ #include <security/pam_modules.h>
++#ifdef _OPENPAM
++#include <security/pam_appl.h>
++#else
+ #include <security/pam_misc.h>
++#endif
++
++#ifdef _OPENPAM
++/* some macros not defined in OpenPAM */
++
++/* Good policy to strike out passwords with some characters not just
++   free the memory */
++
++#define _pam_overwrite(x)        \
++do {                             \
++     register char *__xx__;      \
++     if ((__xx__=(x)))           \
++          while (*__xx__)        \
++               *__xx__++ = '\0'; \
++} while (0)
++
++/*
++ * Don't just free it, forget it too.
++ */
++
++#define _pam_drop(X) \
++do {                 \
++    if (X) {         \
++        free(X);     \
++        X=NULL;      \
++    }                \
++} while (0)
++
++#define _pam_drop_reply(/* struct pam_response * */ reply, /* int */ replies) \
++do {                                              \
++    int reply_i;                                  \
++                                                  \
++    for (reply_i=0; reply_i<replies; ++reply_i) { \
++	if (reply[reply_i].resp) {                \
++	    _pam_overwrite(reply[reply_i].resp);  \
++	    free(reply[reply_i].resp);            \
++	}                                         \
++    }                                             \
++    if (reply)                                    \
++	free(reply);                              \
++} while (0)
++
++#endif
+ 
+ struct optionstruct {
+ 	char host[257];
+@@ -620,7 +667,11 @@
+ 		retval = conv->conv(nargs,
+ 		                    (const struct pam_message **) message,
+ 		                    response, conv->appdata_ptr);
+-		if ((retval != PAM_SUCCESS) && (retval != PAM_CONV_AGAIN))
++		if ((retval != PAM_SUCCESS)
++#ifndef _OPENPAM
++			&& (retval != PAM_CONV_AGAIN)
++#endif
++		   )
+ 			syslog(LOG_DEBUG, "pam_mysql: conversation failure [%s]",
+ 			       pam_strerror(pamh, retval));
+ 	} else {
+@@ -827,8 +878,12 @@
+ 	if (retval != PAM_SUCCESS) {
+ 		if (resp != NULL)
+ 			_pam_drop_reply(resp,i);
++#ifndef _OPENPAM
+ 		return ((retval == PAM_CONV_AGAIN)
+ 		        ? PAM_INCOMPLETE : PAM_AUTHINFO_UNAVAIL);
++#else
++		return PAM_AUTHINFO_UNAVAIL;
++#endif
+ 	}
+ 
+ 	/* we have a password so set AUTHTOK
