@@ -62,7 +62,6 @@ share/apps/kbearsitemanager/kpartplugins/wincommanderimportfilterui.rc
 share/apps/konqiconview/kpartplugins/kbearsitemanagerui.rc
 share/apps/konqlistview/kpartplugins/kbearsitemanagerui.rc
 @dirrm include/kbear
-@dirrm share/apps/konqiconview/kpartplugins
 @dirrm share/apps/kbearsitemanager/kpartplugins
 @dirrm share/apps/kbearsitemanager
 @dirrm share/apps/kbearfilesyspart
