@@ -180,6 +180,7 @@
     SUBDIR += ipsc
     SUBDIR += jailadmin
     SUBDIR += jailer
+    SUBDIR += jailuser
     SUBDIR += jailutils
     SUBDIR += jdiskreport
     SUBDIR += jkill

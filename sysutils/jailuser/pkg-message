@@ -1,0 +1,5 @@
+
+#############################################################################
+  Installed additional documentation in: PREFIX/share/doc/jail
+  Copy PREFIX/etc/jail.conf.sample to PREFIX/etc/jail.conf
+#############################################################################

@@ -1,0 +1,9 @@
+Jail Chroot Project is an attempt of write a tool that builds a chrooted 
+environment. The main goal of Jail is to be as simple as possible, and 
+highly portable. The most difficult step when building a chrooted environment 
+is to set up the right libraries.
+
+ WWW: http://sourceforge.net/projects/jail/
+
+- bugghy
+bugghy@SAFe-mail.net
