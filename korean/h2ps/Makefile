@@ -3,7 +3,7 @@
 # Date created:         20 May 1997
 # Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.1.1.1 1997/03/25 10:47:24 obrien Exp $
+# $Id: Makefile,v 1.2 1997/09/22 16:21:39 max Exp $
 #
 
 DISTNAME=	h2ps-1.0
@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://cglab.snu.ac.kr/pub/hangul/n3f/applications/
 
 MAINTAINER=	junker@jazz.snu.ac.kr
 
+MANUAL_PACKAGE_BUILD=   PAPERSIZE has to be set to letter a4
 MAKE_FLAGS?=	WIDTH=${WIDTH} HEIGHT=${HEIGHT} A4_PAPERSIZE=${A4_PAPERSIZE} -f
 MAN1=		h2ps.1
 
