@@ -41,7 +41,7 @@ start_precmd()
 {
   if [ x"$slapd_owner" != x ]; then
     chown "${slapd_owner}" "%%LDAP_RUN_DIR%%"
-    chown -RL "${slapd_owner}" "%%LOCALSTATEDIR%%/openldap-ldbm"
+    chown -RL "${slapd_owner}" "%%LOCALSTATEDIR%%/openldap-data"
     chown "${slapd_owner}" "%%PREFIX%%/etc/openldap/slapd.conf"
 
     slapd_ownername=`expr //"$slapd_owner" : //'\([^:]*\)'`
