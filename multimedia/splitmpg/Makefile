@@ -8,7 +8,7 @@
 PORTNAME=	splitmpg
 PORTVERSION=	1.0
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://metalab.unc.edu/pub/multimedia/utilities/ms-windows/mpegplay/
+MASTER_SITES=	ftp://ibiblio.org/pub/multimedia/utilities/ms-windows/mpegplay/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
