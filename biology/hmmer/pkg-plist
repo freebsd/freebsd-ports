@@ -5,12 +5,4 @@ bin/hmmconvert
 bin/hmmemit
 bin/hmmpfam
 bin/hmmsearch
-man/man1/hmmalign.1.gz
-man/man1/hmmbuild.1.gz
-man/man1/hmmcalibrate.1.gz
-man/man1/hmmconvert.1.gz
-man/man1/hmmemit.1.gz
-man/man1/hmmer.1.gz
-man/man1/hmmpfam.1.gz
-man/man1/hmmsearch.1.gz
 share/doc/hmmer/Userguide.ps

@@ -91,15 +91,6 @@ share/examples/FElt/nl_range.flt
 share/examples/FElt/truss_nl.flt
 share/examples/FElt/beam3d_a.flt
 @dirrm share/examples/FElt
-man/man1/burlap.1.gz
-man/man1/corduroy.1.gz
-man/man1/felt.1.gz
-man/man1/patchwork.1.gz
-man/man1/velvet.1.gz
-man/man1/yardstick.1.gz
-man/man3/Drawing.3.gz
-man/man4/corduroy.4.gz
-man/man4/felt.4.gz
 share/felt/beam.defaults
 share/felt/material.defaults
 share/felt/truss.defaults

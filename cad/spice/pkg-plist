@@ -30,11 +30,6 @@ share/spice3/scripts/setplot
 share/spice3/scripts/spinit
 share/spice3/mfbcap
 share/spice3/news
-man/man5/mfbcap.5.gz
-man/man1/sconvert.1.gz
-man/man1/nutmeg.1.gz
-man/man1/spice.1.gz
-man/man3/mfb.3.gz
 @dirrm share/examples/spice3
 @dirrm share/spice3/helpdir
 @dirrm share/spice3/scripts
