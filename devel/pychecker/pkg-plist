@@ -1,4 +1,5 @@
 bin/pychecker.sh
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/COPYRIGHT
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/CodeChecks.py
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/CodeChecks.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/CodeChecks.pyo
@@ -8,9 +9,14 @@ lib/%%PYTHON_VERSION%%/site-packages/pychecker/Config.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/OP.py
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/OP.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/OP.pyo
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/OptionTypes.py
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/OptionTypes.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/OptionTypes.pyo
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/README
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/Stack.py
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/Stack.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/Stack.pyo
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/VERSION
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/Warning.py
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/Warning.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/Warning.pyo
@@ -26,9 +32,15 @@ lib/%%PYTHON_VERSION%%/site-packages/pychecker/function.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/msgs.py
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/msgs.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/msgs.pyo
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/options.py
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/options.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/options.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/printer.py
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/printer.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/printer.pyo
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/python.py
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/python.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/python.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/utils.py
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/utils.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/utils.pyo
