@@ -1,0 +1,11 @@
+--- src/prtraceroute/prtraceroute.hh.orig	Sat Nov 27 18:47:35 1999
++++ src/prtraceroute/prtraceroute.hh	Sat Nov 27 18:47:45 1999
+@@ -121,7 +121,7 @@
+     u_int  flags;
+     void _add (ipAddr *ipaddr);
+ 
+-    _hop () {
++    void _hop () {
+ 	ipaddr = (ipAddr *) NULL;
+ 	autnum = NULL;
+ 	route = new Route();

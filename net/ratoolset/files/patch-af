@@ -1,0 +1,10 @@
+--- src/misc/net.cc.orig	Sat Nov 27 18:20:31 1999
++++ src/misc/net.cc	Sat Nov 27 18:21:15 1999
+@@ -215,6 +215,7 @@
+     init_server (p);
+ }
+ 
++int
+ TCP::init_server (int p) {
+     setLocalPort (p);
+     bind();
