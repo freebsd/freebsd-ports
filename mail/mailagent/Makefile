@@ -3,14 +3,14 @@
 # Date created:			23 Sep 1996
 # Whom:				Masafumi NAKANE <max@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.8 1997/01/20 02:43:25 max Exp $
+# $Id: Makefile,v 1.9 1997/01/31 21:46:37 max Exp $
 #
 
 DISTNAME=	mailagent-3.0pl54
 PKGNAME=	mailagent-3.0.54
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sfc.wide.ad.jp/~max/FreeBSD/ports/distfiles/ \
-		ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS
+		ftp://freefall.freebsd.org/pub/FreeBSD/LOCAL_PORTS/
 
 MAINTAINER=	max@FreeBSD.ORG
 
