@@ -8599,6 +8599,7 @@ xfce4-iconbox	ports/misc/xfce4-iconbox
 xfce4-mcs-manager	ports/sysutils/xfce4-mcs-manager
 xfce4-mcs-plugins	ports/sysutils/xfce4-mcs-plugins
 xfce4-mixer	ports/audio/xfce4-mixer
+xfce4-panel	ports/x11-wm/xfce4-panel
 xfce4-wm	ports/x11-wm/xfce4-wm
 xfed		ports/x11-fonts/xfed
 xfedor		ports/x11/xfedor
