@@ -7,10 +7,13 @@
 
 ^CVSROOT/
 ^distrib/
-^doc/
 ^src/etc/
 ^src/release/
 ^www/
+
+^doc/.*\.eps
+^doc/.*\.png
+^doc/.*\.scr
 
 # Skip all ports files except for Makefiles.
 ^ports/.*(?<!\bMakefile)$
