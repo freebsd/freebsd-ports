@@ -1,0 +1,11 @@
+--- navi2ch-article.el.orig	Thu Jul 26 23:56:48 2001
++++ navi2ch-article.el	Mon Jul 30 03:33:57 2001
+@@ -1189,7 +1189,7 @@
+             nil
+           (navi2ch-article-save-number)
+           t)
+-        navi2ch-article-important-mode)
++        navi2ch-article-important-mode nil)
+   (force-mode-line-update)
+   (let ((buffer-read-only nil))
+     (save-excursion

@@ -1,0 +1,10 @@
+--- navi2ch-mona.el.orig	Sat Jul 28 13:10:40 2001
++++ navi2ch-mona.el	Mon Jul 30 03:37:44 2001
+@@ -96,6 +96,7 @@
+ ;; GNU emacs21 では明示的に fontset を作る必要がある
+ (if (and (boundp 'emacs-major-version)
+ 	 (>= emacs-major-version 21)
++	 (null (featurep 'xemacs))
+ 	 window-system)
+     (progn
+       ;; roman - normalface (16pt)

@@ -1,0 +1,14 @@
+--- navi2ch-util.el.orig	Thu Jul 26 23:56:48 2001
++++ navi2ch-util.el	Mon Jul 30 03:41:39 2001
+@@ -256,7 +256,10 @@
+                       
+   
+ (defun navi2ch-browse-url (url)
+-  (browse-url url browse-url-new-window-p))
++  (browse-url
++   url
++   (cond ((get 'browse-url-new-window-p 'custom-type) browse-url-new-window-p)
++	 ((get 'browse-url-new-window-flag 'custom-type) browse-url-new-window-flag))))
+ 
+ ;; from apel
+ (defun navi2ch-put-alist (item value alist)
