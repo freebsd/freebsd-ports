@@ -1,5 +1,6 @@
 etc/listmanager.cf
 sbin/listmanager
+share/listmanager/INSTALL
 share/listmanager/help/ACLs
 share/listmanager/help/Addresses
 share/listmanager/help/Archiving
@@ -25,7 +26,7 @@ share/listmanager/help/archived
 share/listmanager/help/archivelist
 share/listmanager/help/archroll
 share/listmanager/help/auto-subscribe
-share/listmanager/help/bounceint
+share/listmanager/help/bounceinterval
 share/listmanager/help/bouncereset
 share/listmanager/help/check-addrs
 share/listmanager/help/config
@@ -38,7 +39,7 @@ share/listmanager/help/deferred
 share/listmanager/help/describe
 share/listmanager/help/describe-to
 share/listmanager/help/destroy
-share/listmanager/help/dig-from-req
+share/listmanager/help/dig-from-rqt
 share/listmanager/help/digdb
 share/listmanager/help/digest
 share/listmanager/help/digfreq
@@ -70,7 +71,6 @@ share/listmanager/help/hidden
 share/listmanager/help/import
 share/listmanager/help/include
 share/listmanager/help/invalid
-share/listmanager/help/invite-only
 share/listmanager/help/listdata
 share/listmanager/help/lists
 share/listmanager/help/locked
@@ -92,6 +92,8 @@ share/listmanager/help/merge
 share/listmanager/help/metoo
 share/listmanager/help/mflags
 share/listmanager/help/mime
+share/listmanager/help/mime-digests
+share/listmanager/help/mime-moderation
 share/listmanager/help/mnemonic
 share/listmanager/help/moderated
 share/listmanager/help/mpassword
@@ -104,7 +106,6 @@ share/listmanager/help/noownermail
 share/listmanager/help/nosend
 share/listmanager/help/notify
 share/listmanager/help/notify-renew
-share/listmanager/help/old-moderation
 share/listmanager/help/options
 share/listmanager/help/oversized
 share/listmanager/help/owner
