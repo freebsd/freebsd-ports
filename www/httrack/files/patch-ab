@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sun Oct 21 16:12:26 2001
-+++ Makefile.in	Fri Dec 21 18:15:25 2001
+--- Makefile.in.orig	Thu Jul 11 07:15:47 2002
++++ Makefile.in	Sat Aug  3 17:53:46 2002
 @@ -22,7 +22,6 @@
  ### Makefile commands
  SHELL     = /bin/sh
@@ -8,32 +8,32 @@
  CFLAGS    = __CFLAGS__
  # threads
  LFLAGS    = __LFLAGS__ __LFLAGS2__ __LFLAGS3__
-@@ -48,7 +47,7 @@
+@@ -50,7 +49,7 @@
  MAINBIN = httrack.c
  
  BOUTPUT     = httrack
 -BOUTPUTSO   = libhttrack.so
 +BOUTPUTSO   = libhttrack.so.1
- DOCS      = ../HelpHtml ../httrack ../httrack-doc.html ../COPYING ../INSTALL ../README ../*.txt
+ DOCS      = ../HelpHtml ../templates ../httrack-doc.html ../COPYING ../INSTALL ../README ../*.txt
  HTSSYSTEM = htssystem.h
  BINPATH   = __BINPATH__
-@@ -341,6 +340,7 @@
+@@ -346,7 +345,8 @@
+ 	chmod a+rx $(BOUTPUT)
  
  build_binso : $(SOBINARIES)
- 	$(CC) $(CFLAGS) -shared -Wl,-soname,libhttrack.so.1 -o $(BOUTPUTSO) $(SOBINARIES) -lc $(LFLAGS)
+-	$(CC) $(CFLAGS) -shared -Wl,-x,-soname,$(BOUTPUTSO) -o $(BOUTPUTSO) $(SOBINARIES) -lc $(LFLAGS)
++	$(CC) $(CFLAGS) -shared -Wl,-x,-soname,$(BOUTPUTSO) -o $(BOUTPUTSO) $(SOBINARIES) $(LFLAGS)
 +	/bin/ln -sf $(BOUTPUTSO) libhttrack.so
  	$(CC) -L. -lhttrack $(MAINBIN) -o $(BOUTPUT)
- 	chmod +x $(BOUTPUT)
+ 	chmod a+rx $(BOUTPUT)
  
-@@ -371,13 +371,13 @@
+@@ -377,12 +377,12 @@
  
  # Install docs
  docinstall :
--	mkdir -p "$(PREFIX)/doc/httrack"
--	chmod 755 "$(PREFIX)/doc/httrack"
+-	mkdir -p "$(PREFIX)/doc/httrack" && chmod a+rx "$(PREFIX)/doc/httrack"
 -	cp -fR $(DOCS) "$(PREFIX)/doc/httrack/"
-+	mkdir -p "$(PREFIX)/share/doc/httrack"
-+	chmod 755 "$(PREFIX)/share/doc/httrack"
++	mkdir -p "$(PREFIX)/share/doc/httrack" && chmod a+rx "$(PREFIX)/share/doc/httrack"
 +	cp -fR $(DOCS) "$(PREFIX)/share/doc/httrack/"
  
  # Uninstall docs
@@ -43,11 +43,12 @@
  
  # Install binaries and conf files
  bininstall :
-@@ -392,7 +392,6 @@
- 	@echo "Copying $(BOUTPUTSO) to $(LIBPATH)/.."
- 	chmod 755 $(BOUTPUTSO)
+@@ -399,7 +399,7 @@
+ 	test ! -d  "$(LIBPATH)" && (mkdir -p "$(LIBPATH)" && chmod a+rx "$(LIBPATH)") || true
  	cp -f $(BOUTPUTSO) $(LIBPATH)/
--	ldconfig
+ 	chmod a+rx $(LIBPATH)/$(BOUTPUTSO)
+-	ln -sf "$(BOUTPUTSO)" "$(PREFIX)/lib/$(BOUTPUTSO).1"
++	ln -sf "$(BOUTPUTSO)" "$(PREFIX)/lib/libhttrack.so"
+ 
  
  # Uninstall binaries
- binremove :
