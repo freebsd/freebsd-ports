@@ -23,11 +23,13 @@ bin/xpstat
 include/expect.h
 include/expect_comm.h
 include/expect_tcl.h
-lib/expect5.28/pkgIndex.tcl
-lib/expect5.28/libexpect528.a
-lib/libexpect528.a
-lib/libexpect528.so
-lib/libexpect528.so.1.2
+include/tclRegexp.h
+include/tcldbg.h
+lib/expect5.30/pkgIndex.tcl
+lib/expect5.30/libexpect530.a
+lib/libexpect530.a
+lib/libexpect530.so
+lib/libexpect530.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-@dirrm lib/expect5.28
+@dirrm lib/expect5.30
