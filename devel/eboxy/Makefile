@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	eboxy
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.bluelightning.org/ebox/files/eboxy/
@@ -31,6 +31,8 @@ CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"  LDFLAGS="${LDFLAGS}" \
 		SDL_CONFIG="${SDL_CONFIG}"
 CONFIGURE_ARGS=	--disable-lirc
+
+MAN1=		eboxy.1
 
 CPPFLAGS=	`${SDL_CONFIG} --cflags` -I${LOCALBASE}/include
 LDFLAGS=	`${SDL_CONFIG} --libs` -L${LOCALBASE}/lib -lgnugetopt
