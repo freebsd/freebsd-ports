@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	netbeans
+PORTNAME=	netbeans3
 PORTVERSION=	3.6
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.netbeans.org/download/release36/promoted/FCS/
@@ -36,9 +36,9 @@ post-patch:
 .endif
 
 do-install:
-		@${MKDIR} ${PREFIX}/netbeans
-		@${CP} -r ${WRKSRC}/* ${PREFIX}/netbeans
-		@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/netbeans
-		@${LN} -sf ${PREFIX}/netbeans/bin/runide.sh ${PREFIX}/bin/netbeans
+		@${MKDIR} ${PREFIX}/netbeans3
+		@${CP} -r ${WRKSRC}/* ${PREFIX}/netbeans3
+		@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/netbeans3
+		@${LN} -sf ${PREFIX}/netbeans3/bin/runide.sh ${PREFIX}/bin/netbeans3
 
 .include <bsd.port.post.mk>
