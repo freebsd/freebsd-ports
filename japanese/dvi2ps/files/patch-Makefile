@@ -1,0 +1,78 @@
+--- Makefile.orig	Mon Sep 11 18:16:11 2000
++++ Makefile	Tue May 18 03:21:53 2004
+@@ -2,7 +2,7 @@
+ # your site:
+ #
+ # BINAREA and DVI2LIB are relative to PREFIX
+-PREFIX=${DESTDIR}/usr/local
++PREFIX?=/usr/local
+ # where dvi2ps is installed
+ BINAREA=${PREFIX}/bin
+ #
+@@ -46,7 +46,7 @@
+ # FREETYPE -- FTLIB, FTINC
+ # VFLIB    -- FTLIB, FTINC, VFLIB, VFLIBINC
+ FTLIB = -L${PREFIX}/lib -lttf
+-FTINC = -I${PREFIX}/include/freetype
++FTINC = -I${PREFIX}/include/freetype1/freetype
+ VFLIB = -L${PREFIX}/lib -lVFlib2
+ VFLIBINC = -I${PREFIX}/include
+ 
+@@ -57,7 +57,7 @@
+ #
+ CC=gcc
+ #
+-CCFLAGS = -g -O -DPOSIX
++CCFLAGS = -g -O -DPOSIX -DHAVE_PROTOTYPES
+ #CCFLAGS = -O		# SUNOS 4.X etc ...
+ #CCFLAGS = -O -DPOSIX	# NetBSD FreeBSD (gcc 2.X), Linux
+ #CCFLAGS = -O -DMSDOS -DPOSIX	# DJGCC (gcc 2.X)
+@@ -74,7 +74,7 @@
+ # You don't have to change the definition variables in the folllowing.
+ #
+ FONTLIB = ${VFLIB} ${FTLIB}
+-CFLAGS = ${CCFLAGS} ${FONTF} ${KPSEINC}
++CFLAGS+= ${CCFLAGS} ${FONTF} ${KPSEINC}
+ CNFCFLAGS = ${CFLAGS} -DDVI2PATH=\"${DVI2PATH}\" \
+ 	    -DDVI2LIB=\"${DVI2LIB}\" -DFONTDESC=\"//${FONTDESC}\" \
+ 	    -DRESOLUTION=${RESOLUTION} -DMFMODE=\"${MFMODE}\" \
+@@ -151,32 +151,32 @@
+ 	${INSTALL} -c -s -m 755 dvi2ps ${BINAREA}/dvi2ps
+ 
+ install-header: ${PSHEADERS} lib/dvi2.ps
+-	-mkdir ${DVI2LIB}
+-	-mkdir ${DVI2HEADERS}
++	-mkdir -p ${DVI2LIB}
++	-mkdir -p ${DVI2HEADERS}
+ 	cp -p ${PSHEADERS} ${DVI2HEADERS}
+ 	cp -p lib/dvi2.ps ${DVI2LIB}
+ 	chmod -R a+r ${DVI2HEADERS} ${DVI2LIB}/dvi2.ps
+ 
+ install-lib: ${PSHEADERS}
+-	-mkdir ${DVI2LIB}
++	-mkdir -p ${DVI2LIB}
+ 	cp -pr lib/* ${DVI2LIB}
+ 	chmod -R a+r ${DVI2LIB}
+ 
+ lib/dvi2.ps: ${HDR}/dvi2.ps ${HDR}/special.ps
+ 	cat ${HDR}/dvi2.ps ${HDR}/special.ps > lib/dvi2.ps
+ ${HDR}/dvi2.ps: dvi2.psdoc
+-	-mkdir lib ${HDR}
++	-mkdir -p lib ${HDR}
+ 	./tools/psstrip < dvi2.psdoc | \
+ 	sed -e s/'##XCOORD##'/${LEFTMARGIN}/ -e s/'##YCOORD##'/${TOPMARGIN}/ \
+ 		> ${HDR}/dvi2.ps
+ ${HDR}/special.ps: special.psdoc
+-	-mkdir lib ${HDR}
++	-mkdir -p lib ${HDR}
+ 	./tools/psstrip < special.psdoc > ${HDR}/special.ps
+ ${HDR}/psifont.ps: psifont.psdoc
+-	-mkdir lib ${HDR}
++	-mkdir -p lib ${HDR}
+ 	./tools/psstrip < psifont.psdoc > ${HDR}/psifont.ps
+ ${HDR}/color.ps: color.psdoc
+-	-mkdir lib ${HDR}
++	-mkdir -p lib ${HDR}
+ 	./tools/psstrip < color.psdoc > ${HDR}/color.ps
+ 
+ install-man:
