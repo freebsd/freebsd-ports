@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://vipul.net/perl/sources/spamcontrol/ricochet/
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An automated agent for tracing and reporting internet junk mail
 
 RUN_DEPENDS=	${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
