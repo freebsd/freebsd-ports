@@ -1,0 +1,11 @@
+--- empire.h.orig	Sat Sep 18 18:34:59 1999
++++ empire.h	Sat Sep 18 18:35:39 1999
+@@ -25,7 +25,7 @@
+ #ifndef SYSV
+ #define memcpy(dst,src,len) bcopy((src),(dst),(len))
+ #define strchr(s,c) index(s,c)
+-typedef char chtype;
++typedef char chartype;
+ #define beep() (putchar('\7'))
+ #define napms(d) (usleep((d)*1000))
+ #else

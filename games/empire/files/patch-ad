@@ -1,0 +1,9 @@
+--- game.c.orig	Sat Sep 18 18:36:29 1999
++++ game.c	Sat Sep 18 18:36:40 1999
+@@ -850,5 +850,5 @@
+ 	cell = mbuf[row_col_loc(r,c)];
+ 	
+ 	(void) move (row/row_inc + NUMTOPS, col/col_inc);
+-	(void) addch ((chtype)cell);
++	(void) addch ((chartype)cell);
+ }
