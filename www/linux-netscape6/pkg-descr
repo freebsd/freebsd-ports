@@ -1,4 +1,12 @@
-This is the linux version of the netscape web-surfboard. Using the
-Linux version on FreeBSD is necessary if you want to use Linux
-versions of plugins. Many plugins are distributed only as Linux
-binaries.
+This is a Linux version of the Netscape suite (Web browser, HTML
+editor, mail user agent and news reader). Using the Linux version
+on FreeBSD is necessary if you want to use Linux versions of plugins.
+Many plugins are distributed only as Linux binaries.
+
+In this port/package, the Java virtual machine does not work.  AOL
+Instant Messenger is omitted because of security problems (see
+http://www.atstake.com/research/advisories/2000/a121200-1.txt).
+Only the U.S. English locale is installed.
+
+Trevor Johnson
+trevor@FreeBSD.org
