@@ -13,8 +13,10 @@ DISTNAME=	malbolge
 
 MAINTAINER=    simond@irrelevant.org
 
+USE_REINPLACE=	yes
+
 post-patch:
-	${PERL} -pi -e "s|<malloc.h>|<stdlib.h>|g" ${WRKSRC}/malbolge.c
+	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/malbolge.c
 
 do-build:
 	${CC} ${CFLAGS} ${WRKSRC}/malbolge.c -o ${WRKSRC}/malbolge
