@@ -236,4 +236,4 @@ vje30/bin/vjeacc.jar
 @exec cp -Pp /etc/services /etc/services.bak ; grep -qw '^vjed' /etc/services || echo "vjed		11493/tcp	# VJE-Delta Server" >> /etc/services
 @unexec [ -L /usr/local/vje30 ] && rm /usr/local/vje30 || true
 @unexec [ -L /usr/local/etc/vje30 ] && rm /usr/local/etc/vje30 || true
-@exec [ X"%D" != X"/usr/local" ] && (ln -s %D/vje30 /usr/local/; ln -s %D/etc/vje30 /usr/local/etc/ || true
+@exec [ X"%D" != X"/usr/local" ] && (ln -s %D/vje30 /usr/local/; ln -s %D/etc/vje30 /usr/local/etc/) || true
