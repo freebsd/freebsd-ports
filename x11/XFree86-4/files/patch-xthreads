@@ -1,21 +1,15 @@
---- include/Xos_r.h.orig	Mon Aug 28 20:45:38 2000
-+++ include/Xos_r.h	Wed Dec 20 02:54:24 2000
-@@ -243,9 +243,12 @@
-   size_t len;
- } _Xgetpwparams;
+--- include/Xos_r.h.orig	Sun Mar 18 00:12:23 2001
++++ include/Xos_r.h	Sun Mar 18 00:26:45 2001
+@@ -245,7 +245,7 @@
  
--/* NetBSD, at least, is missing several of the unixware passwd fields. */
-+/*
-+ * NetBSD and FreeBSD, at least, are missing several of the unixware passwd
-+ * fields.
-+ */
+ /* NetBSD, at least, is missing several of the unixware passwd fields. */
     
--#if defined(__NetBSD__)
-+#if defined(__NetBSD__) || defined(__FreeBSD__)
+-#if defined(__NetBSD__) || defined(__OpenBSD__)
++#if defined(__NetBSD__) || defined(__OpenBSD__) || defined(__FreeBSD__)
  __inline__ void _Xpw_copyPasswd(_Xgetpwparams p)
  {
     memcpy(&(p).pws, (p).pwp, sizeof(struct passwd));
-@@ -412,7 +415,7 @@
+@@ -412,7 +412,7 @@
  /* UnixWare 2.0, or other systems with thread support but no _r API. */
  /* WARNING:  The h_addr_list and s_aliases values are *not* copied! */
  

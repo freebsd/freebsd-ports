@@ -1,16 +1,5 @@
 --- config/cf/FreeBSD.cf.orig	Tue Dec  5 01:45:27 2000
 +++ config/cf/FreeBSD.cf	Tue Dec 19 23:08:57 2000
-@@ -210,8 +210,10 @@
- 
- /* PAM appeared in FreeBSD 3.1 */
- #if (OSMajorVersion > 3) || (OSMajorVersion == 3 && OSMinorVersion >=1 )
-+#ifndef HasPam
- #define HasPam		YES
- #endif
-+#endif
- 
- /*
-  * For FreeBSD 2.2.5 and later don't make any assumptions about the version
 @@ -371,14 +373,14 @@
  /* The GCC strength-reduce bug is fixed for FreeBSD 2.1.5 and later */
  #ifndef DefaultGcc2i386Opt
