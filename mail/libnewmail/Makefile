@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.stud.uni-hamburg.de/~lennart/projects/libnewmail/
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic mail checking library
 
 LIB_DEPENDS=	gnutls.12:${PORTSDIR}/security/gnutls \

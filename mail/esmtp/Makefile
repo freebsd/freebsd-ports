@@ -12,7 +12,7 @@ CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Relay-only Mail Transfer Agent with sendmail compatible syntax
 
 LIB_DEPENDS=	esmtp.6:${PORTSDIR}/mail/libesmtp

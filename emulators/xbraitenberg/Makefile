@@ -10,7 +10,7 @@ PORTVERSION=	0.8
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.lcdf.org/~eddietwo/xbraitenberg/
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Braitenberg vehicle simulator with pseudo-physics
 
 USE_X_PREFIX=	yes

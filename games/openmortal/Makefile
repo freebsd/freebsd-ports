@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A parody of the once popular coin-up fighting game, Mortal Kombat
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2

@@ -9,7 +9,7 @@ PORTVERSION=	0.5
 CATEGORIES=	audio
 MASTER_SITES=	http://huli.org/wavbreaker/
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to split wav files
 
 USE_GNOME=	gnomehack gtk20 libxml2

@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://briquolo.free.fr/download/
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Breakout clone with an OpenGL 3D representation
 
 LIB_DEPENDS=	GUI.0:${PORTSDIR}/graphics/guilib \

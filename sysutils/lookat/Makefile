@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://www.wagemakers.be/uploads/37/7/
 DISTNAME=	${PORTNAME}_bekijk-${PORTVERSION}
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lookat is a program to view Un*x text files and manual pages
 
 GNU_CONFIGURE=	yes
