@@ -22,6 +22,12 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 MAKE_ENV+=	CPPFLAGS="-DPREFIX=\\\"${PREFIX}\\\""
 
+post-patch:
+	${REINPLACE_CMD} -i.bak -e 's|varargs.h|stdarg.h|' \
+		${WRKSRC}/chkmodules.h \
+		${WRKSRC}/main.h \
+		${WRKSRC}/modules_check/ldd_http_module.h
+
 post-build:
 	@${REINPLACE_CMD} -e 's,%PREFIX%,${PREFIX},g' \
 		${.CURDIR}/pkg-message.in > ${WRKDIR}/pkg-message
