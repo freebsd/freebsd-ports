@@ -198,10 +198,10 @@
     SUBDIR += py-numeric17
     SUBDIR += py-probstat
     SUBDIR += py-scientific
+    SUBDIR += qalculate
     SUBDIR += qgfe
     SUBDIR += qhull
     SUBDIR += qscanplot
-    SUBDIR += qalculate
     SUBDIR += qwtplot3d
     SUBDIR += rascal
     SUBDIR += rpc

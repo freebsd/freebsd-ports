@@ -1,13 +1,12 @@
 # $FreeBSD$
 #
-    SUBDIR += xvnkb
 
     COMMENT = Vietnamese support
 
+    SUBDIR += aspell
 .if !defined(NO_VIET_KDE)
     SUBDIR += kde3-i18n
 .endif
-    SUBDIR += aspell
     SUBDIR += libviet
     SUBDIR += unicode-uhoai
     SUBDIR += vi2vn
@@ -22,5 +21,6 @@
     SUBDIR += vnterm
     SUBDIR += vntex
     SUBDIR += vnxfonts
+    SUBDIR += xvnkb
 
 .include <bsd.port.subdir.mk>
