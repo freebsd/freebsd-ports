@@ -159,6 +159,7 @@
     SUBDIR += tkrunit
     SUBDIR += ttyrec
     SUBDIR += tvguide
+    SUBDIR += uf-view
     SUBDIR += uk-phone
     SUBDIR += uk-postcodes
     SUBDIR += unclutter
