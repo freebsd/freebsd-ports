@@ -15,9 +15,9 @@ RUN_DEPENDS=	tf:${PORTSDIR}/net/tinyfugue
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--enable-compile-warnings=yes
+USE_GNOMELIBS=	yes
+CONFIGURE_ARGS+=	--enable-compile-warnings=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CFLAGS+=	-g
