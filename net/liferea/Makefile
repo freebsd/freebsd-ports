@@ -7,14 +7,13 @@
 
 PORTNAME=	liferea
 PORTVERSION=	0.4.6e
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	liferea
 
 MAINTAINER=	perky@FreeBSD.org
 COMMENT=	Simple RSS/RDF feed reader
-
-BROKEN=		"Size mismatch"
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gconf2 libxml2 libgtkhtml \
