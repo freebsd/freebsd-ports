@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- fastest_cvsup.orig	Tue Oct 12 20:23:25 2004
++++ fastest_cvsup	Tue Oct 12 20:23:52 2004
+@@ -82,7 +82,7 @@
+   'ca' => 2,    # Canada
+   'cn' => 1,    # China
+   'cz' => 1,    # Czech Republic
+-  'de' => 7,    # Germany
++  'de' => 8,    # Germany
+   'dk' => 1,    # Denmark
+   'ee' => 1,    # Estonia
+   'es' => 3,    # Spain
