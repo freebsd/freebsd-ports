@@ -1189,6 +1189,7 @@ cpan-upload	ports/devel/cpan-upload
 cpbk		ports/sysutils/cpbk
 cpdup		ports/sysutils/cpdup
 cphone		ports/net/cphone
+cpige		ports/audio/cpige
 cplay		ports/audio/cplay
 cpmemu		ports/emulators/cpmemu
 cpmtools	ports/emulators/cpmtools
