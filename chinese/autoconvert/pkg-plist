@@ -1,13 +1,20 @@
 bin/autob5
 bin/autogb
+lib/libhz.a
+lib/libhz.so
+lib/libhz.so.0
 share/autoconvert/ChangeLog
 share/autoconvert/GPL
 share/autoconvert/LICENSE
 share/autoconvert/Readme
 share/autoconvert/TODO
+share/autoconvert/Thanks
 share/autoconvert/Version
 share/autoconvert/hz.txt
+share/autoconvert/procmailrc.example
 share/autoconvert/shed.big5
 share/autoconvert/shed.gb
-share/autoconvert/procmailrc.example
+share/autoconvert/shed.uni
+share/autoconvert/shed.utf7
+share/autoconvert/shed.utf8
 @dirrm share/autoconvert
