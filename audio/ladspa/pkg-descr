@@ -1,0 +1,14 @@
+Many audio synthesis and recording packages are in use or in
+development. These work in many different ways. LADSPA
+provides a standard way for `plugin' audio processors to be used with
+a wide range of these packages.
+
+For instance, this allows a developer to make a reverb program and
+bundle it into a LADSPA `plugin library.' Ordinary users can then use
+this reverb within any LADSPA-friendly audio application.
+
+Author: Richard Furse <richard@muse.demon.co.uk.>
+WWW: http://www.ladspa.org
+
+- Tilman Linneweh
+freebsdports@arved.de
