@@ -1,0 +1,20 @@
+bin/msntest
+include/msn/authdata.h
+include/msn/buddy.h
+include/msn/connection.h
+include/msn/errorcodes.h
+include/msn/externals.h
+include/msn/filetransfer.h
+include/msn/invitation.h
+include/msn/md5.h
+include/msn/message.h
+include/msn/msn.h
+include/msn/notificationserver.h
+include/msn/passport.h
+include/msn/sstream_fix.h
+include/msn/switchboardserver.h
+include/msn/util.h
+@dirrm include/msn
+lib/libmsn.a
+lib/libmsn.so
+lib/libmsn.so.0
