@@ -128,32 +128,38 @@ lib/libcnews.a
 @dirrm %%NEWSBIN%%/nov
 @dirrm %%NEWSBIN%%/relay
 @dirrm %%NEWSBIN%%
-@cwd %%VARBASE%%
 @owner news
 @group news
-%%NEWSCTL%%/active
-%%NEWSCTL%%/active.times
-%%NEWSCTL%%/batchparms
-%%NEWSCTL%%/controlperm
-%%NEWSCTL%%/explist
-%%NEWSCTL%%/history
-%%NEWSCTL%%/history.dir
-%%NEWSCTL%%/history.pag
-%%NEWSCTL%%/inews
-%%NEWSCTL%%/mailname
-%%NEWSCTL%%/mailpaths
-%%NEWSCTL%%/organization
-%%NEWSCTL%%/postdefltgroup
-%%NEWSCTL%%/readnews.ctl
-%%NEWSCTL%%/readnews.help
-%%NEWSCTL%%/report.ctl
-%%NEWSCTL%%/sys
-%%NEWSCTL%%/versionname
-%%NEWSCTL%%/whoami
+@unexec for i in %%NEWSCTL_FILES%%; do if cmp -s %%VARBASE%%/%%NEWSCTL%%/$i %D/%%EXAMPLESDIR%%/newsctl/$i; then rm -f %%VARBASE%%/%%NEWSCTL%%/$i; else echo "Preserving %%VARBASE%%/%%NEWSCTL%%/$i"; fi; done
+%%EXAMPLESDIR%%/newsctl/active
+%%EXAMPLESDIR%%/newsctl/active.times
+%%EXAMPLESDIR%%/newsctl/batchparms
+%%EXAMPLESDIR%%/newsctl/controlperm
+%%EXAMPLESDIR%%/newsctl/explist
+%%EXAMPLESDIR%%/newsctl/history
+%%EXAMPLESDIR%%/newsctl/history.dir
+%%EXAMPLESDIR%%/newsctl/history.pag
+%%EXAMPLESDIR%%/newsctl/inews
+%%EXAMPLESDIR%%/newsctl/mailname
+%%EXAMPLESDIR%%/newsctl/mailpaths
+%%EXAMPLESDIR%%/newsctl/organization
+%%EXAMPLESDIR%%/newsctl/postdefltgroup
+%%EXAMPLESDIR%%/newsctl/readnews.ctl
+%%EXAMPLESDIR%%/newsctl/readnews.help
+%%EXAMPLESDIR%%/newsctl/report.ctl
+%%EXAMPLESDIR%%/newsctl/sys
+%%EXAMPLESDIR%%/newsctl/versionname
+%%EXAMPLESDIR%%/newsctl/whoami
+@exec mkdir -p %D/%%EXAMPLESDIR%%/newsctl/bin
+@exec mkdir -p %%VARBASE%%/%%NEWSCTL%%/bin
+@exec for i in %%NEWSCTL_FILES%%; do if test ! -f %%VARBASE%%/%%NEWSCTL%%/$i; then cp %D/%%EXAMPLESDIR%%/newsctl/$i %%VARBASE%%/%%NEWSCTL%%/$i; else echo "preservering %%VARBASE%%/%%NEWSCTL%%/$i"; fi; done
+@dirrm %%EXAMPLESDIR%%/newsctl/bin
+@dirrm %%EXAMPLESDIR%%/newsctl
+@dirrm %%EXAMPLESDIR%%
+@cwd %%VARBASE%%
 @dirrm %%NEWSCTL%%/bin
 @dirrm %%NEWSCTL%%
 @dirrm %%NEWSCTLBASE%%
-@exec mkdir -p %D/%%NEWSCTL%%/bin
 @dirrm %%NEWSARTS%%/control
 @dirrm %%NEWSARTS%%/junk
 @dirrm %%NEWSARTS%%/news/announce/newusers

@@ -7,7 +7,7 @@
 
 PORTNAME=	cnews
 PORTVERSION=	cr.g
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/c-news/ \
 		ftp://ftp.funet.fi/pub/unix/news/cnews/ \
@@ -46,12 +46,17 @@ MAN8=		cnewsdo.8cn expire.8cn explode.8cn mergeactive.8 \
 		mkhistory.8cn newsaux.8cn newsbatch.8cn newsmail.8cn \
 		newsmaint.8cn newsoverview.8 relaynews.8cn report.8cn \
 		rnews.8cn
+NEWSCTL_FILES=	active active.times batchparms controlperm explist \
+		history history.dir history.pag inews mailname mailpaths \
+		organization postdefltgroup readnews.ctl readnews.help \
+		report.ctl sys versionname whoami
 PLIST_SUB+=	VARBASE=${VARBASE}
 PLIST_SUB+=	NEWSBIN=${NEWSBIN:S=^${PREFIX}/==}
 PLIST_SUB+=	NEWSCTL=${NEWSCTL:S=^${VARBASE}/==}
 PLIST_SUB+=	NEWSCTLBASE=${NEWSCTL:S=/news==:S=^${VARBASE}/==}
 PLIST_SUB+=	NEWSARTS=${NEWSARTS:S=^${VARBASE}/==}
 PLIST_SUB+=	NEWSOV=${NEWSOV:S=^${VARBASE}/==}
+PLIST_SUB+=	NEWSCTL_FILES="${NEWSCTL_FILES}"
 
 MODIFY=		conf/quiz.def \
 		conf/substitutions \
@@ -118,6 +123,8 @@ do-install:
 .for i in ${MAN8}
 	${INSTALL_MAN} ${WRKSRC}/man/${i} ${PREFIX}/man/man8
 .endfor
+	${MKDIR} ${EXAMPLESDIR}/newsctl
+	@${TAR} -C ${NEWSCTL} -cf - . | ${TAR} -C ${EXAMPLESDIR}/newsctl -xf -
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "!!!!!!!!"
 	@${ECHO_MSG} "you MUST change the configuration of this news setup:"
@@ -128,6 +135,11 @@ do-install:
 	@${ECHO_MSG} "	so any problem can be reported."
 	@${ECHO_MSG} "!!!!!!!!"
 	@${ECHO_MSG} ""
+.if !defined(BATCH)
+	@if test "$$(pw usershow news)" != "news:*:8:8::0:0:News Subsystem:${NEWSCTL}:${SHELL}"; then \
+	pw usermod news -d "${NEWSCTL}" -s ${SHELL}; fi
+	@pw usershow news
+.endif
 
 test:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
