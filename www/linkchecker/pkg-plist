@@ -1,8 +1,4 @@
-@comment $FreeBSD$
 bin/linkchecker
-share/locale/de/LC_MESSAGES/linkchecker.mo
-share/locale/fr/LC_MESSAGES/linkchecker.mo
-share/locale/nl/LC_MESSAGES/linkchecker.mo
 %%PYTHON_SITELIBDIR%%/_linkchecker_configdata.py
 %%PYTHON_SITELIBDIR%%/linkcheck/HtmlParser/__init__.py
 %%PYTHON_SITELIBDIR%%/linkcheck/HtmlParser/__init__.pyc
@@ -416,9 +412,6 @@ share/locale/nl/LC_MESSAGES/linkchecker.mo
 %%PYTHON_SITELIBDIR%%/linkcheck/mem.py
 %%PYTHON_SITELIBDIR%%/linkcheck/mem.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/mem.pyo
-%%PYTHON_SITELIBDIR%%/linkcheck/optcomplete.py
-%%PYTHON_SITELIBDIR%%/linkcheck/optcomplete.pyc
-%%PYTHON_SITELIBDIR%%/linkcheck/optcomplete.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/robotparser2.py
 %%PYTHON_SITELIBDIR%%/linkcheck/robotparser2.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/robotparser2.pyo
@@ -434,6 +427,9 @@ share/locale/nl/LC_MESSAGES/linkchecker.mo
 %%PYTHON_SITELIBDIR%%/linkcheck/tests/test_containers.py
 %%PYTHON_SITELIBDIR%%/linkcheck/tests/test_containers.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/tests/test_containers.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/tests/test_filenames.py
+%%PYTHON_SITELIBDIR%%/linkcheck/tests/test_filenames.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/tests/test_filenames.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/tests/test_linkname.py
 %%PYTHON_SITELIBDIR%%/linkcheck/tests/test_linkname.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/tests/test_linkname.pyo
@@ -458,17 +454,6 @@ share/locale/nl/LC_MESSAGES/linkchecker.mo
 %%PYTHON_SITELIBDIR%%/linkcheck/url.py
 %%PYTHON_SITELIBDIR%%/linkcheck/url.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/url.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/HtmlParser
-@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/checker
-@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY
-@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/IN
-@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/dns/tests
-@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes
-@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/dns
-@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/ftests
-@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/logger
-@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/tests
-@dirrm %%PYTHON_SITELIBDIR%%/linkcheck
 %%EXAMPLESDIR%%/check.js
 %%EXAMPLESDIR%%/index.html
 %%EXAMPLESDIR%%/lc.cgi
@@ -477,9 +462,23 @@ share/locale/nl/LC_MESSAGES/linkchecker.mo
 %%EXAMPLESDIR%%/lc_cgi.html.en
 %%EXAMPLESDIR%%/leer.html.de
 %%EXAMPLESDIR%%/leer.html.en
-%%EXAMPLESDIR%%/linkchecker-completion
 %%EXAMPLESDIR%%/linkcheck-cron.sh
+%%EXAMPLESDIR%%/linkchecker-completion
 %%DATADIR%%/linkcheckerrc
 %%DATADIR%%/logging.conf
-@dirrm %%EXAMPLESDIR%%
+share/locale/de/LC_MESSAGES/linkchecker.mo
+share/locale/fr/LC_MESSAGES/linkchecker.mo
+share/locale/nl/LC_MESSAGES/linkchecker.mo
 @dirrm %%DATADIR%%
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/tests
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/logger
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/ftests
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/dns/tests
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/IN
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes/ANY
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/dns/rdtypes
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/dns
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/checker
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck/HtmlParser
+@dirrm %%PYTHON_SITELIBDIR%%/linkcheck
