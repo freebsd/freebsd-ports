@@ -10,7 +10,7 @@ PORTVERSION=	1.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://wizard.ae.krakow.pl/~mike/download/
 
-MAINTAINER=	dannyboy@subdimension.com
+MAINTAINER=	dannyboy@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 
