@@ -10,20 +10,24 @@
 @exec mv %D/lib/mozilla/searchplugins/google.gif %D/lib/mozilla/searchplugins/google.gif.orig
 @exec mv %D/lib/mozilla/searchplugins/google.src %D/lib/mozilla/searchplugins/google.src.orig
 bin/mozilla
+lib/mozilla/chrome/JP.jar
 lib/mozilla/chrome/all-locales.rdf
 lib/mozilla/chrome/all-packages.rdf
 lib/mozilla/chrome/all-skins.rdf
 lib/mozilla/chrome/installed-chrome.txt
 lib/mozilla/chrome/ja-JP.jar
+lib/mozilla/chrome/ja-mac.jar
+lib/mozilla/chrome/ja-unix.jar
+lib/mozilla/chrome/ja-win.jar
 lib/mozilla/chrome/user-locales.rdf
 lib/mozilla/chrome/user-skins.rdf
 lib/mozilla/defaults/pref/all.js
 lib/mozilla/defaults/pref/unix.js
-lib/mozilla/defaults/profile/ja-JP/bookmarks.html
-lib/mozilla/defaults/profile/ja-JP/localstore.rdf
-lib/mozilla/defaults/profile/ja-JP/mimeTypes.rdf
-lib/mozilla/defaults/profile/ja-JP/panels.rdf
-lib/mozilla/defaults/profile/ja-JP/search.rdf
+lib/mozilla/defaults/profile/JP/bookmarks.html
+lib/mozilla/defaults/profile/JP/localstore.rdf
+lib/mozilla/defaults/profile/JP/mimeTypes.rdf
+lib/mozilla/defaults/profile/JP/panels.rdf
+lib/mozilla/defaults/profile/JP/search.rdf
 lib/mozilla/searchplugins/AllAboutJapan.png
 lib/mozilla/searchplugins/AllAboutJapan.src
 lib/mozilla/searchplugins/BiglobeSearch.png
@@ -95,4 +99,4 @@ lib/mozilla/searchplugins/w3c.src
 @unexec mv %D/lib/mozilla/defaults/pref/unix.js.orig %D/lib/mozilla/defaults/pref/unix.js
 @unexec mv %D/lib/mozilla/searchplugins/google.gif.orig %D/lib/mozilla/searchplugins/google.gif
 @unexec mv %D/lib/mozilla/searchplugins/google.src.orig %D/lib/mozilla/searchplugins/google.src
-@dirrm lib/mozilla/defaults/profile/ja-JP
+@dirrm lib/mozilla/defaults/profile/JP

@@ -1,10 +1,10 @@
---- defaults/profile/ja-JP/search.rdf.orig	Fri Feb 23 19:24:48 2001
-+++ defaults/profile/ja-JP/search.rdf	Sun Mar  4 02:30:58 2001
+--- defaults/profile/JP/search.rdf.orig	Fri Feb 23 19:24:48 2001
++++ defaults/profile/JP/search.rdf	Sun Mar  4 02:30:58 2001
 @@ -56,6 +56,7 @@
      <RDF:li resource="NC:SearchCategory?engine=urn:search:engine:ExciteJapan.src"/>
      <RDF:li resource="NC:SearchCategory?engine=urn:search:engine:Fresheye_Japan.src"/>
      <RDF:li resource="NC:SearchCategory?engine=urn:search:engine:GooNeJp.src"/>
-+    <RDF:li resource="NC:SearchCategory?engine=urn:search:engine:Google.src"/>
++    <RDF:li resource="NC:SearchCategory?engine=urn:search:engine:GoogleJapan.src"/>
      <RDF:li resource="NC:SearchCategory?engine=urn:search:engine:InfoseekJapan.src"/>
      <RDF:li resource="NC:SearchCategory?engine=urn:search:engine:LYCOSJapan.src"/>
      <RDF:li resource="NC:SearchCategory?engine=urn:search:engine:YahooJapan.src"/>

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	0.8
+PORTVERSION=	0.8.1
 PORTEPOCH=	1
 CATEGORIES=	japanese www
 MASTER_SITES=	http://www.mozilla.gr.jp/tools/search/ \
@@ -14,13 +14,13 @@ MASTER_SITES=	http://www.mozilla.gr.jp/tools/search/ \
 PKGNAMESUFFIX=	-jlp
 DISTNAME=	GoogleJapan.png GoogleJapan.src \
 		${JLP_SRC}
-EXTRACT_SUFX=	.xpi
-EXTRACT_ONLY=	${JLP_SRC}${EXTRACT_SUFX}
+EXTRACT_SUFX=	# none
+EXTRACT_ONLY=	${JLP_SRC}
 
 MAINTAINER=	yatt@msc.biglobe.ne.jp
 
-BUILD_DEPENDS=	${X11BASE}/lib/mozilla/regxpcom:${PORTSDIR}/www/mozilla
-RUN_DEPENDS=	mozilla:${PORTSDIR}/www/mozilla \
+BUILD_DEPENDS=	${X11BASE}/lib/mozilla/regxpcom:${MOZILLA_PORT}
+RUN_DEPENDS=	mozilla:${MOZILLA_PORT} \
 		${PKG_DBDIR}/ja-netscape-fonts-1.0:${PORTSDIR}/japanese/netscape-fonts
 
 WRKSRC=		${WRKDIR}/bin
@@ -29,7 +29,12 @@ USE_X_PREFIX=	yes
 USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-qo
 
-JLP_SRC=	${PORTNAME}${PORTVERSION}-langjajp
+.if defined(MOZILLA_IPV6)
+MOZILLA_PORT=	${PORTSDIR}/www/mozilla+ipv6
+.else
+MOZILLA_PORT=	${PORTSDIR}/www/mozilla
+.endif
+JLP_SRC=	mozilla0.8.1-langjajp.xpi mozilla0.8.1-regjp.xpi
 
 .include <bsd.port.pre.mk>
 
@@ -39,12 +44,20 @@ MOZILLA_SH=	mozilla.noxpg4
 MOZILLA_SH=	mozilla.xpg4
 .endif
 
+# forcing define this until www/mozilla comes up to date.
+MOZILLA_IPV6=	yes
+
+#pre-fetch:
+#	@${ECHO} ""
+#	@${ECHO} "If you need IPv6 compliant mozilla, define \"MOZILLA_IPV6\"."
+#	@${ECHO} ""
+
 post-extract:
 	${MKDIR} ${WRKSRC}/defaults/pref
 	${CP} ${FILESDIR}/all.js ${WRKSRC}/defaults/pref
 	${CP} ${FILESDIR}/unix.js ${WRKSRC}/defaults/pref
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/GoogleJapan.png ${WRKSRC}/searchplugins
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/GoogleJapan.src ${WRKSRC}/searchplugins
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/GoogleJapan.png ${WRKDIR}/sp
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/GoogleJapan.src ${WRKDIR}/sp
 
 post-patch:
 	find ${WRKSRC} -name '*.orig' | xargs ${RM}
@@ -55,19 +68,22 @@ do-build:
 
 do-install:
 	(cd ${PREFIX}/lib/mozilla/chrome; \
-	${MV} all-locales.rdf all-locales.rdf.orig; \
-	${MV} all-packages.rdf all-packages.rdf.orig; \
-	${MV} all-skins.rdf all-skins.rdf.orig; \
-	${MV} user-locales.rdf user-locales.rdf.orig; \
-	${MV} user-skins.rdf user-skins.rdf.orig; \
-	${MV} installed-chrome.txt installed-chrome.txt.orig)
+	${MV} -f all-locales.rdf all-locales.rdf.orig; \
+	${MV} -f all-packages.rdf all-packages.rdf.orig; \
+	${MV} -f all-skins.rdf all-skins.rdf.orig; \
+	${MV} -f user-locales.rdf user-locales.rdf.orig; \
+	${MV} -f user-skins.rdf user-skins.rdf.orig; \
+	${MV} -f installed-chrome.txt installed-chrome.txt.orig)
 	(cd ${PREFIX}/lib/mozilla/defaults/pref; \
-	${MV} all.js all.js.orig; ${MV} unix.js unix.js.orig)
+	${MV} -f all.js all.js.orig; ${MV} -f unix.js unix.js.orig)
 	(cd ${PREFIX}/lib/mozilla/searchplugins; \
-	${MV} google.gif google.gif.orig; ${MV} google.src google.src.orig)
-	${MV} ${PREFIX}/bin/mozilla ${PREFIX}/bin/mozilla.orig
+	${MV} -f google.gif google.gif.orig; \
+	${MV} -f google.src google.src.orig)
+	${MV} -f ${PREFIX}/bin/mozilla ${PREFIX}/bin/mozilla.orig
 	${INSTALL_SCRIPT} ${WRKDIR}/mozilla ${PREFIX}/bin
-	(cd ${WRKSRC}; ${TAR} -cf - chrome defaults searchplugins) | \
+	(cd ${WRKDIR}/sp; ${TAR} -cf - *) | \
+	${TAR} -xf - -C ${PREFIX}/lib/mozilla/searchplugins
+	(cd ${WRKSRC}; ${TAR} -cf - chrome defaults) | \
 	${TAR} -xf - -C ${PREFIX}/lib/mozilla
 	(cd ${PREFIX}/lib/mozilla/chrome; \
 	${CP} installed-chrome.txt.orig installed-chrome.txt; \
