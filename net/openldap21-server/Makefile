@@ -7,20 +7,13 @@
 #
 # default	builds openldap21-PORTVERSION
 # CLIENT_ONLY 	builds openldap21-client-PORTVERSION (clients and libs)
-# SLAPD_ONLY 	builds openldap21-slapd-PORTVERSION  (slapd and slapd tools)
-# SLURPD_ONLY 	builds openldap21-slurpd-PORTVERSION (slurpd only)
-# SERVERS_ONLY 	builds openldap21-servers-PORTVERSION (slapd and slurpd)
-# WITHOUT_SASL	do not build against sasl2
-#
-# OPENLDAP_STABLE an attempt to track the openldap stable branch
-#		It remains to be seen if this stays practical.
+# WITH_SASL	build with cyrus SASL2 support
 #
 # $FreeBSD$
 #
 
-PORTNAME=	openldap21
-PORTVERSION=	2.1.20
-PORTREVISION=	1
+PORTNAME=	openldap
+PORTVERSION=	2.1.22
 CATEGORIES=	net databases
 MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/		\
 		http://public.planetmirror.com/pub/openldap/%SUBDIR%/	\
@@ -35,16 +28,8 @@ MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/%SUBDIR%/		\
 		ftp://ftp.si.uniovi.es/mirror/OpenLDAP/%SUBDIR%/	\
 		ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/%SUBDIR%/	\
 		ftp://ftp.plig.org/pub/OpenLDAP/%SUBDIR%/
-.if defined(OPENLDAP_STABLE)
-MASTER_SITE_SUBDIR=	openldap-stable
-DISTNAME=	openldap-stable-20030410
-PKGNAMESUFFIX=	-stable
-WRKSRC=		${WRKDIR}/openldap-${PORTVERSION}
-.else
 MASTER_SITE_SUBDIR=	openldap-release
-DISTNAME=	openldap-${PORTVERSION}
-.endif
-EXTRACT_SUFX=	.tgz
+EXTRACT_SUFX=		.tgz
 
 MAINTAINER=	ck@cksoft.de
 COMMENT=	Open source LDAP client and server software
@@ -72,14 +57,14 @@ CONFIGURE_ARGS+=--prefix=${PREFIX} 	\
 		--enable-bdb		\
 		--enable-crypt
 
-.if defined(WITHOUT_SASL)
-CONFIGURE_ARGS+=			\
-	--without-cyrus-sasl
-.else
-LIB_DEPENDS+=   sasl2:${PORTSDIR}/security/cyrus-sasl2
+.if defined(WITH_SASL)
+LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=			\
 	--with-cyrus-sasl		\
 	--enable-spasswd
+.else
+CONFIGURE_ARGS+=			\
+	--without-cyrus-sasl
 .endif
 
 # ------------------------------------------------------------------------------
@@ -103,7 +88,6 @@ CONFIGURE_ARGS+=	--enable-ipv6
 # ------------------------------------------------------------------------------
 # libraries and client applications only
 #
-BUILD_CLIENTS=	yes
 INSTALLS_SHLIB=	yes
 PKGNAMESUFFIX=	-client
 COMMENT=	Open source LDAP client software
@@ -113,73 +97,12 @@ CONFIGURE_ARGS+=			\
 	--enable-shared			\
 	--enable-static
 
-.elif defined(SLAPD_ONLY)
-# ------------------------------------------------------------------------------
-# slapd only
-#
-BUILD_SLAPD=	yes
-PKGNAMESUFFIX=	-slapd
-COMMENT=	Open source LDAP server software (slapd only)
-LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap-client2.1
-CONFIGURE_ARGS+=			\
-	--enable-slapd			\
-	--disable-slurpd		\
-	--disable-shared		\
-	--disable-static		\
-	--without-threads          	\
-	--enable-ldbm			\
-	--enable-ldap          		\
-	--enable-shell
-
-.elif defined(SLURPD_ONLY)
-# ------------------------------------------------------------------------------
-# slurpd only
-# NOTE: to build slurpd only package we have to build slapd
-# and some backend we just don't install them later on
-#
-BUILD_SLURPD=	yes
-PKGNAMESUFFIX=	-slurpd
-COMMENT=	Open source LDAP server software (slurpd only)
-LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap-client2.1
-RUN_DEPENDS+=	${LOCALBASE}/libexec/slapd:${PORTSDIR}/net/openldap-slapd2.1
-CONFIGURE_ARGS+=			\
-	--enable-slurpd			\
-	--enable-slapd			\
-	--disable-shared		\
-	--disable-static		\
-	--enable-ldbm			\
-	--disable-ldap			\
-	--disable-shell			\
-	--with-threads
-
-.elif defined(SERVERS_ONLY)
-# ------------------------------------------------------------------------------
-# slapd and slurpd
-#
-BUILD_SLAPD=	yes
-BUILD_SLURPD=	yes
-PKGNAMESUFFIX=	-server
-COMMENT=	Open source LDAP server software (slapd and slurpd)
-LIB_DEPENDS+=	ldap:${PORTSDIR}/net/openldap-client2.1
-CONFIGURE_ARGS+=			\
-	--enable-slapd			\
-	--enable-slurpd			\
-	--disable-shared		\
-	--disable-static		\
-	--with-threads			\
-	--enable-ldbm			\
-	--disable-ldap          	\
-	--disable-shell
-
 .else
 # ------------------------------------------------------------------------------
 #
 # full package
 #
 INSTALLS_SHLIB=	yes
-BUILD_CLIENTS=	yes
-BUILD_SLAPD=	yes
-BUILD_SLURPD=	yes
 CONFIGURE_ARGS+=			\
 	--with-threads          	\
 	--enable-slapd			\
@@ -195,8 +118,6 @@ CONFIGURE_ARGS+=			\
 # ------------------------------------------------------------------------------
 # PLIST subs and MAN?/MLINKS
 #
-.if defined(BUILD_CLIENTS)
-PLIST_SUB+=	NO_CLIENTS=
 MAN1+=	ldapcompare.1
 MAN1+=	ldapdelete.1
 MAN1+=	ldapmodify.1
@@ -362,11 +283,8 @@ MAN3+=	ldap_url.3
 MLINKS+=	ldap_url.3 ldap_is_ldap_url.3
 MLINKS+=	ldap_url.3 ldap_url_parse.3
 MLINKS+=	ldap_url.3 ldap_free_urldesc.3
-.else
-PLIST_SUB+=	NO_CLIENTS="@comment "
-.endif
-.if defined(BUILD_SLAPD)
-PLIST_SUB+=	NO_SLAPD=
+.if !defined(CLIENT_ONLY)
+PLIST_SUB+=	NO_SERVERS=
 MAN5+=	ldap.conf.5
 MAN5+=	ldif.5
 MAN5+=	slapd-bdb.5
@@ -388,14 +306,9 @@ MAN8+=	slapcat.8
 MAN8+=	slapd.8
 MAN8+=	slapindex.8
 MAN8+=	slappasswd.8
-.else
-PLIST_SUB+=	NO_SLAPD="@comment "
-.endif
-.if defined(BUILD_SLURPD)
-PLIST_SUB+=	NO_SLUPRD=""
 MAN8+=	slurpd.8
 .else
-PLIST_SUB+=	NO_SLUPRD="@comment "
+PLIST_SUB+=	NO_SERVERS="@comment "
 .endif
 
 post-patch:
@@ -407,20 +320,17 @@ post-patch:
 		${WRKSRC}/servers/slapd/slapd.conf
 
 post-build:
-.if defined(BUILD_SLAPD)
+.if !defined(CLIENT_ONLY)
 	@${SED} 's,@@PREFIX@@,${PREFIX},g' ${FILESDIR}/slapd.sh >${WRKDIR}/slapd.sh
-.endif
-.if defined(BUILD_SLURPD)
 	@${SED} 's,@@PREFIX@@,${PREFIX},g' ${FILESDIR}/slurpd.sh >${WRKDIR}/slurpd.sh
 .endif
 
 do-install:
-.if defined(BUILD_CLIENTS) && defined (BUILD_SLAPD) && defined (BUILD_SLURPD)
+.if !defined(CLIENT_ONLY)
 	@cd ${WRKSRC} && ${MAKE} install
 	@${STRIP_CMD} ${PREFIX}/libexec/slapd
 	@${STRIP_CMD} ${PREFIX}/libexec/slurpd
 .else
-.if defined(BUILD_CLIENTS)
 	@cd ${WRKSRC}/include && ${MAKE} install
 	@cd ${WRKSRC}/clients && ${MAKE} install
 	@cd ${WRKSRC}/libraries && ${MAKE} install
@@ -428,32 +338,10 @@ do-install:
 	@cd ${WRKSRC}/doc/man/man$i && ${MAKE} install
 .endfor
 .endif
-.if defined(BUILD_SLAPD)
-	@cd ${WRKSRC}/servers/slapd && ${MAKE} install
-	@cd ${WRKSRC}/doc/man/man5 && ${MAKE} install
-	@${INSTALL_MAN} ${WRKSRC}/doc/man/man8/slapadd.8 ${MANPREFIX}/man/man8
-	@${INSTALL_MAN} ${WRKSRC}/doc/man/man8/slapcat.8 ${MANPREFIX}/man/man8
-	@${INSTALL_MAN} ${WRKSRC}/doc/man/man8/slapd.8 ${MANPREFIX}/man/man8
-	@${INSTALL_MAN} ${WRKSRC}/doc/man/man8/slapindex.8 ${MANPREFIX}/man/man8
-	@${INSTALL_MAN} ${WRKSRC}/doc/man/man8/slappasswd.8 ${MANPREFIX}/man/man8
-	@${MKDIR} ${PREFIX}/libexec
-	@${MKDIR} /var/db
-	@${STRIP_CMD} ${PREFIX}/libexec/slapd
-.endif
-.if defined(BUILD_SLURPD)
-	@cd ${WRKSRC}/servers/slurpd && ${MAKE} install
-	@${INSTALL_MAN} ${WRKSRC}/doc/man/man8/slurpd.8 ${MANPREFIX}/man/man8
-	@${MKDIR} ${PREFIX}/libexec
-	@${INSTALL_TARGET} -c -o root -g wheel -m 700 -d /var/db/openldap-slurp
-	@${STRIP_CMD} ${PREFIX}/libexec/slurpd
-.endif
-.endif
 
 post-install:
-.if defined(BUILD_SLAPD)
+.if !defined(CLIENT_ONLY)
 	@${INSTALL_SCRIPT} ${WRKDIR}/slapd.sh ${PREFIX}/etc/rc.d/slapd.sh.sample
-.endif
-.if defined(BUILD_SLURPD)
 	@${INSTALL_SCRIPT} ${WRKDIR}/slurpd.sh ${PREFIX}/etc/rc.d/slurpd.sh.sample
 .endif
 
