@@ -34,11 +34,24 @@ esac
 echo
 echo "Adding startup shell script to PREFIX_DIR/etc/rc.d/"
 echo  "Do you like to add startup shell script automatically? (y/n) [y]" ;
-(echo "# dserver - dictionary server" ;
- echo "if [ -x PREFIX_DIR/lib/dserver/dserver ] ; then" ;
- echo "	PREFIX_DIR/lib/dserver/dserver &" ;
- echo "	echo -n ' dserver'" ;
- echo "fi") > /tmp/dserver.sh
+(echo "#!/bin/sh" ;
+ echo "# dserver - dictionary server" ;
+ echo "case \"\$1\" in" ;
+ echo "start)" ;
+ echo "	if [ -x PREFIX_DIR/lib/dserver/dserver ] ; then" ;
+ echo "		PREFIX_DIR/lib/dserver/dserver &" ;
+ echo "		echo -n ' dserver'" ;
+ echo "	fi" ;
+ echo "	;;" ;
+ echo "stop)" ;
+ echo "	;;" ;
+ echo "*)" ;
+ echo "	echo \"Usage: `basename $0` {start|stop}\" >&2" ;
+ echo "	exit 64" ;
+ echo "	;;" ;
+ echo "esac" ;
+ echo "" ;
+ echo "exit 0") > /tmp/dserver.sh
 read ans;
 case x${ans} in
 	xn*|xN*)

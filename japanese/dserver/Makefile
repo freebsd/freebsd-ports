@@ -7,6 +7,7 @@
 
 PORTNAME=	dserver
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	ftp://ftp.pu-toyama.ac.jp/pub/misc/ \
 		${MASTER_SITE_PORTS_JP} \
