@@ -1,5 +1,5 @@
 bin/addfont
-bin/cwbibtx
+bin/cwbibtex
 bin/cwmkidx
 bin/cwtex
 bin/tex2xtc

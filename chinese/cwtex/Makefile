@@ -23,7 +23,7 @@ NO_BUILD=	YES
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/addfont ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/cwbibtx ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/cwbibtex ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/cwmkidx ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/cwtex ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/tex2xtc ${PREFIX}/bin/
