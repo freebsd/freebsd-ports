@@ -21,11 +21,7 @@ info/librep.info-9
 @exec install-info %D/info/librep.info %D/info/dir
 lib/librep.la
 lib/librep.so
-lib/librep.so.10
-libexec/rep/%%GNUHOST%%/install-aliases
-libexec/rep/%%GNUHOST%%/libtool
-libexec/rep/%%GNUHOST%%/rep_config.h
-libexec/rep/%%GNUHOST%%/rules.mk
+lib/librep.so.11
 libexec/rep/%%VERSION%%/%%GNUHOST%%/DOC
 libexec/rep/%%VERSION%%/%%GNUHOST%%/emulate-gnu-tar
 libexec/rep/%%VERSION%%/%%GNUHOST%%/gdbm.la
@@ -60,7 +56,12 @@ libexec/rep/%%VERSION%%/%%GNUHOST%%/tables.la
 libexec/rep/%%VERSION%%/%%GNUHOST%%/tables.so
 libexec/rep/%%VERSION%%/%%GNUHOST%%/timers.la
 libexec/rep/%%VERSION%%/%%GNUHOST%%/timers.so
+libexec/rep/%%GNUHOST%%/install-aliases
+libexec/rep/%%GNUHOST%%/libtool
+libexec/rep/%%GNUHOST%%/rep_config.h
+libexec/rep/%%GNUHOST%%/rules.mk
 share/aclocal/rep.m4
+share/emacs/site-lisp/rep-debugger.el
 share/rep/%%VERSION%%/lisp/cgi-get.jl
 share/rep/%%VERSION%%/lisp/cgi-get.jlc
 share/rep/%%VERSION%%/lisp/compiler.jl
@@ -137,6 +138,8 @@ share/rep/%%VERSION%%/lisp/rep/lang/define.jl
 share/rep/%%VERSION%%/lisp/rep/lang/define.jlc
 share/rep/%%VERSION%%/lisp/rep/lang/doc.jl
 share/rep/%%VERSION%%/lisp/rep/lang/doc.jlc
+share/rep/%%VERSION%%/lisp/rep/lang/error-helper.jl
+share/rep/%%VERSION%%/lisp/rep/lang/error-helper.jlc
 share/rep/%%VERSION%%/lisp/rep/lang/interpreter.jl
 share/rep/%%VERSION%%/lisp/rep/lang/interpreter.jlc
 share/rep/%%VERSION%%/lisp/rep/lang/math.jl
@@ -168,6 +171,8 @@ share/rep/%%VERSION%%/lisp/rep/test/framework.jl
 share/rep/%%VERSION%%/lisp/rep/test/framework.jlc
 share/rep/%%VERSION%%/lisp/rep/threads/condition-variable.jl
 share/rep/%%VERSION%%/lisp/rep/threads/condition-variable.jlc
+share/rep/%%VERSION%%/lisp/rep/threads/message-port.jl
+share/rep/%%VERSION%%/lisp/rep/threads/message-port.jlc
 share/rep/%%VERSION%%/lisp/rep/threads/mutex.jl
 share/rep/%%VERSION%%/lisp/rep/threads/mutex.jlc
 share/rep/%%VERSION%%/lisp/rep/threads/utils.jl
@@ -277,6 +282,9 @@ share/rep/%%VERSION%%/lisp/unscheme/syntax.jlc
 @dirrm share/rep/%%VERSION%%/lisp
 @dirrm share/rep/%%VERSION%%
 @dirrm share/rep
+@dirrm share/emacs/site-lisp
+@dirrm share/emacs
+@dirrm libexec/rep/%%GNUHOST%%
 @dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/vm
 @dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/util
 @dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%/rep/lang
@@ -287,5 +295,4 @@ share/rep/%%VERSION%%/lisp/unscheme/syntax.jlc
 @dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%/rep
 @dirrm libexec/rep/%%VERSION%%/%%GNUHOST%%
 @dirrm libexec/rep/%%VERSION%%
-@dirrm libexec/rep/%%GNUHOST%%
 @dirrm libexec/rep

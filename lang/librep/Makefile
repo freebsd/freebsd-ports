@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	librep
-PORTVERSION=	0.14
+PORTVERSION=	0.15.1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -19,7 +19,7 @@ LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm \
 LIB_DEPENDS+=	gmp.3:${PORTSDIR}/math/libgmp
 .endif
 
-PLIST_SUB=	GNUHOST=${ARCH}--freebsd${OSREL} VERSION=${PORTVERSION}
+PLIST_SUB=	GNUHOST=${ARCH}-pc-freebsd${OSREL:C/\..*//} VERSION=${PORTVERSION}
 
 USE_NEWGCC=	yes
 USE_GMAKE=	yes
@@ -28,6 +28,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib -lxpg4 -lintl"
 CONFIGURE_ARGS=	--with-aclocaldir=${PREFIX}/share/aclocal
+CONFIGURE_TARGET=	${ARCH}-freebsd${OSREL:C/\..*//}
 
 # Don't use USE_X_PREFIX - the port doesn't really require X11 to run.
 # The reason why it should be in X11BASE is that sawfish (primary user of
