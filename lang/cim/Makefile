@@ -1,31 +1,26 @@
 # New ports collection makefile for:   cim
-# Version required:		1.92
+# Version required:		2.10
 # Date created:			21 Sept 1996
-# Whom:				Pedro
+# Whom:				giffunip
 #
-# $Id: Makefile,v 1.4 1997/07/21 03:14:35 obrien Exp $
+# $Id: Makefile,v 1.5 1998/02/20 18:39:51 steve Exp $
 #
 
-DISTNAME=	cim-1.92
+DISTNAME=	cim-2.10
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/cim/  \
-		${MASTER_SITE_SUNSITE}  \
-		ftp://ftp.fenk.wau.nl/pub/lang/simula/compilers/cim/
+		ftp://ftp.fenk.wau.nl/pub/lang/simula/compilers/cim/ \
+		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	devel/lang/simula
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.ORG
 
-STRIP=
-GNU_CONFIGURE= 	yes 
-ALL_TARGET=		all check
-MAN1=			cim.1
+GNU_CONFIGURE= 	yes
+MAN1=		cim.1
 
-post-install:
-	@strip ${PREFIX}/bin/cim
-	@strip $(PREFIX/bin/cimetags
-.if defined(NOPORTDOCS)
-	@${RM} ${PREFIX}/doc/cim.ps
-	@${RM} ${PREFIX}/doc/cim.info
-.endif
+pre-install:
+	if [ ! -f ${PREFIX}/info/dir ]; then \
+		${SED} -ne '1,/Menu:/p' /usr/share/info/dir > ${PREFIX}/info/dir; \
+	fi
 
 .include <bsd.port.mk>
