@@ -17,6 +17,8 @@ COMMENT=	A chess program for playing and analyzing games
 
 LIB_DEPENDS=	db2.0:${PORTSDIR}/databases/db2:install
 
+NOT_FOR_ARCHS=	sparc64 alpha
+
 MAN6=           Amy.6
 
 HAS_CONFIGURE=	yes
