@@ -1,0 +1,5 @@
+mod_vhs is an Apache Web Server module allowing mass virtual hosting without 
+the need for file based configuration. The virtual host paths are translated 
+using libhome system to get the corrects path at request time.
+
+WWW: http://www.oav.net/projects/mod_vhs/

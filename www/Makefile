@@ -314,6 +314,7 @@
     SUBDIR += mod_uid
     SUBDIR += mod_v2h
     SUBDIR += mod_vdbh
+    SUBDIR += mod_vhs
     SUBDIR += mod_watch
     SUBDIR += mod_watch4
     SUBDIR += mod_webapp
