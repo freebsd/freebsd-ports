@@ -9,14 +9,11 @@ PORTNAME=	aalib
 PORTVERSION=	1.2
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://horac.ta.jcu.cz/pub/aa/ \
-		${MASTER_SITE_SUNSITE}
-MASTER_SITE_SUBDIR=	libs/graphics
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	aa-project
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_AUTOMAKE=	yes
-AUTOMAKE=	automake -a -i
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
@@ -29,7 +26,8 @@ CONFIGURE_ARGS=	--with-x=no
 .endif
 
 post-patch:
-	@${RM} -f ${WRKSRC}/config.cache
-	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g;" ${WRKSRC}/configure.in
+	@${PERL} -pi -e 's|/usr/local|${LOCALBASE}|g' ${WRKSRC}/configure
+	@find ${WRKSRC} -name '*.[ch]' | xargs ${PERL} -pi -e \
+		's|<malloc.h>|<stdlib.h>|g'
 
 .include <bsd.port.mk>
