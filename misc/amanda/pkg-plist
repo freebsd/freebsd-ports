@@ -11,6 +11,7 @@ libexec/amanda/driver
 libexec/amanda/planner
 libexec/amanda/reporter
 libexec/amanda/getconf
+libexec/amanda/chg-generic
 sbin/amrestore
 sbin/amadmin
 sbin/amflush
@@ -19,4 +20,8 @@ sbin/amcheck
 sbin/amdump
 sbin/amcleanup
 sbin/amtape
-libexec/amanda/chg-generic
+share/examples/amanda/amanda.conf
+share/examples/amanda/chg-generic.conf
+share/examples/amanda/disklist
+@dirrm libexec/amanda
+@dirrm share/examples/amanda
