@@ -13,8 +13,7 @@ CATEGORIES=	databases x11-toolkits
 MAINTAINER=	kay_lehmann@web.de
 COMMENT=	A plugin for QT to connect to MySQL-Databases
 
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
-
+USE_MYSQL=	yes
 USE_QT_VER=	3
 QT_NONSTANDARD=	yes
 
