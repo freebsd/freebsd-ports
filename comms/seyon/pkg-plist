@@ -1,0 +1,9 @@
+@cd /usr/X11R6
+@mode 755
+@owner bin
+@group bin
+bin/seyon
+@mode 444
+lib/X11/app-defaults/Seyon
+lib/X11/app-defaults/Seyon-color
+lib/X11/seyon.help
