@@ -1,0 +1,11 @@
+--- configure.orig	Fri Jun 30 10:13:20 2000
++++ configure	Fri Jun 30 10:13:51 2000
+@@ -3344,7 +3344,7 @@
+ cat > conftest.$ac_ext <<EOF
+ #line 3346 "configure"
+ #include "confdefs.h"
+-#include <regex.h>
++#include <gnuregex.h>
+ EOF
+ if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+   egrep "re_pattern_buffer" >/dev/null 2>&1; then
