@@ -44,6 +44,7 @@
     SUBDIR += mysql323-server
     SUBDIR += mysqltcl
     SUBDIR += mytop
+    SUBDIR += namazu2
     SUBDIR += p5-ApacheDBILogConfig
     SUBDIR += p5-ApacheDBILogger
     SUBDIR += p5-AsciiDB-TagFile
