@@ -1,0 +1,373 @@
+--- config/untested/386pc-freebsd2.1-cc.orig	Sun Dec 12 16:29:07 1999
++++ config/untested/386pc-freebsd2.1-cc	Sun Dec 12 16:29:07 1999
+@@ -0,0 +1,370 @@
++# This is a shell script.  It is sourced by the build scripts in the
++# various subdirectories to gather system-, compiler-, and OS-specific
++# information required for building the Makefiles.
++#
++# Most variables in this script are interpreted as boolean variables and
++# indicate presence or absence of one specific feature.  The value "yes"
++# is regarded as "true", all other values (including no value or even
++# non-existence of the variable) are interpreted as "false".
++#
++# Do not forget to quote values that contain shell meta syntax.
++#
++# -----------------------------------------------------------------------
++
++
++# $system should contain the name of this file.  It may be used by some
++# of the build scripts to do things that are specific to one single
++# type of system.
++
++system=386pc-freebsd2.1-cc
++
++
++# Does the system support the vprintf library function?  If not,
++# availability of the (non-portable) _doprnt function is assumed.
++
++vprintf=yes
++
++
++# Does the directory(3) library follow the POSIX conventions (i.e.
++# requires the <dirent.h> include file and uses "struct dirent")?
++# If not, the (obsolete) BSD-style interface with <sys/dir.h> and
++# "struct direct" is assumed.
++
++dirent=yes
++
++
++# Does the system have the random/srandom library functions?  If not,
++# rand/srand will be used instead.
++
++random=yes
++
++
++# Does the system have the index library function?  If not, strchr
++# will be used.
++
++index=yes
++
++
++# Does the system have the bcopy, bzero, and bcmp library functions?
++# If not, memcpy/memset/memcmp will be used.
++
++bstring=yes
++
++
++# Does using the access system call require <unistd.h> to be included?
++# (Look into the manual page for access if in doubt.)
++
++include_unistd_h=yes
++
++
++# If the FIONREAD ioctl command is defined, which file must be included?
++
++fionread_include='<sys/ioctl.h>'
++
++
++# What is the name of the a.out include file?
++
++aout_h='<a.out.h>'
++
++
++# The following variables control how certain system limits are obtained
++# during runtime.
++#
++# If getdtablesize() is available to determine the maximum number of open
++# files per process, set getdtablesize=yes.
++# Alternatively, if POSIX-style sysconf() can be called with _SC_OPEN_MAX,
++# set sysconf_open_max=yes.
++# If neither is set to "yes", an educated guess will be made.
++
++getdtablesize=yes
++sysconf_open_max=yes
++
++# If POSIX-style pathconf() can be invoked with _PC_PATH_MAX to determine
++# the maximum pathname length, set pathconf_path_max=yes.
++
++pathconf_path_max=yes
++
++# If the system page size can be determined by calling getpagesize()
++# set getpagesize=yes.
++# Alternatively, if sysconf() can be invoked with _SC_PAGESIZE, set
++# sysconf_pagesize=yes.
++# These two variables are only required if the generational garbage
++# collector is used.
++
++getpagesize=yes
++sysconf_pagesize=no
++
++
++# Set reliable_signals=bsd if your system supports BSD-style reliable
++# signals (has sigblock and related functions); set reliable_signals=posix
++# for POSIX-style signals (sigprocmask, sigsets); otherwise old V7/SysV
++# signal semantics are assumed.
++
++reliable_signals=bsd
++
++
++# To support dynamic loading of object files and "dump", the system's
++# a.out format has to be known.  Choose one of the following:
++#
++#     coff  ecoff  xcoff  elf  macho  hp9k  convex
++#
++# Other values of "aout_format" are interpreted as BSD-style a.out format.
++
++aout_format=
++
++
++# Which mechanism should be used to dynamically load object files?
++# Possible values currently are:
++#
++#    ld        BSD-style incremental loading based on ld -A
++#    rld       NeXT-style rld_load()
++#    shl       HP-UX shl_load()
++#    dl        SysVR4/SunOS5 dlopen()
++#
++# Leave load_obj empty if dynamic loading is not supported.
++
++load_obj=dl
++
++
++    # The following variables are only relevant if load_obj is set.
++
++    # Linker options to produce a shared object from a .o file.
++    # Only used if load_obj=dl.
++
++    ldflags_shared='-Bshareable'
++
++    # The libraries against which dynamically loaded files are resolved
++    # at the time they are loaded.
++
++    load_libraries=
++
++    # Does the ld-option -x really do what the manual says it does (i.e.
++    # omit local symbols), or does it somehow render the resulting object
++    # file unsuitable for dynamic loading?  If in doubt, leave it out
++    # (which may result in somewhat larger object files).
++
++    incremental_ldflags=-x
++
++    # Systems with "aout_format=ecoff" may require a call to the cacheflush
++    # system call after an object file has been loaded.  Which include file
++    # has to be included in this case?
++
++    cachectl_h=unused
++
++    # Is the ANSI-C atexit function supported to register an exit handler?
++    # If not, the exit library function will be redefined and will end in
++    # a call to _exit.
++
++    atexit=yes
++
++
++# Do the names of external functions in the symbol table always begin
++# with a special character (such as underline)?  If so, syms_begin_with
++# should hold this character, otherwise leave it empty.
++
++syms_begin_with=_
++
++
++# The symbol prefixes of extension initialization and finalization
++# functions (without the initial $syms_begin_with).  Do not change
++# these unless the compiler or linker restricts the length of symbols!
++
++init_prefix=elk_init_
++finit_prefix=elk_finit_
++
++
++# Is the "dump" function supported?
++
++can_dump=no
++
++
++# The following variables are only relevant if "can_dump=yes".
++
++    # Is the fchmod system call broken or unavailable?
++
++    fchmod_broken=no
++
++    # These four variables are only relevant if the system has the BSD-style
++    # a.out format.
++    # segment_size is the segment size of the system's memory management
++    # unit, i.e. the number to a multiple of which the size of an a.out
++    # segment (e.g. .text) is rounded up.
++    # file_text_start is the file offset at which the text segment starts
++    # in an a.out file.
++    # mem_text_start is the starting address of the text segment in memory.
++    # text_length_adj must be set to "sizeof (struct exec)" if the length of
++    # the text segment stored in the a.out header includes the a.out header
++    # itself.
++
++    segment_size=__LDPGSZ
++    file_text_start='(N_TXTOFF(hdr) + sizeof(struct exec))'
++    mem_text_start='(sizeof(struct exec) + getpagesize())'
++    text_length_adj='(sizeof(struct exec))'
++
++    # Only relevant if "aout_format=coff": the system's pagesize.
++
++    coff_pagesize=
++
++    # Only relevant if "aout_format=hp9k" and "load_obj=shl"
++
++    hp_shared_libraries=yes
++
++    # Print debug messages when dumping
++
++    debug_dump=yes
++
++
++# Is the "termio" terminal interface supported by the system?  If not,
++# BSD-style tty handling will be used.
++
++termio=yes
++
++
++# flush_stdio and flush_tty indicate how clear-input/output-port can
++# flush (purge) a FILE pointer and a TTY file descriptor.
++# Possible values of flush_stdio:
++#    bsd         assume old BSD-style FILE* (with _cnt, _ptr, _base)
++#    fpurge      use 4.4BSD-style fpurge stdio library function
++#    linux       use Linux-specific method
++# Possible values of flush_tty:
++#    tiocflush   use TIOCFLUSH ioctl from <sys/ioctl.h>
++#    tcflsh      use TCFLSH ioctl from <termio.h>
++# Leave the variable(s) empty if flushing is not supported.
++
++flush_stdio=fpurge
++flush_tty=tiocflush
++
++
++# The interpreter uses the getrlimit function to determine the maximum
++# stack size of the running program.  If this function is not supported,
++# set max_stack_size to a (fixed) maximum stack size (in bytes).
++
++max_stack_size=
++
++
++# Is the mprotect system call supported?  The generational garbage collector 
++# requires mprotect to implement incremental GC.  $mprotect is ignored if
++# generational_gc is set to "no" in the site file.  Set mprotect=mmap if
++# mprotect is supported, but only for mmap()ed memory.
++
++mprotect=yes
++
++
++# How can a SIGSEGV or SIGBUS signal handler find out the address of
++# the faulting memory reference?  This variable is only used if
++# $mprotect is "yes" or "mmap".  Possible values are:
++#
++#   siginfo     handler is called with siginfo_t structure (enabled
++#               by a call to sigaction)
++#   sigcontext  address is in the sigcontext structure (3rd arg, sc_badvaddr)
++#   arg4        address is delivered to handler as argument #4
++#   aix         use an AIX-specific hack to get hold of the bad address
++#   hpux        use a HP-UX-specific hack
++
++sigsegv_addr=arg4
++
++
++# Does the system support the alloca library function, and does this
++# function actually extend the stack?  If in doubt, extract alloca.o
++# from the C library and check if it contains the symbols malloc and free.
++# If this is the case, forget it.
++
++use_alloca=yes
++
++
++# Must <alloca.h> be included to use alloca?  Is "#pragma alloca" required?
++
++include_alloca_h=no
++pragma_alloca=no
++
++
++# Does the system (or compiler) require certain objects (e.g. doubles)
++# to be aligned at 8-byte boundaries?  If not, 4-byte alignment will
++# be assumed.
++
++align_8byte=yes
++
++
++# The C compiler used to compile the source code.
++
++cc=cc
++
++
++# The name of the linker.  This is usually just "ld", or /usr/ccs/bin/ld
++# in SVR4-based systems.
++
++ld=ld
++
++
++# The C compiler flags used for all files.
++
++cflags=$CFLAGS
++
++
++# Are extra C compiler flags (such as -D_NO_PROTO) required to compile
++# Motif applications?
++
++motif_cflags=
++
++
++# Are extra C compiler flags (such as -G 0) required to compile
++# dynamically loadable files?
++
++obj_cflags='-fpic -DPIC'
++
++
++# Are extra linker flags (such as -G 0) required to link several object
++# files together to one dynamically loadable file?
++
++obj_ldflags=
++
++
++# The linker flags used to link the interpreter.
++
++ldflags='-lm'
++
++
++# The lint flags.
++
++lintflags='-abxh'
++
++
++# Are function prototypes in the header files required?  If prototypes=yes,
++# prototypes are used unconditionally; if prototypes=no, prototypes are
++# not used; otherwise prototypes are only used if the source code is
++# compiled with an ANSI-C- or C++-compiler.
++
++prototypes=yes
++
++
++# Does your C preprocessor support the ANSI-C ## operator, although
++# __STDC__ is not defined?
++
++ansi_cpp=no
++
++
++# The UNIX extension likes to know which of the following system calls,
++# library functions, and include files are supported by the system.
++
++gettimeofday=yes
++ftime=
++vfork=yes
++gethostname=yes
++uname=yes
++mktemp=yes
++tmpnam=yes
++tempnam=yes
++getcwd=yes
++getwd=yes
++rename=yes
++waitpid=yes
++wait3=yes
++wait4=yes
++utime_h=yes
++regcomp=yes
++
++
++# Element type of the gidset argument of getgroups(); typically int
++# or gid_t.  Only needed by the UNIX extension.
++
++getgroups_type=gid_t

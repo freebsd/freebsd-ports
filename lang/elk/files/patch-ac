@@ -1,0 +1,83 @@
+--- config/sites/386pc-freebsd2.1.orig	Sun Dec 12 16:29:07 1999
++++ config/sites/386pc-freebsd2.1	Sun Dec 12 16:29:07 1999
+@@ -0,0 +1,80 @@
++# This is a shell script.  It is sourced by the build scripts in the
++# various subdirectories to gather site- and installation-specific
++# information required for building the Makefiles.
++#
++# This script is read after the "system" file, therefore you can place
++# variable settings here to override those from "system".
++#
++# Some variables in this script are interpreted as boolean variables and
++# indicate presence or absence of one specific feature.  The value "yes"
++# is regarded as "true", all other values (including no value or even
++# non-existence of the variable) are interpreted as "false".
++#
++# Do not forget to quote values that contain shell meta syntax.
++#
++# -----------------------------------------------------------------------
++
++
++# The directory where all files are installed by running "make install".
++# The subdirectories bin, lib, include, and runtime (with various
++# subdirectories) are created automatically, but $install_dir isn't.
++# Make sure $install_dir doesn't point to the top of the source tree
++# (i.e. choose a subdirectory or a directory outside the source tree).
++
++install_dir=${PREFIX}/share/elk
++
++
++# Libraries against which to link the X11 extension (typically -lX11).
++#
++# Any of the following library lists may be prefixed by something like
++# -L/usr/X11/lib if the X-libraries do not reside in a standard directory;
++# an additional -R/usr/X11/lib and -lsocket may be required in case of
++# SunOS 5.x/SysVR4).
++
++libxlib="-L${X11BASE}/lib -lX11"
++
++# Libraries against which to link the Xt extension (typically
++# -lXaw -lXmu -lXt -lSM -lICE -lXext -lX11).  -lXaw is needed to get the correct
++# definition of the vendor shell widget class
++
++libxt="-L${X11BASE}/lib -lX11 -lXext -lICE -lSM -lXt -lXmu -lXaw"
++
++
++# Libraries against which to link the Athena widgets extension (typically
++# identical to libxt above)
++
++libxaw="-L${X11BASE}/lib -lX11 -lXext -lICE -lSM -lXt -lXmu -lXaw"
++
++
++# Libraries against which to link the Motif extension (typically like
++# libaw above with Xaw replaced by Xm)
++
++libxmotif="-L${X11BASE}/lib -lX11 -lXext -lICE -lSM -lXt -lXmu -lXm"
++
++
++# Additional flags (typically -Isomething) to be supplied to the C
++# compiler when compiling an X11 application, or a Motif application,
++# respectively.
++
++x11_incl=-I${X11BASE}/include
++motif_incl=-I${X11BASE}/include
++
++
++# Set "gdbm" to "yes" if you have the GNU gdbm library installed and
++# want the gdbm extension to be compiled.  "gdbm_inc" gives additional
++# C compiler flags required to compile a program using gdbm.
++
++gdbm=
++gdbm_incl=-I${PREFIX}/include/gdbm
++
++
++# Do you want to use the generational garbage collector?  If not, the
++# stop-and-copy garbage collector will be used.
++
++generational_gc=yes
++
++
++# The default heap size of the Scheme interpreter in KBytes (if the
++# stop-and-copy garbage collector is used).
++
++default_heap_size=1024

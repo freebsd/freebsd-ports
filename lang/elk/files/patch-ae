@@ -1,0 +1,30 @@
+--- src/dump-vanilla.c.orig	Thu Jun 29 06:55:51 1995
++++ src/dump-vanilla.c	Sun Dec 12 16:29:07 1999
+@@ -12,6 +12,10 @@
+ 
+ extern void *sbrk();
+ 
++#if defined(__FreeBSD__)
++extern etext;
++#endif
++
+ #if defined(hp9000s300) || defined(__hp9000s300) || defined(__hp9000s300__)
+ static int getpagesize () {
+     return EXEC_PAGESIZE;
+@@ -113,13 +117,15 @@
+     close (afd);
+ #if defined(__bsdi__)
+     data_start = N_DATADDR(hdr);
++#elif defined (__FreeBSD__)
++    data_start = (int) &etext;
+ #else
+     data_start = hdr.a_text;
++#endif
+ #if defined(sun) || defined(__sun__)
+     data_start += pagemask+1;
+ #endif
+     data_start = (data_start + SEG_SIZ-1) & ~(SEG_SIZ-1);
+-#endif
+     data_end = (unsigned)sbrk (0);
+ #if !defined(__bsdi__)
+     data_end = (data_end + pagemask) & ~pagemask;

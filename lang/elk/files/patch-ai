@@ -1,0 +1,11 @@
+--- lib/misc/build.orig	Thu Jul 27 07:22:40 1995
++++ lib/misc/build	Sun Dec 12 16:29:08 1999
+@@ -15,7 +15,7 @@
+ 
+ SHELL=/bin/sh
+ 
+-CC= ${cc-cc}
++CC?= cc
+ CFLAGS= $cflags $obj_cflags
+ LINTFLAGS= $lintflags
+ 

@@ -1,0 +1,11 @@
+--- lib/xlib/build.orig	Tue Jul 18 06:19:11 1995
++++ lib/xlib/build	Sun Dec 12 16:29:08 1999
+@@ -7,7 +7,7 @@
+ 
+ SHELL=/bin/sh
+ 
+-CC= ${cc-cc}
++CC?= cc
+ CFLAGS= $cflags $obj_cflags
+ LINTFLAGS= $lintflags
+ 

@@ -1,0 +1,11 @@
+--- lib/xm/build.orig	Tue Jul 18 06:22:31 1995
++++ lib/xm/build	Sun Dec 12 16:29:08 1999
+@@ -9,7 +9,7 @@
+ 
+ SHELL=/bin/sh
+ 
+-CC= ${cc-cc}
++CC?= cc
+ CFLAGS= $cflags $obj_cflags $motif_cflags
+ LINTFLAGS= $lintflags
+ SCMFLAGS= -p .:../../scm:../xt

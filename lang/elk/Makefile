@@ -14,7 +14,6 @@ MASTER_SITES=	http://www-rn.informatik.uni-bremen.de/software/elk/dist/
 MAINTAINER=	ports@FreeBSD.org
 
 USE_XLIB=	yes
-PATCH_STRIP=	-p1
 ALL_TARGET=	default
 MAN1=		elk.1
 

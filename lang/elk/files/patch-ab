@@ -1,0 +1,32 @@
+--- doc/man/elk.1.orig	Fri Aug 11 09:27:03 1995
++++ doc/man/elk.1	Sun Dec 12 16:29:07 1999
+@@ -2,9 +2,9 @@
+ .TH ELK 1 "15 January 1991"
+ .UC 4
+ .SH NAME
+-elk, scheme \- extensible Scheme interpreter
++elk \- extensible Scheme interpreter
+ .SH SYNOPSIS
+-.B scheme
++.B elk
+ [
+ .B \-l \f2file\fP
+ ] [
+@@ -20,8 +20,6 @@
+ ] [[
+ .B \-\^\-
+ ] \f2args\fP]
+-.LP
+-.BR elk .\|.\|.
+ .SH DESCRIPTION
+ .I Elk
+ (Extension Language Kit) is a Scheme implementation designed
+@@ -32,7 +30,7 @@
+ is linked with the application it serves, but a stand-alone version
+ of the Scheme interpreter is installed as well (usually under
+ the name
+-.BR scheme ).
++.BR elk ).
+ This interpreter, together with the standard Scheme toplevel,
+ .I Elk
+ can be used as an ordinary, stand-alone implementation of the
