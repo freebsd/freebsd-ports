@@ -71,12 +71,14 @@ bin/pulsar
 bin/pyro
 bin/qix
 bin/rd-bomb
+bin/ripples
 bin/rocks
 bin/rorschach
 bin/rotor
 bin/rubik
 bin/shadebobs
 bin/sierpinski
+bin/sierpinski3d
 bin/slidescreen
 bin/slip
 bin/sonar
