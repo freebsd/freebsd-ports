@@ -1,0 +1,8 @@
+--- surfraw.conf.in.orig	Sun Aug  6 16:09:01 2000
++++ surfraw.conf.in	Sun Aug 20 19:38:34 2000
+@@ -59,4 +59,4 @@
+ defyn SURFRAW_escape_url_args	yes
+ 
+ # file containing list of elvi
+-def   SURFRAW_elvi_list		@sysconfdir@/surfraw_elvi.list
++def   SURFRAW_elvi_list		@prefix@/share/surfraw/surfraw_elvi.list
