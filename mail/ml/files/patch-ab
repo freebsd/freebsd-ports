@@ -1,0 +1,50 @@
+*** Imakefile.orig	Sun Mar 15 20:34:12 1998
+--- Imakefile	Sun Mar 15 20:35:43 1998
+***************
+*** 4,10 ****
+  XCOMM We need /usr/include, the current src dir, the parent of this
+  XCOMM dir, the parent of X11, and the parent of the Motif (Xm) include dir
+  
+! EXTRA_INCLUDES = -DFALLBACK -I$(INCROOT) -I./ -I../ -I/usr/include/Motif1.2
+  
+  
+  XCOMM   `Compile time defines: 
+--- 4,10 ----
+  XCOMM We need /usr/include, the current src dir, the parent of this
+  XCOMM dir, the parent of X11, and the parent of the Motif (Xm) include dir
+  
+! EXTRA_INCLUDES = -DFALLBACK -DDEFAULT_LIBDIR="\"${X11BASE}/lib/X11/ml\"" -I$(INCROOT) -I. -I..
+  
+  
+  XCOMM   `Compile time defines: 
+***************
+*** 25,38 ****
+  XCOMM  the Xpm library also
+  
+  #XMLIB=
+! XMLIB=-L/usr/lib/Motif1.2  -lXm
+  
+  LOCAL_LIBRARIES = ../imap-4/c-client/c-client.a
+  
+  # anything else your OS needs?
+! #OTHERLIBS=-lgen
+  
+! ML_LIBDIR=/usr/local/lib/ml
+  HELP_FILES=`find ../lib -type f -print`
+  
+  XCOMM  Default font sizes. Linux folks will want FONTSIZE=14 (or
+--- 25,38 ----
+  XCOMM  the Xpm library also
+  
+  #XMLIB=
+! XMLIB=${MOTIFLIB}
+  
+  LOCAL_LIBRARIES = ../imap-4/c-client/c-client.a
+  
+  # anything else your OS needs?
+! OTHERLIBS=-lcrypt
+  
+! ML_LIBDIR=${X11BASE}/lib/X11/ml
+  HELP_FILES=`find ../lib -type f -print`
+  
+  XCOMM  Default font sizes. Linux folks will want FONTSIZE=14 (or

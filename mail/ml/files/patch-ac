@@ -1,0 +1,13 @@
+*** ../lib/CheckConnection.ppp.orig	Sun Mar 15 20:59:57 1998
+--- ../lib/CheckConnection.ppp	Sun Mar 15 21:00:41 1998
+***************
+*** 1,4 ****
+  #!/bin/sh
+! netstat -i | grep ppp >& /dev/null || exit 1
+  exit 0
+  
+--- 1,4 ----
+  #!/bin/sh
+! netstat -i | grep tun0 >& /dev/null || exit 1
+  exit 0
+  

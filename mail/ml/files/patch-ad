@@ -1,0 +1,43 @@
+*** ../lib/ML.ad.orig	Sun Mar 15 21:35:32 1998
+--- ../lib/ML.ad	Sun Mar 15 21:38:17 1998
+***************
+*** 8,26 ****
+  
+  ! All the fonts specified by the program
+  
+! *XmCascadeButton*fontList:	-*-courier-bold-r-normal--12-*
+! *XmPushButton*fontList:		-*-courier-bold-r-normal--12-*
+! *XmLabel*fontList:		-*-courier-bold-r-normal--12-*
+! *XmText*fontList:		-*-courier-medium-r-normal--12-*
+! *XmTextField*fontList:		-*-courier-medium-r-normal--12-*
+! *XmList*fontList:		-*-courier-medium-r-normal--12-*
+  
+  
+  *lview*XmList.FontList:\
+! 	*-courier-medium-r-*--12-*=NORMAL,\
+! 	*-courier-bold-r-*--12-*=BOLD,\
+! 	*-courier-medium-o-*--12-*=ITALIC,\
+! 	*-courier-bold-o-*--12-*=BOLD_ITALIC
+  
+  
+  !*ispellCommand:			xterm -e ispell %s
+--- 8,26 ----
+  
+  ! All the fonts specified by the program
+  
+! *XmCascadeButton*fontList:	-*-helvetica-bold-r-normal--12-*
+! *XmPushButton*fontList:		-*-helvetica-bold-r-normal--12-*
+! *XmLabel*fontList:		-*-helvetica-bold-r-normal--12-*
+! *XmText*fontList:		-*-courier-medium-r-normal--14-*
+! *XmTextField*fontList:		-*-courier-medium-r-normal--14-*
+! *XmList*fontList:		-*-helvetica-medium-r-normal--12-*
+  
+  
+  *lview*XmList.FontList:\
+! 	*-courier-medium-r-*--14-*=NORMAL,\
+! 	*-courier-bold-r-*--14-*=BOLD,\
+! 	*-courier-medium-o-*--14-*=ITALIC,\
+! 	*-courier-bold-o-*--14-*=BOLD_ITALIC
+  
+  
+  !*ispellCommand:			xterm -e ispell %s
