@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	echoping
-PORTVERSION=	3.0.1
+PORTVERSION=	4.1.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.internatif.org/pub/unix/echoping/
 
 MAINTAINER=	ports@FreeBSD.org
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-icp
+CONFIGURE_ARGS=	--enable-icp --enable-smtp --with-ssl
 
 MAN1=		echoping.1
 
