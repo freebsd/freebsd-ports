@@ -1,3 +1,9 @@
+NOTE: The maintainer of this port strongly recommends the use of
+the "mpd-netgraph" port instead of this port.  The mpd-netgraph
+port is more flexible, and it works much better in every respect.
+If you choose to use this port, the maintainer will be able to
+offer you nothing beyond his sympathy.
+
 This is a port of the "pptp-linux" PPTP client.  It can establish a
 PPP connection with an NT server, tunneled through a PPTP link over
 the Internet.  In effect, it makes the client machine behave as if
