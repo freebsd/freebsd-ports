@@ -18,6 +18,7 @@
     SUBDIR += p5-Astro-Sunrise
     SUBDIR += p5-GPS
     SUBDIR += p5-Geo-METAR
+    SUBDIR += p5-SETI-Stats
     SUBDIR += pyweather
     SUBDIR += rmap
     SUBDIR += saoimage

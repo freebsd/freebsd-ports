@@ -1,0 +1,7 @@
+lib/perl5/site_perl/%%PERL_VER%%/SETI/Stats.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SETI-Stats/.packlist
+%%PORTDOCS%%share/doc/SETI-Stats/README
+%%PORTDOCS%%share/doc/SETI-Stats/ChangeLog
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/SETI-Stats
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/SETI
+%%PORTDOCS%%@dirrm share/doc/SETI-Stats
