@@ -36,6 +36,14 @@ CONFIGURE_ARGS+=	--with-stroke --with-stroke-library=${LOCALBASE}/lib \
 			--with-stroke-includes=${LOCALBASE}/include
 .endif
 
+.if defined(WITHOUT_SESSION_MGMT)
+CONFIGURE_ARGS+=	--disable-sm
+.endif
+
+.if defined(WITHOUT_SHAPE)
+CONFIGURE_ARGS+=	--disable-shape
+.endif
+
 PLIST_SUB+=	FVWM_VERSION="${PORTVERSION}"
 
 .include <bsd.port.pre.mk>
@@ -44,7 +52,7 @@ PLIST_SUB+=	FVWM_VERSION="${PORTVERSION}"
 USE_GNOME=	yes
 PLIST_SUB+=	GNOMEDATADIR="share/gnome/fvwm"
 .else
-CONFIGURE_ARGS+=	--without-gnome
+CONFIGURE_ARGS+=	--without-gnome --disable-gnome-hints
 PLIST_SUB+=	GNOMEDATADIR="share/fvwm"
 .endif
 
