@@ -3,10 +3,11 @@
 # Date created: 	13 November 1997
 # Whom:			jraynard
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/12 23:46:30 jraynard Exp $
+# $Id: Makefile,v 1.2 1997/11/13 19:51:54 jraynard Exp $
 #
 
 DISTNAME=	ElectricFence-2.0.5
+PKGNAME=	electricfence-2.0.5
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	devel/lang/c
