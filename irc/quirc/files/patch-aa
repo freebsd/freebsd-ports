@@ -1,29 +1,11 @@
---- Makefile.in.orig	Tue Jul 13 08:55:43 1999
-+++ Makefile.in	Thu Feb  3 14:57:36 2000
-@@ -73,7 +73,7 @@
- SUBDIRS = data
+--- Makefile.in.orig	Sat Aug 19 09:10:37 2000
++++ Makefile.in	Sat Aug 19 09:54:30 2000
+@@ -70,7 +70,7 @@
+ VERSION = @VERSION@
+ WISH = @WISH@
+ 
+-SUBDIRS = data doc
++SUBDIRS = data
  
  # Main binary targets
--bin_PROGRAMS = quirc quirc.inst
-+bin_PROGRAMS = quirc
- 
- # Headers
- quirc_SOURCES = arlib.c dcc.cc network.cc channel.cc echo.cc quirc.cc tcl.cc command.cc server.cc tcltk.cc complete.cc hash.cc support.cc window.cc tags.cc arlib.h complete.h hash.h messages.h query.h support.h arlibcc.h history.h mytcl.h quirc.h tags.h channel.h defines.h illist.h network.h serverdcc.h command.h echo.h llist.h nick.h window.h
-@@ -95,7 +95,7 @@
- 
- # Documentation
- 
--docdir = $(prefix)/doc/@PACKAGE@
-+docdir = $(prefix)/share/doc/@PACKAGE@
- doc_DATA = doc/rfc1459.txt doc/color.txt FAQ AUTHORS COPYING ChangeLog INSTALL NEWS README
- 
- # RPM and spec file generation
-@@ -151,7 +151,7 @@
- generate_tags_LDADD = $(LDADD)
- generate_tags_DEPENDENCIES = 
- generate_tags_LDFLAGS = 
--CXXFLAGS = @CXXFLAGS@
-+CXXFLAGS = @CXXFLAGS@ -pedantic
- CXXCOMPILE = $(CXX) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
- CXXLD = $(CXX)
- CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(LDFLAGS) -o $@
+ bin_PROGRAMS = quirc
