@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	acme
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.6
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/2.0
@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libwnck
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
