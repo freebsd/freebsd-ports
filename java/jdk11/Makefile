@@ -29,6 +29,7 @@ NO_BUILD=	yes
 .if ${PORTOBJFORMAT} == "aout"
 DISTFILES=	jdk${JDK_VERSION}_AOUT.V1999-11-9.tar.gz
 .else
+LIB_DEPENDS+=	c.3:${PORTSDIR}/misc/compat3x
 DISTFILES=	jdk${JDK_VERSION}_ELF.V1999-11-9.tar.gz
 .endif
 
