@@ -11,6 +11,8 @@ share/intltool/intltool-extract.in
 share/intltool/intltool-merge.in
 share/intltool/intltool-po-Makefile.in.in-patch-1
 share/intltool/intltool-po-Makefile.in.in-patch-2
+share/intltool/intltool-po-Makefile.in.in-patch-3
+share/intltool/intltool-po-Makefile.in.in-patch-4
 share/intltool/intltool-update.in
 share/intltool/xml-i18n-po-Makefile.in.in-patch-1
 share/intltool/xml-i18n-po-Makefile.in.in-patch-2
