@@ -1,5 +1,4 @@
 bin/giconv
-etc/charset.alias
 include/giconv.h
 include/libcharset.h
 lib/libcharset.a
@@ -8,3 +7,4 @@ lib/libcharset.so.1
 lib/libgiconv.a
 lib/libgiconv.so
 lib/libgiconv.so.2
+libdata/charset.alias
