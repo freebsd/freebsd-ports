@@ -151,6 +151,7 @@
     SUBDIR += mnews
     SUBDIR += mnews-gnspool
     SUBDIR += mnews-im
+    SUBDIR += mozilla-jlp
     SUBDIR += msdosfs
     SUBDIR += mtools
     SUBDIR += muggy
