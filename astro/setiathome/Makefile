@@ -40,9 +40,6 @@ DISTFILES=	setiathome-2.4.i386-unknown-freebsd2.2.8.tar	\
 .endif
 
 NO_BUILD=	"binary distribution"
-
-MAN1=		setiathome.1 xsetiathome.1
-
 NO_CDROM=	"interactive install"
 
 .if !defined(PACKAGE_BUILDING)
