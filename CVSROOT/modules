@@ -91,6 +91,7 @@ KnightCap	ports/games/KnightCap
 LPRng		ports/sysutils/LPRng
 LPRngTool	ports/sysutils/LPRngTool
 LibraryReport	src/tools/LibraryReport
+MAINTAINERS	src/MAINTAINERS
 Maaate		ports/audio/Maaate
 Mesa3		ports/graphics/Mesa3
 NeTraMet	ports/net/NeTraMet
