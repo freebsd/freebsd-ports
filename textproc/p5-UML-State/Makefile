@@ -20,6 +20,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
 
+MAN1=		drawstatexml.pl.1 drawstate.pl.1
 MAN3=		UML::drawstate.3 \
 		UML::drawstatexml.3 \
 		UML::State.3

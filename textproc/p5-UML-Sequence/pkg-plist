@@ -15,7 +15,7 @@ bin/seq2svg.pl
 @dirrm %%SITE_PERL%%/UML/Sequence
 @dirrm %%SITE_PERL%%/UML
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/UML/Sequence
-@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH/auto/UML/Sequence 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH/auto/UML 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/UML/Sequence 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/UML 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/Devel 2>/dev/null || true
