@@ -7,6 +7,7 @@
 
 PORTNAME=	iconv
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	converters
 MASTER_SITES=	http://www.dante.net/staff/konstantin/FreeBSD/iconv/
 
@@ -18,5 +19,11 @@ INSTALLS_SHLIB=	yes
 MANCOMPRESSED=	yes
 MAN1=		iconv.1
 MAN3=		iconv.3 iconv_open.3 iconv_close.3
+
+.if defined(NOPROFILE)
+PLIST_SUB=	PROFILE:="@comment "
+.else
+PLIST_SUB=	PROFILE:=""
+.endif
 
 .include <bsd.port.mk>
