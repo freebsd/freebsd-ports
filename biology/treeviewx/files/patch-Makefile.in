@@ -1,5 +1,5 @@
---- Makefile.in.orig	Sat Aug  4 05:09:46 2001
-+++ Makefile.in	Sat Aug  4 15:45:59 2001
+--- Makefile.in.orig	Fri Sep 14 02:03:50 2001
++++ Makefile.in	Thu Dec 27 11:43:50 2001
 @@ -263,7 +263,7 @@
  	$(CC) -c $(CFLAGS) -I$(NCLDIR) -I$(TREELIBDIR) -I$(GPORTDIR)  -DUSE_WXWINDOWS  -o $@ $<
  
@@ -9,10 +9,10 @@
  
  	${MAKE} $(PROGRAM);
  
-@@ -273,6 +273,16 @@
- tview.o : tview.cpp tview.h tproject.h
- tv.o : tv.cpp tv.h tdoc.h tview.h tproject.h
- tdoc.o: tdoc.cpp tdoc.h tview.h
+@@ -283,6 +283,15 @@
+ tdoc.o: tdoc.cpp tdoc.h tview.h \
+  $(TREELIBDIR)/profile.h $(TREELIBDIR)/Parse.h $(TREELIBDIR)/gtree.h $(TREELIBDIR)/TreeLib.h \
+  $(TREELIBDIR)/tokeniser.h $(TREELIBDIR)/treereader.h
 +
 +install : $(PROGRAM)
 +	$(mkinstalldirs) $(DESTDIR)$(bindir)
@@ -22,7 +22,6 @@
 +		$(INSTALL_PROGRAM) $$p $(DESTDIR)$(bindir)/`echo $$p|sed '$(transform)' `; \
 +		else :; fi; \
 +	done
-+	
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
