@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.41 1997/02/16 01:56:21 obrien Exp $
+# $Id: Makefile,v 1.42 1997/02/18 08:35:56 tg Exp $
 #
 
     SUBDIR += ImageMagick
@@ -29,6 +29,7 @@
     SUBDIR += pgperl
     SUBDIR += pgplot
     SUBDIR += pixmap
+    SUBDIR += plotmtv
     SUBDIR += png
     SUBDIR += povray
     SUBDIR += sced
