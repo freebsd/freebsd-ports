@@ -1,0 +1,63 @@
+bin/kshowmail
+share/applnk/Internet/kshowmail.desktop
+share/apps/kshowmail/kshowmailui.rc
+share/apps/kshowmail/pics/eraser.png
+share/apps/kshowmail/pics/kshowmail.png
+share/apps/kshowmail/pics/kshowmail24.png
+share/apps/kshowmail/pics/letter-closed.png
+share/apps/kshowmail/pics/letter-open.png
+share/apps/kshowmail/pics/ok.png
+share/apps/kshowmail/pics/spam.png
+share/apps/kshowmail/pics/tool.png
+share/apps/kshowmail/sounds/neuepost.wav
+share/apps/kshowmail/sounds/newmail.wav
+share/doc/HTML/de/kshowmail/common
+share/doc/HTML/de/kshowmail/index.cache.bz2
+share/doc/HTML/de/kshowmail/index.docbook
+share/doc/HTML/en/kshowmail/common
+share/doc/HTML/en/kshowmail/index.cache.bz2
+share/doc/HTML/en/kshowmail/index.docbook
+share/doc/HTML/es/kshowmail/common
+share/doc/HTML/es/kshowmail/index.cache.bz2
+share/doc/HTML/es/kshowmail/index.docbook
+share/doc/HTML/fr/kshowmail/common
+share/doc/HTML/fr/kshowmail/index.cache.bz2
+share/doc/HTML/fr/kshowmail/index.docbook
+share/doc/HTML/sv/kshowmail/common
+share/doc/HTML/sv/kshowmail/index.cache.bz2
+share/doc/HTML/sv/kshowmail/index.docbook
+share/icons/hicolor/16x16/apps/kshowmail.png
+share/locale/de/LC_MESSAGES/kshowmail.mo
+share/locale/es/LC_MESSAGES/kshowmail.mo
+share/locale/fr/LC_MESSAGES/kshowmail.mo
+share/locale/sv/LC_MESSAGES/kshowmail.mo
+@unexec rmdir %D/share/locale/sv/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sv 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/es 2>/dev/null || true
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
+@unexec rmdir %D/share/locale 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor/16x16 2>/dev/null || true
+@unexec rmdir %D/share/icons/hicolor 2>/dev/null || true
+@unexec rmdir %D/share/icons 2>/dev/null || true
+@dirrm share/doc/HTML/sv/kshowmail
+@unexec rmdir %D/share/doc/HTML/sv 2>/dev/null || true
+@dirrm share/doc/HTML/fr/kshowmail
+@unexec rmdir %D/share/doc/HTML/fr 2>/dev/null || true
+@dirrm share/doc/HTML/es/kshowmail
+@unexec rmdir %D/share/doc/HTML/es 2>/dev/null || true
+@dirrm share/doc/HTML/en/kshowmail
+@unexec rmdir %D/share/doc/HTML/en 2>/dev/null || true
+@dirrm share/doc/HTML/de/kshowmail
+@unexec rmdir %D/share/doc/HTML/de 2>/dev/null || true
+@unexec rmdir %D/share/doc/HTML 2>/dev/null || true
+@dirrm share/apps/kshowmail/sounds
+@dirrm share/apps/kshowmail/pics
+@dirrm share/apps/kshowmail
+@unexec rmdir %D/share/apps 2>/dev/null || true
+@unexec rmdir %D/share/applnk/Internet 2>/dev/null || true
+@unexec rmdir %D/share/applnk 2>/dev/null || true

@@ -1,0 +1,11 @@
+--- configure.orig	Wed Oct 22 01:20:49 2003
++++ configure	Wed Oct 22 01:21:13 2003
+@@ -23130,7 +23130,7 @@
+   ac_status=$?
+   echo "$as_me:$LINENO: \$? = $ac_status" >&5
+   (exit $ac_status); }; then
+-	if test -f actest.cpp && grep klineedit actest.cpp > /dev/null; then
++	if test -f actest.cpp && grep -i klineedit actest.cpp > /dev/null; then
+ 		kde_cv_uic_plugins=yes
+ 	fi
+ fi
