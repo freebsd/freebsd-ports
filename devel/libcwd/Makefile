@@ -22,8 +22,15 @@ CONFIGURE_ARGS=	--disable-threading
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 501103
+# Work around bsd.port.mk bug: Does not currently set up MAKE_ENV for gcc 3.2 and 3.3
+MAKE_ENV+=	CC="${CC}" CXX="${CXX}"
+.endif
+
 # dirty hack
 post-configure:
 	@${CP} -f ${WRKSRC}/include/sys.ho ${WRKSRC}/include/sys.h
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
