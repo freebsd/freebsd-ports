@@ -1,6 +1,7 @@
-# $Id: Makefile,v 1.87 1998/08/12 22:52:22 asami Exp $
+# $Id: Makefile,v 1.88 1998/08/12 22:54:27 asami Exp $
 #
 
+    SUBDIR += 4va
     SUBDIR += EZWGL
     SUBDIR += ImageMagick
     SUBDIR += Mesa2
