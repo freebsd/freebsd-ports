@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	tidy
-PORTVERSION=	040806
+PORTVERSION=	040811
 CATEGORIES=	www
 MASTER_SITES=	http://tidy.sourceforge.net/src/%SUBDIR%/	\
 		http://tidy.sourceforge.net/docs/:docs
@@ -43,11 +43,10 @@ MAN1=		tidy.1
 .endif
 
 .if !defined(NOPORTDOCS)
-DOCVER=		040802
+DOCVER=		040810
 DISTFILES+=	tidy_docs_${DOCVER}${EXTRACT_SUFX}:docs
 DOCFILES=	Overview.html faq.html grid.gif pending.html	\
 		quickref.html release-notes.html tidy.css tidy.gif
-APIEXT=		css html js png
 .endif
 
 post-patch:
@@ -63,11 +62,11 @@ patch-autotools:
 	&& ${LIBTOOLIZE} --force --copy		\
 	&& ${ACLOCAL})
 	@(cd ${PATCH_WRKSRC};			\
-	for file in ${LIBTOOLFILES}; do		\
-		${CP} $$file $$file.tmp;	\
+	for ltf in ${LIBTOOLFILES}; do		\
+		${CP} $$ltf $$ltf.tmp;	\
 		${SED} -e "s^\$$ac_aux_dir/ltconfig^${LTCONFIG}^g" \
 			-e "/^ltmain=/!s^\$$ac_aux_dir/ltmain.sh^${LIBTOOLFLAGS} ${LTMAIN}^g" \
-			$$file.tmp > $$file;	\
+			$$ltf.tmp > $$ltf;	\
 	 done);
 .endif
 
@@ -89,15 +88,9 @@ post-install:
 .endif
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
-	@${MKDIR} ${DOCSDIR}
-.for docfile in ${DOCFILES}
-	@${INSTALL_MAN} ${WRKSRC}/htmldoc/${docfile} ${DOCSDIR}
-.endfor
 	@${MKDIR} ${DOCSDIR}/api
-.for ext in ${APIEXT}
-	@${CP} -p ${WRKSRC}/htmldoc/api/*.${ext} ${DOCSDIR}/api
-.endfor
-	@${CHOWN} -R ${MANOWN}:${MANGRP} ${DOCSDIR}/api
+	@${INSTALL_DATA} ${DOCFILES:S|^|${WRKSRC}/htmldoc/|} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/htmldoc/api/* ${DOCSDIR}/api
 	@${ECHO_MSG} "===>   Documentation installed in ${DOCSDIR}."
 .endif
 
