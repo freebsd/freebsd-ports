@@ -58,4 +58,4 @@ share/examples/argus-2.0/Xml/README
 %%PORTDOCS%%@dirrm share/doc/argus-2.0/html/man
 %%PORTDOCS%%@dirrm share/doc/argus-2.0/html
 %%PORTDOCS%%@dirrm share/doc/argus-2.0
-@unexec rmdir @D/argus/archive @D/argus >/dev/null 2>&1
+@unexec rmdir %D/argus/archive %D/argus >/dev/null 2>&1 || true
