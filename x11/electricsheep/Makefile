@@ -26,6 +26,10 @@ USE_SDL=	sdl
 USE_REINPLACE=	yes
 USE_LIBTOOL_VER=13
 
+.if !defined(NOPORTDOCS)
+MAN1=		electricsheep.1
+.endif
+
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS} -I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
 
@@ -62,5 +66,8 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/mpeg2dec/src/mpeg2dec_onroot ${PREFIX}/bin
 	@${INSTALL} -d -m 0755 ${PREFIX}/share/electricsheep
 	@${INSTALL_DATA} ${WRKSRC}/*.tif ${PREFIX}/share/electricsheep
+.if !defined(NOPORTDOCS)
+	@${INSTALL_DATA} ${WRKSRC}/electricsheep.man ${PREFIX}/man/man1/electricsheep.1
+.endif
 
 .include <bsd.port.mk>
