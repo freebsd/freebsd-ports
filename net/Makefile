@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.273 1999/06/17 10:02:36 jmg Exp $
+# $Id: Makefile,v 1.274 1999/06/19 08:58:50 cpiazza Exp $
 #
 
     SUBDIR += IglooFTP
@@ -150,6 +150,7 @@
     SUBDIR += pmf
     SUBDIR += ppp-nt
     SUBDIR += pppload
+    SUBDIR += pptpclient
     SUBDIR += ppxp
     SUBDIR += proftpd
     SUBDIR += pvm
