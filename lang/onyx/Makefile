@@ -7,6 +7,7 @@
 
 PORTNAME=	onyx
 PORTVERSION=	4.2.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.canonware.com/download/onyx/
 
@@ -16,14 +17,20 @@ BUILD_DEPENDS=	cook:${PORTSDIR}/devel/cook
 LIB_DEPENDS=	edit.5:${PORTSDIR}/devel/libedit \
 		pcre.0:${PORTSDIR}/devel/pcre
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ARGS=	--with-libedit-prefix=${LOCALBASE}
+CONFIGURE_ARGS=	--with-libedit-prefix=${LOCALBASE} \
+		--with-pcre-prefix=${LOCALBASE} \
+		--disable-slate
 INSTALLS_SHLIB=	yes
 
 MAN1=		onyx.1 onyx_config.1
 
 PLIST_SUB=	ONYX_VERSION=${PORTVERSION}
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 do-build:
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} cook)
