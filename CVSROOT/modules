@@ -1385,6 +1385,7 @@ enteruser	ports/sysutils/enteruser
 entice		ports/graphics/entice
 entity		ports/devel/entity
 env		src/usr.bin/env
+envelope	ports/print/envelope
 eog		ports/graphics/eog
 eog2		ports/graphics/eog2
 eperl		ports/lang/eperl
