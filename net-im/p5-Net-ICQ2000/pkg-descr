@@ -1,0 +1,2 @@
+Net::ICQ2000 module is designed to give perl scripts access to the
+ICQ network and the functions provided by it, like SMS.
