@@ -1,6 +1,6 @@
---- Makefile.orig	Sat Jul 31 17:03:44 1999
-+++ Makefile	Sat Jul 31 17:04:37 1999
-@@ -2,7 +2,7 @@
+--- Makefile.orig	Sat Jul 24 15:33:08 1999
++++ Makefile	Sun Sep 19 13:48:47 1999
+@@ -2,14 +2,14 @@
  bindir		= $(prefix)/bin
  
  NAME		= erwin-0.3.1
@@ -9,6 +9,14 @@
  PROG		= erwin
  OBJS		= erwin.o erwinmenu.o erwinfunctions.o erwintoolbar.o \
  		  erwinnotebook.o erwindialogs.o erwintags.o gtkmessage.o
+ INSTALL		= install
+ DEBUG		= -g -DDEBUG
+ 
+-CFLAGS		= -DNAME=\"$(NAME)\" $(DEBUG) -Wall -O2 -m486 -fno-strength-reduce -malign-functions=4 -malign-jumps=4 -malign-loops=4 -ffast-math -fexpensive-optimizations
++CFLAGS		= -DNAME=\"$(NAME)\" $(DEBUG) -Wall -O2 -fno-strength-reduce -ffast-math -fexpensive-optimizations
+ 
+ all: license $(PROG)
+ 
 @@ -28,10 +28,10 @@
  	rm -f $(PROG) $(OBJS) *.?~ core license.h
  
