@@ -8,7 +8,7 @@
 PORTNAME=	zsh
 PORTVERSION=	3.1.9
 CATEGORIES=	shells
-MASTER_SITES=	http://people.FreeBSD.org/~knu/ports/distfiles/ \
+MASTER_SITES=	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/knu/ \
 		ftp://ftp.zsh.org/%SUBDIR%/ \
 		ftp://ftp.sterling.com/%SUBDIR%/ \
 		ftp://ftp.rge.com/pub/%SUBDIR%/ \
