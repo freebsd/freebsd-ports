@@ -1,0 +1,58 @@
+--- scriba.conf.unix.lsp.orig	Wed Dec 27 19:52:17 2000
++++ scriba.conf.unix.lsp	Mon Jan 15 03:34:09 2001
+@@ -8,11 +8,11 @@
+ dll ".so"
+ 
+ ; where the modules are to be loaded from
+-module "/etc/scriba/modules/"
++module "/usr/local/lib/scriba/"
+ 
+ ; where to search system and module include files
+ ; trailing / or / is needed
+-include "/etc/scriba/include/"
++include "/usr/local/include/scriba/"
+ 
+ ;
+ ; define external preprocessors
+@@ -29,8 +29,8 @@
+ ; the external preprocessors
+   external (
+     heb (
+-      executable "/usr/bin/scriba /etc/scriba/source/heber.bas"
+-      directory "/etc/scriba/hebtemp/"
++      executable "/usr/local/bin/scriba /usr/local/include/scriba/heber.bas"
++      directory "/usr/local/etc/scriba/hebtemp/"
+       )
+     )
+   )
+@@ -67,13 +67,13 @@
+ ; This is the directory where we store the compiled code
+ ; to automatically avoid recompilation
+ ;
+-cache "/etc/scriba/cache/"
++cache "/usr/local/lib/scriba/cache/"
+ 
+ cgi (
+ ;
+ ; These are the keys used by the CGI module
+ ;
+-  debugfile "/etc/scriba/cgidebug.txt"
++  debugfile "/usr/local/etc/scriba/cgidebug.txt"
+   )
+ 
+ ;
+@@ -83,7 +83,7 @@
+ 
+  ; directories where to store the 
+  dir (
+-   home "/etc/scriba/sampledb" ; the home directory of operation of the Berkerley DB
++   home "/usr/local/etc/scriba/sampledb" ; the home directory of operation of the Berkerley DB
+    data "db"  ; database files
+    log  "log" ; log files
+    temp "tmp" ; temporary files
+@@ -115,4 +115,4 @@
+     )
+   )
+ 
+-;break
++;break

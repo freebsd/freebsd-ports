@@ -1,0 +1,11 @@
+--- testconf.c.orig	Wed Dec 27 11:52:17 2000
++++ testconf.c	Sun Jan  7 19:34:59 2001
+@@ -15,7 +15,7 @@
+             "WINNT\\SCRIBA.INI",
+ #else
+             "SCRIBACONF",
+-            "/etc/scriba/basic.conf",
++            "%%PREFIX%%/etc/scriba/basic.conf",
+ #endif
+             NULL));
+ 

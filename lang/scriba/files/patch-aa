@@ -1,0 +1,29 @@
+--- Makefile.orig	Wed Dec 27 19:52:16 2000
++++ Makefile	Fri Jan 12 18:34:19 2001
+@@ -1,8 +1,8 @@
+ CC=cc
+ LDOPTIONS=-shared
+ LD=ld
+-CCFLAGS=
+-LIBS=-lm -ldl -lpthread
++CCFLAGS=$(CFLAGS)
++LIBS=-lm -lc_r
+ OBJS=builder.o conftree.o dynlolib.o execute.o\
+      expression.o filesys.o getopt.o lexer.o match.o\
+      memory.o myalloc.o options.o reader.o report.o sym.o\
+@@ -20,7 +20,6 @@
+ .PHONY: headers clean install all
+ 
+ all: headers scriba cftc cgi.so hash.so re.so basicc.a 
+-	sh install.sh
+ 
+ clean :
+ 	rm *.so *.o *.h ./scriba
+@@ -39,7 +38,6 @@
+ 
+ scriba	: $(OBJS) $(COBJS) scribacmd.o
+ 	$(CC) -o scriba $(LIBS) $(OBJS) $(COBJS) scribacmd.o
+-	scriba -v
+ 
+ cftc : cftc.o confpile.o conftree.o lsp.o
+ 	$(CC) -o cftc $(LIBS) cftc.o confpile.o conftree.o lsp.o

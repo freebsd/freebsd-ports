@@ -1,0 +1,11 @@
+--- variations/standalone/basicc.c.orig	Fri Dec 29 11:23:20 2000
++++ variations/standalone/basicc.c	Sun Jan  7 19:35:17 2001
+@@ -57,7 +57,7 @@
+             "SCRIBA.INI",
+ #else
+             "SCRIBACONF",
+-            "/etc/scriba/basic.conf",
++            "%%PREFIX%%/etc/scriba/basic.conf",
+ #endif
+             NULL);
+ 

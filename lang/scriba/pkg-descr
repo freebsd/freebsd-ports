@@ -1,0 +1,14 @@
+ScriptBasic is a scripting implementation of the BASIC language. The
+aim of this implementation is to provide a general and widely used
+tool for the simple programmer. One of the reason behind the success
+of the Microsoft operating systems is VisualBasic, which is built into
+many of the applications Microsoft delivers. Why are UNIX and other
+non-Microsoft operating system users prohibited to use the simplest
+programming language?
+
+ScriptBasic is a BASIC implementation, which aims not less than
+becoming the most widely used scripting tool on UNIX systems. It is
+portable, it is BASIC, it is a scripting tool and it is GNU LGPL.
+
+- George Reid
+greid@ukug.uk.freebsd.org

@@ -1,0 +1,28 @@
+--- scriba.c.orig	Wed Dec 27 11:52:17 2000
++++ scriba.c	Sun Jan  7 20:30:15 2001
+@@ -518,16 +518,12 @@
+             "SCRIBA.INI",
+ #else
+             "SCRIBACONF",
+-            "/etc/scriba/basic.conf",
++            "/usr/local/etc/scriba/basic.conf",
+ #endif
+             pszForcedConfigurationFileName);
+ /*DEBUG*/
+-  fp = fopen("e:\\MyProjects\\sb\\isapi.log","a");
+-  if( fp ){
+-    fprintf(fp,"LoadConfiguration returned %d.\n",iError);
+-    fclose(fp);
+-    fp = NULL;
+-    }
++  if(iError)
++	fprintf(stderr,"LoadConfiguration returned %d.\n",iError);
+ 
+   return iError;
+   }
+@@ -1900,4 +1896,4 @@
+ 
+     default: return SCRIBA_ERROR_FAIL;
+     }
+-  }
++  }
