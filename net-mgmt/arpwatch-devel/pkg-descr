@@ -5,6 +5,6 @@ maintained by the program, and an alert is issued should a device
 move between interfaces.  In addition, event processing has been
 refactored, and some bugs have been fixed.
 
-see net/arpwatch/pkg-descr for more information about arpwatch 2.x
+see net-mgmt/arpwatch/pkg-descr for more information about arpwatch 2.x
 
 Matthew George <mdg@secureworks.net>

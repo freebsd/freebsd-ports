@@ -1,14 +1,25 @@
---- ../arpwatch.orig/Makefile.in	Wed Jun 14 20:39:55 2000
-+++ ./Makefile.in	Mon Sep 15 14:31:33 2003
-@@ -45,7 +45,7 @@
+--- Makefile.in.orig	Wed Jun 14 20:39:55 2000
++++ Makefile.in	Wed Apr 14 15:16:06 2004
+@@ -45,15 +45,15 @@
  PROG = arpwatch
  CCOPT = @V_CCOPT@
  INCLS = -I. @V_INCLS@
 -DEFS = -DDEBUG @DEFS@ -DARPDIR=\"$(ARPDIR)\" -DPATH_SENDMAIL=\"$(SENDMAIL)\"
-+DEFS = @DEFS@ -pthread -DARPDIR=\"$(ARPDIR)\" -DPATH_SENDMAIL=\"$(SENDMAIL)\"
++DEFS = @DEFS@ -DARPDIR=\"$(ARPDIR)\" -DPATH_SENDMAIL=\"$(SENDMAIL)\"
 
  # Standard CFLAGS
- CFLAGS = $(CCOPT) $(DEFS) $(INCLS)
+-CFLAGS = $(CCOPT) $(DEFS) $(INCLS)
++CFLAGS = $(CCOPT) $(PTHREAD_CFLAGS) $(DEFS) $(INCLS)
+
+ # Standard LIBS
+-LIBS = @LIBS@
++LIBS = @LIBS@ $(PTHREAD_LIBS)
+ # Standard LIBS without libpcap.a
+-SLIBS = @LBL_LIBS@
++SLIBS = @LBL_LIBS@ $(PTHREAD_LIBS)
+
+ INSTALL = @INSTALL@
+ SENDMAIL = @V_SENDMAIL@
 @@ -110,8 +110,8 @@
  	$(CC) $(CFLAGS) -o $@ zap.o intoa.o -lutil
 
