@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	php-mode.el
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
 CATEGORIES=	lang elisp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=php-mode
-DISTNAME=	php-mode-102.el
-EXTRACT_SUFX=	# empty
-EXTRACT_ONLY=	# empty
+DISTNAME=	php-mode-1.1.0
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs lisp module for the PHP language
@@ -26,7 +25,7 @@ XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
 do-install:
 	${MKDIR} ${EMACSLISPDIR}
 	${MKDIR} ${XEMACSLISPDIR}
-	${INSTALL_DATA} ${_DISTDIR}/${DISTNAME} ${EMACSLISPDIR}/php-mode.el
+	${INSTALL_DATA} ${WRKSRC}/php-mode.el ${EMACSLISPDIR}/php-mode.el
 	${LN} -sf ${EMACSLISPDIR}/php-mode.el ${XEMACSLISPDIR}
 
 post-install:
