@@ -6,6 +6,23 @@ lib/perl5/site_perl/%%PERL_VER%%/IO/ScalarArray.pm
 lib/perl5/site_perl/%%PERL_VER%%/IO/Stringy.pm
 lib/perl5/site_perl/%%PERL_VER%%/IO/Wrap.pm
 lib/perl5/site_perl/%%PERL_VER%%/IO/WrapTie.pm
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/IO 2>/dev/null || true
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO-stringy/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IO-stringy
-@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/IO 2>/dev/null || true
+%%PORTDOCS%%share/doc/p5-IO-stringy/IO/AtomicFile.pm.html
+%%PORTDOCS%%share/doc/p5-IO-stringy/IO/InnerFile.pm.html
+%%PORTDOCS%%share/doc/p5-IO-stringy/IO/Lines.pm.html
+%%PORTDOCS%%share/doc/p5-IO-stringy/IO/Scalar.pm.html
+%%PORTDOCS%%share/doc/p5-IO-stringy/IO/ScalarArray.pm.html
+%%PORTDOCS%%share/doc/p5-IO-stringy/IO/Stringy.pm.html
+%%PORTDOCS%%share/doc/p5-IO-stringy/IO/Wrap.pm.html
+%%PORTDOCS%%share/doc/p5-IO-stringy/IO/WrapTie.pm.html
+%%PORTDOCS%%share/doc/p5-IO-stringy/IO/icons/h1bullet.gif
+%%PORTDOCS%%share/doc/p5-IO-stringy/IO/icons/h2bullet.gif
+%%PORTDOCS%%share/doc/p5-IO-stringy/IO/icons/zeegee.gif
+%%PORTDOCS%%share/doc/p5-IO-stringy/index-menu.html
+%%PORTDOCS%%share/doc/p5-IO-stringy/index.html
+%%PORTDOCS%%share/doc/p5-IO-stringy/index.menu
+%%PORTDOCS%%@dirrm share/doc/p5-IO-stringy/IO/icons
+%%PORTDOCS%%@dirrm share/doc/p5-IO-stringy/IO
+%%PORTDOCS%%@dirrm share/doc/p5-IO-stringy
