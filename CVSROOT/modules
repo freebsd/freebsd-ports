@@ -2461,6 +2461,7 @@ identify	ports/security/identify
 idesk		ports/x11/idesk
 idled		ports/sysutils/idled
 idlefork	ports/devel/idlefork
+idnkit		ports/net/idnkit
 ifc		ports/lang/ifc
 ifd-devkit	ports/security/ifd-devkit
 ifd-gpr400	ports/security/ifd-gpr400
