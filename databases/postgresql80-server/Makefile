@@ -3,7 +3,7 @@
 # Date created:		November 13, 1998
 # Whom:			Marc G. Fournier <scrappy@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.34 1999/03/11 20:33:50 scrappy Exp $
+# $Id: Makefile,v 1.35 1999/04/08 19:05:46 billf Exp $
 #
 
 DISTNAME=	postgresql-6.4.2
@@ -61,6 +61,8 @@ MANL=		abort.l alter_table.l alter_user.l begin.l close.l cluster.l \
 MANPREFIX=	${PREFIX}/pgsql
 
 pre-fetch:
+	@${ECHO_MSG} "To install and run postgresql you need to compile kernel with:"
+	@${ECHO_MSG} "        options    \"SYSVSHM, SYSVSEM, SYSVMSG\""
 .if !defined(USE_TCL)
 	@${ECHO_MSG} "To build the \"PostgreSQL to Tcl interface library\", libpgtcl, type:"
 	@${ECHO_MSG} "    make USE_TCL=yes"
