@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += 3dm
     SUBDIR += LPRng
     SUBDIR += LPRngTool
     SUBDIR += abck
