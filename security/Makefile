@@ -59,7 +59,7 @@
     SUBDIR += p5-Crypt-IDEA
     SUBDIR += p5-Digest-MD5
     SUBDIR += p5-MD5
-    SUBDIR += p5-Net_SSLeay
+    SUBDIR += p5-Net-SSLeay
     SUBDIR += p5-PGP
     SUBDIR += p5-PGP-Sign
     SUBDIR += pgp
