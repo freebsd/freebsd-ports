@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	alisp
-PORTVERSION=	8
-CATEGORIES=	lang devel
+PORTVERSION=	20031029
+CATEGORIES=	lang devel lisp
 MASTER_SITES=	http://t3x.dyndns.org/files/ \
 		http://www.t3x.org/files/
-DISTNAME=	alisp${PORTVERSION}
 
 MAINTAINER=	nmh@t3x.org
 COMMENT=	A tail-recursive interpreter for purely symbolic LISP
@@ -33,6 +32,6 @@ post-patch:
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} \
 		-e 's,/usr/local,${PREFIX},g' \
-		${WRKSRC}/cnf/dfl_unix.rc
+		${WRKSRC}/cnf/unix.dfl
 
 .include <bsd.port.mk>
