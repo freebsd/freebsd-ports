@@ -59,6 +59,36 @@ if ($hostname =~ /^freefall\.freebsd\.org$/i) {
 }
 
 
+@LOG_FILE_MAP = (
+	'CVSROOT'	=> '^CVSROOT/',
+	'distrib'	=> '^distrib/',
+	'doc'		=> '^doc/',
+	'ports'		=> '^ports/',
+	'projects'	=> '^projects/',
+	'www'		=> '^www/',
+
+	'bin'		=> '^src/bin/',
+	'contrib'	=> '^src/contrib/',
+	'eBones'	=> '^src/eBones/',
+	'etc'		=> '^src/etc/',
+	'games'		=> '^src/games/',
+	'gnu'		=> '^src/gnu/',
+	'include'	=> '^src/include/',
+	'kerberosIV'	=> '^src/kerberosIV/',
+	'lib'		=> '^src/lib/',
+	'libexec'	=> '^src/libexec/',
+	'lkm'		=> '^src/lkm/',
+	'release'	=> '^src/release/',
+	'sbin'		=> '^src/sbin/',
+	'share'		=> '^src/share/',
+	'sys'		=> '^src/sys/',
+	'tools'		=> '^src/tools/',
+	'usrbin'	=> '^src/usr\.bin/',
+	'usrsbin'	=> '^src/usr\.sbin/',
+	'user'		=> '^src/',
+
+	'other'		=> '.*'
+);
 
 1; # Perl requires all modules to return true.  Don't delete!!!!
 #end

@@ -16,9 +16,10 @@ use strict;
 use vars qw(
 	$ADD_TO_LINE $AVAIL_FILE $CHECK_HEADERS $COMMITCHECK_EXTRA
 	@COMMIT_HOSTS $COMMITTER $DEBUG $EXCLUDE_FILE $FILE_PREFIX $IDHEADER
-	$LAST_FILE $MAILADDRS $MAILBANNER $MAILCMD $MAIL_BRANCH_HDR
-	$MAIL_ON_DIR_CREATION $MAIL_TRANSFORM $MINCVSVERSION $PID $PROG_CVS
-	$PROG_MV %TEMPLATE_HEADERS $TMPDIR $UNEXPAND_RCSID $WARN_HEADERS
+	$LAST_FILE @LOG_FILE_MAP $MAILADDRS $MAILBANNER $MAILCMD
+	$MAIL_BRANCH_HDR $MAIL_ON_DIR_CREATION $MAIL_TRANSFORM $MINCVSVERSION
+	$PID $PROG_CVS $PROG_MV %TEMPLATE_HEADERS $TMPDIR $UNEXPAND_RCSID
+	$WARN_HEADERS
 );
 
 my $CVSROOT = $ENV{'CVSROOT'} || die "Can't determine \$CVSROOT!";
@@ -187,6 +188,28 @@ $MAIL_TRANSFORM = "";
 #	add_cvsweb_entry("http://www.example.org/cgi-bin/cvsweb.cgi", @_);
 #};
 
+# A copy of the commit summary is saved locally as well as being
+# emailed to the committers.  The name of the local log is obtained
+# by performing a pattern match on the directory that the files are
+# in.  The following map defines the file names and their associated
+# pattern match.  They are checked in order. The name 'other' is
+# used if none of the patterns match.
+#
+# XXX The directory that the logs are placed in should be a
+# configuration option too.
+@LOG_FILE_MAP = (
+	'CVSROOT'	=> '^CVSROOT/',
+	'doc'		=> '^doc/',
+	'user'		=> '^src/',
+	'other'		=> '.*'
+);
+
+
+
+
+######################
+# EXAMPLES
+######################
 # A function for post-processing a log message
 # and outputing it with URLs to a cvsweb.cgi in.
 sub add_cvsweb_entry {

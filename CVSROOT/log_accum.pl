@@ -46,7 +46,7 @@ my $ADDED_FILE    = "$BASE_FN.added";
 my $REMOVED_FILE  = "$BASE_FN.removed";
 my $LOG_FILE      = "$BASE_FN.log";
 my $SUMMARY_FILE  = "$BASE_FN.summary";
-my $MAIL_FILE     = "$BASE_FN.mail";
+my $LOGNAMES_FILE = "$BASE_FN.lognames";
 my $SUBJ_FILE     = "$BASE_FN.subj";
 my $TAGS_FILE     = "$BASE_FN.tags";
 
@@ -367,62 +367,35 @@ sub build_header {
 # !!! Mailing-list and commitlog history file mappings here !!!
 # This needs pulling out as a configuration block somewhere so
 # that others can easily change it.
-sub mlist_map {
+sub get_log_name {
 	my $dir = shift;	# Directory name
-   
-	return 'cvs-CVSROOT'	if $dir =~ /^CVSROOT\//;
-	return 'cvs-ports'	if $dir =~ /^ports\//;
-	return 'cvs-projects'	if $dir =~ /^projects\//;
-	return 'cvs-www'	if $dir =~ /^www\//;
-	return 'cvs-doc'	if $dir =~ /^doc\//;
-	return 'cvs-distrib'	if $dir =~ /^distrib\//;
 
-	return 'cvs-other'	unless $dir =~ /^src\//;
 
-	$dir =~ s,^src/,,;
+	for my $i (0 .. ($#cfg::LOG_FILE_MAP - 1) / 2) {
+		my $log = $cfg::LOG_FILE_MAP[$i * 2];
+		my $pattern = $cfg::LOG_FILE_MAP[$i * 2 + 1];
 
-	return 'cvs-bin'	if $dir =~ /^bin\//;
-	return 'cvs-contrib'	if $dir =~ /^contrib\//;
-	return 'cvs-eBones'	if $dir =~ /^eBones\//;
-	return 'cvs-etc'	if $dir =~ /^etc\//;
-	return 'cvs-games'	if $dir =~ /^games\//;
-	return 'cvs-gnu'	if $dir =~ /^gnu\//;
-	return 'cvs-include'	if $dir =~ /^include\//;
-	return 'cvs-kerberosIV'	if $dir =~ /^kerberosIV\//;
-	return 'cvs-lib'	if $dir =~ /^lib\//;
-	return 'cvs-libexec'	if $dir =~ /^libexec\//;
-	return 'cvs-lkm'	if $dir =~ /^lkm\//;
-	return 'cvs-release'	if $dir =~ /^release\//;
-	return 'cvs-sbin'	if $dir =~ /^sbin\//;
-	return 'cvs-share'	if $dir =~ /^share\//;
-	return 'cvs-sys'	if $dir =~ /^sys\//;
-	return 'cvs-tools'	if $dir =~ /^tools\//;
-	return 'cvs-usrbin'	if $dir =~ /^usr\.bin\//;
-	return 'cvs-usrsbin'	if $dir =~ /^usr\.sbin\//;
+		return $log if $dir =~ /$pattern/;
+	}
 
-	return 'cvs-user';
+	return 'other';
 }    
 
 sub do_changes_file {
 	my @text = @_;
 
 	my %unique = ();
-	my @mailaddrs = &read_logfile($MAIL_FILE);
+	my @mailaddrs = &read_logfile($LOGNAMES_FILE);
 	foreach my $category (@mailaddrs) {
 		next if ($unique{$category});
 		$unique{$category} = 1;
-		if ($category =~ /^cvs-/) {
-			# convert mailing list name back to category
-			chomp $category;
-			$category =~ s/^cvs-//;
 
-			my $changes = "$CVSROOT/CVSROOT/commitlogs/$category";
-			open CHANGES, ">>$changes"
-				or die "Cannot open $changes.\n";
-			print CHANGES map { "$_\n" } @text;
-			print CHANGES "\n\n\n";
-			close CHANGES;
-		}
+		my $changes = "$CVSROOT/CVSROOT/commitlogs/$category";
+		open CHANGES, ">>$changes"
+			or die "Cannot open $changes.\n";
+		print CHANGES map { "$_\n" } @text;
+		print CHANGES "\n\n\n";
+		close CHANGES;
 	}
 }
 
@@ -432,7 +405,7 @@ sub mail_notification {
 # This is turned off since the To: lines go overboard.
 # Also it has bit-rotted since, and can't just be switched on again.
 # - but keep it for the time being in case we do something like cvs-stable
-#	my @mailaddrs = &read_logfile($MAIL_FILE);
+#	my @mailaddrs = &read_logfile($LOGNAMES_FILE);
 #	print(MAIL 'To: cvs-committers' . $dom . ", cvs-all" . $dom);
 #	foreach $line (@mailaddrs) {
 #		next if ($unique{$line});
@@ -600,7 +573,7 @@ if ($cfg::DEBUG) {
 }
 
 # Was used for To: lines, still used for commitlogs naming.
-&append_line($MAIL_FILE, &mlist_map("$directory/"));
+&append_line($LOGNAMES_FILE, &get_log_name("$directory/"));
 &append_line($SUBJ_FILE, "$directory " . join(" ", sort @filenames));
 
 #
