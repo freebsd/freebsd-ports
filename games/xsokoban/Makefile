@@ -3,25 +3,23 @@
 # Date created:        16 November 1996
 # Whom:                Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/11/20 07:06:58 tg Exp $
 #
 
 DISTNAME=	xsokoban-3.3b
-CATEGORIES=	games x11
+CATEGORIES=	games
 MASTER_SITES=   ftp://ftp.pmg.lcs.mit.edu/pub/xsokoban/
 
 MAINTAINER=     Nakai@Mlab.t.u-tokyo.ac.jp
 
 LIB_DEPENDS=	Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
-USE_X11=	yes
 USE_IMAKE=	yes
-XMKMF=		xmkmf
 WRKSRC=		${WRKDIR}/xsokoban
 ALL_TARGET=	xsokoban	
 
 post-install:
-	@mkdir -p ${PREFIX}/lib/X11/xsokoban/scores \
+	@${MKDIR} ${PREFIX}/lib/X11/xsokoban/scores \
 		${PREFIX}/lib/X11/xsokoban/bitmaps/defaults \
 		${PREFIX}/lib/X11/xsokoban/saves \
 		${PREFIX}/lib/X11/xsokoban/screens
