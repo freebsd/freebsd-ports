@@ -12,6 +12,7 @@
     SUBDIR += netperf
     SUBDIR += netpipe
     SUBDIR += polygraph
+    SUBDIR += postal
     SUBDIR += postmark
     SUBDIR += pybench
     SUBDIR += rawio
