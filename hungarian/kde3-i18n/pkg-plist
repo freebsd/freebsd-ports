@@ -508,9 +508,6 @@ share/doc/HTML/hu/ktron/index.docbook
 share/doc/HTML/hu/ktuberling/common
 share/doc/HTML/hu/ktuberling/index.cache.bz2
 share/doc/HTML/hu/ktuberling/index.docbook
-share/doc/HTML/hu/kuickshow/common
-share/doc/HTML/hu/kuickshow/index.cache.bz2
-share/doc/HTML/hu/kuickshow/index.docbook
 share/doc/HTML/hu/kuser/common
 share/doc/HTML/hu/kuser/index.cache.bz2
 share/doc/HTML/hu/kuser/index.docbook
@@ -977,7 +974,6 @@ share/locale/hu/flag.png
 @dirrm share/doc/HTML/hu/kweather
 @dirrm share/doc/HTML/hu/kview
 @dirrm share/doc/HTML/hu/kuser
-@dirrm share/doc/HTML/hu/kuickshow
 @dirrm share/doc/HTML/hu/ktuberling
 @dirrm share/doc/HTML/hu/ktron
 @dirrm share/doc/HTML/hu/ktouch

@@ -153,9 +153,7 @@
     SUBDIR += kde3-i18n-es
     SUBDIR += kde3-i18n-et
     SUBDIR += kde3-i18n-fi
-    SUBDIR += kde3-i18n-he
     SUBDIR += kde3-i18n-hr
-    SUBDIR += kde3-i18n-hu
     SUBDIR += kde3-i18n-id
     SUBDIR += kde3-i18n-is
     SUBDIR += kde3-i18n-it
@@ -175,7 +173,6 @@
     SUBDIR += kde3-i18n-th
     SUBDIR += kde3-i18n-tr
     SUBDIR += kde3-i18n-ven
-    SUBDIR += kde3-i18n-vi
     SUBDIR += kde3-i18n-xh
     SUBDIR += kde3-i18n-zu
     SUBDIR += kdeaddons3

@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
 
+    SUBDIR += kde3-i18n
     SUBDIR += libviet
     SUBDIR += unicode-uhoai
     SUBDIR += vi2vn
