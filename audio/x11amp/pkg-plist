@@ -1,1 +1,13 @@
 bin/x11amp
+share/x11amp/Players/libwav.a
+share/x11amp/Players/libamp.la
+share/x11amp/Players/libamp.a
+share/x11amp/Players/libwav.la
+share/x11amp/Players/libwav.so.8.0
+@exec ln -fs %D/%F %B/libwav.so 
+@unexec rm -f %B/libwav.so
+share/x11amp/Players/libamp.so.8.0
+@exec ln -fs %D/%F %B/libamp.so 
+@unexec rm -f %B/libamp.so
+@dirrm share/x11amp/Players
+@dirrm share/x11amp

@@ -2,7 +2,8 @@ x11amp is a graphical (X11) MP3 player, with a user interface similar
 to the WinAMP MP3 player for Windows.  Please see http://x11amp.ml.org/
 for more information.
 
-It requires that you have the Open Sound System (OSS) sound driver.
-This is an advanced, high quality, commercial sound driver for FreeBSD.
-You may evaluate it for free for 7 days, after which you must purchase
-it for $20.  Please see http://www.4front-tech.com/ for more details.
+This version will work with either the standard FreeBSD audio driver
+or with the Open Sound System (OSS) sound driver.  This is an advanced,
+high quality, commercial sound driver for FreeBSD.  You may evaluate it
+for free for 7 days, after which you must purchase it for $20.  Please see
+http://www.opensound.com/ for more details.
