@@ -10,6 +10,46 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20041119:
+AUTHOR: portmgr@FreeBSD.org
+  The following changes were committed:
+
+  * Fix INDEX build if MAINTAINER is not defined.
+
+  * Remove USE_QT2 option, since qt2 is obsolete.
+
+  * Better define and explain ARCH option.
+
+  * Add new script Tools/make_readmes, to speedup 'readmes'
+    target. Avoid recursing into individual port directories and run
+    it at top level, after the category README.html files have been
+    created.
+
+  * Fix 'search' target and enable a case-insensetive search on 5-x.
+
+  * Extend 'seach' target and enable search by categories.
+
+  * Remove tk42 and tcl76 categories since they're obsolete.
+
+  * Introduce DISTVERSION variable, that can be set instead of
+    PORTVERSION and is automatically converted in a conforming PORTVERSION.
+
+    Example:
+
+    DISTVERSION=	10Alpha3
+
+    extends 10Alpha3 to 10.a3
+
+    DISTVERSION=	3Beta7-pre2
+
+    extends 3Beta7-pre2 to 3.b7.p2
+
+  * Use --suffix option instead of -b for patch(1), to make it
+    compatible with BSD patch(1).
+
+  * Fix {WANT,WITH}_MYSQL_VER behavior, to deal with conflicting
+    versions.
+
 20041116:
 AUTHOR: gnome@FreeBSD.org
   The way OMF files are handled has been changed to use the new INSTALLS_OMF
