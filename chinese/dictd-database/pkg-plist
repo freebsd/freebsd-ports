@@ -1,0 +1,9 @@
+lib/dict/cedict.dict.dz
+lib/dict/cedict.index
+lib/dict/pydict.dict.dz
+lib/dict/pydict.index
+lib/dict/moecomp.dict.dz
+lib/dict/moecomp.index
+lib/dict/netterm.dict.dz
+lib/dict/netterm.index
+@dirrm lib/dict

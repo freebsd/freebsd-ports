@@ -1,0 +1,8 @@
+A Chinese(Big5) <-> English dictd words database.
+
+pydict database have 177751 headwords.
+moecomp database have 67263 headwords.
+netterm database have 6477 headwords.
+cedict database have 26348 headwords.
+
+Author: Pofeng Lee <pofeng@linux.org.tw>

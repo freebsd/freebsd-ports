@@ -1,0 +1,18 @@
+*****************************************************************************
+
+You need to add following to /etc/rc.conf:
+
+dictd_flags="--locale zh_TW.UTF-8"
+
+And, you also need adding the following to PREFIX/etc/dictd.conf:
+
+database moecomp   { data "PREFIX/lib/dict/moecomp.dict.dz"
+                     index "PREFIX/lib/dict/moecomp.index" }
+database netterm   { data "PREFIX/lib/dict/netterm.dict.dz"
+                     index "PREFIX/lib/dict/netterm.index" }
+database pydict    { data "PREFIX/lib/dict/pydict.dict.dz"
+                     index "PREFIX/lib/dict/pydict.index" }
+database cedict    { data "PREFIX/lib/dict/cedict.dict.dz"
+                     index "PREFIX/lib/dict/cedict.index" }
+
+*****************************************************************************
