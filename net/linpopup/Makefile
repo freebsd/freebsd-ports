@@ -8,7 +8,7 @@
 PORTNAME=	linpopup
 PORTVERSION=	1.2.0
 CATEGORIES=	net
-MASTER_SITES=	ftp://littleigloo.org/pub/linpopup/
+MASTER_SITES=	http://www.chez.com/littleigloo/files/
 DISTNAME=	LinPopUp-${PORTVERSION}.src
 
 MAINTAINER=	roman@xpert.com
