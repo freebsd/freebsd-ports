@@ -8,3 +8,8 @@ client.
 
 The port was done by Hidekazu Kuroki (hidekazu@cs.titech.ac.jp).
 It supports Canna and SJ3.
+
+WARNING: This kinput2 is applied the patch (patch-az in
+/usr/ports/japanese/kinput2-wnn4/patches) that is modified by
+Mr. Honma <honma@nasu-net.or.jp> to avoid problems of Filter Event
+handle of XIM.
