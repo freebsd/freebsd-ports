@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Receive, filter, read, compose and send mail at the text console
 
+CONFLICTS=	elmo-devel-*
+
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_ICONV=	yes
