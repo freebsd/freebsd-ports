@@ -13,7 +13,9 @@ MAINTAINER=	trevor@FreeBSD.org
 
 FORBIDDEN=	"buffer overflow in password field of HTML forms,\
 		reported by Michal Zalewski and fixed in 4.76--example at \
-		http://people.freebsd.org/~trevor/hostile-page.html"
+		http://people.freebsd.org/~trevor/hostile-page.html ; \
+		also has GIF comment bug--see \
+		http://dividuum.de/security/netscape/ "
 
 ONLY_FOR_ARCHS=	i386
 
