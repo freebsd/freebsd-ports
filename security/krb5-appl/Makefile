@@ -6,11 +6,9 @@
 #
 
 PORTNAME=		krb5
-PORTVERSION=		1.2.1
-PORTREVISION=		1
+PORTVERSION=		1.2.2
 CATEGORIES=		security
 MASTER_SITES=		# manual download
-EXTRACT_SUFX=		.tar
 
 MAINTAINER=		nectar@FreeBSD.org
 
@@ -71,25 +69,6 @@ do-fetch:
 	${ECHO} "   it in ${DISTDIR}.  Then run make again.";           \
 	${FALSE};							\
 	fi
-
-# the distfile is actually a tar of three compressed tars and their
-# signatures
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
-	@(cd ${WRKDIR} && ${TAR} -xf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-	@for f in crypto doc src; do					\
-	cd ${WRKDIR} &&							\
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTNAME}.$$f.tar.gz    \
-		${EXTRACT_AFTER_ARGS} &&				\
-	${RM} ${DISTNAME}.$$f.tar.gz ${DISTNAME}.$$f.tar.gz.asc;	\
-	done
-.if !defined(EXTRACT_PRESERVE_OWNERSHIP)
-	@if [ `id -u` = 0 ]; then \
-		${CHMOD} -R ug-s ${WRKDIR}; \
-		${CHOWN} -R 0:0 ${WRKDIR}; \
-	fi
-.endif
 
 pre-build:
 .if !defined(KRB5_KRB4_COMPAT)
