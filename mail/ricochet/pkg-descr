@@ -1,0 +1,6 @@
+    Ricochet is an automated agent for tracing and reporting  internet  junk
+    mail (a.k.a Spam). Ricochet analyses the headers of a spam  to  identity
+    the machines used for its injection, looks up the email addresses of the
+    machine owners and mails out a complaint to them. Ricochet uses  various
+    network information resources like nameserver records,  MX  records  and
+    Whois databases worldwide to collect and verify this information.

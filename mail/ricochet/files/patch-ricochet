@@ -1,0 +1,12 @@
+--- ricochet.orig	Fri Feb  9 03:23:19 2001
++++ ricochet	Fri Sep  7 09:03:59 2001
+@@ -574,7 +574,8 @@
+ 
+ sub initialize { 
+     my $self = shift; 
+-    my $rc = "$ENV{RICOCHET}" || "$ENV{HOME}/.ricochet"; $rc .= "/ricochetrc"; 
++    my $rc = "$ENV{RICOCHET}" || -f "$ENV{HOME}/.ricochet" ? "$ENV{HOME}/.ricochet" : "%%PREFIX%%/share/ricochet";
++    $rc .= "/ricochetrc"; 
+     Carp::croak "** Ricochet configuration file $rc doesn't exist. Aborting.\n" unless -e $rc; 
+     open (RC, $rc); 
+     grep { 

@@ -169,6 +169,7 @@
     SUBDIR += rblcheck
     SUBDIR += regm
     SUBDIR += rftp
+    SUBDIR += ricochet
     SUBDIR += ripmime
     SUBDIR += rlytest
     SUBDIR += rmime

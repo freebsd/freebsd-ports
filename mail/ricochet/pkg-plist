@@ -1,0 +1,13 @@
+bin/ricochet
+share/ricochet/ARTISTIC
+share/ricochet/CHANGES
+share/ricochet/README
+share/ricochet/TODO
+share/ricochet/abuse-contacts
+share/ricochet/complaint-template
+share/ricochet/ricochet
+share/ricochet/ricochetrc
+share/ricochet/skip-list
+@dirrm share/ricochet/whois
+@dirrm share/ricochet/backup
+@dirrm share/ricochet
