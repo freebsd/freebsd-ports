@@ -79,10 +79,10 @@ post-patch:
 		nsDrawingSurfaceGTK.cpp	nsFontMetricsXft.h
 
 post-install:
-	${RM} ${PREFIX}/bin/phoenix
+	${RM} -f ${PREFIX}/bin/phoenix
 	${LN} -s ${LOCAL_PREFIX}/bin/phoenix \
 		${PREFIX}/bin/phoenix
-	${RM} ${PREFIX}/bin/phoenix-config
+	${RM} -f ${PREFIX}/bin/phoenix-config
 	${LN} -s ${LOCAL_PREFIX}/bin/mozilla-config \
 		${PREFIX}/bin/phoenix-config
 
