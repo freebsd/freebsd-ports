@@ -5,23 +5,21 @@
 # $FreeBSD$
 
 PORTNAME=	freetds
-PORTVERSION=	0.61.2
+PORTVERSION=	0.62
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/freetds/stable
 
-MAINTAINER=	kiesel@schlund.de
+MAINTAINER?=	kiesel@schlund.de
 COMMENT=	Sybase/Microsoft TDS protocol library
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-BUILD_DEPENDS=	${LOCALBASE}/bin/automake17:${PORTSDIR}/devel/automake17
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_GONFIGURE=	yes
 USE_LIBTOOL=	yes
-NO_AUTOCONF=	yes
-NO_AUTOMAKE=	yes
+WANT_AUTOCONF_VER=	253
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-tdsver=5.0
@@ -45,10 +43,17 @@ PLIST_SUB+=	ODBC=""
 PLIST_SUB+=	ODBC="@comment "
 .endif
 
+.if defined(WITH_MSDBLIB)
+CONFIGURE_ARGS+=	--enable-msdblib
+.endif
+
 post-extract:
 	@cd ${WRKSRC} && ${LN} -s freetds.conf freetds.conf.dist
 	@cd ${WRKSRC} && ${LN} -s locales.conf locales.conf.dist
 	@cd ${WRKSRC}/src/pool && ${LN} -s pool.conf pool.conf.dist
+.if defined(WITH_EXPERIMENTAL_PATCH)
+	cd ${WRKSRC} && ${PATCH} < ${FILESDIR}/exp-patch-src::tds::read.c
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
@@ -57,11 +62,10 @@ post-patch:
 		 s|/locales.conf|/locales.conf.dist|g ; \
 		 s|/pool.conf|/pool.conf.dist|g ; \
 		 s| common.h||g'
-
-post-configure:
-	@cd ${WRKSRC} && ${REINPLACE_CMD} -e \
-		's|automake-1..|automake17|g ; \
-		 s|aclocal-1..|aclocal17|g' Makefile
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} -e "s|\(install-data-am:\).*|\1 install-man|g" \
+		${WRKSRC}/doc/Makefile.in
+.endif
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/freetds
