@@ -187,7 +187,6 @@ include/wine/wine/obj_oleview.h
 include/wine/wine/obj_picture.h
 include/wine/wine/obj_property.h
 include/wine/wine/obj_propertystorage.h
-include/wine/wine/obj_queryassociations.h
 include/wine/wine/obj_serviceprovider.h
 include/wine/wine/obj_shellbrowser.h
 include/wine/wine/obj_shellextinit.h
@@ -368,6 +367,7 @@ lib/wine/winaspi.dll.so
 lib/wine/windebug.dll.so
 lib/wine/winealsa.drv.so
 lib/wine/winearts.drv.so
+lib/wine/wineaudioio.drv.so
 lib/wine/wineconsole.exe.so
 lib/wine/winedbg.exe.so
 lib/wine/winedos.dll.so
@@ -375,6 +375,7 @@ lib/wine/winefile.exe.so
 lib/wine/winemine.exe.so
 lib/wine/winemp3.acm.so
 lib/wine/wineoss.drv.so
+lib/wine/winenas.drv.so
 lib/wine/winepath.exe.so
 lib/wine/wineps.dll.so
 lib/wine/wineps16.dll.so
