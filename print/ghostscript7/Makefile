@@ -51,6 +51,7 @@ MAINTAINER=	ports@FreeBSD.org
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png
 
+USE_REINPLACE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS_STANDARD="${CFLAGS}" \
@@ -279,14 +280,14 @@ post-extract:
 	${TAR} -C ${WRKSRC}/src -xzf ${DISTDIR}/${DIST_SUBDIR}/${GDI_SRCS}
 
 post-patch:
-	${PERL} -pi -e 's|^DEVICE_DEVS|#DEVICE_DEVS|g' \
+	${REINPLACE_CMD} -e 's|^DEVICE_DEVS|#DEVICE_DEVS|g' \
 		${WRKSRC}/src/unix-gcc.mak
-	${PERL} -pi -e 's|\. de|\.|g' \
+	${REINPLACE_CMD} -e 's|\. de|\.|g' \
 		${WRKSRC}/src/unixinst.mak
-	${PERL} -pi -e 's|%%DATADIR%%|${DATADIR}|g' \
+	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g' \
 		${WRKSRC}/lib/gs_res.ps
 # for DMPRT driver
-	${PERL} -pi -e 's|%%DATADIR%%|${DATADIR}|g ; \
+	${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|g ; \
 		 s|%%GS_VERSION%%|${PORTVERSION}|g' \
 			${WRKSRC}/src/dmp_site.ps
 

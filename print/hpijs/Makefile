@@ -18,6 +18,7 @@ LIB_DEPENDS=	ijs.1:${PORTSDIR}/print/libijs
 
 IJS_CONFIG?=	${LOCALBASE}/bin/ijs-config
 
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
@@ -25,14 +26,14 @@ CPPFLAGS=	`${IJS_CONFIG} --cflags`
 LDFLAGS=	`${IJS_CONFIG} --libs`
 
 post-patch:
-	@${PERL} -pi -e 's|CFLAGS="-O2 -Wall"|CFLAGS="\$$CFLAGS"|g ; \
+	@${REINPLACE_CMD} -e 's|CFLAGS="-O2 -Wall"|CFLAGS="\$$CFLAGS"|g ; \
 		 s|CXXFLAGS="-O2 -Wall"|CXXFLAGS="\$$CXXFLAGS"|g' \
 			${WRKSRC}/configure
-	@${PERL} -pi -e 's| ijs.[cho]||g ; \
+	@${REINPLACE_CMD} -e 's| ijs.[cho]||g ; \
 		 s| ijs_client.h||g ; \
 		 s| ijs_server.[cho]||g ; \
 		 s| ijs_exec_unix.[co]||g' ${WRKSRC}/Makefile.in
-	@${PERL} -pi -e 's|#include <malloc.h>||g' ${WRKSRC}/platform.h
+	@${REINPLACE_CMD} -e 's|#include <malloc.h>||g' ${WRKSRC}/platform.h
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hpijs ${PREFIX}/bin
