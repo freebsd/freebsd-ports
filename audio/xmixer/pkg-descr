@@ -13,7 +13,6 @@ uses the Athena toolkit, and gmixer, based on GTK+.  From the README:
      * Batch support - just read and evaluate the settings in the
        configuration file.
 
-WWW:  http://www.hdk-berlin.de/~rasca/xmixer/
+Note:  this conflicts with audio/gmixer.
 
-Trevor Johnson
-trevor@jpj.net
+WWW:  http://www.hdk-berlin.de/~rasca/xmixer/
