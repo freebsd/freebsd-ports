@@ -73,7 +73,6 @@
     SUBDIR += nagios
     SUBDIR += nagios-plugins
     SUBDIR += nagios-silfreed-plugins
-    SUBDIR += nagios-snmp-plugins
     SUBDIR += nagiostat
     SUBDIR += nat
     SUBDIR += nav
@@ -139,7 +138,6 @@
     SUBDIR += rate
     SUBDIR += remarp
     SUBDIR += rotorouter
-    SUBDIR += ruby-snmp
     SUBDIR += satellite
     SUBDIR += scdp
     SUBDIR += scli

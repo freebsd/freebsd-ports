@@ -31,8 +31,6 @@
     SUBDIR += helvis
     SUBDIR += hlatex
     SUBDIR += hlatex-psfonts-uhc-extra
-    SUBDIR += hlatex-psfonts-wansung
-    SUBDIR += hlatex-wansung
     SUBDIR += hlatexfonts-ocf
     SUBDIR += hmconv
     SUBDIR += hpscat
@@ -45,7 +43,6 @@
     SUBDIR += man-doc
     SUBDIR += mizifont
     SUBDIR += mod_url
-    SUBDIR += mozilla-klp
     SUBDIR += mplayer-fonts
     SUBDIR += msdosfs
     SUBDIR += mule-freewnn
@@ -53,7 +50,6 @@
     SUBDIR += nabi
     SUBDIR += nh2ps
     SUBDIR += nhpf
-    SUBDIR += nhppf
     SUBDIR += nvi-euc-kr
     SUBDIR += nvi-iso-2022-kr
     SUBDIR += openoffice-1.0

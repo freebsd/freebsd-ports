@@ -136,7 +136,6 @@
     SUBDIR += libotf
     SUBDIR += libpaper
     SUBDIR += lilypond
-    SUBDIR += lilypond-devel
     SUBDIR += lout
     SUBDIR += lprps-a4
     SUBDIR += lprps-letter

@@ -404,7 +404,6 @@
     SUBDIR += revelation
     SUBDIR += rid
     SUBDIR += rkhunter
-    SUBDIR += ruby-acl
     SUBDIR += ruby-aes
     SUBDIR += ruby-blowfish
     SUBDIR += ruby-cast_256

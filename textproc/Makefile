@@ -134,7 +134,6 @@
     SUBDIR += gtk-doc
     SUBDIR += gtkdiff
     SUBDIR += gtkspell2
-    SUBDIR += gutenbook
     SUBDIR += gutenmark
     SUBDIR += gv-aspell
     SUBDIR += gxditview
@@ -608,7 +607,6 @@
     SUBDIR += sed_inplace
     SUBDIR += sgmlformat
     SUBDIR += sgmls
-    SUBDIR += sgmltools
     SUBDIR += sgmltools-lite
     SUBDIR += sgrep
     SUBDIR += sgrep2
@@ -622,7 +620,6 @@
     SUBDIR += smartdoc-devel
     SUBDIR += source-highlight
     SUBDIR += sp
-    SUBDIR += spell
     SUBDIR += spellutils
     SUBDIR += srilm
     SUBDIR += stardict2

@@ -4,7 +4,6 @@
     COMMENT = Miscellaneous utilities
 
     SUBDIR += 44bsd-more
-    SUBDIR += Howto
     SUBDIR += achievo
     SUBDIR += aclgen
     SUBDIR += acron

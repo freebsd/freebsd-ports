@@ -445,7 +445,6 @@
     SUBDIR += ruby-imlib2
     SUBDIR += ruby-libart
     SUBDIR += ruby-libart2
-    SUBDIR += ruby-libexif
     SUBDIR += ruby-libpng
     SUBDIR += ruby-ming
     SUBDIR += ruby-opengl

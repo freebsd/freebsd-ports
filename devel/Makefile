@@ -38,7 +38,6 @@
     SUBDIR += argouml
     SUBDIR += argp-standalone
     SUBDIR += argtable
-    SUBDIR += arm-aout-binutils
     SUBDIR += arm-elf-binutils
     SUBDIR += arm-elf-gcc295
     SUBDIR += arm-rtems-binutils
@@ -123,7 +122,6 @@
     SUBDIR += cl-asdf-sbcl
     SUBDIR += cl-port
     SUBDIR += cl-port-clisp
-    SUBDIR += cl-port-cmucl
     SUBDIR += cl-port-sbcl
     SUBDIR += cl-split-sequence
     SUBDIR += cl-split-sequence-clisp
@@ -282,7 +280,6 @@
     SUBDIR += gconfmm
     SUBDIR += gconfmm26
     SUBDIR += gcvs
-    SUBDIR += gdb52
     SUBDIR += gdb53
     SUBDIR += gdb53-act
     SUBDIR += gdb6

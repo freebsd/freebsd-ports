@@ -181,7 +181,6 @@
     SUBDIR += wmcliphist
     SUBDIR += wmctrl
     SUBDIR += wmdrawer
-    SUBDIR += wmessage
     SUBDIR += wmfstatus
     SUBDIR += wmmatrix
     SUBDIR += wmmenu

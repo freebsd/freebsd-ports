@@ -1,8 +1,0 @@
-bin/wmx
-share/doc/wmx/README
-share/doc/wmx/README.contrib
-@dirrm share/doc/wmx
-@exec mkdir -p %D/lib/X11/wmx
-@exec mkdir -p %D/lib/X11/wmx/menu
-@dirrm lib/X11/wmx/menu
-@dirrm lib/X11/wmx

@@ -96,7 +96,6 @@
     SUBDIR += multi-backgrounds-daemon
     SUBDIR += multisync
     SUBDIR += multisync-backup
-    SUBDIR += multisync-evolution
     SUBDIR += multisync-syncml
     SUBDIR += nag
     SUBDIR += narval
@@ -119,7 +118,6 @@
     SUBDIR += sliderule
     SUBDIR += splashsetter
     SUBDIR += superkaramba
-    SUBDIR += taskjuggler
     SUBDIR += teapot
     SUBDIR += timer-applet
     SUBDIR += treeline

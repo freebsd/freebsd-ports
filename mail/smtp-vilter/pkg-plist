@@ -1,9 +1,0 @@
-lib/libvilter-clamd.so.2
-lib/libvilter-clamd.so
-lib/libvilter-savse.so.2
-lib/libvilter-savse.so
-lib/libvilter-spamd.so.2
-lib/libvilter-spamd.so
-man/man5/smtp-vilter.conf.5
-man/man8/smtp-vilter.8
-sbin/smtp-vilter
