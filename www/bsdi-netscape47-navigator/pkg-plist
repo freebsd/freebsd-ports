@@ -1,5 +1,6 @@
 bin/navigator-4.04
-@exec ln -sf %f bin/netscape
+@exec ln -sf %f bin/navigator-4
+@exec ln -sf navigator-4 bin/netscape
 @unexec rm -f bin/netscape
 lib/netscape/README
 lib/netscape/LICENSE
