@@ -144,7 +144,7 @@ include/GL/gl.h
 include/GL/glext.h
 include/GL/glx.h
 include/GL/glxtokens.h
-X11R6/include/GL/osmesa.h
+include/GL/osmesa.h
 include/X11/Composite.h
 include/X11/CompositeP.h
 include/X11/ConstrainP.h
