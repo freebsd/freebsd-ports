@@ -156,8 +156,6 @@ post-install::
 .endif	# !WITH_MATROX_GXX_DRIVER
 .endif
 
-HasXdmAuth?=		DEFAULT
-
 .if ${HasXdmAuth} == DEFAULT || ${HasXdmAuth} == YES
 .if defined(USA_RESIDENT) && ${USA_RESIDENT} == YES
 pre-fetch::
