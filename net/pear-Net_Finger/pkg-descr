@@ -1,0 +1,3 @@
+PEAR::Net_Finger class provides a tool for querying finger servers.
+
+WWW: http://pear.php.net/package/Net_Finger/
