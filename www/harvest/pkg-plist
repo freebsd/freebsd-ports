@@ -4,8 +4,19 @@ harvest/bin/Gatherer
 harvest/bin/Harvest
 harvest/bin/broker
 harvest/bin/gather
+harvest/bin/yaz-client
+harvest/bin/yaz-comp
+harvest/bin/yaz-config
+harvest/bin/yaz-ztest
+harvest/bin/yclient
+harvest/bin/zebraidx
+harvest/bin/zebrasrv
+harvest/bin/zoomsh
 harvest/brokers/Attributes.html
 harvest/brokers/adminhelp.html
+harvest/brokers/images/english.gif
+harvest/brokers/images/french.gif
+harvest/brokers/images/german.gif
 harvest/brokers/images/harvest-ic1.gif
 harvest/brokers/images/harvest-ic1.png
 harvest/brokers/images/harvest-ic2.gif
@@ -17,6 +28,12 @@ harvest/brokers/images/harvest-spike.png
 harvest/brokers/images/harvest-weight.gif
 harvest/brokers/images/harvest-weight.png
 harvest/brokers/images/index.html
+harvest/brokers/images/italian.gif
+harvest/brokers/images/korean.gif
+harvest/brokers/images/latin.gif
+harvest/brokers/images/russian.gif
+harvest/brokers/images/spanish.gif
+harvest/brokers/images/swedish.gif
 harvest/brokers/queryhelp.html
 harvest/brokers/skeleton/Makefile.in
 harvest/brokers/skeleton/Query.cgi.in
@@ -27,24 +44,38 @@ harvest/brokers/skeleton/admin/broker.conf.in
 harvest/brokers/skeleton/query-glimpse-modern.html.de.in
 harvest/brokers/skeleton/query-glimpse-modern.html.es.in
 harvest/brokers/skeleton/query-glimpse-modern.html.in
+harvest/brokers/skeleton/query-glimpse-modern.html.it.in
 harvest/brokers/skeleton/query-glimpse-modern.html.ru.in
+harvest/brokers/skeleton/query-glimpse-modern.html.se.in
 harvest/brokers/skeleton/query-glimpse.html.in
+harvest/brokers/skeleton/query-glimpse.html.it.in
+harvest/brokers/skeleton/query-glimpse.html.se.in
 harvest/brokers/skeleton/query-swish-modern.html.in
 harvest/brokers/skeleton/query-swish.html.in
 harvest/brokers/skeleton/query-wais-modern.html.in
 harvest/brokers/skeleton/query-wais.html.in
+harvest/brokers/skeleton/zebra.cfg.in
+harvest/brokers/skeleton/zebractl.in
 harvest/brokers/soifhelp.html
+harvest/brokers/zquery/about.html
+harvest/brokers/zquery/contact.html
+harvest/brokers/zquery/help.html
+harvest/brokers/zquery/query.html
+harvest/brokers/zquery/register.html
 harvest/cgi-bin/BrokerAdmin.pl.cgi
 harvest/cgi-bin/displaySOIF.cgi
 harvest/cgi-bin/lib/Sample.cf
 harvest/cgi-bin/lib/classic.cf
 harvest/cgi-bin/lib/german.cf
+harvest/cgi-bin/lib/italiano.cf
 harvest/cgi-bin/lib/modern.cf
 harvest/cgi-bin/lib/russian.cf
 harvest/cgi-bin/lib/search.cf
 harvest/cgi-bin/lib/spanish.cf
+harvest/cgi-bin/lib/swedish.cf
 harvest/cgi-bin/nph-search.cgi
 harvest/cgi-bin/search.cgi
+harvest/cgi-bin/zquery.pl
 harvest/gatherers/example-1/RunGatherer
 harvest/gatherers/example-1/example-1.cf
 harvest/gatherers/example-2/RunGatherer
@@ -111,6 +142,7 @@ harvest/lib/gatherer/IMS-DOCUMENT.sum
 harvest/lib/gatherer/MSWord.sum
 harvest/lib/gatherer/Mail.sum
 harvest/lib/gatherer/ManPage.sum
+harvest/lib/gatherer/MSExcel.sum
 harvest/lib/gatherer/NewsArticle.sum
 harvest/lib/gatherer/NewsGroup.sum
 harvest/lib/gatherer/Object.sum
@@ -243,6 +275,14 @@ harvest/lib/gatherer/sgmls-lib/ISOlat1-no-convert.sgml
 harvest/lib/gatherer/sgmls-lib/ISOlat1.sgml
 harvest/lib/gatherer/sgmls-lib/README
 harvest/lib/gatherer/sgmls-lib/catalog
+harvest/lib/gatherer/sgmls-lib/html/ISOlat1.sgml
+harvest/lib/gatherer/sgmls-lib/html/catalog
+harvest/lib/gatherer/sgmls-lib/html/html-0.dtd
+harvest/lib/gatherer/sgmls-lib/html/html-1.dtd
+harvest/lib/gatherer/sgmls-lib/html/html-1s.dtd
+harvest/lib/gatherer/sgmls-lib/html/html-s.dtd
+harvest/lib/gatherer/sgmls-lib/html/html.decl
+harvest/lib/gatherer/sgmls-lib/html/html.dtd
 harvest/lib/gatherer/sgmls-lib/html-3.2/HTML32.cat
 harvest/lib/gatherer/sgmls-lib/html-3.2/HTML32.dtd
 harvest/lib/gatherer/sgmls-lib/html-3.2/ISOlat1.ent
@@ -262,14 +302,6 @@ harvest/lib/gatherer/sgmls-lib/html-4.01/HTMLsymbol.ent
 harvest/lib/gatherer/sgmls-lib/html-4.01/frameset.dtd
 harvest/lib/gatherer/sgmls-lib/html-4.01/loose.dtd
 harvest/lib/gatherer/sgmls-lib/html-4.01/strict.dtd
-harvest/lib/gatherer/sgmls-lib/html/ISOlat1.sgml
-harvest/lib/gatherer/sgmls-lib/html/catalog
-harvest/lib/gatherer/sgmls-lib/html/html-0.dtd
-harvest/lib/gatherer/sgmls-lib/html/html-1.dtd
-harvest/lib/gatherer/sgmls-lib/html/html-1s.dtd
-harvest/lib/gatherer/sgmls-lib/html/html-s.dtd
-harvest/lib/gatherer/sgmls-lib/html/html.decl
-harvest/lib/gatherer/sgmls-lib/html/html.dtd
 harvest/lib/gatherer/sgmls-lib/htmlplus/HTMLplus.dtd
 harvest/lib/gatherer/sgmlsasp
 harvest/lib/gatherer/skim
@@ -293,6 +325,12 @@ harvest/lib/gatherer/wrapit
 harvest/lib/gatherer/xls2csv
 harvest/lib/gopherget.pl
 harvest/lib/harvest-check.pl
+harvest/lib/libyaz.a
+harvest/lib/libyaz.la
+harvest/lib/libyazmalloc.a
+harvest/lib/libyazmalloc.la
+harvest/lib/libyazthread.a
+harvest/lib/libyazthread.la
 harvest/lib/lsparse.pl
 harvest/lib/md5
 harvest/lib/newsget.pl
@@ -302,6 +340,166 @@ harvest/lib/soif.pl
 harvest/lib/timelocal.pl
 harvest/lib/urlget
 harvest/lib/urlpurge
+harvest/man/man1/yaz-client-ssl.1
+harvest/man/man1/yaz-client.1
+harvest/man/man1/yaz-config.1
+harvest/man/man1/zebraidx.1
+harvest/man/man1/zoomsh.1
+harvest/man/man7/yaz.7
+harvest/man/man8/yaz-ztest-ssl.8
+harvest/man/man8/yaz-ztest.8
+harvest/man/man8/zebrasrv.8
+harvest/share/aclocal/yaz.m4
+harvest/share/doc/idzebra/administration.html
+harvest/share/doc/idzebra/apps.html
+harvest/share/doc/idzebra/configuration-file.html
+harvest/share/doc/idzebra/data-model.html
+harvest/share/doc/idzebra/example1.html
+harvest/share/doc/idzebra/example2.html
+harvest/share/doc/idzebra/examples.html
+harvest/share/doc/idzebra/features.html
+harvest/share/doc/idzebra/file-ids.html
+harvest/share/doc/idzebra/formats.html
+harvest/share/doc/idzebra/future.html
+harvest/share/doc/idzebra/generic-ids.html
+harvest/share/doc/idzebra/indexdata.html
+harvest/share/doc/idzebra/installation.html
+harvest/share/doc/idzebra/internal-representation.html
+harvest/share/doc/idzebra/introduction.html
+harvest/share/doc/idzebra/license.html
+harvest/share/doc/idzebra/locating-records.html
+harvest/share/doc/idzebra/protocol-support.html
+harvest/share/doc/idzebra/quick-start.html
+harvest/share/doc/idzebra/record-model.html
+harvest/share/doc/idzebra/register-location.html
+harvest/share/doc/idzebra/server.html
+harvest/share/doc/idzebra/shadow-registers.html
+harvest/share/doc/idzebra/simple-indexing.html
+harvest/share/doc/idzebra/support.html
+harvest/share/doc/idzebra/zebra.html
+harvest/share/doc/idzebra/zebra.pdf
+harvest/share/doc/idzebra/zebraidx.html
+harvest/share/doc/yaz/asn.external.html
+harvest/share/doc/yaz/asn.html
+harvest/share/doc/yaz/asn.oid.html
+harvest/share/doc/yaz/asn.pdu.html
+harvest/share/doc/yaz/asn.preparing.html
+harvest/share/doc/yaz/client.commands.html
+harvest/share/doc/yaz/client.html
+harvest/share/doc/yaz/client.invoking.html
+harvest/share/doc/yaz/client.searching.html
+harvest/share/doc/yaz/comstack.addresses.html
+harvest/share/doc/yaz/comstack.client.html
+harvest/share/doc/yaz/comstack.common.html
+harvest/share/doc/yaz/comstack.diagnostics.html
+harvest/share/doc/yaz/comstack.html
+harvest/share/doc/yaz/comstack.introduction.html
+harvest/share/doc/yaz/comstack.server.html
+harvest/share/doc/yaz/comstack.summary.html
+harvest/share/doc/yaz/credits.html
+harvest/share/doc/yaz/future.html
+harvest/share/doc/yaz/id.png
+harvest/share/doc/yaz/indexdata.html
+harvest/share/doc/yaz/installation.html
+harvest/share/doc/yaz/installation.unix.html
+harvest/share/doc/yaz/installation.win32.html
+harvest/share/doc/yaz/introduction.html
+harvest/share/doc/yaz/license.html
+harvest/share/doc/yaz/license.other.html
+harvest/share/doc/yaz/odr.debugging.html
+harvest/share/doc/yaz/odr.html
+harvest/share/doc/yaz/odr.programming.html
+harvest/share/doc/yaz/odr.use.html
+harvest/share/doc/yaz/server.backend.html
+harvest/share/doc/yaz/server.backendfunctions.html
+harvest/share/doc/yaz/server.frontend.html
+harvest/share/doc/yaz/server.html
+harvest/share/doc/yaz/server.invocation.html
+harvest/share/doc/yaz/server.main.html
+harvest/share/doc/yaz/tools.html
+harvest/share/doc/yaz/tools.nmem.html
+harvest/share/doc/yaz/tools.oid.html
+harvest/share/doc/yaz/yaz.html
+harvest/share/doc/yaz/yaz.pdf
+harvest/share/doc/yaz/zoom.events.html
+harvest/share/doc/yaz/zoom.html
+harvest/share/doc/yaz/zoom.options.html
+harvest/share/doc/yaz/zoom.query.html
+harvest/share/doc/yaz/zoom.records.html
+harvest/share/doc/yaz/zoom.resultsets.html
+harvest/share/doc/yaz/zoom.scan.html
+harvest/share/idzebra/tab/bib1.att
+harvest/share/idzebra/tab/dan1.att
+harvest/share/idzebra/tab/danmarc.abs
+harvest/share/idzebra/tab/danmarc.mar
+harvest/share/idzebra/tab/default.idx
+harvest/share/idzebra/tab/explain.abs
+harvest/share/idzebra/tab/explain.att
+harvest/share/idzebra/tab/explain.tag
+harvest/share/idzebra/tab/generic.tag
+harvest/share/idzebra/tab/gils-a.est
+harvest/share/idzebra/tab/gils-b.est
+harvest/share/idzebra/tab/gils-f.est
+harvest/share/idzebra/tab/gils-g.est
+harvest/share/idzebra/tab/gils-summary.map
+harvest/share/idzebra/tab/gils-usmarc.map
+harvest/share/idzebra/tab/gils-variant.est
+harvest/share/idzebra/tab/gils.abs
+harvest/share/idzebra/tab/gils.att
+harvest/share/idzebra/tab/gils.tag
+harvest/share/idzebra/tab/hci.flt
+harvest/share/idzebra/tab/mail.flt
+harvest/share/idzebra/tab/meta-b.est
+harvest/share/idzebra/tab/meta-usmarc.map
+harvest/share/idzebra/tab/meta.abs
+harvest/share/idzebra/tab/meta.tag
+harvest/share/idzebra/tab/news.flt
+harvest/share/idzebra/tab/numeric.chr
+harvest/share/idzebra/tab/nwi.flt
+harvest/share/idzebra/tab/refer.flt
+harvest/share/idzebra/tab/scan.chr
+harvest/share/idzebra/tab/sgml.flt
+harvest/share/idzebra/tab/soif-harvest.flt
+harvest/share/idzebra/tab/soif.flt
+harvest/share/idzebra/tab/string.chr
+harvest/share/idzebra/tab/summary.abs
+harvest/share/idzebra/tab/summary.tag
+harvest/share/idzebra/tab/tagsetg.tag
+harvest/share/idzebra/tab/tagsetm.tag
+harvest/share/idzebra/tab/urx.chr
+harvest/share/idzebra/tab/usmarc-b.est
+harvest/share/idzebra/tab/usmarc.abs
+harvest/share/idzebra/tab/usmarc.flt
+harvest/share/idzebra/tab/usmarc.mar
+harvest/share/idzebra/tab/usmarc.tag
+harvest/share/idzebra/tab/var1.var
+harvest/share/idzebra/tab/wais-b.est
+harvest/share/idzebra/tab/wais-variant.est
+harvest/share/idzebra/tab/wais.abs
+harvest/share/yaz/ill/ill.tcl
+harvest/share/yaz/ill/ill9702.asn
+harvest/share/yaz/ill/item-req.asn
+harvest/share/yaz/z39.50/charneg-3.asn
+harvest/share/yaz/z39.50/datetime.asn
+harvest/share/yaz/z39.50/esadmin.asn
+harvest/share/yaz/z39.50/esupdate.asn
+harvest/share/yaz/z39.50/univres.asn
+harvest/share/yaz/z39.50/z.tcl
+harvest/share/yaz/z39.50/z3950v3.asn
+@dirrm harvest/share/yaz/z39.50
+@dirrm harvest/share/yaz/ill
+@dirrm harvest/share/yaz
+@dirrm harvest/share/idzebra/tab
+@dirrm harvest/share/idzebra
+@dirrm harvest/share/doc/yaz
+@dirrm harvest/share/doc/idzebra
+@dirrm harvest/share/doc
+@dirrm harvest/share/aclocal
+@dirrm harvest/share
+@dirrm harvest/man/man8
+@dirrm harvest/man/man7
+@dirrm harvest/man/man1
+@dirrm harvest/man
 @dirrm harvest/lib/gatherer/wp2x-lib
 @dirrm harvest/lib/gatherer/sgmls-lib/htmlplus
 @dirrm harvest/lib/gatherer/sgmls-lib/html-4.01
@@ -327,6 +525,7 @@ harvest/lib/urlpurge
 @dirrm harvest/gatherers
 @dirrm harvest/cgi-bin/lib
 @dirrm harvest/cgi-bin
+@dirrm harvest/brokers/zquery
 @dirrm harvest/brokers/skeleton/admin
 @dirrm harvest/brokers/skeleton
 @dirrm harvest/brokers/images
