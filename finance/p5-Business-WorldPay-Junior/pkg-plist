@@ -10,7 +10,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Business/WorldPay/Junior/.packlist
 %%SITE_PERL%%/Business/WorldPay/Junior.pm
 %%SITE_PERL%%/Business/WorldPay/get-rates.pl
-lib/perllocal.pod-Business-WorldPay-Junior
 @dirrm %%SITE_PERL%%/auto/Business/WorldPay/Junior
 @dirrm %%SITE_PERL%%/auto/Business/WorldPay
 @dirrm %%SITE_PERL%%/Business/WorldPay

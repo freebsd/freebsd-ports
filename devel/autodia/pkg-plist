@@ -31,4 +31,3 @@ bin/autodia_java.pl
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-lib/perllocal.pod-autodia
