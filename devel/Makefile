@@ -861,6 +861,7 @@
     SUBDIR += p5-POE-Component-Logger
     SUBDIR += p5-POE-Component-Pcap
     SUBDIR += p5-POE-Component-RSS
+    SUBDIR += p5-POE-Component-Server-XMLRPC
     SUBDIR += p5-POE-Component-TSTP
     SUBDIR += p5-POE-Exceptions
     SUBDIR += p5-POE-Session-MultiDispatch
