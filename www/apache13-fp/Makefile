@@ -36,7 +36,7 @@ MAINTAINER=	hetzels@westbend.net
 #PATCHFILES=
 
 APACHE=		${DISTNAME}${EXTRACT_SUFX}
-FRONTPAGE=	fp40.bsdi.tar.Z
+FRONTPAGE=	fp40.bsdi.tar.z
 
 EXTRACT_ONLY=	${APACHE}
 

@@ -103,14 +103,16 @@ share/doc/apache/index.html.en-dist
 share/doc/apache/index.html.es-dist
 share/doc/apache/index.html.fr-dist
 share/doc/apache/index.html.it-dist
+share/doc/apache/index.html.ja.jis-dist
 share/doc/apache/index.html.lu-dist
 share/doc/apache/index.html.nl-dist
+share/doc/apache/index.html.po.iso-pl-dist
 share/doc/apache/index.html.pt-dist
 share/doc/apache/index.html.pt-br-dist
 share/doc/apache/index.html.se-dist
 @unexec rm -rf %B/index.html.??
-@unexec rm -rf %B/index.html.po.iso-pl-dist
-@unexec rm -rf %B/index.html.ja.jis-dist
+@unexec rm -rf %B/index.html.po.iso-pl
+@unexec rm -rf %B/index.html.ja.jis
 @unexec rm -rf %B/index.html.pt-br
 share/doc/apache/manual/LICENSE
 share/doc/apache/manual/bind.html
@@ -414,7 +416,7 @@ frontpage/%%FP_REV%%/admin/topleft.gif
 frontpage/%%FP_REV%%/admin/topright.gif
 frontpage/%%FP_REV%%/admin/uninstal.htm
 frontpage/%%FP_REV%%/apache-fp/_vti_bin/fpexe
-frontpage/%%FP_REV%%/apache-fp/fp-patch-apache_1.3.3
+frontpage/%%FP_REV%%/apache-fp/fp-patch-apache_1.3.12
 frontpage/%%FP_REV%%/apache-fp/fpexe.c
 @unexec if [ -f %B/suidkey ] ; then rm -f %B/suidkey* ; fi
 frontpage/%%FP_REV%%/bin/_vti_inf.htm
