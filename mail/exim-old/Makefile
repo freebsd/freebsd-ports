@@ -84,7 +84,7 @@ SEDLIST+=	-e 's,^\# EXIM_PERL=,EXIM_PERL=,'
 SEDLIST+=	-e 's,XX_TCP_WRAPPERS_LIBS_XX,-lwrap,' \
 		-e 's,^\# USE_TCP_WRAPPERS=,USE_TCP_WRAPPERS=,'
 .else
-SEDLIST+=	-e 's/XX_TCP_WRAPPERS_LIBS_XX,,'
+SEDLIST+=	-e 's,XX_TCP_WRAPPERS_LIBS_XX,,'
 .endif
 
 .if defined(WITH_LDAP)
