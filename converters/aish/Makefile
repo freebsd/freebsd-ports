@@ -1,21 +1,22 @@
-# New ports collection makefile for: aish
-# Version required:	1.12
+# New ports collection makefile for:	aish
+# Version required:	1.13
 # Date created:		01 Aug 1998
 # Whom:			Masanori Kiriake <seiken@nbs.co.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	aish112
-PKGNAME=	aish-1.12
+DISTNAME=	aish113u
+PKGNAME=	aish-1.13
 CATEGORIES=	converters
-MASTER_SITES=	ftp://ftp.tohoku.ac.jp/pub/unix/aish/
-DISTFILES=	aish112u.tar.gz aish112man.tar.gz
+MASTER_SITES=	http://hp.vector.co.jp/authors/VA004474/etc/
 
-MANLANG=	ja
-MAN1=		aish.1 autodecode.1
-MAKE_ENV=	PATH=/usr/bin:$$PATH
+MAINTAINER=	ports@FreeBSD.org
 
-post-extract:
-	${MV} ${WRKDIR}/*1 ${WRKSRC}
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/ja/aish
+	${INSTALL_DATA} ${WRKSRC}/aish.txt ${PREFIX}/share/doc/ja/aish
+.endif
+
 .include <bsd.port.mk>
