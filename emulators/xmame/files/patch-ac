@@ -1,5 +1,5 @@
 --- src/unix/unix.mak.orig	Sat Mar 24 02:33:38 2001
-+++ src/unix/unix.mak	Mon Apr  2 10:33:48 2001
++++ src/unix/unix.mak	Mon Apr  2 12:32:36 2001
 @@ -46,18 +46,18 @@
  LIBS.x11        = $(X11LIB) $(JOY_X11_LIBS) -lX11 -lXext 
  LIBS.svgalib    = $(X11LIB) -lvga -lvgagl
@@ -23,12 +23,22 @@
  CFLAGS.photon2	=
  
  INST.x11        = doinstall
-@@ -326,7 +326,7 @@
+@@ -317,7 +317,7 @@
+ 	
+ doc/x$(TARGET)rc.dist: all src/unix/xmamerc-keybinding-notes.txt
+ 	./x$(TARGET).$(DISPLAY_METHOD) -noloadconfig -showconfig | \
+-	 grep -v loadconfig > doc/x$(TARGET)rc.dist
++	 grep -v loadconfig | tr "\033" \# > doc/x$(TARGET)rc.dist
+ 	cat src/unix/xmamerc-keybinding-notes.txt >> doc/x$(TARGET)rc.dist
+ 	
+ doc/gamelist.$(TARGET): all
+@@ -326,7 +326,8 @@
  
  doc/x$(TARGET).6: all src/unix/xmame.6-1 src/unix/xmame.6-3
  	cat src/unix/xmame.6-1 > doc/x$(TARGET).6
 -	./x$(TARGET).$(DISPLAY_METHOD) -manhelp >> doc/x$(TARGET).6
-+	./x$(TARGET).$(DISPLAY_METHOD) -noloadconfig -manhelp >> doc/x$(TARGET).6
++	./x$(TARGET).$(DISPLAY_METHOD) -noloadconfig -manhelp | \
++	 tr "\033" \# >> doc/x$(TARGET).6
  	cat src/unix/xmame.6-3 >> doc/x$(TARGET).6
  
  install: $(INST.$(DISPLAY_METHOD)) install-man
