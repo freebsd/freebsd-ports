@@ -8,7 +8,7 @@
 PORTNAME=	vdesk
 PORTVERSION=	1.1
 CATEGORIES=	x11
-MASTER_SITES=	http://azz.us-lot.org/files/
+MASTER_SITES=	http://offog.org/files/
 
 MAINTAINER=	trevor@FreeBSD.org
 COMMENT=	Command-line utility for setting up and using virtual desktops
