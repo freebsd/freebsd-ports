@@ -6,15 +6,19 @@
 #
 
 PORTNAME=	icc
-PORTVERSION=	7.1.034
-PORTREVISION=	1
+PORTVERSION=	8.0.055.p057
 CATEGORIES=	lang linux devel
 MASTER_SITES=
-DISTNAME=	l_cc_pc_${PORTVERSION}
-EXTRACT_SUFX=	.tar
+DISTNAME=	l_cc_p_${PORTVERSION:C/\.p.+$//}
 
 MAINTAINER=	netchild@FreeBSD.org
 COMMENT=	Intels C/C++ compiler, set up to produce native FreeBSD binaries
+
+PATCHLEVEL=	${PORTVERSION:C/(.+p)(.+)$/pe\2/}
+.if ${PORTVERSION} != ${PATCHLEVEL}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${DISTNAME}_${PATCHLEVEL}${EXTRACT_SUFX}
+.endif
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
@@ -23,19 +27,19 @@ NO_PACKAGE=	${RESTRICTED}
 NO_CDROM=	${RESTRICTED}
 
 ONLY_FOR_ARCHS=		i386
-CONFLICTS=		linux_devtools* ifc*
+CONFLICTS=		linux_devtools*
 
 USE_LINUX=		yes
 USE_REINPLACE=		yes
-NO_WRKSUBDIR=		yes
 NO_FILTER_SHLIBS=	yes
 
-COMPILERDIR=	compiler70
+COMPILERDIR=	intel_cc_80
 PLIST_SUB=	COMPILERDIR=${COMPILERDIR}
-PATCH_WRKSRC=	${WRKSRC}/opt/intel/${COMPILERDIR}
+PATCH_WRKSRC=	${WRKSRC}/opt/${COMPILERDIR}
 
 MAN1=		icc.1
-MANPREFIX=	${PREFIX}/intel/${COMPILERDIR}/
+MLINKS=		icc.1 icpc.1
+MANPREFIX=	${PREFIX}/${COMPILERDIR}/
 
 ICC_SITE=	http://www.intel.com/software/products/compilers/
 
@@ -48,76 +52,92 @@ EXTRACT_AFTER_ARGS=	| tar -xf - \
 
 ICCCFGVAL!=	${UNAME} -r | ${SED} -e 's/\..*//'
 
+BRANDELF?=	/usr/bin/brandelf
 CPIO?=		/usr/bin/cpio
 OBJCOPY?=	/usr/bin/objcopy
 
-.if !exists(${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX})
+.for file in ${DISTFILES}
+.if !exists(${DISTDIR}/${DIST_SUBDIR}/${file})
 IGNORE=	"Go to Intel Premier Support, https://premier.intel.com, to obtain ${DISTFILES}. Product updates such as this compiler are posted regularly on Premier Support. You must have a license to obtain access to Premier Support. If you do not already have a license go to ${ICC_SITE} to review licensing options \(evaluation, commercial, and free non-commercial\) and obtain a license. Put ${DISTFILES} into ${DISTDIR} and run make again"
 .endif
+.endfor
 
-.if exists(${LINUXBASE}/boot/kernel.h) || \
-	exists(${PREFIX}/intel/compiler60/bin/ifc) || \
-	exists(${PREFIX}/intel/compiler70/bin/ifc)
-BROKEN=	Cannot coexist with linux_devtools or ifc
+.if exists(${LINUXBASE}/boot/kernel.h)
+BROKEN=	Cannot coexist with linux_devtools
 .endif
 
 post-extract:
-	@${SED} 's:%%COMPILERDIR%%:${COMPILERDIR}:' ${FILESDIR}/cpio-exclude \
-		>${WRKDIR}/cpio-exclude
-.if defined(NOPORTDOCS)
-	@${SED} 's:%%COMPILERDIR%%:${COMPILERDIR}:' \
-		${FILESDIR}/cpio-exclude_noportdocs >>${WRKDIR}/cpio-exclude
-.endif
 .for i in \
-	intel-icc7-7.1-37.i386.rpm
-#	intel-iidb7-7.2.2-75.i386.rpm
-	@cd ${WRKSRC} && rpm2cpio.pl 2>/dev/null ${i} | \
-		${CPIO} -idfuE ${WRKDIR}/cpio-exclude --quiet
+	intel-icc8-8.0-44.i386.rpm \
+#	intel-iidb7-7.3.1-85.i386.rpm
+	@cd ${WRKSRC} && rpm2cpio.pl 2>/dev/null ${i} | ${CPIO} -idu --quiet
 .endfor
 
 pre-patch:
-# Allow everyone to use it
+# Apply patches from Intel.
+.if ${PORTVERSION} != ${PATCHLEVEL}
+	@${BRANDELF} -t Linux ${WRKSRC}_${PATCHLEVEL}/papply
+	@${WRKSRC}_${PATCHLEVEL}/papply ${WRKSRC}_${PATCHLEVEL}/icc.rtp \
+		${WRKSRC}/opt/${COMPILERDIR}
+.endif
+# Remove files we do not neet on FreeBSD.
+	@for i in `${CAT} ${FILESDIR}/exclude`; do \
+		${RM} -rf ${WRKSRC}/opt/${COMPILERDIR}/$$i; \
+	done
+.if defined(NOPORTDOCS)
+# Remove docs.
+	@for i in `${CAT} ${FILESDIR}/exclude_noportdocs`; do \
+		${RM} -rf ${WRKSRC}/opt/${COMPILERDIR}/$$i; \
+	done
+.endif
+# Allow everyone to use it.
 	@${CHMOD} a+rx ${WRKSRC}/opt
-# Remove unneeded/unsafe access rights
-.for i in docs ia32/include ia32/lib
-	@${FIND} ${WRKSRC}/opt/intel/${COMPILERDIR}/${i} -type f -print0 | \
+# Remove unneeded/unsafe access rights.
+.for i in doc include lib
+	@${FIND} ${WRKSRC}/opt/${COMPILERDIR}/${i} -type f -print0 | \
 		${XARGS} -0 ${CHMOD} a-x,g-w
 .endfor
 	@${FIND} ${WRKSRC}/opt -type d -print0 | ${XARGS} -0 ${CHMOD} go-w
-	@${CHMOD} a-x ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/Errormatch.txt
-# Use the Linux ABI for the binaries
-.for i in iccbin iccfilt icid icpcbin icpi mcpcom profmerge proforder xiar xild
-	@brandelf -t Linux ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
-.endfor
+	@${CHMOD} a-x ${WRKSRC}/opt/${COMPILERDIR}/bin/Errormatch.txt
 
 post-patch:
 # Correct some paths and patch some files
-.for i in ia32/bin/icc ia32/bin/iccvars.csh ia32/bin/iccvars.sh ia32/bin/icpc
-	@${REINPLACE_CMD} -i "" -e 's:@@PREFIX@@:${PREFIX}:g; s@\<INSTALLDIR\>@${PREFIX}/intel@g; s@man -w@manpath -q@g' \
-		${WRKSRC}/opt/intel/${COMPILERDIR}/${i}
-	@${CHMOD} 755 ${WRKSRC}/opt/intel/${COMPILERDIR}/${i}
+.for i in icc iccvars.csh iccvars.sh icpc
+	@${REINPLACE_CMD} -i "" -e 's:%%ICC_LOCALBASE%%:${LOCALBASE}:g; \
+		s:\<INSTALLDIR\>:${PREFIX}/${COMPILERDIR}:g; \
+		s:man -w:manpath -q:g' ${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
+	@${CHMOD} 755 ${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .endfor
-	@${REINPLACE_CMD} -i "" -e 's:\<INSTALLTIMECOMBOPACKAGEID\>:${DISTNAME}:g' \
-		${WRKSRC}/opt/intel/${COMPILERDIR}/docs/csupport
-	@${RM} ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/include/*.orig
+.if ${PORTVERSION} != ${PATCHLEVEL}
+	@${REINPLACE_CMD} -i "" -e \
+		's:\<installpackageid\>:${DISTNAME}_${PATCHLEVEL}:g' \
+		${WRKSRC}/opt/${COMPILERDIR}/doc/csupport
+.else
+	@${REINPLACE_CMD} -i "" -e 's:\<installpackageid\>:${DISTNAME}:g' \
+		${WRKSRC}/opt/${COMPILERDIR}/doc/csupport
+.endif
+	@${RM} ${WRKSRC}/opt/${COMPILERDIR}/include/*.orig
+	@${RM} ${WRKSRC}/opt/${COMPILERDIR}/include/c++/*.orig
 .for i in icc.orig icpc.orig
-	@${RM} ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
+	@${RM} ${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .endfor
 # Provide a more FreeBSD'ish compile environment
 .for i in icc.cfg icpc.cfg
-	@${REINPLACE_CMD} -i "" -e 's:-Xlinker -rpath -Xlinker <INSTALLDIR>/${COMPILERDIR}/ia32/lib::g' \
-		${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
-	@${ECHO} -e "-Qlocation,ld,${PREFIX}/intel/${COMPILERDIR}/ia32/bin/ldwrapper\n\n-wr1125\n-we140\n\n-Ulinux\n-U__linux__\n-U__linux\n-U__gnu_linux__\n\n-D__FreeBSD__=${ICCCFGVAL}\n-D__ELF__=1\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
+	@${ECHO} -e "-no-gcc\n-Qlocation,ld,${PREFIX}/${COMPILERDIR}/bin/ldwrapper\n\n-wr1125\n-we140\n\n-Ulinux\n-U__linux__\n-U__linux\n-U__gnu_linux__\n\n-D__FreeBSD__=${ICCCFGVAL}\n\n" >>${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .if ${OSVERSION} >= 500039
-	@${ECHO} -e "-D__wchar_t=__ct_rune_t\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
+	@${ECHO} -e "-D__wchar_t=__ct_rune_t\n" >>${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .endif
-	@${CHMOD} a-x,g-w ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/${i}
+	@${CHMOD} a-x,g-w ${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
 .endfor
 # C++ hack for icpc
-	@${ECHO} -e "\n-I${PREFIX}/include/stlport\n-Qoption,ld,-CPLUSPLUS\n" >>${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/icpc.cfg
-	@cd ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/ && ${LN} -s icc.cfg iccbin.cfg && ${LN} -s icpc.cfg icpcbin.cfg
-# Hack while there's no support for icc in the stdarg.h of FreeBSD.
-	@${CP} ${FILESDIR}/stdarg.h ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/include
+	@${ECHO} -e "\n-I${PREFIX}/include/stlport\n-Qoption,ld,-CPLUSPLUS\n" \
+		>>${WRKSRC}/opt/${COMPILERDIR}/bin/icpc.cfg
+	@cd ${WRKSRC}/opt/${COMPILERDIR}/bin/ && ${LN} -s icc.cfg iccbin.cfg \
+		&& ${LN} -s icpc.cfg icpcbin.cfg
+# Hack while there's no support for icc in the stdarg.h and sys/cdefs.h.
+	@${CP} ${FILESDIR}/stdarg.h ${WRKSRC}/opt/${COMPILERDIR}/include
+	@${MKDIR} ${WRKSRC}/opt/${COMPILERDIR}/include/sys
+	@${CP} ${FILESDIR}/cdefs.h ${WRKSRC}/opt/${COMPILERDIR}/include/sys
 
 .if ( ${OSVERSION} >= 470101 && ${OSVERSION} < 500000 ) || \
 	( ${OSVERSION} >= 500042 )
@@ -127,12 +147,15 @@ OBJCOPY_OPS=	--redefine-sym stdin=__stdinp \
 .endif
 
 do-build:
+# Use the Linux ABI for the binaries 
+.for i in codecov iccbin iccfilt icpcbin icpi mcpcom profmerge proforder tselect xiar xild
+	@${BRANDELF} -t Linux ${WRKSRC}/opt/${COMPILERDIR}/bin/${i}
+.endfor
 # Fix unresolved references
 	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/assert_fail.c \
 		${FILESDIR}/errno_location.c ${FILESDIR}/mcount.S
 .if ( ${OSVERSION} < 502101 )
-	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/cxa_atexit.c \
-		${FILESDIR}/cxa_finalize.c
+	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/cxa_atexit.c
 .endif
 .if ( ${OSVERSION} < 470101 ) || \
 	( ${OSVERSION} >= 500000 && ${OSVERSION} < 500042 )
@@ -140,29 +163,30 @@ do-build:
 	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stdout.o ${FILESDIR}/stdout.c
 	@${CC} ${CFLAGS} -c -o ${WRKSRC}/stderr.o ${FILESDIR}/stderr.c
 .endif
-.for i in libcxa.a libimf.a libirc.a libircmt.a libunwind.a
+.for i in libcxa.a libcxaguard.a libimf.a libirc.a libircmt.a libunwind.a
 	@${OBJCOPY} --redefine-sym __sigsetjmp=sigsetjmp \
 		${OBJCOPY_OPS} \
-		${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/lib/${i}
+		${WRKSRC}/opt/${COMPILERDIR}/lib/${i}
 .endfor
-	@${AR} q ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/lib/libcxa.a ${WRKSRC}/*.o
+	@${AR} q ${WRKSRC}/opt/${COMPILERDIR}/lib/libcxa.a ${WRKSRC}/*.o
+	@${AR} q ${WRKSRC}/opt/${COMPILERDIR}/lib/libcxaguard.a ${WRKSRC}/*.o
 # Some magic to be able to link
-	@${MKDIR} ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/ldwrapper
+	@${MKDIR} ${WRKSRC}/opt/${COMPILERDIR}/bin/ldwrapper
 	@${CC} ${CFLAGS} -o \
-		${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/ldwrapper/ld \
+		${WRKSRC}/opt/${COMPILERDIR}/bin/ldwrapper/ld \
 		${FILESDIR}/ld.c
-	@${STRIP_CMD} ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/ldwrapper/ld
-	@${CHMOD} 755 ${WRKSRC}/opt/intel/${COMPILERDIR}/ia32/bin/ldwrapper/ld
+	@${STRIP_CMD} ${WRKSRC}/opt/${COMPILERDIR}/bin/ldwrapper/ld
+	@${CHMOD} 755 ${WRKSRC}/opt/${COMPILERDIR}/bin/ldwrapper/ld
 
 do-install:
 	@cd ${WRKSRC}/opt && ${FIND} . -print | \
 		${CPIO} -pdu -R ${BINOWN}:${BINGRP} --quiet ${PREFIX}
 
 post-install:
-	@${ECHO_CMD} "${PKGNAME} is now installed in ${PREFIX}/intel, to use it you have to"
+	@${ECHO_CMD} "${PKGNAME} is now installed in ${PREFIX}/${COMPILERDIR}, to use it you have to"
 	@${ECHO_CMD} "put your license into your \$${INTEL_FLEXLM_LICENSE} (default:"
-	@${ECHO_CMD} "${PREFIX}/intel/licenses) directory and add"
-	@${ECHO_CMD} "${PREFIX}/intel/${COMPILERDIR}/ia32/bin to your PATH."
+	@${ECHO_CMD} "${PREFIX}/${COMPILERDIR}/licenses) directory and add"
+	@${ECHO_CMD} "${PREFIX}/${COMPILERDIR}/bin to your PATH."
 	@${ECHO_CMD}
 	@${ECHO_CMD} "In order to be able to compile C++ source with icpc you have to install"
 	@${ECHO_CMD} "devel/stlport-icc."

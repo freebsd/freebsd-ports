@@ -1,0 +1,61 @@
+--- include/c++/cstdio.orig	Sat Dec 13 19:27:02 2003
++++ include/c++/cstdio	Sat Dec 13 19:28:46 2003
+@@ -13,36 +13,6 @@
+  #include <stdio.h>
+ #endif /* _STD_USING */
+ 
+- #if defined(__GLIBC__)	/* compiler test */
+-
+-  #define _HAS_POINTER_CLIB	1
+-  #define _RBEGIN	_IO_read_base
+-  #define _RNEXT	_IO_read_ptr
+-  #define _REND		_IO_read_end
+-  #define _WBEGIN	_IO_write_base
+-  #define _WNEXT	_IO_write_ptr
+-  #define _WEND		_IO_write_end
+- #endif /* defined(__GLIBC__) */
+-
+- #if !defined(__GLIBC__)	/* compiler test */
+-
+-  #if defined(__MWERKS__)
+-   #define _IOBASE	buffer
+-   #define _IOPTR	buffer_ptr
+-   #define _IOCNT	buffer_len
+-
+-  #else	/* elif defined(__sun) */
+-   #define _IOBASE	_base
+-   #define _IOPTR	_ptr
+-   #define _IOCNT	_cnt
+-  #endif /* defined(__MWERKS__) */
+-
+- #endif /* !defined(__GLIBC__) etc. */
+-
+- #ifndef _HAS_POINTER_CLIB
+-  #define _HAS_CONVENTIONAL_CLIB	1
+- #endif /* _HAS_POINTER_CLIB */
+-
+  #ifdef _GLOBAL_USING
+ _STD_BEGIN
+ using _CSTD size_t; using _CSTD fpos_t; using _CSTD FILE;
+@@ -70,21 +40,6 @@
+ _STD_END
+  #endif /* _GLOBAL_USING */
+ 
+-#ifndef _Filet
+- #define _Filet	FILE
+-#endif /* _Filet */
+-
+-#ifndef _FPOSOFF
+-
+- #if defined(__GLIBC__)	/* compiler test */ \
+-	&& !(__GLIBC__ < 2 || __GLIBC__ == 2 && __GLIBC_MINOR__ < 2)
+-  #define _FPOSOFF(fp)  ((long)(fp).__pos)
+-
+- #else /* !defined(__GLIBC__) etc. */
+-  #define _FPOSOFF(fp)  ((long)(fp))
+- #endif /* !defined(__GLIBC__) etc. */
+-
+-#endif /* _FPOSOFF */
+ #endif /* _CSTDIO_ */
+ 
+ /*
