@@ -1,13 +1,13 @@
 # New ports collection makefile for:	expect
 # Date created:		20 November 1994
 # Whom:			pst
-# Version required:	5.26
+# Version required:	5.28
 #
-# $Id: Makefile,v 1.35 1998/09/25 10:05:08 asami Exp $
+# $Id: Makefile,v 1.36 1998/10/05 05:02:28 steve Exp $
 #
 # Note this file is included from japanese/expect/Makefile
 
-DISTNAME=	expect-5.26
+DISTNAME=	expect-5.28
 CATEGORIES=	lang tcl80 tk80
 MASTER_SITES=	ftp://peloton.physics.montana.edu/pub/distfiles/
 
@@ -29,13 +29,13 @@ MAN3=		libexpect.3
 .endif
 
 post-install:
-	${LN} -sf ${SOLIB} ${PREFIX}/lib/libexpect526.so
+	${LN} -sf ${SOLIB} ${PREFIX}/lib/libexpect528.so
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
 
 .if ${PORTOBJFORMAT} == "elf"
-SOLIB=	libexpect526.so.1
+SOLIB=	libexpect528.so.1
 .else
-SOLIB=	libexpect526.so.1.2
+SOLIB=	libexpect528.so.1.2
 .endif
