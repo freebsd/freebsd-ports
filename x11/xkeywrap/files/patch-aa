@@ -1,6 +1,6 @@
---- Makefile.orig	Sat Jan  1 17:01:01 2000
-+++ Makefile	Sat Feb 19 00:58:13 2000
-@@ -6,22 +6,24 @@
+--- Makefile.orig	Sun Apr 22 16:52:58 2001
++++ Makefile	Sun Apr 22 16:55:06 2001
+@@ -6,16 +6,16 @@
  ###############################################################################
  
  #PREFIX  = /usr/local
@@ -10,31 +10,24 @@
 +#X11BASE = /usr/X11R6
  BINDIR  = ${PREFIX}/bin
  MANDIR  = ${PREFIX}/man/man1
- PKGNAME = xkeywrap-1.0
- VERSION = XKeyWrap-1.0
-+CC	?= gcc
-+CFLAGS	?= -O2
+ PKGNAME = xkeywrap-1.1
+ VERSION = XKeyWrap-1.1
+ 
+-CC = cc
+-CFLAGS = -O -Wall
+-LFLAGS =
++#CC = cc
++#CFLAGS = -O -Wall
++#LFLAGS =
  
  all :		xkeywrap xkeywrap.1.gz
  
- xkeywrap :	xkeywrap.c list.o readme.h copyright.h
--		gcc xkeywrap.c list.o -o xkeywrap \
-+		${CC} ${CFLAGS} xkeywrap.c list.o -o xkeywrap \
- 			-I${X11BASE}/include -L${X11BASE}/lib -lX11 -lXt \
- 			-DVERSION=\"${VERSION}\"
- 
- list.o :	list.c list.h
--		gcc -c list.c -I/usr/X11R6/include
-+		${CC} ${CFLAGS} -c list.c -I${X11BASE}/include
- 
- readme.h :	README mkstr
- 		cat README | ./mkstr readme > readme.h
-@@ -30,7 +32,7 @@
+@@ -40,7 +40,7 @@
  		cat COPYRIGHT | ./mkstr copyright > copyright.h
  
  mkstr :		mkstr.c
--		gcc mkstr.c -o mkstr
-+		${CC} ${CFLAGS} mkstr.c -o mkstr
+-		$(CC) mkstr.c -o mkstr
++		$(CC) $(CFLAGS) mkstr.c -o mkstr
  
  xkeywrap.1.gz :	xkeywrap.man
  		cp xkeywrap.man xkeywrap.1
