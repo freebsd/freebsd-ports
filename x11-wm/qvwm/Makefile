@@ -1,12 +1,12 @@
 # New ports collection makefile for:   qvwm
-# Version required:    1.1.2
+# Version required:    1.1.3
 # Date created:        2 January 1997
 # Whom:                Yukihiro Nakai<Nakai@Mlab.t.u-tokyo.ac.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	qvwm-1.1.2
+DISTNAME=	qvwm-1.1.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://www.qvwm.org/pub/qvwm/
 
@@ -17,9 +17,5 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 
 USE_IMAKE=	yes
 MAN1=		qvwm.1
-
-post-patch:
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/rc/*.qvwmrc
-	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/src/Imakefile
 
 .include <bsd.port.mk>
