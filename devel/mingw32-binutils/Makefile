@@ -1,58 +1,74 @@
-# New ports collection makefile for: mingw-binutils
-# Date created:		6 June 2000
-# Whom:			Toshihiro Inoue <tino@pa2.so-net.ne.jp>
+# New ports collection makefile for: mingw2-binutils
+# Date created:		24 Oct 2002
+# Whom:			Lev Serebryakov <lev@serebryakov.spb.ru>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	binutils
-PORTVERSION=	2.11.92
+PORTVERSION=	${BINUTILVERSION}.${PATCHVERSION}
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	mingw
-PKGNAMEPREFIX=	mingw-
-DISTNAME=	${PORTNAME}-${PORTVERSION}-20011113-src${EXTRACT_SUFFIX}
+MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
+MASTER_SITE_SUBDIR=	binutils/releases
+PKGNAMEPREFIX=	mingw32-
+DISTNAME=	${PORTNAME}-${BINUTILVERSION}
 DIST_SUBDIR=	mingw
 
-MAINTAINER=	doc@hisio.safenet.pl
-COMMENT=	FSF binutils-2.11.90 for Windows cross-development
+PATCH_SITES=	${MASTER_SITE_SOURCEFORGE}
+PATCH_SITE_SUBDIR=	mingw
+PATCHFILES=	${PORTNAME}-${BINUTILVERSION}-${PATCHVERSION:S/./-/}.diff.gz
+PATCH_DIST_STRIP=	-p1
+
+MAINTAINER=	lev@serebryakov.spb.ru
+COMMENT=	FSF binutils-2.13 for Windows cross-development
 
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-20011113
+BINUTILVERSION=	2.13
+PATCHVERSION=	20020903.1
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${BINUTILVERSION}
+
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--target=i386-mingw32msvc
+CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
+		--with-gcc --with-gnu-ld --with-gnu-as \
+		--disable-nls --disable-win32-registry \
+		--disable-shared
 
-MAN1=	i386-mingw32msvc-addr2line.1 \
-	i386-mingw32msvc-ar.1        \
-	i386-mingw32msvc-as.1        \
-	i386-mingw32msvc-dlltool.1   \
-	i386-mingw32msvc-c++filt.1   \
-	i386-mingw32msvc-ld.1        \
-	i386-mingw32msvc-nlmconv.1   \
-	i386-mingw32msvc-nm.1        \
-	i386-mingw32msvc-objcopy.1   \
-	i386-mingw32msvc-objdump.1   \
-	i386-mingw32msvc-ranlib.1    \
-	i386-mingw32msvc-readelf.1   \
-	i386-mingw32msvc-size.1      \
-	i386-mingw32msvc-strings.1   \
-	i386-mingw32msvc-strip.1     \
-	i386-mingw32msvc-windres.1
+MAN1=	${PKGNAMEPREFIX}addr2line.1 ${PKGNAMEPREFIX}ar.1    \
+	${PKGNAMEPREFIX}as.1 ${PKGNAMEPREFIX}dlltool.1      \
+	${PKGNAMEPREFIX}c++filt.1 ${PKGNAMEPREFIX}ld.1      \
+	${PKGNAMEPREFIX}nlmconv.1 ${PKGNAMEPREFIX}nm.1      \
+	${PKGNAMEPREFIX}objcopy.1 ${PKGNAMEPREFIX}objdump.1 \
+	${PKGNAMEPREFIX}ranlib.1 ${PKGNAMEPREFIX}readelf.1  \
+	${PKGNAMEPREFIX}size.1 ${PKGNAMEPREFIX}strings.1    \
+	${PKGNAMEPREFIX}strip.1 ${PKGNAMEPREFIX}windres.1
+
+PLIST_SUB+=	BINUTILS_TARG=${PKGNAMEPREFIX:S/-$//}
+
+BINARIES=	addr2line ar as c++filt ld nm objcopy objdump ranlib \
+		readelf size strings strip dlltool dllwrap windres
+
+# There may be original binutils sources already
+pre-fetch:
+	for F in ${DISTFILES}; do \
+		${TEST} -f ${DISTDIR}/$${F} && \
+		${TEST} ! -f ${DISTDIR}/${DIST_SUBDIR}/$${F} && \
+		${LN} ${DISTDIR}/$${F} ${DISTDIR}/${DIST_SUBDIR}/$${F} || \
+		true ; \
+	done
+
+pre-install:
+	@${CP} ${FILESDIR}/fdl.texi ${WRKSRC}/etc
 
 post-install:
-	@for file in \
-	  addr2line ar as c++filt dlltool gasp ld nm \
-	  objcopy objdump ranlib size strings strip windres; \
-	do \
-	  strip ${PREFIX}/bin/i386-mingw32msvc-$${file}; \
-	done
-	@for file in ar as dlltool ld nm ranlib strip; \
-	do \
-	  strip ${PREFIX}/i386-mingw32msvc/bin/$${file}; \
-	done
+.for F in ${BINARIES}
+	@strip ${PREFIX}/bin/${PKGNAMEPREFIX}$F
+	@${LN} -f ${PREFIX}/bin/${PKGNAMEPREFIX}$F \
+		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin/$F
+.endfor
 
 .include <bsd.port.mk>
