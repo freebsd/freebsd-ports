@@ -6,21 +6,17 @@
 #
 
 PORTNAME=	ftplocate
-PORTVERSION=	2.01
-PORTREVISION=	1
+PORTVERSION=	2.02
 CATEGORIES=	ftp www
-MASTER_SITES=	ftp://ftp.ee.ncku.edu.tw/pub/ftplocate/
+MASTER_SITES=	http://turtle.ee.ncku.edu.tw/ftplocate/download/
 
 MAINTAINER=	tung@turtle.ee.ncku.edu.tw
 COMMENT=	A ftp search engine supporting filename and description search
 
-BUILD_DEPENDS=  ${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	glimpse:${PORTSDIR}/textproc/glimpse \
 		unzip:${PORTSDIR}/archivers/unzip
 
-USE_PERL5_BUILD=yes
-USE_PERL5_RUN=	yes
-USE_REINPLACE=	yes
+USE_PERL5=	yes
 NO_BUILD=	yes
 
 PL_FILES=	install.pl bin/dcollect.pl bin/dindex.pl bin/dsearch.pl \
@@ -29,13 +25,16 @@ PL_FILES=	install.pl bin/dcollect.pl bin/dindex.pl bin/dsearch.pl \
 		bin/flserv.pl bin/flsummary.pl bin/fltop.pl \
 		bin/fltrain.pl bin/flcatsite.pl template/ftplocate
 
-post-patch:
+post-extract:
 .for f in ${PL_FILES}
-	@${REINPLACE_CMD} -e 's,/usr/local/bin/perl,${PERL},' ${WRKSRC}/${f}
+	@${PERL} -pi -e 's,/usr/bin/perl,${PERL},' ${WRKSRC}/${f}
 .endfor
-	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX},g" ${WRKSRC}/install.pl
+	@${PERL} -pi -e 's,(/usr/local/www|/usr/local/apache/share),${PREFIX}/www,g' ${WRKSRC}/install.pl
+	@${PERL} -pi -e 's,/usr/local/bin/ftplocate,${PREFIX}/bin/ftplocate,g' ${WRKSRC}/install.pl
+	@${PERL} -pi -e 's,htdocs,data,g' ${WRKSRC}/install.pl
 
 do-install:
+	@${MKDIR} ${PREFIX}/www/data ${PREFIX}/www/cgi-bin
 	cd ${WRKSRC}; ${PERL} install.pl -y -c -bsdport
 
 .include <bsd.port.mk>
