@@ -1,0 +1,11 @@
+--- lib/siteconf.pl.bak	Thu Jul 23 01:44:21 1998
++++ lib/siteconf.pl	Mon Nov  2 13:58:29 1998
+@@ -28,7 +28,7 @@
+ 
+ # If can't write to preferred cache file, use alternate
+ if (!open(F,">$FCacheFile")) {
+-	$FCacheFile = "/tmp/.sitecache";
++	$FCacheFile = ".sitecache";
+ 	if (!open(F,">$FCacheFile")) {
+ 		print "Error, cannot find a usable cache file!\n";
+ 		$FCacheFile = '';
