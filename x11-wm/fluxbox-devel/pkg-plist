@@ -3,6 +3,13 @@ bin/fbsetbg
 bin/fluxbox
 bin/fluxbox-generate_menu
 bin/startfluxbox
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
 %%DOCHTML:%%%%DOCSDIR%%/html/app-artwiz.html
 %%DOCHTML:%%%%DOCSDIR%%/html/app-debugging.html
 %%DOCHTML:%%%%DOCSDIR%%/html/app-setup.html
@@ -164,4 +171,4 @@ share/fluxbox/styles/qnx-photon
 @dirrm share/fluxbox
 %%DOCPDF:%%@dirrm %%DOCSDIR%%/pdf
 %%DOCHTML:%%@dirrm %%DOCSDIR%%/html
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -7,6 +7,7 @@
 
 PORTNAME=	fluxbox
 PORTVERSION=	0.9.9
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	fluxbox
@@ -20,10 +21,8 @@ PATCHFILES=	fluxbox-0.9.9-gcc3.4.patch
 MAINTAINER=	mezz@FreeBSD.org
 COMMENT=	A small and fast window manager based on BlackBox
 
-BUILD_DEPENDS=	xterm:${PORTSDIR}/x11/XFree86-4-clients
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
-RUN_DEPENDS=	bsetbg:${PORTSDIR}/x11-wm/boxtools \
-		xterm:${PORTSDIR}/x11/XFree86-4-clients
+RUN_DEPENDS=	bsetroot:${PORTSDIR}/x11-wm/boxtools
 
 CONFLICTS=	fluxbox-0.1.*
 
@@ -32,8 +31,8 @@ USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
+DOCS=		AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
 MAN1=		fbrun.1 fbsetbg.1 fluxbox.1 fluxstyle.1 startfluxbox.1
-
 NLSMAKEFILES=	nls nls/C nls/bg_BG nls/da_DK nls/de_DE nls/es_ES nls/et_EE \
 		nls/fr_FR nls/it_IT nls/ja_JP nls/lv_LV nls/nl_NL nls/pl_PL \
 		nls/pt_BR nls/pt_PT nls/ru_RU nls/sl_SI nls/sv_SE nls/tr_TR
@@ -122,6 +121,13 @@ post-patch:
 .endif
 
 post-install:
+.ifndef (NOPORTDOCS)
+post-install:
+	@${MKDIR} ${DOCSDIR}
+.for i in ${DOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+.endfor
+.endif
 .if defined(WITH_DOCPDF)
 	@${MKDIR} ${DOCSDIR}/pdf
 	@${INSTALL_DATA} ${DISTDIR}/fluxbook.pdf ${DOCSDIR}/pdf/
