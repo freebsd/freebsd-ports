@@ -13,6 +13,7 @@ share/examples/portfwd/chain.cfg
 share/examples/portfwd/debug_ftp.cfg
 share/examples/portfwd/dns.cfg
 share/examples/portfwd/empty.cfg
+share/examples/portfwd/external-director.cfg
 share/examples/portfwd/ftp.cfg
 share/examples/portfwd/load-balance.cfg
 share/examples/portfwd/mail.cfg
