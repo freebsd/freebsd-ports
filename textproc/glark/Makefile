@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_RUBY=	yes
 NO_BUILD=	yes
 
 MAN1=	glark.1
