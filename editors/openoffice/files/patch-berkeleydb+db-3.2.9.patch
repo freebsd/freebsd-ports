@@ -52,7 +52,7 @@
 + 	linux*)		JINCSUBDIRS="linux genunix";;
 ++	irix*)		JINCSUBDIRS="irix";;
 ++	netbsd*)        JINCSUBDIRS="netbsd linux solaris genunix";;
-++	freebsd*)	JINCSUBDIRS="freebsd genunix";;
+++	freebsd*)	JINCSUBDIRS="freebsd linux solaris genunix";;
 + 	*)		JINCSUBDIRS="genunix";;
 + 	esac
 + 

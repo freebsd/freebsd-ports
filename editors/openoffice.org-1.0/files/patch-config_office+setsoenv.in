@@ -1,0 +1,44 @@
+--- set_soenv.in.orig	Thu Jan  9 14:41:31 2003
++++ set_soenv.in	Sat Jan 25 18:27:08 2003
+@@ -52,8 +52,8 @@
+ #-------------------------------------------------
+ #
+ # Platform independent constant values.
+-my @LANGUAGES = ("ARAB", "CHINSIM", "CHINTRAD", "DAN", "DTCH", "ENUS", "FREN", "GREEK", "ITAL",
+-"JAPN", "KOREAN", "POL", "PORT", "RUSS", "SPAN", "SWED", "TURK" ); 
++my @LANGUAGES = ("ARAB", "CHINSIM", "CHINTRAD", "DAN", "DTCH", "ENUS", "FREN", "GREEK", "GER",
++"ITAL", "JAPN", "KOREAN", "POL", "PORT", "RUSS", "SPAN", "SWED", "TURK" ); 
+ my ( $CALL_CDECL, $COMMON_OUTDIR, $NO_SRS_PATCH, $PRODUCT, $PROFULLSWITCH, $BIG_GOODIES, $BMP_WRITES_FLAG, 
+      $common_build, $MK_UNROLL, $NO_REC_RES, $PROEXT, $SO3, $SOLAR_JAVA, 
+      $SOLAR_PLUGIN, $TF_PACKAGES, $TF_SDBAPI, $TF_FILEURL, $UPDATER, $BUILD_DELIVER, $USE_NEWCHARSET, $USE_NEW_RSC, $VCL, 
+@@ -88,7 +88,7 @@
+      $SOLARINC, $LOCALINI, $MAC_LIB, $PATHEXTRA, $FRAMEWORKSHOME, $COMEX, $MULTITHREAD_OBJ, $PERL, 
+      $COMP_ENV, $IENV, $ILIB, $WIN_INCLUDE, $JAVAHOME, $WIN_LIB, $WIN_HOME, $PSDK_HOME,
+      $BISON_HAIRY, $BISON_SIMPLE, $TEMP, $COMMON_BUILD_TOOLS, $WIN_GREP, $WIN_FIND, $WIN_LS,
+-     $WIN_GNUCOPY, $WIN_TOUCH, $STLPORT4, $USE_GCC3, $ENABLE_DEBUG );
++     $WIN_GNUCOPY, $WIN_TOUCH, $STLPORT4, $USE_GCC3, $ENABLE_DEBUG, $USE_LINUXJDK);
+ #
+ #-------------------------------------------
+ # IId. Declaring the aliases.
+@@ -141,6 +141,7 @@
+ $CXX		= '@CXX@';          # C++ compiler
+ $EXCEPTIONS	= '@EXCEPTIONS@';   # Exception handling type
+ $ENABLE_DEBUG	= '@ENABLE_DEBUG@';  # Enable a debug build
++$USE_LINUXJDK	= '@USE_LINUXJDK@';  # Enable a debug build
+ $WRAPCMD	= "";				# Wrapper (only for winnt)
+ 
+ #
+@@ -1265,7 +1266,12 @@
+ {  $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."linux";
+ }
+ elsif ($platform eq "$FreeBSD")
+-{  $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."freebsd";
++{
++   if ($USE_LINUXJDK eq "TRUE") {
++   	$SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."linux";
++   } else {
++   	$SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."freebsd";
++   }
+ }
+ elsif ($platform eq "$NetBSD")
+ {  $SOLARINC          .=$I.'$JAVA_HOME'.$INCLUDE.$ds."netbsd";

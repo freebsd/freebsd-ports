@@ -119,6 +119,9 @@ BUILD_DEPENDS+= ${X11BASE}/lib/libX11.so:${PORTSDIR}/x11/XFree86-4-libraries
 .if !defined(DISPLAY)
 BUILD_DEPENDS+= Xvfb:${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer
 .endif
+.if !defined(WITH_BSD_JDK)
+USE_LINUX=	yes
+.endif
 
 USE_PERL5=	yes
 USE_BZIP2=	yes
@@ -130,7 +133,11 @@ EXTRACT_AFTER_ARGS_R= | ${TAR} -xf -
 EXTRACT_CMD_R= ${GZIP_CMD}
 EXTRACT_REST=	gpc231.tar.Z
 
+.if !defined(WITH_BSD_JDK)
+JDK13DIR?=      ${LOCALBASE}/linux-jdk1.3.1
+.else
 JDK13DIR?=      ${LOCALBASE}/jdk1.3.1
+.endif
 JAVAVM=         ${JDK13DIR}/bin/java
 
 GNU_CONFIGURE=	yes
@@ -159,11 +166,15 @@ CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 
 CONFIGURE_ARGS+=	--with-jdk-home=${JDK13DIR} \
 			--with-os-version=${OSVERSION} \
-			--with-ant-home=${LOCALBASE}/
+			--with-ant-home=${LOCALBASE}
 
 #.if !defined(USE_GCC)
 #CONFIGURE_ARGS+=	--with-stlport4-home=${PREFIX}
 #.endif
+
+.if !defined(WITH_BSD_JDK)
+CONFIGURE_ARGS+=	--enable-linuxjdk=yes
+.endif
 
 .if defined(WITH_DEBUG)
 .if ${WITH_DEBUG} == 2
@@ -212,6 +223,14 @@ pre-fetch:
 	@${ECHO} "Add USE_GCC=2.95 or USE_GCC=3.1"
 	@${ECHO} "to compile openoffice with your"
 	@${ECHO} "prefered compiler."
+.endif
+.if !defined(WITH_BSD_JDK)
+	@${ECHO}
+	@${ECHO} "If you like to use the native BSD"
+	@${ECHO} "JDK for the build system, you can use"
+	@${ECHO} "WITH_BSD_JDK=TRUE to disable the"
+	@${ECHO} "usage of the linux-JDK and linux dependency."
+	@${ECHO}
 .endif
 .if !defined(WITH_DEBUG)
 	@${ECHO}
