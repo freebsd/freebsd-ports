@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dctc
-PORTVERSION=	0.83.5
+PORTVERSION=	0.83.6
 CATEGORIES=	net
 MASTER_SITES=	http://unixpages.org/distfiles/ \
 		http://ac2i.tzo.com/dctc/
