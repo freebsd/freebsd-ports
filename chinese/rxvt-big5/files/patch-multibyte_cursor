@@ -1,0 +1,143 @@
+--- rclock/rclock.c
++++ rclock/rclock.c
+@@ -1201,8 +1201,16 @@
+ 		       int n = (sizeof(execPrgm) - strlen (execPrgm) - 2);
+ 		       if ((n > 0) && (n >= strlen (prgm)))
+ 			 {
+-			    /* for co-occurring programs */
+-			    strcat (execPrgm, ";");
++			   /* for co-occurring programs */
++			   switch (execPrgm[strlen (execPrgm)-1])
++			     {
++			     case '&':
++			     case ';':
++			       break;
++			     default:
++			       strcat (execPrgm, ";");
++			       break;
++			     }
+ 			    strncat (execPrgm, prgm, n);
+ 			 }
+ 		    }
+--- src/command.c
++++ src/command.c
+@@ -1221,11 +1221,23 @@
+ 				^ !!(shft | ctrl)) ? '\b' : '\177');
+ 		} else
+ 		    len = strlen(STRCPY(kbuf, key_backspace));
++#ifdef MULTICHAR_SET
++		if ((Options & Opt_mc_hack) && scr_multi2()) {
++		    memmove(kbuf + len, kbuf, len);
++		    len *= 2;
++		}
++#endif
+ 		break;
+ #endif
+ #ifndef NO_DELETE_KEY
+ 	    case XK_Delete:
+ 		len = strlen(STRCPY(kbuf, key_delete));
++#ifdef MULTICHAR_SET
++		if ((Options & Opt_mc_hack) && scr_multi1()) {
++		    memmove(kbuf + len, kbuf, len);
++		    len *= 2;
++		}
++#endif
+ 		break;
+ #endif
+ 	    case XK_Tab:
+@@ -1279,6 +1291,14 @@
+ 		    kbuf[2] = ("dacb"[keysym - XK_Left]);
+ 		} else if (PrivateModes & PrivMode_aplCUR)
+ 		    kbuf[1] = 'O';
++#ifdef MULTICHAR_SET
++		if ((Options & Opt_mc_hack) &&
++		    ((keysym==XK_Left && scr_multi2()) ||
++		    (keysym==XK_Right && scr_multi1()))) {
++		    memmove(kbuf + len, kbuf, len);
++		    len *= 2;
++		}
++#endif
+ 		break;
+ 
+ #ifndef UNSHIFTED_SCROLLKEYS
+--- src/rxvt.h
++++ src/rxvt.h
+@@ -408,6 +408,7 @@
+ #define Opt_scrollTtyOutput	(1LU<<11)
+ #define Opt_scrollKeypress	(1LU<<12)
+ #define Opt_transparent		(1LU<<13)
++#define Opt_mc_hack		(1LU<<14)
+ /* place holder used for parsing command-line options */
+ #define Opt_Reverse		(1LU<<30)
+ #define Opt_Boolean		(1LU<<31)
+@@ -548,6 +549,9 @@
+ #ifdef USE_XIM
+     Rs_preeditType,
+     Rs_inputMethod,
++#endif
++#ifdef MULTICHAR_SET
++    Rs_mc_hack,
+ #endif
+ #if defined (HOTKEY_CTRL) || defined (HOTKEY_META)
+     Rs_bigfont_key,
+--- src/screen.c.orig	Fri Jul 14 11:29:29 2000
++++ src/screen.c	Sat Dec 23 13:49:05 2000
+@@ -1980,15 +1980,15 @@
+ int
+ scr_move_to(int y, int len)
+ {
+-    int             start;
++    int             start, newstart;
+ 
+     want_refresh = 1;
+     start = TermWin.view_start;
+     if (y >= len)
+ 	TermWin.view_start = 0;
+     else {
+-	TermWin.view_start = ((len - y)
+-			      * (TermWin.nrow - 1 + TermWin.nscrolled) / len);
++        newstart = ((len - y) * (TermWin.nrow - 1 + TermWin.nscrolled) / len);
++	TermWin.view_start = max(newstart,0);
+ 	if (TermWin.view_start < TermWin.nrow)
+ 	    TermWin.view_start = 0;
+ 	else
+@@ -3501,5 +3501,28 @@
+     XGetWindowAttributes(Xdisplay, TermWin.vt, &xwa);
+     pos->x = Col2Pixel(screen.cur.col) + xwa.x;
+     pos->y = Height2Pixel((screen.cur.row + 1)) + xwa.y;
++}
++#endif
++
++#ifdef MULTICHAR_SET
++/* EXTPROTO */
++int
++scr_multi1(void)
++{
++    rend_t          rend;
++    
++    rend = screen.rend[screen.cur.row + TermWin.saveLines][screen.cur.col];
++    return ((rend & RS_multiMask)==RS_multi1);
++}
++
++/* EXTPROTO */
++int
++scr_multi2(void)
++{
++    rend_t          rend;
++    
++    if (screen.cur.col==0)  return 0;
++    rend = screen.rend[screen.cur.row + TermWin.saveLines][screen.cur.col-1];
++    return ((rend & RS_multiMask)==RS_multi2);
+ }
+ #endif
+--- src/xdefaults.c
++++ src/xdefaults.c
+@@ -215,6 +215,8 @@
+ #ifdef MULTICHAR_SET
+     STRG(Rs_multichar_encoding, "multichar_encoding", "km", "mode",
+          "multiple-character font encoding; mode = eucj | sjis | big5 | gb"),
++    BOOL(Rs_mc_hack, "multibyte_cursor", "mcc", Opt_mc_hack,
++	"Multibyte character cursor movement"),
+ #endif				/* MULTICHAR_SET */
+ #ifdef USE_XIM
+     STRG(Rs_preeditType, "preeditType", "pt", "style",
