@@ -1,0 +1,17 @@
+--- configure.orig	Fri Oct 13 04:30:54 2000
++++ configure	Thu Jan 11 02:50:23 2001
+@@ -960,10 +960,10 @@
+ 
+ #RC_MODULE_TRAP([ELVIS_IROBEX])
+ # ensure no optimizations
+-if test -n "$CFLAGS"; then
+-  CFLAGS="`echo $CFLAGS | sed -e 's/-O.//g'`"
+-fi
+-CFLAGS="$CFLAGS -O0"
++#if test -n "$CFLAGS"; then
++#  CFLAGS="`echo $CFLAGS | sed -e 's/-O.//g'`"
++#fi
++#CFLAGS="$CFLAGS -O0"
+ # check whether to include debug symbols
+ echo $ac_n "checking whether to compile with debug symbols""... $ac_c" 1>&6
+ echo "configure:970: checking whether to compile with debug symbols" >&5
