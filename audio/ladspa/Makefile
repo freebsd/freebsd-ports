@@ -1,15 +1,16 @@
 # New ports collection Makefile for: 	ladspa
 # Date created:			11 May 2002
-# Whom:				Tilman Linneweh <freebsdports@arved.de
+# Whom:				Tilman Linneweh <arved@FreeBSD.org>
 #
 # $FreeBSD$
 
 PORTNAME=	ladspa
 PORTVERSION=	1.1
 CATEGORIES=	audio
-MASTER_SITES=	http://www.arved.de/bsd/src/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR= arved
 
-MAINTAINER=	freebsdports@arved.de
+MAINTAINER=	arved@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

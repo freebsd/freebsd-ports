@@ -1,15 +1,16 @@
 # New ports collection Makefile for:   cmt
 # Date created:                        11 May 2002
-# Whom:                                Tilman Linneweh <freebsdports@arved.de
+# Whom:                                Tilman Linneweh <arved@FreeBSD.org>
 #
 # $FreeBSD$
 
 PORTNAME=	cmt
 PORTVERSION=	1.14
 CATEGORIES=	audio
-MASTER_SITES=	http://www.arved.de/bsd/src/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	arved
 
-MAINTAINER=	freebsdports@arved.de
+MAINTAINER=	arved@FreeBSD.org
 
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 
