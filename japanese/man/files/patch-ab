@@ -1,0 +1,36 @@
+diff -ur apropos/Makefile apropos/Makefile
+--- apropos/Makefile	Sun Dec  7 03:59:21 1997
++++ apropos/Makefile	Mon Jul 29 22:21:06 2002
+@@ -55,7 +55,7 @@
+ 
+ .if make(maninstall) || make(install)
+ .if !defined(NOMAN)
+-.include <bsd.man.mk>
++.include <bsd.prog.mk>
+ .elif !target(maninstall)
+ maninstall:
+ .endif
+diff -ur catman/Makefile catman/Makefile
+--- catman/Makefile	Sun Dec  7 06:11:06 1997
++++ catman/Makefile	Mon Jul 29 22:21:19 2002
+@@ -52,7 +52,7 @@
+ 
+ .if make(maninstall) || make(install)
+ .if !defined(NOMAN)
+-.include <bsd.man.mk>
++.include <bsd.prog.mk>
+ .elif !target(maninstall)
+ maninstall:
+ .endif
+diff -ur makewhatis/Makefile makewhatis/Makefile
+--- makewhatis/Makefile	Fri Sep  3 07:58:03 1999
++++ makewhatis/Makefile	Mon Jul 29 22:21:36 2002
+@@ -92,7 +92,7 @@
+ 
+ .if make(maninstall) || make(install)
+ .if !defined(NOMAN)
+-.include <bsd.man.mk>
++.include <bsd.prog.mk>
+ .elif !target(maninstall)
+ maninstall:
+ .endif
