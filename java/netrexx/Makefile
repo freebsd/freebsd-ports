@@ -21,7 +21,8 @@ NO_BUILD=	yes
 USE_ZIP=	yes
 
 pre-patch:
-	@${PERL} -pi -e 's///' ${WRKSRC}/bin/NetRexxC.sh
+	@${PERL} -pi -e 's/\015//' ${WRKSRC}/bin/NetRexxC.sh
+	@${PERL} -pi -e 's/\015//' ${WRKSRC}/read.me.first
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/NetRexxC.sh ${PREFIX}/bin
