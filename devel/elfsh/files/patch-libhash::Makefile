@@ -1,0 +1,11 @@
+--- libhash/Makefile	Wed Aug 13 16:31:55 2003
++++ libhash/Makefile.patch	Sat Aug 16 01:52:22 2003
+@@ -7,7 +7,7 @@
+ 
+ SRC	= hash.c
+ OBJ	= hash.o
+-CFLAGS	= -Wall -g3 -Iinclude -I../libelfsh/include/ -I../elfsh/include/ -DELFSH_INTERN
++CFLAGS	+= -Wall -g3 -Iinclude -I../libelfsh/include/ -I../elfsh/include/ -DELFSH_INTERN
+ CC	= gcc
+ AR	= ar rc
+ RANLIB	= ranlib

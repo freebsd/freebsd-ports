@@ -1,0 +1,13 @@
+--- modules/Makefile	Wed Aug 13 16:31:56 2003
++++ modules/Makefile.patch	Sat Aug 16 01:51:05 2003
+@@ -18,8 +18,8 @@
+ OBJ3	= $(SRC3:.c=.o)
+ NAM3	= modremap.so
+ 
+-CFLAGS	= -I../vm/include/ -I../libhash/include/ -I../libelfsh/include/ \
+-	-Wall -g3 -O2 -fPIC -rdynamic -DELFSH_INTERN
++CFLAGS	+= -I../vm/include/ -I../libhash/include/ -I../libelfsh/include/ \
++	-Wall -g3 -fPIC -rdynamic -DELFSH_INTERN
+ CC	= gcc
+ 
+ all	: test remap #flow

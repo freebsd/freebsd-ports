@@ -1,13 +1,20 @@
-For impatient people, this is a short list for libelfsh's already 
-provided features: Mass file view with nice output and cross 
-references, unlink/relink the file, modify sections and program 
-header parameter fields, hijack GOT, CTORS, DTORS, modify the symbol 
-table, inject and remove symbols, inject sections, remove SHT, 
-support binaries without symtab, reconstruct the SHT. Look at 
-libelfsh-ref.txt for current libelfsh reference. elfsh offers an 
-attractive interface to libelfsh.
+The ELF shell 0.5 takes advantage of a hash based, lazy typed 
+object oriented architecture, a readline based interactive mode 
+(35+ builtin commands, with history, completion, regular 
+expression powered), a scripting mode (sample scripts and 
+session logs available on this page) and brings more 
+modification API (relocation tables, .interp, .dynamic, 
+.dynsym, PAX bits, and +), atomic operations with get/set and 
+add/sub/mul/div/mod commands, section injection by top (insert 
+unlimited amount of data in the executable PT_LOAD, even in 
+non-executable environments), a quiet output for tiny screens, 
+ELFsh modules support, sophisticated write/printf primitives, 
+SPARC PLT infection, experimental ET_EXEC relocation and 
+remapping features, ET_REL injection into ET_EXEC (with bss and 
+symtab merging support), disassembly (with good resolving) on 
+i386 binaries with libasm, and much more. 
 
-WWW: http://www.devhell.org/~mayhem/projects/elfsh/
+ WWW: http://elfsh.segfault.net/
 
 - Samy Al Bahra
 samy@kerneled.com
