@@ -1,6 +1,6 @@
---- configure.orig	Sat Nov 27 22:05:06 1999
-+++ configure	Sat Nov 27 22:07:13 1999
-@@ -906,8 +906,8 @@
+--- configure.orig	Fri Jan 14 18:21:58 2000
++++ configure	Fri Jan 14 18:22:59 2000
+@@ -944,8 +944,8 @@
    x_includes="/usr/include"
  fi
  
@@ -11,7 +11,7 @@
  
  # Check whether --with-gtk-prefix or --without-gtk-prefix was given.
  if test "${with_gtk_prefix+set}" = set; then
-@@ -937,18 +937,18 @@
+@@ -975,18 +975,18 @@
    if test x$gtk_config_exec_prefix != x ; then
       gtk_config_args="$gtk_config_args --exec-prefix=$gtk_config_exec_prefix"
       if test x${GTK_CONFIG+set} != xset ; then
@@ -32,9 +32,9 @@
 +  # Extract the first word of "${GTK_CONFIG}", so it can be a program name with args.
 +set dummy ${GTK_CONFIG}; ac_word=$2
  echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
- echo "configure:954: checking for $ac_word" >&5
+ echo "configure:992: checking for $ac_word" >&5
  if eval "test \"`echo '$''{'ac_cv_path_GTK_CONFIG'+set}'`\" = set"; then
-@@ -1084,10 +1084,10 @@
+@@ -1122,10 +1122,10 @@
    else
       echo "$ac_t""no" 1>&6
  #     if test "$GTK_CONFIG" = "no" ; then
@@ -47,7 +47,7 @@
  #     else
  #       if test -f conf.gtktest ; then
  #        :
-@@ -1116,7 +1116,7 @@
+@@ -1154,7 +1154,7 @@
  #        [ echo "*** The test program failed to compile or link. See the file config.log for the"
  #          echo "*** exact error that occured. This usually means GTK was incorrectly installed"
  #          echo "*** or that you have moved GTK since it was installed. In the latter case, you"
@@ -56,12 +56,3 @@
  #          CFLAGS="$ac_save_CFLAGS"
  #          LIBS="$ac_save_LIBS"
  #       fi
-@@ -1135,7 +1135,7 @@
- fi
- 
- echo -n "checking where to put bluefish library files... "
--install_location=/usr/local/lib/bluefish
-+install_location=/usr/X11R6/lib/bluefish
- # Check whether --with-install-location or --without-install-location was given.
- if test "${with_install_location+set}" = set; then
-   withval="$with_install_location"
