@@ -1,20 +1,20 @@
 # New ports collection makefile for:	mkres.pl
-# Version required:	0.6
+# Version required:	0.7
 # Date created:		29 Jun 1998
 # Whom:			Satoshi TAOKA <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/11/09 14:49:44 kuriyama Exp $
 #
 
-DISTNAME=	mkres.pl-0.6
-PKGNAME=	ja-p5-mkres-0.6
+DISTNAME=	mkres.pl-0.7
+PKGNAME=	ja-p5-mkres-0.7
 CATEGORIES=	japanese perl5
 MASTER_SITES=	http://ftp.infonets.hiroshima-u.ac.jp/~taoka/FreeBSD/tt/
 EXTRACT_SUFX=	''
 
 MAINTAINER=	taoka@infonets.hiroshima-u.ac.jp
 
-RUN_DEPENDS=	mkttfdir.pl:${PORTSDIR}/x11/p5-mkttfdir
+RUN_DEPENDS=	mkttfdir:${PORTSDIR}/print/perlftlib
 
 USE_PERL5=	yes
 NO_WRKSUBDIR=	yes
