@@ -410,8 +410,8 @@ share/wallpapers
 @comment -- Directories handpicked out of kdelibs
 lib/kde3
 share/applnk/Settings/Components
-share/apps/kabc/formats/binary.desktop
-share/apps/kabc/plugins/dir.desktop
+share/apps/kabc/formats
+share/apps/kabc/plugins
 share/icons/crystalsvg
 share/icons/crystalsvg/128x128/actions
 share/icons/crystalsvg/128x128/apps
