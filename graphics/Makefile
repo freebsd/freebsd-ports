@@ -111,7 +111,6 @@
     SUBDIR += juno-2
     SUBDIR += kdc2tiff
     SUBDIR += kdegraphics2
-    SUBDIR += killustrator
     SUBDIR += kisomandel
     SUBDIR += kplot3d
     SUBDIR += kuickshow
