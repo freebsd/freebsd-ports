@@ -116,6 +116,7 @@
     SUBDIR += flightgear
     SUBDIR += flying
     SUBDIR += foobillard
+    SUBDIR += fotaq
     SUBDIR += frabs
     SUBDIR += freebsd-games
     SUBDIR += freecell-solver

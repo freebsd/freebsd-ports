@@ -1,0 +1,4 @@
+%%DATADIR%%/queen.1c
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%
