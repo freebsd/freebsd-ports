@@ -31,6 +31,11 @@ MAKE_ENV=	PTHREAD_LDFLAGS="${PTHREAD_LDFLAGS}" \
 PTHREAD_LDFLAGS+=	-llstdc++ -llsupc++
 .endif
 
+.if !exists(/usr/include/getopt.h)
+LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
+PTHREAD_LDFLAGS+=	-lgnugetopt
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sip/b2b/bin.nodebug.FreeBSD.i386/b2bua \
 		${PREFIX}/bin
