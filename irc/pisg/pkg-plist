@@ -38,6 +38,8 @@ etc/pisg/pisg.cfg.sample
 %%SITE_PERL%%/Pisg/Parser/Format/sirc.pm
 %%SITE_PERL%%/Pisg/Parser/Format/hydra.pm
 %%SITE_PERL%%/Pisg/Parser/Format/muh2.pm
+%%SITE_PERL%%/Pisg/Parser/Format/Vision.pm
+%%SITE_PERL%%/Pisg/Parser/Format/supy.pm
 %%SITE_PERL%%/Pisg/Parser/Logfile.pm
 %%DATADIR%%/layout/justgrey.css
 %%DATADIR%%/layout/darkgalaxy.css
