@@ -3,12 +3,12 @@
 # Date created:		20 Jan 1999
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1999/02/12 16:41:50 flathill Exp $
+# $Id: Makefile,v 1.2 1999/02/12 17:16:23 sada Exp $
 #
 
 DISTNAME=	jee-1.0
 PKGNAME=	ja-jee-1.0
-CATEGORIES=	editors japanese
+CATEGORIES=	japanese editors
 MASTER_SITES=	ftp://ftp.mogami-wire.co.jp/pub/beta/ \
 		ftp://ports.jp.freebsd.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/
 DISTFILES=	jee.tar.gz \

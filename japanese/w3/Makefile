@@ -3,11 +3,11 @@
 # Date created:		31 December 1996
 # Whom:			MITA Yoshio <mita@ee.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.6 1998/11/14 02:18:26 kuriyama Exp $
+# $Id: Makefile,v 1.7 1998/12/01 03:06:21 asami Exp $
 #
 
 PKGNAME=	ja-w3-2.2.26
-CATEGORIES=	www japanese elisp
+CATEGORIES=	japanese www elisp
 
 # Don't RUN_DEPENDS on mule because we don't know which version the
 # user would want.  We can't omit the BUILD_DEPENDS because it needs

@@ -3,12 +3,12 @@
 # Date created:		20 April 1997
 # Whom:			nkazushi@highway.or.jp
 #
-# $Id: Makefile,v 1.3 1998/10/16 04:15:59 jseger Exp $
+# $Id: Makefile,v 1.4 1998/12/22 05:43:37 asami Exp $
 #
 
 DISTNAME=	xklock-2.7
 PKGNAME=	ja-xklock-2.7.1
-CATEGORIES=	x11 japanese
+CATEGORIES=	japanese x11
 MASTER_SITES=	ftp://ftp.tk.mesh.ad.jp/pub/Linux/JE-sources/X/  \
 		ftp://ftp.biol.tsukuba.ac.jp/pub/X/clients/  \
 		ftp://ftp.kagoshima-u.ac.jp/pub1/PC/linux-j/JE-sources/X/  \

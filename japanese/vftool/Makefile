@@ -3,12 +3,12 @@
 # Date created:		12 September 1997
 # Whom:			KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>
 #
-# $Id: Makefile,v 1.6 1998/08/24 00:39:46 steve Exp $
+# $Id: Makefile,v 1.7 1999/02/03 11:11:51 asami Exp $
 #
 
 DISTNAME=	vftool-1.2
 PKGNAME=	ja-vftool-1.2
-CATEGORIES=	print japanese
+CATEGORIES=	japanese print
 MASTER_SITES=	ftp://ftp.math.s.chiba-u.ac.jp/tex/ \
 		ftp://bash.cc.keio.ac.jp/pub/TeX/ascii-ptex/ptex215/ \
 		ftp://ftp.iis.u-tokyo.ac.jp/TeX/NTT-JTeX/:old/ \
