@@ -1,6 +1,6 @@
---- Makefile.PL.orig	Tue Jul 20 22:34:47 2004
-+++ Makefile.PL	Tue Jul 20 22:34:58 2004
-@@ -88,7 +88,7 @@
+--- Makefile.PL.orig	Sun Oct 24 22:33:25 2004
++++ Makefile.PL	Sun Nov 28 12:15:52 2004
+@@ -98,7 +98,7 @@
  # because it is accessed by some code we add to MakeMaker.
  #
  our @docs;
@@ -9,7 +9,7 @@
  
  # Executables to be installed.
  my @exes
-@@ -375,10 +375,7 @@
+@@ -385,10 +385,7 @@
       { name => 'tv_check',
         blurb => 'Program to report exceptions and changes in a schedule',
         exes => [ 'choose/tv_check/tv_check' ],
