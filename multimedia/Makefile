@@ -49,6 +49,7 @@
     SUBDIR += kdemultimedia3
     SUBDIR += kino
     SUBDIR += kino-dvtitler
+    SUBDIR += kmenc15
     SUBDIR += kmplayer
     SUBDIR += konverter
     SUBDIR += kplayer
