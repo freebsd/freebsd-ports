@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sysmon
-PORTVERSION=	0.91.20
+PORTVERSION=	0.92
 CATEGORIES=	net-mgmt
 MASTER_SITES=	ftp://puck.nether.net/pub/jared/ \
 		http://titan.oxeo.com/mirror/sysmon.org/
