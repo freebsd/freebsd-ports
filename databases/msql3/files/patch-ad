@@ -1,0 +1,11 @@
+--- src/conf/site.mm.in.orig	Wed Oct 16 22:22:29 1996
++++ src/conf/site.mm.in	Wed Oct 16 22:22:36 1996
+@@ -28,7 +28,7 @@
+ 
+ # CC Only flags  
+ # These flags are not passed to makedepend.  Example use is -pic
+-CC_ONLY= 
++CC_ONLY= -fpic
+ 
+ # Directory for pid file
+ PID_DIR= @PID_DIR@
