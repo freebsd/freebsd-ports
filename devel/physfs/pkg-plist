@@ -1,7 +1,5 @@
 bin/test_physfs
 include/physfs.h
 lib/libphysfs-0.1.so.9
-lib/libphysfs-0.1.so
 lib/libphysfs.so
-lib/libphysfs.la
 lib/libphysfs.a
