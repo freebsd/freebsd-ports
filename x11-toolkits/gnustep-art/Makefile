@@ -6,7 +6,6 @@
 #
 
 CATEGORIES=	x11-toolkits
-PKGNAMESUFFIX=		-art
 
 MAINTAINER=	dinoex@FreeBSD.org
 
