@@ -6,8 +6,6 @@ share/yacas/Makefile.in
 share/yacas/addons/README
 share/yacas/addons/editvi.ys
 share/yacas/addons/editvi.ys.def
-share/yacas/addons/gnuplot.ys
-share/yacas/addons/gnuplot.ys.def
 share/yacas/addons/unix.ys
 share/yacas/addons/unix.ys.def
 share/yacas/array.rep/code.ys
@@ -18,8 +16,10 @@ share/yacas/c_form.rep/code.ys
 share/yacas/c_form.rep/code.ys.def
 share/yacas/complex.rep/code.ys
 share/yacas/complex.rep/code.ys.def
+share/yacas/complex.rep/om.ys
 share/yacas/constants.rep/code.ys
 share/yacas/constants.rep/code.ys.def
+share/yacas/constants.rep/om.ys
 share/yacas/controlflow.rep/code.ys
 share/yacas/controlflow.rep/code.ys.def
 share/yacas/cstubgen.rep/code.ys
@@ -40,6 +40,9 @@ share/yacas/documentation/essayschapter1.html
 share/yacas/documentation/essayschapter2.html
 share/yacas/documentation/essayschapter3.html
 share/yacas/documentation/essayschapter4.html
+share/yacas/documentation/essayschapter5.html
+share/yacas/documentation/essayschapter6.html
+share/yacas/documentation/essayschapter7.html
 share/yacas/documentation/essayschapters.html
 share/yacas/documentation/essaysmanual.html
 share/yacas/documentation/introchapter1.html
@@ -78,6 +81,7 @@ share/yacas/documentation/yacaslogo.gif
 share/yacas/example.rep/code.ys
 share/yacas/example.rep/code.ys.def
 share/yacas/examples/ABIN.ys
+share/yacas/examples/MinimumSpanningTree.ys
 share/yacas/examples/benchbuild.ys
 share/yacas/examples/benchmark.ys
 share/yacas/examples/benchmark2.ys
@@ -101,6 +105,7 @@ share/yacas/html.rep/code.ys
 share/yacas/html.rep/code.ys.def
 share/yacas/include/anumber.h
 share/yacas/include/anumber.inl
+share/yacas/include/archiver.h
 share/yacas/include/arggetter.h
 share/yacas/include/arrayclass.h
 share/yacas/include/arrayclass.inl
@@ -110,6 +115,7 @@ share/yacas/include/ctokenizer.h
 share/yacas/include/debugmem.h
 share/yacas/include/deffile.h
 share/yacas/include/deffile.inl
+share/yacas/include/elfdll.h
 share/yacas/include/errors.h
 share/yacas/include/evalfunc.h
 share/yacas/include/genericobject.h
@@ -161,6 +167,7 @@ share/yacas/include/substitute.h
 share/yacas/include/tokenizer.h
 share/yacas/include/unipoly.h
 share/yacas/include/unixcommandline.h
+share/yacas/include/win32dll.h
 share/yacas/include/xmltokenizer.h
 share/yacas/include/yacas.h
 share/yacas/include/yacasbase.h
@@ -177,9 +184,14 @@ share/yacas/localrules.rep/code.ys
 share/yacas/localrules.rep/code.ys.def
 share/yacas/logic.rep/code.ys
 share/yacas/logic.rep/code.ys.def
+share/yacas/logic.rep/om.ys
 share/yacas/maketest
 share/yacas/multivar.rep/code.ys
 share/yacas/multivar.rep/code.ys.def
+share/yacas/multivar.rep/makemulti.ys
+share/yacas/multivar.rep/sparsenomial.ys
+share/yacas/multivar.rep/sparsetree.ys
+share/yacas/multivar.rep/sparsetree.ys.def
 share/yacas/newly.rep/code.ys
 share/yacas/newly.rep/code.ys.def
 share/yacas/numbers.rep/code.ys
@@ -194,6 +206,9 @@ share/yacas/padic.rep/code.ys
 share/yacas/padic.rep/code.ys.def
 share/yacas/patterns.rep/code.ys
 share/yacas/patterns.rep/code.ys.def
+share/yacas/plots.rep/backends-2d.ys
+share/yacas/plots.rep/code.ys
+share/yacas/plots.rep/code.ys.def
 share/yacas/predicates.rep/code.ys
 share/yacas/predicates.rep/code.ys.def
 share/yacas/print.ys
@@ -209,16 +224,29 @@ share/yacas/simplify.rep/code.ys
 share/yacas/simplify.rep/code.ys.def
 share/yacas/solve.rep/code.ys
 share/yacas/solve.rep/code.ys.def
+share/yacas/specfunc.rep/bernou.ys
+share/yacas/specfunc.rep/bernou.ys.def
+share/yacas/specfunc.rep/bessel.ys
+share/yacas/specfunc.rep/bessel.ys.def
 share/yacas/specfunc.rep/code.ys
 share/yacas/specfunc.rep/code.ys.def
+share/yacas/specfunc.rep/gamma.ys
+share/yacas/specfunc.rep/gamma.ys.def
+share/yacas/specfunc.rep/zeta.ys
+share/yacas/specfunc.rep/zeta.ys.def
 share/yacas/standard.ys
+share/yacas/standard.ys.def
 share/yacas/stats.rep/code.ys
 share/yacas/stats.rep/code.ys.def
 share/yacas/stdfuncs.rep/code.ys
 share/yacas/stdfuncs.rep/code.ys.def
+share/yacas/stdfuncs.rep/numerical.ys
+share/yacas/stdfuncs.rep/numerical.ys.def
+share/yacas/stdfuncs.rep/om.ys
 share/yacas/stdopers.ys
 share/yacas/stubs.rep/code.ys
 share/yacas/stubs.rep/code.ys.def
+share/yacas/stubs.rep/om.ys
 share/yacas/substitute.rep/code.ys
 share/yacas/substitute.rep/code.ys.def
 share/yacas/sums.rep/code.ys
@@ -269,6 +297,7 @@ share/yacas/yacasinit.ys
 @dirrm share/yacas/orthopoly.rep
 @dirrm share/yacas/padic.rep
 @dirrm share/yacas/patterns.rep
+@dirrm share/yacas/plots.rep
 @dirrm share/yacas/predicates.rep
 @dirrm share/yacas/pslq.rep
 @dirrm share/yacas/rabinmiller.rep
