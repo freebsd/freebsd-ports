@@ -1,7 +1,11 @@
-Evolution is the integrated mail, calendar and address book
-distributed suite from Helix Code, Inc.
+Ximian Evolution[tm] is the premier personal and workgroup information
+management solution for UNIX. The software seamlessly integrates email,
+calendaring, meeting scheduling, contact management and online task lists in
+one powerful, fast, and easy to use application. Ximian Evolution also
+delivers a comprehensive set of features that help you keep your work
+organized and your projects on track. Automatic email indexing keeps your
+information at your fingertips. The unique Ximian vFolders[tm] are virtual
+folders you use to create and save powerful contextual views of your email
+messages. 
 
-Note that Evolution is still beta. This means it may delete all of
-your mail if you give it the chance.
-
-WWW: http://www.gnome.org/
+WWW: http://www.ximian.com/products/ximian_evolution/
