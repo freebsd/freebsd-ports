@@ -162,6 +162,7 @@
     SUBDIR += jpeg2ps-letter
     SUBDIR += jpeginfo
     SUBDIR += jpegpixi
+    SUBDIR += jpgraph
     SUBDIR += jpgtn
     SUBDIR += jslice
     SUBDIR += juno-2
