@@ -17,7 +17,7 @@ MAINTAINER=	hym@cocoa.freemail.ne.jp
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/etc/javavms:${PORTSDIR}/java/jre \
-		setiathome:${PORTSDIR}/astro/setiathome
+		${LOCALBASE}/sbin/setiathome:${PORTSDIR}/astro/setiathome
 
 USE_XLIB=	yes
 NO_BUILD=	yes
