@@ -1,0 +1,5 @@
+Xd is yet another dump utility. Xd has additional features different
+from hexdump(1), such as big endian, little endian, and PDP format
+inputs or binary outout.
+
+- KIRIYAMA Kazuhiko <kiri@kiri.toba-cmt.ac.jp>

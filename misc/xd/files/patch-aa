@@ -1,0 +1,19 @@
+*** Makefile~	Tue Aug 27 02:02:31 1996
+--- Makefile	Wed Oct  1 20:23:19 1997
+***************
+*** 1,7 ****
+  #
+  CC=gcc
+! BINDIR=/usr/local/bin
+! MANDIR=/usr/local/man/man
+  PROG=xd
+  
+  .include <bsd.prog.mk>
+--- 1,7 ----
+  #
+  CC=gcc
+! BINDIR=${PREFIX}/bin
+! MANDIR=${PREFIX}/man/man
+  PROG=xd
+  
+  .include <bsd.prog.mk>
