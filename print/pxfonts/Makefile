@@ -31,7 +31,7 @@ EXTRACT_AFTER_ARGS=	-d ${PXPATCHDIR}
 NO_BUILD=	YES
 PLIST_SUB=	TEXMF=${TEXMF} MKTEXLSR=${MKTEXLSR}
 
-BROKEN=		"pxfonts already included in the teTeX distribution"
+IGNORE=		"pxfonts already included in the teTeX distribution"
 
 TEXMF=		share/texmf
 TEXFONTSDIR=	${PREFIX}/${TEXMF}/fonts
