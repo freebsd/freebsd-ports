@@ -15,9 +15,9 @@
 %%FONTSDIR%%/nk20b-1.pcf.gz
 %%FONTSDIR%%/vk20b.pcf.gz
 %%FONTSDIR%%/vk20m.pcf.gz
-share/doc/ja/kappa20/README.euc-jp
+%%PORTDOCS%%share/doc/ja/kappa20/README.euc-jp
+%%PORTDOCS%%@dirrm share/doc/ja/kappa20
 @exec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
 @unexec cd %D/%%FONTSDIR%% ; %D/bin/mkfontdir
 @unexec if [ `wc -c %D/%%FONTSDIR%%/fonts.dir | awk '{print $1}'` = 2 ]; then rm -f %D/%%FONTSDIR%%/fonts.dir; fi
 @unexec if [ ! -s %D/%%FONTSDIR%%/fonts.alias ]; then rm -f %D/%%FONTSDIR%%/fonts.alias; fi
-@dirrm share/doc/kappa20
