@@ -1,8 +1,0 @@
---- Makefile.orig	Sat May 27 18:19:33 2000
-+++ Makefile	Sat May 27 18:20:15 2000
-@@ -13,5 +13,3 @@
- 
- install:
- 	$(INSTALL) -c mp3rename $(PREFIX)/bin/mp3rename
--	$(INSTALL) -c mp3rename.1.gz $(PREFIX)/man/man1/
--    
