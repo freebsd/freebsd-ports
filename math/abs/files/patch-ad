@@ -1,6 +1,6 @@
---- X11/button.h.orig	Thu Nov 16 06:10:42 2000
-+++ X11/button.h	Fri Nov 17 03:19:31 2000
-@@ -28,7 +28,7 @@
+--- X11/button.h.orig	Sun Nov 11 20:24:37 2001
++++ X11/button.h	Sun Feb  9 15:05:21 2003
+@@ -52,7 +52,7 @@
  #define WIDGET_BUTTON_H
  
  #include "param.h"
