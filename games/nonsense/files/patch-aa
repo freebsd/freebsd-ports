@@ -1,5 +1,5 @@
---- nonsense	2000/12/15 13:26:57	1.1.1.3
-+++ nonsense	2000/12/15 13:54:30	1.6
+--- nonsense	2000/12/22 17:29:22	1.1.1.4
++++ nonsense	2000/12/22 17:31:00	1.7
 @@ -40,6 +40,10 @@
  use POSIX qw( strftime );   # Just in case somebody needs the date
  use CGI;
@@ -11,7 +11,7 @@
  my %pool;                   # Where the datafiles are slurped into
  my %static;                 # Hash of persistent data (to maintain state)
  
-@@ -328,7 +332,8 @@
+@@ -332,7 +336,8 @@
  sub LoadDataFile { 
     my $file = shift;
     $file = SafeFile( $file ) if $cgi_mode;
@@ -21,7 +21,7 @@
     local $/ = '';
     
     SECTION: while( <IN> ) { 
-@@ -344,7 +349,8 @@
+@@ -348,7 +353,8 @@
     my $file = shift;
     my $m = '';
     $file = SafeFile( $file ) if $cgi_mode;   
@@ -31,13 +31,7 @@
     local $/; undef $/; my $t = <IN>; 
     close IN;
     if( $t =~ /__BEGIN__/ ) {     # Check for a header
-@@ -356,15 +362,29 @@
- ### Remove special characters from a filename to prevent maliciousness
- sub SafeFile {
-    my( $file ) = shift;
--   $file =~ s/([|<>])//g;
-+   $file =~ s/([|<>\0]|\.\.\/)//g;
-    warn("[" . localtime() . "] [warning] [client $ENV{REMOTE_ADDR}] Attempt to override filename safety feature!") if $1;
+@@ -365,10 +371,24 @@
     return $file;
  }
  
