@@ -8384,7 +8384,6 @@ pfstat		ports/sysutils/pfstat
 pft		ports/security/pft
 pftop		ports/sysutils/pftop
 pftpd		ports/ftp/pftpd
-pg		ports/misc/pg
 pgaccess	ports/databases/pgaccess
 pgadmin3	ports/databases/pgadmin3
 pgbash		ports/databases/pgbash
