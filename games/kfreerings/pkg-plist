@@ -1,12 +1,9 @@
 bin/kfreerings
 share/applnk/Utilities/kfreerings.desktop
-share/apps/kfreerings/kfreeringsui.rc
-share/apps/kfreerings/pics/riven.jpg
 share/apps/kfreerings/pics/test.jpg
 share/apps/kfreerings/pics/root_reminder.png
 share/apps/kfreerings/pics/tux-borg.png
 share/apps/kfreerings/pics/tuxperience.jpg
-share/apps/kfreerings/required_pics/background_mask_master.png
 share/apps/kfreerings/required_pics/kfbutton_left.png
 share/apps/kfreerings/required_pics/kfbutton_left_active.png
 share/apps/kfreerings/required_pics/kfbutton_left_mask.png
