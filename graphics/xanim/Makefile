@@ -3,7 +3,7 @@
 # Date created:         Sat Nov 5 11:43:03 PST 1994
 # Whom:                 piero
 #
-# $Id: Makefile,v 1.12 1997/06/09 22:27:11 max Exp $
+# $Id: Makefile,v 1.13 1998/04/28 11:50:15 tg Exp $
 #
 
 DISTNAME=       xanim27070
@@ -16,8 +16,6 @@ DISTFILES=	${EXTRACT_ONLY} ${EXTRA_FILES}
 MAINTAINER=	ports@FreeBSD.ORG
 
 EXTRACT_ONLY=   ${DISTNAME}.tar.gz
-EXTRA_FILES=    xa2.0_cvid_netbsd386.o.Z xa2.0_iv32_netbsd386.o.Z \
-		xa1.0_cyuv_netbsd386.o.Z
 USE_IMAKE=	yes
 MAN1=		xanim.1
 MANCOMPRESSED=	yes
@@ -30,3 +28,14 @@ post-extract:
 	${CP} ${WRKSRC}/docs/xanim.man ${WRKSRC}
 
 .include <bsd.port.mk>
+
+.if ${PORTOBJFORMAT} != elf
+EXTRA_FILES=    xa2.0_cvid_netbsd386.o.Z xa2.0_iv32_netbsd386.o.Z \
+		xa1.0_cyuv_netbsd386.o.Z
+MAKE_ENV+=	XA_IV32_DEF=-DXA_INDEO \
+		XA_CVID_DEF=-DXA_CINEPAK \
+		XA_CYUV_DEF=-DXA_CYUV \
+		XA_IV32_LIB=xa2.0_cvid_netbsd386.o \
+		XA_CVID_LIB=xa2.0_iv32_netbsd386.o \
+		XA_CYUV_LIB=xa1.0_cyuv_netbsd386.o
+.endif

@@ -1,23 +1,15 @@
---- Imakefile.old	Tue Apr 28 02:39:31 1998
-+++ Imakefile	Tue Apr 28 02:45:12 1998
-@@ -91,13 +91,13 @@
- XCOMM --    Indeo 3.x  IV32	indeo.readme
- XCOMM --    Creative   CYUV	creative.readme
- XCOMM 
--XCOMM XA_IV32_DEF = -DXA_INDEO 
--XCOMM XA_CVID_DEF = -DXA_CINEPAK
--XCOMM XA_CYUV_DEF = -DXA_CYUV
--XCOMM
+--- Imakefile.orig	Tue Mar 24 01:55:08 1998
++++ Imakefile	Mon Sep 14 22:22:19 1998
+@@ -95,9 +95,9 @@
+ XCOMM XA_CVID_DEF = -DXA_CINEPAK
+ XCOMM XA_CYUV_DEF = -DXA_CYUV
+ XCOMM
 -XA_IV32_LIB = 
 -XA_CVID_LIB = 
 -XA_CYUV_LIB = 
-+XA_IV32_DEF = -DXA_INDEO 
-+XA_CVID_DEF = -DXA_CINEPAK
-+XA_CYUV_DEF = -DXA_CYUV
-+XCOMM
-+XA_IV32_LIB = xa2.0_cvid_netbsd386.o
-+XA_CVID_LIB = xa2.0_iv32_netbsd386.o
-+XA_CYUV_LIB = xa1.0_cyuv_netbsd386.o
++XCOMM XA_IV32_LIB = xa2.0_cvid_netbsd386.o
++XCOMM XA_CVID_LIB = xa2.0_iv32_netbsd386.o
++XCOMM XA_CYUV_LIB = xa1.0_cyuv_netbsd386.o
  XCOMM
  XCOMM NOTE: SGI Machines Only:
  XCOMM    if your linker core dumps then you'll need to uncomment the following
