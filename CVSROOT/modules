@@ -233,7 +233,6 @@ adonthell	ports/games/adonthell
 adpcm		ports/audio/adpcm
 adtool		ports/sysutils/adtool
 adzap		ports/www/adzap
-adzapper	ports/www/adzapper
 ae_fonts_mono	ports/x11-fonts/ae_fonts_mono
 ae_fonts_ttf	ports/x11-fonts/ae_fonts_ttf
 aee		ports/editors/aee
