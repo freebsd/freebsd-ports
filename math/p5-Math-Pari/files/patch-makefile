@@ -1,18 +1,13 @@
---- Makefile.PL.orig	Tue Sep 11 02:52:45 2001
-+++ Makefile.PL	Tue Sep 11 02:53:18 2001
-@@ -4,7 +4,7 @@
- use File::Copy 'copy';
+--- libPARI/Makefile.PL.orig	Thu Apr 24 05:23:32 2003
++++ libPARI/Makefile.PL	Thu Aug 21 14:51:06 2003
+@@ -137,11 +137,13 @@
+   $mycflags .= " -DASMINLINE";
+ }
+ $mycflags .= ' -DGCC_INLINE' if $Config{gccversion};
++$mycflags .= " $ENV{CFLAGS} " if $ENV{CFLAGS};
  
- # Uncomment and change this line if I fail to find it
--# $paridir = "..";
-+$paridir = "../../../pari/work/pari-2.1.3";
- 
- unless (-t STDOUT) {		# Better reports if run with redirections
-     my $odef = select STDERR;
---- libPARI/Makefile.PL.orig	Thu Mar 14 15:04:06 2002
-+++ libPARI/Makefile.PL	Thu Mar 14 15:03:30 2002
-@@ -381,6 +381,7 @@
- #}
+ @obj_files = map { "$_\$(OBJ_EXT)" } keys(%cfiles), qw(kernel mp mpinl);
+ push @obj_files, 'kernel2$(OBJ_EXT)' if $kernel{converted2};
  
  $mycflags .= " -DDYNAMIC_PLOTTING";
 +$mycflags .= " -DDL_DFLT_NAME=\\\"libpari.2.1.3\\\"";
