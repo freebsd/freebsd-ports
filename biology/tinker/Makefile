@@ -3,32 +3,36 @@
 # Date Created:                26 August 1998
 # Whom:                        Glenn Johnson
 #
-# $Id: Makefile,v 1.1.1.1 1998/11/17 04:53:17 jkoshy Exp $
+# $Id: Makefile,v 1.2 1998/11/18 02:10:54 jkoshy Exp $
 #
 
-DISTNAME=      tinker
-PKGNAME=       tinker-3.6
-CATEGORIES=    biology
-MASTER_SITES=  ftp://dasher.wustl.edu/pub/
+DISTNAME=	tinker
+PKGNAME=	tinker-3.6
+CATEGORIES=	biology
+MASTER_SITES=	ftp://dasher.wustl.edu/pub/
 
-MAINTAINER=    gjohnson@nola.srrc.usda.gov
+MAINTAINER=	gjohnson@nola.srrc.usda.gov
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 400005
 LIB_DEPENDS=	U77:${PORTSDIR}/devel/libU77
 
 # If you have EGCS installed and wish to use it, do the following:
 # a) comment out the LIB_DEPENDS line above and uncomment the following line
 #BUILD_DEPENDS=	g77:${PORTSDIR}/lang/egcs
 # b) set env variable 'FC' to 'g77' before running `make'
+.else
+MAKE_ENV+=	HAVE_G2C=yes
+.endif
 
-.include <bsd.port.pre.mk>
+WRKSRC=		${WRKDIR}/tinker/source
 
-WRKSRC=                ${WRKDIR}/tinker/source
+MAKEFILE=	${WRKDIR}/tinker/make/Makefile
+ALL_TARGET=	all listing
+INSTALL_TARGET=	rename
 
-MAKEFILE=      ${WRKDIR}/tinker/make/Makefile
-ALL_TARGET=    all listing
-INSTALL_TARGET=        rename
-
-RESTRICTED=    author requests no distribution except from his FTP site
+RESTRICTED=	author requests no distribution except from his FTP site
 
 post-install:
 	${MKDIR} ${PREFIX}/share/tinker/params
