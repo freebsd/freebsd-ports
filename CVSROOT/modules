@@ -5100,6 +5100,7 @@ linc		ports/net/linc
 lincity		ports/games/lincity
 lincvs		ports/devel/lincvs
 lindele		ports/audio/lindele
+lineak_defaultplugin	ports/sysutils/lineak_defaultplugin
 lineakd		ports/sysutils/lineakd
 lingoteach	ports/misc/lingoteach
 link-monitor-applet	ports/net/link-monitor-applet
