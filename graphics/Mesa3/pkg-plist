@@ -18,6 +18,4 @@ lib/libMesaGL.so
 lib/libMesaGLU.so
 lib/libglut.so
 lib/libglut.so.%%GLUTVER%%
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm include/GL
