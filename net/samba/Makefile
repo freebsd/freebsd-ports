@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	--with-syslog
 .endif
 
 .if defined(WITH_SSL)
-CONFIGURE_ARGS+=	--with-ssl --with-ssl-inc=/usr/include/openssl --with-ssl-lib=/usr/lib
+CONFIGURE_ARGS+=	--with-ssl --with-sslinc=/usr/include/openssl --with-ssllib=/usr/lib
 .endif
 
 .if defined(WITH_LDAP)
