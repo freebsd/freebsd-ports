@@ -1,11 +1,15 @@
-*** tvcapture.c.orig	Wed Sep  8 16:28:54 1999
---- tvcapture.c	Wed Sep  8 16:29:38 1999
+*** tvcapture.c.orig	Tue Sep  7 03:11:47 1999
+--- tvcapture.c	Wed Sep  8 17:46:13 1999
 *************** char *TVCAPTUREGetTunerFreqSetName( TV_C
-*** 686,693 ****
---- 686,695 ----
+*** 684,693 ****
+--- 684,697 ----
+                      return "jpnbcst";
+                  case CHNLSET_JPNCABLE:
                       return "jpncable";
++ #ifdef CHNLSET_XUSSR
                   case CHNLSET_XUSSR:
                       return "xussr";
++ #endif
 + #ifdef CHNLSET_AUSTRALIA
                   case CHNLSET_AUSTRALIA:
                       return "australia";
