@@ -1,0 +1,3 @@
+@comment $FreeBSD$
+bin/wy60
+share/examples/wy60/wy60.rc

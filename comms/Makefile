@@ -44,6 +44,7 @@
     SUBDIR += viewfax
     SUBDIR += vpb2
     SUBDIR += vrflash
+    SUBDIR += wy60
     SUBDIR += xcept
     SUBDIR += yaps
     SUBDIR += yawmppp

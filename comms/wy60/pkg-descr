@@ -1,0 +1,11 @@
+Wy60 can be invoked from within any one of many commonly used
+terminal emulators as long as there is a working terminfo entry for
+it.  It sets up a emulation environment converting between Wyse 60
+escape sequences and the escape codes of the host system, and
+launches a shell to run within this emulated environment.
+
+The current set of supported escape sequences is limited, but should
+suffice to run many existing legacy applications without requiring
+any changes.
+
+WWW: http://gutschke.com/wy60/
