@@ -1,5 +1,5 @@
---- biewlib/sysdep/generic/unix/keyboard.c.orig	Thu Mar  1 09:19:32 2001
-+++ biewlib/sysdep/generic/unix/keyboard.c	Fri Nov  9 00:00:37 2001
+--- biewlib/sysdep/generic/unix/keyboard.c.orig	Mon Apr 29 15:26:59 2002
++++ biewlib/sysdep/generic/unix/keyboard.c	Mon Apr 29 15:28:12 2002
 @@ -41,7 +41,11 @@
  #endif
  
@@ -9,6 +9,6 @@
 +#else
  #include <curses.h>
 +#endif
- #ifdef	NCURSES_MOUSE_VERSION
+ #if defined(NCURSES_MOUSE_VERSION) && !defined(HAVE_MOUSE)
  #define	HAVE_MOUSE
  #endif
