@@ -219,7 +219,7 @@ pre-fetch:
 	@${ECHO} "if you call make with WITH_DEBUG=1"
 	@${ECHO}
 	@${ECHO} "If you set WITH_DEBUG=2, you add internal"
-	@${ECHO} "OO.org debug support.
+	@${ECHO} "OO.org debug support."
 	@${ECHO}
 .endif
 .if !defined(WITH_TTF_BYTECODE_ENABLED)
