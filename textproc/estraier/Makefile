@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	estraier
-PORTVERSION=	1.2.23
+PORTVERSION=	1.2.24
 CATEGORIES=	japanese textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,7 +22,8 @@ GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
 
 CONFIGURE_ARGS=	--with-sysqdbm \
-		--enable-dlfilter
+		--enable-dlfilter \
+		--enable-devel
 
 OPTIONS=	CHASEN "Japanese Morphological Analysis Support" On \
 		MECAB "Part-of-Speech and Morphological Analyzer" On \
