@@ -21,6 +21,8 @@ LIB_DEPENDS=	Magick.6:${PORTSDIR}/graphics/ImageMagick \
 		netcdf.1:${PORTSDIR}/math/netcdf \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
+BROKEN=		"Inconsistent dependencies (netcdf and hdf)"
+
 USE_REINPLACE=	yes
 USE_BISON=	yes
 USE_MESA=	yes
