@@ -1,0 +1,74 @@
+bin/builder
+bin/ferite
+bin/ferite-config
+include/ferite.h
+include/ferite/farray.h
+include/ferite/fcompile.h
+include/ferite/fdebug.h
+include/ferite/ferror.h
+include/ferite/ffunction.h
+include/ferite/fgc.h
+include/ferite/fglobals.h
+include/ferite/fhash.h
+include/ferite/fmem.h
+include/ferite/fmem_jedi.h
+include/ferite/fmodule.h
+include/ferite/fns.h
+include/ferite/foop.h
+include/ferite/fopcode.h
+include/ferite/fops.h
+include/ferite/fparser.h
+include/ferite/fregex.h
+include/ferite/freq.h
+include/ferite/fstack.h
+include/ferite/fstructs.h
+include/ferite/futils.h
+include/ferite/fvariables.h
+lib/ferite/modules/array.so
+lib/ferite/modules/console.so
+lib/ferite/modules/file.so
+lib/ferite/modules/math.so
+lib/ferite/modules/network.so
+lib/ferite/modules/sql.so
+lib/ferite/modules/string.so
+lib/ferite/modules/system.so
+lib/ferite/modules/time.so
+lib/ferite/modules/xml.so
+lib/ferite/scripts/cgi/cgi.fe
+lib/ferite/scripts/test/error.fe
+lib/ferite/scripts/test/helloworld.fe
+lib/ferite/scripts/test/loop.fe
+lib/ferite/scripts/test/mem.fe
+lib/ferite/scripts/test/namespace.fe
+lib/ferite/scripts/test/native_inheiritance.fe
+lib/ferite/scripts/test/recurse.fe
+lib/ferite/scripts/test/regex.fe
+lib/ferite/scripts/test/string.fe
+lib/ferite/scripts/test/super.fe
+lib/ferite/scripts/test/test.fe
+lib/ferite/scripts/test/test2.fe
+lib/ferite/scripts/test/testfncparams.fe
+lib/ferite/scripts/test/uarray.fe
+lib/libferite.a
+lib/libferite.so
+lib/libferite.so.0
+%%PORTDOCS%%share/doc/ferite/AUTHORS
+%%PORTDOCS%%share/doc/ferite/COPYING
+%%PORTDOCS%%share/doc/ferite/ChangeLog
+%%PORTDOCS%%share/doc/ferite/README
+%%PORTDOCS%%share/doc/ferite/ROADMAP
+%%PORTDOCS%%share/doc/ferite/TODO
+%%PORTDOCS%%share/doc/ferite/manual.pdf
+%%PORTDOCS%%share/doc/ferite/images/ferite_logo.xcf
+%%PORTDOCS%%share/doc/ferite/images/ferite_logo_black.png
+%%PORTDOCS%%share/doc/ferite/images/ferite_logo_black_600x300.png
+%%PORTDOCS%%share/doc/ferite/images/ferite_logo_colour.png
+%%PORTDOCS%%share/doc/ferite/images/ferite_logo_colour_blue.png
+@dirrm include/ferite
+@dirrm lib/ferite/modules
+@dirrm lib/ferite/scripts/cgi
+@dirrm lib/ferite/scripts/test
+@dirrm lib/ferite/scripts
+@dirrm lib/ferite
+%%PORTDOCS%%@dirrm share/doc/ferite/images
+%%PORTDOCS%%@dirrm share/doc/ferite

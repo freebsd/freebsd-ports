@@ -1,0 +1,20 @@
+--- src/Makefile.in.orig	Mon Oct  8 14:18:25 2001
++++ src/Makefile.in	Mon Oct  8 17:43:52 2001
+@@ -110,7 +110,7 @@
+ 
+ LDFLAGS = -L/usr/local/lib
+ 
+-INCLUDES = -I${top_srcdir}/include -I${prefix}/include -I$(includedir)    			       -I${top_srcdir}/include/ferite/ -I$(top_srcdir)/libs/ltdl @pcre_cflags@
++INCLUDES = -I${top_srcdir}/include -I${prefix}/include -I$(includedir)    			       -I${top_srcdir}/include/ferite/ @pcre_cflags@
+ 
+ 
+ DEFS = -DMODULE_DIR=\"$(libdir)/ferite/modules\" -DSCRIPT_DIR=\"$(libdir)/ferite/scripts\" @debugdefs@
+@@ -122,7 +122,7 @@
+ libferite_la_SOURCES =    ferite_mem_classic.c      ferite_mem_jedi.c     ferite_variables.c     ferite_namespace.c      ferite_function.c       ferite_compile.c       ferite_execute.c       ferite_scanner.c       ferite_globals.c        ferite_parser.c        ferite_opcode.c        ferite_module.c         ferite_error.c         ferite_utils.c         ferite_stack.c 	ferite_regex.c         ferite_class.c          ferite_file.c 	 ferite_hash.c 	 ferite_uarray.c           ferite_ops.c            ferite_gc. c               ferite.c
+ 
+ 
+-libferite_la_LIBADD = $(top_builddir)/libs/ltdl/libltdlc.la -lm @pcre_libs@ $(LDFLAGS)
++libferite_la_LIBADD = -lltdl -lm @pcre_libs@ $(LDFLAGS)
+ libferite_la_DEPENDENCIES = $(top_builddir)/config.h
+ libferite_la_LDFLAGS = -version-info 0:99:0 -export-dynamic
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
