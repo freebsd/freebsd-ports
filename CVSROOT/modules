@@ -3690,6 +3690,7 @@ manedit		ports/editors/manedit
 mangband	ports/games/mangband
 mango		ports/misc/mango
 manpath		src/gnu/usr.bin/man/manpath
+manued.el	ports/textproc/manued.el
 mapedit		ports/www/mapedit
 maplay		ports/audio/maplay
 maradns		ports/net/maradns
