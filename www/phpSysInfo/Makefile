@@ -20,8 +20,17 @@ WEBGRP?=	www
 APACHEDIR=	${PREFIX}/www/data
 INSTALLDIR=	${APACHEDIR}/phpSysInfo
 NO_BUILD=	yes
+PLIST=		${WRKDIR}/plist
 
 PLIST_SUB+=	INSTALLDIR=${INSTALLDIR:S,^${PREFIX}/,,}
+
+post-patch:
+	rm -f ${PLIST}
+	cd ${WRKSRC};\
+	${FIND} . ! -type d | sort | ${SED} "s|^.|%%INSTALLDIR%%|"\
+		>${PLIST};\
+	${FIND} . -type d | sort -r | ${SED} "s|^.|@dirrm %%INSTALLDIR%%|"\
+		>>${PLIST}
 
 do-install:
 	${MKDIR} ${INSTALLDIR}
