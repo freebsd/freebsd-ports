@@ -1,0 +1,5 @@
+Lsmlib (ls iMproved) is a library written in ANSI C that creates a libxml2
+tree with information token on a *NIX filesystem (directory/ subdirectory/
+username/ permissions ...).
+
+WWW: http://lsmlib.sourceforge.net/
