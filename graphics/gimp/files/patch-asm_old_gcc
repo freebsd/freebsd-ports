@@ -1,0 +1,1139 @@
+--- app/composite/gimp-composite-mmx.c	Fri Jul 25 07:24:32 2003
++++ app/composite/gimp-composite-mmx.c	Sat Jul 26 03:29:59 2003
+@@ -165,7 +165,7 @@
+   asm volatile ("movq    %0,%%mm0"    
+ 																: /* empty */
+ 																: "m" (rgba8_alpha_mask)
+-																: "%mm0");
++																/* : "%mm0" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm ("  movq    (%0), %%mm2; addl $8, %0\n"
+@@ -180,7 +180,7 @@
+ 									"\tmovq    %%mm1, (%2); addl $8, %2\n"
+ 									: "+r" (op.A), "+r" (op.B), "+r" (op.D)
+ 									: /* empty */
+-									: "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
++									/* : "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -196,7 +196,7 @@
+         "\tmovd    %%mm1, (%2);\n"
+         : /* empty */
+         : "r" (op.A), "r" (op.B), "r" (op.D)
+-        : "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
++        : "0", "1", "2" /* , "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7"i */ );
+   }
+ 
+   asm("emms");
+@@ -209,7 +209,7 @@
+   asm volatile ("movq   %0,%%mm1"
+       : /* empty */
+       : "m" (rgba8_alpha_mask)
+-      : "%mm1");
++      /* : "%mm1" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm ("  movq      (%0),%%mm0; addl $8,%0\n"
+@@ -258,7 +258,7 @@
+ 									"\tmovq      %%mm7,(%2); addl $8,%2\n"
+ 									: "+r" (op.A), "+r" (op.B), "+r" (op.D)
+ 									: "m" (rgba8_b255), "m" (rgba8_w1), "m" (rgba8_w255), "m" (rgba8_alpha_mask)
+-									: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++									: "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -308,7 +308,7 @@
+                   "\tmovd      %%mm7,(%2)\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D), "m" (rgba8_b255), "m" (rgba8_w1), "m" (rgba8_w255), "m" (rgba8_alpha_mask)
+-                  : "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
++                  : "0", "1", "2" /* , "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7" */ );
+   }
+ 
+   asm("emms");
+@@ -319,7 +319,7 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
++  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm volatile ("  movq    (%0), %%mm2; addl  $8, %0\n"
+@@ -329,7 +329,7 @@
+                   "\tmovq    %%mm1, (%2); addl  $8, %2\n"
+                   : "+r" (op.A), "+S" (op.B), "+D" (op.D)
+                   : /* empty */
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -339,7 +339,7 @@
+                   "\tmovd    %%mm1, (%2);\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   asm("emms");
+@@ -358,7 +358,7 @@
+ 									"\tmovq    %%mm2, (%2); addl  $8, %2\n"
+ 									: "+r" (op.A), "+S" (op.B), "+D" (op.D)
+ 									: /* empty */
+-									: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++									: "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -368,7 +368,7 @@
+                   "\tmovd    %%mm2, (%2);\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm2", "%mm3", "%mm4" */ );
+   }
+         
+   asm("emms");
+@@ -379,7 +379,7 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
++  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm ("  movq    (%0), %%mm2; addl $8, %0\n"
+@@ -397,7 +397,7 @@
+ 									"\tmovq    %%mm1, (%2); addl $8, %2\n"
+ 									: "+r" (op.A), "+r" (op.B), "+r" (op.D)
+ 									: /* empty */
+-									: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++									: "0", "1", "2" /*, "%mm1", "%mm2", "%mm3", "%mm4" */);
+   }
+   
+   if (op.n_pixels) {
+@@ -416,7 +416,7 @@
+                   "\tmovd    %%mm1, (%2);\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   asm("emms");
+@@ -428,7 +428,7 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
++  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm volatile ("\tmovq    (%0), %%mm2; addl $8, %0\n"
+@@ -437,7 +437,7 @@
+                   "\tmovq      %%mm1, (%2); addl $8, %2\n"
+                   : "+r" (op.A), "+r" (op.B), "+r" (op.D)
+                   : /* empty */
+-                  : "%eax", "%ecx", "%edx", "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++                  : "%eax", "%ecx", "%edx", "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -447,7 +447,7 @@
+                   "\tmovd      %%mm1, (%2);\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "%eax", "%ecx", "%edx", "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++                  : "%eax", "%ecx", "%edx", "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */ );
+   }
+ 
+   asm("emms");
+@@ -462,7 +462,7 @@
+       "\tmovq    %1, %%mm7\n"
+       :
+       : "m" (rgba8_alpha_mask), "m" (rgba8_w1)
+-      : "%mm0", "%mm7");
++      /* : "%mm0", "%mm7" */ );
+   
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm volatile ("  movq    (%0), %%mm0; addl $8, %0\n"
+@@ -502,7 +502,7 @@
+                   "\tmovq      %%mm3,(%2); addl $8, %2\n"
+                   : "+r" (op.A), "+r" (op.B), "+r" (op.D)
+                   : "m" (rgba8_alpha_mask)
+-                  : "%eax", "%ecx", "%edx", "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++                  : "%eax", "%ecx", "%edx", "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -543,7 +543,7 @@
+                   "\tmovd      %%mm3,(%2); addl $8, %2\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D), "m" (rgba8_alpha_mask)
+-                  : "%eax", "%ecx", "%edx", "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++                  : "%eax", "%ecx", "%edx", "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */ );
+   }
+ 
+   asm("emms");
+@@ -593,7 +593,7 @@
+                   "\tmovq    %%mm7, (%2); addl $8, %2\n"
+                   : "+r" (op.A), "+r" (op.B), "+r" (op.D)
+                   : /* empty */
+-                  : "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
++                  : "0", "1", "2" /* , "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -632,7 +632,7 @@
+                   "\tmovd    %%mm7, (%2);\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */ );
+   }
+ 
+   asm("emms");
+@@ -643,9 +643,9 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm volatile ("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
+-  asm volatile ("pxor    %%mm6,%%mm6"  :  :                        : "%mm6");
+-  asm volatile ("movq    %0,%%mm7"     :  : "m" (rgba8_w128)       : "%mm7");
++  asm volatile ("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
++  asm volatile ("pxor    %%mm6,%%mm6"  :  :                        /* : "%mm6" */ );
++  asm volatile ("movq    %0,%%mm7"     :  : "m" (rgba8_w128)       /* : "%mm7" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm ("  movq    (%0), %%mm2; addl $8, %0\n"
+@@ -680,7 +680,7 @@
+ 									"\tmovq      %%mm1, (%2); addl $8, %2\n"
+ 									: "+r" (op.A), "+r" (op.B), "+r" (op.D)
+ 									: /* empty */
+-									: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++									: "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -716,7 +716,7 @@
+                   "\tmovd      %%mm1, (%2);\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   asm("emms");
+@@ -728,9 +728,9 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm volatile ("movq    %0, %%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
+-  asm volatile ("pxor    %%mm6, %%mm6"  :  :                        : "%mm6");
+-  asm volatile ("movq    %0, %%mm7"     :  : "m" (rgba8_w128)       : "%mm7");
++  asm volatile ("movq    %0, %%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
++  asm volatile ("pxor    %%mm6, %%mm6"  :  :                        /* : "%mm6" */ );
++  asm volatile ("movq    %0, %%mm7"     :  : "m" (rgba8_w128)       /* : "%mm7" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm ("  movq    (%0), %%mm2; addl $8, %0\n"
+@@ -765,7 +765,7 @@
+ 									"\tmovq      %%mm1, (%2); addl $8, %2\n"
+ 									: "+r" (op.A), "+r" (op.B), "+r" (op.D)
+ 									: /* empty */
+-									: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++									: "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -801,7 +801,7 @@
+                   "\tmovd      %%mm1, (%2);\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   asm("emms");
+@@ -813,7 +813,7 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
++  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+ 
+@@ -832,7 +832,7 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
++  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+ 
+@@ -850,7 +850,7 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm volatile ("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
++  asm volatile ("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm ("  movq     (%0), %%mm2; addl $8, %0\n"
+@@ -865,7 +865,7 @@
+ 									"\tmovq    %%mm1, (%2); addl $8, %2\n"
+ 									: "+r" (op.A), "+r" (op.B), "+r" (op.D)
+ 									: /* empty */
+-									: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++									: "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */);
+   }
+ 
+   if (op.n_pixels) {
+@@ -884,7 +884,7 @@
+                   "\tmovd    %%mm1, (%2)\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */ );
+   }
+ 
+   asm("emms");
+@@ -895,9 +895,9 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm volatile ("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
+-  asm volatile ("movq    %0,%%mm7"     :  : "m" (rgba8_w128) : "%mm7");
+-  asm volatile ("pxor    %%mm6,%%mm6"  :  :  : "%mm6");
++  asm volatile ("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
++  asm volatile ("movq    %0,%%mm7"     :  : "m" (rgba8_w128) /* : "%mm7" */ );
++  asm volatile ("pxor    %%mm6,%%mm6"  :  :  /* : "%mm6" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm ("  movq     (%0), %%mm2; addl $8, %0\n"
+@@ -929,7 +929,7 @@
+ 									"\tmovq    %%mm1, (%2); addl $8, %2\n"
+ 									: "+r" (op.A), "+r" (op.B), "+r" (op.D)
+ 									: /* empty */
+-									: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++									: "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */);
+   }
+ 
+   if (op.n_pixels) {
+@@ -962,7 +962,7 @@
+                   "\tmovd    %%mm1, (%2)\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */);
+   }
+ 
+   asm("emms");
+@@ -1071,7 +1071,7 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm volatile ("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
++  asm volatile ("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */);
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm ("  movq    (%0), %%mm2; addl  $8, %0\n"
+@@ -1082,7 +1082,7 @@
+ 									"\tmovq    %%mm1, (%2); addl  $8, %2\n"
+ 									: "+r" (op.A), "+S" (op.B), "+D" (op.D)
+ 									: /* empty */
+-									: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++									: "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -1094,7 +1094,7 @@
+                   "\tmovd    %%mm1, (%2);\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   asm("emms");
+@@ -1105,7 +1105,7 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm volatile ("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
++  asm volatile ("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm ("  movq    (%0), %%mm2; addl  $8, %0\n"
+@@ -1114,7 +1114,7 @@
+ 									"\tmovq    %%mm1, (%2); addl  $8, %2\n"
+ 									: "+r" (op.A), "+S" (op.B), "+D" (op.D)
+ 									: /* empty */
+-									: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++									: "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -1124,7 +1124,7 @@
+                   "\tmovd    %%mm1, (%2);\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /*, "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   asm("emms");
+@@ -1147,7 +1147,7 @@
+                 "\tmovq  %1,%%mm7\n"
+                 : /* empty */
+                 : "m" (op.scale.scale), "m" (rgba8_w128)
+-                : "%eax", "%mm0", "%mm5", "%mm6", "%mm7");
++                : "%eax" /*, "%mm0", "%mm5", "%mm6", "%mm7" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm ("movq      (%0),%%mm2; addl $8,%0\n"
+@@ -1168,7 +1168,7 @@
+ 									"\tmovq    %%mm1,(%1);  addl $8,%1\n"
+ 									: "+r" (op.A), "+r" (op.D)
+ 									: /* empty */
+-									: "0", "1", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
++									: "0", "1" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -1183,7 +1183,7 @@
+                   "\tmovd    %%mm1,(%1)\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.D)
+-                  : "0", "1", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
++                  : "0", "1" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7" */ );
+   }
+ 
+   asm("emms");
+@@ -1194,8 +1194,8 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm volatile ("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
+-  asm volatile ("movq    %0,%%mm7"     :  : "m" (rgba8_w128)  : "%mm7");
++  asm volatile ("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */);
++  asm volatile ("movq    %0,%%mm7"     :  : "m" (rgba8_w128)  /* : "%mm7" */ );
+   asm volatile ("pxor    %mm6, %mm6");
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+@@ -1246,7 +1246,7 @@
+ 									"\tmovq    %%mm1, (%2); addl $8, %2\n"
+ 									: "+r" (op.A), "+r" (op.B), "+r" (op.D)
+ 									: /* empty */
+-									: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++									: "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -1297,7 +1297,7 @@
+                   "\tmovd    %%mm1, (%2);\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */ );
+   }
+ 
+   asm("emms");
+@@ -1308,7 +1308,7 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
++  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm volatile ("  movq    (%0), %%mm2; addl  $8, %0\n"
+@@ -1318,7 +1318,7 @@
+                   "\tmovq    %%mm1, (%2); addl  $8, %2\n"
+                   : "+r" (op.A), "+S" (op.B), "+D" (op.D)
+                   : /* empty */
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */);
+   }
+ 
+   if (op.n_pixels) {
+@@ -1328,7 +1328,7 @@
+                   "\tmovd    %%mm1, (%2);\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */);
+   }
+   
+   asm("emms");
+@@ -1339,7 +1339,7 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm volatile ("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
++  asm volatile ("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */);
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm ("  movq     (%0), %%mm2; addl $8, %0\n"
+@@ -1358,7 +1358,7 @@
+ 									"\tmovq    %%mm1, (%2); addl $8, %2\n"
+ 									: "+r" (op.A), "+r" (op.B), "+r" (op.D)
+ 									: /* empty */
+-									: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++									: "0", "1", "2" /*, "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -1378,7 +1378,7 @@
+                   "\tmovd    %%mm1, (%2); addl $8, %2\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */ );
+   }
+ 
+   asm("emms");
+@@ -1398,7 +1398,7 @@
+ 									"\taddl    $8, %1\n"
+ 									: "+r" (op.A), "+r" (op.B)
+ 									: /* empty */
+-									: "0", "1", "%mm1", "%mm2", "%mm3", "%mm4");
++									: "0", "1" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -1408,7 +1408,7 @@
+                   "\tmovd    %%mm2, (%1)\n"                  
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B)
+-                  : "0", "1", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+   
+   asm("emms");
+@@ -1419,7 +1419,7 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm volatile ("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
++  asm volatile ("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm ("  movq    (%0), %%mm2; addl  $8, %0\n"
+@@ -1428,7 +1428,7 @@
+ 									"\tmovq    %%mm1, (%2); addl  $8, %2\n"
+ 									: "+r" (op.A), "+S" (op.B), "+D" (op.D)
+ 									: /* empty */
+-									: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++									: "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -1438,7 +1438,7 @@
+                   "\tmovd    %%mm1, (%2);\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+   
+   asm("emms");
+@@ -1538,7 +1538,7 @@
+   asm("movq   %0,%%mm1"
+       :
+       : "m" (va8_alpha_mask)
+-      : "%mm1");
++      /* : "%mm1" */ );
+ 
+   for (; op.n_pixels >= 4; op.n_pixels -= 4) {
+     asm volatile ("  movq      (%0),%%mm0; addl $8,%0\n"
+@@ -1587,7 +1587,7 @@
+                   "\tmovq      %%mm7,(%2); addl $8,%2\n"
+                   : "+r" (op.A), "+r" (op.B), "+r" (op.D)
+                   : "m" (va8_b255), "m" (va8_w1), "m" (va8_w255), "m" (va8_alpha_mask)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -1637,7 +1637,7 @@
+                   "\tmovd      %%mm7,(%2)\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D), "m" (va8_b255), "m" (va8_w1), "m" (va8_w255), "m" (va8_alpha_mask)
+-                  : "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
++                  : "0", "1", "2" /* , "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7" */ );
+   }
+ 
+   asm("emms");
+--- app/composite/gimp-composite-sse.c	Fri Jul 25 07:24:32 2003
++++ app/composite/gimp-composite-sse.c	Sat Jul 26 03:29:59 2003
+@@ -155,7 +155,7 @@
+   asm volatile ("movq    %0,%%mm0"    
+ 																: /* empty */
+ 																: "m" (rgba8_alpha_mask)
+-																: "%mm0");
++																/* : "%mm0" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm ("  movq    (%0), %%mm2; addl $8, %0\n"
+@@ -170,7 +170,7 @@
+ 									"\tmovq    %%mm1, (%2); addl $8, %2\n"
+ 									: "+r" (op.A), "+r" (op.B), "+r" (op.D)
+ 									: /* empty */
+-									: "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
++									: "0", "1", "2" /* , "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -186,7 +186,7 @@
+         "\tmovd    %%mm1, (%2);\n"
+         : /* empty */
+         : "r" (op.A), "r" (op.B), "r" (op.D)
+-        : "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
++        : "0", "1", "2" /* , "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7" */ );
+   }
+ 
+   asm("emms");
+@@ -199,7 +199,7 @@
+   asm volatile ("movq   %0,%%mm1"
+       : /* empty */
+       : "m" (rgba8_alpha_mask)
+-      : "%mm1");
++      /* : "%mm1" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm ("  movq      (%0),%%mm0; addl $8,%0\n"
+@@ -248,7 +248,7 @@
+ 									"\tmovq      %%mm7,(%2); addl $8,%2\n"
+ 									: "+r" (op.A), "+r" (op.B), "+r" (op.D)
+ 									: "m" (rgba8_b255), "m" (rgba8_w1), "m" (rgba8_w255), "m" (rgba8_alpha_mask)
+-									: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++									: "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -298,7 +298,7 @@
+                   "\tmovd      %%mm7,(%2)\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D), "m" (rgba8_b255), "m" (rgba8_w1), "m" (rgba8_w255), "m" (rgba8_alpha_mask)
+-                  : "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
++                  : "0", "1", "2" /* , "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7" */ );
+   }
+ 
+   asm("emms");
+@@ -309,7 +309,7 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
++  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm volatile ("  movq    (%0), %%mm2; addl  $8, %0\n"
+@@ -319,7 +319,7 @@
+                   "\tmovq    %%mm1, (%2); addl  $8, %2\n"
+                   : "+r" (op.A), "+S" (op.B), "+D" (op.D)
+                   : /* empty */
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -329,7 +329,7 @@
+                   "\tmovd    %%mm1, (%2);\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   asm("emms");
+@@ -348,7 +348,7 @@
+ 									"\tmovq    %%mm2, (%2); addl  $8, %2\n"
+ 									: "+r" (op.A), "+S" (op.B), "+D" (op.D)
+ 									: /* empty */
+-									: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++									: "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -358,7 +358,7 @@
+                   "\tmovd    %%mm2, (%2);\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm2", "%mm3", "%mm4" */ );
+   }
+         
+   asm("emms");
+@@ -369,7 +369,7 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
++  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm ("  movq    (%0), %%mm2; addl $8, %0\n"
+@@ -387,7 +387,7 @@
+ 									"\tmovq    %%mm1, (%2); addl $8, %2\n"
+ 									: "+r" (op.A), "+r" (op.B), "+r" (op.D)
+ 									: /* empty */
+-									: "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++									: "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+   
+   if (op.n_pixels) {
+@@ -406,7 +406,7 @@
+                   "\tmovd    %%mm1, (%2);\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   asm("emms");
+@@ -418,7 +418,7 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
++  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm volatile ("\tmovq    (%0), %%mm2; addl $8, %0\n"
+@@ -427,7 +427,7 @@
+                   "\tmovq      %%mm1, (%2); addl $8, %2\n"
+                   : "+r" (op.A), "+r" (op.B), "+r" (op.D)
+                   : /* empty */
+-                  : "%eax", "%ecx", "%edx", "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++                  : "%eax", "%ecx", "%edx", "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -437,7 +437,7 @@
+                   "\tmovd      %%mm1, (%2);\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "%eax", "%ecx", "%edx", "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++                  : "%eax", "%ecx", "%edx", "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */ );
+   }
+ 
+   asm("emms");
+@@ -452,7 +452,7 @@
+       "\tmovq    %1, %%mm7\n"
+       :
+       : "m" (rgba8_alpha_mask), "m" (rgba8_w1)
+-      : "%mm0", "%mm7");
++      /* : "%mm0", "%mm7" */ );
+   
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm volatile ("  movq    (%0), %%mm0; addl $8, %0\n"
+@@ -492,7 +492,7 @@
+                   "\tmovq      %%mm3,(%2); addl $8, %2\n"
+                   : "+r" (op.A), "+r" (op.B), "+r" (op.D)
+                   : "m" (rgba8_alpha_mask)
+-                  : "%eax", "%ecx", "%edx", "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++                  : "%eax", "%ecx", "%edx", "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -533,7 +533,7 @@
+                   "\tmovd      %%mm3,(%2); addl $8, %2\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D), "m" (rgba8_alpha_mask)
+-                  : "%eax", "%ecx", "%edx", "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++                  : "%eax", "%ecx", "%edx", "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */ );
+   }
+ 
+   asm("emms");
+@@ -583,7 +583,7 @@
+                   "\tmovq    %%mm7, (%2); addl $8, %2\n"
+                   : "+r" (op.A), "+r" (op.B), "+r" (op.D)
+                   : /* empty */
+-                  : "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
++                  : "0", "1", "2" /* , "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -622,7 +622,7 @@
+                   "\tmovd    %%mm7, (%2);\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++                  : "0", "1" , "2" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */ );
+   }
+ 
+   asm("emms");
+@@ -633,9 +633,9 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
+-  asm("pxor    %%mm6,%%mm6"  :  :                        : "%mm6");
+-  asm("movq    %0,%%mm7"     :  : "m" (rgba8_w128)       : "%mm7");
++  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
++  asm("pxor    %%mm6,%%mm6"  :  :                        /* : "%mm6" */ );
++  asm("movq    %0,%%mm7"     :  : "m" (rgba8_w128)       /* : "%mm7" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm volatile ("  movq    (%0), %%mm2; addl $8, %0\n"
+@@ -670,7 +670,7 @@
+                   "\tmovq      %%mm1, (%2); addl $8, %2\n"
+                   : "+r" (op.A), "+r" (op.B), "+r" (op.D)
+                   : /* empty */
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -706,7 +706,7 @@
+                   "\tmovd      %%mm1, (%2);\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   asm("emms");
+@@ -718,9 +718,9 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm("movq    %0, %%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
+-  asm("pxor    %%mm6, %%mm6"  :  :                        : "%mm6");
+-  asm("movq    %0, %%mm7"     :  : "m" (rgba8_w128)       : "%mm7");
++  asm("movq    %0, %%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
++  asm("pxor    %%mm6, %%mm6"  :  :                        /* : "%mm6" */ );
++  asm("movq    %0, %%mm7"     :  : "m" (rgba8_w128)       /* : "%mm7" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm volatile ("  movq    (%0), %%mm2; addl $8, %0\n"
+@@ -755,7 +755,7 @@
+                   "\tmovq      %%mm1, (%2); addl $8, %2\n"
+                   : "+r" (op.A), "+r" (op.B), "+r" (op.D)
+                   : /* empty */
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -791,7 +791,7 @@
+                   "\tmovd      %%mm1, (%2);\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   asm("emms");
+@@ -803,7 +803,7 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
++  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+ 
+@@ -822,7 +822,7 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
++  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+ 
+@@ -840,7 +840,7 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
++  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm volatile ("  movq     (%0), %%mm2; addl $8, %0\n"
+@@ -855,7 +855,7 @@
+                   "\tmovq    %%mm1, (%2); addl $8, %2\n"
+                   : "+r" (op.A), "+r" (op.B), "+r" (op.D)
+                   : /* empty */
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -874,7 +874,7 @@
+                   "\tmovd    %%mm1, (%2)\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */ );
+   }
+ 
+   asm("emms");
+@@ -885,9 +885,9 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
+-  asm("movq    %0,%%mm7"     :  : "m" (rgba8_w128) : "%mm7");
+-  asm("pxor    %%mm6,%%mm6"  :  :  : "%mm6");
++  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
++  asm("movq    %0,%%mm7"     :  : "m" (rgba8_w128) /* : "%mm7" */ );
++  asm("pxor    %%mm6,%%mm6"  :  :  /* : "%mm6" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm volatile ("  movq     (%0), %%mm2; addl $8, %0\n"
+@@ -919,7 +919,7 @@
+                   "\tmovq    %%mm1, (%2); addl $8, %2\n"
+                   : "+r" (op.A), "+r" (op.B), "+r" (op.D)
+                   : /* empty */
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++                  : "0", "1" /* , "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -952,7 +952,7 @@
+                   "\tmovd    %%mm1, (%2)\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++                  : "0", "1" /* , "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */ );
+   }
+ 
+   asm("emms");
+@@ -1061,7 +1061,7 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
++  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm volatile ("  movq    (%0), %%mm2; addl  $8, %0\n"
+@@ -1072,7 +1072,7 @@
+                   "\tmovq    %%mm1, (%2); addl  $8, %2\n"
+                   : "+r" (op.A), "+S" (op.B), "+D" (op.D)
+                   : /* empty */
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -1084,7 +1084,7 @@
+                   "\tmovd    %%mm1, (%2);\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   asm("emms");
+@@ -1095,7 +1095,7 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
++  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm volatile ("  movq    (%0), %%mm2; addl  $8, %0\n"
+@@ -1105,7 +1105,7 @@
+                   "\tmovq    %%mm1, (%2); addl  $8, %2\n"
+                   : "+r" (op.A), "+S" (op.B), "+D" (op.D)
+                   : /* empty */
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -1115,7 +1115,7 @@
+                   "\tmovd    %%mm1, (%2);\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   asm("emms");
+@@ -1138,7 +1138,7 @@
+                 "\tmovq  %1,%%mm7\n"
+                 : /* empty */
+                 : "m" (op.scale.scale), "m" (rgba8_w128)
+-                : "%eax", "%mm0", "%mm5", "%mm6", "%mm7");
++                : "%eax" /* , "%mm0", "%mm5", "%mm6", "%mm7" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm volatile ("movq      (%0),%%mm2; addl $8,%0\n"
+@@ -1159,7 +1159,7 @@
+                   "\tmovq    %%mm1,(%1);  addl $8,%1\n"
+                   : "+r" (op.A), "+r" (op.D)
+                   : /* empty */
+-                  : "0", "1", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
++                  : "0", "1" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7" */ );
+ 
+   }
+ 
+@@ -1175,7 +1175,7 @@
+                   "\tmovd    %%mm1,(%1)\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.D)
+-                  : "0", "1", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
++                  : "0", "1" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7" */ );
+   }
+ 
+   asm("emms");
+@@ -1186,8 +1186,8 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
+-  asm("movq    %0,%%mm7"     :  : "m" (rgba8_w128)  : "%mm7");
++  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
++  asm("movq    %0,%%mm7"     :  : "m" (rgba8_w128)  /* : "%mm7" */ );
+   asm("pxor    %mm6, %mm6");
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+@@ -1238,7 +1238,7 @@
+                   "\tmovq    %%mm1, (%2); addl $8, %2\n"
+                   : "+r" (op.A), "+r" (op.B), "+r" (op.D)
+                   : /* empty */
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++                  : "0", "1", "2" /*, "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -1289,7 +1289,7 @@
+                   "\tmovd    %%mm1, (%2);\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++                  : "0", "1", "2" /*, "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */ );
+   }
+ 
+   asm("emms");
+@@ -1300,7 +1300,7 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
++  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm volatile ("  movq    (%0), %%mm2; addl  $8, %0\n"
+@@ -1310,7 +1310,7 @@
+                   "\tmovq    %%mm1, (%2); addl  $8, %2\n"
+                   : "+r" (op.A), "+S" (op.B), "+D" (op.D)
+                   : /* empty */
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -1320,7 +1320,7 @@
+                   "\tmovd    %%mm1, (%2);\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+   
+   asm("emms");
+@@ -1331,7 +1331,7 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
++  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm volatile ("  movq     (%0), %%mm2; addl $8, %0\n"
+@@ -1350,7 +1350,7 @@
+                   "\tmovq    %%mm1, (%2); addl $8, %2\n"
+                   : "+r" (op.A), "+r" (op.B), "+r" (op.D)
+                   : /* empty */
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -1370,7 +1370,7 @@
+                   "\tmovd    %%mm1, (%2); addl $8, %2\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4", "%mm5" */ );
+   }
+ 
+   asm("emms");
+@@ -1390,7 +1390,7 @@
+                   "\taddl    $8, %1\n"
+                   : "+r" (op.A), "+r" (op.B)
+                   : /* empty */
+-                  : "0", "1", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1" /*, "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -1400,7 +1400,7 @@
+                   "\tmovd    %%mm2, (%1)\n"                  
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B)
+-                  : "0", "1", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+   
+   asm("emms");
+@@ -1411,7 +1411,7 @@
+ {
+   GimpCompositeContext op = *_op;
+ 
+-  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) : "%mm0");
++  asm("movq    %0,%%mm0"     :  : "m" (rgba8_alpha_mask) /* : "%mm0" */ );
+ 
+   for (; op.n_pixels >= 2; op.n_pixels -= 2) {
+     asm volatile ("  movq    (%0), %%mm2; addl  $8, %0\n"
+@@ -1421,7 +1421,7 @@
+                   "\tmovq    %%mm1, (%2); addl  $8, %2\n"
+                   : "+r" (op.A), "+S" (op.B), "+D" (op.D)
+                   : /* empty */
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -1431,7 +1431,7 @@
+                   "\tmovd    %%mm1, (%2);\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+   
+   asm("emms");
+@@ -1580,7 +1580,7 @@
+                   "\tmovq      %%mm7,(%2); addl $8,%2\n"
+                   : "+r" (op.A), "+r" (op.B), "+r" (op.D)
+                   : "m" (va8_b255), "m" (va8_w1), "m" (va8_w255), "m" (va8_alpha_mask)
+-                  : "0", "1", "2", "%mm1", "%mm2", "%mm3", "%mm4");
++                  : "0", "1", "2" /* , "%mm1", "%mm2", "%mm3", "%mm4" */ );
+   }
+ 
+   if (op.n_pixels) {
+@@ -1630,7 +1630,7 @@
+                   "\tmovd      %%mm7,(%2)\n"
+                   : /* empty */
+                   : "r" (op.A), "r" (op.B), "r" (op.D), "m" (va8_b255), "m" (va8_w1), "m" (va8_w255), "m" (va8_alpha_mask)
+-                  : "0", "1", "2", "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7");
++                  : "0", "1", "2" /* , "%mm0", "%mm1", "%mm2", "%mm3", "%mm4", "%mm5", "%mm6", "%mm7" */ );
+   }
+ 
+   asm("emms");
