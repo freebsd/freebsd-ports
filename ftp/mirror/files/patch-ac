@@ -1,5 +1,5 @@
-*** mirror.pl.orig	Mon May 15 16:50:06 1995
---- mirror.pl	Mon May 15 17:43:06 1995
+*** mirror.pl.orig	Thu Jun 15 19:15:46 1995
+--- mirror.pl	Thu Jun 15 19:15:26 1995
 ***************
 *** 42,48 ****
   
@@ -59,3 +59,30 @@
   unshift( @INC, $dir );
   
   # Make sure that your PERLLIB environment variable can get you
+***************
+*** 156,161 ****
+--- 157,163 ----
+  $default{ 'local_dir' } = '';	# local directory to copy into
+  $default{ 'remote_user' } = 'anonymous';  # the remote guest account name
+  $default{ 'remote_password' } = "$me@$hostname";
++ $default{ 'remote_acct' } = '';
+  $default{ 'get_patt' } = ".";	# regex of pathnames to retrieve
+  $default{ 'exclude_patt' } = ''; # regex of pathnames to ignore
+  $default{ 'update_local' } = 0;	# Don't just update local dirs
+***************
+*** 1022,1028 ****
+  	if( $con == 1 ){
+  		&msg( "login as $remote_user\n" ) if $debug > 1;
+  		$curr_remote_user = $remote_user;
+! 		if( ! &ftp'login( $remote_user, $remote_password ) ){
+  			&msg( "Cannot login, skipping package\n" );
+  			&disconnect();
+  			&msg( "\n" );
+--- 1024,1030 ----
+  	if( $con == 1 ){
+  		&msg( "login as $remote_user\n" ) if $debug > 1;
+  		$curr_remote_user = $remote_user;
+! 		if( ! &ftp'login( $remote_user, $remote_password, $remote_acct ) ){
+  			&msg( "Cannot login, skipping package\n" );
+  			&disconnect();
+  			&msg( "\n" );
