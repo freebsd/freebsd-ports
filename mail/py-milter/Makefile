@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	milter
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.4
 CATEGORIES=	mail python
 MASTER_SITES=	http://www.bmsi.com/python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	seva@sevasoft.kiev.ua
+MAINTAINER=	georg@graf.priv.at
 COMMENT=	Python interface to sendmail-8.1x milter API
 
 .if !exists(/usr/lib/libmilter.so)
