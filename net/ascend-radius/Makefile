@@ -3,18 +3,22 @@
 # Date created:				August 28th 96
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.5 1996/11/18 11:34:23 asami Exp $
+#   $Id: Makefile,v 1.6 1996/12/01 01:22:40 obrien Exp $
 #
 
-DISTNAME=	radius-961015
-PKGNAME=	ascend-radius-961015
+#DISTNAME=	radius-961029
+PKGNAME=	ascend-radius-961029
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ascend.com/pub/Software-Releases/Radius/Current/ \
 		ftp://ftp.ascend.com/pub/Software-Releases/Radius/Archive/
+DISTFILES=	radius-961029.tar.gz \
+		radius-961029.ps \
+		radius-961029.pdf
+EXTRACT_ONLY=	radius-961029.tar.gz
 
 MAINTAINER=	jfitz@FreeBSD.ORG
 
-WRKPREFIX=	radius-961015/radius-1.16-ascend
+WRKPREFIX=	radius-961029/radius-1.16-ascend
 WRKSRC=		${WRKDIR}/${WRKPREFIX}/ascendd
 
 ALL_TARGET=	all dbm
@@ -33,6 +37,8 @@ do-install:
 		done
 		for file in ChangeLog README README.cexample README.dict; do \
 			${INSTALL_DATA} ${WRKDIR}/${WRKPREFIX}/$$file ${PREFIX}/share/doc/ascend-radius; \
+		${INSTALL_DATA} ${DISTDIR}/radius-961029.ps ${PREFIX}/share/doc/ascend-radius
+		${INSTALL_DATA} ${DISTDIR}/radius-961029.pdf ${PREFIX}/share/doc/ascend-radius
 		done
 .endif
 		@ ${MKDIR} ${PREFIX}/etc/raddb
