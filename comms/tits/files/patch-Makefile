@@ -1,10 +1,10 @@
-
-$FreeBSD$
-
---- Makefile.orig	Tue Feb 20 22:27:21 2001
-+++ Makefile	Wed Apr 18 18:29:23 2001
-@@ -32,12 +32,12 @@
+--- Makefile.orig	Tue Feb 20 12:27:21 2001
++++ Makefile	Wed Sep  4 20:46:58 2002
+@@ -30,14 +30,15 @@
+ # THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ 
  WARNS=	2
++NO_WERROR=1
  
  PROG=	tits
 -MAN=	tits.8
