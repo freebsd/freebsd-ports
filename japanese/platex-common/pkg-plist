@@ -1027,6 +1027,7 @@ share/texmf/tex/latex/base/ltnews05.tex
 share/texmf/tex/latex/base/ltnews06.tex
 share/texmf/tex/latex/base/ltnews07.tex
 share/texmf/tex/latex/base/ltnews08.tex
+share/texmf/tex/latex/base/ltnews09.tex
 share/texmf/tex/latex/base/ltoutenc.dtx
 share/texmf/tex/latex/base/ltoutenc.ins
 share/texmf/tex/latex/base/ltoutput.dtx
@@ -1053,6 +1054,7 @@ share/texmf/tex/latex/base/makeindx.ins
 share/texmf/tex/latex/base/manifest.txt
 share/texmf/tex/latex/base/manual.err
 share/texmf/tex/latex/base/microtex.txt
+share/texmf/tex/latex/base/miktex.txt
 share/texmf/tex/latex/base/minimal.cls
 share/texmf/tex/latex/base/modguide.tex
 share/texmf/tex/latex/base/multitex.txt
@@ -1111,7 +1113,6 @@ share/texmf/tex/latex/base/size12.clo
 share/texmf/tex/latex/base/slides.cls
 share/texmf/tex/latex/base/slides.def
 share/texmf/tex/latex/base/slides.dtx
-share/texmf/tex/latex/base/slides.fdd
 share/texmf/tex/latex/base/slides.ins
 share/texmf/tex/latex/base/slides.sty
 share/texmf/tex/latex/base/slifonts.fdd
