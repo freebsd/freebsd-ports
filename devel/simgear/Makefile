@@ -25,4 +25,10 @@ USE_X_PREFIX=	yes
 USE_GL=		yes
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Internal compiler error in gcc"
+.endif
+
+.include <bsd.port.post.mk>
