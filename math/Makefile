@@ -60,6 +60,7 @@
     SUBDIR += p5-Set-IntSpan
     SUBDIR += p5-Statistics-ChiSquare
     SUBDIR += p5-Statistics-Descriptive
+    SUBDIR += p5-Statistics-Distributions
     SUBDIR += pari
     SUBDIR += parmetis
     SUBDIR += physcalc
