@@ -14,13 +14,15 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	torstenb@FreeBSD.org
 
 RUN_DEPENDS=	${SITE_PERL}/SNMP_Session.pm:${PORTSDIR}/net/p5-SNMP_Session \
-		${SITE_PERL}/RRDs.pm:${PORTSDIR}/net/rrdtool \
-		${SITE_PERL}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
+		${SITE_PERL_ARCH}/RRDs.pm:${PORTSDIR}/net/rrdtool \
+		${SITE_PERL_ARCH}/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5 \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Time/Zone.pm:${PORTSDIR}/devel/p5-TimeDate \
-		${SITE_PERL}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
+		${SITE_PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 
-SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
+SITE_PERL=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
+SITE_PERL_ARCH=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
+
 NO_PACKAGE=	"needs customization"
 USE_PERL5=	yes
 SCRIPTS_ENV+=	PERL5=${PERL5}
