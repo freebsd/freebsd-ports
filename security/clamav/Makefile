@@ -23,7 +23,7 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		arc:${PORTSDIR}/archivers/arc \
 		unzip:${PORTSDIR}/archivers/unzip
 
-DISTVERSION=	0.74
+DISTVERSION=	0.75
 
 OPTIONS=	MILTER "Compile the milter interface" off
 USE_REINPLACE=	yes
@@ -52,7 +52,7 @@ MAN1=		clamscan.1 freshclam.1 sigtool.1 clamdscan.1
 MAN5=		clamav.conf.5 freshclam.conf.5
 MAN8=		clamd.8 clamav-milter.8
 
-CONFLICTS=	clamav-devel-*
+CONFLICTS=	clamav-devel-[0-9]*
 
 CLAMAVUSER?=	clamav
 CLAMAVGROUP?=	clamav
