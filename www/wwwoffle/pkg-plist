@@ -230,14 +230,15 @@ html/en/messages/IndexProtocol-Head.html
 html/en/messages/IndexProtocol-Tail.html
 html/en/messages/IndexRoot-Body.html
 html/en/messages/IndexSeparator-Body.html
-html/en/messages/InfoCached-Body.html
-html/en/messages/InfoCached-Head.html
-html/en/messages/InfoCached-Tail.html
+html/en/messages/InfoCached.html
 html/en/messages/InfoContents-Body.html
+html/en/messages/InfoContents-Head.html
+html/en/messages/InfoContents-Tail.html
 html/en/messages/InfoIllegal.html
 html/en/messages/InfoRequest.html
 html/en/messages/InfoRequested.html
-html/en/messages/InfoSource-Body.html
+html/en/messages/InfoSource-Head.html
+html/en/messages/InfoSource-Tail.html
 html/en/messages/MethodUnsupported.html
 html/en/messages/MonitorFormError.html
 html/en/messages/MonitorIllegal.html
@@ -290,6 +291,7 @@ html/en/search/start2.html
 html/en/search/start3.html
 html/en/search/start4.html
 html/en/search/udmsearch
+html/en/wwwoffle.css
 html/en/wwwoffle.pac
 html/es/FAQ.html
 html/es/README.CONF.html
