@@ -69,7 +69,6 @@
     SUBDIR += ljcharm
     SUBDIR += ljclive
     SUBDIR += logjam
-    SUBDIR += logjam2
     SUBDIR += mcal
     SUBDIR += mdh
     SUBDIR += mencal
