@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.216 1999/07/05 03:06:11 cpiazza Exp $
+# $Id: Makefile,v 1.217 1999/08/01 03:16:33 cpiazza Exp $
 #
 
     SUBDIR += 3dc
@@ -6,6 +6,7 @@
     SUBDIR += KnightCap
     SUBDIR += acm
     SUBDIR += actx
+    SUBDIR += adom
     SUBDIR += affenspiel
     SUBDIR += agm
     SUBDIR += an
