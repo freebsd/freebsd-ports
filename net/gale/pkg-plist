@@ -28,7 +28,6 @@ include/oop-tcl.h
 include/oop-www.h
 include/oop.h
 lib/libgale.a
-lib/libgale.la
 lib/libgale.so
 lib/libgale.so.12
 lib/liboop-adns.a
