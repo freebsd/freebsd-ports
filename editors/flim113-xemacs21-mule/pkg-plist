@@ -53,3 +53,5 @@
 %%EMACS_PACKAGESDIR%%/man/flim/mime-en.texi
 %%EMACS_PACKAGESDIR%%/man/flim/mime-ja.texi
 @dirrm %%EMACS_PACKAGESDIR%%/man/flim
+share/flim/%%FLIM_COOKIE%%
+@unexec /bin/rmdir %D/share/flim || true
