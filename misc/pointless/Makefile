@@ -23,7 +23,8 @@ GSPORT?=	print/ghostscript-gnu
 BUILD_DEPENDS=	${LOCALBASE}/bin/gnuplot:${PORTSDIR}/math/gnuplot \
 		${LOCALBASE}/bin/gs:${PORTSDIR}/${GSPORT} \
 		${LOCALBASE}/bin/a2ps:${PORTSDIR}/print/a2ps-letter \
-		${LOCALBASE}/bin/mpost:${PORTSDIR}/print/teTeX
+		${LOCALBASE}/bin/mpost:${PORTSDIR}/print/teTeX \
+		${LOCALBASE}/bin/dvips:${PORTSDIR}/print/dvipsk-tetex
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_GL=		yes
