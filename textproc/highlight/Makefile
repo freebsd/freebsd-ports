@@ -6,43 +6,54 @@
 #
 
 PORTNAME=	highlight
-PORTVERSION=	2.0d12	#someday, people will stick to numbers and decimal points
+PORTVERSION=	2.0.13
+PORTEPOCH=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/d/-/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Customizable syntax highlighter
 
-WRKSRC=		${WRKDIR}/${PORTNAME}2
+WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
 
 USE_GETOPT_LONG=	yes
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_REINPLACE=	yes
+USE_GMAKE=	yes
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS} -DHAVE_DECL_GETOPT" LDFLAGS="${LDFLAGS}"
+MAKEFILE=	makefile
+ALL_TARGET=	${PORTNAME}
 
-.if !defined(NOPORTDOCS)
 MAN1=		${PORTNAME}.1
 MANCOMPRESSED=	yes
-.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/share/highlight|${DATADIR}|' \
-		${WRKSRC}/${PORTNAME}/datadir.cpp
+	@${REINPLACE_CMD} -e \
+		's|/usr/share/highlight|${DATADIR}|' ${WRKSRC}/datadir.cpp
+	@${REINPLACE_CMD} -e 's|g++|$$(CXX)|g ; \
+		 s|-O2|$$(CXXFLAGS) $$(CPPFLAGS)|g ; \
+		 s|-L/usr/lib|$$(LDFLAGS)|g' ${WRKSRC}/makefile
 
 do-install:
-	cd ${WRKSRC} && ${GMAKE} ${INSTALL_TARGET}
-	${MKDIR} ${DATADIR} ${DOCSDIR}
-	${MKDIR} ${DATADIR}/helpmsg ${DATADIR}/langDefs ${DATADIR}/themes
-	${INSTALL_DATA} ${WRKSRC}/helpmsg/* ${DATADIR}/helpmsg
-	${INSTALL_DATA} ${WRKSRC}/langDefs/*.lang ${DATADIR}/langDefs
-	${INSTALL_DATA} ${WRKSRC}/langDefs/extensions.conf ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/themes/* ${DATADIR}/themes
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/../man/${MAN1}.gz ${MANPREFIX}/man/man1
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/../langDefs/extensions.conf ${DATADIR}
+	@${MKDIR} ${DATADIR}/helpmsg
+	${INSTALL_DATA} ${WRKSRC}/../helpmsg/* ${DATADIR}/helpmsg
+	@${MKDIR} ${DATADIR}/langDefs
+	${INSTALL_DATA} ${WRKSRC}/../langDefs/*.lang ${DATADIR}/langDefs
+	@${MKDIR} ${DATADIR}/themes
+	${INSTALL_DATA} ${WRKSRC}/../themes/* ${DATADIR}/themes
 .if !defined(NOPORTDOCS)
-	${INSTALL_MAN} ${WRKSRC}/man/${MAN1}.gz ${MANPREFIX}/man/man1
-.for i in AUTHORS README ChangeLog COPYING INSTALL
-	${INSTALL_DATA} ${WRKSRC}/$i ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+.for i in AUTHORS ChangeLog INSTALL README
+	${INSTALL_DATA} ${WRKSRC}/../${i} ${DOCSDIR}
 .endfor
-.endif # !defined(NOPORTDOCS)
+	@${MKDIR} ${EXAMPLESDIR}
+	${TAR} -C ${WRKSRC}/../utils -cf - . | \
+		${TAR} -C  ${EXAMPLESDIR} --unlink -xf -
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
