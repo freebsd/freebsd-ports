@@ -1,0 +1,18 @@
+bin/messagewall
+bin/messagewallctl
+bin/messagewallstats
+etc/messagewall.conf.sample
+etc/messagewall/virus.patterns
+etc/messagewall/profiles/None
+etc/messagewall/profiles/Medium Plus
+etc/messagewall/profiles/Light
+etc/messagewall/profiles/Relay
+etc/messagewall/profiles/Warning
+etc/messagewall/profiles/Medium
+etc/messagewall/profiles/Reject
+etc/messagewall/profiles/Strong
+etc/messagewall/profiles/Light Plus
+etc/messagewall/profiles/Strong Plus
+etc/messagewall/profiles/Extreme
+@dirrm etc/messagewall/profiles
+@dirrm etc/messagewall
