@@ -3,13 +3,13 @@
 # Date created:		04 Janyary 1999
 # Whom:			Sergey Osokin aka oZZ <ozz@FreeBSD.org.ru>
 #
-# $Id: Makefile,v 1.2 1999/02/28 15:24:16 kuriyama Exp $
+# $Id: Makefile,v 1.3 1999/05/05 03:16:41 kuriyama Exp $
 #
 
-DISTNAME=	wmmount
+DISTNAME=	wmmount-1.0-beta1
 PKGNAME=	wmmount-1.0b1
 CATEGORIES=	sysutils windowmaker afterstep
-MASTER_SITES=	http://www.geocities.com/SiliconValley/Vista/2471/
+MASTER_SITES=	http://www.geocities.com/SiliconValley/Vista/2471/files/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ozz@FreeBSD.org.ru
