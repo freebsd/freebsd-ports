@@ -5,16 +5,16 @@ include/rpm/rpmlib.h
 include/rpm/dbindex.h
 include/rpm/header.h
 lib/librpm.a
-@unexec rm %D/lib/rpmrc
-@unexec rm %D/lib/rpmpopt
-lib/rpm/mkinstalldirs
-lib/rpm/find-provides
-lib/rpm/find-requires
-lib/rpm/rpmrc
-lib/rpm/rpmpopt
-lib/rpm/freshen.sh
-lib/rpm/find-lang.sh
-@exec ln -sf %D/lib/rpm/rpmrc %D/lib/rpmrc
-@exec ln -sf %D/lib/rpm/rpmpopt %D/lib/rpmpopt
+@unexec rm %D/etc/rpmrc
+@unexec rm %D/etc/rpmpopt
+etc/rpm/mkinstalldirs
+etc/rpm/find-provides
+etc/rpm/find-requires
+etc/rpm/rpmrc
+etc/rpm/rpmpopt
+etc/rpm/freshen.sh
+etc/rpm/find-lang.sh
+@exec ln -sf %D/etc/rpm/rpmrc %D/etc/rpmrc
+@exec ln -sf %D/etc/rpm/rpmpopt %D/etc/rpmpopt
 @dirrm include/rpm
-@dirrm lib/rpm
+@dirrm etc/rpm
