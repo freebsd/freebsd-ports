@@ -4630,6 +4630,7 @@ leo		ports/editors/leo
 leoarg		ports/devel/leoarg
 leocad		ports/cad/leocad
 lep		ports/security/lep
+lesspipe	ports/misc/lesspipe
 lesstif		ports/x11-toolkits/lesstif
 lexter		ports/games/lexter
 lfhex		ports/editors/lfhex
