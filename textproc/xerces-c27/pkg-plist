@@ -372,7 +372,9 @@ include/xercesc/validators/schema/GeneralAttributeCheck.hpp
 include/xercesc/validators/schema/XSDErrorReporter.hpp
 lib/%%XERCESC_LIB%%
 @exec ln -sf %%XERCESC_LIB%% %D/lib/libxerces-c.so
+@exec ln -sf %%XERCESC_LIB%% %D/lib/libxerces-c.so.%%XERCESC_LIB_VERSION%%
 @unexec if test ! -r %D/lib/libxerces-c.so; then rm -f %D/lib/libxerces-c.so; fi
+@unexec if test ! -r %D/lib/libxerces-c.so; then rm -f %D/lib/libxerces-c.so.%%XERCESC_LIB_VERSION%%; fi
 @dirrm include/xercesc/validators/schema/identity
 @dirrm include/xercesc/validators/schema
 @dirrm include/xercesc/validators/DTD

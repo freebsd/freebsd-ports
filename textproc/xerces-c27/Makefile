@@ -40,8 +40,11 @@ CONFIGURE_ARGS+=	-t IconvFBSD
 CONFIGURE_ARGS+=	-r none
 .endif
 
+XERCESC_LIB_VERSIO=	${PORTVERSION:S/.//}
+XERCESC_LIB_VERSION=	${XERCESC_LIB_VERSIO:R}
 XERCESC_LIB=		libxerces-c.so.${PORTVERSION:S/.//}
-PLIST_SUB+=		XERCESC_LIB=${XERCESC_LIB}
+PLIST_SUB+=		XERCESC_LIB=${XERCESC_LIB} \
+				XERCESC_LIB_VERSION=${XERCESC_LIB_VERSION}
 
 .if !defined(NO_SAMPLES)
 PLIST_SUB+=	NO_SAMPLES=""
@@ -71,6 +74,13 @@ pre-fetch:
 	@/bin/sleep 2
 .endif
 
+post-patch:
+	@${CP} ${WRKSRC}/src/xercesc/Makefile.incl \
+		${WRKSRC}/src/xercesc/Makefile.incl.Dist
+	@${SED} -e 's#CP = -cp -p#CP = -cp#' \
+		${WRKSRC}/src/xercesc/Makefile.incl.Dist > \
+		${WRKSRC}/src/xercesc/Makefile.incl
+
 pre-configure:
 	@${CHMOD} 700 ${CONFIGURE_WRKSRC}/runConfigure
 	@${CHMOD} 700 ${CONFIGURE_WRKSRC}/configure
@@ -84,7 +94,10 @@ post-configure:
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/lib/${XERCESC_LIB}
-	${LN} -sf ${XERCESC_LIB} ${PREFIX}/lib/libxerces-c.so
+	@${LN} -sf ${XERCESC_LIB} ${PREFIX}/lib/libxerces-c.so
+	@${LN} -sf ${XERCESC_LIB} \
+		${PREFIX}/lib/libxerces-c.so.${XERCESC_LIB_VERSION:R}
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/xerces-c
 	@${CP} -r ${WRKSRC}/doc/ ${PREFIX}/share/doc/xerces-c/
