@@ -26,29 +26,17 @@ Boston, MA 02111-1307, USA.  */
 
 
 /* Don't assume anything about the header files. */
+#undef NO_IMPLICIT_EXTERN_C
 #define NO_IMPLICIT_EXTERN_C
 
-/* This defines which switch letters take arguments.  On svr4, most of
+/* This defines which switch letters take arguments.  On FreeBSD, most of
    the normal cases (defined in gcc.c) apply, and we also have -h* and
-   -z* options (for the linker).  We have a slightly different mix.  We
-   have -R (alias --rpath), no -z, --soname (-h), --assert etc. */
+   -z* options (for the linker) (comming from svr4).
+   We also have -R (alias --rpath), no -z, --soname (-h), --assert etc. */
 
 #undef SWITCH_TAKES_ARG
 #define SWITCH_TAKES_ARG(CHAR) \
-  (   (CHAR) == 'D' \
-   || (CHAR) == 'U' \
-   || (CHAR) == 'o' \
-   || (CHAR) == 'e' \
-   || (CHAR) == 'T' \
-   || (CHAR) == 'u' \
-   || (CHAR) == 'I' \
-   || (CHAR) == 'm' \
-   || (CHAR) == 'x' \
-   || (CHAR) == 'L' \
-   || (CHAR) == 'A' \
-   || (CHAR) == 'V' \
-   || (CHAR) == 'B' \
-   || (CHAR) == 'b' \
+  (DEFAULT_SWITCH_TAKES_ARG (CHAR) \
    || (CHAR) == 'h' \
    || (CHAR) == 'z' /* ignored by ld */ \
    || (CHAR) == 'R')
@@ -70,11 +58,23 @@ Boston, MA 02111-1307, USA.  */
    we want to retain compatibility with older gcc versions.  
    (even though the svr4 ABI for the i386 says that records and unions are
    returned in memory)  */
+#undef DEFAULT_PCC_STRUCT_RETURN
 #define DEFAULT_PCC_STRUCT_RETURN 0
 
 /* Ensure we the configuration knows our system correctly so we can link with
    libraries compiled with the native cc. */
 #undef NO_DOLLAR_IN_LABEL
+
+/* Use more efficient ``thunks'' to implement C++ vtables.  XXX note that 
+   this setting is claimed to have a few bugs by the EGCS maintainers.  They
+   believe the bugs will be worked out in EGCS 1.2. */
+#undef DEFAULT_VTABLE_THUNKS
+#define DEFAULT_VTABLE_THUNKS 1
+
+/* Our malloc can allocte pagesized blocks efficiently.  The default size 
+   of 4072 bytes is not optimal on the i386 nor the Alpha. */
+#undef OBSTACK_CHUNK_SIZE
+#define OBSTACK_CHUNK_SIZE	(getpagesize())
 
 
 /* Miscellaneous parameters.  */
