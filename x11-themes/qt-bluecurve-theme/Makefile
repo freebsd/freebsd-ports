@@ -7,7 +7,7 @@
 
 PORTNAME=	qt-bluecurve-theme
 PORTVERSION=	0.88
-CATEGORIES=	x11-toolkits
+CATEGORIES=	x11-themes
 MASTER_SITES=	${MASTER_SITE_FEDORA_LINUX}
 MASTER_SITE_SUBDIR=	fedora/fedora/1/i386/SRPMS.os
 DISTFILES=	redhat-artwork-${PORTVERSION}-${RH_SUBVERSION}.src.rpm

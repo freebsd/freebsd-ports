@@ -8,7 +8,7 @@
 PORTNAME=	gtk-industrial-theme
 PORTVERSION=	0.2.29
 PORTREVISION=	1
-CATEGORIES=	x11-toolkits
+CATEGORIES=	x11-themes
 MASTER_SITES=	http://ftp.ximian.com/pub/xd2/redhat-9-i386/source/ \
 		http://www.linux-friends.de/stoerte/FreeBSD/
 DISTNAME=	ximian-artwork-${PORTVERSION}-${XIMIAN_SUBVERSION}.ximian.${XIMIAN_DISTVERSION}.src

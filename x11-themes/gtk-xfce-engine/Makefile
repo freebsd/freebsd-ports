@@ -8,7 +8,7 @@
 PORTNAME=	gtk-xfce-engine
 PORTVERSION=	2.1.9
 PORTREVISION=	2
-CATEGORIES=	x11-toolkits xfce
+CATEGORIES=	x11-themes xfce
 MASTER_SITES=	ftp://ftp.berlios.de/pub/xfce-goodies/4.0.5/ \
 		http://hannelore.f1.fhtw-berlin.de/mirrors/xfce4/xfce-4.0.5/src/
 

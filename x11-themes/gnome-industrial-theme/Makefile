@@ -8,7 +8,7 @@
 PORTNAME=	gnome-industrial-theme
 PORTVERSION=	0.2.29
 PORTREVISION=	2
-CATEGORIES=	x11-toolkits
+CATEGORIES=	x11-themes
 MASTER_SITES=	http://ftp.ximian.com/pub/xd2/redhat-9-i386/source/ \
 		http://www.linux-friends.de/stoerte/FreeBSD/
 DISTNAME=	ximian-artwork-${PORTVERSION}-${XIMIAN_SUBVERSION}.ximian.${XIMIAN_DISTVERSION}.src
@@ -18,8 +18,8 @@ MAINTAINER=	stoerte@dreamwarrior.net
 COMMENT=	Slick GNOME2 theme from Ximian
 
 EXTRACT_DEPENDS=rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
-BUILD_DEPENDS=	${X11BASE}/lib/gtk-2.0/2.4.0/engines/libindustrial.so:${PORTSDIR}/x11-toolkits/gnome-themes-extras
-RUN_DEPENDS=    ${X11BASE}/lib/gtk-2.0/2.4.0/engines/libindustrial.so:${PORTSDIR}/x11-toolkits/gnome-themes-extras
+BUILD_DEPENDS=	${X11BASE}/lib/gtk-2.0/2.4.0/engines/libindustrial.so:${PORTSDIR}/x11-themes/gnome-themes-extras
+RUN_DEPENDS=    ${X11BASE}/lib/gtk-2.0/2.4.0/engines/libindustrial.so:${PORTSDIR}/x11-themes/gnome-themes-extras
 
 NO_BUILD=	yes
 USE_X_PREFIX=	yes

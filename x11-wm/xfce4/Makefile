@@ -24,7 +24,7 @@ RUN_DEPENDS=	${X11BASE}/lib/xfce4/mcs-plugins/ui_plugin.so:${PORTSDIR}/sysutils/
 		xffm:${PORTSDIR}/x11-fm/xfce4-fm \
 		xfprint4:${PORTSDIR}/print/xfce4-print \
 		xfce4-iconbox:${PORTSDIR}/misc/xfce4-iconbox \
-		${X11BASE}/lib/gtk-2.0/2.4.0/engines/libxfce.so:${PORTSDIR}/x11-toolkits/gtk-xfce-engine
+		${X11BASE}/lib/gtk-2.0/2.4.0/engines/libxfce.so:${PORTSDIR}/x11-themes/gtk-xfce-engine
 
 .if exists(${X11BASE}/bin/gdm)
 WITH_GDM=	yes

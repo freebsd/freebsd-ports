@@ -8,7 +8,7 @@
 PORTNAME=	gtk-engines-collection
 PORTVERSION=	1.8
 PORTREVISION=	1
-CATEGORIES=	x11-toolkits
+CATEGORIES=	x11-themes
 MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
@@ -16,24 +16,24 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The "meta-port" for the collection of several GTK+ theme engines
 
-RUN_DEPENDS=	${THEMESBASE}/libbuffy.so:${THEMESPORTDIR}/buffy \
-		${THEMESBASE}/libclean.so:${THEMESPORTDIR}/clean-theme-gtk \
-		${THEMESBASE}/libcolorstep.so:${THEMESPORTDIR}/colorstep \
-		${THEMESBASE}/libengradient.so:${THEMESPORTDIR}/engradient \
-		${THEMESBASE}/libflat.so:${THEMESPORTDIR}/gtk-flat-theme \
-		${THEMESBASE}/libgnomelook.so:${THEMESPORTDIR}/gnome-look \
+RUN_DEPENDS=	${THEMESBASE}/libbuffy.so:${PORTSDIR}/x11-themes/buffy \
+		${THEMESBASE}/libclean.so:${PORTSDIR}/x11-themes/clean-theme-gtk \
+		${THEMESBASE}/libcolorstep.so:${PORTSDIR}/x11-themes/colorstep \
+		${THEMESBASE}/libengradient.so:${PORTSDIR}/x11-themes/engradient \
+		${THEMESBASE}/libflat.so:${PORTSDIR}/x11-themes/gtk-flat-theme \
+		${THEMESBASE}/libgnomelook.so:${PORTSDIR}/x11-themes/gnome-look \
 		${THEMESBASE}/libgtkbe.so:${THEMESPORTDIR}/gtkbe \
-		${THEMESBASE}/libicegradient.so:${THEMESPORTDIR}/icegradient \
-		${THEMESBASE}/libmac2.so:${THEMESPORTDIR}/gtk-Mac2-theme \
-		${THEMESBASE}/libpixmap.so:${THEMESPORTDIR}/gtk-engines \
-		${THEMESBASE}/libqnx.so:${THEMESPORTDIR}/gtk-qn-x11-theme \
+		${THEMESBASE}/libicegradient.so:${PORTSDIR}/x11-themes/icegradient \
+		${THEMESBASE}/libmac2.so:${PORTSDIR}/x11-themes/gtk-Mac2-theme \
+		${THEMESBASE}/libpixmap.so:${PORTSDIR}/x11-themes/gtk-engines \
+		${THEMESBASE}/libqnx.so:${PORTSDIR}/x11-themes/gtk-qn-x11-theme \
 		${THEMESBASE}/libstep.so:${THEMESPORTDIR}/gtkstep \
 		${THEMESBASE}/libsteppastel.so:${THEMESPORTDIR}/gtkstep-pastel \
 		${THEMESBASE}/libzenith.so:${THEMESPORTDIR}/gtk-zenith-theme \
-		${THEMESBASE}/libthinice.so:${THEMESPORTDIR}/thinice \
-		${THEMESBASE}/libXenoStep.so:${THEMESPORTDIR}/xenostep \
-		${THEMESBASE}/libxeno.so:${THEMESPORTDIR}/xenophilia \
-		${THEMESBASE}/libwhistler.so:${THEMESPORTDIR}/whistlerk
+		${THEMESBASE}/libthinice.so:${PORTSDIR}/x11-themes/thinice \
+		${THEMESBASE}/libXenoStep.so:${PORTSDIR}/x11-themes/xenostep \
+		${THEMESBASE}/libxeno.so:${PORTSDIR}/x11-themes/xenophilia \
+		${THEMESBASE}/libwhistler.so:${PORTSDIR}/x11-themes/whistlerk
 
 THEMESBASE=	${X11BASE}/lib/gtk/themes/engines
 THEMESPORTDIR=	${PORTSDIR}/x11-toolkits

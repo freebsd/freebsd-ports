@@ -1090,3 +1090,33 @@ databases/postgresql-client|databases/postgresql7|2004-05-25|Remove the -client 
 deskutils/logjam2|deskutils/logjam|2004-05-26|GTK2 logjam is now default
 devel/camlp4||2004-05-27|removed, no longer works, no longer developed
 audio/mpio-driver||2004-05-31|no longer needed with mpiosh 0.7.1
+x11-toolkits/buffy|x11-themes/buffy|2004-06-02|new category
+x11-toolkits/clean-theme-gtk|x11-themes/clean-theme-gtk|2004-06-02|new category
+x11-toolkits/colorstep|x11-themes/colorstep|2004-06-02|new category
+x11-toolkits/engradient|x11-themes/engradient|2004-06-02|new category
+x11-toolkits/geramik|x11-themes/geramik|2004-06-02|new category
+x11-toolkits/gnome-industrial-theme|x11-themes/gnome-industrial-theme|2004-06-02|new category
+x11-toolkits/gnome-look|x11-themes/gnome-look|2004-06-02|new category
+x11-toolkits/gnome-themes|x11-themes/gnome-themes|2004-06-02|new category
+x11-toolkits/gnome-themes-extras|x11-themes/gnome-themes-extras|2004-06-02|new category
+x11-toolkits/gtk-Mac2-theme|x11-themes/gtk-Mac2-theme|2004-06-02|new category
+x11-toolkits/gtk-aqualightblue-theme|x11-themes/gtk-aqualightblue-theme|2004-06-02|new category
+x11-toolkits/gtk-bluecurve-theme|x11-themes/gtk-bluecurve-theme|2004-06-02|new category
+x11-toolkits/gtk-cleanice-engine|x11-themes/gtk-cleanice-engine|2004-06-02|new category
+x11-toolkits/gtk-engines|x11-themes/gtk-engines|2004-06-02|new category
+x11-toolkits/gtk-engines-collection|x11-themes/gtk-engines-collection|2004-06-02|new category
+x11-toolkits/gtk-engines2|x11-themes/gtk-engines2|2004-06-02|new category
+x11-toolkits/gtk-flat-theme|x11-themes/gtk-flat-theme|2004-06-02|new category
+x11-toolkits/gtk-flat-theme2|x11-themes/gtk-flat-theme2|2004-06-02|new category
+x11-toolkits/gtk-industrial-theme|x11-themes/gtk-industrial-theme|2004-06-02|new category
+x11-toolkits/gtk-qn-x11-theme|x11-themes/gtk-qn-x11-theme|2004-06-02|new category
+x11-toolkits/gtk-qnxtheme|x11-themes/gtk-qnxtheme|2004-06-02|new category
+x11-toolkits/gtk-smooth-engine|x11-themes/gtk-smooth-engine|2004-06-02|new category
+x11-toolkits/gtk-xfce-engine|x11-themes/gtk-xfce-engine|2004-06-02|new category
+x11-toolkits/gtk-zenith-theme|x11-themes/gtk-zenith-theme|2004-06-02|new category
+x11-toolkits/icegradient|x11-themes/icegradient|2004-06-02|new category
+x11-toolkits/qt-bluecurve-theme|x11-themes/qt-bluecurve-theme|2004-06-02|new category
+x11-toolkits/thinice|x11-themes/thinice|2004-06-02|new category
+x11-toolkits/whistlerk|x11-themes/whistlerk|2004-06-02|new category
+x11-toolkits/xenophilia|x11-themes/xenophilia|2004-06-02|new category
+x11-toolkits/xenostep|x11-themes/xenostep|2004-06-02|new category
