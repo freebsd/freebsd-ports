@@ -2,6 +2,7 @@ bin/gnupod_INIT.pl
 bin/gnupod_addsong.pl
 bin/gnupod_check.pl
 bin/gnupod_convert_FLAC.pl
+bin/gnupod_convert_MIDI.pl
 bin/gnupod_convert_OGG.pl
 bin/gnupod_otgsync.pl
 bin/gnupod_search.pl
@@ -13,8 +14,10 @@ bin/tunes2pod.pl
 %%SITE_PERL%%/%%PERL_ARCH%%/GNUpod/QTfile.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/GNUpod/XMLhelper.pm
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
+%%PORTDOCS%%%%DOCSDIR%%/gnupodrc.example
 %%PORTDOCS%%%%DOCSDIR%%/gnutunesdb.example
 %%PORTDOCS%%%%DOCSDIR%%/gnupod.html
+%%PORTDOCS%%%%DOCSDIR%%/mkspl.html
 %%PORTDOCS%%%%DOCSDIR%%/gnupod.texi
 %%PORTDOCS%%%%DOCSDIR%%/fdl.texi
 %%PORTDOCS%%%%DOCSDIR%%/version.texi
