@@ -16,7 +16,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flash Rendering Library
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
-		mad.1:${PORTSDIR}/audio/mad
+		mad.1:${PORTSDIR}/audio/mad \
+		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
@@ -24,7 +25,7 @@ USE_GNOME=	gtk20 libartlgpl2
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
 INSTALLS_SHLIB=	yes
 
 post-patch:
