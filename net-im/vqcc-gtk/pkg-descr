@@ -1,0 +1,12 @@
+vqcc-gtk is a chat application written in C for the GTK+ toolkit, primarily
+used in small LAN's. It is based on quickChat/Vypress Chat (TM) for Windows
+(from Vypress Research) and is licensed under the GPL.
+
+The application supports both quickChat and Vypress Chat(TM) protocols and
+hopefully is compatible enough to substitute those applications when using
+Linux, FreeBSD or another *NIX desktop. You need no server to run, however
+it is not possible to communicate outside your LAN (or subnet).
+
+(From the About page)
+
+WWW: http://vqcc-gtk.sourceforge.net/
