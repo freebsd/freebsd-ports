@@ -8296,6 +8296,7 @@ qdbm		ports/databases/qdbm
 qdecoder	ports/www/qdecoder
 qdvdauthor	ports/multimedia/qdvdauthor
 qemacs		ports/editors/qemacs
+qemu		ports/emulators/qemu
 qextmdi		ports/devel/qextmdi
 qfsm		ports/cad/qfsm
 qglviewer	ports/graphics/qglviewer
