@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	pancho
-PORTVERSION=	4.1
+PORTVERSION=	5.0
 CATEGORIES=	net
-MASTER_SITES=	ftp://pancho.lunarmedia.net/
+MASTER_SITES=	ftp://pancho.lunarmedia.net/pancho/ \
+		http://pancho.lunarmedia.net/
 DISTNAME=	pancho-v${PORTVERSION}
 
 MAINTAINER=	Nicolas.Jombart@hsc-labs.com
