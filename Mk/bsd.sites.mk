@@ -781,6 +781,7 @@ MASTER_SITE_SUNSITE+=	\
 	ftp://ftp.chg.ru/pub/Linux/sunsite/%SUBDIR%/
 
 MASTER_SITE_SUSE+= 	\
+	http://mirrors.usc.edu/pub/linux/distributions/suse/%SUBDIR%/ \
 	ftp://ftp-linux.cc.gatech.edu/pub/suse/suse/%SUBDIR%/ \
 	http://mirror.usu.edu/mirrors/suse/%SUBDIR%/ \
 	ftp://ftp.ale.org/pub/suse/%SUBDIR%/ \
