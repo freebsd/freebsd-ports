@@ -1,0 +1,6 @@
+include/netgraph/ng_ipacct.h
+etc/ng_ipacct.conf
+sbin/ipacctctl
+@unexec rmdir %D/include/netgraph 2>/dev/null || true
+@cwd /
+%%KMODDIR%%/ng_ipacct.ko

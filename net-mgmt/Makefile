@@ -93,6 +93,7 @@
     SUBDIR += netwag
     SUBDIR += netwox
     SUBDIR += nfdump
+    SUBDIR += ng_ipacct
     SUBDIR += nitpicker
     SUBDIR += nocol
     SUBDIR += nrg
