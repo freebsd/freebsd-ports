@@ -1395,6 +1395,7 @@ digikam		ports/graphics/digikam
 digikamplugins	ports/graphics/digikamplugins
 dillo		ports/www/dillo
 dim		ports/sysutils/dim
+dinotrace	ports/cad/dinotrace
 dirac		ports/multimedia/dirac
 diradmin	ports/net/diradmin
 dircproxy	ports/irc/dircproxy
