@@ -1,5 +1,5 @@
---- config.h.orig	Sat Mar  6 13:16:31 1999
-+++ config.h	Sat Mar  6 13:17:25 1999
+--- config.h.orig	Fri Mar 19 16:39:48 1999
++++ config.h	Mon Apr  5 17:16:37 1999
 @@ -1,7 +1,7 @@
  /* configuration file - precompile options */
  
