@@ -3,7 +3,7 @@
 # Whom:			pst
 # Version required:	5.26
 #
-# $Id: Makefile,v 1.34 1998/09/22 18:52:16 asami Exp $
+# $Id: Makefile,v 1.35 1998/09/25 10:05:08 asami Exp $
 #
 # Note this file is included from japanese/expect/Makefile
 
@@ -29,6 +29,13 @@ MAN3=		libexpect.3
 .endif
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	${LN} -sf ${SOLIB} ${PREFIX}/lib/libexpect526.so
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+SOLIB=	libexpect526.so.1
+.else
+SOLIB=	libexpect526.so.1.2
+.endif
