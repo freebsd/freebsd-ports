@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Implementation of SMTP, ESMTP and LMTP protocols
 
-RUN_DEPENDS=	${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
+BUILD_DEPENDS=	${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -27,7 +28,8 @@ MAN3=		Net::Server::Mail.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=		This port needs Perl 5.006 or greater, please upgrade your Perl
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/IO/Socket/INET.pm:${PORTSDIR}/devel/p5-IO
+EXTRA_PATCHES=	${PATCHDIR}/5.005_03.diff
 .endif
 
 .include <bsd.port.post.mk>
