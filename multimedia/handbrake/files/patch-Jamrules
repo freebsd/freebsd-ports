@@ -1,0 +1,29 @@
+--- Jamrules.orig	Tue May 25 13:51:32 2004
++++ Jamrules	Mon Nov 22 12:57:16 2004
+@@ -8,11 +8,11 @@
+ LANGUAGES  = fr de it pl ru nl es pt ja ;
+ 
+ # Compilers & flags
+-CC      = gcc ;
+-C++     = g++ ;
++CC      = %%CC%% ;
++C++     = %%CXX%% ;
+ AS      = nasm ;
+-LINK    = g++ ;
+-OPTIM   = -O3 -funroll-loops ;
++LINK    = %%CXX%% ;
++OPTIM   = %%CFLAGS%% ;
+ DEFINES = HB_$(OS) HB_VERSION=\\\"$(HB_VERSION)\\\" ;
+ 
+ if $(OS) = BEOS
+@@ -32,6 +32,10 @@
+ if $(OS) = LINUX
+ {
+     ASFLAGS   = -f elf ;
++}
++if $(OS) = FREEBSD
++{
++    OPTIM     = %%CFLAGS%% ;
+ }
+ if $(OS) = CYGWIN
+ {

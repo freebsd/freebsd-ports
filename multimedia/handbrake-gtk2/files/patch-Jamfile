@@ -1,0 +1,23 @@
+--- Jamfile.orig	Wed May 26 05:51:32 2004
++++ Jamfile	Mon Nov 22 20:29:09 2004
+@@ -54,6 +54,20 @@
+     ObjectCcFlags   $(GTK2_SRC) : `pkg-config gtk+-2.0 --cflags` ;
+     Main            $(GTK2_BIN) : $(GTK2_SRC) ;
+ }
++if $(OS) = FREEBSD
++{
++    HB_LIBS = libhb.a libx264.a ;
++    SystemLibraries $(TEST_BIN) : %%LIBAVCODEC%%/libavcodec.a
++    		-L%%PREFIX%%/lib %%PTHREAD_LIBS%% -la52
++    		-ldvdcss -ldvdread -lfaac -lmp3lame -lmp4v2 -lmpeg2 -logg
++		-lsamplerate -lvorbis -lvorbisenc -lxvidcore ;
++    SystemLibraries $(GTK2_BIN) : %%LIBAVCODEC%%/libavcodec.a
++    		-L%%PREFIX%%/lib %%PTHREAD_LIBS%% `pkg-config gtk+-2.0 --libs`
++    		-la52 -ldvdcss -ldvdread -lfaac -lmp3lame -lmp4v2
++		-lmpeg2 -logg -lsamplerate -lvorbis -lvorbisenc -lxvidcore ;
++    ObjectCcFlags   $(GTK2_SRC) : `pkg-config gtk+-2.0 --cflags` ;
++    Main            $(GTK2_BIN) : $(GTK2_SRC) ;
++}
+ if $(OS) = CYGWIN
+ {
+     SystemLibraries $(TEST_BIN) : -lws2_32 ;

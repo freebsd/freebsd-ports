@@ -1,0 +1,18 @@
+--- contrib/Jamfile.orig	Fri Nov 19 15:50:35 2004
++++ contrib/Jamfile	Fri Nov 19 15:50:49 2004
+@@ -1,15 +1,3 @@
+ SubDir TOP contrib ;
+
+-SubInclude TOP contrib liba52 ;
+-SubInclude TOP contrib libavcodec ;
+-SubInclude TOP contrib libdvdcss ;
+-SubInclude TOP contrib libdvdread ;
+-SubInclude TOP contrib libfaac ;
+-SubInclude TOP contrib libmp3lame ;
+-SubInclude TOP contrib libmp4v2 ;
+-SubInclude TOP contrib libmpeg2 ;
+-SubInclude TOP contrib libogg ;
+-SubInclude TOP contrib libsamplerate ;
+-SubInclude TOP contrib libvorbis ;
+ SubInclude TOP contrib libx264 ;
+-SubInclude TOP contrib libxvidcore ;
