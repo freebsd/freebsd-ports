@@ -29,6 +29,6 @@ do-extract:
 		${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${DISTNAME} ${PREFIX}/lib/modules/drivers
+	${INSTALL_DATA} ${WRKSRC}/${DISTNAME} ${PREFIX}/lib/modules/drivers
 
 .include <bsd.port.mk>
