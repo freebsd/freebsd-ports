@@ -13,7 +13,7 @@
 %%HLDSDIR%%VS/bots/changes.txt
 %%HLDSDIR%%VS/bots/chat.txt
 %%HLDSDIR%%VS/bots/names.txt
-%%HLDSDIR%%VS/bots/readme.txt
+%%PORTDOCS%%%%HLDSDIR%%VS/bots/readme.txt
 %%HLDSDIR%%VS/cached.wad
 %%HLDSDIR%%VS/cl_dlls/client.dll
 %%HLDSDIR%%VS/classes/short_EDGAR.txt
