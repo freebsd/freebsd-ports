@@ -1,0 +1,10 @@
+include/glitz-glx.h
+include/glitz.h
+lib/libglitz-glx.a
+lib/libglitz-glx.so
+lib/libglitz-glx.so.1
+lib/libglitz.a
+lib/libglitz.so
+lib/libglitz.so.1
+libdata/pkgconfig/glitz-glx.pc
+libdata/pkgconfig/glitz.pc
