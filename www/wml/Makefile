@@ -49,6 +49,12 @@ CAT7=	wml_barebone.7 \
 
 MAN7=	wml_intro.7 wml_macros.7 wml_tutorial.7 wml_faq.7 wml_tags.7
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 500800
+BROKEN=		"Does not compile with perl >=5.8"
+.endif
+
 #   catpages are usually not installed, so they are not compressed.
 #   But they are really needed as docs, so we compress manually...
 .if !defined(NOMANCOMPRESS)
@@ -67,4 +73,4 @@ post-build:
 test:
 	@cd ${WRKSRC} && ${MAKE} test
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
