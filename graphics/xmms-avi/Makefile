@@ -15,6 +15,8 @@ DISTNAME=	avi-xmms-${PORTVERSION}
 
 MAINTAINER=	roman@xpert.com
 
+BROKEN=		Maintainer is working on a fix
+
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/audio/xmms
 LIB_DEPENDS=	aviplay.0:${PORTSDIR}/graphics/avifile
 RUN_DEPENDS=	xmms:${PORTSDIR}/audio/xmms
