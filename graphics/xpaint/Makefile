@@ -1,12 +1,12 @@
 # New ports collection makefile for:    xpaint
-# Version required:     2.5.2
+# Version required:     2.5.3
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.15 1997/11/29 02:02:16 jseger Exp $
+# $Id: Makefile,v 1.16 1997/12/01 07:59:32 tg Exp $
 #
 
-DISTNAME=       xpaint-2.5.2
+DISTNAME=       xpaint-2.5.3
 CATEGORIES=	graphics x11
 MASTER_SITES=	http://www.danbbs.dk/~torsten/xpaint/
 
