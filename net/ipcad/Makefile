@@ -1,12 +1,12 @@
 # New ports collection makefile for:	ipcad
 # Date created:				15 April 2001
-# Whom:					vlm@spelio.net.ru
+# Whom:					Lev Walkin <vlm@spelio.net.ru>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	ipcad
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 CATEGORIES=	net
 MASTER_SITES=	http://www.spelio.net.ru/soft/
 
