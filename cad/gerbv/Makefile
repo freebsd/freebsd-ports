@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gerbv
-PORTVERSION=	0.16
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	cad
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,14 +17,20 @@ COMMENT=	A Free Gerber Viewer
 
 USE_GNOME=	gnometarget gtk20
 USE_GETOPT_LONG=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-gtk2
 
-MAN1=	gerbv.1
+MAN1=		gerbv.1
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
+
+post-patch:
+	@${FIND} ${WRKSRC} -name "configure" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|libpng-config --cflags|pkg-config --cflags libpng12|g ; \
+		 s|libpng-config --libs|pkg-config --libs libpng12|g'
 
 post-install:
 .if !defined(NOPORTDOCS)
