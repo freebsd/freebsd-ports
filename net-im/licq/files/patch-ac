@@ -1,17 +1,11 @@
---- src/icq.cpp	Mon Jul 13 20:53:45 1998
-+++ src/icq.cpp	Wed Aug  5 18:02:39 1998
-@@ -338,7 +338,13 @@
-    case ICQ_CMD_PING: if (!gotAck) emit doneOwnerFcn(false, cmd); break;
-    case ICQ_CMD_ADDUSER: if (!gotAck) emit doneOwnerFcn(false, cmd); break;
-    case ICQ_CMD_AUTHORIZE: emit doneOwnerFcn(false, cmd); break;
--   case ICQ_CMD_LOGON: if (!gotAck) emit doneOwnerFcn(false, cmd); break;
-+   case ICQ_CMD_LOGON: 
-+      if (!gotAck) 
-+      {
-+         emit doneOwnerFcn(false, cmd);
-+         logoff(false); 
-+      }
-+      break;
-    case ICQ_CMD_USERLIST: if (!gotAck) emit doneOwnerFcn(false, cmd); break;
-    case ICQ_CMD_REQ_SYSMESG: if (!gotAck) emit doneOwnerFcn(false, cmd); break;
-    case ICQ_CMD_END_SM_ACK: if (!gotAck) emit doneOwnerFcn(false, cmd); break;
+--- src/licq.cpp	Fri Oct 30 14:29:03 1998
++++ src/licq.cpp	Fri Oct 30 19:23:35 1998
+@@ -67,7 +67,7 @@
+       cout << "Done installation, continuing load." << endl << endl;
+    }
+    
+-   setStyle(WindowsStyle);
++   setStyle(MotifStyle);
+    // create the main widgets
+    if (DEBUG_LEVEL >= 1) cout << "\n=> Setting up Licq daemon." << endl;
+    icq = new ICQ;

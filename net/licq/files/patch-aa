@@ -1,16 +1,29 @@
---- src/Makefile.in	Tue Jul 14 16:18:02 1998
-+++ src/Makefile.in	Wed Aug  5 18:05:00 1998
-@@ -15,11 +15,11 @@
+--- misc/Makefile.in.orig	Fri Oct 30 13:29:28 1998
++++ misc/Makefile.in	Sun Nov  1 21:22:45 1998
+@@ -17,6 +17,7 @@
+ INSTALL = @INSTALL@
  INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_DATA = @INSTALL_DATA@
++INSTALL_SCRIPT = ${INSTALL} -c -o bin -g bin -m 555
  
- CXX	= @CXX@
--CXXFLAGS= @CXXFLAGS@
-+CXXFLAGS= @CXXFLAGS@ -I.
- CPPFLAGS= -DPACKAGE=\"@PACKAGE@\" -DVERSION=\"@VERSION@\" \
- 	  @QT_INCLUDES@ @X_INCLUDES@
- LDFLAGS	= @QT_LDFLAGS@ @X_LDFLAGS@
--LDLIBS	= -lqt
-+LDLIBS	= -lqt -lX11
- MOC	= @MOC@
+ CONF_FILES = sample.uin users.conf licq.conf
  
- OBJECTS	= file.o message.o packet.o socket.o icqfunctions.o user.o \
+@@ -31,9 +32,9 @@
+ 	$(RM) Makefile
+ 
+ install:
+-	${INSTALL_PROGRAM} licq.javaconvert ${bindir}
+-	${INSTALL_PROGRAM} licq.micqconvert ${bindir}
+-	${INSTALL_PROGRAM} licq.winconvert ${bindir}
++	${INSTALL_SCRIPT} licq.javaconvert ${bindir}
++	${INSTALL_SCRIPT} licq.micqconvert ${bindir}
++	${INSTALL_SCRIPT} licq.winconvert ${bindir}
+ 	${INSTALL} -d ${pkgdatadir}/data
+ 	${INSTALL} -d ${pkgdatadir}/conf
+ 	${INSTALL} -d ${pkgdatadir}/translations
+@@ -46,4 +47,5 @@
+ 	for i in translations/*; do \
+ 	  ${INSTALL_DATA} $$i ${pkgdatadir}/translations; \
+ 	done
++	${INSTALL} licq.1 ${prefix}/man/man1
+ 

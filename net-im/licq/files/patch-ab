@@ -1,4 +1,11 @@
---- /dev/null	Wed Aug  5 18:00:59 1998
-+++ src/qmetaobject.h	Wed Aug  5 18:03:45 1998
-@@ -0,0 +1 @@
-+#include <qmetaobj.h>
+--- src/adduserdlg.cpp	Fri Oct 30 14:29:03 1998
++++ src/adduserdlg.cpp	Fri Oct 30 19:23:23 1998
+@@ -13,7 +13,7 @@
+    edtUin->setGeometry(100, 15, 120, 20);
+    edtUin->setValidator(new QIntValidator(0, 2147483647, edtUin));
+    chkAlert = new QCheckBox("Alert User", this);
+-   chkAlert->setStyle(WindowsStyle);
++   chkAlert->setStyle(MotifStyle);
+    chkAlert->setGeometry(10, 50, 80, 20);
+    chkAlert->setEnabled(false);  //for now
+    btnOk = new QPushButton("Ok", this);
