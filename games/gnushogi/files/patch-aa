@@ -1,0 +1,53 @@
+*** src/Makefile.orig	Wed May 24 14:05:26 1995
+--- src/Makefile	Tue Oct 22 20:00:44 1996
+***************
+*** 48,62 ****
+  # compile. Ask your system admin / unix guru to put gnushogi.{hsh,lng,tbk}
+  # in $(LIBDIR).
+  # Where the binaries live.
+! BINDIR= $(prefix)/games
+  #BINDIR=/public/projects/shogi/bin
+  
+  # Where language description, our book, and the persistent hash live.
+! LIBDIR= $(prefix)/games/lib/gnushogi
+  #LIBDIR=/public/projects/shogi/lib
+  
+  # Distribution directory
+! DISTDIR=/public/projects/shogi
+  
+  # Programs being distributed
+  PROGS=gnushogi-$(VERS)
+--- 48,62 ----
+  # compile. Ask your system admin / unix guru to put gnushogi.{hsh,lng,tbk}
+  # in $(LIBDIR).
+  # Where the binaries live.
+! BINDIR= $(prefix)/bin
+  #BINDIR=/public/projects/shogi/bin
+  
+  # Where language description, our book, and the persistent hash live.
+! LIBDIR= $(prefix)/share/gnushogi
+  #LIBDIR=/public/projects/shogi/lib
+  
+  # Distribution directory
+! DISTDIR=/usr/ports/games/gnushogi/work
+  
+  # Programs being distributed
+  PROGS=gnushogi-$(VERS)
+***************
+*** 96,102 ****
+  #CFLAGS= -O2 -funroll-loops -traditional-cpp -DNO_STRING_INCLUDE -DNOFIONREAD # gnu cc  2.00 (hawk)
+  #CFLAGS= -O2 -funroll-loops -DSEVENBIT # djgpp
+  #CFLAGS= -g -funroll-loops # gnu cc 2.00 on SunOS with debug
+! CFLAGS= -O2 -funroll-loops # gnu cc 2.00 on SunOS
+  
+  # flags for DJGPP package
+  #COFF2EXE= coff2exe $(GNUSHOGI)
+--- 96,103 ----
+  #CFLAGS= -O2 -funroll-loops -traditional-cpp -DNO_STRING_INCLUDE -DNOFIONREAD # gnu cc  2.00 (hawk)
+  #CFLAGS= -O2 -funroll-loops -DSEVENBIT # djgpp
+  #CFLAGS= -g -funroll-loops # gnu cc 2.00 on SunOS with debug
+! #CFLAGS= -O2 -funroll-loops # gnu cc 2.00 on SunOS
+! CFLAGS= -O2 -m486 -pipe -fno-strength-reduce
+  
+  # flags for DJGPP package
+  #COFF2EXE= coff2exe $(GNUSHOGI)

@@ -1,0 +1,13 @@
+GNU version of Shogi, a game of Japanese chess.
+
+Gnushogi is an updated version of  the  gnuchess  program.
+It  has a simple alpha-numeric board display, or it can be
+compiled for use with the chesstool program on a SUN work-
+station  or  with the xshogi program under X-windows.  The
+program gets its opening moves from the file gnushogi.book
+which is located in a directory specified in the makefile.
+
+To invoke the program type:
+	gnushogi
+
+Yukihiro Nakai<Nakai@Mlab.t.u-tokyo.ac.jp>
