@@ -19,6 +19,13 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	patrick@watson.org
 COMMENT=	An ML language based on a complete class-based objective system
 
+.if defined(WITHOUT_X11)
+PLIST_SUB+=	X11="@comment " TK="@comment "
+WITHOUT_TK=	yes
+TKSFX=		-nox11
+.else
+PLIST_SUB+=	X11=""
+USE_XLIB=	yes
 .if defined(WITHOUT_TK)
 PLIST_SUB+=	TK="@comment "
 TKSFX=		-notk
@@ -28,8 +35,8 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/tcl8.3:${PORTSDIR}/lang/tcl83
 BUILD_DEPENDS+=	${LOCALBASE}/include/tk8.3:${PORTSDIR}/x11-toolkits/tk83
 LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 .endif
+.endif
 
-USE_XLIB=	yes
 HAS_CONFIGURE=	yes
 ALL_TARGET=	world.opt
 
@@ -67,14 +74,18 @@ MLINKS=		ocamlc.1 ocamlc.opt.1 ocamlopt.1 ocamlopt.opt.1 \
 		camlp4.1 ocpp.1
 
 CONFIGURE_ARGS=	-prefix ${PREFIX} \
-		-x11include ${X11BASE}/include \
-		-x11lib ${X11BASE}/lib \
 		-with-pthread
 
-.if defined(WITHOUT_TK)
-CONFIGURE_ARGS+=-no-tk
+.if defined(WITHOUT_X11)
+CONFIGURE_ARGS+=	-tk-no-x11 -no-tk
 .else
-CONFIGURE_ARGS+=-tkdefs "-I${PREFIX}/include/tcl8.3 -I${PREFIX}/include/tk8.3"
+CONFIGURE_ARGS+=	-x11include ${X11BASE}/include \
+			-x11lib ${X11BASE}/lib
+.if defined(WITHOUT_TK)
+CONFIGURE_ARGS+=	-no-tk
+.else
+CONFIGURE_ARGS+=	-tkdefs "-I${LOCALBASE}/include/tcl8.3 -I${LOCALBASE}/include/tk8.3"
+.endif
 .endif
 
 .if !defined(NOPORTDOCS)
