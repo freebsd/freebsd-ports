@@ -1,0 +1,164 @@
+#!/bin/sh
+#
+# INDEX build tinderbox script.  Build an INDEX for all supported FreeBSD branches
+# using the latest value of OSVERSION according to the src trees.  If the build
+# fails, yowl about it on ports@.  If not, copy the index to www.freebsd.org so
+# that 'make fetchindex' sees it.
+#
+# When INDEX is broken, assemble the list of committers who touched files
+# on the most recent 'cvs update', and put those committers "on the hook".
+# These committers all stay on the hook until INDEX is buildable again.
+
+blame() {
+  # Find out who is responsible for current version of file $1
+
+  # Fastest way to extract is from the $FreeBSD$ tag
+  ident=$(ident $1 2>/dev/null | grep '$FreeBSD')
+  who=$(echo $ident | awk '{print $6}')
+
+  if [ -z "$ident" ]; then
+    # No $FreeBSD$ tag, fall back to slower method of parsing cvs logs.
+    rev=$(cvs status $1 2>/dev/null | grep 'Working revision:' | awk '{print $3}')
+    if [ "$rev" != "No" ]; then    # "No" means not under CVS control
+      ident=$(cvs -Rq log -r$rev $1 | grep "^date:" | head -1 | sed 's,;,,g')
+      who=$(echo $ident | awk '{print $5}')
+    fi
+  fi
+
+  echo $who
+}
+
+indexfail() {
+  BRANCH=$1
+
+  # Leave a cookie behind so that we know when the index is fixed
+  touch ${PORTSDIR}/broken.${BRANCH}
+
+  (
+    echo "INDEX build failed with errors:";
+    len=$(wc -l index.out | awk '{print $1}')
+    if [ "$len" -gt "40" ]; then
+      head -20 index.out
+      echo "[...]"
+      tail -20 index.out
+    else
+      cat index.out
+    fi
+
+    len=$(wc -l index.err | awk '{print $1}')
+    if [ "$len" -gt "40" ]; then
+      head -20 index.err
+      echo "[...]"
+      tail -20 index.err
+    else
+      cat index.err
+    fi
+
+    # Find out which committers are on the hook
+
+    commits=$(grep ^U ${PORTSDIR}/cvs.log | grep -v INDEX | awk '{print $2}')
+    for i in ${commits}; do
+	blame $i >> ${PORTSDIR}/hook
+    done
+    sort -u ${PORTSDIR}/hook > ${PORTSDIR}/hook.new
+    mv ${PORTSDIR}/hook.new ${PORTSDIR}/hook
+    echo
+    echo "Committers on the hook:"
+    tr -s '\n' ' ' < ${PORTSDIR}/hook
+    echo
+    echo 
+    echo "Most recent CVS update was:";
+    grep -v '/work$' cvs.log | grep -v '^\?'
+  ) | mail -s "INDEX build failed for ${BRANCH}" ports@FreeBSD.org
+  exit 1
+}
+
+checkfixed() {
+  BRANCH=$1
+
+  # If the cookie exists that means that this is the first build for which the
+  # INDEX succeeded, so announce this.
+  if [ -e ${PORTSDIR}/broken.${BRANCH} ]; then
+    rm -f ${PORTSDIR}/broken.${BRANCH}
+    mail -s "INDEX now builds successfully on ${BRANCH}" ports@FreeBSD.org < /dev/null
+  fi
+}
+
+# Sanitize the environment so that the indexes aren't customized by the
+# local machine settinge
+export __MAKE_CONF=/dev/null
+export PORT_DBDIR=/nonexistent
+export PKG_DBDIR=/nonexistent
+
+export PORTSDIR=/vol/vol0/users/kris/ports.clean
+export SRCDIR4=/vol/vol0/users/kris/src.4
+export SRCDIR5=/vol/vol0/users/kris/src.5
+export SRCDIR6=/vol/vol0/users/kris/src.6
+
+# First update the source trees to get current OSVERSION
+cd ${SRCDIR4}/sys/sys
+cvs -Rq update -PdA -r RELENG_4 param.h
+OSVERSION4=$(awk '/^#define __FreeBSD_version/ {print $3}' < ${SRCDIR4}/sys/sys/param.h)
+
+cd ${SRCDIR5}/sys/sys
+cvs -Rq update -PdA -r RELENG_5 param.h
+OSVERSION5=$(awk '/^#define __FreeBSD_version/ {print $3}' < ${SRCDIR5}/sys/sys/param.h)
+
+cd ${SRCDIR6}/sys/sys
+cvs -Rq update -PdA param.h
+OSVERSION6=$(awk '/^#define __FreeBSD_version/ {print $3}' < ${SRCDIR6}/sys/sys/param.h)
+
+cd ${PORTSDIR}
+rm -f INDEX INDEX.bz2 INDEX-5 INDEX-5.bz2 INDEX-6 INDEX-6.bz2
+(cvs -Rq update -PdA 2>1 ) > cvs.log
+if grep -q ^C cvs.log ; then
+  (echo "cvs update failed with conflicts:";
+    grep ^C cvs.log) | mail -s "Ports cvsup failed" kris@FreeBSD.org
+    exit 1
+fi
+  
+export INDEX_PRISTINE=1
+export INDEX_JOBS=4
+export INDEX_QUIET=1
+
+export OSVERSION=${OSVERSION4}
+BRANCH=4.x
+echo "Building INDEX for ${BRANCH} with OSVERSION=${OSVERSION}"
+cd ${PORTSDIR}
+((make index 2> index.err) > index.out) || indexfail ${BRANCH}
+if [ -s index.err ]; then
+	indexfail ${BRANCH}
+fi
+checkfixed ${BRANCH}
+
+bzip2 -kf ${PORTSDIR}/INDEX
+scp ${PORTSDIR}/INDEX ${PORTSDIR}/INDEX.bz2 kris@www.freebsd.org:/usr/local/www/ports || mail -s "Cannot copy INDEX" kris@FreeBSD.org < /dev/null
+
+BRANCH=5.x
+export OSVERSION=${OSVERSION5}
+echo "Building INDEX for ${BRANCH} with OSVERSION=${OSVERSION}"
+cd ${PORTSDIR}
+((make index 2> index.err) > index.out) || indexfail ${BRANCH}
+if [ -s index.err ]; then
+	indexfail ${BRANCH}
+fi
+checkfixed ${BRANCH}
+
+bzip2 -kf ${PORTSDIR}/INDEX-5
+scp ${PORTSDIR}/INDEX-5 ${PORTSDIR}/INDEX-5.bz2 kris@www.freebsd.org:/usr/local/www/ports || mail -s "Cannot copy INDEX-5" kris@FreeBSD.org < /dev/null
+
+BRANCH=6.x
+export OSVERSION=${OSVERSION6}
+echo "Building INDEX for ${BRANCH} with OSVERSION=${OSVERSION}"
+cd ${PORTSDIR}
+((make index 2> index.err) > index.out) || indexfail ${BRANCH}
+if [ -s index.err ]; then
+	indexfail ${BRANCH}
+fi
+checkfixed ${BRANCH}
+
+bzip2 -kf ${PORTSDIR}/INDEX-6
+scp ${PORTSDIR}/INDEX-6 ${PORTSDIR}/INDEX-6.bz2 kris@www.freebsd.org:/usr/local/www/ports || mail -s "Cannot copy INDEX-6" kris@FreeBSD.org < /dev/null
+
+# All indexes built successfully, clear the hook
+rm -f ${PORTSDIR}/hook
