@@ -28,6 +28,29 @@ lib/erlang/lib/yaws-%%VERSION%%/include/yaws.hrl
 lib/erlang/lib/yaws-%%VERSION%%/include/yaws_api.hrl
 lib/erlang/lib/yaws-%%VERSION%%/priv/mime.types
 lib/erlang/lib/yaws-%%VERSION%%/priv/setuid_drv.so
+lib/erlang/lib/yaws-%%VERSION%%/src/mime_type_c.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/mime_types.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_404.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_api.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_app.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_cgi.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_compile.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_config.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_ctl.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_debug.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_html.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_log.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_log_file_h.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_ls.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_revproxy.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_server.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_session_server.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_ssl.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_sup.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_ticker.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_vsn.erl
+lib/erlang/lib/yaws-%%VERSION%%/src/yaws_zlib.erl
 www/yaws/END
 www/yaws/EXHEAD
 www/yaws/HEAD
@@ -219,6 +242,7 @@ www/yaws/ybed.erl
 @dirrm www/yaws/icons/small
 @dirrm www/yaws/icons
 @dirrm www/yaws
+@dirrm lib/erlang/lib/yaws-%%VERSION%%/src
 @dirrm lib/erlang/lib/yaws-%%VERSION%%/priv
 @dirrm lib/erlang/lib/yaws-%%VERSION%%/include
 @dirrm lib/erlang/lib/yaws-%%VERSION%%/ebin
