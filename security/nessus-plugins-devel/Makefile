@@ -5,6 +5,7 @@
 
 PORTNAME=	nessus-plugins-devel
 PORTVERSION=	1.1.11
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.cis.fed.gov/pub/nessus/unstable/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.nessus.org/pub/nessus/unstable/nessus-${PORTVERSION}/src/ \
@@ -28,7 +29,8 @@ WRKSRC=		${WRKDIR}/nessus-plugins
 DISTNAME=	nessus-plugins-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-fetchcmd=wget
+CONFIGURE_ARGS=	--with-fetchcmd=wget --sharedstatedir=${PREFIX}/etc/nessus/com \
+		--localstatedir=${PREFIX}/etc/nessus/var
 
 MAN1=		nessus-build.1
 MAN8=		nessus-update-plugins.8
