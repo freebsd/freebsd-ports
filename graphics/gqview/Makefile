@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gqview
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.2
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,28 +18,22 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gdkpixbuf
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
+USE_AUTOCONF_VER=	213
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
-
-.include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mlibcapplet}!=""
-USE_GNOME+=	libcapplet
-PKGNAMESUFFIX=	-gnome
-.endif
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-gnome
 
 MAN1=		gqview.1
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
-		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
-		's|GNOME_DATADIR\)/gnome/|GNOME_DATADIR\)/|g'
+post-patch:
+	@${REINPLACE_CMD} -e 's|INCLUDED_LIBINTL=yes|INCLUDED_LIBINTL=no|g' \
+		${WRKSRC}/aclocal.m4
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/gqview
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/gqview
-.endif
+	${MKDIR} ${PREFIX}/share/gnome/pixmaps
+	${MKDIR} ${PREFIX}/share/gnome/apps/Graphics
+	${INSTALL_DATA} ${WRKSRC}/gqview.png ${PREFIX}/share/gnome/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/gqview.desktop ${PREFIX}/share/gnome/apps/Graphics
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
