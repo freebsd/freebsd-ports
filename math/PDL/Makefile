@@ -3,7 +3,7 @@
 # Date created:		08 February 1999
 # Whom:			Anton Berezin <tobez@plab.ku.dk>
 #
-# $Id: Makefile,v 1.1.1.1 1999/04/03 02:13:53 steve Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	PDL-2.0

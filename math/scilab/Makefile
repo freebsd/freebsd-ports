@@ -3,7 +3,7 @@
 # Date created:        13 June 1997
 # Whom:                paulo@isr.uc.pt
 #
-# $Id: Makefile,v 1.3 1998/07/25 12:54:07 asami Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	scilab-2.3.1

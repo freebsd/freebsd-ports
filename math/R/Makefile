@@ -3,7 +3,7 @@
 # Date created:                Tue Jun 23 07:36:55 EST 1998
 # Whom:                        Maurice Castro <maurice@serc.rmit.edu.au>
 #
-# $Id: Makefile,v 1.10 1999/04/21 12:53:54 jseger Exp $
+# $FreeBSD$
 #
 
 DISTNAME=	R-0.62.2
