@@ -58,6 +58,9 @@ MAN8=	actived.8 actsync.8 actsyncd.8 archive.8 batcher.8 buffchan.8 \
 	pgpverify.8 prunehistory.8 pullnews.8 scanlogs.8 send-uucp.8 sm.8 \
 	tally.control.8 tally.unwanted.8 writelog.8
 
+pre-install:
+	${MKDIR} /var/spool/news
+
 post-install:
 	${SED} <${FILESDIR}/innd.sh >${PREFIX}/etc/rc.d/innd.sh \
 		s+!!PREFIX!!+${PREFIX}+g && chmod +x ${PREFIX}/etc/rc.d/innd.sh
