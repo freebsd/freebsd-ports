@@ -43,6 +43,7 @@
     SUBDIR += p5-DBD-Pg
     SUBDIR += p5-DBD-XBase
     SUBDIR += p5-DBI
+    SUBDIR += p5-DBIx-Recordset
     SUBDIR += p5-DBZ_File
     SUBDIR += p5-GDBM
     SUBDIR += p5-MLDBM
