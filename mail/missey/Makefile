@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	missey
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	mail
 MASTER_SITES=	http://snofe.dot66.net/missey/
 
