@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	thunderbird
-PORTVERSION=	0.7.3
-PORTREVISION=	1
+PORTVERSION=	0.8
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-source
+DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
@@ -19,10 +19,8 @@ COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
-		freetype.9:${PORTSDIR}/print/freetype2 \
 		nspr4.1:${PORTSDIR}/devel/nspr
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
-		freetype-config:${PORTSDIR}/print/freetype2
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 USE_X_PREFIX=	yes
 
@@ -36,6 +34,8 @@ ALL_TARGET=	default
 USE_GNOME=	gtk20 libidl
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 PKGINSTALL=	${WRKDIR}/pkg-install
+PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+FAKEDIR=	${WRKDIR}/fake
 
 NO_MTREE=		yes
 WRKSRC=			${WRKDIR}/mozilla
@@ -43,7 +43,11 @@ LOCAL_SUBDIR=		lib/${PORTNAME}
 LOCAL_PREFIX=		${PREFIX}/${LOCAL_SUBDIR}
 ESD_LIB=		libesd.so.2
 
-PLIST_SUB+=	TBVER="${PORTVERSION}"
+OPTIONS=	DEBUG "Build a debugging image" off \
+		LOGGING "Enable additional log messages" off \
+		OPTIMIZED_CFLAGS "Enable some additional optimizations" off \
+		XFT "Enable support for anti-aliased fonts" on \
+		NEW_ICON "Install the new Firefox branding icon" off
 
 .include <bsd.port.pre.mk>
 
@@ -84,14 +88,16 @@ pre-extract::
 	@${ECHO_MSG}
 
 post-extract::
-	@${SED} -e 's|@CPPFLAGS@|${CPPFLAGS}|'		\
-		-e 's|@CFLAGS@|${CFLAGS}|'		\
-		-e 's|@LDFLAGS@|${LDFLAGS}|'		\
-		-e 's|@LIBS@|${LIBS}|'			\
-		-e 's|@X11BASE@|${X11BASE}|'		\
-		-e 's|@LOCALBASE@|${LOCALBASE}|'	\
-		-e 's|@PREFIX@|${LOCAL_PREFIX}|'	\
-		-e 's|@PERL@|${PERL5}|'			\
+# FAKEDIR is here so that nsinstall will install under FAKEDIR, not
+# under PREFIX.  See pre-install and do-install for details.
+	@${SED} -e 's|@CPPFLAGS@|${CPPFLAGS}|'			\
+		-e 's|@CFLAGS@|${CFLAGS}|'			\
+		-e 's|@LDFLAGS@|${LDFLAGS}|'			\
+		-e 's|@LIBS@|${LIBS}|'				\
+		-e 's|@X11BASE@|${X11BASE}|'			\
+		-e 's|@LOCALBASE@|${LOCALBASE}|'		\
+		-e 's|@PREFIX@|${FAKEDIR}/lib/thunderbird|'	\
+		-e 's|@PERL@|${PERL5}|'				\
 		<${FILESDIR}/mozconfig.in >${WRKSRC}/.mozconfig
 
 post-patch:
@@ -118,6 +124,8 @@ post-patch:
 		${WRKSRC}/xpcom/io/nsNativeCharsetUtils.cpp
 	@${SED} -e 's|%%MOZDIR%%|${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}|g' \
 		< ${MASTERDIR}/pkg-install.in > ${PKGINSTALL}
+	@${SED} -e 's|%%MOZDIR%%|${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}|g' \
+		< ${MASTERDIR}/pkg-deinstall.in > ${PKGDEINSTALL}
 
 pre-configure:
 	@if [ -n "`${PKG_INFO} -xI '^bind[0-9]*-base-[0-9]'`" ]; then \
@@ -131,12 +139,35 @@ post-build:
 	@${TOUCH} -f ${WRKSRC}/profile/build/libprofile.so
 
 pre-install:
+# Overview:  the program installs itself in FAKEDIR, then a list is made of the
+# files and directories in there.  This is the PLIST (packing list) for the
+# package, replacing the traditional pkg-plist file.
 	${RM} -fr ${LOCAL_PREFIX}
-	${MKDIR} ${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}/extensions.port
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+		Makefile ${MAKE_ARGS} install
+.for ii in mac win
+.for jj in / .jar
+	@${RM} -rf ${FAKEDIR}/lib/${PORTNAME}/lib/${PORTNAME}-${PORTVERSION}/chrome/en-${ii}${jj}
+.endfor
+.endfor
+	@${RM} -fr ${FAKEDIR}/share/idl ${FAKEDIR}/include
+.for ii in thunderbird thunderbird-config
+	@${ECHO_CMD} bin/${ii} >> ${PLIST}
+.endfor
+	@cd ${FAKEDIR} && ${FIND} * ! -type d | ${SORT} >> ${PLIST}; \
+	${FIND} * -type d -empty | ${SORT} | ${SED} -e \
+		"s:^:@exec ${MKDIR} %D/:" -e "s:$$: || true:" >> ${PLIST}; \
+	${FIND} * -type d -empty | ${SORT} -r | ${SED} -e \
+		"s:^:@unexec ${RMDIR} %D/:" -e "s:$$: || true:" >> ${PLIST}; \
+	${FIND} * -type d ! -empty | ${SORT} -r | ${SED} -e "s:^:@dirrm :" | \
+		${GREP} / >> ${PLIST}
+
+do-install:
+# This is the actual installation.  First, the contents of FAKEDIR are
+# just copied to PREFIX.
+	cd ${FAKEDIR} && ${FIND} * | ${CPIO} -dmp --quiet ${PREFIX}
 
 post-install:
-	@${INSTALL_DATA} ${FILESDIR}/Extensions.rdf \
-		${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}/extensions.port
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	${MKDIR} ${PREFIX}/bin
 	${RM} -f ${PREFIX}/bin/thunderbird
@@ -145,30 +176,18 @@ post-install:
 	${RM} -f ${PREFIX}/bin/thunderbird-config
 	${LN} -s ${LOCAL_PREFIX}/bin/thunderbird-config \
 		${PREFIX}/bin/thunderbird-config
-	${RM} -fr ${LOCAL_PREFIX}/share/idl
-	${RM} -fr ${LOCAL_PREFIX}/include
-.for ii in mac win
-.for jj in / .jar
-	${RM} -fr ${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}/chrome/en-${ii}${jj}
-.endfor
-.endfor
-
-cons-plist:
-	-${RM} -f ${PLIST}
-	${TOUCH} ${PLIST}
-	${ECHO_CMD} bin/thunderbird >>${PLIST}
-	${ECHO_CMD} bin/thunderbird-config >>${PLIST}
-.for i in ${EXTRA_SCRIPTS}
-	${ECHO_CMD} bin/${i} >>${PLIST}
-.endfor # i in ${EXTRA_SCRIPTS}
-	cd ${PREFIX}; \
-	${FIND} ${LOCAL_SUBDIR} ! -type d | ${SORT} >>${PLIST}; \
-	${FIND} ${LOCAL_SUBDIR} -type d -empty | ${SORT} \
-	  | ${SED} -e "s:^:@exec ${MKDIR} %D/:" -e "s:$$: || true:" \
-	  >> ${PLIST}; \
-	${FIND} ${LOCAL_SUBDIR} -type d -empty | ${SORT} -r | ${SED} -e \
-		"s:^:@unexec ${RMDIR} %D/:" -e "s:$$: || true:" >> ${PLIST}; \
-	${FIND} ${LOCAL_SUBDIR} -type d ! -empty | ${SORT} -r \
-		| ${SED} -e "s:^:@dirrm :" | ${GREP} / >> ${PLIST}
+	${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
+		${LOCAL_PREFIX}/bin/thunderbird \
+		${LOCAL_PREFIX}/bin/thunderbird-config
+	${FIND} ${LOCAL_PREFIX}/lib/pkgconfig -type f | ${XARGS} \
+		${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g'
+.if defined(WITH_NEW_ICON)
+	${INSTALL_DATA} ${WRKSRC}/other-licenses/branding/thunderbird/default.xpm \
+		${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}/chrome/icons/default/default.xpm
+	${INSTALL_DATA} ${WRKSRC}/other-licenses/branding/thunderbird/mozicon50.xpm \
+		${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}/chrome/icons/default/messengerWindow.xpm
+	${INSTALL_DATA} ${WRKSRC}/other-licenses/branding/thunderbird/mozicon50.xpm \
+	${LOCAL_PREFIX}/lib/${PORTNAME}-${PORTVERSION}/chrome/icons/default/messengerWindow16.xpm
+.endif # defined(WITH_NEW_ICON)
 
 .include <bsd.port.post.mk>
