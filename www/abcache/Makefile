@@ -37,6 +37,7 @@ do-install:
 		${PREFIX}/lib/php/20010901
 
 post-install:
-	@${SED} s!%%LOCALBASE%%!${LOCALBASE}!g ${PKGMESSAGE}
+	@${SED} "s!%%LOCALBASE%%!${LOCALBASE}!g;s!%%PREFIX%%!${PREFIX}!g" \
+		${PKGMESSAGE}
 
 .include <bsd.port.mk>
