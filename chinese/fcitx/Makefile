@@ -16,6 +16,8 @@ COMMENT=	A simple and fast GBK Chinese XIM server
 
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
+BROKEN=		Unfetchable
+
 USE_BZIP2=	yes
 USE_XLIB=	yes
 USE_REINPLACE=	yes
