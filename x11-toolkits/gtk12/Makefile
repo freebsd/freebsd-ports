@@ -1,13 +1,13 @@
 # New ports collection makefile for:   gtk12
-# Version required:		1.2.0
+# Version required:		1.2.1
 # Date Created:			28 Sep 1997
 # Whom:				Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.46 1999/03/09 01:09:08 nectar Exp $
+# $Id: Makefile,v 1.47 1999/03/19 04:40:05 nectar Exp $
 #
 
-DISTNAME=	gtk+-1.2.0
-PKGNAME=	gtk-1.2.0
+DISTNAME=	gtk+-1.2.1
+PKGNAME=	gtk-1.2.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gtk/v1.2/ \
 		ftp://ftp.cs.umn.edu/pub/gimp/gtk/v1.2/ \
