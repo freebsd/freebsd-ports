@@ -1,6 +1,6 @@
---- plugins/qt-gui/configure.orig	Wed Mar 29 01:26:46 2000
-+++ plugins/qt-gui/configure	Wed Mar 29 01:35:53 2000
-@@ -4217,7 +4217,7 @@
+--- plugins/qt-gui/configure.orig	Tue Jul 11 18:54:28 2000
++++ plugins/qt-gui/configure	Mon Jul 24 03:40:56 2000
+@@ -4138,7 +4138,7 @@
        fi
  
        for qt_dir in $qt_library_dirs; do
@@ -9,16 +9,25 @@
            if test -r $qt_check_lib; then
              ac_qt_libraries=$qt_dir
              break 2
-@@ -4238,7 +4238,7 @@
+@@ -4158,7 +4158,7 @@
+     have_qt_lib="no"
+   else
      have_qt_lib="yes"
+-        output=`eval "strings $ac_cv_lib_qtlib/libqt.so | grep -l QCString"`
++        output=`eval "strings $ac_cv_lib_qtlib/libqt2.so | grep -l QCString"`
+     if test -z "$output"; then
+       { echo "configure: error: 
+           The Qt lib directory "$ac_cv_lib_qtlib"
+@@ -4172,7 +4172,7 @@
+           Please check your installation.
+ 
+           Use the --with-qt-libraries option if we found the wrong Qt lib.
+-      " 1>&2; exit 1; }
++      " 1>&2; }
+     fi
    fi
  
--    output=`eval "strings $ac_cv_lib_qtlib/libqt.so | grep -l QCString"`
-+    output=`eval "strings $ac_cv_lib_qtlib/libqt2.so | grep -l QCString"`
-   if test -z "$output"; then
-     { echo "configure: error: The Qt lib directory
-         $ac_cv_lib_qtlib
-@@ -4301,7 +4301,7 @@
+@@ -4226,7 +4226,7 @@
          /usr/X11/include/qt \
          /usr/X11/include/X11/qt \
          /usr/X11R6/include \
@@ -27,16 +36,16 @@
          /usr/X11R6/include/X11/qt \
          /usr/X11/lib/qt/include"
  
-@@ -4380,7 +4380,7 @@
+@@ -4318,7 +4318,7 @@
      fi
  
      # Extract the first word of "moc", so it can be a program name with args.
 -set dummy moc; ac_word=$2
 +set dummy moc2; ac_word=$2
  echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
- echo "configure:4386: checking for $ac_word" >&5
+ echo "configure:4324: checking for $ac_word" >&5
  if eval "test \"`echo '$''{'ac_cv_path_MOC'+set}'`\" = set"; then
-@@ -4405,7 +4405,7 @@
+@@ -4343,7 +4343,7 @@
      fi
    done
    IFS="$ac_save_ifs"
