@@ -7,6 +7,7 @@
 
 PORTNAME=	png
 PORTVERSION=    1.2.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libpng.org/pub/png/src/ \
 		ftp://swrinde.nde.swri.edu/pub/png/src/ \
@@ -38,5 +39,13 @@ post-extract:
 
 pre-install:
 	@[ -d ${PREFIX}/include/libpng ] || ${MKDIR} ${PREFIX}/include/libpng
+	@[ -d ${PREFIX}/libdata/pkgconfig ] || \
+		${MKDIR} ${PREFIX}/libdata/pkgconfig
+
+post-install:
+	${CAT} ${WRKSRC}/scripts/libpng.pc.in | ${SED} -e \
+		's|@PREFIX@|${PREFIX}|' > ${WRKSRC}/scripts/libpng.pc
+	${INSTALL_DATA} ${WRKSRC}/scripts/libpng.pc \
+		${PREFIX}/libdata/pkgconfig/libpng12.pc
 
 .include <bsd.port.post.mk>
