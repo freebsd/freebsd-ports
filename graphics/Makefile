@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.58 1997/12/24 07:40:43 vanilla Exp $
+# $Id: Makefile,v 1.59 1998/01/09 14:42:00 tg Exp $
 #
 
     SUBDIR += ImageMagick
@@ -47,7 +47,6 @@
     SUBDIR += spigot
     SUBDIR += splitmpg
     SUBDIR += tgif
-    SUBDIR += tiff
     SUBDIR += tiff34
     SUBDIR += txtmerge
     SUBDIR += urt
