@@ -1,4 +1,5 @@
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/FAQ.pod
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/Header.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/Nameserver.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/Packet.pm
@@ -31,6 +32,7 @@ lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/RP.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/RT.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/SOA.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/SRV.pm
+lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/TKEY.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/TSIG.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/TXT.pm
 lib/perl5/site_perl/%%PERL_VER%%/Net/DNS/RR/X25.pm
