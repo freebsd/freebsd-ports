@@ -1,0 +1,11 @@
+--- subsystem/alertEngine/alertengine.in.orig	Fri Nov  5 00:36:53 2004
++++ subsystem/alertEngine/alertengine.in	Fri Nov  5 00:37:07 2004
+@@ -27,7 +27,7 @@
+ case "$1" in
+ 	start)
+ 		# Start daemons.
+-		rc= su -c "${bindir}/alertdaemon.pl start" ${user}
++		rc= su ${user} -c "${bindir}/alertdaemon.pl start"
+ 		echo
+ 		exit $rc;
+ 		;;

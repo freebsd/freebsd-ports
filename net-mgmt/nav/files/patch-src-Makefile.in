@@ -1,0 +1,32 @@
+--- src/Makefile.in.orig	Thu May 27 14:50:34 2004
++++ src/Makefile.in	Tue Oct 19 22:10:15 2004
+@@ -18,23 +18,23 @@
+ INSTALLARGS = -DDESTDIR=$(DESTDIR)
+ 
+ subdirs = \
+-	Util \
++	Logger \
++	vlanPlot \
+ 	ConfigParser \
+ 	Database \
++	Util \
+ 	Event \
++	NetboxInfo \
+ 	eventEngine \
++	SimpleSnmp \
+ 	getBoksMacs \
+ 	getDeviceData \
+ 	networkDiscovery \
+-	Logger \
+-	NetboxInfo \
+-	SimpleSnmp \
+-	vlanPlot \
+ 	webapps/navAdmin \
+ 	webapps/vPServer
+ 
+ # We build our own classpath, to resolve interdependencies between the java modules.
+-CLASSPATH = $(shell for x in $(subdirs); do echo -n "$$PWD/$${x}/build:"; done ; echo -n $$CLASSPATH)
++CLASSPATH = $(shell for x in $(subdirs); do echo -n "$$PWD/src/$${x}/build:"; done ; echo -n $$CLASSPATH)
+ INSTALL_TARGETS = $(patsubst %,%_inst,$(subdirs))
+ QUICK_TARGETS = $(patsubst %,%_q,$(subdirs))
+ 
