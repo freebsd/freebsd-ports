@@ -4,16 +4,15 @@
 # Date created:			  Tue Jan 28, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.16 1999/05/02 11:28:56 mharo Exp $
+# $Id: Makefile,v 1.17 1999/05/25 23:49:02 obrien Exp $
 #
 
-DISTNAME=	ddd-3.1.5
+DISTNAME=	ddd-3.1.6
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ips.cs.tu-bs.de/pub/local/softech/ddd/src/  \
 		ftp://uiarchive.cso.uiuc.edu/pub/packages/ddd/src/  \
 		ftp://ftp.gre.ac.uk/pub/tools/debuggers/ddd/src/  \
 		ftp://richb-pc.acc.qc.edu/pub/ddd/src/  \
-		ftp://ftp.gre.ac.uk/pub/tools/debuggers/ddd/src/  \
 		ftp://ftp.th-darmstadt.de/pub/programming/tools/ddd/src/
 
 MAINTAINER=     obrien@FreeBSD.org
@@ -28,9 +27,9 @@ REQUIRES_MOTIF=	yes
 MAN1=		ddd.1
 
 .if defined(MOTIF_STATIC)
-LIBXMDIR!=	${ECHO} ${MOTIFLIB} | sed -e 's/\/libXm\.a//g' | awk '{print $$1}'
+LIBXMDIR!=	${ECHO} ${MOTIFLIB} | ${SED} -e 's/\/libXm\.a//g' | ${AWK} '{print $$1}'
 .else
-LIBXMDIR!=	${ECHO} ${MOTIFLIB} | sed -e 's/-L//g' | awk '{print $$1}'
+LIBXMDIR!=	${ECHO} ${MOTIFLIB} | ${SED} -e 's/-L//g' | ${AWK} '{print $$1}'
 .endif
 
 post-configure:
