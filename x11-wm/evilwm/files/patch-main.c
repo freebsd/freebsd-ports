@@ -1,11 +1,9 @@
+
 $FreeBSD$
 
-main.c: In function `main':
-main.c:92: error: `opt_snap' undeclared (first use in this function)
-
---- main.c.orig	Wed Oct 15 11:48:23 2003
-+++ main.c	Fri Oct 24 05:09:42 2003
-@@ -37,9 +37,7 @@ int		opt_bw = DEF_BW;
+--- main.c.orig	Wed Oct 15 13:48:23 2003
++++ main.c	Sun Aug 22 22:32:26 2004
+@@ -37,9 +37,7 @@
  const char	*opt_fc = DEF_FC;
  int		vdesk = KEY_TO_VDESK(XK_1);
  #endif
@@ -15,3 +13,11 @@ main.c:92: error: `opt_snap' undeclared (first use in this function)
  #ifdef SHAPE
  int		have_shape, shape_event;
  #endif
+@@ -159,6 +157,7 @@
+ 					handle_shape_event((XShapeEvent *)&ev);
+ 				}
+ #endif
++			break;
+ 		}
+ 	}
+ 	return 1;
