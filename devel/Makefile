@@ -9,6 +9,7 @@
     SUBDIR += SWIG-devel
     SUBDIR += SpecTcl
     SUBDIR += a2dev
+    SUBDIR += ac-archive
     SUBDIR += acpicatools
     SUBDIR += adabroker
     SUBDIR += agenda-headers
