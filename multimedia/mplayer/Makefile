@@ -221,7 +221,9 @@ MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www.rrr.de/~riggs/mplayer/
 DISTNAME=	MPlayer-1.0pre4
 
-PATCH_SITES=	http://www.mplayerhq.hu/MPlayer/patches/
+PATCH_SITES=	http://www.mplayerhq.hu/MPlayer/patches/ \
+		http://www4.mplayerhq.hu/MPlayer/patches/ \
+		http://www7.mplayerhq.hu/MPlayer/patches/
 PATCHFILES=	vuln04-fix.diff
 PATCH_DIST_STRIP=	-p0
 
