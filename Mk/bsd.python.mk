@@ -37,6 +37,9 @@ Python_Include_MAINTAINER=	tg@FreeBSD.org
 #						default: py${PYTHON_SUFFIX}-
 #
 # PYTHON_PLATFORM:	Python's idea of the OS release.
+#					XXX This is faked with ${OPSYS} and ${OSREL} until I  
+#					find out how to delay defining a variable until after 
+#					a certain target has been built. 
 #
 # PYTHON_PORTSDIR:	The source of your binary's port. Needed for the
 #					RUN_DEPENDS.
@@ -128,7 +131,7 @@ PYTHON_CMD=				${LOCALBASE}/bin/${PYTHON_VERSION}
 PYTHON_INCLUDEDIR=		${LOCALBASE}/include/${PYTHON_VERSION}
 PYTHON_LIBDIR=			${LOCALBASE}/lib/${PYTHON_VERSION}
 PYTHON_PKGNAMEPREFIX=	py${PYTHON_SUFFIX}-
-PYTHON_PLATFORM!=		${PYTHON_CMD} -c 'import sys; print sys.platform'
+PYTHON_PLATFORM!=		expr ${OPSYS:L}${OSREL} : '\(.*\)\.'
 PYTHON_SITELIBDIR=		${PYTHON_LIBDIR}/site-packages
 
 # dependencies
