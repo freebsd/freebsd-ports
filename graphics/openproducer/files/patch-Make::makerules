@@ -1,0 +1,20 @@
+--- Make/makerules.orig	Tue Jul 29 19:02:29 2003
++++ Make/makerules	Tue Jul 29 19:02:51 2003
+@@ -90,7 +90,7 @@
+ $(EXEC:=.opt) :
+ 	@[ -d $(OPTDIR) ] || mkdir $(OPTDIR)
+ 	@cd $(OPTDIR); \
+-      $(MAKE) -f ../GNUmakefile DOF=$(OPTF)  TOPDIR=../${TOPDIR} \
++      $(MAKE) -f ../GNUmakefile "DOF=$(OPTF)"  TOPDIR=../${TOPDIR} \
+           THISDIR=../$(THISDIR)\
+           MAKEDEPEND=Makedepend $(EXEC)
+ 	@$(MAKE) LNSRC=$(OPTDIR)/$(EXEC) LNDEST=$(BININST)/$(OS)$(ARCH)/$(EXEC) __link
+@@ -99,7 +99,7 @@
+ $(LIB:=.opt) : 
+ 	@[ -d $(OPTDIR) ] || mkdir $(OPTDIR)
+ 	@cd $(OPTDIR);\
+-	  $(MAKE) -f ../$(MAKEFILE) DOF=$(OPTF) TOPDIR=../${TOPDIR} \
++	  $(MAKE) -f ../$(MAKEFILE) "DOF=$(OPTF)" TOPDIR=../${TOPDIR} \
+ 	        THISDIR=../$(THISDIR)\
+ 	        MAKEDEPEND=Makedepend $(LIB)
+ 	$(MAKE) LNSRC=$(OPTDIR)/$(LIB).$(LIB_EXT) LNDEST=$(LIBINST)/$(LIB).$(OS)$(ARCH).$(LIB_EXT) __link
