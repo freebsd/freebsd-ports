@@ -35,6 +35,8 @@ bin/pltotf
 bin/tftopl
 bin/initex
 bin/virtex
+bin/tex
+bin/latex
 bin/patgen
 bin/inimf
 bin/virmf
