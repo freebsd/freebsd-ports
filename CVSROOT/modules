@@ -4919,6 +4919,7 @@ nadar		ports/games/nadar
 nag		ports/deskutils/nag
 nagios		ports/net/nagios
 nagios-plugins	ports/net/nagios-plugins
+nagios-statd	ports/sysutils/nagios-statd
 nail		ports/mail/nail
 naim		ports/net/naim
 nakenchat	ports/net/nakenchat
