@@ -4239,6 +4239,7 @@ kplayer		ports/multimedia/kplayer
 kpopup		ports/net/kpopup
 kprof		ports/devel/kprof
 kpsk		ports/comms/kpsk
+kpum		ports/ftp/kpum
 krb4		ports/security/krb4
 krb5		ports/security/krb5
 krdesktop	ports/net/krdesktop
