@@ -7,6 +7,7 @@
 
 PORTNAME=	evolution
 PORTVERSION=	1.3.3
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	${MASTER_SITE_GNOME} \
 		http://people.FreeBSD.org/~sobomax/:local
@@ -19,8 +20,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	An integrated mail, calendar and address book distributed suite
 
-LIB_DEPENDS=	nss3.1:${PORTSDIR}/security/nss \
-		soup-2.0.0:${PORTSDIR}/devel/libsoup \
+LIB_DEPENDS=	soup-2.0.0:${PORTSDIR}/devel/libsoup \
 		gtkhtml-3.0.1:${PORTSDIR}/www/gtkhtml3
 
 .if defined(WITH_LDAP)
@@ -42,10 +42,8 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-db3-libs=${DB3_WRKSRC} \
 		--with-db3-includes=${DB3_WRKSRC} \
-		--with-nspr-includes=${LOCALBASE}/include/nspr \
-		--with-nspr-libs=${LOCALBASE}/lib \
-		--with-nss-includes=${LOCALBASE}/include/nss/nss \
-		--with-nss-libs=${LOCALBASE}/lib
+		--enable-nss=no \
+		--enable-openssl=yes
 
 .if defined(WITH_LDAP)
 CONFIGURE_ARGS+= --with-openldap=${LOCALBASE}
@@ -62,8 +60,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${DB3_WRKSRC} -I${LOCALBASE}/include" \
 		LIBS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 
 PLIST_SUB+=	VERSION="1.3"
-
-#MAN1=		evolution.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
