@@ -5,10 +5,11 @@ include/ginac/add.h
 include/ginac/archive.h
 include/ginac/assertion.h
 include/ginac/basic.h
+include/ginac/class_info.h
 include/ginac/clifford.h
 include/ginac/color.h
 include/ginac/constant.h
-include/ginac/container_suppl.h
+include/ginac/container.h
 include/ginac/ex.h
 include/ginac/expair.h
 include/ginac/expairseq.h
@@ -32,6 +33,7 @@ include/ginac/operators.h
 include/ginac/power.h
 include/ginac/print.h
 include/ginac/pseries.h
+include/ginac/ptr.h
 include/ginac/registrar.h
 include/ginac/relational.h
 include/ginac/structure.h
@@ -43,8 +45,8 @@ include/ginac/version.h
 include/ginac/wildcard.h
 lib/libginac.a
 lib/libginac.so
-lib/libginac-1.1.so
-lib/libginac-1.1.so.6
+lib/libginac-1.2.so
+lib/libginac-1.2.so.3
 libdata/pkgconfig/ginac.pc
 share/aclocal/ginac.m4
 @dirrm include/ginac
