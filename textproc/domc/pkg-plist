@@ -1,0 +1,3 @@
+include/dom.h
+lib/libdomc.so
+lib/libdomc.so.%%SHLIB_MAJOR%%

@@ -103,6 +103,7 @@
     SUBDIR += dmake
     SUBDIR += dmalloc
     SUBDIR += doc++
+    SUBDIR += domc
     SUBDIR += dotconf
     SUBDIR += doxygen
     SUBDIR += ebnf2yacc
