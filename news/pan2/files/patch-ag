@@ -1,7 +1,0 @@
---- Makefile.in.orig	Sat Nov 25 09:32:02 2000
-+++ Makefile.in	Thu Nov 30 11:32:16 2000
-@@ -114,3 +114,3 @@
- 
--SUBDIRS = macros po uulib gmime pan docs
-+SUBDIRS = macros po gmime pan docs
- 

@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	pan
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/${PORTVERSION}/
 
 MAINTAINER=	ade@FreeBSD.org
 
 LIB_DEPENDS=	gnomeprint.13:${PORTSDIR}/print/gnomeprint \
-		uu.1:${PORTSDIR}/converters/uulib
+		gtkhtml.8:${PORTSDIR}/www/gtkhtml
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -21,7 +21,8 @@ USE_GMAKE=	yes
 USE_GNOME=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib -luu"
+		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--enable-html
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
