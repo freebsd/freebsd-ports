@@ -27,8 +27,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	kkonstan@duth.gr
 COMMENT=	TrueType core fonts for the Web
 
-BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir \
-		cabextract:${PORTSDIR}/archivers/cabextract
+EXTRACT_DEPENDS=cabextract:${PORTSDIR}/archivers/cabextract
+BUILD_DEPENDS=	ttmkfdir:${PORTSDIR}/x11-fonts/ttmkfdir
 
 USE_X_PREFIX=	yes
 
