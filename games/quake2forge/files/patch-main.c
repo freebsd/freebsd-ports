@@ -27,7 +27,7 @@
      err = errno;
      if (ret != nitems) {
 -	printf("verify_fread(...,%d,%d,...): return value: %d\n", size, nitems, ret);
-+	printf("verify_fread(...,%zu,%zu,...): return value: %zu\n", size, nitems, ret);
++	printf("verify_fread(...,%lu,%lu,...): return value: %lu\n", (unsigned long)size, (unsigned long)nitems, (unsigned long)ret);
  	if (ret == 0 && ferror(fp)) {
  	    printf("   error: %s\n", strerror(err));
  	    printf("   fileno=%d\n", fileno(fp));
@@ -36,7 +36,7 @@
      err = errno;
      if (ret != nitems) {
 -	printf("verify_fwrite(...,%d,%d,...) = %d\n", size, nitems, ret);
-+	printf("verify_fwrite(...,%zu,%zu,...) = %zu\n", size, nitems, ret);
++	printf("verify_fwrite(...,%lu,%lu,...) = %lu\n", (unsigned long)size, (unsigned long)nitems, (unsigned long)ret);
  	if (ret == 0 && ferror(fp)) {
  	    printf("   error: %s\n", strerror(err));
  	    printf("   fileno=%d\n", fileno(fp));
