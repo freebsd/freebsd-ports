@@ -32,6 +32,37 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="ebffe27a-f48c-11d8-9837-000c41e2cdad">
+    <topic>qt -- image loader vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>qt</name>
+	<range><lt>3.3.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>Qt contains several vulnerabilities related to image
+          loading, including possible crashes when loading corrupt
+          GIF, BMP, or JPEG images.  Most seriously, Chris Evans
+          reports that the BMP crash is actually due to a heap
+          buffer overflow.  It is believed that an attacker may be
+          able to construct a BMP image that could cause a Qt-using
+          application to execute arbitrary code when it is loaded.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0691</cvename>
+      <cvename>CAN-2004-0692</cvename>
+      <cvename>CAN-2004-0693</cvename>
+      <url>http://www.trolltech.com/developer/changes/changes-3.3.3.html</url>
+    </references>
+    <dates>
+      <discovery>2004-08-11</discovery>
+      <entry>2004-08-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="616cf823-f48b-11d8-9837-000c41e2cdad">
     <topic>courier-imap -- format string vulnerability in debug mode</topic>
     <affects>
