@@ -29,6 +29,8 @@ PATCHFILES=	mingw/${PORTNAME}-${BINUTILVERSION}.${PATCHVERSION:S/./-/g}-src.diff
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	FSF binutils-2.14 for Windows cross-development
 
+BROKEN=		Incomplete pkg-plist
+
 BINUTILVERSION=	2.15
 PATCHVERSION=	90.20040222.1
 

@@ -17,6 +17,8 @@ DISTFILES=	${PORTNAME}-${GDBVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	FSF gdb-5.1.1 for TI's msp430 MCUs cross-development
 
+BROKEN=		Incomplete pkg-plist
+
 GDBVERSION=	5.1.1
 PATCHVERSION=	20030909
 

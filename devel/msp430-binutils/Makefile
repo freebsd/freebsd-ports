@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	msp430-
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	GNU binutils for TI's msp430 MCUs cross-development
 
+BROKEN=		Incomplete pkg-plist
+
 BINUTILVERSION=	2.15
 
 USE_BZIP2=	yes

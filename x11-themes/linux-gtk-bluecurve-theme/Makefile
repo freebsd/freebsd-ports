@@ -17,6 +17,8 @@ COMMENT=		Bluecurve theme for GTK1 and GTK2 from RedHat 8.0 (Linux version)
 
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 
+BROKEN=			Incomplete pkg-plist
+
 NO_WRKSUBDIR=		yes
 USE_LINUX_PREFIX=	yes
 NO_BUILD=		yes
