@@ -7,6 +7,7 @@
 %%FONTSDIR%%/arab24-0-etl.pcf.gz
 %%FONTSDIR%%/arab24-1-etl.pcf.gz
 %%FONTSDIR%%/arab24-2-etl.pcf.gz
+%%FONTSDIR%%/bmp16-etl.pcf.gz
 %%FONTSDIR%%/cc40s.pcf.gz
 %%FONTSDIR%%/cc48s.pcf.gz
 %%FONTSDIR%%/cns1-16.pcf.gz
@@ -43,9 +44,11 @@
 %%FONTSDIR%%/heb16-etl.pcf.gz
 %%FONTSDIR%%/heb24-etl.pcf.gz
 %%FONTSDIR%%/ind16-mule.pcf.gz
+%%FONTSDIR%%/ind16-uni.pcf.gz
 %%FONTSDIR%%/ind1c16-mule.pcf.gz
 %%FONTSDIR%%/ind1c24-mule.pcf.gz
 %%FONTSDIR%%/ind24-mule.pcf.gz
+%%FONTSDIR%%/ind24-uni.pcf.gz
 %%FONTSDIR%%/ipa14-etl.pcf.gz
 %%FONTSDIR%%/ipa16-etl.pcf.gz
 %%FONTSDIR%%/ipa24-etl.pcf.gz
@@ -76,6 +79,7 @@
 %%FONTSDIR%%/lt1-16bi-etl.pcf.gz
 %%FONTSDIR%%/lt1-16i-etl.pcf.gz
 %%FONTSDIR%%/lt1-18-etl.pcf.gz
+%%FONTSDIR%%/lt1-18.pcf.gz
 %%FONTSDIR%%/lt1-18b-etl.pcf.gz
 %%FONTSDIR%%/lt1-18bi-etl.pcf.gz
 %%FONTSDIR%%/lt1-18i-etl.pcf.gz
