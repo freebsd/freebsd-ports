@@ -30,7 +30,7 @@ INSTALL_TARGET=	site-install
 
 SWIG=		swig1.3
 
-EXAMPLES=	shape.rb test.rb
+EXAMPLES=	../examples/rb/*.rb
 
 do-extract:
 	${MKDIR} ${WRKDIR}
