@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.249 1999/01/18 03:32:29 steve Exp $
+# $Id: Makefile,v 1.250 1999/01/18 04:47:08 steve Exp $
 #
 
     SUBDIR += 9term
@@ -90,7 +90,6 @@
     SUBDIR += xmove
     SUBDIR += xprompt
     SUBDIR += xscreensaver
-    SUBDIR += xshodou
     SUBDIR += xskyroot
     SUBDIR += xsnow
     SUBDIR += xstarroll
