@@ -17,7 +17,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	azuki@azkey.org
 
-RUN_DEPENDS=	${LOCALBASE}/libexec/skkserv:${PORTSDIR}/japanese/skk
+RUN_DEPENDS=	${LOCALBASE}/sbin/skkserv:${PORTSDIR}/japanese/skk
 
 NO_WRKSUBDIR=	yes
 
