@@ -1,9 +1,8 @@
 ************************************************************************
 
-mod_frontpage improved has been installed. You can turn off/on the
-extensions and the frontpage administration per site in httpd.conf
-and per virtual server. FrontPageAdminDisable is the default if no
-option is given.
+You can turn off/on the extensions and the frontpage administration
+per site in httpd.conf and per virtual server. FrontPageAdminDisable
+is the default if no option is given.
 
 FrontPageEnable		# Enable Frontpage Extensions
 FrontPageDisable	# Disable Frontpage Extensions
