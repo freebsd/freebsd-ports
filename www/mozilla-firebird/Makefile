@@ -15,12 +15,12 @@ MASTER_SITE_SUBDIR=	trevor
 
 MAINTAINER=		phoenix@geeksrus.net # alane@fbsd and trevor@fbsd
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
+		jpeg.9:${PORTSDIR}/graphics/jpeg \
 		png.5:${PORTSDIR}/graphics/png \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		freetype.9:${PORTSDIR}/print/freetype2
 #Xft2.2:${PORTSDIR}/x11-fonts/Xft
-
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		freetype-config:${PORTSDIR}/print/freetype2 \
 		perl5.8.0:${PORTSDIR}/lang/perl5.8
@@ -38,7 +38,7 @@ WRKSRC=			${WRKDIR}/mozilla
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} > 500038
-BROKEN= "on -CURRENT, can only be used with local files"
+BROKEN=	"on -CURRENT, can only be used with local files"
 .endif
 
 .if !defined(PERL_VER) || ${PERL_VER} != "5.8.0"
