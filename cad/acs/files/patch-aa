@@ -1,33 +1,31 @@
-*** src/md_unix.h.orig	Sat Nov  4 20:34:48 1995
---- src/md_unix.h	Tue Dec  5 14:52:51 1995
+*** src/md_unix.h.orig	Sun Mar 31 00:09:51 1996
+--- src/md_unix.h	Mon Apr  1 18:51:55 1996
 ***************
-*** 27,40 ****
+*** 49,61 ****
   #define	ENDDIR		"/"
   #define PATHSEP		':'
   #define SYSTEMSTARTFILE	"acs.rc"
 ! #define SYSTEMSTARTPATH	getenv("PATH")
   #define USERSTARTFILE	".acsrc"
   #define	USERSTARTPATH	getenv("HOME")
-  #define EDITFILE   	"/tmp/EXXXXXX"
   #define STEPFILE   	"/tmp/SXXXXXX"
   #define PLOTFILE    	"acs.plot"
   #define HELPFILE    	"acs.hlp"
 ! #define HELPPATH	getenv("PATH")
-  
-  /* standard collection of includes */
-  #include <assert.h>
---- 27,40 ----
+  /*--------------------------------------------------------------------------*/
+  #if defined(__GNUG__)
+    #define MANUAL_TEMPLATES
+--- 49,61 ----
   #define	ENDDIR		"/"
   #define PATHSEP		':'
   #define SYSTEMSTARTFILE	"acs.rc"
 ! #define SYSTEMSTARTPATH	"@PREFIX@/share/misc"
   #define USERSTARTFILE	".acsrc"
   #define	USERSTARTPATH	getenv("HOME")
-  #define EDITFILE   	"/tmp/EXXXXXX"
   #define STEPFILE   	"/tmp/SXXXXXX"
   #define PLOTFILE    	"acs.plot"
   #define HELPFILE    	"acs.hlp"
 ! #define HELPPATH	"@PREFIX@/share/misc"
-  
-  /* standard collection of includes */
-  #include <assert.h>
+  /*--------------------------------------------------------------------------*/
+  #if defined(__GNUG__)
+    #define MANUAL_TEMPLATES
