@@ -30,4 +30,10 @@ USE_XPM=	yes
 MAN1=		olvwm.1 olvwmrc.1
 XFREE86_HTML_MAN=	no
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
+.include <bsd.port.post.mk>

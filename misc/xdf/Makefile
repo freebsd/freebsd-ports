@@ -21,7 +21,13 @@ USE_XLIB=	yes
 USE_X_PREFIX=   yes
 USE_GMAKE=      yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502000
+BROKEN=		"Does not compile"
+.endif
+
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/xdf
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
