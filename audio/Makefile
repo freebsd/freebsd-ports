@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.82 1999/04/16 12:12:38 flathill Exp $
+# $Id: Makefile,v 1.83 1999/04/21 13:54:05 sada Exp $
 #
 
     SUBDIR += amp
@@ -45,6 +45,7 @@
     SUBDIR += s3mod
     SUBDIR += shorten
     SUBDIR += sidplay
+    SUBDIR += snowstar
     SUBDIR += sox
     SUBDIR += splay
     SUBDIR += splaytk
