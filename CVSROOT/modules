@@ -8585,6 +8585,7 @@ rnews		ports/www/rnews
 rng_82802	ports/security/rng_82802
 ro-aspell	ports/textproc/ro-aspell
 roadmap		ports/astro/roadmap
+roadrunner	ports/net/roadrunner
 roap		ports/textproc/roap
 robocode	ports/games/robocode
 robodoc		ports/devel/robodoc
