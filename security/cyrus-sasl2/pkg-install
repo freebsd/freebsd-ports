@@ -18,51 +18,57 @@ SASLDB_NAME=${PKG_PREFIX}/etc/%%SASLDB%%
 #
 
 create_user() {
-	if [ ! -x /usr/sbin/pw ]; then
-		echo "*** Please add a user and a group named \`cyrus' before installing this package."
-		exit 69
-	fi
+	USER=cyrus
+	GROUP=cyrus
+	PW=/usr/sbin/pw 
 
-	if ! pw show group cyrus -q >/dev/null; then
+	if [ -x /sbin/nologin ]; then   
+		shell=/sbin/nologin   
+	else   
+		shell=/nonexistent   
+	fi 
+	uhome="/nonexistent"
+
+	if ! ${PW} show group ${GROUP} -q >/dev/null; then
 		gid=60
-		while pw show group -g ${gid} -q >/dev/null; do
+		while ${PW} show group -g ${gid} -q >/dev/null; do
 			gid=`expr ${gid} + 1`
 		done
-		if ! pw add group cyrus -g ${gid}; then
+		if ! ${PW} add group ${GROUP} -g ${gid}; then
 			e=$?
-			echo "*** Failed to add group \`cyrus'. Please add it manually."
+			echo "*** Failed to add group \`${GROUP}'. Please add it manually."
 			exit ${e}
 		fi
-		echo "*** Added group \`cyrus' (id ${gid})"
+		echo "*** Added group \`${GROUP}' (id ${gid})"
 	else
-		gid=`pw show group cyrus 2>/dev/null | cut -d: -f3`
+		gid=`${PW} show group ${GROUP} 2>/dev/null | cut -d: -f3`
 	fi
 
-	if ! pw show user cyrus -q >/dev/null; then
+	if ! ${PW} show user ${USER} -q >/dev/null; then
 		uid=60
-		while pw show user -u ${uid} -q >/dev/null; do
+		while ${PW} show user -u ${uid} -q >/dev/null; do
 			uid=`expr ${uid} + 1`
 		done
-		if ! pw add user cyrus -u ${uid} -g ${gid} -d "${PKG_PREFIX}/cyrus" \
-				-c "the cyrus mail server" -s "/bin/csh" -p "*" \
+		if ! ${PW} add user ${USER} -u ${uid} -g ${gid} -d "${uhome}" \
+				-c "the cyrus mail server" -s "${shell}" -p "*" \
 				; then
 			e=$?
-			echo "*** Failed to add user \`cyrus'. Please add it manually."
+			echo "*** Failed to add user \`${USER}'. Please add it manually."
 			exit ${e}
 		fi
-		echo "*** Added user \`cyrus' (id ${uid})"
+		echo "*** Added user \`${USER}' (id ${uid})"
 	else
-		if ! pw mod user cyrus -g ${gid} -d "${PKG_PREFIX}/cyrus" \
-				-c "the cyrus mail server" -s "/bin/csh" -p "*" \
+		if ! ${PW} mod user ${USER} -g ${gid} -d "${uhome}" \
+				-c "the cyrus mail server" -s "${shell}" -p "*" \
 				; then
 			e=$?
-			echo "*** Failed to update user \`cyrus'."
+			echo "*** Failed to update user \`${USER}'."
 			exit ${e}
 		fi
-		echo "*** Updated user \`cyrus'."
+		echo "*** Updated user \`${USER}'."
 	fi
-	if ! pw group mod cyrus -m daemon; then
-		echo "*** can't add user \`daemon' to group \`cyrus'"
+	if ! ${PW} group mod ${USER} -m daemon; then
+		echo "*** can't add user \`${USER}' to group \`${GROUP}'"
 	fi
 }
 
