@@ -1,6 +1,7 @@
 bin/gh
 bin/gh-ghc
 bin/gh-ghci
+bin/testGH
 %%HUGS%%bin/gh-hugs
 %%GH%%/bin/gh
 %%GH%%/bin/gh-bin
@@ -68,6 +69,7 @@ bin/gh-ghci
 @dirrm %%GH%%/lib/interfaces
 @dirrm %%GH%%/lib/optimizer
 @dirrm %%GH%%/lib
+@dirrm %%GH%%
 %%PORTDOCS%%%%DOCSDIR%%/GHUsersGuide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
