@@ -9,5 +9,7 @@ share/worker/catalogs/francais.catalog.flags
 share/worker/config-de
 share/worker/config-en
 share/worker/config-fr
+share/pixmaps/WorkerIcon.xpm
+@dirrm share/pixmaps
 @dirrm share/worker/catalogs
 @dirrm share/worker
