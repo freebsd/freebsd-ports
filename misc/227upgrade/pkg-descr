@@ -1,0 +1,5 @@
+This package will allow you to upgrade your 2.2.7R system to
+2.2-stable, so you can compile and use all ports in ports-current.
+
+Satoshi
+asami@freebsd.org
