@@ -2526,8 +2526,12 @@ ${target}:
 ${${target:U}_COOKIE}: ${_${target:U}_SEQ}
 	@${TOUCH} ${TOUCH_FLAGS} ${.TARGET}
 .else
-${${target:U}_COOKIE}:
-	${DO_NADA}
+${${target:U}_COOKIE}::
+	@if [ -e ${.TARGET} ]; then \
+		${DO_NADA}; \
+	else \
+		cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} ${.TARGET}; \
+	fi
 .endif
 
 .endfor
