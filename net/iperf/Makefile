@@ -7,7 +7,7 @@
 
 PORTNAME=	iperf
 PORTVERSION= 	1.7.0
-CATEGORIES=	net
+CATEGORIES=	net ipv6
 MASTER_SITES=	http://dast.nlanr.net/Projects/Iperf/
 DISTNAME=	iperf-1.7.0-source
 
