@@ -132,6 +132,7 @@ bin/pinq
 @comment This port installs the following manually (ie. not through qmail-hier)
 configure/install
 configure/config
+configure/config-fast
 configure/dnsfq
 configure/hostname
 configure/dnsip
@@ -145,6 +146,7 @@ configure/dnsptr
 %%DOCDIR%%/SECURITY
 %%DOCDIR%%/THOUGHTS
 %%DOCDIR%%/PORT_NOTES
+%%DOCDIR%%/PORT_NOTES_FreeBSD_40-RELEASE
 %%DOCDIR%%/SYSDEPS
 %%DOCDIR%%/mkaliasdir
 boot/maildir

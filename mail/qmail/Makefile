@@ -21,8 +21,8 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 # Patch necessary to cope with non-RFC >512 dns entries
 # Since AOL has been using those, the problem has skyrocketed from minor to
 # groundzero. qmail being RFC compliant need to be "fixed" to work with those
-PATCH_SITES=	http://www.ckdhr.com/ckd/
-PATCHFILES=	qmail-103.patch
+PATCH_SITES?=	http://www.ckdhr.com/ckd/
+PATCHFILES?=	qmail-103.patch
 PATCH_DIST_STRIP+=	-p1
 
 MAINTAINER=	lioux@linf.unb.br
@@ -51,7 +51,7 @@ MAN8=	qmail-local.8 qmail-lspawn.8 qmail-getpw.8 qmail-remote.8 \
 
 PLIST_SUB=	DOCDIR=${DOCDIR}
 
-DOCFILES=	${WRKSRC}/BLURB ${WRKSRC}/BLURB2 ${WRKSRC}/BLURB3 \
+DOCFILES+=	${WRKSRC}/BLURB ${WRKSRC}/BLURB2 ${WRKSRC}/BLURB3 \
 		${WRKSRC}/BLURB4 ${WRKSRC}/INTERNALS ${WRKSRC}/SECURITY \
 		${WRKSRC}/THOUGHTS ${FILESDIR}/PORT_NOTES \
 		${FILESDIR}/PORT_NOTES_FreeBSD_40-RELEASE
@@ -82,13 +82,17 @@ CONFIGUREPROGS=	${WRKSRC}/install ${WRKSRC}/dnsfq ${WRKSRC}/hostname \
 		${WRKSRC}/dnsip ${WRKSRC}/ipmeprint ${WRKSRC}/dnsptr
 CONFIGUREFILES=	${WRKSRC}/config ${WRKSRC}/config-fast
 
-.if (${PREFIX} == "/usr/local")
+.if (${PREFIX} == ${LOCALBASE})
 DOCDIR=	share/doc/qmail
 .else
 DOCDIR=	doc
 .endif
 
 NO_MTREE=	yes
+
+.if !defined(_PREMKINCLUDED)
+.include <bsd.port.pre.mk>
+.endif
 
 # If you want to change the qmail users, they must be changed in both
 # work/*/conf-users and pkg/INSTALL.
@@ -136,7 +140,12 @@ do-install:
 	@${ECHO}
 	@${SED} s!/usr/local/!${PREFIX}/!g ${PKGDIR}/MESSAGE | /usr/bin/fmt
 
+# hack to allow slave ports to include bsd.port.pre.mk and then this file
+.if defined(_PREMKINCLUDED)
+.include <bsd.port.post.mk>
+.else
 .include <bsd.port.mk>
+.endif
 
 # Ugh...  ;-)
 thereal-post-patch:
