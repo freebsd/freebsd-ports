@@ -21,14 +21,16 @@ MAKEFILE=	Makefile-xpm
 PLIST=		${WRKDIR}/pkg-plist
 SCRIPTS=	startswm
 USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
 USE_XPM=	yes
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 post-patch:
-	${PERL} -pi -e "s:PREFIX:${PREFIX}:g" \
-		${WRKSRC}/init.c ${WRKSRC}/swm.conf
+.for ii in init.c swm.conf
+	${MV} ${WRKSRC}/${ii} ${WRKSRC}/${ii}.orig
+	${SED} -e "s:PREFIX:${PREFIX}:g" \
+		< ${WRKSRC}/${ii}.orig > ${WRKSRC}/${ii}
+.endfor
 
 post-build:
 	cd ${WRKSRC}/../swmbg && ${CC} ${CFLAGS} -I${X11BASE}/include *.c \
