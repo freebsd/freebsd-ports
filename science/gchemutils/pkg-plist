@@ -124,3 +124,4 @@ share/locale/pl/LC_MESSAGES/gnome-chemistry-utils.mo
 @dirrm share/gnome/doc/gchemutils/reference/html
 @dirrm share/gnome/doc/gchemutils/reference
 @dirrm share/gnome/doc/gchemutils
+@dirrm share/gnome/doc
