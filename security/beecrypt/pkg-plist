@@ -1,5 +1,10 @@
+include/beecrypt/aes.h
+include/beecrypt/aesopt.h
 include/beecrypt/base64.h
+include/beecrypt/beecrypt.api.h
+include/beecrypt/beecrypt.gnu.h
 include/beecrypt/beecrypt.h
+include/beecrypt/beecrypt.win.h
 include/beecrypt/blockmode.h
 include/beecrypt/blockpad.h
 include/beecrypt/blowfish.h
@@ -9,11 +14,10 @@ include/beecrypt/dldp.h
 include/beecrypt/dlkp.h
 include/beecrypt/dlpk.h
 include/beecrypt/dlsvdp-dh.h
+include/beecrypt/dsa.h
 include/beecrypt/elgamal.h
 include/beecrypt/endianness.h
 include/beecrypt/entropy.h
-include/beecrypt/fips180.h
-include/beecrypt/fips180opt.h
 include/beecrypt/fips186.h
 include/beecrypt/hmac.h
 include/beecrypt/hmacmd5.h
@@ -21,18 +25,20 @@ include/beecrypt/hmacsha1.h
 include/beecrypt/hmacsha256.h
 include/beecrypt/md5.h
 include/beecrypt/memchunk.h
-include/beecrypt/mp32.h
-include/beecrypt/mp32barrett.h
-include/beecrypt/mp32number.h
-include/beecrypt/mp32opt.h
-include/beecrypt/mp32prime.h
+include/beecrypt/mp.h
+include/beecrypt/mpbarrett.h
+include/beecrypt/mpnumber.h
+include/beecrypt/mpopt.h
+include/beecrypt/mpprime.h
 include/beecrypt/mtprng.h
 include/beecrypt/rsa.h
 include/beecrypt/rsakp.h
 include/beecrypt/rsapk.h
+include/beecrypt/sha1.h
+include/beecrypt/sha1opt.h
 include/beecrypt/sha256.h
 include/beecrypt/timestamp.h
-@dirrm include/beecrypt
-lib/libbeecrypt.la
+lib/libbeecrypt.a
 lib/libbeecrypt.so
-lib/libbeecrypt.so.3
+lib/libbeecrypt.so.6
+@dirrm include/beecrypt
