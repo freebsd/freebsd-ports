@@ -37,6 +37,10 @@ CONFUGURE_ARGS+=	--enable-ipv6
 IGNORE=		Port requires perl 5.6.1 or later. Install lang/perl5 then try again
 .endif
 
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-install:
 	@${ECHO} "Sample config installed at \
 	${PREFIX}/etc/beacon.conf.sample"
