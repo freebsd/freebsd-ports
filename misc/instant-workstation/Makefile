@@ -12,22 +12,28 @@ MASTER_SITES=	ftp://ftp.lemis.com/pub/
 
 MAINTAINER=	grog@lemis.com
 
-RUN_DEPENDS=	acroread:${PORTSDIR}/print/acroread \
+RUN_DEPENDS=	acroread:${PORTSDIR}/print/acroread4 \
 		bash:${PORTSDIR}/shells/bash2 \
 		cdrecord:${PORTSDIR}/sysutils/cdrecord \
+		dos2unix:${PORTSDIR}/converters/unix2dos \
 		emacs:${PORTSDIR}/editors/emacs20 \
 		fetchmail:${PORTSDIR}/mail/fetchmail \
 		ghostscript:${PORTSDIR}/print/ghostscript6 \
 		ghostview:${PORTSDIR}/print/ghostview \
+		grip:${PORTSDIR}/audio/grip \
+		gimp:${PORTSDIR}/graphics/gimp1 \
 		gv:${PORTSDIR}/print/gv \
 		gnupg:${PORTSDIR}/security/gnupg \
 		ispell:${PORTSDIR}/textproc/ispell \
 		startkde:${PORTSDIR}/x11/kde2 \
 		mkisofs:${PORTSDIR}/sysutils/mkisofs \
+		mount_smbfs:${PORTSDIR}/net/smbfs \
 		mutt:${PORTSDIR}/mail/mutt \
 		netscape:${PORTSDIR}/www/netscape47-communicator \
 		postfix:${PORTSDIR}/mail/postfix \
+		xamp:${PORTSDIR}/audio/xamp \
 		xtset:${PORTSDIR}/x11/xtset \
+		xmms:${PORTSDIR}/audio/xmms \
 		xv:${PORTSDIR}/graphics/xv
 
 NO_WRKSUBDIR=	YES
