@@ -2552,6 +2552,7 @@ hu-ooodict-HU	ports/editors/ooodict-hu_HU
 hugelatex	ports/print/hugelatex
 hugs		ports/lang/hugs
 hulgalugha	ports/misc/hulgalugha
+hunch		ports/security/hunch
 husky-base	ports/news/husky-base
 husky-bsopack	ports/news/husky-bsopack
 husky-fidoconf	ports/news/husky-fidoconf
