@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	spell
 MAINTAINER=		brian@quynh-and-brian.org
 COMMENT=		A GNU implementation of the UNIX spell utility using Ispell
 
-BROKEN=			Overwrites file installed by dependency
+IGNORE=			Overwrites file installed by dependency
 
 RUN_DEPENDS=		${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
 
