@@ -6,9 +6,12 @@
 #
 
 PORTNAME=	fltk
-PORTVERSION=	20000831
+PORTVERSION=	0.1
+PORTEPOCH=	1
 CATEGORIES=	x11-toolkits ruby
-MASTER_SITES=	http://kt-www.jaist.ac.jp/~ttate/ftp/
+MASTER_SITES=	http://ruby-fltk.sourceforge.net/archive/
+#MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+#MASTER_SITE_SUBDIR=	ruby-${PORTNAME}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 DIST_SUBDIR=	ruby
@@ -22,20 +25,16 @@ USE_RUBY_EXTCONF=	yes
 
 USE_MESA=	yes
 
-USE_GMAKE=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.1
 INSTALL_TARGET=	site-install
 CONFIGURE_ARGS=	--with-fltk-dir="${X11BASE}" --with-gl-dir="${X11BASE}"
 MAKE_ARGS=	LOCAL_LIBS="-lgcc"
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${RUBY_EXAMPLESDIR}/fltk
-	${INSTALL_DATA} ${WRKSRC}/test/*.rb ${RUBY_EXAMPLESDIR}/fltk/
-	${MKDIR} ${RUBY_DOCDIR}/fltk/ja
-	${INSTALL_DATA} ${WRKSRC}/README ${RUBY_DOCDIR}/fltk/
-	${INSTALL_DATA} ${WRKSRC}/README.euc.jp ${WRKSRC}/README.utf8 ${RUBY_DOCDIR}/fltk/ja/
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/samples/*.rb ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/doc/en/guide.txt ${RUBY_DOCDIR}/${PORTNAME}/
 .endif
 
 .include <bsd.port.mk>

@@ -1,9 +1,12 @@
-%%RUBY_SITEARCHLIBDIR%%/fltk.so
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/adjuster.rb
-%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/pack.rb
+%%RUBY_SITEARCHLIBDIR%%/rubyfltk.so
+%%RUBY_SITELIBDIR%%/fltk.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample1.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample3.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample4.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample5.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample6.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/fltk/sample7.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/fltk
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/ja/README.euc.jp
-%%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/ja/README.utf8
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/fltk/ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/fltk/guide.txt
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/fltk
