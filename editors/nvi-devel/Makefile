@@ -19,8 +19,6 @@ COMMENT=	Development snapshot of the world-renown nvi editor
 BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 
-.include <bsd.port.pre.mk>
-
 USE_BZIP2=		yes
 WRKSRC=			${WRKDIR}/${DISTNAME}/build.unix
 GNU_CONFIGURE=		yes
@@ -41,4 +39,4 @@ post-install:
 	${RM} ${PREFIX}/man/cat1/${__p}.0
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
