@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	ntp
-PORTVERSION=	4.0.99k
-PORTREVISION=	2
+PORTVERSION=	4.0.99k23
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/
+MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ \
+		http://www.eeics.udel.edu/~ntp/ntp_spool/ntp4/
 
 MAINTAINER=	Cy.Schubert@uumail.gov.bc.ca
 
