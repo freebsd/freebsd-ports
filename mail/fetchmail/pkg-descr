@@ -1,7 +1,7 @@
-Fetchmail is a full-featured IMAP/POP2/POP3/APOP/KPOP client with easy
-configuration, daemon mode, forwarding via SMTP or local MDA, and superior
-reply handling.  It is used to handle intermittent email connections by
-acting as a coupling that seamlessly batch forwards fetched mail from your
+Fetchmail is a full-featured IMAP/POP2/POP3/APOP/KPOP/ETRN/ODMR client with
+easy configuration, daemon mode, forwarding via SMTP or local MDA, and
+superior reply handling.  It is used to handle intermittent email connections
+by acting as a coupling that seamlessly batch forwards fetched mail from your
 mail server to your local delivery system, allowing you to read your it
 with your favourite mail user agent.  Fetchmail also includes useful spam
 filtering and multi-user functions.
