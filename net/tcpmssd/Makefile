@@ -8,14 +8,30 @@
 PORTNAME=	tcpmssd
 PORTVERSION=	1.0
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=ru
+MASTER_SITES=	# none
+DISTFILES=	# none
 
 MAINTAINER=	ru@FreeBSD.org
-COMMENT=	A divert(4) daemon to correct requested receive segment size for TCP traffic
+COMMENT=	A utility to correct requested TCP receive segment size
+
+WRKSRC=		${WRKDIR}/src
+
+SRC=		${.CURDIR}/src
 
 MAN8=		tcpmssd.8
-MANCOMPRESSED=	maybe
 PLIST_FILES=	bin/tcpmssd
+
+do-fetch:
+	@${DO_NADA}
+
+pre-patch:
+	@${CP} -R ${SRC} ${WRKDIR}
+
+do-build:
+	(cd ${WRKSRC} && ${MAKE} tcpmssd)
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/tcpmssd ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/tcpmssd.8 ${MAN8PREFIX}/man/man8
 
 .include <bsd.port.mk>
