@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	petr@petrovich.kiev.ua
 COMMENT=	An easy graphics viewer / converter
 
+BROKEN=		"Checksum mismatch"
+
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 USE_X_PREFIX=	yes
