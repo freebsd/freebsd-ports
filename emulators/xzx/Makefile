@@ -3,7 +3,7 @@
 # Date created:         13 Nov 1997
 # Whom:                 Sheldon Hearn <axl@iafrica.com>
 #
-# $Id: Makefile,v 1.3 1998/03/11 07:54:24 vanilla Exp $
+# $Id: Makefile,v 1.4 1998/03/21 02:29:48 asami Exp $
 #
 
 DISTNAME=	xzx-2.4.4
@@ -14,8 +14,6 @@ DISTFILES=	xzx-2.4.4-src.tar.gz \
 		xzx-2.4.4-contrib.tar.gz
 
 MAINTAINER=	axl@iafrica.com
-
-BROKEN=		endian.h
 
 USE_IMAKE=	yes
 MAN1=		xzx.1
