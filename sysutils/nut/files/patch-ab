@@ -1,0 +1,22 @@
+--- ./conf/Makefile.in.orig	Fri Feb 16 16:19:11 2001
++++ ./conf/Makefile.in	Fri Mar 23 07:31:03 2001
+@@ -12,17 +12,9 @@
+ 
+ install:
+ 	@for f in $(SECFILES) ; do \
+-		if (test -f $(CONFPATH)/$$f ); then \
+-			echo "Preserving existing config file: $$f"; \
+-		else \
+-			$(INSTALLCMD) -m 0600 $$f $(CONFPATH); \
+-		fi; \
++		$(INSTALLCMD) -m 0600 $$f $(CONFPATH)/$$f.sample; \
+ 	done
+ 
+ 	@for f in $(PUBFILES) ; do \
+-		if (test -f $(CONFPATH)/$$f ); then \
+-			echo "Preserving existing config file: $$f"; \
+-		else \
+-			$(INSTALLCMD) -m 0644 $$f $(CONFPATH); \
+-		fi; \
++		$(INSTALLCMD) -m 0644 $$f $(CONFPATH)/$$f.sample; \
+ 	done
