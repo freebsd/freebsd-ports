@@ -16,6 +16,7 @@ MAINTAINER=	rk@ronald.org
 COMMENT=	OpenGL interface for Objective Caml
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
+LIB_DEPENDS=	glut.3:${PORTSDIR}/graphics/libglut
 RUN_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 USE_GL=		yes
@@ -24,8 +25,6 @@ WRKSRC=		${WRKDIR}/lablgl-${PORTVERSION}
 ALL_TARGET=	all opt
 #EXAMPLESDIR=	${PREFIX}/share/examples/ocaml/${PORTNAME}
 #DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
-
-BROKEN=		"Does not compile"
 
 post-extract:
 	@${CP} ${WRKSRC}/Makefile.config.freebsd ${WRKSRC}/Makefile.config
