@@ -38,7 +38,8 @@ PLIST_SUB+=	WITH_GDBM="@comment "
 .endif
 
 .if defined(WITH_MYSQL)
-LIB_DEPENDS+=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+USE_MYSQL=	yes
+WANT_MYSQL_VER=	323
 .else
 CONFIGURE_ARGS+=	--without-mysql
 .endif
