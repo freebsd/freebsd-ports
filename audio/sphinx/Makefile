@@ -14,6 +14,8 @@ DISTNAME=	sphinx2-0.2
 
 MAINTAINER=	trevor@FreeBSD.org
 
+BROKEN=		"seems broken for newpcm"
+
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
