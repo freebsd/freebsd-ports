@@ -12,11 +12,12 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libtool
 
-MAINTAINER=	reg@FreeBSD.org
+#MAINTAINER=	reg@FreeBSD.org
+MAINTAINER=	portmgr@FreeBSD.org
 
-# This port has not been upgraded to 1.3.5 because it makes no changes to
-# FreeBSD support, and would require that all Ports users upgrade for no
-# reason.
+# This port has not been upgraded to 1.4 because it is used by about 30% of
+# the ports collection, and more testing is needed.  If someone can supply a
+# working patch then it will be upgraded.
 
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
