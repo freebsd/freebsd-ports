@@ -3,12 +3,8 @@
 # Date created:         18 March 1996
 # Whom:                 joerg
 #
-# $Id: Makefile,v 1.3 1996/11/11 05:07:00 obrien Exp $
+# $Id: Makefile,v 1.4 1998/08/02 18:21:40 joerg Exp $
 #
-# Note:
-# The file lacks any redistribution notice, but I know that it has
-# been posted to comp.sources.unix ages ago, and the README mentions
-# the word "public domain". -- Jörg
 
 DISTNAME=	bpatch
 PKGNAME=	bpatch-1.0
