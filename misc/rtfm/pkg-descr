@@ -1,3 +1,2 @@
 rtfm(1) is a FreeBSD documentation search program that currently is
-able to search the FreeBSD manual pages, the GNU Texinfo pages, and
-the FreeBSD FAQ, both online and local.
+able to search the FreeBSD manual page and the GNU Texinfo pages.

@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	rtfm-0.1
+DISTNAME=	rtfm-0.2
 CATEGORIES=	misc
 MASTER_SITES= 	http://www.freebsd.org/~chris/distfiles/
 
