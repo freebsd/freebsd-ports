@@ -5,5 +5,6 @@ lib/cmucl/lib/config.lisp
 lib/cmucl/lib/load-foreign.csh
 lib/cmucl/lib/site-init.lisp
 lib/cmucl/lib/subsystems/gray-streams-library.x86f
+@dirrm lib/cmucl/lib/subsystems
 @dirrm lib/cmucl/lib
 @dirrm lib/cmucl
