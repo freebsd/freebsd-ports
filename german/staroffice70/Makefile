@@ -15,13 +15,13 @@ MASTER_SITES=	ftp://ftp.sunsite.auc.dk/disk6/sun-patches/:patch \
 		ftp://ftp.cs.tu-berlin.de/pub/sun/sun-fixes/.../:patch
 DISTNAME=	so-6_0-ga-bin-linux-en.bin
 .if !defined(USE_CDROM)
-DISTFILES=      so-6_0-ga-bin-linux-en.bin 112887-03.tar:patch
+DISTFILES=      so-6_0-ga-bin-linux-en.bin 112887-04.tar:patch
 .endif
 .if defined(WITH_ADABAS)
 DISTFILES+=	soa-6_0-ga-bin-linux-en.bin
 .endif
 
-EXTRACT_ONLY=	112887-03.tar
+EXTRACT_ONLY=	112887-04.tar
 
 MAINTAINER=	mbr@FreeBSD.org
 COMMENT=	Wordprocessor/dbase/spreadheet/drawing/chart
@@ -37,7 +37,7 @@ WRKSRC=		${WRKDIR}/${SOVERSION}
 TMPDIR=		${WRKDIR}/tmp
 LD_PATH=	${TMPDIR}:${WRKSRC}:${LINUXBASE}/lib:${LINUXBASE}/usr/lib
 INSTDB.INS=	${PREFIX}/${SOVERSION}/program/instdb.ins
-SUNSOLVE=	${WRKDIR}/112887-03
+SUNSOLVE=	${WRKDIR}/112887-04
 ADABAS_DIST=	soa-6_0-ga-bin-linux-en.bin
 
 .include <bsd.port.pre.mk>
@@ -108,7 +108,7 @@ pre-fetch:
 	@${ECHO}
 .endif
 .if defined(USE_CDROM)
-DLTEST=112887-03.tar
+DLTEST=112887-04.tar
 .else
 .if exists(/cdrom/linux/office60/setup)
 	@${ECHO}
@@ -233,7 +233,7 @@ post-install:
 
 install-patch:
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
-		TEMP=${TMPDIR} ${LINUXBASE}/bin/sh -c '${WRKSRC}/../112887-03/so-6_0-pp2-bin-linux.bin -patch:${PREFIX}/staroffice6.0'
+		TEMP=${TMPDIR} ${LINUXBASE}/bin/sh -c '${WRKSRC}/../112887-04/so-6_0-pp2-bin-linux.bin -patch:${PREFIX}/staroffice6.0'
 
 install-update:
 	@make extract
