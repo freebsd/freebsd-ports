@@ -3,3 +3,6 @@ MD5 (mutt/patch-1.5.3.rr.compressed.gz) = 029b7bf58f53f4c7dcd542beac0c4757
 MD5 (mutt/patch-1.5.3.vvv.nntp.gz) = 6399a40b4a7ce3448b0329ceec38f35b
 MD5 (mutt/patch-1.5.3.vvv.initials.gz) = 9397128c901c32b6de585ef089ead87f
 MD5 (mutt/patch-1.5.3.vvv.quote.gz) = dc24cc5765dfbbf98a9c2027d950c07a
+MD5 (mutt/patch-1.5.3.cd.edit_threads.9.3) = 753a19d8efdece04cd521c3a3079dc9f
+MD5 (mutt/patch-1.5.3.cd.signatures_menu.2.1) = 6db636f0004e73ee2d9f577acd4ed380
+MD5 (mutt/patch-1.5.3.cd.ifdef.1) = 01b47e075364834b82da053cac4eb69f

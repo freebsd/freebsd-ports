@@ -221,19 +221,16 @@ PATCHFILES+=	patch-${PATCH_VERSION}.vvv.initials.gz \
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_EDIT_THREADS)
-.error The WITH_MUTT_EDIT_THREADS option is currently not available
-#PATCHFILES+=	patch-${PATCH_VERSION}.cd.edit_threads.9.2
+PATCHFILES+=	patch-${PATCH_VERSION}.cd.edit_threads.9.3
 CONFIGURE_ARGS+=	--enable-imap-edit-threads
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_SIGNATURE_MENU)
-.error The WITH_MUTT_SIGNATURE_MENU option is currently not available
-#PATCHFILES+=	patch-${PATCH_VERSION}.cd.signatures_menu.2.1
+PATCHFILES+=	patch-${PATCH_VERSION}.cd.signatures_menu.2.1
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_IFDEF_PATCH)
-.error The WITH_MUTT_IFDEF_PATCH option is currently not available
-#PATCHFILES+=	patch-${PATCH_VERSION}.cd.ifdef.1
+PATCHFILES+=	patch-${PATCH_VERSION}.cd.ifdef.1
 SGML_NEEDED=	yes
 .endif
 .if defined(WITH_MUTT_MBOX_HOOK_PATCH)
