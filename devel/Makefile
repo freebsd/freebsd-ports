@@ -473,6 +473,7 @@
     SUBDIR += pcl-cvs-emacs
     SUBDIR += pcl-cvs-emacs20
     SUBDIR += pcre
+    SUBDIR += pcsc-lite
     SUBDIR += pear
     SUBDIR += pedisassem
     SUBDIR += perforce
