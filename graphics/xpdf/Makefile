@@ -18,7 +18,7 @@ EXTRACT_SUFX=	.tgz
 PATCH_SITES=	ftp://ftp.sci.usq.edu.au/pub/linux/xpdf/
 PATCHFILES=	xpdf-0.80-decrypt.patch
 PATCH_DIST_ARGS=-p0 -E -d ${WRKDIR} --quiet
-.endfi
+.endif
 
 MAINTAINER=	chuckr@glue.umd.edu
 
