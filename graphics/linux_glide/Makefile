@@ -3,15 +3,14 @@
 # Date created:         Oct, 8, 1998
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.2 1998/12/05 00:03:09 asami Exp $
+# $Id: Makefile,v 1.3 1999/01/06 04:27:52 simokawa Exp $
 #
 #
 
 DISTNAME=	linux_glide_2_4
 PKGNAME=	linux_glide-2.4
 CATEGORIES=	emulators graphics
-MASTER_SITES=	http://www.3dfx.com/software/ \
-		ftp://ftp.3dfx.com/pub/glide/
+MASTER_SITES=	ftp://ftp.3dfx.com/pub/glide/
 
 MAINTAINER= 	cracauer@cons.org
 
