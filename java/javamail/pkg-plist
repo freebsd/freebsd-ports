@@ -323,9 +323,9 @@ share/java/classes/smtp.jar
 %%T%%/demo/webapp/src/taglib/demo/MessageTag.java
 %%T%%/demo/webapp/src/taglib/demo/MessageTEI.java
 %%T%%/demo/webapp/src/taglib/demo/SendTag.java
-%%T%%/demo/webapp/src/classes/AttachmentServlet.java
-%%T%%/demo/webapp/src/classes/FilterServlet.java
-%%T%%/demo/webapp/src/classes/MailUserBean.java
+%%T%%/demo/webapp/src/classes/demo/AttachmentServlet.java
+%%T%%/demo/webapp/src/classes/demo/FilterServlet.java
+%%T%%/demo/webapp/src/classes/demo/MailUserBean.java
 %%T%%/demo/webapp/src/docroot/WEB-INF/web.xml
 %%T%%/demo/webapp/src/docroot/login.jsp
 %%T%%/demo/webapp/src/docroot/send.jsp
@@ -390,6 +390,7 @@ share/java/classes/smtp.jar
 @dirrm %%T%%/demo/webapp/src/taglib/demo/
 @dirrm %%T%%/demo/webapp/src/taglib/
 @dirrm %%T%%/demo/webapp/src/docroot/WEB-INF/
+@dirrm %%T%%/demo/webapp/src/classes/demo/
 @dirrm %%T%%/demo/webapp/src/classes/
 @dirrm %%T%%/demo/webapp/src/docroot/
 @dirrm %%T%%/demo/webapp/src/
