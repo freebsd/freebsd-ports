@@ -102,16 +102,13 @@ pgsql/include/utils/palloc.h
 pgsql/lib/global1.bki.source
 pgsql/lib/global1.description
 pgsql/lib/libecpg.a
-pgsql/lib/libecpg.so.2.6.2
-pgsql/lib/libecpg.so.2.3
 pgsql/lib/libecpg.so
+pgsql/lib/libecpg.so.2
 pgsql/lib/libpq++.a
 pgsql/lib/libpq++.so
-pgsql/lib/libpq++.so.2.0
 pgsql/lib/libpq++.so.2
 pgsql/lib/libpq.a
 pgsql/lib/libpq.so
-pgsql/lib/libpq.so.2.0
 pgsql/lib/libpq.so.2
 pgsql/lib/local1_template1.bki.source
 pgsql/lib/local1_template1.description
@@ -121,10 +118,15 @@ pgsql/lib/plpgsql.so
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 pgsql/post-install-notes
+share/doc/pgsql/CVS/Entries
+share/doc/pgsql/CVS/Repository
+share/doc/pgsql/CVS/Root
+share/doc/pgsql/CVS/Tag
 share/doc/pgsql/FAQ
 share/doc/pgsql/FAQ_CVS
 share/doc/pgsql/FAQ_DEV
 share/doc/pgsql/FAQ_FreeBSD
+share/doc/pgsql/FAQ_HPUX
 share/doc/pgsql/FAQ_Irix
 share/doc/pgsql/FAQ_Linux
 share/doc/pgsql/Makefile
@@ -140,7 +142,15 @@ share/doc/pgsql/bug.template
 share/doc/pgsql/postgres.tar.gz
 share/doc/pgsql/programmer.ps.gz
 share/doc/pgsql/programmer.tar.gz
+share/doc/pgsql/src/CVS/Entries
+share/doc/pgsql/src/CVS/Repository
+share/doc/pgsql/src/CVS/Root
+share/doc/pgsql/src/CVS/Tag
 share/doc/pgsql/src/Makefile
+share/doc/pgsql/src/graphics/CVS/Entries
+share/doc/pgsql/src/graphics/CVS/Repository
+share/doc/pgsql/src/graphics/CVS/Root
+share/doc/pgsql/src/graphics/CVS/Tag
 share/doc/pgsql/src/graphics/catalogs.gif
 share/doc/pgsql/src/graphics/catalogs.ps
 share/doc/pgsql/src/graphics/clientserver.ag
@@ -149,6 +159,10 @@ share/doc/pgsql/src/graphics/connections.ag
 share/doc/pgsql/src/graphics/connections.gif
 share/doc/pgsql/src/graphics/layout.ag
 share/doc/pgsql/src/graphics/layout.gif
+share/doc/pgsql/src/sgml/CVS/Entries
+share/doc/pgsql/src/sgml/CVS/Repository
+share/doc/pgsql/src/sgml/CVS/Root
+share/doc/pgsql/src/sgml/CVS/Tag
 share/doc/pgsql/src/sgml/Makefile
 share/doc/pgsql/src/sgml/about.sgml
 share/doc/pgsql/src/sgml/admin.sgml
@@ -204,6 +218,10 @@ share/doc/pgsql/src/sgml/psql.sgml
 share/doc/pgsql/src/sgml/query-ug.sgml
 share/doc/pgsql/src/sgml/query.sgml
 share/doc/pgsql/src/sgml/recovery.sgml
+share/doc/pgsql/src/sgml/ref/CVS/Entries
+share/doc/pgsql/src/sgml/ref/CVS/Repository
+share/doc/pgsql/src/sgml/ref/CVS/Root
+share/doc/pgsql/src/sgml/ref/CVS/Tag
 share/doc/pgsql/src/sgml/ref/abort.sgml
 share/doc/pgsql/src/sgml/ref/allfiles.sgml
 share/doc/pgsql/src/sgml/ref/alter_table.sgml
@@ -301,10 +319,15 @@ share/doc/pgsql/tutorial.ps.gz
 share/doc/pgsql/tutorial.tar.gz
 share/doc/pgsql/user.ps.gz
 share/doc/pgsql/user.tar.gz
+@dirrm share/doc/pgsql/src/sgml/ref/CVS
 @dirrm share/doc/pgsql/src/sgml/ref
+@dirrm share/doc/pgsql/src/sgml/CVS
 @dirrm share/doc/pgsql/src/sgml
+@dirrm share/doc/pgsql/src/graphics/CVS
 @dirrm share/doc/pgsql/src/graphics
+@dirrm share/doc/pgsql/src/CVS
 @dirrm share/doc/pgsql/src
+@dirrm share/doc/pgsql/CVS
 @dirrm share/doc/pgsql
 @dirrm pgsql/man/manl
 @dirrm pgsql/man/man5
