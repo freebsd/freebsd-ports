@@ -52,8 +52,6 @@ sbin/perdition.pop3s
 sbin/perdition.imap4
 sbin/perdition.imap4s
 sbin/perdition.imaps
-share/doc/perdition/perdition-pam.sample
+%%DOCSDIR%%/perdition-pam.sample
 @unexec rmdir %D/etc/perdition 2>/dev/null || echo "If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/perdition`` to remove any files left." | fmt
 @dirrm share/doc/perdition
-@exec /sbin/ldconfig -m %D/lib
-@unexec /sbin/ldconfig -R %D/lib 

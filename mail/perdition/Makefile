@@ -7,6 +7,7 @@
 
 PORTNAME=	perdition
 PORTVERSION=	1.11
+PORTREVISION=	1
 CATEGORIES=	mail net security
 MASTER_SITES=	http://www.vergenet.net/linux/perdition/download/${PORTVERSION}/
 
@@ -25,7 +26,7 @@ MLINK=		perdition.8  - perdition.pop3s.8 \
 		-  perdition.imap4.8 -  perdition.imap4s.8 \
 		- perdition.imaps.8  - perdition.pop3.8
 
-MANCOMPRESSED=  no
+MANCOMPRESSED=	no
 
 USE_LIBTOOL=	YES
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -34,14 +35,6 @@ MAKE_ENV+=	DOCSDIR=${DOCSDIR}
 
 INSTALLS_SHLIB=	yes
 
-# Dirty hack :)
-MYSQL323_LIBVER=10
-MYSQL40_LIBVER=	12
-MYSQL41_LIBVER=	14
-
-MYSQL_VER?=	323
-LDAP_VER?=	21
-
 # Available knobs:
 # WITHOUT_SSL: Disable OpenSSL support
 # WITHOUT_POSIX_REGEX: Disable native regex support
@@ -49,9 +42,34 @@ LDAP_VER?=	21
 # WITH_NIS: Enable NIS database backend
 # WITH_GDBM: Enable gdbm database backend
 # WITH_MYSQL: Enable MySQL database backend
+# WITH_MYSQL_VER:
+#		- 323 use MySQL 3.23.x
+#		- 40 use MySQL 4.0.x
+#		- 41 use MySQL 4.1.x
 # WITH_PGSQL: Enable PostgreSQL database backend
 # WITH_OPENLDAP: Enable OpenLDAP database backend
 # WITH_ODBC: Enable ODBC database backend
+
+LDAP_VER?=	21
+
+# MySQL deps hack (revision 2)
+MYSQL323_LIBVER=10
+MYSQL40_LIBVER=	12
+MYSQL41_LIBVER=	14
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_MYSQL_VER)
+MYSQL_VER=	${WITH_MYSQL_VER}
+.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.${MYSQL_323_LIBVER})
+MYSQL_VER=	323
+.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.${MYSQL40_LIBVER})
+MYSQL_VER=	40
+.elif exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.${MYSQL41_LIBVER})
+MYSQL_VER=	41
+.else
+MYSQL_VER=	40
+.endif
 
 .if !defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=	--enable-ssl
@@ -146,4 +164,4 @@ post-install:
 	@${ECHO_MSG} "/********************************************************/"
 	@${ECHO_MSG} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
