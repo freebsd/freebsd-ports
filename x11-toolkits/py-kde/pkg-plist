@@ -1,0 +1,20 @@
+lib/python1.5/lib-dynload/libkdecorecmodule-0.11.1.so
+lib/python1.5/lib-dynload/libkdeuicmodule-0.11.1.so
+lib/python1.5/lib-dynload/libkhtmlwcmodule-0.11.1.so
+lib/python1.5/lib-dynload/libkfmcmodule-0.11.1.so
+lib/python1.5/lib-dynload/libkfilecmodule-0.11.1.so
+lib/python1.5/lib-dynload/libkspellcmodule-0.11.1.so
+@exec /sbin/ldconfig -m %D/lib
+@unexec /sbin/ldconfig -R
+lib/python1.5/kdecore.py
+lib/python1.5/kdecore.pyc
+lib/python1.5/kdeui.py
+lib/python1.5/kdeui.pyc
+lib/python1.5/khtmlw.py
+lib/python1.5/khtmlw.pyc
+lib/python1.5/kfm.py
+lib/python1.5/kfm.pyc
+lib/python1.5/kfile.py
+lib/python1.5/kfile.pyc
+lib/python1.5/kspell.py
+lib/python1.5/kspell.pyc
