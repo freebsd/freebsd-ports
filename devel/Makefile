@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.175 1999/04/30 17:21:41 taoka Exp $
+# $Id: Makefile,v 1.176 1999/05/01 01:15:40 taoka Exp $
 #
 
     SUBDIR += ElectricFence
@@ -35,6 +35,7 @@
     SUBDIR += doc++
     SUBDIR += elftoaout
     SUBDIR += f77flow
+    SUBDIR += fastcrc
     SUBDIR += flick
     SUBDIR += fpp
     SUBDIR += ftnchek
