@@ -1,0 +1,11 @@
+--- lib/data/Makefile.in.0	Fri Aug 17 05:14:55 2001
++++ lib/data/Makefile.in	Fri Aug 17 05:15:19 2001
+@@ -206,7 +206,7 @@
+ @SET_GID_TRUE@	  touch "$(DESTDIR)$(angbanddir)/k_info.raw" && \
+ @SET_GID_TRUE@	  touch "$(DESTDIR)$(angbanddir)/r_info.raw" && \
+ @SET_GID_TRUE@	  touch "$(DESTDIR)$(angbanddir)/v_info.raw" && \
+-@SET_GID_TRUE@	  chown -R root.@GAMEGROUP@ "$(DESTDIR)$(angbanddir)" && \
++@SET_GID_TRUE@	  chown -R root:@GAMEGROUP@ "$(DESTDIR)$(angbanddir)" && \
+ @SET_GID_TRUE@	  chmod -R g+w "$(DESTDIR)$(angbanddir)" ;\
+ @SET_GID_TRUE@	fi
+ 
