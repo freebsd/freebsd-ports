@@ -1,5 +1,5 @@
---- wmwave.c.orig	Thu Dec 27 12:10:44 2001
-+++ wmwave.c	Thu Dec 27 13:09:37 2001
+--- wmwave.c.orig	Fri Aug 20 09:44:21 1999
++++ wmwave.c	Wed Mar 27 03:31:16 2002
 @@ -1,38 +1,21 @@
  /*
 + * $Id$
@@ -52,7 +52,7 @@
  #include <stdlib.h>
  #include <stdio.h>
  #include <time.h>
-@@ -45,313 +28,387 @@
+@@ -45,313 +28,393 @@
  #include <limits.h>
  #include <errno.h>
  #include <signal.h>
@@ -80,7 +80,13 @@
 +#include <netinet/ip.h>
 +#include <netinet/ip_var.h>
 +#include <arpa/inet.h>
++#include <osreldate.h>
++
++#if __FreeBSD_version >= 500015
++#include <dev/wi/if_wavelan_ieee.h>
++#else
 +#include <machine/if_wavelan_ieee.h>
++#endif
  
  #include <X11/Xlib.h>
  #include <X11/xpm.h>
