@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fd
-PORTVERSION=	1.03s
+PORTVERSION=	1.03t
 CATEGORIES=	misc
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA012337/soft/fd/
 MASTER_SITE_SUBDIR=	steve
