@@ -1,8 +1,20 @@
---- src/conf/site.mm.in.orig	Wed Oct 15 01:43:58 1997
-+++ src/conf/site.mm.in	Wed Oct 15 01:44:48 1997
-@@ -6 +6 @@
--COMPILER= @CC@
-+COMPILER:= $(CC)
-@@ -42 +42 @@
--CFLAGS= -O -I$(TOP)/ $(EXTRA_CFLAGS)
-+CFLAGS+= -I$(TOP)/ $(EXTRA_CFLAGS)
+--- src/msql/sort.c.orig	Fri Aug 28 17:20:10 1998
++++ src/msql/sort.c	Fri Aug 28 17:18:42 1998
+@@ -280,7 +280,7 @@
+ 	/*
+ 	** Create the dummy output table 
+ 	*/
+-	snprintf(dataPath,MAXPATHLEN,"%s/msqldb/.tmp/%s.tmp",INST_DIR,
++	snprintf(dataPath,MAXPATHLEN,"/var/db/msqldb/.tmp/%s.tmp",
+ 		entry->table);
+ 	tmp.dataFD = open(dataPath, O_CREAT|O_RDWR, 0600);
+         bzero(&sblock, sizeof(sblock));
+@@ -328,7 +328,7 @@
+ 	/*
+ 	** Swap the new table into place
+ 	*/
+-	snprintf(oldPath,MAXPATHLEN,"%s/msqldb/.tmp/%s.dat",INST_DIR,
++	snprintf(oldPath,MAXPATHLEN,"/var/db/msqldb/.tmp/%s.dat",
+ 		entry->table);
+ 	munmap(entry->dataMap, entry->size);
+ 	close(entry->dataFD);
