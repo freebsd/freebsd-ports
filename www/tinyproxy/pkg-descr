@@ -6,7 +6,7 @@ Note that tinyproxy requires commandline arguments to run in anonymizing
 mode. For most people, "/usr/local/sbin/tinyproxy -a Host: -a Authorization:"
 is sufficient for an anonymizing proxy.
 
-WWW: http://tinyproxy.attacca.com/
+WWW: http://tinyproxy.sourceforge.net/
 
 - Mitsuru Yoshida
 mitsuru@riken.go.jp

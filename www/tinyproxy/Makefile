@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	tinyproxy
-PORTVERSION= 	1.2.8
+PORTVERSION=	1.3.3
 CATEGORIES=	www
-MASTER_SITES=	http://tinyproxy.attacca.com/ \
-		http://www.flarenet.com/tinyproxy/
+MASTER_SITES=	http://download.sourceforge.net/tinyproxy/
 
 MAINTAINER=	mitsuru@riken.go.jp
 
-WRKSRC=		${WRKDIR}/tinyproxy
+BUILD_DEPENDS=	${LOCALBASE}/lib/libadns.a:${PORTSDIR}/net/adns
+
+GNU_CONFIGURE=  yes
+CONFIGURE_ARGS= --bindir=${PREFIX}/sbin --with-log-file=/var/log/tinyproxy.log   --with-port=8080 --with-user=nobody --with-adns-include=${LOCALBASE}/include --with-adns-lib=${LOCALBASE}/lib
 
 MAN8=		tinyproxy.8
 
