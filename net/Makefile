@@ -289,6 +289,7 @@
     SUBDIR += limewire
     SUBDIR += linc
     SUBDIR += linphone
+    SUBDIR += linphone-base
     SUBDIR += linpopup
     SUBDIR += linux-agsatellite
     SUBDIR += linux-edonkey-core
