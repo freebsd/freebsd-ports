@@ -2,5 +2,6 @@ etc/jailadmin.conf.sample
 etc/rc.d/zzz-jail.sh
 %%SITE_PERL%%/Jail.pm
 %%SNMP%%sbin/jail-snmp
+%%SNMP%%sbin/jail-snmp-persist
 sbin/jailadmin
 %%SNMP%%share/snmp/mibs/JAIL-MIB.txt
