@@ -144,6 +144,7 @@
     SUBDIR += unquote
     SUBDIR += upsd
     SUBDIR += upsmon
+    SUBDIR += userlist
     SUBDIR += uwatch
     SUBDIR += webmin
     SUBDIR += whowatch
