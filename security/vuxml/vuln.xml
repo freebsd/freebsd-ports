@@ -32,6 +32,59 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a163baff-3fe1-11d9-a9e7-0001020eed82">
+    <topic>unarj -- long filename buffer overflow</topic>
+    <affects>
+      <package>
+	<name>unarj</name>
+	<range><lt>2.43_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ludwig Nussel has discovered a buffer overflow
+	  vulnerability in unarj's handling of long filenames which
+	  could potentially lead to execution of arbitrary code with
+	  the permissions of the user running unarj.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-0947</cvename>
+      <bid>11665</bid>
+    </references>
+    <dates>
+      <discovery>2004-11-09</discovery>
+      <entry>2004-11-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1f922de0-3fe5-11d9-a9e7-0001020eed82">
+    <topic>unarj -- directory traversal vulnerability</topic>
+    <affects>
+      <package>
+	<name>unarj</name>
+	<range><lt>2.43_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>unarj has insufficient checks for filenames that contain
+	  <q>..</q>.  This can allow an attacker to overwrite
+	  arbitrary files with the permissions of the user running
+	  unarj.</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2004-1027</cvename>
+      <bid>11436</bid>
+      <mlist msgid="200410102243.i9AMhA9F083398@mailserver2.hushmail.com">http://marc.theaimsgroup.com/?l=full-disclosure&amp;m=109748984030292</mlist>
+    </references>
+    <dates>
+      <discovery>2004-10-10</discovery>
+      <entry>2004-11-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ac619d06-3ef8-11d9-8741-c942c075aa41">
     <topic> Security Vulnerability With Java Plugin</topic>
     <affects>
