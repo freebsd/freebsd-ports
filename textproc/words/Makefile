@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	words
-PORTVERSION=	1.97
+PORTVERSION=	1.97E
 CATEGORIES=	textproc
 MASTER_SITES=	http://users.erols.com/whitaker/
 DISTNAME=	${PORTNAME}all
@@ -36,9 +36,11 @@ do-build:
 	${GNATMAKE} -O3 words ${GNATLINK_ARGS} && \
 	${GNATMAKE} makedict && \
 	${GNATMAKE} makestem && \
+	${GNATMAKE} makeefil && \
 	${GNATMAKE} makeinfl && \
 	${ECHO_CMD} G | ./makedict DICTLINE.GEN && \
 	${ECHO_CMD} G | ./makestem STEMLIST.GEN && \
+	./makeefil EWDSLIST.GEN && \
 	./makeinfl INFLECTS.LAT
 	@${CAT} ${FILESDIR}/words | ${SED} -e 's|%%DATADIR%%|${DATADIR}|' > ${WRKDIR}/words.sh
 
@@ -48,13 +50,15 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/DICTFILE.GEN ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/STEMFILE.GEN ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/INDXFILE.GEN ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/EWDSFILE.GEN ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/INFLECTS.SEC ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/ADDONS.LAT ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/UNIQUES.LAT ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/words.sh ${PREFIX}/bin/words
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/WORDSDOC.HTM ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/words.htm ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/wordsdoc.htm ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
