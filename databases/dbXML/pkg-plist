@@ -1246,6 +1246,7 @@
 %%T%%/config/system.xml
 bin/dbxmladmin
 bin/dbxml
+bin/dbxmlctl
 %%T%%/idl/dbXML.idl
 %%T%%/LICENSE
 %%T%%/logs/Logs.txt
