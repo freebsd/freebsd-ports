@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=${PORTNAME}/release/${PORTVERSION}
 MAINTAINER=	jakub@rehor.net
 COMMENT=	An ANSI Common Lisp
 
+BROKEN=		Incomplete pkg-plist
+
 USE_BZIP2=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
