@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dictionary
-PORTVERSION=	1.8
+PORTVERSION=	1.8.1
 CATEGORIES=	textproc net elisp
 MASTER_SITES=	http://me.in-berlin.de/~myrkr/dictionary/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -16,10 +16,14 @@ MAINTAINER=	fuyuki@mj.0038.net
 EMACS_PORT_NAME?=	emacs21
 
 LISPDIR=	${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
+ELS=		connection.el dictionary.el link.el
+
+do-build:
+	cd ${WRKSRC}; ${EMACS_CMD} -batch -l lpath.el -f batch-byte-compile ${ELS}
 
 do-install:
 	${MKDIR} ${LISPDIR}
-.for i in connection.* dictionary-init.el dictionary.* link.*
+.for i in ${ELS} *.elc dictionary-init.el
 	${INSTALL_DATA} ${WRKSRC}/${i} ${LISPDIR}
 .endfor
 
