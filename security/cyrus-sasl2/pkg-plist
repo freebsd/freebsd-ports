@@ -55,11 +55,11 @@ sbin/saslpasswd2
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/draft-burdis-cat-srp-sasl-06.txt
 %%PORTDOCS%%%%DOCSDIR%%/draft-ietf-cat-sasl-gssapi-05.txt
-%%PORTDOCS%%%%DOCSDIR%%/draft-ietf-sasl-anon-00.txt
-%%PORTDOCS%%%%DOCSDIR%%/draft-ietf-sasl-plain-00.txt
-%%PORTDOCS%%%%DOCSDIR%%/draft-ietf-sasl-rfc2831bis-00.txt
-%%PORTDOCS%%%%DOCSDIR%%/draft-myers-saslrev-02.txt
-%%PORTDOCS%%%%DOCSDIR%%/draft-nerenberg-sasl-crammd5-03.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-ietf-sasl-anon-01.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-ietf-sasl-crammd5-00.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-ietf-sasl-plain-01.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-ietf-sasl-rfc2222bis-00.txt
+%%PORTDOCS%%%%DOCSDIR%%/draft-ietf-sasl-rfc2831bis-01.txt
 %%PORTDOCS%%%%DOCSDIR%%/draft-newman-sasl-c-api-01.txt
 %%PORTDOCS%%%%DOCSDIR%%/draft-sasl-login.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc1321.txt

@@ -1,23 +1,7 @@
---- config/ltmain.sh.orig	Tue Sep  3 23:59:40 2002
-+++ config/ltmain.sh	Sat Oct 12 08:03:59 2002
-@@ -1894,7 +1894,7 @@
- 	  if test $? -eq 0 ; then
- 	    ldd_output=`ldd conftest`
- 	    for i in $deplibs; do
--	      name="`expr $i : '-l\(.*\)'`"
-+	      name="`expr X$i : 'X-l\(.*\)'`"
- 	      # If $name is empty we are operating on a -L argument.
- 	      if test "$name" != "" ; then
- 		libname=`eval \\$echo \"$libname_spec\"`
-@@ -1919,7 +1919,7 @@
- 	    # Error occured in the first compile.  Let's try to salvage the situation:
- 	    # Compile a seperate program for each library.
- 	    for i in $deplibs; do
--	      name="`expr $i : '-l\(.*\)'`"
-+	      name="`expr X$i : 'X-l\(.*\)'`"
- 	     # If $name is empty we are operating on a -L argument.
- 	      if test "$name" != "" ; then
- 		$rm conftest
+Index: config/ltmain.sh
+diff -u config/ltmain.sh.orig config/ltmain.sh
+--- config/ltmain.sh.orig	Thu Jun 12 09:32:43 2003
++++ config/ltmain.sh	Tue Jul  1 01:07:11 2003
 @@ -1959,7 +1959,7 @@
  	  set dummy $deplibs_check_method
  	  file_magic_regex="`expr \"$deplibs_check_method\" : \"$2 \(.*\)\"`"
@@ -27,7 +11,7 @@
  	    # If $name is empty we are operating on a -L argument.
  	    if test "$name" != "" ; then
  	      libname=`eval \\$echo \"$libname_spec\"`
-@@ -3391,8 +3391,8 @@
+@@ -3396,8 +3396,8 @@
  	# Install the pseudo-library for information purposes.
  	name=`$echo "X$file" | $Xsed -e 's%^.*/%%'`
  	instname="$dir/$name"i
