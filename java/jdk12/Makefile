@@ -32,6 +32,7 @@ WRKSRC=		${WRKDIR}/build/bsd
 
 JDK_VERSION=	1.2.2
 JDK_PATCHSET_VERSION=	11
+LATEST_LINK=	jdk12
 
 JDK11DIR?=	${LOCALBASE}/jdk1.1.8
 JFC11DIR?=	${WRKDIRPREFIX}${.CURDIR}/../../java/jfc/work/swing-1.1.1fcs
