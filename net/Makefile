@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.83 1996/11/22 08:20:25 obrien Exp $
+# $Id: Makefile,v 1.84 1996/11/26 08:50:49 asami Exp $
 #
 
     SUBDIR += archie
     SUBDIR += ascend-radius
     SUBDIR += bb
+    SUBDIR += cap
     SUBDIR += cvsup
     SUBDIR += dgd
     SUBDIR += dgd-lpmud
