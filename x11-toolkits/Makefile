@@ -55,6 +55,7 @@
     SUBDIR += iwidgets
     SUBDIR += jx
     SUBDIR += lesstif
+    SUBDIR += libbonoboui
     SUBDIR += libgtkeditor
     SUBDIR += libj2dplot
     SUBDIR += libjparser
