@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	qterm
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.6
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	gavin@tju.edu.cn
+MAINTAINER=	gavin@FreeBSDChina.org
 COMMENT=	QTerm is a BBS client in Unix
 
 USE_QT_VER=	3
@@ -19,7 +19,6 @@ USE_GMAKE=	yes
 HAS_CONFIGURE=	yes
 USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--enable-mt --with-pythondir=${LOCALBASE} --prefix=${PREFIX}
-INSTALLS_SHLIB=	yes
 
 .if !defined(WITHOUT_PYTHON)
 USE_PYTHON=	-2.3
