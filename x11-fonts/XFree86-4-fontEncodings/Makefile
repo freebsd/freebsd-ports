@@ -18,6 +18,8 @@ COMMENT=	XFree86-4 font encoding files
 
 BUILD_DEPENDS=	ucs2any:${PORTSDIR}/x11/XFree86-4-clients
 
+CONFLICTS=	xorg-fonts-encodings-*
+
 XFREE86_VERSION=	4
 USE_IMAKE=		YES
 PROJECTROOT=		-DProjectRoot=${PREFIX}
