@@ -35,7 +35,7 @@
  	PerrorExit("/dev/console");
      }
  #elif defined(__FreeBSD__)
-+#if __FreeBSD_version >= 510100
++#if __FreeBSD_version >= 501100
 +    cfd = open("/dev/ttyv0", O_WRONLY);
 +    if (cfd < 0 && (cfd = open("/dev/ttyv0", O_RDONLY)) < 0) {
 +	PerrorExit("/dev/ttyv0");
@@ -54,7 +54,7 @@
      if (cfd < 0 && (cfd = open("/dev/console", O_RDONLY)) < 0)
  	fatal("can't open /dev/console");
  #elif defined(__FreeBSD__)
-+#if __FreeBSD_version >= 510100
++#if __FreeBSD_version >= 501100
 +    cfd = open("/dev/ttyv0", O_WRONLY);
 +    if (cfd < 0 && (cfd = open("/dev/ttyv0", O_RDONLY)) < 0)
 +	fatal("can't open /dev/ttyv0");

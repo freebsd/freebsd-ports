@@ -7,7 +7,7 @@
 
 PORTNAME=	kon2
 PORTVERSION=	0.3
-PORTREVISION=	2
+PORTREVISION=	3
 PKGNAMESUFFIX=	-${KONFONT}
 CATEGORIES+=	japanese # '+=' is for slave ports
 # note kon is only in first directory and fonts are only in second directory
@@ -41,6 +41,9 @@ KON14FONT=Startup
 	@${ECHO} "Error: \$${KONFONT} (\"${KONFONT}\") should be either \"14dot\" or \"16dot\"."
 	@${FALSE}
 .endif
+
+post-extract:
+	@${CP} ${WRKSRC}/doc/kon.1 ${WRKSRC}/src/
 
 pre-build:
 	${SED} -e 's,%%PREFIX%%,${PREFIX},' \
