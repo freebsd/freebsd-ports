@@ -1,0 +1,8 @@
+This is the developer's kit for a PC/SC driver for Unix and Mac OS X.
+Please refer to the documentation in PDF format in the docs directory
+for a complete guide to creating your own driver.
+
+WWW: http://www.linuxnet.com/sourcedrivers.html
+
+Bruce
+bms@spc.org
