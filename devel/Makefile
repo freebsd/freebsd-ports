@@ -286,6 +286,7 @@
     SUBDIR += linux-libglade
     SUBDIR += linux-sdl12
     SUBDIR += linux_devtools
+    SUBDIR += linux_devtools-7
     SUBDIR += linux_kdump
     SUBDIR += linuxthreads
     SUBDIR += log4cpp
