@@ -11,7 +11,7 @@ CATEGORIES=	net comms
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=dinoex
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 
 USE_BZIP2=	yes
 
