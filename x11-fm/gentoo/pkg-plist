@@ -188,7 +188,6 @@ share/gentoo/icons/AbiWord.xpm
 %%PORTDOCS%%share/doc/gentoo/FAQ
 %%PORTDOCS%%share/doc/gentoo/BUGS
 %%PORTDOCS%%share/doc/gentoo/gentoo.css
-%%PORTDOCS%%share/doc/gentoo/gentoorc-example
 %%PORTDOCS%%share/doc/gentoo/gentoogtkrc-example
 %%PORTDOCS%%share/doc/gentoo/gpl.html
 %%PORTDOCS%%share/doc/gentoo/history.html
