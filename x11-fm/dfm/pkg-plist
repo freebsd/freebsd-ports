@@ -121,6 +121,7 @@ share/examples/dfm/dfmext.sample.normal
 share/examples/dfm/dfmext.sample.user
 share/locale/da/LC_MESSAGES/dfm.mo
 share/locale/de/LC_MESSAGES/dfm.mo
+share/locale/ru/LC_MESSAGES/dfm.mo
 @dirrm share/examples/dfm
 %%PORTDOCS%%@dirrm share/doc/dfm
 @dirrm share/dfm/icons/Moreicons
