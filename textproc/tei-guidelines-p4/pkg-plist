@@ -1,41 +1,3 @@
-share/doc/tei/p4/Status/ABc01.txt
-share/doc/tei/p4/Status/ABdiffs.txt
-share/doc/tei/p4/Status/AIc01.txt
-share/doc/tei/p4/Status/CCc01.txt
-share/doc/tei/p4/Status/CEc01.txt
-share/doc/tei/p4/Status/CEc02.txt
-share/doc/tei/p4/Status/COc01.txt
-share/doc/tei/p4/Status/COc02.txt
-share/doc/tei/p4/Status/COco1.txt
-share/doc/tei/p4/Status/Chap31_terms.txt
-share/doc/tei/p4/Status/Concur_Outside_31.html
-share/doc/tei/p4/Status/DIc01.txt
-share/doc/tei/p4/Status/DIc02.txt
-share/doc/tei/p4/Status/DRc01.txt
-share/doc/tei/p4/Status/DSc01.txt
-share/doc/tei/p4/Status/FDc01.txt
-share/doc/tei/p4/Status/FMc01.txt
-share/doc/tei/p4/Status/FSc01.txt
-share/doc/tei/p4/Status/FTc01.htm
-share/doc/tei/p4/Status/HDc01.txt
-share/doc/tei/p4/Status/NDc01.txt
-share/doc/tei/p4/Status/NHc01.htm
-share/doc/tei/p4/Status/PHc01.txt
-share/doc/tei/p4/Status/PHc02.txt
-share/doc/tei/p4/Status/SAc01.txt
-share/doc/tei/p4/Status/SHc01.txt
-share/doc/tei/p4/Status/STc01.txt
-share/doc/tei/p4/Status/TCc01.txt
-share/doc/tei/p4/Status/TEc01.txt
-share/doc/tei/p4/Status/TSc01.txt
-share/doc/tei/p4/Status/VEc01.txt
-share/doc/tei/p4/Status/VEc02.txt
-share/doc/tei/p4/Status/chapters.xml
-share/doc/tei/p4/Status/index.html
-share/doc/tei/p4/Status/index.xml
-share/doc/tei/p4/Status/p2chrev.html
-share/doc/tei/p4/Status/press.txt
-share/doc/tei/p4/Status/review.txt
 share/doc/tei/p4/AB.html
 share/doc/tei/p4/AI.html
 share/doc/tei/p4/CC.html
@@ -723,6 +685,9 @@ share/doc/tei/p4/ref-YEAR.html
 share/doc/tei/p4/background.gif
 share/doc/tei/p4/jaco001d.gif
 share/doc/tei/p4/logo.jpg
-@dirrm share/doc/tei/p4/Status
+share/doc/tei/p4/Figures/compic.png
+share/doc/tei/p4/Figures/dunpic.png
+share/doc/tei/p4/Figures/xmlpic.png
+@dirrm share/doc/tei/p4/Figures/
 @dirrm share/doc/tei/p4/
 @unexec rmdir %D/share/doc/tei/ 2>/dev/null || true
