@@ -62,3 +62,4 @@ textproc/br-ispell|portuguese/ispell-pt_BR|2002-11-22|new category
 korean/w3m|www/w3m-m17n|2002-11-23|www/w3m-m17n could handle Korean
 korean/gaim|net/gaim|2002-11-24|net/gaim could handle Korean
 palm/xcopilot|ports/pose|2002-11-24|pose supersceded xcopilot
+www/libxpg4-ns||2002-11-24|needless since all native netscapes are removed
