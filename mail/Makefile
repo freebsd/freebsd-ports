@@ -131,6 +131,7 @@
     SUBDIR += libpst
     SUBDIR += librfc822
     SUBDIR += libspf
+    SUBDIR += libspf-alt
     SUBDIR += libsrs
     SUBDIR += listmanager
     SUBDIR += lmtp2nntp
@@ -251,6 +252,7 @@
     SUBDIR += p5-Mail-RBL
     SUBDIR += p5-Mail-RFC822-Address
     SUBDIR += p5-Mail-SPF-Query
+    SUBDIR += p5-Mail-SRS
     SUBDIR += p5-Mail-Sender
     SUBDIR += p5-Mail-Sendmail
     SUBDIR += p5-Mail-SpamAssassin
