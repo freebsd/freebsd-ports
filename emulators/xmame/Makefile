@@ -6,14 +6,14 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.61.1
+PORTVERSION?=	0.65.1
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.sys2064.com/files/util/:history \
 		http://www.sys2064.com/files/mame/:highscore \
 		http://cheat.retrogames.com/:cheat \
 		http://www.win.tue.nl/~stijn/xmame/:history,highscore,cheat
-DISTNAME=	xmame-${XMAMEVERSION:S/.p/-pr/}
+DISTNAME=	xmame-${XMAMEVERSION:S/.r/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:xmame
 DIST_SUBDIR=	xmame
 
@@ -53,6 +53,7 @@ SPOOLGAMES?=	/var/games
 GENERALDOCS=	changes.unix \
 		ctrlr.txt \
 		dga2.txt \
+		img/xmame.jpg \
 		liesmich.unix \
 		listinfo.txt \
 		multiplayer-readme.txt \
@@ -86,7 +87,8 @@ XMESSDOCS=	changes.mess \
 		imgtool.txt \
 		messhelp.txt \
 		messroms.txt \
-		old-changes.mess
+		old-changes.mess \
+		readme.mess
 PINMAMEDOCS=	pinmame/simulation.txt \
 		pinmame/whatsnew.txt \
 		pinmame/pinmame.txt \
@@ -107,8 +109,7 @@ ALLDOCS=	${GENERALDOCS} ${PINMAMEDOCS}
 PKGOPTS=	${FILESDIR}/pkg-opts
 
 #
-# Various options are processed here. Note that due to a bug in make(1), at
-# present the conditionals are suboptimal. See PR bin/34032.
+# Various options are processed here.
 #
 
 # Option WITH_DATFILES
@@ -149,7 +150,7 @@ WITH_ASM68K=	no
 .if ${WITH_ASM68K:L} == "yes"
 ASM_COMMENT=
 .else
-ASM_COMMENT=\#
+ASM_COMMENT=\#\ 
 .endif
 
 # Option WITH_OPTIMIZATION
@@ -160,6 +161,8 @@ CFLAGS+=	-O3 -Wall -Wno-unused -funroll-loops \
 		-malign-functions=4 -malign-jumps=4 -malign-loops=4
 .endif
 .endif
+
+SDLSOUNDCOMMENT= \#\ 
 
 # Option DISPLAY_TARGET
 .if !defined(DISPLAY_TARGET)
@@ -177,8 +180,6 @@ PLIST_SUB+=	OPENGL="@comment "
 
 .if ${DISPLAY_TARGET:L} == "svgalib"
 LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib
-CFLAGS+=	-I${LOCALBASE}/include
-MAKE_ENV+=	LOCALBASE=${LOCALBASE}
 DISPLAY_METHOD=	svgalib
 .else
 
@@ -195,6 +196,7 @@ pre-everything::
 LIB_DEPENDS=    SDL-1.1.5:${PORTSDIR}/devel/sdl12
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 DISPLAY_METHOD=	SDL
+SDLSOUNDCOMMENT=
 .endif
 .endif
 .endif
@@ -251,24 +253,30 @@ pre-everything::
 
 # The large number of sed regexes here is intended to make this port a whole
 # lot easier to maintain - please don't convert them into a patch.
+#
+# XXX: The -Imess part was added because of a conflict with cdparanoia-3.9.8_3
+#      which (imho bogusly) installs an 'utils.h' header in $LOCALBASE/include
 do-configure:
 	${SED} -e "s@= gcc@?=  ${CC}@g" \
-		-e "s@^CFLAGS.*@CFLAGS ?= ${CFLAGS}@g" \
-		-e "s@lib/x\$$(TARGET)@share/x\$$(TARGET)@g" \
-		-e "s@/usr/X11R6@${X11BASE}@g" \
-		-e "s@-g bin@-g wheel@g" \
-		-e "s@^ARCH  = linux@ARCH  = freebsd@g" \
-		-e "s@# X11_XV@X11_XV@g" \
-		-e "s@# X11_DGA@X11_DGA@g" \
-		-e "s@= x11@= ${DISPLAY_METHOD}@g" \
-		-e "s@= mame@= ${MAMEMESS}@g" \
-		-e "s@# X86_ASM@${ASM_COMMENT}X86_ASM@g" \
-		-e "s@# SOUND_ESOUND@${ESOUNDCOMMENT}SOUND_ESOUND@g" \
+		-e "s@^TARGET.*@TARGET = ${MAMEMESS}@g" \
 		-e "s@# MAME_NET@${NETWORK}MAME_NET@g" \
+		-e "s@# X86_ASM_68000@${ASM_COMMENT}X86_ASM_68000@g" \
+		-e "s@^CFLAGS.*@CFLAGS ?= ${CFLAGS}@g" \
+		-e "s@^INSTALL_GROUP.*@INSTALL_GROUP = wheel@g" \
 		-e "s@# LIBS.*@LIBS = -L${LOCALBASE}/lib@g" \
-		-e "s@sdl-config@${SDL_CONFIG}@g" \
+		-e "s@# INCLUDES.*@INCLUDES = -Imess -I${LOCALBASE}/include@g" \
+		-e "s@^PREFIX.*@PREFIX = ${PREFIX}@g" \
+		-e "s@/share/man@/man@g" \
+		-e "s@^MY_CPU.*@MY_CPU = ${ARCH}@g" \
+		-e "s@^ARCH.*@ARCH = freebsd@g" \
 		-e "s@# JOY_USB@JOY_USB@g" \
-		-e "s@GLLIBS=.-ldl@GLLIBS= ${PTHREAD_LIBS}@g" \
+		-e "s@# SOUND_ESOUND@${ESOUNDCOMMENT}SOUND_ESOUND@g" \
+		-e "s@# SOUND_SDL@${SDLSOUNDCOMMENT}SOUND_SDL@g" \
+		-e "s@^DISPLAY_METHOD.*@DISPLAY_METHOD = ${DISPLAY_METHOD}@g" \
+		-e "s@# X11_DGA@X11_DGA@g" \
+		-e "s@/usr/X11R6@${X11BASE}@g" \
+		-e "s@^SDL_CONFIG.*@SDL_CONFIG = ${SDL_CONFIG}@g" \
+		-e "s@^GLLIBS=.*@GLLIBS= ${PTHREAD_LIBS}@g" \
 			${WRKSRC}/makefile.unix > ${WRKSRC}/Makefile
 
 post-build:
@@ -297,6 +305,7 @@ post-install:
 				${PREFIX}/share/x${MAMEMESS}/x${MAMEMESS}rc
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/x${MAMEMESS}
+	${MKDIR} ${PREFIX}/share/doc/x${MAMEMESS}/img
 .for file in ${ALLDOCS}
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${PREFIX}/share/doc/x${MAMEMESS}
 .endfor
