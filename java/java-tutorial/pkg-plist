@@ -93,6 +93,7 @@
 %%T%%/2d/printing/pagesetup.html
 %%T%%/2d/problems/Map_Line.java
 %%T%%/2d/problems/index.html
+%%T%%/2d/problems/printing.html
 %%T%%/2d/textandfonts/FontSelectionDemo.atag
 %%T%%/2d/textandfonts/FontSelectionDemo.html
 %%T%%/2d/textandfonts/LineBreakSample.atag
@@ -231,15 +232,15 @@
 %%T%%/books/2e/toc.html
 %%T%%/books/3e/bookTOC.pdf
 %%T%%/books/3e/cdinfo.html
+%%T%%/books/3e/errata.html
+%%T%%/books/3e/exercises/packages.html
+%%T%%/books/3e/index.html
 %%T%%/books/3e/pdf/p-229.pdf
 %%T%%/books/3e/pdf/p-239-40.pdf
 %%T%%/books/3e/pdf/p-267.pdf
 %%T%%/books/3e/pdf/p-309.pdf
 %%T%%/books/3e/pdf/p-32.pdf
 %%T%%/books/3e/pdf/p-56.pdf
-%%T%%/books/3e/errata.html
-%%T%%/books/3e/exercises/packages.html
-%%T%%/books/3e/index.html
 %%T%%/books/3e/toc.html
 %%T%%/books/continued/cdinfo.html
 %%T%%/books/continued/errata.html
@@ -362,8 +363,8 @@
 %%T%%/essential/io/example-1dot1/CountWriter.java
 %%T%%/essential/io/example-1dot1/CounterDemo.java
 %%T%%/essential/io/example-1dot1/DataIODemo.java
-%%T%%/essential/io/example-1dot1/DataIOTest.java
 %%T%%/essential/io/example-1dot1/DataIODemo2.java
+%%T%%/essential/io/example-1dot1/DataIOTest.java
 %%T%%/essential/io/example-1dot1/DataIOTest2.java
 %%T%%/essential/io/example-1dot1/ListOfFiles.java
 %%T%%/essential/io/example-1dot1/ReverseThread.java
@@ -578,14 +579,36 @@
 %%T%%/extra/fullscreen/bufferstrategy.html
 %%T%%/extra/fullscreen/displaymode.html
 %%T%%/extra/fullscreen/doublebuf.html
-%%T%%/extra/fullscreen/example.html
 %%T%%/extra/fullscreen/example-1dot4/CapabilitiesTest.java
 %%T%%/extra/fullscreen/example-1dot4/DisplayModeTest.java
 %%T%%/extra/fullscreen/example-1dot4/MultiBufferTest.java
+%%T%%/extra/fullscreen/example.html
 %%T%%/extra/fullscreen/exclusivemode.html
 %%T%%/extra/fullscreen/index.html
 %%T%%/extra/fullscreen/rendering.html
 %%T%%/extra/index.html
+%%T%%/extra/regex/bounds.html
+%%T%%/extra/regex/char_classes.html
+%%T%%/extra/regex/example-1dot4/MatcherTest.java
+%%T%%/extra/regex/example-1dot4/MatchesLooking.java
+%%T%%/extra/regex/example-1dot4/RegexTest.java
+%%T%%/extra/regex/example-1dot4/RegexTestHarness.java
+%%T%%/extra/regex/example-1dot4/RegexTestHarness2.java
+%%T%%/extra/regex/example-1dot4/ReplaceTest.java
+%%T%%/extra/regex/example-1dot4/ReplaceTest2.java
+%%T%%/extra/regex/example-1dot4/SplitTest.java
+%%T%%/extra/regex/example-1dot4/SplitTest2.java
+%%T%%/extra/regex/groups.html
+%%T%%/extra/regex/index.html
+%%T%%/extra/regex/intro.html
+%%T%%/extra/regex/literals.html
+%%T%%/extra/regex/matcher.html
+%%T%%/extra/regex/pattern.html
+%%T%%/extra/regex/pre_char_classes.html
+%%T%%/extra/regex/pse.html
+%%T%%/extra/regex/quant.html
+%%T%%/extra/regex/resources.html
+%%T%%/extra/regex/test_harness.html
 %%T%%/figures/2d/2D-1.gif
 %%T%%/figures/2d/2D-10.gif
 %%T%%/figures/2d/2D-11.gif
@@ -711,8 +734,10 @@
 %%T%%/figures/essential/UnfairRaceApplet.gif
 %%T%%/figures/ext/exta.gif
 %%T%%/figures/ext/extb1.gif
+%%T%%/figures/extra/cells.gif
 %%T%%/figures/extra/fullscreen/doubleBuffering.gif
 %%T%%/figures/extra/fullscreen/pageFlipping.gif
+%%T%%/figures/extra/regex/cells.gif
 %%T%%/figures/getStarted/1flow.gif
 %%T%%/figures/getStarted/2comp.gif
 %%T%%/figures/getStarted/3play.gif
@@ -949,13 +974,15 @@
 %%T%%/figures/uiswing/components/2framecon.gif
 %%T%%/figures/uiswing/components/3jframe.gif
 %%T%%/figures/uiswing/components/4aFrameDemo.gif
-%%T%%/figures/uiswing/components/4bFrameDemo-win.gif
 %%T%%/figures/uiswing/components/5ANpa.gif
 %%T%%/figures/uiswing/components/5aANview.gif
 %%T%%/figures/uiswing/components/6corverns.gif
 %%T%%/figures/uiswing/components/7object.gif
 %%T%%/figures/uiswing/components/8model.gif
 %%T%%/figures/uiswing/components/9model.gif
+%%T%%/figures/uiswing/components/ActionDemo-a.gif
+%%T%%/figures/uiswing/components/ActionDemo-b.gif
+%%T%%/figures/uiswing/components/ActionDemo.gif
 %%T%%/figures/uiswing/components/ActualPains.gif
 %%T%%/figures/uiswing/components/ButtonDemo-TT.gif
 %%T%%/figures/uiswing/components/ButtonDemo.gif
@@ -982,16 +1009,32 @@
 %%T%%/figures/uiswing/components/DD-error-half.gif
 %%T%%/figures/uiswing/components/DD-plain-half.gif
 %%T%%/figures/uiswing/components/DD-warning-half.gif
+%%T%%/figures/uiswing/components/DELETEME-4bFrameDemo-win.gif
+%%T%%/figures/uiswing/components/DELETEME-FrameDemo.gif
+%%T%%/figures/uiswing/components/DELETEME-FrameDemo2-no.gif
+%%T%%/figures/uiswing/components/DELETEME/metal-Error.gif
+%%T%%/figures/uiswing/components/DELETEME/metal-Inform.gif
+%%T%%/figures/uiswing/components/DELETEME/metal-Question.gif
+%%T%%/figures/uiswing/components/DELETEME/metal-Warn.gif
 %%T%%/figures/uiswing/components/DialogDemo.gif
 %%T%%/figures/uiswing/components/DynamicTreeDemo.gif
 %%T%%/figures/uiswing/components/FileChooserDemo.gif
+%%T%%/figures/uiswing/components/FileChooserDemo14.gif
+%%T%%/figures/uiswing/components/FileChooserDemo2-14.gif
 %%T%%/figures/uiswing/components/FileChooserDemo2.gif
+%%T%%/figures/uiswing/components/FileChooserDirsOnly.gif
 %%T%%/figures/uiswing/components/FileChooserOpen.gif
+%%T%%/figures/uiswing/components/FileChooserOpen14.gif
 %%T%%/figures/uiswing/components/FrameDemo.gif
+%%T%%/figures/uiswing/components/FrameDemo2-lf.gif
+%%T%%/figures/uiswing/components/FrameDemo2-ws.gif
 %%T%%/figures/uiswing/components/GenealogyExample.gif
 %%T%%/figures/uiswing/components/GlassPaneDemo.gif
 %%T%%/figures/uiswing/components/HtmlDemo.gif
+%%T%%/figures/uiswing/components/InputDialog1.gif
+%%T%%/figures/uiswing/components/InputDialog2.gif
 %%T%%/figures/uiswing/components/InternalFrameDemo.gif
+%%T%%/figures/uiswing/components/InternalFrameDemo14.gif
 %%T%%/figures/uiswing/components/LabelDemo.gif
 %%T%%/figures/uiswing/components/LayeredPaneDemo.gif
 %%T%%/figures/uiswing/components/LayeredPaneDemo2.gif
@@ -999,6 +1042,8 @@
 %%T%%/figures/uiswing/components/ListDemo.gif
 %%T%%/figures/uiswing/components/ListDemoSwing.gif
 %%T%%/figures/uiswing/components/ListDialog.gif
+%%T%%/figures/uiswing/components/ListDialogRunner.gif
+%%T%%/figures/uiswing/components/ListDialogRunner2.gif
 %%T%%/figures/uiswing/components/Menu-accel.gif
 %%T%%/figures/uiswing/components/Menu-mnemonic.gif
 %%T%%/figures/uiswing/components/MenuDemo.gif
@@ -1046,6 +1091,27 @@
 %%T%%/figures/uiswing/components/TreeDemo.gif
 %%T%%/figures/uiswing/components/TreeIconDemo.gif
 %%T%%/figures/uiswing/components/TreeIconDemo2.gif
+%%T%%/figures/uiswing/components/c-2message.gif
+%%T%%/figures/uiswing/components/c-FormattedTestFieldDemo.gif
+%%T%%/figures/uiswing/components/c-FrameDemo.gif
+%%T%%/figures/uiswing/components/c-InternalFrameDemo-small.gif
+%%T%%/figures/uiswing/components/c-LabelDemo.gif
+%%T%%/figures/uiswing/components/c-LayeredPaneDemo-small.gif
+%%T%%/figures/uiswing/components/c-ProgressBarDemo.gif
+%%T%%/figures/uiswing/components/c-SliderDemo.gif
+%%T%%/figures/uiswing/components/c-T7.gif
+%%T%%/figures/uiswing/components/c-TextField.gif
+%%T%%/figures/uiswing/components/c-combobox.gif
+%%T%%/figures/uiswing/components/c-fonttest.gif
+%%T%%/figures/uiswing/components/c-menu.gif
+%%T%%/figures/uiswing/components/c-panel.gif
+%%T%%/figures/uiswing/components/c-scroll2.gif
+%%T%%/figures/uiswing/components/c-splitplane.gif
+%%T%%/figures/uiswing/components/c-tabbed.gif
+%%T%%/figures/uiswing/components/c-table.gif
+%%T%%/figures/uiswing/components/c-tooltip.gif
+%%T%%/figures/uiswing/components/c-tree.gif
+%%T%%/figures/uiswing/components/c-windows-spinner.gif
 %%T%%/figures/uiswing/components/cg-buttons.gif
 %%T%%/figures/uiswing/components/cg-combobox.gif
 %%T%%/figures/uiswing/components/cg-label.gif
@@ -1064,6 +1130,8 @@
 %%T%%/figures/uiswing/components/cg-tooltip.gif
 %%T%%/figures/uiswing/components/cg-tree.gif
 %%T%%/figures/uiswing/components/dt-spinner.gif
+%%T%%/figures/uiswing/components/editableComboBox1.gif
+%%T%%/figures/uiswing/components/editableComboBox2.gif
 %%T%%/figures/uiswing/components/indprogressbar.gif
 %%T%%/figures/uiswing/components/layeredPaneLayers.gif
 %%T%%/figures/uiswing/components/mac-spinner.gif
@@ -1088,6 +1156,8 @@
 %%T%%/figures/uiswing/components/smrootpane.gif
 %%T%%/figures/uiswing/components/tablemodel.gif
 %%T%%/figures/uiswing/components/tree.gif
+%%T%%/figures/uiswing/components/uneditableComboBox1.gif
+%%T%%/figures/uiswing/components/uneditableComboBox2.gif
 %%T%%/figures/uiswing/components/windows-spinner.gif
 %%T%%/figures/uiswing/converting/13ui11.gif
 %%T%%/figures/uiswing/converting/AWTConverter.gif
@@ -1190,6 +1260,8 @@
 %%T%%/figures/uiswing/mini/test1.gif
 %%T%%/figures/uiswing/misc/APIPanelForColumnHeader.gif
 %%T%%/figures/uiswing/misc/ActionDemo-2.gif
+%%T%%/figures/uiswing/misc/ActionDemo-a.gif
+%%T%%/figures/uiswing/misc/ActionDemo-b.gif
 %%T%%/figures/uiswing/misc/ActionDemo.gif
 %%T%%/figures/uiswing/misc/ActionDemoFiles.gif
 %%T%%/figures/uiswing/misc/AssistiveTechnologies.gif
@@ -1201,6 +1273,7 @@
 %%T%%/figures/uiswing/misc/IconDemoApplet.gif
 %%T%%/figures/uiswing/misc/InaccessibleMonkey.gif
 %%T%%/figures/uiswing/misc/Monkey.gif
+%%T%%/figures/uiswing/misc/ScrollDemo.gif
 %%T%%/figures/uiswing/misc/ScrollDemoWithRulerSelected.gif
 %%T%%/figures/uiswing/misc/inaccessible.gif
 %%T%%/figures/uiswing/misc/left.gif
@@ -1439,8 +1512,10 @@
 %%T%%/images/blueline.gif
 %%T%%/images/bluelinesm.gif
 %%T%%/images/bookcovers/3ebook.jpg
+%%T%%/images/bookcovers/3ebook_sm.gif
 %%T%%/images/bookcovers/almanac99.jpg
 %%T%%/images/bookcovers/continued.gif
+%%T%%/images/bookcovers/continued_sm.gif
 %%T%%/images/bookcovers/first-edition.gif
 %%T%%/images/bookcovers/jdbc.gif
 %%T%%/images/bookcovers/leasecond.jpg
@@ -1448,20 +1523,25 @@
 %%T%%/images/bookcovers/second-edition.gif
 %%T%%/images/bookcovers/supplement.gif
 %%T%%/images/bookcovers/swing.gif
+%%T%%/images/bookcovers/swing_sm.gif
 %%T%%/images/bookcovers/third-edition.jpg
+%%T%%/images/check.gif
 %%T%%/images/coreIcon.gif
 %%T%%/images/coreTrail.gif
 %%T%%/images/diamonds/aqua.gif
 %%T%%/images/diamonds/black.gif
 %%T%%/images/diamonds/blue.gif
 %%T%%/images/diamonds/blue2.gif
+%%T%%/images/diamonds/diamond.gif
 %%T%%/images/diamonds/green.gif
 %%T%%/images/diamonds/pink.gif
 %%T%%/images/diamonds/purple.gif
 %%T%%/images/diamonds/red.gif
 %%T%%/images/diamonds/yellow.gif
+%%T%%/images/download.gif
 %%T%%/images/duke-survey-sm.gif
 %%T%%/images/dukesign.GIF
+%%T%%/images/footnote.gif
 %%T%%/images/getStartedIcon.gif
 %%T%%/images/getStartedTrail.gif
 %%T%%/images/glossaryArrow.gif
@@ -1480,7 +1560,10 @@
 %%T%%/images/nativeTrail.gif
 %%T%%/images/networkingIcon.gif
 %%T%%/images/networkingTrail.gif
+%%T%%/images/new.gif
 %%T%%/images/otherIcon.gif
+%%T%%/images/pixel.gif
+%%T%%/images/powered_by_google_135x35.gif
 %%T%%/images/reflection.GIF
 %%T%%/images/reflectionsm.GIF
 %%T%%/images/security1_2Header.gif
@@ -1501,14 +1584,17 @@
 %%T%%/information/bios.html
 %%T%%/information/copyright.html
 %%T%%/information/download.html
-%%T%%/information/example/nothing.java
-%%T%%/information/example-1dot1/nothing.java
 %%T%%/information/example-1dot1/nothing.html
+%%T%%/information/example-1dot1/nothing.java
+%%T%%/information/example/nothing.java
 %%T%%/information/examples.html
 %%T%%/information/feature_article.html
 %%T%%/information/glossary.html
 %%T%%/information/history.html
 %%T%%/information/inprogress.html
+%%T%%/information/javawebstart.html
+%%T%%/information/license.html
+%%T%%/information/player.jnlp
 %%T%%/information/resources.html
 %%T%%/jar/TOC.html
 %%T%%/jar/api/example-1dot2/JarClassLoader.java
@@ -2256,76 +2342,7 @@
 %%T%%/security1.2/userperm/terry.html
 %%T%%/security1.2/userperm/together.html
 %%T%%/servlets/TOC.html
-%%T%%/servlets/call-servlets/browser.html
-%%T%%/servlets/call-servlets/html-page.html
-%%T%%/servlets/call-servlets/index.html
-%%T%%/servlets/client-interaction/http-methods.html
-%%T%%/servlets/client-interaction/index.html
-%%T%%/servlets/client-interaction/req-res.html
-%%T%%/servlets/client-interaction/servlet-info.html
-%%T%%/servlets/client-interaction/threads.html
-%%T%%/servlets/client-state/cookies.html
-%%T%%/servlets/client-state/index.html
-%%T%%/servlets/client-state/session-tracking.html
-%%T%%/servlets/communication/attributes.html
-%%T%%/servlets/communication/index.html
-%%T%%/servlets/communication/request-dispatcher.html
-%%T%%/servlets/end.html
-%%T%%/servlets/example-1dot2/jsdk2dot0/BookDetailServlet.java
-%%T%%/servlets/example-1dot2/jsdk2dot0/BookStoreServlet.java
-%%T%%/servlets/example-1dot2/jsdk2dot0/CashierServlet.java
-%%T%%/servlets/example-1dot2/jsdk2dot0/CatalogServlet.java
-%%T%%/servlets/example-1dot2/jsdk2dot0/ReceiptServlet.java
-%%T%%/servlets/example-1dot2/jsdk2dot0/ShowCartServlet.java
-%%T%%/servlets/example-1dot2/jsdk2dot0/cart/Cashier.java
-%%T%%/servlets/example-1dot2/jsdk2dot0/cart/ShoppingCart.java
-%%T%%/servlets/example-1dot2/jsdk2dot0/cart/ShoppingCartItem.java
-%%T%%/servlets/example-1dot2/jsdk2dot0/database/BookDBServlet.java
-%%T%%/servlets/example-1dot2/jsdk2dot0/database/BookDetails.java
-%%T%%/servlets/example-1dot2/jsdk2dot0/database/BookstoreDB.java
-%%T%%/servlets/example-1dot2/jsdk2dot0/servlet.properties
-%%T%%/servlets/example-1dot2/jsdk2dot1/BookDetailServlet.java
-%%T%%/servlets/example-1dot2/jsdk2dot1/BookStoreServlet.java
-%%T%%/servlets/example-1dot2/jsdk2dot1/CashierServlet.java
-%%T%%/servlets/example-1dot2/jsdk2dot1/CatalogServlet.java
-%%T%%/servlets/example-1dot2/jsdk2dot1/ReceiptServlet.java
-%%T%%/servlets/example-1dot2/jsdk2dot1/ShowCartServlet.java
-%%T%%/servlets/example-1dot2/jsdk2dot1/bookstore.html
-%%T%%/servlets/example-1dot2/jsdk2dot1/cart/Cashier.java
-%%T%%/servlets/example-1dot2/jsdk2dot1/cart/ShoppingCart.java
-%%T%%/servlets/example-1dot2/jsdk2dot1/cart/ShoppingCartItem.java
-%%T%%/servlets/example-1dot2/jsdk2dot1/database/BookDBFrontEnd.java
-%%T%%/servlets/example-1dot2/jsdk2dot1/database/BookDetails.java
-%%T%%/servlets/example-1dot2/jsdk2dot1/database/BookStoreDB.java
-%%T%%/servlets/example-1dot2/jsdk2dot1/servlets.properties
-%%T%%/servlets/example-1dot2/tomcat/BannerServlet.java
-%%T%%/servlets/example-1dot2/tomcat/BookDetailServlet.java
-%%T%%/servlets/example-1dot2/tomcat/BookStoreServlet.java
-%%T%%/servlets/example-1dot2/tomcat/CashierServlet.java
-%%T%%/servlets/example-1dot2/tomcat/CatalogServlet.java
-%%T%%/servlets/example-1dot2/tomcat/Currency.java
-%%T%%/servlets/example-1dot2/tomcat/ReceiptServlet.java
-%%T%%/servlets/example-1dot2/tomcat/ShowCartServlet.java
-%%T%%/servlets/example-1dot2/tomcat/bookstore.html
-%%T%%/servlets/example-1dot2/tomcat/cart/ShoppingCart.java
-%%T%%/servlets/example-1dot2/tomcat/cart/ShoppingCartItem.java
-%%T%%/servlets/example-1dot2/tomcat/database/BookDB.java
-%%T%%/servlets/example-1dot2/tomcat/database/BookDetails.java
-%%T%%/servlets/example-1dot2/tomcat/web.xml
 %%T%%/servlets/index.html
-%%T%%/servlets/lifecycle/destroy.html
-%%T%%/servlets/lifecycle/index.html
-%%T%%/servlets/lifecycle/init.html
-%%T%%/servlets/lifecycle/service-threads.html
-%%T%%/servlets/overview/architecture.html
-%%T%%/servlets/overview/example.html
-%%T%%/servlets/overview/index.html
-%%T%%/servlets/overview/simple.html
-%%T%%/servlets/servletrunner/index.html
-%%T%%/servlets/servletrunner/properties.html
-%%T%%/servlets/servletrunner/server-start.html
-%%T%%/servlets/servletrunner/tomcat-start.html
-%%T%%/servlets/servletrunner/webappdd.html
 %%T%%/sound/SoundApplet.atag
 %%T%%/sound/SoundApplet.html
 %%T%%/sound/TOC.html
@@ -2463,14 +2480,146 @@
 %%T%%/uiswing/components/button.html
 %%T%%/uiswing/components/colorchooser.html
 %%T%%/uiswing/components/combobox.html
+%%T%%/uiswing/components/componentlist.html
 %%T%%/uiswing/components/components.html
 %%T%%/uiswing/components/components_desc.html
 %%T%%/uiswing/components/components_header.html
 %%T%%/uiswing/components/components_pics.html
 %%T%%/uiswing/components/dialog.html
 %%T%%/uiswing/components/editorpane.html
-%%T%%/uiswing/components/example-1dot3/TableDemo.java
 %%T%%/uiswing/components/example-1dot3/TableRenderDemo.java
+%%T%%/uiswing/components/example-1dot4/ButtonDemo.java
+%%T%%/uiswing/components/example-1dot4/ButtonDemo2.java
+%%T%%/uiswing/components/example-1dot4/CheckBoxDemo.java
+%%T%%/uiswing/components/example-1dot4/ColorChooserDemo.java
+%%T%%/uiswing/components/example-1dot4/ColorChooserDemo2.java
+%%T%%/uiswing/components/example-1dot4/ComboBoxDemo.java
+%%T%%/uiswing/components/example-1dot4/ComboBoxDemo2.java
+%%T%%/uiswing/components/example-1dot4/Corner.java
+%%T%%/uiswing/components/example-1dot4/CrayonPanel.java
+%%T%%/uiswing/components/example-1dot4/CustomComboBoxDemo.java
+%%T%%/uiswing/components/example-1dot4/CustomDialog.java
+%%T%%/uiswing/components/example-1dot4/DialogDemo.java
+%%T%%/uiswing/components/example-1dot4/FileChooserDemo.java
+%%T%%/uiswing/components/example-1dot4/FileChooserDemo2.java
+%%T%%/uiswing/components/example-1dot4/FormattedTextFieldDemo.java
+%%T%%/uiswing/components/example-1dot4/FrameDemo.java
+%%T%%/uiswing/components/example-1dot4/FrameDemo2.java
+%%T%%/uiswing/components/example-1dot4/Framework.java
+%%T%%/uiswing/components/example-1dot4/HtmlDemo.java
+%%T%%/uiswing/components/example-1dot4/ImageFileView.java
+%%T%%/uiswing/components/example-1dot4/ImageFilter.java
+%%T%%/uiswing/components/example-1dot4/ImagePreview.java
+%%T%%/uiswing/components/example-1dot4/InternalFrameDemo.java
+%%T%%/uiswing/components/example-1dot4/JWSFileChooserDemo.java
+%%T%%/uiswing/components/example-1dot4/LabelDemo.java
+%%T%%/uiswing/components/example-1dot4/LayeredPaneDemo.java
+%%T%%/uiswing/components/example-1dot4/LayeredPaneDemo2.java
+%%T%%/uiswing/components/example-1dot4/ListDemo.java
+%%T%%/uiswing/components/example-1dot4/ListDialog.java
+%%T%%/uiswing/components/example-1dot4/ListDialogRunner.java
+%%T%%/uiswing/components/example-1dot4/LongTask.java
+%%T%%/uiswing/components/example-1dot4/MenuDemo.java
+%%T%%/uiswing/components/example-1dot4/MenuGlueDemo.java
+%%T%%/uiswing/components/example-1dot4/MenuLayoutDemo.java
+%%T%%/uiswing/components/example-1dot4/MenuLookDemo.java
+%%T%%/uiswing/components/example-1dot4/MyInternalFrame.java
+%%T%%/uiswing/components/example-1dot4/PopupMenuDemo.java
+%%T%%/uiswing/components/example-1dot4/ProgressBarDemo.java
+%%T%%/uiswing/components/example-1dot4/ProgressBarDemo2.java
+%%T%%/uiswing/components/example-1dot4/ProgressMonitorDemo.java
+%%T%%/uiswing/components/example-1dot4/RadioButtonDemo.java
+%%T%%/uiswing/components/example-1dot4/Rule.java
+%%T%%/uiswing/components/example-1dot4/ScrollDemo.java
+%%T%%/uiswing/components/example-1dot4/ScrollDemo2.java
+%%T%%/uiswing/components/example-1dot4/ScrollablePicture.java
+%%T%%/uiswing/components/example-1dot4/SliderDemo.java
+%%T%%/uiswing/components/example-1dot4/SliderDemo2.java
+%%T%%/uiswing/components/example-1dot4/SwingWorker.java
+%%T%%/uiswing/components/example-1dot4/TabbedPaneDemo.java
+%%T%%/uiswing/components/example-1dot4/ToolBarDemo.java
+%%T%%/uiswing/components/example-1dot4/ToolBarDemo2.java
+%%T%%/uiswing/components/example-1dot4/TopLevelDemo.java
+%%T%%/uiswing/components/example-1dot4/TumbleItem.java
+%%T%%/uiswing/components/example-1dot4/Utils.java
+%%T%%/uiswing/components/example-1dot4/allClasses.jar
+%%T%%/uiswing/components/example-1dot4/crayonImages.jar
+%%T%%/uiswing/components/example-1dot4/doggyImages.jar
+%%T%%/uiswing/components/example-1dot4/geekImages.jar
+%%T%%/uiswing/components/example-1dot4/images.jar
+%%T%%/uiswing/components/example-1dot4/images/Bird.gif
+%%T%%/uiswing/components/example-1dot4/images/Cat.gif
+%%T%%/uiswing/components/example-1dot4/images/Dog.gif
+%%T%%/uiswing/components/example-1dot4/images/Open16.gif
+%%T%%/uiswing/components/example-1dot4/images/Pig.gif
+%%T%%/uiswing/components/example-1dot4/images/Rabbit.gif
+%%T%%/uiswing/components/example-1dot4/images/Save16.gif
+%%T%%/uiswing/components/example-1dot4/images/blue.gif
+%%T%%/uiswing/components/example-1dot4/images/doggy/T0.gif
+%%T%%/uiswing/components/example-1dot4/images/doggy/T1.gif
+%%T%%/uiswing/components/example-1dot4/images/doggy/T10.gif
+%%T%%/uiswing/components/example-1dot4/images/doggy/T11.gif
+%%T%%/uiswing/components/example-1dot4/images/doggy/T12.gif
+%%T%%/uiswing/components/example-1dot4/images/doggy/T13.gif
+%%T%%/uiswing/components/example-1dot4/images/doggy/T2.gif
+%%T%%/uiswing/components/example-1dot4/images/doggy/T3.gif
+%%T%%/uiswing/components/example-1dot4/images/doggy/T4.gif
+%%T%%/uiswing/components/example-1dot4/images/doggy/T5.gif
+%%T%%/uiswing/components/example-1dot4/images/doggy/T6.gif
+%%T%%/uiswing/components/example-1dot4/images/doggy/T7.gif
+%%T%%/uiswing/components/example-1dot4/images/doggy/T8.gif
+%%T%%/uiswing/components/example-1dot4/images/doggy/T9.gif
+%%T%%/uiswing/components/example-1dot4/images/dukeWaveRed.gif
+%%T%%/uiswing/components/example-1dot4/images/geek/geek-----.gif
+%%T%%/uiswing/components/example-1dot4/images/geek/geek----t.gif
+%%T%%/uiswing/components/example-1dot4/images/geek/geek---h-.gif
+%%T%%/uiswing/components/example-1dot4/images/geek/geek---ht.gif
+%%T%%/uiswing/components/example-1dot4/images/geek/geek--g--.gif
+%%T%%/uiswing/components/example-1dot4/images/geek/geek--g-t.gif
+%%T%%/uiswing/components/example-1dot4/images/geek/geek--gh-.gif
+%%T%%/uiswing/components/example-1dot4/images/geek/geek--ght.gif
+%%T%%/uiswing/components/example-1dot4/images/geek/geek-c---.gif
+%%T%%/uiswing/components/example-1dot4/images/geek/geek-c--t.gif
+%%T%%/uiswing/components/example-1dot4/images/geek/geek-c-h-.gif
+%%T%%/uiswing/components/example-1dot4/images/geek/geek-c-ht.gif
+%%T%%/uiswing/components/example-1dot4/images/geek/geek-cg--.gif
+%%T%%/uiswing/components/example-1dot4/images/geek/geek-cg-t.gif
+%%T%%/uiswing/components/example-1dot4/images/geek/geek-cgh-.gif
+%%T%%/uiswing/components/example-1dot4/images/geek/geek-cght.gif
+%%T%%/uiswing/components/example-1dot4/images/gifIcon.gif
+%%T%%/uiswing/components/example-1dot4/images/green.gif
+%%T%%/uiswing/components/example-1dot4/images/jpgIcon.gif
+%%T%%/uiswing/components/example-1dot4/images/left.gif
+%%T%%/uiswing/components/example-1dot4/images/middle.gif
+%%T%%/uiswing/components/example-1dot4/images/pngIcon.png
+%%T%%/uiswing/components/example-1dot4/images/red.gif
+%%T%%/uiswing/components/example-1dot4/images/right.gif
+%%T%%/uiswing/components/example-1dot4/images/tiffIcon.gif
+%%T%%/uiswing/components/example-1dot4/images/tumble/T1.gif
+%%T%%/uiswing/components/example-1dot4/images/tumble/T10.gif
+%%T%%/uiswing/components/example-1dot4/images/tumble/T11.gif
+%%T%%/uiswing/components/example-1dot4/images/tumble/T12.gif
+%%T%%/uiswing/components/example-1dot4/images/tumble/T13.gif
+%%T%%/uiswing/components/example-1dot4/images/tumble/T14.gif
+%%T%%/uiswing/components/example-1dot4/images/tumble/T15.gif
+%%T%%/uiswing/components/example-1dot4/images/tumble/T16.gif
+%%T%%/uiswing/components/example-1dot4/images/tumble/T17.gif
+%%T%%/uiswing/components/example-1dot4/images/tumble/T2.gif
+%%T%%/uiswing/components/example-1dot4/images/tumble/T3.gif
+%%T%%/uiswing/components/example-1dot4/images/tumble/T4.gif
+%%T%%/uiswing/components/example-1dot4/images/tumble/T5.gif
+%%T%%/uiswing/components/example-1dot4/images/tumble/T6.gif
+%%T%%/uiswing/components/example-1dot4/images/tumble/T7.gif
+%%T%%/uiswing/components/example-1dot4/images/tumble/T8.gif
+%%T%%/uiswing/components/example-1dot4/images/tumble/T9.gif
+%%T%%/uiswing/components/example-1dot4/images/yellow.gif
+%%T%%/uiswing/components/example-1dot4/images/youngdad.jpeg
+%%T%%/uiswing/components/example-1dot4/index.html
+%%T%%/uiswing/components/example-1dot4/jars/jlfgr-1_0.jar
+%%T%%/uiswing/components/example-1dot4/jars/jnlp.jar
+%%T%%/uiswing/components/example-1dot4/scrollImages.jar
+%%T%%/uiswing/components/example-1dot4/tumbleClasses.jar
+%%T%%/uiswing/components/example-1dot4/tumbleImages.jar
 %%T%%/uiswing/components/example-swing/ButtonDemo.java
 %%T%%/uiswing/components/example-swing/CheckBoxDemo.java
 %%T%%/uiswing/components/example-swing/ColorChooserDemo.java
@@ -2643,7 +2792,6 @@
 %%T%%/uiswing/components/frame.html
 %%T%%/uiswing/components/generaltext.html
 %%T%%/uiswing/components/index.html
-%%T%%/uiswing/components/intermediate.html
 %%T%%/uiswing/components/internalframe.html
 %%T%%/uiswing/components/jcomponent.html
 %%T%%/uiswing/components/label.html
@@ -2657,8 +2805,8 @@
 %%T%%/uiswing/components/scrollpane.html
 %%T%%/uiswing/components/simpletext.html
 %%T%%/uiswing/components/slider.html
-%%T%%/uiswing/components/splitpane.html
 %%T%%/uiswing/components/spinner.html
+%%T%%/uiswing/components/splitpane.html
 %%T%%/uiswing/components/tabbedpane.html
 %%T%%/uiswing/components/table.html
 %%T%%/uiswing/components/text.html
@@ -2668,7 +2816,6 @@
 %%T%%/uiswing/components/tooltip.html
 %%T%%/uiswing/components/toplevel.html
 %%T%%/uiswing/components/tree.html
-%%T%%/uiswing/components/widgets.html
 %%T%%/uiswing/converting/ButtonDemoApplet.atag
 %%T%%/uiswing/converting/ButtonDemoApplet.html
 %%T%%/uiswing/converting/TextEventDemo.atag
@@ -2739,6 +2886,36 @@
 %%T%%/uiswing/events/containerlistener.html
 %%T%%/uiswing/events/documentlistener.html
 %%T%%/uiswing/events/eventsandcomponents.html
+%%T%%/uiswing/events/example-1dot4/Beeper.java
+%%T%%/uiswing/events/example-1dot4/BlankArea.java
+%%T%%/uiswing/events/example-1dot4/ComponentEventDemo.java
+%%T%%/uiswing/events/example-1dot4/ContainerEventDemo.java
+%%T%%/uiswing/events/example-1dot4/DocumentEventDemo.java
+%%T%%/uiswing/events/example-1dot4/FocusEventDemo.java
+%%T%%/uiswing/events/example-1dot4/InternalFrameEventDemo.java
+%%T%%/uiswing/events/example-1dot4/KeyEventDemo.java
+%%T%%/uiswing/events/example-1dot4/ListDataEventDemo.java
+%%T%%/uiswing/events/example-1dot4/ListSelectionDemo.java
+%%T%%/uiswing/events/example-1dot4/MouseEventDemo.java
+%%T%%/uiswing/events/example-1dot4/MouseMotionEventDemo.java
+%%T%%/uiswing/events/example-1dot4/MouseWheelEventDemo.java
+%%T%%/uiswing/events/example-1dot4/MultiListener.java
+%%T%%/uiswing/events/example-1dot4/TreeExpandEventDemo.java
+%%T%%/uiswing/events/example-1dot4/TreeExpandEventDemo2.java
+%%T%%/uiswing/events/example-1dot4/WindowEventDemo.java
+%%T%%/uiswing/events/example-1dot4/allClasses.jar
+%%T%%/uiswing/events/example-1dot4/component.jar
+%%T%%/uiswing/events/example-1dot4/container.jar
+%%T%%/uiswing/events/example-1dot4/document.jar
+%%T%%/uiswing/events/example-1dot4/focus.jar
+%%T%%/uiswing/events/example-1dot4/index.html
+%%T%%/uiswing/events/example-1dot4/intro.jar
+%%T%%/uiswing/events/example-1dot4/key.jar
+%%T%%/uiswing/events/example-1dot4/listdata.jar
+%%T%%/uiswing/events/example-1dot4/mousemotion.jar
+%%T%%/uiswing/events/example-1dot4/treeexpand.jar
+%%T%%/uiswing/events/example-1dot4/treeexpand2.jar
+%%T%%/uiswing/events/example-1dot4/window.jar
 %%T%%/uiswing/events/example-swing/Beeper.java
 %%T%%/uiswing/events/example-swing/BlankArea.java
 %%T%%/uiswing/events/example-swing/ComponentEventDemo.java
@@ -2818,6 +2995,7 @@
 %%T%%/uiswing/layout/example-1dot4/SpringWindow1.java
 %%T%%/uiswing/layout/example-1dot4/SpringWindow2.java
 %%T%%/uiswing/layout/example-1dot4/SpringWindow3.java
+%%T%%/uiswing/layout/example-1dot4/index.html
 %%T%%/uiswing/layout/example-swing/AlignmentDemo.java
 %%T%%/uiswing/layout/example-swing/AppletButton.java
 %%T%%/uiswing/layout/example-swing/BLDComponent.java
@@ -2883,6 +3061,35 @@
 %%T%%/uiswing/misc/access.html
 %%T%%/uiswing/misc/action.html
 %%T%%/uiswing/misc/border.html
+%%T%%/uiswing/misc/example-1dot4/AccessibleScrollDemo.java
+%%T%%/uiswing/misc/example-1dot4/ActionDemo.java
+%%T%%/uiswing/misc/example-1dot4/ArrowIcon.java
+%%T%%/uiswing/misc/example-1dot4/BorderDemo.java
+%%T%%/uiswing/misc/example-1dot4/Corner.java
+%%T%%/uiswing/misc/example-1dot4/CustomIconDemo.java
+%%T%%/uiswing/misc/example-1dot4/IconDemoApplet.java
+%%T%%/uiswing/misc/example-1dot4/Photo.java
+%%T%%/uiswing/misc/example-1dot4/README
+%%T%%/uiswing/misc/example-1dot4/Rule.java
+%%T%%/uiswing/misc/example-1dot4/ScrollablePicture.java
+%%T%%/uiswing/misc/example-1dot4/SwingWorker.java
+%%T%%/uiswing/misc/example-1dot4/allClasses.jar
+%%T%%/uiswing/misc/example-1dot4/iconAppletClasses.jar
+%%T%%/uiswing/misc/example-1dot4/iconAppletImages.jar
+%%T%%/uiswing/misc/example-1dot4/images.jar
+%%T%%/uiswing/misc/example-1dot4/images/dimmedLeft.gif
+%%T%%/uiswing/misc/example-1dot4/images/dimmedRight.gif
+%%T%%/uiswing/misc/example-1dot4/images/ewanPumpkin.gif
+%%T%%/uiswing/misc/example-1dot4/images/kathyCosmo.gif
+%%T%%/uiswing/misc/example-1dot4/images/lainesTongue.gif
+%%T%%/uiswing/misc/example-1dot4/images/left.gif
+%%T%%/uiswing/misc/example-1dot4/images/middle.gif
+%%T%%/uiswing/misc/example-1dot4/images/right.gif
+%%T%%/uiswing/misc/example-1dot4/images/stickerface.gif
+%%T%%/uiswing/misc/example-1dot4/images/youngdad.jpeg
+%%T%%/uiswing/misc/example-1dot4/index.html
+%%T%%/uiswing/misc/example-1dot4/jars/jlfgr-1_0.jar
+%%T%%/uiswing/misc/example-1dot4/swing.properties
 %%T%%/uiswing/misc/example-swing/AccessibleScrollDemo.java
 %%T%%/uiswing/misc/example-swing/ActionDemo.java
 %%T%%/uiswing/misc/example-swing/ArrowIcon.java
@@ -2909,6 +3116,7 @@
 %%T%%/uiswing/misc/example-swing/swing.properties
 %%T%%/uiswing/misc/icon.html
 %%T%%/uiswing/misc/index.html
+%%T%%/uiswing/misc/keybinding.html
 %%T%%/uiswing/misc/plaf.html
 %%T%%/uiswing/misc/problems.html
 %%T%%/uiswing/misc/threads.html
@@ -3038,6 +3246,9 @@
 @dirrm %%T%%/uiswing/overview
 @dirrm %%T%%/uiswing/misc/example-swing/images
 @dirrm %%T%%/uiswing/misc/example-swing
+@dirrm %%T%%/uiswing/misc/example-1dot4/jars
+@dirrm %%T%%/uiswing/misc/example-1dot4/images
+@dirrm %%T%%/uiswing/misc/example-1dot4
 @dirrm %%T%%/uiswing/misc
 @dirrm %%T%%/uiswing/mini/example-1dot3/images
 @dirrm %%T%%/uiswing/mini/example-1dot3
@@ -3048,6 +3259,7 @@
 @dirrm %%T%%/uiswing/layout
 @dirrm %%T%%/uiswing/events/example-swing/images
 @dirrm %%T%%/uiswing/events/example-swing
+@dirrm %%T%%/uiswing/events/example-1dot4
 @dirrm %%T%%/uiswing/events
 @dirrm %%T%%/uiswing/converting/example-swing/images
 @dirrm %%T%%/uiswing/converting/example-swing
@@ -3058,6 +3270,12 @@
 @dirrm %%T%%/uiswing/components/example-swing/images/doggy
 @dirrm %%T%%/uiswing/components/example-swing/images
 @dirrm %%T%%/uiswing/components/example-swing
+@dirrm %%T%%/uiswing/components/example-1dot4/jars
+@dirrm %%T%%/uiswing/components/example-1dot4/images/tumble
+@dirrm %%T%%/uiswing/components/example-1dot4/images/geek
+@dirrm %%T%%/uiswing/components/example-1dot4/images/doggy
+@dirrm %%T%%/uiswing/components/example-1dot4/images
+@dirrm %%T%%/uiswing/components/example-1dot4
 @dirrm %%T%%/uiswing/components/example-1dot3
 @dirrm %%T%%/uiswing/components
 @dirrm %%T%%/uiswing/QandE
@@ -3078,23 +3296,6 @@
 @dirrm %%T%%/together
 @dirrm %%T%%/sound/example-1dot2
 @dirrm %%T%%/sound
-@dirrm %%T%%/servlets/servletrunner
-@dirrm %%T%%/servlets/overview
-@dirrm %%T%%/servlets/lifecycle
-@dirrm %%T%%/servlets/example-1dot2/tomcat/database
-@dirrm %%T%%/servlets/example-1dot2/tomcat/cart
-@dirrm %%T%%/servlets/example-1dot2/tomcat
-@dirrm %%T%%/servlets/example-1dot2/jsdk2dot1/database
-@dirrm %%T%%/servlets/example-1dot2/jsdk2dot1/cart
-@dirrm %%T%%/servlets/example-1dot2/jsdk2dot1
-@dirrm %%T%%/servlets/example-1dot2/jsdk2dot0/database
-@dirrm %%T%%/servlets/example-1dot2/jsdk2dot0/cart
-@dirrm %%T%%/servlets/example-1dot2/jsdk2dot0
-@dirrm %%T%%/servlets/example-1dot2
-@dirrm %%T%%/servlets/communication
-@dirrm %%T%%/servlets/client-state
-@dirrm %%T%%/servlets/client-interaction
-@dirrm %%T%%/servlets/call-servlets
 @dirrm %%T%%/servlets
 @dirrm %%T%%/security1.2/userperm/example-1dot2/com/scoredev/scores
 @dirrm %%T%%/security1.2/userperm/example-1dot2/com/scoredev
@@ -3212,8 +3413,8 @@
 @dirrm %%T%%/jar/api/example-1dot2
 @dirrm %%T%%/jar/api
 @dirrm %%T%%/jar
-@dirrm %%T%%/information/example
 @dirrm %%T%%/information/example-1dot1
+@dirrm %%T%%/information/example
 @dirrm %%T%%/information
 @dirrm %%T%%/images/diamonds
 @dirrm %%T%%/images/bookcovers
@@ -3255,6 +3456,7 @@
 @dirrm %%T%%/figures/uiswing/layout
 @dirrm %%T%%/figures/uiswing/events
 @dirrm %%T%%/figures/uiswing/converting
+@dirrm %%T%%/figures/uiswing/components/DELETEME
 @dirrm %%T%%/figures/uiswing/components
 @dirrm %%T%%/figures/uiswing/QandE
 @dirrm %%T%%/figures/uiswing
@@ -3272,6 +3474,7 @@
 @dirrm %%T%%/figures/idl
 @dirrm %%T%%/figures/i18n
 @dirrm %%T%%/figures/getStarted
+@dirrm %%T%%/figures/extra/regex
 @dirrm %%T%%/figures/extra/fullscreen
 @dirrm %%T%%/figures/extra
 @dirrm %%T%%/figures/ext
@@ -3281,6 +3484,8 @@
 @dirrm %%T%%/figures/applet
 @dirrm %%T%%/figures/2d
 @dirrm %%T%%/figures
+@dirrm %%T%%/extra/regex/example-1dot4
+@dirrm %%T%%/extra/regex
 @dirrm %%T%%/extra/fullscreen/example-1dot4
 @dirrm %%T%%/extra/fullscreen
 @dirrm %%T%%/extra
@@ -3324,8 +3529,8 @@
 @dirrm %%T%%/collections
 @dirrm %%T%%/books/swing
 @dirrm %%T%%/books/continued
-@dirrm %%T%%/books/3e/exercises
 @dirrm %%T%%/books/3e/pdf
+@dirrm %%T%%/books/3e/exercises
 @dirrm %%T%%/books/3e
 @dirrm %%T%%/books/2e
 @dirrm %%T%%/books/1e/missingfiles
