@@ -7,6 +7,7 @@
 
 PORTNAME=	libgii
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.ggi-project.org/pub/packages/ggi/ggi/v2.0/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -22,6 +23,13 @@ USE_XLIB=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
+
+.if !exists(/usr/include/vgl.h)
+CONFIGURE_ARGS+=	--disable-vgl
+PLIST_SUB+=	VGL="@comment "
+.else
+PLIST_SUB+=	VGL=""
+.endif
 
 .if exists(/usr/include/kii/kii.h)
 CONFIGURE_ARGS+=	--enable-kii
@@ -61,10 +69,6 @@ EXAMPLES=	demos/demo.c demos/filter.c \
 		demos/mhub.c demos/xsendbut.c
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		"Broken pkg-plist on !i386"
-.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e 's/\(deplibs\) -lc/\1/;' ${WRKSRC}/libtool
