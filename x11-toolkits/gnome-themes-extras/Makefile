@@ -1,0 +1,24 @@
+# New ports collection makefile for:	gnome-themes-extras
+# Date Created:				12 June 2003
+# Whom:					Adam Weinberger <adamw@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	gnome-themes-extras
+PORTVERSION=	0.1
+CATEGORIES=	x11-toolkits gnome
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.1
+DIST_SUBDIR=	gnome2
+
+MAINTAINER=	gnome@FreeBSD.org
+COMMENT=	More themes for the GNOME 2 desktop environment
+
+USE_BZIP2=	yes
+USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
+USE_LIBTOOL=	yes
+USE_GNOME=	gnomehack libgnomeui
+
+.include <bsd.port.mk>
