@@ -1,0 +1,38 @@
+--- configure.orig	Thu Jan 30 14:50:09 2003
++++ configure	Thu Jan 30 14:50:25 2003
+@@ -2807,7 +2807,7 @@
+   fi
+ else
+   if test "$GCC" = yes; then
+-    CFLAGS="-O2"
++    CFLAGS=""
+   else
+     CFLAGS=
+   fi
+@@ -3214,7 +3214,7 @@
+         CFLAGS="-g -O2 $CFLAGS"
+       fi
+     else
+-      CFLAGS="-O2 $CFLAGS"
++      CFLAGS="$CFLAGS"
+     fi
+   fi
+ 
+@@ -3456,7 +3456,7 @@
+   fi
+ else
+   if test "$GXX" = yes; then
+-    CXXFLAGS="-O2"
++    CXXFLAGS=""
+   else
+     CXXFLAGS=
+   fi
+@@ -3805,7 +3805,7 @@
+       if test "$CXX" = "KCC"; then
+         CXXFLAGS="+K3 $CXXFLAGS"
+       else
+-        CXXFLAGS="-O2 $CXXFLAGS"
++        CXXFLAGS="$CXXFLAGS"
+       fi
+     fi
+   fi
