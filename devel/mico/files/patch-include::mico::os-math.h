@@ -1,28 +1,28 @@
---- include/mico/os-math.h.orig	Tue Nov 16 22:31:18 2004
-+++ include/mico/os-math.h	Tue Nov 16 21:07:40 2004
-@@ -291,6 +291,25 @@
+--- include/mico/os-math.h.orig	Mon Oct 13 13:49:32 2003
++++ include/mico/os-math.h	Sat Jan 29 19:25:49 2005
+@@ -284,12 +284,23 @@
+     : (sizeof (x) == sizeof (double)) ? __fpclassifyd(x) \
+     : __fpclassifyl(x))
+ #endif
+-#ifndef isinf
++#ifndef HAVE_ISINF
+ #define	isinf(x)	(fpclassify(x) == FP_INFINITE)
+ #endif
+-#ifndef isnan
++#ifndef HAVE_ISNAN
  #define	isnan(x)	(fpclassify(x) == FP_NAN)
  #endif
- #endif
++#endif
 +
-+#ifndef asinl
++// configure wrong set HAVE_*
 +#define asinl asin
-+#endif
-+#ifndef ldexpl
 +#define ldexpl ldexp
-+#endif
-+#ifndef frexpl
 +#define frexpl frexp
-+#endif
-+#ifndef fmodl
 +#define fmodl fmod
-+#endif
-+#ifndef ceill
++
++#if __FreeBSD_version < 600007
 +#define ceill ceil
-+#endif
-+#ifndef floorl
 +#define floorl floor
-+#endif
+ #endif
  #endif // __FreeBSD__
  
- #include <unistd.h>
