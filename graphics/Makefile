@@ -260,6 +260,7 @@
     SUBDIR += p5-GD-TextUtil
     SUBDIR += p5-Gimp
     SUBDIR += p5-GraphViz
+    SUBDIR += p5-GraphViz-Data-Structure
     SUBDIR += p5-Graphics-ColorNames
     SUBDIR += p5-Image-Grab
     SUBDIR += p5-Image-Info
