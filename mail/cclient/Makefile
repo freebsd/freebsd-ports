@@ -6,19 +6,25 @@
 #
 
 PORTNAME=	cclient
-PORTVERSION=	2000c
+PORTVERSION=	0104031813
 CATEGORIES=	mail devel
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.cac.washington.edu/imap/%SUBDIR%/ \
 		http://mirror.nucba.ac.jp/mirror/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
-DISTNAME=	imap-${PORTVERSION}
+DISTNAME=	imap-2001.BETA.SNAP-${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	petef@databits.net
+MAINTAINER=	ports@freebsd.org
 
 INSTALLS_SHLIB=	yes
+.if defined(WITH_SSL)
+ALL_TARGET=	bsf SSLTYPE=unix
+.else
 ALL_TARGET=	bsf
+
+USE_OPENSSL=	yes
+.endif
 
 SHLIBBASE=	c-client4
 SHLIBMAJ=	8
@@ -27,8 +33,7 @@ MAKE_ENV=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
 PLIST_SUB=	SHLIBNAME=${SHLIBNAME} SHLIBBASE=${SHLIBBASE}
 
 PREFIX_FIX_FILES=	Makefile src/osdep/unix/Makefile \
-			src/osdep/unix/Makefile.gss \
-			src/osdep/unix/Makefile.ssl
+			src/osdep/unix/Makefile.gss
 
 .include <bsd.port.pre.mk>
 
@@ -59,6 +64,13 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/c-client/c-client.a \
 		${PREFIX}/lib/lib${SHLIBBASE}.a
 
+.if defined(WITH_SSL)
 post-install:
+	@${ECHO} "================================================================================"
+	@${ECHO} "Warning: You have chosen to include SSL support. Applications/ports that use"
+	@${ECHO} "the cclient library but do not support SSL may stop working or have problems
+	@${ECHO} "linking. Linking explicitly with ssl (-lssl -lcrypto) may or may not help."
+	@${ECHO} "================================================================================"
+.endif
 
 .include <bsd.port.post.mk>

@@ -1,6 +1,26 @@
---- src/osdep/unix/Makefile.orig	Sat Feb  3 15:55:21 2001
-+++ src/osdep/unix/Makefile		Sat Feb  3 16:05:02 2001
-@@ -74,7 +74,7 @@
+--- src/osdep/unix/Makefile.orig	Tue Mar  6 07:07:37 2001
++++ src/osdep/unix/Makefile	Tue Apr  3 21:46:31 2001
+@@ -28,10 +28,17 @@
+ 
+ # Extended flags needed for SSL.  You may need to modify.
+ 
+-SSLDIR=/usr/local/ssl
++.if ${OSVERSION} >= 400014
++SSLDIR=/usr
++SSLCERTS=$(PREFIX)/certs
++SSLINCLUDE=$(SSLDIR)/include/openssl
++SSLLIB=$(SSLDIR)/lib
++.else
++SSLDIR=$(PREFIX)
+ SSLCERTS=$(SSLDIR)/certs
+-SSLINCLUDE=$(SSLDIR)/include
++SSLINCLUDE=$(SSLDIR)/include/openssl
+ SSLLIB=$(SSLDIR)/lib
++.endif
+ 
+ SSLCRYPTO=-lcrypto
+ 
+@@ -97,7 +104,7 @@
  # Commands possibly overriden by the individual port
  
  ARRC=ar rc
@@ -9,7 +29,7 @@
  LN=ln -s
  RANLIB=ranlib
  
-@@ -92,7 +92,7 @@
+@@ -115,7 +122,7 @@
   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
   unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
@@ -18,9 +38,9 @@
  
  CAT=cat
  MAKE=make
-@@ -108,6 +108,10 @@
-  EXTRADRIVERS='$(EXTRADRIVERS)' EXTRAAUTHENTICATORS='$(EXTRAAUTHENTICATORS)'\
-  PASSWDTYPE=$(PASSWDTYPE) SPECIALAUTHENTICATORS='$(SPECIALAUTHENTICATORS)'
+@@ -132,6 +139,10 @@
+  PASSWDTYPE=$(PASSWDTYPE) SSLTYPE=$(SSLTYPE)
+ 
  
 +# Need this for the shared library rule to work correctly
 +.SUFFIXES: .o .so
@@ -29,7 +49,7 @@
  # Here if no make argument established
  
  missing: osdep.h
-@@ -188,13 +192,14 @@
+@@ -212,13 +223,14 @@
  	 BASECFLAGS="-g -Dconst="
  
  bsf:	# FreeBSD
@@ -47,7 +67,7 @@
  
  bsi:	# BSD/i386
  	$(BUILD) `$(CAT) SPECIALS` OS=$@ \
-@@ -718,15 +723,26 @@
+@@ -752,15 +764,26 @@
  
  # Build it!
  
@@ -76,7 +96,7 @@
  .c.o:
  	`$(CAT) CCTYPE` -c `$(CAT) CFLAGS` $*.c
  
-@@ -735,6 +751,7 @@
+@@ -769,6 +792,7 @@
  
  clean:
  	sh -c '$(RM) auths.c crexcl.c flockbsd.c linkage.[ch] siglocal.c osdep*.[ch] *.o ARCHIVE *FLAGS *TYPE $(ARCHIVE) || true'
@@ -84,7 +104,7 @@
  
  
  # Dependencies
-@@ -768,7 +785,7 @@
+@@ -802,7 +826,7 @@
  
  # OS-dependent
  
@@ -93,8 +113,8 @@
  	osdep.h env_unix.h tcp_unix.h \
  	osdep.c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c \
  	auths.c crexcl.c flock.c flockbsd.c flcksafe.c fsync.c gethstid.c \
-@@ -780,7 +797,12 @@
- 	write.c \
+@@ -814,7 +838,12 @@
+ 	write.c sslstdio.c \
  	strerror.c strpbrk.c strstr.c strtok.c strtoul.c \
  	OSCFLAGS
 -	`$(CAT) CCTYPE` -c `$(CAT) CFLAGS` `$(CAT) OSCFLAGS` -c osdep.c
@@ -105,5 +125,5 @@
 +osdep.so: $(OSDEPS)
 +	$(CC) -fpic -DPIC -c $(CFLAGS) `cat OSCFLAGS` osdep.c -o $@
  
- osdep.c: osdepbas.c osdepckp.c osdeplog.c
- 	$(CAT) osdepbas.c osdepckp.c osdeplog.c > osdep.c
+ osdep.c: osdepbas.c osdepckp.c osdeplog.c osdepssl.c
+ 	$(CAT) osdepbas.c osdepckp.c osdeplog.c osdepssl.c > osdep.c
