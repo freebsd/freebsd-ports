@@ -1597,6 +1597,7 @@ figlet		ports/misc/figlet
 figlet-fonts	ports/misc/figlet-fonts
 figurine	ports/graphics/figurine
 filedupe	ports/sysutils/filedupe
+filelight	ports/sysutils/filelight
 filepp		ports/textproc/filepp
 fileroller	ports/archivers/fileroller
 filerunner	ports/x11-fm/filerunner
