@@ -1,6 +1,5 @@
 include/getline.h
 lib/libgetline.a
-@exec ranlib %D/%F
 lib/libgetline.so
 lib/libgetline.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B

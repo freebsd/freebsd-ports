@@ -274,7 +274,6 @@ lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto/DB_File/autosplit.ix
 lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto/Data/Dumper/Dumper.bs
 lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto/Data/Dumper/Dumper.so
 lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto/DynaLoader/DynaLoader.a
-@exec ranlib %D/%F
 lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto/DynaLoader/autosplit.ix
 lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto/DynaLoader/dl_expandspec.al
 lib/perl5/%%JPERL_VERSION%%/%%PERL_ARCH%%/auto/DynaLoader/dl_find_symbol_anywhere.al

@@ -1,7 +1,5 @@
 lib/libmalloc.a
-@exec ranlib %D/%F
 lib/libmalloc_d.a
-@exec ranlib %D/%F
 include/malloc.h
 include/libmalloc.h
 lib/libmalloc_d.so

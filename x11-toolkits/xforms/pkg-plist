@@ -7,4 +7,3 @@ lib/libxforms.so
 man/man5/forms.5.gz
 @exec ldconfig -m %D/lib
 @unexec /sbin/ldconfig -R
-@exec ranlib %D/lib/libxforms.a

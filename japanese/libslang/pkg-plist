@@ -1,5 +1,4 @@
 lib/libslang.a
-@exec ranlib %D/%F
 lib/libslang.so
 lib/libslang.so.2
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
