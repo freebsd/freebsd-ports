@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2005.03.11
+PORTVERSION=	2005.04.01
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	net devel
 MASTER_SITES=	http://www.LIVE.COM/liveMedia/public/
-MASTER_SITES+=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	nork
+#MASTER_SITES+=	${MASTER_SITE_LOCAL}
+#MASTER_SITE_SUBDIR=	nork
 DISTNAME=	live.${PORTVERSION}
 # liveMedia's author says that use the latest version whenever
 # possible, and doesn't keep old archives.
