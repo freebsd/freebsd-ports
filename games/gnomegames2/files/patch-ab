@@ -1,0 +1,123 @@
+--- aisleriot/Makefile.in.orig	Sun Sep  6 00:33:23 1998
++++ aisleriot/Makefile.in	Sun Sep  6 00:33:57 1998
+@@ -116,7 +116,7 @@
+ typesdir  = $(datadir)/sol-games
+ 
+ INCLUDES = \
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" \
+ 	-I$(includedir)				 \
+ 	$(GNOME_INCLUDEDIR)
+ 
+--- freecell/src/Makefile.in.orig	Sun Sep  6 00:34:28 1998
++++ freecell/src/Makefile.in	Sun Sep  6 00:34:40 1998
+@@ -115,7 +115,7 @@
+ Gamesdir = $(datadir)/apps/Games
+ 
+ INCLUDES = \
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-I$(includedir)					\
+ 	$(GNOME_INCLUDEDIR)				\
+ 	-I$(srcdir)/../gdk-card-image
+--- gnobots/Makefile.in.orig	Sun Sep  6 00:35:02 1998
++++ gnobots/Makefile.in	Sun Sep  6 00:45:40 1998
+@@ -116,10 +116,10 @@
+ pixmapdir=$(datadir)/pixmaps/gnobots
+ appicondir=$(datadir)/pixmaps
+ Gamesdir = $(datadir)/apps/Games
+-helpdir = $(datadir)/gnome/help/gnobots/C
++helpdir = $(datadir)/help/gnobots/C
+ 
+ INCLUDES = 			\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" \
+ 	-I$(includedir)				 \
+ 	$(GNOME_INCLUDEDIR)
+ 
+--- gnome-stones/Makefile.in.orig	Fri Oct  2 07:01:39 1998
++++ gnome-stones/Makefile.in	Fri Oct  2 07:01:59 1998
+@@ -122,7 +122,7 @@
+ Cavesdir = $(datadir)/gnome-stones
+ 
+ INCLUDES =					\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-DGNOMEPIXMAPDIR=\""$(datadir)/pixmaps"\"	\
+ 	-DCAVESDIR=\""$(Cavesdir)"\"			\
+ 	-I$(includedir)					\
+--- gnomine/Makefile.in.orig	Sun Sep  6 00:35:31 1998
++++ gnomine/Makefile.in	Sun Sep  6 00:35:41 1998
+@@ -116,7 +116,7 @@
+ Gamesdir = $(datadir)/apps/Games
+ 
+ INCLUDES = 			\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" \
+ 	-I$(includedir)				 \
+ 	$(GNOME_INCLUDEDIR)
+ 
+--- gnothello/Makefile.in.orig	Sun Sep  6 00:35:54 1998
++++ gnothello/Makefile.in	Sun Sep  6 00:46:34 1998
+@@ -116,7 +116,7 @@
+ Gamesdir = $(datadir)/apps/Games
+ 
+ INCLUDES = 			\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" \
+ 	-I$(includedir)				 \
+ 	$(GNOME_INCLUDEDIR)
+ 
+--- gturing/Makefile.in.orig	Sun Sep  6 00:36:17 1998
++++ gturing/Makefile.in	Sun Sep  6 00:36:31 1998
+@@ -115,7 +115,7 @@
+ Gamesdir = $(datadir)/apps/Games
+ 
+ INCLUDES = 			\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" \
+ 	-I$(includedir)				 \
+ 	$(GNOME_INCLUDEDIR)
+ 
+--- gyahtzee/Makefile.in.orig	Sun Sep  6 00:36:39 1998
++++ gyahtzee/Makefile.in	Sun Sep  6 00:42:46 1998
+@@ -118,7 +118,7 @@
+ SUBDIRS = pix
+ 
+ INCLUDES =					\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\"	\
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\"	\
+ 	-DGNOMEPIXMAPDIR=\""$(datadir)/pixmaps"\"	\
+ 	-I$(includedir)					\
+ 	$(GNOME_INCLUDEDIR)				\
+@@ -126,7 +126,7 @@
+ 
+ @HAS_CURSES_TRUE@CYAHTZEE=cyahtzee
+ 
+-bin_PROGRAMS = gyahtzee	$(CYAHTZEE)
++bin_PROGRAMS = gyahtzee
+ 
+ gyahtzee_SOURCES =       \
+         gyahtzee.c       \
+--- mahjongg/Makefile.in.orig	Sun Sep  6 00:37:08 1998
++++ mahjongg/Makefile.in	Sun Sep  6 00:37:20 1998
+@@ -117,7 +117,7 @@
+ Gamesdir = $(datadir)/apps/Games
+ 
+ INCLUDES = -I.. -I$(srcdir)/..		\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" \
+ 	-I$(includedir)			\
+ 	$(GNOME_INCLUDEDIR)
+ 
+--- same-gnome/Makefile.in.orig	Sun Sep  6 00:37:32 1998
++++ same-gnome/Makefile.in	Sun Sep  6 00:47:03 1998
+@@ -117,7 +117,7 @@
+ Gamesdir = $(datadir)/apps/Games
+ 
+ INCLUDES = -I.. -I$(srcdir)/..		\
+-	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
++	-DGNOMELOCALEDIR=\""$(prefix)/share/locale"\" \
+ 	-I$(includedir)			\
+ 	$(GNOME_INCLUDEDIR)
+ 
