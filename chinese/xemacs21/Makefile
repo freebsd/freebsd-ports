@@ -21,7 +21,7 @@ WRKDIR=		${.CURDIR}/../../editors/xemacs21-mule/work
 # Fix mule-init.el
 post-patch::
 	@${RM} ${WRKSRC}/lisp/mule/mule-init.elc
-	@(cd ${WRKSRC}; ${PATCH} -q < ${.CURDIR}/files/mule-init.el.diff)
+	@(cd ${WRKSRC}; ${PATCH} --quiet < ${.CURDIR}/files/mule-init.el.diff)
 
 post-install::
 	@${MKDIR} ${PREFIX}/lib/xemacs-${XEMACS_VER}/etc/app-defaults/zh_TW.Big5
