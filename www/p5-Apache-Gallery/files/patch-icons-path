@@ -1,0 +1,10 @@
+--- templates/default/directory.tpl	Fri Jan  2 13:45:06 2004
++++ templates/default/directory.tpl	Wed Dec  8 18:12:41 2004
+@@ -1 +1 @@
+-    <div id="folder"><a href="{ $FILEURL }/"><img border="0" src="/icons/gallery/agfolder.png"><br>{ $FILE }</a></div>
++    <div id="folder"><a href="{ $FILEURL }/"><img border="0" src="/icons/agfolder.png"><br>{ $FILE }</a></div>
+--- templates/default/file.tpl	Fri Jan  2 14:18:12 2004
++++ templates/default/file.tpl	Wed Dec  8 18:12:36 2004
+@@ -1 +1 @@
+-    <div id="folder"><a href="{ $FILEURL }"><img border="0" alt="{ $ALT }" src="/icons/gallery/{ $FILETYPE }.png"><br>{ $FILE }</a></div>
++    <div id="folder"><a href="{ $FILEURL }"><img border="0" alt="{ $ALT }" src="/icons/{ $FILETYPE }.png"><br>{ $FILE }</a></div>
