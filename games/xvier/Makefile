@@ -3,7 +3,7 @@
 # Date created:				17 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/03/27 14:07:07 tg Exp $
 #
 
 DISTNAME=		xvier
@@ -17,8 +17,8 @@ MAINTAINER=		andy@icc.surw.chel.su
 
 WRKSRC=			${WRKDIR}/${PKGNAME}
 USE_IMAKE=		yes
-
 MAN6=			xvier.6
+MANCOMPRESSED=		no
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/xvier ${PREFIX}/bin

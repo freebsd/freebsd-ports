@@ -3,7 +3,7 @@
 # Date created:		20 October 1996
 # Whom:			Yukihiro Nakai <nakai@mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.7 1997/11/25 08:58:58 tg Exp $
+# $Id: Makefile,v 1.8 1998/07/24 12:50:47 vanilla Exp $
 #
 
 DISTNAME=	xrubik-5.4.4
@@ -16,6 +16,7 @@ MAINTAINER=	nakai@technologist.com
 WRKSRC=		${WRKDIR}/xrubik
 USE_IMAKE=	yes
 MAN1=		xrubik.1
+MANCOMPRESSED=	no
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xrubik ${PREFIX}/bin

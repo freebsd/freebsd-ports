@@ -3,7 +3,7 @@
 # Date created:				25 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.3 1998/05/08 15:06:26 max Exp $
+# $Id: Makefile,v 1.4 1998/07/27 23:25:24 asami Exp $
 #
 
 DISTNAME=		xskewb-5.4.4
@@ -16,6 +16,7 @@ MAINTAINER=		andy@icc.surw.chel.su
 WRKSRC=			${WRKDIR}/xskewb
 USE_IMAKE=		yes
 MAN1=			xskewb.1
+MANCOMPRESSED=		no
 
 # Not configured to use Motif.
 # Optionally edit ${WRKSRC}/Imakefile before build.

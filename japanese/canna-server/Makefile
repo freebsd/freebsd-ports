@@ -4,7 +4,7 @@
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #			NIIMI Satoshi <sa2c@and.or.jp>
 #
-# $Id: Makefile,v 1.18 1997/10/17 15:59:04 itojun Exp $
+# $Id: Makefile,v 1.19 1998/08/15 05:06:04 kuriyama Exp $
 #
 
 DISTNAME=	Canna32p2
@@ -30,6 +30,7 @@ MAN3= 	RkRgnBun.3 RkDefineDic.3 RkDeleteDic.3 RkEndBun.3 \
 	RkUnmountDic.3 RkXfer.3 cannalib.3 uilib.3 RkCloseRoma.3 \
 	RkCvtEuc.3 RkCvtHan.3 RkCvtHira.3 RkCvtKana.3 RkCvtRoma.3 \
 	RkCvtZen.3 RkMapPhonogram.3 RkMapRoma.3 RkOpenRoma.3
+MANCOMPRESSED=	no
 
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/canna.sh
 

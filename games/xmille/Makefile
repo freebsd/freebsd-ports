@@ -3,7 +3,7 @@
 # Date created:         30 Dec 1994
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.7 1996/11/18 11:25:57 asami Exp $
+# $Id: Makefile,v 1.8 1997/01/03 09:37:24 obrien Exp $
 #
 
 DISTNAME=       xmille
@@ -18,5 +18,6 @@ MAINTAINER=	swallace@FreeBSD.org
 
 USE_IMAKE=      yes
 NO_WRKSUBDIR=	yes
+MANCOMPRESSED=	no
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@
 # Date created:		16 Februar 1995
 # Whom:			Gennady Sorokopud <gena@NetVision.net.il>
 #
-# $Id: Makefile,v 1.9 1998/05/27 03:07:06 mph Exp $
+# $Id: Makefile,v 1.10 1998/08/13 01:44:14 asami Exp $
 #
 
 DISTNAME=	xmcd-2.3
@@ -16,6 +16,7 @@ REQUIRES_MOTIF=	yes
 USE_IMAKE=	yes
 
 MAN1=		cddbcmd.1 wm2xmcd.1
+MANCOMPRESSED=	no
 
 post-install:
 	@${CAT} ${PKGDIR}/MESSAGE

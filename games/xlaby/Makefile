@@ -3,7 +3,7 @@
 # Date created:				3 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/03/15 20:32:45 steve Exp $
+# $Id: Makefile,v 1.2 1998/07/27 23:25:01 asami Exp $
 #
 
 DISTNAME=		xlaby-2.0.1
@@ -18,6 +18,7 @@ MAINTAINER=		andy@icc.surw.chel.su
 USE_IMAKE=		yes
 NO_WRKSUBDIR=		yes
 MAN6=			xlaby.6
+MANCOMPRESSED=		no
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/xlaby ${PREFIX}/bin

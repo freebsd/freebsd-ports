@@ -3,7 +3,7 @@
 # Date created:				16 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/27 05:01:10 mph Exp $
+# $Id: Makefile,v 1.2 1998/07/27 23:25:12 asami Exp $
 #
 
 DISTNAME=		xoids-1.5
@@ -17,6 +17,7 @@ LIB_DEPENDS=		Xpm\\.4\\.:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=		yes
 MAN6=			xoids.6
+MANCOMPRESSED=		no
 
 do-install:
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/xoids ${PREFIX}/bin

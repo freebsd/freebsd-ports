@@ -3,7 +3,7 @@
 # Date created:				28 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/06/11 02:45:04 mph Exp $
+# $Id: Makefile,v 1.3 1998/07/27 23:25:10 asami Exp $
 #
 
 DISTNAME=		xoct-5.4.4
@@ -16,6 +16,7 @@ MAINTAINER=		andy@icc.surw.chel.su
 WRKSRC=			${WRKDIR}/xoct
 USE_IMAKE=		yes
 MAN1=			xoct.1
+MANCOMPRESSED=		no
 
 # Not configured to use Motif.
 # Optionally edit ${WRKSRC}/Imakefile before build.
