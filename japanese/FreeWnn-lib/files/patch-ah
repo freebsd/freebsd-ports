@@ -1,8 +1,6 @@
 --- ./kWnn/etc/Imakefile.orig	Wed Aug 17 10:11:33 1994
 +++ ./kWnn/etc/Imakefile	Sat Jul 19 23:53:01 1997
-@@ -1,6 +1,8 @@
- XCOMM
- XCOMM $Id: Imakefile,v 1.2 1994/08/17 01:11:33 kuwa Exp $
+@@ -3,4 +3,6 @@
  XCOMM
 +XCOMM For Mule, add sources (yincoding.c py_table.c zy_table.c) 1
 +XCOMM   -- S. Taoka
