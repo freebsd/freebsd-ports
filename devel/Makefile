@@ -442,6 +442,7 @@
     SUBDIR += p5-Algorithm-MarkovChain
     SUBDIR += p5-Algorithm-Permute
     SUBDIR += p5-Alias
+    SUBDIR += p5-App-Info
     SUBDIR += p5-AppConfig
     SUBDIR += p5-AppConfig-Std
     SUBDIR += p5-Array-Window
