@@ -19,8 +19,10 @@ then
 fi
 
 echo " ${*} " | grep " \-createdironly " ||
+{
 	cd ${HOME}/.agsatellite &&
 	echo Running Audio Galaxy Satellite under ${HOME}/.agsatellite &&
 	echo Create both account.txt and shares.txt files under ${HOME}/.agsatellite &&
 	exec ./${PROGRAM##*/} ${*} ||
 	echo PROBLEM. Cannot create directory ${HOME}/.agsatellite, make sure you have the proper permissions to create itnd try again
+}
