@@ -124,6 +124,7 @@
     SUBDIR += pdq
     SUBDIR += perlftlib
     SUBDIR += pfaedit
+    SUBDIR += phppdflib
     SUBDIR += pic2fig
     SUBDIR += pips2200
     SUBDIR += pips3000
