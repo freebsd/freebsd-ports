@@ -4384,9 +4384,7 @@ libgnomecups	ports/print/libgnomecups
 libgnomedb	ports/databases/libgnomedb
 libgnomemm	ports/x11/libgnomemm
 libgnomeprint	ports/print/libgnomeprint
-libgnomeprint20	ports/print/libgnomeprint20
 libgnomeprintui	ports/x11-toolkits/libgnomeprintui
-libgnomeprintui20	ports/x11-toolkits/libgnomeprintui20
 libgnomeui	ports/x11-toolkits/libgnomeui
 libgnomeuimm	ports/x11-toolkits/libgnomeuimm
 libgnugetopt	ports/devel/libgnugetopt
