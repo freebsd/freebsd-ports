@@ -1,9 +1,9 @@
 # New ports collection makefile for:	tvision
-# Version required:			0.3
+# Version required:			0.4
 # Date created:				16 February 1997
 # Whom:					Sandro Sigala
 #
-# $Id: Makefile,v 1.2 1997/04/25 11:54:08 jkh Exp $
+# $Id: Makefile,v 1.3 1997/04/30 03:17:58 asami Exp $
 #
 
 DISTNAME=	tvision-0.4
