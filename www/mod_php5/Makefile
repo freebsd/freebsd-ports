@@ -3,7 +3,7 @@
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.83 1999/08/10 16:07:26 dirk Exp $
+# $Id: Makefile,v 1.84 1999/08/16 18:41:11 dirk Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
@@ -36,7 +36,7 @@ MAINTAINER=	dirk@FreeBSD.org
 Y2K=		http://www.php.net/y2k.php3
 
 VERSION_APACHE=	1.3.6
-VERSION_PHP=	3.0.12
+VERSION_PHP=	4.0b2
 
 USE_PERL5=	yes
 HAS_CONFIGURE=	yes
@@ -60,7 +60,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--enable-module=auth_db \
 		--disable-module=auth_dbm \
 		--enable-shared=max \
-		--activate-module=src/modules/php3/libphp3.a
+		--activate-module=src/modules/php4/libphp4.a
 
 OPTIM=		-DHARD_SERVER_LIMIT=512 \
 		-DDEFAULT_PATH=\\"${PREFIX}/bin:/bin:/usr/bin\\"
@@ -120,10 +120,7 @@ post-install:
 		${ECHO} "[ -x ${PREFIX}/sbin/apachectl ] && ${PREFIX}/sbin/apachectl start${SSL} > /dev/null && ${ECHO} -n ' apache'" >> ${PREFIX}/etc/rc.d/apache.sh; \
 		chmod 751 ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
-	${INSTALL_DATA} ${WRKDIR}/php-${VERSION_PHP}/php3.ini-dist ${PREFIX}/etc
-.for i in php2 php3 phpi phps
-	${INSTALL_DATA} ${WRKDIR}/php-${VERSION_PHP}/extra/icons/$i.gif ${PREFIX}/share/apache/icons
-.endfor
+	${INSTALL_DATA} ${WRKDIR}/php-${VERSION_PHP}/php.ini-dist ${PREFIX}/etc
 
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${APACHEDOCDIR} ${PHPDOCDIR}
