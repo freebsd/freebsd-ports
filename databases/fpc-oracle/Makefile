@@ -21,7 +21,7 @@ DISTNAME=	fpc-${PORTVERSION}.ELF
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	coop9211@uidaho.edu
-COMMENT=	Free Pascal interface to PostGreSQL
+COMMENT=	Free Pascal interface to Oracle
 
 .include <bsd.port.pre.mk>
 
