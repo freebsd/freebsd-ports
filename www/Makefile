@@ -159,6 +159,7 @@
     SUBDIR += swish-e
     SUBDIR += tclhttpd
     SUBDIR += thttpd
+    SUBDIR += thumbnail_index
     SUBDIR += tidy
     SUBDIR += tinyproxy
     SUBDIR += transproxy

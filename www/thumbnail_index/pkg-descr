@@ -1,0 +1,10 @@
+       thumbnail_index - make an HTML index file for a bunch of images
+
+Run this script in a web directory consisting of all or mostly image
+files.  It'll create an index.html of thumbnail images, putting
+the thumbnail files in a hidden subdirectory.
+
+WWW: http://www.acme.com/software/thumbnail_index/
+
+MIHIRA, Yoshiro
+<sanpei@FreeBSD.org>
