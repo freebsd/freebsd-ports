@@ -7,6 +7,7 @@
 PORTNAME=	ksh93
 PORTVERSION=	${VERSION:S/-//g}
 CATEGORIES=	shells
+FETCH_ENV=	HTTP_AUTH='basic:*:I accept www.opensource.org/licenses/cpl:.'
 MASTER_SITES=	http://www.research.att.com/~gsf/download/tgz/
 DISTNAME=	${PORTNAME}-${VERSION}
 DISTFILES=	INIT.${VERSION}.tgz ast-ksh.${VERSION}.tgz
@@ -15,11 +16,10 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	joe@zircon.seattle.wa.us
 COMMENT=	Official AT&T release of KornShell 93
 
-VERSION=	2004-02-29
-RESTRICTED=	"Source recipient must acknowledge license"
+VERSION=	2004-12-25
+RESTRICTED=    "Source recipient must acknowledge license"
 
-BROKEN=		Unfetchable
-
+FETCH_CMD=	/usr/bin/fetch -Rr		# see bin/76134
 NO_WRKSUBDIR=	yes
 MAKE_ENV=	CCFLAGS="${CFLAGS}" SHELL="${SH}"
 .if defined(WANT_STATIC)
