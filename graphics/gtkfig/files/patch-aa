@@ -1,0 +1,10 @@
+--- src/group.h.orig	Mon May 10 01:51:36 1999
++++ src/group.h	Mon May 10 01:51:57 1999
+@@ -7,6 +7,7 @@
+ #ifndef GTKFIG_GROUP_H
+ #define GTKFIG_GROUP_H
+ 
++#include <gtk/gtkcompat.h>
+ #include "rectangleobject.h"
+ 
+ /*
