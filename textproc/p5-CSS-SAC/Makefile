@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CSS-SAC
-PORTVERSION=	0.04
+PORTVERSION=	0.05
 CATEGORIES=	textproc perl5 www
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	CSS
@@ -36,6 +36,5 @@ MAN3=		CSS::SAC.3 CSS::SAC::Condition.3 \
 		CSS::SAC::Selector::Sibling.3 CSS::SAC::Selector::Simple.3 \
 		CSS::SAC::SelectorFactory.3 CSS::SAC::SelectorList.3 \
 		CSS::SAC::TestWriter.3 CSS::SAC::Writer.3
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
 .include <bsd.port.mk>
