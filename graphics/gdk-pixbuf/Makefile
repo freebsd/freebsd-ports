@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	gdk-pixbuf
-PORTVERSION=	0.13.0
-PORTREVISION=	1
+PORTVERSION=	0.14.0
 CATEGORIES?=	graphics
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/gdk-pixbuf
@@ -21,9 +20,9 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png \
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_LIBTOOL=	yes
 USE_GTK=	yes
 INSTALLS_SHLIB=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \
