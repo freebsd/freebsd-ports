@@ -9,6 +9,46 @@ share/doc/vftool/MKPTEX2PNTT
 share/doc/vftool/Makefile
 share/doc/vftool/README
 share/doc/vftool/vfdata.doc
+share/fonts/vf-a2bk/gbm.tfm
+share/fonts/vf-a2bk/gbmv.tfm
+share/fonts/vf-a2bk/goth10.vf
+share/fonts/vf-a2bk/goth5.vf
+share/fonts/vf-a2bk/goth6.vf
+share/fonts/vf-a2bk/goth7.vf
+share/fonts/vf-a2bk/goth8.vf
+share/fonts/vf-a2bk/goth9.vf
+share/fonts/vf-a2bk/min10.vf
+share/fonts/vf-a2bk/min5.vf
+share/fonts/vf-a2bk/min6.vf
+share/fonts/vf-a2bk/min7.vf
+share/fonts/vf-a2bk/min8.vf
+share/fonts/vf-a2bk/min9.vf
+share/fonts/vf-a2bk/rml.tfm
+share/fonts/vf-a2bk/rmlv.tfm
+share/fonts/vf-a2bk/tgoth10.vf
+share/fonts/vf-a2bk/tgoth5.vf
+share/fonts/vf-a2bk/tgoth6.vf
+share/fonts/vf-a2bk/tgoth7.vf
+share/fonts/vf-a2bk/tgoth8.vf
+share/fonts/vf-a2bk/tgoth9.vf
+share/fonts/vf-a2bk/tmin10.vf
+share/fonts/vf-a2bk/tmin5.vf
+share/fonts/vf-a2bk/tmin6.vf
+share/fonts/vf-a2bk/tmin7.vf
+share/fonts/vf-a2bk/tmin8.vf
+share/fonts/vf-a2bk/tmin9.vf
+share/fonts/vf-a2n/goth10.vf
+share/fonts/vf-a2n/goth5.vf
+share/fonts/vf-a2n/goth6.vf
+share/fonts/vf-a2n/goth7.vf
+share/fonts/vf-a2n/goth8.vf
+share/fonts/vf-a2n/goth9.vf
+share/fonts/vf-a2n/min10.vf
+share/fonts/vf-a2n/min5.vf
+share/fonts/vf-a2n/min6.vf
+share/fonts/vf-a2n/min7.vf
+share/fonts/vf-a2n/min8.vf
+share/fonts/vf-a2n/min9.vf
 share/fonts/vf-n2a/dgjgreek10.vf
 share/fonts/vf-n2a/dgjgreek12.vf
 share/fonts/vf-n2a/dgjgreek17.vf
@@ -603,32 +643,6 @@ share/fonts/vf-n2a/dmjsy6.vf
 share/fonts/vf-n2a/dmjsy7.vf
 share/fonts/vf-n2a/dmjsy8.vf
 share/fonts/vf-n2a/dmjsy9.vf
-share/fonts/vf-a2n/goth10.vf
-share/fonts/vf-a2n/goth5.vf
-share/fonts/vf-a2n/goth6.vf
-share/fonts/vf-a2n/goth7.vf
-share/fonts/vf-a2n/goth8.vf
-share/fonts/vf-a2n/goth9.vf
-share/fonts/vf-a2n/min10.vf
-share/fonts/vf-a2n/min5.vf
-share/fonts/vf-a2n/min6.vf
-share/fonts/vf-a2n/min7.vf
-share/fonts/vf-a2n/min8.vf
-share/fonts/vf-a2n/min9.vf
-share/fonts/vf-a2bk/goth10.vf
-share/fonts/vf-a2bk/goth5.vf
-share/fonts/vf-a2bk/goth6.vf
-share/fonts/vf-a2bk/goth7.vf
-share/fonts/vf-a2bk/goth8.vf
-share/fonts/vf-a2bk/goth9.vf
-share/fonts/vf-a2bk/min10.vf
-share/fonts/vf-a2bk/min5.vf
-share/fonts/vf-a2bk/min6.vf
-share/fonts/vf-a2bk/min7.vf
-share/fonts/vf-a2bk/min8.vf
-share/fonts/vf-a2bk/min9.vf
-share/fonts/vf-a2bk/gbm.tfm
-share/fonts/vf-a2bk/rml.tfm
 share/fonts/vf-p2pn/tgoth10.vf
 share/fonts/vf-p2pn/tgoth5.vf
 share/fonts/vf-p2pn/tgoth6.vf
@@ -641,8 +655,8 @@ share/fonts/vf-p2pn/tmin6.vf
 share/fonts/vf-p2pn/tmin7.vf
 share/fonts/vf-p2pn/tmin8.vf
 share/fonts/vf-p2pn/tmin9.vf
-@dirrm share/fonts/vf-n2a
-@dirrm share/fonts/vf-a2n
-@dirrm share/fonts/vf-a2bk
-@dirrm share/fonts/vf-p2pn
 @dirrm share/doc/vftool
+@dirrm share/fonts/vf-a2bk
+@dirrm share/fonts/vf-a2n
+@dirrm share/fonts/vf-n2a
+@dirrm share/fonts/vf-p2pn
