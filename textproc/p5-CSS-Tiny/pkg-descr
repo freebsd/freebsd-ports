@@ -5,6 +5,6 @@ This module is primarily for reading and writing simple files, and
 anything we write shouldn't need to have documentation/comments. If you
 need something with more power, move up to CSS.pm.
 
-WWW: http://search.cpan.org/search?dist=CSS-Tiny
+WWW: http://search.cpan.org/dist/CSS-Tiny
 
 Hansjoerg Pehofer <hansjoerg.pehofer@uibk.ac.at>
