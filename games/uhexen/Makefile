@@ -19,29 +19,38 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Yet another port of Hexen, popular game from Raven Softrware
 
-.if !defined(WITHOUT_WAD)
-EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
-.endif
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+OPTIONS=	NOWAD "Don't install WAD file" off
 
 USE_SDL=	mixer sdl
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 
-.if defined(WITHOUT_WAD)
-PLIST_SUB=	WAD:="@comment "
-.else
-PLIST_SUB=	WAD:=""
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_NOWAD)
+WITHOUT_WAD=	yes
 .endif
 
-BROKEN=		"Broken pkg-plist"
+.if !defined(WITHOUT_WAD)
+EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
+.endif
+
+PLIST_FILES=	bin/uhexen %%DATADIR%%/.keep_me %%WAD%%%%DATADIR%%/hexen.wad
+PLIST_DIRS=	%%DATADIR%%
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+.if defined(WITHOUT_WAD)
+PLIST_SUB=	WAD="@comment "
+.else
+PLIST_SUB=	WAD=""
+.endif
 
 pre-everything::
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
-	@${ECHO} "      WITHOUT_WAD=yes   Don't install the wad file."
+	@${ECHO} "      WITH_NOWAD=yes   Don't install the wad file."
 	@${ECHO} ""
 
 post-extract:
@@ -58,4 +67,4 @@ do-install:
 .endif
 	${TOUCH} ${DATADIR}/.keep_me
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
