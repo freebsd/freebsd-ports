@@ -66,7 +66,7 @@ do-install:
 .else
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME}bin ${PREFIX}/bin/${PORTNAME}
 .endif
-	@ ${INSTALL_DATA} ${WRKSRC}/src/pixmaps/${PORTNAME}.xpm ${PREFIX}/share/pixmaps
+	@ ${INSTALL_DATA} ${WRKSRC}/src/pixmaps/${PORTNAME}.xpm ${PREFIX}/share/pixmaps/${PORTNAME}.xpm
 	@ ${INSTALL_DATA} ${WRKSRC}/po/fr.gmo ${PREFIX}/share/locale/fr/LC_MESSAGES/${PORTNAME}.mo
 	@ ${INSTALL_DATA} ${WRKSRC}/po/ru.gmo ${PREFIX}/share/locale/ru/LC_MESSAGES/${PORTNAME}.mo
 .if defined (WITH_GNOME)
