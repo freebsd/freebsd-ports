@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	xemacs-basic-mule-packages
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS} \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	packages kiri
 DISTFILES=	\
-		egg-its-1.23-pkg.tar.gz \
-		elib-1.07-pkg.tar.gz \
-		locale-1.16-pkg.tar.gz \
-		mule-base-1.35-pkg.tar.gz \
-		skk-1.16-pkg.tar.gz
+		egg-its-1.25-pkg.tar.gz \
+		elib-1.08-pkg.tar.gz \
+		locale-1.18-pkg.tar.gz \
+		mule-base-1.37-pkg.tar.gz \
+		skk-1.18-pkg.tar.gz
 DIST_SUBDIR=	xemacs
 
 MAINTAINER=	kiri@FreeBSD.org
