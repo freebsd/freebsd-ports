@@ -23,6 +23,6 @@ post-patch:
 	@(cd ${WRKSRC} && ${SED} -e 's,%%PREFIX%%,${PREFIX},g' $F > foo && \
 		${MV} foo $F)
 .endfor
-	${PERL} -pi -e "s@cc@${CC}@g; s@-lc_r@-pthread@g" ${WRKSRC}/Makefile
+	${PERL} -pi -e "s@cc@${CC}@g; s@-lc_r@${PTHREAD_LIBS}@g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>

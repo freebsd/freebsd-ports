@@ -14,7 +14,7 @@ MAINTAINER=	roam@FreeBSD.org
 
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS+=	--with-LDFLAGS="-pthread"
+CONFIGURE_ARGS+=	--with-LDFLAGS="${PTHREAD_LIBS}"
 
 MAN3=		mhash.3
 

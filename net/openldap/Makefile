@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=	--enable-wrappers
 .if defined(WITH_DB2)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdb2.a:${PORTSDIR}/databases/db/
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/db2 -D_THREAD_SAFE" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/db2 ${PTHREAD_CFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--enable-ldbm \
 			--with-ldbm-api=db2

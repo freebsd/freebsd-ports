@@ -21,7 +21,7 @@ INSTALLS_SHLIB=	yes
 pre-patch:
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|-release \$$\(LT_RELEASE\)||g'
-	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|l\$$ost_cv_thread_library|\$$ost_cv_thread_library|g ; \
 		 s|=c_r|=pthread|g' ${WRKSRC}/configure
 

@@ -26,7 +26,7 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS=	--disable-fbdev-dga
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
 
-CFLAGS+=	-D_THREAD_SAFE -I${LOCALBASE}/include/pthread/linuxthreads
+CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include/pthread/linuxthreads
 
 MAN1=		BasiliskII.1
 

@@ -18,7 +18,7 @@ INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 # NOTE: We can not define USE_LIBTOOL for this port to build.
 #USE_LIBTOOL=	yes
-CFLAGS+=	-pthread
+CFLAGS+=	${PTHREAD_LIBS}
 
 MAN1=		mhub.1
 MAN3=		giiEventPoll.3gii giiInit.3gii giiOpen.3gii \

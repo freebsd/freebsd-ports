@@ -51,7 +51,7 @@ MAKE_ENV+=	SUB_GL=${SUB_GL}		\
 		INCLUDE_GL=${INCLUDE_GL}
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|-pthread|g' ${WRKSRC}/configure
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 post-configure:
 	@${PERL} -pi -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/src/config.c

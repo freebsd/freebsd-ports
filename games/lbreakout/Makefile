@@ -23,7 +23,7 @@ CONFIGURE_ENV=	LIBS="-lcompat" \
 		SDL_CONFIG="${SDL_CONFIG}"
 
 pre-patch:
-	@${PERL} -pi -e 's|-lpthread|-pthread|g' ${WRKSRC}/configure
+	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@find ${WRKSRC} \( -name "*.[ch]" -or -name "*.cpp" \) | \
 		xargs ${PERL} -pi -e 's|"SDL/SDL|"SDL|g ; s|<SDL/SDL|<SDL|g'
 

@@ -21,7 +21,7 @@ CONFIGURE_ARGS+=--with-mhash \
 		--with-zlib \
 		--with-config_file=/var/adm/aide/aide.conf
 
-CONFIGURE_ENV+=	LIBS='-L${LOCALBASE}/lib -pthread'
+CONFIGURE_ENV+=	LIBS='-L${LOCALBASE}/lib ${PTHREAD_LIBS}'
 
 MAN1=		aide.1
 MAN5=		aide.conf.5

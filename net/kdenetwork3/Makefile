@@ -30,7 +30,7 @@ CONFIGURE_ENV+=	LIBQT="-lqt2" MOC="${MOC}" \
 USE_GMAKE=	yes
 
 pre-configure:
-	${PERL} -pi -e "s:-lpthread:-pthread:g" ${WRKSRC}/knode/Makefile.in
+	${PERL} -pi -e "s:-lpthread:${PTHREAD_LIBS}:g" ${WRKSRC}/knode/Makefile.in
 	${PERL} -pi -e "s@all_includes=\"@all_includes=\"-I/usr/include @g" ${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4
 
 .include <bsd.port.mk>

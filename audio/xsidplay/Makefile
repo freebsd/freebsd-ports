@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--with-qt-includes=${X11BASE}/include/qt2 \
 		--with-x-includes=${X11BASE}/include \
 		--with-x-libraries=${X11BASE}/lib
 
-CFLAGS+=	-D_THREAD_SAFE
+CFLAGS+=	${PTHREAD_CFLAGS}
 
 .include <bsd.port.pre.mk>
 
