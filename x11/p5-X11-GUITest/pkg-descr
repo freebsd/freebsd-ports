@@ -1,0 +1,6 @@
+This Perl package is intended to facilitate the testing of GUI applications by
+means of user emulation. It can be used to test/interact with GUI applications;
+which have been built upon the X library or toolkits (i.e., GTK+, Xt, Qt,
+Motif, etc.) that "wrap" the X library's functionality.
+
+WWW: http://search.cpan.org/dist/X11-GUITest/

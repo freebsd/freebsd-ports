@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/X11/GUITest.pm
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/X11
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/GUITest/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/GUITest/GUITest.so
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/GUITest/GUITest.bs
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/X11/GUITest
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/X11
