@@ -3,18 +3,23 @@
 # Date created:				29 Dec 1998
 # Whom:					Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/01/05 13:12:01 vanilla Exp $
 #
 
 DISTNAME=	control-center-0.99
 PKGNAME=	gnomecontrolcenter-0.99
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/ \
-		ftp://ftp.gnome.org/pub/GNOME/sources/
+MASTER_SITES=	ftp://ftp.jimpick.com/pub/mirrors/gnome/sources/latest/ \
+		ftp://ftp.geo.net/pub/gnome/sources/latest/ \
+		ftp://gnomeftp.wgn.net/pub/gnome/sources/latest/ \
+		ftp://ftp.gnome.org/pub/GNOME/sources/latest/
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
-LIB_DEPENDS=	gnome.0:${PORTSDIR}/x11/gnomelibs
+RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
+LIB_DEPENDS=	gnome.1:${PORTSDIR}/x11/gnomelibs
+
+BROKEN=		"Can't works with gnomelibs 0.99.3"
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
