@@ -73,7 +73,8 @@ create_user() {
 
 create_sasldb() {
 	if [ ! -f ${SASLDB_NAME} ]; then
-		touch ${SASLDB_NAME}
+		echo "test" | ${PKG_PREFIX}/sbin/saslpasswd -p -c cyrus
+		${PKG_PREFIX}/sbin/saslpasswd -d cyrus
 		chown cyrus:mail ${SASLDB_NAME}
 		chmod 640 ${SASLDB_NAME}
 	fi

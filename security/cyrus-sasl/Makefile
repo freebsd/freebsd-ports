@@ -6,21 +6,33 @@
 #
 
 PORTNAME=	cyrus-sasl
-PORTVERSION=	1.5.24
-PORTREVISION=	8
-CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR% \
+PORTVERSION=	1.5.27
+PORTREVISION=	0
+CATEGORIES=	security ipv6
+MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/%SUBDIR%/ \
+		http://prdownloads.sourceforge.net/cyrus-utils/ \
+		http://www.surf.org.uk/downloads/ \
+		ftp://ftp.westbend.net/pub/cyrus-mail/%SUBDIR%/ \
+		${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/
-MASTER_SITE_SUBDIR=	./ OLD-VERSIONS/sasl/
+MASTER_SITE_SUBDIR=	. OLD-VERSIONS/sasl cyrus-utils
 
-PATCH_SITES=    http://www.imasy.or.jp/~ume/ipv6/
-PATCHFILES=     ${DISTNAME}-ipv6-20010321.diff.gz
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		sasl-${PORTVERSION}-ldap-ssl-filter-mysql-patch3.tgz
+
+PATCH_SITES=	ftp://ftp.westbend.net/pub/cyrus-mail/contrib/ \
+		http://www.imasy.or.jp/~ume/ipv6/
+PATCHFILES=	sasl_apop_patch.gz \
+		${DISTNAME}-ipv6-${IPV6_VER}.diff.gz
 
 MAINTAINER=	hetzels@westbend.net
 
 USE_OPENSSL=	YES
 
 INSTALLS_SHLIB=	yes
+
+# IPv6 Patch provided by Hajimu UMEMOTO <ume@mahoroba.org>
+IPV6_VER=	20020106
 
 MAN3=		sasl.3 sasl_authorize_t.3 sasl_callbacks.3 sasl_checkpass.3 \
 		sasl_client_init.3 sasl_client_new.3 sasl_client_start.3 \
@@ -43,32 +55,22 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--enable-static \
 		--enable-login \
 		--with-pwcheck=/var/pwcheck \
-		--with-dblib=ndbm \
 		--with-rc4=openssl
 
 SCRIPTS_ENV=	WRKDIRPREFIX="${WRKDIRPREFIX}" \
 		PREFIX="${PREFIX}" \
 		TOUCH="${TOUCH}" \
 		MKDIR="${MKDIR}" \
-		ENABLE_DB3="${ENABLE_DB3}" \
-		ENABLE_MYSQL="${ENABLE_MYSQL}" \
-		ENABLE_LDAP="${ENABLE_LDAP}"
-
-# ENABLE_* variables can be used by depending ports to enable options.
+		REALCURDIR="${.CURDIR}" \
+		WITH_DB3="${WITH_DB3}" \
+		WITH_JAVA="${WITH_JAVA}" \
+		WITH_MYSQL="${WITH_MYSQL}" \
+		WITH_LDAP1="${WITH_LDAP1}" \
+		WITH_LDAP2="${WITH_LDAP2}"
 
 # JavaSASL needs someone to look at to get it to build
-#JAVADIR=	jdk1.1.8
-#JAVALIBDIR=	${PREFIX}/${JAVADIR}/lib/i386/green_threads/
-
-#.if defined(USE_JAVA) || exists(${LOCALBASE}/${JAVADIR}/bin/java)
-#BUILD_DEPENDS=	${LOCALBASE}/${JAVADIR}/bin/java:${PORTSDIR}/java/jdk
-#CONFIGURE_ARGS+=	--with-java \
-#			--with-javabase=${LOCALBASE}/include
-#
-#CONFIGURE_ENV=	JAVAC="${LOCALBASE}/${JAVADIR}/bin/javac" \
-#		JAVAH="${LOCALBASE}/${JAVADIR}/bin/javah" \
-#		JAVADOC="${LOCALBASE}/${JAVADIR}/bin/javadoc"
-#.endif
+JAVADIR=	jdk1.1.8
+JAVALIBDIR=	${PREFIX}/${JAVADIR}/lib/i386/green_threads/
 
 .if defined(KRB5_HOME) && exists(${KRB5_HOME})
 CONFIGURE_ARGS+=	--enable-gssapi=${KRB5_HOME}
@@ -92,17 +94,12 @@ CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE} \
 
 DOCS=	AUTHORS COPYING ChangeLog INSTALL NEWS README TODO
 
-DOC2=	draft-leach-digest-sasl-05.txt \
-	draft-newman-auth-scram-03.txt \
-	rfc1321.txt rfc2095.txt rfc2104.txt \
-	rfc2222.txt rfc2245.txt
-
-HTDOCS=	gssapi index programming sysadmin
-
 PLIST_SUB=	PREFIX=${PREFIX} \
 		GSSAPI=${GSSAPI} \
 		EBONES=${EBONES} \
 		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///} \
+
+LDAP_MYSQL_PATCH=	ldap-mysql_sasl/sasl-ldap+mysql.patch
 
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGINSTALL=	${WRKDIR}/pkg-install
@@ -110,6 +107,14 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 pre-fetch:
 	@${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure.sasl
+
+.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
+.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+.endif
+
+pre-patch:
+	@(cd ${WRKSRC} && ${PATCH} -p1 < ${WRKDIR}/${LDAP_MYSQL_PATCH} && \
+	${MV} configure.orig configure)
 
 # Fix sasldb name in pkg-install/deinstall scripts
 post-patch:
@@ -119,8 +124,11 @@ post-patch:
 		${.CURDIR}/pkg-deinstall > ${PKGDEINSTALL}
 	@${SED} -e "/%%SASLDB%%/s##${SASLDB_NAME}#g" \
 		-e "/%%PREFIX%%/s##${PREFIX}#g" \
-		-e "/%%DOCSDIR%%/s##${DOCSDIR}#g" \
 		${.CURDIR}/pkg-message > ${PKGMESSAGE}
+.ifdef LDAP_MYSQL_MSG
+	@${ECHO} ${LDAP_MYSQL_MSG} | /usr/bin/fmt -w 67 >> ${PKGMESSAGE}
+	@${ECHO} >> ${PKGMESSAGE}
+.endif
 
 pre-configure:
 	@(cd ${WRKSRC} && ${AUTOHEADER})
@@ -134,19 +142,16 @@ post-install:
 		> ${PREFIX}/etc/rc.d/pwcheck.sh
 	@${CHMOD} 755 ${PREFIX}/etc/rc.d/pwcheck.sh
 	${INSTALL} -d -m 770 -o cyrus -g cyrus /var/pwcheck
-	@${LN} ${PREFIX}/sbin/pwcheck ${PREFIX}/sbin/pwcheck_pwnam
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in ${DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
-.for file in ${DOC2}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
-.endfor
+	(cd ${WRKSRC}/doc ; \
+	for file in `make -V EXTRA_DIST` ; do \
+		${INSTALL_DATA} ${WRKSRC}/doc/$${file} ${DOCSDIR} ; \
+	done)
 	@${INSTALL_DATA} ${FILESDIR}/Sendmail.README ${DOCSDIR}
-.for file in ${HTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/doc/${file}.html ${DOCSDIR}
-.endfor
 .endif
 	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
@@ -154,8 +159,8 @@ post-install:
 post-clean:
 	@${RM} -f ${WRKDIRPREFIX}${.CURDIR}/Makefile.inc
 
-.if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
-.include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
-.endif
+#if exists(${WRKDIRPREFIX}${.CURDIR}/Makefile.inc)
+#include "${WRKDIRPREFIX}${.CURDIR}/Makefile.inc"
+#endif
 
 .include <bsd.port.mk>
