@@ -1,14 +1,15 @@
 bin/pymsgauth-clean
 bin/pymsgauth-confirm
 bin/pymsgauth-mail
-share/doc/pymsgauth/BUGS
-share/doc/pymsgauth/CHANGELOG
-share/doc/pymsgauth/COPYING
-share/doc/pymsgauth/pymsgauth.html
-share/doc/pymsgauth/pymsgauth.txt
-share/examples/pymsgauth/pymsgauthrc-example
 %%PYTHON_SITELIBDIR%%/ConfParser.py
-%%PYTHON_SITELIBDIR%%/pymsgauth-mail
 %%PYTHON_SITELIBDIR%%/pymsgauth.py
 %%PYTHON_SITELIBDIR%%/pymsgauth-clean
 %%PYTHON_SITELIBDIR%%/pymsgauth-confirm
+%%PYTHON_SITELIBDIR%%/pymsgauth-mail
+%%PORTDOCS%%share/doc/pymsgauth/BUGS
+%%PORTDOCS%%share/doc/pymsgauth/CHANGELOG
+%%PORTDOCS%%share/doc/pymsgauth/pymsgauth.html
+%%PORTDOCS%%share/doc/pymsgauth/pymsgauth.txt
+%%PORTDOCS%%@dirrm share/doc/pymsgauth
+share/examples/pymsgauth/pymsgauthrc-example
+@dirrm share/examples/pymsgauth
