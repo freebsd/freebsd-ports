@@ -1,0 +1,14 @@
+--- net_udp.c.orig	Thu Jan 27 19:15:55 2000
++++ net_udp.c	Thu Jan 27 19:16:59 2000
+@@ -63,6 +63,11 @@
+ #define INADDR_NONE 0xffffffff
+ #endif
+ 
++#if !defined(IPV6_ADD_MEMBERSHIP) && defined(IPV6_JOIN_GROUP)
++#define	IPV6_ADD_MEMBERSHIP	IPV6_JOIN_GROUP
++#define	IPV6_DROP_MEMBERSHIP	IPV6_LEAVE_GROUP
++#endif
++
+ struct _socket_udp {
+ 	int	 	 mode;	/* IPv4 or IPv6 */
+ 	char		*addr;
