@@ -6425,6 +6425,7 @@ oqtencoder	ports/multimedia/oqtencoder
 oqtplayer	ports/multimedia/oqtplayer
 or-aspell	ports/textproc/or-aspell
 oracle7-client	ports/databases/oracle7-client
+orange		ports/archivers/orange
 orbital_eunuchs_sniper	ports/games/orbital_eunuchs_sniper
 orbitcpp	ports/devel/orbitcpp
 orca		ports/graphics/orca
