@@ -3,6 +3,6 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parallel/ForkManager/.packli
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parallel/ForkManager 2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Parallel/            2>/dev/null || true
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Parallel                                2>/dev/null || true
-%%PORTSDOC%%share/examples/perl5/Parallel-ForkManager/parallel_get.pl
-%%PORTSDOC%%share/examples/perl5/Parallel-ForkManager/callback.pl
-%%PORTSDOC%%@dirrm share/examples/perl5/Parallel-ForkManager
+%%PORTDOCS%%share/examples/perl5/Parallel-ForkManager/parallel_get.pl
+%%PORTDOCS%%share/examples/perl5/Parallel-ForkManager/callback.pl
+%%PORTDOCS%%@dirrm share/examples/perl5/Parallel-ForkManager
