@@ -602,6 +602,7 @@
     SUBDIR += qtorrent
     SUBDIR += quagga
     SUBDIR += queso
+    SUBDIR += raddump
     SUBDIR += radiator
     SUBDIR += radiusclient
     SUBDIR += radiusd-cistron

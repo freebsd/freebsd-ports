@@ -1,0 +1,9 @@
+raddump interprets captured RADIUS packets to print a 
+timestamp, packet length, RADIUS packet type, source 
+and destination hosts and ports, and included attribute 
+names and values for each packet.
+
+WWW: http://sourceforge.net/projects/raddump/
+
+- Jon Moore
+iscjonm@users.sourceforge.net
