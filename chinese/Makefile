@@ -24,6 +24,7 @@
     SUBDIR += hztty
     SUBDIR += kcfonts
     SUBDIR += libtabe
+    SUBDIR += linux-gtk
     SUBDIR += lunar
     SUBDIR += moefonts-cid
     SUBDIR += moettf
