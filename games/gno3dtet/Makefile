@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gno3dtet
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	games gnome
 MASTER_SITES=	ftp://webdat.com/pub/seb/gno3dtet/
 EXTRACT_SUFX=	.tgz
@@ -26,9 +26,6 @@ pre-patch:
 	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
 		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
 		 s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
-
-pre-configure:
-	@${RM} -f ${WRKSRC}/config.cache
 
 post-install:
 	${CHOWN} root:games ${PREFIX}/bin/gno3dtet
