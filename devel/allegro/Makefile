@@ -58,7 +58,7 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/html/*.html ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/docs/html/*.html ${DOCSDIR}
 .endif
 
 .include "Makefile.man"

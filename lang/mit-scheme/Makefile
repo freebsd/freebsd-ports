@@ -25,9 +25,9 @@ WRKSRC=		${WRKDIR}/scheme-${PORTVERSION}/src/microcode
 ALL_TARGET=	default-target
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/scheme ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/bchscheme ${PREFIX}/bin
-	cd ${WRKDIR}/lib && pax -rw mit-scheme ${PREFIX}/lib
-	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/mit-scheme
+	@${INSTALL_PROGRAM} ${WRKSRC}/scheme ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/bchscheme ${PREFIX}/bin
+	@cd ${WRKDIR}/lib && pax -rw mit-scheme ${PREFIX}/lib
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/mit-scheme
 
 .include <bsd.port.mk>

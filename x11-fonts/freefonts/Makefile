@@ -19,7 +19,7 @@ NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes
 
 post-install:
-	${RM} ${PREFIX}/lib/X11/fonts/freefont/fonts.dir.orig
+	@${RM} ${PREFIX}/lib/X11/fonts/freefont/fonts.dir.orig
 	@${CAT} ${DESCR}
 
 .include <bsd.port.mk>

@@ -29,6 +29,6 @@ PLIST_SUB=	MOTIF="@comment "
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e "s|"/etc/mib.txt"|${LOCALBASE}/share/NeTraMet/mibs/mib.txt|g;" ${WRKSRC}/src/snmplib/mib.c
+	@${REINPLACE_CMD} -e "s|"/etc/mib.txt"|${LOCALBASE}/share/NeTraMet/mibs/mib.txt|g;" ${WRKSRC}/src/snmplib/mib.c
 
 .include <bsd.port.mk>
