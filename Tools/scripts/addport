@@ -9,30 +9,30 @@
 # $FreeBSD$
 #
 # MAINTAINER= mharo@FreeBSD.org
+# however feel free to submit patches to will@FreeBSD.org.  =)
 #
 
 use Getopt::Std;
-use vars qw/ $opt_d $opt_h $opt_l $opt_n $opt_r $opt_u $opt_t /;
+use vars qw/ $opt_d $opt_h $opt_n $opt_u $opt_t $opt_v /;
 use strict;
 
-getopts('c:d:h:l:nrtu:');
+getopts('d:h:ntu:v');
 
 my $dir = $opt_d;
 my $h = "freefall.FreeBSD.org";
 $h = $opt_h if ($opt_h ne "");
 my $n = $opt_n;
-my $use_rsh = $opt_r;
 my $u = $ENV{USER};
 $u = $opt_u if ($opt_u ne "");
 my $more_testing = $opt_t;
+my $vanilla = $opt_v;
 my $portname = $opt_d;
 
 my $tmpdir;
 my $pwd;
-my $repo = "$u\@$h:/home/ncvs";
-my $ssh = "ssh $u\@$h";
+my $repo;
+my $ssh;
 $ENV{CVS_RSH} = "ssh";
-my $cvs = "cvs -d $repo";
 my $make = "make";
 my $portlint = "portlint -N -a -c";
 my $perl = "perl";
@@ -42,7 +42,16 @@ my $rm = "rm";
 
 my $category;
 
-# enough with the global vars
+# now check to make sure this isn't running on freefall
+chomp(my $myhost = lc(`hostname`));
+if ($myhost ne lc($h)) {
+	$ssh = "ssh $u\@$h";
+	$repo = "$u\@$h:/home/ncvs";
+} else {
+	$ssh = "";
+	$repo = "/home/ncvs";
+}
+my $cvs = "cvs -d $repo";
 
 sub usage {
 #addport,v \$Revision: 1.5 $
@@ -50,18 +59,19 @@ print <<EOF;
 authors: <will\@FreeBSD.org>, <mharo\@FreeBSD.org>
 
 SYNOPSIS
-	$0 [-u user] [-h host] [-nrt] -d directory
+	$0 [-h host] [-u user] [-ntv] -d directory
 
 	Where directory is the root directory containing the new port
 	that you wish to add to the Ports Collection.
 
 OPTIONS
-	-l repo		Use a local repository as necessary.
+	-h host		Use a cvshost besides freefall.FreeBSD.org
 	-n		Do not actually commit anything.
-	-r		Use rsh(1) instead of ssh(1) for committing.
-			Note: This will not work on *.FreeBSD.org.
 	-u user		Use a different username (default: $u).
 	-t		Do more port testing
+	-v		Plain vanilla "add it" - no testing at all.
+			This option overrides -t.  It is currently
+			necessary in order to use this on freefall.
 
 EOF
 }
@@ -151,7 +161,9 @@ END {
 
 
 if ($dir eq "") {
-	errx(1, "Please specify a directory to import a new port from.");
+	warnx("Please specify a directory to import a new port from.");
+	usage();
+	exit 1;
 }
 
 $dir = "$pwd/$dir" if ($dir !~ m,^/,);
@@ -163,7 +175,7 @@ if (! -d "$dir") {
 
 chdir $dir or err(1, "$dir");
 
-if ($more_testing) {
+if ($more_testing && !$vanilla) {
 my @commands = split(/\n/, <<EOF);
 $make distclean
 $make build
@@ -172,7 +184,9 @@ for (@commands) {
 	system("$_") && errx(1, "'$_' had problems. aborting.");
 }
 }
+
 # commands to run before adding port
+if (!$vanilla) {
 my @commands = split(/\n/, <<EOF);
 $make clean
 $make check-categories
@@ -181,6 +195,7 @@ $make FETCH_BEFORE_ARGS="-btsA" checksum
 EOF
 for (@commands) {
 	system("$_") && errx(1, "'$_' had problems. aborting.");
+}
 }
 
 $_ = `grep CATEGORIES Makefile`;
