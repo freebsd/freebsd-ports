@@ -98,6 +98,32 @@ sub write_line {
 	close FILE;
 }
 
+# Check to see whether a file is mentioned in the exclusion file.
+sub exclude_file {
+	my $filename = shift;
+	my $directory = shift;
+
+	my $exclude = "$cvsroot/CVSROOT/exclude";
+	my $path = "$directory/$filename";
+	if (open(EX, "<$exclude")) {
+		while (<EX>) {
+			chomp;
+			my $ex_entry = $_;
+
+			next if $ex_entry =~ /^#/;
+
+			if ($path =~ /$ex_entry/) {
+				close(EX);
+				return(1);
+			}
+		}
+		close(EX);
+	}
+
+	# File shouldn't be excluded.
+	return(0);
+}
+
 sub check_version {
 	my $filename = shift;
 	my $directory = shift;
@@ -112,25 +138,6 @@ sub check_version {
 
 	# not present - either removed or let cvs deal with it.
 	return 0 unless -f $filename;
-
-	# If an exclusion list exists use it to see whether this
-	# file should be exempt from version checking.
-	my $exclude = $cvsroot . "/CVSROOT/exclude";
-	my $path = $directory . "/" . $filename;
-	if (open(EX, "<$exclude")) {
-		while (<EX>) {
-			chomp;
-			my $ex_entry = $_;
-
-			next if $ex_entry =~ /^#/;
-
-			if ($path =~ /$ex_entry/) {
-				close(EX);
-				return(0);
-			}
-		}
-		close(EX);
-	}
 
 	# Search the file for our rcsid.
 	# NOTE: We stop after finding the first potential match.
@@ -157,11 +164,6 @@ sub check_version {
 	}
 	$rcsid_info = $2 || "";
 	($rname, $version) = split /\s/, $rcsid_info;
-
-	# Now that we're definitely sure that the file was supposed
-	# to have rcsid's in it, unexpand them in the file that's
-	# being checked in.
-	fix_up_file($filename) if $cfg::UNEXPAND_RCSID;
 
 	# Ignore version mismatches (MFC spamming etc) on branches.
 	if ($hastag) {
@@ -294,8 +296,18 @@ if ($check_id != 0) {
 		next if (index($arg, ".") == 0);
 		next if ($check_id == 2 && $arg ne "Makefile");
 		next if ($check_id == 3 && $hastag);
+
+		# Ignore the file if it's in the exclude list.
+		next if exclude_file($arg, $directory);
+
+		# Check to make sure that the file hasn't had
+		# it's revision string changed.
 		$failed += &check_version($arg, $directory, $hastag,
 		    $cvsversion{$arg});
+
+		# Unexpand the rcsid if required.
+		fix_up_file($arg) if $cfg::UNEXPAND_RCSID and !$failed;
+
 	}
 	if ($failed) {
 		print "\n";
