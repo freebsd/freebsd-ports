@@ -79,7 +79,7 @@ pre-install:
 .if defined(WITHOUT_LINUX)
 	@${MKDIR} ${LINUXBASE}/usr/lib
 .endif
-	@(kldstat -n linux || kldload linux)
+	-@(kldstat -n linux || kldload linux)
 
 post-install:
 .if ${OSVERSION} < 500000
