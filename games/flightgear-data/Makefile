@@ -15,6 +15,8 @@ DISTFILES=		${DISTNAME}.tar.gz \
 
 MAINTAINER=		brian@CSUA.Berkeley.EDU
 
+BROKEN=			"Does not link correctly"
+
 BUILD_DEPENDS=		${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 RUN_DEPENDS=		mpg123:${PORTSDIR}/audio/mpg123
 
