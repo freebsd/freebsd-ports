@@ -20,6 +20,8 @@ DISTFILES=	ztelnet-linux.tar.gz ztelnet-patch.tar.gz \
 
 MAINTAINER=	cjh@FreeBSD.org
 
+RESTRICTED=	"zmodem code has restrictive copyright"
+
 NO_WRKSUBDIR=	yes
 PATCH_STRIP=	-p1
 MAN1=		ztelnet.1
