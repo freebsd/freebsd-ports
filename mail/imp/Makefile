@@ -7,6 +7,7 @@
 
 PORTNAME=	imp
 PORTVERSION=	4.0.2
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	ftp://ftp.horde.org/pub/imp/				\
 		ftp://ftp.planetmirror.com/pub/horde/imp/		\
@@ -201,7 +202,7 @@ pre-configure:
 .for fc in ${PATCH2RM}
 	@${RM} ${WRKSRC}/config/${fc}
 .endfor
-	@${RM} ${WRKSRC}/lib/MIME/Headers.php.beforeIMP
+	@${RM} ${WRKSRC}/lib/MIME/Headers.php.beforeIMP ${WRKSRC}/lib/IMP.php.orig
 
 pre-install:
 .if !defined(BATCH) && !defined(WITHOUT_SSL)
