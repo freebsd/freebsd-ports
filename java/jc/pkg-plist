@@ -3591,6 +3591,7 @@ jc/obj/soot/coffi/Exception__5fattribute.o
 jc/obj/soot/coffi/FutureStmt.o
 jc/obj/soot/coffi/Generic__5fattribute.o
 jc/obj/soot/coffi/Info.o
+jc/obj/soot/coffi/InnerClasses__5fattribute.o
 jc/obj/soot/coffi/Instruction.o
 jc/obj/soot/coffi/Instruction__5fAaload.o
 jc/obj/soot/coffi/Instruction__5fAastore.o
@@ -3823,6 +3824,7 @@ jc/obj/soot/coffi/attribute__5finfo.o
 jc/obj/soot/coffi/cp__5finfo.o
 jc/obj/soot/coffi/exception__5ftable__5fentry.o
 jc/obj/soot/coffi/field__5finfo.o
+jc/obj/soot/coffi/inner__5fclass__5fentry.o
 jc/obj/soot/coffi/line__5fnumber__5ftable__5fentry.o
 jc/obj/soot/coffi/local__5fvariable__5ftable__5fentry.o
 jc/obj/soot/coffi/method__5finfo.o
@@ -5011,6 +5013,7 @@ jc/obj/soot/tagkit/FirstTagAggregator.o
 jc/obj/soot/tagkit/GenericAttribute.o
 jc/obj/soot/tagkit/Host.o
 jc/obj/soot/tagkit/ImportantTagAggregator.o
+jc/obj/soot/tagkit/InnerClassTag.o
 jc/obj/soot/tagkit/JasminAttribute.o
 jc/obj/soot/tagkit/JimpleLineNumberTag.o
 jc/obj/soot/tagkit/KeyTag.o
@@ -12182,6 +12185,8 @@ jc/src/soot/coffi/Generic__5fattribute.c
 jc/src/soot/coffi/Generic__5fattribute.h
 jc/src/soot/coffi/Info.c
 jc/src/soot/coffi/Info.h
+jc/src/soot/coffi/InnerClasses__5fattribute.c
+jc/src/soot/coffi/InnerClasses__5fattribute.h
 jc/src/soot/coffi/Instruction.c
 jc/src/soot/coffi/Instruction.h
 jc/src/soot/coffi/Instruction__5fAaload.c
@@ -12646,6 +12651,8 @@ jc/src/soot/coffi/exception__5ftable__5fentry.c
 jc/src/soot/coffi/exception__5ftable__5fentry.h
 jc/src/soot/coffi/field__5finfo.c
 jc/src/soot/coffi/field__5finfo.h
+jc/src/soot/coffi/inner__5fclass__5fentry.c
+jc/src/soot/coffi/inner__5fclass__5fentry.h
 jc/src/soot/coffi/line__5fnumber__5ftable__5fentry.c
 jc/src/soot/coffi/line__5fnumber__5ftable__5fentry.h
 jc/src/soot/coffi/local__5fvariable__5ftable__5fentry.c
@@ -15022,6 +15029,8 @@ jc/src/soot/tagkit/Host.c
 jc/src/soot/tagkit/Host.h
 jc/src/soot/tagkit/ImportantTagAggregator.c
 jc/src/soot/tagkit/ImportantTagAggregator.h
+jc/src/soot/tagkit/InnerClassTag.c
+jc/src/soot/tagkit/InnerClassTag.h
 jc/src/soot/tagkit/JasminAttribute.c
 jc/src/soot/tagkit/JasminAttribute.h
 jc/src/soot/tagkit/JimpleLineNumberTag.c
