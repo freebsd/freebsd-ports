@@ -2046,6 +2046,7 @@ festlex-cmu	ports/audio/festlex-cmu
 festlex-oald	ports/audio/festlex-oald
 festlex-ogi	ports/audio/festlex-ogi
 festlex-poslex	ports/audio/festlex-poslex
+festogi-italian	ports/audio/festogi-italian
 festogi-spanish	ports/audio/festogi-spanish
 festvox-abc	ports/audio/festvox-abc
 festvox-aec	ports/audio/festvox-aec
