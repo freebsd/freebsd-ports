@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zile
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://web.tiscalinet.it/ssigala/sandro/files/
