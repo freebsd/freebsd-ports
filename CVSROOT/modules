@@ -3817,6 +3817,7 @@ kde3-i18n-ven	ports/misc/kde3-i18n-ven
 kde3-i18n-xh	ports/misc/kde3-i18n-xh
 kde3-i18n-zu	ports/misc/kde3-i18n-zu
 kde31-apireference	ports/x11/kde31-apireference
+kdeaccessibility	ports/accessibility/kdeaccessibility
 kdeaddons3	ports/misc/kdeaddons3
 kdeadmin3	ports/sysutils/kdeadmin3
 kdeartwork3	ports/x11-wm/kdeartwork3
