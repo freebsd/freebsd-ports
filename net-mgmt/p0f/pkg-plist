@@ -1,0 +1,4 @@
+bin/p0f
+etc/p0f.fp
+share/doc/p0f/README
+@dirrm share/doc/p0f
