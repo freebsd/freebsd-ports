@@ -7,9 +7,10 @@
 
 PORTNAME=	libggi
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics devel
-MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/v2.0/ \
+MASTER_SITES=	ftp://ftp.ggi-project.org/pub/packages/ggi/ggi/v2.0/ \
 		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ggi
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
@@ -23,9 +24,15 @@ USE_BZIP2=	yes
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
 
+USE_AUTOCONF_VER=	253
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gii=${PREFIX}
+CONFIGURE_ARGS=	--disable-internal-dga	#This is broken for now
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+.ifdef USE_THREADS
+CFLAGS+=	${PTHREAD_CFLAGS}
+CONFIGURE_ARGS+=	--enable-threads
+.endif
 
 .if exists(/usr/include/kgi/kgi.h)
 CONFIGURE_ARGS+=	--enable-kgi
