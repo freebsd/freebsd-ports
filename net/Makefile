@@ -437,6 +437,7 @@
     SUBDIR += telnetx
     SUBDIR += telserv
     SUBDIR += thcrut
+    SUBDIR += tightvnc
     SUBDIR += tik
     SUBDIR += tintin++
     SUBDIR += tintin++-devel
@@ -458,7 +459,6 @@
     SUBDIR += vchat
     SUBDIR += vicq
     SUBDIR += vnc
-    SUBDIR += vnc-tight
     SUBDIR += vomit
     SUBDIR += vrrp
     SUBDIR += vtun
