@@ -1,0 +1,60 @@
+XTriangles, triangle puzzle for X-Window
+
+Usage:
+	xtriangles [ options ]
+
+Description:
+
+       Use "mouse-left" to move a tile.
+
+       "mouse-right", "R", or "r", to randomize.  One must double
+       click on "mouse-right" if the puzzle is being worked on.
+       "I" or "i" keys "increase" or move "up" the number of tri-
+       angles.
+
+       "D" or "d" keys "decrease" or move "down"  the  number  of
+       triangles.
+
+       "S"  or  "s"  keys  reserved for the auto-solver (unimple-
+       mented).
+
+       "U" or "u" keys to undo move.
+
+       "G" or "g" keys to get a saved puzzle.
+
+       "W" or "w" keys to write or save a puzzle.
+
+       "Q", "q", or "CTRL-C" keys kill program.
+
+       Use the key pad or "R" keys to move without the mouse.
+
+Options:
+
+       -display host:dpy
+               This option specifies the X server to contact.
+
+       -geometry {+|-}X{+|-}Y
+               This option sets the initial position of the  tri-
+               angles window (resource name "geometry").
+
+       -{foreground | fg} color
+               This option specifies the foreground of the trian-
+               gles window (resource name "foreground").
+
+       -{background | bg} color
+               This option specifies the background of the trian-
+               gles window (resource name "background").
+
+       -tile color
+               This option specifies the tile color of the trian-
+               gles window (resource name "tileColor").
+
+       -{border | bd} color
+               This option specifies  the  border  color  of  the
+               tiles in the triangles window (resource name "bor-
+               derColor").
+
+       -size <int>
+               This option allows you to  change  the  number  of
+               triangles in a row (resource name "sizeA").
+
