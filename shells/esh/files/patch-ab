@@ -1,0 +1,20 @@
+--- esh.c.orig	Thu May 20 14:13:25 1999
++++ esh.c	Thu May 20 14:22:34 1999
+@@ -657,7 +656,9 @@
+ 
+ void job_wait(job_t* job) {
+   int tmp;
++  sig_t oldsig;
+ 
++  oldsig = signal(SIGCHLD, SIG_DFL);
+   if (interactive) {
+     waitpid(job->last_pid, &tmp, WUNTRACED);
+ 
+@@ -676,6 +677,7 @@
+   } else {
+     waitpid(job->last_pid, &tmp, WUNTRACED);
+   }
++  signal(SIGCHLD, oldsig);
+ }
+ 
+ 

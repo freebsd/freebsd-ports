@@ -1,0 +1,14 @@
+esh is a new shell for Unix, written completely from scratch. It is
+very small, both in number of lines of source code and in memory
+consumption. The whole shell is about 5000 lines of C source code, and
+occupies about twice as little memory as bash in some cases.
+
+However, esh is also extremely flexible, with a real programming
+language at the core. The syntax is a simplified form of Scheme.  The
+current version is 0.8, though it is already stable and
+featureful. The reason for the low version number is lack of
+real-world testing. It is released under the GPL, of course.
+
+WWW:http://esh.netpedia.net/
+
+Jacques Vidrine <nectar@FreeBSD.ORG>

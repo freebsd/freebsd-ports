@@ -1,0 +1,7 @@
+bin/esh
+@exec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak; echo %D/%F) >/etc/shells
+@unexec echo "updating /etc/shells"; cp /etc/shells /etc/shells.bak; (grep -v %D/%F /etc/shells.bak) >/etc/shells
+@unexec install-info --delete %D/info/esh.info %D/info/dir
+info/esh.info
+@exec test -f %D/info/dir || sed -ne '1,/Menu:/p' /usr/share/info/dir > %D/info/dir
+@exec install-info %D/info/esh.info %D/info/dir
