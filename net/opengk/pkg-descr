@@ -1,0 +1,13 @@
+OpenGatekeeper is a H323 GateKeeper based on the OpenH323 project.
+It is written by Equivalence, who also write the OpenH323 library
+
+A H323 Gatekeeper manages multiple H323 clients on a network
+and provides a nice user name to IP mapping.
+
+As it follows the H323 standard, it is compatible with H323
+client programs including OhPhone, OpenPhone and MS NetMeeting.
+
+It makes use of PWLib and the OpenH323 stack from Equivalence Ltd Pty
+
+For more information see
+WWW: http://www.openh323.org/
