@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.jclark.com/pub/jade/
 
 PATCH_SITES=	http://ftp.debian.org/debian/dists/unstable/main/source/text/
 PATCHFILES=	jade_1.2.1-13.diff.gz
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	jfieber@FreeBSD.org
 
@@ -19,7 +20,7 @@ MAINTAINER=	jfieber@FreeBSD.org
 BROKEN=		nsgmls coredumps in static constructors
 .endif
 
-PATCH_DIST_STRIP?=	-p1
+USE_GMAKE=	YES
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CFLAGS}"
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog
