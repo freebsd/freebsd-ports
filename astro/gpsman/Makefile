@@ -9,6 +9,7 @@ PORTNAME=	gpsman
 PORTVERSION=	6.2
 CATEGORIES=	astro tk84
 MASTER_SITES=	http://www.ncc.up.pt/gpsman/gpsmanhtml/ \
+		http://voodoo.oberon.net/download/ \
 		${MASTER_SITE_SUNSITE} \
 MASTER_SITE_SUBDIR=	science/cartography
 EXTRACT_SUFX=	.tgz
