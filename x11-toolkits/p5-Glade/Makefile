@@ -28,12 +28,10 @@ MAN3=		Gtk::GladeXML::reference.3pm
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64"
-BROKEN=		"Build fails on amd64"
-.endif
-
 .if ${PERL_LEVEL} < 500600
 IGNORE=		This port requires perl 5.6.0 or later. Install lang/perl5 then try again
+.else
+BROKEN=		"Build fails"
 .endif
 
 .include <bsd.port.post.mk>
