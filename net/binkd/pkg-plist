@@ -1,0 +1,7 @@
+etc/binkd.cfg.sample
+sbin/binkd
+share/doc/binkd/COPYING
+share/doc/binkd/README
+share/doc/binkd/README.FIX
+share/doc/binkd/SRIF.TXT
+@dirrm share/doc/binkd
