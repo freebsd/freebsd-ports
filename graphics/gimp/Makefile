@@ -83,6 +83,9 @@ WITH_HTML_HELP_BROWSER=	yes
 USE_GNOME+=		gnomepanel
 CONFIGURE_ARGS+=	--with-desktop-dir=${X11BASE}/share/gnome
 PKGNAMESUFFIX=		-gnome
+PLIST_SUB+=		GNOMEPANEL:=""
+.else
+PLIST_SUB+=		GNOMEPANEL:="@comment "
 .endif
 
 .if defined(WITH_HTML_HELP_BROWSER)
