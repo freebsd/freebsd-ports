@@ -98,9 +98,9 @@ do-install:
 .for f in checknews cnewsdo inews injnews postnews readnews
 	${CHOWN} ${BINOWN}.${BINGRP} ${PREFIX}/bin/$f
 .endfor
-	${CHOWN} -R news.news ${NEWSARTS} ${NEWSOV} ${NEWSCTL} 
+	${CHOWN} -R news.news ${NEWSARTS} ${NEWSOV} ${NEWSCTL}
 	${CHOWN} news.news ${NEWSBIN}/input/newsspool
-	${CHMOD} 6755 ${NEWSBIN}/input/newsspool
+	${CHMOD} 6555 ${NEWSBIN}/input/newsspool
 .for i in ${MAN1}
 	${INSTALL_MAN} ${WRKSRC}/man/${i} ${PREFIX}/man/man1
 .endfor
