@@ -1,0 +1,181 @@
+GNAT IMPLEMENTED FEATURES LIST
+Current as of 01/26/95
+
+Here is the list of implemented and not implemented features. A more precise
+description of the GNAT system is provided in the file 'gnatinfo.txt', which
+is part of the GNAT distribution.
+
+Latest features in GNAT version 2.02
+====================================
+
+   Extension aggregates are implemented (not much tested so far)
+   The Storage_Pool mechanism is in place
+   Functions returning unconstrained values shouldn't leak anymore
+   Enumeration representation clauses are fully implemented
+   Record representation clauses are implemented (currently there is
+    a restriction that all fields must be given a position and tagged
+    records cannot yet be given representation clauses)
+   The constrained attribute is implemented
+   Conformance checking is fully implemented
+   Shared variables (pragmas Shared, Atomic, Atomic_Components,
+    Volatile, and Volatile_Components) are implemented
+   User-defined Initialize/Adjust/Finalize is now almost complete for
+    controlled types as well as for types containing controlled components.
+    (aggregates involving controlled types and functions returning objects
+      with controlled components may still cause trouble).
+   Alignment attribute and attribute definition clause are implemented
+   Pred and Succ for fixed-point types are implemented
+   Discard_Names pragma is implemented
+   Arrays are passed properly to convention C routines
+   Pragma Inspection_Point is implemented
+   Pragma Locking_Policy is implemented
+   Pragma Task_Dispatching_Policy is implemented
+   Pragma Memory_Size is implemented (it is ignored anyway)
+   Derived types from private types are impelmented
+   Floating-point attribute functions are implemented:
+    Adjacent, Ceiling, Compose, Copy_Sign, Exponent, Floor, Fraction,
+    Leading_Part, Machine, Model, Pred, Remainder, Rounding, Scaling, Succ,
+    Truncation, Unbiased_Rounding
+   Pragma Optimize is implemented (checks that GCC optimization level is
+    consistent)
+   Pragma Reviewable is implemented (checks that GCC debug option "-g" is set)
+   Pragma Controlled is implemented (but ignored so far)
+   The attributes Version and Body_Version are implemented
+   Pragma Linker_Options is implemented
+   Attribute Max_Size_In_Storage_Elements is implemented
+   The attribute Valid is implemented
+   Requeue without abort is implemented
+   Delay statement on OS/2 is now working correctly.
+   The attribute Bit_Order is implemented
+   Range checking for modular types
+   Length checks are now implemented
+   Pragma Import Fortran and COBOL are implemented
+   Pragma Convention is now fully implemented (for C, Fortran, COBOL),
+   Pragma Convention for Fortran correctly maps multi-dimensional arrays
+
+=======================================================================
+
+Status of Features
+
+============================================================================
+= All of Ada 83 is implemented EXCEPT the following unimplemented features =
+============================================================================
+
+   The following language-defined checks are not implemented:
+
+      Discriminant Checks
+      Elaboration Checks
+      Range Checks on the elaboration of a subtype_indication
+      Stack overflow checking
+
+   Language-Defined Pragmas
+     Pack for arrays
+
+   Input-Output for Integer for type Long_Long_Integer.
+   (only Put currently supported for Long_Long_Integer not Get)
+
+   Delay is not yet fixed-point as required (the current temporary
+   implementation uses floating-point to represent Delay).
+
+   Tasking is currently implemented only on the following platforms
+   SGI IRIX 5.2, Sun Sparc (SunOS 4.1), i386 running IBM OS/2
+
+=========================================================================
+= All of Ada 95 implemented EXCEPT the following unimplemented features =
+=========================================================================
+
+  CORE
+
+    Protected entry families
+    Protected subprogram pointers
+    Condition protected entry calls
+    Requeue Statement involving task entries
+    Delay until
+
+    Input-Output for Modular Types
+    (Only Put is supported currently, Get not yet supported)
+
+    Input-Output for Decimal Types
+    Input-Output for Wide Text
+
+    Objects of type with unknown discriminants
+
+   Unimplemented subprograms in package Ada.Text_IO
+      Flush
+      Look_Ahead
+      Get_Immediate
+ 
+    Accessibility checks
+
+    Stream-Oriented Attributes of Specific Types
+    Stream-Oriented Attributes of Class-Wide Types
+
+  ANNEX A. PREDEFINED LANGUAGE ENVIRONMENT
+
+    Ada.Exceptions
+    Ada.Interrupts
+    Ada.Streams.Stream_IO
+    Ada.Wide_Text_IO
+    Ada.Wide_Text_IO.Complex_IO
+
+  ANNEX B. INTERFACING TO OTHER LANGUAGES
+
+    The body of Interfaces.COBOL is not yet implemented
+
+  ANNEX C. SYSTEMS PROGRAMMING
+
+    Machine intrinsic subprograms
+    Interrupt support
+    The body of package Interrupts is not implemented
+    Preelaboration requirements are not fully met
+
+  ANNEX D. REAL-TIME SYSTEMS
+
+    Tasking restrictions
+    Synchronous task control
+
+  ANNEX E. DISTRIBUTED SYSTEMS
+
+    The distribution annex is under active development. Stub generation
+    is not yet implemented, and there is no configuration control program.
+    All pragmas are fully implemented.
+
+  ANNEX F. INFORMATION SYSTEMS
+
+    Ada.Text_IO.Editing
+    Ada.Wide_Text_IO.Editing
+
+  ANNEX G. NUMERICS
+
+    Accuracy requirements for floating-point and complex not fully met
+
+  ANNEX H. SAFETY AND SECURITY
+
+    pragma Normalize_Scalars
+    Safety and security restrictions
+
+  ANNEX I. OBSOLESCENT FEATURES
+
+    Interrupt entries
+
+  ANNEX J. LANGUAGE-DEFINED ATTRIBUTES
+
+    Caller
+    Definite
+    External_Tag
+    Identity
+    Input
+    Output
+    Read
+    Storage_Pool
+    Write
+
+  ANNEX K. LANGUAGE DEFINED PRAGMAS
+
+    Attach_Handler
+    Export 
+    Interrupt_Handler
+    Normalize_Scalars
+    Queuing_Policy
+    Restrictions
+
