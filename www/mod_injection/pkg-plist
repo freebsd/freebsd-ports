@@ -1,5 +1,6 @@
 libexec/apache2/mod_injection.so
-@exec %D/sbin/apxs -e -a -n injection %D/%f
+@exec %D/sbin/apxs -e -A -n injection %D/%f
+@unexec %D/sbin/apxs -e -A -n injection %D/%f
 %%PORTDOCS%%%%DOCSDIR%%/manual/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/manual/build.xml
 %%PORTDOCS%%%%DOCSDIR%%/manual/changelog.xml

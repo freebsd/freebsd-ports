@@ -1,4 +1,4 @@
 etc/php3.ini-dist
 %%AP_LIBEXEC%%/libphp3.so
-@exec %D/sbin/apxs -e -a -n php3 %f
+@exec %D/sbin/apxs -e -A -n php3 %f
 @unexec %D/sbin/apxs -e -A -n php3 %f
