@@ -6,48 +6,53 @@
 #
 
 PORTNAME=	gd
-PORTVERSION=	2.0.15
+PORTVERSION=	1.8.4
+PORTREVISION=	6
+PORTEPOCH=	1
 CATEGORIES+=	graphics
 MASTER_SITES=	http://www.boutell.com/gd/http/ \
 		ftp://ftp.boutell.com/pub/boutell/gd/ \
+		http://virtual-estates.net/~mi/port-stuff/ \
 		${MASTER_SITE_RINGSERVER}
 MASTER_SITE_SUBDIR=	graphics/gd
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} gd_gif_in.c.bz2
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	A graphics library for fast image creation
 
-LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.5:${PORTSDIR}/graphics/png \
-		freetype.9:${PORTSDIR}/print/freetype2
+BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2     # XXX
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
+		png:${PORTSDIR}/graphics/png \
+		freetype:${PORTSDIR}/print/freetype2
+.if !exists(/usr/bin/bzip2)
+BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
+.endif
 
-MAKE_ENV=	WRKSRC="${WRKSRC}"
-MAKEFILE=	${FILESDIR}/Makefile.bsd
+FREETYPE_CONFIG?=       ${LOCALBASE}/bin/freetype-config
+
+USE_REINPLACE=	yes
+MAKE_ENV=	FREETYPE_CONFIG="${FREETYPE_CONFIG}"
 INSTALLS_SHLIB=	yes
 
-.if !defined(WITHOUT_X11)
+.if defined(WITH_X11)
 USE_XPM=	yes
 .endif
 
-.if defined(HAVE_UNISYS_LICENSE) || \
-    (defined(USA_RESIDENT) && ${USA_RESIDENT} == "YES")
-WITH_LZW=	yes
-.endif
-
-.if defined(GD_FONTS)
-USE_PERL5_BUILD=	yes
-SCRIPTS_ENV+=	GD_FONTS="${GD_FONTS}"
-.endif
-
 pre-everything::
-.if !defined(WITH_LZW)
-	@${ECHO_MSG} "************************************************************"
-	@${ECHO_MSG} "*      If you live outside US and Canada, you can define   *"
-	@${ECHO_MSG} "*      WITH_LZW to enable GIF compression support.         *"
-	@${ECHO_MSG} "************************************************************"
+.if !defined(WITH_X11)
+	@${ECHO_MSG}
+	@${ECHO_MSG} "If you want to compile with Xpm support,"
+	@${ECHO_MSG} "hit Ctrl-C right now and use \"make WITH_X11=yes\""
+	@${ECHO_MSG}
 .endif
 
 post-extract:
-	@${CP} ${FILESDIR}/g* ${WRKSRC}
+	@${BZIP2_CMD} -dc ${DISTDIR}/${DIST_SUBDIR}/gd_gif_in.c.bz2 \
+		> ${WRKSRC}/gd_gif_in.c
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' ${WRKSRC}/gdcache.h
 
 post-install:
 .if !defined(NOPORTDOCS)
