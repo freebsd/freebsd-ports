@@ -5,40 +5,52 @@
 # $FreeBSD$
 
 PORTNAME=	generic-haskell
-PORTVERSION=	1.23
-PORTREVISION=	1
+PORTVERSION=	1.42
 CATEGORIES=	lang haskell
-MASTER_SITES=	http://www.cs.uu.nl/research/projects/generic-haskell/compiler/beryl/
+MASTER_SITES=	http://www.cs.uu.nl/research/projects/generic-haskell/compiler/coral/
 DISTNAME=	gh-${PORTVERSION}-source
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	The Generic Haskell compiler
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
-
-USE_REINPLACE=	yes
-HAS_CONFIGURE=	yes
-USE_GMAKE=	yes
-ALL_TARGET=	gh
-
-WRKSRC=		${WRKDIR}/${DISTNAME:S/-source//}
-GHLIBDIR=	${PREFIX}/lib/generic-haskell
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|@prefix@|${PREFIX}|' ${WRKSRC}/src/Makefile.in
-
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/gh ${PREFIX}/bin
-	@${MKDIR} ${GHLIBDIR}
-	@${CP} -R ${WRKSRC}/lib/*.gh[is] ${GHLIBDIR}
-	@${CP} -R ${WRKSRC}/lib/*.h[is] ${GHLIBDIR}
-	@${MKDIR} ${GHLIBDIR}/Exts
-	@${CP} -R ${WRKSRC}/lib/Exts/*.gh[is] ${GHLIBDIR}/Exts
-	@${MKDIR} ${GHLIBDIR}/Std
-	@${CP} -R ${WRKSRC}/lib/Std/*.gh[is] ${GHLIBDIR}/Std
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
+.if !defined(WITHOUT_HUGS)	# otherwise the gh-hugs-wrapper won't work
+BUILD_DEPENDS+=	hugs:${PORTSDIR}/lang/hugs
+PLIST_SUB+=	HUGS=""
+.else
+PLIST_SUB+=	HUGS="@comment "
 .endif
 
-.include <bsd.port.mk>
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/bin/DrIFT)
+BROKEN=		"Does not build with devel/hs-drift installed"
+.endif
+
+GNU_CONFIGURE=	yes
+CONFIGURE_SCRIPT=	../configure
+CONFIGURE_ARGS=	--without-upx
+USE_GMAKE=	yes
+ALL_TARGET=
+INSTALL_TARGET=	install
+
+GHC_VERSION=    `${LOCALBASE}/bin/ghc --numeric-version`
+PLIST_SUB+=     GHC_VERSION="${GHC_VERSION}"
+
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-source//}/build
+GHLIBDIR=	${PREFIX}/${DISTNAME:S/-source//}
+PLIST_SUB+=	GH=${DISTNAME:S/-source//}
+
+post-install:
+.if defined(WITHOUT_HUGS)
+	@${RM} ${PREFIX}/bin/gh-hugs
+.endif
+	@${SH} ${PKGINSTALL} generic-haskell POST-INSTALL
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${CP} -R ${WRKDIR}/${DISTNAME:S/-source//}/doc/* ${DOCSDIR}
+.endif
+
+.include <bsd.port.post.mk>
