@@ -12,6 +12,7 @@ CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.netlib.org/eispack/ \
 		ftp://netlib.bell-labs.com/netlib/eispack/ \
 		ftp://www.hensa.ac.uk/mirrors/netlib/eispack/
+DISTFILES=	${SRCS:.f=.f.gz}
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -31,10 +32,6 @@ SRCS =	csroot.f epslon.f pythag.f bakvec.f balanc.f balbak.f bandr.f \
 	tql2.f tqlrat.f trbak1.f trbak3.f tred1.f tred2.f tred3.f tridib.f \
 	tsturm.f cdiv.f
 
-DISTFILES=	${SRCS:.f=.f.gz}
-
-.include <bsd.port.pre.mk>
-
 do-extract:
 	@${MKDIR} ${WRKDIR}
 .for file in ${SRCS}
@@ -45,9 +42,6 @@ pre-build:
 	${CP} ${FILESDIR}/Makefile.lib ${WRKSRC}/Makefile
 
 post-install:
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
-.if ${PORTOBJFORMAT} == "aout"
-	${LN} -sf libeispack.so.1.0 ${PREFIX}/lib/libeispack.so
-.endif
+	${LDCONFIG} -m ${PREFIX}/lib
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
