@@ -1,7 +1,7 @@
+bin/xpns
 lib/xpns/pns
 lib/xpns/pns.hlp
 lib/xpns/pns.shell
-bin/xpns
 share/doc/xpns/a.net
 share/doc/xpns/a1.net
 share/doc/xpns/add.net
@@ -10,5 +10,5 @@ share/doc/xpns/phil.net
 share/doc/xpns/rw.net
 share/doc/xpns/sub.net
 share/doc/xpns/sub2.net
-@dirrm share/doc/xpns
 @dirrm lib/xpns
+@dirrm share/doc/xpns
