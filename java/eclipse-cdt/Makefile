@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	cdt
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.1.0
+PORTREVISION=	0
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/tools/cdt/releases/new/zips/${PORTVERSION}/
 PKGNAMEPREFIX=	eclipse-
