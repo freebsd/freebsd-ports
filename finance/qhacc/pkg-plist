@@ -35,7 +35,7 @@ lib/libcliimpio.so
 lib/libcliimpio.so.2
 lib/libdbbase.a
 lib/libdbbase.so
-lib/libdbbase.so.4
+lib/libdbbase.so.5
 lib/libdeltas.a
 lib/libdeltas.so
 lib/libdeltas.so.1
@@ -50,7 +50,7 @@ lib/libextprgio.so
 lib/libextprgio.so.2
 lib/libfiledbio.a
 lib/libfiledbio.so
-lib/libfiledbio.so.4
+lib/libfiledbio.so.5
 lib/libgraphbase.a
 lib/libgraphbase.so
 lib/libgraphbase.so.1
@@ -59,7 +59,7 @@ lib/libjournal.so
 lib/libjournal.so.1
 %%SQLITE%%lib/liblfsqliteio.a
 %%SQLITE%%lib/liblfsqliteio.so
-%%SQLITE%%lib/liblfsqliteio.so.2
+%%SQLITE%%lib/liblfsqliteio.so.3
 %%MYSQL%%lib/libmysqlio.a
 %%MYSQL%%lib/libmysqlio.so
 %%MYSQL%%lib/libmysqlio.so.2
@@ -71,7 +71,7 @@ lib/libmonthlygraph.so
 lib/libmonthlygraph.so.1
 lib/libnativedbio.a
 lib/libnativedbio.so
-lib/libnativedbio.so.4
+lib/libnativedbio.so.5
 lib/libpayee.a
 lib/libpayee.so
 lib/libpayee.so.1
@@ -86,13 +86,13 @@ lib/libprofitloss.so
 lib/libprofitloss.so.1
 lib/libqhacc.a
 lib/libqhacc.so
-lib/libqhacc.so.4
+lib/libqhacc.so.5
 lib/libqhaccext.a
 lib/libqhaccext.so
-lib/libqhaccext.so.4
+lib/libqhaccext.so.5
 lib/libqhaccutils.a
 lib/libqhaccutils.so
-lib/libqhaccutils.so.4
+lib/libqhaccutils.so.5
 lib/libqifio.a
 lib/libqifio.so
 lib/libqifio.so.2
@@ -104,7 +104,7 @@ lib/libsinglelinegraph.so
 lib/libsinglelinegraph.so.1
 %%SQLITE%%lib/libsqliteio.a
 %%SQLITE%%lib/libsqliteio.so
-%%SQLITE%%lib/libsqliteio.so.2
+%%SQLITE%%lib/libsqliteio.so.3
 lib/libtbal.a
 lib/libtbal.so
 lib/libtbal.so.1
@@ -117,46 +117,45 @@ lib/libupgradeio.so.2
 lib/libxmlio.a
 lib/libxmlio.so
 lib/libxmlio.so.2
-lib/qhacc/plugins/db/libextprgio.so
-%%SQLITE%%lib/qhacc/plugins/db/liblfsqliteio.so
-%%MYSQL%%lib/qhacc/plugins/db/libmysqlio.so
-%%PGSQL%%lib/qhacc/plugins/db/libpsqlio.so
-%%SQLITE%%lib/qhacc/plugins/db/libsqliteio.so
-lib/qhacc/plugins/db/libupgradeio.so
-lib/qhacc/plugins/db/libxmlio.so
-lib/qhacc/plugins/export/libarcio.so
-lib/qhacc/plugins/export/libextprgio.so
-%%SQLITE%%lib/qhacc/plugins/export/liblfsqliteio.so
-%%MYSQL%%lib/qhacc/plugins/export/libmysqlio.so
-%%PGSQL%%lib/qhacc/plugins/export/libpsqlio.so
-%%SQLITE%%lib/qhacc/plugins/export/libsqliteio.so
-lib/qhacc/plugins/export/libxmlio.so
-lib/qhacc/plugins/graph/libdoublebargraph.so
-lib/qhacc/plugins/graph/libdoublelinegraph.so
-lib/qhacc/plugins/graph/libpiegraph.so
-lib/qhacc/plugins/graph/libsinglebargraph.so
-lib/qhacc/plugins/graph/libsinglelinegraph.so
-lib/qhacc/plugins/import/libarcio.so
-lib/qhacc/plugins/import/libcliimpio.so
-lib/qhacc/plugins/import/libextprgio.so
-%%SQLITE%%lib/qhacc/plugins/import/liblfsqliteio.so
-%%MYSQL%%lib/qhacc/plugins/import/libmysqlio.so
-%%PGSQL%%lib/qhacc/plugins/import/libpsqlio.so
-lib/qhacc/plugins/import/libqifio.so
-%%SQLITE%%lib/qhacc/plugins/import/libsqliteio.so
-lib/qhacc/plugins/import/libxmlio.so
-lib/qhacc/plugins/report/libacct.so
-lib/qhacc/plugins/report/libaves.so
-lib/qhacc/plugins/report/libbalances.so
-lib/qhacc/plugins/report/libbudget.so
-lib/qhacc/plugins/report/libdeltas.so
-lib/qhacc/plugins/report/libjournal.so
-lib/qhacc/plugins/report/libmbudget.so
-lib/qhacc/plugins/report/libpayee.so
-lib/qhacc/plugins/report/libprofitloss.so
-lib/qhacc/plugins/report/libtbal.so
-lib/qhacc/plugins/report/libtrans.so
-lib/qhacc/qhacc_es_ES.qm
+lib/plugins/db/libextprgio.so
+%%SQLITE%%lib/plugins/db/liblfsqliteio.so
+%%MYSQL%%lib/plugins/db/libmysqlio.so
+%%PGSQL%%lib/plugins/db/libpsqlio.so
+%%SQLITE%%lib/plugins/db/libsqliteio.so
+lib/plugins/db/libupgradeio.so
+lib/plugins/db/libxmlio.so
+lib/plugins/export/libarcio.so
+lib/plugins/export/libextprgio.so
+%%SQLITE%%lib/plugins/export/liblfsqliteio.so
+%%MYSQL%%lib/plugins/export/libmysqlio.so
+%%PGSQL%%lib/plugins/export/libpsqlio.so
+%%SQLITE%%lib/plugins/export/libsqliteio.so
+lib/plugins/export/libxmlio.so
+lib/plugins/graph/libdoublebargraph.so
+lib/plugins/graph/libdoublelinegraph.so
+lib/plugins/graph/libpiegraph.so
+lib/plugins/graph/libsinglebargraph.so
+lib/plugins/graph/libsinglelinegraph.so
+lib/plugins/import/libarcio.so
+lib/plugins/import/libcliimpio.so
+lib/plugins/import/libextprgio.so
+%%SQLITE%%lib/plugins/import/liblfsqliteio.so
+%%MYSQL%%lib/plugins/import/libmysqlio.so
+%%PGSQL%%lib/plugins/import/libpsqlio.so
+lib/plugins/import/libqifio.so
+%%SQLITE%%lib/plugins/import/libsqliteio.so
+lib/plugins/import/libxmlio.so
+lib/plugins/report/libacct.so
+lib/plugins/report/libaves.so
+lib/plugins/report/libbalances.so
+lib/plugins/report/libbudget.so
+lib/plugins/report/libdeltas.so
+lib/plugins/report/libjournal.so
+lib/plugins/report/libmbudget.so
+lib/plugins/report/libpayee.so
+lib/plugins/report/libprofitloss.so
+lib/plugins/report/libtbal.so
+lib/plugins/report/libtrans.so
 %%PORTDOCS%%%%DOCSDIR%%/advanced.html
 %%PORTDOCS%%%%DOCSDIR%%/compiling.html
 %%PORTDOCS%%%%DOCSDIR%%/faq.html
@@ -173,12 +172,13 @@ lib/qhacc/qhacc_es_ES.qm
 %%PORTDOCS%%%%EXAMPLESDIR%%/preferences
 %%PORTDOCS%%%%EXAMPLESDIR%%/splits
 %%PORTDOCS%%%%EXAMPLESDIR%%/transactions
+%%DATADIR%%/qhacc_bg_BG.qm
+%%DATADIR%%/qhacc_es_ES.qm
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/qhacc/plugins/report
-@dirrm lib/qhacc/plugins/import
-@dirrm lib/qhacc/plugins/graph
-@dirrm lib/qhacc/plugins/export
-@dirrm lib/qhacc/plugins/db
-@dirrm lib/qhacc/plugins
-@dirrm lib/qhacc
+@unexec rmdir %D/lib/plugins/report 2>/dev/null || true
+@unexec rmdir %D/lib/plugins/import 2>/dev/null || true
+@unexec rmdir %D/lib/plugins/graph 2>/dev/null || true
+@unexec rmdir %D/lib/plugins/export 2>/dev/null || true
+@unexec rmdir %D/lib/plugins/db 2>/dev/null || true
