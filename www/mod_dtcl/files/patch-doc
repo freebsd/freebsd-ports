@@ -1,0 +1,7 @@
+There is not index.ttml provided with this package. Make the
+link point to the official site.	-mi
+--- docs/examples.ttml	Wed Nov  8 11:46:00 2000
++++ docs/examples.ttml	Tue Feb 13 12:13:41 2001
+@@ -238 +238 @@
+-<a href="index.ttml">Return to the mod_dtcl homepage</a>
++<a href="http://tcl.apache.org/mod_dtcl/">Return to the mod_dtcl homepage</a>
