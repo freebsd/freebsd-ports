@@ -10,12 +10,11 @@
 # x11-themes/gnome-icons/bsd.gnome-icons.mk for it.
 
 PORTNAME=	noia-warm
-PORTVERSION=	0.95
-PORTREVISION=	1
+PORTVERSION=	20041102
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	teams/art.gnome.org/themes/icon
-DISTNAME=	ICON-NoiaWarm-${PORTVERSION}
+DISTNAME=	ICON-NoiaWarm
 
 MAINTAINER=	tmclaugh@sdf.lonestar.org
 COMMENT=	NoiaWarm Icons for Gnome
