@@ -26,6 +26,13 @@ USE_MOTIF=	yes
 USE_X_PREFIX=	yes
 WRKSRC=		${WRKDIR}/mMosaic-src-${PORTVERSION}
 
+post-patch:
+.for ii in libhtmlw/HTML-PSformat.c libhtmlw/HTML.c libhtmlw/HTMLcolors.c \
+ libmc/mc_obj.c libnut/list.c src/proxy-dialogs.c
+	${MV} ${WRKSRC}/${ii} ${WRKSRC}/${ii}.orig
+	${GREP} -v malloc.h ${WRKSRC}/${ii}.orig > ${WRKSRC}/${ii}
+.endfor
+
 pre-install:
 	${ECHO_CMD} bin/mmosaic > ${PLIST}
 	cd ${WRKSRC}/Copyrights; for i in `find * -type f`; do \
