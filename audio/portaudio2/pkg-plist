@@ -1,0 +1,3 @@
+include/portaudio.h
+lib/libportaudio.so
+lib/libportaudio.so.%%SHLIB_VERSION%%

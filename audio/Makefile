@@ -205,6 +205,7 @@
     SUBDIR += pimp3
     SUBDIR += play
     SUBDIR += playmidi
+    SUBDIR += portaudio
     SUBDIR += py-ao
     SUBDIR += py-cddb
     SUBDIR += py-id3

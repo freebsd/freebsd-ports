@@ -1,0 +1,11 @@
+PortAudio is a free, cross platform, open-source, audio I/O library.
+It lets you write simple audio programs in 'C' that will compile
+and run on many platforms including Windows, Macintosh (8,9,X),
+Unix (OSS), SGI, and BeOS. PortAudio is intended to promote the
+exchange of audio synthesis software between developers on different
+platforms, and was recently selected as the audio component of a
+larger PortMusic project that includes MIDI and sound file support.
+
+WWW: http://www.portaudio.com/
+
+michaelnottebrock@gmx.net
