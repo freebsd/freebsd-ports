@@ -1,9 +1,9 @@
-# New ports collection makefile for:   libsx
-# Version required:    1.1
-# Date created:                5 December 1996
-# Whom:                        pgiffuni@FPS.biblos.unal.edu.co
+# New ports collection makefile for:	libsx
+# Version required:	1.1
+# Date created:			5 December 1996
+# Whom:				Pedro Giffuni
 #
-# $Id: Makefile,v 1.2 1997/01/13 11:32:25 obrien Exp $
+# $Id: Makefile,v 1.3 1997/08/11 00:36:50 fenner Exp $
 #
 
 DISTNAME=	libsx
@@ -13,15 +13,17 @@ MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	libraries
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	pgiffuni@FPS.biblos.unal.edu.co
+MAINTAINER=	giffunip@asme.org
 
 USE_X11=	yes
-ALL_TARGET=	src
+ALL_TARGET=	src freq
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/libsx.a  ${PREFIX}/lib
-	${MKDIR} ${PREFIX}/include/X11
-	${INSTALL_DATA} ${WRKSRC}/src/libsx.h  ${PREFIX}/include/X11
+	${INSTALL_DATA} ${WRKSRC}/freq/libfreq.a  ${PREFIX}/lib
+	${MKDIR} ${PREFIX}/include/X11/libsx
+	${INSTALL_DATA} ${WRKSRC}/src/libsx.h ${PREFIX}/include/X11/libsx
+	${INSTALL_DATA} ${WRKSRC}/freq/freq.h ${PREFIX}/include/X11/libsx
 
 post-install:
 .if !defined(NOPORTDOCS)

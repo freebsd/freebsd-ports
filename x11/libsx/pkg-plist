@@ -1,5 +1,7 @@
+lib/libfreq.a
 lib/libsx.a
-include/X11/libsx.h
+include/X11/libsx/freq.h
+include/X11/libsx/libsx.h
 share/doc/libsx/libsx_intro
 share/doc/libsx/button.doc.gz
 share/doc/libsx/color.doc.gz
