@@ -1,16 +1,16 @@
 # New ports collection makefile for:	syslog-ng
 # Date created:		22 April 2000
-# Whom:			Vince Valenti <vince@blue-box.net>
+# Whom:			Vince Valenti <vince@bendnet.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	syslog-ng
-PORTVERSION=	1.4.14
+PORTVERSION=	1.4.15
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.hu/downloads/syslog-ng/1.4/
 
-MAINTAINER=	vince@blue-box.net
+MAINTAINER=	vince@bendnet.com
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libol.a:${PORTSDIR}/devel/libol
 
