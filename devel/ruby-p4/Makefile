@@ -17,8 +17,7 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	Ruby interface to the Perforce API
 
 EXTRACT_DEPENDS=	${LOCALBASE}/lib/perforce/libclient.a:${PORTSDIR}/devel/p4api
-
-BROKEN=		"Does not compile"
+BUILD_DEPENDS=		${LOCALBASE}/lib/perforce/libclient.a:${PORTSDIR}/devel/p4api
 
 USE_RUBY=	yes
 
