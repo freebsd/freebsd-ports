@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qdvdauthor
-PORTVERSION=	0.0.6
+PORTVERSION=	0.0.7
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,11 +27,13 @@ USE_X_PREFIX=	yes
 USE_QT_VER=	3
 QT_NONSTANDARD=	yes
 CONFIGURE_ENV=	QMAKESPEC=${LOCALBASE}/share/qt/mkspecs/freebsd-g++
-CONFIGURE_ARGS=	--qt-dir=${X11BASE} --with-image-magick-lib --build-qslideshow
+CONFIGURE_ARGS=	--qt-dir=${X11BASE} --with-image-magick-lib \
+		--build-qslideshow --build-wxine
 NO_BUILD=	yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/qdvdauthor ${PREFIX}/bin/qdvdauthor
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/qslideshow ${PREFIX}/bin/qslideshow
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/qxine      ${PREFIX}/bin/qxine
 
 .include <bsd.port.mk>
