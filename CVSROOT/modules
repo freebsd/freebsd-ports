@@ -3188,6 +3188,7 @@ kdump		src/usr.bin/kdump
 kelp		ports/devel/kelp
 kenny		ports/misc/kenny
 kenv		src/usr.bin/kenv
+keramik		ports/x11-wm/keramik
 kerberos	src/eBones/kerberos
 kerberos5	src/kerberos5
 kerberosIV	src/kerberosIV
