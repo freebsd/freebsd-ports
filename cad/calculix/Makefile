@@ -22,7 +22,6 @@ DIST_SUBDIR=	calculix
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A Three-Dimensional Structural Finite Element Program
 
-# These are required to build Crunchix (ccx)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libspooles.a:${PORTSDIR}/math/spooles \
 		${LOCALBASE}/lib/libarpack.a:${PORTSDIR}/math/arpack
 LIB_DEPENDS=    atlas.1:${PORTSDIR}/math/atlas
@@ -31,6 +30,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GL=	yes
 USE_REINPLACE=	yes
 BLAS_LIBS=	-lf77blas -latlas
+
 BROWSER?=	mozilla
 PSVIEWER?=	gv
 
@@ -47,6 +47,8 @@ pre-everything::
 
 pre-build:
 	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g ; s+%%CC%%+${CC}+g ; \
+	s+%%PTHREAD_CFLAGS%%+${PTHREAD_CFLAGS} -DUSE_MT+g; \
+	s+%%PTHREAD_LIBS%%+${PTHREAD_LIBS}+g; \
 	s+%%BLAS_LIBS%%+${BLAS_LIBS}+ ; \
 	s+%%LOCALBASE%%+${LOCALBASE}+g;' \
 		${WRKSRC}/ccx_${PORTVERSION}/src/Makefile
