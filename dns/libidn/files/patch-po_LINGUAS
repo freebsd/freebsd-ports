@@ -1,10 +1,13 @@
 
 $FreeBSD$
 
---- po/LINGUAS.orig	Sat Aug 14 00:48:18 2004
-+++ po/LINGUAS	Sat Aug 14 00:48:21 2004
-@@ -1,4 +1,3 @@
--en@boldquot en@quot
+--- po/LINGUAS.orig
++++ po/LINGUAS
+@@ -1,7 +1,5 @@
  da
  de
+-en@boldquot
+-en@quot
  eo
+ fr
+ nl
