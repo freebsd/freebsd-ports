@@ -7,7 +7,7 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.4.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE:S/$/:x/} \
 		${MASTER_SITE_LOCAL:S/$/:local/}
@@ -108,8 +108,8 @@ NOT_FOR_ARCHS=		ia64
 IGNORE= is part of XFree86-4
 .endif
 
-.if ${ARCH} == i386 || ${ARCH} == alpha
-RUN_DEPENDS+=		${X11BASE}/lib/modules/dri/r200_dri.so:${PORTSDIR}/graphics/dri
+.if ${ARCH} == i386 || ${ARCH} == alpha || ${ARCH} == amd64
+RUN_DEPENDS+=		${X11BASE}/lib/modules/dri/r200_dri.so:${PORTSDIR}/graphics/xfree86-dri
 BuildXF86DRI=		YES
 PLIST_SUB+=		DRI=""
 .else
