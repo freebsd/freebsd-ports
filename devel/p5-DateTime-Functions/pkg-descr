@@ -1,0 +1,7 @@
+This module simply exports all class methods of DateTime into the caller's
+namespace.
+
+Unless otherwise noted, all methods correspond to the same-named class method
+in DateTime. Please see DateTime for which parameters are supported.
+
+WWW: http://datetime.perl.org/
