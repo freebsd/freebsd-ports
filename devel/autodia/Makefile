@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	autodia
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 PORTREVISION=	0
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://droogs.org/autodia/download/
