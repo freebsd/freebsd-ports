@@ -23,7 +23,6 @@ include/gsmlib/gsm_sorted_phonebook_base.h
 include/gsmlib/gsm_sorted_sms_store.h
 include/gsmlib/gsm_unix_serial.h
 include/gsmlib/gsm_util.h
-@dirrm include/gsmlib
 lib/libgsmext.a
 lib/libgsmext.so
 lib/libgsmext.so.1
@@ -31,3 +30,4 @@ lib/libgsmme.a
 lib/libgsmme.so
 lib/libgsmme.so.1
 share/locale/de/LC_MESSAGES/gsmlib.mo
+@dirrm include/gsmlib
