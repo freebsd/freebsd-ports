@@ -7,7 +7,7 @@
 
 PORTNAME=	kbanner
 PORTVERSION=	2.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese
 MASTER_SITES=	http://kanji.zinbun.kyoto-u.ac.jp/~yasuoka/ftp/program/
 DISTFILES=	${PORTNAME}2.tar.Z
