@@ -1520,6 +1520,7 @@ epiwm		ports/x11-wm/epiwm
 epix		ports/graphics/epix
 epplets		ports/x11-wm/epplets
 eps2png		ports/graphics/eps2png
+epsonepl	ports/print/epsonepl
 epstool		ports/graphics/epstool
 erlang		ports/lang/erlang
 erlang-doc	ports/lang/erlang-doc
