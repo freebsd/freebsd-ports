@@ -1,5 +1,5 @@
-*** Imakefile.orig	Wed May 16 02:27:29 2001
---- Imakefile	Sat May 26 05:53:06 2001
+*** Imakefile.orig	Wed Jun 13 00:43:27 2001
+--- Imakefile	Sat Jun 16 09:43:29 2001
 ***************
 *** 28,46 ****
   #CCOPTIONS = -O2
@@ -14,7 +14,7 @@
   #------------------------------------------------------------------------
   #
 ! PREFIX = /usr/local
-  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.3.0/psfiles
+  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.3.1/psfiles
 ! XCIRCUIT_LIB_DIR = $(PREFIX)/lib/xcircuit-2.3
 ! XCIRCUIT_BIN_DIR = $(PREFIX)/bin
 ! XCIRCUIT_MAN_DIR = $(PREFIX)/man/man1
@@ -35,7 +35,7 @@
   #------------------------------------------------------------------------
   #
 ! #PREFIX = /usr/local
-  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.3.0/psfiles
+  # XCIRCUIT_LIB_DIR = $(PREFIX)/src/xcircuit-2.3.1/psfiles
 ! XCIRCUIT_LIB_DIR = $(LIBDIR)/xcircuit
 ! XCIRCUIT_BIN_DIR = $(BINDIR)
 ! XCIRCUIT_MAN_DIR = $(MANDIR)
@@ -55,24 +55,24 @@
   # Support for background rendering through ghostscript.  Change this
   # to the path where gs can be found.
   # GS_EXEC= /usr/local/src/gs5.50/obj/gs
-! GS_EXEC= ${LOCALBASE}/bin/gs
+! GS_EXEC=${LOCALBASE}/bin/gs
   
   #------------------------------------------------------------------------
   # Window manager bug workaround---If you don't like xcircuit grabbing kbd
 ***************
-*** 85,91 ****
-  #------------------------------------------------------------------------
-  # Support for embedded Python interpreter (requires libpython2.0.a)
+*** 86,92 ****
+  # Support for embedded Python interpreter
+  # (requires libpython${PYTHON_VERSION}.a)
   #
 ! #define HAVE_PYTHON
   
-  PYTHON_VERSION=2.0
+  PYTHON_VERSION=2.1
   PYTHON_LIB_DIR=/usr/local/lib
---- 86,92 ----
-  #------------------------------------------------------------------------
-  # Support for embedded Python interpreter (requires libpython2.0.a)
+--- 87,93 ----
+  # Support for embedded Python interpreter
+  # (requires libpython${PYTHON_VERSION}.a)
   #
 ! /* #define HAVE_PYTHON */
   
-  PYTHON_VERSION=2.0
+  PYTHON_VERSION=2.1
   PYTHON_LIB_DIR=/usr/local/lib
