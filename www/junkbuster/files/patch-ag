@@ -1,11 +1,6 @@
---- jcc.c.orig	Fri Nov  3 12:28:39 2000
-+++ jcc.c	Fri Nov  3 12:31:58 2000
-@@ -39,11 +39,12 @@
- #endif
- 
- #ifdef REGEX
--#include <gnu_regex.h>
-+#include <gnuregex.h>
+--- jcc.c.orig	Fri Aug  4 14:31:14 2000
++++ jcc.c	Thu Apr 29 15:55:30 2004
+@@ -43,7 +43,8 @@
  #endif
  
  #include "jcc.h"

@@ -10,15 +10,6 @@ diff -ruN /usr/ports/www/ijb/work/ijb20/loaders.c ./loaders.c
  #include <errno.h>
  #include <sys/stat.h>
  #include <ctype.h>
-@@ -18,7 +18,7 @@
- #endif
- 
- #ifdef REGEX
--#include <gnu_regex.h>
-+#include <gnuregex.h>
- #endif
- 
- #include "jcc.h"
 @@ -1160,7 +1160,7 @@
  
  	extern char	*acl_rcs, *bind_rcs, *conn_rcs, *encode_rcs,
