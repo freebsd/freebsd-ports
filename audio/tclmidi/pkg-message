@@ -4,4 +4,3 @@ TCLLIBPATH environment variable!
 
 For example (with [t]csh:
 setenv TCLLIBPATH "/usr/local/lib/tclmidi /usr/local/lib/tcl8.0"
-
