@@ -97,6 +97,8 @@
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/gnus-picon.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/gnus-range.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/gnus-range.elc
+%%EMACS_PACKAGESDIR%%/lisp/t-gnus/gnus-registry.el
+%%EMACS_PACKAGESDIR%%/lisp/t-gnus/gnus-registry.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/gnus-salt.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/gnus-salt.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/gnus-score.el
@@ -272,6 +274,8 @@
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/smiley.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/smime.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/smime.elc
+%%EMACS_PACKAGESDIR%%/lisp/t-gnus/spam-report.el
+%%EMACS_PACKAGESDIR%%/lisp/t-gnus/spam-report.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/spam-stat.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/spam-stat.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/spam.el
@@ -280,6 +284,8 @@
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/starttls.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/time-date.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/time-date.elc
+%%EMACS_PACKAGESDIR%%/lisp/t-gnus/tls.el
+%%EMACS_PACKAGESDIR%%/lisp/t-gnus/tls.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/utf7.el
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/utf7.elc
 %%EMACS_PACKAGESDIR%%/lisp/t-gnus/uudecode.el
