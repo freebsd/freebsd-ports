@@ -3,7 +3,7 @@
 # Date created:         5 January 1995
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.10 1995/05/17 13:07:13 jmz Exp $
+# $Id: Makefile,v 1.11 1995/06/17 01:29:06 jmz Exp $
 #
 
 #######################################################################
@@ -85,5 +85,8 @@ do-build:
 do-install:
 	@echo -n
 .endif
+
+post-install:
+	ldconfig -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

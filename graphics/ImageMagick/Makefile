@@ -3,7 +3,7 @@
 # Date created:		15 November 1994
 # Whom:			torstenb
 #
-# $Id: Makefile,v 1.4 1995/04/09 07:09:14 asami Exp $
+# $Id: Makefile,v 1.5 1995/04/16 15:36:09 roberto Exp $
 #
 
 DISTNAME=	ImageMagick-3.6.2
@@ -20,5 +20,8 @@ USE_IMAKE=	YES
 
 pre-build:
 	@(cd ${WRKSRC}/magick;make)
+
+post-install:
+	ldconfig -m ${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -1,3 +1,4 @@
 @cwd /usr/local
 lib/libeispack.a
 lib/libeispack.so.1.0
+@exec ldconfig -m %B

@@ -52,6 +52,7 @@ lib/mh/rcvtty
 @group
 @mode 644
 lib/libmh.so.3.2
+@exec ldconfig -m %B
 lib/mh/mtstailor
 lib/mh/MailAliases
 lib/mh/components

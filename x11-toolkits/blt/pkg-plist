@@ -8,6 +8,7 @@ lib/blt/bltGraph.pro
 bin/blt_wish
 lib/libBLT.a
 lib/libBLT.so.1.7
+@exec ldconfig -m %B
 man/mann/blt_barchart.n
 man/mann/blt_bell.n
 man/mann/blt_bgexec.n

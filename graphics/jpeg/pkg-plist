@@ -12,4 +12,5 @@ include/jpeglib.h
 include/jmorecfg.h
 include/jerror.h
 lib/libjpeg.so.5.1
+@exec ldconfig -m %B
 lib/libjpeg.a
