@@ -1,0 +1,36 @@
+--- Makefile.orig	Thu Mar 14 15:03:49 2002
++++ Makefile	Sat Dec  6 23:57:59 2003
+@@ -1,25 +1,22 @@
+-FREETYPE_BASE=/usr/include/freetype2
+-FREETYPE_INCL=-I$(FREETYPE_BASE)/.
+-FREETYPE_LIB=/usr/lib/libfreetype.so
+-
+-DEBUG=-ggdb
+-CXX=g++
+-CXXFLAGS=-Wall -pedantic $(FREETYPE_INCL) $(DEBUG)
++FREETYPE_INCL=`freetype-config --cflags`
++FREETYPE_LIB=`freetype-config --libs`
+ 
+-LDFLAGS=$(FREETYPE_LIB) $(DEBUG)
++CXXFLAGS+=$(FREETYPE_INCL)
++
++LDFLAGS+=$(FREETYPE_LIB)
+ 
+ .PHONY: clean
+ 
+ all: ttmkfdir
+ 
+ .cpp.o:
+-	libtool --mode=compile $(CXX) $(CXXFLAGS) -o $@ -c $^
++	libtool13 --mode=compile $(CXX) $(CXXFLAGS) -o $@ -c $^
+ 
+ ttmkfdir: ttmkfdir.o directory.o commandline.o ttf.o encoding.o parser.o builtin.o
+-	libtool --mode=link $(CXX) -o $@ $^ $(LDFLAGS)
++	libtool13 --mode=link $(CXX) -o $@ $^ $(LDFLAGS)
+ 
+ parser.cpp: encoding.l
+-	    flex -i -8 -o$@ $<
++	    lex -i -8 -o$@ $<
+ 
+ clean:
+ 	-rm -f *.o *~ ttmkfdir core parser.cpp
