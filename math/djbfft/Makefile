@@ -49,10 +49,10 @@ pre-install:
 
 do-install:
 .for file in ${HEADER_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${LOCALBASE}/include/${PORTNAME}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include/${PORTNAME}
 .endfor
 .for file in ${LIB_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${LOCALBASE}/lib
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/lib
 .endfor
 
 .include <bsd.port.pre.mk>
