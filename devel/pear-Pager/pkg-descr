@@ -1,6 +1,7 @@
-It takes an array of data as input and page it according to various 
-parameters. It also builds links within a specified range, and allows
-complete customization of the output (it even works with mod_rewrite).
+PEAR::Pager takes an array of data as input and page it according to various 
+parameters. It also builds links within a specified range, and allows complete
+customization of the output (it even works with mod_rewrite).
+
 Two operating modes available: "Jumping" and "Sliding" window style.
 
 WWW: http://pear.php.net/package/Pager/
