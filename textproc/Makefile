@@ -282,6 +282,7 @@
     SUBDIR += tclExpat
     SUBDIR += tdtd.el
     SUBDIR += tex2im
+    SUBDIR += texi2db
     SUBDIR += texi2html
     SUBDIR += textutils
     SUBDIR += tkdiff
