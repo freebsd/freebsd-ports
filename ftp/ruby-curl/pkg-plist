@@ -1,0 +1,6 @@
+%%RUBY_SITEARCHLIBDIR%%/curl.so
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/curl/example.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/curl
+%%PORTDOCS%%%%RUBY_DOCDIR%%/curl/DONE
+%%PORTDOCS%%%%RUBY_DOCDIR%%/curl/README
+%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/curl
