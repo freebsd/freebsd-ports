@@ -10,6 +10,12 @@ in the release notes.
 
 All ports committers are allowed to commit to this file.
 
+20041116:
+AUTHOR: gnome@FreeBSD.org
+  The way OMF files are handled has been changed to use the new INSTALLS_OMF
+  macro (similar to INSTALLS_SHLIB).  Details about the new macro can be found
+  at http://www.FreeBSD.org/gnome/docs/porting.html and bsd.gnome.mk.
+
 20041113:
 AUTHOR: portmgr@FreeBSD.org
   Since INDEX version in CVS is always too old, portmgr decided to
