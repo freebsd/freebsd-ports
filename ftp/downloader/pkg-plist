@@ -1,87 +1,137 @@
 bin/d4x
 bin/nt
-share/d4x/d4x_aqua.png
-share/d4x/ftpsearch.xml
-share/d4x/nt-gray.png
-share/d4x/nt-mini.xpm
-share/d4x/nt-wm.png
-share/d4x/nt.desktop
-share/d4x/nt.png
-share/d4x/nt.wmconfig
-share/d4x/nt.xpm
-share/d4x/sounds/add.wav
-share/d4x/sounds/complete.wav
-share/d4x/sounds/dnd.wav
-share/d4x/sounds/fail.wav
-share/d4x/sounds/finish.wav
-share/d4x/sounds/startup.wav
-share/d4x/themes/glass/dnd1.png
-share/d4x/themes/glass/dnd2.png
-share/d4x/themes/glass.xml
-share/d4x/themes/glass2/dnd1.png
-share/d4x/themes/glass2/dnd2.png
-share/d4x/themes/glass2.xml
-share/d4x/themes/old_theme/buttons/add.png
-share/d4x/themes/old_theme/buttons/clearlist.png
-share/d4x/themes/old_theme/buttons/clipboardadd.png
-share/d4x/themes/old_theme/buttons/continue.png
-share/d4x/themes/old_theme/buttons/del.png
-share/d4x/themes/old_theme/buttons/delcompleted.png
-share/d4x/themes/old_theme/buttons/dnd.png
-share/d4x/themes/old_theme/buttons/load.png
-share/d4x/themes/old_theme/buttons/movedown.png
-share/d4x/themes/old_theme/buttons/moveup.png
-share/d4x/themes/old_theme/buttons/openlog.png
-share/d4x/themes/old_theme/buttons/preferences.png
-share/d4x/themes/old_theme/buttons/progress.png
-share/d4x/themes/old_theme/buttons/save.png
-share/d4x/themes/old_theme/buttons/speedhigh.png
-share/d4x/themes/old_theme/buttons/speedlow.png
-share/d4x/themes/old_theme/buttons/speedmedium.png
-share/d4x/themes/old_theme/buttons/stop.png
-share/d4x/themes/old_theme/dnd1.png
-share/d4x/themes/old_theme/dnd2.png
-share/d4x/themes/old_theme/dndmini.png
-share/d4x/themes/old_theme/queue/complete.png
-share/d4x/themes/old_theme/queue/failed.png
-share/d4x/themes/old_theme/queue/paused.png
-share/d4x/themes/old_theme/queue/run.png
-share/d4x/themes/old_theme/queue/runbad.png
-share/d4x/themes/old_theme/queue/runpart.png
-share/d4x/themes/old_theme/queue/stopwait.png
-share/d4x/themes/old_theme/queue/wait.png
-share/d4x/themes/old_theme.xml
-share/d4x/themes/tooltip.xml
-%%PORTDOCS%%share/doc/d4x/FAQ
-%%PORTDOCS%%share/doc/d4x/FAQ.de
-%%PORTDOCS%%share/doc/d4x/FAQ.es
-%%PORTDOCS%%share/doc/d4x/FAQ.fr
-%%PORTDOCS%%share/doc/d4x/FAQ.gr
-%%PORTDOCS%%share/doc/d4x/LICENSE
-%%PORTDOCS%%share/doc/d4x/README
-%%PORTDOCS%%share/doc/d4x/README.de
-%%PORTDOCS%%share/doc/d4x/README.en
-%%PORTDOCS%%share/doc/d4x/README.es
-%%PORTDOCS%%share/doc/d4x/README.gr
-%%PORTDOCS%%share/doc/d4x/README.pl
-%%PORTDOCS%%share/doc/d4x/README.pt_BR
-%%PORTDOCS%%share/doc/d4x/README.ru
-%%PORTDOCS%%share/doc/d4x/THANKS
-%%PORTDOCS%%share/doc/d4x/TROUBLES
+%%DATADIR%%/d4x_aqua.png
+%%DATADIR%%/ftpsearch.xml
+%%DATADIR%%/nt-gray.png
+%%DATADIR%%/nt-mini.xpm
+%%DATADIR%%/nt-wm.png
+%%DATADIR%%/nt.desktop
+%%DATADIR%%/nt.png
+%%DATADIR%%/nt.wmconfig
+%%DATADIR%%/nt.xpm
+%%DATADIR%%/sounds/add.wav
+%%DATADIR%%/sounds/complete.wav
+%%DATADIR%%/sounds/dnd.wav
+%%DATADIR%%/sounds/fail.wav
+%%DATADIR%%/sounds/finish.wav
+%%DATADIR%%/sounds/startup.wav
+%%DATADIR%%/themes/glass.xml
+%%DATADIR%%/themes/glass/dnd1.png
+%%DATADIR%%/themes/glass/dnd2.png
+%%DATADIR%%/themes/glass2.xml
+%%DATADIR%%/themes/glass2/dnd1.png
+%%DATADIR%%/themes/glass2/dnd2.png
+%%DATADIR%%/themes/nuvola32.xml
+%%DATADIR%%/themes/nuvola32/buttons/add.png
+%%DATADIR%%/themes/nuvola32/buttons/clearlist.png
+%%DATADIR%%/themes/nuvola32/buttons/clipboardadd.png
+%%DATADIR%%/themes/nuvola32/buttons/continue.png
+%%DATADIR%%/themes/nuvola32/buttons/del.png
+%%DATADIR%%/themes/nuvola32/buttons/delcompleted.png
+%%DATADIR%%/themes/nuvola32/buttons/dnd.png
+%%DATADIR%%/themes/nuvola32/buttons/load.png
+%%DATADIR%%/themes/nuvola32/buttons/movedown.png
+%%DATADIR%%/themes/nuvola32/buttons/moveup.png
+%%DATADIR%%/themes/nuvola32/buttons/openlog.png
+%%DATADIR%%/themes/nuvola32/buttons/percent1.png
+%%DATADIR%%/themes/nuvola32/buttons/percent2.png
+%%DATADIR%%/themes/nuvola32/buttons/percent3.png
+%%DATADIR%%/themes/nuvola32/buttons/preferences.png
+%%DATADIR%%/themes/nuvola32/buttons/progress.png
+%%DATADIR%%/themes/nuvola32/buttons/save.png
+%%DATADIR%%/themes/nuvola32/buttons/speed.png
+%%DATADIR%%/themes/nuvola32/buttons/speedhigh.png
+%%DATADIR%%/themes/nuvola32/buttons/speedlow.png
+%%DATADIR%%/themes/nuvola32/buttons/speedmedium.png
+%%DATADIR%%/themes/nuvola32/buttons/stop.png
+%%DATADIR%%/themes/nuvola32/dndmini.png
+%%DATADIR%%/themes/nuvola32/queue/complete.png
+%%DATADIR%%/themes/nuvola32/queue/failed.png
+%%DATADIR%%/themes/nuvola32/queue/paused.png
+%%DATADIR%%/themes/nuvola32/queue/run.png
+%%DATADIR%%/themes/nuvola32/queue/runbad.png
+%%DATADIR%%/themes/nuvola32/queue/runpart.png
+%%DATADIR%%/themes/nuvola32/queue/stopwait.png
+%%DATADIR%%/themes/nuvola32/queue/wait.png
+%%DATADIR%%/themes/nuvola32/toolbar/filter.png
+%%DATADIR%%/themes/nuvola32/toolbar/find.png
+%%DATADIR%%/themes/nuvola32/toolbar/klog.png
+%%DATADIR%%/themes/nuvola32/toolbar/queue.png
+%%DATADIR%%/themes/nuvola32/toolbar/sch.png
+%%DATADIR%%/themes/nuvola32/toolbar/url.png
+%%DATADIR%%/themes/old_theme.xml
+%%DATADIR%%/themes/old_theme/buttons/add.png
+%%DATADIR%%/themes/old_theme/buttons/clearlist.png
+%%DATADIR%%/themes/old_theme/buttons/clipboardadd.png
+%%DATADIR%%/themes/old_theme/buttons/continue.png
+%%DATADIR%%/themes/old_theme/buttons/del.png
+%%DATADIR%%/themes/old_theme/buttons/delcompleted.png
+%%DATADIR%%/themes/old_theme/buttons/dnd.png
+%%DATADIR%%/themes/old_theme/buttons/load.png
+%%DATADIR%%/themes/old_theme/buttons/movedown.png
+%%DATADIR%%/themes/old_theme/buttons/moveup.png
+%%DATADIR%%/themes/old_theme/buttons/openlog.png
+%%DATADIR%%/themes/old_theme/buttons/preferences.png
+%%DATADIR%%/themes/old_theme/buttons/progress.png
+%%DATADIR%%/themes/old_theme/buttons/save.png
+%%DATADIR%%/themes/old_theme/buttons/speedhigh.png
+%%DATADIR%%/themes/old_theme/buttons/speedlow.png
+%%DATADIR%%/themes/old_theme/buttons/speedmedium.png
+%%DATADIR%%/themes/old_theme/buttons/stop.png
+%%DATADIR%%/themes/old_theme/dnd1.png
+%%DATADIR%%/themes/old_theme/dnd2.png
+%%DATADIR%%/themes/old_theme/dndmini.png
+%%DATADIR%%/themes/old_theme/queue/complete.png
+%%DATADIR%%/themes/old_theme/queue/failed.png
+%%DATADIR%%/themes/old_theme/queue/paused.png
+%%DATADIR%%/themes/old_theme/queue/run.png
+%%DATADIR%%/themes/old_theme/queue/runbad.png
+%%DATADIR%%/themes/old_theme/queue/runpart.png
+%%DATADIR%%/themes/old_theme/queue/stopwait.png
+%%DATADIR%%/themes/old_theme/queue/wait.png
+%%DATADIR%%/themes/tooltip.xml
+%%PORTDOCS%%%%DOCSDIR%%/FAQ
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.de
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.es
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.fr
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.gr
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.de
+%%PORTDOCS%%%%DOCSDIR%%/README.en
+%%PORTDOCS%%%%DOCSDIR%%/README.es
+%%PORTDOCS%%%%DOCSDIR%%/README.gr
+%%PORTDOCS%%%%DOCSDIR%%/README.pl
+%%PORTDOCS%%%%DOCSDIR%%/README.pt_BR
+%%PORTDOCS%%%%DOCSDIR%%/README.ru
+%%PORTDOCS%%%%DOCSDIR%%/THANKS
+%%PORTDOCS%%%%DOCSDIR%%/TROUBLES
 share/locale/bg/LC_MESSAGES/d4x.mo
+share/locale/ca/LC_MESSAGES/d4x.mo
 share/locale/de/LC_MESSAGES/d4x.mo
 share/locale/es/LC_MESSAGES/d4x.mo
 share/locale/fr/LC_MESSAGES/d4x.mo
 share/locale/hu/LC_MESSAGES/d4x.mo
 share/locale/it/LC_MESSAGES/d4x.mo
+share/locale/ja/LC_MESSAGES/d4x.mo
+share/locale/pl/LC_MESSAGES/d4x.mo
+share/locale/pt_BR/LC_MESSAGES/d4x.mo
 share/locale/ru/LC_MESSAGES/d4x.mo
+share/locale/sk/LC_MESSAGES/d4x.mo
+share/locale/sr/LC_MESSAGES/d4x.mo
+share/locale/sr@Latn/LC_MESSAGES/d4x.mo
 share/locale/uk/LC_MESSAGES/d4x.mo
-%%PORTDOCS%%@dirrm share/doc/d4x
-@dirrm share/d4x/themes/old_theme/queue
-@dirrm share/d4x/themes/old_theme/buttons
-@dirrm share/d4x/themes/old_theme
-@dirrm share/d4x/themes/glass2
-@dirrm share/d4x/themes/glass
-@dirrm share/d4x/themes
-@dirrm share/d4x/sounds
-@dirrm share/d4x
+share/locale/zh_CN/LC_MESSAGES/d4x.mo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/themes/old_theme/queue
+@dirrm %%DATADIR%%/themes/old_theme/buttons
+@dirrm %%DATADIR%%/themes/old_theme
+@dirrm %%DATADIR%%/themes/nuvola32/toolbar
+@dirrm %%DATADIR%%/themes/nuvola32/queue
+@dirrm %%DATADIR%%/themes/nuvola32/buttons
+@dirrm %%DATADIR%%/themes/nuvola32
+@dirrm %%DATADIR%%/themes/glass2
+@dirrm %%DATADIR%%/themes/glass
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%

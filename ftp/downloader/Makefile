@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	downloader
-PORTVERSION=	2.4.1
-PORTREVISION=	4
+PORTVERSION=	2.5.0
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.krasu.ru/soft/chuchelo/files/ \
 		ftp://ftp.chg.ru/pub/X11/applications/Xdownloader/
-DISTNAME=	d4x-${PORTVERSION}
+DISTNAME=	d4x-${PORTVERSION}final
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for downloading via ftp or http with GUI
@@ -32,8 +31,8 @@ DOCSDIR=	${PREFIX}/share/doc/d4x
 
 post-patch:
 	@${REINPLACE_CMD} -e 's| $$OPTFLAGS||g ; \
-		 s|OS_CXXFLAGS="-pthread"|OS_CXXFLAGS="${PTHREAD_CFLAGS}"|g ; \
-		 s|-pthread|${PTHREAD_LIBS}|g ; \
+		 s| $$OS_CXXFLAGS||g ; \
+		 s|-lpthread||g ; \
 		 s|#define GTK_DISABLE_DEPRECATED||' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's| DOC||g ; \
 		 s| share||g' ${WRKSRC}/Makefile.in
