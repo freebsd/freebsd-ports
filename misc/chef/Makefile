@@ -8,7 +8,9 @@
 PORTNAME=	chef
 PORTVERSION=	19930426
 CATEGORIES=	misc
-MASTER_SITES=	http://mysite.verizon.net/ebrowne72/chef/
+MASTER_SITES=	http://mysite.verizon.net/ebrowne72/chef/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	brooks
 DISTNAME=	bork
 EXTRACT_SUFX=	.tar.Z
 
