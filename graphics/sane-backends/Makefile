@@ -49,7 +49,7 @@ PLIST_SUB+=	NLS=""
 .endif
 
 .if defined(WITH_GPHOTO2)
-LIB_DEPENDS+=	gphoto2.2:${PORTSDIR}/graphics/gphoto2
+LIB_DEPENDS+=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 PLIST_SUB+=	GPHOTO2=""
 .else
 CONFIGURE_ARGS+=	--with-gphoto2=no
