@@ -38,6 +38,7 @@
     SUBDIR += slrn
     SUBDIR += slurp
     SUBDIR += suck
+    SUBDIR += t-gnus-emacs20
     SUBDIR += tin
     SUBDIR += trn
     SUBDIR += trn4
