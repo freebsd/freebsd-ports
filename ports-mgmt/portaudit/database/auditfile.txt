@@ -22,6 +22,15 @@
 # notify the maintainer of the affected package(s)
 #
 
-gnupg<1.2.3_4|http://lists.gnupg.org/pipermail/gnupg-devel/2003-November/020570.html|ElGamal signing keys compromised
+gnupg>1.0.2<1.2.3_4|http://lists.gnupg.org/pipermail/gnupg-devel/2003-November/020570.html|ElGamal signing keys compromised
 rsync<2.5.7|http://cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2003-0962|Buffer overflow in server
 gaim<0.75_2|http://security.e-matters.de/advisories/012004.txt|12 vulnerabilities that allow remote compromise
+proftpd<1.2.8_1|http://xforce.iss.net/xforce/alerts/id/154|ProFTPD ASCII File Remote Compromise Vulnerability
+inn>=2.4<2.4.1|http://lists.litech.org/pipermail/inn-workers/2004q1/002763.html|Buffer overflow in control message handling
+inn-stable>=2.4<20031022_1|http://lists.litech.org/pipermail/inn-workers/2004q1/002763.html|Buffer overflow in control message handling
+apache>=2.0.35<2.0.48|http://www.apacheweek.com/features/security-20|Multiple security vulnerabilities
+apache>=1.3<1.3.29|http://www.apacheweek.com/features/security-13|Multiple security vulnerabilities
+apache+mod_ssl>=1.3<1.3.29|http://www.apacheweek.com/features/security-13|Multiple security vulnerabilities
+apache+ipv6>=1.3<1.3.29|http://www.apacheweek.com/features/security-13|Multiple security vulnerabilities
+ru-apache>=1.3<1.3.29|http://www.apacheweek.com/features/security-13|Multiple security vulnerabilities
+ru-apache+mod_ssl>=1.3<1.3.29|http://www.apacheweek.com/features/security-13|Multiple security vulnerabilities
