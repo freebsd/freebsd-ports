@@ -70,23 +70,23 @@ info/libIDL.info
 lib/libIDL.a
 lib/libIDL.la
 lib/libIDL.so
-lib/libIDL.so.0.4
+lib/libIDL.so.1
 lib/libIIOP.a
 lib/libIIOP.la
 lib/libIIOP.so
-lib/libIIOP.so.0.4
+lib/libIIOP.so.1
 lib/libORBit.a
 lib/libORBit.la
 lib/libORBit.so
-lib/libORBit.so.0.4
+lib/libORBit.so.1
 lib/libORBitCosNaming.a
 lib/libORBitCosNaming.la
 lib/libORBitCosNaming.so
-lib/libORBitCosNaming.so.0.4
+lib/libORBitCosNaming.so.1
 lib/libORBitutil.a
 lib/libORBitutil.la
 lib/libORBitutil.so
-lib/libORBitutil.so.0.4
+lib/libORBitutil.so.1
 lib/libname-server.a
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
