@@ -5,6 +5,7 @@ lib/xastir/coord-convert.pl
 lib/xastir/fcc-get
 lib/xastir/icontable.pl
 lib/xastir/inf2geo.pl
+lib/xastir/kiss-off.pl
 lib/xastir/mapblast2geo.pl
 lib/xastir/mapfgd.pl
 lib/xastir/overlay.pl
@@ -42,12 +43,20 @@ share/xastir/config/tgrlpy.dbfawk
 share/xastir/config/tgrplc00.dbfawk
 share/xastir/config/tgrwat.dbfawk
 share/xastir/config/tnc-startup.aea
+share/xastir/config/tnc-startup.d700
 share/xastir/config/tnc-startup.kam
+share/xastir/config/tnc-startup.kpc2
 share/xastir/config/tnc-startup.kpc3
+share/xastir/config/tnc-startup.null
+share/xastir/config/tnc-startup.paccomm
 share/xastir/config/tnc-startup.pico
 share/xastir/config/tnc-startup.sys
 share/xastir/config/tnc-startup.thd7
+share/xastir/config/tnc-startup.tnc2-ui
+share/xastir/config/tnc-stop.d700
 share/xastir/config/tnc-stop.sys
+share/xastir/config/tnc-stop.thd7
+share/xastir/config/tnc-stop.tnc2-ui
 share/xastir/config/xastir.rgb
 share/xastir/doc/AUTHORS
 share/xastir/doc/COPYING
@@ -57,6 +66,7 @@ share/xastir/doc/INSTALL
 share/xastir/doc/LICENSE
 share/xastir/doc/README
 share/xastir/doc/README.CVS
+share/xastir/doc/README.Getting-Started
 share/xastir/doc/README.MAPS
 share/xastir/doc/README.win32
 share/xastir/doc/UPGRADE
@@ -88,16 +98,16 @@ share/xastir/symbols/tornado.xbm
 share/xastir/symbols/wind.xbm
 share/xastir/symbols/winter_wx.xbm
 share/xastir/symbols/wntr_strm.xbm
-@dirrm share/xastir/symbols
-@dirrm share/xastir/sounds
-@dirrm share/xastir/maps/Online
-@dirrm share/xastir/maps/GPS
-@dirrm share/xastir/maps
-@dirrm share/xastir/help
-@dirrm share/xastir/fcc
-@dirrm share/xastir/doc
-@dirrm share/xastir/config
-@dirrm share/xastir/GNIS
 @dirrm share/xastir/Counties
-@dirrm share/xastir
+@dirrm share/xastir/GNIS
+@dirrm share/xastir/config
+@dirrm share/xastir/doc
+@dirrm share/xastir/fcc
+@dirrm share/xastir/help
+@dirrm share/xastir/maps/GPS
+@dirrm share/xastir/maps/Online
+@dirrm share/xastir/maps
+@dirrm share/xastir/sounds
+@dirrm share/xastir/symbols
 @dirrm lib/xastir
+@dirrm share/xastir
