@@ -7,6 +7,7 @@
 
 PORTNAME=	ump
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.goice.co.jp/member/mo/timidity/dist/	\
 		http://www.geocities.com/SiliconValley/Lab/2826/1-10/	\
@@ -23,8 +24,10 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 RUN_DEPENDS=	${LOCALBASE}/bin/timidity:${PORTSDIR}/audio/timidity++	\
 		${X11BASE}/bin/mozilla:${PORTSDIR}/www/mozilla
 
-BZ2DIST=	TiMidity++-2.10.4.tar.bz2
+BZ2DIST=	TiMidity++-${TIMIDITY_VERSION}.tar.bz2
 ZDIST=		unix-sdk-3.0b5.tar.Z ump_with_volume.tar.Z timdiffs.tar.Z
+
+TIMIDITY_VERSION=	2.11.3
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-ump
@@ -35,7 +38,7 @@ WANT_ESOUND=	yes
 EXTRA_PATCHES=	${.CURDIR}/../../audio/timidity++/files/*
 PKGDIR=		${.CURDIR}
 DIST_SUBDIR=	timidity
-WRKSRC=		${WRKDIR}/TiMidity++-2.10.4
+WRKSRC=		${WRKDIR}/TiMidity++-${TIMIDITY_VERSION}
 
 # USE_MOTIF=	yes
 # CONFIGURE_ENV=	MOTIFLIB="${MOTIFLIB}"
