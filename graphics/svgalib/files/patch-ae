@@ -1,5 +1,23 @@
---- Makefile.orig	Fri Aug 25 05:26:16 2000
-+++ Makefile	Fri Aug 25 05:26:20 2000
+--- Makefile.orig	Fri Jul  7 01:12:47 2000
++++ Makefile	Thu Jul 31 16:13:56 2003
+@@ -176,7 +176,7 @@
+ 		(cd $(sharedlibdir); \
+ 		 ln -sf $$foo `echo $$foo | sed 's/\.so\..*/.so/'` ); \
+ 	done
+-	@ldconfig
++	#@ldconfig
+ 
+ ifdef INSTALLAOUTDIR
+ 
+@@ -192,7 +192,7 @@
+ 		(cd $(TOPDIR)/$(INSTALLAOUTDIR); \
+ 		 ln -sf $$foo `echo $$foo | sed 's/\.so\..*/.so/'` ); \
+ 	done
+-	@ldconfig
++	#@ldconfig
+ 
+ else
+ 
 @@ -210,7 +210,7 @@
  	@$(INSTALL_DATA) staticlib/libvgagl.a $(libdir)/libvgagl.a
  	@chmod a+r $(libdir)/libvgagl.a
