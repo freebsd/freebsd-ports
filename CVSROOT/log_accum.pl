@@ -472,8 +472,10 @@ sub mail_notification {
 	# which branches were modified during the commit.
 	if ($cfg::MAIL_BRANCH_HDR) {
 		my %tags = map { $_ => 1 } &read_logfile($TAGS_FILE);
-		push @email, $cfg::MAIL_BRANCH_HDR . ": " .
-		    join(",", sort keys %tags);
+		if (keys %tags) {
+			push @email, $cfg::MAIL_BRANCH_HDR . ": " .
+			    join(",", sort keys %tags);
+		}
 	}
 
 	push @email, "";
@@ -681,13 +683,17 @@ if ($input_params =~ /New directory/) {
 #
 if ($input_params =~ /Imported sources/) {
 	my @text = &build_header();
+	my $vendor_tag;
 
 	push @text, "  $input_params";
 
 	while (<STDIN>) {
 		chomp;
 		push @text, "  $_";
+
+		$vendor_tag = $1 if /Vendor Tag:\s*(\S*)/;
 	}
+	&append_line($TAGS_FILE, $vendor_tag) if $vendor_tag;
 
 	&do_changes_file(@text);
 	&mail_notification(@text);
