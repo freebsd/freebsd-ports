@@ -7,7 +7,7 @@
 
 PORTNAME=	groff
 PORTVERSION=	1.17.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_LOCAL:S,%SUBDIR%,okazaki/&,} \
 		${MASTER_SITE_GNU}
@@ -21,11 +21,12 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	okazaki@FreeBSD.org
 
-TMAC_DATE=	20020121
+TMAC_DATE=	20020602
 TMAC_DISTNAME=	tmac-${TMAC_DATE}
 
 USE_GMAKE=	yes
-USE_AUTOCONF=	yes
+# declare USE_AUTOCONF_VER as 213 until bsd.port.mk supports 252 (or later)
+USE_AUTOCONF_VER=	213
 
 CONFIGURE_ARGS=	--program-prefix=g --enable-nippon
 CONFIGURE_ENV=	INSTALL_MAN="${INSTALL_MAN}"
@@ -86,11 +87,15 @@ ACLOCAL_FILTER=	-e 's/AC_LANG_POP\(C\+\+\)/AC_LANG_RESTORE/g;' \
 		-e 's/AC_LANG_PUSH\(C\+\+\)/AC_LANG_SAVE\nAC_LANG_CPLUSPLUS/g;'
 
 post-extract:
+.if ${USE_AUTOCONF_VER} == 213
 	${LN} -sf configure.ac ${WRKSRC}/configure.in
+.endif
 
 post-patch:
+.if ${USE_AUTOCONF_VER} == 213
 	${PERL} -pi ${CONFIGUREIN_FILTER} ${WRKSRC}/configure.in
 	${PERL} -pi ${ACLOCAL_FILTER} ${WRKSRC}/aclocal.m4
+.endif
 
 post-build:
 .if !defined(WITHOUT_INFO)
