@@ -3,13 +3,13 @@
 # Date created:        23 May 1998
 # Whom:                Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
-# $Id: Makefile,v 1.6 1998/09/30 02:07:27 jseger Exp $
+# $Id: Makefile,v 1.7 1998/10/02 18:21:23 brian Exp $
 #
 
 DISTNAME=	klyx-0.9.3
 CATEGORIES=	print kde
 MASTER_SITES=	$(MASTER_SITE_KDE)
-MASTER_SITE_SUBDIR= /unstable/apps/office
+MASTER_SITE_SUBDIR= unstable/apps/office
 
 MAINTAINER=	hanspb@persbraten.vgs.no
 
