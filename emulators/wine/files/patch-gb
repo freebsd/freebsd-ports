@@ -1,10 +1,10 @@
---- Makefile.in.old	Tue Jul 18 18:36:26 2000
-+++ Makefile.in	Tue Jul 18 18:36:36 2000
-@@ -147,7 +147,6 @@
+--- Makefile.in.orig	Wed Jan 23 13:32:44 2002
++++ Makefile.in	Wed Jan 23 13:32:53 2002
+@@ -87,7 +87,6 @@ wine: dlls $(EMUOBJS)
+ install:: all $(INSTALLSUBDIRS:%=%/__install__)
  	[ -d $(bindir) ] || $(MKDIR) $(bindir)
  	$(INSTALL_PROGRAM) wine $(bindir)/wine
- 	$(INSTALL_PROGRAM) loader/dos/dosmod $(bindir)/dosmod
 -	-$(LDCONFIG)
  
  uninstall:: $(INSTALLSUBDIRS:%=%/__uninstall__)
- 	cd $(libdir) && $(RM) libwine.a libwine.so libwine.so.$(SOVERSION)
+ 	cd $(bindir) && $(RM) wine
