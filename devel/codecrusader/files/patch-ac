@@ -1,98 +1,50 @@
---- programs/code_crusader/Make.header.orig	Tue Sep 21 13:23:17 1999
-+++ programs/code_crusader/Make.header	Fri Dec 10 11:31:35 1999
-@@ -73,11 +73,10 @@
+--- programs/code_crusader/Make.header.orig	Tue Sep 21 17:23:17 1999
++++ programs/code_crusader/Make.header	Sun Jun  4 14:56:56 2000
+@@ -30,6 +30,7 @@
+              -I${JTOOLBARDIR} \
+              -I${JXIMAGEDIR} \
+              -I${ACE_ROOT} \
++		-I${JXDIR} \
+              ${J_X11_INCLUDE_DIR}
+ 
+ # other constants
+@@ -52,28 +53,17 @@
+ 
+ # library dependencies
+ 
+-ifdef J_BUILD_SHARED_LIB
+-  LIB_DEPS := ${JLIBDIR}/libjcore-${JX_LIB_VERSION}.so \
+-              ${JLIBDIR}/libjx-${JX_LIB_VERSION}.so \
+-              ${JLIBDIR}/libjtree-${JTREE_LIB_VERSION}.so \
+-              ${JLIBDIR}/libjtoolbar-${JTOOLBAR_LIB_VERSION}.so
+-else
+-  LIB_DEPS := ${JLIBDIR}/libjcore-${JX_LIB_VERSION}.a \
+-              ${JLIBDIR}/libjx-${JX_LIB_VERSION}.a \
+-              ${JLIBDIR}/libjtree-${JTREE_LIB_VERSION}.a \
+-              ${JLIBDIR}/libjtoolbar-${JTOOLBAR_LIB_VERSION}.a
+-endif
+ 
+ # make variables
+ 
+-LOADLIBES := -L${JLIBDIR} ${ljtoolbar} ${ljtree} \
++LOADLIBES := -L${JLIBDIR} ${PORTLIBS} ${ljtoolbar} ${ljtree} \
+              ${ljx} ${ljcore} ${J_SYS_LIBS}
+ LDFLAGS   := 
+ 
  #####
  
  .PHONY : default
 -default: libs jcc ctags
-+default: libs jcc
++default: jcc
  
  .PHONY : Makefiles
  Makefiles:
--	@cd ctags; ./configure > /dev/null
- 
- #
- # required libraries
-@@ -98,33 +97,19 @@
- 	@cd ${JTOOLBARLIBDIR}; ${MAKE} TOUCHSTRING=${TOUCHSTRING} touch
- 
- #
--# ctags
--#
--
--.PHONY : ctags
--ctags:
--	@cd ctags; ${MAKE}; strip ctags
--
--#
- # install binaries
+@@ -110,7 +100,7 @@
  #
  
  .PHONY : jxinstall
 -jxinstall: jcc ctags
-+jxinstall: jcc
++jxinstall_not: jcc ctags
  	@strip jcc
    ifneq (${J_WANT_INSTALL},0)
--	@mv jcc ctags/ctags ${JX_INSTALL_ROOT}/
--   ifeq (${shell whoami},root)
--	@cp ctags/ctags.1 /usr/man/man1/
--   endif
-+	@mv jcc ${JX_INSTALL_ROOT}/
-   endif
- 
- .PHONY : jxuninstall
- jxuninstall:
--	@${RM} ${JX_INSTALL_ROOT}/jcc ${JX_INSTALL_ROOT}/ctags
--  ifeq (${shell whoami},root)
--	@${RM} /usr/man/man1/ctags.1
--  endif
-+	@${RM} ${JX_INSTALL_ROOT}/jcc
- 
- #
- # remove binaries
-@@ -132,7 +117,6 @@
- 
- .PHONY : tidy
- tidy::
--	@cd ctags; ${MAKE} clean > /dev/null
- 
- # makemake's clean invokes tidy, which does everything necessary
- 
-@@ -145,14 +129,13 @@
- 
- .PHONY : source
- source:
--	@-cd ctags; ${MAKE} clean > /dev/null
- 	@cd ${J_DISTR_TAR_DIR}; \
--     tar -czf ${SRC_TAR_FILE} ${filter-out %.o %~ %ctags, \
-+     tar -czf ${SRC_TAR_FILE} ${filter-out %.o %~, \
-                                 ${shell cd ${J_DISTR_TAR_DIR}; echo \
-               ${addprefix ${SRC_FILE_DIR}/, \
-                 README.* LICENSE FAQ Make.* *.fd \
-                 ${EXTRA_FILES} macros/* desktop/* \
--                code/* rpm/* ctags/* } }}
-+                code/* rpm/* } }}
- 
- #
- # binary distributions
-@@ -179,18 +162,15 @@
- # distr_sub (JCC_DISTR_TAR_FILE, MKMK_TARGET)
- 
- .PHONY : distr_sub
--distr_sub: ctags
-+distr_sub:
- 	@strip jcc
- 	@${RM} -r ${JCC}
--	@mkdir ${JCC} ${JCC}/ctags
-+ 	@mkdir ${JCC}
- 	@ln -s ../README.binary     ${JCC}/README
- 	@ln -s ../jcc               ${JCC}/jcc
- 	@ln -s ../macros            ${JCC}/macros
- 	@ln -s ../desktop           ${JCC}/desktop
--	@ln -s ../../ctags/ctags    ${JCC}/ctags/ctags
- 	@cp LICENSE FAQ ${EXTRA_FILES} ${JCC}/
--	@cp ctags/COPYING ctags/FAQ ctags/NEWS ctags/QUOTES ctags/README \
--        ctags/ctags.1 ${JCC}/ctags/
- 	@cd ${MKMKDIR}; \
-      ${MAKE} JCC_TAR_DIR=${JCC_TAR_DIR}/${JCC} ${MKMK_TARGET}
- 	@tar -chf ${JCC_DISTR_TAR_FILE} ${JCC}/*
+ 	@mv jcc ctags/ctags ${JX_INSTALL_ROOT}/

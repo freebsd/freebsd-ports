@@ -8,88 +8,129 @@
 PORTNAME=	code_crusader
 PORTVERSION=	2.1.4
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.its.caltech.edu/pub/jafl/programs/jcc/source/ \
-		ftp://ftp.its.caltech.edu/pub/jafl/jx/source-1.5.3/
-DISTFILES=	${PORTNAME}_source-${PORTVERSION}${EXTRACT_SUFX} \
-		JTree_source-1.1.7.tar.gz \
-		JX_source-1.5.3.tar.gz \
-		JToolBar_source-0.5.4.tar.gz
+MASTER_SITES=	ftp://ftp.newplanetsoftware.com/pub/jx/source-1.5.3/ \
+		ftp://ftp.newplanetsoftware.com/pub/jcc/source/ \
+		ftp://ftp.newplanetsoftware.com/pub/medic/source/ \
+		ftp://ftp.cs.itu.edu.tr/pub/linux/x11/jx/
+DISTNAME=	${PORTNAME}_source-${PORTVERSION}
 
-MAINTAINER=	davec@unforgettable.com
+MAINTAINER=	lioux@linf.unb.br
 
-LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
+BUILD_DEPENDS=	nonexistent:${JXPORT}:patch
+LIB_DEPENDS=	jtoolbar-0_5_4.0:${PORTSDIR}/x11-toolkits/libjtoolbar
+RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags
 
 WRKSRC=		${WRKDIR}/JX-1.5.3
 
 USE_XLIB=	yes
-PLIST_SUB+=	"LIBACE=${LIBACE}" \
-		"LIBJTOOL=${LIBJTOOL}" \
-		"LIBJSEARCH=${LIBJSEARCH}" \
-		"LIBJTREE=${LIBJTREE}" \
-		"LIBJX=${LIBJX}"
-USE_GMAKE=	yes
 USE_BISON=	yes
-MAKE_ENV=	JX_INSTALL_ROOT=${PREFIX}/bin \
-		JX_LIB_ROOT=${PREFIX}/lib
+USE_PERL5=	yes
+USE_GMAKE=	yes
+MAKE_ENV=	JX_INSTALL_ROOT="${PREFIX}/bin" \
+		JX_LIB_ROOT="${PREFIX}/lib" \
+		X11PREFIX="${X11PREFIX}" \
+		PORTCFLAGS="${CFLAGS}" \
+		PORTCXXFLAGS="${CXXFLAGS}" \
+		PORTINCLUDES="${PORTINCLUDES}" \
+		PORTLIBS="${PORTLIBS}"
+PLIST_SUB=	PORTNAME="${PORTNAME}"
 
-.if !defined(CODEMEDIC) || (${CODEMEDIC} != no && ${CODEMEDIC} != NO)
-pre-fetch:
-		@ ${ECHO_MSG}
-		@ ${ECHO_MSG} Code Medic is a gdb frontend to complement
-		@ ${ECHO_MSG} Code Crusader.  It is compiled in this port
-		@ ${ECHO_MSG} with Code Crusader by default.
-		@ ${ECHO_MSG} If you would prefer not compiling it in
-		@ ${ECHO_MSG} then set the variable CODEMEDIC=no.
-		@ ${ECHO_MSG}
-		@ ${ECHO_MSG} Compiling Code Crusader with Code Medic.
-		@ ${ECHO_MSG} Installing into ${PREFIX}
-		@ ${ECHO_MSG}
-MASTER_SITES+=	ftp://ftp.cco.caltech.edu/pub/glenn/Medic/source/ \
-		ftp://ftp.cco.caltech.edu/pub/glenn/Arrow/source/
-DISTFILES+=	Code_Medic_source-1.0.5.tar.gz \
-		JSearch_source-0.5.6.tar.gz
-.endif
+# Proper X11R6 Prefix
+# Change it, if you need it
+X11PREFIX?=	${X11BASE}
 
-.if !defined(CODEMEDIC) || (${CODEMEDIC} != no && ${CODEMEDIC} != NO)
-post-patch:
-		@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-medic
-		@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-jsearch
-.endif
+# Make environment
+PORTINCLUDES=	-I${LOCALBASE}/include -I${LOCALBASE}/include/jx \
+		-I${LOCALBASE}/include/jtoolbar \
+		-I${LOCALBASE}/include/jtree \
+		-I${LOCALBASE}/share/jx
+PORTLIBS=	-L${LOCALBASE}/lib
+
+# Installs dir with proper permissions
+INSTALL_DATA_DIR=	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755
+# program files
+PROGRAMFILES=		code_crusader/jcc
+PROGRAMFILES_SCRIPT=	code_crusader/dirdiff
+# documents
+DOCFILES=       FAQ LICENSE README.binary
+DOCDIR_PREFIX=  ${PREFIX}/share/doc/${PORTNAME}
+# additional configuration and header files
+EXTRALIB_PREFIX=	${PREFIX}/lib/jx
+# examples
+EXAMPLEDIRS=		desktop macros
+EXAMPLEDIR_PREFIX=	${PREFIX}/share/examples/${PORTNAME}
+# main jx distribution port wrksrc
+JXPORT=		${PORTSDIR}/x11-toolkits/jx
+JXPORT_WRKSRC=	${JXPORT}/work/JX-1.5.3
+# main jx distribution files needed for building
+COPY_JXDIRS=	include lib libjcore
+COPY_JXFILES=	Makefile
+JX_MAKE_CONSTANTS=	jtoolbar_constants jtree_constants
 
 .include <bsd.port.pre.mk>
+
 .if ${OSVERSION} >= 300000
 ALL_TARGET=	freebsd3.x
-LIBACE=		4
-LIBJTOOL=	0
-LIBJSEARCH=	0
-LIBJTREE=	1
-LIBJX=		1
 .else
 ALL_TARGET=	freebsd2.x
-LIBACE=		4.6
-LIBJTOOL=	0.5
-LIBJSEARCH=	0.5
-LIBJTREE=	1.1
-LIBJX=		1.5
 .endif
+
+.if defined(NOPORTDOCS)
+PLIST_SUB+=	PORTDOCS:="@comment "
+.else
+PLIST_SUB+=	PORTDOCS:=
+.endif # !defined(NOPORTDOCS)
+
+post-extract:
+.for i in ${COPY_JXDIRS}
+	@${CP} -Rp ${JXPORT_WRKSRC}/${i} ${WRKSRC}
+.endfor
+.for i in ${COPY_JXFILES}
+	@${CP} -p ${JXPORT_WRKSRC}/${i} ${WRKSRC}
+.endfor
+
+pre-build:
+.for i in ${JX_MAKE_CONSTANTS}
+	@${LN} -sf ${EXTRALIB_PREFIX}/make/${i} ${WRKSRC}/include/make
+.endfor
+
+post-build:
+	@cd ${WRKSRC}/programs/${PORTNAME}; ${SETENV} ${MAKE_ENV} makemake; \
+		${SETENV} ${MAKE_ENV} ${GMAKE}
 
 do-install:
-		@ ${LN} -sf ${PREFIX}/lib/libACE-4_6.so \
-			${PREFIX}/lib/libACE-4_6.so.${LIBACE};
-		@ ${LN} -sf ${PREFIX}/lib/libjcore-1_5_2.so \
-			${PREFIX}/lib/libjcore-1_5_2.so.${LIBJX};
-		@ ${LN} -sf ${PREFIX}/lib/libjtoolbar-0_5_3.so \
-			${PREFIX}/lib/libjtoolbar-0_5_3.so.${LIBJTOOL};
-		@ ${LN} -sf ${PREFIX}/lib/libjtree-1_1_5.so \
-			${PREFIX}/lib/libjtree-1_1_5.so.${LIBJTREE};
-		@ ${LN} -sf ${PREFIX}/lib/libjx-1_5_2.so \
-			${PREFIX}/lib/libjx-1_5_2.so.${LIBJX};
-.if !defined(CODEMEDIC) || (${CODEMEDIC} != no && ${CODEMEDIC} != NO)
-		@ ${LN} -sf ${PREFIX}/lib/libjsearch-0_5_6.so \
-			${PREFIX}/lib/libjsearch-0_5_6.so.${LIBJSEARCH};
-.endif
-
-post-install:
-		@ ${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+.if !defined(NOPORTDOCS)
+# Install all documentation
+	@${INSTALL_DATA_DIR} ${DOCDIR_PREFIX}
+.for i in ${DOCFILES}
+	@${INSTALL_DATA} ${WRKSRC}/programs/${PORTNAME}/${i} ${DOCDIR_PREFIX}
+.endfor
+# Install all examples
+.for i in ${EXAMPLEDIRS}
+	@${INSTALL_DATA_DIR} ${EXAMPLEDIR_PREFIX}/${i} ; \
+	cd ${WRKSRC}/programs/${PORTNAME}/${i}; \
+	for j in * ; \
+	do \
+		if [ -f $${j} ]; \
+		then \
+			${INSTALL_DATA} $${j} ${EXAMPLEDIR_PREFIX}/${i} ; \
+		elif [ -d $${j} ]; \
+		then \
+			${INSTALL_DATA_DIR} ${EXAMPLEDIR_PREFIX}/${i}/$${j} ; \
+			for k in $${j}/* ; \
+			do \
+				${INSTALL_DATA} $${k} ${EXAMPLEDIR_PREFIX}/${i}/$${j} ; \
+			done; \
+		fi; \
+	done
+.endfor
+.endif # !defined(NOPORTDOCS)
+# Install all programs
+.for i in ${PROGRAMFILES}
+	@${INSTALL_PROGRAM} ${WRKSRC}/programs/${i} ${PREFIX}/bin
+.endfor
+.for i in ${PROGRAMFILES_SCRIPT}
+	@${INSTALL_SCRIPT} ${WRKSRC}/programs/${i} ${PREFIX}/bin
+.endfor
 
 .include <bsd.port.post.mk>
