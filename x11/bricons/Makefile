@@ -3,7 +3,7 @@
 # Date created:		31 Jul 1996
 # Whom:			shanee@rabbit.augusta.de
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/11/25 10:00:21 tg Exp $
 #
 
 DISTNAME=	bricons
@@ -22,6 +22,7 @@ USE_IMAKE=	yes
 post-install:
 	${INSTALL_DATA} $(WRKDIR)/bricons/Xbricons $(PREFIX)/lib/X11/app-defaults/
 	${INSTALL_DATA} $(WRKDIR)/bricons/bitmaps/* $(PREFIX)/include/X11/bitmaps/
+	${MKDIR} $(PREFIX)/include/X11/pixmaps
 	${INSTALL_DATA} $(WRKDIR)/bricons/*.xpm $(PREFIX)/include/X11/pixmaps/
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "     Use ./files/DOTbriconsrc as an example. This  file"
