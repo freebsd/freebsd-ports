@@ -1,0 +1,4 @@
+bin/gtktetcolor
+share/gnome/apps/Games/gtktetcolor.desktop
+share/gnome/pixmaps/gtktetcolor.xpm
+share/locale/ru/LC_MESSAGES/gtktetcolor.mo
