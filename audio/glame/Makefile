@@ -11,7 +11,7 @@ CATEGORIES=	audio gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sobomax@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A powerful, fast, stable, and easily extensible sound editor for GNOME
 
 LIB_DEPENDS=	ltdl.4:${PORTSDIR}/devel/libltdl
