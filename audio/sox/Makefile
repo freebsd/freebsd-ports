@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sox
-PORTVERSION=	12.17.4
-PORTREVISION=	2
+PORTVERSION=	12.17.6
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sox
@@ -20,6 +19,7 @@ CONFLICTS=	play-*
 MAN1=			sox.1 play.1 soxexam.1
 MLINKS=			play.1 rec.1 sox.1 soxmix.1
 GNU_CONFIGURE=		yes
+MAKE_ENV=		PLAY_SUPPORT=1
 
 .include <bsd.port.pre.mk>
 
@@ -31,13 +31,14 @@ WITH_LAME=	YES
 WITH_MAD=	YES
 .endif
 
-.if exists(${LOCALBASE}/lib/libvorbis.so.2)
+.if exists(${LOCALBASE}/lib/libvorbis.so.3)
 WITH_VORBIS=	YES
 .endif
 
 .if defined(WITH_VORBIS) || defined(WITH_LAME) || defined(WITH_MAD)
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 .endif
 
 .if defined(WITH_VORBIS)
