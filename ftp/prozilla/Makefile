@@ -7,7 +7,7 @@
 
 PORTNAME=	prozilla
 PORTVERSION=	1.3.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	ftp
 MASTER_SITES=	http://prozilla.genesys.ro/downloads/prozilla/tarballs/
 
