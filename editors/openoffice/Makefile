@@ -19,6 +19,14 @@ DISTFILES=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z \
 
 .include <bsd.port.pre.mk>
 
+#
+# The OO build is broken with system gcc at the moment.
+# You can override this.
+#
+.if !defined(USE_GCC)
+USE_GCC=3.1
+.endif
+
 .if ${OSVERSION} > 500000
 .if defined(USE_GCC) && ${USE_GCC} == 2.95
 MOZILLADIST=	oo_moz1.0RC3_${ARCH}_FreeBSD-5-gcc2.95-ports.tar.gz
@@ -36,16 +44,13 @@ MOZILLADIST=	oo_moz1.0RC3_${ARCH}_FreeBSD-4-gcc2.95-system.tar.gz
 EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.bz2
 
 MAINTAINER=	mbr@FreeBSD.org
-
-# OO needs DISPLAY to be set and working
-RESTRICTED=     "No automated build possible"
-
 .if ${OSVERSION} < 500000 && !defined(USE_GCC)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 .endif
 BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk13
 BUILD_DEPENDS+=	imake:${PORTSDIR}/devel/imake-4
+BUILD_DEPENDS+= Xvfb:${PORTSDIR}/XFree86-4-VirtualFramebufferServer
 LIB_DEPENDS+=	pth.14:${PORTSDIR}/devel/pth
 
 USE_PERL5=	yes
@@ -145,12 +150,6 @@ pre-fetch:
 	@${ECHO} options	MAXDSIZ=\"\(1024*1024*1024\)\"
 	@${ECHO} options	MAXSSIZ=\"\(256*1024*1024\)\"
 	@${ECHO}
-.if !defined(DISPLAY) || ${DISPLAY} == ""
-	@ ${ECHO}
-	@ ${ECHO} "Cannot open display; please check your DISPLAY variable."
-	@ ${ECHO}
-	@ ${FALSE}
-.endif
 .if !exists(/usr/include/langinfo.h)
 	@${ECHO}
 	@${ECHO} langinfo.h is missing !
@@ -209,18 +208,36 @@ post-patch:
 		${PERL} -pi -e "s|<malloc.h>|<stdlib.h>|g"
 
 do-build:
+.if exists(${WRKDIR}/.Xvfb.pid)
+	@${CAT} ${WRKDIR}/.Xvfb.pid | xargs kill
+        @${RM} -f ${WRKDIR}/.Xvfb.pid
+.endif
+	#
+	# This is a UGLY hack to not have to specify a X-Display.
+	#
+	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
+	@sleep 5
 	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ./bootstrap
-	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
+	@cd ${WRKSRC}/.. && DISPLAY=localhost:1001 PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \
 		tcsh -c 'source FreeBSDEnv.Set && ${DMAKE}'
+	@${CAT} ${WRKDIR}/.Xvfb.pid | xargs kill
+	@${RM} -f ${WRKDIR}/.Xvfb.pid
 
 pre-install:
 	@${SED} -e 's#%%PREFIX%%#${PREFIX}#g' < ${FILESDIR}/oo_setup.resp \
 	    > ${WRKSRC}/../instsetoo/unxfbsd.pro/01/normal/oo_setup.resp
 
 do-install:
+	#
+	# UGLY hack to not have to specify a X-Display.
+	#
+	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > ${WRKDIR}/.Xvfb.pid
+	@sleep 5
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" LD_LIBRARY_PATH=${LD_PATH} \
-		TEMP=${WRKDIR} DISPLAY=${DISPLAY} \
+		TEMP=${WRKDIR} DISPLAY=localhost:1001 \
 		${WRKSRC}/../instsetoo/*.pro/01/normal/setup -r:oo_setup.resp
+	@${CAT} ${WRKDIR}/.Xvfb.pid | xargs kill
+	@${RM} -f ${WRKDIR}/.Xvfb.pid
 
 install-user:
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" \
