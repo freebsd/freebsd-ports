@@ -262,6 +262,7 @@
     SUBDIR += serialmail
     SUBDIR += sigit
     SUBDIR += sigrot
+    SUBDIR += silkymail
     SUBDIR += sma
     SUBDIR += smail
     SUBDIR += smapi
