@@ -1,5 +1,5 @@
---- configure.orig	Thu Mar  1 04:54:12 2001
-+++ configure	Thu Mar  1 21:58:09 2001
+--- configure.orig	Tue Jun  3 12:47:57 2003
++++ configure	Thu Jul 31 16:35:45 2003
 @@ -11,7 +11,7 @@
  ac_help=
  ac_default_prefix=/usr/local
@@ -9,7 +9,7 @@
  ac_help="$ac_help
  --with-nagios-user=<user> sets user name to run nagios"
  ac_help="$ac_help
-@@ -562,9 +562,9 @@
+@@ -576,9 +576,9 @@
  # Prefer explicitly selected file to automatically selected ones.
  if test -z "$CONFIG_SITE"; then
    if test "x$prefix" != xNONE; then
@@ -21,7 +21,7 @@
    fi
  fi
  for ac_site_file in $CONFIG_SITE; do
-@@ -1298,6 +1298,9 @@
+@@ -2608,6 +2608,9 @@
  	LDFLAGS="${LDFLAGS} -L${withval}"
  	LD_RUN_PATH="${withval}${LD_RUN_PATH:+:}${LD_RUN_PATH}"
  	
@@ -31,7 +31,7 @@
  fi
  
  # Check whether --with-gd-inc or --without-gd-inc was given.
-@@ -1305,6 +1308,8 @@
+@@ -2615,6 +2618,8 @@
    withval="$with_gd_inc"
    
  	CFLAGS="${CFLAGS} -I${withval}"
@@ -40,3 +40,30 @@
  	
  fi
  
+@@ -2748,14 +2753,14 @@
+ 	fi
+ 
+ 		if test x$GDLIBFOUND = x; then
+-		echo $ac_n "checking for gdImagePng in -lgd (order 3)""... $ac_c" 1>&6
+-echo "configure:2753: checking for gdImagePng in -lgd (order 3)" >&5
++		echo $ac_n "checking for gdImagePng in -lgd1 (order 3)""... $ac_c" 1>&6
++echo "configure:2753: checking for gdImagePng in -lgd1 (order 3)" >&5
+ 					ac_lib_var=`echo gd'_'gdImagePng'_'3 | sed 'y%./+-%__p_%'`
+ 	if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-	LIBS="-lgd -lpng -lz -lm $LIBS"
++	LIBS="-lgd1 -lz -lm -lpng -ljpeg $LIBS"
+ 	cat > conftest.$ac_ext <<EOF
+ #line 2761 "configure"
+ #include "confdefs.h"
+@@ -2785,7 +2790,7 @@
+ 	  echo "$ac_t""yes" 1>&6
+ 	  
+ 			GDLIBFOUND=yep
+-			GDLIBS="-lgd -lpng -lz -lm"
++			GDLIBS="-lgd1 -lz -lm -lpng"
+ 	        	
+ 	else
+ 	  echo "$ac_t""no" 1>&6
