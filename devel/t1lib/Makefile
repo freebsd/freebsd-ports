@@ -3,17 +3,17 @@
 # Date created:			13, May, 1999
 # Whom:				Ying-Chieh Liao <ijliao@csie.nctu.edu.tw>
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/06 17:33:48 steve Exp $
+# $Id: Makefile,v 1.2 1999/06/08 21:59:37 steve Exp $
 #
 
-DISTNAME=	t1lib-0.9
+DISTNAME=	t1lib-0.9.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	libs/graphics
 
 MAINTAINER=	ijliao@csie.nctu.edu.tw
 
-WRKSRC=		${WRKDIR}/T1-0.9
+WRKSRC=		${WRKDIR}/T1-0.9.1
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
