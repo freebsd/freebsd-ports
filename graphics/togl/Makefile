@@ -7,23 +7,24 @@
 
 PORTNAME=	togl
 PORTVERSION=	1.5
-CATEGORIES=	graphics tk83
+PORTREVISION=	1
+CATEGORIES=	graphics tk84
 MASTER_SITES=	ftp://ftp.mesa3d.org/mesa/misc/ \
 		ftp://ftp.cs.umd.edu/pub/faculty/bederson/
 DISTNAME=	Togl-${PORTVERSION}
 
-MAINTAINER=	aa8vb@ipass.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Tk OpenGL widget
 
-LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83 \
-		tcl83.1:${PORTSDIR}/lang/tcl83
+LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84 \
+		tcl84.1:${PORTSDIR}/lang/tcl84
 
 USE_MESA=	yes
 ALL_TARGET=	default
 MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"
 
-TOGL_INSTDIR=	${PREFIX}/lib/tk8.3/${DISTNAME}
+TOGL_INSTDIR=	${PREFIX}/lib/tk8.4/${DISTNAME}
 
 .include <bsd.port.pre.mk>
 
@@ -33,6 +34,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/togl.h ${TOGL_INSTDIR}
 	${INSTALL_DATA} ${WRKSRC}/togl.o ${TOGL_INSTDIR}
 	${ECHO} 'package ifneeded Togl 1.5 [list load [file join $$dir Togl.so]]'\
-	  > ${PREFIX}/lib/tk8.3/${DISTNAME}/pkgIndex.tcl
+	  > ${PREFIX}/lib/tk8.4/${DISTNAME}/pkgIndex.tcl
 
 .include <bsd.port.post.mk>
