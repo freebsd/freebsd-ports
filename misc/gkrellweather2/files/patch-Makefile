@@ -1,41 +1,23 @@
---- Makefile.orig	Tue Nov 26 19:24:39 2002
-+++ Makefile	Fri Dec 13 02:59:14 2002
-@@ -1,6 +1,6 @@
+--- Makefile.orig	Mon Mar 31 13:12:57 2003
++++ Makefile	Sun Jul 13 13:58:11 2003
+@@ -1,9 +1,9 @@
  PKGNAME = gkrellweather
- VERSION = 2.0.5
+ VERSION = 2.0.6
 -CFLAGS = -O2 -Wall -fPIC `pkg-config gtk+-2.0 --cflags`
 +CFLAGS += -Wall -fPIC `pkg-config gtk+-2.0 --cflags`
  LIBS = `pkg-config gtk+-2.0 --libs`
  LFLAGS = -shared
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
  
-@@ -8,24 +8,20 @@
+ LOCALEDIR := $(PREFIX)/share/locale
  
- OBJS = gkrellweather.o
+@@ -20,7 +20,7 @@
  
-+all: gkrellweather.so
-+
  gkrellweather.so: $(OBJS)
--	$(CC) $(OBJS) -DVERSION=\"$(VERSION)\" -o gkrellweather.so $(LFLAGS) $(LIBS)  -lpthread
-+	${CC} ${OBJS} ${PTHREAD_LIBS} -DVERSION=\"${VERSION}\" -o gkrellweather.so ${LFLAGS} ${LIBS}
+ 	(cd po && ${MAKE} all )
+-	$(CC) $(OBJS) -DVERSION=\"$(VERSION)\" -o gkrellweather.so $(LFLAGS) $(LIBS) -lpthread
++	$(CC) $(OBJS) -DVERSION=\"$(VERSION)\" -o gkrellweather.so $(LFLAGS) $(LIBS) ${PTHREAD_LIBS}
  
  clean:
- 	rm -f *.o core *.so* *.bak *~
- 
- gkrellweather.o: gkrellweather.c
--	$(CC) $(CFLAGS) -DVERSION=\"$(VERSION)\" -c gkrellweather.c
-+	${CC} ${CFLAGS} ${PTHREAD_CFLAGS} -DVERSION=\"$(VERSION)\" -c gkrellweather.c
- 
- install:
--	if [ -d /usr/lib/gkrellm2/plugins/ ] ; then \
--		install -c -s -m 644 gkrellweather.so /usr/lib/gkrellm2/plugins/ ; \
--	elif [ -d /usr/local/lib/gkrellm2/plugins/ ] ; then \
--		install -c -s -m 644 gkrellweather.so /usr/local/lib/gkrellm2/plugins/ ; \
--	else \
--		install -D -c -s -m 644 gkrellweather.so /usr/local/lib/gkrellm2/plugins/gkrellweather.so ; \
--	fi
--	install -c -m 755 GrabWeather /usr/local/bin
-+	${MKDIR} ${PREFIX}/libexec/gkrellm2/plugins
-+	${INSTALL_DATA} gkrellweather.so ${PREFIX}/libexec/gkrellm2/plugins
- 
- uninstall:
- 	rm -f /usr/lib/gkrellm2/plugins/gkrellweather.so
+ 	(cd po && ${MAKE} clean )
