@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	R
-PORTVERSION=	1.6.2
+PORTVERSION=	1.7.0
 CATEGORIES=	math
 MASTER_SITES=	http://cran.r-project.org/src/base/ \
 		ftp://cran.r-project.org/pub/R/src/base/ \
@@ -31,7 +31,8 @@ LIB_DEPENDS=	tcl84:${PORTSDIR}/lang/tcl84 \
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 USE_PERL5=	yes
-CONFIGURE_ENV=	R_PAPERSIZE=${PAPERSIZE}
+CONFIGURE_ENV=	R_PAPERSIZE=${PAPERSIZE} \
+		INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644"
 
 PAPERSIZE?=	letter
 .if ${PAPERSIZE} != letter && ${PAPERSIZE} != a4
@@ -45,13 +46,11 @@ MAN1=	R.1
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
+#.if ${OSVERSION} >= 500113
+#BROKEN=         "Does not compile"
+#.endif
 
 test check: build
 	@(cd ${WRKSRC}; make check)
-fullcheck: build
-	@(cd ${WRKSRC}; make fullcheck)
 
 .include <bsd.port.post.mk>
