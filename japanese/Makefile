@@ -233,6 +233,7 @@
     SUBDIR += mule-sj3+wnn7
     SUBDIR += mule-wnn6
     SUBDIR += mule-wnn7
+    SUBDIR += multiskkserv
     SUBDIR += mutt
     SUBDIR += mutt-devel
     SUBDIR += mypaedia-fpw
