@@ -1,0 +1,19 @@
+--- ./sys/unix/Makefile.doc.org	Mon Jan 11 13:02:31 1993
++++ ./sys/unix/Makefile.doc	Sat Dec 10 00:14:52 1994
+@@ -21,7 +21,7 @@
+ 
+ 
+ GAME	= nethack
+-MANDIR	= /usr/man/man6
++MANDIR	= /usr/local/man/man6
+ MANEXT	= 6
+ 
+ # manual installation for most BSD-style systems
+@@ -36,6 +36,7 @@
+ # RCVRMANCREATE = nroff -man recover.6 >
+ 
+ manpages:
++	-mkdir $(MANDIR)
+ 	-$(GAMEMANCREATE) $(MANDIR)/$(GAME).$(MANEXT)
+ 	-$(LEVMANCREATE) $(MANDIR)/lev_comp.$(MANEXT)
+ 	-$(DGNMANCREATE) $(MANDIR)/dgn_comp.$(MANEXT)

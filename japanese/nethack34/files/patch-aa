@@ -1,0 +1,75 @@
+--- ./include/unixconf.h.org	Wed Dec 21 04:44:02 1994
++++ ./include/unixconf.h	Wed Dec 21 04:48:04 1994
+@@ -33,7 +33,7 @@
+ /* #define SVR4		/* use in addition to SYSV for System V Release 4 */
+ #define NETWORK	/* if running on a networked system */
+ 			/* e.g. Suns sharing a playground through NFS */
+-#define SUNOS4	/* SunOS 4.x */
++/* #define SUNOS4	/* SunOS 4.x */
+ /* #define NEWSOS4  /* NEWS-OS 4.x */
+ /* #define LINUX  /* Another Unix clone running on Intel processors */
+ /* #define GENIX	/* Yet Another Unix Clone */
+@@ -42,11 +42,11 @@
+ /* #define UNIXPC	/* use in addition to SYSV for AT&T 7300/3B1 */
+ /* #define AIX_31	/* In AIX 3.1 (IBM RS/6000) use BSD ioctl's to gain
+ 			   job control (note that AIX is SYSV otherwise) */
+-/* #define TEXTCOLOR	/* Use System V r3.2 terminfo color support */
++#define TEXTCOLOR	/* Use System V r3.2 terminfo color support */
+ 			/* or ANSI color support on termcap systems */
+ 			/* or X11 color	*/
+ /* #define POSIX_JOB_CONTROL	/* use System V POSIX job control */
+-/* #define POSIX_TYPES	/* use POSIX types for system calls and termios */
++#define POSIX_TYPES	/* use POSIX types for system calls and termios */
+                         /* define for platforms using the GNU libraries */
+                         /* linux, etc .. */
+ 
+@@ -108,7 +108,7 @@
+  * A stat system call is done on the mailbox every MAILCKFREQ moves.
+  */
+ 
+-#define MAIL			/* Deliver mail during the game */
++/* #define MAIL			/* Deliver mail during the game */
+ 
+ /* The Andrew Message System does mail a little differently from normal
+  * UNIX.  Mail is deposited in the user's own directory in ~/Mailbox
+--- ./include/config.h.org	Wed Dec 21 04:44:01 1994
++++ ./include/config.h	Wed Dec 21 04:48:46 1994
+@@ -273,12 +273,12 @@
+ 
+ #ifdef UNIX
+ /* path and file name extension for compression program */
+-# define COMPRESS "/usr/ucb/compress"	     /* Lempel-Ziv compression */
+-# define COMPRESS_EXTENSION ".Z"	     /* compress's extension */
++/* # define COMPRESS "/usr/ucb/compress"     /* Lempel-Ziv compression */
++/* # define COMPRESS_EXTENSION ".Z"	     /* compress's extension */
+ 
+ /* An example of one alternative you might want to use: */
+-/* # define COMPRESS "/usr/local/bin/gzip"   /* FSF gzip compression */
+-/* # define COMPRESS_EXTENSION ".gz"	     /* normal gzip extension */
++# define COMPRESS "/usr/bin/gzip"   /* FSF gzip compression */
++# define COMPRESS_EXTENSION ".gz"	     /* normal gzip extension */
+ #endif
+ #ifndef COMPRESS
+ # define INTERNAL_COMP	/* control use of NetHack's compression routines */
+@@ -300,7 +300,7 @@
+  * If you define HACKDIR, then this will be the default playground;
+  * otherwise it will be the current directory.
+  */
+-#define HACKDIR "/usr/games/lib/jnethackdir" 	/* nethack directory */
++#define HACKDIR "/usr/local/lib/jnethackdir" 	/* nethack directory */
+ 
+ /*
+  * Some system administrators are stupid enough to make Hack suid root
+--- ./sys/unix/Makefile.top.org	Wed Dec 21 04:43:32 1994
++++ ./sys/unix/Makefile.top	Wed Dec 21 04:46:51 1994
+@@ -32,8 +32,8 @@
+ # therefore there should not be anything in GAMEDIR that you want to keep
+ # (if there is, you'll have to do the installation by hand or modify the
+ # instructions)
+-GAMEDIR  = /usr/games/lib/$(GAME)dir
+-SHELLDIR = /usr/games
++GAMEDIR  = /usr/local/lib/$(GAME)dir
++SHELLDIR = /usr/local/bin
+ 
+ # by issei 1994/2/5, 1994/6/25
+ #DATHELP = help hh cmdhelp history opthelp wizhelp

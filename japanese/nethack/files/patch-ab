@@ -1,0 +1,12 @@
+--- ./include/system.h.org	Mon Apr  5 08:54:19 1993
++++ ./include/system.h	Fri Dec  9 23:41:34 1994
+@@ -131,7 +131,9 @@
+ E int FDECL(write, (int,char *,int));
+ E int FDECL(link, (const char *, const char*));
+ #else
++#ifndef __FreeBSD__
+ E long FDECL(lseek, (int,long,int));
++#endif
+ # ifdef POSIX_TYPES
+ E int FDECL(write, (int, const void *,unsigned));
+ # else
