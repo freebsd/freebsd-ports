@@ -1,0 +1,11 @@
+Optional extras for the CMU implementation of Common Lisp.
+
+Optional packages for graphical user interfaces and other Common Lisp
+applications and libraries are are on:
+
+ftp://ftp2.cons.org/pub/lisp/cmucl/binaries/  (binaries)
+ftp://ftp2.cons.org/pub/lisp/cmucl/ports/     (source)
+
+WWW: http://www.cons.org/cmucl/
+
+- Scott Flatman <sf@dsinw.com>
