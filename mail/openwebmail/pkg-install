@@ -1,0 +1,8 @@
+#!/bin/sh
+if [ "$2" != "POST-INSTALL" ]; then
+    exit 0
+fi
+
+chmod 0770 ${PKG_PREFIX}/www/cgi-bin/openwebmail/etc/sessions
+chmod 0700 ${PKG_PREFIX}/www/cgi-bin/openwebmail/etc/users
+chmod 4755 ${PKG_PREFIX}/www/cgi-bin/openwebmail/openwebmail*pl
