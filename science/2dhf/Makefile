@@ -35,9 +35,9 @@ BLAS=		-lf77blas -latlas
 .if defined(USE_INTEL)
 FC=		${LOCALBASE}/intel_fc_80/bin/ifort
 CC=		${LOCALBASE}/intel_cc_80/bin/icc
-FFLAGS=		-O3 -tpp7 -xiMKW -Vaxlib
+FFLAGS=		-O3 -tpp7 -xKW -Vaxlib
 FFLAGS_ADD=	-w -132
-CFLAGS=		-O3 -tpp7 -xiMKW -Vaxlib
+CFLAGS=		-O3 -tpp7 -xKW -Vaxlib
 BLAS+=		-lg2c -lm
 .else
 FFLAGS_ADD=	-w -ffixed-line-length-none
