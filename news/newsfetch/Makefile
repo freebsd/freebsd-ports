@@ -3,10 +3,10 @@
 # Date created:		12 September 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/09/12 18:28:06 itojun Exp $
 #
 
-DISTNAME=	newsfetch-1.0
+DISTNAME=	newsfetch-1.11
 CATEGORIES=	news
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/news/readers
