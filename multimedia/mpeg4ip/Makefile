@@ -22,7 +22,7 @@ LIB_DEPENDS=	faac.0:${PORTSDIR}/audio/faac \
 		id3tag.2:${PORTSDIR}/audio/libid3tag \
 		a52.0:${PORTSDIR}/audio/liba52 \
 		mpeg2.0:${PORTSDIR}/multimedia/libmpeg2	\
-		avcodec.0:${PORTSDIR}/multimedia/ffmpeg
+		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 
 USE_GNOME=	\
 		gtk20 \

@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ahze@FreeBSD.org
 COMMENT=	A library for reading and writing quicktime files
 
-LIB_DEPENDS=	avcodec.0:${PORTSDIR}/multimedia/ffmpeg \
+LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		mp3lame.0:${PORTSDIR}/audio/lame \
 		vorbis.3:${PORTSDIR}/audio/libvorbis \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \

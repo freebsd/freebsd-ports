@@ -126,7 +126,7 @@ CFLAGS+=	-ffast-math -fomit-frame-pointer
 .endif
 
 .if defined(WITH_FFMPEG)
-LIB_DEPENDS+=	avcodec.0:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=	--with-ffmpeg
 .else
 CONFIGURE_ARGS+=	--without-ffmpeg
