@@ -1,5 +1,5 @@
 #
-# $Id: access,v 1.106 1999/08/23 00:36:54 billf Exp $
+# $Id: access,v 1.107 1999/08/25 07:18:31 asami Exp $
 #
 # Please try to keep the handbook (contrib/chapter.sgml authors.ent) in
 # in sync with this.
@@ -68,6 +68,7 @@ steve
 fsmp
 imp
 msmith
+obrien
 mckay
 kato
 davidn
