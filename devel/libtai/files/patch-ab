@@ -1,0 +1,4 @@
+--- conf-ccso.orig	Wed Dec 31 21:00:00 1969
++++ conf-ccso	Fri Jun 16 19:17:52 2000
+@@ -0,0 +1 @@
++-fPIC -DPIC

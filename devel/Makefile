@@ -117,6 +117,7 @@
     SUBDIR += libshhopt
     SUBDIR += libsigc++
     SUBDIR += libslang
+    SUBDIR += libtai
     SUBDIR += libtool
     SUBDIR += libunicode
     SUBDIR += libxalloc
