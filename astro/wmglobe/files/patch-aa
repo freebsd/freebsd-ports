@@ -1,28 +1,31 @@
 --- Makefile.orig	Wed Feb  3 05:11:37 1999
-+++ Makefile	Mon Feb 21 20:49:54 2000
++++ Makefile	Tue Feb 22 22:22:20 2000
 @@ -1,12 +1,11 @@
 -INC	=	-I/usr/X11R6/include
 -LIBS	=	-lXext -lX11 -lm -L/usr/X11R6/lib \
 -		-ltiff  -lXpm -lpng -lz -ljpeg -lungif -lwraster
 +INC	=	`get-wraster-flags --cflags`
-+LIBS	=	`get-wraster-flags --libs` `get-wraster-flags --ldflags`
++LIBS	=	`get-wraster-flags --ldflags` `get-wraster-flags --libs`
  OBJS	=	src/wmglobe.o src/rend.o src/wmgutil.o \
  		src/sunpos.o src/myconvert.o src/mycontext.o 
  
  
  .c.o :
 -	gcc -c -O2 -Wall $(INC) $< -o $*.o
-+	${CC} -c ${CFLAGS} -Wall $(INC) $< -o $*.o
++	${CC} -c ${CFLAGS} $(INC) $< -o $@
  
  all:  wmglobe
  
-@@ -14,8 +13,7 @@
+@@ -14,9 +13,8 @@
  	rm -f src/*.o wmglobe
  	
  wmglobe :	$(OBJS)
 -		gcc -O2 -Wall $(OBJS) -o wmglobe $(LIBS)
 -		strip wmglobe 
-+		${CC} ${CFLAGS} -Wall $(OBJS) -o wmglobe $(LIBS)
++		${CC} ${CFLAGS} $(OBJS) -o wmglobe $(LIBS)
  
  install :	
- 		install wmglobe /usr/local/bin
+-		install wmglobe /usr/local/bin
+-		install wmglobe.1 /usr/local/man/man1
++		${BSD_INSTALL_PROGRAM} wmglobe ${PREFIX}/bin
++		${BSD_INSTALL_MAN} wmglobe.1 ${PREFIX}/man/man1
