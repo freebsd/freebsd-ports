@@ -35,6 +35,9 @@ fi
 rm -rf $(cat ${here}/bindist/delete)
 mkdir -p $(cat ${here}/bindist/dirlist)
 (cd ${here}/bindist/files; find -dx . | cpio -dump ${tmpdir})
+mtree -deU -f ${here}/src/etc/mtree/BSD.root.dist -p ${tmpdir}/
+mtree -deU -f ${here}/src/etc/mtree/BSD.var.dist -p ${tmpdir}/var
+mtree -deU -f ${here}/src/etc/mtree/BSD.usr.dist -p ${tmpdir}/usr
 #echo "HAVE_MOTIF=t" >> etc/make.conf
 #echo "MOTIF_STATIC=t" >> etc/make.conf
 #echo "LOADER_TFTP_SUPPORT=YES" >> etc/make.conf
@@ -50,7 +53,11 @@ chroot ${tmpdir} /sbin/ldconfig -aout /usr/lib/aout
 #sed -e "s/%%KERNEL%%/${kernel}/g" ${here}/dokernel > ${tmpdir}/dokernel
 mount localhost:${here}/src ${tmpdir}/usr/src
 sleep 5
-chroot ${tmpdir} sh -c "cd /usr/src/sys/i386/conf && config ${kernel} && cd /sys/compile/${kernel} && make depend && make all install"
+if [ -d ${here}/src/sys/i386/compile ]; then
+  chroot ${tmpdir} sh -c "cd /usr/src/sys/i386/conf && config ${kernel} && cd /sys/i386/compile/${kernel} && make depend -DNO_MODULES && make all install -DNO_MODULES"
+else
+  chroot ${tmpdir} sh -c "cd /usr/src/sys/i386/conf && config ${kernel} && cd /sys/compile/${kernel} && make depend -DNO_MODULES && make all install -DNO_MODULES"
+fi
 #chroot ${tmpdir} sh -c "cd /usr/src/sys/boot && make obj && make depend && make all install"
 umount -f ${tmpdir}/usr/src
 rm -rf ${tmpdir}/kernel.old ${tmpdir}/modules.old ${tmpdir}/boot/kernel.old
