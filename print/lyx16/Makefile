@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	1.1.4.2
+PORTVERSION=	1.1.4.3
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 		ftp://ftp.sdsc.edu/pub/other/lyx/stable/ \
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/ \
 DISTNAME=	lyx-1.1.4
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	patch-1.1.4fix1.gz patch-1.1.4fix2.gz
+PATCHFILES=	patch-1.1.4fix1.gz patch-1.1.4fix2.gz patch-1.1.4fix3.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	dirk@FreeBSD.org
@@ -25,14 +25,14 @@ RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell
 .endif
 LIB_DEPENDS=	xforms.0:${PORTSDIR}/x11-toolkits/xforms \
-		Xpm.4:${PORTSDIR}/graphics/xpm
+		Xpm.4:${PORTSDIR}/graphics/xpm \
+		intl.1:${PORTSDIR}/devel/gettext
 
 USE_NEWGCC=	yes
 USE_PERL5=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ARGS=	--with-extra-lib=${X11BASE}/lib \
-		--with-extra-inc="${X11BASE}/include ${X11BASE}/include/X11 ${LOCALBASE}/include" \
-		--with-included-gettext
+CONFIGURE_ARGS=	--with-extra-lib="${X11BASE}/lib ${LOCALBASE}/lib" \
+		--with-extra-inc="${X11BASE}/include ${LOCALBASE}/include"
 MAN1=		lyx.1 reLyX.1
 
 .if !defined(WITH_ISPELL)
