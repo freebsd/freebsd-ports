@@ -1,0 +1,55 @@
+--- configure.orig	Tue Nov 25 22:14:55 2003
++++ configure	Tue Nov 25 22:15:20 2003
+@@ -4147,11 +4147,11 @@
+ 
+ 
+ EVO_VER=`evolution --version | sed -e 's/.nome .volution //g'`
+-EVO_MAJVER=${EVO_VER:0:1}
+-EVO_MINVER=${EVO_VER:2:1}
++EVO_MAJVER=`echo ${EVO_VER} | awk -F . '{print $1}'`
++EVO_MINVER=`echo ${EVO_VER} | awk -F . '{print $2}'`
+ 
+ pkg_modules="gtk+-2.0 glib  libbonobo-2.0"
+-if (( EVO_MAJVER > 1 || ( EVO_MAJVER==1 && EVO_MINVER >= 4))); then
++if (( [ ${EVO_MAJVER} -gt 1 ] || ( [ ${EVO_MAJVER} = 1 ] && [ ${EVO_MINVER} -ge 4 ]))); then
+   pkg_modules="${pkgmodules} evolution-addressbook evolution-calendar libgnomeui-2.0"
+ else
+   { { echo "$as_me:$LINENO: error: This version of the Evolution plugin (and MultiSync) does only work with Evolution >= 1.4." >&5
+@@ -8917,7 +8917,7 @@
+   withval="$with_evo_libs"
+   EVO_LIB_PATH="$withval"
+ else
+-  EVO_LIB_PATH="/usr/lib"
++  EVO_LIB_PATH="/usr/X11R6/lib/evolution"
+ fi;
+ # Extract the first word of "evolution", so it can be a program name with args.
+ set dummy evolution; ac_word=$2
+@@ -8962,10 +8962,10 @@
+ fi
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define EVOLUTION_VERSION "${EVO_VER:0:5}"
++#define EVOLUTION_VERSION "${EVO_VER}"
+ _ACEOF
+ 
+-echo Detected evolution ${EVO_VER:0:5}.
++echo Detected evolution ${EVO_VER}.
+ EVO_LIBS=
+ EVO_DFLAGS=
+ rm -rf liblinks &> /dev/null
+@@ -8973,13 +8973,13 @@
+ for evolib in ebook camel cal-client cal-util eame eutil ical-evolution\
+ 	wombat ename; do
+ EVOLIB=`find ${EVO_LIB_PATH} -name "lib${evolib}.so" 2>/dev/null | sed -e 'q'`
+-if test "x${EVOLIB:0:1}" != "x/"; then
++if test "x`echo ${EVOLIB} | cut -c 1,1`" != "x/"; then
+   EVOLIB=`find ${EVO_LIB_PATH} -name "lib${evolib}.so*" 2>/dev/null | sed -e 'q'`
+   EVO_CREATE_SO="yes"
+ else
+   EVO_CREATE_SO="no"
+ fi
+-if test "x${EVOLIB:0:1}" = "x/"; then
++if test "x`echo ${EVOLIB} | cut -c 1,1`" = "x/"; then
+   echo Found ${evolib}.
+   EVOLIBDIR=`dirname ${EVOLIB}`
+   if test ${EVOLIBDIR} != "/usr/lib"; then
