@@ -16,7 +16,7 @@ DISTNAME=	oo_627_src
 
 MAINTAINER=	obrien@FreeBSD.org
 
-#BROKEN=		'work in progress -- does not work yet'
+BROKEN=		'work in progress -- does not work yet'
 
 BZIP2=		yes
 CONFIGURE_WRKSRC=	${WRKSRC}/config_office
