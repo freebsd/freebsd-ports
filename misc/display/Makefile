@@ -7,6 +7,7 @@
 
 PORTNAME=	display
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	http://www.ipsmart.com/src/
 EXTRACT_SUFX=	.tgz
