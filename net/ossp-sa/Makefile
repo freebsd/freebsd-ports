@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	sa
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ossp.org/pkg/lib/sa/
 PKGNAMEPREFIX=	ossp-
