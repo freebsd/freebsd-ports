@@ -1,48 +1,157 @@
-*** makefile.orig	Wed Feb 15 18:46:18 1995
---- makefile	Wed Feb 15 18:46:51 1995
+*** makefile.0	Mon Apr 10 03:14:48 1995
+--- makefile	Mon Apr 10 23:12:23 1995
 ***************
-*** 101,108 ****
+*** 29,44 ****
   
+  LBINDIR=/usr/local/bin
   
-  command:
-! 	rm -f xbin/gcl ; echo "#!/bin/sh" > xbin/gcl; \
-! 	echo "${GCLDIR}/unixport/saved_gcl -dir ${GCLDIR}/unixport/ \$$@ " \
-  	>> xbin/gcl
-  	chmod 755 xbin/gcl
+! OFLAG	=  -O 
+! LIBS	= -lm 
+! ODIR_DEBUG= -O4 
   
---- 101,108 ----
+  # This CC string will be used for compilation of the system,
+  # and also in the compiler::*cc* variable for later compilation of
+  # lisp files.
+  # (the -pipe is just since our file system is slow..)
+! CC = gcc -pipe -fwritable-strings  -DVOL=volatile -I$(GCLDIR)/o 
+! LDCC=${CC} -static 
   
+  # Enable the fastloading mechanism which does not use ld -A
+  # requires c/rel_.. machine dependent code.
+--- 29,44 ----
   
-  command:
-! 	rm -f xbin/gcl ; echo "#!/bin/csh" > xbin/gcl; \
-! 	echo "${GCLDIR}/unixport/saved_gcl -dir ${GCLDIR}/unixport/ \$$* " \
-  	>> xbin/gcl
-  	chmod 755 xbin/gcl
+  LBINDIR=/usr/local/bin
+  
+! OFLAG	=  -O
+! LIBS	= -lm
+! ODIR_DEBUG= -O4
+  
+  # This CC string will be used for compilation of the system,
+  # and also in the compiler::*cc* variable for later compilation of
+  # lisp files.
+  # (the -pipe is just since our file system is slow..)
+! CC = gcc -pipe -fwritable-strings  -DVOL=volatile -I$(GCLDIR)/o
+! LDCC=${CC} -static
+  
+  # Enable the fastloading mechanism which does not use ld -A
+  # requires c/rel_.. machine dependent code.
+***************
+*** 46,52 ****
+  RSYM	= rsym
+  SFASL	= $(ODIR)/sfasl.o
+  
+! #  Use the mp.s file on 68k machine 
+  
+  # new gcc doesn't make a good .s file using optimisations.
+  # so either use $(MPDIR)/mpi.o   $(MPDIR)/libmport.a
+--- 46,52 ----
+  RSYM	= rsym
+  SFASL	= $(ODIR)/sfasl.o
+  
+! #  Use the mp.s file on 68k machine
+  
+  # new gcc doesn't make a good .s file using optimisations.
+  # so either use $(MPDIR)/mpi.o   $(MPDIR)/libmport.a
+***************
+*** 66,72 ****
+  # the  make to use for saved_kcp the profiler.
+  KCP=kcp-bsd
+  
+! # dont add the .data 
+  CAT=true
+  # end makedefs
+  
+--- 66,72 ----
+  # the  make to use for saved_kcp the profiler.
+  KCP=kcp-bsd
+  
+! # dont add the .data
+  CAT=true
+  # end makedefs
   
 ***************
-*** 118,129 ****
-  	-if [ -d ${PREFIX_DIR}/lib ] ;then true; else mkdir ${PREFIX_DIR}/lib ; fi
-  	-if [ -d ${PREFIX_DIR}/bin ] ;then true; else mkdir ${PREFIX_DIR}/bin ; fi
-  	-if [ -d ${INSTALL_LIB_DIR} ] ; then true; else mkdir ${INSTALL_LIB_DIR} ;fi 
-! 	(echo      "#!/bin/sh" > ${PREFIX_DIR}/bin/gcl; \
-  	echo ${INSTALL_LIB_DIR}/unixport/saved_gcl -dir ${INSTALL_LIB_DIR}/unixport/ -libdir ${INSTALL_LIB_DIR}/ >> \
-  	${PREFIX_DIR}/bin/gcl)
+*** 132,138 ****
+  	echo '#' other options: -load "/tmp/foo.o" -load "jo.lsp" -eval '"(joe 3)"' >> ${PREFIX_DIR}/bin/gcl
   	chmod a+x ${PREFIX_DIR}/bin/gcl
-! 	tar cvf - unixport/saved_gcl doc/DOC doc/*.el ${LISP_LIB} | \
-! 	  (cd ${INSTALL_LIB_DIR} ;tar xvf -)
-  	-(cd doc ; make install)
   
-  
---- 118,129 ----
-  	-if [ -d ${PREFIX_DIR}/lib ] ;then true; else mkdir ${PREFIX_DIR}/lib ; fi
-  	-if [ -d ${PREFIX_DIR}/bin ] ;then true; else mkdir ${PREFIX_DIR}/bin ; fi
-  	-if [ -d ${INSTALL_LIB_DIR} ] ; then true; else mkdir ${INSTALL_LIB_DIR} ;fi 
-! 	(echo      "#!/bin/csh" > ${PREFIX_DIR}/bin/gcl; \
-  	echo ${INSTALL_LIB_DIR}/unixport/saved_gcl -dir ${INSTALL_LIB_DIR}/unixport/ -libdir ${INSTALL_LIB_DIR}/ >> \
-  	${PREFIX_DIR}/bin/gcl)
+! install: 
+  	make install1 "INSTALL_LIB_DIR=${PREFIX_DIR}/lib/gcl-`cat majvers`.`cat minvers`" "PREFIX_DIR=${PREFIX_DIR}"
+  INSTALL_LIB_DIR=
+  install1:
+--- 132,138 ----
+  	echo '#' other options: -load "/tmp/foo.o" -load "jo.lsp" -eval '"(joe 3)"' >> ${PREFIX_DIR}/bin/gcl
   	chmod a+x ${PREFIX_DIR}/bin/gcl
-! 	tar cvf - unixport/saved_gcl doc/DOC doc/*.el ${LISP_LIB} \
-! 	  h/cmpinclude.h | (cd ${INSTALL_LIB_DIR} ;tar xvf -)
-  	-(cd doc ; make install)
+  
+! install:
+  	make install1 "INSTALL_LIB_DIR=${PREFIX_DIR}/lib/gcl-`cat majvers`.`cat minvers`" "PREFIX_DIR=${PREFIX_DIR}"
+  INSTALL_LIB_DIR=
+  install1:
+***************
+*** 142,148 ****
+  	make install-command "INSTALL_LIB_DIR=${INSTALL_LIB_DIR}" "PREFIX_DIR=${PREFIX_DIR}"
+  	rm -f ${PREFIX_DIR}/bin/gcl.exe
+  	tar cvf - unixport/saved_gcl info/*info* doc/*.el ${LISP_LIB} \
+!     	gcl-tk/gcl.tcl gcl-tk/gcltkaux  |  (cd ${INSTALL_LIB_DIR} ;tar xvf -)
+  	ln ${SYMB} ${INSTALL_LIB_DIR}/unixport/saved_gcl \
+  	 ${PREFIX_DIR}/bin/gcl.exe
+  	cat gcl-tk/gcltksrv | \
+--- 142,149 ----
+  	make install-command "INSTALL_LIB_DIR=${INSTALL_LIB_DIR}" "PREFIX_DIR=${PREFIX_DIR}"
+  	rm -f ${PREFIX_DIR}/bin/gcl.exe
+  	tar cvf - unixport/saved_gcl info/*info* doc/*.el ${LISP_LIB} \
+! 		h/cmpinclude.h gcl-tk/gcl.tcl gcl-tk/gcltkaux  | \
+! 		(cd ${INSTALL_LIB_DIR} ;tar xvf -)
+  	ln ${SYMB} ${INSTALL_LIB_DIR}/unixport/saved_gcl \
+  	 ${PREFIX_DIR}/bin/gcl.exe
+  	cat gcl-tk/gcltksrv | \
+***************
+*** 161,167 ****
+  foo:
+  		cat gcl-tk/gcltksrv | \
+  	sed -e "s:#put correct dir:DIR=${INSTALL_LIB_DIR}/gcl-tk:g"  \
+! 	-e "s:TK_LIBRARY=.*:TK_LIBRARY=${TK_LIBRARY}:g" 
+  install-elisp-files:
+  	(cd doc ; make install)
+  
+--- 162,168 ----
+  foo:
+  		cat gcl-tk/gcltksrv | \
+  	sed -e "s:#put correct dir:DIR=${INSTALL_LIB_DIR}/gcl-tk:g"  \
+! 	-e "s:TK_LIBRARY=.*:TK_LIBRARY=${TK_LIBRARY}:g"
+  install-elisp-files:
+  	(cd doc ; make install)
+  
+***************
+*** 173,179 ****
+  	(cd $(CMPDIR); make clean)
+  	(cd $(PORTDIR); make clean)
+  	(cd gcl-tk ; make clean)
+! 	
   
   
+  CMPINCLUDE_FILES=${HDIR}cmpincl1.h ${HDIR}compbas.h ${HDIR}enum.h ${HDIR}object.h ${HDIR}vs.h \
+--- 174,180 ----
+  	(cd $(CMPDIR); make clean)
+  	(cd $(PORTDIR); make clean)
+  	(cd gcl-tk ; make clean)
+! 
+  
+  
+  CMPINCLUDE_FILES=${HDIR}cmpincl1.h ${HDIR}compbas.h ${HDIR}enum.h ${HDIR}object.h ${HDIR}vs.h \
+***************
+*** 181,187 ****
+  	${HDIR}lex.h ${HDIR}eval.h    ${HDIR}funlink.h \
+  	${HDIR}att_ext.h ${HDIR}compbas2.h ${HDIR}/compat.h ${HDIR}/cmponly.h
+  
+! OTHERS=${HDIR}notcomp.h ${HDIR}rgbc.h ${HDIR}stacks.h 
+  
+  ${HDIR}cmpinclude.h: ${CMPINCLUDE_FILES} ${HDIR}config.h
+  	cat ${HDIR}config.h | sed -e "1,/Begin for cmpincl/d" \
+--- 182,188 ----
+  	${HDIR}lex.h ${HDIR}eval.h    ${HDIR}funlink.h \
+  	${HDIR}att_ext.h ${HDIR}compbas2.h ${HDIR}/compat.h ${HDIR}/cmponly.h
+  
+! OTHERS=${HDIR}notcomp.h ${HDIR}rgbc.h ${HDIR}stacks.h
+  
+  ${HDIR}cmpinclude.h: ${CMPINCLUDE_FILES} ${HDIR}config.h
+  	cat ${HDIR}config.h | sed -e "1,/Begin for cmpincl/d" \
