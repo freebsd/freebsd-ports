@@ -7,6 +7,7 @@
 
 PORTNAME=	gcompris2
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gcompris
@@ -15,7 +16,8 @@ DISTNAME=	gcompris-${PORTVERSION}
 MAINTAINER=	martin.klaffenboeck@gmx.at
 COMMENT=	A simple Gnome2-based education game for children starting at 3
 
-LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis
+LIB_DEPENDS=	vorbis.2:${PORTSDIR}/audio/libvorbis \
+		ao.3:${PORTSDIR}/audio/libao
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
