@@ -43,7 +43,9 @@
 GNUstep_Include_MAINTAINER=	dinoex@FreeBSD.org
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcallback.a:${PORTSDIR}/devel/ffcall
+.if !defined(GNUSTEP_WITH_BASE_GCC)
 LIB_DEPENDS+=	objc:${PORTSDIR}/${GNUSTEP_OBJC_PORT}
+.endif
 
 GNUSTEP_MAKE_PORT?=	devel/gnustep-make
 GNUSTEP_OBJC_PORT?=	lang/gnustep-objc
@@ -79,8 +81,10 @@ PLIST_SUB+=	GNUSTEP_STABLE="@comment "
 PLIST_SUB+=	GNUSTEP_DEVEL="@comment "
 PLIST_SUB+=	GNUSTEP_STABLE=""
 .endif
+.if !defined(GNUSTEP_WITH_BASE_GCC)
 CC=		gcc32
 CXX=		g++32
+.endif
 
 # ---------------------------------------------------------------------------
 # using base
