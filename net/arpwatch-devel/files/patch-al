@@ -1,0 +1,26 @@
+--- ../arpwatch.orig/file.c	Fri Oct 13 18:29:43 2000
++++ ./file.c	Fri Sep 12 17:01:42 2003
+@@ -20,7 +20,7 @@
+  */
+ #ifndef lint
+ static const char rcsid[] =
+-    "@(#) $Id: file.c,v 1.25 2000/10/13 22:29:42 leres Exp $ (LBL)";
++    "@(#) $Id: file.c,v 1.2 2003/09/12 21:01:42 mdg Exp $ (LBL)";
+ #endif
+
+ /*
+@@ -130,7 +130,13 @@
+ 			}
+ 		}
+
+-		if (!(*fn)(a, e, t, h))
++		/* NULL for the interface here is ok because we don't do
++		 * anything in ent_add() for einfo when initializing,
++		 * and the only time this code section is reached is
++		 * during initialization (via readdata()).  snmp_add()
++		 * is irrelevant, as no ether tracking has been added to it.
++		 */
++		if (!(*fn)(a, e, t, h, NULL))
+ 			return(0);
+ 	}
+

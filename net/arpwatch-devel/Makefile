@@ -1,19 +1,19 @@
-# New ports collection makefile for:    arpwatch
-# Date created:         March 24 1997
-# Whom:                 Brian Somers <brian@FreeBSD.org>
+# New ports collection makefile for:    arpwatch-devel
+# Date created:         11 November 2003
+# Whom:                 Matthew George <mdg@secureworks.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	arpwatch
 PORTVERSION=	2.1.a11
-PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.Awfulhak.org/arpwatch/ \
 		ftp://ftp.ee.lbl.gov/
+PKGNAMESUFFIX=	-devel
 DISTNAME=	arpwatch-2.1a11
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	mdg@secureworks.net
 COMMENT=	Monitor arp & rarp requests
 
 GNU_CONFIGURE=	yes
@@ -30,13 +30,12 @@ post-install:
 	fi
 	${TOUCH} ${PREFIX}/arpwatch/arp.dat
 	${CHMOD} 644 ${PREFIX}/arpwatch/arp.dat
+	${TOUCH} ${PREFIX}/arpwatch/ether.dat
+	${CHMOD} 644 ${PREFIX}/arpwatch/ether.dat
 	for file in ethercodes.dat d.awk e.awk p.awk; do		\
-		${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/arpwatch;	\
+		${INSTALL_DATA} ${WRKSRC}/$$file ${PREFIX}/arpwatch/.;	\
 	done
-	${INSTALL_SCRIPT} ${WRKSRC}/arp2ethers ${PREFIX}/arpwatch
+	${INSTALL_SCRIPT} ${WRKSRC}/arp2ethers ${PREFIX}/arpwatch/.
 	${INSTALL_SCRIPT} ${FILESDIR}/arpwatch.sh ${PREFIX}/etc/rc.d/arpwatch.sh.sample
-	@${ECHO_MSG} "#####################################################################"
-	@${ECHO_MSG} "Installing ${PREFIX}/etc/rc.d/arpwatch.sh.sample file."
-	@${ECHO_MSG} "#####################################################################"
 
 .include <bsd.port.mk>
