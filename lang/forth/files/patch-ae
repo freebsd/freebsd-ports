@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Fri Apr 28 02:54:55 2000
++++ Makefile.in	Sat Apr 29 05:48:14 2000
+@@ -61,7 +61,7 @@
+ MV = @MV@
+ NM = @NM@
+ OBJDUMP = @OBJDUMP@
+-OPTIM = @OPTIM@
++OPTIM = @CFLAGS@
+ RANLIB = @RANLIB@
+ RM = @RM@
+ TERMLIB = @TERMLIB@
