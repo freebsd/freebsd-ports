@@ -8,4 +8,4 @@
 +APACHE = /usr/local
  APXS   = $(APACHE)/sbin/apxs
  HTTPD  = $(APACHE)/sbin/httpd
- 
+

@@ -47,6 +47,9 @@ INSTALLATION WALKTHROUGH:
 
 2)	Make sure, that your PostgreSQL Installation
 	listens on TCP Port 5432!
+	You might want to read /usr/local/pgsql/post-install-notes
+	before proceeding here. If absolutely nothing happens - you most likely
+	forgot to initdb postgres itself :) (applies to clean, clear and naked installs only)
 
 	Typing (as root)
 
@@ -86,7 +89,14 @@ INSTALLATION WALKTHROUGH:
 
 	Voila!
 
-3)	Add an include statement into your current apache configuration,
+3)	If your apache2 doesn't want to start at all - after a successfully
+	installation - make sure that you have:
+
+	apache2_enable="YES"
+	
+	set in your /etc/rc.conf
+
+	Add an include statement into your current apache configuration,
 	typically located in:
 
 		'/usr/local/etc/apache/httpd.conf'
