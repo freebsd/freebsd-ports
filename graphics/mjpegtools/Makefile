@@ -21,12 +21,13 @@ LIB_DEPENDS=	aviplay-0.7.0:${PORTSDIR}/graphics/avifile \
 USE_GNOMENG=	yes
 USE_GNOME=	glib12
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=  CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}" \
-		PTHREAD_LIBS="${PTHREAD_LIBS}"
+		LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS:S/"//g}" \
+		PTHREAD_LIBS="${PTHREAD_LIBS:S/"//g}"
 WANT_GNOME=	yes
 
 MAN1=   divxdec.1 jpeg2yuv.1 lav2divx.1 lav2mpeg.1 lav2wav.1 lav2yuv.1 \
@@ -133,17 +134,24 @@ post-patch:
 	@${REINPLACE_CMD} -E -e 's@(-l(jpeg|openquicktime|png))@-L${LOCALBASE}/lib \1@; \
 		s|(-I) (\$$with_quicktime)|\1\2/include/openquicktime|; \
 		s|(with_quicktime/)(openquicktime)(.h)|\1include/\2/\2\3|; \
-		s|-ldl||; \
+		s,-ldl([[:space:]]|"),\1,; \
 		s|(-ldv)|-L${LOCALBASE}/lib \1 ${PTHREAD_LIBS:S/"//g}|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|SDL/|SDL11/|' \
 		${WRKSRC}/lavtools/liblavplay.c \
 		${WRKSRC}/lavtools/yuvplay.c
 .ifdef(WITH_QUICKTIME)
-	@${REINPLACE_CMD} -E -e 's|^(have_openquicktime=).+|\1true|' \
+	@${REINPLACE_CMD} -E -e 's|^(have_openquicktime=).+$$|\1true|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|HAVE_OPENQUICKTIME|__FreeBSD__|' \
 		${WRKSRC}/lavtools/lav_io.h
+.endif
+# a bug that is happening with configure. It's not detecting that
+# FreeBSD has pthreads. It might happen in other OSes but I'm not
+# risking such a general patch
+.if ${OPSYS:L} == "freebsd"
+	@${REINPLACE_CMD} -E -e 's|^(have_pthread=).+$$|\1true|' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 
 pre-build:
