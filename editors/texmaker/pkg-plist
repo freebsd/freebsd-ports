@@ -1,0 +1,4 @@
+bin/texmaker
+%%PORTDOCS%%%%DOCSDIR%%/latexhelp.html
+%%PORTDOCS%%%%DOCSDIR%%/usermanual.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

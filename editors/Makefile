@@ -170,6 +170,7 @@
     SUBDIR += ted
     SUBDIR += tetradraw
     SUBDIR += texmacs
+    SUBDIR += texmaker
     SUBDIR += textedit
     SUBDIR += the
     SUBDIR += thoteditor
