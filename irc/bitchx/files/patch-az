@@ -1,0 +1,82 @@
+--- configure.orig	Sun Jan  7 23:24:22 2001
++++ configure	Wed Apr 11 15:18:39 2001
+@@ -701,6 +701,7 @@
+   --with-ssl              Enable SSL support
+   --with-tgetent          Use tgetent (termcap) instead of setupterm (ncurses)
+   --with-tcl              Enable Tcl support
++  --with-tcl-includes=PFX Prefix where tcl.h is installed (optional)
+   --with-maildir=PATH     Enable QMAIL support
+   --with-default-server=SERVERNAME:PORT:PASSWORD:NICK:SERVERNETWORK
+                           Connect to SERVERNAME by default
+@@ -9244,6 +9245,18 @@
+ #define WANT_TCL 1
+ EOF
+ 
++# Check whether --with-tcl-includes was given.
++if test "${with_tcl_includes+set}" = set; then
++  withval="$with_tcl_includes"
++  TCL_INCLUDE=-I$withval
++else
++  TCL_INCLUDE=-I/usr/local/include
++fi;
++
++cat >>confdefs.h <<\EOF
++#define WANT_TCL 1
++EOF
++
+ echo "$as_me:9247: checking for dlopen in -ldl" >&5
+ echo $ECHO_N "checking for dlopen in -ldl... $ECHO_C" >&6
+ if test "${ac_cv_lib_dl_dlopen+set}" = set; then
+@@ -9524,13 +9537,13 @@
+   TCL_LIBS="-ltcl"
+ else
+ 
+-echo "$as_me:9527: checking for Tcl_SetVar in -ltcl80" >&5
+-echo $ECHO_N "checking for Tcl_SetVar in -ltcl80... $ECHO_C" >&6
+-if test "${ac_cv_lib_tcl80_Tcl_SetVar+set}" = set; then
++echo "$as_me:9527: checking for Tcl_SetVar in -ltcl83" >&5
++echo $ECHO_N "checking for Tcl_SetVar in -ltcl83... $ECHO_C" >&6
++if test "${ac_cv_lib_tcl83_Tcl_SetVar+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ltcl80  $LIBS"
++LIBS="-ltcl83  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ #line 9535 "configure"
+ #include "confdefs.h"
+@@ -9552,19 +9565,19 @@
+ _ACEOF
+ rm -f conftest.$ac_objext conftest$ac_exeext
+ if { (eval echo $as_me:9554: \"$ac_link\") >&5; (eval $ac_link) 2>&5; } && test -s conftest$ac_exeext; then
+-  ac_cv_lib_tcl80_Tcl_SetVar=yes
++  ac_cv_lib_tcl83_Tcl_SetVar=yes
+ else
+   echo "$as_me: failed program was:" >&5
+   cat conftest.$ac_ext >&5
+-  ac_cv_lib_tcl80_Tcl_SetVar=no
++  ac_cv_lib_tcl83_Tcl_SetVar=no
+ fi
+ rm -f conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-echo "$as_me:9564: result: $ac_cv_lib_tcl80_Tcl_SetVar" >&5
+-echo "${ECHO_T}$ac_cv_lib_tcl80_Tcl_SetVar" >&6
+-if test $ac_cv_lib_tcl80_Tcl_SetVar = yes; then
+-  TCL_LIBS="-ltcl80"
++echo "$as_me:9564: result: $ac_cv_lib_tcl83_Tcl_SetVar" >&5
++echo "${ECHO_T}$ac_cv_lib_tcl83_Tcl_SetVar" >&6
++if test $ac_cv_lib_tcl83_Tcl_SetVar = yes; then
++  TCL_LIBS="-ltcl83"
+ else
+ 
+ echo "$as_me:9570: checking for Tcl_SetVar in -ltcl76" >&5
+@@ -12023,7 +12036,7 @@
+   HINT_FILE="BitchX.hints"
+ fi
+ 
+-INCLUDES="-I. -I\$(topdir)/include -I\$(top_srcdir)/include -I\$(srcdir) -I\$(srcdir)/include"
++INCLUDES="-I. -I\$(topdir)/include -I\$(top_srcdir)/include -I\$(srcdir) -I\$(srcdir)/include $TCL_INCLUDE"
+ 
+ cat >>confdefs.h <<EOF
+ #define DEFAULT_CTOOLZ_DIR "$DEFAULT_CTOOLZ_DIR"
