@@ -16,19 +16,18 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	HTTP date conversion routines
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
 		${SITE_PERL}/HTTP/Date.pm:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		DateTime::Format::HTTP.3
 
-.include "../../devel/p5-Module-Build/inc.build.mk"
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} <= 500600
-BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
+RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
 .endif
 .if ${PERL_LEVEL} < 500600
 post-patch:

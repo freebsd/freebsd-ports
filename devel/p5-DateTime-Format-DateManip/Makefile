@@ -19,11 +19,10 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
 		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		DateTime::Format::DateManip.3
 
-.include "../../devel/p5-Module-Build/inc.build.mk"
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600

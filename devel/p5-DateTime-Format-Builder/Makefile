@@ -16,12 +16,12 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 MAINTAINER=	mat@FreeBSD.org
 COMMENT=	Create DateTime parser classes and objects
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Params/Validate.pm:${PORTSDIR}/devel/p5-Params-Validate \
 		${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
 		${SITE_PERL}/DateTime/Format/Strptime.pm:${PORTSDIR}/devel/p5-DateTime-Format-Strptime
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
 
 MAN3=		DateTime::Format::Builder.3 DateTime::Format::Builder::Parser.3 \
 		DateTime::Format::Builder::Parser::Dispatch.3 \
@@ -31,11 +31,9 @@ MAN3=		DateTime::Format::Builder.3 DateTime::Format::Builder::Parser.3 \
 		DateTime::Format::Builder::Parser::generic.3 \
 		DateTime::Format::Builder::Tutorial.3
 
-.include "../../devel/p5-Module-Build/inc.build.mk"
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} <= 500600
-BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
 RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
 .endif
 
