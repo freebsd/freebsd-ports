@@ -9,6 +9,7 @@
 CATEGORIES=	chinese
 
 MASTERDIR=	${.CURDIR}/../../mail/mutt-devel
+PORTREVISION=	4
 
 MAINTAINER=	ycheng@sinica.edu.tw
 
