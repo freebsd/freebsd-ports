@@ -1,0 +1,7 @@
+Kpictorial is a littel logical game for KDE. Goal of the game is to 
+reconstruct a black & white picture by the number of contiguous black 
+blocks given for each row and column. Sounds easy but isn't. You can 
+also use 1bit indexed color palete xmp and xbm files created by the gimp.
+
+Author:	Rolan Lezuo
+WWW:	http://members.chello.at/roland.lezuo/kpictorial.html
