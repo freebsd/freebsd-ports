@@ -88,17 +88,20 @@ PLIST_SUB+=	HAVE_OGG="@comment "
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -i.bak -e \
+	@${REINPLACE_CMD} -e \
 		's|THREAD_LIBS=.*$$|THREAD_LIBS="\$$THREAD_LIBS"|g ; \
 		 s|THREAD_CFLAGS=.*$$|THREAD_CFLAGS="\$$THREAD_CFLAGS"|g ; \
 		 s|-L/usr/local/lib||g ; \
 		 s|-I/usr/local/include||g ; \
 		 s|-lgiconv|-liconv|g ; \
-		 s|-malign-loops|-falign-loops|g ; \
-		 s|-malign-jumps|-falign-jumps|g ; \
-		 s|-malign-functions|-falign-functions|g ; \
 		 s|-funroll-loops||g' ${WRKSRC}/configure.in
-	@${REINPLACE_CMD} -i.bak -e \
+.if ${OSVERSION} >= 500035
+	@${REINPLACE_CMD} -e \
+		 's|-malign-loops|-falign-loops|g ; \
+		  s|-malign-jumps|-falign-jumps|g ; \
+		  s|-malign-functions|-falign-functions|g' ${WRKSRC}/configure.in
+.endif
+	@${REINPLACE_CMD} -e \
 		's|aclocal,|${ACLOCAL},|g ; \
 		 s|autoconf,|${AUTOCONF},|g ; \
 		 s|automake,|${AUTOMAKE},|g ; \
