@@ -1,5 +1,6 @@
 # $FreeBSD$
 #
+    SUBDIR += mpqc
 
     SUBDIR += chemtool
     SUBDIR += clhep
