@@ -11,11 +11,18 @@ CATEGORIES=	net perl5
 MASTER_SITES=	ftp://ftp.switch.ch/software/sources/network/snmp/perl/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	petef@databits.net
 
 PERL_CONFIGURE=	yes
 
-pre-install:
-	${PERL} -pi -e "s:/usr/local:${PREFIX}:g" ${WRKSRC}/Makefile;
+post-configure:
+	@${PERL} -pi -e "s:/usr/local:${PREFIX}:g" ${WRKSRC}/Makefile;
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/p5-SNMP_Session
+	${INSTALL_DATA} ${WRKSRC}/README.SNMP_util \
+		${PREFIX}/share/doc/p5-SNMP_Session
+.endif
 
 .include <bsd.port.mk>
