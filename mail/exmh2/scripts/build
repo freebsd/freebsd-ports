@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $Id: build,v 1.5 1997/08/21 08:09:56 peter Exp $
+# $Id: build,v 1.6 1998/03/20 09:28:16 markm Exp $
 #
 
 VERSION="`sed -ne 's/^set vers \(.*\)/\1/p' ${WRKSRC}/exmh.install`"
@@ -67,7 +67,7 @@ sed <${FILESDIR}/${CONFIGFILE} \
 	-e "s+!!PLAY!!+${PLAY}+g" \
 	-e "s+!!VERSION!!+${VERSION}+g" \
 	-e "s+!!DATE!!+${DATE}+g" \
- | sed -e 's/$/\\/' >> ${SEDFILE}
+ | sed -e 's/$/\\/' -e '$ s/.$//' >> ${SEDFILE}
 
 for i in exmh-async exmh-bg exmh ftp.expect
 do
