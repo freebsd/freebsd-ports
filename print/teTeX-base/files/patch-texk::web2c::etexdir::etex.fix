@@ -1,0 +1,23 @@
+--- texk/web2c/etexdir/etex.fix.orig	Thu Jul 22 12:56:18 2004
++++ texk/web2c/etexdir/etex.fix	Thu Jul 22 12:56:53 2004
+@@ -1,7 +1,19 @@
+ % Bugfixes for etex.ch version 2.1
+ % Public Domain.
+ 
+-@x l.5503
++@x l.1163 - |int_val| is a level, not a value.
++    begin cur_val:=int_val;
++@y
++    begin cur_val_level:=int_val;
++@z
++
++@x l.2737 - typo
++    else q:=sa_ptr(cur_ptr)
++@y
++    else q:=sa_ptr(cur_chr)
++@z
++
++@x l.5503 - comparison with 0 instead of |null|.
+   if cur_ptr<>0 then
+ @y
+   if cur_ptr<>null then
