@@ -84,6 +84,7 @@
     SUBDIR += sapphire
     SUBDIR += sapphire-themes
     SUBDIR += sawfish2
+    SUBDIR += selectwm
     SUBDIR += swm
     SUBDIR += treewm
     SUBDIR += tvtwm

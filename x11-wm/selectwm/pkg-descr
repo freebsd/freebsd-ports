@@ -1,0 +1,13 @@
+This is a small application (using GTK+) which lets you select your window
+manager. It looks for a file named .selectwmrc in the user's directory
+which contains a list of window managers.
+
+When you start X it should show a list which lets you choose your window
+manager (by double clicking on it with the mouse or with the arrow keys
+and the return or space key).
+
+WWW: http://ordiluc.net/selectwm/
+
+-- WXS
+Wesley Shields
+wxs@csh.rit.edu
