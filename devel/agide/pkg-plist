@@ -1,0 +1,74 @@
+bin/agide
+lib/aap/Agide-%%PORTVERSION%%/AGIDE.txt
+lib/aap/Agide-%%PORTVERSION%%/Activities/AapProject.py
+lib/aap/Agide-%%PORTVERSION%%/Activities/AapProject.pyc
+lib/aap/Agide-%%PORTVERSION%%/Activities/DebugProgram.py
+lib/aap/Agide-%%PORTVERSION%%/Activities/DebugProgram.pyc
+lib/aap/Agide-%%PORTVERSION%%/Activities/File.py
+lib/aap/Agide-%%PORTVERSION%%/Activities/File.pyc
+lib/aap/Agide-%%PORTVERSION%%/Activities/PythonShell.py
+lib/aap/Agide-%%PORTVERSION%%/Activities/PythonShell.pyc
+lib/aap/Agide-%%PORTVERSION%%/Activities/README.txt
+lib/aap/Agide-%%PORTVERSION%%/Activity.py
+lib/aap/Agide-%%PORTVERSION%%/Activity.pyc
+lib/aap/Agide-%%PORTVERSION%%/ActyListView.py
+lib/aap/Agide-%%PORTVERSION%%/ActyListView.pyc
+lib/aap/Agide-%%PORTVERSION%%/AgideVersion.py
+lib/aap/Agide-%%PORTVERSION%%/AgideVersion.pyc
+lib/aap/Agide-%%PORTVERSION%%/COPYING
+lib/aap/Agide-%%PORTVERSION%%/Config.py
+lib/aap/Agide-%%PORTVERSION%%/Config.pyc
+lib/aap/Agide-%%PORTVERSION%%/Console.py
+lib/aap/Agide-%%PORTVERSION%%/Console.pyc
+lib/aap/Agide-%%PORTVERSION%%/GUItop.py
+lib/aap/Agide-%%PORTVERSION%%/GUItop.pyc
+lib/aap/Agide-%%PORTVERSION%%/Images/DebugFullSpeed.png
+lib/aap/Agide-%%PORTVERSION%%/Images/Out.png
+lib/aap/Agide-%%PORTVERSION%%/Images/Over.png
+lib/aap/Agide-%%PORTVERSION%%/Images/Run.png
+lib/aap/Agide-%%PORTVERSION%%/Images/Step.png
+lib/aap/Agide-%%PORTVERSION%%/NavTree.py
+lib/aap/Agide-%%PORTVERSION%%/NavTree.pyc
+lib/aap/Agide-%%PORTVERSION%%/Navigator.py
+lib/aap/Agide-%%PORTVERSION%%/Navigator.pyc
+lib/aap/Agide-%%PORTVERSION%%/NodeListView.py
+lib/aap/Agide-%%PORTVERSION%%/NodeListView.pyc
+lib/aap/Agide-%%PORTVERSION%%/Realpath.py
+lib/aap/Agide-%%PORTVERSION%%/Realpath.pyc
+lib/aap/Agide-%%PORTVERSION%%/Tool.py
+lib/aap/Agide-%%PORTVERSION%%/Tool.pyc
+lib/aap/Agide-%%PORTVERSION%%/ToolListView.py
+lib/aap/Agide-%%PORTVERSION%%/ToolListView.pyc
+lib/aap/Agide-%%PORTVERSION%%/Tools/ActionViewerTool.py
+lib/aap/Agide-%%PORTVERSION%%/Tools/ActionViewerTool.pyc
+lib/aap/Agide-%%PORTVERSION%%/Tools/BoaTool.py
+lib/aap/Agide-%%PORTVERSION%%/Tools/BoaTool.pyc
+lib/aap/Agide-%%PORTVERSION%%/Tools/DebugTool.py
+lib/aap/Agide-%%PORTVERSION%%/Tools/DebugTool.pyc
+lib/aap/Agide-%%PORTVERSION%%/Tools/GrepTool.py
+lib/aap/Agide-%%PORTVERSION%%/Tools/GrepTool.pyc
+lib/aap/Agide-%%PORTVERSION%%/Tools/GrepToolUtil/GrepToolDialog.py
+lib/aap/Agide-%%PORTVERSION%%/Tools/GrepToolUtil/GrepToolWindow.py
+lib/aap/Agide-%%PORTVERSION%%/Tools/GrepToolUtil/__init__.py
+lib/aap/Agide-%%PORTVERSION%%/Tools/GvimTool.py
+lib/aap/Agide-%%PORTVERSION%%/Tools/GvimTool.pyc
+lib/aap/Agide-%%PORTVERSION%%/Tools/PythonShellTool.py
+lib/aap/Agide-%%PORTVERSION%%/Tools/PythonShellTool.pyc
+lib/aap/Agide-%%PORTVERSION%%/Tools/README.txt
+lib/aap/Agide-%%PORTVERSION%%/Xterm.py
+lib/aap/Agide-%%PORTVERSION%%/Xterm.pyc
+lib/aap/Agide-%%PORTVERSION%%/agide
+lib/aap/Agide-%%PORTVERSION%%/agide.bat
+lib/aap/Agide-%%PORTVERSION%%/agide.py
+lib/aap/Agide-%%PORTVERSION%%/agide.pyc
+lib/aap/Agide-%%PORTVERSION%%/check.py
+lib/aap/Agide-%%PORTVERSION%%/check.pyc
+lib/aap/Agide-%%PORTVERSION%%/filelist.aap
+lib/aap/Agide-%%PORTVERSION%%/main.aap
+lib/aap/Agide-%%PORTVERSION%%/startup.vim
+@dirrm lib/aap/Agide-%%PORTVERSION%%/Activities
+@dirrm lib/aap/Agide-%%PORTVERSION%%/Images
+@dirrm lib/aap/Agide-%%PORTVERSION%%/Tools/GrepToolUtil
+@dirrm lib/aap/Agide-%%PORTVERSION%%/Tools
+@dirrm lib/aap/Agide-%%PORTVERSION%%
+@unexec rmdir %D/lib/aap 2>/dev/null || true

@@ -1,0 +1,26 @@
+#!/bin/sh
+# $FreeBSD$
+#
+# This script detects if installed vim has our required options.
+# -- Rui Lopes <rui@ruilopes.com>
+
+check() {
+	str=`{ vim --version|grep "$1";} 2>/dev/null`
+	if test "x$str" != x; then 
+		return 0
+	fi
+	return 1
+}
+
+no_gui() {
+	echo
+	echo "The installed Vim does not have GUI support, please install Vim with"
+	echo "GUI support.  You can install it with:"
+	echo
+	echo "# cd /usr/ports/editors/vim && make -DWITH_GTK2 install"
+	echo "NOTE: You should consult the vim port for more options."
+	echo
+	exit 1
+}
+
+check ' with .* GUI\.' || no_gui
