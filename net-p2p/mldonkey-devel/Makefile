@@ -18,7 +18,8 @@ PATCHFILES=	mldonkey-${DOWNLOADVERSION}-${PORTVERSION:C/.+\.//}.patch.gz
 MAINTAINER?=	holger@e-gitt.net
 COMMENT?=	A OCAML client for multiple peer-to-peer networks
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
+BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml \
+		autoconf213:${PORTSDIR}/devel/autoconf213
 
 DOWNLOADVERSION=2.5.22
 
@@ -39,7 +40,6 @@ PKGNAMESUFFIX=	-core
 .else
 PLIST_SUB+=	GUI=""
 BUILD_DEPENDS+=	lablgtk:${PORTSDIR}/x11-toolkits/ocaml-lablgtk \
-		autoconf213:${PORTSDIR}/devel/autoconf213 \
 		${LOCALBASE}/lib/ocaml/jabbr.cma:${PORTSDIR}/net/ocaml-jabbr
 # we don't need lablgtk as RUN dependency, but we need gtk+glib
 USE_GNOME=	gtk12
