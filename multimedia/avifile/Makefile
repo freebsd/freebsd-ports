@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	avifile
-PORTVERSION=	0.7.27.20030122
+PORTVERSION=	0.7.34.20030319
 PORTEPOCH=	2
 CATEGORIES=	multimedia
-MASTER_SITES=	http://avifile.sourceforge.net/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/.(.{8})$/-\1/}
 EXTRACT_SUFX=	.tgz
 
@@ -32,7 +33,7 @@ LIBTOOLFILES=	acinclude.m4
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib" \
 		CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib `${ECHO_CMD} ${PTHREAD_LIBS}`"
+		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS= --with-gnu-ld --enable-iconv \
 		--disable-v4l \
 		--disable-divx4
@@ -40,7 +41,8 @@ CONFIGURE_TARGET=
 
 PLIST_SUB=	LIB_VERSION="${LIB_VERSION}" VERSION="${VERSION}"
 
-MAN1=		aviplay.1
+MAN1=	avibench.1 avicap.1 avicat.1 avifile-config.1 avimake.1 \
+	aviplay.1 avirec.1 avirecompress.1 avitype.1
 
 #CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
 CODEC_PORT=	${.CURDIR}/../win32-codecs
@@ -111,6 +113,8 @@ PLIST_SUB+=	A52="@comment "
 .if !defined(WITHOUT_MAD)
 LIB_DEPENDS+=	mad.1:${PORTSDIR}/audio/mad
 
+CONFIGURE_ARGS+=	--enable-mad \
+			--enable-libmad
 PLIST_SUB+=	MAD=""
 .else
 CONFIGURE_ARGS+=	--disable-mad
@@ -255,6 +259,18 @@ post-patch:
 		s!AUTOCONF =!AUTOCONF = ${TRUE} || !; \
 		s!AUTOHEADER =!AUTOHEADER = ${TRUE} || !; \
 		s!AUTOMAKE =!AUTOMAKE = ${TRUE} || !'
+# fix location of pkgconfig dir
+	@${REINPLACE_CMD} -E \
+		-e 's|^(pkgconfigdir).*|\1=${PREFIX}/libdata/pkgconfig|' \
+		${WRKSRC}/Makefile.in
+# do not install man page for v4l
+	@${REINPLACE_CMD} -E \
+		-e 's|kv4lsetup.1||' ${WRKSRC}/doc/Makefile.in
+# libmad's configure script has problems in this release
+# therefore, we avoid it since we do not need it anyway
+	@${REINPLACE_CMD} -E \
+		-e 's|^subdirs[[:space:]]*=.*libmad.*$$||' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-configure:
 	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}
