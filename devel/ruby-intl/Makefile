@@ -20,6 +20,7 @@ LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
 
 INSTALL_TARGET=	site-install
+CONFIGURE_ARGS=	--with-opt-dir="${LOCALBASE}"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
@@ -30,7 +31,7 @@ RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
 
 do-configure:
 	@cd ${WRKSRC}; \
-	${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb
+	${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb ${CONFIGURE_ARGS}
 
 post-install:
 .if !defined(NOPORTDOCS)
