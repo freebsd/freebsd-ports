@@ -9,7 +9,8 @@ PORTNAME=	dctc
 PORTVERSION=	0.59
 PORTREVISION=	1
 CATEGORIES=	net gnome
-MASTER_SITES=	http://ac2i.tzo.com/dctc/
+MASTER_SITES=	http://unixpages.org/distfiles/ \
+		http://ac2i.tzo.com/dctc/
 PKGNAMESUFFIX=	-gui
 DISTNAME=	dc_gui-${PORTVERSION}
 
