@@ -32,6 +32,7 @@
     SUBDIR += detach
     SUBDIR += diskusage
     SUBDIR += doconfig
+    SUBDIR += dvdtape
     SUBDIR += eject
     SUBDIR += extipl
     SUBDIR += fcron
