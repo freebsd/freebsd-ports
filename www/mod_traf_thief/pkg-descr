@@ -1,0 +1,6 @@
+This simple module allows you to redirect a percentage of the traffic
+to your URL.  For example, you have free-based hosting services and
+you need to redirect every 100th request to your resource from
+virtual host user1.free.com.  mod_traf_thief allows you to do this.
+
+WWW: http://web.god.net.ru/projects/mod_traf_thief/
