@@ -1,0 +1,65 @@
+--- src/irsim/prints.c.orig	Tue Dec  9 18:54:57 2003
++++ src/irsim/prints.c	Tue Dec  9 18:55:15 2003
+@@ -21,7 +21,7 @@
+ #include <stdlib.h>
+ #include <stdarg.h>
+ #else
+-#include <varargs.h>
++#include <stdarg.h>
+ #endif  /* OS2 */
+ #include "defs.h"
+ 
+@@ -50,25 +50,15 @@
+ 
+ 
+ /* VARARGS */
+-#ifndef OS2
+-public void lprintf( va_alist )
+-  va_dcl
+-#else
+ public void lprintf(FILE *max, ... )
+-#endif  /* OS2 */
+   {
+     va_list  args;
+     char     *fmt;
+     FILE     *fp;
+     char     buff[ 300 ];
+ 
+-#ifndef OS2
+-    va_start( args );
+-    fp = va_arg( args, FILE * );
+-#else
+     va_start(args, max);
+     fp = (FILE *)max;
+-#endif  /* OS2 */
+     fmt = va_arg( args, char * );
+     (void) vsprintf( buff, fmt, args );
+     va_end( args );
+@@ -84,12 +74,7 @@
+ 
+ 
+ /* VARARGS */
+-#ifndef OS2
+-public void error( va_alist )
+-  va_dcl
+-#else
+ public void error(int max, ...)
+-#endif  /* OS2 */
+   {
+     va_list  args;
+     char     *filename;
+@@ -97,14 +82,9 @@
+     char     *fmt;
+     char     buf1[ 100 ], buf2[ 200 ];
+ 
+-#ifndef OS2
+-    va_start( args );
+-    filename = va_arg( args, char * );
+-#else
+     filename = (char *)max;
+     max = 12;
+     va_start(args, max);
+-#endif  /* OS2 */
+     lineno = va_arg( args, int );
+     fmt = va_arg( args, char * );
+     (void) sprintf( buf1, "(%s,%d): ", filename, lineno );

@@ -1,0 +1,80 @@
+--- src/irsim/netupdate.c.orig	Tue Dec  9 18:47:10 2003
++++ src/irsim/netupdate.c	Tue Dec  9 18:50:09 2003
+@@ -42,7 +42,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <time.h>
+-#endif  /* OS2 */
++#endif
+ #include <math.h>    /* **mdg** */
+ #include "defs.h"
+ #include "net.h"
+@@ -52,7 +52,7 @@
+ #ifndef OS2
+ extern	char	*ctime();
+ extern	long	time();
+-#endif  /* OS2 */
++#endif
+ 
+ /******** ALIAS MANAGMENT ******/
+ 
+@@ -182,7 +182,7 @@
+ private	tptr	ch_tran;		/* list of changed transistors */
+ private	nptr	new_GND, new_VDD;
+ private	int	chg_VDD, chg_GND;
+-private	void	nu_error();
++private	void	nu_error(char *fmt, ... );
+ 
+ 
+ 	/* value stored in tflags, indicating how transistor changed */
+@@ -1366,7 +1366,7 @@
+     struct Trans  dummyt;
+ #ifndef OS2
+     extern char   *getenv();
+-#endif  /* OS2 */
++#endif
+ 
+     ch_tran = dummyt.scache.t = dummyt.dcache.t = &dummyt;
+     ch_nlist = NULL;
+@@ -1426,37 +1426,28 @@
+   }
+ 
+ #ifndef OS2
+-#include <varargs.h>
++#include <stdarg.h>
+ #else
+ #include <stdarg.h>
+-#endif  /* OS2 */
++#endif
+ 
+ /* VARARGS */
+ #ifndef OS2
+-private void nu_error( va_alist )
+-  va_dcl
++private void nu_error( char *fmt, ... )
+ #else
+ private void nu_error( fmt)
+     char *fmt;
+-#endif  /* OS2 */
++#endif
+   {
+     va_list  args;
+-#ifdef OS2
+     char     *errstr = "| error";
+-#else
+-    char     *fmt, *errstr = "| error";
+-#endif  /* OS2 */
+     FILE     *fp;
+ 
+     if( nu_logf != NULL )	fp = nu_logf;
+     else if( logfile != NULL )	fp = logfile;
+     else			fp = stderr, errstr ++;
+ 
+-#ifndef OS2
+-    va_start( args );
+-#else
+     va_start(args, fmt);
+-#endif  /* OS2 */
+     fmt = va_arg( args, char * );
+     (void) fprintf( fp, "%s:%s, line %d: ", errstr, nu_fname, lineno );
+     (void) vfprintf( fp, fmt, args );
