@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	mime-types
-PORTVERSION=	1.004
+PORTVERSION=	1.005
 CATEGORIES=	mail ruby
 MASTER_SITES=	http://www.halostatue.ca/files/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
-DISTNAME=	MIME-types-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -19,17 +18,15 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
-post-extract:
-	cd ${WRKSRC}; ${MV} MIME/types.rb MIME/Types.rb
-
-post-patch:
-	${RUBY} -i -pe 'gsub %r"MIME/types\.rb", "MIME/Types.rb"' ${WRKSRC}/install.rb
+DOCS=		ChangeLog Readme doc
 
 do-install:
-	cd ${WRKSRC}; ${RUBY} install.rb
+	${CP} -R ${WRKSRC}/lib/* ${RUBY_SITELIBDIR}/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
-	${CP} -R ${WRKSRC}/doc/* ${RUBY_MODDOCDIR}/
+.for f in ${DOCS}
+	${CP} -R ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
+.endfor
 .endif
 
 .include <bsd.port.mk>
