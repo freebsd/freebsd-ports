@@ -4,10 +4,10 @@
 # Date created:         Sat June 29, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.7 1997/08/22 19:55:35 obrien Exp $
+# $Id: Makefile,v 1.8 1997/10/01 09:59:51 obrien Exp $
 #
 
-DISTNAME=	vim-5.0o
+DISTNAME=	vim-5.0p
 CATEGORIES=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/beta-test/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/beta-test/unix/ \
@@ -20,7 +20,6 @@ MAINTAINER=     obrien@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKE_FLAGS=	CONF_ARGS=--prefix=${PREFIX} -f
-USE_GMAKE=	yes
 ALL_TARGET=	
 MAN1=		vim.1 xxd.1 ctags.1
 

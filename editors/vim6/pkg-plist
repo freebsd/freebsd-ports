@@ -1,4 +1,6 @@
+bin/vim
 bin/ctags
+bin/xxd
 bin/etags
 @comment bin/ex
 bin/gex
@@ -11,8 +13,6 @@ bin/rgvim
 bin/rview
 bin/rvim
 @comment bin/view
-bin/vim
-bin/xxd
 man/man1/ctags.1.gz
 man/man1/etags.1.gz
 man/man1/vim.1.gz
@@ -22,9 +22,12 @@ share/vim/doc/change.txt
 share/vim/doc/cmdline.txt
 share/vim/doc/digraph.txt
 share/vim/doc/editing.txt
+share/vim/doc/errors.txt
 share/vim/doc/eval.txt
 share/vim/doc/farsi.txt
 share/vim/doc/gui.txt
+share/vim/doc/gui_w32.txt
+share/vim/doc/gui_x11.txt
 share/vim/doc/help.txt
 share/vim/doc/howto.txt
 share/vim/doc/if_perl.txt
@@ -52,7 +55,6 @@ share/vim/doc/rightleft.txt
 share/vim/doc/scroll.txt
 share/vim/doc/starting.txt
 share/vim/doc/syntax.txt
-share/vim/doc/tags
 share/vim/doc/tagsearch.txt
 share/vim/doc/term.txt
 share/vim/doc/tips.txt
@@ -64,34 +66,60 @@ share/vim/doc/version5.txt
 share/vim/doc/vi_diff.txt
 share/vim/doc/visual.txt
 share/vim/doc/windows.txt
-share/vim/menu.vim
+share/vim/doc/tags
 share/vim/syntax/ada.vim
 share/vim/syntax/asm.vim
 share/vim/syntax/asmh8300.vim
+share/vim/syntax/awk.vim
 share/vim/syntax/c.vim
 share/vim/syntax/cpp.vim
+share/vim/syntax/csh.vim
 share/vim/syntax/cterm.vim
+share/vim/syntax/diff.vim
 share/vim/syntax/dosbatch.vim
+share/vim/syntax/dosini.vim
+share/vim/syntax/expect.vim
 share/vim/syntax/fortran.vim
 share/vim/syntax/help.vim
 share/vim/syntax/html.vim
 share/vim/syntax/java.vim
+share/vim/syntax/javacc.vim
+share/vim/syntax/lex.vim
 share/vim/syntax/lisp.vim
 share/vim/syntax/mail.vim
 share/vim/syntax/make.vim
 share/vim/syntax/maple.vim
 share/vim/syntax/matlab.vim
+share/vim/syntax/model.vim
+share/vim/syntax/modula2.vim
+share/vim/syntax/nosyntax.vim
 share/vim/syntax/objc.vim
 share/vim/syntax/pascal.vim
 share/vim/syntax/perl.vim
 share/vim/syntax/postscr.vim
+share/vim/syntax/procmail.vim
+share/vim/syntax/prolog.vim
+share/vim/syntax/python.vim
+share/vim/syntax/sather.vim
 share/vim/syntax/scripts.vim
 share/vim/syntax/sh.vim
+share/vim/syntax/sm.vim
 share/vim/syntax/sql.vim
 share/vim/syntax/syntax.vim
+share/vim/syntax/tcl.vim
+share/vim/syntax/telixsalt.vim
 share/vim/syntax/tex.vim
+share/vim/syntax/uil.vim
 share/vim/syntax/verilog.vim
+share/vim/syntax/vgrindefs.vim
 share/vim/syntax/vhdl.vim
 share/vim/syntax/vim.vim
+share/vim/syntax/viminfo.vim
+share/vim/syntax/vrml.vim
 share/vim/syntax/xmath.vim
+share/vim/syntax/yacc.vim
 share/vim/syntax/zsh.vim
+share/vim/menu.vim
+@dirrm share/vim/doc
+@dirrm share/vim/syntax
+@dirrm share/vim
