@@ -27,6 +27,9 @@ INSTALLS_SHLIB=	yes
 PATCH_WRKSRC=	${WRKDIR}/decore
 WRKSRC=		${WRKDIR}/decore/src
 
+CONFLICTS=	libdivxdecore-[0-9]*
+NO_LATEST_LINK=	yes
+
 LIB_VERSION=	1
 
 .ifndef(NOPROFILE)
