@@ -6489,6 +6489,7 @@ plib		ports/x11-toolkits/plib
 plone		ports/www/plone
 plor		ports/news/plor
 ploticus	ports/math/ploticus
+ploticus-nox11	ports/math/ploticus-nox11
 plotmtv		ports/graphics/plotmtv
 plotutils	ports/graphics/plotutils
 plp		ports/comms/plp
