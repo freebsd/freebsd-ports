@@ -1,5 +1,9 @@
 #!/bin/sh
 
+if [ "`echo a|sed -e P`" = "aa" ]; then
+  echo You need a newer version of sed. Use sed from -current or gnu sed
+  exit 1
+fi
 cd $WRKSRC || exit 1;
 
 sed -e s:/usr/local:$PREFIX: <local.h.samp >local.h || exit 1;
