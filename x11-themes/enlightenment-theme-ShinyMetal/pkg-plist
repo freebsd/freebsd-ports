@@ -1,0 +1,398 @@
+share/enlightenment/themes/ShinyMetal/ABOUT/Edoc_bg.png
+share/enlightenment/themes/ShinyMetal/ABOUT/MAIN
+share/enlightenment/themes/ShinyMetal/ABOUT/aircut3.ttf
+share/enlightenment/themes/ShinyMetal/README
+share/enlightenment/themes/ShinyMetal/backgrounds/backgrounds.cfg
+share/enlightenment/themes/ShinyMetal/borders/BORDERLESS/border.cfg
+share/enlightenment/themes/ShinyMetal/borders/BOTTOM/border.cfg
+share/enlightenment/themes/ShinyMetal/borders/DEFAULT/border.cfg
+share/enlightenment/themes/ShinyMetal/borders/FIXEDSIZE/border.cfg
+share/enlightenment/themes/ShinyMetal/borders/ICONBOX/border.cfg
+share/enlightenment/themes/ShinyMetal/borders/MENU_BORDER/border.cfg
+share/enlightenment/themes/ShinyMetal/borders/PAGER/border.cfg
+share/enlightenment/themes/ShinyMetal/borders/SHAPED/border.cfg
+share/enlightenment/themes/ShinyMetal/borders/SIDE/border.cfg
+share/enlightenment/themes/ShinyMetal/borders/TRANSIENT/border.cfg
+share/enlightenment/themes/ShinyMetal/borders/borders.cfg
+share/enlightenment/themes/ShinyMetal/borders/images.cfg
+share/enlightenment/themes/ShinyMetal/borders/slideouts.cfg
+share/enlightenment/themes/ShinyMetal/borders.cfg
+share/enlightenment/themes/ShinyMetal/coords/coord.cfg.pl
+share/enlightenment/themes/ShinyMetal/coords/coords.cfg
+share/enlightenment/themes/ShinyMetal/coords/coords.cfg.ja
+share/enlightenment/themes/ShinyMetal/cursors/cursors.cfg
+share/enlightenment/themes/ShinyMetal/cursors/images/cursor.xbm
+share/enlightenment/themes/ShinyMetal/cursors/images/cursor.xbm.mask
+share/enlightenment/themes/ShinyMetal/cursors/images/iconify.xbm
+share/enlightenment/themes/ShinyMetal/cursors/images/iconify.xbm.mask
+share/enlightenment/themes/ShinyMetal/cursors/images/kill.xbm
+share/enlightenment/themes/ShinyMetal/cursors/images/kill.xbm.mask
+share/enlightenment/themes/ShinyMetal/cursors/images/move.xbm
+share/enlightenment/themes/ShinyMetal/cursors/images/move.xbm.mask
+share/enlightenment/themes/ShinyMetal/cursors/images/resize_br.xbm
+share/enlightenment/themes/ShinyMetal/cursors/images/resize_br.xbm.mask
+share/enlightenment/themes/ShinyMetal/cursors/images/resize_h.xbm
+share/enlightenment/themes/ShinyMetal/cursors/images/resize_h.xbm.mask
+share/enlightenment/themes/ShinyMetal/cursors/images/resize_tr.xbm
+share/enlightenment/themes/ShinyMetal/cursors/images/resize_tr.xbm.mask
+share/enlightenment/themes/ShinyMetal/cursors/images/resize_v.xbm
+share/enlightenment/themes/ShinyMetal/cursors/images/resize_v.xbm.mask
+share/enlightenment/themes/ShinyMetal/cursors.cfg
+share/enlightenment/themes/ShinyMetal/desktops.cfg
+share/enlightenment/themes/ShinyMetal/dialogs/dialogs.cfg
+share/enlightenment/themes/ShinyMetal/dialogs/dialogs.cfg.ja
+share/enlightenment/themes/ShinyMetal/dialogs/dialogs.cfg.pl
+share/enlightenment/themes/ShinyMetal/dialogs/images/bg.png
+share/enlightenment/themes/ShinyMetal/dialogs/images/bt1.png
+share/enlightenment/themes/ShinyMetal/dialogs/images/bt2.png
+share/enlightenment/themes/ShinyMetal/dialogs/images/button1.png
+share/enlightenment/themes/ShinyMetal/dialogs/images/button2.png
+share/enlightenment/themes/ShinyMetal/dialogs/images/button3.png
+share/enlightenment/themes/ShinyMetal/dialogs/images/indent.png
+share/enlightenment/themes/ShinyMetal/dialogs/images/r1-.png
+share/enlightenment/themes/ShinyMetal/dialogs/images/r1.png
+share/enlightenment/themes/ShinyMetal/dialogs/images/rule.png
+share/enlightenment/themes/ShinyMetal/dialogs/images/sl1.png
+share/enlightenment/themes/ShinyMetal/dialogs/images/sl2.png
+share/enlightenment/themes/ShinyMetal/dialogs/images/slh.png
+share/enlightenment/themes/ShinyMetal/dialogs/images/slv.png
+share/enlightenment/themes/ShinyMetal/dialogs/images/w0-.png
+share/enlightenment/themes/ShinyMetal/dialogs/images/w0.png
+share/enlightenment/themes/ShinyMetal/dialogs/images/w1-.png
+share/enlightenment/themes/ShinyMetal/dialogs/images/w1.png
+share/enlightenment/themes/ShinyMetal/dock/dock.cfg
+share/enlightenment/themes/ShinyMetal/dragbar/dragbar.cfg
+share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_clicked.png
+share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_deskray_clicked.png
+share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_deskray_hilited.png
+share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_deskray_normal.png
+share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_deskray_vert_clicked.png
+share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_deskray_vert_hilited.png
+share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_deskray_vert_normal.png
+share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_hilited.png
+share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_lower_clicked.png
+share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_lower_hilited.png
+share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_lower_normal.png
+share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_normal.png
+share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_raise_0.png
+share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_raise_clicked.png
+share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_raise_hilited.png
+share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_raise_normal.png
+share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_vert_clicked.png
+share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_vert_hilited.png
+share/enlightenment/themes/ShinyMetal/dragbar/images/dragbar_vert_normal.png
+share/enlightenment/themes/ShinyMetal/epplets/epplets.cfg
+share/enlightenment/themes/ShinyMetal/epplets/epplets.cfg.ja
+share/enlightenment/themes/ShinyMetal/epplets/epplets.cfg.pl
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/ar_d1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/ar_d2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/ar_d3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/ar_l1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/ar_l2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/ar_l3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/ar_r1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/ar_r2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/ar_r3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/ar_u1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/ar_u2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/ar_u3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/b1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/b2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/b3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/bb1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/bb2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/bg_h.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/bg_v.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/close1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/close2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/close3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/config1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/config2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/config3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/da.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/eject1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/eject2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/eject3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/ff1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/ff2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/ff3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/help1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/help2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/help3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/next1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/next2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/next3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/pause1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/pause2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/pause3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/pb_h.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/pb_v.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/play1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/play2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/play3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/prev1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/prev2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/prev3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/repeat1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/repeat2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/repeat3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/rw1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/rw2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/rw3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/s_h.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/s_k1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/s_k2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/s_v.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/skip1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/skip2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/skip3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/stop1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/stop2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics/stop3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/ar_d1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/ar_d2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/ar_d3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/ar_l1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/ar_l2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/ar_l3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/ar_r1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/ar_r2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/ar_r3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/ar_u1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/ar_u2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/ar_u3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/b1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/b2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/b3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/bb1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/bb2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/bg_h.png
+share/enlightenment/themes/ShinyMetal/epplets/images/bg_v.png
+share/enlightenment/themes/ShinyMetal/epplets/images/close1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/close2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/close3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/config1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/config2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/config3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/da.png
+share/enlightenment/themes/ShinyMetal/epplets/images/eject1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/eject2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/eject3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/ff1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/ff2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/ff3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/help1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/help2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/help3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/next1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/next2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/next3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/pause1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/pause2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/pause3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/pb_h.png
+share/enlightenment/themes/ShinyMetal/epplets/images/pb_v.png
+share/enlightenment/themes/ShinyMetal/epplets/images/play1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/play2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/play3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/prev1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/prev2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/prev3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/repeat1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/repeat2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/repeat3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/rw1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/rw2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/rw3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/s_h.png
+share/enlightenment/themes/ShinyMetal/epplets/images/s_k1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/s_k2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/s_v.png
+share/enlightenment/themes/ShinyMetal/epplets/images/skip1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/skip2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/skip3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/stop1.png
+share/enlightenment/themes/ShinyMetal/epplets/images/stop2.png
+share/enlightenment/themes/ShinyMetal/epplets/images/stop3.png
+share/enlightenment/themes/ShinyMetal/epplets/images/tmp/bg_h.png
+share/enlightenment/themes/ShinyMetal/epplets/images/tmp/bg_v.png
+share/enlightenment/themes/ShinyMetal/eterm/eterm.cfg
+share/enlightenment/themes/ShinyMetal/eterm/images/a_d_1.png
+share/enlightenment/themes/ShinyMetal/eterm/images/a_d_2.png
+share/enlightenment/themes/ShinyMetal/eterm/images/a_l_1.png
+share/enlightenment/themes/ShinyMetal/eterm/images/a_l_2.png
+share/enlightenment/themes/ShinyMetal/eterm/images/a_r_1.png
+share/enlightenment/themes/ShinyMetal/eterm/images/a_r_2.png
+share/enlightenment/themes/ShinyMetal/eterm/images/a_u_1.png
+share/enlightenment/themes/ShinyMetal/eterm/images/a_u_2.png
+share/enlightenment/themes/ShinyMetal/eterm/images/bg.jpg
+share/enlightenment/themes/ShinyMetal/eterm/images/bt.png
+share/enlightenment/themes/ShinyMetal/eterm/images/mb2.png
+share/enlightenment/themes/ShinyMetal/eterm/images/mb3.png
+share/enlightenment/themes/ShinyMetal/eterm/images/sb1.png
+share/enlightenment/themes/ShinyMetal/focuslist/focuslist.cfg
+share/enlightenment/themes/ShinyMetal/focuslist/focuslist.cfg.ja
+share/enlightenment/themes/ShinyMetal/iconbox/iconbox.cfg
+share/enlightenment/themes/ShinyMetal/iconbox/iconbox.cfg.ja
+share/enlightenment/themes/ShinyMetal/imageclasses.cfg
+share/enlightenment/themes/ShinyMetal/imageclasses.cfg.ja
+share/enlightenment/themes/ShinyMetal/imageclasses.cfg.pl
+share/enlightenment/themes/ShinyMetal/images/bar_amber_horizontal_1.png
+share/enlightenment/themes/ShinyMetal/images/bar_amber_horizontal_2.png
+share/enlightenment/themes/ShinyMetal/images/bar_amber_horizontal_3.png
+share/enlightenment/themes/ShinyMetal/images/bar_amber_vertical_1.png
+share/enlightenment/themes/ShinyMetal/images/bar_amber_vertical_2.png
+share/enlightenment/themes/ShinyMetal/images/bar_amber_vertical_3.png
+share/enlightenment/themes/ShinyMetal/images/bar_horizontal_1.png
+share/enlightenment/themes/ShinyMetal/images/bar_horizontal_2.png
+share/enlightenment/themes/ShinyMetal/images/bar_horizontal_3.png
+share/enlightenment/themes/ShinyMetal/images/bar_vertical_1.png
+share/enlightenment/themes/ShinyMetal/images/bar_vertical_2.png
+share/enlightenment/themes/ShinyMetal/images/bar_vertical_3.png
+share/enlightenment/themes/ShinyMetal/images/black.png
+share/enlightenment/themes/ShinyMetal/images/blank.png
+share/enlightenment/themes/ShinyMetal/images/button_1.png
+share/enlightenment/themes/ShinyMetal/images/button_2.png
+share/enlightenment/themes/ShinyMetal/images/button_3.png
+share/enlightenment/themes/ShinyMetal/images/button_arrow_down_1.png
+share/enlightenment/themes/ShinyMetal/images/button_arrow_down_2.png
+share/enlightenment/themes/ShinyMetal/images/button_arrow_down_3.png
+share/enlightenment/themes/ShinyMetal/images/button_arrow_left_1.png
+share/enlightenment/themes/ShinyMetal/images/button_arrow_left_2.png
+share/enlightenment/themes/ShinyMetal/images/button_arrow_left_3.png
+share/enlightenment/themes/ShinyMetal/images/button_arrow_right_1.png
+share/enlightenment/themes/ShinyMetal/images/button_arrow_right_2.png
+share/enlightenment/themes/ShinyMetal/images/button_arrow_right_3.png
+share/enlightenment/themes/ShinyMetal/images/button_arrow_up_1.png
+share/enlightenment/themes/ShinyMetal/images/button_arrow_up_2.png
+share/enlightenment/themes/ShinyMetal/images/button_arrow_up_3.png
+share/enlightenment/themes/ShinyMetal/images/button_iconify_1.png
+share/enlightenment/themes/ShinyMetal/images/button_iconify_2.png
+share/enlightenment/themes/ShinyMetal/images/button_iconify_3.png
+share/enlightenment/themes/ShinyMetal/images/button_kill_1.png
+share/enlightenment/themes/ShinyMetal/images/button_kill_2.png
+share/enlightenment/themes/ShinyMetal/images/button_kill_3.png
+share/enlightenment/themes/ShinyMetal/images/button_maximise_1.png
+share/enlightenment/themes/ShinyMetal/images/button_maximise_2.png
+share/enlightenment/themes/ShinyMetal/images/button_maximise_3.png
+share/enlightenment/themes/ShinyMetal/images/button_maximise_horizontal_1.png
+share/enlightenment/themes/ShinyMetal/images/button_maximise_horizontal_2.png
+share/enlightenment/themes/ShinyMetal/images/button_maximise_horizontal_3.png
+share/enlightenment/themes/ShinyMetal/images/button_maximise_vertical_1.png
+share/enlightenment/themes/ShinyMetal/images/button_maximise_vertical_2.png
+share/enlightenment/themes/ShinyMetal/images/button_maximise_vertical_3.png
+share/enlightenment/themes/ShinyMetal/images/button_slideout_right_1.png
+share/enlightenment/themes/ShinyMetal/images/button_slideout_right_2.png
+share/enlightenment/themes/ShinyMetal/images/button_slideout_right_3.png
+share/enlightenment/themes/ShinyMetal/images/button_stick_1.png
+share/enlightenment/themes/ShinyMetal/images/button_stick_2.png
+share/enlightenment/themes/ShinyMetal/images/button_stick_3.png
+share/enlightenment/themes/ShinyMetal/images/button_swirl_1.png
+share/enlightenment/themes/ShinyMetal/images/button_swirl_2.png
+share/enlightenment/themes/ShinyMetal/images/button_swirl_3.png
+share/enlightenment/themes/ShinyMetal/images/button_up_bar_1.png
+share/enlightenment/themes/ShinyMetal/images/button_up_bar_2.png
+share/enlightenment/themes/ShinyMetal/images/button_up_bar_3.png
+share/enlightenment/themes/ShinyMetal/images/dock1.png
+share/enlightenment/themes/ShinyMetal/images/dock2.png
+share/enlightenment/themes/ShinyMetal/images/dock3.png
+share/enlightenment/themes/ShinyMetal/images/icon.png
+share/enlightenment/themes/ShinyMetal/init/images/progress_bar.png
+share/enlightenment/themes/ShinyMetal/init/images/progress_bar_number.png
+share/enlightenment/themes/ShinyMetal/init/images/progress_bar_text.png
+share/enlightenment/themes/ShinyMetal/init/images/startup_background.jpg
+share/enlightenment/themes/ShinyMetal/init/images/startup_logo.png
+share/enlightenment/themes/ShinyMetal/init/init.cfg
+share/enlightenment/themes/ShinyMetal/init/init.cfg.ja
+share/enlightenment/themes/ShinyMetal/init.cfg
+share/enlightenment/themes/ShinyMetal/init.cfg.ja
+share/enlightenment/themes/ShinyMetal/menustyles/images/menu1.png
+share/enlightenment/themes/ShinyMetal/menustyles/images/menu2.png
+share/enlightenment/themes/ShinyMetal/menustyles/images/menu3.png
+share/enlightenment/themes/ShinyMetal/menustyles/menustyles.cfg
+share/enlightenment/themes/ShinyMetal/menustyles.cfg
+share/enlightenment/themes/ShinyMetal/pager/images/p_sel.png
+share/enlightenment/themes/ShinyMetal/pager/pager.cfg
+share/enlightenment/themes/ShinyMetal/pager/pager.cfg.ja
+share/enlightenment/themes/ShinyMetal/slideouts.cfg
+share/enlightenment/themes/ShinyMetal/sound/samples/Beep.wav
+share/enlightenment/themes/ShinyMetal/sound/samples/Boing.wav
+share/enlightenment/themes/ShinyMetal/sound/samples/Boom.wav
+share/enlightenment/themes/ShinyMetal/sound/samples/Bubbles.wav
+share/enlightenment/themes/ShinyMetal/sound/samples/Bweep.wav
+share/enlightenment/themes/ShinyMetal/sound/samples/Doink.wav
+share/enlightenment/themes/ShinyMetal/sound/samples/DoorClose.wav
+share/enlightenment/themes/ShinyMetal/sound/samples/Eeeooop.wav
+share/enlightenment/themes/ShinyMetal/sound/samples/FingerSnap.wav
+share/enlightenment/themes/ShinyMetal/sound/samples/Machine.wav
+share/enlightenment/themes/ShinyMetal/sound/samples/MechFootstep.wav
+share/enlightenment/themes/ShinyMetal/sound/samples/Shutdown.wav
+share/enlightenment/themes/ShinyMetal/sound/samples/Troll_Grumble.wav
+share/enlightenment/themes/ShinyMetal/sound/samples/Wooeep.wav
+share/enlightenment/themes/ShinyMetal/sound/samples/beethoven.wav
+share/enlightenment/themes/ShinyMetal/sound/samples/boingiggig.wav
+share/enlightenment/themes/ShinyMetal/sound/samples/drip.wav
+share/enlightenment/themes/ShinyMetal/sound/samples/estart.wav
+share/enlightenment/themes/ShinyMetal/sound/samples/rubberband.wav
+share/enlightenment/themes/ShinyMetal/sound/samples/tink.wav
+share/enlightenment/themes/ShinyMetal/sound/sound.cfg
+share/enlightenment/themes/ShinyMetal/sound.cfg
+share/enlightenment/themes/ShinyMetal/textclasses.cfg
+share/enlightenment/themes/ShinyMetal/textclasses.cfg.ja
+share/enlightenment/themes/ShinyMetal/textclasses.cfg.pl
+share/enlightenment/themes/ShinyMetal/tooltips/images/ttip_cloud_big.png
+share/enlightenment/themes/ShinyMetal/tooltips/images/ttip_cloud_small.png
+share/enlightenment/themes/ShinyMetal/tooltips/images/ttip_help.png
+share/enlightenment/themes/ShinyMetal/tooltips/tooltips.cfg
+share/enlightenment/themes/ShinyMetal/tooltips/tooltips.cfg.ja
+share/enlightenment/themes/ShinyMetal/tooltips/tooltips.cfg.pl
+share/enlightenment/themes/ShinyMetal/tooltips.cfg
+share/enlightenment/themes/ShinyMetal/tooltips.cfg.ja
+share/enlightenment/themes/ShinyMetal/tooltips.cfg.pl
+share/enlightenment/themes/ShinyMetal/ttfonts/rothwell.ttf
+share/enlightenment/themes/ShinyMetal/ttfonts/zirkle.ttf
+share/enlightenment/themes/ShinyMetal/windowmatches.cfg
+@dirrm share/enlightenment/themes/ShinyMetal/ttfonts
+@dirrm share/enlightenment/themes/ShinyMetal/tooltips/images
+@dirrm share/enlightenment/themes/ShinyMetal/tooltips
+@dirrm share/enlightenment/themes/ShinyMetal/sound/samples
+@dirrm share/enlightenment/themes/ShinyMetal/sound
+@dirrm share/enlightenment/themes/ShinyMetal/slideouts
+@dirrm share/enlightenment/themes/ShinyMetal/pager/images
+@dirrm share/enlightenment/themes/ShinyMetal/pager
+@dirrm share/enlightenment/themes/ShinyMetal/menustyles/images
+@dirrm share/enlightenment/themes/ShinyMetal/menustyles
+@dirrm share/enlightenment/themes/ShinyMetal/init/images
+@dirrm share/enlightenment/themes/ShinyMetal/init
+@dirrm share/enlightenment/themes/ShinyMetal/images
+@dirrm share/enlightenment/themes/ShinyMetal/iconbox
+@dirrm share/enlightenment/themes/ShinyMetal/focuslist
+@dirrm share/enlightenment/themes/ShinyMetal/eterm/images
+@dirrm share/enlightenment/themes/ShinyMetal/eterm
+@dirrm share/enlightenment/themes/ShinyMetal/epplets/images/tmp
+@dirrm share/enlightenment/themes/ShinyMetal/epplets/images/.xvpics
+@dirrm share/enlightenment/themes/ShinyMetal/epplets/images
+@dirrm share/enlightenment/themes/ShinyMetal/epplets
+@dirrm share/enlightenment/themes/ShinyMetal/dragbar/images
+@dirrm share/enlightenment/themes/ShinyMetal/dragbar
+@dirrm share/enlightenment/themes/ShinyMetal/dock
+@dirrm share/enlightenment/themes/ShinyMetal/dialogs/images
+@dirrm share/enlightenment/themes/ShinyMetal/dialogs
+@dirrm share/enlightenment/themes/ShinyMetal/cursors/images
+@dirrm share/enlightenment/themes/ShinyMetal/cursors
+@dirrm share/enlightenment/themes/ShinyMetal/coords
+@dirrm share/enlightenment/themes/ShinyMetal/borders/images
+@dirrm share/enlightenment/themes/ShinyMetal/borders/TRANSIENT
+@dirrm share/enlightenment/themes/ShinyMetal/borders/SIDE
+@dirrm share/enlightenment/themes/ShinyMetal/borders/SHAPED
+@dirrm share/enlightenment/themes/ShinyMetal/borders/PAGER
+@dirrm share/enlightenment/themes/ShinyMetal/borders/MENU_BORDER
+@dirrm share/enlightenment/themes/ShinyMetal/borders/ICONBOX
+@dirrm share/enlightenment/themes/ShinyMetal/borders/FIXEDSIZE
+@dirrm share/enlightenment/themes/ShinyMetal/borders/DEFAULT
+@dirrm share/enlightenment/themes/ShinyMetal/borders/BOTTOM
+@dirrm share/enlightenment/themes/ShinyMetal/borders/BORDERLESS
+@dirrm share/enlightenment/themes/ShinyMetal/borders
+@dirrm share/enlightenment/themes/ShinyMetal/backgrounds
+@dirrm share/enlightenment/themes/ShinyMetal/ABOUT
+@dirrm share/enlightenment/themes/ShinyMetal

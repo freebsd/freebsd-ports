@@ -11,6 +11,7 @@
     SUBDIR += enlightenment-theme-BlueSteel
     SUBDIR += enlightenment-theme-BrushedMetal-Tigert
     SUBDIR += enlightenment-theme-Ganymede
+    SUBDIR += enlightenment-theme-ShinyMetal
     SUBDIR += flux-art
     SUBDIR += fluxbox-sid-pack
     SUBDIR += fvwm-themes
