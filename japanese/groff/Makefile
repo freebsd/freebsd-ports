@@ -7,7 +7,7 @@
 
 PORTNAME=	groff
 PORTVERSION=	1.17.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_LOCAL:S,%SUBDIR%,okazaki/&,} \
 		${MASTER_SITE_GNU}
@@ -21,7 +21,7 @@ PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	okazaki@FreeBSD.org
 
-TMAC_DATE=	20010820
+TMAC_DATE=	20020120
 TMAC_DISTNAME=	tmac-${TMAC_DATE}
 
 USE_GMAKE=	yes
@@ -35,7 +35,7 @@ TMACDIR=	share/groff/${PORTVERSION}/tmac
 SITETMACDIR=	share/groff/site-tmac
 MDOCDIR=	${TMACDIR}/mdoc
 INFODIR=	${PREFIX}/info
-PORTDOCDIR=	share/doc/jgroff
+DOCSDIR=	${PREFIX}/share/doc/jgroff
 PLIST_SUB=	GROFF_VERSION=${PORTVERSION}
 
 MAN1SRC=	eqn.1 indxbib.1 lookbib.1 neqn.1 nroff.1 pic.1 \
@@ -52,8 +52,9 @@ MAN7=		groff.7 groff_char.7 groff_man.7 groff_mdoc.7 \
 		groff_mwww.7 mmroff.7 roff.7
 
 SITETMACFILES=	mdoc.local
-TMACFILES=	tmac.orig_me tmac.vgrind
-MDOCFILES=	eucJP
+TMACFILES=	tmac.orig_me tmac.vgrind \
+		an-old.tmac doc.tmac e.tmac
+MDOCFILES=	eucJP doc-common doc-syms
 
 DOCUMENTS=	ChangeLog.jp NEWS PROBLEMS README README.jp \
 		doc/meintro.me doc/meref.me doc/pic.ms
@@ -114,9 +115,9 @@ post-install:
 .endfor
 
 install-documents:
-	@${MKDIR} ${PREFIX}/${PORTDOCDIR}
+	@${MKDIR} ${DOCSDIR}
 	cd ${INSTALL_WRKSRC} \
-		&& ${INSTALL_DATA} ${DOCUMENTS} ${PREFIX}/${PORTDOCDIR}
+		&& ${INSTALL_DATA} ${DOCUMENTS} ${DOCSDIR}
 
 install-info:
 	${INSTALL_DATA} ${WRKSRC}/doc/groff ${INFODIR}
