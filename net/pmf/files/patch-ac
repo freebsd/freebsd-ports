@@ -1,12 +1,11 @@
 --- config.h.orig	Fri Oct 29 18:25:35 1993
-+++ config.h	Fri Feb 11 05:31:15 2000
++++ config.h	Tue Aug 15 09:04:26 2000
 @@ -35,14 +35,16 @@
   *  files instead.
   *  Note that "~" is not expanded in this directory name.
   */
--#define SYSTEM_DIR              "/home/diagnostix3/ida/tompa/pmf-1.13.1/pmfdir/system_dir"
 +#ifndef SYSTEM_DIR
-+#define SYSTEM_DIR              "/usr/local/libdata/pmf"
+ #define SYSTEM_DIR              "/home/diagnostix3/ida/tompa/pmf-1.13.1/pmfdir/system_dir"
 +#endif
  
  /*  These are the names of some files, usually in the system directory

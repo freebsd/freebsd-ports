@@ -38,7 +38,7 @@
 #
 # Some more aliases:
 #
-/alias /soundon "/source %%PREFIX%%/libdata/pmf/soundfiles/pmf-sparc-sound"
+/alias /soundon "/source %%PREFIX%%/share/pmf/soundfiles/pmf-sparc-sound"
 /alias /soundoff "/unset sound"
 #
 # Avoid printing some of the more annoying messages:
