@@ -1,0 +1,40 @@
+--- etc/config.dist.orig	Sun Jan 18 15:55:11 2004
++++ etc/config.dist	Sun Jan 18 15:57:10 2004
+@@ -7,13 +7,13 @@
+ owner    = Joe Random
+ contact  = joe@some.place.xyz
+ mailhost = smtp.mailhost.abc
+-sendmail = /usr/lib/sendmail
+-imgcache = /home/oetiker/public_html/.simg
+-imgurl   = ../.simg
+-datadir  = /home/oetiker/data/projects/AADJ-smokeping/dist/var
+-piddir  = /home/oetiker/data/projects/AADJ-smokeping/dist/var
++sendmail = /usr/sbin/sendmail
++imgcache = %%PREFIX%%/smokeping/htdocs/img
++imgurl   = /smokeimg
++datadir  = %%PREFIX%%/var/smokeping
++piddir  = %%PREFIX%%/var/smokeping
+ cgiurl   = http://people.ee.ethz.ch/~oetiker/smokeping/smokeping.cgi
+-smokemail = /home/oetiker/data/projects/AADJ-smokeping/dist/etc/smokemail.dist
++smokemail = %%PREFIX%%/etc/smokeping/smokemail
+ # specify this to get syslog logging
+ # syslogfacility = local0
+ 
+@@ -63,7 +63,7 @@
+ 
+ *** Presentation ***
+ 
+-template = /home/oetiker/data/projects/AADJ-smokeping/dist/etc/basepage.html.dist
++template = %%PREFIX%%/etc/smokeping/basepage.html
+ 
+ + overview 
+ 
+@@ -86,7 +86,7 @@
+ 
+ + FPing
+ 
+-binary = /usr/sepp/bin/fping
++binary = %%PREFIX%%/sbin/fping
+ 
+ *** Targets ***
+ 
