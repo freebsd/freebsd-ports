@@ -112,6 +112,7 @@ include/qt2/qinputdialog.h
 include/qt2/qintcach.h
 include/qt2/qintcache.h
 include/qt2/qintdict.h
+include/qt2/qinterlacestyle.h
 include/qt2/qiodev.h
 include/qt2/qiodevice.h
 include/qt2/qjiscodec.h
@@ -322,6 +323,7 @@ share/doc/qt2/html/casestudy-qws.html
 share/doc/qt2/html/changes21.html
 share/doc/qt2/html/changes211.html
 share/doc/qt2/html/changes22.html
+share/doc/qt2/html/changes23.html
 share/doc/qt2/html/charinput-qws.html
 share/doc/qt2/html/checklists-main-cpp.html
 share/doc/qt2/html/classes.html
@@ -581,6 +583,7 @@ share/doc/qt2/html/qconststring-members.html
 share/doc/qt2/html/qconststring.html
 share/doc/qt2/html/qcopchannel-members.html
 share/doc/qt2/html/qcopchannel.html
+share/doc/qt2/html/qcopchannel_qws-h.html
 share/doc/qt2/html/qcstring-h.html
 share/doc/qt2/html/qcstring-members.html
 share/doc/qt2/html/qcstring.html
@@ -853,6 +856,9 @@ share/doc/qt2/html/qintdict-members.html
 share/doc/qt2/html/qintdict.html
 share/doc/qt2/html/qintdictiterator-members.html
 share/doc/qt2/html/qintdictiterator.html
+share/doc/qt2/html/qinterlacestyle-h.html
+share/doc/qt2/html/qinterlacestyle-members.html
+share/doc/qt2/html/qinterlacestyle.html
 share/doc/qt2/html/qintvalidator-members.html
 share/doc/qt2/html/qintvalidator.html
 share/doc/qt2/html/qiodevice-h.html
@@ -866,6 +872,7 @@ share/doc/qt2/html/qjiscodec.html
 share/doc/qt2/html/qjpunicode-h.html
 share/doc/qt2/html/qjpunicodeconv-members.html
 share/doc/qt2/html/qjpunicodeconv.html
+share/doc/qt2/html/qkeyboard_qws-h.html
 share/doc/qt2/html/qkeyevent-members.html
 share/doc/qt2/html/qkeyevent.html
 share/doc/qt2/html/qlabel-h.html
@@ -1370,6 +1377,7 @@ share/doc/qt2/html/qwindowdefs-h.html
 share/doc/qt2/html/qwindowsstyle-h.html
 share/doc/qt2/html/qwindowsstyle-members.html
 share/doc/qt2/html/qwindowsstyle.html
+share/doc/qt2/html/qwindowsystem_qws-h.html
 share/doc/qt2/html/qwizard-h.html
 share/doc/qt2/html/qwizard-members.html
 share/doc/qt2/html/qwizard.html
@@ -1379,8 +1387,16 @@ share/doc/qt2/html/qwmatrix.html
 share/doc/qt2/html/qworkspace-h.html
 share/doc/qt2/html/qworkspace-members.html
 share/doc/qt2/html/qworkspace.html
-share/doc/qt2/html/qwsdisplay_qws-h.html
-share/doc/qt2/html/qwsmanager_qws-h.html
+share/doc/qt2/html/qwsdecoration-members.html
+share/doc/qt2/html/qwsdecoration.html
+share/doc/qt2/html/qwsdecoration_qws-h.html
+share/doc/qt2/html/qwskeyboardhandler-members.html
+share/doc/qt2/html/qwskeyboardhandler.html
+share/doc/qt2/html/qwsmouse_qws-h.html
+share/doc/qt2/html/qwsmousehandler-members.html
+share/doc/qt2/html/qwsmousehandler.html
+share/doc/qt2/html/qwsserver-members.html
+share/doc/qt2/html/qwsserver.html
 share/doc/qt2/html/qxml-h.html
 share/doc/qt2/html/qxmlattributes-members.html
 share/doc/qt2/html/qxmlattributes.html
@@ -1552,6 +1568,6 @@ share/doc/qt2/html/xml-tagreader-with-features-tagreader-cpp.html
 share/doc/qt2/html/xml.html
 share/doc/qt2/html/xt.html
 share/doc/qt2/html/y2k.html
-@unexec /sbin/rm -rf %D/share/doc/qt2/html 2>/dev/null || true
-@unexec /sbin/rm -rf %D/share/doc/qt2 2>/dev/null || true
+@dirrm share/doc/qt2/html
+@dirrm share/doc/qt2
 @dirrm include/qt2

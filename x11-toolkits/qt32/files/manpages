@@ -148,6 +148,7 @@ qintcache.3qt \
 qintcacheiterator.3qt \
 qintdict.3qt \
 qintdictiterator.3qt \
+qinterlacestyle.3qt \
 qintvalidator.3qt \
 qiodevice.3qt \
 qiodevicesource.3qt \
@@ -223,6 +224,7 @@ qrect.3qt \
 qregexp.3qt \
 qregion.3qt \
 qresizeevent.3qt \
+qscreencursor.3qt \
 qscrollbar.3qt \
 qscrollview.3qt \
 qsemaphore.3qt \
@@ -286,10 +288,10 @@ qtoolbutton.3qt \
 qtooltip.3qt \
 qtooltipgroup.3qt \
 qtranslator.3qt \
+qtranslatormessage.3qt \
 qtsciicodec.3qt \
 quridrag.3qt \
 qurl.3qt \
-qtranslatormessage.3qt \
 qurloperator.3qt \
 qvalidator.3qt \
 qvaluelist.3qt \
@@ -302,9 +304,9 @@ qvboxlayout.3qt \
 qvbuttongroup.3qt \
 qvector.3qt \
 qvgroupbox.3qt \
+qwaitcondition.3qt \
 qwhatsthis.3qt \
 qwheelevent.3qt \
-qwaitcondition.3qt \
 qwidget.3qt \
 qwidgetitem.3qt \
 qwidgetstack.3qt \
@@ -312,6 +314,10 @@ qwindowsstyle.3qt \
 qwizard.3qt \
 qwmatrix.3qt \
 qworkspace.3qt \
+qwsdecoration.3qt \
+qwskeyboardhandler.3qt \
+qwsmousehandler.3qt \
+qwsserver.3qt \
 qxmlattributes.3qt \
 qxmlcontenthandler.3qt \
 qxmldeclhandler.3qt \
@@ -328,4 +334,4 @@ qxmlreader.3qt \
 qxmlsimplereader.3qt \
 qxtapplication.3qt \
 qxtwidget.3qt \
-qscreencursor.3qt
+
