@@ -1,5 +1,14 @@
 --- Makefile.in.orig	Tue Jan 23 17:35:21 1996
-+++ Makefile.in	Sun Nov 28 13:59:53 1999
++++ Makefile.in	Sat Nov  9 17:18:47 2002
+@@ -39,7 +39,7 @@
+ SCF   = xshisen-scores
+ 
+ LIBS      = @LIBS@ 
+-CODECONV  = ./$(exec_name) -KCONV jis
++CODECONV  = (nkf -e | sed 's/XSHISEN_VERSION/1.36/')
+ 
+ all: $(PROGS)
+ 
 @@ -64,6 +64,9 @@
  		$(INSTALLD) $$file $(XSHISENLIB)/`basename $$file`; \
  	done
