@@ -1,0 +1,38 @@
+#!/bin/sh
+
+[ "${PKG_PREFIX}" ] && PREFIX="${PKG_PREFIX}"
+[ "${PREFIX}" ] || PREFIX=/usr/local
+
+case "$2" in
+	PRE-INSTALL)
+		if ! pw user show satellite >/dev/null 2>&1
+		then
+			echo "===>   Creating user satellite"
+			pw add user -n satellite -c 'Satellite system user' -s /sbin/nologin -h - -d /
+		fi
+	;;
+	POST-INSTALL)
+		if [ ! -f "${PREFIX}/etc/satellite.db" ]
+		then
+			echo "===>   Creating ${PREFIX}/etc/satellite.db configuration file"
+			${PREFIX}/sbin/satcfg -L
+			chown satellite ${PREFIX}/etc/satellite.db
+			chmod 600 ${PREFIX}/etc/satellite.db
+		fi
+		if [ ! -f "/var/log/satellite" ]
+		then
+			echo "===>   Creating initial log file /var/log/satellite"
+			touch /var/log/satellite
+			chown satellite /var/log/satellite
+		fi
+		echo "===>   To run the satellited server you will need to change a few files."
+		echo "===>   Please add the following line to /etc/services"
+		echo "satellite       1764/tcp"
+		echo "===>   Please add the following line to /etc/inetd.conf and restart inetd"
+		echo "satellite stream tcp nowait satellite ${PREFIX}/sbin/satellited satellited -v"
+	;;
+	*)
+		echo "Incorrect parameter"
+		exit 1
+	;;
+esac
