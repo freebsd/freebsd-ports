@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.fh-koblenz.de/pub/Ghostscript/aladdin/gs650/ \
 	http://www.gelhaus.net/hp880c/1.4beta/ \
 	http://home.t-online.de/home/Martin.Lottermoser/pcl3dist/ \
 	http://www.harsch.net/Download/ \
-	http://www.ozemail.com.au/~geoffk/pdfencrypt/ \
+	http://members.ozemail.com.au/~geoffk/pdfencrypt/ \
 	ftp://download.sourceforge.net/pub/sourceforge/gimp-print/ \
 	http://download.sourceforge.net/ghostscript/ \
 	ftp://ftp.cs.wisc.edu/ghost/aladdin/fonts/ \
