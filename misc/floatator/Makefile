@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.cichon.com/floatator/download/
 MAINTAINER=	ports@FreeBSD.org
 
 USE_XLIB=	yes
+USE_MOTIF=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
