@@ -1,17 +1,18 @@
 # New ports collection makefile for:	gnomepilot
-# Version required:	0.1.48
+# Version required:	0.1.49
 # Date created:		28th October 1999
 # Whom:			Ade Lovett <ade@lovett.com>
 #
 # $FreeBSD$
 
-DISTNAME=	gnome-pilot-0.1.48
-PKGNAME=	gnomepilot-0.1.48
+DISTNAME=	gnome-pilot-0.1.49
+PKGNAME=	gnomepilot-0.1.49
 CATEGORIES=	palm comms gnome
 MASTER_SITES=	http://www.gnome.org/gnome-pilot/download/
 
 MAINTAINER=	ade@FreeBSD.org
 
+BUILD_DEPENDS=	gob:${PORTSDIR}/x11-toolkits/gob
 LIB_DEPENDS=	pisock.3:${PORTSDIR}/palm/pilot-link \
 		capplet.1:${PORTSDIR}/sysutils/gnomecontrolcenter
 
@@ -25,6 +26,7 @@ CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
 		--datadir=${PREFIX}/share/gnome \
 		--with-pisock=${LOCALBASE}/pilot
 CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" GLIB_CONFIG="${GLIB_CONFIG}" \
-		CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/pilot/include" \
+		LIBS="-L${LOCALBASE}/lib -L${LOCALBASE}/pilot/lib"
 
 .include <bsd.port.mk>
