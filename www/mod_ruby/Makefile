@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mod_ruby
-PORTVERSION=	${VERSION}
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www.modruby.net/archive/
 DIST_SUBDIR=	ruby
@@ -19,15 +18,6 @@ LIB_DEPENDS=	eruby.1:${PORTSDIR}/textproc/eruby
 RUN_DEPENDS=	${APXS}:${PORTSDIR}/www/apache13
 
 USE_RUBY=	yes
-RUBY_REQUIRE=	160 <= Ruby
-
-.include <bsd.port.pre.mk>
-
-.if defined(RUBY_PROVIDED)
-VERSION=	0.2.2
-.else
-VERSION=	0.2.0
-.endif
 
 APXS=		${LOCALBASE}/sbin/apxs
 
@@ -38,14 +28,19 @@ CONFIGURE_ARGS=	--apxs="${APXS}" \
 
 DOCS_EN=	ChangeLog README.en
 DOCS_JA=	README.ja
+EXAMPLES_EN=	ruby/*
 
 do-configure:
-	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} Makefile.RB ${CONFIGURE_ARGS}
+	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} ${RUBY_FLAGS} Makefile.RB ${CONFIGURE_ARGS}
 
 do-install:
 	${APXS} -i -n ruby ${WRKSRC}/mod_ruby.so
 	${INSTALL_DATA} ${FILESDIR}/httpd.conf.${PORTNAME} ${PREFIX}/etc/apache/
 .if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+.for f in ${EXAMPLES_EN}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+.endfor
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
 .for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
@@ -56,4 +51,4 @@ do-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

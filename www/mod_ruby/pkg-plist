@@ -1,5 +1,7 @@
 etc/apache/httpd.conf.mod_ruby
 libexec/apache/mod_ruby.so
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/mod_ruby/mod_rd2html.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/mod_ruby
 %%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/ChangeLog
 %%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/README.en
 %%PORTDOCS%%%%RUBY_DOCDIR%%/mod_ruby/ja/README.ja

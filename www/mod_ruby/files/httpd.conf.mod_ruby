@@ -9,9 +9,12 @@ LoadModule ruby_module     libexec/apache/mod_ruby.so
 AddModule mod_ruby.c
 
 <IfModule mod_ruby.c>
-    AddHandler ruby-script	.rb
+    AddHandler ruby-script	.rbx
+    AddType application/x-httpd-eruby .rhtml
 
-#    Alias /ruby/ /usr/local/www/cgi-bin/
+    #RubyKanjiCode euc
+
+#    Alias /ruby/ /usr/local/www/ruby/
 #    <Location /ruby/>
 #        SetHandler ruby-script
 #        Options ExecCGI
