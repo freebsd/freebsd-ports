@@ -29,8 +29,11 @@ share/locale/it/LC_MESSAGES/bluefish.mo
 share/locale/ja/LC_MESSAGES/bluefish.mo
 share/locale/no/LC_MESSAGES/bluefish.mo
 share/locale/pl/LC_MESSAGES/bluefish.mo
+share/locale/pt_BR/LC_MESSAGES/bluefish.mo
 share/locale/ru/LC_MESSAGES/bluefish.mo
 share/locale/sv/LC_MESSAGES/bluefish.mo
+@unexec rmdir share/nls/POSIX 2>/dev/null || true
+@unexec rmdir share/nls/en_US.US-ASCII 2> /dev/null || true
 @unexec rmdir share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir share/locale/zh_CN 2>/dev/null || true
 @unexec rmdir share/locale/sv/LC_MESSAGES 2>/dev/null || true
