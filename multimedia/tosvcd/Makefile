@@ -26,4 +26,10 @@ MAKE_ENV=	CC="${CXX}" CFLAGS="${CXXFLAGS}" \
 		PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" || ${ARCH} == "amd64"
+BROKEN=		"Does not compile on alpha or amd64"
+.endif
+
+.include <bsd.port.post.mk>
