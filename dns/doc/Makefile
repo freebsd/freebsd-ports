@@ -8,7 +8,8 @@
 PORTNAME=	doc
 PORTVERSION=	2.1.4
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.his.com/pub/brad/dns/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	sanpei
 
 MAINTAINER=	sanpei@FreeBSD.org
 
