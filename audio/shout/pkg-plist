@@ -1,0 +1,5 @@
+bin/shout
+etc/icecast/shout.conf.dist
+@unexec rmdir %D/etc/icecast 2>/dev/null || true
+@unexec rmdir %D/share/icecast/log 2>/dev/null || true
+@unexec rmdir %D/share/icecast 2>/dev/null || true
