@@ -1,0 +1,46 @@
+bin/battalion
+man/man6/battalion.6.gz
+share/battalion/battalion.sho
+share/battalion/DATA/road.data
+share/battalion/DATA/tank.data
+share/battalion/DATA/tree.data
+share/battalion/MUSIC/1.au
+share/battalion/MUSIC/2.au
+share/battalion/MUSIC/3.au
+share/battalion/MUSIC/4.au
+share/battalion/MUSIC/5.au
+share/battalion/MUSIC/d1.au
+share/battalion/MUSIC/d2.au
+share/battalion/MUSIC/d3.au
+share/battalion/MUSIC/d4.au
+share/battalion/MUSIC/d5.au
+share/battalion/SOUNDS/beam.au
+share/battalion/SOUNDS/boom.au
+share/battalion/SOUNDS/crash.au
+share/battalion/SOUNDS/monsterbeam.au
+share/battalion/SOUNDS/rocket.au
+share/battalion/SOUNDS/slag.au
+share/battalion/SOUNDS/tank.au
+share/battalion/SOUNDS/tech.au
+share/battalion/TEXTURES/road.tex
+share/battalion/TEXTURES/screenleft.tex
+share/battalion/TEXTURES/screenright.tex
+share/battalion/TEXTURES/treewood.tex
+share/doc/battalion/README
+share/doc/battalion/bathelp01.gif
+share/doc/battalion/bathelp02.gif
+share/doc/battalion/bathelp03.gif
+share/doc/battalion/bathelp04.gif
+share/doc/battalion/bathelp05.gif
+share/doc/battalion/bathelp06.gif
+share/doc/battalion/bathelp07.gif
+share/doc/battalion/bathelp08.gif
+share/doc/battalion/bathelp09.gif
+share/doc/battalion/bathelp10.gif
+share/doc/battalion/bathelp11.gif
+@dirrm share/battalion/DATA
+@dirrm share/battalion/MUSIC
+@dirrm share/battalion/SOUNDS
+@dirrm share/battalion/TEXTURES
+@dirrm share/battalion
+@dirrm share/doc/battalion
