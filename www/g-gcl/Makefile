@@ -8,7 +8,8 @@
 PORTNAME=	g-gcl
 PORTVERSION=	1.10
 CATEGORIES=	www graphics
-MASTER_SITES=	ftp://ftp.whizkidtech.net/cgi/gcl/ \
+MASTER_SITES=	http://www.whizkidtech.redprince.net/gcl/ \
+		ftp://ftp.whizkidtech.net/cgi/gcl/ \
 		http://www.whizkidtech.net/gcl/
 
 MAINTAINER=	adam@whizkidtech.net
