@@ -12,7 +12,9 @@ MASTER_SITES=	ftp://ftp.rhnet.is/pub/noattach/
 
 MAINTAINER=	dinoex@FreeBSD.org
 
+.if !defined(SENDMAIL_MILTER_IN_BASE)
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmilter.a:${PORTSDIR}/mail/sendmail
+.endif
 
 CFLAGS+=	${PTHREAD_CFLAGS:S=""==}
 GNU_CONFIGURE=	yes
