@@ -5196,6 +5196,7 @@ p5-DBD-mysql	ports/databases/p5-DBD-mysql
 p5-DBI		ports/databases/p5-DBI
 p5-DBIWrapper	ports/databases/p5-DBIWrapper
 p5-DBIx-AnyDBD	ports/databases/p5-DBIx-AnyDBD
+p5-DBIx-DBSchema	ports/databases/p5-DBIx-DBSchema
 p5-DBIx-DataSource	ports/databases/p5-DBIx-DataSource
 p5-DBIx-Password	ports/databases/p5-DBIx-Password
 p5-DBIx-Recordset	ports/databases/p5-DBIx-Recordset
