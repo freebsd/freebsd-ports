@@ -1,58 +1,91 @@
 etc/rc.d/diablo.sh
-news/dbin/dilookup
-news/dbin/dicmd
-news/dbin/didump
-news/dbin/diconvhist
-news/dbin/dexpire
-news/dbin/didate
-news/dbin/dspaminfo
-news/dbin/diload
-news/dbin/doutq
+news/adm/biweekly.atrim
+news/adm/crontab.sample
+news/adm/daily.atrim
+news/adm/daily.dclean
+news/adm/daily.reader
+news/adm/hourly.expire
+news/adm/quadhr.expire
+news/adm/rc.news
+news/adm/rot
+news/adm/weekly.reader
+news/dactive.kp
+news/dbin/.empty
 news/dbin/dclean
-news/dbin/dspoolout
-news/dbin/dreadart
-news/dbin/dkp
-news/dbin/pgpverify
-news/dbin/dsyncgroups
+news/dbin/dexpire
 news/dbin/dexpireover
+news/dbin/dgrpctl
 news/dbin/diablo
+news/dbin/dicmd
+news/dbin/diconvhist
+news/dbin/didate
+news/dbin/didump
+news/dbin/diload
+news/dbin/diloadfromspool
+news/dbin/dilookup
+news/dbin/dkp
 news/dbin/dnewslink
+news/dbin/doutq
+news/dbin/dpath
+news/dbin/dprimehostcache
+news/dbin/drcmd
+news/dbin/dreadart
+news/dbin/dreaderd
+news/dbin/dreadover
+news/dbin/drequeue
+news/dbin/dspaminfo
+news/dbin/dspoolout
+news/dbin/dsyncgroups
+news/dbin/pgpverify
 news/dbin/plock
 news/dbin/showlocks
-news/dbin/dreaderd
-news/samples/diablo.config
-news/samples/rc.news
-news/samples/dexpire.ctl
-news/samples/dnewsfeeds
-news/samples/dnntpspool.ctl
-news/samples/diablo.hosts
-news/samples/dactive.kp
-news/samples/dreader.hosts
-news/samples/dserver.hosts
-news/samples/moderators
-news/samples/dcontrol.ctl
-news/dactive.kp
 news/dcontrol.ctl
 news/dexpire.ctl
 news/diablo.config
 news/diablo.hosts
+news/distrib.pats
 news/dnewsfeeds
 news/dnntpspool.ctl
-news/dreader.hosts
+news/dreader.access
 news/dserver.hosts
 news/moderators
-news/rc.news
+news/pgp-sample
+news/samples/adm/biweekly.atrim
+news/samples/adm/crontab.sample
+news/samples/adm/daily.atrim
+news/samples/adm/daily.dclean
+news/samples/adm/daily.reader
+news/samples/adm/hourly.expire
+news/samples/adm/quadhr.expire
+news/samples/adm/rc.news
+news/samples/adm/rot
+news/samples/adm/weekly.reader
+news/samples/dactive.kp
+news/samples/dcontrol.ctl
+news/samples/dexpire.ctl
+news/samples/diablo.config
+news/samples/diablo.hosts
+news/samples/distrib.pats
+news/samples/dnewsfeeds
+news/samples/dnntpspool.ctl
+news/samples/dreader.access
+news/samples/dserver.hosts
+news/samples/moderators
+news/samples/pgp-sample
 share/doc/diablo/COPYRIGHT
 share/doc/diablo/INSTALL
 share/doc/diablo/README.READER
 share/doc/diablo/README.SERVER
 share/doc/diablo/RELEASE_NOTES
-share/doc/diablo/post-install-notes
-@unexec /bin/rm -f /news
 @dirrm share/doc/diablo
-@dirrm news/dbin
-@dirrm news/dqueue
+@dirrm news/spool/postq
 @dirrm news/spool/news
+@dirrm news/spool/group
+@dirrm news/spool/cache
 @dirrm news/spool
+@dirrm news/samples/adm
 @dirrm news/samples
+@dirrm news/dqueue
+@dirrm news/dbin
+@dirrm news/adm
 @dirrm news
