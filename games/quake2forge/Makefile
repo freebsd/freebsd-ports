@@ -6,25 +6,25 @@
 #
 
 PORTNAME=	quake2forge
-PORTVERSION=	0.1
+PORTVERSION=	0.2.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	quake
 DISTNAME=	quake2-${PORTVERSION}
 
 MAINTAINER=	q@uni.de
-COMMENT=	Quakeforge version of Quake 2 (First Person Shooter)
+COMMENT=	First Person Shooter with many addons available
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
-LDCONFIG_DIRS=	${PREFIX}/lib ${PREFIX}/lib/quake2
+LDCONFIG_DIRS=	${PREFIX}/lib/quake2 ${PREFIX}/lib/quake2/baseq2 ${PREFIX}/lib/quake2/ctf
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} --enable-static=no
+CONFIGURE_ARGS=	--enable-static=no
 CONFIGURE_TARGET=
 
 .if exists(${LOCALBASE}/lib/libSDL-1.1.so.5)
