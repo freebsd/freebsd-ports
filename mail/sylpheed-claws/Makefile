@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sylpheed-claws
-PORTVERSION=	0.9.13
-PORTREVISION=	3
+PORTVERSION=	1.0.0
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	sylpheed-claws
@@ -174,7 +173,7 @@ post-patch:
 		s|gpgme-config|gpgme03-config|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/tools/README.sylprint ${WRKSRC}/tools/sylprint.pl
-	@${REINPLACE_CMD} -e "s|po intl src|po src|" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s|po intl src|po src| ; s:@SYLPHEED_GNOME:#@SYLPHEED_GNOME:g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's:%%OPENSSL_LIBS%%:"-lssl -lcrypto":g' ${WRKSRC}/configure
 	@for f in `${FIND} ${WRKSRC}/tools -type f -print`; do \
 		${REINPLACE_CMD} -e "s|/usr/bin/perl|${PERL}|" $$f; done
@@ -202,6 +201,7 @@ post-install:
 		textviewer.sh update-po uudec vcard2xml.py ${DATADIR}
 
 .if ${HAVE_GNOME:Mgnomehier} != ""
+	@${MKDIR} ${PREFIX}/share/gnome/apps/Internet
 	@${INSTALL_DATA} ${WRKSRC}/sylpheed.desktop ${PREFIX}/share/gnome/apps/Internet/sylpheed-claws.desktop
 .endif
 
