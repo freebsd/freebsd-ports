@@ -14,16 +14,15 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
 
-BUILD_DEPENDS=	dos2unix:${PORTSDIR}/converters/unix2dos
-
 PERL_CONFIGURE=	yes
 PLIST_SUB+=	EXAMPLESDIR="share/examples/${PORTNAME}"
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Class::Contract.3 Class::Contract::Production.3
 
-post-extract:
-	@find ${WRKSRC} -type f -name "*.p[lm]" | xargs dos2unix -p
+post-patch:
+	@${FIND} ${WRKSRC} -type f -name "*.p[lm]" | \
+		xargs ${PERL} -pi -e 's/\x0d//g;'
 
 pre-configure:
 	${MKDIR} ${WRKSRC}/examples
@@ -32,9 +31,8 @@ pre-configure:
 post-install:
 .ifndef(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
-	@${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
-	${INSTALL_SCRIPT} ${WRKSRC}/examples/* \
-		${PREFIX}/share/examples/${PORTNAME}
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/examples/* ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.mk>
