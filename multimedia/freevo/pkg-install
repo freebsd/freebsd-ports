@@ -25,20 +25,16 @@ ask() {
 yesno() {
     local dflt question answer
 
-    if [ ! -n "$BATCH" ]; then
-      question=$1
-      dflt=$2
-      while :; do
+    question=$1
+    dflt=$2
+    while :; do
 	answer=$(ask "${question}" "${dflt}")
 	case "${answer}" in
-	[Yy]*)		return 0;;
-	[Nn]*)		return 1;;
+	[Yy]*)          return 0;;
+	[Nn]*)          return 1;;
 	esac
 	echo "Please answer yes or no."
-      done
-    else
-      return ${dflt}
-    fi
+    done
 }
 
 creategroup() {
@@ -46,7 +42,7 @@ creategroup() {
 	echo "You already have a group \"${group}\", so I will use it."
     else
 	echo "You need a group \"${group}\"."
-	if (yesno "Would you like me to create it" y); then
+	if ([ -n "$BATCH" ] || yesno "Would you like me to create it" y); then
 	    /usr/sbin/pw groupadd ${group} -g ${gid} || exit
 	    echo "Done."
 	else
@@ -62,7 +58,7 @@ createuser() {
 	pw usermod "${user}" -d ${home}
     else
 	echo "You need a user \"${user}\"."
-	if (yesno "Would you like me to create it" y); then
+	if ([ -n "$BATCH" ] || yesno "Would you like me to create it" y); then
 	    /usr/sbin/pw useradd ${user} -u ${uid} -g ${group} -d ${home} \
 		-s /bin/sh -c "Freevo Owner" || exit
 	    echo "Done."
@@ -80,7 +76,7 @@ createhome() {
 	chmod ${perm} ${home} # Should we recurse?
     else
 	echo "You need a cache directory \"${home}\"."
-	if (yesno "Would you like me to create it" y); then
+	if ([ -n "$BATCH" ] || yesno "Would you like me to create it" y); then
 	    mkdir ${home}
 	    chown ${user}:${group} ${home}
 	    chmod ${perm} ${home}
