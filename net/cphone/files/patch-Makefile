@@ -1,0 +1,50 @@
+*** Makefile.orig	Wed Nov 27 09:18:40 2002
+--- Makefile	Wed Nov 27 09:19:01 2002
+*************** MOCFILES        := \
+*** 59,79 ****
+  ##################################################
+  
+  ifndef QTDIR
+! ifneq (,$(wildcard /usr/local/qt))
+! QTDIR=/usr/local/qt
+! else
+! ifneq (,$(wildcard /usr/lib/qt2))
+! QTDIR=/usr/lib/qt2
+! else
+! ifneq (,$(wildcard ~/qt))
+! QTDIR=~/qt
+! else
+! ifneq (,$(wildcard ../qt))
+! QTDIR=../qt
+! endif
+! endif
+! endif
+! endif
+  endif
+  
+  ifndef XLIBDIR
+--- 59,65 ----
+  ##################################################
+  
+  ifndef QTDIR
+! QTDIR=/usr/X11R6
+  endif
+  
+  ifndef XLIBDIR
+*************** MOC             = $(QTDIR)/bin/moc
+*** 87,93 ****
+  
+  STDCCFLAGS      += -I$(QTDIR)/include -DQT_THREAD_SUPPORT
+  LDFLAGS         += -L$(QTDIR)/lib -L$(XLIBDIR)
+! ENDLDLIBS       += -lqt-mt -lSM -lICE -lXext -lX11 -ldl
+  
+  UISRC           := $(patsubst %.ui,%.cxx,$(UIFILES))
+  UIHDRS          := $(patsubst %.ui,%.h,$(UIFILES))
+--- 73,79 ----
+  
+  STDCCFLAGS      += -I$(QTDIR)/include -DQT_THREAD_SUPPORT
+  LDFLAGS         += -L$(QTDIR)/lib -L$(XLIBDIR)
+! ENDLDLIBS       += -lqt-mt -lSM -lICE -lXext -lX11
+  
+  UISRC           := $(patsubst %.ui,%.cxx,$(UIFILES))
+  UIHDRS          := $(patsubst %.ui,%.h,$(UIFILES))
