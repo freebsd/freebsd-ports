@@ -4,7 +4,6 @@ share/mime/XMLnamespaces
 share/mime/application/andrew-inset.xml
 share/mime/application/illustrator.xml
 share/mime/application/mac-binhex40.xml
-share/mime/application/msword.xml
 share/mime/application/octet-stream.xml
 share/mime/application/oda.xml
 share/mime/application/ogg.xml
@@ -44,7 +43,7 @@ share/mime/application/vnd.sun.xml.math.xml
 share/mime/application/vnd.sun.xml.writer.global.xml
 share/mime/application/vnd.sun.xml.writer.template.xml
 share/mime/application/vnd.sun.xml.writer.xml
-share/mime/application/wordperfect.xml
+share/mime/application/vnd.wordperfect.xml
 share/mime/application/x-abiword.xml
 share/mime/application/x-amipro.xml
 share/mime/application/x-applix-spreadsheet.xml
@@ -113,6 +112,7 @@ share/mime/application/x-hdf.xml
 share/mime/application/x-ipod-firmware.xml
 share/mime/application/x-jar.xml
 share/mime/application/x-java.xml
+share/mime/application/x-javascript.xml
 share/mime/application/x-jbuilder-project.xml
 share/mime/application/x-karbon.xml
 share/mime/application/x-kchart.xml
@@ -203,7 +203,6 @@ share/mime/audio/ac3.xml
 share/mime/audio/basic.xml
 share/mime/audio/midi.xml
 share/mime/audio/prs.sid.xml
-share/mime/audio/vnd.rn-realaudio.xml
 share/mime/audio/x-adpcm.xml
 share/mime/audio/x-aifc.xml
 share/mime/audio/x-aiff.xml
@@ -337,6 +336,7 @@ share/mime/text/x-dsl.xml
 share/mime/text/x-dtd.xml
 share/mime/text/x-emacs-lisp.xml
 share/mime/text/x-fortran.xml
+share/mime/text/x-gettext-translation-template.xml
 share/mime/text/x-gettext-translation.xml
 share/mime/text/x-gtkrc.xml
 share/mime/text/x-haskell.xml
@@ -348,6 +348,7 @@ share/mime/text/x-ksysv-log.xml
 share/mime/text/x-literate-haskell.xml
 share/mime/text/x-log.xml
 share/mime/text/x-makefile.xml
+share/mime/text/x-xmi.xml
 share/mime/text/x-moc.xml
 share/mime/text/x-objcsrc.xml
 share/mime/text/x-pascal.xml
