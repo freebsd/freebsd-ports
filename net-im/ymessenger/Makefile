@@ -8,6 +8,7 @@
 
 PORTNAME=	ymessenger
 PORTVERSION=	1.0.4
+PORTREVISION=	1
 PORTEPOCH=	20020902
 CATEGORIES=	net
 MASTER_SITES=	http://public.yahoo.com/~mmk/
@@ -17,11 +18,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sethk@meowfishies.com
 COMMENT=	Yahoo! Messenger - Instant messaging client
 
-LIB_DEPENDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
-
-BROKEN=		"Broken pkg-plist; will be removed after Feb 2"
-
-USE_GNOME=	gtk12
+USE_GNOME=	gtk12 gdkpixbuf
 USE_REINPLACE=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
