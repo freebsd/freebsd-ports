@@ -2433,6 +2433,7 @@ grepmail	ports/mail/grepmail
 gretl		ports/misc/gretl
 grhino		ports/games/grhino
 gri		ports/math/gri
+gribouy		ports/print/gribouy
 gridpix		ports/graphics/gridpix
 gringotts	ports/security/gringotts
 grip		ports/audio/grip
