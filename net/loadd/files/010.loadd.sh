@@ -16,7 +16,7 @@ case "$1" in
 start)
 	case ${loadd_enable:-NO} in
 	[Yy][Ee][Ss])
-		[ -f ${PREFIX}/etc/loadd.conf && ${loadd_program:-${PREFIX}/libexec/loadd} ${loadd_flags:--d} && echo -n ' loadd'
+		[ -f ${PREFIX}/etc/loadd.conf ] && ${loadd_program:-${PREFIX}/libexec/loadd} ${loadd_flags:--d} && echo -n ' loadd'
 		;;
 	esac
 	;;
