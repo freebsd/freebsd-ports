@@ -3,8 +3,12 @@ home=/a/asami/portbuild/errorlogs
 scripts=/a/asami/portbuild/scripts
 dir1=3-latest
 dir2=4-latest
+dir3=3-full
+dir4=4-full
 
 cd $home/$dir1 && ${scripts}/processlogs
 cd $home/$dir2 && ${scripts}/processlogs
 cd $home && ${scripts}/comparelogs $dir1 $dir2
 cd $home && ${scripts}/comparelogs $dir2 $dir1
+cd $home && ${scripts}/comparelogs $dir3 $dir4
+cd $home && ${scripts}/comparelogs $dir4 $dir3
