@@ -16,6 +16,7 @@ COMMENT=	GNU RADIUS server
 
 #MAKEFILE=	Makefile
 
+CONFLICTS=	freeradius-0.* openradius-0.* radiusd-cistron-1.*
 USE_SUBMAKE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

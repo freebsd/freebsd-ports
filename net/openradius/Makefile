@@ -14,6 +14,7 @@ MASTER_SITES=  http://www.xs4all.nl/~evbergen/openradius/download/ \
 MAINTAINER=    jettea46@yahoo.com
 COMMENT=       A RADIUS server with some actual documentation
 
+CONFLICTS=	freeradius-0.* gnu-radius-1.* radiusd-cistron-1.*
 CONFIGURE_ARGS=     --prefix={$PREFIX}
 
 CC ?= gcc

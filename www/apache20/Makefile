@@ -18,6 +18,9 @@ COMMENT?=	Version 2 of the extremely popular Apache http server
 
 LIB_DEPENDS=	expat.4:${PORTSDIR}/textproc/expat2
 
+CONFLICTS=	apache+ipv6-1.* apache+modssl-1.* apache+ssl-1.* apache-1.* apache_fp-1.* \
+		caudium-devel-1.* caudium10-1.* caudium12-* \
+		ru-apache+mod_ssl-1.* ru-apache-1.* thttpd-2.*
 LATEST_LINK=	apache2
 
 WITH_MPM?=	prefork # or worker, perchild
