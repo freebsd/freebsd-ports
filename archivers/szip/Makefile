@@ -16,7 +16,7 @@ MAINTAINER=	ip@doom.homeunix.org
 COMMENT=	A fast compression utility
 
 USE_GMAKE=	yes
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	i386 amd64
 
 do-build:
 	${GMAKE} -C ${WRKDIR}
