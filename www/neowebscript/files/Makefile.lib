@@ -1,0 +1,35 @@
+TCL_VERSION?=8.3
+TCL_NDVER?=${TCL_VERSION:S/.//}	# same, but without the dot
+
+PREFIX?=	/usr/local
+
+INCLUDES=	-I${PREFIX}/include/apache \
+		-I${PREFIX}/include/tcl${TCL_VERSION} \
+		-I${PREFIX}/include
+
+CC!=		${PREFIX}/sbin/apxs -q CC
+CFLAGS!=	${PREFIX}/sbin/apxs -q CFLAGS CFLAGS_SHLIB
+CFLAGS+=	${INCLUDES} -DGDTCL
+# Ridiculous!
+#CFLAGS+=	-Dneo_log_module=log_neo_module \
+#		-Dtcl_auth_module=auth_tcl_module
+
+SHLIB_NAME=	${SRCS:R}.so
+
+LDADD=		-L${PREFIX}/lib -ltcl${TCL_NDVER} -lm
+
+USE_DB!=	grep -l db.h ${.CURDIR}/${SRCS}
+.if !empty(USE_DB)
+LDADD+=		-ldb2
+.endif
+
+#LDFLAGS=	${LDADD}
+
+NOPROFILE=	True	# to avoid building profiled library
+INTERNALLIB=	True	# to avoid building a static version
+
+NOMAN=	True	# don't bother with the man-page here, let the port handle it
+
+all:	${SHLIB_NAME}
+
+.include <bsd.lib.mk>

@@ -1,0 +1,8 @@
+-
+	Please, adjust the /usr/local/etc/apache/neowebscript.conf
+	to your liking and add
+
+		include etc/apache/neowebscript.conf
+
+	to the Apache's config file.
+-

@@ -1,0 +1,62 @@
+--- ../neowebscript/init.tcl	Wed Nov 24 19:47:41 1999
++++ ../neowebscript/init.tcl	Sun Oct 28 03:07:00 2001
+@@ -18,5 +18,10 @@
+ #
+ 
+-set debugging 1
++package require Tclx
++if {[info exists NeoWebDirConf(debugging)]} {
++	set debugging $NeoWebDirConf(debugging)
++} else {
++	set debugging 0
++}
+ catch {rename copyfile ""}
+ catch {rename unsupported0 copyfile}
+@@ -25,9 +30,17 @@
+ set binPath [file join $server(SERVER_ROOT) bin]
+ set libPath [file join $server(SERVER_ROOT) lib]
+-set nwsPath [file join $server(SERVER_ROOT) neowebscript]
+-set logPath [file join $server(SERVER_ROOT) logs]
++set nwsPath [file dirname [info script]]
++set logPath /var/log
+ 
+-set parallelUserBase [file join $server(SERVER_ROOT) neowebscript neoscript-data users]
+-set parallelSystemBase [file join $server(SERVER_ROOT) neowebscript neoscript-data system]
++if {[info exists NeoWebDirConf(parallelUserBase)]} {
++	set parallelUserBase $NeoWebDirConf(parallelUserBase)
++} else {
++	set parallelUserBase /var/db/neowebscript/users
++}
++if {[info exists NeoWebDirConf(parallelSystemBase)]} {
++	set parallelSystemBase $NeoWebDirConf(parallelSystemBase)
++} else {
++	set parallelSystemBase /var/db/neowebscript/system
++}
+ 
+ set nwsLocalPath [file join $nwsPath nwslocal]
+@@ -299,5 +312,5 @@
+     set bytesPerLogEntry 131
+ 
+-    set fp [open [file join $logPath access_log]]
++    set fp [open [file join $logPath httpd-access.log]]
+     set size [fstat $fp size]
+     set offset [expr $size - $hitsInInterval * $bytesPerLogEntry]
+@@ -313,5 +326,10 @@
+     if {$result < 0} {return 0}
+ 
+-    set ET [expr [clock seconds] - [lindex $line 0]]
++    if {![regexp {\[([[:digit:]]{1,2})/(...)/([[:digit:]]{4}):([[:digit:]]{2}:[[:digit:]]{2}:[[:digit:]]{2})} \
++	[lindex $line 3] j day month year time]} {
++	return "unable to parse the log entry"
++    }
++
++    set ET [expr [clock seconds] - [clock scan "$time $month $day $year"]]
+     return [expr ($hitsInInterval * 3600) / $ET]
+ }
+@@ -404,4 +422,6 @@
+     $safeInterp alias remote_hostname remote_hostname
+     $safeInterp alias gm_timestr_822 gm_timestr_822
++
++    $safeInterp alias emit_full_header emit_full_header
+ 
+     if [interp issafe $safeInterp] {

@@ -172,6 +172,7 @@
     SUBDIR += mozilla-embedded
     SUBDIR += mozilla-headers
     SUBDIR += neon
+    SUBDIR += neowebscript
     SUBDIR += netraider
     SUBDIR += netscape-remote
     SUBDIR += netscape-wrapper

@@ -1,0 +1,16 @@
+NeoWebScript[tm] is a module for the Apache webserver that allows you to
+embed the  Tcl/Tk programming language  in your webpages as  a scripting
+tool.  It was  invented by  Karl Lehenbauer,  NeoSoft's Chief  Technical
+Officer, and documented, enhanced  and extended by NeoSoft's programmers
+and technical writers.
+
+It offers a fast, secure, easy to learn way to do powerful, server-based
+interactive programming  directly in  the HTML code  in web  pages. With
+NeoWebScript[tm], counters, email forms, graffiti walls, guest books and
+visitor tracking are all easy, even for a beginning programmer.
+
+NWS  uses plenty  of its  own extensions  to TCL  and those  provided by
+eXtended  TCL, gd,  and others.  All other  TCL extensions  can also  be
+loaded on the fly.
+
+WWW: http://www.sourceforge.net/projects/nws/
