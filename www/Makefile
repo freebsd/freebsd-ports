@@ -26,6 +26,7 @@
     SUBDIR += chimera
     SUBDIR += chimera2
     SUBDIR += comline
+    SUBDIR += css-mode.el
     SUBDIR += demoroniser
     SUBDIR += erwn
     SUBDIR += evg
@@ -101,6 +102,7 @@
     SUBDIR += tinyproxy
     SUBDIR += transproxy
     SUBDIR += udmsearch
+    SUBDIR += vrweb
     SUBDIR += w3
     SUBDIR += w3c-httpd
     SUBDIR += w3m
