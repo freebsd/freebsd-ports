@@ -30,8 +30,8 @@ USE_LINUX=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500000
-IGNORE=		"Drivers are not supported on 5.x"
+.if ${OSVERSION} > 500000 && ${OSVERSION} < 500105
+IGNORE=		"You need a more recent version of -CURRENT for this driver"
 .endif
 
 .if defined(WITH_FREEBSD_AGP) || defined(FORCE_AGP_RATE)
