@@ -1,16 +1,21 @@
-ezmlm-idx is an addition and patch to ezmlm-0.53.
+ezmlm-idx is an improved version of ezmlm mailing list manager.
 
-ezmlm-idx adds multi-message threaded archive retrieval, digests, remote
-administration, message and subscription moderation, subscriber-only
-restrictions, message trailer, subject prefix, subscriber name storage,
-customizable setup, multi-language and MIME support and more. In addition,
-improved bounce handling, case-insensitive subscriber address storage, and
-support for distributed lists (main + sublist transparent to the
-subscriber).
-
-ezmlm-idx can now be compiled with MySQL support for centrally administrated
-distributed lists with binaries that autosense use of SQL or standard ezmlm
-databases.
+ezmlm-idx adds the following features:
+- multi-message threaded archive retrieval
+- digests
+- remote administration
+- message and subscription moderation
+- subscriber-only restrictions
+- message trailer
+- subject prefix
+- subscriber name storage,
+- customizable setup
+- multi-language and MIME support 
+- improved bounce handling
+- case-insensitive subscriber address storage
+- distributed lists (main + sublist transparent to the subscriber)
+- SQL support (MySQL or Postgres) for centrally administrated 
+  distributed lists
 
 WWW: http://www.ezmlm.org/
 
