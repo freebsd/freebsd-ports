@@ -1,17 +1,5 @@
 --- src/proctable.c.orig	Sun Feb  8 10:06:08 2004
 +++ src/proctable.c	Tue Apr 13 01:01:51 2004
-@@ -147,8 +147,9 @@
- 				    G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING,
- 				    G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING,
- 				    G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING,
--				    G_TYPE_INT, G_TYPE_INT, G_TYPE_INT,
--				    GDK_TYPE_PIXBUF, G_TYPE_POINTER);		    
-+				    G_TYPE_STRING, G_TYPE_INT, G_TYPE_INT,
-+				    G_TYPE_INT, GDK_TYPE_PIXBUF,
-+				    G_TYPE_POINTER);		    
-   	
-   	proctree = gtk_tree_view_new_with_model (GTK_TREE_MODEL (model));
- 	gtk_tree_view_set_rules_hint (GTK_TREE_VIEW (proctree), TRUE);
 @@ -547,6 +548,9 @@
  	glibtop_get_proc_uid (&procuid, pid);
  	glibtop_get_proc_time (&proctime, pid);
