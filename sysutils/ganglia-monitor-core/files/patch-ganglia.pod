@@ -1,0 +1,18 @@
+
+$FreeBSD$
+
+--- ganglia.pod.orig
++++ ganglia.pod
+@@ -451,9 +451,9 @@
+    # setuid off
+    #
+    #-------------------------------------------------------------------------------
+-   # User gmetad will setuid to (defaults to "nobody")
+-   # default: "nobody"
+-   # setuid_username "nobody"
++   # User gmetad will setuid to (defaults to "ganglia")
++   # default: "ganglia"
++   # setuid_username "ganglia"
+    #
+    #-------------------------------------------------------------------------------
+    # The port gmetad will answer requests for XML

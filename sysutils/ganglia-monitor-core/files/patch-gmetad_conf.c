@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- gmetad/conf.c.orig	Tue May 27 11:02:49 2003
-+++ gmetad/conf.c	Tue Oct 28 11:10:08 2003
-@@ -251,7 +251,7 @@
+--- gmetad/conf.c.orig
++++ gmetad/conf.c
+@@ -249,7 +249,7 @@
     config->trusted_hosts = NULL;
     config->debug_level = 0;
     config->should_setuid = 1;

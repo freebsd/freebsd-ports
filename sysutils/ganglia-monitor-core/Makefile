@@ -6,90 +6,96 @@
 #
 
 PORTNAME=	ganglia-monitor-core
-PORTVERSION=	2.5.6
+PORTVERSION=	3.0.0
 CATEGORIES=	sysutils net parallel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ganglia
-.if defined (WITHOUT_GMETAD)
-PKGNAMESUFFIX=	-nogmetad
-.endif
+DISTNAME=	ganglia-${PORTVERSION}
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Ganglia cluster monitor, monitoring daemon
 
-.if !defined (WITHOUT_GMETAD)
+PKGINSTALL=	${WRKSRC}/pkg-install
+
+.if defined (WITH_GMETAD)
 LIB_DEPENDS=	rrd.0:${PORTSDIR}/net/rrdtool
 .endif
+
+OPTIONS+=	GMETAD "include gmetad" on
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib
 
-.if !defined (WITHOUT_GMETAD)
+USE_REINPLACE=	yes
+USE_BZIP2=	yes
+USE_LIBTOOL_VER=	15
+USE_RC_SUBR=	ganglia.sh
+
+SUB_FILES=	pkg-install
+
+.include <bsd.port.pre.mk>
+
+.if defined (WITH_GMETAD)
 CONFIGURE_ARGS+=	--with-gmetad
 .endif
-USE_LIBTOOL_VER=13
 INSTALLS_SHLIB=	yes
-.if defined (WITHOUT_GMETAD)
+.if !defined (WITH_GMETAD)
 PLIST_SUB+=	GMETAD="@comment "
+SUB_LIST+=	GMETAD="\#"
 .else
 PLIST_SUB+=	GMETAD=
+SUB_LIST+=	GMETAD=
 .endif
-USE_REINPLACE=	yes
 
 MAN1=		gmetric.1 gmond.1 gstat.1
-.if !defined (WITHOUT_GMETAD)
+.if defined (WITH_GMETAD)
 MAN1+=		gmetad.1
 .endif
+MAN5=		gmond.conf.5
 
 CONF_DIR=	${PREFIX}/etc
-RC_DIR=		${PREFIX}/etc/rc.d
 
-FIX_CONF_FILES=	${WRKSRC}/lib/ganglia/gmond_config.h \
-		${WRKSRC}/mans/gmetad.1 \
-		${WRKSRC}/mans/gmond.1 \
-		${WRKSRC}/gmetad/cmdline.c \
-		${WRKSRC}/gmetad/cmdline.h \
-		${WRKSRC}/gmond/cmdline.c \
-		${WRKSRC}/gmond/cmdline.h
-FIX_DB_FILES=	${WRKSRC}/gmetad/conf.c \
-		${WRKSRC}/gmetad/gmetad.conf
+FIX_CONF_FILES=	ganglia.pod \
+		mans/gmetad.1 \
+		mans/gmond.1 \
+		gmetad/cmdline.c \
+		gmetad/cmdline.h \
+		gmond/g25_config.h \
+		gmetric/cmdline.c \
+		gmetric/cmdline.h \
+		gmond/cmdline.c \
+		gmond/cmdline.h
+FIX_DB_FILES=	ganglia.pod \
+		gmetad/conf.c \
+		gmetad/gmetad.conf
 
 post-patch:
-	${REINPLACE_CMD} -e "s|/etc/\(gm[a-z]*d.conf\)|${CONF_DIR}/\1|g" \
-	    ${FIX_CONF_FILES}
+	${REINPLACE_CMD} -e "s|/etc/\(gm[a-z]*d.conf\)|${PREFIX}/etc/\1|g" \
+	    ${FIX_CONF_FILES:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e "s|/var/lib/ganglia|/var/db/ganglia|g" \
-	    ${FIX_DB_FILES}
-	${REINPLACE_CMD} -e 's|-pthread||g' ${WRKSRC}/configure
-	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	    ${FIX_DB_FILES:S|^|${WRKSRC}/|}
 
-# Post-install
-#
+post-build:
+	${WRKSRC}/gmond/gmond -t > ${WRKDIR}/gmond.conf
 
-post-install: install-man install-sample-files install-startup-files
-	${SH} pkg-install ${PKGNAME} POST-INSTALL
-
-install-man:
+post-install:
 	${INSTALL_MAN} ${WRKSRC}/mans/gmetric.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/mans/gmond.1 ${MANPREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/gmond/gmond.conf.5 ${MANPREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/mans/gstat.1 ${MANPREFIX}/man/man1
-.if !defined (WITHOUT_GMETAD)
+.if defined (WITH_GMETAD)
 	${INSTALL_MAN} ${WRKSRC}/mans/gmetad.1 ${MANPREFIX}/man/man1
 .endif
-
-install-sample-files:
-	${INSTALL_DATA} ${WRKSRC}/gmond/gmond.conf \
-	    ${CONF_DIR}/gmond.conf.sample
-.if !defined (WITHOUT_GMETAD)
+	${INSTALL_DATA} ${WRKDIR}/gmond.conf ${PREFIX}/etc/gmond.conf.sample
+.if defined (WITH_GMETAD)
 	${INSTALL_DATA} ${WRKSRC}/gmetad/gmetad.conf \
-	    ${CONF_DIR}/gmetad.conf.sample
+	    ${PREFIX}/etc/gmetad.conf.sample
+	@if [ ! -f ${CONF_DIR}/gmetad.conf ]; then \
+		${INSTALL_DATA} ${WRKSRC}/gmetad/gmetad.conf ${CONF_DIR} ;\
+	fi
 .endif
+	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
-install-startup-files:
-	${INSTALL_SCRIPT} ${FILESDIR}/gmond.sh.sample ${RC_DIR}
-.if !defined (WITHOUT_GMETAD)
-	${INSTALL_SCRIPT} ${FILESDIR}/gmetad.sh.sample ${RC_DIR}
-.endif
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
