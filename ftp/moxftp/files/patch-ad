@@ -1,5 +1,14 @@
---- ./configure.org	Mon Mar 21 13:43:36 1994
-+++ ./configure	Sat May 13 01:20:26 1995
+--- configure.orig	Mon Mar 21 15:43:36 1994
++++ configure	Fri Oct 11 13:14:59 1996
+@@ -165,7 +165,7 @@
+     ANAME=Mftp
+     TYPE="-DMOTIF"
+     TLNAME=Xmp
+-    TKLIB="-lXm"
++    TKLIB="\${MOTIFLIB}"
+ fi
+ 
+ if test "${TK}" = "xaw3d"; then
 @@ -321,7 +321,7 @@
    cd conftestdir
    cat > Imakefile <<EOF
