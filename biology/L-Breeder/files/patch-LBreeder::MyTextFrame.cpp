@@ -1,7 +1,9 @@
---- LBreeder/MyTextFrame.cpp.orig	Mon Jan 21 02:05:11 2002
-+++ LBreeder/MyTextFrame.cpp	Mon Jan 21 02:05:26 2002
-@@ -1,3 +1,4 @@
-+#include "wx/button.h"
- #include "wx/filedlg.h"
+--- LBreeder/MyTextFrame.cpp.orig	Wed Aug 16 22:08:11 2000
++++ LBreeder/MyTextFrame.cpp	Wed Nov  5 01:03:54 2003
+@@ -1,5 +1,5 @@
+-#include "wx/filedlg.h"
  #include "MyTextFrame.h"
++#include "wx/filedlg.h"
  #include "Ltypes.h" //for debugging messages
+ 
+ BEGIN_EVENT_TABLE(MyTextFrame, wxDialog)

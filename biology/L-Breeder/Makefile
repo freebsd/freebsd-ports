@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	dyeske@yahoo.com
 COMMENT=	Allows you to display and breed L-system forms
 
-LIB_DEPENDS=	wx_gtk-2.2_gl.2:${PORTSDIR}/x11-toolkits/wxgtk
+LIB_DEPENDS=	wx_gtk_gl-2.4.0:${PORTSDIR}/x11-toolkits/wxgtk-devel
 
 WRKSRC=		${WRKDIR}/LBreeder/LBreeder
 PATCH_WRKSRC=	${WRKDIR}/LBreeder
@@ -58,7 +58,7 @@ post-patch:
 		s|g\+\+|${CXX} -I${X11BASE}/include|; \
 		s|-lgdk|`${GDK_PIXBUF_CONFIG} --libs`|; \
 		s|-lwx_gtk[[:space:]]|`wx-config --libs`|; \
-		s|-lwx_gtk_gl|-lwx_gtk-2.2_gl|'
+		s|-lwx_gtk_gl|-lwx_gtk_gl-2.4|'
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/L-Breeder ${PREFIX}/bin
