@@ -3,7 +3,7 @@
 # Date created:		23 January 1997
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/01/24 07:50:07 tg Exp $
 #
 
 DISTNAME=	rpm-2.3.2
@@ -17,5 +17,8 @@ BUILD_DEPENDS=	${PREFIX}/lib/libgdbm.a:${PORTSDIR}/databases/gdbm
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAN8=		rpm.8 rpm2cpio.8
+
+pre-install:
+	${MKDIR} ${PREFIX}/include/rpm
 
 .include <bsd.port.mk>
