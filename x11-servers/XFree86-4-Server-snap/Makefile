@@ -7,6 +7,9 @@
 
 PORTNAME=	Server
 PORTVERSION=	4.2.0
+.if defined(WITH_MATROX_GXX_DRIVER)
+PORTREVISION=	1
+.endif
 CATEGORIES=	x11-servers
 MASTER_SITES=	${MASTER_SITE_XFREE} \
 		ftp://psych.psy.uq.oz.au/pub/X11R5/:wrap \
@@ -144,27 +147,32 @@ PLIST_SUB+=	XIE:="@comment "
 HaveMatroxHal=		NO
 PLIST_SUB+=		MATROX="@comment "
 pre-fetch::
-	@${ECHO_MSG} "*** WARNING: UNTESTED WITH XFREE86 4.2.0!  ENABLE AT"
-	@${ECHO_MSG} "YOUR OWN RISK!  ***"
+	@${ECHO_MSG} "********************************************************"
+	@${ECHO_MSG} "WARNING: NOT FULLY TESTED WITH XFREE86 4.2.0!"
+	@${ECHO_MSG} "ENABLE AT YOUR OWN RISK!"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Define WITH_MATROX_GXX_DRIVER to enable the official"
 	@${ECHO_MSG} "Matrox drivers for the G200, G400, G450, and G550"
 	@${ECHO_MSG} "graphic adapters."
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "This has been tested on a G400 AGP card."
+	@${ECHO_MSG} "********************************************************"
 .else
 NO_PACKAGE=	"Matrox drivers may not be distributed."
+RESTRICTED=	"Matrox drivers may not be distributed."
 HaveMatroxHal=		YES
-MGA_DRIVER_VERSION=	133_143
-MASTER_SITES+=		ftp://ftp.matrox.com/pub/mga/archive/linux/2001/beta_${MGA_DRIVER_VERSION}/
-DISTFILES+=		mga-${MGA_DRIVER_VERSION}-source.tgz
-EXTRACT_ONLY+=		mga-${MGA_DRIVER_VERSION}-source.tgz
+MGA_DRIVER_VERSION=	2.0
+MASTER_SITES+=		ftp://ftp.matrox.com/pub/mga/archive/linux/2002/
+DISTFILES+=		mgadrivers-${MGA_DRIVER_VERSION}-src.tgz
+EXTRACT_ONLY+=		mgadrivers-${MGA_DRIVER_VERSION}-src.tgz
+RESTRICTED_FILES=	mgadrivers-${MGA_DRIVER_VERSION}-src.tgz
 PLIST_SUB+=		MATROX=""
 post-patch::
 	@(cd ${WRKSRC}; \
 	  ${MV} programs/Xserver/hw/xfree86/drivers/mga \
 		programs/Xserver/hw/xfree86/drivers/mga.old; \
-	  ${MV} ../mgasource/mga-1.4.3/mga programs/Xserver/hw/xfree86/drivers)
+	  ${MV} ../mgadrivers-${MGA_DRIVER_VERSION}-src/${PORTVERSION}/drivers/src programs/Xserver/hw/xfree86/drivers/mga)
 post-install::
-	${INSTALL_DATA} ${WRKSRC}/programs/Xserver/hw/xfree86/drivers/mga/README ${PREFIX}/lib/X11/doc/README.mga
 	${INSTALL_DATA} ${WRKSRC}/programs/Xserver/hw/xfree86/drivers/mga/README_HALLIB ${PREFIX}/lib/X11/doc/README.mga_HALLIB
 .endif	# !WITH_MATROX_GXX_DRIVER
 .endif
