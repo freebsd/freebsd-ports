@@ -260,7 +260,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <affects>
       <package>
 	<name>twiki</name>
-	<range><gt>0</gt></range>
+	<range><lt>20040902</lt></range>
       </package>
     </affects>
     <description>
@@ -286,6 +286,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-11-12</discovery>
       <entry>2004-11-15</entry>
+      <modified>2004-11-23</modified>
     </dates>
   </vuln>
 
