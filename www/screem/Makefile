@@ -6,9 +6,8 @@
 #
 
 PORTNAME=	screem
-PORTVERSION=	0.10.1
-PORTREVISION=	2
-CATEGORIES=	www gnome
+PORTVERSION=	0.10.2
+CATEGORIES=	www editors gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
@@ -36,7 +35,6 @@ USE_PERL5=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--without-included-neon
-#			--with-neon="${LOCALBASE}/lib"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|\$${DATADIRNAME}/\$${PACKAGE}/pixmaps|\$${DATADIRNAME}/gnome/\$${PACKAGE}/pixmaps|g' \
@@ -44,5 +42,10 @@ post-patch:
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|\/\* #undef HAVE_LIMITS_H \*\/|#define HAVE_LIMITS_H 1|g' ${WRKSRC}/config.h
+
+# HACK:  This allows test builds into a temporary directory, but in the REAL world,
+# gconf would have created this directory.
+pre-install:
+	@${MKDIR} ${PREFIX}/etc/gconf/gconf.xml.defaults
 
 .include <bsd.port.mk>
