@@ -7,7 +7,7 @@
 
 PORTNAME=	ehnt
 PORTVERSION=	0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,6 +16,12 @@ MAINTAINER=	marck@rinet.ru
 COMMENT=	A simple Cisco NetFlow data collector
 
 USE_PERL5=	yes
+
+PLIST_FILES=	bin/ehnt etc/rc.d/ehntserv.sh.sample \
+		sbin/ehntserv share/ehnt/asnc.txt
+PLIST_DIRS+=	share/ehnt
+
+PORTDOCS=	README
 
 MAN1=		ehnt.1
 MAN8=		ehntserv.8
@@ -29,11 +35,11 @@ do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/ehntserv.sh.sample ${PREFIX}/etc/rc.d/
 	${INSTALL_MAN} ${WRKSRC}/ehnt.1 ${PREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/ehntserv.8 ${PREFIX}/man/man8/
-	${MKDIR} ${PREFIX}/share/ehnt
-	${INSTALL_DATA} ${WRKSRC}/asnc.txt ${PREFIX}/share/ehnt/
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/asnc.txt ${DATADIR}/
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/ehnt
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/ehnt/
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>
