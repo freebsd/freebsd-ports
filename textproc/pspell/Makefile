@@ -24,10 +24,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--enable-doc-dir=${PREFIX}/share/doc/pspell
 INSTALLS_SHLIB=	yes
 
-post-patch:
-	@${PERL} -pi -e 's,\@INSTALL\@,install,' ${WRKSRC}/libltdl/Makefile.in \
-		${WRKSRC}/modules/Makefile.in
-
 post-build:
 	@cd ${WRKSRC}/modules && ${SH} ./add-modules
 
