@@ -22,7 +22,4 @@ PLIST_SUB=	NOPROFILE="@comment "
 PLIST_SUB=	NOPROFILE=""
 .endif
 
-post-extract:
-	${RM} ${WRKSRC}/src/.depend
-
 .include <bsd.port.mk>
