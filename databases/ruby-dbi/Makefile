@@ -17,6 +17,8 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	DBI-for-Ruby - a common interface for SQL-based databases
 
+RUN_DEPENDS=	${RUBY_SITELIBDIR}/aspectr.rb:${PORTSDIR}/devel/ruby-aspectr
+
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
