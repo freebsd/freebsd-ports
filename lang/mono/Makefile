@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mono
-PORTVERSION=	0.21
+PORTVERSION=	0.24
 CATEGORIES=	lang
 MASTER_SITES=	http://www.go-mono.com/archive/
 
@@ -25,8 +25,9 @@ CONFIGURE_ARGS=	--program-transform-name=\'\'
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-MAN1=		mcs.1 mint.1 mono.1 monoburg.1 monodis.1 monostyle.1 \
-       		sqlsharp.1
+MAN1=		cert2spc.1 cilc.1 ilasm.1 mcs.1 mint.1 mono.1 \
+		monoburg.1 monodis.1 monostyle.1 oldmono.1 \
+		sqlsharp.1
 MAN5=		mono-config.5
 
 .include <bsd.port.mk>
