@@ -1,0 +1,11 @@
+--- src/main.cpp.orig	Tue Feb 26 15:35:22 2002
++++ src/main.cpp	Tue Feb 26 15:35:26 2002
+@@ -29,7 +29,7 @@
+ FILE *ctrl_in,*ctrl_out;
+ 
+ //Ê¸»úÎó
+-#define LANG "ja_JP"
++#define LANG "ja_JP.EUC"
+ #define VERSION_NAME "jmode out of the way! Version "VERSION"\n"
+ char *version_name=VERSION_NAME;
+ char *usage=

@@ -116,6 +116,7 @@
     SUBDIR += jhd
     SUBDIR += jisx0213-fonts
     SUBDIR += jls
+    SUBDIR += jmode
     SUBDIR += jpilot
     SUBDIR += jtex209-ascii
     SUBDIR += jtex209-both

@@ -1,0 +1,3 @@
+bin/jmode
+share/jmode/jmode-default.conf
+@dirrm share/jmode
