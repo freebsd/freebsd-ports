@@ -1,0 +1,10 @@
+SimPy (= Simulation in Python) is an object-oriented, process-based discrete-
+event simulation language based on standard Python and released under the GNU
+GPL. It provides the modeler with components of a simulation model including
+processes, for active components like customers, messages, and vehicles, and
+resources, for passive components that form limited capacity congestion points
+like servers, checkout counters, and tunnels. It also provides monitor variables
+to aid in gathering statistics. Random variates are provided by the standard
+Python random module.
+
+WWW: http://simpy.sourceforge.net/
