@@ -11,6 +11,7 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	naddy@FreeBSD.org
+COMMENT=	Interactive typing tutor
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 

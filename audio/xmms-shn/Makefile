@@ -11,6 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://shnutils.freeshell.org/xmms-shn/source/
 
 MAINTAINER=	naddy@FreeBSD.Org
+COMMENT=	XMMS plugin to allow playing shorten-compressed audio
 
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms

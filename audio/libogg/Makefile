@@ -17,6 +17,7 @@ MASTER_SITES=	http://www.vorbis.com/files/1.0/unix/ \
 		http://www.math.utoledo.edu/~chaese/Vorbis/unix/
 
 MAINTAINER=	naddy@FreeBSD.org
+COMMENT=	Ogg bitstream library
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

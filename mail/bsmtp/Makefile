@@ -11,6 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.stud.uni-karlsruhe.de/~uk1o/bsmtp/
 
 MAINTAINER=	naddy@FreeBSD.org
+COMMENT=	Batch SMTP support for sendmail, incoming and outgoing
 
 USE_PERL5=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

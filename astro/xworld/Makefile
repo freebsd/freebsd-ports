@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://gutemine.geo.uni-koeln.de/pub/xworld/ \
 		ftp://ftp.Uni-Koeln.DE/misc/
 
 MAINTAINER=	naddy@FreeBSD.org
+COMMENT=	Earth as seen from the direction of the sun
 
 USE_XLIB=	yes
 
