@@ -24,6 +24,8 @@ CONFIGURE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
 		GLIB_CONFIG="${GLIB_CONFIG}"
 MAKE_ENV=	FREEBSD_CFLAGS="${CFLAGS}"
 
+MAN6=		corewars.6
+
 post-install:
 	@strip ${PREFIX}/bin/corewars
 .if !defined(NOPORTDOCS)
