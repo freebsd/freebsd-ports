@@ -3610,6 +3610,7 @@ knews		ports/news/knews
 knights		ports/games/knights
 knocker		ports/security/knocker
 knowit		ports/deskutils/knowit
+knowlan		ports/net/knowlan
 knowledgekit	ports/www/knowledgekit
 knutclient	ports/sysutils/knutclient
 ko-FreeWnn-lib	ports/korean/FreeWnn-lib
