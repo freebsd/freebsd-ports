@@ -7,6 +7,7 @@
 
 PORTNAME=	magic
 PORTVERSION=	7.1
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://vlsi.cornell.edu/magic/
 
@@ -28,11 +29,11 @@ MAN8=	prleak.8
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 post-patch:
+	@${EGREP} -lr '^#endif[^$$]' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|\(^#endif\).*|\1|g; \
+		 s|\(^#else\).*|\1|g; \
+		 s|include.*<varargs\.h>|include <stdarg\.h>|'
 	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
 		's|make |\$$\{MAKE\} |g'
 
