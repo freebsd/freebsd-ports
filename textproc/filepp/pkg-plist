@@ -1,1 +1,9 @@
 bin/filepp
+share/filepp/modules/c-comment.pm
+share/filepp/modules/for.pm
+share/filepp/modules/hash-comment.pm
+share/filepp/modules/literal.pm
+share/filepp/modules/tolower.pm
+share/filepp/modules/toupper.pm
+@dirrm share/filepp/modules
+@dirrm share/filepp
