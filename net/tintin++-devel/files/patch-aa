@@ -1,0 +1,160 @@
+*** Makefile.in.orig	Fri Sep  9 19:35:20 1994
+--- Makefile.in	Tue Nov 15 02:07:48 1994
+***************
+*** 10,17 ****
+  # try uncommenting the 'gcc' line and commenting the 'cc' one.
+  # Tintin++ doesn't *need* an ANSI compiler anymore, but gcc
+  # is still better than cc on many platforms...
+! CC = @CC@ -O
+! CFLAGS = @DEFS@
+  LIBS = @LIBS@
+  PIPE = @PIPE@
+  # If you plan on doing debugging (with gdb), it is very helpful to turn all
+--- 10,16 ----
+  # try uncommenting the 'gcc' line and commenting the 'cc' one.
+  # Tintin++ doesn't *need* an ANSI compiler anymore, but gcc
+  # is still better than cc on many platforms...
+! CFLAGS += @DEFS@
+  LIBS = @LIBS@
+  PIPE = @PIPE@
+  # If you plan on doing debugging (with gdb), it is very helpful to turn all
+***************
+*** 22,31 ****
+  
+  # BINDIR is the directory you wish tt++ to be placed if you wish to use
+  # make install.  
+! BINDIR = ..
+  
+  # DEFAULT_FILE_DIR is the path to tintin files. 
+! DEFAULT_FILE_DIR = @HOME@
+  
+  #########################################
+  # You shouldn't need to change anything #
+--- 21,30 ----
+  
+  # BINDIR is the directory you wish tt++ to be placed if you wish to use
+  # make install.  
+! BINDIR = /usr/local/bin
+  
+  # DEFAULT_FILE_DIR is the path to tintin files. 
+! DEFAULT_FILE_DIR = /usr/local/lib/tintin
+  
+  #########################################
+  # You shouldn't need to change anything #
+***************
+*** 41,54 ****
+  	variables.c highlight.c antisub.c ivars.c help.c text.c glob.c
+  OFILES = $(CFILES:.c=.o)
+  
+! all: tintin++ install
+  
+  tintin++: $(OFILES) tintin.h
+  	@echo "Linking..."
+  	$(CC) $(CFLAGS) $(FFLAGS) $(LFLAGS) -o tt++ $(OFILES) $(LIBS)
+  
+! install: all
+! 	@./install.sh $(BINDIR) $(DEFAULT_FILE_DIR) $(COMPRESSED_HELP)
+  
+  # Autocompile all .c files into .o files using this rule:
+  .c.o:
+--- 40,54 ----
+  	variables.c highlight.c antisub.c ivars.c help.c text.c glob.c
+  OFILES = $(CFILES:.c=.o)
+  
+! all: tintin++
+  
+  tintin++: $(OFILES) tintin.h
+  	@echo "Linking..."
+  	$(CC) $(CFLAGS) $(FFLAGS) $(LFLAGS) -o tt++ $(OFILES) $(LIBS)
+  
+! install:
+! 	@mkdir -p $(DEFAULT_FILE_DIR)
+! 	@./install.sh $(BINDIR) $(DEFAULT_FILE_DIR) Ok
+  
+  # Autocompile all .c files into .o files using this rule:
+  .c.o:
+*** configure.old	Sun Aug 28 14:06:38 1994
+--- configure	Tue Nov 15 01:42:46 1994
+***************
+*** 474,489 ****
+  OLD_CFLAGS="$CFLAGS"
+  CFLAGS="$CFLAGS -pipe"
+  
+! echo "Do you want the helpfile to be compressed (yes/no)? "
+! read YESNO
+! if test $YESNO; then
+!   if echo "$YESNO"|grep -i "no" >/dev/null; then
+!     DEFS="$DEFS -DCOMPRESSED_HELP=0"
+!   else
+!     DEFS="$DEFS -DCOMPRESSED_HELP=1"
+!     COMPRESSED_HELP="Ok"
+!   fi
+! fi
+  
+  test -n "$silent" || echo "checking for -pipe"
+  cat > conftest.${ac_ext} <<EOF
+--- 474,492 ----
+  OLD_CFLAGS="$CFLAGS"
+  CFLAGS="$CFLAGS -pipe"
+  
+! DEFS="$DEFS -DCOMPRESSED_HELP=1"
+! COMPRESSED_HELP="Ok"
+! 
+! #echo "Do you want the helpfile to be compressed (yes/no)? "
+! #read YESNO
+! #if test $YESNO; then
+! #  if echo "$YESNO"|grep -i "no" >/dev/null; then
+! #    DEFS="$DEFS -DCOMPRESSED_HELP=0"
+! #  else
+! #    DEFS="$DEFS -DCOMPRESSED_HELP=1"
+! #    COMPRESSED_HELP="Ok"
+! #  fi
+! #fi
+  
+  test -n "$silent" || echo "checking for -pipe"
+  cat > conftest.${ac_ext} <<EOF
+***************
+*** 854,860 ****
+     :; 
+  fi
+  
+! for ac_func in bcopy
+  do
+  ac_tr_func=HAVE_`echo $ac_func | tr '[a-z]' '[A-Z]'`
+  test -n "$silent" || echo "checking for ${ac_func}"
+--- 857,863 ----
+     :; 
+  fi
+  
+! for ac_func in
+  do
+  ac_tr_func=HAVE_`echo $ac_func | tr '[a-z]' '[A-Z]'`
+  test -n "$silent" || echo "checking for ${ac_func}"
+*** install.sh.old	Fri Sep  9 05:43:26 1994
+--- install.sh	Tue Nov 15 02:05:24 1994
+***************
+*** 5,16 ****
+  
+  echo " "
+  echo "Copying the tintin++ executable to \"$1\"..."
+! strip tt++
+! cp tt++ "$1"
+  
+  echo "Copying the tintin++ help file to \"$2\"..."
+  if [ "$3" ]; then 
+!   cp support/.tt_help.txt.Z "$2/"
+  else
+    echo Uncompressing.
+    uncompress -c support/.tt_help.txt.Z | cat > "$2"/.tt_help.txt
+--- 5,15 ----
+  
+  echo " "
+  echo "Copying the tintin++ executable to \"$1\"..."
+! install -c -s -o bin -g bin -m 555 tt++ "$1"
+  
+  echo "Copying the tintin++ help file to \"$2\"..."
+  if [ "$3" ]; then 
+!   install -c -o bin -g bin -m 444 support/.tt_help.txt.Z "$2"
+  else
+    echo Uncompressing.
+    uncompress -c support/.tt_help.txt.Z | cat > "$2"/.tt_help.txt
