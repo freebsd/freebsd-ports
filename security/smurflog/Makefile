@@ -3,14 +3,14 @@
 # Date created:				7/06/1998
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.5 1998/12/03 00:40:50 obrien Exp $
+# $Id: Makefile,v 1.6 1999/01/07 18:32:45 nectar Exp $
 #
 
 DISTNAME=	smurflog-2.1
 CATEGORIES=	net security
-MASTER_SITES=	http://www.nectar.com/distfiles/
-#		http://www.sy.net/security/ \
-#		http://www.bitchx.com/~humble/files/
+MASTER_SITES=	ftp://ftp.bitchx.org/pub/bitchx/files/                 \
+		ftp://ftp.buk.net/pub/software/bitchx/files/           \
+		http://www.nectar.cc/distfiles/
 
 MAINTAINER=	nectar@FreeBSD.ORG
 
