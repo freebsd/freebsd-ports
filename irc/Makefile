@@ -15,6 +15,7 @@
     SUBDIR += muh
     SUBDIR += ninja
     SUBDIR += olirc
+    SUBDIR += p5-IRC
     SUBDIR += quirc
     SUBDIR += roxirc
     SUBDIR += scrollz
