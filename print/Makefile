@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.19 1995/07/15 23:23:05 jmz Exp $
+# $Id: Makefile,v 1.20 1995/10/03 11:45:12 asami Exp $
 #
 
     SUBDIR += a2ps
@@ -7,6 +7,7 @@
     SUBDIR += dvips
     SUBDIR += dviselect
     SUBDIR += ghostscript
+    SUBDIR += ghostscript3
     SUBDIR += ghostview
     SUBDIR += latex
     SUBDIR += latex209
