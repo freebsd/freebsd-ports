@@ -8,7 +8,7 @@
 PORTNAME=	xspread
 PORTVERSION=	3.1.1c
 CATEGORIES=	math
-MASTER_SITES=	http://www.linuxberg.com/files/x11/office/
+MASTER_SITES=	http://linux.tucows.com/files/x11/office/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
