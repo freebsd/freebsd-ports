@@ -48,11 +48,15 @@ SSL_CFLAGS=	-I${OPENSSLINC}/openssl -I${OPENSSLINC}
 SSL_LIBS=	-L${OPENSSLLIB} -lssl -lcrypto
 
 SED_CMD+=	-e "s,undef USE_SSL,define USE_SSL,g"
-.endif
 
-EXTRA_SSL_LIBS=	-lRSAglue -lrsaref -L${LOCALBASE}/lib 
+.if defined(OPENSSL_RSAREF)
+EXTRA_SSL_LIBS=	-lRSAglue -L${LOCALBASE}/lib -lrsaref
+.endif
 MAKE_FLAGS+=	DEFS="${SSL_CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="${SSL_LIBS} ${EXTRA_SSL_LIBS}"
+.else
+MAKE_FLAGS+=	DEFS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+.endif
 
 post-configure:
 	@${CP} ${TARGET} ${TARGET}.in
