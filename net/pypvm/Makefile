@@ -26,6 +26,7 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/pypvm.py \
 EXAMPLEFILES=	master_test.py \
 		slave_test.py
 PLIST_FILES+=	${EXAMPLEFILES:S|^|%%EXAMPLESDIR%%/|}
+PLIST_DIRS+=	%%EXAMPLESDIR%%
 .if !defined(NOPORTDOCS)
 PORTDOCS=	ChangeLog \
 		README
