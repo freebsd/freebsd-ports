@@ -28,13 +28,21 @@ CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include -I${LOCALBASE}/include -I${X11BASE}
 CONFIGURE_ARGS=	--enable-ipv6 --prefix=${PREFIX} --with-included-gettext \
 		--program-transform-name=''
 
-.include <bsd.port.pre.mk>
+.if !defined(WITHOUT_SSL)
+USE_OPENSSL=	yes
+.endif
 
 .if defined(WITH_PIXBUF)
 USE_GNOME+=	gdkpixbuf
-CONFIGURE_ARGS+=--disable-imlib
 .else
 USE_GNOME+=	imlib
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_PIXBUF)
+CONFIGURE_ARGS+=--disable-imlib
+.else
 CONFIGURE_ARGS+=--disable-gdk-pixbuf
 .endif
 .if defined(WITH_GPGME)
@@ -64,7 +72,6 @@ CONFIGURE_ARGS+=--enable-ldap
 CONFIGURE_ARGS+=--disable-ldap
 .endif
 .if !defined(WITHOUT_SSL)
-USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--enable-ssl
 .else
 CONFIGURE_ARGS+=--disable-ssl
