@@ -3,7 +3,7 @@
 # Date created:		7 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.33 1998/10/08 23:51:59 asami Exp $
+# $Id: Makefile,v 1.34 1998/10/21 09:58:29 asami Exp $
 #
 
 DISTNAME=	mule-2.3
@@ -44,8 +44,15 @@ WRKDIR?=	${WRKDIRPREFIX}${.CURDIR}/../../${dir}/work
 WRKSRC= ${WRKDIR}/emacs-19.34
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/mule.sh
 
-.if !defined(WRKDIR) && !defined(PACKAGE_BUILDING)
+.if !defined(WRKDIR)
+.if defined(PACKAGE_BUILDING)
+# XXX
+WRKDIR=	${WRKDIRPREFIX}${.CURDIR}/../mule/work
+pre-build:
+	@cd ${.CURDIR}/../mule; make
+.else
 BROKEN=		You should build install one of the other mule ports first
+.endif
 .endif
 
 INSTALL_COOKIE=	${WRKDIR}/.install_done-${PKGNAME}
@@ -53,8 +60,7 @@ PACKAGE_COOKIE=	${WRKDIR}/.package_done-${PKGNAME}
 TMPPLIST=	${WRKDIR}/.PLIST.mktmp-${PKGNAME}
 PLIST_SUB=	EMACS_VERSION=19.34
 
-USE_GMAKE=	yes
-
+USE_XLIB=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 EMACS_PREFIX=	mule
@@ -68,12 +74,52 @@ MAN1=		coco.1 ctags.1 etags.1 m2ps.1 emacs.1 mule.1
 
 INSTALL_TARGET=	install-arch-indep
 
+COMP_ELC=	egg.elc wnn-egg.elc sj3-client.elc sj3-egg.elc canna.elc
+ELC_DIR=	../lisp
+
+# ORIGINAL, MEW_ORG_PATCH and MEW_PATCH are used for debugging.
+#
+#   ORIGINAL: original mule 2.3 based on emacs 19.34
+#   MEW_ORG_PATCH: apply mew's patches to original mule (http://www.mew.org)
+#   MEW_PATCH: apply mew's patch after apply Mr. Katayama's patches
 post-extract:
+	${EXTRACT_CMD} -C ${WRKDIR} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/mule-2.3-19.34.patch-981002.tar.gz
 	${CP} ${FILESDIR}/unexfreebsd.c ${WRKSRC}/src
+.if !defined(ORIGINAL) && !defined(MEW_ORG_PATCH)
+	${EXTRACT_CMD} -C ${WRKDIR} ${EXTRACT_BEFORE_ARGS} ${WRKDIR}/takana-19.34.tar.gz
+	${MKDIR} ${WRKSRC}/lisp/its
+	${CP} ${WRKDIR}/lisp/its/* ${WRKSRC}/lisp/its/
+.endif
+
+.if !defined(ORIGINAL)
+post-patch:
+.if !defined(MEW_ORG_PATCH)
+	cd ${WRKSRC}; ${PATCH} --forward --quiet -E -p0 < ${WRKDIR}/patch-19.34
+	cd ${WRKSRC}; ${PATCH} --forward --quiet -E -p0 < ${WRKDIR}/Mule-2.3-19.34.patch
+	cd ${WRKSRC}; ${PATCH} --forward --quiet -E -p0 < ${WRKDIR}/extra.patch
+.if defined(MEW_PATCH)
+	cd ${WRKSRC}/lisp; ${PATCH} --forward --quiet -E -p0 < ${WRKDIR}/mew/egg.el-19.34.patch-for_katayama
+.endif
+.else
+	cd ${WRKSRC}/lisp; ${PATCH} --forward --quiet -E -p0 < ${WRKDIR}/mew/egg.el-19.34.patch
+.endif
+.if defined(MEW_PATCH) || defined(MEW_ORG_PATCH)
+	cd ${WRKSRC}/lisp; ${PATCH} --forward --quiet -E -p0 < ${WRKDIR}/mew/canna.el-19.34.patch
+	cd ${WRKSRC}/lisp; ${PATCH} --forward --quiet -E -p0 < ${WRKDIR}/mew/sj3-egg.el.patch
+.endif
+.endif
 
 pre-build:
 	find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
 	${RM} -f ${WRKSRC}/etc/DOC* ${WRKSRC}/src/emacs ${WRKSRC}/src/emacs-19.34.*
+
+post-build:
+# bytecompile elisps for Japanese input method
+	for file in ${COMP_ELC}; do \
+		target="$$target ${ELC_DIR}/$$file"; \
+	done; \
+	cd ${WRKSRC}/src; \
+	./temacs -batch -l mule-inst.el $$target
 
 post-install:
 # note that any2ps rcs-checkin are scripts
