@@ -1,9 +1,10 @@
-bin/tcsh_config
+bin/tcshrc_config
 share/tcshrc/tcshrc
 share/tcshrc/tcshrc.alias
 share/tcshrc/tcshrc.bindkey
 share/tcshrc/tcshrc.complete
 share/tcshrc/tcshrc.hosts
+share/tcshrc/tcshrc.local
 share/tcshrc/tcshrc.set
 share/tcshrc/README.txt
 @dirrm share/tcshrc
