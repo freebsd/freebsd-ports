@@ -17,7 +17,8 @@ else
 	/usr/bin/dialog --title "configuration options" --clear \
 		--checklist "\n\
 Please select desired options:" -1 -1 16 \
-GD		"GD library support" OFF \
+GD1		"GD 1.x library support" OFF \
+GD2		"GD 2.x library support" OFF \
 zlib		"zlib library support" ON \
 bzip2		"bzip2 library support" OFF \
 mcrypt		"Encryption support" OFF \
@@ -82,16 +83,41 @@ exec > ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
 
 while [ "$1" ]; do
 	case $1 in
-		\"GD\")
+		\"GD1\")
 			echo "LIB_DEPENDS+=	gd.2:\${PORTSDIR}/graphics/gd"
 			echo "LIB_DEPENDS+=	freetype.9:\${PORTSDIR}/print/freetype2"
 			echo "LIB_DEPENDS+=	png.5:\${PORTSDIR}/graphics/png"
 			echo "LIB_DEPENDS+=	jpeg.9:\${PORTSDIR}/graphics/jpeg"
 			echo "CONFIGURE_ARGS+=--with-gd=\${LOCALBASE} \\"
+			echo "		--enable-gd-native-ttf \\"
 			echo "		--with-freetype-dir=\${LOCALBASE} \\"
 			echo "		--with-jpeg-dir=\${LOCALBASE} \\"
 			echo "		--with-png-dir=\${LOCALBASE}"
+			if [ "$GD2" ]; then
+				echo "GD1 and GD2 are mutually exclusive." > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+				exit 1
+			fi
+			GD1=1
 			;;
+
+		\"GD2\")
+			echo "LIB_DEPENDS+=	gd.3:\${PORTSDIR}/graphics/gd2"
+			echo "LIB_DEPENDS+=	freetype.9:\${PORTSDIR}/print/freetype2"
+			echo "LIB_DEPENDS+=	png.5:\${PORTSDIR}/graphics/png"
+			echo "LIB_DEPENDS+=	jpeg.9:\${PORTSDIR}/graphics/jpeg"
+			echo "CONFIGURE_ARGS+=--with-gd=\${LOCALBASE} \\"
+			echo "		--enable-gd-native-ttf \\"
+			echo "		--with-freetype-dir=\${LOCALBASE} \\"
+			echo "		--with-jpeg-dir=\${LOCALBASE} \\"
+			echo "		--with-png-dir=\${LOCALBASE}"
+			if [ "$GD1" ]; then
+				echo "GD1 and GD2 are mutually exclusive." > /dev/stderr
+				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
+				exit 1
+			fi
+			GD2=1
+ 			;;
 		\"zlib\")
 			echo "CONFIGURE_ARGS+=--with-zlib"
 			;;
