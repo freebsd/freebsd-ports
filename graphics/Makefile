@@ -272,6 +272,7 @@
     SUBDIR += peps
     SUBDIR += pgperl
     SUBDIR += pgplot
+    SUBDIR += pho
     SUBDIR += photopc
     SUBDIR += phplot
     SUBDIR += picturebook

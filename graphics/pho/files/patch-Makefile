@@ -1,0 +1,11 @@
+--- Makefile.orig	Tue Oct  7 10:19:24 2003
++++ Makefile	Tue Oct  7 10:19:39 2003
+@@ -14,7 +14,7 @@
+ 
+ INSTALL = /usr/bin/install -D
+ 
+-INSTALLPREFIX = ${DESTDIR}/usr/local
++INSTALLPREFIX = ${DESTDIR}${PREFIX}
+ 
+ TARFILE = pho-$(VERSION).tar.gz
+ 
