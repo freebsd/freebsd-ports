@@ -116,6 +116,7 @@
     SUBDIR += tamago
     SUBDIR += tamago-emacs20
     SUBDIR += ted
+    SUBDIR += texmacs
     SUBDIR += textedit
     SUBDIR += the
     SUBDIR += thoteditor
