@@ -7559,6 +7559,7 @@ pyweather	ports/astro/pyweather
 pyweblib	ports/www/pyweblib
 pyzor		ports/mail/pyzor
 q		ports/lang/q
+q-audio		ports/audio/q-audio
 q3-paks		ports/games/q3-paks
 q3server	ports/games/q3server
 q3server-excessive	ports/games/q3server-excessive
