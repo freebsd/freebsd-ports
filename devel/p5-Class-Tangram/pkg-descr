@@ -1,0 +1,11 @@
+Class::Tangram is a common base class originally intended for use with
+Tangram objects, that gives you free constructors, access methods,
+update methods, and a destructor that should help in breaking circular
+references for you.  Type checking is achieved by parsing the Tangram
+schema for the object, which is contained within the object class in an
+exported variable $schema.
+
+WWW: http://search.cpan.org/search?dist=Class-Tangram
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
