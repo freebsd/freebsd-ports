@@ -355,13 +355,13 @@
 @dirrm %%CGIDIR%%/lib/MT/Template
 @dirrm %%CGIDIR%%/lib/MT
 @dirrm %%CGIDIR%%/lib
+@dirrm %%CGIDIR%%/plugins
 @dirrm %%CGIDIR%%/search_templates
 @dirrm %%CGIDIR%%/tmpl/cms
 @dirrm %%CGIDIR%%/tmpl
 @dirrm %%DATADIR%%/docs
 @dirrm %%DATADIR%%/images/lang-en-us
 @dirrm %%DATADIR%%/images
-@dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/schemas
 @unexec rmdir %D/%%CGIDIR%% 2>/dev/null || true
 @unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
