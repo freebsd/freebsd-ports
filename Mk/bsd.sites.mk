@@ -138,7 +138,6 @@ MASTER_SITE_GNOME+=	\
 MASTER_SITE_AFTERSTEP+=	\
 	ftp://ftp.afterstep.org/%SUBDIR%/ \
 	ftp://ftp.digex.net/pub/X11/window-managers/afterstep/%SUBDIR%/ \
-	ftp://ftp.alpha1.net/pub/mirrors/ftp.afterstep.org/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/X11/AfterStep/%SUBDIR%/ \
 	ftp://ftp.math.uni-bonn.de/pub/mirror/ftp.afterstep.org/pub/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/X/AfterStep/%SUBDIR%/
