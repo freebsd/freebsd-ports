@@ -39,10 +39,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 
 INSTALLS_SHLIB=	yes
 
-# mpeg4ip is broke for now, disable it.
-WITHOUT_MPEG4IP=yes
-
 .include <bsd.port.pre.mk>
+
+# mpeg4ip is broke for now, disable it.
+.if ${OSVERSION} >= 502126
+.if !exists(${LOCALBASE}/lib/libmp4v2.so)
+WITHOUT_MPEG4IP=yes
+.endif
+.endif
 
 .if defined(WITHOUT_MPEG4IP)
 PLIST_SUB+=	WITHOUT_MPEG4IP="" PLUGIN="@comment "
