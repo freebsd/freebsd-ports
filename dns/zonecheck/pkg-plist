@@ -1,4 +1,4 @@
-bin/zc
+bin/zonecheck
 libexec/zc/lib/address.rb
 libexec/zc/lib/address/common.rb
 libexec/zc/lib/address/ipv4.rb
@@ -25,6 +25,8 @@ libexec/zc/locale/cli.en
 libexec/zc/locale/cli.fr
 libexec/zc/locale/gtk.en
 libexec/zc/locale/gtk.fr
+libexec/zc/locale/inetd.en
+libexec/zc/locale/inetd.fr
 libexec/zc/locale/test/axfr.en
 libexec/zc/locale/test/axfr.fr
 libexec/zc/locale/test/connectivity.en
@@ -78,7 +80,9 @@ libexec/zc/zc/framework.rb
 libexec/zc/zc/input/cgi.rb
 libexec/zc/zc/input/cli.rb
 libexec/zc/zc/input/gtk.rb
+libexec/zc/zc/input/inetd.rb
 libexec/zc/zc/instructions.rb
+libexec/zc/zc/locale.rb
 libexec/zc/zc/mail.rb
 libexec/zc/zc/msgcat.rb
 libexec/zc/zc/param.rb
