@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	code2000
-PORTVERSION=	1.13
+PORTVERSION=	1.14
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://home.att.net/~jameskass/
 DISTFILES=	${PORTNAME:U}${EXTRACT_SUFX:U}
@@ -52,7 +52,6 @@ FONTSDIR?=	${PREFIX}/lib/X11/fonts/${FONTNAME}
 TTFONTSDIR?=	${X11BASE}/lib/X11/fonts/TrueType
 
 TTMKFDIR_CMD?=	${X11BASE}/bin/ttmkfdir
-SORT?=		sort
 
 #
 # Post-extract
@@ -72,7 +71,7 @@ rename-license:
 #
 
 post-patch:
-	${SED} 's|%%FONTSDIR%%|${FONTSDIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
+	@${SED} 's|%%FONTSDIR%%|${FONTSDIR}|g' ${MSG_FILE} > ${PKGMESSAGE}
 
 #
 # Build
