@@ -3,13 +3,16 @@
 %%RUBY_SITELIBDIR%%/simpletuple.rb
 %%RUBY_SITELIBDIR%%/timerholder.rb
 %%RUBY_SITELIBDIR%%/tuplespace.rb
+%%RUBY_SITELIBDIR%%/drb/cgi_drb.rb
 %%RUBY_SITELIBDIR%%/drb/drb.rb
 %%RUBY_SITELIBDIR%%/drb/eq.rb
 %%RUBY_SITELIBDIR%%/drb/extserv.rb
 %%RUBY_SITELIBDIR%%/drb/extservm.rb
+%%RUBY_SITELIBDIR%%/drb/http.rb
 %%RUBY_SITELIBDIR%%/drb/rinda.rb
 %%RUBY_SITELIBDIR%%/drb/timeridconv.rb
 @dirrm %%RUBY_SITELIBDIR%%/drb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/README.rd
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/darray.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/darrayc.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dchatc.rb
@@ -23,6 +26,7 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dqout.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/dqueue.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/drbc.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/drbch.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/drbs-acl.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/drbs.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/drb/extserv_test.rb
@@ -37,9 +41,11 @@
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/drb
 %%PORTDOCS%%%%RUBY_DOCDIR%%/drb/drb-ref.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/drb/drb-ref.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/drb/ja/drb-ref.rd.ja
-%%PORTDOCS%%%%RUBY_DOCDIR%%/drb/ja/tuplespace-ref.rd.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/drb/ja/drb-ref.ja.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/drb/ja/drb-ref.rd.ja
+%%PORTDOCS%%%%RUBY_DOCDIR%%/drb/ja/mutexm.ja.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/drb/ja/mutexm.rd.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/drb/ja/tuplespace-ref.ja.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/drb/ja/tuplespace-ref.rd.ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/drb/ja
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/drb
