@@ -36,7 +36,7 @@ CONFIGURE_ARGS+=	--without-pgsql
 
 MAN5=	syslog.conf.5
 MAN8=	im_bsd.8 im_tcp.8 im_udp.8 im_unix.8 om_classic.8 om_tcp.8 om_peo.8 \
-	om_regex.8 peochk.8 syslogd.8
+	om_regex.8 peochk.8 syslogd.8 om_udp.8 im_file.8
 .if defined(WITH_MYSQL)
 MAN8+=	om_mysql.8
 .endif
@@ -45,8 +45,9 @@ MAN8+=	om_pgsql.8
 .endif
 MANCOMPRESSED=	yes
 INSTALLS_SHLIB=	yes
+LDCONFIG_DIRS=	%%PREFIX%%/lib/alat
 
-DOCS=	AUTHORS src/TODO README NEWS doc/HOW_TO_WRITE_A_MODULE \
+DOCS=	AUTHORS COPYING src/TODO README NEWS doc/HOW_TO_WRITE_A_MODULE \
 	doc/HOW-TO-UPGRADE
 FIXPREFIX=	README src/man/om_peo.8 src/man/syslog.conf.5 \
 		src/man/syslogd.8 src/TODO src/syslogd.h

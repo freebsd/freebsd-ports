@@ -1,5 +1,5 @@
 --- configure.in.orig	Wed Nov 21 07:49:36 2001
-+++ configure.in	Sat Mar 23 18:20:54 2002
++++ configure.in	Sun Mar 24 18:30:28 2002
 @@ -33,7 +33,7 @@
  AC_STRUCT_TM
  
@@ -18,16 +18,23 @@
  AC_DEFINE_UNQUOTED(MLIBNAME_STR, "$MLIBNAME")
  
  MANPAGES="syslog.conf.5 syslogd.8"
-@@ -74,7 +74,7 @@
- then
- 	prefix=$ac_default_prefix
- fi
--AC_DEFINE_UNQUOTED(INSTALL_LIBDIR, "$prefix/lib/alat")
-+AC_DEFINE_UNQUOTED(INSTALL_LIBDIR, "$prefix/lib")
+@@ -93,14 +93,7 @@
+ AC_MSG_RESULT(root-mode pid file will go in $dir)
+ AC_DEFINE_UNQUOTED(PID_DIR, "$dir")
  
- AC_MSG_CHECKING(wheter optreset is needed)
- AC_TRY_LINK([#include <unistd.h>],
-@@ -150,6 +150,12 @@
+-dnl search mandir for non bsd systems
+-for MANDIR in "/usr/share/man" "/usr/man"
+-do
+-	if test -d $MANDIR ; then
+-		mandir=$MANDIR;
+-		break;
+-	fi
+-done
++AC_DEFINE_UNQUOTED(MANDIR, "$prefix/man")
+ 
+ dnl Check underscore requirement for dlsym()
+ 
+@@ -150,6 +143,12 @@
  	AC_DEFINE_UNQUOTED(SYMBOL_PREFIX, "_")
  	SHARED_PARAMS="-Bshareable"
  	DCCFLAGS="-fPIC"
