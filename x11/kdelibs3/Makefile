@@ -6,21 +6,17 @@
 #
 
 PORTNAME=	kdelibs
-PORTVERSION=	${KDE_DIST_VERSION}
-PORTREVISION=	1
+PORTVERSION=	3.0.5
+PORTREVISION=	0
 CATEGORIES?=	x11 kde
-MASTER_SITES=	${MASTER_SITE_KDE_kde} \
-		${MASTER_SITE_LOCAL_keramik}
+MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2:kde \
-		${PORTNAME}-keramik-${KERAMIK_DATE}.tar.bz2:keramik
 DIST_SUBDIR=	KDE
-EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.bz2
 
 MAINTAINER?=	kde@FreeBSD.org
 
-BUILD_DEPENDS+=	autoconf:${PORTSDIR}/devel/autoconf \
-		automake:${PORTSDIR}/devel/automake
+BUILD_DEPENDS+=	${LOCALBASE}/bin/autoconf:${PORTSDIR}/devel/autoconf \
+		${LOCALBASE}/bin/automake:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		qtmcop.1:${PORTSDIR}/audio/arts \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile \
@@ -45,9 +41,6 @@ PREFIX?=	${KDE_PREFIX}
 CONFIGURE_ARGS+=--enable-cups --disable-ltdl-install
 FONTSCALE=	${X11BASE}/lib/X11/fonts/PEX/Roman.phont
 FONTENCOD=	${X11BASE}/lib/X11/fonts/encodings/tcvn-0.enc
-KERAMIK_DATE=	20021008.1942
-
-MASTER_SITE_LOCAL_keramik=${MASTER_SITE_LOCAL:S@%SUBDIR%/@alane/:keramik@g}
 
 .include "${.CURDIR}/../kde3/Makefile.kde"
 
@@ -73,17 +66,6 @@ pre-fetch: kde-version-check
 	@${ECHO}
 .endif
 
-.if defined(WITH_KERAMIK)
-PLIST_SUB+=	KERAMIK=""
-KERAMIK_TARBALL=${PORTNAME}-keramik-${KERAMIK_DATE}.tar.bz2
-pre-patch:
-	@cd ${WRKSRC};\
-	${BZCAT} ${DISTDIR}/${DIST_SUBDIR}/${KERAMIK_TARBALL} | ${TAR} xf -;\
-	${CAT} ${FILESDIR}/keramik-patch-* | ${PATCH} ${PATCH_ARGS}
-.else
-PLIST_SUB+=	KERAMIK="@comment "
-.endif # defined(WITH_KERAMIK)
-
 pre-configure:
 	cd ${WRKSRC}; ${GMAKE} -f Makefile.cvs
 
@@ -92,9 +74,5 @@ post-install:
 	${SED} -e 's,%%PREFIX%%,${PREFIX},g' ${FILESDIR}/kdelibs.sh > \
 		${DESTDIR}${PREFIX}/etc/rc.d/kdelibs.sh
 	${CHMOD} ${BINMODE} ${DESTDIR}${PREFIX}/etc/rc.d/kdelibs.sh
-.if defined(WITH_KERAMIK)
-	@if test -f ${PKGMESSAGE}; then \
-		${ECHO}; ${CAT} ${PKGMESSAGE}; ${ECHO}; fi
-.endif # defined(WITH_KERAMIK)
 
 .include <bsd.port.post.mk>

@@ -1,5 +1,0 @@
---- kstyles/Makefile.am.orig	Sun Jan 20 21:45:25 2002
-+++ kstyles/Makefile.am	Fri Oct  4 22:40:56 2002
-@@ -1 +1 @@
--SUBDIRS = highcolor themes light kthemestyle pics riscos utils
-+SUBDIRS = highcolor themes light kthemestyle pics riscos keramik utils 

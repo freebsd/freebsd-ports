@@ -1,6 +1,0 @@
---- kwin/clients/Makefile.am.orig	Sat Jan 26 11:06:53 2002
-+++ kwin/clients/Makefile.am	Mon Oct  7 03:51:41 2002
-@@ -1,2 +1,2 @@
- SUBDIRS = default kde1 riscos redmond quartz icewm web b2 \
--	modernsystem laptop system kwmtheme kstep
-+	modernsystem laptop system kwmtheme kstep keramik

@@ -106,8 +106,6 @@ include/ksgrd/TimerSettings.h
 include/kwin/client.h
 include/kwin/kwinbutton.h
 include/kwin/options.h
-%%KERAMIK%%include/kwin/placement.h
-%%KERAMIK%%include/kwin/popupinfo.h
 include/kwin/workspace.h
 lib/appletproxy.la
 lib/appletproxy.so
@@ -303,10 +301,6 @@ lib/kde3/kwin_icewm_config.la
 lib/kde3/kwin_icewm_config.so
 lib/kde3/kwin_kde1.la
 lib/kde3/kwin_kde1.so
-%%KERAMIK%%lib/kde3/kwin_keramik.la
-%%KERAMIK%%lib/kde3/kwin_keramik.so
-%%KERAMIK%%lib/kde3/kwin_keramik_config.la
-%%KERAMIK%%lib/kde3/kwin_keramik_config.so
 lib/kde3/kwin_kstep.la
 lib/kde3/kwin_kstep.so
 lib/kde3/kwin_kwmtheme.la
@@ -1332,7 +1326,6 @@ share/apps/kwin/icewm-themes/titleIS.xpm
 share/apps/kwin/icewm-themes/titleIT.xpm
 share/apps/kwin/icewm.desktop
 share/apps/kwin/kde1.desktop
-%%KERAMIK%%share/apps/kwin/keramik.desktop
 share/apps/kwin/kstep.desktop
 share/apps/kwin/laptop.desktop
 share/apps/kwin/modernsystem.desktop
@@ -2553,8 +2546,10 @@ share/wallpapers/triplegears.jpg
 @exec /bin/mkdir -p %D/share/apps/kscreensaver
 @exec /bin/mkdir -p %D/share/fonts/override
 @exec /bin/mkdir -p %D/share/templates/.source/emptydir
+@unexec /bin/rmdir %D/share/templates/.source/emptydir || true
+@unexec /bin/rmdir %D/share/fonts/override || true
+@unexec /bin/rmdir %D/share/apps/kscreensaver || true
 @dirrm share/wallpapers
-@dirrm share/templates/.source/emptydir
 @dirrm share/templates/.source
 @dirrm share/templates
 @dirrm share/sounds
@@ -2585,7 +2580,6 @@ share/wallpapers/triplegears.jpg
 @dirrm share/icons/hicolor/16x16/actions
 @dirrm share/icons/hicolor/16x16
 @dirrm share/icons/hicolor
-@dirrm share/fonts/override
 @dirrm share/doc/HTML/en/kwrite
 @dirrm share/doc/HTML/en/ksysguard
 @dirrm share/doc/HTML/en/kpager
@@ -2627,7 +2621,6 @@ share/wallpapers/triplegears.jpg
 @dirrm share/apps/ksplash
 @dirrm share/apps/ksmserver/pics
 @dirrm share/apps/ksmserver
-@dirrm share/apps/kscreensaver
 @dirrm share/apps/kpersonalizer/pics
 @dirrm share/apps/kpersonalizer
 @dirrm share/apps/konsole
