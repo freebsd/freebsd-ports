@@ -25,7 +25,8 @@ CONFIGURE_ENV+=	CPPFLAGS=-I${PREFIX}/include \
 		LDFLAGS=-L${PREFIX}/lib
 
 pre-build:
-	${RM} -rf ${WRKSRC}/doc/wget.info*
+	@${RM} -rf ${WRKSRC}/doc/wget.info*
+	@${CP} ${FILESDIR}/zh_TW.Big5.po ${WRKSRC}/po
 
 post-install:
 	install-info ${PREFIX}/info/wget.info ${PREFIX}/info/dir
