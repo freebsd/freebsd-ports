@@ -3,9 +3,6 @@
 # Whom:                 tobez@tobez.org
 #
 # $FreeBSD$
-#
-# Modified for 0.8.3 on Fri July 13 2001
-# Whom:			jmcoopr@webmail.bmi.net
 
 PORTNAME=	libesmtp
 PORTVERSION=	0.8.3
