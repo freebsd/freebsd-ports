@@ -1,31 +1,30 @@
-*** Makefile.orig	Sun Jul 27 22:35:11 1997
---- Makefile	Sun Jul 27 22:49:41 1997
-***************
-*** 142,154 ****
-  # Installation locations (edit to suit your system)
-  #
-  
-! ROOTDIR = ### user defined ###
-! SUBSYS = ### user defined ###
-  BINDIR = $(ROOTDIR)/bin
-! RSCDIR = $(ROOTDIR)/setup/app-defaults
-  MAN1DIR = $(ROOTDIR)/man/man1
-! HELPDIR = $(ROOTDIR)/setup/$(SUBSYS)/help
-! BITDIR = $(ROOTDIR)/setup/bitmaps
-  
-  #
-  # You generally should not edit below this line
---- 142,154 ----
-  # Installation locations (edit to suit your system)
-  #
-  
-! ROOTDIR = $(PREFIX)
-! SUBSYS = ..
-  BINDIR = $(ROOTDIR)/bin
-! RSCDIR = $(ROOTDIR)/lib/X11/app-defaults
-  MAN1DIR = $(ROOTDIR)/man/man1
-! HELPDIR = $(ROOTDIR)/lib/X11/$(SUBSYS)/help
-! BITDIR = $(ROOTDIR)/include/X11/bitmaps
-  
-  #
-  # You generally should not edit below this line
+--- Makefile.orig	Sat Jan 18 05:22:35 1997
++++ Makefile	Tue Aug  5 11:03:09 1997
+@@ -142,13 +142,13 @@
+ # Installation locations (edit to suit your system)
+ #
+ 
+-ROOTDIR = ### user defined ###
+-SUBSYS = ### user defined ###
++ROOTDIR = $(PREFIX)
++SUBSYS = ..
+ BINDIR = $(ROOTDIR)/bin
+-RSCDIR = $(ROOTDIR)/setup/app-defaults
++RSCDIR = $(ROOTDIR)/lib/X11/app-defaults
+ MAN1DIR = $(ROOTDIR)/man/man1
+-HELPDIR = $(ROOTDIR)/setup/$(SUBSYS)/help
+-BITDIR = $(ROOTDIR)/setup/bitmaps
++HELPDIR = $(ROOTDIR)/lib/X11/$(SUBSYS)/help
++BITDIR = $(ROOTDIR)/include/X11/bitmaps
+ 
+ #
+ # You generally should not edit below this line
+@@ -182,7 +182,7 @@
+ 
+ LDFLAGS = $(OPTIMIZEFLAG) $(MACHDEFS)
+ LOCAL_LIB = $(LIBROOT)/lib_incl_local/$(MACH)
+-LIBS = -lXm -lXt -lX11
++LIBS = -lXm -lXext -lXt -lX11
+ SFOCLIBPATH = -L$(SFOCDIR)/lib -L/sfoc/lib -L$(TPSDIR)/lib -L/tps/lib
+ FULLLIBPATH = $(LIBPATH) $(SFOCLIBPATH) $(MACHLIBPATH)
+ 
