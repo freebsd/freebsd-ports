@@ -22,7 +22,6 @@ lib/libavformat.a
 %%PORTDOCS%%share/doc/ffmpeg/Changelog
 %%PORTDOCS%%share/doc/ffmpeg/README
 %%PORTDOCS%%share/doc/ffmpeg/TODO
-%%PORTDOCS%%share/doc/ffmpeg/VERSION
 %%PORTDOCS%%share/doc/ffmpeg/faq.html
 %%PORTDOCS%%share/doc/ffmpeg/faq.texi
 %%PORTDOCS%%share/doc/ffmpeg/ffmpeg-doc.html
