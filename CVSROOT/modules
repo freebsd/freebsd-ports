@@ -5521,6 +5521,7 @@ p5-MusicBrainz-Client	ports/audio/p5-MusicBrainz-Client
 p5-MusicBrainz-Queries	ports/audio/p5-MusicBrainz-Queries
 p5-MusicBrainz-TRM	ports/audio/p5-MusicBrainz-TRM
 p5-Mysql	ports/databases/p5-Mysql
+p5-Mysql-Diff	ports/databases/p5-Mysql-Diff
 p5-NNTPClient	ports/news/p5-NNTPClient
 p5-Net		ports/net/p5-Net
 p5-Net-AIM	ports/net/p5-Net-AIM
