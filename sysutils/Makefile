@@ -303,6 +303,7 @@
     SUBDIR += sarah
     SUBDIR += sb16config
     SUBDIR += sbniconfig
+    SUBDIR += scan_ffs
     SUBDIR += sdd
     SUBDIR += sec
     SUBDIR += service-config
