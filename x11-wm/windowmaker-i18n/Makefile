@@ -49,17 +49,17 @@ MASTER_SITES+=	ftp://muse.brain.riken.go.jp/pub/ja.po/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${JA_CATALOGFILE}${EXTRACT_SUFX}
 .endif
 
-.if defined(USE_GNOME)
+.if defined(WITH_GNOME)
 CONFIGURE_ARGS+=	--enable-gnome
 .endif
-.if defined(USE_KDE)
+.if defined(WITH_KDE)
 CONFIGURE_ARGS+=	--enable-kde
 .endif
 
 .SILENT:
-.if !defined(USE_KDE) && !defined(USE_GNOME)
+.if !defined(WITH_KDE) && !defined(WITH_GNOME)
 pre-extract:
-	${ECHO} "You can add hooks for Gnome and KDE by defining USE_GNOME and/or USE_KDE"
+	${ECHO} "You can add hooks for Gnome and KDE by defining WITH_GNOME and/or WITH_KDE"
 .endif
 
 post-extract:

@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 # Maximal ssh2 package requires YES values for
-# USE_SSH1, USE_TCPWRAP
+# WITH_SSH1, WITH_TCPWRAP
 
 PORTNAME=	ssh2
 PORTVERSION= 	2.0.13
@@ -32,34 +32,32 @@ CONFIGURE_ARGS= --with-etcdir=${PREFIX}/etc --enable-debug
 
 .include <bsd.port.pre.mk>
 
-# Include support for ssh1 client backward compatibility
-USE_SSH1?=	YES
+# Don't support for ssh1 client backward compatibility
+#WITHOUT_SSH1=	yes
 # Include tcp_wrappers support (automaticlly YES if /usr/include/tcpd.h exists)
-USE_TCPWRAP?=	NO
-# Warning: untested !
+#WITH_TCPWRAP=	yes
+# Warning: untested!
 # Include support for the TIS authentication server
-USE_TIS?=	NO
+#WITH_TIS=	yes
 # Include support for the SecureID card
-USE_SECUREID?=	NO
+#WITH_SECUREID=	yes
 
-.if ${OSVERSION} < 400016 && defined(USE_SSH1) && ${USE_SSH1} == YES
+.if ${OSVERSION} < 400016 && !defined(WITHOUT_SSH1)
 BUILD_DEPENDS+=	ssh1:${PORTSDIR}/security/ssh
 RUN_DEPENDS+=	ssh1:${PORTSDIR}/security/ssh
 .endif
 
-.if defined(USE_SECUREID) && ${USE_SECUREID} == YES
+.if defined(WITH_SECUREID)
 CONFIGURE_ARGS+= --with-secureid
 .endif
-.if defined(USE_TIS) && ${USE_TIS} == YES
+.if defined(WITH_TIS)
 CONFIGURE_ARGS+= --with-tis
 .endif
-.if exists(/usr/include/tcpd.h)
+.if exists(/usr/include/tcpd.h) && !defined(WITHOUT_TCPWRAP)
 CONFIGURE_ARGS+= --with-libwrap
-.else
-.if defined(USE_TCPWRAP) && ${USE_TCPWRAP} == YES
+.elif defined(WITH_TCPWRAP)
 CONFIGURE_ARGS+= --with-libwrap="-L ${PREFIX}/lib -lwrap"
 LIB_DEPENDS+=   wrap.7:${PORTSDIR}/security/tcp_wrapper
-.endif
 .endif
 
 MAN1=	ssh2.1 ssh-keygen2.1 ssh-add2.1 ssh-agent2.1 \
@@ -75,7 +73,7 @@ MLINKS=	ssh2.1 ssh.1 \
 	sshd2.8 sshd.8
 
 PORTDOCS=	CHANGES LICENSING README
-.if !defined(USE_SSH1) || (defined(USE_SSH1) && ${USE_SSH1} != YES)
+.if defined(WITHOUT_SSH1)
 PLIST=		${PKGDIR}/PLIST.ssh2_only
 .endif
 
@@ -85,7 +83,7 @@ post-patch:
 .endif
 
 post-install:
-.if defined(USE_SSH1) && ${USE_SSH1} == YES
+.if !defined(WITHOUT_SSH1)
 .for i in ssh ssh-keygen ssh-add ssh-agent scp
 	${MV} -f ${PREFIX}/man/man1/${i}.1${MAN_SUFX} ${PREFIX}/man/man1/${i}.old.1${MAN_SUFX}
 .endfor

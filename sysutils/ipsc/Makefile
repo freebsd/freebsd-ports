@@ -14,12 +14,12 @@ DISTNAME=	${PKGNAME}-src
 MAINTAINER=	jeremy@external.org
 
 BUILD_DEPENDS=	${WRKDIRPREFIX}${PORTSDIR}/sysutils/prips/work/prips/prips.o:${PORTSDIR}/sysutils/prips:build
-.if defined(USE_GNOME)
+.if defined(WITH_GNOME)
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12 \
 		gnome.3:${PORTSDIR}/x11/gnomelibs
 .endif
 
-.if defined(USE_GNOME)
+.if defined(WITH_GNOME)
 USE_XLIB=	YES
 .endif
 WRKSRC=		${WRKDIR}/ipsc/src
@@ -29,7 +29,7 @@ post-extract:
 		${WRKDIR}/prips
 
 pre-build:
-.if defined(USE_GNOME)
+.if defined(WITH_GNOME)
 PLIST=		${PKGDIR}/PLIST.gnome
 ALL_TARGET=     all
 .else
@@ -37,15 +37,15 @@ ALL_TARGET=	ipsc
 .endif
 
 post-build:
-.if defined(USE_GNOME)
+.if defined(WITH_GNOME)
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "Don't forget to define USE_GNOME when installing"
+	@${ECHO_MSG} "Don't forget to define WITH_GNOME when installing"
 	@${ECHO_MSG} ""
 .endif
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ipsc ${PREFIX}/bin
-.if defined(USE_GNOME)
+.if defined(WITH_GNOME)
 	@${INSTALL_PROGRAM} ${WRKSRC}/gipsc ${PREFIX}/bin
 .endif
 

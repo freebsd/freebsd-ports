@@ -3,7 +3,7 @@
   You should aware that GKrellM must be setuid root to obtain
   temperatures.  If your motherboard doesn't support LM78/79 feature,
   you may not want this.  You can disable it by typing
-  `make install USE_SENSOR=NO' at the "${PORTSDIR}/sysutils/gkrellm"
+  `make install WITHOUT_SENSOR=yes' at the "${PORTSDIR}/sysutils/gkrellm"
   directory to re-make this package.
 
 ****************************************************************************

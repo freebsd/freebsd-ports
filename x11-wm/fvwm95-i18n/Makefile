@@ -50,12 +50,12 @@ post-extract:
 	${CP} ${WRKDIR}/apmpatch/freebsd-menu.xpm ${WRKSRC}/mini-icons
 
 pre-patch:
-.if !defined(BATCH) && !defined(FOR_CDROM) && !defined(USE_APM)
+.if !defined(BATCH) && !defined(FOR_CDROM) && !defined(WITH_APM)
 	@${ECHO} -n "Are you going to use APM handling? (y/n) ==> "
 	@(read ans; \
 	  case x"$$ans" in \
 	    xy*|xY*) \
-		${ECHO} "Okay, please rerun make like as \"make USE_APM=yes\"."; \
+		${ECHO} "Okay, please rerun make like as \"make WITH_APM=yes\"."; \
 		${ECHO} "(Don't worry about the following \"*** Error code 1\"s)"; \
 		return 1; \
 		;; \
@@ -65,7 +65,7 @@ pre-patch:
 	  esac)
 .endif
 post-patch:
-.if defined(USE_APM)
+.if defined(WITH_APM)
 	@${CAT} ${WRKDIR}/apmpatch/fvwm95-2.0.43a-Autoconf.I18N.apmpatch \
 	| ${PATCH} -d ${WRKSRC}
 .endif

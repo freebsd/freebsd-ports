@@ -22,18 +22,15 @@ CONFIGURE_ARGS=	-cflags="${CFLAGS}" -prefix=${PREFIX}/mpich
 
 .include <bsd.port.pre.mk>
 
-# Include support for ssh client
-USE_SSH?=       YES
+# To disable ssh client support, build with WITHOUT_SSH set.
 # Use ssh instead of rsh
-.if ${OSVERSION} >= 400016 && \
-    exists(/usr/bin/ssh) && \
-    (!defined(USE_SSH) || ${USE_SSH} != NO)
+.if !defined(WITHOUT_SSH)
+.if ${OSVERSION} >= 400016 && exists(/usr/bin/ssh)
 CONFIGURE_ARGS+= -rsh="/usr/bin/ssh"
-.elif defined(USE_SSH) && ${USE_SSH} == YES || \
-    exists(${LOCALBASE}/bin/ssh) && \
-    (!defined(USE_SSH) || ${USE_SSH} != NO)
+.elif defined(WITH_SSH) || exists(${LOCALBASE}/bin/ssh)
 RUN_DEPENDS+=   ssh:${PORTSDIR}/security/ssh
 CONFIGURE_ARGS+= -rsh="${LOCALBASE}/bin/ssh"
+.endif
 .endif
 
 ALL_TARGET=

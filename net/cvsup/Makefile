@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/development/CVSup/sources/ \
 
 MAINTAINER=	jdp@FreeBSD.org
 
-.ifdef NO_X11
+.ifdef WITHOUT_X11
 M3FLAGS+=	-DNOGUI
 BUILD_DEPENDS=	${L1}libm3tcp${L2}:${PORTSDIR}/lang/pm3-net
 RUN_DEPENDS=	${L1}libm3tcp${L2}:${PORTSDIR}/lang/pm3-net
@@ -65,9 +65,9 @@ pre-fetch:
 	@${ECHO_MSG} "Cannot determine M3 target for this architecture"
 	@${FALSE}
 .endif
-.ifndef NO_X11
+.ifndef WITHOUT_X11
 	@${ECHO_MSG} -n "To build this port without X11 (and without the GUI),"
-	@${ECHO_MSG} " define \"NO_X11\"."
+	@${ECHO_MSG} " define \"WITHOUT_X11\"."
 .endif
 	@${TRUE}
 

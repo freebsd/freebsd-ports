@@ -29,7 +29,7 @@ TCLSH=		tclsh8.2
 .if defined(JAPANESE_EXMH)
 RUN_DEPENDS+=	repl:${PORTSDIR}/japanese/mh
 .else
-.if defined(USE_MH)
+.if defined(WITH_MH)
 RUN_DEPENDS+=	repl:${PORTSDIR}/mail/mh
 .else
 RUN_DEPENDS+=	repl:${PORTSDIR}/mail/nmh

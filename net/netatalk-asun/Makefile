@@ -22,11 +22,11 @@ MAKE_ARGS=	INSTALL="${INSTALL} ${COPY}"
 
 .include <bsd.port.pre.mk>
 
-.if defined(USE_SENDFILE) && ${OSVERSION} >= 310000
+.if defined(WITH_SENDFILE) && ${OSVERSION} >= 310000
 MAKE_ARGS+=	-DUSE_SENDFILE
 .endif
 
-.if defined(USE_CNID)
+.if defined(WITH_CNID)
 ## Support for fixed DirIDs; probably broken.
 BUILD_DEPENDS=	${PREFIX}/lib/libdb.a:${PORTSDIR}/databases/db
 MAKE_ARGS+=	-DUSE_CNID
@@ -35,16 +35,16 @@ MAKE_ARGS+=	-DUSE_CNID
 pre-build:
 ## sendfile(2) support seems to be broken in this version, but go ahead an try
 ## to fix it!
-.if defined(USE_SENDFILE) && ${OSVERSION} < 310000
+.if defined(WITH_SENDFILE) && ${OSVERSION} < 310000
 	@${ECHO_MSG} "***   sendfile(2) support is available only with FreeBSD 3.1-RELEASE"
 	@${ECHO_MSG} "      or newer.  This port probably won't compile."
 .endif
 .if ${OSVERSION} >= 310000
-.if defined(USE_SENDFILE)
+.if defined(WITH_SENDFILE)
 	@${ECHO_MSG} "***   sendfile(2) support is experimental and will likely cause"
 	@${ECHO_MSG} "      undesired behaviour!"
 .else
-#	@${ECHO_MSG} "***   Use -DUSE_SENDFILE to enable the experimental sendfile(2) support."
+#	@${ECHO_MSG} "***   Use -DWITH_SENDFILE to enable the experimental sendfile(2) support."
 .endif
 .endif
 

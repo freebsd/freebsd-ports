@@ -33,8 +33,8 @@ LANGUAGE?=	en_US
 
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail
 
-# If USE_MYSQL is defined, build with MySQL extensions
-.if defined(USE_MYSQL)
+# If WITH_MYSQL is defined, build with MySQL extensions
+.if defined(WITH_MYSQL)
 ALL_TARGET=	it ${LANGUAGE} mysql
 LIB_DEPENDS+=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
 .else
@@ -81,7 +81,7 @@ post-patch:
 	@${ECHO} ${QMAIL_DIR} > ${WRKSRC}/conf-qmail
 	@${ECHO} ${PREFIX} > ${WRKDIR}/.PPREFIX
 	@${ECHO} ${QMAIL_DIR} >> ${WRKDIR}/.PPREFIX
-	@${ECHO} ${NOPORTDOCS} ${USE_MYSQL} >> ${WRKDIR}/.PPREFIX
+	@${ECHO} ${NOPORTDOCS} ${WITH_MYSQL} >> ${WRKDIR}/.PPREFIX
 	@${MV} ${WRKSRC}/idx.h ${WRKSRC}/idx.h.orig
 	@${SED} -e 's#/etc/ezmlm/#'${PREFIX}'/etc/ezmlm/#' \
 		< ${WRKSRC}/idx.h.orig > ${WRKSRC}/idx.h
@@ -93,7 +93,7 @@ post-patch:
 pre-install:
 	@${ECHO} ${PREFIX} > ${WRKDIR}/.IPREFIX
 	@${ECHO} ${QMAIL_DIR} >> ${WRKDIR}/.IPREFIX
-	@${ECHO} ${NOPORTDOCS} ${USE_MYSQL} >> ${WRKDIR}/.IPREFIX
+	@${ECHO} ${NOPORTDOCS} ${WITH_MYSQL} >> ${WRKDIR}/.IPREFIX
 	@diff ${WRKDIR}/.[PI]PREFIX || (${ECHO} ${DIFF_MSG} && exit 1)
 
 do-install:

@@ -7,7 +7,7 @@
 -DIRS=	smap smapd netacl plug-gw ftp-gw tn-gw rlogin-gw http-gw x-gw
 +DIRS=	smap smapd netacl plug-gw ftp-gw tn-gw rlogin-gw http-gw
 +
-+.if !defined(NO_X11)
++.if !defined(WITHOUT_X11)
 +DIRS+=	x-gw
 +.endif
  
