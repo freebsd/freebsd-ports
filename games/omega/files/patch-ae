@@ -1,6 +1,6 @@
---- genclr.c	Sat Aug  8 16:53:59 1998
-+++ /home/andy/tmp/wrk/genclr.c	Fri May 14 20:28:35 1999
-@@ -281,7 +281,11 @@
+--- genclr.c.orig	Sat Aug  8 21:53:59 1998
++++ genclr.c	Thu Oct 16 20:38:27 2003
+@@ -281,16 +281,20 @@
       */
      fp = emitopen (cfile, argv);
      fprintf (fp, "\
@@ -11,4 +11,16 @@
 +#endif\n\
  #include <stdio.h>\n\
  #include <stdlib.h>\n\
- 
+-
++\n\
+ #include \"%s\"\n\
+-
++\n\
+ void clrgen_init (void)\n\
+ ""{\n\
+     if (%d > COLOR_PAIRS - 1) {\n\
+-	endwin();
++	endwin();\n\
+ 	fputs (\"Too many color pairs!\\n\", stderr);\n\
+ 	exit (1);\n\
+     }\n\
