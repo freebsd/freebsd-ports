@@ -10,7 +10,7 @@ PORTVERSION=	0.2
 CATEGORIES=	x11-wm scheme
 MASTER_SITES=	ftp://ftp.scsh.net/pub/scsh/packages/orion-wm/
 
-MAINTAINER=	bkhl@elektrubadur.se
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 window manager written in Scheme
 
 RUN_DEPENDS=	${LOCALBASE}/lib/scsh/0.6/module-system:${PORTSDIR}/devel/sunterlib \
