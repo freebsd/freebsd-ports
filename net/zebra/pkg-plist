@@ -5,4 +5,4 @@ etc/zebra/bgpd.conf.sample
 etc/zebra/ripd.conf.sample
 etc/zebra/zebra.conf.sample
 info/zebra.info
-@dirrm etc/zebra
+@unexec rmdir %D/etc/zebra 2>/dev/null
