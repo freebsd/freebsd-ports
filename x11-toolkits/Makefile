@@ -117,6 +117,7 @@
     SUBDIR += viewkit
     SUBDIR += whistlerk
     SUBDIR += wxgtk
+    SUBDIR += wxgtk-devel
     SUBDIR += xbae
     SUBDIR += xclasses
     SUBDIR += xenophilia
