@@ -6,6 +6,7 @@ include/gtksourceview-1.0/gtksourceview/gtksourcestylescheme.h
 include/gtksourceview-1.0/gtksourceview/gtksourcetag.h
 include/gtksourceview-1.0/gtksourceview/gtksourcetagstyle.h
 include/gtksourceview-1.0/gtksourceview/gtksourcetagtable.h
+include/gtksourceview-1.0/gtksourceview/gtksourceview-typebuiltins.h
 include/gtksourceview-1.0/gtksourceview/gtksourceview.h
 lib/libgtksourceview-1.0.a
 lib/libgtksourceview-1.0.so
@@ -19,12 +20,14 @@ share/gnome/gtksourceview-1.0/language-specs/diff.lang
 share/gnome/gtksourceview-1.0/language-specs/html.lang
 share/gnome/gtksourceview-1.0/language-specs/idl.lang
 share/gnome/gtksourceview-1.0/language-specs/java.lang
+share/gnome/gtksourceview-1.0/language-specs/language.dtd
 share/gnome/gtksourceview-1.0/language-specs/latex.lang
 share/gnome/gtksourceview-1.0/language-specs/perl.lang
 share/gnome/gtksourceview-1.0/language-specs/po.lang
 share/gnome/gtksourceview-1.0/language-specs/python.lang
 share/gnome/gtksourceview-1.0/language-specs/xml.lang
 share/locale/es/LC_MESSAGES/gtksourceview-1.0.mo
+share/locale/sv/LC_MESSAGES/gtksourceview-1.0.mo
 @dirrm share/gnome/gtksourceview-1.0/language-specs
 @dirrm share/gnome/gtksourceview-1.0
 @dirrm include/gtksourceview-1.0/gtksourceview
