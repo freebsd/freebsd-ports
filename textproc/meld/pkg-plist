@@ -61,7 +61,7 @@ share/meld/glade2/pixmaps/tree-file-normal.png
 share/meld/glade2/pixmaps/tree-folder-changed.png
 share/meld/glade2/pixmaps/tree-folder-new.png
 share/meld/glade2/pixmaps/tree-folder-normal.png
-%%PORTDOCS%%%%DOCDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/stylesheet.css
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/meld/glade2/pixmaps
