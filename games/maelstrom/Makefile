@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	maelstrom
-PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTVERSION=	3.0.5
 CATEGORIES=	games
 MASTER_SITES=	http://www.devolution.com/~slouken/projects/Maelstrom/src/
 DISTNAME=	Maelstrom-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl10
+LIB_DEPENDS=	SDL_net.0:${PORTSDIR}/net/sdl_net
+
+SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_NEWGCC=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
 .if !defined(NOPORTDOCS)
 INSTALL_TARGET=	install install_gamedocs
