@@ -20,14 +20,20 @@ DIST_SUBDIR=	mpich
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	-cflags="${CFLAGS}" -prefix=${PREFIX}/mpich
 
+.include <bsd.port.pre.mk>
+
 # Include support for ssh client
 USE_SSH?=       YES
 # Use ssh instead of rsh
-.if defined(USE_SSH) && ${USE_SSH} == YES || \
-    exists(${PREFIX}/bin/ssh) && \
+.if ${OSVERSION} >= 400016 && \
+    exists(/usr/bin/ssh) && \
+    (!defined(USE_SSH) || ${USE_SSH} != NO)
+CONFIGURE_ARGS+= -rsh="/usr/bin/ssh"
+.elif defined(USE_SSH) && ${USE_SSH} == YES || \
+    exists(${LOCALBASE}/bin/ssh) && \
     (!defined(USE_SSH) || ${USE_SSH} != NO)
 RUN_DEPENDS+=   ssh:${PORTSDIR}/security/ssh
-CONFIGURE_ARGS+= -rsh="${PREFIX}/bin/ssh"
+CONFIGURE_ARGS+= -rsh="${LOCALBASE}/bin/ssh"
 .endif
 
 ALL_TARGET=
@@ -178,4 +184,4 @@ MAN4=		CLOG_Finalize.4 CLOG_Init.4 CLOG_Output.4 CLOG_commtype.4 \
 		MPE_TagsEnd.4 MPE_Update.4
 INSTALL_TARGET=	install
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
