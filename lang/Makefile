@@ -88,6 +88,7 @@
     SUBDIR += kawa
     SUBDIR += klone
     SUBDIR += librep
+    SUBDIR += libutils
     SUBDIR += linux-j
     SUBDIR += logo
     SUBDIR += lua

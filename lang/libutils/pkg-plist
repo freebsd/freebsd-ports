@@ -1,0 +1,9 @@
+include/lists.h
+include/util.h
+include/dstring.h
+include/stack.h
+include/gfnmatch.h
+lib/libutils.a
+lib/libutils.la
+lib/libutils.so
+lib/libutils.so.0
