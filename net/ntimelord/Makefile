@@ -13,7 +13,7 @@ EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	naiki@bfd.es.hokudai.ac.jp
 
-RUN_DEPENDS=	${PREFIX}/libexec/atalkd:${PORTSDIR}/net/netatalk
+RUN_DEPENDS=	${LOCALBASE}/libexec/atalkd:${PORTSDIR}/net/netatalk
 
 post-install:
 	@$(ECHO_MSG) "============================================================"
