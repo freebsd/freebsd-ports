@@ -1,0 +1,16 @@
+This module is a fully object oriented implementation of a binary tree. Binary
+trees are a specialized type of tree which has only two possible branches, a
+left branch and a right branch. While it is possible to use an n-ary tree, like
+Tree::Simple, to fill most of your binary tree needs, a true binary tree object
+is just easier to mantain and use.
+
+Binary Tree objects are especially useful (to me anyway) when building parse
+trees of things like mathematical or boolean expressions. They can also be used
+in games for such things as descisions trees. Binary trees are a well studied
+data structure and there is a wealth of information on the web about them.
+
+WWW: http://search.cpan.org/dist/Tree-Binary/
+Author: Stevan Little <stevan@iinteractive.com>
+
+- Aaron Dalton
+aaron@daltons.ca
