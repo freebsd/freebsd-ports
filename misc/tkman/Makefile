@@ -6,7 +6,8 @@
 
 DISTNAME=	tkman
 MASTER_SITES=	ftp://ftp.cs.berkeley.edu/ucb/people/phelps/tcltk/
-DEPENDS=	${PORTSDIR}/x11/tk ${PORTSDIR}/utils/rman
+LIB_DEPENDS=	tk\\.3\\.:${PORTSDIR}/x11/tk
+EXEC_DEPENDS=	rman:${PORTSDIR}/utils/rman
 EXTRACT_SUFX=	.tar.Z
 WRKSRC=		${WRKDIR}/tkman-1.6
 

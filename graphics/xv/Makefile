@@ -3,13 +3,13 @@
 # Date created:		30 October 1994
 # Whom:			smace
 #
-# $Id: Makefile,v 1.3 1995/01/13 13:14:30 jkh Exp $
+# $Id: Makefile,v 1.4 1995/02/07 07:40:10 gpalmer Exp $
 #
 
 DISTNAME=	xv-3.10a
 USE_IMAKE=	yes
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/
-DEPENDS=	${PORTSDIR}/graphics/jpeg ${PORTSDIR}/graphics/tiff
-INSTALL_MANPAGES=	yes
+LIB_DEPENDS=	jpeg\\.5\\.:${PORTSDIR}/graphics/jpeg \
+		tiff\\.3\\.:${PORTSDIR}/graphics/tiff
 
 .include <bsd.port.mk>

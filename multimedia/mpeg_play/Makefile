@@ -3,12 +3,11 @@
 # Date created:		17 December 1994
 # Whom:			asami
 #
-# $Id:$
+# $Id: Makefile,v 1.1.1.1 1994/12/17 11:54:26 asami Exp $
 #
 
 DISTNAME=	mpeg_play-2.0
 USE_IMAKE=	yes
-INSTALL_MANPAGES=	yes
 MASTER_SITES=	ftp://s2k-ftp.cs.berkeley.edu/pub/multimedia/mpeg/
 EXTRACT_SUFX=	.tar.Z
 NO_WRKSUBDIR=	yes
