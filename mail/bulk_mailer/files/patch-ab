@@ -1,5 +1,5 @@
---- bulk_mailer.c.orig	Wed May 24 22:34:33 2000
-+++ bulk_mailer.c	Thu Jun  8 12:35:46 2000
+--- bulk_mailer.c.orig	Wed May 24 12:34:33 2000
++++ bulk_mailer.c	Sat Sep 28 22:17:45 2002
 @@ -95,11 +95,16 @@
  #include <sysexits.h>
  #include <errno.h>
@@ -17,7 +17,17 @@
  #ifndef PIPECOMMAND
  #define PIPECOMMAND "/usr/lib/sendmail -bs %s"
  #endif
-@@ -296,6 +301,7 @@
+@@ -122,9 +127,6 @@
+ char *strchr();
+ char *strrchr();
+ #endif
+-char *malloc ();
+-char *realloc ();
+-char *mktemp ();
+ 
+ /*
+  * (default) max different domains per envelope.
+@@ -296,6 +298,7 @@
   * memory, appending a NUL to the copy.
   */
  
@@ -25,7 +35,7 @@
  static char *
  strndup (str, len)
  char *str;
-@@ -307,6 +313,7 @@
+@@ -307,6 +310,7 @@
      result[len] = '\0';
      return result;
  }
@@ -33,7 +43,7 @@
  
  /*
   * sort by case-folded reversed domain
-@@ -337,15 +344,15 @@
+@@ -337,15 +341,15 @@
  {
      char *at;
      char *ptr;
@@ -52,7 +62,7 @@
  	
  	num_addr_slots += 1000;
  	if (address_list == NULL)
-@@ -571,12 +578,12 @@
+@@ -571,12 +575,12 @@
  open_envelope ()
  {
      FILE *fp;
@@ -67,7 +77,7 @@
  
  	if ((fp = popen (command_buf, "w")) == NULL) {
  	    fprintf (stderr, "can't open pipe to sendmail: %s\n",
-@@ -927,7 +934,7 @@
+@@ -927,7 +931,7 @@
  {
      struct tm gmt;
      struct tm *lt;
@@ -76,7 +86,7 @@
      int gmtoff;
      char sign;
      static char *months[] = {
-@@ -960,7 +967,7 @@
+@@ -960,7 +964,7 @@
  	sign = '-';
  	gmtoff = -gmtoff;
      }
@@ -85,7 +95,7 @@
  	     wdays[lt->tm_wday], lt->tm_mday, months[lt->tm_mon], lt->tm_year + 1900,
  	     lt->tm_hour, lt->tm_min, lt->tm_sec,
  	     sign,
-@@ -985,7 +992,7 @@
+@@ -985,7 +989,7 @@
  copy_message (out, in)
  FILE *out, *in;
  {
@@ -94,7 +104,7 @@
      char linebuf[32*1024];
      int has_valid_approved_hdr = 0;
      int has_resent_to_hdr = 0;
-@@ -1218,14 +1225,14 @@
+@@ -1218,14 +1222,14 @@
       */
      lines = 0;
      while (fgets (linebuf, sizeof (linebuf), in) != NULL) {
@@ -111,7 +121,7 @@
  	    saw_command = 1;
  	++lines;
  	fputs (linebuf, out);
-@@ -1326,13 +1333,14 @@
+@@ -1326,13 +1330,14 @@
  int argc;
  char *argv[];
  {
@@ -129,7 +139,7 @@
  
      while (argc > 1 && (*argv[1] == '-' || *argv[1] == '+')) {
  	if (strcmp (argv[1], "-comment") == 0 && argc > 2) {
-@@ -1513,8 +1521,9 @@
+@@ -1513,8 +1518,9 @@
  	exit (EX_OSFILE);
      }
  
@@ -141,7 +151,7 @@
      switch (copy_message (tmp, stdin)) {
  
      case HAS_EMBEDDED_COMMAND:
-@@ -1592,4 +1601,5 @@
+@@ -1592,4 +1598,5 @@
  	
  	exit (EX_OK);
      }
