@@ -26,7 +26,6 @@ include/diacanvas/dia-placement-tool.h
 include/diacanvas/dia-selection-tool.h
 include/diacanvas/dia-selector.h
 include/diacanvas/dia-shape-art.h
-include/diacanvas/dia-shape-x.h
 include/diacanvas/dia-shape.h
 include/diacanvas/dia-solver.h
 include/diacanvas/dia-stack-tool.h
@@ -35,6 +34,7 @@ include/diacanvas/dia-tool.h
 include/diacanvas/dia-variable.h
 include/diacanvas/diamarshal.h
 include/diacanvas/diatypebuiltins.h
+lib/libdiacanvas2.a
 lib/libdiacanvas2.so
 lib/libdiacanvas2.so.0
 %%PYTHON_SITELIBDIR%%/diacanvas/__init__.py
