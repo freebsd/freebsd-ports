@@ -3,7 +3,7 @@
 # Date created:		25 May 1998
 # Whom:			Mario S F Ferreira <lioux@gns.com.br> et al.
 #
-# $Id: Makefile,v 1.6 1998/07/28 00:54:03 hoek Exp $
+# $Id: Makefile,v 1.7 1998/08/20 05:38:19 hoek Exp $
 #
 
 DISTNAME=	qmail-1.03
@@ -125,6 +125,7 @@ do-install:
 	@# This is not part of qmail proper, hence the 2nd class citizenship
 	@${INSTALL_SCRIPT} ${FILESDIR}/mkaliasdir ${PREFIX}/${DOCDIR}
 	@cd ${PREFIX}/configure ; ./config
+	@${MKDIR} /usr/local/etc/rc.d
 	@${LN} -sf ${PREFIX}/rc /usr/local/etc/rc.d/qmail.sh
 	@${ECHO}
 	@${SED} s!/usr/local/!${PREFIX}/!g ${PKGDIR}/MESSAGE | /usr/bin/fmt
