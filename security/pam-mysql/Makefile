@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pam_mysql
-PORTVERSION=	0.4.7
+PORTVERSION=	0.5
 CATEGORIES=	security databases
 MASTER_SITES=	http://download.sourceforge.net/pam-mysql/ \
 		http://atreides.freenix.no/~anders/
@@ -21,10 +21,6 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.pre.mk>
-
-.if !exists(/usr/include/security/_pam_types.h) && ${OSVERSION} >= 500031
-BROKEN=		"Does not work with OpenPAM (yet)"
-.endif
 
 post-patch:
 	@cd ${WRKSRC} && ${GMAKE} clean

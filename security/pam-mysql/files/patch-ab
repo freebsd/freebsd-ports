@@ -1,0 +1,18 @@
+--- Makefile.orig	Thu Nov 21 02:13:01 2002
++++ Makefile	Mon May 19 23:41:43 2003
+@@ -3,13 +3,9 @@
+ ifndef FULL_LINUX_PAM_SOURCE_TREE
+ export DYNAMIC=-DPAM_DYNAMIC
+ export CC=gcc
+-export CFLAGS=-O2 -Dlinux -DLINUX_PAM \
+-       -ansi -D_POSIX_SOURCE -Wall -Wwrite-strings \
+-       -Wpointer-arith -Wcast-qual -Wcast-align -Wtraditional \
+-       -Wstrict-prototypes -Wmissing-prototypes -Wnested-externs -Winline \
+-       -Wshadow -pedantic -fPIC
++export CFLAGS+=-I${LOCALBASE}/include -fPIC
+ export MKDIR=mkdir -p
+-export LD_D=gcc -shared -Xlinker -x -L/usr/lib/mysql -lz
++export LD_D=${CC} -shared -Xlinker -x -L${LOCALBASE}/lib/mysql -lz
+ endif
+ 
+ #
