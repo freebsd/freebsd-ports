@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	manedit
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.6
 CATEGORIES=	editors
 MASTER_SITES=	ftp://wolfpack.twu.net/users/wolfpack/
 
