@@ -3,7 +3,7 @@
 # Date created:		19 Apr 1997
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.11 1997/12/01 08:07:14 tg Exp $
+# $Id: Makefile,v 1.12 1998/04/12 03:10:49 itojun Exp $
 #
 
 DISTNAME=	hylafax-v4.0pl2
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 # version the user prefers
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	tiff34\\.1\\.:${PORTSDIR}/graphics/tiff34 \
-		jpeg\\.7\\.:${PORTSDIR}/graphics/jpeg
+		jpeg\\.8\\.:${PORTSDIR}/graphics/jpeg
 
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-INSTALL="" \

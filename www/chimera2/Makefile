@@ -3,7 +3,7 @@
 # Date created:         24 Nov 1997
 # Whom:                 Bruce Gingery <bgingery@gtcs.com>
 #
-# $Id: Makefile,v 1.12 1997/11/26 07:53:32 tg Exp $
+# $Id: Makefile,v 1.13 1998/03/28 20:12:07 ache Exp $
 #
 
 DISTNAME=	chimera-2.0a11
@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.cs.unlv.edu/pub/chimera-alpha/
 
 MAINTAINER=	bgingery@gtcs.com
 
-LIB_DEPENDS=	jpeg\\.[67]\\.:${PORTSDIR}/graphics/jpeg \
+LIB_DEPENDS=	jpeg\\.8\\.:${PORTSDIR}/graphics/jpeg \
 		png\\.2\\.:${PORTSDIR}/graphics/png
 
 USE_IMAKE=	yes

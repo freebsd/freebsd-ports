@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.6 1998/02/15 22:23:46 se Exp $
+# $Id: Makefile,v 1.7 1998/03/06 19:52:16 se Exp $
 #
 
 DISTNAME=	kdeutils-Beta3-1
@@ -18,7 +18,7 @@ MAINTAINER=	se@freebsd.org
 BUILD_DEPENDS=	moc:${PORTSDIR}/x11/qt
 LIB_DEPENDS=	qt\\.1\\.3[0-9]:${PORTSDIR}/x11/qt \
 		gif\\.[23]\\.:${PORTSDIR}/graphics/giflib \
-		jpeg\\.[67]\\.:${PORTSDIR}/graphics/jpeg \
+		jpeg\\.8\\.:${PORTSDIR}/graphics/jpeg \
 		kdecore\\.0\\.9[0-9]:${PORTSDIR}/x11/kdelibs \
 		kdeui\\.0\\.9[1-9]:${PORTSDIR}/x11/kdelibs \
 		jscript\\.0\\.9[0-9]:${PORTSDIR}/x11/kdelibs \
