@@ -345,6 +345,7 @@
     SUBDIR += loadd
     SUBDIR += loudmouth
     SUBDIR += luasocket
+    SUBDIR += mad_fcl
     SUBDIR += magictun
     SUBDIR += mars_nwe
     SUBDIR += mbrowse

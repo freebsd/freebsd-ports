@@ -1,0 +1,27 @@
+--- Makefile.orig	Fri Feb 13 15:58:54 2004
++++ Makefile	Fri Feb 13 15:58:54 2004
+@@ -4,21 +4,21 @@
+ 	@echo "-------------------"
+ 	@echo "*** ALC library ***"
+ 	@echo "-------------------"
+-	mkdir lib; cd alclib; make clean; make                   
++	mkdir lib; cd alclib; gmake clean; gmake                   
+ 	@echo "done"
+ 
+ sdplib ::
+ 	@echo "-------------------"
+ 	@echo "*** SDP library ***"
+ 	@echo "-------------------"
+-	mkdir lib; cd sdplib; make clean; make                   
++	mkdir lib; cd sdplib; gmake clean; gmake                   
+ 	@echo "done"
+ 
+ flute ::
+ 	@echo "-------------------------"
+ 	@echo "*** flute application ***"
+ 	@echo "-------------------------"
+-	mkdir bin; cd flute; make clean; make
++	mkdir bin; cd flute; gmake clean; gmake
+ 	@echo "done"
+ 
+ clean :

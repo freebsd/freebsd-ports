@@ -1,0 +1,17 @@
+--- flute/Makefile.orig	Fri Feb 13 15:58:54 2004
++++ flute/Makefile	Fri Feb 13 15:58:54 2004
+@@ -1,10 +1,10 @@
+ #CC = ccmalloc gcc-2.95
+ #CC = g++
+ CC = gcc
+-CFLAGS += -Wall -g -I/usr/local/expat-1.95.6/lib/ -I/usr/local/ssl/include/ -I/usr/java/j2sdk1.4.2/include/ \
+-	 -I/usr/java/j2sdk1.4.2/include/linux/ -DLINUX -D__VXWORKS_OS__
+-LFLAGS += -DLINUX -D__VXWORKS_OS__ -L../lib -L/usr/local/expat-1.95.6/.libs/ -L/usr/local/ssl/lib/ \
+-	-lalc -lsdp -lexpat -lpthread -lm -lssl -lcrypto #-lmpatrol -lelf
++CFLAGS += -Wall -g -O -I/usr/local/include/ \
++	 -DLINUX -D__VXWORKS_OS__
++LFLAGS += -DLINUX -pthread -L../lib -L/usr/local/lib \
++	-lalc -lsdp -lexpat -lm -lssl -lcrypto #-lmpatrol -lelf
+ 
+ SOURCES = main.c flute.c sender.c receiver.c fdt.c fdt_gen.c mad_md5.c uri.c getdnsname.c
+ 
