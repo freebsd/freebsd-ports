@@ -1,9 +1,0 @@
---- src/Makefile.bsd.orig	Wed Jul  4 17:44:41 2001
-+++ src/Makefile.bsd	Sat Jul 14 17:54:34 2001
-@@ -1,5 +1,4 @@
--CXX      = g++
--CXXFLAGS = -Wall -O2
-+CXXFLAGS += -Wall
- LDFLAGS  = -s
- REAL_CXXFLAGS = ${CXXFLAGS} -D__linux__ -I../include -I../lib/pfc++/include
- 

@@ -6,22 +6,24 @@
 #
 
 PORTNAME=	hlmaster
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	net games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	pat@FreeBSD.org
 
-MAKEFILE=	Makefile.bsd
+GNU_CONFIGURE=	yes
 
 MAN1=		${PORTNAME}.1 ${PORTNAME}.gameserver.1 \
 		${PORTNAME}.filter.1 ${PORTNAME}.list.1
 
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 \
-		${PREFIX}/man/man1
+pre-patch:
+	@${PERL} -pi -e 's|-O2||' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${PERL} \
+		-pi.orig -e 's|CXXFLAGS = -O2 -Wall||'
+
+post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/examples/${PORTNAME}
 	@${MKDIR} ${DOCSDIR}
