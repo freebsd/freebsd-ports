@@ -14,5 +14,6 @@ share/galculator/glade/scientific_buttons.glade
 share/locale/de/LC_MESSAGES/galculator.mo
 share/locale/fr/LC_MESSAGES/galculator.mo
 share/locale/ja/LC_MESSAGES/galculator.mo
+share/locale/pt_BR/LC_MESSAGES/galculator.mo
 @dirrm share/galculator/glade
 @dirrm share/galculator
