@@ -2,5 +2,5 @@ include/videolan/dvdcss.h
 @dirrm include/videolan
 lib/libdvdcss.a
 lib/libdvdcss.so
-lib/libdvdcss.so.0
-lib/libdvdcss.so.0.0.3
+lib/libdvdcss.so.1
+lib/libdvdcss.so.1.0.1
