@@ -4,7 +4,7 @@
 # Whom:                 gary@hotlava.com
 #			obrien@FreeBSD.org
 #
-# $Id: Makefile,v 1.8 1998/09/17 04:47:46 vanilla Exp $
+# $Id: Makefile,v 1.9 1998/09/22 22:55:54 asami Exp $
 #
 
 DISTNAME=       sane-0.74
@@ -45,7 +45,7 @@ pre-configure:
 	@${ECHO} "*** the GIMP and GTK packages/ports."
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
