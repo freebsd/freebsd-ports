@@ -986,7 +986,7 @@ lib/%%PYTHON_VERSION%%/lib-dynload/_socket.so
 lib/%%PYTHON_VERSION%%/lib-dynload/_testcapi.so
 lib/%%PYTHON_VERSION%%/lib-dynload/_weakref.so
 lib/%%PYTHON_VERSION%%/lib-dynload/array.so
-lib/%%PYTHON_VERSION%%/lib-dynload/audioop.so
+%%X86_ONLY%%lib/%%PYTHON_VERSION%%/lib-dynload/audioop.so
 lib/%%PYTHON_VERSION%%/lib-dynload/binascii.so
 lib/%%PYTHON_VERSION%%/lib-dynload/bsddb.so
 lib/%%PYTHON_VERSION%%/lib-dynload/cPickle.so
@@ -996,9 +996,9 @@ lib/%%PYTHON_VERSION%%/lib-dynload/crypt.so
 lib/%%PYTHON_VERSION%%/lib-dynload/dbm.so
 lib/%%PYTHON_VERSION%%/lib-dynload/errno.so
 lib/%%PYTHON_VERSION%%/lib-dynload/fcntl.so
-lib/%%PYTHON_VERSION%%/lib-dynload/fpectl.so
+%%X86_ONLY%%lib/%%PYTHON_VERSION%%/lib-dynload/fpectl.so
 lib/%%PYTHON_VERSION%%/lib-dynload/grp.so
-lib/%%PYTHON_VERSION%%/lib-dynload/imageop.so
+%%X86_ONLY%%lib/%%PYTHON_VERSION%%/lib-dynload/imageop.so
 lib/%%PYTHON_VERSION%%/lib-dynload/math.so
 lib/%%PYTHON_VERSION%%/lib-dynload/md5.so
 lib/%%PYTHON_VERSION%%/lib-dynload/mmap.so
@@ -1010,7 +1010,7 @@ lib/%%PYTHON_VERSION%%/lib-dynload/pwd.so
 lib/%%PYTHON_VERSION%%/lib-dynload/readline.so
 lib/%%PYTHON_VERSION%%/lib-dynload/regex.so
 lib/%%PYTHON_VERSION%%/lib-dynload/resource.so
-lib/%%PYTHON_VERSION%%/lib-dynload/rgbimg.so
+%%X86_ONLY%%lib/%%PYTHON_VERSION%%/lib-dynload/rgbimg.so
 lib/%%PYTHON_VERSION%%/lib-dynload/rotor.so
 lib/%%PYTHON_VERSION%%/lib-dynload/select.so
 lib/%%PYTHON_VERSION%%/lib-dynload/sha.so
