@@ -7,7 +7,7 @@
 
 PORTNAME?=	${MASTERPORTNAME}
 PORTVERSION=	2.4.4p4
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -33,6 +33,9 @@ PATCH_STRIP=
 .endif
 
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+
+AMANDA_USER?=	operator
+AMANDA_GROUP?=	operator
 
 # amanda-server part
 .if !defined(CLIENT_ONLY)
@@ -72,7 +75,8 @@ BUILD_DEPENDS=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda-client
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-amandahosts --with-fqdn \
 		--with-dump-honor-nodump --with-buffered-dump \
-		--without-client --disable-libtool --prefix=${PREFIX}
+		--without-client --disable-libtool --prefix=${PREFIX} \
+		--with-user=${AMANDA_USER} --with-group=${AMANDA_GROUP}
 
 MAN8=		amadmin.8 amcheck.8 amcheckdb.8 amcleanup.8 amdd.8 \
 		amdump.8 amflush.8 amgetconf.8 amlabel.8 ammt.8 \
@@ -110,18 +114,6 @@ CONFIGURE_ARGS+=	--with-tape-device=${AMANDA_TAPE}
 
 .if defined (AMANDA_CONFIG)
 CONFIGURE_ARGS+=	--with-config=${AMANDA_CONFIG}
-.endif
-
-.if defined (AMANDA_USER)
-CONFIGURE_ARGS+=	--with-user=${AMANDA_USER}
-.else
-CONFIGURE_ARGS+=	--with-user=operator
-.endif
-
-.if defined (AMANDA_GROUP)
-CONFIGURE_ARGS+=	--with-group=${AMANDA_GROUP}
-.else
-CONFIGURE_ARGS+=	--with-group=operator
 .endif
 
 .if defined (AMANDA_UDPPORTRANGE)
@@ -179,7 +171,9 @@ pre-fetch:
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-amandahosts --with-fqdn \
 		--with-dump-honor-nodump --with-buffered-dump \
-		--without-server --disable-libtool --prefix=${PREFIX}
+		--without-server --disable-libtool --prefix=${PREFIX} \
+		--with-user=${AMANDA_USER} --with-group=${AMANDA_GROUP}
+
 
 MAN8=		amanda.8 amrecover.8 amrestore.8
 
@@ -191,9 +185,9 @@ post-install:
 		${WRKSRC}/example/disklist \
 		${PREFIX}/share/examples/amanda
 	${MKDIR} ${PREFIX}/var/amanda/gnutar-lists
-	${CHOWN} operator:operator ${PREFIX}/var/amanda/gnutar-lists
+	${CHOWN} ${AMANDA_USER}:${AMANDA_GROUP} ${PREFIX}/var/amanda/gnutar-lists
 	${TOUCH} /etc/amandates
-	${CHOWN} operator:operator /etc/amandates
+	${CHOWN} ${AMANDA_USER}:${AMANDA_GROUP} /etc/amandates
 
 .if defined (AMANDA_SERVER)
 CONFIGURE_ARGS+=	--with-index-server=${AMANDA_SERVER}
@@ -206,18 +200,6 @@ CONFIGURE_ARGS+=	--with-config=${AMANDA_CONFIG}
 
 .if defined (AMANDA_GNUTAR_LISTDIR)
 CONFIGURE_ARGS+=	--with-gnutar-listdir=${AMANDA_GNUTAR_LISTDIR}
-.endif
-
-.if defined (AMANDA_USER)
-CONFIGURE_ARGS+=	--with-user=${AMANDA_USER}
-.else
-CONFIGURE_ARGS+=	--with-user=operator
-.endif
-
-.if defined (AMANDA_GROUP)
-CONFIGURE_ARGS+=	--with-group=${AMANDA_GROUP}
-.else
-CONFIGURE_ARGS+=	--with-group=operator
 .endif
 
 .if defined (AMANDA_UDPPORTRANGE)
