@@ -3,14 +3,12 @@
 # Date created:		15 Jul 1995
 # Whom:			torstenb@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.8 1996/11/17 09:06:08 obrien Exp $
+# $Id: Makefile,v 1.9 1996/11/18 10:25:14 asami Exp $
 #
 
 DISTNAME=	mc-3.2.1
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
-
-MAINTAINER=	torstenb@FreeBSD.ORG
 
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-ncurses
