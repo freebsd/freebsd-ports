@@ -118,7 +118,7 @@ MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
 MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 suexec.8
 
 post-extract:
-	@${CP} ${DISTDIR}/powerlogo.gif ${WRKSRC}/docs/icons/freebsd.gif
+	@${INSTALL_DATA} ${DISTDIR}/powerlogo.gif ${WRKSRC}/docs/icons/freebsd.gif
 
 post-patch:
 	@cd ${WRKSRC}/docs/docroot && \
