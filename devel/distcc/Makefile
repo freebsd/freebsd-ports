@@ -52,7 +52,7 @@ pre-fetch:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/distcc ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccmon-text ${PREFIX}/bin
-.if !defined(WITHOUT_GNOME)
+.if !defined(WITHOUT_GNOME) && ${HAVE_GNOME:Mlibgnomeui} != ""
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccmon-gnome ${PREFIX}/bin
 .endif
 	@${INSTALL_PROGRAM} ${WRKSRC}/distccd ${PREFIX}/sbin
