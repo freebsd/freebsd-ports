@@ -18,6 +18,7 @@ lib/imlib2_loaders/image/bmp.so
 lib/imlib2_loaders/image/bz2.so
 lib/imlib2_loaders/image/gif.so
 lib/imlib2_loaders/image/jpeg.so
+lib/imlib2_loaders/image/lbm.so
 lib/imlib2_loaders/image/png.so
 lib/imlib2_loaders/image/pnm.so
 lib/imlib2_loaders/image/tga.so
