@@ -5216,6 +5216,7 @@ mysql2pgsql	ports/databases/mysql2pgsql
 mysql323-client	ports/databases/mysql323-client
 mysql323-server	ports/databases/mysql323-server
 mysql40-client	ports/databases/mysql40-client
+mysql40-scripts	ports/databases/mysql40-scripts
 mysql40-server	ports/databases/mysql40-server
 mysql41-client	ports/databases/mysql41-client
 mysql41-server	ports/databases/mysql41-server
