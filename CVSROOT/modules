@@ -1001,6 +1001,7 @@ coldsync	ports/palm/coldsync
 cole		ports/textproc/cole
 collections	ports/java/collections
 color-mate	ports/editors/color-mate
+colorer		ports/devel/colorer
 colorize	ports/sysutils/colorize
 colorstep	ports/x11-toolkits/colorstep
 colortail	ports/misc/colortail
