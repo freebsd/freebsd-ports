@@ -4918,6 +4918,7 @@ libgutenfetch	ports/devel/libgutenfetch
 libhash		ports/devel/libhash
 libhoard	ports/devel/libhoard
 libhome		ports/misc/libhome
+libhtmlparse	ports/textproc/libhtmlparse
 libhttpd-persistent	ports/www/libhttpd-persistent
 libical		ports/devel/libical
 libiconv	ports/converters/libiconv
