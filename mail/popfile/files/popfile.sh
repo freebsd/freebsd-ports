@@ -7,7 +7,7 @@ case "${HOME}" in
 	export POPFILE_USER_DEFAULT=/var/db/popfile
 	;;
 *)
-	export POPFILE_USER_DEFAULT=${HOME}/.popfile
+	export POPFILE_USER_DEFAULT="${HOME}/.popfile"
 	;;
 esac
 
@@ -20,6 +20,6 @@ die()
 export POPFILE_ROOT=%%DATADIR%%
 export POPFILE_USER=${POPFILE_USER:-${POPFILE_USER_DEFAULT}}
 
-mkdir -p ${POPFILE_USER} || die "mkdir ${POPFILE_USER} failed"
-cd ${POPFILE_USER}
+mkdir -p "${POPFILE_USER}" || die "mkdir ${POPFILE_USER} failed"
+cd "${POPFILE_USER}"
 %%DATADIR%%/popfile.pl >/dev/null 2>&1 &
