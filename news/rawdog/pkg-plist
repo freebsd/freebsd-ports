@@ -11,6 +11,9 @@ bin/rawdog
 %%PYTHON_SITELIBDIR%%/rawdoglib/persister.py
 %%PYTHON_SITELIBDIR%%/rawdoglib/persister.pyc
 %%PYTHON_SITELIBDIR%%/rawdoglib/persister.pyo
+%%PYTHON_SITELIBDIR%%/rawdoglib/plugins.py
+%%PYTHON_SITELIBDIR%%/rawdoglib/plugins.pyc
+%%PYTHON_SITELIBDIR%%/rawdoglib/plugins.pyo
 %%PYTHON_SITELIBDIR%%/rawdoglib/rawdog.py
 %%PYTHON_SITELIBDIR%%/rawdoglib/rawdog.pyc
 %%PYTHON_SITELIBDIR%%/rawdoglib/rawdog.pyo
