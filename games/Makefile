@@ -248,7 +248,6 @@
     SUBDIR += linux-q3ademo
     SUBDIR += linux-steam
     SUBDIR += linux_nwnclient
-    SUBDIR += linux_nwndata
     SUBDIR += lm-solve
     SUBDIR += ltris
     SUBDIR += macopix
@@ -296,6 +295,7 @@
     SUBDIR += ninix-aya
     SUBDIR += njam
     SUBDIR += nonsense
+    SUBDIR += nwndata
     SUBDIR += nwnusers
     SUBDIR += oilwar
     SUBDIR += omega
