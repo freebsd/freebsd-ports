@@ -55,8 +55,6 @@ share/pixmaps/xine_22x22.png
 share/pixmaps/xine_32x32.png
 share/pixmaps/xine_48x48.png
 share/xine/desktop/xine.desktop
-share/xine/skins/CelomaChrome/ArrowLeft.png
-share/xine/skins/CelomaChrome/ArrowRight.png
 share/xine/skins/CelomaChrome/BigArrowDown.png
 share/xine/skins/CelomaChrome/BigArrowLeft.png
 share/xine/skins/CelomaChrome/BigArrowRight.png
@@ -65,9 +63,9 @@ share/xine/skins/CelomaChrome/CtlBg.png
 share/xine/skins/CelomaChrome/CtlBtn.png
 share/xine/skins/CelomaChrome/CtlDismiss.png
 share/xine/skins/CelomaChrome/CtlItemBtn.png
+share/xine/skins/CelomaChrome/FlitArrowDown.png
 share/xine/skins/CelomaChrome/FsBtn.png
 share/xine/skins/CelomaChrome/HideBtn.png
-share/xine/skins/CelomaChrome/LettersBig.png
 share/xine/skins/CelomaChrome/LettersBlue.png
 share/xine/skins/CelomaChrome/LettersDigit.png
 share/xine/skins/CelomaChrome/LettersMiddle.png
@@ -108,13 +106,10 @@ share/xine/skins/CelomaChrome/PlPlay.png
 share/xine/skins/CelomaChrome/PlSlidHBg.png
 share/xine/skins/CelomaChrome/PlSlidHPad.png
 share/xine/skins/CelomaChrome/SetupBtn.png
-share/xine/skins/CelomaChrome/SkArrowDown.png
-share/xine/skins/CelomaChrome/SkArrowUp.png
 share/xine/skins/CelomaChrome/SkItemBtn.png
 share/xine/skins/CelomaChrome/SkSlidBG.png
 share/xine/skins/CelomaChrome/SkSlidHBg.png
 share/xine/skins/CelomaChrome/SkSlidPad.png
-share/xine/skins/CelomaChrome/SlidHPad.png
 share/xine/skins/CelomaChrome/SliderHBg.png
 share/xine/skins/CelomaChrome/SliderHPad.png
 share/xine/skins/CelomaChrome/SliderVBg.png
@@ -183,8 +178,6 @@ share/xine/skins/cloudy/fonts.dir
 share/xine/skins/cloudy/skinconfig
 share/xine/skins/cloudy/smooth.pcf.gz
 share/xine/skins/xine-ui_logo.mpv
-share/xine/skins/xinetic/ArrowLeft.png
-share/xine/skins/xinetic/ArrowRight.png
 share/xine/skins/xinetic/BigArrowDown.png
 share/xine/skins/xinetic/BigArrowLeft.png
 share/xine/skins/xinetic/BigArrowRight.png
@@ -196,6 +189,7 @@ share/xine/skins/xinetic/CtlDummy.png
 share/xine/skins/xinetic/CtlReset.png
 share/xine/skins/xinetic/CtlSave.png
 share/xine/skins/xinetic/Letters.png
+share/xine/skins/xinetic/Letters2.png
 share/xine/skins/xinetic/MainAutoButton.png
 share/xine/skins/xinetic/MainBg.png
 share/xine/skins/xinetic/MainCam.png
@@ -220,6 +214,7 @@ share/xine/skins/xinetic/MainVolumePad.png
 share/xine/skins/xinetic/MrlBg.png
 share/xine/skins/xinetic/MrlBtn.png
 share/xine/skins/xinetic/MrlDismiss.png
+share/xine/skins/xinetic/MrlFlit.png
 share/xine/skins/xinetic/MrlSelect.png
 share/xine/skins/xinetic/Onglet.png
 share/xine/skins/xinetic/PlBg.png
@@ -233,15 +228,10 @@ share/xine/skins/xinetic/PlMoveDn.png
 share/xine/skins/xinetic/PlMoveUp.png
 share/xine/skins/xinetic/PlPlay.png
 share/xine/skins/xinetic/PlSlidHBg.png
-share/xine/skins/xinetic/SkArrowDown.png
-share/xine/skins/xinetic/SkArrowLeft.png
-share/xine/skins/xinetic/SkArrowRight.png
-share/xine/skins/xinetic/SkArrowUp.png
 share/xine/skins/xinetic/SkItemBtn.png
 share/xine/skins/xinetic/SkSlidBG.png
 share/xine/skins/xinetic/SkSlidHBg.png
 share/xine/skins/xinetic/SkSlidHPad.png
-share/xine/skins/xinetic/SkSlidPad.png
 share/xine/skins/xinetic/SlidHPad.png
 share/xine/skins/xinetic/SliderHBg.png
 share/xine/skins/xinetic/SliderHPad.png
