@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=		krb5-1.1
+DISTNAME=		krb5-1.1.1
 CATEGORIES=		security
 MASTER_SITES=		# manual download
 EXTRACT_SUFX=		.tar
