@@ -14,7 +14,7 @@ MAINTAINER=	archie@whistle.com
 
 WRKSRC=		${WRKDIR}/jikes/src
 MAN1=		jikes.1
-MAKE_ENV=	FILESDIR=${FILESDIR}
+MAKE_ENV=	WRKDIR=${WRKDIR}
 PATCH_STRIP=	-p2
 
 # 	(sufficiently handled by pkg/MESSAGE, but if IBM has an issue then
