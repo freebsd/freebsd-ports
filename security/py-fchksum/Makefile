@@ -7,15 +7,22 @@
 #
 
 PORTNAME=	fchksum
-PORTVERSION=	1.3
+PORTVERSION=	1.6
 CATEGORIES=	security python
 MASTER_SITES=	http://www.azstarnet.com/~donut/programs/fchksum/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
+SETUP_CMD=	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py
+
+do-build:
+	@${SETUP_CMD} build
+
+do-install:
+	@${SETUP_CMD} install
 
 .include <bsd.port.mk>
