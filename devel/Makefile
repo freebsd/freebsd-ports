@@ -286,6 +286,7 @@
     SUBDIR += libcache
     SUBDIR += libcapsinetwork
     SUBDIR += libchipcard
+    SUBDIR += libchipcard-kde
     SUBDIR += libcii
     SUBDIR += libcoro
     SUBDIR += libdlmalloc
