@@ -8,11 +8,13 @@
 PORTNAME=	gxset
 PORTVERSION=	0.3
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.seindal.dk/pub/rene/
+MASTER_SITES=	ftp://ftp.seindal.dk/pub/rene/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	petef
 
 MAINTAINER=	bms@spc.org
 
-BROKEN=		"Does not build"
+LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
