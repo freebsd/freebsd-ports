@@ -8,7 +8,8 @@
 PORTNAME=	extipl
 PORTVERSION=	5.01
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.tsden.org/pub/extipl/PC-Unix/
+MASTER_SITES=	ftp://ports.jp.FreeBSD.org/pub/FreeBSD-jp/ports-jp/LOCAL_PORTS/ \
+		ftp://ftp.tsden.org/pub/extipl/PC-Unix/
 
 MAINTAINER=	takamiti@tsden.org
 
