@@ -1,0 +1,24 @@
+*** Arch/PCux/audio.c.bak	Fri Apr 12 20:30:37 1996
+--- Arch/PCux/audio.c	Tue Nov 12 08:40:29 1996
+***************
+*** 9,14 ****
+--- 9,17 ----
+  #include <unistd.h>
+  #include <fcntl.h>
+  #include "extern.h"
++ #include "prefs.h"
++ #include "autoinit.h"
++ #include "watched_var.h"
+  
+  struct options_set *port_options=0;
+  
+***************
+*** 116,121 ****
+--- 119,125 ----
+  		}
+  	samples_max = buf_max / dsize;
+  	current_freq = f;
++ 	set_watched_scalar(FREQUENCY, f);
+  	total = 0;
+  	return f;
+     }
