@@ -1,5 +1,5 @@
 --- system.mk.orig	Sat Jan 19 15:15:13 2002
-+++ system.mk	Mon Apr 21 03:53:31 2003
++++ system.mk	Mon Mar 15 03:19:42 2004
 @@ -7,13 +7,13 @@
  ## Installation paths
  ##
@@ -33,6 +33,23 @@
  
  # SunOS/Solaris
  #X11_PREFIX=/usr/openwin
+@@ -52,14 +52,14 @@
+ # asprintf and vasprintf in the c library. (gnu libc has.)
+ # If HAS_SYSTEM_ASPRINTF is not defined, an implementation
+ # in libtu/sprintf_2.2/ is used.
+-#HAS_SYSTEM_ASPRINTF=1
++HAS_SYSTEM_ASPRINTF=1
+ 
+ 
+ ##
+ ## C compiler
+ ##
+ 
+-CC=gcc
++CC?=gcc
+ 
+ # The POSIX_SOURCE, XOPEN_SOURCE and WARN options should not be necessary,
+ # they're mainly for development use. So, if they cause trouble (not
 @@ -83,11 +83,11 @@
  # have unused variables.
  WARN=	-W -Wimplicit -Wreturn-type -Wswitch -Wcomment \
