@@ -10,7 +10,7 @@ DISTNAME=	flux-0.3.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.styx.net/projects/flux/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 USE_LIBTOOL=	yes
 USE_GMAKE=	yes

@@ -10,7 +10,7 @@ DISTNAME=	flash-0.9.1
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.netsoc.ucd.ie/pub/computing/flash/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 .include <bsd.port.pre.mk>
 

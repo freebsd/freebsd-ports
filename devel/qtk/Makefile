@@ -11,7 +11,7 @@ PKGNAME=	qtk-0.50
 CATEGORIES=	devel tk82
 MASTER_SITES=	http://www.psn.net/~andrews/dist/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wish8.2:${PORTSDIR}/x11-toolkits/tk82
 

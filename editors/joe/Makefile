@@ -12,7 +12,7 @@ CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.std.com/src/editors/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/joe
 ALL_TARGET=	joe

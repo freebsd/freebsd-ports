@@ -10,7 +10,7 @@ DISTNAME=	rubix-1.0.1
 CATEGORIES=	games
 MASTER_SITES=	http://sed.free.fr/rubix/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 USE_GMAKE=	yes
 MAKE_ENV=	GMAKE=${GMAKE}

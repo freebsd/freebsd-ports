@@ -10,7 +10,7 @@ DISTNAME=	httperf-0.6
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.hpl.hp.com/pub/httperf/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 USE_GMAKE=	yes

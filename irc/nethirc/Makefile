@@ -12,7 +12,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://people.FreeBSD.org/~cpiazza/distfiles/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/5.005/Net/IRC.pm:${PORTSDIR}/irc/p5-IRC
 

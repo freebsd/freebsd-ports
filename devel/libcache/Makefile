@@ -10,7 +10,7 @@ DISTNAME=	libcache-1.0.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.afro-productions.com/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-shared

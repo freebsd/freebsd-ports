@@ -11,7 +11,7 @@ PKGNAME=	qhacc-0.3.1
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.ostrich-emulators.cx/qhacc/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 USE_X_PREFIX=	yes
 USE_QT2=	yes

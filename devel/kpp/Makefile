@@ -10,7 +10,7 @@ DISTNAME=	kpp-0.15c
 CATEGORIES=	devel
 MASTER_SITES=	http://www.msoe.edu/~geiseri/files/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	kdeui.3:${PORTSDIR}/x11/kdelibs11
 

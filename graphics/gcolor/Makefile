@@ -10,7 +10,7 @@ DISTNAME=	gcolor-0.4
 CATEGORIES=	graphics gnome x11
 MASTER_SITES=	http://download.sourceforge.net/gcolor/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	gnomeui.3:${PORTSDIR}/x11/gnomelibs
 

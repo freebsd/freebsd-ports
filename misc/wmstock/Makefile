@@ -11,7 +11,7 @@ CATEGORIES=	misc windowmaker
 MASTER_SITES=	http://mattfischer.com/wmstock/src/ \
 		http://www.psn.net/~andrews/wmstock/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 

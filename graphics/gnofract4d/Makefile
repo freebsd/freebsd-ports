@@ -10,7 +10,7 @@ DISTNAME=	gnofract4d-1.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://download.sourceforge.net/gnofract4d/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	gnomeui.3:${PORTSDIR}/x11/gnomelibs
 

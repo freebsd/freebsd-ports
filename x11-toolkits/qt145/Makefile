@@ -10,7 +10,7 @@ DISTNAME=	qt-1.45
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.troll.no/qt/source/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
 

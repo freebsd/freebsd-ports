@@ -10,7 +10,7 @@ DISTNAME=	zimg-2.4.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.zellner.org/zimg/download/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	gd.0:${PORTSDIR}/graphics/gd
 

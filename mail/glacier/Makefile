@@ -10,7 +10,7 @@ DISTNAME=	glacier-0.0.2
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://glacier.linuxbox.com/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 LIB_DEPENDS=	gnomeui.3:${PORTSDIR}/x11/gnomelibs
 

@@ -11,7 +11,7 @@ PKGNAME=	tkmoo-0.3.23
 CATEGORIES=	games tk82
 MASTER_SITES=	http://www.awns.com/tkMOO-light/Source/
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 RUN_DEPENDS=	${WISH82}:${PORTSDIR}/x11-toolkits/tk82
 

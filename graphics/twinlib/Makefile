@@ -12,7 +12,7 @@ CATEGORIES=	graphics devel
 MASTER_SITES=	http://rio.xdev.org/paintlib/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	andrews@technologist.com
+MAINTAINER=	will@FreeBSD.org
 
 USE_QT2=	yes
 USE_X_PREFIX=	yes
