@@ -18,7 +18,7 @@ COMMENT=	A High Quality Rendering Engine for C++
 
 WRKSRC=		${WRKDIR}/agg2
 USE_GMAKE=	yes
-MAKE_ENV=	C=${CC}
+MAKE_ENV=	C="${CC}" CXX="${CXX}"
 
 PLIST_FILES=	lib/libagg.a
 
