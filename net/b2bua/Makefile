@@ -7,6 +7,7 @@
 
 PORTNAME=	b2bua
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.vovida.org/downloads/sip/${PORTVERSION}/
 DISTNAME=	sip-${PORTVERSION}
@@ -22,11 +23,6 @@ CFLAGS+=	-Wno-deprecated
 MAKE_ENV=	PTHREAD_LDFLAGS="${PTHREAD_LIBS}" \
 		PTHREAD_LIBNAME="${PTHREAD_LIBNAME}" \
 		VOCAL_USE_SYSTEM_LIBXML=true
-
-.if !exists(/usr/include/getopt.h)
-LIB_DEPENDS+=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
-PTHREAD_LIBNAME+=	gnugetopt
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/sip/b2b/bin.nodebug.FreeBSD.i386/b2bua \
