@@ -13,8 +13,6 @@ MASTER_SITES=	http://www.isi.edu/xbone/software/x-bone/
 MAINTAINER=	yushunwa@isi.edu
 COMMENT=	A system for dynamic internet overlay deployment and management
 
-BROKEN=		"Depends on nonexistent port"
-
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 320000
 BROKEN=	"X-Bone does not support FreeBSD prior to 3.2"
@@ -24,8 +22,6 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 IS_INTERACTIVE=	yes
 NO_BUILD=	yes
-
-PERL_LIB=	${PREFIX}/lib/perl5/site_perl/${PERL_VER}
 
 .if !defined(OPTION) || ${OPTION}!=RD && ${OPTION}!=OMGUI
 pre-fetch:
@@ -44,18 +40,18 @@ pre-fetch:
 	@${FALSE}
 .elif defined(OPTION)
 .if ${OPTION}==RD
-BUILD_DEPENDS=	${PERL_LIB}/Net/Netmask.pm:${PORTSDIR}/net/p5-Net-Netmask \
-		${PERL_LIB}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay
+BUILD_DEPENDS=	${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net/p5-Net-Netmask \
+		${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay
 INSTALL_TARGET=	rd
 PLIST=		${PKGDIR}/pkg-plist.rd
 .else
 BUILD_DEPENDS=	${PREFIX}/sbin/httpsd:${PORTSDIR}/www/apache13-ssl\
-		${PERL_LIB}/CGI/Carp.pm:${PORTSDIR}/www/p5-CGI \
-		${PERL_LIB}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail \
-		${PERL_LIB}/Net/Netmask.pm:${PORTSDIR}/net/p5-Net-Netmask\
-		${PERL_LIB}/File/CounterFile.pm:${PORTSDIR}/misc/p5-File-CounterFile \
-		${PERL_LIB}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
-		${PERL_LIB}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent
+		${SITE_PERL}/CGI/Carp.pm:${PORTSDIR}/www/p5-CGI.pm \
+		${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail \
+		${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net/p5-Net-Netmask\
+		${SITE_PERL}/File/CounterFile.pm:${PORTSDIR}/misc/p5-File-CounterFile \
+		${SITE_PERL}/${PERL_ARCH}/Net/SSLeay.pm:${PORTSDIR}/security/p5-Net-SSLeay \
+		${SITE_PERL}/Parse/RecDescent.pm:${PORTSDIR}/devel/p5-Parse-RecDescent
 INSTALL_TARGET=	omgui
 MAKE_ARGS=	PERL5=${PERL5} SYS=${SYS}
 .endif
