@@ -1,12 +1,12 @@
 # New ports collection makefile for:	squid
-# Version required:	1.1.4
+# Version required:	1.1.5
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.18 1997/01/19 03:24:12 peter Exp $
+# $Id: Makefile,v 1.19 1997/01/24 10:30:38 asami Exp $
 #
 
-DISTNAME=	squid-1.1.4
+DISTNAME=	squid-1.1.5
 CATEGORIES=	www
 MASTER_SITES=  \
 	ftp://squid.nlanr.net/pub/squid-1.1/ \
@@ -15,8 +15,8 @@ MASTER_SITES=  \
 	ftp://ftp.net.lut.ac.uk/squid/squid-1.1/
 EXTRACT_SUFX=	-src.tar.gz
 
-PATCH_SITES+=   http://squid.nlanr.net/Squid/1.1/1.1.4/
-PATCHFILES+=    ftpget.c.patch icp.c.patch ipcache.c.patch neighbors.c.patch
+PATCH_SITES+=   http://squid.nlanr.net/Squid/1.1/1.1.5/
+PATCHFILES+=    acl.c.patch main.c.patch redirect.c.patch
 
 MAINTAINER=	peter@freebsd.org
 
