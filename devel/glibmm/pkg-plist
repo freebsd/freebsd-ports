@@ -586,8 +586,8 @@ share/aclocal/glibmm_check_perl.m4
 @dirrm lib/glibmm-%%API_VERSION%%/proc/m4
 @dirrm lib/glibmm-%%API_VERSION%%/proc
 @dirrm lib/glibmm-%%API_VERSION%%/include
-@dirrm lib/glibmm-%%API_VERSION
+@dirrm lib/glibmm-%%API_VERSION%%
 @dirrm include/glibmm-%%API_VERSION%%/glibmm_generate_extra_defs
 @dirrm include/glibmm-%%API_VERSION%%/glibmm/private
 @dirrm include/glibmm-%%API_VERSION%%/glibmm
-@dirrm include/glibmm-%%API_VERSION
+@dirrm include/glibmm-%%API_VERSION%%
