@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	basiliskII
-PORTVERSION=	0.8.1
+PORTVERSION=	0.9
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	basilisk
-DISTNAME=	BasiliskII_src_30012000
+DISTNAME=	BasiliskII_src_31052001
 
 MAINTAINER=	sobomax@FreeBSD.org
 
 LIB_DEPENDS=	lthread.2:${PORTSDIR}/devel/linuxthreads
 
-WRKSRC=		${WRKDIR}/BasiliskII-0.8/src/Unix
+WRKSRC=		${WRKDIR}/BasiliskII-${PORTVERSION}/src/Unix
 
 USE_X_PREFIX=	yes
 USE_GTK=	yes
