@@ -119,7 +119,7 @@ CONFIGURE_ARGS+=	--without-bzlib
 .endif
 
 # HDF (Hierarchical Data Format) images
-.if !defined(WITHOUT_IMAGEMAGICK_HDF)
+.if !defined(WITHOUT_IMAGEMAGICK_HDF) && (${MACHINE_ARCH:L} != amd64)
 LIB_DEPENDS+=		df.1:${PORTSDIR}/graphics/hdf
 CONFIGURE_ARGS+=	--with-hdf
 .endif
