@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS=	antlr:${PORTSDIR}/devel/pccts \
 		dlg:${PORTSDIR}/devel/pccts
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+IGNORE=	"Project frozen because of License issues. See http://cdrdao.sourceforge.net/news.html for detail"
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
