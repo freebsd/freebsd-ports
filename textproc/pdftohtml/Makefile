@@ -23,6 +23,7 @@ GSPORT?=	print/ghostscript-gnu
 
 RUN_DEPENDS=	${LOCALBASE}/bin/gs:${PORTSDIR}/${GSPORT}
 
+PLIST_FILES=	bin/pdftohtml
 WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_REINPLACE=	yes
 
