@@ -9,7 +9,7 @@ PORTNAME=	apcupsd
 PORTVERSION=	3.8.5
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.apcupsd.org/pub/apcupsd/stable/tar/
+MASTER_SITES=	ftp://ftp.apcupsd.com/pub/apcupsd/stable/tar/
 
 MAINTAINER=	Lars.Koeller@Uni-Bielefeld.de
 
