@@ -1,10 +1,11 @@
---- srclib/apr-util/config.layout.orig	Tue Jan  7 13:13:09 2003
-+++ srclib/apr-util/config.layout	Tue Apr  1 18:36:16 2003
-@@ -229,3 +229,7 @@
+--- srclib/apr-util/config.layout.orig	Thu Oct  2 16:29:48 2003
++++ srclib/apr-util/config.layout	Mon Dec 13 10:17:45 2004
+@@ -229,4 +229,8 @@
      infodir:       ${exec_prefix}/share/info
      libsuffix     -${APRUTIL_MAJOR_VERSION}
- </Layout>
+     installbuilddir: ${prefix}/usr/share/apache2/build
 +
 +<Layout FreeBSD>
++    includedir:    ${prefix}/include/apr-${APR_MAJOR_VERSION}
 +    libsuffix:
-+</Layout>
+ </Layout>
