@@ -1,5 +1,5 @@
 # New ports collection makefile for:	mpich (portable mpi standard imp.)
-# Version required:	1.1.1
+# Version required:	1.1.2
 # Date created:		2 May 1998
 # Whom:                 dbader@eece.unm.edu
 #
@@ -18,10 +18,21 @@ MAINTAINER=	dbader@eece.unm.edu
 DIST_SUBDIR=	mpich
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--cflags="$(CFLAGS)" -prefix=$(PREFIX)/mpich
+CONFIGURE_ARGS=	-cflags="${CFLAGS}" -prefix=${PREFIX}/mpich
+
+# Include support for ssh client
+USE_SSH?= YES
+# Use ssh instead of rsh
+.if defined(USE_SSH) && ${USE_SSH} == YES || \
+    exists(${PREFIX}/bin/ssh) && \
+    (!defined(USE_SSH) || ${USE_SSH} != NO)
+RUN_DEPENDS+=   ssh:${PORTSDIR}/security/ssh
+CONFIGURE_ARGS+= -rsh="${PREFIX}/bin/ssh"
+.endif
+
 WRKSRC=		${WRKDIR}/mpich
 ALL_TARGET=
-MANPREFIX=	$(PREFIX)/mpich
+MANPREFIX=	${PREFIX}/mpich
 MAN1=		Jumpshot.1 MPI.1 chp4_servs.1 mpiCC.1 mpicc.1 mpif77.1 \
 		mpif90.1 mpiman.1 mpireconfig.1 mpirun.1 tstmachines.1
 MAN3=		Constants.3 MPIO_Request_c2f.3 MPIO_Request_f2c.3 \
