@@ -1,20 +1,19 @@
 
 $FreeBSD$
 
---- manedit.1	2001/02/09 13:39:27	1.1
-+++ manedit.1	2001/02/09 13:40:09
-@@ -55,11 +55,11 @@
- .LP 
- \fI$HOME/.maneditrc\fP
- .br 
--\fI/usr/share/manedit/\fP 
-+\fI%%PREFIX%%/share/manedit/\fP 
- .br 
--\fI/usr/share/manedit/help/\fP
-+\fI%%PREFIX%%/share/manedit/help/\fP
- .br 
--\fI/usr/share/manedit/templates/\fP
-+\fI%%PREFIX%%/share/manedit/templates/\fP
- .SH "ENVIRONMENT VARIABLES"
+--- manedit.1.orig	Sun Feb 25 01:10:48 2001
++++ manedit.1	Tue Mar 20 18:49:02 2001
+@@ -67,12 +67,8 @@
+ Manual page template files, used in the creation
+ of new manual pages.
  .TP 
- \fBHOME\fP
+-/usr/man
+-Global manual pages directory.
+-.TP 
+ /usr/share/man
+-Global manual pages directory (used by newer UNIX
+-distributions).
++Global manual pages directory.
+ .TP 
+ %%X11BASE%%/man
+ Global X11 manual pages directory.
