@@ -1,5 +1,5 @@
---- scripts/exim_install.orig	Thu Aug 21 16:48:58 1997
-+++ scripts/exim_install	Fri Aug 29 15:22:04 1997
+--- scripts/exim_install.orig	Tue Sep  9 15:07:22 1997
++++ scripts/exim_install	Mon Sep 22 15:22:15 1997
 @@ -8,6 +8,8 @@
  # This script also installs a default configuration file in CONFIGURE_FILE
  # if there is no configuration file there.
@@ -51,7 +51,7 @@
  # If no arguments, install everything
  
  if [ $# -gt 0 ]; then
-@@ -167,12 +186,30 @@
+@@ -167,12 +186,39 @@
    fi
  done
  
@@ -63,12 +63,21 @@
 +    makeinfo --no-split --output exim_overview.info ../doc/oview.texinfo
 +    echo ${CP} exim_overview.info ${INFO_DIRECTORY}
 +    ${real} ${CP} exim_overview.info ${INFO_DIRECTORY}
++    install-info --section="EXIM" \
++        --entry "* Overview: (exim_overview).    Overview of the EXIM system" \
++        ${INFO_DIRECTORY}/exim_overview.info ${INFO_DIRECTORY}/dir
 +    makeinfo --no-split --output exim.info ../doc/spec.texinfo
 +    echo ${CP} exim.info ${INFO_DIRECTORY}
 +    ${real} ${CP} exim.info ${INFO_DIRECTORY}
++    install-info --section="EXIM" \
++        --entry "* User guide: (exim).           Exim manual" \
++        ${INFO_DIRECTORY}/exim.info ${INFO_DIRECTORY}/dir
 +    makeinfo --no-split --output exim_filter.info ../doc/filter.texinfo
 +    echo ${CP} exim_filter.info ${INFO_DIRECTORY}
 +    ${real} ${CP} exim_filter.info ${INFO_DIRECTORY}
++    install-info --section="EXIM" \
++        --entry "* Filtering: (exim_filter).     Filtering mail with EXIM" \
++        ${INFO_DIRECTORY}/exim_filter.info ${INFO_DIRECTORY}/dir
 +fi
 +
  # If there is no configuration file, install the default,
