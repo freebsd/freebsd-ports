@@ -1,0 +1,15 @@
+bin/koctave3
+share/applnk/Applications/koctave3.desktop
+share/applnk/share/apps/koctave3/editorui.rc
+share/applnk/share/apps/koctave3/koctave3ui.rc
+share/apps/koctave3/koctave3ui.rc
+share/doc/HTML/en/koctave3/index.cache.bz2
+share/doc/HTML/en/koctave3/index.docbook
+share/icons/hicolor/16x16/apps/koctave3.png
+share/icons/hicolor/32x32/apps/koctave3.png
+share/icons/locolor/16x16/apps/koctave3.png
+share/icons/locolor/32x32/apps/koctave3.png
+@dirrm share/doc/HTML/en/koctave3/common
+@dirrm share/doc/HTML/en/koctave3
+@dirrm share/apps/koctave3
+@dirrm share/applnk/share/apps/koctave3

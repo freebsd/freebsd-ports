@@ -67,10 +67,12 @@
     SUBDIR += guppi
     SUBDIR += hexcalc
     SUBDIR += it++
+    SUBDIR += itl
     SUBDIR += jacal
     SUBDIR += jama
     SUBDIR += javanns
     SUBDIR += kaskade
+    SUBDIR += koctave
     SUBDIR += kseg
     SUBDIR += lapack
     SUBDIR += lapack++
