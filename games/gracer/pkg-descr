@@ -1,0 +1,18 @@
+GRacer is a 3D motor sports simulator. It's state of the art physical
+simulation engine creates realistic behavior including drift, wheel
+spin, and even accel turn.
+
+This release includes 2 type of vehicles: Formula Car (FR) and
+Rally Car (4WD). It will support GP500 motorcycle near future.
+
+Current Feature
+---------------
+  - 2 vehicles and one course
+  - game is playable, but never finish
+
+ ( network play is not implemented in this release )
+
+developed by Takashi Matsuda
+<matsu@arch.comp.kyutech.ac.jp>
+
+WWW: http://arch.comp.kyutech.ac.jp/~matsu/my_products/gtk/race/
