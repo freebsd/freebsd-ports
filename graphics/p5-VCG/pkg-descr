@@ -1,0 +1,6 @@
+This module provides an interface to to the vcg graphing tool. It supports a
+limited selection of options and file formats. The vcg graphing tool homepage
+is currently http://rw4.cs.uni-sb.de/users/sander/html/gsvcg1.html but is
+being actively developed elsewhere.
+
+WWW: http://search.cpan.org/search?dist=VCG
