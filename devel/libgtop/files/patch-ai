@@ -1,0 +1,11 @@
+--- sysdeps/freebsd/msg_limits.c.orig	Sat May 27 14:19:11 2000
++++ sysdeps/freebsd/msg_limits.c	Sat May 27 14:21:05 2000
+@@ -46,7 +46,7 @@
+ 
+ /* #define KERNEL to get declaration of `struct msginfo'. */
+ 
+-#if (defined __FreeBSD__) || (defined __bsdi__)
++#if (defined(__FreeBSD__) && __FreeBSD__ < 5) || (defined __bsdi__)
+ #define KERNEL 1
+ #else
+ #define _KERNEL 1
