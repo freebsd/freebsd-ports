@@ -32,8 +32,8 @@ lib/X11/fonts/freefont/crf_____.pfb
 lib/X11/fonts/freefont/crillee.license
 lib/X11/fonts/freefont/crillee.pfb
 lib/X11/fonts/freefont/cunei.pfb
-lib/X11/fonts/freefont/dabkc____.license
 lib/X11/fonts/freefont/dabkc___.pfb
+lib/X11/fonts/freefont/dabkc____.license
 lib/X11/fonts/freefont/dos_____.pfb
 lib/X11/fonts/freefont/dragonwi.license
 lib/X11/fonts/freefont/dragonwi.pfb
@@ -48,6 +48,7 @@ lib/X11/fonts/freefont/erasltra.pfb
 lib/X11/fonts/freefont/erasmed.pfb
 lib/X11/fonts/freefont/florence.pfb
 lib/X11/fonts/freefont/fonts.dir
+lib/X11/fonts/freefont/fonts.scale
 lib/X11/fonts/freefont/frquad.pfb
 lib/X11/fonts/freefont/frquadb.pfb
 lib/X11/fonts/freefont/ftpstrps.pfb
