@@ -23,6 +23,8 @@ COMMENT=	This module provides access to Glib and GObject libraries
 BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/PkgConfig.pm:${PORTSDIR}/devel/p5-ExtUtils-PkgConfig \
 		${SITE_PERL}/ExtUtils/Depends.pm:${PORTSDIR}/devel/p5-ExtUtils-Depends
 
+BROKEN=		Unfetchable
+
 USE_GNOME=	glib20
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	disable-threadsafe
