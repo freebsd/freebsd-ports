@@ -7,6 +7,7 @@
 
 PORTNAME=	gnomeapplets2
 PORTVERSION=	2.10.0
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/gnome-applets/2.10
@@ -45,7 +46,7 @@ FREEBSD_SYS?=	/usr/src/sys
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
+.if ${ARCH} != "i386" && ${ARCH} != "amd64"
 CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC"
 PLIST_SUB=	BATTERY="@comment "
 .else
@@ -53,6 +54,7 @@ GCONF_SCHEMAS+=	battstat.schemas
 PLIST_SUB=	BATTERY=""
 
 .if ${OSVERSION} < 600019
+.if ${OSVERSION} < 503105 || ${OSVERSION} >= 600000
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "              W  A  R  N  I  N  G"
@@ -64,6 +66,7 @@ pre-everything::
 	@${ECHO_MSG} "* correct path.                                     *"
 	@${ECHO_MSG} "*****************************************************"
 	@${ECHO_MSG} ""
+.endif
 .endif
 .endif
 
