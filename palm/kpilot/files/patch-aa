@@ -1,0 +1,41 @@
+*** configure~	Sun Oct 26 01:04:56 1997
+--- configure	Sat Nov  1 23:03:17 1997
+***************
+*** 913,917 ****
+  
+  
+! test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL_PROGRAM}'
+  
+  
+--- 913,917 ----
+  
+  
+! test -z "$INSTALL_SCRIPT" && INSTALL_SCRIPT='${INSTALL} -m 555'
+  
+  
+***************
+*** 2039,2043 ****
+  do
+    for ac_extension in a so sl; do
+!     if test -r $ac_dir/lib${x_direct_test_library}.$ac_extension; then
+        ac_x_libraries=$ac_dir
+        break 2
+--- 2039,2043 ----
+  do
+    for ac_extension in a so sl; do
+!     if test -r $ac_dir/lib${x_direct_test_library}.$ac_extension*; then
+        ac_x_libraries=$ac_dir
+        break 2
+***************
+*** 2214,2218 ****
+  for i in $qt_libdirs;
+  do
+!   for j in libqt.so libqt.so.1.30 libqt.so.1 libqt.a libqt.sl;
+    do
+      if test -r "$i/$j"; then
+--- 2214,2218 ----
+  for i in $qt_libdirs;
+  do
+!   for j in libqt.so libqt.so.1.30 libqt.so.1.31 libqt.so.1.32 libqt.so.1 libqt.a libqt.sl;
+    do
+      if test -r "$i/$j"; then

@@ -1,0 +1,17 @@
+*** kpilot/Makefile.in~	Sat Mar  7 14:21:14 1998
+--- kpilot/Makefile.in	Sat Mar  7 14:21:25 1998
+***************
+*** 144,149 ****
+  
+  # the library search path
+! kpilot_LDFLAGS = @all_libraries@ -Llibpilot/_libs
+! kpilotDaemon_LDFLAGS = @all_libraries@ -Llibpilot/_libs
+  
+  # the libraries to link against. Be aware of the order. First the libraries,
+--- 144,149 ----
+  
+  # the library search path
+! kpilot_LDFLAGS = @all_libraries@ -Llibpilot/.libs
+! kpilotDaemon_LDFLAGS = @all_libraries@ -Llibpilot/.libs
+  
+  # the libraries to link against. Be aware of the order. First the libraries,
