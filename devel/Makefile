@@ -35,6 +35,7 @@
     SUBDIR += apr-svn
     SUBDIR += arch
     SUBDIR += argouml
+    SUBDIR += argp-standalone
     SUBDIR += argtable
     SUBDIR += arm-aout-binutils
     SUBDIR += arm-elf-binutils
