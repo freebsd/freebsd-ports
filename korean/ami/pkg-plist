@@ -1,7 +1,36 @@
 bin/ami
+@exec ln -fs ami %B/wmami
+@exec ln -fs ami %B/ami_applet
 bin/hanja-hwp2ami
 share/ami/gtkrc
 share/ami/hanja.dic
+share/ami/pix/nam/ami-e.xpm
+share/ami/pix/nam/ami-h.xpm
+share/ami/pix/nam/AUTHORS
+share/ami/pix/nam/ami-d.xpm
+@dirrm share/ami/pix/nam
+share/ami/pix/arctic/ami-d.xpm
+share/ami/pix/arctic/ami-e.xpm
+share/ami/pix/arctic/ami-h.xpm
+share/ami/pix/arctic/AUTHORS
+@dirrm share/ami/pix/arctic
+share/ami/pix/OSX/ami-d.xpm
+share/ami/pix/OSX/ami-e.xpm
+share/ami/pix/OSX/ami-h.xpm
+share/ami/pix/OSX/AUTHORS
+@dirrm share/ami/pix/OSX
+share/ami/pix/Mac/ami-d.xpm
+share/ami/pix/Mac/ami-e.xpm
+share/ami/pix/Mac/ami-h.xpm
+share/ami/pix/Mac/AUTHORS
+@dirrm share/ami/pix/Mac
+share/ami/pix/Aqua/ami-d.xpm
+share/ami/pix/Aqua/ami-e.xpm
+share/ami/pix/Aqua/ami-h.xpm
+share/ami/pix/Aqua/AUTHORS
+@dirrm share/ami/pix/Aqua
+@dirrm share/ami/pix
+@dirrm share/ami
 share/doc/ami/XLC_LOCALE
 @comment copy new locale definition(no harm, so need not be uninstalled)
 @exec if [ -f %D/lib/X11/locale/ko/XLC_LOCALE ]; then mv -f %D/lib/X11/locale/ko/XLC_LOCALE %D/lib/X11/locale/ko/XLC_LOCALE.orig; fi
@@ -12,5 +41,4 @@ share/doc/ami/README
 share/doc/ami/NEWS
 share/doc/ami/COPYING
 share/doc/ami/ChangeLog
-@dirrm share/ami
 @dirrm share/doc/ami
