@@ -1,0 +1,3 @@
+bin/dungeoncrawl
+%%PORTDOCS%%%%CRAWLDOCSDIR%%/crawl.txt
+%%PORTDOCS%%@dirrm %%CRAWLDOCSDIR%%

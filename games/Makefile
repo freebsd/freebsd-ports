@@ -77,6 +77,7 @@
     SUBDIR += dopewars
     SUBDIR += drm
     SUBDIR += dungeon
+    SUBDIR += dungeoncrawl
     SUBDIR += eboard
     SUBDIR += editss
     SUBDIR += eights

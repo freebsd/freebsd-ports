@@ -1,0 +1,20 @@
+--- makefile.bsd.orig	Thu Feb 27 22:39:20 2003
++++ makefile.bsd	Thu Feb 27 23:27:25 2003
+@@ -1,7 +1,7 @@
+ # -*- Makefile -*- for Dungeon Crawl (linux)
+ 
+ #APPNAME = crawl
+-GAME = crawl
++GAME = dungeoncrawl
+ 
+ # this file contains a list of the libraries.
+ # it will make a variable called OBJECTS that contains all the libraries
+@@ -17,7 +17,7 @@
+ LDFLAGS = -static -L/usr/lib
+ MCHMOD = 711
+ # INSTALLDIR = /usr/games
+-INSTALLDIR = /tmp/CRAWLTEST/testdev
++INSTALLDIR = ${PREFIX}/bin
+ LIB = -lncurses
+ 
+ # Include for Linux
