@@ -1,0 +1,8 @@
+Suck and blow are simple companion utilities for sending data over
+a TCP socket.  They are easy to use and appropriate when FTP is
+unavailable, or too much of a hassle, e.g., in single-user mode,
+from within shell scripts, etc.
+
+Blow reads the data from standard input, while suck writes it to
+standard output.  Either program may originate the TCP connection,
+and the TCP port may be specified if desired.

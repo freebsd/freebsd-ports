@@ -207,6 +207,7 @@
     SUBDIR += sniffit
     SUBDIR += socks5
     SUBDIR += sting
+    SUBDIR += suckblow
     SUBDIR += sup
     SUBDIR += tac_plus4
     SUBDIR += tcpflow
