@@ -337,6 +337,7 @@
     SUBDIR += tads
     SUBDIR += taipan
     SUBDIR += tank
+    SUBDIR += taxipilot
     SUBDIR += teg
     SUBDIR += tetrinet
     SUBDIR += tetrinet-x
