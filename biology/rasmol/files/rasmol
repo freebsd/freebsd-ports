@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Determine if X is running
+if [ -z $DISPLAY ]; then
+	echo You must be running X for this.
+else
+# Try to determine the color depth of the X server
+
+	DEPTH=`xwininfo -root | grep Depth | awk '{print $2}'`
+
+	if [ $DEPTH = 24 -o $DEPTH = 32 ]; then
+		PROGRAM=rasmol-32
+	elif [ $DEPTH = 16 ]; then
+		PROGRAM=rasmol-16
+	elif [ $DEPTH = 8 ]; then
+		PROGRAM=rasmol-8
+	else
+		echo Can not determine color depth of Display $DISPLAY
+	fi
+	exec $PROGRAM $@
+fi
