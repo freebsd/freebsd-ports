@@ -3618,6 +3618,7 @@ libol		ports/devel/libol
 libole2		ports/devel/libole2
 liboop		ports/devel/liboop
 libopie		src/lib/libopie
+libosip		ports/net/libosip
 libpam		src/lib/libpam
 libpanel	src/lib/libpanel
 libparanoia	ports/security/libparanoia
