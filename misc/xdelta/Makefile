@@ -6,18 +6,21 @@
 #
 
 PORTNAME=	xdelta
-PORTVERSION=	1.1.1
-CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.xcf.berkeley.edu/pub/xdelta/
+PORTVERSION=	1.1.2
+CATEGORIES=	misc devel
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	c9710216@atlas.newcastle.edu.au
 
 USE_GLIB=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
 
 MAN1=		xdelta.1
+
+pre-patch:
+	@${PERL} -pi -e 's|\$\(top_builddir\)/libtool|\$\(prefix\)/bin/libtool|' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
