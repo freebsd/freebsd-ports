@@ -7,7 +7,7 @@
 
 PORTNAME=	xfmail
 PORTVERSION=	1.5.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	mail
 MASTER_SITES=	ftp://xfmail.cfreeze.com/pub/xfmail/release/%SUBDIR%/	\
 		ftp://ftp.welcomes-you.com/pub/xfmail/release/%SUBDIR%/	\
@@ -28,6 +28,7 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -70,5 +71,10 @@ pre-everything::
 	@echo "To build with LDAP support, restart make and define WITH_LDAP"
 .endif
 	@echo
+
+post-patch:
+	@${REINPLACE_CMD} -e 's/libeditor/libxfeditor/g' \
+		${WRKSRC}/src/editor/Makefile.* \
+		${WRKSRC}/src/ui/Makefile.*
 
 .include <bsd.port.post.mk>
