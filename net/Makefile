@@ -807,6 +807,7 @@
     SUBDIR += vnc2swf
     SUBDIR += vncreflector
     SUBDIR += vomit
+    SUBDIR += vqcc-gtk
     SUBDIR += vtun
     SUBDIR += wais
     SUBDIR += wakeonlan

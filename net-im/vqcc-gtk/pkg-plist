@@ -1,0 +1,4 @@
+bin/vqcc-gtk
+share/gnome/applications/vqcc-gtk.desktop
+share/gnome/pixmaps/vqcc-gtk.png
+share/locale/lt/LC_MESSAGES/vqcc-gtk.mo
