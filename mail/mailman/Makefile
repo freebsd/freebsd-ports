@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mailman
-PORTVERSION=	2.1.3
-PORTREVISION=	1
+PORTVERSION=	2.1.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.list.org/ \
 		${MASTER_SITE_GNU} \
@@ -20,11 +19,12 @@ EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	mailman
 
 .if defined(WITH_HTDIG)
+# see http://www.openinfo.co.uk/mailman/index.html
 # Order of application of these patches is critical.
-PATCHFILES=	download.php\?group_id=103\&atid=300103\&file_id=63029\&aid=444879:patch1 \
-		htdig-2.1.3-0.5.patch.gz:patch2
+PATCHFILES=	indexing-2.1.4-0.1.patch.gz:patch1 \
+		htdig-2.1.4-0.1.patch.gz:patch2
 PATCH_DIST_STRIP=	-p1
-PATCH_SITES=	http://sourceforge.net/tracker/:patch1 \
+PATCH_SITES=	http://www.openinfo.co.uk/mailman/patches/444879/:patch1 \
 		http://www.openinfo.co.uk/mailman/patches/444884/:patch2
 .endif
 
