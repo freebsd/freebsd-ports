@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	gthumb2
-PORTVERSION=	2.3.3
+PORTVERSION=	2.4.0
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/${PORTNAME:S/2$//}/2.3
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
+MASTER_SITE_SUBDIR=	${PORTNAME:S/2$//}
 DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 DIST_SUBDIR=	gnome2
 
@@ -18,7 +18,6 @@ COMMENT=	An image viewer and browser for the GNOME 2 environment
 
 LIB_DEPENDS=	exif.10:${PORTSDIR}/graphics/libexif
 
-USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack lthack libgnomeui libgnomeprintui
