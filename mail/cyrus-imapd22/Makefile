@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION= 	2.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		ftp://ftp.hanse.de/sites/transit/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -186,6 +186,12 @@ post-patch:
 .if ${PERL_LEVEL} < 500600
 		@${REINPLACE_CMD} -e "s|exec perl -x|exec perl -I${SITE_PERL} -x|" \
 			${WRKSRC}/perl/sieve/scripts/sieveshell.pl
+.endif
+
+.if !defined(NOPORTDOCS)
+post-build:
+		@/usr/bin/groff -man -Thtml ${WRKSRC}/man/imapd.conf.5 \
+			> ${WRKSRC}/doc/man/imapd.conf.5.html
 .endif
 
 post-install:
