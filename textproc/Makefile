@@ -8,6 +8,7 @@
     SUBDIR += british-ispell
     SUBDIR += c2html
     SUBDIR += catdoc
+    SUBDIR += cdif
     SUBDIR += chpp
     SUBDIR += cocoon
     SUBDIR += code2html
