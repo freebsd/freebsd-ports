@@ -3694,6 +3694,7 @@ libdlmalloc	ports/devel/libdlmalloc
 libdnd		ports/x11/libdnd
 libdnet		ports/net/libdnet
 libdockapp	ports/x11-wm/libdockapp
+libds		ports/devel/libds
 libdsp		ports/devel/libdsp
 libdv		ports/multimedia/libdv
 libdvbpsi	ports/multimedia/libdvbpsi
