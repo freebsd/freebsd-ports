@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libsndfile
-PORTVERSION=	0.0.24
+PORTVERSION=	0.0.26
 CATEGORIES=	audio
 MASTER_SITES=	http://www.zip.com.au/~erikd/libsndfile/
 
@@ -21,7 +21,7 @@ PORTDOCS=	ChangeLog NEWS api.html bugs.html index.html libsndfile.jpg \
 		new_file_type.HOWTO sf_info.html
 
 pre-patch:
-	@${PERL} -pi -e 's|-g -O2 |\$$CFLAGS |g' ${WRKSRC}/configure
+	@${PERL} -pi -e 's|-g -O2 ||g' ${WRKSRC}/configure
 
 .if !defined(NOPORTDOCS)
 post-install:
