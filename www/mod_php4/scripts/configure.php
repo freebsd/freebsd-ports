@@ -46,7 +46,7 @@ while [ "$1" ]; do
 			;;
 		\"GD\")
 			echo "BUILD_DEPENDS+=		\${PREFIX}/lib/libgd.a:\${PORTSDIR}/graphics/gd" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
-			echo "PHP3_CONF_ARGS+=	--with-gd" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
+			echo "PHP3_CONF_ARGS+=	--with-gd=\${PREFIX}" >> ${WRKDIRPREFIX}${CURDIR}/Makefile.inc
 			GD=1
 			;;
 		\"FreeType\")
@@ -98,7 +98,7 @@ BUILD_DEPENDS+=	ssleay:\${PORTSDIR}/security/SSLeay \\
 		\${PREFIX}/lib/libcrypto.a:\${PORTSDIR}/security/SSLeay
 RUN_DEPENDS+=	ssleay:\${PORTSDIR}/security/SSLeay
 
-VERSION_MODSSL=	2.1.4
+VERSION_MODSSL=	2.1.5
 
 RESTRICTED=	"Contains cryptography"
 
