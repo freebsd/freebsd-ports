@@ -3,7 +3,7 @@
 # Date created:		August 31, 1998
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.11 1998/09/27 21:01:05 steve Exp $
+# $Id: Makefile,v 1.12 1998/09/29 11:46:34 tg Exp $
 
 DISTNAME=	wdm-1.0
 CATEGORIES=	x11
@@ -25,7 +25,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	wdm
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	X11BASE=${X11BASE} CPPFLAGS=-I${PREFIX}/include
+CONFIGURE_ENV=	X11BASE=${X11BASE} CPPFLAGS=-I${PREFIX}/include \
+		CFLAGS="${CFLAGS} -DHAS_SETUSERCONTEXT"
 CONFIGURE_ARGS=	--with-gfx-libs="-L${PREFIX}/lib -L${LOCALBASE}/lib -lgif" \
 	--with-gfx-incs="-I${LOCALBASE}/include/tiff34 -I${LOCALBASE}/include" \
 	--with-tiff-libs="-ljpeg" \
