@@ -33,6 +33,7 @@ USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CFLAGS+=		${PTHREAD_CFLAGS}
 LIBS+=			${PTHREAD_LIBS}
+NO_MTREE=		yes
 WRKSRC=			${WRKDIR}/mozilla
 
 .include <bsd.port.pre.mk>
