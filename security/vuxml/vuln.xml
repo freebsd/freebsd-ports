@@ -32,6 +32,30 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
   "http://www.vuxml.org/dtd/vuxml-1/vuxml-10.dtd">
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
 
+  <vuln vid="c2e10368-77ab-11d8-b9e8-00e04ccb0a62">
+    <topic>ModSecurity for Apache 2.x remote off-by-one overflow</topic>
+    <affects>
+      <package>
+        <name>mod_security</name>
+	<range><lt>1.7.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+        <p>When the directive "SecFilterScanPost" is enabled,
+          the Apache 2.x version of ModSecurity is vulnerable
+          to an off-by-one overflow</p>
+      </body>
+    </description>
+    <references>
+      <url>http://www.s-quadra.com/advisories/Adv-20040315.txt</url>
+    </references>
+    <dates>
+      <discovery>2004-02-09</discovery>
+      <entry>2004-03-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1a448eb7-6988-11d8-873f-0020ed76ef5a">
     <topic>mod_python denial-of-service vulnerability in parse_qs</topic>
     <affects>
