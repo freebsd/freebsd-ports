@@ -17,6 +17,8 @@ DISTNAME=	licq_osd_plugin-${PORTVERSION}
 MAINTAINER=	nm@web.am
 COMMENT=	OnScreenDisplay messages in licq (like in SIM and more)
 
+BROKEN=		"Incompatible with licq-1.3.0"
+
 BUILD_DEPENDS=	${X11BASE}/lib/libxosd.so.4:${PORTSDIR}/misc/xosd \
 		${LOCALBASE}/include/licq/licq_icqd.h:${PORTSDIR}/net/licq
 RUN_DEPENDS=${LOCALBASE}/lib/licq/licq_qt-gui.so:${PORTSDIR}/net/licq-qt-gui
