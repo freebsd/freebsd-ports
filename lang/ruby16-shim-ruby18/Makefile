@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shim-ruby18
-PORTVERSION=	1.8.0.p1
+PORTVERSION=	1.8.0.p2
 CATEGORIES=	lang devel ruby
 MASTER_SITES=	${MASTER_SITE_RUBY}
 MASTER_SITE_SUBDIR=	shim
@@ -44,6 +44,8 @@ PLIST_SUB+=	IF_DEFAULT=${IF_DEFAULT} \
 
 pre-install:
 	${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	# Make reinstall work
+	${RM} -f ${WRKSRC}/InstalledFiles
 
 post-install:
 .if ${RUBY_VER} == ${RUBY_DEFAULT_VER}
