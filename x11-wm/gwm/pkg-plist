@@ -1,4 +1,5 @@
 bin/gwm
+lib/X11/doc/html/gwm.1.html
 lib/X11/gwm/.gwmrc.gwm
 lib/X11/gwm/.profile.gwm
 lib/X11/gwm/App_write.xpm
