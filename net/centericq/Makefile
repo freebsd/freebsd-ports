@@ -8,6 +8,7 @@
 
 PORTNAME=	centericq
 PORTVERSION=	4.9.11
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://centericq.de/archive/source/releases/
 
