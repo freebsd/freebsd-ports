@@ -4,7 +4,7 @@
 # Whom:			Joel Sutton <sutton@aardvark.apana.org.au>
 # FreeBSD Version:	2.2.1-RELEASE
 #
-# $Id: Makefile,v 1.4 1998/11/08 08:44:59 asami Exp $
+# $Id: Makefile,v 1.5 1999/02/03 11:11:41 asami Exp $
 #
 
 DISTNAME=	djcrx201
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.zip
 
 MAINTAINER=	sutton@aardvark.apana.org.au
 
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/zip
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	i386-go32-gcc:${PORTSDIR}/devel/crossgo32
 
 BROKEN=		install
