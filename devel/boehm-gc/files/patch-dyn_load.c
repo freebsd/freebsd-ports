@@ -5,7 +5,7 @@
   * define it similarly for any ELF systems that don't.  */
  #  ifndef ElfW
 +#ifdef __FreeBSD__
-+#if ELFSIZE == 32
++#if __ELF_WORD_SIZE == 32
 +#define ElfW(type) Elf32_##type
 +#else
 +#define ElfW(type) Elf64_##type
