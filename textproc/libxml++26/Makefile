@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libxml++
-PORTVERSION=	1.0.4
+PORTVERSION=	2.6.1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -15,20 +15,22 @@ MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	XML API for C++
 
+LIB_DEPENDS=	glibmm-2.4.1:${PORTSDIR}/devel/glibmm
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+
+LATEST_LINK=	libxml++26
+
+USE_GMAKE=	yes
+USE_GCC=	3.3
 USE_GNOME=	gnomehack lthack gnometarget libxml2 pkgconfig
 USE_INC_LIBTOOL_VER=13
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
+PLIST_SUB=	VERSION="2.6" API_VERSION="2.6"
 
-.if ${OSVERSION} < 500000
 post-patch:
-	@${FIND} ${WRKSRC}/libxml++ -name *.h \
-		| ${XARGS} ${REINPLACE_CMD} \
-			-e 's|<istream>|<iostream>|' \
-			-e 's|<ostream>|<iostream>|'
+	@${REINPLACE_CMD} -e '/^SUBDIRS =/s/examples//' \
+		${WRKSRC}/Makefile.in
 
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
