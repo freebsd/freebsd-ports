@@ -6,6 +6,25 @@ bin/plot
 bin/plotfont
 bin/spline
 bin/tek2plot
+include/plot.h
+include/plotcompat.h
+include/plotter.h
+include/xmi.h
+@unexec install-info --delete %D/info/libxmi.info %D/info/dir
+info/libxmi.info
+@exec install-info %D/info/libxmi.info %D/info/dir
+@unexec install-info --delete %D/info/plotutils.info %D/info/dir
+info/plotutils.info
+@exec install-info %D/info/plotutils.info %D/info/dir
+lib/libplot.a
+lib/libplot.so
+lib/libplot.so.4
+lib/libplotter.a
+lib/libplotter.so
+lib/libplotter.so.4
+lib/libxmi.a
+lib/libxmi.so
+lib/libxmi.so.1
 share/libplot/README
 share/libplot/colors.txt
 share/libplot/demo-page
@@ -46,27 +65,9 @@ share/tek2plot/karney.tek
 share/tek2plot/ocpred.tek
 share/tek2plot/scale.tek
 share/tek2plot/skymap.tek
+share/tek2plot/skymap2.tek
 share/tek2plot/usmap.tek
-lib/libplot.so
-lib/libplot.so.3
-lib/libplot.a
-lib/libplotter.so
-lib/libplotter.so.3
-lib/libplotter.a
-lib/libxmi.so
-lib/libxmi.so.1
-lib/libxmi.a
-include/plot.h
-include/plotcompat.h
-include/plotter.h
-include/xmi.h
-@unexec install-info --delete --info-dir=%D/info %D/info/libxmi.info
-@unexec install-info --delete --info-dir=%D/info %D/info/plotutils.info
-info/libxmi.info
-info/plotutils.info
-@exec install-info --info-dir=%D/info %D/info/libxmi.info
-@exec install-info --info-dir=%D/info %D/info/plotutils.info
 @dirrm share/tek2plot
 @dirrm share/pic2plot
-@dirrm share/libplot
 @dirrm share/ode
+@dirrm share/libplot
