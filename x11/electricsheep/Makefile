@@ -12,22 +12,26 @@ MASTER_SITES=	http://www-2.cs.cmu.edu/~spot/cache/
 
 MAINTAINER=	dyeske@yahoo.com
 
-LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	xloadimage:${PORTSDIR}/x11/xloadimage \
 		xsetbg:${PORTSDIR}/graphics/xli \
 		curl:${PORTSDIR}/ftp/curl
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-
-pre-patch:
-	@${PERL} -pi -e 's|/usr/include/X11|${X11BASE}/include|g; \
-		s|/usr/lib/libjpeg.so.62|${LOCALBASE}/lib/libjpeg.so|g;' \
-		${WRKSRC}/video_out/Makefile
+USE_REINPLACE=	yes
 
 post-patch:
-	@${PERL} -pi -e 's|/usr/local/share|${PREFIX}/share/electricsheep|g;' \
+	@${REINPLACE_CMD} -e 's|/usr/local/share|${PREFIX}/share/electricsheep|g; \
+		s|setpgrp()|setpgrp(getpid(), getpid())|g' \
 		${WRKSRC}/electricsheep.c
+	@${REINPLACE_CMD} -e 's|/usr/include/X11|${X11BASE}/include|g; \
+		s|-I/usr/include||g; \
+		s|gcc|${CC}|g; \
+		s|^CC|#CC|g; \
+		s|/usr/lib/libjpeg.so.62||g' \
+		${WRKSRC}/video_out/Makefile
+	@${REINPLACE_CMD} -e 's|^CFLAGS =|CFLAGS +=|g' \
+		${WRKSRC}/flame/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/electricsheep ${PREFIX}/bin
