@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.211 1999/06/22 03:07:11 foxfair Exp $
+# $Id: Makefile,v 1.212 1999/06/22 23:42:13 sada Exp $
 #
 
     SUBDIR += 3dc
@@ -115,6 +115,7 @@
     SUBDIR += xbl
     SUBDIR += xblackjack
     SUBDIR += xblast
+    SUBDIR += xblood
     SUBDIR += xbloody
     SUBDIR += xboard
     SUBDIR += xboing
