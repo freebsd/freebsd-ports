@@ -15,7 +15,14 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	demon@FreeBSD.org
 
+.if defined(WITHOUT_X11)
+PKGNAMESUFFIX=	-nox11
+MAKE_ENV+=	WITHOUT_X11=yes
+PLIST_SUB+=	X11='@comment '
+.else
 USE_XLIB=	yes
+PLIST_SUB+=	X11=''
+.endif
 
 WRKSRC=		${WRKDIR}/pvm3
 MAKE_ENV+=	PVM_ROOT=${WRKSRC} ARCHCFLAGS="${CFLAGS}"
@@ -47,7 +54,7 @@ MAN3=		libpvm.3 pvm_addhosts.3 pvm_addmhf.3 pvm_advise.3 \
 MLINKS=		pvm_intro.1 PVM.1 pvmd3.1 pvmd.1 \
 		libpvm.3 libfpvm.3 pvm_putinfo.3 pvm_delinfo.3 \
 		pvm_addmhf.3 pvm_delmhf.3 pvm_newcontext.3 pvm_freecontext.3 \
-		pvm_newcontext.3 pvm_getcontext.3
+		pvm_newcontext.3 pvm_getcontext.3 \
 		pvm_putinfo.3 pvm_getmboxinfo.3 pvm_setmwid.3 pvm_getmwid.3 \
 		pvm_settmask.3 pvm_gettmask.3 pvm_pack.3 pvm_packf.3 \
 		pvm_pack.3 pvm_pkbyte.3 pvm_pack.3 pvm_pkcplx.3 \
