@@ -3,14 +3,16 @@
 # Date created:			24 Nov 1998
 # Whom:				Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/12/06 14:11:53 vanilla Exp $
+# $Id: Makefile,v 1.2 1998/12/07 08:15:27 obrien Exp $
 #
 
 DISTNAME=	gEDA-19981117
 PKGNAME=	geda-19981117
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geda.seul.org/dist/  \
-		ftp://ftp.geda.seul.org/pub/geda/dist/
+		ftp://ftp.geda.seul.org/pub/geda/dist/ \
+		ftp://ftp.inet.cz/pub/Mirrors/GtkApps/geda/ \
+		ftp://ftp.infodrom.north.de/pub/unix/gtk-etc/apps/geda/
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
