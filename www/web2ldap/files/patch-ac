@@ -1,19 +1,13 @@
-*** etc/web2ldap/web2ldapcnf/misc.py.orig	Thu Jan 11 23:35:00 2001
---- etc/web2ldap/web2ldapcnf/misc.py	Thu Jan 11 23:38:00 2001
+*** fcgi/web2ldap.py.orig	Wed Mar 20 15:57:19 2002
+--- fcgi/web2ldap.py	Wed Mar 20 15:57:25 2002
 ***************
-*** 4,10 ****
+*** 1,4 ****
+! #!/usr/bin/python -OO
+  
   """
+  fcgi/web2ldap.py - stub script for running as FastCGI server
+--- 1,4 ----
+! #!/usr/local/bin/python -OO
   
-  # A list with directories containing additional Python modules
-! pylibdirs = ['/usr/lib/web2ldap/pylib']
-  
-  ########################################################################
-  # HTTP-Options
---- 4,10 ----
   """
-  
-  # A list with directories containing additional Python modules
-! pylibdirs = ['/usr/local/web2ldap/pylib']
-  
-  ########################################################################
-  # HTTP-Options
+  fcgi/web2ldap.py - stub script for running as FastCGI server
