@@ -6,6 +6,7 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/ExampleP.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/NullP.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/Proxy.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBD/Sponge.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/Changes.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/DBD.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/FAQ.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBI/Format.pm
