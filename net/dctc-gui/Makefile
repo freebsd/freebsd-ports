@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dctc
-PORTVERSION=	0.59
-PORTREVISION=	1
+PORTVERSION=	0.60
 CATEGORIES=	net gnome
 MASTER_SITES=	http://unixpages.org/distfiles/ \
 		http://ac2i.tzo.com/dctc/
