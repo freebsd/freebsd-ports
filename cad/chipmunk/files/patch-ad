@@ -1,5 +1,5 @@
---- log/src/Makefile.orig	Tue May 14 03:08:21 2002
-+++ log/src/Makefile	Sat May 18 15:49:22 2002
+--- log/src/Makefile.orig	Wed Nov  5 04:53:39 2003
++++ log/src/Makefile	Tue Dec  9 17:42:37 2003
 @@ -45,8 +45,8 @@
  
  CD = cd
@@ -12,8 +12,8 @@
  LOCINC = ../../psys/include
  
 @@ -63,9 +63,9 @@
- ## or some other directory, depending on your installation.
- ##
+ ## or some other directory, depending on your installation. Use the
+ ## first one for OS X.
  
 -XINCLUDEDIR = .
 +XINCLUDEDIR = ${X11BASE}/include
@@ -24,7 +24,7 @@
  
  ##
 @@ -81,7 +81,7 @@
- ## depending on your installation. 
+ ## depending on your installation. Use the second one for OS X.
  ##
  
 -LIBX11 = -lX11
@@ -50,7 +50,7 @@
  
  ##
  ## (4) Adding appropriate flags
-@@ -147,7 +147,7 @@
+@@ -148,7 +148,7 @@
  
  CHIPMUNKFLAGS = 
  
@@ -59,7 +59,7 @@
  
  DIGOBJ = logsim.o logdig.o logsimasm.o logsimed.o diggates.o \
           loghier.o logsimh.o swap.o
-@@ -178,22 +178,24 @@
+@@ -179,22 +179,24 @@
  ##  older operating systems -- if problems arise, use a hard link.
  ##
  
@@ -78,7 +78,7 @@
 +	chmod -R a=r+X $(LOGLIBDIR)
  
  clean:
- 	-rm -f *.o ana/*.o log loged
+ 	-rm -f *.o ana/*.o ana/logdef.h log loged
  
 -all:  makeana main
 -

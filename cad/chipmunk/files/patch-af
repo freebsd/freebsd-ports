@@ -1,5 +1,5 @@
---- mosis/Makefile.orig	Tue Aug  7 09:25:31 2001
-+++ mosis/Makefile	Sat May 18 15:59:51 2002
+--- mosis/Makefile.orig	Tue Nov  4 22:19:13 2003
++++ mosis/Makefile	Tue Dec  9 17:44:45 2003
 @@ -23,6 +23,8 @@
  #
  #
@@ -9,21 +9,34 @@
  ##
  ##  (1) Choosing your compiler
  ##  ---------------------------
-@@ -48,10 +50,10 @@
+@@ -47,7 +49,7 @@
  ##
  
  
 -CC = gcc
 +CC ?= gcc
  
--LIBX11 = -lX11
+ ##
+ ## (2) If X isn't in the include path (the case for many MachTen and Linux 
+@@ -62,7 +64,7 @@
+ ## or some other directory, depending on your installation. Use the
+ ## first one for OS X.
+ 
 -XINCLUDEDIR = .
-+LIBX11 = -lX11 -L${X11BASE}/lib
 +XINCLUDEDIR = ${X11BASE}/include
  
  ##
- ## (2) Adding appropriate flags
-@@ -88,7 +90,7 @@
+ ## If X isn't in the library path (the case for many MachTen and Linux 
+@@ -77,7 +79,7 @@
+ ## depending on your installation. Use the second one for OS X.
+ ##
+ 
+-LIBX11 = -lX11
++LIBX11 = -lX11 -L${X11BASE}/lib
+ 
+ ##
+ ## (3) Adding appropriate flags
+@@ -115,7 +117,7 @@
  
  CHIPMUNKFLAGS = 
  
@@ -31,8 +44,8 @@
 +CFLAGS += -DBSD -DF_OK -I../psys/include -I$(XINCLUDEDIR)
  
  ##
- ## (3) Library additions
-@@ -96,7 +98,7 @@
+ ## (4) Library additions
+@@ -123,7 +125,7 @@
  ##
  ## on some systems, -ldl must be added to the following line
  
@@ -41,7 +54,7 @@
  
  ##
  ##
-@@ -109,7 +111,7 @@
+@@ -136,7 +138,7 @@
  	$(CC) -o mosis mosis.o  $(LDFLAGS)
  
  install: mosis
