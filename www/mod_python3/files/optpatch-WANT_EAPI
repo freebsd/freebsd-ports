@@ -1,0 +1,11 @@
+--- work/mod_python-2.7.2/src/Makefile.in.orig	Sun Mar 25 16:05:21 2001
++++ work/mod_python-2.7.2/src/Makefile.in	Sun Mar 25 16:05:30 2001
+@@ -52,7 +52,7 @@
+ INCLUDES=@INCLUDES@
+ LIBS=@LIBS@
+ LDFLAGS=@LDFLAGS@
+-OPT=
++OPT=-DEAPI
+ CFLAGS=$(OPT) $(INCLUDES) 
+ srcdir=.
+ 
