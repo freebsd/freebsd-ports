@@ -9,11 +9,14 @@ PORTNAME=	wmMoonClock
 PORTVERSION=	1.27
 PORTREVISION=	1
 CATEGORIES=	astro windowmaker
-MASTER_SITES=	http://nis-www.lanl.gov/~mgh/WindowMaker/
+MASTER_SITES=	http://dockapps.org/files/14/21/
 
 MAINTAINER=	kris@FreeBSD.org
 COMMENT=	Displays the phase of the moon, plus orbital data
 
+# Distfile says it's a .tar.gz but is actually uncompressed
+EXTRACT_CMD=	${CAT}
+EXTRACT_BEFORE_ARGS=	
 WRKSRC=		${WRKDIR}/${DISTNAME}/Src
 
 USE_X_PREFIX=	yes
