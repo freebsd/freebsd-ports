@@ -49,8 +49,6 @@ PLIST_SUB+=		KRB4=""
 PREFIX=			${KRB5_HOME}
 .endif
 
-# Set USE_MIT_TARBALL appropriately in /etc/make.conf if you like
-
 INFO_FILES=		krb425.info krb5-admin.info krb5-admin.info-1 \
 			krb5-admin.info-2 krb5-admin.info-3 krb5-install.info \
 			krb5-install.info-1 krb5-install.info-2 krb5-user.info
@@ -76,24 +74,7 @@ HTML_OUTDIRS=		krb5-admin krb5-install
 
 .include <bsd.port.pre.mk>
 
-.if defined(USE_MIT_TARBALL) && ${USE_MIT_TARBALL} == "YES"
-do-fetch:
-	@if [ ! -f ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} ]; then        \
-	${ECHO} "";							\
-	${ECHO} ">> Kerberos V contains encryption software and is";    \
-	${ECHO} "   export restricted.  If you are not a USA or";       \
-	${ECHO} "   Canadian resident, you cannot obtain Kerberos V";   \
-	${ECHO} "   sources directly from MIT and must obtain the";     \
-	${ECHO} "   source from crypto-publish.org by unsetting";       \
-	${ECHO} "   USE_MIT_TARBALL or setting USE_MIT_TARBALL to NO."; \
-	${ECHO} "";							\
-	${ECHO} ">> The Kerberos V sources must be fetched manually.";  \
-	${ECHO} "   Please visit ${KERBEROSV_URL}";                     \
-	${ECHO} "   to download ${DISTNAME}${EXTRACT_SUFX} and place";  \
-	${ECHO} "   it in ${DISTDIR}.  Then run make again.";           \
-	${FALSE};							\
-	fi
-
+.if defined(USE_KRB5_TARBALL) && ${USE_KRB5_TARBALL} == "MIT"
 post-extract:
 	@${TAR} -C ${WRKDIR} -xzf ${WRKDIR}/${DISTNAME}.tar.gz
 	@${RM} ${WRKDIR}/${DISTNAME}.tar.gz ${WRKDIR}/${DISTNAME}.tar.gz.asc
