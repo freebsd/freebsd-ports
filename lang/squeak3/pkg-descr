@@ -1,22 +1,22 @@
 Squeak is a new implementation of the Smalltalk programming
-environment; it includes:
-
+environment; it includes among other things:
     * a rapid-turn-around Smalltalk-80 compiler,
     * a caching-JIT run-time virtual machine (with full source in
       Smalltalk),
     * large class libraries with portable data and GUI models, and
     * an integrated development environment with coding tools, GUI
-      construction,
-    * and much more. 
+      construction.
 
-Squeak was developed at Apple Labs, and has been ported to a variety
-of computers (including most flavors of UNIX and Windows). Compared to
-other Smalltalk systems, Squeak has 4 important features:
-
+Squeak was developed at Apple Labs and Walt Disney and has been ported
+to a variety of computers (including most flavors of UNIX and
+Windows). Compared to other Smalltalk systems, Squeak has 4 important
+features:
     * Portability (to Mac, Windows, WinCE, and many flavors of UNIX);
     * Speed (it uses native C for compute-intensive code);
     * Price (free, including all source code and the right to distribute
       applications!); and
     * Sophistication (full Smalltalk-80 language, libraries, and tools).
 
-Jacques Vidrine <nectar@FreeBSD.ORG>
+See http://squeak.cs.uiuc.edu/ for more information.
+
+Roland Jesse <jesse@cs.uni-magdeburg.de>
