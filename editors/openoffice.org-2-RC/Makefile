@@ -6,21 +6,18 @@
 #
 
 PORTNAME=	openoffice
-PORTVERSION=	1.1RC4
-SNAPDATE=	20030815
+PORTVERSION=	1.1rc5
 CATEGORIES+=	editors
-MASTER_SITES+=	http://projects.imp.ch/openoffice/%SUBDIR%/ \
-		http://people.freebsd.org/~maho/files/ \
-		http://ny1.mirror.openoffice.org/developer/%SUBDIR%/ \
-		http://ftp.gwdg.de/pub/misc/openoffice/developer/%SUBDIR%/ \
-		${MASTER_SITE_RINGSERVER:S,developer/%SUBDIR%,misc/openoffice/&,} \
+MASTER_SITES+=	ftp://openofficeorg.secsup.org/pub/software/openoffice/stable/%SUBDIR%/ \
+		ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/stable/%SUBDIR%/ \
+		http://www.binarycode.org/openoffice/stable/%SUBDIR%/ \
+		http://ftp.gwdg.de/pub/misc/openoffice/stable/%SUBDIR%/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
 		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help \
 		http://people.freebsd.org/~mbr/ooo/:moz
-MASTER_SITE_SUBDIR=	${BUILD_NR}
-DISTFILES+=	oo_${BUILD_NR}_src_${SNAPDATE}.tar.bz2 \
-		gpc231.tar.Z:gpc patch-openoffice-mozilla101-2002-10-14:moz \
-		mozilla-vendor-1.0.2a.tgz:moz
+MASTER_SITE_SUBDIR=	${PORTVERSION}
+DISTFILES+=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z:gpc \
+		patch-openoffice-mozilla101-2002-10-14:moz mozilla-vendor-1.0.2a.tgz:moz
 .if defined(L10NHELP)
 DISTFILES+=	${L10NHELP:S/$/:help/}
 .endif
@@ -96,7 +93,7 @@ CC=  gcc33
 CXX= g++33
 .endif
 
-EXTRACT_ONLY=	oo_${BUILD_NR}_src_${SNAPDATE}.tar.bz2
+EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
 .if !defined(COMMENT)
@@ -141,7 +138,7 @@ GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
 WANT_AUTOCONF_VER= 253
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
-WRKSRC=		${WRKDIR}/oo_${BUILD_NR}_src/config_office
+WRKSRC=		${WRKDIR}/oo_${RELEASE_NR}_src/config_office
 LD_PATH1=	${WRKSRC}/../vos/unxfbsd.pro/lib/:${WRKSRC}/../ucbhelper/unxfbsd.pro/lib/
 LD_PATH=	${LD_PATH1}:${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/lib/
 .if defined(WITH_DEBUG)
@@ -541,7 +538,7 @@ post-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/openoffice-wrapper \
 		${PREFIX}/bin/openoffice-${RELEASE_NR}
 	@${INSTALL_SCRIPT} ${WRKDIR}/freebsd-local.sh \
-		${PREFIX}/${INSTALLATION_BASEDIR}/freebsd-local.sh
+		${PREFIX}/${INSTALLATION_BASEDIR}/program/freebsd-local.sh
 	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-sagenda
 	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-scalc
 	@${LN} -fs ${PREFIX}/bin/openoffice-${RELEASE_NR} ${PREFIX}/bin/openoffice-${RELEASE_NR}-sdraw
