@@ -1,0 +1,17 @@
+--- Makefile.in	Mon Jan  7 10:43:21 2002
++++ Makefile.in	Mon Jan  7 20:54:38 2002
+@@ -84,3 +84,6 @@
+ 
+-SUBDIRS = Mowitz examples doc
++SUBDIRS = Mowitz examples
++.ifndef NOPORTDOCS
++SUBDIRS+= doc
++.endif
+ 
+--- doc/Makefile.in	Mon Jan  7 10:43:49 2002
++++ doc/Makefile.in	Mon Jan  7 20:52:43 2002
+@@ -84,3 +84,3 @@
+ 
+-docdir = $(prefix)/doc/Mowitz
++docdir = $(prefix)/share/doc/Mowitz
+ 
