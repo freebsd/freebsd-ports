@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zsync
-PORTVERSION=	0.1.6
+PORTVERSION=	0.2.2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,13 +14,16 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	gordon@FreeBSD.org
 COMMENT=	A file transfer program
 
-PLIST_FILES=	bin/zsync bin/zsyncmake
+PLIST_FILES=	bin/zsync \
+		bin/zsyncmake
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	COPYING README
+PORTDOCS=	COPYING \
+		README
 .endif
 
-MAN1=		zsync.1 zsyncmake.1
+MAN1=		zsync.1 \
+		zsyncmake.1
 
 GNU_CONFIGURE=	yes
 
