@@ -1,5 +1,16 @@
---- configure.in.orig	Tue Sep 21 20:25:38 1999
-+++ configure.in	Thu Dec 14 02:14:00 2000
+--- configure.in.orig	Tue Sep 21 11:25:38 1999
++++ configure.in	Tue Nov 30 22:58:02 2004
+@@ -9,8 +9,8 @@
+ AC_PROG_LN_S
+ AC_PROG_MAKE_SET
+ AC_PROG_RANLIB
+-dnl Checks for makedepend, uses /bin/true if not found
+-AC_PATH_PROG(MAKEDEPEND, makedepend, /bin/true)
++dnl Checks for makedepend, uses /usr/bin/true if not found
++AC_PATH_PROG(MAKEDEPEND, makedepend, /usr/bin/true)
+ 
+ AC_CANONICAL_SYSTEM
+ 
 @@ -67,11 +67,11 @@
  
  Petal=Petal
