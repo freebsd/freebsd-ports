@@ -39,7 +39,7 @@ MULE_COMMON=		yes
 PKGNAMESUFFIX=		-mule-common
 DESCR_TMPL=		${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-mule-common/files/DESCR.tmpl
 INSTALL_TMPL=		${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-mule-common/files/INSTALL.tmpl
-COMMENT_TEXT=		XEmacs(version ${XEMACS_MAJOR_VER}) with mule, lisp files, info pages, etc (except executables)
+COMMENT?=		XEmacs(version ${XEMACS_MAJOR_VER}) with mule, lisp files, info pages, etc (except executables)
 
 WRKDIR=	${WRKDIRPREFIX}/${.CURDIR}/../xemacs${XEMACS_MAJOR_VER}-mule/work
 

@@ -5,8 +5,6 @@
 # $FreeBSD$
 #
 
-COMMENTFILE=		${.CURDIR}/pkg-comment
-
 XEMACS_MAJOR_VER=	21
 CANNA=			yes
 FREEWNN=		yes

@@ -13,8 +13,6 @@ MAINTAINER=	knu@FreeBSD.org
 COMMENT=	The Z shell with EUC encoding support
 
 EXTRA_PATCHES=	${.CURDIR}/files/patch-*
-
-COMMENTFILE=	${.CURDIR}/pkg-comment
 DESCR=		${.CURDIR}/pkg-descr
 
 .include "${MASTERDIR}/Makefile"

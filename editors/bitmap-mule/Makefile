@@ -6,6 +6,7 @@
 #
 
 MAINTAINER=	shige@FreeBSD.org
+COMMENT=	Package to use bitmap in MULE
 
 # This is a slave port.
 PORTCLASS=	slave
