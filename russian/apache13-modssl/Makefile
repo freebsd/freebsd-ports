@@ -118,7 +118,7 @@ pre-install:
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
-		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/apache.sh ${PREFIX}/etc/rc.d/apache.sh; \
+		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/rc.apache.sh ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
 .if defined(WITH_SUEXEC)
 	@${ECHO} "sbin/suexec" >> ${TMPPLIST}
