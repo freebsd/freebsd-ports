@@ -7,6 +7,7 @@
 
 PORTNAME=	ltvariations
 PORTVERSION=	0.26
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	http://gdesklets.gnomedesktop.org/files/
 PKGNAMEPREFIX=	gdesklets-
@@ -15,7 +16,8 @@ DISTNAME=	LTVariations-${PORTVERSION}
 MAINTAINER=	tim@bishnet.net
 COMMENT=	A collection of sensors and displays
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets
+RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets \
+		${X11BASE}/share/gnome/gdesklets/Sensors/Weather/__init__.py:${PORTSDIR}/astro/gdesklets-weather
 
 USE_PYTHON=	yes
 USE_X_PREFIX=	yes
@@ -32,6 +34,7 @@ do-build:
 .for ii in ${SENSORS}
 	@${WRKSRC}/Sensors/Install_${ii}_Sensor.bin --nomsg ${WRKSRC}
 .endfor
+	@${PATCH} ${WRKSRC}/LTVUptime/__init__.py < ${FILESDIR}/LTVUptime::__init__.py
 	@${CAT} pkg-message | ${SED} -e 's|%%PREFIX%%|${PREFIX}|g ; s|%%DISPLAY%%|${DISPLAY}|g' > ${PKGMESSAGE}
 
 do-install:
