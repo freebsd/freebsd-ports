@@ -30,6 +30,9 @@ CONFIGURE_ARGS+=	--without-syslog
 CONFIGURE_ARGS+=	--without-zlib
 .endif
 
+MAN5=		ngircd.5
+MAN8=		ngircd.8
+
 pre-configure:
 	@${ECHO_MSG} ""
 .if defined(USE_TCP_WRAPPERS)
@@ -48,7 +51,7 @@ pre-configure:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/ngircd
-.for i in AUTHORS COPYING ChangeLog INSTALL NEWS README 
+.for i in AUTHORS COPYING ChangeLog INSTALL NEWS README
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/ngircd/
 .endfor
 .endif
