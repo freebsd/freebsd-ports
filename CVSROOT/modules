@@ -2502,6 +2502,7 @@ hlserver-pvk	ports/games/hlserver-pvk
 hlserver-si	ports/games/hlserver-si
 hlserver-snow	ports/games/hlserver-snow
 hlserver-svencoop	ports/games/hlserver-svencoop
+hlserver-trainhunters	ports/games/hlserver-trainhunters
 hlserver-tsc	ports/games/hlserver-tsc
 hlserver-vs	ports/games/hlserver-vs
 hlserver-wasteland	ports/games/hlserver-wasteland
