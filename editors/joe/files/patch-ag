@@ -1,0 +1,12 @@
+--- rc.c.orig	Fri Feb  1 16:50:23 2002
++++ rc.c	Fri Feb  1 16:50:43 2002
+@@ -610,7 +610,8 @@
+  FILE *fd;			/* rc file */
+  int line=0;			/* Line number */
+  int err=0;			/* Set to 1 if there was a syntax error */
+- ossep(zcpy(buf,name));
++ strlcpy(buf,name,sizeof(buf));
++ ossep(buf);
+ #ifdef __MSDOS__
+  fd=fopen(buf,"rt");
+ #else
