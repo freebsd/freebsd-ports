@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		glob2
-PORTVERSION=		0.8.5
+PORTVERSION=		0.8.6
 CATEGORIES=		games
 MASTER_SITES=		http://www.ysagoon.com/glob2/data/
 
