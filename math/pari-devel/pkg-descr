@@ -1,0 +1,16 @@
+The PARI system is a package which is capable of doing formal computations on
+recursive types at high speed.
+
+It is possible to use PARI in two different ways:
+
+1) as a library, which can be called from any upper-level language
+application (for instance written in C, C++, Pascal or Fortran);
+
+2) as a sophisticated programmable calculator, named GP, which contains 
+most of the standard control instructions of a standard language
+like C.
+
+This is the alpha quality version that development is in the way.
+Algorithm, improvement of implementation are done.
+Because improvement of performance was big, ports was made as -devel in
+particular.

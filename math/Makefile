@@ -88,6 +88,7 @@
     SUBDIR += p5-Statistics-OLS
     SUBDIR += p5-Statistics-Table-F
     SUBDIR += pari
+    SUBDIR += pari-devel
     SUBDIR += parmetis
     SUBDIR += physcalc
     SUBDIR += plplot
