@@ -1,0 +1,13 @@
+# Additionnal options passed to erlang while starting ejabberd.
+# See erl(3) for more info
+# default options already passed are:
+#   -noshell -detached
+#export ERL_OPTIONS="-heart"
+
+# To use more than 1024 connections, you will need to set environment variable ERL_MAX_PORTS:
+#export ERL_MAX_PORTS=1024
+
+# To reduce memory usage, you can set environment variable ERL_FULLSWEEP_AFTER:
+# But in this case ejabberd may work slower.
+#export ERL_FULLSWEEP_AFTER=0
+
