@@ -307,5 +307,3 @@ share/locale/lv/LC_MESSAGES/webarchiver.mo
 share/locale/lv/charset
 share/locale/lv/entry.desktop
 share/locale/lv/flag.png
-@dirrm share/locale/lv/LC_MESSAGES
-@dirrm share/locale/lv

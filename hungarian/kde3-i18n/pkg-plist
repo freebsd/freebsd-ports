@@ -786,8 +786,6 @@ share/locale/hu/LC_MESSAGES/webarchiver.mo
 share/locale/hu/charset
 share/locale/hu/entry.desktop
 share/locale/hu/flag.png
-@dirrm share/locale/hu/LC_MESSAGES
-@dirrm share/locale/hu
 @dirrm share/doc/HTML/hu/noatun
 @dirrm share/doc/HTML/hu/lskat
 @dirrm share/doc/HTML/hu/kwuftpd

@@ -44,6 +44,7 @@ share/locale/zh_CN/LC_MESSAGES/appletproxy.mo
 share/locale/zh_CN/LC_MESSAGES/ark.mo
 share/locale/zh_CN/LC_MESSAGES/artsbuilder.mo
 share/locale/zh_CN/LC_MESSAGES/artscontrol.mo
+share/locale/zh_CN/LC_MESSAGES/atlantik.mo
 share/locale/zh_CN/LC_MESSAGES/babelfish.mo
 share/locale/zh_CN/LC_MESSAGES/childpanelextension.mo
 share/locale/zh_CN/LC_MESSAGES/clockapplet.mo
@@ -338,7 +339,7 @@ share/locale/zh_CN/LC_MESSAGES/webarchiver.mo
 share/locale/zh_CN/charset
 share/locale/zh_CN/entry.desktop
 share/locale/zh_CN/flag.png
-@dirrm share/locale/zh_CN/LC_MESSAGES
 @dirrm share/doc/HTML/zh_CN/kdevelop
 @dirrm share/doc/HTML/zh_CN/common
 @dirrm share/doc/HTML/zh_CN
+@dirrm share/doc/HTML

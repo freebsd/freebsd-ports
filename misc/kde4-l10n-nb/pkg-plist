@@ -322,5 +322,3 @@ share/locale/nb/README
 share/locale/nb/charset
 share/locale/nb/entry.desktop
 share/locale/nb/flag.png
-@dirrm share/locale/nb/LC_MESSAGES
-@dirrm share/locale/nb

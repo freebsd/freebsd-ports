@@ -194,5 +194,3 @@ share/locale/bs/LC_MESSAGES/webarchiver.mo
 share/locale/bs/charset
 share/locale/bs/entry.desktop
 share/locale/bs/flag.png
-@dirrm share/locale/bs/LC_MESSAGES
-@dirrm share/locale/bs

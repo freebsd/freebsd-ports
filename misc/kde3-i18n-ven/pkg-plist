@@ -149,5 +149,3 @@ share/locale/ven/LC_MESSAGES/taskbarextension.mo
 share/locale/ven/LC_MESSAGES/uachangerplugin.mo
 share/locale/ven/charset
 share/locale/ven/entry.desktop
-@dirrm share/locale/ven/LC_MESSAGES
-@dirrm share/locale/ven

@@ -275,5 +275,3 @@ share/locale/is/LC_MESSAGES/twister.mo
 share/locale/is/charset
 share/locale/is/entry.desktop
 share/locale/is/flag.png
-@dirrm share/locale/is/LC_MESSAGES
-@dirrm share/locale/is
