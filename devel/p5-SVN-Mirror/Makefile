@@ -7,6 +7,7 @@
 
 PORTNAME=	SVN-Mirror
 PORTVERSION=	0.41
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLKAO
@@ -15,13 +16,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	rafan@infor.org
 COMMENT=	Mirror remote subversion repository to local
 
-BUILD_DEPENDS=	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/subversion-perl \
+		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
 		${SITE_PERL}/${PERL_ARCH}/Data/UUID.pm:${PORTSDIR}/devel/p5-Data-UUID \
-    		${SITE_PERL}/VCP.pm:${PORTSDIR}/devel/p5-VCP \
-    		${SITE_PERL}/SVN/Simple/Edit.pm:${PORTSDIR}/devel/p5-SVN-Simple
+		${SITE_PERL}/VCP.pm:${PORTSDIR}/devel/p5-VCP \
+		${SITE_PERL}/SVN/Simple/Edit.pm:${PORTSDIR}/devel/p5-SVN-Simple
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-CONFIGURE_ENV=	PERL_EXTUTILS_AUTOINSTALL=--skipdeps
 PERL_CONFIGURE=	yes
 
 MAN1=		svm.1
