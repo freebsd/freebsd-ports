@@ -1,6 +1,5 @@
 bin/blackbox
 bin/bsetroot
-share/Blackbox/rc
 share/Blackbox/menu
 share/Blackbox/styles/blackmagic
 share/Blackbox/styles/coldsteel
