@@ -3653,6 +3653,7 @@ lcrzo		ports/security/lcrzo
 lcrzoex		ports/security/lcrzoex
 ldapdiff	ports/net/ldapdiff
 ldapsdk		ports/net/ldapsdk
+ldmud		ports/games/ldmud
 le		ports/editors/le
 leafnode	ports/news/leafnode
 leafnode+	ports/news/leafnode+
