@@ -56,6 +56,7 @@ share/gnome/pixmaps/gdict.png
 share/gnome/pixmaps/gnome-character-map.png
 share/gnome/pixmaps/gnome-searchtool.png
 share/gnome/pixmaps/gnome-system-log/logview.xpm
+share/locale/ar/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/az/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/bg/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/ca/LC_MESSAGES/gnome-utils-2.0.mo
