@@ -11,4 +11,6 @@ MASTERDIR=	${.CURDIR}/../../lang/php4
 
 PKGNAMESUFFIX=	-mcve
 
+BROKEN=		"Configure fails"
+
 .include "${MASTERDIR}/Makefile"
