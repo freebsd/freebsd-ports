@@ -8,8 +8,8 @@
 PORTNAME=	swatch
 PORTVERSION=	3.0.4
 CATEGORIES=	security sysutils
-MASTER_SITES=	ftp://ftp.stanford.edu/general/security-tools/swatch/ \
-		http://www.oit.ucsb.edu/~eta/swatch/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	swatch
 
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	The Simple WATCHer and filter
