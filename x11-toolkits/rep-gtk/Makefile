@@ -14,9 +14,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	rep.10:${PORTSDIR}/lang/librep
+LIB_DEPENDS=	rep.11:${PORTSDIR}/lang/librep
 
-PLIST_SUB=	GNUHOST=${ARCH}--freebsd${OSREL}
+PLIST_SUB=	GNUHOST=${ARCH}-pc-freebsd${OSREL:C/\..*//}
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
@@ -25,6 +25,7 @@ WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_TARGET=	${ARCH}-freebsd${OSREL:C/\..*//}
 
 .include <bsd.port.pre.mk>
 
