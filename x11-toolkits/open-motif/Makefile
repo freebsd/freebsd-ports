@@ -21,12 +21,20 @@ PATCH_SITES=	ftp://openmotif.opengroup.org/pub/openmotif/R${PORTVERSION}/fixes/ 
 PATCHFILES=	patch1 patch2 patch3 patch4 patch5
 PATCH_DIST_STRIP=	-p1
 
-
 MAINTAINER=	steve@FreeBSD.org
 
-RUN_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
+.include <bsd.port.pre.mk>
 
+#xxx Hack alert!  For some reason USE_IMAKE is not enough to make this happen.
+PREFIX=		${X11BASE}
+
+.if ${XFREE86_VERSION} >= 4
+RUN_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
 MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
+.else
+MTREE_FILE=	/etc/mtree/BSD.x11.dist
+.endif
+
 DIST_SUBDIR=	openmotif
 WRKSRC=		${WRKDIR}/motif
 USE_IMAKE=	yes
@@ -630,7 +638,6 @@ post-patch:
 	@cd ${WRKSRC}/doc/man/man5 && ${PERL} -pi.orig \
 	    -e "s|file formats|5|" *.5
 
-
 pre-configure:
 	-@if [ -d ${WRKSRC}/imports/x11/lib/X11 ]; then \
 		: ; \
@@ -698,4 +705,4 @@ share-examples:
 #			  ${PREFIX}/share/examples/openmotif/demos/
 	@${RM} -rf ${PREFIX}/share/examples/openmotif/demos
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
