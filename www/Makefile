@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.146 1999/08/18 20:40:51 obrien Exp $
+# $Id: Makefile,v 1.147 1999/08/24 09:41:33 jim Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -43,6 +43,7 @@
     SUBDIR += ijb
     SUBDIR += libghttp
     SUBDIR += libwww
+    SUBDIR += libxpg4-ns
     SUBDIR += linbot
     SUBDIR += linemode
     SUBDIR += linux-netscape4

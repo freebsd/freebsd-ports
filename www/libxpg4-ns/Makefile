@@ -8,7 +8,7 @@
 
 DISTNAME=	libxpg4-3.1r
 PKGNAME=	libxpg4-ns-3.1r
-CATEGORIES=	japanese
+CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
 		http://WWW.FreeBSD.ORG/~sada/distfiles/
 
