@@ -1,0 +1,19 @@
+--- src/Makefile.orig	Tue Oct 29 17:20:46 2002
++++ src/Makefile	Wed Jul 23 21:35:39 2003
+@@ -1,10 +1,14 @@
++CC?=		cc
++CFLAGS+=	-g -I. -I%%X11BASE%%/include
++LIBS+=		-L%%X11BASE%%/lib -lX11
++
+ all:	9box
+ 
+ 9box:	grab.o 9box.o manage.o menu.o buttons.o utils.o wm.o
+-	gcc -g -L/usr/X11R6/lib -lX11 -o $@ $^
++	$(CC) $(CFLAGS) $(LIBS) -o $@ $^
+ 
+ %.o:	%.c
+-	gcc -g -c $< -o $@
++	$(CC) $(CFLAGS) -c $< -o $@
+ 
+ clean:	
+ 	rm -f *.o 9box *~
