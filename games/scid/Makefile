@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	scid
-PORTVERSION=	3.4
+PORTVERSION=	3.5
 CATEGORIES=	games databases
-MASTER_SITES=	http://scid.sourceforge.net/download/ \
-		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	volkmann@inode.at
