@@ -1,0 +1,3 @@
+include/iconv.h
+lib/libiconv.so
+lib/libiconv.so.2
