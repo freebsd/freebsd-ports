@@ -3,7 +3,7 @@
 # Date created:        28 October 1997
 # Whom:                Stefan Eßer <se@freebsd.org>
 #
-# $Id: Makefile,v 1.34 1999/05/20 19:08:00 asami Exp $
+# $Id: Makefile,v 1.35 1999/05/27 07:32:29 tg Exp $
 #
 
 DISTNAME=	kdenetwork-1.1.1
@@ -33,4 +33,11 @@ CONFIGURE_ENV=	CXXFLAGS="$(CFLAGS)" \
 USE_GMAKE=	yes
 CFLAGS+=	"-I${PREFIX}/include"
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# ksirc needs egcs
+.if ${OSVERSION} < 400004
+PLIST=	${PKGDIR}/PLIST.noksirc
+.endif
+
+.include <bsd.port.post.mk>
