@@ -3780,6 +3780,7 @@ libtool		ports/devel/libtool
 libtool13	ports/devel/libtool13
 libtre		ports/textproc/libtre
 libudbc		ports/databases/libudbc
+libukcprog	ports/devel/libukcprog
 libungif	ports/graphics/libungif
 libunicode	ports/devel/libunicode
 libunp		ports/net/libunp
