@@ -9,7 +9,7 @@ PORTNAME=	docs
 PORTVERSION=	1.0.10
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/FreeBSD/ \
-		http://planetmirror.com/pub/fpc/dist/FreeBSD/ \
+		ftp://planetmirror.com/pub/fpc/dist/FreeBSD/ \
 		ftp://ftp.jp.freepascal.org/mirror/fpc/dist/FreeBSD/ \
 		ftp://freepascal.stack.nl/pub/fpc/dist/FreeBSD/ \
 		ftp://ftp.no.freepascal.org/pub/fpc/dist/FreeBSD/ \
