@@ -1,55 +1,75 @@
+@comment $FreeBSD$
 bin/dotconf-config
 include/dotconf.h
 include/libpool.h
 lib/libdotconf.a
 lib/libdotconf.so
 lib/libdotconf.so.10
+lib/pkgconfig/dotconf.pc
 lib/libpool.a
 share/aclocal/dotconf.m4
-%%PORTDOCS%%share/doc/dotconf/dotconf-api.txt
-%%PORTDOCS%%share/doc/dotconf/dotconf-features.txt
-%%PORTDOCS%%share/examples/dotconf/README
-%%PORTDOCS%%share/examples/dotconf/caseinsensitive/Makefile
-%%PORTDOCS%%share/examples/dotconf/caseinsensitive/caseinsensitive.c
-%%PORTDOCS%%share/examples/dotconf/caseinsensitive/caseinsensitive.conf
-%%PORTDOCS%%share/examples/dotconf/caseinsensitive/example_caseinsensitive.dsp
-%%PORTDOCS%%share/examples/dotconf/context/Makefile
-%%PORTDOCS%%share/examples/dotconf/context/context.c
-%%PORTDOCS%%share/examples/dotconf/context/context.conf
-%%PORTDOCS%%share/examples/dotconf/context/example_context.dsp
-%%PORTDOCS%%share/examples/dotconf/errorhandler/Makefile
-%%PORTDOCS%%share/examples/dotconf/errorhandler/errorhandler.c
-%%PORTDOCS%%share/examples/dotconf/errorhandler/errorhandler.conf
-%%PORTDOCS%%share/examples/dotconf/errorhandler/example_errorhandler.dsp
-%%PORTDOCS%%share/examples/dotconf/modules/Makefile
-%%PORTDOCS%%share/examples/dotconf/modules/include.conf
-%%PORTDOCS%%share/examples/dotconf/modules/module.c
-%%PORTDOCS%%share/examples/dotconf/modules/my_module.c
-%%PORTDOCS%%share/examples/dotconf/modules/sample.conf
-%%PORTDOCS%%share/examples/dotconf/modules/example_modules.dsp
-%%PORTDOCS%%share/examples/dotconf/simple/Makefile
-%%PORTDOCS%%share/examples/dotconf/simple/included.conf
-%%PORTDOCS%%share/examples/dotconf/simple/linecat.conf
-%%PORTDOCS%%share/examples/dotconf/simple/simple.c
-%%PORTDOCS%%share/examples/dotconf/simple/simple.conf
-%%PORTDOCS%%share/examples/dotconf/simple/example_simple.dsp
-%%PORTDOCS%%share/examples/dotconf/duplicates/Makefile
-%%PORTDOCS%%share/examples/dotconf/duplicates/duplicate.c
-%%PORTDOCS%%share/examples/dotconf/duplicates/first_module.c
-%%PORTDOCS%%share/examples/dotconf/duplicates/sample.conf
-%%PORTDOCS%%share/examples/dotconf/duplicates/second_module.c
-%%PORTDOCS%%share/examples/dotconf/fallback/Makefile
-%%PORTDOCS%%share/examples/dotconf/fallback/fallback.conf
-%%PORTDOCS%%share/examples/dotconf/fallback/fallback.c
-%%PORTDOCS%%share/examples/dotconf/noinline/Makefile
-%%PORTDOCS%%share/examples/dotconf/noinline/noinline.conf
+%%PORTDOCS%%%%DOCSDIR%%/dotconf-api.txt
+%%PORTDOCS%%%%DOCSDIR%%/dotconf-features.txt
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/caseinsensitive/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/caseinsensitive/caseinsensitive.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/caseinsensitive/caseinsensitive.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/caseinsensitive/example_caseinsensitive.dsp
+%%PORTDOCS%%%%EXAMPLESDIR%%/context/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/context/context.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/context/context.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/context/example_context.dsp
+%%PORTDOCS%%%%EXAMPLESDIR%%/errorhandler/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/errorhandler/errorhandler.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/errorhandler/errorhandler.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/errorhandler/example_errorhandler.dsp
+%%PORTDOCS%%%%EXAMPLESDIR%%/modules/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/modules/include.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/modules/module.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/modules/my_module.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/modules/sample.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/modules/example_modules.dsp
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple/included.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple/linecat.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple/simple.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple/simple.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple/example_simple.dsp
+%%PORTDOCS%%%%EXAMPLESDIR%%/duplicates/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/duplicates/duplicate.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/duplicates/first_module.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/duplicates/sample.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/duplicates/second_module.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/fallback/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/fallback/fallback.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/fallback/fallback.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/noinline/Makefile
+%%PORTDOCS%%%%EXAMPLESDIR%%/noinline/noinline.conf
+%%PORTDOCS%%%%EXAMPLESDIR%%/caseinsensitive/output
+%%PORTDOCS%%%%EXAMPLESDIR%%/caseinsensitive/testoutput
+%%PORTDOCS%%%%EXAMPLESDIR%%/context/output
+%%PORTDOCS%%%%EXAMPLESDIR%%/context/testoutput
+%%PORTDOCS%%%%EXAMPLESDIR%%/errorhandler/output
+%%PORTDOCS%%%%EXAMPLESDIR%%/errorhandler/testoutput
+%%PORTDOCS%%%%EXAMPLESDIR%%/modules/output
+%%PORTDOCS%%%%EXAMPLESDIR%%/modules/testoutput
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple/output
+%%PORTDOCS%%%%EXAMPLESDIR%%/simple/testoutput
+%%PORTDOCS%%%%EXAMPLESDIR%%/duplicates/output
+%%PORTDOCS%%%%EXAMPLESDIR%%/duplicates/testoutput
+%%PORTDOCS%%%%EXAMPLESDIR%%/fallback/output
+%%PORTDOCS%%%%EXAMPLESDIR%%/fallback/testoutput
+%%PORTDOCS%%%%EXAMPLESDIR%%/noinline/noinline.c
+%%PORTDOCS%%%%EXAMPLESDIR%%/noinline/output
+%%PORTDOCS%%%%EXAMPLESDIR%%/noinline/testoutput
+%%PORTDOCS%%%%EXAMPLESDIR%%/maketest.sh
 %%PORTDOCS%%@dirrm share/doc/dotconf
-%%PORTDOCS%%@dirrm share/examples/dotconf/context
-%%PORTDOCS%%@dirrm share/examples/dotconf/errorhandler
-%%PORTDOCS%%@dirrm share/examples/dotconf/noinline
-%%PORTDOCS%%@dirrm share/examples/dotconf/fallback
-%%PORTDOCS%%@dirrm share/examples/dotconf/modules
-%%PORTDOCS%%@dirrm share/examples/dotconf/simple
-%%PORTDOCS%%@dirrm share/examples/dotconf/duplicates
-%%PORTDOCS%%@dirrm share/examples/dotconf/caseinsensitive
-%%PORTDOCS%%@dirrm share/examples/dotconf
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/context
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/errorhandler
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/noinline
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/fallback
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/modules
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/simple
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/duplicates
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/caseinsensitive
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
