@@ -1,9 +1,8 @@
-bin/cnet.so.1
+bin/cnet
 man/man1/cnet.1.gz
 include/cnet.h
 share/examples/cnet/AUSTRALIA.MAP
 share/examples/cnet/CLICK
-share/examples/cnet/EXAMPLES
 share/examples/cnet/FAST
 share/examples/cnet/FLOODING1
 share/examples/cnet/FLOODING2
