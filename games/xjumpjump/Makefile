@@ -3,12 +3,12 @@
 # Date created:				9 April 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/04/24 01:54:53 mph Exp $
 #
 
 DISTNAME=	xjumpjump
 PKGNAME=	xjumpjump-0.12
-CATEGORIES=	games x11
+CATEGORIES=	games
 MASTER_SITES=	http://makosteszta.sote.hu/linux/jumpjump/
 EXTRACT_SUFX=	.tgz
 

@@ -3,11 +3,11 @@
 # Date created:				9 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/03/13 09:32:01 tg Exp $
 #
 
 DISTNAME=	xquarto-1.0
-CATEGORIES=	games x11
+CATEGORIES=	games
 MASTER_SITES=	http://www.math.kth.se/~mjo/games/xquarto/
 
 MAINTAINER=	andy@icc.surw.chel.su

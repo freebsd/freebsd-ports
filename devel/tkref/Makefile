@@ -3,11 +3,11 @@
 # Date created:         3 August 1997
 # Whom:                 Bruce Gingery <bgingery@gtcs.com>
 #
-# $Id: Makefile,v 1.5 1998/03/20 14:35:21 tg Exp $
+# $Id: Makefile,v 1.6 1998/06/27 05:18:53 asami Exp $
 #
 
 DISTNAME=	tkref-1.01
-CATEGORIES=	devel x11 tk80
+CATEGORIES=	devel tk80
 MASTER_SITES=	http://gtcs.com/softdist/ \
 		${MASTER_SITE_LOCAL}
 

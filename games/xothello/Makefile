@@ -3,12 +3,12 @@
 # Date created:				31 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/04/24 02:08:53 mph Exp $
 #
 
 DISTNAME=	xothello
 PKGNAME=	xothello-0.01
-CATEGORIES=	games x11
+CATEGORIES=	games
 MASTER_SITES=	http://makosteszta.sote.hu/linux/othello/
 EXTRACT_SUFX=	.tgz
 

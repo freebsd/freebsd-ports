@@ -3,11 +3,11 @@
 # Date created:		17 January 1997
 # Whom:			FURUSAWA,Kazuhisa <furusawa@com.cs.osakafu-u.ac.jp>
 #
-# $Id: Makefile,v 1.4 1997/02/19 04:22:01 asami Exp $
+# $Id: Makefile,v 1.5 1998/02/07 09:18:23 andreas Exp $
 #
 
 PKGNAME=	xengine-1.0.1
-CATEGORIES=	benchmarks x11
+CATEGORIES=	benchmarks
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/comp.sources.x/volume09/xengine/
 DISTFILES=	part01.z patch1.z
 

@@ -3,11 +3,11 @@
 # Date created:				17 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/07/14 01:15:14 dburr Exp $
+# $Id: Makefile,v 1.2 1998/07/20 16:34:57 asami Exp $
 #
 
 DISTNAME=	battalion-1.4
-CATEGORIES=	games x11
+CATEGORIES=	games
 MASTER_SITES=	http://www.evl.uic.edu/aej/
 DISTFILES=	battalionSource1.4.tar.Z battalionSUN4.tar.gz
 

@@ -3,12 +3,12 @@
 # Date created:				2 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/05/03 23:27:36 mph Exp $
 #
 
 DISTNAME=		3Dc-0.8.1
 PKGNAME=		3dc-0.8.1
-CATEGORIES=		games x11
+CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
 

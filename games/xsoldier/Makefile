@@ -3,11 +3,11 @@
 # Date created:		22 January 1997
 # Whom:			Yukihiro Nakai <Nakai@Mlab.t.u-tokyo.ac.jp>
 #
-# $Id: Makefile,v 1.3 1997/06/10 16:11:12 andreas Exp $
+# $Id: Makefile,v 1.4 1998/02/13 18:38:09 vanilla Exp $
 #
 
 DISTNAME=	xsoldier-0.96
-CATEGORIES=	games x11
+CATEGORIES=	games
 MASTER_SITES=	http://www.surfline.ne.jp/hachi/xsoldier/
 
 MAINTAINER=	Nakai@Mlab.t.u-tokyo.ac.jp

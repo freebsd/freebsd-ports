@@ -3,12 +3,12 @@
 # Date created:				20 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/03/28 15:22:36 steve Exp $
 #
 
 DISTNAME=	icbm3d.0.3
 PKGNAME=	icbm3d-0.3
-CATEGORIES=	games x11
+CATEGORIES=	games
 MASTER_SITES=	http://zippy.sonoma.edu/kendrick/nbs/unix/x/icbm3d/
 
 MAINTAINER=	andy@icc.surw.chel.su

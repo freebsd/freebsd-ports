@@ -4,11 +4,11 @@
 #
 # Whom:	Daniel Eischen <deischen@iworks.InterWorks.org>
 #
-# $Id: Makefile,v 1.9 1998/01/16 21:09:22 jfieber Exp $
+# $Id: Makefile,v 1.10 1998/03/28 14:36:34 steve Exp $
 #
 
 DISTNAME=	nedit-5.0.2
-CATEGORIES=	editors x11
+CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.fnal.gov/KITS/pub/nedit/v5_0_2/ \
 		ftp://ftp.fnal.gov/KITS/pub/nedit/v5_0_2/contrib/
 DISTFILES=	nedit_source.tar.gz nedit.app-defaults

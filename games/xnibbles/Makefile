@@ -3,12 +3,12 @@
 # Date created:				2 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/03/15 20:38:35 steve Exp $
+# $Id: Makefile,v 1.2 1998/03/16 03:19:02 hoek Exp $
 #
 
 DISTNAME=	xnibbles-1.0BETA3
 PKGNAME=	xnibbles-1.0b3
-CATEGORIES=	games x11
+CATEGORIES=	games
 MASTER_SITES=	http://www.tjhsst.edu/xnibbles/
 
 MAINTAINER=	andy@icc.surw.chel.su

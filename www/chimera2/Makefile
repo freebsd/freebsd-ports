@@ -3,11 +3,11 @@
 # Date created:         24 Nov 1997
 # Whom:                 Bruce Gingery <bgingery@gtcs.com>
 #
-# $Id: Makefile,v 1.14 1998/04/15 22:17:51 jseger Exp $
+# $Id: Makefile,v 1.15 1998/05/04 20:22:34 jseger Exp $
 #
 
 DISTNAME=	chimera-2.0a11
-CATEGORIES=	www x11
+CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.cs.unlv.edu/pub/chimera-alpha/
 
 MAINTAINER=	bgingery@gtcs.com

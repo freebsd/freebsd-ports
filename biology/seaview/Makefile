@@ -3,12 +3,12 @@
 # Date created:         Dec 5 1997
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
-# $Id: Makefile,v 1.2 1997/12/26 11:49:39 asami Exp $
+# $Id: Makefile,v 1.3 1998/03/30 23:44:07 asami Exp $
 #
 
 DISTNAME=       seaview
 PKGNAME=        seaview-1.0
-CATEGORIES=     biology x11
+CATEGORIES=     biology
 MASTER_SITES=   ftp://biom3.univ-lyon1.fr/pub/mol_phylogeny/seaview/
 EXTRACT_SUFX=	.tar
 

@@ -3,12 +3,12 @@
 # Date created:		10 February 1998
 # Whom:			FURUSAWA,Kazuhisa <kazu@jp.freebsd.org>
 #
-# $Id: Makefile,v 1.1.1.1 1998/02/15 14:25:38 jseger Exp $
+# $Id: Makefile,v 1.1.1.1 1998/02/15 17:03:36 jseger Exp $
 #
 
 DISTNAME=	xbloody
 PKGNAME=	xbloody-1.00
-CATEGORIES=	games x11
+CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.lab.kdd.co.jp/Usenet/fj.sources/1994/oct/
 
 MAINTAINER=	kazu@jp.freebsd.org

@@ -3,12 +3,12 @@
 # Date Created:		29 May 1997
 # Whom:			Vanilla I. Shu <vanilla@MinJe.com.TW>
 #
-# $Id: Makefile,v 1.6 1998/02/13 15:07:54 vanilla Exp $
+# $Id: Makefile,v 1.8 1998/03/20 14:35:24 tg Exp $
 #
 
 DISTNAME=	vt-1.11
 PKGNAME=	vtcl-1.11
-CATEGORIES=	devel x11 tk80
+CATEGORIES=	devel tk80
 MASTER_SITES=	http://www.neuron.com/stewart/vtcl/dload/ \
 		ftp://ftp.neuron.com/pub/
 

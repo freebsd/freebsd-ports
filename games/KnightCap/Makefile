@@ -3,12 +3,12 @@
 # Date created:				10 May 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/15 12:14:22 tg Exp $
+# $Id: Makefile,v 1.2 1998/07/20 10:13:42 asami Exp $
 #
 
 DISTNAME=	KnightCap-3.5
 PKGNAME=	knightcap-3.5
-CATEGORIES=	games x11
+CATEGORIES=	games
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/KnightCap/
 
 MAINTAINER=	andy@icc.surw.chel.su

@@ -3,11 +3,11 @@
 # Date created:				3 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/03/15 20:32:45 steve Exp $
 #
 
 DISTNAME=		xlaby-2.0.1
-CATEGORIES=		games x11
+CATEGORIES=		games
 MASTER_SITES=		http://www.eleves.ens.fr:8080/home/madore/ \
 			${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy

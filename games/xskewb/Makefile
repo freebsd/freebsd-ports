@@ -3,11 +3,11 @@
 # Date created:				25 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.2 1998/04/02 04:04:41 hoek Exp $
+# $Id: Makefile,v 1.3 1998/05/08 15:06:26 max Exp $
 #
 
 DISTNAME=		xskewb-5.4.4
-CATEGORIES=		games x11
+CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/xpuzzles
 

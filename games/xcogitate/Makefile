@@ -3,11 +3,11 @@
 # Date created:				15 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/27 14:34:05 mph Exp $
+# $Id: Makefile,v 1.2 1998/04/28 03:30:19 mph Exp $
 #
 
 DISTNAME=	xcogitate-1.02
-CATEGORIES=	games x11
+CATEGORIES=	games
 MASTER_SITES=	http://www.freebsd.org/~mph/distfiles/
 
 MAINTAINER=	andy@icc.surw.chel.su

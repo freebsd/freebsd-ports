@@ -3,12 +3,12 @@
 # Date created:		3 October 1994
 # Whom:			Michael Elbel (me)
 #
-# $Id: Makefile,v 1.6 1996/11/17 03:01:16 obrien Exp $
+# $Id: Makefile,v 1.7 1998/04/03 04:20:48 jseger Exp $
 #
 
 DISTNAME=	Seyon-2.14b
 PKGNAME=	seyon-2.14b
-CATEGORIES=	comms x11
+CATEGORIES=	comms
 MASTER_SITES=	ftp://sipb.mit.edu/pub/seyon/
 DISTFILES=	Seyon-2.14b-tar.Z
 

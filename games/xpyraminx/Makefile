@@ -3,11 +3,11 @@
 # Date created:				26 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id: Makefile,v 1.1.1.1 1998/05/20 07:56:07 tg Exp $
+# $Id: Makefile,v 1.2 1998/06/11 02:50:40 mph Exp $
 #
 
 DISTNAME=		xpyraminx-5.4.4
-CATEGORIES=		games x11
+CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	games/xpuzzles
 

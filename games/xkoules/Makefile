@@ -3,12 +3,12 @@
 # Date created:				11 March 1998
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/04/19 21:35:21 mph Exp $
 #
 
 DISTNAME=	koules1.4-src
 PKGNAME=	xkoules-1.4
-CATEGORIES=	games x11
+CATEGORIES=	games
 MASTER_SITES=	http://www.paru.cas.cz/~hubicka/koules/packages/
 
 MAINTAINER=	andy@icc.surw.chel.su
