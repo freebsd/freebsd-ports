@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	ftp-tls
-PORTVERSION=	20020906
+PORTVERSION=	20030520
 CATEGORIES=	ftp security
-MASTER_SITES=	ftp://ftp.runestig.com/pub/ftp-tls/
+MASTER_SITES=	ftp://ftp.zeist.de/pub/distfiles/ \
+		ftp://ftp.runestig.com/pub/ftp-tls/
 
 MAINTAINER=	marius@alchemy.franken.de
 COMMENT=	Ftp client supporting FTP AUTH TLS
 
-USE_AUTOCONF=	YES
 GNU_CONFIGURE=	YES
 
-USE_OPENSSL=	YES
+#USE_OPENSSL=	YES
 
 MAN1=		ftp-tls.1
 
@@ -25,6 +25,11 @@ MAN1=		ftp-tls.1
 .if ${OSVERSION} < 400000
 BROKEN=		"Not supported on systems prior to FreeBSD 4.0 (missing getaddrinfo())"
 .endif
+
+.include "${PORTSDIR}/security/openssl/bsd.openssl.mk"
+
+CONFIGURE_ARGS=		--with-openssl-dir=${OPENSSLBASE}
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ftp ${PREFIX}/bin/ftp-tls
