@@ -22,7 +22,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64 \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Razor/Client.pm:${PORTSDIR}/mail/razor-agents
 
-.if ${PERL_VERSION} != "5.8.0"
+.if !defined(PERL_VERSION) || ${PERL_VERSION} != "5.8.0"
 RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-PodParser
 .endif
 
