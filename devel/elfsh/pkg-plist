@@ -1,0 +1,5 @@
+bin/elfsh
+lib/libelfsh.a
+lib/libelfsh.so
+include/libelfsh-sunos.h
+include/libelfsh.h
