@@ -26,10 +26,4 @@ CONFIGURE_ARGS=	--with-Qt-dir=${X11BASE} CXX="g++ ${PTHREAD_CFLAGS}" \
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
