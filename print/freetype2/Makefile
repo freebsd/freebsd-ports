@@ -22,6 +22,7 @@ MAINTAINER=	jseger@FreeBSD.org
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+MAKE_ENV=	TOP=""
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--disable-nls --enable-static --enable-shared
