@@ -2,6 +2,10 @@ bin/rxsock
 lib/librxsock.a
 lib/librxsock.so
 %%DATADIR%%/davesim.txt
+%%DATADIR%%/tcpcmd.cmd
+%%DATADIR%%/tcpsmd.cmd
 %%DATADIR%%/tcps.txt
+%%DATADIR%%/udpcmd.cmd
+%%DATADIR%%/udpsmd.cmd
 %%DATADIR%%/udps.txt
 @dirrm %%DATADIR%%
