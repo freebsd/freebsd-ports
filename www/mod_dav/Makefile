@@ -35,6 +35,11 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--includedir=${PREFIX}/include/apache \
 		--with-apxs=${APXS}
 
+.if defined(WITHOUT_APACHE_EXPAT)
+CONFIGURE_ARGS+=	--with-expat=${LOCALBASE}
+LIB_DEPENDS+=		expat.5:${PORTSDIR}/textproc/expat2
+.endif
+
 CONFIGURE_ENV=	CFLAGS='${CFLAGS}' \
 		PATH="${PREFIX}/bin:${PREFIX}/sbin:${PATH}"
 
