@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	fox
-PORTVERSION= 	0.99.122
+PORTVERSION=	0.99.135
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.cfdrc.com/pub/FOX/ \
-		ftp://imssun1.epfl.ch/pub/sources/ \
 		ftp://SunSITE.Informatik.RWTH-Aachen.DE/pub/Linux/fox/
 
 MAINTAINER=	ports@FreeBSD.org

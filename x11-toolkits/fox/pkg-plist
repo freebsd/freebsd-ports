@@ -9,6 +9,7 @@ include/fox/FXBMPImage.h
 include/fox/FXBitmap.h
 include/fox/FXButton.h
 include/fox/FXCanvas.h
+include/fox/FXCharset.h
 include/fox/FXCheckButton.h
 include/fox/FXColorDialog.h
 include/fox/FXColorSelector.h
@@ -30,7 +31,9 @@ include/fox/FXDial.h
 include/fox/FXDialogBox.h
 include/fox/FXDict.h
 include/fox/FXDirBox.h
+include/fox/FXDirDialog.h
 include/fox/FXDirList.h
+include/fox/FXDirSelector.h
 include/fox/FXDocument.h
 include/fox/FXDragCorner.h
 include/fox/FXDrawable.h
@@ -44,10 +47,12 @@ include/fox/FXFont.h
 include/fox/FXFontDialog.h
 include/fox/FXFontSelector.h
 include/fox/FXFrame.h
+include/fox/FXGIFCursor.h
 include/fox/FXGIFIcon.h
 include/fox/FXGIFImage.h
 include/fox/FXGLCanvas.h
 include/fox/FXGLCone.h
+include/fox/FXGLContext.h
 include/fox/FXGLCube.h
 include/fox/FXGLCylinder.h
 include/fox/FXGLObject.h
@@ -75,7 +80,6 @@ include/fox/FXMDIChild.h
 include/fox/FXMDIClient.h
 include/fox/FXMainWindow.h
 include/fox/FXMatrix.h
-include/fox/FXMenuBar.h
 include/fox/FXMenuButton.h
 include/fox/FXMenuCaption.h
 include/fox/FXMenuCascade.h
@@ -83,6 +87,7 @@ include/fox/FXMenuCommand.h
 include/fox/FXMenuPane.h
 include/fox/FXMenuSeparator.h
 include/fox/FXMenuTitle.h
+include/fox/FXMenubar.h
 include/fox/FXMessageBox.h
 include/fox/FXObject.h
 include/fox/FXObjectList.h
@@ -100,10 +105,12 @@ include/fox/FXRange.h
 include/fox/FXRecentFiles.h
 include/fox/FXRegion.h
 include/fox/FXRegistry.h
+include/fox/FXReplaceDialog.h
 include/fox/FXRootWindow.h
 include/fox/FXScrollArea.h
 include/fox/FXScrollWindow.h
 include/fox/FXScrollbar.h
+include/fox/FXSearchDialog.h
 include/fox/FXSeparator.h
 include/fox/FXShell.h
 include/fox/FXShutter.h
@@ -121,12 +128,14 @@ include/fox/FXText.h
 include/fox/FXTextField.h
 include/fox/FXToggleButton.h
 include/fox/FXToolbar.h
+include/fox/FXToolbarGrip.h
 include/fox/FXToolbarShell.h
 include/fox/FXToolbarTab.h
 include/fox/FXTooltip.h
 include/fox/FXTopWindow.h
 include/fox/FXTreeList.h
 include/fox/FXTreeListBox.h
+include/fox/FXURL.h
 include/fox/FXUndoList.h
 include/fox/FXVec.h
 include/fox/FXVerticalFrame.h
@@ -137,7 +146,6 @@ include/fox/FXXPMImage.h
 include/fox/fx.h
 include/fox/fx3d.h
 include/fox/fxdefs.h
-include/fox/fxicl.h
 include/fox/fxkeys.h
 include/fox/fxregex.h
 include/fox/fxver.h
@@ -145,9 +153,13 @@ include/fox/xincs.h
 lib/libFOX.a
 lib/libFOX.so
 lib/libFOX.so.%%LIBVER%%
+share/fox/html/app.html
 share/fox/html/bigpenguin.png
 share/fox/html/cfdrc.png
 share/fox/html/cfdrclogo.png
+share/fox/html/datatarget.html
+share/fox/html/dlgedit1.gif
+share/fox/html/dlgedit2.gif
 share/fox/html/draganddrop.html
 share/fox/html/faq.html
 share/fox/html/focus.html
@@ -176,6 +188,7 @@ share/fox/html/sgitextedit.png
 share/fox/html/tb-paste.png
 share/fox/html/textedit.png
 share/fox/html/textedit2.png
+share/fox/html/timers.html
 share/fox/html/widgets.html
 share/fox/html/win32-libraries.png
 share/fox/html/win32-linkoutput.png
