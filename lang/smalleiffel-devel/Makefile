@@ -15,6 +15,8 @@ MAINTAINER=	berend@pobox.com
 
 WRKSRC=		${WRKDIR}/SmallEiffel
 
+NO_LATEST_LINK=	yes
+
 # SmallEiffel needs this to find system.se
 MAKE_ENV+=	SmallEiffel=${WRKSRC}/sys/system.se
 ALL_TARGET=
