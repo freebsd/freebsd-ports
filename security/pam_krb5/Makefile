@@ -6,18 +6,30 @@
 #
 
 PORTNAME=		pam_krb5
-PORTVERSION=		1.0.3
+PORTVERSION=		1.3.r7
 CATEGORIES=		security
-MASTER_SITES=		http://www.komquats.com/distfiles/
+MASTER_SITES=		http://unc.dl.sourceforge.net/sourceforge/pam-krb5/ \
+			http://umn.dl.sourceforge.net/sourceforge/pam-krb5/ \
+			http://twtelecom.dl.sourceforge.net/sourceforge/pam-krb5/ \
+			http://aleron.dl.sourceforge.net/sourceforge/pam-krb5/ \
+			http://easynews.dl.sourceforge.net/sourceforge/pam-krb5/ \
+			http://switch.dl.sourceforge.net/sourceforge/pam-krb5/ \
+			http://cesnet.dl.sourceforge.net/sourceforge/pam-krb5/ \
+			http://flow.dl.sourceforge.net/sourceforge/pam-krb5/ \
+			http://easynews.dl.sourceforge.net/sourceforge/pam-krb5/ \
+			http://keihanna.dl.sourceforge.net/sourceforge/pam-krb5/ \
+			http://heanet.dl.sourceforge.net/sourceforge/pam-krb5/ \
+			http://www.komquats.com/distfiles/
+DISTNAME=		${PORTNAME}-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=	A Pluggable Authentication Module for Kerberos 5
 
 MAN8=			pam_krb5.8
 
-USE_BZIP2=		yes
 USE_PERL5=		yes
 GNU_CONFIGURE=		yes
+USE_GMAKE=		yes
 
 .if defined(PACKAGE_BUILDING)
 KRB5_IMPL=		mit
@@ -37,21 +49,24 @@ KRB5_DIR?=		${KRB5_HOME}
 BROKEN=			You must define KRB5_IMPL to be \"mit\" or \"heimdal\"
 .endif
 
-.if defined(PREFIX)
-MANDIR=			${PREFIX}/man
-.else
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 500000
+BROKEN=			FreeBSD 5.x already ships with its own version of pam_krb5
+.endif
+MANDIR=			${MANPREFIX}/man
 PREFIX=			${DESTDIR}/usr
 MANPREFIX=		${DESTDIR}/usr/share
 MANDIR=			${PREFIX}/share/man
-.endif
 KRB5_DIR?=		${LOCALBASE}
 CONFIGURE_ENV=		CFLAGS="${CFLAGS}"
 CONFIGURE_ARGS=		--with-krb5="${KRB5_DIR}"	\
 			--with-pamdir="${PREFIX}/lib"	\
 			--with-man-sect=8		\
-			--mandir=${MANDIR}
+			--mandir=${MANDIR}		\
+			--without-krbafs
 
 post-install:
-	cd ${WRKSRC} && ${MAKE} install-man
+	cd ${WRKSRC} && ${GMAKE} install-man
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

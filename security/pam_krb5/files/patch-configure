@@ -1,0 +1,11 @@
+--- configure.orig	Mon Mar 17 09:31:46 2003
++++ configure	Wed Jan 21 15:26:38 2004
+@@ -11043,7 +11043,7 @@
+ # Check whether --with-krbafs or --without-krbafs was given.
+ if test "${with_krbafs+set}" = set; then
+   withval="$with_krbafs"
+-  if test x$withval != xyes ; then
++  if test x$withval != xyes -a x$withval != xno; then
+ 	    KRBAFS=$withval
+ 	    CPPFLAGS="-I$withval/include $CPPFLAGS"
+ 	    CFLAGS="-I$withval/include $CFLAGS"
