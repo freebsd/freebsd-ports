@@ -27,7 +27,7 @@ PATCHDIR=	${CYRUS_SASL2_DIR}/files
 INSTALL_WRKSRC=	${WRKDIR}/${DISTNAME}/saslauthd
 DOCSDIR=	${PREFIX}/share/doc/cyrus-sasl2
 
-USE_RC_SUBR=	YES
+USE_RC_SUBR=	saslauthd.sh
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	YES
@@ -124,9 +124,7 @@ PLIST_SUB=	PREFIX=${PREFIX} \
 		DOCSDIR=${DOCSDIR:S/^${PREFIX}\///} \
 		RUNPATH=${RUNPATH}
 
-RC_SCRIPTS_SUB=	PREFIX=${PREFIX} \
-		RC_SUBR=${RC_SUBR} \
-		SASLAUTHD_RUNPATH=${SASLAUTHD_RUNPATH}
+SUB_LIST+=	SASLAUTHD_RUNPATH=${SASLAUTHD_RUNPATH}
 
 do-build:
 	@${RM} -f ${WRKSRC}/saslauthd/saslauthd.8
@@ -142,9 +140,6 @@ post-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/saslauthd/testsaslauthd \
 		${PREFIX}/sbin/testsaslauthd
 	${GZIP_CMD} ${MAN8PREFIX}/man/cat8/saslauthd.8
-	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/saslauthd.sh > ${PREFIX}/etc/rc.d/saslauthd.sh
-	@${CHMOD} 755 ${PREFIX}/etc/rc.d/saslauthd.sh
 .if ${SASLAUTHD_RUNPATH} != /var/state/saslauthd
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "SASLAUTHD_RUNPATH was specified."

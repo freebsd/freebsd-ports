@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/security/cyrus-sasl2-saslauthd/files/Attic/saslauthd.sh,v 1.6 2004-06-11 15:49:48 ume Exp $
+# $FreeBSD$
 #
 
 # PROVIDE: saslauthd
