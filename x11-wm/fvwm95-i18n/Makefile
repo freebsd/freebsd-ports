@@ -3,13 +3,13 @@
 # Date created:		Sa   1 Feb 1997 14:46:05 MET
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.14 1997/10/13 20:36:22 andreas Exp $
+# $Id: Makefile,v 1.15 1997/12/04 02:21:59 vanilla Exp $
 #
 
 DISTNAME=	fvwm95-2.0.43a-Autoconf
 PKGNAME=	fvwm95-2.0.43a
 CATEGORIES=	x11
-MASTER_SITES=	ftp://mitac11.uia.ac.be/pub/fvwm95
+MASTER_SITES=	ftp://mitac11.uia.ac.be/pub/fvwm95/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	andreas@FreeBSD.ORG
