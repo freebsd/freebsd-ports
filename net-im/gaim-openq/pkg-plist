@@ -533,6 +533,7 @@ share/gnome/doc/%%PATH_SUB%%/NEWS
 share/gnome/doc/%%PATH_SUB%%/README
 share/gnome/doc/%%PATH_SUB%%/TODO
 share/locale/zh_CN/LC_MESSAGES/OpenQ.mo
-@dirrm share/gnome/gaim
 @dirrm share/gnome/pixmaps/gaim/smileys/2003iii
 @dirrm share/gnome/doc/%%PATH_SUB%%
+@unexec rmdir %D/share/gnome/doc 2> /dev/null || true
+@unexec rmdir %D/share/gnome/gaim 2> /dev/null || true

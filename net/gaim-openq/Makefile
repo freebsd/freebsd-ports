@@ -20,8 +20,6 @@ COMMENT=	A QQ-liked protocol plugin for Gaim
 BUILD_DEPENDS=	${X11BASE}/include/gaim/config.h:${PORTSDIR}/net/gaim
 RUN_DEPENDS=	gaim:${PORTSDIR}/net/gaim
 
-BROKEN=		Incomplete pkg-plist
-
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gtk20
