@@ -23,7 +23,7 @@ NO_BUILD=	yes
 NO_CDROM=	"See the license"
 TARGET_DIR=	${PREFIX}/share/java/${PKGNAME}
 PLIST_SUB+=	T=${TARGET_DIR:S/^${PREFIX}\///}
-DOWNLOAD_URL=	"http://java.sun.com/products/javabeans/glasgow/jaf.html"
+DOWNLOAD_URL=	http://javashoplm.sun.com/ECom/docs/Welcome.jsp?StoreId=22\&PartDetailId=7017-jaf-1.0.2-oth-JPR\&SiteId=JSC\&TransactionId=noreg
 
 .include <bsd.port.pre.mk>
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
