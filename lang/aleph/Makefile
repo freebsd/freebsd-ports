@@ -7,13 +7,13 @@
 #
 
 PORTNAME=	aleph
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.aleph-lang.org/pub/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION:S,.,-,g}
 DISTNAME=	${PORTNAME}-src-${PORTVERSION:S,.,-,g}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Aleph is a multi-threaded functional programming language
 
 USE_GMAKE=	yes
