@@ -41,13 +41,9 @@ avail		CVSROOT avail
 commit_prep	CVSROOT commit_prep.pl
 commitcheck	CVSROOT commitcheck
 commitinfo	CVSROOT commitinfo
-cvs2p4		ports/devel/cvs2p4
 cvs_acls	CVSROOT cvs_acls.pl
-cvsbook		ports/devel/cvsbook
-cvsd		ports/devel/cvsd
 cvsedit		CVSROOT cvsedit
 cvswrappers	CVSROOT cvswrappers
-edith		ports/editors/edith
 editinfo	CVSROOT editinfo
 log_accum	CVSROOT log_accum.pl
 loginfo		CVSROOT loginfo
@@ -1009,6 +1005,9 @@ cutils		ports/devel/cutils
 cvs		src/gnu/usr.bin/cvs
 cvs2cl		ports/devel/cvs2cl
 cvs2html	ports/devel/cvs2html
+cvs2p4		ports/devel/cvs2p4
+cvsbook		ports/devel/cvsbook
+cvsd		ports/devel/cvsd
 cvsgraph	ports/devel/cvsgraph
 cvslines	ports/devel/cvslines
 cvsmail		ports/mail/cvsmail
@@ -1303,6 +1302,7 @@ ecu		ports/comms/ecu
 ed		src/bin/ed
 edb		ports/databases/edb
 eddie		ports/www/eddie
+edith		ports/editors/edith
 editss		ports/games/editss
 edonkey-core	ports/net/edonkey-core
 edonkey-gui-gtk	ports/net/edonkey-gui-gtk
