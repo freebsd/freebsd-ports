@@ -1345,3 +1345,4 @@ graphics/digikamplugins|graphics/kipi-plugins|2004-12-01|merged into kipi-plugin
 mail/milter-sender||2004-12-02|removed on author's request
 editors/AbiWord2|editors/abiword|2004-12-04|renamed to abiword
 multimedia/avidemux||2004-12-09|no longer maintained by the author
+devel/arch|devel/tla|2004-12-09|removed obsolete version of arch
