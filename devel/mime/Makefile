@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 CATEGORIES=	devel
 MASTER_SITES=	http://resnet.uoregon.edu/~gurney_j/jmpc/dist/
 
-MAINTAINER=	jmg@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library to parse mime data
 
 GNU_CONFIGURE=	yes

@@ -10,7 +10,7 @@ PORTVERSION=	1.0.4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.lip6.fr/pub/networking/
 
-MAINTAINER=	jseger@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A point-to-point bandwith measurement tool
 
 MAN8= 		bing.8
