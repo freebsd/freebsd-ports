@@ -1,0 +1,10 @@
+@unexec %D/bin/ttfm.sh --remove xttfm %D/share/fonts/TrueType/ukai.ttf || true
+@unexec %D/bin/ttfm.sh --remove xttfm %D/share/fonts/TrueType/uming.ttf || true
+share/fonts/TrueType/ukai.ttf
+share/fonts/TrueType/uming.ttf
+@exec %D/bin/ttfm.sh --add xttfm %D/share/fonts/TrueType/ukai.ttf || true
+@exec %D/bin/ttfm.sh --add xttfm %D/share/fonts/TrueType/uming.ttf || true
+@unexec %%X11BASE%%/bin/fc-cache -f -v %%X11BASE%%/lib/X11/fonts/TrueType || true
+@exec %%X11BASE%%/bin/fc-cache -f -v %%X11BASE%%/lib/X11/fonts/TrueType || true
+@unexec rmdir %D/share/fonts/TrueType 2>/dev/null || true
+@unexec rmdir %D/share/fonts 2>/dev/null || true
