@@ -28,10 +28,16 @@ MAKE_ARGS=	JAVAHOME=${JAVA_HOME} OCAMLHOME=${LOCALBASE}/lib/ocaml OCAMLBIN=${LOC
 
 PLIST_SUB=	GALAX=Galax-${PORTVERSION}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 pre-patch:
 	${CP} ${WRKSRC}/config/Makefile.unix ${WRKSRC}/config/Makefile
 
 post-install:
 	@${SED} 's,PREFIX,${PREFIX},; s,GALAX,Galax-${PORTVERSION},' ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

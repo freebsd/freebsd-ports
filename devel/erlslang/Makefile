@@ -30,6 +30,12 @@ USE_AUTOCONF=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_WRKSRC=${WRKSRC}/config
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
 post-build:
 	@${RM} -r ${WRKSRC}/*/CVS
 	@${RM} -r ${WRKSRC}/*/.cvsignore
@@ -46,4 +52,4 @@ do-install:
 	@${CP} -r ${WRKSRC}/src   ${PREFIX}/lib/erlang/lib/${DISTNAME}/src
 	@${LN} -sf ${DISTNAME} ${PREFIX}/lib/erlang/lib/slang
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
