@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wmctrl
-PORTVERSION=	1.05
-PORTREVISION=	1
+PORTVERSION=	1.07
 CATEGORIES=	x11
 MASTER_SITES=	http://sweb.cz/tripie/utils/wmctrl/dist/
 
@@ -19,5 +18,7 @@ USE_X_PREFIX=	yes
 USE_GNOME=	glib20
 
 PLIST_FILES=	bin/wmctrl
+
+MAN1=		wmctrl.1
 
 .include <bsd.port.mk>
