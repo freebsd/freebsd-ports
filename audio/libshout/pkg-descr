@@ -1,0 +1,10 @@
+A port of the libshout library. Libshout allows applications to easily
+communicate and broadcast to an Icecast streaming media server. It handles the
+socket connections, metadata communication, and data streaming for the calling 
+application, and lets developers focus on feature sets instead of
+implementation details.
+
+WWW: http://developer.icecast.org/libshout/
+
+- Zach
+zach@pabst.bendnet.com
