@@ -210,6 +210,7 @@
     SUBDIR += tora
     SUBDIR += typhoon
     SUBDIR += unixODBC
+    SUBDIR += usogres
     SUBDIR += xmbase-grok
     SUBDIR += xmysql
     SUBDIR += xmysqladmin

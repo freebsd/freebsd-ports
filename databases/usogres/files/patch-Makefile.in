@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Wed Aug 20 20:13:13 2003
++++ Makefile.in	Wed Aug 20 20:13:24 2003
+@@ -64,7 +64,7 @@
+ VERSION = @VERSION@
+ 
+ SUBDIRS = src
+-sysconf_DATA = usogresrc
++sysconf_DATA = usogresrc.sample
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = config.h
