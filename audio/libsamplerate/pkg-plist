@@ -11,6 +11,7 @@ libdata/pkgconfig/samplerate.pc
 %%PORTDOCS%%%%DOCSDIR%%/api_misc.html
 %%PORTDOCS%%%%DOCSDIR%%/api_simple.html
 %%PORTDOCS%%%%DOCSDIR%%/download.html
+%%PORTDOCS%%%%DOCSDIR%%/faq.html
 %%PORTDOCS%%%%DOCSDIR%%/history.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/license.html
