@@ -4,7 +4,5 @@
 # $FreeBSD$
 
 install: 
-	${BSD_INSTALL_SCRIPT} iSilo386 ${PREFIX}/bin
-	/usr/bin/brandelf -t Linux ${PREFIX}/bin/iSilo386
-	@${BSD_INSTALL_MAN} iSilo386.1 ${PREFIX}/man/man1
-
+	${BSD_INSTALL_PROGRAM} iSiloBSD ${PREFIX}/bin
+	@${BSD_INSTALL_MAN} iSiloBSD.1 ${PREFIX}/man/man1
