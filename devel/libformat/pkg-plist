@@ -1,0 +1,5 @@
+include/Format.hh
+lib/libFormat.a
+lib/libFormat.la
+lib/libFormat.so
+lib/libFormat.so.0
