@@ -18,7 +18,7 @@ MASTER_SITES=	ftp://ftp.ccil.org/pub/esr/fetchmail/
 MAINTAINER=	ve@sci.fi
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --enable-OPIE --enable-RPA --enable-POP2
+CONFIGURE_ARGS= --enable-OPIE --enable-RPA --enable-POP2 --enable-SDPS
 CONFIGURE_ENV=  LDFLAGS="${CFLAGS}"
 MAN1=		fetchmail.1
 MLINKS=		fetchmail.1 fetchmailconf.1
