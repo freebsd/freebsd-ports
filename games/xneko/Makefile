@@ -8,7 +8,7 @@
 PORTNAME=	xneko
 PORTVERSION=	4.4
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.cdrom.com/pub/bsd-sources/4.4BSD-Lite/usr/src/games/
+MASTER_SITES=	ftp://ftp.freesoftware.com/pub/4.4BSD-Lite/4.4BSD-Lite/usr/src/games/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	markm@FreeBSD.org

@@ -9,7 +9,7 @@ PORTNAME= 	imake
 PORTVERSION= 	1.0
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/3.3.6/source/ \
-		ftp://xfree86.cdrom.com/pub/XFree86/3.3.6/source/ \
+		ftp://ftp.freesoftware.com/pub/XFree86/3.3.6/source/ \
 		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-3.3.6/source/ \
 		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/3.3.6/source/ \
 		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/3.3.6/source/

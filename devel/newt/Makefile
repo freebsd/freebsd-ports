@@ -9,7 +9,7 @@ PORTNAME=	newt
 PORTVERSION=	0.50.13
 CATEGORIES=	devel
 MASTER_SITES=	\
-	ftp://ftp.cdrom.com/pub/linux/redhat/redhat-6.1/SRPMS/SRPMS/ \
+	ftp://ftp.freesoftware.com/pub/linux/redhat/redhat-6.1/SRPMS/SRPMS/ \
 	ftp://ftp.redhat.com/pub/redhat/redhat-6.1/SRPMS/SRPMS/ \
 	ftp://ftp.infomagic.com/pub/mirrors/linux/RedHat/redhat-6.1/SRPMS/SRPMS/
 DISTNAME=	${PORTNAME}-0.50-13

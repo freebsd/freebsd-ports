@@ -8,7 +8,7 @@
 PORTNAME=	psmisc
 PORTVERSION=	17
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.cdrom.com/pub/linux/slackware-3.6/source/a/procps/ \
+MASTER_SITES=	ftp://ftp.freesoftware.com/pub/linux/slackware/slackware-3.6/source/a/procps/ \
 		ftp://ftp.bitcon.no/pub/linux/slackware/source/a/procps/
 
 MAINTAINER=	rantapaa@uswest.net

@@ -9,7 +9,7 @@ PORTNAME=	clisp
 PORTVERSION=	2000.03.06
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp2.cons.org/pub/lisp/clisp/source/ \
-		ftp://ftp.cdrom.com/pub/lisp/clisp/source/
+		ftp://ftp.freesoftware.com/pub/lisp/clisp/source/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./-/g}
 
 MAINTAINER=	jabrown@caida.org

@@ -9,7 +9,7 @@
 PORTNAME=	aub
 PORTVERSION=	2.0.5
 CATEGORIES=	news
-MASTER_SITES=	ftp://ftp.cdrom.com/pub/perl/CPAN/scripts/news/nntpstuff/aub/ \
+MASTER_SITES=	ftp://ftp.freesoftware.com/pub/perl/CPAN/scripts/news/nntpstuff/aub/ \
 		ftp://ftp.digital.com/pub/plan/perl/CPAN/scripts/news/nntpstuff/aub/ \
 		ftp://ftp.perl.org/pub/CPAN/scripts/news/nntpstuff/aub/
 DISTFILES=	aub aub.1 BUG_FIXES

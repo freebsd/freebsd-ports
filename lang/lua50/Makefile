@@ -10,7 +10,7 @@ PORTVERSION=	3.2.2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.tecgraf.puc-rio.br/pub/lua/ \
 		ftp://csg.uwaterloo.ca/pub/lhf/lua/ \
-		ftp://ftp.cdrom.com/pub/languages/lua/ \
+		ftp://ftp.freesoftware.com/pub/languages/lua/ \
 		ftp://ftp.ntua.gr/pub/lang/lua/ \
 		ftp://ftp.uni-trier.de/pub/languages/lua/ \
 		ftp://ftp.gwdg.de/pub/languages/lua/

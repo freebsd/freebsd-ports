@@ -8,7 +8,7 @@
 PORTNAME=	xasteroids
 PORTVERSION=	5.0
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.cdrom.com/pub/X11/R5contrib/ \
+MASTER_SITES=	ftp://ftp.freesoftware.com/pub/X11/R5contrib/ \
 		ftp://ftp.belgium.eu.net/pub/X11/R5contrib/
 DISTFILES=       xasteroids.sh.Z
 
