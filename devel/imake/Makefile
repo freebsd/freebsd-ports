@@ -18,6 +18,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	max@FreeBSD.org
 
+MANUAL_PACKAGE_BUILD=	installs/removes files also in the XFree86 port
+
 PREFIX=		${X11BASE}
 DIST_SUBDIR=	xc
 WRKSRC=		${WRKDIR}/xc/config
