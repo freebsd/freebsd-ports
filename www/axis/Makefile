@@ -11,7 +11,7 @@
 
 PORTNAME=		axis
 PORTVERSION=		1.1
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		www java
 MASTER_SITES=		http://ws.apache.org/axis/dist/1_1/
 DISTNAME=		axis-${PORTVERSION:S,.,_,g}
@@ -59,14 +59,24 @@ SYSTEM_JARS=	jaxrpc.jar saaj.jar
 PLIST_SUB=	PREFIX=${PREFIX} WEBAPPS=${WEBAPPDIR} JRE_HOME="${JAVA_HOME}/jre" \
 		LIB_SUBDIR=${LIB_SUBDIR} USER=${USER} GROUP=${GROUP}
 
+.if !defined(NOPORTDOCS)
+SAMPLECLASSES=''
+.else
+SAMPLECLASSES=classes
+.endif
+
 do-install:
 	${MKDIR} ${JAR_INSTALL_DEST_DIR}
 .for i in ${SYSTEM_JARS}
 	${INSTALL_DATA} ${WRKSRC}/lib/${i} ${JAR_INSTALL_DEST_DIR}
 .endfor
-	(cd ${WRKSRC}/webapps ; tar cf - axis) | (cd ${WEBAPPDIR} ; tar xvf -)
+	(cd ${WRKSRC}/webapps ; tar cf - --exclude "${SAMPLECLASSES}" axis) | (cd ${WEBAPPDIR} ; tar xvf -)
 	${CHOWN} -R ${USER}:${GROUP} ${WEBAPPDIR}/axis
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/axis
 	(cd ${WRKSRC}/docs ; tar cf - *) | (cd ${PREFIX}/share/doc/axis ; tar xvf -)
+	${MKDIR} ${PREFIX}/share/examples/axis
+	(cd ${WRKSRC}/samples ; tar cf - --exclude '*.class' *) | (cd ${PREFIX}/share/examples/axis ; tar xvf -)
+.endif
 
 .include <bsd.port.post.mk>
