@@ -182,6 +182,7 @@
     SUBDIR += p5-libwww
     SUBDIR += peacock
     SUBDIR += plugger
+    SUBDIR += pruby
     SUBDIR += publicfile
     SUBDIR += py-HTMLgen
     SUBDIR += qdecoder
