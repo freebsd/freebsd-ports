@@ -15,10 +15,10 @@ DISTNAME=	ScientificPython-${PORTVERSION}
 
 MAINTAINER=	tg@FreeBSD.org
 
-BUILD_DEPENDS=	${NUMPYDIR}/Numeric.py:${PORTSDIR}/math/numpy \
+BUILD_DEPENDS=	${NUMPYDIR}/Numeric.py:${PORTSDIR}/math/py-numeric \
 		${PYDISTUTILS}
 LIB_DEPENDS=	netcdf.1:${PORTSDIR}/math/netcdf
-RUN_DEPENDS=	${NUMPYDIR}/Numeric.py:${PORTSDIR}/math/numpy
+RUN_DEPENDS=	${NUMPYDIR}/Numeric.py:${PORTSDIR}/math/py-numeric
 
 USE_PYTHON=	yes
 
