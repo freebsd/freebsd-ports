@@ -15,7 +15,8 @@ MAINTAINER=	sobomax@FreeBSD.org
 BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
 		${LOCALBASE}/lib/python1.5/site-packages/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
 LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python
+RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
+		${LOCALBASE}/lib/python1.5/site-packages/_gnomemodule.so:${PORTSDIR}/x11-toolkits/py-gnome
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
