@@ -1530,6 +1530,7 @@ disktool	ports/sysutils/disktool
 disktype	ports/sysutils/disktype
 diskusage	ports/sysutils/diskusage
 display		ports/misc/display
+dissembler	ports/security/dissembler
 distcc		ports/devel/distcc
 distel		ports/devel/distel
 distribfold	ports/biology/distribfold
