@@ -13,7 +13,7 @@ MASTER_SITES=	http://gmail.linuxpower.org/
 MAINTAINER=	baskruit@bsltwr.dnsalias.org
 
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client \
-		gmime.5:${PORTSDIR}/mail/gmime
+		gmime.6:${PORTSDIR}/mail/gmime
 
 USE_X_PREFIX=	YES
 USE_GMAKE=	YES
