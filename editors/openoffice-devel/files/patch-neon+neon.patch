@@ -1,10 +1,10 @@
---- ../neon/neon.patch.orig	Tue Oct 29 22:19:50 2002
-+++ ../neon/neon.patch	Tue Oct 29 22:18:00 2002
+--- ../neon/neon.patch.orig	Wed Oct 30 12:37:23 2002
++++ ../neon/neon.patch	Wed Oct 30 12:53:25 2002
 @@ -208,7 +208,7 @@
  ! 
  ! # --- Files --------------------------------------------------------
  ! 
--| CFLAGS+=-I$(SOLARINCDIR)$/external$/expat
+-! CFLAGS+=-I$(SOLARINCDIR)$/external$/expat
 +! CFLAGS+=-I$(SOLARINCDIR)$/expat
  ! 
  ! CDEFS+=-DHAVE_CONFIG_H
