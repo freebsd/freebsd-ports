@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	diskusage
-PORTVERSION=	1.02
+PORTVERSION=	1.03
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.maske.org/pub/FreeBSD/distfiles/
 
