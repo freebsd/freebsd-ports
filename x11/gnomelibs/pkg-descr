@@ -1,4 +1,4 @@
 libraries for GNOME, a GNU desktop environment
 
-For more infomation about the Gnome on FreeBSD,
-please refer to ${PORTSDIR}/x11/gnome/pkg/DESCR.
+For more infomation about Gnome on FreeBSD,
+please refer to ${PORTSDIR}/x11/gnome/pkg-descr
