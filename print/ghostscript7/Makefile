@@ -6,35 +6,47 @@
 #
 
 PORTNAME=	ghostscript
-PORTVERSION=	6.52
-PORTREVISION=	5
+PORTVERSION=	6.53
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_GNU:S/$/:fonts/} \
-		${MASTER_SITE_SOURCEFORGE:S/$/:DEFAULT,gimp_print,hpijs/} \
-		http://members.ozemail.com.au/~geoffk/pdfencrypt/:pdf \
-		http://www.gelhaus.net/hp880c/1.4beta/:gdevcd \
+MASTER_SITES=	${MASTER_SITE_GNU:S/$/:DEFAULT,fonts/} \
+		${MASTER_SITE_SOURCEFORGE:S/$/:DEFAULT,fonts,gprint,hpijs/} \
+		http://www.gelhaus.net/hp880c/1.4beta/:hp8xx \
 		http://home.t-online.de/home/Martin.Lottermoser/pcl3dist/:hpdj_pcl3 \
-		http://www.harsch.net/Download/:gdevdj \
-		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs652/ \
-		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/fonts/:fonts \
-		ftp://gatekeeper.dec.com/pub/GNU/ghostscript/:gatekeeper,DEFAULT,fonts,gimp_print,hpijs
-# gatekeeper is an exception, it is the only GNU site which carries
-# some of the other files, so add it although it is listed inside
-# MASTER_SITE_GNU
-MASTER_SITE_SUBDIR=     ${PORTNAME} gimp-print/:gimp_print hpinkjet/:hpijs
+		http://www.harsch.net/Download/:dj970 \
+		http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/:md2k \
+		${MASTER_SITE_PORTS_JP:S/$/:ports_jp/} \
+		http://www.humblesoft.com/pub/:epag \
+		http://www.epkowa.on.arena.ne.jp/pips/data/gs65_301/:eplaser \
+		http://www.ceres.dti.ne.jp/~owatanab/gdevnpdl/:npdl \
+		http://www.linuxprinting.org/download/printing/:gdi \
+		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/fonts/ \
+		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/gs653/
+MASTER_SITE_SUBDIR=	${PORTNAME} \
+			gimp-print/:gprint \
+			hpinkjet/:hpijs \
+			ghostscript/:ports_jp
 PKGNAMESUFFIX=	-gnu
-DISTFILES=	${GS_SOURCES}:DEFAULT \
+DISTFILES=	${GS_SRCS}:DEFAULT \
 		${GS_FONTS_STD}:fonts \
 		${GS_FONTS_OTHER}:fonts \
-		${DECRYPT_PDF}:pdf \
-		${HP8XX_DRV}:gdevcd \
-		${HPDJ_SRC}:hpdj_pcl3 \
-		${PCL3_SRC}:hpdj_pcl3 \
-		${HP970_DRV}:gdevdj \
-		${GPRINT_SRC}:gimp_print \
-		${HPIJS_SRC}:hpijs
+		${HP8XX_SRCS}:hp8xx \
+		${HPDJ_SRCS}:hpdj_pcl3 \
+		${PCL3_SRCS}:hpdj_pcl3 \
+		${DJ970_SRCS}:dj970 \
+		${GPRINT_SRCS}:gprint \
+		${HPIJS_SRCS}:hpijs \
+		${MD2K_SRCS}:md2k \
+		${ALPS_SRCS}:ports_jp \
+		${BJ10V_SRCS}:ports_jp \
+		${LIPS_SRCS}:ports_jp \
+		${DMPRT_SRCS}:ports_jp \
+		${EPAG_SRCS}:epag \
+		${EPLASER_SRCS}:eplaser \
+		${MJC_SRCS}:ports_jp \
+		${NPDL_SRCS}:npdl \
+		${GDI_SRCS}:gdi
 DIST_SUBDIR=	ghostscript
-EXTRACT_ONLY=	${GS_SOURCES}
+EXTRACT_ONLY=	${GS_SRCS}
 
 MAINTAINER=	ports@FreeBSD.org
 
@@ -43,7 +55,8 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	CC="${CC}" CXX="${CXX}" XCFLAGS="${XCFLAGS}"
+MAKE_ENV=	CC="${CC}" CXX="${CXX}" CFLAGS_STANDARD="${CFLAGS}" \
+		XCFLAGS="${XCFLAGS}"
 MAKEFILE=	src/unix-gcc.mak
 ALL_TARGET=	all pcl3opts
 PLIST_SUB=	GS_VERSION=${PORTVERSION}
@@ -72,7 +85,7 @@ PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nox11
 MAKE_ENV+=	WITHOUT_X11="${WITHOUT_X11}"
 .endif
 
-GS_SOURCES=	${DISTNAME}${EXTRACT_SUFX}
+GS_SRCS=	${DISTNAME}${EXTRACT_SUFX}
 #  Note: the following two are real files that have symlinks with
 #  later version numbers pointing to them.  To avoid unnecessarily
 #  downloading distfiles, do not change these when upgrading the port
@@ -82,53 +95,112 @@ GS_FONTS_OTHER=	gnu-gs-fonts-other-6.0.tar.gz
 
 # Additional Drivers:
 
-# Ghostscript Driver for HP DeskJet 812C/815C/832C/880C/882C/895C
+# HP8XX - additional driver for HP DeskJet 812C/815C/832C/880C/882C/895C
 # http://www.gelhaus.net/hp880c/
 HP8XX=		cdj880
-HP8XX_DRV=	gdevcd8.tar.gz
+HP8XX_SRCS=	gdevcd8.tar.gz
 
-# HPDJ, additional driver for HP PCL3 Printers, by Martin Lottermoser
+# HPDJ - additional driver for HP PCL3 printers, by Martin Lottermoser
 # still present, just for the case pcl3 is missing some hpdj feature
 # http://home.t-online.de/home/Martin.Lottermoser/pcl3.html
 HPDJ=		hpdj
 HPDJ_VERS=	2.6
 HPDJ_NAME=	${HPDJ}-${HPDJ_VERS}
-HPDJ_SRC=	${HPDJ_NAME}.tar.gz
+HPDJ_SRCS=	${HPDJ_NAME}.tar.gz
 HPDJ_MAN1=	gs-hpdj.1
 
 # PCL3 (hpdj successor now in RELEASE quality)
-# additional driver for HP PCL3 Printers, by Martin Lottermoser
+# additional driver for HP PCL3 printers, by Martin Lottermoser
 # http://home.t-online.de/home/Martin.Lottermoser/pcl3.html
 PCL3=		pcl3
 PCL3_VERS=	3.3
 PCL3_NAME=	${PCL3}-${PCL3_VERS}
-PCL3_SRC=	${PCL3_NAME}.tar.gz
+PCL3_SRCS=	${PCL3_NAME}.tar.gz
 PCL3_MAN1=	gs-pcl3.1 pcl3opts.1
 
-# additional driver for HP DeskJet 970, supports duplex printing
+# DJ970 - additional driver for HP DeskJet 970, supports duplex printing
 # http://www.harsch.net/Ghostscript/ghostscript.html
-HP970_DRV=	gdevdj9.c.gz
+DJ970=		gdevdj9
+DJ970_SRCS=	${DJ970}.c.gz
 
 # Gimp-Print - very high quality driver for Epson, HPs,...
 # http://gimp-print.sourceforge.net/
 GPRINT=		gimp-print
 GPRINT_VERS=	4.2.0
 GPRINT_NAME=	${GPRINT}-${GPRINT_VERS}
-GPRINT_SRC=	${GPRINT_NAME}.tar.gz
+GPRINT_SRCS=	${GPRINT_NAME}.tar.gz
 
-# HPinkjet - HP developed printer driver for PhotoSmart/DeskJet series
+# HPinkjet - additional driver for PhotoSmart/DeskJet series (HP developed)
 # http://hpinkjet.sourceforge.net/
 HPIJS=		hpijs
-HPIJS_VERS=	1.0.2
+HPIJS_VERS=	1.0.4
 HPIJS_NAME=	${HPIJS}-${HPIJS_VERS}
-HPIJS_SRC=	${HPIJS_NAME}.tar.gz
+HPIJS_SRCS=	${HPIJS_NAME}.tar.gz
+
+# MD2K - additional driver for Alps MD-2000/2010/4000/1300/1500/5000
+# http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/
+MD2K=		md2k
+MD2K_VERS=	0.2a
+MD2K_NAME=	gdevmd2k-${MD2K_VERS}
+MD2K_SRCS=	${MD2K_NAME}.tar.gz
+
+# ALPS - additional driver for Alps MD-5000
+ALPS=		alps
+ALPS_VERS=	0.2
+ALPS_NAME=	gdevalps-${ALPS_VERS}
+ALPS_SRCS=	gdevalps-0.21.tar.gz
+
+# BJ10V - additional driver for Canon BJ-10V
+BJ10V=		bj10v
+BJ10V_NAME=	gdev10v
+BJ10V_SRCS=	${BJ10V_NAME}.tar.gz
+
+# LIPS - additional driver for Canon LIPS II+/III/IVc/IV printers
+LIPS=		lips
+LIPS_VERS=	2.4.0
+LIPS_NAME=	gdevlips-${LIPS_VERS}
+LIPS_SRCS=	${LIPS_NAME}.tar.gz
+
+# DMPRT - additional driver for generic dot matrix printers
+DMPRT=		dmprt
+DMPRT_VERS=	2.01
+DMPRT_NAME=	${DMPRT}-${DMPRT_VERS}
+DMPRT_SRCS=	${DMPRT_NAME}.tar.gz
+
+# EPAG - additional driver for Epson ESC/Page printers
+# http://www.humblesoft.com/
+EPAG=		epag
+EPAG_VERS=	3.09
+EPAG_NAME=	${EPAG}-${EPAG_VERS}
+EPAG_SRCS=	${EPAG_NAME}.tar.gz
+
+# EPLASER - additional driver for ESC/Page printers (Epson Kowa developed)
+# http://www.epkowa.co.jp/linux/lpd.html
+EPLASER=	eplaser
+EPLASER_VERS=	3.0.1
+EPLASER_NAME=	${EPLASER}-${EPLASER_VERS}
+EPLASER_SRCS=	${EPLASER_NAME}-651.tgz
+
+# MJC - additional driver for Epson MachJet series
+MJC=		mjc
+MJC_VERS=	0.8
+MJC_NAME=	gdevmjc-${MJC_VERS}
+MJC_SRCS=	${MJC_NAME}.tar.gz
+
+# NPDL - additional driver for NEC Printer Description Language printers
+NPDL=		npdl
+NPDL_VERS=	1.6.3
+NPDL_NAME=	gdevnpdl-${NPDL_VERS}
+NPDL_SRCS=	${NPDL_NAME}.tar.gz
+
+# GDI - additional driver for Samsung SmartGDI laser printers
+GDI=		gdi
+GDI_NAME=	samsung-gdi-driver
+GDI_SRCS=	${GDI_NAME}.tar.gz
 
 # contributed uniprint profiles
 CONTRIB_UPP=	lqx70ch.upp lqx70cl.upp lqx70cm.upp \
 		stc740ih.upp stc740p.upp stc740pl.upp
-
-# replacement for pdf_sec.ps, that allows you to read encrypted PDF files
-DECRYPT_PDF=	pdf_sec.ps
 
 .SILENT:
 
@@ -149,38 +221,79 @@ post-extract:
 # new devices !
 #
 # for HP8XX driver
-	${ECHO_MSG} ">>>   extracting ${HP8XX_DRV} ..."
-	${TAR} -C ${WRKSRC}/src -xzf ${DISTDIR}/${DIST_SUBDIR}/${HP8XX_DRV}
+	${ECHO_MSG} ">>>   extracting ${HP8XX_SRCS} ..."
+	${TAR} -C ${WRKSRC}/src -xzf ${DISTDIR}/${DIST_SUBDIR}/${HP8XX_SRCS}
 # for HPDJ driver
-	${ECHO_MSG} ">>>   extracting ${HPDJ_SRC} ..."
-	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${HPDJ_SRC}
+	${ECHO_MSG} ">>>   extracting ${HPDJ_SRCS} ..."
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${HPDJ_SRCS}
 	${TAR} -C ${WRKSRC}/src -xf ${WRKSRC}/${HPDJ_NAME}/${HPDJ}.tar
 # for PCL3 driver
-	${ECHO_MSG} ">>>   extracting ${PCL3_SRC} ..."
-	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${PCL3_SRC}
-	${LN} -sf ${PCL3_NAME} ${WRKSRC}/pcl3
+	${ECHO_MSG} ">>>   extracting ${PCL3_SRCS} ..."
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${PCL3_SRCS}
+	${LN} -sf ${PCL3_NAME} ${WRKSRC}/${PCL3}
 	${TAR} -C ${WRKSRC}/${PCL3_NAME} -xf \
 		${WRKSRC}/${PCL3_NAME}/${PCL3}.tar
-# for HP DeskJet 970 driver
-	${ECHO_MSG} ">>>   extracting ${HP970_DRV} ..."
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/${HP970_DRV} ${WRKSRC}/src
-	${GUNZIP_CMD} ${WRKSRC}/src/${HP970_DRV}
+# for DJ970 driver
+	${ECHO_MSG} ">>>   extracting ${DJ970_SRCS} ..."
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${DJ970_SRCS} ${WRKSRC}/src
+	${GUNZIP_CMD} ${WRKSRC}/src/${DJ970_SRCS}
 # for Gimp-Print driver
-	${ECHO_MSG} ">>>   extracting ${GPRINT_SRC} ..."
-	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GPRINT_SRC}
+	${ECHO_MSG} ">>>   extracting ${GPRINT_SRCS} ..."
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GPRINT_SRCS}
 # for HPinkjet driver
-	${ECHO_MSG} ">>>   extracting ${HPIJS_SRC} ..."
-	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${HPIJS_SRC}
+	${ECHO_MSG} ">>>   extracting ${HPIJS_SRCS} ..."
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${HPIJS_SRCS}
+# for MD2K driver
+	${ECHO_MSG} ">>>   extracting ${MD2K_SRCS} ..."
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${MD2K_SRCS}
+	${LN} -sf ${MD2K_NAME} ${WRKSRC}/${MD2K}
+# for ALPS driver
+	${ECHO_MSG} ">>>   extracting ${ALPS_SRCS} ..."
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${ALPS_SRCS}
+	${LN} -sf ${ALPS_NAME} ${WRKSRC}/${ALPS}
+# for BJ10V driver
+	${ECHO_MSG} ">>>   extracting ${BJ10V_SRCS} ..."
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${BJ10V_SRCS}
+# for LIPS driver
+	${ECHO_MSG} ">>>   extracting ${LIPS_SRCS} ..."
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${LIPS_SRCS}
+	${LN} -sf ${LIPS_NAME} ${WRKSRC}/${LIPS}
+# for DMPRT driver
+	${ECHO_MSG} ">>>   extracting ${DMPRT_SRCS} ..."
+	${TAR} -C ${WRKSRC}/src -xzf ${DISTDIR}/${DIST_SUBDIR}/${DMPRT_SRCS}
+# for EPAG driver
+	${ECHO_MSG} ">>>   extracting ${EPAG_SRCS} ..."
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EPAG_SRCS}
+# for EPLASER driver
+	${ECHO_MSG} ">>>   extracting ${EPLASER_SRCS} ..."
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EPLASER_SRCS}
+	${LN} -sf ${EPLASER_NAME} ${WRKSRC}/${EPLASER}
+# for MJC driver
+	${ECHO_MSG} ">>>   extracting ${MJC_SRCS} ..."
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${MJC_SRCS}
+	${LN} -sf ${MJC_NAME} ${WRKSRC}/${MJC}
+# for NPDL driver
+	${ECHO_MSG} ">>>   extracting ${NPDL_SRCS} ..."
+	${TAR} -C ${WRKSRC} -xzf ${DISTDIR}/${DIST_SUBDIR}/${NPDL_SRCS}
+# for GDI driver
+	${ECHO_MSG} ">>>   extracting ${GDI_SRCS} ..."
+	${TAR} -C ${WRKSRC}/src -xzf ${DISTDIR}/${DIST_SUBDIR}/${GDI_SRCS}
 
 post-patch:
 	${PERL} -pi -e 's|^DEVICE_DEVS|#DEVICE_DEVS|g' \
 		${WRKSRC}/src/unix-gcc.mak
+	${PERL} -pi -e 's|%%DATADIR%%|${DATADIR}|g' \
+		${WRKSRC}/lib/gs_res.ps
 # for HPinkjet driver
 	${PERL} -pi -e 's|CFLAGS="-O2 -Wall"|CFLAGS="\$$CFLAGS"|g ; \
 		 s|CXXFLAGS="-O2 -Wall"|CXXFLAGS="\$$CXXFLAGS"|g' \
 			${WRKSRC}/${HPIJS_NAME}/configure
 	${PERL} -pi -e 's|#include <malloc.h>||g' \
 		${WRKSRC}/${HPIJS_NAME}/platform.h
+# for DMPRT driver
+	${PERL} -pi -e 's|%%DATADIR%%|${DATADIR}|g ; \
+		 s|%%GS_VERSION%%|${PORTVERSION}|g' \
+			${WRKSRC}/src/dmp_site.ps
 
 # here we apply the modifications necessary to build the 3rd party drivers
 # advantage: you see unmodified makefiles after a pure make extract
@@ -194,13 +307,47 @@ pre-configure:
 	${ECHO_MSG} ">>>   adding ${PCL3} driver to contrib.mak ..."
 	${CAT} ${WRKSRC}/${PCL3_NAME}/src/contrib.mak-6.51.add \
 		>> ${WRKSRC}/src/contrib.mak
-# for Gimp-Print driver
-	${ECHO_MSG} ">>>   adding ${GPRINT} driver to contrib.mak ..."
-	${CAT} ${FILESDIR}/stp.contrib.mak \
+# for MD2K driver
+	${ECHO_MSG} ">>>   adding ${MD2K} driver to contrib.mak ..."
+	${CAT} ${WRKSRC}/${MD2K_NAME}/gdevmd2k.mak-5.50 \
 		>> ${WRKSRC}/src/contrib.mak
-# for HPinkjet driver
-	${ECHO_MSG} ">>>   adding ${HPIJS} driver to contrib.mak ..."
-	${CAT} ${FILESDIR}/hpijs.contrib.mak \
+# for ALPS driver
+	${ECHO_MSG} ">>>   adding ${ALPS} driver to contrib.mak ..."
+	${CAT} ${WRKSRC}/${ALPS_NAME}/gdevalps.mak-5.50 \
+		>> ${WRKSRC}/src/contrib.mak
+# for BJ10V driver
+	${ECHO_MSG} ">>>   adding ${BJ10V} driver to contrib.mak ..."
+	${CAT} ${WRKSRC}/${BJ10V_NAME}/gdev10v.mak \
+		>> ${WRKSRC}/src/contrib.mak
+# for LIPS driver
+	${ECHO_MSG} ">>>   adding ${LIPS} driver to contrib.mak ..."
+	${CAT} ${WRKSRC}/${LIPS_NAME}/gdevlips.mak \
+		>> ${WRKSRC}/src/contrib.mak
+# for DMPRT driver
+	${ECHO_MSG} ">>>   adding ${DMPRT} driver to contrib.mak ..."
+	${CAT} ${WRKSRC}/src/gdevdmpr.mak \
+		>> ${WRKSRC}/src/contrib.mak
+# for EPAG driver
+	${ECHO_MSG} ">>>   adding ${EPAG} driver to contrib.mak ..."
+	${SED} -e 's:npdl:epag:g' ${WRKSRC}/${NPDL_NAME}/gdevnpdl.mak \
+		>> ${WRKSRC}/src/contrib.mak
+# for EPLASER driver
+	${ECHO_MSG} ">>>   adding ${EPLASER} driver to contrib.mak ..."
+	${CAT} ${WRKSRC}/${EPLASER_NAME}/gdevescv6.mak \
+		>> ${WRKSRC}/src/contrib.mak
+	${CAT} ${WRKSRC}/${EPLASER_NAME}/gdevesmv6.mak \
+		>> ${WRKSRC}/src/contrib.mak
+# for MJC driver
+	${ECHO_MSG} ">>>   adding ${MJC} driver to contrib.mak ..."
+	${CAT} ${WRKSRC}/${MJC_NAME}/gdevmjc.mak \
+		>> ${WRKSRC}/src/contrib.mak
+# for NPDL driver
+	${ECHO_MSG} ">>>   adding ${NPDL} driver to contrib.mak ..."
+	${CAT} ${WRKSRC}/${NPDL_NAME}/gdevnpdl.mak \
+		>> ${WRKSRC}/src/contrib.mak
+# for GDI driver
+	${ECHO_MSG} ">>>   adding ${GDI} driver to contrib.mak ..."
+	${CAT} ${FILESDIR}/gdi.contrib.mak \
 		>> ${WRKSRC}/src/contrib.mak
 
 do-configure:
@@ -214,7 +361,7 @@ do-configure:
 post-configure:
 	${ECHO_MSG} ">>> in post-configure ..."
 # for Gimp-Print driver
-	${ECHO_MSG} ">>>   running configure script for ${GPRINT} driver ..."
+	${ECHO_MSG} ">>>   running configure script for ${GPRINT} library ..."
 	cd ${WRKSRC}/${GPRINT_NAME} ; \
 		${SETENV} ${MAKE_ENV} ${SH} ./configure \
 			--without-cups --without-translated-ppds \
@@ -224,7 +371,7 @@ post-configure:
 			--disable-nls --disable-shared \
 			--prefix=${PREFIX}
 # for HPinkjet driver
-	${ECHO_MSG} ">>>   running configure script for ${HPIJS} driver ..."
+	${ECHO_MSG} ">>>   running configure script for ${HPIJS} server ..."
 	cd ${WRKSRC}/${HPIJS_NAME} ; \
 		${SETENV} ${MAKE_ENV} ${SH} ./configure \
 			--prefix=${PREFIX}
@@ -239,55 +386,95 @@ pre-build:
 	cd ${WRKSRC}/${GPRINT_NAME} ; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile
 	${ECHO_MSG} ">>>   creating symlinks for ${GPRINT} ..."
+	${MKDIR} ${WRKSRC}/${GPRINT}
 	${LN} -sf ${WRKSRC}/${GPRINT_NAME}/include/gimp-print \
-		${WRKSRC}/src
-	${LN} -sf ${WRKSRC}/${GPRINT_NAME}/src/ghost/*.[ch] \
-		${WRKSRC}/src
+		${WRKSRC}/${GPRINT}/gimp-print
 	${LN} -sf ${WRKSRC}/${GPRINT_NAME}/src/main/.libs/libgimpprint.a \
-		${WRKSRC}/obj
+		${WRKSRC}/${GPRINT}/libgimpprint.a
 # for HPinkjet driver
 	${ECHO_MSG} ">>>   building ${HPIJS} server ..."
 	cd ${WRKSRC}/${HPIJS_NAME} ; \
 		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile
-	${ECHO_MSG} ">>>   creating symlinks for ${HPIJS} ..."
-.for file in gdevijs.[ch] ijs.[ch] ijs_client.[ch] ijs_exec_unix.c unistd_.h
-	${LN} -sf ${WRKSRC}/${HPIJS_NAME}/${file} \
-		${WRKSRC}/src
+# for MD2K driver
+	${ECHO_MSG} ">>>   creating symlinks for ${MD2K} ..."
+.for i in gdevmd2k.c
+	${LN} -sf ${WRKSRC}/${MD2K_NAME}/${i} ${WRKSRC}/src
+.endfor
+# for ALPS driver
+	${ECHO_MSG} ">>>   creating symlinks for ${ALPS} ..."
+.for i in gdevalps.c
+	${LN} -sf ${WRKSRC}/${ALPS_NAME}/${i} ${WRKSRC}/src
+.endfor
+# for BJ10V driver
+	${ECHO_MSG} ">>>   creating symlinks for ${BJ10V} ..."
+.for i in gdev10v.c
+	${LN} -sf ${WRKSRC}/${BJ10V_NAME}/${i} ${WRKSRC}/src
+.endfor
+# for LIPS driver
+	${ECHO_MSG} ">>>   creating symlinks for ${LIPS} ..."
+.for i in gdevlips.[ch] gdevlprn.[ch] gdevl4r.c gdevl4v.c gdevespg.c gdevrpdl.c
+	${LN} -sf ${WRKSRC}/${LIPS_NAME}/${i} ${WRKSRC}/src
+.endfor
+# for EPAG driver
+	${ECHO_MSG} ">>>   building ${EPAG} utility ..."
+	cd ${WRKSRC}/${EPAG_NAME} ; \
+		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile
+	${ECHO_MSG} ">>>   creating symlinks for ${EPAG} ..."
+.for i in gdevepag.c
+	${LN} -sf ${WRKSRC}/${EPAG_NAME}/${i} ${WRKSRC}/src
+.endfor
+# for EPLASER driver
+	${ECHO_MSG} ">>>   creating symlinks for ${EPLASER} ..."
+.for i in gdevescv.[ch] gdevesmv.c
+	${LN} -sf ${WRKSRC}/${EPLASER_NAME}/${i} ${WRKSRC}/src
+.endfor
+# for MJC driver
+	${ECHO_MSG} ">>>   creating symlinks for ${MJC} ..."
+.for i in gdevmjc.c mjbarrie.c mjbksep.c mjespdtc.c mjespdtm.c mjespdty.c \
+	mjgrnsp.c mjgrnsp2.c mjhtocmy.c mjmtx2.c mjvtbl.c
+	${LN} -sf ${WRKSRC}/${MJC_NAME}/${i} ${WRKSRC}/src
+.endfor
+# for NPDL driver
+	${ECHO_MSG} ">>>   creating symlinks for ${NPDL} ..."
+.for i in gdevnpdl.c
+	${LN} -sf ${WRKSRC}/${NPDL_NAME}/${i} ${WRKSRC}/src
 .endfor
 
 pre-install:
 	${ECHO_MSG} ">>> in pre-install ..."
 	${ECHO_MSG} ">>>   creating ghostscript destdir ..."
 	${MKDIR} ${DATADIR}
-	${ECHO_MSG} ">>>   extracting ghostscript fonts..."
+	${ECHO_MSG} ">>>   extracting ghostscript fonts ..."
 	${TAR} -C ${DATADIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GS_FONTS_STD}
 	${TAR} -C ${DATADIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${GS_FONTS_OTHER}
 
 post-install:
 	${ECHO_MSG} ">>> in post-install ..."
 	${ECHO_MSG} ">>>   stripping gs ..."
-	strip ${PREFIX}/bin/gs
+	${STRIP_CMD} ${PREFIX}/bin/gs
 # for HPDJ driver
 	${ECHO_MSG} ">>>   installing ${HPDJ} manpages ..."
 .for i in ${HPDJ_MAN1}
-	${INSTALL_MAN} ${WRKSRC}/src/${i} ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/src/${i} ${MANPREFIX}/man/man1
 .endfor
 	${ECHO_MSG} ">>>   creating ${HPDJ} destdir ..."
-	${MKDIR} ${DATADIR}/${PORTVERSION}/hpdj
+	${MKDIR} ${DATADIR}/${PORTVERSION}/${HPDJ}
 	${ECHO_MSG} ">>>   installing files in ${HPDJ} destdir ..."
 .for i in README.hpdj example.mdf margins-A4.ps margins-A4Rotated.ps \
 	margins-Letter.ps margins-LetterRotated.ps
 	${INSTALL_DATA} ${WRKSRC}/src/${i} \
-		${DATADIR}/${PORTVERSION}/hpdj
+		${DATADIR}/${PORTVERSION}/${HPDJ}
 .endfor
 # for PCL3 driver
+	${ECHO_MSG} ">>>   installing ${PCL3} utility in bindir ..."
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/pcl3opts ${PREFIX}/bin
 	${ECHO_MSG} ">>>   installing ${PCL3} manpages ..."
 .for i in ${PCL3_MAN1}
-	${INSTALL_MAN} ${WRKSRC}/${PCL3_NAME}/doc/${i} ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${PCL3_NAME}/doc/${i} ${MANPREFIX}/man/man1
 .endfor
 # other pcl3 stuff, which might be interesting for runtime
 	${ECHO_MSG} ">>>   creating ${PCL3} destdir ..."
-	${MKDIR} ${DATADIR}/${PORTVERSION}/pcl3
+	${MKDIR} ${DATADIR}/${PORTVERSION}/${PCL3}
 	${ECHO_MSG} ">>>   installing files in ${PCL3} destdir ..."
 .for i in NEWS BUGS README lib/example.mcf lib/if-pcl3 ps/calign.ps \
 	ps/dumppdd.ps ps/levels-test.ps ps/margins-A4.ps \
@@ -295,58 +482,126 @@ post-install:
 	ps/margins-EnvDLRotated.ps ps/margins-Letter.ps \
 	ps/margins-LetterRotated.ps
 	${INSTALL_DATA} ${WRKSRC}/${PCL3_NAME}/${i} \
-		${DATADIR}/${PORTVERSION}/pcl3
-.endfor
-# for Gimp-Print driver
-	${ECHO_MSG} ">>>   creating ${GPRINT} destdir ..."
-	${MKDIR} ${DATADIR}/${PORTVERSION}/gimp-print
-	${ECHO_MSG} ">>>   installing files in ${GPRINT} destdir ..."
-.for i in README
-	${INSTALL_DATA} ${WRKSRC}/${GPRINT_NAME}/src/ghost/${i} \
-		${DATADIR}/${PORTVERSION}/gimp-print
+		${DATADIR}/${PORTVERSION}/${PCL3}
 .endfor
 # for HPinkjet driver
 	${ECHO_MSG} ">>>   installing ${HPIJS} server in bindir ..."
 	${INSTALL_PROGRAM} ${WRKSRC}/${HPIJS_NAME}/hpijs ${PREFIX}/bin
-	${ECHO_MSG} ">>>   creating ${HPIJS} destdir ..."
-	${MKDIR} ${DATADIR}/${PORTVERSION}/hpijs
-	${ECHO_MSG} ">>>   installing files in ${HPIJS} destdir ..."
-.for i in hpijs_readme.html gs_hpijs.png printerdb_append append_db.sh
-	${INSTALL_DATA} ${WRKSRC}/${HPIJS_NAME}/${i} \
-		${DATADIR}/${PORTVERSION}/hpijs
+# for DMPRT driver
+	${ECHO_MSG} ">>>   installing ${DMPRT} resources ..."
+.for i in dmp_init.ps dmp_site.ps escp_24.src
+	${INSTALL_DATA} ${WRKSRC}/src/${i} \
+		${DATADIR}/${PORTVERSION}/lib
 .endfor
+# for EPAG driver
+	${ECHO_MSG} ">>>   installing ${EPAG} utility in bindir ..."
+	${INSTALL_PROGRAM} ${WRKSRC}/${EPAG_NAME}/ert ${PREFIX}/bin
 # contributed UPP driver
 	${ECHO_MSG} ">>> installing contributed UPP profiles ..."
 .for i in ${CONTRIB_UPP}
 	${INSTALL_DATA} ${FILESDIR}/${i} \
 		${DATADIR}/${PORTVERSION}/lib
 .endfor
-# for reading encrypted PDFs
-	${ECHO_MSG} ">>> installing support for encrypted PDF files ..."
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DECRYPT_PDF} \
-		${DATADIR}/${PORTVERSION}/lib
 #
 # now NOPORTDOCS dependend stuff
 #
 .if !defined(NOPORTDOCS)
 	${ECHO_MSG} ">>> installing PORTDOC stuff ..."
-# install hpdj docu, not necessary for runtime
-# note: old hpdj driver has its files in ${WRKSRC}/src
-	${ECHO_MSG} ">>>   creating ${HPDJ} docu destdir ..."
-	${MKDIR} ${DOCSDIR}/${PORTVERSION}/hpdj
-	${ECHO_MSG} ">>>   installing files in ${HPDJ} docu destdir ..."
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}
+# for HPDJ driver
+	${ECHO_MSG} ">>>   installing ${HPDJ} docs ..."
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${HPDJ}
 .for i in NEWS hpdj.html
 	${INSTALL_DATA} ${WRKSRC}/src/${i} \
-		${DOCSDIR}/${PORTVERSION}/hpdj
+		${DOCSDIR}/${PORTVERSION}/${HPDJ}
 .endfor
-# install pcl3 docu, not necessary for runtime
-# note: new pcl3 driver has a subdir of its own
-	${ECHO_MSG} ">>>   creating ${PCL3} docu destdir ..."
-	${MKDIR} ${DOCSDIR}/${PORTVERSION}/pcl3
-	${ECHO_MSG} ">>>   installing files in ${PCL3} docu destdir ..."
+# for PCL3 driver
+	${ECHO_MSG} ">>>   installing ${PCL3} docs ..."
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${PCL3}
 .for i in NEWS doc/gs-pcl3.html doc/how-to-report.txt doc/pcl3opts.html
 	${INSTALL_DATA} ${WRKSRC}/${PCL3_NAME}/${i} \
-		${DOCSDIR}/${PORTVERSION}/pcl3
+		${DOCSDIR}/${PORTVERSION}/${PCL3}
+.endfor
+# for Gimp-Print driver
+	${ECHO_MSG} ">>>   installing ${GPRINT} docs ..."
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${GPRINT}
+.for i in README
+	${INSTALL_DATA} ${WRKSRC}/${GPRINT_NAME}/src/ghost/${i} \
+		${DOCSDIR}/${PORTVERSION}/${GPRINT}
+.endfor
+# for HPinkjet driver
+	${ECHO_MSG} ">>>   installing ${HPIJS} docs ..."
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${HPIJS}
+.for i in hpijs_readme.html gs_hpijs.png
+	${INSTALL_DATA} ${WRKSRC}/${HPIJS_NAME}/${i} \
+		${DOCSDIR}/${PORTVERSION}/${HPIJS}
+.endfor
+# for MD2K driver
+	${ECHO_MSG} ">>>   installing ${MD2K} docs ..."
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${MD2K}
+.for i in README.jis
+	${INSTALL_DATA} ${WRKSRC}/${MD2K_NAME}/${i} \
+		${DOCSDIR}/${PORTVERSION}/${MD2K}
+.endfor
+# for ALPS driver
+	${ECHO_MSG} ">>>   installing ${ALPS} docs ..."
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${ALPS}
+.for i in README.gdevalps
+	${INSTALL_DATA} ${WRKSRC}/${ALPS_NAME}/${i} \
+		${DOCSDIR}/${PORTVERSION}/${ALPS}
+.endfor
+# for BJ10V driver
+	${ECHO_MSG} ">>>   installing ${BJ10V} docs ..."
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${BJ10V}
+.for i in gdev10v.jis
+	${INSTALL_DATA} ${WRKSRC}/${BJ10V_NAME}/${i} \
+		${DOCSDIR}/${PORTVERSION}/${BJ10V}
+.endfor
+# for LIPS driver
+	${ECHO_MSG} ">>>   installing ${LIPS} docs ..."
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${LIPS}
+.for i in Gdevlips.htm
+	${INSTALL_DATA} ${WRKSRC}/${LIPS_NAME}/${i} \
+		${DOCSDIR}/${PORTVERSION}/${LIPS}
+.endfor
+# for DMPRT driver
+	${ECHO_MSG} ">>>   installing ${DMPRT} docs ..."
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${DMPRT}
+.for i in gdevdmpr.sj
+	${INSTALL_DATA} ${WRKSRC}/src/${i} \
+		${DOCSDIR}/${PORTVERSION}/${DMPRT}
+.endfor
+# for EPAG driver
+	${ECHO_MSG} ">>>   installing ${EPAG} docs ..."
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${EPAG}
+.for i in ert.txt gdevepag.txt ChangeLog
+	${INSTALL_DATA} ${WRKSRC}/${EPAG_NAME}/${i} \
+		${DOCSDIR}/${PORTVERSION}/${EPAG}
+.endfor
+.for i in psprint gsepagif.sh
+	${INSTALL_SCRIPT} ${WRKSRC}/${EPAG_NAME}/${i} \
+		${DOCSDIR}/${PORTVERSION}/${EPAG}
+.endfor
+# for EPLASER driver
+	${ECHO_MSG} ">>>   installing ${EPLASER} docs ..."
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${EPLASER}
+.for i in readme-eplaser-651.euc
+	${INSTALL_DATA} ${WRKSRC}/${EPLASER_NAME}/${i} \
+		${DOCSDIR}/${PORTVERSION}/${EPLASER}
+.endfor
+# for MJC driver
+	${ECHO_MSG} ">>>   installing ${MJC} docs ..."
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${MJC}
+.for i in MJ700V2C.FAQ README.mjc README.mje README.noz cpem.doc
+	${INSTALL_DATA} ${WRKSRC}/${MJC_NAME}/${i} \
+		${DOCSDIR}/${PORTVERSION}/${MJC}
+.endfor
+# for NPDL driver
+	${ECHO_MSG} ">>>   installing ${NPDL} docs ..."
+	${MKDIR} ${DOCSDIR}/${PORTVERSION}/${NPDL}
+.for i in gdevnpdl.jis
+	${INSTALL_DATA} ${WRKSRC}/${NPDL_NAME}/${i} \
+		${DOCSDIR}/${PORTVERSION}/${NPDL}
 .endfor
 .endif
 	${ECHO_MSG} "> post-installation tasks completed."

@@ -9,22 +9,45 @@ other programs in the ports collection might need some of the default gs \n\
 file format drivers. The gs5 default drivers are preselected. \n\
 Have fun with this new configuration style !     -andreas \n\n\
   Please choose options by pressing SPACE to TOGGLE an option ON/OFF ?" -1 -1 9\
+  "x11"      "X Window System version 11, release >=4" ON \
+  "x11alpha" "X Window System masquer. as device with alpha capability" ON \
+  "x11cmyk"  "X Window System masquer. as 1-bit-per-plane CMYK device" ON \
+  "x11cmyk2" "X Window System as a 2-bit-per-plane CMYK device" OFF \
+  "x11cmyk4" "X Window System as a 4-bit-per-plane CMYK device" OFF \
+  "x11cmyk8" "X Window System as an 8-bit-per-plane CMYK device" OFF \
+  "x11gray2" "X Window System as a 2-bit gray-scale device" ON \
+  "x11gray4" "X Window System as a 4-bit gray-scale device" ON \
+  "x11mono"  "X Window System masquer. as black-and-white device" ON \
+  "x11rg16x" "X Window System with G5/B5/R6 pixel layout for testing" ON \
+  "x11rg32x" "X Window System with G11/B10/R11 pixel layout for testing" ON \
+  "md2k"     "ALPS MD-2000/2010/4000/1300/1500/5000 [MD2K]" ON \
+  "md5k"     "ALPS MD-5000 Eco Mode [MD2K]" ON \
+  "md50Mono" "ALPS MD-5000 Monochrome [ALPS]" ON \
+  "md50Eco"  "ALPS MD-5000 Eco Mode [ALPS]" ON \
+  "md1xMono" "ALPS MD-1x00 Monochrome [ALPS]" ON \
   "appledmp" "Apple Dot Matrix Printer / Imagewriter" OFF \
   "iwhi"     "Apple Imagewriter, high-resolution mode" OFF \
   "iwlo"     "Apple Imagewriter, low-resolution mode" OFF \
   "iwlq"     "Apple Imagewriter LQ in 320 x 216 dpi mode" OFF \
   "hl7x0"    "Brother HL720 and HL730 (HL760=PCL), MFC6550MC Fax Machine" OFF \
-  "bj10e"    "Canon BubbleJet BJ10e" ON \
-  "bj200"    "Canon BubbleJet BJ200 and BJC-240(b&w)" ON \
+  "bj10e"    "Canon BubbleJet BJ-10e" ON \
+  "bj10v"    "Canon BubbleJet BJ-10v [BJ10V]" ON \
+  "bj10vh"   "Canon BubbleJet BJ-10v, high-mergin [BJ10V]" ON \
+  "bj200"    "Canon BubbleJet BJ-200 and BJC-240(b&w)" ON \
   "bjc600"   "Canon Color BJC-600/4xxx/70 + Apple StyleWriter 2x00" ON \
   "bjc800"   "Canon Color BubbleJet BJC-240/800" ON \
   "lbp8"     "Canon LBP-8II laser printer" OFF \
-  "lips3"    "Canon LIPS III laser printer in English (CaPSL) mode" OFF \
+  "lips2p"   "Canon LIPS II+ [LIPS]" ON \
+  "lips3"    "Canon LIPS III [LIPS]" ON \
+  "lips4"    "Canon LIPS IV [LIPS]" ON \
+  "bjc880j"  "Canon LIPS IVc (BJC-680J/880J) [LIPS]" ON \
+  "lips4v"   "Canon LIPS IV, vector output mode [LIPS]" ON \
   "m8510"    "C.Itoh M8510 printer" OFF \
   "coslw2p"  "CoStar LabelWriter II II/Plus" OFF \
   "coslwxl"  "CoStar LabelWriter XL" OFF \
-  "stp"      "Configurable Canon/Epson/Lexmark/HP driver (Gimp-Print)" ON \
+  "stp"      "Configurable Canon/Epson/Lexmark/HP driver [Gimp-Print]" ON \
   "uniprint" "Configurable ESC/P,ESC/P2,HP-RTL/PCL,P2X mono/color driver" ON \
+  "dmprt"    "Configurable dot matrix printer driver [DMPRT]" ON \
   "dl2100"   "DEClaser 2100" OFF \
   "la50"     "DEC LA50" OFF \
   "la70"     "DEC LA70" OFF \
@@ -38,8 +61,34 @@ Have fun with this new configuration style !     -andreas \n\n\
   "eps9mid"  "Epson-compatible 9-pin, interleaved lines, medium resol" OFF \
   "eps9high" "Epson-compatible 9-pin, interleaved lines, triple resol" OFF \
   "lp8000"   "Epson LP-8000 line printer" OFF \
+  "epag"     "Epson ESC/Page laser printer (generic) [EPAG]" ON \
+  "escpage"  "Epson ESC/Page laser printer (generic) [LIPS]" ON \
+  "lp2000"   "Epson LP-2000/3000/7000/7000G laser printer [LIPS]" ON \
+  "lp8800c"  "Epson LP-8800C color laser printer [EPLASER]" ON \
+  "lp8300c"  "Epson LP-8300C color laser printer [EPLASER]" ON \
+  "lp8500c"  "Epson LP-8500C color laser printer [EPLASER]" ON \
+  "lp3000c"  "Epson LP-3000C color laser printer [EPLASER]" ON \
+  "lp8200c"  "Epson LP-8200C color laser printer [EPLASER]" ON \
+  "lp8000c"  "Epson LP-8000C color laser printer [EPLASER]" ON \
+  "lp2200"   "Epson LP-2200 laser printer [EPLASER]" ON \
+  "lp9400"   "Epson LP-9400(R) laser printer [EPLASER]" ON \
+  "lp8700"   "Epson LP-8700(R) laser printer [EPLASER]" ON \
+  "lp8100"   "Epson LP-8100(R) laser printer [EPLASER]" ON \
+  "lp8600f"  "Epson LP-8600FX(N) laser printer [EPLASER]" ON \
+  "lp8400f"  "Epson LP-8400FX(N) laser printer [EPLASER]" ON \
+  "lp8300f"  "Epson LP-8300F laser printer [EPLASER]" ON \
+  "lp1900"   "Epson LP-1900(N) laser printer [EPLASER]" ON \
+  "lp9600s"  "Epson LP-9600S laser printer [EPLASER]" ON \
+  "lp9600"   "Epson LP-9600 laser printer [EPLASER]" ON \
+  "lp9300"   "Epson LP-9300 laser printer [EPLASER]" ON \
+  "lp8600"   "Epson LP-8600FX(N) laser printer [EPLASER]" ON \
+  "lp1800"   "Epson LP-1800 laser printer [EPLASER]" ON \
   "lq850"    "Epson LQ-850 (360x360), ok for Canon BJ300 in LQ850 emul" OFF \
   "epsonc"   "Epson LQ-2550 and Fujitsu 3400/2400/1200 color" OFF \
+  "mjc180"   "Epson MachJet series 180dpi, CMYK [MJC]" ON \
+  "mjc360"   "Epson MachJet series 360dpi, CMYK [MJC]" ON \
+  "mjc720"   "Epson MachJet series 720dpi, CMYK [MJC]" ON \
+  "mj500c"   "Epson MachJet MJ-500C 360dpi, CMY or mono [MJC]" ON \
   "st800"    "Epson Stylus 800 printer" OFF \
   "stcolor"  "Epson Stylus Color and II/IIs/1500 (see driver docu)" OFF \
   "photoex"  "Epson Stylus Color Photo, Photo EX, Photo 700" OFF \
@@ -53,12 +102,12 @@ Have fun with this new configuration style !     -andreas \n\n\
   "cdjmono"  "HP DeskJet 500/510/520/540C b/w printing" ON \
   "cdj500"   "HP DeskJet 500/540C (same as cdjcolor)" OFF \
   "cdj550"   "HP DeskJet 550C/560C/660C/660Cse" ON \
-  "cdj670"   "HP DeskJet 670/690 (HP8XX driver)" ON \
-  "cdj850"   "HP DeskJet 850/855/870/1100 (HP8XX driver)" ON \
-  "cdj880"   "HP DeskJet 880 (HP8XX driver)" ON \
-  "cdj890"   "HP DeskJet 890 (HP8XX driver)" ON \
-  "cdj1600"  "HP DeskJet 1600 (HP8XX driver)" ON \
-  "cdj970"   "HP DeskJet 970CXi (HP970 driver)" ON \
+  "cdj670"   "HP DeskJet 670/690 [HP8XX]" ON \
+  "cdj850"   "HP DeskJet 850/855/870/1100 [HP8XX]" ON \
+  "cdj880"   "HP DeskJet 880 [HP8XX]" ON \
+  "cdj890"   "HP DeskJet 890 [HP8XX]" ON \
+  "cdj1600"  "HP DeskJet 1600 [HP8XX]" ON \
+  "cdj970"   "HP DeskJet 970CXi [DJ970]" ON \
   "laserjet" "HP LaserJet" ON \
   "ljetplus" "HP LaserJet Plus" ON \
   "ljet2p"   "HP LaserJet IId/IIp/III* with TIFF compression" ON \
@@ -79,9 +128,9 @@ Have fun with this new configuration style !     -andreas \n\n\
   "pjxl300"  "HP PaintJet XL300, DeskJet 1200C color printer, HP CopyJet" ON \
   "pxlmono"  "HP PCL XL black-and-white printers (LaserJet 5 and 6 family)" ON \
   "pxlcolor" "HP PCL XL color printers (Color LaserJet 4500/5000)" ON \
-  "pcl3"     "HP PCL 3+ (DeskJet 500/500C/510/520/540/550C/560C/850C/855C)" ON \
-  "hpdj"     "HP PCL 3+ (old drv.)" ON \
-  "ijs"      "HP PhotoSmart/DeskJet series (HP developed driver)" ON \
+  "pcl3"     "HP PCL 3+ (generic) [PCL3]" ON \
+  "hpdj"     "HP PCL 3+ (old drv.) [HPDJ]" ON \
+  "ijs"      "HP PhotoSmart/DeskJet series [HPinkjet]" ON \
   "ibmpro"   "IBM 9-pin Proprinter" OFF \
   "jetp3852" "IBM Jetprinter ink-jet color (Model #3852)" OFF \
   "imagen"   "Imagen ImPress printers" OFF \
@@ -89,6 +138,7 @@ Have fun with this new configuration style !     -andreas \n\n\
   "lxm5700m" "Lexmark 5700 monotone" OFF \
   "cp50"     "Mitsubishi CP50 color" OFF \
   "necp6"    "NEC PinWriter P6/P6+/P60, 360x360 DPI resol" OFF \
+  "npdl"     "NEC Printer Description Language [NPDL]" ON \
   "oce9050"  "OCE 9050 printer" OFF \
   "oki182"   "Okidata MicroLine 182" OFF \
   "okiibm"   "Okidata MicroLine IBM-compatible printers" OFF \
@@ -96,6 +146,8 @@ Have fun with this new configuration style !     -andreas \n\n\
   "atx24"    "Practical Automation ATX-24 label printer" OFF \
   "atx38"    "Practical Automation ATX-38 label printer" OFF \
   "r4081"    "Ricoh 4081 laser printer" OFF \
+  "rpdl"     "Ricoh Printer Description Language [LIPS]" ON \
+  "gdi"      "Samsung SmartGDI laser printer [GDI]" ON \
   "sj48"     "StarJet 48 inkjet printer" OFF \
   "t4693d2"  "Tektronix 4693d color, 2 bits per R/G/B component" OFF \
   "t4693d4"  "Tektronix 4693d color, 4 bits per R/G/B component" OFF \
@@ -176,17 +228,6 @@ Have fun with this new configuration style !     -andreas \n\n\
   "tiff24nc" "TIFF 24-bit RGB, no compression, NeXT std. format" ON \
   "tifflzw"  "TIFF LZW,      tag = 5,     mono" ON \
   "tiffpack" "TIFF PackBits, tag = 32773, mono" ON \
-  "x11"      "X Window System version 11, release >=4" ON \
-  "x11alpha" "X Window System masquer. as device with alpha capability" ON \
-  "x11cmyk"  "X Window System masquer. as 1-bit-per-plane CMYK device" ON \
-  "x11cmyk2" "X Window System as a 2-bit-per-plane CMYK device" OFF \
-  "x11cmyk4" "X Window System as a 4-bit-per-plane CMYK device" OFF \
-  "x11cmyk8" "X Window System as an 8-bit-per-plane CMYK device" OFF \
-  "x11gray2" "X Window System as a 2-bit gray-scale device" ON \
-  "x11gray4" "X Window System as a 4-bit gray-scale device" ON \
-  "x11mono"  "X Window System masquer. as black-and-white device" ON \
-  "x11rg16x" "X Window System with G5/B5/R6 pixel layout for testing" ON \
-  "x11rg32x" "X Window System with G11/B10/R11 pixel layout for testing" ON \
 2> /tmp/checklist.tmp.$$
 
 retval=$?
@@ -214,7 +255,7 @@ esac
 #	> ${WRKSRC}/src/unix-gcc.mak.new
 # XXX new:
 echo "DEVICE_DEVS=$choice" \
-	| perl -pe 's|"([a-z0-9]+)"|\$(DD)\1.dev|g' \
+	| perl -pe 's|"([A-Za-z0-9]+)"|\$(DD)\1.dev|g' \
 	> ${WRKSRC}/src/unix-gcc.mak.new
 
 # create one new Makefile, where DEVICE_DEVS contains all wanted devices
