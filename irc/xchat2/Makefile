@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		xchat
-PORTVERSION=		1.8.3
+PORTVERSION=		1.8.4
 CATEGORIES+=		irc gnome ipv6
 MASTER_SITES=		http://xchat.org/files/source/1.8/ \
 			http://xchat.linuxpower.org/files/source/1.8/
@@ -56,6 +56,10 @@ CONFIGURE_ARGS+=	--enable-gnome --enable-panel --enable-gdk-pixbuf
 MAKE_ARGS=		icondir="${PREFIX}/share/gnome/pixmaps"
 .else
 CONFIGURE_ARGS+=	--disable-gnome --disable-gdk-pixbuf
+.endif
+
+.if ${OSVERSION} < 500007
+CONFIGURE_ARGS+=	--disable-perl
 .endif
 
 post-patch:
