@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://software.linspire.com/emptypool/lindowsos/pool/main/l/lphoto/
 DISTNAME=	${PORTNAME}_${PORTVERSION}-0.0.0.45.lindows0.1
 
-MAINTAINER=	ahze@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A complete desktop solution for digital photo management
 
 BUILD_DEPENDS=	kdepyuic:${PORTSDIR}/x11-toolkits/py-kde
