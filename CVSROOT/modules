@@ -1941,6 +1941,7 @@ gnofract4d	ports/graphics/gnofract4d
 gnokii		ports/comms/gnokii
 gnomba		ports/net/gnomba
 gnome		ports/x11/gnome
+gnome2		ports/x11/gnome2
 gnome--		ports/x11-toolkits/gnome--
 gnome-commander	ports/x11-fm/gnome-commander
 gnome-fifth-toe	ports/x11/gnome-fifth-toe
