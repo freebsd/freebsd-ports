@@ -1,0 +1,38 @@
+bin/i386-rtems-size
+bin/i386-rtems-objdump
+bin/i386-rtems-ar
+bin/i386-rtems-strings
+bin/i386-rtems-ranlib
+bin/i386-rtems-objcopy
+bin/i386-rtems-addr2line
+bin/i386-rtems-readelf
+bin/i386-rtems-nm
+bin/i386-rtems-strip
+bin/i386-rtems-c++filt
+bin/i386-rtems-as
+bin/i386-rtems-gasp
+bin/i386-rtems-ld
+include/bfd.h
+include/ansidecl.h
+include/bfdlink.h
+lib/libiberty.a
+lib/libbfd.la
+lib/libbfd.a
+lib/libopcodes.la
+lib/libopcodes.a
+i386-rtems/bin/nm
+i386-rtems/bin/strip
+i386-rtems/bin/ar
+i386-rtems/bin/ranlib
+i386-rtems/bin/as
+i386-rtems/bin/ld
+i386-rtems/lib/ldscripts/elf_i386.x
+i386-rtems/lib/ldscripts/elf_i386.xbn
+i386-rtems/lib/ldscripts/elf_i386.xn
+i386-rtems/lib/ldscripts/elf_i386.xr
+i386-rtems/lib/ldscripts/elf_i386.xs
+i386-rtems/lib/ldscripts/elf_i386.xu
+@dirrm i386-rtems/lib/ldscripts
+@dirrm i386-rtems/lib
+@dirrm i386-rtems/bin
+@dirrm i386-rtems

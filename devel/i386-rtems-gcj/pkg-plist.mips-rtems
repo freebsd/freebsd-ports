@@ -1,0 +1,6 @@
+bin/mips64orion-rtems-gcj
+bin/gcjh
+bin/jv-scan
+bin/jcf-dump
+lib/gcc-lib/mips64orion-rtems/2.95.2/jc1
+lib/gcc-lib/mips64orion-rtems/2.95.2/jvgenmain

@@ -1,0 +1,37 @@
+bin/i960-rtems-size
+bin/i960-rtems-objdump
+bin/i960-rtems-ar
+bin/i960-rtems-strings
+bin/i960-rtems-ranlib
+bin/i960-rtems-objcopy
+bin/i960-rtems-addr2line
+bin/i960-rtems-readelf
+bin/i960-rtems-nm
+bin/i960-rtems-strip
+bin/i960-rtems-c++filt
+bin/i960-rtems-as
+bin/i960-rtems-gasp
+bin/i960-rtems-ld
+include/bfd.h
+include/ansidecl.h
+include/bfdlink.h
+lib/libiberty.a
+lib/libbfd.la
+lib/libbfd.a
+lib/libopcodes.la
+lib/libopcodes.a
+i960-rtems/bin/nm
+i960-rtems/bin/strip
+i960-rtems/bin/ar
+i960-rtems/bin/ranlib
+i960-rtems/bin/as
+i960-rtems/bin/ld
+i960-rtems/lib/ldscripts/gld960coff.x
+i960-rtems/lib/ldscripts/gld960coff.xbn
+i960-rtems/lib/ldscripts/gld960coff.xn
+i960-rtems/lib/ldscripts/gld960coff.xr
+i960-rtems/lib/ldscripts/gld960coff.xu
+@dirrm i960-rtems/lib/ldscripts
+@dirrm i960-rtems/lib
+@dirrm i960-rtems/bin
+@dirrm i960-rtems

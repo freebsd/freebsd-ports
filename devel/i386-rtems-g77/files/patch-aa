@@ -1,0 +1,21 @@
+--- gcc/Makefile.in.orig	Fri Aug 13 03:46:55 1999
++++ gcc/Makefile.in	Mon Jun 12 22:04:15 2000
+@@ -2590,18 +2590,6 @@
+ 
+ # Install the man pages.
+ install-man: installdirs $(srcdir)/gcc.1 $(srcdir)/cccp.1 lang.install-man
+-	-if [ -f gcc-cross$(exeext) ] ; then \
+-	  rm -f $(man1dir)/$(GCC_CROSS_NAME)$(manext); \
+-	  $(INSTALL_DATA) $(srcdir)/gcc.1 $(man1dir)/$(GCC_CROSS_NAME)$(manext); \
+-	  chmod a-x $(man1dir)/$(GCC_CROSS_NAME)$(manext); \
+-	else \
+-	  rm -f $(man1dir)/$(GCC_INSTALL_NAME)$(manext); \
+-	  $(INSTALL_DATA) $(srcdir)/gcc.1 $(man1dir)/$(GCC_INSTALL_NAME)$(manext); \
+-	  chmod a-x $(man1dir)/$(GCC_INSTALL_NAME)$(manext); \
+-	fi
+-	-rm -f $(man1dir)/cccp$(manext)
+-	-$(INSTALL_DATA) $(srcdir)/cccp.1 $(man1dir)/cccp$(manext)
+-	-chmod a-x $(man1dir)/cccp$(manext)
+ 
+ # Install the library.
+ install-libgcc: libgcc.a installdirs

@@ -1,0 +1,6 @@
+bin/sh-rtems-gcj
+bin/gcjh
+bin/jv-scan
+bin/jcf-dump
+lib/gcc-lib/sh-rtems/2.95.2/jc1
+lib/gcc-lib/sh-rtems/2.95.2/jvgenmain

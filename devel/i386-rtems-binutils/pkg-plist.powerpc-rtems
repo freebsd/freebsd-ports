@@ -1,0 +1,38 @@
+bin/powerpc-rtems-size
+bin/powerpc-rtems-objdump
+bin/powerpc-rtems-ar
+bin/powerpc-rtems-strings
+bin/powerpc-rtems-ranlib
+bin/powerpc-rtems-objcopy
+bin/powerpc-rtems-addr2line
+bin/powerpc-rtems-readelf
+bin/powerpc-rtems-nm
+bin/powerpc-rtems-strip
+bin/powerpc-rtems-c++filt
+bin/powerpc-rtems-as
+bin/powerpc-rtems-gasp
+bin/powerpc-rtems-ld
+include/bfd.h
+include/ansidecl.h
+include/bfdlink.h
+lib/libiberty.a
+lib/libbfd.la
+lib/libbfd.a
+lib/libopcodes.la
+lib/libopcodes.a
+powerpc-rtems/bin/nm
+powerpc-rtems/bin/strip
+powerpc-rtems/bin/ar
+powerpc-rtems/bin/ranlib
+powerpc-rtems/bin/as
+powerpc-rtems/bin/ld
+powerpc-rtems/lib/ldscripts/elf32ppc.x
+powerpc-rtems/lib/ldscripts/elf32ppc.xbn
+powerpc-rtems/lib/ldscripts/elf32ppc.xn
+powerpc-rtems/lib/ldscripts/elf32ppc.xr
+powerpc-rtems/lib/ldscripts/elf32ppc.xs
+powerpc-rtems/lib/ldscripts/elf32ppc.xu
+@dirrm powerpc-rtems/lib/ldscripts
+@dirrm powerpc-rtems/lib
+@dirrm powerpc-rtems/bin
+@dirrm powerpc-rtems

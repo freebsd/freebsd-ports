@@ -1,0 +1,26 @@
+bin/powerpc-rtems-g77
+@unexec install-info --delete %D/info/g77.info %D/info/dir
+info/g77.info
+info/g77.info-1
+info/g77.info-10
+info/g77.info-11
+info/g77.info-12
+info/g77.info-13
+info/g77.info-14
+info/g77.info-15
+info/g77.info-16
+info/g77.info-17
+info/g77.info-18
+info/g77.info-19
+info/g77.info-2
+info/g77.info-20
+info/g77.info-21
+info/g77.info-3
+info/g77.info-4
+info/g77.info-5
+info/g77.info-6
+info/g77.info-7
+info/g77.info-8
+info/g77.info-9
+@exec install-info %D/info/g77.info %D/info/dir
+lib/gcc-lib/powerpc-rtems/2.95.2/f771

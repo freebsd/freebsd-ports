@@ -1,0 +1,42 @@
+bin/sh-rtems-size
+bin/sh-rtems-objdump
+bin/sh-rtems-ar
+bin/sh-rtems-strings
+bin/sh-rtems-ranlib
+bin/sh-rtems-objcopy
+bin/sh-rtems-addr2line
+bin/sh-rtems-readelf
+bin/sh-rtems-nm
+bin/sh-rtems-strip
+bin/sh-rtems-c++filt
+bin/sh-rtems-as
+bin/sh-rtems-gasp
+bin/sh-rtems-ld
+include/bfd.h
+include/ansidecl.h
+include/bfdlink.h
+lib/libiberty.a
+lib/libbfd.la
+lib/libbfd.a
+lib/libopcodes.la
+lib/libopcodes.a
+sh-rtems/bin/nm
+sh-rtems/bin/strip
+sh-rtems/bin/ar
+sh-rtems/bin/ranlib
+sh-rtems/bin/as
+sh-rtems/bin/ld
+sh-rtems/lib/ldscripts/sh.x
+sh-rtems/lib/ldscripts/sh.xbn
+sh-rtems/lib/ldscripts/sh.xn
+sh-rtems/lib/ldscripts/sh.xr
+sh-rtems/lib/ldscripts/sh.xu
+sh-rtems/lib/ldscripts/shl.x
+sh-rtems/lib/ldscripts/shl.xbn
+sh-rtems/lib/ldscripts/shl.xn
+sh-rtems/lib/ldscripts/shl.xr
+sh-rtems/lib/ldscripts/shl.xu
+@dirrm sh-rtems/lib/ldscripts
+@dirrm sh-rtems/lib
+@dirrm sh-rtems/bin
+@dirrm sh-rtems
