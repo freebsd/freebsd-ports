@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cc65
-PORTVERSION=	2.9.1
+PORTVERSION=	2.9.3
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.musoftware.de/pub/uz/cc65/ \
 		http://www.funet.fi/pub/cbm/programming/cc65/ \
@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.musoftware.de/pub/uz/cc65/ \
 		http://bj.spline.de/cc65/
 # This mirror seems to stop at version 2.7.0
 #		ftp://ftp.elysium.pl/tools/crossplatform/programming/c/cc65/ \
-DISTNAME=	cc65-sources-2.9.1
+DISTNAME=	${PORTNAME}-sources-${PORTVERSION}
 
 MAINTAINER=	watchman@ludd.luth.se
 COMMENT=	Cross-compiler for 6502-based systems, includes 65816 assembler
@@ -91,31 +91,31 @@ plist:
 	    ${SED} -E -e 's/^.*cc65.*\/samples/%%PORTDOCS%%share\/doc\/cc65\/samples/'
 	@${FIND} ${WRKSRC}/samples -type d | sort -r | \
 	    ${SED} -E -e 's/^.*cc65.*\/samples/%%PORTDOCS%%@dirrm share\/doc\/cc65\/samples/'
-.for file in ${DOCFILES}
-	@${ECHO_CMD} %%PORTDOCS%%share/doc/cc65/`${BASENAME} ${file}`
+.for filename in ${DOCFILES}
+	@${ECHO_CMD} %%PORTDOCS%%share/doc/cc65/`${BASENAME} ${filename}`
 .endfor
 	@${ECHO_CMD} %%PORTDOCS%%@dirrm share/doc/cc65
-.for file in ${BINFILES}
-	@${ECHO_CMD} bin/`${BASENAME} ${file}`
+.for filename in ${BINFILES}
+	@${ECHO_CMD} bin/`${BASENAME} ${filename}`
 .endfor
-.for file in ${BINSCRIPTS}
-	@${ECHO_CMD} bin/`${BASENAME} ${file}`
+.for filename in ${BINSCRIPTS}
+	@${ECHO_CMD} bin/`${BASENAME} ${filename}`
 .endfor
-.for file in ${ASMINCFILES}
-	@${ECHO_CMD} lib/cc65/asminc/`${BASENAME} ${file}`
+.for filename in ${ASMINCFILES}
+	@${ECHO_CMD} lib/cc65/asminc/`${BASENAME} ${filename}`
 .endfor
 	@${FIND} ${WRKSRC}/include -not -type d | \
 	    ${SED} -E -e 's/^.*cc65.*\/include/lib\/cc65\/include/'
 	@${FIND} ${WRKSRC}/include -type d | sort -r | \
 	    ${SED} -E -e 's/^.*cc65.*\/include/@dirrm lib\/cc65\/include/'
-.for file in ${CC65LIBFILES}
-	@${ECHO_CMD} lib/cc65/lib/`${BASENAME} ${file}`
+.for filename in ${CC65LIBFILES}
+	@${ECHO_CMD} lib/cc65/lib/`${BASENAME} ${filename}`
 .endfor
-.for file in ${CC65EMDFILES}
-	@${ECHO_CMD} lib/cc65/emd/`${BASENAME} ${file}`
+.for filename in ${CC65EMDFILES}
+	@${ECHO_CMD} lib/cc65/emd/`${BASENAME} ${filename}`
 .endfor
-.for file in ${CC65TGIFILES}
-	@${ECHO_CMD} lib/cc65/tgi/`${BASENAME} ${file}`
+.for filename in ${CC65TGIFILES}
+	@${ECHO_CMD} lib/cc65/tgi/`${BASENAME} ${filename}`
 .endfor
 	@${ECHO_CMD} @dirrm lib/cc65/emd
 	@${ECHO_CMD} @dirrm lib/cc65/lib
