@@ -1,12 +1,13 @@
---- Makefile.PL.orig	Thu Feb 19 02:40:23 2004
-+++ Makefile.PL	Mon Mar 29 17:04:32 2004
-@@ -97,6 +97,11 @@
+--- Makefile.PL.orig	Wed Feb 18 23:24:44 2004
++++ Makefile.PL	Tue Jul 20 15:40:48 2004
+@@ -97,6 +97,12 @@
      $string;
  }
  
 +sub MY::manifypods	{
 +	package MY; my $self=shift;
 +	$self->{MAN3PODS}->{'lib/Apache/TestConfig.pm'}='$(INST_MAN3DIR)/Apache::TestConfig.$(MAN3EXT)';
++	$self->{MAN3PODS}->{'lib/Apache/TestConfigData.pm'}='$(INST_MAN3DIR)/Apache::TestConfigData.$(MAN3EXT)';
 +	$self->SUPER::manifypods(@_);
 +}
  sub add_dep {
