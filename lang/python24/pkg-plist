@@ -872,13 +872,12 @@ lib/%%PYTHON_VERSION%%/lib-dynload/crypt.so
 lib/%%PYTHON_VERSION%%/lib-dynload/dbm.so
 lib/%%PYTHON_VERSION%%/lib-dynload/errno.so
 lib/%%PYTHON_VERSION%%/lib-dynload/fcntl.so
-lib/%%PYTHON_VERSION%%/lib-dynload/fpectl.so
+@comment lib/%%PYTHON_VERSION%%/lib-dynload/fpectl.so
 lib/%%PYTHON_VERSION%%/lib-dynload/grp.so
 lib/%%PYTHON_VERSION%%/lib-dynload/imageop.so
 lib/%%PYTHON_VERSION%%/lib-dynload/math.so
 lib/%%PYTHON_VERSION%%/lib-dynload/md5.so
 lib/%%PYTHON_VERSION%%/lib-dynload/mmap.so
-lib/%%PYTHON_VERSION%%/lib-dynload/mpz.so
 lib/%%PYTHON_VERSION%%/lib-dynload/new.so
 lib/%%PYTHON_VERSION%%/lib-dynload/nis.so
 lib/%%PYTHON_VERSION%%/lib-dynload/operator.so

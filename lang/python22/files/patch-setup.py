@@ -5,7 +5,7 @@
  
  # This global variable is used to hold the list of modules to be disabled.
 -disabled_module_list = []
-+disabled_module_list = ["_tkinter", "gdbm", "pyexpat"]
++disabled_module_list = ["_tkinter", "gdbm", "mpz", "pyexpat"]
  
  def find_file(filename, std_dirs, paths):
      """Searches for the directory where a given file is located,

@@ -17,7 +17,7 @@ MAINTAINER?=	tg@FreeBSD.org
 DIST_SUBDIR=	python
 WRKSRC=		${PYTHON_WRKSRC}
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-fpectl
+#CONFIGURE_ARGS=	--with-fpectl
 CONFIGURE_ENV=	OPT="${CFLAGS}"
 INSTALL_TARGET=	install
 MAN1=		python.1
@@ -46,12 +46,6 @@ DEMODIR=	${PREFIX}/share/examples/${PYTHON_VERSION}
 .if ${OSVERSION} < 400000
 LIB_DEPENDS+=	ncurses.5:${PORTSDIR}/devel/ncurses
 CFLAGS+=	-I${LOCALBASE}/include/ncurses -I${LOCALBASE}/include
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
-.endif
-
-.if ${OSVERSION} > 500023
-LIB_DEPENDS+=	gmp.3:${PORTSDIR}/math/libgmp
-CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 .endif
 
