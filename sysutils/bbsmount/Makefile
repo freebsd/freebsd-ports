@@ -22,6 +22,10 @@ GNU_CONFIGURE=	yes
 USE_GCC=	2.95
 PORTDOCS=	README BUGS NEWS AUTHORS ChangeLog
 
+post-patch:   
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \   
+		${WRKSRC}/${CONFIGURE_SCRIPT}
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===> Installing documentation"
