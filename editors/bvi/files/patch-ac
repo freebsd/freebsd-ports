@@ -1,0 +1,20 @@
+--- bvi.c.orig	Tue Oct 24 09:09:08 2000
++++ bvi.c	Wed Oct 25 18:42:07 2000
+@@ -619,7 +619,7 @@
+ 					if (count > 0)
+ 						do_delete((off_t)count, current);
+ 					else if (count < 0)
+-						do_back(-count, current);
++						do_back((off_t)-count, current);
+ 					if (ch == 'c') {
+ 						precount = 1;
+ 						undo_count = edit('i');
+@@ -637,7 +637,7 @@
+ 					break;
+ 				case 'X':
+ 					sprintf(rep_buf, "%ldX", precount);
+-					do_back(precount, current);
++					do_back((off_t)precount, current);
+ 					break;
+ 				default:
+ 					flushinp();
