@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-iconbox
 PORTVERSION=	3.99.2
-CATEGORIES=	misc
+CATEGORIES=	misc xfce
 MASTER_SITES=	http://www.xfce.org/archive/xfce4-rc2/src/ \
 		ftp://ftp.unix-ag.org/user/bmeurer/xfce4/rc2/separate/ \
 		http://usuarios.lycos.es/xfce4/tarballs/rc2/separate/ \
@@ -18,6 +18,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XFce 4 icon box, an alternative taskbar
 
 BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
+LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
+		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui
 
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes

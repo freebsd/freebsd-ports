@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-wm
 PORTVERSION=	3.99.2
-CATEGORIES=	x11-wm
+CATEGORIES=	x11-wm xfce
 MASTER_SITES=	http://www.xfce.org/archive/xfce4-rc2/src/ \
 		ftp://ftp.unix-ag.org/user/bmeurer/xfce4/rc2/separate/ \
 		http://usuarios.lycos.es/xfce4/tarballs/rc2/separate/ \
@@ -19,7 +19,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XFce 4 window manager
 
 BUILD_DEPENDS=	xfce-mcs-manager:${PORTSDIR}/sysutils/xfce4-mcs-manager
-LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
+		xfce4util.1:${PORTSDIR}/x11/libxfce4util \
+		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui
 
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
