@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-bin-${PORTVERSION:S/./_/g}
 MAINTAINER=	cartola@openit.com.br
 COMMENT=	Free mind-mapping software written in Java
 
-.if defined(ZIPDEPENDS)
+.if !exists(/usr/bin/unzip)
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 .endif
 .if !exists(/usr/bin/zip)
