@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xzx
-PORTVERSION=	4.3
+PORTVERSION=	4.4
 CATEGORIES=	emulators
 # I don't maintain this port anymore, but I'm happy to track the distfiles, as
 # it's difficult to fetch(1) them from the WWW site. If you are updating this
@@ -24,6 +24,7 @@ BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake-4
 
 USE_MOTIF=	yes
 USE_X_PREFIX=	yes
+USE_REINPLACE=	yes
 
 # License forbids redistribution
 RESTRICTED=	Redistribution forbidden by license
@@ -33,10 +34,11 @@ CONFIGURE_ARGS=	--with-oss
 
 MAN1=		xzx.1
 
-.include <bsd.port.pre.mk>
+# Prevent configure from trying to run auto* since it's not needed and will
+# error if auto* < 2.54
+post-configure:
+		@${REINPLACE_CMD} 's@autoheader@${TRUE}@g' ${WRKSRC}/Makefile
+		@${REINPLACE_CMD} 's@autoconf@${TRUE}@g' ${WRKSRC}/Makefile
+		@${ECHO_CMD} "${TRUE}" > ${WRKSRC}/missing
 
-.if ${ARCH} != "i386" && ${OSVERSION} >= 502102
-BROKEN=		"Does not compile on !i386 5.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

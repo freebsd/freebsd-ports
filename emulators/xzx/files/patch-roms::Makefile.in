@@ -1,0 +1,11 @@
+--- roms/Makefile.in.orig	Sat Feb 28 13:05:47 2004
++++ roms/Makefile.in	Sat Feb 28 13:06:25 2004
+@@ -323,7 +323,7 @@
+ 	for f in $(DATA_FILES); do \
+ 	  $(INSTALL_DATA) $$f $(DESTDIR)$(pkglibdir); \
+ 	done
+-	(cd $(DESTDIR)$(pkglibdir); rm if1.rom; ln if1-v2.rom if1.rom)
++	(cd $(DESTDIR)$(pkglibdir); rm -f if1.rom; ln if1-v2.rom if1.rom)
+ 
+ uninstall-local:
+ 	for f in $(DATA_FILES); do \
