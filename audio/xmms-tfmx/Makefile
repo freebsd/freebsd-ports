@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	xmms-tfmx
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	audio
-MASTER_SITES=	http://www.freenix.no/~anders/ \
+MASTER_SITES=	http://fatal.telia.nu/hosted/ \
+		http://www.freenix.no/~anders/ \
 		ftp://totem.fix.no/pub/mirrors/misc/
 
 MAINTAINER=	anders@fix.no
