@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mailman
-PORTVERSION=	2.1
-PORTREVISION=	3
+PORTVERSION=	2.1.1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.list.org/ \
 		${MASTER_SITE_GNU} \
@@ -18,11 +17,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	wjv@FreeBSD.org
 
 RUN_DEPENDS=	lynx:${PORTSDIR}/www/lynx
-.if defined(WITH_APACHE13)
-RUN_DEPENDS+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache13
-.else
-RUN_DEPENDS+=	${LOCALBASE}/sbin/httpd:${PORTSDIR}/www/apache2
-.endif
 .if defined(WITH_CHINESE)
 RUN_DEPENDS+=	${PYTHONPREFIX_LIBDIR}/encodings/chinesecn/__init__.py:${PORTSDIR}/chinese/pycodec
 .endif
@@ -62,6 +56,10 @@ PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 PKGOPTS=	${FILESDIR}/pkg-opts
 PLIST_SUB+=	MMDIR=${MM_DIR} IMGDIR=${IMGDIR}
+DOCFILES=	ACKNOWLEDGMENTS BUGS FAQ INSTALL NEWS README README-I18N.en \
+	  	README.CONTRIB README.EXIM README.NETSCAPE README.POSTFIX \
+		README.QMAIL README.SENDMAIL README.USERAGENT TODO UPGRADING
+IMGFILES=	PythonPowered.png mailman.jpg mm-icon.png
 
 options:
 	@ ${ECHO_MSG} "===>  Build options for ${PKGNAME}:"
@@ -71,6 +69,11 @@ post-extract:
 .if !defined(BATCH)
 	@ ${TEST} -r ${PKGOPTS} && \
 	  (${ECHO_MSG} '-------------------------------------------------------------------------'; \
+	   ${ECHO_MSG} '                        = IMPORTANT NOTICE =                             '; \
+	   ${ECHO_MSG} 'Getting the values of certain build time variables right is CRUCIAL if   '; \
+	   ${ECHO_MSG} 'you want your Mailman installation to function!  Pay specific attention  '; \
+	   ${ECHO_MSG} 'to the value of MAIL_GID if you use an alternative MTA (not Sendmail).   '; \
+	   ${ECHO_MSG} '                                                                         '; \
 	   ${ECHO_MSG} 'Perform a "make options" to see a list of available installation options.'; \
 	   ${ECHO_MSG} '-------------------------------------------------------------------------')
 .endif
@@ -95,7 +98,8 @@ post-configure:
 	  -e 's#%%PREFIX%%#${PREFIX}#g' -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' \
 	  pkg-deinstall > ${PKGDEINSTALL}
 	@ ${SED} -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' \
-	  -e 's#%%DOCSDIR%%#${DOCSDIR}#g' pkg-message > ${PKGMESSAGE}
+	  -e 's#%%DOCSDIR%%#${DOCSDIR}#g' -e 's#%%LOCALBASE%%#${LOCALBASE}#g' \
+	  pkg-message > ${PKGMESSAGE}
 
 pre-install:
 	@ ${SH} ${PKGREQ} INSTALL
@@ -107,14 +111,15 @@ post-install:
 .endfor
 	@ ${CHGRP} -R ${MM_GROUPNAME} ${MAILMANDIR}
 	@ ${MKDIR} ${PREFIX}/${IMGDIR}
-.for imgfile in mailman.jpg mm-icon.png PythonPowered.png
+.for imgfile in ${IMGFILES}
 	@ ${CP} ${MAILMANDIR}/icons/${imgfile} ${PREFIX}/${IMGDIR}
 .endfor
 	@ uudecode -p ${FILESDIR}/powerlogo.gif.uue > \
 	  ${PREFIX}/${IMGDIR}/powerlogo.gif
 .if !defined(NOPORTDOCS)
 	@ ${MKDIR} ${DOCSDIR}
-.for docfile in BUGS FAQ INSTALL NEWS README* UPGRADING
+	@ ${INSTALL_DATA} ${FILESDIR}/FreeBSD-post-install-notes ${DOCSDIR}
+.for docfile in ${DOCFILES}
 	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
 .endfor
 .endif

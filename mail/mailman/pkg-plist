@@ -1341,22 +1341,22 @@
 %%MMDIR%%/tests/test_safedict.py
 %%MMDIR%%/tests/test_security_mgr.py
 %%MMDIR%%/tests/testall.py
+%%PORTDOCS%%share/doc/mailman/ACKNOWLEDGMENTS
 %%PORTDOCS%%share/doc/mailman/BUGS
 %%PORTDOCS%%share/doc/mailman/FAQ
+%%PORTDOCS%%share/doc/mailman/FreeBSD-post-install-notes
 %%PORTDOCS%%share/doc/mailman/INSTALL
 %%PORTDOCS%%share/doc/mailman/NEWS
 %%PORTDOCS%%share/doc/mailman/README
 %%PORTDOCS%%share/doc/mailman/README-I18N.en
-%%PORTDOCS%%share/doc/mailman/README.BSD
 %%PORTDOCS%%share/doc/mailman/README.CONTRIB
 %%PORTDOCS%%share/doc/mailman/README.EXIM
-%%PORTDOCS%%share/doc/mailman/README.LINUX
-%%PORTDOCS%%share/doc/mailman/README.MACOSX
 %%PORTDOCS%%share/doc/mailman/README.NETSCAPE
 %%PORTDOCS%%share/doc/mailman/README.POSTFIX
 %%PORTDOCS%%share/doc/mailman/README.QMAIL
 %%PORTDOCS%%share/doc/mailman/README.SENDMAIL
 %%PORTDOCS%%share/doc/mailman/README.USERAGENT
+%%PORTDOCS%%share/doc/mailman/TODO
 %%PORTDOCS%%share/doc/mailman/UPGRADING
 etc/rc.d/mailman.sh
 @dirrm %%MMDIR%%/tests/msgs

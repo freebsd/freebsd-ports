@@ -1,0 +1,182 @@
+# ----------------------------------------------------------------------
+# Post-installation instructions for the FreeBSD port/package of Mailman
+# $FreeBSD$
+# ----------------------------------------------------------------------
+
+
+CONTENTS:
+* VERY IMPORTANT NOTE
+* IMPORTANT NOTE:  Using Mailman with alternate MTAs
+1) General post-installation instructions
+2) Integrating Mailman with your web server
+3) Integrating Mailman with various mail servers
+   3.1) Sendmail
+   3.2) Exim
+   3.3) Postfix
+   3.4) Qmail
+
+
+VERY IMPORTANT NOTE
+
+The Mailman port has a number of build time options.  Getting the values of
+some of these right is CRUCIAL if you want your Mailman installation to work!
+
+To see a list of build time options, go to the Mailman port's directory
+(/usr/ports/mail/mailman by default) and perform a "make options".
+
+
+IMPORTANT NOTE:  Using Mailman with alternate MTAs
+
+By default, the Mailman port is configured to work with Sendmail.  If you
+wish to use Mailman with an alternate MTA, you MUST set the value of MAIL_GID
+correctly when building the port.  Perform a "make options" in the port
+directory (as explained above) to see a list of possible values for MAIL_GID.
+
+If you have installed Mailman from a pre-compiled package (e.g. from
+a FreeBSD distribution CD), chances are that the package had been built with
+the default value for MAIL_GID and will only work with Sendmail.  You will
+probably have to build the Mailman port yourself to get it to work with your
+MTA.
+
+Further down in this document you will find sections dealing with most
+popular MTAs.
+
+
+1) General post-installation instructions
+
+   You should find two files named "INSTALL" and "README" in the same
+   directory as this file.  You should read them for general
+   post-installation instructions.  Bear in mind that the installation of
+   Mailman from the FreeBSD port or package may have already taken care of
+   many of the steps you may read about in these files.  Also, not everything
+   in these files is necessarily relevant to the FreeBSD port.
+
+
+2) Integrating Mailman with your web server
+
+   You need to set up your webserver to find Mailman's CGI scripts.  The
+   Mailman port works well with either Apache 1.3.x or Apache 2.x as
+   installed from their respective ports (www/apache13 and www/apache2).
+
+   If you're using Apache, you need to add at least two lines to your
+   httpd.conf.  Assuming that you installed the Mailman port in the default
+   location (/usr/local/mailman), they are:
+
+     ScriptAlias /mailman "/usr/local/mailman/cgi-bin"
+     Alias /pipermail "/usr/local/mailman/archives/public"
+
+   If you installed the Mailman port to a non-standard location, replace
+   "/usr/local/mailman" as appropriate.
+
+   If your Apache is configured for multiple virtual servers, ensure that the
+   above configuration lines appear in all the relevant <VirtualHost>
+   sections.
+
+   Remember to restart your Apache server after you have changed httpd.conf!
+
+   No specific instructions exist at this time on how to integrate the
+   Mailman port with web servers other than Apache.  Please submit any such
+   information to the maintainer of the Mailman port.
+
+
+3) Integrating Mailman with various mail servers
+
+
+3.1) Sendmail
+
+     No modification of MAIL_GID should be required when building the Mailman
+     port.  The port is designed to work with Sendmail by default.
+
+     Review the instructions found in README.SENDMAIL in the same directory
+     as this file.
+
+     No further instructions exist at this time on how to integrate the
+     Mailman port with Sendmail.  Please submit any such information to the
+     maintainer of the Mailman port.
+
+
+3.2) Exim
+
+     The following instructions assume that Exim has been set up from the
+     FreeBSD Exim port, and that it runs with a fairly default configuration.
+     Specifically, it assumes that Exim runs under the default UID and GID as
+     configured by the FreeBSD port.  In other words, that the following
+     lines appear in Exim's configure file:
+
+       exim_user = mailnull
+       exim_group = mail
+
+     For Exim 3.x, the value of MAIL_GID has to be set to 'nobody' (or 65534)
+     when building the Mailman port.
+
+     For Exim 4.x, the value of MAIL_GID has to be set to 'mail' (or 6) when
+     building the Mailman port.
+
+     For example, to build and install the Mailman port for Exim4, perform
+     the following in /usr/ports/mail/mailman:
+
+       # make MAIL_GID=6 install
+
+     Next, follow the instructions in REAME.EXIM found in the same directory
+     as this file.  You can add the macros, transport and router found in
+     README.EXIM verbatim to your Exim's configure file.
+
+     Note that README.EXIM as installed with the FreeBSD port of Mailman has
+     been patched, and should be trusted over a version of the file obtained
+     from another source.  Specifically, when adding the macros found in
+     README.EXIM, you should set the MAILMAN_USER and MAILMAN_GROUP to the
+     same values as those for Exim, namely:
+
+       MAILMAN_USER=mailnull
+       MAILMAN_GROUP=mail
+
+     Once you have finished editing configure, remember to re-HUP your Exim
+     server:
+
+       # kill -1 `cat /var/run/exim.pid`
+
+     Now, start Mailman's qrunner daemon:
+
+       # /usr/local/etc/rc.d/mailman.sh start
+
+     Troubleshooting:  If you ever see an error message such as the following
+     in your Exim's mainlog, it's a sure sign that Exim and Mailman disagree
+     about the GID under which mail is delivered:
+
+       ** testlist@your.host.com R=mailman_router T=mailman_transport:
+       Child process of mailman_transport transport returned 2 from command:
+       /usr/local/mailman/mail/mailman
+
+     In this case, ensure that you have followed the instructions in this
+     section to the letter.
+
+
+3.3) Postfix
+
+     The value of MAIL_GID has to be set to 'nobody' (or 65534) when building
+     the Mailman port.  This has been confirmed by the maintainer of the
+     FreeBSD port of Postfix.
+
+     Review the instructions found in README.POSTFIX in the same directory
+     as this file.
+
+     No further instructions exist at this time on how to integrate the
+     Mailman port with Postfix.  Please submit any such information to the
+     maintainer of the Mailman port.
+
+
+3.4) Qmail
+
+     The maintainer of the Mailman port has no information at this time as to
+     the required value of MAIL_GID for Mailman to work with Qmail.  :-(
+
+     Review the instructions found in README.QMAIL in the same directory as
+     this file.
+
+     No further instructions exist at this time on how to integrate the
+     Mailman port with Qmail.  Please submit any such information to the
+     maintainer of the Mailman port.
+
+
+-- Johann Visagie <wjv@FreeBSD.org>
+   (Mailman port maintainer)
