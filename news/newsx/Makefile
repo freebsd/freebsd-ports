@@ -19,7 +19,8 @@ BUILD_DEPENDS=	${LOCALBASE}/news/lib/libcnews.a:${PORTSDIR}/news/cnews
 BUILD_DEPENDS=	${LOCALBASE}/news/lib/libinn.a:${PORTSDIR}/news/inn
 .endif
 
-USE_AUTOMAKE_VER=14
+USE_AUTOMAKE=	yes
+USE_REINPLACE=	yes
 CONFIGURE_ENV=	PATH="${PATH}:${LOCALBASE}/news/bin"
 .if !defined(WITH_CNEWS)
 .if !defined(WITHOUT_INN_2-X)
@@ -33,7 +34,7 @@ HDR_DIR=	${LOCALBASE}/news/include
 DOCS=		AUTHORS COPYING ChangeLog FAQ INSTALL NEWS README TODO
 
 post-patch:
-	@${PERL} -pi -e "s:%%LOCALBASE%%:${LOCALBASE}:" ${WRKSRC}/configure.in
+	@${REINPLACE_CMD} -e "s:%%LOCALBASE%%:${LOCALBASE}:" ${WRKSRC}/configure.in
 
 pre-configure:
 	@${ECHO} "*********************************************************"
