@@ -1,12 +1,15 @@
---- Makefile.orig	Wed Aug  6 17:33:10 2003
-+++ Makefile	Wed Aug  6 17:34:04 2003
-@@ -3,8 +3,7 @@
- CFLAGS	   = -DTHREADING -g
- INCLUDE	   = -I/usr/local/include -I.
- LIBS       = -L/usr/local/lib -lssl -lcrypto
--PYVER      = 2.2
+--- SWIG/Makefile.orig	Mon Sep 15 13:34:31 2003
++++ SWIG/Makefile	Fri Mar 18 20:32:40 2005
+@@ -8,9 +8,9 @@
+ #else
+ PYVER = 2.3
+ #endif
 -PYINCLUDE  = -DHAVE_CONFIG_H -I/usr/local/include/python$(PYVER) \
+-	-I/usr/local/lib/python$(PYVER)/config
+-PYLIB      = /usr/local/lib/python$(PYVER)/config
 +PYINCLUDE  = -DHAVE_CONFIG_H -I%%PYTHON_INCLUDEDIR%% \
- 	-I/usr/local/lib/python$(PYVER)/config
- PYLIB      = /usr/local/lib/python$(PYVER)/config
++	-I%%PYTHON_INCLUDEDIR%%/config
++PYLIB      = %%PYTHON_INCLUDEDIR%%/config
+ 
+ all:	_m2crypto
  

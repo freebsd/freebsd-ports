@@ -1,15 +1,14 @@
-M2Crypto is a crypto and SSL toolkit for Python:
+M2Crypto is a crypto and SSL toolkit for Python featuring the following:
 
-    - DH, RSA, DSA, symmetric ciphers including AES, message digests, HMACs.
-    - SSL functionality to implement clients and servers, with examples.
-    - HTTPS extensions to Python's httplib, urllib and xmlrpclib.
-    - Unforgeable HMAC'ing AuthCookies for web session management.
-    - FTP/TLS client and server.
-    - S/MIME v2.
-    - ZServerSSL: A HTTPS server for Zope.
-    - ZSmime: An S/MIME messenger for Zope.
+* RSA, DSA, DH, HMACs, message digests, symmetric ciphers (including AES).
+* SSL functionality to implement clients and servers.
+* HTTPS extensions to Python's httplib, urllib, and xmlrpclib.
+* Unforgeable HMAC'ing AuthCookies for web session management.
+* FTP/TLS client and server.
+* S/MIME.
+* ZServerSSL: A HTTPS server for Zope.
+* ZSmime: An S/MIME messenger for Zope.
 
-WWW: http://www.post1.com/home/ngps/m2/
+WWW: http://sandbox.rulemaker.net/ngps/m2/
 
-Ng Pheng Siong
-ngps@post1.com
+Marcus Grando <marcus@corp.grupos.com.br>
