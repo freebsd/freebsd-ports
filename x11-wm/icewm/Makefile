@@ -6,27 +6,55 @@
 #
 
 PORTNAME=	icewm
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.0.6
 CATEGORIES=	x11-wm
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-EXTRACT_SUFX=	.src.tar.gz
+DISTNAME=	${PORTNAME}-${PORTVERSION}-4
 
 MAINTAINER=	nakai@FreeBSD.org
 
-.if defined(GNOME)
-LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WANT_GNOME=	yes
+USE_BZIP2=	yes
+USE_X_PREFIX=	yes
+USE_GMAKE=	yes
+USE_AUTOCONF=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--enable-i18n --enable-nls \
+		--with-cfgdir=${PREFIX}/share/icewm \
+		--with-libdir=${PREFIX}/share/icewm
+
+.include <bsd.port.pre.mk>
+
+.if defined(HAVE_GNOME)
+USE_GNOME=	yes
+CONFIGURE_ARGS+=	--with-imlib --without-xpm --with-gnome-menus
+INSTALL_TARGET=		install install-gnome
+PLIST_SUB+=	GNOME=""
+.else
+USE_XPM=	yes
+CONFIGURE_ARGS+=	--without-imlib --with-xpm --without-gnome-menus
+PLIST_SUB+=	GNOME="@comment "
 .endif
 
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_X_PREFIX=	yes
-USE_IMLIB=	yes
-CONFIGURE_ARGS=	--enable-i18n --with-imlib
+.if defined(NOPORTDOCS)
+PLIST_SUB+=	NODOCS="@comment "
+.else
+PLIST_SUB+=	NODOCS=""
+.endif
 
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/bsd-daemon.xpm ${PREFIX}/share/icewm/taskbar
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/icewm
+.for file in CHANGES FAQ INSTALL README TODO
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/icewm
+.endfor
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/icewm
+.endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,5 +1,5 @@
---- src/ysocket.h.orig	Tue Nov 23 01:37:11 1999
-+++ src/ysocket.h	Wed Nov 24 15:56:28 1999
+--- src/ysocket.h.orig	Mon Jan 15 06:49:41 2001
++++ src/ysocket.h	Mon Jan 15 22:18:05 2001
 @@ -2,6 +2,9 @@
  #define YSOCKET_H_
  
