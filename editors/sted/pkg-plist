@@ -1,0 +1,6 @@
+bin/sted
+man/man1/sted.1.gz
+share/doc/sted/CHANGES
+share/doc/sted/COPYING
+share/doc/sted/README
+@dirrm share/doc/sted
