@@ -5,18 +5,18 @@
 # $FreeBSD$
 
 PORTNAME=	simicq
-PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTVERSION=	0.9.3
 CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/mi/m-i/}
-DISTNAME=	${PORTNAME:S/icq//}-${PORTVERSION}
+DISTNAME=	${PORTNAME:S/icq//}-${PORTVERSION}-2
 
 MAINTAINER=	markus@FreeBSD.org
 COMMENT=	Plugin-based instant messenger
 
-LIB_DEPENDS=	sablot.70:${PORTSDIR}/textproc/sablotron
+LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt
 
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-2//}
 USE_GMAKE=	yes
 USE_QT_VER=	3
 USE_PERL5_BUILD=	yes
@@ -52,12 +52,6 @@ pre-everything::
 .if !defined(WITHOUT_KDE)
 	@${ECHO_MSG} "You can disable KDE support by defining WITHOUT_KDE."
 .endif
-
-post-extract:
-.for i in _core filter forward icq remote
-	@${TOUCH} ${WRKSRC}/plugins/${i}/Makefile.in
-.endfor
-	@${RM} -f ${WRKSRC}/plugins/remote/simctrl.o
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/-O2//g; s/-lpthread/${PTHREAD_LIBS}/g' \
