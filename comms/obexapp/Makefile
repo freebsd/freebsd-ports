@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	obexapp
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	comms net
 MASTER_SITES=	http://www.geocities.com/m_evmenkin/
 
@@ -15,7 +15,6 @@ COMMENT=	Obex application to transfer objects to mobile equipment
 
 LIB_DEPENDS=	openobex-1.0.1:${PORTSDIR}/comms/openobex
 
-USE_GNOME=	glib12
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 # libbluetooth is only installed on i386
