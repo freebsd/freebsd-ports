@@ -1,10 +1,10 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/mail/vbsfilter/files/Attic/vbsfilter.sh,v 1.1 2001-03-13 06:47:30 dinoex Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/vbsfilter/files/Attic/vbsfilter.sh,v 1.2 2001-10-07 06:33:30 dinoex Exp $
 # 
 if ! test -x %%PREFIX%%/libexec/vbsfilter
 then
-#	exit 0
+	exit 0
 fi
 case $1 in
 start)
