@@ -27,8 +27,4 @@ CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL} \
 		--with-xmms-prefix=${X11BASE}
 USE_GNOME=	gtk12
 
-post-install:
-	${LN} -sf ${LOCALBASE}/share/doc/HTML/en/common \
-		${PREFIX}/share/doc/HTML/en/xmms-kde/common \
-
 .include <bsd.port.mk>
