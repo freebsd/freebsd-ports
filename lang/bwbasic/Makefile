@@ -13,6 +13,8 @@ DISTFILES=	bwbasic-2.20.tar.Z bwb-2.20-patch01.tar.Z.uu.txt
 
 MAINTAINER=	msmith@gsoft.com.au
 
+BROKEN=		"Checksum fails"
+
 GNU_CONFIGURE=	yes
 EXTRACT_ONLY=	bwbasic-2.20.tar.Z
 
