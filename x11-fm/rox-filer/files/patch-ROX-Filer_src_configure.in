@@ -1,0 +1,16 @@
+
+$FreeBSD$
+
+--- ROX-Filer/src/configure.in.orig
++++ ROX-Filer/src/configure.in
+@@ -143,10 +143,6 @@
+ AC_HEADER_SYS_WAIT
+ AC_CHECK_HEADERS(fcntl.h sys/time.h unistd.h mntent.h sys/ucred.h sys/mntent.h apsymbols.h apbuild/apsymbols.h sys/statvfs.h sys/vfs.h)
+ 
+-AC_CHECK_HEADER([X11/SM/SMlib.h], [],
+-  [AC_MSG_ERROR([Session management library (libsm) missing. It is part of the X server distribution. Try installing the libsm-dev package.])]
+-)
+-
+ dnl Checks for typedefs, structures, and compiler characteristics.
+ AC_C_CONST
+ AC_TYPE_UID_T
