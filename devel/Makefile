@@ -27,7 +27,6 @@
     SUBDIR += alf
     SUBDIR += allegro
     SUBDIR += anjuta
-    SUBDIR += anjuta-devel
     SUBDIR += antlr
     SUBDIR += apache-ant
     SUBDIR += apr
