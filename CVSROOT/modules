@@ -5067,6 +5067,7 @@ mdh		ports/deskutils/mdh
 mdk		ports/lang/mdk
 mdnsd		ports/dns/mdnsd
 mdw		ports/www/mdw
+meanwhile	ports/net/meanwhile
 megapov		ports/graphics/megapov
 meld		ports/textproc/meld
 memcached	ports/databases/memcached
