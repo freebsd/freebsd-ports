@@ -1,5 +1,5 @@
---- scripts/exim_install.orig	Tue Sep  9 15:07:22 1997
-+++ scripts/exim_install	Mon Sep 22 15:22:15 1997
+--- scripts/exim_install.orig	Wed Apr 29 10:55:08 1998
++++ scripts/exim_install	Thu May 21 16:14:48 1998
 @@ -8,6 +8,8 @@
  # This script also installs a default configuration file in CONFIGURE_FILE
  # if there is no configuration file there.
@@ -20,17 +20,17 @@
  case "$INST_BIN_DIRECTORY" in ?*) BIN_DIRECTORY="$INST_BIN_DIRECTORY";; esac
 +case "$INST_INFO_DIRECTORY" in ?*) INFO_DIRECTORY="$INST_INFO_DIRECTORY";; esac
  case "$INST_CONFIGURE_FILE" in ?*) CONFIGURE_FILE="$INST_CONFIGURE_FILE";; esac
- case "$INST_CP" in '') CP=cp;; *) CP="$INST_CP";; esac
- case "$INST_MV" in '') MV=mv;; *) MV="$INST_MV";; esac
-@@ -76,6 +80,7 @@
- 
+ case "$INST_UID"   in '') INST_UID=root;; *) INST_UID="$INST_UID";; esac
+ case "$INST_CP"    in '') CP=cp;;         *) CP="$INST_CP";; esac
+@@ -79,6 +83,7 @@
  # Allow the user to over-ride xx
- case "$inst_dest" in ?*) BIN_DIRECTORY="$inst_dest";; esac
-+case "$inst_info" in ?*) INFO_DIRECTORY="$inst_info";; esac
- case "$inst_conf" in ?*) CONFIGURE_FILE="$inst_conf";; esac
- case "$inst_cp"   in ?*) CP="$inst_cp";; esac
- case "$inst_mv"   in ?*) MV="$inst_mv";; esac
-@@ -101,6 +106,20 @@
+ case "$inst_dest"  in ?*) BIN_DIRECTORY="$inst_dest";; esac
+ case "$inst_conf"  in ?*) CONFIGURE_FILE="$inst_conf";; esac
++case "$inst_info"  in ?*) INFO_DIRECTORY="$inst_info";; esac
+ case "$inst_uid"   in ?*) INST_UID="$inst_uid";; esac
+ case "$inst_cp"    in ?*) CP="$inst_cp";; esac
+ case "$inst_mv"    in ?*) MV="$inst_mv";; esac
+@@ -113,6 +118,20 @@
    fi
  fi
  
@@ -51,7 +51,7 @@
  # If no arguments, install everything
  
  if [ $# -gt 0 ]; then
-@@ -167,12 +186,39 @@
+@@ -179,12 +198,39 @@
    fi
  done
  

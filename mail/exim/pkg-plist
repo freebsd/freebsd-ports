@@ -10,6 +10,7 @@ sbin/exim_dbmbuild
 sbin/exicyclog
 sbin/exigrep
 sbin/eximstats
+sbin/exiqsumm
 etc/exim/configure
 @unexec install-info --delete %D/info/exim_overview.info %D/info/dir
 @unexec install-info --delete %D/info/exim.info %D/info/dir

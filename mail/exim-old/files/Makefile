@@ -20,13 +20,14 @@
 # called Local/Makefile-<osname>. In particular, the location of the X11
 # libraries is something that is quite variable between different versions
 # of the same operation system (and indeed there are different versions of
-# X11 as well, of course). The three settings concerned here are X11, XINCLUDE,
-# and XLFLAGS (linking flags). There are defaults in OS/Makefile-Default which
-# are overridden for some operating systems in the OS/Makefile-<osname> file.
-# If these are not right for you, put appropriate settings into a file called
-# Local/Makefile-<osname>. In all cases "<osname>" stands for the name of
-# your operating system - look at the names in the OS directory to see which
-# names are recognized.
+# X11 as well, of course). The four settings concerned here are X11, XINCLUDE,
+# XLFLAGS (linking flags) and X11_LD_LIB (dynamic run-time library).
+
+# There are defaults in OS/Makefile-Default which are overridden for some
+# operating systems in the OS/Makefile-<osname> file. If these are not right
+# for you, put appropriate settings into a file called Local/Makefile-<osname>.
+# In all cases "<osname>" stands for the name of your operating system - look
+# at the names in the OS directory to see which names are recognized.
 
 # Another area of variability between systems is the type and location of the
 # dbm library package. Exim has support for ndbm, gdbm, and Berkeley db. By
@@ -61,12 +62,15 @@ INFO_DIRECTORY=/usr/local/info
 
 # The following commands live in different places in some OS. The OS-specific
 # files should normally point to the right place, but they can be overridden
-# here if necessary.
+# here if necessary. Perl is not necessary for running Exim, but there are
+# some Perl utilities for processing log files. If you haven't got Perl,
+# Exim will still build and run; you just won't be able to run those utilities.
 
-# CHOWN_COMMAND=/usr/bin/chown
-# CHGRP_COMMAND=/usr/bin/chgrp
-# MV_COMMAND=/bin/mv
-# RM_COMMAND=/bin/rm
+CHOWN_COMMAND=/usr/sbin/chown
+CHGRP_COMMAND=/usr/sbin/chgrp
+MV_COMMAND=/bin/mv
+RM_COMMAND=/bin/rm
+PERL_COMMAND=/usr/local/bin/perl
 
 
 # The compress command is used by the exicyclog script to compress old log
@@ -136,19 +140,26 @@ DIRECTOR_SMARTUSER=yes
 # determines the mode of the created directory. The default value in the
 # source is 0750.
 
-# DB_DIRECTORY_MODE=0750
+DB_DIRECTORY_MODE=0750
 
 
 # Database file mode: The mode of files created in the "db" directory defaults
 # to 0640 in the source, and can be changed here.
 
-# DB_MODE=0640
+DB_MODE=0640
+
+
+# Database lock file mode: The mode of zero-length files created in the "db"
+# directory to use for locking purposes defaults to 0640 in the source, and
+# can be changed here.
+
+DB_LOCKFILE_MODE=0640
 
 
 # Cycling log files: this variable specifies the maximum number of old
 # log files that are kept by the exicyclog log-cycling script.
 
-EXICYCLOG_MAX=10
+EXICYCLOG_MAX=7
 
 
 # Running Exim not as root: A uid and gid for Exim can be specified here. These
@@ -185,14 +196,14 @@ EXIM_MONITOR=eximon.bin
 # the SMTP port, start off a header line, and then just pump junk for ever
 # at it. The default is 8192.
 
-# HEADER_MAXLENGTH=8192
+HEADER_MAXLENGTH=8192
 
 
 # The mode of the input directory: The input directory is where messages are
 # kept while awaiting delivery. Exim creates it if necessary, using a mode
 # which can be defined here (default 0750).
 
-# INPUT_DIRECTORY_MODE=0750
+INPUT_DIRECTORY_MODE=0750
 
 
 # Exim log directory and files: Exim creates several log files inside a
@@ -233,6 +244,26 @@ LOG_FILE_PATH=/var/log/exim_%slog
 # LOG_MODE=0640
 
 
+# Included file and database lookup methods. DBM and lsearch (linear search)
+# are included by default. LOOKUP_DNSDB does *not* refer to general mail
+# routing using the DNS. It is for the specialist case of using the DNS as
+# a general database facility (not common).
+
+LOOKUP_DBM=yes
+LOOKUP_LSEARCH=yes
+
+# LOOKUP_DNSDB=yes
+# LOOKUP_LDAP=yes
+# LOOKUP_NIS=yes
+# LOOKUP_NISPLUS=yes
+
+# The TESTDB lookup is for performing tests on the handling of lookup
+# results, and is not useful for general running. It should be included
+# only when debugging the code of Exim.
+
+# LOOKUP_TESTDB=yes
+
+
 # Per-message logs: While a message is in the process of being delivered,
 # comments on its progress are written to a message log, for the benefit of
 # human administrators. These logs are held in a directory called "msglog"
@@ -241,7 +272,7 @@ LOG_FILE_PATH=/var/log/exim_%slog
 # transports for returning data to a message's sender (see the "return_output"
 # option for transports).
 
-# MSGLOG_DIRECTORY_MODE=0750
+MSGLOG_DIRECTORY_MODE=0750
 
 
 # Identifying the daemon: When an Exim daemon starts up, it writes its pid to
@@ -249,8 +280,10 @@ LOG_FILE_PATH=/var/log/exim_%slog
 # specified here. It must contain precisely one occurrence of "%s". When
 # a daemon is run on the default SMTP port, this is replaced with the null
 # string, but when it is run with some explicit port specified, "%s" is
-# replaced with the port number preceded by a dot. Some installations may
-# want something like this
+# replaced with the port number preceded by a dot. If a daemon is run with
+# only one of -bd and -q<time>, then that option is added on to the end of
+# the file name, allowing sites that run two separate daemons to distinguish
+# them. Some installations may want something like this
 
 PID_FILE_PATH=/var/run/exim%s.pid
 
@@ -308,18 +341,16 @@ ROUTER_QUERYPROGRAM=yes
 # set to Exim's uid and gid.
 
 # Many installations will want something like this:
-# SPOOL_DIRECTORY=/var/spool/exim
+SPOOL_DIRECTORY=/var/spool/exim
 
 # Others may prefer to keep all Exim things under one directory:
 # SPOOL_DIRECTORY=/usr/exim/spool
-
-SPOOL_DIRECTORY=/var/spool/exim
 
 
 # If Exim creates the spool directory, it is given this mode, defaulting in the
 # source to 0750.
 
-# SPOOL_DIRECTORY_MODE=0750
+SPOOL_DIRECTORY_MODE=0750
 
 
 # The mode of files on the input spool which hold the contents of message can
@@ -328,7 +359,7 @@ SPOOL_DIRECTORY=/var/spool/exim
 # member of the Exim group, change the value to 0640. This is particularly
 # relevant if you are going to run the Exim monitor.
 
-# SPOOL_MODE=0600
+SPOOL_MODE=0600
 
 
 # If STDERR_FILE is defined then the -df command line option causes Exim to
