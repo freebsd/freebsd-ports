@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	m2crypto
-PORTVERSION=	0.06
+PORTVERSION=	0.11
 PORTREVISION=	1
 CATEGORIES=	security python
 MASTER_SITES=	http://www.post1.com/home/ngps/m2/
@@ -14,14 +14,12 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ngps@post1.com
-COMMENT=	Python wrapper for OpenSSL
-
-BROKEN=		"Does not compile"
+COMMENT=	Crypto and SSL toolkit for Python
 
 BUILD_DEPENDS=	swig1.3:${PORTSDIR}/devel/swig13 \
 		pinstall:${PORTSDIR}/devel/pinstall
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/swig
+WRKSRC=		${WRKDIR}/${DISTNAME}/SWIG
 USE_PYTHON=	yes
 USE_ZIP=	yes
 USE_OPENSSL=	yes
