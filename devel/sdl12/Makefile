@@ -19,10 +19,8 @@ BUILD_DEPENDS=		nasm:${PORTSDIR}/devel/nasm
 USE_GMAKE=		yes
 USE_XLIB=		yes
 GNU_CONFIGURE=		yes
-
 CONFIGURE_ENV=		NASM="${LOCALBASE}/bin/nasm" \
 			LOCALBASE="${LOCALBASE}"
-
 CFLAGS+=		-D_THREAD_SAFE
 
 post-install:
