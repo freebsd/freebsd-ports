@@ -1,4 +1,3 @@
-
 /***************************************************************************/
 /*                                                                         */
 /*  Copyright (c) 1989, Robert Silvers - All rights reserved.              */
@@ -15,12 +14,8 @@
 /*                                                                         */
 /***************************************************************************/
 
-
-
-
    Uzap is a visual binary file editor for Unix systems written by
 Robert Silvers at the University of Lowell.  See the included man page
 for more info.
 
 						rsilvers@hawk.ulowell.edu
-
