@@ -18,6 +18,7 @@
     SUBDIR += automake
     SUBDIR += avltree
     SUBDIR += bcc
+    SUBDIR += bin86
     SUBDIR += binutils-m68k
     SUBDIR += bison
     SUBDIR += boehm-gc

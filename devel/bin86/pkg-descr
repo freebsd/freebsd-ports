@@ -1,0 +1,9 @@
+This consists of a 16-bit assembler and loader for x86 or 6809
+CPUs.  Since they use Intel syntax, they are incompatible with the
+GNU binutils in the base system (recent versions of which can also
+generate 16-bit code).
+
+WWW:  http://www.cix.co.uk/~mayday
+
+Trevor Johnson
+trevor@FreeBSD.org
