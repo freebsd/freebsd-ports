@@ -5,9 +5,7 @@
 # $FreeBSD$
 #
 
-PKGNAMESUFFIX=	-xemacs
-
 MASTERDIR=	${.CURDIR}/../lookup-mule
-EMACS=		xemacs
+EMACS_PORT_NAME=xemacs21-mule
 
 .include	"${MASTERDIR}/Makefile"
