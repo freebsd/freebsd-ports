@@ -1,0 +1,20 @@
+--- configure	Sun Jan 26 11:03:18 2003
++++ configure.new	Fri Jan 31 02:29:08 2003
+@@ -2796,7 +2796,7 @@
+         CFLAGS="-g -O2 $CFLAGS"
+       fi
+     else
+-      CFLAGS="-O2 -mcpu=pentium4 $CFLAGS"
++      CFLAGS="$CFLAGS"
+     fi
+   fi
+ 
+@@ -3328,7 +3328,7 @@
+       if test "$CXX" = "KCC"; then
+         CXXFLAGS="+K3 $CXXFLAGS"
+       else
+-        CXXFLAGS="-O2 -mcpu=pentium4 $CXXFLAGS"
++        CXXFLAGS="$CXXFLAGS"
+       fi
+     fi
+   fi
