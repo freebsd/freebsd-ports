@@ -6,23 +6,17 @@
 #
 
 PORTNAME=	picp
-PORTVERSION=	0.4
+PORTVERSION=	0.5d
 CATEGORIES=	devel
-MASTER_SITES=	http://bofh.stabilis.ru/
-DISTNAME=	${PORTNAME}_fbsd
+MASTER_SITES=	http://www.cosmodog.com/pic/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bms@spc.org
 COMMENT=	Driver for the Microchip Picstart Plus development programmer
 
-USE_REINPLACE=	yes
-NO_WRKSUBDIR=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's,CC=,CC?=,' -e 's,-O2,,' \
-		-e 's,CFLAGS=,CFLAGS+=,' ${WRKSRC}/Makefile
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKDIR}/picp ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/picp ${PREFIX}/bin
 
 .include <bsd.port.mk>
