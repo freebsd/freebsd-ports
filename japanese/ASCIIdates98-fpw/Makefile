@@ -20,7 +20,7 @@ EXTRACT_BEFORE_ARGS=	-qL
 
 do-install:
 	${MKDIR} ${PREFIX}/share/dict/ASCIIdates98-fpw/ascdates/data
-	${INSTALL_DATA} ${WRKSRC}/devil/data/honmon ${PREFIX}/share/dict/ASCIIdates98-fpw/ascdates/data
+	${INSTALL_DATA} ${WRKSRC}/ascdates/data/honmon ${PREFIX}/share/dict/ASCIIdates98-fpw/ascdates/data
 	${INSTALL_DATA} ${WRKSRC}/catalogs ${PREFIX}/share/dict/ASCIIdates98-fpw
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/ASCIIdates98-fpw
