@@ -9,7 +9,7 @@ PORTNAME=	par
 PORTVERSION=	1.51
 CATEGORIES=	textproc
 MASTER_SITES=   http://www.cs.berkeley.edu/~amc/Par/
-DISTNAME=	Par151
+DISTNAME=	Par152
 
 MAINTAINER=	mark@grondar.za
 
