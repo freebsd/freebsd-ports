@@ -10,16 +10,15 @@ PORTVERSION=	0.6.7
 CATEGORIES=	japanese
 MASTER_SITES=	http://downloads.sourceforge.jp/anthy/5467/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	XIM server for Anthy input method
+MAINTAINER=	nobutaka@FreeBSD.org
+COMMENT?=	XIM server for Anthy input method
 
-LIB_DEPENDS=	anthy.0:${PORTSDIR}/japanese/anthy
+LIB_DEPENDS?=	anthy.0:${PORTSDIR}/japanese/anthy
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-skk
 
 .include <bsd.port.mk>
