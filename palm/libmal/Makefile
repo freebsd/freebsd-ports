@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	libmal
-PORTVERSION=	0.20
+PORTVERSION=	0.31
 CATEGORIES=	palm
 MASTER_SITES=	http://jasonday.home.att.net/code/libmal/
 
