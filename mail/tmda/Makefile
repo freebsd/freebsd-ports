@@ -18,7 +18,7 @@ MASTER_SITES=	http://www.tmda.net/releases/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	. old
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Python-based SPAM reduction system
 
 .if defined(WITH_CDB)

@@ -10,7 +10,7 @@ PORTVERSION=	1.4.2
 CATEGORIES=	devel
 MASTER_SITES=	http://www.annexia.org/freeware/${PORTNAME}/
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Library of basic structures and memory allocators for C
 
 BUILD_DEPENDS=	cdoc:${PORTSDIR}/devel/cdoc \

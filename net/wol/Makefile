@@ -13,7 +13,7 @@ CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ahh
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Tool to wake up Wake-On-LAN compliant computers
 
 LIB_DEPENDS=	intl.5:${PORTSDIR}/devel/gettext \

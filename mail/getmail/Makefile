@@ -11,7 +11,7 @@ CATEGORIES=	mail python
 MASTER_SITES=	http://www.qcc.ca/~charlesc/software/getmail-3.0/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old-versions
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	POP3 mail retriever with reliable Maildir and command delivery
 
 USE_PYTHON=	yes

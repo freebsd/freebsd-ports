@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_GNUPG} \
 	ftp://ftp.gnutls.org/pub/gnutls/
 MASTER_SITE_SUBDIR=	alpha/gnutls
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
 
 LIB_DEPENDS=	gcrypt.6:${PORTSDIR}/security/libgcrypt

@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	A tool for creating starter files in various languages
 
 BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz \

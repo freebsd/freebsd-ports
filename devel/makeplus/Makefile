@@ -10,7 +10,7 @@ PORTVERSION=	0.2.3
 CATEGORIES=	devel
 MASTER_SITES=	http://www.annexia.org/freeware/${PORTNAME}/
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Advanced build system for GNU Make
 
 BUILD_DEPENDS=	xmlto:${PORTSDIR}/textproc/xmlto

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.superscript.com/qtools/
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Tools to use in .qmail files
 
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail \

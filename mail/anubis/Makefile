@@ -23,7 +23,7 @@ CATEGORIES=		mail
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=		sergei@kolobov.com
+MAINTAINER=		sergei@FreeBSD.org
 COMMENT=		Outgoing SMTP mail processor
 
 USE_REINPLACE=		yes

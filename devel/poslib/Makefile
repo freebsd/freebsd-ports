@@ -12,7 +12,7 @@ CATEGORIES=	devel dns
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	posadis
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Posadis C++ DNS library
 
 GNU_CONFIGURE=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	dns
 MASTER_SITES=	http://smarden.org/pape/djb/manpages/
 DISTNAME=	djbdns-pd-${PORTVERSION}
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Public domain DNS client library
 
 INSTALLS_SHLIB=	yes

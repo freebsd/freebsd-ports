@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	ups-3.38-beta1
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	X based source level debugger for C, C++, and Fortran
 
 GNU_CONFIGURE=	yes

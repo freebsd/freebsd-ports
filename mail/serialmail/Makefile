@@ -13,7 +13,7 @@ MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.de.uu.net/pub/unix/mail/qmail/ \
 		ftp://ftp.iway.fr/pub/unix/mail/qmail/
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Tools for passing mail across serial links
 
 RUN_DEPENDS=	tcpserver:${PORTSDIR}/sysutils/ucspi-tcp \

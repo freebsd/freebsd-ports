@@ -22,7 +22,7 @@ MASTER_SITE_SUBDIR=	dl/tarballs/1.2
 PATCH_SITES=	${MASTER_SITES:S!%SUBDIR%!${MASTER_SITE_SUBDIR}!}
 #PATCHFILES=	bincimap-1.2.1-patch000-mimeparser
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Light-weight IMAP server for Maildir
 
 .if defined(WITH_XINETD)

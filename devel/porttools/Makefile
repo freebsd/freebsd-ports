@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Tools for testing and submitting port updates and new ports
 
 RUN_DEPENDS=	portlint:${PORTSDIR}/devel/portlint \

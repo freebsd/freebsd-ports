@@ -10,7 +10,7 @@ PORTVERSION=	0.6.1
 CATEGORIES=	net
 MASTER_SITES=	http://smarden.org/ipsvd/
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Internet protocol service daemons
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdjbdns.a:${PORTSDIR}/dns/libdjbdns

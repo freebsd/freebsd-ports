@@ -13,7 +13,7 @@ PORTVERSION=	0.96.1
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/qmail-autoresponder/
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Rate-limited autoresponder for qmail
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libbg-iobuf.a:${PORTSDIR}/devel/bglibs

@@ -11,7 +11,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.pureftpd.org/puredb/
 DISTNAME=	pure-db-${PORTVERSION}
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Set of libraries for creating and reading constant databases
 
 USE_LIBTOOL=	yes

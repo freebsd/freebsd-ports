@@ -10,7 +10,7 @@ PORTVERSION=	0.11.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://smarden.org/${PORTNAME}/
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	A init scheme with service supervision
 
 WRKSRC=		${WRKDIR}/admin/${DISTNAME}

@@ -19,7 +19,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	ezmlm-cgi.patch
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Improved version of the ezmlm mailing list manager
 
 RUN_DEPENDS=	${QMAIL_DIR}/bin/qmail-send:${PORTSDIR}/mail/qmail

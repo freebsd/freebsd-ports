@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-b/g}
 DIST_SUBDIR=	leo
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Advanced outline editor for programmers
 
 RUN_DEPENDS=	${TKINTER}:${PORTSDIR}/x11-toolkits/py-tkinter

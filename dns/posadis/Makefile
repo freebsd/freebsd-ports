@@ -12,7 +12,7 @@ CATEGORIES=	dns
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	"Domain Name Server (DNS) implementation"
 
 LIB_DEPENDS=	poslib.0:${PORTSDIR}/devel/poslib \

@@ -10,7 +10,7 @@ PORTVERSION=	1.1.3
 CATEGORIES=	misc
 MASTER_SITES=	http://huizen.dds.nl/~frodol/
 
-MAINTAINER=	sergei@kolobov.com
+MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	A getopt(1) replacement that supports GNU-style long options
 
 LIB_DEPENDS=	intl:${PORTSDIR}/devel/gettext
