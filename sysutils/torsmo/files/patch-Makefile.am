@@ -1,0 +1,15 @@
+--- Makefile.am.orig	Thu Jul 29 08:32:01 2004
++++ Makefile.am	Thu Jul 29 08:32:10 2004
+@@ -8,7 +8,11 @@
+ solaris = solaris.c
+ endif
+ 
+-torsmo_SOURCES = torsmo.c torsmo.h fs.c $(linux) $(solaris)
++if BUILD_FREEBSD
++freebsd = freebsd.c
++endif
++
++torsmo_SOURCES = torsmo.c torsmo.h fs.c $(linux) $(solaris) $(freebsd)
+ 
+ torsmo_LDFLAGS = $(X11_LIBS)
+ 
