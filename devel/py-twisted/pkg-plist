@@ -4,16 +4,25 @@
 %%PORTDOCS%%share/doc/twisted/README
 %%PORTDOCS%%share/doc/twisted/TODO
 %%PORTDOCS%%share/doc/twisted/img/TwistedLogo.bmp
+%%PORTDOCS%%share/doc/twisted/writing-serves.html
+%%PORTDOCS%%share/examples/twisted/echoserv-ssl.py
 %%PORTDOCS%%share/examples/twisted/echoserv.py
 %%PORTDOCS%%share/examples/twisted/pbclient.py
 %%PORTDOCS%%share/examples/twisted/pbecho.py
+%%PORTDOCS%%share/examples/twisted/udpechoserv.py
+bin/accepttests
+bin/build-deb
+bin/cpyrght
 bin/faucet
 bin/gnusto
 bin/im
 bin/malyon
+bin/manhole
 bin/mapeditor
 bin/mktap
 bin/runtests
+bin/runtests.orig
+bin/tap2deb
 bin/twistd
 bin/twistd-debug
 lib/%%PYTHON_VERSION%%/site-packages/twisted/__init__.py
@@ -22,6 +31,24 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/copyright.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/copyright.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/copyright.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/dbclient.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/dbclient.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/dbclient.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/dbserver.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/dbserver.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/dbserver.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/dbservice.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/dbservice.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/dbservice.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/servertest.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/servertest.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/servertest.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/testdb.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/testdb.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise/testdb.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/__init__.pyo
@@ -34,6 +61,9 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/ingtkernet.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/main.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/main.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/main.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/passport.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/passport.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/passport.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/process.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/process.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/process.pyo
@@ -49,9 +79,15 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/task.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/tcp.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/tcp.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/tcp.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/threadtask.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/threadtask.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/threadtask.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/tkinternet.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/tkinternet.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/tkinternet.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/udp.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/udp.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/internet/udp.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/mail/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/mail/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/mail/__init__.pyo
@@ -61,6 +97,24 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/mail/mail.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/mail/maildir.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/mail/maildir.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/mail/maildir.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/mail/relay.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/mail/relay.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/mail/relay.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/mail/relaymanager.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/mail/relaymanager.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/mail/relaymanager.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/service.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/service.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/service.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/ui/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/ui/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/ui/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/ui/gtkmanhole.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/ui/gtkmanhole.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/ui/gtkmanhole.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/persisted/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/persisted/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/persisted/__init__.pyo
@@ -112,6 +166,9 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/python/__init__.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/python/authenticator.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/python/authenticator.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/python/authenticator.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/python/defer.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/python/defer.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/python/defer.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/python/delay.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/python/delay.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/python/delay.pyo
@@ -196,6 +253,15 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/reality/source.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/reality/thing.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/reality/thing.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/reality/thing.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/reality/ui/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/reality/ui/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/reality/ui/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/reality/ui/gtkfaucet.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/reality/ui/gtkfaucet.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/reality/ui/gtkfaucet.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/reality/ui/tkfaucet.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/reality/ui/tkfaucet.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/reality/ui/tkfaucet.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/__init__.pyo
@@ -209,12 +275,30 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/jelly.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/pb.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/pb.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/pb.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/ui/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/ui/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/ui/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/ui/gtkutil.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/ui/gtkutil.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/ui/gtkutil.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/ui/tkutil.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/ui/tkutil.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/ui/tkutil.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/enterprise.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/enterprise.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/enterprise.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/ftp.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/ftp.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/ftp.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/mail.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/mail.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/mail.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/manhole.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/manhole.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/manhole.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/reality.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/reality.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/tap/reality.pyo
@@ -266,6 +350,9 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_observable.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_pb.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_pb.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_pb.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_persisted.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_persisted.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_persisted.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_pop3.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_pop3.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/test/test_pop3.pyo
@@ -329,9 +416,6 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/web/static.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/web/test.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/web/test.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/web/test.pyo
-lib/%%PYTHON_VERSION%%/site-packages/twisted/web/todo.py
-lib/%%PYTHON_VERSION%%/site-packages/twisted/web/todo.pyc
-lib/%%PYTHON_VERSION%%/site-packages/twisted/web/todo.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/web/twcgi.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/web/twcgi.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/web/twcgi.pyo
@@ -353,21 +437,58 @@ lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ircservice.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/words/service.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/words/service.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/words/service.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/gateway.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/gateway.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/gateway.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/gateways/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/gateways/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/gateways/__init__.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/gateways/toc.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/gateways/toc.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/gateways/toc.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/gateways/words.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/gateways/words.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/gateways/words.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/gtkim.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/gtkim.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/gtkim.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/im.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/im.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/im.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/im2.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/im2.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/im2.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/tkim.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/tkim.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/tkim.pyo
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/tktoc.py
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/tktoc.pyc
+lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/tktoc.pyo
 lib/%%PYTHON_VERSION%%/site-packages/twisted/words/webwords.py
 lib/%%PYTHON_VERSION%%/site-packages/twisted/words/webwords.pyc
 lib/%%PYTHON_VERSION%%/site-packages/twisted/words/webwords.pyo
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui/gateways
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/words/ui
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/words
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/web
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/test
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/tap
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/spread/ui
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/spread
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/reality/ui
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/reality
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/python
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/protocols
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/pim
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/persisted
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole/ui
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/manhole
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/mail
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/internet
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted/enterprise
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/twisted
 %%PORTDOCS%%@dirrm share/examples/twisted
 %%PORTDOCS%%@dirrm share/doc/twisted/img
