@@ -1,5 +1,5 @@
---- configure.in.orig	Fri Jun 21 14:52:03 2002
-+++ configure.in	Fri Jun 21 14:54:07 2002
+--- configure.in.orig	Mon Nov 11 14:11:26 2002
++++ configure.in	Mon Nov 11 14:12:09 2002
 @@ -515,7 +515,7 @@
             AC_MSG_ERROR([SSL support is only useful with POP or IMAP support])
            fi
@@ -18,12 +18,12 @@
              LDFLAGS="$LDFLAGS -L$with_sasl/lib"
            fi
  
-@@ -609,6 +609,8 @@
-         [if test $enableval = yes; then
-                 AC_DEFINE(USE_FLOCK,1, [ Define to use flock() to lock mailboxes. ])
-         fi])
-+
-+MUTTLIBS="$MUTTLIBS -lxpg4"
+@@ -625,7 +625,7 @@
+ fi])
  
- mutt_cv_fcntl=yes
- AC_ARG_ENABLE(fcntl, [  --disable-fcntl            Do NOT use fcntl() to lock files ],
+ if test x$GCC = xyes -a $mutt_cv_warnings = yes; then
+-        CFLAGS="-Wall -pedantic $CFLAGS"
++        CFLAGS="-Wall $CFLAGS"
+ fi
+ 
+ AC_ARG_ENABLE(nfs-fix, [  --enable-nfs-fix           Work around an NFS with broken attributes caching ],
