@@ -996,8 +996,8 @@ share/gnome/help/netload_applet/es/figures/netload-applet-greyed.png
 share/gnome/help/netload_applet/es/figures/netload-applet-properties.png
 share/gnome/help/netload_applet/es/figures/netload-applet.png
 share/gnome/help/netload_applet/es/index.html
-share/gnome/help/netload_applet/es/licencia_es.sgml
-share/gnome/help/netload_applet/es/licencia_nota_es.sgml
+share/gnome/help/netload_applet/es/licencia-es.sgml
+share/gnome/help/netload_applet/es/licencia-nota-es.sgml
 share/gnome/help/netload_applet/es/license.sgml
 share/gnome/help/netload_applet/es/ln10.html
 share/gnome/help/netload_applet/es/netload.sgml
@@ -1505,7 +1505,7 @@ share/locale/tr/LC_MESSAGES/gnome-applets.mo
 share/locale/uk/LC_MESSAGES/gnome-applets.mo
 share/locale/wa/LC_MESSAGES/gnome-applets.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/gnome-applets.mo
-share/locale/zh_TW.Big5/LC_MESSAGES/gnome-applets.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-applets.mo
 @dirrm share/gnome/xmodmap
 @dirrm share/gnome/tickastat/news
 @dirrm share/gnome/tickastat
