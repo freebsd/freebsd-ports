@@ -1,0 +1,13 @@
+include/bakery_gnomeui-2.0/bakery_gnomeui/App/App_GnomeUI.h
+include/bakery_gnomeui-2.0/bakery_gnomeui/App/App_WithDoc_GnomeUI.h
+include/bakery_gnomeui-2.0/bakery_gnomeui/Configuration/Client.h
+include/bakery_gnomeui-2.0/bakery_gnomeui/Configuration/Dialog_Preferences.h
+include/bakery_gnomeui-2.0/bakery_gnomeui/bakery_gnomeui.h
+lib/libbakery_gnomeui-1.3.a
+lib/libbakery_gnomeui-1.3.so
+lib/libbakery_gnomeui-1.3.so.3
+libdata/pkgconfig/bakery_gnomeui-2.0.pc
+share/locale/de/LC_MESSAGES/bakery_gnomeui.mo
+@dirrm include/bakery_gnomeui-2.0/bakery_gnomeui/Configuration
+@dirrm include/bakery_gnomeui-2.0/bakery_gnomeui/App
+@dirrm include/bakery_gnomeui-2.0/bakery_gnomeui
