@@ -209,6 +209,8 @@ share/MHonArc/readmail.pl
 %%PORTDOCS%%share/doc/MHonArc/resources/afs.html
 %%PORTDOCS%%share/doc/MHonArc/resources/annotate.html
 %%PORTDOCS%%share/doc/MHonArc/resources/archive.html
+%%PORTDOCS%%share/doc/MHonArc/resources/attachmentdir.html
+%%PORTDOCS%%share/doc/MHonArc/resources/attachmenturl.html
 %%PORTDOCS%%share/doc/MHonArc/resources/authorbegin.html
 %%PORTDOCS%%share/doc/MHonArc/resources/authorend.html
 %%PORTDOCS%%share/doc/MHonArc/resources/authsort.html
@@ -311,6 +313,7 @@ share/MHonArc/readmail.pl
 %%PORTDOCS%%share/doc/MHonArc/resources/msgsep.html
 %%PORTDOCS%%share/doc/MHonArc/resources/multipg.html
 %%PORTDOCS%%share/doc/MHonArc/resources/news.html
+%%PORTDOCS%%share/doc/MHonArc/resources/newsurl.html
 %%PORTDOCS%%share/doc/MHonArc/resources/nextbutton.html
 %%PORTDOCS%%share/doc/MHonArc/resources/nextbuttonia.html
 %%PORTDOCS%%share/doc/MHonArc/resources/nextlink.html
