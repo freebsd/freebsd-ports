@@ -1,0 +1,31 @@
+*** ../README.FreeBSD	Wed Dec 31 16:00:00 1969
+--- ../README.FreeBSD	Sun Aug 28 06:43:17 1994
+***************
+*** 0 ****
+--- 1,8 ----
++ This is the core distribution of DGD, providing all the tools needed to
++ implement a MUD server, except for the "mudlib" which must be obtained
++ separately or written from scratch. Normally with DGD, the mudlib exists
++ as two distinct layers -- one to define the programming environment, and
++ the other is the actual programmed "world" that is interacted with.
++ 
++ Mudlib simulations are available for LPmud and LambdaMoo environments.
++ Other such simulations are in various stages of development.
+*** ../README.sites	Wed Dec 31 16:00:00 1969
+--- ../README.sites	Sun Aug 28 06:27:25 1994
+***************
+*** 0 ****
+--- 1,13 ----
++ DGD MUDs known to be open as of October 1995 are:
++ 
++ [LPmud]
++ IgorMUD:     [193.12.207.11]  igor.algonet.se        1701 (good typical LPmud)
++ Albion MUD:  [193.4.230.1]    mud.veda.is            4000 (play and development)
++ PaderMUD:    [131.234.12.13]  mud.uni-paderborn.de   3000 (enchanting realism)
++ 
++ All 3 have a more or less medieval theme.
++ 
++ [moo]
++ MirrorMOO:   [129.10.114.196] mirror.ccs.neu.edu     8889 (Alice's Wonderland)
++ 
++ Other sites are also developing their own special mudlibs with DGD.
