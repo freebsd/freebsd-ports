@@ -301,6 +301,7 @@ ample		ports/audio/ample
 amsn		ports/net/amsn
 amspsfnt	ports/print/amspsfnt
 amulet		ports/devel/amulet
+amy		ports/games/amy
 amyc		ports/www/amyc
 an		ports/games/an
 analog		ports/www/analog
