@@ -18,7 +18,7 @@ COMMENT=	The "meta-port" for the GNOME 2 integrated X11 desktop
 
 RUN_DEPENDS=	${X11BASE}/libexec/cdplayer_applet2:${PORTSDIR}/x11/gnomeapplets2 \
 		gnome-cd:${PORTSDIR}/audio/gnomemedia2 \
-	 	gnome-calculator:${PORTSDIR}/misc/gnomeutils2 \
+	 	gnome-calculator:${PORTSDIR}/deskutils/gnomeutils2 \
 		eog:${PORTSDIR}/graphics/eog2 \
 		gnome-control-center:${PORTSDIR}/sysutils/gnomecontrolcenter2 \
 		gconf-editor:${PORTSDIR}/sysutils/gconf-editor \
