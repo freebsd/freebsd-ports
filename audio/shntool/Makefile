@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shntool
-PORTVERSION=	1.01
+PORTVERSION=	1.2.0
 CATEGORIES=	audio
 MASTER_SITES=	http://shnutils.freeshell.org/shntool/source/ \
 		${MASTER_SITE_LOCAL}
