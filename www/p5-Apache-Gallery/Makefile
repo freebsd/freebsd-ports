@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Apache-Gallery
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	www perl5
 MASTER_SITES=	http://apachegallery.dk/download/ \
 		${MASTER_SITE_PERL_CPAN}
@@ -17,13 +16,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apache::Gallery - mod_perl handler to create an image gallery
 
-LIB_DEPENDS=	Imlib2.1:${PORTSDIR}/graphics/imlib2
-BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Image/Info.pm:${PORTSDIR}/graphics/p5-Image-Info \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/CGI/FastTemplate.pm:${PORTSDIR}/www/p5-CGI-FastTemplate \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Inline.pm:${PORTSDIR}/devel/p5-Inline \
-		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq \
+		${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \
+		${SITE_PERL}/Image/Info.pm:${PORTSDIR}/graphics/p5-Image-Info \
+		${SITE_PERL}/CGI/FastTemplate.pm:${PORTSDIR}/www/p5-CGI-FastTemplate \
+		${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
+		${SITE_PERL}/${PERL_ARCH}/Image/Imlib2.pm:${PORTSDIR}/graphics/p5-Image-Imlib2 \
+		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -39,8 +38,9 @@ TEMPLATEFILES=	dircomment.tpl directory.tpl error.tpl file.tpl index.tpl \
 		slideshowisoff.tpl slideshowoff.tpl
 ICONS=		application-doc.png application-mp3.png application-ogg.png \
 		application-pdf.png application-rtf.png application-wav.png \
-		gallery.css video-asf.png video-avi.png \
-		video-mov.png video-mpeg.png video-mpg.png video-wmv.png
+		video-asf.png video-avi.png c.png \
+		video-mov.png video-mpeg.png video-mpg.png video-wmv.png \
+		video-asf.png agfolder.png
 
 post-configure:
 	@ ${SED} -e 's#%%PREFIX%%#${PREFIX}#g' pkg-message > ${PKGMESSAGE}
@@ -49,17 +49,15 @@ post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/Apache-Gallery/templates
 .for f in ${TEMPLATEFILES}
-	${INSTALL_DATA} ${WRKSRC}/templates/${f} \
+	${INSTALL_DATA} ${WRKSRC}/templates/default/${f} \
 		${PREFIX}/share/Apache-Gallery/templates/
 .endfor
 .for f in ${ICONS}
 	${INSTALL_DATA} ${WRKSRC}/htdocs/${f} \
 		${PREFIX}/www/icons/
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/htdocs/folder.png \
-		${PREFIX}/www/icons/folder-apache-gallery.png
 	${MKDIR} ${PREFIX}/share/Apache-Gallery/css
-	${INSTALL_DATA} ${WRKSRC}/htdocs/gallery.css \
+	${INSTALL_DATA} ${WRKSRC}/templates/default/gallery.css \
 		${PREFIX}/share/Apache-Gallery/css/
 .endif
 .if !defined(BATCH)
@@ -69,12 +67,12 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
-IGNORE=	Port requires perl 5.6.x or later. Install lang/perl5 then try again
+#IGNORE=	Port requires perl 5.6.x or later. Install lang/perl5 then try again
 .endif
 
 .if ${PERL_LEVEL} < 500800
-BUILD_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
-RUN_DEPENDS+=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+BUILD_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+RUN_DEPENDS+=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
 .endif
 
 .include <bsd.port.post.mk>
