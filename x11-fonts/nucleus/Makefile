@@ -12,6 +12,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://dreamer.nitro.dk/linux/lfp/
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	Another font package for X
 
 NO_WRKSUBDIR=	yes
 USE_X_PREFIX=	yes

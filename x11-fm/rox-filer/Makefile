@@ -14,6 +14,7 @@ DISTNAME=	rox-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	A simple and easy to use graphical file manager
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig \
 		autoconf:${PORTSDIR}/devel/autoconf

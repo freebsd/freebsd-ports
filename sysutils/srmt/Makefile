@@ -12,6 +12,7 @@ MASTER_SITES=	ftp://ftp.berlios.de/pub/star/
 DISTNAME=	star-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	Schily's enhanced rmt implementation
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

@@ -14,6 +14,7 @@ DISTNAME=	ROX-Session-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	A session manager for the ROX desktop
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	gtk-x11-2.0.200:${PORTSDIR}/x11-toolkits/gtk20 \

@@ -15,6 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		scheme-${PORTVERSION}-ix86-freebsd.tar.gz
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	MIT Scheme: includes runtime, compiler, and edwin binaries
 
 ONLY_FOR_ARCHS=	i386
 GNU_CONFIGURE=	yes

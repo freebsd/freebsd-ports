@@ -17,6 +17,7 @@ DIST_SUBDIR=	erlang
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	Distel extends Emacs Lisp with Erlang-style message passing
 
 BUILD_DEPENDS+=	erlc:${PORTSDIR}/lang/erlang
 

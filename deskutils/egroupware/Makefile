@@ -12,6 +12,7 @@ MASTER_SITE_SUBDIR=	phpgroupware
 DISTNAME=	phpGroupWare-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	A web based GroupWare system
 
 RUN_DEPENDS=	${LOCALBASE}/libexec/apache/libphp4.so:${PORTSDIR}/www/mod_php4
 

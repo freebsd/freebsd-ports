@@ -12,6 +12,7 @@ MASTER_SITES=	http://www.freedesktop.org/standards/shared-mime-info/
 DISTNAME=	shared-mime-info-${PORTVERSION}
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	A MIME type database from the FreeDesktop project
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkgconfig
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \

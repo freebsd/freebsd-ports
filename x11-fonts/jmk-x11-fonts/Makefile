@@ -11,6 +11,7 @@ CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.ntrnet.net/~jmknoble/fonts/
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	Jim Knoble's font package for X
 
 USE_IMAKE=	yes
 

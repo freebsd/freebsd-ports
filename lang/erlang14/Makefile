@@ -22,6 +22,7 @@ PATCHFILES=
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	A functional programming language from Ericsson
 
 # Set JAVABINDIR to where you have javac, if different from below
 JAVABINDIR?=	${LOCALBASE}/jdk1.3.1/bin

@@ -17,6 +17,7 @@ DIST_SUBDIR=	ghc
 EXTRACT_ONLY=
 
 MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	Documentation (HTML, PS) for the Glasgow Haskell Compiler
 
 NO_BUILD=	yes
 
