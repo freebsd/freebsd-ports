@@ -1,0 +1,30 @@
+--- name.c.orig	Sat Mar 15 04:02:46 1997
++++ name.c	Mon Apr 28 11:50:47 1997
+@@ -57,6 +57,7 @@
+   const char	* pnt;
+   int		  priority	   = 32767;
+   char		* result;
++  char		* copy;
+   int		  seen_dot	   = 0;
+   int		  seen_semic	   = 0;
+   int		  tildes	   = 0;
+@@ -104,12 +105,17 @@
+   last_dot = strrchr (pnt,'.');
+   if(    (last_dot != NULL)
+       && (    (last_dot[1] == '~')
+-	   || (last_dot[1] == '\0')
+ 	   || (last_dot[1] == '\0')) )
+     {
++      /*
++       * We gotta copy the string first, to work around its constness.
++       */
++      copy = alloca (strlen(name) + 1);
++      memcpy (copy, name, strlen(name) + 1);
++      pnt = copy;
++      last_dot = strrchr (pnt,'.');
+       *last_dot = '\0';
+       last_dot = strrchr (pnt,'.');
+-      *last_dot = '.';
+     }
+ 
+   while(*pnt)
