@@ -1,8 +1,7 @@
-bin/AquaGatekeeper
+sbin/AquaGatekeeper
 etc/rc.d/agk.sh.sample
 etc/AquaGatekeeper.cfg.sample
 %%PORTDOCS%%%%DOCSDIR%%/AquaGatekeeper.htm
-%%PORTDOCS%%%%DOCSDIR%%/AquaGatekeeperMonitor.chm
 %%PORTDOCS%%%%DOCSDIR%%/CommandLineOptions.htm
 %%PORTDOCS%%%%DOCSDIR%%/ConfigSyntax.htm
 %%PORTDOCS%%%%DOCSDIR%%/License.rtf
