@@ -27,6 +27,12 @@ MAKE_ENV=	OSTYPE=linux-gnu DATADIR=${DATADIR}
 CPIOFLAGS=	--quiet -pdum -R ${SHAREOWN}:${SHAREGRP}
 DATASUBDIRS=	ai backgrounds cardsets rules translations
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/FreeDoko ${PREFIX}/bin
 	${LN} ${PREFIX}/bin/FreeDoko ${PREFIX}/bin/freedoko
@@ -38,4 +44,4 @@ do-install:
 	@cd ${WRKSRC}/../doc && \
 	 ${FIND} . ! -name Makefile\* | ${CPIO} ${CPIOFLAGS} ${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

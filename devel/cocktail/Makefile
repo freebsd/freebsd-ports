@@ -19,8 +19,14 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAN1=		ag.1 puma.1 mpp.1 lalr.1 ell.1 bnf.1 ast.1 rex.1 mtc.1
 MAN2=		mtc.2
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+BROKEN=		"Does not compile on FreeBSD 4.x"
+.endif
+
 post-extract:
 		${RM} -f ${WRKSRC}/mtc/m2c/SYSTEM_.h
 		${RM} -f ${WRKSRC}/mtc/m2c/SYSTEM_.c
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
