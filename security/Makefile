@@ -90,6 +90,7 @@
     SUBDIR += labrea
     SUBDIR += lcrzo
     SUBDIR += lcrzoex
+    SUBDIR += libfwbuilder
     SUBDIR += libident
     SUBDIR += libmcrypt
     SUBDIR += libparanoia
