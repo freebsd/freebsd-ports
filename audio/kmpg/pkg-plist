@@ -51,3 +51,4 @@ share/mimelnk/audio/x-playlist.kdelnk
 share/applnk/Multimedia/kmpg.kdelnk
 @dirrm share/doc/HTML/en/kmpg
 @dirrm share/apps/kmpg/pics
+@dirrm share/apps/kmpg
