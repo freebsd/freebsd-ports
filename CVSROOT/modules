@@ -896,6 +896,7 @@ crafty-open-medium	ports/games/crafty-open-medium
 crafty-open-rock	ports/games/crafty-open-rock
 crafty-open-small	ports/games/crafty-open-small
 crank		ports/security/crank
+crashecho	ports/mail/crashecho
 crashmail	ports/news/crashmail
 crashme		ports/sysutils/crashme
 crawl		ports/www/crawl
