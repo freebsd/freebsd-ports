@@ -3,13 +3,13 @@
 # Date created:		14 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id: Makefile,v 1.4 1995/11/22 13:06:27 asami Exp $
+# $Id: Makefile,v 1.5 1996/06/26 22:20:07 gpalmer Exp $
 #
 
 DISTNAME=	groff-1.09
 PKGNAME=	jp-gxditview-0.98
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
+MASTER_SITES=	${MASTER_SITE_GNU}
 
 MAINTAINER=	asami@FreeBSD.ORG
 

@@ -3,14 +3,13 @@
 # Date created:		14 April 1995
 # Whom:			Nobuhiro Yasutomi <nobu@psrc.isac.co.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.6 1996/03/31 23:25:11 asami Exp $
 #
 
 DISTNAME=	groff-1.10
 PKGNAME=	jp-groff-0.99
 CATEGORIES=	japanese print
-MASTER_SITES=	ftp://ftp.ae.keio.ac.jp/pub/GNU/ \
-		ftp://prep.ai.mit.edu/pub/gnu/
+MASTER_SITES=	${MASTER_SITE_GNU}
 
 MAINTAINER=	graphite@taurus.bekkoame.or.jp
 

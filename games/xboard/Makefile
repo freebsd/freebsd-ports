@@ -3,17 +3,17 @@
 # Date created:         2 Jan 1995
 # Whom:                 swallace
 #
-# $Id: Makefile,v 1.5 1996/03/30 17:05:46 markm Exp $
+# $Id: Makefile,v 1.6 1996/07/12 11:07:20 asami Exp $
 #
 
 DISTNAME=       xboard-3.4.pl1
 PKGNAME=	xboard-3.4.1
-CATEGORIES+=	games
-MASTER_SITES=	ftp://prep.ai.mit.edu/pub/gnu/
+CATEGORIES=	games
+MASTER_SITES=	${MASTER_SITE_GNU}
 
 MAINTAINER=	markm@FreeBSD.ORG
 
-BUILD_DEPENDS+= autoconf:${PORTSDIR}/devel/autoconf
+BUILD_DEPENDS=  autoconf:${PORTSDIR}/devel/autoconf
 
 HAS_CONFIGURE=  yes
 CONFIGURE_ARGS= --prefix=${PREFIX}
