@@ -1,15 +1,13 @@
+bin/make_xtel_lignes
+bin/mdmdetect
 bin/xtel
 bin/xteld
-bin/mdmdetect
-bin/make_xtel_lignes
 lib/X11/app-defaults/XTel
 lib/X11/app-defaults/XTel-msg
-lib/X11/xtel/modem.list
-lib/X11/xtel/xtel.lignes
-lib/X11/xtel/xtel.log
-lib/X11/xtel/xtel.services
 lib/X11/fonts/xtel/fonts.alias
+@unexec rm %D/lib/X11/fonts/xtel/fonts.cache-1 2>/dev/null || true
 lib/X11/fonts/xtel/fonts.dir
+lib/X11/fonts/xtel/fonts.scale
 lib/X11/fonts/xtel/g016x10.pcf.gz
 lib/X11/fonts/xtel/g016x20.pcf.gz
 lib/X11/fonts/xtel/g016x40.pcf.gz
@@ -29,6 +27,10 @@ lib/X11/fonts/xtel/g18x10.pcf.gz
 lib/X11/fonts/xtel/g1s16x20.pcf.gz
 lib/X11/fonts/xtel/g1s8x10.pcf.gz
 lib/X11/fonts/xtel/xteldigit.pcf.gz
+lib/X11/xtel/modem.list
+lib/X11/xtel/xtel.lignes
+lib/X11/xtel/xtel.log
+lib/X11/xtel/xtel.services
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
