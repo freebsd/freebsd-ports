@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	flash
-PORTVERSION=	0.9.4
-PORTREVISION=	1
+PORTVERSION=	0.9.5
 CATEGORIES=	shells
 MASTER_SITES=	http://www.netsoc.ucd.ie/flash/ \
 		ftp://ftp.netsoc.ucd.ie/pub/computing/flash/
@@ -25,6 +24,8 @@ LIB_DEPENDS=	ncurses.5:${PORTSDIR}/devel/ncurses
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} -rdynamic" \
+		LDFLAGS="${LDFLAGS} -rdynamic"
 
 MAN1=		flash.1
 
