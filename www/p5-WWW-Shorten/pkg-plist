@@ -1,6 +1,7 @@
 %%SITE_PERL%%/WWW/Shorten.pm
 %%SITE_PERL%%/WWW/Shorten/BabyURL.pm
 %%SITE_PERL%%/WWW/Shorten/EkDk.pm
+%%SITE_PERL%%/WWW/Shorten/Linkz.pm
 %%SITE_PERL%%/WWW/Shorten/MakeAShorterLink.pm
 %%SITE_PERL%%/WWW/Shorten/Metamark.pm
 %%SITE_PERL%%/WWW/Shorten/NotLong.pm
