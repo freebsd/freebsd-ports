@@ -39,16 +39,22 @@
   # LDLIBS = -lsun -lc_s
   # ISC SysVr3.2.2 has a shared C library and requires libinet.a to resolve
 ***************
-*** 75,81 ****
-  INSTALL = install -c -s
+*** 72,81 ****
+  #	install -s -c $(LOCALBINDIR) $$file
+  #
+  #INSTALL = cp
+! INSTALL = install -c -s
   
   # Root of installation tree
 ! INSTROOT = /usr/local
   #
   # This is where binaries should be copied
   LOCALBINDIR = ${INSTROOT}/bin
---- 75,81 ----
-  INSTALL = install -c -s
+--- 72,81 ----
+  #	install -s -c $(LOCALBINDIR) $$file
+  #
+  #INSTALL = cp
+! INSTALL = install -c
   
   # Root of installation tree
 ! INSTROOT = ${PREFIX}
