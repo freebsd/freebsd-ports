@@ -11709,7 +11709,7 @@ xmms-paranormal	ports/graphics/xmms-paranormal
 xmms-pipe	ports/audio/xmms-pipe
 xmms-quix3dn	ports/audio/xmms-quix3dn
 xmms-real-random	ports/audio/xmms-real-random
-xmms-scrobbler	ports/audio/smms-scrobbler
+xmms-scrobbler	ports/audio/xmms-scrobbler
 xmms-shn	ports/audio/xmms-shn
 xmms-sid	ports/audio/xmms-sid
 xmms-sndfile	ports/audio/xmms-sndfile
