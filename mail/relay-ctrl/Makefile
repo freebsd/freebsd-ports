@@ -7,6 +7,7 @@
 
 PORTNAME=	relay-ctrl
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/${PORTNAME}/
 
@@ -46,6 +47,6 @@ do-install:
 	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},g; s,%%LOCALBASE%%,${LOCALBASE},g' \
 		${PKGDIR}/pkg-message > ${PKGMESSAGE}
-	@${CAT} ${PKGMESSAGE}	
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
