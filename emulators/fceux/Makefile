@@ -9,7 +9,6 @@ PORTNAME=	fceu
 PORTVERSION=	0.98.12
 CATEGORIES=	emulators
 MASTER_SITES=	http://fceultra.sourceforge.net/releases/
-MASTER_SITE_SUBDIR=	fceultra
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	xcas@cox.net
@@ -32,6 +31,10 @@ TECHEXPDOCS=	SMB2j.txt mmc5-e.txt mmc5_bank_switch.txt namco.txt taito.txt \
 TECHPPUDOCS=	"2C02_technical_operation.TXT" loopy1.txt loopy2.txt
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		"Does not compile on sparc64"
+.endif
 
 pre-everything::
 .if !defined(NOPORTDOCS) && !defined(TECH_DOC_INSTALL)
