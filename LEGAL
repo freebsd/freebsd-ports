@@ -188,6 +188,8 @@ tkman-1.7.3.tar.Z	ports/misc/tkman	Restrictive copyright
 tkman-2.*		ports/misc/tkman	Don't sell for profit.
 tuc-*			ports/converters/tuc	Author does not allow
 						CD-ROM distribution
+understand_c		ports/devel/understand_c	License is not clear on
+						redistribution
 upsmon*			ports/sysutils/upsmon	Redistribute only with
 						original source code.
 uzap.tar.gz             ports/editors/uzap      Restrictive copyright

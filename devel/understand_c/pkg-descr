@@ -1,0 +1,23 @@
+Understand parses any sized C or C++ project to help you reverse
+engineer, document and understand it and thus maintain it better.
+It supports K&R C, ANSI C, or C++ source code. Projects can contain
+mixed C/C++ code as well. The parser is efficient, fast, and can
+handle very large projects. Very little is needed to get started
+- just aim it at your source tree.  Optionally (and for more parsing
+accuracy) add any externally defined macro definitions and include
+paths. All of this is done from the GUI - you should be able to do
+an initial analysis of your project in a few minutes.
+
+Understand for C++ quickly documents Class inheritance hierarchies
+(Base Class and Derived Classes), Call and CallBy Trees, Include
+and Include By Trees, as well as where and how everything in your
+source code is used (cross reference). Understand for C++ creates
+detailed automatic documentation about your source code in HTML
+and text reports  Using the PERL and C API you can write your own
+documentation generators.
+
+You need a limited time period license to run the product in
+evaluation mode or a purchased permanent license. Both can be
+obtained in the www site.
+
+WWW: http://www.scitools.com/
