@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	openh323
-PORTVERSION=	1.1b1
+PORTVERSION=	1.1b3
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
 		http://www.ru.openh323.org/bin/
-DISTFILES=	openh323_1.1beta1${EXTRACT_SUFX} \
-		pwlib_min_1.1pl15.tar.gz
+DISTFILES=	openh323_1.1beta3.tar.gz \
+		pwlib_min_1.1pl17.tar.gz
 
 MAINTAINER=	roger@freebsd.org
 
@@ -27,11 +27,9 @@ MAKE_ENV=	PWLIBDIR=${WRKDIR}/pwlib \
 		OPENH323DIR=${WRKDIR}/openh323
 THE_MACHTYPE=	${ARCH:S/i386/x86/}
 MAKE_ARGS=	OSTYPE=${OPSYS} MACHTYPE=${THE_MACHTYPE} OSRELEASE=${OSVERSION} CPLUS=${CXX}
-MAN1=		ohphone.1
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/sample/obj_${OPSYS}_${THE_MACHTYPE}_r/ohphone ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/sample/ohphone.1 ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/samples/simple/obj_${OPSYS}_${THE_MACHTYPE}_r/simph323 ${PREFIX}/bin
 
 
 .include <bsd.port.mk>
