@@ -7,22 +7,23 @@
 #
 
 PORTNAME=	styx
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.speculate.de/styx/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	giconv.2:${PORTSDIR}/converters/libiconv
 
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${PREFIX}/include" \
-		LIBS="-L${PREFIX}/lib -lgiconv"
+CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${PREFIX}/include ${PTHREAD_FLAGS}" \
+		LIBS="-L${PREFIX}/lib -lgiconv ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/styx \
 		--datadir=${PREFIX}/share/doc/styx
 
 USE_GMAKE=	yes
+INSTALLS_SHLIB=	yes
 
 post-patch:
 .for file in config.h.in configure libbase/styconf0.h
@@ -31,6 +32,7 @@ post-patch:
 .for file in config.h.in libbase/styconf0.h libbase/gstream.c
 	@${PERL} -pi -e "s,ICONV_H,GICONV_H,g" ${WRKSRC}/${file}
 .endfor
+	@${PERL} -pi -e "s,-lrt,${PTHREAD_LIBS},g" ${WRKSRC}/configure
 
 pre-configure:
 	@${RM} -f ${WRKSRC}/config.cache
