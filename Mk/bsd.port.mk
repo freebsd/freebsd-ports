@@ -2317,8 +2317,7 @@ fetch-list:
 				*/*)	args="-o $${file} $${site}$${file}";; \
 				*)		args=$${site}$${file};; \
 				esac; \
-				${ECHO} -n ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} "${FETCH_AFTER_ARGS}" '||' ; \
-					break; \
+				${ECHO} -n ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} "${FETCH_AFTER_ARGS}" '|| ' ; \
 			done; \
 			${ECHO} "echo $${file} not fetched" ; \
 		fi \
@@ -2334,8 +2333,7 @@ fetch-list:
 				*/*)	args="-o $${file} $${site}$${file}";; \
 				*)		args=$${site}$${file};; \
 				esac; \
-				${ECHO} -n ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} "${FETCH_AFTER_ARGS}" '||' ; \
-					break; \
+				${ECHO} -n ${SETENV} ${FETCH_ENV} ${FETCH_CMD} ${FETCH_BEFORE_ARGS} $${args} "${FETCH_AFTER_ARGS}" '|| ' ; \
 			done; \
 			${ECHO} "echo $${file} not fetched" ; \
 		fi \
