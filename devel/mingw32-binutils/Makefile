@@ -7,17 +7,25 @@
 
 PORTNAME=	binutils
 PORTVERSION=	${BINUTILVERSION}.${PATCHVERSION}
+PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
-MASTER_SITE_SUBDIR=	binutils/releases
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+#MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
+MASTER_SITE_SUBDIR=	mingw
+# Wait for release, which will be based on orognal sources
+#MASTER_SITE_SUBDIR=	binutils/releases
 PKGNAMEPREFIX=	mingw32-
-DISTNAME=	${PORTNAME}-${BINUTILVERSION}
-DIST_SUBDIR=	mingw
+# Wait for release, which will be based on orognal sources
+DISTNAME=	${PORTNAME}-${BINUTILVERSION}-${PATCHVERSION:S/./-/}-src
+#DISTNAME=	${PORTNAME}-${BINUTILVERSION}
 
-PATCH_SITES=	${MASTER_SITE_SOURCEFORGE}
-PATCH_SITE_SUBDIR=	mingw
-PATCHFILES=	${PORTNAME}-${BINUTILVERSION}-${PATCHVERSION:S/./-/}.diff.gz
-PATCH_DIST_STRIP=	-p1
+# Wait for release, which will be based on orognal sources
+#PATCH_SITES=	${MASTER_SITE_SOURCEFORGE}
+## Special hack: I don't use SITE_SUBDIR & DIST_SUBDIR, and only pathces
+##               will be placed to subdirectory
+##               It allows to use main binutils sources from other ports.
+#PATCHFILES=	mingw/${PORTNAME}-${BINUTILVERSION}-${PATCHVERSION:S/./-/}.diff.gz
+#PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	FSF binutils-2.13 for Windows cross-development
@@ -25,18 +33,19 @@ COMMENT=	FSF binutils-2.13 for Windows cross-development
 BUILD_DEPENDS=	msgfmt:${PORTSDIR}/devel/gettext
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 
-BINUTILVERSION=	2.13
-PATCHVERSION=	20020903.1
+BINUTILVERSION=	2.13.90
+PATCHVERSION=	20030111.1
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${BINUTILVERSION}
+#WRKSRC=		${WRKDIR}/${PORTNAME}-${BINUTILVERSION}
 
-USE_BZIP2=	yes
+#USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
 		--with-gcc --with-gnu-ld --with-gnu-as \
 		--disable-nls --disable-win32-registry \
-		--disable-shared
+		--disable-shared \
+		--infodir=${PREFIX}/${PKGNAMEPREFIX:S/-$//}/info
 
 MAN1=	${PKGNAMEPREFIX}addr2line.1 ${PKGNAMEPREFIX}ar.1    \
 	${PKGNAMEPREFIX}as.1 ${PKGNAMEPREFIX}dlltool.1      \
@@ -51,18 +60,6 @@ PLIST_SUB+=	BINUTILS_TARG=${PKGNAMEPREFIX:S/-$//}
 
 BINARIES=	addr2line ar as c++filt ld nm objcopy objdump ranlib \
 		readelf size strings strip dlltool dllwrap windres
-
-# There may be original binutils sources already
-pre-fetch:
-	for F in ${DISTFILES}; do \
-		${TEST} -f ${DISTDIR}/$${F} && \
-		${TEST} ! -f ${DISTDIR}/${DIST_SUBDIR}/$${F} && \
-		${LN} ${DISTDIR}/$${F} ${DISTDIR}/${DIST_SUBDIR}/$${F} || \
-		true ; \
-	done
-
-pre-install:
-	@${CP} ${FILESDIR}/fdl.texi ${WRKSRC}/etc
 
 post-install:
 .for F in ${BINARIES}
