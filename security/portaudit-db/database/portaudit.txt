@@ -1,7 +1,12 @@
 # portaudit text based database
 # $FreeBSD$
-smtpproxy<=1.1.3|http://0xbadc0ded.org/advisories/0402.txt|remotely exploitable format string vulnerability|1abf65f9-bc9d-11d8-916c-000347dd607f
+apache>=2.*<2.0.49_1|http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2004-0488|mod_ssl stack-based buffer overflow|662cd99e-bc9d-11d8-916c-000347dd607f
+apache+mod_ssl*<1.3.31+2.8.18|http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2004-0488|mod_ssl stack-based buffer overflow|662cd99e-bc9d-11d8-916c-000347dd607f
+ru-apache+mod_ssl<1.3.31+30.20+2.8.18|http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2004-0488|mod_ssl stack-based buffer overflow|662cd99e-bc9d-11d8-916c-000347dd607f
+gallery<1.4.3.2|http://gallery.menalto.com/modules.php?op=modload&name=News&file=article&sid=123|Allows a hacker to log in to a Gallery as an administrator and perform any actions on the albums.|253ea131-bd12-11d8-b071-00e08110b673
 apache<1.3.31_1|http://www.apacheweek.com/features/security-13|mod_proxy buffer overflow (CAN-2004-0492)|5bcd500c-bc9d-11d8-916c-000347dd607f
-apache+mod_ssl<1.3.31+2.8.18_3|http://www.apacheweek.com/features/security-13|mod_proxy buffer overflow (CAN-2004-0492)|5bcd500c-bc9d-11d8-916c-000347dd607f
-apache<2.0.49_1|http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2004-0488|mod_ssl stack-based buffer overflow|662cd99e-bc9d-11d8-916c-000347dd607f
-apache+mod_ssl*<1.3.31+2.8.18_4|http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2004-0488|mod_ssl stack-based buffer overflow|662cd99e-bc9d-11d8-916c-000347dd607f
+apache+mod_ssl*<1.3.31+2.8.18_4|http://www.apacheweek.com/features/security-13|mod_proxy buffer overflow (CAN-2004-0492)|5bcd500c-bc9d-11d8-916c-000347dd607f
+ru-apache+mod_ssl<=1.3.31+30.20+2.8.18|http://www.apacheweek.com/features/security-13|mod_proxy buffer overflow (CAN-2004-0492)|5bcd500c-bc9d-11d8-916c-000347dd607f
+dbmail{-mysql,-postgresql}-1.2.8a|http://www.dbmail.org/|remote exploitable buffer overflow|3b9b196e-bd12-11d8-b071-00e08110b673
+smtpproxy<=1.1.3|http://0xbadc0ded.org/advisories/0402.txt|remotely exploitable format string vulnerability|1abf65f9-bc9d-11d8-916c-000347dd607f
+subversion<1.0.5|http://subversion.tigris.org/security/CAN-2004-0413-advisory.txt|remote exploitable buffer overflow in 'svn://' parser|4616bc3b-bd0f-11d8-a252-02e0185c0b53
