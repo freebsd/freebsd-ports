@@ -368,6 +368,7 @@
     SUBDIR += tcl76
     SUBDIR += tcl80
     SUBDIR += tdiary
+    SUBDIR += texfamily
     SUBDIR += texinfo
     SUBDIR += tgif
     SUBDIR += timidity++-slang
