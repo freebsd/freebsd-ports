@@ -690,6 +690,7 @@
     SUBDIR += wmq3
     SUBDIR += wmwave
     SUBDIR += wol
+    SUBDIR += wping
     SUBDIR += xarchie
     SUBDIR += xbms
     SUBDIR += xbone
