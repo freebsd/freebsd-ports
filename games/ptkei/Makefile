@@ -6,26 +6,28 @@
 #
 
 PORTNAME=	ptkei
-PORTVERSION=	1.10
+PORTVERSION=	1.12
 CATEGORIES=	games
-MASTER_SITES=	http://www.cse.buffalo.edu/~koconnor/ptkei/download/
+MASTER_SITES=	ftp://www.empire.cx/pub/empire/clients/
 
 MAINTAINER=	darius@dons.net.au
 
-RUN_DEPENDS=	python:${PORTSDIR}/lang/python
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
+		${PYTHON_SITELIBDIR}/Pmw/__init__.py:${PORTSDIR}/x11-toolkits/pmw
 
-NO_BUILD=	yes
+USE_PYTHON=	yes
+
+do-build:
+	@find ${WRKSRC} -name "*.pyc" | xargs ${RM}
+	@find ${WRKSRC} \( -type f -or -type l \) | xargs ${CHMOD} 644
+	@find ${WRKSRC} -type d | xargs ${CHMOD} 755
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC} 2>/dev/null
 
 do-install:
-	${MKDIR} ${PREFIX}/ptkei
-	${CP} -r ${WRKSRC}/* ${PREFIX}/ptkei
-	${SED} -e "s#%%PREFIX%%#${PREFIX}#" <${FILESDIR}/ptkei > ${PREFIX}/bin/ptkei
-	${CHMOD} -R 644 ${PREFIX}/ptkei
-	${CHMOD} 755 ${PREFIX}/ptkei
-	${CHMOD} 755 ${PREFIX}/ptkei/src
-	${CHMOD} 755 ${PREFIX}/ptkei/scripts
-	${CHMOD} 755 ${PREFIX}/ptkei/doc
-	${CHMOD} 755 ${PREFIX}/ptkei/doc/pics
-	${CHMOD} 755 ${PREFIX}/bin/ptkei
+	${MKDIR} ${PREFIX}/share/ptkei
+	${TAR} -C ${WRKSRC} -cf - . | ${TAR} -C ${PREFIX}/share/ptkei --unlink -xf -
+	${SED} -e "s#%%PREFIX%%#${PREFIX}# ; s#%%PYTHON_CMD%%#${PYTHON_CMD}#" \
+		${FILESDIR}/ptkei > ${WRKDIR}/ptkei.tmp
+	${INSTALL_SCRIPT} ${WRKDIR}/ptkei.tmp ${PREFIX}/bin/ptkei
 
 .include <bsd.port.mk>
