@@ -1,0 +1,12 @@
+--- xdvik/Makefile.in.orig	Mon Oct 12 22:28:09 1998
++++ xdvik/Makefile.in	Mon Oct 12 22:46:32 1998
+@@ -9,6 +9,9 @@
+ # This matches web2c (needed only for Metafont).
+ x_cppflags = @X_CFLAGS@
+ x_ldflags = @X_LIBS@
++ifeq ($(PORTOBJFORMAT),elf)
++x_ldflags += -Wl,-rpath,$(X11BASE)/lib
++endif
+ x_pre_libs = @X_PRE_LIBS@
+ x_extra_libs = @X_EXTRA_LIBS@
+ x_tool_libs = @x_tool_libs@

@@ -3,7 +3,7 @@
 # Date created:        26 Feb 1998
 # Whom:                Kentaro Inagaki <JBD01226@niftyserve.ne.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/06/14 22:00:04 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/10/12 17:23:04 jseger Exp $
 #
 
 DISTNAME=	xdvik-20a
@@ -14,8 +14,6 @@ MASTER_SITES=	ftp://ftp.ipc.chiba-u.ac.jp/pub/pub.yamaga/xdvik-20/ \
 MAINTAINER=	JBD01226@niftyserve.ne.jp
 
 RUN_DEPENDS=    mf:${PORTSDIR}/print/tex
-
-BROKEN_ELF=	yes
 
 GNU_CONFIGURE=YES
 #CONFIGURE_ARGS=--enable-shared=yes
