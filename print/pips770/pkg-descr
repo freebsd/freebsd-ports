@@ -6,14 +6,20 @@ URL:
 
 WWW: http://www.epkowa.co.jp/
 
-And then this port has a modified filter "filter770.rev" which is
-useful to print out more than one page. If you use it, you add the
-next entries into /etc/printcap.
+This port has a modified filter "filter770.rev" which is useful to
+print out more than one page. Then you execute the next command:
 
-pm770c|EPSON PM-770C:\
-        :lp=/dev/lpt0:\
-        :sh:\
-        :if=/usr/local/libexec/pips770/filter770.rev:\
-        :sd=/var/spool/lpd/pm770c:\
-        :mx#0:\
-        :lf=/var/log/lpd-errs
+/usr/local/libexec/pips770/setup
+
+to setup /etc/printcap, make a spool in /var/spool/lpd/ and so on.
+
+To run with Japanese/French/Germany/Spanish/Italian/Dutch/
+Portugue/Korean messages, you should execute as follows:
+  env LANG=ja_JP pips770          env LANG=fr pips770	  
+  env LANG=de pips770             env LANG=es pips770	  
+  env LANG=it pips770             env LANG=nl pips770
+  env LANG=pt pips770             env LANG=ko pips770 (*)
+  env LANG=zh_CN pips770 (*)(**)  env LANG=zh_TW.Big5 pips770 (**)
+
+(*) These do not work well.
+(**) See more informations in /usr/local/share/doc/pips770/readme_for_zh

@@ -5,7 +5,6 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	1.3
 MASTER_SITES=	http://www.epkowa.on.arena.ne.jp/pips/data/750/
 MASTERDIR=	${.CURDIR}/../pips800
 PRTYPE=		750_2000

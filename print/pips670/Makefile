@@ -5,7 +5,6 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	1.3
 MASTERDIR=	${.CURDIR}/../pips800
 PRTYPE=		670
 
