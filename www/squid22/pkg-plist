@@ -4,6 +4,7 @@ etc/squid/errors/ERR_CANNOT_FORWARD
 etc/squid/errors/ERR_CLIENT_ABORT
 etc/squid/errors/ERR_CONNECT_FAIL
 etc/squid/errors/ERR_DNS_FAIL
+etc/squid/errors/ERR_FORWARDING_DENIED
 etc/squid/errors/ERR_FTP_DISABLED
 etc/squid/errors/ERR_FTP_FAILURE
 etc/squid/errors/ERR_INVALID_REQ
@@ -14,6 +15,7 @@ etc/squid/errors/ERR_READ_ERROR
 etc/squid/errors/ERR_READ_TIMEOUT
 etc/squid/errors/ERR_SOCKET_FAILURE
 etc/squid/errors/ERR_UNSUP_REQ
+etc/squid/errors/ERR_URN_RESOLVE
 etc/squid/errors/ERR_WRITE_ERROR
 etc/squid/errors/ERR_ZERO_SIZE_OBJECT
 etc/squid/icons/anthony-binhex.gif
