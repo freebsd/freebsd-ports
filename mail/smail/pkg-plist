@@ -16,7 +16,9 @@ etc/smail/forcesmtp
 @exec mkdir -p %D/etc/smail/maps
 @exec mkdir -p %D/etc/smail/methods
 etc/smail/paths
+etc/smail/rewrite
 libexec/smail/bouncemail
+libexec/smail/bouncemail.O
 libexec/smail/checkerr
 libexec/smail/dcasehost
 libexec/smail/getmap
@@ -39,6 +41,8 @@ libexec/smail/pathmerge
 libexec/smail/savelog
 libexec/smail/smailbug
 libexec/smail/smailbug.O
+libexec/smail/unfreezemail
+libexec/smail/unfreezemail.O
 libexec/smail/unsharmap
 sbin/sendmail
 @dirrm libexec/smail
