@@ -7,17 +7,13 @@
 #
 
 PORTNAME=	wine
-PORTVERSION=	2001.08.24
+PORTVERSION=	2001.11.08
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/wine/development
 DISTNAME=	Wine-${PORTVERSION:S/.//g}
 
 MAINTAINER=	pfeifer@dbai.tuwien.ac.at
-
-# This port has not been upgraded to 2001.10.04 because that snapshots does
-# not work as well as the previous ones -- it builds, but then hangs while
-# running several applicatinos.  (This has already been fixed in Wine CVS.)
 
 WRKSRC=		${WRKDIR}/wine-${PORTVERSION:S/.//g}
 GNU_CONFIGURE=	yes
