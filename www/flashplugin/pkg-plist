@@ -1,1 +1,2 @@
 lib/netscape/plugins/libswf.so
+@unexec rmdir -p %D/lib/netscape/plugins 2>/dev/null || true
