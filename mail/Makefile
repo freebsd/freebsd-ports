@@ -304,6 +304,7 @@
     SUBDIR += smtprc
     SUBDIR += smunge
     SUBDIR += solidpop3d
+    SUBDIR += sortmail
     SUBDIR += spamass-milter
     SUBDIR += spambnc
     SUBDIR += spamoracle
