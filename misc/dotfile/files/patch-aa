@@ -1,65 +1,61 @@
-*** Makefile.in.orig	Sun Dec 21 06:40:34 1997
---- Makefile.in	Sun Feb 22 11:07:08 1998
-***************
-*** 23,48 ****
-  SHELL = /bin/sh
-  
-  ### Tell the user that there is nothing to be compiled.
-- .PHONY: nothing
-- nothing:
-- 	@echo ----------------------------------------------------------------------
-- 	@echo ----------------------------------------------------------------------
-- 	@echo "The Dotfile Generator does not contain any files which has to be compiled!"
-- 	@echo "On the other hand, during installation, all the modules need to be"
-- 	@echo "bytecompiled, so now it's time to type: make install"
-- 	@echo ----------------------------------------------------------------------
-- 	@echo ----------------------------------------------------------------------
-  
-- #
-  # install all the files in the corect places.
-  #
-  .PHONY:	install
-  install: copydirs bytecompile
-- 	@echo "**********************************************************************"
-- 	@echo In the directory Doc, three articles in HTML format, concerning
-- 	@echo The Dotfile Generator is located. If you want these to be installed
-- 	@echo on your system, please do it manually.
-- 	@echo "**********************************************************************"
-  
-  .PHONY: copydirs
-  copydirs:
---- 23,33 ----
-***************
-*** 58,64 ****
-  	done
-  	cp dotfile.1 $(mandir)
-  	-@RM@ $(bindir)/dotfile
-! 	-@LN@ -s $(bindir)/dotfile-$(version) $(bindir)/dotfile
-  	chmod 755 $(bindir)/dotfile
-  	chmod 755 $(bindir)/dotfile-$(version)
-  
---- 43,49 ----
-  	done
-  	cp dotfile.1 $(mandir)
-  	-@RM@ $(bindir)/dotfile
-! 	-@LN@ -s dotfile-$(version) $(bindir)/dotfile
-  	chmod 755 $(bindir)/dotfile
-  	chmod 755 $(bindir)/dotfile-$(version)
-  
-***************
-*** 72,78 ****
-  fvwm1 fvwm2:
-  	@echo "----------------------------------------------------------------------"
-  	@echo "                           Byte compiling $@"
-! 	@if wish testwish; then \
-  	@WISH@ $(libdir)/Generator/dotfile.tcl $(libdir)/Generator $(libdir)/$@ bytecompile; \
-  	else \
-  	echo "An error should be shown above!"; \
---- 57,63 ----
-  fvwm1 fvwm2:
-  	@echo "----------------------------------------------------------------------"
-  	@echo "                           Byte compiling $@"
-! 	@if $(WISH) testwish; then \
-  	@WISH@ $(libdir)/Generator/dotfile.tcl $(libdir)/Generator $(libdir)/$@ bytecompile; \
-  	else \
-  	echo "An error should be shown above!"; \
+--- Makefile.in.orig	Sun Dec 21 07:40:34 1997
++++ Makefile.in	Wed Feb 25 20:49:29 1998
+@@ -23,26 +23,11 @@
+ SHELL = /bin/sh
+ 
+ ### Tell the user that there is nothing to be compiled.
+-.PHONY: nothing
+-nothing:
+-	@echo ----------------------------------------------------------------------
+-	@echo ----------------------------------------------------------------------
+-	@echo "The Dotfile Generator does not contain any files which has to be compiled!"
+-	@echo "On the other hand, during installation, all the modules need to be"
+-	@echo "bytecompiled, so now it's time to type: make install"
+-	@echo ----------------------------------------------------------------------
+-	@echo ----------------------------------------------------------------------
+ 
+-#
+ # install all the files in the corect places.
+ #
+ .PHONY:	install
+ install: copydirs bytecompile
+-	@echo "**********************************************************************"
+-	@echo In the directory Doc, three articles in HTML format, concerning
+-	@echo The Dotfile Generator is located. If you want these to be installed
+-	@echo on your system, please do it manually.
+-	@echo "**********************************************************************"
+ 
+ .PHONY: copydirs
+ copydirs:
+@@ -58,7 +43,7 @@
+ 	done
+ 	cp dotfile.1 $(mandir)
+ 	-@RM@ $(bindir)/dotfile
+-	-@LN@ -s $(bindir)/dotfile-$(version) $(bindir)/dotfile
++	-@LN@ -s dotfile-$(version) $(bindir)/dotfile
+ 	chmod 755 $(bindir)/dotfile
+ 	chmod 755 $(bindir)/dotfile-$(version)
+ 
+@@ -68,11 +53,11 @@
+ #
+ # Targets that requre X (the modules using the fonts widget)
+ #
+-.PHONY fvwm1 fvwm2:
++.PHONY: fvwm1 fvwm2
+ fvwm1 fvwm2:
+ 	@echo "----------------------------------------------------------------------"
+ 	@echo "                           Byte compiling $@"
+-	@if wish testwish; then \
++	@if $(WISH) testwish; then \
+ 	@WISH@ $(libdir)/Generator/dotfile.tcl $(libdir)/Generator $(libdir)/$@ bytecompile; \
+ 	else \
+ 	echo "An error should be shown above!"; \
+@@ -83,7 +68,7 @@
+ #
+ # Targets that may bytecompile without X
+ #
+-.PHONY emacs tcsh rtin bash elm procmail ipfwadm:
++.PHONY: emacs tcsh rtin bash elm procmail ipfwadm
+ emacs tcsh rtin bash elm procmail ipfwadm:
+ 	@echo "----------------------------------------------------------------------"
+ 	@echo "                           Byte compiling $@"
