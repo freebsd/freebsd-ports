@@ -12,6 +12,8 @@ MASTER_SITES=	http://www.cis.upenn.edu/~bcpierce/unison/download/stable/unison-$
 DISTNAME=	src
 DIST_SUBDIR=	unison-${PORTVERSION}
 
+FORBIDDEN=	"Can result in serious data loss"
+
 MAINTAINER=	daniel+unison@pelleg.org
 
 BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
