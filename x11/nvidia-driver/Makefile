@@ -7,7 +7,7 @@
 
 PORTNAME=	nvidia-driver
 PORTVERSION=	1.0.${NVVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://download.nvidia.com/freebsd/1.0-${NVVERSION}/ \
 		ftp://download.nvidia.com/freebsd/1.0-${NVVERSION}/ \
@@ -88,6 +88,7 @@ post-patch:
 .endif
 
 post-install:
+	${LN} -sf libXvMCNVIDIA.so.1 ${PREFIX}/lib/libXvMCNVIDIA_dynamic.so.1
 .if ${OSVERSION} < 500000
 .for dev in 0 1 2 3
 	@${RM} -f /dev/nvidia${dev}

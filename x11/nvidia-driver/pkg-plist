@@ -18,6 +18,8 @@ lib/libGLcore.so.1
 lib/libXvMCNVIDIA.so.1
 @exec ln -sf %D/lib/libXvMCNVIDIA.so.1 %D/lib/libXvMCNVIDIA.so
 @unexec rm -f %D/lib/libXvMCNVIDIA.so
+@exec ln -sf %D/lib/libXvMCNVIDIA.so.1 %D/lib/libXvMCNVIDIA_dynamic.so.1
+@unexec rm -f %D/lib/libXvMCNVIDIA_dynamic.so.1
 lib/libnvidia-tls.so.1
 @exec ln -sf %D/lib/libnvidia-tls.so.1 %D/lib/libnvidia-tls.so
 @unexec rm -f %D/lib/libnvidia-tls.so
