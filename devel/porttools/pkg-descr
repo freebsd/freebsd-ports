@@ -1,7 +1,9 @@
-FreeBSD Port Tools consist of the following small scripts:
-- testport: a script to automate testing a new port or a port update
-- pr-new: a script to simplify submitting a Problem Report (PR) for a new port
-- pr-update: a script to simplify submitting a PR with a port update
+FreeBSD Port Tools includes the following commands:
+- port create: create a new port from a template
+- port diff: generate a diff against a previous version of the port
+- port fetch: fetch distfile(s) of a new version of the port
+- port help: display usage summary for port(1) commands
+- port submit: submit a PR with new port, or port change/update
+- port test: automate testing a new port or a port update
 
-Author:	Sergei Kolobov <sergei@kolobov.com>
 WWW:	http://sourceforge.net/projects/porttools/
