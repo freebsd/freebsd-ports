@@ -1,5 +1,5 @@
---- a2ps.pl-1.41.orig	Mon Sep  8 02:59:07 1997
-+++ a2ps.pl-1.41	Mon Sep  8 02:59:08 1997
+--- a2ps.pl-1.44.orig	Thu Apr  8 02:52:44 1999
++++ a2ps.pl-1.44	Thu Apr  8 02:54:06 1999
 @@ -1,4 +1,4 @@
 -#!/usr/local/bin/perl
 +#!/usr/bin/perl
