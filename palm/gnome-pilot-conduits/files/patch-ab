@@ -1,14 +1,5 @@
 --- mal-conduit/src/Makefile.in.orig	Wed May 10 01:26:11 2000
 +++ mal-conduit/src/Makefile.in	Tue May 16 17:07:16 2000
-@@ -147,7 +147,7 @@
- ccenterConduitsdir = $(ccenterPalmPilotdir)/Conduits
- ccenterConduits_DATA = mal-conduit-control-applet.desktop
- 
--panelConduitsdir = $(datadir)/gnome/apps/Settings/Peripherals/Conduits
-+panelConduitsdir = $(datadir)/apps/Settings/Peripherals/Conduits
- panelConduits_DATA = $(ccenterConduits_DATA)
- 
- Conduitsdir = $(datadir)/gnome-pilot/conduits/
 @@ -168,7 +168,7 @@
  CPPFLAGS = @CPPFLAGS@
  LDFLAGS = @LDFLAGS@

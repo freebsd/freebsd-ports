@@ -22,24 +22,6 @@
  		
  		
  	else
-@@ -2676,7 +2676,7 @@
- fi
- if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
-   echo "$ac_t""yes" 1>&6
--  PTHREAD_LIB="-lc_r"
-+  PTHREAD_LIB=""
- else
-   echo "$ac_t""no" 1>&6
- echo $ac_n "checking for pthread_create""... $ac_c" 1>&6
-@@ -4591,7 +4591,7 @@
-   cat conftest.$ac_ext >&5
-   rm -rf conftest*
-   CATOBJEXT=.mo
--		   DATADIRNAME=lib
-+		   DATADIRNAME=share
- fi
- rm -f conftest*
- 		INSTOBJEXT=.mo
 @@ -5915,8 +5915,8 @@
  fi
  

@@ -1,0 +1,14 @@
+--- src/gtkhtml.c.orig	Mon Jul 10 17:52:30 2000
++++ src/gtkhtml.c	Wed Aug  2 15:38:46 2000
+@@ -1130,3 +1130,3 @@
+ 	if (gconf_is_initialized ()) {
+-		gconf_client = gconf_client_new ();
++		gconf_client = gconf_client_get_default ();
+ 		if (!gconf_client)
+--- capplet/main.c.orig	Mon Jun 19 16:33:41 2000
++++ capplet/main.c	Wed Aug  2 15:40:19 2000
+@@ -197,3 +197,3 @@
+ 
+-	client = gconf_client_new ();
++	client = gconf_client_get_default ();
+ 	gconf_client_add_dir(client, GTK_HTML_GCONF_DIR, GCONF_CLIENT_PRELOAD_NONE, NULL);
