@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	delegate
-PORTVERSION=	6.1.16
+PORTVERSION=	6.1.19
 CATEGORIES=	net www japanese
-MASTER_SITES=	ftp://etlport.etl.go.jp/pub/DeleGate/
+MASTER_SITES=	ftp://ftp.delegate.org/pub/DeleGate/ \
+		ftp://ftp.etl.go.jp/pub/DeleGate/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	max@FreeBSD.org
