@@ -1,0 +1,13 @@
+bin/rexxcurl
+bin/rexxcurl-config
+lib/librexxcurl.a
+lib/librexxcurl.so
+%%DATADIR%%/httppost.rexx
+%%DATADIR%%/images/rxcurl64.png
+%%DATADIR%%/index.html
+%%DATADIR%%/mirror.rexx
+%%DATADIR%%/scp.rexx
+%%DATADIR%%/testcurl.rexx
+%%DATADIR%%/upload.rexx
+@dirrm %%DATADIR%%/images
+@dirrm %%DATADIR%%

@@ -64,6 +64,7 @@
     SUBDIR += puf
     SUBDIR += pure-ftpd
     SUBDIR += py-curl
+    SUBDIR += rexx-curl
     SUBDIR += ruby-curl
     SUBDIR += sftp
     SUBDIR += spegla
