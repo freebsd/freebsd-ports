@@ -16,12 +16,12 @@ PATCH_SITES=	http://www.caam.rice.edu/software/ARPACK/SRC/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Argand Library (serial version)
 
+BUILD_DEPENDS=  ${LOCALBASE}/bin/f2c:${PORTSDIR}/lang/f2c
+
 DIST_SUBDIR=	arpack
 
 WRKSRC=		${WRKDIR}/ARPACK
 ALL_TARGET=	lib
-
-BUILD_DEPENDS=  ${LOCALBASE}/bin/f2c:${PORTSDIR}/lang/f2c
 
 MAKE_ENV=	HOME=${WRKSRC}
 INSTALLS_SHLIB=	yes
