@@ -1,0 +1,14 @@
+lib/ruby/site_ruby/%%RUBY_VER%%/%%RUBY_ARCH%%/strscan.so
+share/examples/ruby/strscan/scanner.rb
+@dirrm share/examples/ruby/strscan
+share/doc/ruby/strscan/README.en
+share/doc/ruby/strscan/changes.html
+share/doc/ruby/strscan/index.html
+share/doc/ruby/strscan/reference.html
+share/doc/ruby/strscan/usage.html
+share/doc/ruby/strscan/ja/changes.html
+share/doc/ruby/strscan/ja/index.html
+share/doc/ruby/strscan/ja/reference.html
+share/doc/ruby/strscan/ja/usage.html
+@dirrm share/doc/ruby/strscan/ja
+@dirrm share/doc/ruby/strscan
