@@ -1,0 +1,12 @@
+
+  FFTW, the Fastest Fourier Transform in the West.  FFTW is a comprehensive
+  collection of fast C routines for computing the discrete Fourier transform
+  (DFT) in one or more dimensions, of both real and complex data, and of
+  arbitrary input size.  FFTW also includes parallel transforms, documented
+  elsewhere.  We assume herein that the reader is already familiar with the
+  properties and uses of the DFT that are relevant to her application.
+  Otherwise, see e.g. `The Fast Fourier Transform' by E. O. Brigham
+  (Prentice-Hall, Englewood Cliffs, NJ, 1974).  Our web page also has links to
+  FFT-related information online, see
+
+	http://theory.lcs.mit.edu/~fftw
