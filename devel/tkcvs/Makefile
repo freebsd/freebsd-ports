@@ -6,30 +6,31 @@
 #
 
 PORTNAME=	tkcvs
-PORTVERSION=	6.0
+PORTVERSION=	6.3
 CATEGORIES=	devel tk82
-MASTER_SITES=	http://www.neosoft.com/tcl/ftparchive/sorted/apps/tkcvs-6.0/ \
-		http://ftp.sunet.se/pub/lang/tcl/sorted/apps/tkcvs-6.0/
+MASTER_SITES=	http://www.twobarleycorns.net/
 
 MAINTAINER=	shanee@augusta.de
 
 LIB_DEPENDS=	tk82.1:${PORTSDIR}/x11-toolkits/tk82
 
 NO_BUILD=	yes
-MAN1=		tkcvs.1 tkdiff.1
+MAN=		tkcvs.n
 
-post-extract:
-	${CP} ${WRKSRC}/tkcvs/tkcvs.n ${WRKSRC}/tkcvs/tkcvs.1
-	${CP} ${WRKSRC}/tkdiff/tkdiff.n ${WRKSRC}/tkdiff/tkdiff.1
+WISH=		wish8\.2
+TCLSH=		tclsh8\.2
+
+post-patch:
+	@${PERL} -pi -e 's|wish|${WISH}|g' ${WRKSRC}/tkcvs/tkcvs.blank
+	@${PERL} -pi -e 's|wish|${WISH}|g' ${WRKSRC}/tkdiff/tkdiff
 
 do-install:
-	(cd $(WRKSRC)/tkcvs; ${SETENV} ${MAKE_ENV} sh ./doinstall)
+	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${TCLSH} doinstall.tcl)
 
 post-install:
-.if !defined(NOPORTDOCS)
+.if !defined{NOPORTDOCS}
 	${MKDIR} ${PREFIX}/share/doc/tkcvs
-	${INSTALL_DATA} ${WRKSRC}/README.tkcvs $(PREFIX)/share/doc/tkcvs/
-	${INSTALL_DATA} ${WRKSRC}/tkdiff/README $(PREFIX)/share/doc/tkcvs/README.tkdiff
+	${INSTALL_DATA} ${WRKSRC}/README.tkcvs ${PREFIX}/share/doc/tkcvs/
 .endif
 
 .include <bsd.port.mk>
