@@ -14,6 +14,7 @@
     SUBDIR += ircII
     SUBDIR += ircatlite
     SUBDIR += ircd-hybrid
+    SUBDIR += irchat-pj-emacs20
     SUBDIR += iroffer
     SUBDIR += irssi
     SUBDIR += liece-dcc
