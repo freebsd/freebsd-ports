@@ -7,12 +7,11 @@
 #
 
 PORTNAME=	showimg
-PORTVERSION=	0.9.2
-PORTEPOCH=	1
+PORTVERSION=	0.9.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.jalix.org/projects/showimg/download/${PORTVERSION}/
 
-MAINTAINER=	shelton@sentry.granch.ru
+MAINTAINER=	shelton@granch.ru
 COMMENT=	A picture viewer designed to run under KDE 3.x
 
 USE_BZIP2=	yes
