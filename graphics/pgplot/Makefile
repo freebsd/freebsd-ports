@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	pgplot
-PORTVERSION=	5.2
+PORTVERSION=	5.2.2
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.astro.caltech.edu/pub/pgplot/
-DISTNAME=	${PORTNAME}${PORTVERSION}
+DISTNAME=	${PORTNAME}5.2
 
 MAINTAINER=	jmz@FreeBSD.org
 
+LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}/pgplot
