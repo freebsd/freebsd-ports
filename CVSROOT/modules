@@ -4811,6 +4811,7 @@ mod_cgi_debug	ports/www/mod_cgi_debug
 mod_color	ports/www/mod_color
 mod_csacek	ports/www/mod_csacek
 mod_cvs		ports/www/mod_cvs
+mod_cvs2	ports/www/mod_cvs2
 mod_dav		ports/www/mod_dav
 mod_dtcl	ports/www/mod_dtcl
 mod_encoding	ports/www/mod_encoding
