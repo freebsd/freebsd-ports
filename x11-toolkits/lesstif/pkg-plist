@@ -169,7 +169,9 @@ share/doc/LessTif/doc/images/ltsunlogo.gif
 share/doc/LessTif/doc/lesstif.html
 share/doc/LessTif/doc/links.html
 share/doc/LessTif/doc/mailing-lists.html
+share/doc/LessTif/doc/man/man1/lesstif.1
 share/doc/LessTif/doc/man/man1/mwm.1
+share/doc/LessTif/doc/man/man1/xmbind.1
 share/doc/LessTif/doc/man/man5/mwmrc.5
 share/doc/LessTif/doc/platforms.html
 share/doc/LessTif/doc/release-policy.html
