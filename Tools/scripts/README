@@ -4,6 +4,8 @@ addport	- future replacement for easy-import
 
 consistency-check -  check whether all your ports are installed properly,
                      what files have changed, and what new files there are
+checknewvers - checks for availability for a newest version of distfiles on
+               MASTER_SITES (ftp only).
 close-pr  - a slightly hacked version of edit-pr(1) to quickly close PR.
 distclean - compare md5 sums of distfiles in ports/distfiles with currently
             installed ports collection in ports/* and prompt to remove
