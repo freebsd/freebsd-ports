@@ -1,0 +1,59 @@
+--- Makefile.orig	Mon Dec  8 18:32:26 2003
++++ Makefile	Mon Dec  8 18:46:08 2003
+@@ -0,0 +1,56 @@
++OBJECTS= dictionary.o system.o fileaccess.o float.o double.o prefix.o search.o softcore.o stack.o tools.o vm.o primitives.o bit.o lzuncompress.o unix.o utility.o hash.o callback.o word.o extras.o
++HEADERS= ficl.h ficlplatform/unix.h
++#
++# Flags for shared library
++TARGET= -DFREEBSD
++SHFLAGS = -fPIC
++CFLAGS= -O -c $(SHFLAGS) $(TARGET)
++CC=gcc
++LIB = ar cr
++RANLIB = ranlib
++
++MAJOR = 4
++
++everything:	ficl lib
++
++ficl: main.o $(HEADERS) libficl.a
++	$(CC) main.o -o ficl -L. -lficl -lm
++
++lib: libficl.so.$(MAJOR)
++
++# static library build
++libficl.a: $(OBJECTS)
++	$(LIB) libficl.a $(OBJECTS)
++	$(RANLIB) libficl.a
++
++# shared library build
++libficl.so.$(MAJOR): $(OBJECTS)
++	$(CC) -shared -Wl,-soname,libficl.so.$(MAJOR) \
++	-o libficl.so.$(MAJOR) $(OBJECTS)
++	ln -sf libficl.so.$(MAJOR) libficl.so
++
++main: main.o ficl.h sysdep.h libficl.so.$(MAJOR).$(MINOR)
++	$(CC) main.o -o main -L. -lficl -lm
++	ln -sf libficl.so.$(MAJOR) libficl.so
++
++unix.o: ficlplatform/unix.c $(HEADERS)
++	$(CC) $(CFLAGS) -c ficlplatform/unix.c
++
++#
++#       generic object code
++#
++.SUFFIXES: .cxx .cc .c .o
++
++.c.o:
++	$(CC) $(CFLAGS) -c $*.c
++
++.cxx.o:
++	$(CPP) $(CPFLAGS) -c $*.cxx
++
++.cc.o:
++	$(CPP) $(CPFLAGS) -c $*.cc
++#
++#       generic cleanup code
++#
++clean:
++	rm -f *.o *.a libficl.*
