@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	asapm
-PORTVERSION=	2.9
+PORTVERSION=	2.12
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_AFTERSTEP}
+MASTER_SITES=	http://www.tigr.net/afterstep/download/asapm/ \
+		${MASTER_SITE_AFTERSTEP}
 MASTER_SITE_SUBDIR=	apps/asapm
 
-MAINTAINER=	ports@FreeBSD.Org
+MAINTAINER=	ports@FreeBSD.org
 
 ONLY_FOR_ARCHS=	i386
 
