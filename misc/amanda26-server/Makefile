@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	${MASTERPORTNAME}
-PORTVERSION=	2.4.2p2
-PORTREVISION?=	1
+PORTVERSION=	2.4.3b1
+PORTREVISION?=	0
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	amanda
@@ -16,8 +16,8 @@ DISTFILES=	amanda-${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	jeh@FreeBSD.org
 
 WRKSRC=		${WRKDIR}/amanda-${PORTVERSION}
-SLAVEDIRS=	misc/amanda24-client
-MASTERPORTNAME=	amanda24-server
+SLAVEDIRS=	misc/amanda-client
+MASTERPORTNAME=	amanda-server
 
 NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
@@ -27,7 +27,7 @@ LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 PATCH_STRIP=
 
 .include <bsd.port.pre.mk>
-# amanda24-server part
+# amanda-server part
 .if !defined(CLIENT_ONLY)
 
 pre-fetch:
@@ -46,8 +46,8 @@ pre-fetch:
 	@${ECHO} "        The default is user"
 	@${ECHO} ""
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda24-client
-BUILD_DEPENDS=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda24-client
+RUN_DEPENDS=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda-client
+BUILD_DEPENDS=	${LOCALBASE}/sbin/amrecover:${PORTSDIR}/misc/amanda-client
 
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-amandahosts --with-fqdn \
@@ -101,7 +101,7 @@ PLIST_SUB+=	SCSICHG=''
 PLIST_SUB+=	SCSICHG='@comment '
 .endif
 
-# amanda24-client part
+# amanda-client part
 .else
 
 pre-fetch:

@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	${MASTERPORTNAME:S/-server/-client/g}
-PORTREVISION=	1
+PORTREVISION=	0
 
-MASTERDIR=	${.CURDIR}/../amanda24-server
+MASTERDIR=	${.CURDIR}/../amanda-server
 COMMENT=	${PKGDIR}/pkg-comment.client
 PKGINSTALL=	mustnotexist
 PLIST=		${PKGDIR}/pkg-plist.client
