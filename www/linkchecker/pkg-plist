@@ -83,6 +83,9 @@ share/locale/nl/LC_MESSAGES/linkcheck.mo
 %%PYTHON_SITELIBDIR%%/linkcheck/UrlData.py
 %%PYTHON_SITELIBDIR%%/linkcheck/UrlData.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/UrlData.pyo
+%%PYTHON_SITELIBDIR%%/linkcheck/XmlUtils.py
+%%PYTHON_SITELIBDIR%%/linkcheck/XmlUtils.pyc
+%%PYTHON_SITELIBDIR%%/linkcheck/XmlUtils.pyo
 %%PYTHON_SITELIBDIR%%/linkcheck/__init__.py
 %%PYTHON_SITELIBDIR%%/linkcheck/__init__.pyc
 %%PYTHON_SITELIBDIR%%/linkcheck/__init__.pyo
