@@ -37,6 +37,14 @@ DOC_FILES+=	HISTORY-BETA
 
 .include <bsd.port.pre.mk>
 
+# Post-extract
+#
+
+post-extract: rename-doc
+
+rename-doc:
+	@${MV} ${WRKSRC}/doc/"Uptimes Protocol 5" ${WRKSRC}/doc/UptimesProtocol5
+
 # Post-patch
 #
 
