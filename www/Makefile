@@ -199,6 +199,7 @@
     SUBDIR += linux-opera
     SUBDIR += linuxpluginwrapper
     SUBDIR += ljdeps
+    SUBDIR += ljsm
     SUBDIR += logtools
     SUBDIR += lws
     SUBDIR += lynx
