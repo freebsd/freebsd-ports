@@ -1,0 +1,5 @@
+This program can convert your Checkpoint FW1 rulesets into
+XML files which can then be processed by Firewall Builder.
+
+- Christian Brueffer
+chris@unixpages.org

@@ -1,0 +1,15 @@
+=======================================================
+
+  In order for cp2fwb to work, you need the following
+  files from your Checkpoint FW1 installation:
+
+   - Rulebase.W
+   - objects.C
+
+  You can then run the program like this:
+
+   cp2fwbuilder --objects=objects.C \
+			--rules=Rulebase.W \
+			--output_xml=Rulebase.xml
+
+=======================================================
