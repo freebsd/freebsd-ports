@@ -11,7 +11,7 @@ COMMENT=	${.CURDIR}/pkg/COMMENT
 
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 
-PKGNAME=	ja-magicpoint-1.05a
+PKGNAME=	ja-magicpoint-1.06a
 CATEGORIES=	japanese
 
 MAINTAINER=	itojun@itojun.org
