@@ -18,13 +18,13 @@ COMMENT=	Perl module for exact currency math with formatting and rounding
 BUILD_DEPENDS=	${SITE_PERL}/Math/FixedPrecision.pm:${PORTSDIR}/math/p5-Math-FixedPrecision
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+PERL_CONFIGURE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500600
 IGNORE=		"Needs Perl 5.6.0 for Math::BigFloat"
 .endif
-
-PERL_CONFIGURE=	yes
 
 MAN3=		Math::Currency.3
 

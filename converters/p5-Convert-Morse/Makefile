@@ -15,13 +15,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module to convert between ASCII and Morse codes
 
+PERL_CONFIGURE=	yes
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500007
 #BROKEN=		"Requires perl 5.6.0"
 .endif
-
-PERL_CONFIGURE=	yes
 
 MAN3=		Convert::Morse.3
 
