@@ -16,10 +16,14 @@ share/gracer/scenes/sky.grs
 share/gracer/scenes/sky.jpg
 share/gracer/scripts/cache.tcl
 share/gracer/scripts/glut.tcl
+share/gracer/scripts/hiscore.tcl
 share/gracer/scripts/gr.tcl
 share/gracer/scripts/init.tcl
+share/gracer/scripts/postinit.tcl
+share/gracer/scripts/timestamp.tcl
 share/gracer/scripts/ui.tcl
 share/gracer/sounds/exhaust.au
+share/gracer/sounds/slip.au
 share/gracer/vehicles/cart.grv
 share/gracer/vehicles/cart/cart.grs
 share/gracer/vehicles/cart/engine.dat
