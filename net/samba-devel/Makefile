@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	samba
-PORTVERSION=	3.0.2a
-PORTREVISION?=	1
+PORTVERSION=	3.0.3.p2
+PORTREVISION?=	0
 PORTEPOCH?=	1
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SAMBA}
-MASTER_SITE_SUBDIR=	. rc
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.r/rc/:S/.a/a/}
+MASTER_SITE_SUBDIR=	pre rc .
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.p/pre/:S/.r/rc/}
 
 MAINTAINER?=	timur@gnu.org
 COMMENT?=	A free SMB and CIFS client and server for UNIX
@@ -20,6 +20,7 @@ COMMENT?=	A free SMB and CIFS client and server for UNIX
 CONFLICTS?=	ja-samba-2.* samba-2.* sharity-light-1.* samba-libsmbclient-3.*
 
 USE_BZIP2=	yes
+USE_ICONV=	yes
 # directories
 VARDIR=		${DESTDIR}/var
 SAMBA_SPOOL?=	${VARDIR}/spool/samba
@@ -29,8 +30,6 @@ SAMBA_PRIVATE?=	${PREFIX}/private
 SAMBA_CONFDIR?=	${PREFIX}/etc
 SAMBA_SWATDIR=	${PREFIX}/share/swat
 SAMBA_LIBDIR=	${PREFIX}/lib
-DOCSDIR?=	${PREFIX}/share/doc/samba
-EXAMPLESDIR?=	${PREFIX}/share/examples/samba
 RC_DIR?=	${SAMBA_CONFDIR}/rc.d
 SAMBA_CONFIG=	${SAMBA_CONFDIR}/smb.conf
 
@@ -38,15 +37,16 @@ CONFIGURE_ENV+=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
 
 CONFIGURE_ARGS+=--exec-prefix=${PREFIX} \
-		--libdir=${SAMBA_LIBDIR}/samba \
 		--localstatedir=${VARDIR} \
 		--with-configdir=${SAMBA_CONFDIR} \
+		--with-libdir=${SAMBA_LIBDIR}/samba \
 		--with-swatdir=${SAMBA_SWATDIR} \
-		--with-sambabook=${SAMBA_SWATDIR}/using_samba \
 		--with-lockdir=${SAMBA_SPOOL} --with-piddir=${SAMBA_RUNDIR} \
 		--with-privatedir=${SAMBA_PRIVATE} \
 		--with-logfilebase=${SAMBA_LOGDIR} \
 		--with-manpages-langs=en
+
+CONFIGURE_ARGS+=--with-libiconv=${LOCALBASE}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/source
 
@@ -74,13 +74,13 @@ OPTIONS=	CUPS		"With CUPS printing support" on \
 		SAM_PGSQL	"With PostgreSQL smbpasswd backend" off \
 		SAM_OLD_LDAP	"With Samba2.x LDAP smbpasswd backend" off \
 		PAM_SMBPASS	"With SMB PAM module" off \
+		CRACKLIB	"With Cracklib password verification" off \
 		PYTHON		"With Python experimental bindings" off \
-		LIBICONV	"With installed ICONV library" off \
 		POPT		"With installed POPT library" on
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS+=	--with-pam --with-readline \
+CONFIGURE_ARGS+=	--with-pam --with-readline --with-sendfile-support \
 			--with-libsmbclient
 
 .if defined(WITH_PYTHON)
@@ -106,6 +106,8 @@ CUPS=			""
 
 .if defined(WITH_SYSLOG)
 CONFIGURE_ARGS+=	--with-syslog
+.else
+CONFIGURE_ARGS+=	--without-syslog
 .endif
 
 .if defined(WITH_QUOTAS)
@@ -147,9 +149,6 @@ CONFIGURE_ARGS+=	--without-ads
 
 .if !defined(WITHOUT_LDAP)
 WANT_LDAP=		yes
-CONFIGURE_ARGS+=	--with-ldap
-.else
-CONFIGURE_ARGS+=	--without-ldap
 .endif
 
 # SAM
@@ -196,14 +195,19 @@ CONFIGURE_ARGS+=	--with-expsam=${WANT_EXPSAM_MODULES}
 
 # Kerberos5 is necessary for ADS
 .if defined(WANT_KRB5)
-.if defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a)
+# Relay on PATH
+KRB5_PREFIX!=		krb5-config --prefix
+.if defined(KRB5_PREFIX)
+CONFIGURE_ARGS+=	--with-krb5=${KRB5_PREFIX}
+.elif defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a)
 CONFIGURE_ARGS+=	--with-krb5=${KRB5_HOME}
 .elif defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a)
 CONFIGURE_ARGS+=	--with-krb5=${HEIMDAL_HOME}
 .elif ( defined(MAKE_KERBEROS5) || ${OSVERSION} > 500105 ) && exists(/usr/lib/libkrb5.a)
 CONFIGURE_ARGS+=	--with-krb5=${DESTDIR}/usr
 .else
-BROKEN=			"Kerberos5 is necessary for ADS support. Please, install either Heimdal or MIT-Kerberos"
+#BROKEN=		"Kerberos5 is necessary for ADS support. Please, install either Heimdal or MIT-Kerberos"
+LIB_DEPENDS+=		krb5.19:${PORTSDIR}/security/heimdal
 .endif
 .else
 CONFIGURE_ARGS+=	--without-krb5
@@ -211,6 +215,9 @@ CONFIGURE_ARGS+=	--without-krb5
 
 .if defined(WANT_LDAP)
 USE_OPENLDAP=		yes
+CONFIGURE_ARGS+=	--with-ldap
+.else
+CONFIGURE_ARGS+=	--without-ldap
 .endif
 
 .if defined(WITH_PAM_SMBPASS)
@@ -221,20 +228,19 @@ CONFIGURE_ARGS+=	--without-pam_smbpass
 PLIST_SUB+=		SMBPASS="@comment "
 .endif
 
+.if defined(WITH_CRACKLIB)
+LIB_DEPENDS+=		crack.1:${PORTSDIR}/security/cracklib
+CONFIGURE_ARGS+=	--with-cracklib=${LOCALBASE}/libdata/cracklib/pw_dict
+.else
+CONFIGURE_ARGS+=	--without-cracklib
+.endif
+
 .if defined(WITH_ACL_SUPPORT)
 .if ${OSVERSION} < 500018
 BROKEN=			"Requires FreeBSD 5.x at least after 20010326"
 .else
 CONFIGURE_ARGS+=	--with-acl-support
 .endif
-.endif
-
-.if defined(WITH_LIBICONV)
-.if exists(${LOCALBASE}/lib/libbiconv.so)
-BROKEN=			"Installed iconv-2.* port breaks detection of the character conversion. Please deinstall it first, if you want to use this feature"
-.endif
-USE_ICONV=		yes
-CONFIGURE_ARGS+=	--with-libiconv
 .endif
 
 .if !defined(WITHOUT_POPT)
@@ -276,9 +282,9 @@ RC_SCRIPTS_SUB=		PREFIX=${PREFIX} \
 			SAMBA_RUNDIR=${SAMBA_RUNDIR}
 
 pre-fetch:
-	@${ECHO_MSG} "===> -------------------------------------------"
-	@${ECHO_MSG} "===> Run 'make config' to (re)configure the port"
-	@${ECHO_MSG} "===> -------------------------------------------"
+	@${ECHO_MSG} "===>  -------------------------------------------"
+	@${ECHO_MSG} "===>  Run 'make config' to (re)configure the port"
+	@${ECHO_MSG} "===>  -------------------------------------------"
 
 post-install:
 .for sect in 1 5 7 8
@@ -302,7 +308,7 @@ post-install:
 	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 	    ${FILESDIR}/samba.sh.sample | ${WINBIND_FILTER} > ${WRKDIR}/samba.sh
 	${INSTALL_SCRIPT} ${WRKDIR}/samba.sh ${RC_DIR}/samba.sh
-	@test -d ${SAMBA_SPOOL} || ${MKDIR} ${SAMBA_SPOOL} && ${CHMOD} 1777 ${SAMBA_SPOOL}
+	@test -d ${SAMBA_SPOOL} || ${MKDIR} ${SAMBA_SPOOL} && ${CHMOD} 0755 ${SAMBA_SPOOL}
 	@test -d ${SAMBA_LOGDIR} || ${MKDIR} ${SAMBA_LOGDIR}
 	${SED}  -e 's!%%SAMBA_SPOOL%%!${SAMBA_SPOOL}!'			\
 		-e 's!%%SAMBA_LOGDIR%%!${SAMBA_LOGDIR}!'		\
@@ -315,21 +321,13 @@ post-install:
 		${CHOWN} root:wheel ${SAMBA_PRIVATE} ;			\
 	fi
 	${CHMOD} 700 ${SAMBA_PRIVATE}
-	if [ ! -f ${SAMBA_PRIVATE}/smbpasswd ] ; then			\
-		${CAT} ${DESTDIR}/etc/passwd | ${GREP} -v "^#" | ${PREFIX}/bin/make_smbpasswd > ${SAMBA_PRIVATE}/smbpasswd ; \
-		${CHMOD} 600 ${SAMBA_PRIVATE}/smbpasswd ;		\
-	fi
-	${CHMOD} 500 ${SAMBA_PRIVATE}
-	${CHOWN} root:wheel ${PREFIX}/bin/smbpasswd
-	${CHMOD} 111 ${PREFIX}/bin/smbpasswd
 .if defined(PACKAGE_BUILDING)
 	@${ECHO_CMD} "@exec ${MKDIR} ${SAMBA_PRIVATE} 2>/dev/null || true" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${CHMOD} 500 ${SAMBA_PRIVATE}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${CHMOD} 700 ${SAMBA_PRIVATE}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${RM} -rf ${SAMBA_PRIVATE}" >> ${TMPPLIST}
 .else
 	@${ECHO_CMD} "@unexec ${ECHO_CMD} \"Warning: If you will *NOT* use this package anymore, please remove %D/private/* manually.\"" >> ${TMPPLIST}
 .endif
-	-@${LN} -snf libsmbclient.so.0 ${SAMBA_LIBDIR}/libsmbclient.so
 .if !defined(WITHOUT_WINBIND)
 .if defined(WITH_WINBIND_NSS)
 	${INSTALL_PROGRAM} ${WRKSRC}/nsswitch/nss_winbind.so ${SAMBA_LIBDIR}/nss_winbind.so.1
@@ -340,6 +338,7 @@ post-install:
 .if defined(WITH_PAM_SMBPASS)
 	@${INSTALL_PROGRAM} ${WRKSRC}/bin/pam_smbpass.so ${SAMBA_LIBDIR}
 .endif
+	-@${LN} -snf libsmbclient.so.0 ${SAMBA_LIBDIR}/libsmbclient.so
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${DOCSDIR}
@@ -362,6 +361,7 @@ post-install:
 		done							\
 	done
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
 
