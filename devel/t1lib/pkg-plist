@@ -8,7 +8,7 @@ lib/libt1.so.5
 %%X11%%lib/libt1x.a
 %%X11%%lib/libt1x.so
 %%X11%%lib/libt1x.so.5
-share/t1lib/doc/t1lib_doc.pdf
-share/t1lib/t1lib.config
-@dirrm share/t1lib/doc
-@dirrm share/t1lib
+%%PORTDOCS%%%%DOCSDIR%%/t1lib_doc.pdf
+%%DATADIR%%/t1lib.config
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
