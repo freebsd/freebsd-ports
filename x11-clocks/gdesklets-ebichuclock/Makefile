@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	gdesklets-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A very simple clock with a small Ebichu picture in it
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets \
+RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${X11BASE}/share/gnome/gdesklets/Sensors/Clock/__init__.py:${PORTSDIR}/x11-clocks/gdesklets-clock
 
 USE_BZIP2=	yes

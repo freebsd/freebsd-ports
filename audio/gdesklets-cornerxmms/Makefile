@@ -16,7 +16,7 @@ DISTNAME=	CornerXMMS-${PORTVERSION}
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	A fancy desklet that allows you to control XMMS from the desktop
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets \
+RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${PYTHON_SITELIBDIR}/xmms/__init__.py:${PORTSDIR}/audio/py-xmms
 
 USE_BZIP2=	yes

@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	Displays new/total mail count from IMAP mailbox
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets \
+RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${DATADIR}/gdesklets/Sensors/IconButton/__init__.py:${PORTSDIR}/deskutils/gdesklets-sensor-psi_iconbutton
 
 USE_BZIP2=	yes

@@ -16,7 +16,7 @@ DISTNAME=	PsiSensorPackage-${DISTVERSION}
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	A sensor based on the starterbar
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets
+RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes

@@ -16,7 +16,7 @@ DISTNAME=	displayconstraints-${PORTVERSION}
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	This Sensor allows a user to set maximum constraints on a display
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets
+RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
 WRKSRC=		${WRKDIR}/${NAME}-${PORTVERSION}
 

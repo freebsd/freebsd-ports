@@ -16,7 +16,7 @@ DISTNAME=	clock-desklet-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Various clock displays for Gnome 2.x
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets
+RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes

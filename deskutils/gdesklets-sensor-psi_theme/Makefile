@@ -16,7 +16,7 @@ DISTNAME=	PsiSensorPackage-${DISTVERSION}
 MAINTAINER=	klammer@webonaut.com
 COMMENT=	Theme Sensor from the Psi Sensor Package
 
-RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/gdesklets-core.pc:${PORTSDIR}/deskutils/gdesklets \
+RUN_DEPENDS=	gdesklets:${PORTSDIR}/deskutils/gdesklets \
 		${DATADIR}/gdesklets/Themes/Psi-Disp-Themes/icons/themes:${PORTSDIR}/deskutils/gdesklets-psi_themes
 
 USE_PYTHON=	yes
