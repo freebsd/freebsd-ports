@@ -1,14 +1,13 @@
---- libgale/wcwidth.c.orig	Mon Jul  2 17:35:54 2001
-+++ libgale/wcwidth.c	Mon Jul  2 17:37:48 2001
-@@ -6,7 +6,11 @@
-  * Markus Kuhn -- 2000-02-08 -- public domain
-  */
+--- libgale/wcwidth.c.orig	Fri Oct 12 13:45:37 2001
++++ libgale/wcwidth.c	Fri Oct 12 13:45:52 2001
+@@ -8,8 +8,9 @@
  
-+#ifdef __FreeBSD__
-+#include <rune.h>
-+#else /* __FreeBSD__ */
+ #ifdef __FreeBSD__ /* peterh@sapros.com */
+ #include <rune.h>
+-#endif
++#else
  #include <wchar.h>
-+#endif /* __FreeBSD__ */
++#endif
  
  /* These functions define the column width of an ISO 10646 character
   * as follows:
