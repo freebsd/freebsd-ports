@@ -1,0 +1,16 @@
+Paraphrasing the website:
+  Gato - the Graph Animation Toolbox - is software [toolkit] which visualizes
+  algorithms on graphs.
+  - Graphs are mathematical objects consisting of vertices, and edges
+    connecting pairs of vertices.
+  - Algorithms might find a shortest path - the fastest route - or a minimal
+    spanning tree or solve one of other interesting problems on graphs:
+    maximal-flow, weighted and non-weighted matching and min-cost flow.
+  - Visualisation means linking cause - the statements of an algorithm -
+    immediately to an effect - changes to the graph the algorithm has as its
+    input - by terms of blinking, changing colors and other visual effects.
+
+Author: Alexander Schliep <schliep@zpr.uni-koeln.de>
+WWW:    http://www.zpr.uni-koeln.de/~gato/
+
+-- Johann Visagie <wjv@FreeBSD.org>
