@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# $Id$
+#
+
+echo "s!/usr/lib/news!${PREFIX}/news/lib!" > ${TMPDIR}/tmp.slurp.sed.$$
+
+if [ -d /var/news ]
+then
+	echo 's!/var/spool!/var!' >> ${TMPDIR}/tmp.slurp.sed.$$	
+fi
+
+sed -f ${TMPDIR}/tmp.slurp.sed.$$ < ${WRKSRC}/conf.h > ${WRKSRC}/conf.h.tmp
+mv ${WRKSRC}/conf.h.tmp ${WRKSRC}/conf.h
+rm -f ${TMPDIR}/tmp.slurp.sed.$$
+
+rm -f ${WRKDIR}/syslog.h
+
+cp ${FILESDIR}/dbz.* ${WRKSRC}
+cp ${FILESDIR}/siteexclude.c ${WRKSRC}

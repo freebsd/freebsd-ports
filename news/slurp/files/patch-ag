@@ -1,0 +1,12 @@
+--- slurp.h.orig	Sun Nov  9 18:25:22 1997
++++ slurp.h	Sun Nov  9 18:26:04 1997
+@@ -97,6 +97,9 @@
+ extern int dupart;			/* Number of duplicate articles */
+ extern int misart;			/* Number of missing articles */
+ extern int xfrart;			/* Number of transferred articles */
++#ifdef SITEEXCLUDING
++extern int exclart;			/* Number of excluded articles */
++#endif /* SITEEXCLUDING */
+ extern long totalsize;		/* Total size of articles tranferred */
+ 
+ /* Misc variables */
