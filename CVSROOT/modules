@@ -6619,6 +6619,7 @@ tund		ports/net/tund
 tunefs		src/sbin/tunefs
 turba		ports/mail/turba
 tux-aqfh	ports/games/tux-aqfh
+tuxcards	ports/misc/tuxcards
 tuxkart		ports/games/tuxkart
 tuxnes		ports/emulators/tuxnes
 tuxracer	ports/games/tuxracer
