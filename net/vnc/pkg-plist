@@ -78,6 +78,9 @@ share/doc/vnc/images/contribbutton.gif
 share/doc/vnc/images/sideblank.gif
 share/doc/vnc/images/sidelogo.gif
 share/doc/vnc/images/searchbutton.gif
+share/doc/vnc/images/videos1.jpg
+share/doc/vnc/images/videos2.jpg
+share/doc/vnc/images/videos3.jpg
 share/doc/vnc/index.html
 share/doc/vnc/internalversion.html
 share/doc/vnc/intouch.html
@@ -92,6 +95,7 @@ share/doc/vnc/screenshots.html
 share/doc/vnc/start.html
 share/doc/vnc/styles.css
 share/doc/vnc/twmideas.html
+share/doc/vnc/videos.html
 share/doc/vnc/vnchistory.html
 share/doc/vnc/vncpeople.html
 share/doc/vnc/winhistory.html

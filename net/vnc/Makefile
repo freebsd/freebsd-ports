@@ -3,7 +3,7 @@
 # Date created:		24 February 1998
 # Whom:			msmith
 #
-# $Id: Makefile,v 1.4 1998/07/25 12:32:43 asami Exp $
+# $Id: Makefile,v 1.5 1998/08/30 02:23:34 thepish Exp $
 #
 
 DISTNAME=       	vnc-3.3.2r2_unixsrc
@@ -33,7 +33,8 @@ post-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/Xvnc/programs/Xserver/Xvnc ${PREFIX}/bin/Xvnc
 	${INSTALL_PROGRAM} ${WRKDIR}/vncviewer/vncviewer ${PREFIX}/bin/vncviewer
 	${INSTALL_PROGRAM} ${WRKDIR}/vncpasswd/vncpasswd ${PREFIX}/bin/vncpasswd
-	${SED} -e s%/usr/local/vnc/classes%${PREFIX}/share/vnc/classes% \
+	${SED}  -e s%/usr/local/vnc/classes%${PREFIX}/share/vnc/classes% \
+		-e s%^\#!/usr/bin/perl%\#!${PERL}% \
 		< ${WRKDIR}/vncserver \
 		> ${WRKDIR}/vncserver.local
 	${INSTALL_SCRIPT} ${WRKDIR}/vncserver.local ${PREFIX}/bin/vncserver
