@@ -1,0 +1,12 @@
+bin/gurlchecker
+share/gnome/gurlchecker/pixmaps/uc_treeview_href.png
+share/gnome/gurlchecker/pixmaps/uc_treeview_img.png
+share/gnome/gurlchecker/pixmaps/uc_treeview_unknown.png
+share/gnome/gurlchecker/ui/gurlchecker.glade
+share/locale/de/LC_MESSAGES/gurlchecker.mo
+share/locale/eo/LC_MESSAGES/gurlchecker.mo
+share/locale/es/LC_MESSAGES/gurlchecker.mo
+share/locale/fr/LC_MESSAGES/gurlchecker.mo
+share/locale/ja/LC_MESSAGES/gurlchecker.mo
+@dirrm share/gnome/gurlchecker/ui
+@dirrm share/gnome/gurlchecker/pixmaps

@@ -106,6 +106,7 @@
     SUBDIR += gtkhtml
     SUBDIR += gtkhtml3
     SUBDIR += guile-www
+    SUBDIR += gurlchecker
     SUBDIR += harvest
     SUBDIR += horde2
     SUBDIR += hotjava
