@@ -7,6 +7,7 @@
 
 PORTNAME=	at-spi
 PORTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	pre-gnome2/releases/gnome-2.0-desktop-beta3
@@ -22,8 +23,8 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome \
-		--datadir=${PREFIX}/share/gnome \
+CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome2 \
+		--datadir=${PREFIX}/share/gnome2 \
 		--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc \
 		--enable-static

@@ -24,17 +24,17 @@ lib/libgnomeprint-2.a
 lib/libgnomeprint-2.so
 lib/libgnomeprint-2.so.0
 libdata/pkgconfig/libgnomeprint-2.0.pc
-share/gnome/fonts/README.installer
-share/gnome/gnome-print-2.0/media/media.xml
-share/gnome/gnome-print-2.0/models/GNOME-GENERIC-PS.model
-share/gnome/gnome-print-2.0/models/HP-LASERJET-4ML.model
-share/gnome/gnome-print-2.0/models/STYLUS-COLOR-740.model
-share/gnome/gnome-print-2.0/printers/GENERIC.printer
-share/gnome/gnome-print-2.0/vendors/EPSON.vendor
-share/gnome/gnome-print-2.0/vendors/GNOME.vendor
-share/gnome/gnome-print-2.0/vendors/HP.vendor
-share/gnome/libgnomeprint-2.0/fonts/adobe-urw.font
-share/gnome/libgnomeprint-2.0/fonts/defaults.fontmap
+share/gnome2/fonts/README.installer
+share/gnome2/gnome-print-2.0/media/media.xml
+share/gnome2/gnome-print-2.0/models/GNOME-GENERIC-PS.model
+share/gnome2/gnome-print-2.0/models/HP-LASERJET-4ML.model
+share/gnome2/gnome-print-2.0/models/STYLUS-COLOR-740.model
+share/gnome2/gnome-print-2.0/printers/GENERIC.printer
+share/gnome2/gnome-print-2.0/vendors/EPSON.vendor
+share/gnome2/gnome-print-2.0/vendors/GNOME.vendor
+share/gnome2/gnome-print-2.0/vendors/HP.vendor
+share/gnome2/libgnomeprint-2.0/fonts/adobe-urw.font
+share/gnome2/libgnomeprint-2.0/fonts/defaults.fontmap
 share/locale/az/LC_MESSAGES/libgnomeprint-2.0.mo
 share/locale/ca/LC_MESSAGES/libgnomeprint-2.0.mo
 share/locale/es/LC_MESSAGES/libgnomeprint-2.0.mo
@@ -56,16 +56,16 @@ share/locale/uk/LC_MESSAGES/libgnomeprint-2.0.mo
 share/locale/wa/LC_MESSAGES/libgnomeprint-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomeprint-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomeprint-2.0.mo
-@dirrm share/gnome/libgnomeprint-2.0/fonts
-@dirrm share/gnome/libgnomeprint-2.0
-@dirrm share/gnome/gnome-print-2.0/vendors
-@dirrm share/gnome/gnome-print-2.0/printers
-@dirrm share/gnome/gnome-print-2.0/models
-@dirrm share/gnome/gnome-print-2.0/media
-@dirrm share/gnome/gnome-print-2.0
+@dirrm share/gnome2/libgnomeprint-2.0/fonts
+@dirrm share/gnome2/libgnomeprint-2.0
+@dirrm share/gnome2/gnome-print-2.0/vendors
+@dirrm share/gnome2/gnome-print-2.0/printers
+@dirrm share/gnome2/gnome-print-2.0/models
+@dirrm share/gnome2/gnome-print-2.0/media
+@dirrm share/gnome2/gnome-print-2.0
+@dirrm share/gnome2/fonts
 @dirrm lib/gnome-print-2.0/transports
 @dirrm lib/gnome-print-2.0/drivers
 @dirrm lib/gnome-print-2.0
 @dirrm include/libgnomeprint-2.0/libgnomeprint
 @dirrm include/libgnomeprint-2.0
-@unexec /bin/rmdir %D/share/gnome/fonts 2>/dev/null || /usr/bin/true
