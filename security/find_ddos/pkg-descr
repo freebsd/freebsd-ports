@@ -1,0 +1,11 @@
+In response to a number of distributed denial-of-service (DDOS) attacks that
+have been reported, the National Infrastructure Proctection Center (NIPC)
+Special Technology Applications Unit (STAU) has developed a tool to assist in
+combating this threat.  ``find_ddos'' is intended to scan a local system that
+is either known or suspected to contain a DDOS program.
+
+``find_ddos'' will detect tfn2k client, tfn2k daemon, trinoo daemon, trinoo
+master, tfn daemon, tfn client, stacheldraht master, stacheldraht client,
+stachelddraht demon and tfn-rush client.
+
+WWW:	http://www.fbi.gov/nipc/trinoo.htm
