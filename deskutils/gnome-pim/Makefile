@@ -31,9 +31,9 @@ LIBS=		-L${LOCALBASE}/lib
 .if defined(WITHOUT_PILOT)
 CONFIGURE_ARGS=	--without-pisock --disable-pilotlinktest
 .else
-CONFIGURE_ARGS=	--with-pisock=${LOCALBASE}/pilot
-CPPFLAGS+=	-I${LOCALBASE}/pilot/include
-LIBS+=		-L${LOCALBASE}/pilot/lib
+CONFIGURE_ARGS=	--with-pisock=${LOCALBASE}
+CPPFLAGS+=	-I${LOCALBASE}/include
+LIBS+=		-L${LOCALBASE}/lib
 .endif
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LIBS="${LIBS}"
