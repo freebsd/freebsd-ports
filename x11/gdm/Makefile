@@ -53,7 +53,8 @@ post-extract:
 		${FILESDIR}/gdm.sh.sample > ${WRKSRC}/gdm.sh.sample
 
 post-patch:
-.if ${OSVERSION} < 600006
+.if ( ${OSVERSION} > 600000 && ${OSVERSION} < 600006 ) || \
+	( ${OSVERSION} < 503101 )
 .for po in zh_CN.po
 	@${REINPLACE_CMD} -e 's|%-|%|g' ${WRKSRC}/po/${po}
 .endfor
