@@ -1,0 +1,23 @@
+Radiator is a highly configurable and flexible Radius server that supports 
+authentication by a huge range of authentication methods such as Flat files, 
+DBM files, Unix password files, SQL databases, remote Radius servers 
+(proxying), external programs, NT User Manager, Active Directory, LDAP, PAM, 
+iPASS, GRIC, NIS+, Tacacs+, a wide range of ISP billing packages such as 
+Emerald, Platypus, Rodopi, Hawk-i, Interbiller98, Freeside etc, your legacy 
+user database etc, etc. 
+
+Radiator now supports more 802.1x secure wireless and LAN authentication 
+methods than any other Radius server giving a wide choice of 802.1x network 
+clients.
+
+Radiator also includes many features not found in other Radius servers such 
+as double-login prevention, username rewriting, full vendor-specific 
+attributes, time-of-day blocking and a GUI for running user tests. Full list 
+of technical features.
+
+Runs on all Unix, Linux, Windows 95, 98, NT, 2000, Mac OS-9 and Mac OS-X, VMS.
+
+Due to license restrictions, this package must be purchased and manually 
+downloaded from the Open System Consultants web site.
+
+WWW: http://www.open.com.au/

@@ -1,0 +1,43 @@
+# New ports collection makefile for:	radiator
+# Date created:				05 March 2003
+# Whom:					shan
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Radiator
+PORTVERSION=	3.5
+CATEGORIES=	net
+MASTER_SITES=	# fetch manually
+EXTRACT_SUFX=	.tgz
+
+MAINTAINER=	shanali@yahoo.com
+COMMENT=	Radiator Radius Server by Open System Consultants
+
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mach/Digest/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
+RUN_DEPENDS=	${BUILD_DEPENDS}
+
+USE_PERL5=	yes
+PERL_CONFIGURE=	yes
+
+NO_PACKAGE=	"Commercial software"
+NO_CDROM=	${NO_PACKAGE}
+RESTRICTED=	${NO_PACKAGE}
+
+.include <bsd.port.pre.mk>
+
+pre-configure:
+.if exists(${DISTDIR}/patches-${PORTVERSION}.tar.gz)
+	${TAR} -xvzf ${DISTDIR}/patches-${PORTVERSION}.tar.gz -C ${WRKSRC}
+.endif
+
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+IGNORE=		will not be automatically fetched due to licensing\
+		restrictions.  You MUST manually fetch the UNIX version after\
+		purchasing the license at: http://www.open.com.au/ \
+		- once ${DISTFILES} has been downloaded, move it to\
+		${DISTDIR} and then restart this build. (optionally download\
+		patches-${PORTVERSION}.tar.gz to the same directory as well)
+.endif
+
+.include <bsd.port.post.mk>

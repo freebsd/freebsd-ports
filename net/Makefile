@@ -534,6 +534,7 @@
     SUBDIR += qadsl
     SUBDIR += qtella
     SUBDIR += queso
+    SUBDIR += radiator
     SUBDIR += radiusclient
     SUBDIR += radiusd-cistron
     SUBDIR += radreport
