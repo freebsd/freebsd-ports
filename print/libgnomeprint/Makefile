@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnomeprint
-PORTVERSION=	0.32
+PORTVERSION=	0.34
 CATEGORIES=	print gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnome-print
