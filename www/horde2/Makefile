@@ -7,11 +7,10 @@
 
 PORTNAME=	horde
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.horde.org/pub/horde/tarballs/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
-DISTNAME=	${PORTNAME}-${PORTVERSION}-RC3
 
 MAINTAINER=	thierry@pompo.net
 

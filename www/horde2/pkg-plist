@@ -148,11 +148,13 @@
 %%HORDEDIR%%/locale/et_EE/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/fi_FI/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/fr_FR/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/hu_HU/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/it_IT/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/ja_JP/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/ko_KR/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/nl_NL/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/nb_NO/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/nn_NO/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/pl_PL/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/pt_BR/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/pt_PT/LC_MESSAGES/horde.mo
@@ -180,11 +182,13 @@
 %%HORDEDIR%%/po/extract.pl
 %%HORDEDIR%%/po/fi_FI.po
 %%HORDEDIR%%/po/fr_FR.po
+%%HORDEDIR%%/po/hu_HU.po
 %%HORDEDIR%%/po/it_IT.po
 %%HORDEDIR%%/po/ja_JP.po
 %%HORDEDIR%%/po/ko_KR.po
 %%HORDEDIR%%/po/nl_NL.po
 %%HORDEDIR%%/po/nb_NO.po
+%%HORDEDIR%%/po/nn_NO.po
 %%HORDEDIR%%/po/pl_PL.po
 %%HORDEDIR%%/po/pt_BR.po
 %%HORDEDIR%%/po/pt_PT.po
@@ -307,6 +311,8 @@ etc/horde/httpd.conf.horde
 @dirrm %%HORDEDIR%%/locale/fi_FI
 @dirrm %%HORDEDIR%%/locale/fr_FR/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/fr_FR
+@dirrm %%HORDEDIR%%/locale/hu_HU/LC_MESSAGES
+@dirrm %%HORDEDIR%%/locale/hu_HU
 @dirrm %%HORDEDIR%%/locale/it_IT/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/it_IT
 @dirrm %%HORDEDIR%%/locale/ja_JP/LC_MESSAGES
@@ -317,6 +323,8 @@ etc/horde/httpd.conf.horde
 @dirrm %%HORDEDIR%%/locale/nl_NL
 @dirrm %%HORDEDIR%%/locale/nb_NO/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/nb_NO
+@dirrm %%HORDEDIR%%/locale/nn_NO/LC_MESSAGES
+@dirrm %%HORDEDIR%%/locale/nn_NO
 @dirrm %%HORDEDIR%%/locale/pl_PL/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/pl_PL
 @dirrm %%HORDEDIR%%/locale/pt_BR/LC_MESSAGES

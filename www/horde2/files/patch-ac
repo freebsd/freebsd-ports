@@ -1,5 +1,5 @@
---- config/registry.php.dist.orig	Tue Apr 16 14:24:58 2002
-+++ config/registry.php.dist	Sun May 19 00:01:04 2002
+--- config/registry.php.dist.orig	Mon May 20 18:43:28 2002
++++ config/registry.php.dist	Tue Jun 11 18:53:47 2002
 @@ -20,8 +20,8 @@
   *   IMP or Gollem handle the authentication for Horde. This avoids the
   *   "double login" while accessing IMP.
@@ -11,9 +11,9 @@
  
  /* mail: Handler for sending mail. */
  $this->registry['mail']['compose'] = 'imp';
-@@ -33,12 +33,29 @@
- $this->registry['contacts']['sources'] = 'turba';
- $this->registry['contacts']['fields'] = 'turba';
+@@ -39,12 +39,29 @@
+ $this->registry['memos']['show'] = 'mnemo';
+ $this->registry['memos']['add'] = 'mnemo';
  
 +//$this->registry['publickey']['add'] = 'turba';
 +//$this->registry['publickey']['delete'] = 'turba';
@@ -41,7 +41,7 @@
  
  /**
   * Application registry
-@@ -68,50 +85,121 @@
+@@ -74,60 +91,121 @@
      'server_port' => $GLOBALS['HTTP_SERVER_VARS']['SERVER_PORT']
  );
  
@@ -72,6 +72,15 @@
 -//     'show' => false
 -// );
 -
+-// $this->applications['mnemo'] = array(
+-//     'fileroot' => dirname(__FILE__) . '/../mnemo',
+-//     'webroot' => $this->applications['horde']['webroot'] . '/mnemo',
+-//     'icon' => $this->applications['horde']['webroot'] . '/mnemo/graphics/mnemo.gif',
+-//     'name' => _("Memos"),
+-//     'allow_guests' => false,
+-//     'show' => true
+-// );
+-
 -// $this->applications['nag'] = array(
 -//     'fileroot' => dirname(__FILE__) . '/../nag',
 -//     'webroot' => $this->applications['horde']['webroot'] . '/nag',
@@ -89,6 +98,7 @@
 -//     'allow_guests' => false,
 -//     'show' => false
 -// );
+-
 +//UNCOMMENTWHENINSTIMP$this->applications['imp'] = array(
 +//UNCOMMENTWHENINSTIMP    'fileroot' => dirname(__FILE__) . '/../imp',
 +//UNCOMMENTWHENINSTIMP    'webroot' => $this->applications['horde']['webroot'] . '/imp',
@@ -106,24 +116,6 @@
 +//UNCOMMENTWHENINSTTURBA    'allow_guests' => false,
 +//UNCOMMENTWHENINSTTURBA    'show' => true
 +//UNCOMMENTWHENINSTTURBA);
-+ 
-+//UNCOMMENTWHENINSTGOLLEM$this->applications['gollem'] = array(
-+//UNCOMMENTWHENINSTGOLLEM    'fileroot' => dirname(__FILE__) . '/../gollem',
-+//UNCOMMENTWHENINSTGOLLEM    'webroot' => '/horde/gollem',
-+//UNCOMMENTWHENINSTGOLLEM    'icon' => '/horde/gollem/graphics/gollem.gif',
-+//UNCOMMENTWHENINSTGOLLEM    'name' => _("FTP"),
-+//UNCOMMENTWHENINSTGOLLEM    'allow_guests' => false,
-+//UNCOMMENTWHENINSTGOLLEM    'show' => true
-+//UNCOMMENTWHENINSTGOLLEM);
-+
-+//UNCOMMENTWHENINSTNIC$this->applications['nic'] = array(
-+//UNCOMMENTWHENINSTNIC    'fileroot' => dirname(__FILE__) . '/../nic',
-+//UNCOMMENTWHENINSTNIC    'webroot' => '/horde/nic',
-+//UNCOMMENTWHENINSTNIC    'icon' => '/horde/nic/graphics/nic.gif',
-+//UNCOMMENTWHENINSTNIC    'name' => _("Network"),
-+//UNCOMMENTWHENINSTNIC    'allow_guests' => false,
-+//UNCOMMENTWHENINSTNIC    'show' => true
-+//UNCOMMENTWHENINSTNIC);
 +
 +//UNCOMMENTWHENINSTKRONOLITH$this->applications['kronolith'] = array(
 +//UNCOMMENTWHENINSTKRONOLITH    'fileroot' => dirname(__FILE__) . '/../kronolith',
@@ -133,51 +125,6 @@
 +//UNCOMMENTWHENINSTKRONOLITH    'allow_guests' => false,
 +//UNCOMMENTWHENINSTKRONOLITH    'show' => true
 +//UNCOMMENTWHENINSTKRONOLITH);
-+
-+//UNCOMMENTWHENINSTJONAH$this->applications['jonah'] = array(
-+//UNCOMMENTWHENINSTJONAH    'fileroot' => dirname(__FILE__) . '/../jonah',
-+//UNCOMMENTWHENINSTJONAH    'webroot' => '/horde/jonah',
-+//UNCOMMENTWHENINSTJONAH    'icon' => '/horde/jonah/graphics/jonah.gif',
-+//UNCOMMENTWHENINSTJONAH    'name' => _("Headlines"),
-+//UNCOMMENTWHENINSTJONAH    'allow_guests' => true,
-+//UNCOMMENTWHENINSTJONAH    'show' => true
-+//UNCOMMENTWHENINSTJONAH);
-+
-+//UNCOMMENTWHENINSTTROLL$this->applications['troll'] = array(
-+//UNCOMMENTWHENINSTTROLL    'fileroot' => dirname(__FILE__) . '/../troll',
-+//UNCOMMENTWHENINSTTROLL    'webroot' => '/horde/troll',
-+//UNCOMMENTWHENINSTTROLL    'icon' => '/horde/troll/graphics/troll.gif',
-+//UNCOMMENTWHENINSTTROLL    'name' => _("News"),
-+//UNCOMMENTWHENINSTTROLL    'allow_guests' => false,
-+//UNCOMMENTWHENINSTTROLL    'show' => true
-+//UNCOMMENTWHENINSTTROLL);
-+
-+//UNCOMMENTWHENINSTCHORA$this->applications['chora'] = array(
-+//UNCOMMENTWHENINSTCHORA    'fileroot' => dirname(__FILE__) . '/../chora',
-+//UNCOMMENTWHENINSTCHORA    'webroot' => $this->applications['horde']['webroot'] . '/chora',
-+//UNCOMMENTWHENINSTCHORA    'icon' => $this->applications['horde']['webroot'] . '/chora/graphics/chora.gif',
-+//UNCOMMENTWHENINSTCHORA    'name' => _("CVS"),
-+//UNCOMMENTWHENINSTCHORA    'allow_guests' => true,
-+//UNCOMMENTWHENINSTCHORA    'show' => true
-+//UNCOMMENTWHENINSTCHORA);
-+
-+//UNCOMMENTWHENINSTBABEL$this->applications['babel'] = array(
-+//UNCOMMENTWHENINSTBABEL    'fileroot' => dirname(__FILE__) . '/../babel',
-+//UNCOMMENTWHENINSTBABEL    'webroot' => $this->applications['horde']['webroot'] . '/babel',
-+//UNCOMMENTWHENINSTBABEL    'icon' => $this->applications['horde']['webroot'] . '/babel/graphics/babel.gif',
-+//UNCOMMENTWHENINSTBABEL    'name' => _("i18n"),
-+//UNCOMMENTWHENINSTBABEL    'allow_guests' => false,
-+//UNCOMMENTWHENINSTBABEL    'show' => true
-+//UNCOMMENTWHENINSTBABEL);
-+
-+//UNCOMMENTWHENINSTWHUPS$this->applications['whups'] = array(
-+//UNCOMMENTWHENINSTWHUPS    'fileroot' => dirname(__FILE__) . '/../whups',
-+//UNCOMMENTWHENINSTWHUPS    'webroot' => '/horde/whups',
-+//UNCOMMENTWHENINSTWHUPS    'icon' => '/horde/whups/graphics/whups.gif',
-+//UNCOMMENTWHENINSTWHUPS    'name' => _("Bugs"),
-+//UNCOMMENTWHENINSTWHUPS    'allow_guests' => false,
-+//UNCOMMENTWHENINSTWHUPS    'show' => true
-+//UNCOMMENTWHENINSTWHUPS);
 +
 +//UNCOMMENTWHENINSTMNEMO$this->applications['mnemo'] = array(
 +//UNCOMMENTWHENINSTMNEMO    'fileroot' => dirname(__FILE__) . '/../mnemo',
@@ -197,6 +144,69 @@
 +//UNCOMMENTWHENINSTNAG    'show' => true
 +//UNCOMMENTWHENINSTNAG);
 +
++//UNCOMMENTWHENINSTCHORA$this->applications['chora'] = array(
++//UNCOMMENTWHENINSTCHORA    'fileroot' => dirname(__FILE__) . '/../chora',
++//UNCOMMENTWHENINSTCHORA    'webroot' => $this->applications['horde']['webroot'] . '/chora',
++//UNCOMMENTWHENINSTCHORA    'icon' => $this->applications['horde']['webroot'] . '/chora/graphics/chora.gif',
++//UNCOMMENTWHENINSTCHORA    'name' => _("CVS"),
++//UNCOMMENTWHENINSTCHORA    'allow_guests' => false,
++//UNCOMMENTWHENINSTCHORA    'show' => true
++//UNCOMMENTWHENINSTCHORA);
++ 
++//UNCOMMENTWHENINSTGOLLEM$this->applications['gollem'] = array(
++//UNCOMMENTWHENINSTGOLLEM    'fileroot' => dirname(__FILE__) . '/../gollem',
++//UNCOMMENTWHENINSTGOLLEM    'webroot' => '/horde/gollem',
++//UNCOMMENTWHENINSTGOLLEM    'icon' => '/horde/gollem/graphics/gollem.gif',
++//UNCOMMENTWHENINSTGOLLEM    'name' => _("FTP"),
++//UNCOMMENTWHENINSTGOLLEM    'allow_guests' => false,
++//UNCOMMENTWHENINSTGOLLEM    'show' => true
++//UNCOMMENTWHENINSTGOLLEM);
++
++//UNCOMMENTWHENINSTNIC$this->applications['nic'] = array(
++//UNCOMMENTWHENINSTNIC    'fileroot' => dirname(__FILE__) . '/../nic',
++//UNCOMMENTWHENINSTNIC    'webroot' => '/horde/nic',
++//UNCOMMENTWHENINSTNIC    'icon' => '/horde/nic/graphics/nic.gif',
++//UNCOMMENTWHENINSTNIC    'name' => _("Network"),
++//UNCOMMENTWHENINSTNIC    'allow_guests' => false,
++//UNCOMMENTWHENINSTNIC    'show' => true
++//UNCOMMENTWHENINSTNIC);
++
++//UNCOMMENTWHENINSTJONAH$this->applications['jonah'] = array(
++//UNCOMMENTWHENINSTJONAH    'fileroot' => dirname(__FILE__) . '/../jonah',
++//UNCOMMENTWHENINSTJONAH    'webroot' => '/horde/jonah',
++//UNCOMMENTWHENINSTJONAH    'icon' => '/horde/jonah/graphics/jonah.gif',
++//UNCOMMENTWHENINSTJONAH    'name' => _("Headlines"),
++//UNCOMMENTWHENINSTJONAH    'allow_guests' => true,
++//UNCOMMENTWHENINSTJONAH    'show' => true
++//UNCOMMENTWHENINSTJONAH);
++
++//UNCOMMENTWHENINSTTROLL$this->applications['troll'] = array(
++//UNCOMMENTWHENINSTTROLL    'fileroot' => dirname(__FILE__) . '/../troll',
++//UNCOMMENTWHENINSTTROLL    'webroot' => '/horde/troll',
++//UNCOMMENTWHENINSTTROLL    'icon' => '/horde/troll/graphics/troll.gif',
++//UNCOMMENTWHENINSTTROLL    'name' => _("News"),
++//UNCOMMENTWHENINSTTROLL    'allow_guests' => false,
++//UNCOMMENTWHENINSTTROLL    'show' => true
++//UNCOMMENTWHENINSTTROLL);
++
++//UNCOMMENTWHENINSTBABEL$this->applications['babel'] = array(
++//UNCOMMENTWHENINSTBABEL    'fileroot' => dirname(__FILE__) . '/../babel',
++//UNCOMMENTWHENINSTBABEL    'webroot' => $this->applications['horde']['webroot'] . '/babel',
++//UNCOMMENTWHENINSTBABEL    'icon' => $this->applications['horde']['webroot'] . '/babel/graphics/babel.gif',
++//UNCOMMENTWHENINSTBABEL    'name' => _("i18n"),
++//UNCOMMENTWHENINSTBABEL    'allow_guests' => false,
++//UNCOMMENTWHENINSTBABEL    'show' => true
++//UNCOMMENTWHENINSTBABEL);
++
++//UNCOMMENTWHENINSTWHUPS$this->applications['whups'] = array(
++//UNCOMMENTWHENINSTWHUPS    'fileroot' => dirname(__FILE__) . '/../whups',
++//UNCOMMENTWHENINSTWHUPS    'webroot' => '/horde/whups',
++//UNCOMMENTWHENINSTWHUPS    'icon' => '/horde/whups/graphics/whups.gif',
++//UNCOMMENTWHENINSTWHUPS    'name' => _("Bugs"),
++//UNCOMMENTWHENINSTWHUPS    'allow_guests' => false,
++//UNCOMMENTWHENINSTWHUPS    'show' => true
++//UNCOMMENTWHENINSTWHUPS);
++
 +//UNCOMMENTWHENINSTORATOR$this->applications['orator'] = array(
 +//UNCOMMENTWHENINSTORATOR    'fileroot' => dirname(__FILE__) . '/../orator',
 +//UNCOMMENTWHENINSTORATOR    'webroot' => '/horde/orator',
@@ -205,67 +215,21 @@
 +//UNCOMMENTWHENINSTORATOR    'show' => true
 +//UNCOMMENTWHENINSTORATOR);
  
- 
  /**
-@@ -168,6 +256,86 @@
-     'function' => 'turbaGetFields',
-     'args' => array('addressbook'),
+  * Service registry
+@@ -185,7 +263,7 @@
      'type' => 'array'
-+);
-+
+ );
+ 
+-$this->services['kronolith']['horde']['summary'] = array(
 +$this->services['kronolith']['horde']['summary'] = array( 
-+    'file' => '%application%/lib/api.php',
-+    'function' => 'kronolithSummary',
-+    'args' => array(),
-+    'type' => 'string'
-+);
-+
-+$this->services['mnemo']['memos']['list'] = array(
-+    'file' => '%application%/lib/api.php',
-+    'function' => 'mnemoListMemos',
-+    'args' => array('sortby', 'sortdir'),
-+    'type' => 'array'
-+);
-+$this->services['mnemo']['memos']['search'] = array(
-+    'link' => "%application%/search.php"
-+);
-+$this->services['mnemo']['memos']['show'] = array(
-+    'link' => "%application%/view.php?memo=|memo|"
-+);
-+$this->services['mnemo']['memos']['add'] = array(
-+    'file' => '%application%/lib/api.php',
-+    'function' => 'mnemoAddMemo',
-+    'args' => array('body', 'category'),
-+    'type' => 'integer'
-+);
-+$this->services['mnemo']['horde']['summary'] = array(
-+    'file' => '%application%/lib/api.php',
-+    'function' => 'mnemoSummary',
-+    'args' => array(),
-+    'type' => 'string'
-+);
-+
-+$this->services['nag']['tasks']['list'] = array(
-+    'file' => '%application%/lib/api.php',
-+    'function' => 'nagListTasks',
-+    'args' => array('sortby', 'sortdir'),
-+    'type' => 'array'
-+);
-+$this->services['nag']['tasks']['search'] = array(
-+    'link' => "%application%/search.php"
-+);
-+$this->services['nag']['tasks']['show'] = array(
-+    'link' => "%application%/view.php?task=|task|"
-+);
-+$this->services['nag']['tasks']['add'] = array(
-+    'file' => '%application%/lib/api.php',
-+    'function' => 'nagAddTask',
-+    'args' => array('name', 'description', 'due'),
-+    'type' => 'integer'
-+);
-+$this->services['nag']['horde']['summary'] = array(
-+    'file' => '%application%/lib/api.php',
-+    'function' => 'nagSummary',
+     'file' => '%application%/lib/api.php',
+     'function' => 'kronolithSummary',
+     'args' => array(),
+@@ -238,6 +316,29 @@
+ $this->services['nag']['horde']['summary'] = array(
+     'file' => '%application%/lib/api.php',
+     'function' => 'nagSummary',
 +    'args' => array(),
 +    'type' => 'string'
 +);
@@ -289,8 +253,6 @@
 +$this->services['whups']['horde']['summary'] = array(
 +    'file' => '%application%/lib/api.php',
 +    'function' => 'whupsSummary',
-+    'args' => array(),
-+    'type' => 'string'
+     'args' => array(),
+     'type' => 'string'
  );
- 
- $this->services['kronolith']['horde']['summary'] = array(
