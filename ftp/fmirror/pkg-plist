@@ -1,0 +1,7 @@
+bin/fmirror
+%%PORTDOCS%%share/doc/fmirror/ChangeLog
+%%PORTDOCS%%share/doc/fmirror/README
+%%PORTDOCS%%share/doc/fmirror/generic.conf
+%%PORTDOCS%%share/doc/fmirror/redhat.conf
+%%PORTDOCS%%share/doc/fmirror/sample.conf
+%%PORTDOCS%%@dirrm share/doc/fmirror

@@ -12,6 +12,7 @@
     SUBDIR += emacs-wget
     SUBDIR += emirror
     SUBDIR += fget
+    SUBDIR += fmirror
     SUBDIR += frox
     SUBDIR += ftp-tls
     SUBDIR += ftpcopy

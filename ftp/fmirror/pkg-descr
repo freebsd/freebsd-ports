@@ -1,0 +1,7 @@
+fmirror is a program for mirroring files and directories from a remote FTP
+server.
+It allows regex-matching for files that are to be included and excluded.
+It uses a combination of timestamp, file size, and file permissions to
+decide what files to transfer from the FTP server.
+The primary goal of fmirror is to use as little memory as possible,
+but still be able to do its job efficiently.
