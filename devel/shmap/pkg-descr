@@ -1,0 +1,5 @@
+Library that contains a collection of different hashmaps. All these hashmaps
+are based on shared memory and are fast. This cuts down development time for
+projects that need to keep data in shared memory.
+
+WWW: http://shmap.sourceforge.net/
