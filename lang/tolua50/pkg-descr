@@ -1,0 +1,11 @@
+toLua is a tool that greatly simplifies the integration of C/C++
+code with Lua. Based on a "cleaned" header file, toLua automatically
+generates the binding code to access C/C++ features from Lua. Using
+Lua-5.0 API and tag method facilities, the current version automatically
+maps C/C++ constants, external variables, functions, namespace,
+classes, and methods to Lua. It also provides facilities to create
+Lua modules.
+
+WWW: http://www.tecgraf.puc-rio.br/~celes/tolua/
+
+Author: Waldemar Celes <celes@tecgraf.puc-rio.br>

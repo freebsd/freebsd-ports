@@ -1,0 +1,27 @@
+--- src/tests/Makefile.orig	Wed Feb 11 23:01:58 2004
++++ src/tests/Makefile	Sun Nov 21 19:17:49 2004
+@@ -4,7 +4,7 @@
+ 
+ include $(TOLUA)/config
+ 
+-LIBS = -ltolua -llua -llualib
++LIBS = -ltolua -llua -llualib -lm
+ 
+ all: tmodule tnamespace tclass tconstant tvariable tfunction tarray tdirective
+ 	./tmodule; ./tnamespace; ./tclass; ./tconstant; ./tvariable; ./tfunction; ./tarray; ./tdirective;
+@@ -25,7 +25,7 @@
+ 	$(TOLUA)/bin/tolua -o $@ $<
+ 
+ tnamespace: tnamespace.o tnamespacebind.o
+-	$(CC) $(CPPFLAGS) -o $@ tnamespace.o tnamespacebind.o $(TLIB) $(LIB) $(LIBS)
++	$(CC) $(CPPFLAGS) -Iedwin -o $@ tnamespace.o tnamespacebind.o $(TLIB) $(LIB) $(LIBS)
+ tnamespacebind.cpp: tnamespace.pkg
+ 	$(TOLUA)/bin/tolua -o $@ $<
+ 
+@@ -61,6 +61,3 @@
+ 
+ klean:
+ 	rm -f tmodule tnamespace tclass tconstant tvariable tfunction tarray tdirective
+-
+-
+-

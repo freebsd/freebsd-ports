@@ -275,6 +275,7 @@
     SUBDIR += tcltutor
     SUBDIR += tensile
     SUBDIR += tinycobol
+    SUBDIR += tolua
     SUBDIR += treecc
     SUBDIR += tuareg-mode.el
     SUBDIR += visualworks
