@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net/zebra-devel/files/Attic/zebractl.sh,v 1.7 2001-06-21 17:39:10 joe Exp $
+# $FreeBSD: /tmp/pcvs/ports/net/zebra-devel/files/Attic/zebractl.sh,v 1.8 2002-08-04 20:04:50 sumikawa Exp $
 #
 # zebra start/stop script by "Andreas Klemm <andreas@FreeBSD.ORG>"
 #
@@ -31,6 +31,8 @@ case $1 in
 			&& !!PREFIX!!/sbin/ripngd -d && echo -n ' ripngd'
 		[ -f !!PREFIX!!/etc/zebra/ospfd.conf ] \
 			&& !!PREFIX!!/sbin/ospfd -d && echo -n ' ospfd'
+		[ -f !!PREFIX!!/etc/zebra/ospf6d.conf ] \
+			&& !!PREFIX!!/sbin/ospf6d -d && echo -n ' ospf6d'
 		[ -f !!PREFIX!!/etc/zebra/bgpd.conf ] \
 			&& !!PREFIX!!/sbin/bgpd -d && echo -n ' bgpd'
 		;;
@@ -39,6 +41,7 @@ case $1 in
 		[ -f !!PREFIX!!/etc/zebra/ripd.conf ] && killall ripd
 		[ -f !!PREFIX!!/etc/zebra/ripngd.conf ] && killall ripngd
 		[ -f !!PREFIX!!/etc/zebra/ospfd.conf ] && killall ospfd
+		[ -f !!PREFIX!!/etc/zebra/ospf6d.conf ] && killall ospf6d
 		[ -f !!PREFIX!!/etc/zebra/bgpd.conf ] && killall bgpd
 		[ -f !!PREFIX!!/etc/zebra/zebra.conf ] &&  killall zebra
 		;;
