@@ -8,8 +8,8 @@
 PORTNAME=	femlab
 PORTVERSION=	1.1
 CATEGORIES=	math cad
-MASTER_SITES=	ftp://ftp.md.chalmers.se/pub/Femlab/	\
-		ftp://ftp.ifs.hr/pub/SciUtil/
+# mastersite disappeared in April 2000
+MASTER_SITES=	# ftp://ftp.md.chalmers.se/pub/Femlab/
 DISTFILES=	femlab-2d-v${PORTVERSION}.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
