@@ -1,12 +1,12 @@
 # New ports collection makefile for:	cvsup
-# Version required:	14.0
+# Version required:	14.1
 # Date created:		7 August 1996
 # Whom:			asami
 #
-# $Id: Makefile,v 1.14 1996/11/18 11:34:28 asami Exp $
+# $Id: Makefile,v 1.15 1996/12/14 20:12:47 jdp Exp $
 #
 
-DISTNAME=	cvsup-14.0
+DISTNAME=	cvsup-14.1
 CATEGORIES=	devel net
 MASTER_SITES=	ftp://freefall.freebsd.org/pub/CVSup/
 
