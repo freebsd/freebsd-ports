@@ -226,6 +226,7 @@
     SUBDIR += libchk
     SUBDIR += libgksu
     SUBDIR += libgksuui
+    SUBDIR += libieee1284
     SUBDIR += libretto-config
     SUBDIR += libutempter
     SUBDIR += lineak_defaultplugin
