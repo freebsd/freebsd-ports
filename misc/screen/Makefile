@@ -17,6 +17,9 @@ MAINTAINER=	cy@FreeBSD.org
 GNU_CONFIGURE=	yes
 MAN1=		screen.1
 
+post-patch:
+	@${RM} ${WRKSRC}/doc/screen.info*
+
 post-install:
 	@${CP} ${WRKSRC}/etc/etcscreenrc ${PREFIX}/etc/screenrc.sample
 	@if [ ! -f ${PREFIX}/etc/screenrc ]; then \
