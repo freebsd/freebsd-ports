@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libidn
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://alpha.gnu.org/pub/gnu/${PORTNAME}/ \
 		ftp://ftp.funet.fi/pub/mirrors/alpha.gnu.org/gnu/${PORTNAME}/
@@ -15,6 +15,7 @@ MAINTAINER=	ponomarew@oberon.net
 COMMENT=	Internationalized Domain Names command line tool
 
 LIB_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
+BUILD_DEPENDS=	gengetopt:${PORTSDIR}/devel/gengetopt
 
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
