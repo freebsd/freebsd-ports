@@ -34,4 +34,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/plugins/sqldrivers/libqsqlpsql.so \
 		${PREFIX}/lib/plugins/sqldrivers/
 
-.include "../../x11-toolkits/qt31/Makefile"
+.include "../../x11-toolkits/qt32/Makefile"
