@@ -49,7 +49,7 @@ post-configure:
 
 post-build:
 	@${SED}	${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
-		${FILESDIR}/smartd.sh > ${WRKDIR}/wwwoffled.sh
+		${FILESDIR}/wwwoffled.sh > ${WRKDIR}/wwwoffled.sh
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/conf/upgrade-config-2.5-2.6.pl ${WWWOFFLE_SPOOL}
