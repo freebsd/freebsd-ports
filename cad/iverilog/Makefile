@@ -12,7 +12,7 @@ CATEGORIES=	cad
 MASTER_SITES=	ftp://icarus.com/pub/eda/verilog/v${PORTVERSION}/
 DISTNAME=	verilog-${PORTVERSION}
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	keichii@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 
