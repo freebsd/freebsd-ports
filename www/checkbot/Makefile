@@ -3,12 +3,13 @@
 # Date created:				2. Feb 1998
 # Whom:	      				wosch@FreeBSD.org
 #
-# $Id: Makefile,v 1.6 1998/10/10 03:34:28 steve Exp $
+# $Id: Makefile,v 1.7 1999/02/24 23:26:23 wosch Exp $
 #
 
 DISTNAME=	checkbot-1.51
 CATEGORIES=	www perl5
-MASTER_SITES=	http://www.xs4all.nl/~graaff/checkbot/
+MASTER_SITES=	http://www.xs4all.nl/~graaff/checkbot/ \
+		http://www.freebsd.org/~wosch/src/
 
 MAINTAINER=	wosch@FreeBSD.ORG
 
