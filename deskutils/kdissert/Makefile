@@ -21,6 +21,11 @@ USE_BZIP2=	yes
 USE_KDELIBS_VER=	3
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--qtincludes=${QT_PREFIX}/include \
+		--qtlibs=${QT_PREFIX}/lib \
+		--kdeincluds=${KDE_PREFIX}/include \
+		--kdelibs=${KDE_PREFIX}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -28,12 +33,7 @@ post-patch:
 		 s:%%CXXFLAGS%%:${CXXFLAGS} ${PTHREAD_CFLAGS}:g ; \
 		 s:%%LINKFLAGS%%:${PTHREAD_LIBS}:g' ${WRKSRC}/SConstruct
 	@${REINPLACE_CMD} -e \
-		's:-en:-n:g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e \
 		's:|sed:|gsed:g' ${WRKSRC}/kde.py
-
-do-configure:
-	@cd ${CONFIGURE_WRKSRC} && ./configure --prefix="${PREFIX}"
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/kdissert/kdissert ${PREFIX}/bin
