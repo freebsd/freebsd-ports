@@ -1,15 +1,15 @@
 --- src/etc/script/sympa	2003/11/28 18:16:39
-+++ src/etc/script/sympa	2003/12/02 16:32:40
-@@ -30,6 +30,8 @@
++++ src/etc/script/sympa	2004/05/04 21:05:38
+@@ -35,6 +35,8 @@
  sympaconf="--CONFIG--"
  wwsympaconf="--WWSCONFIG--"
  
 +lockdir="--LOCKDIR--"
 +
  ##'echo -n' not supported with SH on Solaris
- if [ ${OSTYPE} = "solaris" ]; then
+ if [ ${OSTYPE} = "SunOS" ]; then
    echo_opt=""
-@@ -37,6 +39,10 @@
+@@ -42,6 +44,10 @@
    echo_opt="-n"
  fi
  
@@ -20,7 +20,7 @@
  # End of parameters
  
  # Current state of the module
-@@ -55,7 +61,7 @@
+@@ -60,7 +66,7 @@
         if [ -f --PIDDIR--/$1.pid ] ; then
               pid=`head -1 --PIDDIR--/$1.pid`
               if [ "$pid" != "" ] ; then
@@ -29,18 +29,18 @@
                   if [ "$running" != "" ]; then
                       echo "$1 (pid $pid) is active..."
                       return 0
-@@ -83,8 +89,8 @@
+@@ -88,8 +94,8 @@
  #		startparam=""
  #	fi
   
--	if [ ${OSTYPE} = "IRIX" ]; then
+-	if [ ${OSTYPE} = "IRIX" -o ${OSTYPE} = "SunOS" ]; then
 -		$sympadir/$1.pl $startparam && echo "success" || echo "failure"
 +	if [ ${OSTYPE} = "IRIX" -o ${OSTYPE} = "FreeBSD" ]; then
 +		su -m sympa -c "$sympadir/$1.pl $startparam" && echo "success" || echo "failure"
  	else
  		$sympadir/$1.pl $startparam && success || failure
  	fi
-@@ -139,7 +145,7 @@
+@@ -144,7 +150,7 @@
  	if [ -f --PIDDIR--/$1.pid ]; then
  		echo $echo_opt "Stopping module $1.pl: "
  		pid=`head -1 --PIDDIR--/$1.pid`
@@ -49,7 +49,7 @@
  		if [ "$running" != "" ]; then
  		    if [ ${OSTYPE} = "IRIX" ]; then
  			kill -TERM $pid && echo "success" || echo "failure"
-@@ -175,13 +181,13 @@
+@@ -180,13 +186,13 @@
  # See how we were called.
  case "$1" in
    start)
@@ -65,7 +65,7 @@
  		echo
  	else
  
-@@ -196,13 +202,13 @@
+@@ -201,13 +207,13 @@
  	sympa_stop archived
  	sympa_stop sympa
  	sympa_stop task_manager
