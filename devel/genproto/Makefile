@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	genproto
-PORTVERSION=	0.4
+PORTVERSION=	0.4.1
 CATEGORIES=	devel
 MASTER_SITES=	http://freequaos.host.sk/genproto/
 
