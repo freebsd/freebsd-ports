@@ -54,7 +54,6 @@ AP_SHARE=	${PREFIX}/share/doc/apache
 MOD_FPDOCDIR=	${AP_SHARE}/manual/mod/mod_frontpage
 MOD_FP=		${FILESDIR}/mod_frontpage.c
 IMAGES_DIR=	${AP_SHARE}/manual/images
-IMAGES_VTI=	${PREFIX}/www/data/images/_vti_cnf
 
 INSTALL_FILE=	${INSTALL} -c -m 555 -o bin -g bin
 
@@ -166,13 +165,7 @@ post-install:
 	@${INSTALL} -c -m 644 ${DISTDIR}/powerlogo.gif ${IMAGES_DIR}
 	@${INSTALL} -c -m 644 ${DISTDIR}/fplogo.gif ${IMAGES_DIR}
 	@${INSTALL} -c -m 644 ${AP_SHARE}/apache_pb.gif ${IMAGES_DIR}
-	@mkdir -p ${PREFIX}/www/data/images
 	@( cd ${PREFIX}/share/doc/apache ; if [ -h images ] ; then ${RM} -f images ; fi ; ln -fs manual/images images)
-.for file in ${IMAGES}
-	@if [ ! -f ${PREFIX}/www/data/images/${file} ]; then \
-		${CP} -rp ${IMAGES_DIR}/${file} ${PREFIX}/www/data/images ; \
-	fi
-.endfor
 	# Untar frontpage extentions
 	@(cd ${PREFIX} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${FRONTPAGE} ${EXTRACT_AFTER_ARGS})
 	@${RM} ${FPHTTPD}/httpd ${FPHTTPD}/httpd.Compat

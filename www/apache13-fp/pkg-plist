@@ -2,14 +2,10 @@ bin/dbmmanage
 bin/htdigest
 bin/htpasswd
 etc/apache/access.conf.default
-@exec if [ ! -f %B/access.conf ]; then cp %B/%f %B/access.conf ; fi
 etc/apache/httpd.conf.default
 etc/apache/magic.default
-@exec if [ ! -f %B/magic ]; then cp %B/%f %B/magic ; fi
 etc/apache/mime.types.default
-@exec if [ ! -f %B/mime.types ]; then cp %B/%f %B/mime.types ; fi
 etc/apache/srm.conf.default
-@exec if [ ! -f %B/srm.conf ]; then cp %B/%f %B/srm.conf ; fi
 etc/rc.d/apache.sh
 include/apache/alloc.h
 include/apache/ap.h
@@ -96,7 +92,6 @@ sbin/logresolve
 sbin/rotatelogs
 sbin/suexec
 share/doc/apache/apache_pb.gif
-@exec if [ ! -d %D/www/data/images ] ; then mkdir -p %D/www/data/images ; fi
 @exec if [ ! -h %B/images ]; then (cd %B ; ln -s manual/images images); fi
 @unexec if [ -h %B/images ]; then rm -f %B/images; fi
 share/doc/apache/index.html.ca-dist
@@ -130,10 +125,8 @@ share/doc/apache/manual/footer.html
 share/doc/apache/manual/handler.html
 share/doc/apache/manual/header.html
 share/doc/apache/manual/images/apache_pb.gif
-@exec if [ ! -f %D/www/data/images/%f ]; then cp %D/%F %D/www/data/images/%f; fi
 share/doc/apache/manual/images/custom_errordocs.gif
 share/doc/apache/manual/images/fplogo.gif
-@exec if [ ! -f %D/www/data/images/%f ]; then cp %D/%F %D/www/data/images/%f; fi
 share/doc/apache/manual/images/home.gif
 share/doc/apache/manual/images/index.gif
 share/doc/apache/manual/images/mod_rewrite_fig1.fig
@@ -141,7 +134,6 @@ share/doc/apache/manual/images/mod_rewrite_fig1.gif
 share/doc/apache/manual/images/mod_rewrite_fig2.fig
 share/doc/apache/manual/images/mod_rewrite_fig2.gif
 share/doc/apache/manual/images/powerlogo.gif
-@exec if [ ! -f %D/www/data/images/%f ]; then cp %D/%F %D/www/data/images/%f; fi
 share/doc/apache/manual/images/sub.gif
 share/doc/apache/manual/index.html
 share/doc/apache/manual/install-tpf.html
@@ -256,11 +248,8 @@ share/doc/apache/manual/vhosts/name-based.html
 share/doc/apache/manual/vhosts/vhosts-in-depth.html
 share/doc/apache/manual/vhosts/virtual-host.html
 share/doc/apache/manual/windows.html
-@exec if [ ! -d %D/www/cgi-bin ]; then mkdir -p %D/www/cgi-bin; fi
 www/cgi-bin.default/printenv
-@exec if [ ! -f %D/www/cgi-bin/%f ]; then cp %D/%F %D/www/cgi-bin/%f; fi
 www/cgi-bin.default/test-cgi
-@exec if [ ! -f %D/www/cgi-bin/%f ]; then cp %D/%F %D/www/cgi-bin/%f; fi
 www/icons/README
 www/icons/a.gif
 www/icons/alert.black.gif
