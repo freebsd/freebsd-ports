@@ -1,14 +1,26 @@
---- tfio.c.old	Fri Mar 22 17:40:03 1996
-+++ src/tfio.c	Fri Mar 22 17:27:44 1996
-@@ -19,9 +19,9 @@
- #include "config.h"
- #include <errno.h>
- #include <ctype.h>
--#ifdef SYS_SELECT_H
-+/*#ifdef SYS_SELECT_H
- # include <sys/select.h>
--#endif
-+#endif*/
- #include <sys/types.h>
- #include <sys/time.h>   /* for struct timeval, in select() */
- #define SYS_TIME_H      /* to prevent <time.h> in "port.h" */
+--- Config.old	Sat Jan  4 12:48:06 1997
++++ unix/Config	Sat Jan  4 12:50:59 1997
+@@ -33,9 +33,9 @@
+ #   even if an old version is currently in use.  You can remove
+ #   the old version manually later when it is no longer in use.
+ 
+-# EXE="/usr/local/bin/tf-${TFVER}"
+-# LIBDIR="/usr/local/lib/tf-${TFVER}-lib"
+-# SYMLINK="/usr/local/bin/tf"
++EXE="${PREFIX}/bin/tf-${TFVER}"
++LIBDIR="${PREFIX}/lib/tf-${TFVER}-lib"
++SYMLINK="${PREFIX}/bin/tf"
+ 
+ 
+ ### Manual Page.
+@@ -44,8 +44,8 @@
+ # uses nroff format; set MANTYPE=cat if your man uses pre-formatted
+ # vt100 "catman" pages.  Default is "cat".
+ 
+-# MANTYPE="nroff"
+-# MANPAGE="/usr/local/man/man1/tf.1"
++MANTYPE="nroff"
++MANPAGE="${PREFIX}/man/man1/tf.1"
+ 
+ 
+ ### Flags.
