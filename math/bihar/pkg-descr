@@ -1,0 +1,5 @@
+This package consists of programs which perform Fast Fourier Transforms 
+for both complex and real periodic sequences and certain other symmetric 
+sequences.
+
+	Paul Swarztrauber, NCAR. 
