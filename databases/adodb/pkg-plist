@@ -37,6 +37,7 @@
 %%ADODB_DRIVERS%%/adodb-postgres.inc.php
 %%ADODB_DRIVERS%%/adodb-postgres7.inc.php
 %%ADODB_DRIVERS%%/adodb-proxy.inc.php
+%%ADODB_DRIVERS%%/adodb-sqlanywhere.inc.php
 %%ADODB_DRIVERS%%/adodb-sybase.inc.php
 %%ADODB_DRIVERS%%/adodb-vfp.inc.php
 %%ADODB_TESTS%%/benchmark.php.sample
