@@ -18,4 +18,11 @@ USE_IMAKE=	yes
 
 MAN1=		rasmol.1
 
+pre-extract:
+	@${ECHO} ""
+	@${ECHO} You can set the color depth to match your X server in
+	@${ECHO} ${WRKSRC}Imakefile
+	@${ECHO} before building.
+	@${ECHO} ""
+
 .include <bsd.port.mk>
