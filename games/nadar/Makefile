@@ -8,9 +8,9 @@
 PORTNAME=	nadar
 PORTVERSION=	1.0
 CATEGORIES=	games
-MASTER_SITES=	http://www.seki.ee.kagu.sut.ac.jp/~sakai/myfreesoft/
+MASTER_SITES=	http://www.seki.ee.kagu.tus.ac.jp/~sakai/myfreesoft/
 
-MAINTAINER=	sakai@seki.ee.kagu.sut.ac.jp
+MAINTAINER=	sakai@seki.ee.kagu.tus.ac.jp
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
