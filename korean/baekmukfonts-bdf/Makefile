@@ -14,8 +14,6 @@ DISTNAME=       baekmuk-${PORTVERSION}
 
 MAINTAINER=	cjh@kr.freebsd.org
 
-BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11/XFree86
-
 USE_X_PREFIX=	yes
 
 FONTLIST=	batang10 batang10b batang12 batang12b batang14 batang14b \
