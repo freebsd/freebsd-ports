@@ -1,11 +1,11 @@
 #A New ports collection makefile for:	docbook
 # Version required:	2.4.1
 # Date created:		7 April 1997
-# Whom:			nclayton
+# Whom:			nik
 #
 # Based heavily on work by jfieber.
 #
-# $Id: Makefile,v 1.4 1998/06/27 05:19:35 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1999/04/14 22:26:54 nik Exp $
 #
 
 DISTNAME=	docbook-241
@@ -13,7 +13,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.ora.com/pub/davenport/
 DISTFILES=	docbk241.tar.Z
 
-MAINTAINER=	nclayton@FreeBSD.ORG
+MAINTAINER=	nik@FreeBSD.ORG
 
 RUN_DEPENDS=	${ISOCAT}:${PORTSDIR}/textproc/iso8879
 
