@@ -3,7 +3,7 @@
 # Date created:		Wed Apr 10 21:57:17 MET DST 1996
 # Whom:			Andreas Klemm <andreas@knobel.gun.de>
 #
-# $Id: Makefile,v 1.1.1.1 1996/04/12 07:41:56 asami Exp $
+# $Id: Makefile,v 1.2 1996/05/27 02:05:20 asami Exp $
 #
 
 DISTNAME=	fvwm95-2.0.41f
@@ -24,7 +24,7 @@ USE_IMAKE=	yes
 
 post-install:
 	@echo "installing default system.fvwmrc file..."
-	@mv -f ${PREFIX}/lib/X11/fvwm95-2/system.fvwmrc \
+	@-mv -f ${PREFIX}/lib/X11/fvwm95-2/system.fvwmrc \
 		${PREFIX}/lib/X11/fvwm95-2/system.fvwmrc.old
 	${INSTALL} -c -m 444 ${WRKSRC}/example.fvwm2rc95 \
 		${PREFIX}/lib/X11/fvwm95-2/system.fvwmrc
