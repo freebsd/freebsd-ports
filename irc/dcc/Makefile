@@ -7,16 +7,17 @@
 
 PORTNAME=	dcc
 PORTVERSION=	2.5.6
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	ftp://ftp.fan.gr.jp/pub/elisp/irchat-pj/2.5/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. OLD
 DISTNAME=	irchat-pj-${PORTVERSION}p
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	irchat-pj-2.5.6pl1.diff.gz
+PATCHFILES=	irchat-pj-${PORTVERSION}pl2.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	yoichi@eken.phys.nagoya-u.ac.jp
+MAINTAINER=	yoichi@FreeBSD.org
 
 ALL_TARGET=	dcc
 LDFLAGS=	${PTHREAD_LIBS}
