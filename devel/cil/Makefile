@@ -31,6 +31,10 @@ EXECFILES=	cilly.byte.exe machdep.exe
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not build on FreeBSD >= 5.x"
+.endif
+
 .if ${PERL_LEVEL} < 500601
 IGNORE=		"Does not work with perl < 5.6.1"
 .endif
