@@ -1,0 +1,20 @@
+#!/bin/sh
+FONTDIR=${PKG_PREFIX}/lib/X11/fonts/TrueType
+if [ "$2" = "PRE-INSTALL" ]; then
+  if [ ! -d ${FONTDIR} ]; then
+    echo "*********************************************************"
+    echo "Please add ${FONTDIR} to your font path"
+    echo "and load 'xtt' module in /etc/XF86Config."
+    echo "*********************************************************"
+    mkdir $FONTDIR
+  fi
+  exit 0
+fi
+cd ${FONTDIR}
+touch fonts.dir
+sed -e '/-monattf-/d' fonts.dir > fonts.dir.tmp
+numfonts=$(echo $(cat fonts.dir.tmp fonts.dir.mona | wc -l) - 2 | bc)
+echo ${numfonts} > fonts.dir
+sed -e 1d fonts.dir.tmp >> fonts.dir
+sed -e 1d fonts.dir.mona >> fonts.dir
+rm -f fonts.dir.tmp fonts.alias.tmp

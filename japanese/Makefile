@@ -208,6 +208,7 @@
     SUBDIR += mimekit
     SUBDIR += ming
     SUBDIR += monafonts
+    SUBDIR += monafonts-ttf
     SUBDIR += mozilla-jlp
     SUBDIR += mozilla-jlp-devel
     SUBDIR += mplusfonts
