@@ -16,7 +16,7 @@ COMMENT=	An LALR(1) parser generator. Similar in function to yacc and bison
 USE_BZIP2=	yes
 
 do-build:
-	cd ${WRKSRC} && ${MAKE} PROG=lemon NOMAN=1 \
+	cd ${WRKSRC} && ${MAKE} PROG=lemon NOMAN=1 NO_MAN=1 \
 		CFLAGS="-g ${CFLAGS} -DLEMPAR='\"${PREFIX}/share/lemon/lempar.c\"'" \
 			-f /usr/share/mk/bsd.prog.mk
 
