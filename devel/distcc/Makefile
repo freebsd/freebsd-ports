@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	distcc
-PORTVERSION=	2.11
+PORTVERSION=	2.11.1
 CATEGORIES=	devel
 MASTER_SITES=	http://distcc.samba.org/ftp/distcc/
 
@@ -25,10 +25,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
-.if ${HAVE_GNOME:Mlibgnomeui} != ""
+.if defined(WITH_GNOME) 
 USE_GNOME=	libgnomeui
 CONFIGURE_ARGS+=	"--with-gnome"
 PKGNAMESUFFIX=	-gnome
+PLIST_SUB+=	WITH_GNOME=""
+.elif defined(WITH_GTK)
+USE_GNOME=	gtk20
+CONFIGURE_ARGS+=	"--with-gtk"
+PKGNAMESUFFIX=	-gtk
 PLIST_SUB+=	WITH_GNOME=""
 .else
 PLIST_SUB+=	WITH_GNOME="@comment "
@@ -38,15 +43,10 @@ MAN1=	distcc.1 distccd.1
 DOC_FILES=	AUTHORS COPYING INSTALL NEWS README \
 		doc/protocol-1.txt doc/status-1.txt
 
-pre-fetch:
-.if !defined(WITHOUT_GNOME)
-	@${ECHO_MSG} "Building with GNOME-based monitor. To disable this, press"
-	@${ECHO_MSG} "Ctrl+C now and restart with 'make WITHOUT_GNOME=yes'."
-	@${ECHO_MSG} ""
-.else
-	@${ECHO_MSG} "Disabled GNOME-based monitor."
-	@${ECHO_MSG} ""
-.endif
+pre-everything::
+	@${ECHO_MSG} "Available knobs for ${PORTNAME}"
+	@${ECHO_MSG} "  - WITH_GNOME: Build GUI monitor based on GNOME"
+	@${ECHO_MSG} "  - WITH_GTK: Build GUI monitor based on GTK"
 
 pre-install:
 	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" \
