@@ -2,27 +2,34 @@ bin/wmd
 bin/wmk
 bin/wml
 bin/wmb
-bin/wml_p1_ipp
-bin/wml_p2_mhc
-bin/wml_p3_eperl
-bin/wml_p4_gm4
-bin/wml_p5_divert
-bin/wml_p6_asubst
-bin/wml_p7_htmlfix
-bin/wml_p8_htmlstrip
-bin/wml_p9_slice
-bin/wml_aux_iselect
-bin/wml_aux_linklint
-bin/wml_aux_txt2html
-bin/wml_aux_wwwtable
-bin/wml_aux_htmlinfo
-bin/wml_aux_map2html
-bin/wml_aux_weblint
+bin/wmu
+lib/wml/exec/wml_p1_ipp
+lib/wml/exec/wml_p2_mhc
+lib/wml/exec/wml_p3_eperl
+lib/wml/exec/wml_p4_gm4
+lib/wml/exec/wml_p5_divert
+lib/wml/exec/wml_p6_asubst
+lib/wml/exec/wml_p7_htmlfix
+lib/wml/exec/wml_p8_htmlstrip
+lib/wml/exec/wml_p9_slice
+lib/wml/exec/wml_aux_iselect
+lib/wml/exec/wml_aux_linklint
+lib/wml/exec/wml_aux_txt2html
+lib/wml/exec/wml_aux_wwwtable
+lib/wml/exec/wml_aux_htmlinfo
+lib/wml/exec/wml_aux_map2html
+lib/wml/exec/wml_aux_weblint
 lib/wml/aux/txt2html.dict
 lib/wml/aux/weblintrc
-lib/wml/aux/generated-via-wml-1.gif
-lib/wml/aux/generated-via-wml-2.gif
 lib/wml/aux/wmd.txt
+lib/wml/aux/logos/logo-apache.gif
+lib/wml/aux/logos/logo-apache.info
+lib/wml/aux/logos/logo-freebsd.gif
+lib/wml/aux/logos/logo-freebsd.info
+lib/wml/aux/logos/logo-linux.gif
+lib/wml/aux/logos/logo-linux.info
+lib/wml/aux/logos/logo-wml.gif
+lib/wml/aux/logos/logo-wml.info
 lib/wml/include/all.wml
 lib/wml/include/des/all.wml
 lib/wml/include/des/gfont.wml
@@ -51,6 +58,8 @@ lib/wml/include/std/box.wml
 lib/wml/include/std/case.wml
 lib/wml/include/std/grid.wml
 lib/wml/include/std/href.wml
+lib/wml/include/std/lang.wml
+lib/wml/include/std/logo.wml
 lib/wml/include/std/info.wml
 lib/wml/include/std/page.wml
 lib/wml/include/std/tags.wml
@@ -58,11 +67,8 @@ lib/wml/include/std/toc.wml
 lib/wml/include/sup/all.wml
 lib/wml/include/sup/hextriple.wml
 lib/wml/include/sup/path.wml
-lib/wml/include/sup/stack.wml
 lib/wml/include/sys/all.wml
 lib/wml/include/sys/boot.wml
-lib/wml/include/usr/all.wml
-lib/wml/include/usr/rse.wml
 lib/wml/perl/lib/site_perl/i386-freebsd/auto/Getopt/Long/.packlist
 lib/wml/perl/lib/site_perl/i386-freebsd/auto/Bit/Vector/Vector.so
 lib/wml/perl/lib/site_perl/i386-freebsd/auto/Bit/Vector/Vector.bs
@@ -75,6 +81,11 @@ lib/wml/perl/lib/site_perl/i386-freebsd/auto/GD/.packlist
 lib/wml/perl/lib/site_perl/i386-freebsd/auto/IO/IO.so
 lib/wml/perl/lib/site_perl/i386-freebsd/auto/IO/IO.bs
 lib/wml/perl/lib/site_perl/i386-freebsd/auto/IO/.packlist
+lib/wml/perl/lib/site_perl/i386-freebsd/auto/Term/ReadKey/ReadKey.so
+lib/wml/perl/lib/site_perl/i386-freebsd/auto/Term/ReadKey/ReadKey.bs
+lib/wml/perl/lib/site_perl/i386-freebsd/auto/Term/ReadKey/.packlist
+lib/wml/perl/lib/site_perl/i386-freebsd/auto/Text/DelimMatch/.packlist
+lib/wml/perl/lib/site_perl/i386-freebsd/auto/Text/BlockParser/.packlist
 lib/wml/perl/lib/site_perl/Getopt/Long.pm
 lib/wml/perl/lib/site_perl/Bit/Vector.pm
 lib/wml/perl/lib/site_perl/File/PathConvert.pm
@@ -88,6 +99,8 @@ lib/wml/perl/lib/site_perl/auto/Image/Size/ppmsize.al
 lib/wml/perl/lib/site_perl/auto/Image/Size/tiffsize.al
 lib/wml/perl/lib/site_perl/auto/Image/Size/autosplit.ix
 lib/wml/perl/lib/site_perl/auto/GD/autosplit.ix
+lib/wml/perl/lib/site_perl/auto/Term/ReadKey/autosplit.ix
+lib/wml/perl/lib/site_perl/auto/Text/DelimMatch/autosplit.ix
 lib/wml/perl/lib/site_perl/GD.pm
 lib/wml/perl/lib/site_perl/IO/Pipe.pm
 lib/wml/perl/lib/site_perl/IO/File.pm
@@ -100,10 +113,14 @@ lib/wml/perl/lib/site_perl/IO/Seekable.pm
 lib/wml/perl/lib/site_perl/IO/Dir.pm
 lib/wml/perl/lib/site_perl/IO/Poll.pm
 lib/wml/perl/lib/site_perl/IO.pm
+lib/wml/perl/lib/site_perl/Term/ReadKey.pm
+lib/wml/perl/lib/site_perl/Text/DelimMatch.pm
+lib/wml/perl/lib/site_perl/Text/BlockParser.pm
 man/man1/wmd.1.gz
 man/man1/wmk.1.gz
 man/man1/wml.1.gz
 man/man1/wmb.1.gz
+man/man1/wmu.1.gz
 man/man1/wml_p1_ipp.1.gz
 man/cat1/wml_p2_mhc.1.gz
 man/man1/wml_p3_eperl.1.gz
@@ -148,6 +165,8 @@ man/man3/wml::std::box.3.gz
 man/man3/wml::std::case.3.gz
 man/man3/wml::std::grid.3.gz
 man/man3/wml::std::href.3.gz
+man/man3/wml::std::lang.3.gz
+man/man3/wml::std::logo.3.gz
 man/man3/wml::std::info.3.gz
 man/man3/wml::std::page.3.gz
 man/man3/wml::std::tags.3.gz
@@ -155,14 +174,14 @@ man/man3/wml::std::toc.3.gz
 man/man3/wml::sup::all.3.gz
 man/man3/wml::sup::hextriple.3.gz
 man/man3/wml::sup::path.3.gz
-man/man3/wml::sup::stack.3.gz
 man/man3/wml::sys::all.3.gz
 man/man3/wml::sys::boot.3.gz
-man/man3/wml::usr::all.3.gz
-man/man3/wml::usr::rse.3.gz
 man/man7/wml_intro.7.gz
 man/man7/wml_tutorial.7.gz
 man/man7/wml_faq.7.gz
+man/man7/wml_tags.7.gz
+@dirrm lib/wml/exec
+@dirrm lib/wml/aux/logos
 @dirrm lib/wml/aux
 @dirrm lib/wml/include/des
 @dirrm lib/wml/include/fmt
@@ -170,7 +189,6 @@ man/man7/wml_faq.7.gz
 @dirrm lib/wml/include/std
 @dirrm lib/wml/include/sup
 @dirrm lib/wml/include/sys
-@dirrm lib/wml/include/usr
 @dirrm lib/wml/include
 @dirrm lib/wml/perl/lib/site_perl/i386-freebsd/auto/Getopt/Long
 @dirrm lib/wml/perl/lib/site_perl/i386-freebsd/auto/Getopt
@@ -182,6 +200,11 @@ man/man7/wml_faq.7.gz
 @dirrm lib/wml/perl/lib/site_perl/i386-freebsd/auto/Image
 @dirrm lib/wml/perl/lib/site_perl/i386-freebsd/auto/GD
 @dirrm lib/wml/perl/lib/site_perl/i386-freebsd/auto/IO
+@dirrm lib/wml/perl/lib/site_perl/i386-freebsd/auto/Term/ReadKey
+@dirrm lib/wml/perl/lib/site_perl/i386-freebsd/auto/Term
+@dirrm lib/wml/perl/lib/site_perl/i386-freebsd/auto/Text/DelimMatch
+@dirrm lib/wml/perl/lib/site_perl/i386-freebsd/auto/Text/BlockParser
+@dirrm lib/wml/perl/lib/site_perl/i386-freebsd/auto/Text
 @dirrm lib/wml/perl/lib/site_perl/i386-freebsd/auto
 @dirrm lib/wml/perl/lib/site_perl/i386-freebsd
 @dirrm lib/wml/perl/lib/site_perl/Getopt
@@ -191,9 +214,15 @@ man/man7/wml_faq.7.gz
 @dirrm lib/wml/perl/lib/site_perl/auto/Image/Size
 @dirrm lib/wml/perl/lib/site_perl/auto/Image
 @dirrm lib/wml/perl/lib/site_perl/auto/GD
+@dirrm lib/wml/perl/lib/site_perl/auto/Term/ReadKey
+@dirrm lib/wml/perl/lib/site_perl/auto/Term
+@dirrm lib/wml/perl/lib/site_perl/auto/Text/DelimMatch
+@dirrm lib/wml/perl/lib/site_perl/auto/Text
 @dirrm lib/wml/perl/lib/site_perl/auto
 @dirrm lib/wml/perl/lib/site_perl/IO/Socket
 @dirrm lib/wml/perl/lib/site_perl/IO
+@dirrm lib/wml/perl/lib/site_perl/Term
+@dirrm lib/wml/perl/lib/site_perl/Text
 @dirrm lib/wml/perl/lib/site_perl
 @dirrm lib/wml/perl/lib
 @dirrm lib/wml/perl

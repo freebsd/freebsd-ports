@@ -1,16 +1,18 @@
 # New ports collection makefile for:	wml
-# Version required:	1.4.11
+# Version required:	1.6.0
 # Date created:		09-Sep-1997
 # Whom:			Ralf S. Engelschall <rse@engelschall.com>
 #
-# $Id: Makefile,v 1.16 1997/12/30 10:17:22 rse Exp $
+# $Id: Makefile,v 1.17 1997/12/31 10:05:27 rse Exp $
 #
 
-DISTNAME=	wml-1.4.11
+DISTNAME=	wml-1.6.0
 CATEGORIES=	www lang
 MASTER_SITES=	http://www.engelschall.com/sw/wml/distrib/ \
-		ftp://ftp.engelschall.com/sw/wml/ \
-		ftp://ftp.hyperreal.org/software/engelschall/wml/
+		ftp://ftp.ch.engelschall.com/sw/wml/ \
+		ftp://ftp.de.engelschall.com/sw/wml/ \
+		ftp://ftp.hyperreal.org/software/engelschall/wml/ \
+		ftp://ftp.dppl.com/pub/engelschall/wml/
 
 MAINTAINER=	rse@engelschall.com
 
@@ -22,7 +24,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 CAT1=	wml_aux_linklint.1 wml_aux_txt2html.1 \
 	wml_aux_wwwtable.1 wml_p2_mhc.1 wml_p4_gm4.1
 
-MAN1=	wmd.1 wmk.1 wml.1 wmb.1 \
+MAN1=	wmd.1 wmk.1 wml.1 wmb.1 wmu.1 \
 	wml_aux_htmlinfo.1 wml_aux_iselect.1 \
 	wml_aux_map2html.1 wml_aux_weblint.1 wml_p1_ipp.1 \
 	wml_p3_eperl.1 wml_p5_divert.1 wml_p6_asubst.1 \
@@ -37,13 +39,12 @@ MAN3=	wml::all.3 wml::des::all.3 wml::des::gfont.3 \
 	wml::fmt::xtable.3 wml::imp::all.3 wml::imp::csmap.3 \
 	wml::imp::fsview.3 wml::imp::generic.3 wml::std::all.3 \
 	wml::std::box.3 wml::std::case.3 wml::std::grid.3 \
-	wml::std::href.3 wml::std::info.3 wml::std::page.3 \
-	wml::std::tags.3 wml::std::toc.3 wml::sup::all.3 \
-	wml::sup::hextriple.3 wml::sup::path.3 wml::sup::stack.3 \
-	wml::sys::all.3 wml::sys::boot.3 wml::usr::all.3 \
-	wml::usr::rse.3
+	wml::std::href.3 wml::std::lang.3 wml::std::logo.3 \
+	wml::std::info.3 wml::std::page.3 wml::std::tags.3 \
+	wml::std::toc.3 wml::sup::all.3 wml::sup::hextriple.3 \
+	wml::sup::path.3 wml::sys::all.3 wml::sys::boot.3
 
-MAN7=	wml_intro.7 wml_tutorial.7 wml_faq.7
+MAN7=	wml_intro.7 wml_tutorial.7 wml_faq.7 wml_tags.7
 
 #   catpages are usually not installed, so they are not compressed.
 #   But they are really needed as docs, so we compress manually...
