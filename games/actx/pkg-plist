@@ -125,7 +125,9 @@ share/examples/actx/tmisaki3.xpm
 share/examples/actx/biff.xpm
 share/examples/actx/sample.Xdefaults
 share/examples/actx/sample.actxrc
+share/examples/actx/sample.actxrc-one
 @dirrm share/examples/actx
-share/doc/ja/actx/README.jis
-share/doc/ja/actx/ForDevelloper.jis
-@dirrm share/doc/ja/actx
+%%PORTDOCS%%share/doc/ja/actx/README.jis
+%%PORTDOCS%%share/doc/ja/actx/ForDevelloper.jis
+%%PORTDOCS%%share/doc/ja/actx/ManualInstall.jis
+%%PORTDOCS%%@dirrm share/doc/ja/actx

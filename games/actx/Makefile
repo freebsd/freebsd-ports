@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	actx
-PORTVERSION=	1.01
+PORTVERSION=	1.10
 CATEGORIES=	games
 MASTER_SITES=	http://kurumi.sakura.ne.jp/~chimari/ActX/
 
@@ -22,6 +22,7 @@ ACTXDIR=	${PREFIX}/share/examples/actx
 post-extract:
 	@ ${CP} ${WRKSRC}/samples/Imakefile ${WRKSRC}
 	@ ${CP} ${WRKSRC}/samples/sample.actxrc ${WRKSRC}/install.actxrc
+	@ ${CP} ${WRKSRC}/samples/sample.actxrc ${WRKSRC}/install.actxrc-one
 
 post-patch:
 .for i in install.actxrc samples/sample.actxrc
@@ -39,7 +40,7 @@ post-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/samples/$i ${ACTXDIR}
 .endfor
 .if !defined(NOPORTDOCS)
-.for i in doc/ForDevelloper.jis README.jis
+.for i in doc/ForDevelloper.jis doc/ManualInstall.jis README.jis
 	@ ${MKDIR} ${PREFIX}/share/doc/ja/actx
 	@ ${INSTALL_MAN} ${WRKSRC}/$i ${PREFIX}/share/doc/ja/actx
 .endfor
