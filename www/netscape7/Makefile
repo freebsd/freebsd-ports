@@ -24,8 +24,7 @@ BROWSER=	communicator-linux
 
 WRKSRC=		${WRKDIR}/communicator-v472.x86-unknown-linux2.0
 
-# use fake shell REQ script, since we don't require X aout libs.
-PKGREQ=		${.CURDIR}/pkg/REQ
+USE_LINUX_LIB=	yes
 
 MAILCAP=	${.CURDIR}/files/mailcap
 NSUBDIR=	lib/netscape-linux
