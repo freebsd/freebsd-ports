@@ -1,0 +1,4 @@
+etc/vtund.conf
+man/man8/vtun.8
+sbin/vtund
+@exec rm -rf /var/log/vtund
