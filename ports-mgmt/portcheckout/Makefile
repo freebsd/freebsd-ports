@@ -8,7 +8,7 @@
 PORTNAME=	portcheckout
 PORTVERSION=	2.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.de.freebsd.org/~wosch/src/
+MASTER_SITES=	http://wolfram.schneider.org/src/
 
 MAINTAINER=	wosch@FreeBSD.org
 COMMENT=	Checkout and build ports and all depending ports
