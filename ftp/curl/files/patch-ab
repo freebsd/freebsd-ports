@@ -1,0 +1,8 @@
+--- ./curl.spec	Mon Oct  9 14:31:37 2000
++++ ./curl.spec	Mon Oct 16 16:49:03 2000
+@@ -1,4 +1,4 @@
+-%define ver	7.4-pre4
++%define ver	7.4.1
+ %define rel	1
+ %define prefix	/usr
+ 
