@@ -526,6 +526,7 @@
     SUBDIR += php-screw
     SUBDIR += php-templates
     SUBDIR += php4-cgi
+    SUBDIR += php4-mnogosearch
     SUBDIR += php5-cgi
     SUBDIR += phpSysInfo
     SUBDIR += phpbb

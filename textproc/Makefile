@@ -441,6 +441,7 @@
     SUBDIR += php4-pspell
     SUBDIR += php4-wddx
     SUBDIR += php4-xml
+    SUBDIR += php4-xslt
     SUBDIR += php5-xml
     SUBDIR += pocketreader
     SUBDIR += ppower4
