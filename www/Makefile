@@ -238,6 +238,7 @@
     SUBDIR += mozilla-embedded
     SUBDIR += mozilla-embedded-devel
     SUBDIR += mozilla-embedded-vendor
+    SUBDIR += mozilla-firebird
     SUBDIR += mozilla-gtk2
     SUBDIR += mozilla-headers
     SUBDIR += mozilla-headers-devel
@@ -385,7 +386,6 @@
     SUBDIR += p5-libwww
     SUBDIR += peacock
     SUBDIR += pgdriver
-    SUBDIR += phoenix
     SUBDIR += php-dyn
     SUBDIR += php-screw
     SUBDIR += php-templates
