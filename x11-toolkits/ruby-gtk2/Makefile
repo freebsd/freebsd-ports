@@ -1,12 +1,12 @@
 # New ports collection makefile for:    ruby-gtk
-# Version required:     0.22
+# Version required:     0.23
 # Date created:         19 April 1999
 # Whom:                 Yasuhiro Fukuma <yasuf@big.or.jp>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ruby-gtk-0.22
+DISTNAME=	ruby-gtk-0.23
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.ueda.info.waseda.ac.jp/~igarashi/ruby/ \
 		ftp://ftp.netlab.co.jp/pub/lang/ruby/contrib/ \
@@ -23,7 +23,7 @@ RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
 LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 USE_XLIB=	yes
-WRKSRC=		${WRKDIR}/gtk
+WRKSRC=		${WRKDIR}/gtk-0.23
 PLIST_SUB+=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
 
 RUBY=		${LOCALBASE}/bin/ruby
@@ -49,6 +49,11 @@ post-install:
 .if !defined(NO_IMLIB)
 	${MKDIR} ${PREFIX}/share/examples/ruby/gtk/gdkimlib
 	${INSTALL_DATA} ${WRKSRC}/sample/gdkimlib/*.rb ${PREFIX}/share/examples/ruby/gtk/gdkimlib
+.endif
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${PREFIX}/share/doc/ruby/gtk/ja
+	${INSTALL_DATA} ${WRKSRC}/doc/api/* ${PREFIX}/share/doc/ruby/gtk
+	${INSTALL_DATA} ${WRKSRC}/doc/api-ja/* ${PREFIX}/share/doc/ruby/gtk/ja
 .endif
 
 .include <bsd.port.mk>
