@@ -55,7 +55,7 @@ MASTER_SITE_COMP_SOURCES+=	\
 #
 #    http://www.FreeBSD.org/doc/en_US.ISO8859-1/books/handbook/mirrors-ftp.html
 #
-MASTER_SITE_FREEBSD+=	\
+MASTER_SITE_FREEBSD_ORG+=	\
 	ftp://ftp.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
 	ftp://ftp.se.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
 	ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/%SUBDIR%/ \
