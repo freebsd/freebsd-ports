@@ -37,7 +37,7 @@ stop)
 		kill -KILL $PID
 	fi
 	;;
-retstart)
+restart)
 	$0 stop && $0 start;
 	;;
 *)
