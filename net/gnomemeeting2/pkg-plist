@@ -43,7 +43,6 @@ share/locale/zh_CN/LC_MESSAGES/gnomemeeting.mo
 share/locale/zh_TW/LC_MESSAGES/gnomemeeting.mo
 share/gnome/sounds/gnomemeeting/gnomemeeting.wav
 etc/sound/events/gnomemeeting.soundlist
-man/man1/gnomemeeting.1
 share/gnome/gnomemeeting/xdap/ils_nm_reg.xml
 share/gnome/gnomemeeting/xdap/ils_nm_unreg.xml
 share/gnome/gnomemeeting/xdap/ils_nm_mod.xml
