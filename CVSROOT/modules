@@ -1648,6 +1648,7 @@ fpc		ports/lang/fpc
 fping		ports/net/fping
 fpm		ports/security/fpm
 fpp		ports/devel/fpp
+fprobe		ports/net/fprobe
 fr-abispell-fr-FR	ports/french/abispell-fr-FR
 fr-aspell       ports/french/aspell
 fr-daCode	ports/french/daCode
