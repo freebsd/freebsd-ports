@@ -3,7 +3,7 @@
 # Date created:				October 19th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-#   $Id: Makefile,v 1.14 1998/10/12 04:14:44 jseger Exp $
+#   $Id: Makefile,v 1.15 1998/10/20 01:29:07 steve Exp $
 #
 
 DISTNAME=	pgsql_perl5-1.6.1
@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	Pg
 MAINTAINER=	jfitz@FreeBSD.ORG
 
 BUILD_DEPENDS= 	${PREFIX}/pgsql/lib/libpq.a:${PORTSDIR}/databases/postgresql
+
+BROKEN=		build
 
 USE_PERL5=	YES
 
