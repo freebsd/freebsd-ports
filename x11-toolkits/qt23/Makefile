@@ -17,6 +17,7 @@ LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-copy
+USE_MESA=	yes
 USE_BZIP2=	yes
 NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
