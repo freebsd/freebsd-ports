@@ -1,4 +1,4 @@
-# New ports collection makefile for:	XFree86Xdocuments-4.0
+# New ports collection makefile for:	XFree86-4-documents-4.0.1
 # Date created:		10 Oct 1999
 # Whom:			taguchi@tohoku.iij.ad.jp
 #
@@ -6,33 +6,31 @@
 #
 
 PORTNAME=	documents
-PORTVERSION=	4.0
+PORTVERSION=	4.0.1
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/4.0/source/ \
-		ftp://ftp.freesoftware.com/pub/XFree86/4.0/source/ \
-		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-4.0/source/ \
-		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/4.0/source/ \
-		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/4.0/source/
+MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/${PORTVERSION}/source/ \
+		ftp://ftp.freesoftware.com/pub/XFree86/${PORTVERSION}/source/ \
+		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-${PORTVERSION}/source/ \
+		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/${PORTVERSION}/source/ \
+		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/${PORTVERSION}/source/
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X400src-1.tgz X400src-2.tgz
-EXTRACT_ONLY=	X400src-2.tgz
+DISTFILES=	X401src-1.tgz X401src-2.tgz
+EXTRACT_ONLY=	X401src-2.tgz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
-BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
-
-PREFIX?=	${X11BASE}
-PROJECTROOT=	-DProjectRoot=${PREFIX}
-MTREE_FILE=	/etc/mtree/BSD.x11.dist
-DIST_SUBDIR=	xc
-WRKSRC=		${WRKDIR}/xc/doc
-DEFFILE=	${PREFIX}/lib/X11/config/FreeBSD.ports.def
-INSTALL_TARGET=	install install.man
+XFREE86_VERSION=	4
+USE_IMAKE=		YES
+PROJECTROOT=		-DProjectRoot=${PREFIX}
+DIST_SUBDIR=		xc
+WRKSRC=			${WRKDIR}/xc/doc
+DEFFILE=		${PREFIX}/lib/X11/config/FreeBSD.ports.def
+INSTALL_TARGET=		install install.man
 
 post-extract:
 	(cd ${WRKDIR} && \
 	 ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
-		${DISTDIR}/${DIST_SUBDIR}/X400src-1.tgz \
+		${DISTDIR}/${DIST_SUBDIR}/X401src-1.tgz \
 		${EXTRACT_AFTER_ARGS} xc/doc)
 
 do-configure:

@@ -1,5 +1,5 @@
---- config/cf/Library.tmpl.ORIG	Sun May  7 21:06:16 2000
-+++ config/cf/Library.tmpl	Sun May  7 21:11:44 2000
+--- config/cf/Library.tmpl.orig	Wed Oct 13 13:20:41 1999
++++ config/cf/Library.tmpl	Wed Jul 19 09:15:07 2000
 @@ -434,10 +434,14 @@
  # ifdef IncSubdir
  #  ifdef IncSubSubdir

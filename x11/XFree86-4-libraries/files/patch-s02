@@ -1,55 +1,11 @@
---- extras/X-TrueType/xttcconv.c.xtt	Mon May  8 16:28:29 2000
-+++ extras/X-TrueType/xttcconv.c	Mon May  8 16:28:33 2000
-@@ -505,17 +505,19 @@ codeconv_search_code_converter(char cons
+--- programs/Xserver/GL/dri/Imakefile.ORIG	Tue Aug  8 15:42:21 2000
++++ programs/Xserver/GL/dri/Imakefile	Tue Aug  8 15:43:34 2000
+@@ -14,7 +14,7 @@
+      INCLUDES = -I$(SERVERSRC)/include -I$(XTOP)/include -I$(EXTINCSRC) \
+ 		-I$(XF86OSSRC) -I$(XF86COMSRC) \
+ 		-I../include -I../glx -I$(LIBSRC)/GL/include \
+-		-I$(SERVERSRC)/mi -I$(FONTINCSRC)
++		-I$(SERVERSRC)/mi -I$(FONTINCSRC) -I$(XF86OSSRC)/bus
+       DEFINES = $(GLX_DEFINES)
  
-             {
-                 char **l;
--				char **tryItFirst = NULL;
-+		char **tryItFirst = NULL;
- 
-                 for (l=list; *l ; l++) {
--					if(!mystrcasecmp(*l,moduleArg.charSetHints->charsetStdName))
--						tryItFirst = l;
--				}
-+			if(!mystrcasecmp(*l,moduleArg.charSetHints->charsetStdName)) {
-+				tryItFirst = l;
-+				break;
-+			}
-+		}
- 
--				if(tryItFirst)
--					l = tryItFirst;
--				else
--					l = list;
-+		if(tryItFirst)
-+			l = tryItFirst;
-+		else
-+			l = list;
- 			
-                 while(*l && !isFound) {
-                     /* load and call module */
---- extras/X-TrueType/xttfuncs.c.xtt	Mon May  8 16:28:29 2000
-+++ extras/X-TrueType/xttfuncs.c	Mon May  8 16:28:33 2000
-@@ -702,7 +702,7 @@ get_metrics(FreeTypeFont *ft, int c, str
- 
-         if ((entry = FontCacheGetEntry()) == NULL) {
-             charInfo = &nocharinfo;
--            fprintf(stderr, "can't get cache entry\n");
-+            fprintf(stderr, "get_metrics: can't get cache entry\n");
-             goto next;
-         }
-         FC_TT_SETVFUNC(entry);
-@@ -790,10 +790,9 @@ get_glyph(FreeTypeFont *ft, int c, int s
-             char_width.pixel = char_width.raw = 0;
-         get_metrics(ft, c, char_width);
-         /* Retry to get it created in get_metrics(). */
--        FontCacheSearchEntry(ft->cache, c, &entry);
--        if (!charInfo) {
-+        if (!FontCacheSearchEntry(ft->cache, c, &entry)) {
-             charInfo = &nocharinfo;
--            fprintf(stderr, "can't get cache entry\n");
-+            fprintf(stderr, "get_glyph: can't get cache entry\n");
-             goto next;
-         }
-     }
-
+ LinkSourceFile(xf86dri.h,$(LIBSRC)/GL/dri)

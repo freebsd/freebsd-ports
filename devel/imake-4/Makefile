@@ -6,26 +6,39 @@
 #
 
 PORTNAME= 	imake
-PORTVERSION= 	4.0
+PORTVERSION= 	4.0.1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/4.0/source/ \
-		ftp://ftp.freesoftware.com/pub/XFree86/4.0/source/ \
-		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-4.0/source/ \
-		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/4.0/source/ \
-		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/4.0/source/
-DISTFILES=	X400src-1.tgz
+MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/${PORTVERSION}/source/ \
+		ftp://ftp.freesoftware.com/pub/XFree86/${PORTVERSION}/source/ \
+		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-${PORTVERSION}/source/ \
+		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/${PORTVERSION}/source/ \
+		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/${PORTVERSION}/source/
+DISTFILES=	X401src-1.tgz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
-MANUAL_PACKAGE_BUILD=	installs/removes files also in the XFree86 port
+#MANUAL_PACKAGE_BUILD=	installs/removes files also in the XFree86 port
 
 PREFIX?=	${X11BASE}
 DIST_SUBDIR=	xc
 WRKSRC=		${WRKDIR}/xc/config
-MTREE_FILE=	/etc/mtree/BSD.x11.dist
+MTREE_FILE=	/etc/mtree/BSD.x11-4.dist
+EXTRACT_AFTER_ARGS=	| ${TAR} -xf - xc/Imakefile \
+			xc/Makefile \
+			xc/config \
+			xc/include \
+			xc/extras
 .if !defined(NO_INSTALL_MANPAGES)
-MAN1=		imake.1 lndir.1 makedepend.1 makeg.1 makestrs.1 \
-		mkdirhier.1 pswrap.1 revpath.1 xmkmf.1
+MAN1=		imake.1 \
+		lndir.1 \
+		makedepend.1 \
+		makeg.1 \
+		makestrs.1 \
+		mkdirhier.1 \
+		pswrap.1 \
+		revpath.1 \
+		rman.1 \
+		xmkmf.1
 MANCOMPRESSED=	yes
 INSTALL_TARGET=	install install.man
 .else

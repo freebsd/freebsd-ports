@@ -332,6 +332,3 @@ lib/X11/fonts/latin2/75dpi/timR12.pcf.gz
 lib/X11/fonts/latin2/75dpi/timR14.pcf.gz
 lib/X11/fonts/latin2/75dpi/timR18.pcf.gz
 lib/X11/fonts/latin2/75dpi/timR24.pcf.gz
-@dirrm lib/X11/fonts/latin2/100dpi
-@dirrm lib/X11/fonts/latin2/75dpi
-@dirrm lib/X11/fonts/latin2

@@ -1,6 +1,6 @@
---- programs/Xserver/hw/xfree86/common/Imakefile.orig	Wed Apr 19 09:49:39 2000
-+++ programs/Xserver/hw/xfree86/common/Imakefile	Wed Apr 19 09:50:25 2000
-@@ -151,6 +151,8 @@
+--- programs/Xserver/hw/xfree86/common/Imakefile.orig	Sat Jul  1 08:38:03 2000
++++ programs/Xserver/hw/xfree86/common/Imakefile	Sun Jul 16 21:39:40 2000
+@@ -158,6 +158,8 @@
  	        -I$(XF86SRC)/scanpci -I$(XF86OSSRC)/vbe -I$(XF86SRC)/int10 \
  		-I$(XF86SRC)/ddc
  

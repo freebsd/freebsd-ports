@@ -6,37 +6,35 @@
 #
 
 PORTNAME=	libraries
-PORTVERSION=	4.0
+PORTVERSION=	4.0.1
 CATEGORIES=	x11
-MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/4.0/source/ \
-		ftp://ftp.freesoftware.com/pub/XFree86/4.0/source/ \
-		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-4.0/source/ \
-		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/4.0/source/ \
-		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/4.0/source/
+MASTER_SITES=	ftp://ftp.xfree86.org/pub/XFree86/${PORTVERSION}/source/ \
+		ftp://ftp.freesoftware.com/pub/XFree86/${PORTVERSION}/source/ \
+		ftp://ftp.lip6.fr/pub/X11/XFree86/XFree86-${PORTVERSION}/source/ \
+		ftp://ftp.cs.tu-berlin.de/pub/X/XFree86/${PORTVERSION}/source/ \
+		ftp://sunsite.doc.ic.ac.uk/packages/XFree86/${PORTVERSION}/source/
 PKGNAMEPREFIX=	XFree86-
-DISTFILES=	X400src-1.tgz
+DISTFILES=	X401src-1.tgz
 
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake-4
 
-PREFIX?=	${X11BASE}
-INSTALLS_SHLIB=	yes
-MTREE_FILE=	/etc/mtree/BSD.x11.dist
-DIST_SUBDIR=	xc
-WRKSRC=		${WRKDIR}/xc
-SCRIPTS_ENV+=	PREFIX=${PREFIX} X11BASE=${X11BASE} \
-		WRKDIR=${WRKDIR} DISTDIR=${DISTDIR}
-ALL_TARGET=	FreeBSDPortsBuild
-.if defined(NO_INSTALL_MANPAGES)
-INSTALL_TARGET= FreeBSDPortsInstall installXlib
-.else
+XFREE86_VERSION=	4
+PREFIX?=		${X11BASE}
+MTREE_FILE=		/etc/mtree/BSD.x11-4.dist
+INSTALLS_SHLIB=		yes
+DIST_SUBDIR=		xc
+WRKSRC=			${WRKDIR}/xc
+SCRIPTS_ENV+=		PREFIX=${PREFIX} \
+			X11BASE=${X11BASE} \
+			WRKDIR=${WRKDIR} \
+			DISTDIR=${DISTDIR}
+ALL_TARGET=		FreeBSDPortsBuild
 INSTALL_TARGET= FreeBSDPortsInstall FreeBSDPortsInstall.man installXlib
 MANCOMPRESSED=	yes
-MAN1=		bdftopcf.1 \
-		mkfontdir.1
+MAN1=		libxrx.1
 MAN3=		Xaw.3
-.endif
 
 .if defined(XDM_DES)
 .if ${USA_RESIDENT} == YES
@@ -47,7 +45,7 @@ pre-fetch:
 MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
 		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
 		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/
-EXTRACT_ONLY=	X400src-1.tgz
+EXTRACT_ONLY=	X401src-1.tgz
 DISTFILES+=	Wraphelp.c
 IGNOREFILES=	Wraphelp.c
 .endif
