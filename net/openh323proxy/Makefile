@@ -15,6 +15,8 @@ MAINTAINER=	roger@FreeBSD.org
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/openh323:build
 
+BROKEN=         Will not work until someone writes a GetRoutingTable function
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NOCLEANDEPENDS=	yes
