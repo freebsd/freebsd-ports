@@ -20,6 +20,7 @@ DISTFILES+=	maxpak.pak:pak
 DISTFILES+=	pak0.pak:pak \
 		players.tgz:pak
 .endif
+DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	danfe@regency.nsu.ru
@@ -268,11 +269,11 @@ do-install:
 	${INSTALL_PROGRAM} ${TGTDIR}/ctf/game${ARCH}.so ${DATADIR}/ctf
 .endif
 .if defined(WITH_SHAREWARE_DATA)
-	${INSTALL_DATA} ${DISTDIR}/pak0.pak ${DATADIR}/baseq2
-	${GUNZIP_CMD} -c ${DISTDIR}/players.tgz | ${TAR} -C ${DATADIR}/baseq2 -xf -
+	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}/pak0.pak ${DATADIR}/baseq2
+	${GUNZIP_CMD} -c ${DISTDIR}/${PORTNAME}/players.tgz | ${TAR} -C ${DATADIR}/baseq2 -xf -
 .endif
 .if defined(WITH_EYECANDY)
-	${INSTALL_DATA} ${DISTDIR}/maxpak.pak ${DATADIR}/baseq2
+	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}/maxpak.pak ${DATADIR}/baseq2
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
