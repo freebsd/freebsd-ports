@@ -6,14 +6,14 @@
 
 PORTNAME=	gaim
 PORTVERSION=	0.64
-PORTREVISION=	1
+PORTREVISION=	2	
 CATEGORIES?=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-PATCH_SITES=		ftp://ftp.nuug.no/pub/anders/distfiles/
-PATCHFILES=		${DISTNAME}-msncrashes.diff
-PATCH_DIST_STRIP=	-p1
+PATCH_SITES=		http://www.chipx86.com/
+PATCHFILES=		${DISTNAME}-msncrashes-20030705-0044.diff
+PATCH_DIST_STRIP=	-p0
 
 MAINTAINER?=	marcus@FreeBSD.org
 COMMENT=	Gtk+-2.0 open-source 'clone' of AOL's Instant Messenger client
