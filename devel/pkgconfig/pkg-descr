@@ -4,9 +4,10 @@ or more libraries.
 
 pkg-config retrieves information about packages from special metadata files.
 These files are named after the package, with the extension .pc. By default,
-pkg-config looks in the directory ${PREFIX}/libata/pkgconfig for these files;
-it will also look in the list of directories specified by the PKG_CONFIG_PATH
-environment variable.
+pkg-config looks in the following directories: ${PREFIX}/libdata/pkgconfig,
+${LOCALBASE}/libdata/pkgconfig and ${X11BASE}/libdata/pkgconfig for these
+files; it will also look in the list of directories specified by the
+PKG_CONFIG_PATH environment variable.
 
 The package name specified on the pkg-config command line is defined to be the
 name of the metadata file, minus the .pc extension. If a library can install
