@@ -15,11 +15,23 @@ MAINTAINER=	hollywar@mail.holywar.net
 COMMENT=	A fast-cgi module for Apache
 
 BUILD_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE_PORT}
-RUN_DEPENDS=	${LOCALBASE}/sbin/apxs:${APACHE_PORT}
 
+.if defined(WITH_APACHE2)
+APACHE_PORT?=	${PORTSDIR}/www/apache2
+MAKEFILE=	Makefile.AP2
+USE_REINPLACE=	YES
+MAKE_ARGS=	INCLUDES=-I${PREFIX}/include/apache2
+INSTALL_TARGET=	install-modules
+PLIST_SUB=	APACHE=2
+.else
 APACHE_PORT?=	${PORTSDIR}/www/apache13
+PLIST_SUB=	APACHE=
+.endif
 
 do-patch:
+.if defined(WITH_APACHE2)
+	@${REINPLACE_CMD} -e "s|/usr/local/apache2|${PREFIX}/share/apache2|g" ${WRKSRC}/${MAKEFILE}
+.else
 	cd ${WRKSRC} ; ${MV} Makefile.tmpl Makefile ;
 
 do-build:
@@ -27,21 +39,30 @@ do-build:
 
 do-install:
 	cd ${WRKSRC} ; ${LOCALBASE}/sbin/apxs -i -a -n fastcgi mod_fastcgi.so
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/mod_fastcgi
-	@cd ${WRKSRC} ; ${CP} -R docs/* ${PREFIX}/share/doc/mod_fastcgi
 .endif
 
 post-install:
-	@${ECHO_MSG} "*******************************************************"
-	@${ECHO_MSG} "* Fast-cgi modules was include with your apache       *"
-	@${ECHO_MSG} "* configuration file                                  *"
-	@${ECHO_MSG} "*                                                     *"
-	@${ECHO_MSG} "* You need to add following line in your apache       *"
-	@${ECHO_MSG} "* configuration file. and restart it !                *"
-	@${ECHO_MSG} "*                                                     *"
-	@${ECHO_MSG} "* AddHandler fastcgi-script fcgi fcgi fpl             *"
-	@${ECHO_MSG} "*                                                     *"
-	@${ECHO_MSG} "*******************************************************"
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for file in LICENSE.TERMS mod_fastcgi.html
+	${INSTALL_DATA} ${WRKSRC}/docs/${file} ${DOCSDIR}
+.endfor
+.endif
+
+	@${ECHO_MSG} "************************************************************"
+.if !defined(WITH_APACHE2)
+	@${ECHO_MSG} "* Fast-cgi modules was included with your apache           *"
+	@${ECHO_MSG} "* configuration file                                       *"
+	@${ECHO_MSG} "*                                                          *"
+.endif
+	@${ECHO_MSG} "* You need to add following lines to your apache           *"
+	@${ECHO_MSG} "* configuration file. and restart it !                     *"
+	@${ECHO_MSG} "*                                                          *"
+.if defined(WITH_APACHE2)
+	@${ECHO_MSG} "* LoadModule fastcgi_module libexec/apache2/mod_fastcgi.so *"
+.endif
+	@${ECHO_MSG} "* AddHandler fastcgi-script fcgi fcgi fpl                  *"
+	@${ECHO_MSG} "*                                                          *"
+	@${ECHO_MSG} "************************************************************"
 
 .include <bsd.port.mk>
