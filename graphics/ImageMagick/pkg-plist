@@ -9,7 +9,6 @@ bin/mogrify
 bin/montage
 bin/xtp
 include/magick/PreRvIcccm.h
-include/magick/X.h
 include/magick/classify.h
 include/magick/compress.h
 include/magick/config.h
@@ -25,6 +24,7 @@ include/magick/quantize.h
 include/magick/utility.h
 include/magick/version.h
 include/magick/widget.h
+include/magick/xwindows.h
 lib/libMagick.a
 lib/libMagick.la
 lib/libMagick.so
