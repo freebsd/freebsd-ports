@@ -1,0 +1,34 @@
+--- Makefile	Wed May  7 16:28:12 1997
++++ /home/andy/tmp/wrk/Makefile	Wed Mar 18 23:40:31 1998
+@@ -6,6 +6,7 @@
+ HPFLAGS = -O -D_HPUX_SOURCE
+ SUNFLAGS = -O
+ LINUXFLAGS = -O
++FREEBSDFLAGS= -O -DPREFIX=\"/usr/X11R6/share/xworm\"
+ 
+ INCDIR = -I/usr/include/X11R5 -I/usr/include -I/usr/X11R6/include
+ 
+@@ -18,9 +19,10 @@
+ 	@echo " "
+ 	@echo "type:"
+ 	@echo " "
+-	@echo "  make hp     [HP/UX and similar systems]"
+-	@echo "  make sun    [Sun-Os/SUN systems]"
+-	@echo "  make linux  [linux systems]"
++	@echo "  make hp      [HP/UX and similar systems]"
++	@echo "  make sun     [Sun-Os/SUN systems]"
++	@echo "  make linux   [linux systems]"
++	@echo "  make freebsd [FreeBSD systems]"
+ 	@echo " "
+ 	@echo "xworm.font, xworm.grid and xworm.raw has to be in the same directory as xworm"
+ 	@echo "please check the Makefile if you have problems compiling the program"
+@@ -33,6 +35,9 @@
+ 
+ linux: xworm.c
+ 	$(CC) $(LINUXFLAGS) $(INCDIR) xworm.c -o xworm $(LINUXLINK)
++
++freebsd: xworm.c
++	$(CC) $(FREEBSDFLAGS) $(INCDIR) xworm.c -o xworm $(LINUXLINK)
+ 
+ clean:
+ 	rm -f core xworm
