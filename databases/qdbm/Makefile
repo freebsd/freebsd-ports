@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	qdbm
-PORTVERSION=	1.8.2
+PORTVERSION=	1.8.4
 CATEGORIES=	databases
 MASTER_SITES=	http://qdbm.sourceforge.net/ \
-		${MASTER_SITE_SOURCEFORGE}
+		${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	fuyuki@nigredo.org
@@ -28,13 +28,24 @@ MAN3=		cabin.3 curia.3 depot.3 hovel.3 odeum.3 qdbm.3 relic.3 villa.3
 MLINKS=		curia.3 cropen.3 depot.3 dpopen.3 \
 		odeum.3 odopen.3 villa.3 vlopen.3 villa.3 vista.3
 
+OPTIONS=	PTHREAD "Enable pthread support !! USE IT WITH CARE !!" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_PTHREAD)
+USE_REINPLACE=	yes
+CONFIGURE_ARGS+=	--enable-pthread
+CFLAGS+=	${PTHREAD_CFLAGS}
+
+post-patch:
+	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+.endif
+
 post-build:
 	cd ${WRKSRC}/lab; ${MAKE} CC="${CC}" CFLAGS="${CFLAGS}" fmtcnv031127
+	cd ${WRKSRC}; ${MAKE} check
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/lab/fmtcnv031127 ${PREFIX}/bin
 
-test:
-	cd ${WRKSRC}; ${MAKE} check
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
