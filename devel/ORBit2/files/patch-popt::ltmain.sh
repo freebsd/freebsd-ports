@@ -1,9 +1,19 @@
 
 $FreeBSD$
 
---- popt/ltmain.sh.orig	Wed Oct  3 10:03:41 2001
-+++ popt/ltmain.sh	Wed Oct  3 15:01:07 2001
-@@ -4175,10 +4175,12 @@
+--- popt/ltmain.sh	2001/08/27 09:51:26	1.1
++++ popt/ltmain.sh	2001/08/27 09:51:42
+@@ -2408,6 +2408,9 @@
+ 	  *-*-netbsd*)
+ 	    # Don't link with libc until the a.out ld.so is fixed.
+ 	    ;;
++	  *-*-freebsd*)
++	    # FreeBSD doesn't need this...
++	    ;;
+ 	  *)
+ 	    # Add libc to deplibs on all other systems if necessary.
+ 	    if test "$build_libtool_need_lc" = "yes"; then
+@@ -4175,10 +4178,12 @@
  	fi
  
  	# Install the pseudo-library for information purposes.

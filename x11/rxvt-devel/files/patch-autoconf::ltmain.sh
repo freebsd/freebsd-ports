@@ -1,14 +1,28 @@
---- autoconf/ltmain.sh.orig	Sat Oct  6 11:24:55 2001
-+++ autoconf/ltmain.sh	Sat Oct  6 11:29:53 2001
-@@ -4093,11 +4093,6 @@
- 	  IFS="$save_ifs"
+
+$FreeBSD$
+
+--- autoconf/ltmain.sh	2001/08/27 09:51:26	1.1
++++ autoconf/ltmain.sh	2001/08/27 09:51:42
+@@ -2408,6 +2408,9 @@
+ 	  *-*-netbsd*)
+ 	    # Don't link with libc until the a.out ld.so is fixed.
+ 	    ;;
++	  *-*-freebsd*)
++	    # FreeBSD doesn't need this...
++	    ;;
+ 	  *)
+ 	    # Add libc to deplibs on all other systems if necessary.
+ 	    if test "$build_libtool_need_lc" = "yes"; then
+@@ -4175,10 +4178,12 @@
  	fi
  
--	# Install the pseudo-library for information purposes.
--	name=`$echo "X$file" | $Xsed -e 's%^.*/%%'`
--	instname="$dir/$name"i
--	$show "$install_prog $instname $destdir/$name"
--	$run eval "$install_prog $instname $destdir/$name" || exit $?
+ 	# Install the pseudo-library for information purposes.
++	if /usr/bin/false; then
+ 	name=`$echo "X$file" | $Xsed -e 's%^.*/%%'`
+ 	instname="$dir/$name"i
+ 	$show "$install_prog $instname $destdir/$name"
+ 	$run eval "$install_prog $instname $destdir/$name" || exit $?
++	fi
  
  	# Maybe install the static library, too.
  	test -n "$old_library" && staticlibs="$staticlibs $dir/$old_library"
