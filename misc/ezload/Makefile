@@ -1,12 +1,12 @@
-# New ports collection makefile for:	oneko
-# Version required:	0.1
+# New ports collection makefile for:	ezload
+# Version required:	0.2
 # Date created:		14 august 1999
 # Whom:			n_hibma
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ezload-0.1
+DISTNAME=	ezload-0.2
 CATEGORIES=	misc
 MASTER_SITES=	http://www.etla.net/~n_hibma/usb/
 
