@@ -1,27 +1,40 @@
---- Makefile.orig	Mon Jun 25 19:38:33 2001
-+++ Makefile	Mon Jun 25 19:40:33 2001
+--- Makefile.orig	Sat Jun 23 08:05:50 2001
++++ Makefile	Wed Jun 27 01:10:23 2001
 @@ -21,4 +21,3 @@
  
 -CC=g++
 -CFLAGS=-O0 -g -DVERSION=\"$(VERSION)\"
-+CXXFLAGS+=-DVERSION=\"$(VERSION)\" -I%%LOCALBASE%%/include
++CXXFLAGS=-O0 -DVERSION=\"$(VERSION)\" -I%%LOCALBASE%%/include
  # with the following options you might be able to optimize
 @@ -33,3 +32,3 @@
  
 -LIBS=-lm -lreadline -lcurses
 +LIBS=-lm -lreadline -lcurses -L%%LOCALBASE%%/lib -lgnugetopt
  OBJS=y.tab.o lex.yy.o symtab.o value.o
-@@ -38,2 +37,6 @@
+@@ -38,4 +37,8 @@
  
 +.SUFFIXES:	.o .c
 +
 +.c.o:	;	${CXX} ${CXXFLAGS} -c $*.c
 +
  rascal:	$(OBJS)
-@@ -74,6 +77,4 @@
+-	g++ -o rascal $(CFLAGS) $(OBJS) $(LIBS)
++	g++ -o rascal $(CXXFLAGS) $(OBJS) $(LIBS)
+ test: rascal
+@@ -73,7 +76,7 @@
+ 	$(INSTALL) ./rascal.rc $(PREFIX)/bin/
++	$(INSTDIR) $(PREFIX)/share/doc/rascal
  	$(STRIP)   $(PREFIX)/bin/rascal
 -	$(INSTDIR) $(PREFIX)/doc/rascal
- 	$(INSTALL) rascal.ps $(PREFIX)/doc/rascal
- 	$(INSTALL) rascal.pdf $(PREFIX)/doc/rascal
+-	$(INSTALL) rascal.ps $(PREFIX)/doc/rascal
+-	$(INSTALL) rascal.pdf $(PREFIX)/doc/rascal
 -	-$(INSTDIR) $(PREFIX)/doc/rascal/html
++	$(INSTALL) rascal.ps $(PREFIX)/share/doc/rascal
++	$(INSTALL) rascal.pdf $(PREFIX)/share/doc/rascal
++	-$(INSTDIR) $(PREFIX)/share/doc/rascal/html
  	-$(INSTALL) rascal_html/index.html rascal_html/rascal.html rascal_html/*.gif rascal_html/*.css $(PREFIX)/doc/rascal/html
+@@ -112,3 +115,3 @@
+ value.o: value.hpp value.out value.cpp modules/*.cpp modules/*.hpp
+-	g++ $(CFLAGS) -c -o value.o value.cpp
++	g++ $(CXXFLAGS) -c -o value.o value.cpp
+ parsevalue: parsevalue.cpp
