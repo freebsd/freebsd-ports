@@ -1,6 +1,4 @@
 libexec/ninix/_kawari8.so
-share/kawari/license.txt
-share/kawari/readme.1st
 share/kawari/document/banners/kawalinks.png
 share/kawari/document/banners/kawari.png
 share/kawari/document/banners/kawaribts.png
@@ -9,12 +7,15 @@ share/kawari/document/banners/kawarisf.png
 share/kawari/document/banners/kawari_bbs.png
 share/kawari/document/banners/kawari_logo.png
 share/kawari/document/banners/kpcg_banner.png
+share/kawari/document/banners/fake-kawaribts.png
+share/kawari/document/banners/fake-kawalinks.png
 share/kawari/document/images/logo.png
 share/kawari/document/images/logo2.png
 share/kawari/document/images/ver_731.png
 share/kawari/document/images/ver_790.png
 share/kawari/document/images/ver_800.png
 share/kawari/document/images/ver_810.png
+share/kawari/document/images/ver_820.png
 share/kawari/document/index.html
 share/kawari/document/kawari.css
 share/kawari/document/kis_reference.html
@@ -33,7 +34,11 @@ share/kawari/document/tips.html
 share/kawari/document/users.html
 share/kawari/document/convert.html
 share/kawari/document/errormes.html
-share/kawari/build/build.txt
+share/kawari/document/source.html
+share/kawari/document/changelog.txt
+share/kawari/license.txt
+share/kawari/readme.1st
+share/kawari/build/BUILD.TXT
 @dirrm share/kawari/document/banners
 @dirrm share/kawari/document/images
 @dirrm share/kawari/document

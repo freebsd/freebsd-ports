@@ -1,15 +1,39 @@
---- build/src/gcc.mak.orig	Fri Mar 12 20:29:21 2004
-+++ build/src/gcc.mak	Fri Mar 12 20:38:29 2004
-@@ -6,7 +6,7 @@
+--- build/src/gcc.mak.orig	Sat Aug 28 19:16:34 2004
++++ build/src/gcc.mak	Sat Oct  2 15:26:37 2004
+@@ -6,21 +6,21 @@
  # ターゲットによって書き換え
  
  ## mach type: cygwin, mingw, linux, freebsd, darwin
--MACH_TYPE = linux
+-MACH_TYPE = mingw
 +MACH_TYPE = freebsd
  
  ## target name
  SHIORI = shiori
-@@ -42,6 +42,7 @@
+ 
+ ## if use STLport, set STLport=yes
+-STLport = yes
++# STLport = yes
+ 
+ # (STLport) specify library include directory.
+-STLP_CFLAGS = -I/MinGW/include/stlport
+-STLP_LIBS = -lstlport_mingw32_static
++# STLP_CFLAGS = -I/MinGW/include/stlport
++# STLP_LIBS = -lstlport_mingw32_static
+ ## fi
+ 
+ ## if you have 'upx'
+-UPX = upx
++# UPX = upx
+ 
+ #==========================================================================
+ # EXPERIMENTAL FEATURES
+@@ -37,11 +37,12 @@
+ ## fi
+ 
+ ## if use Python SAORI(and Python I/F), set PYTHON=yes
+-#PYTHON = yes
++PYTHON = yes
+ 
  ## (Python) and if win32
  # PYTHON_CFLAGS = -I/python22jp/include
  # PYTHON_LIBS = -L/python22jp/libs
