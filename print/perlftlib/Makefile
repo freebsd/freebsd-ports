@@ -8,7 +8,7 @@
 PORTNAME=	perlftlib
 PORTVERSION=	1.2
 CATEGORIES=	print perl5
-MASTER_SITES=	ftp://ftp.big.or.jp/pub/usr2/jam/ft/ \
+MASTER_SITES=	http://www.io.com/~kazushi/xtt/ \
 		${MASTER_SITE_PORTS_JP} \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	sada
