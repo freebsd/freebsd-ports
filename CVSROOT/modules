@@ -7843,6 +7843,7 @@ tee		src/usr.bin/tee
 teg		ports/games/teg
 tei-guidelines-p3	ports/textproc/tei-guidelines-p3
 tei-guidelines-p4	ports/textproc/tei-guidelines-p4
+tei-xlite	ports/textproc/tei-xlite
 teknap		ports/audio/teknap
 telnet		src/usr.bin/telnet
 telnetd		src/libexec/telnetd
