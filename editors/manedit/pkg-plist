@@ -2,7 +2,7 @@ bin/manedit
 bin/manview
 bin/manwrap
 %%DATADIR%%/help/manpage_writing_procedures
-%%DATADIR%%/help/manpage_xml_referance
+%%DATADIR%%/help/manpage_xml_reference
 %%DATADIR%%/icons/manedit.xpm
 %%DATADIR%%/templates/api.mpt
 %%DATADIR%%/templates/config.mpt
