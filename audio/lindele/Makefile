@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		lindele
-PORTVERSION=		0.1.0
-PORTREVISION=		3
+PORTVERSION=		0.1.1
 CATEGORIES=		audio
 MASTER_SITES=		http://download.gna.org/${PORTNAME}/
 
@@ -19,15 +18,17 @@ LIB_DEPENDS=		vorbis:${PORTSDIR}/audio/libvorbis \
 			tag:${PORTSDIR}/audio/taglib
 
 USE_X_PREFIX=		yes
+USE_REINPLACE=		yes
 USE_GNOME=		gnomehack gnomeprefix libgnomeui gstreamerplugins
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e 's|musicbox|musicbox-tag-editor|g' \
+		${WRKSRC}/src/gui.c \
+		${WRKSRC}/src/lindele.c
+	@${REINPLACE_CMD} -e 's|@prefix@/share|@datadir@|' \
+		${WRKSRC}/data/lindele.glade.in
 
-.if ${OSVERSION} >= 502126
-BROKEN=			"Does not compile on FreeBSD >= 5.x"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
