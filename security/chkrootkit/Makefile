@@ -23,10 +23,6 @@ BINMODE=	0700
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500000
-IGNORE=		"Reports false positives on 5.x"
-.endif
-
 pre-patch:
 	${REINPLACE_CMD} -e "s/^CC/#CC/; s/^CFLAGS/#CFLAGS/" ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e \
