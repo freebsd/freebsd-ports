@@ -1,12 +1,12 @@
-*** Makefile.orig	Thu Feb 23 17:17:55 1995
---- Makefile	Thu Feb 23 23:51:54 1995
+*** Makefile.orig	Fri Feb 24 16:41:26 1995
+--- Makefile	Sat Feb 25 18:30:04 1995
 ***************
 *** 11,22 ****
   #  hpalib, hplow, hp3, dec, solaris, sparc, linux, freebsd, sgi, 
   #  soundblaster, aix, next.
   # gmake needed to handle this file in FreeBSD and NeXTStep
 ! MACHINE = sparc
-  VERSION = 4.16
+  VERSION = 4.18
   
   # The name of your C compiler. For most machines this will be
   # either 'cc' or 'gcc'.
@@ -19,7 +19,7 @@
   #  soundblaster, aix, next.
   # gmake needed to handle this file in FreeBSD and NeXTStep
 ! MACHINE = freebsd
-  VERSION = 4.16
+  VERSION = 4.18
   
   # The name of your C compiler. For most machines this will be
   # either 'cc' or 'gcc'.
@@ -65,3 +65,22 @@
   ###############################################################################
   #
   # C compiler flags and libraries for each machine.
+*** Arch/common.c.ORIG	Fri Feb 24 00:53:30 1995
+--- Arch/common.c	Sat Feb 25 18:30:53 1995
+***************
+*** 166,172 ****
+  LOCAL int dsize;			/* current data size */
+  LOCAL int samples_max;	/* number of samples in buffer */
+  
+! LOCAL int sync;
+  #endif
+  
+  #ifdef SEPARATE_BUFFERS
+--- 166,172 ----
+  LOCAL int dsize;			/* current data size */
+  LOCAL int samples_max;	/* number of samples in buffer */
+  
+! /* LOCAL int sync; */
+  #endif
+  
+  #ifdef SEPARATE_BUFFERS
