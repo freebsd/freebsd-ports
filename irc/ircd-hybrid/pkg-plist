@@ -3,35 +3,35 @@ bin/mkpasswd
 bin/viconf
 bin/viklines
 bin/vimotd
-%%PORTDOCS%%share/doc/%%PORTNAME%%/old/US-Admin/Networking
-%%PORTDOCS%%share/doc/%%PORTNAME%%/old/US-Admin/Operators
-%%PORTDOCS%%share/doc/%%PORTNAME%%/old/US-Admin/README
-%%PORTDOCS%%share/doc/%%PORTNAME%%/old/Authors
-%%PORTDOCS%%share/doc/%%PORTNAME%%/old/Etiquette
-%%PORTDOCS%%share/doc/%%PORTNAME%%/old/README
-%%PORTDOCS%%share/doc/%%PORTNAME%%/CIDR.txt
-%%PORTDOCS%%share/doc/%%PORTNAME%%/INDEX
-%%PORTDOCS%%share/doc/%%PORTNAME%%/Makefile
-%%PORTDOCS%%share/doc/%%PORTNAME%%/README.TSora
-%%PORTDOCS%%share/doc/%%PORTNAME%%/Tao-of-IRC.940110
-%%PORTDOCS%%share/doc/%%PORTNAME%%/blalloc.txt
-%%PORTDOCS%%share/doc/%%PORTNAME%%/example.conf
-%%PORTDOCS%%share/doc/%%PORTNAME%%/example.conf.trillian
-%%PORTDOCS%%share/doc/%%PORTNAME%%/ircd.8
-%%PORTDOCS%%share/doc/%%PORTNAME%%/mtrie.txt
-%%PORTDOCS%%share/doc/%%PORTNAME%%/operguide.txt
-%%PORTDOCS%%share/doc/%%PORTNAME%%/opermyth.txt
-%%PORTDOCS%%share/doc/%%PORTNAME%%/rfc1459.txt
-%%PORTDOCS%%share/doc/%%PORTNAME%%/server-version-info
-%%PORTDOCS%%share/doc/%%PORTNAME%%/simple.conf
-%%PORTDOCS%%share/doc/%%PORTNAME%%/ts5.txt
-%%PORTDOCS%%share/doc/%%PORTNAME%%/yline.txt
-%%PORTDOCS%%@dirrm share/doc/%%PORTNAME%%/old/US-Admin
-%%PORTDOCS%%@dirrm share/doc/%%PORTNAME%%/old
-%%PORTDOCS%%@dirrm share/doc/%%PORTNAME%%
 etc/ircd/ircd.conf.sample
 etc/ircd/ircd.motd.sample
 etc/ircd/kline.conf.sample
 etc/ircd/opers.txt.sample
 etc/rc.d/ircd.sh
 @unexec rmdir %D/etc/ircd 2>/dev/null || true
+%%PORTDOCS%%share/doc/ircd-hybrid/CIDR.txt
+%%PORTDOCS%%share/doc/ircd-hybrid/INDEX
+%%PORTDOCS%%share/doc/ircd-hybrid/Makefile
+%%PORTDOCS%%share/doc/ircd-hybrid/README.TSora
+%%PORTDOCS%%share/doc/ircd-hybrid/Tao-of-IRC.940110
+%%PORTDOCS%%share/doc/ircd-hybrid/blalloc.txt
+%%PORTDOCS%%share/doc/ircd-hybrid/example.conf
+%%PORTDOCS%%share/doc/ircd-hybrid/example.conf.trillian
+%%PORTDOCS%%share/doc/ircd-hybrid/ircd.8
+%%PORTDOCS%%share/doc/ircd-hybrid/mtrie.txt
+%%PORTDOCS%%share/doc/ircd-hybrid/old/Authors
+%%PORTDOCS%%share/doc/ircd-hybrid/old/Etiquette
+%%PORTDOCS%%share/doc/ircd-hybrid/old/README
+%%PORTDOCS%%share/doc/ircd-hybrid/old/US-Admin/Networking
+%%PORTDOCS%%share/doc/ircd-hybrid/old/US-Admin/Operators
+%%PORTDOCS%%share/doc/ircd-hybrid/old/US-Admin/README
+%%PORTDOCS%%share/doc/ircd-hybrid/operguide.txt
+%%PORTDOCS%%share/doc/ircd-hybrid/opermyth.txt
+%%PORTDOCS%%share/doc/ircd-hybrid/rfc1459.txt
+%%PORTDOCS%%share/doc/ircd-hybrid/server-version-info
+%%PORTDOCS%%share/doc/ircd-hybrid/simple.conf
+%%PORTDOCS%%share/doc/ircd-hybrid/ts5.txt
+%%PORTDOCS%%share/doc/ircd-hybrid/yline.txt
+%%PORTDOCS%%@dirrm share/doc/ircd-hybrid/old/US-Admin
+%%PORTDOCS%%@dirrm share/doc/ircd-hybrid/old
+%%PORTDOCS%%@dirrm share/doc/ircd-hybrid

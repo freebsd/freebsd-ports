@@ -1,6 +1,6 @@
---- ircd-hybrid-6.2/include/config.h.in.orig	Wed Sep 26 04:04:02 2001
-+++ ircd-hybrid-6.2/include/config.h.in	Mon Oct  8 02:31:28 2001
-@@ -109,8 +109,9 @@
+--- include/config.h.in.orig	Thu Mar 21 16:37:57 2002
++++ include/config.h.in	Thu Mar 21 16:41:01 2002
+@@ -100,8 +100,9 @@
   *
   */
  
@@ -12,14 +12,14 @@
  #define CPATH   "ircd.conf"
  #define KPATH   "kline.conf"
  #define DLPATH  "kline.conf"
-@@ -561,8 +562,8 @@
-  * define IRC_UID to that UID.  This should only be defined if you are running
-  * as root and even then perhaps not.
+@@ -208,8 +209,8 @@
+  *
+  * These need to be defined if you want to use SYSLOG logging, too.
   */
--#define IRC_UID 1001
--#define IRC_GID 31
-+#define IRC_UID 72
-+#define IRC_GID 72
+-#define FNAME_USERLOG "/usr/local/ircd/users"
+-#define FNAME_OPERLOG "/usr/local/ircd/opers"
++#define FNAME_USERLOG "@prefix@/share/ircd/users"
++#define FNAME_OPERLOG "@prefix@/share/ircd/opers"
  
- /* CLIENT_FLOOD - client excess flood threshold
-  * this controls the number of bytes the server will allow a client to
+ /* RFC1035_ANAL
+  * Defining this causes ircd to reject hostnames with non-compliant chars.
