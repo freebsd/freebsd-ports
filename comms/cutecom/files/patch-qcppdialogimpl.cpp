@@ -1,6 +1,6 @@
---- qcppdialogimpl.cpp.orig	Thu Jul 29 22:24:43 2004
-+++ qcppdialogimpl.cpp	Fri Jul 30 10:22:04 2004
-@@ -167,11 +167,19 @@
+--- qcppdialogimpl.cpp.orig	Wed Oct 13 23:28:30 2004
++++ qcppdialogimpl.cpp	Fri Oct 15 19:04:08 2004
+@@ -190,11 +190,19 @@
     bool entryFound=false;
     QStringList devices=settings.readListEntry("/cutecom/AllDevices", &entryFound);
     if (!entryFound)
@@ -19,8 +19,26 @@
 +#endif
  
     QStringList history=settings.readListEntry("/cutecom/History");
-    m_oldCmdsLb->insertStringList(history);
-@@ -659,15 +667,21 @@
+ 
+@@ -295,7 +303,7 @@
+       m_sz->addArgument("sh");
+       m_sz->addArgument("-c");
+ //      QString tmp=QString("sx -vv \"")+filename+"\" < "+m_deviceCb->currentText()+" > "+m_deviceCb->currentText();
+-      QString tmp=QString("sz ");
++      QString tmp=QString("lsz ");
+       if (m_protoPb->currentText()=="XModem")
+          tmp+="--xmodem ";
+       else if (m_protoPb->currentText()=="YModem")
+@@ -414,7 +422,7 @@
+ 
+ void QCPPDialogImpl::sendDone()
+ {
+-   cerr<<"sx exited"<<endl;
++   cerr<<"lsx exited"<<endl;
+ }
+ 
+ bool QCPPDialogImpl::eventFilter(QObject* watched, QEvent *e)
+@@ -773,15 +781,21 @@
     case 230400:
        _baud=B230400;
        break;
