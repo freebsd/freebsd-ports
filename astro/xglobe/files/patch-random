@@ -1,0 +1,47 @@
+--- earthapp.cpp.orig	Sat Feb 24 10:13:10 2001
++++ earthapp.cpp	Sat Feb 24 10:13:29 2001
+@@ -937,8 +937,8 @@
+ 
+ void EarthApplication::randomPosition()
+ {
+-  view_lat = ((rand()%30001)/30000.)*180. - 90.;
+-  view_long = ((rand()%30001)/30000.)*360. - 180.;
++  view_lat = ((random()%30001)/30000.)*180. - 90.;
++  view_long = ((random()%30001)/30000.)*360. - 180.;
+ }
+ 
+ /* ------------------------------------------------------------------------*/
+--- renderer.cpp.orig	Sat Feb 24 10:12:53 2001
++++ renderer.cpp	Sat Feb 24 10:13:04 2001
+@@ -1562,9 +1562,9 @@
+   
+   for(int i=0; i<numstars; i++)
+   {
+-    x = rand() % renderedImage->width();
+-    y = rand() % renderedImage->height();
+-    brightness = 150+ (rand() % 106);
++    x = random() % renderedImage->width();
++    y = random() % renderedImage->height();
++    brightness = 150+ (random() % 106);
+     p = (unsigned int *)renderedImage->scanLine(y);
+     p += x;
+     *p = qRgb(brightness, brightness, brightness);
+--- main.cpp.orig	Tue Jul 13 10:32:55 1999
++++ main.cpp	Sat Feb 24 10:14:56 2001
+@@ -24,6 +24,7 @@
+  */
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <string.h>
+ #include <qstring.h>
+ #include "config.h"
+@@ -36,6 +37,8 @@
+ int main(int argc, char **argv)
+ {
+   EarthApplication myApp(argc, argv);
++
++  srandomdev();
+ 
+ #ifdef WITH_QIMAGEIO
+   qInitImageIO();
