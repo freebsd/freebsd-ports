@@ -1,14 +1,18 @@
---- src/style.c.orig	Tue Sep 19 09:41:02 2000
-+++ src/style.c	Mon Oct 30 23:11:36 2000
-@@ -70,9 +70,9 @@
+--- src/style.c.orig	Fri Dec 14 13:16:08 2001
++++ src/style.c	Fri Dec 14 13:18:30 2001
+@@ -79,13 +79,13 @@
  		}
  
  		/* Worst case scenario */
 -		font->gdk_font = gnome_display_font_get_gdk_font (font->dfont);
 +		font->gdk_font = gdk_fontset_load ("-*-medium-r-normal-*-14-*-iso8859-1,-*-medium-r-normal--14-*-*-*-*-*-big5-0");
  		if (font->gdk_font == NULL)
--			font->gdk_font = gdk_font_load ("fixed");
-+			font->gdk_font = gdk_fontset_load ("-*-medium-r-normal-*-14-*-iso8859-1,-*-medium-r-normal--14-*-*-*-*-*-big5-0");
+ 			/* xgettext:
+ 			 * The name of the default font for this locale.
+ 			 * Preferably something with the correct encoding.
+ 			 */
+-			font->gdk_font = gdk_fontset_load (_("fixed"));
++			font->gdk_font = gdk_font_load (_("fixed"));
  		else
  			gdk_font_ref (font->gdk_font);
  
