@@ -266,6 +266,7 @@
     SUBDIR += libformat
     SUBDIR += libg++
     SUBDIR += libgetline
+    SUBDIR += libghthash
     SUBDIR += libgii
     SUBDIR += libglade
     SUBDIR += libglade2
