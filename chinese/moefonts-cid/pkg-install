@@ -1,6 +1,6 @@
 #!/bin/sh
 
-GSVER=`cd ${PORTSDIR}/print/ghostscript-gnu && make -V GS_VERSION`
+GSVER=`gs --version`
 GSDIR=${PREFIX}/share/ghostscript
 FONTMAP=${GSDIR}/${GSVER}/lib/Fontmap.GS
 
