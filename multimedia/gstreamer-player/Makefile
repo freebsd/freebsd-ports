@@ -78,4 +78,10 @@ PLIST_SUB+=	GST_PLAYER_VIEW=""
 PLIST_SUB+=	GST_PLAYER_VIEW="@comment "
 .endif
 
+pre-everything::
+.ifndef (WITH_MOZILLA_PLUGIN)
+	@${ECHO_MSG} "===>"
+	@${ECHO_MSG} "===> Define WITH_MOZILLA_PLUGIN to compile the Mozilla plugin."
+.endif
+
 .include <bsd.port.post.mk>
