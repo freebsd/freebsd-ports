@@ -3099,6 +3099,7 @@ ja-xshodo	ports/japanese/xshodo
 ja-xshodou	ports/japanese/xshodou
 ja-xv		ports/japanese/xv
 ja-xvi-euc	ports/japanese/xvi-euc
+ja-xvi-sjis	ports/japanese/xvi-sjis
 ja-xyagamo	ports/japanese/xyagamo
 ja-xyaku	ports/japanese/xyaku
 ja-yc.el	ports/japanese/yc.el
