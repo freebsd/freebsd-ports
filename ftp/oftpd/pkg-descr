@@ -1,0 +1,9 @@
+oftpd is designed to be as secure as an anonymous FTP server can possibly be.
+It runs as non-root for most of the time, and uses the Unix chroot() command to
+hide most of the systems directories from external users - they cannot change
+into them even if the server is totally compromised! It contains its own
+directory change code, so that it can run efficiently as a threaded server, and
+its own directory listing code (most FTP servers execute the system "ls"
+command to list files).
+
+WWW: http://www.time-travellers.org/oftpd/

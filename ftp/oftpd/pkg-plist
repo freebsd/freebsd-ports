@@ -1,0 +1,8 @@
+libexec/oftpd
+share/doc/oftpd/README
+share/doc/oftpd/AUTHORS
+share/doc/oftpd/ChangeLog
+share/doc/oftpd/NEWS
+share/doc/oftpd/TODO
+share/doc/oftpd/BUGS
+@dirrm share/doc/oftpd

@@ -1,0 +1,56 @@
+--- configure.old	Sat Mar 31 12:13:17 2001
++++ configure	Sat Mar 31 12:14:16 2001
+@@ -1121,14 +1121,14 @@
+ fi
+ 
+ 
+-echo $ac_n "checking for main in -lpthread""... $ac_c" 1>&6
+-echo "configure:1126: checking for main in -lpthread" >&5
++echo $ac_n "checking for main with -pthread""... $ac_c" 1>&6
++echo "configure:1126: checking for main with -pthread" >&5
+ ac_lib_var=`echo pthread'_'main | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 1134 "configure"
+ #include "confdefs.h"
+@@ -1158,7 +1158,7 @@
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
+@@ -2311,14 +2311,14 @@
+ fi
+ done
+ 
+-echo $ac_n "checking for pthread_create in -lpthread""... $ac_c" 1>&6
+-echo "configure:2316: checking for pthread_create in -lpthread" >&5
++echo $ac_n "checking for pthread_create with -pthread""... $ac_c" 1>&6
++echo "configure:2316: checking for pthread_create with -pthread" >&5
+ ac_lib_var=`echo pthread'_'pthread_create | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lpthread  $LIBS"
++LIBS="$LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2324 "configure"
+ #include "confdefs.h"
+@@ -2352,7 +2352,7 @@
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="$LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
