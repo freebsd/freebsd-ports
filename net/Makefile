@@ -62,8 +62,6 @@
     SUBDIR += coda5_server
     SUBDIR += coda6_client
     SUBDIR += coda6_server
-    SUBDIR += coda_doc
-    SUBDIR += coda_intro
     SUBDIR += corkscrew
     SUBDIR += cphone
     SUBDIR += crescendo
