@@ -46,6 +46,7 @@ reportmagic/lang/sv/cdata.ini
 reportmagic/lang/sv/lang.ini
 reportmagic/lang/sv/rdata.ini
 reportmagic/lang/sv/rmagic.ini
+reportmagic/lang/zh/cdata.ini
 reportmagic/lang/zh/lang.ini
 reportmagic/lang/zh/rdata.ini
 reportmagic/rmagic.pl
@@ -75,9 +76,9 @@ share/doc/reportmagic/filefmts.html
 share/doc/reportmagic/images/logo.gif
 share/doc/reportmagic/images/title.gif
 share/doc/reportmagic/index.html
+share/doc/reportmagic/inst_mac.html
 share/doc/reportmagic/inst_src.html
-share/doc/reportmagic/inst_xm.html
-share/doc/reportmagic/inst_xw.html
+share/doc/reportmagic/inst_win.html
 share/doc/reportmagic/license.html
 share/doc/reportmagic/map.html
 share/doc/reportmagic/overview.html
