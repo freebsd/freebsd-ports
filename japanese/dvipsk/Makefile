@@ -17,8 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} dvipsk-jpatch-p1.4c.tar.gz
 
 MAINTAINER=	watanabe@zlab.phys.nagoya-u.ac.jp
 
-RUN_DEPENDS=	ptex-common:${PORTSDIR}/japanese/ptex-common \
-		${LOCALBASE}/share/fonts/vf-a2bk:${PORTSDIR}/japanese/vftool
+RUN_DEPENDS=	ptex-common:${PORTSDIR}/japanese/ptex-common
 
 MANUAL_PACKAGE_BUILD=	incompatible with other versions of dvipsk-*
 
@@ -27,7 +26,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_path_install="${INSTALL} -c -o ${BINOWN} -g ${BINGRP}"
 SCRIPTS_ENV=	MV=${MV} SED=${SED}
 MAN1=		dvips.1 afm2tfm.1
-IS_INTERACTIVE=	yes
 
 TEXMF=		${PREFIX}/share/texmf
 DVIPSDIR=	${TEXMF}/dvips
@@ -83,12 +81,6 @@ post-install:
 	done
 	@${LN} -fs ${DVIPSDIR}/contrib ${PREFIX}/share/doc/dvips/contrib
 .endif
-.if defined(BATCH)
-	@${SETENV} PKG_PREFIX=${PREFIX} BATCH=yes \
-	  ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
-.else
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-	  ${SH} ${PKGDIR}/INSTALL ${PKGNAME} POST-INSTALL
-.endif
+	@${CAT} ${PKGDIR}/MESSAGE
 
 .include <bsd.port.mk>
