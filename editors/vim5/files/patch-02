@@ -1,11 +1,20 @@
---- configure.orig	Tue Jan 20 12:15:36 1998
-+++ configure	Tue Jan 27 02:39:35 1998
-@@ -2273,7 +2273,7 @@
+--- configure.orig	Thu Aug 13 12:59:48 1998
++++ configure	Mon Aug 17 12:12:16 1998
+@@ -1253,7 +1253,7 @@
+ if test "$enable_tclinterp" = "yes"; then
+ 	
+ 	# Extract the first word of "tclsh", so it can be a program name with args.
+-set dummy tclsh; ac_word=$2
++set dummy tclsh8.0; ac_word=$2
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+ echo "configure:1259: checking for $ac_word" >&5
+ if eval "test \"`echo '$''{'ac_cv_path_vi_cv_path_tcl'+set}'`\" = set"; then
+@@ -2495,7 +2495,7 @@
    gui_libs="`echo $x_libraries|sed 's%/^/^/*$%%'` `echo "$GUI_INC_LOC" | sed s/include/lib/` /local/Motif*/lib /local/lib/Motif* /usr/local/Motif*/lib /usr/local/lib/Motif* /usr/Motif*/lib /usr/lib/Motif* /usr/local/lib /usr/local/X11*/lib /usr/lib /usr/X11*/lib /usr/lib/X11* /usr/dt/lib $MOTIFHOME/lib $GUI_LIB_LOC"
    GUI_LIB_LOC=
    for try in $gui_libs; do
--    if test -f "$try/libXm.a" -o -f "$try/libXm.so" -o -f "$try/libXm.sl"; then
-+    if test -f "$try/libXm.a" -o -f "$try/libXm.so" -o -f "$try/libXm.so.0" -o -f "$try/libXm.so.0.1" -o -f "$try/libXm.sl"; then
-       GUI_LIB_LOC=$try
-     fi
-   done
+-    for libtry in "$try"/libXm.a "$try"/libXm.so* "$try"/libXm.sl; do
++    for libtry in "$try"/libXm.a "$try"/libXm.so* "$try"/libXm.so.0 "$try"/libXm.so.0.1 "$try"/libXm.sl; do
+       if test -f "$libtry"; then
+         GUI_LIB_LOC=$try
+       fi
