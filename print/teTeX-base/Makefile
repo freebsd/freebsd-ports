@@ -65,6 +65,7 @@ pre-install:
 	@cd ${TEXMF_TREE}; tar xfz ${_DISTDIR}/${TETEX_TEXMF}
 
 post-install:
+	@${INSTALL_SCRIPT} ${WRKSRC}/texinfo/util/texi2dvi ${PREFIX}/bin
 	@${SED} -e "s|^TEXMFMAIN = .*|TEXMFMAIN = ${TEXMF_TREE}|g" \
 		< ${WRKSRC}/texk/kpathsea/texmf.cnf \
 		> ${TEXMF_TREE}/web2c/texmf.cnf
