@@ -587,6 +587,7 @@
     SUBDIR += p5-Algorithm-Permute
     SUBDIR += p5-Algorithm-SVM
     SUBDIR += p5-Alias
+    SUBDIR += p5-Alzabo
     SUBDIR += p5-App-Info
     SUBDIR += p5-AppConfig
     SUBDIR += p5-AppConfig-Std
