@@ -1,0 +1,3 @@
+bin/sentry
+etc/sentry.conf
+etc/sentry.ignore

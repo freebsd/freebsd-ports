@@ -1,0 +1,17 @@
+--- sentry.conf.orig	Sat Dec 19 11:06:01 1998
++++ sentry.conf	Sat Dec 19 11:06:22 1998
+@@ -80,11 +80,11 @@
+ ######################
+ #
+ # Hosts to ignore
+-IGNORE_FILE="/usr/local/abacus/sentry.ignore"
++IGNORE_FILE="/usr/local/etc/sentry.ignore"
+ # Hosts that have been denied (running history)
+-HISTORY_FILE="/usr/local/abacus/sentry.history"
++HISTORY_FILE="/usr/local/etc/sentry.history"
+ # Hosts that have been denied this session only (temporary until next restart)
+-BLOCKED_FILE="/usr/local/abacus/sentry.blocked"
++BLOCKED_FILE="/usr/local/etc/sentry.blocked"
+ 
+ ###################
+ # Response Options#
