@@ -1,10 +1,10 @@
---- CONFIG.old	Wed May 21 11:39:38 1997
-+++ CONFIG	Fri Feb  1 04:43:42 2002
+--- CONFIG.orig	Wed Oct  8 09:16:47 2003
++++ CONFIG	Wed Oct  8 09:18:54 2003
 @@ -14,17 +14,17 @@
  #  The absolute path to the perl interpreter to use.
  #  INSTALL will substitute this into the #!... line.
  # 
--if (! defined($PERL5)) { $PERL5 = "/usr/local/bin/perl5"; }   # cfg
+-if (! defined($PERL5)) { $PERL5 = "/usr/bin/perl"; }   # cfg
 +if (! defined($PERL5)) { $PERL5 = "$ENV{'PERL5'}"; }   # cfg
  
  #  Where to install the cvslines scripts...
@@ -21,12 +21,12 @@
  
  ######################################################################
  #
-@@ -52,7 +52,7 @@
- 
- #  Where the RCS to use with cvslines is kept.
+@@ -40,7 +40,7 @@
+ #  This is used so that debug versions can know they are and alter
+ #  logging behavior, etc.
  #
--\$RCSBIN = "$BINDIR";                # cfg
-+\$RCSBIN = "/usr/bin/";                # cfg
+-\$RELDIR = "$BINDIR";                # cfg
++\$RELDIR = "/usr/bin";                # cfg
  
- 1;
- 
+ #  Where the cvslines log file is written.
+ #
