@@ -1,7 +1,10 @@
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Class/Date.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Class/Date.pod
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Class/Date/Const.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/Date/.packlist
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/Date/Date.bs
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/Date/Date.so
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class/Date
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Class 2>&1 || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Class/Date
 @unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Class 2>&1 || true
