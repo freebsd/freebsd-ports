@@ -1,3 +1,5 @@
+A route-finder for cyclists in Berlin and Brandenburg (only german).
+
 Mit BBBike koennen Fahrrad-Routen in Berlin und Umgebung automatisch
 oder manuell erstellt werden.
 
@@ -17,3 +19,7 @@ BBBike liefert unter anderem die Antwort auf folgende Fragen:
 * Wo habe ich Gegenwind- und Rueckenwindstrecken?
 
 * Wo gibt es Steigungen und Gefaelle?
+
+---
+There is a  also a CGI script version
+http://user.cs.tu-berlin.de/~eserte/bbbike/cgi/bbbike.cgi
