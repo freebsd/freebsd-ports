@@ -8,6 +8,7 @@
 
 PORTNAME=	pyne
 PORTVERSION=	0.6.9
+PORTREVISION=	1
 CATEGORIES=	news python mail
 MASTER_SITES=	http://www.soul-less.pwp.blueyonder.co.uk/pyne/
 
@@ -19,6 +20,12 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/GTK.py:${PORTSDIR}/x11-toolkits/py-g
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-1.2/GTK.py:${PORTSDIR}/x11-toolkits/py-gtk \
 		${PYTHON_SITELIBDIR}/gtkextra/__init__.py:${PORTSDIR}/x11-toolkits/py-gtkextra
 
+# ugly hack imported from openoffice.
+.if !defined(DISPLAY)
+BUILD_DEPENDS+=	Xvfb:${PORTSDIR}/x11-servers/XFree86-4-VirtualFramebufferServer
+DISPLAYHACK=localhost:1001
+.endif
+
 USE_REINPLACE=	yes
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
@@ -27,5 +34,25 @@ MAKE_ENV=	PYTHON_SITELIBDIR="${PYTHON_SITELIBDIR}"
 
 post-patch:
 	@${REINPLACE_CMD} -e "s@[(]PREFIX[)]\/lib@(PYTHON_SITELIBDIR)@g" ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e "s@pybins=\(.*\)@pybins=\${PYTHON_VERSION}@" ${WRKSRC}/configure
+
+pre-install:
+.if !defined(DISPLAY)
+.if exists(${WRKDIR}/.Xvfb.pid)
+	@-${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
+	@${RM} -f ${WRKDIR}/.Xvfb.pid
+.endif
+
+	${X11BASE}/bin/Xvfb :1001 -screen 0 800x600x24 > /dev/null 2>&1 & ${ECHO} $$! > \
+		${WRKDIR}/.Xvfb.pid
+	@${REINPLACE_CMD} -e "s@--compile@--compile --display ${DISPLAYHACK}@" \
+		${WRKSRC}/Makefile
+.endif
+
+post-install:
+.if !defined(DISPLAY)
+	@${CAT} ${WRKDIR}/.Xvfb.pid | ${XARGS} kill
+	@${RM} ${WRKDIR}/.Xvfb.pid
+.endif
 
 .include <bsd.port.mk>
