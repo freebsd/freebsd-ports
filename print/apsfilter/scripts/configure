@@ -66,10 +66,10 @@ while [ "$1" ]; do
 		echo "PAPERSIZE=letterdj"
 		;;
 	\"GS\")
-		echo RUN_DEPENDS+=gs:${PORTSDIR}/print/ghostscript6
+		echo RUN_DEPENDS+=gs:${PORTSDIR}/print/ghostscript-gnu
 		;;
 	\"GS_NO_X11\")
-		echo RUN_DEPENDS+=gs:${PORTSDIR}/print/ghostscript6-nox11
+		echo RUN_DEPENDS+=gs:${PORTSDIR}/print/ghostscript-gnu-nox11
 		;;
 	\"GS_PDF_CRYPT\")
 		echo PDFENCRYPT=YES
