@@ -116,6 +116,8 @@ lib/%%PYTHON_VERSION%%/TERMIOS.pyo
 %%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/bgen/bgen/bgenlocations.py
 %%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/bgen/bgen/macsupport.py
 %%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/bgen/bgen/scantools.py
+%%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/compiler/ast.txt
+%%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/compiler/astgen.py
 %%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/compiler/compile.py
 %%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/compiler/compiler/__init__.py
 %%PORTDOCS%%lib/%%PYTHON_VERSION%%/Tools/compiler/compiler/ast.py
@@ -1350,6 +1352,7 @@ lib/%%PYTHON_VERSION%%/test/output/test_poll
 lib/%%PYTHON_VERSION%%/test/output/test_popen2
 lib/%%PYTHON_VERSION%%/test/output/test_posixpath
 lib/%%PYTHON_VERSION%%/test/output/test_pow
+lib/%%PYTHON_VERSION%%/test/output/test_profile
 lib/%%PYTHON_VERSION%%/test/output/test_pty
 lib/%%PYTHON_VERSION%%/test/output/test_pwd
 lib/%%PYTHON_VERSION%%/test/output/test_pyexpat
@@ -1714,6 +1717,9 @@ lib/%%PYTHON_VERSION%%/test/test_posixpath.pyo
 lib/%%PYTHON_VERSION%%/test/test_pow.py
 lib/%%PYTHON_VERSION%%/test/test_pow.pyc
 lib/%%PYTHON_VERSION%%/test/test_pow.pyo
+lib/%%PYTHON_VERSION%%/test/test_profile.py
+lib/%%PYTHON_VERSION%%/test/test_profile.pyc
+lib/%%PYTHON_VERSION%%/test/test_profile.pyo
 lib/%%PYTHON_VERSION%%/test/test_pty.py
 lib/%%PYTHON_VERSION%%/test/test_pty.pyc
 lib/%%PYTHON_VERSION%%/test/test_pty.pyo
@@ -1873,6 +1879,9 @@ lib/%%PYTHON_VERSION%%/test/testrgb.uue
 lib/%%PYTHON_VERSION%%/test/tokenize_tests.py
 lib/%%PYTHON_VERSION%%/test/tokenize_tests.pyc
 lib/%%PYTHON_VERSION%%/test/tokenize_tests.pyo
+lib/%%PYTHON_VERSION%%/this.py
+lib/%%PYTHON_VERSION%%/this.pyc
+lib/%%PYTHON_VERSION%%/this.pyo
 lib/%%PYTHON_VERSION%%/threading.py
 lib/%%PYTHON_VERSION%%/threading.pyc
 lib/%%PYTHON_VERSION%%/threading.pyo

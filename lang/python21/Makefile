@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	python
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	lang python
 MASTER_SITES=	http://www.python.org/ftp/python/${PORTVERSION}/ \
 		http://SunSITE.Informatik.RWTH-Aachen.DE/python/ftp/python/${PORTVERSION}/
