@@ -79,6 +79,7 @@ share/locale/zh_CN/LC_MESSAGES/file-roller.mo
 @dirrm share/gnome/help/file-roller
 @dirrm share/gnome/file-roller/glade
 @dirrm share/gnome/file-roller
+%%PORTDOCS%%@dirrm share/doc/fileroller
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/ui
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/listing
 @dirrm etc/gconf/gconf.xml.defaults/schemas/apps/file-roller/general
