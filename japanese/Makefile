@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.84 1997/10/04 17:28:13 max Exp $
+# $Id: Makefile,v 1.85 1997/10/04 17:30:18 max Exp $
 #
 
     SUBDIR += Canna
@@ -74,7 +74,10 @@
     SUBDIR += pine
     SUBDIR += pkfonts
     SUBDIR += plain2
-    SUBDIR += platex
+    SUBDIR += platex-common
+    SUBDIR += platex-euc
+    SUBDIR += platex-jis
+    SUBDIR += platex-sjis
     SUBDIR += prn
     SUBDIR += ptex-common
     SUBDIR += ptex-euc
