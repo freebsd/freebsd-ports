@@ -1,4 +1,5 @@
-Source-highlight is a simple program that, given a source C/C++ or Java file,
-produces an html source with syntax highlighting. 
+Source-highlight is a simple program that, given a source C/C++,
+Prolog, Perl, PHP3 or Java file, produces an html source with
+syntax highlighting. 
 
 WWW: http://www.gnu.org/software/src-highlite/source-highlight.html

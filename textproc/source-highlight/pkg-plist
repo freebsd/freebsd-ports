@@ -13,6 +13,7 @@ bin/source-highlight
 %%PORTDOCS%%share/doc/source-highlight/Hello4.html
 %%PORTDOCS%%share/doc/source-highlight/Hello5.html
 %%PORTDOCS%%share/doc/source-highlight/Hello_h_f.html
+%%PORTDOCS%%share/doc/source-highlight/Hello_lines.html
 %%PORTDOCS%%share/doc/source-highlight/INSTALL
 %%PORTDOCS%%share/doc/source-highlight/NEWS
 %%PORTDOCS%%share/doc/source-highlight/README
@@ -28,6 +29,7 @@ bin/source-highlight
 %%PORTDOCS%%share/doc/source-highlight/old_changes.html
 %%PORTDOCS%%share/doc/source-highlight/source-highlight.html
 %%PORTDOCS%%share/doc/source-highlight/startapp.cc.html
+%%PORTDOCS%%share/doc/source-highlight/test.php3.html
 %%PORTDOCS%%share/doc/source-highlight/test.pl.html
 %%PORTDOCS%%share/doc/source-highlight/test.pm.html
 share/source-highlight/tags.j2h 

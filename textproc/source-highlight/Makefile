@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	source-highlight
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= source-highlight
