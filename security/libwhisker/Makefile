@@ -12,7 +12,7 @@ CATEGORIES=	security perl5
 MASTER_SITES=	http://www.wiretrip.net/rfp/${PORTNAME}/
 DISTNAME=	${PORTNAME}-current
 
-MAINTAINER=	jan@atstake.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl module to create HTTP test scripts
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
