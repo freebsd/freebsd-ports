@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-wm
 PORTVERSION=	4.2.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	http://www.us.xfce.org/archive/xfce-${PORTVERSION}/src/ \
 		http://spuriousinterrupt.org/projects/xfce4/files/mirror/xfce-${PORTVERSION}/ \
@@ -36,4 +36,12 @@ CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
 		CPPFLAGS=-I${LOCALBASE}/include \
 		LIBS=-L${LOCALBASE}/lib
 
-.include <bsd.port.mk>
+OPTIONS=	COMPOSITE "Support the experimental X11 Composite extension" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_COMPOSITE)
+CONFIGURE_ARGS+=	--enable-compositor
+.endif
+
+.include <bsd.port.post.mk>
