@@ -1,0 +1,4 @@
+etc/idled.cf.template
+libexec/idled
+man/man5/idled.cf.5.gz
+man/man8/idled.8.gz

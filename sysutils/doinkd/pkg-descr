@@ -1,0 +1,4 @@
+This is a port of idled by Michael P. Crider. Idled is a daemon that runs on a
+machine to keep an eye on current users.  If users have been idle for too long,
+or have been logged on for too long, or have logged in too many times, it will
+warn them and log them out appropriately.

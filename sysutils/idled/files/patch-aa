@@ -1,0 +1,112 @@
+*** Makefile.orig	Thu Mar 13 14:19:42 1997
+--- Makefile	Thu Mar 13 13:59:57 1997
+***************
+*** 165,191 ****
+  #        If you add it, '-lkvm' must also be added to the SPECLIBS line
+  # You will need to delete parse.c before compiling!  You can either
+  # do so by hand, or do a 'make clean' followed by the normal 'make'.
+! #DEFS += -O -m486
+! #DEFS += -DBSD_OS2 -DHAVE_SETSID -DHAVE_YYRESTART -DPS_HACK
+  #DEFS += -DPROC_SEARCH_1
+  #SPECLIBS = -lkvm
+! #INSTTYPE = install1a
+  #
+! #DEST    = /usr/local/libexec
+! #CFDEST  = /usr/local/libexec
+! #MDEST   = /usr/local/man
+! #LOGDEST = /var/log
+  #
+! #OWNER   = root
+! #CFOWNER = root
+! #MOWNER  = man
+  #
+! #GROUP   = daemon
+! #CFGROUP = daemon
+  #
+! #MODE    = 750
+! #CFMODE  = 664
+! #MMODE   = 444
+  
+  ######################################################################
+  ######################################################################
+--- 165,191 ----
+  #        If you add it, '-lkvm' must also be added to the SPECLIBS line
+  # You will need to delete parse.c before compiling!  You can either
+  # do so by hand, or do a 'make clean' followed by the normal 'make'.
+! DEFS += -O -m486
+! DEFS += -DBSD_OS2 -DHAVE_SETSID -DHAVE_YYRESTART -DPS_HACK
+  #DEFS += -DPROC_SEARCH_1
+  #SPECLIBS = -lkvm
+! INSTTYPE = install1a
+  #
+! DEST    = /usr/local/libexec
+! CFDEST  = /usr/local/etc
+! MDEST   = /usr/local/man
+! LOGDEST = /var/log
+  #
+! OWNER   = root
+! CFOWNER = root
+! MOWNER  = man
+  #
+! GROUP   = daemon
+! CFGROUP = daemon
+  #
+! MODE    = 750
+! CFMODE  = 664
+! MMODE   = 444
+  
+  ######################################################################
+  ######################################################################
+***************
+*** 215,239 ****
+  # SVR4  --  Solaris 2.x
+  # Use install3 for /usr/sbin/install
+  # and install1 for /usr/ucb/install
+! DEFS += -DSYSV -DHAVE_PROC_FS -DUTMPPID -DHAVE_SETSID -DHAVE_UTMPX -DUTMPHOST -DRUDEKILL
+! SPECLIBS = 
+! INSTTYPE = install3
+  
+! DEST    = /usr/local/bin
+! CFDEST  = /usr/local/lib
+! MDEST   = /usr/local/man
+! LOGDEST = /var/log
+  
+! OWNER   = root
+! CFOWNER = root
+! MOWNER  = root
+  
+! GROUP   = root
+! CFGROUP = root
+  
+! MODE    = 750
+! CFMODE  = 664
+! MMODE   = 644
+  
+  ######################################################################
+  ######################################################################
+--- 215,239 ----
+  # SVR4  --  Solaris 2.x
+  # Use install3 for /usr/sbin/install
+  # and install1 for /usr/ucb/install
+! #DEFS += -DSYSV -DHAVE_PROC_FS -DUTMPPID -DHAVE_SETSID -DHAVE_UTMPX -DUTMPHOST -DRUDEKILL
+! #SPECLIBS = 
+! #INSTTYPE = install3
+  
+! #DEST    = /usr/local/bin
+! #CFDEST  = /usr/local/lib
+! #MDEST   = /usr/local/man
+! #LOGDEST = /var/log
+  
+! #OWNER   = root
+! #CFOWNER = root
+! #MOWNER  = root
+  
+! #GROUP   = root
+! #CFGROUP = root
+  
+! #MODE    = 750
+! #CFMODE  = 664
+! #MMODE   = 644
+  
+  ######################################################################
+  ######################################################################
