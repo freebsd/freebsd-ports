@@ -1,0 +1,11 @@
+bin/libIDL-config-2
+include/libIDL-2.0/libIDL/IDL.h
+@unexec install-info --delete %D/info/libIDL2.info %D/info/dir
+info/libIDL2.info
+@exec install-info %D/info/libIDL2.info %D/info/dir
+lib/libIDL-2.a
+lib/libIDL-2.so
+lib/libIDL-2.so.0
+libdata/pkgconfig/libIDL-2.0.pc
+@dirrm include/libIDL-2.0/libIDL
+@dirrm include/libIDL-2.0
