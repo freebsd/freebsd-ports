@@ -8527,7 +8527,6 @@ xcoloredit	ports/x11/xcoloredit
 xcolors		ports/x11/xcolors
 xcolorsel	ports/x11/xcolorsel
 xconq		ports/games/xconq
-xcopilot	ports/palm/xcopilot
 xcoral		ports/editors/xcoral
 xcpustate	ports/sysutils/xcpustate
 xcruise		ports/x11-fm/xcruise
