@@ -18,6 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmk4.so:${PORTSDIR}/databases/metakit
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83 \
 		expat.4:${PORTSDIR}/textproc/expat2
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/all
 
