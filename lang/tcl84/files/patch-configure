@@ -1,5 +1,14 @@
 --- configure.orig	Sat Oct 20 02:24:15 2001
 +++ configure	Sat Oct 20 10:45:39 2001
+@@ -4648,7 +4648,7 @@
+     EXTRA_CFLAGS=""
+     TCL_EXPORT_FILE_SUFFIX=""
+     UNSHARED_LIB_SUFFIX=""
+-    TCL_TRIM_DOTS='`echo ${VERSION} | tr -d .`'
++    TCL_TRIM_DOTS=`echo ${VERSION} | tr -d .`
+     ECHO_VERSION='`echo ${VERSION}`'
+     TCL_LIB_VERSIONS_OK=ok
+     CFLAGS_DEBUG=-g
 @@ -5391,11 +5391,11 @@
  	    SHLIB_SUFFIX=".so"
  	    DL_OBJS="tclLoadDl.o"
@@ -10,7 +19,7 @@
  	    # FreeBSD doesn't handle version numbers with dots.
  	    UNSHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.a'
 -	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so'
-+	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}\$\{DBGX\}.so.1'
++	    SHARED_LIB_SUFFIX='${TCL_TRIM_DOTS}${DBGX}.so.1'
  	    TCL_LIB_VERSIONS_OK=nodots
  	    ;;
  	Rhapsody-*|Darwin-*)
