@@ -7,7 +7,7 @@
 
 PORTNAME=	trafshow
 PORTVERSION=	3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.sasknow.com/pub/trafshow/ \
 		ftp://ftp.nsk.su/pub/RinetSoftware/
@@ -17,6 +17,7 @@ MAINTAINER=	ryan@sasknow.com
 COMMENT=	Full screen visualization of network traffic
 
 .include <bsd.port.pre.mk>
+
 .if defined(WITH_TRAFSHOW_SLANG) || \
     (exists(${LOCALBASE}/lib/libslang.a) && !defined(WITHOUT_TRAFSHOW_SLANG))
 LIB_DEPENDS=   slang.1:${PORTSDIR}/devel/libslang
