@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	e4graph
-PORTVERSION=	1.0a9
-PORTREVISION=	1
+PORTVERSION=	1.0a11
 CATEGORIES=	devel tcl84
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,10 +16,9 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ library that persistently stores graph like data
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libmk4.so:${PORTSDIR}/databases/metakit
-LIB_DEPENDS=	tcl${TCLVND}:${PORTSDIR}/lang/tcl${TCLVND} \
+LIB_DEPENDS=	mk4.0:${PORTSDIR}/databases/metakit \
+		tcl${TCLVND}:${PORTSDIR}/lang/tcl${TCLVND} \
 		expat.4:${PORTSDIR}/textproc/expat2
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/all
 
@@ -49,5 +47,10 @@ TCLVND=		${TCL_VER:S/.//}
 post-patch:
 	@${REINPLACE_CMD} -e 's|=-O$$|="$${CFLAGS}"|g ; \
 		 s|gcc -shared|$$(CC) -shared|g' ${WRKSRC}/configure
+
+post-install:
+.for file in testcore testcores
+	@${STRIP_CMD} ${PREFIX}/bin/${file}
+.endfor
 
 .include <bsd.port.mk>
