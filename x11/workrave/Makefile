@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	workrave
-PORTVERSION=	1.4.0
-PORTREVISION=	3
+PORTVERSION=	1.6.1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -22,7 +21,7 @@ BUILD_DEPENDS=	intltool-extract:${PORTSDIR}/textproc/intltool
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomepanel gconf2
+USE_GNOME=	gnomeprefix gnomehack intlhack gnomepanel gconf2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
