@@ -263,6 +263,9 @@ post-install:
 .if ${PORTVERSION} == 2.6.2 && !defined(PIPS_LPR_ONLY)
 	@${ECHO_CMD} "lib/pips/${LIB_FILE:S/.so/R1.so/}" >>${TMPPLIST}
 	@${ECHO_CMD} "lib/pips/${LIB_FILE:S/.so/R2.so/}" >>${TMPPLIST}
+	${INSTALL_SCRIPT} ${WRKDIR}/pips.sh ${PREFIX}/etc/rc.d
+	@${ECHO_CMD} "etc/rc.d/pips.sh" >>${TMPPLIST}
+	${PREFIX}/etc/rc.d/pips.sh start
 .endif
 	@${ECHO_CMD} "@dirrm lib/pips" >>${TMPPLIST}
 .for f in ${PATCH_PRN}
@@ -272,8 +275,6 @@ post-install:
 	@${ECHO_CMD} "@dirrm libexec/pips" >>${TMPPLIST}
 .if ${PORTVERSION} == 2.1.2 || ${PORTVERSION} == 2.6.2
 	${INSTALL_SCRIPT} ${WRKDIR}/ekpd.sh ${PREFIX}/etc/rc.d
-	${INSTALL_SCRIPT} ${WRKDIR}/pips.sh ${PREFIX}/etc/rc.d
-	${PREFIX}/etc/rc.d/pips.sh start
 .endif
 	@${CAT} ${PKGMESSAGE}
 
