@@ -21,6 +21,7 @@
     SUBDIR += mgetty+sendfax
     SUBDIR += minicom
     SUBDIR += mlan
+    SUBDIR += mlan3
     SUBDIR += mserver
     SUBDIR += mwavem
     SUBDIR += plp

@@ -1,0 +1,7 @@
+A port of Dallas Semiconductors 3.00 beta API for accessing 1-wire LAN
+devices.  Only DS2480 serial port adapters are supported by this port.
+
+More doc & src at: ftp://ftp.dalsemi.com/pub/auto_id/softdev/softdev.html
+and http://www.ibutton.com/
+
+WWW: http://www.ibutton.com/software/1wire/wirekit.html
