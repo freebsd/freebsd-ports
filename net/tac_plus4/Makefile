@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp-eng.cisco.com/pub/tacacs/
 DISTNAME=	tac_plus.F4.0.4.alpha
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	andreas_and_joe@tao.org.uk
+MAINTAINER=	marcus@FreeBSD.org
 
 ALL_TARGET=	tac_plus
 MAN1=		tac_plus.1
