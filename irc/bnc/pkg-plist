@@ -1,3 +1,5 @@
 bin/bnc
 bin/bncchk
-etc/bnc.conf
+bin/bncsetup
+bin/mkpasswd
+etc/bnc.conf.sample
