@@ -1,0 +1,8 @@
+--- clients/ud/Makefile.in.orig	Wed Jan 13 20:02:11 1999
++++ clients/ud/Makefile.in	Wed Jul 26 14:24:14 2000
+@@ -26,4 +26,4 @@
+ install-local: FORCE
+ 	-$(MKDIR) $(bindir)
+ 	-mv -f $(bindir)/ud $(bindir)/ud-
+-	$(LTINSTALL) $(INSTALLFLAGS) -m 775 ud $(bindir)
++	$(LTINSTALL) $(INSTALLFLAGS) -m 755 ud $(bindir)
