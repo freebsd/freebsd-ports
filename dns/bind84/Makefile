@@ -11,7 +11,7 @@
 # you can generally build it cleanly from the source. - Doug
 
 PORTNAME=	bind84
-PORTVERSION=	8.4.3
+PORTVERSION=	8.4.4
 CATEGORIES?=	dns net
 MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	bind/src/${PORTVERSION}
@@ -21,8 +21,6 @@ DIST_SUBDIR=	bind-${PORTVERSION}
 
 MAINTAINER=	DougB@FreeBSD.org
 COMMENT=	The Berkeley Internet Name Domain, an implementation of DNS
-
-FORBIDDEN=	Bug WRT unnecesarry queries. 8.4.4 to be release soon.
 
 .if defined(PORT_REPLACES_BASE_BIND8)
 PKGNAMESUFFIX=	-base
