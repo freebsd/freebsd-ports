@@ -1,29 +1,25 @@
-bin/libglade-config
-bin/libglade-xgettext
-etc/libgladeConf.sh
-include/libglade-1.0/glade/glade-build.h
-include/libglade-1.0/glade/glade-widget-tree.h
-include/libglade-1.0/glade/glade-xml.h
-include/libglade-1.0/glade/glade.h
-lib/libglade-bonobo.a
-lib/libglade-bonobo.so
-lib/libglade-bonobo.so.4
-lib/libglade-gnome.a
-lib/libglade-gnome.so
-lib/libglade-gnome.so.4
-lib/libglade-gnomedb.a
-lib/libglade-gnomedb.so
-lib/libglade-gnomedb.so.4
-lib/libglade.a
-lib/libglade.so
-lib/libglade.so.4
-libdata/pkgconfig/libglade-bonobo.pc
-libdata/pkgconfig/libglade-gnome.pc
-libdata/pkgconfig/libglade-gnomedb.pc
-libdata/pkgconfig/libglade.pc
-share/aclocal/libglade.m4
-@dirrm include/libglade-1.0/glade
-@dirrm include/libglade-1.0
-@exec /bin/rm -rf %D/include/glade
-@exec /bin/ln -sf libglade-1.0/glade %D/include/glade
-@unexec /bin/rm -f %D/include/glade
+bin/libglade-convert
+include/libglade-2.0/glade/glade-build.h
+include/libglade-2.0/glade/glade-init.h
+include/libglade-2.0/glade/glade-parser.h
+include/libglade-2.0/glade/glade-xml.h
+include/libglade-2.0/glade/glade.h
+lib/libglade-2.0.a
+lib/libglade-2.0.so
+lib/libglade-2.0.so.0
+libdata/pkgconfig/libglade-2.0.pc
+share/doc/libglade/gladexml.html
+share/doc/libglade/libglade-dtd.html
+share/doc/libglade/libglade-embedding.html
+share/doc/libglade/libglade-extending.html
+share/doc/libglade/libglade-gnome.html
+share/doc/libglade/libglade-i18n.html
+share/doc/libglade/libglade-lib.html
+share/doc/libglade/libglade-libglade-build.html
+share/doc/libglade/libglade-libglade-initialisation.html
+share/doc/libglade/libglade-libglade-sax-parser.html
+share/doc/libglade/libglade-notes.html
+share/doc/libglade/libglade.html
+@dirrm share/doc/libglade
+@dirrm include/libglade-2.0/glade
+@dirrm include/libglade-2.0

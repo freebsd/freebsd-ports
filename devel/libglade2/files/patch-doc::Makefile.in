@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- doc/Makefile.in	2002/02/14 10:10:45	1.1
++++ doc/Makefile.in	2002/02/14 10:11:18
+@@ -110,7 +110,7 @@
+ # The directory containing the source code (if it contains documentation).
+ DOC_SOURCE_DIR = ../glade
+ 
+-HTML_DIR = $(datadir)/gtk-doc/html
++HTML_DIR = $(datadir)/doc
+ 
+ TARGET_DIR = $(HTML_DIR)/$(DOC_MODULE)
+ 
