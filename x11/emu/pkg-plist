@@ -1,7 +1,9 @@
-@cd /usr/X386
-@mode 755
-@owner bin
+@cd /usr/X11R6
+@mode 4755
+@owner root
 @group bin
 bin/emu
+@owner bin
 @mode 444
 lib/X11/app-defaults/Emu
+man/man1/emu.1.gz
