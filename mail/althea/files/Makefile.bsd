@@ -12,10 +12,10 @@ PIXDIR=${PREFIX}/share/${PROG}
 CXXFLAGS+=-DDOCDIR=\"${DOCDIR}\" -DPIXDIR=\"${PIXDIR}\"
 
 # Use the GTK's CFLAGS:
-CXXFLAGS+=`${GTK_CONFIG} --cflags`
+CXXFLAGS+=`${GTK_CONFIG} --cflags` -I${OPENSSLINC}
 
 # Use the GTK's libraries:
-LDADD+=`${GTK_CONFIG} --libs`
+LDADD+=`${GTK_CONFIG} --libs` -L${OPENSSLLIB} -lssl -lcrypto
 
 # A hack to ensure C++ is called to do the final linking:
 CC:=	${CXX}
