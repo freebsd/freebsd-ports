@@ -1,17 +1,17 @@
 # New ports collection makefile for:	scummvm
-# Date created:				Tue Mar 26 13:05:21 CET 2002
-# Whom:				Miguel Mendez <flynn@energyhq.homeip.net>
+# Date created:				Tue Sep  2 23:34:32 BST 2003
+# Whom:				Alex Trull <alexander@trull.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	scummvm
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.1
 CATEGORIES=	games emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	flynn@energyhq.es.eu.org
+MAINTAINER=	alexander@trull.com
 COMMENT=	Free implementation of LucasArts S.C.U.M.M. interpreter
 
 LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12 \
