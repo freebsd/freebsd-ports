@@ -3,9 +3,9 @@
 # Date created:		April 2, 1997
 # Whom:			Marc G. Fournier <scrappy@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.17 1997/10/04 23:38:59 andreas Exp $
+# $Id: Makefile,v 1.18 1997/10/05 21:00:49 andreas Exp $
 
-DISTNAME=	postgresql-6.2
+DISTNAME=	postgresql-6.2.1
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.PostgreSQL.org/pub/ \
 		ftp://ftp.luga.or.at/pub/postgres95/ \
