@@ -75,39 +75,6 @@ share/services/kontact/akregatorplugin.desktop
 share/services/kontact/akregatorplugin3.2.desktop
 @dirrm share/services/kontact
 @dirrm share/services
-@dirrm share/locale/tr/LC_MESSAGES
-@dirrm share/locale/ta/LC_MESSAGES
-@dirrm share/locale/ta
-@dirrm share/locale/sv/LC_MESSAGES
-@dirrm share/locale/sr/LC_MESSAGES
-@dirrm share/locale/sr
-@dirrm share/locale/ru/LC_MESSAGES
-@dirrm share/locale/ro/LC_MESSAGES
-@dirrm share/locale/ro
-@dirrm share/locale/pt_BR/LC_MESSAGES
-@dirrm share/locale/pt/LC_MESSAGES
-@dirrm share/locale/pt
-@dirrm share/locale/pl/LC_MESSAGES
-@dirrm share/locale/pl
-@dirrm share/locale/nl/LC_MESSAGES
-@dirrm share/locale/it/LC_MESSAGES
-@dirrm share/locale/is/LC_MESSAGES
-@dirrm share/locale/is
-@dirrm share/locale/ga/LC_MESSAGES
-@dirrm share/locale/ga
-@dirrm share/locale/fr/LC_MESSAGES
-@dirrm share/locale/fi/LC_MESSAGES
-@dirrm share/locale/fi
-@dirrm share/locale/et/LC_MESSAGES
-@dirrm share/locale/es/LC_MESSAGES
-@dirrm share/locale/en_GB/LC_MESSAGES
-@dirrm share/locale/da/LC_MESSAGES
-@dirrm share/locale/cy/LC_MESSAGES
-@dirrm share/locale/cy
-@dirrm share/locale/ca/LC_MESSAGES
-@dirrm share/locale/ca
-@dirrm share/locale/br/LC_MESSAGES
-@dirrm share/locale/br
 @dirrm share/icons/crystalsvg/scalable/apps
 @dirrm share/icons/crystalsvg/scalable
 @dirrm share/icons/crystalsvg/64x64/apps
@@ -133,3 +100,15 @@ share/services/kontact/akregatorplugin3.2.desktop
 @dirrm share/applnk/Internet
 @dirrm share/applnk
 @dirrm lib/kde3
+@unexec rmdir %D/share/locale/sr/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/sr 2> /dev/null || true
+@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ro 2> /dev/null || true
+@unexec rmdir %D/share/locale/pt/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/pt 2> /dev/null || true
+@unexec rmdir %D/share/locale/pl/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/pl 2> /dev/null || true
+@unexec rmdir %D/share/locale/fi/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/fi 2> /dev/null || true
+@unexec rmdir %D/share/locale/ca/LC_MESSAGES 2> /dev/null || true
+@unexec rmdir %D/share/locale/ca 2> /dev/null || true

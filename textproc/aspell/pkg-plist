@@ -107,10 +107,6 @@ lib/libpspell.so.16
 %%NLS%%@unexec rmdir %D/share/locale/be 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/cs 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ga/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/ga 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/mn/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/mn 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/pt 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
@@ -121,5 +117,3 @@ lib/libpspell.so.16
 %%NLS%%@unexec rmdir %D/share/locale/tg 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/uk/LC_MESSAGES 2>/dev/null || true
 %%NLS%%@unexec rmdir %D/share/locale/uk 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/wa/LC_MESSAGES 2>/dev/null || true
-%%NLS%%@unexec rmdir %D/share/locale/wa 2>/dev/null || true

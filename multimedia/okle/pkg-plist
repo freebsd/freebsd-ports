@@ -36,15 +36,6 @@ share/locale/es/LC_MESSAGES/okle.mo
 share/locale/hu/LC_MESSAGES/okle.mo
 share/locale/it/LC_MESSAGES/okle.mo
 share/locale/sv/LC_MESSAGES/okle.mo
-@unexec rmdir %D/share/locale/sv/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/sv 2>/dev/null || true
-@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/it 2>/dev/null || true
-@unexec rmdir %D/share/locale/hu/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/hu 2>/dev/null || true
-@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
-@unexec rmdir %D/share/locale/de 2>/dev/null || true
-@unexec rmdir %D/share/locale 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/32x32/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/32x32 2>/dev/null || true
 @unexec rmdir %D/share/icons/hicolor/16x16/apps 2>/dev/null || true
