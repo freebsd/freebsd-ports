@@ -15,15 +15,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
-PATCH_STRIP=	-p2
-
-do-build:
-	@(cd ${WRKSRC}; make pre-install)
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/maplay ${PREFIX}/bin
-
-post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/maplay
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/maplay

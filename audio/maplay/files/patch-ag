@@ -1,0 +1,36 @@
+*** ibitstream.cc.orig	Thu Jun 23 21:14:35 1994
+--- ibitstream.cc	Thu Dec  9 05:32:18 1999
+***************
+*** 64,70 ****
+  }
+  
+  
+! bool Ibitstream::get_header (uint32 *headerstring)
+  {
+    int readvalue;
+  
+--- 64,70 ----
+  }
+  
+  
+! boolean Ibitstream::get_header (uint32 *headerstring)
+  {
+    int readvalue;
+  
+***************
+*** 102,108 ****
+  }
+  
+  
+! bool Ibitstream::read_frame (uint32 bytesize)
+  {
+    int readvalue;
+  
+--- 102,108 ----
+  }
+  
+  
+! boolean Ibitstream::read_frame (uint32 bytesize)
+  {
+    int readvalue;
+  

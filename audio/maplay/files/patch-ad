@@ -1,19 +1,32 @@
---- configuration.sh.orig	Thu Jun 23 07:14:46 1994
-+++ configuration.sh	Thu Nov 25 02:53:40 1999
-@@ -72,6 +72,16 @@
-      INCLUDEDIRS=
-      LIBRARIES=
-      AUDIO_INCLUDES='#include <sys/audioio.h>' ;;
-+  FreeBSD*)
-+     COMPILER='${CXX}'
-+     if [ `uname -m` = "alpha" ]; then
-+       COMPILERFLAGS='-DLINUX'
-+     else
-+       COMPILERFLAGS='-m486 -DLINUX -DDAMN_INTEL_BYTE_ORDER'
-+     fi
-+     INCLUDEDIRS=
-+     LIBRARIES= 
-+     AUDIO_INCLUDES='#include <machine/soundcard.h>' ;;
-   Linux*)
-      COMPILER=g++
-      COMPILERFLAGS='-O2 -m486 -funroll-loops -DLINUX -DDAMN_INTEL_BYTE_ORDER'
+*** configuration.sh.orig	Thu Jun 23 21:14:46 1994
+--- configuration.sh	Thu Dec  9 05:21:02 1999
+***************
+*** 72,77 ****
+--- 72,87 ----
+       INCLUDEDIRS=
+       LIBRARIES=
+       AUDIO_INCLUDES='#include <sys/audioio.h>' ;;
++   FreeBSD*)
++      COMPILER='${CXX}'
++      if [ ${ARCH} = "i386" ]; then
++        COMPILERFLAGS='-m486 -DLINUX -DDAMN_INTEL_BYTE_ORDER'
++      else
++        COMPILERFLAGS='-DLINUX'
++      fi
++      INCLUDEDIRS=
++      LIBRARIES= 
++      AUDIO_INCLUDES='#include <machine/soundcard.h>' ;;
+    Linux*)
+       COMPILER=g++
+       COMPILERFLAGS='-O2 -m486 -funroll-loops -DLINUX -DDAMN_INTEL_BYTE_ORDER'
+***************
+*** 95,98 ****
+    echo $AUDIO_INCLUDES >audio_includes.h
+  fi
+  
+! make all
+--- 105,108 ----
+    echo $AUDIO_INCLUDES >audio_includes.h
+  fi
+  
+! make maplay
