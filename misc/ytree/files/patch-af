@@ -1,0 +1,11 @@
+--- dirwin.c.orig	Sat Mar 21 22:40:47 1998
++++ dirwin.c	Sat Mar 21 22:41:17 1998
+@@ -163,7 +163,7 @@
+                     ERROR_MSG("malloc() Failed*Abort");
+                     exit(1);
+                  }
+-                 (void) strcpy( format, "%10s %3d %7d %12s");
++                 (void) strcpy( format, "%10s %3d %7qd %12s");
+                  (void) sprintf( line_buffer, format, attributes,
+                                  de_ptr->stat_struct.st_nlink,
+                                  de_ptr->stat_struct.st_size,
