@@ -1,0 +1,12 @@
+This module adds XPath-style matching to your object trees. This means
+that you can find nodes using an XPath-esque query with "match()" from
+anywhere in the tree. Also, the "xpath()" method returns a unqique path
+to a given node which can be used as an identifier.
+
+NOTE: This module is not yet a complete XPath implementation. Over
+time I expect the subset of XPath supported to grow. See the SYNTAX
+documentation in the module POD for details on the current level of
+support.
+
+WWW: http://search.cpan.org/dist/Class-XPath/
+Author: Sam Tregar <sam@tregar.com>
