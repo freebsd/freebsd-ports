@@ -35,7 +35,10 @@ lib/gauche/%%VERSION%%/include/gauche/vminsn.h
 lib/gauche/%%VERSION%%/include/gc.h
 lib/gauche/%%VERSION%%/include/gc_config_macros.h
 lib/gauche/%%VERSION%%/include/gc_pthread_redirects.h
+lib/gauche/site/%%VERSION%%/%%TARGET%%/.keepme
 lib/libgauche.so
+lib/libgauche.so.0
+lib/libgauche.so.0.0.0
 share/gauche/%%VERSION%%/aclocal.m4
 share/gauche/%%VERSION%%/lib/binary/io.scm
 share/gauche/%%VERSION%%/lib/binary/pack.scm
@@ -55,6 +58,7 @@ share/gauche/%%VERSION%%/lib/gauche/common-macros.scm
 share/gauche/%%VERSION%%/lib/gauche/config.scm
 share/gauche/%%VERSION%%/lib/gauche/defvalues.scm
 share/gauche/%%VERSION%%/lib/gauche/fcntl.scm
+share/gauche/%%VERSION%%/lib/gauche/fileutil.scm
 share/gauche/%%VERSION%%/lib/gauche/hashutil.scm
 share/gauche/%%VERSION%%/lib/gauche/hook.scm
 share/gauche/%%VERSION%%/lib/gauche/interactive.scm
@@ -67,6 +71,7 @@ share/gauche/%%VERSION%%/lib/gauche/listutil.scm
 share/gauche/%%VERSION%%/lib/gauche/logger.scm
 share/gauche/%%VERSION%%/lib/gauche/logical.scm
 share/gauche/%%VERSION%%/lib/gauche/macroutil.scm
+share/gauche/%%VERSION%%/lib/gauche/modutil.scm
 share/gauche/%%VERSION%%/lib/gauche/mop/instance-pool.scm
 share/gauche/%%VERSION%%/lib/gauche/mop/propagate.scm
 share/gauche/%%VERSION%%/lib/gauche/mop/singleton.scm
@@ -79,6 +84,7 @@ share/gauche/%%VERSION%%/lib/gauche/parseopt.scm
 share/gauche/%%VERSION%%/lib/gauche/portutil.scm
 share/gauche/%%VERSION%%/lib/gauche/procedure.scm
 share/gauche/%%VERSION%%/lib/gauche/process.scm
+share/gauche/%%VERSION%%/lib/gauche/redefutil.scm
 share/gauche/%%VERSION%%/lib/gauche/regexp.scm
 share/gauche/%%VERSION%%/lib/gauche/reload.scm
 share/gauche/%%VERSION%%/lib/gauche/selector.scm
@@ -109,6 +115,7 @@ share/gauche/%%VERSION%%/lib/rfc/cookie.scm
 share/gauche/%%VERSION%%/lib/rfc/hmac.scm
 share/gauche/%%VERSION%%/lib/rfc/http.scm
 share/gauche/%%VERSION%%/lib/rfc/md5.scm
+share/gauche/%%VERSION%%/lib/rfc/mime.scm
 share/gauche/%%VERSION%%/lib/rfc/quoted-printable.scm
 share/gauche/%%VERSION%%/lib/rfc/sha1.scm
 share/gauche/%%VERSION%%/lib/rfc/uri.scm
@@ -181,6 +188,7 @@ share/gauche/%%VERSION%%/lib/util/record.scm
 share/gauche/%%VERSION%%/lib/util/toposort.scm
 share/gauche/%%VERSION%%/lib/util/tree.scm
 share/gauche/%%VERSION%%/lib/www/cgi.scm
+share/gauche/site/lib/.keepme
 @dirrm share/gauche/site/lib
 @dirrm share/gauche/site
 @dirrm share/gauche/%%VERSION%%/lib/www
@@ -213,7 +221,6 @@ share/gauche/%%VERSION%%/lib/www/cgi.scm
 @dirrm lib/gauche/%%VERSION%%/%%TARGET%%
 @dirrm lib/gauche/%%VERSION%%
 @dirrm lib/gauche
-@exec %D/bin/gosh -u slib -e "(require 'logical)" -e "(exit 0)" > /dev/null 2>&1 || true
 %%PORTDOCS%%@unexec install-info --delete --section="%%INFOSECTION%%" %D/info/gauche-refe.info %D/info/dir
 %%PORTDOCS%%@unexec install-info --delete --section="%%INFOSECTION%%" %D/info/gauche-refj.info %D/info/dir
 %%PORTDOCS%%info/gauche-refe.info
