@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	mnemo
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	deskutils www
 MASTER_SITES=	ftp://ftp.horde.org/pub/mnemo/				\
 		ftp://ftp.planetmirror.com/pub/horde/mnemo/		\
 		ftp://ftp.au.horde.org/pub/horde/mnemo/			\
 		ftp://ftp.be.horde.org/mnemo/				\
 		ftp://ftp.es.horde.org/pub/mnemo/			\
-		ftp://ftp.it.horde.org/pub/mirror/horde.org/mnemo/	\
 		ftp://ftp.nl.horde.org/mirror/horde-ftp/pub/mnemo/	\
 		ftp://ftp.uk.horde.org/mirrors/ftp.horde.org/pub/mnemo/	\
 		http://ftp.horde.org/pub/mnemo/
 
-MAINTAINER=	thierry@pompo.net
+MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Mnemo is the Horde notes and memos application
 
 RUN_DEPENDS=	${LOCALBASE}/www/horde/imp/index.php:${PORTSDIR}/mail/imp3
@@ -29,6 +28,7 @@ USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i.beforeMnemo
 
 PLIST_SUB=	HORDEDIR=${LHORDEDIR} MNEMODIR=${LMNEMODIR}
+PKGMESSAGE=	${WRKDIR}/pkg-message
 
 DOCS=		LICENSE README docs/CHANGES docs/CREDITS docs/INSTALL	\
 		docs/RELEASE_NOTES
@@ -66,7 +66,8 @@ do-install:
 	@${RM} ${HORDE_INC}/httpd.conf.mnemo.beforeMnemo
 	@${CP} -p ${HORDEDIR}/config/registry.php		\
 		${HORDEDIR}/config/registry.php.beforeMnemo
-	@${REINPLACE_CMD} -e "s://UNCOMMENTWHENINSTMNEMO::" ${HORDEDIR}/config/registry.php
+	@${REINPLACE_CMD} -e "s://UNCOMMENTWHENINSTMNEMO::"	\
+		${HORDEDIR}/config/registry.php
 	@${CP} -p ${HORDEDIR}/config/registry.php		\
 		${HORDEDIR}/config/registry.php.afterMnemo
 .if !defined(NOPORTDOCS)
@@ -80,7 +81,9 @@ do-install:
 post-install:
 	@${ECHO_MSG}
 	@${SED} -e "s:%%MNEMODIR%%:${MNEMODIR}:g;s:%%PORTSDIR%%:${PORTSDIR}:g"	\
-		-e "s:%%CONFDIR%%:${CONFDIR}:g;s:%%HORDEDIR%%:${HORDEDIR}:" ${PKGMESSAGE}
+		-e "s:%%CONFDIR%%:${CONFDIR}:g;s:%%HORDEDIR%%:${HORDEDIR}:"	\
+		< ${FILESDIR}/pkg-message.in > ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
 .include <bsd.port.mk>
