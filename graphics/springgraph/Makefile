@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.pl
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Render graph described in a .dot file
 
+BROKEN=		Size mismatch
+
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
 
 PLIST_FILES=	bin/springgraph
