@@ -1,9 +1,10 @@
-# $Id: Makefile,v 1.14 1995/05/11 20:46:23 jkh Exp $
+# $Id: Makefile,v 1.15 1995/05/13 10:36:49 asami Exp $
 #
-# xmcd not included, it needs Motif.
+# RESTRICTED: xmcd (needs Motif, xmcd itself isn't restricted)
 #
-# BROKEN= gmod
+# BROKEN: gmod
 #
+
 SUBDIR= gsm maplay nas playmidi rsynth s3mod sox tracker xcd xcdplayer
 
 .include <bsd.port.subdir.mk>
