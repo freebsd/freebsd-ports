@@ -16,7 +16,6 @@ MAINTAINER=	dk@farm.org
 COMMENT=	The Portable MSX/MSX2/MSX2+ Emulator
 
 USE_XLIB=	yes
-NO_PACKAGE=	${RESTRICTED}
 RESTRICTED=	Legal status of distributed ROM images unclear
 WRKSRC=		${WRKDIR}/MSX
 
