@@ -6814,6 +6814,7 @@ ruby-acl	ports/security/ruby-acl
 ruby-aes	ports/security/ruby-aes
 ruby-algebra	ports/math/ruby-algebra
 ruby-amatch	ports/textproc/ruby-amatch
+ruby-amrita	ports/textproc/ruby-amrita
 ruby-amstd	ports/devel/ruby-amstd
 ruby-aspectr	ports/devel/ruby-aspectr
 ruby-audiofile	ports/audio/ruby-audiofile
