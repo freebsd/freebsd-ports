@@ -56,6 +56,10 @@ WITHOUT_MMX=	yes
 EXTRA_PATCHES+=	${FILESDIR}/extra-bktr-patch-libavformat::Makefile
 .endif
 
+.if ${ARCH} == "i386" && ${OSVERSION} > 502104
+BROKEN=		"Does not compile on i386 5.x"
+.endif
+
 ## lib detection
 ##
 ##
