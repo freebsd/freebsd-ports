@@ -1040,6 +1040,7 @@ delay		ports/misc/delay
 delegate	ports/net/delegate
 deleted		ports/sysutils/deleted
 demime		ports/mail/demime
+demoniac	ports/misc/demoniac
 demoroniser	ports/www/demoroniser
 denemo		ports/audio/denemo
 des		src/eBones/des
