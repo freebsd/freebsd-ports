@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	php-gtk
-PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTVERSION=	1.0.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://gtk.php.net/distributions/ \
 		http://document-root.de/mirror/php-gtk/
@@ -19,13 +18,22 @@ WANT_AUTOMAKE_VER=	15
 USE_AUTOCONF_VER=	253
 WANT_LIBTOOL_VER=	13
 GNU_CONFIGURE=	yes
-USE_PHP=	yes
+USE_PHP=	pcre
 USE_PHPIZE=	yes
-WANT_PHP_CLI=	yes
+USE_PHP_BUILD=	yes
+WANT_PHP_SCR=	yes
+BROKEN_WITH_PHP=	5
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 USE_GNOME=	gtk12
 INSTALLS_SHLIB=	yes
+
+OPTIONS=	LIBGLADE	"GladeXML support in php-gtk" on \
+		SCINTILLA	"Scintilla support" on \
+		GDK_PIXBUF	"Enable pixbuf support" on \
+		GTKHTML		"Enable Gtkhtml support" on
+
+.include <bsd.port.pre.mk>
 
 # Fix environment for self contained extensions
 ENVSCE=		-DHAVE_PHP_GTK=1 -DCOMPILE_DL_PHP_GTK=1	\
@@ -80,20 +88,7 @@ EXAMPLES=	combobutton.php fileselection.php gtk.php hello.php list.php \
 		piemenu.php scribble.php scrollpane.php spaned.php sqpane.php \
 		testgtkrc testgtkrc2 window.xpm
 
-pre-everything::
-	@${ECHO_MSG} '*********************************************************'
-	@${ECHO_MSG} '* By default php-gtk is built with several Gnome deps.  *'
-	@${ECHO_MSG} '* If you do not need them, you may define:              *'
-	@${ECHO_MSG} '*                                                       *'
-	@${ECHO_MSG} '*    - WITHOUT_LIBGLADE                                 *'
-	@${ECHO_MSG} '*    - WITHOUT_GDK_PIXBUF                               *'
-	@${ECHO_MSG} '*    - WITHOUT_GTKHTML                                  *'
-	@${ECHO_MSG} '*    - WITHOUT_SCINTILLA                                *'
-	@${ECHO_MSG} '*                                                       *'
-	@${ECHO_MSG} '*********************************************************'
-
 pre-configure:
-	@php ${SCRIPTDIR}/memlim.php
 	@${ECHO_MSG} "===>  Building configuration files for ${PKGNAME}"
 	@(cd ${WRKSRC} && ${SETENV} ${SCRIPTS_ENV} ./buildconf)
 .for FILE in ${PIC2FIX}
@@ -109,10 +104,5 @@ post-install:
 .endfor
 	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}."
 .endif
-	@${MKDIR} ${PREFIX}/etc/php.gtk
-	@${INSTALL_DATA} ${FILESDIR}/php.ini-dist ${PREFIX}/etc/php.gtk
-	@${ECHO} ""
-	@${CAT} ${MASTERDIR}/pkg-message
-	@${ECHO} ""
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
