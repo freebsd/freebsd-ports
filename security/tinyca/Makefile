@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	tinyca
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 CATEGORIES=	security net
-MASTER_SITES=	http://tinyca.sm-zone.net/
+MASTER_SITES=	http://tinyca.sm-zone.net/ \
+		http://tinyca.sm-zone.net/old
 
 MAINTAINER=	Janos.Mohacsi@bsd.hu
 COMMENT=	Simple graphical interface to manage a small Certification Authority
@@ -18,13 +19,12 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gnome.pm:${PORTSDIR}/x11-toolkits/p5-Gnom
 		zip:${PORTSDIR}/archivers/zip \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
-WRKSRC=		${WRKDIR}/TinyCA
 USE_PERL5=	yes
 USE_OPENSSL=	yes
 NO_BUILD=	yes
 DOC_FILES=	INSTALL
 LIB_FILES=	CA.pm CERT.pm GUI.pm HELPERS.pm KEY.pm OpenSSL.pm REQ.pm TCONFIG.pm
-LIB2_FILES=	TCONFIG.pm HELPERS.pm CALLBACK.pm X509_infobox.pm WORDS.pm
+LIB2_FILES=	CALLBACK.pm HELPERS.pm TCONFIG.pm WORDS.pm X509_browser.pm X509_infobox.pm
 
 do-install:
 	@${MKDIR} ${SITE_PERL}/${PORTNAME}/
