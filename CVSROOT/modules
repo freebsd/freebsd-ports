@@ -530,6 +530,7 @@ bibcard		ports/print/bibcard
 bibcursed	ports/print/bibcursed
 bibelot		ports/palm/bibelot
 biblereader	ports/misc/biblereader
+bibletime-doc	ports/misc/bibletime-doc
 bibtex2html	ports/textproc/bibtex2html
 bibview		ports/print/bibview
 bidwatcher	ports/misc/bidwatcher
