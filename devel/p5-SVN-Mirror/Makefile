@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	SVN-Mirror
-PORTVERSION=	0.38
+PORTVERSION=	0.41
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLKAO
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	autrijus@autrijus.org
+MAINTAINER=	rafan@infor.org
 COMMENT=	Mirror remote subversion repository to local
 
 BUILD_DEPENDS=	${SITE_PERL}/URI/Escape.pm:${PORTSDIR}/net/p5-URI \

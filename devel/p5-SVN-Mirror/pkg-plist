@@ -2,7 +2,8 @@ bin/svm
 %%SITE_PERL%%/SVN/Mirror.pm
 %%SITE_PERL%%/SVN/Mirror/Ra.pm
 %%SITE_PERL%%/SVN/Mirror/VCP.pm
-@dirrm %%SITE_PERL%%/SVN/Mirror
-@dirrm %%SITE_PERL%%/SVN
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Mirror/.packlist
+@unexec rmdir %D/%%SITE_PERL%%/SVN/Mirror 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/SVN 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN/Mirror 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/SVN 2>/dev/null || true
