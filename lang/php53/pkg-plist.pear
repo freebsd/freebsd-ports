@@ -30,6 +30,7 @@ share/pear/bootstrap/PEAR/Installer.php
 share/pear/bootstrap/PEAR/Packager.php
 share/pear/bootstrap/PEAR/Registry.php
 share/pear/bootstrap/PEAR/Remote.php
+share/pear/bootstrap/PEAR/RunTest.php
 share/pear/bootstrap/XML/RPC.php
 share/pear/bootstrap/XML/RPC/Server.php
 @unexec rmdir %D/lib/php/pear/.registry 2> /dev/null || true
