@@ -14,8 +14,6 @@ DISTNAME=	${PORTNAME}-cvs-kde3-${PORTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 
-BROKEN=		"Incorrect pkg-plist"
-
 BUILD_DEPENDS=	automake:${PORTSDIR}/devel/automake \
 		autoconf:${PORTSDIR}/devel/autoconf
 
