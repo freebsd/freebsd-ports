@@ -1,0 +1,18 @@
+## apcupsd.conf v1.1 ##
+#
+#  apcupsd 3.10.X
+#
+# "apcupsd" netslave file
+#
+UPSCABLE ether
+UPSTYPE net
+DEVICE usv.koellers.net:3551
+LOCKFILE /var/spool/lock
+EVENTSFILE /var/log/apcupsd.events
+UPSCLASS standalone
+UPSMODE disable
+NISPORT		3551
+#
+# Use this to control the poll time.
+# the default is 60 or 1 minute
+NETTIME 30
