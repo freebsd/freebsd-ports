@@ -6,16 +6,6 @@ bin/nquery-pr
 bin/query-pr
 bin/send-pr
 bin/sub-type
-@unexec install-info --delete %D/info/gnats.info %D/info/dir
-@unexec install-info --delete %D/info/send-pr.info %D/info/dir
-info/gnats.info
-info/gnats.info-1
-info/gnats.info-2
-info/gnats.info-3
-info/gnats.info-4
-info/send-pr.info
-@exec install-info %D/info/gnats.info %D/info/dir
-@exec install-info %D/info/send-pr.info %D/info/dir
 libexec/gnats/at-pr
 libexec/gnats/check-db
 libexec/gnats/delete-pr
