@@ -190,6 +190,7 @@
     SUBDIR += lgeneral
     SUBDIR += libshhcards
     SUBDIR += lincity
+    SUBDIR += linux-nwserver
     SUBDIR += linux-q3ademo
     SUBDIR += lm-solve
     SUBDIR += ltris
