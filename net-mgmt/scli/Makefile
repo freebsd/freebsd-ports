@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	scli
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.8
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/${PORTNAME}/
 
 MAINTAINER=	lyngbol@wheel.dk
-
-BROKEN=		"Cannot find libxml2 dependency"
 
 LIB_DEPENDS=	xml2:${PORTSDIR}/textproc/libxml2
 

@@ -1,0 +1,11 @@
+--- configure_orig	Fri May 24 22:19:04 2002
++++ configure	Fri May 24 22:19:15 2002
+@@ -1569,7 +1569,7 @@
+ #include <stdlib.h>
+ #include <stdio.h>
+ #include <string.h>
+-#include <xmlversion.h>
++#include <libxml/xmlversion.h>
+ 
+ int 
+ main()

@@ -1,0 +1,13 @@
+--- doc/scli.texinfo_orig	Thu Sep 27 09:57:00 2001
++++ doc/scli.texinfo	Fri May 24 16:11:34 2002
+@@ -2,6 +2,10 @@
+ @c %**start of header
+ @setfilename scli.info
+ @settitle SNMP Command Line Interface
++@dircategory Net Utilities
++@direntry
++* SCLI: (scli).		SNMP Command Line Interface
++@end direntry
+ @finalout
+ @setchapternewpage odd
+ @c %**end of header
