@@ -70,6 +70,7 @@ share/doc/diveintopython/images/callouts/7.png
 share/doc/diveintopython/images/callouts/8.png
 share/doc/diveintopython/images/callouts/9.png
 share/doc/diveintopython/images/caution.png
+share/doc/diveintopython/images/diveintopython.png
 share/doc/diveintopython/images/dot.png
 share/doc/diveintopython/images/important.png
 share/doc/diveintopython/images/note.png
@@ -153,6 +154,9 @@ share/examples/diveintopython/kgptest.py
 share/examples/diveintopython/makerealworddoc.py
 share/examples/diveintopython/odbchelper.py
 share/examples/diveintopython/odbchelpertest.py
+share/examples/diveintopython/parsephone.py
+share/examples/diveintopython/piglatin.py
+share/examples/diveintopython/plural.py
 share/examples/diveintopython/pyfontify.py
 share/examples/diveintopython/regression.py
 share/examples/diveintopython/roman.py
