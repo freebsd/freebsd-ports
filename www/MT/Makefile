@@ -7,7 +7,7 @@
 
 PORTNAME=	MT
 PORTVERSION=	2.64
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	ports@FreeBSD.org
@@ -52,8 +52,8 @@ do-install:
 	@cd ${WRKSRC} && ${FIND} * -name "*.orig" -delete
 	@${ECHO_MSG} "Installing cgi ${PREFIX}/${CGIDIR}"
 	@${MKDIR} ${PREFIX}/${CGIDIR}
-	@cd ${WRKSRC} && ${CP} -R *.cgi lib extlib tmpl search_templates \
-	  ${PREFIX}/${CGIDIR}
+	@cd ${WRKSRC} && ${CP} -R *.cgi lib extlib plugins search_templates \
+	  tmpl ${PREFIX}/${CGIDIR}
 	@${SED} -e 's#WWW.YOUR-SITE.COM/PATH/TO/MT/#${HOST}/cgi-bin/mt/#g' \
 	  -e 's/# StaticWebPath/StaticWebPath/g' \
 	  -e 's#path/to/static-files#mt#g' \
@@ -62,7 +62,7 @@ do-install:
 	@${ECHO_MSG} "Installing data ${PREFIX}/${DATADIR}"
 	@${MKDIR} ${PREFIX}/${DATADIR}
 	@cd ${WRKSRC} && ${CP} -R LICENSE LICENSE-COMMERCIAL docs images \
-	  index.html plugins schemas styles.css \
+	  index.html schemas styles.css \
 	  ${PREFIX}/${DATADIR}
 .if defined(WITH_DEFAULTDB)
 	@${MKDIR} -m 755 ${DB_DIR}
