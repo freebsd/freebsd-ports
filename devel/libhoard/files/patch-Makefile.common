@@ -1,5 +1,5 @@
 --- Makefile.common.orig	Mon Apr  7 19:57:11 2003
-+++ Makefile.common	Sun May 25 12:53:38 2003
++++ Makefile.common	Wed Jun 25 17:41:29 2003
 @@ -21,8 +21,17 @@
  # or supply new values as parameters to make, e.g.:
  #   make USE_WINDOWS=1 DEBUG=1
@@ -66,12 +66,68 @@
  ifdef BROKEN
    CPATH = /usr/bin/
  endif
-@@ -127,7 +149,7 @@
+@@ -125,10 +147,8 @@
+ endif
+ 
  ifdef GNUC
-   CC = $(CPATH)gcc
-   CXX = $(CPATH)g++
+-  CC = $(CPATH)gcc
+-  CXX = $(CPATH)g++
 -  FEATURES = -fPIC -D__STRICT_ANSI__ -D_GNU_SOURCE -D_REENTRANT -Wall -fno-exceptions #-fPIC
+-  OPTIMIZE = -O6 -fexpensive-optimizations -finline-functions -fomit-frame-pointer -ffast-math
 +  FEATURES = -fPIC -D__STRICT_ANSI__ -D_GNU_SOURCE -D_REENTRANT -Wall -fno-exceptions -Wno-deprecated
-   OPTIMIZE = -O6 -fexpensive-optimizations -finline-functions -fomit-frame-pointer -ffast-math
++  OPTIMIZE =
    FEATURESXX = $(FEATURES)
    OPTIMIZEXX = $(OPTIMIZE)
+   LIBSO = $(CC) -shared #-nostartfiles
+@@ -144,40 +164,40 @@
+   endif
+ 
+ else
+-  CFLAGS = $(FEATURES) -DNDEBUG $(OPTIMIZE)
+-  CXXFLAGS = $(FEATURESXX) -DNDEBUG $(OPTIMIZEXX)
++#  CFLAGS = $(FEATURES) -DNDEBUG $(OPTIMIZE)
++#  CXXFLAGS = $(FEATURESXX) -DNDEBUG $(OPTIMIZEXX)
+ #  CFLAGS = $(FEATURES) /Zi /DEBUG $(OPTIMIZE)
+ #  CXXFLAGS = $(FEATURESXX) /Zi /DEBUG $(OPTIMIZEXX)
+ endif
+ 
+-LIBS = $(LIBTHREAD)
++LIBS = ${PTHREAD_LIBS}
+ 
+ 
+ .SUFFIXES: .c .cpp .o .a .so .tex .dvi .ps .png .bmp .ppm .eps .s .obj
+ 
+ .s.o:
+-	$(CC) $(CFLAGS) -c -o $@ $<
++	$(CC) $(CFLAGS) $(FEATURES) -c -o $@ $<
+ 
+ .c.o:
+-	$(CC) $(CFLAGS) -c -o $@ $<
++	$(CC) $(CFLAGS) $(FEATURES) -c -o $@ $<
+ 
+ .cpp.o:
+-	$(CXX) $(CXXFLAGS) -c -o $@ $<
++	$(CXX) $(CXXFLAGS) $(FEATURESXX) -c -o $@ $<
+ 
+ .c.obj:
+-	$(CC) $(CFLAGS) -c -o $@ $<
++	$(CC) $(CFLAGS) $(FEATURES) -c -o $@ $<
+ 
+ .cpp.obj:
+-	$(CXX) $(CXXFLAGS) -c -o $@ $<
++	$(CXX) $(CXXFLAGS) $(FEATURESXX) -c -o $@ $<
+ 
+ .o:
+-	$(CC) $(CFLAGS) $< -o $@ $(LIBS)
++	$(CC) $(CFLAGS) $(FEATURES) $< -o $@ $(LIBS)
+ 
+ .c:
+-	$(CC) $(CFLAGS) $< -o $@ $(LIBS)
++	$(CC) $(CFLAGS) $(FEATURES) $< -o $@ $(LIBS)
+ 
+ .cpp:
+-	$(CXX) $(CXXFLAGS) $< -o $@ $(LIBS)
++	$(CXX) $(CXXFLAGS) $(FEATURESXX) $< -o $@ $(LIBS)
+ 
+ .o.a:
+ 	-rm -f $@

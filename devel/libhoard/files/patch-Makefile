@@ -1,0 +1,11 @@
+--- Makefile.orig	Wed Jun 25 17:44:34 2003
++++ Makefile	Wed Jun 25 17:45:03 2003
+@@ -37,7 +37,7 @@
+ 	$(LIBSO) libhoard.o $(OBJS) -o $@ $(LIBS)
+ 
+ libhoard.o: libhoard.cpp $(SRCS)
+-	$(CXX) $(CXXFLAGS) -c $< -o $@
++	$(CXX) $(CXXFLAGS) $(FEATURESXX) -c $< -o $@
+ endif
+ 
+ ifeq ($(WINDOWS),1)

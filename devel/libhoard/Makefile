@@ -7,6 +7,7 @@
 
 PORTNAME=	libhoard
 PORTVERSION=	2.1.2d
+PORTREVISION?=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cs.umass.edu/~emery/software/
 
@@ -21,24 +22,9 @@ INSTALLS_SHLIB=	YES
 
 .include <bsd.port.pre.mk>
 
-TESTPROG=	testos
-
-check-os:
-.if !defined(SKIP_OS_TEST)
-	-@${MKDIR} ${WRKSRC} ; \
-	${RM} -f ${WRKSRC}/${TESTPROG} ; \
-	${CC} ${PTHREAD_CFLAGS} ${PTHREAD_LIBS} -o ${WRKSRC}/${TESTPROG} \
-		${PATCHDIR}/${TESTPROG}.c > /dev/null 2>&1 ;
-	@if [ ! -f ${WRKSRC}/${TESTPROG} ] ; \
-	then \
-	${ECHO_MSG} "You must have a version of FreeBSD later than 4.8-STABLE" ; \
-	${ECHO_MSG} "27 May 2003 or 5.1-RELEASE to compile and use libhoard" ; \
-	exit 1 ; \
-	fi
-	@${WRKSRC}/${TESTPROG} 2>/dev/null
+.if ${OSVERSION} < 501100
+IGNORE=		"You must have a FreeBSD 5.1-RELEASE or better"
 .endif
-
-pre-fetch:	check-os
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/libhoard.so ${PREFIX}/lib/libhoard.so.1
