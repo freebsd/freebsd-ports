@@ -47,6 +47,10 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 activate:
+	@if [ "`${ECHO_CMD} FreeBSD | ${TR} -s .`" != "FreeBSD" ]; then \
+		${ECHO_MSG} "tr(1) is broken."; \
+		${FALSE}; \
+	fi
 	@${GREP} -qs PORTMK /usr/share/mk/bsd.port.mk || \
 		${PATCH} -s -N -d /usr/share/mk -i ${PORTMK_PATCH} && \
 		${ECHO_MSG} ">> Configured bsd.port.mk."
