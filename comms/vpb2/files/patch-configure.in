@@ -1,0 +1,27 @@
+--- configure.in.orig	Sun Dec 28 11:55:40 2003
++++ configure.in	Sun Dec 28 11:55:52 2003
+@@ -23,24 +23,6 @@
+ OST_MAINTAINER_MODE
+ OST_CXX_PROGRAMMING
+ 
+-AC_CACHE_CHECK(whether ${CC-cc} accepts -pthread,
+-	ost_cv_prog_cc_pthread,
+-	[echo 'void f(){}' >conftest.c
+-	if test -z "`${CC-cc} -pthread -c conftest.c 2>&1`"; then
+-		ost_cv_prog_cc_pthread=yes
+-	else
+-		ost_cv_prog_cc_pthread=no
+-	fi
+-	rm -f conftest*
+-	])
+-if test $ost_cv_prog_cc_pthread = yes ; then
+-	LIBS="$LIBS -pthread"
+-else
+-	AC_CHECK_LIB(c_r, pthread_self,
+-		LIBS="$LIBS -lc_r",
+-		AC_CHECK_LIB(pthread, pthread_self,
+-			LIBS="$LIBS -lpthread"))
+-fi
+ 
+ AC_SUBST(LT_RELEASE)
+ AC_OUTPUT(Makefile vpb2.spec freebsd/Makefile)

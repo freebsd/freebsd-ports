@@ -1,8 +1,8 @@
+bin/mtisa
+bin/tload
+bin/tvpb
+etc/vpbmain.out
 include/vpbapi.h
 lib/libvpb2.a
 lib/libvpb2.so
 lib/libvpb2.so.0
-bin/tvpb
-bin/tload
-bin/mtisa
-

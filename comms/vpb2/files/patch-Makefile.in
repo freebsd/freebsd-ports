@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sun Dec 28 11:51:29 2003
++++ Makefile.in	Sun Dec 28 11:51:38 2003
+@@ -119,7 +119,7 @@
+ mtisa_SOURCES = mtisa.cpp
+ mtisa_LDADD = libvpb2.la
+ 
+-etc_prefix = /
++etc_prefix = $(prefix)
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
+ CONFIG_HEADER = config.h

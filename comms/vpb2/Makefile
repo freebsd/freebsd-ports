@@ -1,4 +1,3 @@
-# Generated automatically from Makefile.in by configure.
 # New ports collection makefile for:	vpb2
 # Date created:				07 Sept 2000
 # Whom:					David Sugar <dyfet@gnu.org>
@@ -14,18 +13,20 @@ MASTER_SITES=	ftp://www.voxilla.org/pub/vpb/
 MAINTAINER=	dyfet@gnu.org
 COMMENT=	User mode API for Voicetronix 4 port analog DSP telephony cards
 
-BROKEN=		"Installs file into /etc"
-
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 USE_AUTOCONF=	yes
 USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 
-CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib
+CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib \
+		LDFLAGS=${PTHREAD_LIBS}
 
 post-extract:
 	@${FIND} ${WRKSRC} -name "Makefile.in" | \
 		${XARGS} ${REINPLACE_CMD} -e 's|-release \$$\(LT_RELEASE\)||g'
+
+post-patch:
+	${REINPLACE_CMD} -e "s|PREFIX|${PREFIX}|" ${WRKSRC}/vpbreg.cpp
 
 .include <bsd.port.mk>
