@@ -19,16 +19,14 @@ LIB_DEPENDS=	nmz.6:${PORTSDIR}/japanese/namazu2
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-.if !defined(NOPORTDOCS)
-USE_RUBY_RD=	yes
-.endif
+USE_RUBY_RDTOOL=	yes
 
 INSTALL_TARGET=	site-install
 
 post-build:
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC}; ${RUBY_RD} search-namazu.en.rd > search-namazu.en.html
-	cd ${WRKSRC}; ${RUBY_RD} search-namazu.ja.rd > search-namazu.ja.html
+	cd ${WRKSRC}; ${RUBY_RD2} search-namazu.en.rd > search-namazu.en.html
+	cd ${WRKSRC}; ${RUBY_RD2} search-namazu.ja.rd > search-namazu.ja.html
 .endif
 
 post-install:

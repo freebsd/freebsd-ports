@@ -17,9 +17,7 @@ MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-.if !defined(NOPORTDOCS)
-USE_RUBY_RD=	yes
-.endif
+USE_RUBY_RDTOOL=	yes
 
 INSTALL_TARGET=	site-install
 
@@ -27,7 +25,7 @@ DOCS=		sysvipc.html	sysvipc.rd
 
 post-build:
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC}; ${RUBY_RD} sysvipc.rd > sysvipc.html
+	cd ${WRKSRC}; ${RUBY_RD2} sysvipc.rd > sysvipc.html
 .endif
 
 post-install:

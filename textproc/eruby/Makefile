@@ -14,9 +14,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
-.if !defined(NOPORTDOCS)
-USE_RUBY_RD=	yes
-.endif
+USE_RUBY_RDTOOL=	yes
 
 CONFIGURE_ARGS=	--enable-shared --with-charset="${DEFAULT_CHARSET}"
 INSTALL_TARGET=	site-install
@@ -34,7 +32,7 @@ do-configure:
 
 post-build:
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC}; ${RUBY_RD} eruby.rd > eruby.html
+	cd ${WRKSRC}; ${RUBY_RD2} eruby.rd > eruby.html
 .endif
 
 post-install:

@@ -15,9 +15,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
-.if !defined(NOPORTDOCS)
-USE_RUBY_RD=	yes
-.endif
+USE_RUBY_RDTOOL=	yes
 
 EXAMPLES_JA=	test.rb test.sh
 DOCS_EN=	ChangeLog romkan.en.html romkan.en.rd
@@ -31,7 +29,7 @@ do-build:
 .if !defined(NOPORTDOCS)
 .for f in romkan.en.rd romkan.ja.rd
 	@cd ${WRKSRC}; \
-	${RUBY_RD} ${f} > ${f:R}.html
+	${RUBY_RD2} ${f} > ${f:R}.html
 .endfor
 .endif
 

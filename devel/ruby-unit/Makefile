@@ -16,9 +16,7 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
-.if !defined(NOPORTDOCS)
-USE_RUBY_RD=	yes
-.endif
+USE_RUBY_RDTOOL=	yes
 
 RUBY_SHEBANG_FILES=	${WRKSRC}/bin/c2t.rb	\
 			${WRKSRC}/bin/runtest.rb

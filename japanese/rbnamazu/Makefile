@@ -15,9 +15,7 @@ MAINTAINER=	knu@FreeBSD.org
 
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	optparse
-.if !defined(NOPORTDOCS)
-USE_RUBY_RD=	yes
-.endif
+USE_RUBY_RDTOOL=	yes
 
 NO_BUILD=	yes
 
@@ -33,7 +31,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 .for f in ${RD_DOCS}
 	cd ${WRKSRC}; \
-	${RUBY_RD} ${f} > ${f:S/.rd/.html/}
+	${RUBY_RD2} ${f} > ${f:S/.rd/.html/}
 .endfor
 	${MKDIR} ${RUBY_DOCDIR}/rbnamazu/ja
 .for f in ${RD_DOCS:S/.rd/.html/:M*.en}

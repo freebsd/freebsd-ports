@@ -18,9 +18,7 @@ MAINTAINER=	knu@FreeBSD.org
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/acl.rb:${PORTSDIR}/security/ruby-acl
 
 USE_RUBY=	yes
-.if !defined(NOPORTDOCS)
-USE_RUBY_RD=	yes
-.endif
+USE_RUBY_RDTOOL=	yes
 
 post-extract:
 	${MKDIR} ${WRKSRC}/acl/doc ${WRKSRC}/acl/lib ${WRKSRC}/acl/runit
@@ -40,10 +38,10 @@ post-patch:
 do-build:
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC}/doc; for f in *.rd; do \
-		${RUBY_RD} $$f > `${ECHO_CMD} $$f | ${SED} 's/\.rd$$/.html/'`; \
+		${RUBY_RD2} $$f > `${ECHO_CMD} $$f | ${SED} 's/\.rd$$/.html/'`; \
 	done
 	cd ${WRKSRC}/doc; for f in *.rd.ja; do \
-		${RUBY_RD} $$f > `${ECHO_CMD} $$f | ${SED} 's/\.rd.ja$$/.ja.html/'`; \
+		${RUBY_RD2} $$f > `${ECHO_CMD} $$f | ${SED} 's/\.rd.ja$$/.ja.html/'`; \
 	done
 	${MKDIR} ${WRKSRC}/doc/ja
 	cd ${WRKSRC}/doc; ${MV} *.rd.ja *.ja.html ja/

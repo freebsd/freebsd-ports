@@ -22,9 +22,7 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-.if !defined(NOPORTDOCS)
-USE_RUBY_RD=	yes
-.endif
+USE_RUBY_RDTOOL=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 INSTALL_TARGET=	site-install
@@ -43,7 +41,7 @@ post-build:
 .if !defined(NOPORTDOCS)
 .for f in ${RD_DOCS_EN} ${RD_DOCS_JA}
 	cd ${WRKSRC}; \
-	${RUBY_RD} ${f} > ${f:S/.rd/.html/}
+	${RUBY_RD2} ${f} > ${f:S/.rd/.html/}
 .endfor
 .endif
 

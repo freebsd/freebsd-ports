@@ -19,9 +19,7 @@ MAINTAINER=	knu@FreeBSD.org
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/flex.so:${PORTSDIR}/devel/ruby-flex_rb
 
 USE_RUBY=	yes
-.if !defined(NOPORTDOCS)
-USE_RUBY_RD=	yes
-.endif
+USE_RUBY_RDTOOL=	yes
 
 RUBY_SHEBANG_FILES=	${WRKSRC}/viztree ${WRKSRC}/reviz/reviz
 
@@ -31,9 +29,9 @@ DOCS=	README TODO cvs.html diff.html tempdir.html
 
 do-build:
 .if !defined(NOPORTDOCS)
-	cd ${WRKSRC}; ${RUBY_RD} lib/cvs.rb > cvs.html
-	cd ${WRKSRC}; ${RUBY_RD} lib/diff.rb > diff.html
-	cd ${WRKSRC}; ${RUBY_RD} lib/tempdir.rb > tempdir.html
+	cd ${WRKSRC}; ${RUBY_RD2} lib/cvs.rb > cvs.html
+	cd ${WRKSRC}; ${RUBY_RD2} lib/diff.rb > diff.html
+	cd ${WRKSRC}; ${RUBY_RD2} lib/tempdir.rb > tempdir.html
 .endif
 
 do-install:
