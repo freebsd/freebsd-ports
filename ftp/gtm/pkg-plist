@@ -1,19 +1,37 @@
 bin/gtm
 bin/gtm_applet
-etc/CORBA/servers/gtm.gnorba
 etc/CORBA/servers/gtm_applet.gnorba
 etc/sound/events/gtm.soundlist
 share/gnome/applets/Network/gtm_applet.desktop
 share/gnome/apps/Internet/gtm.desktop
 share/gnome/help/gtm/C/authors.html
 share/gnome/help/gtm/C/bugs.html
-share/gnome/help/gtm/C/docbook.css
+share/gnome/help/gtm/C/images/mainwindow.png
+share/gnome/help/gtm/C/images/newwindow.png
+share/gnome/help/gtm/C/images/numericwindow.png
 share/gnome/help/gtm/C/index.html
 share/gnome/help/gtm/C/license.html
+share/gnome/help/gtm/C/ln7.html
+share/gnome/help/gtm/C/newdownload.html
+share/gnome/help/gtm/C/numericdownload.html
 share/gnome/help/gtm/C/prefs.html
 share/gnome/help/gtm/C/topic.dat
 share/gnome/help/gtm/C/usage.html
+share/gnome/help/gtm/pt/authors.html
+share/gnome/help/gtm/pt/bugs.html
+share/gnome/help/gtm/pt/images/mainwindow.png
+share/gnome/help/gtm/pt/images/newwindow.png
+share/gnome/help/gtm/pt/images/numericwindow.png
+share/gnome/help/gtm/pt/index.html
+share/gnome/help/gtm/pt/license.html
+share/gnome/help/gtm/pt/ln10.html
+share/gnome/help/gtm/pt/newdownload.html
+share/gnome/help/gtm/pt/numericdownload.html
+share/gnome/help/gtm/pt/prefs.html
+share/gnome/help/gtm/pt/topic.dat
+share/gnome/help/gtm/pt/usage.html
 share/gnome/idl/Gtm.idl
+share/gnome/oaf/GNOME_GTM.oaf
 share/gnome/pixmaps/gtm.png
 share/gnome/pixmaps/gtm_applet.png
 share/gnome/sounds/gtm/add.wav
@@ -32,7 +50,9 @@ share/locale/hu/LC_MESSAGES/gtm.mo
 share/locale/it/LC_MESSAGES/gtm.mo
 share/locale/ja/LC_MESSAGES/gtm.mo
 share/locale/ko/LC_MESSAGES/gtm.mo
+share/locale/nl/LC_MESSAGES/gtm.mo
 share/locale/no/LC_MESSAGES/gtm.mo
+share/locale/pl/LC_MESSAGES/gtm.mo
 share/locale/pt/LC_MESSAGES/gtm.mo
 share/locale/pt_BR/LC_MESSAGES/gtm.mo
 share/locale/ro/LC_MESSAGES/gtm.mo
@@ -43,9 +63,12 @@ share/locale/sv/LC_MESSAGES/gtm.mo
 share/locale/tr/LC_MESSAGES/gtm.mo
 share/locale/uk/LC_MESSAGES/gtm.mo
 share/locale/wa/LC_MESSAGES/gtm.mo
-@dirrm etc/CORBA/servers
-@dirrm etc/sound/events
+share/locale/zh_TW/LC_MESSAGES/gtm.mo
+@dirrm share/gnome/sounds/gtm
+@dirrm share/gnome/help/gtm/pt/images
+@dirrm share/gnome/help/gtm/pt
 @dirrm share/gnome/help/gtm/C/images
 @dirrm share/gnome/help/gtm/C
 @dirrm share/gnome/help/gtm
-@dirrm share/gnome/sounds/gtm
+@dirrm etc/sound/events
+@dirrm etc/CORBA/servers
