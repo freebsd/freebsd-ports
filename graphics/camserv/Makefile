@@ -8,7 +8,7 @@
 PORTNAME=	camserv
 PORTVERSION=	0.42
 CATEGORIES=	graphics
-MASTER_SITES=	http://cserv.sourceforge.net/current/
+MASTER_SITES=	http://cserv.sourceforge.net/old/
 
 MAINTAINER=	chein@freebsd.org
 
