@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gsk
-PORTVERSION=	0.3.5
-PORTREVISION=	1
+PORTVERSION=	1.0.0
 CATEGORIES=	net devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,15 +15,19 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C library for writing servers
 
-USE_GNOME=	glib12
-USE_GMAKE=	yes
+USE_GNOME=	glib20 gnomehack gnometarget
 USE_PERL5=	yes
-USE_INC_LIBTOOL_VER=13
+USE_GMAKE=	yes
+USE_LIBTOOL_VER=	15
+CONFIGURE_ARGS=	--disable-gtk-doc
 INSTALLS_SHLIB=	yes
 
-.if !defined(WITHOUT_OPENSSL)
+.if defined(WITHOUT_OPENSSL)
+CONFIGURE_ARGS+=	--disable-ssl
+PLIST_SUB+=	OPENSSL="@comment "
+.else
 USE_OPENSSL=	yes
-CONFIGURE_ARGS+=	--enable-ssl
+PLIST_SUB+=	OPENSSL=""
 .endif
 
 .include <bsd.port.mk>
