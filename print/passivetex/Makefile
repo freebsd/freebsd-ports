@@ -8,7 +8,7 @@
 PORTNAME=		passivetex
 PORTVERSION=		1.0
 CATEGORIES=		print
-MASTER_SITES=		http://www.hcu.ox.ac.uk/TEI/Software/passivetex/
+MASTER_SITES=		http://www.tei-c.org.uk/Software/passivetex/
 DISTFILES=		passivetex.zip
 
 MAINTAINER=		nik@FreeBSD.org
