@@ -1,0 +1,11 @@
+--- configure.orig	Sat Jan  5 17:07:53 2002
++++ configure	Sat Jan  5 17:07:53 2002
+@@ -874,7 +874,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_cv_lbl_gcc_vers=`$CC -v 2>&1 | \
+-			    sed -n -e '$s/.* //' -e '$s/\..*//p'`
++			    sed -n -e '$s/^.*version //' -e '$s/\..*//p'`
+ fi
+ 
+ 		    echo "$ac_t""$ac_cv_lbl_gcc_vers" 1>&6
