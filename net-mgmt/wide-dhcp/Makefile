@@ -3,7 +3,7 @@
 # Date created:         21 November 1995
 # Whom:                 Yoshiro MIHIRA <sanpei@yy.cs.keio.ac.jp>
 #
-# $Id: Makefile,v 1.9 1997/05/30 18:38:11 max Exp $
+# $Id: Makefile,v 1.10 1997/05/30 18:52:44 max Exp $
 #
 
 DISTNAME=       dhcp-1.3beta
@@ -59,7 +59,7 @@ post-install:
 		echo '		find $${DB_POOL} -newer $${DB_BIND} -exec rm $${DB_BIND} \;'\
 			>> ${STARTUP_SCRIPT};				\
 		echo '	fi' >> ${STARTUP_SCRIPT};			\
-		echo "	${PREFIX}/sbin/dhcps [Intarface Name]"		\
+		echo "	${PREFIX}/sbin/dhcps [Interface Name]"		\
 			>> ${STARTUP_SCRIPT};				\
 		echo "	echo -n ' dhcps'"				\
 			>> ${STARTUP_SCRIPT};				\
