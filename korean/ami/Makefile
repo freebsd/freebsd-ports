@@ -37,7 +37,7 @@ DATADIR=	share/gnome
 CATEGORIES+=	gnome
 .endif
 
-pre-everything:
+pre-everything::
 .if !defined(HAVE_GNOME)
 	@${ECHO} Define WITH_GNOME=yes if you want to enable GNOME applet support.
 .else
