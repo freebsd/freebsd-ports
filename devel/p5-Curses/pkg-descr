@@ -1,0 +1,6 @@
+Curses is the interface between Perl and your system's curses(3) library. 
+For descriptions on the usage of a given function, variable, or constant,
+consult your system's documentation, as such information invariably varies
+(:-) between different curses(3) libraries and operating systems.  This
+document describes the interface itself, and assumes that you already know
+how your system's curses(3) library works.
