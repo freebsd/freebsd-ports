@@ -14,6 +14,7 @@ MASTER_SITES=	http://www.ex-parrot.com/~chris/tpop3d/
 MAINTAINER=	boris@tagnet.ru
 COMMENT=	Virtual-domain capable POP3 server supporting MySQL,PgSQL etc auth
 
+IS_INTERACTIVE=	yes
 USE_OPENSSL=	yes
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
@@ -30,8 +31,13 @@ OPTIONS=	MYSQL		"Use MySQL authentication"			off \
 		FLATAUTH	"Enable /etc/passwd-style authentication"	off \
 		MAILDIR		"Compile Maildir support"			on
 
+.include <bsd.port.pre.mk>
+
 # MySQL authentication
 .if defined(WITH_MYSQL) && !defined(WITHOUT_MYSQL)
+.if defined(WITH_PGSQL) && !defined(WITHOUT_PGSQL)
+IGNORE=	MySQL and PgSQL authentication can not be build together
+.endif
 USE_MYSQL=		yes
 DEFAULT_MYSQL_VER=	41
 CONFIGURE_ARGS+=	--enable-auth-mysql \
@@ -93,4 +99,4 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
