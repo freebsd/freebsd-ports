@@ -1,3 +1,4 @@
+# ex:ts=8
 # New ports collection makefile for:   indent
 # Date created:        28 August 1997
 # Whom:                Kapil Chowksey <kchowksey@hss.hns.com>
@@ -12,10 +13,11 @@ MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	indent
 DISTNAME=	indent-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	obrien@FreeBSD.org
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
+MAKE_ARGS=	BERKELEY_DEFAULTS=1
 
 MAN1=		gindent.1
 
