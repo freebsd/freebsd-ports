@@ -63,6 +63,12 @@ LOCALPCAPDIR=	${WRKDIR}/libpcap-0.8.1
 LOCALPCAPFILES= include/pcap.h include/pcap-namedb.h include/pcap-bpf.h \
 		lib/libpcap.a
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600000
+BROKEN=		"Build fails on FreeBSD >= 6.x"
+.endif
+
 #
 # When building tcpdump against a particular pcap version, it expects to
 # find a built, untarred source tree in the parent of the work tree.
@@ -80,4 +86,4 @@ post-install:
 	${CAT} ${PKGMESSAGE}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
