@@ -10,13 +10,17 @@ share/apps/kdbg/pics/pcinner.xpm
 share/apps/kdbg/pics/pcup.xpm
 share/apps/kdbg/pics/pgmfinish.xpm
 share/apps/kdbg/pics/pgmnext.xpm
+share/apps/kdbg/pics/pgmnexti.xpm
 share/apps/kdbg/pics/pgmrun.xpm
 share/apps/kdbg/pics/pgmstep.xpm
+share/apps/kdbg/pics/pgmstepi.xpm
 share/apps/kdbg/pics/pointer.xpm
 share/apps/kdbg/pics/regs.xpm
 share/apps/kdbg/pics/search.xpm
 share/apps/kdbg/pics/watch.xpm
 share/apps/kdbg/pics/watchcoded.xpm
+share/apps/kdbg/pics/watchdis.xpm
+share/apps/kdbg/pics/watchena.xpm
 share/apps/kdbg/types/X11.kdbgtt
 share/apps/kdbg/types/glib.kdbgtt
 share/apps/kdbg/types/gtk+.kdbgtt
@@ -24,13 +28,54 @@ share/apps/kdbg/types/kdecore.kdbgtt
 share/apps/kdbg/types/kdecore3.kdbgtt
 share/apps/kdbg/types/qt.kdbgtt
 share/apps/kdbg/types/qt2.kdbgtt
+share/doc/HTML/de/kdbg/argspwdenv.html
+share/doc/HTML/de/kdbg/breakptlist.html
+share/doc/HTML/de/kdbg/globaloptions.html
+share/doc/HTML/de/kdbg/howdoi.html
 share/doc/HTML/de/kdbg/index.html
+share/doc/HTML/de/kdbg/localvars.html
+share/doc/HTML/de/kdbg/memory.html
+share/doc/HTML/de/kdbg/pgmoutput.html
+share/doc/HTML/de/kdbg/pgmsettings.html
+share/doc/HTML/de/kdbg/registers.html
+share/doc/HTML/de/kdbg/sourcecode.html
+share/doc/HTML/de/kdbg/stack.html
+share/doc/HTML/de/kdbg/threads.html
+share/doc/HTML/de/kdbg/tips.html
 share/doc/HTML/de/kdbg/types.html
+share/doc/HTML/de/kdbg/watches.html
+share/doc/HTML/en/kdbg/argspwdenv.html
+share/doc/HTML/en/kdbg/breakptlist.html
+share/doc/HTML/en/kdbg/globaloptions.html
+share/doc/HTML/en/kdbg/howdoi.html
 share/doc/HTML/en/kdbg/index.html
+share/doc/HTML/en/kdbg/localvars.html
+share/doc/HTML/en/kdbg/memory.html
+share/doc/HTML/en/kdbg/pgmoutput.html
 share/doc/HTML/en/kdbg/pgmsettings.html
+share/doc/HTML/en/kdbg/registers.html
+share/doc/HTML/en/kdbg/sourcecode.html
+share/doc/HTML/en/kdbg/stack.html
+share/doc/HTML/en/kdbg/threads.html
+share/doc/HTML/en/kdbg/tips.html
 share/doc/HTML/en/kdbg/types.html
+share/doc/HTML/en/kdbg/watches.html
+share/doc/HTML/ru/kdbg/argspwdenv.html
+share/doc/HTML/ru/kdbg/breakptlist.html
+share/doc/HTML/ru/kdbg/globaloptions.html
+share/doc/HTML/ru/kdbg/howdoi.html
 share/doc/HTML/ru/kdbg/index.html
+share/doc/HTML/ru/kdbg/localvars.html
+share/doc/HTML/ru/kdbg/memory.html
+share/doc/HTML/ru/kdbg/pgmoutput.html
+share/doc/HTML/ru/kdbg/pgmsettings.html
+share/doc/HTML/ru/kdbg/registers.html
+share/doc/HTML/ru/kdbg/sourcecode.html
+share/doc/HTML/ru/kdbg/stack.html
+share/doc/HTML/ru/kdbg/threads.html
+share/doc/HTML/ru/kdbg/tips.html
 share/doc/HTML/ru/kdbg/types.html
+share/doc/HTML/ru/kdbg/watches.html
 share/icons/kdbg.xpm
 share/icons/mini/mini-kdbg.xpm
 share/locale/cs/LC_MESSAGES/kdbg.mo
@@ -39,18 +84,25 @@ share/locale/de/LC_MESSAGES/kdbg.mo
 share/locale/es/LC_MESSAGES/kdbg.mo
 share/locale/fr/LC_MESSAGES/kdbg.mo
 share/locale/hr/LC_MESSAGES/kdbg.mo
+share/locale/hu/LC_MESSAGES/kdbg.mo
 share/locale/it/LC_MESSAGES/kdbg.mo
+share/locale/ja/LC_MESSAGES/kdbg.mo
 share/locale/no/LC_MESSAGES/kdbg.mo
+share/locale/no_NY/LC_MESSAGES/kdbg.mo
 share/locale/pl/LC_MESSAGES/kdbg.mo
 share/locale/pt/LC_MESSAGES/kdbg.mo
 share/locale/ro/LC_MESSAGES/kdbg.mo
 share/locale/ru/LC_MESSAGES/kdbg.mo
 share/locale/sk/LC_MESSAGES/kdbg.mo
+share/locale/sr/LC_MESSAGES/kdbg.mo
 share/locale/sv/LC_MESSAGES/kdbg.mo
+share/locale/tr/LC_MESSAGES/kdbg.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/kdbg.mo
-@dirrm share/apps/kdbg/pics
-@dirrm share/apps/kdbg/types
-@dirrm share/apps/kdbg
-@dirrm share/doc/HTML/de/kdbg
-@dirrm share/doc/HTML/en/kdbg
+@unexec rmdir share/local/no_NY/LC_MESSAGES > /dev/null 2>&1 || true
+@unexec rmdir share/local/no_NY > /dev/null 2>&1 || true
 @dirrm share/doc/HTML/ru/kdbg
+@dirrm share/doc/HTML/en/kdbg
+@dirrm share/doc/HTML/de/kdbg
+@dirrm share/apps/kdbg/types
+@dirrm share/apps/kdbg/pics
+@dirrm share/apps/kdbg
