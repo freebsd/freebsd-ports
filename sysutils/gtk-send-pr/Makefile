@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtk-send-pr
-PORTVERSION=	0.4.4
-PORTREVISION=	1
+PORTVERSION=	0.4.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.energyhq.es.eu.org/files/
 
