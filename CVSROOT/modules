@@ -1757,6 +1757,7 @@ fly		ports/graphics/fly
 flying		ports/games/flying
 flyway		ports/misc/flyway
 fmio		ports/audio/fmio
+fmirror		ports/ftp/fmirror
 fmsx		ports/emulators/fmsx
 fmt		src/usr.bin/fmt
 fnccheck	ports/devel/fnccheck
