@@ -71,6 +71,10 @@ SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 502102
+FORBIDDEN=	"Links against conflicting thread libraries"
+.endif
+
 USE_RC_SUBR=	yes
 RC_DIR=		${PREFIX}/etc/rc.d
 RC_SUFX=	.sh
