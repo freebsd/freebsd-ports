@@ -7,6 +7,7 @@
 
 PORTNAME=	soap
 PORTVERSION=	1.4.2
+PORTREVISION=	1
 CATEGORIES=	net ruby
 MASTER_SITES=	http://www.jin.gr.jp/~nahi/Ruby/SOAP4R/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -16,7 +17,6 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/application.rb:${PORTSDIR}/sysutils/ruby-application.rb \
-		${RUBY_SITELIBDIR}/uri.rb:${PORTSDIR}/net/ruby-uri \
 		${RUBY_SITELIBDIR}/http-access2.rb:${PORTSDIR}/www/ruby-http-access \
 		${RUBY_SITELIBDIR}/GServer.rb:${PORTSDIR}/net/ruby-gserver \
 		${RUBY_SITELIBDIR}/date3.rb:${PORTSDIR}/devel/ruby-date2 \
