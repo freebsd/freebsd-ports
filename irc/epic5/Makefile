@@ -3,7 +3,7 @@
 # Date created:		19 June 1997
 # Whom:			Matthew Hunt <mph@pobox.com>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1997/07/29 09:22:39 tg Exp $
 #
 
 DISTNAME=	ircii2.8.2-EPIC3.004
@@ -17,6 +17,10 @@ MAINTAINER=	mph@pobox.com
 EXTRACT_ONLY=	ircii2.8.2-EPIC3.004.tar.gz
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/ircii-EPIC3.004
+
+do-install:
+		(cd ${WRKSRC} && make INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+			INSTALL_DATA="${INSTALL_DATA}" install)
 
 post-install:
 		(cd $(PREFIX)/lib/irc && tar xzf $(DISTDIR)/ircii2.8.2-EPIC3.help.tar.gz)
