@@ -29,4 +29,10 @@ CFLAGS+=	-O0
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 600006
+BROKEN=		"Does not compile on FreeBSD >= 6.x"
+.endif
+
+.include <bsd.port.post.mk>
