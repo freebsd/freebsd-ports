@@ -16,7 +16,7 @@ COMMENT?=	A webmail system which accesses mail over IMAP
 
 CONFLICTS?=	ja-squirrelmail-1.*
 
-USE_PHP=	session mhash gettext mbstring
+USE_PHP=	session mhash gettext mbstring pcre openssl
 WANT_PHP_WEB=	yes
 
 USE_BZIP2=	yes
