@@ -12,6 +12,9 @@ MASTER_SITES=	ftp://ftp.codefactory.se/pub/software/mrproject/source/
 
 MAINTAINER=	demon@FreeBSD.org
 
+BUILD_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
+RUN_DEPENDS=	evolution:${PORTSDIR}/mail/evolution
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_GNOME=	yes
