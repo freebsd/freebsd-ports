@@ -1,5 +1,5 @@
---- vmmon-only/freebsd/hostif.c.orig	Thu Jul 12 22:05:29 2001
-+++ vmmon-only/freebsd/hostif.c	Thu Jul 12 22:14:09 2001
+--- vmmon-only/freebsd/hostif.c.orig	Mon Sep  2 19:19:50 2002
++++ vmmon-only/freebsd/hostif.c	Mon Sep  2 19:30:03 2002
 @@ -55,7 +55,11 @@
  
  #include <vm/vm.h>
@@ -12,75 +12,113 @@
  #include <vm/pmap.h>
  #include <vm/vm_map.h>
  #include <vm/vm_page.h>
-@@ -107,7 +111,16 @@
+@@ -107,7 +111,21 @@
  
  	paddr = (vm_offset_t)addr;
          m = PHYS_TO_VM_PAGE(paddr);
-+#if __FreeBSD_version >= 500021
+-        vm_page_wire(m);
++#if __FreeBSD_version >= 500038
 +	GIANT_REQUIRED;
++	vm_page_lock_queues();
++	vm_page_wire(m);
++	vm_page_unlock_queues();
++#elif __FreeBSD_version >= 500021
++	GIANT_REQUIRED;
++	vm_page_wire(m);
 +#elif __FreeBSD_version >= 500013
 +	mtx_lock(&vm_mtx);
-+#endif
-         vm_page_wire(m);
-+#if __FreeBSD_version >= 500021
-+#elif __FreeBSD_version >= 500013
++	vm_page_wire(m);
 +	mtx_unlock(&vm_mtx);
++#else
++	vm_page_wire(m);
 +#endif
  	return 0;
  }     
  
-@@ -120,7 +133,16 @@
+@@ -120,7 +138,21 @@
  
  	paddr = (vm_offset_t)addr;
  	m = PHYS_TO_VM_PAGE(paddr);
-+#if __FreeBSD_version >= 500021
++#if __FreeBSD_version >= 500038
 +	GIANT_REQUIRED;
++	vm_page_lock_queues();
++	vm_page_unwire(m, 1);
++	vm_page_unlock_queues();
++#elif __FreeBSD_version >= 500021
++	GIANT_REQUIRED;
++	vm_page_unwire(m, 1);
 +#elif __FreeBSD_version >= 500013
 +	mtx_lock(&vm_mtx);
-+#endif
  	vm_page_unwire(m, 1);
-+#if __FreeBSD_version >= 500021
-+#elif __FreeBSD_version >= 500013
 +	mtx_unlock(&vm_mtx);
++#else
++	vm_page_unwire(m, 1);
 +#endif
    	return 0;
  }
   
-@@ -1066,10 +1088,19 @@
+@@ -1066,10 +1098,33 @@
          return NULL;
    }
    paddr = vtophys(addr);
-+#if __FreeBSD_version >= 500021
-+	GIANT_REQUIRED;
++#if __FreeBSD_version >= 500038
++  GIANT_REQUIRED;
++  ka->kaddr = kmem_alloc_pageable(kernel_map, PAGE_SIZE);
++  ka->map = PHYS_TO_VM_PAGE(paddr);
++  vm_page_lock_queues();
++  vm_page_wire(ka->map);
++  vm_page_unlock_queues();
++  pmap_qenter(ka->kaddr, &ka->map, 1);
++#elif __FreeBSD_version >= 500021
++  GIANT_REQUIRED;
++  ka->kaddr = kmem_alloc_pageable(kernel_map, PAGE_SIZE);
++  ka->map = PHYS_TO_VM_PAGE(paddr);
++  vm_page_wire(ka->map);
++  pmap_kenter(ka->kaddr, paddr);
 +#elif __FreeBSD_version >= 500013
 +  mtx_lock(&vm_mtx);
-+#endif
++  ka->kaddr = kmem_alloc_pageable(kernel_map, PAGE_SIZE);
++  ka->map = PHYS_TO_VM_PAGE(paddr);
++  vm_page_wire(ka->map);
++  pmap_kenter(ka->kaddr, paddr);
++  mtx_unlock(&vm_mtx);
++#else
    ka->kaddr = kmem_alloc_pageable(kernel_map, PAGE_SIZE);
    ka->map = PHYS_TO_VM_PAGE(paddr);
    vm_page_wire(ka->map); 
    pmap_kenter(ka->kaddr, paddr);	
-+#if __FreeBSD_version >= 500021
-+#elif __FreeBSD_version >= 500013
-+  mtx_unlock(&vm_mtx);
 +#endif
    return ka->kaddr;
  }
  
-@@ -1079,9 +1110,18 @@
+@@ -1079,9 +1134,29 @@
    if (ka->map==NULL)
  	  return 0;
  
-+#if __FreeBSD_version >= 500021
+-  vm_page_unwire(ka->map, 1); 
+-  pmap_kremove(ka->kaddr);	
++#if __FreeBSD_version >= 500038
 +  GIANT_REQUIRED;
++  vm_page_lock_queues();
++  vm_page_unwire(ka->map, 1);
++  vm_page_unlock_queues();
++  pmap_qremove(ka->kaddr, 1);
+   kmem_free(kernel_map, ka->kaddr, PAGE_SIZE);
++#elif __FreeBSD_version >= 500021
++  GIANT_REQUIRED;
++  vm_page_unwire(ka->map, 1);
++  pmap_kremove(ka->kaddr);
++  kmem_free(kernel_map, ka->kaddr, PAGE_SIZE);
 +#elif __FreeBSD_version >= 500013
 +  mtx_lock(&vm_mtx);
-+#endif
-   vm_page_unwire(ka->map, 1); 
-   pmap_kremove(ka->kaddr);	
-   kmem_free(kernel_map, ka->kaddr, PAGE_SIZE);
-+#if __FreeBSD_version >= 500021
-+#elif __FreeBSD_version >= 500013
++  vm_page_unwire(ka->map, 1);
++  pmap_kremove(ka->kaddr);
++  kmem_free(kernel_map, ka->kaddr, PAGE_SIZE);
 +  mtx_unlock(&vm_mtx);
++#else
++  vm_page_unwire(ka->map, 1);
++  pmap_kremove(ka->kaddr);
++  kmem_free(kernel_map, ka->kaddr, PAGE_SIZE);
 +#endif
    ka->kaddr = 0;
    ka->map = NULL;
