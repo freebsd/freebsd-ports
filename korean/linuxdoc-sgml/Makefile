@@ -1,0 +1,26 @@
+# New ports collection makefile for:    Linuxdoc-SGML 1.6bh2
+# Version required:     1.6bh2
+# Date created:         2 Apr 1997
+# Whom:                 Choi Jun Ho <junker@jazz.snu.ac.kr>
+#
+# $Id$
+#
+
+DISTNAME=	linuxdoc-sgml-1.6bh2
+PKGNAME=	kr-linuxdoc-sgml-1.6bh2
+CATEGORIES=	korean
+MASTER_SITES=	ftp://jazz.snu.ac.kr/pub/unix/util/tools/
+
+MAINTAINER=	junker@jazz.snu.ac.kr
+
+RUN_DEPENDS=	perl5.004:${PORTSDIR}/lang/perl5
+
+MAN1=		sgml2html.1 sgml2latex.1 sgml2rtf.1 sgmls.1 \
+		sgml2info.1 sgml2lyx.1   sgml2txt.1 sgmlsasp.1
+NO_BUILD=	yes
+
+do-install:
+	@cd ${WRKSRC}; \
+	PREFIX=${PREFIX} ./install.quick
+
+.include <bsd.port.mk>
