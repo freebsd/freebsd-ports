@@ -13,13 +13,10 @@ DISTNAME=       kwP
 
 MAINTAINER=	ports@FreeBSD.org
 
-BUILD_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
-RUN_DEPENDS=	python1.5:${PORTSDIR}/lang/python15
-
+USE_PYTHON=	yes
 NO_WRKSUBDIR=	yes
 
-PYTHONSCRIPTDIR=	${PREFIX}/lib/python1.5
-GADFLYDIR=	${PYTHONSCRIPTDIR}/site-packages/gadfly
+GADFLYDIR=	${PYTHON_SITELIBDIR}/gadfly
 GADFLYDOCDIR=	${PREFIX}/share/doc/gadfly
 
 do-build:
@@ -28,10 +25,10 @@ do-install:
 	${MKDIR} ${GADFLYDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.py ${GADFLYDIR}
 	${INSTALL_DATA} ${WRKSRC}/sql.mar ${GADFLYDIR}
-	${ECHO} 'gadfly' > ${PYTHONSCRIPTDIR}/site-packages/gadfly.pth
-	(cd ${GADFLYDIR}; python gfinstall.py)
-	@${PREFIX}/bin/python ${PYTHONSCRIPTDIR}/compileall.py ${GADFLYDIR}
-	@${PREFIX}/bin/python -O ${PYTHONSCRIPTDIR}/compileall.py ${GADFLYDIR}
+	${ECHO} 'gadfly' > ${PYTHON_SITELIBDIR}/gadfly.pth
+	(cd ${GADFLYDIR}; ${PYTHON_CMD} gfinstall.py)
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${GADFLYDIR}
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${GADFLYDIR}
 	${MKDIR} ${GADFLYDOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${GADFLYDOCDIR}
 .if !defined(${NOPORTDOCS})
