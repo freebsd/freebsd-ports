@@ -22,15 +22,15 @@ RUN_DEPENDS=	${X11BASE}/lib/${MOZILLA}/libgtkembedmoz.so:${PORTSDIR}/www/${MOZIL
 MOZ_CONFIGURE_ARGS=--with-mozilla-snapshot="trunk"
 
 .if !defined(WITH_MOZILLA)
-MOZILLA=	mozilla
+MOZILLA=	mozilla-gtk1
 HEADERS_SUFX=
 .else
-.if ${WITH_MOZILLA}=="mozilla-devel"
+.if ${WITH_MOZILLA}=="mozilla-devel-gtk1"
 MOZILLA=	${WITH_MOZILLA}
-HEADERS_SUFX=	-devel
+HEADERS_SUFX=	-devel-gtk1
 MOZ_CONFIGURE_ARGS=	--with-mozilla-snapshot="1.6b"
 .else
-MOZILLA=	mozilla
+MOZILLA=	mozilla-gtk1
 HEADERS_SUFX=
 .endif
 .endif
@@ -62,10 +62,10 @@ CONFIGURE_ARGS+=	--disable-werror
 
 pre-everything::
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} " By default the port uses www/mozilla for html rendering, but you can change"
-	@${ECHO_MSG} " this by defining WITH_MOZILLA to one of the following values:"
+	@${ECHO_MSG} " By default the port uses www/mozilla-gtk1 for html rendering, but you can"
+	@${ECHO_MSG} " change this by defining WITH_MOZILLA to one of the following values:"
 	@${ECHO_MSG}
-	@${ECHO_MSG} "  mozilla-devel "
+	@${ECHO_MSG} "  mozilla-devel-gtk1 "
 	@${ECHO_MSG} ""
 
 post-patch:

@@ -18,18 +18,18 @@ COMMENT=		A Netscape/Mozilla plugin using Bonobo controls to display files
 BUILD_DEPENDS=		${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
 RUN_DEPENDS=		${X11BASE}/lib/${MOZILLA}/components/libwidget_gtk2.so:${PORTSDIR}/www/${MOZILLA}
 
-MOZILLA=		mozilla-gtk2
+MOZILLA=		mozilla
 HEADERS_SUFX=
 
 .if !defined(WITH_MOZILLA)
-MOZILLA=		mozilla-gtk2
+MOZILLA=		mozilla
 HEADERS_SUFX=
 .else
-.if ${WITH_MOZILLA}=="mozilla-devel-gtk2"
+.if ${WITH_MOZILLA}=="mozilla-devel" || ${WITH_MOZILLA}=="mozilla-devel-gtk2"
 MOZILLA=		${WITH_MOZILLA}
 HEADERS_SUFX=		-devel
 .else
-MOZILLA=		mozilla-gtk2
+MOZILLA=		mozilla
 HEADERS_SUFX=
 .endif
 .endif
@@ -44,10 +44,10 @@ CONFIGURE_ARGS=		--with-plugin-install-dir="${PREFIX}/lib/browser_plugins" \
 
 pre-everything::
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} " By default mozilla-bonobo uses www/mozilla-gtk2 for html rendering, but you can"
+	@${ECHO_MSG} " By default mozilla-bonobo uses www/mozilla for html rendering, but you can"
 	@${ECHO_MSG} " change this by defining WITH_MOZILLA to one of the following values:"
 	@${ECHO_MSG} ""
-	@${ECHO_MSG} "  mozilla-devel-gtk2 "
+	@${ECHO_MSG} "  mozilla-devel "
 	@${ECHO_MSG} ""
 
 post-patch:
