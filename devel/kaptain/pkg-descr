@@ -1,0 +1,7 @@
+Kaptain is a tool that lets you build a GUI for a command line program
+in the form of a script. The program interprets that script to present
+the graphical interface. The built interfaces use the QT library.
+
+WWW: http://kaptain.sourceforge.net/
+
+-- AlanE <alane@freebsd.org>

@@ -259,6 +259,7 @@
     SUBDIR += ixlib
     SUBDIR += jakarta-ant
     SUBDIR += jam
+    SUBDIR += kaptain
     SUBDIR += kdbg
     SUBDIR += kdesdk3
     SUBDIR += kdevelop

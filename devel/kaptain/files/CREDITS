@@ -1,0 +1,21 @@
+Thanks to:
+
+David Holm <david@realityrift.com>
+
+who graciously supplied these patches to bring the dia2code example up to
+date, and enable kaptain to compile and run correctly on CURRENT:
+
+patch-examples-dia2code.kaptn
+patch-kaptain-communication.cpp
+patch-kaptain-communication.h
+patch-kaptain-grammar.cpp
+patch-kaptain-grammar.h
+patch-kaptain-intermediate.cpp
+patch-kaptain-intermediate.h
+patch-kaptain-lexer.cpp
+patch-kaptain-parser.cpp
+patch-kaptain-parser.h
+patch-kaptain-process.cpp
+patch-kaptain-process.h
+patch-kaptain-tools.cpp
+patch-kaptain-tools.h
