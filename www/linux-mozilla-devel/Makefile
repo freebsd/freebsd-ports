@@ -7,23 +7,17 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.6a
+PORTVERSION=	1.8a5
 CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${PORTVERSION}/linux-xpi
-
-FORBIDDEN=	"http://vuxml.freebsd.org/a4fd8f53-05eb-11d9-b45d-000c41e2cdad.html (security)"
 
 PKGNAMEPREFIX=	linux-
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	linux-mozilla/${PORTVERSION}
 
-PATCH_SITES=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR=	trevor
-PATCHFILES=	linux-mozilla-${PORTVERSION}-generated-files.tar.bz2
-
 MAINTAINER=	trevor@FreeBSD.org
-COMMENT=Browser, HTML editor, MUA and newsreader for Linux plugins (unstable)
+COMMENT=Browser, HTML editor, MUA, news, and IRC client for Linux (unstable)
 
 RUN_DEPENDS=	${LINUXBASE}/usr/lib/libgtk-1.2.so.0:${PORTSDIR}/x11-toolkits/linux-gtk
 
@@ -54,12 +48,14 @@ pre-everything::
 .endif
 .endif
 DISTFILES=	browser.xpi \
+		chatzilla.xpi \
 		deflenus.xpi \
 		inspector.xpi \
 		langenus.xpi \
 		mail.xpi \
 		psm.xpi \
 		regus.xpi \
+		spellcheck.xpi \
 		talkback.xpi \
 		venkman.xpi \
 		xpcom.xpi
@@ -70,30 +66,12 @@ DISTFILES!=	${CAT} ${WRKDIRPREFIX}${.CURDIR}/work/xpi/components.conf
 do-extract:
 	${MKDIR} ${WRKSRC}
 .for i in ${DISTFILES}
-	unzip -qo ${DISTDIR}/${DIST_SUBDIR}/${i} -d ${WRKSRC}
+	${UNZIP_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/${i} -d ${WRKSRC}
+	${CHMOD} -R a-w ${WRKSRC}
+	${CHOWN} -R 0:0 ${WRKSRC}
 .endfor
 
-do-patch:
-	${MKDIR} ${WRKSRC}/tmp
-	${BZIP2_CMD} -dc ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES} | \
-		${TAR} -C ${WRKSRC}/bin -xf -
-	${BZIP2_CMD} -dc ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES} | \
-		${TAR} -C ${WRKSRC}/tmp -xf -
-	for j in chatzilla cookie inspector messenger pippki venkman; do \
-		if [ ! -e ${WRKSRC}/bin/chrome/$$j.jar ]; then \
-			for i in communicator editor messenger navigator; do \
-				${GREP} -v $$j ${WRKSRC}/tmp/chrome/overlayinfo/$$i/content/overlays.rdf > \
-					${WRKSRC}/bin/chrome/overlayinfo/$$i/content/overlays.rdf; \
-				${CP} ${WRKSRC}/bin/chrome/overlayinfo/$$i/content/overlays.rdf \
-					${WRKSRC}/tmp/chrome/overlayinfo/$$i/content/overlays.rdf; \
-			done; \
-			${RM} -f ${WRKSRC}/bin/chrome/overlayinfo/$$j/content/overlays.rdf; \
-		fi; \
-	done;
-
 do-configure:
-#	- kldload linux
-#	${SETENV} $DISPLAY="NONE" ${WRKSRC}/bin/mozilla file:///dev/null
 	${ECHO_CMD} "#!/bin/sh"		>${WRKDIR}/${STARTUP_CMD}
 	${ECHO_CMD} -n "cd "		>>${WRKDIR}/${STARTUP_CMD}
 	${ECHO_CMD} ${FULL_INSTALL_DIR}		>>${WRKDIR}/${STARTUP_CMD}

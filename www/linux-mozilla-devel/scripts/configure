@@ -9,18 +9,17 @@ fi
 
 tempfile=`/usr/bin/mktemp -t checklist`
 
-echo "browser langenus regus xpcom" > /tmp/checklist.tmp.$$;
+echo "browser deflenus langenus psm regus xpcom" > /tmp/checklist.tmp.$$;
 
 /usr/bin/dialog --title "Mozilla component selection" --clear \
 	--checklist "\n\
 Choose which components of Mozilla to download and install. \n\
 Press the space bar to toggle selections." -1 -1 6 \
-"deflenus"	"American English profile defaults (8 kB)"		ON \
-"inspector"	"DOM inspector (124 kB)"				ON \
-"mail"		"Mozilla Mail and News (2000 kB)"			ON \
-"psm"		"Personal Security Manager--recommended (816 kB)"	ON \
-"talkback"	"sends crash logs to Mozilla staff (832 kB)"		ON \
-"venkman"	"JavaScript debugger (224 kB)"				ON \
+"chatzilla"	"IRC client (240 kB)"					ON \
+"inspector"	"DOM inspector (122 kB)"				ON \
+"mail"		"mail and news client (1952 kB)"			ON \
+"spellcheck"	"Spelling checker for mail and news (304 kB)"		ON \
+"venkman"	"JavaScript debugger (240 kB)"				ON \
 2>> /tmp/checklist.tmp.$$
 
 retval=$?
