@@ -1,0 +1,20 @@
+--- src/player/readrc.c.orig	Sat Jul  3 17:13:04 1999
++++ src/player/readrc.c	Sat Sep 18 13:11:48 1999
+@@ -49,7 +49,7 @@
+ 
+     if ((rc = fopen (myrc2, "r")) == NULL) {
+ 	if ((rc = fopen (myrc, "r")) == NULL) {
+-	    if ((rc = fopen ("/etc/xmp.conf", "r")) == NULL) {
++	    if ((rc = fopen ("/usr/local/etc/xmp.conf", "r")) == NULL) {
+ 		free (myrc);
+ 		return -1;
+ 	    }
+@@ -191,7 +191,7 @@
+ 
+     myrc = malloc ((home ? strlen (home) : 0) + 20);
+     sprintf (myrc, "%s/.xmp/modules.conf", home);
+-    parse_modconf (ctl, "/etc/xmp-modules.conf", crc, size);
++    parse_modconf (ctl, "/usr/local/etc/xmp-modules.conf", crc, size);
+     parse_modconf (ctl, myrc, crc, size);
+     free (myrc);
+ }

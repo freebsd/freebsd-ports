@@ -1,0 +1,21 @@
+*** Makefile.orig	Sat Sep 18 15:34:54 1999
+--- Makefile	Sat Sep 18 15:35:29 1999
+***************
+*** 39,46 ****
+  
+  install::
+  	@echo
+! 	@echo "  Installation complete. To customize, copy /etc/xmp.conf to"
+! 	@echo "  \$$HOME/.xmp/xmp.conf and /etc/xmp-modules.conf to \$$HOME/.xmp/modules.conf"
+  	@echo
+  
+  uninstall:
+--- 39,46 ----
+  
+  install::
+  	@echo
+! 	@echo "  Installation complete. To customize, copy ${PREFIX}/etc/xmp.conf to"
+! 	@echo "  \$$HOME/.xmp/xmp.conf and ${PREFIX}/etc/xmp-modules.conf to \$$HOME/.xmp/modules.conf"
+  	@echo
+  
+  uninstall:
