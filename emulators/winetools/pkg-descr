@@ -2,7 +2,7 @@ WineTools is a collection of tools for WINE. You can do the following
 things with it:
 
 - Install an application: You can choose a setup program which will
-be run with Wine. There is also an option to install DCOM95, this
+be run with Wine. There is also an option to install DCOM98, this
 is needed to make some Installshield installers (as used by
 Dreamweaver, Flash, etc) work.
 
@@ -14,5 +14,7 @@ work for uninstallers which use rundll32.exe).
 file in $HOME/.wine
 
 - Create and edit a WINE config file.
+
+- Install TrueType Fonts.
 
 WWW: http://www.franksworld.net/wine/winetools/
