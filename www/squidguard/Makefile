@@ -9,11 +9,10 @@ PORTNAME=	squidGuard
 PORTVERSION=	1.2.0
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.ost.eltele.no/pub/www/proxy/squidGuard/ \
-		ftp://ftp.ost.eltele.no/pub/www/proxy/squidGuard/
+		ftp://ftp.ost.eltele.no/pub/www/proxy/squidGuard/ \
+		http://web01.ux.tyfon.net/ports/distfiles/
 
 MAINTAINER=	ports@tyfon.net
-
-BROKEN=		"Does not install cleanly"
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libdb3.so.2:${PORTSDIR}/databases/db3
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid24
@@ -97,8 +96,6 @@ pre-install:
 		${CHOWN} -R ${SQUID_UID}:${SQUID_GID} ${DATADIR} ; \
 		${FIND} ${DATADIR} -type f -name *.db -exec ${CHMOD} 660 {} \; ; \
 		${ECHO_MSG} "       -> Blacklist databases installed in: ${DATADIR}" ; \
-		${ECHO_MSG} "       -> Be sure to check \"${LOGDIR}/${PORTNAME}.log\" for any errors" ; \
-		${CHOWN} ${SQUID_UID}:${SQUID_GID} ${LOGDIR}/${PORTNAME}.log ; \
 	else \
 		${ECHO_MSG} "===>   Existing configuration file found - blacklist databases not created" ; \
 	fi
