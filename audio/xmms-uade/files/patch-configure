@@ -1,6 +1,6 @@
---- configure.orig	Sat Feb 15 18:28:42 2003
-+++ configure	Sun Feb 16 01:13:28 2003
-@@ -189,18 +189,34 @@
+--- configure.orig	Mon Jan  5 23:10:21 2004
++++ configure	Tue Jan  6 11:02:01 2004
+@@ -227,18 +227,34 @@
  
  if test "$prefix" = "$HOME/.xmms"; then
      uadedatadir="$prefix/uade"
@@ -39,7 +39,7 @@
  fi
  
  if test "$xmmsinputplugindir" != "automatic"; then
-@@ -247,6 +263,7 @@
+@@ -293,6 +309,7 @@
  
  sed -e "s|{DATADIR}|$uadedatadir|" \
      -e "s|{MAKE}|$MAKE|" \
@@ -47,26 +47,27 @@
      -e "s|{BINDIR}|$bindir|" \
      -e "s|{DOCDIR}|$docdir|" \
      -e "s|{USEXMMS}|$usexmms|" \
-@@ -261,10 +278,10 @@
-     -e "s|{UADEVERSION}|$VERSION|" \
-     osdep/uadeconfig-unix.h.in > osdep/uadeconfig.h
+@@ -317,10 +334,11 @@
+     XMMS_CONFIG="xmms-config"
+ fi
  
--GLIBFLAGS=`glib-config --cflags`
--GLIBLIBS=`glib-config --libs`
--GTKFLAGS=`gtk-config --cflags`
--GTKLIBS=`gtk-config --libs`
+-GLIBFLAGS=`$GLIB_CONFIG --cflags`
+-GLIBLIBS=`$GLIB_CONFIG --libs`
+-GTKFLAGS=`$GTK_CONFIG --cflags`
+-GTKLIBS=`$GTK_CONFIG --libs`
 +GLIBFLAGS=`glib12-config --cflags`
 +GLIBLIBS=`glib12-config --libs`
 +GTKFLAGS=`gtk12-config --cflags`
 +GTKLIBS=`gtk12-config --libs`
- XMMSFLAGS=`xmms-config --cflags`
- XMMSLIBS=`xmms-config --libs`
- INCLUDEFLAG="-I$includedir"
-@@ -275,6 +292,7 @@
++
+ XMMSFLAGS=`$XMMS_CONFIG --cflags`
+ XMMSLIBS=`$XMMS_CONFIG --libs`
+ 
+@@ -332,6 +350,7 @@
      -e "s|{GTKFLAGS}|$GTKFLAGS|" -e "s|{GTKLIBS}|$GTKLIBS|" \
      -e "s|{XMMSFLAGS}|$XMMSFLAGS|" -e "s|{XMMSLIBS}|$XMMSLIBS|" \
      -e "s|{INCLUDEFLAG}|$INCLUDEFLAG|" -e "s|{LIBFLAG}|$LIBFLAG|" \
 +    -e "s|{SYSCFLAGS}|$SYSCFLAGS|" \
      -e "s|{PLUGINDIR}|$plugin|" \
      -e "s|{PACKAGEPREFIX}|$packageprefix|" \
-     -e "s|{VERSION}|$VERSION|" \
+     -e "s|{ARCHFLAGS}|$ARCHFLAGS|" \
