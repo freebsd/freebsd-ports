@@ -1,16 +1,16 @@
 bin/glabels
 bin/glabels-batch
-share/gnome/glabels/ui/glabels-ui.xml
-share/gnome/glabels/predefined-labels.template
-share/gnome/help/glabels/C/index.html
-share/gnome/help/glabels/C/topic.dat
-share/gnome/help/glabels/C/ln7.html
 share/gnome/apps/Applications/glabels.desktop
+share/gnome/glabels/predefined-labels.template
+share/gnome/glabels/ui/glabels-ui.xml
+share/gnome/help/glabels/C/index.html
+share/gnome/help/glabels/C/ln7.html
+share/gnome/help/glabels/C/topic.dat
 share/gnome/pixmaps/glabels/glabels-about-logo.png
 share/gnome/pixmaps/glabels/glabels-icon.png
 share/gnome/pixmaps/glabels/glabels-logo.png
-@dirrm share/gnome/glabels/ui
-@dirrm share/gnome/glabels
+@dirrm share/gnome/pixmaps/glabels
 @dirrm share/gnome/help/glabels/C
 @dirrm share/gnome/help/glabels
-@dirrm share/gnome/pixmaps/glabels
+@dirrm share/gnome/glabels/ui
+@dirrm share/gnome/glabels
