@@ -1,0 +1,43 @@
+--- Makefile.orig	Fri Jun 28 00:03:45 1996
++++ Makefile	Tue Jul  8 15:15:40 1997
+@@ -17,7 +17,7 @@
+ 
+ # You probably want to change this:
+ #INSTROOT = ${HOME}
+-INSTROOT = /depot/collections0/netpipes3.2
++INSTROOT = ${PREFIX}
+ INSTBIN = ${INSTROOT}/bin
+ INSTMAN = ${INSTROOT}/man
+ 
+@@ -46,8 +46,12 @@
+ # (that system call is used by the -daemon argument to detach faucet from
+ # the controlling terminal)
+ 
++# FreeBSD 2.1.0
++CFLAGS = -DUSE_IOCTL $(CDEBUGFLAGS)
++CC = gcc
++
+ # SunOS 4.1.4
+-CFLAGS = -DUSE_IOCTL -DNO_MEMMOVE $(CDEBUGFLAGS)
++#CFLAGS = -DUSE_IOCTL -DNO_MEMMOVE $(CDEBUGFLAGS)
+ 
+ # Linux
+ #CFLAGS = -DUSE_IOCTL -DSYSV $(CDEBUGFLAGS)
+@@ -83,14 +87,9 @@
+ 	${CC} ${CFLAGS} -o $@ ${GOBJS} ${LDLIBS}
+ 
+ install : all
+-	[ -d ${INSTROOT} ] || mkdir ${INSTROOT}
+-	[ -d ${INSTBIN} ] || mkdir ${INSTBIN}
+-	cp ${PROGRAMS} ${INSTBIN}/
+-	- rm -f ${INSTBIN}/getsockname
+-	ln -s getpeername ${INSTBIN}/getsockname
+-	[ -d ${INSTMAN} ] || mkdir ${INSTMAN}
+-	[ -d ${INSTMAN}/man1 ] || mkdir ${INSTMAN}/man1
+-	cp ${MANPAGES} ${INSTMAN}/man1/
++	${BSD_INSTALL_MAN} ${MANPAGES} ${INSTMAN}/man1/
++	${BSD_INSTALL_PROGRAM} ${PROGRAMS} ${INSTBIN}/
++	ln -f -s ${INSTBIN}/getpeername ${INSTBIN}/getsockname
+ 
+ clean	:
+ 	rm -f ${FOBJS} ${HOBJS} ${SOBJS} ${GOBJS}
