@@ -1,0 +1,18 @@
+--- ./src/grig-config-rot.c.orig	Mon Sep 20 15:39:11 2004
++++ ./src/grig-config-rot.c	Mon Sep 20 15:40:07 2004
+@@ -429,6 +429,7 @@
+ 	case 1: /* Cancel */
+ 		break;
+ 	default:
++		break;
+ 	}
+ 	gnome_dialog_close (GNOME_DIALOG (dialog));
+ }
+@@ -571,6 +572,7 @@
+ 	case 1: /* Cancel */
+ 		break;
+ 	default:
++		break;
+ 	}
+ 	gnome_dialog_close (GNOME_DIALOG (dialog));
+ }

@@ -6,7 +6,7 @@
 
 PORTNAME=	grig
 PORTVERSION=	0.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	groundstation
@@ -26,10 +26,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 502126
-BROKEN=		"Does not compile on FreeBSD >= 5.x"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|GCONF_LIBS="`|GCONF_LIBS="-lgconf-gtk-1 `|' ${WRKSRC}/configure
