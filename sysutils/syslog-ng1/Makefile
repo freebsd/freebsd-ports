@@ -7,7 +7,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	1.6.0.r3
-PORTREVISON=	1
+PORTREVISON=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/syslog-ng/1.6/src/
 DISTNAME=	${PORTNAME}-1.6.0rc3
