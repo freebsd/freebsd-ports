@@ -108,17 +108,7 @@ BDB_NUM_VERS!=	echo ${BDB_VERS} | wc -w
 .if ${BDB_NUM_WO} == ${BDB_NUM_VERS}
 BROKEN=		"You need to select one BDB version.  Run 'make config' again!"
 .endif
-.if ${USE_BDB_VER} == 3
-WITH_BDB_3=	true
-.elif ${USE_BDB_VER} == 4
-WITH_BDB_4=	true
-.elif ${USE_BDB_VER} == 41
-WITH_BDB_41=	true
-.elif ${USE_BDB_VER} == 42
-WITH_BDB_42=	true
-.elif ${USE_BDB_VER} == 43
-WITH_BDB_43=	true
-.endif
+WITH_BDB_${USE_BDB_VER}=	true
 .elif ${BDB_NUM_W} != 1
 BROKEN=		"Multiple BDB versions selected.  Run 'make config' again!"
 .endif
