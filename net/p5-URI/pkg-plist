@@ -31,6 +31,7 @@ lib/perl5/site_perl/%%PERL_VER%%/URI/pop.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/rlogin.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/rsync.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/snews.pm
+lib/perl5/site_perl/%%PERL_VER%%/URI/ssh.pm
 lib/perl5/site_perl/%%PERL_VER%%/URI/telnet.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/URI/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/URI
