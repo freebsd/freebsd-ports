@@ -1,20 +1,21 @@
---- src/imapd/Makefile.orig	Wed Apr 15 01:41:45 1998
-+++ src/imapd/Makefile	Sat Oct 10 21:47:24 1998
-@@ -31,8 +31,8 @@
+--- src/imapd/Makefile.orig	Sat Nov 21 05:26:03 1998
++++ src/imapd/Makefile	Sat Feb 27 17:19:33 1999
+@@ -31,9 +31,9 @@
  # WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  
  
 -ALERT=/etc/imapd.alert
--ANO=/etc/anonymous.newsgroups
 +ALERT=$(PREFIX)/etc/imapd.alert
+ USERALERT=.imapalert
+-ANO=/etc/anonymous.newsgroups
 +ANO=$(PREFIX)/etc/anonymous.newsgroups
  SHELL= /bin/sh
  
  #  The "Manage Mail" menu item of Netscape Messager puts up an error message
-@@ -55,7 +55,7 @@
+@@ -56,7 +56,7 @@
  CC = `cat $C/CCTYPE`
- CFLAGS = -I$C `cat $C/CFLAGS` -DALERTFILE=\"$(ALERT)\" -DANOFILE=\"$(ANO)\" \
- 	$(EXTRACFLAGS)
+ CFLAGS = -I$C `cat $C/CFLAGS` $(EXTRACFLAGS) -DANOFILE=\"$(ANO)\" \
+ 	-DALERTFILE=\"$(ALERT)\" -DUSERALERTFILE=\"$(USERALERT)\"
 -LDFLAGS = $(CCLIENTLIB) `cat $C/LDFLAGS`
 +LDFLAGS = -L$C -l$(SHLIBBASE) `cat $C/LDFLAGS`
  

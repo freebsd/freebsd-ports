@@ -1,6 +1,6 @@
---- src/osdep/unix/Makefile.orig	Wed Sep  9 00:02:26 1998
-+++ src/osdep/unix/Makefile	Thu Nov 19 14:00:02 1998
-@@ -93,7 +93,7 @@
+--- src/osdep/unix/Makefile.orig	Wed Jan 27 01:17:39 1999
++++ src/osdep/unix/Makefile	Sat Feb 27 17:16:00 1999
+@@ -100,7 +100,7 @@
   dummy.o pseudo.o netmsg.o flstring.o fdstring.o \
   rfc822.o nntp.o smtp.o imap4r1.o pop3.o \
   unix.o mbox.o mbx.o mmdf.o tenex.o mtx.o news.o phile.o mh.o mx.o
@@ -9,9 +9,9 @@
  MAKE=make
  MV=mv
  RM=rm -rf
-@@ -108,6 +108,10 @@
-  PASSWDTYPE=$(PASSWDTYPE) AFSDIR=$(AFSDIR) GSSDIR=$(GSSDIR)
- BUILD=$(MAKE) build $(BUILDOPTIONS) $(EXTRASPECIALS)
+@@ -115,6 +115,10 @@
+  PASSWDTYPE=$(PASSWDTYPE)
+ BUILD=$(MAKE) build $(BUILDOPTIONS)
  
 +# Need this for the shared library rule to work correctly
 +.SUFFIXES: .o .so
@@ -20,7 +20,7 @@
  # Here if no make argument established
  
  missing: osdep.h
-@@ -183,7 +187,7 @@
+@@ -190,7 +194,7 @@
  	 SPOOLDIR=/var \
  	 ACTIVEFILE=/usr/local/news/lib/active \
  	 RSHPATH=/usr/bin/rsh \
@@ -29,7 +29,7 @@
  	 BASELDFLAGS="-lcrypt"
  
  bsi:	# BSD/i386
-@@ -565,19 +569,31 @@
+@@ -606,19 +610,31 @@
  
  # Build it!
  
@@ -63,7 +63,7 @@
  
  
  # Dependencies
-@@ -611,7 +627,7 @@
+@@ -652,7 +668,7 @@
  
  # OS-dependent
  
@@ -72,7 +72,7 @@
  	osdep.h env_unix.h tcp_unix.h \
  	osdep.c env_unix.c fs_unix.c ftl_unix.c nl_unix.c tcp_unix.c \
  	auths.c flock.c flockbsd.c flcksafe.c fsync.c gethstid.c \
-@@ -623,7 +639,12 @@
+@@ -664,7 +680,12 @@
  	write.c \
  	strerror.c strpbrk.c strstr.c strtok.c strtoul.c \
  	OSCFLAGS
@@ -84,4 +84,4 @@
 +	$(CC) -fpic -DPIC -c $(CFLAGS) `cat OSCFLAGS` osdep.c -o $@
  
  osdep.c: osdepbas.c osdepckp.c osdeplog.c
- 	sh -c '$(RM) osdep.c || true'
+ 	cat osdepbas.c osdepckp.c osdeplog.c > osdep.c
