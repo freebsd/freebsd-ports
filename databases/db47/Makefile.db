@@ -44,5 +44,3 @@ post-install:
 .endif
 	cd ${PREFIX}/bin/${PORTNAME} ; \
 	for i in * ; do ${LN} -s ${PORTNAME}/$$i ../$$i-${BDBVER} ; done
-
-.include <bsd.port.mk>

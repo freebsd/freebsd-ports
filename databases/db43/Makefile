@@ -19,3 +19,4 @@ COMMENT=	The Berkeley DB package, revision 4.2
 MASTERDIR?=	${.CURDIR}
 
 .include <${MASTERDIR}/Makefile.db>
+.include <bsd.port.mk>
