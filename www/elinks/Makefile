@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	elinks
-PORTVERSION=	0.2.3
+PORTVERSION=	0.3.0
 CATEGORIES=	www
 MASTER_SITES=	http://pasky.ji.cz/elinks/
 
@@ -16,7 +16,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--program-prefix=e
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-WRKSRC=		${WRKDIR}/elinks-20020208
+WRKSRC=		${WRKDIR}/elinks-20020302
 
 MAN1=		elinks.1
 
