@@ -6,42 +6,47 @@
 #
 
 PORTNAME=	postgresql
+PORTVERSION=	8.0.310
+DISTVERSIONSUFFIX=.src
 PORTREVISION=	0
 CATEGORIES=	databases java
+MASTER_SITES=	http://jdbc.postgresql.org/download/
 PKGNAMESUFFIX=	-jdbc
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSION:C/.([0-9][0-9][0-9]*)/-\1/g}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	The Java JDBC implementation for PostgreSQL
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
+DIST_SUBDIR=	postgresql
 
-MASTERDIR=	${.CURDIR}/../../databases/postgresql74-server
-
-CONFLICTS=	${PORTNAME}${PKGNAMESUFFIX}-7.[0-3]* \
-		${PORTNAME}${PKGNAMESUFFIX}-[1-689]*
-
-CONFIGURE_ARGS=	--with-java
-
+USE_ANT=	yes
 USE_JAVA=	yes
 JAVA_VERSION?=	"1.1+"
+USE_REINPLACE=	yes
 
-CONFIGURE_ENV=	JAVA_HOME="${JAVA_HOME}"
-MAKE_ENV+=	JAVA_HOME="${JAVA_HOME}"
-BUILD_DIRS=	src/interfaces/jdbc
-SLAVE_ONLY=	yes
+PKGMESSAGE=	${WRKDIR}/.pkg-message
 
-post-install:
-	@- ${MKDIR} -m 0555 ${PREFIX}/share/java/classes ;\
-	  ${INSTALL_DATA} ${WRKSRC}/src/interfaces/jdbc/jars/postgresql.jar \
-			  ${PREFIX}/share/java/classes/postgresql.jar
+post-patch:
+	${REINPLACE_CMD} 's,/usr/local/pgsql/share/java,${PREFIX}/share/java/classes,' ${WRKSRC}/README
+
+do-install:
+	@- ${MKDIR} -m 0755 ${PREFIX}/share/java/classes ;\
+	  ${INSTALL_DATA} ${WRKSRC}/jars/postgresql.jar \
+		${PREFIX}/share/java/classes/postgresql.jar ;\
+	  ${MKDIR} -m 0755 ${DOCSDIR} ;\
+	  ${INSTALL_DATA} ${WRKSRC}/README \
+			  ${DOCSDIR}/README-jdbc
 .if !defined(NOPORTDOCS)
-	@- ${MKDIR} -m 0555 ${EXAMPLESDIR} ;\
-	  cd ${WRKSRC}/src/interfaces/jdbc/example ;\
-	  ${PAX} -rw . ${EXAMPLESDIR}
-.for i in README
-	@- ${INSTALL_DATA} ${WRKSRC}/src/interfaces/jdbc/$i \
-			  ${EXAMPLESDIR}
-.endfor
+	@- ${MKDIR} -m 0755 ${EXAMPLESDIR}/jdbc ;\
+	  ${INSTALL_DATA} ${WRKSRC}/jars/postgresql-examples.jar \
+			  ${EXAMPLESDIR}/jdbc/postgresql-examples.jar ;\
+	  cd ${WRKSRC}/example ;\
+	  ${PAX} -rw . ${EXAMPLESDIR}/jdbc
 .endif
 
-.include "${MASTERDIR}/Makefile"
+post-install:
+	@ ${SED} "s|%%PREFIX%%|${PREFIX}|g" \
+	  < ${PKGDIR}/pkg-message > ${PKGMESSAGE}
+	@ ${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>
