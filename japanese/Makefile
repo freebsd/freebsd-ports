@@ -287,6 +287,7 @@
     SUBDIR += xshodou
     SUBDIR += xv
     SUBDIR += xyagamo
+    SUBDIR += yc.el
     SUBDIR += zipcodes
 
 .include <bsd.port.subdir.mk>
