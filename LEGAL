@@ -33,6 +33,7 @@ altivore		ports/security/altivore	No redistribution allowed
 aswedit-*		ports/www/aswedit	Commercial software.
 atari800-*		ports/emulators/atari800 xf25 contains copyright ROMs
 						and cannot be distributed.
+baudline		ports/audio/baudline	No redistribution allowed
 bb-*			ports/net/bb		FreeBSD has permission from
 						author to put bb onto CDROM.
 bcwipe			ports/security/bcwipe	Non-Commercial Distribution and
