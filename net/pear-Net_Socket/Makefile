@@ -7,31 +7,21 @@
 
 PORTNAME=	Net_Socket
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	net www
-MASTER_SITES=	http://pear.php.net/get/
-PKGNAMEPREFIX=	pear-
-EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	PEAR
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR Network Socket Interface
 
-BUILD_DEPENDS=	${PEARDIR}.DIST_PHP:${PORTSDIR}/devel/pear-install
-RUN_DEPENDS=	${PEARDIR}.DIST_PHP:${PORTSDIR}/devel/pear-install
-
-NO_BUILD=	yes
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear-PEAR
+RUN_DEPENDS=	${BUILD_DEPENDS}
 
 .include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/bin/php-config)
-PHP_BASE!=	${LOCALBASE}/bin/php-config --prefix
-.endif
-LPHP_LIB=	lib/php
-PEARDIR=	${PHP_BASE}/${LPHP_LIB}
-PLIST_SUB=	PEARDIR=${LPHP_LIB}
+.include "${.CURDIR}/../../devel/pear-PEAR/Makefile.common"
 
 do-install:
+	@${MKDIR} ${PEARDIR}/Net
 	@${CP} -Rp ${WRKSRC}/* ${PEARDIR}/Net
-	@${CHOWN} -R root:wheel ${PEARDIR}/Net/Socket.php
+	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/Net
 
 .include <bsd.port.post.mk>

@@ -5,4 +5,6 @@
 %%PEARDIR%%/Auth/SASL/DigestMD5.php
 %%PEARDIR%%/Auth/SASL/Login.php
 %%PEARDIR%%/Auth/SASL/Plain.php
+%%PKGREGDIR%%/package.xml
 @dirrm %%PEARDIR%%/Auth/SASL
+@dirrm %%PKGREGDIR%%

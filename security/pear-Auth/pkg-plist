@@ -8,5 +8,7 @@
 %%PEARDIR%%/Auth/Container/RADIUS.php
 %%PEARDIR%%/Auth/Container/SOAP.php
 %%PEARDIR%%/Auth/Container/vpopmail.php
+%%PKGREGDIR%%/package.xml
 @dirrm %%PEARDIR%%/Auth/Container
 @dirrm %%PEARDIR%%/Auth
+@dirrm %%PKGREGDIR%%

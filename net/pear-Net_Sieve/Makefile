@@ -7,40 +7,21 @@
 
 PORTNAME=	Net_Sieve
 PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net www
-MASTER_SITES=	http://pear.php.net/get/
-PKGNAMEPREFIX=	pear-
-EXTRACT_SUFX=	.tgz
-DIST_SUBDIR=	PEAR
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR class to handle talking to timsieved
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php.dist:${PORTSDIR}/devel/pear-PEAR
+BUILD_DEPENDS=	${PEARDIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-NO_BUILD=	yes
-
 .include <bsd.port.pre.mk>
-
-.if exists(${LOCALBASE}/bin/php-config)
-PHP_BASE!=	${LOCALBASE}/bin/php-config --prefix
-.else
-PHP_BASE=	${LOCALBASE}
-.endif
-PEAR=		${LOCALBASE}/bin/pear
-LPHP_LIB=	lib/php
-PEARDIR=	${PHP_BASE}/${LPHP_LIB}
-PLIST_SUB=	PEARDIR=${LPHP_LIB}
+.include "${.CURDIR}/../../devel/pear-PEAR/Makefile.common"
 
 do-install:
 	@${CP} -Rp ${WRKSRC}/* ${PEARDIR}/Net
 	@${CHOWN} ${SHAREOWN}:${SHAREGRP} ${PEARDIR}/Net/Sieve.php
 	@${CHMOD} a-x ${PEARDIR}/Net/Sieve.php
-
-post-install:
-# Register a new package
-	@${PEAR} install -r -f ${WRKDIR}/package.xml
 
 .include <bsd.port.post.mk>

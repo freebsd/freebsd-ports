@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pear
-PORTVERSION=	${PHP_VERSION}
+PORTVERSION=	${PHP_VERSION:C/RC.//}
 CATEGORIES=	devel www
 MASTER_SITES=	# empty
 DISTFILES=	# none
@@ -15,13 +15,11 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	thierry@pompo.net
 COMMENT=	A framework and distribution system for reusable PHP components
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/php-config:${PORTSDIR}/www/mod_php4
-RUN_DEPENDS=	${PEARDIR}/PEAR.php.dist:${PORTSDIR}/devel/pear-PEAR	\
-		${PEARDIR}/Console/Getopt.php.dist:${PORTSDIR}/devel/pear-Console_Getopt	\
+BUILD_DEPENDS=	${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php4
+RUN_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB		\
 		${PEARDIR}/File.php:${PORTSDIR}/sysutils/pear-File	\
 		${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log	\
-		${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime	\
-		${PEARDIR}/Net/Sieve.php:${PORTSDIR}/net/pear-Net_Sieve
+		${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
 
 NO_BUILD=	yes
 
@@ -31,11 +29,10 @@ NO_BUILD=	yes
 PHP_VERSION!=	${LOCALBASE}/bin/php-config --version
 PHP_BASE!=	${LOCALBASE}/bin/php-config --prefix
 .else
-PHP_VERSION=	4.2.3
+PHP_VERSION=	4.3.2
 PHP_BASE=	${LOCALBASE}
 .endif
-LPHP_LIB=	lib/php
-PEARDIR=	${PHP_BASE}/${LPHP_LIB}
+PEARDIR=	${PHP_BASE}/share/pear
 
 do-install:	# empty
 	${DO_NADA}

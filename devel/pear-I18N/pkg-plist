@@ -6,9 +6,14 @@
 %%PEARDIR%%/I18N/Messages/File.php
 %%PEARDIR%%/I18N/Messages/Translate.php
 %%PEARDIR%%/I18N/Messages/determineLanguage.inc.php
-%%PORTDOCS%%%%EXAMPLESDIR%%/I18N_Message.php
-%%PORTDOCS%%%%EXAMPLESDIR%%/I18N_Message_Translate.php
-%%PORTDOCS%%%%EXAMPLESDIR%%/I18N_Message_Translate.tpl
-%%PORTDOCS%%%%EXAMPLESDIR%%/I18N_Negotiator.php
+%%PKGREGDIR%%/package.xml
+%%PORTDOCS%%%%DOCSDIR%%/I18N_Currency.php
+%%PORTDOCS%%%%DOCSDIR%%/I18N_DateTime.php
+%%PORTDOCS%%%%DOCSDIR%%/I18N_Message.php
+%%PORTDOCS%%%%DOCSDIR%%/I18N_Message_Translate.php
+%%PORTDOCS%%%%DOCSDIR%%/I18N_Message_Translate.tpl
+%%PORTDOCS%%%%DOCSDIR%%/I18N_Negotiator.php
+%%PORTDOCS%%%%DOCSDIR%%/I18N_Number.php
 @dirrm %%PEARDIR%%/I18N/Messages
 @dirrm %%PEARDIR%%/I18N
+@dirrm %%PKGREGDIR%%

@@ -1,2 +1,4 @@
 %%PEARDIR%%/Crypt/CBC.php
+%%PKGREGDIR%%/package.xml
 @dirrm %%PEARDIR%%/Crypt
+@dirrm %%PKGREGDIR%%
