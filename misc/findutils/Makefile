@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR= findutils
 
-MAINTAINER=	clefevre@citeweb.net
+MAINTAINER=	clefevre@poboxes.com
 
 GNU_CONFIGURE=	yes
 
