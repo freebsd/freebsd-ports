@@ -7,6 +7,7 @@
 
 PORTNAME=	asu
 PORTVERSION=	0.4
+PORTREVISION=	1
 MASTER_SITES=	ftp://ftp.abfackeln.com/pub/linux/ut/
 DISTNAME=	asu-${PORTVERSION}
 
