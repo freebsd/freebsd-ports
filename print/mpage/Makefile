@@ -7,6 +7,7 @@
 
 PORTNAME=	mpage
 PORTVERSION=	2.5.3
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.mesa.nl/pub/mpage/
 EXTRACT_SUFX=	.tgz
