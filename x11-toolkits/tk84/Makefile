@@ -6,55 +6,58 @@
 #
 
 PORTNAME=	tk
-PORTVERSION=	8.3.4
-PORTREVISION=	1
-CATEGORIES=	x11-toolkits tk83
+PORTVERSION=	8.4a3
+CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	tcl
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 
-LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83
+LIB_DEPENDS=	tcl84.1:${PORTSDIR}/lang/tcl84
 
-LATEST_LINK=	tk83
+NO_LATEST_LINK=	yes
 USE_XLIB=	yes
 INSTALLS_SHLIB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}${PORTVERSION}/unix
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl8.3
-CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} TK_LIB_FILE=libtk83.so.1
-MAKE_ENV=	SHORT_TK_VER=83
+CONFIGURE_ARGS=	--enable-shared --with-tcl=${PREFIX}/lib/tcl8.4
+CONFIGURE_ENV=	PORTSDIR=${PORTSDIR} TK_LIB_FILE=libtk84.so.1
+MAKE_ENV=	SHORT_TK_VER=84
 PKGINSTALL=	${PKGDIR}/pkg-install.wish
 PKGDEINSTALL=	${PKGDIR}/pkg-deinstall.wish
+TK_VER=		8.4
 
-PLIST_SUB=	TK_VER=8.3 SHORT_TK_VER=83
+PLIST_SUB=	TK_VER=${TK_VER} SHORT_TK_VER=84
 
 MANCOMPRESSED=	no
 
 MAN1=	wish.1
 MAN3=	3DBorder.3 AddOption.3 BindTable.3 CanvPsY.3 CanvTkwin.3 \
 	CanvTxtInfo.3 Clipboard.3 ClrSelect.3 ConfigWidg.3 ConfigWind.3 \
-	CoordToWin.3 CrtErrHdlr.3 CrtGenHdlr.3 CrtImgType.3 CrtItemType.3 \
-	CrtPhImgFmt.3 CrtSelHdlr.3 CrtWindow.3 DeleteImg.3 DrawFocHlt.3 \
-	EventHndlr.3 FindPhoto.3 FontId.3 FreeXId.3 GeomReq.3 GetAnchor.3 \
-	GetBitmap.3 GetCapStyl.3 GetClrmap.3 GetColor.3 GetCursor.3 GetDash.3 \
-	GetFont.3 GetGC.3 GetHINSTANCE.3 GetHWND.3 GetImage.3 GetJoinStl.3 \
-	GetJustify.3 GetOption.3 GetPixels.3 GetPixmap.3 GetRelief.3 \
-	GetRootCrd.3 GetScroll.3 GetSelect.3 GetUid.3 GetVRoot.3 GetVisual.3 \
-	Grab.3 HWNDToWindow.3 HandleEvent.3 IdToWindow.3 ImgChanged.3 \
-	InternAtom.3 MainLoop.3 MainWin.3 MaintGeom.3 ManageGeom.3 \
-	MapWindow.3 MeasureChar.3 MoveToplev.3 Name.3 NameOfImg.3 OwnSelect.3 \
-	ParseArgv.3 QWinEvent.3 Restack.3 RestrictEv.3 SetAppName.3 \
-	SetClass.3 SetGrid.3 SetOptions.3 SetVisual.3 StrictMotif.3 \
-	TextLayout.3 Tk_Init.3 Tk_Main.3 TkInitStubs.3 WindowId.3
+	CoordToWin.3 CrtCmHdlr.3 CrtErrHdlr.3 CrtGenHdlr.3 CrtImgType.3 \
+	CrtItemType.3 CrtPhImgFmt.3 CrtSelHdlr.3 CrtWindow.3 DeleteImg.3 \
+	DrawFocHlt.3 EventHndlr.3 FindPhoto.3 FontId.3 FreeXId.3 GeomReq.3 \
+	GetAnchor.3 GetBitmap.3 GetCapStyl.3 GetClrmap.3 GetColor.3 \
+	GetCursor.3 GetDash.3 GetFont.3 GetGC.3 GetHINSTANCE.3 GetHWND.3 \
+	GetImage.3 GetJoinStl.3 GetJustify.3 GetOption.3 GetPixels.3 \
+	GetPixmap.3 GetRelief.3 GetRootCrd.3 GetScroll.3 GetSelect.3 GetUid.3 \
+	GetVRoot.3 GetVisual.3 Grab.3 HWNDToWindow.3 HandleEvent.3 \
+	IdToWindow.3 ImgChanged.3 InternAtom.3 MainLoop.3 MainWin.3 \
+	MaintGeom.3 ManageGeom.3 MapWindow.3 MeasureChar.3 MoveToplev.3 \
+	Name.3 NameOfImg.3 OwnSelect.3 ParseArgv.3 QWinEvent.3 Restack.3 \
+	RestrictEv.3 SetAppName.3 SetClass.3 SetClassProcs.3 SetGrid.3 \
+	SetOptions.3 SetVisual.3 StrictMotif.3 TextLayout.3 Tk_Init.3 \
+	Tk_Main.3 TkInitStubs.3 WindowId.3
+
 MANN=	bell.n bind.n bindtags.n bitmap.n button.n canvas.n checkbutton.n \
-	chooseColor.n chooseDirectory.n clipboard.n colors.n cursors.n destroy.n dialog.n entry.n\
-	event.n focus.n focusNext.n font.n frame.n getOpenFile.n grab.n grid.n keysyms.n \
-	image.n label.n listbox.n loadTk.n lower.n menu.n menubar.n \
-	menubutton.n message.n messageBox.n option.n optionMenu.n options.n \
-	pack-old.n pack.n palette.n photo.n place.n popup.n radiobutton.n \
-	raise.n scale.n scrollbar.n selection.n send.n text.n tk.n tkerror.n \
+	chooseColor.n chooseDirectory.n clipboard.n colors.n console.n \
+	cursors.n destroy.n dialog.n entry.n event.n focus.n focusNext.n \
+	font.n frame.n getOpenFile.n grab.n grid.n keysyms.n image.n label.n \
+	listbox.n loadTk.n lower.n menu.n menubar.n menubutton.n message.n \
+	messageBox.n option.n optionMenu.n options.n pack-old.n pack.n \
+	palette.n photo.n place.n popup.n radiobutton.n raise.n scale.n \
+	scrollbar.n selection.n send.n spinbox.n text.n tk.n tkerror.n \
 	tkvars.n tkwait.n toplevel.n winfo.n wm.n
 
 # MLINKS generated via  awk '/ln/ {print "\t" $2,$3,"\\"}' unix/mkLinks
@@ -118,6 +121,8 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	ConfigWind.3 Tk_DefineCursor.3 \
 	ConfigWind.3 Tk_UndefineCursor.3 \
 	CoordToWin.3 Tk_CoordsToWindow.3 \
+	CrtCmHdlr.3 Tk_CreateClientMessageHandler.3 \
+	CrtCmHdlr.3 Tk_DeleteClientMessageHandler.3 \
 	CrtErrHdlr.3 Tk_CreateErrorHandler.3 \
 	CrtErrHdlr.3 Tk_DeleteErrorHandler.3 \
 	CrtGenHdlr.3 Tk_CreateGenericHandler.3 \
@@ -147,7 +152,7 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	FindPhoto.3 Tk_PhotoGetSize.3 \
 	FindPhoto.3 Tk_PhotoSetSize.3 \
 	FontId.3 Tk_FontId.3 \
-	FontId.3 Tk_FontMetrics.3 \
+	FontId.3 Tk_GetFontMetrics.3 \
 	FontId.3 Tk_PostscriptFontName.3 \
 	FreeXId.3 Tk_FreeXId.3 \
 	GeomReq.3 Tk_GeometryRequest.3 \
@@ -253,6 +258,7 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	SetAppName.3 Tk_SetAppName.3 \
 	SetClass.3 Tk_SetClass.3 \
 	SetClass.3 Tk_Class.3 \
+	SetClassProcs.3 Tk_SetClassProcs.3 \
 	SetGrid.3 Tk_SetGrid.3 \
 	SetGrid.3 Tk_UnsetGrid.3 \
 	SetOptions.3 Tk_CreateOptionTable.3 \
@@ -264,6 +270,7 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	SetOptions.3 Tk_GetOptionValue.3 \
 	SetOptions.3 Tk_GetOptionInfo.3 \
 	SetOptions.3 Tk_FreeConfigOptions.3 \
+	SetOptions.3 Tk_Offset.3 \
 	SetVisual.3 Tk_SetWindowVisual.3 \
 	StrictMotif.3 Tk_StrictMotif.3 \
 	TextLayout.3 Tk_ComputeTextLayout.3 \
@@ -276,6 +283,7 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	TextLayout.3 Tk_IntersectTextLayout.3 \
 	TextLayout.3 Tk_TextLayoutToPostscript.3 \
 	TkInitStubs.3 Tk_InitStubs.3 \
+	Tk_Init.3 Tk_SafeInit.3 \
 	WindowId.3 Tk_WindowId.3 \
 	WindowId.3 Tk_Parent.3 \
 	WindowId.3 Tk_Display.3 \
@@ -306,17 +314,22 @@ MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
 	focusNext.n tk_focusFollowsMouse.n \
 	getOpenFile.n tk_getOpenFile.n \
 	getOpenFile.n tk_getSaveFile.n \
+	menu.n tk_menuSetFocus.n \
 	menubar.n tk_menuBar.n \
 	menubar.n tk_bindForTraversal.n \
 	messageBox.n tk_messageBox.n \
 	optionMenu.n tk_optionMenu.n \
 	palette.n tk_setPalette.n \
 	palette.n tk_bisque.n \
-	popup.n tk_popup.n
+	popup.n tk_popup.n \
+	text.n tk_textCopy.n \
+	text.n tk_textCut.n \
+	text.n tk_textPaste.n
 
 .include <bsd.port.pre.mk>
 
 post-install:
+	@${RMDIR} ${PREFIX}/lib/tk${TK_VER}/msgs
 .if exists(${PKGINSTALL})
 	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL}
 .endif
