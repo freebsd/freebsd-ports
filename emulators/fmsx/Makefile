@@ -18,6 +18,8 @@ COMMENT=	The Portable MSX/MSX2/MSX2+ Emulator
 USE_REINPLACE=	yes
 REINPLACE_ARGS=	-i ""
 
+BROKEN=		"Distfile is unfetchable"
+
 USE_XLIB=	yes
 RESTRICTED=	Legal status of distributed ROM images unclear
 WRKSRC=		${WRKDIR}/MSX
