@@ -16,7 +16,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Digital camera downloading tool for Ricoh DC-3
 
 RESTRICTED=	"Beta test period, redistribution prohibited"
-BROKEN=		"Unfetchable"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/build
 
@@ -24,14 +23,17 @@ USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OPTFLAG=""
 
+PORTDOCS=	PROTOCOL README.english README.japanese
+PLIST_FILES=	bin/dc3play
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|<sys/dir.h>|<dirent.h>|g" ${WRKSRC}/../src/*.c
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/dc3play
+	@${MKDIR} ${DOCSDIR}
 .for file in PROTOCOL README.english README.japanese
-	${INSTALL_DATA} ${WRKSRC}/../${file} ${PREFIX}/share/doc/dc3play
+	${INSTALL_DATA} ${WRKSRC}/../${file} ${DOCSDIR}
 .endfor
 .endif
 
