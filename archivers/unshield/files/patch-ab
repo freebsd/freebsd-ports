@@ -1,0 +1,14 @@
+--- lib/cabfile.h~	Mon Aug 25 10:17:28 2003
++++ lib/cabfile.h	Fri Apr  9 05:30:19 2004
+@@ -4,7 +4,11 @@
+ 
+ #include "internal.h"
+ 
++#if __GNUC__ > 2
+ #define P __attribute__((packed))
++#else
++#define P
++#endif
+ 
+ #define OFFSET_COUNT 0x47
+ #define CAB_SIGNATURE 0x28635349

@@ -73,6 +73,7 @@
     SUBDIR += undms
     SUBDIR += unlzx
     SUBDIR += unrar
+    SUBDIR += unshield
     SUBDIR += untar
     SUBDIR += unzip
     SUBDIR += upx

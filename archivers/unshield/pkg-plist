@@ -1,0 +1,5 @@
+bin/unshield
+include/libunshield.h
+lib/libunshield.a
+lib/libunshield.so
+lib/libunshield.so.0
