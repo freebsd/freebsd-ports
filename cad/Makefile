@@ -8,6 +8,7 @@
     SUBDIR += astk-client
     SUBDIR += astk-serveur
     SUBDIR += atlc
+    SUBDIR += brlcad
     SUBDIR += calculix
     SUBDIR += cascade
     SUBDIR += chipmunk
