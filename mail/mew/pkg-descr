@@ -1,0 +1,38 @@
+Mew (1.54) is a "Message interface to Emacs Window" to integrate
+
+   - electronic mail
+   - NetNews
+   - MIME(Multipurpose Internet Mail Extensions)
+   - PEM(Privacy Enhanced Mail)
+   - PGP(Pretty Good Privacy)
+
+and to make it easy to view and compose them. With Mew you can send a
+picture of a birthday cake with the song "Happy Birthday to you" to your
+friend, which is encrypted by strong cryptograph.
+
+Info path and elisp load path would be set as follows :
+
+    Info path - /usr/local/info
+    load path - /usr/local/share/emacs/site-lisp/mew
+
+You must be setting your own environment:
+
+    1st -   Do "inc" in your home directory
+    2nd -   Set up "~/.mh_profile" correctry
+    3rd -   make "~/Mail/scan.form" correctry
+    4th -   make directory "~/Mail/drafts"
+    5th -   Set up "~/.emacs" correctry
+ 
+(See info by C-h i and  selecting   "Mew", "Install" and "User" ).
+
+Sample files for those above are in /usr/local/share/doc/mew.
+
+Most easy going way to install user environment is to execute
+/usr/local/share/doc/mew/user-install on your home directory. You can easily 
+set up your mail environment interactively.
+
+If you have installed correctly, type "M-x mew", then you can see Mew
+introducing and little while later ready to use. Enjoy!
+
+- Kiriyama Kazuhiko
+kiri@kiri.toba-cmt.ac.jp
