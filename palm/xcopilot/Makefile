@@ -3,12 +3,12 @@
 # Date created:         July 17 1997
 # Whom:                 Nick Sayer <nsayer@quack.kfu.com>
 #
-# $Id: Makefile,v 1.1.1.1 1997/11/23 23:39:41 fenner Exp $
+# $Id: Makefile,v 1.2 1997/11/25 07:38:50 asami Exp $
 #
 
 DISTNAME=       xcopilot-v0.4
 PKGNAME=	xcopilot-0.4.8
-CATEGORIES=     emulators
+CATEGORIES=     emulators pilot
 MASTER_SITES=   ftp://uiarchive.cso.uiuc.edu/pub/systems/PalmOS/
 
 PATCH_SITES=	http://www.isaac.cs.berkeley.edu/pilot/
