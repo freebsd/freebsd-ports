@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ogmtools
-PORTVERSION=	1.2
+PORTVERSION=	1.4
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/ogmtools/
 
@@ -17,7 +17,6 @@ LIB_DEPENDS=	vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
 USE_REINPLACE=	yes
-USE_SIZE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ogg-prefix=${LOCALBASE} \
   		--with-vorbis-prefix=${LOCALBASE}
