@@ -1,0 +1,11 @@
+--- Makefile.am.orig	Tue Nov  2 12:37:47 1999
++++ Makefile.am	Tue Nov  2 12:38:02 1999
+@@ -5,7 +5,7 @@
+ pkgdata_DATA = dia_logo.png
+ man_MANS = dia.1
+ 
+-pixmapdir = $(datadir)/pixmaps
++pixmapdir = $(datadir)/gnome/pixmaps
+ pixmap_DATA = dia_gnome_icon.png
+ 
+ Applicationsdir = $(datadir)/gnome/apps/Applications
