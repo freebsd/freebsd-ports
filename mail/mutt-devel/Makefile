@@ -47,9 +47,6 @@
 # If you want to enable extended quoting functions define:
 #  WITH_MUTT_QUOTE_PATCH
 #
-# If you want to enable the pgp_outlook_compat function for use with pgp define:
-#  WITH_MUTT_PGP_OUTLOOK_PATCH
-#
 # If you want to disable a outlook_compat function for use with smime define:
 #  WITHOUT_MUTT_SMIME_OUTLOOK_COMPAT
 #
@@ -167,13 +164,6 @@ USE_OPENSSL=	yes
 .if defined(WITH_MUTT_CYRUS_SASL)
 LIB_DEPENDS+=	sasl.8:${PORTSDIR}/security/cyrus-sasl
 .endif
-.if exists(${LOCALBASE}/bin/pgp)
-WITH_MUTT_PGP_OUTLOOK_PATCH=	yes
-.endif
-.if defined(WITH_MUTT_PGP_OUTLOOK_PATCH)
-pre-configure::
-	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-pgp-outlook
-.endif
 .if defined(WITHOUT_MUTT_SMIME_OUTLOOK_COMPAT)
 pre-configure::
 	${PATCH} ${PATCH_ARGS} < ${PATCHDIR}/extra-patch-smime-no-outlook
@@ -242,9 +232,6 @@ SCRIPTS_ENV+=	MUTT_COMPRESSED_FOLDERS="yes"
 .endif
 .if defined(WITH_MUTT_QUOTE_PATCH)
 SCRIPTS_ENV+=	MUTT_QUOTE_PATCH="yes"
-.endif
-.if defined(WITH_MUTT_PGP_OUTLOOK_PATCH)
-SCRIPTS_ENV+=	MUTT_PGP_OUTLOOK_PATCH="yes"
 .endif
 .if defined(WITH_MUTT_EDIT_THREADS)
 SCRIPTS_ENV+=	MUTT_EDIT_THREADS="yes"
