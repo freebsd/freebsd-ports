@@ -3,12 +3,13 @@
 # Date created:        Sun Apr 11 13:06:01 PDT 1999
 # Whom:                Michael Haro <mharo@area51.fremont.ca.us>
 #
-# $Id: Makefile,v 1.2 1999/05/29 04:29:40 steve Exp $
+# $Id: Makefile,v 1.3 1999/06/05 07:43:05 mharo Exp $
 #
 
 DISTNAME=	libmikmod-3.1.6
 CATEGORIES=	audio
-MASTER_SITES=	http://www.multimania.com/miodrag/mikmod/
+MASTER_SITES=	http://www.multimania.com/miodrag/mikmod/libmikmod/ \
+		http://mikmod.darkorb.net/libmikmod/
 
 MAINTAINER=	mharo@FreeBSD.ORG
 
