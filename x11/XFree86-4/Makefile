@@ -7,7 +7,7 @@
 
 PORTNAME=	XFree86
 PORTVERSION= 	4.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
@@ -56,9 +56,6 @@ pre-fetch:
 .elif defined(USA_RESIDENT)
 .if ${USA_RESIDENT} == NO
 pre-fetch:
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-.endif
 MASTER_SITES+=	ftp://psych.psy.uq.oz.au/pub/X11R5/ \
 		ftp://ftp.internat.freebsd.org/pub/FreeBSD/X11-Crypto/ \
 		ftp://ftp3.za.freebsd.org/pub/FreeBSD/X11-Crypto/
@@ -68,9 +65,6 @@ IGNOREFILES=	Wraphelp.c
 .endif
 .if ${USA_RESIDENT} == YES
 pre-fetch:
-.if !defined(BATCH) && !defined(PACKAGE_BUILDING)
-	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-.endif
 	@${ECHO}
 	@${ECHO} Assuming that you have fetched a USA-Legal Wraphelp.c.
 .endif
@@ -93,6 +87,7 @@ post-install:
 .ifndef DISTRIB
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .ifdef DISTRIB
 distrib: all install
