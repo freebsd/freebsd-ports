@@ -1,0 +1,20 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Tue Feb 20 22:27:21 2001
++++ Makefile	Wed Apr 18 18:29:23 2001
+@@ -32,12 +32,12 @@
+ WARNS=	2
+ 
+ PROG=	tits
+-MAN=	tits.8
++MAN8=	tits.8
+ 
+ SRCS=	main.c buffer.c client.c context.c listener.c telnet.c tty.c
+ SRCS+=	dispatcher.c setup.c config.c server.c logger.c
+ 
+-CPPFLAGS+= -DLIBWRAP -DTITS_DEFAULT_CONFIG_FILE=\"${LOCALBASE}/etc/tits.conf\"
++CFLAGS+= -DLIBWRAP -DTITS_DEFAULT_CONFIG_FILE=\"${LOCALBASE}/etc/tits.conf\"
+ LDADD+=	-lwrap
+ PREFIX?= /usr/local
+ BINDIR?= ${PREFIX}/sbin
