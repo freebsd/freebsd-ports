@@ -1,8 +1,7 @@
-@comment $FreeBSD$
 bin/cless
 bin/clesskey
 share/cless.hlp
 share/cless.bg5
 share/cless.gb
-share/doc/cless/README.CLESS
-@dirrm share/doc/cless
+%%PORTDOCS%%share/doc/cless/README.CLESS
+%%PORTDOCS%%@dirrm share/doc/cless
