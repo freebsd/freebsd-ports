@@ -1,0 +1,8 @@
+--- TARGETS/Targetdirs.orig	Mon Aug 30 17:19:44 1999
++++ TARGETS/Targetdirs	Mon Dec  6 00:57:01 1999
+@@ -1,4 +1,4 @@
+ #ident %W% %E% %Q%
+ ###########################################################################
+-DIRS=		patches conf inc lib libdeflt libscg cdrecord mkisofs-1.12b5 mkisofs-1.12b5/diag cdda2wav misc man
++DIRS=		patches conf inc lib libdeflt libscg cdrecord cdda2wav misc man
+ ###########################################################################

@@ -13,7 +13,7 @@ It should run also on:
         All SCSI-3/mmc compliant drives
         All ATAPI/mmc compliant drives
 
-This version also includes mkisofs (1.2b5) and cdda2wav, a CD-DA
+This version also includes cdda2wav, a CD-DA
 ripping program that includes customisable jitter correction.
 
 WWW: http://www.fokus.gmd.de/research/cc/glone/employees/joerg.schilling/private/cdrecord.html
