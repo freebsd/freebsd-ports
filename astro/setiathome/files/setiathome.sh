@@ -6,13 +6,18 @@
 
 # override these variables in ${PREFIX}/etc/setiathome.conf
 seti_wrkdir=/var/db/setiathome		# primary working directory
-seti_user=nobody					# user id to run as
-seti_nice=1							# nice level to run at
+seti_bindir=!!SUBDIR!!			# exec directory relative to ${PREFIX}
+seti_command=setiathome			# command name
+seti_std_args=-email			# command arguments for standard mode
+seti_reg_args=-login			# command arguments for register mode
+seti_user=nobody			# user id to run as
+seti_nice=1				# nice level to run at
 seti_maxprocs=`sysctl -n hw.ncpu`	# max. number of processes to start
+seti_syslog=daemon.err			# syslog facility.level
 
-PREFIX=/`expr $0 : '/\(.*\)/etc/rc.d/setiathome.sh'`
-if [ "x${PREFIX}" = "x/" ]; then
-	printf "\n`basename $0`: Cannot determine PREFIX.\nPlease use the complete pathname." >&2
+if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/${0##*/}\$"); then
+	echo "${0##*/}: Cannot determine PREFIX." >&2
+	echo "Please use the complete pathname." >&2
 	exit 64
 fi
 
@@ -31,25 +36,28 @@ case $1 in
 	start)
 		for i in ${seti_wrksuff}; do
 			if [ ! -d ${seti_wrkdir}/${i} ]; then
-				logger -sp daemon.err -t setiathome \
+				logger -sp ${seti_syslog} -t ${seti_command} \
 					"unable to start: ${seti_wrkdir}/${i} is missing."
 				exit 72
 			fi
 			if [ ! -f ${seti_wrkdir}/${i}/user_info.sah ]; then
-				logger -sp daemon.err -t setiathome \
+				logger -sp ${seti_syslog} -t ${seti_command} \
 					"unable to start: please log in to SETI@home first. (${seti_wrkdir}/${i}/user_info.sah is missing.)"
 				exit 72
 			fi
 		done
 		for i in ${seti_wrksuff}; do
-			su -m ${seti_user} -c \
-				"(cd ${seti_wrkdir}/${i} && exec ${PREFIX}/bin/setiathome -email -nice ${seti_nice} >/dev/null &)"
+			su -m ${seti_user} -c "\
+				(cd ${seti_wrkdir}/${i} && \
+				 exec ${PREFIX}/${seti_bindir}/${seti_command} \
+				 ${seti_std_args} \
+				 ${seti_nice+-nice} ${seti_nice} >/dev/null &)"
 			echo -n " SETI@home"
 		done
 		;;
 
 	stop)
-		killall setiathome
+		killall ${seti_command}
 		;;
 
 	register)
@@ -67,7 +75,10 @@ case $1 in
 		fi
 		# No need to register if we've already done so
 		if [ "X${seti_dontlogin}" != "Xyes" ]; then
-			su -m ${seti_user} -c "cd ${seti_wrkdir} && ${PREFIX}/bin/setiathome -login"
+			su -m ${seti_user} -c "\
+				cd ${seti_wrkdir} && \
+				exec ${PREFIX}/${seti_bindir}/${seti_command} \
+				${seti_reg_args}"
 		fi
 
 		if [ ${seti_maxprocs} -gt 1 ]; then
@@ -86,7 +97,7 @@ case $1 in
 		;;		
 
 	*)
-		echo "usage: `basename $0` {start|stop|register}" >&2
+		echo "usage: ${0##*/} {start|stop|register}" >&2
 		exit 64
 		;;
 esac
