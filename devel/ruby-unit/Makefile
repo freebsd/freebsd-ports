@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	runit
-PORTVERSION=	0.2.6
+PORTVERSION=	0.2.7
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://homepage1.nifty.com/markey/ruby/rubyunit/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
