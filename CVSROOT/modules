@@ -2280,6 +2280,7 @@ gimageview	ports/graphics/gimageview
 gimp-devel	ports/graphics/gimp-devel
 gimp-manual-html	ports/graphics/gimp-manual-html
 gimp-manual-pdf		ports/graphics/gimp-manual-pdf
+gimp-pmosaic	ports/graphics/gimp-pmosaic
 gimp-print	ports/print/gimp-print
 gimp1		ports/graphics/gimp1
 gindent		ports/devel/gindent
@@ -10576,4 +10577,3 @@ ztelnet		ports/net/ztelnet
 zthread		ports/devel/zthread
 ztrack		ports/games/ztrack
 zziplib		ports/devel/zziplib
-gimp-pmosaic	ports/graphics/gimp-pmosaic
