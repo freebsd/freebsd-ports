@@ -35,14 +35,14 @@ TABLE_FILES=	1cb0 1cb1 1cb2 1cb4 1cb5 1cb6 1th0 1th1 1th2 1th4 1th5 1th6 \
 		alloc_4 dewindow enwindow huffcode huffdec psy_data
 
 post-patch:
-	@${ECHO} "===>  Specifing table path "
+	@${ECHO_MSG} "===>  Specifing table path "
 	${SED} "s/ZAP/${TABLE_LIB_SED}/g" < ${WRKSRC}/common.h >${WRKSRC}/common.h.sed
 	${CP} -f ${WRKSRC}/common.h.sed ${WRKSRC}/common.h
 
 do-install:
-	@${ECHO} "===>  Installing binaries"
+	@${ECHO_MSG} "===>  Installing binaries"
 	${INSTALL_PROGRAM} ${WRKSRC}/encode ${PREFIX}/bin
-	@${ECHO} "===>  Installing table files"
+	@${ECHO_MSG} "===>  Installing table files"
 	-${MKDIR} ${TABLE_LIB}
 .for file in ${TABLE_FILES}
 	${INSTALL_DATA} ${WRKSRC}/tables/${file} ${TABLE_LIB}
