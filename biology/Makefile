@@ -5,6 +5,7 @@
 
     SUBDIR += L-Breeder
     SUBDIR += act
+    SUBDIR += ariadne
     SUBDIR += artemis
     SUBDIR += avida
     SUBDIR += babel
