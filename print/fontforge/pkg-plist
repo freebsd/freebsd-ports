@@ -106,6 +106,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/TilePath.png
 %%PORTDOCS%%%%DOCSDIR%%/To-kerned.png
 %%PORTDOCS%%%%DOCSDIR%%/To-unkerned.png
+%%PORTDOCS%%%%DOCSDIR%%/Tricolor.png
 %%PORTDOCS%%%%DOCSDIR%%/TrueOpenTables.html
 %%PORTDOCS%%%%DOCSDIR%%/VerticalMetrics.png
 %%PORTDOCS%%%%DOCSDIR%%/a_dieresis_macron.png
@@ -219,6 +220,7 @@ lib/libgunicode.so.2
 %%PORTDOCS%%%%DOCSDIR%%/featsetdlg.png
 %%PORTDOCS%%%%DOCSDIR%%/feature-tag-pos.png
 %%PORTDOCS%%%%DOCSDIR%%/feature-tag-sub.png
+%%PORTDOCS%%%%DOCSDIR%%/ffanvil16.png
 %%PORTDOCS%%%%DOCSDIR%%/ffanvil32.png
 %%PORTDOCS%%%%DOCSDIR%%/ffi-caret.png
 %%PORTDOCS%%%%DOCSDIR%%/ffi-moved.png
@@ -450,8 +452,8 @@ share/fontforge/Adobe-Japan2-0.cidmap
 share/fontforge/Adobe-Korea1-2.cidmap
 share/fontforge/pfaedit-de.ui
 share/fontforge/pfaedit-en.ui
-share/fontforge/pfaedit-es.ui
 share/fontforge/pfaedit-fr.ui
+share/fontforge/pfaedit-gr.ui
 share/fontforge/pfaedit-it.ui
 share/fontforge/pfaedit-ja.ui
 share/fontforge/pfaedit-ru.ui
