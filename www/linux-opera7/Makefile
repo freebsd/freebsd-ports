@@ -7,11 +7,11 @@
 
 PORTNAME=	opera
 PKGNAMEPREFIX=	linux-
-OPERAVERSION=	6.0-20011122.1
+OPERAVERSION=	6.0-20011129.1
 PORTVERSION=	${OPERAVERSION:S/-/./}
 CATEGORIES=	www linux
-MASTER_SITES=	http://opera.online.no/linux/600/tp1/ \
-		ftp://ftp.opera.com/pub/opera/linux/600/tp1/
+MASTER_SITES=	http://opera.online.no/linux/600/tp2/ \
+		ftp://ftp.opera.com/pub/opera/linux/600/tp2/
 DISTNAME=	${PORTNAME}-${OPERAVERSION}-static_qt.i386
 
 MAINTAINER=	des@FreeBSD.org
@@ -21,8 +21,6 @@ RUN_DEPENDS=	${LINUXBASE}/lib/ld.so:${PORTSDIR}/emulators/linux_base \
 		${LINUXBASE}/usr/lib/libpng.so.2:${PORTSDIR}/graphics/linux-png
 
 ONLY_FOR_ARCHS=	i386
-
-NO_PACKAGE=	"Beta software, do not distribute."
 
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=yes
@@ -38,7 +36,5 @@ do-install:
 	    --docdir=${DOCSDIR} \
 	    --sharedir=${DATADIR} \
 	    --plugindir=${DATADIR}/plugins )
-	${RM} -rf ${DATADIR}/uninst/rollback_${OPERAVERSION}
-	rmdir ${DATADIR}/uninst
 
 .include <bsd.port.mk>

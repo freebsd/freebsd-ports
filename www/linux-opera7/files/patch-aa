@@ -1,6 +1,6 @@
---- install.sh.orig	Thu Nov 22 12:38:09 2001
-+++ install.sh	Tue Nov 27 02:05:55 2001
-@@ -228,7 +228,16 @@
+--- install.sh.orig	Thu Dec  6 12:19:52 2001
++++ install.sh	Thu Dec  6 13:49:56 2001
+@@ -310,7 +310,16 @@
  	    mvv=''    # SunOS mv (no -v verbose option)
  	;;
  
@@ -18,21 +18,7 @@
  	;;
  
  	i[3456]86:Linux)
-@@ -477,10 +486,10 @@
- 
- # Opera enviroment
- if test \"\${OPERA_DIR}\" = '' ; then 
--  if test -d /usr/share/opera ; then 
--    OPERA_DIR=/usr/share/opera
-+  if test -d %%DATADIR%% ; then 
-+    OPERA_DIR=%%DATADIR%%
-   else
--    echo \"OPERA_DIR unset and not in default location (/usr/share/opera)\"
-+    echo \"OPERA_DIR unset and not in default location (%%DATADIR%%)\"
-     exit 1
-   fi
- fi
-@@ -491,18 +500,11 @@
+@@ -683,18 +692,11 @@
  for DIR in \\
      \"\${HOME}/.opera/plugins\" \\
      ${plugin_dir} \\
