@@ -14,6 +14,8 @@ DISTNAME=	users-guide-${PORTVERSION}
 
 MAINTAINER=	ade@FreeBSD.org
 
+LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs
+
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
