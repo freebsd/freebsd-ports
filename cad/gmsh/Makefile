@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmsh
-PORTVERSION=	1.57.0
+PORTVERSION=	1.58.0
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -56,8 +56,8 @@ post-extract:
 	${CP} `cd ${TRIANGLE_PORTDIR}; ${MAKE} -V WRKSRC`/triangle.* ${WRKSRC}/Triangle
 .endif
 
-post-patch:
-.for demo in isosurf.scp lowmem-anim.geo
+pre-configure:
+.for demo in lowmem-anim.geo
 	@${REINPLACE_CMD} -e "s|../tutorial|${DOCSDIR}/tutorial|"	\
 		${WRKSRC}/demos/${demo}
 .endfor
