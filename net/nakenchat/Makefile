@@ -13,4 +13,10 @@ MASTER_SITES=	http://www.mikekohn.com/nakenchat/
 MAINTAINER=	mike@mikekohn.net
 COMMENT=	Small (under 50k) chat server with many features
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502102
+IGNORE=		Does not respect PTHREAD_{CFLAGS,LIBS} (or CFLAGS or CC, ...)
+.endif
+
+.include <bsd.port.post.mk>
