@@ -6,8 +6,8 @@
 # $FreeBSD$
 #
 
-DISTNAME=	hanterm-3.1.2
-PKGNAME=	ko-hanterm-3.1.2
+DISTNAME=	hanterm-3.1.3
+PKGNAME=	ko-hanterm-3.1.3
 CATEGORIES=	korean x11
 MASTER_SITES=	http://elf.kaist.ac.kr/hanterm/pub/
 
