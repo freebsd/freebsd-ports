@@ -9,15 +9,16 @@ PORTNAME=	FlightGear
 PORTVERSION=	0.9.3
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Source/ \
-		ftp://ftp.flightgear.org/pub/fgfs/Shared/
+MASTER_SITES=	ftp://ftp.flightgear.org/pub/fgfs/Source/:src \
+		ftp://ftp.flightgear.org/pub/fgfs/Shared/:dat
 
 MAINTAINER=	des@FreeBSD.org
 COMMENT=	The FlightGear flight simulator
 
 BASEVERSION=	${PORTVERSION}
 BASEFILE=	fgfs-base-${BASEVERSION}${EXTRACT_SUFX}
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${BASEFILE}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src \
+		${BASEFILE}:dat
 
 BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${X11BASE}/include/simgear/threads/SGThread.hxx:${PORTSDIR}/devel/simgear \
@@ -39,7 +40,7 @@ CONFIGURE_ARGS=	--with-threads
 MAN1=		est-epsilon.1 fgfs.1 fgjs.1 gl-info.1 js_demo.1 pstest.1
 
 post-extract:
-	@${FIND} ${WRKSRC} \( -name '.#*' -or -name '*~' \) -print -delete
+	@${FIND} ${WRKSRC} \( -name '.#*' -or -name '*~' \) -delete
 
 do-install:
 	@${ECHO} ">> Installing program"
