@@ -13,7 +13,7 @@ MASTER_SITES=	http://step.polymtl.ca/~coyote/tank/
 
 MAINTAINER=	dburr@FreeBSD.org
 
-LIB_DEPENDS=	MesaGL.14:${PORTSDIR}/graphics/Mesa3
+LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
 
 BROKEN=	can\'t find glaux.h
 

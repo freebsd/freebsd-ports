@@ -17,7 +17,7 @@ BUILD_DEPENDS=	python:${PORTSDIR}/lang/python \
 		${NUMPYDIR}/Numeric.py:${PORTSDIR}/math/numpy
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python \
 		${NUMPYDIR}/Numeric.py:${PORTSDIR}/math/numpy
-LIB_DEPENDS=	MesaGL.14:${PORTSDIR}/graphics/Mesa3
+LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
 
 ALL_TARGET=	default
 

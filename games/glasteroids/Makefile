@@ -13,8 +13,8 @@ MASTER_SITES=	http://www.honors.montana.edu/~jjc/Glasteroids/
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-LIB_DEPENDS=	MesaGL.14:${PORTSDIR}/graphics/Mesa3 \
-		MesaGLU.14:${PORTSDIR}/graphics/Mesa3 \
+LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3 \
+		GLU.14:${PORTSDIR}/graphics/Mesa3 \
 		glut.3:${PORTSDIR}/graphics/Mesa3
 
 MAKEFILE=	Makefile.FreeBSD

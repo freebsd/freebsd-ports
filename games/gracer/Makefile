@@ -13,7 +13,7 @@ MASTER_SITES=	http://arch.comp.kyutech.ac.jp/~matsu/my_products/gtk/race/
 MAINTAINER=	nox@jelal.kn-bremen.de
 
 BUILD_DEPENDS=	${X11BASE}/lib/libsl.a:${PORTSDIR}/x11-toolkits/plib
-LIB_DEPENDS=	MesaGL.14:${PORTSDIR}/graphics/Mesa3 \
+LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3 \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.3:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \

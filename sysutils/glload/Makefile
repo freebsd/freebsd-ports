@@ -13,7 +13,7 @@ MASTER_SITES=	http://glload.netpedia.net/source/ \
 
 MAINTAINER=	vanilla@FreeBSD.org
 
-LIB_DEPENDS=	MesaGL.14:${PORTSDIR}/graphics/Mesa3
+LIB_DEPENDS=	GL.14:${PORTSDIR}/graphics/Mesa3
 
 USE_X_PREFIX=	yes
 MAKEFILE=	Makefile.FreeBSD

@@ -15,8 +15,8 @@ MASTER_SITES=		http://plasma.gsfc.nasa.gov/Ssystem/ \
 MAINTAINER=		andy@icc.surw.chel.su
 
 LIB_DEPENDS=		jpeg.9:${PORTSDIR}/graphics/jpeg \
-			MesaGL.14:${PORTSDIR}/graphics/Mesa3 \
-			MesaGLU.14:${PORTSDIR}/graphics/Mesa3 \
+			GL.14:${PORTSDIR}/graphics/Mesa3 \
+			GLU.14:${PORTSDIR}/graphics/Mesa3 \
 			glut.3:${PORTSDIR}/graphics/Mesa3
 
 MAKEFILE=		Makefile.FreeBSD
