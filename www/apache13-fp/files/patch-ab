@@ -1,0 +1,55 @@
+*** conf/access.conf-dist.orig	Mon Mar 31 18:52:33 1997
+--- conf/access.conf-dist	Sat Oct 25 14:15:32 1997
+***************
+*** 12,18 ****
+  
+  # This should be changed to whatever you set DocumentRoot to.
+  
+! <Directory /usr/local/etc/httpd/htdocs>
+  
+  # This may also be "None", "All", or any combination of "Indexes",
+  # "Includes", "FollowSymLinks", "ExecCGI", or "MultiViews".
+--- 12,18 ----
+  
+  # This should be changed to whatever you set DocumentRoot to.
+  
+! <Directory /usr/local/www/data>
+  
+  # This may also be "None", "All", or any combination of "Indexes",
+  # "Includes", "FollowSymLinks", "ExecCGI", or "MultiViews".
+***************
+*** 26,32 ****
+  # override. Can also be "All", or any combination of "Options", "FileInfo", 
+  # "AuthConfig", and "Limit"
+  
+! AllowOverride None
+  
+  # Controls who can get stuff from this server.
+  
+--- 26,32 ----
+  # override. Can also be "All", or any combination of "Options", "FileInfo", 
+  # "AuthConfig", and "Limit"
+  
+! AllowOverride All
+  
+  # Controls who can get stuff from this server.
+  
+***************
+*** 38,45 ****
+  # /usr/local/etc/httpd/cgi-bin should be changed to whatever your ScriptAliased
+  # CGI directory exists, if you have that configured.
+  
+! <Directory /usr/local/etc/httpd/cgi-bin>
+! AllowOverride None
+  Options None
+  </Directory>
+  
+--- 38,45 ----
+  # /usr/local/etc/httpd/cgi-bin should be changed to whatever your ScriptAliased
+  # CGI directory exists, if you have that configured.
+  
+! <Directory /usr/local/www/cgi-bin>
+! AllowOverride All
+  Options None
+  </Directory>
+  

@@ -1,0 +1,96 @@
+*** support/suexec.h.orig	Sat May 10 00:06:17 1997
+--- support/suexec.h	Thu Apr 23 15:57:52 1998
+***************
+*** 50,55 ****
+--- 50,62 ----
+   *
+   */
+  
++ /* "FPEXE modification made on Nov 2nd 1997 by Mark Wormgoor (riddles@ipe.nl)
++  *
++  * Changes were made in order to use Suexec and Frontpage 98 at the same time.
++  * Instead of trying to run suid on /usr/local/frontpage/currentversion/bin/fpexe, 
++  * we execute this so the suid-bit does all the work
++  */
++ 
+  /*
+   * suexec.h -- user-definable variables for the suexec wrapper code.
+   */
+***************
+*** 114,129 ****
+   *             debugging purposes.
+   */
+  #ifndef LOG_EXEC
+! #define LOG_EXEC "/usr/local/etc/httpd/logs/cgi.log" /* Need me? */
+  #endif
+  
+  /*
+   * DOC_ROOT -- Define as the DocumentRoot set for Apache.  This
+   *             will be the only hierarchy (aside from UserDirs)
+   *             that can be used for suEXEC behavior.
+   */
+  #ifndef DOC_ROOT
+! #define DOC_ROOT "/usr/local/etc/httpd/htdocs"
+  #endif
+  
+  /*
+--- 121,162 ----
+   *             debugging purposes.
+   */
+  #ifndef LOG_EXEC
+! #define LOG_EXEC "/var/log/httpd-cgi.log" /* Need me? */
+  #endif
+  
+  /*
+   * DOC_ROOT -- Define as the DocumentRoot set for Apache.  This
+   *             will be the only hierarchy (aside from UserDirs)
+   *             that can be used for suEXEC behavior.
++  *             This is not used, since we have VirtualHosts defined.
+   */
+  #ifndef DOC_ROOT
+! #define DOC_ROOT "/usr/local/www"
+! #endif
+! 
+! /*
+!  * FPEXE
+!  * FRONTPAGE_EXE -- We are running frontpage and we don't need to run
+!  *                  fpexe suid, since it's already set suid.  Also, the
+!  *                  dir-rights are incorrect and so on...
+!  */
+! #ifndef FPEXE
+! #define FPEXE "fpexe"
+! #endif
+! 
+! #ifndef FRONTPAGE_EXE
+! #define FRONTPAGE_EXE "/usr/local/frontpage/version3.0/apache-fp/_vti_bin/fpexe"
+! #endif
+!                     
+! /*
+!  * SYSTEM_CGI -- Define as the cgi directory for system-wide CGI's
+!  *               Note that UID/GID of the cgi or the directory are
+!  *		 NOT matched if they're in this directory, although
+!  *		 all the other checks still apply. Caveat Emptor.
+!  */
+! 
+! #ifndef SYSTEM_CGI
+! #define SYSTEM_CGI "/usr/local/www/cgi-bin"
+  #endif
+  
+  /*
+***************
+*** 131,137 ****
+   *
+   */
+  #ifndef SAFE_PATH
+! #define SAFE_PATH "/usr/local/bin:/usr/bin:/bin"
+  #endif
+  
+  #endif  /* _SUEXEC_H */
+--- 164,170 ----
+   *
+   */
+  #ifndef SAFE_PATH
+! #define SAFE_PATH "/usr/local/bin:/usr/bin:/bin:."
+  #endif
+  
+  #endif  /* _SUEXEC_H */
