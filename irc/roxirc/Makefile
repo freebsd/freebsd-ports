@@ -3,7 +3,7 @@
 # Date created:         Mar 15 1999
 # Whom:                 rox@fearme.com
 #
-# $Id: Makefile,v 1.1.1.1 1999/06/04 06:14:32 mharo Exp $
+# $Id: Makefile,v 1.2 1999/06/20 00:36:30 cpiazza Exp $
 #
 
 DISTNAME=	roxirc-1.2
@@ -22,7 +22,7 @@ do-install:
 	${MKDIR} ${PREFIX}/share/doc/roxirc
 	${INSTALL_DATA} ${WRKSRC}/config ${PREFIX}/share/doc/roxirc/config-example
 	${INSTALL_DATA} ${WRKSRC}/menus ${PREFIX}/share/doc/roxirc/menus-example
-	${INSTALL_DATA} ${WRKSRC}/prefs ${PREFIX}/share/doc/roxirc/prefs-intial
+	${INSTALL_DATA} ${WRKSRC}/prefs ${PREFIX}/share/doc/roxirc/prefs-initial
 
 post-patch:
 	/usr/bin/perl -pi -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/roxirc
