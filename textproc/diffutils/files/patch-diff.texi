@@ -1,0 +1,21 @@
+--- diff.texi.orig	Fri Sep 30 21:54:40 1994
++++ diff.texi	Sat Sep  8 16:56:14 2001
+@@ -6,6 +6,18 @@
+ @c %**end of header
+ 
+ @ifinfo
++@format
++INFO-DIR-SECTION Comparing and Merging Files
++START-INFO-DIR-ENTRY
++* Comparing files: (diff).      Comparing and Merging Files.
++* cmp: (diff)cmp invocation.                    Compares two files.
++* diff: (diff)diff invocation.                  Pretty compares two files.
++* diff3: (diff)diff3 invocation.                Compares and Merges three files.
++* patch: (diff)patch invocation.                Apply a diff file to an original
++* sdiff: (diff)sdiff invocation.                Interactively compares two files
++END-INFO-DIR-ENTRY
++@end format
++
+ This file documents the the GNU @code{diff}, @code{diff3}, @code{sdiff},
+ and @code{cmp} commands for showing the differences between text files
+ and the @code{patch} command for using their output to update files.

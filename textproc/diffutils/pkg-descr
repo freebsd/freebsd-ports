@@ -1,0 +1,11 @@
+The Free Software Foundation's "diff" utilities, including "diff",
+"diff3", "sdiff", and "cmp".
+
+These utilities exist in the FreeBSD base collection, but the GNU
+versions have added functionality that is sometimes useful.
+
+Note that this port will install these utilities with a `g' prefix,
+for example gdiff, gdiff3, ggcmp, but the texinfo documentation
+will refer to these utilities without the `g' prefix.
+
+WWW: http://www.gnu.org/software/diffutils/diffutils.html

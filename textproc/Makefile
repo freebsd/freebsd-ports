@@ -23,6 +23,7 @@
     SUBDIR += dict
     SUBDIR += diff-mode.el
     SUBDIR += diffstat
+    SUBDIR += diffutils
     SUBDIR += docbook
     SUBDIR += docbook-241
     SUBDIR += docbook-300
