@@ -1,0 +1,18 @@
+--- web2c/web/Makefile.in.org	Thu Nov  9 22:06:40 1995
+*** web2c/web/Makefile.in	Thu Nov  9 22:07:02 1995
+***************
+*** 59,65 ****
+  
+  # To make tangleboot.p, we must assume a working tangle.
+  tangleboot.p: tangle.web tangle.ch
+! 	tangle tangle.web tangle.ch
+  	mv tangle.p tangleboot.p
+
+  
+--- 59,65 ----
+  
+  # To make tangleboot.p, we must assume a working tangle.
+  tangleboot.p: tangle.web tangle.ch
+! 	./tangle tangle.web tangle.ch
+  	mv tangle.p tangleboot.p  
+  
