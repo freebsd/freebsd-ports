@@ -1,19 +1,6 @@
 ===> ZWiki post-port installation instructions:
-  To complete the installation of this port, you need to perform two further
-  steps:
-
-  1. Restart Zope.  This may be done from the Zope Control Panel in the Zope
-     management interface.
-
-  2. Import the example ZWikiWebs into Control_Panel/Products.  These 
-     have been placed in your Zope import directory as the following file:
-
-       ZWikiWebs.zexp
-
-     You cannot add these examples as the Zope superuser; add it as a Zope
-     user with Manager privileges instead.  From the Control_Panel/Products
-     folder, click the Import/Export button, and type the name given a above
-     as the Import file name.
+  To complete the installation of this port, you need to restart Zope. This
+  may be done from the Zope Control Panel in the Zope management interface.
 
   You will now be able to create a "ZWiki Web" object.
 

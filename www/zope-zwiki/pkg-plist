@@ -1,32 +1,35 @@
-%%ZOPEBASEDIR%%/import/ZWikiWebs.zexp
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/CatalogAwareness.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/CatalogAwareness.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/Changelog
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/Defaults.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/Defaults.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/Diff.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/Diff.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/Extensions/zwiki_mailin.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/Extensions/zwiki_mailin.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/GPL.txt
 %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/LICENSE.txt
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/Parents.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/Parents.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/Permissions.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/Permissions.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/README.txt
-%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/ZWikiAdd.py
-%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/ZWikiAdd.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/ZWikiDefaults.py
-%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/ZWikiDefaults.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/ZWikiDiff.py
-%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/ZWikiDiff.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/Regexps.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/Regexps.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/SubscriberList.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/SubscriberList.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/TextFormatter.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/TextFormatter.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/ZWikiPage.py
 %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/ZWikiPage.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/ZWikiPage_icon.gif
-%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/ZWikiParents.py
-%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/ZWikiParents.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/ZWikiPermissions.py
-%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/ZWikiPermissions.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/ZWikiRegexes.py
-%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/ZWikiRegexes.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/ZWikiWeb.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/ZWikiWeb.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/dtml/zwikiPageAdd.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/dtml/zwikiWebAdd.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/images/ZWikiPage_icon.gif
 %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/refresh.txt
-%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/tests/DocTests.py
-%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/tests/DocTests.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/tests/ZWikiPageTests.py
-%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/tests/ZWikiPageTests.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/tests/ZWikiWebsTests.py
-%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/tests/ZWikiWebsTests.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/tests/__init__.py
 %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/tests/__init__.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/tests/doctest.py
@@ -34,9 +37,40 @@
 %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/tests/refresh.txt
 %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/tests/simpletestrunner.py
 %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/tests/simpletestrunner.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/tests/testDoctests.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/tests/testDoctests.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/tests/testZWikiPage.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/tests/testZWikiPage.pyc
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/tests/testZWikiWeb.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/tests/testZWikiWeb.pyc
 %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/version.txt
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wikis/DEFAULTS/standard_wiki_page
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wikis/zwikidotorg/AnnoyingQuote
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wikis/zwikidotorg/FrontPage
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wikis/zwikidotorg/HelpPage
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wikis/zwikidotorg/JumpSearch
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wikis/zwikidotorg/RecentChanges
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wikis/zwikidotorg/RemoteWikiLinks
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wikis/zwikidotorg/RemoteWikiURL
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wikis/zwikidotorg/SearchPage
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wikis/zwikidotorg/StructuredTextRules
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wikis/zwikidotorg/TextFormattingRules
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wikis/zwikidotorg/UserOptions
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wikis/zwikidotorg/WikiName
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wikis/zwikidotorg/ZWiki
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wikis/zwikidotorg/backlinks
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wikis/zwikidotorg/editform
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wikis/zwikidotorg/index_html
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wikis/zwikidotorg/standard_wiki_footer
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wikis/zwikidotorg/standard_wiki_header
+%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wikis/zwikidotorg/standard_wiki_page
 %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wwml.py
 %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wwml.pyc
-%%ZOPEBASEDIR%%/lib/python/Products/ZWiki/zwikipageAdd.dtml
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wikis/zwikidotorg
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wikis/DEFAULTS
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/wikis
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/tests
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/images
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/dtml
+@dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZWiki/Extensions
 @dirrm %%ZOPEBASEDIR%%/lib/python/Products/ZWiki
