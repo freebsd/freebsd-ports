@@ -1,0 +1,67 @@
+#
+# Race condition in MBX locking
+# http://www.exim.org/pipermail/exim-users/Week-of-Mon-20040419/070394.html
+#
+--- src/exim_lock.c	2004-04-15 09:27:01.000000000 +0100
++++ src/exim_lock.c	2004-04-22 15:34:29.000000000 +0100
+@@ -308,7 +308,7 @@
+ for (j = 0; j < lock_retries; j++)
+   {
+   int sleep_before_retry = TRUE;
+-  struct stat statbuf;
++  struct stat statbuf, ostatbuf;
+
+   /* Try to build a lock file if so configured */
+
+@@ -395,7 +395,7 @@
+         if (use_fcntl)
+           printf("exim_lock: fcntl() read lock successfully applied\n");
+         if (use_flock)
+-          printf("exim_lock: fcntl() read lock successfully applied\n");
++          printf("exim_lock: flock() read lock successfully applied\n");
+         }
+       }
+     else goto RETRY;   /* Message already output */
+@@ -451,7 +451,16 @@
+           printf("exim_lock: flock() lock successfully applied to mbx "
+             "lock file %s\n", tempname);
+         }
+-      break;
++
++      if (lstat(tempname, &statbuf) || fstat(md, &ostatbuf) ||
++	  (statbuf.st_dev != ostatbuf.st_dev) ||
++	  (statbuf.st_ino != ostatbuf.st_ino))
++	{
++	if (!quiet) printf("exim_lock: mbx lock file %s changed between "
++	    "creation and locking\n", tempname);
++	goto RETRY;
++	}
++      else break;
+       }
+     else goto RETRY;   /* Message already output */
+     }
+--- src/transports/appendfile.c	2004-04-15 09:27:01.000000000 +0100
++++ src/transports/appendfile.c	2004-04-22 15:46:41.000000000 +0100
+@@ -1971,7 +1971,20 @@
+
+         if (apply_lock(mbx_lockfd, F_WRLCK, ob->use_fcntl,
+           ob->lock_fcntl_timeout, ob->use_flock, ob->lock_flock_timeout) >= 0)
+-            break;
++	  {
++	    struct stat ostatbuf;
++	    if (lstat(mbx_lockname, &statbuf) ||
++		fstat(mbx_lockfd, &ostatbuf) ||
++	        (statbuf.st_dev != ostatbuf.st_dev) ||
++		(statbuf.st_ino != ostatbuf.st_ino))
++	      {
++	      DEBUG(D_transport) debug_printf("MBX lockfile %s changed "
++		"between creation and locking\n", mbx_lockname);
++	      close(mbx_lockfd);
++	      mbx_lockfd = -1;
++	      }
++	    else break;
++          }
+
+         DEBUG(D_transport) debug_printf("failed to lock %s: %s\n", mbx_lockname,
+           strerror(errno));
+

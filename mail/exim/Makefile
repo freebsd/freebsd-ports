@@ -6,41 +6,57 @@
 #
 
 PORTNAME=	exim
-PORTVERSION=	4.32
+PORTVERSION=	${EXIM_VERSION}+${EXISCAN_VERSION}
 PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_EXIM}
 MASTER_SITE_SUBDIR=	exim4
+DISTNAME=	${PORTNAME}-${EXIM_VERSION}
 DIST_SUBDIR=	exim
 
 .if !defined(WITHOUT_EXISCAN)
 PATCH_SITES=	http://duncanthrax.net/%SUBDIR%/
 PATCH_SITE_SUBDIR=	exiscan-acl
-PATCHFILES=	exiscan-acl-${EXISCAN_VERSION}.patch.bz2
+PATCHFILES=	exiscan-acl-${EXIM_VERSION}-${EXISCAN_VERSION}.patch.bz2
 PATCH_DIST_STRIP=	-p1
 .endif
 
 MAINTAINER=	eik@FreeBSD.org
-COMMENT=	High performance MTA for Unix systems on the Internet
+COMMENT?=	High performance MTA for Unix systems on the Internet
 
-.if defined(WITH_EXIMON)
-RUN_DEPENDS=	${LOCALBASE}/sbin/eximon:${PORTSDIR}/mail/exim-monitor
-.endif
+EXIM_VERSION=	4.32
+EXISCAN_VERSION=18
 
+.if !defined(EXIMON_ONLY)
 .if defined(PKGNAMESUFFIX)
-CONFLICTS+=	${PKGNAMEPREFIX}${PORTNAME}-4*
+CONFLICTS+=	${PKGNAMEPREFIX}${PORTNAME}-4.*
 .endif
 .for suffix in -ldap2 -mysql -postgresql
 .if !defined(PKGNAMESUFFIX) || ${PKGNAMESUFFIX} != ${suffix}
-CONFLICTS+=	${PKGNAMEPREFIX}${PORTNAME}${suffix}*
+CONFLICTS+=	${PKGNAMEPREFIX}${PORTNAME}${suffix}-4.*
 .endif
 .endfor
+.if defined(WITH_EXIMON)
+CONFLICTS+=	${PKGNAMEPREFIX}${PORTNAME}-monitor-4.*
+.endif
+.else
+WITH_EXIMON=	yes
+.endif
+
+.if defined(WITH_EXIMON)
+USE_XLIB=	yes
+.endif
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
 USE_PERL5=	yes
 USE_REINPLACE=	yes
+
+.if !defined(EXIMON_ONLY)
 MAN8=		exim.8
+.else
+NO_INSTALL_MANPAGES=	yes
+.endif
 
 PORTDOC_BASE=	ACKNOWLEDGMENTS NOTICE README.UPDATING
 PORTDOC_FILES=	ChangeLog Exim3.upgrade Exim4.upgrade NewStuff \
@@ -51,24 +67,33 @@ PORT_EXAMPLES=	convert4r3 convert4r4 transport-filter.pl
 
 DAILY_SCRIPTS=	150.exim-tidydb 460.exim-mail-rejects
 
-EXISCAN_VERSION=	${PORTVERSION}-17
-
 PKGINSTALL=	${WRKDIR}/pkg-install
 
-PLIST_SUB+=	EXIM_VERSION="${PORTVERSION}-${PORTREVISION}"
-
-.if defined(NOPORTDOCS)
+.if defined(NOPORTDOCS) && !defined(EXIMON_ONLY)
 PKGMESSAGE=	${WRKDIR}/POST-INSTALL-NOTES
 .else
 PKGMESSAGE=	${WRKDIR}/pkg-message
 .endif
 
 MAKE_ENV+=	OSTYPE=${OPSYS} ARCHTYPE=${MACHINE_ARCH} LOCALBASE=${LOCALBASE}
+.if defined(EXIMON_ONLY)
+MAKE_ENV+=	INSTALL_ARG="eximon eximon.bin"
+.endif
 
 POSTGRESQL_PORT?=	databases/postgresql7
 
 EXIM_USER?=	mailnull
 EXIM_GROUP?=	mail
+
+SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
+		-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
+		-e 's,%%EXAMPLESDIR%%,${EXAMPLESDIR},g' \
+		-e 's,%%EXIM_USER%%,${EXIM_USER},g' \
+		-e 's,%%EXIM_GROUP%%,${EXIM_GROUP},g'
+
+PLIST_SUB=	EXIM_VERSION="${EXIM_VERSION}-${PORTREVISION}" \
+		EXIM_USER=${EXIM_USER} \
+		EXIM_GROUP=${EXIM_GROUP}
 
 # If WITH_EXIMON is defined, the eximon monitor, which requires X,
 # will be made a dependency.  Note that using WITH_EXIMON will cause
@@ -147,13 +172,13 @@ WITH_DEFAULT_CHARSET?=	ISO-8859-1
 #WITHOUT_MAILSTORE=	yes
 #WITHOUT_MBX=		yes
 #
-# Define WITHOUT_CDB, WITHOUT_DNSDB, WITHOUT_DSEARCH, WILD_LSEARCH,
+# Define WITHOUT_CDB, WITHOUT_DNSDB, WITHOUT_DSEARCH, WITHOUT_LSEARCH,
 # WITHOUT_NIS and WITHOUT_PASSWD to disable support for CDB-style, DNS-style,
 # directory-list, wildcarded-file, NIS and /etc/passwd lookups respectively.
 #WITHOUT_CDB=		yes
 #WITHOUT_DNSDB=		yes
 #WITHOUT_DSEARCH=	yes
-#WITHOUT_WILDLSEARCH=	yes
+#WITHOUT_LSEARCH=	yes
 #WITHOUT_NIS=		yes
 #WITHOUT_PASSWD=	yes
 #
@@ -185,6 +210,13 @@ SEDLIST=	-e 's,XX_PREFIX_XX,${PREFIX},' \
 		-e 's,XX_EXIM_GROUP_XX,${EXIM_GROUP},' \
 		-e 's,XX_LOCALBASE_XX,${LOCALBASE},' \
 		-e 's,XX_DEFAULT_CHARSET_XX,${WITH_DEFAULT_CHARSET},'
+
+.if defined(WITH_EXIMON)
+SEDLIST+=	-e 's,^\# EXIM_MONITOR=,EXIM_MONITOR=,'
+PLIST_SUB+=	EXIMON=""
+.else
+PLIST_SUB+=	EXIMON="@comment "
+.endif
 
 .if !defined(WITHOUT_TLS)
 SEDLIST+=	-e 's,^\# SUPPORT_TLS=,SUPPORT_TLS=,'
@@ -340,8 +372,8 @@ SEDLIST+=	-e 's,^\# LOOKUP_CDB=,LOOKUP_CDB=,'
 SEDLIST+=	-e 's,^\# LOOKUP_DSEARCH=,LOOKUP_DSEARCH=,'
 .endif
 
-.if !defined(WITHOUT_WILDLSEARCH)
-SEDLIST+=	-e 's,^\# LOOKUP_WILDLSEARCH=,LOOKUP_WILDLSEARCH=,'
+.if defined(WITHOUT_LSEARCH)
+SEDLIST+=	-e 's,^LOOKUP_LSEARCH=,\#LOOKUP_LSEARCH=,'
 .endif
 
 .if !defined(WITHOUT_NIS)
@@ -362,29 +394,27 @@ SEDLIST+=	-e 's,^ALT_CONFIG_PREFIX=,\# ALT_CONFIG_PREFIX=,'
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 500038
-RC_SUBR?=	${DESTDIR}/etc/rc.subr
+.if defined(EXIMON_ONLY) && ${MASTERDIR} == ${PKGDIR}
+.error EXIMON_ONLY is not user settable
+.endif
+
+.if !defined(EXIMON_ONLY)
+USE_RC_SUBR=	yes
+.if ${OSVERSION} >= 500037
 RC_DIR=		${DESTDIR}/etc/rc.d
 RC_SUFX=
 .else
-USE_RC_SUBR=	yes
 RC_DIR=		${PREFIX}/etc/rc.d
 RC_SUFX=	.sh
 .endif
 
-SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
-		-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
-		-e 's,%%EXAMPLESDIR%%,${EXAMPLESDIR},g' \
-		-e 's,%%EXIM_USER%%,${EXIM_USER},g' \
-		-e 's,%%EXIM_GROUP%%,${EXIM_GROUP},g' \
-		-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
+SED_SCRIPT+=	-e 's,%%RC_SUBR%%,${RC_SUBR},g' \
 		-e 's,%%RC_DIR%%,${RC_DIR},g' \
 		-e 's,%%RC_SUFX%%,${RC_SUFX},g'
 
 PLIST_SUB+=	RC_DIR=${RC_DIR} \
-		RC_SUFX=${RC_SUFX} \
-		EXIM_USER=${EXIM_USER} \
-		EXIM_GROUP=${EXIM_GROUP}
+		RC_SUFX=${RC_SUFX}
+.endif
 
 .if ${OSVERSION} < 400014
 WITHOUT_IPV6=	yes
@@ -406,11 +436,15 @@ pre-everything::
 do-configure:
 	@${MKDIR} ${WRKSRC}/Local
 	@${SED} ${SEDLIST} ${WRKSRC}/src/EDITME > ${WRKSRC}/Local/Makefile
-	@${SED} ${SED_SCRIPT} ${MASTERDIR}/pkg-install > ${PKGINSTALL}
+.if defined(WITH_EXIMON)
+	@${CP} ${WRKSRC}/exim_monitor/EDITME ${WRKSRC}/Local/eximon.conf
+.endif
+	@[ ! -f ${PKGDIR}/pkg-install ] || ${SED} ${SED_SCRIPT} ${PKGDIR}/pkg-install > ${PKGINSTALL}
 	@${REINPLACE_CMD} ${SEDLIST} ${WRKSRC}/src/configure.default
 	@${REINPLACE_CMD} -e 's/"(Exim $$version_number)\\n\\t"/"(Exim $$version_number; ${OPSYS})\\n\\t"/' \
 		${WRKSRC}/src/globals.c
 	@${REINPLACE_CMD} -e 's/^#include "cnumber\.h"$$/${PORTREVISION}/' ${WRKSRC}/src/version.c
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} configure)
 
 post-build:
 .for script in exim ${DAILY_SCRIPTS}
@@ -423,7 +457,9 @@ post-build:
 .else
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/POST-INSTALL-NOTES > ${WRKDIR}/POST-INSTALL-NOTES
 .endif
-	@${SED} ${SED_SCRIPT} ${MASTERDIR}/pkg-message > ${WRKDIR}/pkg-message
+	@[ ! -f ${PKGDIR}/pkg-message ] || ${SED} ${SED_SCRIPT} ${PKGDIR}/pkg-message > ${WRKDIR}/pkg-message
+
+.if !defined(EXIMON_ONLY)
 
 pre-install:
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -458,5 +494,12 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 	@PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+
+.else
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.endif
 
 .include <bsd.port.post.mk>

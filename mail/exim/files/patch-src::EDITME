@@ -62,7 +62,7 @@
  # local OS-specific make files.
  
 -EXIM_MONITOR=eximon.bin
-+#EXIM_MONITOR=eximon.bin
++# EXIM_MONITOR=eximon.bin
  
  
  

@@ -1,0 +1,395 @@
+#
+# Wishlist #254 (2) iplsearch
+# http://www.exim.org/pipermail/exim-users/Week-of-Mon-20040419/070420.html
+#
+diff -uNr src/drtables.c exim-4.32.with-iplsearch/src/drtables.c
+--- src/drtables.c	2004-04-15 10:27:01.000000000 +0200
++++ exim-4.32.with-iplsearch/src/drtables.c	2004-04-23 16:16:53.000000000 +0200
+@@ -212,6 +212,23 @@
+ #endif
+   },
+ 
++/* Linear search of single file  with ip-addresses and networks */
++
++  {
++  US"iplsearch",                 /* lookup name */
++  lookup_absfile,                /* uses absolute file name */
++#ifdef LOOKUP_LSEARCH
++  lsearch_open,                  /* open function */
++  lsearch_check,                 /* check function */
++  iplsearch_find,                /* find function */
++  lsearch_close,                 /* close function */
++  NULL,                          /* no tidy function */
++  NULL                           /* no quoting function */
++#else
++  NULL, NULL, NULL, NULL, NULL, NULL /* lookup not present */
++#endif
++  },
++
+ /* LDAP lookup, allowing data from only one entry to be returned */
+ 
+   {
+diff -uNr src/exim.c exim-4.32.with-iplsearch/src/exim.c
+--- src/exim.c	2004-04-15 10:27:01.000000000 +0200
++++ exim-4.32.with-iplsearch/src/exim.c	2004-04-23 16:17:14.000000000 +0200
+@@ -814,7 +814,7 @@
+ 
+ fprintf(f, "Lookups:");
+ #ifdef LOOKUP_LSEARCH
+-  fprintf(f, " lsearch wildlsearch nwildlsearch");
++  fprintf(f, " lsearch wildlsearch nwildlsearch iplsearch");
+ #endif
+ #ifdef LOOKUP_CDB
+   fprintf(f, " cdb");
+diff -uNr src/functions.h exim-4.32.with-iplsearch/src/functions.h
+--- src/functions.h	2004-04-15 10:27:01.000000000 +0200
++++ exim-4.32.with-iplsearch/src/functions.h	2004-04-23 16:01:44.000000000 +0200
+@@ -104,6 +104,7 @@
+ extern int     host_find_bydns(host_item *, uschar *, int, uschar *, BOOL, BOOL,
+                  uschar **, BOOL *);
+ extern ip_address_item *host_find_interfaces(void);
++extern BOOL    host_is_in_net(uschar *, uschar *);
+ extern void    host_mask(int, int *, int);
+ extern int     host_name_lookup(void);
+ extern int     host_nmtoa(int, int *, int, uschar *);
+diff -uNr src/host.c exim-4.32.with-iplsearch/src/host.c
+--- src/host.c	2004-04-15 10:27:01.000000000 +0200
++++ exim-4.32.with-iplsearch/src/host.c	2004-04-23 16:29:34.000000000 +0200
+@@ -2689,7 +2689,84 @@
+ return yield;
+ }
+ 
++/***********************************
++*         host_is_in_net           *
++***********************************/
++
++/* Checks an host to be part of a network.
++
++Arguments:
++  host   The string representation of the ip-address to check
++  net    The string representation of the network, with optional
++         cidr-mask
++
++Returns:
++  TRUE   if the host is inside the network
++  FALSE  if the host is NOT inside the network
++*/
+ 
++BOOL
++host_is_in_net(uschar *host, uschar *net)
++{
++int maskoffset;
++int i;
++int address[4];
++int incoming[4];
++int mlen;
++int size = host_aton(net, address);
++int insize;
++
++if (!string_is_ip_address(net, &maskoffset)) return FALSE;
++
++/* No mask => all bits to be checked */
++
++if (maskoffset == 0) mlen = 99999;    /* Big number */
++else
++  {
++  mlen = Uatoi(net + maskoffset + 1);
++  net[maskoffset] = '/';    /* restore the slash */
++  }
++
++/* Convert the incoming address to binary. */
++
++insize = host_aton(host, incoming);
++
++/* Convert IPv4 addresses given in IPv6 compatible mode, which represent
++   connections from IPv4 hosts to IPv6 hosts, that is, addresses of the form
++   ::ffff:<v4address>, to IPv4 format. */
++
++if (insize == 4 && incoming[0] == 0 && incoming[1] == 0 &&
++    incoming[2] == 0xffff)
++  {
++  insize = 1;
++  incoming[0] = incoming[3];
++  }
++
++/* No match if the sizes don't agree. */
++
++if (insize != size) return FALSE;
++
++/* Else do the masked comparison. */
++
++for (i = 0; i < size; i++)
++  {
++  int mask;
++  if (mlen == 0) mask = 0;
++  else if (mlen < 32)
++    {
++    mask = (-1) << (32 - mlen);
++    mlen = 0;
++    }
++  else
++    {
++    mask = -1;
++    mlen -= 32;
++    }
++  if ((incoming[i] & mask) != (address[i] & mask)) return FALSE;
++  }
++return TRUE;
++
++}
+ 
+ 
+ /*************************************************
+diff -uNr src/lookups/lsearch.c exim-4.32.with-iplsearch/src/lookups/lsearch.c
+--- src/lookups/lsearch.c	2004-04-15 10:27:01.000000000 +0200
++++ exim-4.32.with-iplsearch/src/lookups/lsearch.c	2004-04-23 16:31:20.000000000 +0200
+@@ -9,7 +9,12 @@
+ #include "lf_functions.h"
+ #include "lsearch.h"
+ 
+-
++enum {
++  LSEARCH_PLAIN,
++  LSEARCH_WILD,
++  LSEARCH_NWILD,
++  LSEARCH_IP
++};
+ 
+ /*************************************************
+ *              Open entry point                  *
+@@ -61,7 +66,7 @@
+ 
+ static int
+ internal_lsearch_find(void *handle, uschar *filename, uschar *keystring,
+-  int length, uschar **result, uschar **errmsg, BOOL wild, BOOL expand)
++  int length, uschar **result, uschar **errmsg, int type)
+ {
+ FILE *f = (FILE *)handle;
+ BOOL last_was_eol = TRUE;
+@@ -136,34 +141,53 @@
+     linekeylength = s - buffer;
+     }
+ 
+-  /* A wild lsearch treats each key as a possible wildcarded string. */
+-
+-  if (wild)
+-    {
+-    int rc;
+-    int save = buffer[linekeylength];
+-    uschar *list = buffer;
+-    buffer[linekeylength] = 0;
+-    rc = match_isinlist(keystring,
+-      &list,
+-      UCHAR_MAX+(expand? 1:2),  /* Single-item list, possibly expanded */
+-      NULL,                     /* No anchor */
+-      NULL,                     /* No caching */
+-      MCL_STRING,
+-      TRUE,  /* Caseless */
+-      NULL);
+-    buffer[linekeylength] = save;
+ 
+-    if (rc == FAIL) continue;
+-    if (rc == DEFER) return DEFER;
+-    }
+-
+-  /* A non-wild lsearch treats each key as a litersl */
+-
+-  else
++  switch(type)
+     {
++    /* A non-wild lsearch treats each key as a literal */
++    case LSEARCH_PLAIN:
+     if (linekeylength != length || strncmpic(buffer, keystring, length) != 0)
+       continue;
++    break;
++
++    /* A wild lsearch treats each key as a possible wildcarded string. */
++    case LSEARCH_WILD: 
++    /* Like wildlsearch, but without expanding the key */
++    case LSEARCH_NWILD: 
++      {
++      int rc;
++      int save = buffer[linekeylength];
++      uschar *list = buffer;
++      buffer[linekeylength] = 0;
++      rc = match_isinlist(keystring,
++        &list,
++        /* Single-item list, possibly expanded */
++        UCHAR_MAX+(type == LSEARCH_WILD? 1:2),
++        NULL,                     /* No anchor */
++        NULL,                     /* No caching */
++        MCL_STRING,
++        TRUE,  /* Caseless */
++        NULL);
++      buffer[linekeylength] = save;
++
++      if (rc == FAIL) continue;
++      if (rc == DEFER) return DEFER;
++      };
++    break;
++    /* Compare an ip address against a list of network/ip addresses */
++    case LSEARCH_IP:
++    /* Allow * as search-key */
++    if (!(length == 1 && linekeylength == 1 &&
++        buffer[0] == '*' && keystring[0] == '*'))
++      {
++      /* This was no wildcard, so try to match key and buffer */
++      int save = buffer[linekeylength];
++      buffer[linekeylength] = 0;
++      if (!host_is_in_net(keystring, buffer))
++        continue;
++      buffer[linekeylength] = save;
++      }
++    break;
+     }
+ 
+   /* The key has matched. Skip spaces after the key, and allow an optional
+@@ -245,7 +269,7 @@
+   uschar **result, uschar **errmsg)
+ {
+ return internal_lsearch_find(handle, filename, keystring, length, result,
+-  errmsg, FALSE, FALSE);
++  errmsg, LSEARCH_PLAIN);
+ }
+ 
+ 
+@@ -261,7 +285,7 @@
+   uschar **result, uschar **errmsg)
+ {
+ return internal_lsearch_find(handle, filename, keystring, length, result,
+-  errmsg, TRUE, TRUE);
++  errmsg, LSEARCH_WILD);
+ }
+ 
+ 
+@@ -277,7 +301,31 @@
+   uschar **result, uschar **errmsg)
+ {
+ return internal_lsearch_find(handle, filename, keystring, length, result,
+-  errmsg, TRUE, FALSE);
++  errmsg, LSEARCH_NWILD);
++}
++
++
++/*************************************************
++*      Find entry point for iplsearch            *
++*************************************************/
++
++/* See local README for interface description */
++
++int
++iplsearch_find(void *handle, uschar *filename, uschar *keystring, int length,
++  uschar **result, uschar **errmsg)
++{
++if (string_is_ip_address(keystring, NULL)
++    || (length == 1 && keystring[0] == '*'))
++  {
++  return internal_lsearch_find(handle, filename, keystring, length, result,
++    errmsg, LSEARCH_IP);
++  }
++  else 
++  {
++  *errmsg = string_sprintf("\"%s\" is not a valid iplsearch key", keystring);
++  return DEFER;
++  };
+ }
+ 
+ 
+diff -uNr src/lookups/lsearch.h exim-4.32.with-iplsearch/src/lookups/lsearch.h
+--- src/lookups/lsearch.h	2004-04-15 10:27:01.000000000 +0200
++++ exim-4.32.with-iplsearch/src/lookups/lsearch.h	2004-04-23 12:24:32.000000000 +0200
+@@ -15,4 +15,6 @@
+ extern int   wildlsearch_find(void *, uschar *, uschar *, int, uschar **, uschar **);
+ extern int  nwildlsearch_find(void *, uschar *, uschar *, int, uschar **, uschar **);
+ 
++extern int   iplsearch_find(void *, uschar *, uschar *, int, uschar **, uschar **);
++
+ /* End of lookups/lsearch.h */
+diff -uNr src/verify.c exim-4.32.with-iplsearch/src/verify.c
+--- src/verify.c	2004-04-15 10:27:01.000000000 +0200
++++ exim-4.32.with-iplsearch/src/verify.c	2004-04-25 16:09:11.000000000 +0200
+@@ -1683,10 +1683,10 @@
+ check_host(void *arg, uschar *ss, uschar **valueptr, uschar **error)
+ {
+ check_host_block *cb = (check_host_block *)arg;
+-int maskoffset;
+ BOOL isquery = FALSE;
+ uschar *semicolon, *t;
+ uschar **aliases;
++int maskoffset;
+ 
+ /* Optimize for the special case when the pattern is "*". */
+ 
+@@ -1714,69 +1714,11 @@
+     }
+   }
+ 
+-/* If the pattern is an IP address, optionally followed by a bitmask count,
+-mask it and the current IP address, and do a binary comparison on them.
+-The function string_is_ip_address(), when given a non-NULL second argument,
+-puts the offset of a '/' in there and clobbers the '/' to a zero. */
++/* If the pattern is an IP address, use host_is_in_net for checking. */
+ 
+ if (string_is_ip_address(ss, &maskoffset))
+-  {
+-  int i;
+-  int address[4];
+-  int incoming[4];
+-  int mlen;
+-  int size = host_aton(ss, address);
+-  int insize;
+-
+-  /* No mask => all bits to be checked */
+-
+-  if (maskoffset == 0) mlen = 99999;    /* Big number */
+-  else
+-    {
+-    mlen = Uatoi(ss + maskoffset + 1);
+-    ss[maskoffset] = '/';    /* restore the slash */
+-    }
+-
+-  /* Convert the incoming address to binary. */
+-
+-  insize = host_aton(cb->host_address, incoming);
+-
+-  /* Convert IPv4 addresses given in IPv6 compatible mode, which represent
+-  connections from IPv4 hosts to IPv6 hosts, that is, addresses of the form
+-  ::ffff:<v4address>, to IPv4 format. */
+-
+-  if (insize == 4 && incoming[0] == 0 && incoming[1] == 0 &&
+-      incoming[2] == 0xffff)
+-    {
+-    insize = 1;
+-    incoming[0] = incoming[3];
+-    }
+-
+-  /* No match if the sizes don't agree. */
+-
+-  if (insize != size) return FAIL;
+-
+-  /* Else do the masked comparison. */
+-
+-  for (i = 0; i < size; i++)
+-    {
+-    int mask;
+-    if (mlen == 0) mask = 0;
+-    else if (mlen < 32)
+-      {
+-      mask = (-1) << (32 - mlen);
+-      mlen = 0;
+-      }
+-    else
+-      {
+-      mask = -1;
+-      mlen -= 32;
+-      }
+-    if ((incoming[i] & mask) != (address[i] & mask)) return FAIL;
+-    }
+-  return OK;
+-  }
+-
++  return (host_is_in_net(cb->host_address, ss) ? OK : FAIL);
++  
+ /* If the item is of the form net[n]-lookup;<file|query> then it is a lookup on
+ a masked IP network, in textual form. The net- stuff really only applies to
+ single-key lookups where the key is implicit. For query-style lookups the key
