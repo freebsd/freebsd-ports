@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Mon Jan 14 12:01:27 2002
++++ Makefile.in	Sat May 11 02:48:50 2002
+@@ -29,7 +29,7 @@
+ 
+ # Toolchain settings.
+ CC = @CC@
+-CPPFLAGS = @DEFS@ @CPPFLAGS@ -I$(top_srcdir)/src
++CPPFLAGS = @DEFS@ @CPPFLAGS@ -I$(top_srcdir)/src -I${top_srcdir}/libneon
+ CFLAGS = @CFLAGS@ @SDEFS@ 
+ LDFLAGS = @LDFLAGS@
+ LIBS = @LIBS@ @NEON_LIBS@
