@@ -1,0 +1,11 @@
+--- chord2html.orig	Wed Sep 11 18:45:11 2002
++++ chord2html	Wed Sep 11 18:45:30 2002
+@@ -32,7 +32,7 @@
+ $bg_color = "white";
+ $format = $opt_T || "png";
+ $color = "color=\"blue\"";
+-$style = $opt_s || "chord2html.css";
++$style = $opt_s || "%%PREFIX%%/share/chord2html/chord2html.css";
+ $me = $0;
+ 
+ $opt_q && ($opt_v = 0);

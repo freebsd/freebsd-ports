@@ -37,6 +37,7 @@
     SUBDIR += cheatah
     SUBDIR += chef
     SUBDIR += chord
+    SUBDIR += chord2html
     SUBDIR += cmatrix
     SUBDIR += colorls
     SUBDIR += colortail
