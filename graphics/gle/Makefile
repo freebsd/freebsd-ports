@@ -20,7 +20,7 @@ USE_X_PREFIX=	yes
 USE_MESA=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
-CONFIGURE_ENV=	"LIBS=-L${X11BASE}/lib -lXext"
+CONFIGURE_ENV=	"LIBS=-L${X11BASE}/lib -lXext ${PTHREAD_LIBS}"
 
 MAN3=		gle.3gle gleExtrusion.3gle gleHelicoid.3gle gleLathe.3gle \
 		glePolyCone.3gle glePolyCylinder.3gle gleScrew.3gle \
