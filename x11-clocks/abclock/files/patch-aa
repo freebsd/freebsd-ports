@@ -1,0 +1,17 @@
+--- Makefile.orig	Tue Aug 15 06:19:17 2000
++++ Makefile	Tue Aug 15 11:35:39 2000
+@@ -1,12 +1,12 @@
+ 
+ .SUFFIXES:
+ 
+-OPT = -s -Wall
++OPT = $(CFLAGS) -Wall -I$(X11BASE)/include
+ 
+ all: abclock abc_img
+ 
+ abclock: abclock.o abclib.o
+-	gcc $(OPT) -o abclock abclock.o abclib.o -lX11
++	gcc $(OPT) -o abclock abclock.o abclib.o -lX11 -L$(X11BASE)/lib
+ 
+ abc_img: abc_img.o abclib.o
+ 	gcc $(OPT) -o abc_img abc_img.o abclib.o
