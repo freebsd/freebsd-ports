@@ -1,26 +1,28 @@
 bin/dbimon
 bin/pmysql
-lib/perl5/man/man3/Bundle::Msql.3.gz
-lib/perl5/man/man3/Bundle::Mysql.3.gz
-lib/perl5/man/man3/DBD::mSQL.3.gz
-lib/perl5/man/man3/DBD::mysql.3.gz
-lib/perl5/man/man3/Msql.3.gz
-lib/perl5/man/man3/Mysql.3.gz
-lib/perl5/site_perl/Bundle/Msql.pm
-lib/perl5/site_perl/Bundle/Mysql.pm
-lib/perl5/site_perl/DBD/mSQL.pm
-lib/perl5/site_perl/DBD/mysql.pm
-lib/perl5/site_perl/Msql.pm
-lib/perl5/site_perl/Msql/Statement.pm
-lib/perl5/site_perl/Mysql.pm
-lib/perl5/site_perl/Mysql/Statement.pm
-lib/perl5/site_perl/i386-freebsd/auto/DBD/mysql/mysql.bs
-lib/perl5/site_perl/i386-freebsd/auto/DBD/mysql/mysql.so
-lib/perl5/site_perl/i386-freebsd/auto/Msql-Mysql-modules/.packlist
-lib/perl5/site_perl/i386-freebsd/auto/Mysql/Mysql.bs
-lib/perl5/site_perl/i386-freebsd/auto/Mysql/Mysql.so
+lib/perl5/5.00501/man/man3/Bundle::Msql.3.gz
+lib/perl5/5.00501/man/man3/Bundle::Mysql.3.gz
+lib/perl5/5.00501/man/man3/DBD::mSQL.3.gz
+lib/perl5/5.00501/man/man3/DBD::mysql.3.gz
+lib/perl5/5.00501/man/man3/Msql.3.gz
+lib/perl5/5.00501/man/man3/Mysql.3.gz
+lib/perl5/site_perl/5.005/i386-freebsd/Msql.pm
+lib/perl5/site_perl/5.005/i386-freebsd/Mysql.pm
+lib/perl5/site_perl/5.005/i386-freebsd/Bundle/Msql.pm
+lib/perl5/site_perl/5.005/i386-freebsd/Bundle/Mysql.pm
+lib/perl5/site_perl/5.005/i386-freebsd/DBD/mSQL.pm
+lib/perl5/site_perl/5.005/i386-freebsd/DBD/mysql.pm
+lib/perl5/site_perl/5.005/i386-freebsd/Msql/Statement.pm
+lib/perl5/site_perl/5.005/i386-freebsd/Mysql/Statement.pm
+lib/perl5/site_perl/5.005/i386-freebsd/auto/DBD/mysql/mysql.bs
+lib/perl5/site_perl/5.005/i386-freebsd/auto/DBD/mysql/mysql.so
+lib/perl5/site_perl/5.005/i386-freebsd/auto/Msql-Mysql-modules/.packlist
+lib/perl5/site_perl/5.005/i386-freebsd/auto/Mysql/Mysql.bs
+lib/perl5/site_perl/5.005/i386-freebsd/auto/Mysql/Mysql.so
 man/man1/dbimon.1.gz
 man/man1/pmysql.1.gz
-@dirrm lib/perl5/site_perl/i386-freebsd/auto/DBD/mysql
-@dirrm lib/perl5/site_perl/i386-freebsd/auto/Msql-Mysql-modules
-@dirrm lib/perl5/site_perl/i386-freebsd/auto/Mysql
+@dirrm lib/perl5/site_perl/5.005/i386-freebsd/auto/DBD/mysql
+@dirrm lib/perl5/site_perl/5.005/i386-freebsd/auto/Msql-Mysql-modules
+@dirrm lib/perl5/site_perl/5.005/i386-freebsd/auto/Mysql
+@dirrm lib/perl5/site_perl/5.005/i386-freebsd/Mysql
+@dirrm lib/perl5/site_perl/5.005/i386-freebsd/Msql
