@@ -7,7 +7,6 @@
 
 PORTNAME=	jdk
 PORTVERSION=	${JDK_VERSION}p${JDK_PATCHSET_VERSION}
-PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	# http://www.sun.com/software/java2/download.html
 #		 http://www.eyesbeyond.com/freebsddom/java/jdk13.html
@@ -26,7 +25,7 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 WRKSRC=		${WRKDIR}/j2sdk1.3.1/make
 
 JDK_VERSION=	1.3.1
-JDK_PATCHSET_VERSION=	4
+JDK_PATCHSET_VERSION=	5
 
 JDK13DIR?=	${LOCALBASE}/linux-jdk${JDK_VERSION}
 
@@ -68,7 +67,11 @@ IGNORE=You must manually fetch the source distribution and FreeBSD patches (${DI
 .endfor
 
 pre-patch:
-	@cd ${WRKDIR} && ${PATCH} < ${WRKDIR}/jdk131.patches
+	@cd ${WRKDIR} &&  \
+		${MKDIR} -p j2sdk1.3.1/ext/plugin/oji-plugin/include/bsd/jdk12 && \
+		${MKDIR} -p j2sdk1.3.1/ext/plugin/oji-plugin/include/solaris/navig5/private && \
+		${MKDIR} -p j2sdk1.3.1/src/bsd/doc/man && \
+			${PATCH} < ${WRKDIR}/jdk131.patches
 
 .if !defined(NODEBUG)
 pre-install:
