@@ -1,5 +1,5 @@
 --- Makefile.orig	Sun Dec 14 18:21:44 2003
-+++ Makefile	Wed Dec 31 06:25:49 2003
++++ Makefile	Sun Jan 25 07:38:41 2004
 @@ -83,6 +83,27 @@
  
  else
@@ -10,7 +10,7 @@
 +NAME = GLEW
 +CC ?= gcc
 +LD ?= ld
-+CFLAGS.EXTRA = -I${X11BASE}/include
++CFLAGS.EXTRA = -fPIC -I${X11BASE}/include
 +LDFLAGS.SO = -shared -soname $(LIB.SONAME)
 +LDFLAGS.EXTRA = -L${X11BASE}/lib
 +LDFLAGS.GL = -lXmu -lXi -lGLU -lGL -lXext -lX11
