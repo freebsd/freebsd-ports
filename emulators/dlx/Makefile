@@ -9,7 +9,7 @@
 PORTNAME=	dlx
 PORTVERSION=	2.0
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://max.stanford.edu/pub/hennessy-patterson.software/
+MASTER_SITES=	ftp://max.stanford.edu/pub/max/pub/hennessy-patterson.software/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.Z
 
