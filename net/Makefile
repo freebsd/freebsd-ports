@@ -45,6 +45,7 @@
     SUBDIR += dlint
     SUBDIR += dnsutl
     SUBDIR += dnswalk
+    SUBDIR += doc
     SUBDIR += domtools
     SUBDIR += echoping
     SUBDIR += elsa
