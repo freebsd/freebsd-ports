@@ -88,7 +88,7 @@ sub write_line {
 }
 
 sub check_version {
-    local($id, $rname, $version, $bareid);
+    local($id, $rname, $version, $bareid, $exclude, $path);
     local($filename, $directory, $hastag, $cvsversion) = @_;
 
     if (! -f $filename) {
@@ -104,6 +104,24 @@ sub check_version {
 	last if ($pos >= 0);
     }
 
+    if ($pos == -1) {
+	$exclude = $cvsroot . "/CVSROOT/exclude";
+	$path = $directory . "/" . $filename;
+	open(EX, "<$exclude") || die("cannot open $exclude: $!");
+	while (<EX>) {
+	    local($ind, $line);
+
+	    chop;
+	    $line = $_;
+
+	    $ind = index($path, $line);
+	    if ($ind >= 0) {
+		close(EX);
+		return(0);
+	    }
+	}
+	close(EX);
+    }
     if ($pos == -1) {
 	printf($NoId, $filename);
 	return(1);
@@ -201,16 +219,11 @@ if ($directory =~ /^src\/release/) {
 if ($directory =~ /^src\/etc/) {
 	$check_id = 0;
 }
-#$login = $ENV{'USER'} || getlogin || (getpwuid($<))[0] || sprintf("uid#%d",$<);
-#if ($login eq "peter") {
-#	print "directory:$directory, check_id:$check_id\n";
-#} else {
-#	$check_id = 0;
-#}
+$login = $ENV{'USER'} || getlogin || (getpwuid($<))[0] || sprintf("uid#%d",$<);
 if ($check_id != 0 && $ENV{'CVSFUBAR'}) {
 	$check_id = 0;
 	print "CVS VERSION CHECK BYPASSED!\n";
-	system("ps -xww | mail -s 'version check override used' cvs");
+	system("ps -xww | mail -s 'version check override used' cvs $login");
 }
 #
 # Now check each file name passed in, except for dot files.  Dot files
