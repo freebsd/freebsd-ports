@@ -27,6 +27,7 @@
     SUBDIR += gogo
     SUBDIR += gqmpeg
     SUBDIR += gramofile
+    SUBDIR += grip
     SUBDIR += gsm
     SUBDIR += icecast
     SUBDIR += id3ed
@@ -71,6 +72,7 @@
     SUBDIR += raproxy
     SUBDIR += replay
     SUBDIR += rio
+    SUBDIR += rio500
     SUBDIR += ripenc
     SUBDIR += ripit
     SUBDIR += ripit-atapi
