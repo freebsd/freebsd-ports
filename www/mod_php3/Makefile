@@ -3,15 +3,15 @@
 # Date created:		Wed Sep  3 18:28:20 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.45 1998/06/14 09:57:32 andreas Exp $
+# $Id: Makefile,v 1.46 1998/06/27 13:52:34 andreas Exp $
 #
 
 DISTNAME=	apache_1.2.6
-PKGNAME=	apache-1.2.6-php3.0
+PKGNAME=	apache-1.2.6-php3.0.1
 CATEGORIES=	www
 MASTER_SITES=	ftp://www.apache.org/apache/dist/ \
 		http://ca.php.net/distributions/
-DISTFILES=	apache_1.2.6.tar.gz php-3.0.tar.gz
+DISTFILES=	apache_1.2.6.tar.gz php-3.0.1.tar.gz
 
 MAINTAINER=	andreas@FreeBSD.ORG
 
@@ -31,9 +31,9 @@ PATCH_DIST_ARGS= -d ${WRKSRC}/src --forward --quiet -E ${PATCH_DIST_STRIP}
 .endif
 
 # Set it for local-supplied patch, f.e.
-VERS_ID = PHP-3.0
+VERS_ID = PHP-3.0.1
 
-PHP3_CONF_ARGS=	--prefix=${PREFIX} \
+PHP3_CONF_ARGS=	--prefix=${PREFIX} --with-gd=${PREFIX} \
 		--with-system-regex --with-apache=${WRKSRC} \
 		--with-config-file-path=${PREFIX}/lib --disable-debug
 
@@ -67,14 +67,14 @@ post-patch:
 .endif
 
 pre-configure:
-	( cd ${WRKDIR}/php-3.0 \
+	( cd ${WRKDIR}/php-3.0.1 \
 	&& CC="${CC}" CFLAGS="${CFLAGS}" ./configure ${PHP3_CONF_ARGS} \
 	&& ${GMAKE} install )
 	${ECHO} "Module php3_module mod_php3.o" >> ${WRKSRC}/src/Configuration
 .if defined(PHP3_DBTYPE) && ${PHP3_DBTYPE} == msql
 	${ECHO} "EXTRA_LIBS=-lmd libphp3.a -L${PREFIX}/lib -lmsql -lgd -lm" >> ${WRKSRC}/src/Configuration
 .elif defined(PHP3_DBTYPE) && ${PHP3_DBTYPE} == mysql
-	${ECHO} "EXTRA_LIBS=-lmd libphp3.a -L${PREFIX}/lib/mysql -lmysqlclient -L${PREFIX}/lib -lgd -lm"  >> ${WRKSRC}/src/Configuration
+	${ECHO} "EXTRA_LIBS=-lmd libphp3.a -L${PREFIX}/lib/mysql -lmysqlclient -L${PREFIX}/lib -I${PREFIX}/include/gd -lgd -lm" >> ${WRKSRC}/src/Configuration
 .elif defined(PHP3_DBTYPE) && ${PHP3_DBTYPE} == pgsql
 	${ECHO} "EXTRA_LIBS=-lmd libphp3.a -L${PREFIX}/pgsql/lib -lpq -L${PREFIX}/lib -lgd -lm" >> ${WRKSRC}/src/Configuration
 .elif defined(PHP3_DBTYPE) && ${PHP3_DBTYPE} == dbase
