@@ -7,6 +7,7 @@
 
 PORTNAME=	amsn
 PORTVERSION=	0.83
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +16,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/}
 MAINTAINER=	yinjieh@csie.nctu.edu.tw
 COMMENT=	MSN Messenger
 
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
+RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
+		${LOCALBASE}/lib/tcllib1.3/base64/base64.tcl:${PORTSDIR}/devel/tcllib
+
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/msn
