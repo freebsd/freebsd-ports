@@ -1,0 +1,10 @@
+The exiftags utility parses a specified JPEG file or, by default, its standard
+input, looking for a JPEG APP1 section containing Exif (Exchangeable Image
+File) data. The properties contained in these data are then printed to the
+standard output. Digital cameras typically add Exif data to the image files
+they produce, containing information about the camera and digitized image.
+
+The program supports a variety of cameras, and includes additional support for
+a portion of the maker notes for Canon, Fuji, Nikon, and Olympus cameras.
+
+WWW: http://johnst.org/sw/exiftags/
