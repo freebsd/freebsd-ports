@@ -17,11 +17,16 @@ COMMENT=	RDP client for Windows NT/2000/2003 Terminal Server
 
 USE_XLIB=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 USE_OPENSSL=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 DOCS=		doc/AUTHORS doc/TODO doc/*.txt
 MAN1=		rdesktop.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|$$cc|${CC}|' \
+		${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rdesktop ${PREFIX}/bin
