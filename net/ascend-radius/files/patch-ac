@@ -1,5 +1,5 @@
---- conf.h.orig	Thu Sep 19 20:04:29 1996
-+++ conf.h	Mon Sep 23 21:40:25 1996
+--- conf.h.orig	Tue Oct 29 14:41:54 1996
++++ conf.h	Fri Jan 24 05:02:40 1997
 @@ -27,6 +27,10 @@
   *
   */
@@ -11,19 +11,3 @@
  #ifndef _conf_h_
  #define _conf_h_
  
-@@ -56,11 +60,14 @@
- #endif
- #endif  /* unixware */
- 
-+#if (defined(BSD) && (BSD >= 199306))
-+#include        <stdlib.h>
-+#include	<sys/types.h>
- #if defined(BSDI)
- #include        <sys/types.h>
- #include        <machine/inline.h>
- #include        <machine/endian.h>
--#include        <stdlib.h>
-+#endif
- #else	/* BSDI */
- #include        <malloc.h>
- #endif	/* BSDI */

@@ -1,13 +1,11 @@
---- radius.h.orig	Mon Oct 14 22:21:17 1996
-+++ radius.h	Fri Oct 18 11:54:51 1996
-@@ -224,8 +224,8 @@
+--- radius.h.orig	Tue Oct 29 14:41:54 1996
++++ radius.h	Fri Jan 24 05:05:08 1997
+@@ -224,7 +224,7 @@
  
  /* Default Database File Names */
  
 -#define RADIUS_DIR		"/etc/raddb"
--#define RADACCT_DIR		"/usr/adm/radacct"
 +#define RADIUS_DIR		"@@PREFIX@@/etc/raddb"
-+#define RADACCT_DIR		"/var/log/radacct"
- 
- #define RADIUS_DICTIONARY	"dictionary"
- #define RADIUS_CLIENTS		"clients"
+ #ifdef FreeBSD
+ #define RADACCT_DIR		"/var/log/radacct"
+ #else

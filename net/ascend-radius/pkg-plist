@@ -11,6 +11,8 @@ share/doc/ascend-radius/ChangeLog
 share/doc/ascend-radius/README
 share/doc/ascend-radius/README.cexample
 share/doc/ascend-radius/README.dict
+share/doc/radius-961029.ps
+share/doc/radius-9651029.pdf
 etc/raddb/clients.example
 etc/raddb/dictionary
 etc/raddb/users.example
