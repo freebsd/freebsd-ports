@@ -5,7 +5,7 @@ bin/wmf2fig
 bin/wmf2gd
 bin/wmf2magick
 bin/wmf2svg
-bin/wmf2x
+%%X11%%bin/wmf2x
 include/libwmf/api.h
 include/libwmf/color.h
 include/libwmf/defs.h
