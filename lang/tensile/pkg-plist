@@ -84,6 +84,7 @@ share/nsl/scripts/empty.sc
 share/nsl/scripts/fileutil.sc
 share/nsl/scripts/fixhtml.sc
 share/nsl/scripts/fontlist.sc
+share/nsl/scripts/forumsend.sc
 share/nsl/scripts/getopt.sc
 share/nsl/scripts/getopt.sci
 share/nsl/scripts/html2tex.sc
@@ -101,15 +102,18 @@ share/nsl/scripts/mkidentity.sc
 share/nsl/scripts/mktable.sc
 share/nsl/scripts/mktodo.sc
 share/nsl/scripts/mktrie.sc
+share/nsl/scripts/mkvote.sc
 share/nsl/scripts/newsmaker.sc
 share/nsl/scripts/registry.sci
 share/nsl/scripts/safehtml.sc
+share/nsl/scripts/sendmsg.sc
 share/nsl/scripts/session.sc
 share/nsl/scripts/sets.sc
 share/nsl/scripts/shorthtml.sc
 share/nsl/scripts/slexec.sc
 share/nsl/scripts/snml2html.sc
 share/nsl/scripts/sqlque.sc
+share/nsl/scripts/subscribe.sc
 share/nsl/scripts/tagmaster.sc
 share/nsl/scripts/tmr-cgi.sc
 share/nsl/scripts/tmr.sc
@@ -117,6 +121,8 @@ share/nsl/scripts/unicode.sc
 share/nsl/scripts/utf8html.sc
 share/nsl/scripts/version.sc
 share/nsl/scripts/viewtable.sc
+share/nsl/scripts/voteman.sc
+share/nsl/scripts/voteres.sc
 share/nsl/scripts/wlist.sc
 share/nsl/scripts/words.sc
 share/nsl/scripts/xtranslate.sc

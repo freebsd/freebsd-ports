@@ -1,16 +1,17 @@
 # ex:ts=8
-# Ports collection makefile for:	nsl
+# Ports collection makefile for:	tensile
 # Date created:			May 6, 2002
 # Whom:				ijliao
 #
 # $FreeBSD$
 #
 
-PORTNAME=	nsl
-PORTVERSION=	0.9
+PORTNAME=	tensile
+PORTVERSION=	0.9p5
 CATEGORIES=	lang
 MASTER_SITES=	http://savannah.gnu.org/download/nsl/ \
 		http://iling.nw.ru/~artem/downloads/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/pre/}
 
 MAINTAINER=	ports@FreeBSD.org
 
