@@ -1,13 +1,24 @@
 bin/xmame
-lib/mame/CHEAT.DOC
-lib/mame/Changes
-lib/mame/MailList.notes
-lib/mame/README.port
-lib/mame/README.unix
-lib/mame/cheat.dat
-lib/mame/conv2zip
-lib/mame/mamelist.txt
-lib/mame/mov
-lib/mame/readme.dos
-lib/mame/whatsnew.txt
-@dirrm lib/mame
+lib/xmame/cheat.dat
+lib/xmame/gamelist.txt
+lib/xmame/history.dat
+lib/xmame/README.unix
+lib/xmame/xmamerc
+lib/xmame/doc/Changes
+lib/xmame/doc/cheat.doc
+lib/xmame/doc/credits.unix
+lib/xmame/doc/LEEME.unix
+lib/xmame/doc/liesmich.unix
+lib/xmame/doc/MailList.notes
+lib/xmame/doc/multiplayer-readme.txt
+lib/xmame/doc/readme.dos
+lib/xmame/doc/README.fx
+lib/xmame/doc/README.xgl
+lib/xmame/doc/TODO
+lib/xmame/doc/whatsnew.txt
+@exec mkdir %D/lib/xmame/hi %D/lib/xmame/roms
+@exec chmod 777 %D/lib/xmame/hi
+@dirrm lib/xmame/doc
+@dirrm lib/xmame/hi
+@dirrm lib/xmame/roms
+@dirrm lib/xmame
