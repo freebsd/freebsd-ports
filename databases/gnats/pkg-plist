@@ -1,6 +1,9 @@
-bin/query-pr
+@cwd /usr/local
 bin/edit-pr
 bin/send-pr
+bin/query-pr
+bin/nquery-pr
+bin/sub-type
 bin/install-sid
 info/gnats.info
 info/gnats.info-1
@@ -11,13 +14,19 @@ info/send-pr.info
 lib/gnats/gnats-db/gnats-adm/categories
 lib/gnats/gnats-db/gnats-adm/responsible
 lib/gnats/gnats-db/gnats-adm/submitters
+lib/gnats/gnats-db/gnats-adm/gnatsd.conf
 lib/gnats/gnats-db/gnats-adm/config
-lib/gnats/pr-edit
+lib/gnats/pr-age
 lib/gnats/pr-addr
-lib/gnats/dist/send-pr.sh
+lib/gnats/pr-edit
+lib/gnats/npr-edit
+lib/gnats/pr-mail
 lib/gnats/dist/COPYING
 lib/gnats/dist/README
+lib/gnats/dist/INSTALL
+lib/gnats/dist/MANIFEST
 lib/gnats/dist/send-pr-el.in
+lib/gnats/dist/send-pr.sh
 lib/gnats/dist/install-sid.sh
 lib/gnats/dist/send-pr.1
 lib/gnats/dist/send-pr.info
@@ -28,6 +37,7 @@ lib/gnats/dist/fields.texi
 lib/gnats/dist/states.texi
 lib/gnats/dist/texinfo.tex
 lib/gnats/file-pr
+lib/gnats/gnatsd
 lib/gnats/at-pr
 lib/gnats/mkcat
 lib/gnats/rmcat

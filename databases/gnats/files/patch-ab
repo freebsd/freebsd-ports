@@ -1,79 +1,42 @@
---- ./gnats/Makefile.in.org	Fri Dec 10 14:29:14 1993
-+++ ./gnats/Makefile.in	Tue Jul  9 23:07:57 1996
-@@ -127,7 +127,7 @@
- INSTALL_PROGRAM = $(INSTALL)
- INSTALL_DATA = $(INSTALL) -m 644
- 
--CFLAGS = -g
-+CFLAGS += -g
- LDFLAGS = $(CFLAGS)
- 
- prefix = /usr/local
-@@ -141,7 +141,7 @@
- program_transform_name =
- 
- # Edit this to be the location of your emacs lisp files.
--lispdir = $(datadir)/emacs/lisp
-+lispdir = $(exec_prefix)/share/emacs/site-lisp
- 
- datadir = $(prefix)/lib
- mandir = $(prefix)/man
-@@ -402,7 +402,7 @@
- 	  echo "*** Warning: Must make pr-edit suid gnats" ; \
- 	fi
- 
--EXTRA_INSTALL =
-+EXTRA_INSTALL = install-info
- 
- install-gnats: install-gnats-bin install-gnats-man $(EXTRA_INSTALL)
- 
---- ./send-pr/Makefile.in.org	Fri Dec 10 12:03:32 1993
-+++ ./send-pr/Makefile.in	Tue Jul  9 23:12:14 1996
-@@ -64,7 +64,7 @@
- INSTALL_PROGRAM = $(INSTALL)
- INSTALL_DATA = $(INSTALL) -m 644
- 
--CFLAGS = -g
-+CFLAGS += -g
- LDFLAGS = -g
- 
- ECHON = @ECHON@
-@@ -79,7 +79,7 @@
- program_transform_name =
- 
- # Edit this to be the location of your emacs lisp files.
--lispdir = $(datadir)/emacs/lisp
-+lispdir = $(exec_prefix)/share/emacs/site-lisp
- 
- datadir = $(prefix)/lib
- mandir = $(prefix)/man
-@@ -146,7 +146,7 @@
- 
- install: $(SEND_PR_INSTALL)
- install-tools: install-norm install-categories
--install-gnats: install-norm install-gnats-dist install-categories
-+install-gnats: install-norm install-gnats-dist install-categories install-info
- 
- install-norm all-gnats:
- 	$(INSTALL_PROGRAM) send-pr $(bindir)/send-pr
---- ./Makefile.in.org	Fri Dec 10 12:03:54 1993
-+++ ./Makefile.in	Tue Jul  9 23:07:18 1996
-@@ -57,7 +57,7 @@
- 
- # We don't specify -g -O because many compilers don't support -g -O,
- # and/or -O is broken in and of itself.
--CFLAGS = -g
-+CFLAGS += -g
- 
- CXX = gcc
- 
-@@ -854,8 +854,7 @@
- 
- MAKEDIRS= \
- 	$(prefix) \
--	$(exec_prefix) \
--	$(tooldir)
-+	$(exec_prefix)
- 
- .PHONY: install-dirs
- install-dirs:
+Install lisp files in share/emacs/site-lisp if it exists.
+
+*** send-pr/aclocal.m4	Fri Jul  7 13:52:09 1995
+--- send-pr/aclocal.m4	Sat Nov 11 10:44:36 1995
+***************
+*** 36,43 ****
+  if test -n "$with_lispdir"; then
+    LISPDIR=${with_lispdir}
+  else
+!   for f in ${prefix-/usr/local}/lib/emacs/site-lisp \
+! 	   ${prefix-/usr/local}/lib/emacs/lisp; do
+      if test -d $f; then
+        if test -n "$prefix"; then
+  	LISPDIR=`echo $f | sed "s,^$prefix,"'$(prefix),'`
+--- 36,45 ----
+  if test -n "$with_lispdir"; then
+    LISPDIR=${with_lispdir}
+  else
+!   for f in ${prefix-/usr/local}/share/emacs/site-lisp \
+! 	   ${prefix-/usr/local}/share/emacs/lisp \
+! 	   ${prefix-/usr/local}/lib/emacs/site-lisp \
+! 	   ${prefix-/usr/local}/lib/emacs/lisp ; do
+      if test -d $f; then
+        if test -n "$prefix"; then
+  	LISPDIR=`echo $f | sed "s,^$prefix,"'$(prefix),'`
+***************
+*** 50,56 ****
+  fi
+  if test -z "$LISPDIR"; then
+  dnl # Change this default when Emacs 19 has been around for a while
+!   LISPDIR='$(prefix)/lib/emacs/lisp'
+  fi
+  AC_MSG_RESULT(${LISPDIR})
+  AC_SUBST(LISPDIR)dnl
+--- 52,58 ----
+  fi
+  if test -z "$LISPDIR"; then
+  dnl # Change this default when Emacs 19 has been around for a while
+!   LISPDIR='$(prefix)/lib/emacs/site-lisp'
+  fi
+  AC_MSG_RESULT(${LISPDIR})
+  AC_SUBST(LISPDIR)dnl

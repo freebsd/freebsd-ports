@@ -27,5 +27,7 @@ distribution and all its components.
 *** FreeBSD note:
 *** You will want to add a user entry to your /etc/passwd file for the
 *** user-id that owns gnats-related databases on your server.
-*** Something of the form: "gnats:*:70:70:GNATS Owner:/:/usr/bin/false"
-*** should do just fine.
+*** Something of the form: "gnats:*:70:70:GNATS Owner:/usr/local/lib/gnats:"
+*** should do just fine (put it in your ftpusers file!).
+***
+*** Don't forget to run /usr/local/lib/gnats/mkcat as gnats.
