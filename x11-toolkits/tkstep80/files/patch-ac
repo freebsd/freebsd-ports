@@ -1,0 +1,918 @@
+*** tkText.c	1997/07/04 22:39:41	2.0
+--- ../generic/tkText.c	1997/08/15 22:25:21
+***************
+*** 866,871 ****
+--- 866,872 ----
+  	    || (textPtr->selTagPtr->spacing2String != NULL)
+  	    || (textPtr->selTagPtr->spacing3String != NULL)
+  	    || (textPtr->selTagPtr->tabString != NULL)
++ 	    || (textPtr->selTagPtr->elideString != NULL)
+  	    || (textPtr->selTagPtr->underlineString != NULL)
+  	    || (textPtr->selTagPtr->wrapMode != NULL)) {
+  	textPtr->selTagPtr->affectsDisplay = 1;
+***************
+*** 1414,1420 ****
+  		    }
+  		}
+  	    }
+! 	    if (segPtr->typePtr == &tkTextCharType) {
+  		memcpy((VOID *) buffer, (VOID *) (segPtr->body.chars
+  			+ offsetInSeg), (size_t) chunkSize);
+  		buffer += chunkSize;
+--- 1415,1421 ----
+  		    }
+  		}
+  	    }
+! 	    if (segPtr->typePtr == &tkTextCharType && !TkTextIsElided(textPtr, &textPtr->selIndex)) {
+  		memcpy((VOID *) buffer, (VOID *) (segPtr->body.chars
+  			+ offsetInSeg), (size_t) chunkSize);
+  		buffer += chunkSize;
+***************
+*** 1555,1561 ****
+      int argc;			/* Number of arguments. */
+      char **argv;		/* Argument strings. */
+  {
+!     int backwards, exact, c, i, argsLeft, noCase, leftToScan;
+      size_t length;
+      int numLines, startingLine, startingChar, lineNum, firstChar, lastChar;
+      int code, matchLength, matchChar, passes, stopLine, searchWholeText;
+--- 1556,1562 ----
+      int argc;			/* Number of arguments. */
+      char **argv;		/* Argument strings. */
+  {
+!     int backwards, exact, searchElide, c, i, argsLeft, noCase, leftToScan;
+      size_t length;
+      int numLines, startingLine, startingChar, lineNum, firstChar, lastChar;
+      int code, matchLength, matchChar, passes, stopLine, searchWholeText;
+***************
+*** 1566,1571 ****
+--- 1567,1573 ----
+      Tcl_DString line, patDString;
+      TkTextSegment *segPtr;
+      TkTextLine *linePtr;
++     TkTextIndex curIndex;
+      Tcl_RegExp regexp = NULL;		/* Initialization needed only to
+  					 * prevent compiler warning. */
+  
+***************
+*** 1574,1579 ****
+--- 1576,1583 ----
+       */
+  
+      exact = 1;
++     searchElide = 0;
++     curIndex.tree = textPtr->tree;
+      backwards = 0;
+      noCase = 0;
+      varName = NULL;
+***************
+*** 1587,1593 ****
+  	    badSwitch:
+  	    Tcl_AppendResult(interp, "bad switch \"", arg,
+  		    "\": must be -forward, -backward, -exact, -regexp, ",
+! 		    "-nocase, -count, or --", (char *) NULL);
+  	    return TCL_ERROR;
+  	}
+  	c = arg[1];
+--- 1591,1597 ----
+  	    badSwitch:
+  	    Tcl_AppendResult(interp, "bad switch \"", arg,
+  		    "\": must be -forward, -backward, -exact, -regexp, ",
+! 		    "-nocase, -count, -elide, or --", (char *) NULL);
+  	    return TCL_ERROR;
+  	}
+  	c = arg[1];
+***************
+*** 1608,1613 ****
+--- 1612,1619 ----
+  	    noCase = 1;
+  	} else if ((c == 'r') && (strncmp(argv[i], "-regexp", length) == 0)) {
+  	    exact = 0;
++ 	} else if ((c == 'e') && (strncmp(argv[i], "-elide", length) == 0)) {
++ 	    searchElide = 1;
+  	} else if ((c == '-') && (strncmp(argv[i], "--", length) == 0)) {
+  	    i++;
+  	    break;
+***************
+*** 1703,1711 ****
+  	 */
+  
+  	linePtr = TkBTreeFindLine(textPtr->tree, lineNum);
+  	for (segPtr = linePtr->segPtr; segPtr != NULL;
+! 		segPtr = segPtr->nextPtr) {
+! 	    if (segPtr->typePtr != &tkTextCharType) {
+  		continue;
+  	    }
+  	    Tcl_DStringAppend(&line, segPtr->body.chars, segPtr->size);
+--- 1709,1718 ----
+  	 */
+  
+  	linePtr = TkBTreeFindLine(textPtr->tree, lineNum);
++ 	curIndex.linePtr = linePtr; curIndex.charIndex = 0;
+  	for (segPtr = linePtr->segPtr; segPtr != NULL;
+! 		curIndex.charIndex += segPtr->size, segPtr = segPtr->nextPtr) {
+! 	    if (segPtr->typePtr != &tkTextCharType || (!searchElide && TkTextIsElided(textPtr, &curIndex))) {
+  		continue;
+  	    }
+  	    Tcl_DStringAppend(&line, segPtr->body.chars, segPtr->size);
+*** tkText.h	1997/07/04 22:39:41	2.0
+--- ../generic/tkText.h	1997/08/15 22:18:56
+***************
+*** 370,375 ****
+--- 370,379 ----
+  				 * Must be tkTextCharUid, tkTextNoneUid,
+  				 * tkTextWordUid, or NULL to use wrapMode
+  				 * for whole widget. */
++     char *elideString;	/* -elide option string (malloc-ed).
++ 				 * NULL means option not specified. */
++     int elide;		/* Non-zero means text is elided.
++ 				 * Only valid if elideString is non-NULL. */
+      int affectsDisplay;		/* Non-zero means that this tag affects the
+  				 * way information is displayed on the screen
+  				 * (so need to redisplay if tag changes). */
+***************
+*** 800,805 ****
+--- 804,811 ----
+  			    ClientData clientData));
+  extern TkTextIndex *	TkTextMakeIndex _ANSI_ARGS_((TkTextBTree tree,
+  			    int lineIndex, int charIndex,
++ 			    TkTextIndex *indexPtr));
++ extern int		TkTextIsElided _ANSI_ARGS_((TkText *textPtr,
+  			    TkTextIndex *indexPtr));
+  extern int		TkTextMarkCmd _ANSI_ARGS_((TkText *textPtr,
+  			    Tcl_Interp *interp, int argc, char **argv));
+*** tkTextBTree.c	1997/07/04 22:39:41	2.0
+--- ../generic/tkTextBTree.c	1997/08/15 22:20:16
+***************
+*** 2427,2432 ****
+--- 2427,2558 ----
+      }
+      return tagInfo.tagPtrs;
+  }
++ 
++ 
++ /*
++    special case to just return information about elided attribute
++    specialized from TkBTreeGetTags(indexPtr, numTagsPtr) and GetStyle(textPtr, indexPtr)
++    just need to keep track of invisibility settings for each priority, pick highest one active at end
++ */
++ int
++ TkTextIsElided(textPtr, indexPtr)
++     TkText *textPtr;		/* Overall information about text widget. */
++     TkTextIndex *indexPtr;	/* The character in the text for which
++ 				 * display information is wanted. */
++ {
++ #define LOTSA_TAGS 1000
++ 	int elide = 0;		/* if nobody says otherwise, it's visible */
++ 
++ 	int deftagCnts[LOTSA_TAGS];
++ 	int *tagCnts = deftagCnts;
++ 	TkTextTag *deftagPtrs[LOTSA_TAGS];
++ 	TkTextTag **tagPtrs = deftagPtrs;
++ 	int numTags = textPtr->numTags;
++     register Node *nodePtr;
++     register TkTextLine *siblingLinePtr;
++     register TkTextSegment *segPtr;
++     register TkTextTag *tagPtr;
++     register int i, index;
++ 
++ 	/* almost always avoid malloc, so stay out of system calls */
++ 	if (LOTSA_TAGS < numTags) {
++ 	    tagCnts = (int *)ckalloc((unsigned)sizeof(int) * numTags);
++ 	    tagPtrs = (TkTextTag **)ckalloc((unsigned)sizeof(TkTextTag *) * numTags);
++ 	}
++  
++ 	for (i=0; i<numTags; i++) tagCnts[i]=0;
++ 
++ 
++     /*
++      * Record tag toggles within the line of indexPtr but preceding
++      * indexPtr.
++      */
++ 
++     for (index = 0, segPtr = indexPtr->linePtr->segPtr;
++ 	    (index + segPtr->size) <= indexPtr->charIndex;
++ 	    index += segPtr->size, segPtr = segPtr->nextPtr) {
++ 	if ((segPtr->typePtr == &tkTextToggleOnType)
++ 	    || (segPtr->typePtr == &tkTextToggleOffType)) {
++ 	    tagPtr = segPtr->body.toggle.tagPtr;
++ 	    if (tagPtr->elideString != NULL) {
++ 		   tagPtrs[tagPtr->priority] = tagPtr;
++ 		   tagCnts[tagPtr->priority]++;
++ 	    }
++ 	}
++     }
++ 
++     /*
++      * Record toggles for tags in lines that are predecessors of
++      * indexPtr->linePtr but under the same level-0 node.
++      */
++ 
++     for (siblingLinePtr = indexPtr->linePtr->parentPtr->children.linePtr;
++ 	    siblingLinePtr != indexPtr->linePtr;
++ 	    siblingLinePtr = siblingLinePtr->nextPtr) {
++ 	for (segPtr = siblingLinePtr->segPtr; segPtr != NULL;
++ 		segPtr = segPtr->nextPtr) {
++ 	    if ((segPtr->typePtr == &tkTextToggleOnType)
++ 		   || (segPtr->typePtr == &tkTextToggleOffType)) {
++ 		   tagPtr = segPtr->body.toggle.tagPtr;
++ 		   if (tagPtr->elideString != NULL) {
++ 			  tagPtrs[tagPtr->priority] = tagPtr;
++ 			  tagCnts[tagPtr->priority]++;
++ 		   }
++ 	    }
++ 	}
++     }
++ 
++     /*
++      * For each node in the ancestry of this line, record tag toggles
++      * for all siblings that precede that node.
++      */
++ 
++     for (nodePtr = indexPtr->linePtr->parentPtr; nodePtr->parentPtr != NULL;
++ 	    nodePtr = nodePtr->parentPtr) {
++ 	register Node *siblingPtr;
++ 	register Summary *summaryPtr;
++ 
++ 	for (siblingPtr = nodePtr->parentPtr->children.nodePtr; 
++ 		siblingPtr != nodePtr; siblingPtr = siblingPtr->nextPtr) {
++ 	    for (summaryPtr = siblingPtr->summaryPtr; summaryPtr != NULL;
++ 		    summaryPtr = summaryPtr->nextPtr) {
++ 		if (summaryPtr->toggleCount & 1) {
++ 		    tagPtr = summaryPtr->tagPtr;
++ 		    if (tagPtr->elideString != NULL) {
++ 			   tagPtrs[tagPtr->priority] = tagPtr;
++ 			   tagCnts[tagPtr->priority] += summaryPtr->toggleCount;
++ 		    }
++ 		}
++ 	    }
++ 	}
++     }
++ 
++ 
++     /*
++      * Now traverse from highest priority to lowest, 
++      * take elided value from first odd count (= on)
++      */
++ 
++     for (i = numTags-1; i >=0; i--) {
++ 	   if (tagCnts[i] & 1) {
++ #ifndef ALWAYS_SHOW_SELECTION
++ 		  /* who would make the selection elided? */
++ 		  if ((tagPtr == textPtr->selTagPtr) && !(textPtr->flags & GOT_FOCUS)) {
++ 			 continue;
++ 		  }
++ #endif
++ 		  elide = tagPtrs[i]->elide;
++ 		  break;
++ 	   }
++     }
++ 
++     if (LOTSA_TAGS < numTags) {
++ 	   ckfree((char *) tagCnts);
++ 	   ckfree((char *) tagPtrs);
++     }
++ 
++     return elide;
++ }
+  
+  /*
+   *----------------------------------------------------------------------
+*** tkTextDisp.c	1997/07/04 22:39:41	2.0
+--- ../generic/tkTextDisp.c	1997/08/16 01:20:18
+***************
+*** 55,60 ****
+--- 55,61 ----
+  				 * be NULL). */
+      int underline;		/* Non-zero means draw underline underneath
+  				 * text. */
++     int elide;		/* Non-zero means draw text */
+      Tk_Uid wrapMode;		/* How to handle wrap-around for this tag.
+  				 * One of tkTextCharUid, tkTextNoneUid,
+  				 * or tkTextWordUid. */
+***************
+*** 311,316 ****
+--- 312,332 ----
+  			    int x));
+  static void		CharUndisplayProc _ANSI_ARGS_((TkText *textPtr,
+  			    TkTextDispChunk *chunkPtr));
++ 
++ /*
++    Definitions of elided procs.
++    Compiler can't inline these since we use pointers to these functions.
++    ElideDisplayProc, ElideUndisplayProc special-cased for speed,
++    as potentially many elided DLine chunks if large, tag toggle-filled
++    elided region.
++ */
++ static void		ElideBboxProc _ANSI_ARGS_((TkTextDispChunk *chunkPtr,
++ 			    int index, int y, int lineHeight, int baseline,
++ 			    int *xPtr, int *yPtr, int *widthPtr,
++ 			    int *heightPtr));
++ static int		ElideMeasureProc _ANSI_ARGS_((TkTextDispChunk *chunkPtr,
++ 			    int x));
++ 
+  static void		DisplayDLine _ANSI_ARGS_((TkText *textPtr,
+  			    DLine *dlPtr, DLine *prevPtr, Pixmap pixmap));
+  static void		DisplayLineBackground _ANSI_ARGS_((TkText *textPtr,
+***************
+*** 479,485 ****
+  
+      int borderPrio, borderWidthPrio, reliefPrio, bgStipplePrio;
+      int fgPrio, fontPrio, fgStipplePrio;
+!     int underlinePrio, justifyPrio, offsetPrio;
+      int lMargin1Prio, lMargin2Prio, rMarginPrio;
+      int spacing1Prio, spacing2Prio, spacing3Prio;
+      int overstrikePrio, tabPrio, wrapPrio;
+--- 495,501 ----
+  
+      int borderPrio, borderWidthPrio, reliefPrio, bgStipplePrio;
+      int fgPrio, fontPrio, fgStipplePrio;
+!     int underlinePrio, elidePrio, justifyPrio, offsetPrio;
+      int lMargin1Prio, lMargin2Prio, rMarginPrio;
+      int spacing1Prio, spacing2Prio, spacing3Prio;
+      int overstrikePrio, tabPrio, wrapPrio;
+***************
+*** 494,500 ****
+      tagPtrs = TkBTreeGetTags(indexPtr, &numTags);
+      borderPrio = borderWidthPrio = reliefPrio = bgStipplePrio = -1;
+      fgPrio = fontPrio = fgStipplePrio = -1;
+!     underlinePrio = justifyPrio = offsetPrio = -1;
+      lMargin1Prio = lMargin2Prio = rMarginPrio = -1;
+      spacing1Prio = spacing2Prio = spacing3Prio = -1;
+      overstrikePrio = tabPrio = wrapPrio = -1;
+--- 510,516 ----
+      tagPtrs = TkBTreeGetTags(indexPtr, &numTags);
+      borderPrio = borderWidthPrio = reliefPrio = bgStipplePrio = -1;
+      fgPrio = fontPrio = fgStipplePrio = -1;
+!     underlinePrio = elidePrio = justifyPrio = offsetPrio = -1;
+      lMargin1Prio = lMargin2Prio = rMarginPrio = -1;
+      spacing1Prio = spacing2Prio = spacing3Prio = -1;
+      overstrikePrio = tabPrio = wrapPrio = -1;
+***************
+*** 612,617 ****
+--- 628,638 ----
+  	    styleValues.underline = tagPtr->underline;
+  	    underlinePrio = tagPtr->priority;
+  	}
++ 	if ((tagPtr->elideString != NULL)
++ 		&& (tagPtr->priority > elidePrio)) {
++ 	    styleValues.elide = tagPtr->elide;
++ 	    elidePrio = tagPtr->priority;
++ 	}
+  	if ((tagPtr->wrapMode != NULL)
+  		&& (tagPtr->priority > wrapPrio)) {
+  	    styleValues.wrapMode = tagPtr->wrapMode;
+***************
+*** 768,774 ****
+  					 * lines with numChars > 0.  Used to
+  					 * drop 0-sized chunks from the end
+  					 * of the line. */
+!     int offset, ascent, descent, code;
+      StyleValues *sValuePtr;
+  
+      /*
+--- 789,795 ----
+  					 * lines with numChars > 0.  Used to
+  					 * drop 0-sized chunks from the end
+  					 * of the line. */
+!     int offset, ascent, descent, code, elide, elidesize;
+      StyleValues *sValuePtr;
+  
+      /*
+***************
+*** 786,791 ****
+--- 807,840 ----
+      dlPtr->nextPtr = NULL;
+      dlPtr->flags = NEW_LAYOUT;
+  
++ 
++     /*
++ 	* special case entirely elide line as there may be 1000s or more
++ 	*/
++ 	elide = TkTextIsElided(textPtr, indexPtr);		/* save a malloc */
++ 	if (elide && indexPtr->charIndex==0) {
++ 		maxChars = 0;
++ 		for (segPtr = indexPtr->linePtr->segPtr; elide && segPtr!=NULL; segPtr = segPtr->nextPtr) {
++ 			if ((elidesize = segPtr->size) > 0) {
++ 				maxChars += elidesize;
++ 
++ 			/* if have tag toggle, chance that invisibility state changed, so bail out */
++ 			} else if (segPtr->typePtr == &tkTextToggleOffType || segPtr->typePtr == &tkTextToggleOnType) {
++ 				if (segPtr->body.toggle.tagPtr->elideString!=NULL) {
++ 					elide = (segPtr->typePtr == &tkTextToggleOffType) ^ (segPtr->body.toggle.tagPtr->elide==1);
++ 				}
++ 			}
++ 		}
++ 
++ 		if (elide) {
++ 		    dlPtr->count = maxChars;
++ 		    dlPtr->spaceAbove = dlPtr->spaceBelow = dlPtr->length = 0;
++ 		    return dlPtr;
++ 		}
++ 	}
++ 
++ 
++ 
+      /*
+       * Each iteration of the loop below creates one TkTextDispChunk for
+       * the new display line.  The line will always have at least one
+***************
+*** 797,802 ****
+--- 846,852 ----
+      lastChunkPtr = NULL;
+      chunkPtr = NULL;
+      noCharsYet = 1;
++     elide = 0;
+      breakChunkPtr = NULL;
+      breakCharOffset = 0;
+      justify = TK_JUSTIFY_LEFT;
+***************
+*** 821,826 ****
+--- 871,901 ----
+      }
+  
+      while (segPtr != NULL) {
++ 
++ 	/* every line still gets at least one chunk due to expectations in rest of code,
++ 	   but able to skip elided portions of line quickly */
++ 	/* if current chunk elided and last chunk was too, coalese */
++ 	if (elide && lastChunkPtr!=NULL && lastChunkPtr->displayProc == NULL/*ElideDisplayProc*/) {
++ 	    if ((elidesize = segPtr->size - offset) > 0) {
++ 		   curIndex.charIndex += elidesize;
++ 		   lastChunkPtr->numChars += elidesize;
++ 		   breakCharOffset = lastChunkPtr->breakIndex = lastChunkPtr->numChars;
++ 
++ 	    /* if have tag toggle, chance that invisibility state changed */
++ 	    } else if (segPtr->typePtr == &tkTextToggleOffType || segPtr->typePtr == &tkTextToggleOnType) {
++ 		   if (segPtr->body.toggle.tagPtr->elideString!=NULL) {
++ 			  elide = (segPtr->typePtr == &tkTextToggleOffType) ^ (segPtr->body.toggle.tagPtr->elide==1);
++ 		   }
++ 	    }
++ 
++ 	    offset = 0;
++ 	    segPtr = segPtr->nextPtr;
++ 	    if (segPtr == NULL && chunkPtr != NULL) ckfree((char *) chunkPtr);
++ 
++ 	    continue;
++ 	}
++ 
++ 
+  	if (segPtr->typePtr->layoutProc == NULL) {
+  	    segPtr = segPtr->nextPtr;
+  	    offset = 0;
+***************
+*** 831,836 ****
+--- 906,912 ----
+  	    chunkPtr->nextPtr = NULL;
+  	}
+  	chunkPtr->stylePtr = GetStyle(textPtr, &curIndex);
++ 	elide = chunkPtr->stylePtr->sValuePtr->elide;
+  
+  	/*
+  	 * Save style information such as justification and indentation,
+***************
+*** 864,870 ****
+  
+  	gotTab = 0;
+  	maxChars = segPtr->size - offset;
+! 	if (justify == TK_JUSTIFY_LEFT) {
+  	    if (segPtr->typePtr == &tkTextCharType) {
+  		char *p;
+  
+--- 940,946 ----
+  
+  	gotTab = 0;
+  	maxChars = segPtr->size - offset;
+! 	if (!elide && justify == TK_JUSTIFY_LEFT) {
+  	    if (segPtr->typePtr == &tkTextCharType) {
+  		char *p;
+  
+***************
+*** 877,884 ****
+  		}
+  	    }
+  	}
+- 
+  	chunkPtr->x = x;
+  	code = (*segPtr->typePtr->layoutProc)(textPtr, &curIndex, segPtr,
+  		offset, maxX-tabSize, maxChars, noCharsYet, wrapMode,
+  		chunkPtr);
+--- 953,973 ----
+  		}
+  	    }
+  	}
+  	chunkPtr->x = x;
++ 	if (elide && maxChars) {
++ 	    /* don't free style here, as other code expects to be able to do that */
++ 	    /*breakCharOffset =*/ chunkPtr->breakIndex = chunkPtr->numChars = maxChars;
++ 	    chunkPtr->width = 0;
++ 	    chunkPtr->minAscent = chunkPtr->minDescent = chunkPtr->minHeight = 0;
++ 
++ 	    /* would just like to point to canonical empty chunk */
++ 	    chunkPtr->displayProc = (Tk_ChunkDisplayProc *) NULL;
++ 	    chunkPtr->undisplayProc = (Tk_ChunkUndisplayProc *) NULL;
++ 	    chunkPtr->measureProc = ElideMeasureProc;
++ 	    chunkPtr->bboxProc = ElideBboxProc;
++ 
++ 	    code = 1;
++ 	} else
+  	code = (*segPtr->typePtr->layoutProc)(textPtr, &curIndex, segPtr,
+  		offset, maxX-tabSize, maxChars, noCharsYet, wrapMode,
+  		chunkPtr);
+***************
+*** 950,955 ****
+--- 1039,1045 ----
+  	    offset = 0;
+  	    segPtr = segPtr->nextPtr;
+  	}
++ 
+  	chunkPtr = NULL;
+      }
+      if (noCharsYet) {
+***************
+*** 998,1003 ****
+--- 1088,1094 ----
+  	wholeLine = 0;
+      }
+  
++ 
+      /*
+       * Make tab adjustments for the last tab stop, if there is one.
+       */
+***************
+*** 1321,1326 ****
+--- 1412,1418 ----
+  	    index.linePtr = TkBTreeFindLine(textPtr->tree, lineNum);
+  	    index.charIndex = 0;
+  	    lowestPtr = NULL;
++ 
+  	    do {
+  		dlPtr = LayoutDLine(textPtr, &index);
+  		dlPtr->nextPtr = lowestPtr;
+***************
+*** 1554,1559 ****
+--- 1646,1653 ----
+      Display *display;
+      int height, x;
+  
++     if (dlPtr->chunkPtr == NULL) return;
++ 
+      /*
+       * First, clear the area of the line to the background color for the
+       * text widget.
+***************
+*** 1620,1631 ****
+--- 1714,1729 ----
+  	     * something is off to the right).
+  	     */
+  
++ 	    if (chunkPtr->displayProc != NULL)
+  	    (*chunkPtr->displayProc)(chunkPtr, -chunkPtr->width,
+  		    dlPtr->spaceAbove,
+  		    dlPtr->height - dlPtr->spaceAbove - dlPtr->spaceBelow,
+  		    dlPtr->baseline - dlPtr->spaceAbove, display, pixmap,
+  		    dlPtr->y + dlPtr->spaceAbove);
+  	} else {
++ 	    /* don't call if elide.  This tax ok since not very many visible DLine's in
++ 		  an area, but potentially many elide ones */
++ 	    if (chunkPtr->displayProc != NULL)
+  	    (*chunkPtr->displayProc)(chunkPtr, x, dlPtr->spaceAbove,
+  		    dlPtr->height - dlPtr->spaceAbove - dlPtr->spaceBelow,
+  		    dlPtr->baseline - dlPtr->spaceAbove, display, pixmap,
+***************
+*** 1714,1719 ****
+--- 1812,1818 ----
+      StyleValues *sValuePtr;
+      Display *display;
+  
++ 
+      /*
+       * Pass 1: scan through dlPtr from left to right.  For each range of
+       * chunks with the same style, draw the main background for the style
+***************
+*** 1787,1793 ****
+  	rightX = maxX;
+      }
+      chunkPtr2 = NULL;
+!     if (prevPtr != NULL) {
+  	/*
+  	 * Find the chunk in the previous line that covers leftX.
+  	 */
+--- 1886,1892 ----
+  	rightX = maxX;
+      }
+      chunkPtr2 = NULL;
+!     if (prevPtr != NULL && prevPtr->chunkPtr != NULL) {
+  	/*
+  	 * Find the chunk in the previous line that covers leftX.
+  	 */
+***************
+*** 1908,1914 ****
+  	rightX = maxX;
+      }
+      chunkPtr2 = NULL;
+!     if (dlPtr->nextPtr != NULL) {
+  	/*
+  	 * Find the chunk in the previous line that covers leftX.
+  	 */
+--- 2007,2014 ----
+  	rightX = maxX;
+      }
+      chunkPtr2 = NULL;
+! /*    for (dlPtr2 = dlPtr; dlPtr2->nextPtr != NULL && dlPtr2->nextPtr->chunkPtr == NULL; dlPtr2 = dlPtr2->nextPtr) {}*/
+!     if (dlPtr->nextPtr != NULL && dlPtr->nextPtr->chunkPtr != NULL) {
+  	/*
+  	 * Find the chunk in the previous line that covers leftX.
+  	 */
+***************
+*** 2299,2304 ****
+--- 2399,2405 ----
+  	for (prevPtr = NULL, dlPtr = textPtr->dInfoPtr->dLinePtr;
+  		(dlPtr != NULL) && (dlPtr->y < dInfoPtr->maxY);
+  		prevPtr = dlPtr, dlPtr = dlPtr->nextPtr) {
++ 	    if (dlPtr->chunkPtr == NULL) continue;
+  	    if (dlPtr->oldY != dlPtr->y) {
+  		if (tkTextDebug) {
+  		    char string[TK_POS_CHARS];
+***************
+*** 2315,2320 ****
+--- 2416,2422 ----
+  		dlPtr->oldY = dlPtr->y;
+  		dlPtr->flags &= ~NEW_LAYOUT;
+  	    }
++ 	    /*prevPtr = dlPtr;*/
+  	}
+  	Tk_FreePixmap(Tk_Display(textPtr->tkwin), pixmap);
+      }
+***************
+*** 3369,3374 ****
+--- 3471,3477 ----
+  		dlPtr = LayoutDLine(textPtr, &index);
+  		dlPtr->nextPtr = lowestPtr;
+  		lowestPtr = dlPtr;
++ 		if (dlPtr->length == 0 && dlPtr->height == 0) { offset--; break; }	/* elide */
+  		TkTextIndexForwChars(&index, dlPtr->count, &index);
+  		charsToCount -= dlPtr->count;
+  	    } while ((charsToCount > 0)
+***************
+*** 3381,3387 ****
+  		    break;
+  		}
+  	    }
+!     
+  	    /*
+  	     * Discard the display lines, then either return or prepare
+  	     * for the next display line to lay out.
+--- 3484,3490 ----
+  		    break;
+  		}
+  	    }
+! 
+  	    /*
+  	     * Discard the display lines, then either return or prepare
+  	     * for the next display line to lay out.
+***************
+*** 3410,3421 ****
+--- 3513,3526 ----
+  		TkBTreeNumLines(textPtr->tree));
+  	for (i = 0; i < offset; i++) {
+  	    dlPtr = LayoutDLine(textPtr, &textPtr->topIndex);
++ 	    if (dlPtr->length == 0 && dlPtr->height == 0) offset++;
+  	    dlPtr->nextPtr = NULL;
+  	    TkTextIndexForwChars(&textPtr->topIndex, dlPtr->count, &new);
+  	    FreeDLines(textPtr, dlPtr, (DLine *) NULL, 0);
+  	    if (new.linePtr == lastLinePtr) {
+  		break;
+  	    }
++ 
+  	    textPtr->topIndex = new;
+  	}
+      }
+***************
+*** 3949,3955 ****
+  				 * index of the character nearest to (x,y). */
+  {
+      TextDInfo *dInfoPtr = textPtr->dInfoPtr;
+!     register DLine *dlPtr;
+      register TkTextDispChunk *chunkPtr;
+  
+      /*
+--- 4054,4060 ----
+  				 * index of the character nearest to (x,y). */
+  {
+      TextDInfo *dInfoPtr = textPtr->dInfoPtr;
+!     register DLine *dlPtr, *validdlPtr;
+      register TkTextDispChunk *chunkPtr;
+  
+      /*
+***************
+*** 3982,3989 ****
+       * Find the display line containing the desired y-coordinate.
+       */
+  
+!     for (dlPtr = dInfoPtr->dLinePtr; y >= (dlPtr->y + dlPtr->height);
+  	    dlPtr = dlPtr->nextPtr) {
+  	if (dlPtr->nextPtr == NULL) {
+  	    /*
+  	     * Y-coordinate is off the bottom of the displayed text.
+--- 4087,4095 ----
+       * Find the display line containing the desired y-coordinate.
+       */
+  
+!     for (dlPtr = validdlPtr = dInfoPtr->dLinePtr; y >= (dlPtr->y + dlPtr->height);
+  	    dlPtr = dlPtr->nextPtr) {
++ 	if (dlPtr->chunkPtr !=NULL) validdlPtr = dlPtr;
+  	if (dlPtr->nextPtr == NULL) {
+  	    /*
+  	     * Y-coordinate is off the bottom of the displayed text.
+***************
+*** 3994,3999 ****
+--- 4100,4107 ----
+  	    break;
+  	}
+      }
++     if (dlPtr->chunkPtr == NULL) dlPtr = validdlPtr;
++ 
+  
+      /*
+       * Scan through the line's chunks to find the one that contains
+***************
+*** 4005,4016 ****
+      *indexPtr = dlPtr->index;
+      x = x - dInfoPtr->x + dInfoPtr->curPixelOffset;
+      for (chunkPtr = dlPtr->chunkPtr; x >= (chunkPtr->x + chunkPtr->width);
+! 	    indexPtr->charIndex += chunkPtr->numChars,
+! 	    chunkPtr = chunkPtr->nextPtr) {
+  	if (chunkPtr->nextPtr == NULL) {
+  	    indexPtr->charIndex += chunkPtr->numChars - 1;
+  	    return;
+! 	}
+      }
+  
+      /*
+--- 4113,4124 ----
+      *indexPtr = dlPtr->index;
+      x = x - dInfoPtr->x + dInfoPtr->curPixelOffset;
+      for (chunkPtr = dlPtr->chunkPtr; x >= (chunkPtr->x + chunkPtr->width);
+! 	indexPtr->charIndex += chunkPtr->numChars,
+! 	chunkPtr = chunkPtr->nextPtr) {
+  	if (chunkPtr->nextPtr == NULL) {
+  	    indexPtr->charIndex += chunkPtr->numChars - 1;
+  	    return;
+! 	 }
+      }
+  
+      /*
+***************
+*** 4166,4171 ****
+--- 4274,4280 ----
+  {
+      TextDInfo *dInfoPtr = textPtr->dInfoPtr;
+      DLine *dlPtr;
++     int dlx;
+  
+      /*
+       * Make sure that all of the screen layout information is up to date.
+***************
+*** 4184,4191 ****
+  	return -1;
+      }
+  
+!     *xPtr = dInfoPtr->x - dInfoPtr->curPixelOffset + dlPtr->chunkPtr->x;
+!     *widthPtr = dlPtr->length - dlPtr->chunkPtr->x;
+      *yPtr = dlPtr->y;
+      if ((dlPtr->y + dlPtr->height) > dInfoPtr->maxY) {
+  	*heightPtr = dInfoPtr->maxY - dlPtr->y;
+--- 4293,4301 ----
+  	return -1;
+      }
+  
+!     dlx = (dlPtr->chunkPtr != NULL? dlPtr->chunkPtr->x: 0);
+!     *xPtr = dInfoPtr->x - dInfoPtr->curPixelOffset + dlx;
+!     *widthPtr = dlPtr->length - dlx;
+      *yPtr = dlPtr->y;
+      if ((dlPtr->y + dlPtr->height) > dInfoPtr->maxY) {
+  	*heightPtr = dInfoPtr->maxY - dlPtr->y;
+***************
+*** 4196,4201 ****
+--- 4306,4346 ----
+      return 0;
+  }
+  
++ static void
++ ElideBboxProc(chunkPtr, index, y, lineHeight, baseline, xPtr, yPtr,
++ 	widthPtr, heightPtr)
++     TkTextDispChunk *chunkPtr;		/* Chunk containing desired char. */
++     int index;				/* Index of desired character within
++ 					 * the chunk. */
++     int y;				/* Topmost pixel in area allocated
++ 					 * for this line. */
++     int lineHeight;			/* Height of line, in pixels. */
++     int baseline;			/* Location of line's baseline, in
++ 					 * pixels measured down from y. */
++     int *xPtr, *yPtr;			/* Gets filled in with coords of
++ 					 * character's upper-left pixel. 
++ 					 * X-coord is in same coordinate
++ 					 * system as chunkPtr->x. */
++     int *widthPtr;			/* Gets filled in with width of
++ 					 * character, in pixels. */
++     int *heightPtr;			/* Gets filled in with height of
++ 					 * character, in pixels. */
++ {
++     *xPtr = chunkPtr->x;
++     *yPtr = y;
++     *widthPtr = *heightPtr = 0;
++ }
++ 
++ 
++ static int
++ ElideMeasureProc(chunkPtr, x)
++     TkTextDispChunk *chunkPtr;		/* Chunk containing desired coord. */
++     int x;				/* X-coordinate, in same coordinate
++ 					 * system as chunkPtr->x. */
++ {
++     return 0 /*chunkPtr->numChars - 1*/;
++ }
++ 
+  /*
+   *--------------------------------------------------------------
+   *
+***************
+*** 4421,4427 ****
+       * Draw the text, underline, and overstrike for this chunk.
+       */
+  
+!     if (ciPtr->numChars > offsetChars) {
+  	int numChars = ciPtr->numChars - offsetChars;
+  	char *string = ciPtr->chars + offsetChars;
+  
+--- 4566,4572 ----
+       * Draw the text, underline, and overstrike for this chunk.
+       */
+  
+!     if (!sValuePtr->elide && ciPtr->numChars > offsetChars) {
+  	int numChars = ciPtr->numChars - offsetChars;
+  	char *string = ciPtr->chars + offsetChars;
+  
+*** tkTextTag.c	1997/07/04 22:39:41	2.0
+--- ../generic/tkTextTag.c	1997/08/15 22:20:32
+***************
+*** 63,68 ****
+--- 63,71 ----
+      {TK_CONFIG_STRING, "-underline", (char *) NULL, (char *) NULL,
+  	(char *) NULL, Tk_Offset(TkTextTag, underlineString),
+  	TK_CONFIG_NULL_OK},
++     {TK_CONFIG_STRING, "-elide", (char *) NULL, (char *) NULL,
++ 	(char *) NULL, Tk_Offset(TkTextTag, elideString),
++ 	TK_CONFIG_NULL_OK},
+      {TK_CONFIG_UID, "-wrap", (char *) NULL, (char *) NULL,
+  	(char *) NULL, Tk_Offset(TkTextTag, wrapMode),
+  	TK_CONFIG_NULL_OK},
+***************
+*** 378,383 ****
+--- 381,392 ----
+  		    return TCL_ERROR;
+  		}
+  	    }
++ 	    if (tagPtr->elideString != NULL) {
++ 		if (Tcl_GetBoolean(interp, tagPtr->elideString,
++ 			&tagPtr->elide) != TCL_OK) {
++ 		    return TCL_ERROR;
++ 		}
++ 	    }
+  	    if ((tagPtr->wrapMode != NULL)
+  		    && (tagPtr->wrapMode != tkTextCharUid)
+  		    && (tagPtr->wrapMode != tkTextNoneUid)
+***************
+*** 419,424 ****
+--- 428,434 ----
+  		    || (tagPtr->spacing3String != NULL)
+  		    || (tagPtr->tabString != NULL)
+  		    || (tagPtr->underlineString != NULL)
++ 		    || (tagPtr->elideString != NULL)
+  		    || (tagPtr->wrapMode != NULL)) {
+  		tagPtr->affectsDisplay = 1;
+  	    }
+***************
+*** 811,816 ****
+--- 821,828 ----
+      tagPtr->tabArrayPtr = NULL;
+      tagPtr->underlineString = NULL;
+      tagPtr->underline = 0;
++     tagPtr->elideString = NULL;
++     tagPtr->elide = 0;
+      tagPtr->wrapMode = NULL;
+      tagPtr->affectsDisplay = 0;
+      textPtr->numTags++;
+***************
+*** 934,939 ****
+--- 946,954 ----
+      }
+      if (tagPtr->underlineString != NULL) {
+  	ckfree(tagPtr->underlineString);
++     }
++     if (tagPtr->elideString != NULL) {
++ 	ckfree(tagPtr->elideString);
+      }
+      ckfree((char *) tagPtr);
+  }
