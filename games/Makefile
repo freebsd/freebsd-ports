@@ -112,6 +112,7 @@
     SUBDIR += speyes
     SUBDIR += spider
     SUBDIR += starlanes
+    SUBDIR += sxsame
     SUBDIR += tank
     SUBDIR += tetrinet-x
     SUBDIR += tinymux
