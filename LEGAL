@@ -1,5 +1,5 @@
 # Creator:  Jordan Hubbard
-# $Id: LEGAL,v 1.22 1995/10/04 16:14:14 asami Exp $
+# $Id: LEGAL,v 1.23 1995/10/07 21:59:28 torstenb Exp $
 
 Some of the ports in this directory have restrictive copyrights prohibiting
 their actual redistribution on mass media.  When creating compilations
@@ -35,3 +35,4 @@ rkive3.1.tar.gz		ports/news/rkive	Restrictive copyright
 netscape-*		ports/net/netscape	Commercial product
 msql-1.0.5.tar.gz	ports/databases/msql	Restrictive copyright
 ssh-*			ports/security/ssh	Crypto; export-controlled
+xinvaders-*		ports/games/xinvaders	Don't sell for profit
