@@ -1,0 +1,7 @@
+bin/etherx-config
+include/etherx.h
+lib/libetherx.a
+lib/libetherx.so
+lib/libetherx.so.0
+@exec /sbin/ldconfig -m %B
+@unexec /sbin/ldconfig -R
