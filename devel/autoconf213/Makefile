@@ -29,20 +29,29 @@ CONFIGURE_ARGS=	--program-suffix=213
 WRKSRC=		${WRKDIR}/autoconf
 
 .if defined(USE_AUTOCONF) || defined(USE_AUTOCONF_VER)
-.error You have `USE_AUTOCONF' or `USE_AUTOCONF_VER' variables defined either in environment or in make(1) arguments. Please undefine and try again.
-.endif
+pre-everything:
+	@${ECHO} ===========================================================
+	@${ECHO} "You have 'USE_AUTOCONF' or 'USE_AUTOCONF_VER' variables"
+	@${ECHO} "defined either in environment or in make(1) arguments."
+	@${ECHO} "Please undefine them and try again."
+	@${ECHO} ===========================================================
+	@${FALSE}
+.endif # defined(USE_AUTOCONF) || defined(USE_AUTOCONF_VER)
 
 post-patch:
 	@${RM} ${WRKSRC}/*.info* >/dev/null 2>&1 || true
 
 post-install:
-	@${CHMOD} +x ${PREFIX}/share/autoconf213/config.*
-	@${INSTALL_SCRIPT} ${WRKSRC}/install-sh ${PREFIX}/share/autoconf213
-	@-${RM} -fr ${PREFIX}/libexec/autoconf213
-	${MKDIR} ${PREFIX}/libexec/autoconf213
+	@${CHMOD} +x ${DESTDIR}${PREFIX}/share/autoconf213/config.*
+	@${INSTALL_SCRIPT} ${WRKSRC}/install-sh \
+		${DESTDIR}${PREFIX}/share/autoconf213
+	@-${RM} -fr ${DESTDIR}${PREFIX}/libexec/autoconf213
+	${MKDIR} ${DESTDIR}${PREFIX}/libexec/autoconf213
 .for i in autoconf autoheader autoreconf autoscan autoupdate ifnames
-	${LN} -s ../../bin/${i}213 ${PREFIX}/libexec/autoconf213/${i}
+	${LN} -s ../../bin/${i}213 \
+		${DESTDIR}${PREFIX}/libexec/autoconf213/${i}
 .endfor
-	install-info ${PREFIX}/info/autoconf213.info ${PREFIX}/info/dir
+	install-info ${DESTDIR}${PREFIX}/info/autoconf213.info \
+		${DESTDIR}${PREFIX}/info/dir
 
 .include <bsd.port.mk>
