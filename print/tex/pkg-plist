@@ -156,7 +156,6 @@ share/texmf/metafont/cmmi7.mf
 share/texmf/metafont/cmmi8.mf
 share/texmf/metafont/cmmi9.mf
 share/texmf/metafont/cmmib10.mf
-share/texmf/metafont/cmplain.mf
 share/texmf/metafont/cmr10.mf
 share/texmf/metafont/cmr12.mf
 share/texmf/metafont/cmr17.mf
@@ -238,7 +237,6 @@ share/texmf/metafont/textit.mf
 share/texmf/metafont/title.mf
 share/texmf/metafont/tset.mf
 share/texmf/metafont/tsetsl.mf
-share/texmf/metafont/white_setup.mf
 share/texmf/tex/hyphen.tex
 share/texmf/tex/manmac.tex
 share/texmf/tex/mftmac.tex
