@@ -19,13 +19,16 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 .endif
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+USE_REINPLACE=	yes
 
 MAN1=		mboxgrep.1
 INFO=		mboxgrep
 
 DOCS=		ChangeLog NEWS README TODO
+
+post-patch:
+	@${REINPLACE_CMD} -e 's,void \*tmpp,FILE \*tmpp,g' ${WRKSRC}/src/main.c
 
 post-install:
 	install-info ${PREFIX}/info/mboxgrep.info ${PREFIX}/info/dir
