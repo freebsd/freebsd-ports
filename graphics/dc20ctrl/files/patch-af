@@ -1,0 +1,14 @@
+diff -ru work/dc20ctrl-0.4/thumbs_to_file.c dc20ctrl-0.4/thumbs_to_file.c
+--- work/dc20ctrl-0.4/thumbs_to_file.c	Tue Feb 17 09:19:47 1998
++++ thumbs_to_file.c	Mon Feb  5 18:51:27 2001
+@@ -67,8 +67,8 @@
+ 				}
+ 			}
+ 
+-			sprintf(file, base_name, i+1);
+-	
++			if (snprintf(file, sizeof(file), base_name, i+1) >= sizeof(file))
++				return -1;
+ 			save_pixmap(pp, file, (orientation_mask >> (i*2)) & ROT_MASK, format);
+ 		}
+ 	}

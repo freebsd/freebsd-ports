@@ -1,0 +1,11 @@
+diff -ru work/dc20ctrl-0.4/main.h dc20ctrl-0.4/main.h
+--- work/dc20ctrl-0.4/main.h	Tue Feb 17 09:19:46 1998
++++ main.h	Mon Feb  5 18:56:48 2001
+@@ -49,6 +49,6 @@
+ 			 tiff_predictor;
+ #endif /* USE_TIFF */
+ 
+-void main(int, char **);
++int main(int, char **);
+ 
+ #endif /* _MAIN_H_ */

@@ -1,0 +1,84 @@
+--- main.c.orig	Wed Feb 18 02:34:18 1998
++++ main.c	Mon Feb  5 19:32:38 2001
+@@ -169,7 +169,7 @@
+ 			*pivot3;
+ 	int		 result = 0,
+ 			 i,
+-			 first,
++			 first = 0,
+ 			 last,
+ 			 orientation = ROT_STRAIGHT,
+ 			 this_orientation;
+@@ -195,11 +195,14 @@
+ 		}
+ 		this_orientation = orientation; /* sets default orientation */
+ 		strsep(&pivot2, "-");
+-		first = strtol(string, &pivot3, 10);
+-		if (first < 1 || first > 16) {
+-			if (!quiet) fprintf(stderr, "%s: parse_pics: error: out of range %d\n", __progname, first);
+-			return -1;
++		if (string != NULL) {
++			first = strtol(string, &pivot3, 10);
++			if (first < 1 || first > 16) {
++				if (!quiet) fprintf(stderr, "%s: parse_pics: error: out of range %d\n", __progname, first);
++				return -1;
++			}
+ 		}
++		
+ 		if (pivot2) {
+ 			if (*pivot3) {
+ 				if (!quiet) fprintf(stderr, "%s: parse_pics: error: extraneous characters '%s' in %d%s-%s\n", __progname, pivot3, first, pivot3, pivot2);
+@@ -216,8 +219,8 @@
+ 		} else {
+ 			last = first;
+ 		}
+-
+-		if (*pivot3) {
++		
++		if (pivot3 && *pivot3) {
+ 			/*
+ 			 *	"numberorientation"
+ 			 */
+@@ -245,7 +248,7 @@
+  *	Main program: parse switches and take actions
+  */
+ 
+-void main(int argc, char *argv[])
++int main(int argc, char *argv[])
+ {
+ 	int			 curopt,
+ 				 actions = 0,
+@@ -503,17 +506,29 @@
+ 		clock = time(NULL);
+ 
+ 		if (pics_pre) {
+-			sprintf(pics_name, "%s_%%d.%%s", pics_pre);
++			if (snprintf(pics_name, sizeof(pics_name), "%s_%%d.%%s", pics_pre) >= sizeof(pics_name)) {
++				fprintf(stderr, "%s: error: filename too long\n", __progname);
++				exit(1);
++			}
+ 		} else {
+ 			strftime(name_template, NAME_LEN, "%%s_%Y_%m_%d_%%d_%%%%d.%%%%s", localtime(&clock));
+-			sprintf(pics_name, name_template, "pic", session);
++			if (snprintf(pics_name, sizeof(pics_name), name_template, "pic", session) >= sizeof(pics_name)) {
++				fprintf(stderr, "%s: error: filename too long\n", __progname);
++				exit(1);
++			}
+ 		}
+ 
+ 		if (thumbs_pre) {
+-			sprintf(thumbs_name, "%s_%%d", thumbs_pre);
++			if (snprintf(thumbs_name, sizeof(thumbs_name), "%s_%%d", thumbs_pre) >= sizeof(thumbs_name)) {
++				fprintf(stderr, "%s: error: filename too long\n", __progname);
++				exit(1);
++			}
+ 		} else {
+ 			strftime(name_template, NAME_LEN, "%%s_%Y_%m_%d_%%d_%%%%d", localtime(&clock));
+-			sprintf(thumbs_name, name_template, "thumb", session);
++			if (snprintf(thumbs_name, sizeof(thumbs_name), name_template, "thumb", session) >= sizeof(thumbs_name)) {
++				fprintf(stderr, "%s: error: filename too long\n", __progname);
++				exit(1);
++			}
+ 		}
+ 
+ 		if (actions == 0) {

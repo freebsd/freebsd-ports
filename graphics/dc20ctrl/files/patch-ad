@@ -1,0 +1,43 @@
+diff -ru work/dc20ctrl-0.4/pixmaps.c dc20ctrl-0.4/pixmaps.c
+--- work/dc20ctrl-0.4/pixmaps.c	Tue Feb 17 09:19:47 1998
++++ pixmaps.c	Mon Feb  5 18:42:18 2001
+@@ -504,26 +504,32 @@
+ 	 *	Build the image name
+ 	 */
+ 
+-	strcpy(fname, name);
+-	strcat(fname, ".");
++	if (strlcpy(fname, name, sizeof(fname)) >= sizeof(fname))
++		return -1;
++	if (strlcat(fname, ".", sizeof(fname)) >= sizeof(fname))
++		return -1;
+ 	switch (format & SAVE_FORMATS) {
+ #ifdef USE_JPEG
+ 		case SAVE_JPEG:
+-			strcat(fname, JPEG_EXT);
++			if (strlcat(fname, JPEG_EXT, sizeof(fname)) >= sizeof(fname))
++				return -1;
+ 			break;
+ #endif /* USE_JPEG */
+ #ifdef USE_TIFF
+ 		case SAVE_TIFF:
+-			strcat(fname, TIFF_EXT);
++			if (strlcat(fname, TIFF_EXT, sizeof(fname)) >= sizeof(fname))
++				return -1;
+ 			break;
+ #endif /* USE_TIFF */
+ #ifdef USE_PNG
+ 		case SAVE_PNG:
+-			strcat(fname, PNG_EXT);
++			if (strlcat(fname, PNG_EXT, sizeof(fname)) >= sizeof(fname))
++				return -1;
+ 			break;
+ #endif /* USE_PNG */
+ 		default:
+-			strcat(fname, (to_be_saved->components == 3) ? PPM_EXT : PGM_EXT );
++			if (strlcat(fname, (to_be_saved->components == 3) ? PPM_EXT : PGM_EXT, sizeof(fname)) >= sizeof(fname))
++				return -1;
+ 			break;
+ 	}
+ 
+Only in dc20ctrl-0.4/: rep
