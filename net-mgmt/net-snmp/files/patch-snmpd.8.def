@@ -1,6 +1,6 @@
---- man/snmpd.1.def.orig	Tue May  7 06:28:37 2002
-+++ man/snmpd.1.def	Thu Jul 25 18:49:40 2002
-@@ -205,6 +205,10 @@
+--- man/snmpd.8.def.orig	Wed Feb 26 04:11:19 2003
++++ man/snmpd.8.def	Sat Mar 29 22:05:07 2003
+@@ -211,6 +211,10 @@
  the error "Error opening specified endpoint".  Likewise, since AAL5
  PVC support is only currently available on Linux, it will fail with
  the same error on other platforms.

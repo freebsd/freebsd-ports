@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	net-snmp
-PORTVERSION=	5.0.6
+PORTVERSION=	5.0.8
 CATEGORIES=	net ipv6
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
-		ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/ \
-		ftp://ftp.win.ne.jp/pub/network/snmp/ucd-snmp/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR= net-snmp
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -36,6 +34,8 @@ CONFIGURE_ARGS+= --with-defaults --with-sys-contact=nobody@no.where
 .else
 IS_INTERACTIVE= yes
 .endif
+_CONFIGURE_ENV=	AUTOCONF=${LOCALBASE}/bin/autoconf213 \
+	AUTOHEADER=${LOCALBASE}/bin/autoheader213
 
 DEFAULT_SNMP_VERSION?=	3
 NET_SNMP_SYS_CONTACT?=	nobody@no.where
@@ -44,7 +44,7 @@ NET_SNMP_LOGFILE?=	/var/log/snmpd.log
 NET_SNMP_PERSISTENTDIR?=/var/net-snmp
 
 MAN1=		mib2c.1 \
-		snmpbulkget.1 snmpbulkwalk.1 snmpcmd.1 snmpconf.1 snmpd.1 \
+		snmpbulkget.1 snmpbulkwalk.1 snmpcmd.1 snmpconf.1 \
 		snmpdelta.1 snmpdf.1 snmpget.1 snmpgetnext.1 snmpinform.1 \
 		snmpnetstat.1 snmpset.1 snmpstatus.1 snmptable.1 snmptest.1 \
 		snmptranslate.1 snmptrap.1 snmpusm.1 snmpwalk.1
@@ -52,9 +52,10 @@ MAN3=		add_mibdir.3 add_module_replacement.3 default_store.3 \
 		get_module_node.3 init_mib.3 init_mib_internals.3 mib_api.3 \
 		netsnmp_agent.3 netsnmp_bulk_to_next.3 netsnmp_debug.3 \
 		netsnmp_example_scalar_int.3 netsnmp_handler.3 \
-		netsnmp_instance.3 netsnmp_mib_handler_methods.3 \
-		netsnmp_multiplexer.3 netsnmp_old_api.3 netsnmp_read_only.3 \
-		netsnmp_scalar.3 \
+		netsnmp_instance.3 netsnmp_library.3 \
+		netsnmp_mib_handler_methods.3 netsnmp_mib_utilities.3 \
+		netsnmp_mode_end_call.3 netsnmp_multiplexer.3 \
+		netsnmp_old_api.3 netsnmp_read_only.3 netsnmp_scalar.3 \
 		netsnmp_serialize.3 netsnmp_table.3 netsnmp_table_array.3 \
 		netsnmp_table_data.3 netsnmp_table_dataset.3 \
 		netsnmp_table_iterator.3 netsnmp_todo.3 netsnmp_watcher.3 \
@@ -74,7 +75,7 @@ MAN3=		add_mibdir.3 add_module_replacement.3 default_store.3 \
 		snmp_timeout.3 snmp_trap_api.3
 MAN5=		snmp.conf.5 snmp_config.5 snmpd.conf.5 \
 		snmptrapd.conf.5 variables.5
-MAN8=		snmptrapd.8
+MAN8=		snmpd.8 snmptrapd.8
 BIN=		snmpbulkwalk snmpget snmpgetnext snmpnetstat snmpset \
 		snmpstatus snmptest snmptranslate snmptrap snmpwalk
 SBIN=		snmpd snmptrapd
