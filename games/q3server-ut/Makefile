@@ -7,18 +7,14 @@
 
 PORTNAME=	ut
 PORTVERSION=	3.0
-MASTER_SITES=	http://64.159.80.11/ \
-		ftp://mirror.candidhosting.com/pub/ut/ \
-		http://box3.fsk405.org/q3ut3/ \
-		http://fsk405.org/q3ut3/ \
+MASTER_SITES=	http://gamefiles.blueyonder.co.uk/blueyondergames/quake3arena/modifications/urbanterror/patches/win32/ \
 		ftp://www.playdedicated.com/pub/sid/quake3/ \
+		http://ftp.club-internet.fr/pub/games/nofrag/quake3/mods/urbanterror/patches/ \
 		ftp://ftp.edome.net/online/clientit/ \
-		http://atrivo.wofut.com/~zac/
+		http://clanhosted.clix.pt/files/clanhosted/quake3/ut/
 DISTNAME=	urbanterror3
 
 COMMENT=	Quake III Arena Mod: Urban Terror for Linux
-
-BROKEN=		"Does not fetch, will be removed after Feb 2"
 
 WRKSRC=		${WRKDIR}/q3ut3
 
