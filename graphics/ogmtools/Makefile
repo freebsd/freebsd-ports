@@ -25,11 +25,13 @@ CONFIGURE_ARGS=	--with-ogg-prefix=${LOCALBASE} \
 
 MAN1=		ogmdemux.1 ogminfo.1 ogmmerge.1 ogmsplit.1
 
-post-configure:
+post-patch:
 # disable GNU auto* tools
-	@${FIND} ${WRKSRC} -type f -name "Makefile" | ${XARGS} \
+	@${FIND} ${WRKSRC} -type f -name "Makefile.in" | ${XARGS} \
 		-n 10 ${REINPLACE_CMD} -E -e \
-		's! (autoconf|autoheader|automake|aclocal)(-1.6)?$$! ${TRUE}!'
+		's!^(ACLOCAL|AUTOCONF|AUTOMAKE|AUTOHEADER).+$$!\1=${TRUE}!'
+
+post-configure:
 # malloc.h -> stdlib.h
 	@${FIND} ${WRKSRC} -type f | ${XARGS} \
 		-n 10 ${REINPLACE_CMD} -E -e \
