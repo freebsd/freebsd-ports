@@ -23,7 +23,7 @@ USE_REINPLACE=	yes
 CC=		${CXX}
 
 VERSION=	1.3
-LEVEL=		e
+LEVEL=		f
 
 DOCS=		README HISTORY License doc/FAQ.txt doc/libhttpd.pdf
 
