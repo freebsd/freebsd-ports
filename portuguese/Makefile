@@ -1,6 +1,7 @@
 # $FreeBSD$
 #
     SUBDIR += aspell
+    SUBDIR += frontpage-pt_BR
     SUBDIR += ispell-pt_BR
     SUBDIR += ooodict-pt_BR
     SUBDIR += ooodict-pt_PT
