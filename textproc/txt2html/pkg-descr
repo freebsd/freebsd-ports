@@ -1,4 +1,5 @@
-txt2html is a Perl program that converts plain text to HTML.
+txt2html is a Perl program that converts plain text to HTML using
+the included HTML::TextToHTML module.
 
 It supports headings, lists, simple character markup, and
 hyperlinking, and is highly customizable. It recognizes some of the
@@ -6,4 +7,4 @@ apparent structure of the source document (mostly whitespace and
 typographic layout), and attempts to mark that structure explicitly
 using HTML.
 
-WWW: http://www.aigeek.com/txt2html/
+WWW: http://txt2html.sourceforge.net/ 
