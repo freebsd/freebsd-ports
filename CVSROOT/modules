@@ -8231,6 +8231,7 @@ pear-OLE	ports/devel/pear-OLE
 pear-PEAR	ports/devel/pear-PEAR
 pear-PHPUnit	ports/devel/pear-PHPUnit
 pear-PHPUnit2	ports/devel/pear-PHPUnit2
+pear-PHP_Beautifier	ports/devel/pear-PHP_Beautifier
 pear-PHP_Compat	ports/devel/pear-PHP_Compat
 pear-Pager	ports/devel/pear-Pager
 pear-SOAP	ports/net/pear-SOAP
