@@ -9,18 +9,28 @@ PORTNAME=	x48
 PORTVERSION=	0.4.1e
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.hpcalc.org/hp48/pc/emulators/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
-EXTRACT_SUFX=	.tgz
+DISTFILES=	${PORTNAME}-${PORTVERSION:S/.//g}.tgz \
+		gxrom-r.zip
+EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION:S/.//g}.tgz
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	An HP48sx emulator
+COMMENT=	A HP48 SX/GX calculator emulator
+
+BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/e//}
 
 USE_IMAKE=	yes
 NO_INSTALL_MANPAGES=	yes
+USE_REINPLACE=	yes
+ROMPATH=	${PREFIX}/share/x48
 
+post-patch:
+	@${REINPLACE_CMD} -e 's+rom.dump+${ROMPATH}/gxrom-r+' \
+		${WRKSRC}/src/dump2rom.c ${WRKSRC}/src/X48.ad
 post-install:
+	@${MKDIR} ${ROMPATH}
+	@unzip ${DISTDIR}/${DISTSUBDIR}/gxrom-r	-d ${ROMPATH}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in README doc/CARDS.doc doc/ROMDump.doc

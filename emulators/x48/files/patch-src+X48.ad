@@ -1,0 +1,13 @@
+--- src/X48.ad.orig	Wed Jan 11 13:24:05 1995
++++ src/X48.ad	Sun Jun 29 10:46:17 2003
+@@ -49,8 +49,8 @@
+ ! resources controlling the connections
+ !
+ *useTerminal:		True
+-*useSerial:		False
+-*serialLine:		/dev/ttyS0
++*useSerial:		True
++*serialLine:		/dev/cuaa0
+ 
+ !
+ ! stuff controlling initialization
