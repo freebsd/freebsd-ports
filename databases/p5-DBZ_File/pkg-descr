@@ -1,0 +1,6 @@
+DBZ_File allows a perl program to read and write a DBZ database,
+such as the news history file.  It does support the creation of a new
+database if the .pag and .lib files are missing -- just call the tie
+function with a create flag and a mode (see the documentation).
+       
+Author: Wayne Davison <wayne@clari.net>

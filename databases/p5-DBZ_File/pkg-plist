@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBZ_File/DBZ_File.so
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBZ_File/DBZ_File.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/DBZ_File.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBZ_File/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/DBZ_File

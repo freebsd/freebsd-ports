@@ -1,0 +1,29 @@
+--- DBZ_File.xs.orig	Sat May 27 23:38:48 2000
++++ DBZ_File.xs	Sat May 27 23:39:28 2000
+@@ -1,7 +1,7 @@
+ #include "EXTERN.h"
+ #include "perl.h"
+ #include "XSUB.h"
+-#include <dbz.h>
++#include <dbz.c>
+ 
+ typedef int DBZ_File;
+ 
+@@ -14,7 +14,7 @@
+ 	int		flags
+ 	int		mode
+ 	CODE:
+-	if (dbzdbminit(filename) == 0
++	if (dbminit(filename) == 0
+ 	 || (flags && mode && errno == ENOENT
+ 	  && dbzfresh(filename, 0, '\t', '?', 0) == 0))
+ 	    RETVAL = 1;
+@@ -27,7 +27,7 @@
+ dbz_DESTROY(db)
+ 	DBZ_File	db
+ 	CODE:
+-	dbzdbmclose();
++	dbmclose();
+ 
+ long
+ dbz_FETCH(db, key)
