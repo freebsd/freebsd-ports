@@ -4,7 +4,10 @@ advanced features like key bindings, keyboard macros, mail threading,
 regular expression searches and a powerful pattern matching language
 for selecting groups of messages.
 
-WWW: http://www.mutt.org/
+This is japanized version.
+see /usr/local/share/doc/mutt/README.JA-PATCH.ja
+
+WWW: http://www.emaillab.org/mutt/
 
 -
 IWASHITA Yoji

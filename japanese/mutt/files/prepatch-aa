@@ -1,0 +1,9 @@
+--- patch-1.4.tt.ja.1.orig	Wed Jun 19 00:52:42 2002
++++ patch-1.4.tt.ja.1	Wed Jun 19 00:53:02 2002
+@@ -2464,5 +2464,5 @@
+  
+ --- mutt-ja/PATCHES~    Tue Nov  6 19:59:33 2001
+ +++ mutt-ja/PATCHES     Tue Nov  6 19:59:42 2001
+-@@ -1,0 +1 @@
++@@ -0,0 +1 @@
+ +patch-1.4.tt.ja.1
