@@ -1,0 +1,22 @@
+--- configure.in.orig	Thu Nov  6 20:31:56 2003
++++ configure.in	Thu Nov 13 11:45:26 2003
+@@ -510,6 +510,19 @@
+ 	AC_DEFINE(HAVE_POSIX_THREADS)
+     ;;
+ 
++  FREEBSD)
++    dnl the AC_CHECK_TYPES for socklen_t doesn't include sys/socket.h
++    dnl so test for socklen_t with sys/socket.h included
++    AC_MSG_CHECKING(if sys/socket.h defines socklen_t)
++    AC_TRY_COMPILE([#include <sys/types.h>
++       #include <sys/socket.h>],
++    [socklen_t s;],
++    [AC_DEFINE(HAVE_SOCKLEN_T) AC_MSG_RESULT(yes)],
++    [AC_MSG_RESULT(no)])
++    dnl define HAVE_POSIX_THREADS for FreeBSD 4.x support
++    AC_DEFINE(HAVE_POSIX_THREADS)
++    ;;
++
+   SOLARIS|solx86)
+     dnl kkuznetsov: Solaris always check for -lnsl
+     AC_CHECK_LIB(nsl, gethostname, XE_APPEND(-lnsl,LIBS))

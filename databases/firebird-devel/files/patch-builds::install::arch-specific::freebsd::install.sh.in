@@ -1,0 +1,45 @@
+--- builds/install/arch-specific/freebsd/install.sh.in.orig	Thu Nov 13 15:55:52 2003
++++ builds/install/arch-specific/freebsd/install.sh.in	Thu Nov 13 17:05:29 2003
+@@ -113,7 +113,7 @@
+ 
+ mkdir -p $DestDir 
+ mkdir $DestDir/bin 
+-mkdir $DestDir/examples 
++#mkdir $DestDir/examples 
+ mkdir $DestDir/help 
+ mkdir $DestDir/include 
+ mkdir $DestDir/intl 
+@@ -145,15 +145,15 @@
+ 
+ # Copy examples only if we have them
+ 
+-exampleFiles=`find $BuiltFBDir/examples/v5 -type f -print`
+-if [ -z "$exampleFiles" ]; then
+-	echo "Example files have not been built!"
+-else
+-	for i in $exampleFiles
+-	do
+-		cp $i $DestDir/examples
+-	done
+-fi
++#exampleFiles=`find $BuiltFBDir/examples/v5 -type f -print`
++#if [ -z "$exampleFiles" ]; then
++#	echo "Example files have not been built!"
++#else
++#	for i in $exampleFiles
++#	do
++#		cp $i $DestDir/examples
++#	done
++#fi
+ 
+ copyIfExists $BuiltFBDir/help/help.gbak $DestDir/help 
+ cp $BuiltFBDir/help/help.fdb $DestDir/help 
+@@ -275,7 +275,7 @@
+ 
+ # make databases writable by firebird only
+ # local database connections are not a good idea
+-chmod ug=rw,o= examples/*.fdb
++#chmod ug=rw,o= examples/*.fdb
+ chmod ug=rw,o= help/*.fdb
+ chmod ug=rw,o= security.fdb
+ 
