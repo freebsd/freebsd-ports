@@ -11,20 +11,20 @@
  
  @iftex
  @finalout
---- ./man/emacs.texi.org	Mon Aug 19 21:15:12 1996
-+++ ./man/emacs.texi	Tue May 20 01:20:11 1997
-@@ -49,6 +49,11 @@
- @settitle GNU Emacs Manual
- @setfilename ../info/emacs
- @synindex pg cp
+--- man/emacs.texi.orig	Tue Jul 22 17:03:07 1997
++++ man/emacs.texi	Mon Oct 13 14:57:48 1997
+@@ -1,6 +1,11 @@
+ \input texinfo
+ 
++@setfilename ../info/emacs
+ @ifinfo
 +@dircategory The Emacs editor and associated tools
 +@direntry
-+* Emacs: (emacs).		The extensible self-documenting text editor.
++* Emacs: (emacs).              The extensible self-documenting text editor.
 +@end direntry
-+
- @c
- @c in general, keep the following line commented out, unless doing a
- @c copy of this manual that will be published.  the manual should go
+ @c The edition number appears in several places in this file
+ This corresponds to the thirteenth edition of the @cite{GNU Emacs Manual},
+ for Emacs version 20.1
 --- ./man/viper.texi.org	Wed Aug  7 10:59:45 1996
 +++ ./man/viper.texi	Tue May 20 01:29:17 1997
 @@ -4,6 +4,10 @@
@@ -152,18 +152,18 @@
  @comment !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
  @comment @setchapternewpage odd !! we don't want blank pages !!
  @comment %**end of header (This is for running Texinfo on a region)
---- ./Makefile.in.org	Mon Aug 19 21:12:19 1996
-+++ ./Makefile.in	Tue Apr 15 00:15:28 1997
-@@ -184,7 +184,7 @@
+--- Makefile.in.orig	Tue Sep 16 16:23:57 1997
++++ Makefile.in	Sun Oct 12 23:51:25 1997
+@@ -185,7 +185,7 @@
  # Subdirectories to make recursively.  `lisp' is not included
  # because the compiled lisp files are part of the distribution
  # and you cannot remake them without installing Emacs first.
--SUBDIR = lib-src src
-+SUBDIR = lib-src src man
+-SUBDIR = lib-src src leim
++SUBDIR = lib-src src leim man
  
  # The makefiles of the directories in $SUBDIR.
- SUBDIR_MAKEFILES = lib-src/Makefile man/Makefile src/Makefile oldXMenu/Makefile lwlib/Makefile
-@@ -368,14 +368,8 @@
+ SUBDIR_MAKEFILES = lib-src/Makefile man/Makefile src/Makefile oldXMenu/Makefile lwlib/Makefile leim/Makefile
+@@ -357,14 +357,8 @@
  	if [ `(cd ${srcdir}/info && /bin/pwd)` != `(cd ${infodir} && /bin/pwd)` ]; \
  	then \
  	  (cd ${infodir};  \
@@ -179,7 +179,7 @@
  	     (cd $${thisdir}; \
  	      ${INSTALL_DATA} ${srcdir}/info/$$f ${infodir}/$$f; \
  	      chmod a+r ${infodir}/$$f); \
-@@ -426,7 +420,7 @@
+@@ -421,7 +415,7 @@
  	    esac ;					\
  	  fi ;						\
  	done
@@ -188,18 +188,24 @@
  	(cd ${man1dir}  && rm -f emacs.1 etags.1 ctags.1)
  	(cd ${bindir}  && rm -f emacs-${version} $(EMACS))
  
---- ./man/Makefile.in.org	Thu Jun 27 15:27:19 1996
-+++ ./man/Makefile.in	Tue Apr 15 00:29:52 1997
-@@ -13,7 +13,7 @@
+--- man/Makefile.in.orig	Mon Apr  7 10:00:34 1997
++++ man/Makefile.in	Mon Oct 13 17:08:15 1997
+@@ -11,11 +11,11 @@
+ 
+ 
  # The makeinfo program is part of the Texinfo distribution.
- MAKEINFO = makeinfo
+-MAKEINFO = makeinfo
++MAKEINFO = makeinfo --no-split
  INFO_TARGETS = ../info/emacs ../info/ccmode ../info/cl ../info/dired-x \
 -	       ../info/ediff ../info/forms ../info/gnus ../info/info \
 +	       ../info/ediff ../info/forms ../info/gnus \
  	       ../info/mh-e ../info/sc ../info/vip ../info/viper \
- 	       ../info/message
+-	       ../info/message ../info/custom ../info/widget
++	       ../info/message ../info/customize ../info/widget
  DVI_TARGETS = emacs.dvi cc-mode.dvi cl.dvi dired-x.dvi ediff.dvi forms.dvi \
-@@ -66,6 +66,7 @@
+ 		 gnus.dvi mh-e.dvi sc.dvi vip.dvi viper.dvi message.dvi \
+ 		 customize.dvi widget.dvi
+@@ -67,6 +67,7 @@
  	${srcdir}/gnu1.texi \
  	${srcdir}/glossary.texi
  
@@ -207,16 +213,34 @@
  info: $(INFO_TARGETS)
  
  dvi: $(DVI_TARGETS)
-@@ -74,12 +75,6 @@
- # in srcdir.  There is no provision for Info files
+@@ -76,12 +77,6 @@
  # to exist in the build directory.
  # In a distribution of Emacs, the Info files should be up to date.
--
+ 
 -../info/info: ${INFOSOURCES}
 -	cd $(srcdir); $(MAKEINFO) --no-split info.texi
 -
 -info.dvi: ${INFOSOURCES}
 -	TEXINPUTS="$(srcdir) $(TEXINPUTS)"; $(TEXI2DVI) ${srcdir}/info.texi
- 
+-
  ../info/emacs: ${EMACSSOURCES}
  	cd $(srcdir); $(MAKEINFO) emacs.texi
+ 
+@@ -143,7 +138,7 @@
+ widget.dvi: widget.texi
+ 	TEXINPUTS="$(srcdir) $(TEXINPUTS)"; $(TEXI2DVI) ${srcdir}/widget.texi
+ 
+-../info/custom: customize.texi
++../info/customize: customize.texi
+ 	cd $(srcdir); $(MAKEINFO) customize.texi
+ customize.dvi: customize.texi
+ 	TEXINPUTS="$(srcdir) $(TEXINPUTS)"; $(TEXI2DVI) ${srcdir}/customize.texi
+@@ -151,7 +146,7 @@
+ ../etc/GNU: gnu1.texi gnu.texi
+ 	makeinfo --no-headers -o ../etc/GNU gnu1.texi
+ 
+-../info/viper: viper.texi viper-cmd.texi
++../info/viper: viper.texi
+ 	cd $(srcdir); $(MAKEINFO) viper.texi
+ viper.dvi: viper.texi viper-cmd.texi
+ 	TEXINPUTS="$(srcdir) $(TEXINPUTS)"; $(TEXI2DVI) ${srcdir}/viper.texi
