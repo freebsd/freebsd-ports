@@ -27,6 +27,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAN1=		anjuta.1 anjuta_launcher.1
 
+CONFLICTS=	anjuta-1.0.*
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/applogo.png \
 		${PREFIX}/share/gnome/anjuta/glade
