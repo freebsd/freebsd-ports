@@ -8119,6 +8119,7 @@ qnxstyle	ports/x11-wm/qnxstyle
 qpage		ports/comms/qpage
 qpopper		ports/mail/qpopper
 qrash		ports/x11/qrash
+qscan		ports/mail/qscan
 qscanplot	ports/math/qscanplot
 qscheme		ports/lang/qscheme
 qscintilla	ports/x11-toolkits/qscintilla
