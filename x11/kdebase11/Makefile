@@ -28,15 +28,12 @@ USE_GMAKE=	yes
 MAKE_ENV=	RM=${RM}
 CFLAGS+=	"-I$(PREFIX)/include"
 
-KSSES=	kattraction.kss kbanner.kss kbat.kss kblankscrn.kss \
-	kblob.kss kbouboule.kss kbsod.kss kflame.kss kforest.kss \
-	khop.kss klaser.kss klines.kss klissie.kss kmatrix.kss \
-	kmorph3d.kss kpipes.kss kpolygon.kss kpyro.kss krock.kss \
-	kscience.kss kslidescreen.kss kslip.kss kspace.kss kswarm.kss
-
 post-install:
-.for KSS in $(KSSES)
-	$(CHMOD) 4555 $(PREFIX)/bin/$(KSS)
-.endfor
+	@${ECHO}
+	@${ECHO_MSG} "Due to the potential security hole represented by the KDE"
+	@${ECHO_MSG} "screensavers, you will have to set them setuid yourself."
+	@${ECHO_MSG} "In order to do this, run:"
+	@${ECHO_MSG} "		# chmod 4755 ${PREFIX}/bin/*.kss"
+	@${ECHO}
 
 .include <bsd.port.mk>
