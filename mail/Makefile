@@ -28,6 +28,8 @@
     SUBDIR += drac
     SUBDIR += elm
     SUBDIR += elm+ME
+    SUBDIR += emh-emacs20
+    SUBDIR += emh-xemacs21-mule
     SUBDIR += emil
     SUBDIR += evolution
     SUBDIR += exim
