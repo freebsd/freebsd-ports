@@ -12,12 +12,10 @@ character sets:
 	ISO 5426:1983
 	Extension of the Latin alphabet coded character set for bibliographic
 	information interchange.
-	http://lcweb.loc.gov/loc/standards/isotc46/sc4standards.html
 
 	Z39.47-1993 Extended Latin Alphabet Coded Character Set for
 	Bibliographic Use (ANSEL)
 	[also known as 8-Bit ANSEL, used by USMARC]
-	http://www.niso.org/pccodes.htm
 
-See http://people.FreeBSD.org/~wosch/src/recode-3.4-bib.tar.gz
+See http://www.de.freebsd.org/~wosch/src/recode/
 Extract the archive and follow the instructions in README.bib.
