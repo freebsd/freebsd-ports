@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	ayam
-PORTVERSION=	1.6
-PORTREVISION=	1
+PORTVERSION=	1.7
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}${PORTVERSION}
-EXTRACT_SUFX=	.src.tar.gz
+DISTNAME=	${PORTNAME}${PORTVERSION}.src
 
 MAINTAINER=	tiamat@comset.net
 COMMENT=	3D modeling environment for the RenderMan interface
@@ -23,7 +21,6 @@ LIB_DEPENDS=	aqsis.0:${PORTSDIR}/graphics/aqsis \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_GL=		yes
-USE_XLIB=	yes
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}/src
@@ -78,7 +75,7 @@ do-install:
 # docs
 .ifndef (NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/*.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/Setup.txt ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/ayam.pdf ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/refcard.ps ${DOCSDIR}
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/doc/refcard.tcl ${DOCSDIR}
