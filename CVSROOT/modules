@@ -7634,6 +7634,7 @@ p5-Test-Differences	ports/devel/p5-Test-Differences
 p5-Test-Exception	ports/devel/p5-Test-Exception
 p5-Test-Harness	ports/devel/p5-Test-Harness
 p5-Test-Inline	ports/devel/p5-Test-Inline
+p5-Test-LectroTest	ports/devel/p5-Test-LectroTest
 p5-Test-Manifest	ports/devel/p5-Test-Manifest
 p5-Test-MockObject	ports/devel/p5-Test-MockObject
 p5-Test-NoWarnings	ports/devel/p5-Test-NoWarnings
