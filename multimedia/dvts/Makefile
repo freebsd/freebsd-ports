@@ -7,13 +7,13 @@
 
 PORTNAME=	dvts
 PORTVERSION=	1.0a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.sfc.wide.ad.jp/DVTS/software/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 PATCH_SITES=	http://people.freebsd.org/~simokawa/firewire/
-PATCHFILES=	dvts-patch-20030511
+PATCHFILES=	dvts-patch-20030512
 PATCH_DIST_STRIP=	-p4
 
 MAINTAINER=	simokawa@FreeBSD.org
