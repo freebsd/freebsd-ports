@@ -32,6 +32,12 @@ WRKSRC=		${WRKDIR}/egg-4.0.6+0.20020909cvs.orig
 ELISPDIR=	${PREFIX}/${EMACS_LIBDIR_WITH_VER}/site-lisp
 PLIST_SUB=	ELISPDIR="${EMACS_LIBDIR_WITH_VER}/site-lisp"
 
+.if ${EMACS_PORT_NAME} == emacs21
+PLIST_SUB+=	HAS_JISX0213=""
+.else
+PLIST_SUB+=	HAS_JISX0213="@comment "
+.endif
+
 pre-configure:
 	@${REINPLACE_CMD} -e 's|emacs/site-lisp|${EMACS_NAME}/${EMACS_VER}/site-lisp|g' \
 	    ${WRKSRC}/configure
