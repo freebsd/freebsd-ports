@@ -7,6 +7,8 @@
 
 COMMENT=	ASCII Japanese pTeX based on LaTeX-209
 
+BROKEN=		"Does not compile"
+
 BATCH_TEX=	ASCII
 
 MANUAL_PACKAGE_BUILD=	incompatible with other versions of jtex-*

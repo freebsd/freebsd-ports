@@ -7,6 +7,8 @@
 
 COMMENT=	NTT Japanese TeX based on LaTeX-209
 
+BROKEN=		"Does not build"
+
 BATCH_TEX=	NTT
 
 MANUAL_PACKAGE_BUILD=	incompatible with other versions of jtex-*

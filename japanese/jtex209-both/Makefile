@@ -20,6 +20,8 @@ DISTFILES=	jtex-${NTT_VERSION}.tar.gz \
 MAINTAINER=	mita@jp.FreeBSD.org
 COMMENT?=	Japanese TeX based on LaTeX-209 with both NTT and ASCII
 
+BROKEN=		"Does not compile"
+
 ASCII_VERSION=	1.7
 NTT_VERSION=	1.52
 
