@@ -1,5 +1,5 @@
 --- install.sh.orig	Thu Dec  6 12:19:52 2001
-+++ install.sh	Thu Dec  6 13:49:56 2001
++++ install.sh	Wed Jan  9 13:33:42 2002
 @@ -310,7 +310,16 @@
  	    mvv=''    # SunOS mv (no -v verbose option)
  	;;
@@ -31,7 +31,7 @@
 -    /usr/lib/realplay \\
 +    %%PREFIX%%/lib/opera/plugins \\
 +    %%PREFIX%%/Acrobat4/Browsers/intellinux \\
-+    %%PREFIX%%/java/linux-*jdk*/jre/plugin/i386/ns4 \\
++    %%PREFIX%%/linux-*jdk*/jre/plugin/i386/ns4 \\
      \"\${HOME}/.netscape/plugins\" \\
 -    /opt/netscape/plugins \\
 -    /usr/lib/netscape/plugins \\
