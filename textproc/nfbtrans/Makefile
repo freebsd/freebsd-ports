@@ -1,28 +1,23 @@
 # New ports collection makefile for:	nfbtrans
-# Version required:		7.50.2
+# Version required:		7.53
 # Date created:			30 Aug 1998
 # Whom:				Masafumi NAKANE <max@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	nfbtr750
-PKGNAME=	nfbtrans-7.50.2
+DISTNAME=	nfbtr753
+PKGNAME=	nfbtrans-7.53
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.netcom.com/pub/in/inge/
 EXTRACT_SUFX=	.zip
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} nfb7502.zip
 
 MAINTAINER=	max@FreeBSD.org
 
-BROKEN="fetch, nfb7507 is the latest"
-
-BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-
 RESTRICTED=	"Unclear copyright status"
-EXTRACT_CMD=	unzip
+
+USE_ZIP=	yes
 EXTRACT_BEFORE_ARGS=	-q -a -L -o
-EXTRACT_AFTER_ARGS=	# empty
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	freebsd
 MAKEFILE=	makefile
