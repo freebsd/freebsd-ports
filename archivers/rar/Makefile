@@ -4,7 +4,7 @@
 # Date created:         15 May 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.9 1998/09/23 00:59:38 steve Exp $
+# $Id: Makefile,v 1.10 1998/11/14 09:43:01 asami Exp $
 #
 
 DISTNAME=       rarbsd
@@ -28,7 +28,7 @@ STRIP=
 .endif
 
 post-fetch:
-	chmod a+x ${DISTDIR}/${DISTFILES}
+	@chmod a+x ${DISTDIR}/${DISTFILES}
 
 do-build:
 	cd ${WRKSRC} && \
