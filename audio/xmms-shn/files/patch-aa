@@ -1,0 +1,201 @@
+--- aclocal.m4.orig	Thu Nov  2 15:08:01 2000
++++ aclocal.m4	Thu Nov  2 15:09:33 2000
+@@ -494,11 +494,11 @@
+ 
+ dnl AM_PATH_GLIB([MINIMUM-VERSION, [ACTION-IF-FOUND [, ACTION-IF-NOT-FOUND [, MODULES]]]])
+ dnl Test for GLIB, and define GLIB_CFLAGS and GLIB_LIBS, if "gmodule" or 
+-dnl gthread is specified in MODULES, pass to glib-config
++dnl gthread is specified in MODULES, pass to glib12-config
+ dnl
+ AC_DEFUN(AM_PATH_GLIB,
+ [dnl 
+-dnl Get the cflags and libraries from the glib-config script
++dnl Get the cflags and libraries from the glib12-config script
+ dnl
+ AC_ARG_WITH(glib-prefix,[  --with-glib-prefix=PFX   Prefix where GLIB is installed (optional)],
+             glib_config_prefix="$withval", glib_config_prefix="")
+@@ -510,13 +510,13 @@
+   if test x$glib_config_exec_prefix != x ; then
+      glib_config_args="$glib_config_args --exec-prefix=$glib_config_exec_prefix"
+      if test x${GLIB_CONFIG+set} != xset ; then
+-        GLIB_CONFIG=$glib_config_exec_prefix/bin/glib-config
++        GLIB_CONFIG=$glib_config_exec_prefix/bin/glib12-config
+      fi
+   fi
+   if test x$glib_config_prefix != x ; then
+      glib_config_args="$glib_config_args --prefix=$glib_config_prefix"
+      if test x${GLIB_CONFIG+set} != xset ; then
+-        GLIB_CONFIG=$glib_config_prefix/bin/glib-config
++        GLIB_CONFIG=$glib_config_prefix/bin/glib12-config
+      fi
+   fi
+ 
+@@ -532,7 +532,7 @@
+       esac
+   done
+ 
+-  AC_PATH_PROG(GLIB_CONFIG, glib-config, no)
++  AC_PATH_PROG(GLIB_CONFIG, glib12-config, no)
+   min_glib_version=ifelse([$1], ,0.99.7,$1)
+   AC_MSG_CHECKING(for GLIB - version >= $min_glib_version)
+   no_glib=""
+@@ -554,7 +554,7 @@
+       LIBS="$GLIB_LIBS $LIBS"
+ dnl
+ dnl Now check if the installed GLIB is sufficiently new. (Also sanity
+-dnl checks the results of glib-config to some extent
++dnl checks the results of glib12-config to some extent
+ dnl
+       rm -f conf.glibtest
+       AC_TRY_RUN([
+@@ -581,16 +581,16 @@
+       (glib_minor_version != $glib_config_minor_version) ||
+       (glib_micro_version != $glib_config_micro_version))
+     {
+-      printf("\n*** 'glib-config --version' returned %d.%d.%d, but GLIB (%d.%d.%d)\n", 
++      printf("\n*** 'glib12-config --version' returned %d.%d.%d, but GLIB (%d.%d.%d)\n", 
+              $glib_config_major_version, $glib_config_minor_version, $glib_config_micro_version,
+              glib_major_version, glib_minor_version, glib_micro_version);
+-      printf ("*** was found! If glib-config was correct, then it is best\n");
++      printf ("*** was found! If glib12-config was correct, then it is best\n");
+       printf ("*** to remove the old version of GLIB. You may also be able to fix the error\n");
+       printf("*** by modifying your LD_LIBRARY_PATH enviroment variable, or by editing\n");
+       printf("*** /etc/ld.so.conf. Make sure you have run ldconfig if that is\n");
+       printf("*** required on your system.\n");
+-      printf("*** If glib-config was wrong, set the environment variable GLIB_CONFIG\n");
+-      printf("*** to point to the correct copy of glib-config, and remove the file config.cache\n");
++      printf("*** If glib12-config was wrong, set the environment variable GLIB_CONFIG\n");
++      printf("*** to point to the correct copy of glib12-config, and remove the file config.cache\n");
+       printf("*** before re-running configure\n");
+     } 
+   else if ((glib_major_version != GLIB_MAJOR_VERSION) ||
+@@ -619,10 +619,10 @@
+         printf("*** GLIB is always available from ftp://ftp.gtk.org.\n");
+         printf("***\n");
+         printf("*** If you have already installed a sufficiently new version, this error\n");
+-        printf("*** probably means that the wrong copy of the glib-config shell script is\n");
++        printf("*** probably means that the wrong copy of the glib12-config shell script is\n");
+         printf("*** being found. The easiest way to fix this is to remove the old version\n");
+         printf("*** of GLIB, but you can also set the GLIB_CONFIG environment to point to the\n");
+-        printf("*** correct copy of glib-config. (In this case, you will have to\n");
++        printf("*** correct copy of glib12-config. (In this case, you will have to\n");
+         printf("*** modify your LD_LIBRARY_PATH enviroment variable, or edit /etc/ld.so.conf\n");
+         printf("*** so that the correct libraries are found at run-time))\n");
+       }
+@@ -640,10 +640,10 @@
+   else
+      AC_MSG_RESULT(no)
+      if test "$GLIB_CONFIG" = "no" ; then
+-       echo "*** The glib-config script installed by GLIB could not be found"
++       echo "*** The glib12-config script installed by GLIB could not be found"
+        echo "*** If GLIB was installed in PREFIX, make sure PREFIX/bin is in"
+        echo "*** your path, or set the GLIB_CONFIG environment variable to the"
+-       echo "*** full path to glib-config."
++       echo "*** full path to glib12-config."
+      else
+        if test -f conf.glibtest ; then
+         :
+@@ -672,7 +672,7 @@
+         [ echo "*** The test program failed to compile or link. See the file config.log for the"
+           echo "*** exact error that occured. This usually means GLIB was incorrectly installed"
+           echo "*** or that you have moved GLIB since it was installed. In the latter case, you"
+-          echo "*** may want to edit the glib-config script: $GLIB_CONFIG" ])
++          echo "*** may want to edit the glib12-config script: $GLIB_CONFIG" ])
+           CFLAGS="$ac_save_CFLAGS"
+           LIBS="$ac_save_LIBS"
+        fi
+@@ -694,7 +694,7 @@
+ dnl
+ AC_DEFUN(AM_PATH_GTK,
+ [dnl 
+-dnl Get the cflags and libraries from the gtk-config script
++dnl Get the cflags and libraries from the gtk12-config script
+ dnl
+ AC_ARG_WITH(gtk-prefix,[  --with-gtk-prefix=PFX   Prefix where GTK is installed (optional)],
+             gtk_config_prefix="$withval", gtk_config_prefix="")
+@@ -715,17 +715,17 @@
+   if test x$gtk_config_exec_prefix != x ; then
+      gtk_config_args="$gtk_config_args --exec-prefix=$gtk_config_exec_prefix"
+      if test x${GTK_CONFIG+set} != xset ; then
+-        GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk-config
++        GTK_CONFIG=$gtk_config_exec_prefix/bin/gtk12-config
+      fi
+   fi
+   if test x$gtk_config_prefix != x ; then
+      gtk_config_args="$gtk_config_args --prefix=$gtk_config_prefix"
+      if test x${GTK_CONFIG+set} != xset ; then
+-        GTK_CONFIG=$gtk_config_prefix/bin/gtk-config
++        GTK_CONFIG=$gtk_config_prefix/bin/gtk12-config
+      fi
+   fi
+ 
+-  AC_PATH_PROG(GTK_CONFIG, gtk-config, no)
++  AC_PATH_PROG(GTK_CONFIG, gtk12-config, no)
+   min_gtk_version=ifelse([$1], ,0.99.7,$1)
+   AC_MSG_CHECKING(for GTK - version >= $min_gtk_version)
+   no_gtk=""
+@@ -747,7 +747,7 @@
+       LIBS="$GTK_LIBS $LIBS"
+ dnl
+ dnl Now check if the installed GTK is sufficiently new. (Also sanity
+-dnl checks the results of gtk-config to some extent
++dnl checks the results of gtk12-config to some extent
+ dnl
+       rm -f conf.gtktest
+       AC_TRY_RUN([
+@@ -774,16 +774,16 @@
+       (gtk_minor_version != $gtk_config_minor_version) ||
+       (gtk_micro_version != $gtk_config_micro_version))
+     {
+-      printf("\n*** 'gtk-config --version' returned %d.%d.%d, but GTK+ (%d.%d.%d)\n", 
++      printf("\n*** 'gtk12-config --version' returned %d.%d.%d, but GTK+ (%d.%d.%d)\n", 
+              $gtk_config_major_version, $gtk_config_minor_version, $gtk_config_micro_version,
+              gtk_major_version, gtk_minor_version, gtk_micro_version);
+-      printf ("*** was found! If gtk-config was correct, then it is best\n");
++      printf ("*** was found! If gtk12-config was correct, then it is best\n");
+       printf ("*** to remove the old version of GTK+. You may also be able to fix the error\n");
+       printf("*** by modifying your LD_LIBRARY_PATH enviroment variable, or by editing\n");
+       printf("*** /etc/ld.so.conf. Make sure you have run ldconfig if that is\n");
+       printf("*** required on your system.\n");
+-      printf("*** If gtk-config was wrong, set the environment variable GTK_CONFIG\n");
+-      printf("*** to point to the correct copy of gtk-config, and remove the file config.cache\n");
++      printf("*** If gtk12-config was wrong, set the environment variable GTK_CONFIG\n");
++      printf("*** to point to the correct copy of gtk12-config, and remove the file config.cache\n");
+       printf("*** before re-running configure\n");
+     } 
+ #if defined (GTK_MAJOR_VERSION) && defined (GTK_MINOR_VERSION) && defined (GTK_MICRO_VERSION)
+@@ -814,10 +814,10 @@
+         printf("*** GTK+ is always available from ftp://ftp.gtk.org.\n");
+         printf("***\n");
+         printf("*** If you have already installed a sufficiently new version, this error\n");
+-        printf("*** probably means that the wrong copy of the gtk-config shell script is\n");
++        printf("*** probably means that the wrong copy of the gtk12-config shell script is\n");
+         printf("*** being found. The easiest way to fix this is to remove the old version\n");
+         printf("*** of GTK+, but you can also set the GTK_CONFIG environment to point to the\n");
+-        printf("*** correct copy of gtk-config. (In this case, you will have to\n");
++        printf("*** correct copy of gtk12-config. (In this case, you will have to\n");
+         printf("*** modify your LD_LIBRARY_PATH enviroment variable, or edit /etc/ld.so.conf\n");
+         printf("*** so that the correct libraries are found at run-time))\n");
+       }
+@@ -835,10 +835,10 @@
+   else
+      AC_MSG_RESULT(no)
+      if test "$GTK_CONFIG" = "no" ; then
+-       echo "*** The gtk-config script installed by GTK could not be found"
++       echo "*** The gtk12-config script installed by GTK could not be found"
+        echo "*** If GTK was installed in PREFIX, make sure PREFIX/bin is in"
+        echo "*** your path, or set the GTK_CONFIG environment variable to the"
+-       echo "*** full path to gtk-config."
++       echo "*** full path to gtk12-config."
+      else
+        if test -f conf.gtktest ; then
+         :
+@@ -867,7 +867,7 @@
+         [ echo "*** The test program failed to compile or link. See the file config.log for the"
+           echo "*** exact error that occured. This usually means GTK was incorrectly installed"
+           echo "*** or that you have moved GTK since it was installed. In the latter case, you"
+-          echo "*** may want to edit the gtk-config script: $GTK_CONFIG" ])
++          echo "*** may want to edit the gtk12-config script: $GTK_CONFIG" ])
+           CFLAGS="$ac_save_CFLAGS"
+           LIBS="$ac_save_LIBS"
+        fi
