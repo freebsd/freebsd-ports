@@ -8,12 +8,7 @@
 PORTNAME=	mod_python
 PORTVERSION=	3.0.3
 CATEGORIES=	www python
-MASTER_SITES=	http://www.apache.org/dist/httpd/%SUBDIR%/ \
-		http://apache.mirrorcentral.com/dist/httpd/%SUBDIR%/ \
-		http://apache.missouri.edu/dist/httpd/%SUBDIR%/ \
-		http://ftp.epix.net/apache/dist/httpd/%SUBDIR%/ \
-		ftp://ftp.digex.net/pub/packages/network/apache/httpd/%SUBDIR%/ \
-		ftp://ftp.cuckoo.com/pub/mirrors/apache/dist/httpd/%SUBDIR%/
+MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD}
 MASTER_SITE_SUBDIR=	modpython
 EXTRACT_SUFX=	.tgz
 
