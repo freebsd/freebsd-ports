@@ -27,16 +27,6 @@ USE_LIBTOOL_VER=13
 CONFLICTS=	libshout-1.0.7
 USE_REINPLACE=	yes
 
-.include <bsd.port.pre.mk>
-
-## Megacrude hack to make the shared lib link against libc_r on -STABLE.
-## If anybody finds a way to do it with -pthread, let me know.
-
-.if ${OSVERSION} < 500016
-CONFIGURE_ENV=  CFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-lc_r -L${LOCALBASE}/lib"
-.endif
-
 pre-configure:
 	@ ${REINPLACE_CMD} -e "s|-ffast-math||g" ${WRKSRC}/configure
 
@@ -44,4 +34,4 @@ post-configure:
 	@ ${REINPLACE_CMD} -e "s|pkgconfigdir =.*|pkgconfigdir = ${PREFIX}/libdata/pkgconfig|g" \
 		${WRKSRC}/Makefile
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
