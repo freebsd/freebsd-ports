@@ -1,24 +1,20 @@
---- Makefile.orig	Sun Nov 14 16:12:47 2004
-+++ Makefile	Sun Nov 21 13:39:35 2004
-@@ -3,11 +3,11 @@
- DESTDIR = ${PREFIX}
+--- Makefile.orig	Sun Dec  5 10:03:38 2004
++++ Makefile	Sun Dec  5 10:04:18 2004
+@@ -2,7 +2,7 @@
+ PREFIX := /usr/local
  
  # optimization cflags
--CFLAGS = -O2 -Wall -g `pkg-config gdk-2.0 gdk-pixbuf-2.0  --cflags` -DDESTDIR=\"$(DESTDIR)\"
-+CFLAGS += `pkg-config --cflags gtk+-2.0` -DDESTDIR=\"$(DESTDIR)\"
+-CFLAGS += -O2 -Wall -g `pkg-config gdk-2.0 gdk-pixbuf-2.0  --cflags` -DPREFIX=\"$(PREFIX)\"
++CFLAGS += -Wall `pkg-config gdk-2.0 gdk-pixbuf-2.0  --cflags` -DPREFIX=\"$(PREFIX)\"
  
  OBJS = hot-babe.o loader.o
  CC = gcc
--LIBS = `pkg-config gdk-2.0 gdk-pixbuf-2.0  --libs`
-+LIBS = `pkg-config --libs gtk+-2.0`
- INSTALL = -m 755
+@@ -23,8 +23,6 @@
+ 	install -m 0755 hot-babe $(DESTDIR)$(PREFIX)/bin
+ 	install -d $(DESTDIR)$(PREFIX)/share/hot-babe/hb01
+ 	install -m 0644 hb01/* $(DESTDIR)$(PREFIX)/share/hot-babe/hb01
+-	install -d $(DESTDIR)$(PREFIX)/share/doc/hot-babe
+-	install -m 0644 $(DOC) $(DESTDIR)$(PREFIX)/share/doc/hot-babe
+ 	install -d $(DESTDIR)$(PREFIX)/share/man/man1
+ 	install -m 0644 hot-babe.1 $(DESTDIR)$(PREFIX)/share/man/man1
  
- DOC = ChangeLog NEWS TODO LICENSE CONTRIBUTORS copyright
-@@ -26,7 +26,6 @@
- 	install -d $(DESTDIR)/share/hot-babe/hb01
- 	install $(INSTALL) hb01/* $(DESTDIR)/share/hot-babe/hb01
- 	install -d $(DESTDIR)/share/doc/hot-babe
--	install $(INSTALL) $(DOC) $(DESTDIR)/share/doc/hot-babe
- 
- uninstall:
- 	rm -f $(DESTDIR)/bin/hot-babe

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hot-babe
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://dindinx.net/hotbabe/downloads/
 
@@ -17,21 +17,16 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 MAKE_ARGS+=	PREFIX="${PREFIX}" CC="${CC}"
 USE_GNOME=	gtk20
-USE_REINPLACE=	yes
 
 MAN1=	hot-babe.1
 
-PORTDOCS=	ChangeLog NEWS TODO LICENSE CONTRIBUTORS copyright
+PORTDOCS=	ChangeLog NEWS TODO LICENSE CONTRIBUTORS copyright config.example
 
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Warning! This port contains some adults only content."
 	@${ECHO_MSG} "You might hit Ctrl-C to abort."
 	@${ECHO_MSG}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|gtk-config|${GTK_CONFIG}|g;s|gdk-pixbuf-config|${GDK_PIXBUF_CONFIG}|g' \
-		${WRKSRC}/Makefile
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/hot-babe.1 ${PREFIX}/man/man1
