@@ -451,6 +451,7 @@
     SUBDIR += trafd
     SUBDIR += trafshow
     SUBDIR += tramp
+    SUBDIR += tramp-emacs20
     SUBDIR += tridiavnc
     SUBDIR += ttcp
     SUBDIR += ttt
