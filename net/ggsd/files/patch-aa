@@ -3,8 +3,9 @@
 @@ -1,5 +1,6 @@
  CC=gcc
 -CFLAGS=-Wall -O -DUSE_GUI `gtk-config --cflags` -DVERSION=\"0.1\"
+-LIBS=`gtk-config --libs`
 +CFLAGS?=-O
-+CFLAGS+=-Wall -DUSE_GUI `gtk-config --cflags` -DVERSION=\"0.1\"
- LIBS=`gtk-config --libs`
++CFLAGS+=-Wall -DUSE_GUI `gtk11-config --cflags` -DVERSION=\"0.1\"
++LIBS=`gtk11-config --libs`
  
  all:
