@@ -1,0 +1,11 @@
+--- ./diacanvas/diadynelement.c.orig	Sun Oct 20 14:48:30 2002
++++ ./diacanvas/diadynelement.c	Sun Oct 20 14:48:36 2002
+@@ -276,7 +276,7 @@
+ }
+ 
+ 
+-#ifdef 0
++#if 0
+ /* Find a point on the border of the object and create a connectionpoint
+  * there.
+  */
