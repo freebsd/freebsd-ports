@@ -1,15 +1,15 @@
 # New ports collection makefile for:	MicroEmacs
-# Version required:     4.0
 # Date created:         16 Jan 1995
 # Whom:                 Thomas Gellekum <tg@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ue400dev
-PKGNAME=	uemacs-4.0
+PORTNAME=	uemacs
+PORTVERSION=	4.0
 CATEGORIES=	editors
 MASTER_SITES=	ftp://aquest.com/pub/uemacs400/disk2/
+DISTNAME=	ue400dev
 
 MAINTAINER=	ports@FreeBSD.org
 

@@ -1,15 +1,15 @@
 # New ports collection makefile for:    sam
-# Version required:     4.3
 # Date created:         Sun Aug 13 12:36:14 CDT 1995
 # Whom:                 erich@rrnet.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=	sam
-PKGNAME=	sam-4.3
+PORTNAME=	sam
+PORTVERSION=	4.3
 CATEGORIES=	editors plan9
 MASTER_SITES=	ftp://ftp.ecf.toronto.edu/pub/plan9/matty/
+DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.msg.gz
 
 MAINTAINER=	erich@FreeBSD.org

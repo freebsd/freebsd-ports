@@ -1,12 +1,12 @@
 # New ports collection makefile for:	LEIM for emacs20
-# Version required:	20.6
 # Date created:		10 September 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	leim-20.6
+PORTNAME=	leim
+PORTVERSION=	20.6
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs

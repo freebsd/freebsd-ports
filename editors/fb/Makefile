@@ -1,15 +1,15 @@
 # New ports collection makefile for:	fb
-# Version required:			1.5
 # Date created:				Oct 15, 1999
 # Whom:					Mikhail Teterin
 #
 # $FreeBSD$
 #
 
-DISTNAME=	fb
-PKGNAME=	fb-1.5
+PORTNAME=	fb
+PORTVERSION=	1.5
 CATEGORIES= 	editors
 MASTER_SITES=	http://home.MHO.net/JSwaby/
+DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	_tar.gz
 
 MAINTAINER=	mi@aldan.algebra.com

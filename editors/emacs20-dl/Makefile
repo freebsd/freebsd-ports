@@ -1,16 +1,16 @@
 # New ports collection makefile for:	GNU emacs with dl
-# Version required:	20.6
 # Date created:		10 October 1998
 # Whom:			shige
 #
 # $FreeBSD$
 #
 
-DISTNAME=	emacs-20.6
-PKGNAME=	emacs-dl-20.6
+PORTNAME=	emacs-dl
+PORTVERSION=	20.6
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	emacs
+DISTNAME=	emacs-${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.m17n.org/pub/mule/dynamic-loading/ \
 		http://www.etl.go.jp/~tomo/comp/emacsen/

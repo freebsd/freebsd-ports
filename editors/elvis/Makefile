@@ -1,17 +1,17 @@
 # New ports collection makefile for:	elvis
-# Version required:	2.1.4
 # Date created:		1999-09-01
 # Whom:			Christian Weisgerber <naddy@unix-ag.uni-kl.de>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	elvis-2.1_4
-PKGNAME=	elvis-2.1.4
+PORTNAME=	elvis
+PORTVERSION=	2.1.4
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.cs.pdx.edu/pub/elvis/ \
 		ftp://ftp.false.com/pub/elvis/ \
 		ftp://ftp.fh-wedel.de/pub/elvis/
+DISTNAME=	${PORTNAME}-2.1_4
 
 MAINTAINER=	ports@FreeBSD.org
 

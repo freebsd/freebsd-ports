@@ -1,12 +1,12 @@
 # New ports collection makefile for:	 cooledit
-# Version required:	3.11.3
 # Date created:		18 November 1997
 # Whom:			brett@peloton.physics.montana.edu
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cooledit-3.13.2
+PORTNAME=	cooledit
+PORTVERSION=	3.13.2
 CATEGORIES=	editors
 MASTER_SITES= 	${MASTER_SITE_SUNSITE} \
 		http://www.netins.net/showcase/Comput-IT/cooledit/src/

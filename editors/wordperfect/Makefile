@@ -1,5 +1,4 @@
 # ports collection makefile for:	wordperfect
-# Version required:			8.0
 # Date created:				1998-Dec-10
 # Whom:					dugsong@OpenBSD.ORG
 #					msmith@freebsd.org
@@ -7,10 +6,11 @@
 #
 # $FreeBSD$
 
-DISTNAME=	GUILG00
-PKGNAME=	wordperfect-8.0
+PORTNAME=	wordperfect
+PORTVERSION=	8.0
 CATEGORIES=     editors linux
 MASTER_SITES=	
+DISTNAME=	GUILG00
 EXTRACT_SUFX=	.GZ
 
 MAINTAINER=	msmith@freebsd.org

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	textedit
-# Version required:	1.0
 # Date created:		3 January 1998
 # Whom:			jraynard
 #
 # $FreeBSD$
 #
 
-DISTNAME=	textedit-1.0
+PORTNAME=	textedit
+PORTVERSION=	1.0
 CATEGORIES=	editors
 MASTER_SITES=	http://people.FreeBSD.org/~fenner/distfiles/
 

@@ -1,13 +1,12 @@
 # New ports collection makefile for:	thot
-# Version required:	2.1e
 # Date created:		1 Aug 1997
 # Whom:			Pedro Giffuni (orig)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	thoteditor-src-2.1e
-PKGNAME=	thoteditor-2.1
+PORTNAME=	thoteditor
+PORTVERSION=	2.1e
 CATEGORIES=	editors www
 MASTER_SITES=	ftp://ftp.inrialpes.fr/pub/opera/sources/thot/ \
 		${MASTER_SITE_SUNSITE} \
@@ -16,6 +15,7 @@ MASTER_SITES=	ftp://ftp.inrialpes.fr/pub/opera/sources/thot/ \
 		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/editors/opera.inrialpes.fr/sources/thot/ \
 		ftp://ftp.agix.net/pub/infosystems/www/clients/amaya/thot/
 MASTER_SITE_SUBDIR=	apps/editors/X/thot
+DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	chuckr@FreeBSD.org
 

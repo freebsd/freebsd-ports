@@ -1,12 +1,12 @@
 # New ports collection makefile for:	 gnotepad+
-# Version required:	1.1.4
 # Date created:		08-March-1999
 # Whom:			brett@peloton.physics.montana.edu
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gnotepad+-1.1.4
+PORTNAME=	gnotepad+
+PORTVERSION=	1.1.4
 CATEGORIES=	editors www
 MASTER_SITES=	http://ack.netpedia.net/gnp/
 

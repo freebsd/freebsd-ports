@@ -1,5 +1,4 @@
 # New ports collection makefile for:	psgml for emacs20
-# Version required:	1.1.6
 # Date created:		23 January 1999
 # Whom:			shige
 #

@@ -1,16 +1,16 @@
 # New ports collection makefile for:	xed
-# Version required:	1.3
 # Date created:		28 Jul 1996
 # Whom:			shanee
 #
 # $FreeBSD$
 #
 
-DISTNAME=	xed1.3
-PKGNAME=	xed-1.3
+PORTNAME=	xed
+PORTVERSION=	1.3
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	editors
+DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	shanee@augusta.de

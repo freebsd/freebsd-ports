@@ -1,16 +1,16 @@
 # New ports collection makefile for:	biew
-# Version required:	5.0.1
 # Date created:		04 February 2000
 # Whom:			Michael Vasilenko <acid@stu.cn.ua>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	biew-501
-PKGNAME=	biew-5.01
+PORTNAME=	biew
+PORTVERSION=	5.01
 CATEGORIES=	editors
 MASTER_SITES=	ftp://biew.sourceforge.net/pub/biew/5.x/src/ \
 		http://download.sourceforge.net/biew/
+DISTNAME=	${PORTNAME}-501
 
 MAINTAINER=	ports@FreeBSD.org
 

@@ -1,15 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  vim
-# Version required: 0.0
 # Date created:			  Sat June 29, 1996
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #
 # $FreeBSD$
 #
 
-PKGVER=		5.6.12
-DISTNAME=	vim-5.6
-PKGNAME?=	vim-${PKGVER}
+PORTNAME?=	vim
+PORTVERSION=	5.6.12
 CATEGORIES=	editors
 MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://ftp.nuxi.com/pub/vim/unix/ \
@@ -17,6 +15,7 @@ MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
 		ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unix/  \
 		ftp://ftp.is.co.za/applications/editors/vim/  \
 		ftp://ftp.progsoc.uts.edu.au/pub/vim/
+DISTNAME=	vim-5.6
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX} ${DISTNAME}-rt${EXTRACT_SUFX}
 
 PATCH_SITES=	${MASTER_SITES:S/unix/patches/}

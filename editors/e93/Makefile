@@ -1,16 +1,16 @@
 # New ports collection makefile for:	e93
-# Version required:	1.2r7X
 # Date created:		21 June 1995
 # Whom:			Satoshi Asami (asami)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	e93-1.2r7X
-PKGNAME=	e93-1.2.7
+PORTNAME=	e93
+PORTVERSION=	1.2.7
 CATEGORIES=	editors tcl82
 MASTER_SITES=	${MASTER_SITE_XCONTRIB}
 MASTER_SITE_SUBDIR=	editors
+DISTNAME=	${PORTNAME}-1.2r7X
 
 MAINTAINER=	ports@FreeBSD.org
 

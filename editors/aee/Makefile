@@ -1,12 +1,12 @@
 # New ports collection makefile for:	aee
-# Version required:	2.2.1
 # Date created:		19 Aug 1999
 # Whom:			Kelly Yancey <kbyanc@posi.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	aee-2.2.1
+PORTNAME=	aee
+PORTVERSION=	2.2.1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.users.uswest.net/~hmahon/sources/ \
 		http://awwm.linuxberg.com/files/console/network/ \
