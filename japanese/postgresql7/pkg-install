@@ -1,18 +1,16 @@
 #! /bin/sh
 
-# $FreeBSD: /tmp/pcvs/ports/japanese/postgresql7/Attic/pkg-install,v 1.5 2000-11-03 09:34:11 knu Exp $
+# $FreeBSD: /tmp/pcvs/ports/japanese/postgresql7/Attic/pkg-install,v 1.6 2001-05-08 12:35:59 knu Exp $
 
 PATH=/bin:/usr/sbin
 
-if [ -z "${DB_DIR}" ]; then
-	DB_DIR=${PKG_PREFIX}/pgsql/data
-fi
+DB_DIR=${PKG_PREFIX}/pgsql
 
 case $2 in
-POST-INSTALL)
+PRE-INSTALL)
 	USER=pgsql
 	GROUP=${USER}
-	UID=89
+	UID=70
 	GID=${UID}
 
 	if pw group show "${GROUP}" 2>/dev/null; then
@@ -30,7 +28,7 @@ POST-INSTALL)
 		echo "You already have a user \"${USER}\", so I will use it."
 	else
 		if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
-			-d ${DB_DIR} -s /sbin/nologin -c "PostgreSQL Daemon"
+			-d ${DB_DIR} -c "PostgreSQL Daemon"
 		then
 			echo "Added user \"${USER}\"."
 		else
@@ -39,6 +37,10 @@ POST-INSTALL)
 		fi
 	fi
 
-	chown -R ${USER}.${GROUP} ${DB_DIR}
+	if ! [ -x ~pgsql ] ; then 
+		mkdir -p ${DB_DIR}
+		chown pgsql:pgsql ${DB_DIR}
+	fi
 	;;
+
 esac

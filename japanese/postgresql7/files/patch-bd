@@ -1,0 +1,11 @@
+--- ./configure.orig	Sat Apr 14 06:22:46 2001
++++ ./configure	Thu May  3 21:42:09 2001
+@@ -3053,7 +3053,7 @@
+ 
+ if test "$with_tk" = yes; then
+     # Extract the first word of "wish", so it can be a program name with args.
+-set dummy wish; ac_word=$2
++set dummy wish8.0jp; ac_word=$2
+ echo $ac_n "checking for $ac_word""... $ac_c" 1>&6
+ echo "configure:3059: checking for $ac_word" >&5
+ if eval "test \"`echo '$''{'ac_cv_path_WISH'+set}'`\" = set"; then

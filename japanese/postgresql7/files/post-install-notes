@@ -8,9 +8,15 @@ You may wish to subscribe to the PostgreSQL user-support mailing list.
 Send an e-mail to pgsql-questions-request@postgresql.org with the
 text "subscribe" in the message body.
 
-If you built PostgreSQL with TCL support, you can install the port
-"pgaccess" to get a TCL/TK based database frontend for database
-operations.
+If you built PostgreSQL with TCL/TK support, you can use the pgaccess
+utility to get a TCL/TK based database frontend for database
+operations. You do NOT need to install the pgaccess port separately.
 
-To start PostgreSQL, run the startup script:
-$PREFIX/etc/rc.d/pgsql.sh start
+If you built in the TCL support, you can load the Pg package into your
+TCL scripts as easily as ``package require Pgtcl''.
+
+If you built with Java support, add
+/usr/local/share/java/classes/postgresql.jar to your classpath.
+
+If you have many tables and many clients running, consider raising
+kern.maxfiles using sysctl(8).
