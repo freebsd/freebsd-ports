@@ -1,27 +1,22 @@
---- util/Makefile.in.orig	Mon Nov 18 06:03:43 2002
-+++ util/Makefile.in	Thu Nov 21 23:05:33 2002
-@@ -81,20 +81,20 @@
- regex_cmd = @regex_cmd@
+--- util/Makefile.in.orig	Tue Dec 10 11:33:13 2002
++++ util/Makefile.in	Tue Dec 10 11:33:30 2002
+@@ -94,8 +94,8 @@
  
  SUBDIRS = fbrun
+ INCLUDES = -I../src/FbTk/
 -bin_SCRIPTS = bsetbg fluxbox-generate_menu
 -bin_PROGRAMS = bsetroot
 +bin_SCRIPTS = fluxbox-generate_menu
-+bin_PROGRAMS = 
++bin_PROGRAMS =
  bsetroot_SOURCES = bsetroot.cc bsetroot.hh
  bsetroot_LDADD = ../src/BaseDisplay.o ../src/Timer.o ../src/Image.o ../src/i18n.o ../src/FbAtoms.o \
- 	../src/Color.o ../src/Texture.o ../src/StringUtil.o
- 
- 
- MAINTAINERCLEANFILES = Makefile.in
--EXTRA_DIST = bsetbg fluxbox-generate_menu
-+EXTRA_DIST = fluxbox-generate_menu
- subdir = util
+ 	../src/StringUtil.o ../src/FbTk/libFbTk.a
+@@ -107,7 +107,7 @@
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
  CONFIG_HEADER = $(top_builddir)/config.h
  CONFIG_CLEAN_FILES =
 -bin_PROGRAMS = bsetroot$(EXEEXT)
-+bin_PROGRAMS = 
++bin_PROGRAMS =
  PROGRAMS = $(bin_PROGRAMS)
  
  am_bsetroot_OBJECTS = bsetroot.$(OBJEXT)

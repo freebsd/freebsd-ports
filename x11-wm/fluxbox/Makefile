@@ -6,17 +6,15 @@
 #
 
 PORTNAME=	fluxbox
-PORTVERSION=	0.1.13
-PORTREVISION=	2
+PORTVERSION=	0.1.14
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-PATCH_SITES=	http://www.cse.unsw.edu.au/~simonb/
-PATCH_DIST_STRIP=	-p1
-PATCHFILES=	fluxbox.openoffice.patch fluxbox-0.1.13.aa2.patch
 .if defined(WITH_REMEMBER)
-PATCHFILES+=	fluxbox-remember-patch-0.1.13.gz
+PATCH_SITES=    http://www.bugfactory.org/~gav/fluxbox/
+PATCH_DIST_STRIP=   -p1
+PATCHFILES+=	remember-0.1.14.gz
 .endif
 
 MAINTAINER=	hendrik@scholz.net
@@ -34,7 +32,7 @@ USE_GNOMENG=	yes
 WANT_GNOME=	yes
 .if defined(WITH_REMEMBER)
 USE_GMAKE=	yes
-CONFIGURE_ENV=	AUTOMAKE="${AUTOMAKE}"
+CONFIGURE_ENV=	AUTOMAKE=automake14
 .endif
 CONFIGURE_ARGS=	--disable-newwmspec
 .if defined(WITH_KDE) || defined(PACKAGE_BUILDING)
