@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.209 1998/06/08 10:07:05 dburr Exp $
+# $Id: Makefile,v 1.210 1998/06/11 03:43:17 mph Exp $
 #
 
     SUBDIR += FWF
@@ -130,6 +130,7 @@
     SUBDIR += xview-clients
     SUBDIR += xview-config
     SUBDIR += xview-lib
+    SUBDIR += xwit
     SUBDIR += xzoom
 
 .include <bsd.port.subdir.mk>
