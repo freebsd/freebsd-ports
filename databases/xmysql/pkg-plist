@@ -1,4 +1,4 @@
 bin/xmysql
 include/X11/pixmaps/mysql.xpm
-lib/X11/xmysql-1.5/sqlhelp.txt
-@dirrm lib/X11/xmysql-1.5
+lib/X11/xmysql/sqlhelp.txt
+@dirrm lib/X11/xmysql
