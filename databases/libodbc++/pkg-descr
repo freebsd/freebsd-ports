@@ -1,0 +1,14 @@
+Libodbc++ aims to be a complete C++ development environment for data source
+(typically SQL database) access.  It exists in the form of a class library
+and a set of tools.  Libodbc++ currently provides a subset of the JDBC 2.0
+specification functionality.
+
+Libodbc++ runs on top of ODBC, i.e. it needs to be compiled with support for
+an ODBC driver manager.  It currently supports either iODBC or unixODBC.
+This port allows the user to select which driver manager to use via a
+build-time variable definition - see the comments in the Makefile for further
+details.
+
+WWW: http://orcane.net/freeodbc++/
+
+-- Johann Visagie <wjv@FreeBSD.org>

@@ -68,6 +68,7 @@
     SUBDIR += libgdamm
     SUBDIR += libgnomedb
     SUBDIR += libiodbc
+    SUBDIR += libodbc++
     SUBDIR += libsdb
     SUBDIR += libudbc
     SUBDIR += lsdb
