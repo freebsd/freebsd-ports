@@ -832,6 +832,7 @@ cmucl-extra	ports/lang/cmucl-extra
 cn2jp		ports/converters/cn2jp
 cnet		ports/net/cnet
 cnews		ports/news/cnews
+cnslock		ports/x11/cnslock
 coalesce	ports/biology/coalesce
 coco		ports/textproc/coco
 cocoon		ports/textproc/cocoon
