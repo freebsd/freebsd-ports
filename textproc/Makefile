@@ -54,7 +54,6 @@
     SUBDIR += sgmlformat
     SUBDIR += sgrep
     SUBDIR += sp
-    SUBDIR += tcs
     SUBDIR += texi2html
     SUBDIR += textutils
     SUBDIR += tth
