@@ -20,7 +20,7 @@ IPADIC_PORTDIR=	${PORTSDIR}/japanese/ipadic
 
 USE_PERL5_BUILD=	yes
 
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
 .include "${.CURDIR}/Makefile.common"

@@ -1,6 +1,6 @@
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/MeCab.pm
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MeCab/.packlist
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MeCab/MeCab.bs
-lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MeCab/MeCab.so
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/MeCab
+%%SITE_PERL%%/%%PERL_ARCH%%/MeCab.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MeCab/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MeCab/MeCab.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MeCab/MeCab.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MeCab
 %%PORTDOCS%%share/examples/mecab/test.pl

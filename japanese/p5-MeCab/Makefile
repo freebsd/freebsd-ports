@@ -8,13 +8,12 @@
 PORTNAME=	MeCab
 PORTVERSION=	${MECAB_PORTVERSION}
 CATEGORIES=	japanese textproc perl5
-MASTER_SITES=	# none
-DISTFILES=	# none
+MASTER_SITES=	http://cl.aist-nara.ac.jp/~taku-ku/software/mecab/bindings/
+DISTNAME=	${PORTNAME:L}-perl-${PORTVERSION}
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	MeCab library module for Perl5
 
-EXTRACT_DEPENDS=	${NONEXISTENT}:${MECAB_PORTDIR}:patch
 LIB_DEPENDS=	mecab.0:${MECAB_PORTDIR}
 
 PERL_CONFIGURE=	yes
@@ -24,10 +23,6 @@ PERL_CONFIGURE=	yes
 .include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
-
-do-extract:
-	${MKDIR} ${WRKDIR}
-	${LN} -fs `${MECAB_WRKSRC_CMD}`/perl ${WRKSRC}
 
 post-install:
 .if !defined(NOPORTDOCS)
