@@ -7,18 +7,15 @@
 #
 
 PORTNAME=	styx
-PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTVERSION=	1.6.1
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.speculate.de/styx/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scanner/parser generator
 
-BROKEN=		"Checksum mismatch"
-
-LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
-
+USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
@@ -36,9 +33,6 @@ post-install:
 	@${MKDIR} ${EXAMPLESDIR}
 	${TAR} -C ${WRKSRC} \
 		--exclude "*.in" --exclude "*Makefile*" -cf - spe pat | \
-			${TAR} -C ${EXAMPLESDIR} --unlink -xf -
-	${TAR} -C ${WRKSRC}/tutorial \
-		--exclude "*.in" --exclude "*Makefile*" -cf - . | \
 			${TAR} -C ${EXAMPLESDIR} --unlink -xf -
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
