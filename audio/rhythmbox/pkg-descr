@@ -1,12 +1,5 @@
-netRhythmbox is a branch of Rhythmbox focusing on feature completion and
-stability. Most interesting features in addition to the features of the
-main tree are:
+Rhythmbox is an integrated music management application, originally inspired by 
+Apple's iTunes.  It is free software, designed to work well under the GNOME 
+Desktop, and based on the powerful GStreamer media framework.
 
-	- Internet radio
-	- Playlist file (.pls) support
-	- Real error handling
-	- X OnScreen Display support
-	- A dynamic progress statusbar
-
-WWW: http://web.verbum.org/net-rhythmbox/
--- Hendrik Scholz <hendrik@scholz.net>
+WWW: http://web.rhythmbox.org/
