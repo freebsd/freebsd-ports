@@ -5496,6 +5496,7 @@ mew3-emacs20	ports/mail/mew3-emacs20
 mew3-xemacs21-mule	ports/mail/mew3-xemacs21-mule
 mftrace		ports/print/mftrace
 mg		ports/editors/mg
+mga_hal		ports/x11-servers/mga_hal
 mgapdesk	ports/x11/mgapdesk
 mgdiff		ports/textproc/mgdiff
 mgen		ports/net/mgen
