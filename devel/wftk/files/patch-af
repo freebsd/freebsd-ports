@@ -1,0 +1,11 @@
+--- uta/rect.h.orig	Sat Mar 31 05:25:30 2001
++++ uta/rect.h	Sat Mar 31 05:27:27 2001
+@@ -21,7 +21,7 @@
+ #ifndef _RECT_H
+ #define _RECT_H
+ 
+-#include <SDL/SDL.h>
++#include <SDL11/SDL.h>
+ 
+ #include "point.h"
+ 

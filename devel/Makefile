@@ -193,6 +193,7 @@
     SUBDIR += libtool
     SUBDIR += libunicode
     SUBDIR += libusb
+    SUBDIR += libuta
     SUBDIR += libxalloc
     SUBDIR += lincvs
     SUBDIR += linguist

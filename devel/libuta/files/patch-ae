@@ -1,0 +1,11 @@
+--- uta/mutex.h.orig	Sat Mar 31 05:25:05 2001
++++ uta/mutex.h	Sat Mar 31 05:26:54 2001
+@@ -22,7 +22,7 @@
+ #ifndef _MUTEX_H_
+ #define _MUTEX_H_
+ 
+-#include <SDL/SDL_mutex.h>
++#include <SDL11/SDL_mutex.h>
+ 
+ namespace uta {
+ 

@@ -1,0 +1,11 @@
+--- uta/sge_blib.h.orig	Sat Mar 31 05:44:18 2001
++++ uta/sge_blib.h	Sat Mar 31 05:38:40 2001
+@@ -18,7 +18,7 @@
+ #ifndef sge_blib_H
+ #define sge_blib_H
+ 
+-#include <SDL/SDL.h>
++#include <SDL11/SDL.h>
+ #include "sge_internal.h"
+ 
+ 

@@ -1,0 +1,21 @@
+--- configure.orig	Thu Apr  5 17:21:15 2001
++++ configure	Thu Apr  5 17:23:51 2001
+@@ -7,6 +7,9 @@
+ # This configure script is free software; the Free Software Foundation
+ # gives unlimited permission to copy, distribute and modify it.
+ 
++LIBS="$LIBS -L/usr/local/lib"
++
++
+ # Defaults:
+ ac_help=
+ ac_default_prefix=/usr/local
+@@ -4603,7 +4606,7 @@
+     no_sdl=yes
+   else
+     SDL_CFLAGS=`$SDL_CONFIG $sdlconf_args --cflags`
+-    SDL_LIBS=`$SDL_CONFIG $sdlconf_args --libs`
++    SDL_LIBS=`$SDL_CONFIG $sdlconf_args --libs | sed 's/-lXxf86vm -lXxf86dga -lXv //g'`
+ 
+     sdl_major_version=`$SDL_CONFIG $sdl_args --version | \
+            sed 's/\([0-9]*\).\([0-9]*\).\([0-9]*\)/\1/'`
