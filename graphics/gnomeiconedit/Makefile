@@ -13,8 +13,6 @@ DISTNAME=	gnome-iconedit-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BROKEN=		"Uses internals from devel/oaf that are no longer present"
-
 USE_GNOME=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
