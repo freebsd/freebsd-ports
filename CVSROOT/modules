@@ -1982,6 +1982,7 @@ gkrellscore	ports/misc/gkrellscore
 gkrellshoot	ports/misc/gkrellshoot
 gkrellweather	ports/misc/gkrellweather
 gkx86info	ports/misc/gkx86info
+gl-117		ports/games/gl-117
 glacier		ports/mail/glacier
 glade		ports/devel/glade
 glade--		ports/devel/glade--
