@@ -3,12 +3,12 @@
 # Date created:		Sa  12 Okt 1996 19:20:51 MET DST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.5 1996/11/17 08:44:47 obrien Exp $
+# $Id: Makefile,v 1.6 1997/04/03 15:38:54 andreas Exp $
 #
 
 DISTNAME=	lyx-0.10.7
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.via.ecp.fr/pub/lyx/beta_stable
+MASTER_SITES=	ftp://ftp.via.ecp.fr/pub/lyx/beta_stable/
 
 MAINTAINER=	andreas@klemm.gtn.com
 
