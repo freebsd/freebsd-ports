@@ -5,7 +5,9 @@ cyrus/bin/arbitron
 cyrus/bin/collectnews
 cyrus/bin/cyrquota
 cyrus/bin/deliver
+cyrus/bin/dump_deliverdb
 cyrus/bin/feedcyrus
+cyrus/bin/fud
 cyrus/bin/imapd
 cyrus/bin/pop3d
 cyrus/bin/reconstruct
