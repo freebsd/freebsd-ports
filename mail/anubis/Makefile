@@ -18,8 +18,7 @@
 ###########################################################################
 
 PORTNAME=	anubis
-PORTVERSION=	3.4.6
-PORTREVISION=	1
+PORTVERSION=	3.5.0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -70,8 +69,36 @@ CONFIGURE_ARGS+=	--with-tcp-wrappers
 MAN1=	anubis.1
 DOCS=	AUTHORS INSTALL NEWS README THANKS TODO
 
-pre-everything::
-	@${CAT} ${PKGMESSAGE}
+pre-fetch:
+	@${ECHO_MSG} ""
+.if defined(WITHOUT_OPENSSL)
+	@${ECHO_MSG} "Building Anubis without OpenSSL support"
+.else
+	@${ECHO_MSG} "Building Anubis with OpenSSL support (default)"
+	@${ECHO_MSG} "-- You could define WITHOUT_OPENSSL to disable OpenSSL support"
+.endif
+.if defined(WITHOUT_GPGME)
+	@${ECHO_MSG} "Building Anubis without GnuPG (GPGME library) support"
+.else
+	@${ECHO_MSG} "Building Anubis with GnuPG (GPGME library) support (default)"
+	@${ECHO_MSG} "-- You could define WITHOUT_GPGME to disable GPGME support"
+.endif
+.if defined(WITH_PCRE)
+	@${ECHO_MSG} "Building Anubis with PCRE library support"
+.else
+	@${ECHO_MSG} "You could define WITH_PCRE to build Anubis with PCRE support"
+.endif
+.if defined(WITH_PAM)
+	@${ECHO_MSG} "Building Anubis with PAM library support"
+.else
+	@${ECHO_MSG} "You could define WITH_PAM to build Anubis with PAM support"
+.endif
+.if defined(WITH_TCP_WRAPPERS)
+	@${ECHO_MSG} "Building Anubis with TCP wrappers support"
+.else
+	@${ECHO_MSG} "You could define WITH_TCP_WRAPPERS to build Anubis with TCP wrappers support"
+.endif
+	@${ECHO_MSG} ""
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc|${PREFIX}/etc|g" ${WRKSRC}/src/headers.h
