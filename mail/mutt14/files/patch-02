@@ -1,54 +1,76 @@
---- doc/Makefile.in.orig	Thu Nov 19 06:10:19 1998
-+++ doc/Makefile.in	Sat Dec 12 11:10:45 1998
-@@ -43,7 +43,7 @@
- DOCFILES = manual.txt
+--- doc/Makefile.in.orig	Wed Mar 29 11:42:49 2000
++++ doc/Makefile.in	Fri May 12 13:12:32 2000
+@@ -58,13 +58,16 @@
+ topsrcdir_DOCFILES = COPYRIGHT GPL INSTALL ChangeLog	\
+ 	README NEWS TODO README.SECURITY README.SSL README.UPGRADE
  
+-all: muttrc.man try-html try-txt
++all: muttrc.man try-html try-txt try-latin1
  
--all: mutt.man dotlock.man try-html try-txt
-+all: mutt.man dotlock.man try-html try-txt try-latin1
+ try-html: ../makedoc
+-	test -f manual.html || $(MAKE) manual.html || cp $(srcdir)/manual*.html ./
++	$(MAKE) manual.html || cp $(srcdir)/manual*.html ./
  
- complete: all html
- 
-@@ -57,19 +57,22 @@
- try-txt:
- 	-$(MAKE) manual.txt
- 
-+try-latin1:
-+	-$(MAKE) manual.latin1
+ try-txt: ../makedoc
+-	test -f manual.txt || $(MAKE) manual.txt || cp $(srcdir)/manual.txt ./
++	$(MAKE) manual.txt || cp $(srcdir)/manual.txt ./
 +
- html: manual.html
++try-latin1: 
++	$(MAKE) manual.latin1 || cp $(srcdir)/manual.latin1 ./
  
- install: dotlock.man mutt.man all
+ install: all
  	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(mandir)/man1
- 	$(INSTALL) -m 644 mutt.man $(DESTDIR)$(mandir)/man1/mutt.1
- 	$(INSTALL) -m 644 dotlock.man $(DESTDIR)$(mandir)/man1/mutt_dotlock.1
+@@ -73,18 +76,18 @@
+ 	$(INSTALL) -m 644 $(srcdir)/dotlock.man \
+ 		$(DESTDIR)$(mandir)/man1/mutt_dotlock.1
+ 	$(INSTALL) -m 644 muttrc.man $(DESTDIR)$(mandir)/man5/muttrc.5
 -	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)
--	for f in $(DOCFILES) ; do $(INSTALL) -m 644 $$f $(DESTDIR)$(docdir) ; done
--	for f in $(srcdir_DOCFILES) ; do $(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; done
--	for f in $(topsrcdir_DOCFILES) ; do $(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; done
--	if [ -f manual.html ] ; then \
--		$(MAKE) install-html ; \
--	fi
-+	#$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)
-+	#for f in $(DOCFILES) ; do $(INSTALL) -m 644 $$f $(DESTDIR)$(docdir) ; done
-+	#for f in $(srcdir_DOCFILES) ; do $(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; done
-+	#for f in $(topsrcdir_DOCFILES) ; do $(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; done
-+	#if [ -f manual.html ] ; then \
-+	#	$(MAKE) install-html ; \
-+	#fi
- 		
- install-html: html
- 	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/html
-@@ -84,7 +87,11 @@
- 	sgml2txt -c latin manual
+-	for f in $(srcdir_DOCFILES) ; do \
+-		$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
+-	done
+-	for f in $(topsrcdir_DOCFILES) ; do \
+-		$(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; \
+-	done
+-	$(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir) || true
+-	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/html
+-	for file in manual*.html ; do	\
+-		$(INSTALL) -m 644 $$file $(DESTDIR)$(docdir)/html/ || true ;\
+-	done
++	# $(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)
++	# for f in $(srcdir_DOCFILES) ; do \
++	# 	$(INSTALL) -m 644 $(srcdir)/$$f $(DESTDIR)$(docdir) ; \
++	# done
++	# for f in $(topsrcdir_DOCFILES) ; do \
++	# 	$(INSTALL) -m 644 $(top_srcdir)/$$f $(DESTDIR)$(docdir) ; \
++	# done
++	# $(INSTALL) -m 644 manual.txt $(DESTDIR)$(docdir) || true
++	# $(top_srcdir)/mkinstalldirs $(DESTDIR)$(docdir)/html
++	# for file in manual*.html ; do	\
++	# 	$(INSTALL) -m 644 $$file $(DESTDIR)$(docdir)/html/ || true ;\
++	# done
+ 
+ uninstall:
+ 	-rm -f $(DESTDIR)$(mandir)/man1/mutt.1
+@@ -93,14 +96,18 @@
+ 	-rm -rf $(DESTDIR)$(docdir)
+ 
+ manual.txt: manual.sgml
+-	if sgml2txt -c latin manual ; then \
+-		uniq < manual.txt | expand > _manual.txt ; \
+-		rm manual.txt ; \
++	if sgmlfmt -f ascii manual; then \
++		uniq < manual.ascii | expand > _manual.txt ; \
++		rm -f manual.txt manual.ascii; \
+ 		mv _manual.txt manual.txt ;\
+ 	fi
  
  manual.html: manual.sgml
--	sgml2html manual
-+	@# sgml2html manual
-+	sgmlfmt -f html manual
+-	sgml2html manual  || true
++	@# sgml2html manual  || true
++	sgmlfmt -f html manual  || true
 +
 +manual.latin1: manual.sgml
-+	sgmlfmt -f latin1 manual.sgml
++	sgmlfmt -f latin1 manual  || true
  
- clean: 
- 	rm -f *~ *.html *.orig *.rej *.man manual.sgml
+ manual.ps: manual.sgml
+ 	sgml2latex --output=ps manual || true

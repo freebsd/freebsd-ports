@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mutt
-PORTVERSION= 	1.0.1
+PORTVERSION= 	1.2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/  \
 		ftp://ftp.uib.no/pub/mutt/  \
@@ -18,6 +18,8 @@ MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/  \
 		ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/  \
 		ftp://ftp.iks-jena.de/pub/mitarb/lutz/crypt/software/pgp/mutt/
 DISTNAME=	${PKGNAME}i
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} charmaps-0.0.tar.gz
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 PATCH_SITES=	http://www.frmug.org/mutt/mutt/${PKGNAME:S/^mutt-//}/  \
 		http://www.math.fu-berlin.de/~leitner/mutt/${PKGNAME:S/^mutt-//}/  \
@@ -43,6 +45,9 @@ LIB_DEPENDS=	ncurses.4:${PORTSDIR}/devel/ncurses
 .elif defined(WITH_SLANG)
 LIB_DEPENDS=	slang.1:${PORTSDIR}/devel/libslang
 .endif
+.if defined(WITH_SSL)
+USE_OPENSSL=    RSA
+.endif
 .if defined(PACKAGE_BUILDING)
 RUN_DEPENDS+=	urlview:${PORTSDIR}/textproc/urlview
 .endif
@@ -52,21 +57,25 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS= --enable-pop --enable-imap --enable-flock --disable-fcntl  \
 		--with-sharedir=${PREFIX}/share/mutt \
-		--with-docdir=${PREFIX}/share/doc/mutt
+		--with-docdir=${PREFIX}/share/doc/mutt --with-charmaps
 .if defined(BATCH) || defined(WITH_SLANG)
 CONFIGURE_ARGS+=	--with-slang=${PREFIX}
 .elif defined(WITH_NCURSES_PORT)
 CONFIGURE_ARGS+=	--with-curses=${PREFIX}
 .endif
+.if defined(WITH_SSL)
+CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE}
+.endif
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i$//}
 MAN1=		mutt.1 mutt_dotlock.1
+MAN5=		muttrc.5
 
-post-patch:
-	uudecode -p ${FILESDIR}/ru.gmo.uu > ${WRKSRC}/po/ru.gmo
+pre-patch:
+	(cd ${WRKSRC}; ${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/charmaps-0.0.tar.gz)
 
 .if !defined(NOPORTDOCS)
 post-build:
-	${TOUCH} ${WRKSRC}/doc/mutt.man ${WRKSRC}/doc/manual.txt
+	${TOUCH} ${WRKSRC}/doc/mutt.man ${WRKSRC}/doc/manual.sgml
 	${PATCH} ${PATCH_ARGS} < ${FILESDIR}/patch-doc-ref
 	printf ",s|\$${PREFIX}|%s|g\nw\nq\n" ${PREFIX} | \
 		ed -s ${WRKSRC}/doc/mutt.man
@@ -86,8 +95,9 @@ post-install:
 	@cd ${WRKSRC}/doc ; ${INSTALL_MAN} manual.txt PGP-Notes.txt \
 		${PREFIX}/share/doc/mutt
 .if defined(BATCH)
+	${INSTALL_MAN} -d ${PREFIX}/share/doc/mutt/html
+	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/mutt/html
 	${INSTALL_MAN} ${WRKSRC}/doc/*.latin1 ${PREFIX}/share/doc/mutt
-	${INSTALL_MAN} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/mutt
 .endif
 	@cd ${WRKSRC}/contrib ; ${INSTALL_DATA} sample.muttrc Mush.rc Pine.rc \
 		${PREFIX}/share/doc/mutt
