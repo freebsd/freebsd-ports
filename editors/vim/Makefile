@@ -7,27 +7,26 @@
 #
 
 PORTNAME?=	vim
-PATCHLEVEL=	0
-PORTVERSION=	6.0.271.${PATCHLEVEL}
+PATCHLEVEL=	9
+PORTVERSION=	6.1.${PATCHLEVEL}
 PORTREVISION?=	0
 CATEGORIES?=	editors
-MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unstable/unix/ \
-		ftp://relay.nuxi.com/pub/vim/unstable/unix/ \
-		ftp://ftp.vim.org/pub/vim/unstable/unix/  \
-		ftp://ftp.is.co.za/applications/editors/vim/unstable/unix/  \
-		ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unstable/unix/  \
-		ftp://ftp.mirror.ac.uk/sites/ftp.vim.org/pub/vim/unstable/unix/ \
-		ftp://ftp.progsoc.uts.edu.au/pub/vim/unstable/unix/
-#DISTNAME=	vim-${PORTVERSION:C/\.[0-9]*$//}
-DISTNAME=	vim-6.1b
+MASTER_SITES=	ftp://nuxi.ucdavis.edu/pub/vim/unix/ \
+		ftp://relay.nuxi.com/pub/vim/unix/ \
+		ftp://ftp.vim.org/pub/vim/unix/  \
+		ftp://ftp.is.co.za/applications/editors/vim/unix/  \
+		ftp://ftp.prz.tu-berlin.de/pub/unix/editors/vim/unix/  \
+		ftp://ftp.mirror.ac.uk/sites/ftp.vim.org/pub/vim/unix/ \
+		ftp://ftp.progsoc.uts.edu.au/pub/vim/unix/
+DISTNAME=	vim-${PORTVERSION:C/\.[0-9]*$//}
 
 PATCH_SITES=	${MASTER_SITES:S/unix/patches/}
-#PATCHFILES!=    jot -s " " -w ${PORTVERSION:C/0\.271\.[0-9]*$//}1a.%03d  \
-#			${PATCHLEVEL} 1 ${PATCHLEVEL}
+PATCHFILES!=    jot -s " " -w ${PORTVERSION:C/\.[0-9]*$//}.%03d  \
+			${PATCHLEVEL} 1 ${PATCHLEVEL}
 #	bits to remove
-BADPATCHES=
+BADPATCHES= 002
 .for p in ${BADPATCHES}
-PATCHFILES:=	${PATCHFILES:N6.1b.${p}}
+PATCHFILES:=	${PATCHFILES:N6.1.${p}}
 .endfor
 
 MAINTAINER?=	obrien@FreeBSD.org
@@ -43,7 +42,7 @@ WITH_CSCOPE=	yes
 
 USE_BZIP2=	yes
 DIST_SUBDIR=	vim
-WRKSRC=		${WRKDIR}/vim${PORTVERSION:C/0\.271\.[0-9]*$//:S/.//g}1b/src
+WRKSRC=		${WRKDIR}/vim${PORTVERSION:C/\.[0-9]*$//:S/.//g}/src
 PATCH_DIST_ARGS=	-d ${WRKSRC:S/src$//} --forward --quiet -E ${PATCH_DIST_STRIP}
 # consider
 #PATCH_DIST_ARGS=	-t
@@ -128,10 +127,6 @@ MAKE_ARGS+=	CONF_OPT_PERL="--disable-perlinterp --disable-pythoninterp --disable
 # Until the bsd.gnome.mk people fix their damned file
 .if defined(WITH_GTK)
 USE_XLIB=	yes
-.endif
-.if defined(USE_XLIB)
-post-patch:
-	${PERL} -pi.orig -e 's/ X11 //g' ${WRKSRC}/link.sh
 .endif
 
 pre-build:
