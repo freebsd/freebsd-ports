@@ -362,6 +362,7 @@ MASTER_SITE_GNOME+=	\
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/gnome/&,} \
 	http://archive.progeny.com/GNOME/%SUBDIR%/ \
 	ftp://ftp.tuwien.ac.at/linux/gnome.org/%SUBDIR%/ \
+	http://farbror.acc.umu.se/pub/GNOME/%SUBDIR%/ \
 	http://ftp.gnome.org/pub/GNOME/%SUBDIR%/
 
 MASTER_SITE_GNU+=	\
