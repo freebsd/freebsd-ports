@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	9menu
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	x11-wm plan9
-MASTER_SITES=	ftp://ftp.comintern.ru/pub/unix/X11/plan9/ \
-		ftp://ftp.mathcs.emory.edu/pub/arnold/
-		
+MASTER_SITES=	ftp://quenix.dyndns.org/freebsd/ \
+		http://mitglied.lycos.de/buran/linux/soft/9menu/
 EXTRACT_SUFX=	.shar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	gagnon__s@videotron.ca
 COMMENT=	A simple menu patterened after plan9
 
-USE_XLIB=	yes
-NO_WRKSUBDIR=	yes
+USE_XLIB=		yes
 EXTRACT_CMD=		zcat
 EXTRACT_BEFORE_ARGS=
 EXTRACT_AFTER_ARGS=	|sh
+MAKEFILE=		Makefile.noimake
+ALL_TARGET=		9menu
 
 MAN1=		9menu.1
 MANCOMPRESSED=	yes
