@@ -32,6 +32,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/Ace.pm:
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	YES
+NO_LATEST_LINK=	"Unstable development version."
 
 .if defined(WITH_CORBA)
 WITH_CORBA_CLIENT=	YES
