@@ -1,10 +1,27 @@
 bin/atomix
 bin/atomixed
-share/gnome/atomix/levels/aethylen.atomix
-share/gnome/atomix/levels/ethane.atomix
+share/gnome/apps/Games/atomix.desktop
+share/gnome/atomix/levels/aceticacid.atomix
+share/gnome/atomix/levels/acetone.atomix
+share/gnome/atomix/levels/bonus1.atomix
+share/gnome/atomix/levels/bonus2.atomix
+share/gnome/atomix/levels/bonus3.atomix
+share/gnome/atomix/levels/buthanol.atomix
+share/gnome/atomix/levels/cyclo-buthane.atomix
+share/gnome/atomix/levels/dimethylether.atomix
+share/gnome/atomix/levels/ethan.atomix
+share/gnome/atomix/levels/ethanal.atomix
+share/gnome/atomix/levels/ethanol.atomix
+share/gnome/atomix/levels/ethylene.atomix
+share/gnome/atomix/levels/formaldeyd.atomix
+share/gnome/atomix/levels/glycerin.atomix
+share/gnome/atomix/levels/lactic-acid.atomix
 share/gnome/atomix/levels/methane.atomix
 share/gnome/atomix/levels/methanol.atomix
+share/gnome/atomix/levels/propanal.atomix
 share/gnome/atomix/levels/propylen.atomix
+share/gnome/atomix/levels/pyran.atomix
+share/gnome/atomix/levels/transbutylen.atomix
 share/gnome/atomix/levels/water.atomix
 share/gnome/atomix/themes/fabian/c.png
 share/gnome/atomix/themes/fabian/f.png
@@ -23,11 +40,23 @@ share/gnome/atomix/themes/fabian/link8.png
 share/gnome/atomix/themes/fabian/link9.png
 share/gnome/atomix/themes/fabian/n.png
 share/gnome/atomix/themes/fabian/o.png
+share/gnome/atomix/themes/fabian/selector.png
 share/gnome/atomix/themes/fabian/theme
 share/gnome/atomix/themes/fabian/wall1.png
 share/gnome/atomix/themes/fabian/wall2.png
 share/gnome/atomix/themes/fabian/wall3.png
 share/gnome/atomix/themes/fabian/wall4.png
+share/gnome/atomix/themes/fabonus/bonus1.png
+share/gnome/atomix/themes/fabonus/bonus2.png
+share/gnome/atomix/themes/fabonus/bonus3.png
+share/gnome/atomix/themes/fabonus/bonus4.png
+share/gnome/atomix/themes/fabonus/bonus5.png
+share/gnome/atomix/themes/fabonus/bonus6.png
+share/gnome/atomix/themes/fabonus/bonus7.png
+share/gnome/atomix/themes/fabonus/bonus8.png
+share/gnome/atomix/themes/fabonus/selector.png
+share/gnome/atomix/themes/fabonus/theme
+share/gnome/atomix/themes/fabonus/wall3.png
 share/gnome/atomix/themes/katomic/atom-c.png
 share/gnome/atomix/themes/katomic/atom-h.png
 share/gnome/atomix/themes/katomic/atom-n.png
@@ -44,16 +73,42 @@ share/gnome/atomix/themes/katomic/conn-right.png
 share/gnome/atomix/themes/katomic/conn-top-left.png
 share/gnome/atomix/themes/katomic/conn-top-right.png
 share/gnome/atomix/themes/katomic/conn-top.png
+share/gnome/atomix/themes/katomic/selector.png
 share/gnome/atomix/themes/katomic/theme
 share/gnome/atomix/themes/katomic/wall-1.png
 share/gnome/atomix/themes/katomic/wall-2.png
 share/gnome/atomix/themes/katomic/wall-3.png
 share/gnome/atomix/themes/katomic/wall-4.png
 share/gnome/games/atomix.scores
-@exec mkdir -p %D/share/gnome/pixmaps/atomix
-@dirrm share/gnome/atomix/levels
-@dirrm share/gnome/atomix/themes/fabian
-@dirrm share/gnome/atomix/themes/katomic
-@dirrm share/gnome/atomix/themes
-@dirrm share/gnome/atomix
+share/gnome/help/atomix/C/atomix.html
+share/gnome/help/atomix/C/authors.html
+share/gnome/help/atomix/C/docbook.css
+share/gnome/help/atomix/C/howtoplay.html
+share/gnome/help/atomix/C/images/gm_mainwin.png
+share/gnome/help/atomix/C/images/gm_pref-control.png
+share/gnome/help/atomix/C/images/gm_pref-general.png
+share/gnome/help/atomix/C/ln7.html
+share/gnome/help/atomix/C/menubar.html
+share/gnome/help/atomix/C/preferences.html
+share/gnome/help/atomixed/C/atomixed.html
+share/gnome/help/atomixed/C/docbook.css
+share/gnome/help/atomixed/C/images/ed_mainwin.png
+share/gnome/help/atomixed/C/images/ed_themeeditorwin.png
+share/gnome/help/atomixed/C/images/ed_themewin.png
+share/gnome/help/atomixed/C/leveleditor.html
+share/gnome/help/atomixed/C/overview.html
+share/gnome/help/atomixed/C/themeeditor.html
+share/gnome/pixmaps/atomix/atomix-logo.png
 @dirrm share/gnome/pixmaps/atomix
+@dirrm share/gnome/help/atomixed/C/images
+@dirrm share/gnome/help/atomixed/C
+@dirrm share/gnome/help/atomixed
+@dirrm share/gnome/help/atomix/C/images
+@dirrm share/gnome/help/atomix/C
+@dirrm share/gnome/help/atomix
+@dirrm share/gnome/atomix/themes/katomic
+@dirrm share/gnome/atomix/themes/fabonus
+@dirrm share/gnome/atomix/themes/fabian
+@dirrm share/gnome/atomix/themes
+@dirrm share/gnome/atomix/levels
+@dirrm share/gnome/atomix
