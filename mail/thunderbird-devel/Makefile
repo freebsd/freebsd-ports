@@ -56,6 +56,10 @@ SORT?=/usr/bin/sort
 CONFIGURE_ENV+=		WITH_REORDER=yes
 .endif # ${ARCH} == "i386"
 
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500035
+IGNORE=	"core dumps at runtime"
+.endif # ${ARCH} == "alpha" && ${OSVERSION} < 500035
+
 .if defined(WITH_DEBUG)
 WITH_LOGGING=		yes
 CONFIGURE_ENV+=		WITH_DEBUG=yes
