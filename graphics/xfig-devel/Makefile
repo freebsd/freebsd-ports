@@ -19,11 +19,20 @@ LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm \
 		Xaw3d.6:${PORTSDIR}/x11-toolkits/Xaw3d
 RUN_DEPENDS=	fig2dev:${PORTSDIR}/print/transfig
 
+.if defined(WANT_GS_SUPPORT)
+RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript5
+.endif
+
 USE_IMAKE=	yes
 MAN1=		xfig.1
 
 MAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man1 \
 		XAPPLOADDIR=${PREFIX}/lib/X11/app-defaults  \
 		XFIGLIBDIR=${PREFIX}/lib/X11/xfig  -f
+
+.if !defined(WANT_GS_SUPPORT)
+post-patch:
+	@( cd ${WRKSRC}; ${PERL} -pi -e 's,-DGSBIT ,,' Imakefile )
+.endif
 
 .include <bsd.port.mk>
