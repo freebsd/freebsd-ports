@@ -7,6 +7,7 @@
 
 PORTNAME=	ccache
 PORTVERSION=	2.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ccache.samba.org/ftp/ccache/
 
@@ -20,18 +21,20 @@ MAN1=		ccache.1
 PLIST_FILES=	bin/ccache
 
 PORTDOCS=	index.html \
-		ccache-man.html
+		ccache-man.html \
+		${HOWTO}
 
 .if !defined(WITHOUT_COMPILER_LINKS)
+HOWTO=		ccache-howto-freebsd.txt
 PKGMESSAGE=	${WRKDIR}/pkg-message
-CCLINKDIR=	libexec/ccache/
-PLIST_DIRS=	libexec/ccache
+CCLINKDIR=	libexec/ccache
+PLIST_DIRS=	${CCLINKDIR}
 .endif
 
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_COMPILER_LINKS)
-GNU_COMPILERS=		295 33 34 35 40
+GNU_COMPILERS=		295 32 33 34 35 40
 CCACHE_COMPILERS=	cc c++ ${GNU_COMPILERS:S|^|gcc|} ${GNU_COMPILERS:S|^|g++|}
 .if ${ARCH}=="i386"
 CCACHE_COMPILERS+=	icc icpc
@@ -39,8 +42,7 @@ CCACHE_COMPILERS+=	icc icpc
 .if defined(EXTRA_COMPILERS)
 CCACHE_COMPILERS+=	${EXTRA_COMPILERS}
 .endif
-PLIST_FILES+=	${CCACHE_COMPILERS:S|^|${CCLINKDIR}|}
-PLIST_DIRTS+=	${CCLINKDIR}
+PLIST_FILES+=	${CCACHE_COMPILERS:S|^|${CCLINKDIR}/|}
 .endif
 
 pre-everything::
@@ -61,22 +63,27 @@ post-extract:
 	@${SED} -e 's|%%CCACHE_COMPILERS%%|${CCACHE_COMPILERS}|; \
 		s|%%PREFIX%%|${PREFIX}|; s|%%CCLINKDIR%%|${CCLINKDIR}|; \
 		s|%%LOCALBASE%%|${LOCALBASE}|' \
+		${FILESDIR}/${HOWTO}.in > ${WRKDIR}/${HOWTO}
+	@${SED} -e 's|%%HOWTO%%|${HOWTO}|; \
+		s|%%LOCALBASE%%|${LOCALBASE}|' \
 		${FILESDIR}/pkg-message.in >${PKGMESSAGE}
 .endif
+
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/ccache ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
+	${INSTALL_PROGRAM} ${WRKSRC}/ccache ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${PREFIX}/man/man1
 .if !defined(WITHOUT_COMPILER_LINKS)
 	@${MKDIR} ${PREFIX}/${CCLINKDIR}
 .for link in ${CCACHE_COMPILERS}
-	@${LN} -sf ${PREFIX}/bin/ccache ${PREFIX}/${CCLINKDIR}/${link}
+	${LN} -sf ${PREFIX}/bin/ccache ${PREFIX}/${CCLINKDIR}/${link}
 .endfor
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/web/${i} ${DOCSDIR}
+.for i in ${PORTDOCS:S/${HOWTO}//}
+	${INSTALL_DATA} ${WRKSRC}/web/${i} ${DOCSDIR}
 .endfor
+	${INSTALL_DATA} ${WRKDIR}/${HOWTO} ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}
 
