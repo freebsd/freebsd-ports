@@ -102,6 +102,7 @@
     SUBDIR += ruby-odbc
     SUBDIR += ruby-postgres
     SUBDIR += ruby-rdbc1
+    SUBDIR += ruby-search-namazu
     SUBDIR += ruby-sqlrelay
     SUBDIR += sixpack
     SUBDIR += sqlite

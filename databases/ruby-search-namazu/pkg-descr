@@ -1,0 +1,5 @@
+This is an extension library for Ruby to use libnmz which is C library
+of Namazu.
+
+Author:	Tietew <tietew@tietew.net>
+WWW:	http://www.tietew.jp/ruby/search-namazu.en
