@@ -1,11 +1,20 @@
---- povchem.cfg.orig	Sun Mar 15 14:14:16 1998
-+++ povchem.cfg	Sun Mar 15 14:15:13 1998
+--- povchem.cfg.orig	Tue Aug  8 03:13:31 2000
++++ povchem.cfg	Tue Aug  8 03:16:16 2000
+@@ -294,7 +294,7 @@
+ # or leave blank the "POVRay" line, and the next five options will be ignored.
+ #
+ #POVRay =        d:\graphics\povray\povray.exe
+-POVRay =        /usr/local/bin/povray
++POVRay =        %%LOCALBASE%%/bin/povray
+ POVWidth =      640
+ POVOptions =    +V -D +Q9 +A +FT +B32
+ RunPOVRay =     No
 @@ -331,7 +331,7 @@
  # the type of image POV-Ray generates - usually TGA (also called TARGA).
  #
  #Viewer = c:\util\dvpeg.exe
 -Viewer = /usr/local/bin/xv
-+Viewer = /usr/X11R6/bin/xv
++Viewer = %%X11BASE%%/bin/xv
  
  # If ColorSplit is Proportional, 'Power' determines the power of the vdW radii
  # to which the point of color change is proportional. See the manual for

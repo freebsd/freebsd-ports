@@ -7,29 +7,37 @@
 
 PORTNAME=	povchem
 PORTVERSION=	1.0
-CATEGORIES=     biology graphics
-MASTER_SITES=   http://cherubino.med.jhmi.edu/~paul/PC_Dist/v1.00/
+CATEGORIES=	biology graphics
+MASTER_SITES=	http://www.chemicalgraphics.com/paul/PC_Dist/v1.00/
 DISTFILES=	povchem.c \
 		povchem.cfg \
 		periodic.tab
 
-MAINTAINER=     frankch@waru.life.nthu.edu.tw
+MAINTAINER=	frankch@waru.life.nthu.edu.tw
 
 NO_WRKSUBDIR=	yes
 DIST_SUBDIR=	povchem
 
-pre-extract:
-	@${MKDIR} ${WRKSRC}
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/povchem.c ${WRKSRC}
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/povchem.cfg ${WRKSRC}
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/periodic.tab ${WRKSRC}
+DEFS=		-DDATADIR=\"${PREFIX}/share/povchem\" \
+		-DSYSCONFDIR=\"${PREFIX}/etc\"
 
 do-extract:
-	@${TOUCH} ${TOUCH_FLAGS} ${EXTRACT_COOKIE}
+	@${MKDIR} ${WRKSRC}
+.for file in ${DISTFILES}
+	@${CP} ${_DISTDIR}/${file} ${WRKSRC}
+.endfor
+
+post-patch:
+	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/povchem.cfg
+	@${PERL} -pi -e "s|%%X11BASE%%|${X11BASE}|g" ${WRKSRC}/povchem.cfg
+
+do-build:
+	cd ${WRKSRC} && ${CC} ${CFLAGS} ${DEFS} -o povchem povchem.c -lm
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/povchem ${PREFIX}/bin
-	@${INSTALL_DATA} ${WRKSRC}/povchem.cfg ${PREFIX}/etc
-	@${INSTALL_DATA} ${WRKSRC}/periodic.tab ${PREFIX}/share
+	${INSTALL_PROGRAM} ${WRKSRC}/povchem ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/povchem.cfg ${PREFIX}/etc
+	@${MKDIR} ${PREFIX}/share/povchem
+	${INSTALL_DATA} ${WRKSRC}/periodic.tab ${PREFIX}/share/povchem
 
 .include <bsd.port.mk>

@@ -5,7 +5,7 @@
    
    if (*fileName==NULL) {
 -    New_String(fileName,"povchem.cfg");
-+    New_String(fileName,"/usr/local/etc/povchem.cfg");
++    New_String(fileName,SYSCONFDIR "/povchem.cfg");
      if ((config=fopen(*fileName,"r"))==NULL) {
        puts("Can't read the configuration file \"povchem.cfg\"!");
        perror("Reason");
@@ -14,7 +14,7 @@
  no_config:
  
 -  if (!PERIODIC_TABLE_FILE) New_String(&PERIODIC_TABLE_FILE,"periodic.tab");
-+  if (!PERIODIC_TABLE_FILE) New_String(&PERIODIC_TABLE_FILE,"/usr/local/share/periodic.tab");
++  if (!PERIODIC_TABLE_FILE) New_String(&PERIODIC_TABLE_FILE,DATADIR "/periodic.tab");
    if (!FINISH) New_String(&FINISH,"Plastic");
    if (!FINISH_DECLARATION) New_String(&FINISH_DECLARATION,"\
    finish {\n\

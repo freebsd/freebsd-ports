@@ -1,3 +1,4 @@
 bin/povchem
 etc/povchem.cfg
-share/periodic.tab
+share/povchem/periodic.tab
+@dirrm share/povchem
