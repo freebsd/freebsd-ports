@@ -113,8 +113,8 @@ EXIM_GROUP?=	mail
 #WITH_OPENLDAP_VER=	21
 
 # WITH_BDB_VER is the version of the Berkeley DB library to use, and
-# may be 1, which corresponds to version 1.85 in the base system, 4 or
-# 41 which depends on the databases/db4 or databases/db41 port.
+# may be 1, which corresponds to version 1.85 in the base system, 4,
+# 41 or 42 which depends on the databases/db4[12] ports.
 WITH_BDB_VER?=1
 
 # When Exim is decoding MIME "words" in header lines it converts any foreign
@@ -244,8 +244,12 @@ LIB_DEPENDS+=	db4.0:${PORTSDIR}/databases/db4
 DB_LIBS=	-L${LOCALBASE}/lib -ldb41
 DB_INCLUDES=	-I${LOCALBASE}/include/db41
 LIB_DEPENDS+=	db41.1:${PORTSDIR}/databases/db41
+.elif (${WITH_BDB_VER} == 42)
+DB_LIBS=	-L${LOCALBASE}/lib -ldb-4.2
+DB_INCLUDES=	-I${LOCALBASE}/include/db42
+LIB_DEPENDS+=	db-4.2.2:${PORTSDIR}/databases/db42
 .else
-BROKEN=		WITH_BDB_VER must be either 1, 4 or 41
+BROKEN=		WITH_BDB_VER must be either 1, 4, 41 or 42
 .endif
 SEDLIST+=	-e 's,XX_DB_LIBS_XX,${DB_LIBS},' \
 		-e 's,XX_DB_INCLUDES_XX,${DB_INCLUDES},'
