@@ -1,0 +1,158 @@
+.\"
+.\" This manual page has been assembled after Bruce's original bcc.doc
+.\" file by Jörg Wunsch <joerg@FreeBSD.org>.
+.\" It is redistributed under the same conditions as the whole bcc
+.\" package itself.
+.\"
+.Dd March 26, 1995
+.Os
+.Dt AS86 1
+.Sh NAME
+.Nm as86
+.Nd assembler for 8086/80386
+.Sh SYNOPSIS
+.Nm as86
+.Op Fl 03agjuw
+.Op Fl b Op Ar bin
+.Op Fl lm Op Ar list
+.Op Fl n Ar name
+.Op Fl o Ar obj
+.Op Fl s Ar sym
+.Ar src
+.Sh DESCRIPTION
+
+.Ss Overview
+.Nm As86
+is an assembler for 8086 or 80386 CPUs.  Its syntax resembles rather
+the usual 8086 assembler syntax than the AT&T-like syntax as used by
+the system's assembler
+.Xr as 1 .
+
+It can also be compiled to support the Motorola 6809 CPU.  The name
+.Nm as86
+has only been chosen to make it distinct from the system's assembler.
+
+.Ss Options
+
+.Bl -tag -width indent -compact
+
+.It Fl 0
+.Pq the digit 0
+start with 16-bit code segment
+
+.It Fl 3
+start with 32-bit code segment
+
+.It Fl a
+enable partial compatibility with asld
+
+.It Fl b
+produce binary file, filename may follow
+.Pq obsolete
+
+.It Fl g
+only put global symbols in object file
+
+.It Fl j
+force all jumps to be long
+
+.It Fl l
+produce list file, filename may follow
+
+.It Fl m
+print macro expansions in listing
+
+.It Fl n
+name of module follows
+.Pq goes in object instead of source name
+
+.It Fl o
+produce object file, filename follows
+
+.It Fl s
+produce symbol file, filename follows
+.Pq obsolete
+
+.It Fl u
+take undefined symbols as imported-with-unspecified segment
+
+.It Fl w
+don't print warnings
+
+.El
+
+The 6809 version does not support
+.Fl 0 ,
+.Fl 3 ,
+.Fl a
+or
+.Fl j .
+
+
+.Ss Defaults
+Off or none except for these; no output is produced without a flag:
+
+.Bl -tag -width indenct -compact
+
+.It Fl 0 | Fl 3
+native, i.\& e. 80386
+
+.It Ar list
+stdout
+.Pq beware of clobbering next arg
+
+.It Ar name
+basename of the source name
+
+.El
+
+.Ss Input syntax
+
+The following lists all acceptable names except the CPU instructions:
+
+.Bl -tag -width "XXXXXXX" -compact -offset indent
+
+.It Register names
+
+bp, bx, di, si, eax, ebp, ecx, edi, edx, esi, esp,
+ax, cx, dx, sp, ah, al, bh, bl, ch, cl, dh, dl,
+cs, ds, es, fs, gs, ss, cr0, cr2, cr3, dr0, dr1,
+dr3, dr6, dr7, tr3, tr4, tr5, tr6, tr7, st.
+
+.It Type sizes
+
+byte, dword, fword, far, ptr, pword, qword, tbyte, word.
+
+.It Pseudo-operations
+
+else, elseif, elseifc, endif, if, ifc;
+\&.align, .ascii, .blkb, .blkw, block, .bss, .byte, comm, .comm,
+\&.data, .data1, .data2, .data4, db, dd, .define, dw, end, endb,
+enter, entry, equ, .even, export, extern, .extern, extrn, fail, .fail,
+fcb, fcc, fdb, get, .globl, ident, import, include, lcomm, .lcomm,
+\&.list, loc, .long, .maclist, macro, .map, org, .org, public,
+rmb, .rom, .sect, set, setdp, .short, .space, .text, use16,
+use32, .warn, .word, .zero.
+
+.El
+.Sh SEE ALSO
+
+.Xr as 1 ;
+.Xr ld86 1 ,
+.Xr bcc 1 .
+
+.Sh AUTHORS
+
+This program has been developed by Bruce Evans.
+
+.Sh BUGS
+
+The
+.Fl u
+and
+.Fl w
+options are perhaps back to front because they are needed for cc1
+output and Minix's make does the wrong thing with .s files left
+around.  However, all assembler code not written by compilers should
+assemble with them turned off.
+

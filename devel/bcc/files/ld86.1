@@ -1,0 +1,138 @@
+.\"
+.\" This manual page has been assembled after Bruce's original bcc.doc
+.\" file by Jörg Wunsch <joerg@FreeBSD.org>.
+.\" It is redistributed under the same conditions as the whole bcc
+.\" package itself.
+.\"
+.Dd March 26, 1995
+.Os
+.Dt LD86 1
+.Sh NAME
+.Nm ld86
+.Nd loader for as86
+.Sh SYNOPSIS
+.Nm ld86
+.Op Fl 03Mimrstz Ns Op -
+.Op Fl l Ns Ar lib_extension
+.Op Fl o outfile
+.Op Fl C crtfile
+.Op Fl L Ns libdir
+.Op Fl O Ns libfile
+.Op Fl T textaddr
+.Ar infile
+.Op Ar ...
+.Sh DESCRIPTION
+
+.Ss Overview
+
+.Nm Ld86
+is the loader that understands how to link the output of
+.Xr as86 1
+together.
+
+.Ss Options
+
+.Bl -tag -width indent -compact
+
+.It Fl 0
+.Pq the digit 0
+produce header with 16-bit magic and use library subdir
+.Pa i86
+for
+.Fl l Ns Ar x
+
+.It Fl 3
+produce header with 32-bit magic and use library subdir
+.Pa i386
+for
+.Fl l Ns Ar x
+
+.It Fl C Ns Ar x
+add file
+.Pa libdir-from-search/crt Ns Ar x Ns \&.o
+to list of files linked
+
+.It Fl L Ns Ar x
+add dir name
+.Ar x
+to the head of the list of library dirs searched
+
+.It Fl M
+print symbols linked on stdout
+
+.It Fl O Ns Ar x
+add library
+.Pa libdir-from-search/ Ns Ar x
+to list of files linked
+
+.It Fl T
+text base address follows
+.Pq in format suitable for strtoul
+
+.It Fl i
+separate I&D output
+
+.It Fl l Ns Ar x
+add library
+.Pa libdir-from-search/lib Ns Ar x Ns \&.a
+to list of files linked
+
+.It Fl m
+print modules linked on stdout
+
+.It Fl o
+output file name follows
+
+.It Fl r
+produce output suitable for further relocation
+
+.It Fl s
+strip symbols
+
+.It Fl t
+trace modules being looked at on stdout
+
+.It Fl z
+produce
+.Dq unmapped zero page
+executables
+
+
+.El
+
+The 6809 version does not support -i or -r.
+
+All the options not taking an argument may be turned off by following the
+option letter by a
+.Sq \&- ,
+as for bcc-cc1.
+
+.Ss Defaults
+
+Off or none except for these:
+
+.Bl -tag -width indent -compact
+
+.It Fl 0 | Fl 3
+native, i.\& e. 80386
+
+.It Fl L Ns Pa /usr/local/lib/bcc/ Ns Ar m/
+.Po
+.Ar m
+is machine dependent
+.Pc
+
+.It Ar outfile
+.Pa a.out
+
+.El
+
+.Sh SEE ALSO
+
+.Xr as86 1 ,
+.Xr bcc 1 .
+
+.Sh AUTHORS
+
+This programm has been written by Bruce Evans.
+

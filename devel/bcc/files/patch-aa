@@ -1,0 +1,66 @@
+*** ld/Makefile.orig	Sat Feb 19 23:32:12 1994
+--- ld/Makefile	Sun Mar 26 12:31:37 1995
+***************
+*** 1,18 ****
+! CFLAGS		=-O -DBSD_A_OUT -DSTANDARD_GNU_A_OUT
+! LDFLAGS		=-N -s
+  
+! OBJS		=dumps.o io.o ld.o readobj.o table.o typeconv.o writebin.o
+  
+! ld: $(OBJS)
+! 	$(CC) $(LDFLAGS) $(OBJS) -o $@
+  
+! clean:
+! 	rm -f $(OBJS) ld
+! 
+! dumps.o: dumps.c const.h config.h obj.h type.h globvar.h
+! io.o: io.c const.h config.h obj.h type.h globvar.h
+! ld.o: ld.c const.h config.h byteord.h type.h globvar.h
+! readobj.o: readobj.c const.h config.h byteord.h obj.h type.h globvar.h
+! table.o: table.c const.h config.h align.h obj.h type.h globvar.h
+! typeconv.o: typeconv.c const.h config.h type.h globvar.h
+! writebin.o: writebin.c const.h config.h obj.h type.h globvar.h
+--- 1,18 ----
+! .include "../Makefile.inc"
+  
+! CFLAGS		+=-DBSD_A_OUT -DSTANDARD_GNU_A_OUT
+! CFLAGS		+=-Wall
+! LDFLAGS		=
+  
+! SRCS		=dumps.c io.c ld.c readobj.c table.c typeconv.c writebin.c
+  
+! PROG		=ld86
+! 
+! BINDIR		=${LOCALPREFIX}/bin
+! MANDIR		=${LOCALPREFIX}/man/man
+! 
+! beforeinstall:
+! 		-mkdir -p ${BINDIR}
+!		-mkdir -p ${MANDIR}1
+! 
+! .include <bsd.prog.mk>
+*** ld/ld.c.orig	Sat Feb 19 23:36:05 1994
+--- ld/ld.c	Sun Mar 26 11:59:47 1995
+***************
+*** 3,9 ****
+  /* Copyright (C) 1994 Bruce Evans */
+  
+  #include "const.h"
+- #include "byteord.h"
+  #include "type.h"
+  #include "globvar.h"
+  
+--- 3,8 ----
+***************
+*** 25,30 ****
+--- 24,33 ----
+  #undef NULL
+  #include <unistd.h>
+  #endif
++ 
++ /* BSD #defines this in <machine/endian.h>, but with another sense */
++ #undef BIG_ENDIAN
++ #include "byteord.h"
+  
+  #define MAX_LIBS	(NR_STDLIBS + 5)
+  #define NR_STDLIBS	1

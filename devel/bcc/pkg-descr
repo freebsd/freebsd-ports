@@ -1,0 +1,17 @@
+This is Bruce Evans' C compiler and binutils package.
+
+
+Either the compiler as the assembler are able to generate 16-bit code.
+Hence it's possible to compile BIOS and DOS code under unix.
+
+The C compiler does understand K&R1 syntax, with a few restrictions
+regarding bitfields.  See the file work/bcc/bcc-cc1/bcc.bugs for
+Bruce's bug list.
+
+The binutils (assembler and loader) have been renamed to as86 and ld86
+to not conflict with the system's assembler and loader, but they are
+also available in the regular BINDIR (normally /usr/local/bin).
+
+It's also possible to generate MC 6809 code with bcc/as.  (This is a
+compile-time option however, and not supported by the binary package
+as it comes with FreeBSD.)

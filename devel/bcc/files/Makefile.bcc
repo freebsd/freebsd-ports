@@ -1,0 +1,18 @@
+.include "../Makefile.inc"
+
+.PATH:	../bcc-cc1
+
+CFLAGS		+= -DNSIG=32
+CFLAGS		+= -Wall
+CFLAGS		+= -DLOCALPREFIX=\"${LOCALPREFIX}\"
+LDFLAGS		=
+
+
+SRCS		= bcc.c
+
+PROG		= bcc
+
+BINDIR		= ${LOCALPREFIX}/bin
+MANDIR		= ${LOCALPREFIX}/man/man
+
+.include <bsd.prog.mk>
