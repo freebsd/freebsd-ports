@@ -1,6 +1,8 @@
+bin/gda-config-tool
 bin/gda-run
 etc/libgda/config
 include/libgda-report/gda-report-document.h
+include/libgda-report/gda-report-types.h
 include/libgda-report/gda-report.h
 include/libgda/gda-client.h
 include/libgda/gda-command.h
@@ -21,6 +23,7 @@ include/libgda/gda-row.h
 include/libgda/gda-select.h
 include/libgda/gda-server-provider.h
 include/libgda/gda-table.h
+include/libgda/gda-transaction.h
 include/libgda/gda-util.h
 include/libgda/gda-value.h
 include/libgda/gda-xml-connection.h
@@ -54,6 +57,9 @@ lib/libgda-2.so.1
 lib/libgda-report-2.a
 lib/libgda-report-2.so
 lib/libgda-report-2.so.1
+lib/libgdasql.a
+lib/libgdasql.so
+lib/libgdasql.so.0
 lib/libgda/providers/libgda-default.so
 %%MYSQL%%lib/libgda/providers/libgda-mysql.so
 %%POSTGRES%%lib/libgda/providers/libgda-postgres.so
@@ -84,6 +90,7 @@ share/doc/libgda/libgda-gda-field.html
 share/doc/libgda/libgda-gda-log.html
 share/doc/libgda/libgda-gda-parameter.html
 share/doc/libgda/libgda-gda-quark-list.html
+share/doc/libgda/libgda-gda-report-types.html
 share/doc/libgda/libgda-gda-row.html
 share/doc/libgda/libgda-gda-util.html
 share/doc/libgda/libgda-gda-value.html
@@ -101,6 +108,7 @@ share/doc/libgda/libgda-gdareportdocument.html
 share/doc/libgda/libgda-gdaselect.html
 share/doc/libgda/libgda-gdaserverprovider.html
 share/doc/libgda/libgda-gdatable.html
+share/doc/libgda/libgda-gdatransaction.html
 share/doc/libgda/libgda-gdaxmlconnection.html
 share/doc/libgda/libgda-gdaxmldatabase.html
 share/doc/libgda/libgda-gdaxmldocument.html
@@ -125,6 +133,8 @@ share/doc/libgda/libgda-gdaxqlupdate.html
 share/doc/libgda/libgda-gdaxqlvalue.html
 share/doc/libgda/libgda-gdaxqlvalueref.html
 share/doc/libgda/libgda-libgda.html
+share/doc/libgda/libgda-provider-class.html
+share/doc/libgda/libgda-provider-recordset.html
 share/doc/libgda/libgda-providers.html
 share/doc/libgda/libgda-reports.html
 share/doc/libgda/libgda-xql.html
@@ -159,9 +169,9 @@ share/locale/vi/LC_MESSAGES/libgda-2.mo
 share/locale/zh_CN/LC_MESSAGES/libgda-2.mo
 @dirrm share/gnome/libgda/dtd
 @dirrm share/gnome/libgda
-@dirrm share/doc/libgda
 @dirrm lib/libgda/providers
 @dirrm lib/libgda
+@dirrm include/libgda/sql
 @dirrm include/libgda
 @dirrm include/libgda-report
 @dirrm etc/libgda
