@@ -9,16 +9,7 @@
 PORTNAME=	dhcp
 PORTVERSION=	3.0.1.r9
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.isc.org/isc/%SUBDIR%/ \
-		${US_MASTER_SITES} ${JAPAN_MASTER_SITES} \
-		${AUSTRIA_MASTER_SITES} ${FRANCE_MASTER_SITES} \
-		${FINLAND_MASTER_SITES} ${GERMANY_MASTER_SITES} \
-		${HUNGARY_MASTER_SITES} ${ICELAND_MASTER_SITES} \
-		${LATVIA_MASTER_SITES} ${POLAND_MASTER_SITES} \
-		${RUSSIA_MASTER_SITES} ${SPAIN_MASTER_SITES} \
-		${SWEDEN_MASTER_SITES} ${UK_MASTER_SITES} \
-		${NETHERLANDS_MASTER_SITES} ${BRAZIL_MASTER_SITES} \
-		${GREECE_MASTER_SITES} ${TURKEY_MASTER_SITES}
+MASTER_SITES=	${MASTER_SITE_ISC}
 MASTER_SITE_SUBDIR=	dhcp dhcp/dhcp-3.0-history
 PKGNAMEPREFIX=	isc-
 PKGNAMESUFFIX=	3
@@ -47,36 +38,6 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 # Local variables
 #
-
-# fast
-AUSTRIA_MASTER_SITES=	ftp://gd.tuwien.ac.at/infosys/servers/isc/%SUBDIR%/
-FRANCE_MASTER_SITES=	ftp://ftp.ciril.fr/pub/isc/%SUBDIR%/ \
-			ftp://ftp.grolier.fr/pub/isc/%SUBDIR%/
-FINLAND_MASTER_SITES=	ftp://ftp.funet.fi/pub/mirrors/ftp.isc.org/isc/%SUBDIR%/
-GERMANY_MASTER_SITES=	ftp://ftp.freenet.de/pub/ftp.isc.org/isc/%SUBDIR%/ \
-			ftp://ftp.gigabell.net/pub/%SUBDIR%/
-HUNGARY_MASTER_SITES=	ftp://ftp.fsn.hu/pub/isc/%SUBDIR%/
-ICELAND_MASTER_SITES=	ftp://ftp.gm.is/pub/isc/%SUBDIR%/
-JAPAN_MASTER_SITES=	ftp://ftp.kyushu-u.ac.jp/pub/Net/isc/%SUBDIR%/ \
-			ftp://ftp.iij.ad.jp/pub/network/isc/%SUBDIR%/ \
-			ftp://ftp.u-aizu.ac.jp/pub/net/isc/%SUBDIR%/
-LATVIA_MASTER_SITES=	ftp://ftp.linux.lv/pub/software/isc/%SUBDIR%/
-POLAND_MASTER_SITES=	ftp://ftp.task.gda.pl/mirror/ftp.isc.org/isc/%SUBDIR%/
-RUSSIA_MASTER_SITES=	ftp://ftp.cdu.elektra.ru/pub/unix/isc/%SUBDIR%/
-SPAIN_MASTER_SITES=	ftp://ftp.si.uniovi.es/mirror/isc/%SUBDIR%/
-SWEDEN_MASTER_SITES=	ftp://ftp.sunet.se/pub/network/isc/%SUBDIR%/ \
-			ftp://ftp.chl.chalmers.se/pub/unix/network/isc/%SUBDIR%/
-UK_MASTER_SITES=	ftp://unix.hensa.ac.uk/mirrors/ftp.isc.org/isc/%SUBDIR%/
-US_MASTER_SITES=	ftp://ftp.epix.net/pub/isc/%SUBDIR%/ \
-			ftp://ftp.nominum.com/pub/isc/%SUBDIR%/
-NETHERLANDS_MASTER_SITES=	ftp://ftp.ripe.net/mirrors/sites/ftp.isc.org/isc/%SUBDIR%/ \
-			ftp://ftp.nl.uu.net/pub/mirrors/ftp.isc.org/%SUBDIR%/
-
-# slow
-BRAZIL_MASTER_SITES=	ftp://ftp.pop-mg.com.br/pub/isc/%SUBDIR%/
-GREECE_MASTER_SITES=	ftp://ftp.ntua.gr/pub/net/isc/isc/%SUBDIR%/
-TURKEY_MASTER_SITES=	ftp://ftp.ulak.net.tr/pub/networking/isc/%SUBDIR%/ \
-			ftp://ftp.metu.edu.tr/pub/mirrors/ftp.isc.org/%SUBDIR%/
 
 # for instance, possible versions are:
 #	1.2.r3.4 (or 1.2.b3.4), 1.2.r3 (or 1.2.b3), 1.2.3, 1.2

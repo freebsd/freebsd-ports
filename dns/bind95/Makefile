@@ -14,11 +14,9 @@
 PORTNAME=	bind9
 PORTVERSION=	9.2.1
 CATEGORIES=	net ipv6
-MASTER_SITES=	ftp://ftp.isc.org/isc/bind9/${ISCVERSION}/ \
-		ftp://ftp.nominum.com/pub/isc/bind9/${ISCVERSION}/ \
-		ftp://ftp.nerdc.ufl.edu/pub/mirrors/ftp.isc.org/isc/bind9/${ISCVERSION}/ \
-		ftp://ftp.sunet.se/pub/network/isc/bind9/${ISCVERSION}/ \
+MASTER_SITES=	${MASTER_SITE_ISC} \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/bind9/${ISCVERSION}/,}
+MASTER_SITE_SUBDIR=	isc/bind9/${ISCVERSION}
 DISTFILES=	bind-9.2.1.tar.gz
 
 MAINTAINER=	DougB@FreeBSD.org
