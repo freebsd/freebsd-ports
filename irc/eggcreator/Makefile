@@ -14,6 +14,8 @@ MASTER_SITES=	http://free.top.bg/tcl/eggcreator/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eggdrop.conf creator
 
+BROKEN=		"Unfetchable"
+
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 
 WRKSRC=		${WRKDIR}/eggconfcreator
