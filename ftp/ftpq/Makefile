@@ -6,18 +6,17 @@
 #
 
 PORTNAME=	ftpq
-PORTVERSION=	1.02
-PORTREVISION=	1
+PORTVERSION=	1.10
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.tranchant.freeserve.co.uk/software/
 
 MAINTAINER=	ports@FreeBSD.org
 
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 MAN1=		ftpq.1
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/ftpq ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/ftpq.1 ${MANPREFIX}/man/man1
+post-install:
 	@${MKDIR} /var/spool/ftpq
 	@${CHMOD} 777 /var/spool/ftpq
 
