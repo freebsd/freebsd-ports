@@ -3,10 +3,10 @@
 # Date created:				26 June 1996
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.29 1999/08/22 18:59:35 mharo Exp $
+# $Id: Makefile,v 1.30 1999/08/27 03:38:34 cpiazza Exp $
 #
 
-DISTNAME=	ucd-snmp-4.0
+DISTNAME=	ucd-snmp-4.0.1
 CATEGORIES=	net
 MASTER_SITES= 	ftp://ucd-snmp.ucdavis.edu/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/ \
