@@ -1,24 +1,30 @@
-# New ports collection makefile for:	gnupg-rsa
-# Date created:		10 May, 2000 
+# New ports collection makefile for:	gnupg-idea
+# Date created:		10 May, 2000
 # Whom:			dirk.meyer@dinoex.sub.org
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gnupg-rsa
+PORTNAME=	gnupg-idea
 PORTVERSION=	1.0.1
-PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=   ftp://ftp.gnupg.org/pub/gcrypt/contrib/
+MASTER_SITES=	ftp://ftp.gnupg.org/pub/gcrypt/%SUBDIR%/	\
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/gnupg/&,}
+MASTER_SITE_SUBDIR=	contrib
+DISTFILES=	${CONTRIB:S|$|.c|}
+DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY=	# none
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 
-RESTRICTED=	"Crypto; export-controlled"
 RUN_DEPENDS=	${LOCALBASE}/bin/gpg:${PORTSDIR}/security/gnupg
+
+RESTRICTED=	"IDEA is Patented in the USA and many European countries"
+
 NO_WRKSUBDIR=	yes
-DIST_SUBDIR=    ${PORTNAME}
 CFLAGS+=	-O2 -shared -fPIC -DIS_MODULE
 CFLAGS+=	-Wall -Wcast-align -Wshadow -Wstrict-prototypes
+PLIST=		${WRKDIR}/.PLIST.more
 
 .if !defined(USA_RESIDENT) || ${USA_RESIDENT} != YES && ${USA_RESIDENT} != NO
 pre-fetch:
@@ -31,19 +37,18 @@ pre-fetch:
 
 .elif defined(USA_RESIDENT)
 
-.if ${USA_RESIDENT} == NO
-DISTFILES=	rsa.c idea.c
-CONTRIB=	rsa idea
+.if ${USA_RESIDENT} == NO || defined(MAKE_IDEA)
+CONTRIB=	idea rsa
 .else
-DISTFILES=	rsa.c
 CONTRIB=	rsa
 .endif
 
 .include <bsd.port.pre.mk>
 
-do-extract:
-	@${RM} -rf ${WRKDIR}
-	@${MKDIR} ${WRKDIR}
+pre-extract:
+	@${SED} s!%%PREFIX%%!${PREFIX}!g ${PKGMESSAGE}
+
+post-extract:
 .for i in ${DISTFILES}
 	@${CP} ${_DISTDIR}/${i} ${WRKSRC}/${i}
 .endfor
@@ -57,6 +62,7 @@ do-patch:
 do-build:
 .for i in ${CONTRIB}
 	${CC} ${CFLAGS} -o ${WRKSRC}/${i} ${WRKSRC}/${i}.c
+	${ECHO} "lib/gnupg/${i}" >>${PLIST}
 .endfor
 
 do-install:
