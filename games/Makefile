@@ -128,6 +128,7 @@
     SUBDIR += oneko
     SUBDIR += oneko-sakura
     SUBDIR += oonsoo
+    SUBDIR += pentix
     SUBDIR += phalanx
     SUBDIR += pmars
     SUBDIR += powerpak
