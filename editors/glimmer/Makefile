@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	glimmer
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	editors gnome python
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -26,6 +26,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-regex
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -D_REGEX_H_ -D_REGEX_H" \
 		LIBS="-L${LOCALBASE}/lib -lgnuregex"
+CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 .if exists(/usr/lib/libcrypto.a)
 PYTHON_LIBS=	-lssl -lcrypto
 .endif
@@ -35,7 +36,7 @@ pre-patch:
 	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|-lpython|${PYTHON_LIBS}|g ; \
 		s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
 		's|\$\(datadir\)/gnome/|\$\(datadir\)/|g ; \
 		 s|\$\(datadir\)/locale|\$\(prefix\)/share/locale|g'
 
