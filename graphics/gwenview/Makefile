@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gwenview
-PORTVERSION=	0.17.0
+PORTVERSION=	0.17.1.a
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	gwenview
-DISTNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a/a/}
 
 MAINTAINER=	stefan.jahn@nemesis-sektor.de
 COMMENT=	An image viewer and browser for the KDE environment
@@ -22,12 +22,12 @@ USE_KDELIBS_VER=	3
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=
 CONFIGURE_ARGS+=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+USE_REINPLACE=	yes
 
 MAN1=	gwenview.1
 
-post-install:
-	${RM} ${PREFIX}/share/locale/xx/LC_MESSAGES/gwenview.mo
-	-${RMDIR} ${PREFIX}/share/locale/xx/LC_MESSAGES
-	-${RMDIR} ${PREFIX}/share/locale/xx
+post-patch:
+	@${REINPLACE_CMD} -e \
+		's|xx||g' ${WRKSRC}/po/Makefile.in
 
 .include <bsd.port.mk>
