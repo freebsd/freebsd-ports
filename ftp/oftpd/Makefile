@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	oftpd
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.time-travellers.org/oftpd/ \
 		http://www.freenix.no/~anders/
@@ -19,6 +19,8 @@ DOCFILES=	README AUTHORS ChangeLog NEWS TODO BUGS
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 
+MAN8=		oftpd.8
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/oftpd ${PREFIX}/libexec/oftpd
 .if !defined(NOPORTDOCS)
@@ -29,9 +31,9 @@ do-install:
 .endif
 
 post-install:
+	@${INSTALL_MAN} ${WRKSRC}/man/oftpd.8 ${MANPREFIX}/man/man8
 	@${ECHO} "================================================================================"
 	@${ECHO} "oftpd only runs standalone, not from inetd."
-	@${ECHO} "Try ${PREFIX}/libexec/oftpd -h to see command line options."
 	@${ECHO} "Create a README file in the root anonymous FTP dir to have it displayed to"
 	@${ECHO} "users upon login."
 	@${ECHO} "================================================================================"
