@@ -1,0 +1,11 @@
+--- jabberoo/Makefile.in.orig	Mon Jul 31 23:38:31 2000
++++ jabberoo/Makefile.in	Tue Sep 12 15:00:38 2000
+@@ -69,7 +69,7 @@
+ VERSION = @VERSION@
+ 
+ EXTRA_DIST = include
+-SUBDIRS = expat src test 
++SUBDIRS = expat src
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_CLEAN_FILES = 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gabber
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,18 +15,18 @@ MAINTAINER=	erich@tacni.net
 
 LIB_DEPENDS=	gnome.4:${PORTSDIR}/x11/gnomelibs \
 		gtkmm-1.2.1:${PORTSDIR}/x11-toolkits/gtk-- \
-		gnomemm-1.1.2:${PORTSDIR}/x11-toolkits/gnome-- \
+		gnomemm-1.1.3:${PORTSDIR}/x11-toolkits/gnome-- \
 		sigc.1:${PORTSDIR}/devel/libsigc++ \
 		gnet.0:${PORTSDIR}/net/gnet \
 		glade.4:${PORTSDIR}/devel/libglade
-RUN_DEPENDS=	gnomecc:${PORTSDIR}/sysutils/gnomecontrolcenter
+RUN_DEPENDS=	panel:${PORTSDIR}/x11/gnomecore
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
-USE_AUTOCONF=	yes
+LIBTOOLFILES=	configure jabberoo/configure
 CONFIGURE_ENV+=	GTK_CONFIG="${GTK_CONFIG}" GLIB_CONFIG="${GLIB_CONFIG}" \
 		GNOME_LIBCONFIG_PATH="${LOCALBASE}/lib:${X11BASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
