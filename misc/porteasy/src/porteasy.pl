@@ -33,7 +33,7 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.7.19";
+my $VERSION	= "2.7.20";
 my $COPYRIGHT	= "Copyright (c) 2000-2004 Dag-Erling Smørgrav. " .
 		  "All rights reserved.";
 
@@ -579,6 +579,7 @@ sub find_master($) {
 	}
 	if (defined($master) && $master !~ m/WRKDIRPREFIX/) {
 	    $master =~ s/^\$\{.CURDIR\}//;
+	    $master =~ s/^\$\{PORTSDIR}/..\/../;
 	    $master = "/$port/$master";
 	    $master =~ s|/+|/|g;
 	    1 while ($master =~ s|/[^\./]*/\.\./|/|);
