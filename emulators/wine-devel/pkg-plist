@@ -1,6 +1,20 @@
+bin/control
+bin/control.so
 bin/fnt2bdf
 bin/function_grep.pl
+bin/notepad
+bin/notepad.so
+bin/progman
+bin/progman.so
 bin/regSet.sh
+bin/regedit
+bin/regedit.so
+bin/regsvr32
+bin/regsvr32.so
+bin/uninstaller
+bin/uninstaller.so
+bin/wcmd
+bin/wcmd.so
 bin/wine
 bin/winebuild
 bin/wineclipsrv
@@ -11,8 +25,16 @@ bin/winedbg.so
 bin/winedump
 bin/winelauncher
 bin/winemaker
+bin/winemine
+bin/winemine.so
+bin/winepath
+bin/winepath.so
 bin/wineserver
 bin/wineshelllink
+bin/winhelp
+bin/winhelp.so
+bin/winver
+bin/winver.so
 bin/wmc
 bin/wrc
 @unexec if cmp -s %D/etc/wine.conf %D/etc/wine.conf.sample; then rm -f %D/etc/wine.conf; fi
