@@ -1,0 +1,16 @@
+--- Makefile	Sat Sep 13 05:44:20 1997
++++ /home/andy/tmp/wrk/Makefile	Mon Jun 29 12:08:54 1998
+@@ -24,11 +24,11 @@
+ # all the time, try uncommenting the next line.
+ #OTHERLIBS = -lbsdmalloc
+ 
+-CFLAGS = -g0 -O2 -Wall -Wno-implicit -I/usr/local/include -I./bitmaps -DBODYFONT=$(FONT1) \
++CFLAGS+= -I${X11BASE}/include -I./bitmaps -DBODYFONT=$(FONT1) \
+ 	-DBODYFONT_ALT=$(FONT2) -DBODYFONT_ALT2=$(FONT3) -DTRANSCRIPTDIR=$(LOGDIR)
+ LFLAGS = -g0 -Wall -Wno-implicit
+ 
+-XLIB = -L/usr/local/lib -L/usr/X11/lib -lX11
++XLIB = -L${X11BASE}/lib -lX11
+ 
+ OBJS = engine.o espells.o execute.o execute2.o emonster.o etran.o
+ XOBJS = main.o xtext.o xquery.o xloop.o xgest.o xbutton.o xtalk.o
