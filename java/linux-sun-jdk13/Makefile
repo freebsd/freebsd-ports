@@ -66,7 +66,7 @@ do-extract:
 	&& ${WRKDIR}/install.sfx > /dev/null
 
 post-patch:
-	@find ${WRKSRC} -name '*.orig' -print | xargs ${RM} -f
+	@${FIND} ${WRKSRC} -name '*.orig' -print | xargs ${RM} -f
 
 do-install:
 	${MKDIR} ${PREFIX}/${PKGNAMEPREFIX}jdk${JDK_VERSION}
