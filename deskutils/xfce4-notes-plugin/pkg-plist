@@ -1,6 +1,4 @@
 lib/xfce4/panel-plugins/libnotes.so
-share/xfce4/notes/close.png
-share/xfce4/notes/resize.png
 share/xfce4/notes/note.png
 @unexec rmdir %D/lib/xfce4/panel-plugins 2>/dev/null || true
 @unexec rmdir %D/lib/xfce4 2>/dev/null || true

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-notes
-PORTVERSION=	0.9
+PORTVERSION=	0.9.5
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	http://www.lysator.liu.se/~b0kaj/
 DIST_SUBDIR=	xfce4
@@ -15,12 +15,11 @@ MAINTAINER=	thorsten.greiner@web.de
 COMMENT=	Sticky notes panel plugin for XFce4
 
 BUILD_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
-LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
-		xfce4util.1:${PORTSDIR}/x11/libxfce4util \
+LIB_DEPENDS=	xfce4util.1:${PORTSDIR}/x11/libxfce4util \
 		xfcegui4.1:${PORTSDIR}/x11-toolkits/libxfce4gui
 RUN_DEPENDS=	xfce4-panel:${PORTSDIR}/x11-wm/xfce4-panel
 
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 libxml2
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 USE_LIBTOOL=	yes
