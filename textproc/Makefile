@@ -170,6 +170,7 @@
     SUBDIR += ruby-sablot
     SUBDIR += ruby-xmlparser
     SUBDIR += ruby-xmlscan
+    SUBDIR += ruby-xslt
     SUBDIR += rxp
     SUBDIR += sablotron
     SUBDIR += sarep
