@@ -16,8 +16,6 @@ COMMENT=	Fast pixel formats conversion library
 
 BUILD_DEPENDS=	${LOCALBASE}/share/automake/depcomp:${PORTSDIR}/devel/automake
 
-ONLY_FOR_ARCHS=	i386 alpha ia64 sparc64
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
