@@ -6,19 +6,21 @@
 #
 
 PORTNAME=	scummvm
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.0
 CATEGORIES=	games emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}b
+DISTNAME=	${PORTNAME}_${PORTVERSION}-src
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	flynn@energyhq.homeip.net
 
 LIB_DEPENDS=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
 
-USE_ZIP=	yes
 USE_GMAKE=	yes
-NO_WRKSUBDIR=	yes
+WRKSRC=         ${WRKDIR}/${PORTNAME}
+
+#MAKEFILE=	Makefile.x11
 
 pre-patch:
 	@${FIND} -E ${WRKSRC} -type f -iregex ".*\.(cpp|h|txt)" \
