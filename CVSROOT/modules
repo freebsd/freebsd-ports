@@ -4793,6 +4793,7 @@ p5-Text-Flowchart	ports/textproc/p5-Text-Flowchart
 p5-Text-Format	ports/textproc/p5-Text-Format
 p5-Text-Graphics	ports/textproc/p5-Text-Graphics
 p5-Text-Iconv	ports/converters/p5-Text-Iconv
+p5-Text-Metaphone	ports/textproc/p5-Text-Metaphone
 p5-Text-PDF	ports/print/p5-Text-PDF
 p5-Text-Query	ports/textproc/p5-Text-Query
 p5-Text-Query-SQL	ports/databases/p5-Text-Query-SQL
