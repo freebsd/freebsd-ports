@@ -36,8 +36,10 @@ ipacctctl="%%PREFIX%%/sbin/ipacctctl"
 #ipacctctl="echo %%PREFIX%%/sbin/ipacctctl"
 sed="/usr/bin/sed"
 
+extra_commands="checkpoint"
 start_cmd="start_cmd"
 stop_cmd="stop_cmd"
+checkpoint_cmd="checkpoint_cmd"
 
 bool2int()
 {
@@ -107,10 +109,27 @@ EOF
 	if ! ${ngctl} show ${iface}_ip_acct: >/dev/null 2>&1; then
 		warn "netgraph node '${iface}_ip_acct' did not created!"
 	else
+		${ipacctctl} ${iface}_ip_acct:${iface} dlt ${dlt}
 		${ipacctctl} ${iface}_ip_acct:${iface} threshold ${threshold}
 		${ipacctctl} ${iface}_ip_acct:${iface} verbose ${verbose}
 		${ipacctctl} ${iface}_ip_acct:${iface} saveuid ${saveuid}
 		${ipacctctl} ${iface}_ip_acct:${iface} savetime ${savetime}
+	fi
+   done
+}
+
+checkpoint_cmd()
+{
+   local iface
+
+   for iface in ${ng_ipacct_interfaces}; do
+	debug "checlpoint ng_ipacct interface ${iface}"
+	eval checkpoint_script=\$ng_ipacct_${iface}_checkpoint_script
+
+	if [ -n "${checkpoint_script}" ]; then
+		(set -T
+		trap 'exit 1' 2
+		${checkpoint_script})
 	fi
    done
 }
@@ -124,11 +143,18 @@ stop_cmd()
 
 	local stop_script
 	eval stop_script=\$ng_ipacct_${iface}_stop
+	eval checkpoint_script=\$ng_ipacct_${iface}_checkpoint_script
 
 	if ${ngctl} show ${iface}_ip_acct: >/dev/null 2>&1; then
 		${sed} "s!%%iface%%!${iface}!g" <<-EOF | ${ngctl_batch}
 $stop_script
 EOF
+	    if [ -n "${checkpoint_script}" ]; then
+		(set -T
+		trap 'exit 1' 2
+		${checkpoint_script})
+	    fi
+
 	    if ${ngctl} show ${iface}_ip_acct: >/dev/null 2>&1; then
 		warn "netgraph node '${iface}_ip_acct' did not destroyed!"
 	    fi
