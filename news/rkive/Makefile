@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	torstenb@FreeBSD.org
 
 NO_CDROM=	"Don't make money from it"
+MAN1=		rkive.1 article.1 ckconfig.1
+MAN5=		rkive.5
+MANCOMPRESSED=	yes
 
 pre-patch:
 	@${CP} ${WRKSRC}/Makefile.dst ${WRKSRC}/Makefile
