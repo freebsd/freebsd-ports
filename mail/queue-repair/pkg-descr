@@ -1,0 +1,19 @@
+queue_repair features include:
+- automatic, dynamic determination of UIDs and GIDs.
+
+- automatic, dynamic determination of conf-split; can be overridden on the
+  commandline to change the conf-split of an existing queue without running a
+  parallel, temporary instance of qmail for queuelifetime.  Just recompile and
+  stop qmail, run queue-repair, and restart qmail.
+
+- automatic, dynamic determination of use of big-todo; can be overridden on the
+  commandline to change an existing queue as above.
+
+- handles basic tasks like fixing a queue restored from backups, incorrect
+  ownership or permissions of directories and files, missing or extra split
+  subdirectories, unexpected files or other direntries, or creating a valid
+  queue from scratch.
+
+- can run in repair or test (report-only) modes.  The default is test mode.
+
+WWW:	http://www.qcc.ca/~charlesc/software/queue_repair/
