@@ -1,0 +1,15 @@
+--- Makefile.orig	Sat Sep 23 17:14:43 2000
++++ Makefile	Mon Oct  9 23:35:38 2000
+@@ -4,9 +4,9 @@
+ CFLAGS = -O2 -Wall
+ LFLAGS = -lncurses 
+ 
+-BINDIR = /usr/local/bin
+-DATDIR = /usr/local/share/games/pentix
+-MANDIR = /usr/local/man/man1
++BINDIR = ${PREFIX}/bin
++DATDIR = ${PREFIX}/share/games/pentix
++MANDIR = ${PREFIX}/man/man1
+ 
+ PROG = pentix
+ DATA = pentix.qtn pentix.res readme.txt
