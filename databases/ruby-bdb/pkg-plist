@@ -12,14 +12,16 @@
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/bdb
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/Changes
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/README.en
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/access.html
-%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/access.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/arraylike.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/arraylike.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/bdb.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/bdb.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/cursor.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/cursor.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/env.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/env.rd
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/hashlike.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/hashlike.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/log.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/log.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/bdb/lock.html
