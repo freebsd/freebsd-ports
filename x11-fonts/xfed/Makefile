@@ -3,7 +3,7 @@
 # Date created:         7 December 1994
 # Whom:                 asami
 #
-# $Id: Makefile,v 1.8 1995/04/12 20:31:57 asami Exp $
+# $Id: Makefile,v 1.9 1995/04/22 11:58:42 asami Exp $
 #
 
 DISTNAME=	xfed
@@ -41,5 +41,8 @@ do-fetch:
 	  rm -rf ${.CURDIR}/src; \
 	fi
 .endif
+
+pre-clean:
+	-rm -rf ${.CURDIR}/src
 
 .include <bsd.port.mk>
