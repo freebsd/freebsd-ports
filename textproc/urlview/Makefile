@@ -7,16 +7,17 @@
 #
 
 PORTNAME=	urlview
-PORTVERSION= 	0.7
+PORTVERSION= 	0.9
 CATEGORIES=	textproc www
-MASTER_SITES=	ftp://ftp.cs.hmc.edu/pub/me/ \
+MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/contrib/ \
+		ftp://ftp.cs.hmc.edu/pub/me/ \
 		ftp://ftp.cs.tu-berlin.de/pub/net/mail/mutt/ \
 		ftp://ftp.ilog.fr/pub/Mirrors/mutt/contrib/ \
 		ftp://ftp.etri.re.kr/pub/mail/mutt/ \
 		ftp://ftp.pnm.net/pub/unix/mutt/contrib/
 
-PATCH_SITES=	http://feeding.frenzy.com/~rainking/
-PATCHFILES=	urlview.diff
+#PATCH_SITES=	http://feeding.frenzy.com/~rainking/
+#PATCHFILES=	urlview.diff
 
 MAINTAINER=	obrien@FreeBSD.org
 
