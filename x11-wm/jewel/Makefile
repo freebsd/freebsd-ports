@@ -20,13 +20,14 @@ DOCS=		Changelog Changelog.DLR Changelog.jewel INSTALL LICENSE README
 MAN1=		jewel.1x
 PLIST=		${WRKDIR}/pkg-plist
 USE_X_PREFIX=	yes
-USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 
 post-patch:
-	@${PERL} -pi -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g ; \
+	@${MV} ${WRKSRC}/Makefile ${WRKSRC}/Makefile.orig
+	@${SED} -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g ; \
 		s,^prefix,#prefix,g ; s,prefix,PREFIX,g ; \
-		s,CC,CXX,g ; s,CFLAGS,CXXFLAGS,g" ${WRKSRC}/Makefile
+		s,CC,CXX,g ; s,CFLAGS,CXXFLAGS,g" < ${WRKSRC}/Makefile.orig \
+		> ${WRKSRC}/Makefile
 
 pre-install:
 	${ECHO_CMD} bin/jewel > ${PLIST}
