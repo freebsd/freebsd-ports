@@ -3,11 +3,11 @@
 # Date created:	 	10 April 1999
 # Whom:			Chris Piazza <cpiazza@home.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/15 03:20:01 mharo Exp $
 #
 
 DISTNAME= 	ninja-src
-PKGNAME=	ninja-1.0.7
+PKGNAME=	ninja-1.0.8
 CATEGORIES=	net
 MASTER_SITES=	http://ninja.pimped.org/
 
