@@ -1,24 +1,6 @@
---- configure.orig	Sun Apr 12 04:41:56 1998
-+++ configure	Sat May  2 13:01:54 1998
-@@ -3365,7 +3365,7 @@
-     fi
- fi
- 
--CCOPTS='-g'
-+CCOPTS='-O2 -m486 -pipe'
- 
- if test "x$CCOPTS" = x; then
-     if test x$GCC = xyes; then
-@@ -8857,7 +8857,7 @@
- 		search_ncurses=true
- 	else
- 		LIBS="$LIBS -L$withval/lib -lncurses"
--		CPPFLAGS="$CPPFLAGS -I$withval/include"
-+		CPPFLAGS="$CPPFLAGS -I$withval/include -lmytinfo"
- 		search_ncurses=false
- 		screen_manager="ncurses"
- 		cat >> confdefs.h <<\EOF
-@@ -10419,7 +10419,7 @@
+--- configure.orig	Mon May 25 18:16:04 1998
++++ configure	Tue Jun  2 06:43:28 1998
+@@ -10462,7 +10462,7 @@
          if test -f /usr/include/ncurses.h
  	then
  	    echo "$ac_t""Found ncurses on /usr/include/ncurses.h" 1>&6
@@ -27,61 +9,16 @@
  	    CPPFLAGS="$CPPFLAGS "
  	    search_ncurses=false
  	    screen_manager="ncurses on /usr/include"
-@@ -10436,7 +10436,7 @@
-         if test -f /usr/include/ncurses/ncurses.h
- 	then
- 	    echo "$ac_t""Found ncurses on /usr/include/ncurses/ncurses.h" 1>&6
-- 	    LIBS="$LIBS -lncurses"
-+ 	    LIBS="$LIBS -lncurses -lmytinfo"
- 	    CPPFLAGS="$CPPFLAGS -I/usr/include/ncurses"
- 	    search_ncurses=false
- 	    screen_manager="ncurses on /usr/include/ncurses"
-@@ -10453,7 +10453,7 @@
-         if test -f /usr/local/include/ncurses.h
- 	then
- 	    echo "$ac_t""Found ncurses on /usr/local/include/ncurses.h" 1>&6
-- 	    LIBS="$LIBS -L/usr/local/lib -lncurses"
-+ 	    LIBS="$LIBS -L/usr/local/lib -lncurses -lmytinfo"
- 	    CPPFLAGS="$CPPFLAGS -I/usr/local/include"
- 	    search_ncurses=false
- 	    screen_manager="ncurses on /usr/local"
-@@ -10470,7 +10470,7 @@
-         if test -f /usr/local/include/ncurses/ncurses.h
- 	then
- 	    echo "$ac_t""Found ncurses on /usr/local/include/ncurses/ncurses.h" 1>&6
-- 	    LIBS="$LIBS -L/usr/local/lib -L/usr/local/lib/ncurses -lncurses"
-+ 	    LIBS="$LIBS -L/usr/local/lib -L/usr/local/lib/ncurses -lncurses -lmytinfo"
- 	    CPPFLAGS="$CPPFLAGS -I/usr/local/include/ncurses"
- 	    search_ncurses=false
- 	    screen_manager="ncurses on /usr/local/include/ncurses"
-@@ -10488,7 +10488,7 @@
-         if test -f /usr/local/include/ncurses/curses.h
- 	then
- 	    echo "$ac_t""Found ncurses on /usr/local/include/ncurses/curses.h" 1>&6
-- 	    LIBS="$LIBS -L/usr/local/lib -lncurses"
-+ 	    LIBS="$LIBS -L/usr/local/lib -lncurses -lmytinfo"
- 	    CPPFLAGS="$CPPFLAGS -I/usr/local/include/ncurses -DRENAMED_NCURSES"
- 	    search_ncurses=false
- 	    screen_manager="renamed ncurses on /usr/local/.../ncurses"
-@@ -10506,7 +10506,7 @@
-         if test -f /usr/include/ncurses/curses.h
- 	then
- 	    echo "$ac_t""Found ncurses on /usr/include/ncurses/curses.h" 1>&6
-- 	    LIBS="$LIBS -lncurses"
-+ 	    LIBS="$LIBS -lncurses -lmytinfo"
- 	    CPPFLAGS="$CPPFLAGS -I/usr/include/ncurses -DRENAMED_NCURSES"
- 	    search_ncurses=false
- 	    screen_manager="renamed ncurses on /usr/include/ncurses"
-@@ -11225,7 +11225,7 @@
+@@ -11268,7 +11268,7 @@
  vfs/extfs/ftplist vfs/extfs/zip vfs/extfs/zoo vfs/extfs/lslR
  vfs/extfs/lha vfs/extfs/cpio vfs/extfs/deb vfs/extfs/rar
  
 -doc/mc.1 doc/mcedit.1 doc/mcserv.8
-+doc/mc.1  doc/mcserv.8
++doc/mc.1 doc/mcserv.8
  
  intl/Makefile po/Makefile.in
   config.h" | sed "s/:[^ ]*//g"` conftest*; exit 1' 1 2 15
-@@ -11422,7 +11422,7 @@
+@@ -11466,7 +11466,7 @@
  vfs/extfs/ftplist vfs/extfs/zip vfs/extfs/zoo vfs/extfs/lslR
  vfs/extfs/lha vfs/extfs/cpio vfs/extfs/deb vfs/extfs/rar
  

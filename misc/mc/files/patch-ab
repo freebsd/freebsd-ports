@@ -1,12 +1,12 @@
---- vfs/Makefile.in.orig	Mon Mar 30 05:26:08 1998
-+++ vfs/Makefile.in	Sun Apr 12 03:17:24 1998
+--- vfs/Makefile.in.orig	Mon May 25 18:16:04 1998
++++ vfs/Makefile.in	Tue Jun  2 06:29:12 1998
 @@ -91,25 +91,25 @@
  
- install: mcserv install.extfs
- 	if test x@mcserv@ != x; then \
+ install: @mcserv@ install.extfs
+ 	-(if test x@mcserv@ != x; then \
 -	    $(INSTALL_PROGRAM) mcserv $(DESTDIR)$(bindir)/$(binprefix)mcserv; \
 +	    $(INSTALL_PROGRAM) mcserv $(DESTDIR)$(sbindir)/$(binprefix)mcserv; \
- 	fi
+ 	fi)
  
  install.extfs:
  	$(INSTALL_DATA) $(srcdir)/extfs/README $(DESTDIR)$(libdir)/extfs/README
