@@ -14,7 +14,7 @@ MAINTAINER=	dmlb@dmlb.org
 COMMENT=	Waveform viewer for analogue electronic simulation tools
 
 RUN_DEPENDS=	graph:${PORTSDIR}/graphics/plotutils
-LIB_DEPENDS=	geda.16:${PORTSDIR}/cad/libgeda \
+LIB_DEPENDS=	geda.18:${PORTSDIR}/cad/libgeda \
 		guile.15:${PORTSDIR}/lang/guile \
 		guilegtk-1.2.0:${PORTSDIR}/x11-toolkits/guile-gtk
 
