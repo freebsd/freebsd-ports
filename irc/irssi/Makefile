@@ -54,7 +54,7 @@ WITH_SSL=	yes
 
 .if ${WITH_GLIB} == "2"
 USE_GNOME=	glib20
-LIB_DEPENDS+=	gc.1:${PORTSDIR}/deve/boehm-gc
+LIB_DEPENDS+=	gc.1:${PORTSDIR}/devel/boehm-gc
 CONFIGURE_ENV+=	CPPFLAGS=-I${PREFIX}/include
 CONFIGURE_ARGS+=	--with-gc
 .elif ${WITH_GLIB} == "1"
@@ -99,7 +99,7 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--disable-ssl
 .endif
 
-pre-everything::
+pre-extract:
 	@${ECHO} ""
 	@${ECHO} "You may use the following build options:"
 	@${ECHO} ""
