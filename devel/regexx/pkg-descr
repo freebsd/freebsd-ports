@@ -1,0 +1,7 @@
+Regexx is a complete regular expressions C++ solution. It implements easy
+expression execution, global searching, replace with atom substitution,
+customized replaces, easy match and atom strings retrieving. It's also
+included in the library functions to split strings with strings or regular
+expressions.
+
+WWW: http://bazar.conectiva.com.br/~niemeyer/projects/regexx/

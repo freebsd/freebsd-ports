@@ -350,6 +350,7 @@
     SUBDIR += qtez
     SUBDIR += qtk
     SUBDIR += re2c
+    SUBDIR += regexx
     SUBDIR += rinfo
     SUBDIR += robodoc
     SUBDIR += rpc2
