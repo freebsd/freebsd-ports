@@ -1,0 +1,11 @@
+To use asdf and depending ports, you will have to configure your
+Lisp systems so they know where to find asdf itself and the system
+definition files.
+
+A default configuration is installed in
+
+  ${PREFIX}/etc/asdf-init.lisp
+
+Review this file for further information, or simply load it from your
+Lisp initialization file.
+

@@ -96,6 +96,7 @@
     SUBDIR += cflow
     SUBDIR += cflow2vcg
     SUBDIR += chora
+    SUBDIR += cl-asdf
     SUBDIR += clanlib
     SUBDIR += clig
     SUBDIR += clint
