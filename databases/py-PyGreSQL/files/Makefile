@@ -1,28 +1,26 @@
+# grr, commit_prep wants the next line
+# $FreeBSD$
 .SUFFIXES:  .py .pyc
 
-SITE_PACKAGES=${PREFIX}/lib/python1.5/site-packages
-
-all: _pgmodule.so pg.pyc pgtools.pyc
+all: _pgmodule.so pg.pyc pgdb.pyc
 
 install: 
-	@${MKDIR} ${SITE_PACKAGES}
-	${BSD_INSTALL_PROGRAM} _pgmodule.so ${SITE_PACKAGES}
-	${BSD_INSTALL_DATA} pg.py pg.pyc pgtools.py pgtools.pyc \
-		${SITE_PACKAGES}
+	@${MKDIR} ${PYTHON_SITELIBDIR}
+	${BSD_INSTALL_PROGRAM} _pgmodule.so ${PYTHON_SITELIBDIR}
+	${BSD_INSTALL_DATA} pg.py pg.pyc pgdb.py pgdb.pyc \
+	    ${PYTHON_SITELIBDIR}
 
 clean:
-	rm -f *.so *.o *.pyc pgtools.py
-
-pgtools.py: tutorial/pgtools.py
-	${LN} -fs ${.ALLSRC} ${.TARGET}
+	rm -f *.so *.o *.pyc
 
 _pgmodule.so: pgmodule.o
-	${LD} -Bshareable -lc_r -L${PREFIX}/lib/python1.5/config -lpython1.5 \
-		-L${PREFIX}/pgsql/lib -lpq ${.ALLSRC} -o ${.TARGET}
+	${LD} -Bshareable -lc_r -L${PYTHON_LIBDIR}/config \
+	    -l${PYTHON_VERSION} -L${PREFIX}/pgsql/lib -lpq \
+	    ${.ALLSRC} -o ${.TARGET}
 
 pgmodule.o: pgmodule.c
-	${CC} -c -I${PREFIX}/include/python1.5 -I${PREFIX}/pgsql/include \
-		 ${.ALLSRC}
+	${CC} -c -I${PREFIX}/include/${PYTHON_VERSION} \
+	    -I${PREFIX}/pgsql/include ${.ALLSRC}
 
 .py.pyc:
 	${SETENV} PYTHONPATH=${.CURDIR} ${PYTHON} -c 'import ${.IMPSRC:.py=}'

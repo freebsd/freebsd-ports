@@ -5,21 +5,28 @@
 # $FreeBSD$
 #
 
-PORTNAME=		py-PyGreSQL
-PORTVERSION=		2.4
+PORTNAME=		PyGreSQL
+PORTVERSION=		3.0
 CATEGORIES=		databases python
 MASTER_SITES=		ftp://ftp.druid.net/pub/distrib/
+PKGNAMEPREFIX=		py-
 DISTNAME=		PyGreSQL-${PORTVERSION}
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		nectar@FreeBSD.org
 
-BUILD_DEPENDS=		python1.5:${PORTSDIR}/lang/python15
-RUN_DEPENDS=		python1.5:${PORTSDIR}/lang/python15
+BUILD_DEPENDS=		${DATETIME_DEP}:${PORTSDIR}/devel/py-mxDateTime
+RUN_DEPENDS=		${DATETIME_DEP}:${PORTSDIR}/devel/py-mxDateTime
 LIB_DEPENDS=		pq.2:${PORTSDIR}/databases/postgresql7
 
-MAKE_ENV=		PYTHON=${PREFIX}/bin/python \
+USE_PYTHON=		yes
+MAKE_ENV=		PYTHON_VERSION=${PYTHON_VERSION} \
+			PYTHON_LIBDIR=${PYTHON_LIBDIR} \
+			PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR} \
+			PYTHON=${PYTHON_CMD} \
 			LN="${LN}" SETENV="${SETENV}" MKDIR="${MKDIR}"
+
+DATETIME_DEP=		${PYTHON_SITELIBDIR}/DateTime/__init__.py
 
 pre-build:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}/Makefile

@@ -1,6 +1,6 @@
-lib/python1.5/site-packages/_pgmodule.so
-lib/python1.5/site-packages/pg.py
-lib/python1.5/site-packages/pg.pyc
-lib/python1.5/site-packages/pgtools.py
-lib/python1.5/site-packages/pgtools.pyc
+lib/%%PYTHON_VERSION%%/site-packages/_pgmodule.so
+lib/%%PYTHON_VERSION%%/site-packages/pg.py
+lib/%%PYTHON_VERSION%%/site-packages/pg.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pgdb.py
+lib/%%PYTHON_VERSION%%/site-packages/pgdb.pyc
 share/doc/README.PyGreSQL
