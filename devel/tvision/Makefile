@@ -7,7 +7,7 @@
 
 PORTNAME=	tvision
 PORTVERSION=	0.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.sigala.it/sergio/tvision/mysource/
@@ -23,6 +23,10 @@ INSTALLS_SHLIB=	yes
 USE_GCC=	3.3
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+USE_GCC=	3.4
+.endif
 
 post-extract:
 	@${MV} ${WRKSRC}/myendian.h ${WRKSRC}/lib
