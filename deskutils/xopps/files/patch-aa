@@ -7,14 +7,14 @@
 -ROOTDIR = ### user defined ###
 -SUBSYS = ### user defined ###
 +ROOTDIR = $(PREFIX)
-+SUBSYS = ..
++SUBSYS =
  BINDIR = $(ROOTDIR)/bin
 -RSCDIR = $(ROOTDIR)/setup/app-defaults
 +RSCDIR = $(ROOTDIR)/lib/X11/app-defaults
  MAN1DIR = $(ROOTDIR)/man/man1
 -HELPDIR = $(ROOTDIR)/setup/$(SUBSYS)/help
 -BITDIR = $(ROOTDIR)/setup/bitmaps
-+HELPDIR = $(ROOTDIR)/lib/X11/$(SUBSYS)/help
++HELPDIR = $(ROOTDIR)/info
 +BITDIR = $(ROOTDIR)/include/X11/bitmaps
  
  #
