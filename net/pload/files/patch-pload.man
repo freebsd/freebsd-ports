@@ -1,0 +1,33 @@
+--- pload.man.orig	Tue Feb  1 02:11:24 2000
++++ pload.man	Wed Sep 22 16:44:12 2004
+@@ -18,7 +18,7 @@
+ .TH PLOAD 1 "" "January 2000"
+ 
+ .SH NAME
+-pload \- display ppp throughput statistics in an X window
++pload \- display network interface statistics in an X window
+ 
+ .SH SYNOPSIS
+ .ta 6n
+@@ -30,9 +30,9 @@
+ [-iformat \fIfmt\fP] [-oformat \fIfmt\fP] 
+ 
+ .SH DESCRIPTION
+-The \fBpload\fP program displays information about network interface (ppp) statistics.
+-Additionally, for Linux 2.2 it can display statistics for any interface that
+-reports to /proc/net/dev .
++The \fBpload\fP program displays network throughput statistics in an X window
++Athena stripchart graph.
++On FreeBSD, \fBpload\fP can handle any network interface.
+ 
+ .SH OPTIONS
+ .PP
+@@ -144,7 +144,7 @@
+ .TP 8
+ .B \-iformat \fIfmt\fP
+ Use string \fIfmt\fP for the inbound label. The \fIfmt\fP string will be displayed
+-literally with the special tags %t %r and %M expanding to the interface total, current
++literally with the special tags %d %t %r and %M expanding to the interface name, interface total, current
+ rate, and maximum rate respectively. The default is "%t %r in".
+ 
+ .TP 8
