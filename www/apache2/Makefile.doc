@@ -51,6 +51,7 @@
 ##            SUEXEC_DOCROOT:     SuExec root directory
 ##            SUEXEC_USERDIR:     User subdirectory (default public_html)
 ##            SUEXEC_SAFEPATH:    Set the safepath
+##            SUEXEC_LOGFILE:     Set log file for suexec (default: /var/log/httpd-suexec.log)
 ##            SUEXEC_UIDMIN:      Minimal allowed UID (default 1000)
 ##            SUEXEC_GIDMIN:      Minimal allowed GID (default 1000)
 ##            SUEXEC_CALLER:      User allowed to call SuExec (default
