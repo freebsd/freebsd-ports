@@ -28,6 +28,7 @@
     SUBDIR += awstats
     SUBDIR += bacon
     SUBDIR += beonex
+    SUBDIR += bins
     SUBDIR += bk2site
     SUBDIR += bkmrkconv
     SUBDIR += bluefish
