@@ -8,7 +8,7 @@
 PORTNAME=	nullmailer
 # PORTVERSION=	1.00RC7
 PORTVERSION=	1.00r7
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/nullmailer/ \
 		ftp://mirrors.dataloss.nl/mirrors/bgware/nullmailer/%SUBDIR%/
@@ -27,6 +27,8 @@ MAN1=	nullmailer-inject.1 sendmail.1
 MAN7=	nullmailer.7
 MAN8=	nullmailer-queue.8 nullmailer-send.8
 
+USE_RC_SUBR=	yes
+
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 LOCALSTATEDIR=	/var/spool
@@ -34,6 +36,8 @@ LOCALSTATEDIR=	/var/spool
 CONFIGURE_ARGS+=	--localstatedir=${LOCALSTATEDIR}
 PLIST_SUB=		LOCALSTATEDIR=${LOCALSTATEDIR}
 PKGINSTALL=		${WRKDIR}/pkg-install
+
+RC_SCRIPTS_SUB=	PREFIX=${PREFIX} RC_SUBR=${RC_SUBR}
 
 post-extract:
 	@${CAT} ${FILESDIR}/pkg-install.proto | ${SED} -e 's,%%LOCALSTATEDIR%%,${LOCALSTATEDIR},g' > ${WRKDIR}/pkg-install
@@ -44,11 +48,10 @@ post-extract:
 pre-install:
 	@BATCH="${BATCH}" LOCALSTATEDIR="${LOCALSTATEDIR}" PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
-do-install:
-	@cd ${WRKSRC} && make install && make install-root
-
 post-install:
-	@${INSTALL_SCRIPT} -c ${FILESDIR}/nullmail.sh ${PREFIX}/etc/rc.d/
+	@cd ${WRKSRC} && make install-root
+	@${SED} ${RC_SCRIPTS_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${FILESDIR}/nullmail.sh > ${WRKDIR}/nullmail.sh
+	@${INSTALL_SCRIPT} -c ${WRKDIR}/nullmail.sh ${PREFIX}/etc/rc.d/
 	@${INSTALL_DATA} -c ${FILESDIR}/remotes.sample ${PREFIX}/etc/nullmailer/
 	@BATCH="${BATCH}" NMH_PREFIX="${NMH_PREFIX}" PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
