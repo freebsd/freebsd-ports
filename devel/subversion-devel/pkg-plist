@@ -1,5 +1,4 @@
 bin/svn
-bin/svn-config
 bin/svnadmin
 bin/svndumpfilter
 bin/svnlook
