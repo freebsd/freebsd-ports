@@ -4,7 +4,7 @@
  #! /bin/sh
  # -*- tcl -*- \
 -exec wish8.0 $0 wish8.0 $*
-+exec wish8.1 $0 wish8.1 $*
++exec wish8.2 $0 wish8.2 $*
  
  set glob(version) 2.4.2
  

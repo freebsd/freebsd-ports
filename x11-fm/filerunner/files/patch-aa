@@ -6,8 +6,8 @@
 -TCLINC = /usr/local/lib/tcl8.0
 -TKINC  = /usr/local/lib/tk8.0
 -X11INC = /usr/X11/include
-+TCLINC = ${PREFIX}/include/tcl8.1
-+TKINC  = ${PREFIX}/include/tk8.1
++TCLINC = ${PREFIX}/include/tcl8.2
++TKINC  = ${PREFIX}/include/tk8.2
 +X11INC = ${X11BASE}/include
  
 -CFLAGS = -Wall -fPIC -O3 -I$(TCLINC) -I$(TKINC) -I$(X11INC)
