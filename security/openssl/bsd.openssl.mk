@@ -2,7 +2,7 @@
 # Date created:		31 May 2002
 # Whom:			dinoex
 #
-# $FreeBSD: /tmp/pcvs/ports/security/openssl/Attic/bsd.openssl.mk,v 1.1 2003-04-03 18:24:31 dinoex Exp $
+# $FreeBSD: /tmp/pcvs/ports/security/openssl/Attic/bsd.openssl.mk,v 1.2 2003-04-07 05:54:39 dinoex Exp $
 #
 # this substitutes USE_OPENSSL=yes
 # just include this makefile after bsd.ports.pre.mk
@@ -81,10 +81,10 @@ MAKE_ARGS+=		OPENSSL_CFLAGS="${OPENSSL_CFLAGS}"
 
 .else
 
-.if exists(/usr/lib/libcrypto.so.3)
-SHLIBVER=	4
-.else
+.if exists(/usr/lib/libcrypto.so.2) && !exists(/usr/lib/libcrypto.so.3)
 SHLIBVER=	3
+.else
+SHLIBVER=	4
 .endif
 
 OPENSSLBASE=		${LOCALBASE}
