@@ -18,6 +18,8 @@ COMMENT=	Multimedia library for encoding H.264/AVC video streams
 
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
 
+ONLY_FOR_ARCHS=	i386
+
 USE_GETOPT_LONG=yes
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
