@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	portindex
-PORTVERSION=	17
+PORTVERSION=	18
 CATEGORIES=	sysutils
 MASTER_SITES=	http://people.tecnik93.com/~radim/distfiles/
 DISTNAME=	bsdportsutils-${PORTVERSION}
@@ -31,12 +31,15 @@ SOURCES=	${PORTINDEX}
 EXECUTABLES=	portindex portreadmes portindexdb
 
 OPTIONS=	PKGHISTORY "Install pkghistory package" off \
+		MINORUPDATES "Install point/minor/stealth updates scripts" off \
 		MISCTOOLS "Install updateall script" off
 
 .include <bsd.port.pre.mk>
 
+.ifdef WITH_MINORUPDATES
 SOURCES+=	${MINORUPDATES}
 EXECUTABLES+=	${MINORUPDATES}
+.endif
 
 .ifdef WITH_MISCTOOLS
 .ifndef WITH_PKGHISTORY
