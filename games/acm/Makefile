@@ -8,7 +8,7 @@
 
 DISTNAME=	acm-5.0
 CATEGORIES=	games
-MASTER_SITES=	http://www.websimulations.com/download/
+MASTER_SITES=	ftp://ftp.websimulations.com/pub/download/
 
 MAINTAINER=	se@FreeBSD.org
 
