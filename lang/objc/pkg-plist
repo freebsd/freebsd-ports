@@ -1,13 +1,7 @@
+bin/cvtimport
 bin/objc
 bin/objc1
 bin/postlink
-bin/cvtimport
-lib/objcrt.a
-lib/objpak.a
-lib/_prelink.o
-lib/_predll.o
-lib/objchelp.txt
-lib/objcdlso.ld
 include/cakit/cakit.h
 include/cakit/ccltn.h
 include/cakit/ccomplex.h
@@ -24,31 +18,31 @@ include/cakit/symbol.h
 include/cakit/term.h
 include/cakit/vector.h
 include/objcrt/Block.h
-include/objcrt/Object.h
 include/objcrt/Message.h
-include/objcrt/objcrt.h
+include/objcrt/Object.h
 include/objcrt/objc.h
-include/objpak/ascfiler.h
-include/objpak/dictnary.h
-include/objpak/ocstring.h
-include/objpak/objpak.h
-include/objpak/cltn.h
-include/objpak/ordcltn.h
-include/objpak/set.h
-include/objpak/bag.h
-include/objpak/sortcltn.h
-include/objpak/stack.h
-include/objpak/runarray.h
+include/objcrt/objcrt.h
 include/objpak/array.h
+include/objpak/ascfiler.h
+include/objpak/bag.h
+include/objpak/cltn.h
+include/objpak/dictnary.h
 include/objpak/idarray.h
 include/objpak/intarray.h
-include/objpak/txtattr.h
+include/objpak/objpak.h
+include/objpak/ocstring.h
+include/objpak/octext.h
+include/objpak/ordcltn.h
+include/objpak/paragrph.h
 include/objpak/point.h
 include/objpak/rectangl.h
-include/objpak/octext.h
-include/objpak/paragrph.h
-include/objpak/txtstyle.h
+include/objpak/runarray.h
 include/objpak/sequence.h
+include/objpak/set.h
+include/objpak/sortcltn.h
+include/objpak/stack.h
+include/objpak/txtattr.h
+include/objpak/txtstyle.h
 include/oclib/addrof.h
 include/oclib/arrowxpr.h
 include/oclib/arydecl.h
@@ -142,16 +136,26 @@ include/ppi/String.h
 include/ppi/StringCl.h
 include/ppi/mivarargs.h
 include/ppi/vectors.h
+lib/_predll.o
+lib/_prelink.o
+lib/cakit.a
+lib/cakitr.a
+lib/objcdlso.ld
+lib/objchelp.txt
+lib/objcrt.a
+lib/objcrtr.a
+lib/objpak.a
+lib/objpakr.a
+share/doc/objc/examples/Makefile
 share/doc/objc/examples/Makefile.in
 share/doc/objc/examples/README
-share/doc/objc/examples/loop.m
 share/doc/objc/examples/all.m
 share/doc/objc/examples/assoc.m
 share/doc/objc/examples/become.m
 share/doc/objc/examples/block.m
+share/doc/objc/examples/blrefcnt.m
 share/doc/objc/examples/blvar.m
 share/doc/objc/examples/classvars.m
-share/doc/objc/examples/blrefcnt.m
 share/doc/objc/examples/delegate.m
 share/doc/objc/examples/dlopen.m
 share/doc/objc/examples/during.h
@@ -162,6 +166,7 @@ share/doc/objc/examples/except.m
 share/doc/objc/examples/gdb.m
 share/doc/objc/examples/howmany.m
 share/doc/objc/examples/ifExcept.m
+share/doc/objc/examples/loop.m
 share/doc/objc/examples/memory.m
 share/doc/objc/examples/nextinst.m
 share/doc/objc/examples/poseAs.m
@@ -173,7 +178,6 @@ share/doc/objc/examples/super.m
 share/doc/objc/examples/tail.m
 share/doc/objc/examples/timeblock.m
 share/doc/objc/examples/varscope.m
-share/doc/objc/examples/Makefile
 share/doc/objc/html/cakit/BigInt.html
 share/doc/objc/html/cakit/CAObject.html
 share/doc/objc/html/cakit/Complex.html
@@ -209,14 +213,14 @@ share/doc/objc/html/objpak/String.html
 share/doc/objc/html/objpak/Text.html
 share/doc/objc/html/objpak/TextAttribute.html
 share/doc/objc/html/objpak/TextStyle.html
-@dirrm share/doc/objc/examples
-@dirrm share/doc/objc/html/cakit
-@dirrm share/doc/objc/html/objcrt
 @dirrm share/doc/objc/html/objpak
+@dirrm share/doc/objc/html/objcrt
+@dirrm share/doc/objc/html/cakit
 @dirrm share/doc/objc/html
+@dirrm share/doc/objc/examples
 @dirrm share/doc/objc
-@dirrm include/cakit
-@dirrm include/oclib
-@dirrm include/objcrt
-@dirrm include/objpak
 @dirrm include/ppi
+@dirrm include/oclib
+@dirrm include/objpak
+@dirrm include/objcrt
+@dirrm include/cakit
