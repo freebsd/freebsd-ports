@@ -1,0 +1,4 @@
+This is the ``E Canvas'' - a rip off of some of the other canvas's floating
+about - Tk and gnome too. It's at the Xlib level. It's intended to be
+accelerated by hardware or highly optimised software where possible. It is
+intended to be simple and allow for the building of interfaces ontop of it.
