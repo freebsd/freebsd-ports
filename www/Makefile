@@ -208,6 +208,7 @@
     SUBDIR += mod_cvs
     SUBDIR += mod_dav
     SUBDIR += mod_dtcl
+    SUBDIR += mod_encoding
     SUBDIR += mod_extract_forwarded
     SUBDIR += mod_fastcgi
     SUBDIR += mod_filter
