@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	jedit
-PORTVERSION=	2.5.1
+PORTVERSION=	2.6.0
 CATEGORIES=	editors java
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://members.xoom.com/romainguy/
 MASTER_SITE_SUBDIR=	${PORTNAME}
-DISTFILES=	${PORTNAME}-${PORTVERSION}.jar swingall.jar
+DISTFILES=	${PORTNAME}-${PORTVERSION:S/.0$/final/}.jar swingall.jar
 EXTRACT_ONLY=	
 
 MAINTAINER=	sobomax@FreeBSD.org
@@ -30,8 +30,8 @@ do-configure:
 
 do-install:
 	@${SED} "s|%%PREFIX%%|${PREFIX}| ; s|%%WRKDIR%%|${WRKDIR}|" ${FILESDIR}/instscript | \
-		${SETENV} CLASSPATH=${DISTDIR}/${PORTNAME}-${PORTVERSION:S/.0/final/}.jar:${DISTDIR}/swingall.jar \
-		${LOCALBASE}/bin/javavm install text
+		${SETENV} CLASSPATH=${DISTDIR}/${PORTNAME}-${PORTVERSION:S/.0$/final/}.jar:${DISTDIR}/swingall.jar \
+		${LOCALBASE}/bin/javavm Install text
 	@${INSTALL_DATA} ${DISTDIR}/swingall.jar ${PREFIX}/share/java/jedit
 	@${INSTALL_SCRIPT} ${WRKDIR}/jedit.sh ${PREFIX}/bin/jedit
 
