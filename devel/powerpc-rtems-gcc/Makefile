@@ -11,4 +11,5 @@ MAINTAINER=	jeh@FreeBSD.org
 
 RTEMS_ARCH=	powerpc
 
-.include "${.CURDIR}/../i386-rtems-gcc/Makefile"
+MASTERDIR=	${.CURDIR}/../i386-rtems-gcc
+.include "${MASTERDIR}/Makefile"

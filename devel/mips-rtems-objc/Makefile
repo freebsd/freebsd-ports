@@ -10,4 +10,6 @@ PORTNAME=	objc
 MAINTAINER=	jeh@FreeBSD.org
 
 LCLTARGET=	mips-rtems
-.include "${.CURDIR}/../i386-rtems-objc/Makefile"
+
+MASTERDIR=	${.CURDIR}/../i386-rtems-objc
+.include "${MASTERDIR}/Makefile"
