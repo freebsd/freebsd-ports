@@ -1,7 +1,7 @@
-bin/rat-4.2.22
-bin/rat-4.2.22-ui
-bin/rat-4.2.22-media
+bin/rat-%%PORTVERSION%%
+bin/rat-%%PORTVERSION%%-ui
+bin/rat-%%PORTVERSION%%-media
 bin/rat
-etc/sdr/plugins/sdr2.plugin.S02.audio.rtp.-.rat-4.2.22
+etc/sdr/plugins/sdr2.plugin.S02.audio.rtp.-.rat-%%PORTVERSION%%
 @dirrm etc/sdr/plugins
 @dirrm etc/sdr
