@@ -17,8 +17,6 @@ DISTFILES+= mpqc-man-${PORTVERSION}.tar.gz mpqc-html-${PORTVERSION}.tar.gz
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	The massively parallel quantum computing library and program
 
-BROKEN=		"Does not patch"
-
 LIB_DEPENDS=	lapack:${PORTSDIR}/math/lapack \
 		atlas:${PORTSDIR}/math/atlas
 
