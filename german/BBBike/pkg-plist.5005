@@ -406,12 +406,13 @@ BBBike/GPS/Unknown2.pm
 BBBike/Geography/Muenchen_DE.pm
 BBBike/msg/bbbike/en
 BBBike/Makefile.PL
-BBBike/lib/%%PERL_VER%%/%%PERL_ARCH%%/auto/BBBikeXS/BBBikeXS.so
-BBBike/lib/%%PERL_VER%%/%%PERL_ARCH%%/auto/BBBikeXS/BBBikeXS.bs
-BBBike/lib/%%PERL_VER%%/%%PERL_ARCH%%/auto/VirtArray/VirtArray.so
-BBBike/lib/%%PERL_VER%%/%%PERL_ARCH%%/auto/VirtArray/VirtArray.bs
-BBBike/lib/%%PERL_VER%%/%%PERL_ARCH%%/BBBikeXS.pm
-BBBike/lib/%%PERL_VER%%/%%PERL_ARCH%%/VirtArray.pm
+BBBike/lib/%%PERL_ARCH%%/auto/BBBikeXS/BBBikeXS.so
+BBBike/lib/%%PERL_ARCH%%/auto/BBBikeXS/BBBikeXS.bs
+BBBike/lib/%%PERL_ARCH%%/auto/VirtArray/VirtArray.so
+BBBike/lib/%%PERL_ARCH%%/auto/VirtArray/VirtArray.bs
+BBBike/lib/%%PERL_ARCH%%/BBBikeXS.pm
+BBBike/lib/%%PERL_ARCH%%/VirtArray.pm
+BBBike/bbbike.1
 @dirrm BBBike/lib/%%PERL_VER%%/%%PERL_ARCH%%/auto/VirtArray
 @dirrm BBBike/lib/%%PERL_VER%%/%%PERL_ARCH%%/auto/BBBikeXS
 @dirrm BBBike/lib/%%PERL_ARCH%%/auto/VirtArray
