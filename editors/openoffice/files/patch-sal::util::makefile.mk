@@ -1,6 +1,6 @@
---- ../sal/util/makefile.mk.orig	Tue Mar  5 21:36:23 2002
-+++ ../sal/util/makefile.mk	Tue Mar  5 21:36:44 2002
-@@ -113,7 +113,9 @@
+--- ../sal/util/makefile.mk.orig	Sun Mar 17 12:51:30 2002
++++ ../sal/util/makefile.mk	Wed Apr  3 01:04:34 2002
+@@ -117,7 +117,9 @@
  SHL1TARGET= $(TARGET)
  SHL1IMPLIB= i$(TARGET)
  

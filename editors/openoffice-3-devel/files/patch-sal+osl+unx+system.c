@@ -1,8 +1,8 @@
---- ../sal/osl/unx/system.c.orig	Wed Feb 28 13:08:45 2001
-+++ ../sal/osl/unx/system.c
-@@ -126,6 +126,73 @@
-   	return res;
+--- ../sal/osl/unx/system.c.orig	Sun Mar 17 12:34:13 2002
++++ ../sal/osl/unx/system.c	Wed Apr  3 01:03:36 2002
+@@ -195,6 +195,73 @@
  }
+ #endif
  
 +int getpwuid_r(uid_t uid, struct passwd *pwd, char *buffer,
 +           size_t buflen, struct passwd **result)
@@ -74,7 +74,7 @@
  struct tm *localtime_r(const time_t *timep, struct tm *buffer)
  {
  	struct tm* res;
-@@ -449,3 +516,50 @@
+@@ -518,3 +585,50 @@
  }
  #endif
  

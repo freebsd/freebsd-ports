@@ -1,4 +1,4 @@
---- ../util/makefile.mk.orig	Sat Mar  2 21:17:20 2002
+--- ../inet/util/makefile.mk.orig	Sat Mar  2 21:17:20 2002
 +++ ../inet/util/makefile.mk	Sat Mar  2 21:17:42 2002
 @@ -116,7 +116,7 @@
  

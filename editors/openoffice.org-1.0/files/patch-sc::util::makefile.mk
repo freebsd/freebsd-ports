@@ -1,5 +1,5 @@
---- ../sc/util/makefile.mk.orig	Sun Mar  3 01:35:09 2002
-+++ ../sc/util/makefile.mk	Sun Mar  3 01:34:53 2002
+--- ../sc/util/makefile.mk.orig	Mon Mar 11 21:48:24 2002
++++ ../sc/util/makefile.mk	Wed Apr  3 01:06:57 2002
 @@ -105,7 +105,9 @@
  # --- StarClac DLL
  
@@ -9,4 +9,4 @@
 +.ENDIF
  SHL1IMPLIB= sci
  
- SHL1STDLIBS=        \
+ .IF "$(GUI)"=="UNX"

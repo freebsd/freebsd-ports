@@ -1,5 +1,5 @@
---- ../unzip/source/misc.c.orig	Tue Mar  5 18:52:16 2002
-+++ ../unzip/source/misc.c	Tue Mar  5 18:53:03 2002
+--- ../unzip/source/misc.c.orig	Fri Feb 15 15:10:30 2002
++++ ../unzip/source/misc.c	Wed Apr  3 01:19:16 2002
 @@ -301,8 +301,8 @@
      int yr, mo, dy, hh, mm, ss, leap;
      long m_time, days=0;
@@ -11,14 +11,3 @@
      static struct timeb tbp;
  #endif /* __386BSD__ */
  #else /* !(BSD || MTS) */
-@@ -340,8 +340,8 @@
-       /* - 1;   MS-DOS times always rounded up to nearest even second */
- 
- #if (!defined(MACOS) && !defined(__GO32__))
--#if (defined(BSD) || defined(MTS) || defined (ALPHA)) && ! defined(MACOSX) && ! defined(NETBSD)
--#ifndef __386BSD__
-+#if (defined(BSD) || defined(FREEBSD) || defined(MTS) || defined (ALPHA)) && ! defined(MACOSX) && ! defined(NETBSD)
-+#if !defined __386BSD__ && !defined FREEBSD
-     ftime(&tbp);
-     m_time += tbp.timezone * 60L;
- #endif
