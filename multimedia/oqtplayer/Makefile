@@ -23,6 +23,8 @@ WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 
+CFLAGS+=	-I${LOCALBASE}/include
+
 do-install:
 .ifndef(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
