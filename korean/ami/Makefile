@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	ami
-PORTVERSION=	1.0.10
-PORTREVISION=	1
+PORTVERSION=	1.0.11
+#PORTREVISION=	1
 CATEGORIES=	korean x11 gnome
 MASTER_SITES=	http://www.kr.freebsd.org/~hwang/ami/ \
 		http://master.debian-kr.org/~cwryu/archive/misc/
@@ -21,7 +21,7 @@ USE_GMAKE=	yes
 USE_GNOMECTRL=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-hangul-keyboard=2
+CONFIGURE_ARGS=	--with-hangul-keyboard=2 --datadir=${PREFIX}/${DATADIR}
 
 .include <bsd.port.pre.mk>
 
