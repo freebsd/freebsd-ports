@@ -10,7 +10,7 @@ PORTVERSION=	3.1
 CATEGORIES=	editors elisp
 MASTER_SITES=	${MASTER_SITE_XEMACS} \
 		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	packages kiri
+MASTER_SITE_SUBDIR=	packages kiri/xemacs
 DISTFILES=	\
 		edict-1.13-pkg.tar.gz \
 		egg-its-1.26-pkg.tar.gz \
