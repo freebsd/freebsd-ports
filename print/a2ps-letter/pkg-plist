@@ -256,24 +256,6 @@ bin/fixps
 bin/pdiff
 bin/psmandup
 bin/psset
-@unexec install-info --delete %D/info/a2ps.info %D/info/dir
-@unexec install-info --delete %D/info/ogonkify.info %D/info/dir
-@unexec install-info --delete %D/info/regex.info %D/info/dir
-info/ogonkify.info
-info/a2ps.info
-info/a2ps.info-1
-info/a2ps.info-2
-info/a2ps.info-3
-info/a2ps.info-4
-info/a2ps.info-5
-info/a2ps.info-6
-info/regex.info
-info/regex.info-1
-info/regex.info-2
-info/regex.info-3
-@exec install-info %D/info/a2ps.info %D/info/dir
-@exec install-info %D/info/ogonkify.info %D/info/dir
-@exec install-info %D/info/regex.info %D/info/dir
 include/liba2ps.h
 lib/liba2ps.a
 @dirrm share/a2ps/ppd
