@@ -1,0 +1,19 @@
+No Time Zones
+No Geographical Borders
+
+How long is a Swatch .beat? In short, we have divided up the virtual and real
+day into 1000 beats. One Swatch beat is the equivalent of 1 minute 26.4
+seconds. That means that 12 noon in the old time system is the equivalent of
+@500 Swatch .beats.
+
+We are not just creating a new way of measuring time, we are also creating a
+new meridian in Biel, Switzerland, home of Swatch.
+
+Biel MeanTime (BMT) is the universal reference for Internet Time. A day in
+Internet Time begins at midnight BMT (@000 Swatch .beats) (Central European
+Wintertime). The meridian is marked for all to see on the facade of the Swatch
+International Headquarters on Jakob-Staempfli Street, Biel, Switzerland.  So,
+it is the same time all over the world, be it night or day, the era of time
+zones has disappeared.
+
+WWW: http://datetime.perl.org/
