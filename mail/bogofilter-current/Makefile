@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	0.11.1
+PORTVERSION=	0.11.1.1
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,12 +21,11 @@ GNU_CONFIGURE=	yes
 PATCH_STRIP=	-p1
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include/db4" \
 		LDFLAGS="-L${PREFIX}/lib"
-CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc --program-transform-name=
-CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1
 
 post-build::
-	cd ${WRKSRC}/doc && make bogofilter.html bogolexer.html bogoutil.html bogoupgrade.html
 	cd ${WRKSRC} && make check SHELL=${SH}
 
 do-install:
