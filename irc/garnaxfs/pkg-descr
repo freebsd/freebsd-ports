@@ -1,0 +1,10 @@
+Garnaxbot (File Server) is a file serving bot for IRC (commonly referred 
+to as a DCC bot). It uses the DCC chat/send features of IRC to send files 
+to other users. Garnaxbot will connect to an IRC server and allow people 
+to request files via DCC chat. This is not a script, it is a standalone 
+executable written in C.
+
+WWW: http://garnax.mircx.com/
+
+- Travis Poppe
+tlp@liquidx.org
