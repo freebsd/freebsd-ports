@@ -22,7 +22,9 @@ COMMENT=	Free Japanese TrueType fonts named 'MOTOYA'
 
 BUILD_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
 
-RESTRICTED=	Personal use only and some limitation.
+RESTRICTED=	Personal, non-profit, and evaluation purpose only
+NO_CDROM=	Redistribution not permitted in any form
+NO_PACKAGE=	Redistribution not permitted in any form
 
 USE_X_PREFIX=	yes
 NO_BUILD=	yes
