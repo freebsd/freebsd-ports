@@ -38,7 +38,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/sgml/docbook:${PORTSDIR}/textproc/docbook
 
 USE_REINPLACE=	yes
 USE_IMAKE=	yes
-USE_X_PREFIX=	no
+PREFIX?=	${LOCALBASE}
 USE_XLIB=	yes
 XFREE86_HTML_MAN= no
 
