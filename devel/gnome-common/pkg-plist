@@ -1,4 +1,5 @@
 bin/gnome-autogen.sh
+bin/gnome-doc-common
 share/aclocal/gnome-macros/aclocal-include.m4
 share/aclocal/gnome-macros/autogen.sh
 share/aclocal/gnome-macros/compiler-flags.m4
@@ -14,6 +15,7 @@ share/aclocal/gnome-macros/gnome-libgtop-check.m4
 share/aclocal/gnome-macros/gnome-macros.dep
 share/aclocal/gnome-macros/gnome-objc-checks.m4
 share/aclocal/gnome-macros/gnome-orbit-check.m4
+share/aclocal/gnome-macros/gnome-pilot.m4
 share/aclocal/gnome-macros/gnome-print-check.m4
 share/aclocal/gnome-macros/gnome-pthread-check.m4
 share/aclocal/gnome-macros/gnome-support.m4
@@ -26,17 +28,14 @@ share/aclocal/gnome-macros/gperf-check.m4
 share/aclocal/gnome-macros/linger.m4
 share/aclocal/gnome-macros/need-declaration.m4
 share/aclocal/gnome2-macros/autogen.sh
-share/aclocal/gnome2-macros/check-utmp.m4
 share/aclocal/gnome2-macros/compiler-flags.m4
 share/aclocal/gnome2-macros/curses.m4
 share/aclocal/gnome2-macros/gnome-common.m4
-share/aclocal/gnome2-macros/gnome-cxx-check.m4
-share/aclocal/gnome2-macros/gnome-gettext.m4
-share/aclocal/gnome2-macros/gnome-pkgconfig.m4
-share/aclocal/gnome2-macros/gnome-platform.m4
-share/aclocal/gnome2-macros/gnome-pthread-check.m4
-share/aclocal/gnome2-macros/gnome-x-checks.m4
+share/aclocal/gnome2-macros/gnome-deprecated-macros.m4
 share/aclocal/gnome2-macros/gnome2-macros.dep
-share/aclocal/gnome2-macros/linger.m4
+share/gnome-common/data/omf.make
+share/gnome-common/data/xmldocs.make
+@dirrm share/gnome-common/data
+@dirrm share/gnome-common
 @dirrm share/aclocal/gnome2-macros
 @dirrm share/aclocal/gnome-macros
