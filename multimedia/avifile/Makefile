@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	avifile
-PORTVERSION=	0.53.1
-PORTREVISION=	2
+PORTVERSION=	0.53.3
 CATEGORIES=	graphics
 MASTER_SITES=	http://ernie.eit.uni-kl.de/avifile/ \
 		http://divx.euro.ru/ \
@@ -22,7 +21,6 @@ MAINTAINER=	holger@eit.uni-kl.de
 LIB_DEPENDS=	SDL-1.1.2:${PORTSDIR}/devel/sdl-devel
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-0.53
 RESTRICTED=	Unsure of codec\'s license
 RESTRICTED_FILES=	binaries-${CODEC_VERSION}.zip \
 			wmvds32.ax.gz
@@ -45,7 +43,7 @@ CONFIGURE_ARGS=	--with-qt-includes=${X11BASE}/include/qt2 \
 		--enable-release
 PLIST_SUB=	LIB_VERSION="${LIB_VERSION}"
 
-CODEC_VERSION=	001222
+CODEC_VERSION=	010122
 LIB_VERSION=	0
 # Adhoc fix. First part.
 # qt is there but configure is not finding it
