@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	swish++
-PORTVERSION=	5.12.1
+PORTVERSION=	5.13.5
 CATEGORIES=	www textproc
 MASTER_SITES=	http://homepage.mac.com/pauljlucas/software/
 
@@ -20,7 +20,7 @@ USE_PERL5=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 MAKEFILE=	GNUmakefile
-MAKE_ENV=	PTHREAD_LIB=${PTHREAD_LIBS} \
+MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS} \
 		PERL=${PERL} PERL_VER=${PERL_VER}
 
 MAN1=	extract.1 httpindex.1 index.1 search.1 splitmail.1
