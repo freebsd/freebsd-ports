@@ -4015,6 +4015,7 @@ loserjabber	ports/deskutils/loserjabber
 lostirc		ports/irc/lostirc
 loudmouth	ports/net/loudmouth
 lout		ports/print/lout
+lp_solve	ports/math/lp_solve
 lpe		ports/editors/lpe
 lplayer		ports/audio/lplayer
 lprps-a4	ports/print/lprps-a4
