@@ -710,7 +710,7 @@ for ($message_index = 0; ; $message_index++) {
 	last unless -e "$LOG_FILE.$message_index";
 
 	my @text = &read_logfile("$LOG_FILE.$message_index");
-	last if @text;
+	last unless @text;
 	last if "@log_lines" eq "@text";
 }
 
