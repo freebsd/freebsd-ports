@@ -1,0 +1,9 @@
+bin/dryad
+share/gnome/apps/Development/dryad.desktop
+share/gnome/dryad/glade/detach.xpm
+share/gnome/dryad/glade/dryad.glade
+share/gnome/dryad/glade/step-into.xpm
+share/gnome/dryad/glade/step-out.xpm
+share/gnome/dryad/glade/step-over.xpm
+@dirrm share/gnome/dryad/glade
+@dirrm share/gnome/dryad
