@@ -1,0 +1,16 @@
+#!/bin/sh
+outdir=out
+cd ${WRKSRC} || exit 2
+echo "Patching for FlexLexer.h <->gcc3 issues"
+
+file=/usr/include/g++/FlexLexer.h
+
+echo -n "Copying and fixing $file... "
+mkdir -p lily/$outdir
+rm -f lily/$outdir/FlexLexer.h
+sed \
+    -e 's/istream/std::istream/' \
+    -e 's/[^i]ostream/std::ostream/' \
+    -e 's/iostream.h/iostream/' \
+    $file > lily/$outdir/FlexLexer.h
+echo "done"

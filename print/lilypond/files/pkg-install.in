@@ -1,0 +1,10 @@
+#!/bin/sh
+LOCALBASE="%%LOCALBASE%%"
+DATADIRVERSION="%%DATADIRVERSION%%"
+case $2 in
+	POST-INSTALL)
+		PATH=${LOCALBASE}/bin:${PATH}
+		export TEXMF="{${DATADIRVERSION},"`kpsexpand  \\$TEXMF`"}"
+		texhash
+	;;
+esac

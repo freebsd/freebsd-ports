@@ -1,20 +1,13 @@
-$FreeBSD$
-
---- Documentation/user/GNUmakefile.orig	Fri Sep 19 13:25:01 2003
-+++ Documentation/user/GNUmakefile	Fri Sep 19 13:25:16 2003
-@@ -21,12 +21,12 @@
- 
- PS_GZ_FILES= $(addsuffix .gz, $(PS_FILES))
- 
--INFO_DOCS = lilypond lilypond-internals music-glossary
-+INFO_DOCS = lilypond lilypond-internals
+--- Documentation/user/GNUmakefile.orig	Sat Sep 20 00:36:19 2003
++++ Documentation/user/GNUmakefile	Sat Sep 20 00:36:30 2003
+@@ -24,9 +24,7 @@
+ INFO_DOCS = lilypond lilypond-internals music-glossary
  INFO_FILES = $(INFO_DOCS:%=$(outdir)/%.info)
  
 -STEPMAKE_TEMPLATES=tex texinfo omf documentation
-+STEPMAKE_TEMPLATES=tex texinfo documentation
- 
+-
 -OMF_FILES += $(outdir)/lilypond-internals.html.omf
-+#OMF_FILES += $(outdir)/lilypond-internals.html.omf
++STEPMAKE_TEMPLATES=tex texinfo documentation
  
  LOCALSTEPMAKE_TEMPLATES=lilypond ly
  LILYPOND_BOOK_FLAGS=--extra-options '-e "(ly:set-option (quote internal-type-checking) \#t)"'
