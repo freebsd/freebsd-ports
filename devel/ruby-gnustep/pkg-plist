@@ -61,6 +61,7 @@
 %%RUBY_SITELIBDIR%%/rigs/NSURLHandle.rb
 %%RUBY_SITELIBDIR%%/rigs/NSView.rb
 %%RUBY_SITELIBDIR%%/rigs/NSWindow.rb
+%%RUBY_SITEARCHLIBDIR%%/librigs.so
 @dirrm %%RUBY_SITELIBDIR%%/rigs
 GNUstep/Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/librigs.so.0.2.1
 GNUstep/Local/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/librigs.so.0

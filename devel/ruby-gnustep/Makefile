@@ -7,6 +7,7 @@
 
 PORTNAME=	gnustep
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	devel ruby
 MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/libs/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -17,15 +18,13 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	knu@FreeBSD.org
 
 BUILD_DEPENDS=	${GNUSTEP_PREFIX}/System/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make \
-		${SYSLIBDIR}/libobjc.so:${PORTSDIR}/lang/gnustep-objc \
 		${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base \
 		${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui \
-		${XGPSBUNDLEDIR}/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps
+		${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
 RUN_DEPENDS=	${GNUSTEP_PREFIX}/System/Makefiles/GNUstep.sh:${PORTSDIR}/devel/gnustep-make \
-		${SYSLIBDIR}/libobjc.so:${PORTSDIR}/lang/gnustep-objc \
 		${COMBOLIBDIR}/libgnustep-base.so:${PORTSDIR}/lang/gnustep-base \
 		${COMBOLIBDIR}/libgnustep-gui.so:${PORTSDIR}/x11-toolkits/gnustep-gui \
-		${XGPSBUNDLEDIR}/libgnustep-xgps:${PORTSDIR}/x11-toolkits/gnustep-xgps
+		${BACKBUNDLEDIR}/libgnustep-back:${PORTSDIR}/x11-toolkits/gnustep-back
 
 USE_RUBY=	yes
 RUBY_WITH_PTHREAD=	yes
@@ -40,7 +39,7 @@ GNUSTEP_MAKEFILES=	${GNUSTEP_SYSTEM_ROOT}/Makefiles
 
 SYSLIBDIR=	${GNUSTEP_PREFIX}/System/Libraries/${GNU_ARCH}/${OPSYS:L}
 COMBOLIBDIR=	${SYSLIBDIR}/gnu-gnu-gnu
-XGPSBUNDLEDIR=	${GNUSTEP_PREFIX}/System/Library/Bundles/libgnustep-xgps.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/
+BACKBUNDLEDIR=	${GNUSTEP_PREFIX}/System/Library/Bundles/libgnustep-back.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/
 
 .include <bsd.port.pre.mk>
 
@@ -48,6 +47,11 @@ XGPSBUNDLEDIR=	${GNUSTEP_PREFIX}/System/Library/Bundles/libgnustep-xgps.bundle/$
 GNU_ARCH=	ix86
 .else
 GNU_ARCH=	${MACHINE_ARCH}
+.endif
+
+.if ${OSVERSION} < 500000
+BUILD_DEPENDS+=	${SYSLIBDIR}/libobjc.so:${PORTSDIR}/lang/gnustep-objc
+RUN_DEPENDS+=	${SYSLIBDIR}/libobjc.so:${PORTSDIR}/lang/gnustep-objc
 .endif
 
 MAKEFILE=	GNUmakefile
