@@ -14,6 +14,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	fernan@iib.unsam.edu.ar
 COMMENT=	WU BLAST, a software package for sequence similarity searches
 
+# Distfiles change every few days
+IGNOREFILES=	${DISTFILES}
+
 RESTRICTED=	"License does not allow redistribution of binaries. You should first register for the software, which is free for academic use."
 ONLY_FOR_ARCHS=	i386
 
