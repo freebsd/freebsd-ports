@@ -1,0 +1,12 @@
+
+******************************************************************************
+
+This module is useless by itself!  It requires one or both of:
+
+- devel/p5-Heap-Simple-Perl (a pure perl implementation of the interface) 
+- devel/p5-Heap-Simple-XS (an XS implementation of the interface.)
+
+Please take the time to install one or both of these now.
+
+******************************************************************************
+
