@@ -771,7 +771,7 @@ MASTER_SITE_SOURCEWARE+= \
 	ftp://ftp1.sinica.edu.tw/pub3/GNU/CYGNUS/%SUBDIR%/ \
 	ftp://ftp-stud.fht-esslingen.de/pub/Mirrors/sources.redhat.com/%SUBDIR%/ \
 	ftp://gd.tuwien.ac.at/gnu/sourceware/%SUBDIR%/ \
-	ftp://ftp.unina.it/pub/Unix/cygnus/%SUBDIR%/
+	http://sourceware.urc.bl.ac.yu/%SUBDIR%/
 
 MASTER_SITE_SUNSITE+=	\
 	http://www.ibiblio.org/pub/Linux/%SUBDIR%/ \
