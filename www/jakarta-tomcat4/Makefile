@@ -7,7 +7,7 @@
 
 PORTNAME=	jakarta-tomcat
 PORTVERSION=	3.3.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www java
 MASTER_SITES=	http://jakarta.apache.org/builds/jakarta-tomcat/release/v${PORTVERSION}/bin/ \
 		http://www.metaverse.nl/~ernst/ \
@@ -87,6 +87,7 @@ do-install:
 	-e "/%%PORTVERSION%%/s//${PORTVERSION}/g" \
 	-e "/%%PREFIX%%/s//${PREFIX:S/\//\\\//g}/g" \
 	-e "/%%STARTUP_SCRIPT_NAME%%/s//${STARTUP_SCRIPT_NAME}/g" \
+	-e "/%%STARTUP_SCRIPT%%/s//${STARTUP_SCRIPT:S/\//\\\//g}/g" \
 	-e "/%%STDERR_LOG%%/s//${STDERR_LOG:S/\//\\\//g}/g" \
 	-e "/%%STDOUT_LOG%%/s//${STDOUT_LOG:S/\//\\\//g}/g" \
 	-e "/%%USER%%/s//${USER}/g" \
