@@ -3,7 +3,7 @@
 # Date created:         7 Jul 98
 # Whom:                 Jerry Hicks <jhicks@glenatl.glenayre.com>
 #
-# $Id: Makefile,v 1.3 1998/08/09 01:33:32 steve Exp $
+# $Id: Makefile,v 1.4 1998/08/17 00:22:25 steve Exp $
 #
 
 DISTNAME=	gdb-4.17
@@ -11,7 +11,7 @@ PKGNAME=	m68kgdb-4.17
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 
-MAINTAINER=	jhicks@glenatl.glenayre.com
+MAINTAINER=	Jerry.Hicks@Glenayre.com
 
 NO_PACKAGE=	limited audience
 GNU_CONFIGURE=	yes
