@@ -1,0 +1,36 @@
+--- configure.in.orig	Tue Jul 18 16:43:22 2000
++++ configure.in	Wed Sep 13 05:43:49 2000
+@@ -48,15 +48,15 @@
+ if test "$enableval" = "yes"; then \
+   DEBUG="-g -DDEBUG -W -Wall"; \
+ else
+-  DEBUG="-O2 -DNO_DEBUG -DNO_CHECK"; \
++  DEBUG="-DNO_DEBUG -DNO_CHECK"; \
+ fi,
+ enableval=no
+-DEBUG="-O2 -DNO_DEBUG -DNO_CHECK")
++DEBUG="-DNO_DEBUG -DNO_CHECK")
+ AC_MSG_RESULT($enableval)
+ AC_SUBST(DEBUG)
+ 
+ AC_MSG_CHECKING(for Qt >= 2.1.0)
+-if ! test -r $QTDIR/include/qinputdialog.h; then
++if ! test -r $QTDIR/include/qt2/qinputdialog.h; then
+   AC_MSG_ERROR([  Sorry, but you need Qt version 2.1.0 or higher to compile $PACKAGE])
+  else
+   AC_MSG_RESULT(yes)
+@@ -64,12 +64,12 @@
+ 
+ AC_PATH_X
+ qtdir=${QTDIR}
+-qt_includes=$qtdir/include
++qt_includes=$qtdir/include/qt2
+ qt_libraries=$qtdir/lib
+ qt_moc=$qtdir/bin
+ QT_LDFLAGS=-L$qt_libraries
+ LDFLAGS="$LDFLAGS -L$qt_libraries"
+-AC_CHECK_LIB(qt, main,,AC_MSG_ERROR(Cannot find required library Qt.))
++AC_CHECK_LIB(qt2, main,,AC_MSG_ERROR(Cannot find required library Qt.))
+ AC_SUBST(qt_includes)
+ AC_SUBST(qt_libraries)
+ AC_SUBST(QT_LDFLAGS)
