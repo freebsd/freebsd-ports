@@ -3,7 +3,7 @@
 # Date created:        12 August 1998
 # Whom:                Bill Fumerola <billf@chc-chimes.com>
 #
-# $Id: Makefile,v 1.4 1998/11/04 03:47:08 jkoshy Exp $
+# $Id: Makefile,v 1.5 1998/12/29 18:22:58 billf Exp $
 #
 
 DISTNAME=	mtr-0.28
@@ -12,10 +12,11 @@ MASTER_SITES=	ftp://ftp.bitwizard.nl/mtr/
 
 MAINTAINER=	billf@FreeBSD.org
 
-LIB_DEPENDS=    gtk.1:${PORTSDIR}/x11-toolkits/gtk
+LIB_DEPENDS=    gtk10.1:${PORTSDIR}/x11-toolkits/gtk10
 
 USE_AUTOCONF=	yes
 USE_XLIB=	yes
+CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk10-config"
 
 MAN8=	mtr.8
 
