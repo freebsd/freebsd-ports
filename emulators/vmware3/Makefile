@@ -52,6 +52,10 @@ BROKEN=		"Systems prior to 400013 is out of support"
 BROKEN=		"This software absolutely requires Linux procfs support"
 .endif
 
+.if !exists(/sys/Makefile)
+BROKEN=         "Kernel source files required"
+.endif
+
 .if exists(${WRKDIRPREFIX}${.CURDIR}/work/Makefile.inc.net)
 .include "${WRKDIRPREFIX}${.CURDIR}/work/Makefile.inc.net"
 .endif
@@ -65,6 +69,10 @@ post-patch:
 	${CP} ${FILESDIR}/Makefile ${WRKSRC}
 	${CP} ${FILESDIR}/Makefile.vmmon ${WRKSRC}/vmmon-only/Makefile
 	${RM} -rf ${WRKSRC}/vmmon-only/linux/
+.if exists?(/sys/compat/linux/linux_ioctl.h)
+	${PERL} -i -pe 's,i386(/linux/linux_ioctl\.h),compat$$1,' \
+		${WRKSRC}/vmnet-only/freebsd/vmnet_linux.c
+.endif
 
 setoptions:
 	${SED} 	-e 's;@@PREFIX@@;${PREFIX};' \
