@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.sra.co.jp/pub/net/ndtp/ndtpd/ \
 PATCH_SITES=	${MASTER_SITES}
 #PATCHFILES=	${DISTNAME}+.diff
 
-MAINTAINER=	takamune@avrl.mei.co.jp
+MAINTAINER=	takamune2004@yahoo.co.jp
 COMMENT=	Server for accessing CD-ROM books with NDTP
 
 LIB_DEPENDS=	eb.7:${PORTSDIR}/japanese/eb
