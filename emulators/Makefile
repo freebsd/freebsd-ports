@@ -37,6 +37,8 @@
     SUBDIR += linux-peops-softgpu
     SUBDIR += linux-peops-spu
     SUBDIR += linux-pete-mesagpu
+    SUBDIR += linux-vmware-toolbox2
+    SUBDIR += linux-vmware-toolbox4
     SUBDIR += linux-winetools
     SUBDIR += linux_base
     SUBDIR += linux_base-6
@@ -73,9 +75,11 @@
     SUBDIR += visualos
     SUBDIR += vmsbackup
     SUBDIR += vmware
-    SUBDIR += vmware-guestd
+    SUBDIR += vmware-guestd3
+    SUBDIR += vmware-guestd4
     SUBDIR += vmware-tools2
     SUBDIR += vmware-tools3
+    SUBDIR += vmware-tools4
     SUBDIR += vmware2
     SUBDIR += vmware3
     SUBDIR += vmware_xf4mod
