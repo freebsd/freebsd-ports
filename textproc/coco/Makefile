@@ -3,7 +3,7 @@
 # Date created:		7 July 1997
 # Whom:			Satoshi Taoka <taoka@infonets.hiroshima-u.ac.jp>
 #
-# $Id: Makefile,v 1.37 1999/02/03 11:11:42 asami Exp $
+# $Id: Makefile,v 1.38 1999/03/08 07:28:24 asami Exp $
 #
 
 DISTNAME=	mule-2.3
@@ -58,7 +58,6 @@ BROKEN=		You should build install one of the other mule ports first
 INSTALL_COOKIE=	${WRKDIR}/.install_done-${PKGNAME}
 PACKAGE_COOKIE=	${WRKDIR}/.package_done-${PKGNAME}
 TMPPLIST=	${WRKDIR}/.PLIST.mktmp-${PKGNAME}
-CONFIGURE_TARGET=	${MACHINE_ARCH}--freebsd
 PLIST_SUB=	EMACS_VERSION=19.34 EMACS_ARCH=${CONFIGURE_TARGET}
 
 USE_XLIB=	yes
