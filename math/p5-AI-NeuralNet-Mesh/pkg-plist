@@ -1,0 +1,4 @@
+lib/perl5/%%PERL_VERSION%%/man/man3/AI::NeuralNet::Mesh.3
+lib/perl5/site_perl/%%PERL_VER%%/AI/NeuralNet/Mesh.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AI/NeuralNet/Mesh/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/AI/NeuralNet/Mesh
