@@ -1,5 +1,5 @@
 #
-# $Id: Makefile,v 1.31 1998/12/18 23:22:54 phk Exp $
+# $Id: Makefile,v 1.32 1998/12/19 18:33:30 obrien Exp $
 #
 
 DISTNAME=	scotty-2.1.9
@@ -23,7 +23,8 @@ MAN8=		ntping.8 straps.8
 MANN=		Tnm.n cmip.n dns.n gdmo.n http.n icmp.n ined.n job.n \
 		mib.n msqltcl.n netdb.n ntp.n rpc.n snmp.n sunrpc.n \
 		syslog.n udp.n
-PLIST_SUB=	FREEBSD_VERSION=${FREEBSD_VERSION}
+PLIST_SUB=	FREEBSD_VERSION=${FREEBSD_VERSION} \
+		SCOTTY_VERSION=2.1.9 TKINED_VERSION=1.4.9
 FREEBSD_VERSION!=	echo `uname -m`-`uname`-`uname -r`
 
 pre-install:
