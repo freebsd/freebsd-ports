@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	lighttpd
-PORTVERSION=	1.3.12
+PORTVERSION=	1.3.13
 CATEGORIES=	www
 MASTER_SITES=	http://www.lighttpd.net/download/ \
-				http://dl.fkb.wormulon.net/lighttpd/ \
-				http://dl.kel.wormulon.net/lighttpd/
+		http://dl.fkb.wormulon.net/lighttpd/ \
+		http://dl.kel.wormulon.net/lighttpd/
 
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	A secure, fast, compliant, and very flexible Web Server
