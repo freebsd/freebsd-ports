@@ -1,0 +1,24 @@
+--- Makefile.orig	Sat Jan  3 16:30:14 2004
++++ Makefile	Sat Jan  3 16:32:08 2004
+@@ -5,14 +5,14 @@
+ 
+ ####### Compiler, tools and options
+ 
+-CC	=	gcc
+-CXX	=	g++
+-CFLAGS	=	-pipe -Wall -W -DNO_DEBUG -g
+-CXXFLAGS=	-pipe -Wall -W -DNO_DEBUG -g 
+-INCPATH	=	-I/usr/X11R6/include 
+-LINK	=	g++
++CC	?=	gcc
++CXX	?=	g++
++CFLAGS	+=	-pipe -Wall -W -DNO_DEBUG -g
++CXXFLAGS+=	-pipe -Wall -W -DNO_DEBUG -g 
++INCPATH	=	-I${X11BASE}/include 
++LINK	= 	${CXX}
+ LFLAGS	=	
+-LIBS	=	-L/usr/X11R6/lib -lGL -lGLU -lglut -lXmu -lXext -lX11 -lm -lXi
++LIBS	=	-L${X11BASE}/lib -lGL -lGLU -lglut -lXmu -lXext -lX11 -lm -lXi
+ 
+ ## -lqgl -lGLU
+ 

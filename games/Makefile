@@ -6,6 +6,7 @@
     SUBDIR += 3dpong
     SUBDIR += 44bsd-hunt
     SUBDIR += 54321
+    SUBDIR += BillardGL
     SUBDIR += CaribbeanStud
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
