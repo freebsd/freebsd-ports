@@ -25,6 +25,7 @@
     SUBDIR += cle_base
     SUBDIR += cless
     SUBDIR += cmexfonts
+    SUBDIR += cwtex
     SUBDIR += cxterm
     SUBDIR += dia
     SUBDIR += dictd-database
