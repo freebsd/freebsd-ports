@@ -1,13 +1,16 @@
 bin/Esetroot
+bin/Etbg
+bin/Etcolors.sh
 bin/Eterm
-lib/libmej.a
-lib/libmej.la
-lib/libmej.so
-lib/libmej.so.8.7
+bin/Etmenu.sh
 lib/libEterm.a
 lib/libEterm.la
 lib/libEterm.so
-lib/libEterm.so.8.7
+lib/libEterm.so.8
+lib/libmej.a
+lib/libmej.la
+lib/libmej.so
+lib/libmej.so.8
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 share/Eterm/pix/014.png
@@ -41,14 +44,11 @@ share/Eterm/themes/tn3270/pixmaps.list
 share/Eterm/themes/trans/MAIN
 share/Eterm/themes/trans/trans.menu
 share/Eterm/themes/trans/pixmaps.list
-share/Eterm/Eterm.help
-share/Eterm/Eterm.ref
-share/Eterm/Eterm.tcap
-share/Eterm/Eterm.ti
-share/Eterm/FAQ.html
-share/Eterm/ReleaseNotes
-share/Eterm/colortest.sh
-share/Eterm/menu_cmd
+share/doc/Eterm/Eterm_reference.html
+share/doc/Eterm/Eterm.tcap
+share/doc/Eterm/Eterm.ti
+share/doc/Eterm/FAQ.html
+share/doc/Eterm/ReleaseNotes
 @dirrm share/Eterm/themes/trans
 @dirrm share/Eterm/themes/tn3270
 @dirrm share/Eterm/themes/mutt
@@ -59,3 +59,4 @@ share/Eterm/menu_cmd
 @dirrm share/Eterm/themes
 @dirrm share/Eterm/pix
 @dirrm share/Eterm
+@dirrm share/doc/Eterm

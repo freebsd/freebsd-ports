@@ -1,10 +1,10 @@
---- themes/Makefile.in.orig	Sat Jan 30 01:24:43 1999
-+++ themes/Makefile.in	Sat Jan 30 01:25:55 1999
-@@ -205,6 +205,7 @@
- 	    $(CHMOD) 755 $(pkgdatadir)/themes/$$i ; \
- 	    $(CHMOD) 644 $(pkgdatadir)/themes/$$i/???* ; \
- 	    rm -f $(pkgdatadir)/themes/$$i/MAIN.in ; \
-+	    rm -f $(pkgdatadir)/themes/$$i/MAIN.in.orig ; \
+--- themes/Makefile.in.orig	Mon Apr 26 23:53:58 1999
++++ themes/Makefile.in	Sun May  2 14:20:17 1999
+@@ -221,6 +221,7 @@
+ 	    $(CHMOD) 755 $(DESTDIR)$(pkgdatadir)/themes/$$i ; \
+ 	    $(CHMOD) 644 $(DESTDIR)$(pkgdatadir)/themes/$$i/???* ; \
+ 	    rm -f $(DESTDIR)$(pkgdatadir)/themes/$$i/MAIN.in ; \
++	    rm -f $(DESTDIR)$(pkgdatadir)/themes/$$i/MAIN.in.orig ; \
  	  else \
- 	    echo "ALERT!  Not overwriting theme $$i in $(pkgdatadir)/themes.  You will need to update this theme manually." ; \
+ 	    echo "ALERT!  Not overwriting theme $$i in $(DESTDIR)$(pkgdatadir)/themes.  You will need to update this theme manually." ; \
  	  fi ; \
