@@ -7,7 +7,7 @@
 
 PORTNAME=	xwipower
 PORTVERSION=	20000623
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://iplab.aist-nara.ac.jp/member/masafu-o/xwipower/
 EXTRACT_SUFX=	.tgz
