@@ -8,7 +8,6 @@
     SUBDIR += infobus
     SUBDIR += jaf
     SUBDIR += java-cup
-    SUBDIR += javac_netscape
     SUBDIR += javamail
     SUBDIR += javavmwrapper
     SUBDIR += jce-aba
