@@ -1,11 +1,20 @@
---- src/msql/msqld.c.orig	Sat Feb  1 07:46:40 1997
-+++ src/msql/msqld.c	Tue Feb  4 17:32:18 1997
-@@ -508,7 +508,7 @@
+--- src/msql/msqld.c.orig	Mon Jul  7 01:27:28 1997
++++ src/msql/msqld.c	Thu Jul 10 13:48:05 1997
+@@ -593,7 +593,7 @@
  
  	if (*confFile == 0)
  	{
 -		sprintf(confFile,"%s/msql.conf", INST_DIR);
 +		sprintf(confFile,"%s/etc/msql2/msql.conf", INST_DIR);
  	}
- 	printf("Loading configuration from '%s'.\n",confFile);
+ 	printf("\tLoading configuration from '%s'.\n",confFile);
  	msqlLoadConfigFile(confFile);
+@@ -687,7 +687,7 @@
+ 	/*
+ 	** Ensure that the correct user owns the database files
+ 	*/
+-	sprintf(path,"%s/msqldb",(char *)msqlGetCharConf("general","inst_dir"));
++	sprintf(path,"/var/db/msqldb");
+ 	if (stat(path,&sbuf) < 0)
+ 	{
+ 		printf("\nError!  Can't stat '%s'\n\n",path);

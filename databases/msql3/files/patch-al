@@ -1,11 +1,11 @@
---- src/msql/acl.c.orig	Mon Mar 17 13:54:34 1997
-+++ src/msql/acl.c	Mon Mar 17 13:54:57 1997
-@@ -111,7 +111,7 @@
+--- src/msql/acl.c.orig	Sat Jun 14 20:42:23 1997
++++ src/msql/acl.c	Thu Jul 10 13:51:07 1997
+@@ -114,7 +114,7 @@
  	/*
  	** Open the acl file
  	*/
--	(void)sprintf(path,"%s/msql.acl", (char *)msqlGetCharConf("inst_dir"));
-+	(void)sprintf(path,"%s/etc/msql2/msql.acl", (char *)msqlGetCharConf("inst_dir"));
+-	(void)sprintf(path,"%s/msql.acl", 
++	(void)sprintf(path,"%s/etc/msql2/msql.acl", 
+ 		(char *)msqlGetCharConf("general", "inst_dir"));
  	fp = fopen(path,"r");
  	if (!fp)
- 	{

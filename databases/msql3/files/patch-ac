@@ -1,15 +1,15 @@
---- src/conf/site.mm.in.orig	Mon Jan 13 10:15:08 1997
-+++ src/conf/site.mm.in	Sun Jan 19 13:56:52 1997
+--- src/conf/site.mm.in.orig	Sat Jul  5 21:28:52 1997
++++ src/conf/site.mm.in	Thu Jul 10 13:44:15 1997
 @@ -4,7 +4,7 @@
  
  
  CC= @CC@
 -INST_DIR= /usr/local/Hughes
 +INST_DIR= /usr/local
+ HAVE_DYNAMIC= -DHAVE_DYNAMIC
  
  
- #
-@@ -30,7 +30,7 @@
+@@ -31,7 +31,7 @@
  EXTRA_LIB= @LIBS@
  
  # Any other CFlags required
