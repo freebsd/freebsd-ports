@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	pathalias
-PORTVERSION=	9.11
+PORTVERSION=	9.16
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.lan-ks.de/pub/approved/ \
 		ftp://ftp.dinoex.de/pub/approved/
-DISTNAME=	${PORTNAME}11
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	dinoex@FreeBSD.org
