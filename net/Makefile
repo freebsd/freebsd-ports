@@ -1,9 +1,11 @@
-# $Id: Makefile,v 1.44 1995/05/12 08:20:53 asami Exp $
+# $Id: Makefile,v 1.45 1995/05/13 09:16:48 asami Exp $
 #
-# Broken - dgd-lpmud
-# Broken - slirp (upgraded)
-# Broken for XFree3.x - wais
-# Restricted - ivs (crypto, export controlled)
+# RESTRICTED: ivs (crypto, export controlled)
+# 
+# BROKEN: dgd-lpmud
+# BROKEN: slirp (upgraded)
+# BROKEN: wais (for XFree3.x)
+#
 
 SUBDIR= archie cern_httpd cern_linemode chimera dgd fspclient gated \
 	gn gopher imm irc ircII \

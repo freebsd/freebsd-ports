@@ -1,8 +1,10 @@
-# $Id: Makefile,v 1.11 1995/03/31 20:43:35 gpalmer Exp $
+# $Id: Makefile,v 1.12 1995/05/13 06:07:36 asami Exp $
 #
-# restricted: rzsz
-# broken = flexfax
+# RESTRICTED: rzsz
 #
+# BROKEN: flexfax
+#
+
 SUBDIR= ecu kermit mgetty+sendfax seyon
 
 .include <bsd.port.subdir.mk>

@@ -1,6 +1,6 @@
-# $Id: Makefile,v 1.64 1995/05/13 10:10:28 asami Exp $
+# $Id: Makefile,v 1.65 1995/05/13 11:07:42 asami Exp $
 #
-# broken: iv
+# BROKEN: iv
 #
 
 SUBDIR= XFree86 Xaw3d blt color_xterm ctwm emiclock emu fvwm g3view \

@@ -1,7 +1,10 @@
-# $Id: Makefile,v 1.4 1995/01/15 08:00:29 ache Exp $
+# $Id: Makefile,v 1.5 1995/01/24 16:58:53 ache Exp $
 #
-# restricted: hpack.non-usa_only unzip.with_encryption zip.with_encryption
+# RESTRICTED: hpack.non-usa_only
+# RESTRICTED: unzip.with_encryption
+# RESTRICTED: zip.with_encryption
 #
+
 SUBDIR= arc gshar+gunshar ha lha unarj unrar unzip zip zoo
 
 .include <bsd.port.subdir.mk>
