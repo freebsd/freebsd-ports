@@ -1465,6 +1465,7 @@ fltk		ports/x11-toolkits/fltk
 fltk-xunicode	ports/x11-toolkits/fltk-xunicode
 fluctuate	ports/biology/fluctuate
 flux		ports/devel/flux
+fluxbox		ports/x11-wm/fluxbox
 flvw		ports/x11-toolkits/flvw
 flwm		ports/x11-wm/flwm
 fly		ports/graphics/fly
