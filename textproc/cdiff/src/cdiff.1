@@ -42,6 +42,7 @@ files and URLs, adds color codes, expands tabs to 8 spaces, and passes the
 results to
 .Xr less 1 .
 If used on a color terminal, it makes diffs much easier to read.
+There is also handling of "cvs annotate" in it.
 .Sh AUTHORS
 .Nm
 was written by
@@ -50,13 +51,14 @@ based on a sed line somebody passed around.  The code is (much) smaller than
 this man page.
 .Sh SEE ALSO
 .Xr diff 1 ,
-.Xr less 1 .
+.Xr less 1 ,
+.Xr cvs 1 .
 .Sh BUGS
 .Nm
 assumes standard ANSI color escape sequences (as used by xterm and most other
 commonly used terminals), rather than using
 .Xr curses 3 .
-
+.Pp
 .Nm
 should really be a large and complex C program based on
 .Xr less 1
