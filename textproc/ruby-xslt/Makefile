@@ -8,14 +8,14 @@
 PORTNAME=	xslt
 PORTVERSION=	0.0.2
 CATEGORIES=	textproc ruby
-MASTER_SITES=	 http://www.fantasy-coders.de/ruby/xslt4r/
+MASTER_SITES=	http://www.fantasy-coders.de/ruby/xslt4r/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}4r-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/xpathtree.rb:${PORTSDIR}/textproc/ruby-xmlscan
+RUN_DEPENDS=	${RUBY_SITELIBDIR}/xpathtree.rb:${PORTSDIR}/textproc/ruby-xmlscan-old
 
 USE_RUBY=	yes
 
