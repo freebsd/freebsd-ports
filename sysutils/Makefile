@@ -161,6 +161,7 @@
     SUBDIR += p5-Schedule-Cron
     SUBDIR += p5-Schedule-Match
     SUBDIR += p5-Stat-lsMode
+    SUBDIR += p5-Sys-CpuLoad
     SUBDIR += p5-SyslogScan
     SUBDIR += p5-Tie-Syslog
     SUBDIR += p5-Unix-ConfigFile
