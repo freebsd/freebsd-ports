@@ -10,7 +10,7 @@ PORTVERSION=	3.8.0
 CATEGORIES=	x11
 MASTER_SITES=	http://www.vigor.nu/dxpc/3.8.0/
 
-MAINTAINER=	bmah@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
 
