@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave
-PORTVERSION=	2.1.49
+PORTVERSION=	2.1.50
 PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.octave.org/pub/octave/bleeding-edge/ \
