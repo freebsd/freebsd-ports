@@ -1,0 +1,17 @@
+--- doc/Makefile.orig	Thu Jan  9 03:54:36 2003
++++ doc/Makefile	Thu Jan  9 03:54:55 2003
+@@ -47,12 +47,12 @@
+ 	@echo .
+ ifdef INFODIR
+ 	-$(MKDIR) $(MKDIROPT) $(INFODIR)
+-	$(INSTALL)  hpt.info $(INFODIR)
++	$(INSTALL) $(IMOPT) hpt.info $(INFODIR)
+ 	-install-info --info-dir=$(INFODIR)  $(INFODIR)$(DIRSEP)hpt.info
+ endif
+ ifdef HTMLDIR
+ 	-$(MKDIR) $(MKDIROPT) $(HTMLDIR)
+-	$(INSTALL)  hpt*html $(HTMLDIR)
++	$(INSTALL) $(IMOPT) hpt*html $(HTMLDIR)
+ endif
+ 
+ uninstall:

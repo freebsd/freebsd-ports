@@ -1,0 +1,11 @@
+--- Makefile.orig	Thu Dec 26 18:33:39 2002
++++ Makefile	Thu Jan  9 03:44:07 2003
+@@ -164,7 +164,7 @@
+ 	$(INSTALL) $(IIOPT) temp.h         $(INCDIR)$(DIRSEP)fidoconf
+ 	$(INSTALL) $(IIOPT) afixcmd.h      $(INCDIR)$(DIRSEP)fidoconf
+ 	$(INSTALL) $(IIOPT) arealist.h     $(INCDIR)$(DIRSEP)fidoconf
+-	$(INSTALL) $(ILOPT) $(LIBFIDOCONFIG)$(LIB) $(LIBDIR)
++	$(INSTALL) $(ISLOPT) $(LIBFIDOCONFIG)$(LIB) $(LIBDIR)
+ 	(cd doc && $(MAKE) install)
+ 	@echo
+ 	@echo "*** For install man pages run 'gmake install-man' (unixes only)"

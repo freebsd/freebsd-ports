@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Jan  5 21:13:26 2003
-+++ Makefile	Sun Jan  5 21:14:06 2003
+--- Makefile.orig	Fri Dec 27 18:52:45 2002
++++ Makefile	Thu Jan  9 04:11:20 2003
 @@ -23,7 +23,7 @@
  endif
  
@@ -9,3 +9,14 @@
  VER  =  2.2.2
  
  TARGET=	$(LIBPREFIX)smapi$(LIB)
+@@ -133,8 +133,8 @@
+ 	$(INSTALL) $(IIOPT) unused.h $(INCDIR)$(DIRSEP)smapi
+ 	$(INSTALL) $(IIOPT) semaphor.h $(INCDIR)$(DIRSEP)smapi
+ 	$(INSTALL) $(IIOPT) api_jam.h $(INCDIR)$(DIRSEP)smapi
+-	$(INSTALL) $(ILOPT) $(TARGET) $(LIBDIR)
+-	$(INSTALL) $(ILOPT) patmat$(OBJ) $(LIBDIR)
++	$(INSTALL) $(ISLOPT) $(TARGET) $(LIBDIR)
++	$(INSTALL) $(ISLOPT) patmat$(OBJ) $(LIBDIR)
+ 
+ uninstall:
+ 	-$(RM) $(RMOPT) $(INCDIR)$(DIRSEP)smapi$(DIRSEP)alc.h 

@@ -1,0 +1,22 @@
+--- doc/Makefile.orig	Thu Jan  9 03:59:02 2003
++++ doc/Makefile	Thu Jan  9 03:59:21 2003
+@@ -70,16 +70,16 @@
+ 	@echo .
+ ifdef INFODIR
+ 	-$(MKDIR) $(MKDIROPT) $(INFODIR)
+-	$(INSTALL)  htick.info $(INFODIR)
++	$(INSTALL) $(IMOPT) htick.info $(INFODIR)
+ 	-install-info --info-dir=$(INFODIR)  $(INFODIR)$(DIRSEP)htick.info
+ endif
+ ifdef HTMLDIR
+ 	-$(MKDIR) $(MKDIROPT) $(HTMLDIR)
+-	$(INSTALL)  htick*html $(HTMLDIR)
++	$(INSTALL) $(IMOPT) htick*html $(HTMLDIR)
+ endif
+ ifdef DVIDIR
+ 	-$(MKDIR) $(MKDIROPT) $(DVIDIR)
+-	$(INSTALL)  htick.dvi $(DVIDIR)
++	$(INSTALL) $(IMOPT) htick.dvi $(DVIDIR)
+ endif
+ 
+ uninstall:

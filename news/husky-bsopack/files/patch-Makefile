@@ -1,0 +1,21 @@
+--- Makefile.orig	Thu Jan  9 03:24:46 2003
++++ Makefile	Thu Jan  9 03:25:26 2003
+@@ -58,15 +58,15 @@
+ all: bsopack docs man
+ 
+ install: all
+-	$(INSTALL) bsopack $(BINDIR)
++	$(INSTALL) $(IBOPT) bsopack $(BINDIR)
+ ifdef INFODIR
+ 	-$(MKDIR) $(MKDIROPT) $(INFODIR)
+-	$(INSTALL)  bsopack.info $(INFODIR)
++	$(INSTALL) $(IMOPT) bsopack.info $(INFODIR)
+ 	-install-info --info-dir=$(INFODIR)  $(INFODIR)$(DIRSEP)bsopack.info
+ endif
+ ifdef HTMLDIR
+ 	-$(MKDIR) $(MKDIROPT) $(HTMLDIR)
+-	$(INSTALL)  bsopack*html $(HTMLDIR)
++	$(INSTALL) $(IMOPT) bsopack*html $(HTMLDIR)
+ endif
+ ifdef MANDIR
+ 	-$(MKDIR) $(MKDIROPT) $(MANDIR)$(DIRSEP)man1
