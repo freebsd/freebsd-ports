@@ -2,6 +2,8 @@
 %%EMACS_LIBDIR%%/site-lisp/flim/eword-decode.elc
 %%EMACS_LIBDIR%%/site-lisp/flim/eword-encode.el
 %%EMACS_LIBDIR%%/site-lisp/flim/eword-encode.elc
+%%EMACS_LIBDIR%%/site-lisp/flim/luna.el
+%%EMACS_LIBDIR%%/site-lisp/flim/luna.elc
 %%EMACS_LIBDIR%%/site-lisp/flim/mailcap.el
 %%EMACS_LIBDIR%%/site-lisp/flim/mailcap.elc
 %%EMACS_LIBDIR%%/site-lisp/flim/mel-b-ccl.el
@@ -26,8 +28,8 @@
 %%EMACS_LIBDIR%%/site-lisp/flim/mmbuffer.elc
 %%EMACS_LIBDIR%%/site-lisp/flim/mmcooked.el
 %%EMACS_LIBDIR%%/site-lisp/flim/mmcooked.elc
-%%EMACS_LIBDIR%%/site-lisp/flim/mmgeneric.el
-%%EMACS_LIBDIR%%/site-lisp/flim/mmgeneric.elc
+%%EMACS_LIBDIR%%/site-lisp/flim/mmdbuffer.el
+%%EMACS_LIBDIR%%/site-lisp/flim/mmdbuffer.elc
 %%EMACS_LIBDIR%%/site-lisp/flim/std11.el
 %%EMACS_LIBDIR%%/site-lisp/flim/std11.elc
 %%EMACS_LIBDIR%%/site-lisp/flim/smtp.el
