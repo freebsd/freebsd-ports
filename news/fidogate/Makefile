@@ -25,7 +25,8 @@ FORBIDDEN=	indefinite hang
 USE_GMAKE=	yes
 USE_PERL5=	yes
 
-DOCLIST=	fidogate.texi fidogate.txt gatebau94.txt kludge-rfc.doc \			msgid.doc qmail.txt texinfo.tex dirs.html index.html \
+DOCLIST=	fidogate.texi fidogate.txt gatebau94.txt kludge-rfc.doc \
+		msgid.doc qmail.txt texinfo.tex dirs.html index.html \
 		template.html fido howto misc rfc gatebau/msgid.sgml \
 		gatebau/msgid.tex gatebau/msgid.txt
 
