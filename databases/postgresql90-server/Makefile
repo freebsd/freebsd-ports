@@ -15,8 +15,8 @@ DISTFILES=	postgresql-base-${PORTVERSION}${EXTRACT_SUFX} \
 		postgresql-opt-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER?=	girgen@pingpong.net
+COMMENT?=	The most advanced open-source database available anywhere
 
-COMMENT=	The most advanced open-source database available anywhere
 WRKSRC=		${WRKDIR}/postgresql-${PORTVERSION}
 DIST_SUBDIR=	postgresql
 
