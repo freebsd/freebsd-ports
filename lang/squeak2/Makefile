@@ -3,16 +3,14 @@
 # Date created:        			4 March 1999
 # Whom:                			jesse@cs.uni-magdeburg.de
 #
-# $Id: Makefile,v 1.8 1999/03/05 16:23:03 nectar Exp $
+# $Id: Makefile,v 1.9 1999/03/20 17:16:57 nectar Exp $
 #
 
 DISTNAME=	2.3
 PKGNAME=	squeak-2.3
 CATEGORIES=	lang
-MASTER_SITES=	ftp://alix.inria.fr/pub/squeak/unix/ \
-		ftp://alix.inria.fr/pub/squeak/unix/2.3/ \
-		ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/ \
-		ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/2.3/ \
+MASTER_SITES=	ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/unix/ \
+		ftp://ftp.cs.uni-magdeburg.de/pub/Smalltalk/Smalltalk/Squeak/unix/image/ \
 		http://www.nectar.com/distfiles/squeak/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} image/${SQUEAK_SRC}
 
