@@ -1,6 +1,6 @@
 # $FreeBSD$
 #
-    SUBDIR += zhcon
+
     SUBDIR += CJK
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
@@ -77,4 +77,6 @@
     SUBDIR += xemacs
     SUBDIR += xemacs21
     SUBDIR += xmms
+    SUBDIR += zhcon
+
 .include <bsd.port.subdir.mk>

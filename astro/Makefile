@@ -13,8 +13,8 @@
     SUBDIR += luna
     SUBDIR += openuniverse
     SUBDIR += p5-Astro-MoonPhase
-    SUBDIR += p5-Astro-Sunrise
     SUBDIR += p5-Astro-SunTime
+    SUBDIR += p5-Astro-Sunrise
     SUBDIR += p5-GPS
     SUBDIR += p5-Geo-METAR
     SUBDIR += pyweather

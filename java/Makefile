@@ -1,6 +1,5 @@
 # $FreeBSD$
 #
-    SUBDIR += xalan-j
 
     SUBDIR += bluej
     SUBDIR += bugseeker
@@ -45,5 +44,6 @@
     SUBDIR += perltools
     SUBDIR += shujit
     SUBDIR += tya
+    SUBDIR += xalan-j
 
 .include <bsd.port.subdir.mk>

@@ -1,7 +1,6 @@
 # $FreeBSD$
 #
-    SUBDIR += zodb
-    SUBDIR += zpygresqlda
+
     SUBDIR += adodb
     SUBDIR += cdb
     SUBDIR += db
@@ -95,12 +94,12 @@
     SUBDIR += ruby-dbd_sybase
     SUBDIR += ruby-dbi
     SUBDIR += ruby-gdbm
-    SUBDIR += ruby-rdbc1
     SUBDIR += ruby-msql
     SUBDIR += ruby-mysql
     SUBDIR += ruby-o_dbm
     SUBDIR += ruby-odbc
     SUBDIR += ruby-postgres
+    SUBDIR += ruby-rdbc1
     SUBDIR += ruby-sqlrelay
     SUBDIR += sixpack
     SUBDIR += sqlite
@@ -113,5 +112,7 @@
     SUBDIR += xmbase-grok
     SUBDIR += xmysql
     SUBDIR += xmysqladmin
+    SUBDIR += zodb
+    SUBDIR += zpygresqlda
 
 .include <bsd.port.subdir.mk>

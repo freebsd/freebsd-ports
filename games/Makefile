@@ -4,6 +4,8 @@
     SUBDIR += 0verkill
     SUBDIR += 3dc
     SUBDIR += 3dpong
+    SUBDIR += 44bsd-hunt
+    SUBDIR += CaribbeanStud
     SUBDIR += HeroesOfMightAndMagic
     SUBDIR += KnightCap
     SUBDIR += acm
@@ -36,8 +38,6 @@
     SUBDIR += bombermaze
     SUBDIR += bs
     SUBDIR += bugsx
-    SUBDIR += 44bsd-hunt
-    SUBDIR += CaribbeanStud
     SUBDIR += burgerspace
     SUBDIR += bzflag
     SUBDIR += cgoban
@@ -139,11 +139,11 @@
     SUBDIR += inform
     SUBDIR += ishido
     SUBDIR += jetpack
-    SUBDIR += kbubbles
     SUBDIR += jzip
+    SUBDIR += kbubbles
     SUBDIR += kdegames2
     SUBDIR += klondike
-    SUBDIR += kpuzzle		
+    SUBDIR += kpuzzle
     SUBDIR += krogue
     SUBDIR += krubik
     SUBDIR += ktamaga
@@ -175,7 +175,12 @@
     SUBDIR += netrek-BRMH-bin
     SUBDIR += netrek-COW3-bin
     SUBDIR += netris
+    SUBDIR += nettoe
     SUBDIR += newvox
+    SUBDIR += nighthawk
+    SUBDIR += nil
+    SUBDIR += nonsense
+    SUBDIR += omega
     SUBDIR += oneko
     SUBDIR += oneko-sakura
     SUBDIR += oonsoo
@@ -245,11 +250,6 @@
     SUBDIR += tuxracer
     SUBDIR += tuxtype
     SUBDIR += tvp
-    SUBDIR += nettoe
-    SUBDIR += nighthawk
-    SUBDIR += nil
-    SUBDIR += nonsense
-    SUBDIR += omega
     SUBDIR += twitch
     SUBDIR += uclient
     SUBDIR += uox3

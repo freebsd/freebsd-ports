@@ -18,10 +18,10 @@
     SUBDIR += irchat-pj-xemacs21-mule
     SUBDIR += iroffer
     SUBDIR += irssi
+    SUBDIR += kvirc
     SUBDIR += liece-dcc
     SUBDIR += liece-emacs20
     SUBDIR += liece-xemacs21-mule
-    SUBDIR += kvirc
     SUBDIR += muh
     SUBDIR += nethirc
     SUBDIR += ninja
