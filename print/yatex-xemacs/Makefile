@@ -12,6 +12,5 @@ XEMACS=		yes
 
 MASTERDIR=	${.CURDIR}/../yatex
 COMMENT=	${.CURDIR}/pkg/COMMENT
-PLIST=		${.CURDIR}/pkg/PLIST
 
 .include	"${MASTERDIR}/Makefile"
