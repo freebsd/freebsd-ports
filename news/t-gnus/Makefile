@@ -1,4 +1,4 @@
-# New ports collection makefile for:	T-gnus (for emacs)
+# New ports collection makefile for:	T-gnus (for emacs21)
 # Date created:		13 September 2000
 # Whom: 		Satoshi Taoka <taoka@FreeBSD.org>
 #
@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	t-gnus
-PORTVERSION=	${TGNUSVERSION:S/_/./g:S/-/./g}
+PORTVERSION=	${TGNUSVERSION:S/quimby/q/g:S/_/./g:S/-/./g}
 CATEGORIES=	news mail elisp
-MASTER_SITES=	http://www.jpl.org/elips/t-gnus-6.14/snapshots/
+MASTER_SITES=	http://www.jpl.org/elips/t-gnus-6.15/snapshots/ \
+		http://cvs.m17n.org/archives/gnus/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 DISTNAME=	${PORTNAME}-${TGNUSVERSION}
 
@@ -18,39 +19,49 @@ BUILD_DEPENDS=	${LOCALBASE}/share/semi/${MIMEUI_COOKIE}:${PORTSDIR}/editors/${MI
 RUN_DEPENDS=	${LOCALBASE}/share/semi/${MIMEUI_COOKIE}:${PORTSDIR}/editors/${MIMEUI_PORT_NAME}
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 USE_GMAKE=	yes
-TGNUSVERSION=	6_14_6-04
-MIMEUI_PRODUCT?=semi
-MIMEUI_BRANCH?=	1.13
-MIMEUI_PORT_NAME?=${MIMEUI_PRODUCT}${MIMEUI_BRANCH:S/.//}-${EMACS_PORT_NAME}
-MIMEUI_COOKIE=	${MIMEUI_PRODUCT}-${EMACS_PORT_NAME}-${MIMEUI_BRANCH}.FreeBSD-packages
+CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 
-EMACS_PORT_NAME?=emacs20
+TGNUSVERSION=	6_15_7-01-quimby
+EMACS_PORT_NAME?=emacs21
+EMACS_W3M_PORT_NAME?=	emacs-w3m
+EMACS_W3M_LISP_FILE?=	${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/w3m/shimbun.el
 
-.if (${EMACS_PORT_NAME} == "emacs20" || ${EMACS_PORT_NAME} == "mule" || \
-	${EMACS_PORT_NAME} == "xemacs21-mule")
-WITH_MULE=yes
+.include <bsd.port.pre.mk>
+
+.if exists(${EMACS_W3M_LISP_FILE})
+BUILD_DEPENDS+=	${EMACS_W3M_LISP_FILE}:${PORTSDIR}/www/${EMACS_W3M_PORT_NAME}
+RUN_DEPENDS+=	${EMACS_W3M_LISP_FILE}:${PORTSDIR}/www/${EMACS_W3M_PORT_NAME}
+SHIMBUN=	""
 .else
-WITHOUT_MULE=yes
+SHIMBUN=	"@comment "
 .endif
 
+.if (${EMACS_PORT_NAME} == "mule")
+MIMEUI_VERSION=	1.13
+MIMEUI_PRODUCT=	semi113
+.else # emacs21, emacs20, xemacs21 or xemacs21-mule
+MIMEUI_VERSION=	1.14
+MIMEUI_PRODUCT=	semi
+.endif
+.if (${EMACS_PORT_NAME} == "emacs21")
+MIMEUI_PORT_NAME=	${MIMEUI_PRODUCT}
+.else
+MIMEUI_PORT_NAME=	${MIMEUI_PRODUCT}-${EMACS_PORT_NAME}
+.endif
+MIMEUI_COOKIE=		${MIMEUI_PRODUCT}-${EMACS_PORT_NAME}-${MIMEUI_VERSION}.FreeBSD-packages
+
 .if (${EMACS_PORT_NAME} == "xemacs21" || ${EMACS_PORT_NAME} == "xemacs21-mule")
+MANIFEST=		MANIFEST.t-gnus
+EMACS_PACKAGESDIR=	lib/xemacs/site-packages
 CONFIGURE_ARGS=	--with-xemacs=${EMACS_CMD} --with-packagedir=${LOCALBASE}/${EMACS_PACKAGESDIR}
 BUILD_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/mh-e/mh-e.el:${PORTSDIR}/editors/xemacs-comm-packages \
 		${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/bbdb/bbdb.el:${PORTSDIR}/editors/xemacs-comm-packages
 RUN_DEPENDS+=	${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/mh-e/mh-e.el:${PORTSDIR}/editors/xemacs-comm-packages \
 		${LOCALBASE}/${EMACS_LIBDIR}/xemacs-packages/lisp/bbdb/bbdb.el:${PORTSDIR}/editors/xemacs-comm-packages
-.else
-CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
-		--with-lispdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}/t-gnus \
-		--infodir=${INFODIR}
-.endif
-
-.if defined(EMACS_PACKAGESDIR)
 INFODIR=	${LOCALBASE}/${EMACS_PACKAGESDIR}/info
 STARTUPDIR=	${EMACS_PACKAGESDIR}/lisp
-INFOFILES=	emacs-mime gnus gnus-ja message message-ja
+INFOFILES=	emacs-mime gnus gnus-ja message message-ja sieve
 .if (${EMACS_PORT_NAME} == "xemacs21")
 ALL_TARGET=	package
 INSTALL_TARGET=	install-package
@@ -58,23 +69,27 @@ INSTALL_TARGET=	install-package
 ALL_TARGET=	package-ja
 INSTALL_TARGET=	install-package-ja
 .endif
-.elif (${EMACS_PORT_NAME} == "emacs20" || ${EMACS_PORT_NAME} == "mule")
+.else  # emacs21, emacs20 or mule
+CONFIGURE_ARGS=	--with-emacs=${EMACS_CMD} \
+		--with-lispdir=${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/t-gnus \
+		--infodir=${INFODIR}
 ALL_TARGET=	all-ja
 INSTALL_TARGET=	install-ja
 INFODIR=	${LOCALBASE}/info
-STARTUPDIR=	${EMACS_SITE_LISPDIR}
+STARTUPDIR=	${EMACS_VERSION_SITE_LISPDIR}
 .endif
 
 DIRSECTION=	"The Emacs editor and associated tools"
 PORTDOCDIR=	share/doc/t-gnus-${EMACS_PORT_NAME}
-DOCS=		ChangeLog ChangeLog.1 ChangeLog.2 GNUS-NEWS Mule23@1934.en Mule23@1934.ja README README-gnus-bbdb.en README-gnus-bbdb.ja README-offline.en README-offline.ja README.T-gnus README.branch README.branch.ja README.semi README.semi.ja TODO.ja
+DOCS=		ChangeLog ChangeLog.1 ChangeLog.2 ChangeLog.3 GNUS-NEWS Mule23@1934.en Mule23@1934.ja README-gnus-bbdb.en README-gnus-bbdb.ja README-offline.en README-offline.ja README.T-gnus README.branch README.branch.ja README.semi README.semi.ja TODO.ja
 PLIST_SUB=	EMACS_LIBDIR=${EMACS_LIBDIR} \
 		EMACS_LIBDIR_WITH_VER=${EMACS_LIBDIR_WITH_VER} \
 		EMACS_PACKAGESDIR=${EMACS_PACKAGESDIR} \
 		DIRSECTION=${DIRSECTION} \
 		EMACS_PORT_NAME=${EMACS_PORT_NAME} \
 		INFODIR=${INFODIR:S/${LOCALBASE}\///} \
-		EMACS_SITE_LISPDIR=${EMACS_SITE_LISPDIR}
+		EMACS_VERSION_SITE_LISPDIR=${EMACS_VERSION_SITE_LISPDIR} \
+		SHIMBUN=${SHIMBUN}
 PLIST=		${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 
 .if (${EMACS_PORT_NAME} == "mule")
@@ -98,8 +113,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/${PORTDOCDIR}
 .endfor
 .endif
-	${INSTALL_DATA} ${WRKDIR}/t-gnus-startup.el ${PREFIX}/${STARTUPDIR}
-# For XEmacs, ${INFODIR}/dir is not necessary.
+	${INSTALL_DATA} ${WRKDIR}/t-gnus-startup.el ${LOCALBASE}/${STARTUPDIR}
+# For XEmacs, ${INFODIR}/dir is not necessary. So these were deleted.
 .if (${EMACS_PORT_NAME} == "xemacs21" || ${EMACS_PORT_NAME} == "xemacs21-mule")
 .for file in ${INFOFILES}
 	 install-info --delete ${INFODIR}/${file} ${INFODIR}/dir
@@ -109,8 +124,6 @@ post-install:
 	fi
 .endif
 	@${CAT} ${PKGMESSAGE}
-
-.include <bsd.port.pre.mk>
 
 .if (${EMACS_PORT_NAME} == "mule")
 MAKE_ARGS+=	EMACS="${WRKDIR}/mule-apel"  XEMACS="${WRKDIR}/mule-apel"
