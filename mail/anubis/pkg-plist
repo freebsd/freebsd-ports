@@ -1,18 +1,20 @@
 sbin/anubis
 etc/rc.d/anubis.sh
+@unexec install-info --delete %D/info/anubis.info %D/info/dir
 info/anubis.info
 @exec install-info %D/info/anubis.info %D/info/dir
-@unexec install-info --delete %D/info/anubis.info %D/info/dir
 %%PORTDOCS%%share/doc/anubis/AUTHORS
-%%PORTDOCS%%share/doc/anubis/COPYING
 %%PORTDOCS%%share/doc/anubis/INSTALL
 %%PORTDOCS%%share/doc/anubis/NEWS
 %%PORTDOCS%%share/doc/anubis/README
 %%PORTDOCS%%share/doc/anubis/THANKS
 %%PORTDOCS%%share/doc/anubis/TODO
-%%PORTDOCS%%share/doc/anubis/TUTORIAL
 %%PORTDOCS%%@dirrm share/doc/anubis
 share/examples/anubis/1anubisrc
 share/examples/anubis/2anubisrc
 share/examples/anubis/defaultrc
+%%PAM%%share/examples/anubis/pam/anubis
+%%PAM%%share/examples/anubis/pam/anubis.allow
+%%PAM%%share/examples/anubis/pam/anubis.deny
+%%PAM%%@dirrm share/examples/anubis/pam
 @dirrm share/examples/anubis

@@ -5,41 +5,92 @@
 #
 # $FreeBSD$
 #
+###########################################################################
+#
+# Following compile-time options are available:
+#
+# WITHOUT_OPENSSL=yes	Disable the OpenSSL library support
+# WITHOUT_GPGME=yes	Disable the GnuPG (GPGME library) support
+# WITH_PCRE=yes		Enable the PCRE library support
+# WITH_PAM=yes		Enable the Pluggable Authentication Modules support
+# WITH_TCP_WRAPPERS=yes Enable the libwrap (TCP wrappers) support
+#
+###########################################################################
 
 PORTNAME=	anubis
-PORTVERSION=	3.4.2
+PORTVERSION=	3.4.6
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sergei@kolobov.com
 
-LIB_DEPENDS=	gpgme:${PORTSDIR}/security/gpgme \
-		pcre:${PORTSDIR}/devel/pcre \
-		gnugetopt:${PORTSDIR}/devel/libgnugetopt
+LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 
 USE_REINPLACE=	yes
-USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lgnugetopt" \
+		MAKEINFO="makeinfo --no-split"
+
+# OpenSSL
+.if defined(WITHOUT_OPENSSL)
+CONFIGURE_ARGS+=	--without-openssl
+.else
+USE_OPENSSL=		yes
+.endif
+
+# GPGME
+.if defined(WITHOUT_GPGME)
+CONFIGURE_ARGS+=	--without-gpgme
+.else
+LIB_DEPENDS+=		gpgme:${PORTSDIR}/security/gpgme
+.endif
+
+# PCRE
+.if defined(WITH_PCRE)
+LIB_DEPENDS+=		pcre:${PORTSDIR}/devel/pcre
+CONFIGURE_ARGS+=	--with-pcre
+.endif
+
+# PAM
+.if defined(WITH_PAM)
+CONFIGURE_ARGS+=	--with-pam
+PLIST_SUB+=	PAM=""
+.else
+PLIST_SUB+=	PAM="@comment "
+.endif
+
+# TCP Wrappers
+.if defined(WITH_TCP_WRAPPERS)
+CONFIGURE_ARGS+=	--with-tcp-wrappers
+.endif
 
 MAN1=	anubis.1
-DOCS=	AUTHORS COPYING INSTALL NEWS README THANKS TODO
+DOCS=	AUTHORS INSTALL NEWS README THANKS TODO
+
+pre-everything::
+	@${CAT} ${PKGMESSAGE}
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc|${PREFIX}/etc|g" ${WRKSRC}/src/headers.h
 	@${SED} -e "s|%%PREFIX%%|${PREFIX}|g" ${FILESDIR}/anubis.sh > \
 		${WRKSRC}/anubis.sh
 
+pre-configure:
+	@${RM} -f ${WRKSRC}/doc/anubis.info*
+
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/anubis.sh ${PREFIX}/etc/rc.d
 	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/*rc ${EXAMPLESDIR}
+.if defined(WITH_PAM)
+	@${MKDIR} ${EXAMPLESDIR}/pam
+	${INSTALL_DATA} ${WRKSRC}/examples/pam/* ${EXAMPLESDIR}/pam
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/TUTORIAL ${DOCSDIR}
-.for file in ${DOCS} 
+.for file in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
