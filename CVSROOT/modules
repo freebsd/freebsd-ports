@@ -3676,6 +3676,7 @@ lfpfonts-var	ports/x11-fonts/lfpfonts-var
 lfs_cleanerd	src/libexec/lfs_cleanerd
 lftp		ports/ftp/lftp
 lfview		ports/graphics/lfview
+lgeneral	ports/games/lgeneral
 lgrind		ports/print/lgrind
 lha		ports/archivers/lha
 liamail		ports/mail/liamail
