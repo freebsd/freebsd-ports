@@ -1,6 +1,5 @@
 bin/vile
 bin/vile-pager
-info/dir
 lib/vile/vile-c-filt
 lib/vile/vile-crypt
 lib/vile/vile-manfilt
