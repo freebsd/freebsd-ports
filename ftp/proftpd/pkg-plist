@@ -1,3 +1,4 @@
+@unexec if cmp -s %D/etc/proftpd.conf %D/etc/proftpd.conf.default; then rm -f %D/etc/proftpd.conf; fi
 bin/ftpcount
 bin/ftpwho
 etc/proftpd.conf.default

@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	proftpd
-PORTVERSION=	1.2.2rc1
+PORTVERSION=	1.2.2rc2
 CATEGORIES=	ftp
-MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
+MASTER_SITES=	ftp://ftp.proftpd.net/distrib/source/ \
 		ftp://ftp.stikman.com/pub/proftpd/source/ \
 		ftp://ftp.dataguard.no/pub/proftpd/distrib/source/ \
 		ftp://ftp.club-internet.fr/pub/mirrors/ftp.proftpd.org/distrib/source/
