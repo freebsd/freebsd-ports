@@ -10,13 +10,4 @@ $FreeBSD$
 +$ac_aux_dir/ltconfig $LIBTOOL_DEPS
  
  # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-@@ -7078,7 +7079,7 @@
- #define ENABLE_NAUTILUS_VIEW 1
- EOF
- 
--  _gnome_modules="$_gnome_modules bonobox nautilus"
-+  _gnome_modules="$_gnome_modules bonobox"
- fi
- echo "$ac_t""$enable_nautilus_view" 1>&6
- 
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool' 
