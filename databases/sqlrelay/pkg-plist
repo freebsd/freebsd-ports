@@ -16,21 +16,27 @@ bin/sqlr-stop
 bin/sqlrsh
 etc/sqlrelay.conf.example
 etc/sqlrelay.dtd
-include/private/bindvar.h
-include/private/column.h
-include/private/field.h
-include/private/row.h
-include/private/sqlrconnection.h
-include/private/sqlrcursor.h
-include/private/sqlrdefines.h
-include/private/sqlrincludes.h
-include/sqlrclient.h
-include/sqlrclientwrapper.h
+include/sqlrelay/private/bindvar.h
+include/sqlrelay/private/column.h
+include/sqlrelay/private/row.h
+include/sqlrelay/private/sqlrconnection.h
+include/sqlrelay/private/sqlrcursor.h
+include/sqlrelay/private/sqlrdefines.h
+include/sqlrelay/private/sqlrincludes.h
+include/sqlrelay/sqlrclient.h
+include/sqlrelay/sqlrclientwrapper.h
+@dirrm include/sqlrelay/private
+@dirrm include/sqlrelay
 lib/libsqlrclient.a
+lib/libsqlrclient.so
 lib/libsqlrclient.so.0
+lib/libsqlrclient_p.a
 lib/libsqlrclientwrapper.a
+lib/libsqlrclientwrapper.so
 lib/libsqlrclientwrapper.so.0
+lib/libsqlrclientwrapper_p.a
 @dirrm sqlrelay/tmp
+@dirrm sqlrelay/debug
 @dirrm sqlrelay/cache
 @dirrm sqlrelay
 %%PORTDOCS%%share/doc/sqlrelay/api/c++/sqlrclient.h.html
@@ -54,10 +60,25 @@ lib/libsqlrclientwrapper.so.0
 %%PORTDOCS%%share/doc/sqlrelay/api/python/PySQLRClient.py.html
 %%PORTDOCS%%share/doc/sqlrelay/api/python/PySQLRDB.py.html
 %%PORTDOCS%%share/doc/sqlrelay/api/ruby/ruby.html
+%%PORTDOCS%%share/doc/sqlrelay/api/ruby/rubydbi.html
 %%PORTDOCS%%share/doc/sqlrelay/clientapis.html
 %%PORTDOCS%%share/doc/sqlrelay/configuring.html
 %%PORTDOCS%%share/doc/sqlrelay/connections.html
 %%PORTDOCS%%share/doc/sqlrelay/css/styles.css
+%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/db2.html
+%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/interbase.html
+%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/lago.html
+%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/msql.html
+%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/mssqlserver.html
+%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/mysql.html
+%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/oracle.html
+%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/oracle/805.html
+%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/oracle/817.html
+%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/postgresql.html
+%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/sqlite.html
+%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/sybase.html
+%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/sybase/11.0.3.3.html
+%%PORTDOCS%%share/doc/sqlrelay/gettingstarted/sybase/11.9.2.html
 %%PORTDOCS%%share/doc/sqlrelay/index.html
 %%PORTDOCS%%share/doc/sqlrelay/installing.html
 %%PORTDOCS%%share/doc/sqlrelay/introduction.html
@@ -69,11 +90,12 @@ lib/libsqlrclientwrapper.so.0
 %%PORTDOCS%%share/doc/sqlrelay/programming/c.html
 %%PORTDOCS%%share/doc/sqlrelay/programming/java.html
 %%PORTDOCS%%share/doc/sqlrelay/programming/perl.html
-%%PORTDOCS%%share/doc/sqlrelay/programming/perldbd.html
+%%PORTDOCS%%share/doc/sqlrelay/programming/perldbi.html
 %%PORTDOCS%%share/doc/sqlrelay/programming/php.html
 %%PORTDOCS%%share/doc/sqlrelay/programming/python.html
 %%PORTDOCS%%share/doc/sqlrelay/programming/pythondb.html
 %%PORTDOCS%%share/doc/sqlrelay/programming/ruby.html
+%%PORTDOCS%%share/doc/sqlrelay/programming/rubydbi.html
 %%PORTDOCS%%share/doc/sqlrelay/programming/zope.html
 %%PORTDOCS%%share/doc/sqlrelay/programming/zope/instance.gif
 %%PORTDOCS%%share/doc/sqlrelay/programming/zope/management.gif
@@ -86,6 +108,9 @@ lib/libsqlrclientwrapper.so.0
 %%PORTDOCS%%share/doc/sqlrelay/running.html
 %%PORTDOCS%%@dirrm share/doc/sqlrelay/programming/zope
 %%PORTDOCS%%@dirrm share/doc/sqlrelay/programming
+%%PORTDOCS%%@dirrm share/doc/sqlrelay/gettingstarted/sybase
+%%PORTDOCS%%@dirrm share/doc/sqlrelay/gettingstarted/oracle
+%%PORTDOCS%%@dirrm share/doc/sqlrelay/gettingstarted
 %%PORTDOCS%%@dirrm share/doc/sqlrelay/css
 %%PORTDOCS%%@dirrm share/doc/sqlrelay/api/ruby
 %%PORTDOCS%%@dirrm share/doc/sqlrelay/api/python

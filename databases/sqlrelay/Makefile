@@ -7,7 +7,6 @@
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
-PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	http://www.firstworks.com/downloads/sqlrelay/
 
@@ -17,6 +16,7 @@ LIB_DEPENDS=	rudiments.0:${PORTSDIR}/devel/rudiments \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		iconv.3:${PORTSDIR}/converters/libiconv
 
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
@@ -136,10 +136,14 @@ post-extract:
 	${LN} -s ${LOCALBASE}/lib ${WRKDIR}/prefixes/libxml/lib
 
 post-patch:
-	${PERL} -i -p \
-		-e 's,/usr/local\b,${PREFIX},g;' \
-		-e 's,\bgtk-config\b,${GTK_CONFIG:T},g;' \
+	${REINPLACE_CMD} -E \
+		-e 's,/usr/local[[:>:]],${PREFIX},g;' \
+		-e 's,[[:<:]]gtk-config[[:>:]],${GTK_CONFIG:T},g;' \
 			${WRKSRC}/configure
+	${REINPLACE_CMD} -E \
+		-e 's,\.so\.\$$\(SQLR_VERSION\),\.so\.$$(basename $$(SQLR_VERSION)),g;' \
+			${WRKSRC}/src/api/c/src/Makefile \
+			${WRKSRC}/src/api/c++/src/Makefile
 
 post-install:
 .if !defined(NOPORTDOCS)
