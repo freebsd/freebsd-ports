@@ -10,6 +10,7 @@
 %%PORTDOCS%%share/doc/zsi/c08-fault.tex
 %%PORTDOCS%%share/doc/zsi/c09-resolve.tex
 %%PORTDOCS%%share/doc/zsi/c10-dispatch.tex
+%%PORTDOCS%%share/doc/zsi/version.tex
 %%PORTDOCS%%share/doc/zsi/zsi.css
 %%PORTDOCS%%share/doc/zsi/zsi.html
 %%PORTDOCS%%share/doc/zsi/zsi.pdf
@@ -17,6 +18,26 @@
 %%PORTDOCS%%share/doc/zsi/zsi.tex
 %%PORTDOCS%%share/doc/zsi/zsi.xsd
 %%PORTDOCS%%share/doc/zsi/zsixsd.tex
+%%PORTDOCS%%share/examples/zsi/interop/InteropTest.wsdl
+%%PORTDOCS%%share/examples/zsi/interop/InteropTestB.wsdl
+%%PORTDOCS%%share/examples/zsi/interop/README
+%%PORTDOCS%%share/examples/zsi/interop/client.py
+%%PORTDOCS%%share/examples/zsi/interop/cpackets.py
+%%PORTDOCS%%share/examples/zsi/interop/echoHeaderBindings.wsdl
+%%PORTDOCS%%share/examples/zsi/interop/sclasses.py
+%%PORTDOCS%%share/examples/zsi/interop/server.py
+%%PORTDOCS%%share/examples/zsi/samples/README
+%%PORTDOCS%%share/examples/zsi/samples/poly.py
+%%PORTDOCS%%share/examples/zsi/test/README
+%%PORTDOCS%%share/examples/zsi/test/cgicli.py
+%%PORTDOCS%%share/examples/zsi/test/t1.py
+%%PORTDOCS%%share/examples/zsi/test/t2.py
+%%PORTDOCS%%share/examples/zsi/test/t3.py
+%%PORTDOCS%%share/examples/zsi/test/t4.py
+%%PORTDOCS%%share/examples/zsi/test/t5.py
+%%PORTDOCS%%share/examples/zsi/test/t6.py
+%%PORTDOCS%%share/examples/zsi/test/t7.py
+%%PORTDOCS%%share/examples/zsi/test/tests.py
 lib/%%PYTHON_VERSION%%/site-packages/ZSI/TC.py
 lib/%%PYTHON_VERSION%%/site-packages/ZSI/TC.pyc
 lib/%%PYTHON_VERSION%%/site-packages/ZSI/TC.pyo
@@ -41,6 +62,9 @@ lib/%%PYTHON_VERSION%%/site-packages/ZSI/auth.pyo
 lib/%%PYTHON_VERSION%%/site-packages/ZSI/client.py
 lib/%%PYTHON_VERSION%%/site-packages/ZSI/client.pyc
 lib/%%PYTHON_VERSION%%/site-packages/ZSI/client.pyo
+lib/%%PYTHON_VERSION%%/site-packages/ZSI/compat.py
+lib/%%PYTHON_VERSION%%/site-packages/ZSI/compat.pyc
+lib/%%PYTHON_VERSION%%/site-packages/ZSI/compat.pyo
 lib/%%PYTHON_VERSION%%/site-packages/ZSI/dispatch.py
 lib/%%PYTHON_VERSION%%/site-packages/ZSI/dispatch.pyc
 lib/%%PYTHON_VERSION%%/site-packages/ZSI/dispatch.pyo
@@ -60,4 +84,8 @@ lib/%%PYTHON_VERSION%%/site-packages/ZSI/writer.py
 lib/%%PYTHON_VERSION%%/site-packages/ZSI/writer.pyc
 lib/%%PYTHON_VERSION%%/site-packages/ZSI/writer.pyo
 @dirrm lib/%%PYTHON_VERSION%%/site-packages/ZSI
+%%PORTDOCS%%@dirrm share/examples/zsi/test
+%%PORTDOCS%%@dirrm share/examples/zsi/samples
+%%PORTDOCS%%@dirrm share/examples/zsi/interop
+%%PORTDOCS%%@dirrm share/examples/zsi
 %%PORTDOCS%%@dirrm share/doc/zsi
