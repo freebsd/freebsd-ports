@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enfle
-PORTVERSION=	20000817
+PORTVERSION=	20001011
 CATEGORIES=	graphics
 MASTER_SITES=	http://enfle.fennel.org/ \
 		http://www3.big.or.jp/~sian/linux/products/enfle/ \
@@ -16,8 +16,7 @@ MAINTAINER=	samy@goldmoon.org
 
 LIB_DEPENDS=	png.4:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		bz2.1:${PORTSDIR}/archivers/bzip2 \
-		arc.1:${PORTSDIR}/archivers/libarc
+		bz2.1:${PORTSDIR}/archivers/bzip2
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
