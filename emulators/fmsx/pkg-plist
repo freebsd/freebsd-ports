@@ -2,18 +2,18 @@ bin/fmsx
 bin/fmsx.bin
 bin/fmsx-rddsk
 bin/fmsx-wrdsk
-share/fmsx/CMOS.ROM
-share/fmsx/CYRILLIC.FNT
-share/fmsx/DISK.ROM
-share/fmsx/FMPAC.ROM
-share/fmsx/ITALIC.FNT
-share/fmsx/KANJI.ROM
-share/fmsx/MSX.ROM
-share/fmsx/MSX2.ROM
-share/fmsx/MSX2EXT.ROM
-share/fmsx/MSX2P.ROM
-share/fmsx/MSX2PEXT.ROM
-share/fmsx/PAINTER.ROM
-%%PORTDOCS%%share/doc/fmsx/fMSX.html
-%%PORTDOCS%%@dirrm share/fmsx
-%%PORTDOCS%%@dirrm share/doc/fmsx
+%%DATADIR%%/CMOS.ROM
+%%DATADIR%%/CYRILLIC.FNT
+%%DATADIR%%/DISK.ROM
+%%DATADIR%%/FMPAC.ROM
+%%DATADIR%%/ITALIC.FNT
+%%DATADIR%%/KANJI.ROM
+%%DATADIR%%/MSX.ROM
+%%DATADIR%%/MSX2.ROM
+%%DATADIR%%/MSX2EXT.ROM
+%%DATADIR%%/MSX2P.ROM
+%%DATADIR%%/MSX2PEXT.ROM
+%%DATADIR%%/PAINTER.ROM
+%%PORTDOCS%%%%DOCSDIR%%/fMSX.html
+%%PORTDOCS%%@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -23,7 +23,8 @@ USE_XLIB=	yes
 RESTRICTED=	Legal status of distributed ROM images unclear
 WRKSRC=		${WRKDIR}/MSX
 
-OPTIONS=	BPP16 "With BPP16" Off \
+OPTIONS=	BPP8 "With BPP8" Off \
+		BPP16 "With BPP16" Off \
 		BPP24 "With BPP24" Off \
 		BPP32 "With BPP32 (see pkg-message)" On
 
@@ -39,6 +40,9 @@ post-patch:
 .ifdef(WITH_BPP16)
 	${REINPLACE_CMD} -e 's/%%BPP%%/BPP16/' ${WRKSRC}/Makefile
 .endif
+.ifdef(WITH_BPP8)
+	${REINPLACE_CMD} -e 's/%%BPP%%/BPP8/' ${WRKSRC}/Makefile
+.endif
 
 do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/fmsx ${PREFIX}/bin
@@ -47,10 +51,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rddsk ${PREFIX}/bin/fmsx-rddsk
 	${INSTALL_PROGRAM} ${WRKSRC}/wrdsk ${PREFIX}/bin/fmsx-wrdsk
 	${MKDIR} ${PREFIX}/share/fmsx
-	${INSTALL_DATA} ${WRKSRC}/*.ROM ${WRKSRC}/*.FNT ${PREFIX}/share/fmsx
+	${INSTALL_DATA} ${WRKSRC}/*.ROM ${WRKSRC}/*.FNT ${DATADIR}
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/fmsx
-	${INSTALL_DATA} ${WRKSRC}/*.html ${PREFIX}/share/doc/fmsx
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.post.mk>
