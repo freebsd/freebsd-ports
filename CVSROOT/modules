@@ -182,6 +182,7 @@ abck		ports/sysutils/abck
 abclock		ports/x11-clocks/abclock
 abook		ports/mail/abook
 abs		ports/math/abs
+abuse		ports/games/abuse
 abuse_sdl	ports/games/abuse_sdl
 ac		src/usr.sbin/ac
 ac-archive	ports/devel/ac-archive
