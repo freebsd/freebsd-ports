@@ -20,6 +20,7 @@
     SUBDIR += gdesklets
     SUBDIR += gdesklets-recentlyused
     SUBDIR += gdesklets-sensor-psi_iconbutton
+    SUBDIR += gdesklets-sensor-psi_variableborder
     SUBDIR += gdesklets-starterbar
     SUBDIR += gemcal
     SUBDIR += genius
