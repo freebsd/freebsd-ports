@@ -1,9 +1,9 @@
---- scribus/plugins/libchar/Makefile.in.orig	Sun Nov 10 06:26:45 2002
-+++ scribus/plugins/libchar/Makefile.in	Wed Nov 13 17:31:52 2002
+--- scribus/plugins/libchar/Makefile.in.orig	Tue Dec 31 03:30:32 2002
++++ scribus/plugins/libchar/Makefile.in	Tue Jan  7 21:13:33 2003
 @@ -226,7 +226,7 @@
  x_libraries = @x_libraries@
  
- libdir = $(prefix)/share/scribus/plugins
+ libdir = $(prefix)/lib/scribus/plugins
 -CPPFLAGS = -I$(top_builddir)/scribus
 +CPPFLAGS = -I$(top_builddir)/scribus @CPPFLAGS@
  ####### kdevelop will overwrite this part!!! (begin)##########

@@ -1,9 +1,9 @@
---- scribus/libpdf/Makefile.in.orig	Sun Nov 10 06:26:45 2002
-+++ scribus/libpdf/Makefile.in	Wed Nov 13 17:32:16 2002
+--- scribus/libpdf/Makefile.in.orig	Tue Dec 31 03:30:32 2002
++++ scribus/libpdf/Makefile.in	Tue Jan  7 21:02:13 2003
 @@ -226,7 +226,7 @@
  x_libraries = @x_libraries@
  
- libdir = $(prefix)/share/scribus/libs
+ libdir = $(prefix)/lib/scribus/libs
 -CPPFLAGS = -I$(top_builddir)/scribus
 +CPPFLAGS = -I$(top_builddir)/scribus @CPPFLAGS@
  ####### kdevelop will overwrite this part!!! (begin)##########
