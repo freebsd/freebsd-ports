@@ -103,6 +103,7 @@
     SUBDIR += kavmilter
     SUBDIR += kbiff
     SUBDIR += kiltdown
+    SUBDIR += ksig
     SUBDIR += lbdb
     SUBDIR += liamail
     SUBDIR += libesmtp
