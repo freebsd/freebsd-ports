@@ -1,39 +1,19 @@
---- configure.in.org	Fri Sep  1 14:35:10 2000
-+++ configure.in	Fri Sep  1 14:21:53 2000
-@@ -75,6 +75,7 @@
- dnl ##### Checks for header files.
- AC_PATH_XTRA
- AC_HEADER_DIRENT
-+AC_CHECK_HEADERS(unistd.h)
- 
- dnl ##### Switch over to C++.  This will make the checks below a little
- dnl ##### bit stricter (requiring function prototypes in include files).
-@@ -173,11 +174,27 @@
- dnl # include file (e.g., in cygwin 1.1.2).
- AC_CACHE_CHECK([for mkstemp],
- xpdf_cv_func_mkstemp,
--[AC_TRY_COMPILE([#include <stdlib.h>],
-+[AC_TRY_COMPILE([#include <stdlib.h>
-+#ifdef HAVE_UNISTD_H
-+#include <unistd.h>
-+#endif
-+],
- [mkstemp("foo");],
- xpdf_cv_func_mkstemp=yes, xpdf_cv_func_mkstemp=no)])
+--- configure.in.orig	Mon Dec  4 13:28:07 2000
++++ configure.in	Thu Jan 11 21:05:07 2001
+@@ -183,6 +183,16 @@
  if test "$xpdf_cv_func_mkstemp" = yes; then
    AC_DEFINE(HAVE_MKSTEMP)
-+fi
+ fi
 +dnl # Ditto mkstemps()
 +AC_CACHE_CHECK([for mkstemps],
 +xpdf_cv_func_mkstemps,
-+[AC_TRY_COMPILE([#include <stdlib.h>
-+#ifdef HAVE_UNISTD_H
-+#include <unistd.h>
-+#endif],
++[AC_TRY_LINK([#include <stdlib.h>
++#include <unistd.h>],     
 +[mkstemps("foo", 0);],
 +xpdf_cv_func_mkstemps=yes, xpdf_cv_func_mkstemps=no)])
 +if test "$xpdf_cv_func_mkstemps" = yes; then
 +  AC_DEFINE(HAVE_MKSTEMPS)
- fi
++fi
  
  dnl ##### Check select argument type: on HP-UX before version 10, select
+ dnl ##### takes (int *) instead of (fd_set *).

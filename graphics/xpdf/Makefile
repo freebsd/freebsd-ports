@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xpdf
-PORTVERSION=	0.91
+PORTVERSION=	0.92
 CATEGORIES=	graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/  \
 		${MASTER_SITE_TEX_CTAN}
@@ -15,18 +15,19 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	chuckr@FreeBSD.org
 
-LIB_DEPENDS=	t1.1:${PORTSDIR}/devel/t1lib \
-		ttf.4:${PORTSDIR}/print/freetype
+LIB_DEPENDS=	t1.1:${PORTSDIR}/devel/t1lib
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes
+USE_FREETYPE=	yes
 USE_AUTOCONF=	yes
 CONFIGURE_ARGS=	--with-gzip --enable-opi		\
-		--enable-japanese --enable-chinese	\
+		--enable-japanese 	\
+		--enable-chinese-cns --enable-chinese-gb	\
 		--with-t1-library=${LOCALBASE}/lib	\
 		--with-t1-includes=${LOCALBASE}/include	\
 		--with-freetype-library=${LOCALBASE}/lib \
-		--with-freetype-includes=${LOCALBASE}/include
+		--with-freetype-includes=${LOCALBASE}/include/freetype
 .if defined(A4)
 CONFIGURE_ARGS+=	--enable-a4-paper
 .endif
