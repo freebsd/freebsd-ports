@@ -11,7 +11,7 @@ CATEGORIES=	textproc elisp
 MASTER_SITES=	http://www.menteith.com/xslide/data/
 DISTNAME=	xslide
 
-MAINTAINER=	leo@florida.sarang.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emacs major mode for editing XSL stylesheets
 
 RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs21

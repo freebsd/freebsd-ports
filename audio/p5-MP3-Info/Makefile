@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=MP3
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	leo@florida.sarang.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Manipulate / fetch info from MP3 audio files
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
