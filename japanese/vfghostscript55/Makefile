@@ -24,7 +24,7 @@ MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://www.necs.co.jp/~umi/ \
 		http://plaza26.mbn.or.jp/~higamasa/gdevmd2k/ \
 		http://www.aial.hiroshima-u.ac.jp/~sakai/Linux/gs5.50/ \
-		http://www.epkowa.on.arena.ne.jp/pips/data/lp8500/
+		http://www.epkowa.on.arena.ne.jp/pips/data/lp1900/
 # first for ${MASTER_SITE_GNU}, second for ${MASTER_SITE_LOCAL},
 # third for ${MASTER_SITE_PORTS_JP}
 MASTER_SITE_SUBDIR=	ghostscript asami/LOCAL_PORTS .
@@ -59,7 +59,7 @@ GS_DRIVERS+=	epag-3.09.tar.gz
 GS_DRIVERS+=	gdevalps-0.21.tar.gz
 GS_DRIVERS+=	gdevmd2k-0.2a.tar.gz
 GS_DRIVERS+=	gdevrpdl-1.2.tar.gz
-GS_DRIVERS+=	eplaser-1.1.1-550.tgz
+GS_DRIVERS+=	eplaser-2.0.2-550.tgz
 #  Note: the following two are real files that have symlinks with
 #  later version numbers pointing to them.  To avoid unnecessarily
 #  downloading distfiles, do not change these when upgrading the port
@@ -87,7 +87,7 @@ post-extract:
 	  ${TAR} --unlink -xzf ${DISTDIR}/gdevalps-0.21.tar.gz ; \
 	  ${TAR} --unlink -xzf ${DISTDIR}/gdevmd2k-0.2a.tar.gz ; \
 	  ${TAR} --unlink -xzf ${DISTDIR}/gdevrpdl-1.2.tar.gz ; \
-	  ${TAR} --unlink -xzf ${DISTDIR}/eplaser-1.1.1-550.tgz ; \
+	  ${TAR} --unlink -xzf ${DISTDIR}/eplaser-2.0.2-550.tgz ; \
 	)
 
 pre-patch:
@@ -109,7 +109,7 @@ post-patch:
 	  ${CP} gdevalps-0.2/gdevalps.c gdevalps-0.2/gdevalps.mak-5.50 ${WRKSRC}; \
 	  ${CP} gdevmd2k-0.2a/gdevmd2k.c gdevmd2k-0.2a/gdevmd2k.mak-5.50 ${WRKSRC}; \
 	  ${CP} gdevrpdl-1.2/gdevrpdl.c gdevrpdl-1.2/gdevrpdl.mak ${WRKSRC}; \
-	  ${CP} eplaser/gdevescv.[ch] eplaser/gdevescv.mak ${WRKSRC}; \
+	  ${CP} eplaser/gdevescv.[ch] eplaser/gdevescv.mak eplaser/gdevesmv.c eplaser/gdevesmv.mak ${WRKSRC}; \
 	  )
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdev10v.mak.patch
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/mjc.dev.patch
@@ -119,6 +119,7 @@ post-patch:
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdevdmpr.patch
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdevlips.mak.patch
 	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdevescv.c.patch
+	@${PATCH} ${PATCH_ARGS} < ${FILESDIR}/gdevesmv.c.patch
 	@${CAT} ${WRKSRC}/gdev10v.mak >> ${WRKSRC}/contrib.mak
 	@${CAT} ${WRKSRC}/gdevdmpr.mak >> ${WRKSRC}/contrib.mak
 	@${CAT} ${WRKSRC}/gdevepag.mak >> ${WRKSRC}/contrib.mak
@@ -129,6 +130,7 @@ post-patch:
 	@${CAT} ${WRKSRC}/gdevalps.mak-5.50 >> ${WRKSRC}/contrib.mak
 	@${CAT} ${WRKSRC}/gdevmd2k.mak-5.50 >> ${WRKSRC}/contrib.mak
 	@${CAT} ${WRKSRC}/gdevescv.mak >> ${WRKSRC}/contrib.mak
+	@${CAT} ${WRKSRC}/gdevesmv.mak >> ${WRKSRC}/contrib.mak
 
 pre-build:
 	${MKDIR} ${WRKSRC}/obj
