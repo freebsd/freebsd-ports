@@ -7,6 +7,7 @@
 
 PORTNAME=	torcs
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -23,11 +24,7 @@ COMMENT=	The Open Racing Car Simulator
 BUILD_DEPENDS=	${X11BASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 # doxygen would be required to build the doc (TODO?)
 LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png
-.if !defined(WITHOUT_FREEGLUT)
-LIB_DEPENDS+=	freeglut-1.3.0:${PORTSDIR}/x11-toolkits/freeglut
-.else
 USE_MESA=	yes
-.endif
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash2
 
 GNU_CONFIGURE=	yes
@@ -72,11 +69,6 @@ PLIST_SUB+=	K1999=""
 PLIST_SUB+=	K1999="@comment "
 .endif
 
-.if !defined(WITHOUT_FREEGLUT)
-CFLAGSD=	-DFREEGLUT
-CONFIGURE_ENV+=	USE_FREEGLUT=yes
-.endif
-
 2BCLEANED=	Make-config src/libs/txml/gennmtab/gennmtab.o
 BASH2FIX=	src/modules/telemetry/telemetry.sh src/tools/launcher/torcs.in	\
 		Make-default.mk robotgen		\
@@ -84,8 +76,6 @@ BASH2FIX=	src/modules/telemetry/telemetry.sh src/tools/launcher/torcs.in	\
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "	You might define these options:"
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "	- WITHOUT_FREEGLUT: do not link against freeglut;"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "	- WITHOUT_BERNIW and WITHOUT_K1999: do not install optional"
 	@${ECHO_MSG} "	  robots."
