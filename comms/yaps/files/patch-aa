@@ -1,0 +1,45 @@
+*** Config~	Tue Sep 29 15:15:18 1998
+--- Config	Tue Sep 29 15:16:10 1998
+***************
+*** 2,8 ****
+  #	SECTION A.) Global configuration
+  #	Select compiler command
+! CC	= gcc
+  #
+! CFLAGS	= -Wall -Wno-parentheses -Wshadow -Wstrict-prototypes -Wmissing-prototypes
+  LDFLAGS	=
+  EXLIBS	=
+--- 2,8 ----
+  #	SECTION A.) Global configuration
+  #	Select compiler command
+! #CC	= gcc
+  #
+! #CFLAGS	= -Wall -Wno-parentheses -Wshadow -Wstrict-prototypes -Wmissing-prototypes
+  LDFLAGS	=
+  EXLIBS	=
+***************
+*** 21,25 ****
+  #	SECTION B.) yaps configuration
+  #	Name and location of global configuration file
+! YAPS_CFGFILE	= /etc/yaps.rc
+  #	Name of local configuration file (location is $HOME.)
+  YAPS_LCFGFILE 	= .yapsrc
+--- 21,25 ----
+  #	SECTION B.) yaps configuration
+  #	Name and location of global configuration file
+! YAPS_CFGFILE	= /usr/local/etc/yaps.rc
+  #	Name of local configuration file (location is $HOME.)
+  YAPS_LCFGFILE 	= .yapsrc
+***************
+*** 30,34 ****
+  #	User/Group/Mode for yaps
+  YAPS_USER	= bin
+! YAPS_GROUP	= uucp
+  YAPS_MODE	= 2711
+  #	User/Group/Mode for global configuration file
+--- 30,34 ----
+  #	User/Group/Mode for yaps
+  YAPS_USER	= bin
+! YAPS_GROUP	= dialer
+  YAPS_MODE	= 2711
+  #	User/Group/Mode for global configuration file
