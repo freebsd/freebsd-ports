@@ -4925,6 +4925,7 @@ marathon-evil	ports/games/marathon-evil
 marbles		ports/games/marbles
 mars		ports/cad/mars
 mars_nwe	ports/net/mars_nwe
+masqmail	ports/mail/masqmail
 mastergear	ports/emulators/mastergear
 match		ports/astro/match
 matchbox	ports/x11-wm/matchbox
