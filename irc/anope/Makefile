@@ -49,10 +49,6 @@ ANOPEUMASK?=	077
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-BROKEN=		"Does not build on ${ARCH} (shared libraries must be compiled with -fPIC)"
-.endif
-
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
 .endif
@@ -62,53 +58,60 @@ post-patch:
 		-e "s/-pthread/${PTHREAD_LIBS}/" \
 		${WRKSRC}/configure
 
+CONFIG_CACHE=${WRKSRC}/config.cache
 pre-configure: #--{{{
-	@${ECHO_CMD} PROGRAM="anope" > ${WRKSRC}/config.cache
-	@${ECHO_CMD} BINDEST="${ANOPEBIN}" >> ${WRKSRC}/config.cache
-	@${ECHO_CMD} DATDEST="${ANOPEDAT}" >> ${WRKSRC}/config.cache
-	@${ECHO_CMD} UMASK="${ANOPEUMASK}" >> ${WRKSRC}/config.cache
+	@${ECHO_CMD} PROGRAM=\"anope\" > ${CONFIG_CACHE}
+	@${ECHO_CMD} BINDEST=\"${ANOPEBIN}\" >> ${CONFIG_CACHE}
+	@${ECHO_CMD} DATDEST=\"${ANOPEDAT}\" >> ${CONFIG_CACHE}
+	@${ECHO_CMD} UMASK=\"${ANOPEUMASK}\" >> ${CONFIG_CACHE}
 .if defined(WITH_MYSQL)
-	@${ECHO_CMD} MYSQL="USE_MYSQL" >> ${WRKSRC}/config.cache
-	@${ECHO_CMD} RDB="USE_RDB" >> ${WRKSRC}/config.cache
+	@${ECHO_CMD} MYSQL=\"USE_MYSQL\" >> ${CONFIG_CACHE}
+	@${ECHO_CMD} RDB=\"USE_RDB\" >> ${CONFIG_CACHE}
 .endif
 .if defined(WITH_MODULES)
-	@${ECHO_CMD} USE_MODULES="USE_MODULES" >> ${WRKSRC}/config.cache
-	@${ECHO_CMD} MODULE_PATH="${ANOPEMOD}" >> ${WRKSRC}/config.cache
+	@${ECHO_CMD} USE_MODULES=\"USE_MODULES\" >> ${CONFIG_CACHE}
+	@${ECHO_CMD} MODULE_PATH=\"${ANOPEMOD}\" >> ${CONFIG_CACHE}
 .endif
 .if defined(WITH_MD5)
-	@${ECHO_CMD} ENCRYPTION="ENCRYPT_MD5" >> ${WRKSRC}/config.cache
+	@${ECHO_CMD} ENCRYPTION=\"ENCRYPT_MD5\" >> ${CONFIG_CACHE}
 .endif
 .if defined(WITH_THREAD)
-	@${ECHO_CMD} THREAD="USE_THREADS" >> ${WRKSRC}/config.cache
+	@${ECHO_CMD} THREAD=\"USE_THREADS\" >> ${CONFIG_CACHE}
 .endif
 .if defined(WITH_DREAM)
-	@${ECHO_CMD} IRCTYPE=1 >> ${WRKSRC}/config.cache
-	@${ECHO_CMD} IRCTYPE_DEF="IRC_DREAMFORGE" >> ${WRKSRC}/config.cache
+	@${ECHO_CMD} IRCTYPE=1 >> ${CONFIG_CACHE}
+	@${ECHO_CMD} IRCTYPE_DEF=\"IRC_DREAMFORGE\" >> ${CONFIG_CACHE}
 .elif defined(WITH_BAHAMUT)
-	@${ECHO_CMD} IRCTYPE=2 >> ${WRKSRC}/config.cache
-	@${ECHO_CMD} IRCTYPE_DEF="IRC_BAHAMUT" >> ${WRKSRC}/config.cache
+	@${ECHO_CMD} IRCTYPE=2 >> ${CONFIG_CACHE}
+	@${ECHO_CMD} IRCTYPE_DEF=\"IRC_BAHAMUT\" >> ${CONFIG_CACHE}
 .elif defined(WITH_UNREAL)
-	@${ECHO_CMD} IRCTYPE=3 >> ${WRKSRC}/config.cache
-	@${ECHO_CMD} IRCTYPE_DEF="IRC_DREAMFORGE" >> ${WRKSRC}/config.cache
-	@${ECHO_CMD} IRCTYPE_DEF2="IRC_UNREAL" >> ${WRKSRC}/config.cache
+	@${ECHO_CMD} IRCTYPE=3 >> ${CONFIG_CACHE}
+	@${ECHO_CMD} IRCTYPE_DEF=\"IRC_DREAMFORGE\" >> ${CONFIG_CACHE}
+	@${ECHO_CMD} IRCTYPE_DEF2=\"IRC_UNREAL\" >> ${CONFIG_CACHE}
 .elif defined(WITH_ULT2)
-	@${ECHO_CMD} IRCTYPE=4 >> ${WRKSRC}/config.cache
-	@${ECHO_CMD} IRCTYPE_DEF="IRC_DREAMFORGE" >> ${WRKSRC}/config.cache
-	@${ECHO_CMD} IRCTYPE_DEF2="IRC_ULTIMATE" >> ${WRKSRC}/config.cache
+	@${ECHO_CMD} IRCTYPE=4 >> ${CONFIG_CACHE}
+	@${ECHO_CMD} IRCTYPE_DEF=\"IRC_DREAMFORGE\" >> ${CONFIG_CACHE}
+	@${ECHO_CMD} IRCTYPE_DEF2=\"IRC_ULTIMATE\" >> ${CONFIG_CACHE}
 .elif defined(WITH_ULT3)
-	@${ECHO_CMD} IRCTYPE=5 >> ${WRKSRC}/config.cache
-	@${ECHO_CMD} IRCTYPE_DEF="IRC_BAHAMUT" >> ${WRKSRC}/config.cache
-	@${ECHO_CMD} IRCTYPE_DEF2="IRC_ULTIMATE3" >> ${WRKSRC}/config.cache
+	@${ECHO_CMD} IRCTYPE=5 >> ${CONFIG_CACHE}
+	@${ECHO_CMD} IRCTYPE_DEF=\"IRC_BAHAMUT\" >> ${CONFIG_CACHE}
+	@${ECHO_CMD} IRCTYPE_DEF2=\"IRC_ULTIMATE3\" >> ${CONFIG_CACHE}
 .elif defined(WITH_HYB)
-	@${ECHO_CMD} IRCTYPE=6 >> ${WRKSRC}/config.cache
-	@${ECHO_CMD} IRCTYPE_DEF="IRC_HYBRID" >> ${WRKSRC}/config.cache
+	@${ECHO_CMD} IRCTYPE=6 >> ${CONFIG_CACHE}
+	@${ECHO_CMD} IRCTYPE_DEF=\"IRC_HYBRID\" >> ${CONFIG_CACHE}
 .elif defined(WITH_VIA)
-	@${ECHO_CMD} IRCTYPE=7 >> ${WRKSRC}/config.cache
-	@${ECHO_CMD} IRCTYPE_DEF="IRC_BAHAMUT" >> ${WRKSRC}/config.cache
-	@${ECHO_CMD} IRCTYPE_DEF2="IRC_VIAGRA" >> ${WRKSRC}/config.cache
+	@${ECHO_CMD} IRCTYPE=7 >> ${CONFIG_CACHE}
+	@${ECHO_CMD} IRCTYPE_DEF=\"IRC_BAHAMUT\" >> ${CONFIG_CACHE}
+	@${ECHO_CMD} IRCTYPE_DEF2=\"IRC_VIAGRA\" >> ${CONFIG_CACHE}
 .elif defined(WITH_PTL)
-	@${ECHO_CMD} IRCTYPE=8 >> ${WRKSRC}/config.cache
-	@${ECHO_CMD} IRCTYPE_DEF="IRC_PTLINK" >> ${WRKSRC}/config.cache
+	@${ECHO_CMD} IRCTYPE=8 >> ${CONFIG_CACHE}
+	@${ECHO_CMD} IRCTYPE_DEF=\"IRC_PTLINK\" >> ${CONFIG_CACHE}
+.endif
+# XXX Add here other arch which needs -fPIC :-)
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64"
+	@${ECHO_CMD} CC_FLAGS=\"-O -fPIC\" >> ${CONFIG_CACHE}
+.else
+	@${ECHO_CMD} CC_FLAGS=\"-O\" >> ${CONFIG_CACHE}
 .endif
 #}}}
 
