@@ -6,38 +6,32 @@
 #
 
 PORTNAME=	sisc
-PORTVERSION=	1.7.9
+PORTVERSION=	1.8.5
 CATEGORIES=	lang scheme
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
-EXTRACT_SUFX=	.jar
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An extensible Java-based Scheme interpreter
 
-BUILD_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant
-
 USE_JAVA=	1.3+
-
-EXTRACT_CMD=	${JAR}
-EXTRACT_BEFORE_ARGS=	-xf
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_REINPLACE=	yes
+NO_BUILD=	yes
 
 post-patch:
-	${REINPLACE_CMD} -e 's|\(SISC_HOME=\).*$$|\1${JAVAJARDIR}|' \
-		-e 's|^java|javavm|' ${WRKSRC}/dist/sisc.sh
-
-do-build:
-	cd ${WRKSRC}; ${SETENV} JAVA_HOME=${JAVA_HOME} ant sisc-lib
+	${REINPLACE_CMD} -e 's|\(SISC_HOME=\).*$$|\1${DATADIR}|' \
+		-e 's|^$$RLWRAP java|$$RLWRAP javavm|' ${WRKSRC}/sisc
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/*.jar ${WRKSRC}/*.shp ${JAVAJARDIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/dist/sisc.sh ${PREFIX}/bin/sisc
+	${INSTALL_SCRIPT} ${WRKSRC}/sisc ${PREFIX}/bin
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.jar ${WRKSRC}/*.shp ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/scheme-src/*.scm ${DATADIR}
 	${MKDIR} ${DOCSDIR}
 .for i in COPYING README
-	${INSTALL_DATA} ${WRKSRC}/dist/${i} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 
 .include <bsd.port.mk>
