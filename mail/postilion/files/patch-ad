@@ -1,0 +1,11 @@
+--- lib/Makefile.in.orig	Sun Feb 21 10:57:36 1999
++++ lib/Makefile.in	Sun Feb 21 10:58:09 1999
+@@ -101,7 +101,7 @@
+ 	if test ! -d ${LIB_DIR} ; then\
+ 	    ${INSTALL} -d ${LIB_DIR} ;\
+ 	fi
+-	${INSTALL} postilion.exec ${LIB_DIR}/postilion.exec
++	${INSTALL} ${STRIP} postilion.exec ${LIB_DIR}/postilion.exec
+ 
+ ratAddress.o: ratAddress.c rat.h ../config.h
+ ratAppInit.o: ratAppInit.c ratFolder.h rat.h ../config.h ratPGP.h

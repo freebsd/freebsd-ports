@@ -1,0 +1,20 @@
+--- imap-4.5.BETA/Makefile.orig	Sun Feb 21 11:03:57 1999
++++ imap-4.5.BETA/Makefile	Sun Feb 21 11:04:29 1999
+@@ -198,7 +198,7 @@
+ 
+ # Make the IMAP Toolkit
+ 
+-all:	c-client rebuild bundled
++all:	c-client rebuild
+ 
+ 
+ #  The following ports are defined.  These refer to the *standard* compiler
+@@ -384,7 +384,7 @@
+ 	$(TOOLS)/$@ "$(LN)" src/imapd imapd
+ 	$(LN) $(TOOLS)/$@ .
+ 
+-build:	OSTYPE rebuild rebuildclean bundled
++build:	OSTYPE rebuild rebuildclean
+ 
+ OSTYPE:
+ 	@echo Building c-client for $(OS)...
