@@ -14,10 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	dd@FreeBSD.org
 COMMENT=	Python binding for Syck, a YAML parser and emitter
 
-# Just a build dependency because the library will be linked into the extension
-BUILD_DEPENDS=	syck:${PORTSDIR}/textproc/syck
-
-BROKEN=		Broken dependency
+BUILD_DEPENDS=	${LOCALBASE}/lib/libsyck.a:${PORTSDIR}/textproc/syck
 
 SITELIBDIR=	%%PYTHON_SITELIBDIR%%/
 PYFILES=	ypath.py ydump.py yaml2xml.py
