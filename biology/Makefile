@@ -11,6 +11,7 @@
     SUBDIR += molden
     SUBDIR += mopac
     SUBDIR += ortep3
+    SUBDIR += p5-AcePerl
     SUBDIR += paml
     SUBDIR += phylip
     SUBDIR += platon
