@@ -32,10 +32,4 @@ PLIST_FILES=	bin/dictfmt bin/dictfmt_index2suffix bin/dictfmt_index2word \
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		"Does not compile on sparc64"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
