@@ -1,23 +1,11 @@
 bin/comp_err
 bin/isamchk
 bin/isamlog
-bin/msql2mysql
 bin/my_print_defaults
 bin/myisamchk
 bin/myisamlog
 bin/myisampack
-bin/mysql_config
-bin/mysql_convert_table_format
-bin/mysql_find_rows
-bin/mysql_fix_privilege_tables
 bin/mysql_install_db
-bin/mysql_setpermission
-bin/mysql_zap
-bin/mysqlaccess
-bin/mysqlbug
-bin/mysqld_multi
-bin/mysqldumpslow
-bin/mysqlhotcopy
 bin/pack_isam
 bin/perror
 bin/replace
@@ -129,7 +117,6 @@ share/mysql/japanese/errmsg.sys
 share/mysql/japanese/errmsg.txt
 share/mysql/korean/errmsg.sys
 share/mysql/korean/errmsg.txt
-share/mysql/make_binary_distribution
 share/mysql/mi_test_all
 share/mysql/mi_test_all.res
 share/mysql/my-huge.cnf
@@ -159,6 +146,7 @@ share/mysql/swedish/errmsg.sys
 share/mysql/swedish/errmsg.txt
 share/mysql/ukrainian/errmsg.sys
 share/mysql/ukrainian/errmsg.txt
+@unexec rmdir %D/lib/mysql 2> /dev/null || true
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/Flags
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/mysql/charsets
