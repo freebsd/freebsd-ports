@@ -1,6 +1,7 @@
 sbin/apcupsd
 sbin/apcaccess
 sbin/apcnisd
+sbin/apctest
 %%POWERFL%%sbin/powerflute
 etc/apcupsd/apccontrol
 @unexec if [ -f %D/etc/apcupsd/apcupsd.conf ]; then cmp -s %D/etc/apcupsd/apcupsd.conf.sample %D/etc/apcupsd/apcupsd.conf && rm -f %D/etc/apcupsd/apcupsd.conf || echo "If you are permanently removing this port, you should do a ``rm ${PKG_PREFIX}/etc/apcupsd/apcupsd.conf`` to remove config files left." | fmt ; fi
