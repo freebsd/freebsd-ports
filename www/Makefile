@@ -264,6 +264,7 @@
     SUBDIR += mod_zap
     SUBDIR += moinmoin
     SUBDIR += momspider
+    SUBDIR += monkey
     SUBDIR += mozilla
     SUBDIR += mozilla-bonobo
     SUBDIR += mozilla-devel

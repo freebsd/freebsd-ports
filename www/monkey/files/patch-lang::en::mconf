@@ -1,0 +1,54 @@
+--- lang/en/mconf.orig	Sat Oct 18 22:21:54 2003
++++ lang/en/mconf	Mon Oct 20 19:55:52 2003
+@@ -24,7 +24,7 @@
+ # be able to be established as a connection door if the user posesses 
+ # privledges of Root.
+ 
+-Port 2001
++Port 80
+ 
+ # ServerName :
+ # ------------
+@@ -52,19 +52,19 @@
+ # --------
+ # File where the server guards the process number when starting.
+ 
+-PidFile $logdir/monkey.pid
++PidFile /var/run/monkey.pid
+ 
+ # AccessLog:
+ # ----------
+ # Registration file of correct request.
+ 
+-AccessLog $logdir/access.log
++AccessLog $logdir/monkey-access.log
+ 
+ # ErrorLog:
+ # ---------
+ # Registration file of incorrect request.
+ 
+-ErrorLog $logdir/error.log
++ErrorLog $logdir/monkey-error.log
+ 
+ # UserDir:
+ # --------
+@@ -120,7 +120,7 @@
+ # started by a user that doesn't have root priviledges, this variable will
+ # be omitted.
+ 
+-User nobody
++User www
+ 
+ # AddScript
+ # ------------
+@@ -137,8 +137,8 @@
+ #   "php", should be processed through by "/home/my_home/php/bin/php"
+ #
+ 
+-#AddScript application/x-httpd-php /home/my_home/php/bin/php php
+-#AddScript application/x-httpd-php /home/my_home/php/bin/php php3
++#AddScript application/x-httpd-php ${prefix}/bin/php php
++#AddScript application/x-httpd-php ${prefix}/bin/php php3
+ 
+ # VIRTUAL HOST :
+ # --------------

@@ -1,0 +1,77 @@
+--- configure.orig	Sat Oct 18 22:21:54 2003
++++ configure	Mon Oct 20 19:42:20 2003
+@@ -221,15 +221,7 @@
+ # Monkey HTTP Daemon: Makefile
+ # ============================
+ default:
+-	@(cd src; make all)
+-	@echo  
+-	@echo  " Running Monkey :"
+-	@echo  " ----------------"
+-	@echo 
+-	@echo  "  # $bindir/monkey"
+-	@echo 
+-	@echo  "  For more help use '-h' option."		
+-	@echo 
++	@(cd src; ${MAKE} all)
+ clean:
+ 	@(cd src; make clean)
+ distclean:
+@@ -250,14 +242,14 @@
+ LOGDIR=${logdir}
+ 
+ default:
+-	@(cd src; make all)
++	@(cd src; ${MAKE} all)
+ clean:
+ 	@(cd src; make clean)
+ distclean:
+ 	@(cd src; make distclean)
+ 
+ install:
+-	make -C src all
++	${MAKE} -C src all
+ 	install -d \$(BINDIR)
+ 	install -d \$(CGIBIN)
+ 	install -d \$(SYSCONFDIR) 
+@@ -269,20 +261,16 @@
+ 	install -s -m 755 bin/monkey \$(BINDIR)
+ 	install -m 755 bin/banana \$(BINDIR)
+ 	install -m 755 ./cgi-bin/* \$(CGIBIN)
+-	install -m 600 ./conf/*.* \$(SYSCONFDIR)
++	@(for f in mime.types modules.conf monkey.conf monkey.deny ; \
++		do install -m 600 ./conf/\$\${f} \$(SYSCONFDIR)/\$\${f}-dist ;\
++		if  [ ! -e \$(SYSCONFDIR)/\$\${f} ]; then \
++				install -m 600 ./conf/\$\${f} \$(SYSCONFDIR); \
++		fi;\
++	done)
+ 	install -m 644 ./htdocs/*.* \$(DATADIR)
+ 	install -m 644 ./htdocs/imgs/*.* \${DATADIR}/imgs
+ 	install -m 644 ./htdocs/php/*.* \${DATADIR}/php
+ 	install -m 644 ./htdocs/docs/*.* \${DATADIR}/docs
+-	@echo 
+-	@echo  " Running Monkey :"
+-	@echo  " ----------------"
+-	@echo 
+-	@echo  "  # $bindir/monkey"
+-	@echo 
+-	@echo  "  For more help use '-h' option"	
+-	@echo 
+-
+ EOF
+ }
+ 
+@@ -304,11 +292,11 @@
+ cat > src/Makefile<<EOF
+ CC	= $CC
+ DEFS	= $mod_defs
+-CFLAGS	= \$(DEFS) -g -O2 -Wall
++CFLAGS	= \$(DEFS) ${EXTRA_CFLAGS}
+ INCDIR  = ./include
+ LDFLAGS	= 
+ DESTDIR	= ../bin/monkey
+-LIBS	= -lpthread $mod_libs $MORE_LIBS
++LIBS	= $mod_libs $MORE_LIBS ${PTHREAD_LIBS}
+ OBJ	= monkey.o method.o mimetype.o request.o \\
+ 	vhost.o config.o logfile.o signals.o \\
+ 	dir_html.o deny.o cgi.o user.o utils.o \\
