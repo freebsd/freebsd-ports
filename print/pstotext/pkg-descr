@@ -1,0 +1,39 @@
+pstotext reads one or more PostScript or PDF files, and writes to standard 
+output a representation of the plain text that would be displayed if the 
+PostScript file were printed. As is described in the DETAILS section below, 
+this representation is only an approximation. Nevertheless, it is often 
+useful for information retrieval (e.g., running grep(1) or building a
+full-text index) or to recover the text from a PostScript file whose source 
+you have lost.
+       
+pstotext calls Ghostscript, and requires Aladdin Ghostscript version 3.51 or 
+newer. Ghostscript must be invokable on the current search path as gs. 
+Alternatively, you can use the -gs option to specify the command (pathname 
+and options) to run Ghostscript. For example, on Windows you might use -gs 
+"c:\gs\gswin32c.exe -Ic:\gs;c:\gs\fonts".
+       
+pstotext reads and processes its command line from left to right, ignoring 
+the case of options. When it encounters a pathname, it opens the file and 
+expects to find a PostScript job or PDF document to process. The option - 
+means to read and process a PostScript job from standard input. If no - or 
+pathname arguments are encountered, pstotext reads a PostScript job from 
+standard input. (PDF documents require random access, hence cannot be read 
+from standard input.) You can use the -output option to specify an output file
+(remember to invoke it before the input file); otherwise pstotext writes to
+standard output.
+       
+The option -cork is only relevant for PostScript files produced by dvips from
+TeX or LaTeX documents; it tells pstotext to use the Cork encoding (known as T1
+in LaTeX) rather than the old TeX text encoding (known as OT1 in LaTeX).
+Unfortunately files produced by dvips don't distinguish which font encodings
+were used.
+       
+The options -landscape and -landscapeOther should be used for documents that
+must be rotated 90 degrees clockwise or counterclockwise, respectively, in
+order to be readable.
+
+The options -debug and -bboxes are mostly of use for the maintainers of
+pstotext.  -debug shows Ghostscript output and error messages.  -bboxes outputs
+one word per line with bounding box information. 
+
+WWW: http://www.research.digital.com/SRC/virtualpaper/manpages/pstotext.1.html
