@@ -1,0 +1,80 @@
+*** xdvi-17+ptex.fixed.patch.orig	Thu May 30 00:45:59 1996
+--- xdvi-17+ptex.fixed.patch	Thu May 30 00:49:10 1996
+***************
+*** 2,13 ****
+  *** xdvi.old/Imakefile	Thu Nov  9 02:46:11 1995
+  --- xdvi.ptex/Imakefile	Thu Nov  9 02:48:42 1995
+  ***************
+! *** 7,12 ****
+! --- 7,13 ----
+!   #define	Use_ZEIT
+!   #define	Use_NTTZEIT
+!   #define	Use_PS
+! + #define	Use_PTEX
+    
+    #include "XDvi.defs"
+    #include "XDvi.rules"
+--- 2,13 ----
+  *** xdvi.old/Imakefile	Thu Nov  9 02:46:11 1995
+  --- xdvi.ptex/Imakefile	Thu Nov  9 02:48:42 1995
+  ***************
+! *** 12,17 ****
+! --- 12,18 ----
+!   #define	Use_PRINTDVI
+!   #define	Use_PAGENUM
+!   #define	Use_PAPER
+! + #define	Use_PTEX
+    
+    #include "XDvi.defs"
+    #include "XDvi.rules"
+***************
+*** 39,62 ****
+    DEFAULT_FONTCONFDIR=$(TEXFONTS)/zeit
+    DEFAULT_FONTCONF=$(DEFAULT_FONTCONFDIR)/FontConf
+  ***************
+! *** 121,129 ****
+!   #endif	/* Use_PS */
+!   
+    SRCS=xdvi.c dvi_init.c dvi_draw.c fontfmts.c vf.c util.c font_open.c tpic.c \
+! !      SELFILE_SRCS PS_SRCS
+    OBJS=xdvi.o dvi_init.o dvi_draw.o fontfmts.o vf.o util.o font_open.o tpic.o \
+! !      SELFILE_OBJS PS_OBJS
+!   
+    DEFINES=$(DEFS) -DDEFAULT_FONT_PATH=\"$(DEFAULT_FONT_PATH)\" \
+      -DDEFAULT_VF_PATH=\"$(DEFAULT_VF_PATH)\" \
+! --- 134,142 ----
+!   #endif	/* Use_PS */
+!   
+    SRCS=xdvi.c dvi_init.c dvi_draw.c fontfmts.c vf.c util.c font_open.c tpic.c \
+! !      SELFILE_SRCS PS_SRCS PTEX_SRCS
+    OBJS=xdvi.o dvi_init.o dvi_draw.o fontfmts.o vf.o util.o font_open.o tpic.o \
+! !      SELFILE_OBJS PS_OBJS PTEX_OBJS
+!   
+    DEFINES=$(DEFS) -DDEFAULT_FONT_PATH=\"$(DEFAULT_FONT_PATH)\" \
+      -DDEFAULT_VF_PATH=\"$(DEFAULT_VF_PATH)\" \
+  diff -c -N xdvi.old/README.ptex xdvi.ptex/README.ptex
+--- 39,62 ----
+    DEFAULT_FONTCONFDIR=$(TEXFONTS)/zeit
+    DEFAULT_FONTCONF=$(DEFAULT_FONTCONFDIR)/FontConf
+  ***************
+! *** 232,240 ****
+!   #define PAPER_OBJS    paper.o
+! 
+    SRCS=xdvi.c dvi_init.c dvi_draw.c fontfmts.c vf.c util.c font_open.c tpic.c \
+! !      SELFILE_SRCS PS_SRCS MARKPAGE_SRCS TOC_SRCS PRINT_SRCS PAPER_SRCS
+    OBJS=xdvi.o dvi_init.o dvi_draw.o fontfmts.o vf.o util.o font_open.o tpic.o \
+! !      SELFILE_OBJS PS_OBJS MARKPAGE_OBJS TOC_OBJS PRINT_OBJS PAPER_OBJS
+! 
+    DEFINES=$(DEFS) -DDEFAULT_FONT_PATH=\"$(DEFAULT_FONT_PATH)\" \
+      -DDEFAULT_VF_PATH=\"$(DEFAULT_VF_PATH)\" \
+! --- 233,241 ----
+!   #define PAPER_OBJS    paper.o
+! 
+    SRCS=xdvi.c dvi_init.c dvi_draw.c fontfmts.c vf.c util.c font_open.c tpic.c \
+! !      SELFILE_SRCS PS_SRCS MARKPAGE_SRCS TOC_SRCS PRINT_SRCS PAPER_SRCS PTEX_SRCS
+    OBJS=xdvi.o dvi_init.o dvi_draw.o fontfmts.o vf.o util.o font_open.o tpic.o \
+! !      SELFILE_OBJS PS_OBJS MARKPAGE_OBJS TOC_OBJS PRINT_OBJS PAPER_OBJS PTEX_OBJS
+!  
+    DEFINES=$(DEFS) -DDEFAULT_FONT_PATH=\"$(DEFAULT_FONT_PATH)\" \
+      -DDEFAULT_VF_PATH=\"$(DEFAULT_VF_PATH)\" \
+  diff -c -N xdvi.old/README.ptex xdvi.ptex/README.ptex
