@@ -12,7 +12,7 @@
 +libso_target=	$(libso_base)$(SOMAJOR).la
  libso_default=	$(libso_base).@SOSUFFIX@
 -libso_major=	$(libso_base)-$(SOMAJOR).@SOSUFFIX@
-+libso_major=	$(libso_base)$(SOMAJOR).@SOSUFFIX@.1
++libso_major=	$(libso_base)$(SOMAJOR).@SOSUFFIX@.2
  
  ##################################################
  # C++
@@ -26,7 +26,7 @@
 +libxso_target=	$(libxso_base)$(SOMAJOR).la
  libxso_default=	$(libxso_base).@SOSUFFIX@
 -libxso_major=	$(libxso_base)-$(SOMAJOR).@SOSUFFIX@
-+libxso_major=	$(libxso_base)$(SOMAJOR).@SOSUFFIX@.1
++libxso_major=	$(libxso_base)$(SOMAJOR).@SOSUFFIX@.2
  
  ##################################################
  # JAVA
