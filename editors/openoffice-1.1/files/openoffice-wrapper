@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/editors/openoffice-1.1/files/Attic/openoffice-wrapper,v 1.6 2003-04-01 08:25:59 mbr Exp $
+# $FreeBSD: /tmp/pcvs/ports/editors/openoffice-1.1/files/Attic/openoffice-wrapper,v 1.7 2003-04-16 06:51:35 mbr Exp $
 
 oopath=%%PREFIX%%/OpenOffice.org-%%BUILD_NR%%/program/
 program=`echo $0 | sed -e 's|.*-||'`
@@ -20,6 +20,6 @@ $0)
 	cd $oopath && ./soffice "$@"
 	;;
 	*)
-	cd $oopath && exec $program "$@"
+	cd $oopath && exec ./$program "$@"
 	;;
 esac
