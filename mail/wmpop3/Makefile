@@ -7,7 +7,7 @@
 
 PORTNAME=	wmpop3
 PORTVERSION=	0.5.6a
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail windowmaker
 MASTER_SITES=	http://www.cs.mun.ca/~scotth/download/
 DISTFILES=	WMPop3-${PORTVERSION}.tar.gz
@@ -30,7 +30,7 @@ do-install:
 	@${ECHO} "===>   Installing README in ${PREFIX}/share/doc/wmpop3"
 	@${ECHO} "===>   Please read it for usage instructions"
 	@${MKDIR} ${PREFIX}/share/doc/wmpop3
-	@${INSTALL_DATA} ${WRKDIR}/${PKGNAME}/README ${PREFIX}/share/doc/wmpop3
+	@${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION}/README ${PREFIX}/share/doc/wmpop3
 .endif
 
 .include <bsd.port.mk>
