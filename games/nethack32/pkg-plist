@@ -121,5 +121,5 @@ bin/nethack
 %%DATADIR%%/logfile
 %%DATADIR%%/record
 %%DATADIR%%/perm
-@dirrm %%DATADIR%%
+@unexec rmdir %D/%%DATADIR%% 2>/dev/null || true
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
