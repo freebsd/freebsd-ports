@@ -1,0 +1,5 @@
+LZX compression engine, suitable for creating compressed CHM files.  Or
+for use in a CAB-making utility or for any other purpose LZX is useful
+for.
+
+WWW: http://www.speakeasy.org/~russotto/chm/
