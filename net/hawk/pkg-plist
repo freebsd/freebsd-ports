@@ -1,0 +1,20 @@
+etc/hawk/daemon.conf.sample
+etc/hawk/php.conf.sample
+etc/rc.d/hawk.sh.sample
+sbin/hawk
+www/data-dist/hawk/images/bluesphere.png
+www/data-dist/hawk/images/greensphere.png
+www/data-dist/hawk/images/hawk.jpg
+www/data-dist/hawk/images/purplesphere.png
+www/data-dist/hawk/images/questionsphere.png
+www/data-dist/hawk/images/redsphere.png
+www/data-dist/hawk/images/yellowsphere.png
+www/data-dist/hawk/hawk.php
+www/data-dist/hawk/hawk.css
+%%PORTDOCS%%share/doc/hawk/README
+%%PORTDOCS%%share/doc/hawk/create_hawk_db.sql
+%%PORTDOCS%%share/doc/hawk/create_hawk_user.sql
+%%PORTDOCS%%@dirrm share/doc/hawk
+@unexec rmdir %D/etc/hawk 2>/dev/null || true
+@dirrm www/data-dist/hawk/images
+@dirrm www/data-dist/hawk

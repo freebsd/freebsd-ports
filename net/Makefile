@@ -192,6 +192,7 @@
     SUBDIR += gutenfetch
     SUBDIR += h2n
     SUBDIR += hagelslag
+    SUBDIR += hawk
     SUBDIR += hesiod
     SUBDIR += hlmaster
     SUBDIR += honeyd

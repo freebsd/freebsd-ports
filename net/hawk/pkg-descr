@@ -1,0 +1,16 @@
+Hawk is a web based utility for monitoring and comparing hosts 
+on your network with what's in DNS.  Hosts that are answering 
+pings but are not in dns may be unauthorized, and hosts that are 
+in DNS, but are not answering may be able to be reclaimed.  Hawk 
+monitors all hosts on the networks you specify and lets you view
+them via a web page.
+
+Hawk consists of a backend written in perl that monitors hosts by
+icmp pings and writes the status to a mysql database.  The frontend
+is in php and lets you select which network to view, and how to view
+it.
+
+WWW: http://sourceforge.net/projects/iphawk/
+
+- Doug Barton
+DougB@FreeBSD.org
