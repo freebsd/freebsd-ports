@@ -19,6 +19,8 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/bin/startup.sh
 %%T%%/bin/tool-wrapper-using-launcher.sh
 %%T%%/bin/tool-wrapper.sh
+%%T%%/common/endorsed/xercesImpl.jar
+%%T%%/common/endorsed/xmlParserAPIs.jar
 %%T%%/common/lib/ant.jar
 %%T%%/common/lib/commons-collections.jar
 %%T%%/common/lib/commons-dbcp.jar
@@ -27,10 +29,8 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/common/lib/commons-pool.jar
 %%T%%/common/lib/jasper-compiler.jar
 %%T%%/common/lib/jasper-runtime.jar
-%%T%%/common/lib/jmx-tools.jar
 %%T%%/common/lib/jmx.jar
 %%T%%/common/lib/jsp-api.jar
-%%T%%/common/lib/mx4j.license
 %%T%%/common/lib/naming-common.jar
 %%T%%/common/lib/naming-factory.jar
 %%T%%/common/lib/naming-java.jar
@@ -584,11 +584,15 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ant/AbstractCatalinaTask.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ant/DeployTask.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ant/InstallTask.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ant/JMXQueryTask.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ant/JMXSetTask.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ant/ListTask.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ant/ReloadTask.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ant/RemoveTask.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ant/ResourcesTask.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ant/RolesTask.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ant/ServerinfoTask.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ant/SessionsTask.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ant/StartTask.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ant/StopTask.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/catalina/ant/UndeployTask.html
@@ -1151,6 +1155,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/net/jsse/JSSE13SocketFactory.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/net/jsse/JSSE14SocketFactory.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/net/jsse/JSSEImplementation.html
+%%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/net/jsse/JSSEKeyManager.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/net/jsse/JSSESocketFactory.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/net/jsse/package-frame.html
 %%T%%/webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/net/jsse/package-summary.html
@@ -1663,9 +1668,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 %%T%%/webapps/tomcat-docs/ssi-howto.html
 %%T%%/webapps/tomcat-docs/ssl-howto.html
 %%T%%/webapps/tomcat-docs/status.html
-@dirrm share/nls/en_US.US-ASCII
-@dirrm share/nls/POSIX
-@dirrm %%T%%/work 
+@dirrm %%T%%/work
 @dirrm %%T%%/webapps/tomcat-docs/servletapi/resources
 @dirrm %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/http/class-use
 @dirrm %%T%%/webapps/tomcat-docs/servletapi/javax/servlet/http
@@ -1900,7 +1903,7 @@ etc/rc.d/020.jakarta-tomcat50.sh
 @dirrm %%T%%/server/lib
 @dirrm %%T%%/server/classes
 @dirrm %%T%%/server
-@dirrm %%T%%/logs 
+@dirrm %%T%%/logs
 @dirrm %%T%%/conf/Catalina/localhost
 @dirrm %%T%%/conf/Catalina
 @dirrm %%T%%/conf

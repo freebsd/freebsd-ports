@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jakarta-tomcat
-PORTVERSION=	5.0.6
+PORTVERSION=	5.0.10
 CATEGORIES=	www java
 MASTER_SITES=	http://www.apache.org/dist/jakarta/tomcat-5/v${PORTVERSION}-alpha/bin/
 
