@@ -3,10 +3,10 @@
 # Date created:		Tue Jun 22 21:17:03 MET DST 1999
 # Whom:			Juergen Lock <nox@jelal.kn-bremen.de>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/28 01:40:05 flathill Exp $
 #
 
-DISTNAME=	gcombust-0.1.17
+DISTNAME=	gcombust-0.1.18
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.abo.fi/~jmunsin/gcombust/
 
