@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	arpwatch
-PORTVERSION=	2.1a4
+PORTVERSION=	2.1.a4
 CATEGORIES=	net
 MASTER_SITES=	http://www.Awfulhak.org/arpwatch/ \
 		ftp://ftp.ee.lbl.gov/ \
 		ftp://ftp.cso.uiuc.edu/pub/security/coast/unix/arpwatch/
+DISTNAME=	arpwatch-2.1a4
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	brian@Awfulhak.org
