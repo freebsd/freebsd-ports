@@ -1,0 +1,8 @@
+# $FreeBSD$
+#
+# isc-dhcrelay startup configuration file.
+#
+
+dhcrelay_options=			# command option(s)
+dhcrelay_ifaces=			# ethernet interface(s)
+dhcrelay_servers=			# dhcpd server(s)

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	dhcp
-PORTVERSION=	3.0.r11
+PORTVERSION=	3.0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.isc.org/isc/%SUBDIR%/ \
 		${US_MASTER_SITES} ${JAPAN_MASTER_SITES} \
@@ -19,33 +19,30 @@ MASTER_SITES=	ftp://ftp.isc.org/isc/%SUBDIR%/ \
 		${SWEDEN_MASTER_SITES} ${UK_MASTER_SITES} \
 		${NETHERLANDS_MASTER_SITES} ${BRAZIL_MASTER_SITES} \
 		${GREECE_MASTER_SITES} ${TURKEY_MASTER_SITES}
-MASTER_SITE_SUBDIR=	dhcp dpcp/dhcp-3.0-history
+MASTER_SITE_SUBDIR=	dhcp dhcp/dhcp-3.0-history
 PKGNAMEPREFIX=	isc-
 PKGNAMESUFFIX=	3
 DISTNAME=	${PORTNAME}-${RELEASE}${VERSION}${PATCHLEVEL}
 
 MAINTAINER=	clefevre@citeweb.net
 
-#
+.include <bsd.port.pre.mk>
+
 # Global variables
 #
 
 HAS_CONFIGURE=	yes
 
-PLIST_SUB=	DATA_DIR="${DATA_DIR}" RCD_SUBDIR="${RCD_SUBDIR}" \
-		CONF_SUBDIR="${CONF_SUBDIR}" SAMP_SUBDIR="${SAMP_SUBDIR}" \
-		BIN_SUBDIR="${BIN_SUBDIR}" SBIN_SUBDIR="${SBIN_SUBDIR}" \
-		INC_SUBDIR="${INC_SUBDIR}" LIB_SUBDIR="${LIB_SUBDIR}" \
-		DOC_SUBDIR="${DOC_SUBDIR}" SAMP_SUFFIX="${SAMP_SUFFIX}"
-
 MAN1=		omshell.1
 MAN3=		dhcpctl.3 omapi.3 omshell.3
-MAN5=		dhclient.conf.5 dhclient.leases.5 dhcp-contrib.5 \
+MAN5=		dhclient.conf.5 dhclient.leases.5 \
 		dhcp-eval.5 dhcp-options.5 dhcpd.conf.5 \
 		dhcpd.leases.5
 MAN8=		dhclient.8 dhclient-script.8 dhcpd.8 dhcrelay.8
 
-#
+MSG_FILE=	${PKGDIR}/pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
+
 # Local variables
 #
 
@@ -79,10 +76,11 @@ GREECE_MASTER_SITES=	ftp://ftp.ntua.gr/pub/net/isc/isc/%SUBDIR%/
 TURKEY_MASTER_SITES=	ftp://ftp.ulak.net.tr/pub/networking/isc/%SUBDIR%/ \
 			ftp://ftp.metu.edu.tr/pub/mirrors/ftp.isc.org/%SUBDIR%/
 
-# for instance, possible version formats are, in order:
+# for instance, possible versions are:
 #	1.2.r3.4 (or 1.2.b3.4), 1.2.r3 (or 1.2.b3), 1.2.3, 1.2
 # which have to become:
 #	1.2rc3pl4 (or 1.2beta3pl4), 1.2rc3 (or 1.2beta3), 1.2pl3, 1.2
+# so, the magic things are:
 VERSION=
 PATCHLEVEL=
 .if ${PORTVERSION:R:E:M[br]*} != ""
@@ -101,45 +99,40 @@ RELEASE=	${PORTVERSION}
 
 PATCH_SUBDIRS=	common minires dst omapip server client relay dhcpctl
 
-SAMP_SUFFIX=	.sample
-
-BIN_FILES=	dhclient dhcpd dhcrelay
+BIN_FILES=	dhclient dhcpd dhcrelay omshell
 CONF_FILES=	dhclient.conf
-SAMP_FILES=	client/dhclient.conf server/dhcpd.conf
-RCD_FILES=	isc-dhcpd.sh${SAMP_SUFFIX}
+RC_FILES=	isc-dhcpd isc-dhcrelay
 DOC_FILES=	CHANGES COPYRIGHT README RELNOTES
+SAMP_FILES=	client/dhclient.conf server/dhcpd.conf
 DATA_FILES=	dhclient.leases dhcpd.leases
 
-BIN_SUBDIR=	bin
-SBIN_SUBDIR=	sbin
-CONF_SUBDIR=	etc
-SAMP_SUBDIR=	${CONF_SUBDIR}
-RCD_SUBDIR=	etc/rc.d
-INC_SUBDIR=	include
-LIB_SUBDIR=	lib
-DOC_SUBDIR=	share/doc/${PKGBASE}
-DATA_DIR=	/var/db
+SAMP_SUFX=	.sample
+
+CONF_DIR=	${PREFIX}/etc
+RC_DIR=		${PREFIX}/etc/rc.d
+DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
+DATADIR=	/var/db
 
 STRIP_CMD?=	strip
 
-#
 # Post-patch
 #
 
-post-patch: patch-scripts patch-makefile-conf patch-makefiles-dist \
-	    patch-man-pages
+post-patch: patch-scripts patch-makefile-conf \
+	    patch-makefiles-dist patch-man-pages \
+	    patch-message
 
 patch-scripts:
-	@${PERL} -pi.fbsd -e 's.!!PREFIX!!.${PREFIX}.g' \
+	@${PERL} -pi.fbsd -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/client/scripts/freebsd
 
 patch-makefile-conf:
-	@${PERL} -pi.fbsd -e 's|^DEBUG[ 	]*=|# DEBUG ?=|g' \
+	@${PERL} -pi.fbsd -e 's|^DEBUG[ \t]*=|# DEBUG ?=|g' \
 		${WRKSRC}/Makefile.conf
 
 patch-makefiles-dist:
 .for subdir in ${PATCH_SUBDIRS}
-	@${PERL} -pi.fbsd -e 's|^CFLAGS[ 	]*=|CFLAGS +=|g' \
+	@${PERL} -pi.fbsd -e 's|^CFLAGS[ \t]*=|CFLAGS +=|g' \
 		${WRKSRC}/${subdir}/Makefile.dist
 .endfor
 
@@ -147,52 +140,70 @@ patch-makefiles-dist:
 patch-man-pages:
 	@${PERL} -ni.fbsd -e '/^\.Fd$$/ or print;' ${WRKSRC}/dhcpctl/dhcpctl.3
 
-#
+patch-message:
+	@${SED} 's|%%PREFIX%%|${PREFIX}|g;s|%%MAN1PREFIX%%|${MAN1PREFIX}|g' \
+		${MSG_FILE} > ${PKGMESSAGE}
+
 # Post-install
 #
 
 post-install: strip-binary-files install-startup-files \
 	      install-doc-files install-sample-files \
-	      create-data-files create-conf-files
+	      create-conf-files create-data-files \
+	      display-message
 
 strip-binary-files:
 .for file in ${BIN_FILES}
-.if exists(${PREFIX}/${BIN_SUBDIR}/${file})
-	@${STRIP_CMD} ${PREFIX}/${BIN_SUBDIR}/${file}
+.if exists(${PREFIX}/bin/${file})
+	@${STRIP_CMD} ${PREFIX}/bin/${file}
+.endif
+.if exists(${PREFIX}/sbin/${file})
+	@${STRIP_CMD} ${PREFIX}/sbin/${file}
 .endif
 .endfor
 
 install-startup-files:
-.for file in ${RCD_FILES}
-	@${INSTALL_SCRIPT} ${FILESDIR}/${file} ${PREFIX}/${RCD_SUBDIR}
+.for file in ${RC_FILES}
+.if exists(${FILESDIR}/rc.${file}.conf${SAMP_SUFX})
+	@${INSTALL_DATA} ${FILESDIR}/rc.${file}.conf${SAMP_SUFX} ${CONF_DIR}
+.if !exists(${CONF_DIR}/rc.${file}.conf)
+	@${INSTALL_DATA} ${FILESDIR}/rc.${file}.conf${SAMP_SUFX} \
+		${CONF_DIR}/rc.${file}.conf
+.endif
+.endif
+.if exists(${FILESDIR}/${file}.sh${SAMP_SUFX})
+	@${INSTALL_SCRIPT} ${FILESDIR}/${file}.sh${SAMP_SUFX} ${RC_DIR}
+.endif
 .endfor
 
 install-doc-files:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/${DOC_SUBDIR}
+	@${MKDIR} ${DOCSDIR}
 .for file in ${DOC_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/${DOC_SUBDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
 install-sample-files:
 .for file in ${SAMP_FILES}
-	@${INSTALL_DATA} ${WRKSRC}/${file} \
-		${PREFIX}/${SAMP_SUBDIR}/${file:T}${SAMP_SUFFIX}
-.endfor
-
-create-data-files:
-.for file in ${DATA_FILES}
-.if !exists(${DATA_DIR}/${file})
-	@${TOUCH} ${DATA_DIR}/${file}
-.endif
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${CONF_DIR}/${file:T}${SAMP_SUFX}
 .endfor
 
 create-conf-files:
 .for file in ${CONF_FILES}
-.if !exists(${PREFIX}/${CONF_SUBDIR}/${file})
-	@${TOUCH} ${PREFIX}/${CONF_SUBDIR}/${file}
+.if !exists(${CONF_DIR}/${file})
+	@${TOUCH} ${CONF_DIR}/${file}
 .endif
 .endfor
 
-.include <bsd.port.mk>
+create-data-files:
+.for file in ${DATA_FILES}
+.if !exists(${DATADIR}/${file})
+	@${TOUCH} ${DATADIR}/${file}
+.endif
+.endfor
+
+display-message:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.post.mk>
