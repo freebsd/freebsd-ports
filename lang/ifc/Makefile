@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ifc
-PORTVERSION=	7.1.024
+PORTVERSION=	7.1.033
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_fc_pc_${PORTVERSION}
@@ -62,10 +62,10 @@ post-extract:
 		${FILESDIR}/cpio-exclude_noportdocs >>${WRKDIR}/cpio-exclude
 .endif
 .for i in \
-	intel-ifc7-7.1-25.i386.rpm
-#	intel-iidb7-7.1-46.i386.rpm \
-#	intel-efc7-7.1-25.ia64.rpm \
-#	intel-eidb7-7.1-46.ia64.rpm
+	intel-ifc7-7.1-34.i386.rpm
+#	intel-iidb7-7.2.2-64.i386.rpm \
+#	intel-efc7-7.1-34.ia64.rpm \
+#	intel-eidb7-7.2.2-64.ia64.rpm
 	@cd ${WRKSRC} ; rpm2cpio 2>/dev/null ${i} | \
 		${CPIO} -idfuE ${WRKDIR}/cpio-exclude --quiet
 .endfor
