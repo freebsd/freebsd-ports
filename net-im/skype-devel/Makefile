@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	skype
-PORTVERSION=	0.90.0.14
+PORTVERSION=	0.91.0.3
 CATEGORIES=	net
 MASTER_SITES=	http://download.skype.com/linux/
 DISTNAME=	skype_ver-${PORTVERSION:C/\./_/g}-staticQT
@@ -38,6 +38,8 @@ PLIST_SUB+=	GNOME=""
 PLIST_SUB+=	GNOME="@comment "
 .endif
 
+WRKSRC=	${WRKDIR}/skype_ver_${PORTVERSION:C/\./_/g}-staticQT
+
 do-build:
 	${BRANDELF} -t Linux ${WRKSRC}/skype
 
@@ -51,5 +53,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/icons/* ${DATADIR}/icons/
 	${INSTALL_DATA} ${WRKSRC}/call_in.wav ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${DATADIR}/
+
+post-install:
+	@${ECHO} "Since skype uses a hadcoded path to the language files (/usr/share/skype) which a port isn't allowed to install files into, call_in.wav and the language files are not installed. As soon as skype learns how to use other paths, this will change." | fmt
 
 .include <bsd.port.post.mk>
