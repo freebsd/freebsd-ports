@@ -33,6 +33,6 @@ include/gtkextra/gtksheet.h
 include/gtkextra/gtktogglecombo.h
 lib/libgtkextra.a
 lib/libgtkextra.so
-lib/libgtkextra.so.15
+lib/libgtkextra.so.16
 share/aclocal/gtkextra.m4
 @dirrm include/gtkextra
