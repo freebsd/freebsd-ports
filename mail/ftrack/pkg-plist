@@ -1,0 +1,13 @@
+etc/ftrack/ftrack.cfg-dist
+etc/ftrack/audit.tpl
+etc/ftrack/badfrom.tpl
+etc/ftrack/badto.tpl
+etc/ftrack/loop.tpl
+etc/ftrack/alt2koi.tbl
+etc/ftrack/koi2alt.tbl
+sbin/ftrack
+share/doc/ftrack/ftrack.faq
+share/doc/ftrack/readme
+share/doc/ftrack/report.err
+@dirrm etc/ftrack
+@dirrm share/doc/ftrack

@@ -33,6 +33,7 @@
     SUBDIR += ezmlm-web
     SUBDIR += faces
     SUBDIR += fetchmail
+    SUBDIR += ftrack
     SUBDIR += gbuffy
     SUBDIR += gensig
     SUBDIR += gkrellmmailwatch
