@@ -23,6 +23,7 @@
     SUBDIR += bgrot
     SUBDIR += blast
     SUBDIR += bricons
+    SUBDIR += brightside
     SUBDIR += buttonbox
     SUBDIR += chameleon
     SUBDIR += cnslock
