@@ -27,6 +27,7 @@
     SUBDIR += pmw
     SUBDIR += py-gnome
     SUBDIR += py-gtk
+    SUBDIR += py-wxPython
     SUBDIR += qt-i18n
     SUBDIR += qt142
     SUBDIR += qt201
