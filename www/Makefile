@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.30 1996/12/18 05:27:26 asami Exp $
+# $Id: Makefile,v 1.31 1997/01/03 12:25:31 asami Exp $
 #
 
     SUBDIR += Mosaic         # requires Motif
@@ -9,6 +9,7 @@
     SUBDIR += cached
     SUBDIR += chimera
     SUBDIR += comline
+    SUBDIR += eperl
     SUBDIR += gn
     SUBDIR += harvest
     SUBDIR += javac_netscape
