@@ -134,8 +134,8 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Debian Security Team reports:</p>
 	<blockquote>
-	  <p>Javier Fernandez-Sanguino Pena from the Debian Security
-	    Audit Project discoverd a temporary file vulnerability in
+	  <p>Javier Fernández-Sanguino Peña from the Debian Security
+	    Audit Project discovered a temporary file vulnerability in
 	    the mysqlaccess script of MySQL that could allow an
 	    unprivileged user to let root overwrite arbitrary files
 	    via a symlink attack and could also could unveil the
@@ -151,6 +151,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-01-12</discovery>
       <entry>2005-01-16</entry>
+      <modified>2005-01-17</modified>
     </dates>
   </vuln>
 
