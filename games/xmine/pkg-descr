@@ -12,39 +12,9 @@ This version of xmine is based on Paul Falstad's version 1.0.3, as
 published in comp.sources.x. It has been heavily munged to work
 without OSF/Motif.
 
-Almost everything needed was already in the Athena Widget Set, with
-the exception of a Canvas Widget (or DrawingAreaWidget in Motif
-terms).  Hence i have included a copy of the Canvas Widget of the Free
-Widget Foundation, only slightly modified to take the #include's from
-the current directory. If anybody is unlucky with the GPL conditions
-applying to the FWF code, she is free to drop in own versions of a
-Canvas Widget (really not much of code).
-
-I originally intented to #ifdef Paul's version for use with the Athena
-Widget Set, but realized that this would have resulted in too much of
-spagghetti code. That's why i hacked a separate source out of it. I
-cleaned it up a bit, so it will compile now without complaints with
-the -Wall flag set under gcc.
-
 Since the game itself has some 3D look, linking against the famous
 Xaw3d library is highly recommended.
 
-
-ACKNOWLEDGEMENTS:
-=================
-
-For X11:
-	The X Consortium, MIT, DEC, ...
-
-For the original OSF/Motif version of xmine:
-	Paul Falstad (pf@z-code.com)
-
-For the three-D lookalike Athena Widget set:
-	Kaleb S. Keithley (kaleb@jpl-devvax.jpl.nasa.gov)
-
-For the Canvas Widget of the Free Widget Foundation:
-	Robert H. Forsman Jr.
-
 ---
 enjoy,
-	Joerg Wunsch <joerg_wunsch@uriah.sax.de>
+	Joerg Wunsch <joerg@FreeBSD.org>
