@@ -1,0 +1,3 @@
+@cwd /usr/local
+bin/afio
+man/man1/afio.1.gz
