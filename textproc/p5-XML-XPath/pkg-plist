@@ -1,0 +1,27 @@
+bin/xpath
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/XPath/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Node/Namespace.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Node/Comment.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Node/Attribute.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Node/PI.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Node/Text.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Node/Element.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Root.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Variable.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Node.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/LocationPath.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Function.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Builder.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Number.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Literal.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Parser.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/NodeSet.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Step.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/XMLParser.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Expr.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/PerlSAX.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Boolean.pm
+lib/perl5/site_perl/%%PERL_VER%%/XML/XPath.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/XML/XPath/Node
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/XML/XPath
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML/XPath
