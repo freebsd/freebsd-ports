@@ -1,0 +1,51 @@
+listar/COPYRIGHT
+listar/LICENSE
+listar/NOTE
+listar/PLATFORMS
+listar/README
+listar/README.126
+listar/README.ANTISPAM
+listar/README.CVS
+listar/README.DIGEST
+listar/README.LISTS
+listar/banned
+listar/listar
+listar/listar.aliases.dist
+listar/listar.cfg.dist
+listar/listar.dsw
+listar/listar.hlp
+listar/listar.spec
+listar/lists/test/text/blacklist.txt
+listar/lists/test/text/closed-post.txt
+listar/lists/test/text/footer.txt
+listar/lists/test/text/intro.txt
+listar/lists/test/config
+listar/lists/test/cookies
+listar/lists/test/users
+listar/modules/README
+listar/modules/bouncer.lpm
+listar/modules/listarchive.lpm
+listar/modules/filearchive.lpm
+listar/modules/admin.lpm
+listar/modules/acctmgr.lpm
+listar/modules/stat.lpm
+listar/modules/send.lpm
+listar/modules/base.lpm
+listar/modules/digest.lpm
+listar/modules/antispam.lpm
+listar/modules/administrivia.lpm
+listar/modules/toolbox.lpm
+listar/modules/pantomime.lpm
+listar/modules/listargate.lpm
+listar/modules/password.lpm
+listar/queue/README
+listar/scripts/listargate.cgi.dist
+listar/scripts/fixlist.pl.dist
+listar/spam-regexp.sample
+@dirrm listar/lists/test/text
+@dirrm listar/lists/test
+@dirrm listar/lists
+@dirrm listar/modules
+@dirrm listar/queue
+@dirrm listar/scripts
+@dirrm listar
