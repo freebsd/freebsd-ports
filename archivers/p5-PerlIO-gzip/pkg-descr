@@ -1,0 +1,6 @@
+PerlIO::gzip provides a PerlIO layer that manipulates files in the
+format used by the gzip program.  Compression and decompression are
+implemented, but not together.  If you attempt to open a file for
+reading and writing the open will fail.
+
+WWW: http://search.cpan.org/dist/PerlIO-gzip/
