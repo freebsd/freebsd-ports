@@ -1,5 +1,5 @@
---- procmap.c.orig	Mon Jun 10 17:34:42 2002
-+++ procmap.c	Sat Oct 26 01:20:26 2002
+--- sysdeps/freebsd/procmap.c.orig	Mon Jun 10 17:34:42 2002
++++ sysdeps/freebsd/procmap.c	Sat Oct 26 01:20:26 2002
 @@ -33,7 +33,11 @@
  #include <sys/proc.h>
  #include <sys/resource.h>
