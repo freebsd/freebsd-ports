@@ -7,7 +7,7 @@
 
 PORTNAME=	xmlparser
 PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc ruby
 MASTER_SITES=	http://www.yoshidam.net/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -29,16 +29,10 @@ USE_RUBY_RD=	yes
 PERL_ARCHLIB=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-CONFIGURE_ARGS=	--with-perl-enc-map \
-		--with-xmlparse-include="${LOCALBASE}/include/xml" \
-		--with-xmltok-include="${LOCALBASE}/include/xml"
+CONFIGURE_ARGS=	--with-perl-enc-map
 INSTALL_TARGET=	site-install
 
 EXAMPLES_EN=	dtd/ext1.dtd	dtd/ext2.dtd	dtd/extdtd.rb	dtd/extdtd.xml \
-		expat-1.2/ext.ent		expat-1.2/exttest.rb \
-		expat-1.2/exttesti.rb		expat-1.2/hoge.dtd \
-		expat-1.2/idtest.rb		expat-1.2/idtest.xml \
-		expat-1.2/xmlextparser.rb \
 		namespaces/namespace1.rb	namespaces/namespace1.xml \
 		namespaces/namespace2.rb	namespaces/namespace2.xml \
 		digesttest.rb	doctype.rb	doctype.xml	doctypei.rb \
@@ -58,7 +52,6 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}/xmlparser/dtd
-	${MKDIR} ${RUBY_EXAMPLESDIR}/xmlparser/expat-1.2
 	${MKDIR} ${RUBY_EXAMPLESDIR}/xmlparser/namespaces
 	${MKDIR} ${RUBY_EXAMPLESDIR}/xmlparser/ja
 .for f in ${EXAMPLES_EN}
