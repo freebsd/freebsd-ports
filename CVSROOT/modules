@@ -5756,6 +5756,7 @@ re2c		ports/devel/re2c
 readlink	ports/sysutils/readlink
 rebler		ports/audio/rebler
 reboot		src/sbin/reboot
+recmpeg		ports/graphics/recmpeg
 recode		ports/converters/recode
 recombine	ports/biology/recombine
 redir		ports/net/redir
