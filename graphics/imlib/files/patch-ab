@@ -1,13 +1,28 @@
---- Imlib_private.h.orig	Tue Feb 17 17:27:25 1998
-+++ Imlib_private.h	Tue Feb 17 17:28:06 1998
-@@ -42,10 +42,10 @@
+--- Imlib/Imlib_private.h.orig	Thu Apr 30 04:23:24 1998
++++ Imlib/Imlib_private.h	Thu Apr 30 04:23:46 1998
+@@ -38,10 +38,10 @@
  #include <png.h>
  #endif
- #ifdef BUILTIN_TIFF
+ #ifdef HAVE_LIBTIFF
 -#include <tiffio.h>
 +#include <tiff34/tiffio.h>
  #endif
- #ifdef BUILTIN_GIF
+ #ifdef HAVE_LIBGIF
+-#include <gif_lib.h>
++#include <giflib/gif_lib.h>
+ #endif
+ 
+ #define BYTE_ORD_24_RGB 0
+--- gdk_imlib/gdk_imlib_private.h.orig	Thu Apr 30 04:34:52 1998
++++ gdk_imlib/gdk_imlib_private.h	Thu Apr 30 04:35:11 1998
+@@ -46,10 +46,10 @@
+ #include <png.h>
+ #endif
+ #ifdef HAVE_LIBTIFF
+-#include <tiffio.h>
++#include <tiff34/tiffio.h>
+ #endif
+ #ifdef HAVE_LIBGIF
 -#include <gif_lib.h>
 +#include <giflib/gif_lib.h>
  #endif
