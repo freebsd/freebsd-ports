@@ -1,4 +1,5 @@
 bin/xephem
+lib/X11/app-defaults/XEphem
 lib/X11/xephem/auxil/README
 lib/X11/xephem/auxil/mars_db
 lib/X11/xephem/auxil/marsmap.fts

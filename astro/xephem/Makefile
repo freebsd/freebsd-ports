@@ -45,10 +45,12 @@ pre-configure:
 
 pre-build:
 	@(cd ${LIBSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${ALL_TARGET})
+	${SED} -e "s^@PREFIX@^${PREFIX}^" ${WRKSRC}/XEphem.ad > ${WRKSRC}/XEphem.ad.new
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xephem ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/xephem.man ${PREFIX}/man/man1/xephem.1
+	${INSTALL_DATA} ${WRKSRC}/XEphem.ad.new ${PREFIX}/lib/X11/app-defaults/XEphem
 	${MKDIR} ${PREFIX}/lib/X11/xephem
 
 	${MKDIR} ${PREFIX}/lib/X11/xephem/auxil
