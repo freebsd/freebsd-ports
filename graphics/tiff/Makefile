@@ -5,7 +5,7 @@
 #			Mikhail Teterin <mi@aldan.ziplink.net>
 #			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.12 1998/11/25 06:13:41 asami Exp $
+# $Id: Makefile,v 1.13 1998/11/25 09:01:07 asami Exp $
 #
 
 DISTNAME=	tiff-v3.4
@@ -71,6 +71,8 @@ post-install:
 .endif
 .if ${PORTOBJFORMAT} == "aout"
 	${LN} -sf libtiff.so.4.0 ${PREFIX}/lib/libtiff.so
+.else
+	${LN} -sf libtiff.so.4 ${PREFIX}/lib/libtiff.so
 .endif
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
