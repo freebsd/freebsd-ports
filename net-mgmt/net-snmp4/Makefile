@@ -3,7 +3,7 @@
 # Date created:				26 June 1996
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.26 1999/04/12 08:22:43 asami Exp $
+# $Id: Makefile,v 1.27 1999/04/18 19:14:44 nectar Exp $
 #
 
 DISTNAME=	ucd-snmp-3.6.1
@@ -23,7 +23,7 @@ CONFIGURE_ARGS+= --with-defaults --with-sys-contact=nobody@no.where
 .else
 IS_INTERACTIVE= yes
 .endif
-CFLAGS=		-g
+#CFLAGS=		-g
 
 MAN1=		snmpbulkwalk.1 snmpd.1 snmpdelta.1 snmpget.1 snmpgetnext.1 \
 		snmpnetstat.1 snmpset.1 snmpstatus.1 snmptable.1 snmptest.1 \
@@ -44,7 +44,7 @@ STARTUP_FILE=	${PREFIX}/etc/rc.d/snmpd.sh.sample
 BROKEN=		"aout build breaks: ld: internal error: RRS relocs exceed allocation 343"
 .endif
 
-MAKE_ENV+= SHLIB_VERSION=3
+SHLIB_VERSION=3
 
 post-patch:
 	${CP} ${FILESDIR}/freebsd4.h ${WRKSRC}/s
