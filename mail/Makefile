@@ -14,7 +14,7 @@
     SUBDIR += cucipop
     SUBDIR += cyrus
     SUBDIR += distribute
-    SUBDIR += elm
+    SUBDIR += elm+ME
     SUBDIR += elm25
     SUBDIR += emil
     SUBDIR += exim

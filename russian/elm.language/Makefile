@@ -12,7 +12,7 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	ache@FreeBSD.org
 
-RUN_DEPENDS+=	elm:${PORTSDIR}/mail/elm
+RUN_DEPENDS+=	elm:${PORTSDIR}/mail/elm+ME
 
 NO_WRKSUBDIR=	YES
 NO_BUILD=	YES
