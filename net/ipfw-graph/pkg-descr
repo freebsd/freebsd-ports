@@ -1,0 +1,10 @@
+Displays a graphical overview of bytes going through your IPFW
+rules and a piled overview of the percentage on which rule it
+passed.
+
+FreeBSD only, GTK required.
+
+WWW: http://www.mavetju.org/
+
+- Edwin Groothuis
+edwin@mavetju.org

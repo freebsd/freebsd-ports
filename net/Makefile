@@ -163,6 +163,7 @@
     SUBDIR += ipcheck
     SUBDIR += iperf
     SUBDIR += ipfm
+    SUBDIR += ipfw-graph
     SUBDIR += iplog
     SUBDIR += ipw
     SUBDIR += isc-dhcp2
