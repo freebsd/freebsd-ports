@@ -33,7 +33,7 @@
   #        If you add it, '-lkvm' must also be added to the SPECLIBS line
   # You will need to delete parse.c before compiling!  You can either
   # do so by hand, or do a 'make clean' followed by the normal 'make'.
-! DEFS += -O -m486
+! DEFS += -O
 ! DEFS += -DBSD_OS2 -DHAVE_SETSID -DHAVE_YYRESTART -DPS_HACK
   #DEFS += -DPROC_SEARCH_1
   #SPECLIBS = -lkvm
