@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xpilot
-PORTVERSION=	4.5.3
+PORTVERSION=	4.5.4
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.xpilot.org/pub/xpilot/ \
 		ftp://ftp.xpilot.org/pub/xpilot/old/ \
@@ -18,6 +18,6 @@ MAINTAINER=	goranrunfeldt@home.se
 COMMENT=	Xpilot(client) and xpilots(server)
 
 USE_IMAKE=	yes
-MAN6=		xpilot.6 xpilots.6 xp-replay.6
+MAN6=		xpilot.6 xpilots.6 xp-mapedit.6 xp-replay.6
 
 .include <bsd.port.mk>
