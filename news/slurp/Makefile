@@ -7,6 +7,7 @@
 
 PORTNAME=	slurp
 PORTVERSION=	1.10
+PORTREVISION=	1
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.demon.co.uk/pub/news/slurp/
 EXTRACT_SUFX=	.tar.Z
