@@ -12,7 +12,7 @@ CATEGORIES=	cad
 MASTER_SITES=	ftp://ftp.zib.de/pub/kaskade/3.x/
 EXTRACT_SUFX=	.tar.Z
 
-MAINTAINER=	giffunip@asme.org
+MAINTAINER=	ports@FreeBSD.org
 
 USE_X_PREFIX=	yes
 
