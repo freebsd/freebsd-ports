@@ -82,7 +82,6 @@
     SUBDIR += pnm2ppa
     SUBDIR += panda
     SUBDIR += pclprint
-    SUBDIR += pdflib
     SUBDIR += pdflib3
     SUBDIR += pdq
     SUBDIR += perlftlib
