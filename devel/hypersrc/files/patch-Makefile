@@ -5,7 +5,7 @@
  
  ifndef DEBUG
 -C_OPTIMIZE = -O2 -finline-functions
-+C_OPTIMIZE = ${CFLAGS} -finline-functions
++C_OPTIMIZE = ${CFLAGS}
  else
  C_OPTIMIZE = -O
  endif
