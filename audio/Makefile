@@ -182,6 +182,7 @@
     SUBDIR += mp3_check
     SUBDIR += mp3asm
     SUBDIR += mp3blaster
+    SUBDIR += mp3burn
     SUBDIR += mp3butler
     SUBDIR += mp3c
     SUBDIR += mp3check
