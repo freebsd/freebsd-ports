@@ -1,4 +1,3 @@
-lib/perl5/site_perl/%%PERL_VER%%/HTTP/Daemon.pm
 lib/perl5/site_perl/%%PERL_VER%%/Proc/Daemon.pm
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc/Daemon/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Proc/Daemon
