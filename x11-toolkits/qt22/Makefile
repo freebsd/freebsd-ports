@@ -3,7 +3,7 @@
 # Date created:		30 Jul 1996
 # Whom:			searle@longacre.demon.co.uk
 #
-# $Id: Makefile,v 1.22 1998/08/11 13:19:14 andreas Exp $
+# $Id: Makefile,v 1.23 1998/09/27 16:06:59 steve Exp $
 #
 
 DISTNAME=	qt-${MAJ}.${MIN}
@@ -117,10 +117,10 @@ post-configure:
 
 do-install:
 	${INSTALL_PROGRAM} $(WRKDIR)/qt-${MAJ}.${MIN}/bin/moc $(PREFIX)/bin
-	${INSTALL_DATA} $(WRKDIR)/qt-${MAJ}.${MIN}/lib/libqt.so.${MAJ}.${MIN} \
+	${INSTALL_DATA} $(WRKDIR)/qt-${MAJ}.${MIN}/lib/libqt.so.${VERSION} \
 		$(PREFIX)/lib
-	${LN} -sf $(PREFIX)/lib/libqt.so.${MAJ}.${MIN} $(PREFIX)/lib/libqt.so
-	${LDCONFIG} -m $(PREFIX)/lib
+	${LN} -sf $(PREFIX)/lib/libqt.so.$(VERSION) $(PREFIX)/lib/libqt.so
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m $(PREFIX)/lib
 	${MKDIR} $(PREFIX)/include/X11/qt
 	${INSTALL_DATA} $(WRKDIR)/qt-${MAJ}.${MIN}/include/* \
 		$(PREFIX)/include/X11/qt
@@ -133,3 +133,9 @@ do-install:
 		${PREFIX}/share/doc/qt
 
 .include <bsd.port.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+VERSION=	${MAJ}
+.else
+VERSION=	${MAJ}.${MIN}
+.endif
