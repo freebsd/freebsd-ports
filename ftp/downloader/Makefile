@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	downloader
-PORTVERSION=	1.17
+PORTVERSION=	1.18
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.krasu.ru/soft/chuchelo/files/ \
 		ftp://ftp.server51.freshmeat.net/pub/d4x/ \
@@ -19,16 +19,16 @@ LIB_DEPENDS=	gtk12.2:${PORTSDIR}/x11-toolkits/gtk12
 
 GTK_CONFIG?=	${X11BASE}/bin/gtk12-config
 MSGFMT_CMD=	${LOCALBASE}/bin/msgfmt
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/main
-
+CONFIGURE_ENV=	LIBS="-lintl"
 MAKE_ENV=	GTK_CONFIG="${GTK_CONFIG}" \
 		MSGFMT_CMD="${MSGFMT_CMD}"
 
 MAN1=		nt.1
 
-D4X_DOC=	ChangeLog FAQ FAQ.de FAQ.es FAQ.fr FAQ.gr LICENSE \
-		NAMES PLANS README README.de README.es README.gr README.ru THANKS TODO TROUBLES
+D4X_DOC=	ChangeLog FAQ FAQ.de FAQ.es FAQ.fr FAQ.gr LICENSE     \
+		NAMES PLANS README README.de README.es README.gr      \
+		README.pl README.pt_BR README.ru THANKS TODO TROUBLES
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/../nt.1 ${PREFIX}/man/man1

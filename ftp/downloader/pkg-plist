@@ -4,7 +4,7 @@ share/doc/downloader/FAQ
 share/doc/downloader/FAQ.de
 share/doc/downloader/FAQ.es
 share/doc/downloader/FAQ.fr
-share/doc/downloader/FAQ.gr 
+share/doc/downloader/FAQ.gr
 share/doc/downloader/LICENSE
 share/doc/downloader/NAMES
 share/doc/downloader/PLANS
@@ -12,6 +12,8 @@ share/doc/downloader/README
 share/doc/downloader/README.de
 share/doc/downloader/README.es
 share/doc/downloader/README.gr
+share/doc/downloader/README.pl
+share/doc/downloader/README.pt_BR
 share/doc/downloader/README.ru
 share/doc/downloader/THANKS
 share/doc/downloader/TODO
