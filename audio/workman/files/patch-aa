@@ -1,0 +1,311 @@
+diff -c --recursive ./Makefile ../workman.new/./Makefile
+*** ./Makefile	Tue Jun 13 22:37:18 1995
+--- ../workman.new/./Makefile	Sun Nov 26 03:26:56 1995
+***************
+*** 4,12 ****
+  # If you want to use gcc, tell make about it here.
+  #
+  
+! CC = gcc
+  #CC = cc
+  
+  #
+  # Uncomment the following if you're compiling on Solaris 2.x.
+  #
+--- 4,14 ----
+  # If you want to use gcc, tell make about it here.
+  #
+  
+! CC = gcc -O2 -m486
+  #CC = cc
+  
++ RM=rm -f
++ 
+  #
+  # Uncomment the following if you're compiling on Solaris 2.x.
+  #
+***************
+*** 18,26 ****
+  # SOL2 line.
+  #
+  
+! SOL2 = -DSYSV -DCODEC
+! LIBLOC = -R$(LIBDIR)
+! EXTRA_LIBS = -lsocket
+  
+  #
+  # Uncomment the following if you want fast database lookups using the
+--- 20,28 ----
+  # SOL2 line.
+  #
+  
+! #SOL2 = -DSYSV -DCODEC
+! #LIBLOC = -R$(LIBDIR)
+! #EXTRA_LIBS = -lsocket
+  
+  #
+  # Uncomment the following if you want fast database lookups using the
+***************
+*** 29,58 ****
+  # to match your system type as listed in libdb's PORT directory.
+  #
+  
+! DBCFLAGS = -DLIBDB -Idb.1.85/PORT/include -Idb.1.85/PORT/sunos.5.2
+! DBLIB = db.1.85/PORT/sunos.5.2/libdb.a
+  
+  #
+  # Set these to the locations of your XView include files and libraries.
+  #
+  
+! INCDIR = $(OPENWINHOME)/include
+! LIBDIR = $(OPENWINHOME)/lib
+  
+  #
+  # Set these to the directory names in which to install the software and
+  # help files.
+  #
+  
+! BINDIR = $(OPENWINHOME)/bin
+! HLPDIR = $(OPENWINHOME)/lib/help
+  
+  #
+  # Set this to the directory containing manual pages.  Manual pages will only
+  # be installed if you "make install.man".
+  #
+  
+! MANDIR = $(OPENWINHOME)/man
+  
+  #
+  # Set these to the manual sections (e.g. 1, 4, 5, l) for the program and
+--- 31,60 ----
+  # to match your system type as listed in libdb's PORT directory.
+  #
+  
+! #DBCFLAGS = -DLIBDB -Idb.1.85/PORT/include -Idb.1.85/PORT/sunos.5.2
+! #DBLIB = db.1.85/PORT/sunos.5.2/libdb.a
+  
+  #
+  # Set these to the locations of your XView include files and libraries.
+  #
+  
+! INCDIR = /usr/include
+! LIBDIR = /usr/X11R6/lib
+  
+  #
+  # Set these to the directory names in which to install the software and
+  # help files.
+  #
+  
+! BINDIR = ${PREFIX}/bin
+! HLPDIR = ${PREFIX}/lib/help
+  
+  #
+  # Set this to the directory containing manual pages.  Manual pages will only
+  # be installed if you "make install.man".
+  #
+  
+! MANDIR = ${PREFIX}/man
+  
+  #
+  # Set these to the manual sections (e.g. 1, 4, 5, l) for the program and
+***************
+*** 83,89 ****
+  CFLAGS = -g
+  CPPFLAGS = -I$(INCDIR) $(SOL2)
+  LDFLAGS = -L$(LIBDIR) $(LIBLOC)
+! LDLIBS = -lxview -lolgx -lX11 $(EXTRA_LIBS) $(DBLIB) -ldl
+  
+  # Standard targets.
+  
+--- 85,91 ----
+  CFLAGS = -g
+  CPPFLAGS = -I$(INCDIR) $(SOL2)
+  LDFLAGS = -L$(LIBDIR) $(LIBLOC)
+! LDLIBS = -lxview -lolgx -lX11 $(EXTRA_LIBS) $(DBLIB) #-ldl
+  
+  # Standard targets.
+  
+***************
+*** 96,110 ****
+  	$(CC) $(LDFLAGS) $(DBCFLAGS) buildindex.c $(DBLIB) -o $@
+  
+  clean:
+! 	$(RM) $(OBJECTS) *.BAK *.delta core
+  
+! install: $(PROGRAM)
+  	cp $(PROGRAM) $(BINDIR)
+  	chmod 755 $(BINDIR)/$(PROGRAM)
+  	cp $(PROGRAM).info $(HLPDIR)
+  	chmod 644 $(HLPDIR)/$(PROGRAM).info
+- 
+- install.man: workman.man workmandb.man $(MANDIR)/man$(PEXT) $(MANDIR)/man$(DEXT)
+  	cp workman.man $(MANDIR)/man$(PEXT)/workman.$(PEXT)
+  	chmod 644 $(MANDIR)/man$(PEXT)/workman.$(PEXT)
+  	cp workmandb.man $(MANDIR)/man$(DEXT)/workmandb.$(DEXT)
+--- 98,111 ----
+  	$(CC) $(LDFLAGS) $(DBCFLAGS) buildindex.c $(DBLIB) -o $@
+  
+  clean:
+! 	$(RM) $(OBJECTS) *.BAK *.delta *.core workman
+  
+! install: $(PROGRAM) workman.man workmandb.man \
+! 		$(MANDIR)/man$(PEXT) $(MANDIR)/man$(DEXT)
+  	cp $(PROGRAM) $(BINDIR)
+  	chmod 755 $(BINDIR)/$(PROGRAM)
+  	cp $(PROGRAM).info $(HLPDIR)
+  	chmod 644 $(HLPDIR)/$(PROGRAM).info
+  	cp workman.man $(MANDIR)/man$(PEXT)/workman.$(PEXT)
+  	chmod 644 $(MANDIR)/man$(PEXT)/workman.$(PEXT)
+  	cp workmandb.man $(MANDIR)/man$(DEXT)/workmandb.$(DEXT)
+diff -c --recursive ./plat_freebsd.c ../workman.new/./plat_freebsd.c
+*** ./plat_freebsd.c	Mon Feb 20 09:29:55 1995
+--- ../workman.new/./plat_freebsd.c	Sun Nov 26 03:29:22 1995
+***************
+*** 5,10 ****
+--- 5,13 ----
+   *
+   * Todd Pfaff, 3/20/94
+   *
++  * 11/26/95: Modified to work under FreeBSD 2.x
++  *           by Donald Burr <d_burr@ix.netcom.com>
++  *
+   */
+  static char *ident = "@(#)plat_freebsd.c	1.2 2/20/95";
+  
+***************
+*** 30,42 ****
+  #include "/sys/scsi/scsi_all.h"
+  #include "/sys/scsi/scsi_cd.h"
+  #else
+  #include <scsi/scsi_all.h>
+  #include <scsi/scsi_cd.h>
+  #endif
+  
+  #include "struct.h"
+  
+! #define DEFAULT_CD_DEVICE       "/dev/rcd0d"
+  
+  void *malloc();
+  
+--- 33,49 ----
+  #include "/sys/scsi/scsi_all.h"
+  #include "/sys/scsi/scsi_cd.h"
+  #else
++ /*
+  #include <scsi/scsi_all.h>
+  #include <scsi/scsi_cd.h>
++ */
++ #include <scsi.h>
++ #include <sys/scsiio.h>
+  #endif
+  
+  #include "struct.h"
+  
+! #define DEFAULT_CD_DEVICE       "/dev/rcd0c"
+  
+  void *malloc();
+  
+***************
+*** 163,169 ****
+  	}
+  
+  	if (ioctl(d->fd, CDIOCREADSUBCHANNEL, &sc)) {
+! #ifdef __NetBSD__
+  	    /* we need to release the device so the kernel will notice
+  	       reloaded media */
+  	    (void) close(d->fd);
+--- 170,176 ----
+  	}
+  
+  	if (ioctl(d->fd, CDIOCREADSUBCHANNEL, &sc)) {
+! #if defined(__NetBSD__) || defined(__FreeBSD__)
+  	    /* we need to release the device so the kernel will notice
+  	       reloaded media */
+  	    (void) close(d->fd);
+***************
+*** 261,266 ****
+--- 268,276 ----
+  
+  	bzero((char *)&vol, sizeof(vol));
+  
++ #define LEFT_PORT 0
++ #define RIGHT_PORT 1
++ 
+  	vol.vol[LEFT_PORT] = left;
+  	vol.vol[RIGHT_PORT] = right;
+  
+***************
+*** 345,356 ****
+  	if (fstatfs(stbuf.st_rdev, &buf) == 0)
+  		return (-3);
+  
+! #ifdef __NetBSD__
+  	rval = ioctl(d->fd, CDIOCALLOW);
+  	if (rval == 0)
+  #endif
+  	    rval = ioctl(d->fd, CDIOCEJECT);
+! #ifdef __NetBSD__
+  	if (rval == 0)
+  	    rval = ioctl(d->fd, CDIOCPREVENT);
+  #endif
+--- 355,366 ----
+  	if (fstatfs(stbuf.st_rdev, &buf) == 0)
+  		return (-3);
+  
+! #if defined(__NetBSD__) || defined(__FreeBSD__)
+  	rval = ioctl(d->fd, CDIOCALLOW);
+  	if (rval == 0)
+  #endif
+  	    rval = ioctl(d->fd, CDIOCEJECT);
+! #if defined(__NetBSD__) || defined(__FreeBSD__)
+  	if (rval == 0)
+  	    rval = ioctl(d->fd, CDIOCPREVENT);
+  #endif
+diff -c --recursive ./workman.man ../workman.new/./workman.man
+*** ./workman.man	Thu Jun 15 23:52:13 1995
+--- ../workman.new/./workman.man	Sun Nov 26 03:28:54 1995
+***************
+*** 151,157 ****
+  .TP
+  .I \-p file
+  Write the program's process ID to a different \fIfile\fP.  By default, the
+! PID is written to "/tmp/.wm_pid" to allow signals to be sent more easily
+  (see the SIGNALS section below.)
+  .TP
+  .I \-n
+--- 151,157 ----
+  .TP
+  .I \-p file
+  Write the program's process ID to a different \fIfile\fP.  By default, the
+! PID is written to "/var/run/workman.pid" to allow signals to be sent more easily
+  (see the SIGNALS section below.)
+  .TP
+  .I \-n
+***************
+*** 510,515 ****
+--- 510,516 ----
+  SVR4 port by Baruch Cochavy <bcochavy@iil.intel.com>.
+  .LP
+  FreeBSD port by Todd Pfaff <todd@flex.eng.mcmaster.ca>.
++ Modified to work under FreeBSD 2.x by Donald Burr <d_burr@ix.netcom.com>.
+  .LP
+  OSF/1 port by R.J. Edwards <rje@escact.ksc.nasa.gov>.
+  .LP
+diff -c --recursive ./workman_stubs.c ../workman.new/./workman_stubs.c
+*** ./workman_stubs.c	Fri Jun 16 10:44:40 1995
+--- ../workman.new/./workman_stubs.c	Sun Nov 26 03:26:57 1995
+***************
+*** 56,62 ****
+--- 56,67 ----
+  Panel_item	quitbutton;
+  char	*getenv(), *WMstrdup();
+  
++ #if defined(__FreeBSD__)
++ /* FreeBSD has a special directory for pidfiles, I guess. */
++ char	*pidfile = "/var/run/workman.pid";
++ #else
+  char	*pidfile = "/tmp/.wm_pid";
++ #endif
+  char *	empty = "";
+  extern char *cd_device;
+  
