@@ -14,6 +14,7 @@
     SUBDIR += gpsdrive
     SUBDIR += gpsman
     SUBDIR += jday
+    SUBDIR += ksetisaver
     SUBDIR += ksetispy
     SUBDIR += ksetiwatch
     SUBDIR += libnova

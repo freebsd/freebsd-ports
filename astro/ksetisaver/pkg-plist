@@ -1,0 +1,10 @@
+share/apps/ksetisaver/beep1.wav
+share/apps/ksetisaver/beep2.wav
+share/apps/ksetisaver/err.wav
+bin/ksetisaver
+bin/setiwatchdog
+share/applnk/System/ScreenSavers/KSetiSaver.desktop
+share/locale/fr/LC_MESSAGES/ksetisaver.mo
+share/locale/de/LC_MESSAGES/ksetisaver.mo
+share/locale/zh_CN.GB2312/LC_MESSAGES/ksetisaver.mo
+@dirrm share/apps/ksetisaver
