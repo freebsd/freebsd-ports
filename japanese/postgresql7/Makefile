@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postgresql
-PORTVERSION=	7.1.20010429
+PORTVERSION=	7.1.1.20010508
 CATEGORIES=	japanese databases
 MASTER_SITES=	ftp://ftp.sra.co.jp/pub/cmd/postgres/${PORTVERSION:R} \
 	ftp://ftp.postgresql.org/pub/v${PORTVERSION:R}/ \
