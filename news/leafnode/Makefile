@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	leafnode
-PORTVERSION=	1.9.21
+PORTVERSION=	1.9.22
 CATEGORIES=	news
 MASTER_SITES=	ftp://wpxx02.toxi.uni-wuerzburg.de/pub/ \
+		http://www.Awfulhak.org/leafnode/ \
 		${MASTER_SITE_SUNSITE} \
 		ftp://ftp.karlsruhe.org/pub/news/servers/leafnode/ \
 		ftp://ftp.stikman.com/pub/leafnode/ \
-		ftp://ftp.gigabell.net/pub/leafnode/ \
-		http://www.Awfulhak.org/leafnode/
+		ftp://ftp.gigabell.net/pub/leafnode/
 MASTER_SITE_SUBDIR=	system/news/transport
-DISTNAME=	${PORTNAME}-${PORTVERSION}.rel
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.rel
 
 MAINTAINER=	brian@FreeBSD.org
 
@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--quiet --sysconfdir=${LOCALBASE}/etc/leafnode \
 		--with-spooldir=/var/spool/news
 MAKE_ARGS=
 MAN1=		newsq.1
-MAN8=		fetchnews.8 applyfilter.8 leafnode.8 texpire.8 checkgroups.8
+MAN8=		applyfilter.8 checkgroups.8 fetchnews.8 leafnode.8 texpire.8
 
 post-install:
 .if !defined(NOPORTDOCS)

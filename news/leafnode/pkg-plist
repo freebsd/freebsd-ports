@@ -1,8 +1,18 @@
 bin/newsq
-lib/leafnode/config.example
+etc/leafnode/config.example
 sbin/leafnode
 sbin/fetchnews
 sbin/texpire
 sbin/checkgroups
 sbin/applyfilter
-@dirrm lib/leafnode
+sbin/lsort
+share/doc/leafnode/ChangeLog
+share/doc/leafnode/CREDITS
+share/doc/leafnode/FAQ
+share/doc/leafnode/INSTALL
+share/doc/leafnode/NEWS
+share/doc/leafnode/README
+share/doc/leafnode/README.FIRST
+share/doc/leafnode/TODO
+@dirrm etc/leafnode
+@dirrm share/doc/leafnode
