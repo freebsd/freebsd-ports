@@ -991,8 +991,10 @@ share/pysol/music/Ranger_Song.s3m
 share/pysol/pysol.xbm
 share/pysol/pysol.xpm
 share/pysol/pysol_15.pyc
+share/pysol/pysol_16.pyc
 share/pysol/pysol_20.pyc
 share/pysol/pysol_21.pyc
+share/pysol/pysol_22.pyc
 share/pysol/sound/autodrop.wav
 share/pysol/sound/autoflip.wav
 share/pysol/sound/deal01.wav
