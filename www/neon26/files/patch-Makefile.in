@@ -1,9 +1,9 @@
---- Makefile.in.orig	Thu Sep 25 09:54:22 2003
-+++ Makefile.in	Thu Sep 25 09:58:23 2003
+--- Makefile.in.orig	Mon Sep 22 23:57:02 2003
++++ Makefile.in	Thu Oct  9 13:41:35 2003
 @@ -21,7 +21,7 @@
  man1dir = $(mandir)/man1
  man3dir = $(mandir)/man3
- datadir = $(prefix)/share
+ datadir = @datadir@
 -docdir = $(datadir)/doc/neon-@NEON_VERSION@
 +docdir = $(datadir)/doc/neon
  includedir = @includedir@
