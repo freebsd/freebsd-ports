@@ -6090,6 +6090,7 @@ py-plex		ports/devel/py-plex
 py-pow		ports/security/py-pow
 py-pqueue	ports/devel/py-pqueue
 py-psycopg	ports/databases/py-psycopg
+py-px		ports/devel/py-px
 py-pyPgSQL	ports/databases/py-pyPgSQL
 py-qt		ports/x11-toolkits/py-qt
 py-repl		ports/devel/py-repl
