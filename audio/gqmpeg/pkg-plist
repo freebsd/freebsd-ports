@@ -6,6 +6,7 @@ share/gqmpeg/skins/README
 share/gqmpeg/skins/SKIN-SPECS
 share/locale/cs/LC_MESSAGES/gqmpeg.mo
 share/locale/de/LC_MESSAGES/gqmpeg.mo
+share/locale/fi/LC_MESSAGES/gqmpeg.mo
 share/locale/fr/LC_MESSAGES/gqmpeg.mo
 share/locale/ja/LC_MESSAGES/gqmpeg.mo
 share/locale/pt_BR/LC_MESSAGES/gqmpeg.mo
