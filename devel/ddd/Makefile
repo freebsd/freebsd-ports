@@ -4,7 +4,7 @@
 # Date created:			  Tue Jan 28, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.14 1999/03/09 09:11:47 asami Exp $
+# $Id: Makefile,v 1.15 1999/04/27 01:10:32 obrien Exp $
 #
 
 DISTNAME=	ddd-3.1.4
@@ -21,7 +21,7 @@ MAINTAINER=     obrien@FreeBSD.org
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-motif-libraries=${MOTIFLIB}
+CONFIGURE_ARGS=	--with-motif-libraries="${MOTIFLIB} -lXt -lXext"
 USE_GMAKE=	yes
 REQUIRES_MOTIF=	yes
 MAN1=		ddd.1
