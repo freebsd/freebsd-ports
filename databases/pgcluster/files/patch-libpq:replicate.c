@@ -1,6 +1,6 @@
---- src/backend/libpq/replicate.c	17 Apr 2004 14:41:22 -0000	1.1.1.11
-+++ src/backend/libpq/replicate.c	17 Apr 2004 14:44:29 -0000	1.6
-@@ -635,6 +635,7 @@
+--- src/backend/libpq/replicate.c	9 May 2004 11:21:32 -0000	1.1.1.12
++++ src/backend/libpq/replicate.c	9 May 2004 11:51:34 -0000	1.7
+@@ -637,6 +637,7 @@
  		return NULL;
  	}
  	sock = get_replicate_server_socket( sp , socket_type);
@@ -8,11 +8,10 @@
  	if (sock < 0)
  	{
  		if (Debug_pretty_print)
-@@ -2067,6 +2068,30 @@
- 		return 1;
- 	}
- 	return 0;
-+}
+@@ -2183,4 +2184,29 @@
+ 	free(result);
+ 	return false;
+ }
 +
 +extern Datum pgr_current_replicator(PG_FUNCTION_ARGS);
 +PG_FUNCTION_INFO_V1(pgr_current_replicator);
@@ -36,6 +35,6 @@
 +	memcpy(VARDATA(result), buf, len);
 +
 +	PG_RETURN_TEXT_P(result);
- }
- 
++}
++
  #endif /* USE_REPLICATION */

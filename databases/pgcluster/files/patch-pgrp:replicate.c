@@ -1,6 +1,6 @@
---- src/pgcluster/pgrp/replicate.c	16 Apr 2004 10:17:45 -0000	1.1.1.9
-+++ src/pgcluster/pgrp/replicate.c	16 Apr 2004 10:21:06 -0000	1.5
-@@ -141,7 +141,7 @@
+--- src/pgcluster/pgrp/replicate.c	9 May 2004 11:21:36 -0000	1.1.1.10
++++ src/pgcluster/pgrp/replicate.c	9 May 2004 11:51:34 -0000	1.6
+@@ -150,7 +150,7 @@
  	ptr = Dbserver_Tbl_Begin;
  	while (ptr != NULL)
  	{
@@ -9,7 +9,7 @@
  		if ((ptr->useFlag == DB_TBL_USE) &&
  			(ptr->hostIP == host) &&
  			(ptr->port == host_ptr->port) &&
-@@ -393,6 +393,7 @@
+@@ -380,6 +380,7 @@
  		show_error("insertTransactionTbl failed");
  		return (TransactionTbl *)NULL;
  	}
@@ -17,7 +17,7 @@
  	return ptr;
  }
  
-@@ -581,8 +582,10 @@
+@@ -568,8 +569,10 @@
  	set_function("PGRadd_HostTbl");
  
  	ptr = PGRget_HostTbl(conf_data->hostName, conf_data->port);
@@ -28,7 +28,7 @@
  		PGRset_host_status(ptr,useFlag);
  		return ptr;
  	}
-@@ -606,6 +609,7 @@
+@@ -593,6 +596,7 @@
  	{
  		(ptr + 1) -> useFlag = DB_TBL_END;
  	}
@@ -36,7 +36,7 @@
  	ptr->hostNum = cnt;
  	memcpy(ptr->hostName,conf_data->hostName,sizeof(ptr->hostName));
  	ptr->port = conf_data->port;
-@@ -624,19 +628,22 @@
+@@ -611,19 +615,22 @@
  	set_function("PGRget_master");
  
  	host_tbl = Host_Tbl_Begin;
@@ -61,7 +61,7 @@
  	return (HostTbl *)NULL;
  }
  
-@@ -651,6 +658,9 @@
+@@ -638,6 +645,9 @@
  	PGRsem_lock(SemID,SEM_NUM_OF_RECOVERY);
  	if (Recovery_Status_Inf != (RecoveryStatusInf *)NULL)
  	{
@@ -71,7 +71,7 @@
  		Recovery_Status_Inf->recovery_status = status;
  	}
  	PGRsem_unlock(SemID,SEM_NUM_OF_RECOVERY);
-@@ -799,7 +809,7 @@
+@@ -786,7 +796,7 @@
  	{
  		if (Recovery_Status_Inf->useFlag != DB_TBL_FREE)
  		{
@@ -80,7 +80,7 @@
  			ptr = PGRadd_HostTbl((HostTbl *)&(Recovery_Status_Inf->target_host),Recovery_Status_Inf->useFlag);
  			if (ptr == (HostTbl *) NULL)
  			{
-@@ -830,6 +840,8 @@
+@@ -817,6 +827,8 @@
  		if (target != (HostTbl*)NULL)
  		{
  			memcpy((HostTbl *)&(Recovery_Status_Inf->target_host),target,sizeof(HostTbl));
@@ -89,7 +89,7 @@
  			PGRset_host_status(target,useFlag);
  		}
  
-@@ -1027,6 +1039,7 @@
+@@ -1032,6 +1044,7 @@
  	{
  		return STATUS_ERROR;
  	}
@@ -97,7 +97,7 @@
  	if (host_ptr->useFlag != status)
  	{
  		host_ptr->useFlag = status;
-@@ -1251,6 +1264,7 @@
+@@ -1257,6 +1270,7 @@
  		show_debug("send_replicate_packet_to_server query=%s",query);
  	}
  
@@ -105,7 +105,7 @@
  	if (conn == NULL)
  	{
  		show_error("[%d@%s] may be down",host_ptr->port,host_ptr->hostName);
-@@ -1311,7 +1325,7 @@
+@@ -1332,7 +1346,7 @@
  
  	if (res == NULL)
  	{
@@ -114,7 +114,7 @@
  		if ( header->cmdSts != CMD_STS_NOTICE )
  		{
  			PGRset_host_status(host_ptr,DB_TBL_ERROR);
-@@ -1501,6 +1515,7 @@
+@@ -1532,6 +1546,7 @@
  
  	len = strlen(hostName);
  	ptr = Host_Tbl_Begin;
