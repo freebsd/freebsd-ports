@@ -12,7 +12,8 @@ MASTER_SITES=	http://cvs2svn.tigris.org/files/documents/1462/16792/
 MAINTAINER=	jihuang@gate.sinica.edu.tw
 COMMENT=	CVS to Subversion Repository Converter
 
-RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion
+RUN_DEPENDS=	svn:${PORTSDIR}/devel/subversion \
+		${PYTHON_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm
 
 USE_PYTHON=	2.3+
 USE_PYDISTUTILS=	yes
