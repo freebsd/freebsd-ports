@@ -1,6 +1,17 @@
---- configure.orig	Thu Apr  4 14:55:34 2002
-+++ configure	Thu Apr  4 14:55:48 2002
-@@ -7180,7 +7180,7 @@
+
+$FreeBSD$
+
+--- configure.orig	Fri Apr 26 12:49:10 2002
++++ configure	Fri Apr 26 12:49:40 2002
+@@ -5591,6 +5591,7 @@
+ 
+ # This can be used to rebuild libtool when needed
+ LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -7180,7 +7181,7 @@
    INSTALL_FONTS_TRUE='#'
    INSTALL_FONTS_FALSE=
  fi

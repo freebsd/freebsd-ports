@@ -23,7 +23,7 @@ USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share/gnome2 \
 		--datadir=${PREFIX}/share/gnome2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
