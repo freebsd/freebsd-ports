@@ -36,4 +36,3 @@ post-patch:
 		${WRKSRC}/Makefile.in
 
 .include <bsd.port.post.mk>
-
