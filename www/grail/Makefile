@@ -3,13 +3,13 @@
 # Date created:				1/11/1999
 # Whom:					nectar@FreeBSD.ORG
 #
-# $Id: Makefile,v 1.6 1999/01/10 18:52:34 nectar Exp $
+# $Id: Makefile,v 1.7 1999/04/07 16:38:22 nectar Exp $
 #
 
-DISTNAME=		grail_05
-PKGNAME=		grail-0.5
-CATEGORIES=		www
-MASTER_SITES=		http://monty.cnri.reston.va.us/grail-0.5/source/
+DISTNAME=		grail-06
+PKGNAME=		grail-0.6
+CATEGORIES=		www python
+MASTER_SITES=		http://grail.cnri.reston.va.us/grail/source/
 EXTRACT_SUFX=		.tgz
 
 MAINTAINER=		nectar@freebsd.org
@@ -20,7 +20,10 @@ LIB_DEPENDS=		tk80.1:${PORTSDIR}/x11-toolkits/tk80
 
 WRKSRC=			${WRKDIR}/${PKGNAME}
 
-GRAILDIR=		${PREFIX}/share/grail
+GRAILSUBDIR=		share/grail
+GRAILDIR=		${PREFIX}/${GRAILSUBDIR}
+DIRS_CMD=		${CAT} ${PLIST} | ${GREP} '^@dirrm' | ${SED} 's,@dirrm ,,'
+FILES_CMD=		${CAT} ${PLIST} | ${GREP} -v '^@' | ${SED} 's,${GRAILSUBDIR}/,,'
 
 CHOWN?=chown
 CHMOD?=chmod
@@ -31,15 +34,20 @@ do-build:
 	${PYTHON} -u -c 'from compileall import compile_dir; compile_dir("${WRKSRC}")'
 
 do-install:
-	${MKDIR} ${GRAILDIR}
-	${TAR} --exclude '.cvsignore' -C ${WRKSRC} -cf - . |           \
-		${TAR} -C ${GRAILDIR} -xvf -
-	${SED} 's|%%GRAILDIR%%|${GRAILDIR}|g' <${FILESDIR}/grail >     \
+	@${ECHO} === Creating directories...
+	@for dir in `${DIRS_CMD}`; do                                  \
+		${ECHO} ${PREFIX}/$$dir;                               \
+		${MKDIR} ${PREFIX}/$$dir;                              \
+	done
+	@${ECHO} === Installing grail files ...
+	@for file in `${FILES_CMD}`; do                                \
+		${ECHO} ${GRAILDIR}/$$file;                            \
+		${INSTALL_DATA} ${WRKSRC}/$$file ${GRAILDIR}/$$file;   \
+	done
+	@${ECHO} === Installing grail script...
+	@${SED} 's,%%GRAILDIR%%,${GRAILDIR},g' <${FILESDIR}/grail >    \
 		${WRKDIR}/grail.tmp
-	${INSTALL_SCRIPT} ${WRKDIR}/grail.tmp ${PREFIX}/bin/grail
-	${RM} ${WRKDIR}/grail.tmp
-	${CHOWN} -R ${BINOWN}:${BINGRP} ${GRAILDIR}
-	${FIND} ${GRAILDIR} -type f -exec ${CHMOD} 0444 {} \;
-	${FIND} ${GRAILDIR} -type d -exec ${CHMOD} 0555 {} \;
+	@${INSTALL_SCRIPT} ${WRKDIR}/grail.tmp ${PREFIX}/bin/grail
+	@${RM} ${WRKDIR}/grail.tmp
 
 .include <bsd.port.mk>
