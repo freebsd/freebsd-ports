@@ -127,6 +127,7 @@
     SUBDIR += p5-GD-TextUtil
     SUBDIR += p5-Image-Size
     SUBDIR += p5-chart
+    SUBDIR += panorama
     SUBDIR += pgperl
     SUBDIR += pgplot
     SUBDIR += photopc

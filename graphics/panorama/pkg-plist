@@ -1,0 +1,114 @@
+bin/render
+share/doc/panorama/AUTHORS
+share/doc/panorama/BUGS
+share/doc/panorama/CREDITS
+share/doc/panorama/EXPERIMENTAL
+share/doc/panorama/FAQ
+share/doc/panorama/INSTALL
+share/doc/panorama/LICENSE
+share/doc/panorama/NEWS
+share/doc/panorama/README
+share/doc/panorama/developers/C++_Coding_Style
+share/doc/panorama/developers/General
+share/doc/panorama/developers/PROJECTS
+share/doc/panorama/developers/README
+share/doc/panorama/developers/WRITING_A_PLUGIN
+share/doc/panorama/users/README
+share/doc/panorama/users/classes.html
+share/doc/panorama/users/language.html
+share/panorama/include/colors.inc
+share/panorama/include/materials.inc
+share/panorama/lib/libhlapi.so
+share/panorama/lib/libhlapi.so.0
+share/panorama/lib/libllapi.so
+share/panorama/lib/libllapi.so.0
+@exec /sbin/ldconfig -m %D/share/panorama/lib
+@unexec /sbin/ldconfig -R
+share/panorama/lib/gradients/crackle1
+share/panorama/lib/gradients/lrgold
+share/panorama/lib/gradients/marble1
+share/panorama/lib/gradients/marble2
+share/panorama/lib/gradients/tropical
+share/panorama/lib/gradients/wood1
+share/panorama/lib/gradients/wood2
+share/panorama/lib/gradients/wood3
+share/panorama/lib/gradients/wood4
+share/panorama/lib/gradients/wood5
+share/panorama/lib/plugins/atm_const.plg
+share/panorama/lib/plugins/bezier.plg
+share/panorama/lib/plugins/bsdf_cook_torrance.plg
+share/panorama/lib/plugins/bsdf_lambertian.plg
+share/panorama/lib/plugins/bsdf_phong.plg
+share/panorama/lib/plugins/bsdf_schlick.plg
+share/panorama/lib/plugins/bsdf_schlick_double.plg
+share/panorama/lib/plugins/bsdf_ward.plg
+share/panorama/lib/plugins/if_cartoon.plg
+share/panorama/lib/plugins/if_convert_to_grey.plg
+share/panorama/lib/plugins/if_fog.plg
+share/panorama/lib/plugins/if_lens_flare.plg
+share/panorama/lib/plugins/mat_brick.plg
+share/panorama/lib/plugins/mat_checker.plg
+share/panorama/lib/plugins/mat_crackle.plg
+share/panorama/lib/plugins/mat_leopard.plg
+share/panorama/lib/plugins/mat_marble.plg
+share/panorama/lib/plugins/mat_noise.plg
+share/panorama/lib/plugins/mat_parquet.plg
+share/panorama/lib/plugins/mat_wood.plg
+share/panorama/lib/plugins/mat_worley.plg
+share/panorama/lib/plugins/of_cartoon.plg
+share/panorama/lib/plugins/of_convert_to_grey.plg
+share/panorama/lib/plugins/pinhole.plg
+share/panorama/lib/plugins/point_light.plg
+share/panorama/lib/plugins/projector.plg
+share/panorama/lib/plugins/raytracer.plg
+share/panorama/lib/plugins/rt_io.plg
+share/panorama/lib/plugins/tga_io.plg
+share/panorama/lib/plugins/warn_light.plg
+share/panorama/lib/texture/f16.tga
+share/panorama/lib/texture/supernova.tga
+share/panorama/scenes/atmospheric/atmosphere.rt
+share/panorama/scenes/lights/projector.rt
+share/panorama/scenes/lights/warn.rt
+share/panorama/scenes/materials/brick.rt
+share/panorama/scenes/materials/checker.rt
+share/panorama/scenes/materials/checker45.rt
+share/panorama/scenes/materials/crackle.rt
+share/panorama/scenes/materials/leopard.rt
+share/panorama/scenes/materials/marble.rt
+share/panorama/scenes/materials/marble2.rt
+share/panorama/scenes/materials/materials.rt
+share/panorama/scenes/materials/water.rt
+share/panorama/scenes/materials/wood.rt
+share/panorama/scenes/materials/worley.rt
+share/panorama/scenes/misc/cornell_box.rt
+share/panorama/scenes/misc/plastic_cornell_box.rt
+share/panorama/scenes/misc/projector_cartoon.rt
+share/panorama/scenes/misc/xmas-tree.rt
+share/panorama/scenes/objects/aggregate.rt
+share/panorama/scenes/objects/box.rt
+share/panorama/scenes/objects/circle.rt
+share/panorama/scenes/objects/cone.rt
+share/panorama/scenes/objects/cylinder.rt
+share/panorama/scenes/objects/phong_triangle.rt
+share/panorama/scenes/objects/rectangle.rt
+share/panorama/scenes/objects/teapot.rt
+share/panorama/scenes/objects/torus.rt
+share/panorama/scenes/objects/triangle.rt
+share/panorama/etc/pluginrc
+share/panorama/etc/config
+@dirrm share/doc/panorama/developers
+@dirrm share/doc/panorama/users
+@dirrm share/doc/panorama
+@dirrm share/panorama/lib/gradients
+@dirrm share/panorama/lib/plugins
+@dirrm share/panorama/lib/texture
+@dirrm share/panorama/lib
+@dirrm share/panorama/include
+@dirrm share/panorama/scenes/atmospheric
+@dirrm share/panorama/scenes/lights
+@dirrm share/panorama/scenes/materials
+@dirrm share/panorama/scenes/misc
+@dirrm share/panorama/scenes/objects
+@dirrm share/panorama/scenes
+@dirrm share/panorama/etc
+@dirrm share/panorama
