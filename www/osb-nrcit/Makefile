@@ -22,4 +22,10 @@ USE_GNOME=	gtk20 gnomehack
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL_VER=15
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "i386"
+BROKEN=		"Does not compile on !i386"
+.endif
+
+.include <bsd.port.post.mk>
