@@ -25,7 +25,7 @@ DISTFILES=	${GNATNAME}.tgz:gnat \
 
 MAINTAINER=	eischen@vigrid.com
 
-BUILD_DEPENDS=  ${PORTSDIR}/lang/gcc28
+BUILD_DEPENDS=  gcc28:${PORTSDIR}/lang/gcc28
 
 .include <bsd.port.pre.mk>
 
