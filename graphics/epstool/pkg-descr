@@ -1,0 +1,13 @@
+epstool - Create or extract preview bitmaps in EPS files.
+
+Features:
+- Add EPSI or DOS EPS previews.
+- Extract postscript from DOS EPS files.
+- Uses Ghostscript to create preview bitmaps.
+- Scan a bitmap created by Ghostscript to find bounding box.
+- Create TIFF or Interchange from part of a bitmap created 
+  by Ghostscript.
+
+Please read text '/usr/local/share/doc/epstool/epstool.txt'
+
+- Yuzo FURUKAWA

@@ -1,0 +1,21 @@
+--- makefile.unx.orig	Sat Oct 23 18:00:19 1999
++++ makefile.unx	Sat Oct 23 19:24:37 1999
+@@ -20,8 +20,8 @@
+ RM=/bin/rm -f
+ SHELL=/bin/sh
+ 
+-BINDIR=/usr/local/bin
+-INCLUDES=-I/usr/openwin/include
++BINDIR=${PREFIX}/bin
++INCLUDES=-I/usr/X11R6/include
+ LIBS=
+ # if you have a strict ANSI compiler, add -D__STDC__
+ DEFINES=-DUNIX -DEPSTOOL -DHAVE_UNISTD_H
+@@ -54,5 +54,5 @@
+ 	-$(RM) epstool
+ 
+ install: epstool
+-	cp epstool $(BINDIR)
+-	chmod 755 $(BINDIR)/epstool
++	install -c -s -g bin -o root -m 755 epstool $(BINDIR)
++

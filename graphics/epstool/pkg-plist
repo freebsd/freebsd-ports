@@ -1,0 +1,3 @@
+bin/epstool
+share/doc/epstool/epstool.txt
+@dirrm share/doc/epstool
