@@ -1,5 +1,7 @@
 bin/pdmenu
 etc/pdmenurc
-share/pdmenu/editdir.pl
-share/pdmenu/showdir.pl
-@dirrm share/pdmenu
+%%DATADIR%%/editdir.pl
+%%DATADIR%%/showdir.pl
+@dirrm %%DATADIR%%
+@dirrm lib/pdmenu
+
