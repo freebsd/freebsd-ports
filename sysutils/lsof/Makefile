@@ -24,7 +24,7 @@ MASTER_SITES=	ftp://lsof.itap.purdue.edu/pub/tools/unix/lsof/  \
 		ftp://ftp.tau.ac.il/pub/unix/admin/
 FIXUP_RELEASE=	yes
 .if defined(FIXUP_RELEASE)
-DISTNAME=	${PORTNAME}_4.74A.freebsd
+DISTNAME=	${PORTNAME}_4.74B.freebsd
 .else
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 .endif
