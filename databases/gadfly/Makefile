@@ -7,6 +7,7 @@
 
 PORTNAME=	gadfly
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.chordate.com/kwParsing/
 DISTNAME=	kwP

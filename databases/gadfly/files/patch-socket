@@ -1,0 +1,24 @@
+diff -u gadfly-1.0/gfclient.py gadfly/gfclient.py
+--- gadfly-1.0/gfclient.py	Tue Oct  6 20:32:00 1998
++++ gfclient.py	Wed Jul 12 22:01:44 2000
+@@ -138,7 +138,7 @@
+         import socket
+         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+         #print type(sock), sock
+-        sock.connect(self.machine, self.port)
++        sock.connect((self.machine, self.port))
+         return sock
+         
+     def send_action(self, action, arguments, socket):
+diff -u gadfly-1.0/gfserve.py gadfly/gfserve.py
+--- gadfly-1.0/gfserve.py	Tue Oct  6 20:32:32 1998
++++ gfserve.py	Thu Sep  7 18:43:34 2000
+@@ -332,7 +332,7 @@
+             if verbose: 
+                print "set of REUSEADDR failed", sys.exc_type, sys.exc_value
+             pass
+-        sock.bind(self.HOST, self.port)
++        sock.bind((self.HOST, self.port))
+         sock.listen(self.BACKLOG)
+         self.socket = sock
+         return sock
