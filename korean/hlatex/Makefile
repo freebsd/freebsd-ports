@@ -8,8 +8,7 @@
 PORTNAME=		HLaTeX-${HLATEX_ENCODING}std
 PORTVERSION=		0.98
 CATEGORIES=             korean print
-MASTER_SITES=           ftp://ftp.linguistik.uni-erlangen.de/pub/HLaTeX/ \
-			ftp://ftp.linguistik.uni-erlangen.de/pub/HLaTeX/${HLATEX_ENCODING}/
+MASTER_SITES=           ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/hlatex98/
 DISTNAME=               HLaTeX-${HLATEX_ENCODING}-0.98
 DISTFILES=              HLaTeX-0.98.tar.bz2 ${HLATEX_FONTS_BASE}
 
