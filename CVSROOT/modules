@@ -6486,6 +6486,7 @@ p5-HTML-Tagset	ports/www/p5-HTML-Tagset
 p5-HTML-Template	ports/www/p5-HTML-Template
 p5-HTML-Template-Associate	ports/www/p5-HTML-Template-Associate
 p5-HTML-Template-Expr	ports/www/p5-HTML-Template-Expr
+p5-HTML-TokeParser-Simple	ports/www/p5-HTML-TokeParser-Simple
 p5-HTML-Tree	ports/www/p5-HTML-Tree
 p5-HTML-Webmake	ports/www/p5-HTML-Webmake
 p5-HTML-Widgets-SelectLayers	ports/www/p5-HTML-Widgets-SelectLayers
