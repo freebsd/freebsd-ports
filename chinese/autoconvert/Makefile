@@ -15,7 +15,7 @@ COMMENT=	Intelligent Chinese encoding converter
 
 USE_GETOPT_LONG=	yes
 INSTALLS_SHLIB=	yes
-DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}-${PORTNAME}
+DATADIR=	${PREFIX}/share/${PKGNAMEPREFIX}${PORTNAME}
 
 pre-install:
 	@${MKDIR} ${DATADIR}
