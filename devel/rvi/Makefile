@@ -8,7 +8,9 @@
 PORTNAME=	rvi
 PORTVERSION=	1.0.0
 CATEGORIES=	devel
-MASTER_SITES=	http://www.cs.ru.ac.za/homes/g98t4414/rvi/
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
+		http://www.cs.ru.ac.za/homes/g98t4414/rvi/
+MASTER_SITE_SUBDIR=	petef
 DISTNAME=	rvi
 
 MAINTAINER=	petef@FreeBSD.org
