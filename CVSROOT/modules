@@ -517,6 +517,7 @@ axelq		ports/ftp/axelq
 axis		ports/www/axis
 axpoint		ports/print/axpoint
 axyftp		ports/ftp/axyftp
+ayttm		ports/net/ayttm
 b2bua		ports/net/b2bua
 babel		ports/biology/babel
 babytrans	ports/deskutils/babytrans
@@ -1652,7 +1653,6 @@ eukleides	ports/math/eukleides
 euler		ports/science/euler
 eval		ports/math/eval
 evas		ports/graphics/evas
-everybuddy	ports/net/everybuddy
 evg		ports/www/evg
 evilbar		ports/audio/evilbar
 evilfinder	ports/games/evilfinder
