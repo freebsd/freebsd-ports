@@ -10,6 +10,6 @@
 -
 -fi
 -
- if test -z "$CACHE_HTTP_PORT"; then
- 	CACHE_HTTP_PORT="3128"
- fi
+ case "$host_os" in
+ cygwin32)
+	exec_suffix=".exe"
