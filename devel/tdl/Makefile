@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	tdl
-PORTVERSION=	1.4.1
+PORTVERSION=	1.5.2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.rrbcurnow.freeuk.com/tdl/
+MASTER_SITES=	http://www.rpcurnow.force9.co.uk/tdl/
 
 MAINTAINER=	petef@FreeBSD.org
 COMMENT=	To-do list manager
