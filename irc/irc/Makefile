@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	irc
-PORTVERSION=	2.10.3
+PORTVERSION=	2.10.3p3
 CATEGORIES=	irc ipv6
 MASTER_SITES=	ftp://ftp.funet.fi/pub/networking/services/irc/server/ \
 		ftp://ftp.irc.org/irc/server/ \
