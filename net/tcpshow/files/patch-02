@@ -1,13 +1,6 @@
---- tcpshow.c.orig	Sat Aug 26 16:31:34 2000
-+++ tcpshow.c	Sat Aug 26 18:36:52 2000
-@@ -357,17 +357,19 @@
- typedef unsigned short uint2;
- typedef unsigned int uint4;
- typedef unsigned char uchar;
--
--
-+ 
-+ 
+--- tcpshow.c.orig	Fri Mar 23 12:10:23 2001
++++ tcpshow.c	Fri Mar 23 16:53:26 2001
+@@ -362,12 +362,14 @@
  #if !defined(NOETHERNAMES)
  // mr980118 ether_ntohost() and related functions aren't prototyped in the
  // standard include directory.
