@@ -218,6 +218,7 @@
     SUBDIR += icqlib0
     SUBDIR += icqnix
     SUBDIR += ifstat
+    SUBDIR += ifstated
     SUBDIR += imapproxy
     SUBDIR += imcom
     SUBDIR += ip6_int

@@ -1,0 +1,15 @@
+
+This is a port of ifstated(8) from OpenBSD. From the manpage:
+
+***
+The ifstated daemon runs commands in response to network state changes,
+which it determines by monitoring interface link state or running exter-
+nal tests.  For example, it can be used with carp(4) to change running
+services or to ensure that carp(4) interfaces stay in sync, or with pf(4)
+to test server or link availability and modify translation or routing
+rules.
+***
+
+It has been modified to use FreeBSD's kqueue/kevent mechanism and sysctl.
+
+Matthew George <mdg@secureworks.net>
