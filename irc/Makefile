@@ -60,6 +60,7 @@
     SUBDIR += pure-xemacs-devel-mule
     SUBDIR += pure-xemacs21-mule
     SUBDIR += py-irclib
+    SUBDIR += py-supybot
     SUBDIR += quirc
     SUBDIR += rbot
     SUBDIR += roxirc
