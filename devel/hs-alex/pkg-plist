@@ -1,0 +1,16 @@
+bin/alex
+%%PORTDOCS%%share/doc/alex/alex.ps
+%%PORTDOCS%%share/doc/alex/alex.pdf
+%%PORTDOCS%%@dirrm share/doc/alex
+share/examples/alex/Alex.hs
+share/examples/alex/Tokens.x
+share/examples/alex/ctx.x
+share/examples/alex/examples.x
+share/examples/alex/lit.lx
+share/examples/alex/makefile
+share/examples/alex/pp.x
+share/examples/alex/state.x
+share/examples/alex/tiny.y
+share/examples/alex/tkns.hs
+share/examples/alex/xscan.x
+@dirrm share/examples/alex
