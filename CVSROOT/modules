@@ -3451,6 +3451,7 @@ lcms		ports/graphics/lcms
 lcrzo		ports/security/lcrzo
 lcrzoex		ports/security/lcrzoex
 ld		src/gnu/usr.bin/ld
+ldapdiff	ports/net/ldapdiff
 ldapsdk		ports/net/ldapsdk
 ldconfig	src/sbin/ldconfig
 ldd		src/usr.bin/ldd
