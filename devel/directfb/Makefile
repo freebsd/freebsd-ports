@@ -50,6 +50,10 @@ MAN5=		directfbrc.5
 BROKEN=		"Does not compile on alpha 5.x"
 .endif
 
+.if ${ARCH} == "ia64"
+BROKEN=		"Hard-codes references to libc_r"
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} -e \
 	's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g'
