@@ -1,0 +1,6 @@
+**********************************************************************
+
+ If you want to build The Fish without the GTK+ UI, use make -DNO_GUI
+ If you prefer to use GTK+ 2.0 instead of 1.2, use make -DWITH_GTK2
+
+**********************************************************************
