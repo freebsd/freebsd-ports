@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
 		http://www.ru.openh323.org/bin/
-DISTFILES=	openh323_1.1beta1.tar.gz \
+DISTFILES=	openh323_1.1beta1${EXTRACT_SUFX} \
 		pwlib_min_1.1pl15.tar.gz
 
 MAINTAINER=	roger@freebsd.org
