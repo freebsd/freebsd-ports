@@ -16,8 +16,10 @@ System/Applications/Preferences.app/Resources/English.lproj/Preferences.gorm
 System/Applications/Preferences.app/Resources/PrefsApp.prefs/Resources/Info-gnustep.plist
 System/Applications/Preferences.app/Resources/PrefsApp.prefs/Resources/PrefsApp.gorm
 System/Applications/Preferences.app/Resources/PrefsApp.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/PrefsApp
+System/Applications/Preferences.app/Resources/PrefsApp.prefs/stamp.make
 System/Applications/Preferences.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Preferences
 System/Applications/Preferences.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/library_paths.openapp
+System/Applications/Preferences.app/stamp.make
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libPrefsModule.so
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libPrefsModule.so.1
 System/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libPrefsModule.so.1.0.0
@@ -25,6 +27,7 @@ System/Library/Frameworks/PrefsModule.framework/Resources
 System/Library/Frameworks/PrefsModule.framework/Versions/A/Headers/PrefsModule.h
 System/Library/Frameworks/PrefsModule.framework/Versions/A/Resources/Info-gnustep.plist
 System/Library/Frameworks/PrefsModule.framework/Versions/A/Resources/Info.plist
+System/Library/Frameworks/PrefsModule.framework/Versions/A/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/PrefsModule
 System/Library/Frameworks/PrefsModule.framework/Versions/A/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libPrefsModule.so
 System/Library/Frameworks/PrefsModule.framework/Versions/A/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libPrefsModule.so.1
 System/Library/Frameworks/PrefsModule.framework/Versions/A/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libPrefsModule.so.1.0.0
@@ -37,6 +40,7 @@ System/Library/Frameworks/PrefsModule.framework/Versions/A/%%GNU_ARCH%%/%%OPSYS%
 System/Library/Preferences/Keyboard.prefs/Resources/Info-gnustep.plist
 System/Library/Preferences/Keyboard.prefs/Resources/Keyboard.gorm
 System/Library/Preferences/Keyboard.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/Keyboard
+System/Library/Preferences/Keyboard.prefs/stamp.make
 @dirrm System/Applications/Preferences.app/Resources/English.lproj
 @dirrm System/Applications/Preferences.app/Resources/PrefsApp.prefs/Resources
 @dirrm System/Applications/Preferences.app/Resources/PrefsApp.prefs/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
