@@ -3,7 +3,7 @@
 # Date created:		18 Mar 1996
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.24 1998/10/09 01:41:15 asami Exp $
+# $Id: Makefile,v 1.25 1998/10/12 16:38:04 jseger Exp $
 #
 
 DISTNAME=	modula-3-3.6
@@ -13,8 +13,6 @@ DISTFILES=
 MAINTAINER=	jdp@polstra.com
 
 DEPENDS=	${PORTSDIR}/lang/modula-3-lib
-
-BROKEN_ELF=	depends on modula-3-lib
 
 WRKSRC=		${WRKDIRPREFIX}${PORTSDIR}/lang/modula-3-lib/work
 NO_CHECKSUM=	yes
