@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	ncftp3
-PORTVERSION=	3.0.1
+PORTVERSION=	3.0.2
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.ncftp.com/ncftp/
 DISTNAME=	ncftp-${PORTVERSION}-src
