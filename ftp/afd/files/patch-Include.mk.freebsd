@@ -1,0 +1,11 @@
+--- Include.mk.freebsd.orig	Sun Jun 10 22:04:23 2001
++++ Include.mk.freebsd	Sun Jun 10 22:03:33 2001
+@@ -7,7 +7,7 @@
+ ARFLAGS              = rsv
+ MMAP_FLAG            = 
+ #COMPILER_FLAGS       = ${WARN_OPTIONS} ${OPTIMIZATION_OPTIONS} ${MMAP_FLAG} -DFREEBSD -D_WITH_SETUID_CHECK
+-COMPILER_FLAGS       = ${WARN_OPTIONS} ${MMAP_FLAG} -DFREEBSD -D_WITH_SETUID_CHECK -g
++COMPILER_FLAGS       = %%CFLAGS%% ${WARN_OPTIONS} ${MMAP_FLAG} -DFREEBSD -D_WITH_SETUID_CHECK
+ #DEBUG_FLAGS          = -D_DEBUG -D_FIFO_DEBUG
+ DEBUG_FLAGS          = 
+ #EFENCE               = -lefence
