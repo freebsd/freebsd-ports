@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.134 1999/06/02 10:25:07 tg Exp $
+# $Id: Makefile,v 1.135 1999/06/10 01:00:28 steve Exp $
 #
 
     SUBDIR += ETHOberonV4
@@ -98,6 +98,7 @@
     SUBDIR += tclX75
     SUBDIR += tclX80
     SUBDIR += tclplugin
+    SUBDIR += tya
     SUBDIR += xpl
     SUBDIR += yorick
 
