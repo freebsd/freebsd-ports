@@ -14,7 +14,8 @@ MASTER_SITES=	ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/${PORTVERSION}/ \
 		ftp://gd.tuwien.ac.at/office/openoffice/${PORTVERSION}/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/ \
 		http://people.freebsd.org/~mbr/distfiles/
-DISTFILES=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z oo_moz095_i386_FreeBSD-4.tar.gz
+DISTFILES=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z \
+		oo_moz1.0RC2_i386_FreeBSD-4.tar.gz
 EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.bz2
 
 MAINTAINER=	mbr@FreeBSD.org
@@ -32,7 +33,7 @@ USE_GMAKE=	yes
 EXTRACT_BEFORE_ARGS_R= -dc
 EXTRACT_AFTER_ARGS_R= | ${TAR} -xf -
 EXTRACT_CMD_R= ${GZIP_CMD}
-EXTRACT_REST=	gpc231.tar.Z oo_moz095_i386_FreeBSD-4.tar.gz
+EXTRACT_REST=	gpc231.tar.Z oo_moz1.0RC2_i386_FreeBSD-4.tar.gz
 
 GCC_VERSION!=	${CC} --version
 JDK13DIR?=      ${LOCALBASE}/jdk1.3.1
@@ -53,7 +54,7 @@ CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 .include <bsd.port.pre.mk>
 
 pre-fetch:
-.if ${GCC_VERSION}!="2.95.2" && ${GCC_VERSION}!="2.95.3"
+.if ${GCC_VERSION}!="2.95.2" && ${GCC_VERSION}!="2.95.3" && ${GCC_VERSION}!="2.95.4"
 	@ ${ECHO}
 	@ ${ECHO} Openoffice requires gcc 2.95.2 or better
 	@ ${ECHO}
