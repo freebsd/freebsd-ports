@@ -7,6 +7,7 @@
 
 PORTNAME=	screem
 PORTVERSION=	0.5.9
+PORTREVISION=	1
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.screem.org/src/
@@ -15,12 +16,13 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	coop9211@uidaho.edu
 
-LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
-		gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
+LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
+		gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
 		gtkhtml-2.0:${PORTSDIR}/www/libgtkhtml \
 		zvt-2.0.0:${PORTSDIR}/x11-toolkits/libzvt \
 		neon.23:${PORTSDIR}/www/neon
 
+BROKEN=		"Requires update to work with libgnomeprint-2-2"
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes

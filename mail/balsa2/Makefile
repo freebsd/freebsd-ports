@@ -7,6 +7,7 @@
 
 PORTNAME=	balsa2
 PORTVERSION=	2.0.6
+PORTREVISION=	1
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://www.theochem.kth.se/~pawsa/balsa/ \
 		ftp://ftp.newton.cx/pub/balsa/
@@ -19,8 +20,8 @@ LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap2 \
 		aspell.15:${PORTSDIR}/textproc/aspell \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		esmtp.6:${PORTSDIR}/mail/libesmtp \
-		gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
-		gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
+		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
+		gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
 		gtkhtml-2.0:${PORTSDIR}/www/libgtkhtml \
 		gdbm.3:${PORTSDIR}/databases/gdbm
 RUN_DEPENDS=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell

@@ -7,13 +7,14 @@
 
 PORTNAME=	gnomemeeting
 PORTVERSION=	0.96.0
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	http://www.gnomemeeting.org/downloads/0.96.0/sources/
 
 MAINTAINER=	roger@FreeBSD.org
 
 LIB_DEPENDS=	ldap.2:${PORTSDIR}/net/openldap2 \
-		gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
+		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
 		bonobo-2.0:${PORTSDIR}/devel/libbonobo
 BUILD_DEPENDS=  ${NONEXISTENT}:${PORTSDIR}/net/openh323:build
 

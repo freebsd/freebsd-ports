@@ -7,14 +7,16 @@
 
 PORTNAME=	gturing
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	ftp://ftp.gnome.org/pub/gnome/sources/gturing/0.1/
 
 MAINTAINER=	rael@vectorstar.net
 
-LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui \
-		gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui
+LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
+		gnomeprintui-2-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui
 
+BROKEN=		"Requires update to work with libgnomeprint-2-2"
 USE_X_PREFIX=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes

@@ -6,6 +6,7 @@
 
 PORTNAME=	gtetrinet
 PORTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.6
@@ -13,7 +14,7 @@ DIST_SUBDIR=	gnome2
 
 MAINTAINER=	flynn@energyhq.homeip.net
 
-LIB_DEPENDS=	gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
+LIB_DEPENDS=	gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes

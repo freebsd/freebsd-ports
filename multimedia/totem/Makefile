@@ -7,13 +7,14 @@
 
 PORTNAME=	totem
 PORTVERSION=	0.90.0
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.hadess.net/files/software/totem/
 
 MAINTAINER=	hendrik@scholz.net
 
 LIB_DEPENDS=	xine.3:${PORTSDIR}/graphics/libxine \
-		gnomeui-2.0:${PORTSDIR}/x11-toolkits/libgnomeui
+		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 
 USE_X_PREFIX=	yes
 USE_GNOMENG=	yes
