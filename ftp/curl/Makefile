@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	curl
-PORTVERSION=	7.12.0
+PORTVERSION=	7.12.1
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		${MASTER_SITE_SOURCEFORGE} \
@@ -20,8 +20,8 @@ COMMENT=	Non-interactive tool to get files from FTP, GOPHER, HTTP(S) servers
 
 MAN1=		curl.1 curl-config.1
 MAN3=		curl_easy_cleanup.3 curl_easy_duphandle.3 curl_easy_getinfo.3 \
-		curl_easy_init.3 curl_easy_perform.3 curl_easy_setopt.3 \
-		curl_easy_strerror.3 \
+		curl_easy_init.3 curl_easy_perform.3 curl_easy_reset.3 \
+		curl_easy_setopt.3 curl_easy_strerror.3 \
 		curl_escape.3 curl_unescape.3 \
 		curl_formadd.3 curl_formfree.3 \
 		curl_free.3 \
@@ -38,7 +38,7 @@ MAN3=		curl_easy_cleanup.3 curl_easy_duphandle.3 curl_easy_getinfo.3 \
 		curl_strequal.3 \
 		curl_version.3 curl_version_info.3 \
 		libcurl.3 libcurl-easy.3 libcurl-errors.3 libcurl-multi.3 \
-		libcurl-share.3
+		libcurl-share.3 libcurl-tutorial.3
 
 INSTALLS_SHLIB=	yes
 SHLIB_VER=	3
