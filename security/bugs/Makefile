@@ -6,13 +6,13 @@
 #
 
 PORTNAME=		bugs
-PORTVERSION=		1.8.1
+PORTVERSION=		2.0.1
 CATEGORIES=		security
-MASTER_SITES=		${MASTER_SITE_SUNSITE} \
-			http://www.asi.fr/~martinez/crypto/
-MASTER_SITE_SUBDIR=	apps/crypto
+MASTER_SITES=		http://www.asi.fr/~martinez/crypto/ \
+			${MASTER_SITE_SUNSITE}
+EXTRACT_SUFX=		.tgz
 
-MAINTAINER=		stephane@lituus.fr
+MAINTAINER=		stephane.legrand@bigfoot.com
 
 USE_GMAKE=		yes
 
