@@ -6,10 +6,6 @@ bin/diff-hist
 %%SITE_PERL%%/VCS/Cvs/Version.pm
 %%SITE_PERL%%/VCS/Dir.pm
 %%SITE_PERL%%/VCS/File.pm
-%%SITE_PERL%%/VCS/Hms.pm
-%%SITE_PERL%%/VCS/Hms/Dir.pm
-%%SITE_PERL%%/VCS/Hms/File.pm
-%%SITE_PERL%%/VCS/Hms/Version.pm
 %%SITE_PERL%%/VCS/Rcs.pm
 %%SITE_PERL%%/VCS/Rcs/Dir.pm
 %%SITE_PERL%%/VCS/Rcs/File.pm
@@ -18,7 +14,6 @@ bin/diff-hist
 %%SITE_PERL%%/VCS_dev.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/VCS/.packlist
 @dirrm %%SITE_PERL%%/VCS/Rcs
-@dirrm %%SITE_PERL%%/VCS/Hms
 @dirrm %%SITE_PERL%%/VCS/Cvs
 @unexec rmdir %D/%%SITE_PERL%%/VCS 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/VCS 2>/dev/null || true
