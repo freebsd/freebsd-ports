@@ -1,4 +1,7 @@
 bin/pychecker.sh
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/CodeChecks.py
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/CodeChecks.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/CodeChecks.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/Config.py
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/Config.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/Config.pyo
@@ -8,6 +11,9 @@ lib/%%PYTHON_VERSION%%/site-packages/pychecker/OP.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/Stack.py
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/Stack.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/Stack.pyo
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/Warning.py
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/Warning.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/Warning.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/__init__.py
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/__init__.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/__init__.pyo
@@ -17,9 +23,15 @@ lib/%%PYTHON_VERSION%%/site-packages/pychecker/checker.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/function.py
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/function.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/function.pyo
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/msgs.py
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/msgs.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/msgs.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/printer.py
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/printer.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/printer.pyo
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/utils.py
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/utils.pyc
+lib/%%PYTHON_VERSION%%/site-packages/pychecker/utils.pyo
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/warn.py
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/warn.pyc
 lib/%%PYTHON_VERSION%%/site-packages/pychecker/warn.pyo
