@@ -8,7 +8,9 @@
 PORTNAME=	libggi
 PORTVERSION=	2.0.3
 CATEGORIES=	graphics devel
-MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/v2.0/
+MASTER_SITES=	ftp://ftp.ggi-project.org/pub/ggi/ggi/v2.0/ \
+		${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	ggi
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org
@@ -22,7 +24,11 @@ INSTALLS_SHLIB=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gii=${PREFIX}
-WRKSRC=         ${WRKDIR}/${PORTNAME}-${PORTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+.if exists(/usr/include/kgi/kgi.h)
+CONFIGURE_ARGS+=	--enable-kgi
+.endif
 
 MAN1=		cube3d.1 ggiteleserver.1 monitest.1
 MAN3=		ggiCopyBox.3 ggiCrossBlit.3 ggiDBGetBuffer.3 \
