@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.hungry.com/pub/hungry/viewkit/ \
 MASTER_SITE_SUBDIR=	fenner
 DISTNAME=       libvk-Apr19-2243
 
-MAINTAINER=	peterho@ned.dem.csiro.au
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ViewKit workalike from Hungry Programmers
 
 WANT_AUTOCONF_VER=	253
