@@ -14,6 +14,7 @@ MASTER_SITES=	http://josefsson.org/${PORTNME}/releases/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library that implement Microsoft's NTLM authentication
 
+USE_GNOME=	gnomehack
 USE_LIBTOOL=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
