@@ -22,6 +22,18 @@
 %%SITE_PERL%%/MIME/Words.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME-tools/.packlist
 %%SITE_PERL%%/set-version.pl
+%%PORTDOCS%%%%EXAMPLESDIR%%/README
+%%PORTDOCS%%%%EXAMPLESDIR%%/mimeabuse
+%%PORTDOCS%%%%EXAMPLESDIR%%/mimedump
+%%PORTDOCS%%%%EXAMPLESDIR%%/mimeencode
+%%PORTDOCS%%%%EXAMPLESDIR%%/mimeexplode
+%%PORTDOCS%%%%EXAMPLESDIR%%/mimepostcard
+%%PORTDOCS%%%%EXAMPLESDIR%%/mimeprint
+%%PORTDOCS%%%%EXAMPLESDIR%%/mimeref
+%%PORTDOCS%%%%EXAMPLESDIR%%/mimesend
+%%PORTDOCS%%%%EXAMPLESDIR%%/mimesender
+%%PORTDOCS%%%%EXAMPLESDIR%%/mimetour
+%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME-tools
 @dirrm %%SITE_PERL%%/MIME/Field
 @dirrm %%SITE_PERL%%/MIME/Decoder
