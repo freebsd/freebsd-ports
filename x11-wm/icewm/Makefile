@@ -41,12 +41,6 @@ USE_XPM=	yes
 CONFIGURE_ARGS+=	--without-imlib --with-xpm --without-gnome-menus
 .endif
 
-.if defined(NOPORTDOCS)
-PLIST_SUB+=	NODOCS:="@comment "
-.else
-PLIST_SUB+=	NODOCS:=""
-.endif
-
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/bsd-daemon.xpm ${PREFIX}/share/icewm/taskbar
 .if !defined(NOPORTDOCS)
