@@ -198,7 +198,7 @@ pre-install:
 .endif
 .endif
 .if !defined(NOCRYPT)
-	@if ! ${LDCONFIG} -r | ${GREP} -q -e "mcrypt.6"; then \
+	@if ! ${LDCONFIG} -r | ${GREP} -q -e "mcrypt.7"; then \
 	    ${ECHO_MSG} "" ; \
 	    ${ECHO_MSG} "Please configure PHP with mcrypt support." ; \
 	    ${ECHO_MSG} "" ; \
