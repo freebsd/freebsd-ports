@@ -1,0 +1,8 @@
+--- AdaSDL_mixer/make.conf_x11.orig	Wed Apr 11 03:36:31 2001
++++ AdaSDL_mixer/make.conf_x11	Sat Dec 21 02:19:56 2002
+@@ -1,4 +1,4 @@
+ #LIBS= -L/usr/lib -L/usr/local/lib ~/lib -Wl,-rpath,. -lSDL -lpthread -L/usr/lib -lGL -lGLU
+-LIBS= -L/usr/lib -L/usr/local/lib -L~/lib  -lSDL_mixer -lSDL -lpthread -lGL -lGLU
++LIBS= -L/usr/lib -L${LOCALBASE}/lib -L${X11BASE}/lib -L~/lib  -lSDL_mixer -lSDL-1.1 -pthread -lGL -lGLU
+ 
+ EXE=

@@ -1,0 +1,12 @@
+--- AdaSDL_framebuff/sdltests/Makefile.orig	Mon Apr 16 16:48:38 2001
++++ AdaSDL_framebuff/sdltests/Makefile	Sat Dec 21 13:13:57 2002
+@@ -1,6 +1,7 @@
+ 
+-INC+=-I../../AdaSDL/binding -I../../AdaGL/GL -I..
+-include ../make.conf
++LIBS= -L/usr/lib -L${LOCALBASE}/lib -L${X11BASE}/lib -L~/lib  -lSDL_mixer -lSDL-1.1 -pthread -lGL -lGLU
++
++INC+=-I${LOCALBASE}/lib/adaSDL -I${LOCALBASE}/lib/adaGL -I..
+ 
+ %:%.adb
+ 	gnatmake -O3 -gnaty3abcefhiklmprM90 -gnatnfvU $<\

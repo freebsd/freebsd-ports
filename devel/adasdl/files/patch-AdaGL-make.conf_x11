@@ -1,0 +1,9 @@
+--- AdaGL/make.conf_x11.orig	Wed Apr 11 03:21:25 2001
++++ AdaGL/make.conf_x11	Sat Dec 21 02:14:51 2002
+@@ -1,5 +1,5 @@
+ #LIBS= -L/usr/lib -L/usr/local/lib ~/lib -Wl,-rpath,. -lpthread -L/usr/lib -lGL -lGLU
+-LIBS= -L/usr/lib -L/usr/local/lib -L~/lib -lGL -lGLU
++LIBS= -L/usr/lib -L${LOCALBASE}/lib -L${X11BASE}/lib -L~/lib -lXext -lX11 -lGL -lGLU
+ GNATHTML=/usr/local/bin/gnathtml.pl
+ PERL=/usr/bin/perl
+ 
