@@ -9,7 +9,7 @@ PORTNAME=	fget
 PORTVERSION=	1.2.9
 PORTREVISION=	1
 CATEGORIES=	ftp www
-MASTER_SITES=	ftp://ftp-dev.cso.uiuc.edu/pub/fget/
+MASTER_SITES=	ftp://ftp.feep.net/pub/software/fget/
 
 MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A commandline tool for mirroring remote files via FTP
