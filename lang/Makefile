@@ -55,7 +55,6 @@
     SUBDIR += mawk
     SUBDIR += mit-scheme
     SUBDIR += mixal
-    SUBDIR += mocka
     SUBDIR += modula-3
     SUBDIR += modula-3-lib
     SUBDIR += modula-3-socks
