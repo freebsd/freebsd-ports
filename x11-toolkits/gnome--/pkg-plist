@@ -118,7 +118,8 @@ include/gnome--/stock.h
 include/gnome--/types.h
 lib/libgnomemm.a
 lib/libgnomemm.so
-lib/libgnomemm.so.9
+lib/libgnomemm-1.2.so
+lib/libgnomemm-1.2.so.10
 share/aclocal/gnome--.m4
 @dirrm include/gnome--/private
 @dirrm include/gnome--
