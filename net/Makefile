@@ -149,6 +149,7 @@
     SUBDIR += lambdamoo
     SUBDIR += ldapmodule
     SUBDIR += ldapsdk
+    SUBDIR += libfreenet
     SUBDIR += libicq
     SUBDIR += libnet
     SUBDIR += libnids

@@ -1,0 +1,16 @@
+bin/testclient
+bin/testserver
+include/libfreenet/base64.h
+include/libfreenet/client.h
+include/libfreenet/client_util.h
+include/libfreenet/config.h
+include/libfreenet/endtoend.h
+include/libfreenet/protocol.h
+include/libfreenet/rijndael-alg-fst.h
+include/libfreenet/rijndael-api-fst.h
+include/libfreenet/twofish.h
+include/libfreenet/uri.h
+include/libfreenet/util.h
+lib/libfreenet.a
+lib/libfreenet.so
+lib/libfreenet.so.0

@@ -1,0 +1,6 @@
+libfreenet is a Freenet library written in C. Right now it supports basic
+client functionality, as well as a lower-level API for sending and
+receiving messages over a Freenet connection. It's currently very much
+hackerware -- it might explode at any moment, so approach it with caution. 
+
+WWW: http://thalassocracy.org/libfreenet/
