@@ -1,0 +1,6 @@
+****************************************************************************
+Copy /usr/local/share/examples/gn-gnspool/_gnrc to ~/.gnrc and specify your
+domain name, server name and other user specific information.
+
+Documentation is available in /usr/local/share/doc/gn-gnspool/.
+****************************************************************************

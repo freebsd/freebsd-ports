@@ -1,0 +1,11 @@
+DOMAINNAME	your-domainname
+NNTPSERVER	your-nntp-server
+SMTPSERVER	your-smtp-server
+ORGANIZATION	your-organization
+PAGER 	 	your-pager
+EDITOR		your-editor
+NEWSSPOOL ~/gnspool
+NEWSLIB	~/gnspool/lib
+#WITH_GNSPOOL	ON
+#UNSUBSCRIBE	alt, comp
+

@@ -1,0 +1,30 @@
+*** smtp.c.orig	Mon May 27 21:04:14 1996
+--- smtp.c	Thu Feb  6 05:10:18 1997
+***************
+*** 318,329 ****
+        if ( smtp_get_resp(220) )
+  	return(ERROR);
+      }
+!   }  
+!   sprintf(resp,"helo %s",gn.hostname);
+!   if ( smtp_put_server(resp) != CONT )
+!     return(ERROR);
+!   if ( smtp_get_resp(250) )
+!     return(ERROR);
+    
+    sprintf( resp, "mail from: <%s>", gn.usrname);
+    if ( smtp_put_server( resp ) != CONT )
+--- 318,330 ----
+        if ( smtp_get_resp(220) )
+  	return(ERROR);
+      }
+! 
+!     sprintf(resp,"helo %s",gn.hostname);
+!     if ( smtp_put_server(resp) != CONT )
+!       return(ERROR);
+!     if ( smtp_get_resp(250) )
+!       return(ERROR);
+!   }
+    
+    sprintf( resp, "mail from: <%s>", gn.usrname);
+    if ( smtp_put_server( resp ) != CONT )
