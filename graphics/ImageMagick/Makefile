@@ -40,6 +40,7 @@ LIB_DEPENDS=	fpx.1:${PORTSDIR}/graphics/libfpx \
 		png.5:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		freetype.9:${PORTSDIR}/print/freetype2 \
+		wmf.2:${PORTSDIR}/graphics/libwmf \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 .if !exists(/usr/bin/bzip2)
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
@@ -106,11 +107,10 @@ CONFIGURE_ARGS+=	--with-hdf
 PKGNAMESUFFIX+=	-nox11
 BUILD_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu-nox11
 RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu-nox11
-CONFIGURE_ARGS+=	--without-x --without-mpeg2 --without-wmf
+CONFIGURE_ARGS+=	--without-x --without-mpeg2
 PLIST_SUB+=	X11='@comment '
 .else
-LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/graphics/libmpeg2 \
-		wmf.2:${PORTSDIR}/graphics/libwmf
+LIB_DEPENDS+=	mpeg2.0:${PORTSDIR}/graphics/libmpeg2
 BUILD_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu
 RUN_DEPENDS+=	gs:${PORTSDIR}/print/ghostscript-gnu
 USE_XLIB=	yes
