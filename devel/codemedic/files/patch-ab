@@ -1,0 +1,53 @@
+--- programs/code_medic/Make.header.orig	Tue Jun 13 00:38:13 2000
++++ programs/code_medic/Make.header	Tue Jun 13 00:39:34 2000
+@@ -24,7 +24,7 @@
+ 
+ # Directories to search for header files
+ 
+-SEARCHDIRS := -I- \
++SEARCHDIRS = -I- \
+               -I${CODEDIR} \
+               -I${TREEDIR} \
+               -I${VARTREEDIR} \
+@@ -39,7 +39,8 @@
+               -I${JSEARCHDIR} \
+               -I${JCOREDIR}\
+               -I${JXDIR}\
+-              -I${ACE_ROOT}
++              -I${ACE_ROOT} \
++		${J_X11_INCLUDE_DIR}
+ 
+ # other constants
+ 
+@@ -57,13 +58,6 @@
+ 
+ # library dependencies
+ 
+-ifdef J_BUILD_SHARED_LIB
+-  LIB_DEPS := ${JLIBDIR}/libjtree-${JTREE_LIB_VERSION}.so \
+-              ${JLIBDIR}/libjsearch-${JSEARCH_LIB_VERSION}.so
+-else
+-  LIB_DEPS := ${JLIBDIR}/libjtree-${JTREE_LIB_VERSION}.a \
+-              ${JLIBDIR}/libjsearch-${JSEARCH_LIB_VERSION}.a
+-endif
+ 
+ # make variables
+ 
+@@ -85,7 +79,7 @@
+ #####
+ 
+ .PHONY : default
+-default: libs medic
++default: medic
+ 
+ .PHONY : Makefiles
+ Makefiles:
+@@ -121,7 +115,7 @@
+ #
+ 
+ .PHONY : jxinstall
+-jxinstall: medic
++jxinstall_not: medic
+ 	@strip medic
+ 	@mv medic ${JX_INSTALL_ROOT}/
+ 

@@ -35,6 +35,7 @@
     SUBDIR += cflow
     SUBDIR += clig
     SUBDIR += codecrusader
+    SUBDIR += codemedic
     SUBDIR += commoncpp
     SUBDIR += cons
     SUBDIR += cons-test
