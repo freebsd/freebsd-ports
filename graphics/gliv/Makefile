@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gliv
-PORTVERSION=	1.8.4
-PORTREVISION=	1
+PORTVERSION=	1.9
 CATEGORIES=	graphics
 MASTER_SITES=	http://guichaz.free.fr/gliv/
 
@@ -28,6 +27,7 @@ MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
 MAN1=		gliv.1
+MANLANG=	"" de fr ru
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib

@@ -1,14 +1,6 @@
---- src/collection.c.orig	Thu Jul 29 06:40:56 2004
-+++ src/collection.c	Thu Sep 30 20:46:04 2004
-@@ -77,6 +77,7 @@
-  * are '\0' terminated strings representing decimal numbers.
-  */
- 
-+#include <sys/types.h>
- #include <sys/mman.h>           /* mmap(), PROT_READ, MAP_PRIVATE, ... */
- #include <stdio.h>              /* FILE, fopen(), fread(), fwrite(), ... */
- #include <string.h>             /* strlen(), strrchr() */
-@@ -638,8 +639,8 @@
+--- src/collection.c.orig	Mon Dec 20 08:16:25 2004
++++ src/collection.c	Sat Dec 25 23:01:11 2004
+@@ -713,8 +713,8 @@
              guchar *base;
              guchar *ptr;
              guchar *end;
@@ -19,7 +11,7 @@
  };
  
  static void free_buffer(struct coll_src *source, guchar * buffer)
-@@ -655,16 +656,16 @@
+@@ -730,16 +730,16 @@
  
      if (source->is_file) {
          data = g_new(guchar, length);
@@ -40,7 +32,7 @@
      }
  
      if (is_string && data[length - 1] != '\0') {
-@@ -678,12 +679,12 @@
+@@ -753,12 +753,12 @@
  static gint read_char(struct coll_src *source)
  {
      if (source->is_file)
@@ -56,7 +48,7 @@
  }
  
  static GdkPixbufDestroyNotify destroy_func(struct coll_src *source)
-@@ -855,22 +856,22 @@
+@@ -930,22 +930,22 @@
          goto no_mmap;
      }
  
@@ -84,7 +76,7 @@
  
    ok:
      return source;
-@@ -879,7 +880,7 @@
+@@ -954,7 +954,7 @@
  static void destroy_source(struct coll_src *source, gboolean ok)
  {
      if (ok == FALSE && source->is_file == FALSE)
