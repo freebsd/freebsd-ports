@@ -399,7 +399,6 @@ editors/gedit||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 x11-wm/sawfish||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 audio/gnomemedia||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 sysutils/gtop||2003-07-15|removed as part of GNOME 1.4 desktop phase out
-devel/libgtop||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 x11-fm/nautilus||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 devel/bugbuddy||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 audio/gnomeaudio||2003-07-15|removed as part of GNOME 1.4 desktop phase out
@@ -408,4 +407,5 @@ misc/gnomeutils||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 misc/gnomeuserdocs||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 graphics/eog||2003-07-15|removed as part of GNOME 1.4 desktop phase out
 print/ggv||2003-07-15|removed as part of GNOME 1.4 desktop phase out
-
+x11-wm/spager||2003-07-15|removed as it depends on sawfish
+mail/gtkgrepmail||2003-07-15|removed as it depends on gnomecore
