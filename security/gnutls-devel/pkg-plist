@@ -36,3 +36,4 @@ share/examples/gnutls/ex-serv-export.c
 share/examples/gnutls/ex-serv-pgp.c
 share/examples/gnutls/ex-serv-srp.c
 share/examples/gnutls/ex-serv1.c
+@dirrm share/examples/gnutls
