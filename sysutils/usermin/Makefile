@@ -35,26 +35,26 @@ post-extract:
 			${TAR} --unlink -xzf ${DISTDIR}/$${usermin_module} -C ${WRKSRC}; \
 		done; \
 	fi
-	@find ${WRKSRC} -name "*.bak" | ${XARGS} ${RM}
+	@${FIND} ${WRKSRC} -name "*.bak" | ${XARGS} ${RM}
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/usermin
 	@${CP} -r ${WRKSRC}/* ${PREFIX}/lib/usermin
-	@cd ${PREFIX}/lib/usermin && find . -name "*.orig" -print \
+	@cd ${PREFIX}/lib/usermin && ${FIND} . -name "*.orig" -print \
 		| ${XARGS} ${RM}
 # we may have 2 levels of empty directories which cause the plist generation
 # system to fail
-	@cd ${PREFIX}/lib/usermin && find . -type d -empty -print \
+	@cd ${PREFIX}/lib/usermin && ${FIND} . -type d -empty -print \
 		| ${XARGS} ${RMDIR}
-	@cd ${PREFIX}/lib/usermin && find . -type d -empty -print \
+	@cd ${PREFIX}/lib/usermin && ${FIND} . -type d -empty -print \
 		| ${XARGS} ${RMDIR}
 	@${CP} ${WRKDIR}/usermin.sh ${PREFIX}/etc/rc.d/usermin.sh-dist
 	@${CHMOD} 554 ${PREFIX}/etc/rc.d/usermin.sh-dist
 
 post-install:
-	@cd ${PREFIX} ; find lib/usermin -type f -o -type l | sort \
+	@cd ${PREFIX} ; ${FIND} lib/usermin -type f -o -type l | sort \
 		> ${WRKDIR}/PLIST.lib-usermin
-	@cd ${PREFIX} ; find lib/usermin -type d | sort -r \
+	@cd ${PREFIX} ; ${FIND} lib/usermin -type d | sort -r \
 		| ${SED} -e 's/^/@dirrm /g' \
 		>> ${WRKDIR}/PLIST.lib-usermin
 
