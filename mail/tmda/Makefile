@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tmda
-PORTVERSION=	0.63
+PORTVERSION=	0.64
 CATEGORIES=	mail python
 MASTER_SITES=	http://tmda.net/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
@@ -34,7 +34,7 @@ do-install:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/contrib ${DOCSDIR}/htdocs
-.for f in COPYING CRYPTO ChangeLog INSTALL README THANKS UPGRADE
+.for f in CODENAMES COPYING CRYPTO ChangeLog INSTALL README THANKS UPGRADE
 	@${INSTALL_DATA} ${WRKSRC}/$f ${DOCSDIR}
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/contrib/* ${DOCSDIR}/contrib
