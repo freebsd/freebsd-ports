@@ -1,5 +1,5 @@
---- src/x86/sysv.S.orig	Tue Feb 24 19:49:51 1998
-+++ src/x86/sysv.S	Tue Oct 13 22:28:56 1998
+--- src/x86/sysv.S.orig	Mon Oct  5 16:36:28 1998
++++ src/x86/sysv.S	Sat Oct 24 00:56:07 1998
 @@ -33,7 +33,7 @@
  .globl ffi_prep_args
  
