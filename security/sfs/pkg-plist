@@ -175,3 +175,4 @@ share/sfs/sfsauthd_config
 share/sfs/sfscd_config
 share/sfs/sfssd_config
 @dirrm share/sfs
+@dirrm etc/sfs
