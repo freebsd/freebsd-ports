@@ -1,0 +1,22 @@
+%%ZOPEBASEDIR%%/import/navigator_demo.zexp
+%%ZOPEBASEDIR%%/lib/python/Products/ZNavigator/addNavigator.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/ZNavigator/addNavItem.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/ZNavigator/ChangeLog
+%%ZOPEBASEDIR%%/lib/python/Products/ZNavigator/COPYING
+%%ZOPEBASEDIR%%/lib/python/Products/ZNavigator/helpNavigator.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/ZNavigator/helpNavItem.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/ZNavigator/navitem.gif
+%%ZOPEBASEDIR%%/lib/python/Products/ZNavigator/__init__.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZNavigator/INSTALL
+%%ZOPEBASEDIR%%/lib/python/Products/ZNavigator/manageNavigator.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/ZNavigator/manageNavItem.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/ZNavigator/miscPropertyForm.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/ZNavigator/navigator.gif
+%%ZOPEBASEDIR%%/lib/python/Products/ZNavigator/README
+%%ZOPEBASEDIR%%/lib/python/Products/ZNavigator/render.dtml
+%%ZOPEBASEDIR%%/lib/python/Products/ZNavigator/version.txt
+%%ZOPEBASEDIR%%/lib/python/Products/ZNavigator/ZNavigator.py
+%%ZOPEBASEDIR%%/lib/python/Products/ZNavigator/demo/navigator_demo.zexp
+@unexec rm %D/%%ZOPEBASEDIR%%/lib/python/Products/ZNavigator/*.pyc 2> /dev/null || /usr/bin/true
+@unexec rmdir %D/%%ZOPEBASEDIR%%/lib/python/Products/ZNavigator/demo
+@unexec rmdir %D/%%ZOPEBASEDIR%%/lib/python/Products/ZNavigator

@@ -192,6 +192,7 @@
     SUBDIR += wwwstat
     SUBDIR += xitami
     SUBDIR += xswallow
+    SUBDIR += znavigator
     SUBDIR += zope
 
 .include <bsd.port.subdir.mk>

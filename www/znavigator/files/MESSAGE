@@ -1,0 +1,10 @@
+ZNavigator
+
+	This port has placed a ZNavigator demo in your Zope import
+	directory %%PREFIX%%/Zope/import/ with the following file:
+
+	navigator_demo.zexp
+
+	This is a demo.  You can't add the demo as the Zope superuser;
+	add it as your Zope user instead.  The demo is not required for
+	use of ZNavigator.
