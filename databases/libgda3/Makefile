@@ -40,7 +40,7 @@ PLIST_SUB=	MYSQL="@comment "
 .endif
 
 .if defined(WITH_POSTGRES)
-LIB_DEPENDS+=	pq.2:${PORTSDIR}/databases/postgres7
+LIB_DEPENDS+=	pq.2:${PORTSDIR}/databases/postgresql7
 CONFIGURE_ARGS+=	--with-postgres=${LOCALBASE}
 PLIST_SUB+=	POSTGRES=""
 .else
