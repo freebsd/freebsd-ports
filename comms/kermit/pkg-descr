@@ -5,4 +5,6 @@ This is a release of C-Kermit 5A edit 189 file transfer protocol utility.
 This version supports transfer of un-escaped control characters for
 very fast file transfers with high reliability.
 
-(binaries)
+Note: the setgid to dialer is intentionally disabled in this port for
+security reasons.  If you want a non-root user to be able to dial out,
+we recommend putting the user's uid in group "dialer".

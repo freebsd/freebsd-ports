@@ -11,12 +11,11 @@ CATEGORIES+=	comms
 MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
 		ftp://ftp.th-darmstadt.de/pub/networking/kermit/ \
 		ftp://ftp.std.com/customers2/src/telcom/
-		      
-EXTRACT_SUFX=	.tar.gz
 
 NO_WRKSUBDIR=	yes
+NO_PACKAGE=	yes # "no redistibution" copyright
 
-# We can't distribute the binary because of the copyright.
-NO_PACKAGE=	yes
+post-install:
+	@cat ${PKGDIR}/DESCR
 
 .include <bsd.port.mk>
