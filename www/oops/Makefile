@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${OOPSVERSION}
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	A caching web proxy server
 
+FORBIDDEN=	"Changes ownership of ${PREFIX}/sbin"
+
 BUILD_DEPENDS+=	gawk:${PORTSDIR}/lang/gawk
 
 OOPSVERSION=	1.5.23
