@@ -3,4 +3,4 @@ you have installed it, you can run any (well, nearly any) existing
 gtk+ binary and see anti-aliased fonts in the gtk widgets.  You don't
 need to recompile gtk+ or your applications.
 
-WWW: http://philrsss.anu.edu.au/~josh/gdkxft/
+WWW: http://gdkxft.sourceforge.net/
