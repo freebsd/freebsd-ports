@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmcrypt
-PORTVERSION= 	2.2.4
+PORTVERSION=	2.2.4
 CATEGORIES=	security
 MASTER_SITES=	ftp://argeas.cs-net.gr/pub/unix/mcrypt/ \
 		ftp://ftp.internat.freebsd.org/pub/FreeBSD/distfiles/

@@ -9,7 +9,7 @@
 #
 
 PORTNAME=	ssh
-PORTVERSION= 	1.2.27
+PORTVERSION=	1.2.27
 CATEGORIES=	security net ipv6
 MASTER_SITES=	ftp://ftp.cs.hut.fi/pub/ssh/
 
@@ -30,7 +30,7 @@ MASTER_SITES+=	\
 
 CONFIGURE_ARGS+= --with-rsaref
 LIB_DEPENDS+=	rsaref.2:${PORTSDIR}/security/rsaref
-BUILD_DEPENDS+= /nonexistent:${PORTSDIR}/security/rsaref:extract
+BUILD_DEPENDS+=	/nonexistent:${PORTSDIR}/security/rsaref:extract
 .endif
 
 RESTRICTED=	"Crypto; export-controlled"
@@ -149,7 +149,7 @@ CONFIGURE_ARGS+= --with-socks="-L${PREFIX}/lib -lsocks5" --with-socks5
 .if defined(WITH_X11) || (exists(${X11BASE}/lib/libX11.a) \
     && !defined(WITHOUT_X11))
 USE_XLIB=	yes
-PLIST:=         ${WRKDIR}/PLIST
+PLIST:=		${WRKDIR}/PLIST
 pre-install:
 	@${CAT} ${PKGDIR}/PLIST.X11 > ${PLIST}
 	@${CAT} ${PKGDIR}/PLIST >> ${PLIST}

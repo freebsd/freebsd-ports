@@ -6,17 +6,17 @@
 #
 
 # Pick an initial default, else it doesn't get set in the INDEX.
-DISTNAME=	pgp262s
 CATEGORIES=	security
+DISTNAME=	pgp262s
 
 MAINTAINER=	ache@FreeBSD.org
 
 # Need to define USA_RESIDENT to YES or NO
 IS_INTERACTIVE=	YES
-RESTRICTED=     "Crypto"
-MAKEFILE=       makefile
-ALL_TARGET=     freebsd-${MACHINE_ARCH} OS_CFLAGS="${CFLAGS}"
-PGPLIB=         ${PREFIX}/lib/pgp
+RESTRICTED=	"Crypto"
+MAKEFILE=	makefile
+ALL_TARGET=	freebsd-${MACHINE_ARCH} OS_CFLAGS="${CFLAGS}"
+PGPLIB=		${PREFIX}/lib/pgp
 MAN1=		pgp.1
 
 do-install:
@@ -44,16 +44,16 @@ pre-fetch:
 .if ${USA_RESIDENT} == YES
 PORTNAME=	pgp
 PORTVERSION=	2.6.2
-MASTER_SITES=   ftp://utopia.hacktic.nl/pub/replay/pub/pgp/unix/ \
+MASTER_SITES=	ftp://utopia.hacktic.nl/pub/replay/pub/pgp/unix/ \
 		ftp://sable.ox.ac.uk/pub/crypto/pgp/unix/
 DISTNAME=	pgp262s
 
-WRKSRC=         ${WRKDIR}/src
-BUILD_DEPENDS+= gmake:${PORTSDIR}/devel/gmake
-LIB_DEPENDS+=   rsaref.2:${PORTSDIR}/security/rsaref
+WRKSRC=		${WRKDIR}/src
+BUILD_DEPENDS+=	gmake:${PORTSDIR}/devel/gmake
+LIB_DEPENDS+=	rsaref.2:${PORTSDIR}/security/rsaref
 USE_ZIP=	yes
-FILESDIR=       ${.CURDIR}/files.usa
-PATCHDIR=       ${.CURDIR}/patches.usa
+FILESDIR=	${.CURDIR}/files.usa
+PATCHDIR=	${.CURDIR}/patches.usa
 
 post-extract:
 	cd ${WRKDIR}; $(EXTRACT_CMD) $(EXTRACT_BEFORE_ARGS) -aa $(DISTNAME)i \
@@ -61,15 +61,15 @@ post-extract:
 	cd ${WRKDIR}; ${RM} -f *.zip
 
 .else
-PORTNAME=	pgp	
+PORTNAME=	pgp
 PORTVERSION=	2.6.3ia
-MASTER_SITES=   ftp://ftp.ifi.uio.no/pub/pgp/2.x/src/ \
+MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/pgp/2.x/src/ \
 		ftp://ftp.kiarchive.ru/pub/unix/crypto/pgp/
 DISTNAME=	pgp263is
 
-WRKSRC=         ${WRKDIR}/src
-FILESDIR=       ${.CURDIR}/files.non_usa
-PATCHDIR=       ${.CURDIR}/patches.non_usa
+WRKSRC=		${WRKDIR}/src
+FILESDIR=	${.CURDIR}/files.non_usa
+PATCHDIR=	${.CURDIR}/patches.non_usa
 
 post-extract:
 	cd ${WRKDIR}; $(TAR) -xf pgp263ii.tar; \

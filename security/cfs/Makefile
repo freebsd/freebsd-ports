@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cfs
-PORTVERSION= 	1.3.3.1
+PORTVERSION=	1.3.3.1
 CATEGORIES=	security
-MASTER_SITES=   ftp://ftp.hacktic.nl/pub/crypto/disk/ \
+MASTER_SITES=	ftp://ftp.hacktic.nl/pub/crypto/disk/ \
 		ftp://ftp.uni-bielefeld.de/pub/crypto/replay/disk/
 DISTNAME=	cfs-1.3.3bf
 

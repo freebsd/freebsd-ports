@@ -13,7 +13,7 @@ DISTNAME=	keynote-2-beta4
 
 MAINTAINER=	se@FreeBSD.org
 
-USE_OPENSSL=   RSA
+USE_OPENSSL=	RSA
 
 WRKSRC=		${WRKDIR}/KeyNote-2-beta4
 

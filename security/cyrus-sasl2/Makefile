@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cyrus-sasl
-PORTVERSION=	1.5.15	
+PORTVERSION=	1.5.15
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/ \
 		http://people.FreeBSD.org/~stb/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
@@ -18,7 +18,7 @@ USE_OPENSSL=	NORSA
 
 .include <bsd.port.pre.mk>
 
-SASL_VER=	${PORTVERSION} #note, may not be needed any more	
+SASL_VER=	${PORTVERSION} #note, may not be needed any more
 
 Y2K=		http://asg.web.cmu.edu/cyrus/imapd/y2k.html
 
@@ -27,8 +27,7 @@ MAN8=		saslpasswd.8
 
 USE_AUTOCONF=	YES
 USE_LIBTOOL=	YES
-CONFIGURE_ARGS= \
-		--prefix=${PREFIX} \
+CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--sysconfdir=${PREFIX}/etc \
 		--with-plugindir=${PREFIX}/lib/sasl \
 		--with-dbpath=${PREFIX}/etc/sasldb \

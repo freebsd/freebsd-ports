@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	swatch
-PORTVERSION= 	2.2
+PORTVERSION=	2.2
 CATEGORIES=	security sysutils
 MASTER_SITES=	ftp://ftp.stanford.edu/general/security-tools/swatch/ \
 		ftp://ftp.cert.dfn.de/pub/tools/audit/swatch/

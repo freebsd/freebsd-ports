@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	kmap
-PORTVERSION= 	0.7.1
+PORTVERSION=	0.7.1
 CATEGORIES=	security net
 MASTER_SITES=	http://www.islc.net/~icszepp/downloads/
 

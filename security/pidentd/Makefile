@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pidentd
-PORTVERSION= 	2.8.5
+PORTVERSION=	2.8.5
 CATEGORIES=	security net ipv6
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/ident/servers/ \
 		ftp://ftp.fu-berlin.de/unix/security/ident/servers/
@@ -17,7 +17,7 @@ PATCH_DIST_STRIP=	-p2
 
 MAINTAINER=	torstenb@FreeBSD.org
 
-ALL_TARGET=     freebsd
+ALL_TARGET=	freebsd
 MAKE_ENV=	REALPREFIX=${PREFIX}
 MAN8=		identd.8 idecrypt.8
 

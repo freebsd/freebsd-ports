@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fakebo
-PORTVERSION= 	0.4.1
+PORTVERSION=	0.4.1
 CATEGORIES=	security
 MASTER_SITES=	http://yi.com/home/KosturjakVlatko/ \
 		ftp://ftp.bitcon.no/.4/console/adm/ \

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p5-Crypt-CBC
-PORTVERSION= 	1.20
+PORTVERSION=	1.20
 CATEGORIES=	security perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Crypt
@@ -14,7 +14,7 @@ DISTNAME=	Crypt-CBC-1.20
 
 MAINTAINER=	markm@FreeBSD.org
 
-RUN_DEPENDS=      ${LOCALBASE}/lib/perl5/site_perl/5.005/i386-freebsd/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
+RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/5.005/i386-freebsd/MD5.pm:${PORTSDIR}/security/p5-Digest-MD5
 
 RESTRICTED=	"Crypto; export-controlled"
 

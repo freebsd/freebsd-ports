@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	keyprint
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	security
 MASTER_SITES=	http://people.FreeBSD.org/~mharo/distfiles/
 

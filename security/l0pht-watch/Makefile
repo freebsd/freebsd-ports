@@ -8,10 +8,10 @@
 PORTNAME=	l0pht-watch
 PORTVERSION=	1.1
 CATEGORIES=	security
-MASTER_SITES=   http://www.l0pht.com/advisories/
+MASTER_SITES=	http://www.l0pht.com/advisories/
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=     dom@myrddin.demon.co.uk
+MAINTAINER=	dom@myrddin.demon.co.uk
 
 WRKSRC=		${WRKDIR}/temp-watch
 

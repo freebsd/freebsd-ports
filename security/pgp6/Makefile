@@ -8,10 +8,10 @@
 PORTNAME=	pgp
 PORTVERSION=	5.0i
 CATEGORIES=	security
-MASTER_SITES=   ftp://ftp.ifi.uio.no/pub/pgp/5.0/unix/ \
+MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/pgp/5.0/unix/ \
 		ftp://ftp.doc.ic.ac.uk/pub/Mirrors/ftp.ifi.uio.no/pub/pgp/5.0/unix/
 DISTNAME=	pgp50i
-EXTRACT_SUFX=   -unix-src.tar.gz
+EXTRACT_SUFX=	-unix-src.tar.gz
 
 MAINTAINER=	markm@FreeBSD.org
 
@@ -19,7 +19,7 @@ Y2K=		http://www.pgpi.com/faq/pgpi.shtml#Year2000
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 GNU_CONFIGURE=	yes
-RESTRICTED=     "Crypto"
+RESTRICTED=	"Crypto"
 MAN1=		pgp5.1 pgpe.1 pgpk.1 pgps.1 pgpv.1
 MAN5=		pgp.cfg.5
 MAN7=		pgp-integration.7 pgp-intro.7

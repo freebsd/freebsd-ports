@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zombiezapper
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	security
 MASTER_SITES=	http://razor.bindview.com/tools/files/
 DISTNAME=	zombie

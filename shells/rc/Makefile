@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rc
-PORTVERSION= 	1.6
+PORTVERSION=	1.6
 CATEGORIES=	shells plan9
 MASTER_SITES=	http://www.star.le.ac.uk/~tjg/rc/release/ \
 		ftp://ftp.sys.utoronto.ca/pub/rc/

@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	rid
-PORTVERSION= 	1.0
+PORTVERSION=	1.0
 CATEGORIES=	security
 MASTER_SITES=	http://packetstorm.securify.com/distributed/  \
 		ftp://ftp.ntua.gr/pub/security/technotronic/denial/

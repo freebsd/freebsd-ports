@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	scsh
-PORTVERSION= 	0.5.1
+PORTVERSION=	0.5.1
 CATEGORIES=	shells lang
 MASTER_SITES=	ftp://ftp-swiss.ai.mit.edu/pub/su/scsh/ \
 		http://www2.cons.org:8000/freebsd-distfiles/ \
 		http://people.FreeBSD.org/~cracauer/freebsd-distfiles/
 
-MAINTAINER= 	cracauer@cons.org
+MAINTAINER=	cracauer@cons.org
+
+CONFIGURE_ENV+=	LDFLAGS="-Wl,-E"
 
 .include <bsd.port.pre.mk>
 
@@ -21,10 +23,6 @@ BROKEN=		bus errors on unaligned accesses in scshvm
 .endif
 
 GNU_CONFIGURE=	yes
-
-.if $(PORTOBJFORMAT) == elf
-CONFIGURE_ENV+=	LDFLAGS="-Wl,-E"
-.endif
 
 ALL_TARGET=	enough
 MAN1=		scsh.1

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION= 	3.7
+PORTVERSION=	3.7
 CATEGORIES=	security
 MASTER_SITES=	http://opensores.thebunker.net/pub/mirrors/stunnel/ \
 		http://mike.daewoo.com.pl/computer/stunnel/ \

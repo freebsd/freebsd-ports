@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	vscan
-PORTVERSION= 	3.1.8
+PORTVERSION=	3.1.8
 CATEGORIES=	security
-MASTER_SITES=   ftp://ftp.mcafee.com/pub/antivirus/unix/linux/ \
+MASTER_SITES=	ftp://ftp.mcafee.com/pub/antivirus/unix/linux/ \
 		http://people.FreeBSD.org/~steve/distfiles/
 DISTNAME=	nlxb318e
 EXTRACT_SUFX=	.tar

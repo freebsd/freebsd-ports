@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	vnelvis
-PORTVERSION= 	1.4
+PORTVERSION=	1.4
 CATEGORIES=	vietnamese editors
 MASTER_SITES=	ftp://ftp.media.mit.edu/pub/Vietnet/Viscii/Unix/  \
 		ftp://ftp.monash.edu.au/pub/vietnam/unix/

@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	bash
-PORTVERSION= 	2.03
+PORTVERSION=	2.03
 CATEGORIES=	shells
-MASTER_SITES=   ${MASTER_SITE_GNU} \
+MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.cwru.edu/pub/bash/
 MASTER_SITE_SUBDIR=	bash
 .if !defined(NOPORTDOCS)
-DISTFILES=      bash-2.03.tar.gz bash-doc-2.03.tar.gz
+DISTFILES=	bash-2.03.tar.gz bash-doc-2.03.tar.gz
 .endif
 
 MAINTAINER=	ache@FreeBSD.org
 
 GNU_CONFIGURE=	Yes
-CONFIGURE_ARGS= --with-installed-readline
+CONFIGURE_ARGS=	--with-installed-readline
 MAN1=		bash.1 bashbug.1
 
 post-install:

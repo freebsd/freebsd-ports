@@ -22,7 +22,7 @@ MAINTAINER=	obrien@FreeBSD.org
 .include <bsd.port.pre.mk>
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --libdir=${PREFIX}/share/misc
+CONFIGURE_ARGS=	--libdir=${PREFIX}/share/misc
 .if ${OSVERSION} < 300004
 CFLAGS+=	-DDLT_RAW=12 # for obsoleted <net/bpf.h>
 .endif

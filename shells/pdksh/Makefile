@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pdksh
-PORTVERSION= 	5.2.14
+PORTVERSION=	5.2.14
 CATEGORIES=	shells
 MASTER_SITES=	ftp://ftp.cs.mun.ca/pub/pdksh/ \
 		http://gd.tuwien.ac.at/utils/shells/pdksh/ \
@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.cs.mun.ca/pub/pdksh/ \
 
 MAINTAINER=	tg@FreeBSD.org
 
-GNU_CONFIGURE=  yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDSTATIC=-static
 MAN1=		ksh.1
 

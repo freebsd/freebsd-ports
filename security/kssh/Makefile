@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kssh
-PORTVERSION= 	0.2
+PORTVERSION=	0.2
 CATEGORIES=	security
 MASTER_SITES=	http://people.FreeBSD.org/~will/distfiles/
 
