@@ -8,15 +8,14 @@
 #
 
 PORTNAME=	apache
-PORTVERSION=	2.0.52
-PORTREVISION=	4
+PORTVERSION=	2.0.53
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_APACHE_HTTPD} \
 		${MASTER_SITE_LOCAL:S/%SUBDIR%/clement/}:powerlogo
 DISTNAME=	httpd-${PORTVERSION}
-DISTFILES=	${DISTNAME}.tar.gz powerlogo.gif:powerlogo
+DISTFILES=	${DISTNAME}.tar.bz2 powerlogo.gif:powerlogo
 DIST_SUBDIR=	apache2
-EXTRACT_ONLY=	${DISTNAME}.tar.gz
+EXTRACT_ONLY=	${DISTNAME}.tar.bz2
 
 MAINTAINER?=	clement@FreeBSD.org
 COMMENT?=	Version 2 of Apache web server with ${WITH_MPM:L} MPM.
@@ -53,6 +52,7 @@ USE_REINPLACE=		yes
 LIBTOOLFILES=		configure
 INSTALLS_SHLIB=		yes
 LDCONFIG_DIRS=		${PREFIX}/lib/apache2
+USE_BZIP2=		yes
 
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--enable-layout=FreeBSD \
@@ -180,6 +180,21 @@ pre-everything::
 	@${ECHO_MSG}	"  To see all modules in different categories, type make show-categories"
 	@${ECHO_MSG}    "  You can check your modules configuration by using make show-modules"
 	@${ECHO_MSG}	""
+	@${ECHO_MSG}    "To save apache.org bandwidth, please use the closest"
+	@${ECHO_MSG}    "mirror. Hit Ctrl+C now and do a "make print-closest-mirrors."
+	@${ECHO_MSG}	"To automatically update /etc/make.conf do:"
+	@${ECHO_MSG}	"make print-closest-mirrors >> /etc/make.conf"
+	@${ECHO_MSG}	""
+
+print-closest-mirrors:
+	@${ECHO_MSG} -n "Fetching list of nearest mirror: " >&2
+	@MIRRORS=`${FETCH_CMD} -T 30 -qo - http://www.apache.org/dyn/closer.cgi/httpd/ 2> /dev/null\
+	| ${GREP} /httpd/ | ${SED} 's/.*href="\(.*\)"><str.*/\1/g' | \
+	${HEAD} -7 | ${TAIL} -6` ; \
+	${ECHO_MSG} done >&2; if [ "x$$MIRRORS" != "x" ]; then \
+	${ECHO_MSG} -n "MASTER_SITE_APACHE_HTTPD?= ";\
+	${ECHO_MSG} $$MIRRORS; else \
+	${ECHO_MSG} "No mirrors found!">&2 ; fi
 
 post-extract:
 	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/powerlogo.gif ${WRKSRC}/docs/icons/freebsd.gif
