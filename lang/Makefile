@@ -9,6 +9,7 @@
     SUBDIR += aleph
     SUBDIR += atlast
     SUBDIR += awka
+    SUBDIR += bigloo
     SUBDIR += bwbasic
     SUBDIR += caml-light
     SUBDIR += ccscript

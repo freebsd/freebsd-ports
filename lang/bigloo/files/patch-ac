@@ -1,0 +1,22 @@
+--- manuals/Makefile.orig	Mon Jul 15 23:25:17 2002
++++ manuals/Makefile	Mon Jul 15 23:44:05 2002
+@@ -296,19 +296,6 @@
+ 	         echo "chmod $(BMASK) $(INFODIR)/bigloo.info*"; \
+               fi \
+             fi; \
+-	    if [ "$(INSTALLINFO) " = " " ]; then \
+-             if [ ! -f $(INFODIR)/dir ]; then \
+-              echo "$(INFODIR)/dir file does not exist, can't install Bigloo info files"; \
+-             else \
+-              if [ "`grep "bigloo.info" $(INFODIR)/dir` " = " " ]; then \
+-               echo "* bigloo: (bigloo.info). The Bigloo documentation." >> \
+-                $(INFODIR)/dir; \
+-              fi; \
+-             fi; \
+-            else \
+-             $(INSTALLINFO) bigloo.info $(INFODIR)/dir; \
+-             echo "$(INSTALLINFO) bigloo.info $(INFODIR)/dir"; \
+-            fi \
+           fi \
+         fi
+ 

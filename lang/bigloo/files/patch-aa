@@ -1,0 +1,11 @@
+--- autoconf/pthread.orig	Mon Jul 15 21:08:08 2002
++++ autoconf/pthread	Mon Jul 15 21:08:16 2002
+@@ -14,7 +14,7 @@
+ #*---------------------------------------------------------------------*/
+ cc=gcc
+ cflags=
+-pthreadlibs="-lpthread"
++pthreadlibs="-pthread"
+ tmp=/tmp
+ user=bigloo
+ 
