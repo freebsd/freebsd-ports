@@ -7,10 +7,11 @@
 #
 
 PORTNAME=	jftp
-PORTVERSION=	1.30
+PORTVERSION=	1.38
 CATEGORIES=	ftp
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	j-ftp
+DISTNAME=	j-ftp-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Network Browser
@@ -19,8 +20,12 @@ WRKSRC=		${WRKDIR}/j-ftp
 USE_JAVA=	1.3+
 NO_BUILD=	yes
 
+JAVAVM=		${LOCALBASE}/bin/javavm
+
 post-patch:
-	@${SED} 's,%%DATADIR%%,${DATADIR},' ${FILESDIR}/jftp > ${WRKSRC}/jftp
+	@${SED} -e "s,%%DATADIR%%,${DATADIR},; \
+		s,%%JAVAVM%%,${JAVAVM}," \
+		${FILESDIR}/jftp > ${WRKSRC}/jftp
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/jftp ${PREFIX}/bin
