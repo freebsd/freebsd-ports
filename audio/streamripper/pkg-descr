@@ -1,0 +1,10 @@
+Using information which a SHOUTcast server can optionally send,
+this program breaks an audio stream into "tracks," stores them in
+separate files as they arrive, and names the files by appending
+".mp3" to the name of the track.  The tracks can be listened to at
+the user's leisure with an MPEG Layer 3 audio player.
+
+WWW:  http://www.bigfreakinserver.com/master/streamripper.php3
+
+Trevor Johnson
+trevor@jpj.net
