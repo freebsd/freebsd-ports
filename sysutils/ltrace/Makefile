@@ -25,6 +25,8 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 PLIST_FILES=	bin/ltrace etc/ltrace.conf
 
+CONFLICTS=	polygraph-2*
+
 MAN1=		ltrace.1
 
 post-patch:

@@ -21,4 +21,6 @@ GNU_CONFIGURE=	YES
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -Wno-deprecated"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
+CONFLICTS=	ltrace-0*
+
 .include <bsd.port.mk>
