@@ -373,6 +373,7 @@
     SUBDIR += xerces-c
     SUBDIR += xerces-j
     SUBDIR += xhtml
+    SUBDIR += xincluder
     SUBDIR += xlhtml
     SUBDIR += xls2xml
     SUBDIR += xml-i18n-tools
