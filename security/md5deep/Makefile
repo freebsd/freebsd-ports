@@ -1,0 +1,27 @@
+# New ports collection makefile for:	md5deep
+# Date created:		15 July 2004
+# Whom:			Frank Laszlo <laszlof@vonostingroup.com>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	md5deep
+PORTVERSION=	1.3
+CATEGORIES=	security
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	${PORTNAME}
+
+MAINTAINER=	laszlof@vonostingroup.com
+COMMENT=	Program to compute MD5 and SHA1 message digests recursively
+
+ALL_TARGET=	unix
+USE_REINPLACE=	yes
+
+MAN1=		md5deep.1 sha1deep.1
+
+PLIST_FILES=	bin/md5deep bin/sha1deep
+
+post-patch:
+	@${REINPLACE_CMD} -e 's!/usr/local!${PREFIX}!g' ${WRKSRC}/Makefile
+
+.include <bsd.port.mk>

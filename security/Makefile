@@ -182,6 +182,7 @@
     SUBDIR += makepasswd
     SUBDIR += mcrypt
     SUBDIR += md5crk
+    SUBDIR += md5deep
     SUBDIR += mdcrack
     SUBDIR += mhash
     SUBDIR += mindterm-binary
