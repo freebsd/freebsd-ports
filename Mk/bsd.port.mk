@@ -661,7 +661,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #
 # Default sequence for "all" is:
 #
-#     sanity-check fetch checksum extract patch configure build
+#     check-sanity fetch checksum extract patch configure build
 #
 # Please read the comments in the targets section below; you
 # should be able to use the pre-* or post-* targets/scripts
@@ -2796,7 +2796,7 @@ IGNORECMD=	${DO_NADA}
 IGNORECMD=	${ECHO_MSG} "===>  ${PKGNAME} ${IGNORE}."
 .endif
 
-.for target in sanity-check fetch checksum extract patch configure all build install reinstall package
+.for target in check-sanity fetch checksum extract patch configure all build install reinstall package
 ${target}:
 	@${IGNORECMD}
 .if defined(INSTALLS_DEPENDS)
@@ -3758,7 +3758,7 @@ package-message:
 # Empty pre-* and post-* targets
 
 .for stage in pre post
-.for name in sanity-check fetch extract patch configure build install package
+.for name in check-sanity fetch extract patch configure build install package
 
 .if !target(${stage}-${name})
 ${stage}-${name}:
