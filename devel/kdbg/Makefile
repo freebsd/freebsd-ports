@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	kdbg
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	devel kde
-MASTER_SITES=	http://members.telecom.at/~johsixt/ \
-		ftp://ftp.eudaptics.co.at/pub/people/jsixt/
+MASTER_SITES=	http://download.sourceforge.net/kdbg/ \
+		${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=unstable/apps/ide/
 
 MAINTAINER=	jedgar@FreeBSD.org
 
