@@ -4,6 +4,9 @@
     SUBDIR += BBBike
     SUBDIR += cheapcall
     SUBDIR += dict
+    SUBDIR += ispell
+    SUBDIR += ispell-alt
+    SUBDIR += ispell-neu
     SUBDIR += manpages
     SUBDIR += phone
     SUBDIR += staroffice5

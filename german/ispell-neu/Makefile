@@ -10,7 +10,7 @@ MAINTAINER=     alex@FreeBSD.org
 ISPELL_DENEU=	yes
 PORTNAME=	ispell
 PORTVERSION= 	19991219
-MASTERDIR=      ${.CURDIR}/../ispell
-PKGNAMEPREFIX=	deneu-
+PKGNAMESUFFIX=	-neu
+MASTERDIR=      ${.CURDIR}/../../textproc/ispell
 
 .include        "${MASTERDIR}/Makefile"

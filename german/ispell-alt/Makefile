@@ -10,8 +10,8 @@ MAINTAINER=     alex@FreeBSD.org
 ISPELL_DEALT=	yes
 PORTNAME=	ispell
 PORTVERSION= 	19991219
-PKGNAMEPREFIX=	dealt-
-MASTERDIR=      ${.CURDIR}/../ispell
+PKGNAMESUFFIX=	-alt
+MASTERDIR=      ${.CURDIR}/../../textproc/ispell
 
 .include        "${MASTERDIR}/Makefile"
 
