@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rvm
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/rvm/src/
 
