@@ -1,0 +1,11 @@
+--- Setup/Unix/Makefile.display.in.orig	Thu Jan 22 08:27:39 2004
++++ Setup/Unix/Makefile.display.in	Thu Jan 22 08:27:53 2004
+@@ -114,7 +114,7 @@
+ 
+ # $(OBJF_DISP_X11) $(OBJF_DISP_FBDEV)
+ 
+-LINK_DISP = -L Libs -lclanCore @x_libraries@ -lHermes @directfb_libs@
++LINK_DISP = @LDFLAGS@ -L Libs -lclanCore @x_libraries@ -lHermes @directfb_libs@
+ 
+ Libs/libclanDisplay.so: Libs/libclanCore.so $(OBJF_DISP_ALL)
+ 	@echo "Building Libs/libclanDisplay.so"

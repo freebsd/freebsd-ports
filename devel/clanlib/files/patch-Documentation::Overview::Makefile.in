@@ -1,0 +1,18 @@
+--- Documentation/Overview/Makefile.in.orig	Thu Jan 22 14:53:10 2004
++++ Documentation/Overview/Makefile.in	Thu Jan 22 14:53:33 2004
+@@ -1,6 +1,4 @@
+-prefix=@prefix@/share
+-
+-HTML_PREFIX = $(prefix)/doc/ClanLib-docs-@version_minor@/Documentation
++HTML_PREFIX = @prefix@/share/doc/clanlib
+ 
+ all:	index.html
+ 
+@@ -26,6 +24,6 @@
+ 	@install -m 0644 Images/*.png $(HTML_PREFIX)/Overview/Images
+ distclean: clean
+ 	rm Makefile
+-	
++
+ clean:
+ 	rm -f *.html

@@ -1,0 +1,11 @@
+--- Setup/Unix/Makefile.jpeg.in.orig	Thu Jan 22 08:28:53 2004
++++ Setup/Unix/Makefile.jpeg.in	Thu Jan 22 08:29:02 2004
+@@ -21,7 +21,7 @@
+ 
+ Libs/libclanJPEG.so: Libs/libclanCore.so $(OBJF_LIB_JPEG)
+ 	@echo "Building Libs/libclanJPEG.so"
+-	@$(LINK_COMMAND) -Wl,-soname=libclanJPEG.so.$(D_VERSION_MAJOR) -o Libs/libclanJPEG.so.$(D_VERSION_MINOR) $(OBJF_LIB_JPEG) -L Libs -lclanCore -ljpeg
++	@$(LINK_COMMAND) -Wl,-soname=libclanJPEG.so.$(D_VERSION_MAJOR) -o Libs/libclanJPEG.so.$(D_VERSION_MINOR) $(OBJF_LIB_JPEG) @LDFLAGS@ -L Libs -lclanCore -ljpeg
+ 	@ln -s -f libclanJPEG.so.$(D_VERSION_MINOR) Libs/libclanJPEG.so.$(D_VERSION_MAJOR)
+ 	@ln -s -f libclanJPEG.so.$(D_VERSION_MAJOR) Libs/libclanJPEG.so
+ 

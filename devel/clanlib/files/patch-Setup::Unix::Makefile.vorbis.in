@@ -1,0 +1,11 @@
+--- Setup/Unix/Makefile.vorbis.in.orig	Thu Jan 22 08:29:25 2004
++++ Setup/Unix/Makefile.vorbis.in	Thu Jan 22 08:29:36 2004
+@@ -20,7 +20,7 @@
+ 
+ Libs/libclanVorbis.so: Libs/libclanCore.so $(OBJF_LIB_VORBIS)
+ 	@echo "Building Libs/libclanVorbis.so"
+-	@$(LINK_COMMAND) -Wl,-soname=libclanVorbis.so.$(D_VERSION_MAJOR) -o Libs/libclanVorbis.so.$(D_VERSION_MINOR) $(OBJF_LIB_VORBIS) -L Libs -lclanCore -lvorbis
++	@$(LINK_COMMAND) -Wl,-soname=libclanVorbis.so.$(D_VERSION_MAJOR) -o Libs/libclanVorbis.so.$(D_VERSION_MINOR) $(OBJF_LIB_VORBIS) @LDFLAGS@ -L Libs -lclanCore -lvorbis
+ 	@ln -s -f libclanVorbis.so.$(D_VERSION_MINOR) Libs/libclanVorbis.so.$(D_VERSION_MAJOR)
+ 	@ln -s -f libclanVorbis.so.$(D_VERSION_MAJOR) Libs/libclanVorbis.so	
+ 

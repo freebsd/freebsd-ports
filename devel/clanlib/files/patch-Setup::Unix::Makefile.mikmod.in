@@ -1,0 +1,11 @@
+--- Setup/Unix/Makefile.mikmod.in.orig	Thu Jan 22 08:28:13 2004
++++ Setup/Unix/Makefile.mikmod.in	Thu Jan 22 08:28:30 2004
+@@ -22,7 +22,7 @@
+ 
+ Libs/libclanMikMod.so: Libs/libclanCore.so $(OBJF_LIB_MIKMOD)
+ 	@echo "Building Libs/libclanMikMod.so"
+-	@$(LINK_COMMAND) -Wl,-soname=libclanMikMod.so.$(D_VERSION_MAJOR) -o Libs/libclanMikMod.so.$(D_VERSION_MINOR) $(OBJF_LIB_MIKMOD) -L Libs -lclanCore -lmikmod
++	@$(LINK_COMMAND) -Wl,-soname=libclanMikMod.so.$(D_VERSION_MAJOR) -o Libs/libclanMikMod.so.$(D_VERSION_MINOR) $(OBJF_LIB_MIKMOD) @LDFLAGS@ -L Libs -lclanCore -lmikmod
+ 	@ln -s -f libclanMikMod.so.$(D_VERSION_MINOR) Libs/libclanMikMod.so.$(D_VERSION_MAJOR)
+ 	@ln -s -f libclanMikMod.so.$(D_VERSION_MAJOR) Libs/libclanMikMod.so
+ 

@@ -1,0 +1,27 @@
+--- Documentation/Reference/Makefile.in.orig	Thu Jan 22 14:52:33 2004
++++ Documentation/Reference/Makefile.in	Thu Jan 22 15:11:07 2004
+@@ -1,13 +1,11 @@
+-
+-prefix=@prefix@/share
+-HTML_PREFIX = $(prefix)/doc/ClanLib-docs-@version_minor@/Documentation
++HTML_PREFIX = @prefix@/share/doc/clanlib
+ 
+ all:	html
+ 
+ html:
+ 	@echo 'Type "make html_install" to install the html reference pages.'
+ 	if [ ! -d html ]; then mkdir html; fi
+-	chmod +x ./pce2
++	chmod +xg-s ./pce2
+ 	find ../../Sources/API -name '*.h' | xargs ./pce2
+ 
+ html_install:
+@@ -20,7 +18,7 @@
+ 
+ distclean: clean
+ 	rm -f Makefile
+-	
++
+ clean:
+ 	rm -rf html
+ 

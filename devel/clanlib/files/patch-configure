@@ -1,10 +1,33 @@
---- configure.orig	Sun Sep  7 22:30:57 2003
-+++ configure	Mon Sep  8 02:32:28 2003
-@@ -18545,6 +18545,7 @@
+--- configure.orig	Sun Nov  3 22:41:57 2002
++++ configure	Fri Jan 23 15:49:01 2004
+@@ -3375,7 +3375,7 @@
+   fi
  
- # This can be used to rebuild libtool when needed
- LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+$ac_aux_dir/ltconfig $LIBTOOL_DEPS
+   OLDLIBS="$LIBS"
+-  LIBS="$x_libraries -lGL -lGLU -lpthread -lGL"
++  LIBS="$x_libraries -lGL -lGLU -lGL"
+   echo "$as_me:$LINENO: checking for GL" >&5
+ echo $ECHO_N "checking for GL... $ECHO_C" >&6
+   if test "$cross_compiling" = yes; then
+@@ -5268,18 +5268,18 @@
+   enableval="$enable_debug"
  
- # Always use our own libtool.
- LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+   if test "$enableval" == "yes"; then
+-    comp_mode="-DDEBUG=1 -g3 -ggdb3 -O0"
++    comp_mode=
+     echo "$as_me:$LINENO: result: enabled" >&5
+ echo "${ECHO_T}enabled" >&6
+   else
+-    comp_mode="-O2"
++    comp_mode=
+     echo "$as_me:$LINENO: result: *********** <-- DISABLED --> ***********" >&5
+ echo "${ECHO_T}*********** <-- DISABLED --> ***********" >&6
+   fi
+ 
+ else
+ 
+-  comp_mode="-DDEBUG=1 -g3 -ggdb3"
++  comp_mode=
+   echo "$as_me:$LINENO: result: enabled" >&5
+ echo "${ECHO_T}enabled" >&6
+ 
