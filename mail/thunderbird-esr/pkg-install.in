@@ -27,9 +27,6 @@ rm -rf ${MOZDIR}/extensions
 cd ${MOZDIR} || exit 1
 ./run-mozilla.sh ${REGXPCOM} || true
 ./run-mozilla.sh ${REGCHROME} || true
-
-# Instantiate the extension space as root.
-su - root -c "env PATH=${PATH} %%X11BASE%%/bin/xinit %%MOZDIR%%/run-mozilla.sh ${THUNDERBIRD} -install-global-extension -- %%X11BASE%%/bin/Xvfb :1001" > /dev/null 2>&1
-su - root -c "env PATH=${PATH} %%X11BASE%%/bin/xinit %%MOZDIR%%/run-mozilla.sh ${THUNDERBIRD} -install-global-theme -- %%X11BASE%%/bin/Xvfb :1001" > /dev/null 2>&1
+./run-mozilla.sh ${THUNDERBIRD} -register > /dev/null 2>&1
 
 exit 0

@@ -7,7 +7,7 @@
 
 PORTNAME=	thunderbird
 PORTVERSION=	0.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}
@@ -21,7 +21,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		mng.1:${PORTSDIR}/graphics/libmng \
 		nspr4.1:${PORTSDIR}/devel/nspr
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
-RUN_DEPENDS=	Xvfb:${X_VFBSERVER_PORT}
 
 USE_X_PREFIX=	yes
 
