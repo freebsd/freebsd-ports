@@ -3,3 +3,9 @@ server serial ports, such as those available on Xyplex terminal server
 models, via /dev device file entries.  This allows programs such as
 tip(1) to access devices connected to the terminal server serial
 ports.
+
+Additionally, comservd can serve up local serial ports to remote
+systems, effectively turning the system running comservd into a
+terminal server with respect to its own local serial ports.
+
+WWW: http://www.bsdhome.com/comserv/
