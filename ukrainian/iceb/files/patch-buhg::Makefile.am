@@ -1,0 +1,30 @@
+diff -ru --exclude Makefile work.old/buhg/Makefile.am work/buhg/Makefile.am
+--- buhg/Makefile.am	Sun Jan 12 14:47:17 2003
++++ buhg/Makefile.am	Sun Jan 12 15:14:26 2003
+@@ -16,8 +16,6 @@
+ # Individual libraries
+ #
+ 
+-bb_LDADD = $(top_builddir)/libutil/libutil.la @ICEB_CURSES_LIB@ $(top_builddir)/libscr/libscr.la
+-
+ sozsqlbaz_LDADD = $(top_builddir)/libscr/libscr.la @ICEB_CURSES_LIB@ \
+ 	$(top_builddir)/libutil/libutil.la \
+ 	$(top_builddir)/libsql/libsql.la @ICEB_DB_LIB@
+@@ -257,5 +255,5 @@
+ 	poiin.c poiinpd.c
+ 
+ bin_PROGRAMS = sozsqlbaz dostup startxbu xbu xmu xdk xzp xuos xusl xkas \
+-	xpro mariq rozn saldo kassa bb spec uos23
++	xpro mariq rozn saldo kassa spec uos23
+ 
+diff -ru --exclude *.bak --exclude Makefile --exclude Makefile.in work.old/buhg/Makefile.am work/buhg/Makefile.am
+--- work.old/buhg/Makefile.am	Thu Jan 16 00:08:03 2003
++++ buhg/Makefile.am	Tue Jan 21 21:36:44 2003
+@@ -1,6 +1,7 @@
+ SUBDIRS=bx doc
+ CC = ${CXX}
+ CONFIG_PATH=$(libdir)/iceB
++CFLAGS += -DICEB_DOC_PATH="\""@datadir@/doc/iceb"\""
+ 
+ INCLUDES = -I$(top_srcdir)/libscr -I$(top_srcdir)/libutil \
+ 	-I$(top_srcdir)/libbuh -I$(top_srcdir)/libsql \

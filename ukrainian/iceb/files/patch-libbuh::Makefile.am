@@ -1,0 +1,9 @@
+diff -ru --exclude *.bak --exclude Makefile --exclude Makefile.in work.old/libbuh/Makefile.am work/libbuh/Makefile.am
+--- work.old/libbuh/Makefile.am	Thu Jan 16 00:07:29 2003
++++ libbuh/Makefile.am	Tue Jan 21 22:26:15 2003
+@@ -1,4 +1,5 @@
+ CC = ${CXX}
++CFLAGS += -DICEB_DOC_PATH="\""@datadir@/doc/iceb"\""
+ lib_LTLIBRARIES = libbuh.la
+ 
+ INCLUDES = -I$(top_srcdir)/libscr -I$(top_srcdir)/libsql @ICEB_DB_H@ \

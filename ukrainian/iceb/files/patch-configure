@@ -1,0 +1,27 @@
+--- configure.old	Sun Jan 12 12:21:21 2003
++++ configure	Sun Jan 12 12:22:50 2003
+@@ -5467,7 +5467,7 @@
+ 
+ 
+ # This can be used to rebuild libtool when needed
+-LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
++LIBTOOL_DEPS="--disable-ltlibs /ltmain.sh"
+ 
+ # Always use our own libtool.
+ LIBTOOL='$(SHELL) $(top_builddir)/libtool'
+@@ -6269,10 +6269,11 @@
+    if test -n "$ICEB_LANG_PATH" -a -d "$ICEB_LANG_PATH" ; then
+ 	echo "$ac_t"" $ICEB_LANG_PATH " 1>&6
+    else
+-        echo "$ac_t"" no " 1>&6
+-        { echo "configure: error:  No such directory: $ICEB_LANG_PATH 
+-You MUST use option --with-lang-path=path " 1>&2; exit 1; }
+-        exit 1
++        #echo "$ac_t"" no " 1>&6
++        #{ echo "configure: error:  No such directory: $ICEB_LANG_PATH 
++#You MUST use option --with-lang-path=path " 1>&2; exit 1; }
++        #exit 1
++	ICEB_LANG_PATH="$ICEB_LANG_PATH"
+    fi
+ fi   
+      

@@ -1,0 +1,22 @@
+diff -ru iceb-5.35.old/buhg/bx/Makefile.am buhg/bx/Makefile.am
+--- buhg/bx/Makefile.am	Sat Jul 21 09:10:15 2001
++++ buhg/bx/Makefile.am	Sun Jan 12 00:11:22 2003
+@@ -1,15 +1,15 @@
+ # $Id: Makefile.am,v 5.1 2001/07/21 09:10:15 yuk Exp $
+ #
+ 
+-CONFDIR=@CONFIG_PATH@/bx
++CONFDIR=@CONFIG_PATH@/bx.sample
+ #------------------------------------------------------------
+ 
+ all:    ;
+ 
+ install:
+ 	@if [ \! -d $(CONFDIR) ]; then \
+-	   $(INSTALL) -d $(CONFDIR) ;\
+-	   $(INSTALL_DATA) *.alx $(CONFDIR) ;\
++	   $(mkinstalldirs) $(CONFDIR); \
++	   $(INSTALL_DATA) $(srcdir)/*.alx $(CONFDIR) ;\
+ 	fi
+ 
+ uninstall:

@@ -1,0 +1,10 @@
+diff -ru work.old/libconfig/Makefile.am work/libconfig/Makefile.am
+--- libconfig/Makefile.am	Sun Jan 12 14:46:55 2003
++++ libconfig/Makefile.am	Sun Jan 12 14:40:49 2003
+@@ -1,5 +1,5 @@
+ CC = ${CXX}
+-bin_PROGRAMS = test config_get config_put
++#bin_PROGRAMS = test config_get config_put
+ 
+ lib_LTLIBRARIES = libconfig.la
+ libconfig_la_SOURCES = config.c cread.c cwrite.c read_vars.c

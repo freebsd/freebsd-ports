@@ -1,0 +1,12 @@
+diff -ru --exclude *.in iceb-5.35.old/buhg/doc/Makefile.am iceb-5.35/buhg/doc/Makefile.am
+--- buhg/doc/Makefile.am	Sat Jul 21 09:10:15 2001
++++ buhg/doc/Makefile.am	Sat Dec 21 00:24:44 2002
+@@ -7,7 +7,7 @@
+ all:    ;
+ 
+ install:        $(CONFDIR)
+-	$(INSTALL_DATA) *.txt $(CONFDIR)
++	$(INSTALL_DATA) $(srcdir)/*.txt $(CONFDIR)
+ 
+ $(CONFDIR):
+ 	$(INSTALL) -d $(CONFDIR)

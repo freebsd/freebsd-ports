@@ -1,0 +1,13 @@
+diff -ru --exclude *.in iceb-5.35.old/locale/Makefile.am locale/Makefile.am
+--- locale/Makefile.am	Tue Jul 30 11:44:23 2002
++++ locale/Makefile.am	Tue Dec 24 00:00:27 2002
+@@ -17,7 +17,8 @@
+ 
+ install:	all
+ 	@if [ "$(ICEB_LANG)" \!= "ru" ]; then \
+-	$(INSTALL_DATA) -D $(LOCFIL) $(ICEB_LANG_PATH)/LC_MESSAGES/$(LOCFIL) ; \
++	$(mkinstalldirs) $(ICEB_LANG_PATH)/LC_MESSAGES/; \
++	$(INSTALL_DATA) $(LOCFIL) $(ICEB_LANG_PATH)/LC_MESSAGES/$(LOCFIL) ; \
+ 	fi
+ 
+ uninstall:
