@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.38 1999/06/23 20:47:15 sada Exp $
+# $Id: Makefile,v 1.39 1999/06/26 14:54:10 sada Exp $
 #
 
 DISTNAME?=	netscape-${BROWSER}-${BROWSER_VER}
@@ -31,7 +31,7 @@ BROWSER?=	communicator
 BROWSER_VER?=	4.08
 FORTIFY=	Fortify-1.4.3-unix-x86
 NDIR=		${PREFIX}/${NSUBDIR}
-NSUBDIR=	lib/netscape
+NSUBDIR?=	lib/netscape
 BINDIR=		${PREFIX}/bin
 INFILE_HEAD?=	'Communicator,4.08.0.98306'
 WRAPPER_TEMPLATE= ${MASTERDIR}/files/netscape.sh
@@ -94,7 +94,7 @@ do-install:
 		(${ECHO} yes ; ${ECHO} no ; ${ECHO} no) \
 		| ./Fortify.sh ${NDIR}/${BROWSER}-${BROWSER_VER}.bin
 .endif
-	chown -R bin.bin ${NDIR}
+	chown -R root:wheel ${NDIR}
 
 post-install:
 	${CAT} ${PKGDIR}/DESCR
