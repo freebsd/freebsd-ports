@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.151 1998/10/09 00:27:09 kuriyama Exp $
+# $Id: Makefile,v 1.152 1998/10/09 04:22:12 asami Exp $
 #
 
     SUBDIR += Canna
@@ -50,6 +50,13 @@
     SUBDIR += jvim-canna+wnn6
     SUBDIR += jvim-wnn4
     SUBDIR += jvim-wnn6
+    SUBDIR += jvim3
+    SUBDIR += jvim3-canna
+    SUBDIR += jvim3-canna+wnn4
+    SUBDIR += jvim3-canna+wnn6
+    SUBDIR += jvim3-direct_canna
+    SUBDIR += jvim3-wnn4
+    SUBDIR += jvim3-wnn6
     SUBDIR += k10
     SUBDIR += k12
     SUBDIR += kakasi
