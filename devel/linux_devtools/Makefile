@@ -1,5 +1,5 @@
 # New ports collection makefile for:    linux_devtools
-# Version required:     5.2
+# Version required:     6.1
 # Date created:         Jul 9, 1999
 # Whom:                 marcel@FreeBSD.org
 #
@@ -7,57 +7,70 @@
 #
 
 DISTNAME=		linux_devtools
-PKGNAME=		linux_devtools-5.2
+PKGNAME=		linux_devtools-6.1
 CATEGORIES=		emulators devel
-MASTER_SITES=		\
-	ftp://ftp.cdrom.com/pub/linux/redhat/${STDDIR}/ \
-	ftp://ftp.redhat.com/redhat/${STDDIR}/ \
-	ftp://ftp.infomagic.com/pub/mirrors/linux/RedHat/${STDDIR}/ \
-	ftp://ftp.crc.ca/mirrors/by-site/ftp.redhat.com/redhat/${STDDIR}/ \
-	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/${STDDIR}/ \
-	ftp://mirror.nucba.ac.jp/mirror/redhat/${STDDIR}/ \
-	ftp://ftp.is.co.za/linux/distributions/redhat/${STDDIR}/ \
-	ftp://mirror.aarnet.edu.au/pub/linux/redhat/$STDDIR}/
-DISTFILES=		${KERN_HEADERS} \
-			glibc-devel-2.0.7-29.${ARCH}.rpm \
-			libstdc++-devel-2.8.0-14.${ARCH}.rpm \
-			make-3.76.1-5.${ARCH}.rpm \
-			egcs-1.0.3a-14.${ARCH}.rpm \
-			egcs-c++-1.0.3a-14.${ARCH}.rpm \
-			egcs-g77-1.0.3a-14.${ARCH}.rpm \
-			gdb-4.17.0.4-3.${ARCH}.rpm \
-			XFree86-devel-3.3.2.3-25.${ARCH}.rpm
+MASTER_SITES=		${RPM_MIRRORS:S/__DIR__/${STDDIR}/g}
+DISTFILES=		${RPM_KERNEL_HEADERS} \
+			${RPM_GLIBC_DEVEL} \
+			make-3.77-6.${MACHINE_ARCH}.rpm \
+			cpp-1.1.2-24.${MACHINE_ARCH}.rpm \
+			egcs-1.1.2-24.${MACHINE_ARCH}.rpm \
+			egcs-c++-1.1.2-24.${MACHINE_ARCH}.rpm \
+			egcs-g77-1.1.2-24.${MACHINE_ARCH}.rpm \
+			${RPM_GDB} \
+			${RPM_X_DEVEL}
+
+PATCH_SITES=		${RPM_MIRRORS:S/__DIR__/${UPDDIR}/g}
+PATCHFILES=
 
 MAINTAINER=		marcel@FreeBSD.org
 
 RUN_DEPENDS=		\
 	${PREFIX}/etc/redhat-release:${PORTSDIR}/emulators/linux_base
 
-ONLY_FOR_ARCHS=		i386 alpha
+ONLY_FOR_ARCHS=		alpha i386
 DIST_SUBDIR=		rpm
 PREFIX=			/compat/linux
 EXTRACT_ONLY=
 NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
 NO_MTREE=		yes
-PLIST=			${PKGDIR}/PLIST.${ARCH}
+PLIST=			${PKGDIR}/PLIST.${MACHINE_ARCH}
 
-STDDIR=			old-releases/redhat-5.2/${ARCH}/RedHat/RPMS
+RPM_MIRRORS=		\
+	ftp://ftp.cdrom.com/pub/linux/redhat/__DIR__/ \
+	ftp://ftp.redhat.com/redhat/__DIR__/ \
+	ftp://ftp.infomagic.com/pub/mirrors/linux/RedHat/__DIR__/ \
+	ftp://ftp.crc.ca/mirrors/by-site/ftp.redhat.com/redhat/__DIR__/ \
+	ftp://ftp.nluug.nl/site/ftp.redhat.com/redhat/__DIR__/ \
+	ftp://mirror.nucba.ac.jp/mirror/redhat/__DIR__/ \
+	ftp://ftp.is.co.za/linux/distributions/redhat/__DIR__/ \
+	ftp://mirror.aarnet.edu.au/pub/linux/redhat/__DIR__/
+
+STDDIR=			redhat-6.1/${MACHINE_ARCH}/RedHat/RPMS
+UPDDIR=			updates/6.1/${MACHINE_ARCH}
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} == "i386")
-KERN_HEADERS=		kernel-headers-2.0.36-0.7.i386.rpm
+.if (${MACHINE_ARCH} == "i386")
+RPM_GDB=		gdb-4.18-4.i386.rpm
+RPM_GLIBC_DEVEL=	glibc-devel-2.1.2-11.i386.rpm
+RPM_KERNEL_HEADERS=	kernel-headers-2.2.12-20.i386.rpm
+RPM_X_DEVEL=		XFree86-devel-3.3.5-3.i386.rpm
 .else
-KERN_HEADERS=		kernel-headers-2.0.35-5.alpha.rpm
+RPM_GDB=		gdb-4.18-5.alpha.rpm
+RPM_GLIBC_DEVEL=	glibc-devel-2.1.2-17.alpha.rpm
+RPM_KERNEL_HEADERS=	kernel-headers-2.2.13-0.9.alpha.rpm
+RPM_X_DEVEL=		XFree86-devel-3.3.5-17.alpha.rpm
 .endif
 
 DBPATH=			/var/lib/rpm
-RPMFLAGS=		--ignoreos --root ${PREFIX} --dbpath ${DBPATH}
+RPMFLAGS=		--ignoreos --root ${PREFIX} --dbpath ${DBPATH} \
+			--replacepkgs
 RPMDIR=			${DISTDIR}/${DIST_SUBDIR}
 
 REMOVE_DIRS=		/dev /tmp /var/tmp
-REMOVE_FILES=		/usr/X11R6/include/X11/X11
+REMOVE_FILES=		/boot/kernel.h
 
 .if ${OSVERSION} <= 320001
 #
@@ -75,10 +88,13 @@ REMOVE_FILES=		/usr/X11R6/include/X11/X11
 NEEDLOADLINK=		true
 .endif
 
+do-patch:
+	@${DO_NADA}
+
 do-install:
 	@if [ -z "`kldstat -v | ${GREP} -E 'linux(aout|elf)'`" ]; then \
 		${ECHO} 'Linux mode is not enabled.\
-		  Loading linux kernel module...' | fmt; \
+			Loading linux kernel module...' | fmt; \
 		linux || { \
 		${ECHO} 'The linux kernel module could not be loaded.\
 			Please manually load the module and retry.\
@@ -97,7 +113,6 @@ do-install:
 	@${CHMOD} 666 ${PREFIX}/dev/null
 .if defined(NEEDLOADLINK)
 	@${MKDIR} ${PREFIX}/compat
-	@${RM} -f ${PREFIX}/compat/linux
 	@${LN} -s / ${PREFIX}/compat/linux
 .endif
 #
@@ -105,14 +120,18 @@ do-install:
 #
 	@for R in ${DISTFILES}; do \
 		${ECHO} $$R; \
-		rpm -i ${RPMFLAGS} --replacepkgs ${RPMDIR}/$$R || \
-			${TRUE}; \
+		rpm -i ${RPMFLAGS} ${RPMDIR}/$$R; \
+	done
+#
+# Install updates
+#
+	@for R in ${PATCHFILES}; do \
+		${ECHO} $$R; \
+		rpm -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
 #
 # Finish
 #
-	@(cd ${PREFIX}/usr/bin; ${LN} -s egcs cc)
-	@(cd ${PREFIX}/usr/bin; ${LN} -s egcs gcc)
 .if defined(NEEDLOADLINK)
 	@${RM} -rf ${PREFIX}/compat
 .endif
@@ -120,7 +139,7 @@ do-install:
 		${RM} -rf ${PREFIX}/$$D; \
 	done
 	@for F in ${REMOVE_FILES}; do \
-		${RM} ${PREFIX}/$$F; \
+		${RM} -f ${PREFIX}/$$F; \
 	done
 
 .include <bsd.port.post.mk>
