@@ -1325,3 +1325,4 @@ mail/postfix20|mail/postfix|2004-11-27|obsolete
 math/ruby-math3d||2004-11-27|deleted due to build failure
 misc/biblereader||2004-11-27|deleted due to fetch failure
 misc/grdb||2004-11-27|depended on GTK1, which is obsolete
+print/acroread|print/acroread5|2004-11-27|removed due to security problems
