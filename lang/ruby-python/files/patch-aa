@@ -1,47 +1,28 @@
 --- extconf.rb.orig	Mon Sep 11 01:14:42 2000
-+++ extconf.rb	Fri Jan 19 04:43:51 2001
-@@ -1,35 +1,41 @@
++++ extconf.rb	Thu Mar 29 17:01:54 2001
+@@ -1,35 +1,29 @@
  require 'mkmf'
  
 -py_dir        = with_config("python-dir")
 -if py_dir
 -  dirs = [py_dir]
-+python        = with_config("python", "python1.5")
-+python        = `which #{python}`.chomp
-+
-+exit(1) unless File.executable? python
-+
-+py_name       = File.basename(python)
-+py_dir        = `#{python} -c 'import sys; print sys.exec_prefix' < /dev/null`.split(/\n/)[0]
-+
-+exit(1) unless File.directory? py_dir
-+
-+py_includedir = py_dir + "/include/" + py_name
-+py_libdir     = py_dir + "/lib/" + py_name
-+py_configdir  = py_libdir + "/config"
-+py_makefile   = py_configdir + "/Makefile"
-+
-+print "checking for #{py_makefile}... "
-+if File.exists? py_makefile
-+  print "yes\n"
- else
+-else
 -  dirs = ['/usr/local', '/usr']
 -  if File.executable? `which python`.chomp
 -    d = `python -c 'import sys; print sys.exec_prefix' < /dev/null`
 -    d = d.split(/\n/).shift
 -    dirs.unshift d if d and File.directory? d
 -  end
-+  print "no\n"
-+  exit(1)
- end
+-end
++python	= with_config("python", "python1.5")
++python	= `which #{python}`.chomp
  
 -for py_dir in dirs
 -  py_includedir = py_dir + "/include/python1.5"
 -  py_libdir     = py_dir + "/lib/python1.5"
 -  py_configdir  = py_libdir + "/config"
 -  py_makefile   = py_configdir + "/Makefile"
-+$CFLAGS  += " -I#{py_includedir}"
-+$LDFLAGS += " -L#{py_configdir}"
++exit(1) unless File.executable? python
  
 -  print "checking for #{py_makefile}... "
 -  if File.exists? py_makefile
@@ -49,24 +30,34 @@
 -    break
 -  else
 -    print "no\n"
-+if with_config("pthread")
-+  if !have_library("pthread", "pthread_create")
-+    $LDFLAGS += " -pthread"
-+    $libs.sub!(/-lc\b/, '-lc_r')
-+
-+    if !have_func("pthread_create")
-+      exit(1)
-+    end
-   end
- end
+-  end
+-end
 -exit(1) unless File.exists? py_makefile
--
++py_name	= File.basename(python)
++py_dir	= `#{python} -c 'import sys; print sys.exec_prefix' < /dev/null`.split(/\n/)[0]
++
++exit(1) unless File.directory? py_dir
+ 
 -$CFLAGS  = "-I#{py_includedir}"
 -$LDFLAGS = "-L#{py_configdir}"
++dir_config("python",
++	   py_dir + "/include/" + py_name,
++	   py_dir + "/lib/" + py_name + "/config")
++
++py_makefile  = with_config("python-makefile",
++			    py_dir + "/lib/" + py_name + "/config/Makefile")
++
++print "checking for #{py_makefile}... "
++if File.exists? py_makefile
++  print "yes\n"
++else
++  print "no\n"
++  exit(1)
++end
  
  # If python is linked with extra libraries (e.g. -lpthread on Linux,
  # -lsocket on Solaris, etc.), have_library test will fail and built
-@@ -59,11 +65,13 @@
+@@ -59,11 +53,13 @@
  end
  $LOCAL_LIBS << py_extralibs
  
