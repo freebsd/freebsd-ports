@@ -1,4 +1,4 @@
 bin/unrar
-%%DOCSDIR%%/license.txt
-%%DOCSDIR%%/readme.txt
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/license.txt
+%%PORTDOCS%%%%DOCSDIR%%/readme.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
