@@ -3,7 +3,7 @@
 # Date created:		31 Oct 1998
 # Whom:			Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.2 1998/12/23 08:50:37 kuriyama Exp $
+# $Id: Makefile,v 1.3 1998/12/23 12:02:18 asami Exp $
 #
 
 DISTNAME=	skk9.6
@@ -28,12 +28,18 @@ post-install:
 	@if [ ! -f ${STARTUP_SCRIPT} ]; then \
 		${ECHO} "Installing ${STARTUP_SCRIPT} file."; \
 		${ECHO} "#!/bin/sh" > ${STARTUP_SCRIPT}; \
-		${ECHO} "if [ -f ${PREFIX}/sbin/skkserv ]; then" >> \
+		${ECHO} 'case $$1 in' >> ${STARTUP_SCRIPT}; \
+		${ECHO} "start)" >> ${STARTUP_SCRIPT}; \
+		${ECHO} "	if [ -f ${PREFIX}/sbin/skkserv ]; then" >> \
 			${STARTUP_SCRIPT}; \
-		${ECHO} "  echo -n ' skkserv'; ${PREFIX}/sbin/skkserv" >> \
+		${ECHO} "		echo -n ' skkserv'; ${PREFIX}/sbin/skkserv" >> \
 			${STARTUP_SCRIPT}; \
-		${ECHO} "fi" >> ${STARTUP_SCRIPT}; \
-		chmod 755 ${STARTUP_SCRIPT}; \
+		${ECHO} "	fi" >> ${STARTUP_SCRIPT}; \
+		${ECHO} "	;;" >> ${STARTUP_SCRIPT}; \
+		${ECHO} "stop)" >> ${STARTUP_SCRIPT}; \
+		${ECHO} "	;;" >> ${STARTUP_SCRIPT}; \
+		${ECHO} "*)" >> ${STARTUP_SCRIPT}; \
+		${ECHO} '	echo "usage: $$0 {start|stop}" 1>&2' >> ${STARTUP_SCRIPT}; \
 	fi
 
 .include <bsd.port.mk>
