@@ -166,6 +166,7 @@
     SUBDIR += juk
     SUBDIR += juke
     SUBDIR += jxm
+    SUBDIR += klira
     SUBDIR += kmp
     SUBDIR += ksmp3play
     SUBDIR += ladspa

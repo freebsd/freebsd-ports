@@ -1,0 +1,12 @@
+[ excerpt from developer's web site ]
+
+This app is an audio converter for KDE. It lets you convert to and
+from various audio file formats (at the moment: mp3, Ogg and wav),
+mantaining, when possible, all the informations attached to those
+files (title, author and so on). Its interface is thought as a
+wizard (a serie of pages navigable through back-forward buttons),
+so it should be quite simple to use, or so I hope.
+
+WWW: http://klira.sourceforge.net/
+
+-- lioux@FreeBSD.org
