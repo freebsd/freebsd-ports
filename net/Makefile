@@ -317,6 +317,7 @@
     SUBDIR += mldonkey-urlslave
     SUBDIR += mmucl
     SUBDIR += mopd
+    SUBDIR += morebalance
     SUBDIR += mpd
     SUBDIR += mpich
     SUBDIR += mrt
