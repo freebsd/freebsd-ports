@@ -1,0 +1,6 @@
+include/X11/extensions/XRes.h
+lib/libXRes.a
+lib/libXRes.la
+lib/libXRes.so
+lib/libXRes.so.0
+libdata/pkgconfig/xres.pc
