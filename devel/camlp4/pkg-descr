@@ -1,0 +1,3 @@
+Camlp4 is a Pre-Processor-Pretty-Printer for Objective Caml. It offers
+syntactic library tools and the ability to extend and/or redefine the
+concrete syntax of Objective Caml.

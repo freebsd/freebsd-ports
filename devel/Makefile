@@ -23,6 +23,7 @@
     SUBDIR += bugbuddy
     SUBDIR += c_c++_reference
     SUBDIR += c_c++_reference-i18n
+    SUBDIR += camlp4
     SUBDIR += cbrowser
     SUBDIR += cc65
     SUBDIR += cccc
