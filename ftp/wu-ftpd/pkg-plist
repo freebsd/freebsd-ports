@@ -1,6 +1,6 @@
-etc/ftpaccess
-etc/ftpconversions
-etc/ftpusers
+etc/ftpaccess.example
+etc/ftpconversions.example
+etc/ftpusers.example
 libexec/ftpd
 man/man1/ftpcount.1.gz
 man/man1/ftpwho.1.gz

@@ -1,3 +1,9 @@
+The package is linked dynamic so that you will get the right crypt
+library.  If you are serious about performance, you may want to recompile
+it by yourself (the port will link static by default).
+
+-Satoshi (Nov 14, 1995)
+---
 WASHINGTON UNIVERSITY FTP SERVER, RELEASE 2.4
 wu-ftpd is a replacement ftp server for Un*x systems.  Besides
 supporting the ftp protocol defined in RFC 959, it adds the following
