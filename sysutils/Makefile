@@ -29,6 +29,7 @@
     SUBDIR += eject
     SUBDIR += ffsrecov
     SUBDIR += flexbackup
+    SUBDIR += fortunelock
     SUBDIR += gcombust
     SUBDIR += gkrellm
     SUBDIR += glload
