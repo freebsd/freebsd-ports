@@ -3,7 +3,7 @@
 # Date created:		10 November 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.16 1996/11/18 11:34:37 asami Exp $
+# $Id: Makefile,v 1.17 1996/12/08 09:48:56 max Exp $
 #
 
 DISTNAME=	dgd-lpmud
@@ -26,7 +26,7 @@ PKG_ARGS=	-v -c ${PKGDIR}/COMMENT -d ${PKGDIR}/DESCR -f ${PKGDIR}/PLIST \
 #		-r ${PKGDIR}/REQ
 
 do-build:
-	@cd ${WRKDIR}/bin; make
+	@cd ${WRKDIR}/mud/bin; make
 
 do-install:
 	@tar -C ${WRKDIR} -cf - `grep '^[a-z]' ${PKGDIR}/PLIST` \
