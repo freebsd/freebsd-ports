@@ -3,8 +3,6 @@ bin/php-config
 bin/phpextdist
 bin/phpize
 etc/php.conf
-@exec touch %D/etc/php.ini
-@unexec [ -s %D/etc/php.ini ] || rm %D/etc/php.ini
 etc/php.ini-dist
 etc/php.ini-recommended
 include/php/TSRM/TSRM.h
