@@ -1,0 +1,82 @@
+*** pop_parse.c.orig	Thu Nov 20 00:20:38 1997
+--- pop_parse.c	Mon Jun 29 18:08:45 1998
+***************
+*** 26,31 ****
+--- 26,32 ----
+  {
+      char            *   mp;
+      register int        i;
++     register int        parmlen;
+      
+      /*  Loop through the POP command array */
+      for (mp = buf, i = 0; ; i++) {
+***************
+*** 45,52 ****
+          /*  Point to the start of the token */
+          p->pop_parm[i] = mp;
+  
+          /*  Search for the first space character (end of the token) */
+!         while (!isspace(*mp) && *mp) mp++;
+  
+          /*  Delimit the token with a null */
+          if (*mp) *mp++ = 0;
+--- 46,75 ----
+          /*  Point to the start of the token */
+          p->pop_parm[i] = mp;
+  
++         /*  Start counting the length of this token */
++         parmlen = 0;
++ 
+          /*  Search for the first space character (end of the token) */
+!         while (!isspace(*mp) && *mp) {
+!             mp++;
+!             parmlen++;
+!             if (parmlen > MAXPARMLEN) {
+!                 /* Truncate parameter to the max. allowable size */
+!                 *mp = '\0';
+! 
+!                 /* Fail with an appropriate message */
+!                 if (i == 0) {
+!                     pop_msg(p,POP_FAILURE,
+!                             "Command \"%s\" (truncated) exceedes maximum permitted size.",
+!                             p->pop_command);
+!                 } else {
+!                     pop_msg(p,POP_FAILURE,
+!                             "Argument %d \"%s\" (truncated) exceeds maximum permitted size.",
+!                             i, p->pop_parm[i]);
+!                 }
+!                 return(-1);
+!             }
+!         }
+  
+          /*  Delimit the token with a null */
+          if (*mp) *mp++ = 0;
+***************
+*** 64,73 ****
+   	  if(p->pop_command[0] == 'p' && strcmp(p->pop_command,"pass") == 0) {
+   	    if (*mp != 0) {
+   	      p->pop_parm[1] = mp;
+!               if (strlen(mp) > 0) {
+!                 mp = mp + strlen(mp) - 1;
+!                 while (*mp == 0xa || *mp == 0xd) *mp-- = 0;
+!               }
+   	      return(1);
+   	    } else
+   	      return (-1);
+--- 87,102 ----
+   	  if(p->pop_command[0] == 'p' && strcmp(p->pop_command,"pass") == 0) {
+   	    if (*mp != 0) {
+   	      p->pop_parm[1] = mp;
+! 	      mp += strlen(mp) - 1;
+! 	      while (*mp == 0xa || *mp == 0xd) *mp-- = 0;
+! 	      mp = p->pop_parm[1];
+! 	      if (strlen(mp) > MAXPARMLEN) {
+! 		mp[MAXPARMLEN] = '\0';
+! 		pop_msg(p,POP_FAILURE,
+! 			"Password \"%s\" (truncated) exceeds maximum permitted size.",
+! 			mp);
+! 		return (-1);
+! 	      }
+   	      return(1);
+   	    } else
+   	      return (-1);
