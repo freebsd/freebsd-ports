@@ -7,7 +7,6 @@ include/gtkDPS/gtkDPScontext.h
 include/gtkDPS/gtkDPSfontpanel.h
 include/gtkDPS/gtkDPSwidget.h
 lib/libgtkDPS.a
-lib/libgtkDPS.la
 lib/libgtkDPS.so
 lib/libgtkDPS.so.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B

@@ -3,7 +3,7 @@
 # Date created:		26 June 1998
 # Whom:			Horance C.H Chou <horance@freedom.ie.cycu.edu.tw>
 #
-# $Id: Makefile,v 1.2 1999/04/08 17:54:37 steve Exp $
+# $Id: Makefile,v 1.3 1999/05/04 11:40:13 asami Exp $
 #
 
 DISTNAME=	swarm-1.4.1
@@ -18,7 +18,7 @@ LIB_DEPENDS=	ffi.2:${PORTSDIR}/devel/libffi \
 		BLT24.2:${PORTSDIR}/x11-toolkits/blt
 
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--with-defaultdir=${PREFIX} \
 		--with-tclincludedir=${PREFIX}/include/tcl8.0 \
 		--with-tkincludedir=${PREFIX}/include/tk8.0 \

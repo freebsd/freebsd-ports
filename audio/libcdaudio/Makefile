@@ -3,7 +3,7 @@
 # Date created:		01 June 1999
 # Whom:			Thomas Gellekum <tg@FreeBSD.ORG>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/06/01 10:46:54 tg Exp $
 #
 
 DISTNAME=	libcdaudio_0.7.0
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.orig.tar.gz
 MAINTAINER=	ports@FreeBSD.ORG
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 
 post-install:
 	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib

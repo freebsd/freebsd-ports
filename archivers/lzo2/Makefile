@@ -3,7 +3,7 @@
 # Date created:				21 Feb 1998
 # Whom:					giffunip@asme.org
 #
-# $Id: Makefile,v 1.3 1998/12/10 17:24:31 vanilla Exp $
+# $Id: Makefile,v 1.4 1999/04/19 19:28:34 jseger Exp $
 #
 
 DISTNAME=       lzo-1.04
@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=libs/compression
 
 MAINTAINER=     ports@FreeBSD.ORG
 
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS+= 	--enable-shared=yes \
   			--enable-asm=yes
 post-install:

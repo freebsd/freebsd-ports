@@ -3,7 +3,7 @@
 # Date created:			14, June, 1998
 # Whom:				Horance Chou <horance@freedom.ie.cycu.edu.tw>
 #
-# $Id: Makefile,v 1.7 1999/02/02 13:54:00 vanilla Exp $
+# $Id: Makefile,v 1.8 1999/03/08 07:28:22 asami Exp $
 #
 
 DISTNAME=       libffi-1.20
@@ -12,7 +12,7 @@ MASTER_SITES=   ftp://ftp.cygnus.com/pub/green/
 
 MAINTAINER=     horance@freedom.ie.cycu.edu.tw
 
-GNU_CONFIGURE=  yes
+USE_LIBTOOL=  yes
 CONFIGURE_TARGET=	# empty
 
 post-install:

@@ -3,7 +3,7 @@
 # Date created:				29 April 1999
 # Whom:					Andrey Zakhvatov
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/03 04:19:23 steve Exp $
 #
 
 DISTNAME=	Hermes-1.2.4
@@ -12,7 +12,7 @@ MASTER_SITES=	http://hermes.terminal.at/files/
 
 MAINTAINER=	andy@icc.surw.chel.su
 
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 USE_GMAKE=	yes
 
 post-install:

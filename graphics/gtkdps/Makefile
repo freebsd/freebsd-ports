@@ -3,7 +3,7 @@
 # Date created:        21 April 1998
 # Whom:                Yukihiro Nakai <Nakai@technologist.com>
 #
-# $Id: Makefile,v 1.8 1999/01/12 16:50:44 vanilla Exp $
+# $Id: Makefile,v 1.9 1999/01/22 21:47:37 nectar Exp $
 #
 
 DISTNAME=	gtkDPS-0.2.16
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	pswrap:${PORTSDIR}/x11/dgs
 CONFIGURE_ARGS=	--with-dps-includes=${X11BASE}/include \
 		--with-dps-libraries=${X11BASE}/lib
 CONFIGURE_ENV=	GTK_CONFIG="${X11BASE}/bin/gtk10-config"
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 USE_X_PREFIX=	yes
 
 post-install:

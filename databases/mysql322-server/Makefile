@@ -3,7 +3,7 @@
 # Date created:				26 Jan 1998
 # Whom:					Josh Tiefenbach <josh@ican.net>
 #
-# $Id: Makefile,v 1.50 1999/05/02 11:10:54 dirk Exp $
+# $Id: Makefile,v 1.51 1999/05/25 06:47:33 peter Exp $
 #
 
 DISTNAME=	mysql-3.22.22
@@ -21,7 +21,7 @@ Y2K=            http://www.tcx.se/Manual_chapter/manual_Introduction.html#Year_2
 MAN1=		mysql.1
 
 USE_PERL5=	yes
-GNU_CONFIGURE=	yes
+USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--localstatedir=/var/db/mysql \
 		--without-perl \
 		--without-debug \

@@ -36,7 +36,6 @@ lib/mysql/libdbug.a
 lib/mysql/libheap.a
 lib/mysql/libmerge.a
 lib/mysql/libmysqlclient.a
-lib/mysql/libmysqlclient.la
 lib/mysql/libmysqlclient.so
 lib/mysql/libmysqlclient.so.6
 lib/mysql/libmystrings.a
