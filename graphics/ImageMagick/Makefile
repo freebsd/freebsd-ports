@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-PORTVERSION=	5.3.6
-PORTREVISION=   2
+PORTVERSION=	5.3.7
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://imagemagick.sourceforge.net/http/ \
 		ftp://ftp.yggdrasil.com/mirrors/site/ftp.simplesystems.org/pub/%SUBDIR%/ \
