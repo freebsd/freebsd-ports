@@ -1,11 +1,12 @@
 --- elftoaout.c~	Thu Jul 10 16:48:06 1997
 +++ elftoaout.c	Fri Jul  3 09:36:09 1998
-@@ -9,7 +9,15 @@
+@@ -9,7 +9,16 @@
  #include <linux/elf.h>
  #define ELFDATA2MSB   2
  #else
 -#include <sys/elf.h>
 +#include <elf.h>
++#include <sys/elf32.h>
 +#include <sys/elf64.h>
 +#endif
 +
