@@ -7,7 +7,7 @@
 
 PORTNAME=	cnews
 PORTVERSION=	cr.g
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/c-news/ \
 		ftp://ftp.funet.fi/pub/unix/news/cnews/ \
@@ -20,8 +20,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		pgpverify-1.12:pgp
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-PATCH_SITES=	ftp://ftp.lan-ks.de/pub/c-news/ \
-		ftp://ftp.dinoex.org/pub/c-news/
+PATCH_SITES=	ftp://ftp.dinoex.org/pub/c-news/
 PATCHFILES=	c-news-patch-fileart.c c-news-patch-namelen \
 		c-news-patch-newsrun c-news-patch-sendbatches \
 		c-news-patch-ctl-pgp3 c-news-patch-ctl-more \
@@ -31,6 +30,7 @@ PATCHFILES=	c-news-patch-fileart.c c-news-patch-namelen \
 		c-news-patch-ctl-underscore \
 		c-news-patch-y2k-2 \
 		c-news-patch-inews-path \
+		c-news-patch-expovguts.c \
 		c-news-patch-pgpverify-1.12-perl4
 
 MAINTAINER=	dinoex@FreeBSD.org
