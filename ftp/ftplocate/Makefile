@@ -13,13 +13,13 @@ MASTER_SITES=	ftp://ftp.ee.ncku.edu.tw/pub/ftplocate/
 
 MAINTAINER=	tung@turtle.ee.ncku.edu.tw
 
-BROKEN=		"Incorrect pkg-plist"
-
 BUILD_DEPENDS=  ${LOCALBASE}/sbin/apxs:${PORTSDIR}/www/apache13
 RUN_DEPENDS=	glimpse:${PORTSDIR}/textproc/glimpse \
 		unzip:${PORTSDIR}/archivers/unzip
 
-USE_PERL5=	yes
+USE_PERL5_BUILD=yes
+USE_PERL5_RUN=	yes
+USE_REINPLACE=	yes
 NO_BUILD=	yes
 
 PL_FILES=	install.pl bin/dcollect.pl bin/dindex.pl bin/dsearch.pl \
@@ -30,9 +30,9 @@ PL_FILES=	install.pl bin/dcollect.pl bin/dindex.pl bin/dsearch.pl \
 
 post-patch:
 .for f in ${PL_FILES}
-	@${PERL} -pi -e 's,/usr/local/bin/perl,${PERL},' ${WRKSRC}/${f}
+	@${REINPLACE_CMD} -e 's,/usr/local/bin/perl,${PERL},' ${WRKSRC}/${f}
 .endfor
-	@${PERL} -pi -e "s,/usr/local,${PREFIX},g" ${WRKSRC}/install.pl
+	@${REINPLACE_CMD} -e "s,/usr/local,${PREFIX},g" ${WRKSRC}/install.pl
 
 do-install:
 	cd ${WRKSRC}; ${PERL} install.pl -y -c -bsdport
