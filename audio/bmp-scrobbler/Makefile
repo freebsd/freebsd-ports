@@ -5,9 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	bmp-scrobbler
-PORTVERSION=	0.3.6
+PORTVERSION=	0.3.7
 CATEGORIES=	audio
-MASTER_SITES=	http://static.audioscrobbler.com/plugins/
+MASTER_SITES=	http://static.audioscrobbler.com/plugins/ \
+		http://www.pipian.com/stuffforchat/
 DISTNAME=	xmms-scrobbler-${PORTVERSION}
 
 MAINTAINER=	bogorodskiy@inbox.ru
