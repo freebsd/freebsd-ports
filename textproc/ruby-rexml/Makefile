@@ -24,7 +24,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 DOCS=		README index.html docs/tutorial.html doc img
 
 do-install:
-	cd ${WRKSRC} && ${RUBY} bin/install.rb
+	cd ${WRKSRC}; ${RUBY} bin/install.rb
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
 .for f in ${DOCS}

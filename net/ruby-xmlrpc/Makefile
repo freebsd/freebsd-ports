@@ -34,7 +34,7 @@ post-patch:
 	${RUBY} -i -pe '$$_ = "FILES2 = []\n" if /^FILES2\s*=/' ${WRKSRC}/install.rb
 
 do-install:
-	cd ${WRKSRC} && ${RUBY} install.rb
+	cd ${WRKSRC}; ${RUBY} install.rb
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
 	${CP} -R ${WRKSRC}/samples/* ${RUBY_EXAMPLESDIR}/${PORTNAME}/

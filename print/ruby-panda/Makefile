@@ -40,7 +40,7 @@ post-install:
 .for f in ${EXAMPLES_EN}
 	${INSTALL_DATA} ${WRKSRC}/examples/${f} ${RUBY_EXAMPLESDIR}/${PORTNAME}/
 .endfor
-	cd ${RUBY_EXAMPLESDIR}/${PORTNAME} && ${LN} -sf ../../panda/*.jpg ../../panda/*.png ../../panda/*.tif .
+	cd ${RUBY_EXAMPLESDIR}/${PORTNAME}; ${LN} -sf ../../panda/*.jpg ../../panda/*.png ../../panda/*.tif .
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}/ja
 .for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_DOCDIR}/${PORTNAME}/
