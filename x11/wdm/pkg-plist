@@ -33,6 +33,7 @@ share/locale/cs/LC_MESSAGES/wdm.mo
 share/locale/de/LC_MESSAGES/wdm.mo
 share/locale/en/LC_MESSAGES/wdm.mo
 share/locale/es/LC_MESSAGES/wdm.mo
+share/locale/fr_FR/LC_MESSAGES/wdm.mo
 share/locale/ja/LC_MESSAGES/wdm.mo
 share/locale/ru/LC_MESSAGES/wdm.mo
 @unexec rmdir %D/lib/X11/wdm/pixmaps 2>/dev/null || true

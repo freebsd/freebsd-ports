@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	wdm
-PORTVERSION=	1.26
-PORTREVISION=	1
+PORTVERSION=	1.27
 CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://voins.program.ru/wdm/ \
 		http://www.de.freebsd.org/de/gif/bsd/ \
@@ -21,6 +20,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WINGs Display Manager; an xdm replacement
 
 LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
+
+NOT_FOR_ARCHS=	sparc64
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
@@ -54,10 +55,6 @@ DAEMONPICS=	beastie.xpm daemon1-HQ-1280x960.jpg
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == "sparc64"
-IGNORE=		"Does not work on sparc64"
-.endif
-
 .if ( ${OSVERSION} >= 500028 ) && !defined(WITHOUT_PAM)
 WITH_PAM=	yes
 CONFIGURE_ARGS+=	--with-pamdir=${LOCALBASE}/etc/pam.d/
@@ -79,8 +76,8 @@ pre-everything::
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|$$(DESTDIR)$$(PAMDIR)/wdm||g ; \
-		 s| -D | |g' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|$$(DESTDIR)$$(PAMDIR)/wdm||g' ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's|-ldl||g ; \
 		 s|/authdir||g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e \
@@ -89,14 +86,8 @@ post-patch:
 		's|#configdir#|${WDMDIR}|g' ${WRKSRC}/doc/wdm.man.in
 	@${REINPLACE_CMD} -e \
 		's|/etc/X11/wdm|${WDMDIR}|g' ${WRKSRC}/doc/wdmLogin.man
-	@${REINPLACE_CMD} -e \
-		's|<malloc\.h>|<stdlib.h>|g' ${WRKSRC}/src/TestLogin/TestLogin.c
 
 pre-install:
-.for lang in cs de en es ja ru
-	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
-.endfor
-	@${MKDIR} ${WDMDIR}/pixmaps
 .if exists(${WDMDIR}/wdm-config)
 	${MV} ${WDMDIR}/wdm-config ${WDMDIR}/wdm-config.preserve
 .endif
