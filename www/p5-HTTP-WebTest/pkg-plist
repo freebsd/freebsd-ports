@@ -1,0 +1,34 @@
+bin/wt
+%%SITE_PERL%%/Bundle/HTTP/WebTest.pm
+%%SITE_PERL%%/HTTP/WebTest.pm
+%%SITE_PERL%%/HTTP/WebTest.pm.in
+%%SITE_PERL%%/HTTP/WebTest/API.pm
+%%SITE_PERL%%/HTTP/WebTest/Cookbook.pod
+%%SITE_PERL%%/HTTP/WebTest/Cookies.pm
+%%SITE_PERL%%/HTTP/WebTest/Parser.pm
+%%SITE_PERL%%/HTTP/WebTest/Plugin.pm
+%%SITE_PERL%%/HTTP/WebTest/Plugin/Click.pm
+%%SITE_PERL%%/HTTP/WebTest/Plugin/ContentSizeTest.pm
+%%SITE_PERL%%/HTTP/WebTest/Plugin/Cookies.pm
+%%SITE_PERL%%/HTTP/WebTest/Plugin/DefaultReport.pm
+%%SITE_PERL%%/HTTP/WebTest/Plugin/Delay.pm
+%%SITE_PERL%%/HTTP/WebTest/Plugin/HarnessReport.pm
+%%SITE_PERL%%/HTTP/WebTest/Plugin/Hooks.pm
+%%SITE_PERL%%/HTTP/WebTest/Plugin/Loader.pm
+%%SITE_PERL%%/HTTP/WebTest/Plugin/ResponseTimeTest.pm
+%%SITE_PERL%%/HTTP/WebTest/Plugin/SetRequest.pm
+%%SITE_PERL%%/HTTP/WebTest/Plugin/StatusTest.pm
+%%SITE_PERL%%/HTTP/WebTest/Plugin/TextMatchTest.pm
+%%SITE_PERL%%/HTTP/WebTest/Plugins.pod
+%%SITE_PERL%%/HTTP/WebTest/ReportPlugin.pm
+%%SITE_PERL%%/HTTP/WebTest/Request.pm
+%%SITE_PERL%%/HTTP/WebTest/SelfTest.pm
+%%SITE_PERL%%/HTTP/WebTest/Test.pm
+%%SITE_PERL%%/HTTP/WebTest/TestResult.pm
+%%SITE_PERL%%/HTTP/WebTest/Utils.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/WebTest/.packlist
+@dirrm %%SITE_PERL%%/Bundle/HTTP
+@dirrm %%SITE_PERL%%/HTTP/WebTest/Plugin
+@dirrm %%SITE_PERL%%/HTTP/WebTest
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/WebTest
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP

@@ -1,0 +1,6 @@
+HTTP-WebTest tests remote URLs or local web files.
+
+This module runs tests on remote URLs or local web files containing
+Perl/JSP/HTML/JavaScript/etc. and generates a detailed test report.
+
+WWW: http://martynov.org/webtest/
