@@ -15,7 +15,6 @@ MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 MAINTAINER=	jharris@widomaker.com
 COMMENT=	File - determine file type
 
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--enable-fsect-man5
 HAS_CONFIGURE=	yes
 MAN1=		file.1
