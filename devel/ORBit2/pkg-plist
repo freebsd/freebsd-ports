@@ -1,6 +1,4 @@
-bin/name-client-2
 bin/orbit-idl-2
-bin/orbit-name-server-2
 bin/orbit2-config
 @unexec if cmp -s %D/etc/orbit2rc.default %D/etc/orbit2rc; then rm -f %D/etc/orbit2rc; fi
 etc/orbit2rc.default
