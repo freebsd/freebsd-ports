@@ -26,11 +26,12 @@ PLAIN can either check /etc/passwd, Kerberos V4, use PAM, or the sasl
 secrets database.  By default PAM is used if PAM is found, then
 Kerberos, finally /etc/passwd (non-shadow).  This is tweakable in the
 configuration file.  Please see
-"${PREFIX}/share/doc/sasl/sysadmin.html".
+"${PREFIX}/share/doc/cyrus-sasl2/html/sysadmin.html".
 
 The sample directory contains two programs which provide a reference
 for using the library, as well as making it easy to test a mechanism
-on the command line.  See "${PREFIX}/share/doc/sasl/programming.html"
-for more information.
+on the command line.  See
+"${PREFIX}/share/doc/cyrus-sasl2/html/programming.html" for more
+information.
 
 WWW: http://asg.web.cmu.edu/sasl/
