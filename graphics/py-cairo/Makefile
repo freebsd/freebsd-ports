@@ -24,9 +24,6 @@ USE_PYTHON=	yes
 WANT_GNOME=	yes
 USE_LIBTOOL_VER=15
 
-OPTIONS=	PYGTK "Enable PyGTK Support" On \
-		SVG "Enable SVG Support" On
-
 .include <bsd.port.pre.mk>
 
 .if ${HAVE_GNOME:Mpygtk2}!=""
@@ -46,5 +43,10 @@ PLIST_SUB+=	SVG=""
 .else
 PLIST_SUB+=	SVG="@comment "
 .endif
+
+pre-everything::
+	@${ECHO_MSG} "Enable SVG support by defining WITH_SVG"
+	@${ECHO_MSG} "Enabler PyGtk support by defining WITH_PYGTK"
+	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
