@@ -11,7 +11,7 @@ CATEGORIES=	security ipv6
 MASTER_SITES=	http://the.earth.li/~sgtatham/putty/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Secure shell and telnet client
 
 USE_GMAKE=	yes
