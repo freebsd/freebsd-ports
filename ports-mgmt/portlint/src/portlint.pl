@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $Id: portlint.pl,v 1.8 2003/08/15 04:59:05 marcus Exp $
+# $Id: portlint.pl,v 1.10 2003/08/15 17:45:51 marcus Exp $
 #
 
 use vars qw/ $opt_a $opt_A $opt_b $opt_c $opt_h $opt_t $opt_v $opt_M $opt_N $opt_B $opt_V /;
@@ -40,7 +40,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 4;
-my $micro = 2;
+my $micro = 3;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -909,7 +909,7 @@ ldconfig ln md5 mkdir mv patch perl rm rmdir ruby sed sh touch tr which xargs xm
 	foreach my $i (keys %cmdnames) {
 		if ($j =~ /[ \t\/]$i[ \t\n;]/
 		 && $j !~ /\n[A-Z]+_TARGET[?+]?=[^\n]+$i/
-	     && $j !~ /^COMMENT(.)?=/) {
+	     && $j !~ /\nCOMMENT(.)?=/) {
 			&perror("WARN: possible direct use of command \"$i\" ".
 				"found. use $cmdnames{$i} instead.");
 		}
@@ -918,7 +918,7 @@ ldconfig ln md5 mkdir mv patch perl rm rmdir ruby sed sh touch tr which xargs xm
 	foreach my $i (keys %autocmdnames) {
 		if ($j =~ /[\s\/]($i\d*)[\s;]/
 			&& $j !~ /\n[A-Z]+_TARGET[?+]?=[^\n]+($i\d*)/
-			&& $j !~ /^COMMENT(.)?=/) {
+			&& $j !~ /\nCOMMENT(.)?=/) {
 				&perror("WARN: possible direct use of command \"$1\" ".
 					"found. Use $autocmdnames{$i} instead and ".
 					"set according USE_*_VER= flag");
