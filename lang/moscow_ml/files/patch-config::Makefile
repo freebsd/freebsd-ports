@@ -1,0 +1,11 @@
+--- config/Makefile.orig	Wed Feb 16 16:36:57 2000
++++ config/Makefile	Wed Apr 10 00:21:46 2002
+@@ -4,7 +4,7 @@
+ 	@echo "Run 'sh autoconf' or 'sh autoconf gcc' or ..."
+ 
+ install:
+-	$(INSTALL_PROGRAM) m.h s.h $(INCDIR)
++	$(INSTALL_DATA) m.h s.h $(INCDIR)
+ 
+ clean scratch:
+ 	rm -f m.h s.h
