@@ -9,8 +9,7 @@
 # the same distfile.
 
 PORTNAME=	rxvt
-PORTVERSION=	2.6.3
-PORTREVISION=	1
+PORTVERSION=	2.6.4
 CATEGORIES+=	x11
 MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/%SUBDIR%/ \
 		ftp://mason.primenet.com.au/pub/rxvt/%SUBDIR%/ \
@@ -42,6 +41,11 @@ CONFIGURE_ARGS+=	--enable-gb
 .if defined(WITH_GREEK_KEYBOARD)
 CONFIGURE_ARGS+=	--enable-greek
 .endif # WITH_GREEK_KEYBOARD
+#
+# enable half width/height shadows scrollbar
+.if defined(WITH_HALF_SHADOW)
+CONFIGURE_ARGS+=	--enable-half-shadow
+.endif
 #
 # enable kanji support
 .if defined(WITH_KANJI)
@@ -77,6 +81,7 @@ pre-fetch:
 	@${ECHO_MSG} "WITH_BIG5=yes		add support for Chinese characters (BIG5)"
 	@${ECHO_MSG} "WITH_GB=yes		add support for Chinese characters (GB)"
 	@${ECHO_MSG} "WITH_GREEK_KEYBOARD=yes	add support for greek keyboard"
+	@${ECHO_MSG} "WITH_HALF_SHADOW=yes	use half width/height shadows on non-Xterm scrollbar"
 	@${ECHO_MSG} "WITH_KANJI=yes		add support for Kanji characters"
 	@${ECHO_MSG} "WITH_MENUBAR=yes	add support for rxvt menu bar system"
 	@${ECHO_MSG} "WITH_NEXT_SCROLLBAR=yes	add support for a NeXT-like scrollbar"
