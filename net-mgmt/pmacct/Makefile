@@ -31,8 +31,8 @@ CONFIGURE_ARGS+=	--disable-pgsql
 PLIST_SUB+=	WITH_PGSQL="@comment "
 .endif
 
-.if defined(WITH_MMAP)
-CONFIGURE_ARGS+=--enable-mmap
+.if defined(WITHOUT_MMAP)
+CONFIGURE_ARGS+=--disable-mmap
 .endif
 
 GNU_CONFIGURE=	yes
