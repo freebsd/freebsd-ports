@@ -1,0 +1,11 @@
+--- scripts/phpize.in.orig	Fri Jun 25 12:51:38 2004
++++ scripts/phpize.in	Fri Jun 25 12:52:14 2004
+@@ -64,7 +64,7 @@
+   echo 
+   exit 1
+ fi
+-libtoolize=`$builddir/build/shtool path glibtoolize libtoolize`
++libtoolize=`$builddir/build/shtool path libtoolize13`
+ $libtoolize -f -c || exit 1
+ 
+ # dumping API NOs:
