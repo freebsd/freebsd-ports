@@ -3,7 +3,7 @@
 # Date created:		Thu Nov  7 00:53:18 WST 1996
 # Whom:			Peter Wemm <peter@freebsd.org>
 #
-# $Id: Makefile,v 1.17 1997/01/07 18:49:06 peter Exp $
+# $Id: Makefile,v 1.18 1997/01/19 03:24:12 peter Exp $
 #
 
 DISTNAME=	squid-1.1.4
@@ -18,10 +18,9 @@ EXTRACT_SUFX=	-src.tar.gz
 PATCH_SITES+=   http://squid.nlanr.net/Squid/1.1/1.1.4/
 PATCHFILES+=    ftpget.c.patch icp.c.patch ipcache.c.patch neighbors.c.patch
 
-DIST_SUBDIR=	squid
-
 MAINTAINER=	peter@freebsd.org
 
+DIST_SUBDIR=	squid
 GNU_CONFIGURE=	yes
 # Follow the apache port's lead...
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/squid --bindir=${PREFIX}/sbin \
