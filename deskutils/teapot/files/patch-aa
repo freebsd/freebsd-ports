@@ -1,0 +1,37 @@
+--- Makefile.orig	Wed Mar 18 19:12:56 1998
++++ Makefile	Fri Mar 27 11:22:13 1998
+@@ -1,16 +1,16 @@
+ #{{{script}}}#{{{ Linux, moria machines, gcc
+-CFLAGS=		-g -pipe -O2 -Wall -Wmissing-prototypes -Wstrict-prototypes -Wcast-qual -Wpointer-arith -Wcast-align -Wwrite-strings -Wmissing-declarations -Wnested-externs -pedantic -fno-common
++#CFLAGS=		-g -pipe -O2 -Wall -Wmissing-prototypes -Wstrict-prototypes -Wcast-qual -Wpointer-arith -Wcast-align -Wwrite-strings -Wmissing-declarations -Wnested-externs -pedantic -fno-common
+ # The XDR library needs _BSD_SOURCE :(
+ CPPFLAGS=	-D_BSD_SOURCE
+ #CPPFLAGS=	-DTHE_ELECTRIC_FENCE
+ #CPPFLAGS=	-I/usr/dmalloc/include -DDMALLOC
+-LDFLAGS=	-g
++#LDFLAGS=	-g
+ #LDFLAGS=	-g -L/usr/efence/lib
+ #LDFLAGS=	-g -L/usr/dmalloc/lib
+-LIBS=		-lcurses -lm
++#LIBS=		-lcurses -lm
+ #LIBS=		-lcurses -lm -lefence
+ #LIBS=		-lcurses -lm -ldmalloc
+-MAKEDEPEND=	mkdep -d
++#MAKEDEPEND=	mkdep -d
+ #}}}
+ #{{{ Linux, Slackware/Redhat/Debian Distribution, gcc
+ #CC=		gcc
+@@ -22,10 +22,9 @@
+ #MAKEDEPEND=	gcc -MM
+ #}}}
+ #{{{ FreeBSD 2.x, gcc
+-#CC=		gcc
+-#CFLAGS=		-pipe -O2 -Wall -Wmissing-prototypes -Wstrict-prototypes -Wcast-qual -Wpointer-arith -Wcast-align -Wwrite-strings -Wmissing-declarations -Wnested-externs -pedantic -fno-common
+-#CPPFLAGS=	-I./.curses.h -DNO_POSIX_SOURCE
+-#LIBS=		-lncurses -lmytinfo -lm
++CC=		gcc
++CFLAGS=		-pipe -O2 -Wall -Wmissing-prototypes -Wstrict-prototypes -Wcast-qual -Wpointer-arith -Wcast-align -Wwrite-strings -Wmissing-declarations -Wnested-externs -pedantic -fno-common -I./.curses.h -DNO_POSIX_SOURCE
++LIBS=		-lncurses -lmytinfo -lm
+ #LDFLAGS=	
+ #MAKEDEPEND=	gcc -MM
+ #}}}
