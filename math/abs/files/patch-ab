@@ -1,11 +1,11 @@
---- Xpm/Makefile.orig	Mon Jan 25 00:38:13 1999
-+++ Xpm/Makefile	Mon Jan 25 00:38:43 1999
-@@ -16,7 +16,7 @@
- #################################
- ### C Compiler
- CC		= cc 
--CFLAGS		=  -O
-+CFLAGS		+=  -O -I$(X11BASE)/include
+--- TextField-1.0/Makefile.orig	Sun Apr 11 09:23:53 1999
++++ TextField-1.0/Makefile	Sun Apr 11 09:24:09 1999
+@@ -1,7 +1,7 @@
+ # Makefile for widget demo programs
  
- ### C++ Compiler
- CCC		= xlC 
+ ATHENALIBS = -lXaw -lXmu -lXt -lX11 -lm
+-CFLAGS = $(DEFINES) $(CDEBUGFLAGS) -I/usr/contrib/X11R6/include 
++CFLAGS = $(DEFINES) $(CDEBUGFLAGS) -I/usr/X11R6/include 
+ CDEBUGFLAGS =
+ DEFINES =
+ RM = rm -f
