@@ -1,6 +1,6 @@
 # New ports collection makefile for:	srg
 # Date created:		28 June 2004
-# Whom:			Dmitry Semkin <lslarry@gmail.ru>
+# Whom:			Dmitry Semkin <lslarry@gmail.com>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://mirror.crc.net.nz/pub/srg/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lslarry@gmail.com
 COMMENT=	A Squid Report Generator
 
 USE_GMAKE=	yes
