@@ -4,6 +4,9 @@ manager and as such places the importance of eyecandy and other aesthetic
 qualities slightly above stability.  Allows you to use scaled images as your
 background for terminal windows, and much more!
 
+If you want the KANJI feature enable, use
+make -DKANJI install
+
 http://www.tcserv.com/Eterm
 http://www.rasterman.com
 ported by murray@cdrom.com

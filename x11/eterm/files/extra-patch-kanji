@@ -1,0 +1,9 @@
+--- config.h.in.orig	Mon Oct 26 19:34:07 1998
++++ config.h.in	Mon Oct 26 19:34:37 1998
+@@ -206,3 +206,6 @@
+ 
+ /* Define if you have the Kenny library (-lKenny).  */
+ #undef HAVE_LIBKENNY
++
++/* Define if you want the KANJI mode enable. */
++#define KANJI

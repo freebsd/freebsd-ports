@@ -1,6 +1,5 @@
 bin/Esetroot
 bin/Eterm
-bin/Eterm-0.8
 share/Eterm/themes/Eterm/Eterm.menu
 share/Eterm/themes/Eterm/MAIN
 share/Eterm/themes/chooser/MAIN
@@ -15,7 +14,6 @@ share/Eterm/themes/tn3270/MAIN
 share/Eterm/themes/trans/MAIN
 share/Eterm/themes/trans/trans.menu
 share/Eterm/Eterm.help
-share/Eterm/Eterm.menu
 share/Eterm/Eterm.ref
 share/Eterm/Eterm.tcap
 share/Eterm/Eterm.ti
