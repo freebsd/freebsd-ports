@@ -1,0 +1,34 @@
+--- Makefile.in.orig	Tue Mar 21 23:34:04 2000
++++ Makefile.in	Fri Apr 28 14:22:24 2000
+@@ -1,11 +1,16 @@
+ # Makefile for gltron
+ 
+-SHELL = /bin/sh
+-OPT = -O2
+-CFLAGS = -c -pedantic -Wall -DSOUND
+-GL_LIBS = -lm -lGL -lGLU -lSDL -lpthread -lpng
+-XLIBS = -L/usr/X11/lib -L/usr/X11R6/lib -lX11
+-SNDLIBS =  -lSDL_mixer
++PREFIX		?=	/usr/X11R6
++LOCALBASE	?=	/usr/local
++X11BASE		?=	/usr/X11R6
++SHELL		=	/bin/sh
++SOUND		?=	-DSOUND
++OPT		=	-Wall ${SOUND} -DSHARE1="\"$(PREFIX)/share/gltron\"" -DSHARE2="\"$(X11BASE)/share/gltron\""
++INCS		=	-I$(LOCALBASE)/include -I$(X11BASE)/include -I$(LOCALBASE)/include/SDL11
++CFLAGS		?=	-O -pipe
++GL_LIBS		=	-lm -lGL -lGLU -lSDL-1.1 -pthread -lpng
++XLIBS		=	-L$(X11BASE)/lib -lX11
++SNDLIBS		=	-L$(LOCALBASE)/lib -lSDL_mixer -lSDL-1.1 -lsmpeg
+ 
+ GLTRON_INSTALLDIR = /usr/bin
+ GLTRON_HOME = /usr/share/games/gltron
+@@ -45,7 +50,7 @@
+ all: gltron
+ 
+ .c.o:
+-	$(CC) $(CFLAGS) $(OPT) $<
++	$(CC) -c $(CFLAGS) $(OPT) $(INCS) $<
+ 
+ gltron: $(OBJ_SOUND)
+ 	$(CC) $(OPT) -o gltron $(OBJ_SOUND) $(GL_LIBS) $(XLIBS) $(SNDLIBS)

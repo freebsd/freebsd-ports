@@ -1,0 +1,91 @@
+--- configure.orig	Thu Mar 30 11:22:00 2000
++++ configure	Fri Apr 28 14:46:13 2000
+@@ -523,7 +523,7 @@
+ 
+ 
+ 
+-LIBS='-L/usr/X11R6/lib'
++LIBS='-L$ac_default_prefix/lib -L/usr/X11R6/lib'
+ CC='gcc'
+ echo $ac_n "checking for main in -lm""... $ac_c" 1>&6
+ echo "configure:530: checking for main in -lm" >&5
+@@ -701,14 +701,14 @@
+ { echo "configure: error: GLU should come with OpenGL" 1>&2; exit 1; }
+ fi
+ 
+-echo $ac_n "checking for main in -lpthread""... $ac_c" 1>&6
+-echo "configure:706: checking for main in -lpthread" >&5
++echo $ac_n "checking for main in -pthread""... $ac_c" 1>&6
++echo "configure:706: checking for main in -pthread" >&5
+ ac_lib_var=`echo pthread'_'main | sed 'y%./+-%__p_%'`
+ if eval "test \"\${ac_cv_lib_$ac_lib_var+set}\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 714 "configure"
+ #include "confdefs.h"
+@@ -738,21 +738,21 @@
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
+ { echo "configure: error: SDL needs pthread to run properly" 1>&2; exit 1; }
+ fi
+ 
+-echo $ac_n "checking for main in -lSDL""... $ac_c" 1>&6
+-echo "configure:750: checking for main in -lSDL" >&5
++echo $ac_n "checking for main in -lSDL-1.1""... $ac_c" 1>&6
++echo "configure:750: checking for main in -lSDL-1.1" >&5
+ ac_lib_var=`echo SDL'_'main | sed 'y%./+-%__p_%'`
+ if eval "test \"\${ac_cv_lib_$ac_lib_var+set}\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lSDL -lpthread $LIBS"
++LIBS="-L$ac_default_prefix/lib -lSDL-1.1 -pthread $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 758 "configure"
+ #include "confdefs.h"
+@@ -782,7 +782,7 @@
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lSDL $LIBS"
++  LIBS="-L$ac_default_prefix/lib -lSDL-1.1 $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
+@@ -796,7 +796,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lSDL_mixer  $LIBS"
++LIBS="-L$ac_default_prefix/lib -lSDL_mixer -lsmpeg $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 802 "configure"
+ #include "confdefs.h"
+@@ -826,7 +826,7 @@
+ #define $ac_tr_lib 1
+ EOF
+ 
+-  LIBS="-lSDL_mixer $LIBS"
++  LIBS="-lSDL_mixer -lsmpeg $LIBS"
+ 
+ else
+   echo "$ac_t""no" 1>&6
+@@ -840,7 +840,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lpng  $LIBS"
++LIBS="-L$ac_default_prefix/lib -lpng  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 846 "configure"
+ #include "confdefs.h"

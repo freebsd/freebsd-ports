@@ -1,14 +1,16 @@
---- file.c	Mon Jan  3 19:05:10 2000
-+++ file.c.new	Sun Feb 13 02:22:14 2000
-@@ -1,13 +1,16 @@
+--- file.c	Mon Apr 24 23:19:46 2000
++++ file.c.new	Mon Apr 24 23:25:07 2000
+@@ -1,14 +1,18 @@
  #include "gltron.h"
+ 
 +#ifndef SHARE1
 +#define SHARE1 "\"/usr/local/share/gltron\""
 +#endif
 +#ifndef SHARE2
 +#define SHARE2 "\"/usr/X11R6/share/gltron\""
 +#endif
- 
++
+ static char* subdir = "data";
  char* getFullPath(char *filename) {
    char *path;
    FILE *fp = NULL;
@@ -20,7 +22,7 @@
    /* check a few directories for the files and */
    /* return the full path. */
    
-@@ -43,8 +46,8 @@
+@@ -44,8 +48,8 @@
      printf("unsuccessful\n");
    }
  
@@ -31,7 +33,7 @@
  
    printf("checking '%s'", path);
    fp = fopen(path, "r");
-@@ -56,8 +59,8 @@
+@@ -57,8 +61,8 @@
    free(path);
    printf("unsuccessful\n");
  
