@@ -129,6 +129,7 @@
     SUBDIR += h2n
     SUBDIR += hagelslag
     SUBDIR += hesiod
+    SUBDIR += host
     SUBDIR += hx
     SUBDIR += icb
     SUBDIR += icmpinfo

@@ -1,0 +1,84 @@
+
+$FreeBSD$
+
+--- Makefile.orig	Wed Mar 15 23:51:39 2000
++++ Makefile	Fri Jun 29 13:42:36 2001
+@@ -5,10 +5,10 @@
+ # ----------------------------------------------------------------------
+ 
+ # This is where the host executable will go.
+-DESTBIN = /usr/local/bin
++DESTBIN = $(PREFIX)/bin
+ 
+ # This is where the host manual page will go.
+-DESTMAN = /usr/local/man
++DESTMAN = $(PREFIX)/man
+ 
+ BINDIR = $(DESTBIN)
+ MANDIR = $(DESTMAN)/man1
+@@ -82,16 +82,16 @@
+ 
+ COPTS =
+ COPTS = -O -DDEBUG
+-COPTS = -O
++COPTS =
+ 
+-CFLAGS = $(COPTS) $(DEFS)
++#CFLAGS = $(COPTS) $(DEFS)
+ 
+ # Select your favorite compiler.
+-CC = /usr/ucb/cc			#if defined(solaris) && BSD
+-CC = /bin/cc -arch m68k -arch i386	#if defined(next)
+-CC = /bin/cc -Olimit 1000		#if defined(ultrix)
+-CC = /bin/cc
+-CC = cc
++CC ?= /usr/ucb/cc			#if defined(solaris) && BSD
++CC ?= /bin/cc -arch m68k -arch i386	#if defined(next)
++CC ?= /bin/cc -Olimit 1000		#if defined(ultrix)
++CC ?= /bin/cc
++CC ?= cc
+ 
+ # ----------------------------------------------------------------------
+ # Linking definitions.
+@@ -109,8 +109,8 @@
+ 
+ RES = -lsocket				#if defined(SCO) && default
+ RES =
+-RES = ../../res/libresolv.a
+-RES = -lresolv
++#RES = ../../res/libresolv.a
++#RES = -lresolv
+ 
+ COMPLIB = ../../compat/lib/lib44bsd.a
+ COMPLIB = -lnet
+@@ -130,13 +130,13 @@
+ # redefined by bind
+ CDEBUG = $(COPTS) $(CONFIGDEFS)
+ CDEFS = $(SYSDEFS) $(INCLUDES)
+-CFLAGS = $(CDEBUG) $(CDEFS)
++CFLAGS += $(CDEBUG) $(CDEFS)
+ 
+ # ----------------------------------------------------------------------
+ # Miscellaneous definitions.
+ # ----------------------------------------------------------------------
+ 
+-MAKE = make $(MFLAGS)
++MAKE += $(MFLAGS)
+ 
+ # This assumes the BSD install.
+ INSTALL = install -c
+@@ -183,11 +183,9 @@
+ $(PROG): $(OBJS)
+ 	$(CC) $(LDFLAGS) -o $(PROG) $(OBJS) $(LIBRARIES)
+ 
+-install: $(PROG)
+-	$(INSTALL) -m $(MODE) -o $(OWNER) -g $(GROUP) $(STRIP) $(PROG) $(BINDIR)
+-
+-man: $(MANS)
+-	$(INSTALL) -m 444 host.1 $(MANDIR)
++install: $(PROG) $(MANS)
++	$(BSD_INSTALL_PROGRAM) $(PROG) $(BINDIR)
++	$(BSD_INSTALL_MAN) host.1 $(MANDIR)
+ 
+ clean:
+ 	rm -f $(CLEANUP) *.o a.out core
