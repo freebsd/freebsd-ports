@@ -351,9 +351,9 @@ MASTER_SITE_GENTOO+=	\
 	ftp://gentoo.kems.net/pub/mirrors/gentoo/%SUBDIR%/
 
 MASTER_SITE_GNOME+=	\
-	http://www.gtlib.cc.gatech.edu/pub/gnome/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
 	http://ftp.linux.org.uk/mirrors/ftp.gnome.org/%SUBDIR%/ \
+	http://www.gtlib.cc.gatech.edu/pub/gnome/%SUBDIR%/ \
 	http://public.planetmirror.com/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.dit.upm.es/linux/gnome/%SUBDIR%/ \
 	ftp://ftp.dataplus.se/pub/linux/gnome/%SUBDIR%/ \
@@ -368,9 +368,9 @@ MASTER_SITE_GNOME+=	\
 	http://ftp.gnome.org/pub/GNOME/%SUBDIR%/
 
 MASTER_SITE_GNU+=	\
-	http://www.gtlib.cc.gatech.edu/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.gnu.org/gnu/%SUBDIR%/ \
 	http://mirrors.usc.edu/pub/gnu/%SUBDIR%/ \
+	http://www.gtlib.cc.gatech.edu/pub/gnu/%SUBDIR%/ \
 	ftp://gatekeeper.dec.com/pub/GNU/%SUBDIR%/ \
 	ftp://ftp.de.uu.net/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/gnu/prep/%SUBDIR%/ \
