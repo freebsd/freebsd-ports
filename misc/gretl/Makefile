@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	gretl
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.7
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,9 +16,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnu Regression, Econometrics and Time-series Library
 
 BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
-LIB_DEPENDS=	gmp.6:${PORTSDIR}/math/libgmp4
-BUILD_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
+LIB_DEPENDS=	lapack.3:${PORTSDIR}/math/lapack \
+		gmp.6:${PORTSDIR}/math/libgmp4
+RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gtk20 libxml2
 USE_GMAKE=	yes

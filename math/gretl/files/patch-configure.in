@@ -1,0 +1,11 @@
+--- configure.in.orig	Wed Apr  9 01:11:09 2003
++++ configure.in	Mon Apr 14 15:16:28 2003
+@@ -417,7 +417,7 @@
+ dnl Check for libpng
+ dnl
+ if test ${png_comments} = yes && test ${have_gtk} = "2.0" ; then
+-    PKG_CHECK_MODULES(PNG, libpng,
++    PKG_CHECK_MODULES(PNG, libpng12,
+         png_failed="no",
+ 	png_failed="yes"
+    )

@@ -1,0 +1,17 @@
+--- share/bcih/Makefile.in.orig	Wed Apr  9 03:57:19 2003
++++ share/bcih/Makefile.in	Mon Apr 14 16:07:21 2003
+@@ -2,11 +2,12 @@
+ 
+ CC = @CC@
+ prefix = @prefix@
++datadir = @datadir@
+ 
+ VPATH = $(topsrc)/share/bcih
+ 
+-gretldir = $(prefix)/share/gretl
+-INSTALL_DATA = cp -fp
++gretldir = $(datadir)/gretl
++INSTALL_DATA = @INSTALL_DATA@
+ 
+ mkbin: mkbin.c
+ 	$(CC) -o $@ $<
