@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	1.6.2.2
+PORTVERSION=	1.6.3
 CATEGORIES=	security
 MASTER_SITES=	http://www.snort.org/Files/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
