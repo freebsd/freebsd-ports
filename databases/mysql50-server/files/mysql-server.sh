@@ -6,6 +6,7 @@ PIDFILE=${DB_DIR}/`/bin/hostname -s`.pid
 case "$1" in
 	start)
 		if [ -x %%PREFIX%%/bin/safe_mysqld ]; then
+			/usr/bin/limits -U mysql \
 			%%PREFIX%%/bin/safe_mysqld --user=mysql --datadir=${DB_DIR} --pid-file=${PIDFILE} > /dev/null &
 			echo -n ' mysqld'
 		fi
