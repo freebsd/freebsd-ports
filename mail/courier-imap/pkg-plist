@@ -28,7 +28,7 @@ share/doc/courier-imap/AUTHORS
 share/doc/courier-imap/ChangeLog
 share/doc/courier-imap/INSTALL
 share/doc/courier-imap/README
-@unexec rmdir %D/libexec/courier-imap/authlib
-@unexec rmdir %D/libexec/courier-imap
-@unexec rmdir %D/share/courier-imap
-@unexec rmdir %D/share/doc/courier-imap
+@dirrm %D/libexec/courier-imap/authlib
+@dirrm %D/libexec/courier-imap
+@dirrm %D/share/courier-imap
+@dirrm %D/share/doc/courier-imap

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	courier-imap
-PORTVERSION=	1.0
-PORTREVISION=	1
+PORTVERSION=	1.1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	courier
@@ -51,6 +50,7 @@ EXTRA_DOCS=	README INSTALL AUTHORS imap/ChangeLog
 
 post-patch:
 	@perl -i -pe 's@(\$$.sysconfdir./\$$\$$p)@\1.dist@' \
+		${WRKSRC}/Makefile.in \
 		${WRKSRC}/imap/Makefile.in
 
 post-install:
