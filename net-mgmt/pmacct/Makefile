@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pmacct
-PORTVERSION=	0.6.0p2
+PORTVERSION=	0.6.0p3
 CATEGORIES=	net
 MASTER_SITES=	http://www.ba.cnr.it/~paolo/pmacct/
 
@@ -14,7 +14,6 @@ MAINTAINER=	krion@FreeBSD.org
 COMMENT=	Network tool to gather IP traffic information
 
 WRKSRC=		${WRKDIR}/pmacct-0.6.0
-USE_SIZE=	yes
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
