@@ -11,7 +11,9 @@ PKGNAME=	ja-mutt-1.0.j0
 CATEGORIES=	japanese mail
 MASTER_SITES=	ftp://ftp.guug.de/pub/mutt/ \
 		ftp://ftp.guug.de/pub/mutt/historic/ \
-		ftp://ftp.gbnet.net/pub/mutt-international/
+		ftp://ftp.gbnet.net/pub/mutt-international/ \
+		http://www.hiei.kit.ac.jp/~hitomi/mutt/
+DISTFILES=	mutt-1.0i.tar.gz manual_ja.tar.gz
 
 PATCH_SITES=	http://kondara.sdri.co.jp/~kikutani/slang/
 PATCHFILES=	mutt-1.0i-jp0.patch
@@ -47,5 +49,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/contrib/sample.muttrc ${PREFIX}/share/doc/mutt
 	${INSTALL_DATA} ${WRKSRC}/contrib/Mush.rc ${PREFIX}/share/doc/mutt
 	${INSTALL_DATA} ${WRKSRC}/contrib/Pine.rc ${PREFIX}/share/doc/mutt
+	${INSTALL_DATA} ${WRKDIR}/manual_ja.txt ${PREFIX}/share/doc/mutt
+	${INSTALL_DATA} ${WRKDIR}/manual_ja.tex ${PREFIX}/share/doc/mutt
+	${INSTALL_DATA} ${WRKDIR}/manual_ja.html ${PREFIX}/share/doc/mutt
+	${INSTALL_DATA} ${WRKDIR}/manual_ja.sgml ${PREFIX}/share/doc/mutt
 
 .include <bsd.port.mk>
