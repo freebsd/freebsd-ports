@@ -7,3 +7,4 @@ share/doc/timidity/ja/README.sf
 @dirrm share/doc/timidity/C
 @dirrm share/doc/timidity/ja
 @dirrm share/doc/timidity
+@dirrm share/timidity
