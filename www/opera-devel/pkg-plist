@@ -1,4 +1,4 @@
-bin/opera
+bin/opera-devel
 %%DOCSDIR%%/LICENSE
 %%DOCSDIR%%/help
 %%DATADIR%%/bin/m2.so
@@ -10,6 +10,7 @@ bin/opera
 %%DATADIR%%/config/opera6rc.fixed
 %%DATADIR%%/help/advertising.html
 %%DATADIR%%/help/background.png
+%%DATADIR%%/help/chat.html
 %%DATADIR%%/help/dialogs.html
 %%DATADIR%%/help/filetypes.html
 %%DATADIR%%/help/fonts.html
@@ -30,6 +31,7 @@ bin/opera
 %%DATADIR%%/help/multimedia.html
 %%DATADIR%%/help/network.html
 %%DATADIR%%/help/page.html
+%%DATADIR%%/help/panels.html
 %%DATADIR%%/help/paths.html
 %%DATADIR%%/help/personal.html
 %%DATADIR%%/help/preferences.html
@@ -60,7 +62,7 @@ bin/opera
 %%DATADIR%%/images/startup2.png
 %%DATADIR%%/ini/dialog.ini
 %%DATADIR%%/ini/fastforward.ini
-%%DATADIR%%/ini/minimal_toolbar.ini
+%%DATADIR%%/ini/pluginpath.ini
 %%DATADIR%%/ini/standard_keyboard.ini
 %%DATADIR%%/ini/standard_menu.ini
 %%DATADIR%%/ini/standard_mouse.ini
@@ -72,6 +74,7 @@ bin/opera
 %%DATADIR%%/lngcode.txt
 %%DATADIR%%/locale/english.lng
 %%DATADIR%%/locale/en/default.adr
+%%DATADIR%%/locale/en/lngcode.txt
 %%DATADIR%%/locale/en/search.ini
 %%DATADIR%%/opera6.adr
 %%DATADIR%%/plugins/libnpp.so
