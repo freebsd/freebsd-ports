@@ -1,3 +1,3 @@
 @unexec if cmp -s %D/etc/rc.d/drweb-0.sh %D/etc/rc.d/drweb-0.sh-dist; then rm -f %D/etc/rc.d/drweb-0.sh; fi
-etc/rc.d/drweb-0.sh
+etc/rc.d/drweb-0.sh-dist
 @exec [ -f %B/drweb-0.sh ] || ( cp %B/%f %B/drweb-0.sh; chmod 755 %B/drweb-0.sh )
