@@ -49,6 +49,15 @@ post-patch:
 		${WRKSRC}/postfix/config.sed > ${WRKSRC}/postfix/config
 	${RM} ${WRKSRC}/postfix/config.sed
 
+	${CP} ${WRKSRC}/postgresql/config ${WRKSRC}/postgresql/config.sed
+	${SED}	-e "s@^hba_conf=.*@hba_conf=${LOCALBASE}/pgsql/data/pg_hba.conf@" \
+		-e "s@^login=.*@login=pgsql@" \
+		-e "s@^pid_file=.*@pid_file=${LOCALBASE}/pgsql/data/postmaster.pid@" \
+		-e "s@^start_cmd=.*@start_cmd=${LOCALBASE}/etc/rc.d/pgsql.sh start@" \
+		-e "s@^stop_cmd=.*@stop_cmd=${LOCALBASE}/etc/rc.d/pgsql.sh stop@" \
+		${WRKSRC}/postgresql/config.sed > ${WRKSRC}/postgresql/config
+	${RM} ${WRKSRC}/postgresql/config.sed
+
 do-install:
 	@${MKDIR} ${PREFIX}/lib/webmin
 	@${CP} -r ${WRKSRC}/* ${PREFIX}/lib/webmin
