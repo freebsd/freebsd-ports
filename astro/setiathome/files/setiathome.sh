@@ -93,7 +93,7 @@ start)
 			exit 72
 		fi
 	done
-	if ps axo command | egrep ${wrapper_path}; then
+	if ps axo command | egrep ^${program_path}; then
 		logger -sp ${syslog_facility} -t ${program_file} \
 		"unable to start: ${program_file} is already running."
 		exit 72
