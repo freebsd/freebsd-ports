@@ -48,3 +48,14 @@ share/games/lgeneral/themes/default/wallpaper.bmp
 @dirrm share/games/lgeneral/themes
 @dirrm share/games/lgeneral
 @dirrm share/games
+@exec mkdir -p  %D/share/games/lgeneral/gfx/units
+@exec mkdir -p  %D/share/games/lgeneral/gfx/terrain
+@exec mkdir -p  %D/share/games/lgeneral/gfx/flags
+@exec mkdir -p  %D/share/games/lgeneral/nations
+@exec mkdir -p  %D/share/games/lgeneral/units
+@exec mkdir -p  %D/share/games/lgeneral/sounds
+@exec mkdir -p  %D/share/games/lgeneral/maps
+@exec mkdir -p  %D/share/games/lgeneral/scenarios
+@exec mkdir -p  %D/share/games/lgeneral/campaigns
+@exec mkdir -p  %D/share/games/lgeneral/music
+@exec mkdir -p  %D/share/games/lgeneral/ai_modules
