@@ -1,43 +1,38 @@
 # New ports collection Makefile for: esecanna
-# Version required:	0.13.0
+# Version required:	0.14.2
 # Date created:		24 February 2000
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	esecanna_0.13.0
-PKGNAME=	ja-esecanna-0.13.0
+DISTNAME=	esecanna_0.14.2
+PKGNAME=	ja-esecanna-0.14.2
 CATEGORIES=	japanese
-MASTER_SITES=	http://people.FreeBSD.org/~knu/ports/distfiles/ \
-		http://esecanna.netfort.gr.jp/
+MASTER_SITES=	http://esecanna.netfort.gr.jp/ \
+		http://people.FreeBSD.org/~knu/ports/distfiles/
 
 MAINTAINER=	knu@idaemons.org
 
-.include <bsd.port.pre.mk>
+USE_AUTOCONF=	yes
+USE_GMAKE=	yes
 
-.if ${PORTOBJFORMAT} == "elf"
-SHLIB_VER=	1
-.else
-SHLIB_VER=	1.0
-.endif
+DIST_SUBDIR=	esecanna
 
 STARTER=	esecanna.sh
+DOCS=		CHANGES.jp README.First.jp README.jp
 
-MAKE_ENV=	SHLIB_VER="${SHLIB_VER}"
-
-PLIST_SUB=	SHLIB_VER="${SHLIB_VER}" \
-		STARTER="${STARTER}"
+PLIST_SUB=	STARTER="${STARTER}"
 
 post-extract:
-	@perl -pe " \
+	${PERL} -pe " \
 		s,!!PREFIX!!,${PREFIX},g; \
 		s,!!STARTER!!,${STARTER},g; \
 		" \
 		${FILESDIR}/esecanna.sh > ${WRKSRC}/${STARTER}
 
-do-configure:
-	@cd ${WRKSRC} && perl -i -pe " \
+post-patch:
+	cd ${WRKSRC} && ${PERL} -i -pe " \
 		s,!!PREFIX!!,${PREFIX},g; \
 		" \
 		README.jp \
@@ -45,13 +40,13 @@ do-configure:
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${STARTER} ${PREFIX}/etc/rc.d/
-	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
+	${MKDIR} ${PREFIX}/lib/esecanna
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/esecanna
-	cd ${WRKSRC} && ${INSTALL_DATA} README.First.jp README.jp ${PREFIX}/share/doc/esecanna/
+	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/esecanna/
 .endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -1,10 +1,9 @@
 etc/esecannarc
 etc/rc.d/%%STARTER%%
-lib/libesecanna.so
-lib/libesecanna.so.%%SHLIB_VER%%
-@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
+@exec mkdir -p %D/lib/esecanna
+@dirrm lib/esecanna
 sbin/esecannaserver
+share/doc/esecanna/CHANGES.jp
 share/doc/esecanna/README.First.jp
 share/doc/esecanna/README.jp
 @dirrm share/doc/esecanna
