@@ -9387,6 +9387,7 @@ ruby-gdk_pixbuf	ports/graphics/ruby-gdk_pixbuf
 ruby-gdk_pixbuf2	ports/graphics/ruby-gdk_pixbuf2
 ruby-gdome	ports/textproc/ruby-gdome
 ruby-gemfinder	ports/devel/ruby-gemfinder
+ruby-gems	ports/devel/ruby-gems
 ruby-gettext	ports/devel/ruby-gettext
 ruby-glib2	ports/devel/ruby-glib2
 ruby-gmp	ports/math/ruby-gmp
