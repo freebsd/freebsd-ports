@@ -66,11 +66,24 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>psoTFX reports:</p>
+	<blockquote cite="http://www.phpbb.com/phpBB/viewtopic.php?f=14&amp;t=265423">
+	  <p>phpBB Group are pleased to announce the release of phpBB
+	    2.0.12 the "Horray for Furrywood" release. This release
+	    addresses a number of bugs and a couple of potential
+	    exploits.  [...] one of the potential exploits addressed
+	    in this release could be serious in certain situations and
+	    thus we urge all users, as always, to upgrade to this
+	    release as soon as possible. Mostly this release is
+	    concerned with eliminating disclosures of information
+	    which while useful in debug situations may allow third
+	    parties to gain information which could be used to do harm
+	    via unknown or unfixed exploits in this or other
+	    applications.</p>
+	</blockquote>
 	<p>The ChangeLog for phpBB 2.0.12 states:</p>
 	<blockquote cite="http://www.phpbb.com/support/documents.php?mode=changelog">
-	  <p>Changes since 2.0.10</p>
 	  <ul>
-	    <li>Added confirm table to admin_db_utilities.php</li>
 	    <li>Prevented full path display on critical messages</li>
 	    <li>Fixed full path disclosure in username handling caused
 	      by a PHP 4.3.10 bug - <strong>AnthraX101</strong></li>
@@ -81,9 +94,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	      handling functions - <strong>AnthraX101</strong></li>
 	    <li>Fixed arbitrary file unlink vulnerability in avatar
 	      handling functions - <strong>AnthraX101</strong></li>
-	    <li>Removed version number from powered by line</li>
-	    <li>Merged database update files to update_to_latest.php
-	      file</li>
 	    <li>Fixed path disclosure bug in search.php caused by a
 	      PHP 4.3.10 bug (related to AnthraX101's discovery)</li>
 	    <li>Fixed path disclosure bug in viewtopic.php caused by
@@ -100,6 +110,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2005-02-22</discovery>
       <entry>2005-02-23</entry>
+      <modified>2005-02-25</modified>
     </dates>
   </vuln>
 
