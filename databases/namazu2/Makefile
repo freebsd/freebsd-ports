@@ -1,13 +1,13 @@
 # New ports collection makefile for:	namazu2
-# Version required:	2.0.2
 # Date created:		25 February 2000
 # Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	namazu-2.0.2
-PKGNAME=	ja-namazu2-2.0.2
+DISTNAME=	namazu-${PORTVERSION}
+PORTNAME=	ja-namazu2
+PORTVERSION=	2.0.3
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://www.namazu.org/stable/
 

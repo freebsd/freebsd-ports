@@ -37,6 +37,7 @@ share/locale/ja/LC_MESSAGES/namazu.mo
 share/locale/ja_JP.SJIS/LC_MESSAGES/namazu.mo
 share/namazu/doc/en/manual.html
 share/namazu/doc/en/nmz.html
+share/namazu/doc/en/tips.html
 share/namazu/doc/en/tutorial.html
 @dirrm share/namazu/doc/en
 share/namazu/doc/ja/manual.html
@@ -61,12 +62,15 @@ share/namazu/filter/gfilter.pl
 share/namazu/filter/gzip.pl
 share/namazu/filter/hnf.pl
 share/namazu/filter/html.pl
+share/namazu/filter/ichitaro456.pl
 share/namazu/filter/mailnews.pl
 share/namazu/filter/man.pl
 share/namazu/filter/mhonarc.pl
 share/namazu/filter/msword.pl
 share/namazu/filter/pdf.pl
+share/namazu/filter/powerpoint.pl
 share/namazu/filter/rfc.pl
+share/namazu/filter/taro.pl
 share/namazu/filter/tex.pl
 @dirrm share/namazu/filter
 share/namazu/pl/codeconv.pl
