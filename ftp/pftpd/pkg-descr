@@ -3,5 +3,3 @@ It uses multithreading (where available) in order to be lightweight, but
 still have high performance. 
 
 WWW: http://www.lysator.liu.se/~pen/pftpd/
---
-Gea-Suan Lin <gslin@ccca.nctu.edu.tw>
