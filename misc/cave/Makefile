@@ -7,17 +7,17 @@
 #
 
 PORTNAME=	cave
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	misc
-MASTER_SITES=	http://cyclic.sourceforge.net/cave/
+MASTER_SITES=	http://cyclic.sourceforge.net/cave/ \
+		${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	apps/graphics/misc
 
 MAINTAINER=	ports@FreeBSD.org
 
+GNU_CONFIGURE=	yes
+
 MANCOMPRESSED=	yes
 MAN1=	cave.1
-
-post-patch:
-	@${PERL} -pi -e "s,^CC,#CC,g ; s,^CFLAGS,#CFLAGS,g ; \
-		s,^PREFIX,#PREFIX,g" ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
