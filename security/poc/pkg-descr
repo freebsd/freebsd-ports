@@ -1,0 +1,15 @@
+GNU POC is a program for managing passwords on smartcards
+
+Each password is stored together with a description on the card. 
+All data on the card is stored encrypted so others won't be able to 
+get your passwords by reading the card. 
+
+POC encrypts using Blowfish or Rijndael (AES) with a 192 or 256 bit key 
+(depending on the security level selected by the user). 
+Other algorithms can be added easily
+
+POC needs a CT-API library. I use the one by Carlos Prados 
+(http://www.geocities.com/cprados/) for TOWITOKO readers.
+for TOWITOKO readers
+
+WWW: http://www.gnu.org/software/poc/poc.html
