@@ -1,0 +1,6 @@
+%%PORTDOCS%%usr/doc/SDL_image-1.2.3/CHANGES
+%%PORTDOCS%%usr/doc/SDL_image-1.2.3/COPYING
+%%PORTDOCS%%usr/doc/SDL_image-1.2.3/README
+usr/lib/libSDL_image-1.2.so.0
+usr/lib/libSDL_image-1.2.so.0.1.2
+@dirrm usr/doc/SDL_image-1.2.3
