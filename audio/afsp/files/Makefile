@@ -10,6 +10,7 @@ BINARIES =	bin/CompAudio \
 		bin/InfoAudio \
 		bin/LPanal \
 		bin/LPsyn \
+		bin/PQevalAudio \
 		bin/ResampAudio
 MAINHEADERS =	include/AO.h \
 		include/AObase.h \
@@ -43,7 +44,7 @@ MAN3FILES =	man/libtsp/AF/AFclose.3tsp \
 		man/libtsp/AF/AFopnRead.3tsp \
 		man/libtsp/AF/AFopnWrite.3tsp \
 		man/libtsp/AF/AFsetFileType.3tsp \
-		man/libtsp/AF/AFsetHinfo.3tsp \
+		man/libtsp/AF/AFsetInfo.3tsp \
 		man/libtsp/AF/AFsetNHpar.3tsp \
 		man/libtsp/AF/AFsetSpeaker.3tsp
 MAN1FILES =	man/audio/AFsp.1audio \
@@ -55,6 +56,7 @@ MAN1FILES =	man/audio/AFsp.1audio \
 		man/audio/InfoAudio.1audio \
 		man/audio/LPanal.1audio \
 		man/audio/LPsyn.1audio \
+		man/audio/PQevalAudio.1audio \
 		man/audio/ResampAudio.1audio
 HTMLFILES1 =	html/audio/AFsp.html \
 		html/audio/CompAudio.html \
@@ -65,6 +67,7 @@ HTMLFILES1 =	html/audio/AFsp.html \
 		html/audio/InfoAudio.html \
 		html/audio/LPanal.html \
 		html/audio/LPsyn.html \
+		html/audio/PQevalAudio.html \
 		html/audio/ResampAudio.html
 HTMLFILES3 =	html/libtsp/AF/AFclose.html \
 		html/libtsp/AF/AFdReadData.html \
@@ -74,7 +77,7 @@ HTMLFILES3 =	html/libtsp/AF/AFclose.html \
 		html/libtsp/AF/AFopnRead.html \
 		html/libtsp/AF/AFopnWrite.html \
 		html/libtsp/AF/AFsetFileType.html \
-		html/libtsp/AF/AFsetHinfo.html \
+		html/libtsp/AF/AFsetInfo.html \
 		html/libtsp/AF/AFsetNHpar.html \
 		html/libtsp/AF/AFsetSpeaker.html
 FILTERFILES =	filters/STL_BPF5k_FIR_16k.cof \
