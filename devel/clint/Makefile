@@ -17,21 +17,18 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A static source code checker for C++
 
 USE_PYTHON=	yes
-USE_LIBTOOL=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
+USE_LIBTOOL=	yes
+CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"
 INSTALLS_SHLIB=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
+INFO=		clint
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,-lpthread,${PTHREAD_LIBS},g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${FIND} ${WRKSRC} -name "Makefile.in" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|-pedantic||g ; \
+		 s|-ldl||g'
 
-post-install:
-	@install-info ${PREFIX}/info/clint.info ${PREFIX}/info/dir
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
