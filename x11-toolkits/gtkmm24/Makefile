@@ -1,36 +1,31 @@
-# New ports collection makefile for:   gtk--
-# Date created:        11 May 1998
-# Whom:                Yukihiro Nakai <Nakai@technologist.com>
+# New ports collection makefile for:   gtkmm2
+# Date created:        30 September 2002
+# Whom:                Martin Klaffenboeck <martin.klaffenboeck@gmx.at>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	gtkmm
-PORTVERSION=	1.2.8
-PORTREVISION=	1
+PORTVERSION=	1.3.23
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_GNOME}
-MASTER_SITE_SUBDIR=	sources/gtkmm/1.2
-#DIST_SUBDIR=	gnome
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITE_SUBDIR=	gtkmm
 
 MAINTAINER=	gnome@FreeBSD.org
 
-LIB_DEPENDS=	sigc.1:${PORTSDIR}/devel/libsigc++
+LIB_DEPENDS=	sigc-1.1.5:${PORTSDIR}/devel/libsigc++12 \
+		gtk-x11-2.0.0:${PORTSDIR}/x11-toolkits/gtk20
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
-USE_BZIP2=	yes
 USE_X_PREFIX=	yes
+NO_LATEST_LINK=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gtk12
 USE_LIBTOOL=	yes
-LIBTOOLFLAGS=	--disable-ltlibs --release-ignore
 INSTALLS_SHLIB=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack
 CONFIGURE_ARGS=	--enable-static=yes \
 		--without-gnome \
 		--with-sigc-prefix=${LOCALBASE}
-
-post-install:
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
