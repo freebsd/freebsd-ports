@@ -1,0 +1,11 @@
+lib/kde3/kwin_qinx.so
+lib/kde3/kwin_qinx.la
+lib/kde3/kwin_qinx_config.so
+lib/kde3/kwin_qinx_config.la
+lib/kde3/plugins/styles/qinx.so
+lib/kde3/plugins/styles/qinx.la
+share/apps/kwin/qinx.desktop
+share/apps/kdisplay/color-schemes/qinx.kcsrc
+share/apps/kdisplay/color-schemes/qinxmodern.kcsrc
+share/apps/kstyle/themes/qinx.themerc
+share/apps/kstyle/themes/qinxflat.themerc
