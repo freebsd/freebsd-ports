@@ -1,17 +1,17 @@
 # New ports collection makefile for:	mars_nwe
-# Version required:     0.99.pl17
 # Date created:		29 Dec 1998
 # Whom:			Boris Popov <bp@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=       mars_nwe-0.99.pl17
-PKGNAME=	mars_nwe-0.99b17
+PORTNAME=	mars_nwe
+PORTVERSION=	0.99.b17
 CATEGORIES=	net
 MASTER_SITES=	http://www.compu-art.de/download/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/ncpfs/mars_nwe/ \
 		ftp://ftp.butya.kz/pub/mars_nwe/
+DISTNAME=	mars_nwe-0.99.pl17
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	bp@FreeBSD.org

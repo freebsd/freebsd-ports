@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-Net-Daemon
-# Version required:			0.29
 # Date created:				27 Feb 2000
 # Whom:	      				Vanilla I. Shu <vanilla@FreeBSD.ORG>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Net-Daemon-0.29
-PKGNAME=	p5-Net-Daemon-0.29
+PORTNAME=	p5-Net-Daemon
+PORTVERSION=	0.29
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
+DISTNAME=	Net-Daemon-${PORTVERSION}
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 

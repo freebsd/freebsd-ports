@@ -1,12 +1,12 @@
 # New ports collection makefile for:	tik
-# Version required:			0.59
 # Date created:				13 January 1999
 # Whom:					Eugene M. Kim <astralblue@usa.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tik-0.59
+PORTNAME=	tik
+PORTVERSION=	0.59
 CATEGORIES=	net tk82
 MASTER_SITES=	http://www.aim.aol.com/tik/ \
 		http://www.nectar.com/distfiles/

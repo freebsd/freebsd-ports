@@ -1,23 +1,22 @@
 # New ports collection makefile for:	domtools
-# Version required:			1.4.0
 # Date created:				12 Jun 1999
 # Whom:					alexp
 #
 # $FreeBSD$
 #
 
-DISTNAME=       domtools${VERSION}
-PKGNAME= 	domtools-${VERSION}
+PORTNAME=	domtools
+PORTVERSION=	1.4.0
 CATEGORIES=     net
 MASTER_SITES=   http://www.domtools.com/pub/
+DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=     veers@disturbed.net
 
 USE_PERL5= 	YES
 
 NO_BUILD=	YES
-WRKSRC=		${WRKDIR}/domtools${VERSION}/
-VERSION=	1.4.0
+WRKSRC=		${WRKDIR}/domtools${PORTVERSION}/
 
 # XXX - patches/patch-aa modifies Makefile
 # and so does the post-patch target

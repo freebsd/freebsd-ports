@@ -1,14 +1,14 @@
 # New ports collection makefile for:	socks5
-# Version required:			v1.0r10
 # Date created:				24 Apr 1996
 # Whom:					pst
 #
 # $FreeBSD$
 #
 
-DISTNAME=	socks5-v1.0r10
-PKGNAME=	socks5-1.0.10
+PORTNAME=	socks5
+PORTVERSION=	1.0.10
 CATEGORIES=	net security
+DISTNAME=	socks5-v1.0r10
 EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	imp@freebsd.org

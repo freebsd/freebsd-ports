@@ -1,13 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  tcpshow
-# Version required: 0.0
 # Date created:			  Tue Nov 04, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	tcpshow-1.74
+PORTNAME=	tcpshow
+PORTVERSION=	1.74
 CATEGORIES=	net security
 MASTER_SITES=	http://people.FreeBSD.org/~obrien/Distfiles/
 #		http://www.cs.berkeley.edu/~daw/mike/

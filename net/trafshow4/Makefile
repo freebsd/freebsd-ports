@@ -1,12 +1,12 @@
 # New ports collection makefile for:	trafshow
-# Version required:     3.1
 # Date created:         25 September 1996
 # Whom:                 igor@zynaps.ru
 #
 # $FreeBSD$
 #
 
-DISTNAME=	trafshow-3.1
+PORTNAME=	trafshow
+PORTVERSION=	3.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.nsk.su/pub/RinetSoftware/
 EXTRACT_SUFX=	.tgz

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	libsmi
-# Version required:		0.1.8
 # Date created:			Tue Jan 27 2000
 # Whom:				Marcin Cieslak <saper@system.pl>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	libsmi-0.1.8
+PORTNAME=	libsmi
+PORTVERSION=	0.1.8
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.ibr.cs.tu-bs.de/pub/local/libsmi/
 

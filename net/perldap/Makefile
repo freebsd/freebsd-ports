@@ -1,12 +1,12 @@
 # New ports collection makefile for:	perldap
-# Version required:	1.1b
 # Date created:	17 May 1999
 # Whom:		paul@freebsd.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	perldap-1.2.2
+PORTNAME=	perldap
+PORTVERSION=	1.2.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.mozilla.org/pub/directory/perldap/
 EXTRACT_SUFX=	.tgz

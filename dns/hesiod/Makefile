@@ -1,12 +1,12 @@
 # Ports collection Makefile for:	Hesiod
-# Version required:			3.0.2
 # Date created:				6/11/1998
 # Whom:					n@nectar.com
 #
 # $FreeBSD$
 #
 
-DISTNAME=		hesiod-3.0.2
+PORTNAME=		hesiod
+PORTVERSION=		3.0.2
 CATEGORIES=		net
 MASTER_SITES=		ftp://athena-dist.mit.edu/pub/ATHENA/hesiod/   \
 			http://www.nectar.cc/distfiles/

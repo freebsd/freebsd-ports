@@ -1,13 +1,12 @@
 # New ports collection makefile for:	dgd-lpmud
-# Version required:	2.4.5
 # Date created:		10 November 1994
 # Whom:			adam
 #
 # $FreeBSD$
 #
 
-DISTNAME=	dgd-lpmud
-PKGNAME=	dgd-lpmud-2.4.5
+PORTNAME=	dgd-lpmud
+PORTVERSION=	2.4.5
 CATEGORIES=	net devel games
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/lpc/ \
 		ftp://ftp.veda.is/pub/mud/dgd/ \

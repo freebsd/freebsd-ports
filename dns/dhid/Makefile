@@ -1,12 +1,12 @@
 # New ports collection makefile for:	dhid
-# Version required:	3.1
 # Date created:		Sat Aug 21 06:13:59 EDT 1999
 # Whom:			Oryx Gazella <oryx@ungulate.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=		dhid-3.1
+PORTNAME=		dhid
+PORTVERSION=		3.1
 CATEGORIES=		net
 MASTER_SITES=		ftp://ftp.dhis.org/pub/dhis/
 

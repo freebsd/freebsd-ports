@@ -1,16 +1,16 @@
 # New ports collection makefile for:	p5-Net-Whois
-# Version required:			0.22
 # Date created:				June 7th 1997
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Net-Whois-0.22
-PKGNAME=	p5-Net-Whois-0.22
+PORTNAME=	p5-Net-Whois
+PORTVERSION=	0.22
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Net
+DISTNAME=	Net-Whois-${PORTVERSION}
 
 MAINTAINER=	jfitz@FreeBSD.org
 

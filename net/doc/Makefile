@@ -1,12 +1,12 @@
 # New ports collection makefile for:	doc
-# Version required:		2.1.4
 # Date created:			28 November 1999
 # Whom:				MIHIRA Yoshiro <sanpei@jp.FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	doc-2.1.4
+PORTNAME=	doc
+PORTVERSION=	2.1.4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.his.com/pub/brad/dns/
 

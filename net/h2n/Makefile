@@ -1,16 +1,16 @@
 # New ports collection makefile for:	h2n
-# Version required:	1.29
 # Date created:		27 Nov 1997
 # Whom:			SADA Kenji <sada@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	dns
-PKGNAME=	h2n-1.29
+PORTNAME=	h2n
+PORTVERSION=	1.29
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/published/oreilly/nutshell/dnsbind/ \
 		ftp://ftp.uu.net/published/oreilly/nutshell/dnsbind/
+DISTNAME=	dns
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	sada@FreeBSD.org

@@ -1,13 +1,12 @@
 # Ports collection makefile for:    netatalk-asun
-# Version required:     netatalk-1.4b2-asun-2.0
 # Date created:         07 Sep 1998
 # Whom:                 stb@freebsd.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=       netatalk-1.4b2+asun2.1.3
-PKGNAME=	netatalk-1.4b2+asun2.1.3
+PORTNAME=	netatalk
+PORTVERSION=	1.4b2+asun2.1.3
 CATEGORIES=	net print
 MASTER_SITES=   ftp://ftp.u.washington.edu/public/asun/ \
 		http://people.FreeBSD.org/~stb/mirror/ftp.u.washington.edu/public/asun/ \

@@ -1,15 +1,15 @@
 # New ports collection makefile for:	opengatekeeper
-# Version required:	0.44
 # Date created:		Wed Apr 5 11:00:00 GMT 2000
 # Whom:			Roger Hardiman <roger@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	opengate_alpha0.44
-PKGNAME=	opengate-0.44
+PORTNAME=	opengate
+PORTVERSION=	0.44
 CATEGORIES=	net
 MASTER_SITES=	http://download.sourceforge.net/OpenGatekeeper/
+DISTNAME=	opengate_alpha0.44
 
 MAINTAINER=	roger@freebsd.org
 

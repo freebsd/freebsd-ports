@@ -1,15 +1,15 @@
 # New ports collection makefile for:	perldap
-# Version required:	1.1b
 # Date created:	17 May 1999
 # Whom:		paul@freebsd.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ldapsdk_12311998
-PKGNAME=	ldapsdk-1998.12.31
+PORTNAME=	ldapsdk
+PORTVERSION=	1998.12.31
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.mozilla.org/pub/directory/c-sdk/ldap/
+DISTNAME=	ldapsdk_12311998
 
 MAINTAINER=	paul@FreeBSD.org
 

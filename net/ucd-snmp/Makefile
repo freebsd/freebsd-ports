@@ -1,12 +1,12 @@
 # New ports collection makefile for:	ucd-snmp
-# Version required:			3.6.1
 # Date created:				26 June 1996
 # Whom:					gpalmer
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ucd-snmp-4.0.1
+PORTNAME=	ucd-snmp
+PORTVERSION=	4.0.1
 CATEGORIES=	net
 MASTER_SITES= 	ftp://ucd-snmp.ucdavis.edu/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/ \

@@ -1,18 +1,18 @@
 # New ports collection makefile for:	dgd
-# Version required:	1.1
 # Date created:		23 August 1994
 # Whom:			adam
 #
 # $FreeBSD$
 #
 
-DISTNAME=	dgd-1.1
-PKGNAME=	dgd-1.1p6
+PORTNAME=	dgd
+PORTVERSION=	1.1.p6
 CATEGORIES=	net lang
 MASTER_SITES=	ftp://ftp.imaginary.com/pub/LPC/servers/DGD/ \
 		ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/ \
 		ftp://ftp.veda.is/pub/mud/dgd/ \
 		ftp://ftp.dreamlabs.com/pub/mud/dgd/
+DISTNAME=	dgd-1.1
 
 PATCH_SITES=	ftp://ftp.imaginary.com/pub/LPC/servers/DGD/patches/ \
 		ftp://ftp.lysator.liu.se/pub/lpmud/drivers/dgd/patches/ \

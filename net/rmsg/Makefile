@@ -1,12 +1,12 @@
 # New ports collection makefile for:	rmsg
-# Version required:	1.64
 # Date created:		9 October 1995
 # Whom:			torstenb@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	rmsg-1.64
+PORTNAME=	rmsg
+PORTVERSION=	1.64
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.funet.fi/pub/unix/tcpip/ \
 		ftp://proton.elka.pw.edu.pl/pub/unix/network/

@@ -1,12 +1,12 @@
 # New ports collection makefile for:	zebra
-# Version required:	0.84b
 # Date created:		So  31 Mai 1998 11:00:30 CEST
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	zebra-0.84b
+PORTNAME=	zebra
+PORTVERSION=	0.84b
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.zebra.org/pub/zebra/
 # you might need debugging, it's a developer release !

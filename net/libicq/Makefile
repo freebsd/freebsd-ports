@@ -1,12 +1,12 @@
 # New ports collection makefile for:	libicq
-# Version required:			0.33
 # Date Created:				31 Oct 1998
 # Whom:					Seiichirou Hiraoka
 #
 # $FreeBSD$
 #
 
-DISTNAME=	libicq-0.33
+PORTNAME=	libicq
+PORTVERSION=	0.33
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.korsoft.com/pub/gicq/ \
 		http://www.nectar.com/distfiles/

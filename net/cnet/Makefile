@@ -1,15 +1,15 @@
 # New ports collection makefile for:    cnet
-# Version required:     1.5p2
 # Date created:         Feb 8th, 1988
 # Whom:                 jkh
 #
 # $FreeBSD$
 #
 
-DISTNAME=	cnet-1.5-2
-PKGNAME=	cnet-1.5p2
+PORTNAME=	cnet
+PORTVERSION=	1.5.p2
 CATEGORIES=	net tk82
 MASTER_SITES=	http://www.cs.uwa.edu.au/cnet/
+DISTNAME=	cnet-1.5-2
 
 MAINTAINER=	ports@FreeBSD.org
 

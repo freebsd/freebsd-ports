@@ -1,15 +1,15 @@
 # New ports collection makefile for:	poptop
-# Version required:	1.0.0
 # Date created:		04 October 1999
 # Whom:			Nick Sayer <nsayer@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	pptpd-1.0.0
-PKGNAME=	poptop-1.0.0
+PORTNAME=	pptpd
+PORTVERSION=	1.0.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.moretonbay.com/vpn/releases/
+DISTNAME=	pptpd-1.0.0
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	nsayer@freebsd.org

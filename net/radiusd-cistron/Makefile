@@ -1,15 +1,15 @@
 # New ports collection makefile for:	radiusd-cistron
-# Version required:	cistron radiusd 1.6.2 (stable)
 # Date created:		15 Jan 1999
 # Whom:			john@nlc.net.au
 #
 # $FreeBSD$
 #
 
-DISTNAME=	radiusd-cistron-1.6.2-stable
-PKGNAME=	radiusd-cistron-1.6.2
+PORTNAME=	radiusd-cistron
+PORTVERSION=	1.6.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.cistron.nl/pub/people/miquels/radius/
+DISTNAME=	radiusd-cistron-1.6.2-stable
 
 MAINTAINER=	john@nlc.net.au
 

@@ -1,16 +1,16 @@
 # New ports collection makefile for:    p5-URI
-# Version required:                     1.*
 # Date created:				1999/04/07
 # Whom:					ache
 #
 # $FreeBSD$
 #
 
-DISTNAME=       URI-1.04
-PKGNAME=        p5-URI-1.04
+PORTNAME=	p5-URI
+PORTVERSION=	1.04
 CATEGORIES=     net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=     URI
+DISTNAME=	URI-1.04
 
 MAINTAINER=     ache@FreeBSD.org
 

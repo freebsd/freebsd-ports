@@ -1,15 +1,15 @@
 # New ports collection makefile for:	argus
-# Version required:	1.7.beta.1e
 # Date created:		26 November 1998
 # Whom:			Jonathan Hanna <jhanna@home.com>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	argus-1.7.beta.1e
-PKGNAME=	argus-1.7.b.1e
+PORTNAME=	argus
+PORTVERSION=	1.7.b1e
 CATEGORIES=	net security
 MASTER_SITES=	ftp://ftp.sei.cmu.edu/pub/argus/argus-1.7/
+DISTNAME=	argus-1.7.beta.1e
 
 MAINTAINER=	jhanna@home.com
 

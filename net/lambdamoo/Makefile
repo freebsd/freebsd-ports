@@ -1,15 +1,15 @@
 # New ports collection makefile for:	LambdaMOO
-# Version required:	1.8.0r8
 # Date created:		Jul 3 1999
 # Whom:			Seiichirou Hiraoka
 #
 # $FreeBSD$
 #
 
-DISTNAME=	LambdaMOO-1.8.0r8
-PKGNAME=	lambdamoo-1.8.0r8
+PORTNAME=	lambdamoo
+PORTVERSION=	1.8.0.r8
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.place.org/pub/moo/unofficial/
+DISTNAME=	LambdaMOO-1.8.0r8
 
 MAINTAINER=	flathill@FreeBSD.ORG
 

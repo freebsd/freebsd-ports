@@ -1,14 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  netcat
-# Version required: 0.0
 # Date created:			  Thur Nov 21, 1996
 # Whom:				  David O'Brien (obrien@cs.ucdavis.edu)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	nc110
-PKGNAME=	netcat-1.10
+PORTNAME=	netcat
+PORTVERSION=	1.10
 CATEGORIES=	net
 MASTER_SITES=	ftp://avian.org/src/hacks/  \
 		ftp://coast.cs.purdue.edu/pub/mirrors/avian.org/netcat/  \
@@ -16,6 +15,7 @@ MASTER_SITES=	ftp://avian.org/src/hacks/  \
 		ftp://ftp.sterling.com/mirrors/avian.org/src/hacks/  \
 		ftp://ftp.rge.com/pub/security/coast/mirrors/avian.org/netcat/
 EXTRACT_SUFX=	.tgz
+DISTNAME=	nc110
 
 MAINTAINER=	obrien@FreeBSD.org
 

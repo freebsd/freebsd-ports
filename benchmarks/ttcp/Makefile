@@ -1,12 +1,12 @@
 # New ports collection makefile for: ttcp
-# Version required:     	1.12
 # Date created:			Tue Jun  1 22:58:13 PDT 1999
 # Whom:				mharo@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ttcp-1.12
+PORTNAME=	ttcp
+PORTVERSION=	1.12
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.sgi.com/sgi/src/ttcp/
 DISTFILES=	ttcp.c ttcp.1 README

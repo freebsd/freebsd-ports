@@ -1,15 +1,15 @@
 # New ports collection makefile for:	icmpquery
-# Version required:			1.0.3
 # Date created:				Jan 7 1999
 # Whom:					dom@myrddin.demon.co.uk
 #
 # $FreeBSD$
 #
 
-DISTNAME=	icmpquery
-PKGNAME=	icmpquery-1.0.3
+PORTNAME=	icmpquery
+PORTVERSION=	1.0.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.angio.net/security/
+DISTNAME=	icmpquery
 EXTRACT_SUFX=	.c
 
 MAINTAINER=	dom@myrddin.demon.co.uk

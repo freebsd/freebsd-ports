@@ -1,15 +1,15 @@
 # New ports collection makefile for:	gopher
-# Version required:	2.3
 # Date created:		11 Dec 1994
 # Whom:			ats (original)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gopher2_3
-PKGNAME=	gopher-2.3
+PORTNAME=	gopher
+PORTVERSION=	2.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://boombox.micro.umn.edu/pub/gopher/Unix/
+DISTNAME=	gopher2.3
 
 MAINTAINER=	ports@FreeBSD.org
 

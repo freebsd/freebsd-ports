@@ -1,16 +1,16 @@
 # New ports collection makefile for:	ggsd
-# Version required:			0.1
 # Date created:				14 February 1999
 # Whom:                			Dima Sivachenko <dima@chg.ru>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ggsd
-PKGNAME=	ggsd-0.1
+PORTNAME=	ggsd
+PORTVERSION=	0.1
 CATEGORIES=	net
 MASTER_SITES=	http://people.FreeBSD.org/~billf/distfiles/ \
 		ftp://ftp.gpad.ac.ru/pub/FreeBSD/distfiles/
+DISTNAME=	ggsd
 EXTRACT_SUFX=	.tar
 
 MAINTAINER=	dima@chg.ru

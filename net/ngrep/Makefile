@@ -1,13 +1,13 @@
 # ex:ts=8
 # Ports collection makefile for:  ngrep
-# Version required: 0.0
 # Date created:			  Sat Jan 01, 2000
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ngrep-1.35
+PORTNAME=	ngrep
+PORTVERSION=	1.35
 CATEGORIES=	net security
 MASTER_SITES=	http://www.packetfactory.net/ngrep/
 

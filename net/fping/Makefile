@@ -1,19 +1,20 @@
 # ex:ts=8
 # Ports collection makefile for:  fping
-# Version required: 0.0
 # Date created:			  Tue Mar 25, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
 # $FreeBSD$
 #
 
+PORTNAME=	fping
+PORTVERSION=	1.20
 DISTNAME=	part01
-PKGNAME=	fping-1.20
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.uu.net/usenet/comp.sources.unix/volume26/fping/ \
 		ftp://ftp.digital.com/pub/usenet/comp.sources.unix/volume26/fping/ \
 		ftp://ftp.wustl.edu/usenet/comp.sources.unix/volume26/fping/ \
 		ftp://ftp.isnet.is/pub/Usenet/Usenet.src/comp.sources.unix/v26/fping/
+DISTNAME=	part01
 EXTRACT_SUFX=	.Z
 
 MAINTAINER=	obrien@FreeBSD.org

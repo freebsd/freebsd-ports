@@ -1,15 +1,15 @@
 # New ports collection makefile for:	rinetd
-# Version required:			0.61
 # Date created:				23 Dec 1997
 # Whom:					alexp
 #
 # $FreeBSD$
 #
 
-DISTNAME=       rinetd
-PKGNAME= 	rinetd-0.61
+PORTNAME=	rinetd
+PORTVERSION=	0.61
 CATEGORIES=     net
 MASTER_SITES=   ftp://ftp.boutell.com/pub/boutell/rinetd/
+DISTNAME=	rinetd
 
 MAINTAINER=     veers@disturbed.net
 

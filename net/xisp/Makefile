@@ -1,11 +1,12 @@
 # New ports collection makefile for:	xisp
-# Version required:	2.6
 # Date created:		June 24, 1999
 # Whom:			morishim@cig.mot.com
 #
 # $FreeBSD$
+#
 
-DISTNAME=       xisp-2.6
+PORTNAME=	xisp
+PORTVERSION=	2.6
 CATEGORIES=	net
 MASTER_SITES=	http://www.ml-search.com/xisp/distfiles/
 DISTFILES=	xisp-2.6-noufc.tar.gz \

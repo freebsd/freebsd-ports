@@ -1,18 +1,18 @@
 # New ports collection makefile for:	p5-Net-RawIP
-# Version required:			0.09
 # Date created:				18 February 1999
 # Whom:                			Dima Sivachenko <dima@chg.ru>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	Net-RawIP-0.09
-PKGNAME=	p5-Net-RawIP-0.09
+PORTNAME=	p5-Net-RawIP
+PORTVERSION=	0.09
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN} \
 		http://quake.skif.net/RawIP/files/ \
 		http://www.ic.al.lg.ua/~ksv/
 MASTER_SITE_SUBDIR=	Net
+DISTNAME=	Net-RawIP-${PORTVERSION}
 
 MAINTAINER=	dima@chg.ru
 

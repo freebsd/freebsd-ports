@@ -1,12 +1,12 @@
 # Ports collection makefile for:    netatalk
-# Version required:     netatalk-1.4b2
 # Date created:         23 Jul 1997
 # Whom:                 stb
 #
 # $FreeBSD$
 #
 
-DISTNAME=       netatalk-1.4b2
+PORTNAME=	netatalk
+PORTVERSION=	1.4b2
 CATEGORIES=	net print
 MASTER_SITES=   ftp://terminator.rs.itd.umich.edu/unix/netatalk/ \
 		http://people.FreeBSD.org/~stb/mirror/terminator.rs.itd.umich.edu/unix/netatalk/ \

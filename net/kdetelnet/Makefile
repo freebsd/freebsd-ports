@@ -1,12 +1,12 @@
 # New ports collection makefile for:   ktelnet
-# Version required:	0.61
 # Date created:		14 May 1998
 # Whom:			Hans Petter Bieker <hanspb@persbraten.vgs.no>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	ktelnet-0.61
+PORTNAME=	ktelnet
+PORTVERSION=	0.61
 CATEGORIES=	net kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/1.1/apps/network
