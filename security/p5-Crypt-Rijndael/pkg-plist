@@ -1,0 +1,5 @@
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/Crypt/Rijndael.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/Rijndael/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/Rijndael/Rijndael.bs
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/Rijndael/Rijndael.so
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Crypt/Rijndael
