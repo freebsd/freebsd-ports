@@ -7,7 +7,7 @@
 
 PORTNAME=	Jcode
 PORTVERSION=	0.83
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	japanese perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/D/DA/DANKOGAI
@@ -15,14 +15,16 @@ MASTER_SITE_SUBDIR=	../../authors/id/D/DA/DANKOGAI
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension interface to convert Japanese text
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500800
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+.endif
 
 PERL_CONFIGURE=	yes
 MAN3=		Jcode.3 Jcode::Unicode.3 Jcode::Unicode::Constants.3 \
 		Jcode::Unicode::NoXS.3
-
-.include <bsd.port.pre.mk>
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
 
