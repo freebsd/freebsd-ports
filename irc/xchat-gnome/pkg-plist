@@ -14,4 +14,19 @@ share/doc/xchat/xchat-9.html
 share/doc/xchat/xchat-10.html
 share/doc/xchat/README
 share/doc/xchat/ChangeLog
+share/locale/cs/LC_MESSAGES/xchat.mo
+share/locale/da/LC_MESSAGES/xchat.mo
+share/locale/de/LC_MESSAGES/xchat.mo
+share/locale/el/LC_MESSAGES/xchat.mo
+share/locale/es/LC_MESSAGES/xchat.mo
+share/locale/fr/LC_MESSAGES/xchat.mo
+share/locale/hu/LC_MESSAGES/xchat.mo
+share/locale/it/LC_MESSAGES/xchat.mo
+share/locale/ja/LC_MESSAGES/xchat.mo
+share/locale/ko/LC_MESSAGES/xchat.mo
+share/locale/nl/LC_MESSAGES/xchat.mo
+share/locale/pt_BR/LC_MESSAGES/xchat.mo
+share/locale/ro/LC_MESSAGES/xchat.mo
+share/locale/sl/LC_MESSAGES/xchat.mo
+share/locale/sr_YU/LC_MESSAGES/xchat.mo
 @dirrm share/doc/xchat
