@@ -46,5 +46,8 @@ post-install:
 	@echo ${CHMOD} u+w ~/visualnc.im
 	@echo Then run it using:
 	@echo visual ~/visualnc.im
+	@echo If this produces an out of memory error message try:
+	@echo visual -h 1m ~/visualnc.im
+	@echo and increase the '1m' value to '2m', ..., until the error goes away.
 
 .include <bsd.port.mk>
