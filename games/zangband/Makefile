@@ -35,7 +35,13 @@ BINMODE=	2755
 ANGBANDLIB?=	lib/${PORTNAME}
 ANGBANDBIN?=	bin/${PORTNAME}
 
-post-patch:
+pre-patch:
+	@${PERL} -pi.orig -e 's|aclocal|${ACLOCAL}|; \
+		s|autoheader|${AUTOHEADER}|; \
+		s|automake|${AUTOMAKE}|; s|autoconf|${AUTOCONF}|' \
+		${WRKSRC}/bootstrap
+
+pre-configure:
 	(cd ${WRKSRC} ; ${SH} bootstrap)
 
 post-install:
