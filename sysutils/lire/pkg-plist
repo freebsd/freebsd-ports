@@ -1,6 +1,5 @@
 bin/lr_anondump
 bin/lr_anonymize
-bin/lr_check_service
 bin/lr_cron
 bin/lr_deanonymize
 bin/lr_desyslog
@@ -8,38 +7,52 @@ bin/lr_env
 bin/lr_log2mail
 bin/lr_log2report
 bin/lr_rawmail2mail
+bin/lr_report_cfg2xml
 bin/lr_run
 bin/lr_setup_responder
+bin/lr_spec2pot
 bin/lr_spoold
-bin/lr_store
 bin/lr_xml2mail
 bin/lr_xml2report
 etc/lire/address.cf
-etc/lire/converters/iis_ftp_init
-etc/lire/converters/ipchains_init
-etc/lire/converters/ipfilter_init
-etc/lire/converters/iptables_init
-etc/lire/converters/snort_init
-etc/lire/converters/squid_access_init
-etc/lire/converters/watchguard_init
-etc/lire/database.cfg
 etc/lire/defaults
-etc/lire/dialup.cfg
 etc/lire/disclaimer
-etc/lire/dns.cfg
-etc/lire/dnszone.cfg
-etc/lire/email.cfg
 etc/lire/explanation
-etc/lire/firewall.cfg
-etc/lire/ftp.cfg
-etc/lire/msgstore.cfg
-etc/lire/print.cfg
+etc/lire/plugins/ct_dist_init
+etc/lire/plugins/ct_lines_init
+etc/lire/plugins/ct_pie_init
+etc/lire/plugins/ct_scat_init
+etc/lire/plugins/ct_stack_init
+etc/lire/plugins/ct_vbars_init
+etc/lire/plugins/cups_init
+etc/lire/plugins/email_concat_init
+etc/lire/plugins/iis_ftp_init
+etc/lire/plugins/ipchains_init
+etc/lire/plugins/ipfilter_init
+etc/lire/plugins/iptables_init
+etc/lire/plugins/lprng_init
+etc/lire/plugins/of_dvi_init
+etc/lire/plugins/of_excel95_init
+etc/lire/plugins/of_html_init
+etc/lire/plugins/of_latex_init
+etc/lire/plugins/of_pdf_init
+etc/lire/plugins/of_ps_init
+etc/lire/plugins/of_txt_init
+etc/lire/plugins/of_xml_init
+etc/lire/plugins/querytype_init
+etc/lire/plugins/sheets_init
+etc/lire/plugins/snort_init
+etc/lire/plugins/squid_access_init
+etc/lire/plugins/watchguard_init
+etc/lire/plugins/www-attack_init
+etc/lire/plugins/www-domain_init
+etc/lire/plugins/www-referrer_init
+etc/lire/plugins/www-robot_init
+etc/lire/plugins/www-url_init
+etc/lire/plugins/www-user_agent_init
+etc/lire/plugins/www-user_session_init
 etc/lire/profile_lean
-etc/lire/proxy.cfg
 etc/lire/signature
-etc/lire/spamfilter.cfg
-etc/lire/syslog.cfg
-etc/lire/www.cfg
 libexec/lire/convertors/argomail2dlf
 libexec/lire/convertors/bind8_named2dlf
 libexec/lire/convertors/bind8_query2dlf
@@ -47,12 +60,10 @@ libexec/lire/convertors/bind9_query2dlf
 libexec/lire/convertors/cisco_ios2dlf
 libexec/lire/convertors/combined2dlf
 libexec/lire/convertors/common2dlf
-libexec/lire/convertors/cups_pagelog2dlf
 libexec/lire/convertors/dbmail2dlf
 libexec/lire/convertors/exim2dlf
 libexec/lire/convertors/fw1_lea2dlf
 libexec/lire/convertors/isdnlog2dlf
-libexec/lire/convertors/lprng_account2dlf
 libexec/lire/convertors/modgzip2dlf
 libexec/lire/convertors/ms_isa2dlf
 libexec/lire/convertors/mysql2dlf
@@ -76,31 +87,20 @@ libexec/lire/convertors/w3c_extended2dlf
 libexec/lire/convertors/welf2dlf
 libexec/lire/convertors/welf_proxy2dlf
 libexec/lire/convertors/xferlog2dlf
-libexec/lire/lr_check_prereq
+libexec/lire/lr_check_service
 libexec/lire/lr_check_superservice
-libexec/lire/lr_dlf2xml
 libexec/lire/lr_environment
 libexec/lire/lr_functions
 libexec/lire/lr_getbody
-libexec/lire/lr_inflate
-libexec/lire/lr_log2xml
 libexec/lire/lr_mail
 libexec/lire/lr_processmail
 libexec/lire/lr_spool
-libexec/lire/lr_xml2ascii
-libexec/lire/lr_xml2chart
-libexec/lire/lr_xml2dbx
-libexec/lire/lr_xml2html
-libexec/lire/lr_xml2pdf
-libexec/lire/lr_xml2xhtml
-libexec/lire/lr_xml2xls
-libexec/lire/lr_xml_merge
-libexec/lire/lr_xslt
 sbin/lr_vendor_cron
 share/doc/lire/BUGS
 share/doc/lire/ChangeLog.2000.gz
 share/doc/lire/ChangeLog.2001.gz
 share/doc/lire/ChangeLog.2002.gz
+share/doc/lire/ChangeLog.2003.gz
 share/doc/lire/README
 share/doc/lire/dev-manual.pdf
 share/doc/lire/dev-manual.txt
@@ -119,6 +119,8 @@ share/doc/lire/dev-manual/ch02s06.html
 share/doc/lire/dev-manual/ch02s07.html
 share/doc/lire/dev-manual/ch03.html
 share/doc/lire/dev-manual/ch04.html
+share/doc/lire/dev-manual/ch04s02.html
+share/doc/lire/dev-manual/ch04s03.html
 share/doc/lire/dev-manual/ch05.html
 share/doc/lire/dev-manual/ch06.html
 share/doc/lire/dev-manual/ch07.html
@@ -127,17 +129,6 @@ share/doc/lire/dev-manual/ch09.html
 share/doc/lire/dev-manual/ch10.html
 share/doc/lire/dev-manual/ch11.html
 share/doc/lire/dev-manual/ch12.html
-share/doc/lire/dev-manual/ch12s02.html
-share/doc/lire/dev-manual/ch12s03.html
-share/doc/lire/dev-manual/ch12s04.html
-share/doc/lire/dev-manual/ch12s05.html
-share/doc/lire/dev-manual/ch12s06.html
-share/doc/lire/dev-manual/ch12s07.html
-share/doc/lire/dev-manual/ch12s08.html
-share/doc/lire/dev-manual/ch12s09.html
-share/doc/lire/dev-manual/ch12s10.html
-share/doc/lire/dev-manual/ch12s11.html
-share/doc/lire/dev-manual/ch12s12.html
 share/doc/lire/dev-manual/ch13.html
 share/doc/lire/dev-manual/ch14.html
 share/doc/lire/dev-manual/ch14s02.html
@@ -159,17 +150,14 @@ share/doc/lire/dev-manual/ch19s05.html
 share/doc/lire/dev-manual/ch19s06.html
 share/doc/lire/dev-manual/ch19s07.html
 share/doc/lire/dev-manual/ch19s08.html
-share/doc/lire/dev-manual/ch19s09.html
 share/doc/lire/dev-manual/ch20.html
 share/doc/lire/dev-manual/ch21.html
 share/doc/lire/dev-manual/ch21s02.html
 share/doc/lire/dev-manual/ch21s03.html
-share/doc/lire/dev-manual/ch21s04.html
 share/doc/lire/dev-manual/ch22.html
 share/doc/lire/dev-manual/ch23.html
 share/doc/lire/dev-manual/ch24.html
 share/doc/lire/dev-manual/ch25.html
-share/doc/lire/dev-manual/ch26.html
 share/doc/lire/dev-manual/flow-analysis.png
 share/doc/lire/dev-manual/flow-generation.png
 share/doc/lire/dev-manual/flow-normalisation.png
@@ -188,12 +176,16 @@ share/doc/lire/dev-manual/pt02.html
 share/doc/lire/dev-manual/pt03.html
 share/doc/lire/dev-manual/pt04.html
 share/doc/lire/dev-manual/pt05.html
+share/doc/lire/examples/MyAnalyser.pm
 share/doc/lire/examples/MyConverter.pm
+share/doc/lire/examples/PageCategoriser.pm
 share/doc/lire/examples/README
-share/doc/lire/examples/myconverter_cfg_default.xml
 share/doc/lire/examples/myconverter_cfg_spec.xml
 share/doc/lire/examples/myconverter_init
 share/doc/lire/examples/myschema.xml
+share/doc/lire/examples/page-categoriser.xml
+share/doc/lire/examples/page-categoriser_init
+share/doc/lire/examples/www-category.xml
 share/doc/lire/user-manual.pdf
 share/doc/lire/user-manual.txt
 share/doc/lire/user-manual/ch01.html
@@ -212,51 +204,47 @@ share/doc/lire/user-manual/ch03s04.html
 share/doc/lire/user-manual/ch03s05.html
 share/doc/lire/user-manual/ch03s06.html
 share/doc/lire/user-manual/ch04.html
+share/doc/lire/user-manual/ch04s02.html
+share/doc/lire/user-manual/ch04s03.html
+share/doc/lire/user-manual/ch04s04.html
+share/doc/lire/user-manual/ch04s05.html
+share/doc/lire/user-manual/ch04s06.html
+share/doc/lire/user-manual/ch04s07.html
 share/doc/lire/user-manual/ch05.html
-share/doc/lire/user-manual/ch05s02.html
-share/doc/lire/user-manual/ch05s03.html
-share/doc/lire/user-manual/ch05s04.html
-share/doc/lire/user-manual/ch05s05.html
 share/doc/lire/user-manual/ch06.html
-share/doc/lire/user-manual/ch06s02.html
-share/doc/lire/user-manual/ch06s03.html
 share/doc/lire/user-manual/ch07.html
+share/doc/lire/user-manual/ch07s02.html
 share/doc/lire/user-manual/ch08.html
-share/doc/lire/user-manual/ch08s02.html
-share/doc/lire/user-manual/ch08s03.html
 share/doc/lire/user-manual/ch09.html
 share/doc/lire/user-manual/ch09s02.html
 share/doc/lire/user-manual/ch09s03.html
+share/doc/lire/user-manual/ch09s04.html
+share/doc/lire/user-manual/ch09s05.html
+share/doc/lire/user-manual/ch09s06.html
 share/doc/lire/user-manual/ch10.html
 share/doc/lire/user-manual/ch10s02.html
 share/doc/lire/user-manual/ch10s03.html
+share/doc/lire/user-manual/ch10s04.html
+share/doc/lire/user-manual/ch10s05.html
 share/doc/lire/user-manual/ch11.html
 share/doc/lire/user-manual/ch11s02.html
-share/doc/lire/user-manual/ch11s03.html
 share/doc/lire/user-manual/ch12.html
-share/doc/lire/user-manual/ch12s02.html
-share/doc/lire/user-manual/ch12s03.html
 share/doc/lire/user-manual/ch13.html
 share/doc/lire/user-manual/ch13s02.html
-share/doc/lire/user-manual/ch13s03.html
 share/doc/lire/user-manual/ch14.html
 share/doc/lire/user-manual/ch14s02.html
 share/doc/lire/user-manual/ch14s03.html
 share/doc/lire/user-manual/ch15.html
-share/doc/lire/user-manual/ch15s02.html
-share/doc/lire/user-manual/ch15s03.html
 share/doc/lire/user-manual/ch16.html
 share/doc/lire/user-manual/ch16s02.html
 share/doc/lire/user-manual/ch16s03.html
+share/doc/lire/user-manual/ch16s04.html
+share/doc/lire/user-manual/ch16s05.html
+share/doc/lire/user-manual/ch16s06.html
 share/doc/lire/user-manual/ch17.html
 share/doc/lire/user-manual/ch17s02.html
-share/doc/lire/user-manual/ch17s03.html
-share/doc/lire/user-manual/ch17s04.html
 share/doc/lire/user-manual/ch18.html
 share/doc/lire/user-manual/ch18s02.html
-share/doc/lire/user-manual/ch19.html
-share/doc/lire/user-manual/ch19s02.html
-share/doc/lire/user-manual/ch20.html
 share/doc/lire/user-manual/index.html
 share/doc/lire/user-manual/pr01.html
 share/doc/lire/user-manual/pr01s02.html
@@ -264,6 +252,15 @@ share/doc/lire/user-manual/pr01s03.html
 share/doc/lire/user-manual/pt01.html
 share/doc/lire/user-manual/pt02.html
 share/doc/lire/user-manual/pt03.html
+share/lire/config-spec/ct_dist.xml
+share/lire/config-spec/ct_lines.xml
+share/lire/config-spec/ct_pie.xml
+share/lire/config-spec/ct_scat.xml
+share/lire/config-spec/ct_stack.xml
+share/lire/config-spec/ct_vbars.xml
+share/lire/config-spec/lire.xml
+share/lire/config-spec/of_html.xml
+share/lire/config-spec/of_txt.xml
 share/lire/filters/dns/select-resolver.xml
 share/lire/filters/dnszone/axfr-approved-only.xml
 share/lire/filters/dnszone/axfr-axfr-only.xml
@@ -293,6 +290,11 @@ share/lire/filters/www/exclude-url.xml
 share/lire/filters/www/select-client_host.xml
 share/lire/filters/www/select-sessions-by-page.xml
 share/lire/filters/www/select-url.xml
+share/lire/html/lire-html.css
+share/lire/html/lire.png
+share/lire/html/next.png
+share/lire/html/prev.png
+share/lire/html/toc.png
 share/lire/reports/database/actions-by-period.xml
 share/lire/reports/database/top-databases.xml
 share/lire/reports/database/top-querytypes.xml
@@ -506,7 +508,21 @@ share/lire/schemas/www-url.xml
 share/lire/schemas/www-user_agent.xml
 share/lire/schemas/www-user_session.xml
 share/lire/schemas/www.xml
-share/lire/sgml/xml.dcl
+share/lire/templates/database_default.xml
+share/lire/templates/dialup_default.xml
+share/lire/templates/dns_default.xml
+share/lire/templates/dnszone_default.xml
+share/lire/templates/email_default.xml
+share/lire/templates/empty.xml
+share/lire/templates/firewall_default.xml
+share/lire/templates/ftp_default.xml
+share/lire/templates/msgstore_default.xml
+share/lire/templates/print_default.xml
+share/lire/templates/proxy_default.xml
+share/lire/templates/spamfilter_default.xml
+share/lire/templates/syslog_default.xml
+share/lire/templates/www_default.xml
+share/lire/tex/unicode.tex
 share/lire/xml/dtd/catalog
 share/lire/xml/dtd/catalog.xml
 share/lire/xml/dtd/ldsml.dtd
@@ -519,48 +535,53 @@ share/lire/xml/dtd/lrml-1.0.dtd
 share/lire/xml/dtd/lrml.dtd
 share/lire/xml/dtd/lrsml-1.0.dtd
 share/lire/xml/dtd/lrsml.dtd
-share/lire/xml/stylesheet/xsl/docbook.xsl
-share/lire/xml/stylesheet/xsl/html.xsl
 share/perl5/Lire/Aggregate.pm
 share/perl5/Lire/Aggregator.pm
 share/perl5/Lire/Apache.pm
-share/perl5/Lire/AsciiDlf/Aggregator.pm
-share/perl5/Lire/AsciiDlf/AsciiDlfFactory.pm
-share/perl5/Lire/AsciiDlf/DerivedRecordsCreator.pm
-share/perl5/Lire/AsciiDlf/DlfInfo.pm
-share/perl5/Lire/AsciiDlf/ExtendedFieldsCreator.pm
-share/perl5/Lire/AsciiDlf/Group.pm
-share/perl5/Lire/AsciiDlf/GroupOp.pm
-share/perl5/Lire/AsciiDlf/Rangegroup.pm
-share/perl5/Lire/AsciiDlf/Records.pm
-share/perl5/Lire/AsciiDlf/ReportOperator.pm
-share/perl5/Lire/AsciiDlf/Timegroup.pm
-share/perl5/Lire/AsciiDlf/Timeslot.pm
 share/perl5/Lire/Average.pm
+share/perl5/Lire/ChartType.pm
+share/perl5/Lire/ChartTypes/Dist.pm
+share/perl5/Lire/ChartTypes/Lines.pm
+share/perl5/Lire/ChartTypes/Pie.pm
+share/perl5/Lire/ChartTypes/Scat.pm
+share/perl5/Lire/ChartTypes/Stack.pm
+share/perl5/Lire/ChartTypes/VBars.pm
 share/perl5/Lire/Config.pm
+share/perl5/Lire/Config/BasePluginSpec.pm
 share/perl5/Lire/Config/BooleanSpec.pm
 share/perl5/Lire/Config/Build.pm
+share/perl5/Lire/Config/ChartSpec.pm
+share/perl5/Lire/Config/ChartTypeSpec.pm
 share/perl5/Lire/Config/CommandSpec.pm
 share/perl5/Lire/Config/CompoundSpec.pm
 share/perl5/Lire/Config/ConfigFile.pm
 share/perl5/Lire/Config/ConfigSpec.pm
 share/perl5/Lire/Config/Dictionary.pm
 share/perl5/Lire/Config/DirectorySpec.pm
+share/perl5/Lire/Config/DlfAnalyserSpec.pm
 share/perl5/Lire/Config/DlfConverterSpec.pm
 share/perl5/Lire/Config/DlfSchemaSpec.pm
+share/perl5/Lire/Config/DlfStreamSpec.pm
+share/perl5/Lire/Config/DlfStreamsSpec.pm
 share/perl5/Lire/Config/ExecutableSpec.pm
 share/perl5/Lire/Config/FileSpec.pm
+share/perl5/Lire/Config/Index.pm
 share/perl5/Lire/Config/IntegerSpec.pm
-share/perl5/Lire/Config/Legacy.pm
 share/perl5/Lire/Config/List.pm
 share/perl5/Lire/Config/ListSpec.pm
 share/perl5/Lire/Config/Object.pm
 share/perl5/Lire/Config/ObjectSpec.pm
 share/perl5/Lire/Config/OptionSpec.pm
+share/perl5/Lire/Config/OutputFormatSpec.pm
 share/perl5/Lire/Config/Parser.pm
 share/perl5/Lire/Config/Plugin.pm
 share/perl5/Lire/Config/PluginSpec.pm
 share/perl5/Lire/Config/RecordSpec.pm
+share/perl5/Lire/Config/Reference.pm
+share/perl5/Lire/Config/ReferenceSpec.pm
+share/perl5/Lire/Config/ReportConfigIndex.pm
+share/perl5/Lire/Config/ReportSectionSpec.pm
+share/perl5/Lire/Config/ReportSpec.pm
 share/perl5/Lire/Config/Scalar.pm
 share/perl5/Lire/Config/ScalarSpec.pm
 share/perl5/Lire/Config/SelectSpec.pm
@@ -568,29 +589,37 @@ share/perl5/Lire/Config/SpecParser.pm
 share/perl5/Lire/Config/StringSpec.pm
 share/perl5/Lire/Config/TypeSpec.pm
 share/perl5/Lire/Config/Value.pm
+share/perl5/Lire/Config/VariableIndex.pm
+share/perl5/Lire/Config/XMLSpecListSpec.pm
 share/perl5/Lire/Count.pm
 share/perl5/Lire/DataTypes.pm
 share/perl5/Lire/DerivedSchema.pm
+share/perl5/Lire/DlfAnalyser.pm
+share/perl5/Lire/DlfAnalyserProcess.pm
+share/perl5/Lire/DlfAnalysers/AttackCategoriser.pm
+share/perl5/Lire/DlfAnalysers/DomainCategoriser.pm
+share/perl5/Lire/DlfAnalysers/EmailConcatenater.pm
+share/perl5/Lire/DlfAnalysers/ReferrerCategoriser.pm
+share/perl5/Lire/DlfAnalysers/RobotCategoriser.pm
+share/perl5/Lire/DlfAnalysers/SQLQueryType.pm
+share/perl5/Lire/DlfAnalysers/SheetsCategoriser.pm
+share/perl5/Lire/DlfAnalysers/URLCategoriser.pm
+share/perl5/Lire/DlfAnalysers/UserAgentCategoriser.pm
+share/perl5/Lire/DlfAnalysers/UserSessionAnalyser.pm
+share/perl5/Lire/DlfCategoriser.pm
 share/perl5/Lire/DlfConverter.pm
-share/perl5/Lire/DlfConverterManager.pm
 share/perl5/Lire/DlfConverterProcess.pm
+share/perl5/Lire/DlfConverters/CUPS.pm
+share/perl5/Lire/DlfConverters/Lprng.pm
 share/perl5/Lire/DlfQuery.pm
 share/perl5/Lire/DlfResult.pm
 share/perl5/Lire/DlfSchema.pm
 share/perl5/Lire/DlfStore.pm
 share/perl5/Lire/DlfStream.pm
+share/perl5/Lire/DocBookParser.pm
 share/perl5/Lire/Email.pm
+share/perl5/Lire/Error.pm
 share/perl5/Lire/ExtendedSchema.pm
-share/perl5/Lire/Extensions/Database/DatabaseSchema.pm
-share/perl5/Lire/Extensions/Email/EmailSchema.pm
-share/perl5/Lire/Extensions/Print/PrintSchema.pm
-share/perl5/Lire/Extensions/WWW/AttackSchema.pm
-share/perl5/Lire/Extensions/WWW/DomainSchema.pm
-share/perl5/Lire/Extensions/WWW/RobotSchema.pm
-share/perl5/Lire/Extensions/WWW/SearchSchema.pm
-share/perl5/Lire/Extensions/WWW/URLSchema.pm
-share/perl5/Lire/Extensions/WWW/UserAgentSchema.pm
-share/perl5/Lire/Extensions/WWW/UserSessionSchema.pm
 share/perl5/Lire/FTP/IisFtpDlfConverter.pm
 share/perl5/Lire/Field.pm
 share/perl5/Lire/FilterExpr.pm
@@ -608,43 +637,52 @@ share/perl5/Lire/I18N.pm
 share/perl5/Lire/ImportJob.pm
 share/perl5/Lire/Last.pm
 share/perl5/Lire/Logger.pm
+share/perl5/Lire/LrCommand.pm
 share/perl5/Lire/Max.pm
 share/perl5/Lire/Min.pm
 share/perl5/Lire/OldDlfAdapter.pm
 share/perl5/Lire/OutputFormat.pm
+share/perl5/Lire/OutputFormats/DVI.pm
+share/perl5/Lire/OutputFormats/Excel95.pm
+share/perl5/Lire/OutputFormats/HTML.pm
+share/perl5/Lire/OutputFormats/LaTeX.pm
+share/perl5/Lire/OutputFormats/PDF.pm
+share/perl5/Lire/OutputFormats/PS.pm
+share/perl5/Lire/OutputFormats/Text.pm
+share/perl5/Lire/OutputFormats/XML.pm
 share/perl5/Lire/OutputJob.pm
 share/perl5/Lire/Param.pm
+share/perl5/Lire/Plugin.pm
+share/perl5/Lire/PluginManager.pm
 share/perl5/Lire/Program.pm
 share/perl5/Lire/Proxy/SquidAccessDlfConverter.pm
 share/perl5/Lire/Rangegroup.pm
 share/perl5/Lire/Records.pm
 share/perl5/Lire/Report.pm
+share/perl5/Lire/Report/ChartConfig.pm
 share/perl5/Lire/Report/ColumnInfo.pm
 share/perl5/Lire/Report/Entry.pm
 share/perl5/Lire/Report/Group.pm
 share/perl5/Lire/Report/GroupInfo.pm
-share/perl5/Lire/Report/Image.pm
-share/perl5/Lire/Report/Note.pm
 share/perl5/Lire/Report/Section.pm
 share/perl5/Lire/Report/Subreport.pm
 share/perl5/Lire/Report/TableInfo.pm
 share/perl5/Lire/ReportConfig.pm
-share/perl5/Lire/ReportGenerator.pm
 share/perl5/Lire/ReportJob.pm
-share/perl5/Lire/ReportMerger.pm
 share/perl5/Lire/ReportOperator.pm
 share/perl5/Lire/ReportParser.pm
+share/perl5/Lire/ReportParser/AsciiDocBookFormatter.pm
 share/perl5/Lire/ReportParser/AsciiWriter.pm
-share/perl5/Lire/ReportParser/ChartWriter.pm
-share/perl5/Lire/ReportParser/DocBookFormatter.pm
 share/perl5/Lire/ReportParser/ExcelWriter.pm
-share/perl5/Lire/ReportParser/PloticusChartWriter.pm
+share/perl5/Lire/ReportParser/HTMLDocBookFormatter.pm
+share/perl5/Lire/ReportParser/HTMLWriter.pm
+share/perl5/Lire/ReportParser/LaTeXDocBookFormatter.pm
+share/perl5/Lire/ReportParser/LaTeXWriter.pm
 share/perl5/Lire/ReportParser/ReportBuilder.pm
 share/perl5/Lire/ReportParser/RowColHandler.pm
 share/perl5/Lire/ReportSchedule.pm
 share/perl5/Lire/ReportSection.pm
 share/perl5/Lire/ReportSpec.pm
-share/perl5/Lire/ReportSpecFactory.pm
 share/perl5/Lire/SQLExt/LrCountUniq.pm
 share/perl5/Lire/SQLExt/LrFirst.pm
 share/perl5/Lire/SQLExt/LrLast.pm
@@ -659,9 +697,12 @@ share/perl5/Lire/Sum.pm
 share/perl5/Lire/Syslog.pm
 share/perl5/Lire/Test/CommandResult.pm
 share/perl5/Lire/Test/CursesUIDriver.pm
+share/perl5/Lire/Test/DlfAnalyserTestCase.pm
 share/perl5/Lire/Test/DlfConverterTestCase.pm
 share/perl5/Lire/Test/FunctionalTestCase.pm
 share/perl5/Lire/Test/HashConfig.pm
+share/perl5/Lire/Test/Mock.pm
+share/perl5/Lire/Test/PluginTestCase.pm
 share/perl5/Lire/Test/TestCase.pm
 share/perl5/Lire/Time.pm
 share/perl5/Lire/Timegroup.pm
@@ -669,6 +710,7 @@ share/perl5/Lire/Timeslot.pm
 share/perl5/Lire/UI.pm
 share/perl5/Lire/UI/BoolWidget.pm
 share/perl5/Lire/UI/CommandWidget.pm
+share/perl5/Lire/UI/CompoundListWidget.pm
 share/perl5/Lire/UI/CompoundWidget.pm
 share/perl5/Lire/UI/DirectoryWidget.pm
 share/perl5/Lire/UI/ExecutableWidget.pm
@@ -676,12 +718,17 @@ share/perl5/Lire/UI/FileWidget.pm
 share/perl5/Lire/UI/IntegerWidget.pm
 share/perl5/Lire/UI/ListWidget.pm
 share/perl5/Lire/UI/PluginWidget.pm
+share/perl5/Lire/UI/PolyListWidget.pm
 share/perl5/Lire/UI/Prefs.pm
+share/perl5/Lire/UI/ReportConfigListWidget.pm
+share/perl5/Lire/UI/ReportSectionWidget.pm
+share/perl5/Lire/UI/ScalarListWidget.pm
 share/perl5/Lire/UI/SelectWidget.pm
 share/perl5/Lire/UI/StoreWindow.pm
 share/perl5/Lire/UI/StringWidget.pm
 share/perl5/Lire/UI/Utils.pm
 share/perl5/Lire/UI/Widget.pm
+share/perl5/Lire/UI/XMLSpecListWidget.pm
 share/perl5/Lire/Utils.pm
 share/perl5/Lire/W3CExtendedLog.pm
 share/perl5/Lire/WELF.pm
@@ -690,17 +737,16 @@ share/perl5/Lire/WWW/Domain/Country.pm
 share/perl5/Lire/WWW/Domain/Robot.pm
 share/perl5/Lire/WWW/Filename.pm
 share/perl5/Lire/WWW/Filename/Attack.pm
-share/perl5/Lire/WWW/URL.pm
 share/perl5/Lire/WWW/UserAgent.pm
 share/perl5/Lire/WWW/UserAgent/Browser.pm
 share/perl5/Lire/WWW/UserAgent/Language.pm
 share/perl5/Lire/WWW/UserAgent/OS.pm
 share/perl5/Lire/WWW/UserAgent/Robot.pm
 share/perl5/Lire/WeekCalculator.pm
+share/perl5/Lire/XMLParser.pm
 share/perl5/Lire/XMLSpecContainer.pm
 share/perl5/Lire/XMLSpecI18N.pm
-share/lire/defaults/lire.xml
-share/lire/config-spec/lire.xml
+share/perl5/Lire/XMLSpecParser.pm
 
 @dirrm share/perl5/Lire/WWW/UserAgent
 @dirrm share/perl5/Lire/WWW/Filename
@@ -712,22 +758,19 @@ share/lire/config-spec/lire.xml
 @dirrm share/perl5/Lire/ReportParser
 @dirrm share/perl5/Lire/Report
 @dirrm share/perl5/Lire/Proxy
+@dirrm share/perl5/Lire/OutputFormats
 @dirrm share/perl5/Lire/Msgstore
 @dirrm share/perl5/Lire/Firewall
 @dirrm share/perl5/Lire/FTP
-@dirrm share/perl5/Lire/Extensions/WWW
-@dirrm share/perl5/Lire/Extensions/Print
-@dirrm share/perl5/Lire/Extensions/Email
-@dirrm share/perl5/Lire/Extensions/Database
-@dirrm share/perl5/Lire/Extensions
+@dirrm share/perl5/Lire/DlfConverters
+@dirrm share/perl5/Lire/DlfAnalysers
 @dirrm share/perl5/Lire/Config
-@dirrm share/perl5/Lire/AsciiDlf
+@dirrm share/perl5/Lire/ChartTypes
 @dirrm share/perl5/Lire
-@dirrm share/lire/xml/stylesheet/xsl
-@dirrm share/lire/xml/stylesheet
 @dirrm share/lire/xml/dtd
 @dirrm share/lire/xml
-@dirrm share/lire/sgml
+@dirrm share/lire/tex
+@dirrm share/lire/templates
 @dirrm share/lire/schemas
 @dirrm share/lire/reports/www
 @dirrm share/lire/reports/syslog
@@ -743,19 +786,16 @@ share/lire/config-spec/lire.xml
 @dirrm share/lire/reports/dialup
 @dirrm share/lire/reports/database
 @dirrm share/lire/reports
+@dirrm share/lire/html
 @dirrm share/lire/filters/www
 @dirrm share/lire/filters/syslog
 @dirrm share/lire/filters/proxy
-@dirrm share/lire/filters/print
 @dirrm share/lire/filters/msgstore
-@dirrm share/lire/filters/ftp
 @dirrm share/lire/filters/firewall
 @dirrm share/lire/filters/email
 @dirrm share/lire/filters/dnszone
 @dirrm share/lire/filters/dns
-@dirrm share/lire/filters/database
 @dirrm share/lire/filters
-@dirrm share/lire/defaults
 @dirrm share/lire/config-spec
 @dirrm share/lire
 @dirrm share/doc/lire/user-manual
@@ -764,7 +804,9 @@ share/lire/config-spec/lire.xml
 @dirrm share/doc/lire
 @dirrm libexec/lire/convertors
 @dirrm libexec/lire
+@dirrm etc/lire/plugins
 @dirrm etc/lire/converters
 @dirrm etc/lire/config
 @dirrm etc/lire
+
 @unexec rmdir %D/share/perl5 2>/dev/null || true
