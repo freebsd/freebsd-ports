@@ -7,7 +7,7 @@
 # $FreeBSD$
 #
 
-DISTNAME	zh-cdict-1.0
+DISTNAME=	zh-cdict-1.0
 CATEGORIES=	chinese
 MASTER_SITES=	ftp://ftp.cn.FreeBSD.org/pub/ported/
 
