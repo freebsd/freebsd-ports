@@ -73,6 +73,7 @@
     SUBDIR += proguard
     SUBDIR += sablevm
     SUBDIR += shujit
+    SUBDIR += simplicity
     SUBDIR += trove4j
     SUBDIR += tya
     SUBDIR += xalan-j
