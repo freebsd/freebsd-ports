@@ -9,10 +9,10 @@ PORTNAME=	WWW-SourceForge
 PORTVERSION=	0.083
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
-MASTER_SITE_SUBDIR=	WWW
+MASTER_SITE_SUBDIR=	../../authors/id/G/GU/GUGOD
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ychsiao@ychsiao.idv.tw
+MAINTAINER=	ychsiao@ychsiao.org
 COMMENT=	Retrieve infromation from SourceForge site
 
 BUILD_DEPENDS=	${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize \
