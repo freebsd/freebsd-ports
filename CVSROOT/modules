@@ -8925,6 +8925,7 @@ yamsweeper	ports/games/yamsweeper
 yamt		ports/audio/yamt
 yank		ports/deskutils/yank
 yap		ports/lang/yap
+yape		ports/emulators/yape
 yaps		ports/comms/yaps
 yatex		ports/print/yatex
 yatex-mule	ports/print/yatex-mule
