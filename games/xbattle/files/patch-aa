@@ -1,0 +1,23 @@
+*** Imakefile.orig	Tue Apr 29 16:11:52 1997
+--- Imakefile	Tue Apr 29 16:13:28 1997
+***************
+*** 7,15 ****
+  #endif
+  #endif
+  
+!         DEFINES = -DDEFAULT_XBO_DIR=\"/export/home/lesher/xbos\" \
+!                   -DDEFAULT_XBT_DIR=\"/export/home/lesher/xbts\" \
+!                   -DDEFAULT_XBA_DIR=\"/export/home/lesher/xbas\"
+  LOCAL_LIBRARIES = $(XLIB)
+    SYS_LIBRARIES = -lm
+             SRCS =	command.c		\
+--- 7,15 ----
+  #endif
+  #endif
+  
+!         DEFINES = -DDEFAULT_XBO_DIR=\"$(PREFIX)/etc/xbattle/xbos\" \
+!                   -DDEFAULT_XBT_DIR=\"$(PREFIX)/etc/xbattle/xbts\" \
+!                   -DDEFAULT_XBA_DIR=\"$(PREFIX)/etc/xbattle/xbas\"
+  LOCAL_LIBRARIES = $(XLIB)
+    SYS_LIBRARIES = -lm
+             SRCS =	command.c		\
