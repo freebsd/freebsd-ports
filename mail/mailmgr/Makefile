@@ -8,12 +8,15 @@
 PORTNAME=	mailmgr
 PORTVERSION=	1.2.3
 CATEGORIES=	mail
-MASTER_SITES=	http://web.onda.com.br/orso/
+MASTER_SITES=	http://sarg.sourceforge.net/
 
 MAINTAINER=	sexbear@tmu.edu.tw
-COMMENT=	Sendmail Analisys Report Generator
+COMMENT=	Sendmail Analysis Report Generator
 
 GNU_CONFIGURE=	yes
+
+MSG_FILE=	${PKGDIR}/pkg-message
+PKGMESSAGE=	${WRKSRC}/pkg-message
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/mailmgr.conf ${PREFIX}/etc/mailmgr.conf.default
@@ -21,6 +24,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/mailmgr.conf ${PREFIX}/etc/mailmgr.conf
 .endif
 	${INSTALL_PROGRAM} ${WRKSRC}/mailmgr ${PREFIX}/bin
-	@${SED} -e 's,PREFIX,${PREFIX},g' ${PKGMESSAGE}
+	@${SED} 's|%%PREFIX%%|${PREFIX}|g' ${MSG_FILE} > ${PKGMESSAGE}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
