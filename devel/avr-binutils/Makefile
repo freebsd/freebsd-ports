@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	binutils
-PORTVERSION=	2.14
+PORTVERSION=	2.15
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--target=avr
 .if (${MACHINE_ARCH} == "amd64")
-CONFIGURE_ARGS+=	--host=x86_64-portbld-freebsd${OSREL}
+MACHINE_ARCH=	x86_64
 .endif
 USE_LIBTOOL_VER=	13
 LIBTOOLFILES=	configure bfd/configure binutils/configure etc/configure \
