@@ -1872,6 +1872,7 @@ epeg		ports/graphics/epeg
 eperl		ports/lang/eperl
 ephem		ports/astro/ephem
 epic4		ports/irc/epic4
+epic5		ports/irc/epic5
 epiphany	ports/www/epiphany
 epiphany-extensions	ports/www/epiphany-extensions
 epiwm		ports/x11-wm/epiwm
