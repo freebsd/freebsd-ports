@@ -9,7 +9,7 @@ PORTVERSION=	0.8.2
 CATEGORIES=	news
 MASTER_SITES=	http://home.arcor.de/kaffeetisch/downloads/
 
-MAINTAINER=	krion@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical configuation utility for the newsreader slrn
 
 BUILD_DEPENDS=	slrn:${PORTSDIR}/news/slrn \
