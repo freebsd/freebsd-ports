@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Params-Validate
-PORTVERSION=	0.24
+PORTVERSION=	0.50
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Devel/DROLSKY
@@ -17,6 +17,7 @@ MAINTAINER=	dsh@vlink.ru
 PERL_CONFIGURE=	yes
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
-MAN3=		Attribute::Params::Validate.3 Params::Validate.3
+MAN3=		Attribute::Params::Validate.3 Params::ValidateXS.3 \
+		Params::ValidatePP.3 Params::Validate.3
 
 .include <bsd.port.mk>
