@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Jun 18 19:26:54 2000
-+++ Makefile	Mon Jan 22 20:22:57 2001
+--- Makefile.orig	Sun Jun 18 13:26:54 2000
++++ Makefile	Sun Dec  8 15:18:58 2002
 @@ -19,7 +19,7 @@
  # LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
  # FOR A PARTICULAR PURPOSE. 
@@ -27,15 +27,22 @@
  # NOTE: If you want your password encryption to be compatible with
  # e.g. SunOS, you may need to instead use:
  # OSLIBS=-ldescrypt
-@@ -64,12 +64,12 @@
+@@ -64,12 +64,19 @@
  # FLAGS   = -DTAC_PLUS_USERID=$(USERID) -DTAC_PLUS_GROUPID=$(GROUPID)
  
  # Definitions for SKEY functionality
 -# DEFINES = -DSKEY
 -# LIBS = ../crimelab/skey/src/libskey.a
++.if defined(WITH_SKEY)
 +DEFINES = -DSKEY
 +LIBS = -lskey -lmd
  # INCLUDES = -I../crimelab/skey/src
++.endif
++
++.if defined(WITH_OPIE)
++DEFINES += -DOPIE
++LIBS += -lopie -lmd
++.endif
  
  # Debugging flags
 -DEBUG = -g
@@ -43,7 +50,7 @@
  
  # Enforce a limit on maximum sessions per user. See the user's guide
  # for more information.
-@@ -85,13 +85,13 @@
+@@ -85,13 +92,13 @@
  # possible), containing its process id. Uncomment and modify the
  # following line to change this filename
  
@@ -59,7 +66,16 @@
  
  HFILES = expire.h parse.h regmagic.h md5.h regexp.h tac_plus.h 
  
-@@ -130,8 +130,8 @@
+@@ -99,7 +106,7 @@
+ 	do_author.c dump.c encrypt.c expire.c $(MSCHAP_MD4_SRC) md5.c \
+ 	packet.c report.c sendauth.c tac_plus.c utils.c pw.c hash.c \
+ 	parse.c regexp.c programs.c enable.c pwlib.c default_fn.c \
+-	skey_fn.c default_v0_fn.c sendpass.c maxsess.c
++	skey_fn.c opie_fn.c default_v0_fn.c sendpass.c maxsess.c
+ 
+ OBJS = $(SRCS:.c=.o)
+ 
+@@ -130,8 +137,8 @@
  	-rm -f *.o *~ *.BAK tac_plus generate_passwd
  
  install:
