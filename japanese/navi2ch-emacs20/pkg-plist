@@ -20,6 +20,8 @@ share/doc/ja/navi2ch/contrib/navi2ch-migemo.el
 %%LISPDIR%%/navi2ch/navi2ch-article.elc
 %%LISPDIR%%/navi2ch/navi2ch-articles.el
 %%LISPDIR%%/navi2ch/navi2ch-articles.elc
+%%LISPDIR%%/navi2ch/navi2ch-auto-modify.el
+%%LISPDIR%%/navi2ch/navi2ch-auto-modify.elc
 %%LISPDIR%%/navi2ch/navi2ch-board-misc.el
 %%LISPDIR%%/navi2ch/navi2ch-board-misc.elc
 %%LISPDIR%%/navi2ch/navi2ch-board.el
@@ -70,6 +72,8 @@ share/doc/ja/navi2ch/contrib/navi2ch-migemo.el
 %%LISPDIR%%/navi2ch/navi2ch-vars.elc
 %%LISPDIR%%/navi2ch/navi2ch-version.el
 %%LISPDIR%%/navi2ch/navi2ch-version.elc
+%%LISPDIR%%/navi2ch/navi2ch-xmas.el
+%%LISPDIR%%/navi2ch/navi2ch-xmas.elc
 %%LISPDIR%%/navi2ch/navi2ch.el
 %%LISPDIR%%/navi2ch/navi2ch.elc
 @dirrm %%LISPDIR%%/navi2ch
