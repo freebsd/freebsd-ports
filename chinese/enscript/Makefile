@@ -20,7 +20,7 @@ PLIST=		${WRKDIR}/pkg-plist
 PKGMESSAGE=	${.CURDIR}/pkg-message
 
 post-patch:
-	@${ECHO} "share/enscript/README.BIG5" > ${WRKDIR}/pkg-plist
+	@${ECHO_CMD} "share/enscript/README.BIG5" > ${WRKDIR}/pkg-plist
 	@${CAT} ${MASTERDIR}/pkg-plist >> ${WRKDIR}/pkg-plist
 
 do-install:

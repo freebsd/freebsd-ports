@@ -25,12 +25,12 @@ post-install:
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/bbs.sh.example startup file."; \
 		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/bbs.sh.example ${PREFIX}/etc/rc.d/bbs.sh.example; \
 	fi
-	@echo "======================================================================="
-	@echo "Installnation Complete."
-	@echo "======================================================================="
-	@echo "please review ${PREFIX}/etc/rc.d/bbs.sh.example change bbsd port you want"
-	@echo "then rename to ${PREFIX}/etc/rc.d/bbs.sh then:"
-	@echo "use ${PREFIX}/etc/rc.d/bbs.sh { start | stop } to start the BBS service"
-	@echo "full and complete document in ${PREFIX}/bbs/bbssrc/doc read before ask."
+	@${ECHO} "======================================================================="
+	@${ECHO} "Installnation Complete."
+	@${ECHO} "======================================================================="
+	@${ECHO} "please review ${PREFIX}/etc/rc.d/bbs.sh.example change bbsd port you want"
+	@${ECHO} "then rename to ${PREFIX}/etc/rc.d/bbs.sh then:"
+	@${ECHO} "use ${PREFIX}/etc/rc.d/bbs.sh { start | stop } to start the BBS service"
+	@${ECHO} "full and complete document in ${PREFIX}/bbs/bbssrc/doc read before ask."
 
 .include <bsd.port.mk>
