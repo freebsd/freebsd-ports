@@ -1771,6 +1771,10 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 	<name>xorg-libraries</name>
 	<range><lt>6.7.0_2</lt></range>
       </package>
+      <package>
+	<name>lesstif</name>
+	<range><ge>0</ge></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -1803,7 +1807,7 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     <dates>
       <discovery>2004-09-15</discovery>
       <entry>2004-09-15</entry>
-      <modified>2004-09-27</modified>
+      <modified>2004-10-13</modified>
     </dates>
   </vuln>
 
