@@ -6,13 +6,13 @@
  // (setup is linked against it).
 +#if ( defined ( LINUX ))
  #if ( defined( _gcc3 ) && defined( C300 ) )
- 
  File gid_File_Lib_gcc
-@@ -42,6 +43,7 @@
-     Name        = STRING(libstdc++.so.3);
+     BIN_FILE_BODY;
+@@ -31,6 +32,7 @@
      Styles      = (NETWORK,RELATIVE);
  End
+ 
 +#endif
  #endif
- #endif
  
+ File gid_File_Lib_Sal
