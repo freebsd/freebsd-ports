@@ -1,4 +1,3 @@
-bin/calibrate
 include/plib/fnt.h
 include/plib/fntLocal.h
 include/plib/js.h
@@ -11,10 +10,11 @@ include/plib/slPortability.h
 include/plib/sm.h
 include/plib/ssg.h
 include/plib/ssgKeyFlier.h
-lib/libfnt.a
-lib/libsl.a
-lib/libsm.a
-lib/libpu.a
-lib/libsg.a
-lib/libssg.a
+include/plib/ul.h
+lib/libplibfnt.a
+lib/libplibsl.a
+lib/libplibsm.a
+lib/libplibpu.a
+lib/libplibsg.a
+lib/libplibssg.a
 @dirrm include/plib
