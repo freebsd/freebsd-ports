@@ -170,6 +170,7 @@
     SUBDIR += pstree
     SUBDIR += pwgen
     SUBDIR += pyfind
+    SUBDIR += qlogtools
     SUBDIR += qtpkg
     SUBDIR += rclean
     SUBDIR += rdate
