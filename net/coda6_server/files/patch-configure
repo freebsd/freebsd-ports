@@ -1,0 +1,25 @@
+--- configure.orig	Wed Oct 20 20:43:56 2004
++++ configure	Tue Nov 16 23:58:20 2004
+@@ -3059,13 +3059,6 @@
+ 	initsuffix='../etc'
+ 	;;
+ 
+-    */coda* )
+-	# If '/coda*' is already in the prefix, we don't need to add
+-        # a coda subdirectory to the sysconfdir.
+-	sysconfdir=${prefix}/etc
+-	initsuffix='etc'
+-	;;
+-
+     * )
+ 	# Otherwise append '/coda' so that we don't throw our configuration
+ 	# files all over the place.
+@@ -3074,7 +3067,7 @@
+ 	else
+ 		sysconfdir=${ac_default_prefix}/etc/coda
+ 	fi
+-	initsuffix='etc'
++	initsuffix='etc/rc.d'
+ 	;;
+ esac
+ echo "$as_me:$LINENO: result: ${sysconfdir}" >&5
