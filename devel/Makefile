@@ -1054,6 +1054,7 @@
     SUBDIR += ppl
     SUBDIR += prcs
     SUBDIR += premake
+    SUBDIR += preps-gui
     SUBDIR += privman
     SUBDIR += projectcenter.app
     SUBDIR += prototype
