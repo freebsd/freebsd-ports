@@ -7,7 +7,7 @@
 
 PORTNAME=	imake
 PORTVERSION=	6.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://freedesktop.org/~xorg/X11R6.7.0/src/ \
 		${MASTER_SITE_XORG} \
