@@ -16,8 +16,7 @@ upgrades.
 
   If you see errors like "[BUG] Segmentation fault" while a portsdb update is
   in progress, adjust the PORTS_DBDRIVER variable (in your environment or in
-  pkgtools.conf) to either bdb_hash or bdb_btree (the latter requires you to
-  install the sysutils/ruby-bdb port).
+  pkgtools.conf) to either bdb1_hash or dbm_hash.
 
   This problem was fixed in 5.3-RELEASE, but users of 4.10-RELEASE and
   5.2.1-RELEASE (and older releases) will find fixes by updating to the
