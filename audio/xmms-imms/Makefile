@@ -19,9 +19,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms \
 		sqlite.2:${PORTSDIR}/databases/sqlite \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		id3:${PORTSDIR}/audio/id3lib \
-		vorbis.2:${PORTSDIR}/audio/libvorbis
-
-BROKEN=		"Broken dependency"
+		vorbis.3:${PORTSDIR}/audio/libvorbis
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
