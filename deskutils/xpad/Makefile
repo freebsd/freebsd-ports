@@ -27,9 +27,9 @@ MANCOMPRESSED=	no
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/share/doc/xpad
-	${INSTALL_MAN} ${WRKSRC}/doc/README ${PREFIX}/share/doc/xpad/
+	${INSTALL_DATA} ${WRKSRC}/doc/README ${PREFIX}/share/doc/xpad/
 	@${MKDIR} ${PREFIX}/share/examples/xpad
-	${INSTALL_MAN} ${WRKSRC}/xpad.desktop ${PREFIX}/share/examples/xpad/
+	${INSTALL_DATA} ${WRKSRC}/xpad.desktop ${PREFIX}/share/examples/xpad/
 	@${CAT} pkg-message
 .endif
 	@${RM} /xpad.desktop
