@@ -13,9 +13,9 @@ In addition to the above, Sylpheed-claws has the following extra features:
 	'Request Return Receipt', 'Default To', and 'Default account'
 * subject simplification for changing the display of subject lines via RegExp
 * pixmap themes, delete news postings, new mail notification
-* selectable pop download of messages
-and more...
+* selectable pop download of messages, store GPG passphrase in memory
+and much more...
 
 WWW: http://sylpheed-claws.sourceforge.net/
 
-- corecode
+- Simon 'corecode' Schubert
