@@ -121,6 +121,7 @@
     SUBDIR += gnut
     SUBDIR += gopher
     SUBDIR += gq
+    SUBDIR += gsk
     SUBDIR += gtic
     SUBDIR += gtk+licq
     SUBDIR += gtk-gnutella
