@@ -4,7 +4,7 @@
 # Date created:			  Mon Feb 03, 1997
 # Whom:				  David O'Brien (obrien@NUXI.com)
 #
-# $Id: Makefile,v 1.2 1998/08/08 03:26:21 obrien Exp $
+# $Id: Makefile,v 1.3 1998/08/10 02:51:45 obrien Exp $
 #
 
 DISTNAME=	xacc-1.0.17
@@ -13,7 +13,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://www.gnucash.org/xacc/download/  \
 		ftp://ftp.gnucash.org/pub/xacc/
 
-MAINTAINER=     alex@FreeBSD.org
+MAINTAINER=     obrien@FreeBSD.org
 
 REQUIRES_MOTIF=	yes
 GNU_CONFIGURE=	yes
