@@ -7433,6 +7433,7 @@ zh-acroread-chtfont	ports/chinese/acroread-chtfont
 zh-arphicttf	ports/chinese/arphicttf
 zh-auto-tw-l10n	ports/chinese/auto-tw-l10n
 zh-autoconvert	ports/chinese/autoconvert
+zh-bbsnet	ports/chinese/bbsnet
 zh-bg5ps	ports/chinese/bg5ps
 zh-big5con	ports/chinese/big5con
 zh-big5fs	ports/chinese/big5fs
