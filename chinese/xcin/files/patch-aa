@@ -1,0 +1,11 @@
+--- script/configure.menu.orig	Fri Dec 11 09:49:43 1998
++++ script/configure.menu	Sat Oct  9 17:36:25 1999
+@@ -266,7 +266,7 @@
+ {
+     PATH_XCIN_PREFIX=$1
+     PATH_XCIN_BIN=$PATH_XCIN_PREFIX/bin
+-    PATH_XCIN_DIR=$PATH_XCIN_PREFIX/lib/xcin
++    PATH_XCIN_DIR=$PATH_XCIN_PREFIX/lib/X11/xcin
+     PATH_XCIN_MAN=$PATH_XCIN_PREFIX/man
+ }
+ 
