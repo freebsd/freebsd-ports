@@ -1,0 +1,35 @@
+--- src/Makefile.orig	Sat Mar  3 20:03:52 2001
++++ src/Makefile	Fri Feb 22 07:48:44 2002
+@@ -5,15 +5,16 @@
+ #
+ # This makefile handles different platforms targets through the use of the 
+ # makefile variable "SYSPRE".	 To configure the make process for your specific
+-# platform edit the SYSPRE variable in the Configuration section below to match your
+-# setup.
++# platform edit the SYSPRE variable in the Configuration section below to match
++# your setup.
+ #
+ # During the build process this makefile recursively calls gmake using this
+ # file (Makefile) or one of the subdirectory makefiles (e.g. core/core.mak) 
+ # as the makefile.  When it does this it passes the SYSPRE definition along
+ # by using the directive "SYSPRE=$(SYSPRE)".
+ #
+-# Comments that start with '#=' are echoed to the screen by the default target, help.
++# Comments that start with '#=' are echoed to the screen by the default target,
++# help.
+ #= *** Build Commands 
+ #=
+ #= Please note that all Tripwire makefiles require GNU make (gmake) to build!
+@@ -77,9 +78,11 @@
+ #
+ # i686-pc-linux == Linux Intel x86
+ # sparc-linux == Linux Sparc (not fully implemented)
++# i386-unknown-freebsd == FreeBSD Intel x86
++# alpha-unknown-freebsd == FreeBSD Compaq Alpha
+ #
+ 
+-SYSPRE = i686-pc-linux
++#SYSPRE = i686-pc-linux
+ #SYSPRE = sparc-linux
+ #SYSPRE = i386-unknown-freebsd
+ #SYSPRE = i386-unknown-openbsd
