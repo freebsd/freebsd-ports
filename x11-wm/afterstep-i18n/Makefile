@@ -18,13 +18,19 @@ DISTNAME=	AfterStep-1.0
 DISTFILES=      ${DISTNAME}.tar.gz \
 		unofficial-I18N.98Feb27.tar.gz \
 		kterm.xpm kterm2.xpm KTerm-AS.xpm netscape4.xpm
+EXTRACT_ONLY=	${DISTNAME}.tar.gz \
+		unofficial-I18N.98Feb27.tar.gz
 
 PATCH_DIST_STRIP=       -p1
 
 MAINTAINER=	issei@jp.FreeBSD.org
 
-EXTRACT_ONLY=	${DISTNAME}.tar.gz \
-		unofficial-I18N.98Feb27.tar.gz
+.if defined(XFREE86_VERSION) && (${XFREE86_VERSION} == 4)
+BUILD_DEPENDS=	${X11BASE}/bin/xmkmf:${PORTSDIR}/x11/XFree86-4
+.else
+BUILD_DEPENDS=	${X11BASE}/bin/xmkmf:${PORTSDIR}/x11/XFree86
+.endif
+
 DIST_SUBDIR=	afterstep
 USE_X_PREFIX=	yes
 USE_XPM=	yes
