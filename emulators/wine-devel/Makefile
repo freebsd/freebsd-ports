@@ -3,18 +3,15 @@
 # Date created:         Sa   9 Nov 1996 00:52:22 MET
 # Whom:			se
 #
-# $Id: Makefile,v 1.34 1996/11/12 02:17:06 obrien Exp $
+# $Id: Makefile,v 1.35 1996/11/17 05:48:49 obrien Exp $
 #
 
 DATE=		961102
 DISTNAME=	Wine-${DATE}
 PKGNAME=	wine-96.11.02
 CATEGORIES=	emulators x11
-MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/ALPHA/wine/development/ \
-		ftp://tsx-11.mit.edu/pub/linux/ALPHA/Wine/development/ \
-		ftp://ftp.dfv.rwth-aachen.de/pub/linux/sunsite/ALPHA/wine/development/ \
-		ftp://ftp.infomagic.com/pub/mirrors/linux/wine/development/ \
-		ftp://aris.com/pub/linux/ALPHA/Wine/development/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	ALPHA/wine/development
 
 MAINTAINER=	se@FreeBSD.ORG
 

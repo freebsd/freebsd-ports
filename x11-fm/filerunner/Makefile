@@ -3,18 +3,19 @@
 # Date created:		3 August 1996
 # Whom:			lukin
 #
-# $Id: Makefile,v 1.1.1.1 1996/11/03 20:50:27 jfitz Exp $
+# $Id: Makefile,v 1.2 1996/11/05 17:53:16 jfitz Exp $
 #
 
 DISTNAME=	FileRunner_2.0
 PKGNAME=	filerunner-2.0
-CATEGORIES+=	x11
-MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/X11/xutils/managers/
+CATEGORIES=	x11
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	X11/xutils/managers
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	lukin@okbmei.msk.su
 
-LIB_DEPENDS=	tk41\\.:${PORTSDIR}/x11/tk41
+LIB_DEPENDS=	tk41\\.1:${PORTSDIR}/x11/tk41
 
 MAKEFILE=	Makefile.freebsd
 MAKE_ENV+=	X11BASE=${X11BASE}

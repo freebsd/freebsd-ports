@@ -3,15 +3,15 @@
 # Date created:         25 July 1996
 # Whom:                 matt@bdd.net
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1996/07/25 19:02:58 asami Exp $
 #
 
 DISTNAME=	Xtacy113
 PKGNAME=	xtacy-1.13
-CATEGORIES+=	x11
+CATEGORIES=	x11
 MASTER_SITES=	ftp://sidehack.gweep.net/pub/gweep_progs/ \
-		ftp://sunsite.unc.edu/pub/Linux/X11/toys/ \
-		ftp://ftp.infomagic.com/pub/mirrors/linux/sunsite/X11/toys/
+		${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	X11/toys
 
 MAINTAINER=	matt@bdd.net
 

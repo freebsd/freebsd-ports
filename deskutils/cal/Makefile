@@ -3,12 +3,13 @@
 # Date created:				6 July 1996
 # Whom: Andrey Zakhvatov <andy@cgu.chel.su>
 #
-# $Id: Makefile,v 1.2 1996/11/11 05:49:17 obrien Exp $
+# $Id: Makefile,v 1.3 1996/11/17 09:05:25 obrien Exp $
 #
 
 DISTNAME=	cal-3.4
 CATEGORIES=	misc
-MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/utils/shell/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	utils/shell
 
 MAINTAINER=	andy@cgu.chel.su
 

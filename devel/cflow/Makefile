@@ -3,13 +3,13 @@
 # Date created:		28 Sept 1995
 # Whom:			dchapes@zeus.leitch.com
 #
-# $Id: Makefile,v 1.1.1.1 1995/10/03 09:24:22 asami Exp $
+# $Id: Makefile,v 1.2 1995/11/26 11:28:56 asami Exp $
 #
 
 DISTNAME=	cflow-2.0
-CATEGORIES+=	devel
-MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/devel/lang/c/ \\
-		ftp://info2.rus.uni-stuttgart.de/pub/systems/linux/MIRROR.sunsite/devel/lang/c/
+CATEGORIES=	devel
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	devel/lang/c
 
 MAINTAINER=	dchapes@zeus.leitch.com
 

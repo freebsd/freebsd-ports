@@ -6,11 +6,10 @@
 
 DISTNAME=	xmix-2.1
 CATEGORIES=	audio
-MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/apps/sound/mixers/ \
-		ftp://ftp.icm.edu.pl/pub2/linux/apps/sound/mixers/
+MASTER_SITES=	${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	apps/sound/mixers
 
-PATCH_SITES=	ftp://sunsite.unc.edu/pub/Linux/apps/sound/mixers/ \
-		ftp://ftp.icm.edu.pl/pub2/linux/apps/sound/mixers/
+PATCH_SITES=	${MASTER_SITES}
 PATCHFILES=	xmix-2.1.mixers.patch
 
 MAINTAINER=	janek@gaja.ipan.lublin.pl

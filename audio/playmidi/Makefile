@@ -3,12 +3,13 @@
 # Date created:         27 Feb 1995
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.5 1996/11/15 06:53:52 ache Exp $
+# $Id: Makefile,v 1.6 1996/11/15 10:52:00 asami Exp $
 #
 
 DISTNAME=       playmidi-2.3
 CATEGORIES=     audio
-MASTER_SITES=   ftp://sunsite.unc.edu/pub/Linux/apps/sound/players/
+MASTER_SITES=   ${MASTER_SITE_SUNSITE}
+MASTER_SITE_SUBDIR=	apps/sound/players
 
 MAINTAINER=     ache@FreeBSD.ORG
 
