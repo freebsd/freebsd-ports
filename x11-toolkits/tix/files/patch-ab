@@ -1,11 +1,28 @@
---- ../Makefile.in.orig	Wed Jul  9 22:33:48 1997
-+++ ../Makefile.in	Wed Oct  1 12:03:37 1997
-@@ -115,7 +115,7 @@
+--- ../Makefile.in.orig	Mon Dec  2 05:02:52 2002
++++ ../Makefile.in	Tue Dec  2 22:08:12 2003
+@@ -70,6 +70,7 @@
+ INSTALL		=	@SRC_DIR@/install.sh -c
+ INSTALL_PROGRAM =	@INSTALL_PROGRAM@
+ INSTALL_DATA	=	@INSTALL_DATA@
++INSTALL_SCRIPT	=	@INSTALL_SCRIPT@
+ SRC_DIR		=	@SRC_DIR@
+ INC_DIR		=	@SRC_DIR@/generic
+ UNIX_DIR	=	@SRC_DIR@/unix
+@@ -137,7 +138,7 @@
  		fi; \
  	    done;
- 	@echo "installing the tixindex program for builing tclIndex for Tix scripts"
+ 	@echo "installing the tixindex program for building tclIndex for Tix scripts"
 -	@cd $(TOOLS_DIR); $(INSTALL_PROGRAM) tixindex $(BIN_DIR)/tixindex
-+	-@cd $(TOOLS_DIR); $(INSTALL_PROGRAM) tixindex $(BIN_DIR)/tixindex
++	@cd $(TOOLS_DIR); $(INSTALL_SCRIPT) tixindex $(BIN_DIR)/tixindex
  
  install-headers:
  	@for i in $(INCLUDE_DIR); \
+@@ -156,7 +157,7 @@
+ 	    done;
+ 
+ install-libraries:
+-	-chmod 755 $(INSTALL_PROGRAM)
++	##-chmod 755 $(INSTALL_PROGRAM)
+ 	@for i in $(TIX_LIBRARY) $(TIX_LIBRARY)/bitmaps $(TIX_LIBRARY)/pref; \
+ 	    do \
+ 	    if [ ! -d $$i ] ; then \
