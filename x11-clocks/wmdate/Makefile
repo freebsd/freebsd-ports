@@ -8,7 +8,8 @@
 
 DISTNAME=	wmdate-0.7
 CATEGORIES=	x11-clocks windowmaker afterstep
-MASTER_SITES=	http://wit401310.student.utwente.nl/apps/apps/
+MASTER_SITES=	http://wit401310.student.utwente.nl/apps/apps/ \
+		http://www.freebsd.org/~jim/distfiles/
 
 MAINTAINER=	jim@FreeBSD.org
 
