@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.30 1997/10/30 01:19:19 jseger Exp $
+# $Id: Makefile,v 1.31 1997/11/09 10:16:01 asami Exp $
 #
 
     SUBDIR += aub
@@ -7,6 +7,7 @@
     SUBDIR += dnews
     SUBDIR += inn
     SUBDIR += knews
+    SUBDIR += ifmail
     SUBDIR += leafnode
     SUBDIR += newsfetch
     SUBDIR += nn
