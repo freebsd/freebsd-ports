@@ -7,13 +7,14 @@ include/FLAC/file_decoder.h
 include/FLAC/format.h
 include/FLAC/ordinals.h
 include/FLAC/seek_table.h
+include/FLAC/seekable_stream_decoder.h
 include/FLAC/stream_decoder.h
 include/FLAC/stream_encoder.h
 include/FLAC/utility.h
-@dirrm include/FLAC
 lib/libFLAC.a
+lib/libFLAC.la
 lib/libFLAC.so
-lib/libFLAC.so.1
+lib/libFLAC.so.2
 %%PORTDOCS%%share/doc/flac/comparison.html
 %%PORTDOCS%%share/doc/flac/developers.html
 %%PORTDOCS%%share/doc/flac/documentation.html
@@ -22,11 +23,12 @@ lib/libFLAC.so.1
 %%PORTDOCS%%share/doc/flac/format.html
 %%PORTDOCS%%share/doc/flac/goals.html
 %%PORTDOCS%%share/doc/flac/id.html
-%%PORTDOCS%%share/doc/flac/index.html
-%%PORTDOCS%%share/doc/flac/news.html
 %%PORTDOCS%%share/doc/flac/images/1x1.gif
 %%PORTDOCS%%share/doc/flac/images/cafebug.gif
 %%PORTDOCS%%share/doc/flac/images/logo.jpg
+%%PORTDOCS%%share/doc/flac/index.html
+%%PORTDOCS%%share/doc/flac/news.html
+@dirrm include/FLAC
 %%PORTDOCS%%@dirrm share/doc/flac/images
 %%PORTDOCS%%@dirrm share/doc/flac
 %%XMMS%%@cwd %%X11BASE%%

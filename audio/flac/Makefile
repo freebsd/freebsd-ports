@@ -1,4 +1,3 @@
-# ex:ts=8
 # New ports collection makefile for:	flac
 # Date created:		Mar 18, 2001
 # Whom:			Ying-Chieh Liao <ijliao@FreeBSD.org>
@@ -7,7 +6,7 @@
 #
 
 PORTNAME=	flac
-PORTVERSION=	1.0
+PORTVERSION=	1.0.2
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,38 +14,43 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	naddy@FreeBSD.org
 
+LIB_DEPENDS=	ogg.3:${PORTSDIR}/audio/libogg
+
 .if defined(WITH_XMMS)
 BUILD_DEPENDS+=	xmms-config:${PORTSDIR}/audio/xmms
-LIB_DEPENDS+=	xmms.2:${PORTSDIR}/audio/xmms
+LIB_DEPENDS+=	xmms.3:${PORTSDIR}/audio/xmms
 PLIST_SUB=	XMMS=""
 .else
+CONFIGURE_ENV+=	XMMS_CONFIG=/usr/bin/false	# must be absolute path
 PLIST_SUB=	XMMS="@comment "
 .endif
 
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm
+CONFIGURE_ARGS+= --enable-sse --enable-3dnow
 .endif
 
-USE_AUTOMAKE_VER=14
-AUTOMAKE_ARGS=	--include-deps
-USE_LIBTOOL=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET= --target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_ENV=	INCLUDES="-I${WRKSRC}/include"
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 INSTALLS_SHLIB=	yes
 MAN1=		flac.1
 
-post-extract:
+pre-build:
 	@${RM} -r ${WRKSRC}/obj
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/flac
+	cd ${WRKSRC}/doc; ${INSTALL_DATA} *.html ${PREFIX}/share/doc/flac
 	${MKDIR} ${PREFIX}/share/doc/flac/images
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/flac
-.for file in 1x1.gif cafebug.gif logo.jpg
-	${INSTALL_DATA} ${WRKSRC}/doc/images/${file} ${PREFIX}/share/doc/flac/images
-.endfor
+	cd ${WRKSRC}/doc/images; \
+	    ${INSTALL_DATA} *.gif *.jpg ${PREFIX}/share/doc/flac/images
 .endif
 
 .include <bsd.port.mk>
