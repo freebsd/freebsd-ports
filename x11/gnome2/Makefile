@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome2
 PORTVERSION=	2.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -38,7 +38,8 @@ RUN_DEPENDS=	${X11BASE}/libexec/battstat-applet-2:${PORTSDIR}/x11/gnomeapplets2 
 		nautilus-gtkhtml-view:${PORTSDIR}/www/nautilus-gtkhtml \
 		screensaver-properties-capplet:${PORTSDIR}/x11/xscreensaver-gnome \
 		${X11BASE}/share/gnome/help/user-guide/C/user-guide.xml:${PORTSDIR}/misc/gnomeuserdocs2 \
-		${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio
+		${X11BASE}/share/gnome/sounds/login.wav:${PORTSDIR}/audio/gnomeaudio \
+		pkgview:${PORTSDIR}/sysutils/pkgview
 
 NO_BUILD=	yes
 
