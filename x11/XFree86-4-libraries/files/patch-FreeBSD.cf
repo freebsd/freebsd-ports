@@ -1,5 +1,5 @@
 --- config/cf/FreeBSD.cf.orig	Tue Jan 14 18:52:12 2003
-+++ config/cf/FreeBSD.cf	Sun Oct 12 15:32:56 2003
++++ config/cf/FreeBSD.cf	Sun Oct 12 16:14:27 2003
 @@ -162,11 +162,11 @@
   *    ld: warning: libXThrStub.so.6, needed by libX11.so, not found
   */
@@ -26,7 +26,7 @@
 +#else
 +#define NoSystemWarn
 +#endif
-+#define DefaultCCOptions	-ansi-Dasm=__asm NoSystemWarn GccWarningOptions
++#define DefaultCCOptions	-ansi -Dasm=__asm NoSystemWarn GccWarningOptions
  #endif
  #endif
  #ifndef ExtraLibraries
