@@ -1,0 +1,13 @@
+Index: saslauthd/Makefile.in
+diff -u saslauthd/Makefile.in.orig saslauthd/Makefile.in
+--- saslauthd/Makefile.in.orig	Sat Aug 10 01:13:07 2002
++++ saslauthd/Makefile.in	Sat Aug 10 03:58:24 2002
+@@ -105,7 +105,7 @@
+ 
+ EXTRA_DIST = saslauthd.8 saslauthd.mdoc config include 		  getnameinfo.c getaddrinfo.c saslauthd-unix.c 		  saslauthd-doors.c LDAP_SASLAUTHD
+ 
+-INCLUDES = -I$(top_srcdir)/include
++INCLUDES = -I../include
+ DEFS = @DEFS@ -DSASLAUTHD_CONF_FILE_DEFAULT=\"@sysconfdir@/saslauthd.conf\" -I. -I$(srcdir) -I..
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/config/mkinstalldirs
