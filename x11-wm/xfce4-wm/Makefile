@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xfce4-wm
-PORTVERSION=	4.0.3
+PORTVERSION=	4.0.3.1
 PORTREVISION=	0
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	http://www.xfce.org/archive/xfce-${PORTVERSION}/src/ \
