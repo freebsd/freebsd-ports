@@ -17,8 +17,6 @@ COMMENT=	xmps plugin for Win32 (TM) Codecs
 LIB_DEPENDS=	xmps.0:${PORTSDIR}/multimedia/xmps
 RUN_DEPENDS=	${CODEC_DETECTION_FILE}:${CODEC_PORT}
 
-BROKEN=		Incomplete pkg-plist
-
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
@@ -26,12 +24,14 @@ USE_GNOME=	gtk12
 USE_REINPLACE=	yes
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
-PLIST_SUB=	LIB_VERSION="${LIB_VERSION}"
 
 #CODEC_PORT=	${PORTSDIR}/multimedia/win32-codecs
 CODEC_PORT=	${.CURDIR}/../win32-codecs
 CODEC_DETECTION_FILE!=	${MAKE} -f ${CODEC_PORT}/Makefile -V CODEC_DETECTION_FILE
 LIB_VERSION=	0
+PLIST_FILES=	lib/xmps/codecs/video/libwin32.so \
+		lib/xmps/codecs/video/libwin32.so.${LIB_VERSION} \
+		lib/xmps/codecs/video/libwin32.la
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/lib/win32|${LOCALBASE}/lib/win32|" \
