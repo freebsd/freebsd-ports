@@ -32,6 +32,36 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a30e5e44-5440-11d9-9e1e-c296ac722cb3">
+    <topic>squid -- confusing results results on empty acl declarations</topic>
+    <affects>
+      <package>
+	<name>squid</name>
+	<range><lt>2.5.7_5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The squid-2.5 patches pages notes:</p>
+	<blockquote cite="http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-empty_acls">
+	  <p>The meaning of the access controls becomes somewhat
+	    confusing if any of the referenced acls is declared empty,
+	    without any members.</p>
+	  <p>[Administrators should] pay attention to warnings from
+	    "squid -k parse" and do not use configurations where there
+	    are warnings about access controls in production.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.squid-cache.org/Versions/v2/2.5/bugs/#squid-2.5.STABLE7-empty_acls</url>
+    </references>
+    <dates>
+      <discovery>2004-12-21</discovery>
+      <entry>2004-12-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="efa1344b-5477-11d9-a9e7-0001020eed82">
     <topic>ethereal -- multiple vulnerabilities</topic>
     <affects>
