@@ -1,0 +1,9 @@
+bin/steghide
+doc/steghide-0.3/AUTHORS
+doc/steghide-0.3/BUGS
+doc/steghide-0.3/COPYING
+doc/steghide-0.3/HISTORY
+doc/steghide-0.3/INSTALL
+doc/steghide-0.3/README
+doc/steghide-0.3/TODO
+@dirrm doc/steghide-0.3
