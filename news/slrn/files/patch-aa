@@ -1,0 +1,11 @@
+--- src/slrnfeat.h.orig	Sun Dec  6 20:50:26 1998
++++ src/slrnfeat.h	Sun Dec  6 20:50:38 1998
+@@ -193,7 +193,7 @@
+ #   define SLRN_ARTICLE_FILENAME	".article"
+ #   define SLRN_FOLLOWUP_FILENAME	".followup"
+ #   define SLRN_SIGNATURE_FILE		".signature"
+-#   define SLRN_SENDMAIL_COMMAND	"/usr/lib/sendmail -oi -t -oem -odb"
++#   define SLRN_SENDMAIL_COMMAND	"/usr/sbin/sendmail -oi -t -oem -odb"
+ #   ifndef SLRN_LIB_DIR
+ #    define SLRN_LIB_DIR		"/usr/local/lib/slrn"
+ #   endif
