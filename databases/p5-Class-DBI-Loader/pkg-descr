@@ -1,0 +1,15 @@
+Class::DBI::Loader automate the definition of Class::DBI sub-classes. scan
+table schemas and setup columns, primary key. 
+
+class names are defined by table names and namespace option. 
+
++-----------+-----------+-----------+
+|   table   | namespace | class     |
++-----------+-----------+-----------+
+|   foo     | Data      | Data::Foo |
+|   foo_bar |           | FooBar    |
++-----------+-----------+-----------+
+
+Class::DBI::Loader supports MySQL, Postgres and SQLite. 
+
+WWW: http://search.cpan.org/dist/Class-DBI-Loader/
