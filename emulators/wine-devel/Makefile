@@ -3,7 +3,7 @@
 # Date created:         Sa   9 Nov 1996 00:52:22 MET
 # Whom:			se
 #
-# $Id: Makefile,v 1.62 1998/10/09 05:32:33 kuriyama Exp $
+# $Id: Makefile,v 1.63 1998/10/13 03:55:19 jseger Exp $
 #
 
 DATE=		980927
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	ALPHA/wine/development
 
 MAINTAINER=	se@FreeBSD.ORG
 
-BROKEN_ELF=	bitopts.h
+BROKEN=		treeview.c
 
 LIB_DEPENDS=	Xpm.4:${PORTSDIR}/graphics/xpm
 
