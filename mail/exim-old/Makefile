@@ -50,10 +50,11 @@ PAM_PLAINTEXT=	yes
 # NETSCAPE or SOLARIS7.
 LDAP_LIB_TYPE=UMICHIGAN
 
-# Uncomment to compile support for non-standard mailbox formats.
-#WITH_MAILDIR=	yes
-#WITH_MAILSTORE=	yes
-#WITH_MBX=	yes
+# The following options control whether Exim is built with support for
+# additional mailbox formats.
+WITH_MAILDIR?=		yes
+WITH_MAILSTORE?=	yes
+WITH_MBX?=		yes
 
 # You should not need to fiddle with anything below this point.
 
@@ -123,15 +124,15 @@ SEDLIST+=	-e 's,^LOOKUP_LIBS,\#LOOKUP_LIBS,' \
 		-e 's,^LOOKUP_INCLUDE,\#LOOKUP_INCLUDE,'
 .endif
 
-.if defined(WITH_MAILDIR)
+.if defined(WITH_MAILDIR) && ${WITH_MAILDIR} == "yes"
 SEDLIST+=	-e 's,^\# SUPPORT_MAILDIR,SUPPORT_MAILDIR,'
 .endif
 
-.if defined(WITH_MAILSTORE)
+.if defined(WITH_MAILSTORE) && ${WITH_MAILSTORE} == "yes"
 SEDLIST+=	-e 's,^\# SUPPORT_MAILSTORE,SUPPORT_MAILSTORE,'
 .endif
 
-.if defined(WITH_MBX)
+.if defined(WITH_MAILMBX) && ${WITH_MAILMBX} == "yes"
 SEDLIST+=	-e 's,^\# SUPPORT_MBX,SUPPORT_MBX,'
 .endif
 
