@@ -1,12 +1,12 @@
 # New ports collection makefile for:	udmsearch
-# Version required:	2.1.7
-# Date created:		11/05/1999
+# Version required:	2.2.1
+# Date created:		11/29/1999
 # Whom:			Kelly Yancey <kbyanc@posi.net>
 #
 # $FreeBSD$
 #
 
-DISTNAME=		udmsearch-2.1.7
+DISTNAME=		udmsearch-2.2.1
 CATEGORIES=		www databases
 MASTER_SITES=		http://mysearch.udm.net/Download/	\
 			ftp://ftp.izhcom.ru/pub/unix/UdmSearch/	\
@@ -17,7 +17,7 @@ MAINTAINER=		kbyanc@posi.net
 MAN1=			indexer.1
 MAN5=			indexer.conf.5
 
-WRKSRC=			${WRKDIR}/udmsearch-2.1.7a
+WRKSRC=			${WRKDIR}/udmsearch-2.2.1
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--bindir=${PREFIX}/bin/udmsearch \

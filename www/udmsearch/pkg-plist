@@ -1,14 +1,17 @@
 bin/udmsearch/search.cgi
-bin/udmsearch/search.php3
-bin/udmsearch/morph.php3
-bin/udmsearch/udmsearch.gif
 etc/udmsearch/indexer.conf-dist
 etc/udmsearch/search.htm-dist
 etc/udmsearch/create/msql/create.txt
+etc/udmsearch/create/mssql/create.txt
 etc/udmsearch/create/mysql/alter19-20.txt
 etc/udmsearch/create/mysql/alter20-21.txt
 etc/udmsearch/create/mysql/create.txt
 etc/udmsearch/create/pgsql/create.txt
+etc/udmsearch/create/odbc-mysql/create.txt
+etc/udmsearch/create/odbc-pgsql/create.txt
+etc/udmsearch/create/solid/README
+etc/udmsearch/create/solid/create.txt
+etc/udmsearch/create/stopwords/stop.cz.txt
 etc/udmsearch/create/stopwords/stop.de.txt
 etc/udmsearch/create/stopwords/stop.en.txt
 etc/udmsearch/create/stopwords/stop.es.txt
@@ -19,12 +22,20 @@ etc/udmsearch/create/stopwords/stop.no.txt
 etc/udmsearch/create/stopwords/stop.pt.txt
 etc/udmsearch/create/stopwords/stop.ru.txt
 etc/udmsearch/create/stopwords/stop.ua.txt
-doc/UdmSearch.sgml
+share/doc/udmsearch/parsers.txt
+share/doc/udmsearch/syslog.txt
+share/doc/udmsearch/templates.txt
+share/doc/udmsearch/usage.txt
 sbin/indexer
 @dirrm bin/udmsearch
 @dirrm etc/udmsearch/create/msql
+@dirrm etc/udmsearch/create/mssql
 @dirrm etc/udmsearch/create/mysql
 @dirrm etc/udmsearch/create/pgsql
+@dirrm etc/udmsearch/create/odbc-mysql
+@dirrm etc/udmsearch/create/odbc-pgsql
+@dirrm etc/udmsearch/create/solid
 @dirrm etc/udmsearch/create/stopwords
 @dirrm etc/udmsearch/create
 @dirrm etc/udmsearch
+@dirrm share/doc/udmsearch
