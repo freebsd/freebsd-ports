@@ -4899,6 +4899,7 @@ libmemcache	ports/databases/libmemcache
 libmikmod	ports/audio/libmikmod
 libmimedir	ports/devel/libmimedir
 libmng		ports/graphics/libmng
+libmms		ports/net/libmms
 libmodplug	ports/audio/libmodplug
 libmorph	ports/graphics/libmorph
 libmovtar	ports/multimedia/libmovtar
