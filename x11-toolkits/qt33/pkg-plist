@@ -14,6 +14,8 @@ bin/qmake
 bin/qtconfig
 bin/qvfb
 bin/uic
+etc/settings/.qt_plugins_3.2rc.lock
+etc/settings/qt_plugins_3.2rc
 include/private/qapplication_p.h
 include/private/qcolor_p.h
 include/private/qcom_p.h
@@ -21,12 +23,14 @@ include/private/qcomlibrary_p.h
 include/private/qcomplextext_p.h
 include/private/qcomponentfactory_p.h
 include/private/qcriticalsection_p.h
+include/private/qdialogbuttons_p.h
 include/private/qdir_p.h
 include/private/qeffects_p.h
 include/private/qeventloop_p.h
 include/private/qfiledefs_p.h
 include/private/qfontcodecs_p.h
 include/private/qfontdata_p.h
+include/private/qfontengine_p.h
 include/private/qgfxdriverinterface_p.h
 include/private/qgpluginmanager_p.h
 include/private/qimageformatinterface_p.h
@@ -41,8 +45,10 @@ include/private/qmutex_p.h
 include/private/qmutexpool_p.h
 include/private/qpainter_p.h
 include/private/qpluginmanager_p.h
+include/private/qprinter_p.h
 include/private/qpsprinter_p.h
 include/private/qrichtext_p.h
+include/private/qscriptengine_p.h
 include/private/qsettings_p.h
 include/private/qsharedmemory_p.h
 include/private/qsqldriverinterface_p.h
@@ -50,10 +56,15 @@ include/private/qsqlextension_p.h
 include/private/qsqlmanager_p.h
 include/private/qstyleinterface_p.h
 include/private/qsvgdevice_p.h
+include/private/qt_x11_p.h
 include/private/qtextcodecinterface_p.h
+include/private/qtextengine_p.h
+include/private/qtextlayout_p.h
+include/private/qthreadinstance_p.h
 include/private/qtitlebar_p.h
 include/private/qucom_p.h
 include/private/qucomextra_p.h
+include/private/qunicodetables_p.h
 include/private/qwidget_p.h
 include/private/qwidgetinterface_p.h
 include/private/qwidgetresizehandler_p.h
@@ -307,6 +318,7 @@ include/qsocknot.h
 include/qsortedlist.h
 include/qsound.h
 include/qspinbox.h
+include/qsplashscreen.h
 include/qsplitter.h
 include/qsql.h
 include/qsqlcursor.h
@@ -322,6 +334,7 @@ include/qsqlpropertymap.h
 include/qsqlquery.h
 include/qsqlrecord.h
 include/qsqlresult.h
+include/qsqlselectcursor.h
 include/qstack.h
 include/qstatusbar.h
 include/qstring.h
@@ -334,7 +347,6 @@ include/qstyleplugin.h
 include/qstylesheet.h
 include/qsyntaxhighlighter.h
 include/qt.h
-include/qt_x11.h
 include/qtabbar.h
 include/qtabdialog.h
 include/qtabdlg.h
@@ -348,9 +360,11 @@ include/qtextedit.h
 include/qtextstream.h
 include/qtextview.h
 include/qthread.h
+include/qthreadstorage.h
 include/qtimer.h
 include/qtl.h
 include/qtoolbar.h
+include/qtoolbox.h
 include/qtoolbutton.h
 include/qtooltip.h
 include/qtranslator.h
@@ -384,14 +398,13 @@ include/qwindefs.h
 include/qwindow.h
 include/qwindowdefs.h
 include/qwindowsstyle.h
-include/qwindowsxpstyle.h
 include/qwinexport.h
 include/qwizard.h
 include/qwmatrix.h
 include/qworkspace.h
 include/qxml.h
-lib/libdesigner.a
-lib/libdesigner.prl
+lib/libdesignercore.a
+lib/libdesignercore.prl
 lib/libeditor.a
 lib/libeditor.prl
 lib/libqassistantclient.a
@@ -400,37 +413,44 @@ lib/libqnp.prl
 lib/libqt-mt.prl
 lib/libqt-mt.so
 lib/libqt-mt.so.3
-lib/libqt-mt.so.3.1
-lib/libqt-mt.so.3.1.2
+lib/libqt-mt.so.3.2
+lib/libqt-mt.so.3.2.1
 lib/libqui.prl
 lib/libqui.so
 lib/libqui.so.1
 lib/libqui.so.1.0
 lib/libqui.so.1.0.0
+lib/pkgconfig/qt-mt.pc
 lib/plugins/designer/libcppeditor.so
 lib/plugins/designer/libdlgplugin.so
+lib/plugins/designer/libgladeplugin.so
 lib/plugins/designer/libkdevdlgplugin.so
 lib/plugins/designer/librcplugin.so
 lib/plugins/designer/libwizards.so
+share/doc/qt/html/3rdparty.html
 share/doc/qt/html/aboutqt.html
 share/doc/qt/html/abstract-connections.png
 share/doc/qt/html/abstractwidgets.html
 share/doc/qt/html/accelerators.html
 share/doc/qt/html/aclock-example.html
+share/doc/qt/html/activeqt-examples.html
+share/doc/qt/html/activeqt.html
 share/doc/qt/html/addressbook-example.html
 share/doc/qt/html/advanced.html
 share/doc/qt/html/annotated.html
 share/doc/qt/html/appearance.html
 share/doc/qt/html/appicon.html
 share/doc/qt/html/application.html
+share/doc/qt/html/archivesearch-example.html
 share/doc/qt/html/assistant-1.html
 share/doc/qt/html/assistant-2.html
 share/doc/qt/html/assistant-3.html
 share/doc/qt/html/assistant-4.html
 share/doc/qt/html/assistant-5.html
 share/doc/qt/html/assistant-6.html
+share/doc/qt/html/assistant.dcf
 share/doc/qt/html/assistant.html
-share/doc/qt/html/assistant.xml
+share/doc/qt/html/assistant.png
 share/doc/qt/html/basic.html
 share/doc/qt/html/bearings.png
 share/doc/qt/html/biff-example.html
@@ -441,7 +461,6 @@ share/doc/qt/html/brush-styles.png
 share/doc/qt/html/bughowto.html
 share/doc/qt/html/buttongroup-w.png
 share/doc/qt/html/buttongroups-example.html
-share/doc/qt/html/buyhowto.html
 share/doc/qt/html/canvas-chart-example.html
 share/doc/qt/html/canvas-example.html
 share/doc/qt/html/canvas.html
@@ -470,6 +489,7 @@ share/doc/qt/html/classchart.html
 share/doc/qt/html/classes.html
 share/doc/qt/html/clientserver-example.html
 share/doc/qt/html/collection.html
+share/doc/qt/html/commercialeditions.html
 share/doc/qt/html/commonproblems.html
 share/doc/qt/html/concrete-connections.png
 share/doc/qt/html/coordsys.html
@@ -480,8 +500,8 @@ share/doc/qt/html/cursors.png
 share/doc/qt/html/customlayout-example.html
 share/doc/qt/html/customlayout.html
 share/doc/qt/html/customstyles.html
-share/doc/qt/html/database-connections.png
 share/doc/qt/html/database.html
+share/doc/qt/html/databaseconnections.png
 share/doc/qt/html/datastreamformat.html
 share/doc/qt/html/datetimewidgets.png
 share/doc/qt/html/dclock-example.html
@@ -505,7 +525,7 @@ share/doc/qt/html/designer-manual-7.html
 share/doc/qt/html/designer-manual-8.html
 share/doc/qt/html/designer-manual-9.html
 share/doc/qt/html/designer-manual.html
-share/doc/qt/html/designer.xml
+share/doc/qt/html/designer.dcf
 share/doc/qt/html/designer1.jpg
 share/doc/qt/html/designer2.jpg
 share/doc/qt/html/designer3.jpg
@@ -528,7 +548,9 @@ share/doc/qt/html/dialog3sample.png
 share/doc/qt/html/dialogs.html
 share/doc/qt/html/dirview-example.html
 share/doc/qt/html/distributingqt.html
+share/doc/qt/html/distributor-example.html
 share/doc/qt/html/dnd.html
+share/doc/qt/html/docwindow.png
 share/doc/qt/html/doneandnext.png
 share/doc/qt/html/draganddrop.html
 share/doc/qt/html/dragdrop-example.html
@@ -562,6 +584,7 @@ share/doc/qt/html/events.html
 share/doc/qt/html/eventsandfilters.html
 share/doc/qt/html/examples.html
 share/doc/qt/html/extension-dialog-example.html
+share/doc/qt/html/faq.html
 share/doc/qt/html/filechooser.png
 share/doc/qt/html/fileiconview-example.html
 share/doc/qt/html/fileopen.png
@@ -571,8 +594,10 @@ share/doc/qt/html/finddialog.png
 share/doc/qt/html/focus.html
 share/doc/qt/html/forever-example.html
 share/doc/qt/html/frames.png
+share/doc/qt/html/freeeditions.html
 share/doc/qt/html/ftpclient-example.html
 share/doc/qt/html/functions.html
+share/doc/qt/html/general.png
 share/doc/qt/html/geomanagement.html
 share/doc/qt/html/geometry.html
 share/doc/qt/html/geometry.png
@@ -587,6 +612,7 @@ share/doc/qt/html/guibooks.html
 share/doc/qt/html/headerfilesynonyms
 share/doc/qt/html/headers.html
 share/doc/qt/html/hello-example.html
+share/doc/qt/html/helpsystem-example.html
 share/doc/qt/html/helpsystem.html
 share/doc/qt/html/helpviewer-example.html
 share/doc/qt/html/hierarchy.html
@@ -606,6 +632,7 @@ share/doc/qt/html/inputdialogs.png
 share/doc/qt/html/install-win.html
 share/doc/qt/html/install-x11.html
 share/doc/qt/html/installation.html
+share/doc/qt/html/integration.html
 share/doc/qt/html/io.html
 share/doc/qt/html/keyfeatures30.html
 share/doc/qt/html/layout-example.html
@@ -621,8 +648,8 @@ share/doc/qt/html/linguist-manual-2.html
 share/doc/qt/html/linguist-manual-3.html
 share/doc/qt/html/linguist-manual-4.html
 share/doc/qt/html/linguist-manual.html
+share/doc/qt/html/linguist.dcf
 share/doc/qt/html/linguist.png
-share/doc/qt/html/linguist.xml
 share/doc/qt/html/listbox-example.html
 share/doc/qt/html/listboxcombo-example.html
 share/doc/qt/html/listviews-example.html
@@ -640,11 +667,25 @@ share/doc/qt/html/metaobjects.html
 share/doc/qt/html/misc.html
 share/doc/qt/html/moc.html
 share/doc/qt/html/modules.html
+share/doc/qt/html/motif-customwidget-example.html
+share/doc/qt/html/motif-dialog-example.html
+share/doc/qt/html/motif-examples.html
+share/doc/qt/html/motif-extension.html
+share/doc/qt/html/motif-todo.png
+share/doc/qt/html/motif-walkthrough-1.html
+share/doc/qt/html/motif-walkthrough-10.html
+share/doc/qt/html/motif-walkthrough-2.html
+share/doc/qt/html/motif-walkthrough-3.html
+share/doc/qt/html/motif-walkthrough-4.html
+share/doc/qt/html/motif-walkthrough-5.html
+share/doc/qt/html/motif-walkthrough-6.html
+share/doc/qt/html/motif-walkthrough-7.html
+share/doc/qt/html/motif-walkthrough-8.html
+share/doc/qt/html/motif-walkthrough-9.html
+share/doc/qt/html/motif-walkthrough.html
 share/doc/qt/html/movies-example.html
 share/doc/qt/html/multimedia.html
-share/doc/qt/html/mw-actiongroup.png
 share/doc/qt/html/mw-addmainwidg.png
-share/doc/qt/html/mw-addmenuitem.png
 share/doc/qt/html/mw-coloriconv.png
 share/doc/qt/html/mw-colortable.png
 share/doc/qt/html/mw-colortool1.png
@@ -654,6 +695,7 @@ share/doc/qt/html/mw-conn2.png
 share/doc/qt/html/mw-conn3.png
 share/doc/qt/html/mw-conn4.png
 share/doc/qt/html/mw-dragaction.png
+share/doc/qt/html/mw-dragviewitem.png
 share/doc/qt/html/mw-editforw.png
 share/doc/qt/html/mw-editfunc.png
 share/doc/qt/html/mw-editincimp.png
@@ -663,10 +705,12 @@ share/doc/qt/html/mw-laycolortable.png
 share/doc/qt/html/mw-laymainwidg.png
 share/doc/qt/html/mw-menuwiz.png
 share/doc/qt/html/mw-newfile.png
+share/doc/qt/html/mw-newmenuitem.png
 share/doc/qt/html/mw-objexplor.png
 share/doc/qt/html/mw-previewform.png
 share/doc/qt/html/mw-projset.png
 share/doc/qt/html/mw-propedit.png
+share/doc/qt/html/mw-separator.png
 share/doc/qt/html/mw-settoolwiz.png
 share/doc/qt/html/mw-startdesign.png
 share/doc/qt/html/mw-toolbarpits.png
@@ -694,6 +738,7 @@ share/doc/qt/html/organizers.html
 share/doc/qt/html/outliner-example.html
 share/doc/qt/html/overviews-list.html
 share/doc/qt/html/palette.png
+share/doc/qt/html/pdf1.png
 share/doc/qt/html/pen-cap-styles.png
 share/doc/qt/html/pen-join-styles.png
 share/doc/qt/html/pen-styles.png
@@ -759,6 +804,46 @@ share/doc/qt/html/qasyncimageio-h.html
 share/doc/qt/html/qasyncio-h.html
 share/doc/qt/html/qasyncio-members.html
 share/doc/qt/html/qasyncio.html
+share/doc/qt/html/qaxaggregated-members.html
+share/doc/qt/html/qaxaggregated.html
+share/doc/qt/html/qaxbase-h.html
+share/doc/qt/html/qaxbase-members.html
+share/doc/qt/html/qaxbase.html
+share/doc/qt/html/qaxbindable-h.html
+share/doc/qt/html/qaxbindable-members.html
+share/doc/qt/html/qaxbindable.html
+share/doc/qt/html/qaxcontainer-example-qutlook.html
+share/doc/qt/html/qaxcontainer-example-testcon.html
+share/doc/qt/html/qaxcontainer-example-webbrowser.html
+share/doc/qt/html/qaxcontainer-examples.html
+share/doc/qt/html/qaxcontainer-faq.html
+share/doc/qt/html/qaxcontainer.html
+share/doc/qt/html/qaxfactory-h.html
+share/doc/qt/html/qaxfactory-members.html
+share/doc/qt/html/qaxfactory.html
+share/doc/qt/html/qaxobject-h.html
+share/doc/qt/html/qaxobject-members.html
+share/doc/qt/html/qaxobject.html
+share/doc/qt/html/qaxserver-demo-hierarchy.html
+share/doc/qt/html/qaxserver-demo-menus.html
+share/doc/qt/html/qaxserver-demo-multiple.html
+share/doc/qt/html/qaxserver-demo-opengl.html
+share/doc/qt/html/qaxserver-demo-simple.html
+share/doc/qt/html/qaxserver-demo-tetrax.html
+share/doc/qt/html/qaxserver-demo-wrapper.html
+share/doc/qt/html/qaxserver-example-hierarchy.html
+share/doc/qt/html/qaxserver-example-menus.html
+share/doc/qt/html/qaxserver-example-multiple.html
+share/doc/qt/html/qaxserver-example-opengl.html
+share/doc/qt/html/qaxserver-example-simple.html
+share/doc/qt/html/qaxserver-example-tetrax.html
+share/doc/qt/html/qaxserver-example-wrapper.html
+share/doc/qt/html/qaxserver-examples.html
+share/doc/qt/html/qaxserver-faq.html
+share/doc/qt/html/qaxserver.html
+share/doc/qt/html/qaxwidget-h.html
+share/doc/qt/html/qaxwidget-members.html
+share/doc/qt/html/qaxwidget.html
 share/doc/qt/html/qbig5codec-h.html
 share/doc/qt/html/qbig5codec-members.html
 share/doc/qt/html/qbig5codec.html
@@ -892,6 +977,7 @@ share/doc/qt/html/qcustomevent-members.html
 share/doc/qt/html/qcustomevent.html
 share/doc/qt/html/qcustommenuitem-members.html
 share/doc/qt/html/qcustommenuitem.html
+share/doc/qt/html/qd-actioneditor.png
 share/doc/qt/html/qd-colortool-name.png
 share/doc/qt/html/qd-databrowserwzd.png
 share/doc/qt/html/qd-databrowserwzdpage2.png
@@ -1298,6 +1384,8 @@ share/doc/qt/html/qlistviewitems.png
 share/doc/qt/html/qlocalfs-h.html
 share/doc/qt/html/qlocalfs-members.html
 share/doc/qt/html/qlocalfs.html
+share/doc/qt/html/qmacmime-members.html
+share/doc/qt/html/qmacmime.html
 share/doc/qt/html/qmacstyle-members.html
 share/doc/qt/html/qmacstyle.html
 share/doc/qt/html/qmacstyle_mac-h.html
@@ -1316,7 +1404,7 @@ share/doc/qt/html/qmake-manual-5.html
 share/doc/qt/html/qmake-manual-6.html
 share/doc/qt/html/qmake-manual-7.html
 share/doc/qt/html/qmake-manual.html
-share/doc/qt/html/qmake.xml
+share/doc/qt/html/qmake.dcf
 share/doc/qt/html/qmap-h.html
 share/doc/qt/html/qmap-members.html
 share/doc/qt/html/qmap.html
@@ -1339,6 +1427,7 @@ share/doc/qt/html/qmessagebox-crit.png
 share/doc/qt/html/qmessagebox-h.html
 share/doc/qt/html/qmessagebox-info.png
 share/doc/qt/html/qmessagebox-members.html
+share/doc/qt/html/qmessagebox-quest.png
 share/doc/qt/html/qmessagebox-warn.png
 share/doc/qt/html/qmessagebox.html
 share/doc/qt/html/qmetaobject-h.html
@@ -1353,12 +1442,21 @@ share/doc/qt/html/qmimesourcefactory-members.html
 share/doc/qt/html/qmimesourcefactory.html
 share/doc/qt/html/qmlined-m.png
 share/doc/qt/html/qmlined-w.png
+share/doc/qt/html/qmotif-h.html
+share/doc/qt/html/qmotif-members.html
+share/doc/qt/html/qmotif.html
+share/doc/qt/html/qmotifdialog-h.html
+share/doc/qt/html/qmotifdialog-members.html
+share/doc/qt/html/qmotifdialog.html
 share/doc/qt/html/qmotifplusstyle-h.html
 share/doc/qt/html/qmotifplusstyle-members.html
 share/doc/qt/html/qmotifplusstyle.html
 share/doc/qt/html/qmotifstyle-h.html
 share/doc/qt/html/qmotifstyle-members.html
 share/doc/qt/html/qmotifstyle.html
+share/doc/qt/html/qmotifwidget-h.html
+share/doc/qt/html/qmotifwidget-members.html
+share/doc/qt/html/qmotifwidget.html
 share/doc/qt/html/qmouse_qws-h.html
 share/doc/qt/html/qmousedriverfactory-members.html
 share/doc/qt/html/qmousedriverfactory.html
@@ -1409,6 +1507,8 @@ share/doc/qt/html/qobjectcleanuphandler.html
 share/doc/qt/html/qobjectlist-h.html
 share/doc/qt/html/qobjectlist-members.html
 share/doc/qt/html/qobjectlist.html
+share/doc/qt/html/qobjectlistiterator-members.html
+share/doc/qt/html/qobjectlistiterator.html
 share/doc/qt/html/qpaintdevice-h.html
 share/doc/qt/html/qpaintdevice-members.html
 share/doc/qt/html/qpaintdevice.html
@@ -1621,6 +1721,9 @@ share/doc/qt/html/qspinbox-m.png
 share/doc/qt/html/qspinbox-members.html
 share/doc/qt/html/qspinbox-w.png
 share/doc/qt/html/qspinbox.html
+share/doc/qt/html/qsplashscreen-h.html
+share/doc/qt/html/qsplashscreen-members.html
+share/doc/qt/html/qsplashscreen.html
 share/doc/qt/html/qsplitter-h.html
 share/doc/qt/html/qsplitter-m.png
 share/doc/qt/html/qsplitter-members.html
@@ -1672,6 +1775,9 @@ share/doc/qt/html/qsqlrecordinfo.html
 share/doc/qt/html/qsqlresult-h.html
 share/doc/qt/html/qsqlresult-members.html
 share/doc/qt/html/qsqlresult.html
+share/doc/qt/html/qsqlselectcursor-h.html
+share/doc/qt/html/qsqlselectcursor-members.html
+share/doc/qt/html/qsqlselectcursor.html
 share/doc/qt/html/qstack.html
 share/doc/qt/html/qstatusbar-h.html
 share/doc/qt/html/qstatusbar-m.png
@@ -1715,9 +1821,9 @@ share/doc/qt/html/qsyntaxhighlighter.html
 share/doc/qt/html/qt-colors.png
 share/doc/qt/html/qt-members.html
 share/doc/qt/html/qt-template-lib.html
+share/doc/qt/html/qt.dcf
 share/doc/qt/html/qt.html
-share/doc/qt/html/qt.xml
-share/doc/qt/html/qt31-class-chart.png
+share/doc/qt/html/qt32-class-chart.png
 share/doc/qt/html/qtab-members.html
 share/doc/qt/html/qtab.html
 share/doc/qt/html/qtabbar-h.html
@@ -1741,8 +1847,6 @@ share/doc/qt/html/qtableselection-members.html
 share/doc/qt/html/qtableselection.html
 share/doc/qt/html/qtabletevent-members.html
 share/doc/qt/html/qtabletevent.html
-share/doc/qt/html/qtablevw-m.png
-share/doc/qt/html/qtablevw-w.png
 share/doc/qt/html/qtabwidget-h.html
 share/doc/qt/html/qtabwidget-m.png
 share/doc/qt/html/qtabwidget-members.html
@@ -1781,6 +1885,9 @@ share/doc/qt/html/qtextview.html
 share/doc/qt/html/qthread-h.html
 share/doc/qt/html/qthread-members.html
 share/doc/qt/html/qthread.html
+share/doc/qt/html/qthreadstorage-h.html
+share/doc/qt/html/qthreadstorage-members.html
+share/doc/qt/html/qthreadstorage.html
 share/doc/qt/html/qtime-members.html
 share/doc/qt/html/qtime.html
 share/doc/qt/html/qtimeedit-members.html
@@ -1795,6 +1902,9 @@ share/doc/qt/html/qtl.html
 share/doc/qt/html/qtoolbar-h.html
 share/doc/qt/html/qtoolbar-members.html
 share/doc/qt/html/qtoolbar.html
+share/doc/qt/html/qtoolbox-h.html
+share/doc/qt/html/qtoolbox-members.html
+share/doc/qt/html/qtoolbox.html
 share/doc/qt/html/qtoolbutton-h.html
 share/doc/qt/html/qtoolbutton-members.html
 share/doc/qt/html/qtoolbutton.html
@@ -1822,6 +1932,9 @@ share/doc/qt/html/qurlinfo.html
 share/doc/qt/html/qurloperator-h.html
 share/doc/qt/html/qurloperator-members.html
 share/doc/qt/html/qurloperator.html
+share/doc/qt/html/quuid-h.html
+share/doc/qt/html/quuid-members.html
+share/doc/qt/html/quuid.html
 share/doc/qt/html/qvalidator-h.html
 share/doc/qt/html/qvalidator-members.html
 share/doc/qt/html/qvalidator.html
@@ -1938,6 +2051,9 @@ share/doc/qt/html/qxmlreader-members.html
 share/doc/qt/html/qxmlreader.html
 share/doc/qt/html/qxmlsimplereader-members.html
 share/doc/qt/html/qxmlsimplereader.html
+share/doc/qt/html/qxtwidget-h.html
+share/doc/qt/html/qxtwidget-members.html
+share/doc/qt/html/qxtwidget.html
 share/doc/qt/html/rangecontrols-example.html
 share/doc/qt/html/rd-add.png
 share/doc/qt/html/rd-chooseanimage.png
@@ -2014,11 +2130,13 @@ share/doc/qt/html/scaling.png
 share/doc/qt/html/scribble-example.html
 share/doc/qt/html/scripts.html
 share/doc/qt/html/scrollview-example.html
+share/doc/qt/html/search.png
 share/doc/qt/html/session.html
 share/doc/qt/html/session.png
 share/doc/qt/html/shared.html
 share/doc/qt/html/shclass.html
 share/doc/qt/html/showimg-example.html
+share/doc/qt/html/sidebar.png
 share/doc/qt/html/signalsandslots.html
 share/doc/qt/html/simple-application-example.html
 share/doc/qt/html/simple-application.html
@@ -2148,9 +2266,12 @@ share/doc/qt/html/timers.html
 share/doc/qt/html/titleindex
 share/doc/qt/html/toggleaction-example.html
 share/doc/qt/html/toolbar.png
+share/doc/qt/html/toolbar1.png
 share/doc/qt/html/tools-list.html
 share/doc/qt/html/tools.html
 share/doc/qt/html/tooltip-example.html
+share/doc/qt/html/toplevel-example.html
+share/doc/qt/html/trademarks.html
 share/doc/qt/html/trivial-nsplugin-example.html
 share/doc/qt/html/troll.html
 share/doc/qt/html/tt1_en.png
@@ -2197,6 +2318,7 @@ share/doc/qt/html/unsmooth.png
 share/doc/qt/html/validateaccelerators.png
 share/doc/qt/html/validatephrases.png
 share/doc/qt/html/validatepunctuation.png
+share/doc/qt/html/web.png
 share/doc/qt/html/whatsthis
 share/doc/qt/html/whatsthis.png
 share/doc/qt/html/widgets-example.html
@@ -2248,6 +2370,10 @@ share/qt/mkspecs/hpux-g++-64/qmake.conf
 share/qt/mkspecs/hpux-g++-64/qplatformdefs.h
 share/qt/mkspecs/hpux-g++/qmake.conf
 share/qt/mkspecs/hpux-g++/qplatformdefs.h
+share/qt/mkspecs/hpuxi-acc-32/qmake.conf
+share/qt/mkspecs/hpuxi-acc-32/qplatformdefs.h
+share/qt/mkspecs/hpuxi-acc-64/qmake.conf
+share/qt/mkspecs/hpuxi-acc-64/qplatformdefs.h
 share/qt/mkspecs/hurd-g++/qmake.conf
 share/qt/mkspecs/hurd-g++/qplatformdefs.h
 share/qt/mkspecs/irix-cc-64/qmake.conf
@@ -2266,14 +2392,12 @@ share/qt/mkspecs/linux-icc/qmake.conf
 share/qt/mkspecs/linux-icc/qplatformdefs.h
 share/qt/mkspecs/linux-kcc/qmake.conf
 share/qt/mkspecs/linux-kcc/qplatformdefs.h
+share/qt/mkspecs/linux-kylix/qmake.conf
+share/qt/mkspecs/linux-kylix/qplatformdefs.h
 share/qt/mkspecs/linux-pgcc/qmake.conf
 share/qt/mkspecs/linux-pgcc/qplatformdefs.h
 share/qt/mkspecs/lynxos-g++/qmake.conf
 share/qt/mkspecs/lynxos-g++/qplatformdefs.h
-share/qt/mkspecs/mac9-mwerks/mwerksapp.xml
-share/qt/mkspecs/mac9-mwerks/mwerkslib.xml
-share/qt/mkspecs/mac9-mwerks/qmake.conf
-share/qt/mkspecs/mac9-mwerks/qplatformdefs.h
 share/qt/mkspecs/macx-g++/Info.plist.app
 share/qt/mkspecs/macx-g++/qmake.conf
 share/qt/mkspecs/macx-g++/qplatformdefs.h
@@ -2305,8 +2429,6 @@ share/qt/mkspecs/solaris-g++-64/qmake.conf
 share/qt/mkspecs/solaris-g++-64/qplatformdefs.h
 share/qt/mkspecs/solaris-g++/qmake.conf
 share/qt/mkspecs/solaris-g++/qplatformdefs.h
-share/qt/mkspecs/solaris-kcc/qmake.conf
-share/qt/mkspecs/solaris-kcc/qplatformdefs.h
 share/qt/mkspecs/tru64-cxx/qmake.conf
 share/qt/mkspecs/tru64-cxx/qplatformdefs.h
 share/qt/mkspecs/tru64-g++/qmake.conf
@@ -2339,12 +2461,20 @@ share/qt/phrasebooks/french.qph
 share/qt/phrasebooks/german.qph
 share/qt/phrasebooks/italian.qph
 share/qt/phrasebooks/norwegian.qph
+share/qt/phrasebooks/russian.qph
 share/qt/phrasebooks/spanish.qph
 share/qt/phrasebooks/swedish.qph
 share/qt/templates/Configuration_Dialog.ui
 share/qt/templates/Dialog_with_Buttons_(Bottom).ui
 share/qt/templates/Dialog_with_Buttons_(Right).ui
 share/qt/templates/Tab_Dialog.ui
+translations/assistant_de.qm
+translations/qt_ar.qm
+translations/qt_de.qm
+translations/qt_fr.qm
+translations/qt_iw.qm
+translations/qt_ru.qm
+@dirrm translations
 @dirrm share/qt/templates
 @dirrm share/qt/phrasebooks
 @dirrm share/qt/mkspecs/win32-watcom
@@ -2357,7 +2487,6 @@ share/qt/templates/Tab_Dialog.ui
 @dirrm share/qt/mkspecs/unixware-cc
 @dirrm share/qt/mkspecs/tru64-g++
 @dirrm share/qt/mkspecs/tru64-cxx
-@dirrm share/qt/mkspecs/solaris-kcc
 @dirrm share/qt/mkspecs/solaris-g++-64
 @dirrm share/qt/mkspecs/solaris-g++
 @dirrm share/qt/mkspecs/solaris-cc-64
@@ -2372,9 +2501,9 @@ share/qt/templates/Tab_Dialog.ui
 @dirrm share/qt/mkspecs/macx-pbuilder
 @dirrm share/qt/mkspecs/macx-mwerks
 @dirrm share/qt/mkspecs/macx-g++
-@dirrm share/qt/mkspecs/mac9-mwerks
 @dirrm share/qt/mkspecs/lynxos-g++
 @dirrm share/qt/mkspecs/linux-pgcc
+@dirrm share/qt/mkspecs/linux-kylix
 @dirrm share/qt/mkspecs/linux-kcc
 @dirrm share/qt/mkspecs/linux-icc
 @dirrm share/qt/mkspecs/linux-g++
@@ -2384,6 +2513,8 @@ share/qt/templates/Tab_Dialog.ui
 @dirrm share/qt/mkspecs/irix-cc-64
 @dirrm share/qt/mkspecs/irix-cc
 @dirrm share/qt/mkspecs/hurd-g++
+@dirrm share/qt/mkspecs/hpuxi-acc-64
+@dirrm share/qt/mkspecs/hpuxi-acc-32
 @dirrm share/qt/mkspecs/hpux-g++-64
 @dirrm share/qt/mkspecs/hpux-g++
 @dirrm share/qt/mkspecs/hpux-cc
@@ -2405,4 +2536,6 @@ share/qt/templates/Tab_Dialog.ui
 @dirrm share/doc/qt
 @dirrm lib/plugins/designer
 @dirrm lib/plugins
+@dirrm lib/pkgconfig
 @dirrm include/private
+@dirrm etc/settings

@@ -8,7 +8,6 @@
 
 PORTNAME=	kdebase
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
@@ -18,6 +17,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	This package provides the basic applications for the KDE system
 
 BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11/XFree86-4-clients
+LIB_DEPENDS=	smbclient:${PORTSDIR}/net/samba-libsmbclient
 
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}

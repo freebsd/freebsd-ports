@@ -7,8 +7,7 @@
 #
 
 PORTNAME?=	qt
-PORTVERSION=	3.1.2
-PORTREVISION?=	1
+PORTVERSION=	3.2.1
 CATEGORIES?=	x11-toolkits
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/source/	\
 		ftp://ftp.silug.org/pub/qt/		\
@@ -47,7 +46,7 @@ CONFIGURE_ARGS+=-no-xft
 .endif
 
 .if defined(DEBUG)
-CONFIGURE_ARGS+= -debug
+CONFIGURE_ARGS+=-debug
 .endif
 
 .if !defined(BUILD_PLUGIN_ONLY)
@@ -138,6 +137,12 @@ post-patch:
 		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
 	@${REINPLACE_CMD} -e 's,release,release thread,' \
 		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
+.if ${OSVERSION} > 500016
+	@${REINPLACE_CMD} -e 's,-pthread -D_THREAD_SAFE,${PTHREAD_CFLAGS},' \
+		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
+	@${REINPLACE_CMD} -e 's,-pthread,${PTHREAD_LIBS},' \
+		${WRKSRC}/mkspecs/freebsd-g++/qmake.conf
+.endif
 .if !defined(BUILD_PLUGIN_ONLY)
 	@${RM} ${WRKSRC}/mkspecs/freebsd-g++/qmake.conf.bak
 

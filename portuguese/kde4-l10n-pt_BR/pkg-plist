@@ -348,7 +348,6 @@ share/locale/pt_BR/LC_MESSAGES/htmlsearch.mo
 share/locale/pt_BR/LC_MESSAGES/imagerename_plugin.mo
 share/locale/pt_BR/LC_MESSAGES/imgalleryplugin.mo
 share/locale/pt_BR/LC_MESSAGES/jefferson.mo
-share/locale/pt_BR/LC_MESSAGES/kab3.mo
 share/locale/pt_BR/LC_MESSAGES/kabc2mutt.mo
 share/locale/pt_BR/LC_MESSAGES/kabc_dir.mo
 share/locale/pt_BR/LC_MESSAGES/kabc_ldap.mo
@@ -421,7 +420,6 @@ share/locale/pt_BR/LC_MESSAGES/kcmkeys.mo
 share/locale/pt_BR/LC_MESSAGES/kcmkicker.mo
 share/locale/pt_BR/LC_MESSAGES/kcmkio.mo
 share/locale/pt_BR/LC_MESSAGES/kcmkmix.mo
-share/locale/pt_BR/LC_MESSAGES/kcmkmrml.mo
 share/locale/pt_BR/LC_MESSAGES/kcmkonq.mo
 share/locale/pt_BR/LC_MESSAGES/kcmkonqhtml.mo
 share/locale/pt_BR/LC_MESSAGES/kcmkonsole.mo
