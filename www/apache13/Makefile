@@ -1,17 +1,17 @@
 # New ports collection makefile for:    apache HTTPD
-# Version required:     1.3
+# Version required:     1.3*
 # Date created:         Fri Aug 25 16:42:36 CDT 1995
 # Whom:                 ache@nagual.pp.ru
 #
-# $Id: Makefile,v 1.57 1998/06/18 11:56:17 ache Exp $
+# $Id: Makefile,v 1.58 1998/06/24 19:54:05 ache Exp $
 #
 
-DISTNAME=       apache_1.3.0
-PKGNAME=        apache-1.3.0
+DISTNAME=       apache_1.3.1
+PKGNAME=        apache-1.3.1
 CATEGORIES=	www
 MASTER_SITES=   ftp://www.apache.org/apache/dist/
 
-#PATCH_SITES=    ftp://www.apache.org/apache/dist/patches/apply_to_1.3.0/
+#PATCH_SITES=    ftp://www.apache.org/apache/dist/patches/apply_to_1.3.1/
 
 MAINTAINER=     ache@freebsd.org
 
@@ -21,11 +21,14 @@ MAINTAINER=     ache@freebsd.org
 
 GNU_CONFIGURE=  yes
 CONFIGURE_ARGS= \
+		 --sysconfdir=${PREFIX}/etc/apache \
+		 --includedir=${PREFIX}/include/apache \
 		 --logfiledir=/var/log \
 		 --runtimedir=/var/run \
 		 --datadir=${PREFIX}/www \
 		 --proxycachedir=${PREFIX}/www/proxy \
 		 --libexecdir=${PREFIX}/libexec/apache \
+		 --without-confadjust \
 		 --enable-shared=remain \
 		 --enable-module=most \
 		 --enable-module=auth_db \

@@ -1,13 +1,23 @@
-*** src/support/apachectl.orig	Tue Mar 31 16:53:46 1998
---- src/support/apachectl	Tue Apr 21 17:15:55 1998
+*** src/support/apachectl.orig	Fri Jul 17 01:25:54 1998
+--- src/support/apachectl	Thu Jul 23 17:11:38 1998
 ***************
-*** 37,42 ****
---- 37,44 ----
-  #
+*** 39,44 ****
+--- 39,46 ----
   # --------------------                              --------------------
   # ||||||||||||||||||||   END CONFIGURATION SECTION  ||||||||||||||||||||
-+ 
-+ eval `limits -e -C daemon` >/dev/null 2>&1
   
++ eval `limits -e -C daemon` >/dev/null 2>&1
++ 
   ERROR=0
   ARGV="$@"
+  if [ "x$ARGV" = "x" ] ; then 
+***************
+*** 82,87 ****
+--- 84,90 ----
+  	fi
+  	if kill $PID ; then
+  	    echo "$0 $ARG: httpd stopped"
++ 	    rm $PIDFILE
+  	else
+  	    echo "$0 $ARG: httpd could not be stopped"
+  	    ERROR=4
