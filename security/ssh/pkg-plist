@@ -1,19 +1,19 @@
-etc/rc.d/sshd.sh
-bin/scp1
-bin/scp
-bin/ssh1
-bin/ssh
-bin/slogin
-bin/ssh-add1
-bin/ssh-add
-bin/ssh-agent1
-bin/ssh-agent
-bin/ssh-keygen1
-bin/ssh-keygen
-bin/make-ssh-known-hosts1
 bin/make-ssh-known-hosts
+bin/make-ssh-known-hosts1
+bin/scp
+bin/scp1
+bin/slogin
+bin/ssh
+bin/ssh-add
+bin/ssh-add1
+bin/ssh-agent
+bin/ssh-agent1
+bin/ssh-keygen
+bin/ssh-keygen1
+bin/ssh1
+etc/rc.d/sshd.sh
 etc/ssh_config
 etc/sshd_config
-sbin/sshd1
 sbin/sshd
-@exec if [ ! -f %D/etc/ssh_host_key ]; then echo "Generating a secret host key.." ; %D/bin/ssh-keygen -N "" -f %D/etc/ssh_host_key; fi
+sbin/sshd1
+@exec if [ ! -f %D/etc/ssh_host_key ]; then echo "Generating a secret host key.." ; %D/bin/ssh-keygen1 -N "" -f %D/etc/ssh_host_key; fi
