@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	centericq
-PORTVERSION=	3.20.5
+PORTVERSION=	3.22.8
 CATEGORIES=	net
 MASTER_SITES=	http://download.konst.org.ua/
 
@@ -23,6 +23,6 @@ CFLAGS+=	-nostdinc -I${LOCALBASE}/include/ncurses \
 .endif
 
 USE_GMAKE=	yes
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.post.mk>
