@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/^0//}
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	aspell.9:${PORTSDIR}/textproc/aspell
+LIB_DEPENDS=	aspell.11:${PORTSDIR}/textproc/aspell
 
 USE_X_PREFIX=	yes
 USE_NEWGCC=	yes
