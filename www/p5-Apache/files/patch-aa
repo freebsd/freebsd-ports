@@ -1,45 +1,17 @@
---- Makefile.PL~	Fri Jan 22 11:57:51 1999
-+++ Makefile.PL	Sun May  9 19:41:55 1999
-@@ -67,12 +67,10 @@
- sleep(1);
- }
- 
--%Apache::MyConfig::Setup = ();
--eval 'require Apache::MyConfig' ;
--
--$APACHE_SRC_DEFAULT = $@ ? 
--    '../apache_x.x/src'  :
--    $Apache::MyConfig::Setup{Apache_Src} ; 
-+opendir( WRKDIR, "$ENV{APACHEDIR}" ) || die( "Can't open $ENV{APACHEDIR}: $!\n" );
-+( $srcdir ) = grep( /^apache/, readdir( WRKDIR ) );
-+closedir( WRKDIR );
-+$APACHE_SRC_DEFAULT = "$ENV{APACHEDIR}" . $srcdir . "/src";
- 
- my $PWD = cwd;
- 
-@@ -157,12 +155,12 @@
- }
- $PORT ||= $Port;
- $TARGET = "";
--$DO_HTTPD = $ENV{DO_HTTPD} || 0;
-+$DO_HTTPD = 1;
- $NO_HTTPD = $ENV{NO_HTTPD} || 0;
- $PREP_HTTPD = 0;
- $PERL_TRACE = 0;
- $ALL_HOOKS  = 0;
--$APACHE_SRC = "";
-+$APACHE_SRC = $APACHE_SRC_DEFAULT;
- $APACHE_PREFIX = "";
- $APACHE_HEADER_INSTALL = 1;
- $PERL_SECTIONS = 0;
-@@ -1570,8 +1568,8 @@
-     my $repl = "";
-     my @file = ();
-     my $ccopts = ccopts();
--    my $dssv = "-DSERVER_SUBVERSION";
--    my $ssv = qq($dssv=\\"mod_perl/$VERSION\\" );
-+    my $dssv = "\n-DSERVER_SUBVERSION";
-+    my $ssv = qq($dssv=\\"mod_perl/$VERSION\\" \\);
- 
-     my $inc = " $ccopts -I. -I../.. -DUSE_PERL_SSI" if $PERL_SSI;
-     $inc .= " -DAPACHE_SSL" if is_ssl() and $PERL_SSI;
+--- apaci/configure.orig	Mon Aug 10 16:09:55 1998
++++ apaci/configure	Sat Sep 11 23:34:15 1999
+@@ -89,7 +89,13 @@
+ echo "##" >>$my_makefileconf
+ echo "" >>$my_makefileconf
+ echo "#   provide some stuff Apache usually provides" >>$my_makefileconf
+-echo "CFLAGS=-DMOD_PERL $my_apxs_cflags" >>$my_makefileconf
++echo -n "CFLAGS=-DMOD_PERL " >>$my_makefileconf
++#
++# GAW addition: make up for bug in APXS which fails to properly quote
++# DEFAULT_PATH
++#
++$my_apxs -q CFLAGS | sed 's,",\\",g' >>$my_makefileconf
++echo "" >>$my_makefileconf
+ echo "INCLUDES=$my_apxs_includes" >>$my_makefileconf
+ echo "RANLIB=ranlib" >>$my_makefileconf
+ echo "LIBEXT=so" >>$my_makefileconf
