@@ -1,0 +1,13 @@
+--- docs/Makefile.orig	Sun Jul  7 18:19:14 2002
++++ docs/Makefile	Sun Jul  7 18:19:35 2002
+@@ -49,8 +49,8 @@
+ clean:
+ 
+ install:
+-	$(INSTALL-DIR) $(DESTDIR)$(datadir)/man/man1 && \
+-	$(INSTALL-TXT) twin.1 $(DESTDIR)$(datadir)/man/man1 ; \
++	$(INSTALL-DIR) $(DESTDIR)$(prefix)/man/man1 && \
++	$(INSTALL-TXT) twin.1 $(DESTDIR)$(prefix)/man/man1 ; \
+ 	$(INSTALL-DIR) $(DESTDIR)$(datadir)/twin/docs
+ 	$(INSTALL-TXT) $(DOCS) $(DESTDIR)$(datadir)/twin/docs
+ 	$(INSTALL-TXT) $(TOPDOCS) $(DESTDIR)$(datadir)/twin

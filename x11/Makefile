@@ -94,6 +94,7 @@
     SUBDIR += sxpc
     SUBDIR += temperature.app
     SUBDIR += tkgoodstuff
+    SUBDIR += twin
     SUBDIR += tycoon
     SUBDIR += vdesk
     SUBDIR += wdm
