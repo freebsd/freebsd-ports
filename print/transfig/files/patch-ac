@@ -57,7 +57,7 @@
  SYS_LIBRARIES = $(XPMLIB) $(DBMLIB) -lm -lcompat
  #else
 -SYS_LIBRARIES = $(XPMLIB) $(DBMLIB) -lm
-+SYS_LIBRARIES = $(XPMLIB) $(DBMLIB) -lm -lcompat
++SYS_LIBRARIES = $(XPMLIB) $(XLIB) $(DBMLIB) -lm -lcompat
  #endif
  DEPLIBS = $(LIBTRANSFIG)
  
