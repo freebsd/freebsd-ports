@@ -1,0 +1,45 @@
+bin/flick-aoid
+bin/flick-c-fe-mig
+bin/flick-c-pbe-fluke
+bin/flick-c-pbe-iiop
+bin/flick-c-pbe-mach3mig
+bin/flick-c-pbe-sun
+bin/flick-c-pbe-trapeze
+bin/flick-c-pfe-corba
+bin/flick-c-pfe-fluke
+bin/flick-c-pfe-sun
+bin/flick-c-presd
+bin/flick-fe-newcorba
+bin/flick-fe-sun
+include/flick/encode/all.h
+include/flick/encode/cdr.h
+include/flick/encode/endian.h
+include/flick/encode/mach3mig.h
+include/flick/encode/xdr.h
+include/flick/link/ORB.h
+include/flick/link/all.h
+include/flick/link/iiop.h
+include/flick/link/mach3mig.h
+include/flick/link/suntcp.h
+include/flick/link/trapeze.h
+include/flick/pres/all.h
+include/flick/pres/corba.h
+include/flick/pres/mig.h
+include/flick/pres/mom.h
+include/flick/pres/sun.h
+lib/libflick-aoi.a
+lib/libflick-c-pbe.a
+lib/libflick-c-pfe-corba.a
+lib/libflick-c-pfe.a
+lib/libflick-cast.a
+lib/libflick-compiler.a
+lib/libflick-mint.a
+lib/libflick-pres_c.a
+share/doc/flick/flick-pldi97.ps
+share/doc/flick/headers.ps
+share/doc/flick/user.ps
+@dirrm include/flick/encode
+@dirrm include/flick/link
+@dirrm include/flick/pres
+@dirrm include/flick
+@dirrm share/doc/flick
