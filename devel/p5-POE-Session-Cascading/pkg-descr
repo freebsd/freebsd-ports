@@ -1,0 +1,11 @@
+POE::Session::Cascading provides a stack-like session for POE.  Another
+way of saying it is that a Cascading session is like a big switch
+statement.  In the above example, when state1 is called in session foo,
+&state1 gets executed.  When it finishes, state2 gets fired and &state2
+gets executed.  If state2 is called in session foo, only state2 will get
+executed.
+
+WWW: http://search.cpan.org/search?dist=POE-Session-Cascading
+
+-- Sergey Skvortsov
+skv@FreeBSD.org
