@@ -1,6 +1,7 @@
-bin/fvwm2
 bin/FvwmCommand
+bin/fvwm2
 bin/xpmroot
+etc/system.fvwm2rc
 icons/Jlock.xpm
 icons/Jnews.xpm
 icons/Jrecycle.xpm
@@ -317,40 +318,39 @@ icons/xterm.xpm
 icons/xv.xpm
 icons/xv2.xpm
 icons/xview.xpm
-libexec/fvwm/2.2.4/FvwmAnimate
-libexec/fvwm/2.2.4/FvwmAudio
-libexec/fvwm/2.2.4/FvwmAuto
-libexec/fvwm/2.2.4/FvwmBacker
-libexec/fvwm/2.2.4/FvwmBanner
-libexec/fvwm/2.2.4/FvwmButtons
-libexec/fvwm/2.2.4/FvwmCpp
-libexec/fvwm/2.2.4/FvwmEvent
-libexec/fvwm/2.2.4/FvwmForm
-libexec/fvwm/2.2.4/FvwmIconBox
-libexec/fvwm/2.2.4/FvwmIconMan
-libexec/fvwm/2.2.4/FvwmIdent
-libexec/fvwm/2.2.4/FvwmM4
-libexec/fvwm/2.2.4/FvwmPager
-libexec/fvwm/2.2.4/FvwmRearrange
-libexec/fvwm/2.2.4/FvwmCascade
-libexec/fvwm/2.2.4/FvwmTile
-libexec/fvwm/2.2.4/FvwmSave
-libexec/fvwm/2.2.4/FvwmSaveDesk
-libexec/fvwm/2.2.4/FvwmScroll
-libexec/fvwm/2.2.4/FvwmTalk
-libexec/fvwm/2.2.4/FvwmWinList
-libexec/fvwm/2.2.4/FvwmCommandS
-libexec/fvwm/2.2.4/FvwmConfig
-libexec/fvwm/2.2.4/FvwmConsole
-libexec/fvwm/2.2.4/FvwmConsoleC
-libexec/fvwm/2.2.4/FvwmConsoleC.pl
-libexec/fvwm/2.2.4/FvwmDebug
-libexec/fvwm/2.2.4/FvwmGoodStuff
-libexec/fvwm/2.2.4/FvwmPipe
-libexec/fvwm/2.2.4/FvwmScript
-libexec/fvwm/2.2.4/FvwmTaskBar
-libexec/fvwm/2.2.4/FvwmWharf
-@dirrm lib/X11/fvwm2
-@dirrm libexec/fvwm/2.2.4
+libexec/fvwm/2.2.5/FvwmAnimate
+libexec/fvwm/2.2.5/FvwmAudio
+libexec/fvwm/2.2.5/FvwmAuto
+libexec/fvwm/2.2.5/FvwmBacker
+libexec/fvwm/2.2.5/FvwmBanner
+libexec/fvwm/2.2.5/FvwmButtons
+libexec/fvwm/2.2.5/FvwmCascade
+libexec/fvwm/2.2.5/FvwmCommandS
+libexec/fvwm/2.2.5/FvwmConfig
+libexec/fvwm/2.2.5/FvwmConsole
+libexec/fvwm/2.2.5/FvwmConsoleC
+libexec/fvwm/2.2.5/FvwmConsoleC.pl
+libexec/fvwm/2.2.5/FvwmCpp
+libexec/fvwm/2.2.5/FvwmDebug
+libexec/fvwm/2.2.5/FvwmEvent
+libexec/fvwm/2.2.5/FvwmForm
+libexec/fvwm/2.2.5/FvwmGoodStuff
+libexec/fvwm/2.2.5/FvwmIconBox
+libexec/fvwm/2.2.5/FvwmIconMan
+libexec/fvwm/2.2.5/FvwmIdent
+libexec/fvwm/2.2.5/FvwmM4
+libexec/fvwm/2.2.5/FvwmPager
+libexec/fvwm/2.2.5/FvwmPipe
+libexec/fvwm/2.2.5/FvwmRearrange
+libexec/fvwm/2.2.5/FvwmSave
+libexec/fvwm/2.2.5/FvwmSaveDesk
+libexec/fvwm/2.2.5/FvwmScript
+libexec/fvwm/2.2.5/FvwmScroll
+libexec/fvwm/2.2.5/FvwmTalk
+libexec/fvwm/2.2.5/FvwmTaskBar
+libexec/fvwm/2.2.5/FvwmTile
+libexec/fvwm/2.2.5/FvwmWharf
+libexec/fvwm/2.2.5/FvwmWinList
+@dirrm libexec/fvwm/2.2.5
 @dirrm libexec/fvwm
-@dirrm icons
+@unexec rmdir %D/icons 2>/dev/null || true
