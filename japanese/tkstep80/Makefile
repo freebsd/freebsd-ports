@@ -3,7 +3,7 @@
 # Date created:		25 March 1999
 # Whom:			KIRIYAMA Kazuhiko <kiri@pis.toba-cmt.ac.jp>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/05/03 04:13:13 steve Exp $
 #
 
 DISTNAME=	tk8.0.4
@@ -19,6 +19,7 @@ MAINTAINER=	kiri@pis.toba-cmt.ac.jp
 
 LIB_DEPENDS=	tcl80jp.1:${PORTSDIR}/japanese/tcl80
 
+USE_XLIB=	yes
 USE_AUTOCONF=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-gcc --enable-shared --enable-step \
