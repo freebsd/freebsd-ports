@@ -18,7 +18,6 @@ COMMENT=	Perl module implementing 'make' and script
 PERL_CONFIGURE=	yes
 
 MAN1=		perlmake.1
-MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		Make.3
 
 pre-configure:
