@@ -3,7 +3,7 @@
 # Date created:		03-Mar-1997
 # Whom:			tenser
 #
-# $Id: Makefile,v 1.6 1998/04/05 07:30:56 asami Exp $
+# $Id: Makefile,v 1.7 1998/08/07 23:56:18 asami Exp $
 #
 
 DISTNAME=	bsvc-2.0
@@ -23,20 +23,6 @@ WISH=		wish4.1
 pre-patch:
 	@awk ' \
 	{ \
-		if (/PROJECT_BASE/ && /AWK_CHANGE_ME/) { \
-			print "! PROJECT_BASE='"${WRKDIR}/${DISTNAME}"'" \
-		} else if (/INSTALL_DIR/ && /AWK_CHANGE_ME/) { \
-			print "! INSTALL_DIR='"${PREFIX}/bin"'" \
-		} else if (/LIB_DIR/ && /AWK_CHANGE_ME/) { \
-			print "! LIB_DIR ='"${PREFIX}/lib/bsvc"'" \
-		} else if (/WISH/ && /AWK_CHANGE_ME/) { \
-			print "! WISH='"${WISH}"'" \
-		} else { \
-			print \
-		} \
-	}' < ${FILESDIR}/patch-aa.in > ${PATCHDIR}/patch-aa
-	@awk ' \
-	{ \
 		if (/^## Makefile/) { \
 			print "## Makefile.FreeBSD - System Dependent Makefile for FreeBSD" \
 		} else { \
@@ -44,7 +30,21 @@ pre-patch:
 		} \
 	}' < ${WRKSRC}/Makefile.ULTRIX > ${WRKSRC}/Makefile
 
-pre-clean:
-	${RM} -f ${PATCHDIR}/patch-aa
+post-patch:
+	@awk ' \
+	{ \
+		if (/PROJECT_BASE/ && /AWK_CHANGE_ME/) { \
+			print "PROJECT_BASE='"${WRKDIR}/${DISTNAME}"'" \
+		} else if (/INSTALL_DIR/ && /AWK_CHANGE_ME/) { \
+			print "INSTALL_DIR='"${PREFIX}/bin"'" \
+		} else if (/LIB_DIR/ && /AWK_CHANGE_ME/) { \
+			print "LIB_DIR ='"${PREFIX}/lib/bsvc"'" \
+		} else if (/WISH/ && /AWK_CHANGE_ME/) { \
+			print "WISH='"${WISH}"'" \
+		} else { \
+			print \
+		} \
+	}' < ${WRKSRC}/Makefile.common > ${WRKSRC}/Makefile.common.tmp
+	@${MV} -f ${WRKSRC}/Makefile.common.tmp ${WRKSRC}/Makefile.common
 
 .include <bsd.port.mk>
