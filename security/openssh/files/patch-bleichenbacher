@@ -1,0 +1,189 @@
+Index: rsa.h
+===================================================================
+RCS file: /usr2/ncvs/src/crypto/openssh/rsa.h,v
+retrieving revision 1.2.2.2
+diff -u -r1.2.2.2 rsa.h
+--- rsa.h	2000/10/28 23:00:49	1.2.2.2
++++ rsa.h	2001/02/12 04:03:40
+@@ -32,6 +32,6 @@
+ int rsa_alive __P((void));
+ 
+ void rsa_public_encrypt __P((BIGNUM * out, BIGNUM * in, RSA * prv));
+-void rsa_private_decrypt __P((BIGNUM * out, BIGNUM * in, RSA * prv));
++int rsa_private_decrypt __P((BIGNUM * out, BIGNUM * in, RSA * prv));
+ 
+ #endif				/* RSA_H */
+Index: ssh-agent.c
+===================================================================
+RCS file: /usr2/ncvs/src/crypto/openssh/ssh-agent.c,v
+retrieving revision 1.2.2.5
+diff -u -r1.2.2.5 ssh-agent.c
+--- ssh-agent.c	2001/02/04 20:24:33	1.2.2.5
++++ ssh-agent.c	2001/02/12 04:03:40
+@@ -194,7 +194,8 @@
+ 	private = lookup_private_key(key, NULL, 1);
+ 	if (private != NULL) {
+ 		/* Decrypt the challenge using the private key. */
+-		rsa_private_decrypt(challenge, challenge, private->rsa);
++		if (rsa_private_decrypt(challenge, challenge, private->rsa) <= 0)
++			goto failure;
+ 
+ 		/* The response is MD5 of decrypted challenge plus session id. */
+ 		len = BN_num_bytes(challenge);
+Index: sshconnect1.c
+===================================================================
+RCS file: /usr2/ncvs/src/crypto/openssh/sshconnect1.c,v
+retrieving revision 1.2.2.3
+diff -u -r1.2.2.3 sshconnect1.c
+--- sshconnect1.c	2001/01/12 04:25:58	1.2.2.3
++++ sshconnect1.c	2001/02/12 04:03:40
+@@ -152,14 +152,17 @@
+ 	int i, len;
+ 
+ 	/* Decrypt the challenge using the private key. */
+-	rsa_private_decrypt(challenge, challenge, prv);
++	/* XXX think about Bleichenbacher, too */
++	if (rsa_private_decrypt(challenge, challenge, prv) <= 0)
++		packet_disconnect(
++		    "respond_to_rsa_challenge: rsa_private_decrypt failed");
+ 
+ 	/* Compute the response. */
+ 	/* The response is MD5 of decrypted challenge plus session id. */
+ 	len = BN_num_bytes(challenge);
+ 	if (len <= 0 || len > sizeof(buf))
+-		packet_disconnect("respond_to_rsa_challenge: bad challenge length %d",
+-				  len);
++		packet_disconnect(
++		    "respond_to_rsa_challenge: bad challenge length %d", len);
+ 
+ 	memset(buf, 0, sizeof(buf));
+ 	BN_bn2bin(challenge, buf + sizeof(buf) - len);
+Index: sshd.c
+===================================================================
+RCS file: /usr2/ncvs/src/crypto/openssh/sshd.c,v
+retrieving revision 1.6.2.5
+diff -u -r1.6.2.5 sshd.c
+--- sshd.c	2001/01/18 22:36:53	1.6.2.5
++++ sshd.c	2001/02/12 04:09:43
+@@ -1108,6 +1108,7 @@
+ {
+ 	int i, len;
+ 	int plen, slen;
++	int rsafail = 0;
+ 	BIGNUM *session_key_int;
+ 	unsigned char session_key[SSH_SESSION_KEY_LENGTH];
+ 	unsigned char cookie[8];
+@@ -1229,7 +1230,7 @@
+ 	 * with larger modulus first).
+ 	 */
+ 	if (BN_cmp(sensitive_data.private_key->n, sensitive_data.host_key->n) > 0) {
+-		/* Private key has bigger modulus. */
++		/* Server key has bigger modulus. */
+ 		if (BN_num_bits(sensitive_data.private_key->n) <
+ 		    BN_num_bits(sensitive_data.host_key->n) + SSH_KEY_BITS_RESERVED) {
+ 			fatal("do_connection: %s: private_key %d < host_key %d + SSH_KEY_BITS_RESERVED %d",
+@@ -1238,10 +1239,12 @@
+ 			      BN_num_bits(sensitive_data.host_key->n),
+ 			      SSH_KEY_BITS_RESERVED);
+ 		}
+-		rsa_private_decrypt(session_key_int, session_key_int,
+-				    sensitive_data.private_key);
+-		rsa_private_decrypt(session_key_int, session_key_int,
+-				    sensitive_data.host_key);
++		if (rsa_private_decrypt(session_key_int, session_key_int,
++		    sensitive_data.private_key) <= 0)
++			rsafail++;
++		if (rsa_private_decrypt(session_key_int, session_key_int,
++		    sensitive_data.host_key) <= 0)
++			rsafail++;
+ 	} else {
+ 		/* Host key has bigger modulus (or they are equal). */
+ 		if (BN_num_bits(sensitive_data.host_key->n) <
+@@ -1252,10 +1255,12 @@
+ 			      BN_num_bits(sensitive_data.private_key->n),
+ 			      SSH_KEY_BITS_RESERVED);
+ 		}
+-		rsa_private_decrypt(session_key_int, session_key_int,
+-				    sensitive_data.host_key);
+-		rsa_private_decrypt(session_key_int, session_key_int,
+-				    sensitive_data.private_key);
++		if (rsa_private_decrypt(session_key_int, session_key_int,
++		    sensitive_data.host_key) < 0)
++			rsafail++;
++		if (rsa_private_decrypt(session_key_int, session_key_int,
++		    sensitive_data.private_key) < 0)
++			rsafail++;
+ 	}
+ 
+ 	compute_session_id(session_id, cookie,
+@@ -1270,14 +1275,29 @@
+ 	 * least significant 256 bits of the integer; the first byte of the
+ 	 * key is in the highest bits.
+ 	 */
+-	BN_mask_bits(session_key_int, sizeof(session_key) * 8);
+-	len = BN_num_bytes(session_key_int);
+-	if (len < 0 || len > sizeof(session_key))
+-		fatal("do_connection: bad len from %s: session_key_int %d > sizeof(session_key) %d",
+-		      get_remote_ipaddr(),
+-		      len, sizeof(session_key));
+-	memset(session_key, 0, sizeof(session_key));
+-	BN_bn2bin(session_key_int, session_key + sizeof(session_key) - len);
++	if (!rsafail) {
++		BN_mask_bits(session_key_int, sizeof(session_key) * 8);
++		len = BN_num_bytes(session_key_int);
++		if (len < 0 || len > sizeof(session_key)) {
++			error("do_connection: bad session key len from %s: "
++			    "session_key_int %d > sizeof(session_key) %d",
++			    get_remote_ipaddr(), len, sizeof(session_key));
++			rsafail++;
++		} else {
++			memset(session_key, 0, sizeof(session_key));
++			BN_bn2bin(session_key_int,
++			    session_key + sizeof(session_key) - len);
++		}
++	}
++	if (rsafail) {
++		log("do_connection: generating a fake encryption key");
++		for (i = 0; i < SSH_SESSION_KEY_LENGTH; i++) {
++			if (i % 4 == 0)
++				rand = arc4random();
++			session_key[i] = rand & 0xff;
++			rand >>= 8;
++		}
++	}
+ 
+ 	/* Destroy the decrypted integer.  It is no longer needed. */
+ 	BN_clear_free(session_key_int);
+--- rsa.c.orig	Mon Jun 19 18:39:44 2000
++++ rsa.c	Mon Feb 12 00:04:02 2001
+@@ -135,7 +135,7 @@
+ 	xfree(inbuf);
+ }
+ 
+-void
++int
+ rsa_private_decrypt(BIGNUM *out, BIGNUM *in, RSA *key)
+ {
+ 	unsigned char *inbuf, *outbuf;
+@@ -149,15 +149,16 @@
+ 	BN_bn2bin(in, inbuf);
+ 
+ 	if ((len = RSA_private_decrypt(ilen, inbuf, outbuf, key,
+-	    RSA_PKCS1_PADDING)) <= 0)
+-		fatal("rsa_private_decrypt() failed");
+-
+-	BN_bin2bn(outbuf, len, out);
+-
++	    RSA_PKCS1_PADDING)) <= 0) {
++		error("rsa_private_decrypt() failed");
++	} else {
++		BN_bin2bn(outbuf, len, out);
++	}
+ 	memset(outbuf, 0, olen);
+ 	memset(inbuf, 0, ilen);
+ 	xfree(outbuf);
+ 	xfree(inbuf);
++	return len;
+ }
+ 
+ /* Set whether to output verbose messages during key generation. */
