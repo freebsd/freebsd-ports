@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	Test-Class
-PORTVERSION=	0.03
+PORTVERSION=	0.10
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	Test
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	erwin@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Test::Class - Easily create test classes in an xUnit style
 
 BUILD_DEPENDS=	${SITE_PERL}/Test/Builder/Tester.pm:${PORTSDIR}/devel/p5-Test-Builder-Tester \
 		${SITE_PERL}/Test/Exception.pm:${PORTSDIR}/devel/p5-Test-Exception \
+		${SITE_PERL}/Devel/Symdump.pm:${PORTSDIR}/devel/p5-Devel-Symdump \
 		${SITE_PERL}/Test/Differences.pm:${PORTSDIR}/devel/p5-Test-Differences
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
