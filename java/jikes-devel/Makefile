@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	jikes
-PORTVERSION=	1.16
-PORTREVISION=	3
+PORTVERSION=	1.17
 CATEGORIES=	java
-MASTER_SITES=	http://oss.software.ibm.com/pub/jikes/
+MASTER_SITES=	http://oss.software.ibm.com/pub/jikes/${PORTVERSION}/
 
 MAINTAINER=	archie@freebsd.org
 
