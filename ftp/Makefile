@@ -68,6 +68,7 @@
     SUBDIR += ruby-curl
     SUBDIR += sftp
     SUBDIR += spegla
+    SUBDIR += tftp-hpa
     SUBDIR += twoftpd
     SUBDIR += vcheck
     SUBDIR += vsftpd

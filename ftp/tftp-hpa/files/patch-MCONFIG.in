@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- MCONFIG.in.orig	Tue Nov 27 02:18:11 2001
++++ MCONFIG.in	Tue Jan 14 20:29:27 2003
+@@ -26,7 +26,7 @@
+ MANDIR  = @mandir@
+ 
+ # System binaries
+-SBINDIR = @sbindir@
++LIBEXECDIR = @libexecdir@
+ 
+ # Binary suffixes
+ O = @OBJEXT@
