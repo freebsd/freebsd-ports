@@ -48,9 +48,6 @@
     SUBDIR += konversation
     SUBDIR += kvirc
     SUBDIR += kwirc
-    SUBDIR += liece
-    SUBDIR += liece-dcc
-    SUBDIR += liece-emacs20
     SUBDIR += lostirc
     SUBDIR += miau
     SUBDIR += muh
@@ -75,6 +72,8 @@
     SUBDIR += py-supybot
     SUBDIR += quirc
     SUBDIR += rbot
+    SUBDIR += riece
+    SUBDIR += riece-emacs20
     SUBDIR += roxirc
     SUBDIR += ruby-irc
     SUBDIR += ruby-rica
