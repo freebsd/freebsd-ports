@@ -7,8 +7,8 @@
 #
 
 PORTNAME=	pythoncad
-PORTVERSION=	16
-PORTREVISION=	1
+PORTVERSION=	21
+PORTREVISION=	0
 CATEGORIES=	cad
 MASTER_SITES=	http://www.pythoncad.org/releases/
 DISTNAME=	PythonCAD-DS1-R${PORTVERSION}
@@ -22,7 +22,13 @@ USE_PYTHON=	2.2+
 USE_PYDISTUTILS=	yes
 USE_BZIP2=	yes
 
+PLIST_FILES=	bin/gtkpycad
+
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/gtkpycad.py ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/gtkpycad.py ${PREFIX}/bin/gtkpycad
+	@${FIND} ${PYTHON_SITELIBDIR}/PythonCAD* ! -type d | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${FIND} ${PYTHON_SITELIBDIR}/PythonCAD* -type d | ${SORT} -r | \
+		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
