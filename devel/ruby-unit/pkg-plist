@@ -26,7 +26,7 @@ bin/runtest.rb
 %%RUBY_EXAMPLESDIR%%/runit/testrepeatedtest.rb
 %%RUBY_EXAMPLESDIR%%/runit/testtestsetup.rb
 @dirrm %%RUBY_EXAMPLESDIR%%/runit
-%%RUBY_DOCDIR%%/runit/HISTORY
+%%RUBY_DOCDIR%%/runit/ChangeLog
 %%RUBY_DOCDIR%%/runit/README
 %%RUBY_DOCDIR%%/runit/ToDo
 %%RUBY_DOCDIR%%/runit/assert.html
@@ -51,9 +51,6 @@ bin/runtest.rb
 %%RUBY_DOCDIR%%/runit/robserver.html
 %%RUBY_DOCDIR%%/runit/robserver.rd
 %%RUBY_DOCDIR%%/runit/robserver.rmi
-%%RUBY_DOCDIR%%/runit/test.html
-%%RUBY_DOCDIR%%/runit/test.rd
-%%RUBY_DOCDIR%%/runit/test.rmi
 %%RUBY_DOCDIR%%/runit/testcase.html
 %%RUBY_DOCDIR%%/runit/testcase.rd
 %%RUBY_DOCDIR%%/runit/testcase.rmi
