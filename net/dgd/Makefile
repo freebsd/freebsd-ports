@@ -3,7 +3,7 @@
 # Date created:		23 August 1994
 # Whom:			adam
 #
-# $Id: Makefile,v 1.37 1996/02/27 19:05:19 adam Exp $
+# $Id: Makefile,v 1.38 1996/03/10 09:01:49 asami Exp $
 #
 
 DISTNAME=	dgd-1.0.41
@@ -12,7 +12,10 @@ CATEGORIES=	net lang
 MASTER_SITES=	ftp.lysator.liu.se:/pub/lpmud/drivers/dgd/
 
 PATCH_SITES=	ftp.veda.is:/pub/mud/dgd/patches/
-PATCHFILES=	1.0.37-1.0.41.gz
+PATCHFILES=	1.0.37-1.0.38.gz \
+		1.0.38-1.0.39.gz \
+		1.0.39-1.0.40.gz \
+		1.0.40-1.0.41.gz
 
 MAINTAINER=	adam@veda.is
 
@@ -28,6 +31,7 @@ post-patch:
 post-build:
 	@cd ${WRKSRC}; ${MAKE} install
 	@sed '/^@srcdir/s|\.|${WRKDIR}/\.|' <${PKGDIR}/PLIST >${WRKDIR}/PLIST
+	@chmod o+r ${WRKDIR}/dgd/doc/kfun/*
 
 do-install:
 	@-mv ${PREFIX}/dgd/bin/driver ${PREFIX}/dgd/bin/driver.old
