@@ -2,7 +2,8 @@ include/jbig.h
 bin/pbmtojbg
 bin/jbgtopbm
 lib/libjbig.a
-lib/libjbig.so.1.0
+lib/libjbig.so.1
+lib/libjbig.so
 @exec /sbin/ldconfig -m %B
 @unexec /sbin/ldconfig -R
 share/doc/jbig/jbig.doc

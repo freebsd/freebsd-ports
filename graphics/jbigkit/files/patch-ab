@@ -1,5 +1,5 @@
---- libjbig/Makefile.orig	Thu Jun 25 13:26:01 1998
-+++ libjbig/Makefile	Thu Jun 25 13:29:44 1998
+--- libjbig/Makefile.orig	Fri Apr 10 20:33:27 1998
++++ libjbig/Makefile	Mon Sep 14 16:45:39 1998
 @@ -5,9 +5,9 @@
  CC = gcc
  
@@ -8,25 +8,30 @@
 +CFLAGS += -Wall -ansi -pedantic
  
 -all: libjbig.a tstcodec
-+all: libjbig.a libjbig.so.1.0
++all: libjbig.a libjbig.so.1
  
  tstcodec: tstcodec.c jbig.c jbig.h jbig_tab.o
  	$(CC) $(CFLAGS) -o tstcodec -DTEST_CODEC tstcodec.c jbig.c \
-@@ -18,7 +18,17 @@
+@@ -18,10 +18,21 @@
  	ar rc libjbig.a jbig.o jbig_tab.o
  	ranlib libjbig.a
  
-+libjbig.so.1.0: jbig.so jbig_tab.so
-+	rm -f libjbig.so.1.0
-+	ld -Bshareable -o ${.TARGET} ${.ALLSRC}
++libjbig.so.1: jbig.so jbig_tab.so
++	rm -f libjbig.so.1
++	$(CC) -o ${.TARGET} -shared -Wl,-rpath,${PREFIX}/lib -Wl,-soname,${.TARGET} ${.ALLSRC}         
++	ln -sf libjbig.so.1 libjbig.so
 +	
  jbig.o: jbig.c jbig.h
-+
+ 
 +.SUFFIXES: .c .so
 +.c.so:
 +	${CC} -c -fpic -DPIC ${CFLAGS} ${.IMPSRC} -o ${.TARGET}
 +jbig.so: jbig.c jbig.h
 +jbig_tab.so: jbig_tab.c
- 
++
  test: tstcodec
  	./tstcodec
+ 
+ clean:
+-	rm -f *.o *~ core gmon.out dbg_d\=??.pbm tstcodec
++	rm -f *.o *~ core gmon.out dbg_d\=??.pbm tstcodec *.so libjbig.so.1 libjbig.a
