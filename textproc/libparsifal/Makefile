@@ -7,17 +7,16 @@
 #
 
 PORTNAME=	libparsifal
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.saunalahti.fi/~samiuus/toni/xmlproc/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight XML Parser
 
-BROKEN=		"Checksum mismatch"
-
 USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
 post-patch:
