@@ -3,7 +3,7 @@
 # Date created:				September 29th 1996
 # Whom:	      				James FitzGibbon <jfitz@FreeBSD.org>
 #
-# $Id: Makefile,v 1.7 1998/08/18 03:07:07 vanilla Exp $
+# $Id: Makefile,v 1.8 1998/08/31 14:02:06 vanilla Exp $
 #
 
 DISTNAME=	Msql-Mysql-modules-1.2003
@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	DBD
 
 MAINTAINER=	vanilla@FreeBSD.ORG
 
-BUILD_DEPENDS=	${PREFIX}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql/ \
+BUILD_DEPENDS=	${PREFIX}/lib/mysql/libmysqlclient.a:${PORTSDIR}/databases/mysql321/ \
 		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/Data/ShowTable.pm:${PORTSDIR}/devel/p5-Data-ShowTable/ \
 		${PREFIX}/lib/perl5/site_perl/${PERL_VER}/i386-freebsd/DBI.pm:${PORTSDIR}/databases/p5-DBI/
 
