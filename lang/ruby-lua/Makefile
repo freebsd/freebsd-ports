@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lua
-PORTVERSION=	20010831
-PORTREVISION=	1
+PORTVERSION=	20010921
 CATEGORIES=	lang ruby
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	knu
@@ -23,18 +22,19 @@ USE_ZIP=	yes
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
+RUBY_EXTCONF=	luaconf.rb
 
 NO_WRKSUBDIR=	yes
 INSTALL_TARGET=	site-install
 
-post-extract:
-	${ECHO} 'require "mkmf"' > ${WRKSRC}/extconf.rb
-	${ECHO} 'have_library("lua") &&' >> ${WRKSRC}/extconf.rb
-	${ECHO} ' have_library("lualib") &&' >> ${WRKSRC}/extconf.rb
-	${ECHO} ' create_makefile("lua")' >> ${WRKSRC}/extconf.rb
+EXAMPLES=	html_ssi_lua.rb test_*
 
 post-install:
 .if !defined(NOPORTDOCS)
+	${MKDIR} ${RUBY_EXAMPLESDIR}/${PORTNAME}
+.for f in ${EXAMPLES}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_EXAMPLESDIR}/${PORTNAME}/
+.endfor
 	${MKDIR} ${RUBY_DOCDIR}/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/rubylua.txt ${RUBY_DOCDIR}/${PORTNAME}/
 .endif
