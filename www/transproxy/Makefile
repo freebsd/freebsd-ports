@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.nlc.net.au/pub/unix/transproxy/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	peter@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 MAN8=		tproxy.8
 
