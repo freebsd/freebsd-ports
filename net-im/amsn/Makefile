@@ -20,7 +20,6 @@ RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84 \
 		${LOCALBASE}/lib/tcllib1.4/base64/base64.tcl:${PORTSDIR}/devel/tcllib
 
 NO_BUILD=	yes
-USE_REINPLACE=	yes
 WRKSRC=		${WRKDIR}/msn
 
 LIBDIR=		${PREFIX}/lib/msn
@@ -47,8 +46,8 @@ do-install:
 .endif
 
 post-install:
-	@${REINPLACE_CMD} -e "s=!!PREFIX!!=${PREFIX}=" ${FILESDIR}/amsn
-	@${INSTALL_SCRIPT} ${FILESDIR}/amsn ${PREFIX}/bin/amsn
+	@${SED} -e "s=!!PREFIX!!=${PREFIX}=" < ${FILESDIR}/amsn \
+		> ${PREFIX}/bin/amsn
 	@${CHMOD} 555 ${PREFIX}/bin/amsn
 	@${CHMOD} 555 ${PREFIX}/lib/msn/amsn
 	@uudecode -o ${PREFIX}/lib/msn/icons/logolinmsn.gif \
