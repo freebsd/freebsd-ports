@@ -97,6 +97,11 @@ LIBJTOOL=	0.5
 LIBJX=		1.5
 .endif
 
+# -CURRENT post gcc 3.1
+.if ${OSVERSION} >= 500035
+BROKEN=	Does not work with gcc 3.x
+.endif
+
 post-patch:
 .for i in ${CONFIGURE_PREPROCESSING_FILES}
 	@${CP} ${WRKSRC}/${POSTCONFIGURE_WRKSRC}/${i} ${WRKDIR}/${i}.in
