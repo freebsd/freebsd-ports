@@ -6,31 +6,23 @@
 #
 
 PORTNAME=	bwbasic
-PORTVERSION=	2.20
+PORTVERSION=	2.20p2
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.rahul.net/pub/rhn/
-DISTFILES=	bwbasic-2.20.tar.Z bwb-2.20-patch01.tar.Z.uu.txt
+MASTER_SITES=	ftp://ftp.rahul.net/pub2/rhn/www/files/
+EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	msmith@FreeBSD.org
 
-BROKEN=		"Checksum fails"
-
 GNU_CONFIGURE=	yes
-EXTRACT_ONLY=	bwbasic-2.20.tar.Z
-
-# The patches come in a totally bizarre format; we have to 
-# uudecode them, unpack the resulting tarfile, and then replace
-# some of the original files.
+WRKTOP=		${WRKDIR}/${DISTNAME}
+WRKSUBDIR=	bwbasic-2.20
+WRKSRC=		${WRKTOP}/${WRKSUBDIR}
 
 pre-patch:
-	${MKDIR} ${WRKSRC}/tmp
-	cd ${WRKSRC}/tmp; \
-	uudecode ${DISTDIR}/bwb-2.20-patch01.tar.Z.uu.txt; \
-	tar xzf bwb-2.20-patch01.tar.Z; \
-	${MV} bwb-2.20-patch01/* ${WRKSRC}
-	${RM} -rf ${WRKSRC}/tmp
+	cd ${WRKTOP} && ${MV} bwb-2.20-patch01/* ${WRKSUBDIR}
+	cd ${WRKTOP} && ${MV} bwb-2.20-patch02/* ${WRKSUBDIR}
 
-# This puts the documentation in ${PREFIX}/share/bwbasic, and the 
+# This puts the documentation in ${PREFIX}/share/bwbasic, and the
 # test programs in ${PREFIX}/share/bwbasic/bwbtest.
 
 post-install:
