@@ -1,13 +1,13 @@
 # New ports collection makefile for:	grep
-# Version required:	0.3
+# Version required:	0.13
 # Date created:		8 June 1999
 # Whom:			Sheldon Hearn <sheldonh@freebsd.org>
 #
 # $FreeBSD$
 #
 
-DISTNAME=	grep-0.12
-PKGNAME=	freegrep-0.12
+DISTNAME=	grep-0.13
+PKGNAME=	freegrep-0.13
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.wam.umd.edu/pub/howardjp/software/grep/ \
 		http://www.wam.umd.edu/~howardjp/software/grep/ \
