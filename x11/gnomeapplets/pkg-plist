@@ -1511,7 +1511,6 @@ share/locale/uk/LC_MESSAGES/gnome-applets.mo
 share/locale/wa/LC_MESSAGES/gnome-applets.mo
 share/locale/zh_CN.GB2312/LC_MESSAGES/gnome-applets.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-applets.mo
-@dirrm share/gnome/xmodmap
 @dirrm share/gnome/tickastat/news
 @dirrm share/gnome/tickastat
 @dirrm share/gnome/sound-monitor/scope-round
@@ -1526,10 +1525,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets.mo
 @dirrm share/gnome/sound-monitor/grey
 @dirrm share/gnome/sound-monitor/blue
 @dirrm share/gnome/sound-monitor
-@dirrm share/gnome/pixmaps/mini-commander
-@dirrm share/gnome/pixmaps/gweather
-@dirrm share/gnome/pixmaps/gkb
-@dirrm share/gnome/omf/gnome-applets
 @dirrm share/gnome/odometer/smplst
 @dirrm share/gnome/odometer/o
 @dirrm share/gnome/odometer/default
@@ -1838,14 +1833,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-applets.mo
 @dirrm share/gnome/help/anotherclock_applet/C/figures
 @dirrm share/gnome/help/anotherclock_applet/C
 @dirrm share/gnome/help/anotherclock_applet
-@dirrm share/gnome/gweather
-@dirrm share/gnome/gkb
-@dirrm share/gnome/geyes/Horrid
-@dirrm share/gnome/geyes/Default-tiny
-@dirrm share/gnome/geyes/Default
-@dirrm share/gnome/geyes/Bloodshot
-@dirrm share/gnome/geyes/Bizarre
-@dirrm share/gnome/geyes
 @dirrm share/gnome/clockmail/radar-green
 @dirrm share/gnome/clockmail/radar-blue
 @dirrm share/gnome/clockmail/odometer
