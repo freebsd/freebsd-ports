@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bdb
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.7
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://moulon.inra.fr/pub/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -30,11 +30,14 @@ USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 USE_RUBY_RDOC=		yes
 
-.if defined(WITH_BDB4)
-CONFIGURE_ARGS=	--with-db-include-dir="${PREFIX}/include/db4" \
+.if defined(WITH_BDB41)
+CONFIGURE_ARGS=	--with-db-include="${PREFIX}/include/db41" \
+		--with-db-version=41
+.elif defined(WITH_BDB4)
+CONFIGURE_ARGS=	--with-db-include="${PREFIX}/include/db4" \
 		--with-db-version=4
 .else
-CONFIGURE_ARGS=	--with-db-include-dir="${PREFIX}/include/db3" \
+CONFIGURE_ARGS=	--with-db-include="${PREFIX}/include/db3" \
 		--with-db-version=3
 .endif
 INSTALL_TARGET=	site-install
