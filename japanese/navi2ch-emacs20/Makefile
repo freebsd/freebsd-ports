@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	navi2ch
-PORTVERSION=	010701
+PORTVERSION=	010727
 CATEGORIES=	japanese www elisp
 MASTER_SITES=	http://www.geocities.co.jp/SiliconValley-Oakland/7673/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
@@ -28,7 +28,7 @@ PLIST_SUB=	XEMACS=""
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${PREFIX}/${DOCDIR}
-.for i in README TODO
+.for i in ChangeLog README TODO
 	${INSTALL_DATA} ${WRKSRC}/$i ${PREFIX}/${DOCDIR}
 .endfor
 .endif
