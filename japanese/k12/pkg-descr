@@ -1,0 +1,9 @@
+Japanese 12 dot font named `kanamecho'.
+knmhn12x.pcf:-MNKANAME-Fixed-Medium-R-Normal--12-110-75-75-C-60-JISX0201.1976-0
+knmzn12x.pcf:-MNKANAME-Fixed-Medium-R-Normal--12-110-75-75-C-120-JISX0208.1983-0
+
+You can also use 'k12' as an alias for knmzn12x.pcf, and 'r12' for knmhn12x.pcf.
+
+Simple usage:
+	% kterm -fn r12 -fk k12 -fl r12
+	% mule -fn r12 

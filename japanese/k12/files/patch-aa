@@ -1,0 +1,17 @@
+*** /dev/null	Sat Jul  6 10:38:40 1996
+--- Makefile	Sat Jul  6 12:25:35 1996
+***************
+*** 0 ****
+--- 1,12 ----
++ all:
++ 	bdftopcf knmhn12x.bdf > knmhn12x.pcf
++ 	bdftopcf knmzn12x.bdf > knmzn12x.pcf
++ 	compress *.pcf
++ install:
++ 	if [ ! -d /usr/X11R6/lib/X11/k12 ] ; then \
++ 	mkdir -p /usr/X11R6/lib/X11/k12 ; fi
++ 	if [ ! -d /usr/X11R6/lib/X11/fonts/misc ] ; then \
++ 	mkdir -p /usr/X11R6/lib/X11/fonts/misc ; fi
++ 	cp knmhn12x.pcf.Z knmzn12x.pcf.Z /usr/X11R6/lib/X11/fonts/misc/
++ 	cp readme.kaname_bdf doc.orig/* /usr/X11R6/lib/X11/k12 
++ 	cd /usr/X11R6/lib/X11/fonts/misc ; mkfontdir
