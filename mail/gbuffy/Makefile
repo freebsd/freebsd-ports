@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gbuffy
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.fiction.net/blong/programs/gbuffy/
 
-MAINTAINER=	rasmus@kaj.se
+MAINTAINER=	olive@oban.frmug.org
 COMMENT=	A GTK+ multiple mailbox "biff" program
 
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
