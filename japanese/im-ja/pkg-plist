@@ -1,6 +1,8 @@
 bin/im-ja-conf
 bin/im-ja-xim-server
+@unexec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-uninstall-rule %D/etc/gconf/schemas/im-ja.schemas > /dev/null || /usr/bin/true
 etc/gconf/schemas/im-ja.schemas
+@exec env GCONF_CONFIG_SOURCE=xml::%D/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule %D/etc/gconf/schemas/im-ja.schemas > /dev/null || /usr/bin/true
 lib/gtk-2.0/2.4.0/immodules/im-ja.so
 lib/im-ja/im-ja-applet
 lib/im-ja/kpengine

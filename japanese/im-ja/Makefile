@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	im-ja
-PORTVERSION=	1.0
+PORTVERSION=	1.2
 CATEGORIES=	japanese x11-toolkits
 MASTER_SITES=	http://im-ja.sourceforge.net/
 
 MAINTAINER=	nectar@FreeBSD.org
 COMMENT=	A Japanese input module for GTK2
 
+OPTIONS+=	ANTHY	"Use Anthy" on
 OPTIONS+=	CANNA	"Use Canna" on
 OPTIONS+=	WNN	"Use FreeWnn" on
 
@@ -20,7 +21,7 @@ USE_PERL5_BUILD=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
 USE_INC_LIBTOOL_VER=13
-USE_GNOME=	gnomeprefix gnomehack gnomepanel
+USE_GNOME=	gnomeprefix gnomehack gnomepanel lthack
 GNU_CONFIGURE=	yes
 
 LIBS+=		-L${LOCALBASE}/lib -L${X11BASE}/lib
@@ -33,15 +34,20 @@ MAN1=		im-ja-conf.1 im-ja-xim-server.1
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_CANNA)
-LIB_DEPENDS+=	RKC.1:${PORTSDIR}/japanese/Canna
+.if defined(WITHOUT_ANTHY)
+CONFIGURE_ARGS+=	--disable-anthy
 .else
-CONFIGURE_ARGS+=	--disable-canna
+LIB_DEPENDS+=	anthy.1:${PORTSDIR}/japanese/anthy
 .endif
-.if defined(WITH_WNN)
-LIB_DEPENDS+=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
+.if defined(WITHOUT_CANNA)
+CONFIGURE_ARGS+=	--disable-canna
 .else
+LIB_DEPENDS+=	RKC.1:${PORTSDIR}/japanese/Canna
+.endif
+.if defined(WITHOUT_WNN)
 CONFIGURE_ARGS+=	--disable-wnn
+.else
+LIB_DEPENDS+=	wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
 .endif
 
 post-patch:
