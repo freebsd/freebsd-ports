@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ptex-tetex
-PORTVERSION=	3.1.4
+PORTVERSION=	3.1.5
 PORTREVISION=	0
 CATEGORIES=	japanese print
 MASTER_SITES=	ftp://sunsite.informatik.rwth-aachen.de/pub/comp/tex/teTeX/2.0/distrib/ \
