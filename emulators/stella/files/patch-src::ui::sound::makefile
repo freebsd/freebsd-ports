@@ -1,0 +1,14 @@
+--- src/ui/sound/makefile.orig	Fri Dec 28 04:54:36 2001
++++ src/ui/sound/makefile	Tue Jan  7 09:10:08 2003
+@@ -1,9 +1,9 @@
+ ###############################################################################
+ ## C compiler to use
+ ###############################################################################
+-CC = gcc
++CC ?= gcc
+ 
+-CFLAGS = -DWIN32 -O -ansi -Wall
++CFLAGS += -DWIN32
+ 
+ OBJS = TIASound.o
+ 

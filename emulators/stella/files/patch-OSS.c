@@ -1,5 +1,5 @@
---- ../ui/sound/OSS.c.orig	Tue Jan  8 17:11:32 2002
-+++ ../ui/sound/OSS.c	Mon Dec 30 04:08:03 2002
+--- src/ui/sound/OSS.c.orig	Tue Jan  8 17:11:32 2002
++++ src/ui/sound/OSS.c	Mon Dec 30 04:08:03 2002
 @@ -32,12 +32,7 @@
  #include <sys/types.h>
  #include <unistd.h>

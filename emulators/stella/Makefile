@@ -7,6 +7,7 @@
 
 PORTNAME=	stella
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,17 +15,15 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_XLIB=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+BUILD_WRKSRC=	${WRKSRC}/src/build
 
-PORTTOP=	${WRKDIR}/${PKGNAME}
-WRKSRC=		${PORTTOP}/src/build
+USE_XLIB=	yes
 USE_GMAKE=	yes
+MAKE_ENV=	CC="${CC}" CFLAGS="${CFLAGS}"
 MAKEFILE=	makefile
 ALL_TARGET=	freebsd-x
 
-USE_XLIB=	yes
-
-DOCSDIR=	${PREFIX}/share/doc/stella
 DOCS=		docs/stella.html
 GFX=		docs/graphics/chucky_cheese.png \
 		docs/graphics/circuit.png \
@@ -35,25 +34,24 @@ GFX=		docs/graphics/chucky_cheese.png \
 		docs/graphics/space_invaders.png
 
 post-build:
-	@(cd ${PORTTOP}/src/ui/sound && \
+	@(cd ${WRKSRC}/src/ui/sound && \
 		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} \
 		${MAKE_ARGS} oss)
 
 do-install:
 .for exe in src/build/stella.x11 src/ui/sound/stella-sound
-	${INSTALL_PROGRAM} ${PORTTOP}/${exe} ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${exe} ${PREFIX}/bin/
 .endfor
-	${MKDIR} ${PREFIX}/share/stella
-	${INSTALL_DATA} ${PORTTOP}/src/emucore/stella.pro \
-		${PREFIX}/share/stella/
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/src/emucore/stella.pro ${DATADIR}/
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for doc in ${DOCS}
-	${INSTALL_DATA} ${PORTTOP}/${doc} ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}/
 .endfor
 	${MKDIR} ${DOCSDIR}/graphics
 .for gfx in ${GFX}
-	${INSTALL_DATA} ${PORTTOP}/${gfx} ${DOCSDIR}/graphics/
+	${INSTALL_DATA} ${WRKSRC}/${gfx} ${DOCSDIR}/graphics/
 .endfor
 .endif
 
