@@ -1,0 +1,13 @@
+bin/dstumbler
+bin/dwepcrack
+bin/dwepdump
+bin/dwepkeygen
+bin/prism2ctl
+bin/prism2dump
+%%PORTDOCS%%share/doc/bsd-airtools/README.dstumbler
+%%PORTDOCS%%share/doc/bsd-airtools/README.dwepcrack
+%%PORTDOCS%%share/doc/bsd-airtools/README.dwepdump
+%%PORTDOCS%%share/doc/bsd-airtools/README.dwepkeygen
+%%PORTDOCS%%share/doc/bsd-airtools/README.prism2ctl
+%%PORTDOCS%%share/doc/bsd-airtools/README.prism2dump
+%%PORTDOCS%%@dirrm share/doc/bsd-airtools

@@ -1,0 +1,12 @@
+bsd-airtools is a package that provides a complete toolset for
+wireless 802.11b auditing. Namely, it currently contains a bsd-based
+wep cracking application, called dweputils. It also contains a curses
+based ap detection application similar to netstumbler (dstumbler) that
+can be used to detect wireless access points and connected nodes, view
+signal to noise graphs, and interactively scroll through scanned ap's
+and view statistics for each. It also includes a couple other tools to
+provide a complete toolset for making use of all 14 of the prism2
+debug modes as well as do basic analysis of the hardware-based
+link-layer protocols provided by prism2's monitor debug mode.
+
+WWW: http://www.dachb0den.com/projects/bsd-airtools.html
