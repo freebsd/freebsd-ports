@@ -8,7 +8,7 @@
 PORTNAME=	ipcalc
 PORTVERSION=	0.33
 CATEGORIES=	net
-MASTER_SITES=	http://jodies.cx/
+MASTER_SITES=	http://jodies.de/
 DISTFILES=	ipcalc.pl
 EXTRACT_ONLY=
 
