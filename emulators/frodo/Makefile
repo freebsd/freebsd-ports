@@ -25,7 +25,7 @@ do-configure:
 	@(cd ${WRKSRC}; ${SH} ./configure)
 
 do-install:
-	${SED} -e 's/\$${PREFIX}/${PREFIX:S/\//\\\//g}/g' \
+	${SED} -e 's=\$${PREFIX}=${PREFIX}=g' \
 		 < ${FILESDIR}/frodo > ${WRKDIR}/frodo
 	${INSTALL_SCRIPT} ${WRKDIR}/frodo ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/libexec/frodo
