@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	global
-PORTVERSION=	4.5
+PORTVERSION=	4.5.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.tamacom.com/global/
 
@@ -15,10 +15,10 @@ MAINTAINER=	jos@catnook.com
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 
-MAN1=		htags.1 btreeop.1 gozilla.1 gtags.1 global.1 gctags.1
+MAN1=		gctags.1 global.1 gozilla.1 gtags.1 htags.1
 
 post-patch:
-	${PERL} -pi -e "s|\@PERL\@|${PERL}|g" ${WRKSRC}/htags/htags.in
+	@${PERL} -pi -e "s|\@PERL\@|${PERL}|g" ${WRKSRC}/htags/htags.in
 
 post-install:
 	install-info ${PREFIX}/info/global.info ${PREFIX}/info/dir
