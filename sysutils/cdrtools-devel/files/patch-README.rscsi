@@ -34,12 +34,3 @@
  
  RSCSI Security:
  
-@@ -96,7 +93,7 @@
- 		information about the remote libscg version used for the connection.
- 
- -	To be able to use the remote SCSI client code from win32 you need to create
--	a file /etc/passwd with a corect entry for the user you are on win32.
-+	a file /etc/passwd with a correct entry for the user you are on win32.
- 	Call 'id' to get the right user id.
- 	Note that remote SCSI has not yet been tested on Win32.
- 
