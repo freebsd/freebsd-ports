@@ -1,9 +1,9 @@
 # New ports collection makefile for:    maplay
 # Version required:     1.2
 # Date created:         Feb 13 1995
-# Whom:                 jkh
+# Whom:                 
 #
-# $Id: Makefile,v 1.3 1995/04/11 19:46:44 asami Exp $
+# $Id: Makefile,v 1.4 1996/11/15 23:13:48 obrien Exp $
 #
 
 DISTNAME=       maplay1_2
@@ -11,8 +11,6 @@ PKGNAME=	maplay-1.2
 CATEGORIES=	audio
 MASTER_SITES=   ftp://ftp.iuma.com/audio_utils/mpeg_players/Workstations/
 EXTRACT_SUFX=	.tar.Z
-
-MAINTAINER=	jkh@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 PATCH_STRIP=	-p2

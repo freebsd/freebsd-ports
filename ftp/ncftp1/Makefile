@@ -3,15 +3,13 @@
 # Date created:         20 Jun 1996
 # Whom:                 jkh
 #
-# $Id: Makefile,v 1.3 1996/11/18 11:35:30 asami Exp $
+# $Id: Makefile,v 1.4 1996/12/01 01:23:00 obrien Exp $
 #
 
 DISTNAME=       ncftp-1.9.5
 CATEGORIES=	net
 MASTER_SITES=   ftp://ftp.probe.net/pub/ncftp/
 EXTRACT_SUFX=	.tgz
-
-MAINTAINER=	jkh@FreeBSD.ORG
 
 MAN1=		ncftp.1
 
