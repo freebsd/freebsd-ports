@@ -1,0 +1,8 @@
+This package allows Ruby developers to write applications that store
+their configuration data using GConf (1.0.x).  GConf is a
+configuration database system written by Havoc Pennington et al, and
+part of the GNOME application development framework (although it can
+be used separately).
+
+Author:	Neil Conway <neilconway@home.com>
+WWW:	http://ruby-gnome.sf.net/gconf.html
