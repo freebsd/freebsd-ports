@@ -1,0 +1,163 @@
+--- par.man.orig	Fri Aug 17 12:11:42 2001
++++ par.man	Mon Jan  5 13:18:46 2004
+@@ -1,46 +1,46 @@
+-.TH PAR 1 "November 1999" "Version 0.5 (beta)" "Palm hacking commands"
++.TH PDBAR 1 "November 1999" "Version 0.5 (beta)" "Palm hacking commands"
+ .SH NAME
+-par \- Palm database archiver, version 0.5.
++pdbar \- Palm database archiver, version 0.5.
+ .SH SYNOPSIS
+-.B par t
++.B pdbar t
+ .I dbfile
+ .PP
+-.B par h
++.B pdbar h
+ .I dbfile
+ .PP
+-.B par x
++.B pdbar x
+ .I dbfile
+ .BI [ ioptions ]
+ .BI [ records.. ]
+ .PP
+-.B par\ c
++.B pdbar\ c
+ .BI [ hoptions ]
+ .I dbfile\ name\ type\ cid
+ .BI [ ioptions ]
+ .BI [ files.. ]
+ .PP
+-.B par u
++.B pdbar u
+ .BI [ hoptions ]
+ .I dbfile
+ .BI [ ioptions ]
+ .BI [ updates.. ]
+ .PP
+-.B par a
++.B pdbar a
+ .BI [ hoptions ]
+ .I dbfile
+ .BI [ ioptions ]
+ .BI [ files.. ]
+ .PP
+-.B par d
++.B pdbar d
+ .BI [ hoptions ]
+ .I dbfile
+ .BI [ doptions ]
+ .BI [ records.. ]
+ .PP
+-.B par V
++.B pdbar V
+ .SH DESCRIPTION
+ The
+-.B par
++.B pdbar
+ utility creates and manipulates PalmOS database
+ .B (.pdb)
+ and resource
+@@ -161,7 +161,7 @@
+ .B x
+ mode.
+ In addition to individual records and resources,
+-.B par
++.B pdbar
+ can append whole databases, in effect merging the records or resources
+ from one database into another. Databases may be specified as append
+ items explicitly using the
+@@ -330,23 +330,23 @@
+ .SH EXAMPLES
+ The following example prints the header information for the database 'foo.pdb'.
+ .PP
+-.B par h foo.pdb
++.B pdbar h foo.pdb
+ .PP
+ The following extracts all records from 'foo.pdb'.
+ .PP
+-.B par x foo.pdb
++.B pdbar x foo.pdb
+ .PP
+ The following extracts the application icon resource from 'app.prc' and saves
+ it in the file 'icon.Tbmp'. Note the use of decimal specification for the
+ resource id. The id may be specified in hex using by using the '0x' prefix.
+ .PP
+-.B par x app.prc -f icon.Tbmp tAIB 1000
++.B pdbar x app.prc -f icon.Tbmp tAIB 1000
+ .PP
+ The following creates a new application resource database from all the
+ the files with a '.bin' extension in the current directory. The database
+ will have creator id of 'djwP' and will have the backup bit set.
+ .PP
+-.B par c -a \&"resource|backup\&" app.prc myapp appl djwP *.bin
++.B pdbar c -a \&"resource|backup\&" app.prc myapp appl djwP *.bin
+ .PP
+ If you use the author's technique for creating multi-segment library
+ prcs with CodeWarrior, the following example will be useful. This
+@@ -355,7 +355,7 @@
+ type = 'code', id = '1' (as used in an application) to type = 'libr',
+  id = '0' (as used in a library).
+ .PP
+-.B par u -T libr mylib.prc -T libr 0 code 1
++.B pdbar u -T libr mylib.prc -T libr 0 code 1
+ .PP
+ The following example merges the resources from two different
+ resource databases,
+@@ -368,10 +368,10 @@
+ of an application, using the individual resource databases as
+ libraries.
+ .PP
+-.B par r myapp.prc myapp appl djwP code.prc resource.prc
++.B pdbar r myapp.prc myapp appl djwP code.prc resource.prc
+ .PP
+ By default,
+-.B par
++.B pdbar
+ saves extracted resources using the form
+ .IR <type><id>.bin ,
+ where
+@@ -380,31 +380,37 @@
+ <id>
+ is the resource id in 4 digit hexadecimal. When appending resources
+ to a new or existing resource database,
+-.B par
++.B pdbar
+ will attempt to decode the resource and id of the resource being appended
+ from the resource filename using this same naming scheme, or you can
+ explicitly specify the resource and id using the
+ .I -T
+ syntax. Here are two invocations of
+-.B par
++.B pdbar
+ that do exactly the same thing: create a new resource database with one
+ resource which has type = NFNT and id = 256 (0x0100 hexadecimal):
+ .PP
+-.B par c -a \&"resource\&" font.prc Font FONT djwF NFNT0100.bin
++.B pdbar c -a \&"resource\&" font.prc Font FONT djwF NFNT0100.bin
+ .P
+-.B par r font.prc Font FONT djwF -T NFNT 256 myfont
++.B pdbar r font.prc Font FONT djwF -T NFNT 256 myfont
+ .PP
+ The following example creates a stream database that can be accessed using
+ the PalmOS FileStream API. The stream will contain the contents of the
+ file 'WarAndPeace.txt':
+ .PP
+-.B par c -a \&"stream\&" book.pdb Book DATA djwS WarAndPeace.txt
++.B pdbar c -a \&"stream\&" book.pdb Book DATA djwS WarAndPeace.txt
+ .PP
+ In the following example, 'book.pdb' is a stream database. This
+ example extracts the stream from that database and stores the result
+ in the output file 'Book.txt':
+ .PP
+-.B par x book.pdb Book.txt
++.B pdbar x book.pdb Book.txt
+ .SH AUTHOR
+ .B par
+ was written by David Williams, djw@djw.org
++.SH "FreeBSD NOTES"
++.B par
++was renamed
++.B pdbar
++to avoid conflicting with the preexisting text processing tool of
++the same name.

@@ -1,0 +1,7 @@
+The par utility creates and manipulates PalmOS database (.pdb)
+and resource (.prc) files.
+
+It's renamed pdbar for FreeBSD to avoid conflicting with
+textproc/par (which predates this "par" by about six years).
+
+WWW: http://www.djw.org/product/palm/par/
