@@ -1,0 +1,6 @@
+Framework for the development of new Content Types in Zope/CMF/Plone.
+Schema driven automatic form generation, simple integration with rich
+content types, and a lower entry bar to the complex requirements Zope
+places on new content objects.
+
+WWW:	http://sourceforge.net/projects/archetypes
