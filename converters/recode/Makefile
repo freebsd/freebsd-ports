@@ -13,9 +13,16 @@ MASTER_SITE_SUBDIR=	recode
 
 MAINTAINER=	torstenb@FreeBSD.org
 
+LIB_DEPENDS=	intl.1:${PORTSDIR}/devel/gettext
+
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
 MAN1=		recode.1
+
+pre-patch:
+	@${PERL} -pi -e 's|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
