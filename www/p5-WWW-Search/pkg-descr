@@ -1,0 +1,11 @@
+       This class is the parent for all access method supported
+       by the WWW::Search library.  This library implements a
+       Perl API to web-based search engines.
+
+       Current search engines supported include AltaVista (both
+       web and news), Dejanews, Excite (web only), HotBot (web
+       only), Infoseek (e-mail, web, and news) and Lycos.
+
+       Search results are limited and there is a pause between
+       each request for results to avoid overloading either the
+       client or the server.
