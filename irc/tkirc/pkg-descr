@@ -1,7 +1,7 @@
-tkirc is a frontend for unix's ircII (shell-client for the Internet
+Tkirc is a frontend for unix's ircII (shell-client for the Internet
 Relay Chat) based on Tcl/Tk.  If you know how to use ircII, you should
-not have any problems to use tkirc after installation.
+not have any problems using tkirc.
 
-See /usr/pkg/share/doc/tkirc/README for more information.
+See /usr/local/share/doc/tkirc/README for more information.
 
-Also, copy /usr/pkg/share/doc/tkirc/tkircrc-example to $HOME/.tkircrc.
+Also, copy /usr/local/share/doc/tkirc/tkircrc-example to $HOME/.tkircrc.
