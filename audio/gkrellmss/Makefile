@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 CATEGORIES=	audio
 MASTER_SITES=	http://web.wt.net/~billw/gkrellmss/
 
-MAINTAINER=	hmendes_br@yahoo.com
+MAINTAINER=	hmendes@brturbo.com
 
 BUILD_DEPENDS=	${X11BASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 LIB_DEPENDS=	gdk_pixbuf_xlib.2:${PORTSDIR}/graphics/gdk-pixbuf
