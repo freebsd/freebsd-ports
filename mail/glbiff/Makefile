@@ -6,30 +6,31 @@
 #
 
 PORTNAME=	glbiff
-PORTVERSION= 	0.2.11
+PORTVERSION=	0.3.5
 CATEGORIES=	mail
-MASTER_SITES=	http://www.eecg.utoronto.ca/~mac/projects/
+MASTER_SITES=	http://www.dgp.utoronto.ca/~mac/projects/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
-LIB_DEPENDS=	GL:${PORTSDIR}/graphics/Mesa3 \
-		GLU:${PORTSDIR}/graphics/Mesa3 \
-		glut:${PORTSDIR}/graphics/Mesa3
+LIB_DEPENDS=	GL:${PORTSDIR}/graphics/Mesa3
 
-GNU_CONFIGURE=	yes
 USE_X_PREFIX=	yes
+GNU_CONFIGURE=	yes
+
+MAN1=		glbiff.1
+MAN5=		glbiffrc.5
 
 do-install:
-	@ ${INSTALL_PROGRAM} ${WRKSRC}/glbiff ${PREFIX}/bin
-	@ ${MKDIR} ${PREFIX}/share/examples/glbiff
-	@ ${INSTALL_DATA} ${WRKSRC}/glbiffrc.sample ${PREFIX}/share/examples/glbiff/dot.glbiffrc.sample
-
-post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/glbiff ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/glbiff.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/glbiffrc.5 ${PREFIX}/man/man5
+	@${MKDIR} ${PREFIX}/share/examples/glbiff
+	${INSTALL_DATA} ${WRKSRC}/glbiffrc.sample ${PREFIX}/share/examples/glbiff/dot.glbiffrc.sample
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${PREFIX}/share/doc/glbiff
+	@${MKDIR} ${PREFIX}/share/doc/glbiff
 .for file in ChangeLog README README.last-minute TODO
-	@ ${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/glbiff
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/doc/glbiff
 .endfor
 .endif
 
