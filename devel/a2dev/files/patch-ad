@@ -1,7 +1,6 @@
-diff -ur a2dev-1.2.orig/link/Makefile a2dev-1.2/link/Makefile
---- a2dev-1.2.orig/link/Makefile	Sun Mar 26 03:52:45 1995
-+++ a2dev-1.2/link/Makefile	Wed Jul  1 18:23:18 1998
-@@ -16,7 +16,7 @@
+--- a2dev-1.2/link/Makefile.orig	Sat Mar 25 21:52:45 1995
++++ a2dev-1.2/link/Makefile	Tue Oct 13 21:28:09 1998
+@@ -16,15 +16,15 @@
  ### Abstract rules
  ###
  
@@ -10,3 +9,13 @@ diff -ur a2dev-1.2.orig/link/Makefile a2dev-1.2/link/Makefile
  
  install:	installbin installman
  
+ installbin:	$(PROG)
+-	$(INSTALL) -m 0755 $(PROG) $(INSTBIN)
++	$(INSTALL) -c -m 0755 $(PROG) $(INSTBIN)
+ 
+ installman:	$(PROG).1
+-	$(INSTALL) -m 0644 $(PROG).1 $(INSTMAN)/man1
++	$(INSTALL) -c -m 0644 $(PROG).1 $(INSTMAN)/man1
+ 
+ clean:
+ 	$(RM) core *.o
