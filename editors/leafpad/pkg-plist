@@ -16,5 +16,6 @@ share/locale/sv/LC_MESSAGES/leafpad.mo
 share/locale/ta/LC_MESSAGES/leafpad.mo
 share/locale/zh_CN/LC_MESSAGES/leafpad.mo
 share/locale/zh_TW/LC_MESSAGES/leafpad.mo
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec update-desktop-database > /dev/null || /usr/bin/true
 @unexec update-desktop-database > /dev/null || /usr/bin/true
