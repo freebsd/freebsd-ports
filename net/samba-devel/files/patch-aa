@@ -1,6 +1,6 @@
---- Makefile.in.orig	Thu Dec 13 21:38:49 2001
-+++ Makefile.in	Sun Dec 16 13:09:45 2001
-@@ -50,7 +50,7 @@
+--- Makefile.in.orig	Fri Aug  9 08:34:27 2002
++++ Makefile.in	Fri Aug  9 08:36:52 2002
+@@ -52,7 +52,7 @@
  # set these to where to find various files
  # These can be overridden by command line switches (see smbd(8))
  # or in smb.conf (see smb.conf(5))
@@ -9,26 +9,7 @@
  CONFIGFILE = $(LIBDIR)/smb.conf
  LMHOSTSFILE = $(LIBDIR)/lmhosts
  DRIVERFILE = $(LIBDIR)/printers.def
-@@ -66,6 +66,9 @@
- # the directory where lock files go
- LOCKDIR = @lockdir@
- 
-+# the directory where pid files go
-+PIDFILEDIR = $(VARDIR)/run
-+
- # man pages language(s)
- man_langs = "@manlangs@"
- 
-@@ -78,7 +81,7 @@
- FLAGS32  = $(ISA32) $(FLAGS5)
- 
- PASSWD_FLAGS = -DSMB_PASSWD_FILE=\"$(SMB_PASSWD_FILE)\" -DPRIVATE_DIR=\"$(PRIVATE_DIR)\"
--PATH_FLAGS1 = -DCONFIGFILE=\"$(CONFIGFILE)\"  -DSBINDIR=\"$(SBINDIR)\"
-+PATH_FLAGS1 = -DCONFIGFILE=\"$(CONFIGFILE)\"  -DSBINDIR=\"$(SBINDIR)\" -DPIDFILEDIR=\"$(PIDFILEDIR)\"
- PATH_FLAGS2 = $(PATH_FLAGS1) -DBINDIR=\"$(BINDIR)\" -DDRIVERFILE=\"$(DRIVERFILE)\" 
- PATH_FLAGS3 = $(PATH_FLAGS2) -DLMHOSTSFILE=\"$(LMHOSTSFILE)\" 
- PATH_FLAGS4 = $(PATH_FLAGS3) -DSWATDIR=\"$(SWATDIR)\"  -DLOCKDIR=\"$(LOCKDIR)\"
-@@ -503,7 +506,7 @@
+@@ -557,7 +557,7 @@
  	@if (: >> $@ || : > $@) >/dev/null 2>&1; then rm -f $@; else \
  	 dir=`echo $@ | sed 's,/[^/]*$$,,;s,^$$,.,'` $(MAKEDIR); fi
  	@echo Compiling $*.c
@@ -37,7 +18,7 @@
  	  -o $@ 
  @BROKEN_CC@	-mv `echo $@ | sed 's%^.*/%%g'` $@
  
-@@ -529,7 +532,7 @@
+@@ -583,7 +583,7 @@
  	@if (: >> $@ || : > $@) >/dev/null 2>&1; then rm -f $@; else \
  	  dir=`echo $@ | sed 's,/[^/]*$$,,;s,^$$,.,'` $(MAKEDIR); fi
  	@echo Compiling $*.c with @PICFLAG@
