@@ -6,37 +6,32 @@
 #
 
 PORTNAME=	fwbuilder
-PORTVERSION=	0.8.7
-PORTREVISION=	1
+PORTVERSION=	1.0.10
+PORTREVISION=   RC5
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	ftp://downloads.fwbuilder.org/pub/fwbuilder/nightly_builds/current/ \
+		${MASTER_SITE_SOURCEFORGE}/fwbuilder/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Firewall Builder GUI for IPFilter
+MAINTAINER=	devnull@uptsoft.com
+COMMENT=	Firewall Builder GUI and policy compilers
 
-LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk--
+LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk-- \
+		fwbuilder.5:${PORTSDIR}/security/libfwbuilder
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
-
+CONFIGURE_SCRIPT= autogen.sh
+# CONFIGURE_ARGS+=  --with-iconsdir=${X11BASE}/share/gnome/fwbuilder/pixmaps/ --with-templatedir=${X11BASE}/share/gnome/fwbuilder
+# USE_AUTOCONF=   yes
 USE_GMAKE=	yes
-USE_X_PREFIX=	yes
 USE_LIBTOOL=	yes
-USE_GNOME=	gnomehack gnomeprefix gnomelibs
-WITHOUT_ESOUND=	yes
-CONFIGURE_ARGS+=	--with-iconsdir=${X11BASE}/share/gnome/fwbuilder/pixmaps/ --with-templatedir=${X11BASE}/share/gnome/fwbuilder
+USE_GTK=	yes
+INSTALLS_SHLIB=	yes
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
+
+MAN1=		fwbuilder.1 fwblookup.1 fwb_ipt.1 fwb_ipf.1 fwb_ipfw.1 \
+		fwb_pf.1 fwb_install.1
 
 post-extract:
-	@${PERL} -pi -e "s/lc_r/pthread/" ${WRKSRC}/configure ;\
-	${PERL} -pi -e "s|/usr/bin|${LOCALBASE}/bin|" ${WRKSRC}/etc/fwbuilder_prefs.xml.in
-.for i in compiler-framework/Makefile.in gui/gnome-wrappers/Makefile.in \
-	gui/Makefile.in ipchains/Makefile.in ipfilter/Makefile.in \
-	iptables/Makefile.in
-	@${PERL} -pi -e "s|^CFLAGS\s+=\s+-Wall\s+-g|CFLAGS = \@CFLAGS@ -Wall|" ${WRKSRC}/src/$i
-.endfor
+	@${ECHO_CMD} "===! Running aclocal"
+	cd ${WRKDIR}/fwbuilder-1.0.10; aclocal; autoconf
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
