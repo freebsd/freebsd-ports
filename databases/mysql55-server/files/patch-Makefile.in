@@ -1,11 +1,11 @@
---- Makefile.in.orig	Wed Apr 18 10:54:42 2001
-+++ Makefile.in	Sat Apr 21 13:00:23 2001
-@@ -181,8 +181,12 @@
+--- Makefile.in.orig	Mon Jun  3 12:45:17 2002
++++ Makefile.in	Mon Jun 17 20:57:29 2002
+@@ -185,8 +185,11 @@
  # These are built from source in the Docs directory
  EXTRA_DIST = INSTALL-SOURCE README 			COPYING COPYING.LIB MIRRORS
  
--SUBDIRS = include @docs_dirs@ @readline_dir@ 			@thread_dirs@ @sql_client_dirs@ 			@sql_server_dirs@ scripts tests man 			@bench_dirs@ support-files
- 
+-SUBDIRS = include @docs_dirs@ @readline_dir@ 			@thread_dirs@ @sql_client_dirs@ 			@sql_server_dirs@ scripts tests man 			@bench_dirs@ support-files os2
+-
 +.if defined(CLIENT_ONLY)
 +SUBDIRS = include @readline_dir@ @sql_client_dirs@ tests man
 +.else

@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	${MASTERPORTNAME}
-PORTVERSION=	3.23.49
+PORTVERSION=	3.23.51
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
@@ -32,7 +32,8 @@ CONFIGURE_ARGS=	--localstatedir=${DB_DIR} \
 		--with-mit-threads=no \
 		--with-libwrap \
 		--with-low-memory \
-		--with-comment='FreeBSD port: ${PKGNAME}'
+		--with-comment='FreeBSD port: ${PKGNAME}' \
+		--program-prefix=''
 
 .if ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+=--enable-assembler --with-berkeley-db --with-innodb
@@ -103,10 +104,6 @@ pre-fetch:
 	@${ECHO} "				This setting may produce broken code and thus"
 	@${ECHO} "				is not recommended for production servers."
 	@${ECHO} ""
-
-post-patch:
-	${MV} ${WRKSRC}/strings/strings-x86.s ${WRKSRC}/strings/strings-x86.S
-	${MV} ${WRKSRC}/strings/longlong2str-x86.s ${WRKSRC}/strings/longlong2str-x86.S
 
 .if exists(${DB_DIR}) && !defined(PACKAGE_BUILDING) && !defined(OVERWRITE_DB) && !defined(SKIP_INSTALL_DB)
 pre-install:
