@@ -1,0 +1,22 @@
+--- src/Makefile.orig	Sun Jul  6 10:39:29 1997
++++ src/Makefile	Fri Nov 14 14:05:57 1997
+@@ -1,8 +1,8 @@
+ include ../VERSION
+ 
+ # Linux
+-INCSDIR     =
+-LIBSDIR     = -L/usr/X11R6/lib
++INCSDIR     = -I$(PREFIX)/include
++LIBSDIR     = -L$(PREFIX)/lib
+ # overriden by upper makefile
+ LIBDIR=../lib
+ ETCDIR=../lib
+@@ -22,7 +22,7 @@
+ 	-DVERSION='"$(VERSION)"' \
+ 
+ #OPTIMIZE    = -g
+-OPTIMIZE   = -O -g
++OPTIMIZE   = $(CFLAGS)
+ #OPTIMIZE   = -O -g -pg
+ #OPTIMIE     = -O -s
+ #OPTIMIZE   = -O2 -s
