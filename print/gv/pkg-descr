@@ -1,3 +1,4 @@
-gv is an X11 PostScript and PDF previewer based on Tim Theisen's
-ghostview-1.5.  It uses the Xaw3d widget set, thus providing a much
-nicer look and it's said to be a bit faster.
+GNU gv allows to view and navigate through PostScript and PDF documents on
+an X display by providing a user interface for the ghostscript interpreter.
+
+WWW: http://www.gnu.org/software/gv/

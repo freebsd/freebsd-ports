@@ -1,0 +1,10 @@
+--- src/gv_misc_res.dat.bak	Mon Dec 20 01:21:45 2004
++++ src/gv_misc_res.dat	Wed Dec 29 22:58:43 2004
+@@ -463,7 +463,6 @@
+  <Key>BackSpace:	GV_Page(up,left-bottom,!page-1,bottom-rightedge)\n\
+  <Key>Insert:		GV_Page(page-5)		\n\
+  <Key>Delete:		GV_Page(page+5)		\n\
+- <Key>apLineDel:	GV_Page(page+5)		\n\
+  <Key>Home:		GV_Page(page=0)		\n\
+  <Key>End:		GV_Page(page=99999)	\n\
+  <Key>Prior:		GV_Page(page-1)		\n\

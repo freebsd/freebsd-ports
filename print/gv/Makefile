@@ -7,31 +7,38 @@
 #
 
 PORTNAME=	gv
-PORTVERSION=	3.5.8
-PORTREVISION=	3
+PORTVERSION=	3.6.1
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftpthep.physik.uni-mainz.de/pub/gv/unix/  \
-		${MASTER_SITE_TEX_CTAN}
-MASTER_SITE_SUBDIR=	support/ghostscript/gnu/gv/unix
-
-PATCHFILES=	gv_3.5.8-26.1.diff.gz
-PATCH_SITES=	http://security.debian.org/pool/updates/main/g/gv/
-PATCH_DIST_STRIP=	-p1
+MASTER_SITES=	${MASTER_SITE_GNU}
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PostScript and PDF previewer
 
-USE_GHOSTSCRIPT= yes
-
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
-USE_IMAKE=	yes
+USE_X_PREFIX=	yes
+USE_XPM=	yes
+USE_GHOSTSCRIPT=	yes
+USE_GETOPT_LONG=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/X11
+
+CPPFLAGS=	-I${X11BASE}/include
+LDFLAGS=	-L${X11BASE}/lib
+
 MAN1=		gv.1
+INFO=		gv
+PLIST_FILES=	bin/gv \
+		lib/X11/app-defaults/GV \
+		lib/X11/gv/gv_class.ad \
+		lib/X11/gv/gv_system.ad \
+		lib/X11/gv/gv_user.ad
 
 post-install:
-.if !defined(NOPORTDOCS)
-	@(cd ${WRKSRC}; ${MAKE_ENV} ${MAKE} install.doc)
-.endif
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
