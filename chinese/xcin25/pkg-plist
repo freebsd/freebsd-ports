@@ -5,34 +5,34 @@ lib/X11/xcin25/chewing.so
 lib/X11/xcin25/gen_inp.so
 lib/X11/xcin25/zh_hex.so
 lib/X11/xcin25/bin/cin2tab
-lib/X11/xcin25/doc/Bugs
-lib/X11/xcin25/doc/COPYING
-lib/X11/xcin25/doc/CREDITS
-lib/X11/xcin25/doc/Changes
-lib/X11/xcin25/doc/Cin
-lib/X11/xcin25/doc/CopyRight
-lib/X11/xcin25/doc/En/README.En
-lib/X11/xcin25/doc/En/SETUP.En
-lib/X11/xcin25/doc/En/Usage.En
-lib/X11/xcin25/doc/En/UserGuide.En
-lib/X11/xcin25/doc/En/internal/module.En
-lib/X11/xcin25/doc/En/internal/structer.En
-lib/X11/xcin25/doc/FAQ
-lib/X11/xcin25/doc/README
-lib/X11/xcin25/doc/SETUP
-lib/X11/xcin25/doc/Todo
-lib/X11/xcin25/doc/Usage
-lib/X11/xcin25/doc/UserGuide
-lib/X11/xcin25/doc/history/Changes-19991011
-lib/X11/xcin25/doc/internal/IMdkit
-lib/X11/xcin25/doc/internal/gen_inp
-lib/X11/xcin25/doc/internal/gui_request
-lib/X11/xcin25/doc/internal/module
-lib/X11/xcin25/doc/internal/structer
-lib/X11/xcin25/doc/modules/bimsphone
-lib/X11/xcin25/doc/modules/gen_inp
-lib/X11/xcin25/doc/modules/im_comm
-lib/X11/xcin25/doc/modules/zh_hex
+%%PORTDOCS%%lib/X11/xcin25/doc/Bugs
+%%PORTDOCS%%lib/X11/xcin25/doc/COPYING
+%%PORTDOCS%%lib/X11/xcin25/doc/CREDITS
+%%PORTDOCS%%lib/X11/xcin25/doc/Changes
+%%PORTDOCS%%lib/X11/xcin25/doc/Cin
+%%PORTDOCS%%lib/X11/xcin25/doc/CopyRight
+%%PORTDOCS%%lib/X11/xcin25/doc/En/README.En
+%%PORTDOCS%%lib/X11/xcin25/doc/En/SETUP.En
+%%PORTDOCS%%lib/X11/xcin25/doc/En/Usage.En
+%%PORTDOCS%%lib/X11/xcin25/doc/En/UserGuide.En
+%%PORTDOCS%%lib/X11/xcin25/doc/En/internal/module.En
+%%PORTDOCS%%lib/X11/xcin25/doc/En/internal/structer.En
+%%PORTDOCS%%lib/X11/xcin25/doc/FAQ
+%%PORTDOCS%%lib/X11/xcin25/doc/README
+%%PORTDOCS%%lib/X11/xcin25/doc/SETUP
+%%PORTDOCS%%lib/X11/xcin25/doc/Todo
+%%PORTDOCS%%lib/X11/xcin25/doc/Usage
+%%PORTDOCS%%lib/X11/xcin25/doc/UserGuide
+%%PORTDOCS%%lib/X11/xcin25/doc/history/Changes-19991011
+%%PORTDOCS%%lib/X11/xcin25/doc/internal/IMdkit
+%%PORTDOCS%%lib/X11/xcin25/doc/internal/gen_inp
+%%PORTDOCS%%lib/X11/xcin25/doc/internal/gui_request
+%%PORTDOCS%%lib/X11/xcin25/doc/internal/module
+%%PORTDOCS%%lib/X11/xcin25/doc/internal/structer
+%%PORTDOCS%%lib/X11/xcin25/doc/modules/bimsphone
+%%PORTDOCS%%lib/X11/xcin25/doc/modules/gen_inp
+%%PORTDOCS%%lib/X11/xcin25/doc/modules/im_comm
+%%PORTDOCS%%lib/X11/xcin25/doc/modules/zh_hex
 lib/X11/xcin25/tab/big5/array30.tab
 lib/X11/xcin25/tab/big5/bims_pinyin.tab
 lib/X11/xcin25/tab/big5/cj.tab
@@ -59,11 +59,11 @@ lib/X11/xcin25/tab/ph_index.dat
 lib/X11/xcin25/tab/us_freq.dat
 share/locale/zh_TW.Big5/LC_MESSAGES/xcin.mo
 @dirrm lib/X11/xcin25/bin
-@dirrm lib/X11/xcin25/doc/En/internal
-@dirrm lib/X11/xcin25/doc/En
-@dirrm lib/X11/xcin25/doc/history
-@dirrm lib/X11/xcin25/doc/internal
-@dirrm lib/X11/xcin25/doc/modules
+%%PORTDOCS%%@dirrm lib/X11/xcin25/doc/En/internal
+%%PORTDOCS%%@dirrm lib/X11/xcin25/doc/En
+%%PORTDOCS%%@dirrm lib/X11/xcin25/doc/history
+%%PORTDOCS%%@dirrm lib/X11/xcin25/doc/internal
+%%PORTDOCS%%@dirrm lib/X11/xcin25/doc/modules
 @dirrm lib/X11/xcin25/doc
 @dirrm lib/X11/xcin25/tab/big5
 @dirrm lib/X11/xcin25/tab/euc
