@@ -3,13 +3,12 @@
 # Date created:         5 Jan 1997
 # Whom:                 xaa@stack.nl
 #
-# $Id: Makefile,v 1.10 1997/05/11 17:08:23 markm Exp $
+# $Id: Makefile,v 1.11 1997/05/20 08:43:38 asami Exp $
 #
 
-DISTNAME=       xboard-3.6.1
+DISTNAME=       xboard-3.6.2
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_GNU} \
-		ftp://chess.onenet.net/pub/chess/X/
+MASTER_SITES=	${MASTER_SITE_GNU}
 
 MAINTAINER=	xaa@stack.nl
 
