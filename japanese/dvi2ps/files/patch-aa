@@ -1,5 +1,8 @@
---- Makefile.orig	Thu May 10 23:44:24 2001
-+++ Makefile	Thu May 10 23:47:47 2001
+
+$FreeBSD$
+
+--- Makefile.orig	Mon Sep 11 12:16:11 2000
++++ Makefile	Mon Mar 18 16:52:37 2002
 @@ -2,7 +2,7 @@
  # your site:
  #
@@ -9,3 +12,12 @@
  # where dvi2ps is installed
  BINAREA=${PREFIX}/bin
  #
+@@ -46,7 +46,7 @@
+ # FREETYPE -- FTLIB, FTINC
+ # VFLIB    -- FTLIB, FTINC, VFLIB, VFLIBINC
+ FTLIB = -L${PREFIX}/lib -lttf
+-FTINC = -I${PREFIX}/include/freetype
++FTINC = -I${PREFIX}/include/freetype1/freetype
+ VFLIB = -L${PREFIX}/lib -lVFlib2
+ VFLIBINC = -I${PREFIX}/include
+ 
