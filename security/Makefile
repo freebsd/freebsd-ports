@@ -58,6 +58,7 @@
     SUBDIR += digest
     SUBDIR += dirmngr
     SUBDIR += donkey
+    SUBDIR += doscan
     SUBDIR += dropbear
     SUBDIR += drweb
     SUBDIR += drweb-postfix
