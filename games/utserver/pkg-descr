@@ -1,0 +1,14 @@
+This package contains all of the items you'll need to run a
+Unreal Tournament Dedicated Server under FreeBSD (with Linux
+emulation).
+
+Dedicated server of the very popular first person shooter game.
+- default install points to '/compat/linux/usr/games/ut-server/'
+
+WWW: http://ut.abfackeln.com/installer.html?page=dedicated
+
+For more information about UT visit:
+http://www.unrealtournament.com/
+
+For more information about configuring Linux UT servers visit:
+http://www.planetunreal.com/TheAdminPage/TheLinuxServer.htm

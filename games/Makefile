@@ -257,6 +257,7 @@
     SUBDIR += twitch
     SUBDIR += uclient
     SUBDIR += uox3
+    SUBDIR += utserver
     SUBDIR += virt
     SUBDIR += wmeyes
     SUBDIR += wmminichess

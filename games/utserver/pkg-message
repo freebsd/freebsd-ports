@@ -1,0 +1,11 @@
+
+*WARNING* *WARNING* *WARNING* *WARNING* *WARNING* *WARNING*
+------------------------------------------------------------
+It is highly recommended to run the UT server in a non-root 
+environment. There is a zombie-process bug if running UT as 
+user root.
+
+If you want to use ngStats and/or ngWorldStats 
+install linux-jdk-1.2.2 from /usr/ports/java/linux-jdk
+------------------------------------------------------------
+
