@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.16 1995/10/17 08:27:08 asami Exp $
+# $Id: Makefile,v 1.17 1995/11/26 21:19:12 asami Exp $
 #
 
     SUBDIR += autoconf
@@ -10,6 +10,7 @@
     SUBDIR += gperf
     SUBDIR += libdlmalloc
     BROKEN += libmalloc
+    SUBDIR += libz
     SUBDIR += m4
     SUBDIR += mprof
     SUBDIR += noweb
