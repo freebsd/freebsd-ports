@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.36 1996/05/14 12:23:46 tg Exp $
+# $Id: Makefile,v 1.37 1996/08/16 13:45:55 erich Exp $
 #
 
     SUBDIR += acm
@@ -22,6 +22,7 @@
     SUBDIR += xjewel
     SUBDIR += xkobo
     SUBDIR += xlife
+    SUBDIR += xmahjongg
     SUBDIR += xmille
     SUBDIR += xmine
     SUBDIR += xminesweep
