@@ -23,10 +23,10 @@ and various other things.  ILU is provided free for unrestricted use.
 
 FreeBSD port notes:
 - I enabled http protocol support by default.
-- Official ILU patches are turned into port patches.
+- Official ILU patches are not fetched from PARC, but I hold a proven
+  snapshot at one of my own sites.
 - configure --bindir/--mandir doesn't work with current ILU version.
   I make symbolic links to ${PREFIX}/{bin,man}.
 - The FreeBSD port builds shareds libs for C libraries.
-- jdk-1.1 for FreeBSD works, 1.0.2 is not supported.
-- guile support is diabled. You need guile-1.2 with slib, then
-  remove -"-disable-guile-support" from Makefile to built with guile
+- jdk-1.1 for FreeBSD works, but is disabled by default because the
+  FreeBSD jdk is still in aout object format.

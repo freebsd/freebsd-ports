@@ -3,7 +3,7 @@
 # Date created:         29.9.1997
 # Whom:                 cracauer@cons.org "Martin Cracauer"
 #
-# $Id: Makefile,v 1.10 1998/08/20 21:28:09 hoek Exp $
+# $Id: Makefile,v 1.11 1998/08/22 04:45:03 hoek Exp $
 #
 
 DISTNAME=	ilu-2.0alpha12
@@ -11,17 +11,15 @@ PKGNAME=	ilu-2.0a12
 CATEGORIES=	devel
 MASTER_SITES=	ftp://parcftp.xerox.com/pub/ilu/2.0a12/
 
+PATCH_SITES=	http://www2.cons.org:8000/freebsd-distfiles/
+PATCHFILES=	${DISTNAME}-patches.html.gz
+
 MAINTAINER=	cracauer@cons.org
 
-NO_PACKAGE=	Doesn't work with optimization enabled
-
-# The official guile port is outdated. If you have 1.2 installed, remove
-#   --disable-guile-support
-CONFIGURE_ARGS=	--disable-guile-support --enable-http-protocol
+CONFIGURE_ARGS=	--enable-http-protocol --enable-os-threads=posix
 
 NO_WRKSUBDIR=	yes
 HAS_CONFIGURE=	yes
-# Actually GNU_CONFIGURE
 CONFIGURE_ARGS+=	--prefix=${PREFIX}/ilu
 
 INSTALL_TARGET=	Install
@@ -30,6 +28,9 @@ PLIST=		${WRKSRC}/PLIST
 # Startup script, run at boot time
 startup_dir=	${PREFIX}/etc/rc.d
 startup_script=	${startup_dir}/50.ilu.sh
+
+post-patch:
+	${PATCH} ${PATCH_DIST_ARGS} < ${SHLIBPATCH}
 
 do-install:
 	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
@@ -63,3 +64,17 @@ do-install:
 	${startup_script}
 
 .include <bsd.port.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+SHLIBPATCH=files/shlib-elf.patch
+# The FreeBSD Java Development Kit is still in aout object format.
+# You might want to enable it if you have an ELF JDK and/or build
+# a seperate aout ILU runtime to use with Java.
+CONFIGURE_ARGS+=	--disable-java-support 
+.else
+SHLIBPATCH=files/shlib-aout.patch
+# Java support on -stable does not work (ILU runtime dumps core).
+# You might want to enable it if you know what you are doing.
+# Maybe taking -O out of patches/patch-1-cra-cflags help.
+CONFIGURE_ARGS+=	--disable-java-support 
+.endif
