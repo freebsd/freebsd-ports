@@ -309,6 +309,7 @@ apel-emacs20	ports/editors/apel-emacs20
 apel-mule	ports/editors/apel-mule
 apel-xemacs21-mule	ports/editors/apel-xemacs21-mule
 apg		ports/security/apg
+apinger		ports/net/apinger
 apm		src/usr.sbin/apm
 apmconf		src/usr.sbin/apmconf
 apmd		src/usr.sbin/apmd
