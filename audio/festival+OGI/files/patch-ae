@@ -1,3 +1,4 @@
+$FreeBSD$
 $NetBSD: patch-ae,v 1.2 1999/10/11 14:13:49 proff Exp $
 
 --- speech_tools/include/EST_unix.h	Sun May 30 20:53:04 1999

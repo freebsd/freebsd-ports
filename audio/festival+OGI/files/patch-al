@@ -1,3 +1,4 @@
+$FreeBSD$
 $NetBSD: patch-al,v 1.1 2000/05/31 14:51:17 dmcmahill Exp $
 
 work around pmax compiler bug
