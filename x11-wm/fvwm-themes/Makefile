@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	fvwm-themes
 
 MAINTAINER=	e-devil@e-devil.org
 
-BUILD_DEPENDS=	fvwm2:${PORTSDIR}/x11-wm/fvwm2-beta \
+BUILD_DEPENDS=	fvwm2:${PORTSDIR}/x11-wm/fvwm2-devel \
 		gm4:${PORTSDIR}/devel/m4
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
