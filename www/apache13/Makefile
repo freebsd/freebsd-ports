@@ -28,7 +28,9 @@ DEFAULT_PATH=/bin:/usr/bin:${PREFIX}/bin
 .if defined(WITHOUT_APACHE_EXPAT) && ${WITHOUT_APACHE_EXPAT} == yes
 EXPAT_CONF+=    --disable-rule=EXPAT
 .else
+.if !defined(WITH_APACHE_INTERNAL_EXPAT) || ${WITH_APACHE_INTERNAL_EXPAT} != yes
 LIB_DEPENDS+=   expat.4:${PORTSDIR}/textproc/expat2
+.endif
 EXPAT_CONF+=    --enable-rule=EXPAT
 .endif
 
@@ -107,7 +109,8 @@ CFLAGS+=-O6 -fomit-frame-pointer
 
 CONFIGURE_ENV=  OPTIM='${OPTIM}' LD_SHLIB='${CC}' LIBS='${LIBS}'
 
-.if !defined(WITHOUT_APACHE_EXPAT) || ${WITHOUT_APACHE_EXPAT} != yes
+.if (!defined(WITHOUT_APACHE_EXPAT) || ${WITHOUT_APACHE_EXPAT} != yes) && \
+    (!defined(WITH_APACHE_INTERNAL_EXPAT) || ${WITH_APACHE_INTERNAL_EXPAT} != yes)
 CONFIGURE_ENV+= \
 		INCLUDES=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
