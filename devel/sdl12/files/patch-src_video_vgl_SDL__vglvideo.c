@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- src/video/vgl/SDL_vglvideo.c.orig	Sat Jan 27 22:36:17 2001
-+++ src/video/vgl/SDL_vglvideo.c	Sat Jan 27 23:14:47 2001
-@@ -0,0 +1,622 @@
+--- src/video/vgl/SDL_vglvideo.c.orig	Sun Apr  8 01:11:25 2001
++++ src/video/vgl/SDL_vglvideo.c	Sun Apr  8 01:33:02 2001
+@@ -0,0 +1,642 @@
 +/*
 +    SDL - Simple DirectMedia Layer
 +    Copyright (C) 1997, 1998, 1999, 2000  Sam Lantinga
@@ -81,8 +81,13 @@ $FreeBSD$
 +
 +static int VGL_Available(void)
 +{
-+	/* Check to see if we are root and stdin is a virtual console */
-+	int console;
++	/*
++	 * Check to see if we are root and stdin is a
++	 * virtual console. Also try to ensure that
++	 * modes other than 320x200 are available
++	 */
++	int console, hires_available, i;
++	VGLMode **modes;
 +
 +	console = STDIN_FILENO;
 +	if ( console >= 0 ) {
@@ -94,7 +99,22 @@ $FreeBSD$
 +			console = -1;
 +		}
 +	}
-+	return((geteuid() == 0) && (console >= 0));
++	if (geteuid() != 0 && console == -1)
++		return 0;
++
++	modes = VGLListModes(8, V_INFO_MM_DIRECT | V_INFO_MM_PACKED);
++	hires_available = 0;
++	for (i = 0; modes[i] != NULL; i++) {
++		if ((modes[i]->ModeInfo.Xsize > 320) &&
++		    (modes[i]->ModeInfo.Ysize > 200) &&
++		    ((modes[i]->ModeInfo.Type == VIDBUF8) ||
++		     (modes[i]->ModeInfo.Type == VIDBUF16) ||
++		     (modes[i]->ModeInfo.Type == VIDBUF32))) {
++			hires_available = 1;
++			break;
++		}
++	}
++	return hires_available;
 +}
 +
 +static void VGL_DeleteDevice(SDL_VideoDevice *device)
