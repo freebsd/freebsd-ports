@@ -17,7 +17,7 @@ COMMENT=	Utilities and library to manipulate ReiserFS partitions
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 GNU_CONFIGURE=	yes
-USE_GETTEXT=	1
+USE_GETTEXT=	yes
 USE_LIBTOOL_VER=	15
 INSTALLS_SHLIB=	yes
 USE_REINPLACE=	yes
