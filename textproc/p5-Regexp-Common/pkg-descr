@@ -1,0 +1,17 @@
+By default, this module exports a single hash (`%RE') that stores or
+generates commonly needed regular expressions. Patterns currently
+provided include:
+
+   * balanced parentheses and brackets
+   * delimited text (with escapes)
+   * integers and floating-point numbers in any base (up to 36)
+   * comments in C, C++, Perl, and shell
+   * offensive language
+   * lists of any pattern
+   * IPv4 addresses
+
+Author: Damian Conway <damian@cs.monash.edu.au>
+WWW: http://search.cpan.org/search?dist=Regexp-Common
+
+-Anton
+<tobez@FreeBSD.org>
