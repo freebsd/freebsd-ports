@@ -1,3 +1,12 @@
 bin/polyclt
 bin/polysrv
 bin/lr
+bin/lx
+bin/exprep
+bin/bb.pl
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/polygraph/Blob.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/polygraph/Executer.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/polygraph/Tools.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/polygraph/Command.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/polygraph/Logger.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/polygraph
