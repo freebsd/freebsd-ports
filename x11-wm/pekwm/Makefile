@@ -8,7 +8,7 @@
 PORTNAME=	pekwm
 PORTVERSION=	0.1.2
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://pekwm.babblica.net/files/source/
+MASTER_SITES=	http://pekwm.pekdon.net/files/source/
 
 MAINTAINER=	anders@andersa.net
 COMMENT=	A windowmanager based on aewm++
