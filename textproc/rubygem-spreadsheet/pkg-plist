@@ -9,6 +9,9 @@
 %%PORTDOCS%%@dirrm %%RUBY_MODEXAMPLESDIR%%
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/CHANGES
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/format.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/format.rd
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/format.txt
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/spreadsheet.html
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/spreadsheet.rd
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/spreadsheet.txt
 %%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spreadsheet-excel
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.8
 CATEGORIES=	textproc ruby
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	 rubyspreadsheet
@@ -24,7 +24,7 @@ NO_BUILD=	yes
 INSTALL_TARGET=	site-install
 
 DOCS=		CHANGES doc/*
-EXAMPLES=	test.rb
+EXAMPLES=	test/test.rb
 
 do-install:
 	${MKDIR} ${RUBY_SITELIBDIR}/spreadsheet
