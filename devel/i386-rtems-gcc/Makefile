@@ -7,7 +7,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	3.2.3
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE} \
 		${MASTER_SITE_GNU:S/$/:gcc/}
@@ -70,7 +70,9 @@ MAKE_ENV=	MACHINE_ARCH=${RTEMS_ARCH}
 MAN1=		${LCLTARGET}-gcc.1 ${LCLTARGET}-g++.1 \
 		cpp.1 gcov.1 
 MAN7=		fsf-funding.7 gfdl.7 gpl.7
-INFO=		cpp cppinternals gcc gccint
+INFO=		${LCLTARGET}-cpp ${LCLTARGET}-cppinternals \
+		${LCLTARGET}-gcc ${LCLTARGET}-gccint
+#INFO=		cpp cppinternals gcc gccint
 
 pre-configure:
 	@(cd ${WRKDIR} ; \
@@ -80,6 +82,38 @@ pre-configure:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/gcc/configure
 
+post-patch:
+# Change cpp.info to ${LCLTARGET}-cpp.info
+	@${REINPLACE_CMD} -e 's|setfilename cpp.info|setfilename ${LCLTARGET}-cpp.info|g' ${WRKSRC}/gcc/doc/*.texi
+	@${REINPLACE_CMD} -e 's|(cpp)|(${LCLTARGET}-cpp)|g' ${WRKSRC}/gcc/doc/*.texi 
+	@${REINPLACE_CMD} -e 's|@file{cpp}|@file{${LCLTARGET}-cpp}|g' ${WRKSRC}/gcc/doc/*.texi
+	@${REINPLACE_CMD} -e 's|cpp.info|${LCLTARGET}-cpp.info|g' ${WRKSRC}/gcc/Makefile.in
+	@${REINPLACE_CMD} -e 's|cpp.texi|${LCLTARGET}-cpp.texi|g' ${WRKSRC}/gcc/Makefile.in
+	@${MV} ${WRKSRC}/gcc/doc/cpp.texi ${WRKSRC}/gcc/doc/${LCLTARGET}-cpp.texi
+# special case for included file
+	@${REINPLACE_CMD} -e 's|,cpp.info,|,${LCLTARGET}-cpp.info,|g' ${WRKSRC}/gcc/doc/extend.texi
+# Change cpp.info to ${LCLTARGET}-cpp.info
+	@${REINPLACE_CMD} -e 's|setfilename cppinternals.info|setfilename ${LCLTARGET}-cppinternals.info|g' ${WRKSRC}/gcc/doc/*.texi
+	@${REINPLACE_CMD} -e 's|(cppinternals)|(${LCLTARGET}-cppinternals)|g' ${WRKSRC}/gcc/doc/*.texi 
+	@${REINPLACE_CMD} -e 's|@file{cppinternals}|@file{${LCLTARGET}-cppinternals}|g' ${WRKSRC}/gcc/doc/*.texi
+	@${REINPLACE_CMD} -e 's|cppinternals.info|${LCLTARGET}-cppinternals.info|g' ${WRKSRC}/gcc/Makefile.in
+	@${REINPLACE_CMD} -e 's|cppinternals.texi|${LCLTARGET}-cppinternals.texi|g' ${WRKSRC}/gcc/Makefile.in
+	@${MV} ${WRKSRC}/gcc/doc/cppinternals.texi ${WRKSRC}/gcc/doc/${LCLTARGET}-cppinternals.texi
+# Change cpp.info to ${LCLTARGET}-cpp.info
+	@${REINPLACE_CMD} -e 's|setfilename gcc.info|setfilename ${LCLTARGET}-gcc.info|g' ${WRKSRC}/gcc/doc/*.texi
+	@${REINPLACE_CMD} -e 's|(gcc)|(${LCLTARGET}-gcc)|g' ${WRKSRC}/gcc/doc/*.texi 
+	@${REINPLACE_CMD} -e 's|@file{gcc}|@file{${LCLTARGET}-gcc}|g' ${WRKSRC}/gcc/doc/*.texi
+	@${REINPLACE_CMD} -e 's|gcc.info|${LCLTARGET}-gcc.info|g' ${WRKSRC}/gcc/Makefile.in
+	@${REINPLACE_CMD} -e 's|gcc.texi|${LCLTARGET}-gcc.texi|g' ${WRKSRC}/gcc/Makefile.in
+	@${MV} ${WRKSRC}/gcc/doc/gcc.texi ${WRKSRC}/gcc/doc/${LCLTARGET}-gcc.texi
+# Change cpp.info to ${LCLTARGET}-cpp.info
+	@${REINPLACE_CMD} -e 's|setfilename gccint.info|setfilename ${LCLTARGET}-gccint.info|g' ${WRKSRC}/gcc/doc/*.texi
+	@${REINPLACE_CMD} -e 's|(gccint)|(${LCLTARGET}-gccint)|g' ${WRKSRC}/gcc/doc/*.texi 
+	@${REINPLACE_CMD} -e 's|@file{gccint}|@file{${LCLTARGET}-gccint}|g' ${WRKSRC}/gcc/doc/*.texi
+	@${REINPLACE_CMD} -e 's|gccint.info|${LCLTARGET}-gccint.info|g' ${WRKSRC}/gcc/Makefile.in
+	@${REINPLACE_CMD} -e 's|gccint.texi|${LCLTARGET}-gccint.texi|g' ${WRKSRC}/gcc/Makefile.in
+	@${MV} ${WRKSRC}/gcc/doc/gccint.texi ${WRKSRC}/gcc/doc/${LCLTARGET}-gccint.texi
+
 do-build:
 	@(cd ${WRKDIR}/build-${LCLTARGET} ; \
 	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
@@ -87,9 +121,5 @@ do-build:
 do-install:
 	@(cd ${WRKDIR}/build-${LCLTARGET} && \
 	${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${INSTALL_TARGET})
-
-post-install:
-	@install-info ${PREFIX}/info/cpp.info ${PREFIX}/info/dir
-	@install-info ${PREFIX}/info/gcc.info ${PREFIX}/info/dir
 
 .include <bsd.port.post.mk>
