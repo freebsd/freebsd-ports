@@ -1,0 +1,15 @@
+IMPORTANT - READ CAREFULLY: Please read the COPYRIGHT included with these fonts
+before using.  The copyright can be found at %%FONTSDIR%%/COPYRIGHT.TXT.  To
+use these fonts, follow the instructions below.
+
+Make sure that the freetype module is loaded.  If it is not, add the following
+line to the "Modules" section of your X Windows configuration file:
+
+	Load "freetype"
+
+Add the following line to the "Files" section of X Windows configuration file:
+
+	FontPath "%%FONTSDIR%%/"
+
+Note: your X Windows configuration file is typically /etc/X11/XF86Config
+if you are using XFree86, and /etc/X11/xorg.conf if you are using X.Org.

@@ -1,0 +1,15 @@
+%%FONTSDIR%%/DejaVuSans-Bold.ttf
+%%FONTSDIR%%/DejaVuSans-BoldOblique.ttf
+%%FONTSDIR%%/DejaVuSans-Oblique.ttf
+%%FONTSDIR%%/DejaVuSans.ttf
+%%FONTSDIR%%/DejaVuSansMono-Bold.ttf
+%%FONTSDIR%%/DejaVuSansMono-BoldOb.ttf
+%%FONTSDIR%%/DejaVuSansMono-Oblique.ttf
+%%FONTSDIR%%/DejaVuSansMono-Roman.ttf
+%%FONTSDIR%%/DejaVuSerif-Bold.ttf
+%%FONTSDIR%%/DejaVuSerif-Roman.ttf
+%%FONTSDIR%%/fonts.cache-1
+%%FONTSDIR%%/fonts.dir
+@exec %%X11BASE%%/bin/fc-cache -f -v %%FONTSDIR%% || /usr/bin/true
+@unexec /bin/rm %D/%%FONTSDIR%%/fonts.cache-1 2>/dev/null || /usr/bin/true
+@dirrm %%FONTSDIR%%

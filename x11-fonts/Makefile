@@ -20,6 +20,7 @@
     SUBDIR += bitstream-vera
     SUBDIR += code2000
     SUBDIR += cyr-rfx
+    SUBDIR += dejavu
     SUBDIR += etlfonts
     SUBDIR += fontconfig
     SUBDIR += freefonts
