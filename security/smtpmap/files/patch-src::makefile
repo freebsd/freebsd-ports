@@ -1,0 +1,16 @@
+--- src/makefile.orig	Wed Aug 14 22:12:02 2002
++++ src/makefile	Sun Oct 24 10:39:46 2004
+@@ -5,11 +5,11 @@
+ include $(TOPDIR)/makefile.conf
+ 
+ all smtpmap-sub: small_socket.o mstring.o mfile.o scanner_smtp.o smtpmap.o fp_return.o fp_rfc.o fp.o fp_conf.o scanner_server.o
+-	$(CC) $(CFLAGS) $(INC) small_socket.o mstring.o mfile.o scanner_smtp.o fp_return.o fp_rfc.o fp.o fp_conf.o scanner_server.o smtpmap.o -o smtpmap
++	$(CC) $(CFLAGS) $(LDFLAGS) $(INC) small_socket.o mstring.o mfile.o scanner_smtp.o fp_return.o fp_rfc.o fp.o fp_conf.o scanner_server.o smtpmap.o -o smtpmap
+ 
+ 
+ %.o:%.cpp
+-	$(CC) $(CFLAGS) $(INC) -c $*.cpp
++	$(CC) $(CFLAGS) $(CPPFLAGS) $(INC) -c $*.cpp
+ 
+ clean::
+ 	@echo Cleaning up
