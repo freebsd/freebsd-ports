@@ -8,7 +8,8 @@
 PORTNAME=	truereality
 PORTVERSION=	${DATE}
 CATEGORIES=	emulators devel
-MASTER_SITES=	http://www.emuhq.com/emulators/
+MASTER_SITES=	http://www.emuhq.com/emulators/ \
+		ftp://ftp.mayn.de/pub/unix/emulators/console/
 DISTNAME=	TrueReality-${PORTVERSION}
 
 MAINTAINER=	lioux@linf.unb.br
