@@ -1,10 +1,38 @@
 bin/wine
 bin/fnt2bdf
 bin/wineclipsrv
+bin/regapi
+bin/regSet.sh
 etc/wine.conf.sample
 etc/wine.sym
 lib/wine/README.patch
 lib/wine/patch-3.3-sys-ldtshare
 lib/wine/patch-3.3-sys-sigtrap
+lib/wine/patch-3.3-sys-fsgs
 lib/wine/winedefault.reg
+lib/wine/bug_report.pl
+lib/wine/reg/regFixer.pl
+lib/wine/reg/regRestorer.pl
+lib/wine/documentation/ANNOUNCE
+lib/wine/documentation/AUTHORS
+lib/wine/documentation/LICENSE
+lib/wine/documentation/WARRANTY
+lib/wine/documentation/README
+lib/wine/documentation/bugreports
+lib/wine/documentation/cdrom-labels
+lib/wine/documentation/config
+lib/wine/documentation/debugging
+lib/wine/documentation/dlls
+lib/wine/documentation/fonts
+lib/wine/documentation/ioport-trace-hints
+lib/wine/documentation/lables-and-serial-nubers
+lib/wine/documentation/no-windows
+lib/wine/documentation/printing
+lib/wine/documentation/psdriver
+lib/wine/documentation/psdrv.reg
+lib/wine/documentation/ttfserver
+lib/wine/documentation/README.debugger
+lib/wine/documentation/README.regapi
+@dirrm lib/wine/reg
+@dirrm lib/wine/documentation
 @dirrm lib/wine
