@@ -1,0 +1,25 @@
+--- arpsnmp.8.orig	Sun Sep 17 21:34:48 2000
++++ arpsnmp.8	Thu Feb 22 22:47:29 2001
+@@ -30,6 +30,9 @@
+ ] [
+ .B -f
+ .I datafile
++] [
++.B -m
++.I email
+ ]
+ .I file
+ [
+@@ -54,6 +57,12 @@
+ flag is used to set the ethernet/ip address database filename.
+ The default is
+ .IR arp.dat .
++.LP
++The
++.B -m
++flag specifies the address that will receive the emails.
++The default is
++.IR root .
+ .LP
+ Note that an empty
+ .I arp.dat

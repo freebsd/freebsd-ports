@@ -1,0 +1,20 @@
+--- report.c.orig	Sun Oct  1 00:41:10 2000
++++ report.c	Thu Feb 22 22:47:29 2001
+@@ -70,6 +70,8 @@
+ 
+ #define PLURAL(n) ((n) == 1 || (n) == -1 ? "" : "s")
+ 
++extern char *Watcher;
++
+ static int cdepth;	/* number of outstanding children */
+ 
+ static char *fmtdate(time_t);
+@@ -240,7 +242,7 @@
+ 	register FILE *f;
+ 	char tempfile[64], cpu[64], os[64];
+ 	char *fmt = "%20s: %s\n";
+-	char *watcher = WATCHER;
++	char *watcher = Watcher ? Watcher : WATCHER;
+ 	char *watchee = WATCHEE;
+ 	char *sendmail = PATH_SENDMAIL;
+ 	char *unknown = "<unknown>";
