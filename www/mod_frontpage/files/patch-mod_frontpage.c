@@ -9,3 +9,13 @@
      while (s != NULL) {
          conf* c = ap_get_module_config (s->module_config, &frontpage_module);
          if (c->disabled == -1)
+@@ -280,6 +280,9 @@
+         return log_scripterror (r, c, NOT_FOUND, APLOG_NOERRNO,
+                                 "unrecognized FrontPage request");
+ 
++    if (strcmp(vti, SHTMLDLL) == 0)
++	bcopy(SHTML, vti, strlen(SHTML));
++
+     ap_table_set (r->subprocess_env, "FPEXE", ap_pstrdup (r->pool, vti));
+ 
+     webroot = ap_pstrndup (r->pool, r->filename, (vti - r->filename));
