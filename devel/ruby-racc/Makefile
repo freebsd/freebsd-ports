@@ -1,6 +1,6 @@
-# New ports collection makefile for:    Ruby-Racc
-# Date created:         7 Aug 2000
-# Whom:                 Akinori MUSHA aka knu <knu@idaemons.org>
+# New ports collection makefile for:	Ruby-Racc
+# Date created:		7 Aug 2000
+# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
@@ -20,9 +20,9 @@ RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby \
 
 PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
 
-RUBY=		${LOCALBASE}/bin/ruby
-RUBY_VER=	1.4
-RUBY_ARCH=	${ARCH}-freebsd${OSREL}
+RUBY?=		${LOCALBASE}/bin/ruby
+RUBY_VER?=	1.4
+RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
 
 MODULES=	facade.rb format.rb grammer.rb info.rb iset.rb \
 		libracc.rb raccp.rb raccs.rb state.rb
@@ -59,11 +59,11 @@ do-install:
 	${MKDIR} ${PREFIX}/lib/ruby/site_ruby/${RUBY_VER}/${RUBY_ARCH}/racc
 	${INSTALL_DATA} ${WRKSRC}/ext/cparse/cparse.so \
 		${PREFIX}/lib/ruby/site_ruby/${RUBY_VER}/${RUBY_ARCH}/racc/
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/examples/ruby/racc
 .for f in ${EXAMPLES}
 	${INSTALL_DATA} ${WRKSRC}/sample/${f} ${PREFIX}/share/examples/ruby/racc/
 .endfor
-.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/ruby/racc/ja
 .for f in ${DOCS_EN}
 	${INSTALL_DATA} ${WRKSRC}/doc.en/${f} ${PREFIX}/share/doc/ruby/racc/

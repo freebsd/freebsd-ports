@@ -6,3 +6,6 @@ Features:
   * can emit options' summaries
   * can add options on the fly 
   * completion for option/argument
+
+Author: Nobuyoshi.Nakada <nobu.nokada@softhome.net>
+WWW:	http://www.ruby-lang.org/en/raa-list.rhtml?name=OptionParser

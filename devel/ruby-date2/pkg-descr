@@ -5,4 +5,6 @@ specified freely in this class.  The procedures about holiday
 (holiday.rb) and date format (parsedate2.rb, strftime.rb and
 strptime.rb) are also available.
 
+
+Author:	Tadayoshi Funaba <tadf@kt.rim.or.jp>
 WWW:	http://www.kt.rim.or.jp/~tadf/ruby-en.html#date2

@@ -1,6 +1,6 @@
-# New ports collection makefile for:    irb
-# Date created:         19 April 1999
-# Whom:                 Yasuhiro Fukuma <yasuf@big.or.jp>
+# New ports collection makefile for:	irb
+# Date created:		19 April 1999
+# Whom:			Yasuhiro Fukuma <yasuf@big.or.jp>
 #
 # $FreeBSD$
 #
@@ -20,22 +20,20 @@ MAINTAINER=	yasuf@big.or.jp
 
 RUN_DEPENDS=	ruby:${PORTSDIR}/lang/ruby
 
+NO_BUILD=	yes
+
 WRKSRC=		${WRKDIR}/irb
 PLIST_SUB+=	RUBY_VER="${RUBY_VER}"
 
-RUBY=		${LOCALBASE}/bin/ruby
-RUBY_VER=	1.4
+RUBY?=		${LOCALBASE}/bin/ruby
+RUBY_VER?=	1.4
 
 post-patch:
+	${PERL} -i -pe '$$. == 1 && s,^#!\s*\S+,#!${RUBY},' ${WRKSRC}/irb.rb
 	${RM} -f ${WRKSRC}/instirb.rb
 
-do-build:
-	( cd ${WRKSRC}; \
-	  ${MV} irb.rb irb.tmpl; \
-	  ${SED} -e '1s,^#!.*$$,#!${RUBY},' irb.tmpl > irb )
-
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/irb ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/irb.rb ${PREFIX}/bin/irb
 	${MKDIR} ${PREFIX}/lib/ruby/${RUBY_VER}/irb
 	${INSTALL_DATA} ${WRKSRC}/*.rb ${PREFIX}/lib/ruby/${RUBY_VER}/irb
 .if !defined(NOPORTDOCS)

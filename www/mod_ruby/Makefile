@@ -26,9 +26,9 @@ SNAPSHOT_DATE=	2000.08.04
 
 APXS=		${LOCALBASE}/sbin/apxs
 
-RUBY=		${LOCALBASE}/bin/ruby
-RUBY_VER=	1.4
-RUBY_ARCH=	${ARCH}-freebsd${OSREL}
+RUBY?=		${LOCALBASE}/bin/ruby
+RUBY_VER?=	1.4
+RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
 
 DOCS_EN=	ChangeLog README.en
 DOCS_JA=	README.ja

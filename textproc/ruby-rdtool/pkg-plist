@@ -19,10 +19,14 @@ share/emacs/site-lisp/rd-mode.el
 lib/xemacs/site-lisp/rd-mode.el
 @unexec rmdir -p %D/share/emacs/site-lisp 2>/dev/null || true
 @unexec rmdir -p %D/lib/xemacs/site-lisp 2>/dev/null || true
+share/doc/ruby/optparse/ja/optparse.ja.html
 share/doc/ruby/rd/README.html
 share/doc/ruby/rd/rd-draft.html
+share/doc/ruby/rd/rd-draft.rd
 share/doc/ruby/rd/ja/README.ja.html
 share/doc/ruby/rd/ja/dev-note.ja.html
+share/doc/ruby/rd/ja/dev-note.rd.ja
 share/doc/ruby/rd/ja/rd-draft.ja.html
+share/doc/ruby/rd/ja/rd-draft.rd.ja
 @dirrm share/doc/ruby/rd/ja
 @dirrm share/doc/ruby/rd

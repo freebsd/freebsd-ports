@@ -1,6 +1,6 @@
-# New ports collection makefile for:    Ruby-BigFloat
-# Date created:         7 Aug 2000
-# Whom:                 Akinori MUSHA aka knu <knu@idaemons.org>
+# New ports collection makefile for:	Ruby-BigFloat
+# Date created:		7 Aug 2000
+# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
@@ -22,9 +22,9 @@ INSTALL_TARGET=	site-install
 NO_WRKSUBDIR=	yes
 PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
 
-RUBY=		${LOCALBASE}/bin/ruby
-RUBY_VER=	1.4
-RUBY_ARCH=	${ARCH}-freebsd${OSREL}
+RUBY?=		${LOCALBASE}/bin/ruby
+RUBY_VER?=	1.4
+RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
 
 do-configure:
 	@cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb
@@ -32,8 +32,10 @@ do-configure:
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/ruby/bigfloat/ja
-	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/bigfloat_en.html ${PREFIX}/share/doc/ruby/bigfloat
-	${INSTALL_DATA} ${WRKSRC}/bigfloat.html ${PREFIX}/share/doc/ruby/bigfloat/ja
+	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/bigfloat_en.html \
+		${PREFIX}/share/doc/ruby/bigfloat
+	${INSTALL_DATA} ${WRKSRC}/bigfloat.html \
+		${PREFIX}/share/doc/ruby/bigfloat/ja
 .endif
 
 .include <bsd.port.mk>

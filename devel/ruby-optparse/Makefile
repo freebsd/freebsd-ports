@@ -1,6 +1,6 @@
-# New ports collection makefile for:    Ruby-OptionParser
-# Date created:         7 Aug 2000
-# Whom:                 Akinori MUSHA aka knu <knu@idaemons.org>
+# New ports collection makefile for:	Ruby-OptionParser
+# Date created:		7 Aug 2000
+# Whom:			Akinori MUSHA aka knu <knu@idaemons.org>
 #
 # $FreeBSD$
 #
@@ -21,14 +21,14 @@ NO_BUILD=	yes
 
 PLIST_SUB=	RUBY_VER="${RUBY_VER}" RUBY_ARCH="${RUBY_ARCH}"
 
-RUBY=		${LOCALBASE}/bin/ruby
-RUBY_VER=	1.4
-RUBY_ARCH=	${ARCH}-freebsd${OSREL}
+RUBY?=		${LOCALBASE}/bin/ruby
+RUBY_VER?=	1.4
+RUBY_ARCH?=	${ARCH}-freebsd${OSREL}
 
 do-install:
-	${MKDIR} ${PREFIX}/lib/ruby/site_ruby/optparse
+	${MKDIR} ${PREFIX}/lib/ruby/site_ruby/${RUBY_VER}/optparse
 .for f in optparse.rb optparse/shellwords.rb optparse/time.rb
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/lib/ruby/site_ruby/${f}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/lib/ruby/site_ruby/${RUBY_VER}/${f}
 .endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/examples/ruby/optparse/ja

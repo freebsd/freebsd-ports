@@ -1,6 +1,7 @@
 Ruby extension module to use Gtk+.
 
-WWW: http://www.ruby-lang.org/gtk/
+Author:	Hiroshi Igarashi <igarashi@ueda.info.waseda.ac.jp>
+WWW:	http://www.ruby-lang.org/gtk/
 
 - Yasuhiro Fukuma
 yasuf@bsdclub.org
