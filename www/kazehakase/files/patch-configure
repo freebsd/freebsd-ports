@@ -1,13 +1,13 @@
---- configure.orig	Tue Mar 22 03:56:40 2005
-+++ configure	Tue Mar 22 03:57:09 2005
-@@ -19191,7 +19191,10 @@
-   1.7.2) MOZILLA_SNAPSHOT=15 ;;
-   1.7.3) MOZILLA_SNAPSHOT=15 ;;
-   1.7.5) MOZILLA_SNAPSHOT=16 ;;
-+  1.7.6) MOZILLA_SNAPSHOT=16 ;;
-  1.8a3) MOZILLA_SNAPSHOT=17 ;;
-+ 1.8a5) MOZILLA_SNAPSHOT=17 ;;
-+ 1.8a6) MOZILLA_SNAPSHOT=17 ;;
- trunk) MOZILLA_SNAPSHOT=17 ;;
-     *) { { echo "$as_me:$LINENO: error:
- *****************************************************************************
+--- configure.orig	Mon Mar 28 06:32:45 2005
++++ configure	Tue Mar 29 20:43:24 2005
+@@ -21249,8 +21249,8 @@
+ fi;
+ 
+ if test "x$GECKO" = "x"; then
+-  if $PKG_CONFIG --exists firefox-gtkmozembed; then
+-    GECKO=firefox
++  if $PKG_CONFIG --exists %%MOZILLA%%-gtkmozembed%%HEADERS_SUFX%%; then
++    GECKO=%%MOZILLA%%
+   elif $PKG_CONFIG --exists mozilla-firefox-gtkmozembed; then
+     GECKO=mozilla-firefox
+   elif $PKG_CONFIG --exists mozilla-gtkmozembed; then
