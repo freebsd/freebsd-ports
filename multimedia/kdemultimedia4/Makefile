@@ -8,7 +8,7 @@
 
 PORTNAME=	kdemultimedia
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -83,6 +83,7 @@ pre-configure:
 	${REINPLACE_CMD} -e '/union semun/,/;$$/s/.*//g' \
 		${WRKSRC}/oggvorbis_artsplugin/oggPlayObject_impl.h
 .endif
+	${REINPLACE_CMD} -e 's/-lc_r/${PTHREAD_LIBS}/g' ${WRKSRC}/configure
 
 post-configure:
 	${REINPLACE_CMD} -e '/^XINE_CFLAGS/s/-D_THREAD_SAFE//g' \
