@@ -2,14 +2,11 @@ bin/cpp-sed-nl
 bin/run-renamed
 bin/scwm
 bin/scwm-conf
-bin/scwm-doc-snarf
 bin/scwmexec
 bin/scwmrepl
 bin/startscwm
 include/scwmexec.h
-@unexec install-info --delete %D/info/scwm.info %D/info/dir
 info/scwm.info
-@exec install-info %D/info/scwm.info %D/info/dir
 lib/libscwmexec.a
 lib/libscwmexec.la
 lib/libscwmexec.so
@@ -52,9 +49,14 @@ lib/scwm/modules/app/scwm/libxpm-menus.so
 lib/scwm/modules/app/scwm/libxpm-menus.so.0
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-share/scwm/Xmodmap-win95keyboard
-share/scwm/Xresources-cpp
-share/scwm/Xsession
+share/doc/scwm/examples/Xmodmap-win95keyboard
+share/doc/scwm/examples/Xresources-cpp
+share/doc/scwm/examples/Xsession
+share/doc/scwm/scwm-concepts.txt
+share/doc/scwm/scwm-hooks.txt
+share/doc/scwm/scwm-procedures.txt
+share/doc/scwm/scwm-variables.txt
+share/doc/scwm/scwm.sgml
 share/scwm/Xsession.patch
 share/scwm/gnome-session-Scwm
 share/scwm/modules/app/scwm/ScwmBiff.scm
@@ -98,6 +100,7 @@ share/scwm/modules/app/scwm/group.scm
 share/scwm/modules/app/scwm/gtk-about.scm
 share/scwm/modules/app/scwm/gtk-menu.scm
 share/scwm/modules/app/scwm/gtk-message.scm
+share/scwm/modules/app/scwm/gtk-table-display.scm
 share/scwm/modules/app/scwm/gtk.scm
 share/scwm/modules/app/scwm/highlight-current-window.scm
 share/scwm/modules/app/scwm/hooks.scm
@@ -235,11 +238,6 @@ share/scwm/pixmaps/win-pos-s.xpm
 share/scwm/pixmaps/win-pos-se.xpm
 share/scwm/pixmaps/win-pos-sw.xpm
 share/scwm/pixmaps/win-pos-w.xpm
-share/scwm/scwm-concepts.txt
-share/scwm/scwm-hooks.txt
-share/scwm/scwm-procedures.txt
-share/scwm/scwm-variables.txt
-share/scwm/scwm.sgml
 share/scwm/scwmrc/decor.scwmrc
 share/scwm/scwmrc/gnome.scwmrc
 share/scwm/scwmrc/juhp.scwmrc
@@ -261,9 +259,10 @@ share/scwm/themes/woven.tar.gz
 @dirrm lib/scwm/modules/app
 @dirrm lib/scwm/modules
 @dirrm lib/scwm
+@dirrm share/doc/scwm/examples
+@dirrm share/doc/scwm
 @dirrm share/scwm/modules/app/scwm
 @dirrm share/scwm/modules/app
 @dirrm share/scwm/modules
-@dirrm share/scwm/pixmaps
 @dirrm share/scwm/scwmrc
 @dirrm share/scwm/themes
