@@ -22,8 +22,8 @@ include/sigcx-0.6/sigcx/util.h
 @dirrm include/sigcx-0.6/sigcx
 @dirrm include/sigcx-0.6
 lib/libsigcx-0.6.so
-lib/libsigcx-0.6.so.0
+lib/libsigcx-0.6.so.1
 lib/libsigcx-gtk-0.6.so
-lib/libsigcx-gtk-0.6.so.0
-lib/pkgconfig/sigcx-0.6-gtk+.pc
-lib/pkgconfig/sigcx-0.6.pc
+lib/libsigcx-gtk-0.6.so.1
+libdata/pkgconfig/sigcx-0.6-gtk+.pc
+libdata/pkgconfig/sigcx-0.6.pc
