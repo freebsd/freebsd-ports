@@ -60,8 +60,6 @@ PLIST_SUB+=	M17N="@comment " NO_M17N=""
 .endif
 
 .if defined(JAPANESE)
-RUN_DEPENDS=	migemo:${PORTSDIR}/japanese/migemo
-
 DOCS_JP=	${DOCS} README.SSL README.cookie README.keymap README.mailcap \
 		README.menu README.migemo
 
