@@ -124,6 +124,7 @@
     SUBDIR += imap-uw
     SUBDIR += imapfilter
     SUBDIR += imp3
+    SUBDIR += ingo
     SUBDIR += isoqlog
     SUBDIR += isync
     SUBDIR += jamlib

@@ -1,0 +1,31 @@
+# This is included in Apache's httpd.conf for Ingo
+#
+# For security, don't serve pages from the Ingo configuration and
+# library directories.
+#
+<Directory "/home/httpd/html/horde/ingo/config">
+    order deny,allow
+    deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/ingo/lib">
+    order deny,allow
+    deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/ingo/locale">
+    order deny,allow
+    deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/ingo/po">
+    order deny,allow
+    deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/ingo/scripts">
+    order deny,allow
+    deny from all
+</Directory>
+<Directory "/home/httpd/html/horde/ingo/templates">
+    order deny,allow
+    deny from all
+</Directory>
+# End of Ingo configuration ================
+
