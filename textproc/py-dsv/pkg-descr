@@ -1,0 +1,21 @@
+From the release announcement:
+
+  Python-DSV is a CSV file importer/exporter (DSV stands for
+  "delimiter-separated-values").
+   
+  Features:
+  - Heuristics for automatically determining the format of the file.
+     - Discovers delimiter (comma, tab, colon, whatever).
+     - Discovers text-qualifier (single or double quote).
+     - Determines whether first row is header or data.
+  - Can use almost any character as delimiter.
+  - Correctly parses embedded quotes, newlines and delimiters.
+  - Optional wxPython dialog (ala MS Excel) for previewing data.
+  - Error-handling callbacks for malformed rows.
+  - 100% Python.
+  - Reasonably fast.
+
+Author: Cliff Wells <CliffordDWells@yahoo.com>
+WWW:    http://www.sf.net/projects/python-dsv/
+
+-- Johann Visagie <wjv@FreeBSD.org>

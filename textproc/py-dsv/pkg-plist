@@ -1,0 +1,7 @@
+lib/%%PYTHON_VERSION%%/site-packages/DSV/DSV.py
+lib/%%PYTHON_VERSION%%/site-packages/DSV/DSV.pyc
+lib/%%PYTHON_VERSION%%/site-packages/DSV/DSV.pyo
+lib/%%PYTHON_VERSION%%/site-packages/DSV/__init__.py
+lib/%%PYTHON_VERSION%%/site-packages/DSV/__init__.pyc
+lib/%%PYTHON_VERSION%%/site-packages/DSV/__init__.pyo
+@dirrm lib/%%PYTHON_VERSION%%/site-packages/DSV
