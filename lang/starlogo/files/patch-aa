@@ -1,9 +1,10 @@
---- starlogo-unix.orig	Wed Sep 22 08:15:23 1999
-+++ starlogo-unix	Sun Nov 14 19:52:57 1999
-@@ -1,3 +1,3 @@
--echo Warning: You might need to make the native stack size bigger
--echo on the java command line in order to run StarLogo.
+--- starlogo-unix.orig	Mon Jul  3 16:39:10 2000
++++ starlogo-unix	Mon Jul  3 16:40:55 2000
+@@ -1,2 +1,6 @@
+ #!/bin/sh
 -java -classpath .:./starlogo.jar starlogo.Toplevel compiler "init 100"
-+#!/bin/sh
-+cd @@PREFIX@@/share/java/starlogo/projects
-+java -Djava.compiler=tya -classpath @@PREFIX@@/share/java/starlogo/starlogo.jar:@@PREFIX@@/share/java/starlogo:@@PREFIX@@/jdk@@JDK_VERSION@@/lib/classes.zip starlogo.Toplevel compiler "init 100"
++CLASSPATH=.:%%PREFIX%%/share/java/starlogo/starlogo.jar
++export CLASSPATH
++
++cd %%PREFIX%%/share/java/starlogo/sample-projects
++exec %%LOCALBASE%%/bin/javavm starlogo.Toplevel compiler "init 100"
