@@ -1,0 +1,11 @@
+--- bmp/Makefile.orig	Fri Sep  4 00:24:06 1998
++++ bmp/Makefile	Thu Dec 24 19:05:06 1998
+@@ -83,7 +83,7 @@
+ include ../Makefile.common
+ 
+ qembed: qembed.o
+-	$(CC) qembed.o -o qembed -L$(QTDIR)/lib -lqt 
++	$(CC) qembed.o -o qembed $(EXTRA_LFLAGS) -L$(QTDIR)/lib -lqt -lX11
+ 
+ $(BMPSOURCE): $(BMPS) qembed
+ 	./qembed $(BMPHEADER) $(BMPSOURCE) $(BMPS)
