@@ -1,0 +1,9 @@
+Rain is powerful tool for testing stability of hardware and software
+utilizing IP protocols. It offers its users the capability of
+creating their own packets with a wide variety of command line
+options.
+
+WWW: http://www.tenebrous.com/rain/
+Author: Michael Behan <mystic@tenebrous.com>
+
+- Patrick Li <pat@databits.net>
