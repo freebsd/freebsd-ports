@@ -4272,6 +4272,7 @@ p5-Bit-Vector	ports/math/p5-Bit-Vector
 p5-Boulder	ports/converters/p5-Boulder
 p5-Business-CreditCard	ports/misc/p5-Business-CreditCard
 p5-Business-ISBN	ports/misc/p5-Business-ISBN
+p5-Business-ISSN	ports/misc/p5-Business-ISSN
 p5-C-Scan	ports/devel/p5-C-Scan
 p5-CDB_File	ports/databases/p5-CDB_File
 p5-CDDB		ports/audio/p5-CDDB
