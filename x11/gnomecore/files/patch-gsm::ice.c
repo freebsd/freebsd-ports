@@ -14,7 +14,7 @@ $FreeBSD$
 +    p = "";
 +  else
 +    p = g_strconcat (p, ":", NULL);
-+  p = g_strconcat (p, X11BASE "/lib/mozilla-embedded", NULL);
++  p = g_strconcat (p, X11BASE "/lib/mozilla", ":", X11BASE "/lib/mozilla-embedded", NULL);
 +  setenv ("LD_LIBRARY_PATH", p, 1);
    
    ice_depth = 0;	/* We are live */
