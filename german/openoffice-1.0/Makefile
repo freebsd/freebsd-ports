@@ -20,7 +20,7 @@ LANG_CONFIGURE_ARG=	GER
 # Special case. We do not need LANG_CONFIGURE_ARG cause
 # the EN_US and DE_DE versions are always built.
 #
-MASTERDIR=	${.CURDIR}/../../editors/openoffice
+MASTERDIR=	${.CURDIR}/../../editors/openoffice-1.0
 
 COMMENT=	Office-Suite mit Textverarbeitung, Tabellenkalkulation, Datenbank und Presentationsprogramm
 

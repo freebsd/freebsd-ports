@@ -11,6 +11,6 @@ LANG_PKGNAME=	fr
 LANG_EXT=	33
 L10NHELP=	helpcontent_${LANG_EXT}_unix.tgz
 LANG_CONFIGURE_ARG=	FREN
-MASTERDIR=	${.CURDIR}/../../editors/openoffice
+MASTERDIR=	${.CURDIR}/../../editors/openoffice-1.0
 
-.include "${.CURDIR}/../../editors/openoffice/Makefile"
+.include "${MASTERDIR}/Makefile"

@@ -17,6 +17,6 @@ LANG_LIST=	pt_PT.ISO8859-1 pt_PT.ISO_8859-15 pt_PT.ISO_8859-1 \
 LANG_PKGNAME=	pt
 LANG_EXT=	03
 LANG_CONFIGURE_ARG=	PORT
-MASTERDIR=	${.CURDIR}/../../editors/openoffice
+MASTERDIR=	${.CURDIR}/../../editors/openoffice-1.0
 
 .include "${MASTERDIR}/Makefile"

@@ -10,6 +10,6 @@ CATEGORIES=	polish
 LANG_PKGNAME=	pl
 LANG_EXT=	48
 LANG_CONFIGURE_ARG=	POL
-MASTERDIR=	${.CURDIR}/../../editors/openoffice
+MASTERDIR=	${.CURDIR}/../../editors/openoffice-1.0
 
 .include "${MASTERDIR}/Makefile"

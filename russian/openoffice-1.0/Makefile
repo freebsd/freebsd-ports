@@ -14,7 +14,7 @@ LANG_LIST=	ru_RU.KOI8-R uk_UA.KOI8-U
 LANG_PKGNAME=	ru
 LANG_EXT=	07
 LANG_CONFIGURE_ARG=	RUSS
-MASTERDIR=	${.CURDIR}/../../editors/openoffice
+MASTERDIR=	${.CURDIR}/../../editors/openoffice-1.0
 
 PATCH_SITES=	http://people.freebsd.org/~mbr/ooo/
 PATCHFILES=	patch-translation-ru-1.0.3.bz2

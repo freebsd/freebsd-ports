@@ -12,6 +12,6 @@ LANG_SUFFIX=	CN
 LANG_EXT=       86
 LANG_CONFIGURE_ARG=     CHINSIM
 BUILD_DEPENDS+=	${PREFIX}/share/fonts/TrueType/gbsn00lp.ttf:${PORTSDIR}/chinese/arphicttf
-MASTERDIR=      ${.CURDIR}/../../editors/openoffice
+MASTERDIR=      ${.CURDIR}/../../editors/openoffice-1.0
 
 .include "${MASTERDIR}/Makefile"
