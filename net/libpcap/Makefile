@@ -10,7 +10,7 @@ PORTVERSION=	0.8.1
 PORTREVISION=	351
 CATEGORIES=	net
 MASTER_SITES=	http://www.tcpdump.org/beta/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-${PORTREVISION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-351
 
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	Ubiquitous network traffic capture library
