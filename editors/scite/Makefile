@@ -37,6 +37,7 @@ MAKE_ARGS=	GTK1=yes
 
 MAN1=		scite.1
 
+.if !defined(WITH_GTK2)
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "SciTE has the following tunable option(s):"
@@ -44,6 +45,7 @@ pre-everything::
 	@${ECHO_MSG} "	(unavailable if x11-toolkits/scintilla has been"
 	@${ECHO_MSG} "	 built with GTK-1.x support)"
 	@${ECHO_MSG} ""
+.endif
 
 post-patch:
 	@cd ${WRKSRC} && ${MV} SciTE.desktop SciTE.desktop.pre_tr \
