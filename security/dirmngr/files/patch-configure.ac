@@ -1,0 +1,42 @@
+--- configure.ac.orig	Wed Nov 20 00:54:24 2002
++++ configure.ac	Thu Feb  6 17:47:12 2003
+@@ -300,6 +300,17 @@
+ 
+ # These are needed by libjnlib - fixme: we should have a macros for them
+ AC_CHECK_FUNCS(memicmp stpcpy strlwr strtoul memmove stricmp strtol)
++AC_CHECK_FUNCS(getrusage setrlimit stat setlocale)
++AC_CHECK_FUNCS(flockfile funlockfile)
++
++AC_CHECK_FUNCS(sigaction sigprocmask)
++
++AC_REPLACE_FUNCS(vasprintf)
++AC_REPLACE_FUNCS(fopencookie)
++# FIXME: Print a warning when fopencookie is not available.
++AC_REPLACE_FUNCS(mkdtemp)
++AC_REPLACE_FUNCS(fseeko ftello)
++AC_REPLACE_FUNCS(isascii)
+ 
+ AC_CHECK_FUNCS(asprintf,,[
+     AC_MSG_ERROR([[
+@@ -307,13 +318,6 @@
+ *** asprintf(3) is needed to build this package.
+ *** We will provide an replacement in a later release.
+ ***]])])
+-AC_CHECK_FUNCS(fopencookie,,[
+-    AC_MSG_ERROR([[
+-***
+-*** fopencookie(3) is needed to build this package.
+-*** We will provide an replacement in a later release.
+-***]])])
+-
+ 
+ # We use jnlib, so tell other modules about it
+ AC_DEFINE(HAVE_JNLIB_LOGGING, 1,
+@@ -324,6 +328,7 @@
+ Makefile
+ jnlib/Makefile
+ assuan/Makefile
++common/Makefile
+ src/Makefile
+ doc/Makefile
+ tests/Makefile

@@ -1,0 +1,13 @@
+--- src/Makefile.am.orig	Thu Feb  6 18:00:41 2003
++++ src/Makefile.am	Thu Feb  6 18:01:22 2003
+@@ -32,8 +32,6 @@
+ dirmngr_LDFLAGS = $(LDAP_RPATH)
+ 
+ dirmngr_LDADD = ../jnlib/libjnlib.a ../assuan/libassuan.a  \
+-		$(LIBGCRYPT_LIBS)  $(LIBKSBA_LIBS) $(LDAP_LIBS) $(DB_LIBS)
+-
+-
+-
++		../common/libcommon.a $(LIBGCRYPT_LIBS)  \
++		$(LIBKSBA_LIBS) $(LDAP_LIBS) $(DB_LIBS)
+ 

@@ -1,0 +1,11 @@
+--- tests/Makefile.am.orig	Thu Feb  6 18:02:43 2003
++++ tests/Makefile.am	Thu Feb  6 18:02:59 2003
+@@ -10,7 +10,7 @@
+ TESTS = 
+ 
+ noinst_PROGRAMS = test-dirmngr
+-LDADD = ../jnlib/libjnlib.a ../assuan/libassuan.a $(LIBGCRYPT_LIBS) $(LIBKSBA_LIBS)
++LDADD = ../jnlib/libjnlib.a ../assuan/libassuan.a ../common/libcommon.a $(LIBGCRYPT_LIBS) $(LIBKSBA_LIBS)
+ 
+ 
+ 
