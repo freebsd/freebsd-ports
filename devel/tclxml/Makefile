@@ -15,7 +15,8 @@ MAINTAINER=	dyeske@yahoo.com
 COMMENT=	API for parsing XML documents using Tcl
 
 BUILD_DEPENDS=	tclsh8.4:${PORTSDIR}/lang/tcl84
-RUN_DEPENDS=	tclsh8.4:${PORTSDIR}/lang/tcl84
+RUN_DEPENDS=	tclsh8.4:${PORTSDIR}/lang/tcl84 \
+		${LOCALBASE}/lib/tcllib1.3/uri/uri.tcl:${PORTSDIR}/devel/tcllib
 
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
