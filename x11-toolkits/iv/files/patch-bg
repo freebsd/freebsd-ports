@@ -1,0 +1,12 @@
+--- src/bin/ibuild/ibcode.c.orig	Thu May 27 21:37:28 1999
++++ src/bin/ibuild/ibcode.c	Thu May 27 21:38:01 1999
+@@ -41,7 +41,9 @@
+ #include <Unidraw/Graphic/pspaint.h>
+ #include <InterViews/shape.h>
+ #include <InterViews/transformer.h>
++#if __FreeBSD_cc_version < 400002
+ #include <osfcn.h>
++#endif
+ #include <stdlib.h>
+ #include <stream.h>
+ #include <string.h>

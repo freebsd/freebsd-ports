@@ -1,0 +1,12 @@
+--- src/lib/Unidraw/catcmds.c.orig	Thu May 27 20:08:11 1999
++++ src/lib/Unidraw/catcmds.c	Thu May 27 20:08:33 1999
+@@ -42,7 +42,9 @@
+ #include <InterViews/window.h>
+ #include <OS/string.h>
+ 
++#if __FreeBSD_cc_version < 400002
+ #include <osfcn.h>
++#endif
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <stream.h>

@@ -1,0 +1,12 @@
+--- src/lib/Unidraw/catalog.c.orig	Thu May 27 20:04:40 1999
++++ src/lib/Unidraw/catalog.c	Thu May 27 20:06:39 1999
+@@ -57,7 +57,9 @@
+ #include <IV-2_6/_enter.h>
+ 
+ #include <ctype.h>
++#if __FreeBSD_cc_version < 400002
+ #include <osfcn.h>
++#endif
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>

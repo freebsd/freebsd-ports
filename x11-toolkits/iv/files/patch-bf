@@ -1,0 +1,11 @@
+--- src/bin/dclock/clocktime.c.orig	Thu May 27 21:32:07 1999
++++ src/bin/dclock/clocktime.c	Thu May 27 21:33:07 1999
+@@ -55,7 +55,7 @@
+ #if defined(hpux) || defined(AIXV3)
+     local = * localtime((time_t*) &gmt.tv_sec);
+ #else
+-#ifdef __DECCXX
++#if defined(__DECCXX) || defined(__FreeBSD__)
+     local = * localtime((time_t*)&gmt.tv_sec);
+ #else
+     local = * localtime(&gmt.tv_sec);
