@@ -1,0 +1,8 @@
+Childsplay is a 'suite' of educational games for young children, like gcompris,
+but without the overkill of GNOME environment.  Also the use of the SDL
+libraries makes smooth animation and the playing of sound very easy.
+Childsplay uses a plugin system for the games, so you might want to check the
+childsplay-plugins page.  (There are two built-in games; Memory and a typing
+game)
+
+WWW: http://childsplay.sourceforge.net
