@@ -53,6 +53,12 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 
 MAN1=		macopix.1
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-install:
 	${STRIP_CMD} ${PREFIX}/bin/macopix
 # install mascot file
@@ -107,4 +113,4 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/NKR.README.jp ${PREFIX}/share/doc/macopix
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
