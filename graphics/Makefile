@@ -189,6 +189,7 @@
     SUBDIR += povray
     SUBDIR += povray31
     SUBDIR += ppm2fli
+    SUBDIR += ppmcaption
     SUBDIR += pstoedit
     SUBDIR += pvmpov
     SUBDIR += py-imaging
