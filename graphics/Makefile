@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.33 1996/12/19 22:34:52 fenner Exp $
+# $Id: Makefile,v 1.34 1996/12/22 04:38:42 jmz Exp $
 #
 
     SUBDIR += ImageMagick
@@ -12,6 +12,7 @@
     SUBDIR += gimp
     SUBDIR += gimp-devel
     SUBDIR += hpscan
+    SUBDIR += jbigkit
     SUBDIR += jpeg
     SUBDIR += mpeg-lib
     SUBDIR += mpeg2codec
