@@ -32,6 +32,88 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a7062952-9023-11d9-a22c-0001020eed82">
+    <topic>phpmyadmin -- information disclosure vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<name>phpMyAdmin</name>
+	<range><lt>2.6.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A phpMyAdmin security announcement reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-2">
+	  <p>By calling some scripts that are part of phpMyAdmin in an
+	    unexpected way (especially scripts in the libraries
+	    subdirectory), it is possible to trigger phpMyAdmin to
+	    display a PHP error message which contains the full path
+	    of the directory where phpMyAdmin is installed.</p>
+	  <p><strong>Mitigation factor:</strong> This path disclosure
+	    is possible on servers where the recommended setting of
+	    the PHP configuration directive
+	    <code>display_errors</code> is set to on, which is against
+	    the recommendations given in the PHP manual.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0544</cvename>
+      <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-2</url>
+    </references>
+    <dates>
+      <discovery>2005-02-22</discovery>
+      <entry>2005-03-08</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="882ef43b-901f-11d9-a22c-0001020eed82">
+    <topic>phpmyadmin -- arbitrary file include and XSS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<name>phpMyAdmin</name>
+	<range><gt>1.3.1</gt><lt>2.6.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A phpMyAdmin security announcement reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-1">
+	  <p>We received two bug reports by Maksymilian Arciemowicz
+	    about those vulnerabilities and we wish to thank him for
+	    his work.  The vulnerabilities apply to those points:</p>
+	  <ol>
+	    <li>css/phpmyadmin.css.php was vulnerable against
+	      <code>$cfg</code> and <code>GLOBALS</code> variable
+	      injections. This way, a possible attacker could
+	      manipulate any configuration parameter. Using
+	      phpMyAdmin's theming mechanism, he was able to include
+	      arbitrary files. This is especially dangerous if php is
+	      not running in safe mode.</li>
+	    <li>A possible attacker could manipulate phpMyAdmin's
+	      localized strings via the URL and inject harmful
+	      JavaScript code this way, which could be used for XSS
+	      attacks.</li>
+	  </ol>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>12644</bid>
+      <bid>12645</bid>
+      <cvename>CAN-2005-0543</cvename>
+      <cvename>CAN-2005-0567</cvename>
+      <mlist msgid="20050224190307.20197.qmail@www.securityfocus.com">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=110929725801154</mlist>
+      <url>http://www.phpmyadmin.net/home_page/security.php?issue=PMASA-2005-1</url>
+    </references>
+    <dates>
+      <discovery>2005-02-21</discovery>
+      <entry>2005-03-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="624fe633-9006-11d9-a22c-0001020eed82">
     <topic>libexif -- buffer overflow vulnerability</topic>
     <affects>
