@@ -5821,7 +5821,6 @@ ruby-mcrypt	ports/security/ruby-mcrypt
 ruby-metaruby	ports/devel/ruby-metaruby
 ruby-ming	ports/graphics/ruby-ming
 ruby-mmap	ports/devel/ruby-mmap
-ruby-mo		ports/devel/ruby-mo
 ruby-mock	ports/devel/ruby-mock
 ruby-mode.el	ports/lang/ruby-mode.el
 ruby-mp3tag	ports/audio/ruby-mp3tag
