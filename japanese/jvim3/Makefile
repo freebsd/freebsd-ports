@@ -1,5 +1,5 @@
 # New ports collection makefile for:    jvim3
-# Version required:     3.0-j1.3j
+# Version required:     3.0-1.7j
 # Date created:         98/11/17
 # Whom:                 Satoshi TAOKA <taoka@FreeBSD.org>
 #
@@ -7,10 +7,10 @@
 #
 
 DISTNAME=	vim
-PKGNAME?=	ja-jvim-3.0.1.3j
+PKGNAME?=	ja-jvim${INPUT_METHOD}-3.0.1.7j
 CATEGORIES=	japanese editors
 MASTER_SITES=	ftp://dutepp0.et.tudelft.nl/pub/Unix/Editors/ \
-		http://hp.vector.co.jp/authors/VA003457/vim/vim3/1.3j/
+		http://hp.vector.co.jp/authors/VA003457/vim/vim3/1.7/
 DISTFILES=	vim-3.0.tar.gz ${JPATCH}
 
 MAINTAINER=	taoka@FreeBSD.org
@@ -25,8 +25,8 @@ EXTRACT_ONLY=	vim-3.0.tar.gz
 MAKEFILE=	makjunix.mak
 MAN1=		jvim3.1
 
-VERSION=	3.0.1.3j
-JPATCH=		jvim.1.3j.tar.gz
+VERSION=	3.0.1.7j
+JPATCH=		jvim.1.7.tar.gz
 PLIST_SUB=	VERSION=${VERSION}
 PORT_DOCDIR=	${PREFIX}/share/doc/ja-jvim-${VERSION}
 # -DUSE_X11 is the cause of a problem treating Japanese
@@ -40,7 +40,7 @@ FEPOPT=		-DJP_DEF=\"EEE\"
 #  Direct connection to Canna
 #######
 .if defined(DIRECT_CANNA)
-INPUT_METHOD=	direct_canna
+INPUT_METHOD+=	direct_canna
 LIB_DEPENDS+=	canna.1:${PORTSDIR}/japanese/Canna
 FEPOPT+=	-DCANNA
 FEPLIBS=	-lcanna
@@ -65,28 +65,24 @@ BUILD_DEPENDS+=	${X11BASE}/lib/libjd.a:${PORTSDIR}/japanese/Wnn
 RUN_DEPENDS+=	${LOCALBASE}/lib/wnn/ja_JP/rk.wnn6/2B_ROMKANA:${PORTSDIR}/japanese/onew${INPUT_METHOD}
 FEPLIBS+=	-L${X11BASE}/lib -ljd -lcrypt
 .endif
+.endif # DIRECT_CANNA
 #
+.if defined(INPUT_METHOD)
 # Make a value of INPUT_METHOD
-.if defined(INPUT_METHOD)
-# 'echo' and 'sed' cannot replace by '${ECHO}' and '${SED}' in the next line
+## 'echo' and 'sed' in the next line cannot replace by '${ECHO}' and '${SED}'
 INPUT_METHOD!=	echo ${INPUT_METHOD} | sed -e 's/^/-/' -e 's/ /+/g'
-.endif
-#
+FEPOPT+=	-DFEPCTRL
+.if !defined(DIRECT_CANNA)
 # For ONEW library
-.if defined(INPUT_METHOD)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libonew${INPUT_METHOD}.a:${PORTSDIR}/japanese/onew${INPUT_METHOD}
 FEPOPT+=	-DONEW
-# If we use ONEW libray, then -lonew-* need appear
+# If we use ONEW libray, then -lonew-* needs appear
 # before the other libraries in ${FEPLIBS}.
-### 'sed' and echo cannot replace by '${SED}' and ${ECHO} in the next line
+### 'sed' and 'echo' in the next line cannot replace by '${SED}' and ${ECHO}
 FEPLIBS!=	echo ${FEPLIBS} | sed 's%^%-lonew${INPUT_METHOD} %'
 FEPOBJS=	feponew.o
-.endif
-.endif # DIRECT_CANNA
 ###
-.if defined(FEPOBJS)
-# In the case defining at least one of CANNA, WNN4, WNN6, DIRECT_CANNA
-FEPOPT+=	-DFEPCTRL
+.endif
 .endif
 
 post-extract:
@@ -112,8 +108,8 @@ do-install:
 .if !defined(NOPORTDOCS)
 .if defined(PORT_DOCDIR)
 	${MKDIR} ${PORT_DOCDIR}
-	for file in fj.txt differen.doc readme.doc uganda.jp \
-			fepctrl.doc tutor/tutor.j; do \
+	for file in cygwin.txt differen.doc fepctrl.doc readme.doc \
+		termcap.dos uganda.jp vim-jp.htm vim32.ini tutor/tutor.j ; do \
 		${INSTALL_DATA} ${WRKSRC}/doc.j/$$file ${PORT_DOCDIR}; \
 	done
 

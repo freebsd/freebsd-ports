@@ -3,10 +3,13 @@ bin/jgrep
 lib/jvim3.hlp
 @exec ([ -f %D/etc/jvim3rc ] && mv %D/etc/jvim3rc %D/etc/jvim3rc.bak) || /usr/bin/true
 etc/jvim3rc
-share/doc/ja-jvim-%%VERSION%%/fj.txt
-share/doc/ja-jvim-%%VERSION%%/tutor.j
+share/doc/ja-jvim-%%VERSION%%/cygwin.txt
 share/doc/ja-jvim-%%VERSION%%/differen.doc
-share/doc/ja-jvim-%%VERSION%%/readme.doc
-share/doc/ja-jvim-%%VERSION%%/uganda.jp
 share/doc/ja-jvim-%%VERSION%%/fepctrl.doc
+share/doc/ja-jvim-%%VERSION%%/readme.doc
+share/doc/ja-jvim-%%VERSION%%/termcap.dos
+share/doc/ja-jvim-%%VERSION%%/tutor.j
+share/doc/ja-jvim-%%VERSION%%/uganda.jp
+share/doc/ja-jvim-%%VERSION%%/vim-jp.htm
+share/doc/ja-jvim-%%VERSION%%/vim32.ini
 @dirrm share/doc/ja-jvim-%%VERSION%%
