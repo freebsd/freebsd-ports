@@ -1,0 +1,8 @@
+XCPUSTATE is a system monitor tool.  It displays user-, system-,
+idle-cputime in the form of a bar chart.  On some systems it also
+monitors disk performance.
+
+It can also display information about remote hosts using the RSTAT RPC
+protocol, as perfmeter does.
+
+-- David	(obrien@cs.ucdavis.edu)
