@@ -73,6 +73,7 @@
     SUBDIR += gsed
     SUBDIR += gtk-doc
     SUBDIR += gtkdiff
+    SUBDIR += gtkspell2
     SUBDIR += gutenbook
     SUBDIR += gutenmark
     SUBDIR += gxditview
