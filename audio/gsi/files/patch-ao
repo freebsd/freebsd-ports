@@ -1,0 +1,11 @@
+--- ../gsi/test/gsif/mus_to_midi/Makefile	Wed Feb  2 19:05:31 2000
++++ ./test/gsif/mus_to_midi/Makefile	Thu Dec  7 18:59:21 2000
+@@ -25,7 +25,7 @@
+ #-----------------------------------------------------------------------------#
+ INCLUDES	= -I../../../include
+ 
+-CFLAGS		= -O2 -fomit-frame-pointer -DDEBUG -g -Wall
++CFLAGS		+= -Wall -DDEBUG
+ 
+ ALL_CFLAGS	= $(DEFINES) $(INCLUDES) $(CFLAGS)
+ 

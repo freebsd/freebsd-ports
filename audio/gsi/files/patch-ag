@@ -1,0 +1,20 @@
+--- ../gsi/lib/gsif/Makefile	Wed Feb  2 19:03:14 2000
++++ ./lib/gsif/Makefile	Thu Dec  7 18:59:20 2000
+@@ -23,7 +23,7 @@
+ STATIC_LIB	= libgsif.a
+ DYNAMIC_LIB	= libgsif.so
+ LIB_NAME	= $(LIBGSIF)
+-VERSION		= .0.1
++VERSION		= .0
+ LIB_OBJS	= io.o \
+ 			sample/load_save.o sample/sample_format.o sample/block.o sample/types.o sample/fill_buffer.o sample/convert_block.o sample/mulaw.o sample/sample_get_structure_aif.o sample/sample_get_structure_au.o sample/sample_get_structure_voc.o sample/sample_get_structure_wav.o sample/save_au.o sample/save_aiff.o \
+ 			song/save_midi.o song/midi_utils.o song/midi_decode.o song/load_song.o song/load_midi.o song/load_hmp.o song/load_mus.o song/convert_mus_to_midi.o
+@@ -34,7 +34,7 @@
+ 
+ INCLUDES	= -I../../include
+ 
+-WARN		= -Wall -Wstrict-prototypes
++WARN		= -Wall #-Wstrict-prototypes
+ 
+ MY_CFLAGS	= $(CFLAGS) $(DEBUG) $(OPTIMIZE) $(WARN) $(SYSCONFIG_THREADS_CFLAGS)
+ 

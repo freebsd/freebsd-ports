@@ -1,0 +1,20 @@
+--- ../gsi/lib/gsi/Makefile	Wed Feb  2 19:02:05 2000
++++ ./lib/gsi/Makefile	Thu Dec  7 18:59:20 2000
+@@ -23,7 +23,7 @@
+ STATIC_LIB	= libgsi.a
+ DYNAMIC_LIB	= libgsi.so
+ LIB_NAME	= $(LIBGSI)
+-VERSION		= .0.1
++VERSION		= .0
+ LIB_OBJS	= gsi.o event.o functions.o io.o
+ 
+ 
+@@ -31,7 +31,7 @@
+ 
+ INCLUDES	= -I../../include
+ 
+-WARN		= -Wall -Wstrict-prototypes
++WARN		= -Wall #-Wstrict-prototypes
+ 
+ MY_CFLAGS	= $(CFLAGS) $(DEBUG) $(OPTIMIZE) $(WARN) $(SYSCONFIG_THREADS_CFLAGS)
+ 
