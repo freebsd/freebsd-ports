@@ -7,4 +7,4 @@ lib/cim/libcim.a
 include/cim.h
 man/man1/cim.1.gz
 info/cim.info
-share/doc/cim.ps
+share/doc/cim/cim.ps
