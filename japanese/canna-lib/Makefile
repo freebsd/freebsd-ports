@@ -8,6 +8,7 @@
 
 PORTNAME=	Canna
 PORTVERSION=	3.6
+PORTREVISION=	1
 CATEGORIES=	japanese
 MASTER_SITES=	http://downloads.sourceforge.jp/canna/1425/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
