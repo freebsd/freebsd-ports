@@ -87,7 +87,7 @@ lib/rwhois/rwhois.log
 lib/rwhois/rwhois.objects
 lib/rwhois/rwhois.root
 lib/rwhois/sbin/rwhoisd
-lib/rwhois/usr/lib/libc.so.3.0
+lib/rwhois/usr/lib/libc.so.3.1
 lib/rwhois/usr/lib/libwrap.so.7.6
 lib/rwhois/usr/libexec/ld.so
 man/man8/rmkdbindex.8.gz
