@@ -18,6 +18,7 @@ share/doc/xvile/w32modes.doc
 @dirrm share/doc/xvile
 @unexec rm -f %D/share/xvile/vile/.vilemenu
 share/xvile/vile/color-ls.rc
+share/xvile/vile/dates.rc
 share/xvile/vile/digraphs.rc
 share/xvile/vile/manpage.rc
 share/xvile/vile/palettes.rc
@@ -77,10 +78,13 @@ share/xvile/vile/xres.keywords
 share/xvile/vile/xs.keywords
 share/xvile/vile/yacc.keywords
 share/xvile/macros/color-ls.rc
+share/xvile/macros/dates.rc
 share/xvile/macros/digraphs.rc
+share/xvile/macros/gnugpg.rc
 share/xvile/macros/manpage.rc
 share/xvile/macros/palettes.rc
 share/xvile/macros/pictmode.rc
+share/xvile/macros/search.rc
 share/xvile/macros/shifts.rc
 share/xvile/macros/vileinit.rc
 share/xvile/macros/vilemenu.rc
