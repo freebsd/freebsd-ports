@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/postfix22/scripts/Attic/configure.postfix,v 1.44 2004-03-10 22:54:03 ale Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/postfix22/scripts/Attic/configure.postfix,v 1.45 2004-03-11 08:23:06 ale Exp $
 
 if [ -f ${WRKDIRPREFIX}${CURDIR}/Makefile.inc ]; then
 	exit
@@ -33,7 +33,7 @@ MySQL		"MySQL map lookups (choose version with WITH_MYSQL_VER)" "$status_MySQL" 
 PgSQL		"PostgreSQL v7.4 map lookups" "$status_PgSQL" \
 PgSQL73		"PostgreSQL v7.3 map lookups" "$status_PgSQL73" \
 PgSQL72		"PostgreSQL v7.2 map lookups" "$status_PgSQL72" \
-OpenLDAP	"OpenLDAP map lookups (choose ver. with USE_OPENLDAP_VER)" "$status_OpenLDAP" \
+OpenLDAP	"OpenLDAP map lookups (choose ver. with WANT_OPENLDAP_VER)" "$status_OpenLDAP" \
 Test		"SMTP/LMTP test server and generator" "$status_Test" \
 2> $tempfile
 
