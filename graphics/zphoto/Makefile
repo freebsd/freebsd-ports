@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zphoto
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	graphics www
 MASTER_SITES=	http://namazu.org/~satoru/zphoto/
 MASTER_SITE_SUBDIR=	${PORTNAME}
