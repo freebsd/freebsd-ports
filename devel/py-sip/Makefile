@@ -5,12 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	sip
-PORTVERSION=	3.7
+PORTVERSION=	3.8
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=
 
-MAINTAINER=	osgene@web.de
+MAINTAINER=	eugos@gmx.net
 COMMENT=	Python convenience link to sip library
 
 LIB_DEPENDS=	sip.10:${PORTSDIR}/devel/sip
