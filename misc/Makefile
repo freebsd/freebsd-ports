@@ -136,7 +136,6 @@
     SUBDIR += histring
     SUBDIR += hotkeys
     SUBDIR += hulgalugha
-    SUBDIR += icemc
     SUBDIR += instant-server
     SUBDIR += instant-workstation
     SUBDIR += iselect

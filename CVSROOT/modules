@@ -2746,7 +2746,6 @@ icebreaker	ports/games/icebreaker
 icecast		ports/audio/icecast
 icecast2	ports/audio/icecast2
 icegradient	ports/x11-toolkits/icegradient
-icemc		ports/misc/icemc
 icepref		ports/x11-wm/icepref
 ices		ports/audio/ices
 icewm		ports/x11-wm/icewm
