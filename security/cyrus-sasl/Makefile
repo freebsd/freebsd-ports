@@ -32,7 +32,7 @@ MAN3=		sasl.3 sasl_authorize_t.3 sasl_callbacks.3 sasl_checkpass.3 \
 		sasl_setprop.3 sasl_usererr.3
 MAN8=		sasldblistusers.8 saslpasswd.8
 
-USE_AUTOMAKE=	YES
+USE_AUTOMAKE_VER=14
 USE_LIBTOOL=	YES
 AUTOMAKE_ARGS=	--add-missing --include-deps
 
