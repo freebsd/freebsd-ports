@@ -8,6 +8,7 @@ include/Xbae/Matrix.h
 include/Xbae/MatrixP.h
 include/Xbae/patchlevel.h
 lib/libXbae.la
+lib/libXbae.so
 lib/libXbae.so.4
 share/Xbae/FAQ.html
 share/Xbae/INSTALL
