@@ -25,7 +25,6 @@
     SUBDIR += dnsjava
     SUBDIR += dnsmasq
     SUBDIR += dnsproxy
-    SUBDIR += dnssecwalker
     SUBDIR += dnstop
     SUBDIR += dnstracer
     SUBDIR += dnsutl
