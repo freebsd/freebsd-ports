@@ -10,5 +10,5 @@ share/doc/ami/README
 share/doc/ami/NEWS
 share/doc/ami/COPYING
 share/doc/ami/ChangeLog
-share/doc/ami/amirc
+share/doc/ami/gtkrc
 @dirrm share/doc/ami
