@@ -300,9 +300,7 @@
     SUBDIR += plain2
     SUBDIR += plan
     SUBDIR += platex-jsclasses
-    SUBDIR += platex209-euc
-    SUBDIR += platex209-jis
-    SUBDIR += platex209-sjis
+    SUBDIR += platex209
     SUBDIR += postgresql
     SUBDIR += postgresql-tcltk
     SUBDIR += postgresql7-man
@@ -400,7 +398,7 @@
     SUBDIR += wordnet-fpw
     SUBDIR += wwasw-fpw
     SUBDIR += xchat
-    SUBDIR += xdvik-vflib
+    SUBDIR += xdvik
     SUBDIR += xemacs-devel-canna
     SUBDIR += xemacs-devel-canna+freewnn
     SUBDIR += xemacs-devel-canna+wnn6
