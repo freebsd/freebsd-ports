@@ -1157,6 +1157,7 @@ distrib_cvsup_sup	distrib/cvsup/sup
 distribute	ports/mail/distribute
 diveintopython	ports/lang/diveintopython
 divx4linux	ports/graphics/divx4linux
+divx4linux4	ports/graphics/divx4linux4
 divxcalc	ports/graphics/divxcalc
 djbdns		ports/net/djbdns
 djvuplugin	ports/www/djvuplugin
