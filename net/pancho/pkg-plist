@@ -1,2 +1,17 @@
+lib/perl5/site_perl/%%PERL_VER%%/Pancho/Util.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pancho/Snmp.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pancho/Log.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pancho/Plugins/Nortel.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pancho/Plugins/Foundry.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pancho/Plugins/Arrowpoint.pm
+lib/perl5/site_perl/%%PERL_VER%%/Pancho/Plugins/Cisco.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Pancho/.packlist
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Pancho/Plugins 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Pancho 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Pancho 2>/dev/null || true
 bin/pancho
 etc/pancho.conf.sample
+%%PORTDOCS%%share/doc/pancho/README
+%%PORTDOCS%%share/doc/pancho/README.plugins
+%%PORTDOCS%%share/doc/pancho/Plugin.sample
+%%PORTDOCS%%@dirrm share/doc/pancho

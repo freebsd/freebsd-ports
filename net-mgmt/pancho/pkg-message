@@ -2,4 +2,5 @@ Documentation is not included with Pancho distribution
 Please read it at http://www.panchoproject.org/
 
 You also need to customize PREFIX/etc/pancho.conf
-A sample configuration file is installed as pancho.conf.sample.
+A sample configuration file is installed as pancho.conf.sample,
+copy it as pancho.conf.
