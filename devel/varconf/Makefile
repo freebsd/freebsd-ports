@@ -8,7 +8,11 @@
 PORTNAME=	varconf
 PORTVERSION=	0.5.2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://victor.worldforge.org/pub/worldforge/libs/varconf/
+MASTER_SITES=	ftp://victor.worldforge.org/%SUBDIR%/ \
+		http://purple.worldforge.org/wf/downloads/libs/varconf/ \
+		http://grimicus.dyndns.org:8080/%SUBDIR%/ \
+		ftp://ftp.fr.gnome.org/%SUBDIR%/
+MASTER_SITE_SUBDIR= pub/worldforge/libs/varconf
 
 MAINTAINER=	lehmann@ans-netz.de
 
