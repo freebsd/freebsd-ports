@@ -3,7 +3,7 @@
 # Date created:         4 Mar 1998
 # Whom:                 Donald Burr <dburr@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.6 1998/09/27 16:06:56 steve Exp $
+# $Id: Makefile,v 1.7 1998/10/01 02:17:47 jseger Exp $
 #
 
 DISTNAME=	tank-0.4a-src
@@ -15,7 +15,7 @@ MAINTAINER=	dburr@FreeBSD.ORG
 
 LIB_DEPENDS=	MesaGL.14:${PORTSDIR}/graphics/Mesa3
 
-BROKEN=		can't find libaux.h
+BROKEN=	can\'t find libaux.h
 
 WRKSRC=		${WRKDIR}/${PKGNAME}
 
