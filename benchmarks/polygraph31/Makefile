@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	polygraph
-PORTVERSION=	2.8.0
+PORTVERSION=	2.8.1
 CATEGORIES=	benchmarks www
 MASTER_SITES=	http://www.web-polygraph.org/downloads/srcs/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
