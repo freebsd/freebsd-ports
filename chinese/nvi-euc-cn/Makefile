@@ -8,7 +8,7 @@
 CATEGORIES=	chinese editors
 PKGNAMESUFFIX=	-euccn
 
-MAINTAINER=	ports@freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clone of vi/ex, with multilingual patch, default settings for euc-cn
 
 CONFIGURE_ARGS+=	--enable-multibyte=euc-cn --program-prefix=n

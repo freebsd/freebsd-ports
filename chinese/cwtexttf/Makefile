@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp1.sinica.edu.tw/pub2/tex/cwTeX/cwTeX-TTF/ \
 		ftp://freebsd.sinica.edu.tw/pub/statue/cwTeX-TTF/
 DISTNAME=	cwtex-ttf
 
-MAINTAINER=	statue@freebsd.sinica.edu.tw
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Five Chinese Big5 TrueType fonts made by cwTeX
 
 RUN_DEPENDS=	ttfm.sh:${PORTSDIR}/chinese/ttfm
