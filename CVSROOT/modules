@@ -6741,6 +6741,7 @@ rdate		ports/sysutils/rdate
 rdb		ports/databases/rdb
 rdesktop	ports/net/rdesktop
 rdfdb		ports/databases/rdfdb
+rdiff-backup	ports/sysutils/rdiff-backup
 rdist6		ports/net/rdist6
 re2c		ports/devel/re2c
 readlink	ports/sysutils/readlink
