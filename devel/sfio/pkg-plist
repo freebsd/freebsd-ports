@@ -1,0 +1,10 @@
+include/ast_common.h
+include/sfdisc.h
+include/sfio.h
+include/sfio_t.h
+include/stdio.h
+lib/libsfdisc.a
+lib/libsfio.a
+lib/libstdio.a
+man/man3/sfdisc.3.gz
+man/man3/sfio.3.gz
