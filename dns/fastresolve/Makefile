@@ -7,12 +7,13 @@
 
 PORTNAME=	fastresolve
 PORTVERSION=	2.8
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.pix.net/staff/djm/sw/dist/
 
 MAINTAINER=	verm@drunkmonk.net
 
-LIB_DEPENDS=	db3.2:${PORTSDIR}/databases/db3 \
+LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3 \
 		adns.1:${PORTSDIR}/net/adns
 
 USE_BZIP2=	yes

@@ -113,7 +113,7 @@ while [ "$1" ]; do
 				rm -f ${WRKDIRPREFIX}${REALCURDIR}/Makefile.inc
 				exit 1
 			fi
-			echo "LIB_DEPENDS+=	db3.2:\${PORTSDIR}/databases/db3"
+			echo "LIB_DEPENDS+=	db3.3:\${PORTSDIR}/databases/db3"
 			echo "CONFIGURE_ARGS+=	--with-dblib=berkeley"
 			echo "SASLDB_NAME=	sasldb"
 			DBLIB=1

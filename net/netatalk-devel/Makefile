@@ -7,6 +7,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	1.5.3.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net print
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
@@ -15,7 +16,7 @@ MASTER_SITE_SUBDIR=	netatalk
 MAINTAINER=	marcus@FreeBSD.org
 
 .if defined(WITH_CNID)
-LIB_DEPENDS=	db3.2:${PORTSDIR}/databases/db3
+LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 .endif
 .if defined(WITH_SRVLOC)
 LIB_DEPENDS+=	slp.1:${PORTSDIR}/net/openslp

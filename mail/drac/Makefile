@@ -7,7 +7,7 @@
 
 PORTNAME=	drac
 PORTVERSION= 	1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.cc.umanitoba.ca/src/ \
 		http://atreides.freenix.no/~anders/ \
@@ -18,7 +18,7 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	anders@FreeBSD.org
 
 .if defined(WITH_POSTFIX_DB3)
-LIB_DEPENDS+=	db3.2:${PORTSDIR}/databases/db3
+LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
 .endif
 
 NO_WRKSUBDIR=	yes

@@ -6,10 +6,11 @@
 
 PORTNAME=	isync
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.cs.hmc.edu/~me/isync/
 
-LIB_DEPENDS=	db3:${PORTSDIR}/databases/db3
+LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 
 MAINTAINER=	eivind@FreeBSD.org
 

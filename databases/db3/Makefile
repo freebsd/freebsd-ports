@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	db3
-PORTVERSION=	3.2.9
-PORTREVISION=	3
+PORTVERSION=	3.3.11
 PORTEPOCH?=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sleepycat.com/update/snapshot/

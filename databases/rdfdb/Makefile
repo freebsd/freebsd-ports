@@ -7,13 +7,14 @@
 
 PORTNAME=	rdfdb
 PORTVERSION=	0.46
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.guha.com/
 DISTNAME=	rdfdb_src
 
 MAINTAINER=	pjenvey@turntables.org
 
-LIB_DEPENDS=	db3:${PORTSDIR}/databases/db3
+LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 
 WRKSRC=	${WRKDIR}/rdfdb
 USE_GMAKE=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	squidGuard
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.ost.eltele.no/pub/www/proxy/squidGuard/ \
 		ftp://ftp.ost.eltele.no/pub/www/proxy/squidGuard/ \
@@ -14,12 +15,12 @@ MASTER_SITES=	http://ftp.ost.eltele.no/pub/www/proxy/squidGuard/ \
 
 MAINTAINER=	ports@tyfon.net
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libdb3.so.2:${PORTSDIR}/databases/db3
+LIB_DEPENDS=	db3.3:${PORTSDIR}/databases/db3
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid24
 
 HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-db-inc=${PREFIX}/include/db3 \
-		--with-db-lib=${PREFIX}/lib \
+CONFIGURE_ARGS=	--with-db-inc=${LOCALBASE}/include/db3 \
+		--with-db-lib=${LOCALBASE}/lib \
 		--with-sg-config=${PREFIX}/etc/squid/${PORTNAME}.conf \
 		--with-sg-dbhome=${DATADIR} \
 		--with-sg-logdir=${LOGDIR}

@@ -8,7 +8,7 @@
 
 PORTNAME=	poedit
 PORTVERSION=	1.1.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -20,7 +20,7 @@ MAINTAINER=	ports@FreeBSD.org
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext \
 		wx_gtk.2:${PORTSDIR}/x11-toolkits/wxgtk-devel \
-		db3:${PORTSDIR}/databases/db3
+		db3.3:${PORTSDIR}/databases/db3
 
 PATCH_DIST_ARGS=	-d ${PATCH_WRKSRC} -E ${PATCH_DIST_STRIP} -p1
 USE_REINPLACE=	yes

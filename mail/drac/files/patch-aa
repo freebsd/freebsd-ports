@@ -55,8 +55,8 @@
 +RPCGENFLAGS = -C -I
 +
 +.if defined(WITH_POSTFIX_DB3)
-+CFLAGS+=	-I${PREFIX}/include/db3
-+LDLIBS+=	-L${PREFIX}/lib -ldb3
++CFLAGS+=	-I${LOCALBASE}/include/db3
++LDLIBS+=	-L${LOCALBASE}/lib -ldb3
 +.endif
  
  # Man sections

@@ -7,7 +7,7 @@
 
 PORTNAME=	xcin
 PORTVERSION=	2.5.3.p2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	chinese x11
 MASTER_SITES=	ftp://xcin.linux.org.tw/pub/xcin/xcin/ \
 		ftp://xcin.linux.org.tw/pub/xcin/xcin/devel/ \
@@ -21,7 +21,7 @@ LIB_DEPENDS=	tabe.2:${PORTSDIR}/chinese/libtabe \
 		intl.4:${PORTSDIR}/devel/gettext \
 		iconv.3:${PORTSDIR}/converters/libiconv
 .if !defined(USE_DB2)
-LIB_DEPENDS+=	db3.2:${PORTSDIR}/databases/db3
+LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
 .else
 LIB_DEPENDS+=	db2.0:${PORTSDIR}/databases/db
 .endif
