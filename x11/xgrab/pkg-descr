@@ -1,0 +1,3 @@
+xgrab lets you grab arbitrary rectangular images from an X server and
+writes them to files or commands (such as lpr) in a variety of
+formats.

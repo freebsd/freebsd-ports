@@ -1,0 +1,19 @@
+*** Imakefile~	Mon Jun 28 18:14:48 1993
+--- Imakefile	Mon Feb 27 03:19:47 1995
+***************
+*** 21,27 ****
+   *   DEFINES= $(SIGNAL_DEFINES) -DNO_RLE_CHECKS
+   */
+  
+! XRDB=/usr/bin/X11/xrdb
+  
+  CDebugFlags = -O
+  
+--- 21,27 ----
+   *   DEFINES= $(SIGNAL_DEFINES) -DNO_RLE_CHECKS
+   */
+  
+! XRDB=/usr/X11R6/bin/xrdb
+  
+  CDebugFlags = -O
+  
