@@ -36,7 +36,7 @@ CONFIGURE_ARGS= --with-emacs=${EMACS_CMD} \
 		--infodir=${PORTINFODIR}
 
 post-install:
-.if (${EMACS_PORT_NAME} == "xemacs")
+.if (${EMACS_PORT_NAME} == "xemacs21-mule")
 	${RM} -f ${WRKDIR}/${MANIFEST}
 	emacsdir=`${ECHO} ${EMACSDIR} | ${SED} -e "s;^${PREFIX}/;;"`; \
 	${CAT} ${PLIST} | ${GREP} -e "^$${emacsdir}" | \
