@@ -29,6 +29,8 @@ PLIST_FILES=	${DATADIR}/${FILENAME}
 PLIST_DIRS=	${DATADIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
+.include <bsd.port.pre.mk>
+
 .if ${OSVERSION} < 500000
 post-patch:
 	${REINPLACE_CMD} -e "s|-fshort-wchar||" ${WRKSRC}/components/Makefile
@@ -44,4 +46,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
