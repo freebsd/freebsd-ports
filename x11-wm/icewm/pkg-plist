@@ -111,6 +111,7 @@ bin/icewmtray
 %%DATADIR%%/taskbar/debian.xpm
 %%DATADIR%%/taskbar/desktop.xpm
 %%DATADIR%%/taskbar/icewm.xpm
+%%DATADIR%%/taskbar/icewm-logo.xpm
 %%DATADIR%%/taskbar/linux.xpm
 %%DATADIR%%/taskbar/linux1.xpm
 %%DATADIR%%/taskbar/linux2.xpm

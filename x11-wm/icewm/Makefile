@@ -7,6 +7,7 @@
 
 PORTNAME=	icewm
 PORTVERSION=	1.2.18
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -72,6 +73,12 @@ CONFIGURE_ARGS+=	--disable-xinerama
 CONFIGURE_ARGS+=	--disable-x86-asm
 .endif
 
+.if defined(WITH_BEASTIE_STARTUP_PIXMAP)
+STARTUP_PIXMAP=		bsd-daemon.xpm
+.else
+STARTUP_PIXMAP=		icewm-logo.xpm
+.endif
+
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
@@ -79,6 +86,10 @@ PLIST_SUB+=	NLS="@comment "
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
+
+post-extract:
+	@cd ${WRKSRC}/lib/taskbar && ${MV} icewm.xpm icewm-logo.xpm
+	@${CP} -f ${FILESDIR}/bsd-daemon.xpm ${WRKSRC}/lib/taskbar
 
 post-patch:
 	@${REINPLACE_CMD} -e \
@@ -91,7 +102,7 @@ post-patch:
 .endfor
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/bsd-daemon.xpm ${DATADIR}/taskbar
+	@${LN} -sf ${STARTUP_PIXMAP} ${DATADIR}/taskbar/icewm.xpm
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in CHANGES INSTALL README TODO
