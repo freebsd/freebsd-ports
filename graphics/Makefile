@@ -217,6 +217,7 @@
     SUBDIR += linux_glx
     SUBDIR += linux_mesa
     SUBDIR += linux_mesa3
+    SUBDIR += lodju
     SUBDIR += maverik
     SUBDIR += metapixel
     SUBDIR += ming

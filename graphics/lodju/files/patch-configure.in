@@ -1,0 +1,13 @@
+--- configure.in	2002/02/08 17:35:42	1.1
++++ configure.in	2002/02/08 17:35:59
+@@ -13,8 +13,8 @@
+ 
+ dnl Checks for libraries.
+ 
+-CFLAGS="$CFLAGS `gtk-config --cflags` `libglade-config --cflags` `gdk-pixbuf-config --cflags`"
+-LIBS="$CFLAGS `gtk-config --libs` `libglade-config --libs` `gdk-pixbuf-config --libs`"
++CFLAGS="$CFLAGS `gtk12-config --cflags` `libglade-config --cflags` `gdk-pixbuf-config --cflags`"
++LIBS="$CFLAGS `gtk12-config --libs` `libglade-config --libs` `gdk-pixbuf-config --libs`"
+ 
+ dnl Look for gettext.
+ 
