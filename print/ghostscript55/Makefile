@@ -3,18 +3,21 @@
 # Date created:		Tue Jun 10 21:58:54 CEST 1997
 # Whom:			Andreas Klemm <andreas@klemm.gtn.com>
 #
-# $Id: Makefile,v 1.5 1997/07/13 18:49:28 max Exp $
+# $Id: Makefile,v 1.6 1997/08/24 14:36:24 andreas Exp $
 #
 
 DISTNAME=	ghostscript-5.03
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/
-DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER}
+MASTER_SITES=	ftp://ftp.cs.wisc.edu/ghost/aladdin/ \
+		ftp://bonk.ethz.ch/gs-driver-distrib/
+DISTFILES=	${GS_SOURCES} ${GS_FONTS_STD} ${GS_FONTS_OTHER} \
+		${HP850_DRV}
 
 MAINTAINER=	andreas@FreeBSD.org
 
 BUILD_DEPENDS=	/nonexistent:${PORTSDIR}/graphics/jpeg \
-		/nonexistent:${PORTSDIR}/graphics/png
+		/nonexistent:${PORTSDIR}/graphics/png \
+		unzip:${PORTSDIR}/archiver/unzip
 DEPENDS_TARGET=	extract
 
 MAKE_ENV=	PORTSDIR=${PORTSDIR}
@@ -32,6 +35,9 @@ GS_SOURCES+=	ghostscript-5.03gnu.tar.gz
 #  unless the files really change.
 GS_FONTS_STD=	ghostscript-fonts-std-4.0.tar.gz
 GS_FONTS_OTHER=	ghostscript-fonts-other-5.0.tar.gz
+
+# Additional driver HP 850, see http://bonk.ethz.ch/hp850/hp850.html
+HP850_DRV=	hp850.zip
 
 .if defined(A4)
 CFLAGS+=	-DA4
@@ -54,6 +60,11 @@ post-extract:
 	touch ${WRKSRC}/trees.o
 	ln -s ${PORTSDIR}/graphics/jpeg/work/jpeg-6a ${WRKSRC}/jpeg-6a
 	ln -s ${PORTSDIR}/graphics/png/work/libpng-0.96 ${WRKSRC}/libpng
+	cd ${WRKSRC} && unzip ${DISTDIR}/${HP850_DRV}
+.for file in gdevcd8.c gdevcd8.h
+#	( cd ${WRKSRC} && sed -e "s/\\\\,//" < ${file} | sed -e "s/\\//" > ${file}.tmp && mv ${file}.tmp ${file} )
+	( cd ${WRKSRC} && sed -e "s///" < ${file} > ${file}.tmp && mv ${file}.tmp ${file} )
+.endfor
 
 do-configure:
 .if defined(BATCH)
