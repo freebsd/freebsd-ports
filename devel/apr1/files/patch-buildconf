@@ -1,7 +1,11 @@
---- apr-0.9.3/buildconf.orig	Wed May 15 16:47:09 2002
-+++ apr-0.9.3/buildconf	Wed Feb 19 23:24:35 2003
-@@ -83,3 +83,3 @@
- ltpath=`dirname $libtoolize`
--ltfile=`cd $ltpath/../share/aclocal ; pwd`/libtool.m4
-+ltfile=`cd $ltpath/../../share/aclocal ; pwd`/libtool14.m4
+--- apr-0.9.4/buildconf.orig	Wed Jun 18 05:44:25 2003
++++ apr-0.9.4/buildconf	Thu Oct  2 15:58:45 2003
+@@ -81,7 +81,7 @@
+ $libtoolize --copy --automake
  
+ ltpath=`dirname $libtoolize`
+-ltfile=${LIBTOOL_M4-`cd $ltpath/../share/aclocal ; pwd`/libtool.m4}
++ltfile=${LIBTOOL_M4-`cd $ltpath/../../share/aclocal ; pwd`/libtool14.m4}
+ 
+ if [ ! -f $ltfile ]; then
+     echo "$ltfile not found"
