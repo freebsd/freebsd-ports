@@ -5,16 +5,24 @@ bin/lr_config
 bin/lr_cron
 bin/lr_deanonymize
 bin/lr_desyslog
+bin/lr_env
+bin/lr_env2conf
 bin/lr_log2mail
 bin/lr_log2report
 bin/lr_rawmail2mail
 bin/lr_run
-bin/lr_run_tests
+bin/lr_setup_responder
 bin/lr_spoold
-bin/lr_sql2report
+bin/lr_store
 bin/lr_xml2mail
 bin/lr_xml2report
 etc/lire/address.cf
+etc/lire/converters/iis_ftp_init
+etc/lire/converters/ipchains_init
+etc/lire/converters/ipfilter_init
+etc/lire/converters/snort_init
+etc/lire/converters/squid_access_init
+etc/lire/converters/watchguard_init
 etc/lire/database.cfg
 etc/lire/defaults
 etc/lire/dialup.cfg
@@ -30,238 +38,238 @@ etc/lire/print.cfg
 etc/lire/profile_lean
 etc/lire/proxy.cfg
 etc/lire/signature
+etc/lire/spamfilter.cfg
 etc/lire/syslog.cfg
-etc/lire/service_aliases.cf
 etc/lire/www.cfg
-@dirrm etc/lire
-
-libexec/lire/lr_check_superservice
-libexec/lire/lr_dlf2sql
-libexec/lire/lr_sql2dlf
+libexec/lire/convertors/argomail2dlf
+libexec/lire/convertors/bind8_named2dlf
 libexec/lire/convertors/bind8_query2dlf
 libexec/lire/convertors/bind9_query2dlf
-libexec/lire/convertors/bind8_named2dlf
-libexec/lire/convertors/mysql2dlf
-libexec/lire/convertors/pgsql2dlf
-libexec/lire/convertors/isdnlog2dlf
-libexec/lire/convertors/argomail2dlf
+libexec/lire/convertors/cisco_ios2dlf
+libexec/lire/convertors/combined2dlf
+libexec/lire/convertors/common2dlf
+libexec/lire/convertors/cups_pagelog2dlf
+libexec/lire/convertors/dbmail2dlf
 libexec/lire/convertors/exim2dlf
+libexec/lire/convertors/fw1_lea2dlf
+libexec/lire/convertors/iptables2dlf
+libexec/lire/convertors/isdnlog2dlf
+libexec/lire/convertors/lprng_account2dlf
+libexec/lire/convertors/modgzip2dlf
+libexec/lire/convertors/ms_isa2dlf
+libexec/lire/convertors/mysql2dlf
 libexec/lire/convertors/nms2dlf
+libexec/lire/convertors/nmsmmp2dlf
+libexec/lire/convertors/nmsstore2dlf
+libexec/lire/convertors/pgsql2dlf
+libexec/lire/convertors/pix2dlf
 libexec/lire/convertors/postfix2dlf
 libexec/lire/convertors/postfix2dlf_main
 libexec/lire/convertors/postfix2dlf_pre
 libexec/lire/convertors/qmail2dlf
-libexec/lire/convertors/sendmail2dlf
-libexec/lire/convertors/cisco_ios2dlf
-libexec/lire/convertors/ipfilter2dlf
-libexec/lire/convertors/ipchains2dlf
-libexec/lire/convertors/iptables2dlf
-libexec/lire/convertors/pix2dlf
-libexec/lire/convertors/watchguard2dlf
-libexec/lire/convertors/welf2dlf
-libexec/lire/convertors/xferlog2dlf
-libexec/lire/convertors/iis_ftp2dlf
-libexec/lire/convertors/nmsmmp2dlf
-libexec/lire/convertors/nmsstore2dlf
-libexec/lire/convertors/cups_pagelog2dlf
-libexec/lire/convertors/lprng_account2dlf
-libexec/lire/convertors/ms_isa2dlf
-libexec/lire/convertors/squid_access2dlf
-libexec/lire/convertors/welf_proxy2dlf
-libexec/lire/convertors/syslog2dlf
-libexec/lire/convertors/combined2dlf
-libexec/lire/convertors/common2dlf
-libexec/lire/convertors/modgzip2dlf
 libexec/lire/convertors/referer2dlf
+libexec/lire/convertors/s1ms2dlf
+libexec/lire/convertors/sendmail2dlf
+libexec/lire/convertors/snort2dlf
+libexec/lire/convertors/spamassassin2dlf
+libexec/lire/convertors/syslog2dlf
+libexec/lire/convertors/tinydns2dlf
 libexec/lire/convertors/w3c_extended2dlf
-libexec/lire/lr_archive_log
-libexec/lire/lr_check_errlines
+libexec/lire/convertors/welf2dlf
+libexec/lire/convertors/welf_proxy2dlf
+libexec/lire/convertors/xferlog2dlf
 libexec/lire/lr_check_prereq
-libexec/lire/lr_db_fetch
-libexec/lire/lr_db_purge
-libexec/lire/lr_db_store
-libexec/lire/lr_dlf_analyze
+libexec/lire/lr_check_superservice
 libexec/lire/lr_dlf2xml
+libexec/lire/lr_environment
+libexec/lire/lr_functions
 libexec/lire/lr_getbody
 libexec/lire/lr_inflate
 libexec/lire/lr_log2xml
 libexec/lire/lr_mail
 libexec/lire/lr_processmail
-libexec/lire/lr_prof_report
 libexec/lire/lr_spool
-libexec/lire/lr_tag
 libexec/lire/lr_xml2ascii
+libexec/lire/lr_xml2chart
 libexec/lire/lr_xml2dbx
 libexec/lire/lr_xml2html
-libexec/lire/lr_xml2logml
 libexec/lire/lr_xml2pdf
-libexec/lire/lr_xml2png
 libexec/lire/lr_xml2rtf
 libexec/lire/lr_xml2xhtml
 libexec/lire/lr_xml2xls
 libexec/lire/lr_xml_merge
 libexec/lire/lr_xslt
-@dirrm libexec/lire/convertors
-@dirrm libexec/lire
-
-share/doc/lire/user-manual.pdf
-share/doc/lire/user-manual.txt
+sbin/lr_vendor_cron
+share/doc/lire/BUGS
+share/doc/lire/ChangeLog.2000.gz
+share/doc/lire/ChangeLog.2001.gz
+share/doc/lire/ChangeLog.2002.gz
+share/doc/lire/README
 share/doc/lire/dev-manual.pdf
 share/doc/lire/dev-manual.txt
-share/doc/lire/faq.pdf
-share/doc/lire/faq.txt
-share/doc/lire/roadmap.pdf
-share/doc/lire/roadmap.txt
-share/doc/lire/user-manual/ch01.html
-share/doc/lire/user-manual/pt02.html
-share/doc/lire/user-manual/pt01.html
-share/doc/lire/user-manual/pr01s04.html
-share/doc/lire/user-manual/pr01s03.html
-share/doc/lire/user-manual/pr01s02.html
-share/doc/lire/user-manual/pr01.html
-share/doc/lire/user-manual/index.html
-share/doc/lire/user-manual/ch21.html
-share/doc/lire/user-manual/ch20s02.html
-share/doc/lire/user-manual/ch20.html
-share/doc/lire/user-manual/ch19s04.html
-share/doc/lire/user-manual/ch19s03.html
-share/doc/lire/user-manual/ch19s02.html
-share/doc/lire/user-manual/ch19.html
-share/doc/lire/user-manual/ch18s02.html
-share/doc/lire/user-manual/ch18.html
-share/doc/lire/user-manual/ch17s04.html
-share/doc/lire/user-manual/ch17s03.html
-share/doc/lire/user-manual/ch17s02.html
-share/doc/lire/user-manual/ch17.html
-share/doc/lire/user-manual/ch16s03.html
-share/doc/lire/user-manual/ch16s02.html
-share/doc/lire/user-manual/ch16.html
-share/doc/lire/user-manual/ch15s03.html
-share/doc/lire/user-manual/ch15s02.html
-share/doc/lire/user-manual/ch15.html
-share/doc/lire/user-manual/ch14s03.html
-share/doc/lire/user-manual/ch14s02.html
-share/doc/lire/user-manual/ch14.html
-share/doc/lire/user-manual/ch13s03.html
-share/doc/lire/user-manual/ch13s02.html
-share/doc/lire/user-manual/ch13.html
-share/doc/lire/user-manual/ch12s03.html
-share/doc/lire/user-manual/ch12s02.html
-share/doc/lire/user-manual/ch12.html
-share/doc/lire/user-manual/ch11s03.html
-share/doc/lire/user-manual/ch11s02.html
-share/doc/lire/user-manual/ch11.html
-share/doc/lire/user-manual/ch10s03.html
-share/doc/lire/user-manual/ch10s02.html
-share/doc/lire/user-manual/ch10.html
-share/doc/lire/user-manual/ch09s03.html
-share/doc/lire/user-manual/ch09s02.html
-share/doc/lire/user-manual/ch09.html
-share/doc/lire/user-manual/ch08s03.html
-share/doc/lire/user-manual/ch08s02.html
-share/doc/lire/user-manual/ch08.html
-share/doc/lire/user-manual/ch07.html
-share/doc/lire/user-manual/ch06s03.html
-share/doc/lire/user-manual/ch06s02.html
-share/doc/lire/user-manual/ch06.html
-share/doc/lire/user-manual/ch05s05.html
-share/doc/lire/user-manual/ch05s04.html
-share/doc/lire/user-manual/ch05s03.html
-share/doc/lire/user-manual/ch05s02.html
-share/doc/lire/user-manual/ch05.html
-share/doc/lire/user-manual/ch04s03.html
-share/doc/lire/user-manual/ch04s02.html
-share/doc/lire/user-manual/ch04.html
-share/doc/lire/user-manual/ch03s05.html
-share/doc/lire/user-manual/ch03s04.html
-share/doc/lire/user-manual/ch03s03.html
-share/doc/lire/user-manual/ch03s02.html
-share/doc/lire/user-manual/ch03.html
-share/doc/lire/user-manual/ch02s05.html
-share/doc/lire/user-manual/ch02s04.html
-share/doc/lire/user-manual/ch02s03.html
-share/doc/lire/user-manual/ch02s02.html
-share/doc/lire/user-manual/ch02.html
-share/doc/lire/user-manual/ch01s05.html
-share/doc/lire/user-manual/ch01s04.html
-share/doc/lire/user-manual/ch01s03.html
-share/doc/lire/user-manual/ch01s02.html
-share/doc/lire/user-manual/pt03.html
 share/doc/lire/dev-manual/ch01.html
-share/doc/lire/dev-manual/pt04.html
-share/doc/lire/dev-manual/pt03.html
-share/doc/lire/dev-manual/pt02.html
-share/doc/lire/dev-manual/pt01.html
-share/doc/lire/dev-manual/pr01s04.html
-share/doc/lire/dev-manual/pr01s03.html
-share/doc/lire/dev-manual/pr01s02.html
-share/doc/lire/dev-manual/pr01.html
-share/doc/lire/dev-manual/index.html
-share/doc/lire/dev-manual/go01.html
-share/doc/lire/dev-manual/ch17.html
-share/doc/lire/dev-manual/ch16.html
-share/doc/lire/dev-manual/ch15.html
-share/doc/lire/dev-manual/ch14s04.html
-share/doc/lire/dev-manual/ch14s03.html
-share/doc/lire/dev-manual/ch14s02.html
-share/doc/lire/dev-manual/ch14.html
-share/doc/lire/dev-manual/ch13.html
-share/doc/lire/dev-manual/ch12s08.html
-share/doc/lire/dev-manual/ch12s07.html
-share/doc/lire/dev-manual/ch12s06.html
-share/doc/lire/dev-manual/ch12s05.html
-share/doc/lire/dev-manual/ch12s04.html
-share/doc/lire/dev-manual/ch12s03.html
-share/doc/lire/dev-manual/ch12s02.html
-share/doc/lire/dev-manual/ch12.html
-share/doc/lire/dev-manual/ch11.html
-share/doc/lire/dev-manual/ch10.html
-share/doc/lire/dev-manual/ch09s02.html
-share/doc/lire/dev-manual/ch09.html
-share/doc/lire/dev-manual/ch08s04.html
-share/doc/lire/dev-manual/ch08s03.html
-share/doc/lire/dev-manual/ch08s02.html
-share/doc/lire/dev-manual/ch08.html
-share/doc/lire/dev-manual/ch07.html
-share/doc/lire/dev-manual/ch06s12.html
-share/doc/lire/dev-manual/ch06s11.html
-share/doc/lire/dev-manual/ch06s10.html
-share/doc/lire/dev-manual/ch06s09.html
-share/doc/lire/dev-manual/ch06s08.html
-share/doc/lire/dev-manual/ch06s07.html
-share/doc/lire/dev-manual/ch06s06.html
-share/doc/lire/dev-manual/ch06s05.html
-share/doc/lire/dev-manual/ch06s04.html
-share/doc/lire/dev-manual/ch06s03.html
-share/doc/lire/dev-manual/ch06s02.html
-share/doc/lire/dev-manual/ch06.html
-share/doc/lire/dev-manual/ch05s02.html
-share/doc/lire/dev-manual/ch05.html
-share/doc/lire/dev-manual/ch04s04.html
-share/doc/lire/dev-manual/ch04s03.html
-share/doc/lire/dev-manual/ch04s02.html
-share/doc/lire/dev-manual/ch04.html
-share/doc/lire/dev-manual/ch03s02.html
-share/doc/lire/dev-manual/ch03.html
-share/doc/lire/dev-manual/ch02s02.html
-share/doc/lire/dev-manual/ch02.html
-share/doc/lire/dev-manual/ch01s06.html
-share/doc/lire/dev-manual/ch01s05.html
-share/doc/lire/dev-manual/ch01s04.html
-share/doc/lire/dev-manual/ch01s03.html
 share/doc/lire/dev-manual/ch01s02.html
+share/doc/lire/dev-manual/ch01s03.html
+share/doc/lire/dev-manual/ch01s04.html
+share/doc/lire/dev-manual/ch01s05.html
+share/doc/lire/dev-manual/ch01s06.html
+share/doc/lire/dev-manual/ch02.html
+share/doc/lire/dev-manual/ch02s02.html
+share/doc/lire/dev-manual/ch02s03.html
+share/doc/lire/dev-manual/ch02s04.html
+share/doc/lire/dev-manual/ch02s05.html
+share/doc/lire/dev-manual/ch02s06.html
+share/doc/lire/dev-manual/ch02s07.html
+share/doc/lire/dev-manual/ch03.html
+share/doc/lire/dev-manual/ch04.html
+share/doc/lire/dev-manual/ch05.html
+share/doc/lire/dev-manual/ch06.html
+share/doc/lire/dev-manual/ch07.html
+share/doc/lire/dev-manual/ch08.html
+share/doc/lire/dev-manual/ch09.html
+share/doc/lire/dev-manual/ch10.html
+share/doc/lire/dev-manual/ch11.html
+share/doc/lire/dev-manual/ch12.html
+share/doc/lire/dev-manual/ch12s02.html
+share/doc/lire/dev-manual/ch12s03.html
+share/doc/lire/dev-manual/ch12s04.html
+share/doc/lire/dev-manual/ch12s05.html
+share/doc/lire/dev-manual/ch12s06.html
+share/doc/lire/dev-manual/ch12s07.html
+share/doc/lire/dev-manual/ch12s08.html
+share/doc/lire/dev-manual/ch12s09.html
+share/doc/lire/dev-manual/ch12s10.html
+share/doc/lire/dev-manual/ch12s11.html
+share/doc/lire/dev-manual/ch12s12.html
+share/doc/lire/dev-manual/ch13.html
+share/doc/lire/dev-manual/ch14.html
+share/doc/lire/dev-manual/ch14s02.html
+share/doc/lire/dev-manual/ch14s03.html
+share/doc/lire/dev-manual/ch14s04.html
+share/doc/lire/dev-manual/ch15.html
+share/doc/lire/dev-manual/ch15s02.html
+share/doc/lire/dev-manual/ch16.html
+share/doc/lire/dev-manual/ch16s02.html
+share/doc/lire/dev-manual/ch16s03.html
+share/doc/lire/dev-manual/ch16s04.html
+share/doc/lire/dev-manual/ch17.html
+share/doc/lire/dev-manual/ch18.html
+share/doc/lire/dev-manual/ch19.html
+share/doc/lire/dev-manual/ch19s02.html
+share/doc/lire/dev-manual/ch19s03.html
+share/doc/lire/dev-manual/ch19s04.html
+share/doc/lire/dev-manual/ch19s05.html
+share/doc/lire/dev-manual/ch19s06.html
+share/doc/lire/dev-manual/ch19s07.html
+share/doc/lire/dev-manual/ch19s08.html
+share/doc/lire/dev-manual/ch19s09.html
+share/doc/lire/dev-manual/ch20.html
+share/doc/lire/dev-manual/ch21.html
+share/doc/lire/dev-manual/ch21s02.html
+share/doc/lire/dev-manual/ch21s03.html
+share/doc/lire/dev-manual/ch21s04.html
+share/doc/lire/dev-manual/ch22.html
+share/doc/lire/dev-manual/ch23.html
+share/doc/lire/dev-manual/ch24.html
+share/doc/lire/dev-manual/ch25.html
+share/doc/lire/dev-manual/ch26.html
+share/doc/lire/dev-manual/flow-analysis.png
+share/doc/lire/dev-manual/flow-generation.png
+share/doc/lire/dev-manual/flow-normalisation.png
+share/doc/lire/dev-manual/flow-overview.png
+share/doc/lire/dev-manual/flow-report.png
+share/doc/lire/dev-manual/flow-xslt.png
+share/doc/lire/dev-manual/go01.html
+share/doc/lire/dev-manual/index.html
+share/doc/lire/dev-manual/lire-dlf-converters.png
+share/doc/lire/dev-manual/pr01.html
+share/doc/lire/dev-manual/pr01s02.html
+share/doc/lire/dev-manual/pr01s03.html
+share/doc/lire/dev-manual/pr01s04.html
+share/doc/lire/dev-manual/pt01.html
+share/doc/lire/dev-manual/pt02.html
+share/doc/lire/dev-manual/pt03.html
+share/doc/lire/dev-manual/pt04.html
 share/doc/lire/dev-manual/pt05.html
-share/doc/lire/faq/index.html
-share/doc/lire/roadmap/index.html
-share/doc/lire/roadmap/ar01s04.html
-share/doc/lire/roadmap/ar01s03.html
-share/doc/lire/roadmap/ar01s02.html
-@dirrm share/doc/lire/dev-manual
-@dirrm share/doc/lire/faq
-@dirrm share/doc/lire/roadmap
-@dirrm share/doc/lire/user-manual
-@dirrm share/doc/lire
-
+share/doc/lire/examples/MyConverter.pm
+share/doc/lire/examples/README
+share/doc/lire/examples/myconverter_cfg_default.xml
+share/doc/lire/examples/myconverter_cfg_spec.xml
+share/doc/lire/examples/myconverter_init
+share/doc/lire/examples/myschema.xml
+share/doc/lire/user-manual.pdf
+share/doc/lire/user-manual.txt
+share/doc/lire/user-manual/ch01.html
+share/doc/lire/user-manual/ch01s02.html
+share/doc/lire/user-manual/ch01s03.html
+share/doc/lire/user-manual/ch01s04.html
+share/doc/lire/user-manual/ch01s05.html
+share/doc/lire/user-manual/ch02.html
+share/doc/lire/user-manual/ch02s02.html
+share/doc/lire/user-manual/ch02s03.html
+share/doc/lire/user-manual/ch02s04.html
+share/doc/lire/user-manual/ch03.html
+share/doc/lire/user-manual/ch03s02.html
+share/doc/lire/user-manual/ch03s03.html
+share/doc/lire/user-manual/ch03s04.html
+share/doc/lire/user-manual/ch03s05.html
+share/doc/lire/user-manual/ch03s06.html
+share/doc/lire/user-manual/ch04.html
+share/doc/lire/user-manual/ch04s02.html
+share/doc/lire/user-manual/ch04s03.html
+share/doc/lire/user-manual/ch05.html
+share/doc/lire/user-manual/ch05s02.html
+share/doc/lire/user-manual/ch05s03.html
+share/doc/lire/user-manual/ch05s04.html
+share/doc/lire/user-manual/ch05s05.html
+share/doc/lire/user-manual/ch06.html
+share/doc/lire/user-manual/ch06s02.html
+share/doc/lire/user-manual/ch06s03.html
+share/doc/lire/user-manual/ch07.html
+share/doc/lire/user-manual/ch08.html
+share/doc/lire/user-manual/ch08s02.html
+share/doc/lire/user-manual/ch08s03.html
+share/doc/lire/user-manual/ch09.html
+share/doc/lire/user-manual/ch09s02.html
+share/doc/lire/user-manual/ch09s03.html
+share/doc/lire/user-manual/ch10.html
+share/doc/lire/user-manual/ch10s02.html
+share/doc/lire/user-manual/ch10s03.html
+share/doc/lire/user-manual/ch11.html
+share/doc/lire/user-manual/ch11s02.html
+share/doc/lire/user-manual/ch11s03.html
+share/doc/lire/user-manual/ch12.html
+share/doc/lire/user-manual/ch12s02.html
+share/doc/lire/user-manual/ch12s03.html
+share/doc/lire/user-manual/ch13.html
+share/doc/lire/user-manual/ch13s02.html
+share/doc/lire/user-manual/ch13s03.html
+share/doc/lire/user-manual/ch14.html
+share/doc/lire/user-manual/ch14s02.html
+share/doc/lire/user-manual/ch14s03.html
+share/doc/lire/user-manual/ch15.html
+share/doc/lire/user-manual/ch15s02.html
+share/doc/lire/user-manual/ch15s03.html
+share/doc/lire/user-manual/ch16.html
+share/doc/lire/user-manual/ch16s02.html
+share/doc/lire/user-manual/ch16s03.html
+share/doc/lire/user-manual/ch17.html
+share/doc/lire/user-manual/ch17s02.html
+share/doc/lire/user-manual/ch17s03.html
+share/doc/lire/user-manual/ch17s04.html
+share/doc/lire/user-manual/ch18.html
+share/doc/lire/user-manual/ch18s02.html
+share/doc/lire/user-manual/ch19.html
+share/doc/lire/user-manual/ch19s02.html
+share/doc/lire/user-manual/ch20.html
+share/doc/lire/user-manual/index.html
+share/doc/lire/user-manual/pr01.html
+share/doc/lire/user-manual/pr01s02.html
+share/doc/lire/user-manual/pr01s03.html
+share/doc/lire/user-manual/pr01s04.html
+share/doc/lire/user-manual/pt01.html
+share/doc/lire/user-manual/pt02.html
+share/doc/lire/user-manual/pt03.html
 share/lire/filters/dns/select-resolver.xml
 share/lire/filters/dnszone/axfr-approved-only.xml
 share/lire/filters/dnszone/axfr-axfr-only.xml
@@ -270,6 +278,8 @@ share/lire/filters/dnszone/dyndns-only.xml
 share/lire/filters/dnszone/loaded-only.xml
 share/lire/filters/email/select-client-ip.xml
 share/lire/filters/firewall/select-action.xml
+share/lire/filters/firewall/select-from-ip.xml
+share/lire/filters/firewall/select-to-ip.xml
 share/lire/filters/msgstore/select-client-host.xml
 share/lire/filters/proxy/select-cache_result.xml
 share/lire/filters/syslog/exclude-message.xml
@@ -286,19 +296,6 @@ share/lire/filters/www/exclude-url.xml
 share/lire/filters/www/select-client_host.xml
 share/lire/filters/www/select-sessions-by-page.xml
 share/lire/filters/www/select-url.xml
-@dirrm share/lire/filters/www
-@dirrm share/lire/filters/syslog
-@dirrm share/lire/filters/proxy
-@dirrm share/lire/filters/print
-@dirrm share/lire/filters/msgstore
-@dirrm share/lire/filters/ftp
-@dirrm share/lire/filters/firewall
-@dirrm share/lire/filters/email
-@dirrm share/lire/filters/dnszone
-@dirrm share/lire/filters/dns
-@dirrm share/lire/filters/database
-@dirrm share/lire/filters
-
 share/lire/reports/database/actions-by-period.xml
 share/lire/reports/database/top-databases.xml
 share/lire/reports/database/top-querytypes.xml
@@ -315,19 +312,13 @@ share/lire/reports/dialup/top-telephone-number-from.xml
 share/lire/reports/dialup/top-telephone-number.xml
 share/lire/reports/dns/req-by-period-by-method.xml
 share/lire/reports/dns/req-by-timeslot-by-method.xml
-share/lire/reports/dns/requests-by-period-by-method.xml
 share/lire/reports/dns/requests-by-period.xml
 share/lire/reports/dns/requests-by-timeslot.xml
-share/lire/reports/dns/requests-summary-by-method.xml
-share/lire/reports/dns/requests-summary.xml
 share/lire/reports/dns/requesttype-by-method.xml
-share/lire/reports/dns/requesttype-distribution-by-method.xml
 share/lire/reports/dns/requesttype-distribution.xml
-share/lire/reports/dns/top-requested-names-by-method.xml
+share/lire/reports/dns/top-clients-detailed-report.xml
 share/lire/reports/dns/top-requested-names.xml
-share/lire/reports/dns/top-requesting-hosts-by-method.xml
 share/lire/reports/dns/top-requesting-hosts.xml
-share/lire/reports/dnszone/server-summary.xml
 share/lire/reports/dnszone/top-axfr-host.xml
 share/lire/reports/dnszone/top-axfr-zone.xml
 share/lire/reports/dnszone/top-axfr.xml
@@ -371,17 +362,16 @@ share/lire/reports/firewall/deniedtcpperport.xml
 share/lire/reports/firewall/pkt-by-period.xml
 share/lire/reports/firewall/pkt-by-rule.xml
 share/lire/reports/firewall/pkt-by-timeslot.xml
-share/lire/reports/firewall/pkt-summary.xml
 share/lire/reports/firewall/top-bytes-dst-by-src.xml
 share/lire/reports/firewall/top-bytes-src-by-dst.xml
 share/lire/reports/firewall/top-dst-by-msg.xml
 share/lire/reports/firewall/top-msg.xml
+share/lire/reports/firewall/top-pkt-by-dst-by-port.xml
 share/lire/reports/firewall/top-pkt-by-dst.xml
 share/lire/reports/firewall/top-pkt-by-src.xml
 share/lire/reports/firewall/top-pkt-dst-by-src.xml
 share/lire/reports/firewall/top-pkt-src-by-dst.xml
 share/lire/reports/firewall/top-src-by-msg.xml
-share/lire/reports/firewall/vol-summary.xml
 share/lire/reports/ftp/bytes-by-dir-by-user-by-period.xml
 share/lire/reports/ftp/bytes-by-period-by-user.xml
 share/lire/reports/ftp/bytes-by-period.xml
@@ -395,12 +385,17 @@ share/lire/reports/ftp/top-users.xml
 share/lire/reports/ftp/tracked-files.xml
 share/lire/reports/ftp/tracked-users.xml
 share/lire/reports/ftp/transfers-by-direction.xml
+share/lire/reports/ftp/transfers-by-file.xml
 share/lire/reports/ftp/transfers-by-type.xml
 share/lire/reports/msgstore/badlogin-by-period.xml
 share/lire/reports/msgstore/close-by-period.xml
 share/lire/reports/msgstore/events-by-protocol.xml
 share/lire/reports/msgstore/login-by-period.xml
+share/lire/reports/msgstore/top-user-leftover-bytes.xml
+share/lire/reports/msgstore/top-user-leftover-messages.xml
 share/lire/reports/msgstore/top-user-login.xml
+share/lire/reports/msgstore/top-user-most-bytes.xml
+share/lire/reports/msgstore/top-user-most-messages.xml
 share/lire/reports/msgstore/top-user-select.xml
 share/lire/reports/msgstore/unique-user.xml
 share/lire/reports/print/billing-per-printer.xml
@@ -418,13 +413,11 @@ share/lire/reports/proxy/bytes-by-cache_result.xml
 share/lire/reports/proxy/bytes-by-period.xml
 share/lire/reports/proxy/bytes-by-result_src_code.xml
 share/lire/reports/proxy/bytes-by-timeslot.xml
-share/lire/reports/proxy/client_hosts-summary.xml
 share/lire/reports/proxy/requests-by-cache_result.xml
 share/lire/reports/proxy/requests-by-period.xml
 share/lire/reports/proxy/requests-by-size.xml
 share/lire/reports/proxy/requests-by-time.xml
 share/lire/reports/proxy/requests-by-timeslot.xml
-share/lire/reports/proxy/requests-summary.xml
 share/lire/reports/proxy/top-clients-by-destinations.xml
 share/lire/reports/proxy/top-destinations-by-bytes.xml
 share/lire/reports/proxy/top-destinations-by-clients.xml
@@ -434,11 +427,14 @@ share/lire/reports/proxy/top-types-by-bytes.xml
 share/lire/reports/proxy/top-urls-by-users.xml
 share/lire/reports/proxy/top-users-by-bytes.xml
 share/lire/reports/proxy/top-users-by-destinations.xml
-share/lire/reports/proxy/users-summary.xml
+share/lire/reports/spamfilter/stats-delay.xml
+share/lire/reports/spamfilter/stats-messages-scanned.xml
+share/lire/reports/spamfilter/stats-messages-spamsfound.xml
+share/lire/reports/spamfilter/stats-score-max.xml
+share/lire/reports/spamfilter/top-receiving-spam.xml
 share/lire/reports/syslog/messages-by-facility.xml
 share/lire/reports/syslog/messages-by-level.xml
 share/lire/reports/syslog/messages-by-period.xml
-share/lire/reports/syslog/syslog-summary.xml
 share/lire/reports/syslog/top-hosts.xml
 share/lire/reports/syslog/top-messages-by-period.xml
 share/lire/reports/syslog/top-messages-by-process.xml
@@ -447,6 +443,7 @@ share/lire/reports/syslog/top-processes-by-period.xml
 share/lire/reports/syslog/top-processes.xml
 share/lire/reports/www/bytes-by-dir.xml
 share/lire/reports/www/bytes-by-period.xml
+share/lire/reports/www/bytes-by-request.xml
 share/lire/reports/www/bytes-by-result-by-period.xml
 share/lire/reports/www/bytes-by-result.xml
 share/lire/reports/www/clienthost-by-period.xml
@@ -468,44 +465,25 @@ share/lire/reports/www/requests-by-size.xml
 share/lire/reports/www/requests-by-timeslot.xml
 share/lire/reports/www/requests-by-useragent.xml
 share/lire/reports/www/requests-by-version.xml
-share/lire/reports/www/requests-summary.xml
 share/lire/reports/www/top-avg-compression-by-file-type.xml
 share/lire/reports/www/top-avg-compression-by-url.xml
 share/lire/reports/www/top-client_host-by-result.xml
+share/lire/reports/www/top-client_host-by-size.xml
 share/lire/reports/www/top-client_host.xml
 share/lire/reports/www/top-first_page.xml
 share/lire/reports/www/top-last_page.xml
-share/lire/reports/www/top-pages-by-client_host.xml
 share/lire/reports/www/top-referer-page-connections.xml
 share/lire/reports/www/top-referers-by-page.xml
 share/lire/reports/www/top-referers.xml
 share/lire/reports/www/top-referring_sites.xml
 share/lire/reports/www/top-requested-page.xml
-share/lire/reports/www/top-tracked_pages-by-client_host.xml
 share/lire/reports/www/top-traversals.xml
 share/lire/reports/www/top-urls-by-client_host.xml
 share/lire/reports/www/top-urls-by-result.xml
-share/lire/reports/www/tracked_pages-by-period.xml
-share/lire/reports/www/user_session-finished.xml
 share/lire/reports/www/user_session-page_counts.xml
-share/lire/reports/www/user_session-summary.xml
 share/lire/reports/www/user_session-visit-times.xml
 share/lire/reports/www/user_session-visit_number.xml
 share/lire/reports/www/user_sessions-by-period.xml
-@dirrm share/lire/reports/www
-@dirrm share/lire/reports/syslog
-@dirrm share/lire/reports/proxy
-@dirrm share/lire/reports/print
-@dirrm share/lire/reports/msgstore
-@dirrm share/lire/reports/ftp
-@dirrm share/lire/reports/firewall
-@dirrm share/lire/reports/email
-@dirrm share/lire/reports/dnszone
-@dirrm share/lire/reports/dns
-@dirrm share/lire/reports/dialup
-@dirrm share/lire/reports/database
-@dirrm share/lire/reports
-
 share/lire/schemas/database-querytype.xml
 share/lire/schemas/database.xml
 share/lire/schemas/dialup.xml
@@ -519,6 +497,7 @@ share/lire/schemas/msgstore.xml
 share/lire/schemas/print-sheets.xml
 share/lire/schemas/print.xml
 share/lire/schemas/proxy.xml
+share/lire/schemas/spamfilter.xml
 share/lire/schemas/syslog.xml
 share/lire/schemas/www-attack.xml
 share/lire/schemas/www-domain.xml
@@ -528,29 +507,22 @@ share/lire/schemas/www-url.xml
 share/lire/schemas/www-user_agent.xml
 share/lire/schemas/www-user_session.xml
 share/lire/schemas/www.xml
-@dirrm share/lire/schemas
-
 share/lire/sgml/xml.dcl
-@dirrm share/lire/sgml
-
 share/lire/xml/dtd/catalog
 share/lire/xml/dtd/catalog.xml
 share/lire/xml/dtd/ldsml.dtd
+share/lire/xml/dtd/lire-desc-1.0.mod
 share/lire/xml/dtd/lire-desc.mod
 share/lire/xml/dtd/lire-types.mod
-share/lire/xml/dtd/lire.dtd
+share/lire/xml/dtd/lrcml.dtd
+share/lire/xml/dtd/lrcsml.dtd
+share/lire/xml/dtd/lrml-1.0.dtd
+share/lire/xml/dtd/lrml.dtd
+share/lire/xml/dtd/lrsml-1.0.dtd
 share/lire/xml/dtd/lrsml.dtd
-share/lire/xml/stylesheet/xsl/config.xsl
 share/lire/xml/stylesheet/xsl/docbook.xsl
-share/lire/xml/stylesheet/xsl/lire-lib.xsl
-share/lire/xml/stylesheet/xsl/logml-email.xsl
-share/lire/xml/stylesheet/xsl/logml-www.xsl
-share/lire/xml/stylesheet/xsl/logml.xsl
-@dirrm share/lire/xml/stylesheet/xsl
-@dirrm share/lire/xml/stylesheet
-@dirrm share/lire/xml/dtd
-@dirrm share/lire/xml
-
+share/lire/xml/stylesheet/xsl/html.xsl
+share/perl5/Lire/Aggregate.pm
 share/perl5/Lire/Aggregator.pm
 share/perl5/Lire/Apache.pm
 share/perl5/Lire/AsciiDlf/Aggregator.pm
@@ -558,23 +530,34 @@ share/perl5/Lire/AsciiDlf/AsciiDlfFactory.pm
 share/perl5/Lire/AsciiDlf/DerivedRecordsCreator.pm
 share/perl5/Lire/AsciiDlf/DlfInfo.pm
 share/perl5/Lire/AsciiDlf/ExtendedFieldsCreator.pm
-share/perl5/Lire/AsciiDlf/FilterExpr.pm
 share/perl5/Lire/AsciiDlf/Group.pm
 share/perl5/Lire/AsciiDlf/GroupOp.pm
-share/perl5/Lire/AsciiDlf/NestableAggregator.pm
 share/perl5/Lire/AsciiDlf/Rangegroup.pm
 share/perl5/Lire/AsciiDlf/Records.pm
-share/perl5/Lire/AsciiDlf/ReportSpec.pm
-share/perl5/Lire/AsciiDlf/Summary.pm
+share/perl5/Lire/AsciiDlf/ReportOperator.pm
 share/perl5/Lire/AsciiDlf/Timegroup.pm
 share/perl5/Lire/AsciiDlf/Timeslot.pm
+share/perl5/Lire/Average.pm
 share/perl5/Lire/Config.pm
+share/perl5/Lire/Config/Build.pm
+share/perl5/Lire/Config/Legacy.pm
+share/perl5/Lire/Config/Parser.pm
+share/perl5/Lire/Config/Spec.pm
+share/perl5/Lire/Config/SpecParser.pm
+share/perl5/Lire/Config/Values.pm
+share/perl5/Lire/Count.pm
 share/perl5/Lire/DataTypes.pm
 share/perl5/Lire/DerivedSchema.pm
+share/perl5/Lire/DlfConverter.pm
+share/perl5/Lire/DlfConverterManager.pm
+share/perl5/Lire/DlfConverterProcess.pm
+share/perl5/Lire/DlfQuery.pm
+share/perl5/Lire/DlfResult.pm
 share/perl5/Lire/DlfSchema.pm
+share/perl5/Lire/DlfStore.pm
+share/perl5/Lire/DlfStream.pm
 share/perl5/Lire/Email.pm
 share/perl5/Lire/ExtendedSchema.pm
-share/perl5/Lire/Extension.pm
 share/perl5/Lire/Extensions/Database/DatabaseSchema.pm
 share/perl5/Lire/Extensions/Email/EmailSchema.pm
 share/perl5/Lire/Extensions/Print/PrintSchema.pm
@@ -585,50 +568,75 @@ share/perl5/Lire/Extensions/WWW/SearchSchema.pm
 share/perl5/Lire/Extensions/WWW/URLSchema.pm
 share/perl5/Lire/Extensions/WWW/UserAgentSchema.pm
 share/perl5/Lire/Extensions/WWW/UserSessionSchema.pm
+share/perl5/Lire/FTP/IisFtpDlfConverter.pm
 share/perl5/Lire/Field.pm
 share/perl5/Lire/FilterExpr.pm
 share/perl5/Lire/FilterSpec.pm
 share/perl5/Lire/Firewall.pm
+share/perl5/Lire/Firewall/IpchainsDlfConverter.pm
+share/perl5/Lire/Firewall/IpfilterDlfConverter.pm
+share/perl5/Lire/Firewall/SnortDlfConverter.pm
+share/perl5/Lire/Firewall/WatchguardDlfConverter.pm
+share/perl5/Lire/First.pm
 share/perl5/Lire/Group.pm
 share/perl5/Lire/GroupField.pm
-share/perl5/Lire/GroupOp.pm
+share/perl5/Lire/Last.pm
+share/perl5/Lire/LogSource.pm
+share/perl5/Lire/Logger.pm
+share/perl5/Lire/Max.pm
+share/perl5/Lire/Min.pm
+share/perl5/Lire/OldDlfAdapter.pm
 share/perl5/Lire/Param.pm
 share/perl5/Lire/Program.pm
+share/perl5/Lire/Proxy/SquidAccessDlfConverter.pm
 share/perl5/Lire/Rangegroup.pm
-share/perl5/Lire/Merge/Aggregator.pm
-share/perl5/Lire/Merge/Group.pm
-share/perl5/Lire/Merge/GroupOp.pm
-share/perl5/Lire/Merge/MergeFactory.pm
-share/perl5/Lire/Merge/NestableAggregator.pm
-share/perl5/Lire/Merge/Rangegroup.pm
-share/perl5/Lire/Merge/Records.pm
-share/perl5/Lire/Merge/ReportSpec.pm
-share/perl5/Lire/Merge/Summary.pm
-share/perl5/Lire/Merge/Timegroup.pm
-share/perl5/Lire/Merge/Timeslot.pm
-share/perl5/Lire/Report/Entry.pm
-share/perl5/Lire/Report/Group.pm
-share/perl5/Lire/Report/Image.pm
-share/perl5/Lire/Report/Section.pm
-share/perl5/Lire/Report/Subreport.pm
-share/perl5/Lire/NestableAggregator.pm
 share/perl5/Lire/Records.pm
 share/perl5/Lire/Report.pm
+share/perl5/Lire/Report/ColumnInfo.pm
+share/perl5/Lire/Report/Entry.pm
+share/perl5/Lire/Report/Group.pm
+share/perl5/Lire/Report/GroupInfo.pm
+share/perl5/Lire/Report/Image.pm
+share/perl5/Lire/Report/Note.pm
+share/perl5/Lire/Report/Section.pm
+share/perl5/Lire/Report/Subreport.pm
+share/perl5/Lire/Report/TableInfo.pm
 share/perl5/Lire/ReportConfig.pm
+share/perl5/Lire/ReportGenerator.pm
+share/perl5/Lire/ReportMerger.pm
+share/perl5/Lire/ReportOperator.pm
 share/perl5/Lire/ReportParser.pm
 share/perl5/Lire/ReportParser/AsciiWriter.pm
 share/perl5/Lire/ReportParser/ChartWriter.pm
 share/perl5/Lire/ReportParser/DocBookFormatter.pm
 share/perl5/Lire/ReportParser/ExcelWriter.pm
+share/perl5/Lire/ReportParser/PloticusChartWriter.pm
 share/perl5/Lire/ReportParser/ReportBuilder.pm
+share/perl5/Lire/ReportParser/RowColHandler.pm
 share/perl5/Lire/ReportSection.pm
 share/perl5/Lire/ReportSpec.pm
 share/perl5/Lire/ReportSpecFactory.pm
-share/perl5/Lire/Summary.pm
+share/perl5/Lire/SQLExt/LrCountUniq.pm
+share/perl5/Lire/SQLExt/LrFirst.pm
+share/perl5/Lire/SQLExt/LrLast.pm
+share/perl5/Lire/SQLExt/LrMatch.pm
+share/perl5/Lire/SQLExt/LrMissingCases.pm
+share/perl5/Lire/SQLExt/LrRangegroup.pm
+share/perl5/Lire/SQLExt/LrTimegroup.pm
+share/perl5/Lire/SQLExt/LrTimeslot.pm
+share/perl5/Lire/SQLExt/Registry.pm
+share/perl5/Lire/SimpleStat.pm
+share/perl5/Lire/Sum.pm
 share/perl5/Lire/Syslog.pm
+share/perl5/Lire/Test/CommandResult.pm
+share/perl5/Lire/Test/DlfConverterTestCase.pm
+share/perl5/Lire/Test/FunctionalTestCase.pm
+share/perl5/Lire/Test/HashConfig.pm
+share/perl5/Lire/Test/TestCase.pm
 share/perl5/Lire/Time.pm
 share/perl5/Lire/Timegroup.pm
 share/perl5/Lire/Timeslot.pm
+share/perl5/Lire/Utils.pm
 share/perl5/Lire/W3CExtendedLog.pm
 share/perl5/Lire/WELF.pm
 share/perl5/Lire/WWW/Domain.pm
@@ -642,22 +650,75 @@ share/perl5/Lire/WWW/UserAgent/Browser.pm
 share/perl5/Lire/WWW/UserAgent/Language.pm
 share/perl5/Lire/WWW/UserAgent/OS.pm
 share/perl5/Lire/WWW/UserAgent/Robot.pm
+share/perl5/Lire/WeekCalculator.pm
 share/perl5/Lire/XMLSpecContainer.pm
-share/perl5/Lire/XMLUtils.pm
+share/perl5/Time/Timezone.pm
+share/lire/defaults/lire.xml
+share/lire/config-spec/lire.xml
+
+@dirrm share/perl5/Time
 @dirrm share/perl5/Lire/WWW/UserAgent
 @dirrm share/perl5/Lire/WWW/Filename
 @dirrm share/perl5/Lire/WWW/Domain
 @dirrm share/perl5/Lire/WWW
+@dirrm share/perl5/Lire/Test
+@dirrm share/perl5/Lire/SQLExt
 @dirrm share/perl5/Lire/ReportParser
 @dirrm share/perl5/Lire/Report
-@dirrm share/perl5/Lire/Merge
+@dirrm share/perl5/Lire/Proxy
+@dirrm share/perl5/Lire/Msgstore
+@dirrm share/perl5/Lire/Firewall
+@dirrm share/perl5/Lire/FTP
 @dirrm share/perl5/Lire/Extensions/WWW
 @dirrm share/perl5/Lire/Extensions/Print
 @dirrm share/perl5/Lire/Extensions/Email
 @dirrm share/perl5/Lire/Extensions/Database
 @dirrm share/perl5/Lire/Extensions
+@dirrm share/perl5/Lire/Config
 @dirrm share/perl5/Lire/AsciiDlf
 @dirrm share/perl5/Lire
-@unexec rmdir %D/share/perl5 2>/dev/null || true
-
+@dirrm share/lire/xml/stylesheet/xsl
+@dirrm share/lire/xml/stylesheet
+@dirrm share/lire/xml/dtd
+@dirrm share/lire/xml
+@dirrm share/lire/sgml
+@dirrm share/lire/schemas
+@dirrm share/lire/reports/www
+@dirrm share/lire/reports/syslog
+@dirrm share/lire/reports/spamfilter
+@dirrm share/lire/reports/proxy
+@dirrm share/lire/reports/print
+@dirrm share/lire/reports/msgstore
+@dirrm share/lire/reports/ftp
+@dirrm share/lire/reports/firewall
+@dirrm share/lire/reports/email
+@dirrm share/lire/reports/dnszone
+@dirrm share/lire/reports/dns
+@dirrm share/lire/reports/dialup
+@dirrm share/lire/reports/database
+@dirrm share/lire/reports
+@dirrm share/lire/filters/www
+@dirrm share/lire/filters/syslog
+@dirrm share/lire/filters/proxy
+@dirrm share/lire/filters/print
+@dirrm share/lire/filters/msgstore
+@dirrm share/lire/filters/ftp
+@dirrm share/lire/filters/firewall
+@dirrm share/lire/filters/email
+@dirrm share/lire/filters/dnszone
+@dirrm share/lire/filters/dns
+@dirrm share/lire/filters/database
+@dirrm share/lire/filters
+@dirrm share/lire/defaults
+@dirrm share/lire/config-spec
 @dirrm share/lire
+@dirrm share/doc/lire/user-manual
+@dirrm share/doc/lire/examples
+@dirrm share/doc/lire/dev-manual
+@dirrm share/doc/lire
+@dirrm libexec/lire/convertors
+@dirrm libexec/lire
+@dirrm etc/lire/converters
+@dirrm etc/lire/config
+@dirrm etc/lire
+@unexec rmdir %D/share/perl5 2>/dev/null || true
