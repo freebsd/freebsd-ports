@@ -61,7 +61,7 @@ else
 		fi
 		;;
 		*)
-		echo "usage: `basename $0` {start|stop}" >&2
+		echo "usage: ${0##*/} {start|stop}" >&2
 		exit 64
 		;;
 	esac

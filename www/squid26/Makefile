@@ -29,7 +29,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	\
 		ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
@@ -47,7 +47,9 @@ PATCHFILES=	squid-2.5.STABLE5-ntlm_assert.patch \
 		squid-2.5.STABLE5-helper_warning.patch \
 		squid-2.5.STABLE5-vary.patch \
 		squid-2.5.STABLE5-deny_info.patch \
-		squid-2.5.STABLE5-CONNECT_timeout.patch
+		squid-2.5.STABLE5-CONNECT_timeout.patch \
+		squid-2.5.STABLE5-cache_swap_log.patch \
+		squid-2.5.STABLE5-ntlm_warning.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	tmseck@netcologne.de
@@ -110,8 +112,8 @@ external_acl=	ip_user unix_group wbinfo_group winbind_group
 MAN8+=		pam_auth.8 squid_unix_group.8
 .if defined(WITH_SQUID_LDAP_AUTH)
 USE_OPENLDAP=	yes
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAN8+=		squid_ldap_auth.8 squid_ldap_group.8
 basic_auth+=	LDAP
 external_acl+=	ldap_group
@@ -128,7 +130,9 @@ store_types=	ufs diskd null
 .if defined(WITH_SQUID_AUFS)
 store_types+=	aufs
 # Nil aufs threads is default, set any other value via SQUID_CONFIGURE_ARGS
-CONFIGURE_ARGS+=	--enable-async-io --with-pthreads
+CONFIGURE_ARGS+=	--enable-async-io \
+			--with-pthreads
+CFLAGS+=	${PTHREAD_CFLAGS}
 .endif
 .if defined(WITH_SQUID_COSS)
 store_types+=	coss
@@ -148,7 +152,14 @@ CONFIGURE_ARGS+=	--enable-snmp
 CONFIGURE_ARGS+=	--enable-carp
 .endif
 .if defined(WITH_SQUID_SSL)
-CONFIGURE_ARGS+=	--enable-ssl
+# we need to .include bsd.openssl.mk manually here because USE_OPENSSL only
+# works when it is defined before bsd.port{.pre}.mk is .included and this is
+# not possible when using OPTIONS
+.include "${PORTSDIR}/Mk/bsd.openssl.mk" 
+CONFIGURE_ARGS+=	--enable-ssl \
+			--with-openssl="${OPENSSLBASE}"
+CFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-I${LOCALBASE}/lib
 .endif
 .if defined(WITH_SQUID_PINGER)
 CONFIGURE_ARGS+=	--enable-icmp
@@ -189,8 +200,8 @@ CONFIGURE_ARGS+=	--enable-arp-acl
 .if defined(WITH_SQUID_PF)
 .if ${OSVERSION} >= 502106
 # This will work only systems where PF is part of the base system for now.
-# If someone is eager to teach autoconf to pick up the pf port
-# on 5.[0-2] systems instead, go on, I will integrate your patch.
+# If someone is eager to teach squid's configure script how to pick up the pf
+# port on 5.[0-2] systems instead, go on, I will integrate your patch.
 CONFIGURE_ARGS+=	--enable-pf-transparent
 .else
 IGNORE=	WITH_SQUID_PF only works on systems where pf is part of the base system.
@@ -253,6 +264,9 @@ CONFIGURE_ARGS+=	--enable-err-languages="${SQUID_LANGUAGES}" \
 
 CONFIGURE_ARGS+=	${SQUID_CONFIGURE_ARGS}
 
+CONFIGURE_ENV+=		CFLAGS="${CFLAGS}" \
+			LDFLAGS="${LDFLAGS}"
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc|${PREFIX}/etc|g' ${WRKSRC}/doc/squid.8
@@ -270,7 +284,7 @@ pre-install:
 	    >${WRKDIR}/squid.sh
 
 pre-su-install:
-	@${SETENV} SQUID_USER=${SQUID_UID} SQUID_GROUP=${SQUID_GID} \
+	@${SETENV} squid_user=${SQUID_UID} squid_group=${SQUID_GID} \
 	    PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
@@ -297,7 +311,8 @@ post-install:
 	    >>${TMPPLIST}
 	@${ECHO_CMD} "@dirrm etc/squid/errors/${d}" >>${TMPPLIST}
 .endfor
-	@${ECHO_CMD} "@dirrm etc/squid/errors" >>${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir etc/squid/errors 2>/dev/null || true" \
+	    >>${TMPPLIST}
 
 changeuser:
 # Recover from the problem that earlier versions of this port created the
