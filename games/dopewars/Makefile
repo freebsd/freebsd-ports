@@ -6,10 +6,12 @@
 #
 
 PORTNAME=	dopewars
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.6
 CATEGORIES=	games
-MASTER_SITES=	http://dopewars.sourceforge.net/ \
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://bellatrix.pcl.ox.ac.uk/~ben/dopewars/
+MASTER_SITE_SUBDIR=	dopewars
+
 MAINTAINER=	petef@FreeBSD.org
 
 USE_GMAKE=	yes

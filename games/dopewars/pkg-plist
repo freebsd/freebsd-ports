@@ -1,5 +1,6 @@
 bin/dopewars
 lib/charset.alias
+%%PORTDOCS%%share/doc/%%DOPEWARS%%/LICENCE
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/aiplayer.html
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/clientplay.html
 %%PORTDOCS%%share/doc/%%DOPEWARS%%/commandline.html
