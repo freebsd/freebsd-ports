@@ -1,4 +1,10 @@
 %%RUBY_SITEARCHLIBDIR%%/OpenSSL.so
+%%RUBY_SITELIBDIR%%/OpenSSL.rb
+%%RUBY_SITELIBDIR%%/buffering.rb
+%%RUBY_SITELIBDIR%%/net/https.rb
+%%RUBY_SITELIBDIR%%/net/protocols.rb
+%%RUBY_SITELIBDIR%%/net/telnets.rb
+@dirrm %%RUBY_SITELIBDIR%%/net
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/01cert.pem
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/01crl.pem
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/01key.pem
@@ -21,6 +27,13 @@
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ossl_x509store.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/c/hash.c
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/c/key.c
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ssl/cli.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ssl/login.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ssl/svr.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ssl/verify_cb.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ssl/wget.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/ssl/wget2.rb
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/openssl/ssl
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/openssl/c
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/openssl
 %%PORTDOCS%%%%RUBY_DOCDIR%%/openssl/ChangeLog
