@@ -8489,6 +8489,7 @@ tcm		ports/graphics/tcm
 tcpblast	ports/benchmarks/tcpblast
 tcpcat		ports/net/tcpcat
 tcpdstat	ports/net/tcpdstat
+tcpdump		ports/net/tcpdump
 tcpflow		ports/net/tcpflow
 tcpillust	ports/net/tcpillust
 tcplist		ports/sysutils/tcplist
