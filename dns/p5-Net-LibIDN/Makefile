@@ -16,7 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	domi@saargate.de
 COMMENT=	This module provides access to the libidn library
 
-LIB_DEPENDS=	idn.14:${PORTSDIR}/devel/libidn
+LIB_DEPENDS=	idn.15:${PORTSDIR}/devel/libidn
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-libidn=${PREFIX}/lib --with-libidn-inc=${PREFIX}/include
