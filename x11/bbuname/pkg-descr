@@ -1,0 +1,8 @@
+This is a small Blackbox/Fluxbox tool, "bbuname" which displays the system
+informations, similar to GNU uname. Currenlty only suppots displaying the
+kernel version. More to come soon. 
+
+WWW: http://spiritisdigital.com/linux/bbuname/
+
+- Nikos "Noth" Ntarmos
+<ntarmos@ceid.upatras.gr>
