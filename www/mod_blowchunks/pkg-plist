@@ -1,0 +1,3 @@
+libexec/apache/mod_blowchunks.so
+@exec ${PKG_PREFIX}/sbin/apxs -e -A -n blowchunks mod_blowchunks.so; echo "	enable mod_blowchunks in Apache's config manually"
+@unexec ${PKG_PREFIX}/sbin/apxs -e -A -n blowchunks mod_blowchunks.so || echo "	remove mod_blowchunks from Apache's config manually"
