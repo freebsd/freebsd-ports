@@ -1,0 +1,19 @@
+*** Makefile.in.orig	Fri Feb  4 04:41:08 2005
+--- Makefile.in	Fri Feb  4 04:41:28 2005
+***************
+*** 185,191 ****
+  target_os = @target_os@
+  target_vendor = @target_vendor@
+  SUBDIRS = Mercator tests
+! pkgconfigdir = $(libdir)/pkgconfig
+  pkgconfig_DATA = mercator-0.2.pc
+  all: config.h
+  	$(MAKE) $(AM_MAKEFLAGS) all-recursive
+--- 185,191 ----
+  target_os = @target_os@
+  target_vendor = @target_vendor@
+  SUBDIRS = Mercator tests
+! pkgconfigdir = $(prefix)/libdata/pkgconfig
+  pkgconfig_DATA = mercator-0.2.pc
+  all: config.h
+  	$(MAKE) $(AM_MAKEFLAGS) all-recursive

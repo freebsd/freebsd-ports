@@ -529,6 +529,7 @@
     SUBDIR += maketool
     SUBDIR += maven
     SUBDIR += memcheck
+    SUBDIR += mercator
     SUBDIR += meta-cvs
     SUBDIR += mico
     SUBDIR += mime
