@@ -20,7 +20,6 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 INSTALLS_SHLIB=	yes
 USE_GNOME=	gnomehack gnometarget
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib"

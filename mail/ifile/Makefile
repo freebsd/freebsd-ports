@@ -16,7 +16,6 @@ MAINTAINER=	david+ports@bushong.net
 COMMENT=	An application of machine learning to e-mail filtering
 
 USE_GETOPT_LONG=yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAN1=		ifile.1

@@ -19,7 +19,6 @@ LIB_DEPENDS=	guile.15:${PORTSDIR}/lang/guile
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomelibs gnomehack
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes

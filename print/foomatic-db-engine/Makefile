@@ -25,7 +25,6 @@ USE_AUTOCONF=	yes
 USE_AUTOMAKE=	yes
 GNU_CONFIGURE=	yes
 NO_CHECKSUM=	yes	# the tarball is created on the fly from CVS
-USE_REINPLACE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 CONFIGURE_ENV=	PERL=${PERL} LIBDIR=${PREFIX}/share/foomatic/
 

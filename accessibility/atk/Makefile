@@ -18,7 +18,6 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNOME accessibility toolkit (ATK)
 
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 USE_GNOME=	gnomehack glib20

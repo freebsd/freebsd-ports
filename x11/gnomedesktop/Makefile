@@ -20,7 +20,6 @@ COMMENT=	Additional UI API for GNOME 2
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_XPM=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeui
 GNOME_DESKTOP_VERSION=2
 USE_GMAKE=	yes

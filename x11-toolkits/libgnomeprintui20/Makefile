@@ -23,7 +23,6 @@ USE_X_PREFIX=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomecanvas
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 GNU_CONFIGURE=	yes
 USE_BISON=	yes

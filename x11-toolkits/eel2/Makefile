@@ -23,7 +23,6 @@ USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier gnomevfs2 gail libgnomeui
 USE_LIBTOOL=	yes
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -27,7 +27,6 @@ USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 RUBY_SETUP=	install.rb
 
-USE_REINPLACE=	yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

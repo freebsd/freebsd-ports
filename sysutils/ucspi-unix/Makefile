@@ -16,7 +16,6 @@ COMMENT=	UNIX-domain socket client-server command-line tools
 
 BUILD_DEPENDS=	${LOCALBASE}/include/bglibs/sysdeps.h:${PORTSDIR}/devel/bglibs
 
-USE_REINPLACE=yes
 
 MAN1=	unixclient.1 unixserver.1
 

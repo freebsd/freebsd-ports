@@ -14,7 +14,6 @@ MAINTAINER=	Yonatan@xpert.com
 COMMENT=	Application mapper
 
 HAS_CONFIGURE=	yes
-USE_REINPLACE=	yes
 
 MAN1=		amap.1
 

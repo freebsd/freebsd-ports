@@ -77,7 +77,6 @@ BUILD_DEPENDS+=	${JDK14DIR}/bin/javac:${PORTSDIR}/java/linux-sun-jdk14
 
 # workaround to handle both 'zip' and 'tar.gz' distfiles
 USE_ZIP=	YES
-USE_REINPLACE=	YES
 EXTRACT_ONLY=	${SCSL_SRCFILE} ${SCSL_BINFILE}
 
 ONLY_FOR_ARCHS=	i386

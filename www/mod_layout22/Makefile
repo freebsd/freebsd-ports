@@ -17,7 +17,6 @@ USE_APACHE=	yes
 WITH_APACHE2=	yes
 LATEST_LINK=	mod_layout2
 
-USE_REINPLACE=	yes
 MAKE_ARGS+=	builddir=${WRKSRC}
 
 post-install:

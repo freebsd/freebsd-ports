@@ -14,7 +14,6 @@ MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/ \
 MAINTAINER=	sheepkiller@cultdeadsheep.org
 COMMENT=	A modular open source user-space load balancing system
 
-USE_REINPLACE=	yes
 CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 MAKE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 USE_GETOPT_LONG=	yes

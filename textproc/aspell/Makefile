@@ -26,7 +26,6 @@ CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-dict-dir=${DATADIR} \
 		--enable-doc-dir=${DOCSDIR}
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 
 MAKE_ARGS=	NOPORTDOCS=${NOPORTDOCS}
 INSTALLS_SHLIB=	yes

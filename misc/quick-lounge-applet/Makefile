@@ -18,7 +18,6 @@ COMMENT=	Applet to orginize your preferred applications on the GNOME Panel
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomepanel
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

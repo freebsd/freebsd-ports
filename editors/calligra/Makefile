@@ -31,7 +31,6 @@ USE_BZIP2=		yes
 USE_GMAKE=		yes
 USE_PYTHON=		yes
 GNU_CONFIGURE=		yes
-USE_REINPLACE=		yes
 
 INSTALLS_SHLIB=		yes
 LDCONFIG_DIRS+=		%%PREFIX%%/lib %%PREFIX%%/lib/kde3

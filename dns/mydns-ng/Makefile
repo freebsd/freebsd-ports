@@ -21,7 +21,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc
 USE_LIBTOOL=	yes
 USE_BZIP2=	yes
-USE_REINPLACE=	yes
 
 INFO=		mydns
 MAN5=		mydns.conf.5

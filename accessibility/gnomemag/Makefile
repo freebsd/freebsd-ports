@@ -18,7 +18,6 @@ COMMENT=	GNOME screen magnifier
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehack gnomeprefix atspi libbonobo
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes

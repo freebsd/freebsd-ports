@@ -32,7 +32,6 @@ PLIST_SUB=	GNUHOST=${CONFIGURE_TARGET}
 CONFIGURE_ARGS=	--with-gxx-include-dir=${PREFIX}/lib/gcc-lib/${CONFIGURE_TARGET}/2.8.1/include/g++
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 ALL_TARGET=	bootstrap
 MAN1=		cccp28.1 g++28.1 gcc28.1
 

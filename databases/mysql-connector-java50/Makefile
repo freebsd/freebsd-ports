@@ -30,7 +30,6 @@ BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant \
 		${LOCALBASE}/share/java/classes/junit.jar:${PORTSDIR}/java/junit
 USE_JAVA=	1.2+
 NEED_JAVAC=	YES
-USE_REINPLACE=	YES
 
 ANT?=		${LOCALBASE}/bin/ant
 ANT_TARGET=	clean compile-driver

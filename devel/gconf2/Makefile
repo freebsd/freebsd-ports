@@ -19,7 +19,6 @@ COMMENT=	A configuration database system for GNOME
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomehack gnomehier orbit2 gtk20 libxml2 linc
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes

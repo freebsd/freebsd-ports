@@ -21,7 +21,6 @@ USE_X_PREFIX=	yes
 USE_BISON=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 WANT_GNOME=	yes
 USE_GNOME=	gnomehack \
 		gnomeprefix \

@@ -18,7 +18,6 @@ COMMENT=	Terminal component for the GNOME 2 Desktop
 
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomehier libgnomeui vte
 USE_LIBTOOL=	yes

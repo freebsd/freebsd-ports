@@ -25,7 +25,6 @@ USE_GNOME=	gnomeprefix gnomehack gtk20
 WANT_GNOME=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 	       	LDFLAGS="-L${LOCALBASE}/lib"
 

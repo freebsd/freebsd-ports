@@ -19,7 +19,6 @@ RUN_DEPENDS=	${LOCALBASE}/${MOD_DIR}/libphp4.so:${PORTSDIR}/lang/php4-horde \
 		${SITE_PERL}/${PERL_ARCH}/Quota.pm:${PORTSDIR}/sysutils/p5-Quota\
 		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap
 
-USE_REINPLACE=	YES
 NO_BUILD=	YES
 WRKSRC=		${WRKDIR}/lam
 

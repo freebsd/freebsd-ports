@@ -24,7 +24,6 @@ USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomehier libglade gnomevfs
 GNOME_HTML_DIR=	${PREFIX}/share/doc/gal
-USE_REINPLACE=	yes
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--enable-static --with-libiconv

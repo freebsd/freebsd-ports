@@ -15,7 +15,6 @@ MAINTAINER=	mich@FreeBSD.org
 COMMENT=	Pipebench shows current throughput/amount of data through a pipe
 
 CFLAGS+=	-w -pedantic
-USE_REINPLACE=	yes
 
 do-build:
 	cd ${WRKSRC} && \

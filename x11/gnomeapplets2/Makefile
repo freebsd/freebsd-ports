@@ -22,7 +22,6 @@ LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop2
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomehier gnomeprefix gnomehack gnomepanel gail
 USE_LIBTOOL=	yes

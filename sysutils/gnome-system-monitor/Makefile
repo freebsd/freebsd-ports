@@ -21,7 +21,6 @@ LIB_DEPENDS=	gtop-2.0.2:${PORTSDIR}/devel/libgtop2
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_REINPLACE=	yes
 USE_GNOME=	gnomeprefix gnomehack libgnomeui libwnck
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

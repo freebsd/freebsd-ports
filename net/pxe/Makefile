@@ -15,7 +15,6 @@ MAINTAINER=	anders@FreeBSD.org
 COMMENT=	PXE daemon, set up a boot menu for netbooting PXE enabled clients
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
 CONFIGURE_ARGS+=	--with-config=${PREFIX}/etc/pxe.conf \
 			--with-log=/var/log/pxe.log \
 			--with-setuid=nobody

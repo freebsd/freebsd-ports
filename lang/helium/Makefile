@@ -33,7 +33,6 @@ BROKEN=	does not compile
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USE_REINPLACE=	yes
 USE_GMAKE=	yes
 
 .if !defined(WITH_HINT)

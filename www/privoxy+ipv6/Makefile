@@ -25,7 +25,6 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/+ipv6//}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_AUTOHEADER=	yes
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-user=${USER} --with-group=${GROUP} \

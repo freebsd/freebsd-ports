@@ -25,7 +25,6 @@ COMMENT=	An event-based Python framework for internet applications
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-USE_REINPLACE=	yes
 MAN1=		im.1 manhole.1 mktap.1 t-im.1 tapconvert.1 twistd.1
 
 pre-install:

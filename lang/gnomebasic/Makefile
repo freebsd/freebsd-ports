@@ -18,7 +18,6 @@ COMMENT=	Provide Visual Basic compatible functionality for GNOME, especially VBA
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack gnomelibs gnomeprint
-USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
