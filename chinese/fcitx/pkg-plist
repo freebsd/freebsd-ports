@@ -1,11 +1,20 @@
+bin/createPYMB
 bin/fcitx
-share/fcitx/punc.mb
-share/fcitx/pybase.mb
-share/fcitx/pyphrase.mb
-share/fcitx/wbx.mb
-@dirrm share/fcitx
-%%PORTDOCS%%%%DOCSDIR%%/cjkvinput.txt
-%%PORTDOCS%%%%DOCSDIR%%/hf_wb98.txt
-%%PORTDOCS%%%%DOCSDIR%%/readme.html
-%%PORTDOCS%%%%DOCSDIR%%/wb_fh.htm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+bin/mb2txt
+bin/txt2mb
+%%DATADIR%%/data/cj.mb
+%%DATADIR%%/data/erbi.mb
+%%DATADIR%%/data/punc.mb
+%%DATADIR%%/data/py.mb
+%%DATADIR%%/data/pySym.mb
+%%DATADIR%%/data/pybase.mb
+%%DATADIR%%/data/pyphrase.mb
+%%DATADIR%%/data/sp.dat
+%%DATADIR%%/data/tables.conf
+%%DATADIR%%/data/wbx.mb
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
+%%DOCSDIR%%/cjkvinput.txt
+%%DOCSDIR%%/fcitx3.pdf
+%%DOCSDIR%%/wb_fh.htm
+@dirrm %%DOCSDIR%%
