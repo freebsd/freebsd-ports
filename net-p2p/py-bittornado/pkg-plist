@@ -13,7 +13,6 @@ bin/btreannounce.py
 bin/btrename.py
 bin/btsethttpseeds.py
 bin/btshowmetainfo.py
-bin/bttest.py
 bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/Choker.py
 %%PYTHON_SITELIBDIR%%/BitTornado/BT1/Choker.pyc
@@ -156,34 +155,32 @@ bin/bttrack.py
 %%PYTHON_SITELIBDIR%%/BitTornado/zurllib.py
 %%PYTHON_SITELIBDIR%%/BitTornado/zurllib.pyc
 %%PYTHON_SITELIBDIR%%/BitTornado/zurllib.pyo
-share/BitTornado/alloc.gif
-share/BitTornado/black1.ico
-share/BitTornado/black.ico
-share/BitTornado/blue.ico
-share/BitTornado/green1.ico
-share/BitTornado/green.ico
-share/BitTornado/icon_bt.ico
-share/BitTornado/icon_done.ico
-share/BitTornado/red.ico
-share/BitTornado/white.ico
-share/BitTornado/yellow1.ico
-share/BitTornado/yellow.ico
+%%DATADIR%%/alloc.gif
+%%DATADIR%%/black1.ico
+%%DATADIR%%/black.ico
+%%DATADIR%%/blue.ico
+%%DATADIR%%/green1.ico
+%%DATADIR%%/green.ico
+%%DATADIR%%/icon_bt.ico
+%%DATADIR%%/icon_done.ico
+%%DATADIR%%/red.ico
+%%DATADIR%%/white.ico
+%%DATADIR%%/yellow1.ico
+%%DATADIR%%/yellow.ico
 %%PORTDOCS%%%%DOCSDIR%%/BUILD.windows.txt
 %%PORTDOCS%%%%DOCSDIR%%/FAQ.txt
 %%PORTDOCS%%%%DOCSDIR%%/IMPORTANT-multitracker-readme.txt
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.unix.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/README-Psyco.txt
-%%PORTDOCS%%%%DOCSDIR%%/README-experimental.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/credits.txt
 %%PORTDOCS%%%%DOCSDIR%%/multitracker-spec.txt
 %%PORTDOCS%%%%DOCSDIR%%/multitracker_README.txt
-%%PORTDOCS%%%%DOCSDIR%%/todo.txt
 %%PORTDOCS%%%%DOCSDIR%%/webseed-spec.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%%%EXAMPLESDIR%%/bittornado.sh.sample
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/BitTornado/BT1
 @dirrm %%PYTHON_SITELIBDIR%%/BitTornado
-@dirrm share/BitTornado/
+@dirrm %%DATADIR%%
