@@ -13,8 +13,6 @@ MASTER_SITES=		http://www.flightlab.com/~joe/cost/ \
 
 MAINTAINER=		kosmos@blarg.net
 
-BROKEN=			"Does not build"
-
 LIB_DEPENDS=		tcl82.1:${PORTSDIR}/lang/tcl82
 BUILD_DEPENDS=		${WRKDIRPREFIXPORTSDIR}/lang/tcl82/work/tcl-8.2.3/src:${PORTSDIR}/lang/tcl82:patch
 
@@ -34,7 +32,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO} "===>   Installing Cost documentation"
 	@${MKDIR} ${PREFIX}/share/doc/cost && ${CHMOD} a+rx ${PREFIX}/share/doc/cost
-	@cd ${WRKDIR}/${DISTNAME}/doc; && ${INSTALL_MAN} manual.html manual.ps rtflib.html simple.html \
+	@cd ${WRKDIR}/${DISTNAME}/doc && ${INSTALL_MAN} manual.html manual.ps rtflib.html simple.html \
 		${PREFIX}/share/doc/cost
 .endif
 
