@@ -27,7 +27,7 @@ SDL_CONFIG?=	${LOCALBASE}/bin/sdl-config
 WADFILE=	quakesw-1.0.6.tar.gz
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_AUTOCONF=	yes
+USE_AUTOCONF_VER=213
 USE_XLIB=	yes
 PLIST=		${WRKDIR}/PLIST
 
