@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyrex
-PORTVERSION=	0.9.1
+PORTVERSION=	0.9.1.1
 CATEGORIES=	devel lang python
 MASTER_SITES=	http://www.cosc.canterbury.ac.nz/~greg/python/Pyrex/
 PKGNAMEPREFIX=	${PYTHONPKGNAMEPREFIX}
@@ -22,8 +22,11 @@ USE_REINPLACE=	yes
 post-patch:
 	@${REINPLACE_CMD} -e 's|^PYINCLUDE =.*|PYINCLUDE=${PYTHON_INCLUDEDIR}|g' \
 		-e 's|\.\./py|${PREFIX}/bin/py|g' ${WRKSRC}/Demos/Makefile
+	@${REINPLACE_CMD} -e 's|sys.platform in ("unix", "darwin")|1|g'\
+		${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|from Plex|from Pyrex.Plex|g' \
+		${WRKSRC}/Pyrex/Compiler/Lexicon.py
 	@${RM} -f ${WRKSRC}/Demos/Makefile.bak
-	@${LN} ${WRKSRC}/pyrexc.py ${WRKSRC}/pyrexc
 	@${FIND} ${WRKSRC} -name .DS_Store | ${XARGS} ${RM} -f
 
 post-install:

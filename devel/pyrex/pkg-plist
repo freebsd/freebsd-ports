@@ -147,6 +147,7 @@ bin/pyrexc
 %%PORTDOCS%%share/examples/pyrex/callback/README.txt
 %%PORTDOCS%%share/examples/pyrex/callback/Setup.py
 %%PORTDOCS%%share/examples/pyrex/callback/cheese.pyx
+%%PORTDOCS%%share/examples/pyrex/callback/cheesefinder.c
 %%PORTDOCS%%share/examples/pyrex/callback/cheesefinder.h
 %%PORTDOCS%%share/examples/pyrex/callback/run_cheese.py
 %%PORTDOCS%%share/examples/pyrex/embed/Makefile
