@@ -43,9 +43,15 @@ GNUSTEP_NETWORK_ROOT=	${GNUSTEP_PREFIX}/Network
 GNUSTEP_USER_ROOT=	${GNUSTEP_PREFIX}/Local/Users
 GNUSTEP_MAKEFILES=	${GNUSTEP_SYSTEM_ROOT}/Makefiles
 
-SYSLIBDIR=	${GNUSTEP_PREFIX}/System/Libraries/${GNU_ARCH}/${OPSYS:L}
-COMBOLIBDIR=	${SYSLIBDIR}/gnu-gnu-gnu
 BACKBUNDLEDIR=	${GNUSTEP_PREFIX}/System/Library/Bundles/libgnustep-back.bundle/${GNU_ARCH}/${OPSYS:L}/gnu-gnu-gnu/
+.if defined(WITH_GNUSTEP_DEVEL)
+SYSLIBDIR=	${GNUSTEP_PREFIX}/System/Library/Libraries/${GNU_ARCH}/${OPSYS:L}
+PLIST_SUB+=	LOCALLIBRARY=Local/Library
+.else
+SYSLIBDIR=	${GNUSTEP_PREFIX}/System/Libraries/${GNU_ARCH}/${OPSYS:L}
+PLIST_SUB+=	LOCALLIBRARY=Local
+.endif
+COMBOLIBDIR=	${SYSLIBDIR}/gnu-gnu-gnu
 
 .include <bsd.port.pre.mk>
 
