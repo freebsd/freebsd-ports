@@ -1,0 +1,8 @@
+libexec/ftpd-tls
+%%PORTDOCS%%%%DOCSDIR%%/README.TLS
+%%PORTDOCS%%%%DOCSDIR%%/draft-murray-auth-ftp-ssl-09.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@exec mkdir -p %D/etc/ftpd-tls && chmod 700 %D/etc/ftpd-tls
+@exec if [ ! -f %D/etc/ftpd-tls/ftpusers ] && [ -f /etc/ftpusers ]; then cp /etc/ftpusers %D/etc/ftpd-tls/ftpusers; fi
+@unexec if cmp -s %D/etc/ftpd-tls/ftpusers /etc/ftpusers; then rm -f %D/etc/ftpd-tls/ftpusers; fi
+@unexec rmdir %D/etc/ftpd-tls 2> /dev/null || echo "If permanently deleting this package, %D/etc/ftpd-tls and its contents must be removed manually."

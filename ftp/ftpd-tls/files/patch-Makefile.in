@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Tue Sep  9 00:57:31 2003
++++ Makefile.in	Tue Sep  9 01:00:35 2003
+@@ -78,7 +78,7 @@
+ 	@STAT_FLAGS_C@ @BSDSRCS@
+ OBJS=	$(SRCS:.c=.o)
+ 
+-CFLAGS=   -g ${CWARNINGFLAGS}
++CFLAGS=   @CFLAGS@ ${CWARNINGFLAGS}
+ CPPFLAGS= @CPPFLAGS@ $(DEFS) -Dunix -I. -I${LSDIR}
+ 
+ BINGRP=		bin

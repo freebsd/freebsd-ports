@@ -1,0 +1,10 @@
+--- README.TLS.orig	Tue Sep  9 03:04:28 2003
++++ README.TLS	Tue Sep  9 03:05:05 2003
+@@ -33,6 +33,7 @@
+ 
+ These files is searched for in the following directorys (in this order):
+ o  Current working directory of the process.
++o  %%PREFIX%%/etc/ftpd-tls.
+ o  Specified by the `X509_get_default_cert_dir_env()` environment variable
+    (usually $SSL_CERT_DIR).
+ o  `X509_get_default_cert_dir()`, usually (openssl-dir)/certs.
