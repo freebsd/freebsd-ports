@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gimp
-PORTVERSION=	1.3.15
+PORTVERSION=	1.3.16
 PORTEPOCH=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -54,10 +54,10 @@ USE_PYTHON=	yes
 BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk2
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/_gtkmodule.so:${PORTSDIR}/x11-toolkits/py-gtk2
 CONFIGURE_ARGS+=	--enable-python
-PLIST_SUB+=	PYTHON:=""
+PLIST_SUB+=		PYTHON:=""
 .else
 CONFIGURE_ARGS+=	--disable-python
-PLIST_SUB+=	PYTHON:="@comment "
+PLIST_SUB+=		PYTHON:="@comment "
 .endif
 
 .if defined(WITHOUT_PRINT)
@@ -74,7 +74,7 @@ WITH_HTML_HELP_BROWSER=	yes
 
 .if ${HAVE_GNOME:Mgnomepanel}!=""
 USE_GNOME+=		gnomepanel
-CONFIGURE_ARGS+=	--with-gnome-datadir=${X11BASE}/share/gnome
+CONFIGURE_ARGS+=	--with-desktop-dir=${X11BASE}/share/gnome
 PKGNAMESUFFIX=		-gnome
 .endif
 

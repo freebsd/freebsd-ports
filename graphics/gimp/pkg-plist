@@ -4,6 +4,7 @@ bin/gimptool-1.3
 etc/gimp/1.3/gimprc
 etc/gimp/1.3/gtkrc_user
 etc/gimp/1.3/ps-menurc
+etc/gimp/1.3/sessionrc
 etc/gimp/1.3/templaterc
 etc/gimp/1.3/unitrc
 include/gimp-1.3/gck/gck.h
@@ -1138,6 +1139,7 @@ share/gimp/scripts/sota-chrome-logo.scm
 share/gimp/scripts/speed-text.scm
 share/gimp/scripts/sphere.scm
 share/gimp/scripts/spinning-globe.scm
+share/gimp/scripts/spyrogimp.scm
 share/gimp/scripts/starburst-logo.scm
 share/gimp/scripts/starscape-logo.scm
 share/gimp/scripts/swirltile.scm
@@ -1152,7 +1154,6 @@ share/gimp/scripts/texture3.jpg
 share/gimp/scripts/textured-logo.scm
 share/gimp/scripts/tileblur.scm
 share/gimp/scripts/title-header.scm
-share/gimp/scripts/trochoid.scm
 share/gimp/scripts/truchet.scm
 share/gimp/scripts/unsharp-mask.scm
 share/gimp/scripts/waves-anim.scm
