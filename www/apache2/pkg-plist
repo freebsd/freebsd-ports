@@ -1240,7 +1240,6 @@ share/apache2/build/special.mk
 %%PORTDOCS%%%%DOCSDIR%%/vhosts/name-based.xml.de
 %%PORTDOCS%%%%DOCSDIR%%/vhosts/name-based.xml.ko
 %%PORTDOCS%%%%DOCSDIR%%/vhosts/name-based.xml.meta
-@exec mkdir -p %D/www
 %%CGI%%@unexec if [ -L %D/www/cgi-bin ]; then rm -f %D/www/cgi-bin; fi
 %%CGI%%@exec [ ! -d %D/www/cgi-bin ] && ln -fs %D/www/cgi-bin-dist %D/www/cgi-bin
 %%CGI%%www/cgi-bin-dist/printenv
@@ -1538,7 +1537,6 @@ share/apache2/build/special.mk
 %%ERROR%%@dirrm www/error-dist
 %%WWWDATA%%@dirrm www/data-dist
 %%CGI%%@dirrm www/cgi-bin-dist
-@unexec rmdir %D/www 2> /dev/null || true
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/vhosts
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/style/zip
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/style/xsl/util

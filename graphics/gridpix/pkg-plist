@@ -71,4 +71,3 @@ www/data/images/zoomout.png
 @unexec /bin/rmdir %D/www/data/gridpix 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/www/data/images 2>/dev/null || /usr/bin/true
 @unexec /bin/rmdir %D/www/data 2>/dev/null || /usr/bin/true
-@unexec /bin/rmdir %D/www 2>/dev/null || /usr/bin/true

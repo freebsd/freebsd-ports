@@ -3052,4 +3052,3 @@ etc/rc.d/zope.sh
 @dirrm %%ZOPEBASEDIR%%/doc
 @dirrm %%ZOPEBASEDIR%%/bin
 @dirrm %%ZOPEBASEDIR%%
-@unexec rmdir %D/www 2> /dev/null || true

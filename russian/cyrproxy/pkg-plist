@@ -24,4 +24,3 @@ www/cgi-bin/cyrwww
 @dirrm share/cyrproxy
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir %D/www/cgi-bin 2> /dev/null || true
-@unexec rmdir %D/www 2> /dev/null || true
