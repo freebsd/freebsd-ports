@@ -1,11 +1,11 @@
---- Makefile.PL.orig	Tue Jun  6 07:15:02 1995
-+++ Makefile.PL	Sun Jun 15 22:59:52 1997
+--- Makefile.PL.orig	Sat Aug 29 12:17:41 1998
++++ Makefile.PL	Sat Aug 29 12:20:08 1998
 @@ -1,6 +1,6 @@
  use ExtUtils::MakeMaker;
  WriteMakefile(NAME => "Tcl::Tk",
  	      DISTNAME => "TclTk",
--	      LIBS => ["-ltk -ltcl -lX11 -lm"],
+-	      LIBS => ["-ltk -ltcl -L/usr/X11R6/lib -lX11 -lm"],
 -	      INC => "-I/usr/local/include -I/usr/include/tcl");
-+	      LIBS => ["-L$ENV{PREFIX}/lib -L$ENV{X11BASE}/lib -ltk41 -ltcl -lX11 -lm"],
-+	      INC => "-I$ENV{PREFIX}/include -I/usr/include/tcl -I$ENV{X11BASE}/include");
- sub MY::tool_autosplit { "AUTOSPLITFILE = :" }
++	      LIBS => ["-L$ENV{PREFIX}/lib -L$ENV{X11BASE}/lib -ltk42 -ltcl76 -lX11 -lm"],
++	      INC => "-I$ENV{PREFIX}/include -I$ENV{PREFIX}/include/tcl7.6 -I$ENV{PREFIX}/include/tk4.2 -I$ENV{X11BASE}/include");
+ #sub MY::tool_autosplit { "AUTOSPLITFILE = :" }
