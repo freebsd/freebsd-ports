@@ -49,7 +49,7 @@ else
     maints="$maints $maint"
     echo -n "<a href=\"mailto:$maint\">$maint</a>" >>$of
     echo "</td><td valign=\"top\">" >>$of
-    for file in $(cat $log.log | sed -e '1,/^list of extra files and directories/d' -e '/^list of all files and directories/,$d' -e '/^	/d' -e 's/^extra: //' -e 's/^missing: //' -e 's/://' | awk '{print $1}'); do
+    for file in $(cat $log.log | sed -e '1,/^list of extra files and directories/d' -e '/^=======/,$d' -e '/^	/d' -e 's/^extra: //' -e 's/^missing: //' -e 's/://' | awk '{print $1}'); do
       echo "$file<br>" >>$of
     done
     echo "</td></tr>" >>$of
