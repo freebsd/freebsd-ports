@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ltxml
-PORTVERSION=	1.2
+PORTVERSION=	1.2.5
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.cogsci.ed.ac.uk/pub/LTXML/
 
@@ -15,28 +15,27 @@ MAINTAINER=	sam@inf.enst.fr
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/XML
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-zlib
+CONFIGURE_ARGS+=	--with-zlib --enable-multi-byte
 USE_GMAKE=	yes
 
 post-install:
-	strip ${PREFIX}/bin/sgmltoken
-	strip ${PREFIX}/bin/unknit
-	strip ${PREFIX}/bin/sgmlsb
-	strip ${PREFIX}/bin/simple
-	strip ${PREFIX}/bin/textonly
-	strip ${PREFIX}/bin/simpleq
-	strip ${PREFIX}/bin/sggrep
-	strip ${PREFIX}/bin/sgcount
-	strip ${PREFIX}/bin/sgmltrans
-	strip ${PREFIX}/bin/getindex
-	strip ${PREFIX}/bin/sgsort
-	strip ${PREFIX}/bin/xmlnorm
-	strip ${PREFIX}/bin/knit
-	strip ${PREFIX}/bin/nslwhere
-	strip ${PREFIX}/bin/pesis
-	strip ${PREFIX}/bin/sgrpg
-	strip ${PREFIX}/bin/nslshowddb
-	strip ${PREFIX}/bin/intersect
+	${STRIP_CMD} ${PREFIX}/bin/unknit
+	${STRIP_CMD} ${PREFIX}/bin/sgmlsb
+	${STRIP_CMD} ${PREFIX}/bin/simple
+	${STRIP_CMD} ${PREFIX}/bin/textonly
+	${STRIP_CMD} ${PREFIX}/bin/simpleq
+	${STRIP_CMD} ${PREFIX}/bin/sggrep
+	${STRIP_CMD} ${PREFIX}/bin/sgcount
+	${STRIP_CMD} ${PREFIX}/bin/sgmltrans
+	${STRIP_CMD} ${PREFIX}/bin/getindex
+	${STRIP_CMD} ${PREFIX}/bin/sgsort
+	${STRIP_CMD} ${PREFIX}/bin/xmlnorm
+	${STRIP_CMD} ${PREFIX}/bin/knit
+	${STRIP_CMD} ${PREFIX}/bin/nslwhere
+	${STRIP_CMD} ${PREFIX}/bin/pesis
+	${STRIP_CMD} ${PREFIX}/bin/sgrpg
+	${STRIP_CMD} ${PREFIX}/bin/nslshowddb
+	${STRIP_CMD} ${PREFIX}/bin/intersect
 
 MAN1=	ltxml.1 xmlnorm.1 pesis.1 sgcount.1 sggrep.1 \
 	sgmlsb.1 sgmlseg.1 sgmltoken.1 sgmltrans.1 \
