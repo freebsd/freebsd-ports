@@ -1,12 +1,12 @@
 # New ports collection makefile for:	fetchmail
-# Version required:     3.9.9
+# Version required:     4.0.0
 # Date created:		26 Oct 1996
 # Whom:			Ville Eerola <ve@sci.fi>
 #
-# $Id: Makefile,v 1.34 1997/06/16 15:51:55 max Exp $
+# $Id: Makefile,v 1.35 1997/07/02 13:04:57 ache Exp $
 #
 
-DISTNAME=       fetchmail-3.9.9
+DISTNAME=       fetchmail-4.0.0
 CATEGORIES=	mail
 MASTER_SITES=	ftp://ftp.ccil.org/pub/esr/fetchmail/
 
@@ -24,6 +24,8 @@ post-patch:
 post-install:
 	install -d -m 555 -o ${DOCOWN} -g ${DOCGRP} ${FDOC}
 	cd ${WRKSRC} && ${INSTALL_DATA} \
-		sample.rcfile FAQ fetchmail.FAQ.html ${FDOC}
+	   sample.rcfile FAQ NOTES FEATURES README COPYING \
+	   fetchmail.FAQ.html fetchmail-features.html \
+	   design-notes.html ${FDOC}
 
 .include <bsd.port.mk>
