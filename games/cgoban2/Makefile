@@ -11,7 +11,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://kgs.kiseido.com/
 DISTNAME=	cgoban-unix-${PORTVERSION}
 
-MAINTAINER=	smazanek@steffen-mazanek.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet Go Server client and game editor
 
 WRKSRC=		${WRKDIR}/cgoban
