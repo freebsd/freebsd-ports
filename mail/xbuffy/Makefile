@@ -3,7 +3,7 @@
 # Date created:		18 June 1995
 # Whom:			dchapes@zeus.leitch.com
 #
-# $Id: Makefile,v 1.2 1996/11/18 09:55:51 asami Exp $
+# $Id: Makefile,v 1.3 1997/12/04 02:35:02 vanilla Exp $
 #
 
 DISTNAME=	xbuffy3.3
@@ -15,5 +15,6 @@ MASTER_SITE_SUBDIR=	utilities
 MAINTAINER=	dchapes@zeus.leitch.com
 
 USE_IMAKE=	yes
+MAN1=		xbuffy.1
 
 .include <bsd.port.mk>

@@ -5,7 +5,7 @@
 # With some 
 # modifications from:	Andreas Klemm <andreas@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.11 1998/09/17 00:32:45 asami Exp $
+# $Id: Makefile,v 1.12 1998/09/21 01:59:20 steve Exp $
 #
 
 DISTNAME=	xfaces-3.3
@@ -22,6 +22,7 @@ LIB_DEPENDS=	compface.1:${PORTSDIR}/mail/faces \
 		Xpm.4:${PORTSDIR}/graphics/xpm
 
 USE_IMAKE=	YES
+MAN1=		xfaces.1
 
 pre-configure:
 	@ln -sf ../sounds ${WRKSRC}
