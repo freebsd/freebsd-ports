@@ -1,0 +1,29 @@
+--- components/ebrowser/test-ebrowser.c.orig	Sat Dec  2 01:06:18 2000
++++ components/ebrowser/test-ebrowser.c	Wed Jan  3 10:56:58 2001
+@@ -29,3 +29,5 @@
+ 	Bonobo_PropertyBag pb;
++#ifdef TEST_LISTENER
+ 	BonoboPropertyListener * listener;
++#endif
+ 
+@@ -41,2 +43,3 @@
+ 
++#ifdef TEST_LISTENER
+ 	listener = gtk_object_get_data (object, "listener");
+@@ -45,2 +48,3 @@
+ 	}
++#endif
+ }
+@@ -111,2 +115,3 @@
+ 
++#ifdef TEST_LISTENER
+ static void
+@@ -121,2 +126,3 @@
+ }
++#endif
+ 
+@@ -308,3 +314,3 @@
+ 
+-#if 1
++#ifdef TEST_LISTENER
+ 	/* Test listener */
