@@ -20,7 +20,7 @@ bin/gftp
 %%DATADIR%%/gftp/tar.xpm
 %%DATADIR%%/gftp/txt.xpm
 %%DATADIR%%/gftp/world.xpm
-%%DATADIR%%/pixmaps/gftp.png
+%%GNOME:%%share/gnome/pixmaps/gftp.png
 share/locale/br/LC_MESSAGES/gftp.mo
 share/locale/cs/LC_MESSAGES/gftp.mo
 share/locale/da/LC_MESSAGES/gftp.mo
