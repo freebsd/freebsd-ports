@@ -155,6 +155,7 @@ include/libgnomeui/gnome-startup.h
 include/libgnomeui/gnome-stock.h
 include/libgnomeui/gnome-types.h
 include/libgnomeui/gnome-uidefs.h
+include/libgnomeui/gnome-window-icon.h
 include/libgnomeui/gnome-winhints.h
 include/libgnomeui/gnometypebuiltins.h
 include/libgnomeui/gtk-clock.h
@@ -261,6 +262,7 @@ share/locale/no/LC_MESSAGES/gnome-libs.mo
 share/locale/pl/LC_MESSAGES/gnome-libs.mo
 share/locale/pt/LC_MESSAGES/gnome-libs.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-libs.mo
+share/locale/ro/LC_MESSAGES/gnome-libs.mo
 share/locale/ru/LC_MESSAGES/gnome-libs.mo
 share/locale/sk/LC_MESSAGES/gnome-libs.mo
 share/locale/sl/LC_MESSAGES/gnome-libs.mo
