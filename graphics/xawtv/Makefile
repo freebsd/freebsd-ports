@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xawtv
-PORTVERSION=	3.78
+PORTVERSION=	3.79
 CATEGORIES=	graphics
 MASTER_SITES=	http://bytesex.org/xawtv/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

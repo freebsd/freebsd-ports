@@ -14,12 +14,16 @@ bin/v4lctl
 bin/webcam
 bin/xawtv
 bin/xawtv-remote
+lib/xawtv/bilinear.so
 lib/xawtv/conv-mjpeg.so
+lib/xawtv/cubic.so
 lib/xawtv/drv0-bsd.so
 lib/xawtv/flt-disor.so
 lib/xawtv/flt-gamma.so
 lib/xawtv/flt-invert.so
 lib/xawtv/flt-smooth.so
+lib/xawtv/linear-blend.so
+lib/xawtv/linedoubler.so
 lib/xawtv/read-avi.so
 lib/xawtv/snd-oss.so
 lib/xawtv/write-avi.so
@@ -42,6 +46,31 @@ man/fr/man1/xawtv.1
 @dirrm man/es/man5
 @dirrm man/es/man1
 @dirrm man/es
+share/xawtv/Index.map
+share/xawtv/argentina.list
+share/xawtv/ccir-h.list
+share/xawtv/ccir-i-iii.list
+share/xawtv/ccir-sl-sh.list
+share/xawtv/europe-east.list
+share/xawtv/europe-west.list
+share/xawtv/ntsc-bcast-jp.list
+share/xawtv/ntsc-bcast.list
+share/xawtv/ntsc-cable-ca.list
+share/xawtv/ntsc-cable-jp.list
+share/xawtv/ntsc-cable.list
+share/xawtv/ntsc-hrc.list
+share/xawtv/oirt-i-iii.list
+share/xawtv/oirt-sl-sh.list
+share/xawtv/pal-australia-optus.list
+share/xawtv/pal-australia.list
+share/xawtv/pal-bcast-cn.list
+share/xawtv/pal-bcast-za.list
+share/xawtv/pal-ireland.list
+share/xawtv/pal-italy.list
+share/xawtv/pal-newzealand.list
+share/xawtv/secam-france.list
+share/xawtv/uhf.list
+@dirrm share/xawtv
 @cwd %%X11BASE%%
 lib/X11/app-defaults/MoTV
 lib/X11/de/app-defaults/MoTV
