@@ -18,6 +18,7 @@ LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS+=	pnmscale:${PORTSDIR}/graphics/netpbm
 
 USE_IMAKE=	yes
+USE_REINPLACE=	yes
 USE_FREETYPE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--disable-vflib
@@ -38,6 +39,10 @@ EMACS_LISPS=	mgp-mode.el mgp-el/COPYING mgp-el/README \
 SAMPLE_SCRIPTS=	eqn2eps.sh tex2eps.sh mgp2html.pl mgp2latex.pl
 
 .include <bsd.port.pre.mk>
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|varargs.h|stdarg.h|' \
+		${WRKSRC}/image/rlelib.c
 
 post-configure:
 	(cd ${WRKSRC}/contrib/xmindpath; ./configure --prefix=${PREFIX})
