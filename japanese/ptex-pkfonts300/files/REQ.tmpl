@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ "x$1" = "x" ]; then
+    exit 1;
+fi
+
+if [ "x$2" = "xINSTALL" ]; then
+   mkdir -p ${PKG_PREFIX}/share/texmf/fonts/pk/%%USEPK_MODE%%
+   ln -sf ${PKG_PREFIX}/lib/fonts/pk%%RESOLUTION%% ${PKG_PREFIX}/share/texmf/fonts/pk/%%USEPK_MODE%%/
+fi
+
+if [ "x$2" = "xDEINSTALL" ]; then
+   rm ${PKG_PREFIX}/share/texmf/fonts/pk/%%USEPK_MODE%%/pk%%RESOLUTION%%
+fi
