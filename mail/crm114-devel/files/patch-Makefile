@@ -1,0 +1,53 @@
+--- Makefile.orig	Thu Feb 12 03:42:43 2004
++++ Makefile	Tue Feb 24 14:58:58 2004
+@@ -4,7 +4,7 @@
+ #   If you want to install the executables somewhere else, change
+ #    BINDIR here.  Default is /usr/bin 
+ #
+-prefix=/usr
++#prefix=/usr/local
+ BINDIR=${prefix}/bin
+ 
+ # VER_SUFFIX defines a version suffix for our installed executables, 
+@@ -65,15 +65,7 @@
+ 	$(CC) $(LDFLAGS) crm114.o crmregex_gnu.o crm_mathexec.o -lm -o crm114_gnu $(LIBS)
+ 
+ crm114_tre: crm114.o crmregex_tre.o crm_mathexec.o
+-	#
+-	#   Note: if you haven't installed TRElib, the next step 
+-	#   will get an error.
+-	#       For TRElib, look in the TRE sub-directory of this kit.
+-	#   You will also need to add /usr/local/lib to /etc/ld.so.conf,
+-	#   and then run ldconfig (as root) to set the library up and make
+-	#   the library known to the static and runtime linkers.
+-	#
+-	$(CC) $(LDFLAGS) crm114.o crmregex_tre.o crm_mathexec.o -static -lm -ltre -o crm114_tre $(LIBS)
++	$(CC) $(LDFLAGS) crm114.o crmregex_tre.o crm_mathexec.o -lm -ltre -o crm114_tre $(LIBS)
+ 
+ crm114.o: crm114.c crm114.h crm114_structs.h crm114_config.h crm114_sysincludes.h
+ 	$(CC)  $(CFLAGS) -DVERSION='"$(VERSION)"' -c crm114.c -o crm114.o
+@@ -89,14 +81,14 @@
+ 
+ cssutil: cssutil.c crm114.h crm114_structs.h crm114_config.h crm114_sysincludes.h
+ 	$(CC)  $(CFLAGS) -c cssutil.c -o cssutil.o  
+-	$(CC)  $(CFLAGS) cssutil.o -static -lm -ltre -o cssutil  
++	$(CC)  $(LDFLAGS) $(CFLAGS) cssutil.o -lm -ltre -o cssutil $(LIBS)
+ 
+ cssdiff: cssdiff.c crm114.h crm114_structs.h crm114_config.h crm114_sysincludes.h
+ 	$(CC)  $(CFLAGS) -c cssdiff.c -o cssdiff.o
+-	$(CC)  $(CFLAGS) -static -ltre cssdiff.o -o cssdiff
++	$(CC)  $(LDFLAGS) $(CFLAGS) -ltre cssdiff.o -o cssdiff $(LIBS)
+ 
+ cssmerge: cssmerge.c crm114.h crm114_structs.h crm114_config.h crm114_sysincludes.h
+-	$(CC)  $(CFLAGS) -static -ltre cssmerge.c -o cssmerge
++	$(CC)  $(LDFLAGS) $(CFLAGS) -ltre cssmerge.c -o cssmerge $(LIBS)
+ 
+ clean:
+ 	-rm -f crm114
+@@ -254,4 +246,4 @@
+ distribution: install src_gzip i386_gzip css_gzip
+ 	md5sum crm114-$(VERSION).*.tar.gz
+ 
+-FORCE:
+\ No newline at end of file
++FORCE:

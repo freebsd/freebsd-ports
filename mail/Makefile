@@ -36,6 +36,7 @@
     SUBDIR += courier
     SUBDIR += courier-imap
     SUBDIR += crashecho
+    SUBDIR += crm114
     SUBDIR += cucipop
     SUBDIR += cvsmail
     SUBDIR += cyrus
