@@ -230,12 +230,13 @@ sub add_cvsweb_entry {
 	}
 
 	# Add the url links
+	my $skip = 0;
 	foreach (@input) {
-		# Skip any trailing blank lines.
-		unless ($_) {
-			push @output, $_;
-			next;
-		}
+		# The revision block is terminated with an empty line.
+		$skip = 1 if $_ =~ /^\s*$/;
+
+		push @output, $_;
+		next if $skip;
 
 		my ($rev, $add, $sub, $file, $status) = split;
 
@@ -257,7 +258,6 @@ sub add_cvsweb_entry {
 		} else {
 			$extra = ".diff?r1=$prevrev&r2=$rev&f=h";
 		}
-		push @output, $_;
 		push @output, "$baseurl$extra";
 	}
 	    
