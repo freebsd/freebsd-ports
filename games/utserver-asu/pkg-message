@@ -1,4 +1,12 @@
+For configuration options:
+Execute the menu script "asu.sh" in your UT main directory.
 
-Menu script:
-"asu.sh" in /usr/compat/linux/usr/games/ut-server/asu
+Notes:	
+
+- If you intend to start ucc.init as root, the user account 
+  you specify in the configuration requires a valid login shell and
+  a valid home directory.
+
+- the netgames-abfackeln-0.8.2 patch is already integrated in
+  the utserver port 436 revision 2 and modified for FreeBSD
 
