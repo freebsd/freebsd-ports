@@ -16,8 +16,8 @@ DISTNAME=	JTree_source-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	An additional library for the JX widget library
 
-BUILD_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure \
-		makemake:${JXPORT}
+EXTRACT_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure
+BUILD_DEPENDS=	makemake:${JXPORT}
 LIB_DEPENDS=	jx-1_5_3.1:${JXPORT}
 
 WRKSRC=		${WRKDIR}/JX-1.5.3

@@ -14,8 +14,8 @@ DISTNAME=	Arrow_source-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Mail Reader for X: view, compose and organize; e.g, PGP, GnuPG, POP & APOP
 
-BUILD_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure \
-		makemake:${JXPORT}
+EXTRACT_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure
+BUILD_DEPENDS=	makemake:${JXPORT}
 LIB_DEPENDS=	jx-1_5_3.1:${JXPORT} \
 		jsearch-0_5_6.0:${PORTSDIR}/x11-toolkits/libjsearch \
 		jtoolbar-0_5_4.0:${PORTSDIR}/x11-toolkits/libjtoolbar \

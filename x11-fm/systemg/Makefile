@@ -15,8 +15,8 @@ DISTNAME=	SystemG_source-${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	UNIX File Manager based on the design of the Macintosh System 7
 
-BUILD_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure \
-		makemake:${JXPORT}
+EXTRACT_DEPENDS=	${NONEXISTENT}:${JXPORT}:configure
+BUILD_DEPENDS=	makemake:${JXPORT}
 LIB_DEPENDS=	jx-1_5_3.1:${JXPORT} \
 		jtoolbar-0_5_4.0:${PORTSDIR}/x11-toolkits/libjtoolbar \
 		jtree-1_1_7.1:${PORTSDIR}/x11-toolkits/libjtree
