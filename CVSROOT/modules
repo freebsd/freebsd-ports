@@ -3534,6 +3534,7 @@ libesmtp	ports/mail/libesmtp
 libevent	ports/devel/libevent
 libexec		src/libexec
 libexif		ports/graphics/libexif
+libexif-gtk	ports/graphics/libexif-gtk
 libf2c		src/lib/libf2c
 libfame		ports/graphics/libfame
 libfetch	src/lib/libfetch
