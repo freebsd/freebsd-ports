@@ -18,9 +18,17 @@ USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/jad ${PREFIX}/bin/
-	${MKDIR} ${PREFIX}/share/doc/jad
-	${INSTALL_DATA} ${WRKSRC}/Readme.txt ${PREFIX}/share/doc/jad/
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${ARCH} == "alpha"
+BROKEN=		Not supported on FreeBSD/Alpha
+.endif
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/jad ${PREFIX}/bin/
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/jad
+	@${INSTALL_DATA} ${WRKSRC}/Readme.txt ${PREFIX}/share/doc/jad/
+.endif
+
+.include <bsd.port.post.mk>
