@@ -20,7 +20,7 @@ PATCHFILES=		${UPDATES}
 
 MAINTAINER=		ports@FreeBSD.org
 
-FORBIDDEN=		"security bugs--see <URL:http://rhn.redhat.com/errata/RHSA-2002-166.html> and <URL:http://rhn.redhat.com/errata/RHSA-2002-139.html>"
+FORBIDDEN=		"multiple security bugs--see <URL:http://rhn.redhat.com/errata/RHSA-2001-071.html>"
 
 BUILD_DEPENDS=		rpm:${PORTSDIR}/archivers/rpm
 
@@ -36,12 +36,13 @@ MD5_FILE=		${MASTERDIR}/distinfo.${MACHINE_ARCH}
 
 .include <bsd.port.pre.mk>
 
-UPDATES=		zlib-1.1.3-25.6.${MACHINE_ARCH}.rpm
+RPM_GLIBC=		glibc-2.1.3-26.${MACHINE_ARCH}.rpm
+UPDATES=		${RPM_GLIBC} \
+			zlib-1.1.3-25.6.${MACHINE_ARCH}.rpm
 .if (${MACHINE_ARCH} == "i386")
 LIBC5_COMPAT=		ld.so-1.9.5-11.i386.rpm libc-5.3.12-31.i386.rpm
 RPM_BINUTILS=		binutils-2.9.1.0.23-6.i386.rpm
 RPM_GLIB=
-RPM_GLIBC=		glibc-2.1.2-11.i386.rpm
 RPM_LDCONFIG=		ldconfig-1.9.5-15.i386.rpm
 RPM_RPM=		rpm-3.0.3-2.i386.rpm
 RPM_X_LIBS=		XFree86-libs-3.3.5-3.i386.rpm
@@ -50,7 +51,6 @@ UPDATES+=		glib-1.2.6-2.i386.rpm
 LIBC5_COMPAT=
 RPM_BINUTILS=		binutils-2.9.1.0.23-7.alpha.rpm
 RPM_GLIB=		glib-1.2.6-2.alpha.rpm
-RPM_GLIBC=		glibc-2.1.2-17.alpha.rpm
 RPM_LDCONFIG=		ldconfig-1.9.5-16.alpha.rpm
 RPM_RPM=		rpm-3.0.3-6.alpha.rpm
 RPM_X_LIBS=		XFree86-libs-3.3.5-17.alpha.rpm
@@ -64,8 +64,7 @@ UPDATES+=
 RPM_SET1=		setup-2.0.5-1.noarch.rpm \
 			filesystem-1.3.5-1.noarch.rpm \
 			basesystem-6.0-4.noarch.rpm
-RPM_SET2=		${RPM_GLIBC} \
-			termcap-9.12.6-15.${MACHINE_ARCH}.rpm \
+RPM_SET2=		termcap-9.12.6-15.${MACHINE_ARCH}.rpm \
 			libtermcap-2.0.8-18.${MACHINE_ARCH}.rpm \
 			bash-1.14.7-16.${MACHINE_ARCH}.rpm \
 			ncurses-4.2-25.${MACHINE_ARCH}.rpm \
@@ -153,7 +152,7 @@ do-install:
 	@brandelf -t Linux ${LINUXBASE}/sbin/ldconfig
 	@${LINUXBASE}/sbin/ldconfig
 	@${TOUCH} ${LINUXBASE}/etc/ld.so.conf
-	@for R in ${RPM_SET2}; do \
+	@for R in ${UPDATES} ${RPM_SET2}; do \
 		${ECHO} $$R; \
 		${RPM} -U ${RPMFLAGS} ${RPMDIR}/$$R; \
 	done
