@@ -1,22 +1,5 @@
-bin/mysql_navigator
+bin/mysqlnavigator
+lib/libmysqlui.a
+lib/libmysqlui.la
 lib/libmysqlui.so
 lib/libmysqlui.so.1
-share/mysql_navigator/po/mysql_navigator.ts
-share/mysql_navigator/pics/background.xpm
-share/mysql_navigator/pics/close.xpm
-share/mysql_navigator/pics/db.xpm
-share/mysql_navigator/pics/document.xpm
-share/mysql_navigator/pics/down.xpm
-share/mysql_navigator/pics/drop.xpm
-share/mysql_navigator/pics/edit.xpm
-share/mysql_navigator/pics/field.xpm
-share/mysql_navigator/pics/new.xpm
-share/mysql_navigator/pics/run.xpm
-share/mysql_navigator/pics/save.xpm
-share/mysql_navigator/pics/server.xpm
-share/mysql_navigator/pics/table.xpm
-share/mysql_navigator/pics/up.xpm
-share/mysql_navigator/pics/window.xpm
-@dirrm share/mysql_navigator/pics
-@dirrm share/mysql_navigator/po
-@dirrm share/mysql_navigator

@@ -1,0 +1,11 @@
+--- src/main/Makefile.in.orig	Tue Jan  1 03:23:14 2002
++++ src/main/Makefile.in	Tue Jan  1 03:25:07 2002
+@@ -95,7 +95,7 @@
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../..
+ CPPFLAGS = @CPPFLAGS@
+-LIBS = @LIBS@
++LIBS = @LIBS@ $(LDFLAGS) -lqt2 -lmysqlclient
+ mysqlnavigator_OBJECTS =  main.$(OBJEXT)
+ mysqlnavigator_LDADD = $(LDADD)
+ mysqlnavigator_DEPENDENCIES = 
