@@ -1,0 +1,11 @@
+--- charset.c.orig	Thu Feb 15 17:09:02 2001
++++ charset.c	Thu Mar  1 02:27:30 2001
+@@ -31,7 +31,7 @@
+ #include <unistd.h>
+ #include <errno.h>
+ 
+-#include <iconv.h>
++#include <giconv.h>
+ 
+ #include "mutt.h"
+ #include "charset.h"
