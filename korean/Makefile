@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.30 1999/06/09 01:30:51 steve Exp $
+# $Id: Makefile,v 1.31 1999/06/17 09:37:16 taoka Exp $
 #
 
     SUBDIR += Wnn
@@ -32,6 +32,8 @@
     SUBDIR += netscape3
     SUBDIR += netscape4-communicator
     SUBDIR += netscape4-navigator
+    SUBDIR += netscape46-communicator
+    SUBDIR += netscape46-navigator
     SUBDIR += nh2ps
     SUBDIR += nhpf
     SUBDIR += nhppf
