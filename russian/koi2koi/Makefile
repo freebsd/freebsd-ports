@@ -11,7 +11,7 @@ CATEGORIES=	russian converters
 MASTER_SITES=	#
 DISTFILES=	#
 
-MAINTAINER=	marck@rinet.ru
+MAINTAINER=	marck@FreeBSD.org
 COMMENT=	Cyrillic charset auto converter
 
 NO_WRKSUBDIR=	yes

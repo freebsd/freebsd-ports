@@ -12,10 +12,8 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	marck@rinet.ru
+MAINTAINER=	marck@FreeBSD.org
 COMMENT=	A simple Cisco NetFlow data collector
-
-USE_PERL5=	yes
 
 PLIST_FILES=	bin/ehnt etc/rc.d/ehntserv.sh.sample \
 		sbin/ehntserv share/ehnt/asnc.txt
