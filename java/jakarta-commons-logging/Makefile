@@ -16,7 +16,7 @@ MAINTAINER=	znerd@FreeBSD.org
 COMMENT=	Generic logging wrapper library
 
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/jakarta-ant \
-		${LOCALBASE}/share/java/classes/jakarta-log4j.jar:${PORTSDIR}/java/jakarta-log4j
+		${LOCALBASE}/share/java/classes/log4j.jar:${PORTSDIR}/java/jakarta-log4j
 
 USE_JAVA=	1.2+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
