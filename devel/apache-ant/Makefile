@@ -7,6 +7,7 @@
 
 PORTNAME=	jakarta-ant
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://jakarta.apache.org/builds/${PORTNAME}/release/v${PORTVERSION}/bin/ \
 		http://www.metaverse.nl/~ernst/
@@ -17,11 +18,9 @@ EXTRACT_ONLY=	${DISTNAME}-bin${EXTRACT_SUFX}
 
 MAINTAINER=	znerd@FreeBSD.org
 
-RUN_DEPENDS=	${JAVAVM}:${PORTSDIR}/java/javavmwrapper \
-		${LOCALBASE}/share/java/classes/crimson.jar:${PORTSDIR}/textproc/crimson
+RUN_DEPENDS=	${LOCALBASE}/share/java/classes/crimson.jar:${PORTSDIR}/textproc/crimson
 
-JAVAVM?=	${LOCALBASE}/bin/javavm
-FIND?=		/usr/bin/find
+USE_JAVA=	1.2+
 
 NO_BUILD=	YES
 ANT_SUBDIR=	${DISTNAME}
@@ -37,24 +36,48 @@ DATADIRS+=	docs
 .endif
 
 post-patch:
-	@${PERL} -pi -e 's,JAVACMD=java,JAVACMD=javavm,g' ${WRKSRC}/bin/ant
+	@${ECHO_CMD} -n ">> Customizing ant shell script..."
+	@${SED} \
+	-e "/%%JAVA%%/s//${JAVA:S/\//\\\//g}/g" \
+	-e "/%%JAVA_HOME%%/s//${JAVA_HOME:S/\//\\\//g}/g" \
+	${WRKSRC}/bin/ant > ${WRKDIR}/ant
+	@${MV} ${WRKDIR}/ant ${WRKSRC}/bin/ant
+	@${ECHO_CMD} " [ DONE ]"
+
+	@${ECHO_CMD} -n ">> Removing unneeded files..."
+	@${RM} -f ${WRKSRC}/lib/parser.jar
+	@${ECHO_CMD} " [ DONE ]"
 
 do-install:
-	${MKDIR} ${PORTDESTDIR}/bin ${PORTDESTDIR}/lib
-	cd ${INSTALL_WRKSRC}; \
-		${INSTALL_SCRIPT} ${SCRIPTS} ${PORTDESTDIR}/bin; \
+	@${ECHO_CMD} -n ">> Creating destination directory..."
+	@${MKDIR} ${PORTDESTDIR}/bin ${PORTDESTDIR}/lib
+	@${ECHO_CMD} " [ DONE ]"
+
+	@${ECHO_CMD} -n ">> Installing scripts..."
+	@cd ${INSTALL_WRKSRC}; \
+		${INSTALL_SCRIPT} ${SCRIPTS} ${PORTDESTDIR}/bin;
+	@${LN} -sf ${PORTDESTDIR}/bin/ant ${PREFIX}/bin
+	@${ECHO_CMD} " [ DONE ]"
+
+	@${ECHO_CMD} -n ">> Installing readme files..."
+	@cd ${INSTALL_WRKSRC}; \
 		${INSTALL_DATA} ${READMES} ${PORTDESTDIR};
-	${LN} -sf ${PORTDESTDIR}/bin/ant ${PREFIX}/bin
+	@${ECHO_CMD} " [ DONE ]"
+
 .if defined(DATADIRS)
 .for DIR in ${DATADIRS}
-	cd ${INSTALL_WRKSRC}; \
+	@${ECHO_CMD} -n ">> Installing data directory '${DIR}'..."
+	@cd ${INSTALL_WRKSRC}; \
 		${FIND} ${DIR} -type d -exec ${MKDIR} ${PORTDESTDIR}/\{} \; ;\
 		${FIND} ${DIR} -type f -exec ${INSTALL_DATA} \{} ${PORTDESTDIR}/\{} \;
+	@${ECHO_CMD} " [ DONE ]"
 .endfor
 .endif
-	${RM} -f ${PORTDESTDIR}/lib/parser.jar
-	${INSTALL_DATA} ${_DISTDIR}/${DISTNAME}-optional.jar ${PORTDESTDIR}/lib/optional.jar
-	${LN} -sf ${LOCALBASE}/share/java/classes/jaxp.jar ${PORTDESTDIR}/lib
-	${LN} -sf ${LOCALBASE}/share/java/classes/crimson.jar ${PORTDESTDIR}/lib
+
+	@${ECHO_CMD} -n ">> Installing additional JAR files..."
+	@${INSTALL_DATA} ${_DISTDIR}/${DISTNAME}-optional.jar ${PORTDESTDIR}/lib/optional.jar
+	@${LN} -sf ${LOCALBASE}/share/java/classes/jaxp.jar ${PORTDESTDIR}/lib
+	@${LN} -sf ${LOCALBASE}/share/java/classes/crimson.jar ${PORTDESTDIR}/lib
+	@${ECHO_CMD} " [ DONE ]"
 
 .include <bsd.port.mk>

@@ -1,0 +1,28 @@
+--- bin/ant.orig	Thu Oct 11 15:57:19 2001
++++ bin/ant	Sat Apr 13 13:12:06 2002
+@@ -1,9 +1,16 @@
+ #! /bin/sh
+ 
++DEFAULT_JAVACMD=%%JAVA%%
++DEFAULT_JAVA_HOME=%%JAVA_HOME%%
++
+ if [ -f $HOME/.antrc ] ; then 
+   . $HOME/.antrc
+ fi
+ 
++if [ -z "$JAVA_HOME" ] ; then
++  JAVA_HOME=$DEFAULT_JAVA_HOME
++fi
++
+ # OS specific support.  $var _must_ be set to either true or false.
+ cygwin=false;
+ darwin=false;
+@@ -59,7 +66,7 @@
+       JAVACMD=$JAVA_HOME/bin/java
+     fi
+   else
+-    JAVACMD=java
++    JAVACMD=$DEFAULT_JAVACMD
+   fi
+ fi
+  
