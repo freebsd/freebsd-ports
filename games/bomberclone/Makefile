@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bomberclone
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -14,18 +14,16 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	edwin@mavetju.org
 COMMENT=	Reimplementation of Atomic Bomber Man
 
-BUILD_DEPENDS=	sdl11-config:${PORTSDIR}/devel/sdl12 \
-		${BZIP2_CMD}:${PORTSDIR}/archivers/bzip2
+BUILD_DEPENDS=	${BZIP2_CMD}:${PORTSDIR}/archivers/bzip2
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer	\
 		SDL_image.10:${PORTSDIR}/graphics/sdl_image
 
 GNU_CONFIGURE=	yes
 USE_XLIB=	yes
 USE_REINPLACE=	yes
-USE_REINPLACE=	yes
+USE_SDL=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
 CONFIGURE_ARGS=	--target=""
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
