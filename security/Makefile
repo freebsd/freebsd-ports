@@ -360,6 +360,7 @@
     SUBDIR += pks
     SUBDIR += pktsuckers
     SUBDIR += poc
+    SUBDIR += poly1305aes
     SUBDIR += portaudit
     SUBDIR += portaudit-db
     SUBDIR += portscanner
