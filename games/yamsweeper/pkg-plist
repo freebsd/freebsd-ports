@@ -1,7 +1,7 @@
 bin/yamsweeper
 lib/X11/yamsweeper/yams.hi
 lib/X11/yamsweeper/yams.log
-@unexec rm -rf %D/lib/X11/yamsweeper
 man/man1/yamsweeper.1.gz
 @cwd ${X11BASE}
 lib/X11/app-defaults/Yamsweeper
+@dirrm lib/X11/yamsweeper
