@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	xmame
-PORTVERSION?=	0.88
+PORTVERSION?=	0.89
 CATEGORIES=	emulators
 MASTER_SITES=	http://x.mame.net/download/:xmame \
 		http://www.sys2064.com/files/util/:history \
@@ -24,13 +24,25 @@ USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_REINPLACE=	yes
-
-MAN6=		x${MAMEMESS}.6
-
-XMAMEVERSION?=	${PORTVERSION}
+WANT_SDL=	yes
+WANT_GNOME=	yes
 
 # Are we building MAME, MESS or PinMAME? (also set by slave ports)
 MAMEMESS?=	mame
+
+MAN6=		x${MAMEMESS}.6
+
+OPTIONS=	SDL		"Use the SDL driver" on \
+		OPENGL		"Use the OpenGL driver" off \
+		X11		"Use the X11 driver" off \
+		SVGALIB		"Use the Svgalib driver" off \
+		ASM68K		"Enable the speedier but buggy 68k emulator" off \
+		OPTIMIZATION	"Enable maximum C compiler optimization" off \
+		ESOUND		"Enable esound support" off \
+		DATFILES	"Installs additional information files" on \
+		NETWORK		"Include support for network play (**BROKEN**)" off
+
+XMAMEVERSION?=	${PORTVERSION}
 
 PLIST_SUB+=	MAMEMESS="x${MAMEMESS}" SPOOLGAMES="${SPOOLGAMES}"
 .if ${MAMEMESS} == "mame"
@@ -62,7 +74,6 @@ GENERALDOCS=	changes.unix \
 		xmame-doc-5.html \
 		xmame-doc-6.html \
 		xmame-doc-7.html \
-		xmame-doc-8.html \
 		xmame-doc.html \
 		xmame-doc.lyx \
 		xmame-doc.txt \
@@ -101,19 +112,15 @@ ALLDOCS=	${GENERALDOCS} ${PINMAMEDOCS}
 .endif
 .endif
 
-PKGOPTS=	${FILESDIR}/pkg-opts
-
 #
 # Various options are processed here.
 #
+.include <bsd.port.pre.mk>
 
 # Option WITH_DATFILES
 .if ${MAMEMESS} == "mame"
-.if !defined(WITH_DATFILES)
-WITH_DATFILES=	yes
-.endif
 
-.if ${WITH_DATFILES:L} != "no"
+.if defined(WITH_DATFILES)
 PLIST_SUB+=	DATFILES=""
 
 EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
@@ -138,12 +145,7 @@ PLIST_SUB+=	DATFILES="@comment "
 .endif
 .endif
 
-# Option WITH_ASM68K
-.if !defined(WITH_ASM68K)
-WITH_ASM68K=	no
-.endif
-
-.if ${WITH_ASM68K:L} == "yes"
+.if defined(WITH_ASM68K)
 ASM_COMMENT=
 .else
 ASM_COMMENT=\#
@@ -151,21 +153,24 @@ ASM_COMMENT=\#
 
 # Option WITH_OPTIMIZATION
 .if defined(WITH_OPTIMIZATION)
-.if ${WITH_OPTIMIZATION:L} == "yes"
 CFLAGS+=	-O3 -Wall -Wno-unused -funroll-loops \
 		-fstrength-reduce -fomit-frame-pointer -ffast-math \
 		-falign-functions=4 -falign-jumps=4 -falign-loops=4
-.endif
 .endif
 
 SDLSOUNDCOMMENT=	\#
 
 # Option DISPLAY_TARGET
-.if !defined(DISPLAY_TARGET)
-DISPLAY_TARGET=sdl
+.if defined(WITH_SDL)
+USE_SDL=	sdl
+DISPLAY_TARGET=	sdl
+DISPLAY_METHOD=	SDL
+SDLSOUNDCOMMENT=
 .endif
 
-.if ${DISPLAY_TARGET:L} == "opengl"
+.if defined(WITH_OPENGL)
+USE_XLIB=	yes
+DISPLAY_TARGET=	opengl
 CFLAGS+=	${PTHREAD_CFLAGS} -I${X11BASE}/include
 USE_GL=		yes
 DISPLAY_METHOD=	x11
@@ -173,42 +178,22 @@ PLIST_SUB+=	OPENGL=""
 ALL_DOCS+=	${GLDOCS}
 .else
 PLIST_SUB+=	OPENGL="@comment "
-
-.if ${DISPLAY_TARGET:L} == "svgalib"
-LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib
-DISPLAY_METHOD=	svgalib
-.else
-
-.if ${DISPLAY_TARGET:L} == "x11"
-DISPLAY_METHOD=	x11
-.else
-
-.if ${DISPLAY_TARGET:L} != "sdl"
-pre-everything::
-	@${ECHO_MSG} "You must select a valid DISPLAY_TARGET. Refer to"
-	@${ECHO_MSG} "'make options' for more information."
-	@exit 1
-.endif
-USE_SDL=	sdl
-DISPLAY_METHOD=	SDL
-SDLSOUNDCOMMENT=
-.endif
-.endif
 .endif
 
-.if ${DISPLAY_TARGET:L} != "svgalib"
+.if defined(WITH_SVGALIB)
+DISPLAY_TARGET=	svgalib
+LIB_DEPENDS+=	vga.1:${PORTSDIR}/graphics/svgalib
 USE_XPM=	yes
-USE_X_PREFIX=	yes
+DISPLAY_METHOD=	svgalib
 .endif
 
-PKGNAMESUFFIX=-${DISPLAY_METHOD:L}
+.if defined(WITH_X11)
+DISPLAY_METHOD=	x11
+USE_XLIB=	yes
+.endif
 
 # Option WITH_ESOUND
-.if !defined(WITH_ESOUND)
-WITH_ESOUND=	no
-.endif
-
-.if ${WITH_ESOUND:L} == "yes"
+.if defined(WITH_ESOUND)
 ESOUNDCOMMENT=
 USE_GNOME=	esound
 .else
@@ -217,44 +202,15 @@ ESOUNDCOMMENT=\#
 
 # XXX Network support is *broken* in 0.85+, leave commented out for now
 # Option WITH_NETWORK
-#.if ${MAMEMESS} == "mame"
-.if !defined(WITH_NETWORK)
-WITH_NETWORK=	no
-.endif
-
-.if ${WITH_NETWORK:L} != "no"
+.if defined(WITH_NETWORK)
 BROKEN=	"Networking support is currently broken"
 NETWORK=
 .else
 NETWORK=\#
 .endif
-#.endif
-
-.include <bsd.port.pre.mk>
-
-#
-# Regular targets
-#
-
-options:
-	@(${ECHO_MSG} "===>  Build options for ${PKGNAME}:"; \
-	  ${PERL} -ne '/^#/ || /^\s/ && print || \
-	    print sprintf "* %s [%s]\n	%s", split(/\|/)' ${PKGOPTS}) | \
-	  $${PAGER:-/usr/bin/more}
-
-pre-everything::
-.if !defined(BATCH)
-	@${TEST} -r ${PKGOPTS} && \
-	  (${ECHO_MSG} '-------------------------------------------------------------------------'; \
-	  ${ECHO_MSG} 'Perform a "make options" to see a list of available installation options.'; \
-	  ${ECHO_MSG} '-------------------------------------------------------------------------';)
-.endif
 
 # The large number of sed regexes here is intended to make this port a whole
 # lot easier to maintain - please don't convert them into a patch.
-#
-# XXX: The -Imess part was added because of a conflict with cdparanoia-3.9.8_3
-#      which (imho bogusly) installs an 'utils.h' header in $LOCALBASE/include
 do-configure:
 	${REINPLACE_CMD} -e "s@= gcc@?=  ${CC}@g" \
 		-e "s@^TARGET.*@TARGET = ${MAMEMESS}@g" \
@@ -263,7 +219,7 @@ do-configure:
 		-e "s@^CFLAGS.*@CFLAGS ?= ${CFLAGS}@g" \
 		-e "s@^INSTALL_GROUP.*@INSTALL_GROUP = wheel@g" \
 		-e "s@# LIBS.*@LIBS = -L${LOCALBASE}/lib@g" \
-		-e "s@# INCLUDES.*@INCLUDES = -Imess -I${LOCALBASE}/include@g" \
+		-e "s@# INCLUDES.*@INCLUDES = -I${LOCALBASE}/include@g" \
 		-e "s@^PREFIX.*@PREFIX = ${PREFIX}@g" \
 		-e "s@/share/man@/man@g" \
 		-e "s@^MY_CPU.*@MY_CPU = ${ARCH}@g" \
@@ -277,11 +233,11 @@ do-configure:
 		-e "s@^SDL_CONFIG.*@SDL_CONFIG = ${SDL_CONFIG}@g" \
 		-e "s@^GLLIBS += .*@GLLIBS += ${PTHREAD_LIBS}@g" \
 			${WRKSRC}/makefile.unix
-.if ${DISPLAY_TARGET:L} == "sdl"
+.if defined(WITH_SDL)
 		${REINPLACE_CMD} -e "s@# JOY_SDL = 1@JOY_SDL = 1@g" ${WRKSRC}/makefile.unix
 .endif
 
-.if ${DISPLAY_TARGET:L} == "opengl"
+.if defined(WITH_OPENGL)
 		${REINPLACE_CMD} -e "s@# X11_OPENGL = 1@X11_OPENGL = 1@g" ${WRKSRC}/makefile.unix
 .endif
 
@@ -341,7 +297,7 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/history.dat ${PREFIX}/share/xmame
 	${INSTALL_DATA} ${WRKDIR}/cheat.dat ${PREFIX}/share/xmame
 .endif
-.if ${DISPLAY_TARGET:L} == "opengl"
+.if defined(WITH_OPENGL)
 	@${ECHO_MSG}
 	@${ECHO_MSG}	"**************************************************************"
 	@${ECHO_MSG}    "* HEADSUP: The OpenGL code is now built on top of the X11"

@@ -13,7 +13,6 @@ share/%%MAMEMESS%%/%%MAMEMESS%%rc
 %%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-doc-5.html
 %%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-doc-6.html
 %%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-doc-7.html
-%%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-doc-8.html
 %%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-doc.html
 %%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-doc.lyx
 %%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-doc.txt
@@ -27,9 +26,6 @@ share/%%MAMEMESS%%/%%MAMEMESS%%rc
 %%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-gdoc-8.html
 %%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame-gdoc.html
 %%PORTDOCS%%share/doc/%%MAMEMESS%%/xmame.css
-%%MAMEONLY%%%%DATFILES%%share/xmame/hiscore.dat
-%%MAMEONLY%%%%DATFILES%%share/xmame/history.dat
-%%MAMEONLY%%%%DATFILES%%share/xmame/cheat.dat
 %%MESSONLY%%%%PORTDOCS%%share/doc/xmess/credits.htm
 %%MESSONLY%%%%PORTDOCS%%share/doc/xmess/faq.htm
 %%MESSONLY%%%%PORTDOCS%%share/doc/xmess/imgtool.txt
