@@ -6,38 +6,38 @@
 #
 
 PORTNAME=	elk
-PORTVERSION=	3.0.3
+PORTVERSION=	3.99.4
 CATEGORIES=	lang scheme
-MASTER_SITES=	http://www-rn.informatik.uni-bremen.de/software/elk/dist/
-DISTNAME=	elk-3.0
+MASTER_SITES=	http://sam.zoy.org/projects/elk/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An embeddable Scheme interpreter
 
-USE_XLIB=	yes
-ALL_TARGET=	default
+LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
+		elf.0:${PORTSDIR}/devel/libelf
+
+USE_BZIP2=	yes
+USE_MOTIF=	yes
+USE_REINPLACE=	yes
+USE_LIBTOOL=	yes
+LIBTOOLFLAGS=	# none
+CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+INSTALLS_SHLIB=	yes
+
 MAN1=		elk.1
 
-post-patch:
-	@${CP} ${WRKSRC}/config/untested/386pc-freebsd2.1-cc \
-		${WRKSRC}/config/system
-	@${CP} ${WRKSRC}/config/sites/386pc-freebsd2.1 \
-		${WRKSRC}/config/site
+CPPFLAGS=	-I${LOCALBASE}/include/libelf -I${LOCALBASE}/include \
+		-DHAVE_SYS_TIMES_H
+LDFLAGS=	-L${LOCALBASE}/lib
 
-pre-install:
-	@${MKDIR} ${PREFIX}/share/elk
-
-#
-# we install the scheme binary as ${PREFIX}/bin/elk
-# to avoid a clash with mit-scheme.
-#
 post-install:
-	${INSTALL_PROGRAM} ${PREFIX}/share/elk/bin/scheme ${PREFIX}/bin/elk
-	@${MKDIR} ${PREFIX}/include/elk
-	${CP} -R ${PREFIX}/share/elk/include/* ${PREFIX}/include/elk
-.for dir in bin include
-	@${RM} -rf ${PREFIX}/share/elk/${dir}
-.endfor
-	@${INSTALL_MAN} ${WRKSRC}/doc/man/elk.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/doc/man/elk.1 ${MANPREFIX}/man/man1
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${EXAMPLESDIR}
+	@${TAR} -C ${WRKSRC}/examples --exclude "*Makefile*" -cf - . | \
+		${TAR} -C ${EXAMPLESDIR} --unlink -xf -
+	@${CHOWN} -R ${SHAREMODE}:${SHAREGRP} ${EXAMPLESDIR}
+.endif
 
 .include <bsd.port.mk>
