@@ -8,7 +8,6 @@ bin/txprint
 bin/txsum
 bin/txx
 include/txx.h
-man/cat7/t3x.0
 t3x/r7/bin/s86
 t3x/r7/bin/tx
 t3x/r7/bin/txcg386
@@ -38,6 +37,7 @@ t3x/r7/classes/string.cls
 t3x/r7/classes/string.dir
 t3x/r7/classes/system.cls
 t3x/r7/classes/system.dir
+t3x/r7/classes/t3x.cls
 t3x/r7/classes/t3x.dir
 t3x/r7/classes/tcode.cls
 t3x/r7/classes/tcode.dir
@@ -47,13 +47,13 @@ t3x/r7/classes/util.cls
 t3x/r7/classes/util.dir
 t3x/r7/classes/xmem.cls
 t3x/r7/classes/xmem.dir
-t3x/r7/doc/BOOT.HOWTO
-t3x/r7/doc/Changes
-t3x/r7/doc/FAQ
-t3x/r7/doc/KNOWNBUGS
+t3x/r7/doc/.sdtoc
+t3x/r7/doc/Booting.sd
+t3x/r7/doc/Bugs.sd
+t3x/r7/doc/Changes.sd
+t3x/r7/doc/FAQ.sd
 t3x/r7/doc/LICENSE
-t3x/r7/doc/README
-t3x/r7/doc/README.docs
+t3x/r7/doc/README.sd
 t3x/r7/doc/T3X.html
 t3x/r7/doc/classes.sd
 t3x/r7/doc/compiler.sd
@@ -62,14 +62,13 @@ t3x/r7/doc/formats.sd
 t3x/r7/doc/mdesc.sd
 t3x/r7/doc/s86.sd
 t3x/r7/doc/sd.sd
-t3x/r7/doc/sdv-config
 t3x/r7/doc/t3xref.sd
 t3x/r7/doc/utilities.sd
 t3x/r7/dos.txrc
-t3x/r7/lib/libt3x.a
 t3x/r7/lib/system.o
 t3x/r7/lib/system.x
-t3x/r7/lib/t3x.lib
+t3x/r7/lib/t3x.o
+t3x/r7/lib/t3x.x
 t3x/r7/lib/ttyctl.o
 t3x/r7/lib/ttyctl.x
 t3x/r7/lib/xmem.o
@@ -79,7 +78,6 @@ t3x/r7/system.txrc
 t3x/r7/txprint.rules
 @unexec rm -f %D/t3x/r7/classes/CLASSND-
 @unexec rm -f %D/t3x/r7/classes/CLASSNDX
-@unexec rm -f %D/t3x/r7/doc/sdv-config
 @dirrm t3x/r7/bin
 @dirrm t3x/r7/classes
 @dirrm t3x/r7/lib
