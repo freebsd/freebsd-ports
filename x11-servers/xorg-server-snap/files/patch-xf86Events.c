@@ -1,5 +1,5 @@
---- programs/Xserver/hw/xfree86/common/xf86Events.c.orig	Sat Dec  6 14:24:24 2003
-+++ programs/Xserver/hw/xfree86/common/xf86Events.c	Tue Aug 31 00:27:37 2004
+--- programs/Xserver/hw/xfree86/common/xf86Events.c.orig	Sun Sep 26 04:17:42 2004
++++ programs/Xserver/hw/xfree86/common/xf86Events.c	Sun Sep 26 04:17:25 2004
 @@ -448,7 +448,7 @@
  #if defined(SYSCONS_SUPPORT) || defined(PCVT_SUPPORT) || defined(WSCONS_SUPPORT)
    static Bool first_time = TRUE;
@@ -27,7 +27,36 @@
  
  #ifdef __linux__
    if (xf86Info.kbdCustomKeycodes) {
-@@ -676,7 +676,7 @@
+@@ -525,6 +525,7 @@
+     } else
+ #endif /* i386 && SVR4 */
+     {
++      if (!xf86IsPc98()) {
+       switch (scanCode) {
+       case 0x59:        scanCode = KEY_0x59; break;
+       case 0x5a:        scanCode = KEY_0x5A; break;
+@@ -555,6 +556,7 @@
+       case 0x75:        scanCode = KEY_0x75; break;
+       case 0x76:        scanCode = KEY_0x76; break;
+       }
++      }  /*  end if (!xf86IsPc98())  */
+     }
+   }
+ 
+@@ -636,10 +638,12 @@
+    * they need to get the same key code as the base key on the same
+    * physical keyboard key.
+    */
++  if (!xf86IsPc98()) {
+   if (scanCode == KEY_SysReqest)
+     scanCode = KEY_Print;
+   else if (scanCode == KEY_Break)
+     scanCode = KEY_Pause;
++  }
+ #endif
+   
+   /*
+@@ -676,7 +680,7 @@
      }
    }
  #endif
@@ -36,7 +65,7 @@
  special:
    if (kbdSun) {
      switch (scanCode) {
-@@ -710,7 +710,7 @@
+@@ -710,7 +714,7 @@
       */
      scanCode--;
    }
