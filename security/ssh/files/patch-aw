@@ -1,0 +1,31 @@
+--- login.c.orig	Wed Jul  8 17:40:36 1998
++++ login.c	Fri Apr  9 01:31:08 1999
+@@ -104,6 +104,10 @@
+ #endif /* HAVE_HPUX_TCB_AUTH */
+ #include "ssh.h"
+ 
++#ifdef __FreeBSD__
++#include <osreldate.h>
++#endif
++
+ /* Returns the time when the user last logged in.  Returns 0 if the 
+    information is not available.  This must be called before record_login. 
+    The host the user logged in from will be returned in buf. */
+@@ -287,12 +291,15 @@
+   strncpy(u.ut_user, user, sizeof(u.ut_user));
+ #endif /* HAVE_NAME_IN_UTMP */
+ #ifdef HAVE_HOST_IN_UTMP
+-  strncpy(u.ut_host, host, sizeof(u.ut_host));
+ #ifdef __FreeBSD__
++#if __FreeBSD_version >= 400004
++  trimdomain(host, sizeof u.ut_host);
++#endif
+   if (strlen(host) > sizeof(u.ut_host)) {
+     strncpy(u.ut_host, get_remote_ipaddr(), sizeof(u.ut_host));
+-  }
++  } else
+ #endif /* __FreeBSD__ */
++  strncpy(u.ut_host, host, sizeof(u.ut_host));
+ #endif /* HAVE_HOST_IN_UTMP */
+ #ifdef HAVE_ADDR_IN_UTMP
+   if (addr)
