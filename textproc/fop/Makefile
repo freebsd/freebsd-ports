@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	fop
-PORTVERSION=	0.17.0
+PORTVERSION=	0.20.3
 CATEGORIES=	textproc java
-MASTER_SITES=	http://xml.apache.org/dist/fop/recent/
-DISTNAME=	${PORTNAME:S/fop/Fop/}-${PORTVERSION}
+MASTER_SITES=	http://xml.apache.org/dist/fop/ \
+		http://xml.apache.org/dist/fop/recent/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	kiri@FreeBSD.org
 
 RUN_DEPENDS=	${LOCALBASE}/jdk${JDKVERSION}/bin/java:${PORTSDIR}/java/jdk \
 		${LOCALBASE}/share/java/classes/xerces.jar:${PORTSDIR}/textproc/xerces-j
 
-WRKSRC=		${WRKDIR}/xml-fop
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 NO_BUILD=	yes
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
@@ -24,21 +25,17 @@ JDKVERSION=	1.1.8
 JAVACLASSDIR=	${PREFIX}/share/java/classes
 JAVADATADIR=	${PREFIX}/share/java/${PKGNAME}
 
-do-extract:
-	${MKDIR} ${WRKSRC}
-	${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/${DISTFILES} \
-		${EXTRACT_AFTER_ARGS} -C ${WRKSRC}
-
 pre-install:
 	${MKDIR} ${JAVACLASSDIR} ${JAVADATADIR}
 	find ${WRKSRC} \( -name \*.orig -o -name \*~ -o -name CVS \) -exec ${RM} -rf \{} \;
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/fop.jar ${JAVACLASSDIR}
-	${INSTALL_DATA} ${WRKSRC}/lib/w3c.jar ${JAVACLASSDIR}/svg-w3c.jar
 	cd ${WRKSRC}; \
-		${INSTALL_DATA} LICENSE README STATUS build.xml ${JAVADATADIR}; \
-		${INSTALL_SCRIPT} build.sh ${JAVADATADIR}; \
+		${INSTALL_DATA} build/fop.jar lib/batik.jar lib/stylebook.jar \
+			${JAVACLASSDIR}; \
+		${INSTALL_DATA} CHANGES LICENSE README ReleaseNotes.html \
+			STATUS build.xml buildtools.xml ${JAVADATADIR}; \
+		${INSTALL_SCRIPT} build.sh fop.sh ${JAVADATADIR}; \
 		${CP} -R conf docs hyph javadocs lib src ${JAVADATADIR}
 
 .include <bsd.port.mk>
