@@ -14,7 +14,7 @@
          FAIL_EXIT( context, priv );
      } /* else - normal message */
 -    syslog( LOG_MAIL | LOG_INFO, "Complite proccessing message from %s", priv->from );
-+    syslog( LOG_MAIL | LOG_INFO, "Complete proccessing message from %s", priv->from );
++    syslog( LOG_MAIL | LOG_INFO, "Complete processing message from %s", priv->from );
      free_private_data( priv );
      if( set_private_data( context, NULL ) != MI_SUCCESS )
      {
