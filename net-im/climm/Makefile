@@ -1,17 +1,17 @@
 # New ports collection makefile for:	micq
-# Version required:                     0.4.3
+# Version required:                     0.4.4
 # Date created:				11 Oct 1998
 # Whom:					mph
 #
 # $FreeBSD$
 #
 
-DISTNAME=       micq-0.4.3
+DISTNAME=       micq-0.4.4
 CATEGORIES=	net
-MASTER_SITES=   ftp://micq.chatzone.org/pub/micq/V0.4.3/
+MASTER_SITES=   ftp://micq.chatzone.org/pub/micq/V0.4.4/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	mph@freebsd.org
+MAINTAINER=	ports@freebsd.org
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/micq ${PREFIX}/bin
