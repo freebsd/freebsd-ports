@@ -1,0 +1,11 @@
+--- configure.orig	Fri Oct 24 14:27:53 2003
++++ configure	Fri Oct 24 14:28:43 2003
+@@ -3160,7 +3160,7 @@ fi
+ SHLIBCFLAGS="-fpic"
+ SHLIBFORLINK=libnettle.so
+ SHLIBSONAME='$(SHLIBFORLINK).$(SHLIBMAJOR)'
+-SHLIBFILE='$(SHLIBSONAME).$(SHLIBMINOR)'
++SHLIBFILE='$(SHLIBSONAME)'
+ SHLIBLINK='$(CC) $(LDFLAGS) -shared -Wl,-soname=$(SHLIBSONAME)'
+ 
+ echo "enable_shared: $enable_shared"

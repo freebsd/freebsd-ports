@@ -24,8 +24,21 @@ include/nettle/sexp.h
 include/nettle/sha.h
 include/nettle/twofish.h
 include/nettle/yarrow.h
-@unexec install-info --delete %D/info/nettle.info %D/info/dir
-info/nettle.info
-@exec install-info %D/info/nettle.info %D/info/dir
-lib/libnettle.a
 @dirrm include/nettle
+lib/libnettle.a
+lib/libnettle.so.1
+lib/libnettle.so
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/nettle.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/io.c
+%%EXAMPLESDIR%%/nettle-benchmark.c
+%%EXAMPLESDIR%%/nettle-openssl.c
+%%EXAMPLESDIR%%/rsa-keygen.c
+%%EXAMPLESDIR%%/rsa-sign.c
+%%EXAMPLESDIR%%/rsa-verify.c
+%%EXAMPLESDIR%%/io.h
+@dirrm %%EXAMPLESDIR%%
