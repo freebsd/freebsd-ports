@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gbfs
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	chinese
-MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/gbfs/ \
-		ftp://ftp.gnuchina.org/incoming/zhBSD/
+MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/gbfs/
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 COMMENT=	Reads GB2312 filenames on Joliet and VFAT filesystems
@@ -22,22 +21,18 @@ PLIST_SUB=	MSDOSFSKO=${MSDOSFSKO}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} > 500027
+.if ${OSVERSION} >= 500000
 MSDOSFSDIR=	${SYSDIR}/fs/msdosfs
 MSDOSFSKO=	msdosfs.ko
 MSDOSFSKODIR=	${SYSDIR}/modules/msdosfs
-.elif ${OSVERSION} > 500018 && ${OSVERSION} < 500027
-MSDOSFSDIR=	${SYSDIR}/fs/msdosfs
-MSDOSFSKO=	msdosfs.ko
-MSDOSFSKODIR=	${SYSDIR}/modules/msdosfs
-.elif ${OSVERSION} <= 500018 && ${OSVERSION} < 440001
-MSDOSFSDIR=	${SYSDIR}/msdosfs
-MSDOSFSKO=	msdos.ko
-MSDOSFSKODIR=	${SYSDIR}/modules/msdos
+MSDOSFSPATCH=	msdosfs.diff.5
+CD9660PATCH=	cd9660.diff.5
 .else
 MSDOSFSDIR=	${SYSDIR}/msdosfs
 MSDOSFSKO=	msdos.ko
 MSDOSFSKODIR=	${SYSDIR}/modules/msdos
+MSDOSFSPATCH=	msdosfs.diff
+CD9660PATCH=	cd9660.diff
 .endif
 
 pre-extract:
@@ -59,9 +54,9 @@ do-extract:
 	@${SED} -e 's,@@PREFIX@@,${PREFIX},' ${FILESDIR}/gbfs.sh > ${WRKDIR}/gbfs.sh
 
 do-patch:
-	(cd ${WRKDIR}/msdos; ${PATCH} --quiet < ${WRKDIR}/msdosfs.diff )
+	(cd ${WRKDIR}/msdos; ${PATCH} --quiet < ${WRKDIR}/${MSDOSFSPATCH} )
 	@${SED} -e "/^\.PATH/d" ${WRKDIR}/msdos/Makefile.ori > ${WRKDIR}/msdos/Makefile
-	(cd ${WRKDIR}/cd9660; ${PATCH} --quiet < ${WRKDIR}/cd9660.diff )
+	(cd ${WRKDIR}/cd9660; ${PATCH} --quiet < ${WRKDIR}/${CD9660PATCH} )
 	@${SED} -e "/^\.PATH/d" ${WRKDIR}/cd9660/Makefile.ori > ${WRKDIR}/cd9660/Makefile
 
 do-build:
