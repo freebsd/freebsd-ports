@@ -1,8 +1,8 @@
-*** src/makefiles/Makefile.fbs.orig	Mon Mar  3 12:34:52 1997
---- src/makefiles/Makefile.fbs	Mon Apr 28 00:43:47 1997
+*** src/makefiles/Makefile.fbs.orig	Tue Aug 12 07:43:39 1997
+--- src/makefiles/Makefile.fbs	Tue Sep  9 20:10:33 1997
 ***************
-*** 1,8 ****
-  CC       = cc
+*** 4,11 ****
+  #CC       = cc
   IFLAGS   = -I.. -I../support
   LFLAGS   = -L../support -s
 ! CFLAGS   = -O ${IFLAGS} ${LFLAGS}
@@ -10,8 +10,8 @@
   LIBC     = /usr/lib/libc.a
   LINTFLAGS=	
   LKERB    = -lauth -lckrb -lkrb -ldes
---- 1,8 ----
-  CC       = cc
+--- 4,11 ----
+  #CC       = cc
   IFLAGS   = -I.. -I../support
   LFLAGS   = -L../support -s
 ! CFLAGS   += ${IFLAGS} ${LFLAGS}
@@ -20,8 +20,8 @@
   LINTFLAGS=	
   LKERB    = -lauth -lckrb -lkrb -ldes
 ***************
-*** 24,30 ****
---- 24,34 ----
+*** 27,33 ****
+--- 27,37 ----
   	${CC} ${CFLAGS} -o $@ ftpshut.c vers.o ${LIBES}
   
   ftpd: ${OBJS} ${LIBC}
