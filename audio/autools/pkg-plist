@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/ac3spdif
 bin/augen
 bin/auquant
@@ -15,3 +16,6 @@ bin/toc2plax-idx
 bin/toc2plax-trk
 bin/toc2toc
 bin/wav2au
+bin/wav2toc
+%%PORTDOCS%%share/doc/autools/README
+%%PORTDOCS%%@dirrm share/doc/autools
