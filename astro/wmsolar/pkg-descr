@@ -1,0 +1,18 @@
+[from website]
+It shows you the solar system viewed from top (90 heliocentric).
+
+The objects have the following colors: 
+Sun - yellow      Mercury - green
+Venus - white     Earth - cyan
+Mars - red        Jupiter - gray
+Saturn - green    Uranus - pink
+Neptune - cyan    Pluto is not included since it's way "off course"
+
+A left click on the window changes the view between inner and outter
+planets. A left click on the date increases the day/month/year. A
+right click on the date does the opposite. Click the right mouse
+button on the solar system to reset the date to the current date
+(which is in Universal Time).
+
+WWW: http://www.inxsoft.net/wmsolar/
+Author: Thomas Kuiper <tkuiper@inxsoft.net>

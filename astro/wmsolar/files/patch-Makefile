@@ -1,0 +1,30 @@
+--- Makefile.orig	Tue Jan 15 17:54:38 2002
++++ Makefile	Tue Jan 15 17:56:37 2002
+@@ -1,8 +1,6 @@
+-CC     = g++
+-CFLAGS = -O2 -Wall
+-INCDIR = -I/usr/X11R6/include/X11 -I/usr/X11R6/include
++INCDIR = -I${X11BASE}/include
+ DESTDIR= /usr/X11R6
+-LIBDIR = -L/usr/X11R6/lib
++LIBDIR = -L${X11BASE}/lib
+ # for linux
+ LIBS   = -lXpm -lX11 -lXext -lm
+ # for Solaris
+@@ -19,14 +17,14 @@
+ 		RiseSet.o \
+ 		Vsop.o
+ .c.o:
+-	$(CC) $(CFLAGS) -D$(shell echo `uname -s`) -c $< -o $*.o $(INCDIR)
++	$(CXX) $(CXXFLAGS) -c $< -o $*.o $(INCDIR)
+ 
+ 
+ all:	wmSolar.o wmSolar
+ 
+ wmSolar.o: wmSolar_master.xpm wmSolar_mask.xbm
+ wmSolar:	$(OBJS) 
+-	$(CC) $(CFLAGS) $(SYSTEM) -o wmSolar $^ $(INCDIR) $(LIBDIR) $(LIBS)
++	$(CXX) $(CXXFLAGS) -o wmSolar $^ $(INCDIR) $(LIBDIR) $(LIBS)
+ 
+ clean:
+ 	for i in $(OBJS) ; do \
