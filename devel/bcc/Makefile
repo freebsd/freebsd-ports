@@ -2,10 +2,11 @@
 # Date created:		26 March 1995
 # Whom:			joerg
 #
-# $Id: Makefile,v 1.1.1.1 1995/03/26 18:08:53 joerg Exp $
+# $Id: Makefile,v 1.2 1995/04/01 12:44:33 jkh Exp $
 #
 
 DISTNAME=	bcc
 CATEGORIES+=	development programming languages
+MAINTAINER=	joerg@FreeBSD.org
 
 .include <bsd.port.mk>
