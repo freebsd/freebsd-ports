@@ -7,7 +7,7 @@
 
 PORTNAME?=	aspell
 PORTVERSION=	0.50.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	textproc
 MASTER_SITES=	http://aspell.net/	\
 		${MASTER_SITE_GNU}
@@ -22,7 +22,7 @@ COMMENT?=	Spelling checker with better suggestion logic than ispell
 BUILD_DEPENDS+=	bzip2:${PORTSDIR}/archivers/bzip2
 .endif
 
-USE_LIBTOOL_VER=13
+USE_LIBTOOL_VER=	15
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ARGS=	--enable-dict-dir=${DATADIR} \
 		--enable-doc-dir=${DOCSDIR}
