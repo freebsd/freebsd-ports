@@ -1,0 +1,7 @@
+lib/libkde-qt-addon.so
+lib/libkde-qt-addon.so.%%LIBVER%%
+lib/libkde-qt-addon.la
+include/qcanvas.h
+include/qdom.h
+include/qpolygonscanner.h
+include/qxml.h

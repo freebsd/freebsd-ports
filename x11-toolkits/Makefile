@@ -19,6 +19,7 @@
     SUBDIR += itk
     SUBDIR += iwidgets
     SUBDIR += iv
+    SUBDIR += kde-qt-addon
     SUBDIR += lesstif
     SUBDIR += linux-gtk
     SUBDIR += neXtaw
