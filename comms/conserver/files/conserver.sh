@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# $FreeBSD$
+
 if ! PREFIX=$(expr $0 : "\(/.*\)/etc/rc\.d/$(basename $0)\$"); then
     echo "$0: Cannot determine the PREFIX" >&2
     exit 1
@@ -14,8 +16,15 @@ start)
 stop)
 	killall conserver && echo -n ' conserver'
 	;;
+restart)
+	$0 stop
+	$0 start
+	;;
+status)
+	ps -auxww | egrep '(conserver|console)' | egrep -v "($0|egrep)"
+	;;
 *)
-	echo "Usage: `basename $0` {start|stop}" >&2
+	echo "Usage: `basename $0` {start|stop|restart|status}" >&2
 	;;
 esac
 
