@@ -8,7 +8,8 @@
 PORTNAME=	nsping
 PORTVERSION=	0.8
 CATEGORIES=	net
-MASTER_SITES=	http://www.enteract.com/~tqbf/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	roam
 DISTFILES=	nsping.tar.gz
 
 MAINTAINER=	roam@FreeBSD.org
