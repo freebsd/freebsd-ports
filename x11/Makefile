@@ -1,8 +1,8 @@
-# $Id: Makefile,v 1.28 1994/11/23 10:14:56 jkh Exp $
+# $Id: Makefile,v 1.29 1994/11/24 21:14:18 asami Exp $
 #
 SUBDIR=	Xaw3d color_xterm emu fvwm iv ivs jpeg kterm olvwm pcb piewm tk \
 	tkhfs xanim xarchie \
-	xcdplayer xdvi xearth xlockmore xpm xsnow xtexshell xv \
+	xcdplayer xdvi xearth xli xlockmore xpm xsnow xtexshell xv \
 	ImageMagick ctwm mpeg-lib tiff
 
 #
