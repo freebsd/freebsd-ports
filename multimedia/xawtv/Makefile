@@ -7,7 +7,7 @@
 
 PORTNAME=	xawtv
 PORTVERSION=	3.91
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://bytesex.org/xawtv/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -15,7 +15,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A TV viewing application and a few TV utilities
 
-BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
+BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv \
+		${PREFIX}/lib/X11/fonts/misc/led-iso8859-1.pcf.gz:${PORTSDIR}/x11-fonts/tv-fonts
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d \
 		png.5:${PORTSDIR}/graphics/png \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
