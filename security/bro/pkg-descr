@@ -1,0 +1,16 @@
+Bro is a system for detecting Network Intruders in real-time by the guys
+that brought you tcpdump, libpcap, and flex.
+
+Bro is a stand-alone system for detecting network intruders in real-time
+by passively monitoring a network link over which the intruder's traffic
+transits.  Bro is divided into an "event engine" that reduces a
+kernel-filtered network traffic stream into a series of higher-level
+events, and a "policy script interpreter" that interprets event handlers
+written in a specialized language used to express a site's security policy.
+Event handlers can update state information, synthesize new events, record
+information to disk, and generate real-time notifications via `syslog'.
+
+Bro is documented in the the USENIX 1998 Security Conference proceedings.
+
+-- David
+   obrien@cs.ucdavis.edu
