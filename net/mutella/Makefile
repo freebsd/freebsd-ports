@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	mutella
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.3rc1
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	http://mutella.sourceforge.net/
 
 MAINTAINER=	d.marks@student.umist.ac.uk
+
+MAN1=		mutella.1
 
 GNU_CONFIGURE=	yes
 USE_REINPLACE=	yes
@@ -19,7 +20,7 @@ CONFIGURE_TARGET=
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 
 post-patch:
-	${REINPLACE_CMD} -e 's|ulong|u_long|' \
+	@${REINPLACE_CMD} -e 's|ulong|u_long|' \
 		${WRKSRC}/mutella/asyncsocket.cpp \
 		${WRKSRC}/mutella/asyncsocket.h
 
