@@ -80,6 +80,7 @@
     SUBDIR += prozilla
     SUBDIR += puf
     SUBDIR += pure-ftpd
+    SUBDIR += pureadmin
     SUBDIR += py-curl
     SUBDIR += quftp
     SUBDIR += rexx-curl

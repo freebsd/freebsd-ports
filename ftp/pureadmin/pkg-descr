@@ -1,0 +1,7 @@
+PureAdmin is a graphical tool used to make the management of PureFTPd a little
+easier. It uses the GTK+2.x widgets for its GUI and thus are not dependent on
+a specific desktop environment such as GNOME or KDE. It is, however, designed
+with the GNOME Human Interface Guidelines in mind so it should integrate
+nicely with at least GNOME.
+
+WWW: http://purify.sourceforge.net/
