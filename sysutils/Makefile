@@ -146,6 +146,7 @@
     SUBDIR += pwgen
     SUBDIR += pyfind
     SUBDIR += qtpkg
+    SUBDIR += rclean
     SUBDIR += rdate
     SUBDIR += readlink
     SUBDIR += rmonitor
