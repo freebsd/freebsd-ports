@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	mhwaveedit
-PORTVERSION=	1.1.3
-PORTREVISION=	1
+PORTVERSION=	1.1.4
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mtek.chalmers.se/~hjormagn/
 
@@ -23,7 +22,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--without-portaudio
+CONFIGURE_ARGS=	--without-portaudio --disable-gtk2
 
 .if defined(WITH_SDL)
 LIB_DEPENDS+=	SDL-1.1.4:${PORTSDIR}/devel/sdl12
