@@ -1,0 +1,15 @@
+ZMailer is a mailer subsystem for the UNIX systems. It is in charge of 
+handling all mail messages that are created on a system, from their creation
+until final disposition locally or by transfer to another system. 
+
+As such, the mailer subsystem (the Mail Transport Agent) must interface to 
+local mail reading and composing programs (User Agents), to the various
+transport methods that can be used to reach other mailers, and to a variety of
+databases describing the mailer's environment. 
+
+ZMailer provides this functionality in a package and with a philosophy that 
+has benefited from experiences with earlier mailers. 
+
+ZMailer provides a capable, robust, efficient subsystem to do the job, which 
+will excel in demanding environments, but is simple enough to fit easily
+everywhere.

@@ -1,0 +1,11 @@
+--- libc/Makefile.in.tmp	Sun Aug 29 18:16:42 1999
++++ libc/Makefile.in	Sun Aug 29 18:17:49 1999
+@@ -81,7 +81,7 @@
+ 		$(MKDIR) $(INCLUDEDIR);	\
+ 	 fi
+ 	-$(INSTALL) -m 644 $(TOPDIR)/libs/libzmailer.a $(LIBRARYDIR)/libzmailer.a
+-	-$(RANLIB) $(prefix)$(LIBRARYDIR)/libzmailer.a
++	-$(RANLIB) $(LIBRARYDIR)/libzmailer.a
+ 	-$(INSTALL) -m 644 $(TOPDIR)/include/mail.h $(INCLUDEDIR)/zmailer.h
+ 
+ clean-recursive clean:

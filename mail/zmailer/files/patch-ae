@@ -1,0 +1,11 @@
+--- protoc/cf/SMTP.cf.in.orig	Sun Aug 29 14:20:54 1999
++++ proto/cf/SMTP.cf.in	Sun Aug 29 14:21:03 1999
+@@ -88,7 +88,7 @@
+ }
+ 
+ orgdomains=x
+-: ${MAILCONF:=/etc/mail.conf}
++: ${MAILCONF:=$MAILSHARE/mail.conf}
+ if [ ! -r $MAILCONF ]; then
+ 	echo "$0: missing $MAILCONF: using the following values:"
+ 	mailconf

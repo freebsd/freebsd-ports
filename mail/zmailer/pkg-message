@@ -1,0 +1,19 @@
+Please note that to automatically replace the existing MTA, use the port 
+framework of this package:
+	
+	cd @PORTSDIR@/mail/zmailer && make replace
+
+This will prepare ZMailer for initial configuration and replace your existing 
+transport agent. If you do not wish to replace your mailer, but only wish to
+prepare ZMailer for operation, use the provided post-install script as 
+follows:
+
+	sh @PREFIX@/sbin/post-install
+
+This will initialize your configuration files and build an initial policy
+database.
+
+Also please note that a "make world" will sever the proper links for 
+/usr/sbin/sendmail, /usr/bin/mailq and the likes. If you wish to not build 
+sendmail as part of a "make world", add NO_SENDMAIL to the build environment. 
+You may do this in /etc/make.conf.

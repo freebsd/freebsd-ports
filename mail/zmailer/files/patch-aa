@@ -1,0 +1,11 @@
+--- configure.in	Mon Jul 19 15:53:39 1999
++++ configure.in	Mon Jul 19 15:54:32 1999
+@@ -936,7 +936,7 @@
+ AC_SUBST(AUTHLIB)
+ AC_CHECK_HEADERS(security/pam_appl.h shadow.h)
+ if test "$ac_cv_header_security_pam_appl_h" = "yes"; then
+-    AUTHLIB="-lpam -ldl"
++    AUTHLIB="-lpam"
+ else
+     if test "$ac_cv_header_shadow_h" = "yes"; then
+ 	AUTHLIB="-lshadow"
