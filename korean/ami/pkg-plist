@@ -1,1 +1,14 @@
 bin/ami
+bin/hanja-hwp2ami
+share/doc/ami/XLC_LOCALE
+@comment copy new locale definition(no harm, so need not be uninstalled)
+@exec if [ -f %D/lib/X11/locale/ko/XLC_LOCALE ]; then mv -f %D/lib/X11/locale/ko/XLC_LOCALE %D/lib/X11/locale/ko/XLC_LOCALE.orig; fi
+@exec cp %D/share/doc/ami/XLC_LOCALE %D/lib/X11/locale/ko/
+@unexec if [ -f %D/lib/X11/locale/ko/XLC_LOCALE.orig ]; then mv -f %D/lib/X11/locale/ko/XLC_LOCALE.orig %D/lib/X11/locale/ko/XLC_LOCALE; fi
+share/doc/ami/AUTHORS
+share/doc/ami/README
+share/doc/ami/NEWS
+share/doc/ami/COPYING
+share/doc/ami/ChangeLog
+share/doc/ami/amirc
+@dirrm share/doc/ami
