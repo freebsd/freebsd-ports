@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	darkstat
-PORTVERSION=	1.21
+PORTVERSION=	1.31
 CATEGORIES=	net
-MASTER_SITES=	http://members.optushome.com.au/darkmoon7/net/ \
-		ftp://ftp.nuug.no/pub/anders/distfiles/
+MASTER_SITES=	http://members.optushome.com.au/darkmoon7/net/
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	emikulic@optushome.com.au
+
+LIB_DEPENDS=	intl.2:${PORTSDIR}/devel/gettext
 
 GNU_CONFIGURE=	yes
 
 MAN1=	darkstat.1
-
 DOCS=	AUTHORS ChangeLog INSTALL ISSUES README TODO
 
 post-install:
