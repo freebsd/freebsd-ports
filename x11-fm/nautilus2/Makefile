@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nautilus
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/nautilus
@@ -21,7 +20,11 @@ BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2	# XXX
 
 LIB_DEPENDS=	medusa.0:${PORTSDIR}/sysutils/medusa \
 		freetype.6:${PORTSDIR}/print/freetype2 \
-		ghttp.1:${PORTSDIR}/www/libghttp
+		ghttp.1:${PORTSDIR}/www/libghttp \
+		eel.0:${PORTSDIR}/x11-toolkits/eel
+
+# Disable - I don't have a time to compile it now. Will be enabled back later.
+WITHOUT_MOZILLA=	yes
 
 .if !defined(WITHOUT_MOZILLA)
 MOZILLA=	mozilla
