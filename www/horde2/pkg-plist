@@ -167,6 +167,7 @@
 %%HORDEDIR%%/lib/base.php
 %%HORDEDIR%%/lib/version.php
 %%HORDEDIR%%/locale/.htaccess
+%%HORDEDIR%%/locale/ar_SY/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/bg_BG/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/ca_ES/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/cs_CZ/LC_MESSAGES/horde.mo
@@ -185,6 +186,7 @@
 %%HORDEDIR%%/locale/ko_KR/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/lt_LT/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/lv_LV/LC_MESSAGES/horde.mo
+%%HORDEDIR%%/locale/mk_MK/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/nl_NL/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/nb_NO/LC_MESSAGES/horde.mo
 %%HORDEDIR%%/locale/nn_NO/LC_MESSAGES/horde.mo
@@ -209,6 +211,7 @@
 %%HORDEDIR%%/po/Makefile
 %%HORDEDIR%%/po/README
 %%HORDEDIR%%/po/wintokoi.pl
+%%HORDEDIR%%/po/ar_SY.po
 %%HORDEDIR%%/po/bg_BG.po
 %%HORDEDIR%%/po/ca_ES.po
 %%HORDEDIR%%/po/cs_CZ.po
@@ -227,6 +230,7 @@
 %%HORDEDIR%%/po/ko_KR.po
 %%HORDEDIR%%/po/lt_LT.po
 %%HORDEDIR%%/po/lv_LV.po
+%%HORDEDIR%%/po/mk_MK.po
 %%HORDEDIR%%/po/nl_NL.po
 %%HORDEDIR%%/po/nb_NO.po
 %%HORDEDIR%%/po/nn_NO.po
@@ -266,6 +270,7 @@
 %%HORDEDIR%%/scripts/mime_mapping/Makefile
 %%HORDEDIR%%/scripts/mime_mapping/convert.pl
 %%HORDEDIR%%/scripts/mime_mapping/mime.types
+%%HORDEDIR%%/scripts/mime_mapping/mime.types.horde
 %%HORDEDIR%%/scripts/set_perms.sh
 %%HORDEDIR%%/status.php
 %%HORDEDIR%%/templates/.htaccess
@@ -314,6 +319,7 @@
 %%HORDEDIR%%/templates/wml/login/user.inc
 %%HORDEDIR%%/test.php
 %%HORDEDIR%%/util/css2horde.php
+%%HORDEDIR%%/util/go.php
 %%HORDEDIR%%/util/special_characters.php
 %%HORDESBIN%%/horde_set_perms.sh
 etc/horde/httpd.conf.horde
@@ -344,6 +350,8 @@ etc/horde/httpd.conf.horde
 @dirrm %%HORDEDIR%%/lib/Token
 @dirrm %%HORDEDIR%%/lib/VFS
 @dirrm %%HORDEDIR%%/lib
+@dirrm %%HORDEDIR%%/locale/ar_SY/LC_MESSAGES
+@dirrm %%HORDEDIR%%/locale/ar_SY
 @dirrm %%HORDEDIR%%/locale/bg_BG/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/bg_BG
 @dirrm %%HORDEDIR%%/locale/ca_ES/LC_MESSAGES
@@ -377,6 +385,8 @@ etc/horde/httpd.conf.horde
 @dirrm %%HORDEDIR%%/locale/lt_LT
 @dirrm %%HORDEDIR%%/locale/lv_LV/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/lv_LV
+@dirrm %%HORDEDIR%%/locale/mk_MK/LC_MESSAGES
+@dirrm %%HORDEDIR%%/locale/mk_MK
 @dirrm %%HORDEDIR%%/locale/nl_NL/LC_MESSAGES
 @dirrm %%HORDEDIR%%/locale/nl_NL
 @dirrm %%HORDEDIR%%/locale/nb_NO/LC_MESSAGES
@@ -430,4 +440,4 @@ etc/horde/httpd.conf.horde
 @dirrm %%HORDEDIR%%/po
 @unexec rmdir %D/%%HORDEDIR%%/config 2>/dev/null || true
 @unexec rmdir %D/%%HORDEDIR%% 2>/dev/null || true
-@dirrm etc/horde
+@unexec rmdir %D/etc/horde 2>/dev/null || true
