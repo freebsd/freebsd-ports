@@ -1,3 +1,7 @@
+bin/gapi-codegen
+bin/gapi-fixup
+bin/gapi-fixup.exe
+bin/gapi-parser
 bin/gapi.pl
 bin/gapi2xml.pl
 bin/gapi_codegen.exe
@@ -16,7 +20,6 @@ lib/glib-sharp.dll
 lib/gnome-sharp.dll
 lib/gnomedb-sharp.dll
 lib/gtk-sharp.dll
-lib/libgtksharpglue.a
 lib/libgtksharpglue.so
 lib/pango-sharp.dll
 lib/rsvg-sharp.dll
@@ -30,7 +33,6 @@ share/gapi/gdk-symbols.xml
 share/gapi/glade-api.xml
 share/gapi/gnome-api.xml
 share/gapi/gnomedb-api.xml
-share/gapi/gst-api.xml
 share/gapi/gtk-api.xml
 share/gapi/gtk-symbols.xml
 share/gapi/pango-api.xml
