@@ -7,12 +7,15 @@
 
 PORTNAME=	fontCyrillic
 PORTVERSION=	4.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_XFREE}
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 PKGNAMEPREFIX=	XFree86-
 DISTFILES=	X${PORTVERSION:S/.//g}src-2.tgz
+
+PATCHFILES=	cronyx-4.2.0.koi8-u.diff.gz
+PATCH_SITES=	http://people.FreeBSD.org/~sobomax/
 
 MAINTAINER=	anholt@freebsd.org
 
@@ -43,5 +46,11 @@ do-configure:
 pre-build:
 	(cd ${WRKDIR}/xc/fonts/encodings && \
 	 ${MAKE} all)
+
+post-build:
+	@for line in `${TAIL} -n +2 ${WRKSRC}/fonts.dir | ${AWK} '{print $$2}'`; do \
+		${ECHO_CMD} `${ECHO_CMD} $$line | ${SED} 's|koi8-r|koi8-u|'` $$line >> \
+			${WRKSRC}/fonts.alias; \
+	done
 
 .include <bsd.port.mk>
