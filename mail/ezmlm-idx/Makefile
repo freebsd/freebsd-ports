@@ -40,7 +40,7 @@ EXTRACT_LIB+=	-L${LOCALBASE}/lib/mysql -lmysqlclient -lm
 ALL_TARGET=	pgsql it ${LANGUAGE}
 POSTGRESQL_PORT?=	databases/postgresql7
 LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
-EXTRACT_INCLUDE+=	-I${LOCALBASE}/include/pgsql
+EXTRACT_INCLUDE+=	-I${LOCALBASE}/include
 EXTRACT_LIB+=	-L${LOCALBASE}/lib -lpq -lcrypt
 .else
 ALL_TARGET=	it ${LANGUAGE}
