@@ -1,0 +1,42 @@
+%%SITE_PERL%%/SCMxx.pm
+%%SITE_PERL%%/SCMxx/Config.pm
+%%SITE_PERL%%/mach/auto/gscmxx/.packlist
+@dirrm %%SITE_PERL%%/mach/auto/gscmxx
+@dirrm %%SITE_PERL%%/SCMxx
+lib/perl5/5.6.1/man/man3/SCMxx.3
+bin/gscmxx
+share/pixmaps/gscmxx/phonebook_30.xpm
+share/pixmaps/gscmxx/preferences_30.xpm
+share/pixmaps/gscmxx/gscmxx-icon.png
+share/pixmaps/gscmxx/open.xpm
+share/pixmaps/gscmxx/sendsms.xpm
+share/pixmaps/gscmxx/delete.xpm
+share/pixmaps/gscmxx/sound.xpm
+share/pixmaps/gscmxx/addressbook_30.xpm
+share/pixmaps/gscmxx/phonebook_20.xpm
+share/pixmaps/gscmxx/phonebook.xpm
+share/pixmaps/gscmxx/edit.xpm
+share/pixmaps/gscmxx/sms.xpm
+share/pixmaps/gscmxx/error.xpm
+share/pixmaps/gscmxx/saveas.xpm
+share/pixmaps/gscmxx/midi.xpm
+share/pixmaps/gscmxx/information.xpm
+share/pixmaps/gscmxx/addressbook.xpm
+share/pixmaps/gscmxx/addressbook_20.xpm
+share/pixmaps/gscmxx/gscmxx.xpm
+share/pixmaps/gscmxx/save.xpm
+share/pixmaps/gscmxx/bitmap.xpm
+share/pixmaps/gscmxx/preferences.xpm
+share/pixmaps/gscmxx/groups/vip.xpm
+share/pixmaps/gscmxx/groups/leisure.xpm
+share/pixmaps/gscmxx/groups/office.xpm
+share/pixmaps/gscmxx/groups/family.xpm
+share/gscmxx/i18n/magyar
+share/gscmxx/i18n/german
+share/gscmxx/i18n/english
+share/gscmxx/i18n/italian
+@dirrm share/gscmxx/i18n
+@dirrm share/gscmxx
+@dirrm share/pixmaps/gscmxx/groups
+@dirrm share/pixmaps/gscmxx
+@unexec rmdir %D/share/pixmaps 2>/dev/null || true
