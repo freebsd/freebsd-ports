@@ -1,5 +1,5 @@
---- config/conf.php.dist.orig	Tue Feb 19 19:00:40 2002
-+++ config/conf.php.dist	Fri May 10 18:20:09 2002
+--- config/conf.php.dist.orig	Fri Apr  4 21:23:54 2003
++++ config/conf.php.dist	Sat Apr  5 17:57:35 2003
 @@ -28,9 +28,9 @@
  $conf['calendar']['params']['driver'] = 'mstore';
  
@@ -13,3 +13,12 @@
  
  // This is an example configuration for an sql driver, in this case MySQL.
  // $conf['calendar']['params']['phptype'] = 'mysql';
+@@ -48,7 +48,7 @@
+ // If this is true, then an array of keywords will be read from
+ // config/keywords.php and you will be able to assign any or all of
+ // them to events.
+-$conf['metadata']['keywords'] = false;
++$conf['metadata']['keywords'] = true;
+ 
+ 
+ /**

@@ -3,7 +3,6 @@
 %%PORTDOCS%%share/doc/kronolith/CREDITS
 %%PORTDOCS%%share/doc/kronolith/INSTALL
 %%PORTDOCS%%share/doc/kronolith/README
-%%PORTDOCS%%share/doc/kronolith/TODO
 %%KRONOLITHDIR%%/addevent.php
 %%KRONOLITHDIR%%/addeventaction.php
 %%KRONOLITHDIR%%/config/conf.php
@@ -27,9 +26,10 @@
 %%KRONOLITHDIR%%/graphics/alarm_small.gif
 %%KRONOLITHDIR%%/graphics/bullet.gif
 %%KRONOLITHDIR%%/graphics/clear.gif
+%%KRONOLITHDIR%%/graphics/colorpicker.gif
+%%KRONOLITHDIR%%/graphics/colorpicker.png
 %%KRONOLITHDIR%%/graphics/dayview.gif
 %%KRONOLITHDIR%%/graphics/delete.gif
-%%KRONOLITHDIR%%/graphics/edit.gif
 %%KRONOLITHDIR%%/graphics/event.gif
 %%KRONOLITHDIR%%/graphics/goto.gif
 %%KRONOLITHDIR%%/graphics/kronolith.gif
@@ -37,6 +37,7 @@
 %%KRONOLITHDIR%%/graphics/new.gif
 %%KRONOLITHDIR%%/graphics/next.gif
 %%KRONOLITHDIR%%/graphics/prev.gif
+%%KRONOLITHDIR%%/graphics/print.gif
 %%KRONOLITHDIR%%/graphics/recur.gif
 %%KRONOLITHDIR%%/graphics/today.gif
 %%KRONOLITHDIR%%/graphics/weekview.gif
@@ -47,39 +48,44 @@
 %%KRONOLITHDIR%%/lib/Driver.php
 %%KRONOLITHDIR%%/lib/Driver/mcal.php
 %%KRONOLITHDIR%%/lib/Driver/sql.php
-%%KRONOLITHDIR%%/lib/Driver/sql.php.orig
 %%KRONOLITHDIR%%/lib/Event.php
 %%KRONOLITHDIR%%/lib/Kronolith.php
-%%KRONOLITHDIR%%/lib/Month.php
-%%KRONOLITHDIR%%/lib/MonthView.php
 %%KRONOLITHDIR%%/lib/Notification/kronolith.php
 %%KRONOLITHDIR%%/lib/WeekView.php
 %%KRONOLITHDIR%%/lib/api.php
 %%KRONOLITHDIR%%/lib/base.php
 %%KRONOLITHDIR%%/lib/version.php
+%%KRONOLITHDIR%%/locale/bg_BG/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/cs_CZ/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/da_DK/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/de_DE/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/el_GR/LC_MESSAGES/kronolith.mo
+%%KRONOLITHDIR%%/locale/en_US/help.xml
 %%KRONOLITHDIR%%/locale/es_ES/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/fi_FI/LC_MESSAGES/kronolith.mo
+%%KRONOLITHDIR%%/locale/fi_FI/help.xml
 %%KRONOLITHDIR%%/locale/fr_FR/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/hu_HU/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/it_IT/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/ko_KR/LC_MESSAGES/kronolith.mo
+%%KRONOLITHDIR%%/locale/lt_LT/LC_MESSAGES/kronolith.mo
+%%KRONOLITHDIR%%/locale/nb_NO/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/nl_NL/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/nn_NO/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/pl_PL/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/pt_BR/LC_MESSAGES/kronolith.mo
+%%KRONOLITHDIR%%/locale/ro_RO/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/ru_RU/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/ru_RU.KOI8-R/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/sk_SK/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/sv_SE/LC_MESSAGES/kronolith.mo
+%%KRONOLITHDIR%%/locale/zh_CN/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/locale/zh_TW/LC_MESSAGES/kronolith.mo
 %%KRONOLITHDIR%%/menu.php
 %%KRONOLITHDIR%%/month.php
 %%KRONOLITHDIR%%/po/Makefile
 %%KRONOLITHDIR%%/po/README
+%%KRONOLITHDIR%%/po/bg_BG.po
 %%KRONOLITHDIR%%/po/cs_CZ.po
 %%KRONOLITHDIR%%/po/da_DK.po
 %%KRONOLITHDIR%%/po/de_DE.po
@@ -91,18 +97,24 @@
 %%KRONOLITHDIR%%/po/hu_HU.po
 %%KRONOLITHDIR%%/po/it_IT.po
 %%KRONOLITHDIR%%/po/ko_KR.po
+%%KRONOLITHDIR%%/po/kronolith.pot
+%%KRONOLITHDIR%%/po/lt_LT.po
+%%KRONOLITHDIR%%/po/nb_NO.po
 %%KRONOLITHDIR%%/po/nl_NL.po
 %%KRONOLITHDIR%%/po/nn_NO.po
 %%KRONOLITHDIR%%/po/pl_PL.po
 %%KRONOLITHDIR%%/po/pt_BR.po
+%%KRONOLITHDIR%%/po/ro_RO.po
 %%KRONOLITHDIR%%/po/ru_RU.po
 %%KRONOLITHDIR%%/po/ru_RU.KOI8-R.po
 %%KRONOLITHDIR%%/po/shtool
 %%KRONOLITHDIR%%/po/sk_SK.po
 %%KRONOLITHDIR%%/po/sv_SE.po
 %%KRONOLITHDIR%%/po/xgettext.sh
+%%KRONOLITHDIR%%/po/zh_CN.po
 %%KRONOLITHDIR%%/po/zh_TW.po
 %%KRONOLITHDIR%%/prefs.php
+%%KRONOLITHDIR%%/scripts/drivers/kronolith.oracle.sql
 %%KRONOLITHDIR%%/scripts/drivers/kronolith.sql
 %%KRONOLITHDIR%%/status.php
 %%KRONOLITHDIR%%/templates/common-footer.inc
@@ -121,15 +133,14 @@
 %%KRONOLITHDIR%%/templates/index/css.inc
 %%KRONOLITHDIR%%/templates/index/notconfigured.inc
 %%KRONOLITHDIR%%/templates/javascript/goto.inc
+%%KRONOLITHDIR%%/templates/javascript/open_print_win.js
+%%KRONOLITHDIR%%/templates/javascript/print.inc
 %%KRONOLITHDIR%%/templates/menu/menu.inc
 %%KRONOLITHDIR%%/templates/month/head.inc
-%%KRONOLITHDIR%%/templates/month_begin_week.inc
-%%KRONOLITHDIR%%/templates/month_day.inc
-%%KRONOLITHDIR%%/templates/month_end_week.inc
-%%KRONOLITHDIR%%/templates/month_foot.inc
-%%KRONOLITHDIR%%/templates/month_head.inc
+%%KRONOLITHDIR%%/templates/prefs/category_management.inc
 %%KRONOLITHDIR%%/templates/view/view.inc
 %%KRONOLITHDIR%%/templates/week/head.inc
+%%KRONOLITHDIR%%/util/colorpicker.php
 %%KRONOLITHDIR%%/viewevent.php
 %%KRONOLITHDIR%%/week.php
 %%KRONOLITHDIR%%/workweek.php
@@ -138,6 +149,8 @@
 @dirrm %%KRONOLITHDIR%%/lib/Driver
 @dirrm %%KRONOLITHDIR%%/lib/Notification
 @dirrm %%KRONOLITHDIR%%/lib
+@dirrm %%KRONOLITHDIR%%/locale/bg_BG/LC_MESSAGES
+@dirrm %%KRONOLITHDIR%%/locale/bg_BG
 @dirrm %%KRONOLITHDIR%%/locale/cs_CZ/LC_MESSAGES
 @dirrm %%KRONOLITHDIR%%/locale/cs_CZ
 @dirrm %%KRONOLITHDIR%%/locale/da_DK/LC_MESSAGES
@@ -146,6 +159,7 @@
 @dirrm %%KRONOLITHDIR%%/locale/de_DE
 @dirrm %%KRONOLITHDIR%%/locale/el_GR/LC_MESSAGES
 @dirrm %%KRONOLITHDIR%%/locale/el_GR
+@dirrm %%KRONOLITHDIR%%/locale/en_US
 @dirrm %%KRONOLITHDIR%%/locale/es_ES/LC_MESSAGES
 @dirrm %%KRONOLITHDIR%%/locale/es_ES
 @dirrm %%KRONOLITHDIR%%/locale/fi_FI/LC_MESSAGES
@@ -158,6 +172,10 @@
 @dirrm %%KRONOLITHDIR%%/locale/it_IT
 @dirrm %%KRONOLITHDIR%%/locale/ko_KR/LC_MESSAGES
 @dirrm %%KRONOLITHDIR%%/locale/ko_KR
+@dirrm %%KRONOLITHDIR%%/locale/lt_LT/LC_MESSAGES
+@dirrm %%KRONOLITHDIR%%/locale/lt_LT
+@dirrm %%KRONOLITHDIR%%/locale/nb_NO/LC_MESSAGES
+@dirrm %%KRONOLITHDIR%%/locale/nb_NO
 @dirrm %%KRONOLITHDIR%%/locale/nl_NL/LC_MESSAGES
 @dirrm %%KRONOLITHDIR%%/locale/nl_NL
 @dirrm %%KRONOLITHDIR%%/locale/nn_NO/LC_MESSAGES
@@ -166,6 +184,8 @@
 @dirrm %%KRONOLITHDIR%%/locale/pl_PL
 @dirrm %%KRONOLITHDIR%%/locale/pt_BR/LC_MESSAGES
 @dirrm %%KRONOLITHDIR%%/locale/pt_BR
+@dirrm %%KRONOLITHDIR%%/locale/ro_RO/LC_MESSAGES
+@dirrm %%KRONOLITHDIR%%/locale/ro_RO
 @dirrm %%KRONOLITHDIR%%/locale/ru_RU/LC_MESSAGES
 @dirrm %%KRONOLITHDIR%%/locale/ru_RU
 @dirrm %%KRONOLITHDIR%%/locale/ru_RU.KOI8-R/LC_MESSAGES
@@ -174,6 +194,8 @@
 @dirrm %%KRONOLITHDIR%%/locale/sk_SK
 @dirrm %%KRONOLITHDIR%%/locale/sv_SE/LC_MESSAGES
 @dirrm %%KRONOLITHDIR%%/locale/sv_SE
+@dirrm %%KRONOLITHDIR%%/locale/zh_CN/LC_MESSAGES
+@dirrm %%KRONOLITHDIR%%/locale/zh_CN
 @dirrm %%KRONOLITHDIR%%/locale/zh_TW/LC_MESSAGES
 @dirrm %%KRONOLITHDIR%%/locale/zh_TW
 @dirrm %%KRONOLITHDIR%%/locale
@@ -188,9 +210,11 @@
 @dirrm %%KRONOLITHDIR%%/templates/javascript
 @dirrm %%KRONOLITHDIR%%/templates/menu
 @dirrm %%KRONOLITHDIR%%/templates/month
+@dirrm %%KRONOLITHDIR%%/templates/prefs
 @dirrm %%KRONOLITHDIR%%/templates/view
 @dirrm %%KRONOLITHDIR%%/templates/week
 @dirrm %%KRONOLITHDIR%%/templates
+@dirrm %%KRONOLITHDIR%%/util
 @dirrm %%KRONOLITHDIR%%
 etc/horde/httpd.conf.kronolith
 %%PORTDOCS%%@dirrm share/doc/kronolith
