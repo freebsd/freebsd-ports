@@ -7,19 +7,30 @@
 #
 
 PORTNAME=	socat
-PORTVERSION=	1.3.0.1
+PORTVERSION=	1.3.1.0
 CATEGORIES=	net
 MASTER_SITES=	http://www.dest-unreach.org/socat/download/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A relay for bidirectional data transfer between two indep. data channels
+COMMENT=	Multipurpose relay and more
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R:R}
+USE_BZIP2=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 MAKE_ARGS=	CCOPT="${CFLAGS}"
 
-MAN1=	socat.1
+MAN1=		socat.1
+
+DOCS=		EXAMPLES SECURITY
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.for f in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
