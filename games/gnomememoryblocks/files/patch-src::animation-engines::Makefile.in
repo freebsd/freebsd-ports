@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- src/animation-engines/Makefile.in	2001/12/19 10:25:42	1.1
++++ src/animation-engines/Makefile.in	2001/12/19 10:27:40
+@@ -143,7 +143,7 @@
+ 
+ 
+ DEFS = @DEFS@ -I. -I$(srcdir) -I../..
+-CPPFLAGS = @CPPFLAGS@
++CPPFLAGS = $(GDK_PIXBUF_INCS) @CPPFLAGS@
+ LIBS = @LIBS@
+ libscaling_la_DEPENDENCIES = 
+ libscaling_la_OBJECTS =  scaling.lo
