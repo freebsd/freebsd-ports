@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kscope
-PORTVERSION=	0.8a
+PORTVERSION=	0.9
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=${PORTNAME}/
@@ -18,7 +18,6 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	exctags:${PORTSDIR}/devel/ctags \
 		cscope:${PORTSDIR}/devel/cscope
 
-WRKSRC=		${WRKDIR}/kscope-0.8
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/${PORTNAME}
 
 USE_KDELIBS_VER=3
