@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	rlwrap
-PORTVERSION=	0.06
+PORTVERSION=	0.10
 CATEGORIES=	devel
 MASTER_SITES=	http://utopia.knoware.nl/~hlub/uck/rlwrap/
 EXTRACT_SUFX=	.tgz
