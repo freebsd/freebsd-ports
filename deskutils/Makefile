@@ -25,6 +25,7 @@
     SUBDIR += ical
     SUBDIR += ithought
     SUBDIR += jlj
+    SUBDIR += kbirthday
     SUBDIR += kdepim3
     SUBDIR += knowit
     SUBDIR += kronolith
