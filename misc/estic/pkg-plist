@@ -1,10 +1,14 @@
-bin/xestic
 bin/estic.res
-etc/pbx/estic.ini.generic_example
-etc/pbx/estic.ini.freebsd_example
+bin/xestic
 etc/pbx/aliases.example
-var/log/pbx/debug
 etc/pbx/config
+etc/pbx/estic.ini.freebsd_example
+etc/pbx/estic.ini.generic_example
 share/doc/estic/README
 share/doc/estic/estic.doc
+var/log/pbx/debug
+@dirrm etc/pbx
 @dirrm share/doc/estic
+@dirrm var/log/pbx
+@dirrm var/log
+@dirrm var
