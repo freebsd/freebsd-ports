@@ -28,6 +28,4 @@ lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/Text.pod
 lib/perl5/site_perl/%%PERL_VER%%/XML/DOM/XMLDecl.pod
 lib/perl5/site_perl/%%PERL_VER%%/XML/Handler/BuildDOM.pm
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/XML/DOM
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/XML/Handler
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/XML
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/XML-DOM

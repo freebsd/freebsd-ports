@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	XML-DOM
-PORTVERSION=	1.35
-PORTREVISION=	1
+PORTVERSION=	1.39
 CATEGORIES=	textproc perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	XML
@@ -16,8 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 
 RUN_DEPENDS=	${PBASE}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
+		${PBASE}/XML/Parser/PerlSAX.pm:${PORTSDIR}/textproc/p5-libxml \
 		${PBASE}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
 		${PBASE}/XML/RegExp.pm:${PORTSDIR}/textproc/p5-XML-RegExp
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
