@@ -8,6 +8,7 @@
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_cp950.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_euc_jisx0213.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_euc_jp.so
+%%PYTHON_SITELIBDIR%%/cjkcodecs/_euc_jp_strict.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_euc_kr.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_gb18030.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_gb2312.so
@@ -20,6 +21,7 @@
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_iso_2022_kr.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_johab.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_shift_jis.so
+%%PYTHON_SITELIBDIR%%/cjkcodecs/_shift_jis_strict.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_shift_jisx0213.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_utf_7.so
 %%PYTHON_SITELIBDIR%%/cjkcodecs/_utf_8.so
@@ -44,6 +46,9 @@
 %%PYTHON_SITELIBDIR%%/cjkcodecs/euc_jp.py
 %%PYTHON_SITELIBDIR%%/cjkcodecs/euc_jp.pyc
 %%PYTHON_SITELIBDIR%%/cjkcodecs/euc_jp.pyo
+%%PYTHON_SITELIBDIR%%/cjkcodecs/euc_jp_strict.py
+%%PYTHON_SITELIBDIR%%/cjkcodecs/euc_jp_strict.pyc
+%%PYTHON_SITELIBDIR%%/cjkcodecs/euc_jp_strict.pyo
 %%PYTHON_SITELIBDIR%%/cjkcodecs/euc_kr.py
 %%PYTHON_SITELIBDIR%%/cjkcodecs/euc_kr.pyc
 %%PYTHON_SITELIBDIR%%/cjkcodecs/euc_kr.pyo
@@ -85,6 +90,9 @@
 %%PYTHON_SITELIBDIR%%/cjkcodecs/shift_jis.py
 %%PYTHON_SITELIBDIR%%/cjkcodecs/shift_jis.pyc
 %%PYTHON_SITELIBDIR%%/cjkcodecs/shift_jis.pyo
+%%PYTHON_SITELIBDIR%%/cjkcodecs/shift_jis_strict.py
+%%PYTHON_SITELIBDIR%%/cjkcodecs/shift_jis_strict.pyc
+%%PYTHON_SITELIBDIR%%/cjkcodecs/shift_jis_strict.pyo
 %%PYTHON_SITELIBDIR%%/cjkcodecs/shift_jisx0213.py
 %%PYTHON_SITELIBDIR%%/cjkcodecs/shift_jisx0213.pyc
 %%PYTHON_SITELIBDIR%%/cjkcodecs/shift_jisx0213.pyo
