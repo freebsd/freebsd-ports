@@ -3,15 +3,15 @@
 # Date created:         10 August 1998
 # Whom:                 Shigeyuki FUKUSHIMA <shige@kuis.kyoto-u.ac.jp>
 #
-# $Id: Makefile,v 1.1.1.1 1998/08/10 16:03:26 kuriyama Exp $
+# $Id: Makefile,v 1.2 1998/11/02 04:01:50 steve Exp $
 #
 
 DISTNAME=       lynx2-8-1
 PKGNAME=        ja-lynx-2.8.1
 CATEGORIES=	japanese www
-MASTER_SITES=   ftp://sol.slcc.edu/pub/lynx/release2-8-1/
+MASTER_SITES=   http://sol.slcc.edu/lynx/release2-8-1/
 
-MAINTAINER=	shige@kuis.kyoto-u.ac.jp
+MAINTAINER=	shige@FreeBSD.ORG
 
 NO_LATEST_LINK=	YES
 GNU_CONFIGURE=  YES
