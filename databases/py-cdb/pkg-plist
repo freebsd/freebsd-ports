@@ -1,1 +1,6 @@
-lib/%%PYTHON_VERSION%%/site-packages/cdbmodule.so
+%%PYTHON_SITELIBDIR%%/cdbmodule.so
+%%EXAMPLESDIR%%/Example
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
