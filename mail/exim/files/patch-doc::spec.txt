@@ -1,8 +1,8 @@
---- doc/spec.txt.orig	Wed Dec 19 13:50:32 2001
-+++ doc/spec.txt	Tue Jan 15 15:52:05 2002
-@@ -14403,6 +14403,19 @@
- be adequate for all your requirements if you are mainly interested in
- encrypting transfers, and not in secure identification.
+--- doc/spec.txt.orig	Wed May  5 12:08:37 2004
++++ doc/spec.txt	Wed May  5 15:10:17 2004
+@@ -14432,6 +14432,19 @@
+       message_prefix = "\1\1\1\1\n"
+       message_suffix = "\1\1\1\1\n"
  
 +However, many clients require that the certificate presented by Exim be a user
 +(also called "leaf" or "site") certificate, and not a self-signed certificate.
@@ -18,5 +18,5 @@
 +     http://ospkibook.sourceforge.net/
 +
  
+ create_directory                Type: boolean                   Default: true
  
-                   39. CUSTOMIZING ERROR AND WARNING MESSAGES

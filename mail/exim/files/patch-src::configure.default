@@ -1,5 +1,5 @@
---- src/configure.default.orig	Mon May 12 15:39:18 2003
-+++ src/configure.default	Thu Jun 12 16:40:25 2003
+--- src/configure.default.orig	Wed May  5 12:08:35 2004
++++ src/configure.default	Wed May  5 15:09:40 2004
 @@ -56,7 +56,7 @@
  
  domainlist local_domains = @
@@ -9,16 +9,16 @@
  
  # Most straightforward access control requirements can be obtained by
  # appropriate settings of the above options. In more complicated situations, you
-@@ -147,6 +147,8 @@
- # were a normal user. This isn't usually a problem, as most sites have an alias
- # for root that redirects such mail to a human administrator.
+@@ -153,6 +153,8 @@
+ # as if it were a normal user. This isn't usually a problem, as most sites have
+ # an alias for root that redirects such mail to a human administrator.
  
 +exim_user = XX_EXIM_USER_XX
 +exim_group = XX_EXIM_GROUP_XX
  never_users = root
  
  
-@@ -378,7 +380,8 @@
+@@ -412,7 +414,8 @@
    allow_fail
    allow_defer
    data = ${lookup{$local_part}lsearch{SYSTEM_ALIASES_FILE}}
@@ -28,15 +28,15 @@
    file_transport = address_file
    pipe_transport = address_pipe
  
-@@ -412,6 +415,7 @@
+@@ -446,6 +449,7 @@
    file_transport = address_file
    pipe_transport = address_pipe
    reply_transport = address_reply
 +  condition = ${if exists{$home/.forward} {yes} {no} }
  
  
- # This router matches local user mailboxes.
-@@ -455,8 +459,10 @@
+ # This router matches local user mailboxes. If the router fails, the error
+@@ -491,8 +495,10 @@
    delivery_date_add
    envelope_to_add
    return_path_add

@@ -1,6 +1,6 @@
---- scripts/exim_install.orig	Wed Dec 18 12:28:00 2002
-+++ scripts/exim_install	Mon Jan  6 11:11:46 2003
-@@ -330,9 +330,8 @@
+--- scripts/exim_install.orig	Wed May  5 12:08:35 2004
++++ scripts/exim_install	Wed May  5 15:07:53 2004
+@@ -357,9 +357,8 @@
    echo $com ' ' ${CONFIGURE_FILE}
    echo $com Therefore, skipping automatic installation.
  
@@ -12,7 +12,7 @@
    if [ "${SYSTEM_ALIASES_FILE}" = "" ] ; then
      SYSTEM_ALIASES_FILE=/etc/aliases
      echo $com This configuration has system aliases in ${SYSTEM_ALIASES_FILE}.
-@@ -343,7 +342,7 @@
+@@ -370,7 +369,7 @@
  
    echo sed -e '\\'
    echo "  \"/SYSTEM_ALIASES_FILE/ s'SYSTEM_ALIASES_FILE'${ACTUAL_SYSTEM_ALIASES_FILE}'\"" '\\'
@@ -21,7 +21,7 @@
  
    # I can't find a way of writing this using the ${real} feature because
    # it seems that the output redirection always happens, even when -n was
-@@ -352,7 +351,7 @@
+@@ -379,7 +378,7 @@
    if [ "$real" = "" ] ; then
      sed -e \
        "/SYSTEM_ALIASES_FILE/ s'SYSTEM_ALIASES_FILE'${ACTUAL_SYSTEM_ALIASES_FILE}'" \
@@ -30,7 +30,7 @@
    else
      true
    fi
-@@ -372,8 +371,6 @@
+@@ -399,8 +398,6 @@
      ${real} ${CP} ../src/aliases.default ${SYSTEM_ALIASES_FILE}
    fi
  
