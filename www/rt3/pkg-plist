@@ -7,7 +7,7 @@ rt3/bin/rt-crontool
 rt3/bin/rt-mailgate
 rt3/bin/webmux.pl
 rt3/etc/RT_Config.pm
-@unexec cmp -s %D/rt3/etc/RT_SiteConfig.pm %D/rt3/etc/RT_SiteConfig.pm-dist; then rm -f %D/rt3/etc/RT_SiteConfig.pm
+@unexec if cmp -s %D/rt3/etc/RT_SiteConfig.pm %D/rt3/etc/RT_SiteConfig.pm-dist; then rm -f %D/rt3/etc/RT_SiteConfig.pm; fi
 rt3/etc/RT_SiteConfig.pm-dist
 @exec [ -f %B/RT_SiteConfig.pm ] || cp %B/%f %B/RT_SiteConfig.pm
 rt3/etc/acl.Informix
