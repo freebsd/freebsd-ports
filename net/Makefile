@@ -543,6 +543,7 @@
     SUBDIR += pygopherd
     SUBDIR += pyslsk
     SUBDIR += qadsl
+    SUBDIR += quagga
     SUBDIR += queso
     SUBDIR += radiator
     SUBDIR += radiusclient
