@@ -7,15 +7,13 @@
 #
 
 PORTNAME=	fwlogwatch
-PORTVERSION=	0.9.3
-PORTREVISION=	2
+PORTVERSION=	1.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.kybs.de/boris/sw/
 
 MAINTAINER=	jim@corebsd.or.id
 COMMENT=	A packet filter and firewall log analyzer
 
-USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_REINPLACE=	yes
 MAKE_ENV=	MKDIR="${MKDIR}"
