@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	bogofilter
-PORTREVISION=	2
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-qdbm
 
-MASTERDIR=	${.CURDIR}/../bogofilter
+MAINTAINER=	matthias.andree@gmx.de
 
 LIB_DEPENDS=	qdbm.3:${PORTSDIR}/databases/qdbm
 
-CONFLICTS=	bogofilter-0* bogofilter-tdb* [a-z][a-z]-bogofilter-0*
+CONFLICTS=	bogofilter-[0-9]* bogofilter-tdb-[0-9]* [a-z][a-z]-bogofilter-[0-9]*
 
 CONFIGURE_ARGS=	--with-database=qdbm
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 DESCR=		${PKGDIR}/pkg-descr
+
+MASTERDIR=	${.CURDIR}/../bogofilter
 
 .include "${MASTERDIR}/Makefile"
