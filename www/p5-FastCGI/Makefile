@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	FastCGI
-PORTVERSION=	0.58
+PORTVERSION=	0.67
 CATEGORIES=	www perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	FCGI
@@ -16,9 +16,10 @@ DISTNAME=	FCGI-${PORTVERSION}
 MAINTAINER=	kbyanc@posi.net
 COMMENT=	Modules for perl5, for enabling FastCGI support in CGI scripts
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libfcgi.a:${PORTSDIR}/www/fcgi
+LIB_DEPENDS=	fcgi.0:${PORTSDIR}/www/fcgi
 
 PERL_CONFIGURE=	yes
+CONFIGURE_ARGS+=	--use-installed=${LOCALBASE}
 
 MANPREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 MAN3=		FCGI.3

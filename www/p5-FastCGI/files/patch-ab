@@ -1,0 +1,11 @@
+--- Makefile.PL.orig	Mon Jun 16 10:31:32 2003
++++ Makefile.PL	Mon Jun 16 10:31:41 2003
+@@ -33,7 +33,7 @@
+ 	$libspec .= "-lfcgi";
+ 	my @l = MM->ext($libspec);
+ 	if ($l[0] || $l[1] || $l[2]) {
+-	    $prefix = "$useinstalled/include" if $useinstalled;
++	    $prefix = "$useinstalled" if $useinstalled;
+ 	    $libfound = 1;
+ 	    push @libs, $libspec;
+ 	}
