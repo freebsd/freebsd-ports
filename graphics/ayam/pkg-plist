@@ -63,6 +63,7 @@ lib/ayam/tcl/riinc.tcl
 lib/ayam/tcl/riopt.tcl
 lib/ayam/tcl/root.tcl
 lib/ayam/tcl/run.tcl
+lib/ayam/tcl/script.tcl
 lib/ayam/tcl/sdmesh.tcl
 lib/ayam/tcl/shader.tcl
 lib/ayam/tcl/shortcut.tcl
@@ -181,6 +182,7 @@ lib/ayam/tcl/BWidget-1.2.1/lang/fr.rc
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/clampnc.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/clone.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/concatnc.gif
+%%PORTDOCS%%%%DOCSDIR%%/html/pics/csgex.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/elevate.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/extrude.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/pics/gordon-hood.gif
