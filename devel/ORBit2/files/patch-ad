@@ -6,8 +6,8 @@
  
 -    client		(calls glib-config)
 -    server		(calls glib-config)
-+    client		(calls glib12-config)
-+    server		(calls glib12-config)
++    client		(calls @GLIB_CONFIG@)
++    server		(calls @GLIB_CONFIG@)
  EOF
  
      exit $1
@@ -17,8 +17,23 @@
      client|server)
 -	the_libs="$the_libs -L@libdir@ -lORBit -lIIOP -lORBitutil `glib-config --libs` @LIBS@ -lm"
 -	the_flags="$the_flags `glib-config --cflags` -I@includedir@"
-+	the_libs="$the_libs -L@libdir@ -lORBit -lIIOP -lORBitutil `glib12-config --libs` @LIBS@ -lm"
-+	the_flags="$the_flags `glib12-config --cflags` -I@includedir@"
++	the_libs="$the_libs -L@libdir@ -lORBit -lIIOP -lORBitutil `@GLIB_CONFIG@ --libs` @LIBS@ -lm"
++	the_flags="$the_flags `@GLIB_CONFIG@ --cflags` -I@includedir@"
  	;;
  
     --use-service=*)
+--- libIDL/libIDL-config.in.orig	Fri Apr 16 09:52:20 1999
++++ libIDL/libIDL-config.in	Wed Oct 13 20:49:40 1999
+@@ -74,10 +74,10 @@
+ 	echo $exec_prefix
+ fi
+ if test "$echo_cflags" = "yes"; then
+-	all_flags="$all_flags $includes $cflags `glib-config --cflags`"
++	all_flags="$all_flags $includes $cflags `@GLIB_CONFIG@ --cflags`"
+ fi
+ if test "$echo_libs" = "yes"; then
+-	all_flags="$all_flags -L@libdir@ -lIDL `glib-config --libs`"
++	all_flags="$all_flags -L@libdir@ -lIDL `@GLIB_CONFIG@ --libs`"
+ fi
+ 
+ # Straight out any possible duplicates, but be careful to
