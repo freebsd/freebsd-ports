@@ -1,0 +1,19 @@
+--- client/Makefile.in.orig	Wed Sep 25 18:10:48 1996
++++ client/Makefile.in	Fri May 23 02:34:00 1997
+@@ -6,7 +6,7 @@
+ 
+ CC      = @CC@
+ RANLIB  = @RANLIB@
+-INSTALL = @INSTALL@
++INSTALL = /usr/bin/install -c -s -o bin -g bin
+ 
+ 
+ #
+@@ -56,6 +56,7 @@
+ install:
+ 	if [ ! -d $(bindir) ]; then mkdir $(bindir); fi
+ 	$(INSTALL) rwhois $(bindir)
++	/bin/ln -sf ${PREFIX}/lib/rwhois/bin/rwhois ${PREFIX}/bin/rwhois
+ 
+ clean:
+ 	rm -f rwhois *.o *~ librwclient.a

@@ -1,0 +1,31 @@
+--- server/Makefile.in.orig	Wed Sep 25 13:03:56 1996
++++ server/Makefile.in	Fri May  9 22:48:56 1997
+@@ -7,14 +7,15 @@
+ prefix      = @prefix@
+ exec_prefix = @exec_prefix@
+ bindir      = $(exec_prefix)/bin
++sbindir     = $(exec_prefix)/sbin
+ etcdir      = $(exec_prefix)/etc
+ 
+ # local libs/includes 
+ COMMON_INC  = -I../common
+ COMMON_LIBS = -L../common -lrwhois
+ 
+-WRAP_INC = -I../tools/tcpd_wrapper
+-WRAP_LIBS = -L../tools/tcpd_wrapper -lwrap
++WRAP_INC = -I${PREFIX}/include
++WRAP_LIBS = -L${PREFIX}/lib -lwrap
+ 
+ MKDB_INC = -I../mkdb
+ MKDB_LIBS = -L../mkdb -lmkdb
+@@ -77,8 +78,8 @@
+ 	$(CC) -c $(CFLAGS) $(LOCAL_INC) $*.c
+ 
+ install:
+-	if [ ! -d $(etcdir) ]; then mkdir $(etcdir); fi
+-	$(INSTALL) rwhoisd $(etcdir)
++	if [ ! -d $(sbindir) ]; then mkdir -p $(sbindir); fi
++	$(INSTALL) rwhoisd $(sbindir)
+ 
+ clean:
+ 	rm -f *.[oa]

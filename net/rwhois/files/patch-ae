@@ -1,0 +1,20 @@
+--- sample.data/rwhois.conf.orig	Fri May 23 01:59:32 1997
++++ sample.data/rwhois.conf	Fri May 23 02:00:37 1997
+@@ -10,7 +10,7 @@
+ # to. If it is not set, it will default to the current working
+ # directory.
+ # NOTE:  you want to change this.
+-root-dir: /home/devel2/davidb/src/rwhois-dev/sample.data
++root-dir: /usr/local/lib/rwhois
+ 
+ # schema-file: The config file that contains the top-level schema
+ # information.  This file must exist. The old 'object-file' refers to
+@@ -85,7 +85,7 @@
+ # chrooted: NO
+ 
+ # userid: If run as root, rwhoisd will change to this user
+-userid: davidb
++userid: nobody
+ 
+ # verbosity: What level of reporting (to the console) do you wish.
+ # The default is '1'.  '0' is quiet and numbers greater then '1' are
