@@ -22,9 +22,8 @@ SCRIPTS_ENV+=	CC="${CC}" \
 		CFLAGS="${CFLAGS}"
 MAKE_ENV+=	FBSDCC="${CC}" FBSDCXX="${CXX}"
 
-_XBUILD_DIRS=	include ${XBUILD_DIRS}
 XINSTALL_DIRS?=	${XBUILD_DIRS}
-_XINCLUDE_DIRS=	${_XBUILD_DIRS} ${XINCLUDE_DIRS}
+_XINCLUDE_DIRS=	include ${XBUILD_DIRS} ${XINCLUDE_DIRS}
 
 pre-everything::
 	@if [ "x${XFREE86_VERSION}" != "x4" ]; then \
@@ -39,39 +38,36 @@ do-configure:
 	@cp ${X11BASE}/lib/X11/config/date.def ${WRKSRC}/config/cf
 	@cd ${.CURDIR} && ${SETENV} ${SCRIPTS_ENV} ${SH} ${SCRIPTDIR}/configure
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} Makefile.boot
-	
-.for i in ${_XINCLUDE_DIRS}
-	@cd ${WRKSRC}/${i} && ${WRKSRC}/config/imake/imake \
-		-DTOPDIR=${WRKSRC} -DCURDIR=${i} -I${WRKSRC}/config/cf
-.endfor
-.for i in ${_XINCLUDE_DIRS}
-	@cd ${WRKSRC}/${i} && ${SETENV} ${MAKE_ENV} ${MAKE} Makefiles
-.endfor
-.for i in ${_XINCLUDE_DIRS}
-	@cd ${WRKSRC}/${i} && ${SETENV} ${MAKE_ENV} ${MAKE} includes
-.endfor
-.for i in ${_XBUILD_DIRS}
-	@cd ${WRKSRC}/${i} && ${SETENV} ${MAKE_ENV} ${MAKE} depend
-.endfor
+	@for dir in ${_XINCLUDE_DIRS}; do \
+		cd ${WRKSRC}/$${dir} && ${WRKSRC}/config/imake/imake \
+			-DTOPDIR=${WRKSRC} -DCURDIR=$${dir} -I${WRKSRC}/config/cf; \
+	done
+	@for dir in ${_XINCLUDE_DIRS}; do \
+		cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${MAKE} Makefiles; \
+	done
+	@for dir in ${_XINCLUDE_DIRS}; do \
+		cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${MAKE} includes; \
+	done
+	@for dir in include ${XBUILD_DIRS}; do \
+		cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${MAKE} depend; \
+	done
 .endif
 
 .if !target(do-build)
 do-build:
-.for i in ${XBUILD_DIRS}
-	@cd ${WRKSRC}/${i} && ${SETENV} ${MAKE_ENV} ${MAKE} all
-.endfor
+	@for dir in ${XBUILD_DIRS}; do \
+		cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${MAKE} all; \
+	done
 .endif
 
 .if !target(do-install)
 do-install:
-.for i in ${XINSTALL_DIRS}
-	@cd ${WRKSRC}/${i} && ${SETENV} ${MAKE_ENV} ${MAKE} install
-.endfor
-.for i in ${XINSTALL_MAN_DIRS}
-	@cd ${WRKSRC}/${i} && ${SETENV} ${MAKE_ENV} ${MAKE} install.man
-.endfor
-.endif
-.if ${XFREE86_HTML_MAN:L} == yes
+	@for dir in ${XINSTALL_DIRS}; do \
+		cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${MAKE} install; \
+	done
+	@for dir in ${XINSTALL_MAN_DIRS}; do \
+		cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${MAKE} install.man; \
+	done
 	@${MKHTMLINDEX} ${PREFIX}/lib/X11/doc/html
 .endif
 
