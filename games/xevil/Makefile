@@ -8,7 +8,7 @@
 PORTNAME=	xevil
 PORTVERSION=	2.02
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.xevil.com/stable/
+MASTER_SITES=	http://www.xevil.com/download/stable/
 DISTNAME=	xevilsrc${PORTVERSION}
 
 MAINTAINER=	goranrunfeldt@home.se
