@@ -7,11 +7,11 @@
 
 PORTNAME=	gps
 PORTVERSION=	0.93
+PORTREVISION=	1
 CATEGORIES=	mail security
 MASTER_SITES=	http://mimo.gn.apc.org/gps/
 PKGNAMEPREFIX=	postfix-
-DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}	\
-		${SCRIPT_FILES}
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	delphij@FreeBSD.org
@@ -20,9 +20,7 @@ COMMENT=	Greylist Policy Service for postfix
 LIB_DEPENDS=	dbi.0:${PORTSDIR}/databases/libdbi
 RUN_DEPENDS=	${LOCALBASE}/lib/dbd:${PORTSDIR}/databases/libdbi-drivers
 
-BROKEN=		Size mismatch
-
-SCRIPT_FILES=	gps-maintain.pl
+SCRIPT_FILES=	gps-maintain.pl gps-db-update.pl
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
@@ -39,7 +37,7 @@ pre-configure:
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/etc/gps.conf ${PREFIX}/etc/gps.conf-dist
 .for f in ${SCRIPT_FILES}
-	@${INSTALL_SCRIPT} ${_DISTDIR}/${f} ${PREFIX}/libexec
+	@${INSTALL_SCRIPT} ${WRKSRC}/${f} ${PREFIX}/libexec
 .endfor
 	@${CAT} ${PKGMESSAGE}
 
