@@ -3,6 +3,7 @@ share/vim/%%PATH_SUB%%/doc.zh_CN/debugger.txt
 share/vim/%%PATH_SUB%%/doc.zh_CN/develop.txt
 share/vim/%%PATH_SUB%%/doc.zh_CN/scroll.txt
 share/vim/%%PATH_SUB%%/doc.zh_CN/diff.txt
+share/vim/%%PATH_SUB%%/doc.zh_CN/filetype.txt
 share/vim/%%PATH_SUB%%/doc.zh_CN/fold.txt
 share/vim/%%PATH_SUB%%/doc.zh_CN/help.txt
 share/vim/%%PATH_SUB%%/doc.zh_CN/howto.txt
@@ -10,6 +11,7 @@ share/vim/%%PATH_SUB%%/doc.zh_CN/gui_w16.txt
 share/vim/%%PATH_SUB%%/doc.zh_CN/gui_w32.txt
 share/vim/%%PATH_SUB%%/doc.zh_CN/gui_x11.txt
 share/vim/%%PATH_SUB%%/doc.zh_CN/if_ole.txt
+share/vim/%%PATH_SUB%%/doc.zh_CN/map.txt
 share/vim/%%PATH_SUB%%/doc.zh_CN/mbyte.txt
 share/vim/%%PATH_SUB%%/doc.zh_CN/mlang.txt
 share/vim/%%PATH_SUB%%/doc.zh_CN/os_dos.txt
@@ -24,6 +26,7 @@ share/vim/%%PATH_SUB%%/doc.zh_CN/quickfix.txt
 share/vim/%%PATH_SUB%%/doc.zh_CN/quickref.txt
 share/vim/%%PATH_SUB%%/doc.zh_CN/recover.txt
 share/vim/%%PATH_SUB%%/doc.zh_CN/tips.txt
+share/vim/%%PATH_SUB%%/doc.zh_CN/uganda.txt
 share/vim/%%PATH_SUB%%/doc.zh_CN/undo.txt
 share/vim/%%PATH_SUB%%/doc.zh_CN/usr_01.txt
 share/vim/%%PATH_SUB%%/doc.zh_CN/usr_02.txt

@@ -6,22 +6,20 @@
 #
 
 PORTNAME=	vim-scdoc
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	chinese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S/-s//}
 DISTNAME=	${PORTNAME:S/-s//}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hamigua@hotpop.com
 COMMENT=	Vim documentation Simplified Chinese
 
 RUN_DEPENDS=	vim:${PORTSDIR}/editors/vim
 
-BROKEN=		"Install fails"
-
-PLIST_SUB=	PATH_SUB=vim62
+PLIST_SUB=	PATH_SUB=vim63
 NO_BUILD=	yes
-VIM_PATH=	${PREFIX}/share/vim/vim62
+VIM_PATH=	${PREFIX}/share/vim/vim63
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 do-install:
