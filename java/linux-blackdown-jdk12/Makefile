@@ -1,5 +1,4 @@
 # New ports collection makefile for:	linux jdk 1.2.2
-# Version required:     1.2.2
 # Date created:		Nov 3 1999
 # Whom:			Jose Marques
 #
