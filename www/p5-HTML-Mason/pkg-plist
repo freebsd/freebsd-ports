@@ -34,5 +34,8 @@ lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML/Mason/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Component
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason/Resolver
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/HTML/Mason
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Apache
-@dirrm lib/perl5/site_perl/%%PERL_VER%%/Bundle/HTML
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTML 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Bundle/HTML 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Bundle 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/HTML 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Apache 2>/dev/null || true
