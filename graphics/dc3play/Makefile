@@ -7,25 +7,29 @@
 
 PORTNAME=	dc3play
 PORTVERSION=	19991202
+PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=   ftp://ftp.itojun.org/pub/digi-cam/DC-3/unix/ \
+MASTER_SITES=	ftp://ftp.itojun.org/pub/digi-cam/DC-3/unix/ \
 		ftp://ftp.digipri.co.jp/pub/free-software/Ricoh/DC-3/unix/
 
-MAINTAINER=	ports@freebsd.org
-
-WRKSRC=		${WRKDIR}/dc3play/build
-HAS_CONFIGURE=	yes
+MAINTAINER=	ports@FreeBSD.org
 
 RESTRICTED=	"Beta test period, redistribution prohibited"
 
-DOC=	README.english README.japanese PROTOCOL
+WRKSRC=		${WRKDIR}/${PORTNAME}/build
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	OPTFLAG=""
+
+post-patch:
+	@${PERL} -pi -e "s|<sys/dir.h>|<dirent.h>|g" ${WRKSRC}/../src/*.c
 
 post-install:
-	${MKDIR} ${PREFIX}/share/doc/dc3play
-	for i in ${DOC}; do \
-		${INSTALL_DATA} ${WRKSRC}/../$$i \
-			${PREFIX}/share/doc/dc3play; \
-	done
-	${SED} -e 's@\/usr\/local@${PREFIX}@' < ${PKGMESSAGE}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${PREFIX}/share/doc/dc3play
+.for file in PROTOCOL README.english README.japanese 
+	${INSTALL_DATA} ${WRKSRC}/../${file} ${PREFIX}/share/doc/dc3play
+.endfor
+.endif
 
 .include <bsd.port.mk>
