@@ -1,0 +1,4 @@
+Error - Error/exception handling in an OO-ish way
+
+This is Graham Barr's Error module, which provides support for throwing
+and catching Error (i.e. exception) objects.
