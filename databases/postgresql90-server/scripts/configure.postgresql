@@ -15,14 +15,14 @@ if [ ! "${BATCH}" ]; then
 fi
 
 if [ "${BATCH}" ]; then
-	set \"MultiByte\" \"ODBC\" \"SSL\"
+	set \"MultiByte\" \"ODBC\" \"SSL\" \"TCL\" \"TK\"
 else
 	/usr/bin/dialog --title "configuration options" --clear \
 					--checklist "\n\
 Please select desired options:" -1 -1 7 \
 JDBC       "Java DataBase Connectivity" OFF \
 MultiByte  "Multibyte for Multilingualism" ON \
-ODBC       "Open Database Connectivity" OFF \
+ODBC       "Open Database Connectivity" ON \
 TCL        "Tcl" ON \
 TCLTK      "Tcl/Tk" ON \
 SSL        "Secure Socket Layer" ON \
