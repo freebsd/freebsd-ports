@@ -1,4 +1,5 @@
 bin/tkgnats
+share/tkgnats/CHANGES
 share/tkgnats/VERSION
 share/tkgnats/tkeditpr.tcl
 share/tkgnats/tkeditpr.xbm
