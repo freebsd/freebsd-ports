@@ -1,11 +1,19 @@
---- src/modules/snd/libkvisnd.cpp	Sat Dec 14 20:30:41 2002
-+++ src/modules/snd/libkvisnd.cpp.patched	Mon Jan  5 19:18:20 2004
-@@ -49,7 +49,7 @@
- 	#ifdef COMPILE_OSS_SUPPORT
- 		#include <fcntl.h>
- 		#include <sys/ioctl.h>
--		#include <linux/soundcard.h>
-+		#include <sys/soundcard.h>
- 		#ifdef COMPILE_AUDIOFILE_SUPPORT
- 			#include <audiofile.h>
- 		#endif //COMPILE_AUDIOFILE_SUPPORT
+*** src/modules/snd/libkvisnd.cpp.orig	Thu Feb  5 14:07:24 2004
+--- src/modules/snd/libkvisnd.cpp	Thu Feb  5 14:07:32 2004
+***************
+*** 53,59 ****
+  			#include <linux/soundcard.h>
+  		#else
+  			// Hint by Andy Fawcett: Thnx :)
+! 			#ifdef HAVE_SYS_SOUNDCARD_H_
+  				#include <sys/soundcard.h>
+  			#else
+  				#warning "Ops.. have no soundcard.h ? ... we're going to fail here :/"
+--- 53,59 ----
+  			#include <linux/soundcard.h>
+  		#else
+  			// Hint by Andy Fawcett: Thnx :)
+! 			#ifdef HAVE_SYS_SOUNDCARD_H
+  				#include <sys/soundcard.h>
+  			#else
+  				#warning "Ops.. have no soundcard.h ? ... we're going to fail here :/"
