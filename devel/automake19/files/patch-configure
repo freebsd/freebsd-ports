@@ -1,5 +1,5 @@
---- configure.orig	Wed Jul 28 13:09:03 2004
-+++ configure	Thu Aug  5 13:11:18 2004
+--- configure.orig	Wed Aug 11 14:37:35 2004
++++ configure	Mon Aug 16 10:29:22 2004
 @@ -276,3 +276,3 @@
  ac_unique_file="automake.in"
 -ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS build build_cpu build_vendor build_os INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA CYGPATH_W PACKAGE VERSION ACLOCAL AUTOCONF AUTOMAKE AUTOHEADER MAKEINFO install_sh STRIP ac_ct_STRIP INSTALL_STRIP_PROGRAM mkdir_p AWK SET_MAKE am__leading_dot AMTAR am__tar am__untar APIVERSION pkgvdatadir PERL TEX LN MODIFICATION_DELAY EGREP FGREP LIBOBJS LTLIBOBJS'
@@ -11,7 +11,7 @@
 +APIPVERSION=`echo "$VERSION" | sed -e 's/^\([0-9]*\)\.\([0-9]*[a-z]*\).*$/\1\2/'`
  
  # A versioned directory, defined here for convenience.
--pkgvdatadir="\${datadir}/automake-${APIVERSION}"
+-pkgvdatadir="\${datadir}/$PACKAGE-$APIVERSION"
 +pkgvdatadir="\${datadir}/automake${APIPVERSION}"
  
 @@ -2666,2 +2666,3 @@
