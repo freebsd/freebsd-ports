@@ -6,18 +6,25 @@
 #
 
 PORTNAME=	gqview
-PORTVERSION=	0.10.1
+PORTVERSION=	0.11.0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	nakai@FreeBSD.org
 
+LIB_DEPENEDS=	gdk_pixbuf.2:${PORTSDIR}/graphics/gdk_pixbuf
+
 USE_X_PREFIX=	yes
-USE_GNOME=	yes
+USE_GTK=	yes
+WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+
+.if defined(WITH_GNOME)
+USE_GNOME=	yes
+.endif
 
 MAN1=		gqview.1
 
