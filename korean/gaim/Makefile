@@ -14,7 +14,7 @@ MAINTAINER=	cjh@FreeBSD.org
 
 LIB_DEPENDS+=	iconv.3:${PORTSDIR}/converters/libiconv
 
-# this patch from www.intosea.com
-EXTRA_PATCHES=	${.CURDIR}/files/gaim-0.50-ko.patch
+# Slightly modified from http://master.debian.or.kr/~alee/patch/
+EXTRA_PATCHES=	${.CURDIR}/files/gaim-0.54-utf.diff
 
 .include "${MASTERDIR}/Makefile"
