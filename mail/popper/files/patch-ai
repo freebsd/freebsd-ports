@@ -133,13 +133,3 @@
   		    }
   		}
   		continue;  /* Do not include this value in the message size */
-***************
-*** 1031,1036 ****
---- 1042,1048 ----
-  	(void)ftruncate(dfd, (OFF_T)offset);
-      }
-  #ifdef BULLDB
-+     if (p->bulldir != NULL)
-  #ifdef GDBM
-          gdbm_close(p->bull_db);
-  #else
