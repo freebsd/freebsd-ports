@@ -72,13 +72,17 @@ CONFIGURE_ENV=	OPTIM='${OPTIM}' LD_SHLIB='${CC}'
 MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
 MAN8=		ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8
 
+post-extract:
+	@${SED} -e "s=%%PREFIX%%=${PREFIX}=" ${FILESDIR}/apache.sh \
+		> ${WRKSRC}/apache.sh
+
 pre-install:
 	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/apache.sh ]; then \
 		${ECHO} "Installing ${PREFIX}/etc/rc.d/apache.sh startup file."; \
-		${INSTALL_SCRIPT} -m 751 ${FILESDIR}/apache.sh ${PREFIX}/etc/rc.d/apache.sh; \
+		${INSTALL_SCRIPT} -m 751 ${WRKSRC}/apache.sh ${PREFIX}/etc/rc.d/apache.sh; \
 	fi
 	@${CAT} ${PKGMESSAGE}
 
