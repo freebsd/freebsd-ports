@@ -1,0 +1,52 @@
+bin/aspell
+include/as_check.hh
+include/as_config.h
+include/as_convert.hh
+include/as_error.hh
+include/aspell.hh
+include/const_string.hh
+include/hash_string.hh
+lib/libaspell.a
+lib/libaspell.la
+lib/libaspell.so
+lib/libaspell.so.0
+share/aspell/english.mta
+share/aspell/english.wrd
+share/doc/aspell/man-html/1_Introduction.html
+share/doc/aspell/man-html/2_Getting.html
+share/doc/aspell/man-html/3_Aspell.html
+share/doc/aspell/man-html/4_Library.html
+share/doc/aspell/man-html/5_International.html
+share/doc/aspell/man-html/6_How.html
+share/doc/aspell/man-html/A_Changelog.html
+share/doc/aspell/man-html/About_this.html
+share/doc/aspell/man-html/B_Do.html
+share/doc/aspell/man-html/C_Credits.html
+share/doc/aspell/man-html/Contents.html
+share/doc/aspell/man-html/D_Glossary.html
+share/doc/aspell/man-html/E_Copyright.html
+share/doc/aspell/man-html/index.html
+share/doc/aspell/man-html/manual.html
+share/doc/aspell/man-text/1_Introduction.txt
+share/doc/aspell/man-text/2_Getting.txt
+share/doc/aspell/man-text/3_Aspell.txt
+share/doc/aspell/man-text/4_Library.txt
+share/doc/aspell/man-text/5_International.txt
+share/doc/aspell/man-text/6_How.txt
+share/doc/aspell/man-text/A_Changelog.txt
+share/doc/aspell/man-text/About_this.txt
+share/doc/aspell/man-text/B_Do.txt
+share/doc/aspell/man-text/C_Credits.txt
+share/doc/aspell/man-text/Contents.txt
+share/doc/aspell/man-text/D_Glossary.txt
+share/doc/aspell/man-text/E_Copyright.txt
+share/doc/aspell/man-text/index.txt
+share/doc/aspell/man-text/manual.txt
+share/doc/aspell/manual.aux
+share/doc/aspell/manual.dvi
+share/doc/aspell/manual.tex
+share/doc/aspell/manual2.lyx
+@dirrm share/aspell
+@dirrm share/doc/aspell/man-html
+@dirrm share/doc/aspell/man-text
+@dirrm share/doc/aspell

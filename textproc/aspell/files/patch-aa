@@ -1,0 +1,42 @@
+--- Makefile.in~	Sat Nov  7 22:33:18 1998
++++ Makefile.in	Mon Dec  7 00:15:58 1998
+@@ -70,7 +70,7 @@
+ RANLIB = @RANLIB@
+ VERSION = @VERSION@
+ 
+-pkgdocdir = ${prefix}/doc/aspell
++pkgdocdir = ${datadir}/doc/aspell
+ 
+ AUTOMAKE_OPTIONS = foreign
+ 
+@@ -101,7 +101,9 @@
+ 
+ pkgdoc_DATA = manual.dvi manual.tex manual2.lyx manual.aux
+ 
++ifndef NOPORTDOCS
+ SUBDIRS = man-html man-text
++endif
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = as_config.h
+@@ -520,7 +522,11 @@
+ 
+ install-exec-am: install-libLTLIBRARIES install-binPROGRAMS
+ 
++ifndef NOPORTDOCS
+ install-data-am: install-pkgdataDATA install-pkgdocDATA install-includeHEADERS
++else
++install-data-am: install-pkgdataDATA install-includeHEADERS
++endif
+ 
+ uninstall-am: uninstall-libLTLIBRARIES uninstall-binPROGRAMS uninstall-pkgdataDATA uninstall-pkgdocDATA uninstall-includeHEADERS
+ 
+@@ -623,7 +629,7 @@
+ MAINTAINERCLEANFILES += manual.dvi manual.log manual.aux
+ 
+ english.wrd english.mta: aspell english.wl
+-	./aspell master english < english.wl
++	./aspell master english < @WORDLIST@
+ 
+ manual manual.dvi: manual.tex
+ 	perl man-proc.pl
