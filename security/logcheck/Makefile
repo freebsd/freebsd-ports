@@ -8,7 +8,10 @@
 PORTNAME=	logcheck
 PORTVERSION=	1.1.1
 CATEGORIES=	security
-MASTER_SITES=	http://www.psionic.com/downloads/
+MASTER_SITES=	ftp://sensimilia.eu.org/pub/software/sys/ \
+		http://www.ukc.mirror.ac.uk/sites/ftp.freebsd.org/pub/FreeBSD/ports/distfiles/ \
+		http://www.psionic.com/downloads/ \
+		http://people.FreeBSD.org/~foxfair/distfiles/
 DISTNAME=	logsentry-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
