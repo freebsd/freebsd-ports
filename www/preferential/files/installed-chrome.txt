@@ -1,0 +1,2 @@
+content,install,url,jar:resource:/chrome/preferential.jar!/content/
+locale,install,url,jar:resource:/chrome/preferential.jar!/locale/en-US/preferential/
