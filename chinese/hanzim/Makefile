@@ -14,6 +14,9 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 
+BUILD_DEPENDS+=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
+RUN_DEPENDS+=	wish8.3:${PORTSDIR}/x11-toolkits/tk83
+
 WRKSRC=		${WRKDIR}/Hanzim
 ALL_TARGET=	# empty
 
