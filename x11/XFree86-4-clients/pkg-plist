@@ -42,6 +42,7 @@ bin/oclock
 bin/reconfig
 bin/resize
 bin/rstart
+bin/scanpci
 bin/sessreg
 bin/showrgb
 bin/smproxy
@@ -338,6 +339,8 @@ include/X11/extensions/saverproto.h
 include/X11/extensions/scrnsaver.h
 include/X11/extensions/shape.h
 include/X11/extensions/sync.h
+include/X11/extensions/xf86vmode.h
+include/X11/extensions/xf86vmstr.h
 include/X11/extensions/xtestext1.h
 include/X11/fonts/FS.h
 include/X11/fonts/FSlib.h
@@ -373,6 +376,8 @@ lib/libXtst.so.6.0
 lib/liblbxXext.a
 lib/liboldX.a
 lib/liboldX.so.6.0
+lib/lint/llib-lXau.ln
+lib/lint/llib-lXdmcp.ln
 @exec ldconfig -m %B
 @mode 444
 lib/X11/Cards
@@ -398,6 +403,7 @@ lib/X11/app-defaults/XTerm
 lib/X11/app-defaults/Xfd
 lib/X11/app-defaults/Xmag
 lib/X11/app-defaults/Xmh
+lib/X11/app-defaults/Xvidtune
 lib/X11/config/Amoeba.cf
 lib/X11/config/DGUX.cf
 lib/X11/config/FreeBSD.cf
@@ -439,6 +445,7 @@ lib/X11/config/lnxLib.tmpl
 lib/X11/config/lnxdoc.rules
 lib/X11/config/lnxdoc.tmpl
 lib/X11/config/luna.cf
+lib/X11/config/lynx.cf
 lib/X11/config/macII.cf
 lib/X11/config/mach.cf
 lib/X11/config/minix.cf
@@ -480,11 +487,13 @@ lib/X11/doc/AccelCards
 lib/X11/doc/COPYRIGHT
 lib/X11/doc/Devices
 lib/X11/doc/INSTALL
+lib/X11/doc/LbxproxyOnly
 lib/X11/doc/Monitors
 lib/X11/doc/README
 lib/X11/doc/README.Config
 lib/X11/doc/README.FreeBSD
 lib/X11/doc/README.LinkKit
+lib/X11/doc/README.Mach64
 lib/X11/doc/README.Oak
 lib/X11/doc/README.P9000
 lib/X11/doc/README.S3
@@ -492,12 +501,14 @@ lib/X11/doc/README.Video7
 lib/X11/doc/README.W32
 lib/X11/doc/README.WstDig
 lib/X11/doc/README.agx
+lib/X11/doc/README.ark
 lib/X11/doc/README.ati
 lib/X11/doc/README.cirrus
 lib/X11/doc/README.clkprog
 lib/X11/doc/README.trident
 lib/X11/doc/README.tseng
 lib/X11/doc/ServersOnly
+lib/X11/doc/VGADriver.Doc
 lib/X11/doc/VideoModes.doc
 lib/X11/doc/modeDB.txt
 lib/X11/etc/ati.test.c
@@ -1041,14 +1052,11 @@ lib/X11/rstart/commands/x11r6/Terminal
 @mode 644
 lib/X11/rstart/contexts/@List
 lib/X11/rstart/contexts/default
+@mode 755
 lib/X11/rstart/contexts/x
 lib/X11/rstart/contexts/x11
-lib/X11/rstart/contexts/x11r6
-@mode 755
-usr/X11R6/lib/X11/rstart/contexts/x
-usr/X11R6/lib/X11/rstart/contexts/x11
 @mode 644
-usr/X11R6/lib/X11/rstart/contexts/x11r6
+lib/X11/rstart/contexts/x11r6
 @mode 444
 lib/X11/twm/system.twmrc
 @mode 755
@@ -1072,6 +1080,7 @@ man/man1/XF86_8514.1.gz
 man/man1/XF86_AGX.1.gz 
 man/man1/XF86_Accel.1.gz
 man/man1/XF86_Mach32.1.gz 
+man/man1/XF86_Mach64.1.gz
 man/man1/XF86_Mach8.1.gz 
 man/man1/XF86_Mono.1.gz
 man/man1/XF86_P9000.1.gz 
@@ -1098,6 +1107,7 @@ man/man1/kbd_mode.1.gz
 man/man1/lbxproxy.1.gz
 man/man1/lndir.1.gz
 man/man1/makedepend.1.gz
+man/man1/makestrs.1.gz
 man/man1/mkdirhier.1.gz
 man/man1/mkfontdir.1.gz
 man/man1/oclock.1.gz
@@ -1105,6 +1115,7 @@ man/man1/reconfig.1.gz
 man/man1/resize.1.gz
 man/man1/rstart.1.gz
 man/man1/rstartd.1.gz
+man/man1/sessreg.1.gz
 man/man1/showrgb.1.gz
 man/man1/smproxy.1.gz
 man/man1/startx.1.gz
@@ -1144,6 +1155,7 @@ man/man1/xsm.1.gz
 man/man1/xsmclient.1.gz
 man/man1/xstdcmap.1.gz
 man/man1/xterm.1.gz
+man/man1/xvidtune.1.gz
 man/man1/xwd.1.gz
 man/man1/xwininfo.1.gz
 man/man1/xwud.1.gz
