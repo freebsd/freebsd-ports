@@ -26,7 +26,7 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 post-patch:
 .for file in Makefile.inc pim6dd/pathnames.h pim6dd/pim6dd.8
-	@${PERL} -pi.orig -e 's./usr/local/v6.${PREFIX}.g' ${WRKSRC}/${file}
+	@${REINPLACE_CMD} -e 's./usr/local/v6.${PREFIX}.g' ${WRKSRC}/${file}
 .endfor
 
 post-install:
