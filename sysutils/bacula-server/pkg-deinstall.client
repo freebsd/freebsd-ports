@@ -14,6 +14,11 @@ case "$2" in
             -e '}' /etc/services > $TMPFILE
         mv -f $TMPFILE /etc/services
 
-        echo "Check if ${BACULA_DIR} is empty and delete it to permanently remove the bacula port"
+	if [ -d ${BACULA_DIR} ]; then
+	    rmdir ${BACULA_DIR};
+	fi
+	if [ -d ${BACULA_DIR} ]; then
+	    echo "Check if ${BACULA_DIR} is empty and delete it to permanently remove the bacula port"
+	fi
         ;;
 esac

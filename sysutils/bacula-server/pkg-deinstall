@@ -14,13 +14,19 @@ case "$2" in
             -e '}' /etc/services > $TMPFILE
         mv -f $TMPFILE /etc/services
 
+	if [ -d ${BACULA_DIR} ]; then
+	    rmdir ${BACULA_DIR};
+	fi
+	if [ -d ${BACULA_DIR} ]; then
+	    echo "Check if ${BACULA_DIR} is empty and delete it to permanently remove the bacula port"
+	fi
+
 	# Note how to delete UID/GID
 	USER=bacula
 	GROUP=${USER}
 	if pw usershow "${USER}" 2>/dev/null 1>&2; then
 	    echo "To delete Bacula user  permanently, use 'pw userdel  ${USER}'"
 	    echo "To delete Bacula group permanently, use 'pw groupdel ${GROUP}'"
-	    echo "Check if ${BACULA_DIR} is empty and delete it to permanently remove the port"
 	fi
         ;;
 esac
