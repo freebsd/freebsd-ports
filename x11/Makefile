@@ -65,6 +65,7 @@
     SUBDIR += kdelibs3
     SUBDIR += keylaunch
     SUBDIR += launch.app
+    SUBDIR += libcapplet
     SUBDIR += libdnd
     SUBDIR += libgnome
     SUBDIR += libhelp
