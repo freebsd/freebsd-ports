@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION=	20010228.2
+PORTVERSION=	20010228.3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
 		ftp://ftp.aet.tu-cottbus.de/pub/postfix_tls/%SUBDIR%/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
 		ftp://ftp.samurai.com/pub/postfix/official/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/postfix/official/&,}
 MASTER_SITE_SUBDIR= . old related/postfix
-DISTNAME=	postfix-20010228-pl02
+DISTNAME=	postfix-20010228-pl03
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dwcjr@FreeBSD.org
