@@ -77,7 +77,9 @@ WITH_HTTP_PORT?=	80
 
 .if defined(WITHOUT_IPV6)
 CONFIGURE_ARGS+=	--disable-ipv6
-.elif !defined(WITH_IPV6_V6ONLY)
+.elif defined(WITH_IPV6_V6ONLY) && defined(WITHOUT_V4MAPPED)
+CONFIGURE_ARGS+=	--disable-v4-mapped
+.else
 CONFIGURE_ARGS+=	--enable-v4-mapped
 .endif
 
