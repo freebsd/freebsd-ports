@@ -55,6 +55,7 @@
     SUBDIR += movemail
     SUBDIR += mreport
     SUBDIR += mutt
+    SUBDIR += muttzilla
     SUBDIR += newmail
     SUBDIR += nmh
     SUBDIR += p5-IMAP-Admin
