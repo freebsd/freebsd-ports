@@ -1,9 +1,13 @@
 System/Applications/Gorm.app/Gorm
-System/Applications/Gorm.app/Resources/0Menus.palette/%%NOFLAT%%0Menus
+System/Applications/Gorm.app/Resources/0Menus.palette/0Menus
+System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuAttributesInspector.gorm/data.classes
+System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuAttributesInspector.gorm/objects.gorm
+System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuItemAttributesInspector.gorm/data.classes
+System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuItemAttributesInspector.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/0Menus.palette/Resources/Info-gnustep.plist
 System/Applications/Gorm.app/Resources/0Menus.palette/Resources/MenusPalette.tiff
 System/Applications/Gorm.app/Resources/0Menus.palette/Resources/palette.table
-System/Applications/Gorm.app/Resources/1Windows.palette/%%NOFLAT%%1Windows
+System/Applications/Gorm.app/Resources/1Windows.palette/1Windows
 System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormNSWindowInspector.gorm/data.classes
 System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormNSWindowInspector.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormNSWindowSizeInspector.gorm/data.classes
@@ -12,7 +16,7 @@ System/Applications/Gorm.app/Resources/1Windows.palette/Resources/Info-gnustep.p
 System/Applications/Gorm.app/Resources/1Windows.palette/Resources/WindowDrag.tiff
 System/Applications/Gorm.app/Resources/1Windows.palette/Resources/WindowsPalette.tiff
 System/Applications/Gorm.app/Resources/1Windows.palette/Resources/palette.table
-System/Applications/Gorm.app/Resources/2Controls.palette/%%NOFLAT%%2Controls
+System/Applications/Gorm.app/Resources/2Controls.palette/2Controls
 System/Applications/Gorm.app/Resources/2Controls.palette/Resources/ControlsPalette.tiff
 System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSBoxInspector.gorm/data.classes
 System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSBoxInspector.gorm/objects.gorm
@@ -38,7 +42,7 @@ System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSTextFie
 System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSTextFieldInspector.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/2Controls.palette/Resources/Info-gnustep.plist
 System/Applications/Gorm.app/Resources/2Controls.palette/Resources/palette.table
-System/Applications/Gorm.app/Resources/3Containers.palette/%%NOFLAT%%3Containers
+System/Applications/Gorm.app/Resources/3Containers.palette/3Containers
 System/Applications/Gorm.app/Resources/3Containers.palette/Resources/ContainersPalette.tiff
 System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSBrowserInspector.gorm/data.classes
 System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSBrowserInspector.gorm/objects.gorm
@@ -52,7 +56,7 @@ System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormTabView
 System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormTabViewInspector.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/3Containers.palette/Resources/Info-gnustep.plist
 System/Applications/Gorm.app/Resources/3Containers.palette/Resources/palette.table
-System/Applications/Gorm.app/Resources/4Data.palette/%%NOFLAT%%4Data
+System/Applications/Gorm.app/Resources/4Data.palette/4Data
 System/Applications/Gorm.app/Resources/4Data.palette/Resources/DataPalette.tiff
 System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSComboBoxInspector.gorm/data.classes
 System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSComboBoxInspector.gorm/objects.gorm
@@ -110,12 +114,16 @@ System/Applications/Gorm.app/Resources/GormPreferences.gorm/data.classes
 System/Applications/Gorm.app/Resources/GormPreferences.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/GormScrollViewAttributesInspector.gorm/data.classes
 System/Applications/Gorm.app/Resources/GormScrollViewAttributesInspector.gorm/objects.gorm
+System/Applications/Gorm.app/Resources/GormSetName.gorm/data.classes
+System/Applications/Gorm.app/Resources/GormSetName.gorm/Gorm.tiff
+System/Applications/Gorm.app/Resources/GormSetName.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/GormSound.tiff
 System/Applications/Gorm.app/Resources/GormSoundInspector.gorm/data.classes
 System/Applications/Gorm.app/Resources/GormSoundInspector.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/GormSourceTag.tiff
 System/Applications/Gorm.app/Resources/GormTargetTag.tiff
 System/Applications/Gorm.app/Resources/GormUnknown.tiff
+System/Applications/Gorm.app/Resources/GormView.tiff
 System/Applications/Gorm.app/Resources/GormViewSizeInspector.gorm/data.classes
 System/Applications/Gorm.app/Resources/GormViewSizeInspector.gorm/objects.gorm
 System/Applications/Gorm.app/Resources/GormWindow.tiff
@@ -152,43 +160,33 @@ System/Applications/Gorm.app/Resources/shortbutton_nib.tiff
 System/Applications/Gorm.app/Resources/tabbot_nib.tiff
 System/Applications/Gorm.app/Resources/tabtop_nib.tiff
 System/Applications/Gorm.app/Resources/titleOnly_nib.tiff
-%%GNUSTEP_STABLE%%System/Applications/Gorm.app/%%NOFLAT%%Gorm
-System/Applications/Gorm.app/%%NOFLAT%%library_paths.openapp
+System/Applications/Gorm.app/library_paths.openapp
 System/Applications/Gorm.app/stamp.make
 System/Applications/GormTest.app/GormTest
 System/Applications/GormTest.app/Resources/GormTest.desktop
 System/Applications/GormTest.app/Resources/Info-gnustep.plist
-%%GNUSTEP_STABLE%%System/Applications/GormTest.app/%%NOFLAT%%GormTest
-System/Applications/GormTest.app/%%NOFLAT%%library_paths.openapp
+System/Applications/GormTest.app/library_paths.openapp
 System/Applications/GormTest.app/stamp.make
-%%SYSTEMLIBRARY%%/Headers/InterfaceBuilder/IBApplicationAdditions.h
-%%SYSTEMLIBRARY%%/Headers/InterfaceBuilder/IBConnectors.h
-%%SYSTEMLIBRARY%%/Headers/InterfaceBuilder/IBDefines.h
-%%SYSTEMLIBRARY%%/Headers/InterfaceBuilder/IBDocuments.h
-%%SYSTEMLIBRARY%%/Headers/InterfaceBuilder/IBEditors.h
-%%SYSTEMLIBRARY%%/Headers/InterfaceBuilder/IBInspector.h
-%%SYSTEMLIBRARY%%/Headers/InterfaceBuilder/IBObjectAdditions.h
-%%SYSTEMLIBRARY%%/Headers/InterfaceBuilder/IBObjectProtocol.h
-%%SYSTEMLIBRARY%%/Headers/InterfaceBuilder/IBPalette.h
-%%SYSTEMLIBRARY%%/Headers/InterfaceBuilder/IBViewAdditions.h
-%%SYSTEMLIBRARY%%/Headers/InterfaceBuilder/InterfaceBuilder.h
-%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libGorm.so
-%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libGorm.so.1
-%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libGorm.so.1.0.0
-%%GNUSTEP_STABLE%%@dirrm %%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm %%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm %%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%
-@dirrm %%SYSTEMLIBRARY%%/Headers/InterfaceBuilder
-%%GNUSTEP_STABLE%%@dirrm System/Applications/GormTest.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm System/Applications/GormTest.app/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm System/Applications/GormTest.app/%%GNU_ARCH%%
+System/Library/Headers/InterfaceBuilder/IBApplicationAdditions.h
+System/Library/Headers/InterfaceBuilder/IBConnectors.h
+System/Library/Headers/InterfaceBuilder/IBDefines.h
+System/Library/Headers/InterfaceBuilder/IBDocuments.h
+System/Library/Headers/InterfaceBuilder/IBEditors.h
+System/Library/Headers/InterfaceBuilder/IBInspector.h
+System/Library/Headers/InterfaceBuilder/IBObjectAdditions.h
+System/Library/Headers/InterfaceBuilder/IBObjectProtocol.h
+System/Library/Headers/InterfaceBuilder/IBPalette.h
+System/Library/Headers/InterfaceBuilder/IBViewAdditions.h
+System/Library/Headers/InterfaceBuilder/InterfaceBuilder.h
+System/Library/Libraries/libGorm.so
+System/Library/Libraries/libGorm.so.1
+System/Library/Libraries/libGorm.so.1.0.0
+@dirrm System/Library/Headers/InterfaceBuilder
 @dirrm System/Applications/GormTest.app/Resources
 @dirrm System/Applications/GormTest.app
-%%GNUSTEP_STABLE%%@dirrm System/Applications/Gorm.app/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm System/Applications/Gorm.app/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm System/Applications/Gorm.app/%%GNU_ARCH%%
 @dirrm System/Applications/Gorm.app/Resources/GormViewSizeInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/GormSoundInspector.gorm
+@dirrm System/Applications/Gorm.app/Resources/GormSetName.gorm
 @dirrm System/Applications/Gorm.app/Resources/GormScrollViewAttributesInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/GormPreferences.gorm
 @dirrm System/Applications/Gorm.app/Resources/GormPrefHeaders.gorm
@@ -198,9 +196,6 @@ System/Applications/GormTest.app/stamp.make
 @dirrm System/Applications/Gorm.app/Resources/GormCustomClassInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/GormClassInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/Gorm.gorm
-%%GNUSTEP_STABLE%%@dirrm System/Applications/Gorm.app/Resources/4Data.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm System/Applications/Gorm.app/Resources/4Data.palette/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm System/Applications/Gorm.app/Resources/4Data.palette/%%GNU_ARCH%%
 @dirrm System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSTextViewInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSNumberFormatterInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSImageViewInspector.gorm
@@ -208,9 +203,6 @@ System/Applications/GormTest.app/stamp.make
 @dirrm System/Applications/Gorm.app/Resources/4Data.palette/Resources/GormNSComboBoxInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/4Data.palette/Resources
 @dirrm System/Applications/Gorm.app/Resources/4Data.palette
-%%GNUSTEP_STABLE%%@dirrm System/Applications/Gorm.app/Resources/3Containers.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm System/Applications/Gorm.app/Resources/3Containers.palette/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm System/Applications/Gorm.app/Resources/3Containers.palette/%%GNU_ARCH%%
 @dirrm System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormTabViewInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableViewInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSTableColumnSizeInspector.gorm
@@ -218,9 +210,6 @@ System/Applications/GormTest.app/stamp.make
 @dirrm System/Applications/Gorm.app/Resources/3Containers.palette/Resources/GormNSBrowserInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/3Containers.palette/Resources
 @dirrm System/Applications/Gorm.app/Resources/3Containers.palette
-%%GNUSTEP_STABLE%%@dirrm System/Applications/Gorm.app/Resources/2Controls.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm System/Applications/Gorm.app/Resources/2Controls.palette/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm System/Applications/Gorm.app/Resources/2Controls.palette/%%GNU_ARCH%%
 @dirrm System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSTextFieldInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSStepperInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSSliderInspector.gorm
@@ -234,16 +223,12 @@ System/Applications/GormTest.app/stamp.make
 @dirrm System/Applications/Gorm.app/Resources/2Controls.palette/Resources/GormNSBoxInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/2Controls.palette/Resources
 @dirrm System/Applications/Gorm.app/Resources/2Controls.palette
-%%GNUSTEP_STABLE%%@dirrm System/Applications/Gorm.app/Resources/1Windows.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm System/Applications/Gorm.app/Resources/1Windows.palette/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm System/Applications/Gorm.app/Resources/1Windows.palette/%%GNU_ARCH%%
 @dirrm System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormNSWindowSizeInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/1Windows.palette/Resources/GormNSWindowInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/1Windows.palette/Resources
 @dirrm System/Applications/Gorm.app/Resources/1Windows.palette
-%%GNUSTEP_STABLE%%@dirrm System/Applications/Gorm.app/Resources/0Menus.palette/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-%%GNUSTEP_STABLE%%@dirrm System/Applications/Gorm.app/Resources/0Menus.palette/%%GNU_ARCH%%/%%OPSYS%%
-%%GNUSTEP_STABLE%%@dirrm System/Applications/Gorm.app/Resources/0Menus.palette/%%GNU_ARCH%%
+@dirrm System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuItemAttributesInspector.gorm
+@dirrm System/Applications/Gorm.app/Resources/0Menus.palette/Resources/GormMenuAttributesInspector.gorm
 @dirrm System/Applications/Gorm.app/Resources/0Menus.palette/Resources
 @dirrm System/Applications/Gorm.app/Resources/0Menus.palette
 @dirrm System/Applications/Gorm.app/Resources

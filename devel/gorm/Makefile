@@ -6,11 +6,7 @@
 #
 
 PORTNAME=	gorm
-.if defined(WITH_GNUSTEP_DEVEL)
-PORTVERSION=	0.3.1
-.else
-PORTVERSION=	0.3.0
-.endif
+PORTVERSION=	0.4.0
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNUSTEP} \
 		ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
@@ -29,11 +25,5 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 MAKEFILE=	
 ALL_TARGET=
-
-.if defined(WITH_GNUSTEP_DEVEL)
-PLIST_SUB+=	PALETTES=System/Applications/Gorm.app/Resources
-.else
-PLIST_SUB+=	PALETTES=System/Developer/Palettes
-.endif
 
 .include <bsd.port.mk>
