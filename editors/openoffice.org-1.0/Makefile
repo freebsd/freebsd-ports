@@ -7,20 +7,32 @@
 
 PORTNAME=	openoffice
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES+=	editors
-MASTER_SITES=	ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/${PORTVERSION}/ \
+MASTER_SITES+=	ftp://sunsite.cnlab-switch.ch/mirror/OpenOffice/${PORTVERSION}/ \
 		http://niihau.student.utwente.nl/openoffice/${PORTVERSION}/ \
 		http://sf1.mirror.openoffice.org/${PORTVERSION}/ \
 		ftp://gd.tuwien.ac.at/office/openoffice/${PORTVERSION}/ \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/ \
-		http://people.freebsd.org/~mbr/distfiles/
-DISTFILES=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z \
-		oo_moz1.0RC3_includes.tgz ${MOZILLADIST}
+		http://people.freebsd.org/~mbr/distfiles/ \
+		http://dict.progbits.com/
+DISTFILES+=	OOo_${PORTVERSION}_source.tar.bz2 gpc231.tar.Z \
+		oo_moz_1.0_includes.tgz ${MOZILLADIST}
+
+.if !defined(LANG_EXT)
+LANG_EXT=01
+EXTRACT_LANGDIST+=	en_CA.zip en_GB.zip
+.endif
+
+DISTFILES+=		${EXTRACT_LANGDIST}
 
 SORT?=	/usr/bin/sort
+CUT?=	/usr/bin/cut
 
 .include <bsd.port.pre.mk>
 
+INSTALLATION_BASEDIR=	OpenOffice.org1.0
+DIST_SUBDIR=		openoffice
 #
 # configuration for language specific slave ports
 #
@@ -34,8 +46,6 @@ PKGNAMEPREFIX=	${LANG_PKGNAME}-
 CONFIGURE_ARGS+=	--with-lang=${LANG_CONFIGURE_ARG},ENUS
 .endif
 
-INSTALLATION_BASEDIR=	OpenOffice.org1.0
-
 .if exists(${.CURDIR}/pkg-comment)
 COMMENT=	${.CURDIR}/pkg-comment
 .endif
@@ -43,10 +53,6 @@ COMMENT=	${.CURDIR}/pkg-comment
 .if exists(${.CURDIR}/pkg-descr)
 DESCR=	${.CURDIR}/pkg-descr
 .endif
-.endif
-
-.if !defined(LANG_EXT)
-LANG_EXT=01
 .endif
 
 .if ${OSVERSION} < 500000
@@ -79,7 +85,7 @@ MOZILLADIST=	oo_moz1.0RC3_${ARCH}_FreeBSD-5-gcc3.1-system.tar.gz
 .endif
 .else
 .if defined(USE_GCC) && ${USE_GCC} == 3.1
-MOZILLADIST=	oo_moz1.0RC3_${ARCH}_FreeBSD-4-gcc3.1-ports.tar.gz
+MOZILLADIST=	oo_moz_1.0_i386_FreeBSD-4-gcc3.1-ports.tar.gz
 .else
 MOZILLADIST=	oo_moz1.0RC3_${ARCH}_FreeBSD-4-gcc2.95-system.tar.gz
 .endif
@@ -92,6 +98,7 @@ MAINTAINER=	openoffice@FreeBSD.org
 BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
 .endif
 BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
+BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk13
 BUILD_DEPENDS+=	imake:${PORTSDIR}/devel/imake-4
 .if !defined(DISPLAY)
@@ -103,13 +110,17 @@ USE_XLIB=	yes
 USE_BZIP2=	yes
 USE_BISON=	yes
 USE_GMAKE=	yes
+
 EXTRACT_BEFORE_ARGS_R= -dc
 EXTRACT_AFTER_ARGS_R= | ${TAR} -xf -
 EXTRACT_CMD_R= ${GZIP_CMD}
-EXTRACT_REST=	gpc231.tar.Z ${MOZILLADIST} oo_moz1.0RC3_includes.tgz
+EXTRACT_CMD_L?=	unzip
+EXTRACT_BEFORE_ARGS_L?=	-q -o
+EXTRACT_AFTER_ARGS_L?=	-d ${WRKDIR}
+EXTRACT_REST=	gpc231.tar.Z ${MOZILLADIST} oo_moz_1.0_includes.tgz
 
-JDK13DIR?=	${LOCALBASE}/jdk1.3.1
-JAVAVM=		${JDK13DIR}/bin/java
+JDK13DIR?=      ${LOCALBASE}/jdk1.3.1
+JAVAVM=         ${JDK13DIR}/bin/java
 
 GNU_CONFIGURE=	yes
 USE_AUTOCONF=	yes
@@ -330,15 +341,27 @@ do-install:
 
 install-user:
 	@-SAL_IGNOREXERRORS=1 PATH="/bin:${PATH}" \
-		${PREFIX}/OpenOffice.org1.0/program/setup
+		${PREFIX}/${INSTALLATION_BASEDIR}/program/setup
 
 # configuration for language specific slave ports
-.if defined(LANG_PKGNAME)
 post-install:
+	@${ECHO_MSG} "===>  Add spelling dictionaries";
+	@for file in ${EXTRACT_LANGDIST}; do \
+		if ! (cd ${PREFIX}/${INSTALLATION_BASEDIR}/user/wordbook && ${EXTRACT_CMD_L} \
+			${EXTRACT_BEFORE_ARGS_L} \
+			${_DISTDIR}/$$file ${EXTRACT_AFTER_ARGS_L}) ; \
+		then \
+			exit 1; \
+		fi ; \
+		ABRV=`${ECHO_CMD} $$file | ${SED} -e 's|\.zip||'`; \
+		COUNTRY=`${ECHO_CMD} $$ABRV | ${SED} -e 's|_.*||'`; \
+		LANGUAGE=`${ECHO_CMD} $$ABRV | ${SED} -e 's|.*_||' | ${CUT} -c 1,2`; \
+		${ECHO_CMD} "DICT $$COUNTRY $$LANGUAGE $$ABRV" >> \
+			${PREFIX}/${INSTALLATION_BASEDIR}/user/wordbook/dictionary.lst ; \
+	done
 	@cd ${PREFIX} && ${FIND} -s ${INSTALLATION_BASEDIR} -type f > ${TMPPLIST}
 	@cd ${PREFIX} && ${FIND} -s ${INSTALLATION_BASEDIR} -type l >> ${TMPPLIST}
 	@cd ${PREFIX} && ${FIND} -s ${INSTALLATION_BASEDIR} -type d > ${WRKDIR}/dir.tmp
 	@${SORT} -r ${WRKDIR}/dir.tmp | ${XARGS} -n 1 ${ECHO_CMD} @dirrm >> ${TMPPLIST}
-.endif
 
 .include <bsd.port.post.mk>

@@ -9,6 +9,7 @@ CATEGORIES=	french
 
 LANG_PKGNAME=	fr
 LANG_EXT=	33
+EXTRACT_LANGDIST+=	fr_FR.zip
 LANG_CONFIGURE_ARG=	FREN
 MASTERDIR=	${.CURDIR}/../../editors/openoffice
 
