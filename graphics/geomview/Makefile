@@ -7,14 +7,13 @@
 
 PORTNAME=	geomview
 PORTVERSION=	1.8.1
-CATEGORIES=	graphics tk83
+PORTREVISION=	1
+CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	geomview
 
 MAINTAINER=	bms@FreeBSD.org
 COMMENT=	An interactive viewer for 3- and 4-D geometric objects
-
-LIB_DEPENDS=	tk83.1:${PORTSDIR}/x11-toolkits/tk83
 
 USE_MOTIF=	yes
 USE_X_PREFIX=	yes
