@@ -6029,6 +6029,7 @@ p5-Class-DBI-AsForm	ports/databases/p5-Class-DBI-AsForm
 p5-Class-DBI-BaseDSN	ports/databases/p5-Class-DBI-BaseDSN
 p5-Class-DBI-FromCGI	ports/databases/p5-Class-DBI-FromCGI
 p5-Class-DBI-Loader	ports/databases/p5-Class-DBI-Loader
+p5-Class-DBI-Loader-Relationship	ports/databases/p5-Class-DBI-Loader-Relationship
 p5-Class-DBI-Oracle	ports/databases/p5-Class-DBI-Oracle
 p5-Class-DBI-Pager	ports/databases/p5-Class-DBI-Pager
 p5-Class-DBI-Pg		ports/databases/p5-Class-DBI-Pg
