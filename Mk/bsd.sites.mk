@@ -201,6 +201,7 @@ MASTER_SITE_GNOME+=	\
 	ftp://ftp.kddlabs.co.jp/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/X/gnome/%SUBDIR%/ \
 	http://mirror.aarnet.edu.au/pub/GNOME/%SUBDIR%/ \
+	ftp://ftp.tuwien.ac.at/linux/gnome.org/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/gnome/&,} \
 	ftp://ftp.cse.buffalo.edu/pub/Gnome/%SUBDIR%/ \
 
@@ -221,6 +222,7 @@ MASTER_SITE_GNU+=	\
 	ftp://ftp.informatik.hu-berlin.de/pub/gnu/%SUBDIR%/ \
 	ftp://ftp.rediris.es/mirror/gnu/%SUBDIR%/ \
 	ftp://ftp.lip6.fr/pub/gnu/%SUBDIR%/ \
+	ftp://ftp.tuwien.ac.at/linux/gnu/gnusrc/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/gnu/%SUBDIR%/
 
 MASTER_SITE_GNUPG+= 	\
@@ -452,6 +454,7 @@ MASTER_SITE_SOURCEFORGE+= \
 	http://us.dl.sourceforge.net/%SUBDIR%/ \
 	http://eu.dl.sourceforge.net/%SUBDIR%/ \
 	ftp://us.dl.sourceforge.net/pub/sourceforge/%SUBDIR%/ \
+	ftp://gd.tuwien.ac.at/linux/sourceforge/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/sourceforge/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/sourceforge/%SUBDIR%/
 
@@ -494,6 +497,7 @@ MASTER_SITE_TCLTK+= \
 	ftp://ftp.kddlabs.co.jp/lang/tcl/ftp.scriptics.com/%SUBDIR%/ \
 	ftp://ftp.srcc.msu.su/mirror/ftp.scriptics.com/pub/tcl/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/ftp.scriptics.com/pub/tcl/%SUBDIR%/ \
+	ftp://gd.tuwien.ac.at/languages/tcl/scriptics/%SUBDIR%/ \
 	ftp://sunsite.org.uk/Mirrors/ftp.scriptics.com/pub/tcl/%SUBDIR%/
 
 MASTER_SITE_TEX_CTAN+=  \
@@ -507,12 +511,12 @@ MASTER_SITE_TEX_CTAN+=  \
 	ftp://sunsite.auc.dk/pub/tex/ctan/%SUBDIR%/ \
 	ftp://ctan.tug.org/tex-archive/%SUBDIR%/ \
 	ftp://ftp.dante.de/tex-archive/%SUBDIR%/ \
+	ftp://gd.tuwien.ac.at/publishing/tex/CTAN/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/CTAN/&,} \
 	ftp://ftp.chg.ru/pub/TeX/CTAN/%SUBDIR%/
 
 MASTER_SITE_THEMES+= \
 	ftp://ftp.themes.org/pub/themes/%SUBDIR%/ \
-	ftp://ftp.tuwien.ac.at/opsys/linux/themes.org/%SUBDIR%/ \
 	ftp://ftp.debian.org/pub/mirrors/themes.org/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/X11/themes/%SUBDIR%/
 
@@ -530,6 +534,7 @@ MASTER_SITE_WINDOWMAKER+= \
 	ftp://ftp.kddlabs.co.jp/X11/window_managers/windowmaker/%SUBDIR%/ \
 	ftp://ftp.ameth.org/pub/mirrors/ftp.windowmaker.org/%SUBDIR%/ \
 	ftp://ftp.minet.net/pub/windowmaker/%SUBDIR%/ \
+	ftp://gd.tuwien.ac.at/hci/windowmaker/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/X/WindowMaker/%SUBDIR%/ \
 	ftp://ftp.chg.ru/pub/X11/windowmanagers/windowmaker/%SUBDIR%/
 
@@ -561,6 +566,7 @@ MASTER_SITE_XEMACS+= \
 	ftp://ftp.lab.kdd.co.jp/xemacs/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/unix/editor/xemacs/%SUBDIR%/ \
 	ftp://ftp.th-darmstadt.de/pub/editors/xemacs/%SUBDIR%/ \
+	ftp://gd.tuwien.ac.at/editors/xemacs/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,text/xemacs/&,}
 
 MASTER_SITE_XFREE+= \
