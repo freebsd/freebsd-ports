@@ -20,9 +20,8 @@
 %%LIECE_ETCDIR%%/icons/reload.xpm
 %%LIECE_ETCDIR%%/icons/search.xpm
 %%LIECE_ETCDIR%%/icons/stop.xpm
-%%LIECE_ETCDIR%%/po/ja_JP.EUC/LC_MESSAGES/liece.mo
-%%LIECE_ETCDIR%%/po/ja.po
-@exec ln -sf ja_JP.EUC %D/%%LIECE_ETCDIR%%/po/ja
+%%LIECE_ETCDIR%%/locale/ja/LC_MESSAGES/liece.mo
+%%LIECE_ETCDIR%%/locale/ja_JP.EUC
 %%LIECE_ETCDIR%%/styles/bottom
 %%LIECE_ETCDIR%%/styles/middle
 %%LIECE_ETCDIR%%/styles/top
@@ -34,10 +33,9 @@
 %%PORTDOCS%%@dirrm %%LIECE_ETCDIR%%/doc
 %%PORTDOCS%%%%LIECE_ETCDIR%%/sample.dot.emacs
 @dirrm %%LIECE_ETCDIR%%/icons
-@dirrm %%LIECE_ETCDIR%%/po/ja_JP.EUC/LC_MESSAGES
-@dirrm %%LIECE_ETCDIR%%/po/ja_JP.EUC
-@unexec test -h %D/%%LIECE_ETCDIR%%/po/ja && rm -f %D/%%LIECE_ETCDIR%%/po/ja
-@dirrm %%LIECE_ETCDIR%%/po
+@dirrm %%LIECE_ETCDIR%%/locale/ja/LC_MESSAGES
+@dirrm %%LIECE_ETCDIR%%/locale/ja
+@dirrm %%LIECE_ETCDIR%%/locale
 @dirrm %%LIECE_ETCDIR%%/styles
 @dirrm %%LIECE_ETCDIR%%
 %%XEMACS_ONLY%%%%LISPDIR%%/auto-autoloads.el
