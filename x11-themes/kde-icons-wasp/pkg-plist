@@ -2111,6 +2111,7 @@ share/icons/%%DIRNAME%%/extras/splash/WaspWare/splash_top.png
 share/icons/%%DIRNAME%%/index.desktop
 share/icons/%%DIRNAME%%/index.desktop.bak
 share/icons/%%DIRNAME%%/index.theme
+share/icons/%%DIRNAME%%/index.theme.bak
 share/icons/%%DIRNAME%%/scalable/actions/1downarrow.svg
 share/icons/%%DIRNAME%%/scalable/actions/1leftarrow.svg
 share/icons/%%DIRNAME%%/scalable/actions/1rightarrow.svg
