@@ -33,12 +33,18 @@ DISTNAME=	apache_${PORTVERSION}
 
 MAINTAINER=	ache@freebsd.org
 
-LIB_DEPENDS+=   expat.4:${PORTSDIR}/textproc/expat2
-USE_PERL5=	yes
+USE_PERL5=      yes
 
 DATADIR=${PREFIX}/www
 DOCUMENT_ROOT=${DATADIR}/data
 DEFAULT_PATH=/bin:/usr/bin:${PREFIX}/bin
+
+.if defined(WITHOUT_APACHE_EXPAT) && ${WITHOUT_APACHE_EXPAT} == yes
+EXPAT_CONF+=    --disable-rule=EXPAT
+.else
+LIB_DEPENDS+=   expat.4:${PORTSDIR}/textproc/expat2
+EXPAT_CONF+=    --enable-rule=EXPAT
+.endif
 
 .if defined(WITH_APACHE_SUEXEC) && ${WITH_APACHE_SUEXEC} == yes
 
@@ -72,7 +78,7 @@ SUEXEC_MAN=
 
 .endif  # !SUEXEC
 
-HAS_CONFIGURE=	yes
+HAS_CONFIGURE=  yes
 # += for child ports
 CONFIGURE_ARGS+=	\
 		--prefix=${PREFIX} \
@@ -82,12 +88,12 @@ CONFIGURE_ARGS+=	\
 		--with-layout=FreeBSD \
 		--without-confadjust \
 		--enable-module=most \
-		--enable-rule=EXPAT \
 		--enable-module=auth_db \
 		--enable-module=mmap_static \
 		--disable-module=auth_dbm \
 		--enable-shared=max \
-		${SUEXEC_CONF}
+		${SUEXEC_CONF} \
+		${EXPAT_CONF}
 
 CFLAGS+=-DDOCUMENT_LOCATION='\"${DOCUMENT_ROOT}\"' \
 	-DDEFAULT_PATH='\"${DEFAULT_PATH}\"'
@@ -102,16 +108,21 @@ CFLAGS+=-DHARD_SERVER_LIMIT=512
 .endif
 
 #
-# Set WITH_APACHE_PERF_TUNING env. variable to YES to get maximum performance
+# Set WITH_APACHE_PERF_TUNING env. variable to yes to get maximum performance
 #
-.if defined(WITH_APACHE_PERF_TUNING) && ${WITH_APACHE_PERF_TUNING} == YES
+.if defined(WITH_APACHE_PERF_TUNING) && ${WITH_APACHE_PERF_TUNING} == yes
 CFLAGS+=-DBUFFERED_LOGS
+# Don't use OPTIM below, it is inserted _before_ CFLAGS
 CFLAGS+=-O6 -fomit-frame-pointer
 .endif
 
-CONFIGURE_ENV=  OPTIM='${OPTIM}' LD_SHLIB='${CC}' LIBS='${LIBS}' \
+CONFIGURE_ENV=  OPTIM='${OPTIM}' LD_SHLIB='${CC}' LIBS='${LIBS}'
+
+.if !defined(WITHOUT_APACHE_EXPAT) || ${WITHOUT_APACHE_EXPAT} != yes
+CONFIGURE_ENV+= \
 		INCLUDES=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
+.endif
 
 MAN1=		dbmmanage.1 htdigest.1 htpasswd.1
 MAN8=           ab.8 apachectl.8 apxs.8 httpd.8 logresolve.8 rotatelogs.8 \
