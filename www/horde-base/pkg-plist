@@ -1,0 +1,335 @@
+%%PORTDOCS%%share/doc/horde/CHANGES
+%%PORTDOCS%%share/doc/horde/COPYING
+%%PORTDOCS%%share/doc/horde/CREDITS
+%%PORTDOCS%%share/doc/horde/DATABASE
+%%PORTDOCS%%share/doc/horde/HELP
+%%PORTDOCS%%share/doc/horde/INSTALL
+%%PORTDOCS%%share/doc/horde/README
+%%PORTDOCS%%share/doc/horde/SECURITY
+%%HORDESBIN%%/horde_setup.sh
+%%HORDESBIN%%/horde_secure.sh
+%%HORDEDIR%%/config/horde.php3.dist
+%%HORDEDIR%%/graphics/bottom_left_corner.gif
+%%HORDEDIR%%/graphics/bottom_right_corner.gif
+%%HORDEDIR%%/graphics/close.gif
+%%HORDEDIR%%/graphics/edit.gif
+%%HORDEDIR%%/graphics/exclamation.gif
+%%HORDEDIR%%/graphics/filler_block.gif
+%%HORDEDIR%%/graphics/help.gif
+%%HORDEDIR%%/graphics/help1.gif
+%%HORDEDIR%%/graphics/horde.small.gif
+%%HORDEDIR%%/graphics/login.gif
+%%HORDEDIR%%/graphics/logout.gif
+%%HORDEDIR%%/graphics/search.gif
+%%HORDEDIR%%/graphics/thumbsup.gif
+%%HORDEDIR%%/graphics/top_left_corner.gif
+%%HORDEDIR%%/graphics/top_right_corner.gif
+%%HORDEDIR%%/graphics/trash.gif
+%%HORDEDIR%%/help.php3
+%%HORDEDIR%%/index.php3
+%%HORDEDIR%%/lib/horde.lib
+%%HORDEDIR%%/lib/js/browser_detect.js
+%%HORDEDIR%%/lib/js/msie_generic_help.js
+%%HORDEDIR%%/lib/js/ns_generic_help.js
+%%HORDEDIR%%/lib/mime.lib
+%%HORDEDIR%%/lib/version.php
+%%HORDEDIR%%/locale/da/status.lang
+%%HORDEDIR%%/locale/da/horde.lang
+%%HORDEDIR%%/locale/da/login.lang
+%%HORDEDIR%%/locale/da/logo.lang
+%%HORDEDIR%%/locale/da/menu.lang
+%%HORDEDIR%%/locale/da/modules.lang
+%%HORDEDIR%%/locale/da/problem.lang
+%%HORDEDIR%%/locale/da/setup.lang
+%%HORDEDIR%%/locale/da/signup.help
+%%HORDEDIR%%/locale/da/signup.lang
+%%HORDEDIR%%/locale/da/help.lang
+%%HORDEDIR%%/locale/de/help.lang
+%%HORDEDIR%%/locale/de/horde.lang
+%%HORDEDIR%%/locale/de/login.lang
+%%HORDEDIR%%/locale/de/logo.lang
+%%HORDEDIR%%/locale/de/menu.lang
+%%HORDEDIR%%/locale/de/modules.lang
+%%HORDEDIR%%/locale/de/problem.lang
+%%HORDEDIR%%/locale/de/setup.lang
+%%HORDEDIR%%/locale/de/signup.help
+%%HORDEDIR%%/locale/de/signup.lang
+%%HORDEDIR%%/locale/de/status.lang
+%%HORDEDIR%%/locale/defines/signup.help
+%%HORDEDIR%%/locale/en/help.lang
+%%HORDEDIR%%/locale/en/horde.lang
+%%HORDEDIR%%/locale/en/login.lang
+%%HORDEDIR%%/locale/en/logo.lang
+%%HORDEDIR%%/locale/en/menu.lang
+%%HORDEDIR%%/locale/en/modules.lang
+%%HORDEDIR%%/locale/en/problem.lang
+%%HORDEDIR%%/locale/en/setup.lang
+%%HORDEDIR%%/locale/en/signup.help
+%%HORDEDIR%%/locale/en/signup.lang
+%%HORDEDIR%%/locale/en/status.lang
+%%HORDEDIR%%/locale/es/help.lang
+%%HORDEDIR%%/locale/es/horde.lang
+%%HORDEDIR%%/locale/es/login.lang
+%%HORDEDIR%%/locale/es/logo.lang
+%%HORDEDIR%%/locale/es/menu.lang
+%%HORDEDIR%%/locale/es/modules.lang
+%%HORDEDIR%%/locale/es/problem.lang
+%%HORDEDIR%%/locale/es/setup.lang
+%%HORDEDIR%%/locale/es/signup.help
+%%HORDEDIR%%/locale/es/signup.lang
+%%HORDEDIR%%/locale/es/status.lang
+%%HORDEDIR%%/locale/fi/help.lang
+%%HORDEDIR%%/locale/fi/horde.lang
+%%HORDEDIR%%/locale/fi/login.lang
+%%HORDEDIR%%/locale/fi/logo.lang
+%%HORDEDIR%%/locale/fi/menu.lang
+%%HORDEDIR%%/locale/fi/modules.lang
+%%HORDEDIR%%/locale/fi/problem.lang
+%%HORDEDIR%%/locale/fi/setup.lang
+%%HORDEDIR%%/locale/fi/signup.help
+%%HORDEDIR%%/locale/fi/signup.lang
+%%HORDEDIR%%/locale/fi/status.lang
+%%HORDEDIR%%/locale/fr/help.lang
+%%HORDEDIR%%/locale/fr/horde.lang
+%%HORDEDIR%%/locale/fr/login.lang
+%%HORDEDIR%%/locale/fr/logo.lang
+%%HORDEDIR%%/locale/fr/menu.lang
+%%HORDEDIR%%/locale/fr/modules.lang
+%%HORDEDIR%%/locale/fr/problem.lang
+%%HORDEDIR%%/locale/fr/setup.lang
+%%HORDEDIR%%/locale/fr/signup.help
+%%HORDEDIR%%/locale/fr/signup.lang
+%%HORDEDIR%%/locale/fr/status.lang
+%%HORDEDIR%%/locale/it/help.lang
+%%HORDEDIR%%/locale/it/horde.lang
+%%HORDEDIR%%/locale/it/login.lang
+%%HORDEDIR%%/locale/it/logo.lang
+%%HORDEDIR%%/locale/it/menu.lang
+%%HORDEDIR%%/locale/it/modules.lang
+%%HORDEDIR%%/locale/it/problem.lang
+%%HORDEDIR%%/locale/it/setup.lang
+%%HORDEDIR%%/locale/it/signup.help
+%%HORDEDIR%%/locale/it/signup.lang
+%%HORDEDIR%%/locale/it/status.lang
+%%HORDEDIR%%/locale/kr/help.lang
+%%HORDEDIR%%/locale/kr/horde.lang
+%%HORDEDIR%%/locale/kr/login.lang
+%%HORDEDIR%%/locale/kr/logo.lang
+%%HORDEDIR%%/locale/kr/menu.lang
+%%HORDEDIR%%/locale/kr/modules.lang
+%%HORDEDIR%%/locale/kr/problem.lang
+%%HORDEDIR%%/locale/kr/setup.lang
+%%HORDEDIR%%/locale/kr/signup.help
+%%HORDEDIR%%/locale/kr/signup.lang
+%%HORDEDIR%%/locale/kr/status.lang
+%%HORDEDIR%%/locale/local/help.lang
+%%HORDEDIR%%/locale/local/horde.lang
+%%HORDEDIR%%/locale/local/lang.lang
+%%HORDEDIR%%/locale/local/login.lang
+%%HORDEDIR%%/locale/local/logo.lang
+%%HORDEDIR%%/locale/local/menu.lang
+%%HORDEDIR%%/locale/local/modules.lang
+%%HORDEDIR%%/locale/local/problem.lang
+%%HORDEDIR%%/locale/local/setup.lang
+%%HORDEDIR%%/locale/local/signup.help
+%%HORDEDIR%%/locale/local/signup.lang
+%%HORDEDIR%%/locale/local/status.lang
+%%HORDEDIR%%/locale/lt/help.lang
+%%HORDEDIR%%/locale/lt/horde.lang
+%%HORDEDIR%%/locale/lt/login.lang
+%%HORDEDIR%%/locale/lt/logo.lang
+%%HORDEDIR%%/locale/lt/menu.lang
+%%HORDEDIR%%/locale/lt/modules.lang
+%%HORDEDIR%%/locale/lt/problem.lang
+%%HORDEDIR%%/locale/lt/setup.lang
+%%HORDEDIR%%/locale/lt/signup.help
+%%HORDEDIR%%/locale/lt/signup.lang
+%%HORDEDIR%%/locale/lt/status.lang
+%%HORDEDIR%%/locale/nl/help.lang
+%%HORDEDIR%%/locale/nl/horde.lang
+%%HORDEDIR%%/locale/nl/login.lang
+%%HORDEDIR%%/locale/nl/logo.lang
+%%HORDEDIR%%/locale/nl/menu.lang
+%%HORDEDIR%%/locale/nl/modules.lang
+%%HORDEDIR%%/locale/nl/problem.lang
+%%HORDEDIR%%/locale/nl/setup.lang
+%%HORDEDIR%%/locale/nl/signup.help
+%%HORDEDIR%%/locale/nl/signup.lang
+%%HORDEDIR%%/locale/nl/status.lang
+%%HORDEDIR%%/locale/pt-BR/help.lang
+%%HORDEDIR%%/locale/pt-BR/horde.lang
+%%HORDEDIR%%/locale/pt-BR/login.lang
+%%HORDEDIR%%/locale/pt-BR/logo.lang
+%%HORDEDIR%%/locale/pt-BR/menu.lang
+%%HORDEDIR%%/locale/pt-BR/modules.lang
+%%HORDEDIR%%/locale/pt-BR/problem.lang
+%%HORDEDIR%%/locale/pt-BR/setup.lang
+%%HORDEDIR%%/locale/pt-BR/signup.help
+%%HORDEDIR%%/locale/pt-BR/signup.lang
+%%HORDEDIR%%/locale/pt-BR/status.lang
+%%HORDEDIR%%/locale/se/status.lang
+%%HORDEDIR%%/locale/se/horde.lang
+%%HORDEDIR%%/locale/se/login.lang
+%%HORDEDIR%%/locale/se/logo.lang
+%%HORDEDIR%%/locale/se/menu.lang
+%%HORDEDIR%%/locale/se/modules.lang
+%%HORDEDIR%%/locale/se/problem.lang
+%%HORDEDIR%%/locale/se/setup.lang
+%%HORDEDIR%%/locale/se/signup.help
+%%HORDEDIR%%/locale/se/signup.lang
+%%HORDEDIR%%/locale/se/help.lang
+%%HORDEDIR%%/locale/sk/help.lang
+%%HORDEDIR%%/locale/sk/horde.lang
+%%HORDEDIR%%/locale/sk/login.lang
+%%HORDEDIR%%/locale/sk/logo.lang
+%%HORDEDIR%%/locale/sk/menu.lang
+%%HORDEDIR%%/locale/sk/modules.lang
+%%HORDEDIR%%/locale/sk/problem.lang
+%%HORDEDIR%%/locale/sk/setup.lang
+%%HORDEDIR%%/locale/sk/signup.help
+%%HORDEDIR%%/locale/sk/signup.lang
+%%HORDEDIR%%/locale/sk/status.lang
+%%HORDEDIR%%/login.php3
+%%HORDEDIR%%/logo.php3
+%%HORDEDIR%%/menu.php3
+%%HORDEDIR%%/modules.php3
+%%PHPLIBDIR%%/README
+%%PHPLIBDIR%%/ct_dba.inc
+%%PHPLIBDIR%%/ct_dbm.inc
+%%PHPLIBDIR%%/ct_file.inc
+%%PHPLIBDIR%%/ct_informix.inc
+%%PHPLIBDIR%%/ct_ldap.inc
+%%PHPLIBDIR%%/ct_null.inc
+%%PHPLIBDIR%%/ct_shm.inc
+%%PHPLIBDIR%%/ct_split_sql.inc
+%%PHPLIBDIR%%/ct_sql.inc
+%%PHPLIBDIR%%/ct_sql_compat.inc
+%%PHPLIBDIR%%/db_msql.inc
+%%PHPLIBDIR%%/db_mssql.inc
+%%PHPLIBDIR%%/db_mysql.inc
+%%PHPLIBDIR%%/db_oci8.inc
+%%PHPLIBDIR%%/db_odbc.inc
+%%PHPLIBDIR%%/db_oracle.inc
+%%PHPLIBDIR%%/db_pgsql.inc
+%%PHPLIBDIR%%/db_sybase.inc
+%%PHPLIBDIR%%/db_usql.inc
+%%PHPLIBDIR%%/horde_loginform.ihtml
+%%PHPLIBDIR%%/horde_perminvalid.ihtml
+%%PHPLIBDIR%%/page.inc
+%%PHPLIBDIR%%/session.inc
+%%PHPLIBDIR%%/local.inc
+%%PHPLIBDIR%%/prepend.php3
+%%HORDEDIR%%/problem.php3
+%%HORDEDIR%%/scripts/add_horde_string.pl
+%%HORDEDIR%%/scripts/add_lang_string.pl
+%%HORDEDIR%%/scripts/database/INFORMIX
+%%HORDEDIR%%/scripts/database/MYSQL
+%%HORDEDIR%%/scripts/database/ORACLE
+%%HORDEDIR%%/scripts/database/POSTGRESQL
+%%HORDEDIR%%/scripts/database/SYBASE
+%%HORDEDIR%%/scripts/database/dbpasswd.sh
+%%HORDEDIR%%/scripts/database/ifmx_create.sql
+%%HORDEDIR%%/scripts/database/mysql_alter.sql
+%%HORDEDIR%%/scripts/database/mysql_create.sql
+%%HORDEDIR%%/scripts/database/mysql_drop.sql
+%%HORDEDIR%%/scripts/database/oracle_create.sql
+%%HORDEDIR%%/scripts/database/pgsql_create.sql
+%%HORDEDIR%%/scripts/database/pgsql_cuser.sh
+%%HORDEDIR%%/scripts/database/sybase_create.sql
+%%HORDEDIR%%/scripts/horde-rsync.sh
+%%HORDEDIR%%/setup.php3
+%%HORDEDIR%%/signup.php3
+%%HORDEDIR%%/status.php3
+%%HORDEDIR%%/templates/doctype.inc
+%%HORDEDIR%%/templates/form/form_hidden_elem.inc
+%%HORDEDIR%%/templates/form/form_multiselect_elem.inc
+%%HORDEDIR%%/templates/form/form_password_elem.inc
+%%HORDEDIR%%/templates/form/form_section_title.inc
+%%HORDEDIR%%/templates/form/form_text_elem.inc
+%%HORDEDIR%%/templates/form/form_true_false_elem.inc
+%%HORDEDIR%%/templates/generic-footer.inc
+%%HORDEDIR%%/templates/generic-header.inc
+%%HORDEDIR%%/templates/help/body.inc
+%%HORDEDIR%%/templates/index/frames_index.inc
+%%HORDEDIR%%/templates/index/horde_configurable.inc
+%%HORDEDIR%%/templates/index/horde_notconfigured.inc
+%%HORDEDIR%%/templates/index/imp_frames.inc
+%%HORDEDIR%%/templates/index/sub_frames_index.inc
+%%HORDEDIR%%/templates/index/unknown_browser.inc
+%%HORDEDIR%%/templates/login/login.inc
+%%HORDEDIR%%/templates/logo/horde_logo.inc
+%%HORDEDIR%%/templates/logo/logo.inc
+%%HORDEDIR%%/templates/menu/menu.inc
+%%HORDEDIR%%/templates/modules/modules.inc
+%%HORDEDIR%%/templates/problem/javascript.inc
+%%HORDEDIR%%/templates/problem/lynx_problem.inc
+%%HORDEDIR%%/templates/problem/problem.inc
+%%HORDEDIR%%/templates/setup/form_elem_desc.inc
+%%HORDEDIR%%/templates/setup/form_footer.inc
+%%HORDEDIR%%/templates/setup/form_header.inc
+%%HORDEDIR%%/templates/setup/form_hidden_elem.inc
+%%HORDEDIR%%/templates/setup/form_multiselect_elem.inc
+%%HORDEDIR%%/templates/setup/form_text_elem.inc
+%%HORDEDIR%%/templates/setup/form_true_false_elem.inc
+%%HORDEDIR%%/templates/setup/imp/database.inc
+%%HORDEDIR%%/templates/setup/imp/external_binaries.inc
+%%HORDEDIR%%/templates/setup/imp/language.inc
+%%HORDEDIR%%/templates/setup/imp/mail_server.inc
+%%HORDEDIR%%/templates/setup/imp/message_options.inc
+%%HORDEDIR%%/templates/setup/imp/new_mail_popup.inc
+%%HORDEDIR%%/templates/setup/imp/server_specific.inc
+%%HORDEDIR%%/templates/setup/imp/user_abilites.inc
+%%HORDEDIR%%/templates/setup/imp/verify_write_file.inc
+%%HORDEDIR%%/templates/setup/imp/web_server.inc
+%%HORDEDIR%%/templates/setup/imp/write_file.inc
+%%HORDEDIR%%/templates/setup/session.lib
+%%HORDEDIR%%/templates/setup/stub_form.inc
+%%HORDEDIR%%/templates/signup/lynx_signup.inc
+%%HORDEDIR%%/templates/signup/signup.inc
+%%HORDEDIR%%/templates/status/status.inc
+%%HORDEDIR%%/config/MOTD.html
+%%HORDEDIR%%/config/header.txt
+%%HORDEDIR%%/config/horde.php3
+%%HORDEDIR%%/config/html.php3
+%%HORDEDIR%%/config/lang.php3
+%%HORDEDIR%%/config/menu.txt
+%%HORDEDIR%%/config/mime.php3
+%%HORDEDIR%%/test.php3
+@dirrm %%HORDEDIR%%/templates/status
+@dirrm %%HORDEDIR%%/templates/signup
+@dirrm %%HORDEDIR%%/templates/setup/imp
+@dirrm %%HORDEDIR%%/templates/setup
+@dirrm %%HORDEDIR%%/templates/problem
+@dirrm %%HORDEDIR%%/templates/modules
+@dirrm %%HORDEDIR%%/templates/menu
+@dirrm %%HORDEDIR%%/templates/logo
+@dirrm %%HORDEDIR%%/templates/login
+@dirrm %%HORDEDIR%%/templates/index
+@dirrm %%HORDEDIR%%/templates/help
+@dirrm %%HORDEDIR%%/templates/form
+@dirrm %%HORDEDIR%%/templates
+@dirrm %%HORDEDIR%%/scripts/database
+@dirrm %%HORDEDIR%%/scripts
+@dirrm %%HORDEDIR%%/locale/sk
+@dirrm %%HORDEDIR%%/locale/se
+@dirrm %%HORDEDIR%%/locale/pt-BR
+@dirrm %%HORDEDIR%%/locale/nl
+@dirrm %%HORDEDIR%%/locale/lt
+@dirrm %%HORDEDIR%%/locale/local
+@dirrm %%HORDEDIR%%/locale/kr
+@dirrm %%HORDEDIR%%/locale/it
+@dirrm %%HORDEDIR%%/locale/fr
+@dirrm %%HORDEDIR%%/locale/fi
+@dirrm %%HORDEDIR%%/locale/es
+@dirrm %%HORDEDIR%%/locale/en
+@dirrm %%HORDEDIR%%/locale/defines
+@dirrm %%HORDEDIR%%/locale/de
+@dirrm %%HORDEDIR%%/locale/da
+@dirrm %%HORDEDIR%%/locale
+@dirrm %%HORDEDIR%%/lib/js
+@dirrm %%HORDEDIR%%/lib
+@dirrm %%HORDEDIR%%/graphics
+@dirrm %%HORDEDIR%%/config
+@dirrm %%PHPLIBDIR%%
+@dirrm %%HORDEDIR%%
+%%PORTDOCS%%@dirrm share/doc/horde
