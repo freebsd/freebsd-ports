@@ -3,12 +3,12 @@
 # Date created:		28 Nov 1997
 # Whom:			dirk.meyer@dinoex.sub.org
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/08/09 00:34:33 steve Exp $
 
 DISTNAME=	PGPMoose
 PKGNAME=	pgpmoose-1
 CATEGORIES=	news security
-MASTER_SITES=	http://www.usenix.org/~ggr/ \
+MASTER_SITES=	http://people.qualcomm.com/ggr/ \
 		ftp://ftp.dinoex.sub.de/pub/approved/
 EXTRACT_SUFX=	.tar.Z
 
