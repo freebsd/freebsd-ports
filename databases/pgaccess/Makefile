@@ -6,7 +6,7 @@
 # $FreeBSD$
 #
 
-DISTNAME=	pgaccess-0.98
+DISTNAME=	pgaccess-0.98.4
 CATEGORIES=	databases
 MASTER_SITES=	ftp://ftp.flex.ro/pub/pgaccess/
 
