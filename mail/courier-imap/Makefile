@@ -69,9 +69,11 @@ CONFIGURE_ARGS=	--without-authshadow \
 
 .if !defined(WITH_VPOPMAIL)
 CONFIGURE_ARGS+= --without-authvchkpw
+PLIST_SUB+=	VPOPMAILFLAG="@comment "
 .else
 CONFIGURE_ARGS+= --with-authvchkpw
 BUILD_DEPENDS+=	${VPOPMAILDIR}/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
+PLIST_SUB+=	VPOPMAILFLAG=""
 .endif
 
 .if defined(WITH_LDAP)
@@ -164,11 +166,11 @@ post-patch:
 		${WRKSRC}/liblock/configure
 	@${REINPLACE_CMD} -e 's|$$VPOPMAILLIBS|& -lcrypt|g' \
 		${WRKSRC}/authlib/configure
+	@${REINPLACE_CMD} -e 's|^@INSTALLAUTHMODULES@$$|& @AUTHMODULES@|' \
+		${WRKSRC}/authlib/installlist.in
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/authlib/authtest ${PREFIX}/bin/
-	${INSTALL_PROGRAM} ${WRKSRC}/authlib/authuserdb \
-	${PREFIX}/libexec/courier-imap/authlib
 .for i in imapd pop3d
 	${INSTALL_DATA} ${WRKSRC}/imap/${i}.cnf ${CONFDIR}/${i}.cnf.dist
 	${LN} -s ${LIBEXECDIR}/${i}.rc ${RCDIR}/${PORTNAME}-${i}.sh.sample
