@@ -1,0 +1,197 @@
+diff -urN xzgv-0.8/ChangeLog xzgv/ChangeLog
+--- xzgv-0.8/ChangeLog	Tue Sep 16 15:08:42 2003
++++ ChangeLog	Wed Dec 15 03:30:46 2004
+@@ -1,3 +1,13 @@
++2004-11-03  Russell Marks  <russell.marks@ntlworld.com>
++
++	* Added width/height limits to all native picture readers. This is
++	a crude (albeit effective) fix for heap overflow bugs - there may
++	yet be more subtle problems, but I can't really fix them until I
++	know they're there. :-) Thanks to Luke Macken for letting me know
++	about the heap overflow problems (in zgv). I suppose I should also
++	thank "infamous41md" for publishing the original advisory/exploit
++	(again for zgv), even if he didn't bother emailing me or anything.
++
+ 2003-09-16  Russell Marks  <russell.marks@ntlworld.com>
+ 
+ 	* Version 0.8.
+diff -urN xzgv-0.8/src/Makefile xzgv/src/Makefile
+--- xzgv-0.8/src/Makefile	Tue Jan  1 05:37:45 2002
++++ src/Makefile	Wed Dec 15 03:30:46 2004
+@@ -84,18 +84,19 @@
+ logo.o: logo.c logodata.h
+ logoconv.o: logoconv.c
+ main.o: main.c backend.h readmrf.h readgif.h readpng.h readjpeg.h \
+- readtiff.h resizepic.h rcfile.h filedetails.h gotodir.h updatetn.h \
+- confirm.h misc.h copymove.h rename.h help.h dir_icon.xpm \
++ readtiff.h readprf.h resizepic.h rcfile.h filedetails.h gotodir.h \
++ updatetn.h confirm.h misc.h copymove.h rename.h help.h dir_icon.xpm \
+  dir_icon_small.xpm file_icon.xpm file_icon_small.xpm logo.h \
+  icon-48.xpm main.h
+ misc.o: misc.c misc.h
+ rcfile.o: rcfile.c getopt.h rcfile.h rcfile_opt.h rcfile_var.h \
+  rcfile_short.h
+-readgif.o: readgif.c readgif.h
+-readjpeg.o: readjpeg.c rcfile.h readjpeg.h
+-readmrf.o: readmrf.c readmrf.h
++readgif.o: readgif.c reader.h readgif.h
++readjpeg.o: readjpeg.c rcfile.h reader.h readjpeg.h
++readmrf.o: readmrf.c reader.h readmrf.h
+ readpng.o: readpng.c readpng.h
+-readtiff.o: readtiff.c readtiff.h
++readprf.o: readprf.c reader.h readprf.h
++readtiff.o: readtiff.c reader.h readtiff.h
+ rename.o: rename.c backend.h main.h rename.h
+ resizepic.o: resizepic.c resizepic.h
+ updatetn.o: updatetn.c backend.h main.h rcfile.h dither.h resizepic.h \
+diff -urN xzgv-0.8/src/reader.h xzgv/src/reader.h
+--- xzgv-0.8/src/reader.h	Thu Jan  1 01:00:00 1970
++++ src/reader.h	Wed Dec 15 03:30:46 2004
+@@ -0,0 +1,15 @@
++/* xzgv 0.8 - picture viewer for X, with file selector.
++ * Copyright (C) 1999-2004 Russell Marks. See main.c for license details.
++ *
++ * reader.h
++ */
++
++/* range check on width and height as a crude way of avoiding overflows
++ * when calling malloc/calloc. 32767 is the obvious limit to use given that
++ * xzgv effectively imposes such a limit anyway.
++ * Adds an extra 2 to height for max-height check, partly to reflect what
++ * the check in zgv does but also to allow for readtiff.c allocating an
++ * extra line (so at least an extra 1 would have been needed in any case).
++ */
++#define WH_MAX	32767
++#define WH_BAD(w,h)	((w)<=0 || (w)>WH_MAX || (h)<=0 || ((h)+2)>WH_MAX)
+diff -urN xzgv-0.8/src/readgif.c xzgv/src/readgif.c
+--- xzgv-0.8/src/readgif.c	Sun Mar  3 04:34:32 2002
++++ src/readgif.c	Wed Dec 15 03:30:46 2004
+@@ -8,6 +8,7 @@
+ #include <string.h>
+ #include <unistd.h>
+ #include <stdlib.h>
++#include "reader.h"
+ #include "readgif.h"
+ 
+ 
+@@ -103,7 +104,7 @@
+   
+   if(local_colour_map) readcolmap(in);
+   
+-  if((image=malloc(width*height*3))==NULL)
++  if(WH_BAD(width,height) || (image=malloc(width*height*3))==NULL)
+     {
+     fclose(in);
+     return(0);
+diff -urN xzgv-0.8/src/readjpeg.c xzgv/src/readjpeg.c
+--- xzgv-0.8/src/readjpeg.c	Tue Sep 16 12:52:04 2003
++++ src/readjpeg.c	Wed Dec 15 03:30:46 2004
+@@ -13,6 +13,7 @@
+ #include <jpeglib.h>
+ 
+ #include "rcfile.h"
++#include "reader.h"
+ 
+ #include "readjpeg.h"
+ 
+@@ -265,7 +266,7 @@
+ /* this one shouldn't hurt */
+ cinfo.do_block_smoothing=FALSE;
+ 
+-if((*imagep=image=malloc(width*height*3))==NULL)
++if(WH_BAD(width,height) || (*imagep=image=malloc(width*height*3))==NULL)
+   longjmp(jerr.setjmp_buffer,1);
+ 
+ jpeg_start_decompress(&cinfo);
+diff -urN xzgv-0.8/src/readmrf.c xzgv/src/readmrf.c
+--- xzgv-0.8/src/readmrf.c	Sat Oct  7 14:26:55 2000
++++ src/readmrf.c	Wed Dec 15 03:30:46 2004
+@@ -7,6 +7,7 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdlib.h>
++#include "reader.h"
+ #include "readmrf.h"
+ 
+ 
+@@ -91,7 +92,8 @@
+ w64=(w+63)/64;
+ h64=(h+63)/64;
+ 
+-if((*bmap=malloc(w*h*3))==NULL ||
++if(WH_BAD(w64*64,h64*64) || WH_BAD(w,h) ||
++   (*bmap=malloc(w*h*3))==NULL ||
+    (image=calloc(w64*h64*64*64,1))==NULL)
+   {
+   if(*bmap) free(*bmap),*bmap=NULL;
+diff -urN xzgv-0.8/src/readpng.c xzgv/src/readpng.c
+--- xzgv-0.8/src/readpng.c	Thu Jul 10 16:13:43 2003
++++ src/readpng.c	Wed Dec 15 03:32:46 2004
+@@ -16,6 +16,7 @@
+ #include <stdlib.h>
+ #include <png.h>
+ #include <setjmp.h>	/* after png.h to avoid horrible thing in pngconf.h */
++#include "reader.h"
+ #include "readpng.h"
+ 
+ 
+@@ -129,7 +130,8 @@
+   }
+ 
+ /* allocate image memory */
+-if((*theimageptr=theimage=malloc(width*height*3))==NULL)
++if(WH_BAD(width,height) ||
++   (*theimageptr=theimage=malloc(width*height*3))==NULL)
+   {
+   png_read_end(png_ptr,info_ptr);
+   png_destroy_read_struct(&png_ptr,&info_ptr,NULL);
+diff -urN xzgv-0.8/src/readprf.c xzgv/src/readprf.c
+--- xzgv-0.8/src/readprf.c	Mon Apr  9 19:08:19 2001
++++ src/readprf.c	Wed Dec 15 03:30:46 2004
+@@ -7,6 +7,7 @@
+ #include <stdio.h>
+ #include <string.h>
+ #include <stdlib.h>
++#include "reader.h"
+ #include "readprf.h"
+ 
+ #define squaresize	64
+@@ -164,7 +165,7 @@
+   bytepp=1;
+ 
+ n=width*squaresize;
+-if((planebuf[0]=calloc(n,planes))==NULL)
++if(WH_BAD(width,height) || (planebuf[0]=calloc(n,planes))==NULL)
+   {
+   fclose(in);
+   return(0);
+@@ -173,6 +174,7 @@
+ for(f=1;f<planes;f++)
+   planebuf[f]=planebuf[f-1]+n;
+ 
++/* width/height already checked above */
+ if((*theimageptr=malloc(width*height*3))==NULL)
+   {
+   free(planebuf[0]);
+diff -urN xzgv-0.8/src/readtiff.c xzgv/src/readtiff.c
+--- xzgv-0.8/src/readtiff.c	Thu Dec 28 03:20:55 2000
++++ src/readtiff.c	Wed Dec 15 03:30:46 2004
+@@ -11,7 +11,7 @@
+ #include <setjmp.h>
+ #include <sys/file.h>  /* for open et al */
+ #include <tiffio.h>
+-
++#include "reader.h"
+ #include "readtiff.h"
+ 
+ 
+@@ -36,7 +36,8 @@
+  * spare for the flip afterwards.
+  */
+ numpix=width*height;
+-if((image=malloc(numpix*sizeof(uint32)+width*3))==NULL)
++if(WH_BAD(width,height) ||
++   (image=malloc(numpix*sizeof(uint32)+width*3))==NULL)
+   {
+   TIFFClose(in);
+   return(0);

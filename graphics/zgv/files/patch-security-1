@@ -1,0 +1,316 @@
+diff -urN zgv-5.8/ChangeLog zgv/ChangeLog
+--- zgv-5.8/ChangeLog	Mon Mar 29 05:34:03 2004
++++ ChangeLog	Sun Oct 31 15:23:27 2004
+@@ -1,3 +1,27 @@
++2004-10-31  Russell Marks  <russell.marks@ntlworld.com>
++
++	* Added width/height limits to all picture readers, 32767x32767 is
++	now the maximum image size supported (consistent with xzgv). This
++	is a crude (albeit effective) fix for heap overflow bugs - there
++	may yet be more subtle problems, but I can't really fix them until
++	I know they're there. :-) Thanks to Luke Macken for letting me
++	know about the heap overflow problems. I suppose I should also
++	thank "infamous41md" for publishing the original exploit (for the
++	XPM colours bug), even if he didn't bother emailing me or
++	anything.
++
++	* src/readxpm.c (read_xpm_file): fix for exploitable malloc() arg
++	overflow. There are several more of these in zgv, but this is the
++	easiest to fix.
++
++2004-07-08  Russell Marks  <russell.marks@ntlworld.com>
++
++	* src/readgif.c (read_gif_file): added more multiple-image (e.g.
++	animated) GIF brokenness checks than before. Previously it was
++	possible to get a segfault with the `right' file, despite there
++	already being various range checks. Thanks to Mikulas Patocka for
++	spotting this.
++
+ 2004-03-29  Russell Marks  <russell.marks@ntlworld.com>
+ 
+ 	* Version 5.8.
+diff -urN zgv-5.8/src/readbmp.c zgv/src/readbmp.c
+--- zgv-5.8/src/readbmp.c	Thu Oct  4 16:48:36 2001
++++ src/readbmp.c	Sun Oct 31 14:32:44 2004
+@@ -177,7 +177,8 @@
+   bytepp=1;
+   if ((pp->bpp == 24) && (*output_type == 3))
+     bytepp = 3;
+-  if ((work_bmap = *bmap = calloc (w * (h + 2) * bytepp,1)) == NULL)
++  if (WH_BAD(w,h) ||
++      (work_bmap = *bmap = calloc (w * (h + 2) * bytepp,1)) == NULL)
+     CLOSE_AND_RET(_PICERR_NOMEM);
+ 
+   bytes_in_image=w*h*bytepp;
+diff -urN zgv-5.8/src/readgif.c zgv/src/readgif.c
+--- zgv-5.8/src/readgif.c	Sat Mar 15 02:39:42 2003
++++ src/readgif.c	Sun Oct 31 14:31:48 2004
+@@ -491,7 +491,7 @@
+     readcolmap(in,im->cmap,lnumcols);
+     }
+   
+-  if((im->image=(byte *)malloc(width*height))==NULL)
++  if(WH_BAD(width,height) || (im->image=(byte *)malloc(width*height))==NULL)
+     {
+     fclose(in);
+     return(_PICERR_NOMEM);
+@@ -599,7 +599,8 @@
+ 
+ /* allocate main image and palette */
+ 
+-if((*theimageptr=(byte *)malloc(ginfo->width*ginfo->height))==NULL)
++if(WH_BAD(ginfo->width,ginfo->height) ||
++   (*theimageptr=(byte *)malloc(ginfo->width*ginfo->height))==NULL)
+   {
+   images_cleanup();
+   return(_PICERR_NOMEM);
+@@ -668,7 +669,11 @@
+   for(i=0;i<imagecount;i++)
+     {
+     int x,y,left,w;
+-    unsigned char *ptr1,*ptr2;
++    unsigned char *ptr1,*ptr2,*oldptr1;
++
++    /* basic width/height vs. "screen" checks, left/top handled elsewhere */
++    if(images[i]->width>swidth) images[i]->width=swidth;
++    if(images[i]->height>sheight) images[i]->height=sheight;
+     
+     /* for images after the first, we need to set the initial contents
+      * (as far as GIF is concerned, the `screen' contents) as directed
+@@ -708,20 +713,28 @@
+          */
+         }
+       }
+-    
+-    ptr1=ptr+images[i]->left+images[i]->top*swidth;
+-    ptr2=images[i]->image;
+-    
+-    for(y=0;y<images[i]->height;y++)
++
++    /* an image with left or top offscreen is broken, but relying
++     * unknowingly on the image not appearing at all. So skip it.
++     */
++    if(images[i]->left<swidth && images[i]->top<sheight)
+       {
+-      for(x=0;x<images[i]->width;x++)
+-        if(!(images[i]->gcb_control&1) ||   /* if no transparent col defined */
+-             images[i]->transparent_col!=*ptr2)
+-          *ptr1++=*ptr2++;
+-        else
+-          ptr1++,ptr2++;
++      ptr1=ptr+images[i]->left+images[i]->top*swidth;
+       
+-      ptr1+=swidth-images[i]->width;
++      for(y=0;y<images[i]->height && images[i]->top+y<sheight;y++)
++        {
++        oldptr1=ptr1;
++        ptr2=images[i]->image+y*images[i]->width;
++        
++        for(x=0;x<images[i]->width && images[i]->left+x<swidth;x++)
++          if(!(images[i]->gcb_control&1) || /* if no transparent col defined */
++               images[i]->transparent_col!=*ptr2)
++            *ptr1++=*ptr2++;
++          else
++            ptr1++,ptr2++;
++
++        ptr1=oldptr1+swidth;
++        }
+       }
+     
+     ptr+=swidth*sheight;
+diff -urN zgv-5.8/src/readjpeg.c zgv/src/readjpeg.c
+--- zgv-5.8/src/readjpeg.c	Wed Sep 27 17:28:30 2000
++++ src/readjpeg.c	Sun Oct 31 14:54:26 2004
+@@ -190,10 +190,10 @@
+   height=cinfo.output_height;
+   }
+ 
+-theimage=(byte *)malloc(pixelsize*width*height);
+-if(theimage==NULL)
++if(WH_BAD(width,height) ||
++   (theimage=(byte *)malloc(pixelsize*width*height))==NULL)
+   {
+-  jpegerr("Out of memory");
++  jpegerr("Out of memory");	/* XXX misleading if width/height are bad */
+   longjmp(jerr.setjmp_buffer,1);
+   }
+ 
+diff -urN zgv-5.8/src/readmrf.c zgv/src/readmrf.c
+--- zgv-5.8/src/readmrf.c	Wed Oct 21 07:28:23 1998
++++ src/readmrf.c	Sun Oct 31 14:56:33 2004
+@@ -103,7 +103,8 @@
+ w64=(w+63)/64;
+ h64=(h+63)/64;
+ 
+-if((*bmap=malloc(w*h))==NULL ||
++if(WH_BAD(w64*64,h64*64) || WH_BAD(w,h) ||
++   (*bmap=malloc(w*h))==NULL ||
+    (image=calloc(w64*h64*64*64,1))==NULL)
+   CLOSE_AND_RET(_PICERR_NOMEM);
+ 
+diff -urN zgv-5.8/src/readpcd.c zgv/src/readpcd.c
+--- zgv-5.8/src/readpcd.c	Thu Sep 30 01:56:59 1999
++++ src/readpcd.c	Sun Oct 31 14:57:37 2004
+@@ -39,7 +39,7 @@
+ 
+ if((*output_type)!=1)*output_type=3;
+ 
+-if((*bmap=malloc(w*(h+3-*output_type)*(*output_type)))==NULL)
++if(WH_BAD(w,h) || (*bmap=malloc(w*(h+3-*output_type)*(*output_type)))==NULL)
+   return(_PICERR_NOMEM);
+ 
+ if((*pal=malloc(768))==NULL)
+diff -urN zgv-5.8/src/readpcx.c zgv/src/readpcx.c
+--- zgv-5.8/src/readpcx.c	Wed Mar 31 00:11:36 1999
++++ src/readpcx.c	Sun Oct 31 14:59:30 2004
+@@ -127,7 +127,7 @@
+   bytemax=(1<<30);	/* we use a 'y<h' test instead for these files */
+ 
+ /* the normal +2 lines in case we're dithering a 24-bit file */
+-if((*bmap=malloc(w*(h+2)*bytepp))==NULL)
++if(WH_BAD(w,h) || (*bmap=malloc(w*(h+2)*bytepp))==NULL)
+   CLOSE_AND_RET(_PICERR_NOMEM);
+ 
+ /* need this if more than one bitplane */
+diff -urN zgv-5.8/src/readpng.c zgv/src/readpng.c
+--- zgv-5.8/src/readpng.c	Mon Jul  7 19:59:18 2003
++++ src/readpng.c	Sun Oct 31 15:00:23 2004
+@@ -223,8 +223,9 @@
+ 
+ 
+ /* allocate image memory (with two extra lines for dithering) */
+-theimage=(byte *)malloc(pixelsize*width*(height+2));
+-if(theimage==NULL) return(_PICERR_NOMEM);
++if(WH_BAD(width,height) ||
++   (theimage=(byte *)malloc(pixelsize*width*(height+2)))==NULL)
++  return(_PICERR_NOMEM);
+ 
+ 
+ ilheight=height*number_passes;
+diff -urN zgv-5.8/src/readpnm.c zgv/src/readpnm.c
+--- zgv-5.8/src/readpnm.c	Thu Jun  1 15:45:53 2000
++++ src/readpnm.c	Sun Oct 31 15:02:58 2004
+@@ -144,7 +144,7 @@
+  * 3 times as much for each line, which works out only meaning
+  * 3x as much for the last line. If you see what I mean. (!?)
+  */
+-if((*bmap=malloc(w*(h+2)*bytepp))==NULL)
++if(WH_BAD(w,h) || (*bmap=malloc(w*(h+2)*bytepp))==NULL)
+   CLOSE_AND_RET(_PICERR_NOMEM);
+ 
+ 
+@@ -294,6 +294,8 @@
+ 
+ int ditherinit(int w)
+ {
++if(WH_BAD(w+10,sizeof(int))) return(0);
++
+ ditherfinish();		/* make sure any previous mem is unallocated */
+ if((evenerr=calloc(3*(w+10),sizeof(int)))==NULL ||
+    (odderr =calloc(3*(w+10),sizeof(int)))==NULL ||
+@@ -418,7 +420,7 @@
+ if((maxval=read_next_number(in))!=255)
+   return(_PICERR_CORRUPT);
+ 
+-if((*bmap=malloc(w*h))==NULL)
++if(WH_BAD(w,h) || (*bmap=malloc(w*h))==NULL)
+   return(_PICERR_NOMEM);
+ 
+ count=fread(*bmap,1,w*h,in);
+diff -urN zgv-5.8/src/readprf.c zgv/src/readprf.c
+--- zgv-5.8/src/readprf.c	Mon Jan 15 20:31:51 2001
++++ src/readprf.c	Sun Oct 31 15:05:24 2004
+@@ -184,7 +184,7 @@
+   }
+ 
+ n=width*squaresize;
+-if((planebuf[0]=work_planebuf=calloc(n,planes))==NULL)
++if(WH_BAD(width,height) || (planebuf[0]=work_planebuf=calloc(n,planes))==NULL)
+   CLOSE_AND_RET(_PICERR_NOMEM);
+ for(f=1;f<planes;f++)
+   planebuf[f]=planebuf[f-1]+n;
+@@ -202,7 +202,9 @@
+   }
+ 
+ /* add the usual extra 2 lines in case of dithering */
+-if((*bmap=work_bmap=malloc(width*(height+2)*planes))==NULL)
++/* width/height check already done, but WTF :-) */
++if(WH_BAD(width,height) ||
++   (*bmap=work_bmap=malloc(width*(height+2)*planes))==NULL)
+   {
+   free(planebuf[0]);
+   CLOSE_AND_RET(_PICERR_NOMEM);
+diff -urN zgv-5.8/src/readtga.c zgv/src/readtga.c
+--- zgv-5.8/src/readtga.c	Wed Oct 24 17:02:24 2001
++++ src/readtga.c	Sun Oct 31 15:05:54 2004
+@@ -179,7 +179,7 @@
+  * 3 times as much for each line, which works out only meaning
+  * 3x as much for the last line. If you see what I mean. (!?)
+  */
+-if((*bmap=malloc(w*(h+2)*bytepp))==NULL)
++if(WH_BAD(w,h) || (*bmap=malloc(w*(h+2)*bytepp))==NULL)
+   CLOSE_AND_RET(_PICERR_NOMEM);
+ 
+ 
+diff -urN zgv-5.8/src/readtiff.c zgv/src/readtiff.c
+--- zgv-5.8/src/readtiff.c	Thu Jan 18 23:45:59 2001
++++ src/readtiff.c	Sun Oct 31 15:06:15 2004
+@@ -86,7 +86,8 @@
+  * certain the dithering has room.
+  */
+ numpix=width*height;
+-if((image=*bmap=work_bmap=malloc(numpix*sizeof(uint32)+width*3*2))==NULL)
++if(WH_BAD(width,height) ||
++   (image=*bmap=work_bmap=malloc(numpix*sizeof(uint32)+width*3*2))==NULL)
+   CLOSE_AND_RET(_PICERR_NOMEM);
+ 
+ /* XXX what about hffunc!? */
+diff -urN zgv-5.8/src/readxbm.c zgv/src/readxbm.c
+--- zgv-5.8/src/readxbm.c	Wed Oct 21 07:28:23 1998
++++ src/readxbm.c	Sun Oct 31 15:08:14 2004
+@@ -97,7 +97,7 @@
+ 
+ w8=(w+7)/8;
+ 
+-if((*bmap=image=malloc(w*h))==NULL)
++if(WH_BAD(w,h) || (*bmap=image=malloc(w*h))==NULL)
+   CLOSE_AND_RET(_PICERR_NOMEM);
+ 
+ /* save stuff in case of abort */
+diff -urN zgv-5.8/src/readxpm.c zgv/src/readxpm.c
+--- zgv-5.8/src/readxpm.c	Sat Jan 22 11:32:28 2000
++++ src/readxpm.c	Sun Oct 31 15:08:48 2004
+@@ -180,7 +180,7 @@
+ if(colchars!=NULL) free(colchars);
+ 
+ /* alloc colchars array */
+-if((colchars=malloc(ncols*sizeof(struct colchars_tag)))==NULL)
++if(ncols>(1<<24) || (colchars=malloc(ncols*sizeof(struct colchars_tag)))==NULL)
+   CLOSE_AND_RET(_PICERR_NOMEM);
+ 
+ 
+@@ -369,7 +369,7 @@
+  */
+ 
+ /* extra lines are in case we're dithering. */
+-if((*bmap=malloc(w*(h+2)*bytepp))==NULL)
++if(WH_BAD(w,h) || (*bmap=malloc(w*(h+2)*bytepp))==NULL)
+   CLOSE_AND_RET(_PICERR_NOMEM);
+ 
+ ptr=*bmap;
+diff -urN zgv-5.8/src/zgv.h zgv/src/zgv.h
+--- zgv-5.8/src/zgv.h	Sat Feb 21 16:31:29 2004
++++ src/zgv.h	Sun Oct 31 14:58:34 2004
+@@ -66,3 +66,12 @@
+ /* make 15/16-bit colours, used in a few different places */
+ #define GET15BITCOLOUR(r,g,b) ((((r)&0xf8)<<7)|(((g)&0xf8)<<2)|((b)>>3))
+ #define GET16BITCOLOUR(r,g,b) ((((r)&0xf8)<<8)|(((g)&0xfc)<<3)|((b)>>3))
++
++/* range check on width and height as a crude way of avoiding overflows
++ * when calling malloc/calloc. The maximum we can allow is around 37000,
++ * but 32767 at least makes it consistent with xzgv. :-)
++ * Adds an extra 2 to height for max-height check, as we usually allocate
++ * 2 more lines to allow for dithering.
++ */
++#define WH_MAX	32767
++#define WH_BAD(w,h)	((w)<=0 || (w)>WH_MAX || (h)<=0 || ((h)+2)>WH_MAX)
