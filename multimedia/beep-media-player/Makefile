@@ -7,16 +7,17 @@
 
 PORTNAME=	beep-media-player
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://linux-media.net/beep/downloads/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-pre4-2
+DISTNAME=	${PORTNAME}-${PORTVERSION}-pre5
 
 MAINTAINER=	flynn@energyhq.es.eu.org
 COMMENT=	GTK2 mp3 player
 
 LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-pre4
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-pre5
 USE_GNOME=	gtk20
 WANT_GNOME=	yes
 USE_X_PREFIX=	yes
@@ -33,7 +34,7 @@ MAN1=		beep.1
 
 INPUT_PLUGINS=	cdaudio,mpg123
 OUTPUT_PLUGINS=	OSS
-VISUALIZATION_PLUGINS=	blur_scope,sanalyzer
+VISUALIZATION_PLUGINS=	blur_scope
 
 PLIST_SUB=	DATADIR="share"
 
