@@ -36,6 +36,7 @@
     SUBDIR += hayes
     SUBDIR += kaffeine
     SUBDIR += kdemultimedia3
+    SUBDIR += kino
     SUBDIR += kmplayer
     SUBDIR += kplayer
     SUBDIR += ksubeditor
