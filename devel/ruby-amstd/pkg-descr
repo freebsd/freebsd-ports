@@ -14,5 +14,5 @@ getdep.rb: gets file dependency		to_s.rb: _name2str, _type2str
 inst.rb: helps installation		version.rb: VersionNumber class
 must.rb: must/must_have/must_be methods
 
-Author:	Minero Aoki <aamine@dp.u-netsurf.ne.jp>
-WWW:	http://www1.u-netsurf.ne.jp/~brew/mine/en/index.html
+Author:	Minero Aoki <aamine@cd.xdsl.ne.jp>
+WWW:	http://www.xdsl.ne.jp/Cd/aamine/en/index.html

@@ -8,7 +8,7 @@
 PORTNAME=	textbuf
 PORTVERSION=	0.3.8
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://www1.u-netsurf.ne.jp/~brew/mine/soft/
+MASTER_SITES=	http://www.xdsl.ne.jp/Cd/aamine/soft/
 MASTER_SITE_SUBDIR=	knu
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	ruby
