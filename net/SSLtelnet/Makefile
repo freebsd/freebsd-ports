@@ -3,11 +3,11 @@
 # Date created:		Mar 29, 1998
 # Whom:			issei@t-cnet.or.jp
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1998/04/11 15:07:05 vanilla Exp $
 
 DISTNAME=		SSLtelnet-0.11
 CATEGORIES=		net security
-MASTER_SITES=		ftp://ftp.psy.uq.oz.au:/pub/Crypto/SSLapps/
+MASTER_SITES=		ftp://ftp.psy.uq.oz.au/pub/Crypto/SSLapps/
 
 MAINTAINER=		issei@t-cnet.or.jp
 
