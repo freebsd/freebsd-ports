@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	yawmppp
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	comms windowmaker
 MASTER_SITES=	ftp://ftp.seul.org/pub/yawmppp/ \
 		http://www.dcc.unicamp.br/~guazzibe/yawmppp/arch/
