@@ -3,7 +3,7 @@
 # Date created:		18 July 1997
 # Whom:			jseger@scds.com
 #
-# $Id: Makefile,v 1.5 1998/05/21 00:42:19 jseger Exp $
+# $Id: Makefile,v 1.6 1998/07/19 05:11:59 gpalmer Exp $
 #
 
 DISTNAME=	bind-8.1.2
@@ -26,5 +26,7 @@ PATCH_ARGS?=	-d ${WRKDIR} -E ${PATCH_STRIP}
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/named/named-bootconf.pl ${PREFIX}/bin/
 	@(cd ${WRKDIR}/doc/man && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} clean all ${INSTALL_TARGET})
+	${MKDIR} ${PREFIX}/share/doc/bind8
+	${INSTALL_DATA} ${WRKDIR}/doc/html/* ${PREFIX}/share/doc/bind8
 
 .include <bsd.port.mk>

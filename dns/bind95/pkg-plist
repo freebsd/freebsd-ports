@@ -25,8 +25,22 @@ lib/libbind.a
 libexec/named-xfer
 sbin/named
 sbin/ndc
+share/doc/bind8/acl.html
+share/doc/bind8/address_list.html
+share/doc/bind8/comments.html
+share/doc/bind8/config.html
+share/doc/bind8/docdef.html
+share/doc/bind8/example.html
+share/doc/bind8/include.html
+share/doc/bind8/index.html
+share/doc/bind8/key.html
+share/doc/bind8/logging.html
+share/doc/bind8/options.html
+share/doc/bind8/server.html
+share/doc/bind8/zone.html
 share/misc/nslookup.help
 @dirrm include/bind/arpa
 @dirrm include/bind/isc
 @dirrm include/bind/sys
 @dirrm include/bind
+@dirrm share/doc/bind8
