@@ -13,7 +13,7 @@ MASTER_SITES=	ftp://ftp.nuug.no/pub/anders/distfiles/ \
 #	http://dorifer.heim3.tu-clausthal.de/~olli/omi/
 DISTNAME=	omi-alpha-9
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=     ports@FreeBSD.org
 COMMENT=	"mirror" subtrees of FTP servers
 
 ALL_TARGET=	freebsd
