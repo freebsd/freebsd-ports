@@ -8,7 +8,8 @@
 PORTNAME=	qe
 PORTVERSION=	0.0.34
 CATEGORIES=	chinese
-MASTER_SITES=	http://www.cc.ncu.edu.tw/~center5/product/qe/
+MASTER_SITES=	http://www.cc.ncu.edu.tw/~center5/product/qe/ \
+		http://freebsd.sinica.edu.tw/~statue/
 
 MAINTAINER=	statue@freebsd.sinica.edu.tw
 
