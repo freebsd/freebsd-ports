@@ -1509,6 +1509,7 @@ flexbackup	ports/sysutils/flexbackup
 fli2gif		ports/graphics/fli2gif
 flick		ports/devel/flick
 flightgear	ports/games/flightgear
+flip		ports/graphics/flip
 flog		ports/sysutils/flog
 flow-tools	ports/net/flow-tools
 flowscan	ports/net/flowscan
