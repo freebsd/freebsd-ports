@@ -22,9 +22,15 @@ PLIST_FILES=	bin/nttcp
 USE_GMAKE=	yes
 MAKE_ENV+=	OPT="${CFLAGS}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 502126
+BROKEN=		"Broken by make(1) changes on FreeBSD >= 5.x"
+.endif
+
 do-install:
 
 	${INSTALL_PROGRAM} ${WRKSRC}/nttcp ${PREFIX}/bin/
 	${INSTALL_MAN} ${WRKSRC}/nttcp.1 ${PREFIX}/man/man1/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
