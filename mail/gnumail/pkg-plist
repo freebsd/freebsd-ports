@@ -4,10 +4,14 @@ Local/Apps/GNUMail.app/Resources/Info-gnustep.plist
 Local/Apps/GNUMail.app/Resources/Magnifier.tiff
 Local/Apps/GNUMail.app/Resources/MailIcon_addresses.tiff
 Local/Apps/GNUMail.app/Resources/MailIcon_attach.tiff
+Local/Apps/GNUMail.app/Resources/MailIcon_bcc.tiff
+Local/Apps/GNUMail.app/Resources/MailIcon_bcc_remove.tiff
 Local/Apps/GNUMail.app/Resources/MailIcon_box_add.tiff
 Local/Apps/GNUMail.app/Resources/MailIcon_box_delete.tiff
 Local/Apps/GNUMail.app/Resources/MailIcon_box_open.tiff
 Local/Apps/GNUMail.app/Resources/MailIcon_box_transfer.tiff
+Local/Apps/GNUMail.app/Resources/MailIcon_cc.tiff
+Local/Apps/GNUMail.app/Resources/MailIcon_cc_remove.tiff
 Local/Apps/GNUMail.app/Resources/MailIcon_create.tiff
 Local/Apps/GNUMail.app/Resources/MailIcon_delete.tiff
 Local/Apps/GNUMail.app/Resources/MailIcon_forward.tiff
