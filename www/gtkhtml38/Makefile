@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gtkhtml
-PORTVERSION=	1.1.6
-PORTREVISION=	2
+PORTVERSION=	1.1.7
 CATEGORIES=	www gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/1.1
@@ -35,7 +34,7 @@ VERSION=	${PORTNAME}-${PORTVERSION}
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/libdata/pkgconfig/soup.pc) || !defined(WITHOUT_SOUP)
-LIB_DEPENDS+=	soup.5:${PORTSDIR}/devel/soup
+LIB_DEPENDS+=	soup.6:${PORTSDIR}/devel/soup
 .endif
 
 post-patch:
