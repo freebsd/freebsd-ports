@@ -23,7 +23,7 @@ share/aclocal/autoopts.m4
 %%DATADIR%%/fsm-trans.tpl
 %%DATADIR%%/fsm.tpl
 %%DATADIR%%/getopt.tpl
-%%DATADIR%%/libopts-22.1.13.tar.gz
+%%DATADIR%%/libopts-22.2.13.tar.gz
 %%DATADIR%%/optcode.tpl
 %%DATADIR%%/opthead.tpl
 %%DATADIR%%/options.tpl
