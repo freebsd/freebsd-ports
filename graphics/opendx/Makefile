@@ -20,6 +20,7 @@ LIB_DEPENDS=	Magick.5:${PORTSDIR}/graphics/ImageMagick \
 		tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_AUTOMAKE=	yes
+USE_BISON=	yes
 USE_GMAKE=	yes
 USE_MESA=	yes
 USE_MOTIF=	yes
