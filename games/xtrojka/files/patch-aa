@@ -1,5 +1,5 @@
---- Makefile	Sat Oct 21 17:38:22 1995
-+++ Makefile.new	Mon May 29 01:35:31 2000
+--- Makefile.orig	Sat Oct 21 22:38:22 1995
++++ Makefile	Wed Jul 12 08:50:34 2000
 @@ -8,7 +8,7 @@
  
  #	your favorite C-compiler
@@ -58,7 +58,7 @@
  #
  #
  #	main
-@@ -101,11 +105,15 @@
+@@ -101,11 +105,17 @@
  #
  #
  install:
@@ -67,8 +67,9 @@
 -	cp xtrojka.6 $(MANDIR); chmod go+r xtrojka.6; \
 -	cp xtrojka $(TARGET_DIR);chmod go+rx xtrojka; \
 -	touch $(HSFILE); chmod go+rwx $(HSFILE);
-+	echo $(HSFILE)|sed -e 's/\//\\\//g'>/tmp/hsn
-+	sed -e "s/__SCOREDIR__/`cat /tmp/hsn`/g" manpage > xtrojka.6
++	@rm -f hsn
++	echo $(HSFILE)|sed -e 's/\//\\\//g'>hsn
++	sed -e "s/__SCOREDIR__/`cat hsn`/g" manpage > xtrojka.6
 +	gzip -c xtrojka.6 >$(MANDIR)/xtrojka.6.gz
 +	cp xtrojka $(TARGET_DIR)
 +	chmod 2755 $(TARGET_DIR)/xtrojka
@@ -76,6 +77,7 @@
 +	touch $(HSFILE)
 +	chmod 664 $(HSFILE)
 +	chgrp games $(HSFILE)
++	@rm -f hsn
  	
  clean:
  	rm -rf *.o core xtrojka xtrojka.6 
