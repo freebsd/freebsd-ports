@@ -21,8 +21,5 @@ lib/netscape/nls/wr_WR.ct
 lib/netscape/nls/zh_CN.ugb
 lib/netscape/nls/zh_TW.big5
 @dirrm lib/netscape/nls
-@unexec %D/libexec/ja-netscape-3.04.setup uninstall
-libexec/ja-netscape-3.04.setup
-@exec %D/libexec/ja-netscape-3.04.setup install
 share/doc/ja-netscape-3.04/setup.doc
 @dirrm share/doc/ja-netscape-3.04
