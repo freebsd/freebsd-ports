@@ -8,10 +8,7 @@
 
 DISTNAME=	cbb-0.8.1
 CATEGORIES=	deskutils
-MASTER_SITES=	http://www.FreeBSD.org/~jedgar/distfiles/
-# Former sites that may or may not be usable in the future:
-#		ftp://ftp.me.umn.edu/pub/finance/ \
-#		ftp://ftp.fifi.org/pub/cbb/
+MASTER_SITES=	http://download.sourceforge.net/cbb/
 
 MAINTAINER=	kline@thought.org
 

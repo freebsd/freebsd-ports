@@ -5,3 +5,5 @@ simple (tab delimited) data file format and is written entirely in
 Tcl/Tk and Perl and contains no compiled code.  It provides a simple
 interface for users to add their own reports, graphs, and external
 modules without having to modify any of the CBB source.
+
+WWW: http://cbb.sourceforge.net/
