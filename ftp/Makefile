@@ -30,6 +30,7 @@
     SUBDIR += ncftp
     SUBDIR += ncftp2
     SUBDIR += ncftp3
+    SUBDIR += oftpd
     SUBDIR += omi
     SUBDIR += pavuk
     SUBDIR += proftpd
