@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	kseg
-PORTVERSION=	0.4
+PORTVERSION=	0.401
 PORTEPOCH=	1
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.mit.edu/~ibaran/
 
-MAINTAINER=	kcwu@ck.tp.edu.tw
+MAINTAINER=	kcwu@csie.org
 COMMENT=	A simulator of euclidean geometry
 
 USE_QT_VER=	3
@@ -26,10 +26,10 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/kseg ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/lib/X11/kseg
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/lib/X11/kseg
-.for TRANS in de en es fr hu it ja nb nl pt xx
+.for TRANS in cy de en es fr hu it ja nb nl pt xx
 	${INSTALL_DATA} ${WRKSRC}/kseg_${TRANS}.qm ${PREFIX}/lib/X11/kseg
 .endfor
-.for TRANS in en es it
+.for TRANS in en es fr it ja nl pt
 	${INSTALL_DATA} ${WRKSRC}/kseg_help_${TRANS}.html ${PREFIX}/lib/X11/kseg
 .endfor
 	${MKDIR} ${PREFIX}/lib/X11/kseg/examples
