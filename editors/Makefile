@@ -179,7 +179,6 @@
     SUBDIR += xemacs-devel-mule
     SUBDIR += xemacs-mule-packages
     SUBDIR += xemacs-packages
-    SUBDIR += xemacs-prog-packages
     SUBDIR += xemacs-wp-packages
     SUBDIR += xemacs21
     SUBDIR += xemacs21-mule
