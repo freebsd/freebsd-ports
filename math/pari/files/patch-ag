@@ -1,0 +1,9 @@
+--- doc/appb.tex.orig	Mon Jan 10 02:59:06 2000
++++ doc/appb.tex	Mon Jan 10 02:59:23 2000
+@@ -29,5 +29,5 @@
+ seen in detail in \secref{se:prog}, with the slight modifications explained
+ at the end of that section.
+ 
+-\bprogfile{../examples/matexp.c}
++\bprogfile{./matexp.c}
+ \vfill\eject

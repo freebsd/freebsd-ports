@@ -1,6 +1,31 @@
---- ../pari-2.0.16.beta.orig/config/Makefile.SH	Mon Jun 28 19:23:29 1999
-+++ ./config/Makefile.SH	Fri Aug 13 08:05:46 1999
-@@ -384,13 +384,13 @@
+--- config/Makefile.SH.orig	Wed Nov 17 02:12:01 1999
++++ config/Makefile.SH	Mon Jan 10 02:37:39 2000
+@@ -293,7 +293,8 @@
+ 	\$(INSTALL_DATA)    $doc/translations \$(MISCDIR)
+ 
+ install-doc:
+-	-cd $doc; \$(MAKE) all
++#	-cd $doc; \$(MAKE) all
++	-\$(INSTALL_DATA) $doc/Makefile   \$(MISCDIR)
+ 	-\$(INSTALL_DATA) $doc/paricfg.tex   \$(MISCDIR)
+ 	-\$(INSTALL_DATA) $doc/parimacro.tex \$(MISCDIR)
+ 	-\$(INSTALL_DATA) $doc/usersch1.tex \$(MISCDIR)
+@@ -301,10 +302,10 @@
+ 	-\$(INSTALL_DATA) $doc/usersch3.tex \$(MISCDIR)
+ 	-\$(INSTALL_DATA) $doc/usersch4.tex \$(MISCDIR)
+ 	-\$(INSTALL_DATA) $doc/usersch5.tex \$(MISCDIR)
+-	-\$(INSTALL_DATA) $doc/users.dvi    \$(MISCDIR)
+-	-\$(INSTALL_DATA) $doc/tutorial.dvi \$(MISCDIR)
+-	-\$(INSTALL_DATA) $doc/refcard.dvi  \$(MISCDIR)
+-	-\$(INSTALL_DATA) $doc/refcard.ps   \$(MISCDIR)
++#	-\$(INSTALL_DATA) $doc/users.dvi    \$(MISCDIR)
++#	-\$(INSTALL_DATA) $doc/tutorial.dvi \$(MISCDIR)
++#	-\$(INSTALL_DATA) $doc/refcard.dvi  \$(MISCDIR)
++#	-\$(INSTALL_DATA) $doc/refcard.ps   \$(MISCDIR)
+ 
+ install-data:
+ 	-mkdir -p \$(DATADIR)
+@@ -378,13 +379,13 @@
  
  if test -n "$emacs"; then
    cat >> $file << EOT
