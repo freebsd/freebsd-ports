@@ -544,6 +544,7 @@
     SUBDIR += py-game
     SUBDIR += py-grouch
     SUBDIR += py-htmlkit
+    SUBDIR += py-istring
     SUBDIR += py-kjbuckets
     SUBDIR += py-kqueue
     SUBDIR += py-log4py
