@@ -16,7 +16,7 @@ COMMENT=	RSS Abstraction Interface
 
 BUILD_DEPENDS=	${SITE_PERL}/XML/RSS/Parser.pm:${PORTSDIR}/textproc/p5-XML-RSS-Parser
 RUN_DEPENDS=	${SITE_PERL}/XML/RSS/Parser.pm:${PORTSDIR}/textproc/p5-XML-RSS-Parser \
-		${SITE_PERL}/Date/Parse.pm:{PORTSDIR}/devel/p5-TimeDate
+		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate
 
 PERL_CONFIGURE=	yes
 
