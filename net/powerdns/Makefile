@@ -33,7 +33,7 @@ NO_DESCRIBE=yes
 .endif
 
 .if defined(WITH_POSTGRESQL_DRIVER) && !defined(WITHOUT_POSTGRESQL_DRIVER)
-LIB_DEPENDS=	pq++.4:${PORTSDIR}/databases/postgresql-libpq++
+LIB_DEPENDS=	pq[+][+].4:${PORTSDIR}/databases/postgresql-libpq++
 CONFIGURE_ARGS+=	--enable-pgsql
 CONFIGURE_MODULES+=	"gpgsql"
 .else
