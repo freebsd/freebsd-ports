@@ -21,8 +21,9 @@ DISTNAME=	bxform-freebsd-alpha
 .else
 DISTNAME=	bxform-freebsd-elf
 .endif
-MASTER_SITES=	${MASTER_SITE_LOCAL:S^%SUBDIR%^steve^} \
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://bragg.phys.uwm.edu/~zhao/ftp/
+MASTER_SITE_SUBDIR=	steve
 PATCHDIR=	${.CURDIR}/patches.elf
 .else
 DISTNAME=	bxform-088

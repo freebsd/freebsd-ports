@@ -10,8 +10,9 @@ PORTVERSION=	3.9.6
 CATEGORIES=	japanese emulators
 MASTER_SITES=	ftp://ftp.tux.org/pub/knaff/mtools/  \
 		http://mtools.linux.lu/  \
-		${MASTER_SITE_LOCAL:S^%SUBDIR%^steve^} \
+		${MASTER_SITE_LOCAL} \
 		${MASTER_SITE_PORTS_JP}
+MASTER_SITE_SUBDIR=	steve
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME}.PC98.patch.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}

@@ -9,7 +9,8 @@ PORTNAME=	fd
 PORTVERSION=	1.03l
 CATEGORIES=	misc
 MASTER_SITES=	ftp://ftp.ics.es.osaka-u.ac.jp/pub/FDclone/ \
-		${MASTER_SITE_LOCAL:S^%SUBDIR%^steve^}
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	steve
 DISTNAME=	FD-${PORTVERSION}
 
 MAINTAINER=	nobu@psrc.isac.co.jp
