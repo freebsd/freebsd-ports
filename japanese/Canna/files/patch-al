@@ -1,0 +1,26 @@
+--- canna/widedef.h.OLD	Sat Oct 26 11:59:11 2002
++++ canna/widedef.h	Sat Oct 26 12:04:56 2002
+@@ -35,7 +35,7 @@
+ #define WCHAR16
+ #endif
+      
+-#if defined(__FreeBSD__) || defined(__NetBSD__)
++#if defined(__NetBSD__)
+ # include <machine/ansi.h>
+ #endif
+ 
+@@ -61,7 +61,13 @@
+ #endif /* !nec_ews_svr2 */
+ #endif /* HAVE_WCHAR_OPERATION */
+ 
+-#if defined(__FreeBSD__) || defined(__NetBSD__)
++#if defined(__FreeBSD__)
++# ifdef WCHAR16
++#  warning FreeBSD does not use 16-bit wide character types
++# endif
++# include <stddef.h>
++# define _WCHAR_T
++#elif defined(__NetBSD__)
+ # ifdef _BSD_WCHAR_T_
+ #  undef _BSD_WCHAR_T_
+ #  ifdef WCHAR16
