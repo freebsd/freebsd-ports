@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gaim
-PORTVERSION=	0.51
+PORTVERSION=	0.52
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.marko.net/pub/gaim/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	--disable-esd
 pre-patch:
 	@${PERL} -pi.orig -e 's|-lpthreads|${PTHREAD_LIBS:S/"//g}|g; \
 		s|-lpthread|${PTHREAD_LIBS:S/"//g}|g' ${WRKSRC}/configure
-	@find ${WRKSRC} -name "Makefile.in" | xargs ${PERL} -pi -e \
+	@find ${WRKSRC} -name "Makefile.in*" | xargs ${PERL} -pi -e \
 		's|\$$\(datadir\)/gnome/|\$$\(datadir\)/|g ; \
 		s|\$$\(datadir\)/locale|\$$\(prefix\)/share/locale|g'
 
