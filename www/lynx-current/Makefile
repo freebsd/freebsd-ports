@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	lynx
-PORTVERSION=    2.8.4d20
+PORTVERSION=    2.8.4p1
 CATEGORIES=     www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
-DISTNAME=       ${PORTNAME}2.8.4dev.20
+DISTNAME=       ${PORTNAME}2.8.4pre.1
 
 MAINTAINER=	ache@FreeBSD.org
 
@@ -20,10 +20,19 @@ USE_BZIP2=	yes
 NO_LATEST_LINK=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-screen=ncurses --with-zlib --libdir="${L_LIB}" \
-		--enable-nsl-fork --enable-persistent-cookies \
-		--enable-nls
+		--enable-nsl-fork --enable-nls --enable-prettysrc \
+		--enable-file-upload --enable-nested-tables \
+		--enable-source-cache
+
+.ifndef NO_OPENSSL
+USE_OPENSSL=    yes
+.endif
 
 .include <bsd.port.pre.mk>
+
+.ifdef USE_OPENSSL
+CONFIGURE_ARGS+= --with-ssl=${OPENSSLBASE}
+.endif
 
 .if ${OSVERSION} >= 400014
 CONFIGURE_ARGS+= --enable-ipv6
