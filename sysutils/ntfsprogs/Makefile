@@ -56,5 +56,6 @@ post-patch:
 	${REINPLACE_CMD} -e 's|^transform.*||'	${WRKSRC}/Makefile.in		\
 						${WRKSRC}/libntfs/Makefile.in	\
 						${WRKSRC}/ntfsprogs/Makefile.in
+	${REINPLACE_CMD} -e 's| bswap_| bswap|' ${WRKSRC}/include/ntfs/endians.h
 
 .include <bsd.port.mk>
