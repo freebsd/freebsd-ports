@@ -53,6 +53,7 @@
     SUBDIR += avltree
     SUBDIR += avr-binutils
     SUBDIR += avr-gcc
+    SUBDIR += avr-gdb
     SUBDIR += avr-libc
     SUBDIR += avrprog
     SUBDIR += bcc
