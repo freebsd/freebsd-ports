@@ -919,29 +919,23 @@ diff -uPr rat/config.h.in /home/oh/src/rat-newpcm/rat/config.h.in
  
  /* GSM related */
  #undef SASR
-diff -uPr rat/configure.in /home/oh/src/rat-newpcm/rat/configure.in
---- rat/configure.in	Fri Sep  8 21:03:02 2000
-+++ /home/oh/src/rat-newpcm/rat/configure.in	Sat Sep 16 20:34:08 2000
-@@ -1,5 +1,5 @@
- dnl UCL RAT configure script.
--dnl $Header: /cs/research/mice/starship/src/local/CVS_repository/rat/configure.in,v 1.38 2000/03/23 10:00:53 ucacoxh Exp $
-+dnl $Header: /cs/research/mice/starship/src/local/CVS_repository/rat/configure.in,v 1.39 2000/09/16 17:43:25 ucacoxh Exp $
- dnl
- dnl Process this file with GNU autoconf to generate a configure script.
- 
-@@ -195,9 +195,12 @@
- 		AU_OBJ="$AU_OBJ auddev_pca.o"
- 		AC_DEFINE(HAVE_PCA_AUDIO)
- 	fi
--	# Luigi's driver
--	AU_OBJ="$AU_OBJ auddev_luigi.o"
--	AC_DEFINE(HAVE_LUIGI_AUDIO)
-+	# Note luigi and newpcm have compatible soundcard.h files but
-+	# mixer behaves differently under both systems.  During runtime
-+	# only one of these modules will be used.
-+	AU_OBJ="$AU_OBJ auddev_luigi.o auddev_newpcm.o"
-+	AC_DEFINE(HAVE_LUIGI_AUDIO) 
-+  	AC_DEFINE(HAVE_NEWPCM_AUDIO) 
- 	;;
- *netbsd*)
- 	AU_OBJ="$AUDIOBJ auddev_netbsd.o"
+diff -uPr common/configure.in /home/oh/src/rat-newpcm/common/configure.in
+--- common/configure.in	Sat Sep  9 05:02:27 2000
++++ /home/oh/src/rat-newpcm/common/configure.in	Thu Sep 21 10:15:12 2000
+@@ -179,7 +179,7 @@
+ 		AC_DEFINE(HAVE_IPv6)
+ 		case "$host_os" in
+ 		# FreeBSD Kame uses seperate libinet6
+-		freebsd*)	
++		freebsd[23]*)	
+ 			LIBS="$LIBS -L/usr/local/v6/lib -linet6"
+ 			;;
+ 		*)	;;
+@@ -216,6 +216,7 @@
+ 		#ifdef HAVE_NETINET6_IN6_H
+ 		#include <netinet6/in6.h>
+ 		#else
++		#include <sys/types.h>
+ 		#include <netinet/in.h>
+ 		#endif /* HAVE_NETINET_IN6_H */
+ 	],[

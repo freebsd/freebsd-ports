@@ -7,7 +7,7 @@
 
 PORTNAME=	rat
 PORTVERSION=	4.2.9
-CATEGORIES=	mbone audio
+CATEGORIES=	mbone audio ipv6
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/4.2.9/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	cpiazza
@@ -25,6 +25,12 @@ PATCH_DEBUG=	yes
 
 RAT_BUILD_DIRS=	common rat
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 400014
+ENABLE_IPv6=      --enable-ipv6
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/rat/rat ${PREFIX}/bin/rat
 	${INSTALL_PROGRAM} ${WRKSRC}/rat/rat-ui ${PREFIX}/bin/rat-ui
@@ -39,7 +45,7 @@ do-build:
 	done
 
 do-configure:
-	cd ${WRKSRC}/common && ./configure
-	cd ${WRKSRC}/rat && autoconf && ./configure --with-tcl=${LOCALBASE} --with-tk=${LOCALBASE}
+	cd ${WRKSRC}/common && autoconf && ./configure ${ENABLE_IPv6}
+	cd ${WRKSRC}/rat && autoconf && ./configure --with-tcl=${LOCALBASE} --with-tk=${LOCALBASE} ${ENABLE_IPv6}
 
-.include "bsd.port.mk"
+.include "bsd.port.post.mk"
