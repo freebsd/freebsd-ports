@@ -1,0 +1,18 @@
+IRcatLite - A GTK based 'Internet Relay Chat' Client
+=======================================================================
+
+Author:	Atsushi Tagami
+Email:  
+WWW:    http://www.pp.iij4u.or.jp/~tagami/gtk/ircat.html
+
+Description (from original "README" file)
+===========
+* This software is IRC client using gtk+.
+
+* The INSTALL file gives detailed instructions how to install IRcatLite.
+
+* The LICENCE file contains the IRcatLite license.  IRcatLite is licensed 
+  under the "modified" BSD style license.
+
+
+- Yoshikazu GOTO <goto@snowy.to>

@@ -1,0 +1,7 @@
+bin/ircat
+share/doc/IRcatLite/LICENSE
+share/doc/IRcatLite/README
+share/doc/IRcatLite/README.jp
+share/doc/IRcatLite/INSTALL
+share/doc/IRcatLite/INSTALL.jp
+@dirrm share/doc/IRcatLite
