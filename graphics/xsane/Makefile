@@ -3,10 +3,10 @@
 # Date created:			Fri Apr  8 00:18:29 MET DST 1999
 # Whom:				domi@saargate.de
 #
-# $Id: Makefile,v 1.3 1999/05/29 03:56:11 steve Exp $
+# $Id: Makefile,v 1.4 1999/06/23 19:19:06 dirk Exp $
 #
 
-DISTNAME=	xsane-0.26
+DISTNAME=	xsane-0.29
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.wolfsburg.de/~rauch/sane/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
