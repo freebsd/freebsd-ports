@@ -1,0 +1,9 @@
+The Internet Message Support Protocol (IMSP) is designed to support the
+provision of mail in a medium to large scale operation. It is intended to
+be used as a companion to the IMAP4 protocol [IMAP4], providing services
+which are either outside the scope of mail access or which pertain to
+environments which must run more than one IMAP4 server in the same mail
+domain. The services that IMSP provides are extended mailbox management,
+configuration options, and address books.
+
+WWW: http://asg.web.cmu.edu/cyrus/

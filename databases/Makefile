@@ -6,6 +6,7 @@
     SUBDIR += bbdb-emacs20
     SUBDIR += cdb
     SUBDIR += clip
+    SUBDIR += cyrus-imspd
     SUBDIR += db
     SUBDIR += db3
     SUBDIR += db4
