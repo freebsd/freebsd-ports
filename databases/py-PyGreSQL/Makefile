@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	PyGreSQL
-PORTVERSION=	3.4
-PORTREVISION=	1
+PORTVERSION=	3.5
 PORTEPOCH=	1
 CATEGORIES=	databases python
 MASTER_SITES=	ftp://ftp.pygresql.org/pub/distrib/
@@ -15,7 +14,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	girgen@pingpong.net
-COMMENT=	A Python interface to PostgreSQL, both classic interface and DP-API 2.0
+COMMENT=	A Python interface to PostgreSQL, both classic and DP-API 2.0
 
 BUILD_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
 RUN_DEPENDS=	${DATETIME_DEP}:${PORTSDIR}/lang/py-mx-base
