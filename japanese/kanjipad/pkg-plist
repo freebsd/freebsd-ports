@@ -1,0 +1,4 @@
+bin/kanjipad
+bin/kpengine
+share/kanjipad/jdata.dat
+@dirrm share/kanjipad

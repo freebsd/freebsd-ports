@@ -1,0 +1,8 @@
+KanjiPad - Japanese Handwriting recognition - By Owen Taylor <otaylor@gtk.org>
+
+KanjiPad is a very simple program for handwriting recognition -
+The user draws a character into the box, then requests translation.
+The best candidates are displayed along the right hand side of
+the window and can be selected for pasting into other programs.
+
+WWW: http://www.gtk.org/~otaylor/kanjipad/
