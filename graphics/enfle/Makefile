@@ -7,9 +7,9 @@
 
 PORTNAME=	enfle
 PORTVERSION=	20010130
+PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://enfle.fennel.org/files/stable/ \
-		ftp://ftp.goldmoon.org/pub/FreeBSD/ports/distfiles/
+MASTER_SITES=	http://enfle.fennel.org/files/stable/
 
 MAINTAINER=	samy@goldmoon.org
 COMMENT=	Simple plugin-based graphics viewer
@@ -23,11 +23,9 @@ LIB_DEPENDS=	png.5:${PORTSDIR}/graphics/png \
 LIB_DEPENDS+=	bz2.1:${PORTSDIR}/archivers/bzip2
 .endif
 
-BROKEN=		Incomplete pkg-plist
-
 USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_LIBTOOL_VER=13
+USE_INC_LIBTOOL_VER=13
 USE_PERL5_BUILD=yes
 CONFIGURE_ARGS=	--enable-all-plugins \
 		--enable-plugins-dir \
