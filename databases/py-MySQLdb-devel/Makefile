@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	py-MySQLdb
-PORTVERSION=	0.3.0b1
+PORTVERSION=	0.3.0b2
 CATEGORIES=	databases python
 MASTER_SITES=	http://dustman.net/andy/python/MySQLdb/0.3.0/
-DISTNAME=	MySQL-${PORTVERSION}
+DISTNAME=	MySQLdb-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 

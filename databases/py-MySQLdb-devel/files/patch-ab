@@ -1,26 +1,13 @@
---- setup.py.orig	Fri Oct 27 04:09:37 2000
-+++ setup.py	Mon Oct 30 11:24:59 2000
-@@ -9,10 +9,10 @@
- # You may need to edit this script to point to the location of your
- # MySQL installation.  It should be sufficient to change the value of
- # the MYSQL_DIR variable below.
--MYSQL_INCLUDE_DIR = '/usr/include/mysql'
--MYSQL_LIB_DIR = '/usr/lib/mysql'
--#mysqlclient = "mysqlclient"   # maybe not thread-safe
--mysqlclient = "mysqlclient_r" # thread-safe
-+MYSQL_INCLUDE_DIR = '/usr/local/include/mysql'
-+MYSQL_LIB_DIR = '/usr/local/lib/mysql'
-+mysqlclient = "mysqlclient"   # maybe not thread-safe
-+#mysqlclient = "mysqlclient_r" # thread-safe
- 
- 
- setup (# Distribution meta-data
-@@ -32,7 +32,7 @@
-                 sources=['_mysqlmodule.c'],
-                 include_dirs=[MYSQL_INCLUDE_DIR],
- 		# maybe comment to force dynamic libraries
--                #library_dirs=[MYSQL_LIB_DIR],
-+                library_dirs=[MYSQL_LIB_DIR],
- 		# uncomment if linking against dynamic libraries
- 		#runtime_library_dirs=[MYSQL_LIB_DIR],
-                 libraries=[
+--- setup.py.orig	Tue Oct 31 21:28:16 2000
++++ setup.py	Wed Nov  1 13:51:41 2000
+@@ -32,8 +32,8 @@
+     runtime_library_dirs = []
+     extra_objects = [r'c:\mysql\lib\opt\mysqlclient.lib']
+ elif os.name == "posix": # most Linux/UNIX platforms
+-    include_dirs = ['/usr/include/mysql']
+-    library_dirs = ['/usr/lib/mysql']
++    include_dirs = ['%%LOCALBASE%%/include/mysql']
++    library_dirs = ['%%LOCALBASE%%/lib/mysql']
+     # MySQL-3.23 seems to need libz
+     libraries = [mysqlclient, "z"]
+     # On some platorms, this can be used to find the shared libraries
