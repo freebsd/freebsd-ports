@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		wmbiff
-PORTVERSION=		0.4.20
+PORTVERSION=		0.4.24
 CATEGORIES=		mail windowmaker afterstep
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,20 +16,19 @@ COMMENT=		An xbiff-like Window Maker dock app
 
 USE_X_PREFIX=		yes
 
-.include <bsd.port.pre.mk>
+OPTIONS=		GNUTLS "Support for SSL" off
 
-.if exists(${LOCALBASE}/lib/libgnutls.so.12)
-WITH_GNUTLS=		yes
-.endif
+.include <bsd.port.pre.mk>
 
 .ifdef WITH_GNUTLS
 LIB_DEPENDS+=		gcrypt.12:${PORTSDIR}/security/libgcrypt \
 			gnutls.12:${PORTSDIR}/security/gnutls
+.else
+CONFIGURE_ARGS+=	--disable-crypto
 .endif
 
 USE_XPM=		yes
 GNU_CONFIGURE=		yes
-CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 
 MAN1=			wmbiff.1
 MAN5=			wmbiffrc.5
