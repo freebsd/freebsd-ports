@@ -167,7 +167,7 @@ lib/libcnews.a
 @exec mkdir -p %%NEWSARTS%%/out.going
 @exec mkdir -p %%NEWSARTS%%/out.master
 @exec mkdir -p %%NEWSARTS%%/out.nntp
-@exec chown -R news.news %%NEWSARTS%%
+@exec chown -R news:news %%NEWSARTS%%
 @unexec rmdir %%NEWSARTS%%/control
 @unexec rmdir %%NEWSARTS%%/junk
 @unexec rmdir %%NEWSARTS%%/news/announce/newusers
