@@ -6,7 +6,7 @@
 
 PORTNAME=	shared-mime-info
 PORTVERSION=	0.15
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	misc gnome
 MASTER_SITES=	http://www.marcuscom.com/downloads/ \
 		http://www.freedesktop.org/software/shared-mime-info/
@@ -35,6 +35,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g ; \
 		s|%%X11BASE%%|${X11BASE}|g' \
 		${WRKSRC}/update-mime-database.c
+
+pre-su-install:
+	${MKDIR} ${X11BASE}/share/mime/packages
 
 post-install:
 	@${SED} -e 's|%%PREFIX%%|${PREFIX}| ; \
