@@ -3,7 +3,7 @@
 # Date created:         11 July 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.12 1998/02/26 07:31:51 ache Exp $
+# $Id: Makefile,v 1.13 1998/05/17 22:38:22 mph Exp $
 #
 
 DISTNAME=	slang1.2.2
@@ -20,6 +20,6 @@ ALL_TARGET=	all elf
 INSTALL_TARGET=	install install-elf
 
 post-install:
-	${LDCONFIG} -m ${PREFIX}/lib
+	${SETENV} OBJFORMAT=${PORTOBJFORMAT} ${LDCONFIG} -m ${PREFIX}/lib
 
 .include <bsd.port.mk>
