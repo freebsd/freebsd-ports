@@ -1,0 +1,3 @@
+bin/gtk2-theme-switch
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm share/doc/gtk2-theme-switch
