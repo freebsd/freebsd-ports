@@ -6,20 +6,21 @@
 #
 
 PORTNAME=	hunch
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.3
 CATEGORIES=	security
-MASTER_SITES=	http://web.cs.cmu.edu/~dpelleg/download/
+MASTER_SITES=	http://s89813419.onlinehome.us/ \
+		http://web.cs.cmu.edu/~dpelleg/download/
 
 MAINTAINER=	daniel+hunch@pelleg.org
-COMMENT=	Scan httpd log files, find vulnerability probes, mail admins
+COMMENT=	Scan httpd log files for vulnerability probes, mail admins
 
 RUN_DEPENDS=	${SITE_PERL}/Net/SMTP.pm:${PORTSDIR}/net/p5-Net
 
+USE_PERL5=	yes
+
 IS_INTERACTIVE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_PACKAGE=	too interactive
 NO_BUILD=	true
-USE_PERL5=	YES
 
 do-install:
 	@${ECHO_MSG} "Installing files"
