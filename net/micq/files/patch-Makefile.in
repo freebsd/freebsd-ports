@@ -1,11 +1,14 @@
---- Makefile.in.orig	Sat Oct  5 23:35:35 2002
-+++ Makefile.in	Mon Oct  7 23:28:32 2002
-@@ -81,7 +81,7 @@
- am__quote = @am__quote@
- install_sh = @install_sh@
- 
+
+$FreeBSD$
+
+--- Makefile.in.orig
++++ Makefile.in
+@@ -165,7 +165,7 @@
+ sharedstatedir = @sharedstatedir@
+ sysconfdir = @sysconfdir@
+ target_alias = @target_alias@
 -SUBDIRS = src lang doc
 +SUBDIRS = src lang
- 
  EXTRA_DIST = TODO
- subdir = .
+ all: all-recursive
+ 
