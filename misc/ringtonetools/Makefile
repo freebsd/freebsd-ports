@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	ringtonetools
-PORTVERSION=	2.01
+PORTVERSION=	2.09
 CATEGORIES=	misc
-MASTER_SITES=	http://65.108.58.129/ringtonetools/
+MASTER_SITES=	http://www.mikekohn.com/ringtonetools/
 
 MAINTAINER=	mike@mikekohn.net
-COMMENT=	Create ringtones (songs) and logos for mobile phones
+COMMENT=	Create/Convert/Listen to ringtones and logos for mobile phones
 
 RESTRICTED=	no-commercial-use
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/ringtonetools ${PREFIX}/bin
-.for i in face.icon hemglass.mid ionian.rtttl usa.imelody yngwie_trilogy.rtttl
+.for i in face.icon hemglass.mid ionian.rtttl usa.emelody yngwie_trilogy.rtttl
 	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/samples/${i} ${DATADIR}
 .endfor
@@ -25,5 +25,6 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/docs/README ${DOCSDIR}
 .endif
+
 
 .include <bsd.port.mk>
