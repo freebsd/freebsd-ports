@@ -13,7 +13,7 @@ if( $> ) {
 if( getpwnam( "msql" ) ) {
 	( $null, $null, $msqlUID ) = getpwnam( "msql" );
 } else {
-	$msqlUID = 80;
+	$msqlUID = 87;
 	while( getpwuid( $msqlUID ) ) {
 		$msqlUID++;
 	}
@@ -22,7 +22,7 @@ if( getpwnam( "msql" ) ) {
 if( getgrnam( "msql" ) ) {
 	( $null, $null, $msqlGID ) = getgrnam( "msql" );
 } else {
-	$msqlGID = 80;
+	$msqlGID = 87;
 	while( getgrgid( $msqlGID ) ) {
 		$msqlGID++;
 	}
