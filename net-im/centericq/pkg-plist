@@ -1,4 +1,5 @@
 bin/centericq
+bin/cicqconv
 share/centericq/cont.wav
 share/centericq/email.wav
 share/centericq/file.wav
