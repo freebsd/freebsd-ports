@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cymbaline
-PORTVERSION=	0.7
+PORTVERSION=	0.8b
 CATEGORIES=	audio python
 MASTER_SITES=	http://www.silmarill.org/cymbaline/
 DISTNAME=	${PORTNAME}
