@@ -37,8 +37,6 @@ post-extract:
 # Unfortunately, this feature doesn't work right now due to binary files.
 _NO_KDE_PATCHUP=yes
 
-CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
-
 # Start options here.
 .if !defined(_NO_KDE_PATCHUP)
 .if !defined(KDE_PATCHFROM_VER)
