@@ -23,6 +23,9 @@ USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}"
 
+pre-configure:
+	${PERL} -pi -e "s@uint8 red@Uint16 red@g" ${WRKSRC}/Source_Files/Misc/screen_sdl.cpp
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${CAT} ${PKGMESSAGE}
