@@ -6,37 +6,41 @@
 #
 
 PORTNAME=	LPRng
-PORTVERSION=	3.6.26
+PORTVERSION=	3.7.5
 CATEGORIES=	sysutils print
-MASTER_SITES=	ftp://ftp.astart.com/pub/LPRng/LPRng/
+MASTER_SITES=	ftp://ftp.lprng.com/pub/%SUBDIR%/ \
+		ftp://ftp.astart.com/pub/%SUBDIR%/ \
+		ftp://ftp.cise.ufl.edu/pub/mirrors/%SUBDIR%/ \
+		ftp://ftp.cs.umn.edu/pub/%SUBDIR%/ \
+		ftp://ftp.sage-au.org.au/pub/printing/spooler/lprng/LPRng/ \
+		ftp://ftp.informatik.uni-hamburg.de/pub/os/unix/utils/%SUBDIR%/ \
+		ftp://ftp.uni-paderborn.de/pub/unix/printer/%SUBDIR%/
+MASTER_SITE_SUBDIR=	LPRng/LPRng
 EXTRACT_SUFX=	.tgz
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	desmo@bandwidth.org
 
-PLIST_SUB+=	LPRNG_VER=${PORTVERSION}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+LIB_DEPENDS=	gdbm.2:${PORTSDIR}/databases/gdbm
 
-MAKEFILE=	Makefile.bsd
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS= \
 		--with-sbindir=${PREFIX}/sbin \
 		--with-filterdir=${PREFIX}/libexec/filters \
-		--with-lpd_conf_path=/etc/lpd.conf \
-		--with-lpd_perms_path=/etc/lpd.perms \
-		--with-printcap_path=/etc/printcap
-USE_GMAKE=	yes
+		--with-lpd_conf_path=${PREFIX}/etc/lpd.conf \
+		--with-lpd_perms_path=${PREFIX}/etc/lpd.perms \
+		--with-printcap_path=/etc/printcap \
+		--enable-gdbm=${LOCALBASE}
 
 MAN1=		cancel.1 lp.1 lpbanner.1 lpf.1 \
-		lpq.1 lpr.1 lpraccnt.1 lprm.1 lpstat.1 monitor.1 \
+		lpq.1 lpr.1 lprm.1 lpstat.1 monitor.1 \
 		pclbanner.1 psbanner.1
 MAN5=		lpd.conf.5 lpd.perms.5 printcap.5
 MAN8=		checkpc.8 lpc.8 lpd.8
 MANCOMPRESSED=	yes
 
 post-install:
-	${INSTALL} -d -g bin -o bin -m 0555 ${PREFIX}/share/doc/LPRng
-	${INSTALL} -c -g bin -o bin -m 0444 ${WRKSRC}/HOWTO/* ${PREFIX}/share/doc/LPRng
+	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 0555 ${DOCSDIR}
+	${INSTALL} -c -o ${SHAREOWN} -g ${SHAREGRP} -m 0444 ${WRKSRC}/HOWTO/* ${DOCSDIR}
 	@${CAT} ${PKGMESSAGE} | ${SED} -e "s|@@PREFIX@@|${PREFIX}|g"
 
 .include <bsd.port.mk>
