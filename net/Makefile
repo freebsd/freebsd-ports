@@ -438,6 +438,7 @@
     SUBDIR += py-xmlrpc
     SUBDIR += py-xmlrpclib
     SUBDIR += py-zsi
+    SUBDIR += qadsl
     SUBDIR += qtella
     SUBDIR += queso
     SUBDIR += radius

@@ -1,0 +1,7 @@
+*********************************************************
+
+A sample configuration file has been copied to
+%%PREFIX%%/etc/qadsl.conf.sample.  Qadsl will not work without 
+%%PREFIX%%/etc/qadsl.conf.
+
+*********************************************************

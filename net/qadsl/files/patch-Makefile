@@ -1,0 +1,51 @@
+*** Makefile.orig	Thu Dec 13 21:31:26 2001
+--- Makefile	Thu Dec 13 22:20:45 2001
+***************
+*** 5,28 ****
+  MACRO=__OpenBSD__
+  OBJS=main.o netfunc.o conf.o func.o
+  SRC=main.c netfunc.c conf.c func.c
+! CPATH=/etc/
+! INSTALL=/usr/local/sbin/
+! MANPATH=/usr/local/man/man8/
+  
+  all:${PROG}
+  
+  ${PROG}: 
+! 	${CC} -c ${SRC} 
+! 	${CC} -o ${PROG} ${OBJS} 
+! 
+! bsd:
+! 	${CC} -D${MACRO} -c ${SRC}
+  	${CC} -o ${PROG} ${OBJS}
+  
+  clean:
+  	rm -fr ${PROG} ${OBJS} 
+  
+  install:
+! 	cp ${PROG} ${INSTALL} 
+! 	cp ${CONF} ${CPATH}
+  	cp qadsl.8.gz ${MANPATH}
+--- 5,26 ----
+  MACRO=__OpenBSD__
+  OBJS=main.o netfunc.o conf.o func.o
+  SRC=main.c netfunc.c conf.c func.c
+! CPATH=${PREFIX}/etc/
+! INSTALL=${PREFIX}/sbin/
+! RC=${PREFIX}/etc/rc.d/
+! MANPATH=${PREFIX}/man/man8/
+  
+  all:${PROG}
+  
+  ${PROG}: 
+! 	${CC} -D${MACRO} -DCONF=\"${CPATH}/${CONF}\" -c ${SRC}
+  	${CC} -o ${PROG} ${OBJS}
+  
+  clean:
+  	rm -fr ${PROG} ${OBJS} 
+  
+  install:
+! 	install ${PROG} ${INSTALL} 
+! 	cp ${CONF} ${CPATH}/${CONF}.sample
+  	cp qadsl.8.gz ${MANPATH}
++ 	cp qadsl.sh ${RC}
