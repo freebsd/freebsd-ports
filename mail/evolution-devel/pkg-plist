@@ -149,13 +149,10 @@ lib/libeselectnames.so.0
 lib/libical.a
 lib/libicalss.a
 lib/libicalvcal.a
-share/evolution/addresstypes.xml
-share/evolution/default_user/ldapservers.xml
-share/evolution/default_user/shortcuts.xml
-share/evolution/filtertypes.xml
-share/evolution/vfoldertypes.xml
 share/gnome/apps/Applications/evolution.desktop
+share/gnome/evolution/addresstypes.xml
 share/gnome/evolution/arrow.png
+share/gnome/evolution/default_user/ldapservers.xml
 share/gnome/evolution/default_user/local/Calendar/folder-metadata.xml
 share/gnome/evolution/default_user/local/Contacts/folder-metadata.xml
 share/gnome/evolution/default_user/local/Drafts/folder-metadata.xml
@@ -164,9 +161,11 @@ share/gnome/evolution/default_user/local/Inbox/mbox
 share/gnome/evolution/default_user/local/Outbox/folder-metadata.xml
 share/gnome/evolution/default_user/local/Sent/folder-metadata.xml
 share/gnome/evolution/default_user/local/Trash/folder-metadata.xml
+share/gnome/evolution/default_user/shortcuts.xml
 share/gnome/evolution/ecps/medbook.ecps
 share/gnome/evolution/ecps/phonelist.ecps
 share/gnome/evolution/ecps/smallbook.ecps
+share/gnome/evolution/filtertypes.xml
 share/gnome/evolution/glade/alarm-notify.glade
 share/gnome/evolution/glade/alphabet.glade
 share/gnome/evolution/glade/categories.glade
@@ -193,6 +192,7 @@ share/gnome/evolution/glade/mail-config-druid.glade
 share/gnome/evolution/glade/mail-config.glade
 share/gnome/evolution/glade/select-names.glade
 share/gnome/evolution/glade/task-editor-dialog.glade
+share/gnome/evolution/vfoldertypes.xml
 share/gnome/help/evolution/C/aboutbook.html
 share/gnome/help/evolution/C/apx-gloss.html
 share/gnome/help/evolution/C/authors.html
@@ -337,6 +337,7 @@ share/locale/uk/LC_MESSAGES/evolution.mo
 @dirrm share/gnome/help/evolution
 @dirrm share/gnome/evolution/glade
 @dirrm share/gnome/evolution/ecps
+@dirrm share/gnome/evolution/default_user/news
 @dirrm share/gnome/evolution/default_user/local/Trash
 @dirrm share/gnome/evolution/default_user/local/Sent
 @dirrm share/gnome/evolution/default_user/local/Outbox
@@ -347,9 +348,6 @@ share/locale/uk/LC_MESSAGES/evolution.mo
 @dirrm share/gnome/evolution/default_user/local
 @dirrm share/gnome/evolution/default_user
 @dirrm share/gnome/evolution
-@dirrm share/evolution/default_user/news
-@dirrm share/evolution/default_user
-@dirrm share/evolution
 @dirrm lib/evolution/camel-providers/%%VERSION%%
 @dirrm lib/evolution/camel-providers
 @dirrm lib/evolution
