@@ -1,0 +1,11 @@
+--- tcpmssd.c~	Mon Jul 17 20:57:24 2000
++++ tcpmssd.c	Mon Nov 13 10:10:37 2000
+@@ -176,7 +176,7 @@
+ 			continue;
+ 		}
+ 
+-		if (FD_ISSET(rtsock, &fdset)) {
++		if (rtsock != -1 && FD_ISSET(rtsock, &fdset)) {
+ 			struct if_msghdr ifm;
+ 
+ 			if ((pktlen = read(rtsock, &ifm, sizeof(ifm))) == -1) {
