@@ -132,6 +132,12 @@ include/gal/widgets/widget-pixmap-combo.h
 lib/libgal.a
 lib/libgal.so
 lib/libgal.so.19
+share/doc/gal/gal-api.sgml
+share/doc/gal/gal-decl.txt
+share/doc/gal/gal-sections.txt
+share/doc/gal/gal.hierarchy
+share/doc/gal/gal.signals
+share/doc/gal/gal.types
 share/gnome/etable/%%VERSION%%/glade/e-table-config-no-group.glade
 share/gnome/etable/%%VERSION%%/glade/e-table-config.glade
 share/gnome/etable/%%VERSION%%/glade/e-table-field-chooser.glade
@@ -140,12 +146,6 @@ share/gnome/gal/%%VERSION%%/glade/e-categories-master-list-dialog.glade
 share/gnome/gal/%%VERSION%%/glade/gal-categories.glade
 share/gnome/gal/%%VERSION%%/glade/gal-define-views.glade
 share/gnome/gal/%%VERSION%%/glade/gal-view-new-dialog.glade
-share/gnome/gal/html/gal-api.sgml
-share/gnome/gal/html/gal-decl.txt
-share/gnome/gal/html/gal-sections.txt
-share/gnome/gal/html/gal.hierarchy
-share/gnome/gal/html/gal.signals
-share/gnome/gal/html/gal.types
 share/gnome/pixmaps/gal/categories/category_birthday_16.png
 share/gnome/pixmaps/gal/categories/category_business_16.png
 share/gnome/pixmaps/gal/categories/category_favorites_16.png
@@ -194,14 +194,14 @@ share/locale/uk/LC_MESSAGES/gal.mo
 share/locale/zh_TW/LC_MESSAGES/gal.mo
 @dirrm share/gnome/pixmaps/gal/categories
 @dirrm share/gnome/pixmaps/gal
-@dirrm share/gnome/gal/html/gal
-@dirrm share/gnome/gal/html
 @dirrm share/gnome/gal/%%VERSION%%/glade
 @dirrm share/gnome/gal/%%VERSION%%
 @dirrm share/gnome/gal
 @dirrm share/gnome/etable/%%VERSION%%/glade
 @dirrm share/gnome/etable/%%VERSION%%
 @dirrm share/gnome/etable
+@dirrm share/doc/gal/gal
+@dirrm share/doc/gal
 @dirrm include/gal/widgets
 @dirrm include/gal/util
 @dirrm include/gal/unicode

@@ -38,6 +38,11 @@ lib/bonobo/monikers/libdatabase_moniker.so
 lib/libgnomedb.a
 lib/libgnomedb.so
 lib/libgnomedb.so.0
+share/doc/gnomedb/libgnomedb-decl.txt
+share/doc/gnomedb/libgnomedb-sections.txt
+share/doc/gnomedb/libgnomedb.args
+share/doc/gnomedb/libgnomedb.hierarchy
+share/doc/gnomedb/libgnomedb.types
 share/gnome/apps/Applications/gnomedb-fe.desktop
 share/gnome/help/gnome-db/C/comlib.html
 share/gnome/help/gnome-db/C/components.html
@@ -110,11 +115,6 @@ share/gnome/help/gnome-db/pt_BR/manager.html
 share/gnome/help/gnome-db/pt_BR/topic.dat
 share/gnome/help/gnome-db/pt_BR/widgetlib-overview.html
 share/gnome/help/gnome-db/pt_BR/widgetlib.html
-share/gnome/html/libgnomedb-decl.txt
-share/gnome/html/libgnomedb-sections.txt
-share/gnome/html/libgnomedb.args
-share/gnome/html/libgnomedb.hierarchy
-share/gnome/html/libgnomedb.types
 share/gnome/idl/GNOME_Database_UI.idl
 share/gnome/oaf/GNOME_DB_Builder.oaf
 share/gnome/oaf/GNOME_DB_ComponentFactory.oaf
@@ -172,5 +172,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-db.mo
 @dirrm share/gnome/help/gnome-db/C
 @dirrm share/gnome/help/gnome-db
 @dirrm share/gnome/apps/Applications
+@dirrm share/doc/gnomedb
 @dirrm include/libgnomedb-%%VERSION%%/gnome-db
 @dirrm include/libgnomedb-%%VERSION%%

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- devel-docs/gnorba/Makefile.in	2002/05/01 01:47:18	1.1
++++ devel-docs/gnorba/Makefile.in	2002/05/01 01:51:15
+@@ -158,7 +158,7 @@
+ # The directory containing the source code (if it contains documentation).
+ DOC_SOURCE_DIR = $(GNOME_LIBS_DIR)/libgnorba
+ 
+-HTML_DIR = $(datadir)/html
++HTML_DIR = $(prefix)/share/doc/gnomelibs
+ 
+ TARGET_DIR = $(HTML_DIR)/$(DOC_MODULE)
+ 

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- doc/C/reference/Makefile.in	2002/05/01 08:49:53	1.1
++++ doc/C/reference/Makefile.in	2002/05/01 08:50:40
+@@ -174,7 +174,7 @@
+ 
+ 
+ DOC_MAIN_SGML_FILE = libgnomedb-reference.sgml
+-DOC_DIR = $(datadir)/html
++DOC_DIR = $(prefix)/share/doc/gnomedb
+ TARGET_DIR = $(DOC_DIR)/libgnomedb-reference
+ 
+ DOC_DIR_INSTALL_FILES =  	 libgnomedb.args 	 libgnomedb.hierarchy 	 libgnomedb.signals		 libgnomedb.types 	 libgnomedb-decl.txt			 libgnomedb-sections.txt

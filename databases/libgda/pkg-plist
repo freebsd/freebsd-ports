@@ -58,6 +58,18 @@ lib/libgda-common.so.0
 lib/libgda-server.a
 lib/libgda-server.so
 lib/libgda-server.so.0
+share/doc/libgda/libgda-client-decl.txt
+share/doc/libgda/libgda-client-sections.txt
+share/doc/libgda/libgda-client.args
+share/doc/libgda/libgda-client.hierarchy
+share/doc/libgda/libgda-client.signals
+share/doc/libgda/libgda-client.types
+share/doc/libgda/libgda-common-decl.txt
+share/doc/libgda/libgda-common-sections.txt
+share/doc/libgda/libgda-common.args
+share/doc/libgda/libgda-common.hierarchy
+share/doc/libgda/libgda-common.signals
+share/doc/libgda/libgda-common.types
 share/gnome/gda/templates/gda-srv-command.c.tmpl
 share/gnome/gda/templates/gda-srv-connection.c.tmpl
 share/gnome/gda/templates/gda-srv-recordset.c.tmpl
@@ -149,18 +161,6 @@ share/gnome/help/libgda/pt_BR/providers-actual-implementation.html
 share/gnome/help/libgda/pt_BR/providers-examples.html
 share/gnome/help/libgda/pt_BR/providers-implementation.html
 share/gnome/help/libgda/pt_BR/topic.dat
-share/gnome/html/libgda-client-decl.txt
-share/gnome/html/libgda-client-sections.txt
-share/gnome/html/libgda-client.args
-share/gnome/html/libgda-client.hierarchy
-share/gnome/html/libgda-client.signals
-share/gnome/html/libgda-client.types
-share/gnome/html/libgda-common-decl.txt
-share/gnome/html/libgda-common-sections.txt
-share/gnome/html/libgda-common.args
-share/gnome/html/libgda-common.hierarchy
-share/gnome/html/libgda-common.signals
-share/gnome/html/libgda-common.types
 share/gnome/idl/GDA.idl
 share/gnome/idl/GDA_Command.idl
 share/gnome/idl/GDA_Connection.idl
@@ -206,6 +206,7 @@ share/locale/uk/LC_MESSAGES/libgda.mo
 @dirrm share/gnome/help/libgda
 @dirrm share/gnome/gda/templates
 @dirrm share/gnome/gda
+@dirrm share/doc/libgda
 @dirrm include/libgda-%%VERSION%%/gda++
 @dirrm include/libgda-%%VERSION%%/gda
 @dirrm include/libgda-%%VERSION%%

@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- doc/C/reference/libgda-common/Makefile.in	2002/05/01 08:16:31	1.1
++++ doc/C/reference/libgda-common/Makefile.in	2002/05/01 08:17:35
+@@ -171,7 +171,7 @@
+ LDFLAGS = " 	$(GDA_CLIENT_LIBS) 	$(top_builddir)/lib/gda-common/.libs/libgda-common.a 	"
+ 
+ 
+-DOC_DIR = $(datadir)/html
++DOC_DIR = $(prefix)/share/doc/libgda
+ 
+ DOC_DIR_INSTALL_FILES =  	 libgda-common.args 	 libgda-common.hierarchy 	 libgda-common.signals		 libgda-common.types 	 libgda-common-decl.txt			 libgda-common-sections.txt
+ 

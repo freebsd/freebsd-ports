@@ -94,6 +94,11 @@ lib/bonobo/plugin/libstorage_http.so
 lib/libgtkhtml.a
 lib/libgtkhtml.so
 lib/libgtkhtml.so.21
+share/doc/gtkhtml/gtkhtml-decl.txt
+share/doc/gtkhtml/gtkhtml-sections.txt
+share/doc/gtkhtml/gtkhtml.hierarchy
+share/doc/gtkhtml/gtkhtml.sgml
+share/doc/gtkhtml/gtkhtml.types
 share/gnome/apps/Settings/Documents/gtkhtml-properties.desktop
 share/gnome/control-center/Documents/gtkhtml-properties.desktop
 share/gnome/gtkhtml/Editor.idl
@@ -138,11 +143,6 @@ share/gnome/gtkhtml/icons/undo-24.png
 share/gnome/gtkhtml/keybindingsrc.emacs
 share/gnome/gtkhtml/keybindingsrc.ms
 share/gnome/gtkhtml/keybindingsrc.xemacs
-share/gnome/html/gtkhtml-decl.txt
-share/gnome/html/gtkhtml-sections.txt
-share/gnome/html/gtkhtml.hierarchy
-share/gnome/html/gtkhtml.sgml
-share/gnome/html/gtkhtml.types
 share/gnome/oaf/GNOME_GtkHTML_EBrowser.oaf
 share/gnome/oaf/GNOME_GtkHTML_Editor.oaf
 share/gnome/ui/GNOME_GtkHTML_Editor.xml
@@ -176,7 +176,8 @@ share/locale/tr/LC_MESSAGES/gtkhtml.mo
 share/locale/uk/LC_MESSAGES/gtkhtml.mo
 share/locale/zh_CN/LC_MESSAGES/gtkhtml.mo
 share/locale/zh_TW/LC_MESSAGES/gtkhtml.mo
-@dirrm share/gnome/html/gtkhtml
 @dirrm share/gnome/gtkhtml/icons
 @dirrm share/gnome/gtkhtml
+@dirrm share/doc/gtkhtml/gtkhtml
+@dirrm share/doc/gtkhtml
 @dirrm include/gtkhtml

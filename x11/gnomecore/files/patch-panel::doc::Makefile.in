@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- panel/doc/Makefile.in	2002/05/01 10:19:11	1.1
++++ panel/doc/Makefile.in	2002/05/01 10:20:03
+@@ -188,7 +188,7 @@
+ CFLAGS = "`gnome-config --cflags gnomeui applets docklets`"
+ LDFLAGS = "`gnome-config --libs gnomeui applets docklets`"
+ 
+-HTML_DIR = $(datadir)/html
++HTML_DIR = $(prefix)/share/doc/panel
+ 
+ TARGET_DIR = $(HTML_DIR)/$(DOC_MODULE)
+ 

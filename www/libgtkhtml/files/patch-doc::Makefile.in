@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- doc/Makefile.in	2002/05/01 09:15:00	1.1
++++ doc/Makefile.in	2002/05/01 09:16:10
+@@ -151,7 +151,7 @@
+ CFLAGS = @CFLAGS@ $(EXTRA_GNOME_CFLAGS)
+ LDFLAGS = @LDFLAGS@ $(EXTRA_GNOME_LIBS)
+ 
+-HTML_DIR = $(datadir)/html
++HTML_DIR = $(prefix)/share/doc/gtkhtml
+ 
+ TARGET_DIR = $(HTML_DIR)/$(DOC_MODULE)
+ 
