@@ -9,5 +9,3 @@ include/lang-util.h
 lib/libcn2jp.a
 lib/libcn2jp.so
 lib/libcn2jp.so.1
-share/cn2jp/README
-@dirrm share/cn2jp
