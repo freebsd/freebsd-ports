@@ -4,6 +4,7 @@
     COMMENT = Things that used to be on the desktop before computers were invented
 
     SUBDIR += abacus
+    SUBDIR += alexandria
     SUBDIR += aspostit
     SUBDIR += autocutsel
     SUBDIR += babytrans
