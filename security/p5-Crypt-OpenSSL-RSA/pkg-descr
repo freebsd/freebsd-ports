@@ -2,3 +2,5 @@ Crypt::OpenSSL::RSA provides the ability to RSA encrypt
 strings which are somewhat shorter than the block size of
 a key.  It also allows for decryption, signatures and
 signature verification.
+
+WWW: http://search.cpan.org/dist/Crypt-OpenSSL-RSA/
