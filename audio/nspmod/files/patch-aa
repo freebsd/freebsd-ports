@@ -1,0 +1,16 @@
+*** dacio-linux.c.orig	Sun Jun  1 17:44:17 1997
+--- dacio-linux.c	Sun Jun  1 17:43:50 1997
+***************
+*** 3,9 ****
+--- 3,13 ----
+  #include <fcntl.h>	/*O_WRONLY*/
+  #include <sys/ioctl.h>	/*(ioctl)*/
+  #include <unistd.h>	/*(write)*/
++ #if defined(LINUX)
+  #include <sys/soundcard.h> /*SNDCTL_XXX*/
++ #else
++ #include <machine/soundcard.h>
++ #endif
+  #include <errno.h>	/*EINTR*/
+  #include "defs.h"	/*u8,u16*/
+  #include "dacio.h"	/*(dacioXXX)*/
