@@ -283,6 +283,7 @@ algae		ports/math/algae
 algotutor	ports/math/algotutor
 alienwah	ports/audio/alienwah
 align		ports/textproc/align
+alignmargins	ports/print/alignmargins
 alisp		ports/lang/alisp
 allegro		ports/devel/allegro
 allegrogl	ports/graphics/allegrogl
