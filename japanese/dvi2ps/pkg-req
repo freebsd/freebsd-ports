@@ -4,6 +4,6 @@ if [ "$2" != "INSTALL" ]; then
 fi
 echo "**********************************************************"
 echo "* Modify RESOLUTION in /usr/local/lib/dvi2ps/fontdesc    *"
-echo "* See /usr/local/lib/dvi2ps/doc/* for customize          *"
+echo "* See /usr/local/lib/dvi2ps/doc/* for customization      *"
 echo "**********************************************************"
 
