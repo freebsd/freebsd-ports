@@ -1,0 +1,20 @@
+--- h/FreeBSD.defs.orig	Sun Oct  5 09:52:52 1997
++++ h/FreeBSD.defs	Sun Oct  5 09:53:46 1997
+@@ -2,7 +2,7 @@
+ # Ported to FreeBSD 2.0 by Jeffrey Hsu (hsu@freebsd.org).
+ # Hacked September-93 by Paul F. Werkowski for 386BSD 0.1 + Patchkit 0.2.4
+ 
+-LBINDIR=/usr/local/bin
++LBINDIR=${PREFIX}/bin
+ 
+ OFLAG	= -O2 -pipe
+ LIBS    = -lm
+@@ -13,7 +13,7 @@
+ # and also in the compiler::*cc* variable for later compilation of
+ # lisp files.
+ 
+-CC = gcc -pipe -O -fwritable-strings -fomit-frame-pointer -DVOL=volatile -I$(GCLDIR)/o -I/usr/local/lib/gcl-2.0/h -fsigned-char
++CC = gcc -pipe -O -fwritable-strings -fomit-frame-pointer -DVOL=volatile -I$(GCLDIR)/o -I${PREFIX}/lib/gcl-2.2.2/h -fsigned-char
+ 
+ LDCC = $(CC) -static
+ 
