@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.cs.uni-sb.de/pub/utils/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	jmb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reads VMS BACKUP tapes
 
 MAN1=		vmsbackup.1

@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.ruhr.de/home/nathan/FreeBSD/
 
-MAINTAINER=	ue@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of small utilities for the FreeBSD Documentation Projekt
 
 NO_BUILD=	yes
