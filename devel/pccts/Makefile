@@ -1,5 +1,5 @@
 # New ports collection makefile for:	pccts
-# Version required:			1.33.20
+# Version required:			1.33.21
 # Date created:				22 June 1997
 # Whom:					Andrey Zakhvatov
 #
@@ -7,7 +7,7 @@
 #
 
 DISTNAME=		pccts133mr
-PKGNAME=		pccts-1.33.20
+PKGNAME=		pccts-1.33.21
 CATEGORIES=		devel
 MASTER_SITES=		http://www.polhode.com/
 
