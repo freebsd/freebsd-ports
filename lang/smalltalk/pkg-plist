@@ -2,22 +2,21 @@ bin/gst
 bin/gst-config
 bin/gst-package
 include/gst.h
-include/gstconf.h
 include/gstpub.h
 @unexec install-info --delete %D/info/gst.info %D/info/dir
 info/gst.info
 @exec install-info %D/info/gst.info %D/info/dir
 lib/libgst.a
+lib/gnu-smalltalk/libregex-%%VERSION%%.so
+lib/gnu-smalltalk/libregex.a
+lib/gnu-smalltalk/libregex.la
+lib/gnu-smalltalk/libregex.so
+lib/gnu-smalltalk/libtcp-%%VERSION%%.so
+lib/gnu-smalltalk/libtcp.a
+lib/gnu-smalltalk/libtcp.la
+lib/gnu-smalltalk/libtcp.so
 share/gnu-smalltalk/Load.st
 share/gnu-smalltalk/Reload.st
-share/gnu-smalltalk/blox/BB-Run.st
-share/gnu-smalltalk/blox/BBrowser.st
-share/gnu-smalltalk/blox/Blox.st
-share/gnu-smalltalk/blox/BloxBasic.st
-share/gnu-smalltalk/blox/BloxCanvas.st
-share/gnu-smalltalk/blox/BloxExtend.st
-share/gnu-smalltalk/blox/BloxText.st
-share/gnu-smalltalk/blox/BloxWidgets.st
 share/gnu-smalltalk/blox/BrowShell.st
 share/gnu-smalltalk/blox/BrowserMain.st
 share/gnu-smalltalk/blox/ClassBrow.st
@@ -42,6 +41,12 @@ share/gnu-smalltalk/blox/StrcInspect.st
 share/gnu-smalltalk/blox/View.st
 share/gnu-smalltalk/blox/bear.gif
 share/gnu-smalltalk/blox/test.st
+share/gnu-smalltalk/blox/tk/Blox.st
+share/gnu-smalltalk/blox/tk/BloxBasic.st
+share/gnu-smalltalk/blox/tk/BloxCanvas.st
+share/gnu-smalltalk/blox/tk/BloxExtend.st
+share/gnu-smalltalk/blox/tk/BloxText.st
+share/gnu-smalltalk/blox/tk/BloxWidgets.st
 share/gnu-smalltalk/compiler/Load.st
 share/gnu-smalltalk/compiler/STCompLit.st
 share/gnu-smalltalk/compiler/STCompiler.st
@@ -81,6 +86,9 @@ share/gnu-smalltalk/examples/Tokenizer.st
 share/gnu-smalltalk/examples/Watchdog.st
 share/gnu-smalltalk/examples/blox/Man.st
 share/gnu-smalltalk/examples/blox/Tetris.st
+share/gnu-smalltalk/examples/modules/gdbm-c.st
+share/gnu-smalltalk/examples/modules/gdbm.st
+share/gnu-smalltalk/examples/modules/regex.st
 share/gnu-smalltalk/examples/shell
 share/gnu-smalltalk/gst.im
 share/gnu-smalltalk/i18n/Collation.st
@@ -94,6 +102,7 @@ share/gnu-smalltalk/i18n/Set-EUC.st
 share/gnu-smalltalk/i18n/Set-GB.st
 share/gnu-smalltalk/i18n/Set-SBCS.st
 share/gnu-smalltalk/i18n/Set-SJIS.st
+share/gnu-smalltalk/i18n/Sets.st
 share/gnu-smalltalk/i18n/Times.st
 share/gnu-smalltalk/kernel/AnsiDates.st
 share/gnu-smalltalk/kernel/AnsiExcept.st
@@ -136,6 +145,7 @@ share/gnu-smalltalk/kernel/FileSegment.st
 share/gnu-smalltalk/kernel/FileStream.st
 share/gnu-smalltalk/kernel/Float.st
 share/gnu-smalltalk/kernel/Fraction.st
+share/gnu-smalltalk/kernel/HashedColl.st
 share/gnu-smalltalk/kernel/IdentDict.st
 share/gnu-smalltalk/kernel/IdentitySet.st
 share/gnu-smalltalk/kernel/Integer.st
@@ -158,6 +168,7 @@ share/gnu-smalltalk/kernel/Number.st
 share/gnu-smalltalk/kernel/ObjDumper.st
 share/gnu-smalltalk/kernel/Object.st
 share/gnu-smalltalk/kernel/OrderColl.st
+share/gnu-smalltalk/kernel/OtherArrays.st
 share/gnu-smalltalk/kernel/PkgLoader.st
 share/gnu-smalltalk/kernel/Point.st
 share/gnu-smalltalk/kernel/PosStream.st
@@ -191,20 +202,18 @@ share/gnu-smalltalk/kernel/WeakObjects.st
 share/gnu-smalltalk/kernel/WriteStream.st
 share/gnu-smalltalk/kernel/initialize.st
 share/gnu-smalltalk/packages
-share/gnu-smalltalk/tcp/AbstractSocket.st
+share/gnu-smalltalk/sunit/SUnit.st
+share/gnu-smalltalk/sunit/SUnitPreload.st
+share/gnu-smalltalk/sunit/SUnitScript.st
+share/gnu-smalltalk/sunit/SUnitTests.st
 share/gnu-smalltalk/tcp/AbstractSocketImpl.st
 share/gnu-smalltalk/tcp/ContentHandler.st
 share/gnu-smalltalk/tcp/Datagram.st
-share/gnu-smalltalk/tcp/DatagramSocket.st
-share/gnu-smalltalk/tcp/DatagramSocketImpl.st
-share/gnu-smalltalk/tcp/IPAddress.st
-share/gnu-smalltalk/tcp/MulticastSocket.st
-share/gnu-smalltalk/tcp/ServerSocket.st
-share/gnu-smalltalk/tcp/Socket.st
-share/gnu-smalltalk/tcp/SocketImpl.st
+share/gnu-smalltalk/tcp/IPSocketImpl.st
+share/gnu-smalltalk/tcp/SocketAddress.st
+share/gnu-smalltalk/tcp/Sockets.st
 share/gnu-smalltalk/tcp/TCP.st
-share/gnu-smalltalk/tcp/TCPSocketImpl.st
-share/gnu-smalltalk/tcp/UDPSocketImpl.st
+share/gnu-smalltalk/tcp/Tests.st
 share/gnu-smalltalk/tcp/URL.st
 share/gnu-smalltalk/tcp/UnixStream.st
 share/gnu-smalltalk/tcp/cfuncs.st
@@ -212,6 +221,7 @@ share/gnu-smalltalk/tcp/init.st
 share/gnu-smalltalk/web/FileServer.st
 share/gnu-smalltalk/web/Haiku.st
 share/gnu-smalltalk/web/Load.st
+share/gnu-smalltalk/web/NetServer.st
 share/gnu-smalltalk/web/WebServer.st
 share/gnu-smalltalk/web/WikiServer.st
 share/gnu-smalltalk/web/edit.jpg
@@ -225,15 +235,20 @@ share/gnu-smalltalk/web/recent.jpg
 share/gnu-smalltalk/web/rename.jpg
 share/gnu-smalltalk/web/test.st
 share/gnu-smalltalk/web/top.jpg
-share/gnu-smalltalk/xml/DOM.st
-share/gnu-smalltalk/xml/XWalker.st
+share/gnu-smalltalk/xml/Id-DOM.st
+share/gnu-smalltalk/xml/Id-XWalker.st
+share/gnu-smalltalk/xml/XML.st
 @dirrm share/gnu-smalltalk/xml
 @dirrm share/gnu-smalltalk/web
 @dirrm share/gnu-smalltalk/tcp
+@dirrm share/gnu-smalltalk/sunit
 @dirrm share/gnu-smalltalk/kernel
 @dirrm share/gnu-smalltalk/i18n
+@dirrm share/gnu-smalltalk/examples/modules
 @dirrm share/gnu-smalltalk/examples/blox
 @dirrm share/gnu-smalltalk/examples
 @dirrm share/gnu-smalltalk/compiler
+@dirrm share/gnu-smalltalk/blox/tk
 @dirrm share/gnu-smalltalk/blox
 @dirrm share/gnu-smalltalk
+@dirrm lib/gnu-smalltalk
