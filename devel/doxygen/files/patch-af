@@ -1,13 +1,12 @@
---- tmake/lib/freebsd-g++/tmake.conf.orig	Wed Jul 28 08:21:38 1999
-+++ tmake/lib/freebsd-g++/tmake.conf	Fri Feb 25 13:22:51 2000
+--- tmake/lib/freebsd-g++/tmake.conf.orig	Thu Jul 29 00:21:38 1999
++++ tmake/lib/freebsd-g++/tmake.conf	Tue Sep 25 23:14:36 2001
 @@ -8,16 +8,16 @@
  CONFIG			= qt warn_on release
  
  TMAKE_CC		= gcc
 -TMAKE_CFLAGS		= -pipe
--TMAKE_CFLAGS_WARN_ON	= -Wall -W
 +TMAKE_CFLAGS		= %%CFLAGS%%
-+TMAKE_CFLAGS_WARN_ON	=
+ TMAKE_CFLAGS_WARN_ON	= -Wall -W
  TMAKE_CFLAGS_WARN_OFF	=
 -TMAKE_CFLAGS_RELEASE	= -O2
 -TMAKE_CFLAGS_DEBUG	= -g
@@ -29,14 +28,30 @@
 -TMAKE_INCDIR_X11	= /usr/X11R6/include
 -TMAKE_LIBDIR_X11	= /usr/X11R6/lib
 -TMAKE_INCDIR_QT		= $(QTDIR)/include
-+TMAKE_INCDIR_X11	= $(QTDIR)/include
-+TMAKE_LIBDIR_X11	= $(QTDIR)/lib
-+TMAKE_INCDIR_QT		= $(QTDIR)/include/X11/qt
- TMAKE_LIBDIR_QT		= $(QTDIR)/lib
+-TMAKE_LIBDIR_QT		= $(QTDIR)/lib
 -TMAKE_INCDIR_OPENGL	= /usr/X11R6/include
 -TMAKE_LIBDIR_OPENGL	= /usr/X11R6/lib
-+TMAKE_INCDIR_OPENGL	= $(QTDIR)/include
-+TMAKE_LIBDIR_OPENGL	= $(QTDIR)/lib
++TMAKE_INCDIR_X11       = $(X11BASE)/include
++TMAKE_LIBDIR_X11       = $(X11BASE)/lib
++TMAKE_INCDIR_QT                = %%QT_INC%%
++TMAKE_LIBDIR_QT                = %%QT_LIB%%
++TMAKE_INCDIR_OPENGL    = $(X11BASE)/include
++TMAKE_LIBDIR_OPENGL    = $(X11BASE)/lib
  
  TMAKE_LINK		= g++
  TMAKE_LINK_SHLIB	= g++
+@@ -46,11 +46,11 @@
+ 
+ TMAKE_LIBS		=
+ TMAKE_LIBS_X11		= -lXext -lX11 -lm
+-TMAKE_LIBS_QT		= -lqt
+-TMAKE_LIBS_QT_OPENGL	= -lqgl
++TMAKE_LIBS_QT          = %%LIBQT%%
++TMAKE_LIBS_QT_OPENGL   = -lqtgl
+ TMAKE_LIBS_OPENGL	= -lMesaGL -lMesaGLU -lXmu
+ 
+-TMAKE_MOC		= moc
++TMAKE_MOC              = %%MOC%%
+ 
+ TMAKE_AR		= ar cqs
+ TMAKE_RANLIB		=
