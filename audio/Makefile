@@ -285,6 +285,7 @@
     SUBDIR += xmms-ladspa
     SUBDIR += xmms-liveice
     SUBDIR += xmms-musepack
+    SUBDIR += xmms-osssurround
     SUBDIR += xmms-quix3dn
     SUBDIR += xmms-shn
     SUBDIR += xmms-sndfile
