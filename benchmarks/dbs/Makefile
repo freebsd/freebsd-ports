@@ -8,7 +8,7 @@
 PORTNAME=	dbs
 PORTVERSION=	1.1.5
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://shika.aist-nara.ac.jp/member/yukio-m/dbs/software1.1.5/
+MASTER_SITES=	http://iplab.aist-nara.ac.jp/member/yukio-m/dbs/software1.1.5/
 
 MAINTAINER=	jkoshy@freebsd.org
 
