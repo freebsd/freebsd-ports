@@ -6,6 +6,7 @@
 
 PORTNAME=	libkexif
 PORTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	digikam
@@ -13,7 +14,7 @@ MASTER_SITE_SUBDIR=	digikam
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	Library for manipulating EXIF information embedded in images
 
-LIB_DEPENDS=	exif.10:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
