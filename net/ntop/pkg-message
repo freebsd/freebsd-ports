@@ -18,7 +18,7 @@ Note that the installed startup script will NOT be execute at system
 startup by default.  If you wish ntop to start when your system boots,
 you should make this script executable:
 
-  # chmod 555 %%LOCALBASE%%/etc/rc/ntop.sh
+  # chmod 555 %%LOCALBASE%%/etc/rc.d/ntop.sh
 
 			       NB!! NB!! NB!!
 In the past, ntop has been the subject of repeated security vulner-
