@@ -1,0 +1,42 @@
+@unexec if cmp -s %D/%%EXAMPLESDIR%%/etc/jabber-pymsn.xml %D/etc/jabber-pymsn.xml; then rm -f %D/etc/jabber-pymsn.xml; fi
+%%EXAMPLESDIR%%/etc/jabber-pymsn.xml
+@exec [ -f %D/etc/jabber-pymsn.xml ] || cp %B/%f %D/etc/jabber-pymsn.xml
+lib/jabber/pymsn/tlib/jabber/__init__.py
+lib/jabber/pymsn/tlib/jabber/client.py
+lib/jabber/pymsn/tlib/jabber/component.py
+lib/jabber/pymsn/tlib/jabber/jid.py
+lib/jabber/pymsn/tlib/jabber/jstrports.py
+lib/jabber/pymsn/tlib/domish.py
+lib/jabber/pymsn/tlib/__init__.py
+lib/jabber/pymsn/tlib/msn.py
+lib/jabber/pymsn/tlib/proxy.py
+lib/jabber/pymsn/tlib/xmlstream.py
+lib/jabber/pymsn/baseproto/__init__.py
+lib/jabber/pymsn/baseproto/glue.py
+lib/jabber/pymsn/legacy/__init__.py
+lib/jabber/pymsn/legacy/glue.py
+lib/jabber/pymsn/legacy/msnw.py
+lib/jabber/pymsn/legacy/subscription.py
+lib/jabber/pymsn/xmlconfig.py
+@unexec if cmp -s %D/lib/jabber/pymsn/config.py.sample %D/lib/jabber/pymsn/config.py; then rm -f %D/lib/jabber/pymsn/config.py; fi
+lib/jabber/pymsn/config.py.sample
+@exec [ -f %D/lib/jabber/pymsn/config.py ] || cp %B/%f %D/lib/jabber/pymsn/config.py
+lib/jabber/pymsn/register.py
+lib/jabber/pymsn/misciq.py
+lib/jabber/pymsn/main.py
+lib/jabber/pymsn/utils.py
+lib/jabber/pymsn/lang.py
+lib/jabber/pymsn/jabw.py
+lib/jabber/pymsn/groupchat.py
+lib/jabber/pymsn/disco.py
+lib/jabber/pymsn/debug.py
+lib/jabber/pymsn/xdb.py
+lib/jabber/pymsn/session.py
+@dirrm lib/jabber/pymsn/tlib/jabber
+@dirrm lib/jabber/pymsn/tlib
+@dirrm lib/jabber/pymsn/legacy
+@dirrm lib/jabber/pymsn/baseproto
+@dirrm lib/jabber/pymsn
+@unexec rmdir %D/lib/jabber 2>/dev/null || true
+@dirrm %%EXAMPLESDIR%%/etc
+@dirrm %%EXAMPLESDIR%%
