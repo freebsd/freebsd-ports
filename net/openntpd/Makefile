@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	openntpd
-PORTVERSION=	20040824p
+PORTVERSION=	3.6p1
+PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	http://www.openntpd.org/dist/portable/ \
-		http://www.zip.com.au/~dtucker/openntpd/ \
-		http://dtucker.freeshell.org/openntpd/
+MASTER_SITES=	ftp://ftp.openbsd.org/pub/OpenBSD/OpenNTPD/ \
+		ftp://ftp.kd85.com/pub/OpenBSD/OpenNTPD/ \
+	 	ftp://ftp.jp.openbsd.org/pub/OpenBSD/OpenNTPD/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	OpenBSD's Network Time Protocol daemon
