@@ -1,10 +1,10 @@
---- Makefile.PL.orig	Tue Jul 24 20:48:12 2001
-+++ Makefile.PL	Tue Jul 24 20:51:11 2001
-@@ -141,24 +141,6 @@
+--- Makefile.PL.orig	Sun Nov  4 16:00:57 2001
++++ Makefile.PL	Sun Nov  4 16:02:00 2001
+@@ -143,25 +143,6 @@
    }
  
   RETR:
--  if ($formats{'gif'} or $formats{'ungif'}) {
+-  if (($formats{'gif'} or $formats{'ungif'}) && !$ENV{IM_SUPPRESS_PROMPT}) {
 -    print <<EOFF;
 -
 -You have libgif or libungif installed.  They are both known to have
@@ -22,6 +22,7 @@
 -      return;
 -    }
 -  }
- 
+-
    for my $frm (qw(gif ungif)) {
      checkformat($frm) if ($MANUAL and $formats{$frm});
+   }
