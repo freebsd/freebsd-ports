@@ -78,6 +78,14 @@ pre-fetch:
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} > 500012
+post-patch:
+	@if [ ! -e ${WRKSRC}/include/Xarch.h.orig ]; then\
+	  mv ${WRKSRC}/include/Xarch.h ${WRKSRC}/include/Xarch.h.orig;\
+	  ${SED} -e 52d -e 54d < ${WRKSRC}/include/Xarch.h.orig > \
+	  ${WRKSRC}/include/Xarch.h; fi
+.endif
+
 pre-install:
 	${MKDIR} ${PREFIX}
 
