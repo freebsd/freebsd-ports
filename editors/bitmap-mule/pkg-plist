@@ -17,5 +17,6 @@
 %%EMACS_LIBDIR_WITH_VER%%/site-lisp/%%BITMAP_SETUPEL%%
 @dirrm %%EMACS_LIBDIR%%/site-lisp/bitmap
 %%BITMAPDOCDIR%%/ChangeLog
+%%BITMAPDOCDIR%%/NEWS
 %%BITMAPDOCDIR%%/README.en
 @dirrm %%BITMAPDOCDIR%%
