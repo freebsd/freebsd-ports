@@ -27,6 +27,7 @@
     SUBDIR += recode
     SUBDIR += ruby-iconv
     SUBDIR += tcs
+    SUBDIR += tnef
     SUBDIR += trans
     SUBDIR += tuc
     SUBDIR += unix2dos
