@@ -3,14 +3,14 @@
 # Date created:        24 March 1998
 # Whom:                Matthew Hunt <mph@pobox.com>
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/10 05:00:51 hoek Exp $
+# $Id: Makefile,v 1.2 1998/04/12 01:05:55 hoek Exp $
 #
 
 DISTNAME=	xgfe-1.3
 CATEGORIES=	math
 MASTER_SITES=	http://www2.msstate.edu/~dmi1/xgfe/download/
 
-MAINTAINER=	mph@pobox.com
+MAINTAINER=	mph@freebsd.org
 
 LIB_DEPENDS=	qt\\.1\\.3:${PORTSDIR}/x11/qt
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
