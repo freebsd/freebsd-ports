@@ -6121,6 +6121,7 @@ scr2txt		ports/textproc/scr2txt
 screem		ports/www/screem
 screen		ports/misc/screen
 scriba		ports/lang/scriba
+scribus		ports/print/scribus
 script		src/usr.bin/script
 scriptkit	ports/misc/scriptkit
 scrollkeeper	ports/textproc/scrollkeeper
