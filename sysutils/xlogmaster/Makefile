@@ -7,29 +7,31 @@
 
 PORTNAME=	xlogmaster
 PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	xlogmaster
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quick & easy monitoring of logfiles and devices
 
-USE_XLIB=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gtk12
+USE_GETOPT_LONG=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 MAN1=		xlogmaster.1
+INFO=		xlogmaster
 
-.include <bsd.port.pre.mk>
+CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
+LDFLAGS=	-L${LOCALBASE}/lib
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
-.endif
+post-extract:
+	-${RM} ${WRKSRC}/import/getopt*
 
 post-install:
 	@install-info ${PREFIX}/info/xlogmaster.info ${PREFIX}/info/dir
 	${INSTALL_DATA} ${FILESDIR}/xlogmasterrc ${PREFIX}/etc/xlogmaster
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

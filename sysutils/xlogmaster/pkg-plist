@@ -28,9 +28,6 @@ etc/xlogmaster/sound/uniconify
 etc/xlogmaster/steelblue.gtkrc
 etc/xlogmaster/xlogmaster.gtkrc
 etc/xlogmaster/xlogmasterrc
-@unexec install-info --delete %D/info/xlogmaster.info %D/info/dir
-info/xlogmaster.info
-@exec install-info %D/info/xlogmaster.info %D/info/dir
 @dirrm etc/xlogmaster/database
 @dirrm etc/xlogmaster/output-plugins
 @dirrm etc/xlogmaster/scripts
