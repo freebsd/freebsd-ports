@@ -102,6 +102,7 @@
     SUBDIR += et-aspell
     SUBDIR += expat2
     SUBDIR += exslt
+    SUBDIR += fa-aspell
     SUBDIR += fdp-tools
     SUBDIR += fi-aspell
     SUBDIR += filepp
