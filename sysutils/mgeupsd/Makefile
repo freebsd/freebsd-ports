@@ -1,6 +1,6 @@
 # Ports collection makefile for:	mgeupsd
 # Date created:				12 Aug 1999
-# Whom:					Andreas Dobloug <andreasd@ifi.uio.no>
+# Whom:					Donald Burr <dburr@FreeBSD.ORG>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=		sysutils
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	system/ups
 
-MAINTAINER=		andreasd@ifi.uio.no
+MAINTAINER=		dburr@FreeBSD.ORG
 
 USE_GMAKE=		YES
 WRKSRC=			${WRKDIR}/MGE
