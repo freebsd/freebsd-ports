@@ -723,7 +723,8 @@ MASTER_SITE_RUBY+= \
 	ftp://ftp.iDaemons.org/pub/mirror/ftp.ruby-lang.org/ruby/%SUBDIR%/
 
 MASTER_SITE_SAVANNAH+= \
-	http://savannah.nongnu.org/download/%SUBDIR%/
+	http://savannah.nongnu.org/download/%SUBDIR%/ \
+	ftp://ftp.gnu.org/pub/savannah/files/%SUBDIR%/
 
 MASTER_SITE_SOURCEFORGE+= \
 	http://us.dl.sourceforge.net/%SUBDIR%/ \
