@@ -814,6 +814,7 @@ cgihtml		ports/www/cgihtml
 cgiparse	ports/www/cgiparse
 cgiwrap		ports/www/cgiwrap
 cgoban		ports/games/cgoban
+cgoban2		ports/games/cgoban2
 chameleon	ports/lang/chameleon
 chbg		ports/graphics/chbg
 cheatah		ports/misc/cheatah
