@@ -19,7 +19,7 @@ GS_NO_X11	"Postscript for non-PS printer, no X11"		OFF	\
 GS_PDF_CRYPT	"print encrypted PDF files using gs"		ON	\
 PSUTILS		"for pseudo duplex printing + paper handling"	ON	\
 A2PS		"ASCII files in different styles/orientation"	ON	\
-ACROREAD4	"PDF files, needs Linux emulation"		ON	\
+ACROREAD5	"PDF files, needs Linux emulation"		ON	\
 CONVERT		"support for lots of graphic file formats"	ON	\
 DVIPS		"TeX DVI files"					OFF	\
 FIG2DEV		"XFIG drawings"					OFF	\
@@ -66,10 +66,10 @@ while [ "$1" ]; do
 		echo "PAPERSIZE=letterdj"
 		;;
 	\"GS\")
-		echo RUN_DEPENDS+=gs:${PORTSDIR}/print/ghostscript-gnu
+		echo RUN_DEPENDS+=gs:${PORTSDIR}/${GSPORT}
 		;;
 	\"GS_NO_X11\")
-		echo RUN_DEPENDS+=gs:${PORTSDIR}/print/ghostscript-gnu-nox11
+		echo RUN_DEPENDS+=gs:${PORTSDIR}/${GSPORT}-nox11
 		;;
 	\"GS_PDF_CRYPT\")
 		echo PDFENCRYPT=YES
@@ -100,7 +100,7 @@ while [ "$1" ]; do
 			;;
 		esac
 		;;
-	\"ACROREAD4\")
+	\"ACROREAD5\")
 		echo RUN_DEPENDS+=acroread5:${PORTSDIR}/print/acroread5
 		;;
 	\"CONVERT\")
