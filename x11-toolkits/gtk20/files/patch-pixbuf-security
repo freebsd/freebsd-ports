@@ -1,0 +1,100 @@
+===================================================================
+RCS file: /cvs/gnome/gtk+/gdk-pixbuf/io-ico.c,v
+retrieving revision 1.34
+retrieving revision 1.34.2.1
+diff -u -r1.34 -r1.34.2.1
+--- gdk-pixbuf/io-ico.c	2004/01/07 00:26:58	1.34
++++ gdk-pixbuf/io-ico.c	2004/09/15 14:32:13	1.34.2.1
+@@ -323,6 +323,14 @@
+ 	
+ 	State->HeaderSize+=I;
+ 	
++	if (State->HeaderSize < 0) {
++		g_set_error (error,
++			     GDK_PIXBUF_ERROR,
++			     GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
++			     _("Invalid header in icon"));
++		return;
++	}
++
+  	if (State->HeaderSize>State->BytesInHeaderBuf) {
+ 	        guchar *tmp=g_try_realloc(State->HeaderBuf,State->HeaderSize);
+ 		if (!tmp) {
+===================================================================
+RCS file: /cvs/gnome/gtk+/gdk-pixbuf/io-xpm.c,v
+retrieving revision 1.42
+retrieving revision 1.42.2.1
+diff -u -r1.42 -r1.42.2.1
+--- gdk-pixbuf/io-xpm.c	2003/03/08 20:48:58	1.42
++++ gdk-pixbuf/io-xpm.c	2004/09/15 14:32:13	1.42.2.1
+@@ -1079,7 +1079,7 @@
+ 	gint key = 0;
+ 	gint current_key = 1;
+ 	gint space = 128;
+-	gchar word[128], color[128], current_color[128];
++	gchar word[129], color[129], current_color[129];
+ 	gchar *r; 
+ 	
+ 	word[0] = '\0';
+@@ -1121,8 +1121,8 @@
+ 				return NULL;
+ 			/* accumulate color name */
+ 			if (color[0] != '\0') {
+-				strcat (color, " ");
+-				space--;
++				strncat (color, " ", space);
++				space -= MIN (space, 1);
+ 			}
+ 			strncat (color, word, space);
+ 			space -= MIN (space, strlen (word));
+@@ -1246,27 +1246,43 @@
+ 		return NULL;
+ 
+ 	}
+-	if (n_col <= 0) {
++	if (cpp <= 0 || cpp >= 32) {
+                 g_set_error (error,
+                              GDK_PIXBUF_ERROR,
+                              GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+-                             _("XPM file has invalid number of colors"));
++                             _("XPM has invalid number of chars per pixel"));
+ 		return NULL;
+-
+ 	}
+-	if (cpp <= 0 || cpp >= 32) {
++	if (n_col <= 0 || n_col >= G_MAXINT / (cpp + 1)) {
+                 g_set_error (error,
+                              GDK_PIXBUF_ERROR,
+                              GDK_PIXBUF_ERROR_CORRUPT_IMAGE,
+-                             _("XPM has invalid number of chars per pixel"));
++                             _("XPM file has invalid number of colors"));
+ 		return NULL;
+ 	}
+ 
+ 	/* The hash is used for fast lookups of color from chars */
+ 	color_hash = g_hash_table_new (g_str_hash, g_str_equal);
+ 
+-	name_buf = g_new (gchar, n_col * (cpp + 1));
+-	colors = g_new (XPMColor, n_col);
++	name_buf = g_try_malloc (n_col * (cpp + 1));
++	if (!name_buf) {
++		g_set_error (error,
++			     GDK_PIXBUF_ERROR,
++                             GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
++                             _("Cannot allocate memory for loading XPM image"));
++		g_hash_table_destroy (color_hash);
++		return NULL;
++	}
++	colors = (XPMColor *) g_try_malloc (sizeof (XPMColor) * n_col);
++	if (!colors) {
++		g_set_error (error,
++			     GDK_PIXBUF_ERROR,
++                             GDK_PIXBUF_ERROR_INSUFFICIENT_MEMORY,
++                             _("Cannot allocate memory for loading XPM image"));
++		g_hash_table_destroy (color_hash);
++		g_free (name_buf);
++		return NULL;
++	}
+ 
+ 	for (cnt = 0; cnt < n_col; cnt++) {
+ 		gchar *color_name;
