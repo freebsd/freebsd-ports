@@ -37,4 +37,9 @@ LDCONFIG_DIRS=	%%PREFIX%%/lib %%PREFIX%%/lib/kde3
 
 .include "${FILESDIR}/manpages.mk"
 
+.if ${PERL_LEVEL} < 500600
+BROKEN= "You need at least perl 5.6.0. Do not use FreeBSD 4.x' system perl,\
+	it's outdated. Install lang/perl5 and issue 'use.perl port'"
+.endif
+
 .include <bsd.port.post.mk>
