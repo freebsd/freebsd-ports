@@ -20,8 +20,7 @@
 #
 
 PORTNAME=	php4
-PORTVERSION=	4.3.5
-PORTREVISION=	7
+PORTVERSION=	4.3.6
 CATEGORIES?=	lang devel www
 MASTER_SITES=	http://www.php.net/distributions/:release \
 		http://it.php.net/distributions/:release \
