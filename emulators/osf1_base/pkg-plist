@@ -24,6 +24,8 @@ usr/lib/X11
 usr/shlib/libc_r.so
 usr/shlib/libpthread.so
 usr/shlib/libpthreads.so
+sbin/sh
+@unexec rm -f %D/usr/lib/X11
 @dirrm sbin
 @dirrm etc/sia
 @dirrm etc

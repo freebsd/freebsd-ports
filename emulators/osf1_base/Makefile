@@ -47,6 +47,7 @@ do-install:
 	@cd ${PREFIX}/usr/shlib ; ${LN} -sf libc.so libc_r.so
 	@cd ${PREFIX}/usr/shlib ; ${LN} -sf libc.so libpthread.so
 	@cd ${PREFIX}/usr/shlib ; ${LN} -sf libc.so libpthreads.so
+	@cd ${PREFIX}/sbin ; ${LN} -sf /bin/sh sh
 	@touch ${PREFIX}/etc/sia/siainitgood
 
 .include <bsd.port.mk>
