@@ -7,7 +7,7 @@
 
 PORTNAME=	jdk-tutorial
 PORTVERSION=	1.1.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	java
 MASTER_SITES=	ftp://ftp.javasoft.com/docs/
 DISTNAME=	tutorial
