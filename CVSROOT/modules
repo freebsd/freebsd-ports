@@ -1368,6 +1368,7 @@ e3		ports/editors/e3
 e4graph		ports/devel/e4graph
 e93		ports/editors/e93
 eBones		src/eBones
+earthview	ports/misc/earthview
 easygtk		ports/x11-toolkits/easygtk
 easysoap	ports/net/easysoap
 easytag		ports/audio/easytag
