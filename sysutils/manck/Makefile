@@ -3,12 +3,12 @@
 # Date created:         10 September 1995
 # Whom:                 joerg
 #
-# $Id: Makefile,v 1.6 1996/11/17 08:06:15 obrien Exp $
+# $Id: Makefile,v 1.7 1997/04/30 03:18:08 asami Exp $
 #
 
 DISTNAME=       manck-1.2
 CATEGORIES=	sysutils
-MASTER_SITES=   ${MASTER_SITE_LOCAL}
+MASTER_SITES=   http://www.apfel.de/~wosch/src/
 
 MAINTAINER=     wosch@FreeBSD.org
 
