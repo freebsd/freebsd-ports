@@ -1,0 +1,4 @@
+pdumpfs-rsync is a utility to back up remote files with pdumpfs and rsync
+
+Author:	Taku YASUI <tach@debian.or.jp>
+WWW-ja:	http://tach.arege.net/software/pdumpfs-rsync/
