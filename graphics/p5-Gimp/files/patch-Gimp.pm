@@ -1,6 +1,14 @@
 --- Gimp.pm.orig	Sat Dec  1 07:35:04 2001
-+++ Gimp.pm	Thu Apr 11 18:01:20 2002
-@@ -392,6 +392,7 @@
++++ Gimp.pm	Wed Apr 17 10:00:58 2002
+@@ -200,6 +200,7 @@
+    if ($gtk_init) {
+       require Gtk;
+       Gtk->init;
++      Gtk->set_locale;
+       Gtk::Rc->parse (Gimp->gtkrc);
+       Gtk::Gdk->set_use_xshm (Gimp->use_xshm);
+       Gtk::Preview->set_gamma (Gimp->gamma);
+@@ -392,6 +393,7 @@
  sub callback {
     my $type = shift;
     my @cb;
@@ -8,7 +16,7 @@
     if ($type eq "-run") {
        local $function = shift;
        local $in_run = 1;
-@@ -405,9 +406,7 @@
+@@ -405,9 +407,7 @@
           );
        }
        die_msg __"required callback 'run' not found\n" unless @cb;
@@ -18,7 +26,7 @@
     } elsif ($type eq "-net") {
        local $in_net = 1;
        _initialized_callback;
-@@ -420,7 +419,7 @@
+@@ -420,7 +420,7 @@
           );
        }
        die_msg __"required callback 'net' not found\n" unless @cb;
@@ -27,7 +35,7 @@
     } elsif ($type eq "-query") {
        local $in_query = 1;
        _initialized_callback;
-@@ -431,7 +430,7 @@
+@@ -431,7 +431,7 @@
           );
        }
        die_msg __"required callback 'query' not found\n" unless @cb;
@@ -36,7 +44,7 @@
     } elsif ($type eq "-quit") {
        local $in_quit = 1;
        {
-@@ -440,8 +439,9 @@
+@@ -440,8 +440,9 @@
              @{$callback{quiet}},
           );
        }
