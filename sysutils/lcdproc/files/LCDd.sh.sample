@@ -1,0 +1,18 @@
+#!/bin/sh
+
+case "$1" in
+	start)		
+		%%PREFIX%%/bin/LCDd -c %%PREFIX%%/etc/LCDd.conf
+		echo -n " drm-kmod"
+		;;
+	stop)
+		killall LCDd
+		echo -n " drm-kmod"
+		;;
+	*)
+		echo ""
+		echo "Usage: `basename $0` { start | stop }"
+		echo ""
+		exit 64
+		;;
+esac

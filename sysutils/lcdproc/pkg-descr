@@ -1,0 +1,18 @@
+[from README]
+LCDproc is a client/server suite including drivers for all kinds
+of nifty LCD devices. The server works with different display sizes
+and supports several serial devices: Matrix Orbital, Crystal Fontz,
+Bayrad, LB216, LCDM001 (kernelconcepts.de), Wirz-SLI and PIC-an-LCD;
+and some devices connected to the parallel port: HD44780, STV5730,
+T6963, SED1520 and SED1330. Various clients are available that
+display things like CPU load, system load, memory usage, uptime,
+and a lot more.
+
+LCDproc also supports key or remote control input for controlling
+the clients.
+
+The client and the server use a TCP connection to communicate, so
+it is possible to have a client on a box in Sweden showing its stats
+on a LCD display in the United States.
+
+WWW: http://lcdproc.omnipotent.net/

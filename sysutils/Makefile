@@ -89,6 +89,7 @@
     SUBDIR += kdeadmin3
     SUBDIR += koncd
     SUBDIR += lavaps
+    SUBDIR += lcdproc
     SUBDIR += lfm
     SUBDIR += libretto-config
     SUBDIR += lmmon
