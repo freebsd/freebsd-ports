@@ -88,7 +88,9 @@
 #include <netinet/in.h>
 #include <sys/stat.h>
 #include <sys/conf.h>
+#if __FreeBSD_version < 400000
 #include <sys/rlist.h>
+#endif
 #include <sys/mount.h>
 #include <nfs/rpcv2.h>
 #include <nfs/nfsv2.h>
