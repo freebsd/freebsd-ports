@@ -28,6 +28,7 @@ include/spar/sl_version.h
 lib/libspar.a
 lib/libspar.la
 lib/libspar.so
+lib/libspar.so.5
 lib/spar/solve_c.a
 lib/spar/solve_c.la
 lib/spar/solve_c.so
