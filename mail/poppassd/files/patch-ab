@@ -1,5 +1,5 @@
---- poppassd.c.orig	Mon Jun  7 19:34:23 1999
-+++ poppassd.c	Mon Jun  7 19:40:00 1999
+--- poppassd.c.orig	Thu Sep  5 11:44:07 2002
++++ poppassd.c	Thu Sep  5 16:07:09 2002
 @@ -13,11 +13,11 @@
   * 
   * Doesn't actually change any passwords itself.  It simply listens for
@@ -39,21 +39,22 @@
 +    "Changing local password for *.\nOld password:",
      "Changing password for * on *.\nOld password:",
 -    "Changing NIS password for * on *.\nOld password:",
-+    "Changing NIS password for * on *.\nOld Password: ",
++    "Changing NIS password for * on *.\nOld Password:",
      "Changing password for *\n*'s Old password:",
      ""};
  
-@@ -165,7 +166,9 @@
+@@ -165,7 +166,10 @@
      
  static char *P4[] =
     {"\n",
 +    "\npasswd: rebuilding the database...\npasswd: done\n",
++	"\npasswd: updating the database...\npasswd: done\n",
      "NIS entry changed on *\n",
 +    "\n\nNIS password has been changed on *.\n",
      ""};
  
  
-@@ -186,11 +189,7 @@
+@@ -186,11 +190,7 @@
       
       *user = *oldpass = *newpass = 0;
       
@@ -66,7 +67,7 @@
       
       WriteToClient ("200 poppassd v%s hello, who are you?", VERSION);
       ReadFromClient (line);
-@@ -212,12 +211,16 @@
+@@ -212,12 +212,16 @@
       
       if ((pw = getpwnam (user)) == NULL)
       {
@@ -84,7 +85,7 @@
  	  WriteToClient ("500 Old password is incorrect.");
  	  exit(1);
       }
-@@ -264,28 +267,28 @@
+@@ -264,28 +268,28 @@
  
  	  if ((wpid = waitpid (pid, &wstat, 0)) < 0)
  	  {
@@ -117,7 +118,7 @@
  	       WriteToClient ("500 Server error (abnormal exit), get help!");
  	       exit (1);
  	  }
-@@ -304,17 +307,19 @@
+@@ -304,17 +308,19 @@
       }
       else      /* Child */
       {
@@ -148,7 +149,7 @@
  	  setuid (pw->pw_uid);
  	  setgid (pw->pw_gid);
  	  dochild (master, slavedev, user);
-@@ -324,7 +329,7 @@
+@@ -324,7 +330,7 @@
  /*
   * dochild
   *
@@ -157,7 +158,7 @@
   *
   * Code adapted from "Advanced Programming in the UNIX Environment"
   * by W. Richard Stevens.
-@@ -338,13 +343,6 @@
+@@ -338,13 +344,6 @@
     int slave;
     struct termios stermios;
  
@@ -171,7 +172,7 @@
     /* Open slave pty and acquire as new controlling terminal. */
  
     if ((slave = open(slavedev, O_RDWR)) < 0) {
-@@ -387,10 +385,10 @@
+@@ -387,10 +386,10 @@
        return(0);
     }
  
@@ -185,7 +186,7 @@
        return(0);
     }
  }
-@@ -408,15 +406,20 @@
+@@ -408,15 +407,20 @@
   *
   * Modified by Norstad to remove assumptions about number of pty's allocated
   * on this UNIX box.
@@ -207,24 +208,15 @@
     dirp = opendir("/dev");
     while ((dp = readdir(dirp)) != NULL) {
        if (strncmp(dp->d_name, "pty", 3) == 0 && strlen(dp->d_name) == 5) {
-@@ -485,9 +488,11 @@
+@@ -485,8 +489,10 @@
       }
  
       writestring(master, pswd);
 -
 +     sleep(2);
       if (!expect(master, P4, buf)) return FAILURE;
- 
-+     close(master);
 +
++     close(master);
+
       return SUCCESS;
  }
- 
-@@ -566,6 +571,7 @@
- 	}
- 	n += m;
- 	buf[n] = 0;
-+/* syslog(LOG_ERR, "read from child: %s",buf); */
- 	initialSegment = 0;
-         for (s = expected; **s != 0; s++) {
-            result = match(buf, *s);

@@ -1,11 +1,13 @@
---- Makefile.orig	Sun Nov  3 15:27:42 1996
-+++ Makefile	Sun Nov  3 15:31:27 1996
+--- Makefile.orig	Thu Sep  5 16:11:10 2002
++++ Makefile	Thu Sep  5 16:13:58 2002
 @@ -1,11 +1,11 @@
 -BINDIR = /usr/etc
 +BINDIR = ${PREFIX}/libexec
  LIBDIR = 
- CFLAGS = -g
- LFLAGS = -g
+-CFLAGS = -g
+-LFLAGS = -g
++CFLAGS?= -g
++LFLAGS?= ${LDFLAGS}
  CCM = cc -Em
  
  OBJECTS = poppassd.o
