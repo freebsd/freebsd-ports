@@ -1,5 +1,5 @@
 --- mod_auth_pam.c.orig	Sun Feb 13 23:16:57 2000
-+++ mod_auth_pam.c	Mon Apr  2 22:20:44 2001
++++ mod_auth_pam.c	Mon May 17 11:13:59 2004
 @@ -113,7 +113,7 @@
  #define PAM_STRE_NEEDS_PAMH 1
  #define VERSION "1.0a"
@@ -9,7 +9,23 @@
  
  static const char
  *pam_servicename = "httpd",
-@@ -362,7 +362,7 @@
+@@ -197,13 +197,11 @@
+ 
+ static command_rec auth_pam_cmds[] = {
+   { "AuthFailDelay", (const char*(*)())auth_fail_delay, 0, OR_AUTHCFG, TAKE1,
+-    "number of micro seconds to wait after failed authentication attempt. defau
+-lt is 0" },
++    "number of micro seconds to wait after failed authentication attempt. default is 0" },
+   { "AuthPAM_Authorative", (const char*(*)())auth_fall_through, NULL, OR_AUTHCFG, FLAG,
+     "no longer in use -- see AuthPAM_FallThrough instead" },
+   { "AuthPAM_FallThrough", (const char*(*)())auth_fall_through, NULL, OR_AUTHCFG, FLAG,
+-    "on|off - determines if other authentication methods are attempted if this
+-one fails; default is off" },
++    "on|off - determines if other authentication methods are attempted if this one fails; default is off" },
+   { "AuthPAM_Enabled", (const char*(*)())auth_enable, NULL, OR_AUTHCFG, FLAG,
+     "on|off - determines if PAM authentication is enabled; default is on" },
+   { 0 }
+@@ -362,7 +360,7 @@
    /* mod_auth_pam specific */
    auth_pam_userinfo userinfo = { NULL, NULL };
    auth_pam_dir_config *conf = (auth_pam_dir_config*)
@@ -18,7 +34,7 @@
    /* PAM specific  */
    struct pam_conv conv_info = { &auth_pam_talker, (void*)&userinfo};
    pam_handle_t *pamh  = NULL;
-@@ -442,7 +442,7 @@
+@@ -442,7 +440,7 @@
    char method_restricted = 0, *line = 0, *word = 0;
    table *groups = 0;
    auth_pam_dir_config *conf = (auth_pam_dir_config*)
@@ -27,7 +43,7 @@
  
    /* check for allowed users/group */
    const array_header *reqs_arr = ap_requires (r);
-@@ -505,7 +505,7 @@
+@@ -505,7 +503,7 @@
    return AUTH_REQUIRED;
  }
  

@@ -18,10 +18,6 @@ USE_APACHE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 501000
-BROKEN=		"Does not compile"
-.endif
-
 do-build:
 	@cd ${WRKSRC} && \
 	${APXS} -c -lpam mod_auth_pam.c
