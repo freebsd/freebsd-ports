@@ -6,21 +6,22 @@
 #
 
 PORTNAME=	phpMyAdmin
-PORTVERSION=	2.5.7.1
-PORTREVISION=	1
+PORTVERSION=	2.6.0
 CATEGORIES=	databases www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpmyadmin
-DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(.)$/-pl\1/}
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
-COMMENT=	A set of PHP-scripts to administer MySQL over the web
+COMMENT=	A set of PHP-scripts to manage MySQL over the web
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
-USE_PHP=	bz2 gd mysql openssl pcre pdf zlib
+USE_PHP=	mysql pcre
 
-.if defined(WITH_SUPHP)
+# Unfortunately can't make WITH_SUPHP part of the OPTIONS selection,
+# since it has to be processed before just about anything else.
+
+.if defined(WITH_SUPHP) && !defined(WITHOUT_SUPHP)
 
 PKGNAMESUFFIX=	-suphp
 RUN_DEPENDS+=	${LOCALBASE}/sbin/suphp:${PORTSDIR}/www/suphp
@@ -43,6 +44,30 @@ WANT_PHP_WEB=	yes
 
 .endif
 
+# Copy the way lang/php{4,5}-extensions deals with its OPTIONS -- avoids
+# problems with include of bsd.port.pre.mk
+
+OPTIONS=	BZ2	"bzip2 library support" on \
+		GD	"GD library support" on \
+		MYSQLI	"Improved MySQL support (PHP5, MySQL 4.1 only)" off \
+		OPENSSL	"OpenSSL support" on \
+		PDF	"PDFlib support (implies GD)" on \
+		ZLIB	"ZLIB support" on
+
+PORT_DBDIR?=	/var/db/ports
+LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
+OPTIONSFILE?=	${PORT_DBDIR}/${LATEST_LINK}/options
+
+.if exists(${OPTIONSFILE})
+.include "${OPTIONSFILE}"
+.endif
+
+.for opt in BZ2 GD MYSQLI OPENSSL PDF ZLIB
+.    if !defined(WITHOUT_${opt}) || defined(WITH_${opt})
+USE_PHP+=	${opt:L}
+.    endif
+.endfor
+
 MSG_SKEL=	${PKGDIR}/pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -56,9 +81,12 @@ PLIST_SUB+=	MYADMDIR=${MYADMDIR} MYADMGRP=${MYADMGRP}
 
 .SILENT:
 
+do-build:
+	@${DO_NADA}
+
 pre-everything::
 	${ECHO_MSG} ""
-	${ECHO_MSG} "You may use the following build options:"
+	${ECHO_MSG} "You may use the following additional build option:"
 	${ECHO_MSG} ""
 	${ECHO_MSG} "    WITH_SUPHP=yes   Install appropriately for use with"
 	${ECHO_MSG} "                     the www/suphp port [default: no]"
