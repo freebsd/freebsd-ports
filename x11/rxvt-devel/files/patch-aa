@@ -1,10 +1,10 @@
---- Makefile.in.orig	Mon Apr 20 00:24:12 1998
-+++ Makefile.in	Sun Oct  4 22:13:09 1998
-@@ -9,6 +9,7 @@
+--- Makefile.in.orig	Sun Mar 28 21:31:37 1999
++++ Makefile.in	Tue Jun  8 11:07:52 1999
+@@ -10,6 +10,7 @@
  dummy:
  
  subdirs = src doc rclock src/graphics
 +subdirs = src doc # rclock src/graphics
  
- DIST =	INSTALL configure Makefile Makefile.in
+ DIST =	INSTALL README.configure configure Makefile Makefile.in ChangeLog
  
