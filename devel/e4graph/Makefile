@@ -15,17 +15,17 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-BROKEN=		"Does not compile"
-
-BUILD_DEPENDS=	${LOCALBASE}/lib/libmk4.a:${PORTSDIR}/databases/metakit
+BUILD_DEPENDS=	${LOCALBASE}/lib/libmk4.so:${PORTSDIR}/databases/metakit
 LIB_DEPENDS=	tcl83.1:${PORTSDIR}/lang/tcl83 \
 		expat.4:${PORTSDIR}/textproc/expat2
 
-USE_LIBTOOL=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/all
-CONFIGURE_ARGS=	--with-metakit=${PREFIX} \
-		--with-tcl=${PREFIX} --enable-tcl \
-		--with-expat=${PREFIX} --enable-xml
+
+USE_LIBTOOL=	yes
+CONFIGURE_ARGS=	--with-metakit=${LOCALBASE} \
+		--with-tcl=${LOCALBASE} --enable-tcl \
+		--with-expat=${LOCALBASE} --enable-xml
+CFLAGS+=	-fpermissive
 MAKEFILE=	makefile
 INSTALLS_SHLIB=	yes
 

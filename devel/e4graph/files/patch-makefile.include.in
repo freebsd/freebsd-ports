@@ -1,0 +1,11 @@
+--- makefile.include.in.orig	Wed May  8 01:04:10 2002
++++ makefile.include.in	Fri Oct 11 04:07:02 2002
+@@ -22,7 +22,7 @@
+ 
+ # Compile flags:
+ 
+-CXXFLAGS = -g -O4 -DPIC -fPIC -Dq4_INLINE
++CXXFLAGS = @CXXFLAGS@ -DPIC -fPIC -Dq4_INLINE
+ 
+ # Programs used during make:
+ 
