@@ -7,24 +7,17 @@
 #
 
 PORTNAME=	trio
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	ctrio
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
-post-patch:
-	@${PERL} -pi -e "s,^CFLAGS,#CFLAGS,g" ${WRKSRC}/Makefile
-
-do-install:
-.for file in trio.h triop.h
-	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/include
-.endfor
-	${INSTALL_DATA} ${WRKSRC}/libtrio.a ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
+post-install:
 	@${MKDIR} ${DOCSDIR}
 	${CP} -R ${WRKSRC}/doc ${DOCSDIR}
 	${CP} -R ${WRKSRC}/html ${DOCSDIR}
