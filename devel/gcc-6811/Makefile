@@ -1,17 +1,17 @@
-# New ports collection makefile for:	gcc11
+# New ports collection makefile for:	gcc-6811
 # Date created:		Thu Sep 14 11:10:01 CDT 1995
 # Whom:			erich@FreeBSD.org
 #
 # $FreeBSD$
 #
 
-PORTNAME=	gcc11
+PORTNAME=	gcc-6811
 PORTVERSION=	2.6.3
 CATEGORIES=	devel
-MASTER_SITES=	ftp://nyquist.ee.ualberta.ca/pub/motorola/68hc11/gcc/ 
+MASTER_SITES=	ftp://nyquist.ee.ualberta.ca/pub/motorola/68hc11/gcc/
 DISTFILES=	gcc-6811-fsf.tar.gz gcc-2.6.3.tar.gz
 
-MAINTAINER=	jburkhol@home.com
+MAINTAINER=	jake@FreeBSD.org
 
 NO_WRKSUBDIR=	yes
 
