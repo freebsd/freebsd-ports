@@ -20,10 +20,6 @@ COMMENT=	Internet/Intranet Input Method Gtk Client Framework
 LIB_DEPENDS=	iiimp.0:${PORTSDIR}/textproc/iiimf-protocol-lib \
 		iiimcf.2:${PORTSDIR}/textproc/iiimf-client-lib
 
-BROKEN=		Does not compile
-EXPIRATION_DATE=2005-02-18
-DEPRECATED=	${BROKEN}
-
 USE_GNOME=	gtk20
 USE_X_PREFIX=	yes
 
@@ -35,6 +31,8 @@ USE_AUTOHEADER_VER=	259
 USE_AUTOMAKE_VER=	19
 USE_LIBTOOL_VER=	15
 
+PLIST_FILES=	lib/gtk-2.0/2.4.0/immodules/im-iiim.so
+
 post-patch:
 	${REINPLACE_CMD} -e "s,/usr/lib/im,${PREFIX}/lib/im,g" \
 		${WRKSRC}/../acfiles/im_common.m4 \
@@ -43,7 +41,7 @@ post-patch:
 
 pre-configure:
 	cd ${WRKSRC} && glib-gettextize --force --copy
-	cd ${WRKSRC} && intltoolize --copy --force --automake
+	cd ${WRKSRC} && ${MV} po ../acfiles && ${LN} -s ../acfiles/po && intltoolize --copy --force --automake
 	cd ${WRKSRC} && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal -I ../acfiles
 	${TOUCH} ${WRKSRC}/config.h.in
 
