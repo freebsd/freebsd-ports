@@ -1,3 +1,6 @@
+lib/%%PYTHON_VERSION%%/site-packages/concordance.py
+lib/%%PYTHON_VERSION%%/site-packages/concordance.pyc
+lib/%%PYTHON_VERSION%%/site-packages/concordance.pyo
 lib/%%PYTHON_VERSION%%/site-packages/wordnet.py
 lib/%%PYTHON_VERSION%%/site-packages/wordnet.pyc
 lib/%%PYTHON_VERSION%%/site-packages/wordnet.pyo
