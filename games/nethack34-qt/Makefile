@@ -7,7 +7,7 @@
 
 MASTERDIR=      ${.CURDIR}/../nethack34
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
 PKGNAMESUFFIX=	-qt
 
