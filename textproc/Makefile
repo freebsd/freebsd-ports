@@ -281,6 +281,7 @@
     SUBDIR += p5-Lingua-Stem-Snowball-Da
     SUBDIR += p5-Lingua-Stem-Snowball-No
     SUBDIR += p5-Lingua-Stem-Snowball-Se
+    SUBDIR += p5-Lingua-StopWords
     SUBDIR += p5-MARC
     SUBDIR += p5-NetAddr-IP-Find
     SUBDIR += p5-Number-Format
