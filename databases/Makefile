@@ -185,6 +185,7 @@
     SUBDIR += ruby-bdb
     SUBDIR += ruby-bdb1
     SUBDIR += ruby-cdb
+    SUBDIR += ruby-criteria
     SUBDIR += ruby-dbd_interbase
     SUBDIR += ruby-dbd_msql
     SUBDIR += ruby-dbd_mysql
