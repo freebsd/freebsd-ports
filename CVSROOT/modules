@@ -4722,6 +4722,7 @@ ltrace		ports/sysutils/ltrace
 ltris		ports/games/ltris
 ltxml		ports/textproc/ltxml
 lua		ports/lang/lua
+lua-mode.el	ports/lang/lua-mode.el
 lua4		ports/lang/lua4
 luasocket	ports/net/luasocket
 luma		ports/sysutils/luma
