@@ -1,0 +1,9 @@
+Module::Starter - a simple starter kit for any module
+
+Module::Starter is used to create a skeletal CPAN distribution, 
+including basic builder scripts, tests, documentation, and module code.
+
+If you're not looking to extend or alter the behavior of this module, 
+you probably want to look at module-starter instead.
+
+WWW: http://search.cpan.org/dist/Module-Starter/
