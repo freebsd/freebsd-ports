@@ -3,7 +3,7 @@
 # Date created:				29 Jul 1998
 # Whom:					rom
 #
-# $Id: Makefile,v 1.22 1999/05/30 03:36:55 steve Exp $
+# $Id: Makefile,v 1.23 1999/06/06 16:41:10 steve Exp $
 #
 
 DISTNAME= 	gIDE-0.1.1
@@ -12,7 +12,7 @@ CATEGORIES=	devel gnome
 MASTER_SITES=	http://gide.gdev.net/ \
 		http://gide.pn.org/
 
-MAINTAINER=	rom_glsa@ein-hashofet.co.il
+MAINTAINER=	cpiazza@FreeBSD.org
 
 LIB_DEPENDS=	gnomeui.2:${PORTSDIR}/x11/gnomelibs \
 		guile.4:${PORTSDIR}/lang/guile
