@@ -352,6 +352,7 @@
     SUBDIR += ruby-runit
     SUBDIR += ruby-slang
     SUBDIR += ruby-strscan
+    SUBDIR += ruby-textbuf
     SUBDIR += rvm
     SUBDIR += sdcc
     SUBDIR += sdl
