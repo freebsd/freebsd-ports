@@ -1,0 +1,18 @@
+An Emacs lisp mode for editing haskell programs which is very basic,
+but provides a base on which to build modules.  The currently
+supported modules are:
+
+    * Font Locking: Colours keywords, comments, strings, etc.
+    * Declaration Scanning: Scans declarations and places them in a
+      menu.
+    * Documentation: Echoes types of functions or syntax of keywords
+      when the cursor is idle.
+    * Indentation: Provides semi-automatic intelligent indentation.
+    * Simple Indentation: Provides simple indentation.
+    * Hugs Interaction: Allows interaction with the Hugs interpreter.
+    * GHCi Interaction: Allows interaction with the GHCi interpreter.
+
+Note that if you want to use haskell-mode under XEmacs, you should
+install editors/xemacs-packages instead.
+
+WWW: http://www.haskell.org/haskell-mode/
