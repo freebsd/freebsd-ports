@@ -1,8 +1,8 @@
---- lib/sshsession/sshunixuser.c.orig	Fri Jan 29 12:06:07 1999
-+++ lib/sshsession/sshunixuser.c	Sat Feb  6 03:00:28 1999
-@@ -55,6 +55,10 @@
- #include "tcbc2.h"
- #endif /* HAVE_OSF1_C2_SECURITY */
+--- lib/sshsession/sshunixuser.c.orig	Tue May  4 20:09:15 1999
++++ lib/sshsession/sshunixuser.c	Fri Jun 18 16:18:08 1999
+@@ -56,6 +56,10 @@
+ 
+ #define SSH_DEBUG_MODULE "SshUnixUser"
  
 +#ifdef HAVE_LOGIN_CAP_H
 +#include <login_cap.h>
@@ -11,7 +11,7 @@
  extern char *crypt(const char *key, const char *salt);
  
  /* Data type to hold machine-specific user data. */
-@@ -713,6 +717,24 @@
+@@ -776,6 +780,24 @@
    /* Set uid, gid, and groups. */
    if (getuid() == UID_ROOT || geteuid() == UID_ROOT)
      { 
@@ -35,12 +35,12 @@
 +#else
        if (setgid(ssh_user_gid(uc)) < 0)
          {
-           ssh_debug("ssh_user_become: setgid: %s", strerror(errno));
-@@ -745,6 +767,7 @@
-                     (int)ssh_user_uid(uc), strerror(errno));
+           SSH_DEBUG(2, ("ssh_user_become: setgid: %s", strerror(errno)));
+@@ -830,6 +852,7 @@
            return FALSE;
          }
+ #endif /* HAVE_SIA */
 +#endif /* HAVE_LOGIN_CAP_H */
      }
    
-   if (getuid() != ssh_user_uid(uc) || geteuid() != ssh_user_uid(uc))
+   /* We are now running with the user's privileges. */

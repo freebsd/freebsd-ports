@@ -26,6 +26,8 @@ bin/ssh-askpass2
 @exec mv %D/bin/ssh-askpass %D/bin/ssh-askpass.old
 bin/ssh-askpass
 @unexec mv -f %B/%f.old %B/%f
+bin/ssh-signer2
+bin/ssh-signer
 etc/ssh2/ssh2_config
 etc/ssh2/sshd2_config
 man/man1/sftp.1.gz

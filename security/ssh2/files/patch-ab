@@ -1,6 +1,6 @@
---- lib/sshapputil/Makefile.in.old	Tue Nov 24 18:24:57 1998
-+++ lib/sshapputil/Makefile.in	Tue Nov 24 18:25:12 1998
-@@ -105,7 +105,7 @@
+--- lib/sshapputil/Makefile.in.orig	Tue May 11 17:35:02 1999
++++ lib/sshapputil/Makefile.in	Fri Jun 18 16:02:20 1999
+@@ -108,7 +108,7 @@
  INCLUDES = -I../.. -I. -I$(srcdir) \
  	-I$(top_builddir) -I$(top_srcdir) \
  	-I../sshutil -I$(srcdir)/../sshutil -I../sshmath \
