@@ -633,7 +633,6 @@ bonk		ports/audio/bonk
 bonnie		ports/benchmarks/bonnie
 bonnie++	ports/benchmarks/bonnie++
 bonobo		ports/devel/bonobo
-bonobo-activation	ports/devel/bonobo-activation
 bonobo-conf	ports/devel/bonobo-conf
 bookcase	ports/misc/bookcase
 boost		ports/devel/boost
@@ -1698,7 +1697,6 @@ font2svg	ports/print/font2svg
 fontconfig	ports/x11-fonts/fontconfig
 fontedit	ports/sysutils/fontedit
 fonteditfs	ports/sysutils/fonteditfs
-fontilus	ports/x11-fonts/fontilus
 foobillard	ports/games/foobillard
 foomatic-db	ports/print/foomatic-db
 fooseti		ports/astro/fooseti
@@ -2354,7 +2352,6 @@ gtk-qnxtheme	ports/x11-toolkits/gtk-qnxtheme
 gtk-send-pr	ports/sysutils/gtk-send-pr
 gtk-sharp	ports/x11-toolkits/gtk-sharp
 gtk-theme-switch ports/x11/gtk-theme-switch
-gtk-thinice-engine ports/x11-toolkits/gtk-thinice-engine
 gtk-xfce-engine	ports/x11-toolkits/gtk-xfce-engine
 gtk-zenith-theme	ports/x11-toolkits/gtk-zenith-theme
 gtk12		ports/x11-toolkits/gtk12
@@ -7808,7 +7805,6 @@ sted		ports/editors/sted
 stegdetect	ports/security/stegdetect
 steghide	ports/security/steghide
 stella		ports/emulators/stella
-stickynotes_applet	ports/misc/stickynotes_applet
 sting		ports/net/sting
 stk		ports/lang/STk
 stklos		ports/lang/stklos
