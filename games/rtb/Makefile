@@ -6,23 +6,34 @@
 #
 
 PORTNAME=	RealTimeBattle
-PORTVERSION=	1.0.4
-PORTREVISION=	2
+PORTVERSION=	1.0.6
 CATEGORIES=	games
-MASTER_SITES=	http://www.lysator.liu.se/realtimebattle/Download/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
+		http://www.lysator.liu.se/realtimebattle/Download/
+MASTER_SITE_SUBDIR=	${PORTNAME:L}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Robot programming game for UNIX
 
+USE_BZIP2=	yes
 USE_X_PREFIX=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gnometarget gtk20 lthack
+USE_GETOPT_LONG=	yes
+USE_GMAKE=	yes
 USE_LIBTOOL_VER=13
-CONFIGURE_ARGS=	--enable-debug
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
+		AUTOHEADER="${TRUE}"
 
-.include <bsd.port.pre.mk>
+CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT
+LDFLAGS=	-L${LOCALBASE}/lib
 
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile (bad C++ code)"
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/RealTimeBattle.txt ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
