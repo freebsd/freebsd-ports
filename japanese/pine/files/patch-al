@@ -1,0 +1,55 @@
+*** build.orig	Tue Jan 21 14:26:05 1997
+--- build	Tue Jan 21 14:55:43 1997
+***************
+*** 168,181 ****
+          cd $PHOME/bin
+          rm -f pine mtest imapd pico pilot
+          if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
+-         if [ -s ../c-client/mtest ] ; then ln ../c-client/mtest mtest ; fi
+-         if [ -s ../imapd/imapd ] ;    then ln ../imapd/imapd imapd    ; fi
+          if [ -s ../pico/pico ] ;      then ln ../pico/pico pico ; fi
+          if [ -s ../pico/pilot ] ;     then ln ../pico/pilot pilot ; fi
+          cd $PHOME
+          echo ''
+          echo "Links to executables are in bin directory:"
+-         size bin/pine bin/mtest bin/imapd bin/pico bin/pilot
+          echo "Done"
+          ;;
+  
+--- 168,180 ----
+          cd $PHOME/bin
+          rm -f pine mtest imapd pico pilot
+          if [ -s ../pine/pine ] ;      then ln ../pine/pine  pine      ; fi
+          if [ -s ../pico/pico ] ;      then ln ../pico/pico pico ; fi
+          if [ -s ../pico/pilot ] ;     then ln ../pico/pilot pilot ; fi
++         if [ -s ../pico/libpico.so.1.3 ] ;     
++ 		then ln ../pico/libpico.so.1.3 libpico.so.1.3 ; fi
+          cd $PHOME
+          echo ''
+          echo "Links to executables are in bin directory:"
+          echo "Done"
+          ;;
+  
+***************
+*** 186,195 ****
+  	make clean
+          echo "Cleaning Pine"
+          cd $PHOME/pine
+!         make -f makefile.ult clean
+          echo "Cleaning pico"
+          cd $PHOME/pico
+!         make $makeargs -f makefile.ult clean
+          echo "Done"
+          cd $PHOME
+          ;;
+--- 185,194 ----
+  	make clean
+          echo "Cleaning Pine"
+          cd $PHOME/pine
+!         make -f makefile.bsf clean
+          echo "Cleaning pico"
+          cd $PHOME/pico
+!         make $makeargs -f makefile.bsf clean
+          echo "Done"
+          cd $PHOME
+          ;;
