@@ -17,12 +17,6 @@ USE_IMAKE=	yes
 MANCOMPRESSED=	yes
 MAN1=		xsysinfo.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
 pre-configure:
 	if [ -e /usr/lib/libdevstat.a -o -e /usr/lib/aout/libdevstat.a ]; then \
 		cd ${WRKSRC} ; \
@@ -31,4 +25,4 @@ pre-configure:
 		${SED} -e "s:-lkvm:-lkvm -ldevstat:" Imakefile.i1 > Imakefile ; \
 	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
