@@ -1,1 +1,6 @@
 sbin/vrrpd
+%%PORTDOCS%%share/doc/vrrp/FAQ
+%%PORTDOCS%%share/doc/vrrp/draft-ietf-vrrp-spec-v2-05.txt
+%%PORTDOCS%%share/doc/vrrp/draft-jou-duplicate-ip-address-02.txt
+%%PORTDOCS%%share/doc/vrrp/rfc2338.txt.vrrp
+%%PORTDOCS%%@dirrm share/doc/vrrp
