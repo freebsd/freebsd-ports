@@ -1,5 +1,5 @@
---- Makefile.orig	Mon Jan 17 21:44:36 2005
-+++ Makefile	Mon Jan 17 21:51:06 2005
+--- Makefile.orig	Wed Sep 15 18:34:27 2004
++++ Makefile	Sat Jan 22 14:58:01 2005
 @@ -8,21 +8,16 @@
  ##  @todo autoconf/automake (i18n/apache2)
  
@@ -39,3 +39,12 @@
  
  #   our own defines
  UNAME := $(shell uname)
+@@ -90,8 +85,6 @@
+ 	$(INSTALL) -d $(DESTDIR)$(DOCROOT)/musicindex $(DESTDIR)$(LIBEXECDIR)
+ 	$(INSTALL) -m 0644 musicindex/*.* $(DESTDIR)$(DOCROOT)/musicindex
+ 	$(INSTALL) -m 0644 $(MOD_SO) $(DESTDIR)$(LIBEXECDIR)
+-	@echo -e "\nDon't forget to edit your httpd.conf (see README for details):\n \
+-		LoadModule musicindex_module $(DESTDIR)$(LIBEXECDIR)/$(MOD_SO)"
+ 
+ #   how to compile the objects
+ %.o: %.c %.h mod_musicindex.h
