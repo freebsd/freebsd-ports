@@ -32,6 +32,7 @@ BROKEN=		"can't find /usr/lib/aout/crt0.o"
 .endif
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} ${PATCHFILES}
+USE_BISON=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gnu-as --with-gnu-ld
 ALL_TARGET=	bootstrap LANGUAGES=c
