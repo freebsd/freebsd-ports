@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qhacc
-PORTVERSION=	0.9
+PORTVERSION=	1.0
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.ostrich-emulators.cx/qhacc/

@@ -1,4 +1,5 @@
 bin/qhacc
+%%PORTDOCS%%share/doc/qhacc/compiling.html
 %%PORTDOCS%%share/doc/qhacc/index.html
 %%PORTDOCS%%share/doc/qhacc/intro.html
 %%PORTDOCS%%share/doc/qhacc/faq.html
