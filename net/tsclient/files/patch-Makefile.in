@@ -8,15 +8,3 @@
 +man1dir = $(prefix)/man/man1
  
  intlfiles = intltool-extract.in intltool-merge.in intltool-update.in
- 
---- Makefile.in.orig	Sun Nov  9 19:01:24 2003
-+++ Makefile.in	Sun Nov  9 19:02:30 2003
-@@ -161,7 +161,7 @@
- mime_DATA = tsclient.mime tsclient.keys
- 
- man1_MANS = tsclient.1
--man1dir = $(datadir)/man/man1
-+man1dir = $(prefix)/man/man1
- 
- intlfiles = intltool-extract.in intltool-merge.in intltool-update.in
- 
