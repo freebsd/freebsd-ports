@@ -1,0 +1,5 @@
+bin/msuck
+%%PORTDOCS%%share/examples/multisuck/filters.sample
+%%PORTDOCS%%share/examples/multisuck/newsrc.sample
+%%PORTDOCS%%share/examples/multisuck/suck.cfg.sample
+%%PORTDOCS%%@dirrm share/examples/multisuck

@@ -1,0 +1,5 @@
+A multi-server, multi-connections-per-server Usenet news sucking mechanism.
+Feeds articles to a local news server. Powerful filtering capability. Runs
+continuously as a quasi-daemon.
+
+WWW: http://multisuck.sourceforge.net/
