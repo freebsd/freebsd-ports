@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://ftp.berlios.de/pub/cdrecord/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/cdrecord/
 DISTNAME=	cdrtools-2.00.3
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	marius@alchemy.franken.de
 COMMENT?=	Cdrecord and several other programs to record CD-R[W]
 
 CONFLICTS?=	cdrtools-devel-*
