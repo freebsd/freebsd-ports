@@ -1,0 +1,6 @@
+Perl5 module that hacks around the IO::File
+deficiencies.
+
+Author: Austin Schutz <tex@habit.com>
+
+--Will <andrews@technologist.com>

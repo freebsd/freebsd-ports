@@ -1,0 +1,3 @@
+lib/perl5/site_perl/%%PERL_VER%%/IO/stty.pl
+lib/perl5/site_perl/%%PERL_VER%%/IO/Stty.pm
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/IO 2>/dev/null || true
