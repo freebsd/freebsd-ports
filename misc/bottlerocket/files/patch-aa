@@ -1,0 +1,11 @@
+--- Makefile.in.old	Tue Dec 28 15:12:47 1999
++++ Makefile.in	Tue Dec 28 15:12:59 1999
+@@ -23,7 +23,7 @@
+ 
+ CFLAGS = @CFLAGS@
+ 
+-CFLAGS += -I. -Wall  -O2 -DX10_PORTNAME=\"@X10PORT@\"
++CFLAGS += -I. -Wall -DX10_PORTNAME=\"@X10PORT@\"
+ DEFS=@DEFS@
+ LIBS=@LIBS@
+ INSTALL= @INSTALL@
