@@ -9,7 +9,7 @@
 #
 
 PORTNAME=	portlint
-PORTVERSION=	2.2.0
+PORTVERSION=	2.2.1
 CATEGORIES=	devel
 DISTFILES=	# none
 
@@ -17,6 +17,7 @@ MAINTAINER=	mharo@FreeBSD.org
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
+USE_PERL5=	yes
 
 SRC=		${.CURDIR}/src
 
