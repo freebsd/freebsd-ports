@@ -7,13 +7,12 @@
 
 PORTNAME=	kavmilter
 PORTVERSION=	0.91.3
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	ftp://granch.ru/pub/kavmilter/
 
 MAINTAINER=	shelton@granch.ru
 COMMENT=	Sendmail antivirus filter, based on Kaspersky Antivirus and Milter API
-
-LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt
 
 .if !exists(/usr/lib/libmilter.a)
 IGNORE=		requires Sendmail 8.12; upgrade the base system
@@ -26,10 +25,10 @@ USE_REINPLACE=	yes
 MAN5=		kavmilter.5
 MAN8=		kavmilter.8
 
-MAKE_ENV=	PTHREAD_LIBS=${PTHREAD_LIBS}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-pthread|${PTHREAD_LIBS}|g' ${WRKSRC}/${MAKEFILE}
+CPPFLAGS=	${PTHREAD_CFLAGS}
+LDFLAGS=	${PTHREAD_LIBS}
+MAKE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
 post-install:
 	${STRIP_CMD} ${PREFIX}/libexec/kavmilter

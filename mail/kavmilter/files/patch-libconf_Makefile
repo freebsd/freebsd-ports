@@ -1,0 +1,12 @@
+--- libconf/Makefile.orig	Wed Oct 30 17:29:18 2002
++++ libconf/Makefile	Sun Jul  6 20:03:55 2003
+@@ -31,8 +31,7 @@
+ INCDIR=$(PREFIX)
+ #
+ # Compile flags
+-CC=gcc
+-CFLAGS=-Wall -pipe -I$(INCDIR)
++CFLAGS+=-Wall -pipe -I$(INCDIR)
+ #
+ # Libraries
+ LIBS=-lm
