@@ -312,6 +312,7 @@
     SUBDIR += qmail-notify
     SUBDIR += qmail-remove
     SUBDIR += qmail-scanner
+    SUBDIR += qmail-smtp_auth+tls
     SUBDIR += qmail-tls
     SUBDIR += qmailadmin
     SUBDIR += qmailadmin-devel
