@@ -7,7 +7,7 @@
 
 PORTNAME=	ntp
 PORTVERSION=	4.0.99k
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/
 
