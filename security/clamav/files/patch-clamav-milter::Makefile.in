@@ -1,14 +1,5 @@
 --- clamav-milter/Makefile.in.orig	Wed Nov 12 02:36:48 2003
 +++ clamav-milter/Makefile.in	Fri Nov 21 18:23:35 2003
-@@ -122,7 +122,7 @@
- 
- @BUILD_CLAMD_TRUE@@HAVE_MILTER_TRUE@clamav_milter_LDADD = ../clamd/cfgfile.o ../clamd/others.o ../clamscan/getopt.o
- 
--@BUILD_CLAMD_TRUE@@HAVE_MILTER_TRUE@man_MANS = ../docs/clamav-milter.8
-+@BUILD_CLAMD_TRUE@@HAVE_MILTER_TRUE@man_MANS = ../docs/man/clamav-milter.8
- 
- DEFS = @DEFS@
- # CLAMD_LIBS is used, because clamav-milter requires the same libraries as clamd
 @@ -162,7 +162,7 @@
  	$(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  CCLD = $(CC)

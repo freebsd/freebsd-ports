@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	0.65
-PORTREVISION=	7
+#PORTVERSION=	${DISTVERSION:S/-/./g}
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_EXTENDED}
 MASTER_SITE_SUBDIR=	clamav
+#DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	Command line virus scanner written entirely in C
@@ -22,6 +22,8 @@ RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha \
 		zoo:${PORTSDIR}/archivers/zoo \
 		arc:${PORTSDIR}/archivers/arc \
 		unzip:${PORTSDIR}/archivers/unzip
+
+DISTVERSION=	0.67-1
 
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
@@ -57,6 +59,7 @@ SED_CONF=	-E -e 's|^\#?(Example)$$|\#\1|' \
 		-e 's|^\#?(LocalSocket) .*$$|\1 ${CLAMAV_CLAMD_SOCKET}|' \
 		-e 's|^\#?(User) .*$$|\1 clamav|' \
 		-e 's|^\#?(AllowSupplementaryGroups)$$|\1|' \
+		-e 's|^\#?(FixStaleSocket)$$|\1|' \
 		-e 's|^\#?(ScanMail)$$|\1|'
 
 .include <bsd.port.pre.mk>
@@ -88,17 +91,11 @@ post-patch:
 		${WRKSRC}/clamav-milter/clamav-milter.c
 
 pre-configure:
-	@${REINPLACE_CMD} -e 's|clamav.conf|&.default|' \
-		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT} \
-		${CONFIGURE_WRKSRC}/etc/Makefile.in
-.ifdef USE_LIBTOOL_VER
 	@${REINPLACE_CMD} -e '/^LIBTOOL=/s|\$$(top_builddir)/libtool|${LIBTOOL}|' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-.endif
 
 post-build:
-	@${SED} ${SED_CONF} ${BUILD_WRKSRC}/etc/clamav.conf \
-		>${BUILD_WRKSRC}/etc/clamav.conf.default
+	@${REINPLACE_CMD} ${SED_CONF} ${BUILD_WRKSRC}/etc/clamav.conf
 	@${SED} ${SED_SCRIPT} ${PKGDIR}/pkg-install >${PKGINSTALL}
 	@${SED} ${SED_SCRIPT} ${FILESDIR}/clamav-clamd.sh \
 		>${WRKDIR}/clamav-clamd.sh
@@ -114,18 +111,23 @@ pre-install:
 		${SH} ${PKGINSTALL} ${PREFIX} PRE-INSTALL
 
 post-install:
-	@${INSTALL_DATA} ${BUILD_WRKSRC}/etc/clamav.conf.default \
-		${PREFIX}/etc/clamav.conf.default
 	@${INSTALL_SCRIPT} ${WRKDIR}/clamav-clamd.sh \
 		${RC_DIR}/clamav-clamd${RC_SUFX}
 	@${INSTALL_SCRIPT} ${WRKDIR}/clamav-freshclam.sh \
 		${RC_DIR}/clamav-freshclam${RC_SUFX}
 	@${CHOWN} -R clamav:clamav ${DATADIR}
-	@[ -f ${PREFIX}/etc/clamav.conf ] || \
-		${CP} ${PREFIX}/etc/clamav.conf.default ${PREFIX}/etc/clamav.conf
+.for c in clamav freshclam
+	@[ -f ${PREFIX}/etc/${c}.conf ] || \
+		${CP} ${PREFIX}/etc/${c}.conf.default ${PREFIX}/etc/${c}.conf
+.endfor
 .if defined(WITH_MILTER)
 	@${INSTALL_SCRIPT} ${WRKDIR}/clamav-milter.sh \
 		${RC_DIR}/clamav-milter${RC_SUFX}
+.endif
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${INSTALL_WRKSRC}/NEWS ${INSTALL_WRKSRC}/ChangeLog \
+		${DOCSDIR}
 .endif
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PREFIX} POST-INSTALL
