@@ -1,5 +1,5 @@
---- Makefile.orig	Tue Jan 26 15:35:18 1999
-+++ Makefile	Mon Jun 14 22:21:57 1999
+--- Makefile.orig	Tue Jun 15 23:39:06 1999
++++ Makefile	Tue Jul 27 14:54:26 1999
 @@ -4,7 +4,7 @@
  
  # Where to install binary and manpage on "make install":
@@ -9,39 +9,49 @@
  BINDIR=$(PREFIX)/bin
  MANDIR=$(PREFIX)/man
  SECTION=1
-@@ -247,24 +247,27 @@
+@@ -285,14 +285,28 @@
  #CFLAGS='-DI386_ASSEM -O2 -DREAL_IS_FLOAT -DLINUX -Wall -g'
  #CFLAGS='-DI386_ASSEM -DREAL_IS_FLOAT -DLINUX -Wall -O2 -m486 -fomit-frame-pointer -funroll-all-loops -finline-functions -ffast-math -malign-loops=2 -malign-jumps=2 -malign-functions=2'
  
-+.if $(PORTOBJFORMAT) == "elf"
-+GETBITS=getbits.o
-+.else
-+GETBITS=getbits_.o
-+.endif
-+
 +CC ?= cc
 +LDFLAGS =
 +CFLAGS ?=-O4 -m486
++
++.if defined(OPT_ARCH)
++.if (${OPT_ARCH} == "i486")
++ARCHOPT = -DI486_OPT
++ARCHFILES = decode_i486.o dct64_i486.o
++.elif (${OPT_ARCH} == "i586")
++ARCHOPT = -DPENTIUM_OPT
++ARCHFILES = decode_i586.o
++.endif
++.endif
++
 +CFLAGS +=-Wall -ansi -pedantic -fomit-frame-pointer \
 +	-funroll-all-loops -ffast-math -DROT_I386 \
 +	-DREAD_MMAP \
-+	-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS
++	-DI386_ASSEM ${ARCHOPT} -DREAL_IS_FLOAT -DUSE_MMAP -DOSS
 +
  freebsd:
 -	$(MAKE) CC=cc LDFLAGS= \
--		OBJECTS='decode_i386.o dct64_i386.o getbits_.o audio_oss.o' \
+-		OBJECTS='decode_i386.o dct64_i386.o audio_oss.o' \
 -		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
 -			-funroll-all-loops -ffast-math -DROT_I386 \
 -			-DREAD_MMAP \
 -			-DI386_ASSEM -DREAL_IS_FLOAT -DUSE_MMAP -DOSS' \
-+	${MAKE}	OBJECTS='decode_i386.o dct64_i386.o $(GETBITS) audio_oss.o' \
+-		mpg123-make
++	${MAKE}	OBJECTS='decode_i386.o ${ARCHFILES} dct64_i386.o audio_oss.o' \
++ 		mpg123-make
+ 
+ freebsd-esd:
+ 	$(MAKE) CC=cc LDFLAGS= \
+@@ -307,13 +321,8 @@
  		mpg123-make
  
--
  freebsd-frontend:
 -	$(MAKE) CC=cc LDFLAGS= \
--		OBJECTS='decode_i386.o dct64_i386.o getbits_.o audio_oss.o \
-+	$(MAKE) OBJECTS='decode_i386.o dct64_i386.o $(GETBITS) audio_oss.o \
+-		OBJECTS='decode_i386.o dct64_i386.o audio_oss.o \
++	$(MAKE) OBJECTS='decode_i386.o ${ARCHFILES} dct64_i386.o audio_oss.o \
  			control_sajber.o control_tk3play.o' \
 -		CFLAGS='-Wall -ansi -pedantic -O4 -m486 -fomit-frame-pointer \
 -			-funroll-all-loops -ffast-math -DROT_I386 \
@@ -50,12 +60,3 @@
  		$(FRONTEND)
   
  
-@@ -414,7 +417,7 @@
- 	@ $(MAKE) BINNAME=mpg123m mpg123
- 
- mpg123-make:
--	@ $(MAKE) BINNAME=mpg123 mpg123
-+	@ $(MAKE) CFLAGS="$(CFLAGS)" BINNAME=mpg123 mpg123
- 
- mpg123: mpg123.o common.o $(OBJECTS) decode_2to1.o decode_4to1.o \
- 		tabinit.o audio.o layer1.o layer2.o layer3.o buffer.o \
