@@ -16,14 +16,13 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Gtk+ and GNOME interfaces for the .NET runtime
 
 BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
-LIB_DEPENDS=	gnomedb-2:${PORTSDIR}/databases/libgnomedb \
-		gnomeui-2:${PORTSDIR}/x11-toolkits/libgnomeui
 
 # XXX Should conditionalise all the different parts of gtk# maybe.
 
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 USE_GMAKE=	yes
+USE_GNOME=	libgnomeui libgnomedb
 MAKEFILE=	makefile
 
 .include <bsd.port.mk>
