@@ -5,12 +5,6 @@
 # $FreeBSD$
 #
 
-# Configure AWT implementation used (this can be put in make.conf)
-#
-# KAFFE_AWT = no        No AWT classes
-# KAFFE_AWT = X         X AWT classes
-# KAFFE_AWT = QT        Qt AWT classes
-
 PORTNAME=	kaffe
 PORTVERSION=	1.1.3
 PORTREVISION=	1
@@ -42,38 +36,25 @@ WANT_GNOME=	esound
 
 MAN1=		kaffe.1
 
-OPTIONS=	KAFFE_AWT_X "Use AWT widgets with X" On \
-		KAFFE_AWT_QT "Use AWT widgets with Qt" Off \
-		KAFFE_AWT_NO "Do not use AWT widgets" Off
+OPTIONS=	AWT_X "Use AWT widgets with X" On \
+		AWT_QT "Use AWT widgets with Qt" Off
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITH_KAFFE_AWT_X) && !defined(WITH_KAFFE_AWT_QT) && !defined(WITH_KAFFE_AWT_NO)
-IGNORE=	You must choose one of the options in 'make config' to install
-.endif
-
-.if defined(WITH_KAFFE_AWT_X)
-. if defined(WITH_KAFFE_AWT_QT) || defined(WITH_KAFFE_AWT_NO)
-    BROKEN=	"Choose only one of the options in 'make config'"
+.if defined(WITH_AWT_X)
+. if defined(WITH_AWT_QT)
+    BROKEN=	"Choose either 'X' or 'Qt' in 'make config'"
 . endif
   CONFIGURE_ARGS+=	--with-awt=X
   USE_XLIB=		yes
   AWT=			yes
   WITH_ESOUND=		yes
-.endif
-.if defined(WITH_KAFFE_AWT_QT)
-. if defined(WITH_KAFFE_AWT_X) || defined(WITH_KAFFE_AWT_NO)
-    BROKEN=	"Choose only one of the options in 'make config'"
-. endif
+.elif defined(WITH_AWT_QT)
   CONFIGURE_ARGS+=	--with-awt=qt --with-qtdir=${X11BASE}
   AWT=			yes
   USE_QT_VER=		3
   WITH_ESOUND=		yes
-.endif
-.if defined(WITH_KAFFE_AWT_NO)
-. if defined(WITH_KAFFE_AWT_X) || defined(WITH_KAFFE_AWT_QT)
-    BROKEN=	"Choose only one of the options in 'make config'"
-. endif
+.else
   CONFIGURE_ARGS+=	--with-awt=no
 .endif
 
