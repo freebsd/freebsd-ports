@@ -1,0 +1,6 @@
+xspy is a utility for monitoring keypresses on remote X servers. It
+takes advantage of an oversight in X Windows (R5 & R6) to find out
+about keypresses even in "secure mode". It works by polling the
+keyboard, by default every hundredth of a second.
+
+WWW: http://www.acm.vt.edu/~jmaxwell/programs/xspy/xspy.html

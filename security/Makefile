@@ -330,6 +330,7 @@
     SUBDIR += whisker
     SUBDIR += xinetd
     SUBDIR += xmlsec
+    SUBDIR += xspy
     SUBDIR += yafic
     SUBDIR += zebedee
     SUBDIR += zombiezapper
