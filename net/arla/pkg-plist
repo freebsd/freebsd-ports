@@ -1,5 +1,4 @@
 lib/libsl.a
-lib/libeditline.a
 lib/liblwp.a
 lib/librx.a
 lib/librxdefclient.a
@@ -44,7 +43,6 @@ include/rx/rx_pkt.h
 include/rx/rx_queue.h
 include/rx/rx_trace.h
 include/rx/rx_user.h
-include/stds.h
 include/timer.h
 include/vldb.h
 include/cb.h
