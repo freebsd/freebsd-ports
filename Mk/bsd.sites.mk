@@ -231,13 +231,9 @@ MASTER_SITE_GCC+=	\
 	${MASTER_SITE_SOURCEWARE:S,%SUBDIR%,gcc/&,}  \
 	http://gcc.software-archive.net/%SUBDIR%/ \
 	http://gcc.get-software.com/%SUBDIR%/ \
-	http://mirrors.rcn.net/pub/sourceware/gcc/%SUBDIR%/ \
 	http://www.binarycode.org/gcc/%SUBDIR%/ \
 	ftp://gcc.gnu.org/pub/gcc/%SUBDIR%/ \
-	ftp://mirrors.rcn.net/pub/sourceware/gcc/%SUBDIR%/ \
 	ftp://mirrors.laffeycomputer.com/pub/gcc.gnu.org/pub/gcc/%SUBDIR%/ \
-	ftp://gd.tuwien.ac.at/gnu/gcc/%SUBDIR%/ \
-	ftp://ftp.funet.fi/pub/mirrors/gcc.gnu.org/pub/gcc/%SUBDIR%/ \
 	ftp://ftp.lip6.fr/pub/gcc/%SUBDIR%/ \
 	ftp://ftp.irisa.fr/pub/mirrors/gcc.gnu.org/gcc/%SUBDIR%/ \
 	ftp://ftp.uvsq.fr/pub/gcc/%SUBDIR%/ \
@@ -256,7 +252,6 @@ MASTER_SITE_GCC+=	\
 	ftp://ftp.nluug.nl/mirror/languages/gcc%SUBDIR%/ \
 	ftp://ftp.task.gda.pl/pub/gnu/gcc/%SUBDIR%/ \
 	ftp://sunsite.icm.edu.pl/pub/gnu/gcc/%SUBDIR%/ \
-	ftp://ftp1.sinica.edu.tw/pub3/GNU/CYGNUS/gcc/%SUBDIR%/ \
 	ftp://ftp.nctu.edu.tw/computer-languages/C/gcc/%SUBDIR%/ \
 	ftp://ftp.mirror.ac.uk/sites/sources.redhat.com/pub/gcc/%SUBDIR%/ \
 	ftp://ftp.softaplic.com.br/pub/sourceware/gcc/%SUBDIR%/ \
