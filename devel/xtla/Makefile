@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	xtla
-PORTVERSION=	20040820
+PORTVERSION=	0.9
+PORTEPOCH=	1
 CATEGORIES=	devel elisp
-MASTER_SITES=	http://xsteve.nit.at/prg/emacs/
+MASTER_SITES=	http://download.gna.org/xtla-el/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
-DISTNAME=	${PORTNAME}
 
 MAINTAINER=	dryice@liu.com.cn
 COMMENT=	An Emacs front-end to tla
