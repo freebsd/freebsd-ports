@@ -3,11 +3,11 @@
 # Date created:         2 November 1997
 # Whom:                 jmz
 #
-# $Id: Makefile,v 1.14 1999/05/11 02:29:25 obrien Exp $
+# $Id: Makefile,v 1.15 1999/05/31 06:22:06 mharo Exp $
 #
 
 DISTNAME=	cdrecord-1.8a22
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils audio
 MASTER_SITES=	ftp://ftp.fokus.gmd.de/pub/unix/cdrecord/alpha/
 
 MAINTAINER=	jmz@FreeBSD.org
