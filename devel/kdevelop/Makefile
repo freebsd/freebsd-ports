@@ -48,7 +48,7 @@ pre-everything::
 .if !defined(WITH_OPTIONAL_DEPENDS)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "You may define WITH_OPTIONAL_DEPENDS (make WITH_OPTIONAL_DEPENDS=YES)"
-	@${ECHO_MSG} "to automatically build the suggested programs to compliment kdevelop."
+	@${ECHO_MSG} "to automatically build the suggested programs to complement kdevelop."
 	@${ECHO_MSG}
 .endif
 
