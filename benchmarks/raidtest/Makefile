@@ -11,7 +11,7 @@ PORTVERSION=	1.0
 CATEGORIES=	benchmarks
 
 MAINTAINER=	pjd@FreeBSD.org
-COMMENT=	used to test performance of storage devices
+COMMENT=	Test performance of storage devices
 
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/raidtest
