@@ -21,6 +21,8 @@ COMMENT=	Java GUI to eDonkey2000 'core' command line client
 RUN_DEPENDS=	donkey:${PORTSDIR}/net/linux-edonkey-core
 
 BROKEN=		Unfetchable
+DEPRECATED=	"The software is no longer available from the vendor\'s website"
+EXPIRATION_DATE=2005-06-07
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
