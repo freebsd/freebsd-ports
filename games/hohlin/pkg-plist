@@ -1,0 +1,52 @@
+@comment $FreeBSD$
+bin/HoH
+%%DATADIR%%/HoH
+%%DATADIR%%/HoHOriginal.dat
+%%DATADIR%%/Sound/Sound.dat
+%%DATADIR%%/Sound/Game.ogg
+%%DATADIR%%/Sound/Theme.ogg
+@dirrm %%DATADIR%%/Sound
+@dirrm %%DATADIR%%
+%%PORTDOCS%%%%DOCSDIR%%/File_id.diz
+%%PORTDOCS%%%%DOCSDIR%%/HoH.css
+%%PORTDOCS%%%%DOCSDIR%%/HoH.nfo
+%%PORTDOCS%%%%DOCSDIR%%/Manual.html
+%%PORTDOCS%%%%DOCSDIR%%/Manual.pdf
+%%PORTDOCS%%%%DOCSDIR%%/Manual.txt
+%%PORTDOCS%%%%DOCSDIR%%/gfx/icon-1.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/Bag.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/logo-t1.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/logo-t2.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/retrospec.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/Bunny.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/Crown.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/logo-tl.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/Teleport.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/Conveyor.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/Hooter.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/c-b.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/Fish.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/c-l.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/c-r.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/c-t.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/t-manual.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/tagline.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/Puppy.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/Heels.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/Head.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/red-back.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/c-bl.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/c-br.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/retrospec-logo.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/1t.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/HeadAndHeels.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/Donuts.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/gray-back.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/logo-1.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/logo-l1.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/logo-l2.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/c-tr.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/Switch.gif
+%%PORTDOCS%%%%DOCSDIR%%/gfx/Spring.gif
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/gfx
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
