@@ -6,11 +6,15 @@ lib/libXprt.so.1
 lib/libXptl.so
 lib/libXptl.so.1
 lib/libextgtk.so
-lib/libextgtk.so.1      
+lib/libextgtk.so.1
 lib/aim/CoolBos.so
 lib/aim/CoolBos.so.1
 lib/aim/CoolBucky.so
 lib/aim/CoolBucky.so.1
+lib/aim/CoolHttp.so
+lib/aim/CoolHttp.so.1
+lib/aim/CoolPeer.so
+lib/aim/CoolPeer.so.1
 lib/aim/CoolSocket.so
 lib/aim/CoolSocket.so.1
 lib/aim/CoolSos.so
@@ -101,7 +105,6 @@ lib/aim/help/signing_on.htm
 lib/aim/help/sounds_prefs.htm
 lib/aim/help/turning_an_away.htm
 lib/aim/help/uninstalling.htm
-lib/aim/help/images/BL.gif
 lib/aim/help/images/add_buddy.gif
 lib/aim/help/images/aimheaderleft.gif
 lib/aim/help/images/away.gif
@@ -111,11 +114,20 @@ lib/aim/help/images/chat_message.gif
 lib/aim/help/images/chat_message2.gif
 lib/aim/help/images/im.gif
 lib/aim/help/images/sign_on.gif
+lib/aim/sounds/cashregister.wav
 lib/aim/sounds/dooropen.wav
 lib/aim/sounds/doorslam.wav
 lib/aim/sounds/imrcv.wav
 lib/aim/sounds/imsend.wav
+lib/aim/sounds/moo.wav
+lib/aim/sounds/newalert.wav
+lib/aim/sounds/newmail.wav
+lib/aim/sounds/phone.wav
 lib/aim/sounds/ring.wav
+lib/aim/sounds/talkbeg.wav
+lib/aim/sounds/talkend.wav
+lib/aim/sounds/talkstop.wav
+libexec/aim
 @dirrm lib/aim/extra
 @dirrm lib/aim/help/images
 @dirrm lib/aim/help
