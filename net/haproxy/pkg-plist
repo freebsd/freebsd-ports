@@ -1,6 +1,6 @@
 sbin/haproxy
-etc/haproxy.cfg.sample
-etc/rc.d/haproxy.sh.sample
+etc/rc.d/haproxy.sh
 %%PORTDOCS%%%%DOCSDIR%%/haproxy-en.txt
 %%PORTDOCS%%%%DOCSDIR%%/haproxy-fr.txt
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/haproxy.cfg
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
