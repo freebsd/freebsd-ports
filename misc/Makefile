@@ -178,6 +178,7 @@
     SUBDIR += kde3-i18n-ms
     SUBDIR += kde3-i18n-mt
     SUBDIR += kde3-i18n-nb
+    SUBDIR += kde3-i18n-nds
     SUBDIR += kde3-i18n-nl
     SUBDIR += kde3-i18n-nn
     SUBDIR += kde3-i18n-nso
