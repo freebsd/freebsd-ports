@@ -1,53 +1,53 @@
-*** conf/httpd.conf-dist.orig	Thu May  7 01:12:39 1998
---- conf/httpd.conf-dist	Fri Jun  5 19:34:17 1998
+*** conf/httpd.conf-dist.orig	Tue Jan 12 13:51:58 1999
+--- conf/httpd.conf-dist	Tue Jan 12 13:52:37 1999
 ***************
-*** 50,56 ****
+*** 252,258 ****
   #  don't use Group #-1 on these systems!
-  
+  #
   User nobody
 ! Group #-1
   
+  #
   # ServerAdmin: Your address, where problems with the server should be
-  # e-mailed.
---- 50,56 ----
+--- 252,258 ----
   #  don't use Group #-1 on these systems!
-  
+  #
   User nobody
-! Group nogroup
+! Group nobody
   
+  #
   # ServerAdmin: Your address, where problems with the server should be
-  # e-mailed.
 ***************
-*** 94,100 ****
-  # The location of the access logfile (Common Logfile Format).
-  # If this does not start with /, ServerRoot is prepended to it.
-  
+*** 470,476 ****
+  # define per-<VirtualHost> access logfiles, transactions will be
+  # logged therein and *not* in this file.
+  #
 ! CustomLog logs/access_log common
   
-  # If you would like to have an agent and referer logfile uncomment the
-  # following directives.
---- 94,100 ----
-  # The location of the access logfile (Common Logfile Format).
-  # If this does not start with /, ServerRoot is prepended to it.
-  
+  #
+  # If you would like to have agent and referer logfiles, uncomment the
+--- 470,476 ----
+  # define per-<VirtualHost> access logfiles, transactions will be
+  # logged therein and *not* in this file.
+  #
 ! #CustomLog logs/access_log common
   
-  # If you would like to have an agent and referer logfile uncomment the
-  # following directives.
+  #
+  # If you would like to have agent and referer logfiles, uncomment the
 ***************
-*** 105,111 ****
-  # If you prefer a single logfile with access, agent and referer information
+*** 483,489 ****
+  # If you prefer a single logfile with access, agent, and referer information
   # (Combined Logfile Format) you can use the following directive.
-  
+  #
 ! #CustomLog logs/access_log combined
   
-  # PidFile: The file the server should log its pid to
-  PidFile logs/httpd.pid
---- 105,111 ----
-  # If you prefer a single logfile with access, agent and referer information
+  #
+  # Optionally add a line containing the server version and virtual host
+--- 483,489 ----
+  # If you prefer a single logfile with access, agent, and referer information
   # (Combined Logfile Format) you can use the following directive.
-  
+  #
 ! CustomLog logs/access_log combined
   
-  # PidFile: The file the server should log its pid to
-  PidFile logs/httpd.pid
+  #
+  # Optionally add a line containing the server version and virtual host

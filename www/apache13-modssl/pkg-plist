@@ -49,6 +49,7 @@ include/apache/http_vhost.h
 include/apache/httpd.h
 include/apache/multithread.h
 include/apache/os.h
+include/apache/os-inline.c
 include/apache/rfc1413.h
 include/apache/scoreboard.h
 include/apache/util_date.h
@@ -123,6 +124,8 @@ share/doc/apache/manual/invoking.html
 share/doc/apache/manual/keepalive.html
 share/doc/apache/manual/location.html
 share/doc/apache/manual/man-template.html
+share/doc/apache/manual/install-tpf.html
+share/doc/apache/manual/readme-tpf.html
 share/doc/apache/manual/misc/API.html
 share/doc/apache/manual/misc/FAQ.html
 share/doc/apache/manual/misc/HTTP_Features.tsv
@@ -253,6 +256,7 @@ share/doc/apache/manual/sections.html
 share/doc/apache/manual/sourcereorg.html
 share/doc/apache/manual/stopping.html
 share/doc/apache/manual/suexec.html
+share/doc/apache/manual/suexec_1_2.html
 share/doc/apache/manual/unixware.html
 share/doc/apache/manual/upgrading_to_1_3.html
 share/doc/apache/manual/vhosts/details.html
@@ -346,6 +350,36 @@ www/icons/uu.gif
 www/icons/uuencoded.gif
 www/icons/world1.gif
 www/icons/world2.gif
+www/icons/small/README.txt
+www/icons/small/back.gif
+www/icons/small/binary.gif
+www/icons/small/binhex.gif
+www/icons/small/blank.gif
+www/icons/small/broken.gif
+www/icons/small/burst.gif
+www/icons/small/comp1.gif
+www/icons/small/comp2.gif
+www/icons/small/compressed.gif
+www/icons/small/continued.gif
+www/icons/small/dir.gif
+www/icons/small/dir2.gif
+www/icons/small/forward.gif
+www/icons/small/generic.gif
+www/icons/small/generic2.gif
+www/icons/small/generic3.gif
+www/icons/small/image.gif
+www/icons/small/image2.gif
+www/icons/small/index.gif
+www/icons/small/key.gif
+www/icons/small/movie.gif
+www/icons/small/rainbow.gif
+www/icons/small/sound.gif
+www/icons/small/sound2.gif
+www/icons/small/tar.gif
+www/icons/small/text.gif
+www/icons/small/transfer.gif
+www/icons/small/unknown.gif
+www/icons/small/uu.gif
 @exec cd %D/etc/apache/ssl.crt && make >/dev/null 2>&1
 @exec mkdir -p %D/www
 @exec mkdir -p %D/www/proxy
@@ -356,6 +390,7 @@ www/icons/world2.gif
 @unexec rm -f %D/www/cgi-bin
 @dirrm www/cgi-bin.default
 @dirrm www/proxy
+@dirrm www/icons/small
 @dirrm www/icons
 @dirrm www
 @unexec rm -f %D/etc/apache/ssl.crt/[0-9a-fA-F]*.[0-9]*

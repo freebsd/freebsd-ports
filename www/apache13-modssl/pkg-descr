@@ -1,4 +1,3 @@
-
  Apache 1.3 + mod_ssl 2.1          ``mod_ssl combines the flexibility of  
  ========================            Apache with the security of SSLeay.''
 
@@ -10,7 +9,6 @@
  developed by Ben Laurie for use in the Apache-SSL HTTP server project. 
 
  As a summary, here are its main SSL/TLS-related features:
-
    o  Open-Source software (BSD-style license)
    o  Useable for both commercial and non-commercial use
    o  Available for both Unix and Win32 platforms
@@ -33,8 +31,6 @@
    o  Assistance in X.509 v3 certificate generation
 
  All documentation can be found on-line on the Web:
-
    o  Apache:  http://www.apache.org/
    o  mod_ssl: http://www.engelschall.com/sw/mod_ssl/
    o  SSLeay:  http://www.ssleay.org/
-
