@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pop3proxy
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	mail
 MASTER_SITES=	http://people.freebsd.org/~mbr/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
