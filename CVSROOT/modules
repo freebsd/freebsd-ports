@@ -4784,6 +4784,7 @@ nvi-devel	ports/editors/nvi-devel
 nvi-m17n	ports/editors/nvi-m17n
 nvi-perl	ports/editors/nvi-perl
 nwclient	ports/sysutils/nwclient
+nwclient602	ports/sysutils/nwclient602
 nwfs		src/sys/fs/nwfs
 nwrite		ports/misc/nwrite
 nylon		ports/net/nylon
