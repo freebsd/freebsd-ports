@@ -97,16 +97,11 @@ include/sword/treekeyidx.h
 include/sword/unicodertf.h
 include/sword/unixstr.h
 include/sword/utf16utf8.h
-include/sword/utf8arshaping.h
-include/sword/utf8bidireorder.h
 include/sword/utf8cantillation.h
 include/sword/utf8greekaccents.h
 include/sword/utf8hebrewpoints.h
 include/sword/utf8html.h
 include/sword/utf8latin1.h
-include/sword/utf8nfc.h
-include/sword/utf8nfkd.h
-include/sword/utf8transliterator.h
 include/sword/utf8utf16.h
 include/sword/utilconf.h
 include/sword/utilfuns.h
@@ -117,21 +112,37 @@ include/sword/zconf.h
 include/sword/zipcomprs.h
 include/sword/zld.h
 include/sword/zlib.h
+include/sword/zstr.h
 include/sword/ztext.h
 include/sword/zverse.h
+%%INSTALLMGR%%include/sword/swremotemgr.h
+%%INSTALLMGR%%include/sword/swinstallmgr.h
 @dirrm include/sword
 lib/libsword.so.1
 lib/libsword.so
 lib/libsword.la
 lib/libsword.a
+@dirrm lib/sword
 share/sword/locales.d/abbr.conf
+share/sword/locales.d/cs.conf
 share/sword/locales.d/da.conf
 share/sword/locales.d/de.conf
+share/sword/locales.d/de_abbrev.conf
 share/sword/locales.d/es.conf
 share/sword/locales.d/fr.conf
+share/sword/locales.d/fr_FR.ISO-8859-1.conf
 share/sword/locales.d/it.conf
+share/sword/locales.d/la.conf
+share/sword/locales.d/nl.conf
 share/sword/locales.d/no.conf
+share/sword/locales.d/pl.conf
 share/sword/locales.d/pt.conf
+share/sword/locales.d/id.conf
+share/sword/locales.d/pt_BR.conf
+share/sword/locales.d/sk.conf
+share/sword/locales.d/ru.conf
+share/sword/locales.d/et.conf
+share/sword/locales.d/et_abbr.conf
 @dirrm share/sword/locales.d
 share/sword/mods.d/globals.conf
 @dirrm share/sword/mods.d
