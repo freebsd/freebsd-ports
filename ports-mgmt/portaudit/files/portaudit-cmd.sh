@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/sh -ef
 #
 # Copyright (c) 2004 Oliver Eikemeier. All rights reserved.
 #
@@ -31,31 +31,37 @@
 # $FreeBSD$
 #
 
-# defaults
-daily_status_portaudit_enable="YES"
-
-# If there is a global system configuration file, suck it in.
-#
-if [ -r /etc/defaults/periodic.conf ]
-then
-    . /etc/defaults/periodic.conf
-    source_periodic_confs
-fi
-
 . %%DATADIR%%/portaudit.functions
 portaudit_confs
 
-rc=0
-case "$daily_status_portaudit_enable" in
-	""|[Yy][Ee][Ss])
-		if [ ! -f "${portaudit_dir}/${portaudit_filename}" ] || ! checkexpiry_auditfile 3; then
-			echo ""
-			echo "Updating audit database."
-			fetch_auditfile && rc=1 || rc=2
-		fi
-		;;
-	*)
-		;;
-esac
+if [ $# -eq 0 ] ; then
+	portaudit_prerequisites
+	audit_installed || true
+fi
 
-exit "${rc}"
+while [ $# -gt 0 ]; do
+	case "$1" in
+	-a)
+		portaudit_prerequisites
+		audit_installed || true
+		;;
+	-V)
+		echo "portaudit version %%PORTVERSION%%"
+		;;
+	-d)
+		if [ ! -f "${portaudit_dir}/${portaudit_filename}" ]; then
+			echo "portaudit: database missing. run \`portaudit -F' to update."
+			exit 2
+		fi
+		if ! checksum_auditfile; then
+			echo "portaudit: database corrupt."
+			exit 2
+		fi
+		echo "database created: `getcreated_auditfile`"
+		;;
+	-F)
+		fetch_auditfile || echo "failed."
+		;;
+	esac
+	shift
+done

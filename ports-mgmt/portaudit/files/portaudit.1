@@ -1,0 +1,137 @@
+.\" Copyright (c) 2004 Oliver Eikemeier. All rights reserved.
+.\"
+.\" Redistribution and use in source and binary forms, with or without
+.\" modification, are permitted provided that the following conditions are
+.\" met:
+.\"
+.\"  1. Redistributions of source code must retain the above copyright notice
+.\"     this list of conditions and the following disclaimer.
+.\"
+.\" 2. Redistributions in binary form must reproduce the above copyright
+.\"    notice, this list of conditions and the following disclaimer in the
+.\"    documentation and/or other materials provided with the distribution.
+.\"
+.\" 3. Neither the name of the author nor the names of its contributors may be
+.\"    used to endorse or promote products derived from this software without
+.\"    specific prior written permission.
+.\"
+.\" THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+.\" INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+.\" AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+.\" COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+.\" INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+.\" NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+.\" DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+.\" THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+.\" (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+.\" THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+.\"
+.\" $FreeBSD$
+.\"
+.Dd February 21, 2004
+.Os FreeBSD
+.Dt PORTAUDIT \&1 "FreeBSD ports collection"
+.
+.
+.Sh NAME
+.
+.Nm portaudit
+.Nd system to check installed packages for known vulnerabilities
+.
+.
+.Sh SYNOPSIS
+.
+.Nm
+.Op Fl a
+.Op Fl V
+.Op Fl d
+.Op Fl F
+.
+.
+.Sh DESCRIPTION
+.
+.Nm
+checks installed packages for known vulnerabilities and generates reports
+including references to security advisories. Its audience are system
+administrators or individual users.
+.Pp
+It uses a database maintained by port committers and the FreeBSD security team
+to check if security advisories for any installed packages exist. Note that a
+current ports tree (or any local copy of the ports tree) is not required for
+operation.
+.Pp
+This package also installs two scripts into %%PREFIX%%/periodic that regularly
+update this database and include the report of vulnerable packages in the
+daily security report.
+.Pp
+If you have a vulnerable package installed, you are advised to update or
+deinstalled it immediately.
+.
+.
+.Sh OPTIONS
+.
+The following options are supported:
+.Bl -tag -width ".Fl X"
+.It Fl a
+Print a vulnerability report for all installed packages
+.It Fl F
+Fetch the current database from the
+.Fx servers
+.It Fl d
+Print the creation date of the database
+.It Fl V
+Print the version of
+.Nm .
+.El
+.
+.
+.Sh EXAMPLES
+.
+.Bl -item
+.It
+Fetch the current database and print its creation date:
+.Pp
+.Dl "portaudit -F -d"
+.It
+Print a vulnerability report for all installed packages:
+.Pp
+.Dl "portaudit"
+.El
+.
+.
+.Sh FILES
+.
+.Pa %%PREFIX%%/etc/portaudit.conf ,
+.Pa %%DATABASEDIR%%/auditfile.tbz
+.
+.
+.Sh SEE ALSO
+.
+.Xr ports 7 ,
+.Xr periodic 8 ,
+.Xr periodic.conf 5 ,
+.Li Aq http://www.freebsd.org/security/#adv .
+.Li Aq http://www.vuxml.org/ .
+.
+.
+.Sh CAVEATS
+.
+.Nm
+is in develpoment and should currently not be relied upon
+as an extensive security auditing tool.
+.
+.
+.Sh BUGS
+.
+Sure to be some.
+.
+.
+.Sh AUTHOR
+.
+.An Oliver Eikemeier Aq eik@FreeBSD.org
+.
+.
+.Sh HISTORY
+.
+package auditing first appeared in
+.Nx 1.4.3 .

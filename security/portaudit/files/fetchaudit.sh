@@ -1,12 +1,38 @@
 #!/bin/sh
-
+#
+# Copyright (c) 2004 Oliver Eikemeier. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#
+#  1. Redistributions of source code must retain the above copyright notice
+#     this list of conditions and the following disclaimer.
+#
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# 3. Neither the name of the author nor the names of its contributors may be
+#    used to endorse or promote products derived from this software without
+#    specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+# INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+# AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+# COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+# INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+# NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+# DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+# THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF
+# THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 # $FreeBSD$
 #
 
 # defaults
 daily_status_portaudit_enable="YES"
-portaudit_dir="%%DATABASEDIR%%"
 
 # If there is a global system configuration file, suck it in.
 #
@@ -17,65 +43,19 @@ then
 fi
 
 . %%DATADIR%%/portaudit.functions
+portaudit_confs
 
-MASTER_SITE_LOCAL="
-	${MASTER_SITE_LOCAL}
-	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
-	ftp://ftp.se.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
-	ftp://ftp.uk.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
-	ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
-	ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
-	ftp://ftp.tw.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/%SUBDIR%/
-	"
-
-MASTER_SITE_SUBDIR=eik
-
-DISTNAME=auditfile
-EXTRACT_SUFX=.tbz
-
-portaudit_file="${portaudit_dir}/${DISTNAME}${EXTRACT_SUFX}"
-
-# site sort order is not overly smart
-LOCATIONS=`echo "${MASTER_SITE_LOCAL}" | awk "
-		BEGIN { srand() }
-		/^[ \t]*\$/ { next }
-		{
-			gsub(/[ \t]/, \\"\\")
-			gsub(/%SUBDIR%/, \\"${MASTER_SITE_SUBDIR}\\")
-			print rand() \\"\t\\" \\$0 \\"${DISTNAME}${EXTRACT_SUFX}\\"
-		}
-	" | sort -n | cut -f 2`
-
+rc=0
 case "$daily_status_portaudit_enable" in
 	""|[Yy][Ee][Ss])
-		if [ ! -f "${portaudit_file}" ] || checkexpiry_auditfile 5; then
+		if [ ! -f "${portaudit_dir}/${portaudit_filename}" ] || ! checkexpiry_auditfile 3; then
 			echo ""
 			echo "Updating audit database."
-			cd "${portaudit_dir}"
-			fetch -1am ${LOCATIONS}
-			if [ ! $? ]; then
-				echo "Couldn't fetch database."
-				rc=2
-			elif [ ! -f "${portaudit_file}" ] ; then
-				echo "no database."
-				rc=2
-			elif checksum_auditfile; then
-				echo "database corrupt."
-				rc=2
-			elif checkexpiry_auditfile 7; then
-				echo "database too old."
-				rc=2
-			else
-				echo "done"
-				rc=1
-			fi
-		else
-			rc=0
+			fetch_auditfile && rc=1 || rc=2
 		fi
-	;;
+		;;
 	*)
-		rc=0
-	;;
+		;;
 esac
 
 exit "${rc}"
