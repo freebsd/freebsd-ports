@@ -1,0 +1,11 @@
+--- configure.in~ Tue Apr 20 10:15:59 1999
++++ configure.in Tue Apr 20 10:16:25 1999
+@@ -69,7 +69,7 @@
+     hppa*-hp-hpux*) $2=hppa-hpux ;;
+     sparc*-solaris*) $2=sparc-solaris ;;
+     i*86-*-freebsd2*) $2=x86-freebsd-aout ;;
+-    i*86-*-freebsd3*) $2=x86-freebsd-elf ;;
++    i*86-*-freebsd*) $2=x86-freebsd-elf ;;
+     i*86-pc-cygwin32) $2=x86-win32-gcc ;;
+     i*86-pc-none) $2=x86-win32-vc ;;
+     *) $2=unknown-unix ;;
