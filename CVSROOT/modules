@@ -980,6 +980,7 @@ crypto		src/crypto
 crypto_kerberosIV	src/crypto/kerberosIV
 crypto_libdes	src/crypto/libdes
 crypto_openssh	src/crypto/openssh
+crypto_openssh-portable	src/crypto/openssh-portable
 crypto_telnet	src/crypto/telnet
 cryptopp	ports/security/cryptopp
 cryptoslam	ports/games/cryptoslam
