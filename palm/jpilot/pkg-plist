@@ -17,4 +17,3 @@ share/locale/ja/LC_MESSAGES/jpilot.mo
 share/locale/sv/LC_MESSAGES/jpilot.mo
 @dirrm share/jpilot
 @dirrm share/doc/jpilot
-@dirrm share/local
