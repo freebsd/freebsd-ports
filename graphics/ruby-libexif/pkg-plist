@@ -1,6 +1,7 @@
 %%RUBY_SITEARCHLIBDIR%%/exif.so
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/exif.ja.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/ja/exif.rd.ja
+%%PORTDOCS%%%%RUBY_MODDOCDIR%%/ChangeLog
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/exif.en.html
 %%PORTDOCS%%%%RUBY_MODDOCDIR%%/exif.rd.en
