@@ -1,13 +1,13 @@
 # New ports collection makefile for:	p5-MIME-Tools
-# Version required:			4.119
+# Version required:			4.121
 # Date created:				April 27th 1998
 # Whom:	      				Eivind Eklund <eivind@FreeBSD.ORG>
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/27 23:08:35 eivind Exp $
+# $Id: Makefile,v 1.2 1998/05/07 16:28:35 vanilla Exp $
 #
 
-DISTNAME=	MIME-tools-4.119
-PKGNAME=	p5-MIME-Tools-4.119
+DISTNAME=	MIME-tools-4.121
+PKGNAME=	p5-MIME-Tools-4.121
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	MIME
