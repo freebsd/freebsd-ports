@@ -6,19 +6,23 @@
 #
 
 PORTNAME=	mpqc
-PORTVERSION=	1.2.5
+PORTVERSION=	2.1.1
 CATEGORIES=	science
 MASTER_SITES=	http://aros.ca.sandia.gov/~cljanss/mpqc/distrib/
 
 MAINTAINER=	batman@udel.edu
 
-BROKEN=		"Does not build"
+LIB_DEPENDS=	blas:${PORTSDIR}/math/blas \
+		lapack:${PORTSDIR}/math/lapack
 
-BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
-
+USE_BISON=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-libdirs=-L${LOCALBASE}/lib
 USE_PERL5=	yes
 USE_GMAKE=	yes
-ALL_TARGET?=
+ALL_TARGET=	# empty
+
+post-patch:
+	@${PERL} -pi -e "s,-lpthreads,${PTHREAD_LIBS},g" ${WRKSRC}/configure
 
 .include <bsd.port.mk>
