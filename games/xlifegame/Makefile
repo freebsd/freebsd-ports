@@ -8,8 +8,7 @@
 PORTNAME=	xlifegame
 PORTVERSION=	1.13
 CATEGORIES=	games
-MASTER_SITES=	http://puma.cis.ibaraki.ac.jp/pub/X11/ \
-		http://nadja.cis.ibaraki.ac.jp/pub/X11/
+MASTER_SITES=	http://puma.cis.ibaraki.ac.jp/pub/X11/
 
 MAINTAINER=	hym@cocoa.freemail.ne.jp
 
