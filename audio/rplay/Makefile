@@ -1,9 +1,9 @@
-# New ports collection makefile for:	rplay - Network audio player   
+# New ports collection makefile for:	rplay - Network audio player
 # Version required:     3.2.0b6
-# Date created:		16 March 1995  
+# Date created:		16 March 1995
 # Whom:			rmallory@csusb.edu
 #
-# $Id: Makefile,v 1.10 1998/09/22 19:10:12 asami Exp $
+# $Id: Makefile,v 1.11 1999/06/05 20:07:58 mharo Exp $
 #
 
 DISTNAME=       rplay-3.2.0b6
@@ -21,13 +21,13 @@ MAN5=		rplay.conf.5 rplay.hosts.5 rplay.servers.5
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/rc.d/rplayd.sh ]; then \
-		echo "Installing ${PREFIX}/etc/rc.d/rplayd.sh startup file."; \
-		echo "#!/bin/sh" > ${PREFIX}/etc/rc.d/rplayd.sh; \
-		echo "[ -x ${PREFIX}/sbin/rplayd ] && ( ${PREFIX}/sbin/rplayd & ) && echo -n ' rplayd'" >> ${PREFIX}/etc/rc.d/rplayd.sh; \
+		@${ECHO} "Installing ${PREFIX}/etc/rc.d/rplayd.sh startup file."; \
+		@${ECHO} "#!/bin/sh" > ${PREFIX}/etc/rc.d/rplayd.sh; \
+		@${ECHO} "[ -x ${PREFIX}/sbin/rplayd ] && ( ${PREFIX}/sbin/rplayd & ) && ${ECHO} -n ' rplayd'" >> ${PREFIX}/etc/rc.d/rplayd.sh; \
 		chmod 751 ${PREFIX}/etc/rc.d/rplayd.sh; \
 	fi
 	@if [ ! -f ${PREFIX}/etc/rplay.hosts ]; then \
-		echo localhost > ${PREFIX}/etc/rplay.hosts; \
+		@${ECHO} localhost > ${PREFIX}/etc/rplay.hosts; \
 	fi
 
 .include <bsd.port.mk>
