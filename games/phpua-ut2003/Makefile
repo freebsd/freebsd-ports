@@ -11,7 +11,7 @@ CATEGORIES=	games www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	phpua
 
-MAINTAINER=	hido@neojapangz.com
+MAINTAINER=	hido@coreblack.com
 COMMENT=	An Unreal Tournament 2003 plugin for phpUA
 
 RUN_DEPENDS=	${PKG_DBDIR}/phpua-engine-1.1.0b:${PORTSDIR}/games/phpua-engine

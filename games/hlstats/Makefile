@@ -11,7 +11,7 @@ CATEGORIES=	games www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	hido@neojapangz.com
+MAINTAINER=	hido@coreblack.com
 COMMENT=	A real-time stats parser for Half Life & its mods
 
 RUN_DEPENDS=	php-config:${PORTSDIR}/www/mod_php4 \
