@@ -16,7 +16,7 @@ COMMENT=	A complete desktop solution for digital photo management
 
 BUILD_DEPENDS=	kdepyuic:${PORTSDIR}/x11-toolkits/py-kde
 # libs for burning cd/vcd in lphoto, does not work in freebsd.
-#LIB_DEPENDS=	Magick.7:${PORTSDIR}/graphics/ImageMagic \
+#LIB_DEPENDS=	Magick.8:${PORTSDIR}/graphics/ImageMagick \
 #		vcdinfo.0:${PORTSDIR}/multimedia/vcdimager \
 #		avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 RUN_DEPENDS=	gphoto2:${PORTSDIR}/graphics/gphoto2 \

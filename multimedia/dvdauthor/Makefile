@@ -7,7 +7,7 @@
 
 PORTNAME=	dvdauthor
 PORTVERSION=	0.6.10
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -50,7 +50,7 @@ LIB_DEPENDS+=	fribidi.0:${PORTSDIR}/converters/fribidi
 USE_ICONV=	yes
 .endif
 .if defined(WITH_IMAGEMAGICK)
-LIB_DEPENDS+=	Magick.7:${PORTSDIR}/graphics/ImageMagick
+LIB_DEPENDS+=	Magick.8:${PORTSDIR}/graphics/ImageMagick
 .else
 LIB_DEPENDS+=	png.5:${PORTSDIR}/graphics/png
 .endif
