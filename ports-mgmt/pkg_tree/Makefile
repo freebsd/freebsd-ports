@@ -12,10 +12,12 @@ MASTER_SITES=	http://www.mavetju.org/download/
 
 MAINTAINER=	edwin@mavetju.org
 
+USE_REINPLACE=	yes
+
 MAN7=		pkg_tree.7
 
 post-patch:
-	@${PERL} -pi -e 's|__PREFIX__|${PREFIX}|g ; \
+	@${REINPLACE_CMD} -e 's|__PREFIX__|${PREFIX}|g ; \
 		s|__INSTALL_MAN__|${INSTALL_MAN}|g ; \
 		s|__INSTALL_SCRIPT__|${INSTALL_SCRIPT}|g' ${WRKSRC}/Makefile
 

@@ -13,6 +13,8 @@ EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	edwin@mavetju.org
 
+USE_REINPLACE=	yes
+
 MAN8=		tspc.8
 MAN5=		tspc.conf.5
 
@@ -58,16 +60,19 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 post-patch:
-	@${MV} ${WRKSRC}/src/tspc.c ${WRKSRC}/src/tspc.c.orig
-	@${SED} -e "s|tspc.conf|${PREFIX}/etc/tspc.conf|" < ${WRKSRC}/src/tspc.c.orig > ${WRKSRC}/src/tspc.c
+	@${REINPLACE_CMD} -e "s|tspc.conf|${PREFIX}/etc/tspc.conf|" \
+		${WRKSRC}/src/tspc.c
 
-	@${SED} -e "s|@@PREFIX@@|${PREFIX}|g" < ${FILESDIR}/freenet6.sh.in > ${WRKSRC}/freenet6.sh
-	@${SED} -e "s|@@PREFIX@@|${PREFIX}|g" < ${FILESDIR}/pkg-message.in > ${WRKSRC}/pkg-message
+	@${CP} ${FILESDIR}/freenet6.sh.in ${WRKSRC}/freenet6.sh
+	@${REINPLACE_CMD} -e "s|@@PREFIX@@|${PREFIX}|g" ${WRKSRC}/freenet6.sh
 
-	@${MV} ${WRKSRC}/man/man8/tspc.8 ${WRKSRC}/man/man8/tspc.8.orig
-	@${SED} -e "s|@@PREFIX@@|${PREFIX}|g" < ${WRKSRC}/man/man8/tspc.8.orig > ${WRKSRC}/man/man8/tspc.8
+	@${CP} ${FILESDIR}/pkg-message.in ${WRKSRC}/pkg-message
+	@${REINPLACE_CMD} -e "s|@@PREFIX@@|${PREFIX}|g" ${WRKSRC}/pkg-message
 
-	@${MV} ${WRKSRC}/man/man5/tspc.conf.5 ${WRKSRC}/man/man5/tspc.conf.5.orig
-	@${SED} -e "s|@@PREFIX@@|${PREFIX}|g" < ${WRKSRC}/man/man5/tspc.conf.5.orig > ${WRKSRC}/man/man5/tspc.conf.5
+	@${REINPLACE_CMD} -e "s|@@PREFIX@@|${PREFIX}|g" \
+		${WRKSRC}/man/man8/tspc.8
+
+	@${REINPLACE_CMD} -e "s|@@PREFIX@@|${PREFIX}|g" \
+		${WRKSRC}/man/man5/tspc.conf.5
 
 .include <bsd.port.post.mk>

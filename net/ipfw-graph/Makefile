@@ -12,12 +12,13 @@ MASTER_SITES=	http://www.mavetju.org/download/
 
 MAINTAINER=	edwin@mavetju.org
 
+USE_REINPLACE=	yes
 USE_GTK=	yes
 MAKE_ENV+=	MANPREFIX="${MANPREFIX}"
 
 MAN8=		ipfw-al.8 ipfw-graph.8
 
 pre-patch:
-	@${PERL} -pi -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/ipfw-graph.h
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/ipfw-graph.h
 
 .include <bsd.port.mk>

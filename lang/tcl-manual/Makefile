@@ -14,18 +14,21 @@ DISTFILES=	tcl8.3.4.html.tar.gz tcl8.4a3.html.tar.gz
 
 MAINTAINER=	edwin@mavetju.org
 
+USE_REINPLACE=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
 post-patch:
 	@${RM} ${WRKDIR}/tcl8.3.4/html/UserCmd/*.orig
 	@${RM} ${WRKDIR}/tcl8.4a3/html/UserCmd/*.orig
-	@${PERL} -pi -e 's|tcl\.h|tcl8.3/tcl.h|g' \
+	@${REINPLACE_CMD} -e 's|tcl\.h|tcl8.3/tcl.h|g' \
 		${WRKDIR}/tcl8.3.4/html/TclLib/*
-	@${PERL} -pi -e 's|tk\.h|tk8.3/tk.h|g' ${WRKDIR}/tcl8.3.4/html/TkLib/*
-	@${PERL} -pi -e 's|tcl\.h|tcl8.4/tcl.h|g' \
+	@${REINPLACE_CMD} -e 's|tk\.h|tk8.3/tk.h|g' \
+		${WRKDIR}/tcl8.3.4/html/TkLib/*
+	@${REINPLACE_CMD} -e 's|tcl\.h|tcl8.4/tcl.h|g' \
 		${WRKDIR}/tcl8.4a3/html/TclLib/*
-	@${PERL} -pi -e 's|tk\.h|tk8.4/tk.h|g' ${WRKDIR}/tcl8.4a3/html/TkLib/*
+	@${REINPLACE_CMD} -e 's|tk\.h|tk8.4/tk.h|g' \
+		${WRKDIR}/tcl8.4a3/html/TkLib/*
 
 do-install:
 	${MKDIR} ${PREFIX}/share/doc/tcl83
