@@ -89,13 +89,18 @@ bin/pyrexc
 @dirrm %%PYTHON_SITELIBDIR%%/Pyrex/Compiler
 @dirrm %%PYTHON_SITELIBDIR%%/Pyrex
 %%PORTDOCS%%share/doc/pyrex/About.html
+%%PORTDOCS%%share/doc/pyrex/FAQ.html
+%%PORTDOCS%%share/doc/pyrex/index.html
 %%PORTDOCS%%share/doc/pyrex/overview.html
 %%PORTDOCS%%share/doc/pyrex/primes.c
 %%PORTDOCS%%share/doc/pyrex/special_methods.html
 %%PORTDOCS%%share/examples/pyrex/Makefile
 %%PORTDOCS%%share/examples/pyrex/Makefile.nodistutils
+%%PORTDOCS%%share/examples/pyrex/numeric.pyx
+%%PORTDOCS%%share/examples/pyrex/numeric_demo.pyx
 %%PORTDOCS%%share/examples/pyrex/primes.pyx
 %%PORTDOCS%%share/examples/pyrex/pyprimes.py
+%%PORTDOCS%%share/examples/pyrex/run_numeric_demo.py
 %%PORTDOCS%%share/examples/pyrex/run_primes.py
 %%PORTDOCS%%share/examples/pyrex/run_spam.py
 %%PORTDOCS%%share/examples/pyrex/setup.py
