@@ -1,22 +1,28 @@
-*** config/options.h-vanilla	Fri Feb 10 19:21:59 1995
---- config/options.h	Tue Feb 28 23:46:59 1995
+*** config/options.h-vanilla	Fri Feb 10 11:21:59 1995
+--- config/options.h	Tue Feb 28 16:34:30 1995
 ***************
-*** 42,48 ****
+*** 42,51 ****
    *	LIBEXEC_DIR	- Internal support programs
    *	MAN_DIR		- Man pages
    */
 ! #define CONFIG_DIR "/etc/amanda"
   #define LIBEXEC_DIR "/usr/local/libexec/amanda"
   #define BIN_DIR	"/usr/local/sbin"
-  #define MAN_DIR	"/usr/share/local/man/man8"
---- 42,48 ----
+! #define MAN_DIR	"/usr/share/local/man/man8"
+  
+  
+  /*
+--- 42,51 ----
    *	LIBEXEC_DIR	- Internal support programs
    *	MAN_DIR		- Man pages
    */
 ! #define CONFIG_DIR "/usr/local/etc/amanda"
   #define LIBEXEC_DIR "/usr/local/libexec/amanda"
   #define BIN_DIR	"/usr/local/sbin"
-  #define MAN_DIR	"/usr/share/local/man/man8"
+! #define MAN_DIR	"/usr/local/man/man8"
+  
+  
+  /*
 ***************
 *** 53,59 ****
    * I compile with -g to compile in a full symbol table, but you might choose
