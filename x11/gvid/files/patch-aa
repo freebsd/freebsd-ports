@@ -1,0 +1,42 @@
+--- Makefile.orig	Sun May  7 20:44:29 2000
++++ Makefile	Tue Jun 20 14:55:26 2000
+@@ -1,27 +1,28 @@
+-CC = gcc
+-CFLAGS = -g -Wall `gnome-config --cflags applets`
+-LFLAGS = `gnome-config --libs applets` -lX11 -lXxf86vm -lXext -L/usr/X11R6/lib
++CC ?= gcc
++CFLAGS += -g -Wall `$(X11BASE)/bin/gnome-config --cflags applets`
++LFLAGS += `$(X11BASE)/bin/gnome-config --libs applets` -L$(X11BASE)/lib -lX11 -lXxf86vm -lXext
+ TARGET = gvid
+ 
+-BINDIR = `gnome-config --bindir`
+-GNORBADIR = `gnome-config --sysconfdir`/CORBA/servers/
+-DESKTOPDIR = `gnome-config --datadir`/applets/Utility/
++BINDIR = $(PREFIX)/bin
++GNORBADIR = $(PREFIX)/etc/CORBA/servers
++DESKTOPDIR = $(PREFIX)/share/gnome/applets/Utility
+ 
+ SRC = gvid.c
+ 
+ OBJS = $(SRC:.c=.o)
+ 
+ .c.o:
+-	gcc -O3 -c $(CFLAGS) $(DEFINES) $<
++	$(CC) -c $(CFLAGS) $(DEFINES) $<
+ 
+ $(TARGET) : $(OBJS)
+-	gcc -O3 -o $(TARGET) $(OBJS) $(LFLAGS)
++	$(CC) -o $(TARGET) $(OBJS) $(LFLAGS)
+ 
+ 
+ install : $(TARGET) $(TARGET).gnorba $(TARGET).desktop
+-	cp $(TARGET) $(BINDIR)
+-	cp $(TARGET).gnorba $(GNORBADIR)
+-	cp $(TARGET).desktop $(DESKTOPDIR)
++	$(MKDIR) $(GNORBADIR) $(DESKTOPDIR)
++	$(BSD_INSTALL_PROGRAM) $(TARGET) $(BINDIR)
++	$(BSD_INSTALL_DATA) $(TARGET).gnorba $(GNORBADIR)
++	$(BSD_INSTALL_DATA) $(TARGET).desktop $(DESKTOPDIR)
+ 
+ clean :
+ 	@rm -f *.o $(TARGET)
