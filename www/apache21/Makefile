@@ -9,7 +9,7 @@
 
 PORTNAME=	apache
 PORTVERSION=	2.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_LOCAL:S/%SUBDIR%/clement/}
 DISTNAME=	httpd-${PORTVERSION}-alpha
@@ -220,6 +220,7 @@ install-startup-script:
 	@${INSTALL_SCRIPT} -m 555 ${WRKDIR}/apache21.sh ${PREFIX}/etc/rc.d/apache21.sh
 
 post-install: install-startup-script
+	@${MKDIR} ${PREFIX}/etc/apache21/envvars.d
 	@${MKDIR} ${PREFIX}/etc/apache21/Includes
 	@@${CAT} ${PKGMESSAGE}
 
