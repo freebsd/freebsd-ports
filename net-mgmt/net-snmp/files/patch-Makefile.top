@@ -1,0 +1,11 @@
+--- Makefile.top.orig	Mon Nov 20 05:58:05 2000
++++ Makefile.top	Thu Feb  8 01:21:42 2001
+@@ -51,7 +51,7 @@
+ # Misc Compiling Stuff
+ CC	        = @CC@
+ # version number is prefixed by a 0 for a better shared library version number
+-LIB_LD_CMD      = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) -rpath $(libdir) -release 0.$(VERSION) -o
++LIB_LD_CMD      = $(LIBTOOL) --mode=link $(CC) $(CFLAGS) -rpath $(libdir) -release $(VERSION).0 -version-info 4 -o
+ LIB_EXTENSION   = la
+ LIB_VERSION     =
+ LIB_LDCONFIG_CMD = $(LIBTOOL) --mode=finish $(libdir)
