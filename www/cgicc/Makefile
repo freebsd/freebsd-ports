@@ -14,12 +14,18 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 
-USE_LIBTOOL=	yes
 USE_GMAKE=	yes
-
+GNU_CONFIGURE=	yes
+CONFIGURE_TARGET=	--build=${ARCH}-portbld-freebsd${OSREL}
 INSTALLS_SHLIB=	yes
 
-post-extract:
-	@${LN} -sf ${LOCALBASE}/bin/libtool ${WRKSRC}
+post-patch:
+	@${PERL} -pi -e 's| install-data-local||g' ${WRKSRC}/Makefile.in
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/html/*.* ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
