@@ -540,6 +540,7 @@
     SUBDIR += pear-SOAP
     SUBDIR += pebrot
     SUBDIR += pecl-yaz
+    SUBDIR += peercast
     SUBDIR += pen
     SUBDIR += perldap
     SUBDIR += pfflowd
