@@ -1,5 +1,5 @@
-*** IniConf.pm.bak	Fri Jul 11 09:39:59 1997
---- IniConf.pm	Thu Sep 10 01:15:26 1998
+*** IniConf.pm.orig	Fri Jul 11 09:39:59 1997
+--- IniConf.pm	Thu Sep 10 04:49:00 1998
 ***************
 *** 203,209 ****
   	  \$SIG{$sig} = 'IGNORE';
@@ -17,3 +17,20 @@
   	  }
   	  \$SIG{$sig} = '$newhandler'
   	}
+***************
+*** 346,352 ****
+  	$self->{v}{$sect} = {};
+        }
+      }
+!     elsif (($parm, $val) = /\s*(\S+)\s*=\s*(.*)/) {	# new parameter
+        $parm = lc($parm) if $nocase;
+        $self->{pCMT}{$sect}{$parm} = [@cmts];
+        @cmts = ( );
+--- 346,352 ----
+  	$self->{v}{$sect} = {};
+        }
+      }
+!     elsif (($parm, $val) = /\s*([^\s=]+)\s*=\s*(.*)/) {     # new parameter
+        $parm = lc($parm) if $nocase;
+        $self->{pCMT}{$sect}{$parm} = [@cmts];
+        @cmts = ( );
