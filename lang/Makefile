@@ -56,6 +56,7 @@
     SUBDIR += gcl
     SUBDIR += gforth
     SUBDIR += ghc
+    SUBDIR += ghc-doc
     SUBDIR += glibstdc++28
     SUBDIR += gnat
     SUBDIR += gnat-doc-html
