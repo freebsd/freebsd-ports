@@ -9,7 +9,8 @@ PORTNAME=	clip
 PORTVERSION=	1.1.11.1
 PORTREVISION=	0
 CATEGORIES=	databases lang
-MASTER_SITES=	ftp://ftp.itk.ru/pub/clip/
+MASTER_SITES=	ftp://ftp.itk.ru/pub/clip/	\
+		ftp://ftp.linux.ru.net/mirrors/clip/
 DISTFILES=	${PORTNAME}-prg-${PORTVERSION:R}-${PORTVERSION:E}.tgz \
 		patch.tgz
 DIST_SUBDIR=	clip
