@@ -1,13 +1,9 @@
-bin/nvi
-bin/nex
-bin/nview
-bin/regular
-bin/qregular
-man/man1/nvi.1
-man/man1/nex.1
-man/man1/nview.1
-share/vi/README.english
-share/vi/README.japanese
+bin/pnvi
+bin/pnex
+bin/pnview
+man/man1/pnvi.1
+man/man1/pnex.1
+man/man1/pnview.1
 share/vi/recover
 share/vi/catalog/dutch
 share/vi/catalog/english
@@ -20,6 +16,7 @@ share/vi/perl/forall.pl
 share/vi/perl/make.pl
 share/vi/perl/tk.pl
 share/vi/perl/wc.pl
+share/vi/perl/VI.pm
 share/vi/tcl/errors.tcl
 share/vi/tcl/gnats.tcl
 share/vi/tcl/mailprocs.tcl

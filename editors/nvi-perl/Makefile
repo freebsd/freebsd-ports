@@ -1,35 +1,27 @@
-# New ports collection makefile for:	nvi-1.79 + multilingual patch(none)
+# New ports collection makefile for:	nvi-1.79 + perl
 # Version required:	1.79
-# Date created:		6 Mar 1997
+# Date created:		18 Feb 1998
 # Whom:			Jun-ichiro itojun Itoh <itojun@itojun.org>
 #
-# $Id: Makefile,v 1.7 1998/02/09 06:56:40 fenner Exp $
+# $Id$
 #
 
 DISTNAME=	nvi-1.79
-PKGNAME?=	nvi-m17n-1.79.19970820
+PKGNAME?=	nvi-perl-1.79
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.bostic.com/pub/\
+MASTER_SITES=	ftp://ftp.bostic.com/pub/ \
 		ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
-
-PATCH_SITES=	ftp://ftp.foretune.co.jp/pub/tools/nvi-m17n/
-PATCHFILES=	nvi-1.79.m17n-970820-1600.diff.gz
 
 MAINTAINER=	itojun@itojun.org
 
-#LIB_DEPENDS=	canna\\.1\\.:${PORTSDIR}/japanese/Canna
-
 WRKSRC=		${WRKDIR}/${DISTNAME}/build
 GNU_CONFIGURE=	yes
+USE_PERL5=	yes
 # can't say PATCH_DIST_STRIP=-p1 because contains files outside ${WRKSRC}
 PATCH_DIST_ARGS=-d ${WRKSRC}/.. --forward --quiet -E -p0
-CONFIGURE_ENV=	OPTFLAG='-D_PATH_SYSEXRC=\"${PREFIX}/etc/vi.exrc\"'
-CONFIGURE_ARGS=	--enable-multibyte --program-prefix=n
+PATCH_ARGS=	-d ${WRKSRC}/.. --forward --quiet -E -p0
 
-post-install:
-	@${CP} ${WRKSRC}/../docs.m17n/README.english \
-		${PREFIX}/share/vi/
-	@${CP} ${WRKSRC}/../docs.m17n/README.japanese \
-		${PREFIX}/share/vi/
+CONFIGURE_ENV=	OPTFLAG='-D_PATH_SYSEXRC=\"${PREFIX}/etc/vi.exrc\"'
+CONFIGURE_ARGS=	--enable-perlinterp --program-prefix=pn
 
 .include <bsd.port.mk>

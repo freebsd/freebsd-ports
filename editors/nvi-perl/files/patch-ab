@@ -1,0 +1,11 @@
+--- perl_api/perl.xs.orig	Thu Feb 19 23:50:23 1998
++++ perl_api/perl.xs	Thu Feb 19 23:50:38 1998
+@@ -418,7 +418,7 @@
+ xs_init()
+ {
+ #ifdef HAVE_PERL_5_003_01
+-	dXSUB_SYS;
++	dXSUB_SYS
+ #endif
+ 	char *file = __FILE__;
+ 
