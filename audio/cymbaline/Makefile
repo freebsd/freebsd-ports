@@ -10,7 +10,7 @@ PORTNAME=	cymbaline
 PORTVERSION=	0.9r
 PORTREVISION=	1
 CATEGORIES=	audio python
-MASTER_SITES=	http://www.silmarill.org/cymbaline/
+MASTER_SITES=	http://www.silmarill.org/files/
 
 MAINTAINER=	ports@FreeBSD.org
 
