@@ -11,7 +11,7 @@ PORTVERSION=	0.5
 CATEGORIES=	emulators
 MASTER_SITES=	http://www.pacificsites.com/~ccrayne/  \
 		http://www.glue.umd.edu/~jasonp/  \
-		http://odin.asgard/
+		http://www.boo.net/~jasonp/
 DISTFILES=	${PORTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org

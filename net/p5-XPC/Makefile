@@ -9,7 +9,7 @@
 PORTNAME=	XPC
 PORTVERSION=	0.2
 CATEGORIES=	net perl5
-MASTER_SITES=	http://www.focusresearch.com/gregor/sw/XPC/
+MASTER_SITES=	http://www.gregorpurdy.com/gregor/sw/XPC/
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
