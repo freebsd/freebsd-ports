@@ -2,11 +2,23 @@ bin/asl
 bin/plist
 bin/p2hex
 bin/p2bin
+man/man1/asl.1.gz
+man/man1/p2bin.1.gz
+man/man1/p2hex.1.gz
+man/man1/pbind.1.gz
+man/man1/plist.1.gz
 share/asl/80c50x.inc
 share/asl/80c552.inc
+share/asl/as.msg
 share/asl/bitfuncs.inc
+share/asl/cmdarg.msg
 share/asl/ctype.inc
 share/asl/h8_3048.inc
+share/asl/ioerrs.msg
+share/asl/p2bin.msg
+share/asl/p2hex.msg
+share/asl/pbind.msg
+share/asl/plist.msg
 share/asl/reg166.inc
 share/asl/reg251.inc
 share/asl/reg29k.inc
@@ -31,7 +43,6 @@ share/asl/stddef37.inc
 share/asl/stddef3x.inc
 share/asl/stddef47.inc
 share/asl/stddef51.inc
-share/asl/stddef56.inc
 share/asl/stddef56k.inc
 share/asl/stddef5x.inc
 share/asl/stddef60.inc
@@ -42,8 +53,8 @@ share/asl/stddef90.inc
 share/asl/stddef96.inc
 share/asl/stddefxa.inc
 share/asl/stddefz8.inc
+share/asl/tools.msg
 share/doc/asl/Makefile
-share/doc/asl/as.doc
 share/doc/asl/as.tex
 @dirrm share/asl
 @dirrm share/doc/asl

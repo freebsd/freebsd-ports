@@ -1,16 +1,20 @@
 # New ports collection makefile for:    asl
-# Version required:     1.41r6
+# Version required:     1.41r7
 # Date created:         18 June 1997
 # Whom:                 Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.1.1.1 1997/06/20 08:13:46 tg Exp $
+# $Id: Makefile,v 1.2 1997/07/14 07:45:30 tg Exp $
 #
 
-DISTNAME=       asl-1.41r6
+DISTNAME=       asl-1.41r7
 CATEGORIES=	devel
-MASTER_SITES=	ftp://zam091.zam.kfa-juelich.de/pub/msdos/assembler/c_version/
+MASTER_SITES=	${MASTER_SITE_SUNSITE} \
+		ftp://john.ccac.rwth-aachen.de/pub/as/source/c_version/
+MASTER_SITE_SUBDIR=	devel/lang/assemblers
 
 MAINTAINER=	ports@FreeBSD.org
+
+MAN1=	asl.1 p2bin.1 p2hex.1 pbind.1 plist.1
 
 post-extract:
 	${CP} ${FILESDIR}/Makefile.def ${WRKSRC}
