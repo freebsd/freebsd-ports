@@ -1,0 +1,4 @@
+bin/xaos
+man/man6/xaos.6
+share/doc/XaoS/tutorial.txt
+share/doc/XaoS/algorithm.txt

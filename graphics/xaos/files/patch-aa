@@ -1,0 +1,111 @@
+--- mktable.c--	Wed Jan 22 16:38:33 1997
++++ mktable.c	Mon Feb 24 14:37:28 1997
+@@ -20,10 +20,15 @@
+  * along with this program; if not, write to the Free Software
+  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+  */
++#ifdef	HAVE_SYS_PARAM_H
++#include <sys/param.h>
++#endif
+ #include <stdio.h>
+ #include <ctype.h>
+ #include <stdlib.h>
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#endif
+ #include "mktable.h"
+ #include "config.h"
+ #ifdef CURSES_DRIVER
+@@ -395,7 +400,11 @@
+ #define postoparams(pos,i1,i2,i3,i4) \
+   ((i1)=(pos)>>12),((i2)=((pos)>>8)&15),((i3)=((pos)>>4)&15),((i4)=((pos))&15)
+ 
++#ifdef isset
++#undef isset
++#endif
+ #define isset(n,i) (((i)&1<<(n))!=0)
++
+ #define canset(n,i) (!isset(n,i)&&isset(n+1,i))
+ static int width = 8;
+ void values(int c, int *v1, int *v2, int *v3, int *v4)
+--- timers.c--	Mon Jan 27 13:15:55 1997
++++ timers.c	Mon Feb 24 14:33:42 1997
+@@ -25,11 +25,18 @@
+ #include <libc.h>
+ #else
+ #include "aconfig.h"
++#ifdef	HAVE_SYS_PARAM_H
++#include <sys/param.h>
++#endif
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#endif
+ #include <stdio.h>
+ #include <unistd.h>
+ #ifndef _MAC
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#endif
+ #endif
+ #ifdef HAVE_SETITIMER
+ #include <signal.h>
+--- ui_curses.c--	Mon Feb 24 14:21:41 1997
++++ ui_curses.c	Mon Feb 24 12:57:00 1997
+@@ -21,9 +21,14 @@
+  */
+ #include "aconfig.h"
+ #ifdef CURSES_DRIVER
++#ifdef	HAVE_SYS_PARAM_H
++#include <sys/param.h>
++#endif
+ #include <stdio.h>
+ #include <stdlib.h>
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#endif
+ #include <signal.h>
+ #include <sys/stat.h>
+ #include <unistd.h>
+--- xlib.c--	Mon Feb 24 14:21:54 1997
++++ xlib.c	Mon Feb 24 14:34:38 1997
+@@ -26,7 +26,12 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#ifdef	HAVE_SYS_PARAM_H
++#include <sys/param.h>
++#endif
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#endif
+ #include "xlib.h"
+ #ifdef AMIGA
+ #define XFlush(x) while(0)
+@@ -264,7 +269,9 @@
+     XDestroyImage(d->image[0]);
+     XDestroyImage(d->image[1]);
+ }
++#ifndef	MAX
+ #define MAX(x,y) ((x)>(y)?(x):(y))
++#endif
+ 
+ 
+ xdisplay *xalloc_display(char *s, int x, int y, xlibparam * params)
+--- zoom.c--	Mon Feb 24 12:49:33 1997
++++ zoom.c	Mon Feb 24 12:56:18 1997
+@@ -25,10 +25,15 @@
+ #include <libc.h>
+ #include <stdio.h>
+ #else
++#ifdef	HAVE_SYS_PARAM_H
++#include <sys/param.h>
++#endif
+ #include <stdlib.h>
+ #include <stdio.h>
+ #ifndef _MAC
++#if (!defined(BSD) || (BSD < 199506))
+ #include <malloc.h>
++#endif
+ #endif
+ #include "aconfig.h"
+ #ifdef HAVE_LIMITS_H
