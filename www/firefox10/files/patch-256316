@@ -1,0 +1,18 @@
+Index: mozilla/netwerk/dns/src/nsIDNService.cpp
+===================================================================
+RCS file: /cvsroot/mozilla/netwerk/dns/src/nsIDNService.cpp,v
+retrieving revision 1.18
+retrieving revision 1.18.10.1
+diff -u -r1.18 -r1.18.10.1
+--- netwerk/dns/src/nsIDNService.cpp	3 Apr 2004 07:32:18 -0000	1.18
++++ netwerk/dns/src/nsIDNService.cpp	27 Aug 2004 11:23:21 -0000	1.18.10.1
+@@ -242,6 +242,9 @@
+ 
+ NS_IMETHODIMP nsIDNService::Normalize(const nsACString & input, nsACString & output)
+ {
++  // protect against bogus input
++  NS_ENSURE_TRUE(IsUTF8(input), NS_ERROR_UNEXPECTED);
++
+   nsAutoString outUTF16;
+   nsresult rv = stringPrep(NS_ConvertUTF8toUTF16(input), outUTF16);
+   if (NS_SUCCEEDED(rv))
