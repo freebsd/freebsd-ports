@@ -1,11 +1,15 @@
-*** wmmon.c.orig	Tue May 19 17:13:16 1998
---- wmmon.c	Sun Jun 27 21:31:50 1999
+*** wmmon.c.orig	Tue May 19 16:13:16 1998
+--- wmmon.c	Fri Dec 31 12:05:34 1999
 ***************
 *** 28,33 ****
---- 28,40 ----
+--- 28,44 ----
   	Changes:
   	----
   
++ 	12/01/1999 (Stephen Kiernan, sk-ports@vegamuse.org)
++ 		* Change to revert to real userid and groupid
++ 		  after kvm_openfiles is accomplished.
++ 		  (Patch from Steve Reid, sreid@sea-to-sky.net)
 + 	05/24/1999 (Stephen Kiernan, sk-ports@vegamuse.org)
 + 		* Ported to FreeBSD 4.0
 + 	12/11/1998 (Stephen Kiernan, sk-ports@vegamuse.org)
@@ -18,7 +22,7 @@
   		* Using global file descriptors to reduce file
 ***************
 *** 72,81 ****
---- 79,105 ----
+--- 83,109 ----
   #include <fcntl.h>
   #include <unistd.h>
   
@@ -38,7 +42,7 @@
 + #endif
 + #include <sys/sysctl.h>
 + #include <sys/time.h>
-+ #if __FreeBSD_version < 400000
++ #if __FreeBSD_version >= 400000 && __FreeBSD_version < 400005
 + #include <sys/rlist.h>
 + #endif
 + #include <sys/vmmeter.h>
@@ -48,7 +52,7 @@
   #include <X11/extensions/shape.h>
 ***************
 *** 106,117 ****
---- 130,189 ----
+--- 134,193 ----
   FILE	*fp_stat;
   FILE	*fp_loadavg;
   
@@ -111,7 +115,7 @@
   void main(int argc, char *argv[]) {
 ***************
 *** 154,159 ****
---- 226,237 ----
+--- 230,241 ----
   		}
   	}
   
@@ -152,7 +156,7 @@
   	}
   
   	for (i=0; i<MAX_STAT_DEVICES; i++) {
---- 291,351 ----
+--- 295,366 ----
   	long		istat;
   	long		idle;
   
@@ -177,12 +181,23 @@
 ! 	}
 ! 
 ! 	psize = getpagesize();
-! 	for (pshift = 0, psize = getpagesize(); psize>1; pshift++, psize>>=1);
+! 	for (pshift = 0, psize = getpagesize(); psize>1; pshift++, psize>>=1)
+! 		continue;
 ! 	pshift -= 10;
 ! 	psize = getpagesize();
 ! 
+! 	if (setgid(getgid()) != 0) exit(1); /* We're sgid kmem. Give up privs. */
+! 	if (setuid(getuid()) != 0) exit(1); /* If we're suid, give that up too. */
+! 
 ! 	if (kvmd==NULL) kvmd = kvm_openfiles(NULL, NULL, NULL, O_RDONLY, errbuf);
 ! 	if (kvmd==NULL) { fprintf(stderr, "kvm_openfiles: %s\n", errbuf); exit(errno); }
+! 
+! 	/* We're sgid kmem. Give up privs. */
+! 	if (setgid(getgid()) != 0) { perror("setgid"); exit(errno); }
+! 
+! 	/* If we're suid, give that up too. */
+! 	if (setuid(getuid()) != 0) { perror("seguid"); exit(errno); }
+! 
 ! 	if (kvmd) {
 ! 		if (kvm_nlist(kvmd, nl) >= 0) {
 ! 			struct nlist *nlp;
@@ -232,7 +247,7 @@
   
   	stat_online = checksysdevs();
   
---- 359,378 ----
+--- 374,393 ----
   	if (RIGHT_ACTION) right_action = strdup(RIGHT_ACTION);
   	if (MIDDLE_ACTION) middle_action = strdup(MIDDLE_ACTION);
   
@@ -255,7 +270,7 @@
   
 ***************
 *** 484,489 ****
---- 601,611 ----
+--- 616,626 ----
   	st->rt_idle = idle - st->idlelast;
   	st->idlelast = idle;
   
@@ -314,7 +329,7 @@
   /*******************************************************************************\
   |* get_statistics															   *|
   \*******************************************************************************/
---- 621,875 ----
+--- 636,890 ----
   
   void update_stat_mem(stat_dev *st, stat_dev *st2) {
   
@@ -582,7 +597,7 @@
   	long	maxdiskio=0;
   
   	*is = 0;
---- 877,884 ----
+--- 892,899 ----
   void get_statistics(char *devname, long *is, long *ds, long *idle) {
   
   	int	i;
@@ -630,7 +645,7 @@
   		if (*ds > maxdiskio) maxdiskio = *ds;
   	}
   }
---- 886,1090 ----
+--- 901,1105 ----
   	*idle = 0;
   
   	if (!strncmp(devname, "cpu", 3)) {
@@ -847,7 +862,7 @@
   
   	return 3;
   }
---- 1095,1103 ----
+--- 1110,1118 ----
   
   int checksysdevs(void) {
   
@@ -859,7 +874,7 @@
   }
 ***************
 *** 638,643 ****
---- 1136,1142 ----
+--- 1151,1157 ----
   	int     *p;
   	int		d;
   
