@@ -156,7 +156,7 @@
 
 PORTNAME=	mplayer
 PORTVERSION=	0.90.0.110
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia audio ipv6
 MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www2.mplayerhq.hu/MPlayer/releases/ \
@@ -170,9 +170,8 @@ MASTER_SITES=	http://www1.mplayerhq.hu/MPlayer/releases/ \
 		http://www.rrr.de/~riggs/mplayer/
 DISTNAME=	MPlayer-0.90
 
-PATCH_SITES=	ftp://ftp.kame.net/pub/kame/misc/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/kame/misc/&,}
-PATCHFILES=	mplayer-0.9.0rc5-v6-20030328.diff.gz
+PATCH_SITES=	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/kame/misc/&,}
+PATCHFILES=	mplayer-0.9.0-v6-20030430.diff.gz
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	riggs@rrr.de
