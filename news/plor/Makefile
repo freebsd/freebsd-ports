@@ -3,14 +3,13 @@
 # Date Created:		30 Dec 1996
 # Whom:			Tim Vanderhoek <ac199@freenet.hamilton.on.ca>
 #
-# $Id: Makefile,v 1.2 1997/01/24 10:28:05 asami Exp $
+# $Id: Makefile,v 1.3 1997/10/01 21:59:38 hoek Exp $
 #
 
 DISTNAME=	plor-0.3.1
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.psy.unipd.it/pub/pluto/developers/ \
-		ftp://ftp.unipd.it/pub/Linux/pluto/developers/ \
-		ftp://ftp.linux.it/pub/Pluto/developers/
+		ftp://ftp.unipd.it/pub/Linux/pluto/developers/
 
 MAINTAINER=	hoek@FreeBSD.ORG
 
