@@ -30,7 +30,7 @@ Gnome_Pre_Include=			bsd.gnome.mk
 #					  that your port installs. These schema files and
 #					  %gconf.xml files will be automatically added to
 #					  ${PLIST}. For example, if your port has
-#					  "etc/gconf/schemas/(foo.schemas and bar.schemas)", add
+#					  "etc/gconf/schemas/(foo.schemas and bar.schemas)",
 #					  add the following to your Makefile:
 #					  "GCONF_SCHEMAS=foo.schemas bar.schemas".
 #
