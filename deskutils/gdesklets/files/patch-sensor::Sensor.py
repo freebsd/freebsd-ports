@@ -1,14 +1,13 @@
 # Yay! Many thanks to Franz Klammer <klammer@webonaut.com>,
 # the theads is now work. That make a lot of desklets work now.
 
---- sensor/Sensor.py.orig	Mon Nov 17 16:46:57 2003
-+++ sensor/Sensor.py	Mon Nov 17 16:48:43 2003
-@@ -134,6 +134,8 @@
-     #
-     def _add_thread(self, threadfunction, *args):
+--- sensor/Sensor.py.orig	Tue Nov 18 13:32:10 2003
++++ sensor/Sensor.py	Tue Nov 18 13:33:39 2003
+@@ -346,3 +346,7 @@
+     def __on_quit(self, src):
  
-+        gtk.threads_init()
+         gtk.main_quit()
 +
-         # the thread should not start before setup is complete, therefore
-         # we are using the GTK idle handler
-         def run_thread(threadfunction, args):
++
++# FreeBSD needs this; Linux doesn't but it's cleaner to use it
++gtk.threads_init()
