@@ -872,7 +872,7 @@ lib/%%PYTHON_VERSION%%/lib-dynload/crypt.so
 lib/%%PYTHON_VERSION%%/lib-dynload/dbm.so
 lib/%%PYTHON_VERSION%%/lib-dynload/errno.so
 lib/%%PYTHON_VERSION%%/lib-dynload/fcntl.so
-@comment lib/%%PYTHON_VERSION%%/lib-dynload/fpectl.so
+lib/%%PYTHON_VERSION%%/lib-dynload/fpectl.so
 lib/%%PYTHON_VERSION%%/lib-dynload/grp.so
 lib/%%PYTHON_VERSION%%/lib-dynload/imageop.so
 lib/%%PYTHON_VERSION%%/lib-dynload/math.so
