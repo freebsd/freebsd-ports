@@ -6,9 +6,10 @@
 #
 
 PORTNAME=		link-monitor-applet
-PORTVERSION=		0.99
+PORTVERSION=		1.0
 CATEGORIES=		net ipv6
-MASTER_SITES=		http://lefort.be.eu.org/link-monitor-applet/
+MASTER_SITES=		${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	link-monitor
 
 MAINTAINER=		jylefort@brutele.be
 COMMENT=		A GNOME applet displaying the round-trip time to one or more hosts
