@@ -15,10 +15,9 @@ MAINTAINER=	arensb+freebsd-ports@ooblick.com
 
 LIB_DEPENDS=	intl.4:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Palm/PDB.pm:${PORTSDIR}/palm/p5-Palm
+USE_PERL=	yes
 
 GNU_CONFIGURE=	yes
-USE_REINPLACE=	yes
-REINPLACE_ARGS=	-i.bak -E
 
 # The ColdSync.3 man page describes a Perl package. That's why it goes
 # in the Perl manpage directory.
@@ -32,14 +31,15 @@ MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ARGS+=	--with-i18n
+CFLAGS+=	-D__BSD_VISIBLE=1
+CONFIGURE_ARGS+=	--with-i18n --disable-pedantic
 
 # I don't know how to test for a version of {Net,Open}BSD that supports USB.
 .if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 400000
 CONFIGURE_ARGS+=	--with-usb
 .if ${OSVERSION} >= 450000
 post-patch:
-	${REINPLACE_CMD} -e 's,udi\.(\S+),udi.udi_\1,g;' \
+	${PERL} -pi -e 's,udi\.(\S+),udi.udi_\1,g;' \
 		-e 's,ur\.(\S+),ur.ucr_\1,g;' \
 		${WRKSRC}/configure ${WRKSRC}/libpconn/PConnection_usb.c
 .endif
