@@ -44,6 +44,7 @@
     SUBDIR += cbrowser
     SUBDIR += cc65
     SUBDIR += cccc
+    SUBDIR += ccdoc
     SUBDIR += cdecl
     SUBDIR += cdk
     SUBDIR += cervisia

@@ -1,0 +1,11 @@
+--- ccdoc_dev/ccdoc/src/ccdocphase3.h	Thu Oct  5 16:53:10 2000
++++ ccdoc_dev/ccdoc/src/ccdocphase3.h.patched	Fri Oct  6 07:15:30 2000
+@@ -210,7 +210,7 @@
+ 	   const char* trailer,
+ 	   bool mcfFlag);
+ private:
+-  WriteTop();
++  // WriteTop();
+   const char* GetCurrTime();
+   const char* GetProgram();
+ private:

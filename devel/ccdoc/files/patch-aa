@@ -1,0 +1,17 @@
+--- ccdoc_dev/tools/mkmk.pl	Thu Oct  5 16:51:43 2000
++++ ccdoc_dev/tools/mkmk.patched	Thu Oct  5 16:52:25 2000
+@@ -166,11 +166,11 @@
+     else {
+ 	# UNIXes.
+ 	print MK "CPP         = CC\n";
+-	print MK "CPPFLAGS1   = -pto -pta +w\n";
++	print MK "CPPFLAGS1   = \$(CFLAGS) \n";
+ 	print MK "CPPFLAGS2   = -DJDL_DEFINE_LOCAL_TYPES -DJDL_DEFINE_LOCAL_BOOLEAN\n";
+-	print MK "CPPFLAGS3   = -I. -I../..\n";
++	print MK "CPPFLAGS3   = -I. -I../.. -o \$\@\n";
+ 	print MK "CPPFLAGS4   = \$(MYCPPFLAGS)\n";
+-	print MK "CPPFLAGS    = \$(CPPFLAGS1) \$(CPPFLAGS2) \$(CPPFLAGS3) \$(CPPFLAGS4) -c -o \$\@\n";
++	print MK "CPPFLAGS    = \$(CPPFLAGS1) \$(CPPFLAGS2) \$(CPPFLAGS3) \$(CPPFLAGS4) -c\n";
+ 	if ( $type == 1 ) {
+ 	    print MK "LINK        = \$(CPP)\n";
+ 	    if( $arch eq "hpux" ) {
