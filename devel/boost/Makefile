@@ -36,11 +36,18 @@ PLIST_SUB=	BOOST_PYTHON="@comment "
 INSTALLS_SHLIB=	yes
 DOCFILES=	*.css *.gif *.htm *.html *.jpeg *.jpg *.png
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == alpha
+BJAM=		${WRKSRC}/tools/build/jam_src/bin.freebsdaxp/bjam
+.elif ${ARCH} == sparc64
+BJAM=		${WRKSRC}/tools/build/jam_src/bin.freebsdsparc/bjam
+.else
 BJAM=		${WRKSRC}/tools/build/jam_src/bin.freebsd/bjam
+.endif
   
 COMPILED_LIBS+=	date_time filesystem regex signals test thread
 
-.include <bsd.port.pre.mk>
 
 do-configure:
 # for -pthread options
