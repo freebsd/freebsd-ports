@@ -488,6 +488,7 @@
     SUBDIR += p5-IO-Tty
     SUBDIR += p5-IO-stringy
     SUBDIR += p5-IPC-Cache
+    SUBDIR += p5-IPC-Locker
     SUBDIR += p5-IPC-Run
     SUBDIR += p5-IPC-ShareLite
     SUBDIR += p5-IPC-Shareable

@@ -1,0 +1,13 @@
+bin/pidwatch
+bin/lockerd
+bin/pidstatd
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/Locker/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/IPC/Locker/Server.pm
+lib/perl5/site_perl/%%PERL_VER%%/IPC/Locker.pm
+lib/perl5/site_perl/%%PERL_VER%%/IPC/PidStat.pm
+lib/perl5/site_perl/%%PERL_VER%%/IPC/PidStat/PidServer.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC/Locker
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/IPC 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/IPC/Locker
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/IPC/PidStat
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/IPC 2>/dev/null || true
