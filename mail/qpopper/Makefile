@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qpopper
-PORTVERSION=	4.0.3
-PORTREVISION=	3
+PORTVERSION=	4.0.4
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/%SUBDIR%/ \
 		ftp://sunsite.doc.ic.ac.uk/Mirrors/ftp.qualcomm.com/eudora/servers/unix/popper/%SUBDIR%/
@@ -16,7 +15,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 400014
+.if ${OSVERSION} >= 400014 && !defined(WITHOUT_IPV6)
 PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
 PATCHFILES=	qpopper4.0.3-ipv6-20010504.diff.gz
 PATCH_DIST_STRIP=	-p1
@@ -70,11 +69,25 @@ pre-everything::
 	@${ECHO_MSG} "WITH_APOP_ONLY=yes	builds with APOP authentication only"
 	@${ECHO_MSG} "WITH_DRAC=yes		builds with Dynamic Relay Authorization"
 	@${ECHO_MSG} "				Control support"
-	@${ECHO_MSG} "WITH_FULL_POPD_DEBUG=yes	buils with more verbose debugging"
+	@${ECHO_MSG} "WITHOUT_IPV6=yes          builds without IPv6 support"
+	@${ECHO_MSG} "WITH_FULL_POPD_DEBUG=yes	builds with more verbose debugging"
+	@${ECHO_MSG} "WITH_PAM=yes              builds with PAM authentication"
 	@${ECHO_MSG} "WITH_POPPASSD=yes		builds the poppassd daemon"
 	@${ECHO_MSG} "WITHOUT_QPOPAUTH_SETUID=yes  does not install qpopauth setuid to pop user"
 	@${ECHO_MSG} "WITH_SAMPLE_POPUSERS_FILE=yes	builds a default (otherwise,"
 	@${ECHO_MSG} "				use an empty file) reject file"
+	@${ECHO_MSG} "WITH_STANDALONE_MODE=yes  builds qpopper to be run without inetd"
+	@${ECHO_MSG} "WITHOUT_U_OPTION=yes      forbids daemon command line option"
+	@${ECHO_MSG} "                 -u which allows, after a user authenticates,"
+	@${ECHO_MSG} "                 process options from a file called"
+	@${ECHO_MSG} "                 .qpopper-options in the user's home directory"
+	@${ECHO_MSG} "                 This file can be owned by and writable by the"
+	@${ECHO_MSG} "                 If improperly written, may cause a buffer"
+	@${ECHO_MSG} "                 overflow which may remove such user's mail box"
+
+
+
+
 
 # If WITH_APOP_ONLY variable present in the environment, qpopper builds
 # with APOP authentication only.
@@ -95,6 +108,11 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 CONFIGURE_ARGS+=	--enable-debugging
 .endif
 
+# If WITH_PAM variable present qpopper builds with PAM authentication
+.if defined(WITH_PAM)
+CONFIGURE_ARGS+=	--with-pam=pop3
+.endif
+
 # If WITH_POPPASSD variable present in the environment, qpopper builds
 # with poppassd support.
 .if defined(WITH_POPPASSD)
@@ -103,6 +121,12 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-password::poppassd.c
 EPOPPASSD=	""
 .else
 EPOPPASSD=	"@comment "
+.endif
+
+# If WITH STANDALONE_MODE variable present qpopper is built so it runs
+# without inetd
+.if defined(WITH_STANDALONE_MODE)
+CONFIGURE_ARGS+=	--enable-standalone
 .endif
 
 .if exists(/usr/lib/libssl.a) && exists(/usr/lib/libcrypto.a)
@@ -121,8 +145,11 @@ post-patch:
 	@${RM} -f ${WRKSRC}/popper/md5.h
 	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/man/*
 .if defined(WITH_POPPASSD)
-	@${PERL} -pi -ne "s|/usr/bin/smbpasswd|${PREFIX}/bin/smbpasswd|" \
+	@${PERL} -pi -ne "s|/usr/bin/smbpasswd|${LOCALBASE}/bin/smbpasswd|" \
 		${WRKSRC}/password/poppassd.c
+.endif
+.if defined(WITHOUT_U_OPTION)
+	@${PERL} -pi -e 's|(getopt \(.+?)u|\1|' ${WRKSRC}/popper/main.c
 .endif
 
 pre-configure:
