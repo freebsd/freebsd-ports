@@ -7,29 +7,30 @@
 #
 
 PORTNAME=	uds
-PORTVERSION=	0.9.5
+PORTVERSION=	1.0.6
 CATEGORIES=	devel
 MASTER_SITES=	http://frost.flewid.de/dist/
 
-MAINTAINER=	ijliao@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
+USE_REINPLACE=	yes
+USE_GCC=	3.1
 USE_GMAKE=	yes
 USE_LIBTOOL=	yes
 INSTALLS_SHLIB=	yes
 
 pre-patch:
-	@${PERL} -pi -e 's|\$$OPTFLAGS|\$$CFLAGS|g ; \
-		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
-	@find ${WRKSRC} -name 'Makefile.in' | xargs ${PERL} -pi -e \
+	@${FIND} ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} -e \
 		's|install-data-hook|#install-data-hook|g ; \
 		 s|-D_REENTRANT|-D_REENTRANT ${PTHREAD_CFLAGS}|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g'
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/uds
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/uds
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
