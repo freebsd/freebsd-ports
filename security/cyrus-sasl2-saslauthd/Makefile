@@ -74,6 +74,8 @@ USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--with-ldap=${PREFIX}
 .endif
 
+.include <bsd.port.pre.mk>
+
 .if !defined(WITHOUT_GSSAPI) && defined(KRB5_HOME) && exists(${KRB5_HOME}/lib/libgssapi_krb5.a)
 CONFIGURE_ARGS+=--enable-gssapi=${KRB5_HOME}
 .elif !defined(WITHOUT_GSSAPI) && defined(HEIMDAL_HOME) && exists(${HEIMDAL_HOME}/lib/libgssapi.a)
@@ -83,8 +85,6 @@ CONFIGURE_ARGS+=--enable-gssapi
 .else
 CONFIGURE_ARGS+=--disable-gssapi
 .endif
-
-.include <bsd.port.pre.mk>
 
 # KERBEROS 4 was removed in FreeBSD 5.0-CURRENT
 .if ${OSVERSION} > 500105
