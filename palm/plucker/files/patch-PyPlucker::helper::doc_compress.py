@@ -1,5 +1,5 @@
---- parser/PyPlucker/helper/doc_compress.py.orig	Fri Nov  7 19:36:39 2003
-+++ parser/PyPlucker/helper/doc_compress.py	Wed Dec 24 16:28:47 2003
+--- PyPlucker/helper/doc_compress.py.orig	Fri Nov  7 19:36:39 2003
++++ PyPlucker/helper/doc_compress.py	Wed Dec 24 16:28:47 2003
 @@ -1,3 +1,4 @@
 +# -*- coding: iso-8859-1 -*-
  #

@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	plucker
-PORTVERSION=	1.6.2
+PORTVERSION=	1.8
 CATEGORIES=	palm www
 MASTER_SITES=	http://downloads.plkr.org/${PORTVERSION}/ \
 		http://downloads.hideho.org/${PORTNAME}/${PORTVERSION}/
 DISTFILES=	${PORTNAME}_viewer-${PORTVERSION}.tar.bz2 \
+		${PORTNAME}_viewer_extras-${PORTVERSION}.tar.bz2 \
 		${PORTNAME}_parser-${PORTVERSION}.tar.bz2 \
 		${PORTNAME}_docs-${PORTVERSION}.tar.bz2
 
@@ -32,23 +33,23 @@ MAN1=		plucker-build.1 plucker-decode.1 plucker-dump.1
 FIND?=		find
 NO_BUILD=	yes
 
-MYPORTDOCS=	AUTHORS BUGREPORT CREDITS ChangeLog FAQ NEWS README REQUIREMENTS TODO
+MYPORTDOCS=	AUTHORS BUGREPORT COPYING CREDITS ChangeLog FAQ NEWS README REQUIREMENTS
 
 .include <bsd.port.pre.mk>
 
 post-build:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
-		${WRKSRC}/parser/PyPlucker
+		${WRKSRC}/PyPlucker
 	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
-		${WRKSRC}/parser/PyPlucker
+		${WRKSRC}/PyPlucker
 
 do-install:
 	${MKDIR} ${PYTHON_SITELIBDIR}/PyPlucker/helper
-	cd ${WRKSRC}/parser; ${FIND} PyPlucker \
+	cd ${WRKSRC}; ${FIND} PyPlucker \
 		\( -name "*.py" -or -name "*.py?" \) \
 		-exec ${INSTALL_DATA} {} ${PYTHON_SITELIBDIR}/{} \;
 .for F in Spider.py PluckerDocs.py Decode.py
-	${INSTALL_SCRIPT} ${WRKSRC}/parser/PyPlucker/${F} \
+	${INSTALL_SCRIPT} ${WRKSRC}/PyPlucker/${F} \
 		${PYTHON_SITELIBDIR}/PyPlucker
 .endfor
 	${LN} -sf ${PYTHON_SITELIBDIR}/PyPlucker/Spider.py \
@@ -58,24 +59,28 @@ do-install:
 	${LN} -sf ${PYTHON_SITELIBDIR}/PyPlucker/Decode.py \
 		${PREFIX}/bin/plucker-dump
 	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/viewer/PluckerUserGuide.pdb \
-		${WRKSRC}/viewer/*.prc ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/PluckerUserGuide.pdb \
+		${WRKSRC}/*.prc ${DATADIR}
 	${MKDIR} ${PREFIX}/etc/plucker
-	${INSTALL_DATA} ${WRKSRC}/parser/exclusionlist.txt \
+	${INSTALL_DATA} ${WRKSRC}/exclusionlist.txt \
 		${PREFIX}/etc/plucker/exclusionlist.txt.sample
-	${INSTALL_DATA} ${WRKSRC}/parser/home.html \
+	${INSTALL_DATA} ${WRKSRC}/home.html \
 		${PREFIX}/etc/plucker/home.html.sample
-	${INSTALL_DATA} ${WRKSRC}/parser/pluckerrc.sample \
+	${INSTALL_DATA} ${WRKSRC}/pluckerrc.sample \
 		${PREFIX}/etc/plucker
+.for F in fonts ppi xlit
+	${MKDIR} ${DATADIR}/${F}
+	${INSTALL_DATA} ${WRKSRC}/${F}/* ${DATADIR}/${F}
+.endfor
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/manual
 .for F in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/parser/${F} ${MAN1PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/${F} ${MAN1PREFIX}/man/man1
 .endfor
 .for F in ${MYPORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${F} ${DOCSDIR}
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/docs/* ${DOCSDIR}/manual
+	${INSTALL_DATA} ${WRKSRC}/manual/* ${DOCSDIR}/manual
 .endif
 
 .include <bsd.port.post.mk>
