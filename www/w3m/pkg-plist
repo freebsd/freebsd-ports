@@ -30,6 +30,7 @@ share/doc/ja/w3m/w3mhelp-w3m_ja.html
 %%PORTDOCS%%share/doc/w3m/README
 %%PORTDOCS%%share/doc/w3m/README.dict
 %%PORTDOCS%%share/doc/w3m/README.func
+%%PORTDOCS%%%%INLINE_IMAGE_ONLY%%share/doc/w3m/README.img
 %%PORTDOCS%%share/doc/w3m/STORY.html
 %%PORTDOCS%%share/doc/w3m/keymap.default
 %%PORTDOCS%%share/doc/w3m/keymap.lynx

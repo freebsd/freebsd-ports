@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PKGNAMESUFFIX=	-image
+PKGNAMESUFFIX=	-img
 CATEGORIES=	japanese
 
 MASTERDIR=	${.CURDIR}/../../www/w3m
