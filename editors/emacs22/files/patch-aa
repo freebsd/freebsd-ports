@@ -152,6 +152,19 @@
  @comment !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
  @comment @setchapternewpage odd !! we don't want blank pages !!
  @comment %**end of header (This is for running Texinfo on a region)
+--- ./man/message.texi.org	Wed Jun 26 14:49:43 1996
++++ ./man/message.texi	Sat Dec 13 17:46:31 1997
+@@ -5,6 +5,10 @@
+ @synindex fn cp
+ @synindex vr cp
+ @synindex pg cp
++@dircategory The Emacs editor and associated tools
++@direntry
++* Message: (message).		Editing mail and news messages.
++@end direntry
+ @iftex
+ @finalout
+ @end iftex
 --- ./Makefile.in.org	Mon Aug 19 21:12:19 1996
 +++ ./Makefile.in	Tue Apr 15 00:15:28 1997
 @@ -184,7 +184,7 @@

@@ -26,6 +26,10 @@ man/man1/ctags.1.gz
 @unexec install-info --delete %D/info/dired-x %D/info/dir
 @unexec install-info --delete %D/info/ediff %D/info/dir
 @unexec install-info --delete %D/info/ccmode %D/info/dir
+@unexec install-info --delete %D/info/message %D/info/dir
+info/ccmode
+info/ccmode-1
+info/ccmode-2
 info/cl
 info/cl-1
 info/cl-2
@@ -77,6 +81,10 @@ info/gnus-5
 info/gnus-6
 info/gnus-7
 info/gnus-8
+info/gnus-9
+info/gnus-10
+info/gnus-11
+info/message
 info/mh-e
 info/mh-e-1
 info/mh-e-2
@@ -106,6 +114,7 @@ info/viper-4
 @exec install-info %D/info/dired-x %D/info/dir
 @exec install-info %D/info/ediff %D/info/dir
 @exec install-info %D/info/ccmode %D/info/dir
+@exec install-info %D/info/message %D/info/dir
 libexec/emacs/19.34/i386--freebsd/cvtmail
 libexec/emacs/19.34/i386--freebsd/digest-doc
 libexec/emacs/19.34/i386--freebsd/emacsserver
