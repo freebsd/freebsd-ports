@@ -6,23 +6,21 @@
 #
 
 PORTNAME=	seahorse
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
-MASTER_SITE_SUBDIR=${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_GNOME}
+MASTER_SITE_SUBDIR=sources/${PORTNAME}/0.7
+DIST_SUBDIR=	gnome2
 
 MAINTAINER=	asa@gascom.ru
 COMMENT=	A front end for GnuPG
 
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
-LIB_DEPENDS=	gpgme.9:${PORTSDIR}/security/gpgme \
-		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui \
-		glade-2.0.0:${PORTSDIR}/devel/libglade2
+LIB_DEPENDS=	gpgme.9:${PORTSDIR}/security/gpgme
 
 USE_X_PREFIX=	yes
 USE_GMAKE=	yes
-USE_GNOMENG=	yes
-USE_GNOME=	gnomehack gnomeprefix
+USE_GNOME=	gnomehack gnomeprefix libgnomeui
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
