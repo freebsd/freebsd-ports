@@ -13,6 +13,9 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Satellite port to activate DrWeb daemon
 
+DEPRECATED=	Port security/drweb already contains startup script
+EXPIRATION_DATE=	2004-06-21
+
 DESCR=          ${PORTSDIR}/security/drweb/pkg-descr
 
 RUN_DEPENDS=    ${LOCALBASE}/drweb/drwebd:${PORTSDIR}/security/drweb
