@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bnbt
-PORTVERSION=	7.3b
-PORTREVISION=	1
+PORTVERSION=	7.5b
 CATEGORIES=	net
 MASTER_SITES=	http://bnbt.go-dedicated.com/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
@@ -28,14 +27,11 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bnbt ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/bnbt
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/footer.html ${PREFIX}/share/bnbt
-	${INSTALL_DATA} ${WRKSRC}/formats.txt ${PREFIX}/share/bnbt
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/header.html ${PREFIX}/share/bnbt
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/lesser.txt ${PREFIX}/share/bnbt
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/link.txt ${PREFIX}/share/bnbt
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/readme.txt ${PREFIX}/share/bnbt
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/stealers.txt ${PREFIX}/share/bnbt
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/users.txt ${PREFIX}/share/bnbt
+	${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/footer.html ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/header.html ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/lesser.txt ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/readme.txt ${DATADIR}
+	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}/users.txt ${DATADIR}
 
 .include <bsd.port.mk>
