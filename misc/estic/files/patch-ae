@@ -1,0 +1,13 @@
+--- spunk/coll.h.orig	Sat Feb 26 17:44:32 2000
++++ spunk/coll.h	Sat Feb 26 17:45:58 2000
+@@ -33,8 +33,8 @@
+ 
+ 
+ 
+-static const coIndexError	= 1;		// Index out of range
+-static const coOverflowError	= 2;		// Collection overflow
++static const int coIndexError		= 1;	// Index out of range
++static const int coOverflowError	= 2;	// Collection overflow
+ 
+ 
+ 
