@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	0.9.8
+PORTVERSION=	0.9.9
 CATEGORIES=	www linux
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	mozilla/releases/mozilla${PORTVERSION}/linux-xpi/
@@ -48,6 +48,7 @@ pre-everything::
 DISTFILES=	browser.xpi \
 		chatzilla.xpi \
 		deflenus.xpi \
+		inspector.xpi \
 		langenus.xpi \
 		mail.xpi \
 		psm.xpi \
@@ -100,7 +101,7 @@ do-patch:
 	${MKDIR} ${WRKSRC}/tmp
 	${TAR} -C ${WRKSRC}/tmp -xzf ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES}
 	${TAR} -C ${WRKSRC}/bin -xzf ${DISTDIR}/${DIST_SUBDIR}/${PATCHFILES}
-	for j in chatzilla messenger pippki; do \
+	for j in chatzilla inspector messenger pippki venkman; do \
         	if [ ! -e ${WRKSRC}/bin/chrome/$$j.jar ]; then \
 			for i in communicator editor messenger navigator; do \
 				${GREP} -v $$j ${WRKSRC}/tmp/chrome/overlayinfo/$$i/content/overlays.rdf > \
