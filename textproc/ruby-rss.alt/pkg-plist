@@ -9,12 +9,13 @@
 %%RUBY_SITELIBDIR%%/rss/rss.rb
 %%RUBY_SITELIBDIR%%/rss/syndication.rb
 %%RUBY_SITELIBDIR%%/rss/taxonomy.rb
+%%RUBY_SITELIBDIR%%/rss/trackback.rb
 %%RUBY_SITELIBDIR%%/rss/utils.rb
 %%RUBY_SITELIBDIR%%/rss/xmlparser.rb
 %%RUBY_SITELIBDIR%%/rss/xmlscanner.rb
 @dirrm %%RUBY_SITELIBDIR%%/rss
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/articles.rss
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/index.rdf
+%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/content.xml
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/index.rdf.ja
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/list_description.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/news.rss
@@ -26,11 +27,9 @@
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rssMarkPilgrimExample.xml
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rssTwoExample.xml
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rss_recent.rb
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/rwiki.rss
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/sampleRss.xml
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/slashdot.rdf
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/slashdotorg.rdf
-%%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/t.rdf
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/tdiary_plugin/rss-recent.rb
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/w3c.rdf
 %%PORTDOCS%%%%RUBY_MODEXAMPLESDIR%%/wiliki.rss
