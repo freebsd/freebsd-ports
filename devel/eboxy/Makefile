@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	eboxy
-PORTVERSION=	0.3.6
+PORTVERSION=	0.3.7
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.bluelightning.org/ebox/files/eboxy/
@@ -39,6 +39,7 @@ CPPFLAGS=	`${SDL_CONFIG} --cflags` -I${LOCALBASE}/include \
 LDFLAGS=	`${SDL_CONFIG} --libs` -L${LOCALBASE}/lib
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|-O2 $$CFLAGS|$$CFLAGS|g' ${WRKSRC}/configure
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|malloc\.h|stdlib.h|g'
 
