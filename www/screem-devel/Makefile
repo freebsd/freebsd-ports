@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	screem
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.screem.org/src/
@@ -16,7 +16,9 @@ MAINTAINER=	ports@FreeBSD.org
 
 LIB_DEPENDS=	glade.4:${PORTSDIR}/devel/libglade \
 		guile.9:${PORTSDIR}/lang/guile \
-		wwwcore.1:${PORTSDIR}/www/libwww
+		gtkhtml.8:${PORTSDIR}/www/gtkhtml \
+		gnomeprint.13:${PORTSDIR}/print/gnomeprint \
+		gnomevfs.0:${PORTSDIR}/devel/gnomevfs
 
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
@@ -25,6 +27,7 @@ USE_GNOME=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--with-gnomevfs
 
 pre-patch:
 	@${PERL} -pi -e 's|-lpthread|-pthread|g ; \
