@@ -6,6 +6,8 @@ libexec/smtpfeed
 %%PORTDOCS%%share/doc/smtpfeed/FYI.j
 %%PORTDOCS%%share/doc/smtpfeed/INSTALL
 %%PORTDOCS%%share/doc/smtpfeed/INSTALL.j
+%%PORTDOCS%%share/doc/smtpfeed/ML-ADMIN
+%%PORTDOCS%%share/doc/smtpfeed/ML-ADMIN.j
 %%PORTDOCS%%share/doc/smtpfeed/OPTIONS
 %%PORTDOCS%%share/doc/smtpfeed/OPTIONS.j
 %%PORTDOCS%%share/doc/smtpfeed/README
