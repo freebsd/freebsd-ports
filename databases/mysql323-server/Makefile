@@ -6,8 +6,8 @@
 #
 
 PORTNAME?=	${MASTERPORTNAME}
-PORTVERSION=	3.23.41
-PORTREVISION?=	1
+PORTVERSION=	3.23.42
+PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www.kernelnotes.de/MySQL/Downloads/MySQL-3.23/ \
@@ -151,5 +151,10 @@ post-install:
 	@${CHMOD} 750 ${PREFIX}/etc/rc.d/00mysql-client.sh
 
 .endif
+
+# This is for the maintainer only...
+make-plist:
+	/usr/bin/find foo -type f -or -type l | /usr/bin/cut -d / -f 2- | /usr/bin/sort  > ${.CURDIR}/pkg-plist.new
+	/usr/bin/perl -i -ne 'if (m#share/doc/#) { print "%%PORTDOCS%%", $$_; } else { print $$_; }' ${.CURDIR}/pkg-plist.new
 
 .include <bsd.port.post.mk>

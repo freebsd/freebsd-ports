@@ -14,7 +14,6 @@ bin/mysql_install_db
 bin/mysql_setpermission
 bin/mysql_zap
 bin/mysqlaccess
-bin/mysqlbinlog
 bin/mysqlbug
 bin/mysqld_multi
 bin/mysqldumpslow
