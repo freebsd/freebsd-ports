@@ -6,6 +6,12 @@ You should get into the habit of checking this file for changes each
 time you update your ports collection, before attempting any port
 upgrades.
 
+20040629:
+  AFFECTS: users of net/daapd
+
+  Daapd must now be enabled in rc.conf. Add this to your /etc/rc.conf:
+  daapd_enable="YES"
+
 20040626:
   AFFECTS: users of php4 and php5 with the PDFlib extension
 
