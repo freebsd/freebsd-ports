@@ -1,0 +1,3 @@
+#! /bin/sh
+cd ${WRKSRC}/unix
+CFLAGS=-O2 ./configure --with-readline
