@@ -37,11 +37,15 @@ share/locale/no/LC_MESSAGES/epiphany-extensions-1.0.mo
 share/locale/pa/LC_MESSAGES/epiphany-extensions-1.0.mo
 share/locale/pt/LC_MESSAGES/epiphany-extensions-1.0.mo
 share/locale/pt_BR/LC_MESSAGES/epiphany-extensions-1.0.mo
+share/locale/ru/LC_MESSAGES/epiphany-extensions-1.0.mo
 share/locale/sk/LC_MESSAGES/epiphany-extensions-1.0.mo
 share/locale/sq/LC_MESSAGES/epiphany-extensions-1.0.mo
 share/locale/sr/LC_MESSAGES/epiphany-extensions-1.0.mo
 share/locale/sr@Latn/LC_MESSAGES/epiphany-extensions-1.0.mo
 share/locale/sv/LC_MESSAGES/epiphany-extensions-1.0.mo
+share/locale/uk/LC_MESSAGES/epiphany-extensions-1.0.mo
+share/locale/wa/LC_MESSAGES/epiphany-extensions-1.0.mo
+share/locale/zh_CN/LC_MESSAGES/epiphany-extensions-1.0.mo
 @dirrm share/gnome/epiphany-extensions/icons
 @dirrm share/gnome/epiphany-extensions/glade
 @dirrm share/gnome/epiphany-extensions
