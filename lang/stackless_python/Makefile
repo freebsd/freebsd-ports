@@ -24,7 +24,7 @@ COMMENT=	Python implementation that does not use the C stack
 CONFLICTS=	python-2.3.*
 ONLY_FOR_ARCHS=	i386 powerpc
 CVSDATE=	040225
-MASTERDIR=	${.CURDIR}/../python
+MASTERDIR=	${.CURDIR}/../python23
 STACKLESS_POST_CONFIGURE=	stackless-post-configure
 
 DESCR=		${.CURDIR}/pkg-descr
