@@ -3,7 +3,7 @@
 # Date created:        10 April 1999
 # Whom:                Chris Piazza <cpiazza@home.net>
 #
-# $Id$
+# $Id: Makefile,v 1.1.1.1 1999/04/13 23:26:27 mharo Exp $
 #
 
 DISTNAME=	cmp3-2.0pre3
@@ -17,7 +17,11 @@ RUN_DEPENDS= 	mpg123:${PORTSDIR}/audio/mpg123
 
 USE_GMAKE=	yes
 
-WRKSRC=	${WRKDIR}/cmp3
+WRKSRC=		${WRKDIR}/cmp3
+PKGMESSAGE=	${WRKSRC}/MESSAGE
+.if defined(NOPORTDOCS)
+PLIST=		${PKGDIR}/PLIST.nodocs
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cmp3 ${PREFIX}/bin
@@ -28,6 +32,9 @@ do-install:
 .endif
 
 post-install:
-	@${CAT} ${PKGDIR}/MESSAGE
+.if !defined(NOPORTDOCS)
+	@${SED} 's,PREFIX,${PREFIX},' ${PKGDIR}/MESSAGE > ${WRKSRC}/MESSAGE
+	@${CAT} ${WRKSRC}/MESSAGE
+.endif
 
 .include <bsd.port.mk>
