@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	base
-PORTVERSION=	0.2.0
+PORTVERSION=	1.0
 CATEGORIES=	news mail
-MASTER_SITES=	http://www.physcip.uni-stuttgart.de:8080/fidosoft.husky/
-DISTNAME=	huskybse-${PORTVERSION}-src
+DISTNAME=	huskybase-${PORTVERSION}-src
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	Common files for Husky Fidosoft Project
 
-WRKSRC=		${WRKDIR}/huskybse-${PORTVERSION}
+WRKSRC=		${WRKDIR}/huskybse
 NO_BUILD=	yes
 
 pre-install:
