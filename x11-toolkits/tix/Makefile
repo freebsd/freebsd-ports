@@ -3,23 +3,23 @@
 # Date created:		22 December 1996
 # Whom:			Thomas Gellekum <tg@freebsd.org>
 #
-# $Id: Makefile,v 1.9 1997/07/17 15:13:01 max Exp $
+# $Id: Makefile,v 1.10 1997/07/30 06:08:35 tg Exp $
 #
 
 DISTNAME=	Tix4.1.0.005
 PKGNAME=	tix-4.1.0.005
-CATEGORIES=	x11 tk41
+CATEGORIES=	x11 tk42
 MASTER_SITES=	ftp://ftp.xpi.com/pub/
 
 MAINTAINER=	ports@FreeBSD.ORG
 
-LIB_DEPENDS=	tk41\\.1\\.:${PORTSDIR}/x11/tk41
+LIB_DEPENDS=	tk42\\.1\\.:${PORTSDIR}/x11/tk42
 
-WRKSRC=		${WRKDIR}/Tix4.1.0/unix/tk4.1
+WRKSRC=		${WRKDIR}/Tix4.1.0/unix/tk4.2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --enable-sam \
-		--with-tcl="${PREFIX}/include/tcl7.5" \
-		--with-tk="${PREFIX}/include/tk4.1"
+		--with-tcl="${PREFIX}/include/tcl7.6" \
+		--with-tk="${PREFIX}/include/tk4.2"
 # this should probably be added to bsd.port.mk
 CONFIGURE_ENV=	PREFIX=${PREFIX}
 MAN1=		tixwish.1 
@@ -44,7 +44,7 @@ post-install:
 	    ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${INSTALL_TARGET})
 	@${MKDIR} ${PREFIX}/man/man1
 	@mv ${PREFIX}/man/mann/tixwish.1 ${PREFIX}/man/man1
-	@ln -sf ${PREFIX}/bin/tixwish4.1.7.5 ${PREFIX}/bin/tixwish
+	@ln -sf ${PREFIX}/bin/tixwish4.2.7.6 ${PREFIX}/bin/tixwish
 	${LDCONFIG} -m ${PREFIX}/lib
 .for dir in generic unix
 	@${MKDIR} ${PREFIX}/include/tix/${dir}
