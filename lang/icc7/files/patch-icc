@@ -1,9 +1,39 @@
 --- opt/intel/compiler60/ia32/bin/icc.orig	Tue Aug  6 04:34:18 2002
 +++ opt/intel/compiler60/ia32/bin/icc	Tue Aug  6 04:46:51 2002
-@@ -23,6 +23,21 @@
+@@ -1,29 +1,44 @@
+ #!/bin/sh
  
+-INTEL_LICENSE_FILE=<INSTALLDIR>/licenses;
++PREFIX=@@PREFIX@@
++export PREFIX;
++INTEL_LICENSE_FILE=${PREFIX}/intel/licenses;
+ export INTEL_LICENSE_FILE;
+ 
+ if [ -z LD_LIBRARY_PATH ]
+ then 
+- LD_LIBRARY_PATH=<INSTALLDIR>/compiler60/ia32/lib;
++ LD_LIBRARY_PATH=${PREFIX}/intel/compiler60/ia32/lib;
+ else
+- LD_LIBRARY_PATH=<INSTALLDIR>/compiler60/ia32/lib:$LD_LIBRARY_PATH
++ LD_LIBRARY_PATH=${PREFIX}/intel/compiler60/ia32/lib:$LD_LIBRARY_PATH
+ fi
+ export LD_LIBRARY_PATH;
+ 
+ if [ -z PATH ]
+ then
+- PATH=<INSTALLDIR>/compiler60/ia32/bin;
++ PATH=${PREFIX}/intel/compiler60/ia32/bin;
+ else
+- PATH=<INSTALLDIR>/compiler60/ia32/bin:$PATH;
++ PATH=${PREFIX}/intel/compiler60/ia32/bin:$PATH;
+ fi
+ export PATH;
+ 
+-export -n IA32ROOT; unset IA32ROOT;
+-
  if [ $# != 0 ]
  then
+- exec -a "<INSTALLDIR>/compiler60/ia32/bin/icc" <INSTALLDIR>/compiler60/ia32/bin/iccbin "$@";
 + i=0
 + argc=$#
 + while [ $i -lt $argc ] ; do
@@ -19,6 +49,8 @@
 +  set -- "$@" "$val1"
 +  i=$(($i+1))
 + done
-  exec -a "<INSTALLDIR>/compiler60/ia32/bin/icc" <INSTALLDIR>/compiler60/ia32/bin/iccbin "$@";
++ exec ${PREFIX}/intel/compiler60/ia32/bin/iccbin "$@";
  else
-  exec -a "<INSTALLDIR>/compiler60/ia32/bin/icc" <INSTALLDIR>/compiler60/ia32/bin/iccbin;
+- exec -a "<INSTALLDIR>/compiler60/ia32/bin/icc" <INSTALLDIR>/compiler60/ia32/bin/iccbin;
++ exec ${PREFIX}/intel/compiler60/ia32/bin/iccbin;
+ fi

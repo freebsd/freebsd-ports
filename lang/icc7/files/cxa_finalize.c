@@ -26,7 +26,13 @@
  * $FreeBSD$
  */
 
-#include <stdio.h>
+void
+__cxa_finalize(void *handle)
+{
 
-#undef	stderr
-FILE *stderr = &__sF[2];
+	/*
+	 * As we dared to register the functions via atexit() this job will
+	 * be done by exit().
+	 */
+	return;
+}

@@ -1,4 +1,4 @@
-/*-
+/*
  * Copyright (c) 2002 Marius Strobl
  * All rights reserved.
  *
@@ -28,11 +28,25 @@
 
 #include <stdlib.h>
 
-void *__dso_handle = NULL;
-
+/*
+ * The __cxa_atexit() function and friends are needed for full (IA64) C++ ABI
+ * compatibility but FreeBSD doesn't have implemented them, yet. In addition
+ * to the classic atexit() it is not only used to register functions to be
+ * called at program exit but also to call them (C++ destructors in that case)
+ * when a shared object is unloaded. For the later to work the dynamic linker
+ * assigns a unique dynamic shared object handle to every shared object while
+ * a handle of NULL represents a main program. When __cxa_finalize() is called
+ * with a specific (non-NULL) handle as an argument all functions registered
+ * via __cxa_atexit() and having the same handle are called.
+ * The best we can do here to emulate that behaviour until FreeBSD supports
+ * this is to register the functions via atexit(). While this certainly is a
+ * bad hack it seems to work, even the current dynamic linker is assigning
+ * the handles. I didn't see a function getting registered with an argument
+ * so far.
+ */
 int
-__cxa_atexit(void (*fn)(), void *arg, void *d)
+__cxa_atexit(void (*fn)(), void *arg, void *handle)
 {
 
-	return (atexit(fn));
+	return (handle ? atexit(fn) : 0);
 }

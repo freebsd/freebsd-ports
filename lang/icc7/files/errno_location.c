@@ -1,5 +1,5 @@
-/*
- * Copyright (c) 2002 Marius Strobl
+/*-
+ * Copyright (c) 2000 Andrew Gallatin and David O'Brien
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -23,10 +23,15 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  *
+ * copied over from: FreeBSD: ports/lang/compaq-cc/files/errno_location.c,v 1.1 2000/12/08 13:27:29 obrien Exp
+ *
  * $FreeBSD$
  */
 
-#include <stdio.h>
+#include <errno.h>
 
-#undef	stderr
-FILE *stderr = &__sF[2];
+int *
+__errno_location(void)
+{
+	return &errno;
+}

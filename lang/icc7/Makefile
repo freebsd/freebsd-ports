@@ -7,7 +7,7 @@
 
 PORTNAME=	icc
 PORTVERSION=	6.0.159
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	lang linux devel
 MASTER_SITES=
 DISTNAME=	l_cc_pu_6.0.159
@@ -26,7 +26,6 @@ ONLY_FOR_ARCHS=		i386
 USE_LINUX=		yes
 USE_REINPLACE=		yes
 NO_WRKSUBDIR=		yes
-NO_BUILD=		yes
 NO_FILTER_SHLIBS=	yes
 
 MAN1=	icc.1
@@ -72,26 +71,26 @@ post-patch:
 # Correct some paths and patch some files
 .for i in ia32/bin/icc ia32/bin/icc.cfg ia32/bin/iccvars.csh \
 	ia32/bin/iccvars.sh ia32/bin/icpc ia32/bin/icpc.cfg docs/csupport
-	@${REINPLACE_CMD} -i "" -e 's@export -n IA32ROOT; unset IA32ROOT;@@g; s@-a "<INSTALLDIR>/compiler60/ia32/bin/icc" @@g; s@-a "<INSTALLDIR>/compiler60/ia32/bin/icpc" @@g; s@\<INSTALLDIR\>@${PREFIX}/intel@g; s@-tp p6@@; s@man -w@manpath -q@g; s:\<INSTALLTIMECOMBOPACKAGEID\>:${DISTNAME}:g' \
+	@${REINPLACE_CMD} -i "" -e 's:@@PREFIX@@:${PREFIX}:g; s@man -w@manpath -q@g; s:\<INSTALLTIMECOMBOPACKAGEID\>:${DISTNAME}:g' \
 		${WRKSRC}/opt/intel/compiler60/${i}
 	@${CHMOD} 755 ${WRKSRC}/opt/intel/compiler60/${i}
 .endfor
 # Remove unneeded files
-.for i in cwchar.orig yvals.h.orig algorithm bitset complex deque fstream \
-	fstream.h functional hash_map hash_set iomanip iomanip.h ios iosfwd \
-	iostream iostream.h istream iterator limits list locale map mathf.h \
+.for i in cfloat.orig cwchar.orig yvals.h.orig algorithm bitset complex deque \
+	fstream fstream.h functional hash_map hash_set iomanip iomanip.h ios \
+	iosfwd iostream iostream.h istream iterator limits list locale map \
 	memory numeric ostream queue set slist sstream stack stdexcept stl.h \
 	stream.h streambuf string strstream strstream.h utility valarray \
 	vector xcomplex xdebug xhash xiosbase xlocale xlocinfo xlocinfo.h \
 	xlocmes xlocmon xlocnum xloctime xmemory xstring xtree xutility ymath.h
 	@${RM} ${WRKSRC}/opt/intel/compiler60/ia32/include/${i}
 .endfor
-.for i in crtxi.o crtxn.o icrt.link libcprts.so libcprts.so.1 libimf.a \
-	libunwind.so libunwind.so.1
+.for i in libcprts.a libcprts.so libcprts.so.1 libunwind.so libunwind.so.1
 	@${RM} -rf ${WRKSRC}/opt/intel/compiler60/ia32/lib/${i}
 .endfor
 	@${RM} ${WRKSRC}/opt/intel/compiler60/ia32/bin/uninstall \
-		${WRKSRC}/opt/intel/compiler60/ia32/bin/icc.orig
+		${WRKSRC}/opt/intel/compiler60/ia32/bin/icc.orig \
+		${WRKSRC}/opt/intel/compiler60/ia32/bin/icpc.orig
 .if defined(NOPORTDOCS)
 	@${RM} -rf ${WRKSRC}/opt/intel/compiler60/docs
 .endif
@@ -100,19 +99,21 @@ post-patch:
 	@${ECHO} -e "\n-Ulinux\n-U__linux__\n-U__linux\n\n-D__FreeBSD__=${ICCCFGVAL}\n-D__ELF__=1\n" >>${WRKSRC}/opt/intel/compiler60/ia32/bin/${i}
 	@${CHMOD} a-x,g-w ${WRKSRC}/opt/intel/compiler60/ia32/bin/${i}
 .endfor
-# C++ hack for ipcp
+# C++ hack for icpc
 	@${ECHO} -e "\n-I${PREFIX}/include/stlport\n-Qoption,ld,-CPLUSPLUS\n" >>${WRKSRC}/opt/intel/compiler60/ia32/bin/icpc.cfg
 	@cd ${WRKSRC}/opt/intel/compiler60/ia32/bin/ && ${LN} -s icc.cfg iccbin.cfg && ${LN} -s icpc.cfg icpcbin.cfg
 # \n-Qlocation,ld,/usr/bin\n\n-sox-\n
-# Fix (some) unresolved references in libcprts, libcxa and libunwind
-	@cd ${WRKSRC} && ${CC} -c ${FILESDIR}/*.c && \
+
+do-build:
+# Fix unresolved references in libcxa.a, libimf.a and libunwind.a
+	@cd ${WRKSRC} && ${CC} ${CFLAGS} -c ${FILESDIR}/cxa_atexit.c \
+		${FILESDIR}/cxa_finalize.c ${FILESDIR}/errno_location.c \
+		${FILESDIR}/stderr.c && \
 		${AR} q opt/intel/compiler60/ia32/lib/libcxa.a *.o
 # Some magic to be able to link
-	@${SED} 's:@@PREFIX@@:${PREFIX}:g' ${FILESDIR}/ld >${WRKSRC}/opt/intel/compiler60/ia32/bin/ld
+	@${CC} ${CFLAGS} -o ${WRKSRC}/opt/intel/compiler60/ia32/bin/ld ${FILESDIR}/ld.c
+	@${STRIP_CMD} ${WRKSRC}/opt/intel/compiler60/ia32/bin/ld
 	@${CHMOD} 755 ${WRKSRC}/opt/intel/compiler60/ia32/bin/ld
-	@${MKDIR} ${WRKSRC}/opt/intel/compiler60/ia32/bin/real
-# Do not use the linux ld if it exists
-	@${LN} -s /usr/bin/ld ${WRKSRC}/opt/intel/compiler60/ia32/bin/real
 
 do-install:
 	@cd ${WRKSRC}/opt && ${TAR} -cf - . | \
