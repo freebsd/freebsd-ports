@@ -3,10 +3,10 @@
 # Date created:         Sat Aug 3, 1996
 # Whom:                 David O'Brien (obrien@cs.ucdavis.edu)
 #
-# $Id: Makefile,v 1.6 1997/09/28 04:49:41 peter Exp $
+# $Id: Makefile,v 1.7 1997/09/28 05:28:59 peter Exp $
 #
 
-DISTNAME=	rsync-1.6.2
+DISTNAME=	rsync-1.6.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://samba.anu.edu.au/pub/rsync/  \
 		ftp://sunsite.auc.dk/pub/unix/rsync/
@@ -17,9 +17,9 @@ GNU_CONFIGURE=	yes
 MAN1=		rsync.1
 
 post-patch:
-	cp ${FILESDIR}/clientserver.c ${WRKSRC}
-	cp ${FILESDIR}/README.daemon ${WRKSRC}
-	cp ${FILESDIR}/rsyncd_trees.eg ${WRKSRC}
+	@${CP} ${FILESDIR}/clientserver.c ${WRKSRC}
+	@${CP} ${FILESDIR}/README.daemon ${WRKSRC}
+	@${CP} ${FILESDIR}/rsyncd_trees.eg ${WRKSRC}
 
 post-install:
 	@strip ${PREFIX}/bin/rsync
