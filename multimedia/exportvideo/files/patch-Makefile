@@ -1,0 +1,92 @@
+--- Makefile.orig	Fri Oct 26 03:29:20 2001
++++ Makefile	Mon Nov  1 09:41:06 2004
+@@ -11,36 +11,36 @@
+ include ./global_config
+ 
+ all: 
+-	+make -C libmpeg3
+-	+make -C quicktime
+-	+make -C rtjpeg
+-	+make -C video
+-	+if [ "x$(DONT_USE_AVI)" != "x1" ]; then make -C avifile_audiodecoder; fi
+-	+if [ -d audiomp2 ]; then make -C audiomp2; fi
+-	+if [ -d audiomp3 ]; then make -C audiomp3; fi
+-	+if [ -d mplexhi ]; then make -C mplexhi; fi
+-	+if [ -d mplexlo ]; then make -C mplexlo; fi
++	+$(MAKE) -C libmpeg3
++	+$(MAKE) -C quicktime
++	+$(MAKE) -C rtjpeg
++	+$(MAKE) -C video
++	+if [ "x$(DONT_USE_AVI)" != "x1" ]; then $(MAKE) -C avifile_audiodecoder; fi
++	+if [ -d audiomp2 ]; then $(MAKE) -C audiomp2; fi
++	+if [ -d audiomp3 ]; then $(MAKE) -C audiomp3; fi
++	+if [ -d mplexhi ]; then $(MAKE) -C mplexhi; fi
++	+if [ -d mplexlo ]; then $(MAKE) -C mplexlo; fi
+ 
+ exportvideo: 
+-	+make -C libmpeg3
+-	+make -C quicktime
+-	+make -C rtjpeg
+-	+if [ "x$(DONT_USE_AVI)" != "x1" ]; then make -C avifile_audiodecoder; fi
+-	+VIDEO_EXPORT_ONLY=1 make -C video exportvideo
+-	+if [ -d audiomp2 ]; then make -C audiomp2; fi
+-	+if [ -d mplexhi ]; then make -C mplexhi; fi
+-	+if [ -d mplexlo ]; then make -C mplexlo; fi
++	+$(MAKE) -C libmpeg3
++	+$(MAKE) -C quicktime
++	+$(MAKE) -C rtjpeg
++	+if [ "x$(DONT_USE_AVI)" != "x1" ]; then $(MAKE) -C avifile_audiodecoder; fi
++	+VIDEO_EXPORT_ONLY=1 $(MAKE) -C video exportvideo
++	+if [ -d audiomp2 ]; then $(MAKE) -C audiomp2; fi
++	+if [ -d mplexhi ]; then $(MAKE) -C mplexhi; fi
++	+if [ -d mplexlo ]; then $(MAKE) -C mplexlo; fi
+ 
+ clean:
+-	+make -C libmpeg3 clean
+-	+make -C quicktime clean
+-	+make -C rtjpeg clean
+-	+make -C video clean
+-	+make -C avifile_audiodecoder clean
+-	+if [ -d audiomp2 ]; then make -C audiomp2 clean; fi
+-	+if [ -d audiomp3 ]; then make -C audiomp3 clean; fi
+-	+if [ -d mplexhi ]; then make -C mplexhi clean; fi
+-	+if [ -d mplexlo ]; then make -C mplexlo clean; fi
++	+$(MAKE) -C libmpeg3 clean
++	+$(MAKE) -C quicktime clean
++	+$(MAKE) -C rtjpeg clean
++	+$(MAKE) -C video clean
++	+$(MAKE) -C avifile_audiodecoder clean
++	+if [ -d audiomp2 ]; then $(MAKE) -C audiomp2 clean; fi
++	+if [ -d audiomp3 ]; then $(MAKE) -C audiomp3 clean; fi
++	+if [ -d mplexhi ]; then $(MAKE) -C mplexhi clean; fi
++	+if [ -d mplexlo ]; then $(MAKE) -C mplexlo clean; fi
+ 
+ backup: clean
+ 	$(CD) .. && \
+@@ -74,7 +74,7 @@
+ 
+ bin-release:
+ 	./configure && \
+-	make exportvideo && \
++	$(MAKE) exportvideo && \
+ 	$(CD) .. && \
+ 	$(RM) -rf $(NAME).bin.$(VERSION) && \
+ 	$(MKDIR) $(NAME).bin.$(VERSION) && \
+@@ -86,7 +86,7 @@
+ 	$(LN) -s mplexfast $(NAME).bin.$(VERSION)/mplexhi && \
+ 	$(CP) $(NAME)/avifile_audiodecoder/decoder $(NAME).bin.$(VERSION)/avifile_audiodecoder && \
+ 	tar -czvf $(NAME).bin.$(VERSION).tar.gz $(NAME).bin.$(VERSION)
+-	
++
+ ../$(NAME).$(VERSION):
+ 	$(CD) .. && \
+ 	$(RM) -rf $(NAME).$(VERSION) && \
+@@ -104,7 +104,7 @@
+ 	$(LN) -s mplexfast $(NAME).bin.$(VERSION)/mplexhi && \
+ 	$(CP) $(NAME)/avifile_audiodecoder/decoder $(NAME).bin.$(VERSION)/avifile_audiodecoder && \
+ 	tar -czvf $(NAME).bin.$(VERSION).tar.gz $(NAME).bin.$(VERSION)
+-	
++
+ test-compile: exportvideo
+ 	@echo "all ok." 
+ 

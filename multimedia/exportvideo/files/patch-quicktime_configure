@@ -1,0 +1,13 @@
+--- quicktime/configure.orig	Mon Feb 12 22:35:19 2001
++++ quicktime/configure	Mon Nov  1 09:41:06 2004
+@@ -39,8 +39,8 @@
+ # DO NOT EDIT.  EDIT ./configure INSTEAD AND RERUN IT.
+ EOF
+ 
+-if test -z "$CFLAGS"; then
+-	echo >> global_config "CFLAGS = -O2 -fomit-frame-pointer -malign-loops=2 -malign-jumps=2 -malign-functions=2 -march=i486 -I/usr/local/include"
++if true; then
++	echo >> global_config "CFLAGS = $CFLAGS -I/usr/local/include"
+ fi
+ 
+ if [ ${USE_FIREWIRE} = 1 ]; then

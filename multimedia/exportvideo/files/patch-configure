@@ -1,0 +1,22 @@
+--- configure.orig	Tue Oct  9 18:14:28 2001
++++ configure	Mon Nov  1 09:41:06 2004
+@@ -1,7 +1,9 @@
++#!/bin/sh
++
+ echo "Configuring mpeg2_movie"
+ 
+ USE_MMX=1
+-CODEC_DIR=/usr/lib/mpeg2_movie/codecs/
++CODEC_DIR=
+ PREFIX=/usr/local
+ LDSTATIC=
+ 
+@@ -168,6 +170,8 @@
+ if [ "x$LDSTATIC" != "x" ]; then                                
+ 	echo >> global_config "LDFLAGS += $LDSTATIC" 
+ fi
++
++egrep "^LDFLAGS|^DONT_USE_AVI|^VIDEO_EXPORT_ONLY" global_config > video/global_config
+ 
+ echo "done"
+ 

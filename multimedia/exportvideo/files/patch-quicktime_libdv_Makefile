@@ -1,0 +1,17 @@
+--- quicktime/libdv/Makefile.orig	Mon Feb 12 22:35:19 2001
++++ quicktime/libdv/Makefile	Mon Nov  1 09:41:06 2004
+@@ -1,7 +1,7 @@
+ include ../global_config
+ 
+ LFLAGS += $(shell glib-config --libs) $(shell gtk-config --libs)
+-LIBS = -lm -lraw1394 -lpthread
++LIBS = -lm -lraw1394 -pthread
+ CFLAGS += -DHAVE_LIBXV
+ export CFLAGS
+ 
+@@ -56,4 +56,4 @@
+ 
+ playdv: playdv.o
+ 	$(CC) -o playdv playdv.o ../libquicktime.a -L/usr/X11R6/lib -lm -lX11 \
+-	-lXext -lXv -lgtk -lgdk -lSDL -lpthread
++	-lXext -lXv -lgtk -lgdk -lSDL -pthread

@@ -1,0 +1,20 @@
+
+NOTE: For this implementation of exportvideo no attempt has been made to
+support input formats other than .nuv, in which respect it differs from
+the original software. In particular, the '--no-avi' configure flag is
+mandatory for the port to build, and any references to .avi input found 
+in the documentation should be ignored!
+
+
+How to use it
+-------------
+Invoke exportvideo without arguments to see what options are available.
+As mpeg2enc's input format is actually YUV4MPEG2, the flag '-Y 2' is a
+canonical choice for transcoding with mjpegtools (cf. yuv4mpeg(5) for 
+further details).
+
+This port also provides the script nuv4dvd which can be used to transcode 
+nuppelvideos to DVD compliant MPEGs (PAL or NTSC). Running this script 
+requires that nuppelvideo, lame, and the mjpegtools are installed. -- 
+More sample applications can be found in the nuppelvideo documentation.
+

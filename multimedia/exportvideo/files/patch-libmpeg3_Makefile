@@ -1,0 +1,22 @@
+--- libmpeg3/Makefile.orig	Thu Mar  8 01:11:07 2001
++++ libmpeg3/Makefile	Mon Nov  1 09:41:06 2004
+@@ -44,7 +44,7 @@
+ 
+ OUTPUT = libmpeg3.a
+ UTILS = dump mpeg3cat mpeg3toc mpeg3split
+-LIBS = -lm -lpthread
++LIBS = -lm -pthread
+ 
+ all: $(OUTPUT) util
+ 
+@@ -71,8 +71,8 @@
+ 	$(CC) -c `./c_flags` $*.c
+ 
+ clean:
+-	make -C audio clean
+-	make -C video clean
++	$(MAKE) -C audio clean
++	$(MAKE) -C video clean
+ 	rm -f core *.o $(OUTPUT)
+ 	rm -f $(UTILS)
+ 
