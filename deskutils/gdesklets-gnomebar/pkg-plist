@@ -1,0 +1,13 @@
+share/gnome/gdesklets/Displays/GnomeBar/GnomeBar.display
+share/gnome/gdesklets/Displays/GnomeBar/gfx/evolution.png
+share/gnome/gdesklets/Displays/GnomeBar/gfx/gaim.png
+share/gnome/gdesklets/Displays/GnomeBar/gfx/galeon.png
+share/gnome/gdesklets/Displays/GnomeBar/gfx/iconbar-middle.png
+share/gnome/gdesklets/Displays/GnomeBar/gfx/menu.png
+share/gnome/gdesklets/Displays/GnomeBar/gfx/menubg.png
+share/gnome/gdesklets/Displays/GnomeBar/gfx/middle-end.png
+share/gnome/gdesklets/Displays/GnomeBar/gfx/middle.png
+share/gnome/gdesklets/Displays/GnomeBar/gfx/nautilus.png
+share/gnome/gdesklets/Displays/GnomeBar/preview.png
+@dirrm share/gnome/gdesklets/Displays/GnomeBar/gfx
+@dirrm share/gnome/gdesklets/Displays/GnomeBar
