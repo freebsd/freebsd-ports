@@ -13,6 +13,11 @@ MASTER_SITE_SUBDIR=	stable/${PORTVERSION}/distribution/tar/generic/src
 
 MAINTAINER=	demon@FreeBSD.org
 
+.include <bsd.port.pre.mk>
+.if ${OSVERSION} < 500007
+BROKEN=		"Requires Perl version 5.6.0"
+.endif
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -21,4 +26,4 @@ MAN1=		kdoc.1 qt2kdoc.1 makekdedoc.1
 pre-configure:
 	${PERL} -pi -e "s#share/kdoc#lib/perl5/site_perl/${PERL_VER}#" ${WRKSRC}/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
