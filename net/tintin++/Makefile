@@ -18,10 +18,4 @@ COMMENT=	A client program to help playing muds
 WRKSRC=		${WRKDIR}/tintin++/v1.5/src
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 500113
-BROKEN=         "Does not compile"
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
