@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	exifprobe
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.monroe.net/~dhh/exifprobe.d/
 
