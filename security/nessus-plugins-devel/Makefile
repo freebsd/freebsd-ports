@@ -4,8 +4,7 @@
 #
 
 PORTNAME=	nessus-plugins-devel
-PORTVERSION=	2.0.9
-PORTREVISION=	1
+PORTVERSION=	2.0.10a
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.nessus.org/pub/nessus/nessus-${PORTVERSION}/src/ \
 		ftp://ftp.gwdg.de/pub/linux/misc/nessus/nessus-${PORTVERSION}/src/ \
@@ -28,8 +27,7 @@ DIST_SUBDIR=	nessus
 WRKSRC=		${WRKDIR}/nessus-plugins
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-fetchcmd=wget --sharedstatedir=${PREFIX}/etc/nessus/com \
-		--localstatedir=${PREFIX}/etc/nessus/var
+CONFIGURE_ARGS=	--with-fetchcmd=wget
 
 MAN1=		nessus-build.1
 MAN8=		nessus-update-plugins.8
