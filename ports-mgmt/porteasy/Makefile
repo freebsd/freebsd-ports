@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	porteasy
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	misc
 MASTER_SITES=	# none
 DISTFILES=	# none

@@ -33,7 +33,7 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.4";
+my $VERSION	= "2.5";
 my $COPYRIGHT	= "Copyright (c) 2000 Dag-Erling Smørgrav. All rights reserved.";
 
 # Constants
@@ -550,11 +550,14 @@ sub find_dependencies($) {
 	or bsd::errx(1, "failed to obtain dependency list");
     %depends = ();
     foreach $item (split(' ', $dependvars)) {
-	if ($item !~ m|^([^:]+):$portsdir/([^/:]+/[^/:]+)/?(:[^:]+)?$|) {
+	if ($item !~ m|^(?:([^:]+):)?$portsdir/([^/:]+/[^/:]+)/?(:[^:]+)?$|) {
 	    bsd::warnx("invalid dependency: %s", $item);
+	    next;
 	}
 	($lhs, $rhs) = ($1, $2);
-	if ($exclude) {
+	# XXX this isn't quite right; lhs-less dependencies should be
+	# XXX checked against /var/db/pkg or something.
+	if ($exclude && defined($lhs)) {
 	    if ($have_dep{$rhs}) {
 		next;
 	    }
