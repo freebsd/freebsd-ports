@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mysql-modules
-PORTVERSION=	1.2216
+PORTVERSION=	1.2219
 CATEGORIES=	databases perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	DBD
@@ -19,7 +19,14 @@ COMMENT=	Perl5 modules for accessing MySQL databases
 BUILD_DEPENDS=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/Data/ShowTable.pm:${PORTSDIR}/devel/p5-Data-ShowTable \
 		${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+.include <bsd.port.pre.mk>
+
+.if exists(${LOCALBASE}/lib/mysql/libmysqlclient.so.12)
+LIB_DEPENDS=	mysqlclient.12:${PORTSDIR}/databases/mysql40-client
+.else
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
+.endif
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	PREFIX=${PREFIX} CC="${CC}" CCFLAGS="${CFLAGS}" \
@@ -35,4 +42,4 @@ MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 pre-configure:
 		@${PERL} -p -i -e 's| -lgz||' ${WRKSRC}/lib/DBD/mysql/Install.pm
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
