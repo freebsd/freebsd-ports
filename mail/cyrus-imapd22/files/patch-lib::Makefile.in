@@ -1,7 +1,7 @@
 Index: lib/Makefile.in
 diff -u lib/Makefile.in.orig lib/Makefile.in
 --- lib/Makefile.in.orig	Sun Jan  4 00:16:44 2004
-+++ lib/Makefile.in	Sun Mar  7 23:44:51 2004
++++ lib/Makefile.in	Thu Mar 11 01:35:47 2004
 @@ -60,7 +60,7 @@
  CPPFLAGS = -I.. @CPPFLAGS@ @COM_ERR_CPPFLAGS@ @SASLFLAGS@
  LIBS = @LIBS@
@@ -11,3 +11,12 @@ diff -u lib/Makefile.in.orig lib/Makefile.in
  LDFLAGS = @LDFLAGS@
  
  SHELL = /bin/sh
+@@ -100,7 +100,7 @@
+ all: $(BUILTSOURCES) libcyrus_min.a libcyrus.a
+ 
+ install:
+-	$(srcdir)/../install-sh -d $(DESTDIR)$(exec_prefix)/lib
++	$(INSTALL) -d $(DESTDIR)$(exec_prefix)/lib
+ 	$(INSTALL) -m 644 libcyrus.a $(DESTDIR)$(exec_prefix)/lib
+ 	$(INSTALL) -m 644 libcyrus_min.a $(DESTDIR)$(exec_prefix)/lib
+ 	$(RANLIB) $(DESTDIR)$(exec_prefix)/lib/libcyrus.a

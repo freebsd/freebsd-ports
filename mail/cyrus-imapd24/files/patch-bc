@@ -1,9 +1,13 @@
 Index: imap/Makefile.in
 diff -u imap/Makefile.in.orig imap/Makefile.in
 --- imap/Makefile.in.orig	Wed Nov 12 13:02:01 2003
-+++ imap/Makefile.in	Fri Feb 13 18:36:00 2004
-@@ -135,7 +135,7 @@
- 	$(srcdir)/../install-sh -d ${DESTDIR}$(service_path)
++++ imap/Makefile.in	Thu Mar 11 01:16:00 2004
+@@ -132,10 +132,10 @@
+ 
+ 
+ install:
+-	$(srcdir)/../install-sh -d ${DESTDIR}$(service_path)
++	$(INSTALL) -d ${DESTDIR}$(service_path)
  	for file in $(PROGS); \
  	do \
 -		$(INSTALL) -m 755 $$file $(DESTDIR)$(service_path) || exit 1; \

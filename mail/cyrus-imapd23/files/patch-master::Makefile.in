@@ -1,9 +1,13 @@
 Index: master/Makefile.in
 diff -u master/Makefile.in.orig master/Makefile.in
 --- master/Makefile.in.orig	Wed Nov 12 13:02:03 2003
-+++ master/Makefile.in	Fri Feb 13 18:33:15 2004
-@@ -78,7 +78,7 @@
- 	$(srcdir)/../install-sh -d ${DESTDIR}$(service_path)
++++ master/Makefile.in	Thu Mar 11 01:18:52 2004
+@@ -75,10 +75,10 @@
+ all: $(PROGS) $(LOBJS)
+ 
+ install:
+-	$(srcdir)/../install-sh -d ${DESTDIR}$(service_path)
++	$(INSTALL) -d ${DESTDIR}$(service_path)
  	for file in $(PROGS); \
  	do \
 -		$(INSTALL) -m 755 $$file $(DESTDIR)$(service_path) || exit 1; \
