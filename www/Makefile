@@ -299,6 +299,7 @@
     SUBDIR += pgdriver
     SUBDIR += php-templates
     SUBDIR += phpSysInfo
+    SUBDIR += phpbb
     SUBDIR += phpnuke
     SUBDIR += plugger
     SUBDIR += pruby
