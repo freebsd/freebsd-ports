@@ -1,0 +1,30 @@
+--- Makefile.orig	Tue Apr  1 00:14:41 2003
++++ Makefile	Tue Apr  1 00:23:28 2003
+@@ -23,14 +23,15 @@
+ 
+ ALL_SRC = darkbot.c
+ 
+-BASE_DIR = /usr/local/
++BASE_DIR = ${PREFIX}/
+ 
+ all: ; ${CC} ${CFLAGS} ${ALL_SRC} -o ${EXE_NAME};
+ 	chmod +x ./configure;
+ 
+ install: ; cp darkbot ${BASE_DIR}bin/;
+-	mkdir ${BASE_DIR}etc/darkbot/; mkdir ${BASE_DIR}etc/darkbot/logs/;
+-	mkdir ${BASE_DIR}etc/darkbot/dat/;
++	-mkdir ${BASE_DIR}etc/darkbot/; 
++	-mkdir ${BASE_DIR}etc/darkbot/logs/;
++	-mkdir ${BASE_DIR}etc/darkbot/dat/;
+ 	cp dat/* ${BASE_DIR}etc/darkbot/dat/; chmod +x ./.runonce; ./.runonce;
+ 	cp configure config; chmod -x ./config; 
+ 	cp ./config ${BASE_DIR}etc/darkbot/;
+@@ -38,7 +39,7 @@
+ 	echo "cd /usr/local/etc/darkbot/;/bin/sh config" >> \
+ 	${BASE_DIR}etc/darkbot/configure;
+ 	chmod +x ${BASE_DIR}etc/darkbot/configure;
+-	cp ./darkbot.1.gz /usr/local/man/man1/;
++	cp ./darkbot.1.gz ${BASE_DIR}man/man1/;
+ 
+ debug: ; ${CC} ${DFLAGS} ${ALL_SRC} -o ${EXE_NAME}; cat .debug ; gdb ${EXE_NAME}
+ 
