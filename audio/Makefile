@@ -96,6 +96,7 @@
     SUBDIR += festlex-oald
     SUBDIR += festlex-ogi
     SUBDIR += festlex-poslex
+    SUBDIR += festogi-italian
     SUBDIR += festogi-spanish
     SUBDIR += festvox-abc
     SUBDIR += festvox-aec
