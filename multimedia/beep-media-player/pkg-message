@@ -1,0 +1,2 @@
+beep supports Gzipped and uncompressed skins.  If you would like to use
+Zip format skins you will need to ensure archivers/unzip is installed.

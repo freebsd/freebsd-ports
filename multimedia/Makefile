@@ -5,6 +5,7 @@
     SUBDIR += avidemux
     SUBDIR += avifile
     SUBDIR += avinfo
+    SUBDIR += beep-media-player
     SUBDIR += camserv
     SUBDIR += dtv
     SUBDIR += dumpmpeg
