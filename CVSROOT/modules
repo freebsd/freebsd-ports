@@ -2998,6 +2998,7 @@ jargon		ports/misc/jargon
 jasper		ports/graphics/jasper
 java-cup	ports/java/java-cup
 java-sqlrelay	ports/databases/java-sqlrelay
+java-tutorial	ports/java/java-tutorial
 java2html	ports/textproc/java2html
 javadc		ports/net/javadc
 javamail	ports/java/javamail
@@ -3014,7 +3015,6 @@ jdbcpool	ports/java/jdbcpool
 jde		ports/java/jde
 jde-emacs20	ports/java/jde-emacs20
 jdictionary	ports/textproc/jdictionary
-jdk-tutorial	ports/java/jdk-tutorial
 jdk11		ports/java/jdk11
 jdk11-doc	ports/java/jdk11-doc
 jdk12		ports/java/jdk12
