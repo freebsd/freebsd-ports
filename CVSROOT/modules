@@ -107,7 +107,6 @@ STk		ports/lang/STk
 SWIG		ports/devel/SWIG
 SWIG-devel	ports/devel/SWIG-devel
 Sather		ports/lang/Sather
-Scilab		ports/math/Scilab
 SpecTcl		ports/devel/SpecTcl
 TODO-2.1	src/TODO-2.1
 TenDRA		ports/lang/TenDRA
