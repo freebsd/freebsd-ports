@@ -1,0 +1,11 @@
+--- Makefile.in.orig	Sat Oct 16 19:24:54 1999
++++ Makefile.in	Sat Oct 16 19:25:26 1999
+@@ -28,7 +28,7 @@
+ #XLIBS=@X_LIBS@ -lvgagl -lvga 
+ #SFLAGS=-DUSE_SVGALIB
+ 
+-STONXDIR=/usr/local/lib/STonX
++STONXDIR=${PREFIX}/lib/X11/STonX
+ DEF= @def@ -DINLINE=@inline@ -DSTONXDIR=\"$(STONXDIR)\"
+ 
+ # Compiler
