@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.147 1998/07/11 18:27:48 steve Exp $
+# $Id: Makefile,v 1.148 1998/07/12 23:44:23 steve Exp $
 #
 
     SUBDIR += acron
@@ -23,6 +23,7 @@
     SUBDIR += git
     SUBDIR += gnuls
     SUBDIR += gone
+    SUBDIR += gyvescm
     SUBDIR += ical
     SUBDIR += iselect
     SUBDIR += jive
@@ -48,6 +49,7 @@
     SUBDIR += plan
     SUBDIR += rpm
     SUBDIR += screen
+    SUBDIR += scriptkit
     SUBDIR += sls
     SUBDIR += sma
     SUBDIR += splitvt
