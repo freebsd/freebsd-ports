@@ -1,0 +1,10 @@
+--- linux_syscallnames.conf.orig	Fri Dec 18 10:29:27 1998
++++ linux_syscallnames.conf	Fri Dec 18 10:29:32 1998
+@@ -4,6 +4,7 @@
+ sysproto_h=_LINUX_SYSPROTO_H_
+ syshdr="/dev/null"
+ syssw="/dev/null"
++sysmk="/dev/null"
+ syshide="/dev/null"
+ syscallprefix="LINUX_SYS_"
+ switchname="linux_sysent"

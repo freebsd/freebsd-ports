@@ -3,7 +3,7 @@
 # Date created:         Nov 26 1997
 # Whom:                 msmith@FreeBSD.org
 #
-# $Id: Makefile,v 1.2 1998/08/16 13:13:02 jseger Exp $
+# $Id: Makefile,v 1.3 1998/11/11 05:37:10 asami Exp $
 #
 
 DISTNAME=	linux_kdump-1.0
@@ -15,10 +15,6 @@ MAINTAINER=	msmith@FreeBSD.org
 BUILD_DEPENDS=	/compat/linux/usr/bin/cpp:${PORTSDIR}/devel/linux_devel
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 300000
-BROKEN=	"During build fails makesyscalls"
-.endif
 
 .if !exists(/sys/i386/linux/syscalls.master)
 BROKEN=		"requires kernel source present in /sys"
