@@ -1,46 +1,44 @@
---- Makefile.orig	Wed Jun 20 05:48:41 2001
-+++ Makefile	Mon Aug 20 11:19:22 2001
-@@ -1,34 +1,9 @@
+--- Makefile.orig	Thu Dec  6 09:12:46 2001
++++ Makefile	Thu Dec  6 16:21:07 2001
+@@ -1,32 +1,9 @@
 -# Makefile for StarPlot
 +BINARYNAME	=	starplot
 +CONVERTNAME	=	starconvert
 +CFLAGS	+=	-Wall `${GTK_CONFIG} --cflags`
 +LFLAGS	=	`${GTK_CONFIG} --libs`
  
--# this is for easier debianizing:
--DESTDIR =
--TREEDIR = usr/local
--TOPDIR  = $(DESTDIR)/$(TREEDIR)
+-prefix  = /usr/local
+-DESTDIR = $(prefix)
 -
 -# installation locations: -----------------------------------------------
 -export BINARYNAME  =  starplot
 -export CONVERTNAME =  starconvert
--export DATADIR     =  $(TOPDIR)/share/$(BINARYNAME)
--export DOCDIR      =  $(TOPDIR)/share/doc/$(BINARYNAME)
--INSTALLDIR         =  $(TOPDIR)/bin
--MANDIR             =  $(TOPDIR)/man/man1
+-export DATADIR     =  $(DESTDIR)/share/$(BINARYNAME)
+-export DOCDIR      =  $(DESTDIR)/share/doc/$(BINARYNAME)
+-INSTALLDIR         =  $(DESTDIR)/bin
+-MANDIR             =  $(DESTDIR)/man/man1
 -
 -# locations of programs needed for compiling / installing:
 -export CXX    =  g++
 -export SED    =  sed
 -INSTALL       =  install
 -
--# compiler flags:
+-# compiler flags
 -export CFLAGS =  -Wall -pedantic -O2
 -LFLAGS        =  `gtk-config --libs`
 -
 -# targets ---------------------------------------------------------------
 -
--.PHONY:	all object-files conv-files doc-files starplot starconvert debian \
+-.PHONY: all object-files conv-files doc-files starplot starconvert debian \
 -	clean dist-clean debian-clean install install-bin install-doc     \
 -	install-debian install-examples install-gpl install-man uninstall
 -
--all:	object-files conv-files doc-files
-+all:	object-files conv-files
+-all: object-files conv-files doc-files
++all: object-files conv-files
  
  object-files:
  	$(MAKE) -C classes
-@@ -38,79 +13,3 @@
+@@ -36,81 +13,3 @@
  conv-files:
  	$(MAKE) -C convert
  	$(CXX) convert/*.o classes/*.o -o $(CONVERTNAME) $(CFLAGS) -lm
@@ -50,7 +48,7 @@
 -
 -# The next two targets are not used by the default build and are just for
 -#  convenience if you only want to build one of the two programs.
--starplot:	object-files
+-starplot: object-files
 -starconvert:
 -	$(MAKE) -C classes
 -	$(MAKE) conv-files
@@ -63,20 +61,18 @@
 -	$(MAKE) -C classes clean
 -	$(MAKE) -C convert clean
 -
--dist-clean:	clean
--	rm -f $(BINARYNAME) $(CONVERTNAME) build-stamp configure-stamp
+-dist-clean: clean
+-	rm -f $(BINARYNAME) $(CONVERTNAME)
 -	$(MAKE) -C doc clean
 -
--debian-clean:	dist-clean
--	rm -rf debian/starplot/*
--	rm -f debian/files debian/substvars
--	rm -f debian/*.debhelper
+-debian-clean: dist-clean
+-	fakeroot debian/rules clean
 -
 -# install everything
--install:	install-examples install-gpl
+-install: install-bin install-examples install-doc install-man install-gpl
 -
 -# install only things relevant to creating a Debian package
--install-debian:	install-examples install-doc
+-install-debian: install-bin install-examples install-doc
 -
 -# install just the binary and create an empty data directory
 -install-bin:
@@ -85,8 +81,8 @@
 -	$(INSTALL) -m 0755 -s $(CONVERTNAME) $(INSTALLDIR)
 -
 -# install example star data files as well as the binary
--install-examples:	install-bin
--	$(INSTALL) -d -m 0755 $(DATADIR)/examples
+-install-examples:
+-	$(INSTALL) -d -m 0755 $(DATADIR) $(DATADIR)/examples
 -	$(INSTALL) -m 0644 examples/*.stars $(DATADIR)/examples
 -
 -# install the text and HTML documentation only
@@ -98,20 +94,23 @@
 -	$(INSTALL) -m 0644 doc/html/*.html $(DOCDIR)/html
 -	$(INSTALL) -m 0644 doc/html/images/* $(DOCDIR)/html/images
 -
--# install man pages too
--install-man:	install-doc
+-# install man pages
+-install-man:
 -	$(INSTALL) -d -m 0755 $(MANDIR)
 -	$(INSTALL) -m 0644 doc/man/starplot.1 $(MANDIR)/$(BINARYNAME).1
 -	$(INSTALL) -m 0644 doc/man/starconvert.1 $(MANDIR)/$(CONVERTNAME).1
 -
--# install the GPL as well as the docs
+-# install the license
 -# (this is separate since most people already have more than enough copies
 -# of the GPL lying around on their hard drives)
--install-gpl:	install-man
+-install-gpl:
+-	$(INSTALL) -d -m 0755 $(DOCDIR)
 -	$(INSTALL) -m 0644 COPYING $(DOCDIR)
 -
 -# You can uninstall StarPlot even after deleting the source tree because
 -# this Makefile will have been installed in $(DOCDIR).
+-# NOTE: Make sure $(prefix) is set correctly.
+-# DO NOT USE THIS TARGET IF YOU INSTALLED STARPLOT AS A DEBIAN PACKAGE!!!
 -
 -uninstall:
 -	-rm -f $(INSTALLDIR)/$(BINARYNAME) $(INSTALLDIR)/$(CONVERTNAME)
@@ -119,4 +118,5 @@
 -	-rmdir $(DATADIR)
 -	-rm -rf $(DOCDIR)
 -	-rm -f $(MANDIR)/$(BINARYNAME).* $(MANDIR)/$(CONVERTNAME).*
+-	-rmdir $(MANDIR)
 -

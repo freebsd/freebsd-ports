@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	starplot
-PORTVERSION=	0.92.2
+PORTVERSION=	0.92.3
 CATEGORIES=	astro
 MASTER_SITES=	http://www.princeton.edu/~kmccarty/downloads/
 
