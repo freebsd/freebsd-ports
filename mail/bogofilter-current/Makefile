@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	bogofilter
-PORTVERSION=	0.15.7
-PORTREVISION=	1
+PORTVERSION=	0.15.13
+PORTREVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -21,7 +21,7 @@ LIB_DEPENDS?=	db4.0:${PORTSDIR}/databases/db4
 
 LIB_DEPENDS+=	gsl.5:${PORTSDIR}/math/gsl
 
-CONFLICTS?=	bogofilter-tdb*
+CONFLICTS?=	bogofilter-tdb* bogofilter-qdbm*
 
 USE_REINPLACE=	yes
 USE_PERL5_RUN=	yes
@@ -31,11 +31,9 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc
 CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include/db4" \
 		LDFLAGS="-L${LOCALBASE}/lib" LIBS="-ldb4"
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1 \
-		bogol.1 bogotune.1
+MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1 bogotune.1
 
 post-patch:
-	${REINPLACE_CMD} -e 's/^@ENABLE_XMLTO_TRUE@//' ${WRKSRC}/doc/Makefile.in
 	${REINPLACE_CMD} -e "s|/bin/bash|${LOCALBASE}/bin/bash|" \
 		${WRKSRC}/contrib/randomtrain \
 		${WRKSRC}/contrib/scramble \
@@ -48,19 +46,14 @@ do-install:
 	cd ${WRKSRC} && make install-strip prefix=${PREFIX}
 
 post-install::
-.for i in bogol.1 bogotune.1
-	${INSTALL_MAN} ${WRKSRC}/tuning/${i} ${MAN1PREFIX}/man/man1/${i}
-.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${MKDIR} ${DOCSDIR}/contrib
 	@${MKDIR} ${DOCSDIR}/html
 	@${MKDIR} ${DOCSDIR}/programmer
-	@${MKDIR} ${DOCSDIR}/tuning
-	@${MKDIR} ${DOCSDIR}/tuning/sample.output
 	@${MKDIR} ${DOCSDIR}/xml
 .for i in AUTHORS COPYING INSTALL NEWS README README.cvs \
-	TODO UPGRADE \
+	doc/README.validation TODO UPGRADE \
 	CHANGES-0.10 CHANGES-0.11 CHANGES-0.12 CHANGES-0.13 CHANGES-0.14 \
 	CHANGES-0.15 \
 	RELEASE.NOTES-0.11 RELEASE.NOTES-0.12 RELEASE.NOTES-0.13 \
@@ -71,20 +64,10 @@ post-install::
 	  ${INSTALL_MAN} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/trio/AUTHORS ${DOCSDIR}/AUTHORS.trio
-.for i in README.bogotune
-	${INSTALL_MAN} ${WRKSRC}/tuning/${i} ${DOCSDIR}/tuning/${i}
-.endfor
-.for i in bogolex.sh bogol bogotune
-	${INSTALL_SCRIPT} ${WRKSRC}/tuning/${i} ${DOCSDIR}/tuning/${i}
-.endfor
-.for i in tune.nochange tune.normal tune.verbose
-	${INSTALL_SCRIPT} ${WRKSRC}/tuning/sample.output/${i} \
-		${DOCSDIR}/tuning/sample.output/${i}
-.endfor
 .for i in contrib/bogo.R contrib/bogofilter-qfe \
 		contrib/randomtrain contrib/scramble \
 		contrib/mime.get.rfc822 contrib/printmaildir.pl \
-		contrib/bogominitrain.pl
+		contrib/bogominitrain.pl contrib/README.contrib
 	  ${INSTALL_SCRIPT} ${WRKSRC}/${i} ${DOCSDIR}/${i}
 .endfor
 .for i in contrib/README.randomtrain contrib/dot-qmail-bogofilter-default

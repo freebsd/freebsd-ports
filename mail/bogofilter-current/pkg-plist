@@ -1,5 +1,6 @@
 bin/bogofilter
 bin/bogolexer
+bin/bogotune
 bin/bogoutil
 bin/bogoupgrade
 etc/bogofilter.cf.example
@@ -19,6 +20,7 @@ etc/bogofilter.cf.example
 %%PORTDOCS%%%%DOCSDIR%%/bogofilter-tuning.HOWTO
 %%PORTDOCS%%%%DOCSDIR%%/README.cvs
 %%PORTDOCS%%%%DOCSDIR%%/README.tdb
+%%PORTDOCS%%%%DOCSDIR%%/README.validation
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES-0.11
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES-0.12
 %%PORTDOCS%%%%DOCSDIR%%/RELEASE.NOTES-0.13
@@ -27,6 +29,7 @@ etc/bogofilter.cf.example
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%%%DOCSDIR%%/UPGRADE
 %%PORTDOCS%%%%DOCSDIR%%/bogofilter-SA-2002-01
+%%PORTDOCS%%%%DOCSDIR%%/contrib/README.contrib
 %%PORTDOCS%%%%DOCSDIR%%/contrib/README.randomtrain
 %%PORTDOCS%%%%DOCSDIR%%/contrib/bogo.R
 %%PORTDOCS%%%%DOCSDIR%%/contrib/bogofilter-qfe
@@ -38,27 +41,22 @@ etc/bogofilter.cf.example
 %%PORTDOCS%%%%DOCSDIR%%/contrib/randomtrain
 %%PORTDOCS%%%%DOCSDIR%%/contrib/scramble
 %%PORTDOCS%%%%DOCSDIR%%/html/bogofilter-faq.html
+%%PORTDOCS%%%%DOCSDIR%%/html/bogofilter-faq-fr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/bogofilter.html
 %%PORTDOCS%%%%DOCSDIR%%/html/bogolexer.html
 %%PORTDOCS%%%%DOCSDIR%%/html/bogoupgrade.html
+%%PORTDOCS%%%%DOCSDIR%%/html/bogotune.html
+%%PORTDOCS%%%%DOCSDIR%%/html/bogotune-faq.html
 %%PORTDOCS%%%%DOCSDIR%%/html/bogoutil.html
 %%PORTDOCS%%%%DOCSDIR%%/integrating-with-postfix
 %%PORTDOCS%%%%DOCSDIR%%/integrating-with-qmail
 %%PORTDOCS%%%%DOCSDIR%%/programmer/README.freebsd
-%%PORTDOCS%%%%DOCSDIR%%/tuning/README.bogotune
-%%PORTDOCS%%%%DOCSDIR%%/tuning/bogol
-%%PORTDOCS%%%%DOCSDIR%%/tuning/bogotune
-%%PORTDOCS%%%%DOCSDIR%%/tuning/bogolex.sh
-%%PORTDOCS%%%%DOCSDIR%%/tuning/sample.output/tune.nochange
-%%PORTDOCS%%%%DOCSDIR%%/tuning/sample.output/tune.normal
-%%PORTDOCS%%%%DOCSDIR%%/tuning/sample.output/tune.verbose
 %%PORTDOCS%%%%DOCSDIR%%/xml/bogofilter.xml
 %%PORTDOCS%%%%DOCSDIR%%/xml/bogolexer.xml
 %%PORTDOCS%%%%DOCSDIR%%/xml/bogoupgrade.xml
+%%PORTDOCS%%%%DOCSDIR%%/xml/bogotune.xml
 %%PORTDOCS%%%%DOCSDIR%%/xml/bogoutil.xml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/xml
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tuning/sample.output
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/tuning
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/programmer
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
