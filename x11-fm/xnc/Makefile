@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xnc
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.2
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://www.xnc.dubna.su/src-5/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
