@@ -8,7 +8,7 @@
 PORTNAME=	wmrecord
 PORTVERSION=	1.0.5
 CATEGORIES=	audio windowmaker
-MASTER_SITES=	http://www.bruhaha.co.uk/
+MASTER_SITES=	http://linuxberg.matrix.com.br/files/x11/dock/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose audio recording utility for the WindowMaker dock
