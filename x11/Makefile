@@ -41,6 +41,7 @@
     SUBDIR += gnomecore
     SUBDIR += gnomedesktop
     SUBDIR += gnomelibs
+    SUBDIR += gnomepanel
     SUBDIR += gnomeres_applet
     SUBDIR += gswitchit_applet
     SUBDIR += gtk-theme-switch
