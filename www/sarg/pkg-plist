@@ -1,0 +1,4 @@
+bin/sarg
+@unexec if cmp -s %D/etc/sarg/sarg.conf.default %D/etc/sarg/sarg.conf; then rm -f %D/etc/sarg.conf; fi
+etc/sarg/sarg.conf.default
+@exec if [ ! -f %D/etc/sarg/sarg.conf ]; then cp %D/etc/sarg/%f %D/etc/sarg/sarg.conf; fi
