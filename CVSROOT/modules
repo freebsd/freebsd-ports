@@ -7604,6 +7604,7 @@ tripwire12	ports/security/tripwire12
 trn		ports/news/trn
 trn4		ports/news/trn4
 trojka		ports/games/trojka
+trommler	ports/audio/trommler
 trove4j		ports/java/trove4j
 trueprint	ports/print/trueprint
 truereality	ports/emulators/truereality
