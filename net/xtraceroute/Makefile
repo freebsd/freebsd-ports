@@ -13,8 +13,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DATAFILES}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/host:${PORTSDIR}/net/host \
-		msgfmt-old:${PORTSDIR}/devel/gettext-old
+BUILD_DEPENDS=	${LOCALBASE}/bin/host:${PORTSDIR}/net/host
 LIB_DEPENDS=	gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 RUN_DEPENDS=	${LOCALBASE}/bin/host:${PORTSDIR}/net/host
 
@@ -27,9 +26,8 @@ CONFIGURE_ARGS=	--with-GL-prefix=${X11BASE}/lib \
 		--with-lib-GL \
 		--with-host=${LOCALBASE}/bin/host
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-		MSGFMT="${LOCALBASE}/bin/msgfmt-old" \
-		XGETTEXT="${LOCALBASE}/bin/xgettext-old"
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+MAKE_ENV=	OLD_PO_FILE_INPUT=1
 
 DATAFILES=	ndg_files.tar.gz
 
