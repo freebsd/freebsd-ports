@@ -1,20 +1,24 @@
---- configure.orig	Mon May 31 15:12:04 2004
-+++ configure	Sat Jun 12 17:59:33 2004
-@@ -1995,7 +1995,7 @@
- 		with_sigaltstack=no
- 
+--- configure.orig	Fri Jun 25 19:28:48 2004
++++ configure	Fri Jun 25 19:35:06 2004
+@@ -2020,8 +2020,8 @@
  		;;
--	*-*-*netbsd*)
-+	*-*-*netbsd*|*-*-*freebsd4*)
+ 	*-*-*freebsd*|*-*-*openbsd*)
  		platform_win32=no
- 		CPPFLAGS="$CPPFLAGS -D_REENTRANT"
- 		libmono_cflags="-D_REENTRANT"
-@@ -13893,7 +13893,7 @@
+-		CPPFLAGS="$CPPFLAGS -D_THREAD_SAFE -DGC_FREEBSD_THREADS"
+-		libmono_cflags="-D_THREAD_SAFE"
++		CPPFLAGS="$CPPFLAGS -D_THREAD_SAFE -D_REENTRANT -DGC_FREEBSD_THREADS"
++		libmono_cflags="-D_THREAD_SAFE -D_REENTRANT"
+ 		LDFLAGS="$LDFLAGS -pthread"
+ 		libmono_ldflags="-pthread"
+ 		need_link_unlink=yes
+@@ -14003,8 +14003,8 @@
  ACCESS_UNALIGNED="yes"
  
  JIT_SUPPORTED=no
 -LIBC="libc.so.6"
+-INTL="libc.so.6"
 +LIBC="libc.so"
++INTL="libc.so"
  
  jit_wanted=false
  case "$host" in
