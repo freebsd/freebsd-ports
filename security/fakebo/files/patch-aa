@@ -1,0 +1,11 @@
+--- misc.c.orig	Thu Jun  6 18:11:32 2002
++++ misc.c	Thu Jun  6 18:11:41 2002
+@@ -107,7 +107,7 @@
+ 
+ #ifdef HAVE_OPENLOG
+ 		openlog("FakeBO", LOG_CONS, LOG_USER);
+-		syslog(LOG_WARNING, buf);
++		syslog(LOG_WARNING, "%s", buf);
+ 		closelog();
+ #else
+ #warning "Can't find usable syslog, disabled!"
