@@ -19,7 +19,7 @@ share/doc/tabe/TODO
 share/doc/tabe/ZuYinCode.txt
 share/doc/tabe/et26.txt
 share/doc/tabe/libtabe.sgml
-share/tabe/libtabe-0.1-4
+share/tabe/libtabe-0.1-5
 share/tabe/tsiyin/tsi.db
 share/tabe/tsiyin/yin.db
 @dirrm include/tabe
