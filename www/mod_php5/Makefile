@@ -3,14 +3,14 @@
 # Date created:		So  21 Jun 1998 16:09:39 CEST
 # Whom:			Stefan Herrmann <stefan@asterix.webaffairs.net>
 #
-# $Id: Makefile,v 1.56 1998/09/30 18:16:06 andreas Exp $
+# $Id: Makefile,v 1.57 1998/11/06 11:02:21 obrien Exp $
 #
 
 DISTNAME=	apache_${VERSION_APACHE}
 PKGNAME=	apache-php${VERSION_PHP3}-${VERSION_APACHE}
 CATEGORIES=	www
 MASTER_SITES=	ftp://www.apache.org/apache/dist/ \
-		http://www.php.net/distributions/
+		ftp://www.php.net/pub/distributions/
 DISTFILES=	apache_${VERSION_APACHE}.tar.gz php-${VERSION_PHP3}.tar.gz
 
 MAINTAINER=	Dirk Froemberg <ibex@physik.TU-Berlin.DE>
