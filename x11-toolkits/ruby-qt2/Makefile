@@ -7,6 +7,7 @@
 
 PORTNAME=	qt2
 PORTVERSION=	${RUBY_QT2_PORTVERSION}
+PORTREVISION=	${RUBY_QT2_PORTREVISION}
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	${RUBY_QT2_MASTER_SITES}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -18,12 +19,8 @@ MAINTAINER=	knu@FreeBSD.org
 USE_QT_VER=	2
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
-RUBY_WITH_PTHREAD=	yes
 
 USE_GMAKE=	yes
-
-.include <bsd.port.pre.mk>
-.include "${.CURDIR}/Makefile.common"
 
 WRKSRC=		${RUBY_QT2_WRKSRC}
 CONFIGURE_ARGS=	${RUBY_QT2_CONFIGURE_ARGS}
@@ -46,4 +43,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README.jp ${RUBY_DOCDIR}/${PORTNAME}/ja/
 .endif
 
-.include <bsd.port.post.mk>
+.include "${.CURDIR}/Makefile.common"
+.include <bsd.port.mk>
