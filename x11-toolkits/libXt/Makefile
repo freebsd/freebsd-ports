@@ -7,7 +7,7 @@
 
 PORTNAME=	libXt
 PORTVERSION=	0.1.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://pdx.freedesktop.org/~xlibs/release/
 
