@@ -1,0 +1,33 @@
+--- Makefile.orig	Mon Apr  9 10:12:24 2001
++++ Makefile	Fri Apr 20 01:04:09 2001
+@@ -9,7 +9,6 @@
+ # Security, Inc. MD5 Message-Digest Algorithm
+ #
+ 
+-CC = gcc
+ 
+ # Please set RESUME_FILE and choose a secure place for the resume file 
+ # before using mdcrack as root.
+@@ -45,12 +44,10 @@
+ BLOCK=-DBLOCKSIZE=50
+ 
+ 
+-CFLAGS = -O3 -fforce-addr -funroll-loops 
+ 
+ # static linkage will suppress a little overhead due to obj search/mountage.
+ # useless for big sessions.
+ 
+-LDFLAGS = -static
+ 
+ mdcrack: md5c.o mdcrack.o stats.o errors.o
+ 	$(CC) $(LDFLAGS) -o mdcrack md5c.o mdcrack.o stats.o errors.o
+@@ -80,7 +77,7 @@
+ 	rm -f *.o mdcrack 
+ 
+ install:
+-	@echo -e "\nInstalling mdcrack in /usr/sbin/mdcrack\n"
+-	cp ./mdcrack /usr/sbin/mdcrack
++	@echo -e "\nInstalling mdcrack in ${PREFIX}/bin/mdcrack\n"
++	cp ./mdcrack ${PREFIX}/bin/mdcrack
+ 	@echo -e "\nok.\n"
+ 

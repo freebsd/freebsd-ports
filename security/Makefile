@@ -67,6 +67,7 @@
     SUBDIR += lsh
     SUBDIR += lxnb
     SUBDIR += mcrypt
+    SUBDIR += mdcrack
     SUBDIR += mhash
     SUBDIR += mindterm-binary
     SUBDIR += nbaudit
