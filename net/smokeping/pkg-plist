@@ -69,6 +69,7 @@ smokeping/lib/probes/EchoPingHttp.pm
 smokeping/lib/probes/EchoPingHttps.pm
 smokeping/lib/probes/EchoPingIcp.pm
 smokeping/lib/probes/EchoPingSmtp.pm
+smokeping/lib/probes/DNS.pm
 smokeping/lib/probes/basefork.pm
 smokeping/lib/probes/basevars.pm
 smokeping/lib/ISG/ParseConfig.pm
