@@ -23,6 +23,7 @@ include/bind/isc/misc.h
 include/bind/isc/tree.h
 include/bind/netdb.h
 include/bind/resolv.h
+include/bind/res_update.h
 include/bind/sys/bitypes.h
 lib/libbind.a
 lib/libbind_r.a
