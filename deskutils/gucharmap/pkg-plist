@@ -77,6 +77,7 @@ share/locale/en_CA/LC_MESSAGES/gucharmap.mo
 share/locale/en_GB/LC_MESSAGES/gucharmap.mo
 share/locale/eo/LC_MESSAGES/gucharmap.mo
 share/locale/es/LC_MESSAGES/gucharmap.mo
+share/locale/et/LC_MESSAGES/gucharmap.mo
 share/locale/fa/LC_MESSAGES/gucharmap.mo
 share/locale/fi/LC_MESSAGES/gucharmap.mo
 share/locale/fr/LC_MESSAGES/gucharmap.mo
@@ -97,6 +98,7 @@ share/locale/ml/LC_MESSAGES/gucharmap.mo
 share/locale/mn/LC_MESSAGES/gucharmap.mo
 share/locale/ms/LC_MESSAGES/gucharmap.mo
 share/locale/nb/LC_MESSAGES/gucharmap.mo
+share/locale/ne/LC_MESSAGES/gucharmap.mo
 share/locale/nl/LC_MESSAGES/gucharmap.mo
 share/locale/nn/LC_MESSAGES/gucharmap.mo
 share/locale/no/LC_MESSAGES/gucharmap.mo
@@ -104,6 +106,7 @@ share/locale/pa/LC_MESSAGES/gucharmap.mo
 share/locale/pl/LC_MESSAGES/gucharmap.mo
 share/locale/pt/LC_MESSAGES/gucharmap.mo
 share/locale/pt_BR/LC_MESSAGES/gucharmap.mo
+share/locale/ro/LC_MESSAGES/gucharmap.mo
 share/locale/ru/LC_MESSAGES/gucharmap.mo
 share/locale/sk/LC_MESSAGES/gucharmap.mo
 share/locale/sq/LC_MESSAGES/gucharmap.mo
