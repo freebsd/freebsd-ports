@@ -3,7 +3,7 @@ This is the netscape web-surfboard.  Please read the file
 
 Note: If Java fails to start, set your LANG environment variable to C
 
-Note: Java not work in 8bpp mode, switch to 16bpp mode if you want Java
+Note: Java does not work in 8bpp mode; run `X -bpp 16' if you need it
 
 Note: If Java applets fail to display.  Type this as root:
 		cd /usr/X11R6/lib/X11/fonts/misc
