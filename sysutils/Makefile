@@ -295,6 +295,7 @@
     SUBDIR += portupgrade
     SUBDIR += prips
     SUBDIR += procmap
+    SUBDIR += progsreiserfs
     SUBDIR += prune
     SUBDIR += pslist
     SUBDIR += psmisc

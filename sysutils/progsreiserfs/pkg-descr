@@ -1,0 +1,11 @@
+This is a library for reiserfs filesystem access and manipulation.
+The primary goal is to develop the nice, full functionality library 
+wich might be linked against any projects which needed reiserfs filesystem 
+access. There are GNU Parted, GNU GRUB, Yaboot, Partimage, EVMS, etc.
+
+progsreiserfs supports versions 3.5, 3.6 with standard and relocated journal.
+
+WWW: http://reiserfs.osdn.org.ua
+
+- Florent Thoumie
+flz@xbsd.org
