@@ -7,6 +7,7 @@
 
 PORTNAME=	sdl
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/ \
 		http://www.devolution.com/~slouken/SDL/release/
@@ -26,8 +27,7 @@ CONFIGURE_ENV=	NASM="${LOCALBASE}/bin/nasm" \
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-video-aalib \
 		--disable-arts \
-		--disable-nas \
-		--disable-joystick
+		--disable-nas
 
 CFLAGS+=	${PTHREAD_CFLAGS}
 
