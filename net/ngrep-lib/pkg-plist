@@ -1,3 +1,3 @@
-lib/libngrep.so.1
-lib/libngrep.so
 include/ngrep-lib.h
+lib/libngrep.so
+lib/libngrep.so.1
