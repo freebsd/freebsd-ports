@@ -457,6 +457,7 @@
     SUBDIR += sdcc
     SUBDIR += sdl10
     SUBDIR += sdl12
+    SUBDIR += sdlmm
     SUBDIR += sdts++
     SUBDIR += sfio
     SUBDIR += sh-rtems-binutils
