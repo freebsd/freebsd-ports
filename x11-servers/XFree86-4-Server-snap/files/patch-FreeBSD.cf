@@ -1,5 +1,5 @@
---- config/cf/FreeBSD.cf.orig	Wed Sep 10 04:00:01 2003
-+++ config/cf/FreeBSD.cf	Tue Sep 16 16:54:44 2003
+--- config/cf/FreeBSD.cf.orig	Wed Sep 10 11:00:01 2003
++++ config/cf/FreeBSD.cf	Thu Sep 18 01:04:05 2003
 @@ -167,11 +167,11 @@
   *    ld: warning: libXThrStub.so.6, needed by libX11.so, not found
   */
@@ -16,17 +16,22 @@
  #endif
  
  #define CppCmd			/usr/bin/cpp
-@@ -182,7 +182,8 @@
+@@ -182,7 +182,13 @@
  #if defined(UseInstalled)
  #define DefaultCCOptions	/**/
  #else
 -#define DefaultCCOptions	-ansi -pedantic -Dasm=__asm GccWarningOptions
-+#define DefaultCCOptions	-ansi -pedantic -Wno-system-headers -Dasm=__asm \
++#if defined(HasGcc3) && HasGcc3
++#define NoSystemWarn		-Wno-system-headers
++#else
++#define NoSystemWarn
++#endif
++#define DefaultCCOptions	-ansi -pedantic NoSystemWarn -Dasm=__asm \
 +	GccWarningOptions
  #endif
  #endif
  #ifndef ExtraLibraries
-@@ -233,20 +234,24 @@
+@@ -233,20 +239,24 @@
  #endif
  
  /*
@@ -53,7 +58,7 @@
  	(OSMajorVersion >= 5 || (OSMajorVersion == 4 && OSMinorVersion >= 2))
  # define HasX86Support          YES
  # define HasMMXSupport		YES
-@@ -349,10 +354,8 @@
+@@ -349,10 +359,8 @@
  #ifdef i386Architecture
  #define ServerExtraDefines GccGasOption XFree86ServerDefines
  #endif
@@ -66,7 +71,7 @@
  #define ServerExtraDefines GccGasOption XFree86ServerDefines -D_XSERVER64
  #endif
  
-@@ -376,18 +379,8 @@
+@@ -376,18 +384,8 @@
  #define XawI18nDefines		-DUSE_XWCHAR_STRING -DUSE_XMBTOWC
  #endif
  
