@@ -9,7 +9,7 @@ PORTNAME=	spread
 PORTVERSION=	3.17.0
 PORTREVISION=	1
 CATEGORIES=	net perl5
-MASTER_SITES=	# fetch manually
+MASTER_SITES=	http://www.roughtrade.net/distfiles/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	joshua@roughtrade.net
@@ -29,15 +29,6 @@ PKGMESSAGE=	${WRKSRC}/license.txt
 MAKE_ARGS+=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} PTHREAD_LIBS=${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
-
-.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
-IGNORE=         May not be automatically fetched due to downloading \
-		restrictions. You MUST manually fetch the version \
-		after submitting the form at: \
-		http://www.cnds.jhu.edu/download/download_spread.cgi \
-		Once it has been downloaded, move it to ${DISTDIR} \
-		and restart this build.
-.endif
 
 post-build:
 	(cd ${WRKSRC}/perl/Spread; ${PERL} Makefile.PL; ${MAKE})
