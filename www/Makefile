@@ -131,6 +131,7 @@
     SUBDIR += oops
     SUBDIR += p5-Apache
     SUBDIR += p5-Apache-ASP
+    SUBDIR += p5-Apache-AuthCookie
     SUBDIR += p5-Apache-DBI
     SUBDIR += p5-Apache-Peek
     SUBDIR += p5-Apache-Radius
