@@ -3493,6 +3493,7 @@ kwatch		ports/misc/kwatch
 kwebget		ports/ftp/kwebget
 kwebwatch	ports/www/kwebwatch
 kwix		ports/x11-wm/kwix
+kxicq-devel		ports/net/kxicq-devel
 kxicq2		ports/net/kxicq2
 kxl		ports/games/kxl
 kxmleditor	ports/editors/kxmleditor
