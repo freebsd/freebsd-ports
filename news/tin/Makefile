@@ -6,10 +6,13 @@
 #
 
 PORTNAME=	tin
-PORTVERSION=    1.5.16
-PORTREVISION=   2
+PORTVERSION=    1.5.17
+PORTREVISION=   0
 CATEGORIES+=	news ipv6
-MASTER_SITES=   ftp://ftp.tin.org/pub/news/clients/tin/v1.5/snapshots/
+MASTER_SITES=	http://mirrors.rcn.net/pub/news/tin/v1.5/snapshots/ \
+		ftp://mirrors.rcn.net/pub/news/tin/v1.5/snapshots/ \
+		ftp://ftp.tin.org/pub/news/clients/tin/v1.5/snapshots/ \
+		ftp://ftp.sunet.se/pub/news/readers/tin/v1.5/snapshots/
 
 MAINTAINER?=    ache@FreeBSD.org
 
