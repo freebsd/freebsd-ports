@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	netbeans
-PORTVERSION=	3.5
+PORTVERSION=	3.5.1
 CATEGORIES=	java devel
-MASTER_SITES=	# http://www.netbeans.org/download/release35/night/build200306022350/
-DISTNAME=	NetBeansIDE-release35
+MASTER_SITES=	# http://www.netbeans.org/download/release351/night/build200307252351/
+
+DISTNAME=	NetBeansIDE-release351
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A full-featured integrated environment for Java
