@@ -3,25 +3,25 @@
 # Date created:         24 Sep 1994
 # Whom:                 adam
 #
-# $Id: Makefile,v 1.9 1997/04/01 23:49:05 fenner Exp $
+# $Id: Makefile,v 1.10 1998/10/13 23:46:16 jseger Exp $
 #
 
 DISTNAME=       pmf-1.13.1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/lpmud/clients/pmf/
 
-WRKSRC=		${WRKDIR}/pmfdir/src
-
+MAINTAINER=	ports@freebsd.org
 
 BROKEN_ELF=	cc: c_packages/libc_packs.a: No such file or directory
+WRKSRC=		${WRKDIR}/pmfdir/src
 
 pre-install:
-	@${MKDIR} /usr/local/lib/pmf
-	@find ${WRKSRC}/../system_dir -name '*.orig' -exec rm {} \;
+	@${MKDIR} ${PREFIX}/lib/pmf
+	@find ${WRKSRC}/../system_dir -name '*.orig' -exec ${RM} {} \;
 	@-mv ${WRKSRC}/../doc/pmf.doc ${WRKSRC}/../system_dir
 	@tar -C ${WRKSRC}/../system_dir -cf - . \
-		| tar -C /usr/local/lib/pmf -xf -
-	@chown -R bin.bin /usr/local/lib/pmf
-	@chmod -R a-w /usr/local/lib/pmf
+		| tar -C ${PREFIX}/lib/pmf -xf -
+	@chown -R bin.bin ${PREFIX}/lib/pmf
+	@chmod -R a-w ${PREFIX}/lib/pmf
 
 .include <bsd.port.mk>
