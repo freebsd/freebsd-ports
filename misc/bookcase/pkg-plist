@@ -33,16 +33,14 @@ share/apps/bookcase/record-logo.png
 share/apps/bookcase/shadowAlpha.png
 share/apps/bookcase/vhs-logo.png
 share/doc/HTML/en/bookcase/bibtex-options.png
-share/doc/HTML/en/bookcase/collections.docbook
 share/doc/HTML/en/bookcase/common
 share/doc/HTML/en/bookcase/configuration.docbook
-share/doc/HTML/en/bookcase/customization.docbook
+share/doc/HTML/en/bookcase/details.docbook
 share/doc/HTML/en/bookcase/entry-editor1.png
 share/doc/HTML/en/bookcase/entry-editor2.png
 share/doc/HTML/en/bookcase/entry-editor3.png
 share/doc/HTML/en/bookcase/entry-editor4.png
 share/doc/HTML/en/bookcase/faqs.docbook
-share/doc/HTML/en/bookcase/fields.docbook
 share/doc/HTML/en/bookcase/fieldsdialog.png
 share/doc/HTML/en/bookcase/fundamentals.docbook
 share/doc/HTML/en/bookcase/general-options.png
@@ -65,7 +63,6 @@ share/locale/fi/LC_MESSAGES/bookcase.mo
 share/locale/fr/LC_MESSAGES/bookcase.mo
 share/locale/hu/LC_MESSAGES/bookcase.mo
 share/locale/it/LC_MESSAGES/bookcase.mo
-share/locale/ja/LC_MESSAGES/bookcase.mo
 share/locale/nb/LC_MESSAGES/bookcase.mo
 share/locale/nl/LC_MESSAGES/bookcase.mo
 share/locale/ro/LC_MESSAGES/bookcase.mo
