@@ -7126,6 +7126,7 @@ p5-Path-Class	ports/devel/p5-Path-Class
 p5-Penguin	ports/devel/p5-Penguin
 p5-Penguin-Easy	ports/devel/p5-Penguin-Easy
 p5-PerlIO-via-dynamic	ports/devel/p5-PerlIO-via-dynamic
+p5-PerlIO-via-symlink	ports/devel/p5-PerlIO-via-symlink
 p5-PerlMenu	ports/devel/p5-PerlMenu
 p5-PerlPoint-Converters	ports/textproc/p5-PerlPoint-Converters
 p5-PerlPoint-Package	ports/textproc/p5-PerlPoint-Package
@@ -7435,6 +7436,7 @@ p5-WWW-Search	ports/www/p5-WWW-Search
 p5-WWW-Search-AltaVista	ports/www/p5-WWW-Search-AltaVista
 p5-WWW-Search-Google	ports/www/p5-WWW-Search-Google
 p5-WWW-Shorten	ports/www/p5-WWW-Shorten
+p5-WWW-Wikipedia	ports/www/p5-WWW-Wikipedia
 p5-Want		ports/devel/p5-Want
 p5-WordNet-QueryData	ports/textproc/p5-WordNet-QueryData
 p5-WordNet-Similarity	ports/textproc/p5-WordNet-Similarity
