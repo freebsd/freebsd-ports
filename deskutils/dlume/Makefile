@@ -15,7 +15,7 @@ COMMENT=	GTK2 address book
 
 USE_X_PREFIX=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack gnomeprefix gtk20
+USE_GNOME=	gnomehack gnomeprefix gtk20 libxml2
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
