@@ -3,12 +3,6 @@ bin/dc_gui
 %%PORTDOCS%%share/doc/dctc-gui/ChangeLog
 %%PORTDOCS%%share/doc/dctc-gui/README
 %%PORTDOCS%%share/doc/dctc-gui/TODO
-share/gnome/help/dc_gui/C/index.html
-share/gnome/help/dc_gui/C/topic.dat
-share/gnome/help/dc_gui/es/index.html
-share/gnome/help/dc_gui/es/topic.dat
-share/gnome/help/dc_gui/nl/index.html
-share/gnome/help/dc_gui/nl/topic.dat
 share/locale/de/LC_MESSAGES/dc_gui.mo
 share/locale/fr/LC_MESSAGES/dc_gui.mo
 share/locale/nl/LC_MESSAGES/dc_gui.mo
