@@ -1,5 +1,5 @@
 --- configure.orig	Thu Sep 16 00:21:02 1999
-+++ configure	Wed Sep 22 15:11:56 1999
++++ configure	Fri Sep 24 13:09:48 1999
 @@ -4970,7 +4970,7 @@
    echo $ac_n "(cached) $ac_c" 1>&6
  else
@@ -18,12 +18,12 @@
  
  else
    echo "$ac_t""no" 1>&6
-@@ -5409,7 +5409,7 @@
-       then
-         CEFLAGS="$CEFLAGS -DKERBEROS_V4 -I$dir/include"
-         LDEFLAGS="$LDEFLAGS -L$dir/lib"
--        LIBS="$LIBS -lkrb -ldes"
-+        LIBS="$LIBS -lkrb -ldes -lcom_err"
-         break
-       fi
-     done
+@@ -5368,7 +5368,7 @@
+ then
+   echo "Configuring kerberosIV for `uname`"
+   CEFLAGS="$CEFLAGS -DKERBEROS_V4 -I/usr/include/kerberosIV"
+-  LIBS="$LIBS -lkrb -ldes"
++  LIBS="$LIBS -lkrb -ldes -lcom_err"
+ elif test -n "$with_kerberos" -a -n "$with_kerberos5"
+ then
+     CEFLAGS="$CEFLAGS -DKERBEROS_V4 -I$with_kerberos/include"
