@@ -126,6 +126,7 @@ share/gnome/pixmaps/login-photo.png
 share/gnome/pixmaps/nobody.png
 share/gnome/pixmaps/nohost.png
 share/gnome/xsessions/gnome.desktop
+share/locale/af/LC_MESSAGES/gdm-2.4.mo
 share/locale/am/LC_MESSAGES/gdm-2.4.mo
 share/locale/ar/LC_MESSAGES/gdm-2.4.mo
 share/locale/az/LC_MESSAGES/gdm-2.4.mo
@@ -139,6 +140,7 @@ share/locale/da/LC_MESSAGES/gdm-2.4.mo
 share/locale/de/LC_MESSAGES/gdm-2.4.mo
 share/locale/el/LC_MESSAGES/gdm-2.4.mo
 share/locale/en_CA/LC_MESSAGES/gdm-2.4.mo
+share/locale/en_GB/LC_MESSAGES/gdm-2.4.mo
 share/locale/es/LC_MESSAGES/gdm-2.4.mo
 share/locale/et/LC_MESSAGES/gdm-2.4.mo
 share/locale/eu/LC_MESSAGES/gdm-2.4.mo
@@ -147,6 +149,7 @@ share/locale/fi/LC_MESSAGES/gdm-2.4.mo
 share/locale/fr/LC_MESSAGES/gdm-2.4.mo
 share/locale/ga/LC_MESSAGES/gdm-2.4.mo
 share/locale/gl/LC_MESSAGES/gdm-2.4.mo
+share/locale/gu/LC_MESSAGES/gdm-2.4.mo
 share/locale/he/LC_MESSAGES/gdm-2.4.mo
 share/locale/hi/LC_MESSAGES/gdm-2.4.mo
 share/locale/hr/LC_MESSAGES/gdm-2.4.mo
@@ -161,10 +164,12 @@ share/locale/lv/LC_MESSAGES/gdm-2.4.mo
 share/locale/mk/LC_MESSAGES/gdm-2.4.mo
 share/locale/ml/LC_MESSAGES/gdm-2.4.mo
 share/locale/mn/LC_MESSAGES/gdm-2.4.mo
+share/locale/mr/LC_MESSAGES/gdm-2.4.mo
 share/locale/ms/LC_MESSAGES/gdm-2.4.mo
 share/locale/nl/LC_MESSAGES/gdm-2.4.mo
 share/locale/nn/LC_MESSAGES/gdm-2.4.mo
 share/locale/no/LC_MESSAGES/gdm-2.4.mo
+share/locale/pa/LC_MESSAGES/gdm-2.4.mo
 share/locale/pl/LC_MESSAGES/gdm-2.4.mo
 share/locale/pt/LC_MESSAGES/gdm-2.4.mo
 share/locale/pt_BR/LC_MESSAGES/gdm-2.4.mo
