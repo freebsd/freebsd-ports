@@ -1,0 +1,11 @@
+--- Makefile.orig	Sat Feb 19 22:02:36 2000
++++ Makefile	Sat Feb 19 22:02:45 2000
+@@ -10,7 +10,7 @@
+ 	rm -f ${PROG} ${OBJ} ${SRC}~ 
+ 
+ ${PROG}: ${SRC}
+-	gcc -O6 -fno-strength-reduce -m486 -o ${PROG} ${SRC}
++	gcc -O6 -fno-strength-reduce -o ${PROG} ${SRC}
+ 
+ install: ${PROG}
+ 	install -s -m 755 ${PROG} ${BINDIR}
