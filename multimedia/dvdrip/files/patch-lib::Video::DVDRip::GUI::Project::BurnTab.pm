@@ -1,8 +1,8 @@
---- lib/Video/DVDRip/GUI/Project/BurnTab.pm.orig	Fri Jun 20 03:14:33 2003
-+++ lib/Video/DVDRip/GUI/Project/BurnTab.pm	Fri Jun 20 03:15:21 2003
-@@ -545,18 +545,6 @@
- 
- 	$widgets->{image_button} = $button;
+--- lib/Video/DVDRip/GUI/Project/BurnTab.pm.orig	Sun Feb 22 12:33:01 2004
++++ lib/Video/DVDRip/GUI/Project/BurnTab.pm	Sun Feb 22 12:33:22 2004
+@@ -550,18 +550,6 @@
+ 	$button_box->show;
+ 	$frame_vbox->pack_start ($button_box, 0, 1, 0);
  
 -	# Eject Button
 -	$button = Gtk::Button->new_with_label (" Open burner tray ");
@@ -16,6 +16,6 @@
 -	$button->signal_connect ("clicked", sub { $self->insert_media } );
 -	$button_box->pack_start ($button, 0, 1, 0);
 -
- 	return $frame;
- }
- 
+ 	# Blank CD-RW button
+ 	$button = Gtk::Button->new_with_label (" Blank CD-RW ");
+ 	$button->show;

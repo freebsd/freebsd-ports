@@ -34,15 +34,18 @@
  		presets => [
  			'mplayer -aid %(%a+128) -',
  			'xine stdin://mpeg2 -g -pq -a %a',
-@@ -149,8 +149,8 @@
+@@ -147,11 +147,10 @@
+ 	default_video_codec => {
+ 		label => "Default video codec",
  		type  => 'string',
- 		value => 'divx4',
+-		value => 'divx4',
++		value => 'xvid2',
  		presets => [
--			"SVCD","VCD","divx4","divx5",
--			"xvid","xvidcvs","ffmpeg","fame",
-+			"SVCD","VCD",
-+			"xvid","ffmpeg","fame",
- 			"af6"
+ 			"SVCD","VCD","XSVCD","XVCD","CVD",
+-			"divx4","divx5",
+-			"xvid","xvidcvs","xvid2","xvid3","xvid4",
++			"xvid2",
+ 			"ffmpeg","fame","af6"
  		],
  	},
 @@ -181,7 +176,7 @@
