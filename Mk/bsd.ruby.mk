@@ -62,6 +62,8 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # RUBY_WITH_SUFFIX	- Always ${RUBY_WITHOUT_SUFFIX}${_RUBY_SUFFIX}.
 # RUBY_NAME		- Ruby's name with trailing suffix.
 #
+# RUBY_MODNAME		- Set to the module name (default: ${PORTNAME}).
+#
 # RUBY_RD2		- Full path of rd2 executable.
 # RUBY_RDOC		- Full path of rdoc executable.
 #
@@ -84,6 +86,8 @@ Ruby_Include_MAINTAINER=	knu@FreeBSD.org
 # RUBY_SITEARCHLIBDIR	- Installation path for site architecture dependent libraries.
 # RUBY_DOCDIR		- Installation path for documents.
 # RUBY_EXAMPLESDIR	- Installation path for examples.
+# RUBY_MODDOCDIR	- Installation path for the module's documents.
+# RUBY_MODEXAMPLESDIR	- Installation path for the module's examples.
 # RUBY_ELISPDIR		- Installation path for emacs lisp files.
 #
 
@@ -181,6 +185,8 @@ RUBY_R=			# none
 RUBY_CONFIGURE_ARGS+=	--program-suffix="${RUBY_SUFFIX}"
 .endif
 
+RUBY_MODNAME?=		${PORTNAME}
+
 # Commands
 RUBY_RD2?=		${LOCALBASE}/bin/rd2
 RUBY_RDOC?=		${LOCALBASE}/bin/rdoc
@@ -207,6 +213,8 @@ RUBY_SITELIBDIR?=	${_RUBY_SITEDIR}/${RUBY_VER}
 RUBY_SITEARCHLIBDIR?=	${RUBY_SITELIBDIR}/${RUBY_ARCH}
 RUBY_DOCDIR?=		${LOCALBASE}/share/doc/${RUBY_NAME}
 RUBY_EXAMPLESDIR?=	${LOCALBASE}/share/examples/${RUBY_NAME}
+RUBY_MODDOCDIR?=	${RUBY_DOCDIR}/${RUBY_MODNAME}
+RUBY_MODEXAMPLESDIR?=	${RUBY_EXAMPLESDIR}/${RUBY_MODNAME}
 RUBY_ELISPDIR?=		${_RUBY_SYSLIBDIR}/ruby/elisp
 
 # PLIST
@@ -216,6 +224,8 @@ PLIST_RUBY_DIRS=	RUBY_LIBDIR="${RUBY_LIBDIR}" \
 			RUBY_SITEARCHLIBDIR="${RUBY_SITEARCHLIBDIR}" \
 			RUBY_DOCDIR="${RUBY_DOCDIR}" \
 			RUBY_EXAMPLESDIR="${RUBY_EXAMPLESDIR}" \
+			RUBY_MODDOCDIR="${RUBY_MODDOCDIR}" \
+			RUBY_MODEXAMPLESDIR="${RUBY_MODEXAMPLESDIR}" \
 			RUBY_ELISPDIR="${RUBY_ELISPDIR}"
 
 PLIST_SUB+=		RUBY_VERSION="${RUBY_VERSION}" \
