@@ -1,12 +1,12 @@
 # New ports collection makefile for:	gnofin
-# Version required:			0.5.10
+# Version required:			0.7.2
 # Date created:				Sun Jul 18 1999
 # Whom:					domi@saargate.de
 #
 # $FreeBSD$
 #
 
-DISTNAME=	gnofin-0.7.1
+DISTNAME=	gnofin-0.7.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://download.sourceforge.net/gnofin/
 
