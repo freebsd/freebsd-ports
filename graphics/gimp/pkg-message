@@ -1,0 +1,7 @@
+*********************************************************
+*							*
+*	If you want to use autoconf with gimp,		*
+*	Please copy gimp.m4 to /usr/local/share/aclocal	*
+*	by yourself, thanks.				*
+*							*
+*********************************************************
