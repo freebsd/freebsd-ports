@@ -1,0 +1,20 @@
+The Python Gist Scientific Graphics Package, version 1.5, written by
+Lee Busby and Zane Motteler of Lawrence Livermore National Laboratory,
+is a set of Python modules for production of general scientific graphics.
+We abbreviate the name to PyGist here and elsewhere.
+
+Gist is a scientific graphics library written by David H. Munro of Lawrence
+Livermore National Laboratory. It features support for three common
+graphics output devices: X-Windows, (Color) PostScript, and ANSI/ISO
+Standard Computer Graphics Metafiles (CGM). The library is small
+(written directly to Xlib), portable, efficient, and full-featured. It
+produces x-vs-y plots with good tick marks and tick labels,
+2-D quadrilateral mesh plots with contours, vector fields, or pseudocolor
+maps on such meshes, and a selection of 3-D plots.
+
+The Python Gist module utilizes the ``Numerical'' package due to
+J. Hugunin and others.  It is therefore fast and able to handle large
+datasets. The Gist module includes an X-windows event dispatcher which
+can be dynamically added to the Python interpreter. This makes fast
+mouse-controlled zoom, pan, and other graphic operations available to
+the researcher while maintaining the usual Python command-line interface.
