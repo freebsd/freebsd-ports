@@ -20,7 +20,8 @@ LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_BISON=	yes
-USE_REINPLACE=	yes
+USE_GNOMENG=	yes
+USE_GNOME=	gnomehack
 INSTALLS_SHLIB=	yes
 USE_LIBTOOL=	yes
 USE_PERL5=	yes
@@ -31,10 +32,5 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 MAN1=	bonobo-activation-server.1
-
-pre-patch:
-	@find ${WRKSRC} -name Makefile.in | xargs ${REINPLACE_CMD} -e \
-		's|[(]libdir[)]/pkgconfig|(prefix)/libdata/pkgconfig|g ; \
-		 s|[(]libdir[)]/bonobo/servers|(prefix)/libdata/bonobo/servers|g'
 
 .include <bsd.port.mk>
