@@ -1,0 +1,8 @@
+--- xshodou~	Mon Jan 11 15:08:25 1999
++++ xshodou	Mon Jan 11 15:08:33 1999
+@@ -1,4 +1,4 @@
+-#!/usr/local/bin/wish
++#!/usr/local/bin/wish8.0
+ #
+ # XShodou version 1.11 for X based on Tcl/Tk.
+ # Programed by Sakai Hiroaki. (E-Mail:sakai@miya.ee.kagu.sut.ac.jp)
