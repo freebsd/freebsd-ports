@@ -7,6 +7,7 @@
 
 PORTNAME=	jabberd
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.jabberstudio.org/files/jabberd2/
 DISTNAME=	${PORTNAME}-2.0s3
@@ -15,7 +16,7 @@ DIST_SUBDIR=	jabber
 MAINTAINER=	kirk@strauser.com
 COMMENT=	Online presence and instant messaging server
 
-LIB_DEPENDS=	idn.15:${PORTSDIR}/devel/libidn
+LIB_DEPENDS=	idn.16:${PORTSDIR}/devel/libidn
 
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes

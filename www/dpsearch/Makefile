@@ -85,7 +85,7 @@ CONFIGURE_ARGS+= --enable-chasen
 .endif
 
 .if defined(WITH_DPSEARCH_IDN)
-LIB_DEPEND+=     idn.0:${PORTSDIR}/devel/libidn
+LIB_DEPEND+=     idn.16:${PORTSDIR}/devel/libidn
 CONFIGURE_ARGS+= --enable-idn
 .endif
 
