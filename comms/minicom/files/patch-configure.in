@@ -1,0 +1,11 @@
+--- configure.in.orig	Sun Sep 30 15:10:33 2001
++++ configure.in	Sun Jan 27 23:12:28 2002
+@@ -249,7 +242,7 @@
+ 	KEYSERV="",
+ 	KEYSERV="minicom.keyserv")
+ AC_SUBST(KEYSERV)
+-AC_REPLACE_FUNCS(snprintf usleep getopt getopt_long)
++AC_REPLACE_FUNCS(snprintf usleep)
+ 
+ dnl system capabilities
+ AC_SYS_LONG_FILE_NAMES
