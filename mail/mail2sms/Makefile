@@ -14,14 +14,15 @@ MAINTAINER=	g.gonter@ieee.org
 COMMENT=	Mail to SMS converter
 
 GNU_CONFIGURE=	yes
+USE_REINPLACE=	yes
 
 MAN1=		mail2sms.1
 MAN5=		mail2sms.5
 
 post-patch:
 	${CP} ${WRKSRC}/mail2sms.4 ${WRKSRC}/mail2sms.5
-	${SED} -i.bak -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/mail2sms.5
-	${SED} -i.bak -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/main.c
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/mail2sms.5
+	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/main.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/mail2sms ${PREFIX}/bin
