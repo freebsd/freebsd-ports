@@ -8,6 +8,7 @@
 
 PORTNAME=	gcc
 PORTVERSION=	2.95.3
+PORTREVISION=	1
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	releases/${PKGNAME}
@@ -58,6 +59,11 @@ MAN1=		cccp.1 g++295.1 gcc295.1
 pre-patch:
 	@${MV} ${WRKSRC}/gcc/config/i386/freebsd.h ${WRKSRC}/gcc/config/i386/freebsd-aout.h
 	@${MV} ${WRKSRC}/gcc/config/i386/freebsd-elf.h ${WRKSRC}/gcc/config/i386/freebsd.h
+	@${MV} ${WRKSRC}/libstdc++/stl/stl_bvector.h \
+		${WRKSRC}/libstdc++/stl/stl_bvector.h.orig
+	@${SED} -e "s,_WORD_BIT,_WORD_BIT_GCC295,g" \
+		< ${WRKSRC}/libstdc++/stl/stl_bvector.h.orig \
+		> ${WRKSRC}/libstdc++/stl/stl_bvector.h
 
 pre-configure:
 	@(MAJ=`/sbin/sysctl -n kern.osreldate | ${SED} -e '/.....$$/s///'` ; \
