@@ -399,6 +399,7 @@ atlc		ports/cad/atlc
 atomix		ports/games/atomix
 atp		ports/news/atp
 aub		ports/news/aub
+aube		ports/audio/aube
 auctex		ports/print/auctex
 audacity	ports/audio/audacity
 audit		ports/security/audit
@@ -3829,6 +3830,7 @@ libxml2		ports/textproc/libxml2
 libxode		ports/textproc/libxode
 libxslt		ports/textproc/libxslt
 libyahoo2	ports/net/libyahoo2
+libzt		ports/devel/libzt
 libzvbi		ports/devel/libzvbi
 libzvt		ports/x11-toolkits/libzvt
 licq		ports/net/licq
