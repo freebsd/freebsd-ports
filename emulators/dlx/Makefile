@@ -16,8 +16,14 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Assembler for Hennessy and Patterson's DLX architecture
 
-.if ${MACHINE_ARCH} == alpha
-BROKEN=		will not build on alpha
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != i386
+BROKEN=		will not build on ${ARCH}
+.endif
+
+.if ${OSVERSION} > 500000
+BROKEN=		does not build on -current
 .endif
 
 MAN1=		dlxcc.1
@@ -40,4 +46,4 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/dlxsim/doc/* ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
