@@ -28,4 +28,10 @@ post-patch:
 	@${MKDIR} ${WRKSRC}/ex
 	@${MV} ${WRKSRC}/example.pl ${WRKSRC}/ex
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500600
+IGNORE=	Perl 5.6 or newer required. Install lang/perl5.8 and try again
+.endif
+
+.include <bsd.port.post.mk>
