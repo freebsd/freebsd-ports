@@ -4,7 +4,7 @@ NOMAN=	1
 PREFIX?=/usr/local
 BINDIR=	${PREFIX}/bin
 
-CFLAGS+=-I${.CURDIR}/lib
+CFLAGS+=-I${.CURDIR}/../lib
 LDADD+=	-L../lib -lstocks
 
 build:	all
