@@ -19,6 +19,8 @@ RUN_DEPENDS=	${PYXML} \
 		${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_SITELIBDIR}/mx/Tidy/mxTidy/mxTidy.so:${PORTSDIR}/devel/py-mx-experimental
 
+BROKEN=		Broken dependency after python 2.4 update
+
 USE_PYTHON=	2.3
 USE_PYDISTUTILS=	yes
 USE_BZIP2=	yes
