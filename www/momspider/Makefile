@@ -3,9 +3,11 @@
 # Date created:         11 October 1997
 # Whom:                 wosch
 #
-# $Id: Makefile,v 1.1.1.1 1997/10/11 17:58:55 wosch Exp $
+# $Id: Makefile,v 1.2 1997/10/14 12:12:47 asami Exp $
+#
 
 DISTNAME=       MOMspider-1.00
+PKGNAME=        momspider-1.00
 CATEGORIES=	www
 MASTER_SITES=   ftp://www.ics.uci.edu/pub/websoft/libwww-perl/ \
 		ftp://www.ics.uci.edu/pub/websoft/MOMspider/ \
