@@ -17,8 +17,8 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/afm/Courier:${PORTSDIR}/print/afm
 
 # no dependency on ghostscript because we don't know which
 # version the user prefers
-LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
-		jpeg.9:${PORTSDIR}/graphics/jpeg
+LIB_DEPENDS=	tiff:${PORTSDIR}/graphics/tiff \
+		jpeg:${PORTSDIR}/graphics/jpeg
 
 DIST_SUBDIR=	hylafax
 
@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=--with-PAGESIZE="${PAGESIZE}"
 
 # Want PAM?
 .if defined(WITHOUT_PAM)
-CONFIGURE_ARGS+=--disable-PAM
+CONFIGURE_ARGS+=--disable-pam
 .endif
 
 # Want HTML documentation?
