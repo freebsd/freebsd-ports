@@ -7,6 +7,7 @@
 %%PEARDIR%%/System.php
 %%PEARDIR%%/OS/Guess.php
 %%PEARDIR%%/PEAR/Autoloader.php
+%%PEARDIR%%/PEAR/Builder.php
 %%PEARDIR%%/PEAR/Command.php
 %%PEARDIR%%/PEAR/Command/Auth.php
 %%PEARDIR%%/PEAR/Command/Build.php
@@ -20,7 +21,6 @@
 %%PEARDIR%%/PEAR/Config.php
 %%PEARDIR%%/PEAR/Dependency.php
 %%PEARDIR%%/PEAR/Frontend/CLI.php
-%%PEARDIR%%/PEAR/Builder.php
 %%PEARDIR%%/PEAR/Installer.php
 %%PEARDIR%%/PEAR/Packager.php
 %%PEARDIR%%/PEAR/Registry.php
