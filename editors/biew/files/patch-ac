@@ -4,8 +4,8 @@
  ifeq ($(TARGET_PLATFORM),i386)
   MACHINE=ia32
   CDEFSYS=-D__MACHINE__=ia32 -D__CPU_NAME__='"i386"' -D__CPU__=386\
--         -D__DEFAULT_DISASM=0 -m386 -fno-builtin
-+         -D__DEFAULT_DISASM=0
+-         -D__DEFAULT_DISASM=0 -fno-builtin -DCAN_COMPILE_X86_GAS=1
++         -D__DEFAULT_DISASM=0 -DCAN_COMPILE_X86_GAS=1
  endif
  ifeq ($(TARGET_PLATFORM),i486)
   MACHINE=ia32
