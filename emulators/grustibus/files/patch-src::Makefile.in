@@ -1,0 +1,13 @@
+$FreeBSD$
+
+--- src/Makefile.in.orig	Tue May 29 13:12:24 2001
++++ src/Makefile.in	Wed May 29 01:20:05 2002
+@@ -142,7 +142,7 @@
+ gui.o fileio.o mameio.o support.o interface.o callbacks.o
+ grustibus_DEPENDENCIES = 
+ grustibus_LDFLAGS = 
+-CFLAGS = @CFLAGS@
++CFLAGS = @CFLAGS@ @EXTRA_GNOME_CFLAGS@
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+ LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(LDFLAGS) -o $@

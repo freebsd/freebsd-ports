@@ -1,0 +1,9 @@
+gRustibus is a M.A.M.E. frontend for the GNOME environment. Its goal is to 
+be feature-rich and easy to use.  It shows screenshots, flyers, cabinet 
+photos, and info for your M.A.M.E. ROMs, and allows you to configure each 
+game individually. Most operations can be done using the keyboard.
+
+Finally, something UNIX users can use to manage those ROMS, just as the 
+Mac and Windows users have had for years :)
+
+WWW: http://grustibus.sourceforge.net/

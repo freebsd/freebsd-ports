@@ -22,6 +22,7 @@
     SUBDIR += generator
     SUBDIR += gngb
     SUBDIR += gnuboy
+    SUBDIR += grustibus
     SUBDIR += gsnes9x
     SUBDIR += hercules
     SUBDIR += hfs
