@@ -7,12 +7,14 @@ bin/regSet.sh
 etc/wine.conf.sample
 include/wine/basetsd.h
 include/wine/cderr.h
+include/wine/cguid.h
 include/wine/commctrl.h
 include/wine/commdlg.h
 include/wine/compobj.h
 include/wine/d3d.h
 include/wine/d3dcaps.h
 include/wine/d3dtypes.h
+include/wine/d3dvec.inl
 include/wine/dde.h
 include/wine/ddeml.h
 include/wine/ddraw.h
@@ -53,7 +55,6 @@ include/wine/pshpack1.h
 include/wine/pshpack2.h
 include/wine/pshpack4.h
 include/wine/pshpack8.h
-include/wine/queue.h
 include/wine/ras.h
 include/wine/regstr.h
 include/wine/richedit.h
@@ -95,7 +96,9 @@ include/wine/winsvc.h
 include/wine/winuser.h
 include/wine/winver.h
 include/wine/wownt32.h
+include/wine/wnaspi32.h
 include/wine/wtypes.h
+include/wine/zmouse.h
 include/wine/wine/exception.h
 include/wine/wine/icmpapi.h
 include/wine/wine/ipexport.h
@@ -132,11 +135,7 @@ include/wine/wine/obj_shellfolder.h
 include/wine/wine/obj_shelllink.h
 include/wine/wine/obj_shellview.h
 include/wine/wine/obj_storage.h
-include/wine/wine/port.h
-include/wine/wine/undocshell.h
 include/wine/wine/unicode.h
-include/wine/wine/w32skrnl.h
-include/wine/wine/winestring.h
 lib/wine/README.patch
 lib/wine/patch-3.3-sys-sigtrap
 lib/wine/winedefault.reg
