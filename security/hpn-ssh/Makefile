@@ -83,10 +83,10 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 430000
-OPENSSLBASE=	/usr/local
+.if ${OSVERSION} < 430000 || exists(${LOCALBASE}/lib/libcrypto.so.3)
+OPENSSLBASE=	${LOCALBASE}
 OPENSSLDIR=	${OPENSSLBASE}/openssl
-LIB_DEPENDS+=	crypto.2:${PORTSDIR}/security/openssl
+LIB_DEPENDS+=	crypto.3:${PORTSDIR}/security/openssl
 OPENSSLLIB=	${OPENSSLBASE}/lib
 OPENSSLINC=	${OPENSSLBASE}/include
 MAKE_ENV+=	OPENSSLLIB=${OPENSSLLIB} OPENSSLINC=${OPENSSLINC} \
