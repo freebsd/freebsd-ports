@@ -8299,6 +8299,7 @@ terraform	ports/misc/terraform
 test		src/bin/test
 tet		ports/misc/tet
 tethereal	ports/net/tethereal
+tetradraw	ports/editors/tetradraw
 tetrinet	ports/games/tetrinet
 tetrinet-x	ports/games/tetrinet-x
 tex		ports/print/tex
