@@ -30,7 +30,4 @@ When everything is OK, you should be able to access Horde from
 There is a testing script at <URL:http://localhost/horde/test.php>.
 
 The script horde_set_perms.sh has been installed in %%HORDESBIN%%.
-
-N.B.: if you don't have a directory /usr/local/lib/php/Log, you have   *
-===== to install it from <URL:http://pear.php.net/get/Log>.            *
 ************************************************************************
