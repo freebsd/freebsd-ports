@@ -21,7 +21,7 @@ PILOTLIB=	"-L${LOCALBASE}/pilot/lib"
 PLIST_SUB+=	GNOMEPILOT:=""
 .else
 CONFIGURE_ARGS=	--without-pisock --disable-pilotlinktest
-EXTRA_PATCHES=	${FILESDIR}/patch.nopilot
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nopilot
 PLIST_SUB+=	GNOMEPILOT:="@comment "
 .endif
 
