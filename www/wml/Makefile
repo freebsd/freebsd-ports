@@ -58,7 +58,11 @@ MAN7=	wml_intro.7 wml_macros.7 wml_tutorial.7 wml_faq.7 wml_tags.7
 
 .include <bsd.port.pre.mk>
 
+.if exists(${PERL5})
 LOCAL_PERL_ARCH!=	${PERL5} -MConfig -e 'print "$$Config{archname}"'
+.else
+LOCAL_PERL_ARCH=	${ARCH}-freebsd
+.endif
 
 .if ${ARCH} == "amd64"
 BROKEN=		"Build fails on amd64 (needs to build shared libraries with -fPIC)"
