@@ -5,16 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=      ircproxy
-PORTVERSION=   1.2.41
-CATEGORIES=    irc
-MASTER_SITES=  ftp://ftp.night-light.net/pub/unix/ircproxy/
-DISTNAME=      ircproxy-1.2.41d.pl2
+PORTNAME=	ircproxy
+PORTVERSION=	1.2.41
+CATEGORIES=	irc
+MASTER_SITES=	ftp://ftp.night-light.net/pub/unix/ircproxy/
+DISTNAME=	ircproxy-1.2.41d.pl2
 
-MAINTAINER=    jonas@jonas.night-light.net
-COMMENT=       An IRC proxy server
+MAINTAINER=	jonas@jonas.night-light.net
+COMMENT=	An IRC proxy server
 
-GNU_CONFIGURE= yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${LOCALBASE}
 
 #
@@ -33,4 +33,4 @@ pre-build:
 	${CHMOD} u+x ${WRKSRC}/pkg-install || exit 1
 	${CHMOD} u+x ${WRKSRC}/pkg-deinstall || exit 1
 
-.include "bsd.port.mk"
+.include <bsd.port.mk>
