@@ -61,6 +61,14 @@ CONFIGURE_ARGS+=	--with-socks5
 CONFIGURE_ARGS+=	--with-socksdante
 .endif
 
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
 MAN1=		lftp.1
 
 post-install:
