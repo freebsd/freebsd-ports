@@ -43,8 +43,10 @@ USE_GNOME+=	libpanel
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 CONFIGURE_ARGS+=	--enable-panel
 PKGNAMESUFFIX=	-gnome
+PLIST_SUB+=	PANEL:="" NOPANEL:="@comment "
 .else
 CONFIGURE_ARGS+=	--disable-gnome
+PLIST_SUB+=	PANEL:="@comment " NOPANEL:=""
 .endif
 
 .if ${HAVE_GNOME:Mesound}!=""

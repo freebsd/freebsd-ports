@@ -1,6 +1,6 @@
 bin/gaim
-%%GNOME:%%bin/gaim_applet
-%%GNOME:%%etc/CORBA/servers/gaim_applet.gnorba
+%%PANEL:%%bin/gaim_applet
+%%PANEL:%%etc/CORBA/servers/gaim_applet.gnorba
 lib/gaim/autorecon.so
 lib/gaim/chatlist.so
 lib/gaim/iconaway.so
@@ -14,14 +14,14 @@ lib/gaim/libyahoo.so
 lib/gaim/libzephyr.so
 lib/gaim/notify.so
 lib/gaim/spellchk.so
-%%GNOME:%%share/gnome/applets/Network/gaim_applet.desktop
-%%GNOME:%%share/gnome/apps/Internet/gaim.desktop
+%%PANEL:%%share/gnome/applets/Network/gaim_applet.desktop
+%%PANEL:%%share/gnome/apps/Internet/gaim.desktop
 share/gnome/pixmaps/gaim.png
-%%GNOME:%%share/gnome/pixmaps/gaim/away.png
-%%GNOME:%%share/gnome/pixmaps/gaim/connect.png
-%%GNOME:%%share/gnome/pixmaps/gaim/msgpend.png
-%%GNOME:%%share/gnome/pixmaps/gaim/offline.png
-%%GNOME:%%share/gnome/pixmaps/gaim/online.png
+%%PANEL:%%share/gnome/pixmaps/gaim/away.png
+%%PANEL:%%share/gnome/pixmaps/gaim/connect.png
+%%PANEL:%%share/gnome/pixmaps/gaim/msgpend.png
+%%PANEL:%%share/gnome/pixmaps/gaim/offline.png
+%%PANEL:%%share/gnome/pixmaps/gaim/online.png
 share/locale/bg/LC_MESSAGES/gaim.mo
 share/locale/cs/LC_MESSAGES/gaim.mo
 share/locale/da/LC_MESSAGES/gaim.mo
@@ -40,6 +40,6 @@ share/locale/sk/LC_MESSAGES/gaim.mo
 share/locale/sv/LC_MESSAGES/gaim.mo
 share/locale/zh_CN/LC_MESSAGES/gaim.mo
 share/locale/zh_TW/LC_MESSAGES/gaim.mo
-%%GNOME:%%@dirrm share/gnome/pixmaps/gaim
-%%NOGNOME:%%@dirrm share/gnome/pixmaps
+%%PANEL:%%@dirrm share/gnome/pixmaps/gaim
+%%NOPANEL:%%@dirrm share/gnome/pixmaps
 @dirrm lib/gaim
