@@ -1,0 +1,20 @@
+--- po/zh_TW.po.orig	Wed Oct  1 15:57:10 2003
++++ po/zh_TW.po	Wed Oct  1 15:57:19 2003
+@@ -40,7 +40,7 @@
+ 
+ #: applets/clock/clock.c:227
+ msgid "%a %b %d"
+-msgstr "%-m月%-d日(%a)"
++msgstr "%m月%d日(%a)"
+ 
+ #. translators: reverse the order of these arguments
+ #. *              if the time should come before the
+@@ -67,7 +67,7 @@
+ #. Show date in tooltip
+ #: applets/clock/clock.c:344
+ msgid "%A %B %d"
+-msgstr "%-m月%-d日(%A)"
++msgstr "%m月%d日(%A)"
+ 
+ #: applets/clock/clock.c:472
+ msgid "Calendar"
