@@ -9,6 +9,7 @@ homedir=/nonexistent
 shell=/sbin/nologin
 comment="Slim Devices SlimServer pseudo-user"
 statedir=/var/db/slimserver
+cachedir=${statedir}/cache
 pidfile=/var/run/${name}.pid
 logfile=/var/log/slimserver.log
 logcomment="# added by audio/slimserver port"
@@ -42,6 +43,10 @@ POST-INSTALL)
 	if [ ! -d ${statedir} ]; then
 		mkdir -p ${statedir}
 		chown -R ${u}:${g} ${statedir}
+	fi
+	if [ ! -d ${cachedir} ]; then
+		mkdir -p ${cachedir}
+		chown -R ${u}:${g} ${cachedir}
 	fi
 	if egrep -q "^${logfile}\>" /etc/newsyslog.conf; then
 		echo "Using existing /etc/newsyslog.conf entry."
