@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.hadess.net/files/software/totem/
 MAINTAINER=	hendrik@scholz.net
 COMMENT=	A Xine-based video player for the Gnome 2 Desktop
 
-LIB_DEPENDS=	xine.3:${PORTSDIR}/graphics/libxine \
+LIB_DEPENDS=	xine.3:${PORTSDIR}/multimedia/libxine \
 		gnomeui-2.200:${PORTSDIR}/x11-toolkits/libgnomeui
 
 USE_X_PREFIX=	yes

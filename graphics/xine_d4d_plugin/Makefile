@@ -16,7 +16,7 @@ FORBIDDEN=	Incompatible with the current version of xine
 MAINTAINER=	gibbon@cocoa.freemail.ne.jp
 COMMENT=	A dvd input plugin for xine
 
-LIB_DEPENDS=	xine.2:${PORTSDIR}/graphics/libxine
+LIB_DEPENDS=	xine.3:${PORTSDIR}/multimedia/libxine
 
 GNU_CONFIGURE=	yes
 USE_X_PREFIX=		yes

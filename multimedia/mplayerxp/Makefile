@@ -129,7 +129,7 @@ CONFIGURE_ARGS+=	--with-csslibdir=${LOCALBASE}/lib
 .endif
 # xine libdvdnav
 .if defined(WITH_LIBDVDNAV) && !defined(WITHOUT_LIBDVDNAV)
-LIB_DEPENDS+=	dvdnav.1:${PORTSDIR}/graphics/libdvdnav
+LIB_DEPENDS+=	dvdnav.1:${PORTSDIR}/multimedia/libdvdnav
 
 CONFIGURE_ARGS+=	--with-libdvdnav=${LOCALBASE}
 .endif

@@ -296,7 +296,7 @@ LIB_DEPENDS+=	dvdcss.2:${PORTSDIR}/multimedia/libdvdcss
 LIB_DEPENDS+=	dvdread.2:${PORTSDIR}/multimedia/libdvdread
 .endif
 .if defined(WITH_LIBDVDNAV)
-LIB_DEPENDS+=	dvdnav.1:${PORTSDIR}/graphics/libdvdnav
+LIB_DEPENDS+=	dvdnav.1:${PORTSDIR}/multimedia/libdvdnav
 
 CONFIGURE_ARGS+=	--enable-dvdnav
 .else
