@@ -3,12 +3,12 @@
 # Date created:		Tue Nov 12 15:54:21 CST 1996
 # Whom:			erich@FreeBSD.org
 #
-# $Id: Makefile,v 1.2 1996/08/19 11:01:53 asami Exp $
+# $Id: Makefile,v 1.1.1.1 1996/11/15 14:54:40 erich Exp $
 #
 
 DISTNAME=	cam-1.02
-CATEGORIES+=	audio
-EXTRACT_SUFX=	.tgz
+CATEGORIES=	audio
 MASTER_SITES=	ftp://sunsite.unc.edu/pub/Linux/apps/sound/mixers/
+EXTRACT_SUFX=	.tgz
 
 .include <bsd.port.mk>
