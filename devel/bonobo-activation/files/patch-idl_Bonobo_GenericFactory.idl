@@ -1,8 +1,0 @@
---- idl/Bonobo_GenericFactory.idl.orig	Wed May 21 14:14:14 2003
-+++ idl/Bonobo_GenericFactory.idl	Wed May 21 14:15:05 2003
-@@ -44,3 +44,5 @@
- #pragma inhibit pop
- #endif
- #endif
-+
-+#endif
