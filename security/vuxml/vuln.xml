@@ -32,6 +32,39 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a5eb760a-753c-11d9-a36f-000a95bc6fae">
+    <topic>perl -- vulnerabilities in PERLIO_DEBUG handling</topic>
+    <affects>
+      <package>
+	<name>perl</name>
+	<range><ge>5.8</ge><lt>5.8.6_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Kevin Finisterre discovered bugs in perl's I/O debug support:</p>
+	<ul>
+	  <li>The environmental variable PERLIO_DEBUG is honored even
+	    by the set-user-ID perl command (usually
+	    named <code>sperl</code> or <code>suidperl</code>).  As a
+	    result, a local attacker may be able to gain elevated
+	    privileges. <em>(CAN-2005-0155)</em></li>
+	  <li>A buffer overflow may occur in threaded versions of perl
+	    when the full pathname of the script being executed is
+	    very long. <em>(CAN-2005-0156)</em>.</li>
+	</ul>
+      </body>
+    </description>
+    <references>
+      <cvename>CAN-2005-0155</cvename>
+      <cvename>CAN-2005-0156</cvename>
+    </references>
+    <dates>
+      <discovery>2005-02-02</discovery>
+      <entry>2005-02-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="cd7e260a-6bff-11d9-a5df-00065be4b5b6">
    <topic>newsgrab -- insecure file and directory creation</topic>
    <affects>
