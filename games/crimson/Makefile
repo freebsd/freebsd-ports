@@ -22,4 +22,10 @@ USE_SDL=	mixer sdl ttf
 
 MAN6=	crimson.6
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "alpha" && ${OSVERSION} < 500000
+BROKEN=		"Internal compiler error on alpha 4.x"
+.endif
+
+.include <bsd.port.post.mk>
