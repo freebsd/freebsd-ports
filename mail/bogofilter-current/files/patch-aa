@@ -1,0 +1,172 @@
+--- ./src/datastore.c	19 Jun 2004 19:17:56 -0000	1.44
++++ ./src/datastore.c	28 Jun 2004 01:43:29 -0000	1.45
+@@ -323,6 +323,7 @@
+ 
+ void ds_init()
+ {
++    db_init();
+     if (msg_count_tok == NULL) {
+ 	msg_count_tok = word_new((const byte *)MSG_COUNT, strlen(MSG_COUNT));
+     }
+@@ -334,6 +335,7 @@
+ /* Cleanup storage allocation */
+ void ds_cleanup()
+ {
++    db_cleanup();
+     xfree(msg_count_tok);
+     xfree(wordlist_version_tok);
+     msg_count_tok = NULL;
+
+--- ./src/datastore_db.c	19 Jun 2004 19:17:56 -0000	1.107
++++ ./src/datastore_db.c	28 Jun 2004 01:43:29 -0000	1.108
+@@ -70,9 +70,6 @@
+ /* dummy infrastructure, to be expanded by environment
+  * or transactional initialization/shutdown */
+ 
+-static int db_init(void);
+-static void db_cleanup(void);
+-
+ /* Function definitions */
+ 
+ /** translate BerkeleyDB \a flags bitfield back to symbols */
+@@ -285,10 +282,6 @@
+     size_t idx;
+     uint32_t retryflags[] = { 0, DB_NOMMAP };
+ 
+-    db_init();
+-
+-    if (!init) abort();
+-
+     check_db_version();
+ 
+     if (open_mode & DS_READ )
+@@ -574,8 +567,6 @@
+ 	print_error(__FILE__, __LINE__, "(db) db_close err: %d, %s", ret, db_strerror(ret));
+ 
+     dbh_free(handle);
+-
+-    db_cleanup();
+ }
+ 
+ 
+@@ -671,7 +662,7 @@
+ /* dummy infrastructure, to be expanded by environment
+  * or transactional initialization/shutdown */
+ 
+-static int db_init(void) {
++int db_init(void) {
+     char *t;
+     int cdb_alldb = 1;
+ 
+@@ -705,7 +696,7 @@
+     return 0;
+ }
+ 
+-static void db_cleanup(void) {
++void db_cleanup(void) {
+     if (!init)
+ 	return;
+     if (dbe)
+
+--- ./src/datastore_db.h	19 Jun 2004 19:17:56 -0000	1.12
++++ ./src/datastore_db.h	28 Jun 2004 01:43:30 -0000	1.13
+@@ -81,6 +81,9 @@
+ /* Returns created flag */
+ bool db_created(void *vhandle);
+ 
++int db_init(void);
++void db_cleanup(void);
++
+ /* This is not currently used ...
+  * 
+ #define db_write_lock(fd) db_lock(fd, F_SETLKW, F_WRLCK)
+
+--- ./src/datastore_qdbm.c	19 Jun 2004 19:17:56 -0000	1.27
++++ ./src/datastore_qdbm.c	28 Jun 2004 01:43:30 -0000	1.28
+@@ -47,8 +47,6 @@
+  * or transactional initialization/shutdown */
+ 
+ static bool init = false;
+-static int db_init(void) { init = true; return 0; }
+-static void db_cleanup(void) { init = false; }
+ 
+ /* Function definitions */
+ 
+@@ -128,8 +126,6 @@
+ 
+     if (handle == NULL) return NULL;
+ 
+-    db_init();
+-
+     dbp = handle->dbp = dpopen(handle->name, open_flags, DB_INITBNUM);
+ 
+     if ((dbp == NULL) && (open_mode & DS_WRITE)) {
+@@ -276,8 +272,6 @@
+     handle->dbp = NULL;
+ 
+     dbh_free(handle);
+-
+-    db_cleanup();
+ }
+ 
+ 
+@@ -344,3 +338,14 @@
+ const char *db_str_err(int e) {
+     return dperrmsg(e);
+ }
++
++int db_init(void)
++{
++    init = true; 
++    return 0;
++}
++
++void db_cleanup(void)
++{
++    init = false;
++}
+
+--- ./src/datastore_tdb.c	19 Jun 2004 19:17:56 -0000	1.29
++++ ./src/datastore_tdb.c	28 Jun 2004 01:43:30 -0000	1.30
+@@ -37,8 +37,6 @@
+  * or transactional initialization/shutdown */
+ 
+ static bool init = false;
+-static int db_init(void) { init = true; return 0; }
+-static void db_cleanup(void) { init = false; }
+ 
+ /* Function definitions */
+ 
+@@ -119,8 +117,6 @@
+ 
+     if (handle == NULL) return NULL;
+ 
+-    db_init();
+-
+     dbp = handle->dbp = tdb_open(handle->name, 0, tdb_flags, open_flags, 0664);
+ 
+     if ((dbp == NULL) && (open_mode & DS_WRITE)) {
+@@ -258,8 +254,6 @@
+     }
+ 
+     dbh_free(handle);
+-
+-    db_cleanup();
+ }
+ 
+ /*
+@@ -358,3 +352,14 @@
+ 			return emap[i].estring;
+ 	return "Invalid error code";
+ }
++
++int db_init(void)
++{
++    init = true; 
++    return 0;
++}
++
++void db_cleanup(void)
++{
++    init = false;
++}
