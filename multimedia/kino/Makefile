@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	kino
-PORTVERSION=	0.7.3
+PORTVERSION=	0.7.4
 CATEGORIES=	multimedia
-MASTER_SITES=	http://kino.schirmacher.de/filemanager/download/38/
+MASTER_SITES=	http://kino.schirmacher.de/filemanager/download/41/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	pb@FreeBSD.org

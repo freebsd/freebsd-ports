@@ -1,8 +1,8 @@
---- src/ieee1394io.cc.orig	Wed Jul 14 04:57:07 2004
-+++ src/ieee1394io.cc	Thu Aug 12 21:16:47 2004
-@@ -61,11 +61,13 @@
- #include <sys/mman.h>
+--- src/ieee1394io.cc.orig	Sat Aug 21 06:55:56 2004
++++ src/ieee1394io.cc	Sun Oct 10 19:43:02 2004
+@@ -62,11 +62,13 @@
  #include <sys/poll.h>
+ #include <errno.h>
  
 +#if 0
  #include <libraw1394/raw1394.h>
@@ -14,7 +14,7 @@
  
  #include "ieee1394io.h"
  #include "preferences.h"
-@@ -260,7 +262,7 @@
+@@ -261,7 +263,7 @@
  raw1394Reader::raw1394Reader( int p, int c, int bufSize ) :
  		IEEE1394Reader( c, bufSize ), port( p )
  {
@@ -23,7 +23,7 @@
  	cerr << ">>> Using raw1394 capture" << endl;
  }
  
-@@ -337,7 +339,8 @@
+@@ -332,7 +334,8 @@
  
  bool raw1394Reader::Open()
  {
@@ -33,7 +33,7 @@
  	int numcards;
  	struct raw1394_portinfo pinf[ 16 ];
  	iso_handler_t oldhandler;
-@@ -370,6 +373,7 @@
+@@ -365,6 +368,7 @@
  		cerr << exc << endl;
  		success = false;
  	}
@@ -41,7 +41,7 @@
  	return success;
  }
  
-@@ -380,11 +384,13 @@
+@@ -375,11 +379,13 @@
  
  void raw1394Reader::Close()
  {
@@ -55,7 +55,7 @@
  }
  
  bool raw1394Reader::StartReceive()
-@@ -394,7 +400,7 @@
+@@ -389,7 +395,7 @@
  	/* Starting iso receive */
  	try
  	{
@@ -64,7 +64,7 @@
  		success = true;
  	}
  	catch ( string exc )
-@@ -408,8 +414,8 @@
+@@ -403,8 +409,8 @@
  
  void raw1394Reader::StopReceive()
  {
@@ -75,7 +75,7 @@
  }
  
  
-@@ -445,6 +451,7 @@
+@@ -440,6 +446,7 @@
   
  */
  
@@ -83,7 +83,7 @@
  int raw1394Reader::HandlerProxy( raw1394handle_t handle, int channel, size_t length, quadlet_t *data )
  {
  	raw1394Reader *self = static_cast< raw1394Reader* >( raw1394_get_userdata( handle ) );
-@@ -556,6 +563,7 @@
+@@ -551,6 +558,7 @@
  
  	return 0;
  }
@@ -91,22 +91,23 @@
  
  
  /** The thread responsible for polling the raw1394 interface.
-@@ -572,12 +580,13 @@
- 
- void* raw1394Reader::Thread()
- {
--
+@@ -570,6 +578,7 @@
+ 	struct pollfd raw1394_poll;
+ 	int result;
+ 		
 +#if 0
- 	while ( true )
- 	{
- 		raw1394_loop_iterate( handle );
- 		pthread_testcancel();
+ 	raw1394_poll.fd = raw1394_get_fd( handle );
+ 	raw1394_poll.events = POLLIN | POLLERR | POLLHUP | POLLPRI;
+ 
+@@ -587,6 +596,7 @@
+ 		        || ( raw1394_poll.revents & POLLPRI ) ) )
+ 			result = raw1394_loop_iterate( handle );
  	}
 +#endif
  	return NULL;
  }
  
-@@ -670,6 +679,7 @@
+@@ -673,6 +683,7 @@
  
  bool dv1394Reader::Open()
  {
@@ -114,7 +115,7 @@
  	int n_frames = DV1394_MAX_FRAMES / 4;
  	struct dv1394_init init =
  	    {
-@@ -703,6 +713,8 @@
+@@ -706,6 +717,8 @@
  	}
  
  	return true;
@@ -123,7 +124,7 @@
  }
  
  
-@@ -711,6 +723,7 @@
+@@ -714,6 +727,7 @@
  */
  void dv1394Reader::Close()
  {
@@ -131,7 +132,7 @@
  	if ( m_dv1394_fd != -1 )
  	{
  		if ( m_dv1394_map != NULL )
-@@ -719,11 +732,13 @@
+@@ -722,11 +736,13 @@
  		m_dv1394_map = NULL;
  		m_dv1394_fd = -1;
  	}
@@ -145,7 +146,7 @@
  	/* Starting iso receive */
  	if ( ioctl( m_dv1394_fd, DV1394_START_RECEIVE, NULL ) )
  	{
-@@ -731,6 +746,8 @@
+@@ -734,6 +750,8 @@
  		return false;
  	}
  	return true;
@@ -154,15 +155,15 @@
  }
  
  
-@@ -739,6 +756,7 @@
+@@ -742,6 +760,7 @@
  
  bool dv1394Reader::Handler( int handle )
  {
 +#if 0
  	struct dv1394_status dvst;
- 
- 	if ( ioctl( handle, DV1394_WAIT_FRAMES, 1 ) )
-@@ -816,6 +834,8 @@
+ 	struct pollfd pol;
+ 	int result;
+@@ -828,6 +847,8 @@
  
  	}
  	return true;
@@ -171,7 +172,7 @@
  }
  
  
-@@ -852,6 +872,7 @@
+@@ -863,6 +884,7 @@
  
  AVC::AVC( int p ) : port( p )
  {
@@ -179,7 +180,7 @@
  	pthread_mutex_init( &avc_mutex, NULL );
  	avc_handle = NULL;
  	int numcards;
-@@ -883,6 +904,7 @@
+@@ -894,6 +916,7 @@
  		cerr << exc << endl;
  	}
  	return ;
@@ -187,7 +188,7 @@
  }
  
  
-@@ -892,6 +914,7 @@
+@@ -903,6 +926,7 @@
  
  AVC::~AVC()
  {
@@ -195,7 +196,7 @@
  	if ( avc_handle != NULL )
  	{
  		pthread_mutex_lock( &avc_mutex );
-@@ -899,11 +922,13 @@
+@@ -910,11 +934,13 @@
  		avc_handle = NULL;
  		pthread_mutex_unlock( &avc_mutex );
  	}
@@ -209,7 +210,7 @@
  int AVC::ResetHandler( raw1394handle_t handle, unsigned int generation )
  {
  	cerr << "Reset Handler received" << endl;
-@@ -911,7 +936,7 @@
+@@ -922,7 +948,7 @@
  	common->getPageCapture() ->driver_locked = true;
  	return 0;
  }
@@ -218,7 +219,7 @@
  
  /** See if a node_id is still valid and pointing to an AV/C Recorder.
   
-@@ -927,6 +952,7 @@
+@@ -938,6 +964,7 @@
  int AVC::isPhyIDValid( int phyID )
  {
  	int value = -1;
@@ -226,7 +227,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -969,6 +995,7 @@
+@@ -980,6 +1007,7 @@
  		}
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -234,15 +235,15 @@
  	return value;
  }
  
-@@ -977,6 +1004,7 @@
+@@ -988,6 +1016,7 @@
  */
  void AVC::Noop( void )
  {
 +#if 0
  	struct pollfd raw1394_poll;
  	raw1394_poll.fd = raw1394_get_fd( avc_handle );
- 	raw1394_poll.events = POLLIN;
-@@ -987,11 +1015,13 @@
+ 	raw1394_poll.events = POLLIN | POLLPRI;
+@@ -998,11 +1027,13 @@
  		        || ( raw1394_poll.revents & POLLPRI ) )
  			raw1394_loop_iterate( avc_handle );
  	}
@@ -256,7 +257,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1003,12 +1033,14 @@
+@@ -1014,12 +1045,14 @@
  		}
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -271,7 +272,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1025,12 +1057,14 @@
+@@ -1036,12 +1069,14 @@
  	    };
  	nanosleep( &t, NULL );
  	pthread_mutex_unlock( &avc_mutex );
@@ -286,7 +287,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1043,12 +1077,14 @@
+@@ -1054,12 +1089,14 @@
  	    };
  	nanosleep( &t, NULL );
  	pthread_mutex_unlock( &avc_mutex );
@@ -301,7 +302,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1056,12 +1092,14 @@
+@@ -1067,12 +1104,14 @@
  			avc1394_vcr_rewind( avc_handle, phyID );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -316,7 +317,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1069,11 +1107,13 @@
+@@ -1080,11 +1119,13 @@
  			avc1394_vcr_forward( avc_handle, phyID );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -330,7 +331,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1081,11 +1121,13 @@
+@@ -1092,11 +1133,13 @@
  			avc1394_vcr_next( avc_handle, phyID );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -344,7 +345,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1093,11 +1135,13 @@
+@@ -1104,11 +1147,13 @@
  			avc1394_vcr_previous( avc_handle, phyID );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -358,7 +359,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1105,11 +1149,13 @@
+@@ -1116,11 +1161,13 @@
  			avc1394_vcr_next_index( avc_handle, phyID );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -372,7 +373,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1117,11 +1163,13 @@
+@@ -1128,11 +1175,13 @@
  			avc1394_vcr_previous_index( avc_handle, phyID );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -386,7 +387,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1129,11 +1177,13 @@
+@@ -1140,11 +1189,13 @@
  			avc1394_vcr_record( avc_handle, phyID );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -400,7 +401,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1141,12 +1191,14 @@
+@@ -1152,12 +1203,14 @@
  			avc1394_vcr_trick_play( avc_handle, phyID, speed );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -415,7 +416,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1154,11 +1206,13 @@
+@@ -1165,11 +1218,13 @@
  			val = avc1394_vcr_status( avc_handle, phyID );
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -429,7 +430,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1187,10 +1241,13 @@
+@@ -1198,10 +1253,13 @@
  	}
  	pthread_mutex_unlock( &avc_mutex );
  	return true;
@@ -443,7 +444,7 @@
  	pthread_mutex_lock( &avc_mutex );
  	if ( avc_handle != NULL )
  	{
-@@ -1213,6 +1270,7 @@
+@@ -1224,6 +1282,7 @@
  		}
  	}
  	pthread_mutex_unlock( &avc_mutex );
@@ -451,7 +452,7 @@
  	return -1;
  }
  
-@@ -1220,6 +1278,7 @@
+@@ -1231,6 +1290,7 @@
  dv1394Writer::dv1394Writer( string device, unsigned int channel, unsigned int nBuffers,
                              unsigned int cip_n, unsigned int cip_d, unsigned int syt_offset ) : isInitialised( false )
  {
@@ -459,7 +460,7 @@
  	m_fd = -1;
  	m_deviceName = device;
  	m_channel = channel;
-@@ -1229,6 +1288,7 @@
+@@ -1240,6 +1300,7 @@
  	m_syt_offset = syt_offset;
  
  	m_fd = open( m_deviceName.c_str(), O_RDWR );
@@ -467,7 +468,7 @@
  }
  
  
-@@ -1244,6 +1304,7 @@
+@@ -1255,6 +1316,7 @@
  
  void dv1394Writer::SendFrame( Frame &frame )
  {
@@ -475,7 +476,7 @@
  	bool isPAL = frame.IsPAL();
  
  	if ( !isInitialised )
-@@ -1268,4 +1329,5 @@
+@@ -1279,4 +1341,5 @@
  	}
  
  	write( m_fd, frame.data, ( isPAL ? DV1394_PAL_FRAME_SIZE : DV1394_NTSC_FRAME_SIZE ) );
