@@ -34,8 +34,14 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib" \
 		LIBS="-L${X11BASE}/lib"
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} > 502014
+BROKEN=		"Does not compile on FreeBSD >= 5.x"
+.endif
+
 post-install:
 		chown ${BINOWN}:mail ${PREFIX}/bin/xc-mail
 		chmod g+s ${PREFIX}/bin/xc-mail
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
