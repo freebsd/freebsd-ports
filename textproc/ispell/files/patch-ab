@@ -1,30 +1,11 @@
---- Makefile.orig	Thu Oct 12 20:04:06 1995
-+++ Makefile	Sat Jan 22 22:44:42 2000
-@@ -253,7 +253,7 @@
- 	    set -ex; \
- 	    rm -f $$ELISPDIR/ispell.el; \
- 	    $$INSTALL ispell.el $$ELISPDIR; \
--	    if sh iwhich $$EMACS >/dev/null; then \
-+	    if sh iwhich ___XXX___$$EMACS >/dev/null; then \
- 		echo '(byte-compile-file "'"$$ELISPDIR/ispell.el"'")' \
- 		  > /tmp/emi$$$$; \
- 		$$EMACS -batch -l /tmp/emi$$$$; \
-@@ -508,7 +508,7 @@
- local.h:
- 	set +e; [ -r local.h ]  ||  cp local.h.samp local.h
+--- Makefile~	Thu Jun  7 21:06:33 2001
++++ Makefile	Fri Jun 22 23:36:46 2001
+@@ -474,7 +474,7 @@
+ 	set +e; \
+ 	  [ -r local.h ]  ||  (cp local.h.samp local.h; chmod u+w local.h)
  
 -msgs.h:	config.sh FRC
-+msgs.h:	config.sh 
++msgs.h:	config.sh
  	@. ./config.sh; \
  	  set $(SHELLDEBUG); \
  	  set +e; \
-@@ -522,7 +522,8 @@
- 	  else \
- 	    set -x; \
- 	    rm -f msgs.h; ln $$msgs msgs.h  ||  cp $$msgs msgs.h; \
--	  fi
-+	  fi; \
-+	touch msgs.h
- 
- FRC:
- 

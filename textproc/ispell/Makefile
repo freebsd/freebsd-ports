@@ -6,24 +6,18 @@
 #
 
 PORTNAME?=	ispell
-PORTVERSION?=	3.1.20c
-PORTREVISION=	3
-CATEGORIES+=	textproc elisp
-MASTER_SITES=	ftp://ftp.cs.ucla.edu/pub/ispell-3.1/ \
-		ftp://ftp.kiarchive.ru/pub/unix/text/ispell/
-DISTNAME=	ispell-3.1
+PORTVERSION?=	3.2.04
+PORTREVISION=	0
+CATEGORIES+=	textproc
+MASTER_SITES=	http://fmg-www.cs.ucla.edu/geoff/tars/
 
 MAINTAINER?=	jmz@FreeBSD.org
-PATCH_SITES=	ftp://ftp.kiarchive.ru/pub/unix/text/ispell/
-ISPELL_FILES=	ispell-3.1.20.tar.gz
-HTML_PATCH=	ispell-html-mode.patch
-DISTFILES=	${ISPELL_FILES}
-PATCHFILES=	${HTML_PATCH}
+ISPELL_FILES= 	ispell-3.2.04.tar.gz
 
-MAN1=		ispell.1 sq.1
+MAN1=		ispell.1
 MAN4=		ispell.4 english.4
 MLINKS=		ispell.1 buildhash.1 ispell.1 findaffix.1 ispell.1 \
-		munchlist.1 ispell.1 tryaffix.1 sq.1 unsq.1
+		munchlist.1 ispell.1 tryaffix.1
 
 EXTRACT_ONLY=	${ISPELL_FILES}
 EXTRA_DICT=

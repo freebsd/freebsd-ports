@@ -20,17 +20,12 @@ if [ ! -z "$ISPELL_BRITISH" ] && \
     	echo '#define MASTERHASH "britishxlg.hash"'  >> local.h 
     else
        echo "#define LANGUAGES \"{american,MASTERDICTS=american.med+,HASHFILES=americanmed+.hash,EXTRADICT=/usr/share/dict/words}$LOCAL\""  >>local.h ||exit 1;
+       echo '#define MASTERHASH "americanmed+.hash"'  >> local.h 
     fi
 
 echo "#undef WORDS"  >> local.h 
 echo '#define WORDS   "/usr/share/dict/words"'  >> local.h 
-echo '#undef ELISPDIR'  >> local.h
-echo "#define ELISPDIR \"$PREFIX/share/emacs/site-lisp\"" >> local.h
 echo "#undef LIBDIR" >> local.h
 echo "#define LIBDIR \"$PREFIX/share/ispell\"" >> local.h
-
-mv Makefile Makefile.orig
-sed -e 's/^[ 	]*$/\
-/' -e 's/[ 	]*ELISPDIR//' <Makefile.orig >Makefile
 
 exit 0;
