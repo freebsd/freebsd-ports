@@ -5,36 +5,29 @@
 # $FreeBSD$
 
 PORTNAME=	openmotif
-PORTVERSION=	2.1.30
-PORTREVISION=	1
+PORTVERSION=	2.2.4
 CATEGORIES=	x11-toolkits linux
-MASTER_SITES=	ftp://ftp.redhat.com/pub/%SUBDIR%/ \
-		ftp://ftp.sourceforge.net/pub/mirrors/redhat/%SUBDIR%/ \
-		ftp://ftp.funet.fi/pub/mirrors/ftp.redhat.com/pub/%SUBDIR%/ \
-		ftp://ftp.uni-bayreuth.de/pub/redhat.com/%SUBDIR%/
-MASTER_SITE_SUBDIR=	contrib/openmotif/linux-rpm
+MASTER_SITES=	ftp://ftp.ics.com/pub/Products/Motif/%SUBDIR%/
+MASTER_SITE_SUBDIR=	om2.2.4/redhat-7.3
 PKGNAMEPREFIX=	linux-
-EXTRACT_SUFX=	-1_ICS.${MACHINE_ARCH}.rpm
+EXTRACT_SUFX=	-0.1.${MACHINE_ARCH}.rpm
 DIST_SUBDIR=	rpm
 EXTRACT_ONLY=
-
-DEPRECATED=	http://vuxml.freebsd.org/ef253f8b-0727-11d9-b45d-000c41e2cdad.html (security)
-EXPIRATION_DATE=November 21, 2004
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Motif toolkit Linux libraries
 
 BUILD_DEPENDS=	rpm2cpio:${PORTSDIR}/archivers/rpm
 
-ONLY_FOR_ARCHS=	alpha i386
+ONLY_FOR_ARCHS=	i386
 USE_LINUX_PREFIX=	yes
 NO_BUILD=	yes
 NO_FILTER_SHLIBS=	yes
 MD5_FILE=	${MASTERDIR}/distinfo.${MACHINE_ARCH}
 
-EXTRACT_FILES=	usr/X11R6/lib/libMrm.so.2.1 \
-		usr/X11R6/lib/libUil.so.2.1 \
-		usr/X11R6/lib/libXm.so.2.1
+EXTRACT_FILES=	./usr/X11R6/lib/libMrm.so.3.0.3 \
+		./usr/X11R6/lib/libUil.so.3.0.3 \
+		./usr/X11R6/lib/libXm.so.3.0.3
 
 do-install:
 	cd ${PREFIX}; \
