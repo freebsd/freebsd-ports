@@ -16,6 +16,7 @@ MAINTAINER=	ijliao@FreeBSD.org
 
 USE_PERL5=	yes
 
+WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
 do-install:
