@@ -17,7 +17,6 @@ COMMENT=	Open-source Java web server by Apache, 5.0.x branch
 
 USE_JAVA=	1.3+
 NO_BUILD=	YES
-LATEST_LINK=	jakarta-tomcat5
 
 MAJOR_VER=	${PORTVERSION:R}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
