@@ -21,10 +21,6 @@ DISTNAME=	pike-${PORTVERSION}
 MAINTAINER=	kiwi@oav.net
 COMMENT=	A dynamic programming language with a syntax similar to C++
 
-.if (${MACHINE} == "i386")
-BUILD_DEPENDS+=	nasm:${PORTSDIR}/devel/nasm/
-.endif
-
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		gdbm.3:${PORTSDIR}/databases/gdbm \
@@ -66,10 +62,6 @@ CONFIGURE_ARGS+= --without-debug \
 #		 --without-relocatable-dumped-modules \
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} != "i386"
-BROKEN=		"Does not compile on !i386"
-.endif
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
