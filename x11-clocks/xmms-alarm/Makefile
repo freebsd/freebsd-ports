@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	xmms-alarm
-PORTVERSION=	0.3.5
+PORTVERSION=	0.3.6
 CATEGORIES=	x11-clocks
-MASTER_SITES=	http://www.snika.uklinux.net/xmms-alarm/ \
-		http://unixpages.org/distfiles/
+MASTER_SITES=	http://www.snika.uklinux.net/xmms-alarm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Alarm timer plugin for the X Multimedia System
@@ -18,7 +17,7 @@ LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget gtk12 lthack
-USE_LIBTOOL_VER=	13
+USE_INC_LIBTOOL_VER=	13
 
 PLIST_FILES=	lib/xmms/General/libalarm.so
 
