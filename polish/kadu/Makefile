@@ -7,7 +7,7 @@
 
 PORTNAME=		kadu
 PORTVERSION=		0.3.9
-PORTREVISION=		1
+PORTREVISION=		2
 PORTEPOCH=		1
 CATEGORIES=		polish net
 MASTER_SITES=		http://www.kadu.net/download/stable/
@@ -34,15 +34,7 @@ USE_QT_VER=		3
 
 WRKSRC=			${WRKDIR}/${PORTNAME}
 
-WANT_GNOME=		yes
-
 .include <bsd.port.pre.mk>
-
-.if ${HAVE_GNOME:Mgnomehier}!=""
-PLIST_SUB+=	GNOME:=""
-.else
-PLIST_SUB+=	GNOME:="@comment "
-.endif
 
 pre-everything::
 	@${ECHO_MSG}
@@ -53,9 +45,9 @@ pre-everything::
 	@${ECHO_MSG}
 
 post-install:
-.if ${HAVE_GNOME:Mgnomehier}!=""
+	${MKDIR} ${X11BASE}/share/gnome/apps/Internet
 	${INSTALL_DATA} ${WRKSRC}/kadu/kadu.desktop ${X11BASE}/share/gnome/apps/Internet
-.endif
+	${MKDIR} ${LOCALBASE}/share/applnk/Internet
 	${INSTALL_DATA} ${WRKSRC}/kadu/kadu.desktop ${LOCALBASE}/share/applnk/Internet
 
 .include <bsd.port.post.mk>
