@@ -21,6 +21,39 @@ DISTNAME=	snapshot-${PORTVERSION}
 
 MAINTAINER=	dwcjr@inethouston.net
 
+MAN1=	mailq.1 newaliases.1 postalias.1 postcat.1 postconf.1 postdrop.1 \
+	postfix.1 postkick.1 postlock.1 postlog.1 postmap.1 postsuper.1 \
+	sendmail.1
+
+MAN5=	access.5 aliases.5 canonical.5 regexp_table.5 relocated.5 \
+	transport.5 virtual.5
+
+MAN8=	bounce.8 cleanup.8 defer.8 error.8 flush.8 lmtp.8 local.8 \
+	master.8 pickup.8 pipe.8 qmgr.8 showq.8 smtp.8 smtpd.8 \
+	spawn.8 trivial-rewrite.8
+
+CONF1=	access aliases canonical main.cf master.cf \
+	regexp_table relocated transport virtual
+
+CONF2=	sample-aliases.cf sample-canonical.cf sample-debug.cf \
+	sample-filter.cf sample-local.cf sample-misc.cf \
+	sample-rate.cf sample-regexp.cf sample-relocated.cf \
+	sample-resource.cf sample-rewrite.cf sample-smtp.cf \
+	sample-smtpd.cf sample-transport.cf sample-virtual.cf
+
+BIN1=	bounce cleanup error flush lmtp local master nqmgr pickup \
+	pipe qmgr showq smtp smtpd spawn trivial-rewrite
+
+BIN2=	postalias postcat postconf postdrop postfix \
+	postkick postlog postmap postsuper sendmail
+
+.if defined(WITH_TEST)
+BIN3=   smtp-sink smtp-source
+PLIST_SUB+=		WITH_TEST=""
+.else
+PLIST_SUB+=		WITH_TEST="@comment "
+.endif
+
 .if !defined(DEBUG)
 MAKEFILEFLAGS+=	DEBUG=
 .endif
@@ -72,32 +105,6 @@ PLIST_SUB+=		WITH_SASL=""
 PLIST_SUB+=		WITH_SASL="@comment "
 .endif
 
-MAN1=	mailq.1 newaliases.1 postalias.1 postcat.1 postconf.1 postdrop.1 \
-	postfix.1 postkick.1 postlock.1 postlog.1 postmap.1 postsuper.1 \
-	sendmail.1
-
-MAN5=	access.5 aliases.5 canonical.5 regexp_table.5 relocated.5 \
-	transport.5 virtual.5
-
-MAN8=	bounce.8 cleanup.8 defer.8 error.8 flush.8 lmtp.8 local.8 \
-	master.8 pickup.8 pipe.8 qmgr.8 showq.8 smtp.8 smtpd.8 \
-	spawn.8 trivial-rewrite.8
-
-CONF1=	access aliases canonical main.cf master.cf \
-	regexp_table relocated transport virtual
-
-CONF2=	sample-aliases.cf sample-canonical.cf sample-debug.cf \
-	sample-filter.cf sample-local.cf sample-misc.cf \
-	sample-rate.cf sample-regexp.cf sample-relocated.cf \
-	sample-resource.cf sample-rewrite.cf sample-smtp.cf \
-	sample-smtpd.cf sample-transport.cf sample-virtual.cf
-
-BIN1=	bounce cleanup error flush lmtp local master nqmgr pickup \
-	pipe qmgr showq smtp smtpd spawn trivial-rewrite
-
-BIN2=	postalias postcat postconf postdrop postfix \
-	postkick postlog postmap postsuper sendmail
-
 post-patch:
 	(cd ${WRKSRC} && make -f Makefile.init makefiles ${MAKEFILEFLAGS} \
 	CCARGS="${POSTFIX_CCARGS}" AUXLIBS="${POSTFIX_AUXLIBS}" && \
@@ -141,6 +148,14 @@ do-install:
 		${PREFIX}/sbin
 .endfor
 
+.if defined(WITH_TEST)
+.for file in ${BIN3}
+	@${INSTALL_PROGRAM} \
+		${WRKSRC}/src/smtpstone/${file} \
+		${PREFIX}/sbin
+.endfor
+.endif
+
 .for file in ${MAN1}
 	@${INSTALL_MAN} \
 		${WRKSRC}/man/man1/${file} \
@@ -183,10 +198,10 @@ replace:
 	${ECHO} -n "# Execute the Postfix sendmail program" >> /etc/mail/mailer.conf
 	${ECHO} ", named ${PREFIX}/sbin/sendmail" >> /etc/mail/mailer.conf
 	${ECHO} "#" >> /etc/mail/mailer.conf
-	${ECHO} "sendmail	${PREFIX}/sbin/sendmail" >>/etc/mail/mailer.conf
-	${ECHO} "send-mail      ${PREFIX}/sbin/sendmail" >>/etc/mail/mailer.conf
-	${ECHO} "mailq          ${PREFIX}/sbin/sendmail" >>/etc/mail/mailer.conf
-	${ECHO} "newaliases     ${PREFIX}/sbin/sendmail" >>/etc/mail/mailer.conf
+	${ECHO} "sendmail	${PREFIX}/sbin/sendmail" >> /etc/mail/mailer.conf
+	${ECHO} "send-mail      ${PREFIX}/sbin/sendmail" >> /etc/mail/mailer.conf
+	${ECHO} "mailq          ${PREFIX}/sbin/sendmail" >> /etc/mail/mailer.conf
+	${ECHO} "newaliases     ${PREFIX}/sbin/sendmail" >> /etc/mail/mailer.conf
 .else
 	@${ECHO_MSG} "===> Replacing sendmail"
 	@if [ -e /usr/sbin/sendmail ]; then \
