@@ -3,21 +3,23 @@
 # Date created: 	8 November 1997
 # Whom:			jraynard
 #
-# $Id: Makefile,v 1.3 1997/11/29 03:08:01 jseger Exp $
+# $Id: Makefile,v 1.4 1997/12/11 01:09:53 jraynard Exp $
 #
 
-DISTNAME=	sfio97
-PKGNAME=	sfio-97
+DISTNAME=	sfio_1998
+PKGNAME=	sfio-98
 CATEGORIES=	devel
 #Users must register with AT&T before downloading tarball.
 #MASTER_SITES=	http://www.research.att.com/sw/tools/sfio/
-EXTRACT_SUFX=	.src.unix.tar.Z
+EXTRACT_SUFX=	.src.unix.cpio
+EXTRACT_CMD=	cpio
+EXTRACT_BEFORE_ARGS=	-idF
 
 MAINTAINER=	jraynard@freebsd.org
 
 NO_WRKSUBDIR=	yes
 IS_INTERACTIVE=	yes
-MAN3=		sfio.3 sfdisc.3
+MAN3=		cdt.3 sfio.3 vmalloc.3
 
 RESTRICTED=	Requires user to register with AT&T.
 
@@ -33,21 +35,18 @@ do-fetch:
 	fi
 
 # Remove a test that's too clever for its own good
-# from the distribution, and a junk binary while we're at it.
 post-extract:
 	@${RM} ${WRKDIR}/src/lib/sfio/Sfio_t/tmmap2read.c
-	@${RM} ${WRKDIR}/lib/libvdelta.a
 
 do-build:
 	@cd ${WRKDIR}/src/lib/sfio && ${MAKE} all -f makefile
-	@cd ${WRKDIR}/src/lib/sfdisc && ${MAKE} all
 
 do-install:
 	${INSTALL_DATA} ${WRKDIR}/include/* ${PREFIX}/include
-	${INSTALL_DATA} ${WRKDIR}/lib/libsfdisc.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKDIR}/lib/libsfio.a ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKDIR}/lib/libstdio.a ${PREFIX}/lib
+	${INSTALL_MAN} ${WRKDIR}/man/man3/cdt.3 ${PREFIX}/man/man3
 	${INSTALL_MAN} ${WRKDIR}/man/man3/sfio.3 ${PREFIX}/man/man3
-	${INSTALL_MAN} ${WRKDIR}/man/man3/sfdisc.3 ${PREFIX}/man/man3
+	${INSTALL_MAN} ${WRKDIR}/man/man3/vmalloc.3 ${PREFIX}/man/man3
 
 .include <bsd.port.mk>
