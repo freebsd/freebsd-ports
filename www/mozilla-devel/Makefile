@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.0.rc2
-PORTREVISION=	1
+PORTVERSION=	1.0.rc3
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA} \
-		http://people.FreeBSD.org/~marcus/:local
+		http://people.FreeBSD.org/~sobomax/:local
 MASTER_SITE_SUBDIR=	mozilla/releases/${PORTNAME}${PORTVERSION:S/.rc/rc/}/src \
 		sobomax/:local
 DISTFILES=	${PORTNAME}-source-${PORTVERSION:S/.rc/rc/}${EXTRACT_SUFX} \

@@ -1,0 +1,221 @@
+--- src/mozilla/mozilla.cpp	2002/05/24 13:41:30	1.1
++++ src/mozilla/mozilla.cpp	2002/05/24 13:42:17
+@@ -367,7 +367,7 @@
+ 		if (NS_FAILED(rv) || !persist) return NS_ERROR_FAILURE;
+ 
+ 		nsCOMPtr<nsILocalFile> file;
+-#if MOZILLA_VERSION > VERSION3(1,0,0)
++#if 1
+ 		NS_NewNativeLocalFile(nsDependentCString(filename), PR_TRUE, getter_AddRefs(file)); 
+ #else
+ 		NS_NewLocalFile(filename, PR_TRUE, getter_AddRefs(file)); 
+@@ -1841,7 +1841,7 @@
+ {
+ 	nsresult rv;
+ 	nsCOMPtr<nsILocalFile> localFile;
+-#if MOZILLA_VERSION > VERSION3(1,0,0)
++#if 1
+ 	rv = NS_NewNativeLocalFile(nsDependentCString(filename), PR_TRUE, getter_AddRefs(localFile)); 
+ #else
+ 	rv = NS_NewLocalFile(filename, PR_TRUE, getter_AddRefs(localFile)); 
+--- src/mozilla/ContentHandler.cpp	2002/05/24 13:41:30	1.1
++++ src/mozilla/ContentHandler.cpp	2002/05/24 13:42:36
+@@ -361,7 +361,7 @@
+ 	}
+ 
+ 	saveDir = do_CreateInstance (NS_LOCAL_FILE_CONTRACTID);
+-#if MOZILLA_VERSION > VERSION3(1,0,0)
++#if 1
+ 	saveDir->InitWithNativePath (nsDependentCString(expanded_directory));
+ #else
+ 	saveDir->InitWithPath (expanded_directory);
+@@ -392,7 +392,7 @@
+ 	}
+ 	else
+ 	{
+-#if MOZILLA_VERSION > VERSION3(1,0,0)
++#if 1
+ 		nsCString cDirName;
+ 		saveDir->GetNativePath (cDirName);
+ 		char *cDefaultFile = mozilla_unicode_to_locale (aDefaultFile);
+@@ -423,7 +423,7 @@
+ 		rv = aFile->GetParent (getter_AddRefs(aDirectory));
+ 		if(NS_SUCCEEDED(rv) && aDirectory)
+ 		{
+-#if MOZILLA_VERSION > VERSION3(1,0,0)
++#if 1
+ 			nsCString cDirectoryName;
+ 			rv = aDirectory->GetNativePath(cDirectoryName);
+ #else
+@@ -496,7 +496,7 @@
+ 			appLauncher->DeleteTemporaryFileOnExit(mTempFile);
+ 		}
+ 
+-#if MOZILLA_VERSION > VERSION3(1,0,0)
++#if 1
+ 		nsCString aFileName;
+ 		mTempFile->GetNativePath(aFileName);
+ #else
+--- src/mozilla/FilePicker.cpp	2002/05/24 13:41:30	1.1
++++ src/mozilla/FilePicker.cpp	2002/05/24 13:42:54
+@@ -147,7 +147,7 @@
+ 	mFileFormats = fileFormats;
+ 	mFile = do_CreateInstance (NS_LOCAL_FILE_CONTRACTID);
+ 	mDisplayDirectory = do_CreateInstance (NS_LOCAL_FILE_CONTRACTID);
+-#if MOZILLA_VERSION > VERSION3(1,0,0)
++#if 1
+ 	mDisplayDirectory->InitWithNativePath(nsDependentCString(g_get_home_dir()));
+ #else
+ 	mDisplayDirectory->InitWithPath(g_get_home_dir());
+@@ -282,7 +282,7 @@
+ 		cFileName = mozilla_unicode_to_locale (mDefaultString.get());
+ 	}
+ 
+-#if MOZILLA_VERSION > VERSION3(1,0,0)
++#if 1
+ 	nsCAutoString cDirName;
+ 	mDisplayDirectory->GetNativePath (cDirName);
+ 
+@@ -560,7 +560,7 @@
+ 		}
+ 	}
+ 
+-#if MOZILLA_VERSION > VERSION3(1,0,0)
++#if 1
+ 	aFilePicker->mFile->InitWithNativePath (nsDependentCString(aFileName));
+ 
+ 	if (aFilePicker->mMode == nsIFilePicker::modeGetFolder)
+@@ -706,7 +706,7 @@
+ 
+ 	nsCOMPtr<nsILocalFile> aDir = 
+ 				do_CreateInstance (NS_LOCAL_FILE_CONTRACTID);
+-#if MOZILLA_VERSION > VERSION3(1,0,0)
++#if 1
+ 	aDir->InitWithNativePath (nsDependentCString(expanded_directory));
+ #else
+ 	aDir->InitWithPath (expanded_directory);
+@@ -743,7 +743,7 @@
+ 			g_free (*ret_fullpath);
+ 		nsCOMPtr<nsILocalFile> aFile;
+ 		aFilePicker->GetFile (getter_AddRefs(aFile));
+-#if MOZILLA_VERSION > VERSION3(1,0,0)
++#if 1
+ 		nsCString tempFullPathStr;
+ 		aFile->GetNativePath (tempFullPathStr);
+ 		*ret_fullpath = g_strdup (tempFullPathStr.get());
+--- src/mozilla/GaleonWrapper.cpp	2002/05/24 13:45:50	1.3
++++ src/mozilla/GaleonWrapper.cpp	2002/05/24 13:45:39
+@@ -181,7 +181,7 @@
+ 	}
+ 	else
+ 	{
+-#if MOZILLA_VERSION > VERSION3(1,0,0)
++#if 0
+ 		result = print->PrintPreview(options, nsnull, nsnull);
+ #else
+ 		result = print->PrintPreview(options);
+@@ -435,7 +435,7 @@
+ 	if (NS_FAILED(rv) || !persist) return NS_ERROR_FAILURE;
+ 
+ 	nsCOMPtr<nsILocalFile> file;
+-#if MOZILLA_VERSION > VERSION3(1,0,0)
++#if 1
+ 	NS_NewNativeLocalFile(nsDependentCString(filename),
+ 			      PR_TRUE, getter_AddRefs(file)); 
+ #else
+@@ -492,7 +492,7 @@
+ 	if (NS_FAILED(rv) || !persist) return NS_ERROR_FAILURE;
+ 
+ 	nsCOMPtr<nsILocalFile> file;
+-#if MOZILLA_VERSION > VERSION3(1,0,0)
++#if 1
+ 	NS_NewNativeLocalFile(nsDependentCString(filename),
+ 			      PR_TRUE, getter_AddRefs(file)); 
+ #else
+@@ -502,7 +502,7 @@
+ 
+ 	nsCOMPtr<nsILocalFile> path;
+ 	if (datapath)
+-#if MOZILLA_VERSION > VERSION3(1,0,0)
++#if 1
+ 		NS_NewNativeLocalFile(nsDependentCString(datapath),
+ 				      PR_TRUE, getter_AddRefs(path));
+ #else
+--- src/mozilla/MozRegisterComponents.cpp	2002/05/24 13:41:30	1.1
++++ src/mozilla/MozRegisterComponents.cpp	2002/05/24 13:43:06
+@@ -193,7 +193,7 @@
+ 	nsresult rv = NS_OK;
+ 
+ 	nsCOMPtr<nsILocalFile> dllFile;
+-#if MOZILLA_VERSION > VERSION3(1,0,0)
++#if 1
+ 	rv = NS_NewNativeLocalFile (nsDependentCString(aDLLPath),
+ 				    PR_TRUE, getter_AddRefs (dllFile));
+ #else
+--- src/mozilla/PrintProgressListener.cpp	2002/05/24 13:41:30	1.1
++++ src/mozilla/PrintProgressListener.cpp	2002/05/24 13:43:15
+@@ -54,7 +54,7 @@
+ /* void onStateChange (in nsIWebProgress aWebProgress, in nsIRequest aRequest, in long aStateFlags, in unsigned long aStatus); */
+ NS_IMETHODIMP GPrintListener::OnStateChange(nsIWebProgress *aWebProgress,
+ 					    nsIRequest *aRequest,
+-#if MOZILLA_VERSION > VERSION3(1,0,0)
++#if 1
+ 					    PRUint32 aStateFlags,
+ #else
+ 					    PRInt32 aStateFlags,
+@@ -118,7 +118,7 @@
+ /* void onSecurityChange (in nsIWebProgress aWebProgress, in nsIRequest aRequest, in long state); */
+ NS_IMETHODIMP GPrintListener::OnSecurityChange(nsIWebProgress *aWebProgress,
+ 					       nsIRequest *aRequest,
+-#if MOZILLA_VERSION > VERSION3(1,0,0)
++#if 1
+ 					       PRUint32 state)
+ #else
+ 					       PRInt32 state)
+--- src/mozilla/ProgressListener2.cpp	2002/05/24 13:41:30	1.1
++++ src/mozilla/ProgressListener2.cpp	2002/05/24 13:43:27
+@@ -279,7 +279,7 @@
+ 		}
+ 
+ 		/* setup filename */
+-#if MOZILLA_VERSION > VERSION3(1,0,0)
++#if 1
+ 		nsCString leafName;
+ 		rv = mFile->GetNativeLeafName (leafName);
+ 		text[COL_FILENAME] = nsCRT::strdup (leafName.get());
+@@ -458,7 +458,7 @@
+  */
+ NS_IMETHODIMP GProgressListener2::OnStateChange (nsIWebProgress *aWebProgress,
+ 						 nsIRequest *aRequest,
+-#if MOZILLA_VERSION > VERSION3(1,0,0)
++#if 1
+ 						 PRUint32 aStateFlags,
+ #else
+ 						 PRInt32 aStateFlags,
+@@ -469,7 +469,7 @@
+ 
+ 	if (aStateFlags & nsIWebProgressListener::STATE_STOP)
+ 	{
+-#if MOZILLA_VERSION > VERSION3(1,0,0)
++#if 1
+ 		nsCString filename;
+ 		mFile->GetNativePath (filename);
+ #else
+@@ -537,7 +537,7 @@
+ 					(SetPixmapInfo *) mCallbackInfo;
+ 
+ 				gchar *fn;
+-#if MOZILLA_VERSION > VERSION3(1,0,0)
++#if 1
+ 				nsCString cfn;
+ 				mFile->GetNativePath(cfn);
+ 				fn = nsCRT::strdup(cfn.get());
+@@ -833,7 +833,7 @@
+ NS_IMETHODIMP GProgressListener2::
+ 			OnSecurityChange(nsIWebProgress *aWebProgress,
+ 					 nsIRequest *aRequest,
+-#if MOZILLA_VERSION > VERSION3(1,0,0)
++#if 1
+ 					 PRUint32 state)
+ #else
+ 					 PRInt32 state)
