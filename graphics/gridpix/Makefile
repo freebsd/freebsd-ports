@@ -8,8 +8,8 @@
 PORTNAME=	gridpix
 PORTVERSION=	2.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://people.FreeBSD.org/~asami/distfiles/GridPix/
-DISTNAME=	GridPix-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	asami/GridPix
 
 MAINTAINER=	asami@FreeBSD.org
 

@@ -8,7 +8,8 @@
 PORTNAME=	mpd
 PORTVERSION=	3.0.b8
 CATEGORIES=	net
-MASTER_SITES=	http://people.FreeBSD.org/~archie/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	archie
 DISTNAME=	mpd-3.0b8
 
 MAINTAINER=	archie@freebsd.org

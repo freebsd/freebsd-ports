@@ -10,7 +10,8 @@ PORTVERSION= 	0.75
 CATEGORIES=	mail
 MASTER_SITES=	http://cr.yp.to/software/ \
 		ftp://ftp.qmail.org/pub/koobera.math.uic.edu/pub/software/ \
-		http://people.FreeBSD.org/~tom/distfiles/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	tom
 
 MAINTAINER=	tom@FreeBSD.org
 

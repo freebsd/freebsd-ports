@@ -9,7 +9,8 @@ PORTNAME=	sml-mode
 PORTVERSION=	3.3
 CATEGORIES=	lang elisp
 MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/contrib/emacs/ \
-		http://people.FreeBSD.org/~jkoshy/PORTS/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	jkoshy
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	jkoshy@FreeBSD.org

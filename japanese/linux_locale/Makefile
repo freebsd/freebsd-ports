@@ -9,7 +9,8 @@ PORTNAME=	linux_locale
 PORTVERSION=	${VERSION}.0
 CATEGORIES=	japanese emulators linux
 MASTER_SITES=	ftp://ftp.debian.org/debian/dists/potato/main/source/admin/ \
-		http://people.FreeBSD.org/~imura/distfiles/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	imura
 DISTNAME=	locale-ja_${VERSION}
 
 MAINTAINER=	imura@FreeBSD.org

@@ -9,11 +9,13 @@ PORTNAME=	ppp-nt
 PORTVERSION=	2.2.7
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
-		http://people.FreeBSD.org/~sada/distfiles/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	sada
 DISTNAME=	ppp-2.2.7
 
 PATCH_SITES=	http://www.rr.iij4u.or.jp/~sada/patches/ \
-		http://people.FreeBSD.org/~sada/distfiles/
+		${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR=	sada
 PATCHFILES=	nat-980920.patch.gz ppp-2.2.7-telehoudai.diff.gz
 PATCH_DIST_STRIP= -p1
 

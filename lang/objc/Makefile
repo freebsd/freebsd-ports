@@ -9,8 +9,8 @@ PORTNAME=	objc
 PORTVERSION=	3.1.5
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://people.FreeBSD.org/~chuckr/
-MASTER_SITE_SUBDIR=	devel/lang/objc
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	devel/lang/objc chuckr
 DISTFILES=	objc-3.1.5-bootstrap.tar.gz objc-3.1.5.tar.gz
 
 MAINTAINER=	chuckr@freebsd.org

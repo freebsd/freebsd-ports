@@ -9,7 +9,8 @@ PORTNAME=	portscanner
 PORTVERSION=	1.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.ameth.org/~veilleux/ \
-		http://people.FreeBSD.org/~billf/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	billf
 DISTNAME=	PortScanner-1.0
 
 MAINTAINER=	billf@FreeBSD.org

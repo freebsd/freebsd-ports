@@ -10,8 +10,9 @@ PORTVERSION=	3.10a
 CATEGORIES+=	graphics
 MASTER_SITES=	ftp://ftp.cis.upenn.edu/pub/xv/ \
 		ftp://ftp.airlab.cs.ritsumei.ac.jp/pub/X/xv-jp-extension/working/ \
-		http://people.FreeBSD.org/~shige/ports/xv/ \
+		${MASTER_SITE_LOCAL} \
 		http://www.yuasa.kuis.kyoto-u.ac.jp/~shige/FreeBSD/ports/xv/
+MASTER_SITE_SUBDIR=	ports/xv
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}${PORTVERSION:S/.//}-jp-extension-rev5.3.3.tar.gz \
 		croppad.patch grabpatch jp-ext-bzip2.patch longname.patch \

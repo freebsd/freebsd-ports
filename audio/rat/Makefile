@@ -9,7 +9,8 @@ PORTNAME=	rat
 PORTVERSION=	4.0.4
 CATEGORIES=	mbone audio
 MASTER_SITES=	http://www-mice.cs.ucl.ac.uk/multimedia/software/rat/4.0.4/ \
-		http://people.FreeBSD.org/~cpiazza/distfiles/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	cpiazza
 
 MAINTAINER=	O.Hodson@cs.ucl.ac.uk
 

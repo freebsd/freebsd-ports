@@ -8,7 +8,8 @@
 PORTNAME=	xwmm
 PORTVERSION= 	0.7
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://people.FreeBSD.org/~imura/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	imura
 
 MAINTAINER=	imura@FreeBSD.org
 

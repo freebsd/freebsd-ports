@@ -10,8 +10,8 @@ PORTVERSION=		1.0.4
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_SUNSITE} \
 			http://home.sol.no/~sverrehu/pub-unix/files/ \
-			http://people.FreeBSD.org/~mph/distfiles/
-MASTER_SITE_SUBDIR=	libs/ui
+			${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	libs/ui mph
 DISTNAME=		shhcards-${PORTVERSION}
 
 MAINTAINER=		ports@FreeBSD.org

@@ -9,12 +9,14 @@ PORTNAME=	netatalk
 PORTVERSION=	1.4b2
 CATEGORIES=	net print
 MASTER_SITES=   ftp://terminator.rs.itd.umich.edu/unix/netatalk/ \
-		http://people.FreeBSD.org/~stb/mirror/terminator.rs.itd.umich.edu/unix/netatalk/ \
+		${MASTER_SITE_LOCAL} \
 		ftp://ftp.hanse.de/sites/transit/mirror/terminator.rs.itd.umich.edu/unix/netatalk/
+MASTER_SITE_SUBDIR=	stb/mirror/terminator.rs.itd.umich.edu/unix/netatalk
 
 PATCH_SITES=	http://www.umich.edu/~rsug/netatalk/patches/1.4b2/ \
-		http://people.FreeBSD.org/~stb/mirror/www.umich.edu/%7Ersug/netatalk/patches/1.4b2/ \
+		${MASTER_SITE_LOCAL} \
 		ftp://ftp.hanse.de/sites/transit/mirror/www.umich.edu/%257Ersug/netatalk/patches/1.4b2/
+PATCH_SITE_SUBDIR=	stb/mirror/www.umich.edu/%7Ersug/netatalk/patches/1.4b2/ \
 PATCHFILES=	afpd-macos8.diff afpd-bfree.diff
 
 MAINTAINER=	stb@freebsd.org

@@ -9,7 +9,8 @@ PORTNAME=	OpenSSH-askpass
 PORTVERSION=	1.2.2
 CATEGORIES=	security
 # ${MASTER_SITES} is only for if CVS won't work, period.
-MASTER_SITES=	http://people.FreeBSD.org/~kris/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	kris
 DISTNAME=	X11/xc/programs/ssh-askpass
 
 MAINTAINER=	kris@FreeBSD.org

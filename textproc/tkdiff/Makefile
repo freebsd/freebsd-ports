@@ -8,7 +8,8 @@
 PORTNAME=	tkdiff
 PORTVERSION= 	3.04
 CATEGORIES=	textproc tk82
-MASTER_SITES=	http://people.FreeBSD.org/~kevlo/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	kevlo
 
 MAINTAINER=	kevlo@FreeBSD.org
 

@@ -8,7 +8,8 @@
 PORTNAME=	pib
 PORTVERSION=	1.1
 CATEGORIES=	sysutils tk82
-MASTER_SITES=	http://people.FreeBSD.org/~msmith/pib/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	msmith
 
 MAINTAINER=	msmith@freebsd.org
 

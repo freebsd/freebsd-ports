@@ -8,7 +8,9 @@
 PORTNAME=	nulib
 PORTVERSION=	3.25
 CATEGORIES=	archivers
-MASTER_SITES=	http://people.FreeBSD.org/~jseger/
+
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	jseger
 DISTNAME=	nulib325
 EXTRACT_SUFX=	.tar.Z
 

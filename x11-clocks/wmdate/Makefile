@@ -9,7 +9,8 @@ PORTNAME=	wmdate
 PORTVERSION= 	0.7
 CATEGORIES=	x11-clocks windowmaker afterstep
 MASTER_SITES=	http://wit401310.student.utwente.nl/apps/apps/ \
-		http://people.FreeBSD.org/~jim/distfiles/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	jim
 
 MAINTAINER=	jim@FreeBSD.org
 

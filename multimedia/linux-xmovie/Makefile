@@ -8,7 +8,8 @@
 PORTNAME=	xmovie
 PORTVERSION=	1.3.1
 CATEGORIES=	graphics linux
-MASTER_SITES=	http://people.FreeBSD.org/~imura/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	imura
 # Distfile has no version info. The original site is below.
 # MASTER_SITES=	http://heroine.linuxbox.com/
 DISTNAME=	${PORTNAME}-i586-${PORTVERSION}

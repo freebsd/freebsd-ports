@@ -10,7 +10,8 @@ PORTVERSION=	${WEMI_VER}
 CATEGORIES=	editors elisp
 MASTER_SITES=	ftp://ftp.jpl.org/pub/elisp/wemi/ \
 		${MASTER_SITE_PORTS_JP} \
-		http://people.FreeBSD.org/~shige/ports/distfiles/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	shige
 DISTNAME=	wemi-${WEMI_VER}
 
 MAINTAINER?=	shige@FreeBSD.org

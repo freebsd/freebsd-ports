@@ -8,7 +8,8 @@
 PORTNAME=	jikes
 PORTVERSION=	1.11
 CATEGORIES=	java
-MASTER_SITES=	http://people.FreeBSD.org/~archie/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	archie
 
 MAINTAINER=	archie@whistle.com
 

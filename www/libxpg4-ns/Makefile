@@ -9,7 +9,8 @@ PORTNAME=	libxpg4-ns
 PORTVERSION= 	3.3
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_PORTS_JP} \
-		http://people.FreeBSD.org/~sada/distfiles/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	sada
 DISTNAME=	libxpg4-3.3
 
 MAINTAINER=	sada@FreeBSD.ORG

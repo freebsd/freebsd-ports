@@ -9,7 +9,8 @@ PORTNAME=	nttcp
 PORTVERSION=	1.45
 CATEGORIES=	net benchmarks
 MASTER_SITES=	http://users.leo.org/~bartel/nttcp/ \
-		http://people.FreeBSD.org/~billf/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	billf
 
 MAINTAINER=	billf@FreeBSD.org
 

@@ -8,7 +8,8 @@
 PORTNAME=	suckblow
 PORTVERSION=	1.1
 CATEGORIES=	net misc
-MASTER_SITES=	http://people.FreeBSD.org/~archie/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	archie
 
 MAINTAINER=	archie@freebsd.org
 

@@ -9,7 +9,8 @@
 PORTNAME=	44bsd-csh
 PORTVERSION=	20000409
 CATEGORIES=	shells
-MASTER_SITES=	http://people.freebsd.org/~obrien/Distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	obrien
 
 MAINTAINER=	obrien@FreeBSD.org
 

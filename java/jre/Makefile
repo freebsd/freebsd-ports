@@ -9,9 +9,10 @@ PORTNAME=	jre
 PORTVERSION=	${JRE_VERSION}
 CATEGORIES=	java devel
 MASTER_SITES=	ftp://ftp.se.freebsd.org/pub/FreeBSD/JDK/ \
-		http://people.FreeBSD.org/~patrick/ \
+		${MASTER_SITE_LOCAL}
 		ftp://ftp.sc.sri.com/pub/FreeBSD/JDK/ \
 		http://www.freebsd.org/java/
+MASTER_SITE_SUBDIR=	patrick
 
 MAINTAINER=	sobomax@FreeBSD.org
 

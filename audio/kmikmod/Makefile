@@ -8,7 +8,8 @@
 PORTNAME=	kmikmod
 PORTVERSION=	2.04
 CATEGORIES=	audio kde
-MASTER_SITES=	http://people.FreeBSD.org/~tom/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	tom
 
 MAINTAINER=	tom@FreeBSD.org
 

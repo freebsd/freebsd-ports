@@ -8,7 +8,8 @@
 PORTNAME=	rtfm
 PORTVERSION=	1.0
 CATEGORIES=	misc
-MASTER_SITES= 	http://people.FreeBSD.org/~chris/distfiles/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	chris
 
 MAINTAINER=    chris@FreeBSD.org
 

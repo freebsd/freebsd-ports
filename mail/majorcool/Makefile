@@ -8,7 +8,8 @@
 PORTNAME=	majorcool
 PORTVERSION= 	1.3.2
 CATEGORIES=	mail
-MASTER_SITES=	http://people.FreeBSD.org/~andreas/download/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	andreas
 
 MAINTAINER=	ports@FreeBSD.org
 

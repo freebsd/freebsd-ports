@@ -9,7 +9,8 @@ PORTNAME=	glload
 PORTVERSION=	0.4.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://glload.netpedia.net/source/ \
-		http://people.FreeBSD.org/~vanilla/
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	vanilla
 
 MAINTAINER=	vanilla@FreeBSD.org
 

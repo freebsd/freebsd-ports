@@ -8,8 +8,9 @@
 PORTNAME=	a2ps
 PORTVERSION=	4.12
 CATEGORIES=	print
-MASTER_SITES=	http://people.FreeBSD.org/~chuckr/ \
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.enst.fr/pub/unix/a2ps/
+MASTER_SITE_SUBDIR=	chuckr
 PKGNAMESUFFIX=	-${PAPERSIZE}
 DISTFILES=	a2ps-${PORTVERSION}${EXTRACT_SUFX} sheets.map
 

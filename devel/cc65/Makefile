@@ -8,10 +8,11 @@
 PORTNAME=	cc65
 PORTVERSION=	2.4.1
 CATEGORIES=	devel
-MASTER_SITES=	http://people.FreeBSD.org/~hoek/dists/ \
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		ftp://ftp.musoftware.de/pub/uz/cc65/
 #		ftp://ftp.us.musoftware.de/pub/uz/cc65/
 # US musoftware mirror down; main site doesn't like fetch(1)
+MASTER_SITE_SUBDIR=	hoek
 WRKSRC=		${WRKDIR}/cc65-2.4.1
 DISTNAME=	cc65-sources-2.4.1
 
