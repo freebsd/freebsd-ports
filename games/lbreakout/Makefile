@@ -14,20 +14,17 @@ MASTER_SITE_SUBDIR=	lgames
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A nice clone of classical Breakout game
 
-LIB_DEPENDS=	SDL-1.1.5:${PORTSDIR}/devel/sdl12
-
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-
+USE_SDL=	yes
+USE_REINPLACE=	yes
 USE_GMAKE=	yes
-USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LIBS="-lcompat" \
-		SDL_CONFIG="${SDL_CONFIG}"
+CONFIGURE_ENV=	LIBS="-lcompat"
 
-pre-patch:
-	@${PERL} -pi -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@${FIND} ${WRKSRC} \( -name "*.[ch]" -or -name "*.cpp" \) | \
-		${XARGS} ${PERL} -pi -e 's|"SDL/SDL|"SDL|g ; s|<SDL/SDL|<SDL|g'
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+	@${GREP} -lR "SDL/SDL" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
+		's|"SDL/SDL|"SDL|g ; \
+		 s|<SDL/SDL|<SDL|g'
 
 pre-install:
 	${MKDIR} /var/games/${PORTNAME}
