@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/multipipe
 bin/multitail
 bin/qfilelog
@@ -5,3 +6,6 @@ bin/spipe
 bin/tai2tai64n
 bin/tai64n2tai
 bin/teepipe
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
