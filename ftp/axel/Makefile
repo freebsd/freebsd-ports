@@ -11,7 +11,7 @@ PORTVERSION=	0.99b
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.lintux.cx/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	lintux@lintux.cx
 
 LIB_DEPENDS=	gnugetopt:${PORTSDIR}/devel/libgnugetopt \
 		intl:${PORTSDIR}/devel/gettext
