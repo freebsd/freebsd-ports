@@ -1,0 +1,22 @@
+4Suite is a collection of Python tools for XML processing and object data
+management, published by Fourthought, Inc under an open source licence.
+
+The suite provides support for XML parsing, several transient and persistent
+DOM implementations, XPath expressions, XPointer, XSLT transforms, XLink, RDF
+and ODMG object databases.
+
+The development of 4Suite is closely coordinated with that of the publicly
+developed PyXML extension for Python.  4Suite is not intended to replace
+PyXML, but rather to augment it with additional functionality.  As certain
+parts of 4Suite reach maturity they will be transferred to PyXML (this has
+already happened with the 4DOM implementation of the DOM API).  Eventually
+PyXML will be a complete and stable toolkit, while 4Suite will continue to
+provide bleeding edge (re)implementations.
+
+The user of Python 2.0 and later therefore now has three options for XML
+processing:  the built-in 'xml' package, PyXML, and 4Suite.  PyXML overrides
+and/or extends the 'xml' package, and 4Suite does the same for PyXML.
+
+WWW: http://4suite.org/
+
+-- Johann Visagie <johann@egenetics.com>

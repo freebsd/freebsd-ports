@@ -121,6 +121,7 @@
     SUBDIR += perl2html
     SUBDIR += pspell
     SUBDIR += pspell-ispell
+    SUBDIR += py-4suite
     SUBDIR += py-HyperText
     SUBDIR += py-csv
     SUBDIR += py-expat
