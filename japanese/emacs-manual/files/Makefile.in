@@ -1,0 +1,21 @@
+TEXIFILE= emacs.texi
+INFOFILE= emacs-ja
+
+EMACS?=	emacs
+FORMAT_FLAG?= t
+
+EMACS_ARGS= -batch -nw --multibyte -no-site-file
+EMACS_LOADLIBS= --load=texinfmt.el
+EMACS_FUNCALLS=	--eval "(texinfo-format-buffer ${FORMAT_FLAG})" -f save-buffer
+
+all: ${INFOFILE}
+
+${INFOFILE}: ${TEXIFILE}
+	${EMACS} ${EMACS_ARGS} ${EMACS_LOADLIBS} ${TEXIFILE} ${EMACS_FUNCALLS} \
+		> /dev/null 2>&1
+
+install: all
+	${BSD_INSTALL_DATA} ${INFOFILE} ${PREFIX}/info
+
+clean:
+	rm -f ${INFOFILE}

@@ -1,0 +1,3 @@
+@unexec install-info --delete %D/info/emacs-ja %D/info/dir
+info/emacs-ja
+@exec install-info %D/info/emacs-ja %D/info/dir
