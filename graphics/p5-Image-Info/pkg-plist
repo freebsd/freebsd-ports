@@ -1,0 +1,15 @@
+lib/perl5/site_perl/%%PERL_VER%%/Image/Info.pm
+lib/perl5/site_perl/%%PERL_VER%%/Image/Info/BMP.pm
+lib/perl5/site_perl/%%PERL_VER%%/Image/Info/GIF.pm
+lib/perl5/site_perl/%%PERL_VER%%/Image/Info/JPEG.pm
+lib/perl5/site_perl/%%PERL_VER%%/Image/Info/PNG.pm
+lib/perl5/site_perl/%%PERL_VER%%/Image/Info/PPM.pm
+lib/perl5/site_perl/%%PERL_VER%%/Image/Info/SVG.pm
+lib/perl5/site_perl/%%PERL_VER%%/Image/Info/XBM.pm
+lib/perl5/site_perl/%%PERL_VER%%/Image/Info/XPM.pm
+lib/perl5/site_perl/%%PERL_VER%%/Image/TIFF.pm
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Info/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image/Info
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Image 2>/dev/null || true
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/Image/Info
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/Image 2>/dev/null || true
