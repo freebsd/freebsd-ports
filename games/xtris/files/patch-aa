@@ -1,6 +1,6 @@
---- Makefile.orig	Sun Dec 14 20:43:35 1997
-+++ Makefile	Sun Aug 29 20:28:11 1999
-@@ -8,22 +8,22 @@
+--- Makefile.orig	Mon Jan 17 13:33:15 2000
++++ Makefile	Mon Jan 17 13:36:11 2000
+@@ -8,27 +8,27 @@
  ###################
  
  # change this to your favorite ANSI C compiler
@@ -16,15 +16,23 @@
 +MANDIR = ${PREFIX}/man
  
  # change according to taste and local custom...
--CFLAGS = -O3 -D__USE_FIXED_PROTOTYPES__
-+CFLAGS += -D__USE_FIXED_PROTOTYPES__ -I${PREFIX}/include
+-CFLAGS = -O3 -D__USE_FIXED_PROTOTYPES__ $(IPV6_CFLAGS) $(XCFLAGS)
++CFLAGS += -D__USE_FIXED_PROTOTYPES__ $(IPV6_CFLAGS) $(XCFLAGS)
  
  # on Solaris and similar systems, you'll need to uncomment this:
- # EXTRALIBS = -lnsl -lsocket 
+ EXTRALIBS = $(IPV6_LDFLAGS) #-lnsl -lsocket 
  
- # specify X11 libdir if your system needs it
--# XLIBDIR = -L/usr/X11/lib
+ # specify X11 cflags and libdir if your system needs it
+-XCFLAGS = #-I/usr/X11/include
+-XLIBDIR = #-L/usr/X11/lib
++XCFLAGS = -I${PREFIX}/include
 +XLIBDIR = -L${PREFIX}/lib
  
+ # IPv6 Settings
+-IPV6_CFLAGS = #-DINET6 #-I/usr/inet6/include
+-IPV6_LDFLAGS = #-L/usr/local/v6/lib -linet6
++#IPV6_CFLAGS = #-DINET6 #-I/usr/inet6/include
++#IPV6_LDFLAGS = #-L/usr/local/v6/lib -linet6
  
  ###########################################################################
+ ##         You shouldn't need to change anything past this.		 ##
