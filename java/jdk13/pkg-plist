@@ -923,6 +923,8 @@ jdk%%JDK_VERSION%%/man/man1/rmiregistry.1
 jdk%%JDK_VERSION%%/man/man1/serialver.1
 jdk%%JDK_VERSION%%/man/man1/tnameserv.1
 jdk%%JDK_VERSION%%/src.jar
+@exec   mkdir -p %D/jdk%%JDK_VERSION%%/jre/lib/ext/
+@unexec rmdir %D/jdk%%JDK_VERSION%%/jre/lib/ext 2>/dev/null || true
 @exec   mkdir -p %D/share/doc/java
 @unexec rmdir %D/share/doc/java 2>/dev/null || true
 @exec   %D/bin/registervm "%D/jdk%%JDK_VERSION%%/bin/java # FREEBSD-JDK%%JDK_VERSION%%"
@@ -934,33 +936,33 @@ jdk%%JDK_VERSION%%/src.jar
 %%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/plugin/i386/ns600
 %%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/plugin/i386/ns4
 %%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/plugin/i386
-@dirrm jdk%%JDK_VERSION%%/jre/plugin
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/plugin
 @dirrm jdk%%JDK_VERSION%%/jre/lib/security
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW.BIG5
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh.GBK/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh.GBK
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/sv/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/sv
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko.UTF-8/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko.UTF-8
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ja/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ja
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/it/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/it
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/fr/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/fr
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/es/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/es
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/de/LC_MESSAGES
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/de
-@dirrm jdk%%JDK_VERSION%%/jre/lib/locale
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW/LC_MESSAGES
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW.BIG5/LC_MESSAGES
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW.BIG5
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh_TW
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh/LC_MESSAGES
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh.GBK/LC_MESSAGES
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh.GBK
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/zh
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/sv/LC_MESSAGES
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/sv
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko/LC_MESSAGES
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko.UTF-8/LC_MESSAGES
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko.UTF-8
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ko
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ja/LC_MESSAGES
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/ja
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/it/LC_MESSAGES
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/it
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/fr/LC_MESSAGES
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/fr
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/es/LC_MESSAGES
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/es
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/de/LC_MESSAGES
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale/de
+%%PLUGIN:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/locale
 @dirrm jdk%%JDK_VERSION%%/jre/lib/images/cursors
 @dirrm jdk%%JDK_VERSION%%/jre/lib/images
 %%HOTSPOT:%%@dirrm jdk%%JDK_VERSION%%/jre/lib/i386/server
@@ -970,11 +972,10 @@ jdk%%JDK_VERSION%%/src.jar
 @dirrm jdk%%JDK_VERSION%%/jre/lib/i386/classic
 @dirrm jdk%%JDK_VERSION%%/jre/lib/i386
 @dirrm jdk%%JDK_VERSION%%/jre/lib/fonts
-@dirrm jdk%%JDK_VERSION%%/jre/lib/ext
 @dirrm jdk%%JDK_VERSION%%/jre/lib/cmm
 @dirrm jdk%%JDK_VERSION%%/jre/lib/audio
 @dirrm jdk%%JDK_VERSION%%/jre/lib
-@dirrm jdk%%JDK_VERSION%%/jre/bin/i386/native_threads
+%%NATIVE:%%@dirrm jdk%%JDK_VERSION%%/jre/bin/i386/native_threads
 @dirrm jdk%%JDK_VERSION%%/jre/bin/i386/green_threads
 @dirrm jdk%%JDK_VERSION%%/jre/bin/i386
 @dirrm jdk%%JDK_VERSION%%/jre/bin
@@ -1078,7 +1079,7 @@ jdk%%JDK_VERSION%%/src.jar
 @dirrm jdk%%JDK_VERSION%%/demo/applets/Animator
 @dirrm jdk%%JDK_VERSION%%/demo/applets
 @dirrm jdk%%JDK_VERSION%%/demo
-@dirrm jdk%%JDK_VERSION%%/bin/i386/native_threads
+%%NATIVE:%%@dirrm jdk%%JDK_VERSION%%/bin/i386/native_threads
 @dirrm jdk%%JDK_VERSION%%/bin/i386/green_threads
 @dirrm jdk%%JDK_VERSION%%/bin/i386
 @dirrm jdk%%JDK_VERSION%%/bin
