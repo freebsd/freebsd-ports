@@ -25,9 +25,6 @@ INSTALLS_SHLIB=	yes
 .include <bsd.port.pre.mk>
 
 DISTFILES!=	${CAT} ${FILESDIR}/distfiles
-.if ${XFREE86_VERSION} > 3
-EXTRA_PATCHES=${PKGDIR}/patch-aa
-.endif
 
 CVS_CMD?=	cvs -z3
 # arbitrary date for now.
