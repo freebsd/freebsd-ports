@@ -211,6 +211,7 @@
     SUBDIR += typhoon
     SUBDIR += unixODBC
     SUBDIR += usogres
+    SUBDIR += wfb2sql
     SUBDIR += xmbase-grok
     SUBDIR += xmysql
     SUBDIR += xmysqladmin
