@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Oct  8 13:11:49 2002
-+++ Makefile.in	Wed Oct  9 18:33:21 2002
-@@ -10,8 +10,10 @@
+--- Makefile.in.orig	Wed Nov  6 23:33:09 2002
++++ Makefile.in	Fri Nov 22 16:18:50 2002
+@@ -10,8 +10,11 @@
  CFLAGS		= @CFLAGS@
  LDFLAGS		= @LDFLAGS@
  DEFS		= @DEFS@
@@ -10,10 +10,11 @@
 +TLIBS		= @LIBS@ @LNETLIB@
 +CLIBS		= @LIBS@
 +PLIBS		= @LIBS@ @LNETLIB@ @REDBLACKLIB@
++
  
  INSTALL		= @INSTALL@
  
-@@ -29,30 +31,23 @@
+@@ -29,31 +32,24 @@
  .c.o:
  	$(CC) $(CFLAGS) $(INCS) -c $*.c
  
@@ -40,6 +41,7 @@
  clean:
  	rm -f *.o *core $(BINARIES)
 -	cd libredblack && make clean
+ 	cd test && make clean
  
  distclean: clean
  	rm -f Makefile config.h config.status config.cache config.log *~
