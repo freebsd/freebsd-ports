@@ -1,32 +1,11 @@
---- Makefile.orig	Thu Nov  4 18:43:51 1999
-+++ Makefile	Sun Aug  6 19:19:54 2000
-@@ -3,16 +3,17 @@
- #
- 
- HAVE_XFREE86 = YES
--X11BASE      = /usr/X11R6
-+X11BASE      ?= /usr/X11R6
-+LOCALBASE    ?= /usr/local
- DEBUG        = NO
- OS           = $(shell uname -s)
- OS_MAJOR     = $(shell uname -r | cut -f1 -d\.)
- 
- override CF_VERS           = -DVERS_STR=\"1.02\"
- override VIDEOLIB_DIR      = ./videolib
--override INC               = -I$(X11BASE)/include -I/usr/local/include \
-+override INC               = -I$(X11BASE)/include -I$(LOCALBASE)/include \
- 	                     -I$(VIDEOLIB_DIR) -I.
--override LIBDIRS           = $(X11BASE)/lib /usr/local/lib
-+override LIBDIRS           = $(X11BASE)/lib $(LOCALBASE)/lib
- override SHELL             = /bin/sh
- 
- #
-@@ -45,7 +46,7 @@
+--- Makefile.orig	Tue Feb 13 09:08:59 2001
++++ Makefile	Sat Mar 10 17:36:25 2001
+@@ -62,7 +62,7 @@
  ifneq ($(DEBUG),NO)
    override CFLAGS          = -DDEBUG -g
  else
--  override CFLAGS          = -O2 -m486
-+  override CFLAGS          = #-O2 -m486
+-  override CFLAGS          = -DNDEBUG -O2
++  override CFLAGS          += -DNDEBUG #-O2
  endif
  C_WARN_FLAG                = -Wall
  override CFLAGS           += $(C_WARN_FLAG) $(INC) $(CF_VERS)
