@@ -35,6 +35,7 @@ include/libxml2/libxml/xmlautomata.h
 include/libxml2/libxml/xmlerror.h
 include/libxml2/libxml/xmlexports.h
 include/libxml2/libxml/xmlmemory.h
+include/libxml2/libxml/xmlmodule.h
 include/libxml2/libxml/xmlreader.h
 include/libxml2/libxml/xmlregexp.h
 include/libxml2/libxml/xmlsave.h
@@ -78,6 +79,7 @@ share/aclocal/libxml.m4
 %%DOCSDIR%%/html/libxml-hash.html
 %%DOCSDIR%%/html/libxml-lib.html
 %%DOCSDIR%%/html/libxml-list.html
+%%DOCSDIR%%/html/libxml-xmlmodule.html
 %%DOCSDIR%%/html/libxml-nanoftp.html
 %%DOCSDIR%%/html/libxml-nanohttp.html
 %%DOCSDIR%%/html/libxml-parser.html
