@@ -1,0 +1,11 @@
+NTL is an object oriented library for number theory, written
+by Victor Shoup.  It provides objects and methods for 
+	- arbitrary length integers
+	- finite fields
+	- polynomials over fields
+	- extensions of fields.
+
+WWW: http://www.shoup.net/
+
+Matthias Bauer
+matthiasb@acm.org
