@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTVERSION=	0.9
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -16,9 +15,11 @@ DISTNAME=	${PORTNAME}-source-${PORTVERSION}
 
 MAINTAINER=	reg@FreeBSD.org
 
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	ORBit.2:${PORTSDIR}/devel/ORBit \
 		jpeg.9:${PORTSDIR}/graphics/jpeg \
-		png.4:${PORTSDIR}/graphics/png
+		png.4:${PORTSDIR}/graphics/png \
+		mng.1:${PORTSDIR}/graphics/libmng
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -34,7 +35,6 @@ CONFIGURE_ARGS=					\
 		--disable-cpp-rtti		\
 		--disable-debug			\
 		--disable-idltool		\
-		--disable-jar-packaging		\
 		--disable-md			\
 		--disable-pedantic		\
 		--disable-xterm-updates		\
@@ -48,9 +48,12 @@ CONFIGURE_ARGS=					\
 		--enable-tests			\
 		--enable-toolkit=gtk		\
 		--enable-x11-shm		\
+		--enable-chrome-format=both	\
 		--with-jpeg=${LOCALBASE}	\
 		--with-png=${LOCALBASE}		\
+		--with-mng=${LOCALBASE}		\
 		--with-pthreads
+CONFIGURE_ENV=	BSD_PTHREAD_LIBS="${PTHREAD_LIBS}"
 MAKE_ENV=	LD_LIBRARY_PATH=${WRKSRC}/dist/bin
 
 post-build:
@@ -67,7 +70,7 @@ post-build:
 do-install:
 	${MKDIR} ${PREFIX}/lib/mozilla
 	${CHMOD} 755 ${PREFIX}/lib/mozilla
-	cd ${WRKSRC}/dist/bin && ${TAR} -chf - * | \
+	cd ${WRKSRC}/dist/bin && ${TAR} --exclude "*.jar" -chf - . | \
 		${TAR} -xf - -C ${PREFIX}/lib/mozilla
 	${INSTALL_SCRIPT} ${WRKSRC}/mozilla ${PREFIX}/bin
 
