@@ -1,5 +1,5 @@
---- configure.orig	Tue Jan  8 21:54:19 2002
-+++ configure	Tue Jan  8 21:56:06 2002
+--- configure.orig	Fri Jan 11 19:39:32 2002
++++ configure	Fri Jan 11 19:40:17 2002
 @@ -790,7 +790,7 @@
  QT_LIB_DIR=NO
  
@@ -21,3 +21,26 @@
    do
      if test -r "$i/$j"; then
        l_dir=$i
+@@ -850,22 +850,6 @@
+ for base_dir in /usr/X11R6 /usr/local /usr;do
+ 	l_dir=`find $base_dir -name "libqt*.so"|$AWK -F "/" '{gsub($NF,"");print}'|head -n 1`
+ 	i_dir=`find $base_dir -name "qapplication.h"|$AWK -F "/" '{gsub($NF,"");print}'|head -n 1`
+-	
+-
+-echo '#include <qglobal.h>' >libtestprg.cpp
+-echo 'int main(){qVersion();return 0;}' >>libtestprg.cpp
+-if $CXX -o libtestprg.out libtestprg.cpp -I$i_dir -L$l_dir -lqt 2>/dev/null
+-then
+-	rm -r libtestprg.*
+-	LIB_QT=qt
+-	QT_INCLUDE_DIR=$i_dir
+-	QT_LIB_DIR=$l_dir
+-	echo "$ac_t""link with: $LIB_QT  includes: $QT_INCLUDE_DIR  libs: $QT_LIB_DIR" 1>&6;break 1
+-else
+-	rm -r libtestprg.*
+-	
+-fi
+-
+ 	
+ 
+ echo '#include <qglobal.h>' >libtestprg.cpp
