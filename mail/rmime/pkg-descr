@@ -1,0 +1,6 @@
+RMIME provides MIME support for several Emacs message reading
+packages.  RMIME has been designed with RMAIL in mind, but it has also
+been tested with mh-e and VM.  It should work with most other major
+modes as well.
+
+WWW: http://www.cinti.net/~rmoody/rmime/

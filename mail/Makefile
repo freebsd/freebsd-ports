@@ -161,6 +161,7 @@
     SUBDIR += rftp
     SUBDIR += ripmime
     SUBDIR += rlytest
+    SUBDIR += rmime
     SUBDIR += rmoldmail
     SUBDIR += ruby-tmail
     SUBDIR += sendmail
