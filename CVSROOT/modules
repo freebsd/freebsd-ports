@@ -4190,6 +4190,7 @@ memcheck	ports/devel/memcheck
 memcontrol	src/usr.sbin/memcontrol
 memtest		ports/sysutils/memtest
 menushki	ports/misc/menushki
+mergeant	ports/databases/mergeant
 mergelog	ports/www/mergelog
 mergemaster	src/usr.sbin/mergemaster
 merlin		ports/games/merlin
