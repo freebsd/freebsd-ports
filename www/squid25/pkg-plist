@@ -48,13 +48,13 @@ etc/squid/icons/anthony-xpm.gif
 etc/squid/mib.txt
 etc/squid/mime.conf.default
 etc/squid/squid.conf.default
+libexec/cachemgr.cgi
+libexec/dnsserver
+libexec/pinger
+libexec/unlinkd
 sbin/RunAccel
 sbin/RunCache
-sbin/cachemgr.cgi
 sbin/client
-sbin/dnsserver
-sbin/pinger
 sbin/squid
-sbin/unlinkd
 @exec mkdir -p %D/squid/cache
 @exec mkdir -p %D/squid/logs
