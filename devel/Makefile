@@ -1266,6 +1266,7 @@
     SUBDIR += qssl
     SUBDIR += qtk
     SUBDIR += ragel
+    SUBDIR += rapidsvn
     SUBDIR += re2c
     SUBDIR += readline
     SUBDIR += regexx
