@@ -1,0 +1,24 @@
+--- src/bltTree.c.orig	Sun Sep 29 07:44:12 2002
++++ src/bltTree.c	Mon Oct 13 13:16:45 2003
+@@ -96,16 +96,16 @@
+ 
+ #define REBUILD_MULTIPLIER	3
+ 
+-#if (SIZEOF_VOID_P == 8)
+-#define RANDOM_INDEX(i)		HashOneWord(mask, downshift, i)
+-#define BITSPERWORD		64
+-#else 
+-
+ #define START_LOGSIZE		5 /* Initial hash table size is 32. */
+ #define MAX_LIST_VALUES		20 /* Convert to hash table when node
+ 				    * value list gets bigger than this
+ 				    * many values. */
+ 
++
++#if (SIZEOF_VOID_P == 8)
++#define RANDOM_INDEX(i)		HashOneWord(mask, downshift, i)
++#define BITSPERWORD		64
++#else 
+ /*
+  * The following macro takes a preliminary integer hash value and
+  * produces an index into a hash tables bucket list.  The idea is
