@@ -32,7 +32,7 @@ MASTER_SITES=	ftp://ftp.csx.cam.ac.uk/pub/software/email/exim/%SUBDIR%/ \
 		ftp://ftp.exim.org/pub/exim/%SUBDIR%/ \
 		http://www.us.exim.org/ftp/%SUBDIR%/ \
 		http://exim.stanford.edu/ftp/pub/exim/%SUBDIR%/ \
-		ftp://ftp.fsckit.net/pub/exim/%SUBDIR%/ \
+		ftp://ftp.fsckit.net/pub/exim/%SUBDIR%/
 MASTER_SITE_SUBDIR=	exim4
 DISTNAME=	exim-${PORTVERSION}
 DIST_SUBDIR=	exim
