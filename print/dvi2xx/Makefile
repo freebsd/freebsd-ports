@@ -1,6 +1,7 @@
 DISTNAME=	dvi2xx
 DISTFILES=	dvi2xx.tar.gz
 
+.if !defined(MASTER_SITE_OVERRIDE)
 #other equivalent sites: ftp.shsu.edu dtp.dante.de
 CTAN=		ftp.tex.ac.uk
 FTP_DIR=	/tex-archive/dviware
@@ -12,6 +13,7 @@ pre-fetch:
 	@${SCRIPTDIR}/ftpget magic ${WRKDIR}
 
 fetch: pre-fetch ${DISTFILES}
+.endif
 
 dvi2xx.tar.gz:
 	@(cd ${DISTDIR}; if [ ! -f $@ ]; then \
