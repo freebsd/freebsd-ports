@@ -20,6 +20,7 @@ MAINTAINER?=	clement@FreeBSD.org
 COMMENT?=	Version 2.1 of Apache web server with ${WITH_MPM:L} MPM.
 
 LIB_DEPENDS=	expat.5:${PORTSDIR}/textproc/expat2
+BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 
 LATEST_LINK=	apache21
 
