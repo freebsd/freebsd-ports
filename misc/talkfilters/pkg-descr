@@ -1,9 +1,9 @@
-The GNU Talk Filters are filter programs that convert ordinary English
-text into text that mimics a stereotyped or otherwise humorous dialect.
-These filters have been in the public domain for many years, but now for
-the first time they are provided as a single integrated package. The
-filters include b1ff, brooklyn, chef, cockney, drawl, fudd, funetak,
-jethro, jive, kraut, pansy, postmodern, redneck, valspeak, and warez.
-Each program reads from standard input and writes to standard output.
+The GNU Talk Filters are filter programs that convert ordinary English text
+into text that mimics a stereotyped or otherwise humorous dialect. These
+filters have been in the public domain for many years, but now for the first
+time they are provided as a single integrated package. The filters include
+austro, b1ff, brooklyn, chef, cockney, drawl, dubya, fudd, funetak, jethro,
+jive, kraut, pansy, postmodern, redneck, valspeak, and warez. Each program
+reads from standard input and writes to standard output.
 
 WWW: http://www2.dystance.net:8080/software/talkfilters/
