@@ -76,6 +76,7 @@ bin/gl-117
 %%DATADIR%%/textures/base1_no.tga
 %%DATADIR%%/textures/cactus1.tga
 %%DATADIR%%/textures/cactusu1.tga
+%%DATADIR%%/textures/camoufl.tga
 %%DATADIR%%/textures/chaff_ch.tga
 %%DATADIR%%/textures/clouds1.tga
 %%DATADIR%%/textures/clouds2.tga
@@ -113,6 +114,9 @@ bin/gl-117
 %%DATADIR%%/textures/glitter.tga
 %%DATADIR%%/textures/grass1.tga
 %%DATADIR%%/textures/gravel1.tga
+%%DATADIR%%/textures/greendrk.tga
+%%DATADIR%%/textures/greenlit.tga
+%%DATADIR%%/textures/greygrid.tga
 %%DATADIR%%/textures/hall1b_g.tga
 %%DATADIR%%/textures/hall2b_c.tga
 %%DATADIR%%/textures/medals.tga
@@ -123,6 +127,7 @@ bin/gl-117
 %%DATADIR%%/textures/panzer2_.tga
 %%DATADIR%%/textures/radar1.tga
 %%DATADIR%%/textures/radar2.tga
+%%DATADIR%%/textures/ranks.psd
 %%DATADIR%%/textures/ranks.tga
 %%DATADIR%%/textures/redsand1.tga
 %%DATADIR%%/textures/redstone2.tga
@@ -143,11 +148,14 @@ bin/gl-117
 %%DATADIR%%/textures/tree2.tga
 %%DATADIR%%/textures/tree3.tga
 %%DATADIR%%/textures/tree4.tga
+%%DATADIR%%/textures/tree5.tga
 %%DATADIR%%/textures/treeu1.tga
 %%DATADIR%%/textures/treeu2.tga
 %%DATADIR%%/textures/treeu3.tga
 %%DATADIR%%/textures/treeu4.tga
+%%DATADIR%%/textures/treeu5.tga
 %%DATADIR%%/textures/water1.tga
+%%DATADIR%%/textures/wheel.tga
 @dirrm %%DATADIR%%/models
 @dirrm %%DATADIR%%/music
 @dirrm %%DATADIR%%/sounds
