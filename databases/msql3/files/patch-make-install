@@ -1,6 +1,6 @@
 --- scripts/make-install.orig	Mon Feb  5 13:37:55 2001
-+++ scripts/make-install	Sat May 29 01:23:29 2004
-@@ -1,16 +1,12 @@
++++ scripts/make-install	Wed Jul 21 13:16:43 2004
+@@ -1,16 +1,10 @@
  #!/bin/sh
  
 -INST_DIR=$1
@@ -22,6 +22,4 @@
 +scripts/mkinstalldirs 0755    /var/spool/msql3
 +scripts/mkinstalldirs 0700    /var/db/msql3db
 +scripts/mkinstalldirs 0700    /var/db/msql3db/.tmp
-+scripts/mkinstalldirs 0755    $INST_DIR/share/doc/msql3
-+scripts/mkinstalldirs 0755    $INST_DIR/share/msql3/makegen
 +/usr/sbin/chown -R msql:msql /var/db/msql3db /var/spool/msql3

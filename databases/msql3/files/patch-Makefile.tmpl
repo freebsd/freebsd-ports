@@ -1,6 +1,6 @@
 --- src/Makefile.tmpl.orig	Fri Aug 23 01:36:26 2002
-+++ src/Makefile.tmpl	Sat May 29 04:12:49 2004
-@@ -35,22 +35,22 @@
++++ src/Makefile.tmpl	Mon Jul 19 22:58:11 2004
+@@ -35,22 +35,12 @@
  	echo
  
  install ::
@@ -9,17 +9,7 @@
 -	chmod 755 $(INST_DIR)/makegen/*;\\
 -	cp site.mm $(INST_DIR)/makegen;\\
 -        if test -f $(INST_DIR)/msql.conf;\
-+	@cp ../README $(INST_DIR)/share/doc/msql3;\\
-+	cp ../RELEASE_NOTES $(INST_DIR)/share/doc/msql3;\\
-+	cp ../BUGS $(INST_DIR)/share/doc/msql3;\\
-+	cp ../doc/License $(INST_DIR)/share/doc/msql3;\\
-+	cp ../doc/Manual $(INST_DIR)/share/doc/msql3;\\
-+	cp ../doc/Perl $(INST_DIR)/share/doc/msql3;\\
-+	cp ../doc/acl.txt $(INST_DIR)/share/doc/msql3;\\
-+	cp makegen/makegen makegen/*.cf makegen/*.mm $(INST_DIR)/share/msql3/makegen;\\
-+	chmod 755 $(INST_DIR)/share/msql3/makegen/*;\\
-+	cp site.mm $(INST_DIR)/share/msql3/makegen;\\
-+        if test -f $(INST_DIR)/etc/msql3/msql.conf;\
++	@if test -f $(INST_DIR)/etc/msql3/msql.conf;\
          then\
 -                rm -f $(INST_DIR)/msql.conf.old;\
 -                mv $(INST_DIR)/msql.conf $(INST_DIR)/msql.conf.old;\

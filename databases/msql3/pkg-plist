@@ -15,29 +15,29 @@ include/msql.h
 include/regexp.h
 lib/libmsql.a
 lib/libregexp.a
-share/msql3/makegen/directory.mm
-share/msql3/makegen/dll_os2.mm
-share/msql3/makegen/install.mm
-share/msql3/makegen/lex.mm
-share/msql3/makegen/libinstall.mm
-share/msql3/makegen/library_os2.mm
-share/msql3/makegen/library_unix.mm
-share/msql3/makegen/makegen
-share/msql3/makegen/makegen.cf
-share/msql3/makegen/object.mm
-share/msql3/makegen/program.mm
-share/msql3/makegen/site.mm
-share/msql3/makegen/touch.mm
-share/msql3/makegen/yacc.mm
-share/doc/msql3/BUGS
-share/doc/msql3/README
-share/doc/msql3/RELEASE_NOTES
-share/doc/msql3/License
-share/doc/msql3/Manual
-share/doc/msql3/Perl
-share/doc/msql3/acl.txt
+%%DATADIR%%/makegen/directory.mm
+%%DATADIR%%/makegen/dll_os2.mm
+%%DATADIR%%/makegen/install.mm
+%%DATADIR%%/makegen/lex.mm
+%%DATADIR%%/makegen/libinstall.mm
+%%DATADIR%%/makegen/library_os2.mm
+%%DATADIR%%/makegen/library_unix.mm
+%%DATADIR%%/makegen/makegen
+%%DATADIR%%/makegen/makegen.cf
+%%DATADIR%%/makegen/object.mm
+%%DATADIR%%/makegen/program.mm
+%%DATADIR%%/makegen/site.mm
+%%DATADIR%%/makegen/touch.mm
+%%DATADIR%%/makegen/yacc.mm
+%%PORTDOCS%%%%DOCSDIR%%/BUGS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/RELEASE_NOTES
+%%PORTDOCS%%%%DOCSDIR%%/License
+%%PORTDOCS%%%%DOCSDIR%%/Manual
+%%PORTDOCS%%%%DOCSDIR%%/Perl
+%%PORTDOCS%%%%DOCSDIR%%/acl.txt
 @dirrm etc/msql3
 @dirrm include/common
-@dirrm share/msql3/makegen
-@dirrm share/msql3
-@dirrm share/doc/msql3
+@dirrm %%DATADIR%%/makegen
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
