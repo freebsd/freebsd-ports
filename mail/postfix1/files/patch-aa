@@ -1,36 +1,69 @@
-*** global/mail_params.h.orig	Sat Mar 20 15:09:46 1999
---- global/mail_params.h	Sat Mar 20 15:10:46 1999
+*** ./conf/main.cf.orig	Fri Jan 28 09:44:47 2000
+--- ./conf/main.cf	Thu Jun  1 22:01:21 2000
 ***************
-*** 127,133 ****
-    */
-  #define VAR_PROGRAM_DIR		"program_directory"
-  #ifndef DEF_PROGRAM_DIR
-! #define DEF_PROGRAM_DIR		"/usr/libexec/postfix"
-  #endif
+*** 19,21 ****
+  #
+! command_directory = /usr/sbin
   
-  #define VAR_DAEMON_DIR		"daemon_directory"
---- 127,133 ----
-    */
-  #define VAR_PROGRAM_DIR		"program_directory"
-  #ifndef DEF_PROGRAM_DIR
-! #define DEF_PROGRAM_DIR		"!!PREFIX!!/libexec/postfix"
-  #endif
+--- 19,21 ----
+  #
+! command_directory = !!PREFIX!!/sbin
   
-  #define VAR_DAEMON_DIR		"daemon_directory"
 ***************
-*** 161,167 ****
-    */
-  #define VAR_CONFIG_DIR		"config_directory"
-  #ifndef DEF_CONFIG_DIR
-! #define DEF_CONFIG_DIR		"/etc/postfix"
-  #endif
-  extern char *var_config_dir;
+*** 26,28 ****
+  #
+! daemon_directory = /usr/libexec/postfix
   
---- 161,167 ----
-    */
-  #define VAR_CONFIG_DIR		"config_directory"
-  #ifndef DEF_CONFIG_DIR
-! #define DEF_CONFIG_DIR		"!!PREFIX!!/etc/postfix"
-  #endif
-  extern char *var_config_dir;
+--- 26,28 ----
+  #
+! daemon_directory = !!PREFIX!!/libexec/postfix
+  
+***************
+*** 43,45 ****
+  #
+! #default_privs = nobody
+  
+--- 43,45 ----
+  #
+! default_privs = nobody
+  
+***************
+*** 180,182 ****
+  #alias_database = dbm:/etc/aliases
+! #alias_database = dbm:/etc/mail/aliases
+  #alias_database = hash:/etc/aliases
+--- 180,182 ----
+  #alias_database = dbm:/etc/aliases
+! #alias_database = dbm:/etc/aliases
+  #alias_database = hash:/etc/aliases
+***************
+*** 199,202 ****
+  # mailbox file relative to a user's home directory. The default
+! # mailbox file is /var/spool/mail/user or /var/mail/user.  Specify
+! # "Maildir/" for qmail-style delivery (the / is required).
+  #
+--- 199,202 ----
+  # mailbox file relative to a user's home directory. The default
+! # mailbox file is /var/mail/user.  Specify "Maildir/" for 
+! # qmail-style delivery (the / is required).
+  #
+***************
+*** 209,211 ****
+  #
+! # mail_spool_directory = /var/mail
+  # mail_spool_directory = /var/spool/mail
+--- 209,211 ----
+  #
+! mail_spool_directory = /var/mail
+  # mail_spool_directory = /var/spool/mail
+***************
+*** 274,277 ****
+  #
+! #header_checks = regexp:/etc/postfix/filename
+! #header_checks = pcre:/etc/postfix/filename
+  
+--- 274,277 ----
+  #
+! #header_checks = regexp:!!PREFIX!!/etc/postfix/filename
+! #header_checks = pcre:!!PREFIX!!/etc/postfix/filename
   

@@ -85,6 +85,7 @@ if [ x"$2" = xPOST-INSTALL ]; then
         cp -p ${PKG_PREFIX}/etc/postfix/sample-master.cf \
 	    ${PKG_PREFIX}/etc/postfix/master.cf
     fi
-    chown root:maildrop ${PKG_PREFIX}/sbin/postdrop
-    chmod 2755 ${PKG_PREFIX}/sbin/postdrop
+    /usr/sbin/chown root:maildrop ${PKG_PREFIX}/sbin/postdrop
+    /bin/chmod 2555 ${PKG_PREFIX}/sbin/postdrop
+    ${PKG_PREFIX}/sbin/postfix check
 fi

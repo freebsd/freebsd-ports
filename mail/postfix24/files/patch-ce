@@ -1,0 +1,11 @@
+--- man/man5/canonical.5.orig	Mon Sep  6 05:13:32 1999
++++ man/man5/canonical.5	Tue Nov  7 22:57:40 2000
+@@ -8,7 +8,7 @@
+ .SH SYNOPSIS
+ .na
+ .nf
+-\fBpostmap /etc/postfix/canonical\fR
++\fBpostmap !!PREFIX!!/etc/postfix/canonical\fR
+ .SH DESCRIPTION
+ .ad
+ .fi

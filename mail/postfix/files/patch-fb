@@ -1,0 +1,10 @@
+--- util/sys_defs.h.orig	Sat Jan 22 16:03:31 2000
++++ util/sys_defs.h	Sat Mar 25 09:19:31 2000
+@@ -20,6 +20,7 @@
+   * makedefs script, and adding a section below for the new system.
+   */
+ #if defined(FREEBSD2) || defined(FREEBSD3) || defined(FREEBSD4) \
++    || defined(FREEBSD5) \
+     || defined(BSDI2) || defined(BSDI3) || defined(BSDI4) \
+     || defined(OPENBSD2) || defined(NETBSD1) || defined(RHAPSODY5)
+ #define SUPPORTED

@@ -1,0 +1,11 @@
+--- conf/transport.orig	Fri Dec 31 20:54:11 1999
++++ conf/transport	Tue Nov  7 22:46:59 2000
+@@ -4,7 +4,7 @@
+ # SUMMARY
+ #	format of Postfix transport table
+ # SYNOPSIS
+-#	\fBpostmap /etc/postfix/transport\fR
++#	\fBpostmap !!PREFIX!!/etc/postfix/transport\fR
+ # DESCRIPTION
+ #	The optional \fBtransport\fR file specifies a mapping from domain
+ #	hierarchies to message delivery transports and/or relay hosts. The

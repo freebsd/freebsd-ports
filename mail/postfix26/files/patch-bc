@@ -1,19 +1,11 @@
-*** man/man5/access.5.orig	Mon Mar 29 22:35:58 1999
---- man/man5/access.5	Mon Mar 29 22:36:13 1999
-***************
-*** 8,14 ****
-  .SH SYNOPSIS
-  .na
-  .nf
-! \fBpostmap /etc/postfix/access\fR
-  .SH DESCRIPTION
-  .ad
-  .fi
---- 8,14 ----
-  .SH SYNOPSIS
-  .na
-  .nf
-! \fBpostmap !!PREFIX!!/etc/postfix/access\fR
-  .SH DESCRIPTION
-  .ad
-  .fi
+--- html/canonical.5.html.orig	Mon Sep  6 05:13:54 1999
++++ html/canonical.5.html	Tue Nov  7 22:51:05 2000
+@@ -9,7 +9,7 @@
+        canonical - format of Postfix canonical table
+ 
+ <b>SYNOPSIS</b>
+-       <b>postmap</b> <b>/etc/postfix/canonical</b>
++       <b>postmap</b> <b>!!PREFIX!!/etc/postfix/canonical</b>
+ 
+ <b>DESCRIPTION</b>
+        The  optional  <b>canonical</b> file specifies an address mapping
