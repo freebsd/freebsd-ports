@@ -1,3 +1,7 @@
+lib/libamserver-2.4.4.so
+lib/libamserver.so
+lib/libamserver.la
+lib/libamserver.a
 %%PLOT%%libexec/amanda/amcat.awk
 libexec/amanda/amcleanupdisk
 libexec/amanda/amindexd
@@ -9,12 +13,15 @@ libexec/amanda/amtrmidx
 libexec/amanda/amtrmlog
 libexec/amanda/chg-chio
 libexec/amanda/chg-chs
+libexec/amanda/chg-juke
 libexec/amanda/chg-manual
 libexec/amanda/chg-mtx
 libexec/amanda/chg-multi
+libexec/amanda/chg-rait
 libexec/amanda/chg-rth
 %%SCSICHG%%libexec/amanda/chg-scsi
 libexec/amanda/chg-zd-mtx
+libexec/amanda/amidxtaped
 libexec/amanda/driver
 libexec/amanda/dumper
 libexec/amanda/planner
@@ -32,9 +39,11 @@ sbin/ammt
 sbin/amoverview
 %%PLOT%%sbin/amplot
 sbin/amreport
+sbin/amrestore
 sbin/amrmtape
 sbin/amstatus
 sbin/amtape
+sbin/amtapetype
 sbin/amtoc
 sbin/amverify
 sbin/amverifyrun

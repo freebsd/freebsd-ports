@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	${MASTERPORTNAME}
-PORTVERSION=	2.4.3
+PORTVERSION=	2.4.4
 PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	misc
@@ -72,7 +72,7 @@ CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 MAN8=		amadmin.8 amcheck.8 amcheckdb.8 amcleanup.8 amdd.8 \
 		amdump.8 amflush.8 amgetconf.8 amlabel.8 ammt.8 \
 		amoverview.8 amreport.8 amrmtape.8 amstatus.8 \
-		amtape.8 amtoc.8 amverify.8 amverifyrun.8
+		amtape.8 amtoc.8 amverify.8 amverifyrun.8 amtapetype.8
 
 .if defined (WITH_PLOT)
 BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
@@ -136,6 +136,8 @@ CONFIGURE_ARGS+=	--with-portrange=${AMANDA_PORTRANGE}
 #
 # Before 4.0, pre-CAM scsiio.h existed
 .if ${OSVERSION} < 400000
+PLIST_SUB+=	SCSICHG=''
+.elif ${OSVERSION} >= 480000
 PLIST_SUB+=	SCSICHG=''
 .else
 PLIST_SUB+=	SCSICHG='@comment '
