@@ -1,17 +1,16 @@
-lib/libXbae-4.6.a
+lib/libXbae-4.7.a
 lib/libXbae.a
 lib/libXbae.so
-lib/libXbae.so.6.2
+lib/libXbae.so.7.0
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D
-@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
-include/Xbae-4.6/Caption.h
-include/Xbae-4.6/CaptionP.h
-include/Xbae-4.6/Cell.h
-include/Xbae-4.6/CellP.h
-include/Xbae-4.6/Clip.h
-include/Xbae-4.6/ClipP.h
-include/Xbae-4.6/Matrix.h
-include/Xbae-4.6/MatrixP.h
-include/Xbae-4.6/patchlevel.h
-@dirrm include/Xbae-4.6
-include/Xbae
+@unexec /usr/bin/env OBJFORMAT==%%PORTOBJFORMAT%% /sbin/ldconfig -R
+include/Xbae-4.7/Caption.h
+include/Xbae-4.7/CaptionP.h
+include/Xbae-4.7/Input.h
+include/Xbae-4.7/InputP.h
+include/Xbae-4.7/Clip.h
+include/Xbae-4.7/ClipP.h
+include/Xbae-4.7/Matrix.h
+include/Xbae-4.7/MatrixP.h
+include/Xbae-4.7/patchlevel.h
+@dirrm include/Xbae-4.7
