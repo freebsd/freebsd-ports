@@ -5,10 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	qscintilla
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://www.river-bank.demon.co.uk/download/QScintilla/
-DISTNAME=	qscintilla-1.53-x11-gpl-${PORTVERSION}
+DISTNAME=	qscintilla-1.54-x11-gpl-${PORTVERSION}
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	QT port of scintilla
@@ -28,7 +28,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/qextscintilla*.h ${PREFIX}/include;
 	${MKDIR} ${DATADIR}/translations
 	${INSTALL_DATA} ${WRKSRC}/qscintilla*.qm ${DATADIR}/translations
-	${INSTALL_DATA} ${WRKSRC}/libqscintilla.so.2.0.0 ${PREFIX}/lib/libqscintilla.so.2
-	${LN} -sf ${PREFIX}/lib/libqscintilla.so.2 ${PREFIX}/lib/libqscintilla.so
+	${INSTALL_DATA} ${WRKSRC}/libqscintilla.so.3.0.0 ${PREFIX}/lib/libqscintilla.so.3
+	${LN} -sf ${PREFIX}/lib/libqscintilla.so.3 ${PREFIX}/lib/libqscintilla.so
 
 .include <bsd.port.mk>
