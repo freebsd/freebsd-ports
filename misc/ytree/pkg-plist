@@ -1,7 +1,6 @@
 bin/ytree
 etc/ytree.conf.sample
 share/doc/ytree/CHANGES
-share/doc/ytree/COPYING
 share/doc/ytree/README
 share/doc/ytree/THANKS
 @dirrm share/doc/ytree

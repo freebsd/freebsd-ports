@@ -1,9 +1,9 @@
---- dirwin.c.orig	Wed Dec  9 15:35:50 1998
-+++ dirwin.c	Wed Dec  9 15:35:59 1998
-@@ -163,7 +163,7 @@
-                     ERROR_MSG("malloc() Failed*Abort");
-                     exit(1);
-                  }
+--- dirwin.c.orig	Sun Jul 16 07:01:56 2000
++++ dirwin.c	Wed Nov  8 04:03:59 2000
+@@ -168,7 +168,7 @@
+                                  modify_time
+                                  );
+ #else
 -                 (void) strcpy( format, "%10s %3d %7d %12s");
 +                 (void) strcpy( format, "%10s %3d %7qd %12s");
                   (void) sprintf( line_buffer, format, attributes,

@@ -1,9 +1,18 @@
---- filewin.c.orig	Wed Dec  9 15:36:15 1998
-+++ filewin.c	Wed Dec  9 15:36:28 1998
-@@ -535,7 +535,7 @@
-                     }
- 		    else
- 		    {
+--- filewin.c.orig	Sun Jul 16 07:01:56 2000
++++ filewin.c	Wed Nov  8 03:57:29 2000
+@@ -549,7 +549,7 @@
+ 				      sym_link_name
+ 				    );
+ #else
+-		      (void) sprintf( format, "%%c%%+%ds %%10s %%3d %%7d %%12s -> %%-%ds", 
++		      (void) sprintf( format, "%%c%%+%ds %%10s %%3d %%7qd %%12s -> %%-%ds", 
+ 				      max_filename_len,
+ 				      max_linkname_len
+ 				    );
+@@ -582,7 +582,7 @@
+ 				      modify_time
+ 				    );
+ #else
 -		      (void) sprintf( format, "%%c%%%c%ds %%10s %%3d %%7d %%12s", 
 +		      (void) sprintf( format, "%%c%%%c%ds %%10s %%3d %%7qd %%12s", 
                                        justify,
