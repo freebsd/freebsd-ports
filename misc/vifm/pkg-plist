@@ -1,7 +1,0 @@
-bin/pauseme
-bin/vifm
-share/vifm/vifm-0.2.help.txt
-share/vifm/vifm.txt
-share/vifm/vifm.vim
-share/vifm/vifmrc0.2
-@dirrm share/vifm
