@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xvile
-PORTVERSION=	9.2t
+PORTVERSION=	9.2u
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.phred.org/pub/vile/ \
 		ftp://dickey.his.com/vile/
@@ -33,7 +33,8 @@ PATCHFILES=	vile-9.2a.patch.gz \
 		vile-9.2q.patch.gz \
 		vile-9.2r.patch.gz \
 		vile-9.2s.patch.gz \
-		vile-9.2t.patch.gz
+		vile-9.2t.patch.gz \
+		vile-9.2u.patch.gz
 
 MAINTAINER=	gj@freebsd.org
 
@@ -45,6 +46,13 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-libdir-path=${PREFIX}/lib/xvile \
 		--datadir=${PREFIX}/share/xvile
 MAN1=		xvile.1
+
+.if defined(WITH_ALL)
+WITH_FILTERS=1
+WITH_MENUS=1
+WITH_PERL=1
+WITH_XAW3D=1
+.endif
 
 pre-configure:
 .if ! defined(WITH_MENUS)
