@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uim
-PORTVERSION=	0.4.1
+PORTVERSION=	0.4.2.1
 CATEGORIES=	japanese x11
 MASTER_SITES=	http://freedesktop.org/Software/UimDownload/
 
@@ -48,7 +48,7 @@ PLIST_SUB+=	GNOME="@comment "
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's,/usr,${LOCALBASE},' ${WRKSRC}/scm/skk.scm
+	${REINPLACE_CMD} -e 's,/usr,${LOCALBASE},' ${WRKSRC}/scm/skk.scm ${WRKSRC}/scm/custom.scm
 
 .if !defined(NOPORTDOCS)
 post-install:
