@@ -562,11 +562,11 @@ dgd/lpmud-2.4.5/dgd/std/editor.c
 dgd/lpmud-2.4.5/dgd/std/cindent.c
 dgd/lpmud-2.4.5/dgd/std/user.c
 dgd/lpmud-2.4.5/dgd/include/config.h
-%%EXTRA:%%dgd/lpmud-2.4.5/dgd/include/Std.h
 %%EXTRA:%%dgd/lpmud-2.4.5/dgd/include/status.h
 %%EXTRA:%%dgd/lpmud-2.4.5/dgd/include/type.h
 %%EXTRA:%%dgd/lpmud-2.4.5/dgd/include/limits.h
 %%EXTRA:%%dgd/lpmud-2.4.5/dgd/include/float.h
+%%EXTRA:%%dgd/lpmud-2.4.5/dgd/include/trace.h
 dgd/lpmud-2.4.5/dgd/include/auto.h
 dgd/lpmud-2.4.5/dgd/lib/interactive.h
 dgd/lpmud-2.4.5/dgd/lib/light.c
@@ -605,6 +605,7 @@ dgd/lpmud-2.4.5/Copyright
 @unexec rmdir %D/dgd/lpmud-2.4.5/open
 @unexec rmdir %D/dgd/lpmud-2.4.5/players/lars/lars
 @unexec rmdir %D/dgd/lpmud-2.4.5/room/post_dir
+@unexec rm -f %D/dgd/tmp/swap
 @unexec rmdir %D/dgd/tmp
 @dirrm dgd/lpmud-2.4.5/room/sub
 @dirrm dgd/lpmud-2.4.5/room/south
