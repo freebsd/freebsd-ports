@@ -7,6 +7,7 @@
 
 PORTNAME=	gnumeric2
 PORTVERSION=	1.1.8
+PORTREVISION=	1
 CATEGORIES=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	unstable/sources/${PORTNAME:S/2$//}
@@ -17,6 +18,7 @@ MAINTAINER=	gnome@FreeBSD.org
 
 LIB_DEPENDS=	gnomeprintui-2.0:${PORTSDIR}/x11-toolkits/libgnomeprintui \
 		gal-2-0.2:${PORTSDIR}/x11-toolkits/gal2 \
+		gda-2.1:${PORTSDIR}/databases/libgda2 \
 		gsf-1.4:${PORTSDIR}/devel/libgsf
 
 USE_BZIP2=	yes
@@ -35,13 +37,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 CONFIGURE_TARGET=	--target=${MACHINE_ARCH}-unknown-freebsd${OSREL}
 
 PLIST_SUB=	VERSION=${PORTVERSION}-bonobo
-
-.if defined(WITH_DATABASE_ACCESS)
-LIB_DEPENDS+=	gda-2.1:${PORTSDIR}/databases/libgda2
-CONFIGURE_ARGS+=	--with-gda
-.else
-CONFIGURE_ARGS+=	--without-gda
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g ; \
