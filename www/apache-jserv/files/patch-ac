@@ -1,0 +1,35 @@
+--- conf/httpd.conf.in.orig	Sat Jun 12 05:38:46 1999
++++ conf/httpd.conf.in	Thu Jul  1 00:07:44 1999
+@@ -6,7 +6,7 @@
+ # Note: this file should be appended to or included in httpd.conf
+ 
+ # Tell Apache on win32 to load the Apache JServ communication module
+-#LoadModule jserv_module modules/ApacheModuleJServ.dll
++LoadModule jserv_module libexec/apache/mod_jserv.so
+ 
+ <IfModule mod_jserv.c>
+ 
+@@ -19,13 +19,13 @@
+ # In manual mode this directive is ignored
+ # Syntax: ApJServProperties [filename]
+ # Default: "./conf/jserv.properties"
+-ApJServProperties ./conf/jserv.properties
++ApJServProperties etc/apache/jserv.properties
+ 
+ # Log file for this module operation relative to Apache root directory. 
+ # Syntax: ApJServLogFile [filename]
+ # Default: "./logs/mod_jserv.log"
+ # Note: when set to "DISABLED", the log will be redirected to Apache error log
+-ApJServLogFile ./logs/mod_jserv.log
++ApJServLogFile /var/log/mod_jserv.log
+ 
+ # Log Level for this module
+ # Syntax: ApJServLogLevel [debug|info|notice|warn|error|crit|alert|emerg]
+@@ -99,6 +99,7 @@
+ #ApJServAction .jsp /servlets/nl.nmg.jsp.JSPServlet
+ #ApJServAction .gsp /servlets/com.bitmechanics.gsp.GspServlet
+ #ApJServAction .jhtml /servlets/org.apache.servlet.ssi.SSI
++# Uncomment if you use Cocoon.
+ #ApJServAction .xml /servlets/org.apache.cocoon.Cocoon
+ 
+ # Enable the Apache JServ status handler with the URL of 

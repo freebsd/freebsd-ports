@@ -1,0 +1,11 @@
+--- configure.orig	Wed Mar  3 08:46:29 1999
++++ configure	Wed Mar  3 08:46:42 1999
+@@ -1239,7 +1239,7 @@
+ fi
+ 
+ # Always use our own libtool.
+-LIBTOOL='$(SHELL) $(top_builddir)/libtool'
++LIBTOOL='libtool'
+ 
+ # Check for any special flags to pass to ltconfig.
+ libtool_flags=

@@ -1,0 +1,37 @@
+--- conf/jserv.properties.in.orig	Sat Jun 12 05:38:46 1999
++++ conf/jserv.properties.in	Tue Jun 29 23:02:02 1999
+@@ -52,8 +52,15 @@
+ # Note: the classes you want to be automatically reloaded upon modification
+ #       MUST NOT be in this classpath or the classpath of the shell
+ #       you start the Apache from.
+-wrapper.classpath=@JSERV_CLASSES@
++wrapper.classpath=@libexecdir@/ApacheJServ.jar
+ wrapper.classpath=@JSDK_CLASSES@
++# Uncomment if you use Cocoon.
++#wrapper.classpath=@prefix@/share/java/classes/Cocoon.jar
++#wrapper.classpath=@prefix@/share/java/classes/openxml.jar
++#wrapper.classpath=@prefix@/share/java/classes/xslp.jar
++# Currently, these are not officially supported by the Cocoon team.
++#wrapper.classpath=@prefix@/share/java/classes/xml4j.jar
++#wrapper.classpath=@prefix@/share/java/classes/lotusxsl.jar
+ 
+ # An environment name with value passed to the JVM
+ # Syntax: wrapper.env=[name]=[value]
+@@ -94,7 +101,7 @@
+ # Syntax: [servlet zone name as on the zones list].properties=[full path to configFile] (String)
+ # Default: NONE
+ # Note: if the file could not be opened, try using absolute paths.
+-root.properties=@JSERV_CONF@/zone.properties
++root.properties=@sysconfdir@/zone.properties
+ 
+ #
+ # Security parameters
+@@ -177,7 +184,7 @@
+ # Syntax: log.file=[log path and filename] (String)
+ # Default: NONE
+ # Note: if the file could not be opened, try using absolute paths.
+-log.file=@JSERV_LOG@/jserv.log
++log.file=/var/log/jserv.log
+ 
+ # Enable the timestamp before the log message
+ # Syntax: log.timestamp=[true,false] (boolean)

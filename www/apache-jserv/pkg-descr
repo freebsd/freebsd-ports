@@ -1,0 +1,19 @@
+What is it? 
+	Apache JServ is a 100% pure Java servlet engine designed to
+	implement the Sun Java Servlet API 2.0  specifications  and
+	add   Java   Servlet   capabilities   to   the       Apache
+	HTTP Server <http://www.apache.org/>.
+
+The Latest Version
+	Details  of  the  latest  version  can be found on the Java
+	Apache Project web site <http://java.apache.org/>.
+
+Documentation
+	Documentation   is   available  in HTML format, in the docs/
+	directory. The most up-to-date documentation can be found at
+	<http://java.apache.org/jserv/docs/>.
+
+Licensing
+	Please see the file called LICENSE.
+
+WWW: http://java.apache.org/jserv/
