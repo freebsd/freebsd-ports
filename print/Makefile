@@ -110,6 +110,7 @@
     SUBDIR += pips760
     SUBDIR += pips770
     SUBDIR += pips780
+    SUBDIR += pips780cs
     SUBDIR += pips800
     SUBDIR += pips820_3300
     SUBDIR += pips880
