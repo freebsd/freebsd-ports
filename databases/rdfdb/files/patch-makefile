@@ -1,0 +1,16 @@
+$FreeBSD$
+
+--- makefile.orig	Sun Aug 20 15:48:46 2000
++++ makefile	Sat Jun  8 20:25:04 2002
+@@ -1,7 +1,7 @@
+-CC = gcc -g 
+-INCLUDES = -I /usr/local/BerkeleyDB.3.1/include -I expat/xmltok -I expat/xmlparse
+-LIBS     = -ldb -lpthread
+-CPPFLAGS = $(INCLUDES) -L  /usr/local/BerkeleyDB.3.1/lib/
++CC ?= gcc -g 
++INCLUDES = -I /usr/local/include/db3 -I expat/xmltok -I expat/xmlparse
++LIBS     = -ldb3 %%PTHREAD_LIBS%%
++CPPFLAGS += ${CFLAGS} $(INCLUDES) -L  /usr/local/lib
+ 
+ OBJS =  utils/hash.o \
+ 	utils/utils.o \
