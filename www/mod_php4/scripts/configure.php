@@ -66,10 +66,7 @@ while [ "$1" ]; do
 			ZLIB=1
 			;;
 		\"mcrypt\")
-			echo "mhash is DISABLED for now. Ignoring." > /dev/stderr
-			;;
-		\"nothing\")
-			echo "LIB_DEPENDS+=	mcrypt.2:\${PORTSDIR}/security/libmcrypt"
+			echo "LIB_DEPENDS+=	mcrypt-2.2.2:\${PORTSDIR}/security/libmcrypt"
 			echo "PHP_CONF_ARGS+=	--with-mcrypt=\${PREFIX}"
 			;;
 		\"mhash\")
