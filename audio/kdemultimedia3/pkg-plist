@@ -82,9 +82,7 @@ include/mpeglib_artsplug/decoderBaseObject_impl.h
 include/noatun/controls.h
 include/noatun/downloader.h
 include/noatun/effects.h
-include/noatun/effectview.h
 include/noatun/engine.h
-include/noatun/equalizerview.h
 include/noatun/noatunapp.h
 include/noatun/noatunplaylist.h
 include/noatun/noatunpref.h
@@ -191,7 +189,6 @@ lib/libyafxplayer.so
 lib/libyafxplayer.so.0
 lib/mcop/Arts/Button.mcopclass
 lib/mcop/Arts/Equalizer.mcopclass
-lib/mcop/Arts/Equalizer.mcoptype
 lib/mcop/Arts/ExtraStereo.mcopclass
 lib/mcop/Arts/FFTScope.mcopclass
 lib/mcop/Arts/LocalFactory.mcopclass
