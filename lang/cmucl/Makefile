@@ -33,8 +33,8 @@ LIB_DEPENDS+=	c.4:${PORTSDIR}/misc/compat4x
 do-install:
 	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} ${WRKDIR}/bin/lisp ${PREFIX}/bin
 	(cd ${WRKDIR} && tar fc - lib ) | (cd ${PREFIX} && tar fx -)
-	-${MKDIR} ${PREFIX}/share/doc/cmucl
-	(cd ${WRKDIR} && tar fc - doc) | (cd ${PREFIX}/share && tar fx -)
+	-${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKDIR}/doc/cmucl/* ${DOCSDIR}
 	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} ${WRKDIR}/man/man1/cmucl.1 \
 		${PREFIX}/man/man1
 	${INSTALL} -c -o ${BINOWN} -g ${BINGRP} ${WRKDIR}/man/man1/lisp.1 \
