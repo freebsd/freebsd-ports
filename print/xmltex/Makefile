@@ -10,24 +10,20 @@ PORTVERSION=		1.9
 CATEGORIES=		print
 MASTER_SITES=		${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/xmltex/
-DISTFILES=		base.zip
+DISTNAME=		base
+DIST_SUBDIR=		${PORTNAME}
 
-MAINTAINER=		nik@FreeBSD.org
+MAINTAINER=		hrs@FreeBSD.org
 COMMENT=		A non-validating XML parser, written in TeX
 
-BUILD_DEPENDS=		hugelatex:${PORTSDIR}/print/hugelatex
+BUILD_DEPENDS=		latex:${PORTSDIR}/print/teTeX
 LIB_DEPENDS=		png.5:${PORTSDIR}/graphics/png
 RUN_DEPENDS=		tex:${PORTSDIR}/print/teTeX
 
-BROKEN=			"Does not fetch; will be removed after Feb 2"
-
 WRKSRC=			${WRKDIR}/base
-USE_ZIP=		yes
 MAKE_ENV=		TEXMFCNF=${FILESDIR}:${LOCALBASE}/share/texmf/web2c
 
-post-patch: patch-message copy-makefile
-
-copy-makefile:
+post-patch:
 	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
 
 do-install:
