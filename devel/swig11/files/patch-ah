@@ -1,14 +1,14 @@
---- configure.orig	Wed Feb  4 09:24:23 1998
-+++ configure	Thu Mar 29 11:20:22 2001
+--- configure.orig	Thu Feb  5 00:24:23 1998
++++ configure	Sat Jan 12 00:34:52 2002
 @@ -2445,3 +2445,3 @@
  
 -dirs="$PYINCLUDE $PYINCLUDE/python1.5 $PYINCLUDE/python1.4 $PYINCLUDE/Py $prefix/include/python1.5 $prefix/include/python1.4 /usr/local/include/python1.5 /usr/include/python1.5 /usr/local/include/python1.4 /usr/include/python1.4 $prefix/include/Py /usr/local/include/Py /usr/include/Py"
-+dirs="$PYINCLUDE $PYINCLUDE/python2.1 $PYINCLUDE/python1.5 $PYINCLUDE/Py $prefix/include/python2.1 $prefix/include/python1.5 /usr/local/include/python2.1 /usr/include/python2.1 /usr/local/include/python1.5 /usr/include/python1.5 $prefix/include/Py /usr/local/include/Py /usr/include/Py"
++dirs="$PYINCLUDE $PYINCLUDE/python2.2 $PYINCLUDE/python1.5 $PYINCLUDE/Py $prefix/include/python2.2 $prefix/include/python1.5 /usr/local/include/python2.2 /usr/include/python2.2 /usr/local/include/python1.5 /usr/include/python1.5 $prefix/include/Py /usr/local/include/Py /usr/include/Py"
  for i in $dirs ; do
 @@ -2460,3 +2460,3 @@
  echo "configure:2461: checking for Python library" >&5
 -dirs="$PYLIB $PYLIB/config $PYLIB/lib $PYLIB/python1.5/config $PYLIB/python1.4/config $PYLIB/python/lib $prefix/lib/python1.5/config $prefix/lib/python1.4/config /usr/local/lib/python1.5/config /usr/lib/python1.5 /usr/local/lib/python1.4/config /usr/lib/python1.4 $prefix/lib/python/lib /usr/local/lib/python/lib /usr/lib/python/lib /home/sci/local/lib/python"
-+dirs="$PYLIB $PYLIB/config $PYLIB/lib $PYLIB/python2.1/config $PYLIB/python1.5/config $PYLIB/python/lib $prefix/lib/python2.1/config $prefix/lib/python1.5/config /usr/local/lib/python2.1/config /usr/lib/python2.1 /usr/local/lib/python1.5/config /usr/lib/python1.5 $prefix/lib/python/lib /usr/local/lib/python/lib /usr/lib/python/lib /home/sci/local/lib/python"
++dirs="$PYLIB $PYLIB/config $PYLIB/lib $PYLIB/python2.2/config $PYLIB/python1.5/config $PYLIB/python/lib $prefix/lib/python2.2/config $prefix/lib/python1.5/config /usr/local/lib/python2.2/config /usr/lib/python2.2 /usr/local/lib/python1.5/config /usr/lib/python1.5 $prefix/lib/python/lib /usr/local/lib/python/lib /usr/lib/python/lib /home/sci/local/lib/python"
  
 @@ -2467,6 +2467,6 @@
  	    PYINCLUDE="$PYINCLUDE -I$i"
@@ -17,9 +17,9 @@
  	    break
  	fi
 -	if test -r $i/libPython.a; then
-+	if test -r $i/libpython2.1.a; then
++	if test -r $i/libpython2.2.a; then
  	    echo "$ac_t""$i" 1>&6
 @@ -2474,2 +2474,3 @@
  	    PYINCLUDE="$PYINCLUDE -I$i"
-+            PYLINK="-lpython2.1"	
++            PYLINK="-lpython2.2"
  	    break
