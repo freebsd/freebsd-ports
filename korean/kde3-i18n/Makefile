@@ -18,9 +18,10 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Localized messages and documentation for KDE3
 IGNORE=		Needs update from vendor.
 
+BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
+
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 KDE_I18N=	yes

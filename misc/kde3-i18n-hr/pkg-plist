@@ -8,6 +8,7 @@ share/doc/HTML/hr/common/6.png
 share/doc/HTML/hr/common/7.png
 share/doc/HTML/hr/common/8.png
 share/doc/HTML/hr/common/9.png
+share/doc/HTML/hr/common/appheader.html
 share/doc/HTML/hr/common/artistic-license.html
 share/doc/HTML/hr/common/bottom1.png
 share/doc/HTML/hr/common/bottom2.png
@@ -31,6 +32,8 @@ share/doc/HTML/hr/common/kde-common.css
 share/doc/HTML/hr/common/kde-default.css
 share/doc/HTML/hr/common/kde-localised.css.template
 share/doc/HTML/hr/common/kde-web.css
+share/doc/HTML/hr/common/kde_logo.png
+share/doc/HTML/hr/common/kde_logo_bg.png
 share/doc/HTML/hr/common/kmenu.png
 share/doc/HTML/hr/common/lgpl-license
 share/doc/HTML/hr/common/lgpl-license.html
@@ -162,7 +165,6 @@ share/locale/hr/LC_MESSAGES/kfind.mo
 share/locale/hr/LC_MESSAGES/kfindpart.mo
 share/locale/hr/LC_MESSAGES/kfloppy.mo
 share/locale/hr/LC_MESSAGES/kfmclient.mo
-share/locale/hr/LC_MESSAGES/kfmexec.mo
 share/locale/hr/LC_MESSAGES/kfortune.mo
 share/locale/hr/LC_MESSAGES/kgeo.mo
 share/locale/hr/LC_MESSAGES/kghostview.mo
@@ -186,6 +188,7 @@ share/locale/hr/LC_MESSAGES/kio_print.mo
 share/locale/hr/LC_MESSAGES/kio_sftp.mo
 share/locale/hr/LC_MESSAGES/kio_smb.mo
 share/locale/hr/LC_MESSAGES/kio_smbro.mo
+share/locale/hr/LC_MESSAGES/kioexec.mo
 share/locale/hr/LC_MESSAGES/kjobviewer.mo
 share/locale/hr/LC_MESSAGES/kjots.mo
 share/locale/hr/LC_MESSAGES/kjumpingcube.mo

@@ -7,23 +7,25 @@
 
 PORTNAME=	quanta
 PORTVERSION= 	${KDE_VERSION}
-PORTREVISION=	1
+PORTREVISION=	0
 PORTEPOCH=	2
 CATEGORIES=	www kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
+MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@freebsd.org
 COMMENT=	Comprehensive html/website development environment
 
+BUILD_DEPENDS=	xgettext:${PORTSDIR}/devel/gettext
+
 USE_KDELIBS_VER=3
 PREFIX=		${KDE_PREFIX}
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
 USE_XPM=	yes
 USE_GMAKE=	yes
+USE_REINPLACE=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+= --with-extra-includes=${LOCALBASE}/include \

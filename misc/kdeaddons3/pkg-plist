@@ -1,7 +1,14 @@
 bin/atlantikdesigner
+bin/exif.py
+bin/fsview
+bin/jpegorient
+bin/ksig
 bin/noatunsynaescope.bin
 bin/noatuntippecanoe.bin
 bin/noatuntyler.bin
+bin/orient.py
+lib/kde3/katecppsymbolviewerplugin.la
+lib/kde3/katecppsymbolviewerplugin.so
 lib/kde3/katefll_initplugin.la
 lib/kde3/katefll_initplugin.so
 lib/kde3/katefll_plugin.la
@@ -16,14 +23,18 @@ lib/kde3/kateopenheaderplugin.la
 lib/kde3/kateopenheaderplugin.so
 lib/kde3/katepybrowseplugin.la
 lib/kde3/katepybrowseplugin.so
-lib/kde3/katespellplugin.la
-lib/kde3/katespellplugin.so
 lib/kde3/katetextfilterplugin.la
 lib/kde3/katetextfilterplugin.so
 lib/kde3/katexmlcheckplugin.la
 lib/kde3/katexmlcheckplugin.so
 lib/kde3/katexmltoolsplugin.la
 lib/kde3/katexmltoolsplugin.so
+lib/kde3/kbinaryclock_panelapplet.la
+lib/kde3/kbinaryclock_panelapplet.so
+lib/kde3/kcm_kuick.la
+lib/kde3/kcm_kuick.so
+lib/kde3/kcm_vim.la
+lib/kde3/kcm_vim.so
 lib/kde3/kfile_desktop.la
 lib/kde3/kfile_desktop.so
 lib/kde3/kfile_folder.la
@@ -40,24 +51,37 @@ lib/kde3/konqsidebar_mediaplayer.la
 lib/kde3/konqsidebar_mediaplayer.so
 lib/kde3/ktimemon_panelapplet.la
 lib/kde3/ktimemon_panelapplet.so
+lib/kde3/libautorefresh.la
+lib/kde3/libautorefresh.so
 lib/kde3/libbabelfishplugin.la
 lib/kde3/libbabelfishplugin.so
+lib/kde3/libcrashesplugin.la
+lib/kde3/libcrashesplugin.so
 lib/kde3/libdirfilterplugin.la
 lib/kde3/libdirfilterplugin.so
 lib/kde3/libdomtreeviewerplugin.la
 lib/kde3/libdomtreeviewerplugin.so
-lib/kde3/libkcm_kuick.la
-lib/kde3/libkcm_kuick.so
+lib/kde3/libfsviewpart.la
+lib/kde3/libfsviewpart.so
 lib/kde3/libkhtmlsettingsplugin.la
 lib/kde3/libkhtmlsettingsplugin.so
 lib/kde3/libkimgallery.la
 lib/kde3/libkimgallery.so
 lib/kde3/libkuickplugin.la
 lib/kde3/libkuickplugin.so
+lib/kde3/libminitoolsplugin.la
+lib/kde3/libminitoolsplugin.so
+lib/kde3/librenaudioplugin.la
+lib/kde3/librenaudioplugin.so
+lib/kde3/librenimageplugin.la
+lib/kde3/librenimageplugin.so
 lib/kde3/libuachangerplugin.la
 lib/kde3/libuachangerplugin.so
 lib/kde3/libvalidatorsplugin.la
 lib/kde3/libvalidatorsplugin.so
+lib/kde3/libvimpart.la
+lib/kde3/libvimpart.so
+lib/kde3/libvimpart.so.0
 lib/kde3/libwebarchiverplugin.la
 lib/kde3/libwebarchiverplugin.so
 lib/kde3/mediacontrol_panelapplet.la
@@ -70,6 +94,8 @@ lib/kde3/noatunblurscope.la
 lib/kde3/noatunblurscope.so
 lib/kde3/noatuncharlatan.la
 lib/kde3/noatuncharlatan.so
+lib/kde3/noatundub.la
+lib/kde3/noatundub.so
 lib/kde3/noatunluckytag.la
 lib/kde3/noatunluckytag.so
 lib/kde3/noatunlyrics.la
@@ -90,31 +116,41 @@ lib/kde3/noatunwavecapture.la
 lib/kde3/noatunwavecapture.so
 lib/kde3/webarchivethumbnail.la
 lib/kde3/webarchivethumbnail.so
+lib/libxvim.la
+lib/libxvim.so
+lib/libxvim.so.0
+share/applications/kde/atlantikdesigner.desktop
+share/applications/kde/kcmvim.desktop
+share/applications/kde/ksig.desktop
 share/applnk/.hidden/babelfishplugin.desktop
+share/applnk/.hidden/crashesplugin.desktop
 share/applnk/.hidden/dirfilterplugin.desktop
 share/applnk/.hidden/domtreeviewerplugin.desktop
+share/applnk/.hidden/katefll.desktop
 share/applnk/.hidden/kcmkuick.desktop
 share/applnk/.hidden/khtmlsettingsplugin.desktop
 share/applnk/.hidden/kimgalleryplugin.desktop
 share/applnk/.hidden/kuickplugin.desktop
 share/applnk/.hidden/mediaplayerplugin.desktop
+share/applnk/.hidden/minitoolsplugin.desktop
 share/applnk/.hidden/smbmounterplugin.desktop
 share/applnk/.hidden/uachangerplugin.desktop
 share/applnk/.hidden/validatorsplugin.desktop
 share/applnk/.hidden/webarchiverplugin.desktop
-share/applnk/Editors/katefll.desktop
-share/applnk/Games/Board/atlantikdesigner.desktop
 share/apps/atlantikdesigner/atlantikdesignerui.rc
+share/apps/fsview/fsview_part.rc
+share/apps/kate/plugins/katecppsymbolviewer/ui.rc
 share/apps/kate/plugins/katefll/ui.rc
 share/apps/kate/plugins/katehtmltools/ui.rc
 share/apps/kate/plugins/kateinsertcommand/ui.rc
 share/apps/kate/plugins/katemodeline/ui.rc
 share/apps/kate/plugins/kateopenheader/ui.rc
 share/apps/kate/plugins/katepybrowse/ui.rc
-share/apps/kate/plugins/katespell/ui.rc
 share/apps/kate/plugins/katetextfilter/ui.rc
 share/apps/kate/plugins/katexmlcheck/ui.rc
 share/apps/kate/plugins/katexmltools/ui.rc
+share/apps/kate/scripts/html-tidy.desktop
+share/apps/kate/scripts/html-tidy.sh
 share/apps/katexmltools/html4-loose.dtd.xml
 share/apps/katexmltools/html4-strict.dtd.xml
 share/apps/katexmltools/kde-docbook.dtd.xml
@@ -126,12 +162,17 @@ share/apps/katexmltools/xhtml1-frameset.dtd.xml
 share/apps/katexmltools/xhtml1-strict.dtd.xml
 share/apps/katexmltools/xhtml1-transitional.dtd.xml
 share/apps/katexmltools/xslt-1.0.dtd.xml
+share/apps/kcontrol/pics/kvim.png
+share/apps/khtml/kpartplugins/autorefresh.rc
+share/apps/khtml/kpartplugins/crashesplugin.rc
 share/apps/khtml/kpartplugins/khtmlsettingsplugin.rc
+share/apps/khtml/kpartplugins/minitoolsplugin.rc
 share/apps/khtml/kpartplugins/plugin_babelfish.rc
 share/apps/khtml/kpartplugins/plugin_domtreeviewer.rc
 share/apps/khtml/kpartplugins/plugin_validators.rc
 share/apps/khtml/kpartplugins/plugin_webarchiver.rc
 share/apps/khtml/kpartplugins/uachangerplugin.rc
+share/apps/kicker/applets/kbinaryclock.desktop
 share/apps/kicker/applets/kolourpicker.desktop
 share/apps/kicker/applets/ktimemon.desktop
 share/apps/kicker/applets/mediacontrol.desktop
@@ -142,6 +183,7 @@ share/apps/knewsticker/scripts/Readme.stock
 share/apps/knewsticker/scripts/bbc.pl
 share/apps/knewsticker/scripts/fyensget.py
 share/apps/knewsticker/scripts/newsrss.pl
+share/apps/knewsticker/scripts/sportscores.py
 share/apps/knewsticker/scripts/stock.pl
 share/apps/konqiconview/kpartplugins/dirfilterplugin.rc
 share/apps/konqiconview/kpartplugins/kimgalleryplugin.rc
@@ -151,6 +193,10 @@ share/apps/konqlistview/kpartplugins/kimgalleryplugin.rc
 share/apps/konqlistview/kpartplugins/smbmounterplugin.rc
 share/apps/konqsidebartng/add/mplayer_add.desktop
 share/apps/konqsidebartng/entries/mplayer.desktop
+share/apps/konqsidebartng/kicker_entries/mplayer.desktop
+share/apps/konqueror/servicemenus/imageconverter.desktop
+share/apps/konqueror/servicemenus/jpegorient.desktop
+share/apps/ksig/ksigui.rc
 share/apps/mediacontrol/blueish/next.png
 share/apps/mediacontrol/blueish/pause.png
 share/apps/mediacontrol/blueish/play.png
@@ -164,6 +210,7 @@ share/apps/mediacontrol/default/stop.png
 share/apps/noatun/alsaplayerui.plugin
 share/apps/noatun/blurscope.plugin
 share/apps/noatun/charlatanui.plugin
+share/apps/noatun/dub.plugin
 share/apps/noatun/ffrs.plugin
 share/apps/noatun/luckytag.plugin
 share/apps/noatun/lyrics.plugin
@@ -176,13 +223,17 @@ share/apps/noatun/tyler.plugin
 share/apps/noatun/tylerstates
 share/apps/noatun/wakeup.plugin
 share/apps/noatun/wavecapture.plugin
+share/apps/vimpart/kvim.vim
+share/apps/vimpart/vimpartui.rc
+share/apps/vimpart/vimpartuibrowser.rc
+share/apps/vimpart/vimpartuireadonly.rc
+share/config.kcfg/kbinaryclock.kcfg
 share/doc/HTML/en/kate-plugins/common
 share/doc/HTML/en/kate-plugins/htmltools.docbook
 share/doc/HTML/en/kate-plugins/index.cache.bz2
 share/doc/HTML/en/kate-plugins/index.docbook
 share/doc/HTML/en/kate-plugins/insertcommand.docbook
 share/doc/HTML/en/kate-plugins/openheader.docbook
-share/doc/HTML/en/kate-plugins/projectmanager.docbook
 share/doc/HTML/en/kate-plugins/textfilter.docbook
 share/doc/HTML/en/kate-plugins/xmlcheck.docbook
 share/doc/HTML/en/kate-plugins/xmltools.docbook
@@ -205,6 +256,9 @@ share/doc/HTML/en/konq-plugins/dirfilter/index.docbook
 share/doc/HTML/en/konq-plugins/domtreeviewer/common
 share/doc/HTML/en/konq-plugins/domtreeviewer/index.cache.bz2
 share/doc/HTML/en/konq-plugins/domtreeviewer/index.docbook
+share/doc/HTML/en/konq-plugins/fsview/common
+share/doc/HTML/en/konq-plugins/fsview/index.cache.bz2
+share/doc/HTML/en/konq-plugins/fsview/index.docbook
 share/doc/HTML/en/konq-plugins/imgallery/common
 share/doc/HTML/en/konq-plugins/imgallery/index.cache.bz2
 share/doc/HTML/en/konq-plugins/imgallery/index.docbook
@@ -241,6 +295,7 @@ share/icons/crystalsvg/16x16/actions/webarchiver.png
 share/icons/crystalsvg/16x16/apps/atlantikdesigner.png
 share/icons/crystalsvg/16x16/apps/konqsidebar_mediaplayer.png
 share/icons/crystalsvg/16x16/apps/ktimemon.png
+share/icons/crystalsvg/16x16/apps/synaescope.png
 share/icons/crystalsvg/22x22/actions/babelfish.png
 share/icons/crystalsvg/22x22/actions/cssvalidator.png
 share/icons/crystalsvg/22x22/actions/domtreeviewer.png
@@ -253,10 +308,17 @@ share/icons/crystalsvg/32x32/apps/atlantikdesigner.png
 share/icons/crystalsvg/32x32/apps/konqsidebar_mediaplayer.png
 share/icons/crystalsvg/32x32/apps/ktimemon.png
 share/icons/crystalsvg/48x48/apps/konqsidebar_mediaplayer.png
+share/icons/hicolor/16x16/apps/ksig.png
+share/icons/hicolor/22x22/apps/fsview.png
+share/icons/hicolor/32x32/apps/fsview.png
+share/icons/hicolor/32x32/apps/ksig.png
+share/icons/locolor/16x16/apps/autorefresh.png
 share/icons/locolor/16x16/apps/ktimemon.png
 share/icons/locolor/32x32/apps/konqsidebar_mediaplayer.png
 share/icons/locolor/32x32/apps/ktimemon.png
 share/mimelnk/application/x-webarchive.desktop
+share/services/fsview_part.desktop
+share/services/katecppsymbolviewer.desktop
 share/services/katefll_initplugin.desktop
 share/services/katefll_plugin.desktop
 share/services/katehtmltools.desktop
@@ -264,7 +326,6 @@ share/services/kateinsertcommand.desktop
 share/services/katemodeline.desktop
 share/services/kateopenheader.desktop
 share/services/katepybrowse.desktop
-share/services/katespell.desktop
 share/services/katetextfilter.desktop
 share/services/katexmlcheck.desktop
 share/services/katexmltools.desktop
@@ -273,27 +334,12 @@ share/services/kfile_folder.desktop
 share/services/kfile_html.desktop
 share/services/kfile_txt.desktop
 share/services/kuick_plugin.desktop
+share/services/renaudiodlg.desktop
+share/services/renimagedlg.desktop
+share/services/vimpart.desktop
 share/services/webarchivethumbnail.desktop
-@dirrm share/services
-@dirrm share/mimelnk/application
-@dirrm share/mimelnk
-@dirrm share/icons/locolor/32x32/apps
-@dirrm share/icons/locolor/32x32
-@dirrm share/icons/locolor/16x16/apps
-@dirrm share/icons/locolor/16x16
-@dirrm share/icons/locolor
-@dirrm share/icons/crystalsvg/48x48/apps
-@dirrm share/icons/crystalsvg/48x48
-@dirrm share/icons/crystalsvg/32x32/apps
-@dirrm share/icons/crystalsvg/32x32
-@dirrm share/icons/crystalsvg/22x22/apps
-@dirrm share/icons/crystalsvg/22x22/actions
-@dirrm share/icons/crystalsvg/22x22
-@dirrm share/icons/crystalsvg/16x16/apps
-@dirrm share/icons/crystalsvg/16x16/actions
-@dirrm share/icons/crystalsvg/16x16
-@dirrm share/icons/crystalsvg
-@dirrm share/icons
+@dirrm share/icons/hicolor/22x22/apps
+@dirrm share/icons/hicolor/22x22
 @dirrm share/doc/HTML/en/konq-plugins/webarchiver
 @dirrm share/doc/HTML/en/konq-plugins/validators
 @dirrm share/doc/HTML/en/konq-plugins/uachanger
@@ -302,6 +348,7 @@ share/services/webarchivethumbnail.desktop
 @dirrm share/doc/HTML/en/konq-plugins/kuick
 @dirrm share/doc/HTML/en/konq-plugins/khtmlsettings
 @dirrm share/doc/HTML/en/konq-plugins/imgallery
+@dirrm share/doc/HTML/en/konq-plugins/fsview
 @dirrm share/doc/HTML/en/konq-plugins/domtreeviewer
 @dirrm share/doc/HTML/en/konq-plugins/dirfilter
 @dirrm share/doc/HTML/en/konq-plugins/crashes
@@ -309,43 +356,24 @@ share/services/webarchivethumbnail.desktop
 @dirrm share/doc/HTML/en/konq-plugins
 @dirrm share/doc/HTML/en/kicker-applets
 @dirrm share/doc/HTML/en/kate-plugins
-@dirrm share/doc/HTML/en
-@dirrm share/doc/HTML
-@dirrm share/apps/noatun
+@dirrm share/apps/vimpart
 @dirrm share/apps/mediacontrol/default
 @dirrm share/apps/mediacontrol/blueish
 @dirrm share/apps/mediacontrol
-@dirrm share/apps/konqsidebartng/entries
-@dirrm share/apps/konqsidebartng/add
-@dirrm share/apps/konqsidebartng
-@dirrm share/apps/konqlistview/kpartplugins
-@dirrm share/apps/konqlistview
-@dirrm share/apps/konqiconview/kpartplugins
-@dirrm share/apps/konqiconview
+@dirrm share/apps/ksig
 @dirrm share/apps/knewsticker/scripts
 @dirrm share/apps/knewsticker
-@dirrm share/apps/kicker/applets
-@dirrm share/apps/kicker
 @dirrm share/apps/khtml/kpartplugins
-@dirrm share/apps/khtml
 @dirrm share/apps/katexmltools
 @dirrm share/apps/kate/plugins/katexmltools
 @dirrm share/apps/kate/plugins/katexmlcheck
 @dirrm share/apps/kate/plugins/katetextfilter
-@dirrm share/apps/kate/plugins/katespell
 @dirrm share/apps/kate/plugins/katepybrowse
 @dirrm share/apps/kate/plugins/kateopenheader
 @dirrm share/apps/kate/plugins/katemodeline
 @dirrm share/apps/kate/plugins/kateinsertcommand
 @dirrm share/apps/kate/plugins/katehtmltools
 @dirrm share/apps/kate/plugins/katefll
-@dirrm share/apps/kate/plugins
-@dirrm share/apps/kate
+@dirrm share/apps/kate/plugins/katecppsymbolviewer
+@dirrm share/apps/fsview
 @dirrm share/apps/atlantikdesigner
-@dirrm share/apps
-@dirrm share/applnk/Games/Board
-@dirrm share/applnk/Games
-@dirrm share/applnk/Editors
-@dirrm share/applnk/.hidden
-@dirrm share/applnk
-@dirrm lib/kde3

@@ -1,0 +1,11 @@
+--- noatun/library/Makefile.in.orig	Thu Jan 29 01:38:34 2004
++++ noatun/library/Makefile.in	Thu Jan 29 01:39:01 2004
+@@ -638,7 +638,7 @@
+ 	done
+ gentable$(EXEEXT): $(gentable_OBJECTS) $(gentable_DEPENDENCIES) 
+ 	@rm -f gentable$(EXEEXT)
+-	$(CXXLINK) $(gentable_LDFLAGS) $(gentable_OBJECTS) $(gentable_LDADD) $(LIBS)
++	$(CXXLINK) $(gentable_LDFLAGS) $(gentable_OBJECTS) $(gentable_LDADD) $(LIBS) $(USE_THREADS)
+ 
+ mostlyclean-compile:
+ 	-rm -f *.$(OBJEXT) core *.core

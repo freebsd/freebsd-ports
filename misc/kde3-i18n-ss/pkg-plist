@@ -93,7 +93,6 @@ share/locale/ss/LC_MESSAGES/kfile_font.mo
 share/locale/ss/LC_MESSAGES/kfile_vcf.mo
 share/locale/ss/LC_MESSAGES/kfindpart.mo
 share/locale/ss/LC_MESSAGES/kfmclient.mo
-share/locale/ss/LC_MESSAGES/kfmexec.mo
 share/locale/ss/LC_MESSAGES/kfontviewpart.mo
 share/locale/ss/LC_MESSAGES/khelpcenter.mo
 share/locale/ss/LC_MESSAGES/khotkeys.mo
@@ -112,6 +111,7 @@ share/locale/ss/LC_MESSAGES/kio_sftp.mo
 share/locale/ss/LC_MESSAGES/kio_smb.mo
 share/locale/ss/LC_MESSAGES/kio_smbro.mo
 share/locale/ss/LC_MESSAGES/kio_smtp.mo
+share/locale/ss/LC_MESSAGES/kioexec.mo
 share/locale/ss/LC_MESSAGES/kjobviewer.mo
 share/locale/ss/LC_MESSAGES/klegacyimport.mo
 share/locale/ss/LC_MESSAGES/klipper.mo

@@ -19,7 +19,7 @@ DISTNAME=	${PORTNAME}-${PKGNAMEPREFIX:S/-$//}-${PORTVERSION}
 # Since KDE 3.1.3, the kde-i18n tarballs have the ${KDE_VERSION}
 # as part of the name of their toplevel directory, while the
 # koffice-i18n ones have not, so we need to take care of that.
-.if ${PORTNAME}==koffice-i18n
+.if ${PORTNAME}==koffice-i18n && ${PORTVERSION}=="1.2.1"
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PKGNAMEPREFIX:S/-$//}
 .endif
 DIST_SUBDIR=	KDE/kde-i18n

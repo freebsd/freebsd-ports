@@ -8,6 +8,7 @@ share/doc/HTML/ja/common/6.png
 share/doc/HTML/ja/common/7.png
 share/doc/HTML/ja/common/8.png
 share/doc/HTML/ja/common/9.png
+share/doc/HTML/ja/common/appheader.html
 share/doc/HTML/ja/common/artistic-license.html
 share/doc/HTML/ja/common/bottom1.png
 share/doc/HTML/ja/common/bottom2.png
@@ -33,6 +34,8 @@ share/doc/HTML/ja/common/kde-default.css
 share/doc/HTML/ja/common/kde-localised.css
 share/doc/HTML/ja/common/kde-localised.css.template
 share/doc/HTML/ja/common/kde-web.css
+share/doc/HTML/ja/common/kde_logo.png
+share/doc/HTML/ja/common/kde_logo_bg.png
 share/doc/HTML/ja/common/kmenu.png
 share/doc/HTML/ja/common/lgpl-license
 share/doc/HTML/ja/common/lgpl-license.html
@@ -435,7 +438,6 @@ share/locale/ja/LC_MESSAGES/kfile_xbm.mo
 share/locale/ja/LC_MESSAGES/kfindpart.mo
 share/locale/ja/LC_MESSAGES/kfloppy.mo
 share/locale/ja/LC_MESSAGES/kfmclient.mo
-share/locale/ja/LC_MESSAGES/kfmexec.mo
 share/locale/ja/LC_MESSAGES/kfontviewpart.mo
 share/locale/ja/LC_MESSAGES/kfouleggs.mo
 share/locale/ja/LC_MESSAGES/kgantt.mo
@@ -467,6 +469,7 @@ share/locale/ja/LC_MESSAGES/kio_sftp.mo
 share/locale/ja/LC_MESSAGES/kio_smb.mo
 share/locale/ja/LC_MESSAGES/kio_smbro.mo
 share/locale/ja/LC_MESSAGES/kio_smtp.mo
+share/locale/ja/LC_MESSAGES/kioexec.mo
 share/locale/ja/LC_MESSAGES/kit.mo
 share/locale/ja/LC_MESSAGES/kiten.mo
 share/locale/ja/LC_MESSAGES/kjobviewer.mo

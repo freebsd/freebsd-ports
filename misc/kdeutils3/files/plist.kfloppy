@@ -1,5 +1,5 @@
 bin/kfloppy
-share/applnk/Utilities/KFloppy.desktop
+share/applications/kde/KFloppy.desktop
 share/icons/crystalsvg/128x128/apps/kfloppy.png
 share/icons/crystalsvg/16x16/apps/kfloppy.png
 share/icons/crystalsvg/32x32/apps/kfloppy.png

@@ -31,6 +31,7 @@ share/locale/is/LC_MESSAGES/desktop_kdesdk.mo
 share/locale/is/LC_MESSAGES/desktop_kdetoys.mo
 share/locale/is/LC_MESSAGES/desktop_kdeutils.mo
 share/locale/is/LC_MESSAGES/dirfilterplugin.mo
+share/locale/is/LC_MESSAGES/dockbarextension.mo
 share/locale/is/LC_MESSAGES/domtreeviewer.mo
 share/locale/is/LC_MESSAGES/drkonqi.mo
 share/locale/is/LC_MESSAGES/dub.mo
@@ -234,6 +235,7 @@ share/locale/is/LC_MESSAGES/kio_sftp.mo
 share/locale/is/LC_MESSAGES/kio_smb.mo
 share/locale/is/LC_MESSAGES/kio_smbro.mo
 share/locale/is/LC_MESSAGES/kio_smtp.mo
+share/locale/is/LC_MESSAGES/kioexec.mo
 share/locale/is/LC_MESSAGES/kit.mo
 share/locale/is/LC_MESSAGES/kiten.mo
 share/locale/is/LC_MESSAGES/kjobviewer.mo

@@ -7,7 +7,6 @@
 
 PORTNAME=	linguist
 PORTVERSION=	0.0
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.trolltech.com/qt/pre-releases/
 DISTNAME=	${PORTNAME}-pre

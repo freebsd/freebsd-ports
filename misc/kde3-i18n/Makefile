@@ -27,8 +27,8 @@ RUN_DEPENDS+=\
 	${LOCALBASE}/share/locale/vi/entry.desktop:${PORTSDIR}/vietnamese/kde3-i18n \
 	${LOCALBASE}/share/locale/pl/entry.desktop:${PORTSDIR}/polish/kde3-i18n
 
-.for LANG in af bg bs ca cs da el en_GB eo es et fa fi hr is it \
-	lt mk mt nb nl nn nso ro sk sl sr sv ta th tr ven xh zu
+.for LANG in af az bg bs ca cs cy da el en_GB eo es et eu fa fi hr id is it \
+	lt lv mk ms mt nb nl nn nso ro se sk sl sr ss sv ta th tr ven xh zu
 RUN_DEPENDS+=\
 ${LOCALBASE}/share/locale/${LANG}/entry.desktop:${PORTSDIR}/misc/kde3-i18n-${LANG}
 .endfor
