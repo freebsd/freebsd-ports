@@ -1,4 +1,4 @@
-# New ports collection makefile for:	gimp-manual-1.0.0 (PDF)
+# New ports collection makefile for:	gimp-manual (PDF)
 # Date created:		5 June 1998
 # Whom:			Brett Taylor
 #
