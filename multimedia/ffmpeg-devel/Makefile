@@ -44,7 +44,7 @@ LIB_FILES=	libavcodec/libavcodec.a libavformat/libavformat.a
 CONFIGURE_ARGS+=        --cpu=${ARCH:L}
 #
 .if ${ARCH} != "i386"
-WITHOUT_MMX=	yes   
+WITHOUT_MMX=	yes
 .endif
 
 ## lib detection
@@ -95,7 +95,7 @@ CONFIGURE_ARGS+=	--enable-mp3lame
 ## optimization
 .ifdef(WITH_OPTIMIZED_CFLAGS)
 CONFIGURE_ARGS+=	--extra-cflags="${CFLAGS} -I${LOCALBASE}/include \
-				-O3 -ffast-math -fomit-frame-pointer" 
+				-O3 -ffast-math -fomit-frame-pointer"
 .else
 CONFIGURE_ARGS+=	--extra-cflags="${CFLAGS} -I${LOCALBASE}/include"
 .endif
@@ -201,6 +201,5 @@ post-install:
 # add shared lib link
 	@${LN} -sf libavcodec.so \
 		${PREFIX}/lib/libavcodec.so.${SHLIB_VERSION}
-
 
 .include <bsd.port.post.mk>
