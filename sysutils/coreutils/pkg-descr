@@ -1,0 +1,23 @@
+The Free Software Foundation's core utilities:
+
+  basename, cat, chgrp, chmod, chown, chroot, cksum, comm, cp, csplit,
+  cut, date, dd, df, dir, dircolors, dirname, du, echo, env, expand, expr,
+  factor, false, fmt, fold, groups, head, hostid, hostname, id, install,
+  join, kill, link, ln, logname, ls, md5sum, mkdir, mkfifo, mknod, mv, nice,
+  nl, nohup, od, paste, pathchk, pinky, pr, printenv, printf, ptx, pwd,
+  readlink, rm, rmdir, seq, sha1sum, shred, sleep, sort, split, stat, stty,
+  su, sum, sync, tac, tail, tee, test, touch, tr, true, tsort, tty, uname,
+  unexpand, uniq, unlink, uptime, users, vdir, wc, who, whoami, yes
+
+Similar utilities to most of these exist in the FreeBSD base system,
+but many of the GNU versions have added functionality that is
+useful.
+
+Note that this port will install these utilities with a `g' prefix,
+for example gdate, gexpr, and gtest, but the texinfo documentation
+will refer to them without the `g' prefix.
+
+GNU su does not support a wheel group.  This port installs it
+without the suid bit, unless you define WITH_SUID while building.
+
+WWW: http://www.gnu.org/directory/coreutils.html
