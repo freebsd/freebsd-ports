@@ -1,0 +1,152 @@
+--- libnautilus-extensions/nautilus-volume-monitor.c.orig	Thu Aug  3 17:15:57 2000
++++ libnautilus-extensions/nautilus-volume-monitor.c	Tue Aug 22 17:45:07 2000
+@@ -22,6 +22,9 @@
+    Authors: Gene Z. Ragan <gzr@eazel.com>
+ */
+ 
++#include <sys/param.h>
++#include <sys/mount.h>
++
+ #include <config.h>
+ 
+ #include <errno.h>
+@@ -31,7 +34,6 @@
+ #include <gnome.h>
+ #include <libgnome/gnome-i18n.h>
+ #include <libgnomevfs/gnome-vfs.h>
+-#include <mntent.h>
+ #include <libnautilus-extensions/nautilus-cdrom-extensions.h>
+ #include <libnautilus-extensions/nautilus-directory-private.h>
+ #include <libnautilus-extensions/nautilus-file-utilities.h>
+@@ -48,6 +50,11 @@
+ #include <sys/types.h>
+ #include <xmlmemory.h>
+ 
++#undef MOUNT_TYPE_ISO9660
++#define MOUNT_TYPE_ISO9660	"cd9660"
++#undef MOUNT_TYPE_EXT2
++#define MOUNT_TYPE_EXT2		"ufs"		/* really ufs */
++#define _PATH_MOUNTED		"/etc/fstab"
+ 
+ /* FIXME: Remove messages when this code is done. */
+ #define MESSAGE g_message
+@@ -91,7 +98,7 @@
+ 									 DeviceInfo             	*device);
+ static void     mount_device_activate_floppy                          	(NautilusVolumeMonitor      	*view,
+ 									 DeviceInfo             	*device);
+-static gboolean	mntent_is_removable_fs					(struct mntent 	  		*ent);
++static gboolean	mntent_is_removable_fs					(struct fstab 	  		*ent);
+ static void	free_device_info             				(DeviceInfo             	*device,
+ 						 	 	 	 NautilusVolumeMonitor      	*monitor);
+ static gboolean	add_mount_link_property 				(const char 			*path);
+@@ -197,21 +204,19 @@
+ fm_desktop_get_removable_volume_list (void)
+ {
+ 	GList *list;
+-	FILE *mef;
+-	struct mntent *ent;
++	struct fstab *ent;
+ 
+ 	list = NULL;
+ 
+-	mef = setmntent (_PATH_FSTAB, "r");
+-	g_return_val_if_fail (mef, NULL);
++	setfsent();
+ 
+-	while ((ent = getmntent (mef))) {
++	while ((ent = getfsent ())) {
+ 		if (mntent_is_removable_fs (ent)) {
+-			list = g_list_append (list, g_strdup (ent->mnt_dir));
++			list = g_list_append (list, g_strdup (ent->fs_file));
+ 			continue;
+ 		}
+ 	}
+-  	endmntent (mef);
++  	endfsent ();
+ 
+ 	/* Move all floppy mounts to top of list */
+ 	list = g_list_sort (list, (GCompareFunc) floppy_sort);
+@@ -754,7 +759,7 @@
+ 
+ 
+ static void
+-add_mount_device (NautilusVolumeMonitor *monitor, struct mntent *ent)
++add_mount_device (NautilusVolumeMonitor *monitor, struct fstab *ent)
+ {
+ 	DeviceInfo *newdev = NULL;
+ 	gboolean mounted;
+@@ -762,23 +767,23 @@
+ 	newdev = g_new0 (DeviceInfo, 1);
+ 	g_assert (newdev);
+ 	newdev->device_fd   = -1;
+-	newdev->fsname 	    = g_strdup (ent->mnt_fsname);
+-	newdev->mount_path  = g_strdup (ent->mnt_dir);
++	newdev->fsname 	    = g_strdup (ent->fs_spec);
++	newdev->mount_path  = g_strdup (ent->fs_file);
+ 	newdev->volume_name = NULL;
+ 	newdev->link_uri    = NULL;
+ 	newdev->state 	    = STATE_EMPTY;
+ 
+ 	mounted = FALSE;
+ 	
+-	if (strcmp (ent->mnt_type, MOUNT_TYPE_ISO9660) == 0) {		
++	if (strcmp (ent->fs_type, MOUNT_TYPE_ISO9660) == 0) {		
+     		mounted = mount_device_iso9660_add (monitor, newdev); 
+-	} else if (strncmp (ent->mnt_fsname, "/dev/fd", strlen("/dev/fd")) == 0) {		
++	} else if (strncmp (ent->fs_file, "/dev/fd", strlen("/dev/fd")) == 0) {		
+ 		mounted = mount_device_floppy_add (monitor, newdev);
+-	} else if (strcmp (ent->mnt_type, MOUNT_TYPE_EXT2) == 0) {		
++	} else if (strcmp (ent->fs_type, MOUNT_TYPE_EXT2) == 0) {		
+ 		mounted = mount_device_ext2_add (newdev);
+ 	} else {
+ 		/* FIXME: Is this a reasonable way to report this error? */
+-		MESSAGE ("Unknown file system: %s", ent->mnt_type);
++		MESSAGE ("Unknown file system: %s", ent->fs_type);
+ 	}
+ 	
+ 	if (mounted) {
+@@ -794,13 +799,13 @@
+ }
+ 
+ static gboolean
+-mntent_is_removable_fs (struct mntent *ent)
++mntent_is_removable_fs (struct fstab *ent)
+ {
+-	if (strcmp (ent->mnt_type, MOUNT_TYPE_ISO9660) == 0) {
++	if (strcmp (ent->fs_type, MOUNT_TYPE_ISO9660) == 0) {
+ 		return TRUE;
+ 	}
+ 	
+-	if (strncmp (ent->mnt_fsname, "/dev/fd", strlen("/dev/fd")) == 0) {
++	if (strncmp (ent->fs_file, "/dev/fd", strlen("/dev/fd")) == 0) {
+ 		return TRUE;
+ 	}
+ 	
+@@ -833,14 +838,12 @@
+ void
+ nautilus_volume_monitor_find_mount_devices (NautilusVolumeMonitor *monitor)
+ {
+-	FILE *mef;
+-	struct mntent *ent;
++	struct fstab *ent;
+ 
+-	mef = setmntent (_PATH_MNTTAB, "r");
+-	g_return_if_fail (mef);
++	setfsent ();
+ 
+-	while ((ent = getmntent (mef))) {
+-		MESSAGE ("Checking device %s", ent->mnt_fsname);
++	while ((ent = getfsent ())) {
++		MESSAGE ("Checking device %s", ent->fs_spec);
+ 
+ #if 0
+ 		/* Think some more about these checks */
+@@ -859,7 +862,7 @@
+ 	}
+ 
+ 
+-  	endmntent (mef);
++  	endfsent ();
+ 
+ 	g_list_foreach (monitor->details->devices, (GFunc) mount_device_set_state, monitor);
+ 

@@ -1,0 +1,11 @@
+--- tools/Makefile.in.orig	Wed Aug 16 08:29:15 2000
++++ tools/Makefile.in	Thu Aug 24 10:35:27 2000
+@@ -154,7 +154,7 @@
+ 
+ NULL = 
+ 
+-SUBDIRS =  	leak-checker 	$(NULL)
++SUBDIRS =  	$(NULL)
+ 
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../config.h

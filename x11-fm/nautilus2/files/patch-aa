@@ -1,0 +1,100 @@
+--- configure.orig	Mon Aug 14 19:47:02 2000
++++ configure	Mon Aug 28 13:34:38 2000
+@@ -2368,7 +2368,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lpam -ldl $LIBS"
++LIBS="-lpam  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2374 "configure"
+ #include "confdefs.h"
+@@ -2408,7 +2408,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lpam_misc -ldl -lpam $LIBS"
++LIBS="-lpam_misc -lpam $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 2414 "configure"
+ #include "confdefs.h"
+@@ -2436,10 +2436,10 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  PAM_LIBS="-ldl -lpam -lpam_misc"
++  PAM_LIBS="-lpam -lpam_misc"
+ else
+   echo "$ac_t""no" 1>&6
+-PAM_LIBS="-ldl -lpam"
++PAM_LIBS="-lpam"
+ fi
+  
+ else
+@@ -2657,7 +2657,7 @@
+ 
+ CC=$_save_cc
+ 
+-LDFLAGS="$_save_cflags -L$_mozilla_lib_place $_mozilla_all_nspr_flags -lgtksuperwin"
++LDFLAGS="$_save_cflags -L$_mozilla_lib_place $_mozilla_all_nspr_flags -lstdc++ -lgtksuperwin"
+ echo $ac_n "checking for gdk_superwin_get_type in -lgtksuperwin""... $ac_c" 1>&6
+ echo "configure:2663: checking for gdk_superwin_get_type in -lgtksuperwin" >&5
+ ac_lib_var=`echo gtksuperwin'_'gdk_superwin_get_type | sed 'y%./+-%__p_%'`
+@@ -2979,7 +2979,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  rpm_libs=-lbz2
++  rpm_libs="-lrpm -lbz2"
+ else
+   echo "$ac_t""no" 1>&6
+ fi
+@@ -3019,7 +3019,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  rpm_libs=-lbz2
++  rpm_libs="-lrpm -lbz2"
+ 			cat >> confdefs.h <<\EOF
+ #define bzread BZ2_bzread
+ EOF
+@@ -3109,24 +3109,24 @@
+   echo "$ac_t""no" 1>&6
+ fi
+ 
+-echo $ac_n "checking for rpmRunTransactions in -lrpm""... $ac_c" 1>&6
+-echo "configure:3114: checking for rpmRunTransactions in -lrpm" >&5
+-ac_lib_var=`echo rpm'_'rpmRunTransactions | sed 'y%./+-%__p_%'`
++echo $ac_n "checking for rpmReadPackageInfo in -lrpm""... $ac_c" 1>&6
++echo "configure:3114: checking for rpmReadPackageInfo in -lrpm" >&5
++ac_lib_var=`echo rpm'_'rpmReadPackageInfo | sed 'y%./+-%__p_%'`
+ if eval "test \"`echo '$''{'ac_cv_lib_$ac_lib_var'+set}'`\" = set"; then
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-lrpm -lz $rpm_libs -ldb $LIBS"
++LIBS="-lrpm -lz $rpm_libs $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 3122 "configure"
+ #include "confdefs.h"
+ /* Override any gcc2 internal prototype to avoid an error.  */
+ /* We use char because int might match the return type of a gcc2
+     builtin and then its argument prototype would still apply.  */
+-char rpmRunTransactions();
++char rpmReadPackageInfo();
+ 
+ int main() {
+-rpmRunTransactions()
++rpmReadPackageInfo()
+ ; return 0; }
+ EOF
+ if { (eval echo configure:3133: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
+@@ -3156,7 +3156,7 @@
+ #define HAVE_RPM 1
+ EOF
+ 
+-  RPM_LIBS="-lrpm -lz $rpm_libs -ldb"
++  RPM_LIBS="-lrpm -lz $rpm_libs"
+ fi
+ 
+ 

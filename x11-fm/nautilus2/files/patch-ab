@@ -1,0 +1,13 @@
+--- Makefile.in.orig	Wed Aug 16 08:26:30 2000
++++ Makefile.in	Wed Aug 23 14:56:45 2000
+@@ -501,8 +501,8 @@
+ 	$(mkinstalldirs) $(DESTDIR)/$(prefix)/bin
+ 	@list='nautilus-clean.sh'; for p in $$list; do\
+ 	  if test -f $(srcdir)/$$p; then \
+-	    echo "  $(INSTALL_PROGRAM) $(srcdir)/$$p $(DESTDIR)/$(prefix)/bin/$$p"; \
+-	    $(INSTALL_PROGRAM) $(srcdir)/$$p $(DESTDIR)/$(prefix)/bin/$$p; \
++	    echo "  $(INSTALL_SCRIPT) $(srcdir)/$$p $(DESTDIR)/$(prefix)/bin/$$p"; \
++	    $(INSTALL_SCRIPT) $(srcdir)/$$p $(DESTDIR)/$(prefix)/bin/$$p; \
+ 	  else :; fi; \
+ 	done
+ 

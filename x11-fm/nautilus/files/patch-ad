@@ -1,0 +1,30 @@
+--- components/rpmview/nautilus-rpm-view.c.orig	Mon Aug  7 18:31:00 2000
++++ components/rpmview/nautilus-rpm-view.c	Tue Aug 22 18:21:25 2000
+@@ -52,6 +52,10 @@
+ #include <libgnorba/gnorba.h>
+ #include <limits.h>
+ 
++#define FD_t		int
++#define	fdOpen		open
++#define	fdClose		close
++
+ #ifdef EAZEL_SERVICES
+ #include <libeazelinstall.h>
+ #include "nautilus-rpm-view-install.h"
+@@ -399,7 +403,6 @@
+ 	gint result = 0;
+ 	gchar *version_ptr, *release_ptr;
+ 	
+- 	rpmReadConfigFiles (NULL, NULL);   
+     	rpm_result = rpmdbOpen ("", &rpm_db, O_RDONLY, 0644);
+ 	if (rpm_result != 0) {
+ 		g_message ("couldn't open package database: %d", rpm_result);
+@@ -467,7 +470,7 @@
+ 	
+ 	file_descriptor = fdOpen (path_name, O_RDONLY, 0644);
+ 	 
+-	if (file_descriptor != NULL) {
++	if (file_descriptor != -1) {
+                 
+ 		/* read out the appropriate fields, and set them up in the view */
+ 		result = rpmReadPackageInfo (file_descriptor, &signature, &header_info);
