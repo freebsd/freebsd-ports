@@ -1,0 +1,11 @@
+--- util.h.orig	Tue Sep 23 01:50:46 1997
++++ util.h	Mon Nov 17 11:03:20 1997
+@@ -52,7 +52,7 @@
+ int strncasecmp (char *, char *, int);
+ #endif 
+ 
+-#if defined(__FreeBSD__) || defined (__sgi)
++#if defined (__sgi)
+ char *strptime ( char *, char *, struct tm *);
+ #endif
+ 
