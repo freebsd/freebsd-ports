@@ -15,57 +15,9 @@ yesno () {
     esac
   done
 }
-
-if [ -f $WRKDIR/.cdrom ]; then
-  X11FIXES=`cat $WRKDIR/.cdrom`
-  echo -n 'Where is the "xc" directory on the cdrom? [/cdrom] '
-  read X11R6; if [ X$X11R6 = X ]; then X11R6=/cdrom; fi
-  if [ ! -d $X11R6/xc/config/cf ]; then 
-    echo "Can't find X11R6 in $X11R6"
-    exit 1
-  fi
-
-  yesno "Is your cdrom distibution already patched? [y] ";
-  if [ $answ = YES ]; then
-    echo -n "What is the patchlevel of the distribution? [3] ";
-    read pl; if [ X$pl = X ]; then pl=3; fi
-    pl=`expr $pl + 1`
-    if [ $pl -lt 10 ]; then pl=0$pl; fi
-  else
-    pl=01
-  fi
-  echo "==> building the tree (please wait)"
-  (cd $WRKDIR; sh $FILESDIR/maketree $X11R6)
-else
-  X11FIXES=`cat $WRKDIR/.ftp`
-  pl=12
-fi
-
-echo -n "==> applying XC patches (please wait)"
-ok=0
-for i in 01 02 03 04 05 06 07 08 09 10 11; do
-  if [ $i = $pl ]; then ok=1; fi
-  if [ $ok = 1 ]; then
-    echo -n .;
-    patch -d $WRKSRC --forward --quiet -E -p1 < $X11FIXES/fix-$i
-    if [ $i = 10 ]; then
-      zcat  $X11FIXES/fix10fonts.Z | patch -d $WRKSRC --forward --quiet -E -p1
-    fi
-    if [ $i = 11 ]; then
-      rm -rf $WRKDIR/xc/programs/Xserver/hw/xfree86
-      tar -C $WRKDIR -xzf $X11FIXES/XFree86-3.1.1.tar.gz 
-    fi
-  fi
-done
-echo 
-echo "==> applying XFree86 patches (please wait)"
-zcat $X11FIXES/XFree86-3.1.1.diff.gz | patch -d $WRKSRC --forward --quiet -E -p1
-
-
-cd $WRKSRC/config/cf/ || exit 1;
-
-F=xf86site.def
-
+F=$WRKDIR/.config
+configure () {
+rm -f $F
 cat <<END
  Which servers do you wish to build, you can save a lot of disk space
  by only compiling the server you will be using.  It will also save you
@@ -139,18 +91,113 @@ yesno "Build XIE? [YES] "
 if [ $answ = NO ]; then
   echo "#define BuildXIE		NO" >> $F
 fi
+echo
+echo "End of configuration questions. No more user input required"
+echo
+}
+
+if [ -f $WRKDIR/.cdrom ]; then
+  X11FIXES=`cat $WRKDIR/.cdrom`
+  echo -n 'Where is the "xc" directory on the cdrom? [/cdrom] '
+  read X11R6; if [ X$X11R6 = X ]; then X11R6=/cdrom; fi
+  if [ ! -d $X11R6/xc/config/cf ]; then 
+    echo "Can't find X11R6 in $X11R6"
+    exit 1
+  fi
+
+  yesno "Is your cdrom distibution already patched? [y] ";
+  if [ $answ = YES ]; then
+    echo -n "What is the patchlevel of the distribution? [3] ";
+    read pl; if [ X$pl = X ]; then pl=3; fi
+    pl=`expr $pl + 1`
+    if [ $pl -lt 10 ]; then pl=0$pl; fi
+  else
+    pl=01
+  fi
+  ok=0
+  err=0
+  for i in 01 02 03 04 05 06 07 08 09 10 11 12; do
+    if [ $i = $pl ]; then ok=1; fi
+    if [ $ok = 1 ]; then
+      if [ ! -f $X11FIXES/fix-$i ]; then
+         echo "can't find $X11FIXES/fix-$i !!!"
+         err=1
+      fi
+      if [ $i = 10 ]; then
+         if [ ! -f $X11FIXES/fix10fonts.Z ]; then
+           echo "can't find $X11FIXES/fix10fonts.Z !!!"
+           err=1    
+         fi
+      fi
+      if [ $i = 11 ]; then
+        if [ ! -f $X11FIXES/XFree86-3.1.1.tar.gz ]; then
+           echo "can't find $X11FIXES/XFree86-3.1.1.tar.gz !!!"
+           err=1
+        fi
+      fi 
+    fi
+  done
+  if [ ! -f $X11FIXES/XFree86-3.1.2.diff.gz ]; then
+     echo "can't find $X11FIXES/XFree86-3.1.2.tar.gz !!!"
+     err=1
+  fi
+  if [ ! -f $X11FIXES/cfont312.tgz ]; then                          
+     echo "can't find $X11FIXES/cfont312.tgz !!!"    
+     err=1    
+  fi    
+  if [ $err = 1 ]; then exit 1; fi
+  configure
+  echo "==> building the tree"
+  (cd $WRKDIR; sh $FILESDIR/maketree $X11R6)
+else
+  X11FIXES=`cat $WRKDIR/.ftp`
+  pl=12
+  configure
+fi
+
+echo -n "==> applying XC patches"
+ok=0
+for i in 01 02 03 04 05 06 07 08 09 10 11 12; do
+  if [ $i = $pl ]; then ok=1; fi
+  if [ $ok = 1 ]; then
+    echo -n .;
+    patch -d $WRKSRC --forward --quiet -E -p1 < $X11FIXES/fix-$i
+    if [ $i = 10 ]; then
+      zcat  $X11FIXES/fix10fonts.Z | patch -d $WRKSRC --forward --quiet -E -p1
+    fi
+    if [ $i = 11 ]; then
+      rm -rf $WRKDIR/xc/programs/Xserver/hw/xfree86
+      (cd $WRKDIR; gunzip -c $X11FIXES/XFree86-3.1.1.tar.gz | tar xpf -)
+    fi
+    #if [ $i = 12 ]; then
+    #  rm -f $WRKDIR/xc/lib/Xt/Shell.h
+    #  rm -f $WRKDIR/xc/lib/StringDefs.h
+    #  rm -f $WRKDIR/xc/lib/StringDefs.c
+    #fi
+  fi
+done
+echo 
+echo "==> applying XFree86 patches"
+zcat $X11FIXES/XFree86-3.1.2.diff.gz | patch -d $WRKSRC --forward --quiet -E -p1
+tar xzf $X11FIXES/cfont312.tgz -C $WRKDIR
+
+
+cat $F >>  $WRKSRC/config/cf/xf86site.def
+
+cd $WRKSRC/config/cf/ || exit 1;
 
 version=`uname -r`
 set `echo $version|sed -e 's/\./ /g' -e 's/-/ /g'`
 mv FreeBSD.cf FreeBSD.cf.old
-sed -e "s/2.0/$version/"                       \
+sed -e "s/2.0.5/$version/"                       \
     -e "s/OSMajorVersion *2/OSMajorVersion $1/"  \
     -e "s/OSMinorVersion *0/OSMinorVersion $2/"  \
-    -e "s/OSTeenyVersion *0/OSTeenyVersion $3/"  \
+    -e "s/OSTeenyVersion *5/OSTeenyVersion $3/"  \
     <FreeBSD.cf.old >FreeBSD.cf
 #you may change ExtraLibraries too:
 #echo "#undef     ExtraLibraries >> FreeBSD.cf
 #echo "#define    ExtraLibraries -lgnumalloc >>FreeBSD.cf
+
 
 exit 0
 
