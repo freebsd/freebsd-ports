@@ -22,7 +22,7 @@ CONFIGURE_ARGS=	--with-cxxflags="${CXXFLAGS}"
 
 MAN1=		mp3blaster.1 nmixer.1 splay.1
 
-CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CPPFLAGS=	-I${LOCALBASE}/include -DHAVE_DECL_GETOPT ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
