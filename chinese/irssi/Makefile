@@ -12,11 +12,12 @@ EXTRA_PATCHES=	${.CURDIR}/files/patch-config.h.in \
 		${.CURDIR}/files/patch-src_fe-text_screen.h \
 		${.CURDIR}/files/patch-src_fe-text_window.c
 
-PORTREVISION=	3
+PORTREVISION=	0
 CATEGORIES=	chinese
 
 MAINTAINER=	vanilla@FreeBSD.org
 
+BROKEN=		patches are not compatible for 0.8.1
 USE_AUTOCONF=	yes
 CONFIGURE_ARGS+=	--with-big5
 
