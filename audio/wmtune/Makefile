@@ -11,7 +11,6 @@ CATEGORIES=	audio windowmaker
 MASTER_SITES=	http://www.fxp.org/~jedgar/distfiles/ \
 		http://www.soren.org/linux/wmtune/dl/ \
 		http://www.rostock.zgdv.de/~runge/radio/
-		
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${WMTUNE_DIFF}
 
