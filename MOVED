@@ -254,3 +254,4 @@ graphics/spigot|multimedia/spigot|2003-04-04|new category
 net/gaim-snapshot|net/gaim|2003-04-05|rolled into net/gaim
 net/gift||2003-04-05|no current official releases
 net/jift||2003-04-05|lack of development
+x11-toolkits/pike-gtk||2003-04-09|included in pike
