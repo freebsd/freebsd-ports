@@ -13,7 +13,7 @@ DISTNAME=	SDL_mixer-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=  	SDL-1.1.3:${PORTSDIR}/devel/sdl-devel \
+LIB_DEPENDS=  	SDL-1.1.3:${PORTSDIR}/devel/sdl12 \
 		smpeg.1:${PORTSDIR}/graphics/smpeg \
 		vorbis.0:${PORTSDIR}/audio/libvorbis
 

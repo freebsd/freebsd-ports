@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	sdl-devel
+PORTNAME=	sdl
 PORTVERSION=	1.2.0
 CATEGORIES=	devel
 MASTER_SITES=	http://www.libsdl.org/release/ \

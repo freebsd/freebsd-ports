@@ -15,7 +15,7 @@ DISTNAME=	AlephOne-${PORTVERSION}
 
 MAINTAINER=	malyn@strangeGizmo.com
 
-LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl-devel:install
+LIB_DEPENDS=	SDL-1.1:${PORTSDIR}/devel/sdl12:install
 
 SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
 

@@ -14,7 +14,7 @@ DISTNAME=	Maelstrom-${PORTVERSION}
 
 MAINTAINER=	sobomax@FreeBSD.org
 
-LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl
+LIB_DEPENDS=	SDL-1.0.2:${PORTSDIR}/devel/sdl10
 
 USE_X_PREFIX=	yes
 USE_XPM=	yes

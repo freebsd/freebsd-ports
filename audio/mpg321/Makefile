@@ -16,7 +16,7 @@ MAINTAINER=	ijliao@FreeBSD.org
 
 LIB_DEPENDS=	smpeg.1:${PORTSDIR}/graphics/smpeg \
 		ao.1:${PORTSDIR}/audio/libao \
-		SDL-1.1.3:${PORTSDIR}/devel/sdl-devel \
+		SDL-1.1.3:${PORTSDIR}/devel/sdl12 \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
 SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
