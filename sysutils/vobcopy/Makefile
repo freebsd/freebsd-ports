@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vobcopy
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.7
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lpn.rnbhq.org/download/
 
@@ -16,7 +16,9 @@ COMMENT=	Decrypts and copies DVD .vob files
 LIB_DEPENDS=	dvdread.3:${PORTSDIR}/multimedia/libdvdread \
 		gnugetopt.1:${PORTSDIR}/devel/libgnugetopt
 
+USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
+CONFIGURE_SCRIPT=	configure.sh
 USE_REINPLACE=	yes
 
 ALL_TARGET=	${PORTNAME}
@@ -24,12 +26,14 @@ ALL_TARGET=	${PORTNAME}
 MAN1=	vobcopy.1
 
 DOC_FILES=      COPYING Changelog README Release-Notes \
-		FAQ TODO \
+		TODO \
 		alternative_programs.txt
 
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|(fopen\("/etc/)mtab|\1fstab|; \
 		s|iso9660|cd9660|' ${WRKSRC}/dvd.c
+	@${REINPLACE_CMD} -E -e 's|declare -i i=0||' \
+		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-configure:
 	@${REINPLACE_CMD} -E -e 's|^CC.+||; s|^PREFIX.+||; \
