@@ -1,5 +1,5 @@
---- Makefile.orig	Sun Nov 19 12:52:12 2000
-+++ Makefile	Tue Feb  6 09:35:36 2001
+--- Makefile.orig	Wed Feb  5 00:59:01 2003
++++ Makefile	Thu May 15 19:59:20 2003
 @@ -5,7 +5,7 @@
  #============================================================#
  
@@ -9,11 +9,49 @@
  #Eg you might want to put the data files here......
  #DATADIR = /usr/share/games/xtux
  
-@@ -14,7 +14,7 @@
- SV_SRC_DIR = src/server
+@@ -15,36 +15,36 @@
  CL_SRC_DIR = src/client
+ GZ_SRC_DIR = src/ggz
  
 -MAKE = @make -C
-+MAKE = @gmake -C
++#MAKE = @make -C
  
- all:	common client server
+ all:	common ggz client server
+ 
+ clean:
+-	$(MAKE) $(CM_SRC_DIR) clean
+-	$(MAKE) $(SV_SRC_DIR) clean
+-	$(MAKE) $(CL_SRC_DIR) clean
+-	$(MAKE) $(GZ_SRC_DIR) clean
++	$(MAKE) -C $(CM_SRC_DIR) clean
++	$(MAKE) -C $(SV_SRC_DIR) clean
++	$(MAKE) -C $(CL_SRC_DIR) clean
++	$(MAKE) -C $(GZ_SRC_DIR) clean
+ 
+ common:
+ 	@echo
+ 	@echo "    ************* Building COMMON lib *************"
+ 	@echo
+-	$(MAKE) $(CM_SRC_DIR) $(MFLAGS)
++	$(MAKE) -C $(CM_SRC_DIR) $(MFLAGS)
+ server:
+ 	@echo
+ 	@echo "    *************   Building SERVER   *************"
+ 	@echo
+-	$(MAKE) $(SV_SRC_DIR) $(MFLAGS)
++	$(MAKE) -C $(SV_SRC_DIR) $(MFLAGS)
+ 
+ client:
+ 	@echo
+ 	@echo "    *************   Building CLIENT   *************"
+ 	@echo
+-	$(MAKE) $(CL_SRC_DIR) $(MFLAGS)
++	$(MAKE) -C $(CL_SRC_DIR) $(MFLAGS)
+ 
+ ggz:
+ 	@echo
+ 	@echo "    *************   Building GGZ   *************"
+ 	@echo
+-	$(MAKE) $(GZ_SRC_DIR) $(MFLAGS)
++	$(MAKE) -C $(GZ_SRC_DIR) $(MFLAGS)
+ 
