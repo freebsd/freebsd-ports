@@ -1,0 +1,23 @@
+--- malloc.h.orig	Fri Jul 30 17:56:34 1993
++++ malloc.h	Mon Apr 28 07:36:12 1997
+@@ -3,6 +3,10 @@
+ #ifndef __XMALLOC_H__
+ #define __XMALLOC_H__
+ 
++#ifdef __cplusplus
++extern "C" {
++#endif
++
+ #if defined(ANSI_TYPES) || defined(__STDC__)
+ #define univptr_t		void *
+ #else	/* ! ANSI_TYPES */
+@@ -110,5 +114,9 @@
+ #endif
+ 
+ #undef __proto
++
++#ifdef __cplusplus
++}
++#endif
+ 
+ #endif /* __XMALLOC_H__ */ /* Do not add anything after this line */
