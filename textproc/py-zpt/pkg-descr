@@ -1,0 +1,7 @@
+Zope Page Templates is a Python package that implements Page Templates like
+in Zope, but works outside of Zope.  In fact, you don't need to install any
+part of Zope to use them.  This means that you can use the elegance and ease
+of page templates in your own web applications, reporting frameworks,
+documentation systems, etc.
+
+WWW:	http://zpt.sourceforge.net/

@@ -537,6 +537,7 @@
     SUBDIR += py-wordnet
     SUBDIR += py-xml
     SUBDIR += py-xmltools
+    SUBDIR += py-zpt
     SUBDIR += py2html
     SUBDIR += pybook
     SUBDIR += pychm
