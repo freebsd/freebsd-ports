@@ -6,20 +6,17 @@
 #
 
 PORTNAME=	boehm-gc
-PORTVERSION=	6.0
+PORTVERSION=	6.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.hpl.hp.com/personal/Hans_Boehm/gc/gc_source/
 DISTNAME=	gc${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-
-ONLY_FOR_ARCHS=	i386	# XXX can't figure out whether to define
-#			# XXX SEARCH_FOR_DATA_START on other platforms
+MAINTAINER=	nobutaka@FreeBSD.org
 
 USE_REINPLACE=	yes
 HAS_CONFIGURE=	yes
 INSTALLS_SHLIB=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX}
+CONFIGURE_ARGS=	--prefix=${PREFIX} --disable-threads
 
 MAN3=		gc.3
 
