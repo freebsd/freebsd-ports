@@ -1,15 +1,34 @@
 etc/gdk_pixbufConf.sh
 include/gdk-pixbuf/gdk-pixbuf.h
+include/gdk-pixbuf/gdk-pixbuf-loader.h
+include/gdk-pixbuf/gnome-canvas-pixbuf.h
 lib/gdk-pixbuf/loaders/libpixbuf-gif.so
 lib/gdk-pixbuf/loaders/libpixbuf-jpeg.so
 lib/gdk-pixbuf/loaders/libpixbuf-png.so
+lib/gdk-pixbuf/loaders/libpixbuf-ras.so
 lib/gdk-pixbuf/loaders/libpixbuf-tiff.so
 lib/gdk-pixbuf/loaders/libpixbuf-xpm.so
 lib/libgdk_pixbuf.a
 lib/libgdk_pixbuf.so
 lib/libgdk_pixbuf.so.1
+share/gnome/html/gdk-pixbuf-decl.txt
+share/gnome/html/gdk-pixbuf-sections.txt
+share/gnome/html/gdk-pixbuf.hierarchy
+share/gnome/html/gdk-pixbuf.html
+share/gnome/html/gdk-pixbuf.types
+share/gnome/html/gdk-pixbuf/book1.html
+share/gnome/html/gdk-pixbuf/gdk-pixbuf-creating.html
+share/gnome/html/gdk-pixbuf/gdk-pixbuf-file-loading.html
+share/gnome/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf-io.html
+share/gnome/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf.html
+share/gnome/html/gdk-pixbuf/gdk-pixbuf-refcounting.html
+share/gnome/html/gdk-pixbuf/gdk-pixbuf-rendering.html
+share/gnome/html/gdk-pixbuf/gdkpixbufloader.html
+share/gnome/html/gdk-pixbuf/gnomecanvaspixbuf.html
+share/gnome/html/gdk-pixbuf/r14.html
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %B
+@dirrm share/gnome/html/gdk-pixbuf
 @dirrm include/gdk-pixbuf
 @dirrm lib/gdk-pixbuf/loaders
 @dirrm lib/gdk-pixbuf
