@@ -1,5 +1,39 @@
 libexec/apache/mod_layout.so
+@exec %D/sbin/apxs -e -a -n layout %D/%f
+@unexec echo "===>  If you do not plan on reinstalling mod_layout, you must manually remove"; echo "===>  references to it in httpd.conf."
 %%PORTDOCS%%share/doc/mod_layout/faq.html
-@exec %D/sbin/apxs -e -A -n layout mod_layout.so
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutCache.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutCacheNeeded.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutComment.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutDefaultHandlers.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutDisplayOriginal.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutFooter.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutFooterFile.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutFooterOff.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutFooterTXT.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutHTTPHeader.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutHTTPHeaderOff.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutHTTPOverrideHandler.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutHTTPOverrideURI.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutHandler.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutHandlerGlob.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutHeader.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutHeaderFile.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutHeaderOff.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutHeaderTXT.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutIgnoreFooterURI.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutIgnoreHeaderURI.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutIgnoreTag.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutIgnoreTagFooter.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutIgnoreTagHeader.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutIgnoreURI.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutMerge.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutMergeBeginTag.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutMergeEndTag.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutMergeErrorIgnore.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutPostAsync.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutProxy.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutReplaceTags.html
+%%PORTDOCS%%share/doc/mod_layout/directives/LayoutTimeFormat.html
+%%PORTDOCS%%@dirrm share/doc/mod_layout/directives
 %%PORTDOCS%%@dirrm share/doc/mod_layout
-@unexec %D/sbin/apxs -e -A -n layout mod_layout.so || echo "	disable mod_layout in Apache's config manually"

@@ -1,18 +1,13 @@
-From the software's FAQ list:
-	So what is Mod Layout?
+mod_layout is a utility to wrap served webpages. This means it can
+add a footer ot header to a document. This allows you to create a
+standard look and feel throughout a website without using SSI.
+Some example uses are adding standard disclaimers to the bottom of
+all pages, banner ads to the top of all pages, or even a menu at
+the beginning of a page. There are many other per-document settings
+you can modify with mod_layout; see the file 'faq.html' for more
+information.
 
-	Mod layout wraps a page, by saying this I mean that it can place
-	information at both the beginning and the end of a document. This
-	allows you do create a single look and feel throughout a website
-	without using server side includes to "automagically" add content
-	in either of these two locations. You can use it to add standard
-	disclaimers to all of the pages on a server or to place banner
-	adds on the top of all pages (I know, banner adds, ick...). I've
-	even seen people use the header and footer to place the entire
-	contents of a given server inside of tables. There are many
-	possibilities.
-
-WWW: http://www.tangent.org/mod_layout/
+WWW: http://software.tangent.org/projects.pl?view=mod_layout
 
 - Pete
 petef@databits.net

@@ -1,1 +1,1 @@
-Apache module that provides for prepending/appending served HTML pages
+Apache module to wrap served pages with a header and/or footer
