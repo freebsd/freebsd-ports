@@ -1,20 +1,24 @@
-diff -u -r tnm/generic/tnmUtil.c tnm/generic/tnmUtil.c
---- ../tnm/generic/tnmUtil.c	Tue Aug  6 17:20:38 1996
-+++ ../tnm/generic/tnmUtil.c	Sat Mar  1 20:45:12 1997
-@@ -400,7 +400,7 @@
-     if (hostEntry) {
- 	struct sockaddr_in *caddr;
- 	caddr = (struct sockaddr_in *) Tcl_GetHashValue(hostEntry);
--	addr->sin_addr.s_addr = caddr->sin_addr.s_addr;
-+	addr->sin_addr.s_addr = ntohl(caddr->sin_addr.s_addr);
- 	return TCL_OK;
+--- ../tnm/generic/tnmNetdb.c	Wed Aug  7 07:13:18 1996
++++ ../tnm/generic/tnmNetdb.c	Mon Mar  3 11:46:16 1997
+@@ -218,6 +218,9 @@
+     if (TnmSetIPAddress(interp, name, &addr) != TCL_OK) {
+ 	return TCL_ERROR;
      }
-     
-@@ -425,6 +425,7 @@
- 	memcpy((char *) &addr->sin_addr, (char *) &hostaddr, 4);
-     } 
++
++    addr.sin_addr.s_addr = ntohl(addr.sin_addr.s_addr);
++
+     sprintf(interp->result, "%lu.%lu.%lu.%lu",
+ 	    (addr.sin_addr.s_addr >> 24) & 0xff, 
+ 	    (addr.sin_addr.s_addr >> 16) & 0xff,
+diff -u -r work.ref/scotty-2.1.3/tnm/generic/tnmUtil.c work/scotty-2.1.3/tnm/generic/tnmUtil.c
+--- ../tnm/generic/tnmUtil.c	Tue Aug  6 17:20:38 1996
++++ ../tnm/generic/tnmUtil.c	Mon Mar  3 11:41:33 1997
+@@ -478,6 +478,8 @@
+ 	return name;
+     }
  
 +    addr->sin_addr.s_addr = ntohl(addr->sin_addr.s_addr);
-     return TCL_OK;
- }
- 
++
+     if (interp) {
+ 	char buffer[20];
+ 	sprintf(buffer, "%lu.%lu.%lu.%lu",
