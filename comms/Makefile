@@ -14,6 +14,7 @@
     SUBDIR += gkermit
     SUBDIR += gnokii
     SUBDIR += hylafax
+    SUBDIR += ixj
     SUBDIR += kermit
     SUBDIR += lrzsz
     SUBDIR += ltmdm

@@ -1,0 +1,17 @@
+@unexec kldunload ixj || true
+modules/ixj.ko
+include/telephony.h
+include/ixjuser.h
+etc/rc.d/ixj.sh
+@exec rm -f /dev/phone0
+@exec rm -f /dev/phone1
+@exec rm -f /dev/phone2
+@exec rm -f /dev/phone3
+@exec mknod /dev/phone0 c 155 0
+@exec mknod /dev/phone1 c 155 1
+@exec mknod /dev/phone2 c 155 2
+@exec mknod /dev/phone3 c 155 3
+@unexec rm -f /dev/phone0
+@unexec rm -f /dev/phone1
+@unexec rm -f /dev/phone2
+@unexec rm -f /dev/phone3
