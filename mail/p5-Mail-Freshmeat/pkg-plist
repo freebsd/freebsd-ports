@@ -1,0 +1,23 @@
+lib/perl5/site_perl/%%PERL_VER%%/Mail/Freshmeat.pm
+lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Freshmeat/_fatal_bug.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Freshmeat/ad_header.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Freshmeat/advertisement.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Freshmeat/autosplit.ix
+lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Freshmeat/date.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Freshmeat/details.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Freshmeat/details_header.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Freshmeat/divider.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Freshmeat/entries.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Freshmeat/entry_body.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Freshmeat/entry_header.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Freshmeat/entry_keys.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Freshmeat/footer.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Freshmeat/list.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Freshmeat/list_header.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Freshmeat/long_entry.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Freshmeat/short_entry.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Freshmeat/summary.al
+lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Freshmeat/total.al
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/Freshmeat/.packlist
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/Mail/Freshmeat
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/auto/Mail/Freshmeat
