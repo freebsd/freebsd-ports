@@ -24,6 +24,7 @@
     SUBDIR += gtkportscan
     SUBDIR += heimdal
     SUBDIR += identify
+    SUBDIR += its4
     SUBDIR += john
     SUBDIR += keynote
     SUBDIR += keyprint
