@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	cdpr
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	net
 MASTER_SITES=	http://freebsdcluster.org/~mich/software/ \
 		${MASTER_SITE_LOCAL}
@@ -26,7 +26,6 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
-
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
