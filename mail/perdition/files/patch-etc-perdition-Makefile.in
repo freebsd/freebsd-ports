@@ -1,0 +1,18 @@
+--- etc/perdition/Makefile.in.orig	Sun Jun 15 19:07:06 2003
++++ etc/perdition/Makefile.in	Sun Jun 15 19:07:13 2003
+@@ -169,11 +169,11 @@
+ 	$(mkinstalldirs) $(DESTDIR)$(perditionconfdir)
+ 	@list='$(perditionconf_DATA)'; for p in $$list; do \
+ 	  if test -f $(srcdir)/$$p; then \
+-	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(perditionconfdir)/$$p"; \
+-	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(perditionconfdir)/$$p; \
++	    echo " $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(perditionconfdir)/$$p-dist"; \
++	    $(INSTALL_DATA) $(srcdir)/$$p $(DESTDIR)$(perditionconfdir)/$$p-dist; \
+ 	  else if test -f $$p; then \
+-	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(perditionconfdir)/$$p"; \
+-	    $(INSTALL_DATA) $$p $(DESTDIR)$(perditionconfdir)/$$p; \
++	    echo " $(INSTALL_DATA) $$p $(DESTDIR)$(perditionconfdir)/$$p-dist"; \
++	    $(INSTALL_DATA) $$p $(DESTDIR)$(perditionconfdir)/$$p-dist; \
+ 	  fi; fi; \
+ 	done
+ 
