@@ -10,6 +10,8 @@ PORTVERSION=	5.07
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	chess
+# The DISTFILES here is explicitely needed because it can be extended later.
+DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	conrads@cox.net
 COMMENT=	"Classic" Gnu Chess
