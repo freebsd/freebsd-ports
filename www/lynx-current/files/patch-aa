@@ -1,0 +1,19 @@
+*** makefile.in.bak	Sun Dec 14 02:30:40 1997
+--- makefile.in	Mon Dec 15 17:48:54 1997
+***************
+*** 37,43 ****
+  libdir= @libdir@
+  
+  ## Where you want the help-files installed
+! helpdir= @libdir@/lynx_help
+  
+  installbin= @INSTALL_PROGRAM@ -s -m 755
+  installdoc= @INSTALL_DATA@
+--- 37,43 ----
+  libdir= @libdir@
+  
+  ## Where you want the help-files installed
+! helpdir= $(prefix)/lib/lynx_help
+  
+  installbin= @INSTALL_PROGRAM@ -s -m 755
+  installdoc= @INSTALL_DATA@
