@@ -1,0 +1,11 @@
+--- src/postscript.c.orig	Sat May 27 18:57:57 2000
++++ src/postscript.c	Sat May 27 18:58:10 2000
+@@ -864,7 +864,7 @@
+       pre_pathname = getenv ("GROFF_FONT_PATH");
+     if (pre_pathname == NULL)
+       pre_pathname = groff_font_path;
+-    pathname = tilde_expand (pre_pathname);
++    pathname = my_tilde_expand (pre_pathname);
+   }
+ 
+   /* Search all possible places for the file. */
