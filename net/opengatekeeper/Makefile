@@ -7,7 +7,7 @@
 
 PORTNAME=	opengatekeeper
 PORTVERSION=	0.9a3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://download.sourceforge.net/OpenGatekeeper/
 DISTNAME=	opengate_0.9alpha3
