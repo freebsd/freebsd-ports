@@ -1,0 +1,13 @@
+Texas Instruments (TI) ACX100 IEEE 802.11 driver.
+
+The acx driver supports ACX100 based Cardbus or PCI network adapters.
+
+The following cards are known to work with the acx driver:
+
+Card                  Bus
+Binatone WL-1000      CARDBUS
+D-Link DWL-650+       CARDBUS
+US Robotics USR2210   CARDBUS
+US Robotics USR2216   PCI
+
+WWW: http://wlan.kewl.org/
