@@ -1,17 +1,6 @@
---- config/abi_defs.mk	Mon Mar 13 14:48:16 2000
-+++ config/abi_defs.mk.new	Sat May 13 16:07:19 2000
-@@ -121,7 +121,9 @@
- ##################################################################
- ##################################################################
- 
--ABICOPY=cp
-+ABICOPY = cp
-+ABICHMOD = chmod
-+ABIMKDIR = mkdir -m u=rwx,go=rx
- 
- ifdef ABISOURCE_LICENSED_TRADEMARKS
- ABI_TMDEFS=	-DABISOURCE_LICENSED_TRADEMARKS
-@@ -287,11 +289,11 @@
+--- config/abi_defs.mk	Fri Jun  9 15:48:49 2000
++++ config/abi_defs.mk.new	Thu Jun 22 16:32:03 2000
+@@ -124,11 +124,11 @@
  ## INSTALL program...
  
  define MAKE_OBJDIR
@@ -24,4 +13,15 @@
 +if test ! -d xxxx; then rm -rf xxxx; $(ABIMKDIR) -p  xxxx; fi
  endef
  
+ ifeq ($(OS_NAME), WIN32)
+@@ -160,7 +160,9 @@
  ##################################################################
+ ##################################################################
+ 
+-ABICOPY=cp
++ABICOPY = cp
++ABICHMOD = chmod
++ABIMKDIR = mkdir -m u=rwx,go=rx
+ 
+ ifdef ABISOURCE_LICENSED_TRADEMARKS
+ ABI_TMDEFS=	-DABISOURCE_LICENSED_TRADEMARKS
