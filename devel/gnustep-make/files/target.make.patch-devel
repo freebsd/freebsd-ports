@@ -1,0 +1,13 @@
+--- target.make.orig	Tue Jul 22 05:03:27 2003
++++ target.make	Thu Jul 24 10:23:35 2003
+@@ -36,8 +36,8 @@
+ #
+ TARGET_SYSTEM_LIBS = $(CONFIG_SYSTEM_LIBS) -lm
+ ifneq ("$(objc_threaded)","")
+-  INTERNAL_CFLAGS = -D_REENTRANT
+-  INTERNAL_OBJCFLAGS = -D_REENTRANT
++  INTERNAL_CFLAGS = -D_REENTRANT -D_THREAD_SAFE
++  INTERNAL_OBJCFLAGS = -D_REENTRANT -D_THREAD_SAFE
+   AUXILIARY_OBJC_LIBS += $(objc_threaded)
+ ifeq ($(shared), no)
+   TARGET_SYSTEM_LIBS += $(objc_threaded)

@@ -1,5 +1,5 @@
 System/Library/Bundles/SSL.bundle/Resources/Info-gnustep.plist
-System/Library/Bundles/SSL.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/SSL
+System/Library/Bundles/SSL.bundle/%%NOFLAT%%SSL
 System/Library/Bundles/SSL.bundle/stamp.make
 %%GNUSTEP_DEVEL%%System/Library/DTDs/gsdoc-0_6_5.dtd
 %%GNUSTEP_DEVEL%%System/Library/DTDs/gsdoc-0_6_6.dtd
@@ -8,6 +8,7 @@ System/Library/Bundles/SSL.bundle/stamp.make
 %%GNUSTEP_DEVEL%%System/Library/DTDs/plist-0_9.dtd
 %%GNUSTEP_DEVEL%%System/Library/DocTemplates/AutoDocTemplate.gsdoc
 %%GNUSTEP_DEVEL%%System/Library/DocTemplates/indextemplate.gsdoc
+%%GNUSTEP_DEVEL%%System/Library/Documentation/man/man1/gdnc.1.gz
 %%GNUSTEP_DEVEL%%System/Library/Documentation/man/man8/gdomap.8.gz
 %%SYSTEMLIBRARY%%/Headers/Foundation/Foundation.h
 %%SYSTEMLIBRARY%%/Headers/Foundation/GSMime.h
@@ -82,6 +83,7 @@ System/Library/Bundles/SSL.bundle/stamp.make
 %%GNUSTEP_STABLE%%System/Headers/Foundation/objc-load.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/base/DistributedObjects.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/base/GCObject.h
+%%GNUSTEP_DEVEL%%System/Library/Headers/gnustep/base/GNUstep.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/base/GSCategories.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/base/GSFileHandle.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/base/GSIArray.h
@@ -100,8 +102,10 @@ System/Library/Bundles/SSL.bundle/stamp.make
 %%SYSTEMLIBRARY%%/Headers/gnustep/unicode/decomp.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/unicode/latin2.h
 %%SYSTEMLIBRARY%%/Headers/gnustep/unicode/nextstep.h
-%%SYSTEMLIBRARY%%/Headers/%%GNU_ARCH%%/%%OPSYS%%/GSConfig.h
-%%SYSTEMLIBRARY%%/Headers/%%GNU_ARCH%%/%%OPSYS%%/mframe.h
+%%GNUSTEP_STABLE%%%%SYSTEMLIBRARY%%/Headers/%%GNU_ARCH%%/%%OPSYS%%/GSConfig.h
+%%GNUSTEP_STABLE%%%%SYSTEMLIBRARY%%/Headers/%%GNU_ARCH%%/%%OPSYS%%/mframe.h
+%%GNUSTEP_DEVEL%%%%SYSTEMLIBRARY%%/Headers/GSConfig.h
+%%GNUSTEP_DEVEL%%%%SYSTEMLIBRARY%%/Headers/mframe.h
 %%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-base/English.lproj/Localizable.strings
 %%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-base/French.lproj/Localizable.strings
 %%GNUSTEP_DEVEL%%System/Library/Libraries/Resources/gnustep-base/German.lproj/Localizable.strings
@@ -1306,30 +1310,31 @@ System/Library/Bundles/SSL.bundle/stamp.make
 %%GNUSTEP_STABLE%%System/Libraries/Resources/NSTimeZones/zones/W-SU
 %%GNUSTEP_STABLE%%System/Libraries/Resources/NSTimeZones/zones/WET
 %%GNUSTEP_STABLE%%System/Libraries/Resources/NSTimeZones/zones/Zulu
-%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-base.so
-%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-base.so.%%MAJORVERSION%%
-%%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/libgnustep-base.so.%%VERSION%%
+%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libgnustep-base.so
+%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libgnustep-base.so.%%MAJORVERSION%%
+%%SYSTEMLIBRARY%%/Libraries/%%NOFLAT%%libgnustep-base.so.%%VERSION%%
 System/Makefiles/Additional/base.make
-System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gdomap
-System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/HTMLLinker
-System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/autogsdoc
-System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/cvtenc
-System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/defaults
-System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/gdnc
-System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/make_strings
-System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/pl2link
-System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/pldes
-System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/plmerge
-System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/plparse
-System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/plser
-System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/sfparse
-%%GNUSTEP_DEVEL%%System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/xmlparse
-@dirrm System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Tools/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Tools/%%GNU_ARCH%%
-@dirrm %%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm %%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm %%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gdomap
+%%GNUSTEP_STABLE%%System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/HTMLLinker
+System/Tools/%%NOFLAT%%autogsdoc
+System/Tools/%%NOFLAT%%cvtenc
+System/Tools/%%NOFLAT%%defaults
+System/Tools/%%NOFLAT%%gdnc
+%%GNUSTEP_DEVEL%%System/Tools/gdomap
+System/Tools/%%NOFLAT%%make_strings
+System/Tools/%%NOFLAT%%pl2link
+System/Tools/%%NOFLAT%%pldes
+System/Tools/%%NOFLAT%%plmerge
+System/Tools/%%NOFLAT%%plparse
+System/Tools/%%NOFLAT%%plser
+System/Tools/%%NOFLAT%%sfparse
+%%GNUSTEP_DEVEL%%System/Tools/xmlparse
+%%GNUSTEP_STABLE%%@dirrm System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Tools/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Tools/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm %%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm %%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm %%SYSTEMLIBRARY%%/Libraries/%%GNU_ARCH%%
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/US
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/SystemV
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Libraries/Resources/gnustep-base/NSTimeZones/zones/Pacific
@@ -1391,8 +1396,8 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/sfparse
 %%GNUSTEP_STABLE%%@dirrm System/Libraries/Resources/English.lproj
 %%GNUSTEP_STABLE%%@dirrm System/Libraries/Resources/DocTemplates
 %%GNUSTEP_STABLE%%@dirrm System/Libraries/Resources/DTDs
-@dirrm %%SYSTEMLIBRARY%%/Headers/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm %%SYSTEMLIBRARY%%/Headers/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm %%SYSTEMLIBRARY%%/Headers/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm %%SYSTEMLIBRARY%%/Headers/%%GNU_ARCH%%
 @dirrm %%SYSTEMLIBRARY%%/Headers/gnustep/unicode
 @dirrm %%SYSTEMLIBRARY%%/Headers/gnustep/base
 @dirrm %%SYSTEMLIBRARY%%/Headers/gnustep
@@ -1400,9 +1405,9 @@ System/Tools/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu/sfparse
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Documentation/man/man8
 %%GNUSTEP_DEVEL%%@dirrm System/Library/Documentation/man/man1
 %%GNUSTEP_DEVEL%%@dirrm System/Library/DTDs
-@dirrm System/Library/Bundles/SSL.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
-@dirrm System/Library/Bundles/SSL.bundle/%%GNU_ARCH%%/%%OPSYS%%
-@dirrm System/Library/Bundles/SSL.bundle/%%GNU_ARCH%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/SSL.bundle/%%GNU_ARCH%%/%%OPSYS%%/gnu-gnu-gnu
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/SSL.bundle/%%GNU_ARCH%%/%%OPSYS%%
+%%GNUSTEP_STABLE%%@dirrm System/Library/Bundles/SSL.bundle/%%GNU_ARCH%%
 @dirrm System/Library/Bundles/SSL.bundle/Resources
 @dirrm System/Library/Bundles/SSL.bundle
 %%GNUSTEP_DEVEL%%@exec mkdir -p %D/System/Library/Documentation/man/man1
