@@ -1,10 +1,10 @@
 bin/prcs
-@unexec install-info --delete
+@unexec install-info --delete %D/info/prcs.info %D/info/dir
 info/prcs.info
 info/prcs.info-1
 info/prcs.info-2
 info/prcs.info-3
-@exec install-info
+@exec install-info %D/info/prcs.info %D/info/dir
 share/emacs/site-lisp/prcs.el
 share/emacs/site-lisp/prcs.elc
 share/emacs/site-lisp/prcs-ediff.el
