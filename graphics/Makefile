@@ -428,6 +428,7 @@
     SUBDIR += tiff
     SUBDIR += tiff2png
     SUBDIR += tifmerge
+    SUBDIR += tintfu
     SUBDIR += togl
     SUBDIR += truevision
     SUBDIR += tulip
