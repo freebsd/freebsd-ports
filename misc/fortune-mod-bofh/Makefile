@@ -8,7 +8,7 @@
 PORTNAME=	fortune-mod-bofh
 PORTVERSION=	2.0
 CATEGORIES=	misc
-MASTER_SITES=	http://www.geocities.com/bofn1001/
+MASTER_SITES=	http://www.void.irq.org/
 DISTNAME=	bofh-fortune-mod${PORTVERSION}
 
 MAINTAINER=	onatan@gmail.com
