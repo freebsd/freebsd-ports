@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	musicpd
-PORTVERSION=	0.11.4
+PORTVERSION=	0.11.5
 CATEGORIES=	audio ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -27,6 +27,7 @@ OPTIONS=	FLAC "Support for FLAC Audio" on \
 		AAC "Support for MP4/AAC Audio" off \
 		MOD "Support for MOD Audio" off \
 		ICONV "Support for international characters" on \
+	        ID3TAG "Support for id3v1 tag encoding" off \
 		IPV6 "Support for IPV6" on
 
 .include <bsd.port.pre.mk>
@@ -71,6 +72,10 @@ CONFIGURE_ARGS+=--disable-mod
 CONFIGURE_ARGS+=--disable-iconv
 .else
 USE_ICONV=	yes
+.endif
+
+.ifdef(WITH_ID3TAG)
+CONFIGURE_ARGS+=--enable-mpd-id3tag
 .endif
 
 .ifdef(WITHOUT_IPV6)
