@@ -3,7 +3,7 @@
 # Date created:         26 Mar 96
 # Whom:                 Julian Jenkins <kaveman@magna.com.au>
 #
-# $Id: Makefile,v 1.10 1998/06/08 09:21:37 tg Exp $
+# $Id: Makefile,v 1.11 1998/09/27 08:16:26 steve Exp $
 #
 
 DISTNAME=	sp3f4.kit
@@ -22,6 +22,7 @@ BROKEN_ELF=	install
 #PATCH_SITES=	ftp://ilpsoft.eecs.berkeley.edu/pub/SPICE3F5/
 #PATCHFILES=	grid.patch newcoms.patch spsmp.patch
 
+USE_XLIB=	yes
 NO_WRKSUBDIR=	yes
 MAN1=		sconvert.1 nutmeg.1 spice.1
 MAN3=		mfb.3
