@@ -1,12 +1,12 @@
 #!/bin/sh
 #
-# $Id$
+# $Id: configure,v 1.1.1.1 1999/03/29 20:15:08 torstenb Exp $
 
 mv ${WRKSRC}/global/mail_params.h ${WRKSRC}/global/mail_params.h.bak
 sed <${WRKSRC}/global/mail_params.h.bak >${WRKSRC}/global/mail_params.h s+!!PREFIX!!+$PREFIX+g
 
 mv ${WRKSRC}/conf/main.cf ${WRKSRC}/conf/main.cf.bak
-sed <${WRKSRC}/conf/main.cf.bak >${WRKSRC}/conf/main.cf
+sed s+!!PREFIX!!+$PREFIX+g <${WRKSRC}/conf/main.cf.bak >${WRKSRC}/conf/main.cf
 
 cd ${WRKSRC}/man
 
