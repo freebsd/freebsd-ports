@@ -13,6 +13,7 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/chinput3/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chinese GB2312,BIG5 code input server
 
+LATEST_LINK=	zh-chinput3
 USE_XLIB=	yes
 USE_GNOME=	gtk12 imlib
 
