@@ -1,0 +1,13 @@
+bin/dave
+lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTP/DAV/.packlist
+lib/perl5/site_perl/%%PERL_VER%%/HTTP/DAV.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTTP/DAV/Comms.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTTP/DAV/Lock.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTTP/DAV/Resource.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTTP/DAV/ResourceList.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTTP/DAV/Response.pm
+lib/perl5/site_perl/%%PERL_VER%%/HTTP/DAV/Utils.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/HTTP/DAV
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTP/DAV
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/HTTP 2>/dev/null || true
+@unexec rmdir %D/lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/HTTP 2>/dev/null || true
