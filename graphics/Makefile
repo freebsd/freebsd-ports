@@ -16,6 +16,7 @@
     SUBDIR += avifile
     SUBDIR += backfract
     SUBDIR += barcode
+    SUBDIR += bbrb
     SUBDIR += blender
     SUBDIR += cadubi
     SUBDIR += camediaplay
