@@ -8,7 +8,7 @@
 
 DISTNAME=	pm3-base-${VERSION}
 CATEGORIES=	lang
-MASTER_SITES=	http://www.FreeBSD.org/~jdp/distfiles/pm3/
+MASTER_SITES=	http://people.FreeBSD.org/~jdp/distfiles/pm3/
 DISTFILES=	${BOOTSTRAP} \
 		pm3-${VERSION}-src.tar.bz2
 
