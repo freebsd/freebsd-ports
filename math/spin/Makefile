@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	spin
-PORTVERSION=	3.4.2
+PORTVERSION=	3.4.4
 CATEGORIES=	math
 MASTER_SITES=	ftp://netlib.bell-labs.com/netlib/spin/ \
 		ftp://www.netlib.org/spin/ \
 		ftp://ftp.freesoftware.com/pub/netlib/spin/
-DISTFILES=	spin342.tar.gz html.tar.gz
+DISTFILES=	spin344.tar.gz html.tar.gz
 
 MAINTAINER=	jhanna@home.com
 
@@ -24,7 +24,11 @@ post-extract:
 	@cd ${WRKDIR}/Test && ${SH} ${WRKDIR}/Test/examples
 
 post-patch:
-	@${PERL} -pi -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKDIR}/Xspin3.4/xspin342.tcl
+	@WISH=`(cd ${LOCALBASE}/bin ; ls wish8* ) | tail -1` ; \
+	if [ -z "$$WISH" ] ; then WISH=wish8.0 ; fi ; \
+	${PERL} -pi \
+		-e "s|%%LOCALBASE%%|${LOCALBASE}|g;" \
+		-e "s|%%WISH%%|$$WISH|g" ${WRKDIR}/Xspin3.4/xspin342.tcl
 
 pre-build:
 	cd ${WRKSRC} && ${MAKE} clean
