@@ -7,6 +7,7 @@
 
 PORTNAME=	gatling
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	www benchmarks
 MASTER_SITES=	http://dl.fefe.de/
 
@@ -23,8 +24,10 @@ MAKE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lowfat" \
 bin=		dl gatling
 examples=	run-gatling
 examplesdir=	${EXAMPLESDIR:S,^${PREFIX}/,,}
+.if !defined(NOPORTDOCS)
 PORTDOCS=	CHANGES README README.ftp README.http README.performance \
 		README.prefetch
+.endif
 
 OPTIONS=	BENCHMARKS "Install system benchmark programs" on
 
