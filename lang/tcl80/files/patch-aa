@@ -1,0 +1,68 @@
+--- Makefile.in.orig	Fri Aug 15 13:17:28 1997
++++ Makefile.in	Wed Aug 20 02:55:43 1997
+@@ -55,7 +55,7 @@
+ BIN_INSTALL_DIR =	$(INSTALL_ROOT)$(exec_prefix)/bin
+ 
+ # Directory in which to install the include file tcl.h:
+-INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include
++INCLUDE_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/include/tcl$(VERSION)
+ 
+ # Top-level directory in which to install manual entries:
+ MAN_INSTALL_DIR =	$(INSTALL_ROOT)$(prefix)/man
+@@ -138,7 +138,7 @@
+ # "install" around;  better to use the install-sh script that comes
+ # with the distribution, which is slower but guaranteed to work.
+ 
+-INSTALL =		@srcdir@/install-sh -c
++INSTALL =		install -c
+ INSTALL_PROGRAM =	${INSTALL}
+ INSTALL_DATA =		${INSTALL} -m 644
+ 
+@@ -432,7 +432,8 @@
+ 	@echo "Installing tclsh"
+ 	@$(INSTALL_PROGRAM) tclsh $(BIN_INSTALL_DIR)/tclsh$(VERSION)
+ 	@echo "Installing tclConfig.sh"
+-	@$(INSTALL_DATA) tclConfig.sh $(LIB_INSTALL_DIR)/tclConfig.sh
++	@mkdir -p $(SCRIPT_INSTALL_DIR)
++	@$(INSTALL_DATA) tclConfig.sh $(SCRIPT_INSTALL_DIR)/tclConfig.sh
+ 
+ install-libraries:
+ 	@for i in $(INSTALL_ROOT)$(prefix)/lib $(INCLUDE_INSTALL_DIR) \
+@@ -483,28 +484,28 @@
+ 	@cd $(TOP_DIR)/doc; for i in *.1; \
+ 	    do \
+ 	    echo "Installing doc/$$i"; \
+-	    rm -f $(MAN1_INSTALL_DIR)/$$i; \
++	    rm -f $(MAN1_INSTALL_DIR)/$$i $(MAN1_INSTALL_DIR)/$$i.gz ; \
+ 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
+-		    $$i > $(MAN1_INSTALL_DIR)/$$i; \
+-	    chmod 444 $(MAN1_INSTALL_DIR)/$$i; \
++		    $$i | gzip -c > $(MAN1_INSTALL_DIR)/$$i.gz; \
++	    chmod 444 $(MAN1_INSTALL_DIR)/$$i.gz; \
+ 	    done;
+ 	$(UNIX_DIR)/mkLinks $(MAN1_INSTALL_DIR)
+ 	@cd $(TOP_DIR)/doc; for i in *.3; \
+ 	    do \
+ 	    echo "Installing doc/$$i"; \
+-	    rm -f $(MAN3_INSTALL_DIR)/$$i; \
++	    rm -f $(MAN3_INSTALL_DIR)/$$i $(MAN3_INSTALL_DIR)/$$i.gz ; \
+ 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
+-		    $$i > $(MAN3_INSTALL_DIR)/$$i; \
+-	    chmod 444 $(MAN3_INSTALL_DIR)/$$i; \
++		    $$i | gzip -c > $(MAN3_INSTALL_DIR)/$$i.gz; \
++	    chmod 444 $(MAN3_INSTALL_DIR)/$$i.gz; \
+ 	    done;
+ 	$(UNIX_DIR)/mkLinks $(MAN3_INSTALL_DIR)
+ 	@cd $(TOP_DIR)/doc; for i in *.n; \
+ 	    do \
+ 	    echo "Installing doc/$$i"; \
+-	    rm -f $(MANN_INSTALL_DIR)/$$i; \
++	    rm -f $(MANN_INSTALL_DIR)/$$i $(MANN_INSTALL_DIR)/$$i.gz; \
+ 	    sed -e '/man\.macros/r man.macros' -e '/man\.macros/d' \
+-		    $$i > $(MANN_INSTALL_DIR)/$$i; \
+-	    chmod 444 $(MANN_INSTALL_DIR)/$$i; \
++		    $$i | gzip -c > $(MANN_INSTALL_DIR)/$$i.gz; \
++	    chmod 444 $(MANN_INSTALL_DIR)/$$i.gz; \
+ 	    done;
+ 	$(UNIX_DIR)/mkLinks $(MANN_INSTALL_DIR)
+ 
