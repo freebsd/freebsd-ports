@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lmule
-PORTVERSION=	1.1.13c
+PORTVERSION=	1.2.0
 CATEGORIES=	net
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	lmule
@@ -22,8 +22,8 @@ RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomehier \
 		gnomehack \
-		gnomeprefix \
-		gtk12
+		gnomeprefix
+USE_BZIP2=	yes
 USE_REINPLACE=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
@@ -47,4 +47,18 @@ pre-configure:
 		${REINPLACE_CMD} -E \
 		-e 's!^(AUTOCONF|AUTOHEADER|AUTOMAKE|ACLOCAL).*$$!\1=${TRUE}!'
 
-.include <bsd.port.mk>
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.pre.mk>
+
+# detect if wxgtk was linked against gtk1 or gtk2
+DECISION_GTK_1_OR_2!= ${WX_CONFIG} --cppflags
+
+.if (${DECISION_GTK_1_OR_2:Mgtk2} != "")
+USE_GNOME+=	gtk20
+.else
+USE_GNOME+=	gtk12
+.endif
+
+.include <bsd.port.post.mk>
