@@ -133,4 +133,15 @@ pre-everything::
 .endif
 	@${ECHO_MSG}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+##
+## Port conflict management
+##
+.if exists(${LOCALBASE}/lib/libFOX-1.1.so)
+IGNORE=	Conflict management: you have port fox-devel installed. The\
+	fox port is incompatible with fox-devel one. You have to\
+	uninstall fox-devel port if you really need the fox one
+.endif
+
+.include <bsd.port.post.mk>
