@@ -12,6 +12,8 @@ etc/courier-imap/pop3d-ssl.dist
 etc/courier-imap/pop3d.cnf.dist
 etc/courier-imap/pop3d.dist
 etc/courier-imap/quotawarnmsg.example
+etc/rc.d/courier-imap-imapd.sh.sample
+etc/rc.d/courier-imap-pop3d.sh.sample
 libexec/courier-imap/authlib/authdaemon
 libexec/courier-imap/authlib/authdaemond
 %%MYSQLFLAG%%libexec/courier-imap/authlib/authdaemond.mysql

@@ -14,4 +14,6 @@ Features:
      * Extremely small footprint.
      * Abstract authentication modules.
      * Virtual mailbox support.
-     * Now with a pop3 daemon.
+     * Pop3 daemon.
+
+WWW:	http://www.inter7.com/courierimap/

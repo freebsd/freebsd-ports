@@ -112,5 +112,13 @@ post-install:
 .for a in ${EXTRA_DOCS}
 	@${INSTALL_DATA} ${WRKSRC}/${a} ${PREFIX}/share/doc/courier-imap/
 .endfor
+	@ln -s ${PREFIX}/libexec/courier-imap/imapd.rc ${PREFIX}/etc/rc.d/courier-imap-imapd.sh.sample
+	@ln -s ${PREFIX}/libexec/courier-imap/pop3d.rc ${PREFIX}/etc/rc.d/courier-imap-pop3d.sh.sample
+	@echo ""
+	@echo "You will have to run ${PREFIX}/share/courier-imap/mkimapdcert to create"
+	@echo "a self-signed certificate if you want to use imapd-ssl."
+	@echo "And you will have to copy and edit the *.dist files to * in"
+	@echo "${PREFIX}/etc/courier-imap ."
+	@echo ""
 
 .include <bsd.port.post.mk>
