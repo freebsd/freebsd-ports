@@ -15,7 +15,7 @@ MASTER_SITES=	http://reptile.rug.ac.be/~coder/sniffit/files/  \
 MASTER_SITE_SUBDIR=	obrien
 DISTNAME=	sniffit.0.3.7.beta
 
-PATCH_SITES=	http://ftp.debian.org/debian/dists/stable/main/source/net/
+PATCH_SITES=	http://ftp.debian.org/debian/pool/main/s/sniffit/
 PATCHFILES=	sniffit_0.3.7.beta-6.1.diff.gz
 PATCH_DIST_STRIP=	-p1
 
