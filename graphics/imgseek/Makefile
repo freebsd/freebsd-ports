@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tar.bz2
 MAINTAINER=	tuxsuximus@hotmail.com
 COMMENT=	ImgSeek is a photo manager and viewer with content-based search
 
-BUILD_DEPENDS=  ${PYTHON_SITELIBDIR}/qtui.py:${PORTSDIR}/x11-toolkits/py-qt \
+BUILD_DEPENDS=  pyuic:${PORTSDIR}/x11-toolkits/py-qt \
 		Magick++-config:${PORTSDIR}/graphics/ImageMagick
 
 USE_CONFIGURE=	no

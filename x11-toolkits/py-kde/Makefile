@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} PyQt-x11-gpl-${PYQTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	nbm@FreeBSD.org
 COMMENT=	Python Bindings for KDE
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/qt.py:${PORTSDIR}/x11-toolkits/py-qt
+BUILD_DEPENDS=	pyuic:${PORTSDIR}/x11-toolkits/py-qt
 
 BROKEN=		"Checksum mismatch; will be removed after Feb 2"
 
