@@ -16,7 +16,7 @@ MAINTAINER=	jkh@FreeBSD.org
 IS_INTERACTIVE= 'Must configure cvsup server information'
 .endif
 
-RUN_DEPENDS=	cvsup:${PORTSDIR}/net/cvsup-bin
+RUN_DEPENDS=	cvsup:${PORTSDIR}/net/cvsup
 
 .if (BATCH)
 NO_INSTALL=	yes

@@ -12,8 +12,7 @@ DISTFILES=
 
 MAINTAINER=	jdp@FreeBSD.org
 
-RUN_DEPENDS=	${LOCALBASE}/bin/cvsup:${PORTSDIR}/net/cvsup-bin \
-		${LOCALBASE}/sbin/cvsupd:${PORTSDIR}/net/cvsupd-bin
+RUN_DEPENDS=	${LOCALBASE}/sbin/cvsupd:${PORTSDIR}/net/cvsup
 
 NO_WRKSUBDIR=	true
 NO_BUILD=	true
