@@ -1,3 +1,4 @@
+bin/genomewise
 %%PORTDOCS%%share/doc/wise/README
 %%PORTDOCS%%share/doc/wise/apiend.tex
 %%PORTDOCS%%share/doc/wise/appendix.tex
