@@ -1,13 +1,13 @@
 # New ports collection makefile for:	tcsh
-# Version required:     6.07.02
+# Version required:     6.08
 # Date created:		22 August 1994
 # Whom:			jkh
 #
-# $Id: Makefile,v 1.20 1998/07/04 03:09:24 steve Exp $
+# $Id: Makefile,v 1.21 1998/08/27 02:34:07 max Exp $
 #
 
-DISTNAME=       tcsh-6.07
-PKGNAME=        tcsh-6.07.02
+DISTNAME=       tcsh-6.08
+PKGNAME=        tcsh-6.08.00
 CATEGORIES=	shells
 MASTER_SITES=   ftp://ftp.astron.com/pub/tcsh/
 
