@@ -7,7 +7,7 @@
 #
 
 DISTNAME=	html2ps-1.0b1
-PKGNAME=	html2ps-1.0
+PKGNAME=	html2ps-${PAPERSIZE}-1.0
 CATEGORIES=	print www perl5
 MASTER_SITES=	http://www.tdb.uu.se/~jan/
 
