@@ -28,6 +28,7 @@ bin/megatron
 @exec cd %B && ln -s megatron macbinary
 @exec cd %B && ln -s megatron binheader
 @exec cd %B && ln -s megatron nadheader
+%%NETATALKCNID%%bin/cnid_didname_verify
 bin/nbplkup
 bin/nbprgstr
 bin/nbpunrgstr
@@ -87,22 +88,16 @@ etc/uams/uams_clrtxt.so
 etc/uams/uams_dhx.so
 %%NETATALKPAM%%etc/uams/uams_dhx_pam.so
 %%NETATALKPAM%%etc/uams/uams_dhx_pam.a
-%%NETATALKPAM%%etc/uams/uams_dhx_pam.la
 etc/uams/uams_dhx_passwd.so
 etc/uams/uams_dhx_passwd.a
-etc/uams/uams_dhx_passwd.la
 etc/uams/uams_guest.so
 etc/uams/uams_guest.a
-etc/uams/uams_guest.la
 %%NETATALKPAM%%etc/uams/uams_pam.so
 %%NETATALKPAM%%etc/uams/uams_pam.a
-%%NETATALKPAM%%etc/uams/uams_pam.la
 etc/uams/uams_passwd.so
 etc/uams/uams_passwd.a
-etc/uams/uams_passwd.la
 etc/uams/uams_randnum.so
 etc/uams/uams_randnum.a
-etc/uams/uams_randnum.la
 @dirrm etc/nls
 @dirrm etc/uams
 include/atalk/adouble.h
@@ -139,7 +134,6 @@ include/netatalk/phase2.h
 @dirrm include/atalk
 @dirrm include/netatalk
 lib/libatalk.a
-lib/libatalk.la
 share/aclocal/netatalk.m4
 share/netatalk/pagecount.ps
 @dirrm share/netatalk

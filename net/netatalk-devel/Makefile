@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	netatalk
-PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTVERSION=	1.5.1.1
 PORTEPOCH=	1
 CATEGORIES=	net print
-MASTER_SITES=   ${MASTER_SITE_SOURCEFORGE}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	netatalk
 
 MAINTAINER=	marcus@marcuscom.com
@@ -25,7 +24,6 @@ LIB_DEPENDS=	slp.1:${PORTSDIR}/net/openslp
 LIB_DEPENDS+=	wrap.7:${PORTSDIR}/security/tcp_wrapper
 .endif
 
-USE_BZIP2=	yes
 CONFIGURE_ARGS+=	--with-tcp-wrappers \
 			--with-pkgconfdir=${PREFIX}/etc \
 #			--disable-ddp
@@ -52,10 +50,12 @@ CONFIGURE_ARGS+=		--with-flock-locks
 # This has been tested on MacOS 9.2.x and OS X.
 CONFIGURE_ARGS+=		--with-did=cnid \
 						--with-db3=/usr/local
+PLIST_SUB+=				NETATALKCNID=""
 .else
 # This method of DID calculation is not persistent, but has been tested to
 # work with MacOS X (10.0.3-10.1.1) as well as MacOS 7-9.2.2.
 CONFIGURE_ARGS+=		--with-did=last
+PLIST_SUB+=             NETATALKCNID="@comment "
 .endif
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
