@@ -1,0 +1,18 @@
+
+$FreeBSD$
+
+--- common/Defs-bsd.gmk.orig	Mon Sep 10 17:02:16 2001
++++ common/Defs-bsd.gmk	Mon Sep 10 17:02:42 2001
+@@ -221,10 +221,10 @@
+ else # ARCH
+ CFLAGS_COMMON   = $(GCC_WARNINGS)
+ endif # ARCH
+-CFLAGS_OPT      = $(POPT)
++CFLAGS_OPT      = $(POPT) $(SYS_CFLAGS)
+ CFLAGS_DBG      = -g3
+ CXXFLAGS_COMMON = $(GCC_WARNINGS)
+-CXXFLAGS_OPT	= $(POPT)
++CXXFLAGS_OPT	= $(POPT) $(SYS_CFLAGS)
+ CXXFLAGS_DBG	= -g3
+ 
+ CPPFLAGS_COMMON = -D$(ARCH) -DARCH='"$(ARCH)"' -DSOLARIS2 $(VERSION_DEFINES) \
