@@ -20,6 +20,7 @@
     SUBDIR += ezmlm-idx
     SUBDIR += faces
     SUBDIR += fetchmail
+    SUBDIR += gbuffy
     SUBDIR += gensig
     SUBDIR += glbiff
     SUBDIR += hbiff
