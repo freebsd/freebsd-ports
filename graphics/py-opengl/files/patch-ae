@@ -1,0 +1,11 @@
+--- py/Demo/dek/OglSurface/NumericPDB.py	2000/12/04 21:16:08	1.1
++++ py/Demo/dek/OglSurface/NumericPDB.py	2000/12/04 21:16:33
+@@ -90,7 +90,7 @@
+ 		z = string.atof(string.strip(line[47:54]))
+ 
+ 		self.records.append(PDBRecord(type, anum, atom, residue, chain, rnum))
+-		self.crds.append(x,y,z)
++		self.crds.append((x,y,z))
+ 		
+ 	
+ 	self.crds = Numeric.array(self.crds)
