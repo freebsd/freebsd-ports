@@ -1,0 +1,5 @@
+etc/aiccu.conf.sample
+etc/rc.d/sixxs-aiccu.sh
+sbin/sixxs-aiccu
+%%EXAMPLESDIR%%/aiccu.conf
+@dirrm %%EXAMPLESDIR%%

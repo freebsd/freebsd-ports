@@ -1,0 +1,26 @@
+--- unix-console/Makefile.orig	Mon Jan 31 19:59:30 2005
++++ unix-console/Makefile	Sun Mar 13 16:42:00 2005
+@@ -37,7 +37,7 @@
+ CFLAGS  += -D AICCU_TYPE="\"freebsd4\""
+ SRCS	+= ../common/aiccu_freebsd4.c
+ OBJS	+= ../common/aiccu_freebsd4.o
+-CFLAGS	+= -pthread
++#CFLAGS	+= -pthread
+ endif
+ 
+ # FreeBSD 5.x
+@@ -45,7 +45,13 @@
+ CFLAGS  += -D AICCU_TYPE="\"kame\""
+ SRCS	+= ../common/aiccu_kame.c
+ OBJS	+= ../common/aiccu_kame.o
+-CFLAGS	+= -pthread
++#CFLAGS	+= -pthread
++endif
++# FreeBSD 6.x
++ifeq ($(shell uname -r | cut -c 1),6)
++CFLAGS  += -D AICCU_TYPE="\"kame\""
++SRCS	+= ../common/aiccu_kame.c
++OBJS	+= ../common/aiccu_kame.o
+ endif
+ endif
+ 

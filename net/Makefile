@@ -709,6 +709,7 @@
     SUBDIR += sipp
     SUBDIR += siproxd
     SUBDIR += sipsak
+    SUBDIR += sixxs-aiccu
     SUBDIR += sixxs-heartbeatd
     SUBDIR += skstream
     SUBDIR += skype
