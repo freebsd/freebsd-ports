@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- src/galeon.in.orig	Wed Sep 12 20:50:45 2001
-+++ src/galeon.in	Mon Sep 17 19:13:21 2001
-@@ -4,28 +4,14 @@
+--- src/galeon.in.orig	Sat Nov 10 12:19:29 2001
++++ src/galeon.in	Tue Nov 13 13:59:24 2001
+@@ -4,32 +4,14 @@
  
  if test -n "$MOZILLA_FIVE_HOME"; then
  	MOZILLA_HOME=$MOZILLA_FIVE_HOME
@@ -28,6 +28,10 @@ $FreeBSD$
 -	MOZILLA_HOME=/usr/lib/mozilla-0.9.4/
 -elif [ -f /usr/lib/mozilla-0.9.5/chrome/embed.jar ]; then
 -	MOZILLA_HOME=/usr/lib/mozilla-0.9.5/
+-elif [ -f /usr/lib/mozilla-0.9.6/chrome/embed.jar ]; then
+-	MOZILLA_HOME=/usr/lib/mozilla-0.9.6/
+-elif [ -f /usr/lib/mozilla-0.9.7/chrome/embed.jar ]; then
+-	MOZILLA_HOME=/usr/lib/mozilla-0.9.7/
 -elif [ -f /opt/gnome/lib/mozilla/chrome/embed.jar ]; then
 -        MOZILLA_HOME=/opt/gnome/lib/mozilla/
 +elif [ -f %%LOCALBASE%%/lib/%%MOZILLA%%/libgtkembedmoz.so ]; then
@@ -39,7 +43,7 @@ $FreeBSD$
  else
  	echo "Cannot find mozilla installation directory. Please set MOZILLA_FIVE_HOME to your mozilla directory"
  	exit
-@@ -37,16 +23,9 @@
+@@ -41,16 +23,9 @@
  MOZILLA_FIVE_HOME=$MOZILLA_HOME
  export MOZILLA_FIVE_HOME
  

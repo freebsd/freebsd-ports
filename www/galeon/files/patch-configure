@@ -1,20 +1,47 @@
 
 $FreeBSD$
 
---- configure.orig	Mon Sep 24 12:03:11 2001
-+++ configure	Mon Sep 24 12:05:46 2001
-@@ -6862,10 +6862,10 @@
- s%@INSTALL_DATA@%$INSTALL_DATA%g
- s%@PACKAGE@%$PACKAGE%g
- s%@VERSION@%$VERSION%g
--s%@ACLOCAL@%$ACLOCAL%g
--s%@AUTOCONF@%$AUTOCONF%g
--s%@AUTOMAKE@%$AUTOMAKE%g
--s%@AUTOHEADER@%$AUTOHEADER%g
-+s%@ACLOCAL@%/usr/bin/true%g
-+s%@AUTOCONF@%/usr/bin/true%g
-+s%@AUTOMAKE@%/usr/bin/true%g
-+s%@AUTOHEADER@%/usr/bin/true%g
- s%@MAKEINFO@%$MAKEINFO%g
- s%@SET_MAKE@%$SET_MAKE%g
- s%@host@%$host%g
+--- configure.orig	Tue Nov 13 14:04:39 2001
++++ configure	Tue Nov 13 14:13:44 2001
+@@ -12031,7 +12031,7 @@
+ echo "${ECHO_T}no" >&6
+ fi
+ 
+-	     CATOBJEXT=.gmo
++	     CATOBJEXT=.mo
+ 	   fi
+ 
+ fi
+@@ -12155,7 +12155,7 @@
+ 
+ 	BUILD_INCLUDED_LIBINTL=yes
+ 	USE_INCLUDED_LIBINTL=yes
+-        CATOBJEXT=.gmo
++        CATOBJEXT=.mo
+ 	INTLLIBS="\$(top_builddir)/intl/libintl.a $LIBICONV"
+ 	LIBS=`echo " $LIBS " | sed -e 's/ -lintl / /' -e 's/^ //' -e 's/ $//'`
+       fi
+@@ -12245,7 +12245,7 @@
+     fi
+ 
+                 for lang in $ALL_LINGUAS; do
+-      GMOFILES="$GMOFILES $lang.gmo"
++      GMOFILES="$GMOFILES $lang.mo"
+       POFILES="$POFILES $lang.po"
+     done
+ 
+@@ -12862,10 +12862,10 @@
+ s,@INSTALL_DATA@,$INSTALL_DATA,;t t
+ s,@PACKAGE@,$PACKAGE,;t t
+ s,@VERSION@,$VERSION,;t t
+-s,@ACLOCAL@,$ACLOCAL,;t t
+-s,@AUTOCONF@,$AUTOCONF,;t t
+-s,@AUTOMAKE@,$AUTOMAKE,;t t
+-s,@AUTOHEADER@,$AUTOHEADER,;t t
++s,@ACLOCAL@,/usr/bin/true,;t t
++s,@AUTOCONF@,/usr/bin/true,;t t
++s,@AUTOMAKE@,/usr/bin/true,;t t
++s,@AUTOHEADER@,/usr/bin/true,;t t
+ s,@MAKEINFO@,$MAKEINFO,;t t
+ s,@SET_MAKE@,$SET_MAKE,;t t
+ s,@build@,$build,;t t
