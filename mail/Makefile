@@ -124,6 +124,7 @@
     SUBDIR += im
     SUBDIR += imap-uw
     SUBDIR += imapfilter
+    SUBDIR += imapsync
     SUBDIR += imp
     SUBDIR += ingo
     SUBDIR += isoqlog
