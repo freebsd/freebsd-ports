@@ -1,0 +1,7 @@
+bin/crimson
+share/crimson/levels/ArmsRace.lev
+share/crimson/levels/Uprising.lev
+share/crimson/cf.dat
+share/crimson/default.set
+@dirrm share/crimson/levels
+@dirrm share/crimson
