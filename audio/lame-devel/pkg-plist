@@ -1,7 +1,7 @@
 @comment $FreeBSD$
 bin/lame
 bin/mp3rtp
-bin/mp3x
+%%GTK%%bin/mp3x
 include/lame/lame.h
 lib/libmp3lame.a
 lib/libmp3lame.so.0
