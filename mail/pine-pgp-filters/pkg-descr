@@ -1,0 +1,12 @@
+Simple, fast, sh-based filters to integrate Pine with gnupg, or pgp6.
+
+In addition to the standard functions of encrypt/decrypt and sign/verify, I've
+added a pseudo-filter to verify messages that were sent using MIME encoding to
+attach the signature. See INSTALL for how to use it. It's not possible for a
+sending filter to create these kinds of MIME messages, since Pine does not
+give the user the ability to twiddle attachments.
+
+WWW: http://dougbarton.net/FreeBSD/Downloads/
+
+- Doug Barton
+DougB@FreeBSD.org
