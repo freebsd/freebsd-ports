@@ -61,6 +61,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/benchmark.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/jacobian.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/ludcmp.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/math.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/newton.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/nlsolve.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/bigdecimal/util.rb
@@ -173,6 +174,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/optparse/shellwords.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/optparse/time.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/optparse/uri.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/optparse/version.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/ostruct.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/parsearg.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/parsedate.rb
@@ -327,6 +329,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/httpversion.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/log.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/server.rb
+%%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/ssl.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/utils.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/webrick/version.rb
 %%RUBYLIB%%%%RUBY_LIBDIR%%/xmlrpc/base64.rb
@@ -474,6 +477,18 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/occur.pl
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/occur.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/occur2.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/c_rehash.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/cert2text.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/cert_store_view.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/certstore.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/cipher.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/crlstore.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/echo_cli.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/echo_svr.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/gen_csr.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/smime_read.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/smime_write.rb
+%%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/openssl/wget.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/philos.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pi.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/rcs.awk
@@ -502,6 +517,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pty/script.rb
 %%PORTDOCS%%%%RUBY_EXAMPLESDIR%%/pty/shl.rb
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/pty
+%%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/openssl
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/dl
 %%PORTDOCS%%@dirrm %%RUBY_EXAMPLESDIR%%/curses
 %%RUBY_EXAMPLESDIR%%/.keep_me
