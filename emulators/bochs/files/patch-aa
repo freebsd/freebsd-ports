@@ -1,27 +1,27 @@
-*** .bochsrc.orig	Tue Dec 16 20:20:19 1997
---- .bochsrc	Tue Dec 16 20:20:38 1997
+*** .bochsrc.orig	Sun Jan 18 21:27:28 1998
+--- .bochsrc	Sun Jan 18 21:28:33 1998
 ***************
-*** 14,24 ****
+*** 18,28 ****
   #floppya: 1_44=../1.44.yodlowsk
   #floppya: 1_2=../1.2
-  #floppya: 1_680=../1.680
+  #floppyb: 1_44=../1.680
 ! vgaromimage: bios/VGABIOS-elpin-2.00A
-! romimage: bios/BIOS-bochs-971213a
+! romimage: bios/BIOS-bochs-980118a
   #romimage: bios/rombios.bin
 ! #log: /dev/null
 ! log: ./bochs.out
-  hga_update_interval: 250000
-  keyboard_serial_delay: 200
-  
---- 14,24 ----
+  vga_update_interval: 300000 #microseconds
+  keyboard_serial_delay: 200  #microseconds
+  floppy_command_delay: 500   #microseconds
+--- 18,28 ----
   #floppya: 1_44=../1.44.yodlowsk
   #floppya: 1_2=../1.2
-  #floppya: 1_680=../1.680
+  #floppyb: 1_44=../1.680
 ! vgaromimage: /usr/local/lib/bochs/bios/VGABIOS-elpin-2.00A
-! romimage: /usr/local/lib/bochs/bios/BIOS-bochs-971213a
+! romimage: /usr/local/lib/bochs/bios/BIOS-bochs-980118a
   #romimage: bios/rombios.bin
 ! log: /dev/null
 ! #log: ./bochs.out
-  hga_update_interval: 250000
-  keyboard_serial_delay: 200
-  
+  vga_update_interval: 300000 #microseconds
+  keyboard_serial_delay: 200  #microseconds
+  floppy_command_delay: 500   #microseconds
