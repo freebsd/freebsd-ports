@@ -236,6 +236,7 @@
     SUBDIR += rtcw
     SUBDIR += rtcw-paks
     SUBDIR += rubix
+    SUBDIR += scid
     SUBDIR += sdlroids
     SUBDIR += seabattle
     SUBDIR += seahaven

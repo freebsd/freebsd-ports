@@ -1,0 +1,16 @@
+bin/pgnfix
+bin/pgnscid
+bin/sc_addmove
+bin/sc_eco
+bin/sc_epgn
+bin/sc_import
+bin/sc_spell
+bin/sc_tree
+bin/scid
+bin/scidpgn
+bin/scmerge
+bin/tcscid
+bin/tkscid
+share/scid/scid.eco
+share/scid/spelling.ssp
+@dirrm share/scid
