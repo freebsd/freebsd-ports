@@ -17,5 +17,4 @@ number of extensions that take advantage of these two new objects.
        + Fourier Transforms (FFTPACK)
        + Random Numbers (RANLIB)
 
-For more information, see the NumPy home page at
-<URL:http://www.sls.lcs.mit.edu/~jjh/numeric>.
+WWW: http://www.sls.lcs.mit.edu/~jjh/numeric
