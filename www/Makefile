@@ -3,6 +3,7 @@
 
     SUBDIR += Mosaic         # requires Motif
     SUBDIR += WebMagick
+    SUBDIR += adzap
     SUBDIR += adzapper
     SUBDIR += amaya
     SUBDIR += analog
