@@ -10,6 +10,7 @@
 %%RUBY_SITELIBDIR%%/rexml/namespace.rb
 %%RUBY_SITELIBDIR%%/rexml/node.rb
 %%RUBY_SITELIBDIR%%/rexml/parent.rb
+%%RUBY_SITELIBDIR%%/rexml/parseexception.rb
 %%RUBY_SITELIBDIR%%/rexml/rexml.rb
 %%RUBY_SITELIBDIR%%/rexml/source.rb
 %%RUBY_SITELIBDIR%%/rexml/streamlistener.rb
@@ -61,6 +62,8 @@
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/NotationDecl.xml
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/Parent.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/Parent.xml
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/ParseException.html
+%%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/ParseException.xml
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/REXML.html
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/REXML.xml
 %%PORTDOCS%%%%RUBY_DOCDIR%%/rexml/api/rexml/Source.html
