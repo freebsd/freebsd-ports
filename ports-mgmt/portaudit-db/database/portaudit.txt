@@ -13,3 +13,4 @@ subversion<1.0.5|http://subversion.tigris.org/security/CAN-2004-0413-advisory.tx
 imp<3.2.4|http://article.gmane.org/gmane.comp.horde.imp/14421/|imp: XSS hole exploited via the Content-type header of malicious emails|911f1b19-bd20-11d8-84f9-000bdb1444a4
 chora<1.2.2|http://article.gmane.org/gmane.comp.horde.chora/610/|chora: hole in the diff code that allowed malicious input|9e09399d-bd21-11d8-84f9-000bdb1444a4
 squirrelmail<1.4.3a|http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2004-0519|SquirrelMail XSS vulnerability|89a0de27-bf66-11d8-a252-02e0185c0b53
+ja-squirrelmail<1.4.3a,1|http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2004-0519|SquirrelMail XSS vulnerability|89a0de27-bf66-11d8-a252-02e0185c0b53
