@@ -7,7 +7,7 @@
 +/* hanzim need a running XFree to do its initial setup, rectify */
 +  if (!(strcmp(argv[1], "-port-install")))
 +  {
-+        char *portdatadir = PREFIX"/lib/hanzim";
++        char *portdatadir = "%%PREFIX%%/lib/hanzim";
 +        init_vars(portdatadir);
 +        kanzi(portdatadir);
 +        kanhe(portdatadir);
