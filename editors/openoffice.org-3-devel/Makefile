@@ -8,11 +8,10 @@
 PORTNAME=	openoffice
 PORTVERSION=	2.0.${SNAPDATE}
 CATEGORIES+=	editors
-MASTER_SITES+=	${MASTER_SITE_LOCAL} \
+MASTER_SITES+=	ftp://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
+		${MASTER_SITE_LOCAL:S,%SUBDIR%,maho/openoffice.org/&,}:mozprj \
 		ftp://ftp.cs.man.ac.uk/pub/toby/gpc/:gpc \
-		${MASTER_SITE_MOZILLA:S,%SUBDIR%,mozilla/releases/mozilla1.7b/src/&,}:mozsrc \
-		http://ftp.services.openoffice.org/pub/OpenOffice.org/contrib/helpcontent/:help
-MASTER_SITE_SUBDIR=	maho/openoffice.org
+		${MASTER_SITE_MOZILLA:S,%SUBDIR%,mozilla/releases/mozilla1.7b/src/&,}:mozsrc
 DISTFILES+=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2 gpc231.tar.Z:gpc
 EXTRACT_ONLY=	OOo_${RELEASE_NR}m${MILESTONE}_source.tar.bz2
 
@@ -25,7 +24,7 @@ USE_GNOME=	gtk20
 MOZILLA_PROJECT=	cws_srx645_mozooo.20041016.tar.gz
 MOZILLA_SOURCE=		mozilla-source-1.7b-source.tar.gz
 .if !defined(WITHOUT_MOZILLA)
-DISTFILES+=	${MOZILLA_PROJECT} ${MOZILLA_SOURCE}:mozsrc
+DISTFILES+=	${MOZILLA_PROJECT}:mozprj ${MOZILLA_SOURCE}:mozsrc
 USE_GNOME+=	orbit gtk12
 .endif
 
