@@ -1,0 +1,8 @@
+Xbloody is a toy program for X. If you cut X with the knife, blood drops.
+If you want recover, use xrefresh command.
+
+See README.sjis for details. The README are only in Japanese for now,
+but it is easy to use none the less..
+
+Orignal xbloody written by emoto@hyperware.co.jp .
+This port is done by kazu@jp.freebsd.org .
