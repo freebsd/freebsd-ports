@@ -33,10 +33,12 @@ WRKSRC=		${WRKDIR}/control/make
 JDK_VERSION=	1.4.1
 JDK_PATCHSET_VERSION=	3
 
+SUN_LINUX_JDK_VERSION=	1.4.2
+
 .if defined(NATIVE_BOOTSTRAP)
 JDK14DIR?=	${LOCALBASE}/jdk${JDK_VERSION}
 .else
-JDK14DIR?=	${LOCALBASE}/linux-sun-jdk${JDK_VERSION}
+JDK14DIR?=	${LOCALBASE}/linux-sun-jdk${SUN_LINUX_JDK_VERSION}
 .endif
 
 # workaround to handle both 'zip' and 'tar.gz' distfiles
