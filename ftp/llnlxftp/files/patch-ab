@@ -1,5 +1,5 @@
---- ./sources/log.c.orig	Mon Nov 18 01:25:37 2002
-+++ ./sources/log.c	Mon Nov 18 01:25:43 2002
+--- log.c.orig	Mon Nov 18 01:25:37 2002
++++ log.c	Mon Nov 18 01:25:43 2002
 @@ -81,8 +81,8 @@
  extern char *initial_logfile_name;
  extern Display *display;
