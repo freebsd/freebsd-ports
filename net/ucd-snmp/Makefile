@@ -11,6 +11,7 @@ CATEGORIES=	net
 MASTER_SITES= 	ftp://ucd-snmp.ucdavis.edu/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/ucd-snmp/ \
 		ftp://ftp.win.or.jp/pub/network/snmp/ucd-snmp/
+
 PATCH_SITES=	http://ucd-snmp.ucdavis.edu/patches/
 PATCHFILES=	012.patch
 PATCH_DIST_STRIP=	-p0 -d ${WRKSRC}/agent
