@@ -4,7 +4,7 @@
 # Date created:         17 Nov 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.2 1996/11/18 05:20:10 asami Exp $
+# $Id: Makefile,v 1.3 1996/12/05 06:14:26 asami Exp $
 #
 
 DISTNAME=       timidity-0.2i
@@ -15,6 +15,8 @@ TIINS=          dgguspat.zip
 DISTFILES=      ${TIINS} ${DISTNAME}.tar.gz
 
 MAINTAINER=     ache@FreeBSD.ORG
+
+NO_CDROM=       "Uses copyrighted patches"
 
 BUILD_DEPENDS=  unzip:${PORTSDIR}/archivers/unzip
 
