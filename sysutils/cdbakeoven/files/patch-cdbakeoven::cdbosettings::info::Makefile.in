@@ -1,0 +1,20 @@
+--- cdbakeoven/cdbosettings/info/Makefile.in.orig	Tue Mar 11 10:08:08 2003
++++ cdbakeoven/cdbosettings/info/Makefile.in	Tue Mar 11 10:08:27 2003
+@@ -233,7 +233,7 @@
+ x_libraries = @x_libraries@
+ 
+ datadir = $(kde_datadir)/cdbakeoven/info
+-data_DATA = info.html konq.css \
++data_DATA = konq.css \
+ 	background.png bgtable6.png kdelogo.png \
+ 	top.png lines2.png lines.png shadow1.png
+ 
+@@ -294,7 +294,7 @@
+ 
+ #>- DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+ #>+ 4
+-KDE_DIST=lines2.png bgtable6.png top.png background.png info.html kdelogo.png lines.png konq.css shadow1.png 
++KDE_DIST=lines2.png bgtable6.png top.png background.png kdelogo.png lines.png konq.css shadow1.png 
+ 
+ DISTFILES= $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST) $(KDE_DIST)
+ 
