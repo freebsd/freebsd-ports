@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	silc
-PORTVERSION=	1.0
+PORTVERSION=	1.0.1
 CATEGORIES=	net ipv6 security
 MASTER_SITES=	http://www.silcnet.org/download/%SUBDIR%/ \
 		http://ftp.silcnet.org/%SUBDIR%/ \
@@ -44,6 +44,8 @@ CONFIGURE_ARGS=	--with-etcdir=${PREFIX}/etc/${PORTNAME} \
 PLIST_SUB=	INSTALL_DIR="${INSTALL_DIR}"
 PLIST_SUB+=	ARCH="${ARCH}-freebsd"
 PKGDEINSTALL=	${PKGINSTALL}
+
+MAN1=		silc.1
 
 INSTALL_DIR?=	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m 755
 
