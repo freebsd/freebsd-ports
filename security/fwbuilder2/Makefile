@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	fwbuilder
 MAINTAINER=	devnull@uptsoft.com
 COMMENT=	Firewall Builder GUI and policy compilers
 
+BUILD_DEPENDS=	autoconf:${PORTSDIR}/devel/autoconf \
+		automake:${PORTSDIR}/devel/automake
 LIB_DEPENDS=	gtkmm.2:${PORTSDIR}/x11-toolkits/gtk-- \
 		fwbuilder.5:${PORTSDIR}/security/libfwbuilder
 
