@@ -13,6 +13,7 @@ CATEGORIES=	editors
 LANGPREFIX=	nl
 LANGSUFFIX=	NL
 LANGDIST+=	nl_NL.zip
+HYPHDIST+=	hyph_nl.zip
 MASTERDIR=	${.CURDIR}/../ooodict-all
 RDEP=		${PORTSDIR}/editors/openoffice-nl
 

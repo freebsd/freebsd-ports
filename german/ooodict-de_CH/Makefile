@@ -13,6 +13,7 @@ CATEGORIES=	german
 LANGPREFIX=	de
 LANGSUFFIX=	CH
 LANGDIST+=	de_CH.zip
+HYPHDIST+=	hyph_de_DE.zip
 MASTERDIR=	${.CURDIR}/../../editors/ooodict-all
 RDEP=		${PORTSDIR}/german/openoffice
 
