@@ -2,10 +2,10 @@
 %%PORTDOCS%%share/examples/py-ltxml/gscore.dtd
 %%PORTDOCS%%share/examples/py-ltxml/simple.py
 %%PORTDOCS%%share/examples/py-ltxml/small.xml
-lib/python2.2/site-packages/PyLTXML/LTXMLinter.so
-lib/python2.2/site-packages/PyLTXML/__init__.py
-lib/python2.2/site-packages/PyLTXML/__init__.pyc
-lib/python2.2/site-packages/PyLTXML/__init__.pyo
-@dirrm lib/python2.2/site-packages/PyLTXML
+%%PYTHON_SITELIBDIR%%/PyLTXML/LTXMLinter.so
+%%PYTHON_SITELIBDIR%%/PyLTXML/__init__.py
+%%PYTHON_SITELIBDIR%%/PyLTXML/__init__.pyc
+%%PYTHON_SITELIBDIR%%/PyLTXML/__init__.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/PyLTXML
 %%PORTDOCS%%@dirrm share/examples/py-ltxml
 %%PORTDOCS%%@dirrm share/doc/py-ltxml
