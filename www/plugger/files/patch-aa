@@ -1,5 +1,5 @@
---- Makefile	Tue Mar  6 16:37:41 2001
-+++ Makefile.new	Thu Aug  9 16:46:37 2001
+--- Makefile.orig	Sun Mar 24 18:40:09 2002
++++ Makefile	Sun Mar 24 18:45:17 2002
 @@ -1,8 +1,8 @@
  # Where is your Plugin Source Development Kit from Netscape?
 -SDK=/home/hubbe/src/PluginSDK30b5
@@ -20,7 +20,7 @@
  
  #
  #
- RPMDIR=/usr/src/redhat
+ RPMDIR=/usr/src/RPM
  
  # Choose compiler
 -CC=gcc
@@ -30,12 +30,32 @@
  BINFORMAT=bin
  
  any:
+@@ -32,7 +32,7 @@
+ 	@echo '   make hp-cc        - for HP-UX with cc'
+ 	@echo '   make irix         - for Irix'
+ 	@echo '   make aix          - for AIX >= 4.2'
+-	@echo '   make freebsd      - for FreeBSD 4.x'
++	@echo '   make freebsd-elf  - for FreeBSD 4.x'
+ 
+ irix:
+ 	make all CC=gcc XCFLAGS=-fpic LD=ld XLDFLAGS='-shared -n32'
 @@ -91,7 +91,7 @@
- BIN_FILES=plugger.so
+ BIN_FILES=plugger.so plugger-$(VERSION)
  
- DEFINES=$(STREAM) -DVERSION=\"$(VERSION)\"  # -DDEBUG # -DPLUGIN_TRACE
--CFLAGS=-O -I$(SDK)/include -I$(X11)/include -DXP_UNIX $(DEFINES) $(XCFLAGS)
-+CFLAGS+=-I$(SDK)/include -I$(X11)/include -DXP_UNIX $(DEFINES) $(XCFLAGS)
- LDFLAGS=$(XLDFLAGS)
+ DEFINES=$(STREAM) -DVERSION=\"$(VERSION)\" # -DDEBUG # -DPLUGIN_TRACE
+-COMMON_CFLAGS=-O -I$(SDK)/include -I$(X11)/include -DXP_UNIX $(DEFINES)
++COMMON_CFLAGS=-I$(SDK)/include -I$(X11)/include -DXP_UNIX $(DEFINES)
+ COMMON_LDFLAGS=
+ NORM_CFLAGS=
+ NORM_LDFLAGS=
+@@ -100,8 +100,8 @@
+ XLIBS=-lX11 -L$(X11)/lib
  
- plugger.so: plugger.o common.o
+ LDSHARED=$(LD) $(XLDFLAGS)
+-CFLAGS=$(COMMON_CFLAGS) $(NORM_CFLAGS)
+-LDFLAGS=$(COMMON_LDFLAGS) $(NORM_LDFLAGS)
++CFLAGS+=$(COMMON_CFLAGS) $(NORM_CFLAGS)
++LDFLAGS+=$(COMMON_LDFLAGS) $(NORM_LDFLAGS)
+ SHARED_CFLAGS=$(COMMON_CFLAGS) $(XCFLAGS)
+ 
+ all: plugger.so plugger-$(VERSION)

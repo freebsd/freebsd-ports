@@ -1,26 +1,70 @@
---- pluggerrc	Tue Mar  6 17:02:41 2001
-+++ pluggerrc.new	Thu Aug  9 16:39:02 2001
-@@ -1,4 +1,4 @@
--# Configure file for plugger version 3.0
-+# Configure file for plugger version 3.3
- # Commands which are not installed on your system will not
- # be used.
- #
-@@ -29,7 +29,7 @@
- audio/x-mid: midi,mid: MIDI audio file
- audio/midi: midi,mid: MIDI audio file
- audio/x-midi: midi,mid: MIDI audio file
--	many: timidity -s 65000 -a -idqqqqqqq $file
-+	many: timidity -s 44100 -a -idqqqqqqq $file
- 	: playmidi "$file"
+--- pluggerrc.orig	Wed Dec  5 11:14:01 2001
++++ pluggerrc	Wed Apr  3 08:05:35 2002
+@@ -58,12 +58,12 @@
+ audio/x-mpeg3: mp3: MPEG audio
+ audio/mpeg: mpa,abs,mpega: MPEG audio
+ audio/x-mpeg: mpa,abs,mpega: MPEG audio
+-	stream, preload: splay -t 200 -M
+-	stream, preload: mpg123 -q -b 128 -
++	stream, preload: mpg123 -q -b 1024 -
++	stream, preload: splay -M -t 200
+ 	repeat swallow(alsaplayer): alsaplayer -q "$file" >/dev/null
+-	: mpg123 -q -b 128 "$file"
+-	nokill exits:xmms "$file"
+-	: splay -t 200 "$file"
++	: mpg123 -q -b 1024 "$file"
++#	nokill exits:xmms "$file"  # immortal on FreeBSD
++	: splay "$file" -t 200
+ 	: amp -b 200 -q "$file"
+ 	: maplay "$file"
+ 	: mpeg3play "$file"
+@@ -89,12 +89,21 @@
+ 	stream preload: bplay 1>/dev/null 2>/dev/null
+ 	: bplay 1>/dev/null 2>/dev/null "$file"
+ 	: splay "$file"
+-	nokill exits:xmms "$file"
++#	nokill exits:xmms "$file"  # immortal on FreeBSD
+ 	loop: xanim +Av100 -Zr +W$window +q +f "$file"
+  	: xanim +Av100 -Zr +W$window +q +f +Ze "$file"
+ 	
+ image/tiff: tiff,tif: TIFF image
+ image/x-tiff: tiff,tif: TIFF image
++	repeat swallow(display) fill: display "$file"
++	repeat swallow(Sdtimage) fill: sdtimage "$file"
++	repeat swallow(gqview) fill: gqview -t "$file" >/dev/null 2>/dev/null
++	repeat swallow(xli) fill: xli -quiet "$file" >/dev/null 2>/dev/null
++	repeat swallow(xloadimage) fill: xloadimage -quiet "$file" >/dev/null 2>/dev/null
++	exits: xli -quiet -windowid $window "$file"
++	exits: xloadimage -quiet -windowid $window "$file"
++	exits: display -window $window -backdrop $file
++
+ image/png: png: PNG image
+ image/x-png: png: PNG image
+ 	repeat swallow(gqview) fill: gqview -t "$file" >/dev/null 2>/dev/null
+@@ -132,7 +141,7 @@
+ audio/x-mpeg-url: m3u: MPEG music resource locator
+ audio/mpegurl: m3u: MPEG music resource locator
+ audio/x-mpegurl: m3u: MPEG music resource locator
+-	nokill exits:xmms "$file"
++#	nokill exits:xmms "$file"  # immortal on FreeBSD
+ 	:internal:url
  
- audio/mod: mod: Soundracker audio Module
-@@ -38,7 +38,7 @@
- 	: xmp --nocmd "$file" 2>/dev/null
- 	loop: nspmod -r "$file" 2>/dev/null 1>/dev/null
- 	repeat: nspmod -l $repeat "$file" 2>/dev/null 1>/dev/null
--	: tracker -q -frequency 65000 "$file"
-+	: tracker -q -frequency 44100 "$file"
- 	loop: mikmod -i -r "$file" 2>/dev/null 1>/dev/null
- 	: mikmod -i "$file" 2>/dev/null 1>/dev/null
+ audio/x-pn-realaudio-plugin:rpm:Realaudio-plugin resource locator
+@@ -142,7 +151,7 @@
+ application/x-pdf: pdf: PDF file
+ text/pdf: pdf: PDF file
+ text/x-pdf: pdf: PDF file
+-	repeat swallow(documentShell) fill: acroread -geometry +9000+9000 -xrm '*userFrontEndProgram: FALSE' "$file"
++	repeat swallow(documentShell) fill: acroread4 -geometry +9000+9000 -xrm '*userFrontEndProgram: FALSE' "$file"
+ 	repeat swallow(gv) fill: gv -safer -quiet -antialias -geometry +9000+9000 "$file" 2>/dev/null
+ 	repeat swallow(xpdf) fill: xpdf -g +9000+9000 -err "$file"
+ 
+@@ -159,7 +168,7 @@
+ application/rtf: rtf: Rich Text Format
+ application/x-msword: doc, dot: Microsoft Word Document
+ application/msword: doc, dot: Microsoft Word Document
+-	repeat swallow(AbiWord) fill: abiword -nosplash -geometry +9000+9000 "$file" >/dev/null 2>/dev/null
++	repeat swallow(AbiWord) fill: abiword --nosplash --geometry=+9000+9000 "$file" >/dev/null 2>/dev/null
+ 	repeat swallow(PCFileViewer) fill: sdtpcv "$file"
+ 	repeat swallow(PCFileViewer) fill: /opt/SUNWdtpcv/bin/sdtpcv "$file"
  
