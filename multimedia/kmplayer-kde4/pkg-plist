@@ -1,47 +1,110 @@
 bin/kmplayer
-lib/kde3/kparts_kmplayer.la
-lib/kde3/kparts_kmplayer.so
-lib/kdeinit_kmplayer.la
-lib/kdeinit_kmplayer.so
-share/applnk/Multimedia/kmplayer.desktop
-share/apps/kmplayer/kmplayerpartui.rc
-share/apps/kmplayer/kmplayerui.rc
-share/config/kmplayerrc
-share/doc/HTML/en/kmplayer/common
-share/doc/HTML/en/kmplayer/index.cache.bz2
-share/doc/HTML/en/kmplayer/index.docbook
-share/icons/crystalsvg/32x32/apps/kmplayer.png
-share/icons/locolor/16x16/apps/kmplayer.png
-share/icons/locolor/32x32/apps/kmplayer.png
+lib/libkmplayercommon.so
+lib/libkmplayercommon.la
+lib/libkdeinit_kmplayer.so
+lib/libkdeinit_kmplayer.la
+lib/kde3/libkmplayerpart.so
+lib/kde3/libkmplayerpart.la
+lib/kde3/kmplayer.so
+lib/kde3/kmplayer.la
+share/locale/ca/LC_MESSAGES/kmplayer.mo
+share/locale/de/LC_MESSAGES/kmplayer.mo
+share/locale/cs/LC_MESSAGES/kmplayer.mo
 share/locale/da/LC_MESSAGES/kmplayer.mo
 share/locale/es/LC_MESSAGES/kmplayer.mo
 share/locale/fr/LC_MESSAGES/kmplayer.mo
-share/locale/hu/LC_MESSAGES/kmplayer.mo
-share/locale/lt/LC_MESSAGES/kmplayer.mo
+share/locale/it/LC_MESSAGES/kmplayer.mo
 share/locale/nl/LC_MESSAGES/kmplayer.mo
 share/locale/pt/LC_MESSAGES/kmplayer.mo
 share/locale/ru/LC_MESSAGES/kmplayer.mo
 share/locale/sv/LC_MESSAGES/kmplayer.mo
+share/locale/tr/LC_MESSAGES/kmplayer.mo
+share/locale/pt_BR/LC_MESSAGES/kmplayer.mo
+share/locale/et/LC_MESSAGES/kmplayer.mo
+share/locale/zh_CN/LC_MESSAGES/kmplayer.mo
+share/locale/ro/LC_MESSAGES/kmplayer.mo
+share/locale/fi/LC_MESSAGES/kmplayer.mo
+share/locale/sr/LC_MESSAGES/kmplayer.mo
+share/locale/bs/LC_MESSAGES/kmplayer.mo
+share/locale/xx/LC_MESSAGES/kmplayer.mo
+share/locale/hu/LC_MESSAGES/kmplayer.mo
+share/locale/ta/LC_MESSAGES/kmplayer.mo
+share/locale/en_GB/LC_MESSAGES/kmplayer.mo
+share/locale/ar/LC_MESSAGES/kmplayer.mo
+share/locale/lt/LC_MESSAGES/kmplayer.mo
+share/doc/HTML/en/kmplayer/index.docbook
+share/doc/HTML/en/kmplayer/index.cache.bz2
+share/doc/HTML/en/kmplayer/common
+share/doc/HTML/et/et/index.docbook
+share/doc/HTML/et/et/index.cache.bz2
+share/doc/HTML/et/et/common
+share/doc/HTML/it/it/index.docbook
+share/doc/HTML/it/it/index.cache.bz2
+share/doc/HTML/it/it/common
+share/doc/HTML/sv/sv/index.docbook
+share/doc/HTML/sv/sv/index.cache.bz2
+share/doc/HTML/sv/sv/common
+share/nls/en_US.US-ASCII
+share/nls/POSIX
+share/apps/kmplayer/kmplayerui.rc
+share/apps/kmplayer/kmplayerpartui.rc
+share/config/kmplayerrc
+share/icons/locolor/16x16/apps/kmplayer.png
+share/icons/locolor/32x32/apps/kmplayer.png
+share/icons/crystalsvg/32x32/apps/kmplayer.png
 share/services/kmplayer_component.desktop
+share/applications/kde/kmplayer.desktop
 @unexec rmdir %D/share/services 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_CN/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/zh_CN 2>/dev/null || true
+@unexec rmdir %D/share/locale/xx/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/xx 2>/dev/null || true
+@unexec rmdir %D/share/locale/tr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/tr 2>/dev/null || true
+@unexec rmdir %D/share/locale/ta/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ta 2>/dev/null || true
 @unexec rmdir %D/share/locale/sv/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/sv 2>/dev/null || true
+@unexec rmdir %D/share/locale/sr/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/sr 2>/dev/null || true
 @unexec rmdir %D/share/locale/ru/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/ru 2>/dev/null || true
+@unexec rmdir %D/share/locale/ro/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ro 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_BR/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/pt_BR 2>/dev/null || true
 @unexec rmdir %D/share/locale/pt/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/pt 2>/dev/null || true
 @unexec rmdir %D/share/locale/nl/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/nl 2>/dev/null || true
 @unexec rmdir %D/share/locale/lt/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/lt 2>/dev/null || true
+@unexec rmdir %D/share/locale/it/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/it 2>/dev/null || true
 @unexec rmdir %D/share/locale/hu/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/hu 2>/dev/null || true
 @unexec rmdir %D/share/locale/fr/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/fr 2>/dev/null || true
+@unexec rmdir %D/share/locale/fi/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/fi 2>/dev/null || true
+@unexec rmdir %D/share/locale/et/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/et 2>/dev/null || true
 @unexec rmdir %D/share/locale/es/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/es 2>/dev/null || true
+@unexec rmdir %D/share/locale/en_GB/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/en_GB 2>/dev/null || true
+@unexec rmdir %D/share/locale/de/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/de 2>/dev/null || true
 @unexec rmdir %D/share/locale/da/LC_MESSAGES 2>/dev/null || true
 @unexec rmdir %D/share/locale/da 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/cs 2>/dev/null || true
+@unexec rmdir %D/share/locale/ca/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ca 2>/dev/null || true
+@unexec rmdir %D/share/locale/bs/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/bs 2>/dev/null || true
+@unexec rmdir %D/share/locale/ar/LC_MESSAGES 2>/dev/null || true
+@unexec rmdir %D/share/locale/ar 2>/dev/null || true
 @unexec rmdir %D/share/icons/locolor/32x32/apps 2>/dev/null || true
 @unexec rmdir %D/share/icons/locolor/32x32 2>/dev/null || true
 @unexec rmdir %D/share/icons/locolor/16x16/apps 2>/dev/null || true
@@ -59,4 +122,5 @@ share/services/kmplayer_component.desktop
 @unexec rmdir %D/share/apps 2>/dev/null || true
 @unexec rmdir %D/share/applnk/Multimedia 2>/dev/null || true
 @unexec rmdir %D/share/applnk 2>/dev/null || true
+@unexec rmdir %D/share/applications/kde 2>/dev/null || true
 @unexec rmdir %D/lib/kde3 2>/dev/null || true
