@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xosd
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1.0
 CATEGORIES=	misc
 MASTER_SITES=	http://www.ignavus.net/ \
 		${MASTER_SITE_LOCAL}
@@ -15,7 +15,8 @@ MASTER_SITE_SUBDIR=	perky
 MAINTAINER=	perky@FreeBSD.org
 
 LIB_DEPENDS=	gnugetopt.1:${PORTSDIR}/devel/libgnugetopt \
-		xmms.3:${PORTSDIR}/multimedia/xmms
+		xmms.3:${PORTSDIR}/multimedia/xmms \
+		gdk_pixbuf.2:${PORTSDIR}/graphics/gdk-pixbuf
 
 XMMS_CONFIG?=	${X11BASE}/bin/xmms-config
 USE_X_PREFIX=	yes

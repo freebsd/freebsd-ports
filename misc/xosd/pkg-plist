@@ -7,6 +7,8 @@ lib/libxosd.so
 lib/libxosd.so.2
 lib/xmms/General/libxmms_osd.la
 lib/xmms/General/libxmms_osd.so
+lib/xmms/General/libxmms_osd_oldplugin.la
+lib/xmms/General/libxmms_osd_oldplugin.so
 share/aclocal/libxosd.m4
 share/xosd/bottom-left.png
 share/xosd/bottom-right.png
