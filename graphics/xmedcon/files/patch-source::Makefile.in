@@ -1,11 +1,11 @@
---- source/Makefile.in.orig	Tue Jun 17 01:16:18 2003
-+++ source/Makefile.in	Tue Jun 17 01:17:16 2003
-@@ -413,7 +413,7 @@
+--- source/Makefile.in.orig	Sat Jan 24 18:00:21 2004
++++ source/Makefile.in	Sat Jan 24 18:01:00 2004
+@@ -412,7 +412,7 @@
   m-png.h
  
  
 -configheadersdir = $(prefix)/include
 +configheadersdir = $(prefix)/include/xmedcon
- configheaders_DATA = m-autoconf.h m-config.h
+ configheaders_DATA = m-depend.h m-config.h
  
- INCLUDES = $(DICM_INC) $(LJPG_INC) $(PNG_INC) $(GDK_PIXBUF_CFLAGS) $(GLIB_CFLAGS)
+ INCLUDES = $(DICM_INC) $(PNG_INC) $(GDK_PIXBUF_CFLAGS) $(GLIB_CFLAGS)
