@@ -1,0 +1,130 @@
+*** Makefile.orig	Thu Oct 20 17:11:19 1994
+--- Makefile	Thu Oct 20 17:09:37 1994
+***************
+*** 14,20 ****
+  # on the command line (like "make DESTROOT=/usr/wheel sunos4")
+  #
+  MAKE=make
+! DESTROOT=/usr/local
+  DESTDIR=$(DESTROOT)/sbin
+  MANROOT=$(DESTROOT)/man
+  MANDIR=$(MANROOT)/man8
+--- 14,20 ----
+  # on the command line (like "make DESTROOT=/usr/wheel sunos4")
+  #
+  MAKE=make
+! DESTROOT=${PREFIX}
+  DESTDIR=$(DESTROOT)/sbin
+  MANROOT=$(DESTROOT)/man
+  MANDIR=$(MANROOT)/man8
+***************
+*** 43,86 ****
+  
+  CFLAGS=-O
+  
+! all:
+! 	@echo "Please specify the type of system you wish to build for."
+! 	@echo "Valid systems are:"
+! 	@echo ""
+! 	@echo "	sunos3		SunOS 3.x (tested with 3.5)"
+! 	@echo "	sunos4		Sun SunOS 4"
+! 	@echo "	sunos5		Sun SunOS 5 (Solaris 2)"
+! 	@echo "	bsdi		BSD/386 (The commercial one)"
+! 	@echo "	386bsd		386BSD (The free one)"
+! 	@echo "	netbsd		NetBSD"
+! 	@echo "	4.3bsd		4.3BSD Reno"
+! 	@echo "	4.3bsd-tahoe	4.3BSD Tahoe"
+! 	@echo "	dynix3		Sequent Dynix 3"
+! 	@echo "	riscos4		MIPS RISC/OS 4"
+! 	@echo "	irix4		Silicon Graphics IRIX 4"
+! 	@echo "	irix5		Silicon Graphics IRIX 5"
+! 	@echo "	hpux7		Hewlett-Packard HP-UX 7"
+! 	@echo "	hpux8		Hewlett-Packard HP-UX 8"
+! 	@echo "	hpux9		Hewlett-Packard HP-UX 9"
+! 	@echo "	sco		SCO unix System V release 3.2 (v4.0 & 4.1)"
+! 	@echo "	svr4		Generic System V Release 4 UNIX"
+! 	@echo "	attsvr4		AT&T's own System V Release 4"
+! 	@echo "	aux2		Apple A/UX 2"
+! 	@echo "	aux3		Apple A/UX 3"
+! 	@echo "	ultrix3		Digital Ultrix 3"
+! 	@echo "	ultrix4		Digital Ultrix 4"
+! 	@echo "	alpha		Digital Alpha AXP OSF"
+! 	@echo "	alpha3		Digital Alpha AXP OSF; 3.0 or later"
+! 	@echo "	linux		Linux 0.99.13q or later"
+! 	@echo "	unicos6		Cray UNICOS 6"
+! 	@echo "	convex		Convex ConvexOS"
+! 	@echo "	next		NeXT/Mach (NeXTSTEP 2 or 3.0)"
+! 	@echo "	nextmab		NeXT/Mach (NeXTSTEP 3.1 MAB)"
+! 	@echo "	pyramid4	Pyramid's dualPort OSx 4"
+! 	@echo "	other		Other BSD-based Unixes (who knows, it may even work :-)"
+! 	@echo ""
+! 	@echo "For example: make sunos4"
+! 	@echo ""
+  
+  #
+  # Use this if Linux 0.99.13q or later
+--- 43,88 ----
+  
+  CFLAGS=-O
+  
+! all: freebsd
+! 
+! #	@echo "Please specify the type of system you wish to build for."
+! #	@echo "Valid systems are:"
+! #	@echo ""
+! #	@echo "	sunos3		SunOS 3.x (tested with 3.5)"
+! #	@echo "	sunos4		Sun SunOS 4"
+! #	@echo "	sunos5		Sun SunOS 5 (Solaris 2)"
+! #	@echo "	bsdi		BSD/386 (The commercial one)"
+! #	@echo "	386bsd		386BSD (The free one)"
+! #	@echo "	netbsd		NetBSD"
+! #	@echo " freebsd		FreeBSD 2.x"
+! #	@echo "	4.3bsd		4.3BSD Reno"
+! #	@echo "	4.3bsd-tahoe	4.3BSD Tahoe"
+! #	@echo "	dynix3		Sequent Dynix 3"
+! #	@echo "	riscos4		MIPS RISC/OS 4"
+! #	@echo "	irix4		Silicon Graphics IRIX 4"
+! #	@echo "	irix5		Silicon Graphics IRIX 5"
+! #	@echo "	hpux7		Hewlett-Packard HP-UX 7"
+! #	@echo "	hpux8		Hewlett-Packard HP-UX 8"
+! #	@echo "	hpux9		Hewlett-Packard HP-UX 9"
+! #	@echo "	sco		SCO unix System V release 3.2 (v4.0 & 4.1)"
+! #	@echo "	svr4		Generic System V Release 4 UNIX"
+! #	@echo "	attsvr4		AT&T's own System V Release 4"
+! #	@echo "	aux2		Apple A/UX 2"
+! #	@echo "	aux3		Apple A/UX 3"
+! #	@echo "	ultrix3		Digital Ultrix 3"
+! #	@echo "	ultrix4		Digital Ultrix 4"
+! #	@echo "	alpha		Digital Alpha AXP OSF"
+! #	@echo "	alpha3		Digital Alpha AXP OSF; 3.0 or later"
+! #	@echo "	linux		Linux 0.99.13q or later"
+! #	@echo "	unicos6		Cray UNICOS 6"
+! #	@echo "	convex		Convex ConvexOS"
+! #	@echo "	next		NeXT/Mach (NeXTSTEP 2 or 3.0)"
+! #	@echo "	nextmab		NeXT/Mach (NeXTSTEP 3.1 MAB)"
+! #	@echo "	pyramid4	Pyramid's dualPort OSx 4"
+! #	@echo "	other		Other BSD-based Unixes (who knows, it may even work :-)"
+! #	@echo ""
+! #	@echo "For example: make sunos4"
+! #	@echo ""
+  
+  #
+  # Use this if Linux 0.99.13q or later
+***************
+*** 120,125 ****
+--- 122,136 ----
+  	@(cd src ; $(MAKE) CC="$(CC)" LDFLAGS="$(LDFLAGS)" \
+  		LIBS="-lutil $(GLIBS)" CFLAGS="$(CFLAGS) -DBSD386 \
+  		$(GDEFS) -DHAVE_KVM" KSRC=386bsd in.identd)
++ 
++ #
++ # Use this if FreeBSD 2.x
++ #
++ freebsd:
++ 	@echo "Building for FreeBSD 2.x ..."
++ 	@(cd src ; $(MAKE) CC="$(CC)" LDFLAGS="$(LDFLAGS)" \
++ 		LIBS="-lkvm $(GLIBS)" CFLAGS="$(CFLAGS) -DFREEBSD \
++ 		$(GDEFS) -DHAVE_KVM" KSRC=freebsd in.identd)
+  
+  #
+  # Use this if BSDI's BSD/386 (the commercial BSD)
