@@ -6,7 +6,7 @@
  LIBS       = -L/usr/local/lib -lssl -lcrypto
 -PYVER      = 2.2
 -PYINCLUDE  = -DHAVE_CONFIG_H -I/usr/local/include/python$(PYVER) \
-+PYINCLUDE  = -DHAVE_CONFIG_H -I/usr/local/include/PYTHON_VERSION \
++PYINCLUDE  = -DHAVE_CONFIG_H -I%%PYTHON_INCLUDEDIR%% \
  	-I/usr/local/lib/python$(PYVER)/config
  PYLIB      = /usr/local/lib/python$(PYVER)/config
  
