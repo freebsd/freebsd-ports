@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	jmz@FreeBSD.org
 COMMENT=	XFree86 contrib programs
 
+BROKEN=		"Does not compile"
+
 # Define FORCE_PACKAGE from the command line if you want to override
 # this and build a package
 NO_PACKAGE=	"Binary package distributed by XFree86 already"
