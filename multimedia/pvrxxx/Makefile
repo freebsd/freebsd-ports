@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	pvr250
-PORTVERSION=	200408
-PORTREVISION=	1
+PORTVERSION=	20041107
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mavetju.org/download/adopted/
 DISTFILES=	${CXMSHAR} hcwPVRP2.sys ${PVRTOOLS}.tar.gz
@@ -17,7 +16,7 @@ MAINTAINER=	edwin@mavetju.org
 COMMENT=	Hauppauge PVR-250/350 TV cards driver for the cxm device
 
 PVRTOOLS=	pvr250-1
-CXMSHAR=	cxm-200408.shar
+CXMSHAR=	cxm-${PORTVERSION}.shar
 
 WRKSRC=		${WRKDIR}
 USE_REINPLACE=	yes
