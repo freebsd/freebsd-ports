@@ -3,21 +3,21 @@
 # Date created:				31 May 1998
 # Whom:					Stefan Eggers <seggers@semyam.dinoco.de>
 #
-# $Id: Makefile,v 1.2 1998/06/04 02:40:28 mph Exp $
+# $Id: Makefile,v 1.3 1998/06/23 18:09:46 mph Exp $
 #
 
-DISTNAME=	crafty-15.14
+DISTNAME=	crafty-15.15
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.cis.uab.edu/pub/hyatt/ \
 		ftp://ftp.cis.uab.edu/pub/hyatt/common/ \
 		ftp://ftp.cis.uab.edu/pub/hyatt/v15/
-DISTFILES=	crafty-15.14.tar.gz crafty.doc crafty.faq read.me start.zip
+DISTFILES=	crafty-15.15.tar.gz crafty.doc crafty.faq read.me start.zip
 
 MAINTAINER=	seggers@semyam.dinoco.de
 
 ALL_TARGET=	crafty
 DIST_SUBDIR=	crafty
-EXTRACT_ONLY=	crafty-15.14.tar.gz
+EXTRACT_ONLY=	crafty-15.15.tar.gz
 
 MAN6=		crafty.6
 NO_WRKSUBDIR=	yes
