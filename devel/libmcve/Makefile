@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libmcve
-PORTVERSION=	3.0
+PORTVERSION=	3.1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.mcve.com/pub/libmcve/
 
@@ -16,5 +16,6 @@ COMMENT=	Library to allow credit card processing through MCVE
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_SHLIB=	yes
+CONFIGURE_ARGS=	--without-pthread
 
 .include <bsd.port.mk>
