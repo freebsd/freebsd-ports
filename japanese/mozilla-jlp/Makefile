@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mozilla
-PORTVERSION=	1.0.1
+PORTVERSION=	1.1
 #PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	japanese www
@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		http://www2.starcat.ne.jp/~unha/jlp/
 MASTER_SITE_SUBDIR=	jlpmoz
 PKGNAMESUFFIX=	-jlp
-DISTNAME=	${PORTNAME}1.0.1rc1-jajppack-kv0.10
+DISTNAME=	${PORTNAME}${PORTVERSION}-jajppack-kv0.8
 EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	yatt@msc.biglobe.ne.jp
@@ -31,10 +31,13 @@ EXTRACT_BEFORE_ARGS=	-qo
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 400020
-MOZILLA_SH=	mozilla.noxpg4
+.if ${OSVERSION} >= 450002
+LOCALENAME=	ja_JP.eucJP
+.elif ${OSVERSION} >= 400020
+LOCALENAME=	ja_JP.EUC
 .else
-MOZILLA_SH=	mozilla.xpg4
+LOCALENAME=	ja_JP.EUC
+LIBXPG4=	LD_PRELOAD=/usr/lib/libxpg4.so.2; export LD_PRELOAD
 .endif
 
 post-extract:
@@ -42,8 +45,10 @@ post-extract:
 	${CP} ${FILESDIR}/unix.js ${WRKSRC}/defaults/pref
 
 do-build:
-	${SED} -e "s;@PREFIX@;${PREFIX};g" \
-	${FILESDIR}/${MOZILLA_SH} > ${WRKDIR}/mozilla
+	${SED} -e "s^@PREFIX@^${PREFIX}^g" \
+	       -e "s^@LOCALENAME@^${LOCALENAME}^g" \
+	       -e "s^@LIBXPG4@^${LIBXPG4}^g" \
+	${FILESDIR}/mozilla.sh > ${WRKDIR}/mozilla
 
 do-install:
 	(cd ${PREFIX}/lib/mozilla/chrome; \
