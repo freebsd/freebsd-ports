@@ -16,6 +16,7 @@
     SUBDIR += dpkg
     SUBDIR += fastjar
     SUBDIR += fileroller
+    SUBDIR += fpc-paszlib
     SUBDIR += freeze
     SUBDIR += gtar
     SUBDIR += gzip
