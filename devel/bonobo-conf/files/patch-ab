@@ -1,0 +1,20 @@
+--- monikers/Makefile.in.orig	Mon Apr 16 07:54:46 2001
++++ monikers/Makefile.in	Thu Apr 19 21:18:39 2001
+@@ -169,6 +169,6 @@
+ LDFLAGS = @LDFLAGS@
+-libmoniker_config_la_LDFLAGS = 
++libmoniker_config_la_LDFLAGS = -avoid-version
+ libmoniker_config_la_DEPENDENCIES = 
+ libmoniker_config_la_OBJECTS =  bonobo-moniker-config.lo
+-libmoniker_gconf_la_LDFLAGS = 
++libmoniker_gconf_la_LDFLAGS = -avoid-version
+ @ENABLE_GCONF_TRUE@libmoniker_gconf_la_DEPENDENCIES = 
+@@ -181,6 +181,6 @@
+ bonobo_moniker_xmldb_DEPENDENCIES =  ../bonobo-conf/libbonobo_conf.la
+-bonobo_moniker_xmldb_LDFLAGS = 
++bonobo_moniker_xmldb_LDFLAGS =
+ test_xmldb_OBJECTS =  test-xmldb.o bonobo-config-xmldb.o
+ test_xmldb_DEPENDENCIES =  ../bonobo-conf/libbonobo_conf.la
+-test_xmldb_LDFLAGS = 
++test_xmldb_LDFLAGS = -avoid-version
+ COMPILE = $(CC) $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)

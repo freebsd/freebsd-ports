@@ -1,6 +1,14 @@
-lib/bonobo/monikers/libconfig_moniker.a
-lib/bonobo/monikers/libconfig_moniker.so
-lib/bonobo/monikers/libconfig_moniker.so.0
+bin/bonobo-moniker-xmldb
+bin/cedit
+include/bonobo-conf/Bonobo_Config.h
+include/bonobo-conf/bonobo-config-database.h
+include/bonobo-conf/bonobo-config-utils.h
+lib/bonobo/monikers/libmoniker_config.so
+lib/bonobo/monikers/libmoniker_gconf.so
+lib/bonobo_confConf.sh
+lib/libbonobo_conf.a
+lib/libbonobo_conf.so
+lib/libbonobo_conf.so.0
 share/aclocal/gnome-macros/aclocal-include.m4
 share/aclocal/gnome-macros/autogen.sh
 share/aclocal/gnome-macros/compiler-flags.m4
@@ -27,6 +35,15 @@ share/aclocal/gnome-macros/gnome.m4
 share/aclocal/gnome-macros/gperf-check.m4
 share/aclocal/gnome-macros/linger.m4
 share/aclocal/gnome-macros/need-declaration.m4
-share/gnome/idl/Bonobo_PropertyEditor.idl
+share/gnome/idl/Bonobo_Config.idl
 share/gnome/oaf/Bonobo_Moniker_config.oaf
+share/gnome/oaf/Bonobo_Moniker_gconf.oaf
+share/gnome/oaf/Bonobo_Moniker_xmldb.oaf
+share/locale/de/LC_MESSAGES/bonobo-conf.mo
+@dirrm share/gnome/bonobo-conf/html/bonobo-conf
+@dirrm share/gnome/bonobo-conf/html
+@dirrm share/gnome/bonobo-conf
 @dirrm share/aclocal/gnome-macros
+@dirrm lib/bonobo/monikers
+@dirrm lib/bonobo
+@dirrm include/bonobo-conf
