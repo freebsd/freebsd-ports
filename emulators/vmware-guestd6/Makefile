@@ -27,9 +27,7 @@ IS_INTERACTIVE=	yes
 .endif
 
 RESTRICTED=	"Not sure if we can redistribute this."
-.if defined(PACKAGE_BUILDING)
-IGNORE=	"Can't build this port since it requires VMware."
-.endif
+NO_PACKAGE=	${RESTRICTED}
 
 VMWARE_VER=	4.0.0
 BUILD_VER=	4460
