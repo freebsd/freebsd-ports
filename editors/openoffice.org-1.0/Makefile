@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openoffice
-PORTVERSION=	1.0.1
-PORTREVISION=	4
+PORTVERSION=	1.0.2
 CATEGORIES+=	editors
 MASTER_SITES+=	http://ny1.mirror.openoffice.org/%SUBDIR%/ \
 		http://ftp.gwdg.de/pub/misc/openoffice/%SUBDIR%/ \
@@ -31,12 +30,14 @@ GREP?=	/usr/bin/grep
 MOUNT?=	/sbin/mount
 ZIP?=	${PREFIX}/bin/zip
 UNZIP?=	${PREFIX}/bin/unzip
+ANT?=	${LOCALBASE}/bin/ant
 TCSH?=	/bin/tcsh
 PASTE?= /usr/bin/paste
 
 .include <bsd.port.pre.mk>
 
 INSTALLATION_BASEDIR=	OpenOffice.org1.0
+BUILD_NR=		641
 DIST_SUBDIR=		openoffice
 DICT_DIR=               ${PREFIX}/${INSTALLATION_BASEDIR}/share/dict/ooo/
 
@@ -104,11 +105,12 @@ CXX=		g++32
 EXTRACT_ONLY=	OOo_${PORTVERSION}_source.tar.bz2
 
 MAINTAINER=	openoffice@FreeBSD.org
-.if !defined(USE_GCC)
-BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
-.endif
+#.if !defined(USE_GCC)
+#BUILD_DEPENDS=	${LOCALBASE}/lib/libstlport_gcc.so:${PORTSDIR}/devel/stlport
+#.endif
 BUILD_DEPENDS+= zip:${PORTSDIR}/archivers/zip
 BUILD_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
+BUILD_DEPENDS+=	${ANT}:${PORTSDIR}/devel/jakarta-ant
 BUILD_DEPENDS+= ${JAVAVM}:${PORTSDIR}/java/jdk13
 BUILD_DEPENDS+= ${X11BASE}/lib/libX11.so:${PORTSDIR}/x11/XFree86-4-libraries
 .if !defined(DISPLAY)
@@ -133,7 +135,7 @@ USE_AUTOCONF=	yes
 WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
 WRKSRC=		${WRKDIR}/oo_${PORTVERSION}_src/config_office
 LD_PATH1=	${WRKSRC}/../vos/unxfbsd.pro/lib/:${WRKSRC}/../ucbhelper/unxfbsd.pro/lib/
-LD_PATH=	${LD_PATH1}:${WRKSRC}/../solver/641/unxfbsd.pro/lib/
+LD_PATH=	${LD_PATH1}:${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/lib/
 .if defined(WITH_DEBUG)
 CFLAGS+=	-g
 .if ${WITH_DEBUG} == 2
@@ -153,11 +155,12 @@ CONFIGURE_ENV=		PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
 			PTHREAD_LIBS=${PTHREAD_LIBS}
 
 CONFIGURE_ARGS+=	--with-jdk-home=${JDK13DIR} \
-			--with-os-version=${OSVERSION}
+			--with-os-version=${OSVERSION} \
+			--with-ant-home=${LOCALBASE}/
 
-.if !defined(USE_GCC)
-CONFIGURE_ARGS+=	--with-stlport4-home=${PREFIX}
-.endif
+#.if !defined(USE_GCC)
+#CONFIGURE_ARGS+=	--with-stlport4-home=${PREFIX}
+#.endif
 
 .if defined(WITH_DEBUG)
 .if ${WITH_DEBUG} == 2
@@ -464,8 +467,8 @@ do-build:
 .endif
 	@cd ${WRKSRC}/.. && PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" ./bootstrap
 .if defined(L10NHELP)
-	@${MKDIR} ${WRKSRC}/../solver/641/unxfbsd.pro/pck 
-	@${CP} ${WRKDIR}/L10NHELP/*.zip ${WRKSRC}/../solver/641/unxfbsd.pro/pck
+	@${MKDIR} ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/pck 
+	@${CP} ${WRKDIR}/L10NHELP/*.zip ${WRKSRC}/../solver/${BUILD_NR}/unxfbsd.pro/pck
 .endif
 .if !defined(DISPLAY)
 	@cd ${WRKSRC}/.. && DISPLAY=${DISPLAYHACK} PATH="${PATH}:${LOCALBASE}/bin:${LOCALBASE}/sbin" && \

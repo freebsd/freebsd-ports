@@ -1,82 +1,132 @@
---- ../berkeleydb/db-3.2.9.patch.orig	Mon Mar 18 15:53:40 2002
-+++ ../berkeleydb/db-3.2.9.patch	Mon Apr 15 18:43:43 2002
-@@ -47,17 +47,27 @@
- --- build/unxsols3.pro/db-3.2.9/dist/configure	Tue Jan  8 13:56:05 2002
- ***************
- *** 1795,1800 ****
----- 1795,1802 ----
-+--- 1795,1803 ----
-   	case "$host_os" in
-   	solaris*)	JINCSUBDIRS="solaris";;
-   	linux*)		JINCSUBDIRS="linux genunix";;
- + 	irix*)		JINCSUBDIRS="irix";;
- +	netbsd*)	JINCSUBDIRS="netbsd linux solaris genunix";;
-++	freebsd*)	JINCSUBDIRS="freebsd genunix";;
-   	*)		JINCSUBDIRS="genunix";;
-   	esac
-   
- --- misc/build/db-3.2.9/dist/configure.orig	Sat Nov 24 14:56:48 2001
- +++ misc/build/db-3.2.9/dist/configure	Sat Nov 24 14:57:32 2001
-+@@ -984,7 +984,7 @@
+--- ../berkeleydb/db-3.2.9.patch.orig	Sun Jan 19 14:58:19 2003
++++ ../berkeleydb/db-3.2.9.patch	Sun Jan 19 15:00:02 2003
+@@ -45,52 +45,82 @@
+   CCLINK=		@MAKEFILE_CCLINK@
+ *** misc/db-3.2.9/dist/configure	Wed Jan 24 10:16:18 2001
+ --- misc/build/db-3.2.9/dist/configure	Tue Jan  7 11:37:05 2003
+-***************
+-*** 995,1000 ****
+---- 995,1001 ----
+-  	   CPPFLAGS="-D_REENTRANT $CPPFLAGS";;
+-  mpeix*)	   CPPFLAGS="-D_POSIX_SOURCE -D_SOCKET_SOURCE $CPPFLAGS"
+-  	   LIBS="-lsocket -lsvipc $LIBS";;
+-+ netbsd*)   optimize_def="-O2";;
+-  osf*)	   CPPFLAGS="-D_REENTRANT $CPPFLAGS";;
+-  *qnx)	   cat >> confdefs.h <<\EOF
+-  #define HAVE_QNX 1
+-***************
+-*** 1795,1800 ****
+---- 1796,1803 ----
+-  	case "$host_os" in
+-  	solaris*)	JINCSUBDIRS="solaris";;
+-  	linux*)		JINCSUBDIRS="linux genunix";;
+-+ 	irix*)		JINCSUBDIRS="irix";;
+-+ netbsd*)	JINCSUBDIRS="netbsd linux solaris genunix";;
+-  	*)		JINCSUBDIRS="genunix";;
+-  	esac
+-  
++@@ -984,9 +984,9 @@
 + 	   optimize_def="-O2"
 + 	   LIBS="-lipc $LIBS";;
 + bsdi*)	   optimize_def="-O2";;
 +-freebsd*)  optimize_def="-O2"
++-	   CPPFLAGS="-D_THREAD_SAFE $CPPFLAGS"
++-           LIBS="-pthread";;
 ++freebsd*)  optimize_def="-O"
-+ 	   CPPFLAGS="-D_THREAD_SAFE $CPPFLAGS"
-+            LIBS="-pthread";;
+++	   CPPFLAGS="$PTHREAD_CFLAGS $CPPFLAGS"
+++           LIBS="$PTHREAD_LIBS";;
 + hpux*)	   CPPFLAGS="-D_REENTRANT $CPPFLAGS";;
- @@ -995,6 +995,7 @@
-  	   CPPFLAGS="-D_REENTRANT $CPPFLAGS";;
-  mpeix*)	   CPPFLAGS="-D_POSIX_SOURCE -D_SOCKET_SOURCE $CPPFLAGS"
-@@ -68,13 +78,22 @@
-  #define HAVE_QNX 1
- --- misc/build/db-3.2.9/dist/ltconfig.orig	Sat Nov 24 14:56:10 2001
- +++ misc/build/db-3.2.9/dist/ltconfig	Sat Nov 24 14:56:34 2001
--@@ -1194,11 +1194,12 @@
-+@@ -1194,11 +1194,23 @@
-  
-    netbsd*)
-      if echo __ELF__ | $CC -E - | grep __ELF__ >/dev/null; then
---      archive_cmds='$CC -shared $libobjs $deplibs $linkopts ${wl}-soname $wl$soname -o $lib'
---      archive_expsym_cmds='$CC -shared $libobjs $deplibs $linkopts ${wl}-soname $wl$soname ${wl}-retain-symbols-file $wl$export_symbols -o $lib'
-++      archive_cmds='$LD -Bshareable $libobjs $deplibs $linkopts -o $lib'
-++      # can we support soname and/or expsyms with a.out? -oliva
++ irix*)	   optimize_def="-O2"
++ 	   CPPFLAGS="-D_SGI_MP_SOURCE $CPPFLAGS";;
++@@ -995,6 +995,7 @@
++ 	   CPPFLAGS="-D_REENTRANT $CPPFLAGS";;
++ mpeix*)	   CPPFLAGS="-D_POSIX_SOURCE -D_SOCKET_SOURCE $CPPFLAGS"
++ 	   LIBS="-lsocket -lsvipc $LIBS";;
+++netbsd*)   optimize_def="-O2";;
++ osf*)	   CPPFLAGS="-D_REENTRANT $CPPFLAGS";;
++ *qnx)	   cat >> confdefs.h <<\EOF
++ #define HAVE_QNX 1
++@@ -1795,6 +1796,9 @@
++ 	case "$host_os" in
++ 	solaris*)	JINCSUBDIRS="solaris";;
++ 	linux*)		JINCSUBDIRS="linux genunix";;
+++	irix*)		JINCSUBDIRS="irix";;
+++	netbsd*)        JINCSUBDIRS="netbsd linux solaris genunix";;
+++	freebsd*)	JINCSUBDIRS="freebsd genunix";;
++ 	*)		JINCSUBDIRS="genunix";;
++ 	esac
++ 
+ *** misc/db-3.2.9/dist/ltconfig	Fri Oct 13 16:23:00 2000
+ --- misc/build/db-3.2.9/dist/ltconfig	Tue Jan  7 11:37:05 2003
+-***************
+-*** 1194,1204 ****
+-  
+-    netbsd*)
+-      if echo __ELF__ | $CC -E - | grep __ELF__ >/dev/null; then
+--       archive_cmds='$CC -shared $libobjs $deplibs $linkopts ${wl}-soname $wl$soname -o $lib'
+--       archive_expsym_cmds='$CC -shared $libobjs $deplibs $linkopts ${wl}-soname $wl$soname ${wl}-retain-symbols-file $wl$export_symbols -o $lib'
+--     else
+-        archive_cmds='$LD -Bshareable $libobjs $deplibs $linkopts -o $lib'
+-        # can we support soname and/or expsyms with a.out? -oliva
+-      fi
+-      ;;
+-  
+---- 1194,1205 ----
+-  
+-    netbsd*)
+-      if echo __ELF__ | $CC -E - | grep __ELF__ >/dev/null; then
+-        archive_cmds='$LD -Bshareable $libobjs $deplibs $linkopts -o $lib'
+-        # can we support soname and/or expsyms with a.out? -oliva
+-+     else
+-+       archive_cmds='$CC -shared $libobjs $deplibs $linkopts ${wl}-soname $wl$soname -o $lib'
+-+       archive_expsym_cmds='$CC -shared $libobjs $deplibs $linkopts ${wl}-soname $wl$soname ${wl}-retain-symbols-file $wl$export_symbols -o $lib'
+-+       need_version=no
+-      fi
+-      ;;
+-  
++@@ -1194,11 +1194,12 @@
++ 
++   netbsd*)
++     if echo __ELF__ | $CC -E - | grep __ELF__ >/dev/null; then
++-      archive_cmds='$CC -shared $libobjs $deplibs $linkopts ${wl}-soname $wl$soname -o $lib'
++-      archive_expsym_cmds='$CC -shared $libobjs $deplibs $linkopts ${wl}-soname $wl$soname ${wl}-retain-symbols-file $wl$export_symbols -o $lib'
++-    else
++       archive_cmds='$LD -Bshareable $libobjs $deplibs $linkopts -o $lib'
++       # can we support soname and/or expsyms with a.out? -oliva
 ++    else
-+       archive_cmds='$CC -shared $libobjs $deplibs $linkopts ${wl}-soname $wl$soname -o $lib'
-+       archive_expsym_cmds='$CC -shared $libobjs $deplibs $linkopts ${wl}-soname $wl$soname ${wl}-retain-symbols-file $wl$export_symbols -o $lib'
- -    else
+++      archive_cmds='$CC -shared $libobjs $deplibs $linkopts ${wl}-soname $wl$soname -o $lib'
+++      archive_expsym_cmds='$CC -shared $libobjs $deplibs $linkopts ${wl}-soname $wl$soname ${wl}-retain-symbols-file $wl$export_symbols -o $lib'
 ++      need_version=no
-++    fi
-++    ;;
-++
-++  freebsd*)
-++    if echo __ELF__ | $CC -E - | grep __ELF__ >/dev/null; then
-        archive_cmds='$LD -Bshareable $libobjs $deplibs $linkopts -o $lib'
-        # can we support soname and/or expsyms with a.out? -oliva
- +    else
-@@ -84,3 +103,24 @@
-      fi
-      ;;
-  
-+@@ -2019,6 +2031,20 @@
-+     library_names_spec='${libname}${release}.so$versuffix ${libname}${release}.so$major ${libname}${release}.so ${libname}.so'
++     fi
++     ;;
++ 
++@@ -1365,10 +1366,13 @@
++ 
++   # FreeBSD 3 and greater uses gcc -shared to do shared libraries.
++   freebsd*)
++-    archive_cmds='$CC -shared -o $lib $libobjs $deplibs $linkopts'
+++    archive_cmds='$CC -shared $libobjs $deplibs $linkopts ${wl}-soname $wl$soname -o $lib'
+++    archive_expsym_cmds='$CC -shared $libobjs $deplibs $linkopts ${wl}-soname $wl$soname \
+++	${wl}-retain-symbols-file $wl$export_symbols -o $lib'
++     hardcode_libdir_flag_spec='-R$libdir'
++     hardcode_direct=yes
++     hardcode_shlibpath_var=no
+++    need_version=no
++     ;;
++ 
++   hpux9* | hpux10* | hpux11*)
++@@ -2020,6 +2024,14 @@
 +     soname_spec='${libname}${release}.so$major'
 +     dynamic_linker='NetBSD ld.elf_so'
-++  fi
++   fi
 ++  shlibpath_var=LD_LIBRARY_PATH
 ++  ;;
 ++
 ++freebsd*)
 ++  version_type=sunos
-++  if echo __ELF__ | $CC -E - | grep __ELF__ >/dev/null; then
-++    library_names_spec='${libname}${release}.so$versuffix ${libname}.so$versuffix'
-++    finish_cmds='PATH="\$PATH:/sbin" ldconfig -m $libdir'
-++    dynamic_linker='FreeBSD (a.out) ld.so'
-++  else
-++    library_names_spec='${libname}${release}.so$versuffix ${libname}${release}.so$major ${libname}${release}.so ${libname}.so'
-++    soname_spec='${libname}${release}.so$major'
-++    dynamic_linker='FreeBSD ld.elf_so'
-+   fi
+++  library_names_spec='${libname}${release}.so$versuffix ${libname}${release}.so$major ${libname}${release}.so ${libname}.so'
+++  soname_spec='${libname}${release}.so$major'
+++  dynamic_linker='FreeBSD ld.elf_so'
 +   shlibpath_var=LD_LIBRARY_PATH
 +   ;;
++ 
