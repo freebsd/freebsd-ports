@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# Run vmware
+#
+# $FreeBSD$
+
+LANG=C
+PATH=/bin:$PATH
+
+@@PREFIX@@/lib/vmware/bin/vmware

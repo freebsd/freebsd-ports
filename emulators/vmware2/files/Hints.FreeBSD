@@ -1,3 +1,5 @@
+$FreeBSD$
+
 Here is a list of some useful hints on using VMware on FreeBSD.
 
 - Full screen text mode does not work.  Don't ever do it!
@@ -87,6 +89,8 @@ MFS can lead to deadlocks.
 
 - Don't miss the VMware FAQ available on the official site.
 
+	http://www.vmware.com/products/productfaq.html
+
 -- 
 Akinori -Aki- MUSHA <knu@idaemons.org>
-Nick Sayer <nsayer@freebsd.org>
+Nick Sayer <nsayer@FreeBSD.org>
