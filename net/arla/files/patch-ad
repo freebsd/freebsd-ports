@@ -1,0 +1,32 @@
+Index: xfs/bsd/xfs_node-bsd.c
+===================================================================
+RCS file: /afs/stacken.kth.se/src/SourceRepository/arla/xfs/bsd/xfs_node-bsd.c,v
+retrieving revision 1.47.2.4
+diff -u -w -r1.47.2.4 xfs_node-bsd.c
+--- xfs/bsd/xfs_node-bsd.c	2001/09/17 01:57:20	1.47.2.4
++++ xfs/bsd/xfs_node-bsd.c	2002/01/07 04:31:03
+@@ -272,6 +272,15 @@
+      *       on FreeBSD once.
+      */
+ 
++#if __FreeBSD_version >= 440002
++    for(t = TAILQ_FIRST(&XFS_TO_VFS(xfsp)->mnt_nvnodelist);
++	t != NULL; 
++	t = TAILQ_NEXT(t, v_nmntvnodes)) {
++	xn = VNODE_TO_XNODE(t);
++	if (xn && xfs_handle_eq(&xn->handle, handlep))
++	    break;
++    }
++#else
+     for(t = XFS_TO_VFS(xfsp)->mnt_vnodelist.lh_first;
+ 	t != NULL; 
+ 	t = t->v_mntvnodes.le_next) {
+@@ -279,7 +288,7 @@
+ 	if (xn && xfs_handle_eq(&xn->handle, handlep))
+ 	    break;
+     }
+-
++#endif
+     if (t != NULL)
+ 	return xn;
+     else
