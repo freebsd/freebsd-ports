@@ -1,0 +1,22 @@
+--- rbnamazu.rb.orig	Thu Jul  6 01:09:37 2000
++++ rbnamazu.rb	Tue Aug 22 11:09:03 2000
+@@ -8,7 +8,7 @@
+ require 'nmzdoc'
+ 
+ class Namazu
+-  def unpack_w(wstring)
++  def Namazu.unpack_w(wstring)
+     if RUBY_VERSION >= '1.5.4'
+       wstring.unpack('w*')
+     else
+@@ -27,7 +27,9 @@
+       results
+     end
+   end
+-  module_function(:unpack_w)
++  def unpack_w(wstring)
++    Namazu.unpack_w(wstring)
++  end
+ 
+   class Field
+     def initialize(nmzindex, fieldname)

@@ -1,0 +1,8 @@
+rbnamazu is a client of the "Namazu" full-text search engine written
+in Ruby.
+
+With this, you can do a Namazu search from a Ruby script.
+
+
+Author:	Ryunosuke Ohshima <ryu@jaist.ac.jp>
+WWW:	http://www.namazu.org/ruby-namazu/index.html.en

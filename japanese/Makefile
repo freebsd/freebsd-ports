@@ -225,6 +225,7 @@
     SUBDIR += ptex-pkfonts600
     SUBDIR += ptex-sjis
     SUBDIR += qkc
+    SUBDIR += rbnamazu
     SUBDIR += recjis
     SUBDIR += rogue_s
     SUBDIR += rskkserv

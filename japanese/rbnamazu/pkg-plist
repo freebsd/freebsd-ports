@@ -1,0 +1,9 @@
+bin/rbnamazu
+lib/ruby/site_ruby/%%RUBY_VER%%/nmzdoc.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/nmzqr.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/nmzqr.tab.rb
+lib/ruby/site_ruby/%%RUBY_VER%%/rbnamazu.rb
+share/doc/ruby/rbnamazu/ja/rbnamazu.html.ja
+share/doc/ruby/rbnamazu/rbnamazu.html.en
+@dirrm share/doc/ruby/rbnamazu/ja
+@dirrm share/doc/ruby/rbnamazu
