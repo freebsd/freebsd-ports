@@ -1,11 +1,3 @@
-@exec ln -fs ../interviews/lib/libIV.so.3.1 %D/lib
-@exec ln -fs ../interviews/lib/libUnidraw.so.3.1 %D/lib
-@exec ln -fs %D/lib/libIV.so.3.1 %D/lib/libIV.so
-@exec ln -fs %D/lib/libUnidraw.so.3.1 %D/lib/libUnidraw.so
-@unexec rm %D/lib/libIV.so
-@unexec rm %D/lib/libIV.so.3.1
-@unexec rm %D/lib/libUnidraw.so
-@unexec rm %D/lib/libUnidraw.so.3.1
 interviews/config/InterViews/template
 interviews/config/InterViews/TIFF.def
 interviews/config/InterViews/arch.def
@@ -528,6 +520,10 @@ interviews/bin/ibmkmf
 interviews/bin/ivmkmf
 interviews/bin/remind
 interviews/man/refman.PS
+lib/libIV.so
+lib/libIV.so.3.1
+lib/libUnidraw.so
+lib/libUnidraw.so.3.1
 @exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
 @unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 @dirrm interviews/bin

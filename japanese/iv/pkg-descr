@@ -11,10 +11,22 @@
 
     Enjoy!!
 
+* support code of CID-Keyed font PostScript Engine is included.
+
 * Acknowledgement
 
-    Special thanks to Akihiro SATO <akisatoh@gallop.ics.nitech.ac.jp>.
-  He created first ports style files of ja-InterViews.
+   Special thanks to:
+	Akihiro SATO <akisatoh@gallop.ics.nitech.ac.jp>
+	He created first ports style files of ja-InterViews.
+
+	KATAYAMA <katayama@rd.nacsis.ac.jp>
+	He created fixeucfont-1.2 which convertor for CID-keyed font
+	PostScript Engine.
+	http://www.rd.nacsis.ac.jp/~katayama/homepage/fixeucfont/
+
+	FURUKAWA <yasu@on.cs.keio.ac.jp>
+	He created fixcmpfont patch from fixeucfont-1.2.
+	http://www.on.cs.keio.ac.jp/~yasu/linux/interviews/
 
 Yoshiro MIHIRA
-<sanpei@yy.cs.keio.ac.jp>
+<sanpei@sanpei.org>
