@@ -1,5 +1,4 @@
 include/libonyx/libonyx.h
-include/libonyx/libonyx_incs.h
 include/libonyx/gcdict.h
 include/libonyx/nx.h
 include/libonyx/nxa.h
@@ -26,9 +25,7 @@ include/libonyx/nxo_thread.h
 include/libonyx/systemdict.h
 include/libonyx/libonyx_defs.h
 include/libstash/libstash.h
-include/libstash/libstash_incs.h
 include/libstash/bhp.h
-include/libstash/buf.h
 include/libstash/ch.h
 include/libstash/cnd.h
 include/libstash/dch.h
@@ -48,10 +45,10 @@ include/libstash/tsd.h
 include/libstash/xep.h
 include/libstash/libstash_defs.h
 lib/libstash.so
-lib/libstash.so.1
+lib/libstash.so.2
 lib/libstash.a
 lib/libonyx.so
-lib/libonyx.so.1
+lib/libonyx.so.2
 lib/libonyx.a
 share/onyx/doc/ps/manual.ps
 share/onyx/doc/pdf/manual.pdf
