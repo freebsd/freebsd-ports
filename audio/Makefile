@@ -264,6 +264,7 @@
     SUBDIR += p5-MusicBrainz-TRM
     SUBDIR += p5-Shout
     SUBDIR += p5-Xmms
+    SUBDIR += p5-dapple
     SUBDIR += p5-libvorbis
     SUBDIR += p5-tagged
     SUBDIR += pd
