@@ -34,7 +34,7 @@ temp_prefix=	${WRKSRC}/installed
 
 # Support building on systems with or without X11 installed.
 .ifdef WITHOUT_X11
-PLIST=		${WRKDIR}/PLIST.noX11
+PLIST=		${WRKDIR}/pkg-plist.noX11
 .else
 pre-fetch:
 	@${ECHO_MSG} "To build this port without X11, define \"WITHOUT_X11\"."
