@@ -7,7 +7,7 @@
 
 PORTNAME=	passepartout
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.stacken.kth.se/project/pptout/files/
 
@@ -30,6 +30,12 @@ USE_X_PREFIX=	yes
 USE_GNOME=	gnometarget gnomehack
 USE_LIBTOOL=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 500000
+EXTRA_PATCHES=  ${PATCHDIR}/extra-patch-old_cxx
+.endif
+
 # Fix for recent libxml++ API change
 post-patch:
 	@${FIND} ${WRKSRC}/src/pptout -name *.cc \
@@ -37,4 +43,4 @@ post-patch:
 		| ${XARGS} ${REINPLACE_CMD} -e \
 			's|add_attribute|set_attribute|'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
