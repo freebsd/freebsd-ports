@@ -5818,6 +5818,7 @@ multisync-evolution	ports/deskutils/multisync-evolution
 multisync-syncml	ports/deskutils/multisync-syncml
 multitail	ports/sysutils/multitail
 multivideo	ports/graphics/multivideo
+munger		ports/lang/munger
 munin-main	ports/sysutils/munin-main
 munin-node	ports/sysutils/munin-node
 mup		ports/print/mup
