@@ -1,0 +1,13 @@
+lib/%%PYTHON_VERSION%%/site-packages/log4py.py
+lib/%%PYTHON_VERSION%%/site-packages/log4py.pyc
+%%PORTDOCS%%share/doc/log4py/AUTHORS
+%%PORTDOCS%%share/doc/log4py/COPYING
+%%PORTDOCS%%share/doc/log4py/ChangeLog
+%%PORTDOCS%%share/doc/log4py/LICENSE
+%%PORTDOCS%%share/doc/log4py/html/index.html
+%%PORTDOCS%%share/doc/log4py/html/indices.html
+%%PORTDOCS%%share/doc/log4py/html/log4py.css
+%%PORTDOCS%%share/doc/log4py/html/log4py.html
+%%PORTDOCS%%share/doc/log4py/html/log4py.Logger.html
+%%PORTDOCS%%@dirrm share/doc/log4py/html
+%%PORTDOCS%%@dirrm share/doc/log4py
