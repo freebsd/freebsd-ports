@@ -4840,6 +4840,7 @@ openoffice-nl	ports/editors/openoffice-nl
 openoffice-pl	ports/editors/openoffice-pl
 openoffice-se	ports/editors/openoffice-se
 openoffice-tr	ports/editors/openoffice-tr
+openproducer	ports/graphics/openproducer
 openquicktime	ports/multimedia/openquicktime
 openreg		ports/net/openreg
 openrm		ports/graphics/openrm
