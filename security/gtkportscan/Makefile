@@ -8,7 +8,8 @@
 
 DISTNAME=	gtkportscan-1.2
 CATEGORIES=	security net
-MASTER_SITES=	http://armageddon.splorg.org/gtkportscan/
+#MASTER_SITES=	http://armageddon.splorg.org/gtkportscan/
+MASTER_SITES=	http://www.FreeBSD.org/~cpiazza/distfiles/
 
 MAINTAINER=	cpiazza@FreeBSD.org
 
