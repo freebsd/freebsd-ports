@@ -1,0 +1,37 @@
+
+*** stix/Makefile.orig	Thu Sep 12 15:11:30 1991
+--- stix/Makefile	Sun Jun  2 17:51:14 1996
+***************
+*** 56,62 ****
+  CPP = cc -E
+  
+  # Uncomment this line to enable the ultra-winning readline-reader
+! #READLINE = -DUSE_READLINE
+  
+  ######################################################################
+  ######################################################################
+--- 56,62 ----
+  CPP = cc -E
+  
+  # Uncomment this line to enable the ultra-winning readline-reader
+! READLINE = -DUSE_READLINE
+  
+  ######################################################################
+  ######################################################################
+***************
+*** 88,94 ****
+  
+  # Edit this to reflect the path on your system where the X include files
+  # may be found.
+! XINCLUDE = /usr/include/X11
+  
+  socket.o: socket.c
+  	$(CC) -I$(XINCLUDE) $(CFLAGS) -DUNIXCONN -c socket.c
+--- 88,94 ----
+  
+  # Edit this to reflect the path on your system where the X include files
+  # may be found.
+! XINCLUDE = /usr/X11R6/include
+  
+  socket.o: socket.c
+  	$(CC) -I$(XINCLUDE) $(CFLAGS) -DUNIXCONN -c socket.c
