@@ -1,12 +1,13 @@
-# New ports collection makefile for:	ebview
-# Date Created:		28 Jan 2002
-# Whom:			Yoichi NAKAYAMA <yoichi@FreeBSD.org>
+# New ports collection makefile for:	ebview-gtk2
+# Date Created:				7 Dec 2003
+# Whom:					<faust@ua.airnet.ne.jp>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	ebview
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.1
+PKGNAMESUFFIX=	-gtk2
 CATEGORIES=	japanese
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,31 +17,25 @@ COMMENT=	Electronic Book Viewer
 
 LIB_DEPENDS=	eb.7:${PORTSDIR}/japanese/eb
 
-CONFLICTS=	ja-ebview-gtk2-*
+CONFLICTS=	ja-ebview-0*
 
-USE_GETOPT_LONG=	yes
-USE_GNOME=	imlib
+USE_GNOME=	gtk20 gnometarget
 USE_GMAKE=	yes
-USE_AUTOCONF_VER=	253
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
-		AUTOHEADER="${TRUE}"
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-CPPFLAGS=	-I${LOCALBASE}/include
-LDFLAGS=	-L${LOCALBASE}/lib
-
-pre-build:
-.for file in src/dictheading.c
-	cd ${WRKSRC} && ${MV} ${file} ${file}.pre_iconv \
+post-patch:
+.for file in src/grep.c
+	@cd ${WRKSRC} && ${MV} ${file} ${file}.pre_iconv \
 		&& iconv -c -t ascii ${file}.pre_iconv > ${file} || ${TRUE}
 .endfor
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for i in ChangeLog README
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+.for file in ChangeLog README
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
