@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	scud
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	comms
-MASTER_SITES=	http://bsdone.bsdwins.com/dist/scud/downloads/
+MASTER_SITES=	http://www.drqware.com/scud/downloads/ \
+		http://bsdone.bsdwins.com/dist/scud/downloads/
 
-MAINTAINER=	drq@bsdwins.com
+MAINTAINER=	drq@drqware.com
 
 MAN8=		scud.8
 MANCOMPRESSED=	yes
