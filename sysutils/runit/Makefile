@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	runit
-PORTVERSION=	1.0.2
+PORTVERSION=	1.0.4
 CATEGORIES=	sysutils
 MASTER_SITES=	http://smarden.org/${PORTNAME}/
 
@@ -18,9 +18,9 @@ ALL_TARGET=	default
 
 SERVICE_DIR?=	/var/service
 
-MAN8=		runit-init.8 runit.8 runsv.8 runsvchdir.8 runsvctrl.8 \
-		runsvdir.8 runsvstat.8 svlogd.8 svwaitdown.8 svwaitup.8 \
-		utmpset.8
+MAN8=		chpst.8 runit-init.8 runit.8 runsv.8 runsvchdir.8 \
+		runsvctrl.8 runsvdir.8 runsvstat.8 svlogd.8 \
+		svwaitdown.8 svwaitup.8 utmpset.8
 DOCS=		package/CHANGES package/COPYING package/README \
 		package/THANKS doc/*.html
 CONFIG=		etc/freebsd/1 etc/2 etc/freebsd/3 etc/freebsd/ctrlaltdel \
@@ -30,7 +30,7 @@ do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
 
 do-build:
-	cd ${WRKSRC} && package/compile
+	cd ${WRKSRC} && package/compile && package/check
 	@${MKDIR} ${WRKDIR}/etc/getty-ttyv4
 	@${SED} -e 's!%%PREFIX%%!${PREFIX}!' \
 		-e 's!%%SERVICE_DIR%%!${SERVICE_DIR}!' \
@@ -41,14 +41,10 @@ do-build:
 		-e 's!/usr/local!${PREFIX}!g' \
 		${WRKSRC}/${file} > ${WRKDIR}/${file:S!freebsd/!!}.sample
 .endfor
-	@${ECHO_MSG} "Type 'make test' to run self-tests"
-
-test:
-	cd ${WRKSRC} && package/check
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/command/* ${PREFIX}/sbin
-	cd ${WRKSRC}/man && ${INSTALL_MAN} ${MAN8} ${MANPREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/man/*.8 ${MANPREFIX}/man/man8
 	${INSTALL_SCRIPT} ${WRKDIR}/runsvdir.sh.sample ${PREFIX}/etc/rc.d
 	@${MKDIR} ${PREFIX}/etc/runit/getty-ttyv4
 	${INSTALL_SCRIPT} ${WRKDIR}/etc/[123c]* ${PREFIX}/etc/runit
