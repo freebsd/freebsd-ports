@@ -3438,6 +3438,7 @@ kopete		ports/net/kopete
 korelib		ports/devel/korelib
 kp		ports/misc/kp
 kplayer		ports/multimedia/kplayer
+kpopup		ports/net/kpopup
 kpovmodeler	ports/graphics/kpovmodeler
 kprof		ports/devel/kprof
 kpsk		ports/comms/kpsk
