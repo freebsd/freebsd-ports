@@ -7,7 +7,7 @@
 
 PORTNAME=	emc2
 PORTVERSION=	2.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math science
 MASTER_SITES=	http://www-rocq1.inria.fr/gamma/cdrom/ftp/emc2/
 .if !defined(NOPORTDOCS)
@@ -36,7 +36,7 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR} ${EXAMPLESDIR}
 	@${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${DOCSDIR}
-.for doc in ${PORTNAME}.doc.en.ps.gz ${PORTNAME}.doc.fr.ps.gz
+.for doc in ${PORTNAME}-doc-en.ps.gz ${PORTNAME}-doc-fr.ps.gz
 	@${INSTALL_DATA} ${DISTDIR}/${doc} ${DOCSDIR}
 .endfor
 	@${ECHO_MSG} "===>  Documentation installed in ${DOCSDIR}."
