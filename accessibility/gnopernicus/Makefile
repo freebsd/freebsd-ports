@@ -7,7 +7,7 @@
 
 PORTNAME=	gnopernicus
 PORTVERSION=	0.7.1
-CATEGORIES=	x11 gnome accessibility
+CATEGORIES=	accessibility x11 gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/0.7
 DIST_SUBDIR=	gnome2
