@@ -62,6 +62,10 @@ LIB_DEPENDS+=		gucharmap.3:${PORTSDIR}/deskutils/gucharmap
 CONFIGURE_ARGS+=	--enable-cmap=no
 .endif
 
+.if ${OSVERSION} < 500000
+ONLY_FOR_ARCHS=	i386
+.endif
+
 pre-everything::
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "AbiWord2 has the following tunable option(s):"
