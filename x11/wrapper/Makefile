@@ -14,6 +14,8 @@ EXTRACT_SUFX=	# intentionally left blank
 
 MAINTAINER=	trevor@FreeBSD.org
 
+BROKEN=		Incomplete pkg-plist
+
 CONFLICTS=	XFree86-3.3.6*
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/Xwrapper
