@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abcmidi
-PORTVERSION=	2004.06.26
+PORTVERSION=	2004.11.21
 CATEGORIES=	audio
 MASTER_SITES=	http://ifdo.pugmarks.com/~seymour/runabc/
 DISTNAME=	abcMIDI-${PORTVERSION:S/./-/g}
@@ -25,9 +25,6 @@ MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} -DANSILIBS -c" LNK="${CC}"
 
 MAN1=		abc2abc.1 abc2midi.1 mftext.1 midi2abc.1 yaps.1
 
-DOCS=		demo.abc doc/abc2midi.txt doc/abcguide.txt doc/coding.txt \
-		doc/midi2abc.txt doc/readme.txt doc/yaps.txt
-
 do-install:
 .for FILE in abc2abc abc2midi mftext midi2abc yaps
 	${INSTALL_PROGRAM} ${WRKSRC}/${FILE} ${PREFIX}/bin
@@ -37,9 +34,9 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for FILE in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/doc/*.txt ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}/programming
+	${INSTALL_DATA} ${WRKSRC}/doc/programming/*.txt ${DOCSDIR}/programming
 .endif
 
 .include <bsd.port.mk>
