@@ -44,10 +44,6 @@ APR_UTIL_CONF_ARGS=	--with-apr=../apr-${PORTVERSION} \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 500000
-BROKEN=		"Configure fails on 4.x"
-.endif
-
 .if defined(APR_UTIL_WITHOUT_THREADS)
 CONFIGURE_ARGS+=	--disable-threads
 APR_UTIL_CONF_ARGS+=	--disable-threads
@@ -122,24 +118,21 @@ post-extract:
 
 pre-configure:
 	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${SCRIPTS_ENV} ./buildconf
-	cd ${WRKDIR}/apr-util-${PORTVERSION}; \
-		${SETENV} ${SCRIPTS_ENV} ./buildconf \
+	cd ${WRKDIR}/apr-util-${PORTVERSION} ; \
+	${RM} -fr xml/expat
+	cd ${WRKDIR}/apr-util-${PORTVERSION} ; \
+		${SH} ./buildconf \
 		--with-apr=../apr-${PORTVERSION}
 
-do-configure:
-	@CONFIG_GUESS_DIRS=$$(${FIND} ${WRKDIR} -name config.guess -o -name config.sub \
-		| ${XARGS} -n 1 ${DIRNAME}); \
-	for _D in $${CONFIG_GUESS_DIRS}; do \
-		${CP} -f ${TEMPLATES}/config.guess $${_D}/config.guess; \
-		${CHMOD} a+rx $${_D}/config.guess; \
-	    ${CP} -f ${TEMPLATES}/config.sub $${_D}/config.sub; \
-		${CHMOD} a+rx $${_D}/config.sub; \
-	done
+run-autotools:
 	cd ${WRKDIR}/apr-${PORTVERSION}; \
 		${SETENV} ${SCRIPTS_ENV} ${SH} ./configure ${CONFIGURE_ARGS}
 	cd ${WRKDIR}/apr-util-${PORTVERSION}; \
 		${SETENV} ${SCRIPTS_ENV} ${SH} \
 		./configure ${CONFIGURE_ARGS} ${APR_UTIL_CONF_ARGS}
+
+do-configure:
+	${DO_NADA}
 
 do-build:
 	cd ${WRKDIR}/apr-${PORTVERSION}; ${SETENV} ${MAKE_ENV} ${GMAKE}
