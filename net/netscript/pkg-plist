@@ -1,12 +1,14 @@
 bin/netscript
 share/examples/netscript/README
-share/examples/netscript/binddump.ruleset
-share/examples/netscript/dictd.ruleset
-share/examples/netscript/ftpd.ruleset
+share/examples/netscript/dict.ruleset
+share/examples/netscript/fingerd.ruleset
+share/examples/netscript/ftp.ruleset
+share/examples/netscript/http.ruleset
 share/examples/netscript/httpd.ruleset
-share/examples/netscript/ircd.ruleset
-share/examples/netscript/ircd2.ruleset
-share/examples/netscript/pop3d.ruleset
-share/examples/netscript/smtpd.ruleset
+share/examples/netscript/irc.ruleset
+share/examples/netscript/irc2.ruleset
+share/examples/netscript/pop3.ruleset
+share/examples/netscript/smtp.ruleset
+share/examples/netscript/telnet.ruleset
 share/examples/netscript/telnetd.ruleset
 @dirrm share/examples/netscript
