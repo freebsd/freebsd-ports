@@ -892,6 +892,7 @@
     SUBDIR += p5-Parse-RecDescent
     SUBDIR += p5-Parse-Yapp
     SUBDIR += p5-PatchReader
+    SUBDIR += p5-Path-Class
     SUBDIR += p5-Penguin
     SUBDIR += p5-Penguin-Easy
     SUBDIR += p5-PerlIO-via-dynamic

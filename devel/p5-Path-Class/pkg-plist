@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+%%SITE_PERL%%/Path/Class.pm
+%%SITE_PERL%%/Path/Class/Entity.pm
+%%SITE_PERL%%/Path/Class/Dir.pm
+%%SITE_PERL%%/Path/Class/File.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Class/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Class
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path
+@dirrm %%SITE_PERL%%/Path/Class
+@dirrm %%SITE_PERL%%/Path
