@@ -5,12 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	bsdtar
-PORTVERSION=	1.01.022
+PORTVERSION=	1.02.016
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://people.freebsd.org/~kientzle/libarchive/src/
 
-MAINTAINER=	martin@matuska.org
+MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	New tar archiver from FreeBSD 5.3
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libarchive.a:${PORTSDIR}/archivers/libarchive
