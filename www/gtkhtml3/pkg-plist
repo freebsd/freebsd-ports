@@ -3,6 +3,7 @@ bin/gnome-gtkhtml-editor
 bin/gtkhtml-properties-capplet
 etc/CORBA/servers/html-component.gnorba
 etc/gtkhtmlConf.sh
+include/gtkhtml/gtkhtml-compat.h
 include/gtkhtml/gtkhtml-embedded.h
 include/gtkhtml/gtkhtml-enums.h
 include/gtkhtml/gtkhtml-im.h
@@ -29,8 +30,8 @@ include/gtkhtml/htmlcursor.h
 include/gtkhtml/htmldrawqueue.h
 include/gtkhtml/htmlembedded.h
 include/gtkhtml/htmlengine-edit-clueflowstyle.h
-include/gtkhtml/htmlengine-edit-cut-and-paste.h
 include/gtkhtml/htmlengine-edit-cursor.h
+include/gtkhtml/htmlengine-edit-cut-and-paste.h
 include/gtkhtml/htmlengine-edit-fontstyle.h
 include/gtkhtml/htmlengine-edit-images.c
 include/gtkhtml/htmlengine-edit-images.h
@@ -38,6 +39,7 @@ include/gtkhtml/htmlengine-edit-movement.h
 include/gtkhtml/htmlengine-edit-rule.h
 include/gtkhtml/htmlengine-edit-selection-updater.h
 include/gtkhtml/htmlengine-edit-table.h
+include/gtkhtml/htmlengine-edit-tablecell.h
 include/gtkhtml/htmlengine-edit-text.h
 include/gtkhtml/htmlengine-edit.h
 include/gtkhtml/htmlengine-print.h
@@ -49,6 +51,8 @@ include/gtkhtml/htmlenums.h
 include/gtkhtml/htmlenumutils.h
 include/gtkhtml/htmlfontmanager.h
 include/gtkhtml/htmlform.h
+include/gtkhtml/htmlframe.h
+include/gtkhtml/htmlframeset.h
 include/gtkhtml/htmlgdkpainter.h
 include/gtkhtml/htmlhidden.h
 include/gtkhtml/htmlhspace.h
@@ -58,6 +62,7 @@ include/gtkhtml/htmlimageinput.h
 include/gtkhtml/htmlinterval.h
 include/gtkhtml/htmllinktext.h
 include/gtkhtml/htmllist.h
+include/gtkhtml/htmlmap.h
 include/gtkhtml/htmlobject.h
 include/gtkhtml/htmlpainter.h
 include/gtkhtml/htmlplainpainter.h
@@ -69,6 +74,7 @@ include/gtkhtml/htmlsearch.h
 include/gtkhtml/htmlselect.h
 include/gtkhtml/htmlselection.h
 include/gtkhtml/htmlsettings.h
+include/gtkhtml/htmlshape.h
 include/gtkhtml/htmlstack.h
 include/gtkhtml/htmlstringtokenizer.h
 include/gtkhtml/htmltable.h
@@ -87,11 +93,13 @@ include/gtkhtml/htmlvspace.h
 lib/bonobo/plugin/libstorage_http.so
 lib/libgtkhtml.a
 lib/libgtkhtml.so
-lib/libgtkhtml.so.10
+lib/libgtkhtml.so.13
 share/gnome/apps/Settings/Documents/gtkhtml-properties.desktop
 share/gnome/control-center/Documents/gtkhtml-properties.desktop
+share/gnome/control-center/capplets/gtkhtml-properties.desktop
 share/gnome/gtkhtml/Editor.idl
 share/gnome/gtkhtml/gtkhtml-capplet.glade
+share/gnome/gtkhtml/gtkhtml-editor-properties.glade
 share/gnome/gtkhtml/keybindingsrc.emacs
 share/gnome/gtkhtml/keybindingsrc.ms
 share/gnome/gtkhtml/keybindingsrc.xemacs
@@ -102,6 +110,7 @@ share/gnome/html/gtkhtml.sgml
 share/gnome/html/gtkhtml.types
 share/gnome/oaf/GNOME_GtkHTML_EBrowser.oaf
 share/gnome/oaf/GNOME_GtkHTML_Editor.oaf
+share/gnome/oaf/GNOME_GtkHTML_Editor.oaf.in.in
 share/gnome/ui/GNOME_GtkHTML_Editor.xml
 share/locale/az/LC_MESSAGES/gtkhtml.mo
 share/locale/cs/LC_MESSAGES/gtkhtml.mo
@@ -112,9 +121,11 @@ share/locale/es/LC_MESSAGES/gtkhtml.mo
 share/locale/fi/LC_MESSAGES/gtkhtml.mo
 share/locale/fr/LC_MESSAGES/gtkhtml.mo
 share/locale/gl/LC_MESSAGES/gtkhtml.mo
+share/locale/hu/LC_MESSAGES/gtkhtml.mo
 share/locale/it/LC_MESSAGES/gtkhtml.mo
 share/locale/ja/LC_MESSAGES/gtkhtml.mo
 share/locale/ko/LC_MESSAGES/gtkhtml.mo
+share/locale/lt/LC_MESSAGES/gtkhtml.mo
 share/locale/nl/LC_MESSAGES/gtkhtml.mo
 share/locale/no/LC_MESSAGES/gtkhtml.mo
 share/locale/pl/LC_MESSAGES/gtkhtml.mo
