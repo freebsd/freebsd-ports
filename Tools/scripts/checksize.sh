@@ -13,7 +13,6 @@
 #	mdconfig -a -t vnode -f /usr/ports/mfs.img -u 1
 #	newfs /dev/md1
 #	mount /dev/md1 /mnt
-#	dd if=/dev/zero of=/mnt/zero
 #
 # (for RELENG_4 use vnconfig instead of mdconfig).  Then run this
 # while logging with, for example, the "script" utility and look
@@ -50,6 +49,7 @@ for category in $1 `grep ^SUBDIR /usr/ports/Makefile | cut -f3 -d\ `; do
 		`grep -wc SIZE */distinfo* | grep -v :0 | cut -f1 -d\/`; do
 		cd /usr/ports/$category/$port
 		for arc in i386; do
+			dd if=/dev/zero of=/mnt/zero
 			echo checking $arc size data for $category/$port
 			make	DISTDIR=/mnt \
 				ARCH=$arc \
@@ -57,6 +57,7 @@ for category in $1 `grep ^SUBDIR /usr/ports/Makefile | cut -f3 -d\ `; do
 				MACHINE_ARCH=$arc \
 				PACKAGE_BUILDING=yes \
 				TRYBROKEN=yes checksum
+			rm -rf /mnt/*
 		done
 	done
 done
