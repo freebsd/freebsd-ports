@@ -206,6 +206,13 @@ bin/xscreensaver-text
 lib/X11/app-defaults/XScreenSaver
 share/gnome/applications/gnome-screensaver-properties.desktop
 share/gnome/pixmaps/xscreensaver.xpm
+share/gnome/xscreensaver/glade/screensaver-cmndln.png
+share/gnome/xscreensaver/glade/screensaver-colorselector.png
+share/gnome/xscreensaver/glade/screensaver-diagnostic.png
+share/gnome/xscreensaver/glade/screensaver-locking.png
+share/gnome/xscreensaver/glade/screensaver-power.png
+share/gnome/xscreensaver/glade/screensaver-snap.png
+share/gnome/xscreensaver/glade/xscreensaver-demo.glade2
 share/locale/ca/LC_MESSAGES/xscreensaver.mo
 share/locale/da/LC_MESSAGES/xscreensaver.mo
 share/locale/de/LC_MESSAGES/xscreensaver.mo
@@ -426,4 +433,6 @@ share/xscreensaver/config/xteevee.xml
 share/xscreensaver/config/zoom.xml
 @dirrm share/xscreensaver/config
 @dirrm share/xscreensaver
+@dirrm share/gnome/xscreensaver/glade
+@dirrm share/gnome/xscreensaver
 @dirrm bin/xscreensaver-hacks
