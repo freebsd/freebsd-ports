@@ -1,0 +1,10 @@
+--- lib/regex.h.orig	Thu Feb 10 12:27:41 2000
++++ lib/regex.h	Thu Feb 10 12:26:55 2000
+@@ -23,6 +23,7 @@
+ /* POSIX says that <sys/types.h> must be included (by the caller) before
+    <regex.h>.  */
+ 
++#include <sys/syslimits.h>
+ #ifdef VMS
+ /* VMS doesn't have `size_t' in <sys/types.h>, even though POSIX says it
+    should be there.  */
