@@ -7,6 +7,7 @@
 
 PORTNAME=	vtk
 PORTVERSION=	3.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://public.kitware.com/pub/vtk/vtk${PORTVERSION}/
 DISTNAME=	vtk32-src-unix

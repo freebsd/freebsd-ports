@@ -7,6 +7,7 @@
 
 PORTNAME=	libical
 PORTVERSION=	0.24
+PORTREVISION=	1
 DISTFILES=	${DISTNAME}.RC4${EXTRACT_SUFX}
 CATEGORIES=	devel
 MASTER_SITES=	http://osdn.dl.sourceforge.net/sourceforge/freeassociation/

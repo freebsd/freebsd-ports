@@ -7,6 +7,7 @@
 
 PORTNAME=	xcircuit
 PORTVERSION=	3.1.18
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://xcircuit.ece.jhu.edu/archive/
