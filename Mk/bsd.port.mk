@@ -41,10 +41,13 @@ FreeBSD_MAINTAINER=	asami@FreeBSD.org
 #
 # These variables are used to identify your port.
 #
-# DISTNAME		- Name of port or distribution.
-# PKGNAME		- Name of the package file to create if the DISTNAME 
-#				  isn't really relevant for the port/package
-#				  (default: ${DISTNAME}).
+# PORTNAME		- Name of software.
+# PORTVERSION	- Version of software.
+# PKGNAME		- Always defined as ${PORTNAME}-${PORTVERSION}.  Do not
+#				  define this in your Makefile.
+# DISTNAME		- Name of port or distribution used in generating
+#				  WRKSRC and DISTFILES below (default:
+#				  ${PORTNAME}-${PORTVERSION}).
 # CATEGORIES	- A list of descriptive categories into which this port falls.
 #
 # These variable describe how to fetch files required for building the port.
@@ -1098,10 +1101,26 @@ FETCH_BEFORE_ARGS+=	-l
 .endif
 .endif
 
-# Derived names so that they're easily overridable.
-DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
+.if defined(REQUIRE_PORTNAME) && !defined(PORTNAME)
+.BEGIN:
+	@${ECHO} "${PKGNAME}: You need to define PORTNAME and PORTVERSION instead of PKGNAME."
+	@${ECHO} "(This port is too old for your bsd.port.mk.)"
+	@${FALSE}
+.endif
+.if defined(PORTNAME)
+.if defined(PKGNAME) || !defined(PORTVERSION)
+.BEGIN:
+	@${ECHO} "${PKGNAME}: You need to define PORTNAME and PORTVERSION instead of PKGNAME."
+	@${FALSE}
+.endif
+PKGNAME=	${PORTNAME}-${PORTVERSION}
+DISTNAME?=	${PKGNAME}
+.else
+# old style
 PKGNAME?=		${DISTNAME}
+.endif
 
+DISTFILES?=		${DISTNAME}${EXTRACT_SUFX}
 ALLFILES?=	${DISTFILES} ${PATCHFILES}
 
 .if defined(IGNOREFILES)
@@ -2068,17 +2087,8 @@ deinstall:
 
 # Cleaning up
 
-.if !target(pre-clean)
-pre-clean:
-	@${DO_NADA}
-.endif
-
-.if !target(clean)
-clean: pre-clean
-.if !defined(NOCLEANDEPENDS)
-	@${MAKE} ${__softMAKEFLAGS} clean-depends
-.endif
-	@${ECHO_MSG} "===>  Cleaning for ${PKGNAME}"
+.if !target(do-clean)
+do-clean:
 	@if [ -d ${WRKDIR} ]; then \
 		if [ -w ${WRKDIR} ]; then \
 			${RM} -rf ${WRKDIR}; \
@@ -2086,6 +2096,21 @@ clean: pre-clean
 			${ECHO_MSG} "===>   ${WRKDIR} not writable, skipping"; \
 		fi; \
 	fi
+.endif
+
+.if !target(clean)
+clean:
+.if !defined(NOCLEANDEPENDS)
+	@${MAKE} ${__softMAKEFLAGS} clean-depends
+.endif
+	@${ECHO_MSG} "===>  Cleaning for ${PKGNAME}"
+.if target(pre-clean)
+	@${MAKE} ${__softMAKEFLAGS} pre-clean
+.endif
+	@${MAKE} ${__softMAKEFLAGS} do-clean
+.if target(post-clean)
+	@${MAKE} ${__softMAKEFLAGS} post-clean
+.endif
 .endif
 
 .if !target(pre-distclean)
