@@ -1,0 +1,82 @@
+*** gcc-6811-release/sample/Makefile~	Fri Sep  1 16:01:06 1995
+--- gcc-6811-release/sample/Makefile	Fri Sep  1 16:01:45 1995
+***************
+*** 9,15 ****
+  #
+  CPP=./cpp
+  AR=
+! AS=/usr/local/gnu6811/bin/as6811
+  # CC=cc
+! CC=/usr/local/gnu6811/bin/m6811-local-gcc
+  SHELL=/bin/sh
+--- 9,15 ----
+  #
+  CPP=./cpp
+  AR=
+! AS=../xasm/asm-src/as6811
+  # CC=cc
+! CC=/usr/local/bin/m6811-local-gcc
+  SHELL=/bin/sh
+***************
+*** 32,34 ****
+--- 32,36 ----
+  clean:
+  	rm -f $(TARGETS) *.lst
+  
++ install:
++ 	cp ${TARGETS} ${SRC} gcb11.inc ${PREFIX}/lib/gcc-lib/m6811-local/2.6.3
+*** gcc-6811-release/xasm/asm-src/Makefile~	Fri Sep  1 16:39:12 1995
+--- gcc-6811-release/xasm/asm-src/Makefile	Fri Sep  1 16:39:58 1995
+***************
+*** 9,15 ****
+  COMMON_OBJ= 	asmain.o aslex.o assym.o assubr.o asexpr.o  \
+  		asdata.o aslist.o asout.o
+  
+! all:	as6800 as6801 as6804 as6805 as6809 as6801 as6811 asz80 asi85
+  
+  clean:
+  	rm *.o 
+--- 9,19 ----
+  COMMON_OBJ= 	asmain.o aslex.o assym.o assubr.o asexpr.o  \
+  		asdata.o aslist.o asout.o
+  
+! PRGS=as6800 as6801 as6804 as6805 as6809 as6801 as6811 asz80 asi85
+! all: ${PRGS}
+! 
+! install: ${PRGS}
+! 	cp ${PRGS} ${PREFIX}/bin
+  
+  clean:
+  	rm *.o 
+*** gcc-6811-release/xasm/lnk-src/Makefile~	Fri Sep  1 16:42:23 1995
+--- gcc-6811-release/xasm/lnk-src/Makefile	Fri Sep  1 16:42:44 1995
+***************
+*** 11,15 ****
+--- 11,18 ----
+  aslink: $(LINK_OBJ) aslink.h
+  	$(CC) -o aslink $(LINK_OBJ)
+  
++ install:	
++ 	cp aslink ${PREFIX}/bin
++ 
+  clean:
+  	rm -f aslink *.o  
+*** gcc-6811-release/sample/crt0.s~	Tue Sep  5 09:09:28 1995
+--- gcc-6811-release/sample/crt0.s	Tue Sep  5 09:09:48 1995
+***************
+*** 377,383 ****
+  ;	end crt0.s
+  ;
+  ;	.include	"gios.s"
+! 	.include	"utldbg.s"
+  ;	.include	"malloc.s"
+  ;-----------------------------------------
+  ; start use code 
+--- 377,383 ----
+  ;	end crt0.s
+  ;
+  ;	.include	"gios.s"
+! ;	.include	"utldbg.s"
+  ;	.include	"malloc.s"
+  ;-----------------------------------------
+  ; start use code 

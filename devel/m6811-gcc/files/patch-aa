@@ -1,0 +1,24 @@
+*** Makefile.orig	Fri Sep  1 16:59:32 1995
+--- Makefile	Fri Sep  1 17:14:52 1995
+***************
+*** 0 ****
+--- 1,19 ----
++ 
++ all:
++ 	cd gcc-2.6.3; ${MAKE} "LANGUAGES=c" $@
++ 	cd gcc-6811-release/xasm/asm-src; ${MAKE}
++ 	cd gcc-6811-release/xasm/lnk-src; ${MAKE}
++ 	cd gcc-6811-release/sample; ${MAKE}
++ 
++ install:
++ 	cd gcc-2.6.3; ${MAKE} "LANGUAGES=c" $@
++ 	cd gcc-6811-release/xasm/asm-src; ${MAKE} $@
++ 	cd gcc-6811-release/xasm/lnk-src; ${MAKE} $@
++ 	cd gcc-6811-release/sample; ${MAKE} $@
++ 	cd ${PREFIX}/lib/gcc-lib/m6811-local/2.6.3; \
++ 	rm -f as ld; \
++ 	ln -s ${PREFIX}/bin/as6811 as; \
++ 	ln -s ${PREFIX}/bin/aslink ld
++ 	rm -f ${PREFIX}/bin/gcc11
++ 	cd ${PREFIX}/bin; ln -s ${PREFIX}/bin/m6811-local-gcc gcc11
++ 

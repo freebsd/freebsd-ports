@@ -1,0 +1,127 @@
+*** gcc-2.6.3/Makefile.in~	Fri Sep  1 11:18:23 1995
+--- gcc-2.6.3/Makefile.in	Fri Sep  1 11:18:33 1995
+***************
+*** 34,40 ****
+  
+  # Selection of languages to be made.
+  # This is overridden by configure.
+! LANGUAGES = c objective-c proto
+  
+  ALLOCA =
+  ALLOCA_FLAGS =
+--- 34,40 ----
+  
+  # Selection of languages to be made.
+  # This is overridden by configure.
+! LANGUAGES = c
+  
+  ALLOCA =
+  ALLOCA_FLAGS =
+***************
+*** 319,325 ****
+  HOST_OBSTACK=$(OBSTACK)
+  
+  # Choose the real default target.
+! ALL=all.internal
+  
+  # Choose the real install target.
+  INSTALL_TARGET=install-normal
+--- 319,325 ----
+  HOST_OBSTACK=$(OBSTACK)
+  
+  # Choose the real default target.
+! ALL=all.cross
+  
+  # Choose the real install target.
+  INSTALL_TARGET=install-normal
+***************
+*** 565,572 ****
+  # This is what to compile if making a cross-compiler.
+  # Note that we can compile enquire using the cross-compiler just built,
+  # although we can't run it on this machine.
+! all.cross: native gcc-cross specs stmp-headers $(LIBGCC) $(STMP_FIXPROTO) \
+! 	$(CROSS_TEST) $(ENQUIRE) $(EXTRA_PARTS) lang.all.cross
+  # This is what to compile if making gcc with a cross-compiler.
+  all.build: native xgcc $(EXTRA_PARTS) lang.all.build
+  # This is what must be made before installing GCC and converting libraries.
+--- 565,571 ----
+  # This is what to compile if making a cross-compiler.
+  # Note that we can compile enquire using the cross-compiler just built,
+  # although we can't run it on this machine.
+! all.cross: native gcc-cross specs stmp-headers
+  # This is what to compile if making gcc with a cross-compiler.
+  all.build: native xgcc $(EXTRA_PARTS) lang.all.build
+  # This is what must be made before installing GCC and converting libraries.
+***************
+*** 692,698 ****
+  # This rule deliberately does not depend on libgcc1.a
+  # so that it will fail if the installer hasn't provided it.
+  libgcc1.cross:
+! 	mv libgcc1.a libgcc1.cross || (echo You must find a way to make libgcc1.a; false)
+  
+  # Compile the library of arithmetic subroutines with the native compiler.
+  # Don't compile it with GCC!
+--- 692,698 ----
+  # This rule deliberately does not depend on libgcc1.a
+  # so that it will fail if the installer hasn't provided it.
+  libgcc1.cross:
+! 	echo $@ is not implemented yet; exit 99
+  
+  # Compile the library of arithmetic subroutines with the native compiler.
+  # Don't compile it with GCC!
+***************
+*** 1870,1877 ****
+  install: $(INSTALL_TARGET) ; @true
+  
+  # Copy the compiler files into directories where they will be run.
+! install-normal: install-common $(INSTALL_HEADERS) $(INSTALL_LIBGCC) \
+!     install-man install-info lang.install-normal
+  
+  # Do nothing while making gcc with a cross-compiler. The person who
+  # makes gcc for the target machine has to know how to put a complete
+--- 1869,1875 ----
+  install: $(INSTALL_TARGET) ; @true
+  
+  # Copy the compiler files into directories where they will be run.
+! install-normal: install-common $(INSTALL_HEADERS) lang.install-normal
+  
+  # Do nothing while making gcc with a cross-compiler. The person who
+  # makes gcc for the target machine has to know how to put a complete
+*** gcc-2.6.3/cccp.c~	Fri Sep  1 10:42:15 1995
+--- gcc-2.6.3/cccp.c	Fri Sep  1 10:42:31 1995
+***************
+*** 188,194 ****
+  #ifndef VMS
+  #ifndef HAVE_STRERROR
+  extern int sys_nerr;
+! #if defined(bsd4_4) || defined(__NetBSD__)
+  extern const char *const sys_errlist[];
+  #else
+  extern char *sys_errlist[];
+--- 188,194 ----
+  #ifndef VMS
+  #ifndef HAVE_STRERROR
+  extern int sys_nerr;
+! #if defined(bsd4_4) || defined(__NetBSD__) || defined(__FreeBSD__)
+  extern const char *const sys_errlist[];
+  #else
+  extern char *sys_errlist[];
+*** gcc-2.6.3/gcc.c~	Fri Sep  1 10:57:20 1995
+--- gcc-2.6.3/gcc.c	Fri Sep  1 10:57:36 1995
+***************
+*** 166,172 ****
+  #endif
+  
+  extern int sys_nerr;
+! #if defined(bsd4_4) || defined(__NetBSD__)
+  extern const char *const sys_errlist[];
+  #else
+  extern char *sys_errlist[];
+--- 166,172 ----
+  #endif
+  
+  extern int sys_nerr;
+! #if defined(bsd4_4) || defined(__NetBSD__) || defined(__FreeBSD__)
+  extern const char *const sys_errlist[];
+  #else
+  extern char *sys_errlist[];
