@@ -19,7 +19,7 @@ post-extract:
 	@ ${RM} ${WRKSRC}/discover/discover
 
 do-install:
-	@ ${MKDIR} ${PREFIX}/share/cyrproxy
+	@ ${MKDIR} ${DATADIR}
 	@ ${MKDIR} ${PREFIX}/www/cgi-bin
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/cyrproxy ${PREFIX}/libexec
 	@ ${INSTALL_PROGRAM} ${WRKSRC}/tcpspy ${PREFIX}/libexec
@@ -29,7 +29,7 @@ do-install:
 	@ ${INSTALL_DATA} ${WRKSRC}/config.gen ${PREFIX}/etc/cyrproxy.conf.sample
 .for f in alt-iso alt-koi8 alt-win iso-alt iso-koi8 iso-win koi8-alt koi8-iso \
 		koi8-mac koi8-win mac-koi8 win-alt win-iso win-koi8
-	@ ${INSTALL_DATA} ${WRKSRC}/tables/${f} ${PREFIX}/share/cyrproxy
+	@ ${INSTALL_DATA} ${WRKSRC}/tables/${f} ${DATADIR}
 .endfor
 
 post-install:

@@ -3,24 +3,24 @@ bin/discover
 etc/cyrproxy.conf.sample
 libexec/cyrproxy
 libexec/tcpspy
-share/cyrproxy/alt-iso
-share/cyrproxy/alt-koi8
-share/cyrproxy/alt-win
-share/cyrproxy/iso-alt
-share/cyrproxy/iso-koi8
-share/cyrproxy/iso-win
-share/cyrproxy/koi8-alt
-share/cyrproxy/koi8-iso
-share/cyrproxy/koi8-mac
-share/cyrproxy/koi8-win
-share/cyrproxy/mac-koi8
-share/cyrproxy/win-alt
-share/cyrproxy/win-iso
-share/cyrproxy/win-koi8
+%%DATADIR%%/alt-iso
+%%DATADIR%%/alt-koi8
+%%DATADIR%%/alt-win
+%%DATADIR%%/iso-alt
+%%DATADIR%%/iso-koi8
+%%DATADIR%%/iso-win
+%%DATADIR%%/koi8-alt
+%%DATADIR%%/koi8-iso
+%%DATADIR%%/koi8-mac
+%%DATADIR%%/koi8-win
+%%DATADIR%%/mac-koi8
+%%DATADIR%%/win-alt
+%%DATADIR%%/win-iso
+%%DATADIR%%/win-koi8
 %%PORTDOCS%%%%DOCSDIR%%/History
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.http
 www/cgi-bin/cyrwww
-@dirrm share/cyrproxy
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec rmdir %D/www/cgi-bin 2> /dev/null || true
