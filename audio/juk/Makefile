@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	juk
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	audio kde
-MASTER_SITES=	http://www.slackorama.net/oss/juk/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-1
+MASTER_SITES=	http://developer.kde.org/~wheeler/files/src/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	JuK, a music manager and jukebox for KDE
