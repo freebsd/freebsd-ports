@@ -4,7 +4,7 @@ if [ ! -d $HOME/.netscape ]; then
 	cp @RDIR@/preferences.js $HOME/.netscape
 	chmod 644 $HOME/.netscape/preferences.js
 fi
-export LANG=ja_JP.EUC
+export LANG=@LANG@
 export LC_ALL=${LANG}
 export LC_CTYPE=${LANG}
 export MOZILLA_HOME=@NDIR@

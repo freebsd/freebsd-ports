@@ -1,4 +1,4 @@
-bin/ja-communicator-47
+bin/ja-%%BROWSER%%-47
 @exec ln -sf %f %B/netscape
 @exec mkdir -p %D/%%NSUBDIR%%/locale
 @exec ln -sf /usr/share/locale/en_US.ISO_8859-1 %D/%%NSUBDIR%%/locale/%%LANG%%
