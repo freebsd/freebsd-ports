@@ -133,6 +133,7 @@
     SUBDIR += postgresql-pltcl
     SUBDIR += postgresql-tcltk
     SUBDIR += postgresql7
+    SUBDIR += postgresql72
     SUBDIR += postgresql_autodoc
     SUBDIR += pxtools
     SUBDIR += py-MySQL

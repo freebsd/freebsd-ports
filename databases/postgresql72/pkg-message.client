@@ -1,0 +1,16 @@
+======================================================================
+
+      * IMPORTANT UPGRADE NOTICE * IMPORTANT UPGRADE NOTICE *
+
+The PostgreSQL port now obeys hier(7) by default, which means that it
+installs into:
+
+/usr/local/bin
+/usr/local/lib
+/usr/local/include  (NOTE! Changed again in 7.2, since PostgreSQL
+                           handles standard install nowadays)
+
+You *must* move away your old installation from users' and
+ldconfig(8)'s PATHs.
+
+======================================================================
