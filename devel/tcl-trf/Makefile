@@ -15,7 +15,8 @@ DISTNAME=	trf${PORTVERSION}
 
 MAINTAINER=	mi@aldan.algebra.com
 
-BUILD_DEPENDS=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${TCL_VER:S/.//}
+BUILD_DEPENDS=	tclsh${TCL_VER}:${PORTSDIR}/lang/tcl${TCL_VER:S/.//} \
+		${LOCALBASE}/lib/tcl${TCL_VER}/Memchan/pkgIndex.tcl:${PORTSDIR}/devel/tcl-memchan
 
 USE_BZIP2=	yes
 
@@ -57,9 +58,7 @@ post-install:
 
 .include <bsd.port.mk>
 
-.if exists(${WRKSRC}/${MAKEFILE})
-SHLIB_NAME!=	${MAKE} -f ${WRKSRC}/${MAKEFILE} -V Trf_LIB_FILE
+SHLIB_NAME=	libTrf2.so.1
 SHLIB_LINK=	${SHLIB_NAME:C/\.so\..*/.so/}
-.endif
 
 PLIST_SUB+=	SHLIB_NAME=${SHLIB_NAME} SHLIB_LINK=${SHLIB_LINK}
