@@ -1,0 +1,51 @@
+--- configure	2004/06/05 22:49:11	1.1
++++ configure	2004/06/05 22:49:43
+@@ -19625,23 +19625,23 @@
+   else
+      PKG_CONFIG_MIN_VERSION=0.9.0
+      if $PKG_CONFIG --atleast-pkgconfig-version $PKG_CONFIG_MIN_VERSION; then
+-        echo "$as_me:$LINENO: checking for opendaap libglade-2.0 gstreamer-0.6" >&5
+-echo $ECHO_N "checking for opendaap libglade-2.0 gstreamer-0.6... $ECHO_C" >&6
++        echo "$as_me:$LINENO: checking for opendaap libglade-2.0 gstreamer-0.8" >&5
++echo $ECHO_N "checking for opendaap libglade-2.0 gstreamer-0.8... $ECHO_C" >&6
+ 
+-        if $PKG_CONFIG --exists "opendaap libglade-2.0 gstreamer-0.6" ; then
++        if $PKG_CONFIG --exists "opendaap libglade-2.0 gstreamer-0.8" ; then
+             echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6
+             succeeded=yes
+ 
+             echo "$as_me:$LINENO: checking TB_CFLAGS" >&5
+ echo $ECHO_N "checking TB_CFLAGS... $ECHO_C" >&6
+-            TB_CFLAGS=`$PKG_CONFIG --cflags "opendaap libglade-2.0 gstreamer-0.6"`
++            TB_CFLAGS=`$PKG_CONFIG --cflags "opendaap libglade-2.0 gstreamer-0.8"`
+             echo "$as_me:$LINENO: result: $TB_CFLAGS" >&5
+ echo "${ECHO_T}$TB_CFLAGS" >&6
+ 
+             echo "$as_me:$LINENO: checking TB_LIBS" >&5
+ echo $ECHO_N "checking TB_LIBS... $ECHO_C" >&6
+-            TB_LIBS=`$PKG_CONFIG --libs "opendaap libglade-2.0 gstreamer-0.6"`
++            TB_LIBS=`$PKG_CONFIG --libs "opendaap libglade-2.0 gstreamer-0.8"`
+             echo "$as_me:$LINENO: result: $TB_LIBS" >&5
+ echo "${ECHO_T}$TB_LIBS" >&6
+         else
+@@ -19649,7 +19649,7 @@
+             TB_LIBS=""
+             ## If we have a custom action on failure, don't print errors, but
+             ## do set a variable so people can do so.
+-            TB_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "opendaap libglade-2.0 gstreamer-0.6"`
++            TB_PKG_ERRORS=`$PKG_CONFIG --errors-to-stdout --print-errors "opendaap libglade-2.0 gstreamer-0.8"`
+             echo $TB_PKG_ERRORS
+         fi
+ 
+@@ -19664,8 +19664,8 @@
+   if test $succeeded = yes; then
+      :
+   else
+-     { { echo "$as_me:$LINENO: error: Library requirements (opendaap libglade-2.0 gstreamer-0.6) not met; consider adjusting the PKG_CONFIG_PATH environment variable if your libraries are in a nonstandard prefix so pkg-config can find them." >&5
+-echo "$as_me: error: Library requirements (opendaap libglade-2.0 gstreamer-0.6) not met; consider adjusting the PKG_CONFIG_PATH environment variable if your libraries are in a nonstandard prefix so pkg-config can find them." >&2;}
++     { { echo "$as_me:$LINENO: error: Library requirements (opendaap libglade-2.0 gstreamer-0.8) not met; consider adjusting the PKG_CONFIG_PATH environment variable if your libraries are in a nonstandard prefix so pkg-config can find them." >&5
++echo "$as_me: error: Library requirements (opendaap libglade-2.0 gstreamer-0.8) not met; consider adjusting the PKG_CONFIG_PATH environment variable if your libraries are in a nonstandard prefix so pkg-config can find them." >&2;}
+    { (exit 1); exit 1; }; }
+   fi
+ 
