@@ -36,6 +36,10 @@ USE_GMAKE=	yes
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} != "i386"
+IGNORE=		requires an x86-32 processor, if you are using other platforms install avidemux2, which includes support for non-i386 systems
+.endif
+
 .if exists(${LOCALBASE}/lib/liba52.so.0)
 WITH_A52=	yes
 .endif
