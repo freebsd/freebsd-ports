@@ -1,0 +1,16 @@
+*** openh323u.mak.orig	Tue Jan 15 09:05:05 2002
+--- openh323u.mak	Tue Jan 15 09:05:41 2002
+*************** HAS_IXJ	    = 1
+*** 124,129 ****
+--- 124,134 ----
+  STDCCFLAGS += -DHAS_IXJ
+  endif
+  
++ ifneq (,$(wildcard /usr/local/include/sys/telephony.h))
++ HAS_IXJ	    = 1
++ STDCCFLAGS += -DHAS_IXJ -I/usr/local/include
++ endif
++ 
+  ifneq (,$(wildcard /usr/include/linux/soundcard.h))
+  HAS_OSS	    = 1
+  STDCCFLAGS += -DHAS_OSS

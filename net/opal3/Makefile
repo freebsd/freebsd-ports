@@ -7,6 +7,7 @@
 
 PORTNAME=	openh323
 PORTVERSION=	1.7.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.openh323.org/bin/ \
 		http://www.de.openh323.org/bin/ \
