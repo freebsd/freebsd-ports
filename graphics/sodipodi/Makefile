@@ -20,6 +20,7 @@ RUN_DEPENDS=	${X11BASE}/libdata/pkgconfig/frontline.pc:${PORTSDIR}/graphics/fron
 USE_GMAKE=	yes
 USE_X_PREFIX=	yes
 USE_GNOME=	gnomeprefix gnomehack libglade2
+USE_REINPLACE=	yes
 USE_LIBTOOL=	yes
 CONFIGURE_ARGS=	--without-gnome-print
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 -I${X11BASE}/include" \
