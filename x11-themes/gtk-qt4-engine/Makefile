@@ -27,6 +27,8 @@ USE_REINPLACE=	yes
 PLIST_SUB=	GTK_VER=2.4.0
 PLIST_SUB+=	X11BASE=${X11BASE} LOCALBASE=${LOCALBASE}
 
+CONFIGURE_ARGS+=--x-libraries=${X11BASE}/lib --x-includes=${X11BASE}/include
+
 pre-configure:
 	@${REINPLACE_CMD} -e "s|/share/themes/|/X11R6/share/themes/|" \
 		${WRKSRC}/kcm_gtk/kcmgtk.cpp
