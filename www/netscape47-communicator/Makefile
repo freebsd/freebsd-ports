@@ -3,7 +3,7 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.17 1998/04/02 20:26:34 ache Exp $
+# $Id: Makefile,v 1.18 1998/04/02 22:47:52 ache Exp $
 #
 
 DISTNAME=       netscape-communicator-4.05
@@ -22,7 +22,7 @@ BINDIR=		${PREFIX}/bin
 .if defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO
 MASTER_SITES+=	ftp://ftp.fortify.net/pub/Fortify/ \
 		ftp://ftp.za.freebsd.org/pub/Fortify/
-DISTFILES+=	Fortify-1.2.1-unix.tar.gz
+DISTFILES+=	Fortify-1.2.2-unix.tar.gz
 RESTRICTED=     "Contains strong cryptography"
 .endif
 
@@ -44,7 +44,7 @@ do-install:
 	fi
 	rm -rf ${NDIR}/movemail-src
 .if defined(USE_128BIT) && defined(USA_RESIDENT) && ${USA_RESIDENT} == NO
-	cd ${WRKDIR}/Fortify-1.2.1-unix && \
+	cd ${WRKDIR}/Fortify-1.2.2-unix && \
 		(${ECHO} yes ; ${ECHO} no) | ./Fortify.sh ${NDIR}/communicator-4.05.bin
 .endif
 	chown -R bin.bin ${NDIR}
