@@ -12,6 +12,7 @@
     SUBDIR += bbpager
     SUBDIR += blackbox
     SUBDIR += ctwm
+    SUBDIR += e16utils
     SUBDIR += enlightenment
     SUBDIR += epplets
     SUBDIR += evilwm
