@@ -1,0 +1,14 @@
+Korean locale for linux_lib
+===========================
+
+For running some linux-emulation program such as hanIM, you may
+need this for correctly working setlocale() for ko locale.
+
+glibc(prior 2.1) have no true multilingual support, so this locale
+definition is broken but sufficient for running X11 applications.
+
+This definition files(LC_CTYPE, LC_TIME, etc.) is from
+Alzza Linux distribution, a leading Linux distribution in Korea.
+
+--
+Ports by CHOI Junho <cjh@kr.freebsd.org>
