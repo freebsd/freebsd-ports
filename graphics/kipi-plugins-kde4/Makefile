@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	kipi-plugins
-PORTVERSION=	0.1.b.1
-PORTREVISION=	2
+PORTVERSION=	0.1.0.b.2
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	digikam
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b.1/-beta1/}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b./-beta/}
 
 MAINTAINER=	avleeuwen@piwebs.com
 COMMENT=	KDE Image Plugin Interface plugins
 
-LIB_DEPENDS=	kexif:${PORTSDIR}/graphics/libkexif \
-		kipi:${PORTSDIR}/graphics/libkipi \
+LIB_DEPENDS=	kexif.1:${PORTSDIR}/graphics/libkexif \
+		kipi.0:${PORTSDIR}/graphics/libkipi \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
 		Imlib2.3:${PORTSDIR}/graphics/imlib2
 
@@ -27,6 +26,7 @@ OPTIONS=	ACQUIREIMAGES "scanner/screenshot plugin" on \
 		CALENDAR "create calendars" on \
 		CDARCHIVING "create album CDs" on \
 		FINDIMAGES "find duplicate images in albums" on \
+		GALLERYEXPORT "album to remote Gallery server export" on \
 		IMAGESGALLERY "album to HTML gallery export" on \
 		JPEGLOSSLESS "batch processing without losing meta info" on \
 		MPEGENCODER "tool to build a video from images" on \
@@ -47,7 +47,7 @@ CONFIGURE_ARGS+=--program-prefix=''
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 500000
-BROKEN=		"Does not compile on FreeBSD 4.x"
+CONFIGURE_ARGS+=--enable-final
 .endif
 
 .if !defined(WITHOUT_ACQUIREIMAGES)
@@ -84,6 +84,13 @@ PLIST_SUB+=	FINDIMAGES:=""
 SUBDIRS+=	findimages
 .else
 PLIST_SUB+=	FINDIMAGES:="@comment "
+.endif
+
+.if !defined(WITHOUT_GALLERYEXPORT)
+PLIST_SUB+=	GALLERYEXPORT:=""
+SUBDIRS+=	galleryexport
+.else
+PLIST_SUB+=	GALLERYEXPORT:="@comment "
 .endif
 
 .if !defined(WITHOUT_IMAGESGALLERY)
