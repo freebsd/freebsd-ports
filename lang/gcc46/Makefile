@@ -4,18 +4,16 @@
 # Date created:		9 Jan 1998
 # Whom:			John Polstra <jdp@polstra.com>
 #
-# $Id: Makefile,v 1.14 1998/04/07 01:18:07 obrien Exp $
+# $Id: Makefile,v 1.12 1998/03/17 21:10:40 jdp Exp $
 #
 
-DISTNAME=	egcs-980315
+DISTNAME=	egcs-980406
 CATEGORIES=	lang
-MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/1998-03-15/ \
-		ftp://cambridge.cygnus.com/pub/egcs/snapshots/1998-03-15/ \
-		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/1998-03-15/
+MASTER_SITES=	ftp://egcs.cygnus.com/pub/egcs/snapshots/1998-04-06/ \
+		ftp://cambridge.cygnus.com/pub/egcs/snapshots/1998-04-06/ \
+		ftp://ftp.fu-berlin.de/unix/languages/egcs/snapshots/1998-04-06/
 
 MAINTAINER=	obrien@FreeBSD.org
-
-BROKEN=	"used to build on my system, now doesn't.  use 'cvs co -regcs_102 egcs' if you want a working version before the next upgrade"
 
 MANUAL_PACKAGE_BUILD=	installs libstdc++.a which conflicts with system version
 
@@ -35,12 +33,14 @@ post-patch:
 
 post-install:
 	@(for prog in ${PREFIX}/bin/gcc ${PREFIX}/bin/g++ ${PREFIX}/bin/c++ \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.14/cc1 \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.14/cc1obj \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.14/cc1plus \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.14/cpp \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.14/f771 \
-	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.14/ld ; \
+	${PREFIX}/bin/c++filt ${PREFIX}/bin/info ${PREFIX}/bin/install-info \
+	${PREFIX}/bin/makeinfo ${PREFIX}/bin/texindex \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.22/cc1 \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.22/cc1obj \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.22/cc1plus \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.22/cpp \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.22/collect2 \
+	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd/egcs-2.91.22/f771 ; \
 		do strip $$prog ; \
 		done)
 	if [ ! -f ${PREFIX}/info/dir ]; then \
