@@ -1,4 +1,3 @@
-%%PORTDOCS%%%%HLDSDIR%%3109c_changes.txt
 %%PORTDOCS%%%%HLDSDIR%%EULA.TXT
 %%PORTDOCS%%%%HLDSDIR%%HLTV-Readme.txt
 %%HLDSDIR%%dmc/cl_dlls/client.dll
@@ -386,7 +385,6 @@
 %%HLDSDIR%%engine_i386.so
 %%HLDSDIR%%hlds
 %%HLDSDIR%%hlds_run
-%%HLDSDIR%%hlds_run.dat
 %%HLDSDIR%%hltv
 %%HLDSDIR%%hltv.cfg
 %%HLDSDIR%%kver.kp
@@ -394,6 +392,79 @@
 %%HLDSDIR%%libhlwon.so
 %%PORTDOCS%%%%HLDSDIR%%linuxreadme.txt
 %%PORTDOCS%%%%HLDSDIR%%readme.txt
+%%HLDSDIR%%ricochet/cl_dlls/client.dll
+%%HLDSDIR%%ricochet/delta.lst
+%%HLDSDIR%%ricochet/dlls/ricochet_i386.so
+%%HLDSDIR%%ricochet/events/firedisc.sc
+%%HLDSDIR%%ricochet/events/jump.sc
+%%HLDSDIR%%ricochet/liblist.gam
+%%PORTDOCS%%%%HLDSDIR%%ricochet/manual/Seeds.ttf
+%%PORTDOCS%%%%HLDSDIR%%ricochet/manual/arrowanim.GIF
+%%PORTDOCS%%%%HLDSDIR%%ricochet/manual/discplatform.GIF
+%%PORTDOCS%%%%HLDSDIR%%ricochet/manual/note.gif
+%%PORTDOCS%%%%HLDSDIR%%ricochet/manual/ricochet logo.gif
+%%PORTDOCS%%%%HLDSDIR%%ricochet/manual/ricochetmaps.html
+%%PORTDOCS%%%%HLDSDIR%%ricochet/manual/ricochetstart.html
+%%PORTDOCS%%%%HLDSDIR%%ricochet/manual/ricorule.html
+%%PORTDOCS%%%%HLDSDIR%%ricochet/manual/tips.jpg
+%%HLDSDIR%%ricochet/mapcycle.txt
+%%HLDSDIR%%ricochet/maps/rc_arena.bsp
+%%HLDSDIR%%ricochet/maps/rc_deathmatch.bsp
+%%HLDSDIR%%ricochet/maps/rc_deathmatch2.bsp
+%%HLDSDIR%%ricochet/models/disc.mdl
+%%HLDSDIR%%ricochet/models/disc_hard.mdl
+%%HLDSDIR%%ricochet/models/head.mdl
+%%HLDSDIR%%ricochet/models/p_disc.mdl
+%%HLDSDIR%%ricochet/models/p_disc_hard.mdl
+%%HLDSDIR%%ricochet/models/player/female/female.bmp
+%%HLDSDIR%%ricochet/models/player/female/female.mdl
+%%HLDSDIR%%ricochet/models/player/male/male.mdl
+%%HLDSDIR%%ricochet/models/pow_curve.mdl
+%%HLDSDIR%%ricochet/models/pow_fast.mdl
+%%HLDSDIR%%ricochet/models/pow_freeze.mdl
+%%HLDSDIR%%ricochet/models/pow_hard.mdl
+%%HLDSDIR%%ricochet/models/pow_triple.mdl
+%%HLDSDIR%%ricochet/models/pow_visual.mdl
+%%HLDSDIR%%ricochet/models/v_disc.mdl
+%%HLDSDIR%%ricochet/ricochet.wad
+%%HLDSDIR%%ricochet/sound/Items/gunpickup2.wav
+%%HLDSDIR%%ricochet/sound/Vox/die.WAV
+%%HLDSDIR%%ricochet/sound/Vox/four.wav
+%%HLDSDIR%%ricochet/sound/Vox/one.WAV
+%%HLDSDIR%%ricochet/sound/Vox/three.WAV
+%%HLDSDIR%%ricochet/sound/Vox/two.WAV
+%%HLDSDIR%%ricochet/sound/Weapons/altfire.wav
+%%HLDSDIR%%ricochet/sound/Weapons/cbar_miss1.wav
+%%HLDSDIR%%ricochet/sound/Weapons/rocket1.wav
+%%HLDSDIR%%ricochet/sound/Weapons/xbow_hit1.wav
+%%HLDSDIR%%ricochet/sound/Weapons/xbow_hit2.wav
+%%HLDSDIR%%ricochet/sound/decap.wav
+%%HLDSDIR%%ricochet/sound/dischit.wav
+%%HLDSDIR%%ricochet/sound/discreturn.wav
+%%HLDSDIR%%ricochet/sound/powerup.wav
+%%HLDSDIR%%ricochet/sound/pspawn.wav
+%%HLDSDIR%%ricochet/sound/r_tele1.wav
+%%HLDSDIR%%ricochet/sound/scream1.wav
+%%HLDSDIR%%ricochet/sound/scream2.wav
+%%HLDSDIR%%ricochet/sound/scream3.wav
+%%HLDSDIR%%ricochet/sound/shatter.wav
+%%HLDSDIR%%ricochet/sound/triggerjump.wav
+%%HLDSDIR%%ricochet/sprites/320_0bounce.spr
+%%HLDSDIR%%ricochet/sprites/320_1bounce.spr
+%%HLDSDIR%%ricochet/sprites/320_2bounce.spr
+%%HLDSDIR%%ricochet/sprites/320_3bounce.spr
+%%HLDSDIR%%ricochet/sprites/320_decapitate.spr
+%%HLDSDIR%%ricochet/sprites/320_falling.spr
+%%HLDSDIR%%ricochet/sprites/640_0bounce.spr
+%%HLDSDIR%%ricochet/sprites/640_1bounce.spr
+%%HLDSDIR%%ricochet/sprites/640_2bounce.spr
+%%HLDSDIR%%ricochet/sprites/640_3bounce.spr
+%%HLDSDIR%%ricochet/sprites/640_decapitate.spr
+%%HLDSDIR%%ricochet/sprites/640_falling.spr
+%%HLDSDIR%%ricochet/sprites/discreturn.spr
+%%HLDSDIR%%ricochet/sprites/hud.txt
+%%HLDSDIR%%ricochet/sprites/weapon_disc.txt
+%%HLDSDIR%%ricochet/titles.txt
 %%HLDSDIR%%sierra.inf
 %%HLDSDIR%%tfc/cl_dlls/client.dll
 %%HLDSDIR%%tfc/decals.wad
@@ -446,20 +517,20 @@
 %%HLDSDIR%%tfc/events/wpn/tf_ssg.sc
 %%HLDSDIR%%tfc/events/wpn/tf_tranq.sc
 %%HLDSDIR%%tfc/liblist.gam
-%%HLDSDIR%%tfc/manual/background.jpg
-%%HLDSDIR%%tfc/manual/bullet.gif
-%%HLDSDIR%%tfc/manual/bullet1.gif
-%%HLDSDIR%%tfc/manual/note.jpg
-%%HLDSDIR%%tfc/manual/regexp.html
-%%HLDSDIR%%tfc/manual/tfcclasses.htm
-%%HLDSDIR%%tfc/manual/tfccontents.htm
-%%HLDSDIR%%tfc/manual/tfcmaps.htm
-%%HLDSDIR%%tfc/manual/tfcserver.htm
-%%HLDSDIR%%tfc/manual/tfcstarting.htm
-%%HLDSDIR%%tfc/manual/tflogo.gif
-%%HLDSDIR%%tfc/manual/tfstats.htm
-%%HLDSDIR%%tfc/manual/tip.jpg
-%%HLDSDIR%%tfc/manual/tips.jpg
+%%PORTDOCS%%%%HLDSDIR%%tfc/manual/background.jpg
+%%PORTDOCS%%%%HLDSDIR%%tfc/manual/bullet.gif
+%%PORTDOCS%%%%HLDSDIR%%tfc/manual/bullet1.gif
+%%PORTDOCS%%%%HLDSDIR%%tfc/manual/note.jpg
+%%PORTDOCS%%%%HLDSDIR%%tfc/manual/regexp.html
+%%PORTDOCS%%%%HLDSDIR%%tfc/manual/tfcclasses.htm
+%%PORTDOCS%%%%HLDSDIR%%tfc/manual/tfccontents.htm
+%%PORTDOCS%%%%HLDSDIR%%tfc/manual/tfcmaps.htm
+%%PORTDOCS%%%%HLDSDIR%%tfc/manual/tfcserver.htm
+%%PORTDOCS%%%%HLDSDIR%%tfc/manual/tfcstarting.htm
+%%PORTDOCS%%%%HLDSDIR%%tfc/manual/tflogo.gif
+%%PORTDOCS%%%%HLDSDIR%%tfc/manual/tfstats.htm
+%%PORTDOCS%%%%HLDSDIR%%tfc/manual/tip.jpg
+%%PORTDOCS%%%%HLDSDIR%%tfc/manual/tips.jpg
 %%HLDSDIR%%tfc/mapcycle.txt
 %%HLDSDIR%%tfc/maps/2fort.bsp
 %%HLDSDIR%%tfc/maps/2fort.txt
@@ -645,7 +716,7 @@
 @dirrm %%HLDSDIR%%tfc/models/player
 @dirrm %%HLDSDIR%%tfc/models
 @dirrm %%HLDSDIR%%tfc/maps
-@dirrm %%HLDSDIR%%tfc/manual
+%%PORTDOCS%%@dirrm %%HLDSDIR%%tfc/manual
 @dirrm %%HLDSDIR%%tfc/events/wpn
 @dirrm %%HLDSDIR%%tfc/events/misc
 @dirrm %%HLDSDIR%%tfc/events/explode
@@ -653,6 +724,21 @@
 @dirrm %%HLDSDIR%%tfc/events
 @dirrm %%HLDSDIR%%tfc/dlls
 @dirrm %%HLDSDIR%%tfc/cl_dlls
+@dirrm %%HLDSDIR%%ricochet/sprites
+@dirrm %%HLDSDIR%%ricochet/sound/Weapons
+@dirrm %%HLDSDIR%%ricochet/sound/Vox
+@dirrm %%HLDSDIR%%ricochet/sound/Items
+@dirrm %%HLDSDIR%%ricochet/sound
+@dirrm %%HLDSDIR%%ricochet/models/player/male
+@dirrm %%HLDSDIR%%ricochet/models/player/female
+@dirrm %%HLDSDIR%%ricochet/models/player
+@dirrm %%HLDSDIR%%ricochet/models
+@dirrm %%HLDSDIR%%ricochet/maps
+%%PORTDOCS%%@dirrm %%HLDSDIR%%ricochet/manual
+@dirrm %%HLDSDIR%%ricochet/events
+@dirrm %%HLDSDIR%%ricochet/dlls
+@dirrm %%HLDSDIR%%ricochet/cl_dlls
+@dirrm %%HLDSDIR%%ricochet
 @dirrm %%HLDSDIR%%dmc/sprites
 @dirrm %%HLDSDIR%%dmc/sound/weapons
 @dirrm %%HLDSDIR%%dmc/sound/player
@@ -666,14 +752,17 @@
 @dirrm %%HLDSDIR%%dmc/events
 @dirrm %%HLDSDIR%%dmc/dlls
 @dirrm %%HLDSDIR%%dmc/cl_dlls
-@unexec rmdir %D/%%HLDSDIR%%tfc/SAVE 2>/dev/null || true
-@unexec rmdir %D/%%HLDSDIR%%tfc/logs 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%valve/SAVE 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%valve/logs 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%tfc/SAVE 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%tfc/logs 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%ricochet/SAVE 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%ricochet/logs 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%dmc/SAVE 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%dmc/logs 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%valve 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%tfc 2>/dev/null || true
+@unexec rmdir %D/%%HLDSDIR%%ricochet 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%%dmc 2>/dev/null || true
 @unexec rmdir %D/%%HLDSDIR%% 2>/dev/null || echo "If you are permanently removing this port and its mods, you should do a ``rm -rf ${PKG_PREFIX}/%%HLDSDIR%%`` to remove any configuration files and logs left." | fmt
 @mode 0444
