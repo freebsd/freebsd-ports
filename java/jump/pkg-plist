@@ -1,146 +1,53 @@
-%%T%%/build.xml
-%%T%%/build/apidocs/allclasses-frame.html
-%%T%%/build/apidocs/deprecated-list.html
-%%T%%/build/apidocs/help-doc.html
-%%T%%/build/apidocs/index-all.html
-%%T%%/build/apidocs/index.html
-%%T%%/build/apidocs/org/znerd/math/AbstractCompositeNumber.html
-%%T%%/build/apidocs/org/znerd/math/BasicDigitSet.html
-%%T%%/build/apidocs/org/znerd/math/BasicRationalNumber.html
-%%T%%/build/apidocs/org/znerd/math/BigIntegerNumber.html
-%%T%%/build/apidocs/org/znerd/math/CanNotCompareException.html
-%%T%%/build/apidocs/org/znerd/math/CompositeNumber.html
-%%T%%/build/apidocs/org/znerd/math/DigitSet.html
-%%T%%/build/apidocs/org/znerd/math/IntegerNumber.html
-%%T%%/build/apidocs/org/znerd/math/NumberCentral.html
-%%T%%/build/apidocs/org/znerd/math/Power.html
-%%T%%/build/apidocs/org/znerd/math/Product.html
-%%T%%/build/apidocs/org/znerd/math/RationalNumber.html
-%%T%%/build/apidocs/org/znerd/math/RealNumber.html
-%%T%%/build/apidocs/org/znerd/math/RoundingMode.html
-%%T%%/build/apidocs/org/znerd/math/RoundingModes.html
-%%T%%/build/apidocs/org/znerd/math/SmallIntegerNumber.html
-%%T%%/build/apidocs/org/znerd/math/Sum.html
-%%T%%/build/apidocs/org/znerd/math/class-use/AbstractCompositeNumber.html
-%%T%%/build/apidocs/org/znerd/math/class-use/BasicDigitSet.html
-%%T%%/build/apidocs/org/znerd/math/class-use/BasicRationalNumber.html
-%%T%%/build/apidocs/org/znerd/math/class-use/BigIntegerNumber.html
-%%T%%/build/apidocs/org/znerd/math/class-use/CanNotCompareException.html
-%%T%%/build/apidocs/org/znerd/math/class-use/CompositeNumber.html
-%%T%%/build/apidocs/org/znerd/math/class-use/DigitSet.html
-%%T%%/build/apidocs/org/znerd/math/class-use/IntegerNumber.html
-%%T%%/build/apidocs/org/znerd/math/class-use/NumberCentral.html
-%%T%%/build/apidocs/org/znerd/math/class-use/Power.html
-%%T%%/build/apidocs/org/znerd/math/class-use/Product.html
-%%T%%/build/apidocs/org/znerd/math/class-use/RationalNumber.html
-%%T%%/build/apidocs/org/znerd/math/class-use/RealNumber.html
-%%T%%/build/apidocs/org/znerd/math/class-use/RoundingMode.html
-%%T%%/build/apidocs/org/znerd/math/class-use/RoundingModes.html
-%%T%%/build/apidocs/org/znerd/math/class-use/SmallIntegerNumber.html
-%%T%%/build/apidocs/org/znerd/math/class-use/Sum.html
-%%T%%/build/apidocs/org/znerd/math/package-frame.html
-%%T%%/build/apidocs/org/znerd/math/package-summary.html
-%%T%%/build/apidocs/org/znerd/math/package-tree.html
-%%T%%/build/apidocs/org/znerd/math/package-use.html
-%%T%%/build/apidocs/overview-tree.html
-%%T%%/build/apidocs/package-list
-%%T%%/build/apidocs/packages.html
-%%T%%/build/apidocs/serialized-form.html
-%%T%%/build/apidocs/stylesheet.css
-%%T%%/build/classes/examples/org/znerd/math/examples/simple/SimpleExample.class
-%%T%%/build/classes/main/org/znerd/math/AbstractCompositeNumber.class
-%%T%%/build/classes/main/org/znerd/math/BasicDigitSet.class
-%%T%%/build/classes/main/org/znerd/math/BasicRationalNumber.class
-%%T%%/build/classes/main/org/znerd/math/BasicRoundingMode.class
-%%T%%/build/classes/main/org/znerd/math/BigIntegerNumber.class
-%%T%%/build/classes/main/org/znerd/math/CanNotCompareException.class
-%%T%%/build/classes/main/org/znerd/math/CompositeNumber.class
-%%T%%/build/classes/main/org/znerd/math/DigitSet.class
-%%T%%/build/classes/main/org/znerd/math/IntegerNumber.class
-%%T%%/build/classes/main/org/znerd/math/MandatoryArgumentChecker.class
-%%T%%/build/classes/main/org/znerd/math/MissingArgumentException.class
-%%T%%/build/classes/main/org/znerd/math/NumberCentral.class
-%%T%%/build/classes/main/org/znerd/math/Power.class
-%%T%%/build/classes/main/org/znerd/math/Product.class
-%%T%%/build/classes/main/org/znerd/math/RationalNumber.class
-%%T%%/build/classes/main/org/znerd/math/RealNumber.class
-%%T%%/build/classes/main/org/znerd/math/RoundingMode.class
-%%T%%/build/classes/main/org/znerd/math/RoundingModes.class
-%%T%%/build/classes/main/org/znerd/math/SmallIntegerNumber.class
-%%T%%/build/classes/main/org/znerd/math/Sum.class
-%%T%%/build/jump.jar
-%%T%%/build/src/main/org/znerd/math/AbstractCompositeNumber.java
-%%T%%/build/src/main/org/znerd/math/BasicDigitSet.java
-%%T%%/build/src/main/org/znerd/math/BasicRationalNumber.java
-%%T%%/build/src/main/org/znerd/math/BasicRoundingMode.java
-%%T%%/build/src/main/org/znerd/math/BigIntegerNumber.java
-%%T%%/build/src/main/org/znerd/math/CanNotCompareException.java
-%%T%%/build/src/main/org/znerd/math/CompositeNumber.java
-%%T%%/build/src/main/org/znerd/math/DigitSet.java
-%%T%%/build/src/main/org/znerd/math/IntegerNumber.java
-%%T%%/build/src/main/org/znerd/math/MandatoryArgumentChecker.java
-%%T%%/build/src/main/org/znerd/math/MissingArgumentException.java
-%%T%%/build/src/main/org/znerd/math/NumberCentral.java
-%%T%%/build/src/main/org/znerd/math/Power.java
-%%T%%/build/src/main/org/znerd/math/Product.java
-%%T%%/build/src/main/org/znerd/math/RationalNumber.java
-%%T%%/build/src/main/org/znerd/math/RealNumber.java
-%%T%%/build/src/main/org/znerd/math/RoundingMode.java
-%%T%%/build/src/main/org/znerd/math/RoundingModes.java
-%%T%%/build/src/main/org/znerd/math/SmallIntegerNumber.java
-%%T%%/build/src/main/org/znerd/math/Sum.java
-%%T%%/src/examples/org/znerd/math/examples/simple/SimpleExample.java
-%%T%%/src/main/org/znerd/math/AbstractCompositeNumber.java
-%%T%%/src/main/org/znerd/math/BasicDigitSet.java
-%%T%%/src/main/org/znerd/math/BasicRationalNumber.java
-%%T%%/src/main/org/znerd/math/BasicRoundingMode.java
-%%T%%/src/main/org/znerd/math/BigIntegerNumber.java
-%%T%%/src/main/org/znerd/math/CanNotCompareException.java
-%%T%%/src/main/org/znerd/math/CompositeNumber.java
-%%T%%/src/main/org/znerd/math/DigitSet.java
-%%T%%/src/main/org/znerd/math/IntegerNumber.java
-%%T%%/src/main/org/znerd/math/MandatoryArgumentChecker.java
-%%T%%/src/main/org/znerd/math/MissingArgumentException.java
-%%T%%/src/main/org/znerd/math/NumberCentral.java
-%%T%%/src/main/org/znerd/math/Power.java
-%%T%%/src/main/org/znerd/math/Product.java
-%%T%%/src/main/org/znerd/math/RationalNumber.java
-%%T%%/src/main/org/znerd/math/RealNumber.java
-%%T%%/src/main/org/znerd/math/RoundingMode.java
-%%T%%/src/main/org/znerd/math/RoundingModes.java
-%%T%%/src/main/org/znerd/math/SmallIntegerNumber.java
-%%T%%/src/main/org/znerd/math/Sum.java
-@dirrm %%T%%/src/main/org/znerd/math
-@dirrm %%T%%/src/main/org/znerd
-@dirrm %%T%%/src/main/org
-@dirrm %%T%%/src/main
-@dirrm %%T%%/src/examples/org/znerd/math/examples/simple
-@dirrm %%T%%/src/examples/org/znerd/math/examples
-@dirrm %%T%%/src/examples/org/znerd/math
-@dirrm %%T%%/src/examples/org/znerd
-@dirrm %%T%%/src/examples/org
-@dirrm %%T%%/src/examples
-@dirrm %%T%%/src
-@dirrm %%T%%/build/apidocs/org/znerd/math/class-use
-@dirrm %%T%%/build/apidocs/org/znerd/math
-@dirrm %%T%%/build/apidocs/org/znerd
-@dirrm %%T%%/build/apidocs/org
-@dirrm %%T%%/build/apidocs
-@dirrm %%T%%/build/src/main/org/znerd/math
-@dirrm %%T%%/build/src/main/org/znerd
-@dirrm %%T%%/build/src/main/org
-@dirrm %%T%%/build/src/main
-@dirrm %%T%%/build/src
-@dirrm %%T%%/build/classes/main/org/znerd/math
-@dirrm %%T%%/build/classes/main/org/znerd
-@dirrm %%T%%/build/classes/main/org
-@dirrm %%T%%/build/classes/main
-@dirrm %%T%%/build/classes/examples/org/znerd/math/examples/simple
-@dirrm %%T%%/build/classes/examples/org/znerd/math/examples
-@dirrm %%T%%/build/classes/examples/org/znerd/math
-@dirrm %%T%%/build/classes/examples/org/znerd
-@dirrm %%T%%/build/classes/examples/org
-@dirrm %%T%%/build/classes/examples
-@dirrm %%T%%/build/classes
-@dirrm %%T%%/build
-@dirrm %%T%%
+share/doc/jump/org/znerd/math/class-use/RoundingModes.html
+share/doc/jump/org/znerd/math/class-use/RationalNumber.html
+share/doc/jump/org/znerd/math/class-use/IntegerNumber.html
+share/doc/jump/org/znerd/math/class-use/SmallIntegerNumber.html
+share/doc/jump/org/znerd/math/class-use/CanNotCompareException.html
+share/doc/jump/org/znerd/math/class-use/BigIntegerNumber.html
+share/doc/jump/org/znerd/math/class-use/BasicRationalNumber.html
+share/doc/jump/org/znerd/math/class-use/CompositeNumber.html
+share/doc/jump/org/znerd/math/class-use/AbstractCompositeNumber.html
+share/doc/jump/org/znerd/math/class-use/Product.html
+share/doc/jump/org/znerd/math/class-use/RoundingMode.html
+share/doc/jump/org/znerd/math/class-use/NumberCentral.html
+share/doc/jump/org/znerd/math/class-use/Power.html
+share/doc/jump/org/znerd/math/class-use/DigitSet.html
+share/doc/jump/org/znerd/math/class-use/BasicDigitSet.html
+share/doc/jump/org/znerd/math/class-use/Sum.html
+share/doc/jump/org/znerd/math/class-use/RealNumber.html
+share/doc/jump/org/znerd/math/package-use.html
+share/doc/jump/org/znerd/math/package-summary.html
+share/doc/jump/org/znerd/math/package-tree.html
+share/doc/jump/org/znerd/math/package-frame.html
+share/doc/jump/org/znerd/math/RoundingModes.html
+share/doc/jump/org/znerd/math/AbstractCompositeNumber.html
+share/doc/jump/org/znerd/math/BasicDigitSet.html
+share/doc/jump/org/znerd/math/BasicRationalNumber.html
+share/doc/jump/org/znerd/math/BigIntegerNumber.html
+share/doc/jump/org/znerd/math/CompositeNumber.html
+share/doc/jump/org/znerd/math/DigitSet.html
+share/doc/jump/org/znerd/math/IntegerNumber.html
+share/doc/jump/org/znerd/math/NumberCentral.html
+share/doc/jump/org/znerd/math/Power.html
+share/doc/jump/org/znerd/math/Product.html
+share/doc/jump/org/znerd/math/RationalNumber.html
+share/doc/jump/org/znerd/math/RealNumber.html
+share/doc/jump/org/znerd/math/RoundingMode.html
+share/doc/jump/org/znerd/math/SmallIntegerNumber.html
+share/doc/jump/org/znerd/math/Sum.html
+share/doc/jump/org/znerd/math/CanNotCompareException.html
+share/doc/jump/serialized-form.html
+share/doc/jump/packages.html
+share/doc/jump/package-list
+share/doc/jump/overview-tree.html
+share/doc/jump/index.html
+share/doc/jump/index-all.html
+share/doc/jump/help-doc.html
+share/doc/jump/deprecated-list.html
+share/doc/jump/stylesheet.css
+share/doc/jump/allclasses-frame.html
+@dirrm share/doc/jump/org/znerd/math/class-use
+@dirrm share/doc/jump/org/znerd/math
+@dirrm share/doc/jump/org/znerd
+@dirrm share/doc/jump/org
+@dirrm share/doc/jump
