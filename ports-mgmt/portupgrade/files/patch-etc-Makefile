@@ -1,0 +1,14 @@
+Index: etc/Makefile
+===================================================================
+--- etc/Makefile	(リビジョン 1049)
++++ etc/Makefile	(作業コピー)
+@@ -32,7 +32,8 @@
+ ${script}: ${script:T}
+ 	@mkdir -p ${BUILDDIR}
+ 	${RUBY} -p \
+-		-e 'sub %r:/usr/local:, "${PREFIX}"' \
++		-e 'sub(%r:/usr/local:, "${PREFIX}")' \
++		-e 'sub(%r:(/etc/rc\.subr):, "${PREFIX}\\1") if !File.exist?("/etc/rc.subr")' \
+ 		${.ALLSRC} > ${.TARGET}
+ .endfor
+ 
