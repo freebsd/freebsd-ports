@@ -7,14 +7,13 @@
 
 PORTNAME=	libwhisker
 PORTVERSION=	1.8
+PORTREVISION=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	http://www.wiretrip.net/rfp/${PORTNAME}/
 DISTNAME=	${PORTNAME}-current
 
 MAINTAINER=	jan@atstake.com
 COMMENT=	Perl module to create HTTP test scripts
-
-BROKEN=		Checksum mismatch, will be removed after Feb 2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
