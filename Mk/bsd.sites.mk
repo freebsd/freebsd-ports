@@ -918,9 +918,7 @@ MASTER_SITE_REDHAT_LINUX+= \
 	ftp://ftp.carrier.kiev.ua/pub/Linux/RedHat/redhat/linux/%SUBDIR%/ \
 	ftp://ftp.riken.go.jp/pub/Linux/redhat/releases/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/pub/Linux/packages/RedHat/redhat/linux/%SUBDIR%/ \
-	ftp://ftp.cse.cuhk.edu.hk/pub2/redhat/%SUBDIR%/ \
-	ftp://ftp2.compaq.com/pub/linux/RedHat/7.2-alpha/updates/rpms/alpha/ \
-	ftp://ftp.rz.uni-karlsruhe.de/pub/mirror/ftp.redhat.de/pub/redhat/updates/7.2/en/os/i386/
+	ftp://ftp.cse.cuhk.edu.hk/pub2/redhat/%SUBDIR%/
 
 #
 # RingServers in Japan
