@@ -1,0 +1,19 @@
+--- Makefile.in.orig	Sat Jul 27 19:04:35 2002
++++ Makefile.in	Sat Jul 27 19:04:39 2002
+@@ -42,16 +42,6 @@
+ 	    $(INSTALL_DATA) $$p $(lispdir)/$$p;\
+ 	  fi;\
+ 	done;\
+-	if test -f shimbun/shimbun.elc; then\
+-	  for p in `cd shimbun && echo *.el`; do\
+-	    echo " $(INSTALL_DATA) shimbun/$$p $(lispdir)/$$p";\
+-	    $(INSTALL_DATA) shimbun/$$p $(lispdir)/$$p;\
+-	  done;\
+-	  for p in `cd shimbun && echo *.elc`; do\
+-	    echo " $(INSTALL_DATA) shimbun/$$p $(lispdir)/$$p";\
+-	    $(INSTALL_DATA) shimbun/$$p $(lispdir)/$$p;\
+-	  done;\
+-	fi
+ 
+ install-icons:
+ 	@if test $(ICONDIR) = NONE; then\
