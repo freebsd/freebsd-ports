@@ -194,6 +194,7 @@
     SUBDIR += gtk-gnutella
     SUBDIR += gtkhx
     SUBDIR += gtkyahoo
+    SUBDIR += gtorrentviewer
     SUBDIR += gutenfetch
     SUBDIR += gyach
     SUBDIR += hagelslag
