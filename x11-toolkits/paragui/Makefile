@@ -33,7 +33,7 @@ PLIST_SUB=	SHLIB_VER="${SHLIB_VER}"
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} != "amd64") && (${ARCH} != "i386")
+.if ${ARCH} != "i386"
 BROKEN=		"does not build on ${ARCH}"
 .endif
 
