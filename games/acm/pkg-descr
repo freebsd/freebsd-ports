@@ -1,0 +1,131 @@
+[This is Riley's original README file]
+
+acm Flight Simulator version 2.0
+
+What is acm?
+------------
+
+Acm is a LAN-oriented, multiplayer aerial combat simulation.  My main design
+objective was to provide source code that could be easily compiled and
+executed on a wide variety of platforms.  To that end, acm is written entirely
+in C, exploiting the programming features of Unix, X11, and the BSD socket
+interface.
+
+Players engage in air to air combat against one another using heat seeking
+missiles and cannons.
+
+Acm exists as two programs.  The first, named "acm", is a small program
+that, when invoked, starts a flight session on a given workstation.  The
+second component, named "acms", is a server process that manages the
+multiplayer environment.  It also manages the flight simulation and
+display management that is required.  Most players will prefer to run the
+acms process on a back-end server system on their local area network.  Players
+at client workstations can then invoke the acm program to begin play.
+
+I play acm using a server that is a Mips RC3240 (rated at roughly 18.5
+SPECmarks).  I get very adequate display performance using a Mips RS2030
+color workstation (10.0 SPECmarks) or an NCD monochrome X terminal.  My
+choice of servers is probably overkill.  I suspect that an 10+ SPECmark
+system could handle a typical mutiplayer load.
+
+This is the second release of acm.  The original version has been ported
+to a variety of Unix derivatives and system architectures.
+
+Riley Rainey
+riley@mips.com
+January 26, 1991
+
+
+
+What's different with revision 2.0:
+-----------------------------------
+
+The flight simulation model has been substantially revamped.
+
+Rudder controls have been added.
+
+Monochrome support has been added with the generous help of Glen Dudek
+(dudek@ksr.com).
+
+Filenames have been shortened, where required, to get along with System V
+conventions.
+
+Substantial corrections and enhancements to the portability of this code
+were provided by Johnathan Kamens (jik@Athena.MIT.EDU).  imake can now
+be used to build the entire product tree.
+
+Sun-specific changes were provided by Dave Safford (auvsaff@auvsun.tamu.edu).
+
+A bug that prevented acm from operating with certain window managers
+has been corrected.
+
+Lead Computing Optical Sight (LCOS) support has been added to the
+cannon weapon display.  A reticle (sight) is displayed on the HUD, showing
+a good aiming sight for the cannon.
+
+Cannons will now inflict damage on other aircraft.
+
+Aircraft can now be damaged, but remain airworthy.
+
+
+
+GENERAL NOTES
+-------------
+
+This software is divided into two major parts: the 3-D graphics routines
+and the flight simulator itself.  The 3-D stuff is contained in the V
+directory.  V/lib holds the library itself.  V/test contains a program
+that can be used to test your port of the V library.
+
+Fsim contains the remainder of the flight simulator. imake and make files
+have been provided.  The code has a Berkeley tilt to it in many
+places, so people with hybrid OS's will probably want to lean that
+direction when selecting compiling and linking options.
+
+Acm binaries can be installed in your standard games directory.  In addition
+to running "make install" to install the executables, you must run the
+"install-objects" script.
+
+The acm server, acms, must currently be started manually.  It's intended
+that it will eventually be managed automatically by inetd, but that's
+not in the code yet.  I have access to a network that includes a 16+ SPECMark
+server and 12 to 18 SPECMark workstations (i.e. a MIPS 3240 along with
+MIPS 2030 and Magnum workstations) (translate SPECMarks into millions of
+instructions per second by whatever formula you like ..).  I generally 
+rlogin to the 3240 and start the acms process on it and leave that xterm
+window hanging around;  then, from another xterm window, I'll fire off
+the acm command that starts my flying session.  Other players enter the
+game by simply firing off an "acm servername" command.
+
+I'm not saying that acm is a particularly accurate flight simulator. I'm
+not an aero engineer, but I did spend a fair amount of time studying
+several college-level texts on the subject while I was designing this
+software.  This probably doesn't resemble real-time flight simulators
+too much but, again, that's not my line of work.  Comments and
+suggestions to improve this software are welcome.
+
+Several "features" in this revision of the software:
+
+	* landing gear is ignored.  Raise it, lower it; it's
+	  not handled by the software.
+
+	* flaps can be lowered at rediculously high speeds.
+
+	* you can fly through mountains.
+
+	* engines do not flame-out.  Fly really high (and fast enough)
+	  and you can just about get into orbit.  Non-afterburning
+	  engine performance does degrade as altitude increases, but
+	  afterburner performance gives the extra kick needed to fly
+	  much higher than you should be able to.
+
+
+CREDITS
+
+In the original release, I overlooked several important credits.  The
+input routine at the heart of the acm server is based on code from xtrek
+that was written by Dan A. Dickey, he has provided some valuable help in
+improving the robustness of this code.  The 3-D routines were written by
+me, but are based closely on two valuable articles from the March and
+April 1981 issues of Byte Magazine titled "Three-Dimensional Computer
+Graphics" by Franklin C. Crow.
