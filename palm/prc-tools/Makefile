@@ -3,7 +3,7 @@
 # Date created:         November, 1997
 # Whom:                 Paul Traina <pst@freebsd.org>
 #
-# $Id: Makefile,v 1.9 1998/10/12 20:42:33 jseger Exp $
+# $Id: Makefile,v 1.10 1999/01/09 08:52:30 asami Exp $
 #
 # *WARNING* write access to ${PREFIX} is required DURING build because the
 # make "all" target actually installs the gnu tools before building the
@@ -17,8 +17,6 @@ MASTER_SITES=   ftp://ryeham.ee.ryerson.ca/pub/PalmOS/ \
 		${MASTER_SITE_GNU}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		binutils-2.7.tar.gz gdb-4.16.tar.gz gcc-2.7.2.2.tar.gz
-
-BROKEN_ELF=	stubgen
 
 MAINTAINER=     ports@freebsd.org
 
@@ -80,6 +78,7 @@ pre-build:
 # after we apply freebsd patches, apply prc-tool's patches to gcc/gdb/...
 post-patch:
 		(cd ${WRKSRC} ; make patch)
+		${PERL} -i -pe "s|%%PERL5%%|${PERL}|" ${WRKSRC}/stubgen
 
 # the info files are redundant
 post-install:
