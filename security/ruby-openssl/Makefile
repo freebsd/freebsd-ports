@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	openssl
-PORTVERSION=	0.1.1
+PORTVERSION=	0.1.2
 CATEGORIES=	security ruby
 MASTER_SITES=	http://freesoftware.fsf.org/download/rubypki/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ossl-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -25,10 +24,6 @@ CONFIGURE_ARGS=	--with-openssl-include="${OPENSSLBASE}/include/openssl" \
 INSTALL_TARGET=	site-install
 
 DOCS=		ChangeLog README
-
-post-extract:
-	${FIND} ${WRKSRC} -type d -name CVS | xargs ${RM} -rf
-	${FIND} ${WRKSRC} -type f -name '*~' -delete
 
 post-install:
 .if !defined(NOPORTDOCS)
