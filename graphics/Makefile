@@ -179,6 +179,7 @@
     SUBDIR += netshow
     SUBDIR += nurbs++
     SUBDIR += ogle
+    SUBDIR += ogle-gui
     SUBDIR += opendis
     SUBDIR += opendx
     SUBDIR += opendx-samples
