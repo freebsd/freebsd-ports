@@ -8541,6 +8541,7 @@ rdb		ports/databases/rdb
 rdesktop	ports/net/rdesktop
 rdfdb		ports/databases/rdfdb
 rdiff-backup	ports/sysutils/rdiff-backup
+rdigest		ports/security/rdigest
 rdist6		ports/net/rdist6
 re2c		ports/devel/re2c
 readline	ports/devel/readline
