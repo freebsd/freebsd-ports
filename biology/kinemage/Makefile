@@ -3,13 +3,15 @@
 # Date created:         Dec 4 1997
 # Whom:                 frankch@waru.life.nthu.edu.tw
 #
-# $Id: Makefile,v 1.4 1998/11/13 15:27:42 billf Exp $
+# $Id: Makefile,v 1.5 1998/11/14 09:43:04 asami Exp $
 #
 
 DISTNAME=	MAGE_4_2.LINUX
 PKGNAME=	kinemage-4.2
 CATEGORIES=     biology
-MASTER_SITES=	ftp://kinemage.biochem.duke.edu/LINUXprograms/
+MASTER_SITES=	ftp://kinemage.biochem.duke.edu/LINUXprograms/ \
+		ftp://ftp.ebi.ac.uk/pub/databases/pdb/pub/xternal_software/kinemage/LINUX/ \
+		ftp://ftp.pdb.bnl.gov/pub/xternal_software/kinemage/LINUX/
 EXTRACT_SUFX=	.Z
 
 MAINTAINER=     frankch@waru.life.nthu.edu.tw

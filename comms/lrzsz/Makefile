@@ -4,12 +4,13 @@
 # Date created:         29 Sept 1996
 # Whom:                 David O'Brien <obrien@cs.ucdavis.edu>
 #
-# $Id: Makefile,v 1.6 1998/03/31 01:56:32 obrien Exp $
+# $Id: Makefile,v 1.7 1998/09/15 06:38:41 obrien Exp $
 
 DISTNAME=	lrzsz-0.12.19
 CATEGORIES=	comms
 MASTER_SITES=	ftp://ftp.ihg.uni-duisburg.de/uwe/ \
-		http://www.nrw.net/uwe/archive/
+		ftp://ftp.ohse.de/comp/unix/comm/ \
+		ftp://ftp.uven.ru/pub/unix/comms/
 
 MAINTAINER=	obrien@FreeBSD.org
 

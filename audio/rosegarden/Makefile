@@ -3,12 +3,16 @@
 # Date created:		04 Aug 1996
 # Whom:			shanee
 #
-# $Id: Makefile,v 1.5 1998/08/07 23:56:10 asami Exp $
+# $Id: Makefile,v 1.6 1998/09/21 01:35:21 steve Exp $
 #
 
 DISTNAME=	rosegarden-2.0.1
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.maths.bath.ac.uk/pub/dream/ROSE/
+MASTER_SITES=	ftp://ftp.maths.bath.ac.uk/pub/dream/ROSE/ \
+		ftp://ftp.sao.ru/pub1/src/dream/ROSE/ \
+		ftp://ftp.loxinfo.co.th/pub/unix/sound/ \
+		ftp://ftp.uni-trier.de/pub/unix/audio/rosegarden/ \
+		ftp://ftp.funet.fi/pub/sci/audio/rosegarden/
 EXTRACT_SUFX=	-sources.tgz
 
 MAINTAINER=	shanee@augusta.de
