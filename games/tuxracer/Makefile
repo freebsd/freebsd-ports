@@ -14,17 +14,18 @@ MASTER_SITE_SUBDIR=tuxracer
 DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
 		${PORTNAME}-data-${PORTVERSION}.tar.gz
 
-MAINTAINER=	anholt@teleport.com
+MAINTAINER=	eanholt@gladstone.uoregon.edu
 
 LIB_DEPENDS=	SDL_mixer.2:${PORTSDIR}/audio/sdl_mixer \
 		tcl83.1:${PORTSDIR}/lang/tcl83
 
 USE_MESA=	yes
 USE_GMAKE=	yes
-SDL_CONFIG?=	${LOCALBASE}/bin/sdl11-config
-GNU_CONFIGURE=	yes
+SDL_CONFIG=	${LOCALBASE}/bin/sdl11-config
+USE_AUTOMAKE=	yes
 CONFIGURE_ENV=	SDL_CONFIG="${SDL_CONFIG}" \
 		THREAD_LIB="${PTHREAD_LIB}"
+MAKE_ENV=	${CONFIGURE_ENV}
 CONFIGURE_ARGS=	--with-tcl-inc="${LOCALBASE}/include/tcl8.3" \
 		--with-tcl-libs="${LOCALBASE}/lib" \
 		--with-gl-libs="${X11BASE}/lib" \
