@@ -1,9 +1,9 @@
-# New ports collection makefile for:	pinetree fonts
+# New ports collection makefile for:	pinetree fonts(x11)
 # Version required:     1.0
 # Date created:		22 Mar 1997
-# Whom:			Choi Jun Ho <junker@jazz.snu.ac.kr>
+# Whom:			CHOI Junho <junker@jazz.snu.ac.kr>
 #
-# $Id: Makefile,v 1.2 1997/07/13 18:49:21 max Exp $
+# $Id: Makefile,v 1.3 1997/09/22 16:22:22 max Exp $
 #
 
 DISTNAME=       pinetree.precomposed-1.0
@@ -11,37 +11,27 @@ PKGNAME=	ko-pinetreefonts-1.0
 CATEGORIES=	korean x11
 MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/fonts/ \
 		ftp://cglab.snu.ac.kr/pub/hangul/n3f/fonts/ \
-		ftp://sunsite.kren.nm.kr/pub/packages/hangul/fonts/
+		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/fonts/
 EXTRACT_SUFX=	.bdf.tar.gz
+
 MAINTAINER=	junker@jazz.snu.ac.kr
 
 USE_X11=	yes
 
+FONTS=		ptpR08 ptpR10 ptpR12 ptpR14 ptpR18 ptpR24 \
+		ptpB08 ptpB10 ptpB12 ptpB14 ptpB18 ptpB24
+
 do-build:
 	@cd ${WRKSRC}/; \
 	sh Makepcf; \
-	compress *.pcf; \
+	${GZIP_CMD} *.pcf; \
 	mkfontdir .
 
 do-install:
 	@cd ${WRKSRC}; \
-	${MKDIR} ${PREFIX}/lib/X11/fonts/korean/pinetree; \
-	${INSTALL_DATA} ptpR08.pcf.Z ${PREFIX}/lib/X11/fonts/korean/pinetree; \
-	${INSTALL_DATA} ptpR10.pcf.Z ${PREFIX}/lib/X11/fonts/korean/pinetree; \
-	${INSTALL_DATA} ptpR12.pcf.Z ${PREFIX}/lib/X11/fonts/korean/pinetree; \
-	${INSTALL_DATA} ptpR14.pcf.Z ${PREFIX}/lib/X11/fonts/korean/pinetree; \
-	${INSTALL_DATA} ptpR18.pcf.Z ${PREFIX}/lib/X11/fonts/korean/pinetree; \
-	${INSTALL_DATA} ptpR24.pcf.Z ${PREFIX}/lib/X11/fonts/korean/pinetree; \
-	${INSTALL_DATA} ptpB08.pcf.Z ${PREFIX}/lib/X11/fonts/korean/pinetree; \
-	${INSTALL_DATA} ptpB10.pcf.Z ${PREFIX}/lib/X11/fonts/korean/pinetree; \
-	${INSTALL_DATA} ptpB12.pcf.Z ${PREFIX}/lib/X11/fonts/korean/pinetree; \
-	${INSTALL_DATA} ptpB14.pcf.Z ${PREFIX}/lib/X11/fonts/korean/pinetree; \
-	${INSTALL_DATA} ptpB18.pcf.Z ${PREFIX}/lib/X11/fonts/korean/pinetree; \
-	${INSTALL_DATA} ptpB24.pcf.Z ${PREFIX}/lib/X11/fonts/korean/pinetree; \
-	${INSTALL_DATA} fonts.dir ${PREFIX}/lib/X11/fonts/korean/pinetree
-
-# to show a warning message to add fontpath for these fonts
-post-install:
-	@${SH} ${PKGDIR}/REQ ${PKGNAME} INSTALL
+	for file in ${FONTS}; do \
+		${INSTALL_DATA} "$$file".pcf.gz ${PREFIX}/lib/X11/fonts/misc; \
+	done; \
+	mkfontdir ${PREFIX}/lib/X11/fonts/misc
 
 .include <bsd.port.mk>
