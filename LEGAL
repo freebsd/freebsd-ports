@@ -70,7 +70,7 @@ glimpse-*		ports/textproc/glimpse	Don't sell for profit
 giftool-*		ports/graphics/giftool	Don't redistribute for profit
 GimpUserManual-*-ps.gz	ports/graphics/gimp-manual-ps	too big
 gnupg-*			ports/security/gnupg	Crypto; export-controlled
-graphviz-*		ports/graphics/graphviz	Needs license before fetching
+graphviz-1.[234]*	ports/graphics/graphviz	Needs license before fetching
 hanIM-1.1b-glibc2.0.7-1.i386.rpm
 			ports/korean/hanIM	Not a free software
 hjb3_0-linux.sfx	ports/www/hotjava	Licensed for individual
