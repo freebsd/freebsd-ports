@@ -22,6 +22,7 @@
     SUBDIR += epic4
     SUBDIR += erc
     SUBDIR += ezbounce
+    SUBDIR += fisg
     SUBDIR += garnaxfs
     SUBDIR += gdesklets-irc
     SUBDIR += gruftistats

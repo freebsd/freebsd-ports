@@ -1,0 +1,21 @@
+bin/fisg
+%%EXAMPLESDIR%%/example.cfg
+%%EXAMPLESDIR%%/users.cfg
+%%DATADIR%%/blue-h.png
+%%DATADIR%%/blue-v.png
+%%DATADIR%%/green-h.png
+%%DATADIR%%/green-v.png
+%%DATADIR%%/happy1.gif
+%%DATADIR%%/happy2.gif
+%%DATADIR%%/happy3.gif
+%%DATADIR%%/happy4.gif
+%%DATADIR%%/happy5.gif
+%%DATADIR%%/happy6.gif
+%%DATADIR%%/red-h.png
+%%DATADIR%%/red-v.png
+%%DATADIR%%/style-c64.css
+%%DATADIR%%/style-pisg.css
+%%DATADIR%%/yellow-h.png
+%%DATADIR%%/yellow-v.png
+@dirrm %%EXAMPLESDIR%%
+@dirrm %%DATADIR%%
