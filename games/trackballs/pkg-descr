@@ -1,0 +1,20 @@
+Trackballs is a simple game similar to the classical game Marble Madness
+on the Amiga in the 80's. By steering a marble ball through a labyrinth
+filled with vicious hammers, pools of acid and other obstacles the player
+collects points. When the ball reaches the destination it continues
+at the next, more difficult level - unless the time runs out. 
+
+It should be noted that this game is not intended to be a replica of 
+marble madness but rather inspired by it. For instance the game uses 
+advanced 3D graphics even though the original game had no real use for 
+it. Also we aim at making the game highly configurable by a scripting 
+extension (Guile) and provide a simple editor by which new levels easily 
+can be created. The current status of the project is very early in 
+development and is thus barely playable.
+
+You start /Trackballs/ by giving the command 'trackballs' which
+instructs the game to load the first level. If you wish to cheat or simply
+are testing out a level you are currently designing you can give the command
+'trackballs -l foo' which jumps to level "foo".
+
+WWW: http://trackballs.sourceforge.net/
