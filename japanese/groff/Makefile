@@ -7,6 +7,7 @@
 
 PORTNAME=	groff
 PORTVERSION=	0.100
+PORTREVISION=	1
 CATEGORIES=	japanese print
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	groff
@@ -49,10 +50,16 @@ MAN1=		${MAN1SRC:S/^/g/g} addftinfo.1 afmtodit.1 grodvi.1 \
 		hpftodit.1 lkbib.1 pfbtops.1 psbb.1 tfmtodit.1
 MAN5=		groff_font.5 groff_out.5
 MAN7=		groff_char.7 groff_man.7 groff_mdoc.7 groff_mdoc.samples.7 \
-		groff_me.7 groff_mm.7 groff_mmse.7 groff_ms.7 groff_msafer.7 \
+		groff_me.7 groff_mm.7 groff_mmse.7 groff_ms.7 groff_msafer.7
 
-TMACFILES=	tmac.an tmac.andoc tmac.groff_an tmac.orig_me tmac.vgrind \
+TMACFILES=	tmac.an tmac.andoc tmac.orig_me tmac.vgrind \
 		eqnrc troffrc
+.if exists(${TMACBASE}/tmac.groff_an)
+PLIST_SUB+=	TMAC_GROFF_AN:=""
+TMACFILES+=	tmac.groff_an
+.else
+PLIST_SUB+=	TMAC_GROFF_AN:="@comment"
+.endif
 MDOCFILES=	doc-common doc-syms
 LOCALEFILES=	locale-list eucJP
 
