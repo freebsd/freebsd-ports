@@ -63,7 +63,9 @@ post-build:
 .endfor
 
 pre-install:
+.if !defined(PACKAGE_BUILDING)
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGREQ} ${PKGNAME} INSTALL
+.endif
 	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
