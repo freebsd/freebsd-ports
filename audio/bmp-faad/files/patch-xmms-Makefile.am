@@ -1,6 +1,6 @@
 --- plugins/xmms/src/Makefile.am.orig	Fri Feb  6 11:05:07 2004
-+++ plugins/xmms/src/Makefile.am	Thu Sep  2 13:36:46 2004
-@@ -1,13 +1,13 @@
++++ plugins/xmms/src/Makefile.am	Thu Nov 11 18:56:18 2004
+@@ -1,13 +1,10 @@
 -libdir = `$(XMMS_CONFIG) --input-plugin-dir`
 +libdir = `pkg-config --variable=input_plugin_dir bmp`
  lib_LTLIBRARIES = libmp4.la
@@ -11,11 +11,11 @@
 +       `pkg-config bmp --cflags` \
         -I$(top_srcdir)/include -I$(top_srcdir)/common/mp4v2
  
- libmp4_la_LIBADD = $(top_builddir)/libfaad/libfaad.la \
-        $(top_builddir)/common/mp4v2/libmp4v2.la
- 
+-libmp4_la_LIBADD = $(top_builddir)/libfaad/libfaad.la \
+-       $(top_builddir)/common/mp4v2/libmp4v2.la
+-
 -libmp4_la_LDFLAGS = -module -avoid-version `$(XMMS_CONFIG) --libs` \
 -       `$(GTK_CONFIG) --libs` -lpthread -lstdc++
 +libmp4_la_LDFLAGS = -module -avoid-version `pkg-config bmp --libs` \
-+       `pkg-config gtk+-2.0 --libs` -lpthread -lstdc++
++       `pkg-config gtk+-2.0 --libs` -lpthread -lstdc++ -lfaad -lmp4v2
  libmp4_la_SOURCES = libmp4.c mp4_utils.c aac_utils.c
