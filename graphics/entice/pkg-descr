@@ -1,0 +1,6 @@
+An image viewer written using some of the libraries being used for the
+development of Enlightenment 0.17.0 and later. It is intended to be simple and
+usable for viewing images or collections of them (for example - photo albums),
+be fast and look good.
+
+WWW: http://www.ny.us.rasterman.com/projects/entice/index.html

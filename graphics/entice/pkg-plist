@@ -1,0 +1,42 @@
+bin/entice
+share/entice/data/fonts/nationff.ttf
+share/entice/data/images/arrow_b.png
+share/entice/data/images/arrow_b.xcf
+share/entice/data/images/arrow_l.png
+share/entice/data/images/arrow_l.xcf
+share/entice/data/images/arrow_r.png
+share/entice/data/images/arrow_t.png
+share/entice/data/images/bg.png
+share/entice/data/images/bt.xcf
+share/entice/data/images/bt_close_1.png
+share/entice/data/images/bt_close_2.png
+share/entice/data/images/bt_expand_1.png
+share/entice/data/images/bt_expand_2.png
+share/entice/data/images/bt_full_1.png
+share/entice/data/images/bt_full_2.png
+share/entice/data/images/bt_next_1.png
+share/entice/data/images/bt_next_2.png
+share/entice/data/images/bt_prev_1.png
+share/entice/data/images/bt_prev_2.png
+share/entice/data/images/bt_zoom_in_1.png
+share/entice/data/images/bt_zoom_in_2.png
+share/entice/data/images/bt_zoom_normal_1.png
+share/entice/data/images/bt_zoom_normal_2.png
+share/entice/data/images/bt_zoom_out_1.png
+share/entice/data/images/bt_zoom_out_2.png
+share/entice/data/images/directory.png
+share/entice/data/images/list_arrow_d_1.png
+share/entice/data/images/list_arrow_d_1.xcf
+share/entice/data/images/list_arrow_d_2.png
+share/entice/data/images/list_arrow_u_1.png
+share/entice/data/images/list_arrow_u_1.xcf
+share/entice/data/images/list_arrow_u_2.png
+share/entice/data/images/list_sel.png
+share/entice/data/images/logo.png
+share/entice/data/images/mini_sel.png
+share/entice/data/images/panel.png
+share/entice/data/images/thumb.png
+@dirrm share/entice/data/fonts
+@dirrm share/entice/data/images
+@dirrm share/entice/data
+@dirrm share/entice

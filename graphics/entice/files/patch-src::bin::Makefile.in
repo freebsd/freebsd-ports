@@ -1,0 +1,11 @@
+--- src/bin/Makefile.in.orig	Tue Sep 25 11:13:52 2001
++++ src/bin/Makefile.in	Sun Oct  7 19:57:52 2001
+@@ -113,7 +113,7 @@
+ entice_SOURCES =  main.c
+ 
+ 
+-entice_LDADD = @imlib2_libs@ @evas_libs@ @edb_libs@ @ebits_libs@ @ecore_libs@ -lm -lc $(INTLLIBS)
++entice_LDADD = @imlib2_libs@ @evas_libs@ @edb_libs@ @ebits_libs@ @ecore_libs@ -lm $(INTLLIBS)
+ mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
+ CONFIG_HEADER = ../../config.h
+ CONFIG_CLEAN_FILES = 

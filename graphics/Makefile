@@ -36,6 +36,7 @@
     SUBDIR += electriceyes
     SUBDIR += enfle
     SUBDIR += enjoympeg
+    SUBDIR += entice
     SUBDIR += eog
     SUBDIR += eps2png
     SUBDIR += epstool
