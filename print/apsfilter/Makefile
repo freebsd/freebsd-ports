@@ -8,9 +8,9 @@
 PORTNAME=	apsfilter
 PORTVERSION=	5.4.2
 CATEGORIES=	print
-MASTER_SITES=	http://www.apsfilter.org/download/files/
-PATCH_SITES=	http://www.apsfilter.org/download/files/
-PATCHFILES=	diff-5.4.2-31.07.2000-22:50:44.gz
+MASTER_SITES=	http://www.apsfilter.org/download/
+PATCH_SITES=	http://www.apsfilter.org/download/
+PATCHFILES=	diff-5.4.2-09.08.2000-23:56:30.gz
 
 MAINTAINER=	andreas@FreeBSD.org
 
