@@ -1,5 +1,7 @@
 bin/coldsync
 lib/perl5/site_perl/%%PERL_VER%%/ColdSync.pm
+lib/perl5/site_perl/%%PERL_VER%%/ColdSync/SPC.pm
+@dirrm lib/perl5/site_perl/%%PERL_VER%%/ColdSync
 lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/ColdSync/.packlist
 @dirrm lib/perl5/site_perl/%%PERL_VER%%/%%PERL_ARCH%%/auto/ColdSync
 libexec/coldsync/send-mail
@@ -7,8 +9,5 @@ libexec/coldsync/todo-text
 @dirrm libexec/coldsync
 etc/sample.coldsync.rc
 @unexec install-info --delete %D/info/conduits.info %D/info/dir
-@unexec install-info --delete %D/info/pdb.info %D/info/dir
 info/conduits.info
-info/pdb.info
 @exec install-info %D/info/conduits.info %D/info/dir
-@exec install-info %D/info/pdb.info %D/info/dir
