@@ -44,6 +44,7 @@
 %%SITE_PERL%%/Net/SSH/Perl/Packet.pm
 %%SITE_PERL%%/Net/SSH/Perl/Channel.pm
 %%SITE_PERL%%/Net/SSH/Perl.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSH/Perl/.packlist
 @dirrm %%SITE_PERL%%/Net/SSH/Perl/Handle
 @dirrm %%SITE_PERL%%/Net/SSH/Perl/Util
 @dirrm %%SITE_PERL%%/Net/SSH/Perl/Auth
@@ -53,3 +54,7 @@
 @dirrm %%SITE_PERL%%/Net/SSH/Perl/Comp
 @dirrm %%SITE_PERL%%/Net/SSH/Perl
 @dirrm %%SITE_PERL%%/Net/SSH
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSH/Perl
+@unexec rmdir %D/%%SITE_PERL%%/Net 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/SSH 2>/dev/null || true
+@unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net 2>/dev/null || true
