@@ -3,7 +3,7 @@
 # Date created:		15 April 1998
 # Whom:			Taguchi Takeshi <taguchi@tohoku.iij.ad.jp>
 #
-# $Id: Makefile,v 1.12 1999/01/02 19:11:10 sada Exp $
+# $Id: Makefile,v 1.13 1999/01/03 18:49:57 sada Exp $
 #
 
 DISTNAME=	xc
@@ -24,7 +24,7 @@ PATCHFILES=	xtt11-to-pl00.diff.gz xtt11pl00-to-pl01.diff.gz \
 MAINTAINER=	taguchi@tohoku.iij.ad.jp
 
 LIB_DEPENDS=	ttf.3:${PORTSDIR}/print/freetype
-#RUN_DEPENDS+=	mkttfdir:${PORTSDIR}/print/perlftlib
+RUN_DEPENDS+=	mkttfdir:${PORTSDIR}/print/perlftlib
 
 .if !defined(USE_SHARED_WRKSRC) && defined(COMPILE_ALL_SERVERS_AT_ONCE)
 USE_SHARED_WRKSRC= YES
