@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	docproj
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	textproc
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -18,7 +18,8 @@ RUN_DEPENDS=	instant:${PORTSDIR}/textproc/sgmlformat \
 		${PREFIX}/share/sgml/docbook/dsssl/modular:${PORTSDIR}/textproc/dsssl-docbook-modular \
 		${PREFIX}/share/sgml/html/catalog:${PORTSDIR}/textproc/html \
 		${PREFIX}/share/sgml/linuxdoc:${PORTSDIR}/textproc/linuxdoc \
-		${PREFIX}/share/sgml/docbook/catalog:${PORTSDIR}/textproc/docbook \
+		${PREFIX}/share/sgml/docbook/3.1/docbook.dtd:${PORTSDIR}/textproc/docbook-310 \
+		${PREFIX}/share/sgml/docbook/4.1/docbook.dtd:${PORTSDIR}/textproc/docbook-410 \
 		${PREFIX}/share/sgml/iso8879:${PORTSDIR}/textproc/iso8879 \
 		${PREFIX}/bin/eps2png:${PORTSDIR}/graphics/eps2png \
 		${PREFIX}/bin/pngtopnm:${PORTSDIR}/graphics/netpbm
