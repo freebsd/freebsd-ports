@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	racc
-PORTVERSION=	1.3.7
+PORTVERSION=	1.3.8
 CATEGORIES=	devel ruby
 MASTER_SITES=	http://www1.u-netsurf.ne.jp/~brew/mine/soft/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -44,6 +44,7 @@ post-extract:
 	${RM} -rf ${WRKSRC}/ext
 	${PERL} -i -ne '/^raccrt\b/ || print' ${WRKSRC}/lib/PATHCONV
 	${RM} -rf ${WRKSRC}/lib/raccrt
+	${RM} -rf ${WRKSRC}/lib/racc/parser.rb
 .endif
 
 .if !defined(RUNTIME)
