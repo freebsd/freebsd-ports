@@ -1,0 +1,441 @@
+#
+# FreeBSD のためのパッチ
+#
+#
+diff -c old/calendar.c new/calendar.c
+*** old/calendar.c	Sun Jun 23 06:16:58 1996
+--- new/calendar.c	Sun Jun 23 07:39:54 1996
+***************
+*** 37,43 ****
+  #include "common.h"
+  #include "config.h"
+  #include "getfile.h"
+! #include "getopt.h"
+  #include "getsb.h"
+  #include "kyureki.h"
+  #include "main.h"
+--- 37,45 ----
+  #include "common.h"
+  #include "config.h"
+  #include "getfile.h"
+! #ifndef __FreeBSD__
+!   #include "getopt.h"
+! #endif
+  #include "getsb.h"
+  #include "kyureki.h"
+  #include "main.h"
+***************
+*** 960,966 ****
+--- 962,972 ----
+  /*
+   * エラーによるプログラム中断処理
+   */
++ #ifndef __FreeBSD__
+  void	terminate_program(int sig, int subcode)
++ #else
++ void	terminate_program(int sig)
++ #endif
+  {
+  	switch (sig) {
+  	case TERM_MEMERROR:
+diff -c old/common.h new/common.h
+*** old/common.h	Sun Jun 23 06:17:24 1996
+--- new/common.h	Sun Jun 23 06:07:18 1996
+***************
+*** 32,38 ****
+  #define	MAXWIDTH	96			/* main.c */
+  #define	MAXFNAMEBUF	23			/* misc.c 最大ファイル名 + '\0' */
+  #define	MAXPATHNAME	100			/* main.c, pager.c */
+! #define	BIG_ENDIAN				/* kyureki.c */
+  #define	BITFIELD_USE_UNSIGNED_INT		/* kyureki.c */
+  #define	OPEN_OPT	(O_RDONLY | O_BINARY)	/* kyureki.c */
+  #define	UNDERLINE	((int)'_')		/* misc.c */
+--- 32,38 ----
+  #define	MAXWIDTH	96			/* main.c */
+  #define	MAXFNAMEBUF	23			/* misc.c 最大ファイル名 + '\0' */
+  #define	MAXPATHNAME	100			/* main.c, pager.c */
+! #define	_BIG_ENDIAN				/* kyureki.c */
+  #define	BITFIELD_USE_UNSIGNED_INT		/* kyureki.c */
+  #define	OPEN_OPT	(O_RDONLY | O_BINARY)	/* kyureki.c */
+  #define	UNDERLINE	((int)'_')		/* misc.c */
+***************
+*** 69,75 ****
+  #define	MAXWIDTH	80			/* main.c */
+  #define	MAXFNAMEBUF	13			/* misc.c 最大ファイル名 + '\0' */
+  #define	MAXPATHNAME	90			/* main.c, pager.c */
+! #define	LITTLE_ENDIAN				/* kyureki.c */
+  #if defined(LSI_C)
+  #define	BITFIELD_USE_UNSIGNED_INT		/* kyureki.c */
+  #endif
+--- 69,75 ----
+  #define	MAXWIDTH	80			/* main.c */
+  #define	MAXFNAMEBUF	13			/* misc.c 最大ファイル名 + '\0' */
+  #define	MAXPATHNAME	90			/* main.c, pager.c */
+! #define	_LITTLE_ENDIAN				/* kyureki.c */
+  #if defined(LSI_C)
+  #define	BITFIELD_USE_UNSIGNED_INT		/* kyureki.c */
+  #endif
+***************
+*** 117,123 ****
+  #define	MAXWIDTH	80			/* main.c */
+  #define	MAXFNAMEBUF	256			/* misc.c 4.3BSD 最大ファイル名 + '\0' */
+  #define	MAXPATHNAME	1024			/* main.c, pager.c */
+! #define	BIG_ENDIAN				/* kyureki.c */
+  #define	OPEN_OPT	(O_RDONLY)		/* kyureki.c */
+  #define	UNDERLINE	((int)'_')		/* misc.c */
+  #define	OUTFILE_DEFAULT	"%y%m%d.today"		/* pager.c */
+--- 117,123 ----
+  #define	MAXWIDTH	80			/* main.c */
+  #define	MAXFNAMEBUF	256			/* misc.c 4.3BSD 最大ファイル名 + '\0' */
+  #define	MAXPATHNAME	1024			/* main.c, pager.c */
+! #define	_LITTLE_ENDIAN				/* kyureki.c */
+  #define	OPEN_OPT	(O_RDONLY)		/* kyureki.c */
+  #define	UNDERLINE	((int)'_')		/* misc.c */
+  #define	OUTFILE_DEFAULT	"%y%m%d.today"		/* pager.c */
+diff -c old/getfile.c new/getfile.c
+*** old/getfile.c	Sun Jun 23 06:17:04 1996
+--- new/getfile.c	Sun Jun 23 05:57:36 1996
+***************
+*** 11,16 ****
+--- 11,19 ----
+   *
+   */
+  
++ #ifdef __FreeBSD__
++   #include <unistd.h>
++ #endif
+  #include "common.h"
+  #include "getfile.h"
+  
+diff -c old/kyureki.c new/kyureki.c
+*** old/kyureki.c	Sun Jun 23 06:17:09 1996
+--- new/kyureki.c	Sun Jun 23 05:57:09 1996
+***************
+*** 11,16 ****
+--- 11,19 ----
+   *
+   */
+  
++ #ifdef __FreeBSD__
++   #include <unistd.h>
++ #endif
+  #include "common.h"
+  #include "main.h"
+  #include "getfile.h"
+***************
+*** 32,38 ****
+   * 処理系によっては 4bytes にならない場合がある。
+   * その様な時は、内蔵旧暦テーブルを使用する。
+   */
+! #ifdef BIG_ENDIAN
+  #ifdef BITFIELD_USE_UNSIGNED_INT
+  struct KYUREKI_T {
+  	unsigned char	year;
+--- 35,41 ----
+   * 処理系によっては 4bytes にならない場合がある。
+   * その様な時は、内蔵旧暦テーブルを使用する。
+   */
+! #ifdef _BIG_ENDIAN
+  #ifdef BITFIELD_USE_UNSIGNED_INT
+  struct KYUREKI_T {
+  	unsigned char	year;
+***************
+*** 55,61 ****
+  };
+  #endif
+  #endif
+! #ifdef LITTLE_ENDIAN
+  #ifdef BITFIELD_USE_UNSIGNED_INT
+  struct KYUREKI_T {
+  	unsigned char	year;
+--- 58,64 ----
+  };
+  #endif
+  #endif
+! #ifdef _LITTLE_ENDIAN
+  #ifdef BITFIELD_USE_UNSIGNED_INT
+  struct KYUREKI_T {
+  	unsigned char	year;
+diff -c old/main.c new/main.c
+*** old/main.c	Sun Jun 23 06:17:16 1996
+--- new/main.c	Sun Jun 23 06:28:20 1996
+***************
+*** 18,24 ****
+  #include "date.h"
+  #include "event.h"
+  #include "getfile.h"
+! #include "getopt.h"
+  #include "history.h"
+  #include "kyureki.h"
+  #include "machine.h"
+--- 18,26 ----
+  #include "date.h"
+  #include "event.h"
+  #include "getfile.h"
+! #ifndef __FreeBSD__
+!   #include "getopt.h"
+! #endif
+  #include "history.h"
+  #include "kyureki.h"
+  #include "machine.h"
+***************
+*** 726,732 ****
+--- 728,738 ----
+  /*
+   * インタラプトやエラーによるプログラム中断処理
+   */
++ #ifndef __FreeBSD__
+  void	terminate_program(int sig, int subcode)
++ #else
++ void	terminate_program(int sig)
++ #endif
+  {
+  	switch (sig) {
+  	case SIGINT:
+diff -c old/main.h new/main.h
+*** old/main.h	Sun Jun 23 06:17:29 1996
+--- new/main.h	Sun Jun 23 06:24:07 1996
+***************
+*** 119,122 ****
+--- 119,126 ----
+  #endif /* #ifndef INCLUDE_CALENDAR */
+  
+  extern	void	errprint(const char *func, int level, const char *fmt, ...);
++ #ifndef __FreeBSD__
+  extern	void	terminate_program(int sig, int subcode);
++ #else
++ extern	void	terminate_program(int sig);
++ #endif
+diff -c old/misc.c new/misc.c
+*** old/misc.c	Sun Jun 23 06:17:18 1996
+--- new/misc.c	Sun Jun 23 06:33:03 1996
+***************
+*** 11,22 ****
+   *
+   */
+  
+  #include "common.h"
+  #include "main.h"
+  #include "getfile.h"
+  #include "kyureki.h"
+  #include "misc.h"
+! 
+  #ifndef INCLUDE_CALENDAR
+  #define	JULIAN	1720994
+  #define	MONTH	30.6001
+--- 11,27 ----
+   *
+   */
+  
++ #ifdef __FreeBSD__
++   #include <unistd.h>
++ #endif
+  #include "common.h"
+  #include "main.h"
+  #include "getfile.h"
+  #include "kyureki.h"
+  #include "misc.h"
+! #ifdef __FreeBSD__
+!   #define strnicmp strncasecmp
+! #endif
+  #ifndef INCLUDE_CALENDAR
+  #define	JULIAN	1720994
+  #define	MONTH	30.6001
+***************
+*** 1105,1111 ****
+--- 1110,1120 ----
+  				sprintf(pbuf, "%06d", getpid() >> 4);
+  				pb = pbuf + strlen(pbuf) - 5;
+  #else /* #if defined(MSDOS) || defined(LSI_C) || defined(unix) */
++ #ifndef __FreeBSD__
+  				sprintf(pbuf, "%05d", getpid());
++ #else
++ 				sprintf(pbuf, "%05ld", getpid());
++ #endif
+  				pb = pbuf;
+  #endif
+  				for (i = 0; i < 5; i++) {
+***************
+*** 1280,1286 ****
+--- 1289,1299 ----
+  	buf = malloc(size);
+  	if (buf == NULL) {
+  		errprint("xmalloc", ERR_PANIC, "virtual memory exhausted, program stop.");
++ #ifndef __FreeBSD__
+  		terminate_program(TERM_MEMERROR, 0);
++ #else
++ 		terminate_program(TERM_MEMERROR);
++ #endif
+  	}
+  	return (buf);
+  }
+diff -c old/pager.c new/pager.c
+*** old/pager.c	Sun Jun 23 06:17:19 1996
+--- new/pager.c	Sun Jun 23 05:56:31 1996
+***************
+*** 11,16 ****
+--- 11,19 ----
+   *
+   */
+  
++ #ifdef __FreeBSD__
++   #include <unistd.h>
++ #endif
+  #include "common.h"
+  #include "main.h"
+  #include "getfile.h"	/* make_accesspath() */
+***************
+*** 34,40 ****
+  static	int	line_count;
+  static	FILE	*pager_fp = NULL;
+  
+! static	void	pause(void);
+  
+  /*
+   * TODAY 出力ファイルの作成
+--- 37,43 ----
+  static	int	line_count;
+  static	FILE	*pager_fp = NULL;
+  
+! static	void	_pause(void);
+  
+  /*
+   * TODAY 出力ファイルの作成
+***************
+*** 109,115 ****
+  	}
+  	if (pager_cmd == NULL) {
+  		if (pager_lastpause == YES) {
+! 			pause();
+  		}
+  	} else {
+  		sprintf(cmdbuf, "%s %s", pager_cmd, pager_file);
+--- 112,118 ----
+  	}
+  	if (pager_cmd == NULL) {
+  		if (pager_lastpause == YES) {
+! 			_pause();
+  		}
+  	} else {
+  		sprintf(cmdbuf, "%s %s", pager_cmd, pager_file);
+***************
+*** 168,174 ****
+--- 171,181 ----
+  		fputs(linebuffer, pager_fp);
+  		if (fputc('\n', pager_fp) == EOF) {
+  			errprint("pager_output", ERR_ERROR, "ファイル(%s)に出力できません errno = %d", pager_file, errno);
++ #ifndef __FreeBSD__
+  			terminate_program(TERM_FILEERROR, 0);
++ #else
++ 			terminate_program(TERM_FILEERROR);
++ #endif
+  		}
+  	}
+  	if (pager_cmd != NULL) {
+***************
+*** 181,187 ****
+  		line_count -= maxline;
+  		if (line_count <= 0) {
+  			line_count = screen_max_rows;
+! 			pause();
+  			line_count -= maxline;
+  		}
+  	}
+--- 188,194 ----
+  		line_count -= maxline;
+  		if (line_count <= 0) {
+  			line_count = screen_max_rows;
+! 			_pause();
+  			line_count -= maxline;
+  		}
+  	}
+***************
+*** 196,202 ****
+   *      それに、unix の環境なら外部ページャの方が良いと思う
+   */
+  static
+! void	pause(void)
+  {
+  #if defined(human68k) || defined(MSDOS) || defined(LSI_C)
+  	cprintf("\033[7m--- more ---\033[0m");
+--- 203,209 ----
+   *      それに、unix の環境なら外部ページャの方が良いと思う
+   */
+  static
+! void	_pause(void)
+  {
+  #if defined(human68k) || defined(MSDOS) || defined(LSI_C)
+  	cprintf("\033[7m--- more ---\033[0m");
+diff -c old/today.cnf new/today.cnf
+*** old/today.cnf	Sun Jun 23 09:50:19 1996
+--- new/today.cnf	Sun Jun 23 10:27:08 1996
+***************
+*** 214,220 ****
+  #
+  $common				# 以降 共通環境定義部
+  
+! #table_path = c:/tbl		# 各テーブルの検索パス名
+  				# ';' で区切り複数指定可能
+  				# 未定義の場合、環境変数 TODAYTBL の場所
+  
+--- 214,220 ----
+  #
+  $common				# 以降 共通環境定義部
+  
+! table_path = /usr/local/share/today	# 各テーブルの検索パス名
+  				# ';' で区切り複数指定可能
+  				# 未定義の場合、環境変数 TODAYTBL の場所
+  
+diff -c old/version.c new/version.c
+*** old/version.c	Sun Jun 23 06:17:23 1996
+--- new/version.c	Sun Jun 23 10:37:15 1996
+***************
+*** 28,33 ****
+--- 28,34 ----
+  const char	Version[] = "today " __DATE__ " version 2.10B (正式版)";
+  const char	RCSid[] ="$Id: version.c,v 1.1 1993/07/25 05:39:46 mori Exp $";
+  const char	UseLanguage[] =
++ #if !defined(TRANS)
+  #if defined(human68k)
+  #if defined(__GNUC__)
+  	"gcc version 1.00 Tool#1(68020) Based on 1.42";
+***************
+*** 47,53 ****
+  					/* by Sun-4/470 SunOS4.1.1+JLE1.1.1 */
+  #endif
+  #endif
+  
+  #ifdef TRANS
+! const char	Modify[] = "Modified for 機種名/OS名 by 移植者名";
+  #endif
+--- 48,57 ----
+  					/* by Sun-4/470 SunOS4.1.1+JLE1.1.1 */
+  #endif
+  #endif
++ #else
++         "gcc version 2.6.3";
++ #endif
+  
+  #ifdef TRANS
+! const char	Modify[] = "Modified for FreeBSD2.0.5R by pcs51674@asciinet.or.jp";
+  #endif
+diff -c old/version.h new/version.h
+*** old/version.h	Sun Jun 23 06:17:33 1996
+--- new/version.h	Sun Jun 23 10:08:17 1996
+***************
+*** 11,17 ****
+   *
+   */
+  
+! /*#define	TRANS*/		/* 他機種へ移植した場合 define する */
+  
+  extern	const char	Copyright[];
+  extern	const char	Version[];
+--- 11,17 ----
+   *
+   */
+  
+! #define	TRANS		/* 他機種へ移植した場合 define する */
+  
+  extern	const char	Copyright[];
+  extern	const char	Version[];
