@@ -1,0 +1,8 @@
+Kwiki::Atom - Kwiki Atom Plugin
+
+This Kwiki plugin provides Atom integration with Kwiki.
+
+For more info about this kind of integration, please 
+refer to http://www.xml.com/pub/a/2004/04/14/atomwiki.html.
+
+WWW: http://search.cpan.org/dist/Kwiki-Atom/
