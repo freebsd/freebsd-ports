@@ -16,9 +16,7 @@ MAINTAINER=	taoka@FreeBSD.org
 RUN_DEPENDS=	${PREFIX}/share/emacs/site-lisp/bitmap/bitmap.el:${PORTSDIR}/editors/bitmap-emacs20 \
 		${PREFIX}/share/emacs/site-lisp/lookup/lookup.el:${PORTSDIR}/japanese/lookup-mule
 
-EXTRACT_ONLY=	# empty
 NO_BUILD=	yes
-NO_CHECKSUM=	yes
 
 do-install:	# empty
 
