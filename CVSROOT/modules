@@ -947,6 +947,7 @@ cvsstat		ports/devel/cvsstat
 cvsup		ports/net/cvsup
 cvsup-devel	ports/net/cvsup-devel
 cvsup-mirror	ports/net/cvsup-mirror
+cvsup-without-gui	ports/net/cvsup-without-gui
 cvsupit		ports/net/cvsupit
 cvsutils	ports/devel/cvsutils
 cvsweb		ports/devel/cvsweb
