@@ -30,6 +30,41 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="35f6fdf8-a425-11d8-9c6d-0020ed76ef5a">
+    <topic>Cyrus IMAP pre-authentication heap overflow vulnerability</topic>
+    <affects>
+      <package>
+	<name>cyrus</name>
+	<range><lt>2.0.17</lt></range>
+	<range><ge>2.1</ge><lt>2.1.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>In December 2002, Timo Sirainen reported:</p>
+	<blockquote
+	  cite="http://marc.theaimsgroup.com/?l=bugtraq&amp;m=103886607825605">
+	  <p>Cyrus IMAP server has a a remotely exploitable pre-login
+	    buffer overflow. [...] Note that you don't have to log in
+	    before exploiting this, and since Cyrus
+	    runs everything under one UID, it's possible to read every
+	    user's mail in the system.</p>
+	</blockquote>
+	<p>It is unknown whether this vulnerability is exploitable for code
+	  execution on FreeBSD systems.</p>
+      </body>
+    </description>
+    <references>
+      <bid>6298</bid>
+      <url>http://marc.theaimsgroup.com/?l=bugtraq&amp;m=103886607825605</url>
+      <!-- <mlist msgid="20021202175606.GA26254@irccrew.org">http://marc.theaimsgroup.com/?l=bugtraq&amp;m=103886607825605</mlist> -->
+    </references>
+    <dates>
+      <discovery>2002-12-02</discovery>
+      <entry>2004-05-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5f29c2e4-9f6a-11d8-abbc-00e08110b673">
     <topic>exim buffer overflow when verify = header_syntax is used</topic>
     <affects>
