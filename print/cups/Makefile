@@ -12,10 +12,11 @@ MASTER_SITES=	# empty
 DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	jah4007@cs.rit.edu
+MAINTAINER=	ports@geeksrus.net
 
 LIB_DEPENDS?=	cups.2:${.CURDIR}/../../print/cups-base
-RUN_DEPENDS?=	${LOCALBASE}/sbin/cupsaddsmb:${.CURDIR}/../../print/cups-lpr
+RUN_DEPENDS?=	espgs:${.CURDIR}/../../print/cups-pstoraster \
+		${LOCALBASE}/sbin/cupsaddsmb:${.CURDIR}/../../print/cups-lpr
 
 NO_BUILD=	true
 do-install:	# empty
