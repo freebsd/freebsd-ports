@@ -740,7 +740,7 @@ MASTER_SITE_SOURCEFORGE+= \
 
 # official sf.net mirrors that don't mirror all projects, check
 # http://prdownloads.sourceforge.net/%SUBDIR%/
-.for mirror in easynews cesnet switch puzzle ovh # keihanna is mostly unreachable
+.for mirror in easynews switch puzzle ovh # keihanna is mostly unreachable
 MASTER_SITE_SOURCEFORGE_EXTENDED+= \
 	http://${mirror}.dl.sourceforge.net/sourceforge/%SUBDIR%/
 .endfor
