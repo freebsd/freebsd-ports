@@ -1,0 +1,5 @@
+--------------------------------------------------------------------------------
+You have installed geheimnis, a KDE GnuPG/PGP shell.  In order to use this
+utility, you must either have GnuPG or PGP installed.  If you are unsure,
+install GnuPG by typing ``cd /usr/ports/security/gnupg && make install''. 
+--------------------------------------------------------------------------------

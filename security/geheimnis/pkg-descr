@@ -1,0 +1,6 @@
+Geheimnis is a KDE application that "wraps" around encryption programs
+and their irksome command-line interface, making it easier for users
+to use these programs. It is made in the style of Win31's PGP Shells
+that were GUI-based wrappers around PGP2.
+
+WWW: http://geheimnis.sourceforge.net/
