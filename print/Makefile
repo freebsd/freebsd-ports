@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.51 1997/11/25 23:59:51 asami Exp $
+# $Id: Makefile,v 1.52 1997/12/14 00:58:08 asami Exp $
 #
 
 # the reversed ordering of a2ps43 and a2ps is intentional -- this
@@ -19,6 +19,7 @@
     SUBDIR += dvips2ascii
     SUBDIR += dviselect
     SUBDIR += enscript
+    SUBDIR += freetype
     SUBDIR += ghostscript
     SUBDIR += ghostscript3
     SUBDIR += ghostscript4
