@@ -1,5 +1,5 @@
---- Makefile.orig	Sat Dec 18 22:20:02 1999
-+++ Makefile	Sun Feb  6 00:16:45 2000
+--- Makefile.orig	Sun Dec 19 04:20:02 1999
++++ Makefile	Thu Nov  9 05:47:33 2000
 @@ -625,14 +625,14 @@
  CCOPT= ${DEBUG} ${NO_SHARED}
  CCMISC=
@@ -26,3 +26,11 @@
  
  libcalc.a: ${LIBOBJS} ${MAKE_FILE}
  	-rm -f libcalc.a
+@@ -1200,6 +1200,7 @@
+ 	${Q}echo '' >> endian_calc.h
+ 	${Q}echo '' >> endian_calc.h
+ 	${Q}echo '/* what byte order are we? */' >> endian_calc.h
++	${Q}echo '#include <sys/types.h>' >> endian_calc.h
+ 	-${Q}if [ X"${BYTE_ORDER}" = X ]; then \
+ 	    if [ -f /usr/include/endian.h ]; then \
+ 		echo '#include <endian.h>' >> endian_calc.h; \
