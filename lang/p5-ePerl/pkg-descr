@@ -6,8 +6,6 @@
                          
   ePerl -- Embedded Perl 5 Language
 
-  Version 2.2.8 (17-11-1997)
-
   ePerl interprets an ASCII file bristled with Perl 5 program statements by
   evaluating the Perl 5 code while passing through the plain ASCII data. It
   can operate in various ways: As a stand-alone Unix filter or integrated Perl
