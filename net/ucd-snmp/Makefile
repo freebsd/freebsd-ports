@@ -3,7 +3,7 @@
 # Date created:				26 June 1996
 # Whom:					gpalmer
 #
-# $Id: Makefile,v 1.13 1997/07/03 04:58:40 fenner Exp $
+# $Id: Makefile,v 1.14 1997/11/22 01:27:13 asami Exp $
 #
 
 DISTNAME=	ucd-snmp-3.2
@@ -12,7 +12,6 @@ MASTER_SITES= 	ftp://ftp.ece.ucdavis.edu/pub/snmp/
 
 MAINTAINER=	gpalmer@FreeBSD.ORG
 
-BROKEN=		struct ifqueue
 GNU_CONFIGURE=	yes
 .if defined(PACKAGE_BUILDING)
 CONFIGURE_ARGS=	--with-defaults --with-sys-contact=nobody@no.where
