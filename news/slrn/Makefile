@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	slrn
-PORTVERSION=	0.9.7.3
-PORTREVISION=	1
+PORTVERSION=	0.9.7.4
 CATEGORIES=	news ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE} \
 		ftp://ftp.rge.com/pub/usenet/readers/unix/slrn/ \
-		ftp://angel.sovam.com/pub/tools/net/news/
+		ftp://angel.sovam.com/pub/tools/net/news/ \
+		ftp://ftp.fu-berlin.de/pub/unix/news/slrn/ \
+		ftp://ftp.ntua.gr/pub/lang/slang/slrn/ \
+		ftp://ftp.plig.org/pub/slrn/
+		
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	petef@FreeBSD.org
