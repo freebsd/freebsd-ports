@@ -1,6 +1,6 @@
---- doc/Makefile.in.orig	Fri Nov  9 02:17:35 2001
-+++ doc/Makefile.in	Fri Nov  9 02:17:43 2001
-@@ -118,7 +118,6 @@
+--- doc/Makefile.in.orig	Fri Dec 21 01:38:31 2001
++++ doc/Makefile.in	Fri Dec 21 01:38:52 2001
+@@ -125,7 +125,6 @@
  EXTRA_DIST = \
  	CodingStyle \
  	FAQ \

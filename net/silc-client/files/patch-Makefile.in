@@ -1,6 +1,6 @@
---- Makefile.in.orig	Fri Nov  2 22:58:36 2001
-+++ Makefile.in	Mon Nov 12 23:14:54 2001
-@@ -145,9 +145,9 @@
+--- Makefile.in.orig	Fri Dec 21 01:34:43 2001
++++ Makefile.in	Fri Dec 21 01:37:48 2001
+@@ -151,9 +151,9 @@
  
  AUTOMAKE_OPTIONS = 1.0 no-dependencies foreign
  
@@ -13,7 +13,7 @@
  
  #
  # INCLUDE defines
-@@ -512,10 +512,7 @@
+@@ -529,10 +529,7 @@
  
  install-dirs:
  	-mkdir -p $(etcdir)
@@ -24,8 +24,8 @@
  
  generate-server-key:
  	-@if test '!' -f $(etcdir)/silcd.pub ; then \
-@@ -538,18 +535,13 @@
- 	$(INSTALL_DATA) $(srcdir)/TODO $(docdir)/
+@@ -561,18 +558,13 @@
+ 	$(INSTALL_DATA) $(srcdir)/doc/examples/cell* $(docdir)/examples/
  
  etc-install:
 -	-@if test '!' -f $(etcdir)/silcd.conf ; then \
@@ -40,7 +40,7 @@
  	fi
  
 -@SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs sim-install doc-install etc-install
--@SILC_DIST_CLIENT_FALSE@install-data-hook: install-dirs generate-server-key sim-install doc-install etc-install
+-@SILC_DIST_CLIENT_FALSE@install-data-hook: install-dirs generate-server-key sim-install doc-install examples-install etc-install
 +@SILC_DIST_CLIENT_TRUE@install-data-hook: install-dirs etc-install
 +@SILC_DIST_CLIENT_FALSE@install-data-hook: install-dirs generate-server-key etc-install
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
