@@ -27,9 +27,9 @@ REPERTOIRE_MAP=	${LINUXBASE}/usr/share/i18n/repertoiremaps/charids.894
 LCDEF_CMD=	${LINUXBASE}/usr/bin/localedef
 LCDEF_ARGS=	--repertoire-map=${REPERTOIRE_MAP} \
 		-c -f ${CHARMAPS} -i ${SRCDEF}
-LCDIR=		${PREFIX}/usr/share/locale/ja_JP
-COMPAT_LC=	${PREFIX}/usr/share/locale/ja_JP.EUC
-DOCDIR=		${PREFIX}/usr/doc/locale-ja-${VERSION}
+LCDIR=		${LINUXBASE}/usr/share/locale/ja_JP
+COMPAT_LC=	${LINUXBASE}/usr/share/locale/ja_JP.EUC
+DOCDIR=		${LINUXBASE}/usr/doc/locale-ja-${VERSION}
 
 LOCALE_ADD=	ja_JP.EUC
 LOCALE_DEF_ja_JP.EUC=	ja_JP.eucJP
@@ -38,8 +38,8 @@ LOCALE_DEF_ja_JP.EUC=	ja_JP.eucJP
 
 LOCALE_GREP=	${GREP} -q
 .for locale in ${LOCALE_ADD}
-LOCALE_ALIASES!=	${ECHO} ${LOCALE_ALIASES} ${locale}:${LOCALE_DEF_${locale}}
-LOCALE_GREP!=	${ECHO} "${LOCALE_GREP} -e '^${locale}'"
+LOCALE_ALIASES!=	${ECHO_CMD} ${LOCALE_ALIASES} ${locale}:${LOCALE_DEF_${locale}}
+LOCALE_GREP!=	${ECHO_CMD} "${LOCALE_GREP} -e '^${locale}'"
 .endfor
 PLIST_SUB+=	LOCALE_ALIASES="${LOCALE_ALIASES}" LOCALE_GREP="${LOCALE_GREP}"
 
@@ -56,9 +56,13 @@ do-install:
 	${LN} -sf ja_JP ${COMPAT_LC}
 	${MKDIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/debian/* ${DOCDIR}
+	if [ ! -f ${LINUXBASE}/usr/share/locale/locale.alias.orig ]; then \
+		${CP} -p ${LINUXBASE}/usr/share/locale/locale.alias \
+			 ${LINUXBASE}/usr/share/locale/locale.alias.orig \
+	fi
 .for locale in ${LOCALE_ADD}
 	${GREP} -q -e ^${locale} ${LINUXBASE}/usr/share/locale/locale.alias \
-	 || ${ECHO} "${locale}	${LOCALE_DEF_${locale}}" \
+	 || ${ECHO_CMD} "${locale}	${LOCALE_DEF_${locale}}" \
 		>> ${LINUXBASE}/usr/share/locale/locale.alias
 .endfor
 
