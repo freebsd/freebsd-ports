@@ -1,0 +1,7 @@
+An OO interface to POE::Component::IRC with facilities to dispatch the
+same method to multiple objects.
+
+WWW: http://search.cpan.org/search?dist=POE-Component-IRC-Object
+
+-- Sergey Skvortsov
+skv@FreeBSD.org

@@ -31,6 +31,7 @@
     SUBDIR += olirc
     SUBDIR += p5-IRC
     SUBDIR += p5-POE-Component-IRC
+    SUBDIR += p5-POE-Component-IRC-Object
     SUBDIR += party
     SUBDIR += pircbot
     SUBDIR += pisg
