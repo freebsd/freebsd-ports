@@ -119,6 +119,7 @@
     SUBDIR += qmail
     SUBDIR += qmail-contrib
     SUBDIR += qmail-ldap
+    SUBDIR += qmail-tls
     SUBDIR += qmailadmin
     SUBDIR += qmailanalog
     SUBDIR += qpopper
