@@ -1,0 +1,1 @@
+CC_OPTIONS:	"-I%%LOCALBASE%%/include -I%%X11BASE%%/include -I%%LOCALBASE%%/include/tcl8.3 -I%%LOCALBASE%%/include/tk8.3 ";

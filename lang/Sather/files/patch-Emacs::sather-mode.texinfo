@@ -1,0 +1,19 @@
+--- Emacs/sather-mode.texinfo.orig	Wed Nov  3 22:09:35 1999
++++ Emacs/sather-mode.texinfo	Thu May  2 22:00:14 2002
+@@ -5,7 +5,16 @@
+ @setchapternewpage off
+ @c %**end of header
+ 
++
+ @ifinfo
++@format
++INFO-DIR-SECTION Sather
++START-INFO-DIR-ENTRY
++* sather-mode: (sather-mode).
++			The Sather Emacs Programming Environment.
++END-INFO-DIR-ENTRY
++@end format
++
+ This file describes the Emacs editing environment for the Sather
+ language.
+ 

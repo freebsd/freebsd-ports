@@ -1,0 +1,7 @@
+all:
+clean:
+test:
+boot:
+	ln -s `pwd`/header.h ../BOOT
+	$(MAKE) -C $(SATHER_HOME)/Boot/sacomp.code CC=$(CC)
+	rm -f ../BOOT/header.h

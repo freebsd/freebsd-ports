@@ -1,0 +1,16 @@
+--- Emacs/sather.texinfo.orig	Sun Jul 25 17:23:34 1999
++++ Emacs/sather.texinfo	Thu May  2 22:01:13 2002
+@@ -9,6 +9,13 @@
+ @c %**end of header
+ 
+ @ifinfo
++@format
++INFO-DIR-SECTION Sather
++START-INFO-DIR-ENTRY
++* sather: (sather).	The Sather Specification.
++END-INFO-DIR-ENTRY
++@end format
++
+ This file describes the Sather language.
+ 
+ Copyright (C) 1995 by International Computer Science Institute

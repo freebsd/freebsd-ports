@@ -1,0 +1,11 @@
+--- Library/System/unix.sa.orig	Wed Oct 13 13:34:47 1999
++++ Library/System/unix.sa
+@@ -20,7 +20,7 @@
+    sather_home: STR is
+       r ::= get_env("SATHER_HOME");
+       if void(r) then 
+-	 r := "/usr/lib/sather";
++	 r := "%%PREFIX%%/lib/sather";
+       end;
+ 	 if r[r.size-1] = '/' then
+ 	    raise "Environment variable SATHER_HOME should not end with /";

@@ -1,5 +1,5 @@
 --- System/Common/CONFIG.proto.orig	Thu Nov  4 03:48:17 1999
-+++ System/Common/CONFIG.proto	Wed Feb  2 20:25:35 2000
++++ System/Common/CONFIG.proto	Fri Oct 11 10:15:05 2002
 @@ -23,12 +23,12 @@
  ZONES:			false;
  TRACE:			false;
@@ -8,7 +8,7 @@
 -C_COMPILER:		"gcc ";
 -CC_OPTIONS:		"";
 -GC_LINK:		"-lgc";
-+VERSION:		"1.2.1";
++VERSION:		"%%VERSION%%";
 +C_COMPILER:		"%%CC%% ";
 +CC_OPTIONS:		"-I%%LOCALBASE%%/include";
 +GC_LINK:		"-lgc -L%%LOCALBASE%%/lib";
@@ -18,7 +18,7 @@
  OBJECT_EXT:		".o";
  LIB_EXT:		".a";
  C_EXT:			".c";
-@@ -38,7 +38,7 @@
+@@ -38,11 +38,11 @@
  SEPARATE_POINTERS:	false;
  PSATHER_FLAG:		"","";
  CC_DEBUG_FLAG:		"","-g";
@@ -26,4 +26,9 @@
 +CC_OPTIMIZE_FLAG:	"","%%CFLAGS%%";
  CC_PROLIX_FLAG:		"",""; -- passed to the C compiler (prolix implies verbose)
  MAKE_VERBOSE_FLAG:	"-s","-s"; -- passed to make
+ 
+-FORTRAN_APPEND_UNDERSCORE:	"false";
++FORTRAN_APPEND_UNDERSCORE:	"true";
+ FORTRAN_PREFIX_UNDERSCORE:	"false";
+ FORTRAN_BIND_FUNC:		"true";
  

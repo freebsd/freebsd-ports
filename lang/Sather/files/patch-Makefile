@@ -1,0 +1,22 @@
+--- Makefile.orig	Thu Nov  4 17:04:28 1999
++++ Makefile	Fri Oct 11 10:13:26 2002
+@@ -30,8 +30,8 @@
+ LN=ln -s
+ CP=cp
+ 
+-CPP=/lib/cpp -C -P
+-CC=gcc
++CPP=/usr/bin/cpp -C -P
++CC?=cc
+ EXEC_SUFFIX=
+ # CC is only used for bootstrapping, check System/Common/CONFIG.proto if
+ # you want to change it for all Sather compilations
+@@ -90,7 +90,7 @@
+ # The platform to use if not overridden by a -<platform> option
+ # or the SATHER_PLATFORM environment variable
+ # Should be edited for a particular system
+-DEFAULT_PLATFORM=unix
++DEFAULT_PLATFORM=freebsd
+ 
+ # The platform used to compile the boot compiler. Usually just default, but has to
+ # be one of: freebsd, hpux_at, iris-4, linux, osf_at, solaris, solaris_at, unix,
