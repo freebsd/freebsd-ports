@@ -25,6 +25,7 @@ LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 .endif
 
 NO_BUILD=	YES
+PHP_PORT?=	www/mod_php4-twig
 PHP4_PORT?=	www/mod_php4-twig
 PHP3_PORT?=	www/mod_php3
 TWIG?=		www/data-dist/twig
