@@ -4845,6 +4845,7 @@ p5-Date-Calc	ports/devel/p5-Date-Calc
 p5-Date-DayOfWeek	ports/devel/p5-Date-DayOfWeek
 p5-Date-Handler	ports/math/p5-Date-Handler
 p5-Date-ICal	ports/devel/p5-Date-ICal
+p5-Date-ISO	ports/devel/p5-Date-ISO
 p5-Date-Leapyear	ports/devel/p5-Date-Leapyear
 p5-Date-Manip	ports/devel/p5-Date-Manip
 p5-Date-Pcalc	ports/devel/p5-Date-Pcalc
