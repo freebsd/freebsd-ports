@@ -20,6 +20,7 @@ LIB_DEPENDS=	iconv.3:${PORTSDIR}/converters/libiconv \
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+USE_GCC=	2.95
 
 # In clisp-2.28, the build dies in the "regexp" module: the build target
 # invokes a configure script, which encounters a different CC variable than
