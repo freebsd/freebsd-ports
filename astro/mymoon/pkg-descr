@@ -1,9 +1,9 @@
-Mymoon is a tool which stands onscreen using ncurses, and
-prints for the given latitude and longitude:
+Mymoon is an ncurses-based tool that presents for the given latitude
+and longitude a continually updated display of:
 
 - Percentage of Moon's surface illumination 
-- Distance between Moon & Earth
-- Moon set & Moon rise
+- Distance between Moon and Earth
+- Moon set and Moon rise
 - Moon age
 
 WWW: http://makemebad.net/geek/codes/
