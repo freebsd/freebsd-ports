@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	tinyca
-PORTVERSION=	0.6.6
+PORTVERSION=	0.6.7
 CATEGORIES=	security net
 MASTER_SITES=	http://tinyca.sm-zone.net/ \
 		http://tinyca.sm-zone.net/old/
 
-MAINTAINER=	Janos.Mohacsi@bsd.hu
+MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Simple graphical interface to manage a small Certification Authority
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gnome.pm:${PORTSDIR}/x11-toolkits/p5-Gnome \
@@ -19,6 +19,7 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gnome.pm:${PORTSDIR}/x11-toolkits/p5-Gnom
 		zip:${PORTSDIR}/archivers/zip \
 		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
+USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_OPENSSL=	yes
 NO_BUILD=	yes
@@ -35,7 +36,7 @@ do-install:
 .for file in ${LIB2_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/lib/GUI/${file} ${SITE_PERL}/${PORTNAME}/GUI
 .endfor
-	@${INSTALL_DATA} ${WRKSRC}/templates/openssl.cnf ${PREFIX}/etc/tinyca.cnf
+	@${INSTALL_DATA} ${WRKSRC}/templates/openssl.cnf ${PREFIX}/etc/tinyca.cnf.sample
 	@${SED} -e "s:%%PREFIX%%:${PREFIX}:g" -e "s:%%SITE_PERL%%:${SITE_PERL}:g" \
 		${WRKSRC}/tinyca >${WRKSRC}/tinyca.new
 	@${INSTALL_SCRIPT} ${WRKSRC}/tinyca.new ${PREFIX}/bin/tinyca
