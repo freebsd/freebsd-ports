@@ -1,37 +1,41 @@
-bin/wmxmms
 bin/xmms
+bin/wmxmms
+bin/xmms-config
 include/xmms/configfile.h
-include/xmms/dirbrowser.h
-include/xmms/plugin.h
-include/xmms/util.h
 include/xmms/xmmsctrl.h
-lib/libxmms.a
-lib/libxmms.la
-lib/libxmms.so.9
+include/xmms/dirbrowser.h
+include/xmms/util.h
+include/xmms/fullscreen.h
+include/xmms/dga.h
+include/xmms/plugin.h
+lib/libxmms.so.1
 @exec ln -fs %D/%F %B/libxmms.so
+@exec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -m %D/lib
 @unexec rm -f %B/libxmms.so
-lib/xmms/Effect/libecho.so
-lib/xmms/Effect/libsrndecho.so
-lib/xmms/Effect/libstereo.so
-lib/xmms/Effect/libvoice.so
-lib/xmms/General/libir.so
-lib/xmms/General/libsong_change.so
-lib/xmms/Input/libcdaudio.so
-lib/xmms/Input/libidcin.so
-lib/xmms/Input/libmikmod.so
-lib/xmms/Input/libmpg123.so
-lib/xmms/Input/libwav.so
+@unexec /usr/bin/env OBJFORMAT=%%PORTOBJFORMAT%% /sbin/ldconfig -R
 lib/xmms/Output/libOSS.so
 lib/xmms/Output/libdisk_writer.so
-lib/xmms/Output/libesdout.so
+lib/xmms/Input/libwav.so
+lib/xmms/Input/libmpg123.so
+lib/xmms/Input/libcdaudio.so
+lib/xmms/Input/libidcin.so
+lib/xmms/Effect/libvoice.so
+lib/xmms/Effect/libecho.so
+lib/xmms/Effect/libstereo.so
+lib/xmms/Effect/libsrndecho.so
+lib/xmms/General/libir.so
+lib/xmms/General/libsong_change.so
 lib/xmms/Visualization/libbscope.so
 lib/xmms/Visualization/libsanalyzer.so
+lib/libxmms.la
+lib/libxmms.a
+share/aclocal/xmms.m4
 share/xmms/wmxmms.xpm
 @dirrm include/xmms
+@dirrm lib/xmms/Output
+@dirrm lib/xmms/Input
 @dirrm lib/xmms/Effect
 @dirrm lib/xmms/General
-@dirrm lib/xmms/Input
-@dirrm lib/xmms/Output
 @dirrm lib/xmms/Visualization
 @dirrm lib/xmms
 @dirrm share/xmms
