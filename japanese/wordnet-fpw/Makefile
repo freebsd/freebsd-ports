@@ -7,7 +7,7 @@
 
 PORTNAME=	wordnet-fpw
 PORTVERSION=	${WN_VER}.${WNFPW_VER}
-PORTREVISION=	1
+PORTREVISION=	0
 CATEGORIES=	japanese
 MASTER_SITES=	http://openlab.ring.gr.jp/edict/fpw/dist/wordnet/
 DISTNAME=	wordnet-${WN_VER}-fpw${WNFPW_VER}
@@ -19,7 +19,7 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/wordnet
 EXTRACT_BEFORE_ARGS=	-qL
-WNFPW_VER=	1.1.2
+WNFPW_VER=	1.1.3
 WN_VER=		1.6
 
 
