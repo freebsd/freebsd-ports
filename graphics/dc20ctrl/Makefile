@@ -13,6 +13,8 @@ MASTER_SITES=   http://www.paternostro.org/~ugo/binaries/
 
 MAINTAINER=	ports@FreeBSD.org
 
+BROKEN=		"Installation fails"
+
 LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		png.5:${PORTSDIR}/graphics/png
