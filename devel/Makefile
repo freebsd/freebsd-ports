@@ -868,6 +868,7 @@
     SUBDIR += p5-Module-Info
     SUBDIR += p5-Module-Info-File
     SUBDIR += p5-Module-Pluggable
+    SUBDIR += p5-Module-Pluggable-Ordered
     SUBDIR += p5-Module-Reload
     SUBDIR += p5-Module-ScanDeps
     SUBDIR += p5-Module-Versions-Report
