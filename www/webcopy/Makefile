@@ -3,7 +3,7 @@
 # Date created:         14 Sep 1996
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.5 1996/11/18 11:42:14 asami Exp $
+# $Id: Makefile,v 1.6 1996/12/07 09:28:48 max Exp $
 #
 
 # WWW site: http://www.inf.utfsm.cl/~vparada/webcopy.html
@@ -21,5 +21,8 @@ ALL_TARGET=
 
 do-install:
 	cd ${WRKSRC}; ${INSTALL_SCRIPT} webcopy ${PREFIX}/bin
+	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} -m 755 \
+		${PREFIX}/share/doc/webcopy
+	cd ${WRKSRC}; ${INSTALL_DATA} webcopy.html ${PREFIX}/share/doc/webcopy
 
 .include <bsd.port.mk>
