@@ -6,37 +6,37 @@
 #
 
 PORTNAME=	xtem
-PORTVERSION=	7.00
+PORTVERSION=	8.00
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.iwd.uni-bremen.de/pub/tex/xtem.v7/
-DISTFILES=	xtem_texmenu.${PORTVERSION}.tar.gz
+MASTER_SITES=	ftp://ftp.iwd.uni-bremen.de/pub/tex/xtem.v8/
+DISTNAME=	${PORTNAME}_texmenu.${PORTVERSION}
 
-MAINTAINER=     ports@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 
-RUN_DEPENDS=	wishx:${PORTSDIR}/lang/tclX80
+RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 .if defined(BUILD_IT_ALL)
 RUN_DEPENDS+=	gv:${PORTSDIR}/print/gv \
 		tex:${PORTSDIR}/print/teTeX
 .endif
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 MAN1=		hyphen_show.1 xtem.1
 
-pre-extract:
+pre-everything:
 	@${CAT} ${FILESDIR}/makemsg.txt
 
 post-extract:
 	@${CP} ${FILESDIR}/Makefile ${FILESDIR}/exclude-list ${WRKSRC}
 
 post-patch:
-	@/usr/bin/perl -pi.bak -e "s|\@WISHX\@|${PREFIX}/bin/wishx|; \
-		s|\@TCLSH\@|${PREFIX}/bin/tclsh8.0|; \
-		s|\@XTEMPATH\@|${PREFIX}/share/xtem|" \
-		${WRKSRC}/xtem
+	@${PERL} -pi.bak -e \
+		"s|%%TCLSH%%|${PREFIX}/bin/tclsh8.2|g; \
+		 s|%%WISH%%|${PREFIX}/bin/wish8.2|g; \
+		 s|%%XTEMPATH%%|${PREFIX}/share/xtem|g" ${WRKSRC}/xtem
 
 post-install:
 	@${CP} ${FILESDIR}/xtem_locals_german/[a-z]* \
 		${PREFIX}/share/xtem_locals_german
-# clean up left-overs...
-	@${RM} -f ${PREFIX}/share/xtem_locals_*/.nfs*
 
 .include <bsd.port.mk>
