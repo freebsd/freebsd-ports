@@ -1,6 +1,6 @@
---- Makefile.orig	Wed Jan 15 18:46:08 1997
-+++ Makefile	Mon Mar 30 22:09:06 1998
-@@ -11,26 +11,23 @@
+--- Makefile.orig	Sun Aug 29 01:36:34 1999
++++ Makefile	Thu Sep  2 03:33:33 1999
+@@ -11,27 +11,26 @@
  #-----------------------------------------------------------------------
  
  SHELL=/bin/sh
@@ -11,16 +11,16 @@
 -CC			= gcc
 -SWITCHES	= -DNEED_INCREMENTAL_INDICATOR \
 - -DTMP_FILENAME_TEMPLATE="\"/tmp/lhXXXXXX\""
--#MACHINE     = -DSYSTIME_HAS_NO_TM -DFTIME -DEUC
--MACHINE     = -DSYSTIME_HAS_NO_TM -DEUC -DHAVE_TM_ZONE
--#OPTIMIZE	= -O2 -fstrength-reduce -fomit-frame-pointer -mv8
--#OPTIMIZE	= -O2 -fstrength-reduce -fomit-frame-pointer
--OPTIMIZE	= -O2 -fstrength-reduce -fomit-frame-pointer
--#OPTIMIZE	= -g
 +#CC			= gcc
-+SWITCHES	= -DNEED_INCREMENTAL_INDICATOR
-+MACHINE     = -DSYSTIME_HAS_NO_TM -DTIMELOCAL -DUSESTRCASECMP \
-+              -DSYSV_SYSTEM_DIR -DEUC
++SWITCHES	= -DNEED_INCREMENTAL_INDICATOR -DEUC -DSUPPORT_LH6
+ 
+ #MACHINE     = -DSYSTIME_HAS_NO_TM -DFTIME -DEUC
+ #MACHINE     = -DSYSTIME_HAS_NO_TM -DEUC -DHAVE_TM_ZONE -DSYSV_SYSTEM_DIR
+-MACHINE     = -DSYSTIME_HAS_NO_TM -DEUC -DSYSV_SYSTEM_DIR -DMKTIME
++MACHINE	= -DSYSTIME_HAS_NO_TM -DSYSV_SYSTEM_DIR -DMKTIME -DUSESTRCASECMP
+ 
+-#OPTIMIZE	= -O2 -fstrength-reduce -fomit-frame-pointer
+-OPTIMIZE	= -O2 -DSUPPORT_LH6
 +OPTIMIZE	= ${CFLAGS}
  
 -BINDIR = /usr/local/bin
