@@ -7,8 +7,9 @@
 
 PORTNAME=	PHPUnit2
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	devel www pear
-DISTNAME=	${PORTNAME}-${PORTVERSION}beta1
+DISTNAME=	${PORTNAME}-${PORTVERSION}beta3
 
 MAINTAINER=	antonio@php.net
 COMMENT=	Regression testing framework for unit tests
