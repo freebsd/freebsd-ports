@@ -28,16 +28,16 @@ rcvar=`set_rcvar`
 %%NAME%%_flags=${%%NAME%%_flags:-"-f /etc/mail/sendmail.cf unix:$%%NAME%%_chdir/socket"}
 
 command=%%PREFIX%%/sbin/milter-spamc
+command_args="&"
 required_dirs="$%%NAME%%_chdir"
 
-start_cmd=start_cmd
-start_cmd()
+start_precmd=start_precmd
+start_precmd()
 {
     if [ -s "$%%NAME%%_chdir/mutex" ]; then
 	ipcrm -s `cat $%%NAME%%_chdir/mutex`
     fi
     rm -f $%%NAME%%_chdir/{mutex,socket} $%%NAME%%_pidfile
-    cd $%%NAME%%_chdir && $command $%%NAME%%_flags >/dev/null &
 }
 
 load_rc_config $name
