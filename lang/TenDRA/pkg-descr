@@ -1,0 +1,14 @@
+TenDRA* is an optimizing C/C++ compiler, developed by the United
+Kingdom Defence Evaluation and Research Agency (DERA).
+
+A primary focus of the compiler is portability through conformance
+to standard APIs (ANSI, ISO, POSIX1, POSIX2, XPG3, XPG4, SVID3,
+UNIX95, among others).
+
+The compiler has strong static checking capabilities, including the
+ability to check programs for conformance to APIs which are not
+directly supported by system headers.
+
+-----
+* TenDRA is a registered trademark of the UK Defence Evaluation
+and Research Agency.
