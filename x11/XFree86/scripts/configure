@@ -230,7 +230,7 @@ else
   ELF=no
 fi
 
-if [ ${OSVERSION} -ge 300000 ]; then
+if [ ! `uname -r|grep ^2` ]; then
 cat <<'END'
 
  FreeBSD-3.x has support for Secure RPC.
