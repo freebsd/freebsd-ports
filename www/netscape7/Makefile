@@ -3,25 +3,24 @@
 # Date created:         24 Feb 1997
 # Whom:                 ache
 #
-# $Id: Makefile,v 1.3 1997/09/23 20:50:31 ache Exp $
+# $Id: Makefile,v 1.4 1998/06/10 12:19:28 jkh Exp $
 #
 
 DISTNAME=       linux-netscape-4.05
 CATEGORIES=	www
 MASTER_SITES=   ftp://ftp.netscape.com/pub/communicator/4.05/shipping/english/unix/linux12/base_install/
 DISTFILES=      communicator-v405-export.x86-unknown-linux1.2.tar.gz
-NO_BUILD=       Yes
+
+MAINTAINER=     ports@FreeBSD.ORG
 
 RUN_DEPENDS=    /compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_lib
 BUILD_DEPENDS=  /compat/linux/lib/ld.so:${PORTSDIR}/emulators/linux_lib
 
+WRKSRC=		${WRKDIR}/communicator-v405.x86-unknown-linux1.2
+NO_BUILD=       Yes
+
 NDIR=           ${PREFIX}/lib/netscape
 BINDIR=		${PREFIX}/bin
-
-MAINTAINER=     ports@FreeBSD.ORG
-WRKSRC=		${WRKDIR}/communicator-v405.x86-unknown-linux1.2
-
-RESTRICTED=	"Commercial software"
 
 do-install:
 	cd ${WRKSRC} && yes "" | \
