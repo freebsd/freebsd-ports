@@ -11590,6 +11590,7 @@ wmproxyper	ports/misc/wmproxyper
 wmpuzzle	ports/games/wmpuzzle
 wmq3		ports/net/wmq3
 wmqstat		ports/games/wmqstat
+wmquake		ports/games/wmquake
 wmrecord	ports/audio/wmrecord
 wmshuffle	ports/games/wmshuffle
 wmshutdown	ports/sysutils/wmshutdown
