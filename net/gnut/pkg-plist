@@ -1,0 +1,6 @@
+bin/gnut
+share/doc/gnut/README
+share/doc/gnut/TUTORIAL
+share/gnut/gnutrc.sample
+@dirrm share/doc/gnut/
+@dirrm share/gnut/

@@ -73,6 +73,7 @@
     SUBDIR += gnome-vnc
     SUBDIR += gnomenetwork
     SUBDIR += gnu-finger
+    SUBDIR += gnut
     SUBDIR += gopher
     SUBDIR += gtic
     SUBDIR += gtksamba
