@@ -7,6 +7,7 @@
 
 PORTNAME=	djbfft
 PORTVERSION=	0.76
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://cr.yp.to/djbfft/
 
@@ -15,12 +16,14 @@ COMMENT=	An extremely fast library for floating-point convolution
 
 NO_PACKAGE=	Forbidden - we have patches to the distribution.
 
-BROKEN=		"Changes permissions on /usr/local and /usr/local/lib"
-
 DISABLE_SIZE=	yes
 ALL_TARGET=
 INSTALL_TARGET=setup check
 USE_PERL5_BUILD=yes
+
+HEADER_FILES=	complex4.h complex8.h fftc4.h fftc8.h fftfreq.h \
+		fftr4.h fftr8.h real4.h real8.h
+LIB_FILES=	libdjbfft.a
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f -exec \
@@ -43,6 +46,14 @@ do-configure:
 
 pre-install:
 	@${MKDIR} ${PREFIX}/include/${PORTNAME}
+
+do-install:
+.for file in ${HEADER_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${LOCALBASE}/include/${PORTNAME}
+.endfor
+.for file in ${LIB_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${file} ${LOCALBASE}/lib
+.endfor
 
 .include <bsd.port.pre.mk>
 
