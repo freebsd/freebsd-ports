@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://devel.ringlet.net/sysutils/pslist/
 
 MAINTAINER=	roam@FreeBSD.org
-COMMENT=	"A utility to view or send signals to processes with all their children"
+COMMENT=	A utility to view or send signals to processes with all their children
 
 NO_BUILD=	yes
 

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=. OLD-VERSIONS/imap
 DISTNAME=	cyrus-imapd-2.0.9
 
 MAINTAINER=	roam@FreeBSD.org
-COMMENT=	"A dependency generator for makefiles"
+COMMENT=	A dependency generator for makefiles
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/makedepend
 GNU_CONFIGURE=	YES

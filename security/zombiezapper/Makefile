@@ -13,7 +13,7 @@ DISTNAME=	zombie-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	roam@FreeBSD.org
-COMMENT=	"Send a terminate command to Trinoo/TFN/Stacheldracht DDoS agents"
+COMMENT=	Send a terminate command to Trinoo/TFN/Stacheldracht DDoS agents
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/libnet-config:${PORTSDIR}/net/libnet/
 

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	roam@FreeBSD.org
-COMMENT=	"A nonsense text generator"
+COMMENT=	A nonsense text generator
 
 NO_BUILD=	defined
 USE_REINPLACE=	yes

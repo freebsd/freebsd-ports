@@ -12,7 +12,7 @@ MASTER_SITES=	http://devel.ringlet.net/sysutils/timelimit/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
 
 MAINTAINER=	roam@FreeBSD.org
-COMMENT=	"Limit the absolute execution time of a process"
+COMMENT=	Limit the absolute execution time of a process
 
 MAN8=		timelimit.8
 PLIST_FILES=	bin/timelimit

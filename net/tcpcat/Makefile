@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.gusnet.cx:8080/proj/tcpcat/
 
 MAINTAINER=	roam@FreeBSD.org
-COMMENT=	"A simple utility for sending/receiving data over a TCP or a Unix-domain socket"
+COMMENT=	A simple utility for sending/receiving data over a TCP or a Unix-domain socket
 
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/tcpcat

@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 MASTER_SITE_SUBDIR=	libs .
 
 MAINTAINER=	roam@FreeBSD.org
-COMMENT=	"A public ELF file access library similar to libelf(3) in Solaris"
+COMMENT=	A public ELF file access library similar to libelf(3) in Solaris
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -14,7 +14,7 @@ DISTNAME=	ghmain.c
 EXTRACT_SUFX=
 
 MAINTAINER=	roam@FreeBSD.org
-COMMENT=	"A command-line interface to the resolver library"
+COMMENT=	A command-line interface to the resolver library
 
 WRKSRC=		${WRKDIR}
 

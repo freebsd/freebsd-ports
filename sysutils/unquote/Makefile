@@ -12,7 +12,7 @@ MASTER_SITES=	http://devel.ringlet.net/misc/unquote/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
 
 MAINTAINER=	roam@FreeBSD.org
-COMMENT=	"Execute a command with safely quoted arguments"
+COMMENT=	Execute a command with safely quoted arguments
 
 MAN1=		unquote.1
 MANCOMPRESSED=	yes
