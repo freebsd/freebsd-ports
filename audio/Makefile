@@ -83,6 +83,7 @@
     SUBDIR += xmix
     SUBDIR += xmmix
     SUBDIR += xmms
+    SUBDIR += xmp
     SUBDIR += xmpeg3
     SUBDIR += xmradio
     SUBDIR += xtuner
