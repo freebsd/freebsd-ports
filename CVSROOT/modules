@@ -2427,6 +2427,7 @@ gsl		ports/math/gsl
 gsm		ports/audio/gsm
 gsmlib		ports/comms/gsmlib
 gsnes9x		ports/emulators/gsnes9x
+gspoof		ports/net/gspoof
 gstreamer	ports/multimedia/gstreamer
 gstreamer-player	ports/multimedia/gstreamer-player
 gstreamer-plugins	ports/multimedia/gstreamer-plugins
