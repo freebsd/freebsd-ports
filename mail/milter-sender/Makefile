@@ -63,7 +63,7 @@ post-install:
 .endif
 	@if [ ! -f ${PREFIX}/etc/rc.d/milter-sender.sh ] ; then \
 	cp ${PREFIX}/etc/rc.d/milter-sender.sh-dist ${PREFIX}/etc/rc.d/milter-sender.sh; \
-	chmod ug+x %B/milter-sender.sh; \
+	chmod ug+x ${PREFIX}/etc/rc.d/milter-sender.sh; \
 	fi
 	@${CAT} ${PKGMESSAGE}
 
