@@ -1,5 +1,5 @@
 --- configure.orig	Tue Jun  6 07:36:14 2000
-+++ configure	Tue Jun  6 12:10:08 2000
++++ configure	Sun Jun 18 12:48:42 2000
 @@ -607,7 +607,7 @@
  SDL_MAJOR_VERSION=1
  SDL_MINOR_VERSION=1
@@ -21,6 +21,21 @@
  
  
  
+@@ -2926,12 +2926,12 @@
+     case "$target" in
+         i486-*-*)
+             if test x$ac_cv_prog_gcc = xyes; then
+-                CFLAGS="$CFLAGS -march=486"
++#                CFLAGS="$CFLAGS -march=486"
+             fi
+             ;;
+         i?86-*-*)
+             if test x$ac_cv_prog_gcc = xyes; then
+-                CFLAGS="$CFLAGS -march=pentium -mcpu=pentiumpro"
++#                CFLAGS="$CFLAGS -march=pentium -mcpu=pentiumpro"
+             fi
+             ;;
+     esac
 @@ -2939,7 +2939,7 @@
  
  
