@@ -8,7 +8,7 @@
 PORTNAME=	wmwork
 PORTVERSION=	0.2.0
 CATEGORIES=	misc windowmaker afterstep
-MASTER_SITES=	http://wwwtcs.inf.tu-dresden.de/~godisch/debian/wmwork/
+MASTER_SITES=	http://www.godisch.de/debian/wmwork/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 MAINTAINER=	ports@FreeBSD.org
