@@ -1,7 +1,11 @@
 %%SITE_PERL%%/XML/RSS/Parser.pm
+%%SITE_PERL%%/XML/RSS/Parser/Block.pm
+%%SITE_PERL%%/XML/RSS/Parser/Feed.pm
+%%SITE_PERL%%/XML/RSS/Parser/Element.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS/Parser/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS/Parser
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/RSS 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML 2>/dev/null || true
+@dirrm %%SITE_PERL%%/XML/RSS/Parser
 @unexec rmdir %D/%%SITE_PERL%%/XML/RSS 2>/dev/null || true
 @unexec rmdir %D/%%SITE_PERL%%/XML 2>/dev/null || true

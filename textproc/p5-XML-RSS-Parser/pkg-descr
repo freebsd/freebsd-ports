@@ -7,4 +7,3 @@ the file is well-formed XML. The module is leaner then XML::RSS -- the majority
 of code was for generating RSS files.
 
 WWW: http://search.cpan.org/dist/XML-RSS-Parser/
-
