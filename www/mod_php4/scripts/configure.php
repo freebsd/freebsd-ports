@@ -22,6 +22,7 @@ MySQL		"MySQL database support" ON \
 PostgreSQL	"PostgreSQL database support" OFF \
 SybaseDB	"Sybase/MS-SQL database support (DB-lib)" OFF \
 SybaseCT	"Sybase/MS-SQL database support (CT-lib)" OFF \
+Interbase	"Interbase 6 database support (Firebird)" OFF \
 dBase		"dBase database support" OFF \
 OpenLDAP	"OpenLDAP support" OFF \
 SNMP		"SNMP support" OFF \
@@ -132,6 +133,11 @@ while [ "$1" ]; do
 				exit 1
 			fi
 			SYBASECT=1
+			;;
+		\"Interbase\")
+			echo "LIB_DEPENDS+=	gds.1:\${PORTSDIR}/databases/firebird"
+			echo "CONFIGURE_ARGS+=--with-interbase=\${PREFIX}/firebird"
+			LIBS="${LIBS} -L\${PREFIX}/firebird/lib"
 			;;
 		\"dBase\")
 			echo "CONFIGURE_ARGS+=--with-dbase"
