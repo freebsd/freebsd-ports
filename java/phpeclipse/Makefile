@@ -21,8 +21,20 @@ NO_BUILD=	yes
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}
 
+ECLIPSE=	${PREFIX}/eclipse
+
 do-install:
-	@${CP} -r ${WRKSRC}/features ${PREFIX}/eclipse
-	@${CP} -r ${WRKSRC}/plugins ${PREFIX}/eclipse
+	@${CP} -r ${WRKSRC}/features/* ${ECLIPSE}/features
+	@${CP} -r ${WRKSRC}/plugins/* ${ECLIPSE}/plugins
+
+post-install:
+	@${FIND} -s ${WRKSRC}/features -not -type d \
+	  | ${SED} -ne 's,^${WRKSRC},${ECLIPSE:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
+	@${FIND} -s ${WRKSRC}/plugins -not -type d \
+	  | ${SED} -ne 's,^${WRKSRC},${ECLIPSE:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
+	@${FIND} -s -d ${WRKSRC}/features/* -type d \
+	  | ${SED} -ne 's,^${WRKSRC},@dirrm ${ECLIPSE:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
+	@${FIND} -s -d ${WRKSRC}/plugins/* -type d \
+	  | ${SED} -ne 's,^${WRKSRC},@dirrm ${ECLIPSE:S,^${PREFIX}/,,},p' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
