@@ -180,6 +180,7 @@ bin/communicator-%%BROWSER_VER%%
 %%NSUBDIR%%/registry
 %%NSUBDIR%%/communicator-%%BROWSER_VER%%.bin
 %%NSUBDIR%%/mailcap
+@dirrm %%NSUBDIR%%/plugins
 @dirrm %%NSUBDIR%%/spell
 @dirrm %%NSUBDIR%%/nethelp/netscape/shared
 @dirrm %%NSUBDIR%%/nethelp/netscape/nscal
@@ -197,3 +198,4 @@ bin/communicator-%%BROWSER_VER%%
 @dirrm %%NSUBDIR%%/java/classes/irix
 @dirrm %%NSUBDIR%%/java/classes
 @dirrm %%NSUBDIR%%/java
+@unexec rmdir %D/%%NSUBDIR%% 2>/dev/null || true

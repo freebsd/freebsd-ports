@@ -7,6 +7,7 @@ lib/netscape/mailcap
 lib/netscape/movemail
 lib/netscape/java_301
 lib/netscape/Netscape.ad
+@unexec rmdir %D/lib/netscape 2>/dev/null || true
 @cwd /usr/X11R6
 lib/X11/nls/C
 lib/X11/nls/nls.dir
