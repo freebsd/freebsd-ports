@@ -92,7 +92,7 @@ INCLUDEDIRS:=${INCLUDEDIRS}:${PREFIX}/include
 LIBDIRS:=${LIBDIRS}:${PREFIX}/lib/mysql
 .endif
 
-.if defined(WITH_POSTGRES)
+.if defined(WITH_POSTGRESQL)
 POSTGRESQL_PORT?=	databases/postgresql7
 LIB_DEPENDS+=	pq.3:${PORTSDIR}/${POSTGRESQL_PORT}
 MODULES:=${MODULES}:mod_sql:mod_sql_postgres
