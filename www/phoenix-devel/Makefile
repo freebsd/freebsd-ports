@@ -9,8 +9,8 @@
 
 PORTNAME=		phoenix
 PORTVERSION=		0.4
-PORTREVISION=		2
-CATEGORIES=		www
+PORTREVISION=		3
+CATEGORIES=		www # pita
 MASTER_SITES=		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	trevor
 
@@ -40,25 +40,32 @@ USE_GNOME=		gtk12 orbit
 
 CFLAGS+=		${PTHREAD_CFLAGS}
 LIBS+=			${PTHREAD_LIBS}
-.if defined(OPTIMIZE)
-CFLAGS+=		-O2
-.endif # defined(OPTIMIZE)
 
 NO_MTREE=		yes
 WRKSRC=			${WRKDIR}/mozilla
 LOCAL_PREFIX=		${PREFIX}/lib/${PORTNAME}
+MAKE_FLAGS+=		-DXP_UNIX
 
 .include <bsd.port.pre.mk>
 
+perl_major=${PERL_VERSION:C|^([1-9]+).*|\1|}
+_perl_minor=00${PERL_VERSION:C|^([1-9]+)\.([0-9]+).*|\2|}
+perl_minor=${_perl_minor:C|^.*(...)|\1|}
+.if ${perl_minor} >= 100
+perl_minor=${PERL_VERSION:C|^([1-9]+)\.([0-9][0-9][0-9]).*|\2|}
+perl_patch=${PERL_VERSION:C|^.*(..)|\1|}
+.else # ${perl_minor} < 100
+_perl_patch=0${PERL_VERSION:C|^([1-9]+)\.([0-9]+)\.*|0|}
+perl_patch=${_perl_patch:C|^.*(..)|\1|}
+.endif # ${perl_minor} < 100
+PERL_LEVEL=${perl_major}${perl_minor}${perl_patch}
+
 SITE_PERL?=	${LOCALBASE}/lib/perl5/site_perl/${PERL_VER}
 
-PERL_MAJOR=${PERL_VER:C|^([1-9]+).*|\1|}
-PERL_MINOR=${PERL_VER:C|^[1-9]+\.0*([1-9]+).*|\1|}
-
-.if ${PERL_MAJOR} < 5 || ${PERL_MAJOR} == 5 && ${PERL_MINOR} < 8
+.if ${PERL_LEVEL} < 500601
 RUN_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
 BUILD_DEPENDS+=	${SITE_PERL}/File/Spec.pm:${PORTSDIR}/devel/p5-File-Spec
-.endif # ${PERL_MAJOR} < 5 || ${PERL_MAJOR} == 5 && ${PERL_MINOR} < 8
+.endif # ${PERL_LEVEL} < 500601
 
 .if ${OSVERSION} > 500038
 BROKEN=	"on -CURRENT, can only be used with local files"
