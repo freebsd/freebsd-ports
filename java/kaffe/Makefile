@@ -17,6 +17,8 @@ LIB_DEPENDS=	jpeg.9:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.5:${PORTSDIR}/graphics/png
 
+NOT_FOR_ARCHS=	amd64
+
 USE_LIBTOOL=	yes
 LIBTOOLFLAGS=
 INSTALLS_SHLIB=	yes
