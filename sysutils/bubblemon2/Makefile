@@ -3,10 +3,10 @@
 # Whom:					Juan Salaverria <rael@vectorstar.net>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	bubblemon2
-PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTVERSION=	2.0.4
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	bubblemon
