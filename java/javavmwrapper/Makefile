@@ -17,6 +17,8 @@ DISTFILES=	# none
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Wrapper script for various Java Virtual Machines
 
+CONFLICTS=	kaffe-1.*
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
