@@ -1,0 +1,2 @@
+This module allows you to use the GNOME Virtual File System library
+(libgnomevfs for short) from Perl.
