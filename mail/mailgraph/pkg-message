@@ -1,0 +1,2 @@
+Make sure this script should be invoked with privilege to read
+/var/log/maillog.
