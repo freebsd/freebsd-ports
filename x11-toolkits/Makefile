@@ -67,7 +67,6 @@
     SUBDIR += ruby-fltk
     SUBDIR += ruby-gtk
     SUBDIR += ruby-qt
-    SUBDIR += ruby-qt-i18n
     SUBDIR += ruby-tk
     SUBDIR += ruby14-tk
     SUBDIR += slingshot
