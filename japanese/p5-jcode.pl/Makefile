@@ -10,6 +10,7 @@ PORTVERSION=	2.11
 CATEGORIES=	japanese perl5
 MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/IIJ/dist/utashiro/perl/ \
 		ftp://ftp.sra.co.jp/pub/lang/perl/sra-scripts/
+PKGNAMEPREFIX=	p5-
 EXTRACT_SUFX=	# none
 
 MAINTAINER=	sada@FreeBSD.org
@@ -25,12 +26,8 @@ PLIST_SUB=	INSTALL_BASE=${INSTALL_BASE}
 INSTALL_BASE=	lib/perl5/site_perl/${PERL_VER}
 INSTALL_DIR=	${PREFIX}/${INSTALL_BASE}
 
-.include <bsd.port.pre.mk>
-
-PKGNAMEPREFIX:=	${PKGNAMEPREFIX}p5-
-
 do-install:
 	${MKDIR} ${INSTALL_DIR}
 	${INSTALL_DATA} ${WRKDIR}/${DISTNAME} ${INSTALL_DIR}/jcode.pl
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

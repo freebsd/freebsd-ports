@@ -11,6 +11,7 @@ CATEGORIES=	japanese converters ruby
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://www.bekkoame.ne.jp/~yoshidam/
 MASTER_SITE_SUBDIR=	knu
+PKGNAMEPREFIX=	ruby-
 DIST_SUBDIR=	ruby
 
 MAINTAINER=	knu@FreeBSD.org
@@ -30,10 +31,6 @@ RUBY_ARCH=	${ARCH}-freebsd${OSREL}
 EXAMPLES=	euc2unicode.rb	test_euc.txt	test_euc.xml \
 		trilang.xml	unicode2euc.rb	xmlconv.rb
 
-.include <bsd.port.pre.mk>
-
-PKGNAMEPREFIX:=	${PKGNAMEPREFIX}ruby-
-
 do-configure:
 	@cd ${WRKSRC}; \
 	${SETENV} ${CONFIGURE_ENV} ${RUBY} extconf.rb
@@ -49,4 +46,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README.ja ${PREFIX}/share/doc/ruby/uconv/ja/
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

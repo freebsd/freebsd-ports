@@ -1,4 +1,8 @@
 # $FreeBSD$
 #
 
-PKGNAMEPREFIX?=	zh-
+.if defined(PKGNAMEPREFIX)
+PKGNAMEPREFIX:=	zh-${PKGNAMEPREFIX}
+.else
+PKGNAMEPREFIX=	zh-
+.endif
