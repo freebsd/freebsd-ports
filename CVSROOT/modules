@@ -10903,6 +10903,7 @@ xrobots		ports/games/xrobots
 xrolo		ports/deskutils/xrolo
 xrootconsole	ports/x11/xrootconsole
 xrot		ports/games/xrot
+xrsh		ports/x11/xrsh
 xrubik		ports/games/xrubik
 xsane		ports/graphics/xsane
 xsb		ports/lang/xsb
