@@ -4823,6 +4823,10 @@ mule-ucs-emacs20	ports/converters/mule-ucs-emacs20
 multi-backgrounds-daemon	ports/deskutils/multi-backgrounds-daemon
 multi-gnome-terminal	ports/x11/multi-gnome-terminal
 multisuck	ports/news/multisuck
+multisync	ports/deskutils/multisync
+multisync-backup	ports/deskutils/multisync-backup
+multisync-evolution	ports/deskutils/multisync-evolution
+multisync-syncml	ports/deskutils/multisync-syncml
 multitail	ports/sysutils/multitail
 multivideo	ports/graphics/multivideo
 mup		ports/print/mup
