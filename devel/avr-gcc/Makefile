@@ -19,6 +19,8 @@ EXTRACT_ONLY=	gcc-core+g++-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	joerg@freebsd.org
 
+BROKEN=		"pkg-plist is incorrect"
+
 BUILD_DEPENDS=	avr-as:${PORTSDIR}/devel/avr-binutils \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
 		autoheader:${PORTSDIR}/devel/autoconf \
