@@ -173,6 +173,7 @@ include/kpathsea/variable.h
 include/kpathsea/xopendir.h
 include/kpathsea/xstat.h
 lib/libkpathsea.a
+%%TEXMFCONFIGDIR%%/web2c/updmap.cfg
 %%TEXMFDIR%%/web2c/mktex.opt
 %%TEXMFDIR%%/web2c/mktexdir
 %%TEXMFDIR%%/web2c/mktexdir.opt
@@ -203,7 +204,7 @@ lib/libkpathsea.a
 %%TEXMFDIR%%/texconfig/tcfmgr.map
 %%TEXMFDIR%%/release-tetex-src.txt
 @exec %%MKTEXLSR%%
-@exec %%UPDMAP_SYS%%
+@exec %%SETENV%% PATH=${PATH}:%D/bin TEXMFMAIN=%D/%%TEXMFDIR%% %%UPDMAP_SYS%%
 @unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/dvips/updmap/download35.map
 @unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/dvips/updmap/builtin35.map
 @unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/dvips/updmap/psfonts_t1.map
@@ -217,7 +218,7 @@ lib/libkpathsea.a
 @unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/dvipdfm/updmap/dvipdfm_ndl14.map
 @unexec rm -f %D/%%TEXMFVARDIR%%/fonts/map/dvipdfm/updmap/dvipdfm.map
 @unexec rm -f %D/%%TEXMFVARDIR%%/web2c/updmap.log
-@exec %%FMTUTIL_SYS%% --all
+@exec %%SETENV%% PATH=${PATH}:%D/bin TEXMFMAIN=%D/%%TEXMFDIR%% %%FMTUTIL_SYS%% --all
 @unexec rm -f %D/%%TEXMFVARDIR%%/web2c/aleph.log
 @unexec rm -f %D/%%TEXMFVARDIR%%/web2c/cont-en.log
 @unexec rm -f %D/%%TEXMFVARDIR%%/web2c/etex.log

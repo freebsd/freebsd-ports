@@ -7,7 +7,7 @@
 
 PORTNAME=	teTeX-base
 PORTVERSION=	3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
@@ -51,7 +51,6 @@ CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
-PLIST_SUB=	MKTEXLSR=${MKTEXLSR} TEXMFCNF=${TEXMFCNF}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 CONFLICTS=	ja-ptex-base-[0-9]* latex2e-[0-9]* \
 		tex-[0-9]* dvips-[0-9]* xdvi-[0-9]*
@@ -96,7 +95,6 @@ MLINKS=	dvilj.1 dvilj2p.1 \
 	cweb.1 ctangle.1 \
 	cweb.1 cweave.1 \
 	dvicopy.1 odvicopy.1 \
-	dvips.1 odvips.1 \
 	fmtutil.1 mktexfmt.1 \
 	fmtutil.1 fmtutil-sys.1 \
 	texconfig.1 texconfig-sys.1 \
@@ -105,6 +103,8 @@ MLINKS=	dvilj.1 dvilj2p.1 \
 INFO=	kpathsea latex web2c
 
 .include <bsd.port.pre.mk>
+
+PLIST_SUB?=
 
 .if !defined(WITHOUT_X11)
 PLIST_SUB+=	X11BITS=""
@@ -123,18 +123,22 @@ LIBT1_PREFIX?=	${LOCALBASE}
 
 TEXMFDIR=	share/texmf
 TEXMFDISTDIR=	share/texmf-dist
+TEXMFCONFIGDIR=	share/texmf-config
 TEXMFLOCALDIR=	share/texmf-local
 TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCALDIR}/ls-R
 TEXMFVARDIR=	share/texmf-var
 MKTEXLSR=	${PREFIX}/bin/mktexlsr
-FMTUTIL_SYS=	"${SETENV} PATH=${PATH}:${PREFIX}/bin TEXMFMAIN=${PREFIX}/${TEXMFDIR} ${PREFIX}/bin/fmtutil-sys"
-UPDMAP_SYS=	"${SETENV} PATH=${PATH}:${PREFIX}/bin TEXMFMAIN=${PREFIX}/${TEXMFDIR} ${PREFIX}/bin/updmap-sys"
+FMTUTIL_SYS=	${PREFIX}/bin/fmtutil-sys
+UPDMAP_SYS=	${PREFIX}/bin/updmap-sys
 
 PLIST_SUB+=	TEXMFDIR=${TEXMFDIR} \
+		TEXMFCONFIGDIR=${TEXMFCONFIGDIR} \
 		TEXMFDISTDIR=${TEXMFDISTDIR} \
 		TEXMFVARDIR=${TEXMFVARDIR} \
+		MKTEXLSR=${MKTEXLSR} \
 		FMTUTIL_SYS=${FMTUTIL_SYS} \
-		UPDMAP_SYS=${UPDMAP_SYS}
+		UPDMAP_SYS=${UPDMAP_SYS} \
+		SETENV=${SETENV}
 PKGMESSAGE_SUB=	TEXMFDIR=${TEXMFDIR} \
 		TEXMFDISTDIR=${TEXMFDISTDIR} \
 		PREFIX=${PREFIX}
@@ -157,10 +161,14 @@ pre-install:
 		${ECHO_CMD} "NOTICE: old config file ${F} has been removed.";\
 	fi
 .endfor
+	${INSTALL_DATA} \
+		${PREFIX}/${TEXMFDISTDIR}/web2c/updmap.cfg \
+		${PREFIX}/${TEXMFCONFIGDIR}/web2c/updmap.cfg
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/utils/texinfo/util/texi2dvi ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/utils/texinfo/util/texi2pdf ${PREFIX}/bin
+	${MKTEXLSR}
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
 
