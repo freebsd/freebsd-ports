@@ -1,0 +1,11 @@
+--- src/database.c	Tue Aug 19 13:41:17 1997
++++ database.c	Tue Aug 19 13:41:32 1997
+@@ -29,7 +29,7 @@
+ #ifdef HAVE_DATABASE
+ #include <database.h>         /* Our include file     */
+ #ifdef HAVE_BERKELEY_DB
+-#include <db.h>                       /* Berkeley db access   */
++#include "/usr/include/db.h"                       /* Berkeley db access   */
+ #endif
+ #ifdef HAVE_DBM
+ #include <ndbm.h>
