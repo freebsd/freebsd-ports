@@ -42,6 +42,7 @@ USE_QT_VER=	3
 CONFIGURE_ARGS+=	--with-frontend=qt
 QTCPPFLAGS+=	${PTHREAD_CFLAGS}
 QTCFGLIBS+=	${PTHREAD_LIBS}
+RUN_DEPENDS+=	${X11BASE}/lib/X11/fonts/texcm-ttf/cmex10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf
 .else
 LIB_DEPENDS+=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 USE_XPM=	yes
