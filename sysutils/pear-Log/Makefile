@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 CATEGORIES=	sysutils www pear
 
 MAINTAINER=	ports@FreeBSD.org
@@ -17,12 +17,14 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 FILES=		Log.php Log/composite.php Log/console.php Log/display.php	\
 		Log/error_log.php Log/file.php Log/mail.php Log/mcal.php	\
-		Log/observer.php Log/sql.php Log/syslog.php Log/win.php
+		Log/null.php Log/observer.php Log/sql.php Log/syslog.php	\
+		Log/win.php
 DOCS=		guide.txt
 EXAMPLES=	composite.php console.php display.php error_log.php file.php	\
-		mail.php observer_mail.php pear_error_handler.php		\
+		mail.php null.php observer_mail.php pear_error_handler.php	\
 		php_error_handler.php sql.php syslog.php win.php
-TESTS=		composite.phpt console.phpt display.phpt error_log.phpt
+TESTS=		composite.phpt console.phpt display.phpt error_log.phpt		\
+		factory.phpt null.phpt singleton.phpt
 _EXAMPLESDIR=	docs/examples
 
 .include <bsd.port.pre.mk>
