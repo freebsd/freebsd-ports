@@ -1,10 +1,10 @@
 NOPROFILE=	yes
-LIB=		itk30
-ITK_LIBRARY=	${PREFIX}/lib/itk3.0
+LIB=		itk${MAJOR}${MINOR}
+ITK_LIBRARY=	${PREFIX}/lib/itk${MAJOR}.${MINOR}
 CFLAGS+=	-I. -I./../generic \
-		-I${TCL_PREFIX}/include/tcl8.2/generic \
-		-I${ITCL_PREFIX}/include/itcl3.0/generic \
-		-I${TK_PREFIX}/include/tk8.2/generic \
+		-I${PREFIX}/include/tcl8.3/generic \
+		-I${PREFIX}/include/itcl${MAJOR}.${MINOR}/ \
+		-I${PREFIX}/include/tk8.3/generic \
 		-I/usr/X11R6/include \
 		-DHAVE_GETCWD=1 -DNO_VALUES_H=1 -DHAVE_UNISTD_H=1 -DUSE_TERMIOS=1\
 		-DHAVE_SYS_TIME_H=1 -DTIME_WITH_SYS_TIME=1 -DHAVE_TM_ZONE=1\
@@ -13,15 +13,29 @@ CFLAGS+=	-I. -I./../generic \
 		-DTCL_SHLIB_EXT=\".so\" \
 		-DHAVE_SYS_FILIO_H=1 \
 		-DRETSIGTYPE=void \
-		-DITK_LIBRARY=\"${ITK_LIBRARY}\" \
+		-DITK_LIBRARY=\"${ITK_LIBRARY}\"
+LDADD+=		-L${PREFIX}/lib -litcl${MAJOR}${MINOR} -L${X11BASE}/lib -lX11 -ltk83
 
+.PATH:		${.CURDIR}/generic
 
-GENERIC_DIR=	../generic
-UNIX_DIR=	.
+SRCS=		itk_cmds.c itk_option.c itk_archetype.c itk_util.c
 
-SRCS=	\
-		$(GENERIC_DIR)/itk_cmds.c $(GENERIC_DIR)/itk_option.c \
-		$(GENERIC_DIR)/itk_archetype.c $(GENERIC_DIR)/itk_util.c
+SCRIPTDIR=	lib/itk${MAJOR}.${MINOR}
+SCRIPTPATH=	${PREFIX}/${SCRIPTDIR}
+LIBDIR=		${PREFIX}/lib
+INCDIR=		${PREFIX}/include/itk${MAJOR}.${MINOR}
 
+pkgIndex.tcl: ${.CURDIR}/pkgIndex.tcl.in
+	sed -e "s#@RELPATH@#..#" -e "s#@VERSION@#${MAJOR}.${MINOR}#" \
+		-e "s#@itcl_LIB_FILE@#${SHLIB_NAME}#" \
+		< ${.CURDIR}/pkgIndex.tcl.in > pkgIndex.tcl
+
+${SCRIPTPATH} ${INCDIR}:
+	mkdir -p ${.TARGET}
+
+beforeinstall: pkgIndex.tcl ${SCRIPTPATH} ${INCDIR}
+	${BSD_INSTALL_DATA} pkgIndex.tcl ${.CURDIR}/library/* ${SCRIPTPATH}
+	${BSD_INSTALL_DATA} ${.CURDIR}/generic/*.h ${INCDIR}
+	${BSD_INSTALL_MAN} ${.CURDIR}/doc/*.n ${PREFIX}/man/mann/
 
 .include <bsd.lib.mk>
