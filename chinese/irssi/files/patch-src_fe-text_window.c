@@ -1,5 +1,5 @@
---- src/fe-text/gui-windows.c.orig	Mon Oct 29 20:51:52 2001
-+++ src/fe-text/gui-windows.c	Tue Oct 30 01:48:09 2001
+--- src/fe-text/gui-windows.c.orig	Sat Mar 17 07:55:50 2001
++++ src/fe-text/gui-windows.c	Sat Jan 26 19:40:34 2002
 @@ -289,6 +289,7 @@
          unsigned char cmd;
  	char *ptr, *last_space_ptr;
@@ -25,7 +25,7 @@
  			xpos = indent_pos;
  
  			sub = g_new(LINE_CACHE_SUB_REC, 1);
-@@ -376,8 +377,27 @@
+@@ -376,8 +377,25 @@
  			continue;
  		}
  
@@ -45,13 +45,21 @@
 +		}
 +		if(xpos <= COLS)
 +			ptr += w;
-+		else
-+			ptr ++;
 +		
 +		if(w == 1 && xpos <= COLS &&
-+			ptr[0] != '\0' && ptr[1] != '\0' &&
-+			is_big5(ptr[0], ptr[1]))
++			(ptr[0] == ' ' ||
++			 (ptr[0] != '\0' && ptr[1] != '\0' && is_big5(ptr[0], ptr[1]))))
 +		{
  			last_space = xpos-1;
  			last_space_ptr = ptr;
  			last_color = color;
+@@ -525,6 +543,9 @@
+ 		next_pos = (n+1 < cache->count) ?
+ 			cache->lines[n].start : NULL;
+ 
++		if(next_pos != NULL && next_pos > pos && *(next_pos - 1) == ' ')
++			while(next_pos > pos && *(next_pos - 1) == ' ')
++				next_pos --;
+ 		single_line_draw(gui, ypos, sub, pos, next_pos);
+ 	}
+ 
