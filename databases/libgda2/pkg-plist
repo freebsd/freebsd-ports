@@ -26,6 +26,7 @@ include/libgda/gda-data-model-array.h
 include/libgda/gda-data-model-hash.h
 include/libgda/gda-data-model-list.h
 include/libgda/gda-data-model.h
+include/libgda/gda-enum-types.h
 include/libgda/gda-error.h
 include/libgda/gda-export.h
 include/libgda/gda-field.h
