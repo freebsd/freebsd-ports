@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	howm
-PORTVERSION=	1.1.2.1
+PORTVERSION=	1.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://howm.sourceforge.jp/a/
 
@@ -17,8 +17,8 @@ GNU_CONFIGURE=	yes
 EMACS_PORT_NAME?=	emacs21
 ELISP=		action-lock.el bcomp.el cheat-font-lock.el \
 		howm-common.el howm-date.el howm-menu.el howm-misc.el \
-		howm-mode-mode.el howm-mode.el howm-reminder.el \
-		howm-version.el howm-view.el
+		howm-mode.el howm-reminder.el \
+		howm-version.el howm-view.el howm.el riffle.el
 .if defined(WITH_COMPILED_ELISP)
 PLIST_SUB=	COMPILED_ELISP=""
 .else
