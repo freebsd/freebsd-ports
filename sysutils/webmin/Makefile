@@ -7,7 +7,7 @@
 
 PORTNAME=	webmin
 PORTVERSION=	1.070
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/updates/ \
 		${MASTER_SITE_SOURCEFORGE}
@@ -25,11 +25,20 @@ NO_BUILD=	yes
 USE_PERL5=	yes
 SCRIPTS_ENV+=	WRKDIR="${WRKDIR}"
 
-WEBMIN_MODULES=	init-1.070-1.wbm.gz \
+WEBMIN_MODULES=	acl-1.070-1.wbm.gz \
+		custom-1.070-4.wbm.gz \
+		fetchmail-1.070-1.wbm.gz \
+		init-1.070-1.wbm.gz \
+		lpadmin-1.070-4.wbm.gz \
+		postfix-1.070-2.wbm.gz \
+		proc-1.070-1.wbm.gz \
+		quota-1.070-1.wbm.gz \
 		sendmail-1.070-1.wbm.gz \
-		shell-1.070-1.wbm.gz
+		shell-1.070-1.wbm.gz \
+		squid-1.070-4.wbm.gz \
+		status-1.070-1.wbm.gz
 
-WEBMIN_THEMES=
+WEBMIN_THEMES=	mscstyle3-1.070-1.wbt.gz
 
 post-extract:
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
