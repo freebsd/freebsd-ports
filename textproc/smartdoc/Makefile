@@ -6,33 +6,37 @@
 #
 
 PORTNAME=	smartdoc
-PORTVERSION=	0.6.10
+PORTVERSION=	0.7
 CATEGORIES=	textproc java
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://www.asahi-net.or.jp/~dp8t-asm/java/tools/SmartDoc/
+MASTER_SITES=	http://www.asahi-net.or.jp/~dp8t-asm/java/tools/SmartDoc/ \
+		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	kiri
-DISTNAME=	setup
+DISTNAME=	setup${PORTVERSION:S/.//g}
 EXTRACT_SUFX=	.zip
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	kunishi@acm.org
 
 BUILD_DEPENDS=	${JDKDIR}/bin/java:${PORTSDIR}/java/jdk12-beta \
+		${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog \
 		nkf:${PORTSDIR}/japanese/nkf
-RUN_DEPENDS=	${JDKDIR}/bin/java:${PORTSDIR}/java/jdk12-beta
+RUN_DEPENDS=	${JDKDIR}/bin/java:${PORTSDIR}/java/jdk12-beta \
+		${MKCATALOG}:${PORTSDIR}/textproc/mkcatalog
 
 SCRIPTS_ENV=	JDKDIR=${JDKDIR} JAVADIR=${JAVADIR}
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
+PLIST_SUB=	PORTVERSION=${PORTVERSION} MKCATALOG=${MKCATALOG}
 
-IS_INTERACTIVE=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/sdoc
+USE_ZIP=	yes
 
 JAVADIR=	${PREFIX}/share/java
 JDKVERSION?=	1.2.2
 JDKDIR=		${LOCALBASE}/jdk${JDKVERSION}
 XMLDIR=		${PREFIX}/share/xml
-DTDDIR=		${XMLDIR}/smartdoc
+DTDNAME=	smartdoc
+DTDDIR=		${XMLDIR}/${DTDNAME}
+MKCATALOG=	${LOCALBASE}/sbin/mkcatalog
 SJIS2EUC=	quick/Dl.sdoc \
 		quick/HelloWorld_ja.sdoc \
 		quick/NaturalP.sdoc \
@@ -53,15 +57,12 @@ SJIS2EUC=	quick/Dl.sdoc \
 		sampleI18N/sample.sdoc
 
 do-extract:
-	@${ECHO} "************************************************************************"
-	@${ECHO} "* You MUST SET \`Install directory' and \`Command directory':            *"
-	@${ECHO} "*        Install directory = .                                         *"
-	@${ECHO} "*        Command directory = ./bin                                     *"
-	@${ECHO} "* and then enter \"yes\".                                                *"
-	@${ECHO} "************************************************************************"
 	${MKDIR} ${WRKSRC}/bin
-	cd ${WRKSRC}; \
-	${LOCALBASE}/jdk${JDKVERSION}/bin/java -cp ${DISTDIR}/${DISTFILES} setup
+	${JDKDIR}/bin/java -jar ${DISTDIR}/${DIST_SUBDIR}/${DISTFILES} -batch \
+		-bindir:${WRKSRC}/bin -installbasedir:${WRKSRC}
+
+post-extract:
+	${CP} ${FILESDIR}/sdoc.in ${WRKSRC}/bin/sdoc
 
 pre-patch:
 	cd ${WRKSRC}/doc; \
@@ -72,7 +73,7 @@ pre-patch:
 	done
 
 pre-install:
-	${MKDIR} ${JAVADIR}/sdoc-${PORTVERSION} ${JAVADIR}/classes ${DTDDIR}
+	${MKDIR} ${JAVADIR}/sdoc-${PORTVERSION}/bin ${JAVADIR}/classes ${DTDDIR}
 	find ${WRKSRC} \( -name \*.orig -o -name \*~ \) -exec ${RM} -f \{} \;
 
 do-install:
@@ -84,13 +85,9 @@ do-install:
 	${INSTALL_DATA} ${FILESDIR}/catalog ${DTDDIR}
 	cd ${WRKSRC}/etc/pure; \
 	${INSTALL_DATA} PureSmartDoc.dtd PureSmartDoc.rlx article.css ${DTDDIR}
-	if [ ! -f ${XMLDIR}/catalog ]; then \
-		${ECHO} "CATALOG \"smartdoc/catalog\"" > ${XMLDIR}/catalog; \
-	else \
-		${SETENV} LANG=C ${PERL} -ni -e 'print if !m|smartdoc/catalog|;print "CATALOG \"smartdoc/catalog\"\n" if eof;' ${XMLDIR}/catalog; \
-	fi
 
 post-install:
+	${MKCATALOG} -c ${PREFIX}/share/xml/catalog -q install ${DTDNAME}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
