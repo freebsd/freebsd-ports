@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pure-ftpd
-PORTVERSION=	1.0.7
+PORTVERSION=	1.0.8
 CATEGORIES=	ftp ipv6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	pureftpd
@@ -66,7 +66,8 @@ CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 .endif
 
 MAN8=		pure-ftpd.8 pure-ftpwho.8 pure-mrtginfo.8 pure-statsdecode.8 \
-		pure-uploadscript.8 pure-pw.8 pure-pwconvert.8 pure-quotacheck.8
+		pure-uploadscript.8 pure-pw.8 pure-pwconvert.8 pure-quotacheck.8 \
+		pure-authd.8
 
 .include <bsd.port.pre.mk>
 
@@ -85,9 +86,9 @@ PAM_TARGET?=	pure-ftpd
 DOCS=		AUTHORS CONTACT COPYING HISTORY NEWS \
 		README README.Configuration-File README.Contrib README.LDAP \
 		README.Netfilter README.MySQL README.PGSQL README.Virtual-Users \
-		THANKS poweredby.jpg
+		README.Authentication-Modules THANKS poweredby.jpg
 
-CONTRIB=	xml_python_processors.txt
+CONTRIB=	xml_python_processors.txt sfv-crc-check.pl
 
 pre-fetch:
 	@${ECHO} "You can use the following additional options:"
