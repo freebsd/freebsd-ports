@@ -1,0 +1,38 @@
+--- configure.orig	Fri Feb 13 01:06:29 2004
++++ configure	Fri Feb 13 01:07:17 2004
+@@ -9181,7 +9181,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-liconv  $LIBS"
++LIBS="-L$LOCALBASE/lib -liconv  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 9187 "configure"
+ #include "confdefs.h"
+@@ -9212,7 +9212,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  _ICONV_LIBS="$_ICONV_LIBS -liconv"
++  _ICONV_LIBS="$_ICONV_LIBS -L$LOCALBASE/lib -liconv"
+ else
+   echo "$ac_t""no" 1>&6
+ echo $ac_n "checking for libiconv in -liconv""... $ac_c" 1>&6
+@@ -9222,7 +9222,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-liconv  $LIBS"
++LIBS="-L$LOCALBASE/lib -liconv  $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 9228 "configure"
+ #include "confdefs.h"
+@@ -9253,7 +9253,7 @@
+ fi
+ if eval "test \"`echo '$ac_cv_lib_'$ac_lib_var`\" = yes"; then
+   echo "$ac_t""yes" 1>&6
+-  _ICONV_LIBS="$_ICONV_LIBS -liconv"
++  _ICONV_LIBS="$_ICONV_LIBS -L$LOCALBASE/lib -liconv"
+ else
+   echo "$ac_t""no" 1>&6
+ fi
