@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	devtodo
-PORTVERSION=	0.1.17
+PORTVERSION=	0.1.18
 CATEGORIES=	devel
 MASTER_SITES=	http://swapoff.org/files/devtodo/
 
