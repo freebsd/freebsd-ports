@@ -3,16 +3,16 @@
 # Date created:		21 April 1998
 # Whom:			Josh Gilliam <josh@quick.net>
 #
-# $Id: Makefile,v 1.1.1.1 1998/04/22 16:51:57 mph Exp $
+# $Id: Makefile,v 1.2 1998/05/11 02:46:05 obrien Exp $
 #
 
 DISTNAME=	urlview-0.7
 CATEGORIES=	textproc www
 MASTER_SITES=	ftp://ftp.cs.hmc.edu/pub/me/ \
 		ftp://ftp.cs.tu-berlin.de/pub/net/mail/mutt/ \
-		ftp://ftp.univ-angers.fr/pub/mail/mutt/ \
+		ftp://ftp.ilog.fr/pub/Mirrors/mutt/contrib/ \
 		ftp://ftp.etri.re.kr/pub/mail/mutt/ \
-		ftp://ftp.pnm.net/pub/unix/mutt/
+		ftp://ftp.pnm.net/pub/unix/mutt/contrib/
 
 PATCH_SITES=	http://feeding.frenzy.com/~rainking/
 PATCHFILES=	urlview.diff
