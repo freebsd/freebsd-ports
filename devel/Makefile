@@ -684,6 +684,7 @@
     SUBDIR += py-unit
     SUBDIR += py-vmaps
     SUBDIR += py-xoltar-toolkit
+    SUBDIR += py_otp_interface
     SUBDIR += pychecker
     SUBDIR += pyrex
     SUBDIR += qssl
