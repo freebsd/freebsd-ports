@@ -17,18 +17,19 @@ BUILD_DEPENDS=	python:${PORTSDIR}/lang/python
 LIB_DEPENDS=	mysqlclient.6:${PORTSDIR}/databases/mysql322-client
 RUN_DEPENDS=	python:${PORTSDIR}/lang/python
 
-pre-build:
-	${CP} ${FILESDIR}/Makefile ${WRKSRC}/Makefile
+ALL_TARGET=	MySQLmodule.so
 
-do-install:
-	${INSTALL_DATA} ${WRKSRC}/MySQLmodule.so ${PREFIX}/lib/python1.5/site-packages
+pre-configure:
+	${CP} ${FILESDIR}/Setup ${WRKSRC}/Setup
+	${LN} -s ${LOCALBASE}/lib/python1.5/config/Makefile.pre.in ${WRKSRC}/
+
+do-configure:
+	cd ${WRKSRC} && ${MAKE} -f Makefile.pre.in boot
+
 .if !defined(NOPORTDOCS)
+post-install:
 	${MKDIR} ${PREFIX}/share/doc/py-MySQL
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/py-MySQL
-.endif
-
-post-install:
-.if !defined(NOPORTDOCS)
 	${ECHO} "share/doc/py-MySQL/README" >> ${TMPPLIST}
 	${ECHO} "@dirrm share/doc/py-MySQL" >> ${TMPPLIST}
 .endif

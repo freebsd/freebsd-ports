@@ -1,0 +1,2 @@
+*shared*
+MySQL MySQLmodule.c -I${LOCALBASE}/include/mysql -L${LOCALBASE}/lib/mysql -lmysqlclient
