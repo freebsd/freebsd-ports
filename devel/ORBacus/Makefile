@@ -3,19 +3,27 @@
 # Whom:			ejc@bazzle.com
 # Version required:	3.0
 #
-# $Id: Makefile,v 1.14 1998/12/22 07:33:27 asami Exp $
+# $Id: Makefile,v 1.15 1998/12/22 07:35:00 asami Exp $
 #
 
-DISTNAME=	OB-3.0
-PKGNAME=	ORBacus-3.0
+DISTNAME=	OB-3.1.1
+PKGNAME=	ORBacus-3.1.1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.ooc.com/pub/OB/3.0/
+MASTER_SITES=	ftp://ftp.ooc.com/pub/OB/3.1/
 
 MAINTAINER=	ejc@bazzle.com
 
+.include <bsd.port.pre.mk>
+
+.if ${PORTOBJFORMAT} == "elf"
+LIBSTDC=	${PREFIX}/lib/gcc-lib/i386-unknown-freebsdelf${OSREL}/2.8.1/libstdc++.a
+.else
+LIBSTDC=	${PREFIX}/lib/gcc-lib/i386-unknown-freebsd${OSREL}/2.8.1/libstdc++.a
+.endif
+
 BUILD_DEPENDS=  gcc28:${PORTSDIR}/lang/gcc28 \
 		g++28:${PORTSDIR}/lang/gcc28 \
-		${PREFIX}/lib/gcc-lib/i386-unknown-freebsd${OSREL}/2.8.1/libstdc++.a:${PORTSDIR}/lang/glibstdc++28
+		${LIBSTDC}:${PORTSDIR}/lang/glibstdc++28
 
 USE_XLIB=	yes
 HAS_CONFIGURE=	yes
