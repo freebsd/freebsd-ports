@@ -51,6 +51,7 @@
     SUBDIR += tkgate
     SUBDIR += tochnog
     SUBDIR += transcalc
+    SUBDIR += triangle
     SUBDIR += varkon
     SUBDIR += vipec
     SUBDIR += xcircuit
