@@ -218,6 +218,7 @@
     SUBDIR += p5-Business-OnlinePayment-Beanstream
     SUBDIR += p5-Business-OnlinePayment-Cardstream
     SUBDIR += p5-Business-OnlinePayment-LinkPoint
+    SUBDIR += p5-Business-OnlinePayment-SurePay
     SUBDIR += p5-Business-OnlinePayment-TCLink
     SUBDIR += p5-Business-OnlinePayment-VirtualNet
     SUBDIR += p5-Business-OnlinePayment-WorldPay-Junior
