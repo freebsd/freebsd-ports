@@ -51,7 +51,7 @@ SCRIPTS_ENV+=	MACHINE=alpha
 PLIST=		${PKGDIR}/pkg-plist.alpha
 .endif
 
-pre-fetch:
+pre-configure:
 	@if ${ECHO} "$(CFLAGS)" |${GREP} -q O[3456789]; then \
 		${ECHO} "XFree86-4 with thread support does not build with optimization"; \
 		${ECHO} "flags different from O or -O2"; \
