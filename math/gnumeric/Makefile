@@ -7,7 +7,7 @@
 
 PORTNAME=	gnumeric
 PORTVERSION=	0.61
-CATEGORIES=	math gnome
+CATEGORIES?=	math gnome
 MASTER_SITES=	${MASTER_SITE_GNOME}
 MASTER_SITE_SUBDIR=	stable/sources/gnumeric
 
