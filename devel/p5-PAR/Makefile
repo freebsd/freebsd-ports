@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	PAR
-PORTVERSION=	0.85
-PORTREVISION=	1
+PORTVERSION=	0.86
+PORTREVISION=	0
 CATEGORIES=	devel perl5
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN}
 MASTER_SITE_SUBDIR=	../../authors/id/A/AU/AUTRIJUS
@@ -33,7 +33,7 @@ MAN3=		App::Packer::PAR.3 PAR.3 \
 		PAR::Filter::Obfuscate.3 PAR::Filter::PatchContent.3 \
 		PAR::Filter::PodStrip.3 PAR::Heavy.3 PAR::Tutorial.3
 
-CONFLICTS=	nss-*
+CONFLICTS=	nss-3.*
 
 .include <bsd.port.pre.mk>
 
