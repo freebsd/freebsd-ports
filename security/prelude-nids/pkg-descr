@@ -1,0 +1,9 @@
+Prelude is a new innovative hybrid Intrusion Detection system designed 
+to be very modular, distributed, rock solid and fast. 
+
+The Prelude Network Intrusion Detection System is a sensor, that may 
+be installed on the same machine as the manager or not, which watches 
+network traffic and looks for familiar patterns. This is functionally 
+equivalent to (Snort (http://www.snort.org).
+
+WWW: http://www.prelude-ids.org/
