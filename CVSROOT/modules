@@ -751,6 +751,7 @@ cdpr		ports/net/cdpr
 cdrdao		ports/sysutils/cdrdao
 cdroot		ports/sysutils/cdroot
 cdrtools	ports/sysutils/cdrtools
+cdrtools-devel	ports/sysutils/cdrtools-devel
 cel		ports/lang/cel
 celestia	ports/astro/celestia
 centericq	ports/net/centericq
@@ -4256,6 +4257,7 @@ mkcmd		ports/devel/mkcmd
 mkfile		ports/sysutils/mkfile
 mkfontalias	ports/x11-fonts/mkfontalias
 mkisofs		ports/sysutils/mkisofs
+mkisofs-devel	ports/sysutils/mkisofs-devel
 mkitalic	ports/x11-fonts/mkitalic
 mkmf		ports/devel/mkmf
 mkptools	ports/Tools/scripts/mkptools
