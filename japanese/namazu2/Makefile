@@ -5,11 +5,11 @@
 # $FreeBSD$
 #
 
-DISTNAME=	namazu-${PORTVERSION}
 PORTNAME=	ja-namazu2
 PORTVERSION=	2.0.3
 CATEGORIES=	japanese textproc
 MASTER_SITES=	http://www.namazu.org/stable/
+DISTNAME=	namazu-${PORTVERSION}
 
 MAINTAINER=	knu@idaemons.org
 
