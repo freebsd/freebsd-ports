@@ -26,7 +26,4 @@ MAN3=		Pod::Coverage.3 \
 		Pod::Coverage::ExportOnly.3 \
 		Pod::Coverage::Overloader.3
 
-BROKEN=		"Does not compile"
-DEPRECATED=	"Will be removed after April 7 if still broken"
-
 .include <bsd.port.mk>
