@@ -1317,6 +1317,7 @@ ewipe		ports/misc/ewipe
 examples	src/share/examples
 exctags		ports/devel/ctags
 exim		ports/mail/exim
+exim-devel	ports/mail/exim-devel
 exim-doc-html	ports/mail/exim-doc-html
 exim-doc-pdf	ports/mail/exim-doc-pdf
 exim-doc-postscript	ports/mail/exim-doc-postscript
