@@ -1,5 +1,5 @@
---- ext/sybase/sybase.c.orig	Fri Jun  2 14:14:44 2000
-+++ ext/sybase/sybase.c	Fri Jun  2 14:15:27 2000
+--- ext/sybase/php_sybase_db.c.orig	Fri Jun  2 14:14:44 2000
++++ ext/sybase/php_sybase_db.c	Fri Jun  2 14:15:27 2000
 @@ -357,7 +357,7 @@
  				RETURN_FALSE;
  			}
