@@ -27,6 +27,7 @@
     SUBDIR += jakarta-log4j
     SUBDIR += jakarta-oro
     SUBDIR += jakarta-regexp
+    SUBDIR += jakarta-struts
     SUBDIR += janosvm
     SUBDIR += java-checkstyle
     SUBDIR += java-cup
