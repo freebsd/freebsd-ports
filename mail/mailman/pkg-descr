@@ -1,0 +1,16 @@
+Mailman is software to help manage email discussion lists, much like Majordomo
+and Smartmail. Unlike most similar products, Mailman gives each mailing list a
+web page, and allows users to subscribe, unsubscribe, etc. over the web. Even
+the list manager can administer his or her list entirely from the web. Mailman
+also integrates most things people want to do with mailing lists, including
+archiving, mail-to-news gateways, integrated bounce handling, spam prevention,
+email-based admin commands, direct SMTP delivery (with fast bulk mailing),
+support for virtual domains, and more. 
+
+Mailman runs on most Un*x-like systems, is compatible with most web servers and
+browsers, and most SMTP servers. Mailman requires Python version 1.5 or newer.
+Python is a free object-oriented scripting language. A few files are written in
+C for security purposes. 
+
+The manual is still only a set of READMEs provided in the Mailman distribution.
+For now, more information can be found at www.list.org.

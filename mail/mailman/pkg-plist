@@ -1,0 +1,205 @@
+mailman/Mailman/Archiver/Archiver.py
+mailman/Mailman/Archiver/Archiver.pyc
+mailman/Mailman/Archiver/HyperArch.py
+mailman/Mailman/Archiver/HyperArch.pyc
+mailman/Mailman/Archiver/HyperDatabase.py
+mailman/Mailman/Archiver/HyperDatabase.pyc
+mailman/Mailman/Archiver/__init__.py
+mailman/Mailman/Archiver/__init__.pyc
+mailman/Mailman/Archiver/pipermail.py
+mailman/Mailman/Archiver/pipermail.pyc
+mailman/Mailman/Bouncer.py
+mailman/Mailman/Bouncer.pyc
+mailman/Mailman/Cgi/__init__.py
+mailman/Mailman/Cgi/__init__.pyc
+mailman/Mailman/Cgi/admin.py
+mailman/Mailman/Cgi/admin.pyc
+mailman/Mailman/Cgi/admindb.py
+mailman/Mailman/Cgi/admindb.pyc
+mailman/Mailman/Cgi/archives.py
+mailman/Mailman/Cgi/archives.pyc
+mailman/Mailman/Cgi/edithtml.py
+mailman/Mailman/Cgi/edithtml.pyc
+mailman/Mailman/Cgi/handle_opts.py
+mailman/Mailman/Cgi/handle_opts.pyc
+mailman/Mailman/Cgi/listinfo.py
+mailman/Mailman/Cgi/listinfo.pyc
+mailman/Mailman/Cgi/options.py
+mailman/Mailman/Cgi/options.pyc
+mailman/Mailman/Cgi/private.py
+mailman/Mailman/Cgi/private.pyc
+mailman/Mailman/Cgi/roster.py
+mailman/Mailman/Cgi/roster.pyc
+mailman/Mailman/Cgi/subscribe.py
+mailman/Mailman/Cgi/subscribe.pyc
+mailman/Mailman/Cookie.py
+mailman/Mailman/Cookie.pyc
+mailman/Mailman/Crypt.py
+mailman/Mailman/Crypt.pyc
+mailman/Mailman/Defaults.py
+mailman/Mailman/Defaults.pyc
+mailman/Mailman/Deliverer.py
+mailman/Mailman/Deliverer.pyc
+mailman/Mailman/Digester.py
+mailman/Mailman/Digester.pyc
+mailman/Mailman/Errors.py
+mailman/Mailman/Errors.pyc
+mailman/Mailman/GatewayManager.py
+mailman/Mailman/GatewayManager.pyc
+mailman/Mailman/HTMLFormatter.py
+mailman/Mailman/HTMLFormatter.pyc
+mailman/Mailman/ListAdmin.py
+mailman/Mailman/ListAdmin.pyc
+mailman/Mailman/LockFile.py
+mailman/Mailman/LockFile.pyc
+mailman/Mailman/Logging/Logger.py
+mailman/Mailman/Logging/Logger.pyc
+mailman/Mailman/Logging/MultiLogger.py
+mailman/Mailman/Logging/MultiLogger.pyc
+mailman/Mailman/Logging/StampedLogger.py
+mailman/Mailman/Logging/StampedLogger.pyc
+mailman/Mailman/Logging/Utils.py
+mailman/Mailman/Logging/Utils.pyc
+mailman/Mailman/Logging/__init__.py
+mailman/Mailman/Logging/__init__.pyc
+mailman/Mailman/MailCommandHandler.py
+mailman/Mailman/MailCommandHandler.pyc
+mailman/Mailman/MailList.py
+mailman/Mailman/MailList.pyc
+mailman/Mailman/Mailbox.py
+mailman/Mailman/Mailbox.pyc
+mailman/Mailman/Message.py
+mailman/Mailman/Message.pyc
+mailman/Mailman/OutgoingQueue.py
+mailman/Mailman/OutgoingQueue.pyc
+mailman/Mailman/Pending.py
+mailman/Mailman/Pending.pyc
+mailman/Mailman/SecurityManager.py
+mailman/Mailman/SecurityManager.pyc
+mailman/Mailman/Utils.py
+mailman/Mailman/Utils.pyc
+mailman/Mailman/__init__.py
+mailman/Mailman/__init__.pyc
+mailman/Mailman/aliases.py
+mailman/Mailman/aliases.pyc
+mailman/Mailman/htmlformat.py
+mailman/Mailman/htmlformat.pyc
+mailman/Mailman/mm_cfg.py
+mailman/Mailman/mm_cfg.py.dist
+mailman/Mailman/mm_cfg.pyc
+mailman/Mailman/pythonlib/__init__.py
+mailman/Mailman/pythonlib/__init__.pyc
+mailman/Mailman/pythonlib/cgi.py
+mailman/Mailman/pythonlib/cgi.pyc
+mailman/Mailman/pythonlib/getpass.py
+mailman/Mailman/pythonlib/getpass.pyc
+mailman/Mailman/pythonlib/rfc822.py
+mailman/Mailman/pythonlib/rfc822.pyc
+mailman/Mailman/pythonlib/smtplib.py
+mailman/Mailman/pythonlib/smtplib.pyc
+mailman/Mailman/pythonlib/tempfile.py
+mailman/Mailman/pythonlib/tempfile.pyc
+mailman/Mailman/versions.py
+mailman/Mailman/versions.pyc
+mailman/bin/add_members
+mailman/bin/arch
+mailman/bin/check_db
+mailman/bin/check_perms
+mailman/bin/clone_member
+mailman/bin/digest_arch
+mailman/bin/find_member
+mailman/bin/list_members
+mailman/bin/mmsitepass
+mailman/bin/newlist
+mailman/bin/paths.py
+mailman/bin/paths.pyc
+mailman/bin/remove_members
+mailman/bin/rmlist
+mailman/bin/sync_members
+mailman/bin/update
+mailman/bin/version
+mailman/bin/withlist
+mailman/cgi-bin/admin
+mailman/cgi-bin/admindb
+mailman/cgi-bin/archives
+mailman/cgi-bin/edithtml
+mailman/cgi-bin/handle_opts
+mailman/cgi-bin/listinfo
+mailman/cgi-bin/options
+mailman/cgi-bin/private
+mailman/cgi-bin/roster
+mailman/cgi-bin/subscribe
+mailman/cron/archive
+mailman/cron/checkdbs
+mailman/cron/crontab.in
+mailman/cron/gate_news
+mailman/cron/mailpasswds
+mailman/cron/nightly_gzip
+mailman/cron/paths.py
+mailman/cron/paths.pyc
+mailman/cron/run_queue
+mailman/cron/senddigests
+mailman/cron/upvolumes_monthly
+mailman/cron/upvolumes_yearly
+mailman/data/pending_subscriptions.db
+mailman/filters/bowa-strip
+mailman/mail/paths.py
+mailman/mail/paths.pyc
+mailman/mail/wrapper
+mailman/scripts/answer_majordomo_mail
+mailman/scripts/contact_transport
+mailman/scripts/deliver
+mailman/scripts/driver
+mailman/scripts/dumb_deliver
+mailman/scripts/mailcmd
+mailman/scripts/mailowner
+mailman/scripts/paths.py
+mailman/scripts/paths.pyc
+mailman/scripts/post
+mailman/templates/adminsubscribeack.txt
+mailman/templates/adminunsubscribeack.txt
+mailman/templates/admlogin.txt
+mailman/templates/approve.txt
+mailman/templates/archives.html
+mailman/templates/bounce.txt
+mailman/templates/checkdbs.txt
+mailman/templates/convert.txt
+mailman/templates/cronpass.txt
+mailman/templates/handle_opts.html
+mailman/templates/help.txt
+mailman/templates/listinfo.html
+mailman/templates/masthead.txt
+mailman/templates/newlist.txt
+mailman/templates/nopass.txt
+mailman/templates/options.html
+mailman/templates/postack.txt
+mailman/templates/postauth.txt
+mailman/templates/postheld.txt
+mailman/templates/reenable.txt
+mailman/templates/refuse.txt
+mailman/templates/roster.html
+mailman/templates/subauth.txt
+mailman/templates/subscribe.html
+mailman/templates/subscribeack.txt
+mailman/templates/userpass.txt
+mailman/templates/verify.txt
+@dirrm mailman/Mailman/Archiver
+@dirrm mailman/Mailman/Cgi
+@dirrm mailman/Mailman/Logging
+@dirrm mailman/Mailman/pythonlib
+@dirrm mailman/Mailman
+@dirrm mailman/archives/private
+@dirrm mailman/archives/public
+@dirrm mailman/archives
+@dirrm mailman/bin
+@dirrm mailman/cgi-bin
+@dirrm mailman/cron
+@dirrm mailman/data
+@dirrm mailman/filters
+@dirrm mailman/lists
+@dirrm mailman/locks
+@dirrm mailman/logs
+@dirrm mailman/mail
+@dirrm mailman/scripts
+@dirrm mailman/templates
+@dirrm mailman
